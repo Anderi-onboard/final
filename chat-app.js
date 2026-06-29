@@ -671,8 +671,7 @@
       var add = parseInt(b.getAttribute("data-units"), 10) || 0;
       var plan = b.getAttribute("data-plan");
       if (plan) {
-        S.account.signedIn = true;
-        if (S.account.name === "Guest") { S.account.name = "Elias Vance"; S.account.avatar = "EV"; S.account.email = "elias@iname.com"; }
+        if (!S.account.signedIn) { A.signIn("email"); S = A.state(); }
         S.account.plan = plan;
       }
       S.units += add;

@@ -257,7 +257,7 @@
         '<div class="rr"><button class="btn ink" id="saveAcct">Save</button></div></div>';
       document.getElementById("saveAcct").addEventListener("click", function () {
         var s2 = A.state();
-        s2.account.name = (document.getElementById("fName").value || "Seeker").trim();
+        s2.account.name = (document.getElementById("fName").value || "Guest").trim();
         s2.account.email = document.getElementById("fEmail").value.trim();
         s2.account.avatar = A.initials(s2.account.name);
         A.save(s2); render(); toast("Identity updated.");
