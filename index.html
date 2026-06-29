@@ -128,7 +128,7 @@
   .thread::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:999px}
   .thread::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}
   .thread::-webkit-scrollbar-button{display:none;height:0;width:0}
-  .thread-inner{max-width:780px;margin:0;display:flex;flex-direction:column;gap:34px}
+  .thread-inner{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:34px}
   /* ── chat typography — Claude-style hierarchy ──
      Reading prose: Lora, a refined transitional serif (generous, calligraphic).
      Display titles: BioRhyme. Small-caps labels: Spinnaker. Human turn: clean sans.
@@ -515,17 +515,17 @@
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
           <h1 id="greetLine" style="font-family: BioRhyme">Formulate your inquiry.</h1>
         </div>
+        <div class="chips">
+          <button class="chip" data-q="Should I hold my position, or adapt?">Hold or adapt?</button>
+          <button class="chip" data-q="Is this relationship sound enough to last?">Relationship durability</button>
+          <button class="chip" data-q="What am I not seeing in this decision?">Blind spots</button>
+          <button class="chip" data-q="Is the timing right, or just convenient?">Timing analysis</button>
+        </div>
+        <div class="stream" id="stream" aria-live="polite">
+          <div class="stream-tag"><b style="color:#0F0C08;font-size:9px">&#9679;</b><span id="streamTag">What BourneWise does</span></div>
+          <p class="stream-text" id="streamText" style="color:rgb(15,12,8);text-align:left">BourneWise evaluates your inquiry against a 2,600-year-old causal architecture. Tested across dynasties, shifting environments, and human lives, it returns one direct, structural synthesis. No hedging, no mysticism.</p>
+        </div>
       </section>
-      <div class="chips">
-        <button class="chip" data-q="Should I hold my position, or adapt?">Hold or adapt?</button>
-        <button class="chip" data-q="Is this relationship sound enough to last?">Relationship durability</button>
-        <button class="chip" data-q="What am I not seeing in this decision?">Blind spots</button>
-        <button class="chip" data-q="Is the timing right, or just convenient?">Timing analysis</button>
-      </div>
-      <div class="stream" id="stream" aria-live="polite">
-        <div class="stream-tag"><b style="color:#0F0C08;font-size:9px">&#9679;</b><span id="streamTag">What BourneWise does</span></div>
-        <p class="stream-text" id="streamText" style="color:rgb(15,12,8);text-align:left">BourneWise evaluates your inquiry against a 2,600-year-old causal architecture. Tested across dynasties, shifting environments, and human lives, it returns one direct, structural synthesis. No hedging, no mysticism.</p>
-      </div>
     </div>
   </section>
 
