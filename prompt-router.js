@@ -30,8 +30,13 @@
     }
   }
 
-  // ─── Claude call wrapper (supports model override) ────────────
-  function makeComplete(modelOverride) {
+  // ─── Claude call wrapper ──────────────────────────────────────
+  // meta declares INTENT to the proxy: { role, product, model? }. The backend
+  // picks the model from that (Sonnet for stria, Opus for sortis, Haiku for
+  // router/qc) so model choice lives server-side. An explicit allow-listed
+  // model still wins, for back-compat.
+  function makeComplete(meta) {
+    meta = meta || {};
     return function (input) {
       var payload;
       if (typeof input === "string") {
@@ -40,7 +45,9 @@
         payload = { system: input.system, messages: input.messages };
         if (input.max_tokens) payload.max_tokens = input.max_tokens;
       }
-      if (modelOverride) payload.model = modelOverride;
+      if (meta.role) payload.role = meta.role;
+      if (meta.product) payload.product = meta.product;
+      if (meta.model) payload.model = meta.model;
 
       return fetch("/api/claude", {
         method: "POST",
@@ -70,9 +77,11 @@
       return null; // caller falls back to original flow
     }
 
-    var routerComplete = makeComplete(CONFIG.routerModel);
-    var mainComplete = makeComplete(CONFIG.mainModel);
-    var qcComplete = makeComplete(CONFIG.qcModel || "claude-haiku-4-5");
+    // router + qc run on the cheap utility model; the main reading routes by
+    // product (stria → Sonnet, sortis → Opus) on the backend.
+    var routerComplete = makeComplete({ role: "router", model: CONFIG.routerModel });
+    var mainComplete = makeComplete({ product: product, model: CONFIG.mainModel });
+    var qcComplete = makeComplete({ role: "qc", model: CONFIG.qcModel });
 
     // Step 1+2: Gate + Route (combined in buildSystemPrompt)
     return PE.buildSystemPrompt(question, product, routerComplete).then(function (result) {
@@ -94,11 +103,20 @@
         };
       }
 
-      // Step 3: Main reading
+      // Step 3: Main reading. Derive the 用神/role map the board prompt needs
+      // (deriveRoles produces roles.perLine — without it distill() throws and
+      // the whole Sortis pipeline silently falls back to legacy).
       var boardData = "";
-      if (board && window.BWLiuYaoAI && window.BWLiuYaoAI.buildMessages) {
-        var built = window.BWLiuYaoAI.buildMessages(board, board._roles || {}, question, opts.category || "general", opts.gender, lang);
-        boardData = built.messages[0].content;
+      var AI = window.BWLiuYaoAI;
+      if (board && AI && AI.buildMessages) {
+        try {
+          var priorKey = (AI.CATEGORY_YONGSHEN && AI.CATEGORY_YONGSHEN[opts.category || "general"]) || "self";
+          var roles = board._roles || (AI.deriveRoles ? AI.deriveRoles(board, priorKey) : {});
+          var built = AI.buildMessages(board, roles, question, opts.category || "general", opts.gender, lang);
+          boardData = built.messages[0].content;
+        } catch (e) {
+          if (window.console) console.warn("[prompt-router] board prompt build failed, using question only:", e && e.message);
+        }
       }
 
       var userContent = boardData || ("QUESTION: " + question);

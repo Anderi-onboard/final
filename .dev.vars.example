@@ -1,0 +1,14 @@
+# Copy to .dev.vars for local `wrangler pages dev`. NEVER commit the real key.
+# In production these go in Cloudflare Pages → Settings → Environment variables.
+
+# Required — your Anthropic API key.
+ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Optional model overrides (defaults shown). The proxy routes by product/role:
+#   stria  → Sonnet 4.6     sortis → Opus 4.8     router/qc → Haiku 4.5
+# STRIA_MODEL=claude-sonnet-4-6
+# SORTIS_MODEL=claude-opus-4-8
+# UTILITY_MODEL=claude-haiku-4-5
+
+# Optional cap on response length (clamped 256–8192).
+# CLAUDE_MAX_TOKENS=1024

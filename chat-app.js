@@ -353,7 +353,10 @@
       var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
         "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
         deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis. Reply with the judgment only.";
-      run = window.claude.complete(prompt).then(function (r) {
+      run = window.claude.complete({
+        product: m.id === "sortis" ? "sortis" : "stria",
+        messages: [{ role: "user", content: prompt }]
+      }).then(function (r) {
         var s = String(r || "").trim(); return s || null;
       }).catch(function () { return null; });
     } else {

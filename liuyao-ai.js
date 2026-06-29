@@ -118,8 +118,9 @@
   /* ═══════════ 3. AI prompt assembly ═══════════
      compact, de-noised board the model actually needs to read. */
   function distill(board, roles){
+    var perLine = (roles && roles.perLine) || {};
     var L = board.lines.map(function(l){
-      var r = roles.perLine[l.idx];
+      var r = perLine[l.idx] || { roleEn: "" };
       var flags = [];
       if (l.moving) flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+")"):""));
       if (l.marker) flags.push(l.marker==="self"?"World":"Response");
@@ -226,7 +227,7 @@
     var built = buildMessages(board, roles, question, category, gender, lang);
     if (opts.systemPrompt) built.system = opts.systemPrompt;
 
-    return window.claude.complete({ system:built.system, messages:built.messages })
+    return window.claude.complete({ product:"sortis", system:built.system, messages:built.messages })
       .then(function(text){
         var out = parseJSON(text);
         if (!out || !out.yongshenKey) return mockReading(board, roles, question, category, lang);

@@ -26,6 +26,13 @@
         const payload = (typeof input === 'string')
           ? { messages: [{ role: 'user', content: input }] }
           : { system: input.system, messages: input.messages };
+        // forward routing intent so the proxy picks the right model
+        if (typeof input === 'object' && input) {
+          if (input.product) payload.product = input.product;
+          if (input.role) payload.role = input.role;
+          if (input.model) payload.model = input.model;
+          if (input.max_tokens) payload.max_tokens = input.max_tokens;
+        }
         return fetch('/api/claude', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
