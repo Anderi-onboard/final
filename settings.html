@@ -235,11 +235,11 @@
   var toastEl = document.getElementById("toast");
   function toast(m) { toastEl.textContent = m; toastEl.classList.add("on"); clearTimeout(toast._t); toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600); }
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-  function entitled(p){return p==="seeker"||p==="adept";}
+  function entitled(p){return p==="pro"||p==="premium";}
 
   var METHODS = [
-    { id:"stria", name:"Stria 64", cost:100, blurb:"The daily draw — one figure, six lines. Fast and blunt." },
-    { id:"sortis", name:"Sortis 6", cost:1000, blurb:"The deep casting — moving lines cross into a second figure. Seeker plan and up.", gated:true }
+    { id:"stria", name:"Stria 64", cost:300, blurb:"The daily draw — one figure, six lines. Fast and blunt." },
+    { id:"sortis", name:"Sortis 6", cost:1500, blurb:"The deep casting — moving lines cross into a second figure. Pro plan and up.", gated:true }
   ];
 
   function render() {
@@ -274,9 +274,9 @@
 
     /* plan */
     document.getElementById("planBadge").textContent = A.planName(a.plan);
-    document.getElementById("planSub").textContent = a.plan === "wanderer"
-      ? "Free · 500 Units on entry · Stria 64 only"
-      : (a.plan === "seeker" ? "$12/mo · 3,000 Units monthly · Sortis 6 unlocked" : "$38/mo · 12,000 Units monthly · all methods");
+    document.getElementById("planSub").textContent = a.plan === "free"
+      ? "Free · 300 Units trial · Stria 64 only"
+      : (a.plan === "pro" ? "$19/mo · 22,500 Units monthly · Sortis 6 unlocked" : "$29/mo · 45,000 Units monthly · all methods");
 
     /* methods */
     var mw = document.getElementById("methods");
@@ -288,11 +288,11 @@
       row.className = "mrow" + (sel ? " sel" : "") + (ok ? "" : " locked");
       row.innerHTML =
         '<span class="radio"></span>' +
-        '<span class="mmain"><b>' + m.name + (ok ? "" : '<span class="lock">Seeker</span>') + "</b>" +
+        '<span class="mmain"><b>' + m.name + (ok ? "" : '<span class="lock">Pro</span>') + "</b>" +
         "<p>" + m.blurb + "</p></span>" +
         '<span class="mcost">' + m.cost.toLocaleString("en-US") + "</span>";
       row.addEventListener("click", function () {
-        if (!ok) { toast("Sortis 6 opens on the Seeker plan."); location.href = "./pricing.html"; return; }
+        if (!ok) { toast("Sortis 6 opens on the Pro plan."); location.href = "./pricing.html"; return; }
         var s2 = A.state(); s2.method = m.id; A.save(s2); render(); toast(m.name + " is now your default casting.");
       });
       mw.appendChild(row);
@@ -309,7 +309,7 @@
       sessSub.textContent = "Signed in as " + a.name + ".";
       sessRr.innerHTML = '<button class="btn" id="signout">Sign out</button>';
       document.getElementById("signout").addEventListener("click", function () {
-        var s2 = A.state(); s2.account = { name:"Guest", email:"", plan:"wanderer", avatar:"G", signedIn:false };
+        var s2 = A.state(); s2.account = { name:"Guest", email:"", plan:"free", avatar:"G", signedIn:false };
         if (s2.method === "sortis") s2.method = "stria";
         A.save(s2); render(); toast("Signed out — your ledger stays put on this device.");
       });

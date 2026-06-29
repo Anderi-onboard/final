@@ -134,7 +134,7 @@
 
   /* ── 4. state ── */
   var A = window.BWAccount;
-  var S = A ? A.state() : { convs: [], units: 0, account: { name: "Guest", plan: "wanderer", signedIn: false }, activeId: null };
+  var S = A ? A.state() : { convs: [], units: 0, account: { name: "Guest", plan: "free", signedIn: false }, activeId: null };
 
   /* casting history → open the conversation back in the app */
   var hist = aside.querySelector("#histList");

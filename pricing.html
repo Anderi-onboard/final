@@ -49,7 +49,14 @@
   .ledgerstrip a:hover{background:var(--paper-dim)}
 
   /* plans */
-  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;align-items:stretch}
+  .billing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:32px;font-size:14px;color:var(--dim)}
+  .billing-toggle .active{color:var(--ink);font-weight:600}
+  .billing-toggle button{position:relative;width:48px;height:26px;border-radius:99px;background:var(--line);border:none;cursor:pointer;transition:background .2s}
+  .billing-toggle button.on{background:var(--terracotta)}
+  .billing-toggle button::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--paper);transition:transform .2s}
+  .billing-toggle button.on::after{transform:translateX(22px)}
+  .billing-toggle .save{font-size:11px;color:var(--terracotta);font-weight:500}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;align-items:stretch}
   .plan{display:flex;flex-direction:column;background:var(--paper-raised);border:1px solid var(--line);border-radius:15px;padding:24px 22px;position:relative}
   .plan.feat{border-color:var(--terracotta);box-shadow:0 14px 40px rgba(181,80,44,.13)}
   .plan .ptag{position:absolute;top:-11px;left:22px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--terracotta);border-radius:6px;padding:3px 9px}
@@ -114,7 +121,8 @@
   .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
-  @media (max-width:860px){.plans{grid-template-columns:1fr}.packs{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:860px){.plans{grid-template-columns:1fr}}
+  @media (max-width:860px){.packs{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:520px){.pagehead{padding:16px 18px}.shell{padding:0 18px 56px}.packs{grid-template-columns:1fr}}
 </style>
 </head>
@@ -137,7 +145,7 @@
   <section class="hero">
     <div class="eyebrow"><b>&#9670;</b><span>Plans &amp; balance</span></div>
     <h1>Strategic clarity, structured sustainably</h1>
-    <p>You maintain a balance of units to deploy against inquiries—100 for a Stria 64 baseline, 1,000 for a Sortis 6 synthesis. Select the tier that aligns with your strategic cadence.</p>
+    <p>You maintain a balance of units to deploy against inquiries—300 for a Stria 64 baseline, 1,500 for a Sortis 6 synthesis. Select the tier that aligns with your strategic cadence.</p>
     <div class="ledgerstrip">
       <span class="who" id="whoLine">Not signed in</span>
       <span>·</span>
@@ -146,45 +154,52 @@
     </div>
   </section>
 
+  <div class="billing-toggle">
+    <span class="mo-label active">Monthly</span>
+    <button id="billingSwitch" aria-label="Toggle annual billing"></button>
+    <span class="yr-label">Annual</span>
+    <span class="save">Save ~17%</span>
+  </div>
+
   <section class="plans" aria-label="Plans">
-    <div class="plan" data-plan="wanderer">
-      <h2>Basic</h2>
-      <div class="desc">For exploring the primary framework.</div>
-      <div class="price"><span class="amt">$0</span><span class="per">/ month</span></div>
-      <div class="grant">Includes <b>500</b> units on entry</div>
+    <div class="plan" data-plan="free">
+      <h2>Free</h2>
+      <div class="desc">One-time trial of the baseline framework.</div>
+      <div class="price"><span class="amt">$0</span><span class="per"></span></div>
+      <div class="grant">Includes <b>300</b> units (one-time)</div>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Stria 64 baseline analysis</li>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>7-day inquiry history</li>
-        <li class="off"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l8 8M12 4l-8 8"></path></svg>Sortis 6 synthesis restricted</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>1 Stria 64 trial reading</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>3-day inquiry history</li>
+        <li class="off"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l8 8M12 4l-8 8"></path></svg>Sortis 6 not available</li>
       </ul>
-      <button class="choose" data-grant="500">Maintain Basic</button>
+      <button class="choose" data-grant="300">Start free trial</button>
     </div>
 
-    <div class="plan feat" data-plan="seeker">
+    <div class="plan feat" data-plan="pro">
       <span class="ptag">Most selected</span>
       <h2>Pro</h2>
-      <div class="desc">Regular guidance for the ongoing complexities of life and strategy.</div>
-      <div class="price"><span class="amt">$15</span><span class="per">/ month</span></div>
-      <div class="grant">Includes <b>12,000</b> units monthly</div>
+      <div class="desc">Regular guidance — enough for daily Stria or focused Sortis sessions.</div>
+      <div class="price"><span class="amt" data-mo="19" data-yr="15.83">$19</span><span class="per">/ month</span></div>
+      <div class="grant">Includes <b>22,500</b> units monthly</div>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Everything in Basic</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~75 Stria or ~15 Sortis / month</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Sortis 6 synthesis unlocked</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Full inquiry history</li>
       </ul>
-      <button class="choose" data-grant="12000">Continue the dialogue</button>
+      <button class="choose" data-grant="22500">Continue the dialogue</button>
     </div>
 
-    <div class="plan" data-plan="adept">
+    <div class="plan" data-plan="premium">
       <h2>Premium</h2>
-      <div class="desc">Deep causal analysis for high-stakes transitions and critical life trajectories.</div>
-      <div class="price"><span class="amt">$29</span><span class="per">/ month</span></div>
-      <div class="grant">Includes <b>30,000</b> units monthly</div>
+      <div class="desc">Deep analysis for high-stakes transitions and critical decisions.</div>
+      <div class="price"><span class="amt" data-mo="29" data-yr="24.17">$29</span><span class="per">/ month</span></div>
+      <div class="grant">Includes <b>45,000</b> units monthly</div>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Everything in Pro</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~150 Stria or ~30 Sortis / month</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Priority server processing</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Early access to new frameworks</li>
       </ul>
-      <button class="choose" data-grant="30000">Continue the dialogue</button>
+      <button class="choose" data-grant="45000">Continue the dialogue</button>
     </div>
   </section>
 
@@ -194,14 +209,14 @@
       <span class="sub">For bridging the gap between sessions.</span>
     </div>
     <div class="packs">
-      <button class="pack" data-grant="2000"><div class="u">2,000</div><div class="p">$3</div><div class="bonus">A handful of castings</div></button>
-      <button class="pack" data-grant="8000"><div class="u">8,000</div><div class="p">$10</div><div class="bonus">Sustain the dialogue</div></button>
-      <button class="pack" data-grant="20000"><div class="u">20,000</div><div class="p">$22</div><div class="bonus">+10% bonus units</div></button>
-      <button class="pack" data-grant="50000"><div class="u">50,000</div><div class="p">$48</div><div class="bonus">+20% bonus units</div></button>
+      <button class="pack" data-grant="4500"><div class="u">4,500</div><div class="p">$5</div><div class="bonus">~3 Sortis or ~15 Stria</div></button>
+      <button class="pack" data-grant="15000"><div class="u">15,000</div><div class="p">$14</div><div class="bonus">~10 Sortis · +7% bonus</div></button>
+      <button class="pack" data-grant="30000"><div class="u">30,000</div><div class="p">$25</div><div class="bonus">~20 Sortis · +11% bonus</div></button>
+      <button class="pack" data-grant="75000"><div class="u">75,000</div><div class="p">$55</div><div class="bonus">~50 Sortis · +15% bonus</div></button>
     </div>
     <div class="costs">
-      <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · fast, direct</small></div><div class="ct">100<small> units / inquiry</small></div></div>
-      <div class="cost"><div class="nm">Sortis 6<small>Causal synthesis · complex decisions</small></div><div class="ct">1,000<small> units / inquiry</small></div></div>
+      <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · Sonnet</small></div><div class="ct">300<small> units / inquiry</small></div></div>
+      <div class="cost"><div class="nm">Sortis 6<small>Causal synthesis · Opus</small></div><div class="ct">1,500<small> units / inquiry</small></div></div>
     </div>
   </section>
 
@@ -213,7 +228,7 @@
       <div><div class="q">What happens when I run out?</div><div class="a">Inquiries pause until you add units or your plan renews. Nothing is lost—your history and open castings remain intact.</div></div>
       <div><div class="q">Can I change or cancel a plan?</div><div class="a">Switch tiers or cancel anytime from your account. Changes apply at the next billing cycle; remaining units stay on your balance.</div></div>
       <div><div class="q">Are units refundable?</div><div class="a">Once an inquiry is processed and a framework is generated, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div>
-      <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Stria 64 maps your immediate situation at 100 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,000 units.</div></div>
+      <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Stria 64 maps your immediate situation at 300 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,500 units—powered by a more advanced reasoning engine.</div></div>
       <div><div class="q">Is my data private?</div><div class="a">Inquiries are encrypted at rest, never sold, never used to train broad models, and purged on request.</div></div>
     </div>
   </section>
@@ -243,7 +258,23 @@
   "use strict";
   var A = window.BWAccount;
   var toastEl = document.getElementById("toast");
+  var annual = false;
   function toast(m) { toastEl.textContent = m; toastEl.classList.add("on"); clearTimeout(toast._t); toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600); }
+
+  var sw = document.getElementById("billingSwitch");
+  sw.addEventListener("click", function () {
+    annual = !annual;
+    sw.classList.toggle("on", annual);
+    var mo = document.querySelector(".mo-label"), yr = document.querySelector(".yr-label");
+    mo.classList.toggle("active", !annual);
+    yr.classList.toggle("active", annual);
+    document.querySelectorAll(".amt[data-mo]").forEach(function (el) {
+      el.textContent = "$" + (annual ? el.getAttribute("data-yr") : el.getAttribute("data-mo"));
+    });
+    document.querySelectorAll(".per").forEach(function (el) {
+      if (el.textContent) el.textContent = annual ? "/ month, billed yearly" : "/ month";
+    });
+  });
 
   function paint() {
     var s = A.state(), a = s.account;
@@ -255,7 +286,7 @@
       var id = p.getAttribute("data-plan");
       var btn = p.querySelector(".choose");
       if (a.signedIn && a.plan === id) { btn.classList.add("current"); btn.textContent = "Your current plan"; }
-      else { btn.classList.remove("current"); btn.textContent = (id === "wanderer" ? "Maintain Basic" : "Continue the dialogue"); }
+      else { btn.classList.remove("current"); btn.textContent = (id === "free" ? "Start free trial" : "Continue the dialogue"); }
     });
   }
 
@@ -268,8 +299,10 @@
       if (!s.account.signedIn) { s.account.signedIn = true; s.account.name = "Elias Vance"; s.account.email = "elias@iname.com"; s.account.avatar = "EV"; }
       s.account.plan = plan;
       s.units += grant;
+      if (annual) s.account.billing = "annual";
       A.save(s); paint();
-      toast(A.planName(plan) + " tier activated · +" + grant.toLocaleString("en-US") + " units added.");
+      var label = A.planName(plan) + (annual ? " (annual)" : "") + " activated · +" + grant.toLocaleString("en-US") + " units";
+      toast(label);
     });
   });
   document.querySelectorAll(".pack").forEach(function (b) {

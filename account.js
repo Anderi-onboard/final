@@ -16,23 +16,23 @@
   var STORE = "bw-paper-chat";
 
   var PLANS = {
-    wanderer: { id: "wanderer", name: "Basic", price: 0, grant: 500, methods: ["stria"] },
-    seeker:   { id: "seeker",   name: "Pro",     price: 15, grant: 12000, methods: ["stria", "sortis"] },
-    adept:    { id: "adept",    name: "Premium", price: 29, grant: 30000, methods: ["stria", "sortis"] }
+    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 300,   methods: ["stria"], trial: true },
+    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 22500, methods: ["stria", "sortis"] },
+    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 45000, methods: ["stria", "sortis"] }
   };
 
   function load() {
     var s = null;
     try { s = JSON.parse(localStorage.getItem(STORE)); } catch (e) {}
     if (!s || typeof s !== "object") s = {};
-    if (typeof s.units !== "number") s.units = 1500;
+    if (typeof s.units !== "number") s.units = 300;
     if (!s.method) s.method = "stria";
     if (!Array.isArray(s.convs)) s.convs = [];
     if (!("activeId" in s)) s.activeId = null;
     if (!s.account || typeof s.account !== "object") {
-      s.account = { name: "Guest", email: "", plan: "wanderer", avatar: "G", signedIn: false };
+      s.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
     }
-    if (!s.account.plan) s.account.plan = "wanderer";
+    if (!s.account.plan) s.account.plan = "free";
     return s;
   }
   function save(s) { try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (e) {} }
@@ -44,7 +44,7 @@
     return (p[0][0] + p[p.length - 1][0]).toUpperCase();
   }
 
-  function planName(id) { return (PLANS[id] || PLANS.wanderer).name; }
+  function planName(id) { return (PLANS[id] || PLANS.free).name; }
 
   function signIn(provider) {
     var s = load();
@@ -57,16 +57,16 @@
     var d = demos[provider] || demos.dev;
     s.account = {
       name: d.name, email: d.email,
-      plan: s.account && s.account.plan ? s.account.plan : "seeker",
+      plan: s.account && s.account.plan ? s.account.plan : "pro",
       avatar: initials(d.name), signedIn: true, provider: provider
     };
-    if (s.account.plan === "wanderer") s.account.plan = "seeker";
+    if (s.account.plan === "free") s.account.plan = "pro";
     save(s);
     return s.account;
   }
   function signOut() {
     var s = load();
-    s.account = { name: "Guest", email: "", plan: "wanderer", avatar: "G", signedIn: false };
+    s.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
     save(s);
     return s.account;
   }

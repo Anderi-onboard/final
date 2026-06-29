@@ -9,16 +9,16 @@
   /* ── the two casting models — deliberately distinct ── */
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 100, tag: "Baseline analysis",
+      id: "stria", name: "Stria 64", cost: 300, tag: "Baseline analysis",
       depth: "Primary hexagram framework",
       blurb: "Baseline analysis. A primary structural map of the situation you are currently navigating.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 1000, tag: "Causal synthesis",
+      id: "sortis", name: "Sortis 6", cost: 1500, tag: "Causal synthesis",
       depth: "Transformed hexagram framework",
       blurb: "Causal synthesis. Evaluates dynamic lines to project outcomes for complex, high-stakes decisions.",
-      gated: true /* Seeker plan and up */
+      gated: true
     }
   };
   var ORDER = ["stria", "sortis"];
@@ -38,13 +38,13 @@
     var s = null;
     try { s = JSON.parse(localStorage.getItem(STORE)); } catch (e) {}
     if (!s || typeof s !== "object") s = {};
-    if (typeof s.units !== "number") s.units = 1500;
+    if (typeof s.units !== "number") s.units = 300;
     if (!METHODS[s.method]) s.method = "stria";
     if (!Array.isArray(s.convs)) s.convs = [];
     if (!("activeId" in s)) s.activeId = null;
     if (!s.account || typeof s.account !== "object")
-      s.account = { name: "Guest", email: "", plan: "wanderer", avatar: "G", signedIn: false };
-    if (!s.account.plan) s.account.plan = "wanderer";
+      s.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
+    if (!s.account.plan) s.account.plan = "free";
     return s;
   }
   var S = load();
@@ -58,7 +58,7 @@
   function entitled(id) {
     if (!METHODS[id].gated) return true;
     var p = S.account.plan;
-    return p === "seeker" || p === "adept";
+    return p === "pro" || p === "premium";
   }
 
   /* ── els ── */
@@ -85,7 +85,7 @@
     var cap = $("unitsCap"); if (cap) cap.textContent = planLabel(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo";
   }
   function planLabel(p) {
-    return { wanderer: "Basic", seeker: "Pro", adept: "Premium" }[p] || "Basic";
+    return { free: "Free", pro: "Pro", premium: "Premium" }[p] || "Free";
   }
   function renderAccount() {
     var a = S.account;
@@ -692,7 +692,7 @@
   $("miSettings").addEventListener("click", function () { location.href = "./settings.html"; });
   $("miSignout").addEventListener("click", function () {
     closeMenu();
-    S.account = { name: "Guest", email: "", plan: "wanderer", avatar: "G", signedIn: false };
+    S.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
     if (S.method === "sortis") S.method = "stria";
     save(); renderAll();
     toast("Signed out — your history and balance remain secure.");
