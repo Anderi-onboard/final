@@ -110,7 +110,7 @@
         e.stopPropagation();
         S.convs = S.convs.filter(function (x) { return x.id !== c.id; });
         if (S.activeId === c.id) S.activeId = S.convs.length ? S.convs[0].id : null;
-        save(); renderAll();
+        save(); A.deleteCastingRemote(c.id); renderAll();
         toast("Casting burned.");
       });
       wrap.appendChild(b);
@@ -452,8 +452,10 @@
     }
     var c = activeConv();
     c.msgs.push({ role: "user", text: text });
-    S.units -= m.cost;
-    save(); renderAll();
+    save();                                 // persist the question first
+    A.deductUnits(m.cost, "cast:" + m.id);  // spend on the store (+ server mirror)
+    S.units = A.state().units;              // reconcile local balance only
+    renderAll();
     if (S.units < m.cost && S.account.plan === "free") {
       toast("Low balance — upgrade to keep casting.");
     }
@@ -526,7 +528,9 @@
         ts: Date.now(), cost: m.cost
       };
       c.msgs.push(oracleMsg);
+      c.method = m.id;
       save();
+      A.syncCasting(c);   // persist this casting to the server (if signed in)
       /* update only the chrome (balance + history) — leave the thread alone so the
          casting figure isn't wiped; the verdict then streams in naturally below it */
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
@@ -689,20 +693,30 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closePlans(); closeMenu(); closeMethod(); } });
   overlay.querySelectorAll(".plan button").forEach(function (b) {
     b.addEventListener("click", function () {
-      var add = parseInt(b.getAttribute("data-units"), 10) || 0;
       var plan = b.getAttribute("data-plan");
-      if (plan) {
-        if (!S.account.signedIn) { A.signIn("email"); S = A.state(); }
-        S.account.plan = plan;
+      var add = parseInt(b.getAttribute("data-units"), 10) || 0;
+      function apply() {
+        if (plan) { A.setPlan(plan); }   // setPlan applies the plan's grant
+        else if (add) { A.addUnits(add, "topup"); }
+        S = A.state(); renderAll(); closePlans();
+        toast(plan ? (A.planName(plan) + " is active.") : ("+" + add.toLocaleString("en-US") + " units added."));
       }
-      S.units += add;
-      save(); renderAll(); closePlans();
-      toast("+" + add.toLocaleString("en-US") + " units added to your balance.");
+      if (plan && !S.account.signedIn) {
+        A.signInRemote("elias@iname.com", "Elias Vance", "email", function () { S = A.state(); apply(); });
+      } else {
+        apply();
+      }
     });
   });
 
+  /* ── boot: hydrate from the server (if signed in), then paint ── */
+  renderAll();                       // instant paint from local store
+  A.hydrate(function () { S = A.state(); renderAll(); });
+  window.addEventListener("bw:account-synced", function () {
+    S.units = A.state().units; renderUnits();
+  });
+
   /* ── entry: ?q= from landing, #plans deep link ── */
-  renderAll();
   var params = new URLSearchParams(location.search);
   var q = (params.get("q") || "").trim();
   if (q) { history.replaceState(null, "", location.pathname); send(q); }

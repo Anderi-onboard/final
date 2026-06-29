@@ -49,6 +49,32 @@ retry on QC failure); Stria runs a single Sonnet pass. If the key is missing or
 a call fails, the front-end falls back to its deterministic Liu Yao reading, so
 the site never breaks.
 
+## Accounts, ledger & history (D1)
+
+Real, cross-device persistence lives in **Cloudflare D1**, served by two
+catch-all Functions:
+
+- `functions/api/auth/[[path]].js` — `POST /api/auth/dev` (real persisted
+  email sign-in), Google OAuth (`GET /api/auth/google` + `/google/callback`,
+  active only when `GOOGLE_CLIENT_ID/SECRET` are set), `POST /api/auth/signout`.
+- `functions/api/account/[[path]].js` — `GET /me`, `POST /spend`, `POST /grant`,
+  `POST /plan`, and `GET/POST/DELETE /castings`. Sessions are stateless signed
+  cookies (`SESSION_SECRET`); the server owns the unit balance (anti-tamper) and
+  records every movement in an append-only `ledger` table.
+
+The front-end (`account.js`) hydrates from `GET /me` on load and mirrors writes
+optimistically, reconciling to the server's authoritative balance. **Guests and
+key-less / DB-less deploys keep working entirely on `localStorage`** — the
+account API returns `501` and the app falls back silently.
+
+Setup:
+```bash
+npx wrangler d1 create bournewise          # paste database_id into wrangler.toml
+npx wrangler d1 execute bournewise --local  --file=./schema.sql
+npx wrangler d1 execute bournewise --remote --file=./schema.sql
+# set SESSION_SECRET (and optional GOOGLE_CLIENT_ID/SECRET) in .dev.vars / Pages env
+```
+
 ## Deploy (two ways)
 
 **A. Dashboard (drag-and-drop or Git)**

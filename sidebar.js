@@ -162,7 +162,9 @@
   }
 
   /* ledger balance + account row + menu identity */
-  if (A) {
+  function paintLedger() {
+    if (!A) return;
+    S = A.state();
     A.paintSidebar({ foot: ".side-foot", menuWho: "#acctMenu .who", units: "#unitsSide" });
     var badge = aside.querySelector("#miPlanBadge");
     if (badge) badge.textContent = A.planName(S.account.plan).toUpperCase();
@@ -172,6 +174,9 @@
     var planEl = aside.querySelector("#ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
     var cap = aside.querySelector("#unitsCap"); if (cap) cap.textContent = A.planName(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo";
   }
+  paintLedger();
+  // pull server state on shared pages too, then repaint
+  if (A && A.hydrate) A.hydrate(function () { paintLedger(); });
 
   /* ── 5. account menu ── */
   var acctBtn = aside.querySelector("#acctBtn"), acctMenu = aside.querySelector("#acctMenu");

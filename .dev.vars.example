@@ -12,3 +12,14 @@ ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Optional cap on response length (clamped 256–8192).
 # CLAUDE_MAX_TOKENS=1024
+
+# ── Accounts ──────────────────────────────────────────────────────────────
+# Secret used to sign session cookies. Use a long random string in production.
+SESSION_SECRET=change-me-to-a-long-random-string
+
+# Google OAuth (optional). Without these, the app still has real persisted
+# accounts via email/dev sign-in; "Continue with Google" just stays inactive.
+# Authorized redirect URI in Google Cloud console:
+#   https://YOUR-DOMAIN/api/auth/google/callback
+# GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
+# GOOGLE_CLIENT_SECRET=xxxx

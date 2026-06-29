@@ -75,21 +75,106 @@
     return plan === "pro" || plan === "premium";
   }
 
-  // ─── ledger operations ──────────────────────────────────────────────
+  // ─── server sync (D1-backed accounts) ───────────────────────────────
+  // When a real session exists, the server (functions/api/account) is the
+  // source of truth: balances and history survive across devices. Local writes
+  // are optimistic and reconciled to the server's authoritative value. With no
+  // backend (501) or as a guest, everything stays local — nothing breaks.
 
-  function deductUnits(n) {
+  var serverOn = false;
+  function onServer() { return serverOn; }
+
+  function api(path, method, bodyObj) {
+    return fetch("/api/account" + path, {
+      method: method || "GET",
+      headers: { "content-type": "application/json" },
+      credentials: "same-origin",
+      body: bodyObj ? JSON.stringify(bodyObj) : undefined
+    }).then(function (r) {
+      if (r.status === 501) { serverOn = false; return null; }
+      return r.json().catch(function () { return null; });
+    }).catch(function () { return null; });
+  }
+
+  // Pull the authoritative account + history on load. cb() always runs.
+  function hydrate(cb) {
+    api("/me").then(function (d) {
+      if (d && d.signedIn && d.user) {
+        serverOn = true;
+        var s = load();
+        s.units = d.user.units;
+        s.account = {
+          name: d.user.name, email: d.user.email, plan: d.user.plan,
+          avatar: initials(d.user.name), signedIn: true, provider: d.user.provider || "email"
+        };
+        if (Array.isArray(d.castings)) {
+          s.convs = d.castings.map(function (c) {
+            var p = c.payload || {};
+            return { id: c.id, title: c.title, msgs: p.msgs || [], method: c.method, _synced: true };
+          });
+        }
+        if (METHODS[s.method] === undefined) s.method = "stria";
+        save(s);
+      } else {
+        serverOn = false;
+      }
+      if (cb) cb(serverOn);
+    });
+  }
+
+  // ─── ledger operations (optimistic local + server reconcile) ─────────
+
+  function deductUnits(n, reason) {
     var s = load();
     s.units = Math.max(0, s.units - n);
     save(s);
+    if (serverOn) {
+      api("/spend", "POST", { cost: n, reason: reason || "spend" }).then(reconcileUnits);
+    }
     return s.units;
   }
 
-  function addUnits(n) {
+  function addUnits(n, reason) {
     var s = load();
     s.units += n;
     save(s);
+    if (serverOn) {
+      api("/grant", "POST", { amount: n, reason: reason || "topup" }).then(reconcileUnits);
+    }
     return s.units;
   }
+
+  function reconcileUnits(d) {
+    if (d && d.ok && typeof d.units === "number") {
+      var s = load();
+      if (s.units !== d.units) { s.units = d.units; save(s); emit(); }
+    }
+  }
+
+  // switch plan + apply that plan's grant (server authoritative when signed in)
+  function setPlan(plan) {
+    var s = load();
+    if (!PLANS[plan]) return s.units;
+    s.account.plan = plan;
+    if (plan !== "free") s.units += PLANS[plan].grant;
+    save(s);
+    if (serverOn) api("/plan", "POST", { plan: plan }).then(reconcileUnits);
+    return s.units;
+  }
+
+  function syncCasting(conv) {
+    if (!serverOn || !conv) return;
+    api("/castings", "POST", {
+      id: conv.id, title: conv.title, method: conv.method || load().method,
+      payload: { msgs: conv.msgs || [] }
+    });
+  }
+  function deleteCastingRemote(id) {
+    if (serverOn && id) api("/castings/" + encodeURIComponent(id), "DELETE");
+  }
+
+  // tiny event bus so the UI can re-render after an async reconcile
+  function emit() { try { window.dispatchEvent(new Event("bw:account-synced")); } catch (e) {} }
 
   // ─── identity ───────────────────────────────────────────────────────
 
@@ -125,10 +210,53 @@
 
   function signOut() {
     var s = load();
+    var wasServer = serverOn;
     s.account = clone(DEFAULT_ACCOUNT);
     if (METHODS[s.method] && METHODS[s.method].gated) s.method = "stria";
+    // if we were syncing a real account, clear its local mirror (history + balance
+    // live on the server; the device returns to a fresh guest)
+    if (wasServer) {
+      s.convs = [];
+      s.activeId = null;
+      s.units = PLANS.free.grant;
+    }
     save(s);
+    // best-effort clear of the server session
+    fetch("/api/auth/signout", { method: "POST", credentials: "same-origin" }).catch(function () {});
+    serverOn = false;
     return s.account;
+  }
+
+  // Real, persisted sign-in via the accounts backend. Falls back to the local
+  // demo sign-in if the backend isn't there (501) so the button still works.
+  function signInRemote(email, name, provider, cb) {
+    fetch("/api/auth/dev", {
+      method: "POST", headers: { "content-type": "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify({ email: email, name: name, provider: provider || "email" })
+    }).then(function (r) {
+      if (r.status === 501) return null;
+      return r.json().catch(function () { return null; });
+    }).then(function (d) {
+      if (d && d.ok && d.user) {
+        serverOn = true;
+        var s = load();
+        s.units = d.user.units;
+        s.account = {
+          name: d.user.name, email: d.user.email, plan: d.user.plan,
+          avatar: initials(d.user.name), signedIn: true, provider: provider || "email"
+        };
+        save(s);
+        if (cb) cb(true, s.account);
+      } else {
+        // no backend → local demo sign-in, app still works
+        var a = signIn(provider || "email");
+        if (cb) cb(false, a);
+      }
+    }).catch(function () {
+      var a = signIn(provider || "email");
+      if (cb) cb(false, a);
+    });
   }
 
   // ─── plan descriptions (for settings page) ─────────────────────────
@@ -197,8 +325,14 @@
     entitled: entitled,
     deductUnits: deductUnits,
     addUnits: addUnits,
+    setPlan: setPlan,
     signIn: signIn,
+    signInRemote: signInRemote,
     signOut: signOut,
+    hydrate: hydrate,
+    onServer: onServer,
+    syncCasting: syncCasting,
+    deleteCastingRemote: deleteCastingRemote,
     initials: initials,
     planName: planName,
     planGrant: planGrant,
