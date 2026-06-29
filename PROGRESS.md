@@ -75,6 +75,24 @@
 
 ---
 
+## 🔴 TODO — 重复页面/逻辑（结构问题）
+
+**升级弹窗（index.html `#plansOverlay`）与定价页（pricing.html）功能大量重叠** —
+两者都实现了同一套 Free/Pro/Premium 三档 + 购买流程，各写一遍：
+
+- 套餐数据（价格、grant）在 **三处**硬编码：`account.js PLANS` + 弹窗 + 定价页 →
+  必然漂移（之前改旧价/旧名要在多处分别修，根因即此）。
+- 购买点击逻辑两套：一套在 chat-app.js，一套在 pricing.html 内联。
+
+**整合方案（待做）**：保留两个入口（弹窗=app 内快捷 upsell，定价页=营销），但
+- 卡片统一从 `BWAccount.PLANS` 渲染，不再硬编码；
+- 购买统一走一个 `BWAccount.purchase(plan)` / `topup(amount)` 共享函数。
+- 结果：一份数据 + 一份逻辑的两个视图。
+
+> 注：本项涉及视觉，与"页面凌乱"一并在美术解冻后处理。
+
+---
+
 ## 待办（非美术）
 
 - [ ] Stripe 真实支付（checkout + webhook → 自动发点数/改套餐），替换 `/plan`、`/grant` 的 stub
