@@ -185,11 +185,11 @@
           <div class="rr"><span class="plan-badge" id="planBadge">—</span></div>
         </div>
         <div class="row">
-          <div class="rl"><b>Ledger balance</b><span>Spend 100 on a Stria 64, 1,000 on a Sortis 6.</span></div>
+          <div class="rl"><b>Ledger balance</b><span>Spend 300 on a Stria 64, 1,500 on a Sortis 6.</span></div>
           <div class="rr" style="display:flex;gap:10px;align-items:center"><b style="font-family:var(--serif);font-size:20px" id="unitsBig">—</b><a class="btn" href="./pricing.html">Add Units</a></div>
         </div>
         <div class="row">
-          <div class="rl"><b>Manage subscription</b><span>Change cadence, or step down to Wanderer.</span></div>
+          <div class="rl"><b>Manage subscription</b><span>Change cadence, upgrade or downgrade.</span></div>
           <div class="rr"><a class="btn ink" href="./pricing.html">Manage plans</a></div>
         </div>
       </div>
@@ -234,13 +234,7 @@
 
   var toastEl = document.getElementById("toast");
   function toast(m) { toastEl.textContent = m; toastEl.classList.add("on"); clearTimeout(toast._t); toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600); }
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-  function entitled(p){return p==="pro"||p==="premium";}
-
-  var METHODS = [
-    { id:"stria", name:"Stria 64", cost:300, blurb:"The daily draw — one figure, six lines. Fast and blunt." },
-    { id:"sortis", name:"Sortis 6", cost:1500, blurb:"The deep casting — moving lines cross into a second figure. Pro plan and up.", gated:true }
-  ];
+  var esc = A.esc;
 
   function render() {
     var s = A.state(), a = s.account;
@@ -274,16 +268,15 @@
 
     /* plan */
     document.getElementById("planBadge").textContent = A.planName(a.plan);
-    document.getElementById("planSub").textContent = a.plan === "free"
-      ? "Free · 300 Units trial · Stria 64 only"
-      : (a.plan === "pro" ? "$19/mo · 22,500 Units monthly · Sortis 6 unlocked" : "$29/mo · 45,000 Units monthly · all methods");
+    document.getElementById("planSub").textContent = A.planDescription(a.plan);
 
     /* methods */
     var mw = document.getElementById("methods");
     mw.innerHTML = "";
-    METHODS.forEach(function (m) {
-      var ok = !m.gated || entitled(a.plan);
-      var sel = s.method === m.id;
+    A.METHOD_ORDER.forEach(function (id) {
+      var m = A.METHODS[id];
+      var ok = A.entitled(id);
+      var sel = s.method === id;
       var row = document.createElement("div");
       row.className = "mrow" + (sel ? " sel" : "") + (ok ? "" : " locked");
       row.innerHTML =
@@ -309,9 +302,7 @@
       sessSub.textContent = "Signed in as " + a.name + ".";
       sessRr.innerHTML = '<button class="btn" id="signout">Sign out</button>';
       document.getElementById("signout").addEventListener("click", function () {
-        var s2 = A.state(); s2.account = { name:"Guest", email:"", plan:"free", avatar:"G", signedIn:false };
-        if (s2.method === "sortis") s2.method = "stria";
-        A.save(s2); render(); toast("Signed out — your ledger stays put on this device.");
+        A.signOut(); render(); toast("Signed out — your ledger stays put on this device.");
       });
     } else {
       sessSub.textContent = "Casting as a guest.";

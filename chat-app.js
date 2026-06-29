@@ -1,27 +1,14 @@
 /* BourneWise paper chat — working app logic (vanilla JS).
-   State persists in localStorage under bw-paper-chat (shared with account.js). */
+   All state, plans, methods, and entitlements come from BWAccount (account.js).
+   This file owns UI rendering and the casting flow — nothing else. */
 (function () {
   "use strict";
 
-  var STORE = "bw-paper-chat";
+  var A = window.BWAccount;
   var RAIL = "bw-paper-rail";
 
-  /* ── the two casting models — deliberately distinct ── */
-  var METHODS = {
-    stria: {
-      id: "stria", name: "Stria 64", cost: 300, tag: "Baseline analysis",
-      depth: "Primary hexagram framework",
-      blurb: "Baseline analysis. A primary structural map of the situation you are currently navigating.",
-      gated: false
-    },
-    sortis: {
-      id: "sortis", name: "Sortis 6", cost: 1500, tag: "Causal synthesis",
-      depth: "Transformed hexagram framework",
-      blurb: "Causal synthesis. Evaluates dynamic lines to project outcomes for complex, high-stakes decisions.",
-      gated: true
-    }
-  };
-  var ORDER = ["stria", "sortis"];
+  var METHODS = A.METHODS;
+  var ORDER = A.METHOD_ORDER;
 
   var FIGURES = window.BWFigure ? window.BWFigure.NAMES : ["The Well", "The Crossing"];
   var CANNED = [
@@ -33,70 +20,43 @@
     { text: "Traversing this life transition is supported, but not in isolation. Identify the |primary ally| this dynamic relies upon and integrate them into your trajectory." }
   ];
 
-  /* ── state ── */
-  function load() {
-    var s = null;
-    try { s = JSON.parse(localStorage.getItem(STORE)); } catch (e) {}
-    if (!s || typeof s !== "object") s = {};
-    if (typeof s.units !== "number") s.units = 300;
-    if (!METHODS[s.method]) s.method = "stria";
-    if (!Array.isArray(s.convs)) s.convs = [];
-    if (!("activeId" in s)) s.activeId = null;
-    if (!s.account || typeof s.account !== "object")
-      s.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
-    if (!s.account.plan) s.account.plan = "free";
-    return s;
-  }
-  var S = load();
-  function save() { try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {} }
+  var S = A.state();
+  function save() { A.save(S); }
 
   function activeConv() {
     for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === S.activeId) return S.convs[i];
     return null;
   }
   function method() { return METHODS[S.method] || METHODS.stria; }
-  function entitled(id) {
-    if (!METHODS[id].gated) return true;
-    var p = S.account.plan;
-    return p === "pro" || p === "premium";
-  }
 
   /* ── els ── */
   var $ = function (id) { return document.getElementById(id); };
   var threadInner = $("threadInner"), castList = $("castList"), toastEl = $("toast");
-  var heroEmpty = document.getElementById("heroEmpty"); /* landing single-page: marketing empty state */
+  var heroEmpty = document.getElementById("heroEmpty");
   var busy = false;
-
-  function esc(s) {
-    return String(s).replace(/[&<>"]/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
-    });
-  }
+  var esc = A.esc;
 
   /* ── render: ledger + account ── */
   function renderUnits() {
     var u = S.units.toLocaleString("en-US");
     $("unitsSide").textContent = u;
     $("unitsTop").textContent = u + " units";
-    var grant = (window.BWAccount && BWAccount.PLANS[S.account.plan] && BWAccount.PLANS[S.account.plan].grant) || 3000;
+    var grant = A.planGrant(S.account.plan);
     var pct = Math.max(4, Math.min(100, Math.round(S.units / grant * 100)));
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
-    var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = planLabel(S.account.plan);
-    var cap = $("unitsCap"); if (cap) cap.textContent = planLabel(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo";
-  }
-  function planLabel(p) {
-    return { free: "Free", pro: "Pro", premium: "Premium" }[p] || "Free";
+    var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
+    var cap = $("unitsCap"); if (cap) cap.textContent = A.planName(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo";
   }
   function renderAccount() {
     var a = S.account;
     var foot = $("acctBtn");
     foot.querySelector(".avatar").textContent = a.signedIn ? (a.avatar || "EV") : "G";
     foot.querySelector("b").textContent = a.name;
-    foot.querySelector("i").textContent = a.signedIn ? (planLabel(a.plan) + " plan") : "Not signed in";
+    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Not signed in";
     var menu = $("acctMenu");
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to keep your ledger";
-    $("miPlans").querySelector("b").textContent = planLabel(a.plan).toUpperCase();
+    $("miPlans").querySelector("b").textContent = A.planName(a.plan).toUpperCase();
   }
 
   function renderMethod() {
@@ -112,7 +72,7 @@
     menu.innerHTML = '<div class="mm-head lbl">Select analysis depth</div>';
     ORDER.forEach(function (id) {
       var m = METHODS[id];
-      var ok = entitled(id);
+      var ok = A.entitled(id);
       var active = id === S.method;
       var row = document.createElement("button");
       row.className = "mm-row" + (active ? " active" : "") + (ok ? "" : " locked");
@@ -464,7 +424,7 @@
     text = (text || "").trim();
     if (!text || busy) return;
     var m = method();
-    if (!entitled(m.id)) { S.method = "stria"; m = method(); }
+    if (!A.entitled(m.id)) { S.method = "stria"; save(); m = method(); }
     if (S.units < m.cost) { openPlans(); toast("Your unit balance is depleted — " + m.cost.toLocaleString("en-US") + " units required."); return; }
 
     if (!activeConv()) {
@@ -675,8 +635,8 @@
   /* ── sidebar rail ── */
   if (localStorage.getItem(RAIL) === "1") document.body.classList.add("rail");
   $("sideToggle").addEventListener("click", function () {
-    var rail = document.body.classList.toggle("rail");
-    try { localStorage.setItem(RAIL, rail ? "1" : "0"); } catch (e) {}
+    var r = document.body.classList.toggle("rail");
+    try { localStorage.setItem(RAIL, r ? "1" : "0"); } catch (e) {}
   });
 
   /* ── account menu ── */
@@ -692,9 +652,9 @@
   $("miSettings").addEventListener("click", function () { location.href = "./settings.html"; });
   $("miSignout").addEventListener("click", function () {
     closeMenu();
-    S.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
-    if (S.method === "sortis") S.method = "stria";
-    save(); renderAll();
+    A.signOut();
+    S = A.state();
+    renderAll();
     toast("Signed out — your history and balance remain secure.");
   });
 

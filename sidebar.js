@@ -147,9 +147,9 @@
       a.title = c.title;
       a.addEventListener("click", function () {
         try {
-          var st = JSON.parse(localStorage.getItem("bw-paper-chat")) || {};
+          var st = A.state();
           st.activeId = c.id;
-          localStorage.setItem("bw-paper-chat", JSON.stringify(st));
+          A.save(st);
         } catch (e) {}
       });
       hist.appendChild(a);

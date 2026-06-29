@@ -1,19 +1,29 @@
-/* BourneWise — shared account + ledger state (the "backend" the app pages read).
-   One source of truth in localStorage under "bw-paper-chat", so the chat, the
-   sidebar account row, settings, pricing and the casting detail all agree.
+/* BourneWise — single source of truth for state, plans, methods, and entitlements.
+   Every page reads/writes through window.BWAccount. No other file touches localStorage
+   for billing data or duplicates these definitions.
 
    window.BWAccount:
-     .state()            -> the full store (loads/normalises defaults)
+     .PLANS              -> canonical plan table
+     .METHODS            -> canonical method table (cost, gating, descriptions)
+     .METHOD_ORDER       -> display ordering ["stria","sortis"]
+     .state()            -> full store (loads + normalises defaults)
      .save(s)            -> persist
      .account()          -> {name,email,plan,avatar,signedIn}
-     .signIn(provider)   -> set a demo account for Google/Apple/dev
-     .signOut()
-     .paintSidebar(opts) -> fill .side-foot (+ ledger count) on app-chrome pages
-     .initials(name)
-   PLANS is the canonical plan table (kept in sync with pricing.html). */
+     .signIn(provider)   -> set a demo account
+     .signOut()          -> reset to guest
+     .entitled(methodId) -> can the current plan use this method?
+     .deductUnits(n)     -> subtract n, persist, return new balance
+     .addUnits(n)        -> add n, persist, return new balance
+     .planName(id)       -> human label for a plan id
+     .methodCost(id)     -> unit cost for a method id
+     .initials(name)     -> "EV" from "Elias Vance"
+     .paintSidebar(opts) -> fill sidebar chrome from state
+     .esc(s)             -> HTML-escape a string                          */
 (function () {
   "use strict";
   var STORE = "bw-paper-chat";
+
+  // ─── canonical tables (single source — never duplicate elsewhere) ───
 
   var PLANS = {
     free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 300,   methods: ["stria"], trial: true },
@@ -21,21 +31,67 @@
     premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 45000, methods: ["stria", "sortis"] }
   };
 
+  var METHODS = {
+    stria: {
+      id: "stria", name: "Stria 64", cost: 300, tag: "Baseline analysis",
+      depth: "Primary hexagram framework",
+      blurb: "Baseline analysis. A primary structural map of the situation you are currently navigating.",
+      gated: false
+    },
+    sortis: {
+      id: "sortis", name: "Sortis 6", cost: 1500, tag: "Causal synthesis",
+      depth: "Transformed hexagram framework",
+      blurb: "Causal synthesis. Evaluates dynamic lines to project outcomes for complex, high-stakes decisions.",
+      gated: true
+    }
+  };
+  var METHOD_ORDER = ["stria", "sortis"];
+
+  var DEFAULT_ACCOUNT = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
+
+  // ─── state ──────────────────────────────────────────────────────────
+
   function load() {
     var s = null;
     try { s = JSON.parse(localStorage.getItem(STORE)); } catch (e) {}
     if (!s || typeof s !== "object") s = {};
-    if (typeof s.units !== "number") s.units = 300;
-    if (!s.method) s.method = "stria";
+    if (typeof s.units !== "number") s.units = PLANS.free.grant;
+    if (!METHODS[s.method]) s.method = "stria";
     if (!Array.isArray(s.convs)) s.convs = [];
     if (!("activeId" in s)) s.activeId = null;
     if (!s.account || typeof s.account !== "object") {
-      s.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
+      s.account = clone(DEFAULT_ACCOUNT);
     }
-    if (!s.account.plan) s.account.plan = "free";
+    if (!PLANS[s.account.plan]) s.account.plan = "free";
     return s;
   }
   function save(s) { try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (e) {} }
+
+  // ─── entitlements ───────────────────────────────────────────────────
+
+  function entitled(methodId) {
+    if (!METHODS[methodId] || !METHODS[methodId].gated) return true;
+    var plan = load().account.plan;
+    return plan === "pro" || plan === "premium";
+  }
+
+  // ─── ledger operations ──────────────────────────────────────────────
+
+  function deductUnits(n) {
+    var s = load();
+    s.units = Math.max(0, s.units - n);
+    save(s);
+    return s.units;
+  }
+
+  function addUnits(n) {
+    var s = load();
+    s.units += n;
+    save(s);
+    return s.units;
+  }
+
+  // ─── identity ───────────────────────────────────────────────────────
 
   function initials(name) {
     var p = String(name || "").trim().split(/\s+/).filter(Boolean);
@@ -45,6 +101,8 @@
   }
 
   function planName(id) { return (PLANS[id] || PLANS.free).name; }
+  function methodCost(id) { return (METHODS[id] || METHODS.stria).cost; }
+  function planGrant(id) { return (PLANS[id] || PLANS.free).grant; }
 
   function signIn(provider) {
     var s = load();
@@ -64,17 +122,25 @@
     save(s);
     return s.account;
   }
+
   function signOut() {
     var s = load();
-    s.account = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
+    s.account = clone(DEFAULT_ACCOUNT);
+    if (METHODS[s.method] && METHODS[s.method].gated) s.method = "stria";
     save(s);
     return s.account;
   }
 
-  /* Fill the standard sidebar account row + (optional) ledger count.
-     opts.foot   = selector/element of the .side-foot row (default ".side-foot")
-     opts.menuWho= selector of the .acct-menu .who block (optional)
-     opts.units  = selector(s) to write the unit count into (optional) */
+  // ─── plan descriptions (for settings page) ─────────────────────────
+
+  function planDescription(id) {
+    if (id === "free") return "Free · " + PLANS.free.grant + " Units trial · Stria 64 only";
+    if (id === "pro") return "$" + PLANS.pro.price + "/mo · " + PLANS.pro.grant.toLocaleString("en-US") + " Units monthly · Sortis 6 unlocked";
+    return "$" + PLANS.premium.price + "/mo · " + PLANS.premium.grant.toLocaleString("en-US") + " Units monthly · all methods";
+  }
+
+  // ─── sidebar paint ──────────────────────────────────────────────────
+
   function paintSidebar(opts) {
     opts = opts || {};
     var s = load(), a = s.account;
@@ -106,13 +172,39 @@
     }
     return a;
   }
+
+  // ─── utilities ──────────────────────────────────────────────────────
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
   function resolve(x) { return typeof x === "string" ? document.querySelector(x) : x; }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  // ─── public API ─────────────────────────────────────────────────────
 
   window.BWAccount = {
     PLANS: PLANS,
-    state: load, save: save,
+    METHODS: METHODS,
+    METHOD_ORDER: METHOD_ORDER,
+    DEFAULT_ACCOUNT: DEFAULT_ACCOUNT,
+    state: load,
+    save: save,
     account: function () { return load().account; },
-    signIn: signIn, signOut: signOut,
-    initials: initials, planName: planName, paintSidebar: paintSidebar
+    entitled: entitled,
+    deductUnits: deductUnits,
+    addUnits: addUnits,
+    signIn: signIn,
+    signOut: signOut,
+    initials: initials,
+    planName: planName,
+    planGrant: planGrant,
+    planDescription: planDescription,
+    methodCost: methodCost,
+    paintSidebar: paintSidebar,
+    esc: esc
   };
 })();
