@@ -1,0 +1,174 @@
+<!-- BourneWise — Terms of Service. Part of the "Paper site" template (entry: index.html) -->
+<!DOCTYPE html>
+<html lang="en" data-skin="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — BourneWise</title>
+<style>html,body{background:#fff}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;600&family=Pacifico&display=swap">
+<link rel="stylesheet" href="./styles.css">
+<script src="./ds-base.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  em,i{font-style:normal}
+  html,body{height:100%}
+  body{min-height:100%;background:#fff;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
+    background-image:none;background-position:0 0,200px 140px}
+  a{color:inherit;text-decoration:none}
+  .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
+  a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
+
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+
+  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:760px;margin:0 auto;width:100%}
+  .brand{display:flex;align-items:center;gap:9px}
+  .mark{width:26px;height:21px;color:var(--ink)}
+  .brand b{font-family:var(--serif);font-weight:600;font-size:18px}
+  .pagehead .ghost{font-size:13.5px;color:var(--dim);transition:color .15s;white-space:nowrap}
+  .pagehead .ghost:hover{color:var(--ink)}
+
+  .legal{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:30px 40px 80px}
+  .legal .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:16px}
+  .legal .eyebrow b{color:var(--terracotta);font-weight:400}
+  .legal h1{font-family:"Fraunces",var(--serif,serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:.98;letter-spacing:-.03em}
+  .meta{margin-top:14px;font-size:12.5px;color:var(--ghost);letter-spacing:.03em}
+  .lede{font-family:var(--serif);font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
+
+  .toc{margin-top:26px;padding:16px 20px;background:var(--paper-raised);border:1px solid var(--line);border-radius:12px;columns:2;column-gap:26px}
+  .toc a{display:block;font-size:13px;color:var(--dim);padding:3px 0;transition:color .15s;break-inside:avoid}
+  .toc a:hover{color:var(--terracotta)}
+  .toc a .n{color:var(--terracotta);font-size:11px;margin-right:8px}
+
+  .clause{margin-top:34px;scroll-margin-top:20px}
+  .clause h2{display:flex;align-items:baseline;gap:11px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
+  .clause h2 .n{font-family:var(--serif);font-size:13px;color:var(--terracotta);letter-spacing:0}
+  .clause p,.clause li{font-family:var(--serif);font-size:15px;line-height:1.72;color:var(--ink);margin-top:12px;text-wrap:pretty}
+  .clause ul{margin:6px 0 0;padding-left:20px}
+  .clause li{margin-top:7px}
+  .clause li::marker{color:var(--terracotta)}
+  .clause + .clause{border-top:1px solid var(--line-soft);padding-top:8px}
+
+  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:var(--paper-raised);border-radius:0 11px 11px 0;font-family:var(--serif);font-size:15.5px;color:var(--ink)}
+
+  .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
+  .legal-foot .links{display:flex;gap:18px;flex-wrap:wrap}
+  .legal-foot a{font-size:13px;color:var(--dim);transition:color .15s}
+  .legal-foot a:hover{color:var(--terracotta)}
+  .legal-foot a.on{color:var(--ink);font-weight:500}
+  .legal-foot .est{font-size:11.5px;letter-spacing:var(--tracking-label);color:var(--ghost)}
+
+  @media (max-width:600px){.pagehead{padding:16px 18px}.legal{padding:24px 20px 60px}.toc{columns:1}}
+</style>
+</head>
+<body>
+
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+
+<header class="pagehead">
+  <a class="brand" href="./index.html" aria-label="BourneWise home">
+    <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+    <b>BourneWise</b>
+  </a>
+  <a class="ghost" href="./index.html">&larr; Back to home</a>
+</header>
+
+<main class="legal">
+  <div class="eyebrow"><b>&#9670;</b><span>The terms, said plainly</span></div>
+  <h1>Terms of Service</h1>
+  <div class="meta">Effective June 14, 2026 &middot; BourneWise, Inc.</div>
+  <p class="lede">BourneWise gives you one honest judgment in exchange for Units. These terms set out what we promise, what we don&rsquo;t, and the few rules that keep the oracle usable for everyone. Read them — they are short on purpose.</p>
+
+  <nav class="toc" aria-label="Contents">
+    <a href="#accept"><span class="n">01</span>Accepting these terms</a>
+    <a href="#account"><span class="n">02</span>Your account</a>
+    <a href="#units"><span class="n">03</span>Units &amp; castings</a>
+    <a href="#plans"><span class="n">04</span>Plans &amp; billing</a>
+    <a href="#nature"><span class="n">05</span>The nature of a reading</a>
+    <a href="#conduct"><span class="n">06</span>Acceptable use</a>
+    <a href="#ip"><span class="n">07</span>Ownership</a>
+    <a href="#liability"><span class="n">08</span>Disclaimers &amp; liability</a>
+    <a href="#changes"><span class="n">09</span>Changes &amp; termination</a>
+    <a href="#contact"><span class="n">10</span>Contact</a>
+  </nav>
+
+  <section class="clause" id="accept">
+    <h2><span class="n">01</span> Accepting these terms</h2>
+    <p>By creating an account, signing in, or casting a question, you agree to these Terms and to our <a href="./privacy.html">Privacy Policy</a> and <a href="./refund.html">Refund Policy</a>. If you do not agree, do not use BourneWise. You must be at least 16 years old, and old enough to enter a contract where you live.</p>
+  </section>
+
+  <section class="clause" id="account">
+    <h2><span class="n">02</span> Your account</h2>
+    <p>You may sign in with Google or Apple. You are responsible for the activity on your account and for keeping access to it secure. Tell us promptly if you suspect someone else is using it. One person, one account; don&rsquo;t share credentials or resell access.</p>
+  </section>
+
+  <section class="clause" id="units">
+    <h2><span class="n">03</span> Units &amp; castings</h2>
+    <p>A casting is paid for in <em>Units</em>, the consumable that powers the oracle. A Stria 64 costs 100 Units; a Sortis 6 costs 1,000 Units. When you submit a question, the oracle draws a figure and the Units are spent at that moment.</p>
+    <p>Units have no cash value, cannot be transferred between accounts, and are not a stored-value or payment instrument. They are consumed on use and, once a casting is drawn, they are non-refundable. See the <a href="./refund.html">Refund Policy</a> for the full detail.</p>
+  </section>
+
+  <section class="clause" id="plans">
+    <h2><span class="n">04</span> Plans &amp; billing</h2>
+    <p>Wanderer is free. Seeker and Adept are paid subscriptions billed in advance on a recurring basis through our payment processor. Your monthly Unit grant is added at the start of each billing period.</p>
+    <ul>
+      <li>You can cancel at any time; cancellation stops the next renewal and takes effect at the end of the current period.</li>
+      <li>Prices may change with at least 30 days&rsquo; notice before your next renewal.</li>
+      <li>Failed payments may pause your grant and lock paid castings until resolved.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="nature">
+    <h2><span class="n">05</span> The nature of a reading</h2>
+    <p>BourneWise is a tool for reflection. A reading is a <em>judgment, not a guarantee</em>, and not professional advice. It is not a substitute for a doctor, lawyer, financial adviser, or therapist. Do not rely on a casting for decisions about health, safety, legal matters, money, or anything where a wrong call carries real harm. You are responsible for what you choose to do.</p>
+  </section>
+
+  <section class="clause" id="conduct">
+    <h2><span class="n">06</span> Acceptable use</h2>
+    <p>Use BourneWise lawfully and in good faith. Do not:</p>
+    <ul>
+      <li>break the law, or ask the oracle to help you do so;</li>
+      <li>submit another person&rsquo;s private information without their consent;</li>
+      <li>probe, scrape, overload, or reverse-engineer the service, or evade Unit charges;</li>
+      <li>resell readings or pass the output off as professional advice to others.</li>
+    </ul>
+    <p>We may suspend accounts that abuse the service or put other people at risk.</p>
+  </section>
+
+  <section class="clause" id="ip">
+    <h2><span class="n">07</span> Ownership</h2>
+    <p>The questions you write and the readings you receive are yours to keep and use. The BourneWise name, marks, figures, software, and interface are ours. We grant you a personal, non-exclusive, non-transferable licence to use the service while these Terms are in force.</p>
+  </section>
+
+  <section class="clause" id="liability">
+    <h2><span class="n">08</span> Disclaimers &amp; liability</h2>
+    <p>BourneWise is provided &ldquo;as is.&rdquo; To the fullest extent the law allows, we disclaim implied warranties and are not liable for indirect, incidental, or consequential losses, or for any decision made in reliance on a reading.</p>
+    <div class="pull">Where liability cannot be excluded, our total liability to you is limited to the greater of the amount you paid us in the prior three months, or US $50.</div>
+  </section>
+
+  <section class="clause" id="changes">
+    <h2><span class="n">09</span> Changes &amp; termination</h2>
+    <p>We may update these Terms; if a change is material we will give reasonable notice, and continued use after it takes effect means you accept it. You may stop using BourneWise at any time. We may suspend or close accounts that breach these Terms, and you can delete yours from <a href="./settings.html">Settings</a> at any time.</p>
+  </section>
+
+  <section class="clause" id="contact">
+    <h2><span class="n">10</span> Contact</h2>
+    <p>Questions about these Terms go to <a href="mailto:hello@bournewise.com">hello@bournewise.com</a>. These Terms are governed by the laws of the State of Delaware, USA, without regard to conflict-of-laws rules.</p>
+  </section>
+
+  <div class="legal-foot">
+    <div class="links">
+      <a class="on" href="./terms.html">Terms</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./refund.html">Refund</a>
+      <a href="./about.html">About</a>
+    </div>
+    <span class="est">BourneWise &middot; est. on older logic</span>
+  </div>
+</main>
+
+<script src="./assets/backgrounds/mountain-range.js"></script>
+</body>
+</html>

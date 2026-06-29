@@ -1,0 +1,79 @@
+/* BourneWise color system.
+   Every theme is exactly FOUR colors (--c1..--c4) plus a legible ink for each
+   (--on1..--on4). Structural surfaces are flat, hard-edged slabs of these.
+
+   Roles:
+   --c1  main field   (chat feed background, poster lead block)
+   --c2  side field   (sidebar, secondary blocks, composer fill)
+   --c3  accent       (brand actions, highlight pills, send button)
+   --c4  slab         (user bubbles, counters, decisive accent stripes)
+
+   Default theme: Harbour Dusk (deep bases, light text). Switch with
+   data-theme on <html> or any subtree root:
+   "harbour" (daylight) | "earth" | "royal" | "winter" | "white". */
+
+:root {
+  /* Harbour Dusk · deep bases, light text — the default.
+     The original daylight Harbour lives at data-theme="harbour". */
+  --c1: #2A211B;  --on1: #F2E7D5;
+  --c2: #25395C;  --on2: #E8EDF5;
+  --c3: #C96A3B;  --on3: #2E1B10;
+  --c4: #EFDFC4;  --on4: #38291D;
+
+  /* semantic aliases — components reference these, never raw hexes */
+  --surface-main: var(--c1);
+  --surface-side: var(--c2);
+  --accent: var(--c3);
+  --slab: var(--c4);
+  --text-main: var(--on1);
+  --text-on-side: var(--on2);
+  --text-on-accent: var(--on3);
+  --text-on-slab: var(--on4);
+
+  /* derived utility inks (use color-mix to stay theme-proof) */
+  --text-muted: color-mix(in oklab, var(--on1) 64%, var(--c1));
+  --hairline: color-mix(in oklab, var(--on1) 22%, var(--c1));
+  --wash: color-mix(in oklab, var(--on1) 6%, var(--c1));
+  --side-wash: rgba(255, 255, 255, .16);
+  --focus-ring: color-mix(in oklab, var(--c3) 70%, var(--on1));
+}
+
+[data-theme="harbour"] {
+  /* Harbour · warm daylight (the original) */
+  --c1: #F5D6A1;  --on1: #4C3A3A;
+  --c2: #4990EA;  --on2: #FFFFFF;
+  --c3: #C46537;  --on3: #FFFFFF;
+  --c4: #4C3A3A;  --on4: #F5E6CF;
+}
+
+[data-theme="earth"] {
+  /* Earth & Sky */
+  --c1: #6C3428;  --on1: #FFFFFF;
+  --c2: #BA704F;  --on2: #FFFFFF;
+  --c3: #DFA878;  --on3: #3A1C14;
+  --c4: #CEE6F3;  --on4: #1E3A47;
+}
+
+[data-theme="royal"] {
+  /* Royal · Blue & Gold */
+  --c1: #3852B4;  --on1: #FFFFFF;
+  --c2: #5E7AC4;  --on2: #1A2552;
+  --c3: #F3BE7A;  --on3: #1A2552;
+  --c4: #F08D39;  --on4: #3A2410;
+}
+
+[data-theme="winter"] {
+  /* Winter · Roerich */
+  --c1: #EEF0F7;  --on1: #2A2C4E;
+  --c2: #4D508D;  --on2: #FFFFFF;
+  --c3: #F4B27B;  --on3: #3A2410;
+  --c4: #8CAED9;  --on4: #1E2E40;
+}
+
+[data-theme="white"] {
+  /* White · graphite minimal */
+  --c1: #FFFFFF;  --on1: #1F1F1F;
+  --c2: #1F1F1F;  --on2: #FFFFFF;
+  --c3: #444746;  --on3: #FFFFFF;
+  --c4: #E3E3E3;  --on4: #1F1F1F;
+}

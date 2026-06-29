@@ -1,0 +1,68 @@
+/* BourneWise "Paper" skin — the archival alternate direction.
+   Scope: set data-skin="paper" on <html> or any subtree root.
+   Source: uploads/bournwise-kit (Claude-blueprint oracle chat).
+
+   This skin is a deliberate, SCOPED exception to the slab system's
+   hard-edge rules: soft radii (6–13px), faint paper textures
+   (opacity 0.04–0.10 — squint test: pattern disappears, "paper"
+   remains), and its own two type families.
+
+   Discipline carried over from the kit:
+   · --terracotta is THE accent — ≤3 uses per view, one gilded
+     keyword per reading.
+   · One Prussian-blue block per page, maximum (ledger / login hero).
+   · Labels: 11.5px, +0.09em tracking, sentence case. Never all caps.
+   · Textures ship at the opacity baked into the SVGs. Do not raise it. */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+
+[data-skin="paper"] {
+  /* palette — aged Eurasian terracotta: tea-stained plaster grounds,
+     burnt-clay accent, warm sepia inks. Deeper + more weathered than the
+     original cream skin; the whole field reads like old paper and fired earth. */
+  --paper: #EBDDC2;         /* base field — toasted, tea-stained plaster */
+  --paper-raised: #F4E9D2;  /* inputs, raised cards — lifted aged cream */
+  --paper-dim: #DECCAB;     /* hover / active fills — sun-faded clay */
+  --chip: #DAC7A3;          /* pills, method chips — kneaded earth */
+  --ink: #2A2016;           /* primary text — warm sepia-black, not neutral */
+  --dim: #6A5238;           /* secondary text — walnut umber */
+  --faint: #927A5C;         /* labels — faded sienna */
+  --ghost: #AA9170;         /* fine print — dusty ochre */
+  --terracotta: #B5502C;    /* THE accent — deep burnt clay / fired terracotta */
+  --prussian: #284C82;      /* one block per page max — aged indigo */
+  --prussian-deep: #1C3E69;
+  --line: #CDB792;          /* borders on raised elements */
+  --line-soft: #D8C7A4;     /* in-field rules */
+
+  /* two families, two jobs */
+  --serif: "Source Serif 4", Georgia, serif; /* @kind font */        /* oracle voice, brand, numbers, italic titles */
+  --sans: "Hanken Grotesk", system-ui, sans-serif; /* @kind font */  /* everything else */
+  --font-serif: var(--serif);
+  --font-sans: var(--sans);
+
+  /* type jobs (kit-exact) */
+  --text-reading: 23px;     /* oracle answers — serif, line-height 1.55 */
+  --text-label: 11.5px;     /* system labels — sans, tracked */
+  --tracking-label: .09em;
+
+  /* textures (paths relative to project root — re-resolve per page) */
+  /* assets/textures/paper-foxing.svg     site-wide body background  */
+  /* assets/textures/map-graticule.svg    chat thread, empty states  */
+  /* assets/textures/engraving-hatch.svg  cards / sidebar low-noise  */
+  /* assets/textures/cyanotype.svg        login & hero only          */
+  /* assets/textures/whorl-labyrinth.svg  site / landing background  */
+
+  /* semantic aliases remapped so themed pieces inherit the skin */
+  --surface-main: var(--paper);
+  --surface-side: var(--paper);
+  --accent: var(--terracotta);
+  --slab: var(--prussian);
+  --text-main: var(--ink);
+  --text-on-side: var(--ink);
+  --text-on-accent: var(--paper);
+  --text-on-slab: #EAF1F8;
+  --text-muted: var(--dim);
+  --hairline: var(--line);
+  --wash: var(--paper-dim);
+  --side-wash: var(--paper-dim);
+  --focus-ring: var(--terracotta);
+}

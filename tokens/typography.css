@@ -1,0 +1,43 @@
+/* BourneWise typography.
+   Three voices, strictly cast:
+   Fraunces  — headings, AI verdicts (classical authority)
+   Inter     — body copy, user inputs, UI labels (modern friendliness)
+   JetBrains Mono — metadata, counters, CTAs, ledger numbers (precision)
+   Pacifico  — the brand wordmark, nothing else */
+
+:root {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-brand: "Pacifico", cursive;
+
+  /* scale */
+  --text-poster: clamp(40px, 6vw, 76px); /* hero/poster display */
+  --text-display: 32px;   /* page titles */
+  --text-title: 24px;     /* section titles */
+  --text-verdict: 17px;   /* AI verdict prose (serif) */
+  --text-body: 15px;      /* body, chat input */
+  --text-small: 12px;     /* secondary UI */
+  --text-meta: 11px;      /* mono metadata, pills */
+  --text-micro: 10px;     /* mono CTAs, ledger labels */
+
+  /* weights */
+  --weight-poster: 900;   /* Fraunces black for posters only */
+  --weight-display: 600;  /* Fraunces semibold for headings */
+  --weight-em: 500;       /* Fraunces italic emphasis */
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-strong: 600;
+
+  /* rhythm */
+  --leading-poster: .92;
+  --leading-tight: 1.2;
+  --leading-verdict: 1.55;
+  --leading-body: 1.5;
+
+  /* mono labels are tracked but NEVER all-caps — sentence case everywhere */
+  --tracking-poster: -.03em;
+  --tracking-label: .06em;
+  --tracking-meta: .08em;
+  --tracking-wide: .12em;
+}

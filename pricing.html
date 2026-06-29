@@ -1,0 +1,287 @@
+<!-- BourneWise — Plans & Units. Part of the "Paper site" template (entry: index.html) -->
+<!DOCTYPE html>
+<html lang="en" data-skin="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plans &amp; balance — BourneWise</title>
+<style>html,body{background:#EBDDC2}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;600&family=Pacifico&display=swap">
+<link rel="stylesheet" href="./styles.css">
+<script src="./ds-base.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  em,i{font-style:normal}
+  html,body{height:100%}
+  body{min-height:100%;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
+  .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
+
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+
+  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1040px;margin:0 auto;width:100%}
+  .brand{display:flex;align-items:center;gap:9px}
+  .mark{width:27px;height:22px;color:var(--ink)}
+  .brand b{font-family:var(--serif);font-weight:600;font-size:18px}
+  .nav{display:flex;align-items:center;gap:20px}
+  .nav .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
+  .nav .ghost:hover{color:var(--ink)}
+  .nav .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;white-space:nowrap}
+
+  .shell{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 30px 70px}
+
+  .hero{text-align:center;padding:46px 0 30px}
+  .hero .eyebrow{display:inline-flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:18px}
+  .hero .eyebrow b{color:var(--terracotta);font-weight:400}
+  .hero h1{font-family:"Fraunces",var(--serif,serif);font-weight:900;font-size:clamp(40px,5.6vw,72px);line-height:.98;letter-spacing:-.03em;text-wrap:balance}
+  .hero h1 em{font-style:normal;font-weight:500;color:var(--terracotta)}
+  .hero p{font-family:var(--serif);font-size:18px;color:var(--dim);margin-top:18px;max-width:50ch;margin-inline:auto;text-wrap:pretty}
+
+  /* current-ledger strip */
+  .ledgerstrip{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;background:var(--paper-raised);border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
+  .ledgerstrip b{font-family:var(--serif);font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .ledgerstrip .who{color:var(--faint)}
+  .ledgerstrip a{background:var(--chip);border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.04em;color:var(--ink)}
+  .ledgerstrip a:hover{background:var(--paper-dim)}
+
+  /* plans */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;align-items:stretch}
+  .plan{display:flex;flex-direction:column;background:var(--paper-raised);border:1px solid var(--line);border-radius:15px;padding:24px 22px;position:relative}
+  .plan.feat{border-color:var(--terracotta);box-shadow:0 14px 40px rgba(181,80,44,.13)}
+  .plan .ptag{position:absolute;top:-11px;left:22px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--terracotta);border-radius:6px;padding:3px 9px}
+  .plan h2{font-family:var(--serif);font-weight:600;font-size:21px}
+  .plan .desc{font-size:12.5px;color:var(--faint);margin-top:3px;min-height:34px}
+  .price{display:flex;align-items:baseline;gap:4px;margin-top:14px;font-family:var(--serif)}
+  .price .amt{font-size:46px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .price .per{font-family:var(--sans);font-size:12px;color:var(--ghost);letter-spacing:.04em}
+  .grant{margin-top:10px;font-size:13px;color:var(--terracotta)}
+  .grant b{font-family:var(--serif);font-variant-numeric:tabular-nums}
+  ul{list-style:none;margin:18px 0 22px;display:flex;flex-direction:column;gap:10px}
+  li{display:flex;gap:10px;font-size:13.5px;color:var(--dim);line-height:1.4}
+  li svg{flex:none;margin-top:2px;color:var(--terracotta)}
+  li.off{color:var(--ghost)}
+  li.off svg{color:var(--ghost)}
+  .choose{margin-top:auto;border:1px solid var(--line);border-radius:10px;padding:11px;font-size:13.5px;font-weight:500;text-align:center;transition:border-color .15s,color .15s}
+  .choose:hover{border-color:var(--ink)}
+  .plan.feat .choose{background:var(--terracotta);border-color:var(--terracotta);color:var(--paper)}
+  .plan.feat .choose:hover{background:#c9663f}
+  .choose.current{background:var(--paper-dim);border-color:var(--line);color:var(--dim);cursor:default}
+  .plan.feat .choose.current{background:var(--paper-dim);color:var(--dim)}
+
+  /* one-time top-up */
+  .topup{margin-top:40px;background:var(--paper-raised);border:1px solid var(--line);border-radius:15px;padding:24px 26px}
+  .topup .th{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .topup h3{font-family:var(--serif);font-weight:600;font-size:19px}
+  .topup .sub{font-size:13px;color:var(--faint)}
+  .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+  .pack{border:1px solid var(--line);border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;background:var(--paper-raised)}
+  .pack:hover{border-color:var(--ink);transform:translateY(-1px)}
+  .pack .u{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums}
+  .pack .p{font-size:13px;color:var(--terracotta);margin-top:3px}
+  .pack .bonus{font-size:11px;color:var(--ghost);margin-top:5px}
+
+  /* what a unit buys + faq */
+  .costs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:var(--paper-raised)}
+  .cost .nm{font-family:var(--serif);font-size:15px}
+  .cost .nm small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--faint);margin-top:2px}
+  .cost .ct{font-family:var(--serif);font-size:18px;color:var(--terracotta);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .cost .ct small{font-family:var(--sans);font-size:11px;color:var(--ghost)}
+
+  .faq{margin-top:40px}
+  .faq h3{font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:4px}
+  .faq .sub{font-size:13px;color:var(--faint);margin-bottom:18px}
+  .qa{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px}
+  .qa .q{font-family:var(--serif);font-size:15px;margin-bottom:4px}
+  .qa .a{font-size:13.5px;color:var(--dim);line-height:1.5;text-wrap:pretty}
+  @media (max-width:680px){.costs{grid-template-columns:1fr}.qa{grid-template-columns:1fr}}
+
+  /* fine print + faq */
+  .ribbon{margin-top:40px;background:var(--ink);background-image:radial-gradient(110% 160% at 100% 0%,rgba(181,80,44,.2),transparent 56%);color:var(--paper);border-radius:15px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+  .ribbon .lbl{color:var(--ghost)}
+  .ribbon .said{font-family:var(--serif);font-style:normal;font-size:20px;max-width:40ch;color:var(--paper)}
+  .ribbon a{background:rgba(244,233,210,.1);border:1px solid rgba(244,233,210,.32);border-radius:10px;padding:9px 18px;font-size:13.5px;color:var(--paper);transition:background .15s}
+  .ribbon a:hover{background:rgba(244,233,210,.2)}
+
+  .fineprint{margin-top:30px;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;font-size:12px;color:var(--ghost)}
+  .fineprint a{color:var(--dim);border-bottom:1px solid var(--line)}
+  .fineprint a:hover{color:var(--terracotta);border-color:var(--terracotta)}
+
+  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:860px){.plans{grid-template-columns:1fr}.packs{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.pagehead{padding:16px 18px}.shell{padding:0 18px 56px}.packs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+
+<header class="pagehead">
+  <a class="brand" href="./index.html" aria-label="BourneWise home">
+    <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+    <b>BourneWise</b>
+  </a>
+  <nav class="nav">
+    <a class="ghost" href="./about.html">About</a>
+    <a class="cta" href="./index.html">Begin the dialogue</a>
+  </nav>
+</header>
+
+<div class="shell">
+  <section class="hero">
+    <div class="eyebrow"><b>&#9670;</b><span>Plans &amp; balance</span></div>
+    <h1>Strategic clarity, structured sustainably</h1>
+    <p>You maintain a balance of units to deploy against inquiries—100 for a Stria 64 baseline, 1,000 for a Sortis 6 synthesis. Select the tier that aligns with your strategic cadence.</p>
+    <div class="ledgerstrip">
+      <span class="who" id="whoLine">Not signed in</span>
+      <span>·</span>
+      <span>Available units: <b id="ledgerCount">—</b></span>
+      <a href="./index.html#plans" id="ledgerCta">Begin the dialogue</a>
+    </div>
+  </section>
+
+  <section class="plans" aria-label="Plans">
+    <div class="plan" data-plan="wanderer">
+      <h2>Basic</h2>
+      <div class="desc">For exploring the primary framework.</div>
+      <div class="price"><span class="amt">$0</span><span class="per">/ month</span></div>
+      <div class="grant">Includes <b>500</b> units on entry</div>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Stria 64 baseline analysis</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>7-day inquiry history</li>
+        <li class="off"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l8 8M12 4l-8 8"></path></svg>Sortis 6 synthesis restricted</li>
+      </ul>
+      <button class="choose" data-grant="500">Maintain Basic</button>
+    </div>
+
+    <div class="plan feat" data-plan="seeker">
+      <span class="ptag">Most selected</span>
+      <h2>Pro</h2>
+      <div class="desc">Regular guidance for the ongoing complexities of life and strategy.</div>
+      <div class="price"><span class="amt">$15</span><span class="per">/ month</span></div>
+      <div class="grant">Includes <b>12,000</b> units monthly</div>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Everything in Basic</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Sortis 6 synthesis unlocked</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Full inquiry history</li>
+      </ul>
+      <button class="choose" data-grant="12000">Continue the dialogue</button>
+    </div>
+
+    <div class="plan" data-plan="adept">
+      <h2>Premium</h2>
+      <div class="desc">Deep causal analysis for high-stakes transitions and critical life trajectories.</div>
+      <div class="price"><span class="amt">$29</span><span class="per">/ month</span></div>
+      <div class="grant">Includes <b>30,000</b> units monthly</div>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Everything in Pro</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Priority server processing</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Early access to new frameworks</li>
+      </ul>
+      <button class="choose" data-grant="30000">Continue the dialogue</button>
+    </div>
+  </section>
+
+  <section class="topup" aria-label="One-time Units">
+    <div class="th">
+      <h3>Additional units</h3>
+      <span class="sub">For bridging the gap between sessions.</span>
+    </div>
+    <div class="packs">
+      <button class="pack" data-grant="2000"><div class="u">2,000</div><div class="p">$3</div><div class="bonus">A handful of castings</div></button>
+      <button class="pack" data-grant="8000"><div class="u">8,000</div><div class="p">$10</div><div class="bonus">Sustain the dialogue</div></button>
+      <button class="pack" data-grant="20000"><div class="u">20,000</div><div class="p">$22</div><div class="bonus">+10% bonus units</div></button>
+      <button class="pack" data-grant="50000"><div class="u">50,000</div><div class="p">$48</div><div class="bonus">+20% bonus units</div></button>
+    </div>
+    <div class="costs">
+      <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · fast, direct</small></div><div class="ct">100<small> units / inquiry</small></div></div>
+      <div class="cost"><div class="nm">Sortis 6<small>Causal synthesis · complex decisions</small></div><div class="ct">1,000<small> units / inquiry</small></div></div>
+    </div>
+  </section>
+
+  <section class="faq" aria-label="Common questions">
+    <h3>Common questions</h3>
+    <p class="sub">Everything you need before you commit a balance.</p>
+    <div class="qa">
+      <div><div class="q">Do units expire?</div><div class="a">Plan units refresh each billing month and do not roll over. One-time top-up units never expire while your account stays active.</div></div>
+      <div><div class="q">What happens when I run out?</div><div class="a">Inquiries pause until you add units or your plan renews. Nothing is lost—your history and open castings remain intact.</div></div>
+      <div><div class="q">Can I change or cancel a plan?</div><div class="a">Switch tiers or cancel anytime from your account. Changes apply at the next billing cycle; remaining units stay on your balance.</div></div>
+      <div><div class="q">Are units refundable?</div><div class="a">Once an inquiry is processed and a framework is generated, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div>
+      <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Stria 64 maps your immediate situation at 100 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,000 units.</div></div>
+      <div><div class="q">Is my data private?</div><div class="a">Inquiries are encrypted at rest, never sold, never used to train broad models, and purged on request.</div></div>
+    </div>
+  </section>
+
+  <section class="ribbon">
+    <div>
+      <div class="lbl">&#9670;&nbsp; The fine print, stated plainly</div>
+      <p class="said">Units are consumable digital assets. Once an inquiry is processed and a structural framework is generated, the analysis is delivered and the units are spent. They are non-refundable.</p>
+    </div>
+    <a href="./refund.html">Review the refund policy</a>
+  </section>
+
+  <div class="fineprint">
+    <a href="./terms.html">Terms of Service</a>
+    <a href="./privacy.html">Privacy Policy</a>
+    <a href="./refund.html">Refund Policy</a>
+    <span>BourneWise · founded on classical logic</span>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="./assets/backgrounds/mountain-range.js"></script>
+<script src="./account.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.BWAccount;
+  var toastEl = document.getElementById("toast");
+  function toast(m) { toastEl.textContent = m; toastEl.classList.add("on"); clearTimeout(toast._t); toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600); }
+
+  function paint() {
+    var s = A.state(), a = s.account;
+    document.getElementById("ledgerCount").textContent = s.units.toLocaleString("en-US");
+    document.getElementById("whoLine").textContent = a.signedIn ? (a.name + " · " + A.planName(a.plan)) : "Not signed in";
+    document.getElementById("ledgerCta").textContent = a.signedIn ? "Begin the dialogue" : "Sign in";
+    document.getElementById("ledgerCta").setAttribute("href", a.signedIn ? "./index.html" : "./login.html");
+    document.querySelectorAll(".plan").forEach(function (p) {
+      var id = p.getAttribute("data-plan");
+      var btn = p.querySelector(".choose");
+      if (a.signedIn && a.plan === id) { btn.classList.add("current"); btn.textContent = "Your current plan"; }
+      else { btn.classList.remove("current"); btn.textContent = (id === "wanderer" ? "Maintain Basic" : "Continue the dialogue"); }
+    });
+  }
+
+  document.querySelectorAll(".plan .choose").forEach(function (b) {
+    b.addEventListener("click", function () {
+      if (b.classList.contains("current")) return;
+      var plan = b.closest(".plan").getAttribute("data-plan");
+      var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
+      var s = A.state();
+      if (!s.account.signedIn) { s.account.signedIn = true; s.account.name = "Elias Vance"; s.account.email = "elias@iname.com"; s.account.avatar = "EV"; }
+      s.account.plan = plan;
+      s.units += grant;
+      A.save(s); paint();
+      toast(A.planName(plan) + " tier activated · +" + grant.toLocaleString("en-US") + " units added.");
+    });
+  });
+  document.querySelectorAll(".pack").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
+      var s = A.state(); s.units += grant; A.save(s); paint();
+      toast("+" + grant.toLocaleString("en-US") + " units added to your balance.");
+    });
+  });
+
+  paint();
+})();
+</script>
+</body>
+</html>

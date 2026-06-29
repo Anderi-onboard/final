@@ -1,0 +1,255 @@
+<!-- BourneWise — About us. Part of the "Paper site" template (entry: index.html) -->
+<!DOCTYPE html>
+<html lang="en" data-skin="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About us — BourneWise</title>
+<style>html,body{background:#ECF1F6}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;600&family=Pacifico&display=swap">
+<link rel="stylesheet" href="./styles.css">
+<script src="./ds-base.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  em,i{font-style:normal}
+  html,body{height:100%}
+  body{display:flex;background-color:#ECF1F6;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
+    background-image:none;
+    background-position:0 0,200px 140px;animation:bgDrift 44s ease-in-out infinite}
+
+  /* ── animated mountain range — shared site backdrop, anchored to the viewport floor ── */
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+  button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
+  .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
+
+  /* ── sidebar — seamless, identical chrome to the landing: no divider, texture & mountains run through ── */
+  .sidebar{position:relative;z-index:2;width:264px;flex-shrink:0;display:flex;flex-direction:column;padding:14px 12px 12px;background:transparent;
+    transition:width .28s cubic-bezier(.4,0,.2,1);overflow:hidden;white-space:nowrap}
+  body.rail .sidebar{width:60px;padding-left:9px;padding-right:9px}
+  .side-top{display:flex;align-items:center;gap:8px;padding:2px 8px 0;min-height:36px}
+  .mark{flex:none;width:26px;height:21px;color:var(--ink)}
+  .brand-word{font-family:var(--font-brand,cursive);font-weight:700;font-size:17px;transform:translateY(-1px);transition:opacity .18s}
+  body.rail .brand-word{opacity:0;pointer-events:none}
+  .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
+  .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
+  body.rail .side-toggle{margin-left:0}
+  body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
+
+  .new-cast{margin-top:16px;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14px;color:var(--terracotta);font-weight:500;transition:background .15s}
+  .new-cast:hover{background:var(--paper-dim)}
+  .new-cast .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center}
+  body.rail .new-cast{justify-content:center;padding:7px 0;gap:0}
+  body.rail .new-cast span+span{opacity:0;pointer-events:none;width:0}
+
+  .castings{margin-top:22px;flex:1;min-height:0;display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+  .castings .lbl{padding:0 8px 7px}
+  .cast-item{display:block;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}
+  .cast-item:hover{background:var(--paper-dim);color:var(--ink)}
+  .nav-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--dim);padding:7px 8px;border-radius:7px;transition:background .15s,color .15s}
+  .nav-item:hover{background:var(--paper-dim);color:var(--ink)}
+  .nav-item.on{color:var(--ink);background:var(--paper-dim)}
+  .nav-item svg{flex:none}
+  body.rail .castings .lbl{opacity:0}
+  body.rail .nav-item span{opacity:0;width:0;overflow:hidden}
+  body.rail .nav-item{justify-content:center;gap:0}
+
+  .side-foot{margin-top:auto;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:11px;background:rgba(244,233,210,.5);border:1px solid var(--line-soft);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);box-shadow:0 1px 4px rgba(31,29,26,.07),inset 0 1px 0 rgba(255,255,255,.32);transition:background .15s,border-color .15s}
+  .side-foot:hover{background:rgba(244,233,210,.82);border-color:var(--line)}
+  .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}
+  .side-foot .who{flex:1;min-width:0;line-height:1.3}
+  body.rail .side-foot{justify-content:center;padding:8px 0}
+  body.rail .side-foot .who,body.rail .side-foot .go{display:none}
+  .side-foot b{display:block;font-size:13px;font-weight:700;font-family:"Raleway"}
+  .side-foot i{font-style:normal;font-size:11px;letter-spacing:.04em;color:var(--ghost);font-family:"Rubik"}
+  .side-foot .go{flex:none;color:var(--faint)}
+
+  /* ── main — content rides above the mountain backdrop ── */
+  .main{position:relative;z-index:1;flex:1;min-width:0;overflow-y:auto}
+  .shell{max-width:760px;margin:0 auto;padding:0 44px 70px}
+
+  /* topbar — quiet text link + one compact ink button, mirrors the landing */
+  .topbar{display:flex;justify-content:flex-end;align-items:center;gap:22px;padding:18px 0 0}
+  .topbar .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
+  .topbar .ghost:hover{color:var(--ink)}
+  .topbar .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s}
+  .topbar .cta:hover{background:#3A362F;transform:translateY(-1px)}
+
+  /* inkline — shared hand-stroke hover underline */
+  .inkline{position:relative}
+  .inkline svg{position:absolute;left:0;bottom:-5px;width:100%;height:8px;overflow:visible;pointer-events:none}
+  .inkline path{stroke:var(--terracotta);fill:none;stroke-linecap:round;stroke-dasharray:110;stroke-dashoffset:110;transition:stroke-dashoffset .45s cubic-bezier(.4,0,.2,1)}
+  .inkline path+path{opacity:.45;transition-delay:.08s}
+  .inkline:hover path,.inkline:focus-visible path{stroke-dashoffset:0}
+
+  /* hero — same poster voice and self-drawing redline as the landing */
+  .hero{padding:54px 0 8px}
+  .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:20px;white-space:nowrap}
+  .eyebrow b{color:var(--terracotta);font-weight:400}
+  .hero h1{font-family:"Fraunces",var(--serif,serif);font-weight:900;font-size:clamp(48px,6.4vw,84px);line-height:1.04;letter-spacing:-.03em;text-wrap:balance}
+  .redline{position:relative;display:inline-block}
+  .redline > svg{position:absolute;left:-2%;bottom:-.04em;width:104%;height:.2em;overflow:visible;pointer-events:none}
+  .redline path{stroke:var(--terracotta);fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:320;stroke-dashoffset:320;animation:redraw 8s 1s cubic-bezier(.4,0,.2,1) infinite}
+  .redline path+path{animation-delay:1.35s;opacity:.45}
+  @keyframes redraw{0%{stroke-dashoffset:320}9%{stroke-dashoffset:0}84%{stroke-dashoffset:0;opacity:1}92%{opacity:0}93%,100%{stroke-dashoffset:320;opacity:0}}
+  .flourish{display:block;margin:20px 0 0}
+  .flourish path{stroke-dasharray:240;stroke-dashoffset:240;animation:flow 2.4s .4s ease-out forwards;opacity:.55}
+  .flourish path+path{animation-delay:.75s;opacity:.3}
+  @keyframes flow{to{stroke-dashoffset:0}}
+
+  /* lead — oracle voice, with a Fraunces drop-cap */
+  .lead{font-family:"Arvo",var(--serif);font-size:clamp(21px,2.5vw,27px);line-height:1.5;margin-top:30px;max-width:640px;text-wrap:pretty}
+  .lead::first-letter{font-family:"Fraunces",var(--serif,serif);font-weight:900;float:left;font-size:3.1em;line-height:.72;padding:8px 12px 0 0;color:var(--terracotta)}
+
+  /* principles — numbered editorial rows, hairline ink rules between */
+  .principles{margin-top:46px}
+  .principle{padding:6px 0}
+  .p-head{display:flex;align-items:baseline;gap:11px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);white-space:nowrap}
+  .p-head .dia{color:var(--terracotta)}
+  .p-head .idx{font-family:var(--font-mono);font-size:11px;color:var(--terracotta);letter-spacing:.04em}
+  .p-head .ttl{color:var(--dim)}
+  .principle p{font-family:"Arvo",var(--serif);font-size:20px;line-height:1.55;margin-top:11px;max-width:600px;text-wrap:pretty}
+  .rule{display:block;margin:28px 0}
+  .rule path{stroke:#2A2016;fill:none;stroke-linecap:round;opacity:.5}
+  .rule path+path{opacity:.28}
+
+  /* closing line + ghost CTA */
+  .close{margin-top:54px;padding-top:30px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:18px}
+  .close .said{font-family:var(--serif);font-style:normal;font-size:22px;color:var(--ink)}
+  .close .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 18px;border-radius:10px;transition:transform .15s}
+  .close .cta:hover{transform:translateY(-1px);background:#C9663F}
+
+  footer{margin-top:46px;display:flex;justify-content:space-between;align-items:baseline}
+  footer a:hover{color:var(--ink)}
+
+  @media (max-width:760px){
+    .sidebar{display:none}
+    .shell{padding:0 22px 56px}
+    .hero{padding-top:34px}
+    .principle p,.lead{font-size:18px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .redline path{animation:none;stroke-dashoffset:0}
+    .flourish path{animation:none;stroke-dashoffset:0;opacity:.55}
+  }
+  @keyframes bgDrift{0%,100%{background-color:#ECF1F6}14%{background-color:#F2EDE7}28%{background-color:#F3EDE6}42%{background-color:#F0EDE8}56%{background-color:#EEE9F2}70%{background-color:#EDE8F0}84%{background-color:#EBF0F4}}
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#ECF1F6}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Bree+Serif&family=Damion&family=Fugaz+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Lily+Script+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Sarina&family=Sawarabi+Mincho&family=Spinnaker&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link id="gfont-Lora" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Playfair-Display" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Pacifico" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Abril-Fatface" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Caveat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-DM-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Fira-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Bitter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-BioRhyme" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700;800&amp;display=swap">
+<link id="gfont-Bree-Serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&amp;display=swap">
+<link id="gfont-Damion" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Damion&amp;display=swap">
+<link id="gfont-Fugaz-One" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fugaz+One&amp;display=swap">
+<link id="gfont-IBM-Plex-Mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link id="gfont-Libre-Baskerville" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap">
+<link id="gfont-Lily-Script-One" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lily+Script+One&amp;display=swap">
+<link id="gfont-Merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&amp;display=swap">
+<link id="gfont-Sarina" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarina&amp;display=swap">
+<link id="gfont-Sawarabi-Mincho" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&amp;display=swap">
+<link id="gfont-Spinnaker" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker&amp;display=swap">
+<link id="gfont-Ubuntu-Mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<link id="gfont-Ubuntu" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&amp;display=swap">
+<link id="gfont-Open-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&amp;display=swap">
+<link id="gfont-Roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+</head>
+<body>
+
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+
+
+<main class="main" data-screen-label="About us">
+  <div class="shell" style="font-family: Fraunces">
+
+    <nav class="topbar" aria-label="Site">
+      <a class="ghost inkline" href="./index.html">Home<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.6" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1.1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
+      <a class="cta" href="./index.html">Begin the dialogue</a>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow"><b>&#9670;</b><span>About BourneWise</span></div>
+      <h1 style="color: var(--ink)">The architecture of the world, decoded by modern synthesis</h1>
+      <svg class="flourish" width="190" height="14" viewBox="0 0 190 14" aria-hidden="true">
+        <path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 186 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+        <path d="M10 13 C52 8 106 12 180 7" stroke="#2A2016" stroke-width="1" fill="none" stroke-linecap="round"></path>
+      </svg>
+    </header>
+
+    <p class="lead" style="font-weight: 500">BourneWise equips you with a causal framework that has structured human thought for twenty-six centuries. We have integrated this classical logic with advanced language models to provide an uncompromising analysis of life’s pivotal moments. We deliver perspectives, not certainty—an objective lens for your highest-stakes decisions, whether in commerce or the trajectory of your life.</p>
+
+    <div class="principles">
+
+      <section class="principle">
+        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">01</span><span class="ttl">Architected for precision</span></div>
+        <p style="font-weight: 400">The core framework originates from ancient causal philosophy and operates as a complete, logical system. Today, its mechanics are processed through advanced, customized models—ensuring rapid clarity for Stria 64 and deep, dynamic synthesis for Sortis 6.</p>
+      </section>
+
+      <svg class="rule" width="170" height="12" viewBox="0 0 170 12" aria-hidden="true">
+        <path stroke-width="1.5" d="M4 7 C40 3 88 9 166 5"></path>
+        <path stroke-width="1" d="M10 10 C60 7 112 11 158 8"></path>
+      </svg>
+
+      <section class="principle">
+        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">02</span><span class="ttl">Our temperament</span></div>
+        <p style="font-weight: 400">We prioritize clarity over comfort. An objective analysis you can build your life and strategy upon is worth more than a forecast that merely validates your hopes.</p>
+      </section>
+
+      <svg class="rule" width="170" height="12" viewBox="0 0 170 12" aria-hidden="true">
+        <path stroke-width="1.5" d="M4 7 C40 3 88 9 166 5"></path>
+        <path stroke-width="1" d="M10 10 C60 7 112 11 158 8"></path>
+      </svg>
+
+      <section class="principle">
+        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">03</span><span class="ttl">The human variable</span></div>
+        <p style="font-weight: 400">Behind every strategic inquiry is a professional mid-decision. The analysis is direct and objective; it is never cruel, and it strictly adheres to the structural limits of the framework.</p>
+      </section>
+
+      <svg class="rule" width="170" height="12" viewBox="0 0 170 12" aria-hidden="true">
+        <path stroke-width="1.5" d="M4 7 C40 3 88 9 166 5"></path>
+        <path stroke-width="1" d="M10 10 C60 7 112 11 158 8"></path>
+      </svg>
+
+      <section class="principle">
+        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">04</span><span class="ttl">Privacy, encoded</span></div>
+        <p style="font-weight: 400">Your strategic inquiries remain strictly yours. Data is encrypted at rest, never sold, never utilized to train broad models, and definitively purged upon your request.</p>
+      </section>
+
+    </div>
+
+    <div class="close">
+      <span class="said" style="font-weight: 700; font-family: Bitter">Formulate your inquiry. Receive our objective analysis.</span>
+      <a class="cta" href="./index.html">Begin the dialogue</a>
+    </div>
+
+    <footer>
+      <span class="lbl" style="font-family: Montserrat; font-weight: 600">BourneWise &middot; founded on classical logic</span>
+      <span class="lbl"><a class="inkline" href="./index.html" style="font-family: Manrope; font-weight: 700">Back to BourneWise<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></span>
+    </footer>
+
+  </div>
+</main>
+
+<script src="./assets/backgrounds/mountain-range.js"></script>
+<script src="./account.js"></script>
+<script src="./sidebar.js"></script>
+</body>
+</html>

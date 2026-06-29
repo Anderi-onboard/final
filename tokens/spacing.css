@@ -1,0 +1,37 @@
+/* BournWise spacing, radii, borders, elevation.
+   The structural rule: color blocks butt together edge-to-edge —
+   no gaps, no rounding, no shadows. Softness is reserved for the
+   conversational layer (composer, chips) which is fully pill-shaped. */
+
+:root {
+  /* spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 64px;
+
+  /* radii — only two legal values */
+  --radius-blade: 0;      /* every structural slab, card, bubble, plan */
+  --radius-pill: 999px;   /* composer, chips, the friendly layer */
+
+  /* borders */
+  --border-hair: 1px solid var(--hairline);
+  --border-current: 1px solid currentColor; /* @kind other */ /* mono bracket CTAs */
+
+  /* elevation — slabs never cast shadows; only floating conversational
+     elements (composer, dialogs) may use --shadow-float */
+  --shadow-none: none;
+  --shadow-float: 0 10px 32px rgba(0, 0, 0, .30);
+
+  /* accent stripe (the decisive 4th-color slab cutting a seam) */
+  --slab-thickness: 14px;
+
+  /* motion — flat and decisive; fades + small translates, no bounces */
+  --ease-out: cubic-bezier(.2, .7, .3, 1); /* @kind other */
+  --speed-fast: 120ms; /* @kind other */
+  --speed-base: 200ms; /* @kind other */
+}

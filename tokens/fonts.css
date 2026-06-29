@@ -1,0 +1,10 @@
+/* BourneWise webfonts.
+   The brand's families ship on Google Fonts — no substitution needed.
+   Fraunces (display serif) · Inter (body sans) · JetBrains Mono (metadata/CTAs)
+   · Pacifico (brand wordmark only) */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;600&family=Pacifico&display=swap');
+
+/* Extended library — available everywhere styles.css loads, so the editor
+   font picker lists them persistently (they no longer vanish on refresh). */
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme&family=Bree+Serif&family=Damion&family=Fugaz+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Lily+Script+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Sarina&family=Sawarabi+Mincho&family=Spinnaker&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Alice&family=Brawler:wght@400;700&family=Cardo:ital,wght@0,400;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Zhi+Mang+Xing&display=swap');
