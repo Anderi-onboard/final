@@ -24,9 +24,14 @@ export async function onRequestPost({ request, env }) {
     const messages = Array.isArray(body.messages) ? body.messages : [];
     if (!messages.length) return json({ error: 'no messages' }, 400, cors);
 
+    // Model selection: request can override (for router/QC using cheaper models)
+    // but main reading uses CLAUDE_MODEL from env (Opus for Sortis, Sonnet for Stria)
+    const requestModel = body.model || null;
+    const model = requestModel || env.CLAUDE_MODEL || 'claude-haiku-4-5';
+
     const payload = {
-      model: env.CLAUDE_MODEL || 'claude-haiku-4-5',
-      max_tokens: Number(env.CLAUDE_MAX_TOKENS) || 1024,
+      model,
+      max_tokens: Number(body.max_tokens || env.CLAUDE_MAX_TOKENS) || 1024,
       messages
     };
     if (body.system) payload.system = body.system;

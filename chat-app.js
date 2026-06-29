@@ -391,7 +391,36 @@
   }
 
   /* Sortis 6 → full professional casting board + AI reading (the deep-tier experience).
-     Stria stays the light per-line reading; the gap between the two IS the rigor. */
+     Stria stays the light per-line reading; the gap between the two IS the rigor.
+
+     When BWPromptRouter is loaded, both Sortis and Stria use the modular prompt
+     pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
+     relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
+     improving rule adherence without increasing token cost. */
+  function routedReading(question, spec, board, methodId) {
+    if (!window.BWPromptRouter) return null; // fallback to legacy
+    var product = methodId === "stria" ? "stria" : "sortis";
+    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 20000); });
+    var run = BWPromptRouter.interpret({
+      question: question,
+      product: product,
+      board: board,
+      method: methodId,
+      category: "general",
+      lang: "en"
+    });
+    return Promise.race([run, guard]).then(function (result) {
+      if (!result || !result.reading) return null;
+      return {
+        text: result.reading,
+        board: board,
+        reading: null, // routed readings return prose directly
+        _route: result.route,
+        _qc: result.qcResult
+      };
+    }).catch(function () { return null; });
+  }
+
   function sortisReading(question, spec, board) {
     if (!board) board = (window.BWLiuYao && spec && spec.lines && spec.lines.length === 6)
       ? window.BWLiuYao.computeBoard({
@@ -399,6 +428,19 @@
           method: "sortis", name: spec.name, transformedName: spec.transformedName
         })
       : null;
+
+    // Try routed pipeline first (modular prompts + QC)
+    var routed = routedReading(question, spec, board, "sortis");
+    if (routed) {
+      return routed.then(function (result) {
+        if (result) return result;
+        return sortisLegacy(question, spec, board);
+      });
+    }
+    return sortisLegacy(question, spec, board);
+  }
+
+  function sortisLegacy(question, spec, board) {
     if (!board || !window.BWLiuYaoAI) {
       return askOracle(question, METHODS.sortis).then(function (t) { return { text: t, board: board, reading: null }; });
     }
@@ -479,9 +521,21 @@
       ? window.BWFigure.cast(castBox, spec, { board: sortisBoard })
       : new Promise(function (r) { setTimeout(r, 1600); });
 
-    var answerP = (m.id === "sortis")
-      ? sortisReading(text, spec, sortisBoard)
-      : askOracle(text, m).then(function (t) { return { text: t, board: null, reading: null }; });
+    var answerP;
+    if (m.id === "sortis") {
+      answerP = sortisReading(text, spec, sortisBoard);
+    } else {
+      // Stria: try routed pipeline first, fallback to simple oracle
+      var striaRouted = routedReading(text, spec, null, "stria");
+      if (striaRouted) {
+        answerP = striaRouted.then(function (result) {
+          if (result) return result;
+          return askOracle(text, m).then(function (t) { return { text: t, board: null, reading: null }; });
+        });
+      } else {
+        answerP = askOracle(text, m).then(function (t) { return { text: t, board: null, reading: null }; });
+      }
+    }
 
     function finish(ans) {
       ans = ans || { text: "", board: null, reading: null };
