@@ -128,10 +128,12 @@
   .thread::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:999px}
   .thread::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}
   .thread::-webkit-scrollbar-button{display:none;height:0;width:0}
-  .thread-inner{max-width:840px;margin:0;display:flex;flex-direction:column;gap:28px}
-  /* chat-box typography — every element inside an active conversation uses Bree Serif */
-  body:not(.is-empty) .thread-inner,
-  body:not(.is-empty) .thread-inner *{font-family:"Bree Serif",var(--serif),serif !important}
+  .thread-inner{max-width:780px;margin:0;display:flex;flex-direction:column;gap:34px}
+  /* ── chat typography — Claude-style hierarchy ──
+     Reading prose: Lora, a refined transitional serif (generous, calligraphic).
+     Display titles: BioRhyme. Small-caps labels: Spinnaker. Human turn: clean sans.
+     No blanket override — each role carries its own face. */
+  body:not(.is-empty) .thread-inner{font-family:"Lora",var(--serif),serif}
 
   /* ── chat mode: organic frosted glass — hidden on landing, revealed on first cast ── */
   body:not(.is-empty) .thread{
@@ -172,10 +174,10 @@
   @keyframes flow{to{stroke-dashoffset:0}}
   .empty p{margin-top:18px;font-size:14px;color:var(--dim);max-width:320px}
 
-  .msg-user{align-self:flex-end;max-width:70%;background:var(--ink);color:var(--paper);font-size:16px;padding:12px 18px;border-radius:14px 14px 4px 14px}
+  .msg-user{align-self:flex-end;max-width:68%;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:15.5px;line-height:1.5;letter-spacing:-.005em;padding:13px 19px;border-radius:16px 16px 5px 16px;box-shadow:0 2px 10px rgba(31,29,26,.1)}
   .reading{max-width:none}
   .reading .lbl b{color:var(--terracotta);font-weight:400}
-  .reading-body{font-size:15.5px;line-height:1.66;margin-top:18px;text-wrap:pretty;color:var(--ink)}
+  .reading-body{font-family:"Lora",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:20px;text-wrap:pretty;color:var(--ink)}
   .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta)}
   /* word stream — five reveal styles rotate word-by-word, slowly taking turns */
   .reading-body .bw-rw{display:inline-block}
@@ -192,23 +194,23 @@
   .reading-body .rw-s4{opacity:0;transform:scale(1.14);filter:blur(4px);transition:opacity .5s ease,transform .6s ease,filter .6s ease}
   .reading-body.bw-streamed .bw-rw{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;transition:none}
   /* eyebrow · title · badge — a clear written-answer hierarchy */
-  .reading-body .rd-eyebrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px}
+  .reading-body .rd-eyebrow{font-family:"Spinnaker",var(--sans);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px}
   .reading-body .rd-method{color:var(--terracotta);font-weight:700}
   .reading-body .rd-fig{color:var(--dim);letter-spacing:.1em}
   .reading-body .rd-fig i{font-style:normal;color:var(--faint)}
-  .reading-body .rd-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 15px}
-  .reading-body .rd-title{font-size:27px;line-height:1.16;font-weight:700;letter-spacing:-.006em;color:var(--ink);margin:0}
+  .reading-body .rd-head{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:0 0 18px}
+  .reading-body .rd-title{font-family:"BioRhyme",var(--serif),serif;font-size:25px;line-height:1.22;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin:0}
   .reading-body .rd-badge{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
   .reading-body .rd-badge.favorable{color:var(--terracotta);border-color:var(--terracotta)}
   .reading-body .rd-badge.unfavorable{color:var(--prussian);border-color:var(--prussian)}
   /* lede + supporting paragraph */
-  .reading-body .rd-lede{font-size:18px;line-height:1.56;color:var(--ink);margin:0 0 13px;max-width:60ch}
-  .reading-body .rd-para{font-size:15.5px;line-height:1.7;color:var(--ink);margin:0 0 14px;max-width:64ch}
+  .reading-body .rd-lede{font-family:"Lora",var(--serif),serif;font-size:20.5px;line-height:1.62;font-weight:500;color:var(--ink);margin:0 0 16px;max-width:38ch}
+  .reading-body .rd-para{font-family:"Lora",var(--serif),serif;font-size:18px;line-height:1.78;color:var(--ink);margin:0 0 16px;max-width:64ch}
   /* supporting sections rise in after the prose streams */
-  .reading-body .rd-sec{margin-top:20px;max-width:64ch;transition:opacity .55s ease,transform .6s cubic-bezier(.22,.7,.28,1)}
+  .reading-body .rd-sec{margin-top:26px;max-width:64ch;transition:opacity .55s ease,transform .6s cubic-bezier(.22,.7,.28,1)}
   .reading-body .rd-sec.rd-pending{opacity:0;transform:translateY(10px)}
   .reading-body .rd-sec.rd-in{opacity:1;transform:none}
-  .reading-body .rd-h{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin:0 0 10px;display:flex;align-items:center;gap:9px}
+  .reading-body .rd-h{font-family:"Spinnaker",var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px;display:flex;align-items:center;gap:9px}
   .reading-body .rd-h::before{content:"";width:16px;height:2px;background:var(--terracotta);border-radius:2px;flex:none}
   .reading-body .rd-keys{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
   .reading-body .rd-keys li{display:flex;gap:14px;align-items:baseline;font-size:14px;line-height:1.45;padding:8px 0;border-top:1px solid var(--line-soft)}
