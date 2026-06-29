@@ -57,6 +57,13 @@
   .casting{flex:none;display:block;width:100%;text-align:left;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}
   .casting:hover{background:var(--paper-dim);color:var(--ink)}
   .casting.active{background:var(--paper-dim);color:var(--ink);font-weight:500}
+  .casting-row{display:flex;align-items:center;border-radius:7px;transition:background .15s}
+  .casting-row:hover{background:var(--paper-dim)}
+  .casting-row .casting{flex:1;min-width:0}
+  .casting-row .casting:hover{background:none}
+  .casting-del{flex:none;width:22px;height:22px;display:none;place-items:center;border-radius:5px;font-size:14px;color:var(--ghost);transition:color .15s,background .15s}
+  .casting-row:hover .casting-del{display:grid}
+  .casting-del:hover{color:var(--terracotta);background:rgba(181,80,44,.1)}
 
   /* ── the ledger — modern frosted points card, matched to the composer glass ── */
   .ledger{position:relative;margin-top:14px;flex:none;overflow:hidden;
@@ -433,64 +440,11 @@
     .msg-user,.reading{animation:none}
   }
 </style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Bree+Serif&family=Damion&family=Fugaz+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Lily+Script+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Sarina&family=Sawarabi+Mincho&family=Spinnaker&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<link id="gfont-Lora" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Playfair-Display" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Pacifico" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Abril-Fatface" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Caveat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-DM-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Fira-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Bitter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-BioRhyme" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700;800&amp;display=swap">
-<link id="gfont-Bree-Serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&amp;display=swap">
-<link id="gfont-Damion" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Damion&amp;display=swap">
-<link id="gfont-Fugaz-One" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fugaz+One&amp;display=swap">
-<link id="gfont-IBM-Plex-Mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap">
-<link id="gfont-Libre-Baskerville" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap">
-<link id="gfont-Lily-Script-One" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lily+Script+One&amp;display=swap">
-<link id="gfont-Merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&amp;display=swap">
-<link id="gfont-Sarina" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarina&amp;display=swap">
-<link id="gfont-Sawarabi-Mincho" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&amp;display=swap">
-<link id="gfont-Spinnaker" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker&amp;display=swap">
-<link id="gfont-Ubuntu-Mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
-<link id="gfont-Ubuntu" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&amp;display=swap">
-<link id="gfont-Open-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Comfortaa" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Dancing-Script" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Source-Sans-3" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap">
-<link id="gfont-Space-Grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Bree+Serif&family=Fugaz+One&family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:wght@400;500;600;700&family=Rubik:wght@400;500;600&family=Sawarabi+Mincho&family=Spinnaker&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="is-empty">
 
 <div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
-<!-- font-palette: makes all loaded fonts appear in the editor font picker -->
-<div aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;user-select:none">
-  <span style="font-family:'BioRhyme'">.</span>
-  <span style="font-family:'Bree Serif'">.</span>
-  <span style="font-family:'Damion'">.</span>
-  <span style="font-family:'Fugaz One'">.</span>
-  <span style="font-family:'IBM Plex Mono'">.</span>
-  <span style="font-family:'Libre Baskerville'">.</span>
-  <span style="font-family:'Lily Script One'">.</span>
-  <span style="font-family:'Lora'">.</span>
-  <span style="font-family:'Merriweather'">.</span>
-  <span style="font-family:'Sarina'">.</span>
-  <span style="font-family:'Sawarabi Mincho'">.</span>
-  <span style="font-family:'Spinnaker'">.</span>
-  <span style="font-family:'Ubuntu Mono'">.</span>
-  <span style="font-family:'Ubuntu'">.</span>
-</div>
 
 <aside class="sidebar" data-screen-label="Landing sidebar">
   <div class="side-top">
@@ -527,12 +481,12 @@
   </div>
 
   <button class="side-foot" id="acctBtn" aria-haspopup="true" aria-expanded="false" style="border-width: 0px 1px 1px">
-    <span class="avatar">EV</span>
-    <span class="who fade"><b>Elias Vance</b><i style="color: rgb(43, 36, 28)">Pro plan</i></span>
+    <span class="avatar">G</span>
+    <span class="who fade"><b>Guest</b><i style="color: rgb(43, 36, 28)">Not signed in</i></span>
     <span class="go fade"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6.5L8 2.5l4 4M4 9.5l4 4 4-4"></path></svg></span>
   </button>
   <div class="acct-menu" id="acctMenu">
-    <div class="who"><b style="font-family: &quot;Bree Serif&quot;">Elias Vance</b><span style="font-family: &quot;Bree Serif&quot;">elias@iname.com</span></div>
+    <div class="who"><b style="font-family: &quot;Bree Serif&quot;">Guest</b><span style="font-family: &quot;Bree Serif&quot;">Sign in to keep your ledger</span></div>
     <button class="mi plan" id="miPlans" style="font-family: &quot;Bree Serif&quot;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5l2 4.2 4.5.6-3.3 3.1.8 4.5L8 11.7l-4 2.2.8-4.5L1.5 6.3l4.5-.6z"></path></svg>Plan &amp; units<b>PRO</b></button>
     <button class="mi" id="miSettings" style="font-family: &quot;Bree Serif&quot;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="2.5"></circle><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"></path></svg>Settings</button>
     <button class="mi" id="miSignout" style="font-family: &quot;Bree Serif&quot;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2.5H3.5v11H6M10 5l3 3-3 3M13 8H6.5"></path></svg>Sign out</button>
@@ -560,6 +514,12 @@
           <h1 id="greetLine" style="font-family: BioRhyme">Formulate your inquiry.</h1>
         </div>
       </section>
+      <div class="chips">
+        <button class="chip" data-q="Should I hold my position, or adapt?">Hold or adapt?</button>
+        <button class="chip" data-q="Is this relationship sound enough to last?">Relationship durability</button>
+        <button class="chip" data-q="What am I not seeing in this decision?">Blind spots</button>
+        <button class="chip" data-q="Is the timing right, or just convenient?">Timing analysis</button>
+      </div>
       <div class="stream" id="stream" aria-live="polite">
         <div class="stream-tag"><b style="color:#0F0C08;font-size:9px">&#9679;</b><span id="streamTag">What BourneWise does</span></div>
         <p class="stream-text" id="streamText" style="color:rgb(15,12,8);text-align:left">BourneWise evaluates your inquiry against a 2,600-year-old causal architecture. Tested across dynasties, shifting environments, and human lives, it returns one direct, structural synthesis. No hedging, no mysticism.</p>
@@ -697,7 +657,6 @@
       'What requires structural analysis?',
       'State the situation plainly.',
       'Name the variable you wish to examine.',
-      'Draft your inquiry here.',
       'Define the parameters of your question.',
       'Specify what you need evaluated.'
     ];
@@ -709,11 +668,6 @@
       if(inp){inp.value=btn.dataset.q;inp.focus();}
     });
   });
-})();
-</script>
-<script>
-(function(){
-  // brand logo → new casting
   var bb=document.getElementById('brandBtn');
   if(bb)bb.addEventListener('click',function(){
     var nc=document.getElementById('newCast');
@@ -721,96 +675,5 @@
   });
 })();
 </script>
-<script>
-(function(){
-  var el=document.getElementById('greetLine');
-  if(el){
-    var prompts=[
-      'Detail the context of your decision.',
-      'What requires structural analysis?',
-      'State the situation plainly.',
-      'Name the variable you wish to examine.',
-      'Draft your inquiry here.',
-      'Define the parameters of your question.',
-      'Specify what you need evaluated.'
-    ];
-    el.textContent=prompts[Math.floor(Math.random()*prompts.length)];
-  }
-  document.querySelectorAll('.chip[data-q]').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var inp=document.getElementById('composerInput');
-      if(inp){inp.value=btn.dataset.q;inp.focus();}
-    });
-  });
-})();
-</script>
 </body>
 </html>
-
-<style id="__om-edit-overrides">
-#threadInner .lbl { font-family: cursive !important }
-#threadInner .lbl { font-family: Rubik !important }
-#threadInner .lbl { font-weight: 600 !important }
-#threadInner .reading-body { font-size: 6px !important }
-#threadInner .reading-body { font-size: 6px !important }
-#threadInner .reading-body { font-size: 15px !important }
-#methodMenu >button:nth-child(2) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.mm-name { font-family: "Bree Serif" !important }
-#methodMenu >button:nth-child(2) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.mm-name { font-family: "Lily Script One" !important }
-#methodMenu >button:nth-child(2) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.mm-name { font-family: Pacifico !important }
-#methodMenu >.active .mm-name { font-family: Pacifico !important }
-#methodMenu >button:nth-child(2) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.mm-tag { font-family: "Bree Serif" !important }
-#methodMenu >button:nth-child(2) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.mm-blurb { font-family: "Bree Serif" !important }
-#methodMenu >.active .mm-tag { font-family: "Bree Serif" !important }
-#methodMenu >.active .mm-blurb { font-family: "Bree Serif" !important }
-#methodMenu >.mm-head { font-family: BioRhyme !important }
-#methodMenu >.active >.mm-cost { font-family: "Bree Serif" !important }
-#methodMenu >button:nth-child(2) >.mm-cost { font-family: "Fugaz One" !important }
-#methodMenu >.active >.mm-cost { font-family: "Fugaz One" !important }
-#methodMenu >.active >.mm-cost { font-family: BioRhyme !important }
-#methodMenu >.active >.mm-cost { font-family: "Bree Serif" !important }
-#methodMenu >.active >.mm-cost { font-family: "Fugaz One" !important }
-#threadInner >article:nth-child(4) >.reading-body { font-family: Damion !important }
-#threadInner >article:nth-child(4) >.reading-body { font-family: "Bree Serif" !important }
-#threadInner >article:nth-child(4) >.reading-body { font-family: BioRhyme !important }
-#threadInner >article:nth-child(4) >.reading-body { font-family: sans-serif !important }
-#threadInner >article:nth-child(4) >.reading-body { font-family: system-ui !important }
-#threadInner >article:nth-child(4) >.reading-body { font-family: Arvo !important }
-#castList >.active { font-family: "Bree Serif" !important }
-#castList >.active { font-family: BioRhyme !important }
-#castList >.active { font-family: "Fugaz One" !important }
-#castList >.active { font-family: Damion !important }
-#castList >.active { font-family: system-ui !important }
-#castList >.active { font-family: sans-serif !important }
-#castList >.active { font-family: Sarina !important }
-#castList >.active { font-family: "IBM Plex Mono" !important }
-#castList >.active { font-family: "Lily Script One" !important }
-#castList >.active { font-family: Spinnaker !important }
-#castList >.active { font-family: "Ubuntu Mono" !important }
-#castList >.active { font-family: cursive !important }
-#castList >.active { font-family: "Bree Serif" !important }
-#castList >button:nth-child(3) { font-family: "Bree Serif" !important }
-#castList >button:nth-child(2) { font-family: "Bree Serif" !important }
-#castList >button:nth-child(5) { font-family: "Bree Serif" !important }
-#castList >button:nth-child(6) { font-family: "Bree Serif" !important }
-#castList >button:nth-child(7) { font-family: "Bree Serif" !important }
-#castList >button:nth-child(8) { font-family: "Bree Serif" !important }
-#threadInner >.msg-user { font-family: "Bree Serif" !important }
-#threadInner .reading-body { font-family: "Bree Serif" !important }
-#threadInner .reading-body >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { font-family: BioRhyme !important }
-#threadInner .reading-body >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { font-family: Damion !important }
-#threadInner .reading-body >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { font-family: "Bree Serif" !important }
-#threadInner .reading-body >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { font-family: BioRhyme !important }
-#threadInner >article:nth-child(14) .reading-lede { font-family: "Lily Script One" !important }
-#threadInner >article:nth-child(14) .reading-lede { font-family: Sarina !important }
-#threadInner >article:nth-child(14) .reading-lede { font-family: "Sawarabi Mincho" !important }
-#threadInner >article:nth-child(14) .reading-lede { font-size: 16px !important }
-#threadInner >article:nth-child(14) .reading-lede { font-size: 165px !important }
-#threadInner >article:nth-child(14) .reading-lede { font-size: 15px !important }
-#threadInner >article:nth-child(14) .reading-lede { font-size: 18px !important }
-#threadInner >article:nth-child(14) .reading-lede { font-size: 16px !important }
-#castList >.lbl { font-family: Spinnaker !important }
-#castList >button:nth-child(2) { font-family: Spinnaker !important }
-#castList >button:nth-child(3) { font-family: Damion !important }
-#castList >button:nth-child(3) { font-family: "Fugaz One" !important }
-#castList >button:nth-child(3) { font-family: Spinnaker !important }
-</style>

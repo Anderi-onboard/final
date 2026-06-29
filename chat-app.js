@@ -96,11 +96,26 @@
   function renderList() {
     castList.innerHTML = '<div class="lbl">Recent inquiries</div>';
     S.convs.forEach(function (c) {
+      var wrap = document.createElement("div");
+      wrap.className = "casting-row" + (c.id === S.activeId ? " active" : "");
       var b = document.createElement("button");
       b.className = "casting" + (c.id === S.activeId ? " active" : "");
       b.textContent = c.title;
       b.addEventListener("click", function () { S.activeId = c.id; save(); renderAll(); });
-      castList.appendChild(b);
+      var del = document.createElement("button");
+      del.className = "casting-del";
+      del.innerHTML = "&times;";
+      del.title = "Delete this casting";
+      del.addEventListener("click", function (e) {
+        e.stopPropagation();
+        S.convs = S.convs.filter(function (x) { return x.id !== c.id; });
+        if (S.activeId === c.id) S.activeId = S.convs.length ? S.convs[0].id : null;
+        save(); renderAll();
+        toast("Casting burned.");
+      });
+      wrap.appendChild(b);
+      wrap.appendChild(del);
+      castList.appendChild(wrap);
     });
   }
 
@@ -436,6 +451,9 @@
     c.msgs.push({ role: "user", text: text });
     S.units -= m.cost;
     save(); renderAll();
+    if (S.units < m.cost && S.account.plan === "free") {
+      toast("Low balance — upgrade to keep casting.");
+    }
 
     busy = true;
     $("sendBtn").disabled = true;
