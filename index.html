@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BourneWise — Perspectives, not certainty</title>
-<style>html,body{background:#ECF1F6}</style>
+<style>html,body{background:#F2EDE7}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;600&family=Pacifico&display=swap">
@@ -15,13 +15,13 @@
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{display:flex;background-color:#ECF1F6;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,input:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
   /* ── animated mountain range — full-bleed backdrop; meet shows the whole artwork so its own transparent sky blends into the page (no hard seam) ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.92;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
 
   /* ── sidebar — seamless chrome, matched to the landing: no divider, texture & mountains run through ── */
   .sidebar{position:relative;z-index:5;width:264px;flex-shrink:0;display:flex;flex-direction:column;padding:14px 12px 12px;background:transparent;
@@ -31,7 +31,7 @@
   .mark{flex:none;width:26px;height:21px;color:var(--ink)}
   .brand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:2px 4px 2px 0;border-radius:7px;transition:opacity .15s;text-align:left}
   .brand-btn:hover{opacity:.72}
-  @keyframes bgDrift{0%,100%{background-color:#ECF1F6}14%{background-color:#F2EDE7}28%{background-color:#F3EDE6}42%{background-color:#F0EDE8}56%{background-color:#EEE9F2}70%{background-color:#EDE8F0}84%{background-color:#EBF0F4}}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F4EFE6}28%{background-color:#F5EFE4}42%{background-color:#F1EAE0}56%{background-color:#F4EEE6}70%{background-color:#F2EBE1}84%{background-color:#F3ECE3}}
   .brand-word{font-family:var(--font-brand,cursive);font-weight:700;font-size:17px;transform:translateY(-1px)}
   .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
@@ -377,9 +377,6 @@
     .topbar{padding:14px 18px 12px}
     .top-right{gap:13px}
     .greeting h1{font-size:clamp(26px,8vw,42px)}
-    .chips{gap:6px}
-    .chip{padding:7px 13px;font-size:12px}
-    .stream-text{font-size:15.5px;min-height:52px}
     .composer-zone{padding-bottom:18px}
     .composer{padding:7px 7px 7px 12px;gap:7px}
     .composer input{font-size:15px}
@@ -420,25 +417,13 @@
   #heroEmpty{display:block;text-align:center;padding:0 0 28px}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"Sawarabi Mincho",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
-  .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:680px;width:100%;margin-top:16px}
-  .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:8px 17px;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;font-family:var(--sans)}
-  .chip:hover{background:rgba(42,32,22,.06);border-color:var(--ink);color:var(--ink)}
-  body:not(.is-empty) .chips,body:not(.is-empty) .stream{display:none}
-  .stream{margin-top:22px;max-width:480px;width:100%;text-align:center}
-  .stream-tag{display:flex;align-items:center;justify-content:center;gap:9px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);transition:opacity .4s}
-  .stream-tag b{color:var(--terracotta);font-weight:400;font-size:8px}
-  .stream-text{min-height:72px;margin-top:10px;font-family:"Sawarabi Mincho",var(--serif);font-size:17px;line-height:1.68;color:var(--dim);transition:opacity .45s;text-wrap:pretty}
-  .stream.out .stream-text,.stream.out .stream-tag{opacity:0}
-  .tok{display:inline-block;animation:tokDrop .5s both cubic-bezier(.2,.7,.3,1)}
-  @keyframes tokDrop{from{opacity:0;transform:translateY(-8px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
   .msg-user,.reading{animation:msgIn .42s cubic-bezier(.2,.7,.3,1)}
   @keyframes msgIn{from{transform:translateY(10px)}to{transform:none}}
   body.rail .side-toggle{margin-left:0}
   @media (prefers-reduced-motion: reduce){
-    body{animation:none;background-color:#ECF1F6}
+    body{animation:none;background-color:#F2EDE7}
     .claude-mark{animation:none}
     .bwl1,.bwl2,.bwl3,.bwl4,.bwl5{animation:none;opacity:1}
-    .tok{animation:none;opacity:1}
     .msg-user,.reading{animation:none}
   }
 </style>
@@ -515,12 +500,6 @@
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
           <h1 id="greetLine" style="font-family: BioRhyme">Formulate your inquiry.</h1>
         </div>
-        <div class="chips">
-          <button class="chip" data-q="Should I hold my position, or adapt?">Hold or adapt?</button>
-          <button class="chip" data-q="Is this relationship sound enough to last?">Relationship durability</button>
-          <button class="chip" data-q="What am I not seeing in this decision?">Blind spots</button>
-          <button class="chip" data-q="Is the timing right, or just convenient?">Timing analysis</button>
-        </div>
       </section>
     </div>
   </section>
@@ -593,12 +572,6 @@
     ];
     el.textContent=prompts[Math.floor(Math.random()*prompts.length)];
   }
-  document.querySelectorAll('.chip[data-q]').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var inp=document.getElementById('composerInput');
-      if(inp){inp.value=btn.dataset.q;inp.focus();}
-    });
-  });
   var bb=document.getElementById('brandBtn');
   if(bb)bb.addEventListener('click',function(){
     var nc=document.getElementById('newCast');
