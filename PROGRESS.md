@@ -75,6 +75,28 @@
 
 ---
 
+## ✅ 已完成 — Claude 字体系统 + 美术修正（2026-06-30, 第二轮）
+
+按用户反馈修正：
+
+- ✅ **背景跟山脉联动**：恢复 bgDrift 跟 mountain-range 的暖/冷/暮相位漂移
+  （之前被我锁成纯暖米色，破坏了联动）。暖色基调保留。
+- ✅ **品牌粗体**：Pacifico 是单字重，`font-weight:700` 无效 → 加大到 20px +
+  `-webkit-text-stroke` 还原粗体感。
+- ✅ **空状态留白**：问候语从垂直居中改为靠近输入框（flex-end），与 composer
+  成组，消除中间大空隙。Logo mark 缩小到 34px 配合更小的问候语。
+- ✅ **Claude 字体系统**（大部分字体 + 比例）：
+  - Claude 真用字 Styrene(UI)/Tiempos(正文) 是专有字体；用最接近的免费替代：
+    **Inter**(sans) + **Lora**(serif)，品牌保留 **Pacifico**。
+  - index 里所有 Spinnaker/BioRhyme/Sawarabi 内联字 → Inter(UI) 或 Lora(标题/正文)。
+  - 比例收敛到 Claude 尺度：问候语 54px→clamp(26,38)、阅读标题 25→22px、weight 调轻。
+
+> 待确认：Lora 作为 Tiempos 替代 OK 吗?想要更接近可换 Newsreader / Source Serif。
+> 已知（非本次引入）：routed Sortis 主提示返回散文;若线上仍出 JSON 需在 routed
+> 路径加 JSON 解析（mock 测试假象，真 key 下应为散文）。
+
+---
+
 ## ✅ 已完成 — 美术对齐到目标设计（2026-06-30）
 
 按用户提供的设计稿（Design System 工具里的 index）对齐空状态美术：

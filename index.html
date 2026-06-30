@@ -31,8 +31,10 @@
   .mark{flex:none;width:26px;height:21px;color:var(--ink)}
   .brand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:2px 4px 2px 0;border-radius:7px;transition:opacity .15s;text-align:left}
   .brand-btn:hover{opacity:.72}
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F4EFE6}28%{background-color:#F5EFE4}42%{background-color:#F1EAE0}56%{background-color:#F4EEE6}70%{background-color:#F2EBE1}84%{background-color:#F3ECE3}}
-  .brand-word{font-family:var(--font-brand,cursive);font-weight:700;font-size:17px;transform:translateY(-1px)}
+  /* the page tint drifts in step with the mountain ridges — warm when the warm
+     ridge (l4, 44s) dominates, cooler/dusky when the cool & dusk ridges lead */
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F3ECE4}28%{background-color:#F0E7E6}42%{background-color:#EFE9EC}56%{background-color:#ECEAF1}70%{background-color:#EEEAEE}84%{background-color:#F1ECE6}}
+  .brand-word{font-family:var(--font-brand,cursive);font-weight:700;font-size:20px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
   .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
   body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
@@ -194,12 +196,12 @@
   .reading-body .rw-s4{opacity:0;transform:scale(1.14);filter:blur(4px);transition:opacity .5s ease,transform .6s ease,filter .6s ease}
   .reading-body.bw-streamed .bw-rw{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;transition:none}
   /* eyebrow · title · badge — a clear written-answer hierarchy */
-  .reading-body .rd-eyebrow{font-family:"Spinnaker",var(--sans);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px}
+  .reading-body .rd-eyebrow{font-family:var(--sans);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px}
   .reading-body .rd-method{color:var(--terracotta);font-weight:700}
   .reading-body .rd-fig{color:var(--dim);letter-spacing:.1em}
   .reading-body .rd-fig i{font-style:normal;color:var(--faint)}
   .reading-body .rd-head{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:0 0 18px}
-  .reading-body .rd-title{font-family:"BioRhyme",var(--serif),serif;font-size:25px;line-height:1.22;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin:0}
+  .reading-body .rd-title{font-family:"Lora",var(--serif),serif;font-size:22px;line-height:1.25;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:0}
   .reading-body .rd-badge{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
   .reading-body .rd-badge.favorable{color:var(--terracotta);border-color:var(--terracotta)}
   .reading-body .rd-badge.unfavorable{color:var(--prussian);border-color:var(--prussian)}
@@ -210,7 +212,7 @@
   .reading-body .rd-sec{margin-top:26px;max-width:64ch;transition:opacity .55s ease,transform .6s cubic-bezier(.22,.7,.28,1)}
   .reading-body .rd-sec.rd-pending{opacity:0;transform:translateY(10px)}
   .reading-body .rd-sec.rd-in{opacity:1;transform:none}
-  .reading-body .rd-h{font-family:"Spinnaker",var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px;display:flex;align-items:center;gap:9px}
+  .reading-body .rd-h{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px;display:flex;align-items:center;gap:9px}
   .reading-body .rd-h::before{content:"";width:16px;height:2px;background:var(--terracotta);border-radius:2px;flex:none}
   .reading-body .rd-keys{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
   .reading-body .rd-keys li{display:flex;gap:14px;align-items:baseline;font-size:14px;line-height:1.45;padding:8px 0;border-top:1px solid var(--line-soft)}
@@ -245,7 +247,7 @@
   .reading-insight .mk.self{background:var(--terracotta);color:var(--paper)}
   .reading-insight .mk.resp{background:var(--prussian);color:#EAF1F8}
   .reading-insight .mk.move{border:1.4px solid var(--terracotta);color:var(--terracotta)}
-  .reading-insight .turning{border-left:2px solid var(--terracotta);padding:2px 0 2px 18px;margin:2px 0 16px;color:var(--ink);font-family:BioRhyme}
+  .reading-insight .turning{border-left:2px solid var(--terracotta);padding:2px 0 2px 18px;margin:2px 0 16px;color:var(--ink);font-family:"Lora",var(--serif)}
   .reading-insight .legend-inline{clear:both;display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:6px;padding-top:15px;
     border-top:1px solid var(--line-soft);font-family:var(--sans);font-size:11px;letter-spacing:.02em;color:var(--faint)}
   .reading-insight .legend-inline span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
@@ -409,14 +411,14 @@
   body:not(.is-empty) .claude-note .cn-text{display:none}
   body.is-empty .topbar{border-bottom:none}
   body.is-empty .topbar h1,body.is-empty .topbar .units-chip{display:none}
-  body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 56px 20px}
+  body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 56px 10px}
   body.is-empty .thread-inner{max-width:680px;margin:0;width:100%;display:flex;flex-direction:column;align-items:center}
   body.is-empty .composer-zone{flex:none;padding:0 56px 36px;display:flex;flex-direction:column;align-items:center}
   body.is-empty .composer{margin:0;max-width:680px;width:100%}
   body.is-empty .disclaimer{display:none}
-  #heroEmpty{display:block;text-align:center;padding:0 0 28px}
+  #heroEmpty{display:block;text-align:center;padding:0 0 14px}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
-  .greeting h1{font-family:"Sawarabi Mincho",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
+  .greeting h1{font-family:"Lora",var(--serif);font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.18;letter-spacing:-.01em;color:var(--ink)}
   .msg-user,.reading{animation:msgIn .42s cubic-bezier(.2,.7,.3,1)}
   @keyframes msgIn{from{transform:translateY(10px)}to{transform:none}}
   body.rail .side-toggle{margin-left:0}
@@ -446,7 +448,7 @@
 
   <button class="new-cast" id="newCast">
     <span class="ic"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2.5v11M2.5 8h11"></path></svg></span>
-    <span class="fade" style="font-family: Spinnaker; font-weight: 900">New casting</span>
+    <span class="fade" style="font-family: var(--sans); font-weight: 900">New casting</span>
   </button>
 
   <nav class="castings fade" id="castList" aria-label="Recent castings">
@@ -454,17 +456,17 @@
   </nav>
 
   <div class="ledger" data-screen-label="Ledger" style="border-width: 0px">
-    <div class="ledger-head" style="font-family: Spinnaker">
+    <div class="ledger-head" style="font-family: var(--sans)">
       <span class="lbl">Available units</span>
       <span class="ledger-plan" id="ledgerPlan">Basic</span>
     </div>
     <div class="ledger-bal">
       <span class="count" id="unitsSide" style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 700">&mdash;</span>
-      <span class="ledger-unit" style="font-family: Spinnaker">units</span>
+      <span class="ledger-unit" style="font-family: var(--sans)">units</span>
     </div>
     <div class="ledger-meter"><span id="unitsBar"></span></div>
-    <div class="ledger-cap" id="unitsCap" style="font-family: Spinnaker">of monthly balance</div>
-    <button class="exchange" id="openPlans" style="font-family: Spinnaker">Add units <span class="ex-arr">&rarr;</span></button>
+    <div class="ledger-cap" id="unitsCap" style="font-family: var(--sans)">of monthly balance</div>
+    <button class="exchange" id="openPlans" style="font-family: var(--sans)">Add units <span class="ex-arr">&rarr;</span></button>
   </div>
 
   <button class="side-foot" id="acctBtn" aria-haspopup="true" aria-expanded="false" style="border-width: 0px 1px 1px">
@@ -482,14 +484,14 @@
 
 <main class="main" data-screen-label="Landing">
   <header class="topbar">
-    <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: BioRhyme">New inquiry</h1>
+    <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New inquiry</h1>
     <div class="top-right">
-      <span class="units-chip" id="unitsTop" style="font-weight: 800; font-family: BioRhyme">&mdash; units</span>
+      <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
       <span class="claude-note" title="Powered by advanced language models for structural interpretation" style="max-width: 720px">
         <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true" style="width: 30px; height: 30px">
-        <span class="cn-text" style="font-family: Spinnaker; font-weight: 700">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline. Our build is crafted to deliver the absolute best. And we are always on our way to make it better</span>
+        <span class="cn-text" style="font-family: var(--sans); font-weight: 700">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline. Our build is crafted to deliver the absolute best. And we are always on our way to make it better</span>
       </span>
-      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: Spinnaker">About us</a>
+      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">About us</a>
     </div>
   </header>
 
@@ -497,8 +499,8 @@
     <div class="thread-inner" id="threadInner">
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
-          <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" style="font-family: BioRhyme">Formulate your inquiry.</h1>
+          <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:34px;height:28px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+          <h1 id="greetLine" style="font-family: 'Lora', var(--serif)">Formulate your inquiry.</h1>
         </div>
       </section>
     </div>
