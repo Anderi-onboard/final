@@ -521,10 +521,6 @@
           <button class="chip" data-q="What am I not seeing in this decision?">Blind spots</button>
           <button class="chip" data-q="Is the timing right, or just convenient?">Timing analysis</button>
         </div>
-        <div class="stream" id="stream" aria-live="polite">
-          <div class="stream-tag"><b style="color:#0F0C08;font-size:9px">&#9679;</b><span id="streamTag">What BourneWise does</span></div>
-          <p class="stream-text" id="streamText" style="color:rgb(15,12,8);text-align:left">BourneWise evaluates your inquiry against a 2,600-year-old causal architecture. Tested across dynasties, shifting environments, and human lives, it returns one direct, structural synthesis. No hedging, no mysticism.</p>
-        </div>
       </section>
     </div>
   </section>
@@ -542,43 +538,6 @@
   </footer>
 </main>
 
-<div class="overlay" id="plansOverlay" role="dialog" aria-modal="true" aria-label="Plans and Units">
-  <div class="modal">
-    <div class="modal-hero">
-      <div>
-        <div class="lbl">The dialogue</div>
-        <h2>Extend your consultation</h2>
-      </div>
-      <button class="modal-x" id="closePlans" aria-label="Close">&times;</button>
-    </div>
-    <div class="plans">
-      <div class="plan">
-        <h3>Free</h3>
-        <div class="price">$0</div>
-        <div class="grant">Includes <b>300</b> units (one-time trial)</div>
-        <ul><li>1 Stria 64 trial reading</li><li>3-day inquiry history</li></ul>
-        <button data-units="300" data-plan="free">Start free trial</button>
-      </div>
-      <div class="plan feat">
-        <span class="ptag">Most selected</span>
-        <h3>Pro</h3>
-        <div class="price">$19 <small>/ mo</small></div>
-        <div class="grant">Includes <b>22,500</b> units monthly</div>
-        <ul><li>~75 Stria or ~15 Sortis / month</li><li>Full inquiry history</li></ul>
-        <button data-units="22500" data-plan="pro">Continue the dialogue</button>
-      </div>
-      <div class="plan">
-        <h3>Premium</h3>
-        <div class="price">$29 <small>/ mo</small></div>
-        <div class="grant">Includes <b>45,000</b> units monthly</div>
-        <ul><li>~150 Stria or ~30 Sortis / month</li><li>Priority processing</li></ul>
-        <button data-units="45000" data-plan="premium">Continue the dialogue</button>
-      </div>
-    </div>
-    <p class="fine">Units are consumable assets and do not expire while a plan is active &middot; <a href="./pricing.html" style="color:var(--terracotta)">Review the complete terms &amp; one-time top-ups</a></p>
-  </div>
-</div>
-
 <div class="toast" id="toast"></div>
 
 <script src="./assets/backgrounds/mountain-range.js"></script>
@@ -594,36 +553,6 @@
 (function () {
   "use strict";
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var PASSAGES = [
-    { tag: "What BourneWise does", text: "BourneWise evaluates your inquiry against a 2,600-year-old causal architecture. Tested across dynasties, shifting environments, and human lives, it returns one direct, structural synthesis. No hedging, no mysticism." },
-    { tag: "Stria 64", text: "Stria 64 is the baseline analysis\u2014fast and direct, utilizing 300 units per inquiry to map the immediate architecture of your current situation and environment." },
-    { tag: "Sortis 6", text: "Sortis 6 is the causal synthesis: dynamic permutations evaluated for complex, high-stakes decisions. 1,500 units per inquiry." },
-    { tag: "Our temperament", text: "Eras turn; the structural laws of the world do not. We prioritize clarity over comfort, delivering an objective analysis you can build your life and strategy upon." },
-    { tag: "Privacy, encoded", text: "Your inquiries remain strictly yours. Data is encrypted at rest, never sold, never utilized to train broad models, and definitively purged upon request." }
-  ];
-  var stream = document.getElementById("stream"),
-      tagEl = document.getElementById("streamTag"),
-      textEl = document.getElementById("streamText");
-  var pi = 0;
-  function showPassage(p) {
-    tagEl.textContent = p.tag; textEl.innerHTML = "";
-    var words = p.text.split(" ");
-    words.forEach(function (w, i) {
-      var sp = document.createElement("span"); sp.className = "tok";
-      if (!reduced) sp.style.animationDelay = (i * 70) + "ms";
-      sp.textContent = w; textEl.appendChild(sp); textEl.appendChild(document.createTextNode(" "));
-    });
-    return words.length * 70;
-  }
-  function cycle() {
-    var ms = showPassage(PASSAGES[pi]); pi = (pi + 1) % PASSAGES.length;
-    setTimeout(function () {
-      stream.classList.add("out");
-      setTimeout(function () { stream.classList.remove("out"); cycle(); }, 480);
-    }, (reduced ? 0 : ms) + 4200);
-  }
-  if (stream) cycle();
-
   var PROMPTS = [
     "Should I hold my position, or adapt?",
     "Is this relationship sound enough to last?",

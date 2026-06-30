@@ -10,7 +10,7 @@ project anymore.
 ```
 index.html          ← the app (landing = chat empty-state, inline conversation)
 about.html  pricing.html  login.html  settings.html
-privacy.html  terms.html  refund.html  404.html  chat.html (legacy redirect)
+privacy.html  terms.html  refund.html  404.html
 styles.css          ← design-system entry (@imports tokens/*)
 tokens/*.css         ← colors, fonts, typography, spacing, paper skin
 assets/             ← mountain backdrop, paper textures, Claude mark

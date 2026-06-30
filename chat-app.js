@@ -683,31 +683,11 @@
     toast("Signed out — your history and balance remain secure.");
   });
 
-  /* ── plans modal ── */
-  var overlay = $("plansOverlay");
-  function openPlans() { overlay.classList.add("open"); }
-  function closePlans() { overlay.classList.remove("open"); }
-  $("openPlans").addEventListener("click", openPlans);
-  $("closePlans").addEventListener("click", closePlans);
-  overlay.addEventListener("click", function (e) { if (e.target === overlay) closePlans(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closePlans(); closeMenu(); closeMethod(); } });
-  overlay.querySelectorAll(".plan button").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var plan = b.getAttribute("data-plan");
-      var add = parseInt(b.getAttribute("data-units"), 10) || 0;
-      function apply() {
-        if (plan) { A.setPlan(plan); }   // setPlan applies the plan's grant
-        else if (add) { A.addUnits(add, "topup"); }
-        S = A.state(); renderAll(); closePlans();
-        toast(plan ? (A.planName(plan) + " is active.") : ("+" + add.toLocaleString("en-US") + " units added."));
-      }
-      if (plan && !S.account.signedIn) {
-        A.signInRemote("elias@iname.com", "Elias Vance", "email", function () { S = A.state(); apply(); });
-      } else {
-        apply();
-      }
-    });
-  });
+  /* ── plans live on the pricing page (no in-app modal) ── */
+  function openPlans() { location.href = "./pricing.html"; }
+  var openBtn = $("openPlans");
+  if (openBtn) openBtn.addEventListener("click", openPlans);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenu(); closeMethod(); } });
 
   /* ── boot: hydrate from the server (if signed in), then paint ── */
   renderAll();                       // instant paint from local store

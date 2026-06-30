@@ -75,21 +75,21 @@
 
 ---
 
-## 🔴 TODO — 重复页面/逻辑（结构问题）
+## ✅ 已完成 — 信息架构整顿（2026-06-30）
 
-**升级弹窗（index.html `#plansOverlay`）与定价页（pricing.html）功能大量重叠** —
-两者都实现了同一套 Free/Pro/Premium 三档 + 购买流程，各写一遍：
+**决策**：不要 app 内升级弹窗；走定价页。index.html 改为纯 app（极简空状态），
+保留顶栏 Claude 说明。
 
-- 套餐数据（价格、grant）在 **三处**硬编码：`account.js PLANS` + 弹窗 + 定价页 →
-  必然漂移（之前改旧价/旧名要在多处分别修，根因即此）。
-- 购买点击逻辑两套：一套在 chat-app.js，一套在 pricing.html 内联。
+- ✅ 删除升级弹窗 `#plansOverlay`，所有升级/加点数入口 → `pricing.html`
+  （`openPlans()` 改为跳转）。消除了弹窗与定价页的重复购买 UI。
+- ✅ 删除空状态的轮播营销流（What BourneWise does / 方法介绍 / 隐私）。
+  空状态现在只剩：问候语 + 示例 chip + 输入框（Claude 式）。
+- ✅ **保留**顶栏 "All information…Claude Opus 4.8…" 说明（按要求）。
+- ✅ 删除死页 `chat.html`（旧重定向，无内部引用）。
 
-**整合方案（待做）**：保留两个入口（弹窗=app 内快捷 upsell，定价页=营销），但
-- 卡片统一从 `BWAccount.PLANS` 渲染，不再硬编码；
-- 购买统一走一个 `BWAccount.purchase(plan)` / `topup(amount)` 共享函数。
-- 结果：一份数据 + 一份逻辑的两个视图。
-
-> 注：本项涉及视觉，与"页面凌乱"一并在美术解冻后处理。
+> 仍待办：定价页卡片改为从 `BWAccount.PLANS` 渲染（目前仍硬编码），购买统一走
+> `BWAccount.setPlan/addUnits`——数据单一源化。pricing.html 自己那套内联购买 JS
+> 待收敛。
 
 ---
 
