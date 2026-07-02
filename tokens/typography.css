@@ -6,9 +6,9 @@
    Pacifico  — the brand wordmark, nothing else */
 
 :root {
-  --font-serif: "Fraunces", Georgia, serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "BioRhyme", serif;
+  --font-sans: "Spinnaker", sans-serif;
+  --font-mono: "Spinnaker", sans-serif;
   --font-brand: "Pacifico", cursive;
 
   /* scale */

@@ -84,7 +84,7 @@
           '<span class="mm-tag">' + m.tag + " · " + m.depth + "</span>" +
           '<span class="mm-blurb">' + m.blurb + "</span>" +
         "</span>" +
-        '<span class="mm-cost" style="font-family:\'Fugaz One\',serif">' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
+        '<span class="mm-cost" style="font-family:Spinnaker">' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
       row.addEventListener("click", function () {
         if (!ok) { closeMethod(); openPlans(); toast("Sortis 6 synthesis is unlocked on the Pro tier."); return; }
         S.method = id; save(); renderMethod(); closeMethod();

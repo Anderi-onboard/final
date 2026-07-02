@@ -33,9 +33,10 @@
   --line: #CDB792;          /* borders on raised elements */
   --line-soft: #D8C7A4;     /* in-field rules */
 
-  /* two families, two jobs */
-  --serif: "Source Serif 4", Georgia, serif; /* @kind font */        /* oracle voice, brand, numbers, italic titles */
-  --sans: "Hanken Grotesk", system-ui, sans-serif; /* @kind font */  /* everything else */
+  /* ONLY three voices allowed anywhere: BioRhyme (serif/headings),
+     Spinnaker (sans/body/UI/numbers), Pacifico (brand). No other font. */
+  --serif: "BioRhyme", serif; /* @kind font */        /* headings, titles, verdict emphasis */
+  --sans: "Spinnaker", sans-serif; /* @kind font */   /* everything else */
   --font-serif: var(--serif);
   --font-sans: var(--sans);
 
