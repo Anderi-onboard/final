@@ -1,14 +1,14 @@
 /* BourneWise typography.
-   Three voices, strictly cast:
-   Fraunces  — headings, AI verdicts (classical authority)
-   Inter     — body copy, user inputs, UI labels (modern friendliness)
-   JetBrains Mono — metadata, counters, CTAs, ledger numbers (precision)
+   Two voices + brand mark, strictly cast — no other font may appear
+   anywhere in the app:
+   BioRhyme  — headings, AI verdicts, display numbers (classical authority)
+   Spinnaker — body copy, UI labels, metadata, counters, CTAs (everything else)
    Pacifico  — the brand wordmark, nothing else */
 
 :root {
-  --font-serif: "Fraunces", Georgia, serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "BioRhyme", Georgia, serif;
+  --font-sans: "Spinnaker", system-ui, -apple-system, sans-serif;
+  --font-mono: "Spinnaker", ui-monospace, monospace;
   --font-brand: "Pacifico", cursive;
 
   /* scale */
@@ -22,9 +22,9 @@
   --text-micro: 10px;     /* mono CTAs, ledger labels */
 
   /* weights */
-  --weight-poster: 900;   /* Fraunces black for posters only */
-  --weight-display: 600;  /* Fraunces semibold for headings */
-  --weight-em: 500;       /* Fraunces italic emphasis */
+  --weight-poster: 800;   /* BioRhyme extrabold for posters only (heaviest weight we load) */
+  --weight-display: 700;  /* BioRhyme bold for headings */
+  --weight-em: 500;       /* BioRhyme italic emphasis */
   --weight-body: 400;
   --weight-medium: 500;
   --weight-strong: 600;

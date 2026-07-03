@@ -12,8 +12,9 @@
      keyword per reading.
    · One Prussian-blue block per page, maximum (ledger / login hero).
    · Labels: 11.5px, +0.09em tracking, sentence case. Never all caps.
-   · Textures ship at the opacity baked into the SVGs. Do not raise it. */
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+   · Textures ship at the opacity baked into the SVGs. Do not raise it.
+   · Fonts: BioRhyme (serif) / Spinnaker (sans) only — no font substitution,
+     loaded once via tokens/fonts.css. */
 
 [data-skin="paper"] {
   /* palette — aged Eurasian terracotta: tea-stained plaster grounds,
@@ -34,8 +35,8 @@
   --line-soft: #D8C7A4;     /* in-field rules */
 
   /* two families, two jobs */
-  --serif: "Source Serif 4", Georgia, serif; /* @kind font */        /* oracle voice, brand, numbers, italic titles */
-  --sans: "Hanken Grotesk", system-ui, sans-serif; /* @kind font */  /* everything else */
+  --serif: "BioRhyme", Georgia, serif; /* @kind font */   /* oracle voice, brand, numbers, italic titles */
+  --sans: "Spinnaker", system-ui, sans-serif; /* @kind font */  /* everything else */
   --font-serif: var(--serif);
   --font-sans: var(--sans);
 
