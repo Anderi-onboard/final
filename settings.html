@@ -35,7 +35,7 @@
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
   body.rail .side-toggle{margin-left:0}
   body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
-  .fade{transition:opacity .18s}
+  .fade{transition:opacity .18s,width .18s}
   body.rail .fade{opacity:0;pointer-events:none}
   .new-cast{margin-top:16px;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14px;color:var(--terracotta);font-weight:500;transition:background .15s}
   .new-cast:hover{background:var(--paper-dim)}
@@ -94,7 +94,7 @@
   .prov-tag{font-size:11px;letter-spacing:.06em;color:var(--dim);background:var(--chip);border-radius:999px;padding:5px 11px;text-transform:capitalize}
 
   .plan-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;color:var(--paper);background:var(--terracotta);border-radius:999px;padding:5px 13px;text-transform:uppercase}
-  .btn{font-size:13px;font-weight:500;border:1px solid var(--line);border-radius:9px;padding:8px 15px;transition:border-color .15s}
+  .btn{font-size:13px;font-weight:500;border:1px solid var(--line);border-radius:9px;padding:8px 15px;transition:border-color .15s,background .15s}
   .btn:hover{border-color:var(--ink)}
   .btn.ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .btn.ink:hover{background:#3a362f}
@@ -106,7 +106,7 @@
   .mrow{display:flex;align-items:flex-start;gap:13px;padding:16px 20px;cursor:pointer;transition:background .15s}
   .mrow + .mrow{border-top:1px solid var(--line-soft)}
   .mrow:hover{background:var(--paper-dim)}
-  .mrow .radio{flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);margin-top:2px;transition:border-color .15s}
+  .mrow .radio{flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);margin-top:2px;transition:border-color .15s,box-shadow .15s,background .15s}
   .mrow.sel .radio{border-color:var(--terracotta);box-shadow:inset 0 0 0 4px var(--terracotta);background:var(--paper-raised)}
   .mrow .mmain{flex:1}
   .mrow .mmain b{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:9px}

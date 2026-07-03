@@ -318,7 +318,7 @@
       // ben rows: spirit | hidden | label | bar | right(mk+role+stars)
       ".lyc-fig.ben .lyc-line{display:grid;grid-template-columns:56px 62px max-content 78px minmax(90px,1fr);align-items:center;column-gap:8px}",
       ".lyc-fig.bian .lyc-line{display:grid;grid-template-columns:78px max-content 42px;align-items:center;column-gap:8px}",
-      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer;transition:background .14s}",
+      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer;transition:background .15s}",
       ".lyc-line:hover,.lyc-line.hot{background:color-mix(in oklab,var(--ink) 5%,transparent)}",
       ".lyc-line.bianrow{cursor:default}",
       ".lyc-line:focus{outline:1.5px solid color-mix(in oklab,var(--ink) 35%,transparent);outline-offset:-2px}",

@@ -42,6 +42,7 @@
   .new-cast{margin-top:16px;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14px;color:var(--terracotta);font-weight:500;transition:background .15s}
   .new-cast:hover{background:var(--paper-dim)}
   .new-cast .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center}
+  .new-cast span+span{white-space:nowrap;transition:opacity .18s,width .18s}
   body.rail .new-cast{justify-content:center;padding:7px 0;gap:0}
   body.rail .new-cast span+span{opacity:0;pointer-events:none;width:0}
 
@@ -75,7 +76,7 @@
   .topbar{display:flex;justify-content:flex-end;align-items:center;gap:22px;padding:18px 0 0}
   .topbar .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
   .topbar .ghost:hover{color:var(--ink)}
-  .topbar .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s}
+  .topbar .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s,background .15s}
   .topbar .cta:hover{background:#3A362F;transform:translateY(-1px)}
 
   /* inkline — shared hand-stroke hover underline */
@@ -119,10 +120,11 @@
   /* closing line + ghost CTA */
   .close{margin-top:54px;padding-top:30px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:18px}
   .close .said{font-family:var(--serif);font-style:normal;font-size:22px;color:var(--ink)}
-  .close .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 18px;border-radius:10px;transition:transform .15s}
+  .close .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 18px;border-radius:10px;transition:transform .15s,background .15s}
   .close .cta:hover{transform:translateY(-1px);background:#C9663F}
 
   footer{margin-top:46px;display:flex;justify-content:space-between;align-items:baseline}
+  footer a{transition:color .15s}
   footer a:hover{color:var(--ink)}
 
   @media (max-width:760px){
