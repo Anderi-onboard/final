@@ -104,6 +104,46 @@ export async function onRequestPost({ request, env }) {
     const payload = { model, max_tokens, messages };
     if (body.system) payload.system = body.system;
 
+    // Streaming path: only the main reading call asks for this (router/qc
+    // stay non-streaming — they're single short completions, nothing to
+    // gain from streaming them). Billing/auth already happened above via
+    // guardRequest, identical to the non-streaming path; only the response
+    // shape differs from here on.
+    if (body.stream === true) {
+      payload.stream = true;
+      const upstream = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!upstream.ok || !upstream.body) {
+        if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:anthropic_' + upstream.status);
+        const detail = await upstream.text().catch(() => '');
+        return json({ error: 'anthropic ' + upstream.status, detail }, 502);
+      }
+
+      // Passthrough Anthropic's SSE bytes unchanged, then append one extra
+      // bw_meta event carrying unitsRemaining once the upstream stream ends
+      // — the only piece of information the client needs that Anthropic's
+      // stream itself doesn't carry. A failure mid-stream (after headers are
+      // already committed) can't be refunded here; that's a known, accepted
+      // gap of SSE — same tradeoff every streaming proxy makes.
+      const encoder = new TextEncoder();
+      const metaEvent = 'event: bw_meta\ndata: ' + JSON.stringify({ unitsRemaining, model }) + '\n\n';
+      const tail = new TransformStream({
+        flush(controller) { controller.enqueue(encoder.encode(metaEvent)); }
+      });
+      return new Response(upstream.body.pipeThrough(tail), {
+        status: 200,
+        headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
+      });
+    }
+
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {

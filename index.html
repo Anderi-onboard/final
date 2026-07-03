@@ -205,6 +205,10 @@
   .reading-body .rd-badge{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
   .reading-body .rd-badge.favorable{color:var(--terracotta);border-color:var(--terracotta)}
   .reading-body .rd-badge.unfavorable{color:var(--prussian);border-color:var(--prussian)}
+  /* live network text as the main reading streams in, before the full
+     structured reading-body replaces it (see chat-app.js onStreamDelta) */
+  .reading-stream-preview{font-family:BioRhyme, var(--serif), serif;font-size:18px;line-height:1.7;color:var(--ink);margin:6px 0 0;max-width:64ch;white-space:pre-wrap}
+  .reading-stream-preview:empty{display:none}
   /* lede + supporting paragraph */
   .reading-body .rd-lede{font-family:BioRhyme, var(--serif), serif;font-size:20.5px;line-height:1.62;font-weight:500;color:var(--ink);margin:0 0 16px;max-width:38ch}
   .reading-body .rd-para{font-family:BioRhyme, var(--serif), serif;font-size:18px;line-height:1.78;color:var(--ink);margin:0 0 16px;max-width:64ch}

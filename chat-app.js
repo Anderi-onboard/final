@@ -395,7 +395,7 @@
      pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
-  function routedReading(question, spec, board, methodId, history) {
+  function routedReading(question, spec, board, methodId, history, onDelta) {
     if (!window.BWPromptRouter) return null; // fallback to legacy
     var product = methodId === "stria" ? "stria" : "sortis";
     var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 20000); });
@@ -406,7 +406,8 @@
       method: methodId,
       category: "general",
       // no lang override — BWPromptRouter detects it from the question text
-      history: history || []
+      history: history || [],
+      onDelta: onDelta
     });
     return Promise.race([run, guard]).then(function (result) {
       if (!result || !result.reading) return null;
@@ -420,7 +421,7 @@
     }).catch(function () { return null; });
   }
 
-  function sortisReading(question, spec, board, history) {
+  function sortisReading(question, spec, board, history, onDelta) {
     if (!board) board = (window.BWLiuYao && spec && spec.lines && spec.lines.length === 6)
       ? window.BWLiuYao.computeBoard({
           lines: spec.lines, changeIdx: spec.changeIdx || [],
@@ -429,7 +430,7 @@
       : null;
 
     // Try routed pipeline first (modular prompts + QC)
-    var routed = routedReading(question, spec, board, "sortis", history);
+    var routed = routedReading(question, spec, board, "sortis", history, onDelta);
     if (routed) {
       return routed.then(function (result) {
         if (result) return result;
@@ -499,7 +500,18 @@
     var castBox = document.createElement("div");
     castBox.className = "reading-fig" + (sortisBoard ? " is-full" : "");
     live.appendChild(castBox);
+    /* real network text as it streams in, shown while the cast animation is
+       still drawing — this is what actually cuts perceived latency (first
+       real tokens in ~1-2s instead of waiting out the whole pipeline in
+       silence). Swapped out for the fully-structured verdictHTML() once the
+       complete reading is in; see finish() below. */
+    var streamPreview = document.createElement("p");
+    streamPreview.className = "reading-stream-preview";
+    live.appendChild(streamPreview);
     threadInner.appendChild(live);
+    function onStreamDelta(chunk, fullSoFar) {
+      streamPreview.textContent = fullSoFar;
+    }
 
     /* Claude-style: lift the question to the top of the thread and reveal the full
        casting animation below it. A spacer guarantees there's room to scroll. */
@@ -528,10 +540,10 @@
     var history = buildHistory(c, 3);
     var answerP;
     if (m.id === "sortis") {
-      answerP = sortisReading(text, spec, sortisBoard, history);
+      answerP = sortisReading(text, spec, sortisBoard, history, onStreamDelta);
     } else {
       // Stria: try routed pipeline first, fallback to simple oracle
-      var striaRouted = routedReading(text, spec, null, "stria", history);
+      var striaRouted = routedReading(text, spec, null, "stria", history, onStreamDelta);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
           if (result) return result;
@@ -556,6 +568,7 @@
       /* update only the chrome (balance + history) — leave the thread alone so the
          casting figure isn't wiped; the verdict then streams in naturally below it */
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
       revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
     }
