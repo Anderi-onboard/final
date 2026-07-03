@@ -235,9 +235,15 @@
   /* the annotated casting figure is the reading's "representation" */
   .reading-fig{max-width:100%;margin:6px 0 10px}
   .reading-fig .bw-af-fig{max-width:452px}
-  /* Sortis full board extends rightward past the text column (content is left-aligned)
-     so its dense labels render large enough to read comfortably */
-  .reading-fig.is-full{width:min(960px,calc(100vw - 96px));max-width:none}
+  /* Sortis full board: with a transformed hexagram, two figures sit side by side so
+     the wrapper bleeds past the text column to give both room. With only the primary
+     figure, the SVG's own viewBox is already cropped to its content width (see
+     fullBoardFigureHTML), so the wrapper only needs to match that content width at the
+     SAME px-per-unit scale as the two-figure case (960px / 616 units ≈ 1.558px/unit;
+     388 cropped units × 1.558 ≈ 605px) — otherwise the crop just gets stretched back
+     out to 960px and every glyph renders visibly larger than before. */
+  .reading-fig.is-full{width:min(605px,calc(100vw - 96px));max-width:none}
+  .reading-fig.is-full:has(.bw-af-name.rel){width:min(960px,calc(100vw - 96px))}
   .reading-fig.is-full .bw-af-fig.bw-af-full{max-width:100%}
   .reading-fig .bw-af-fig.bw-af-full{max-width:min(720px,100%)}
   .reading .bw-cast,.reading .bw-figs{max-width:75%}
