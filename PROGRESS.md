@@ -4,9 +4,45 @@
 > 当前阶段：**字体已锁定为仅 BioRhyme / Spinnaker / Pacifico 三种，禁止出现任何其他字体**。
 > 其余美术（排版比例、留白、卦象对齐）仍在后期集中处理之列。
 
-最后更新：2026-06-30
+最后更新：2026-07-03
 
 ---
+
+## ✅ 已完成 — 生产就绪审查修复：API 防刷、多轮记忆、Gate 正则 bug、Eval 库（2026-07-03，第四轮）
+
+针对用户提出的 7 点生产就绪审查逐条核实后落地的修复（非全部照单全收，先对照真实代码验证再动手）：
+
+- ✅ **API 盗刷漏洞已关闭**：`/api/claude` 新增 `guardRequest()`，在生成调用内联做
+  会话校验 + 服务端权威计费 + 限流。Sortis（Opus）此前完全靠前端信任，现在
+  未登录/非 Pro-Premium 一律拒绝；扣费改为"先扣后退款"原子模式，失败自动退回。
+  匿名 Stria 访客仍可免登录试用（保留产品设计），但新增按 IP 的窗口限流兜底
+  （`functions/_lib/db.js` 新增 `bumpRateLimit()`，`schema.sql` 新增 `rate_limits` 表）。
+  过程中发现并修复了两处会让新网关形同虚设的隐藏 bug：`ds-base.js` 与
+  `prompt-router.js` 的 fetch 调用都缺了 `credentials: 'same-origin'`，会话
+  cookie 从未真正发出去；`account.js` 里原有的客户端 `/api/account/spend` 调用
+  会与新的服务端扣费重复扣款，已移除，改为从服务端响应里回写权威余额。
+- ✅ **多轮对话失忆已修复**：`chat-app.js` 新增 `buildHistory()`，追问时把最近
+  几轮对话（截断长度）拼进 `messages`，而不是只发当次问题；`prompt-router.js`
+  的 `interpretWithRouter()` 相应支持 `history` 参数（含 QC 重试路径）。用
+  Playwright 浏览器测试验证了追问请求里确实带上了首轮问题 + 助手回复。
+- ✅ **发现并修复 Gate 正则的真实生产 bug**：JS 正则 `\b`（单词边界）只认
+  ASCII `\w`，永远不会在中文字符两侧命中——原 `CRISIS_PATTERNS` /
+  `MINOR_PATTERNS` 把中文关键词包在 `\b(...)~\b` 里，等于中文一侧的危机/未成年
+  检测从写下那天起就从未真正生效过（这个 bug 早于本轮会话就存在）。已拆分：
+  中文词改为不加边界的子串匹配，英文词保留 `\b`。另外补上两个 eval 跑出来的
+  真实缺口：`jump off` 未覆盖 `jumping off` 变形；中文有"14岁+喜欢"组合判断，
+  英文原来完全没有对应的"15 year old + crush"逻辑，已补上。
+- ✅ **新建 Eval 回归库**（用户 7 点审查里的第 7 条）：`eval/cases.json`（Gate
+  14 例 + Router 10 例）+ `eval/run-eval.js`（可执行，离线跑 Gate，
+  有 `ANTHROPIC_API_KEY` 时额外跑真实 Haiku 校验 Router）。修复后
+  `node eval/run-eval.js` → Gate 14/14 (100%)。以后改 `prompt-engine.js`
+  必须先跑这个脚本。
+- ⏸️ **尚未处理**（已评估为有效但范围较大，待排优先级）：流式 SSE 输出
+  （降低串行三段管线的感知延迟）、QC 阶段对照原始卦盘 JSON 做幻觉抵抗正则
+  校验、i18n 从硬编码 zh/en 改为 Router 阶段动态语言检测。
+- ⏸️ **待办**：两份 prompt-inspector Artifact（中英文）里嵌的 `CRISIS_PATTERNS`
+  / `MINOR_PATTERNS` 还是本轮修复前的旧版，需要手动同步。
+
 
 ## 当前状态总览
 
