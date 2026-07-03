@@ -401,7 +401,7 @@
   .top-right{margin-left:auto;display:flex;align-items:center;gap:18px}
   .topbar .ghost{font-size:13px;color:var(--dim);transition:color .15s}
   .topbar .ghost:hover{color:var(--ink)}
-  .claude-note{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--dim);max-width:560px;line-height:1.25;text-align:left}
+  .claude-note{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;color:var(--dim);max-width:400px;line-height:1.25;text-align:left}
   .claude-mark{flex:none;width:20px;height:20px;object-fit:contain;display:block;transform-origin:center;animation:claudeLive 3s ease-in-out infinite}
   @keyframes claudeLive{0%,100%{transform:scale(1);filter:brightness(1) drop-shadow(0 0 0px rgba(181,80,44,0))}50%{transform:scale(1.1);filter:brightness(1.15) drop-shadow(0 0 6px rgba(181,80,44,.4))}}
   .bw-hero-mark{flex:none;display:block}
@@ -501,9 +501,9 @@
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New inquiry</h1>
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
-      <span class="claude-note" title="Powered by advanced language models for structural interpretation" style="max-width: 720px">
-        <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true" style="width: 30px; height: 30px">
-        <span class="cn-text" style="font-family: var(--sans); font-weight: 700">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline. Our build is crafted to deliver the absolute best. And we are always on our way to make it better</span>
+      <span class="claude-note" title="Powered by advanced language models for structural interpretation">
+        <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true">
+        <span class="cn-text" style="font-family: var(--sans)">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline.</span>
       </span>
       <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">About us</a>
     </div>

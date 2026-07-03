@@ -101,6 +101,7 @@
       var b = document.createElement("button");
       b.className = "casting" + (c.id === S.activeId ? " active" : "");
       b.textContent = c.title;
+      b.title = c.title;
       b.addEventListener("click", function () { S.activeId = c.id; save(); renderAll(); });
       var del = document.createElement("button");
       del.className = "casting-del";
@@ -294,7 +295,9 @@
 
   function renderThread() {
     var c = activeConv();
-    $("convTitle").textContent = c ? c.title : "New inquiry";
+    var titleText = c ? c.title : "New inquiry";
+    $("convTitle").textContent = titleText;
+    $("convTitle").title = titleText;
     threadInner.innerHTML = "";
     if (!c || !c.msgs.length) {
       document.body.classList.add("is-empty");
@@ -468,7 +471,7 @@
     if (S.units < m.cost) { openPlans(); toast("Your unit balance is depleted — " + m.cost.toLocaleString("en-US") + " units required."); return; }
 
     if (!activeConv()) {
-      var conv = { id: Date.now().toString(36), title: text.length > 42 ? text.slice(0, 42) + "…" : text, msgs: [] };
+      var conv = { id: Date.now().toString(36), title: text, msgs: [] };
       S.convs.unshift(conv);
       S.activeId = conv.id;
     }

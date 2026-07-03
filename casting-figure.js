@@ -528,7 +528,7 @@
       "@media (max-width:600px){.bw-zg{flex-direction:column;align-items:stretch;gap:16px}.bw-zg-svg{width:100%}}",
 
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
-      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:9px;max-width:100%}",
+      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:9px;max-width:100%}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
       ".bw-af-el{font-family:var(--serif);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
@@ -541,7 +541,7 @@
       ".bw-af-arrow{fill:none;stroke-width:2;opacity:.55}",
       ".bw-af-tarrow{fill:none;stroke:var(--faint);stroke-width:1.4;stroke-linecap:round}",
       ".bw-af-branch{opacity:1}",
-      ".bw-af-legend{display:flex;flex-direction:column;align-items:center;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft)}",
+      ".bw-af-legend{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft);width:100%}",
       ".bw-af-legend span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}",
       ".bw-af-legend i{flex:none;width:13px;height:0;border-top:2px solid var(--line)}",
       ".bw-af-legend i.d-self{height:8px;width:8px;border:0;border-radius:50%;background:var(--terracotta)}",
@@ -578,7 +578,7 @@
       ".bw-af-bar .bw-cast-status{color:var(--faint);font-size:10px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
       /* the moment, as a compact inline row joined by organic ink dots */
-      ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
+      ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
       ".bw-af-moment .bw-af-dot{flex:none;opacity:.85}",
       ".bw-af-mt-date{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);font-weight:600}",
       ".bw-af-mt{display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap}",
@@ -1005,7 +1005,11 @@
     var benX = 246, benR = benX + BARW, benLeadX = benX - 6, benTextX = benX - 12;
     var tieX = benR, benMkX = 320;
     var bianX = 408, bianR = bianX + BARW, bianLeadX = bianR + 4, bianTextX = bianR + 10;
-    var arrowCx = 384, VW = 600, VH = 232;
+    /* no transformed figure to make room for: crop the canvas to the primary
+       column + its World/Resp marks instead of always reserving the full
+       two-figure width (was leaving ~40% of the SVG blank and reading as a
+       floating, over-wide chart disconnected from the text column below it) */
+    var arrowCx = 384, VW = hasBian ? 600 : 372, VH = 232;
     var benCx = benX + BARW / 2, bianCx = bianX + BARW / 2;
 
     function brush(x, y, w, h, col) {
