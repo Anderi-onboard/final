@@ -147,9 +147,14 @@
         messages: messages,
         max_tokens: 4096
       }).then(function (reading) {
+        // Step 3.5: deterministic board-facts cross-check (free, no API call)
+        // — catches the AI citing a line number or moving-line count that
+        // doesn't match the real board, before the LLM QC pass runs.
+        var factCheck = PE.checkBoardFacts(reading, board);
+
         // Step 4: QC pass (if enabled)
         var shouldQC = CONFIG.enableQC !== null ? CONFIG.enableQC : (product === "sortis");
-        if (!shouldQC) {
+        if (!shouldQC && factCheck.ok) {
           return {
             source: "router",
             route: result.route,
@@ -159,8 +164,11 @@
           };
         }
 
-        return PE.qcCheck(reading, question, qcComplete).then(function (qc) {
-          if (qc.pass) {
+        var qcPromise = shouldQC ? PE.qcCheck(reading, question, qcComplete) : Promise.resolve({ pass: true });
+
+        return qcPromise.then(function (qc) {
+          var combinedPass = qc.pass && factCheck.ok;
+          if (combinedPass) {
             return {
               source: "router",
               route: result.route,
@@ -170,12 +178,15 @@
             };
           }
 
-          // QC failed — retry once with the feedback
+          var detail = (qc.detail ? qc.detail + "\n" : "") +
+            (factCheck.ok ? "" : "FACTUAL MISMATCH vs the real board — " + factCheck.issues.join("; "));
+
+          // QC or fact-check failed — retry once with the feedback
           if (CONFIG.maxRetries < 1) {
-            return { source: "router", route: result.route, reading: reading, verdict: "qc_failed", qcResult: qc };
+            return { source: "router", route: result.route, reading: reading, verdict: "qc_failed", qcResult: qc, factCheck: factCheck };
           }
 
-          var retryContent = userContent + "\n\n[QUALITY FEEDBACK FROM PREVIOUS ATTEMPT - FIX THESE ISSUES]\n" + qc.detail + "\n\n[Generate the complete reading again, fixing the above issues.]";
+          var retryContent = userContent + "\n\n[QUALITY FEEDBACK FROM PREVIOUS ATTEMPT - FIX THESE ISSUES]\n" + detail + "\n\n[Generate the complete reading again, fixing the above issues.]";
           var retryMessages = history.concat([{ role: "user", content: retryContent }]);
 
           return mainComplete({

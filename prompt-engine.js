@@ -355,6 +355,40 @@ CHECKLIST:
 
 Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
 
+  // Deterministic, zero-cost cross-check: does the reading cite line numbers
+  // or moving-line counts that don't match the actual board? Catches the AI
+  // fabricating/misremembering board facts instead of reading them off the
+  // real hexagram. Runs before the (LLM) QC pass so a caught mismatch can be
+  // folded into the same retry, without spending an extra API call.
+  function checkBoardFacts(reading, board) {
+    if (!board || !board.lines) return { ok: true, issues: [] };
+    var text = String(reading || "");
+    var issues = [];
+    var wordNum = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 };
+
+    var movingCount = 0;
+    board.lines.forEach(function (l) { if (l.moving) movingCount++; });
+
+    var lineRe = /\b(?:line)\s+([0-9]+|one|two|three|four|five|six)\b/gi;
+    var m;
+    while ((m = lineRe.exec(text))) {
+      var raw = m[1].toLowerCase();
+      var n = wordNum[raw] != null ? wordNum[raw] : parseInt(raw, 10);
+      if (n < 1 || n > 6) issues.push('cites "line ' + raw + '" — a hexagram only has 6 lines');
+    }
+
+    var countRe = /\b(one|two|three|four|five|six|\d)\s+moving\s+lines?\b/i;
+    var cm = text.match(countRe);
+    if (cm) {
+      var claimed = wordNum[cm[1].toLowerCase()] != null ? wordNum[cm[1].toLowerCase()] : parseInt(cm[1], 10);
+      if (claimed !== movingCount) {
+        issues.push("says " + claimed + " moving line(s) but the board actually has " + movingCount);
+      }
+    }
+
+    return { ok: issues.length === 0, issues: issues };
+  }
+
   function qcCheck(reading, question, claudeComplete) {
     if (!claudeComplete) return Promise.resolve({ pass: true });
     return claudeComplete({
@@ -380,6 +414,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     routeQuestion: routeQuestion,
     assemblePrompt: assemblePrompt,
     qcCheck: qcCheck,
+    checkBoardFacts: checkBoardFacts,
 
     // For customization
     SEGMENTS: SEGMENTS,
