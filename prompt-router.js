@@ -52,12 +52,27 @@
       return fetch("/api/claude", {
         method: "POST",
         headers: { "content-type": "application/json" },
+        // required so the session cookie reaches the proxy — without this,
+        // the server-side session lookup in functions/api/claude.js always
+        // sees "signed out", and Sortis billing/gating silently fails open.
+        credentials: "same-origin",
         body: JSON.stringify(payload)
       }).then(function (r) {
-        if (!r.ok) throw new Error("claude proxy " + r.status);
-        return r.json();
+        return r.json().catch(function () { return {}; }).then(function (d) {
+          if (!r.ok) {
+            var err = new Error((d && d.error) || ("claude proxy " + r.status));
+            err.status = r.status; err.code = d && d.error;
+            throw err;
+          }
+          return d;
+        });
       }).then(function (d) {
-        if (d && typeof d.text === "string") return d.text;
+        if (d && typeof d.text === "string") {
+          if (typeof d.unitsRemaining === "number" && window.BWAccount && window.BWAccount.reconcileUnits) {
+            window.BWAccount.reconcileUnits({ ok: true, units: d.unitsRemaining });
+          }
+          return d.text;
+        }
         throw new Error("bad response");
       });
     };
@@ -120,10 +135,16 @@
       }
 
       var userContent = boardData || ("QUESTION: " + question);
+      // prior exchanges (if any) go first so a follow-up ("what did line 2
+      // mean?") has the earlier reading to refer back to — messages must
+      // still end on this turn's "user" entry for the API's strict
+      // user/assistant alternation.
+      var history = Array.isArray(opts.history) ? opts.history : [];
+      var messages = history.concat([{ role: "user", content: userContent }]);
 
       return mainComplete({
         system: result.system,
-        messages: [{ role: "user", content: userContent }],
+        messages: messages,
         max_tokens: 4096
       }).then(function (reading) {
         // Step 4: QC pass (if enabled)
@@ -155,10 +176,11 @@
           }
 
           var retryContent = userContent + "\n\n[QUALITY FEEDBACK FROM PREVIOUS ATTEMPT - FIX THESE ISSUES]\n" + qc.detail + "\n\n[Generate the complete reading again, fixing the above issues.]";
+          var retryMessages = history.concat([{ role: "user", content: retryContent }]);
 
           return mainComplete({
             system: result.system,
-            messages: [{ role: "user", content: retryContent }],
+            messages: retryMessages,
             max_tokens: 4096
           }).then(function (retryReading) {
             return {

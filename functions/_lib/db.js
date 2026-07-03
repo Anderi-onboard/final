@@ -98,6 +98,22 @@ export async function deleteCasting(db, userId, id) {
   return { ok: true };
 }
 
+// Fixed-window counter for anonymous /api/claude calls (no user to bill).
+// key should already encode identity + purpose + window, e.g.
+// "ip:1.2.3.4:cast:474512" (hour bucket). Returns { ok:false } once the
+// bucket hits max, so the caller can 429 instead of hitting Anthropic.
+export async function bumpRateLimit(db, key, max) {
+  const row = await db.prepare('SELECT count FROM rate_limits WHERE bucket_key=?').bind(key).first();
+  if (row) {
+    if (row.count >= max) return { ok: false, count: row.count };
+    await db.prepare('UPDATE rate_limits SET count=count+1 WHERE bucket_key=?').bind(key).run();
+    return { ok: true, count: row.count + 1 };
+  }
+  await db.prepare('INSERT INTO rate_limits (bucket_key,count,created_at) VALUES (?,1,?)')
+    .bind(key, now()).run();
+  return { ok: true, count: 1 };
+}
+
 export function publicUser(u) {
   return u && {
     id: u.id, email: u.email, name: u.name, provider: u.provider,

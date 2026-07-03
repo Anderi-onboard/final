@@ -368,6 +368,26 @@
     });
   }
 
+  /* Prior turns as { role, content } pairs, oldest first, so a follow-up
+     ("what did line 2 mean?") actually has something to refer back to —
+     previously EVERY send() sent only the current question with zero
+     context, so the model had no way to answer a follow-up about its own
+     last reading. Capped to the last few exchanges to bound token growth;
+     the model is never asked to recast (§MOVE in meta_rules already covers
+     that), it just now gets to see what was said. */
+  function buildHistory(conv, maxTurns) {
+    if (!conv || !conv.msgs || conv.msgs.length < 2) return [];
+    var prior = conv.msgs.slice(0, -1); // exclude the question just pushed for this send
+    var out = [];
+    for (var i = 0; i < prior.length; i++) {
+      var m = prior[i];
+      if (m.role === "user") out.push({ role: "user", content: m.text });
+      else if (m.role === "oracle") out.push({ role: "assistant", content: String(m.text || "").slice(0, 2000) });
+    }
+    var maxMsgs = (maxTurns || 3) * 2;
+    return out.length > maxMsgs ? out.slice(out.length - maxMsgs) : out;
+  }
+
   /* Sortis 6 → full professional casting board + AI reading (the deep-tier experience).
      Stria stays the light per-line reading; the gap between the two IS the rigor.
 
@@ -375,7 +395,7 @@
      pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
-  function routedReading(question, spec, board, methodId) {
+  function routedReading(question, spec, board, methodId, history) {
     if (!window.BWPromptRouter) return null; // fallback to legacy
     var product = methodId === "stria" ? "stria" : "sortis";
     var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 20000); });
@@ -385,7 +405,8 @@
       board: board,
       method: methodId,
       category: "general",
-      lang: "en"
+      lang: "en",
+      history: history || []
     });
     return Promise.race([run, guard]).then(function (result) {
       if (!result || !result.reading) return null;
@@ -399,7 +420,7 @@
     }).catch(function () { return null; });
   }
 
-  function sortisReading(question, spec, board) {
+  function sortisReading(question, spec, board, history) {
     if (!board) board = (window.BWLiuYao && spec && spec.lines && spec.lines.length === 6)
       ? window.BWLiuYao.computeBoard({
           lines: spec.lines, changeIdx: spec.changeIdx || [],
@@ -408,7 +429,7 @@
       : null;
 
     // Try routed pipeline first (modular prompts + QC)
-    var routed = routedReading(question, spec, board, "sortis");
+    var routed = routedReading(question, spec, board, "sortis", history);
     if (routed) {
       return routed.then(function (result) {
         if (result) return result;
@@ -504,12 +525,13 @@
       ? window.BWFigure.cast(castBox, spec, { board: sortisBoard })
       : new Promise(function (r) { setTimeout(r, 1600); });
 
+    var history = buildHistory(c, 3);
     var answerP;
     if (m.id === "sortis") {
-      answerP = sortisReading(text, spec, sortisBoard);
+      answerP = sortisReading(text, spec, sortisBoard, history);
     } else {
       // Stria: try routed pipeline first, fallback to simple oracle
-      var striaRouted = routedReading(text, spec, null, "stria");
+      var striaRouted = routedReading(text, spec, null, "stria", history);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
           if (result) return result;

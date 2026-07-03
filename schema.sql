@@ -36,3 +36,13 @@ CREATE TABLE IF NOT EXISTS castings (
   created_at INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_castings_user ON castings(user_id, created_at);
+
+-- fixed-window rate limiter for anonymous / unauthenticated calls to
+-- functions/api/claude.js (defense against script abuse of the AI proxy
+-- when the caller has no D1 account to deduct units from). One row per
+-- "ip + purpose + hour" bucket; see functions/_lib/db.js bumpRateLimit().
+CREATE TABLE IF NOT EXISTS rate_limits (
+  bucket_key TEXT PRIMARY KEY,
+  count      INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL
+);

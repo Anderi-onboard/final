@@ -248,13 +248,26 @@ Self-check section title: fixed as "How much I trust this reading."`;
   // GATE — code-level pre-check (no LLM cost, instant)
   // ═══════════════════════════════════════════════════════════════════
 
+  // NOTE: \b (word boundary) is defined against ASCII \w only in JS regex —
+  // it NEVER fires around CJK characters (neither side counts as a "word"
+  // character, so there's no word/non-word transition to anchor on). Wrapping
+  // Chinese terms in \b...\b — as this used to do — means those alternatives
+  // can never match ANY input, silently disabling half the crisis/minor
+  // detection for Chinese speakers. CJK terms below are matched as plain
+  // substrings (safe: these are multi-character terms, not single characters
+  // that could appear inside unrelated words); \b stays on the Latin terms,
+  // which do need it. Caught by eval/run-eval.js — run it after any edit here.
   var CRISIS_PATTERNS = [
-    /\b(想死|不想活|自杀|割腕|跳楼|了结|suicide|kill myself|end it all|self.?harm|jump off)\b/i,
-    /\b(杀|伤害|murder|stab|hurt someone|harm them)\b/i
+    /想死|不想活|自杀|割腕|跳楼|了结|杀了自己|伤害自己/,
+    /杀了他|杀了她|杀了你|杀死他|杀死她|想杀人|要杀人|谋杀|捅死|捅他|捅她/,
+    /\b(suicide|kill myself|end it all|self.?harm|jump(ing)?\s+off)\b/i,
+    /\b(murder|stab|hurt someone|harm them)\b/i
   ];
   var MINOR_PATTERNS = [
-    /\b(我.{0,4}(岁|年级).{0,6}(喜欢|暗恋|恋爱|性))/,
-    /\b(未成年|小学|初中|中学生|14岁|15岁|13岁|12岁|minor|underage)\b/i
+    /我.{0,4}(岁|年级).{0,6}(喜欢|暗恋|恋爱|性)/,
+    /未成年|小学生|初中生|中学生|14岁|15岁|13岁|12岁|11岁|10岁/,
+    /\b(minor|underage)\b/i,
+    /\b\d{1,2}\s*[-\s]?year[-\s]?old\b.{0,20}\b(crush|dating|boyfriend|girlfriend|like|love)\b/i
   ];
 
   function gate(question) {

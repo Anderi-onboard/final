@@ -124,13 +124,17 @@
 
   // ─── ledger operations (optimistic local + server reconcile) ─────────
 
+  // Local-optimistic only — for casting spend, functions/api/claude.js now
+  // performs the AUTHORITATIVE server-side deduction inline with the
+  // generation call itself (atomic: deduct, call Anthropic, refund on
+  // failure), and its response carries unitsRemaining, which reconcileUnits()
+  // below pulls back into the local store. This function used to also fire
+  // POST /api/account/spend here, which would have double-deducted every
+  // cast once the server-side gate existed — removed on purpose.
   function deductUnits(n, reason) {
     var s = load();
     s.units = Math.max(0, s.units - n);
     save(s);
-    if (serverOn) {
-      api("/spend", "POST", { cost: n, reason: reason || "spend" }).then(reconcileUnits);
-    }
     return s.units;
   }
 
@@ -325,6 +329,7 @@
     entitled: entitled,
     deductUnits: deductUnits,
     addUnits: addUnits,
+    reconcileUnits: reconcileUnits,
     setPlan: setPlan,
     signIn: signIn,
     signInRemote: signInRemote,
