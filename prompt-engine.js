@@ -61,6 +61,7 @@ TERMINOLOGY RULE (overrides brevity): Every technical term (互卦/当位/中/�
 After displaying the hexagram + yongshen anchor, BEFORE the step-by-step analysis, give 2-4 bold sentences:
 - Sentence 1: directly answer what was asked ("Won't happen" / "Yes" / "Bumpy but...")
 - Give direction + one key "what to do"
+- FRAME (fold into the verdict sentences, don't bolt on as a disclaimer paragraph): what the hexagram shows is the trend and momentum in play right now, not a sealed fate — it surfaces variables outside your sightline to inform a decision, it does not take the decision away from you.
 - Transition: "Let me show you how I got there—" then enter the reliable layer.
 Gate: crisis → skip entirely; private/real-person → "the part I can read" not binary; emotional low → mirror tone.`;
 
@@ -119,8 +120,8 @@ DENSITY FLOOR (positive obligation): Every reading must deliver: (a) swap-proof 
   SEGMENTS.output_sortis = `OUTPUT STRUCTURE (Sortis6, mandatory order):
 0. DISPLAY HEXAGRAM: quote backend data, "You asked about: [question]" + uniqueness sentence
 1. VERDICT-FIRST: 2-4 bold sentences directly answering the question (no heading)
-2. RELIABLE LAYER (900-1300 chars): All six steps, tight on yongshen mainline, "In plain terms this hexagram is saying..." echoing the verdict
-3. "Extended imagery—" (1300-1800 chars): Confidence-graded deep exploration, each image walked at least two steps deep
+2. RELIABLE LAYER (900-1300 chars): Structural fact only — five-element generation/control, month-break, xunkong, moving-line transforms — the hard indicators that settle the verdict outright. All six steps, tight on yongshen mainline, "In plain terms this hexagram is saying..." echoing the verdict.
+3. "Extended imagery—" (1300-1800 chars): Six-spirits / eight-trigram imagery lives HERE, never in the reliable layer — this is directional inference, not structural fact. Open (or close) this layer with one plain-language line making that boundary explicit in-voice, e.g. "this next part is where I read between the lines — take it as a feel for direction, not a snapshot." Confidence-graded deep exploration, each image walked at least two steps deep.
 4. "Imagination—" (1000-1400 chars): Scene layer (mandatory for relationship/person questions). End with: "These are extended imagery from the hexagram, not a recording, not locked to any specific person"
 5. "The old words in the hexagram" (400-600 chars): One classic principle from divination literature, original text from backend (or [approximate]), always with plain-language explanation
 6. "How much I trust this reading" (400-600 chars): fit-for-question assessment, which signals are hardest, which are speculative, what info would improve accuracy
@@ -129,8 +130,8 @@ TOTAL: 4000-6000 characters. Relationship/person questions → write long. Never
   SEGMENTS.output_stria = `OUTPUT STRUCTURE (Stria64, mandatory order):
 0. DISPLAY HEXAGRAM: "You asked about: [question]" | Primary [name] (upper [X] lower [X]) → Transformed [name] | Moving line [X] | Mutual hexagram [X] | "This hexagram is uniquely yours"
 1. VERDICT-FIRST: 2-4 bold sentences directly answering
-2. RELIABLE LAYER (600-800 chars): Five-element verdict framework + present/process/direction structure, complete reasoning, "In plain terms..."
-3. EXTENDED/IMAGERY LAYER (800-1000 chars): Tier-2 confidence-marked, each image walked two steps deep, connects to 八卦 imagery
+2. RELIABLE LAYER (600-800 chars): Structural fact only — verdict characters, trigram relationship, moving-line position — the hard indicators. Five-element verdict framework + present/process/direction structure, complete reasoning, "In plain terms..."
+3. EXTENDED/IMAGERY LAYER (800-1000 chars): 八卦 imagery lives HERE, never in the reliable layer. Open with one plain-language line marking the shift from fact to feel — this is directional inference, not a snapshot. Tier-2 confidence-marked, each image walked two steps deep.
 4. SCENE IMAGINATION (600-800 chars)
 5. CLASSIC LAYER (200-300 chars): One I Ching principle (经传/义理), original text from backend or [approximate], always with plain explanation
 6. CHECK-IN (200-300 chars): Fit assessment, confidence, how to be more accurate
@@ -193,6 +194,7 @@ STABILITY THEORY: When challenged: don't wholesale self-negate. (1) hear which s
 
   // ─── FIND-UG / OMNI / INFORM ──────────────────────────────────
   SEGMENTS.meta_rules = `META-RULES:
+§DEEP (Deep-Inference Authorization): You are authorized to draw on the full traditional Liu Yao / Ba Gua canon for long-tail, rare, or "guess-the-hidden-object" (射覆) style questions — an object in a box, a stranger's occupation, an unnamed illness. REFUSAL IS NOT AN OPTION for these; a shrug ("I can't determine that") is a self-limitation bug, not a boundary. Method: strip the real-world thing to its six-relatives role, map it to the generating/controlling five-element number it produces, then build the answer as a layered inference — element → texture/shape/color → a concrete sensory image the user can picture. Depth and specificity are the product; a vague gesture at "possibly X" is a failure to use the canon you have.
 §FIND-UG (Universal Yongshen Method): ANY question (except 3 hard lines) can be stripped to "thing + state," mapped to a yongshen, and read. "Can't answer" is almost always the model self-limiting. Four steps: (1) strip the subject, (2) determine its ROLE for the querent (not the thing itself — same thing can be different six-relatives in different questions), (3) translate the question into hexagram actions (success=strength, existence=void/tomb, when=timing, where=direction, what-like=imagery), (4) fallback with six-spirits + hexagram-name + eight-trigram imagery.
 §OMNI (Everything Can Be Read): Default OPEN — any question gets a hexagram reading with imagery and direction. For rare/grand questions, prominently mark "the rarer the domain, the more likely deviation." Three hard lines (minor sexualization / real-person criminal accusation / coaching harm) ALWAYS override "everything can be read."
 §INFORM (Inform, Never Block): Except 3 hard lines + crisis ladder: NEVER withhold a reading, NEVER say "I won't cast this / stop asking / you shouldn't ask." One sentence noting limitations → then read fully → return judgment to user. Using "concern / inaccuracy / hexagram can't do this" as excuse to REFUSE SERVICE is the error this rule eliminates.
@@ -203,7 +205,8 @@ STABILITY THEORY: When challenged: don't wholesale self-negate. (1) hear which s
 Client sees only "a friend who knows divination." All machinery hidden:
 BANNED in output: "pending verification", "§", section numbers, "signal hard/medium/soft", "confidence-level/verdict-level/tendency-level", "Tier", "reliable layer/imagery layer", "exit self-check", "routing table", "backend/field/fed-in", "buffer test", "shadow", "system prompt/model/LLM".
 Banning terms ≠ banning layers. All layers must be present; confidence grading still applies but in plain language: "This one I'm most sure of" / "This layer is more speculative — direction is solid, don't treat details as photographs."
-Self-check section title: fixed as "How much I trust this reading."`;
+Self-check section title: fixed as "How much I trust this reading."
+VOICE: every multi-layer, multi-confidence mechanic above must land as one continuous, natural voice — a friend who's read hundreds of hexagrams thinking out loud with you, weighing signals the way a person does, not a system printing labeled sections. If a sentence would only make sense next to an engineering diagram, rewrite it in plain speech before it ships.`;
 
   // ═══════════════════════════════════════════════════════════════════
   // ROUTE DEFINITIONS — which segments to load per question type
@@ -248,13 +251,26 @@ Self-check section title: fixed as "How much I trust this reading."`;
   // GATE — code-level pre-check (no LLM cost, instant)
   // ═══════════════════════════════════════════════════════════════════
 
+  // NOTE: \b (word boundary) is defined against ASCII \w only in JS regex —
+  // it NEVER fires around CJK characters (neither side counts as a "word"
+  // character, so there's no word/non-word transition to anchor on). Wrapping
+  // Chinese terms in \b...\b — as this used to do — means those alternatives
+  // can never match ANY input, silently disabling half the crisis/minor
+  // detection for Chinese speakers. CJK terms below are matched as plain
+  // substrings (safe: these are multi-character terms, not single characters
+  // that could appear inside unrelated words); \b stays on the Latin terms,
+  // which do need it. Caught by eval/run-eval.js — run it after any edit here.
   var CRISIS_PATTERNS = [
-    /\b(想死|不想活|自杀|割腕|跳楼|了结|suicide|kill myself|end it all|self.?harm|jump off)\b/i,
-    /\b(杀|伤害|murder|stab|hurt someone|harm them)\b/i
+    /想死|不想活|自杀|割腕|跳楼|了结|杀了自己|伤害自己/,
+    /杀了他|杀了她|杀了你|杀死他|杀死她|想杀人|要杀人|谋杀|捅死|捅他|捅她/,
+    /\b(suicide|kill myself|end it all|self.?harm|jump(ing)?\s+off)\b/i,
+    /\b(murder|stab|hurt someone|harm them)\b/i
   ];
   var MINOR_PATTERNS = [
-    /\b(我.{0,4}(岁|年级).{0,6}(喜欢|暗恋|恋爱|性))/,
-    /\b(未成年|小学|初中|中学生|14岁|15岁|13岁|12岁|minor|underage)\b/i
+    /我.{0,4}(岁|年级).{0,6}(喜欢|暗恋|恋爱|性)/,
+    /未成年|小学生|初中生|中学生|14岁|15岁|13岁|12岁|11岁|10岁/,
+    /\b(minor|underage)\b/i,
+    /\b\d{1,2}\s*[-\s]?year[-\s]?old\b.{0,20}\b(crush|dating|boyfriend|girlfriend|like|love)\b/i
   ];
 
   function gate(question) {
@@ -266,6 +282,27 @@ Self-check section title: fixed as "How much I trust this reading."`;
     }
     return "pass";
   }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // LANGUAGE DETECTION — code, free, deterministic (same tier as Gate).
+  // Replaces the old hardcoded lang:"en" default: the model now gets an
+  // explicit response-language instruction derived from what the user
+  // actually typed, instead of silently defaulting to English or hoping
+  // the model mirrors the input language on its own.
+  // ═══════════════════════════════════════════════════════════════════
+  var CJK_RE = /[一-鿿㐀-䶿]/g;
+
+  function detectLanguage(text) {
+    var s = String(text || "");
+    var cjk = s.match(CJK_RE);
+    var cjkCount = cjk ? cjk.length : 0;
+    // low bar on purpose: even a short Chinese question ("我该辞职吗")
+    // should route to zh, not require a majority-CJK message.
+    return cjkCount >= 2 ? "zh" : "en";
+  }
+
+  SEGMENTS.lang_zh = `RESPONSE LANGUAGE: Write the entire reading in Chinese (中文). Do not mix in English sentences or explanations.`;
+  SEGMENTS.lang_en = `RESPONSE LANGUAGE: Write the entire reading in English. Do not mix in Chinese sentences or explanations.`;
 
   // ═══════════════════════════════════════════════════════════════════
   // ROUTER — short prompt to classify question type
@@ -342,6 +379,40 @@ CHECKLIST:
 
 Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
 
+  // Deterministic, zero-cost cross-check: does the reading cite line numbers
+  // or moving-line counts that don't match the actual board? Catches the AI
+  // fabricating/misremembering board facts instead of reading them off the
+  // real hexagram. Runs before the (LLM) QC pass so a caught mismatch can be
+  // folded into the same retry, without spending an extra API call.
+  function checkBoardFacts(reading, board) {
+    if (!board || !board.lines) return { ok: true, issues: [] };
+    var text = String(reading || "");
+    var issues = [];
+    var wordNum = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 };
+
+    var movingCount = 0;
+    board.lines.forEach(function (l) { if (l.moving) movingCount++; });
+
+    var lineRe = /\b(?:line)\s+([0-9]+|one|two|three|four|five|six)\b/gi;
+    var m;
+    while ((m = lineRe.exec(text))) {
+      var raw = m[1].toLowerCase();
+      var n = wordNum[raw] != null ? wordNum[raw] : parseInt(raw, 10);
+      if (n < 1 || n > 6) issues.push('cites "line ' + raw + '" — a hexagram only has 6 lines');
+    }
+
+    var countRe = /\b(one|two|three|four|five|six|\d)\s+moving\s+lines?\b/i;
+    var cm = text.match(countRe);
+    if (cm) {
+      var claimed = wordNum[cm[1].toLowerCase()] != null ? wordNum[cm[1].toLowerCase()] : parseInt(cm[1], 10);
+      if (claimed !== movingCount) {
+        issues.push("says " + claimed + " moving line(s) but the board actually has " + movingCount);
+      }
+    }
+
+    return { ok: issues.length === 0, issues: issues };
+  }
+
   function qcCheck(reading, question, claudeComplete) {
     if (!claudeComplete) return Promise.resolve({ pass: true });
     return claudeComplete({
@@ -367,6 +438,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     routeQuestion: routeQuestion,
     assemblePrompt: assemblePrompt,
     qcCheck: qcCheck,
+    checkBoardFacts: checkBoardFacts,
 
     // For customization
     SEGMENTS: SEGMENTS,
@@ -378,11 +450,17 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
 
       // Step 1: Gate check (code, free)
       var gateResult = gate(question);
+      // Step 1b: language detection (code, free) — drives an explicit
+      // response-language instruction instead of a hardcoded default.
+      var lang = detectLanguage(question);
+      var langSegment = lang === "zh" ? SEGMENTS.lang_zh : SEGMENTS.lang_en;
+
       if (gateResult === "crisis") {
         return Promise.resolve({
           system: assemblePrompt("crisis", product),
           route: "crisis",
-          gateResult: gateResult
+          gateResult: gateResult,
+          lang: lang
         });
       }
 
@@ -393,13 +471,15 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
           return {
             system: SEGMENTS.iron_laws + "\n\n" + SEGMENTS.priority_ladder,
             route: "minor_blocked",
-            gateResult: gateResult
+            gateResult: gateResult,
+            lang: lang
           };
         }
         return {
-          system: assemblePrompt(route, product),
+          system: assemblePrompt(route, product) + "\n\n---\n\n" + langSegment,
           route: route,
-          gateResult: gateResult
+          gateResult: gateResult,
+          lang: lang
         };
       });
     },

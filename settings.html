@@ -285,6 +285,7 @@
   });
 
   render();
+  if (A.hydrate) A.hydrate(function () { render(); });
 })();
 </script>
 </body>

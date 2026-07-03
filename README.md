@@ -10,13 +10,69 @@ project anymore.
 ```
 index.html          ← the app (landing = chat empty-state, inline conversation)
 about.html  pricing.html  login.html  settings.html
-privacy.html  terms.html  refund.html  404.html  chat.html (legacy redirect)
+privacy.html  terms.html  refund.html  404.html
 styles.css          ← design-system entry (@imports tokens/*)
 tokens/*.css         ← colors, fonts, typography, spacing, paper skin
 assets/             ← mountain backdrop, paper textures, Claude mark
 *.js                ← app logic (chat-app, liuyao-*, casting-figure, sidebar, …)
 ds-base.js          ← loads styles.css + wires window.claude → /api/claude
-functions/api/claude.js  ← optional Cloudflare Pages Function (the AI proxy)
+functions/api/claude.js  ← the AI proxy (Cloudflare Pages Function)
+wrangler.toml       ← Pages config (local dev + deploy)
+.dev.vars.example   ← copy to .dev.vars for local keys (gitignored)
+```
+
+## Local development
+
+```bash
+npm install
+cp .dev.vars.example .dev.vars   # add your ANTHROPIC_API_KEY (optional)
+npm run dev:fn                    # site + /api/claude function on :3000
+# or, static only (no backend): npm run dev
+```
+
+## Backend (the AI proxy)
+
+One Function, `functions/api/claude.js`, serves the whole backend:
+
+- `POST /api/claude` — the browser sends *intent* (`product` / `role`) and the
+  proxy picks the model server-side, so model choice + cost control live in one
+  place. The Anthropic key never reaches the client.
+  - `product: "stria"`  → **Sonnet 4.6** (baseline reading)
+  - `product: "sortis"` → **Opus 4.8** (deep causal synthesis)
+  - `role: "router" | "qc"` → **Haiku 4.5** (cheap classify / quality-control)
+  - an explicit `model` is honoured only if allow-listed (`opus`/`sonnet`/`haiku`)
+- `GET /api/claude` — health probe: confirms the route is live and whether the
+  key is set (without leaking it). Useful to verify wiring before spending units.
+
+The Sortis pipeline is **Gate → Route → focused prompt → QC pass** (with one
+retry on QC failure); Stria runs a single Sonnet pass. If the key is missing or
+a call fails, the front-end falls back to its deterministic Liu Yao reading, so
+the site never breaks.
+
+## Accounts, ledger & history (D1)
+
+Real, cross-device persistence lives in **Cloudflare D1**, served by two
+catch-all Functions:
+
+- `functions/api/auth/[[path]].js` — `POST /api/auth/dev` (real persisted
+  email sign-in), Google OAuth (`GET /api/auth/google` + `/google/callback`,
+  active only when `GOOGLE_CLIENT_ID/SECRET` are set), `POST /api/auth/signout`.
+- `functions/api/account/[[path]].js` — `GET /me`, `POST /spend`, `POST /grant`,
+  `POST /plan`, and `GET/POST/DELETE /castings`. Sessions are stateless signed
+  cookies (`SESSION_SECRET`); the server owns the unit balance (anti-tamper) and
+  records every movement in an append-only `ledger` table.
+
+The front-end (`account.js`) hydrates from `GET /me` on load and mirrors writes
+optimistically, reconciling to the server's authoritative balance. **Guests and
+key-less / DB-less deploys keep working entirely on `localStorage`** — the
+account API returns `501` and the app falls back silently.
+
+Setup:
+```bash
+npx wrangler d1 create bournewise          # paste database_id into wrangler.toml
+npx wrangler d1 execute bournewise --local  --file=./schema.sql
+npx wrangler d1 execute bournewise --remote --file=./schema.sql
+# set SESSION_SECRET (and optional GOOGLE_CLIENT_ID/SECRET) in .dev.vars / Pages env
 ```
 
 ## Deploy (two ways)
@@ -42,7 +98,9 @@ deterministic interpretation of the Liu Yao board (real structure, generic prose
 To get live, written readings from Claude:
 1. In your Pages project → **Settings → Environment variables**, add a secret:
    - `ANTHROPIC_API_KEY` = your Anthropic API key
-   - (optional) `CLAUDE_MODEL` — defaults to `claude-haiku-4-5`
+   - (optional) `STRIA_MODEL` — defaults to `claude-sonnet-4-6`
+   - (optional) `SORTIS_MODEL` — defaults to `claude-opus-4-8`
+   - (optional) `UTILITY_MODEL` — defaults to `claude-haiku-4-5`
    - (optional) `CLAUDE_MAX_TOKENS` — defaults to `1024`
 2. Redeploy. The browser calls `/api/claude`, which the bundled
    `functions/api/claude.js` proxies to Anthropic with your key kept server-side.

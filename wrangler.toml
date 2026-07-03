@@ -1,0 +1,26 @@
+# Cloudflare Pages config for BourneWise.
+# The static site is the repo root; the backend lives in ./functions and is
+# served automatically at matching routes (functions/api/claude.js → /api/claude).
+#
+# Local dev:   npm run dev:fn      (serves site + functions, reads .dev.vars)
+# Deploy:      connect this repo in the Cloudflare Pages dashboard, or
+#              npx wrangler pages deploy .
+#
+# Secrets are NOT stored here. Locally use .dev.vars; in production set them in
+# Pages → Settings → Environment variables.
+
+name = "bournewise"
+pages_build_output_dir = "."
+compatibility_date = "2024-11-01"
+
+# Accounts / ledger / history live in D1 (the server source of truth).
+# First time:
+#   npx wrangler d1 create bournewise           → paste the database_id below
+#   npx wrangler d1 execute bournewise --local  --file=./schema.sql
+#   npx wrangler d1 execute bournewise --remote --file=./schema.sql
+# If this binding is absent, the account API returns 501 and the app falls back
+# to its local guest store — nothing breaks.
+[[d1_databases]]
+binding = "DB"
+database_name = "bournewise"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"

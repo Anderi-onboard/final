@@ -4,6 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "npx serve . -l 3000 --no-clipboard",
-    "start": "npx serve . -l 3000 --no-clipboard"
+    "start": "npx serve . -l 3000 --no-clipboard",
+    "dev:fn": "npx wrangler pages dev . --port 3000",
+    "deploy": "npx wrangler pages deploy ."
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
   }
 }

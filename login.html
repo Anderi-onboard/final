@@ -131,14 +131,30 @@
 <script>
 (function () {
   "use strict";
+  // demo identities per provider — real, persisted accounts when D1 is configured,
+  // local demo otherwise. To enable real Google OAuth, set GOOGLE_CLIENT_ID/SECRET
+  // and point the google button at: location.href = "/api/auth/google".
+  var DEMO = {
+    google: { email: "elias.vance@gmail.com", name: "Elias Vance" },
+    apple:  { email: "elias@icloud.com",      name: "Elias Vance" },
+    dev:    { email: "dev@bournewise.local",   name: "Dev Tester"  },
+    email:  { email: "elias@iname.com",        name: "Elias Vance" }
+  };
   document.querySelectorAll(".prov").forEach(function (b) {
     b.addEventListener("click", function () {
       var prov = b.getAttribute("data-prov");
-      if (window.BWAccount) window.BWAccount.signIn(prov);
+      var d = DEMO[prov] || DEMO.dev;
       b.style.opacity = ".6";
       var arr = b.querySelector(".arr");
       if (arr) arr.innerHTML = '<svg width="15" height="15" viewBox="0 0 16 16" class="spin"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="28" stroke-dashoffset="10"></circle></svg>';
-      setTimeout(function () { location.href = "./index.html"; }, 620);
+      function go() { location.href = "./index.html"; }
+      if (window.BWAccount && window.BWAccount.signInRemote) {
+        window.BWAccount.signInRemote(d.email, d.name, prov, go);
+        setTimeout(go, 1500); // safety net if the request hangs
+      } else {
+        if (window.BWAccount) window.BWAccount.signIn(prov);
+        setTimeout(go, 620);
+      }
     });
   });
 })();

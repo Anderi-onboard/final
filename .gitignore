@@ -1,0 +1,10 @@
+# secrets — never commit
+.dev.vars
+
+# deps / build
+node_modules/
+.wrangler/
+dist/
+
+# os / editor
+.DS_Store

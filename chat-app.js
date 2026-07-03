@@ -110,7 +110,7 @@
         e.stopPropagation();
         S.convs = S.convs.filter(function (x) { return x.id !== c.id; });
         if (S.activeId === c.id) S.activeId = S.convs.length ? S.convs[0].id : null;
-        save(); renderAll();
+        save(); A.deleteCastingRemote(c.id); renderAll();
         toast("Casting burned.");
       });
       wrap.appendChild(b);
@@ -353,7 +353,10 @@
       var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
         "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
         deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis. Reply with the judgment only.";
-      run = window.claude.complete(prompt).then(function (r) {
+      run = window.claude.complete({
+        product: m.id === "sortis" ? "sortis" : "stria",
+        messages: [{ role: "user", content: prompt }]
+      }).then(function (r) {
         var s = String(r || "").trim(); return s || null;
       }).catch(function () { return null; });
     } else {
@@ -365,6 +368,26 @@
     });
   }
 
+  /* Prior turns as { role, content } pairs, oldest first, so a follow-up
+     ("what did line 2 mean?") actually has something to refer back to —
+     previously EVERY send() sent only the current question with zero
+     context, so the model had no way to answer a follow-up about its own
+     last reading. Capped to the last few exchanges to bound token growth;
+     the model is never asked to recast (§MOVE in meta_rules already covers
+     that), it just now gets to see what was said. */
+  function buildHistory(conv, maxTurns) {
+    if (!conv || !conv.msgs || conv.msgs.length < 2) return [];
+    var prior = conv.msgs.slice(0, -1); // exclude the question just pushed for this send
+    var out = [];
+    for (var i = 0; i < prior.length; i++) {
+      var m = prior[i];
+      if (m.role === "user") out.push({ role: "user", content: m.text });
+      else if (m.role === "oracle") out.push({ role: "assistant", content: String(m.text || "").slice(0, 2000) });
+    }
+    var maxMsgs = (maxTurns || 3) * 2;
+    return out.length > maxMsgs ? out.slice(out.length - maxMsgs) : out;
+  }
+
   /* Sortis 6 → full professional casting board + AI reading (the deep-tier experience).
      Stria stays the light per-line reading; the gap between the two IS the rigor.
 
@@ -372,7 +395,7 @@
      pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
-  function routedReading(question, spec, board, methodId) {
+  function routedReading(question, spec, board, methodId, history, onDelta) {
     if (!window.BWPromptRouter) return null; // fallback to legacy
     var product = methodId === "stria" ? "stria" : "sortis";
     var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 20000); });
@@ -382,7 +405,9 @@
       board: board,
       method: methodId,
       category: "general",
-      lang: "en"
+      // no lang override — BWPromptRouter detects it from the question text
+      history: history || [],
+      onDelta: onDelta
     });
     return Promise.race([run, guard]).then(function (result) {
       if (!result || !result.reading) return null;
@@ -396,7 +421,7 @@
     }).catch(function () { return null; });
   }
 
-  function sortisReading(question, spec, board) {
+  function sortisReading(question, spec, board, history, onDelta) {
     if (!board) board = (window.BWLiuYao && spec && spec.lines && spec.lines.length === 6)
       ? window.BWLiuYao.computeBoard({
           lines: spec.lines, changeIdx: spec.changeIdx || [],
@@ -405,7 +430,7 @@
       : null;
 
     // Try routed pipeline first (modular prompts + QC)
-    var routed = routedReading(question, spec, board, "sortis");
+    var routed = routedReading(question, spec, board, "sortis", history, onDelta);
     if (routed) {
       return routed.then(function (result) {
         if (result) return result;
@@ -449,8 +474,10 @@
     }
     var c = activeConv();
     c.msgs.push({ role: "user", text: text });
-    S.units -= m.cost;
-    save(); renderAll();
+    save();                                 // persist the question first
+    A.deductUnits(m.cost, "cast:" + m.id);  // spend on the store (+ server mirror)
+    S.units = A.state().units;              // reconcile local balance only
+    renderAll();
     if (S.units < m.cost && S.account.plan === "free") {
       toast("Low balance — upgrade to keep casting.");
     }
@@ -473,7 +500,18 @@
     var castBox = document.createElement("div");
     castBox.className = "reading-fig" + (sortisBoard ? " is-full" : "");
     live.appendChild(castBox);
+    /* real network text as it streams in, shown while the cast animation is
+       still drawing — this is what actually cuts perceived latency (first
+       real tokens in ~1-2s instead of waiting out the whole pipeline in
+       silence). Swapped out for the fully-structured verdictHTML() once the
+       complete reading is in; see finish() below. */
+    var streamPreview = document.createElement("p");
+    streamPreview.className = "reading-stream-preview";
+    live.appendChild(streamPreview);
     threadInner.appendChild(live);
+    function onStreamDelta(chunk, fullSoFar) {
+      streamPreview.textContent = fullSoFar;
+    }
 
     /* Claude-style: lift the question to the top of the thread and reveal the full
        casting animation below it. A spacer guarantees there's room to scroll. */
@@ -499,12 +537,13 @@
       ? window.BWFigure.cast(castBox, spec, { board: sortisBoard })
       : new Promise(function (r) { setTimeout(r, 1600); });
 
+    var history = buildHistory(c, 3);
     var answerP;
     if (m.id === "sortis") {
-      answerP = sortisReading(text, spec, sortisBoard);
+      answerP = sortisReading(text, spec, sortisBoard, history, onStreamDelta);
     } else {
       // Stria: try routed pipeline first, fallback to simple oracle
-      var striaRouted = routedReading(text, spec, null, "stria");
+      var striaRouted = routedReading(text, spec, null, "stria", history, onStreamDelta);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
           if (result) return result;
@@ -523,10 +562,13 @@
         ts: Date.now(), cost: m.cost
       };
       c.msgs.push(oracleMsg);
+      c.method = m.id;
       save();
+      A.syncCasting(c);   // persist this casting to the server (if signed in)
       /* update only the chrome (balance + history) — leave the thread alone so the
          casting figure isn't wiped; the verdict then streams in naturally below it */
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
       revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
     }
@@ -676,30 +718,20 @@
     toast("Signed out — your history and balance remain secure.");
   });
 
-  /* ── plans modal ── */
-  var overlay = $("plansOverlay");
-  function openPlans() { overlay.classList.add("open"); }
-  function closePlans() { overlay.classList.remove("open"); }
-  $("openPlans").addEventListener("click", openPlans);
-  $("closePlans").addEventListener("click", closePlans);
-  overlay.addEventListener("click", function (e) { if (e.target === overlay) closePlans(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closePlans(); closeMenu(); closeMethod(); } });
-  overlay.querySelectorAll(".plan button").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var add = parseInt(b.getAttribute("data-units"), 10) || 0;
-      var plan = b.getAttribute("data-plan");
-      if (plan) {
-        if (!S.account.signedIn) { A.signIn("email"); S = A.state(); }
-        S.account.plan = plan;
-      }
-      S.units += add;
-      save(); renderAll(); closePlans();
-      toast("+" + add.toLocaleString("en-US") + " units added to your balance.");
-    });
+  /* ── plans live on the pricing page (no in-app modal) ── */
+  function openPlans() { location.href = "./pricing.html"; }
+  var openBtn = $("openPlans");
+  if (openBtn) openBtn.addEventListener("click", openPlans);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenu(); closeMethod(); } });
+
+  /* ── boot: hydrate from the server (if signed in), then paint ── */
+  renderAll();                       // instant paint from local store
+  A.hydrate(function () { S = A.state(); renderAll(); });
+  window.addEventListener("bw:account-synced", function () {
+    S.units = A.state().units; renderUnits();
   });
 
   /* ── entry: ?q= from landing, #plans deep link ── */
-  renderAll();
   var params = new URLSearchParams(location.search);
   var q = (params.get("q") || "").trim();
   if (q) { history.replaceState(null, "", location.pathname); send(q); }
