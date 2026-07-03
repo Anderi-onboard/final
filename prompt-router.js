@@ -84,7 +84,11 @@
     var question = opts.question || "";
     var product = opts.product || (opts.method === "stria" ? "stria" : "sortis");
     var board = opts.board;
-    var lang = opts.lang || "en";
+    // explicit opts.lang (if the caller ever sets one) wins; otherwise the
+    // language detected from the question itself (PE.buildSystemPrompt's
+    // result.lang below) drives the board-prompt language — no more
+    // hardcoded "en" default regardless of what the user actually typed.
+    var lang = opts.lang;
 
     var PE = window.BWPromptEngine;
     if (!PE) {
@@ -122,12 +126,13 @@
       // (deriveRoles produces roles.perLine — without it distill() throws and
       // the whole Sortis pipeline silently falls back to legacy).
       var boardData = "";
+      var effectiveLang = lang || result.lang || "en";
       var AI = window.BWLiuYaoAI;
       if (board && AI && AI.buildMessages) {
         try {
           var priorKey = (AI.CATEGORY_YONGSHEN && AI.CATEGORY_YONGSHEN[opts.category || "general"]) || "self";
           var roles = board._roles || (AI.deriveRoles ? AI.deriveRoles(board, priorKey) : {});
-          var built = AI.buildMessages(board, roles, question, opts.category || "general", opts.gender, lang);
+          var built = AI.buildMessages(board, roles, question, opts.category || "general", opts.gender, effectiveLang);
           boardData = built.messages[0].content;
         } catch (e) {
           if (window.console) console.warn("[prompt-router] board prompt build failed, using question only:", e && e.message);

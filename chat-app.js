@@ -405,7 +405,7 @@
       board: board,
       method: methodId,
       category: "general",
-      lang: "en",
+      // no lang override — BWPromptRouter detects it from the question text
       history: history || []
     });
     return Promise.race([run, guard]).then(function (result) {

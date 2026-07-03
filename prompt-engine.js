@@ -281,6 +281,27 @@ Self-check section title: fixed as "How much I trust this reading."`;
   }
 
   // ═══════════════════════════════════════════════════════════════════
+  // LANGUAGE DETECTION — code, free, deterministic (same tier as Gate).
+  // Replaces the old hardcoded lang:"en" default: the model now gets an
+  // explicit response-language instruction derived from what the user
+  // actually typed, instead of silently defaulting to English or hoping
+  // the model mirrors the input language on its own.
+  // ═══════════════════════════════════════════════════════════════════
+  var CJK_RE = /[一-鿿㐀-䶿]/g;
+
+  function detectLanguage(text) {
+    var s = String(text || "");
+    var cjk = s.match(CJK_RE);
+    var cjkCount = cjk ? cjk.length : 0;
+    // low bar on purpose: even a short Chinese question ("我该辞职吗")
+    // should route to zh, not require a majority-CJK message.
+    return cjkCount >= 2 ? "zh" : "en";
+  }
+
+  SEGMENTS.lang_zh = `RESPONSE LANGUAGE: Write the entire reading in Chinese (中文). Do not mix in English sentences or explanations.`;
+  SEGMENTS.lang_en = `RESPONSE LANGUAGE: Write the entire reading in English. Do not mix in Chinese sentences or explanations.`;
+
+  // ═══════════════════════════════════════════════════════════════════
   // ROUTER — short prompt to classify question type
   // ═══════════════════════════════════════════════════════════════════
 
@@ -426,11 +447,17 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
 
       // Step 1: Gate check (code, free)
       var gateResult = gate(question);
+      // Step 1b: language detection (code, free) — drives an explicit
+      // response-language instruction instead of a hardcoded default.
+      var lang = detectLanguage(question);
+      var langSegment = lang === "zh" ? SEGMENTS.lang_zh : SEGMENTS.lang_en;
+
       if (gateResult === "crisis") {
         return Promise.resolve({
           system: assemblePrompt("crisis", product),
           route: "crisis",
-          gateResult: gateResult
+          gateResult: gateResult,
+          lang: lang
         });
       }
 
@@ -441,13 +468,15 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
           return {
             system: SEGMENTS.iron_laws + "\n\n" + SEGMENTS.priority_ladder,
             route: "minor_blocked",
-            gateResult: gateResult
+            gateResult: gateResult,
+            lang: lang
           };
         }
         return {
-          system: assemblePrompt(route, product),
+          system: assemblePrompt(route, product) + "\n\n---\n\n" + langSegment,
           route: route,
-          gateResult: gateResult
+          gateResult: gateResult,
+          lang: lang
         };
       });
     },
