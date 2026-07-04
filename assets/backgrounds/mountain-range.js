@@ -9,17 +9,18 @@
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
     + '.mtn-bg>svg{display:block;width:100%;height:100%}'
-    /* eight ridges, eight named colour families (色系) — each a themed run of
-       ~13 hues rather than a single tint, so the whole range reads as
-       distinct moods drifting past one another. */
-    + '@keyframes mtn-youth{0%,100%{fill:#FF8A80}8%{fill:#82D8D8}16%{fill:#FFE99A}24%{fill:#8BC98A}32%{fill:#FFB37B}40%{fill:#B49AFF}48%{fill:#6FC3D9}56%{fill:#FFAFC5}64%{fill:#8FE0FF}72%{fill:#FFDD8A}80%{fill:#7FE0BE}88%{fill:#C9A0FF}96%{fill:#FF9A8D}}'
-    + '@keyframes mtn-noble{0%,100%{fill:#5B2C6F}8%{fill:#7B1E3A}16%{fill:#2F5D3A}24%{fill:#24345E}32%{fill:#6B2C5C}40%{fill:#1D3C57}48%{fill:#6B2A21}56%{fill:#3E2A6D}64%{fill:#7A3540}72%{fill:#234D3D}80%{fill:#522450}88%{fill:#1C3A5E}96%{fill:#642222}}'
-    + '@keyframes mtn-winter{0%,100%{fill:#7A8FA6}8%{fill:#A9BBC9}16%{fill:#5E7A94}24%{fill:#8FA9BE}32%{fill:#C4D3DC}40%{fill:#6C87A0}48%{fill:#94A8B9}56%{fill:#B7C6D1}64%{fill:#4F6B85}72%{fill:#9CB2C4}80%{fill:#7E97AC}88%{fill:#ABC0CE}96%{fill:#647E96}}'
-    + '@keyframes mtn-autumnwind{0%,100%{fill:#8B4513}8%{fill:#C1712F}16%{fill:#A0522D}24%{fill:#D2884A}32%{fill:#6F4A2F}40%{fill:#B5652E}48%{fill:#9C5A28}56%{fill:#C98A3B}64%{fill:#7A4A1F}72%{fill:#A66A3B}80%{fill:#8E5A2E}88%{fill:#B57A3E}96%{fill:#6E3D1E}}'
-    + '@keyframes mtn-springday{0%,100%{fill:#F4A6B7}8%{fill:#A8D5A2}16%{fill:#F7D08A}24%{fill:#B8E0D2}32%{fill:#F0B8C8}40%{fill:#9BCB8F}48%{fill:#FAD9E5}56%{fill:#C8E6C0}64%{fill:#F5C4A1}72%{fill:#A3D9C9}80%{fill:#E8A8BE}88%{fill:#B9E3B0}96%{fill:#F2CDA0}}'
-    + '@keyframes mtn-summerflower{0%,100%{fill:#E0447A}8%{fill:#FF7A3D}16%{fill:#9B4FCC}24%{fill:#F2578F}32%{fill:#FF9E4A}40%{fill:#B05FE0}48%{fill:#E63E6D}56%{fill:#FFAA5C}64%{fill:#8F3FC7}72%{fill:#F0679E}80%{fill:#FFB37A}88%{fill:#A652D6}96%{fill:#E85585}}'
-    + '@keyframes mtn-literary{0%,100%{fill:#8C6E63}8%{fill:#A98B7C}16%{fill:#6E5A50}24%{fill:#B39A8B}32%{fill:#7C6355}40%{fill:#9E8779}48%{fill:#63504A}56%{fill:#AC8F7E}64%{fill:#75604F}72%{fill:#957C6E}80%{fill:#806759}88%{fill:#B0937F}96%{fill:#6B564A}}'
-    + '@keyframes mtn-twilight{0%,100%{fill:#8E5A73}8%{fill:#C77B5E}16%{fill:#5E4A7A}24%{fill:#D48C6E}32%{fill:#6E4E68}40%{fill:#B56A7E}48%{fill:#7A5A88}56%{fill:#C6795F}64%{fill:#654B72}72%{fill:#A6674F}80%{fill:#825883}88%{fill:#B8735E}96%{fill:#5A4460}}'
+    /* eight ridges, eight named colour families (色系) — each an 18-hue run
+       spanning light to dark within its own mood (144 distinct colours
+       total), so the whole range reads as distinct moods drifting past
+       one another rather than a single tint per ridge. */
+    + '@keyframes mtn-youth{0%,100%{fill:#FF8A80}6%{fill:#82D8D8}11%{fill:#FFE99A}17%{fill:#8BC98A}22%{fill:#FFB37B}28%{fill:#B49AFF}33%{fill:#6FC3D9}39%{fill:#FFAFC5}44%{fill:#8FE0FF}50%{fill:#FFDD8A}56%{fill:#7FE0BE}61%{fill:#C9A0FF}67%{fill:#FF9A8D}72%{fill:#FFE0E0}78%{fill:#1A3B3B}83%{fill:#FF5C8D}89%{fill:#4DFFDF}94%{fill:#FFED4E}}'
+    + '@keyframes mtn-noble{0%,100%{fill:#5B2C6F}6%{fill:#7B1E3A}11%{fill:#2F5D3A}17%{fill:#24345E}22%{fill:#6B2C5C}28%{fill:#1D3C57}33%{fill:#6B2A21}39%{fill:#3E2A6D}44%{fill:#7A3540}50%{fill:#234D3D}56%{fill:#522450}61%{fill:#1C3A5E}67%{fill:#642222}72%{fill:#0D0417}78%{fill:#C9A0DC}83%{fill:#4A0E2E}89%{fill:#0F2E1A}94%{fill:#2A1B3D}}'
+    + '@keyframes mtn-winter{0%,100%{fill:#7A8FA6}6%{fill:#A9BBC9}11%{fill:#5E7A94}17%{fill:#8FA9BE}22%{fill:#C4D3DC}28%{fill:#6C87A0}33%{fill:#94A8B9}39%{fill:#B7C6D1}44%{fill:#4F6B85}50%{fill:#9CB2C4}56%{fill:#7E97AC}61%{fill:#ABC0CE}67%{fill:#647E96}72%{fill:#E8F0F5}78%{fill:#2E3D4A}83%{fill:#D6E3EA}89%{fill:#465D70}94%{fill:#3A4F5E}}'
+    + '@keyframes mtn-autumnwind{0%,100%{fill:#8B4513}6%{fill:#C1712F}11%{fill:#A0522D}17%{fill:#D2884A}22%{fill:#6F4A2F}28%{fill:#B5652E}33%{fill:#9C5A28}39%{fill:#C98A3B}44%{fill:#7A4A1F}50%{fill:#A66A3B}56%{fill:#8E5A2E}61%{fill:#B57A3E}67%{fill:#6E3D1E}72%{fill:#3D2414}78%{fill:#E8C88A}83%{fill:#5A3018}89%{fill:#C99A5C}94%{fill:#4E2C16}}'
+    + '@keyframes mtn-springday{0%,100%{fill:#F4A6B7}6%{fill:#A8D5A2}11%{fill:#F7D08A}17%{fill:#B8E0D2}22%{fill:#F0B8C8}28%{fill:#9BCB8F}33%{fill:#FAD9E5}39%{fill:#C8E6C0}44%{fill:#F5C4A1}50%{fill:#A3D9C9}56%{fill:#E8A8BE}61%{fill:#B9E3B0}67%{fill:#F2CDA0}72%{fill:#FDF0F0}78%{fill:#7DB88A}83%{fill:#F9E0E8}89%{fill:#6EBFA0}94%{fill:#E8CFDC}}'
+    + '@keyframes mtn-summerflower{0%,100%{fill:#E0447A}6%{fill:#FF7A3D}11%{fill:#9B4FCC}17%{fill:#F2578F}22%{fill:#FF9E4A}28%{fill:#B05FE0}33%{fill:#E63E6D}39%{fill:#FFAA5C}44%{fill:#8F3FC7}50%{fill:#F0679E}56%{fill:#FFB37A}61%{fill:#A652D6}67%{fill:#E85585}72%{fill:#4A0E2E}78%{fill:#FFD9E8}83%{fill:#C0308F}89%{fill:#FF8F5C}94%{fill:#7A2E8F}}'
+    + '@keyframes mtn-literary{0%,100%{fill:#8C6E63}6%{fill:#A98B7C}11%{fill:#6E5A50}17%{fill:#B39A8B}22%{fill:#7C6355}28%{fill:#9E8779}33%{fill:#63504A}39%{fill:#AC8F7E}44%{fill:#75604F}50%{fill:#957C6E}56%{fill:#806759}61%{fill:#B0937F}67%{fill:#6B564A}72%{fill:#3A2E28}78%{fill:#D9C4B0}83%{fill:#4F3F35}89%{fill:#8A7264}94%{fill:#5E4A3F}}'
+    + '@keyframes mtn-twilight{0%,100%{fill:#8E5A73}6%{fill:#C77B5E}11%{fill:#5E4A7A}17%{fill:#D48C6E}22%{fill:#6E4E68}28%{fill:#B56A7E}33%{fill:#7A5A88}39%{fill:#C6795F}44%{fill:#654B72}50%{fill:#A6674F}56%{fill:#825883}61%{fill:#B8735E}67%{fill:#5A4460}72%{fill:#2E1F32}78%{fill:#E8B49C}83%{fill:#5A3A52}89%{fill:#9C6858}94%{fill:#3F2A3D}}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
     + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
