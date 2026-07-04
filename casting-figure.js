@@ -224,7 +224,9 @@
      casting settles). ── */
   var BW_BLOB = "M -2.8 -22.7 C 3.8 -23.2, 16.0 -19.3, 19.5 -13.6 C 23.0 -7.9, 21.9 5.4, 18.1 11.4 C 14.5 17.5, 3.2 23.2, -2.8 22.6 C -8.8 22.0, -14.8 13.5, -17.8 7.9 C -20.8 2.3, -23.0 -5.7, -20.5 -10.8 C -17.9 -15.9, -9.4 -22.2, -2.8 -22.7 Z";
   function coinsMarkup() {
-    return '<span class="bw-af-loader" aria-hidden="true"></span>';
+    return '<span class="bw-af-loader" aria-hidden="true"></span>' +
+      '<span class="bw-af-loader b" aria-hidden="true"></span>' +
+      '<span class="bw-af-loader c" aria-hidden="true"></span>';
   }
   function makeCoins() {
     var tmp = el("span");
@@ -438,11 +440,15 @@
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
 
-      /* ── organic loader: hollow hand-drawn ring, morphing + slowly turning ── */
-      ".bw-coins{display:inline-flex;align-items:center;color:var(--ink)}",
-      ".bw-af-loader{display:block;flex:none;width:34px;height:34px;box-sizing:border-box;",
-        "border:2.4px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
+      /* ── organic loader: three hollow hand-drawn rings (echoes the three-coin
+         toss), each morphing + turning on its own independent phase so they
+         read as three coins landing separately, not one mechanical spinner ── */
+      ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
+      ".bw-af-loader{display:block;flex:none;width:22px;height:22px;box-sizing:border-box;",
+        "border:2.1px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
         "animation:bwLoaderMorph 3.6s ease-in-out infinite,bwLoaderSpin 10s linear infinite}",
+      ".bw-af-loader.b{animation-delay:-1.2s,-3.4s;color:var(--terracotta)}",
+      ".bw-af-loader.c{animation-delay:-2.4s,-6.8s;color:var(--pine)}",
       "@keyframes bwLoaderMorph{",
         "0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%}",
         "20%{border-radius:58% 42% 38% 62% / 62% 44% 56% 38%}",

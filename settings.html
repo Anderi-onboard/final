@@ -83,12 +83,12 @@
     mask-image:linear-gradient(to bottom,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%),linear-gradient(to right,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect}
   @keyframes organicPanel{
-    0%,100%{border-radius:18px 15px 17px 13px / 14px 18px 12px 16px}
-    18%{border-radius:16px 20px 12px 18px / 18px 12px 19px 14px}
-    36%{border-radius:20px 12px 18px 14px / 12px 19px 14px 20px}
-    54%{border-radius:13px 18px 20px 12px / 20px 14px 12px 18px}
-    72%{border-radius:18px 13px 14px 19px / 12px 20px 18px 13px}
-    90%{border-radius:14px 18px 19px 12px / 16px 12px 17px 19px}
+    0%,100%{border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+    18%{border-radius:16px 20px 12px 18px / 18px 12px 19px 14px;backdrop-filter:blur(23px) saturate(1.26);-webkit-backdrop-filter:blur(23px) saturate(1.26)}
+    36%{border-radius:20px 12px 18px 14px / 12px 19px 14px 20px;backdrop-filter:blur(15px) saturate(1.15);-webkit-backdrop-filter:blur(15px) saturate(1.15)}
+    54%{border-radius:13px 18px 20px 12px / 20px 14px 12px 18px;backdrop-filter:blur(24px) saturate(1.28);-webkit-backdrop-filter:blur(24px) saturate(1.28)}
+    72%{border-radius:18px 13px 14px 19px / 12px 20px 18px 13px;backdrop-filter:blur(16px) saturate(1.18);-webkit-backdrop-filter:blur(16px) saturate(1.18)}
+    90%{border-radius:14px 18px 19px 12px / 16px 12px 17px 19px;backdrop-filter:blur(22px) saturate(1.24);-webkit-backdrop-filter:blur(22px) saturate(1.24)}
   }
   .row{display:flex;align-items:center;gap:16px;padding:16px 20px}
   .row + .row{border-top:1px solid var(--line-soft)}
