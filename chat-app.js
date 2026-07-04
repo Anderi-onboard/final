@@ -294,7 +294,10 @@
 
   function renderThread() {
     var c = activeConv();
-    $("convTitle").textContent = c ? c.title : "New inquiry";
+    var title = c ? c.title : "New inquiry";
+    var titleEl = $("convTitle");
+    titleEl.textContent = title;
+    titleEl.title = title; // full text on hover — the header truncates it with an ellipsis
     threadInner.innerHTML = "";
     if (!c || !c.msgs.length) {
       document.body.classList.add("is-empty");
@@ -468,7 +471,10 @@
     if (S.units < m.cost) { openPlans(); toast("Your unit balance is depleted — " + m.cost.toLocaleString("en-US") + " units required."); return; }
 
     if (!activeConv()) {
-      var conv = { id: Date.now().toString(36), title: text.length > 42 ? text.slice(0, 42) + "…" : text, msgs: [] };
+      // store the full question — every place this renders (topbar h1, sidebar
+      // .casting) already has its own overflow:hidden + text-overflow:ellipsis,
+      // so truncating here too just produced a double, inconsistently-cut ellipsis
+      var conv = { id: Date.now().toString(36), title: text, msgs: [] };
       S.convs.unshift(conv);
       S.activeId = conv.id;
     }

@@ -121,7 +121,9 @@
   /* ── main — rides above the mountain backdrop ── */
   .main{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-width:0;font-family:"BioRhyme",var(--serif)}
   .topbar{display:flex;align-items:baseline;gap:14px;padding:18px 56px 14px}
-  .topbar h1{font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* flex-shrink alone won't truncate nowrap text — needs min-width:0 to
+     actually let the box shrink below its content's natural width */
+  .topbar h1{flex:1;min-width:0;font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .units-chip{flex:none;font-size:11.5px;letter-spacing:.07em;color:var(--dim);background:var(--chip);border-radius:999px;padding:6px 13px;font-variant-numeric:tabular-nums}
 
   .thread{flex:1;overflow-y:auto;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
@@ -233,11 +235,15 @@
   .reading-insight .ix-intro{color:var(--dim)}
   .fig-float{float:right;width:288px;max-width:75%;margin:2px 0 14px 28px;padding:0}
   /* the annotated casting figure is the reading's "representation" */
-  .reading-fig{max-width:100%;margin:6px 0 10px}
-  .reading-fig .bw-af-fig{max-width:452px}
+  /* card boundary so the figure reads as an intentional block, not a
+     stray floating element misaligned with the text column below it —
+     the whole point is a visible edge, not making it hug .reading-body's
+     left margin (the figure's own flex column already centers its rows). */
+  .reading-fig{max-width:452px;margin:6px 0 14px;padding:18px 20px 15px;background:var(--paper-raised);border:1px solid var(--line);border-radius:14px}
+  .reading-fig .bw-af-fig{max-width:100%}
   /* Sortis full board extends rightward past the text column (content is left-aligned)
      so its dense labels render large enough to read comfortably */
-  .reading-fig.is-full{width:min(960px,calc(100vw - 96px));max-width:none}
+  .reading-fig.is-full{width:min(960px,calc(100vw - 96px));max-width:none;padding:22px 26px 18px}
   .reading-fig.is-full .bw-af-fig.bw-af-full{max-width:100%}
   .reading-fig .bw-af-fig.bw-af-full{max-width:min(720px,100%)}
   .reading .bw-cast,.reading .bw-figs{max-width:75%}
@@ -401,8 +407,8 @@
   .top-right{margin-left:auto;display:flex;align-items:center;gap:18px}
   .topbar .ghost{font-size:13px;color:var(--dim);transition:color .15s}
   .topbar .ghost:hover{color:var(--ink)}
-  .claude-note{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--dim);max-width:560px;line-height:1.25;text-align:left}
-  .claude-mark{flex:none;width:20px;height:20px;object-fit:contain;display:block;transform-origin:center;animation:claudeLive 3s ease-in-out infinite}
+  .claude-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--dim);max-width:400px;line-height:1.25;text-align:left}
+  .claude-mark{flex:none;width:16px;height:16px;object-fit:contain;display:block;transform-origin:center;animation:claudeLive 3s ease-in-out infinite}
   @keyframes claudeLive{0%,100%{transform:scale(1);filter:brightness(1) drop-shadow(0 0 0px rgba(181,80,44,0))}50%{transform:scale(1.1);filter:brightness(1.15) drop-shadow(0 0 6px rgba(181,80,44,.4))}}
   .bw-hero-mark{flex:none;display:block}
   @keyframes bwWave{0%,100%{opacity:.48;transform:translateY(0)}50%{opacity:1;transform:translateY(-2px)}}
@@ -501,7 +507,7 @@
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New inquiry</h1>
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
-      <span class="claude-note" title="Powered by advanced language models for structural interpretation" style="max-width: 720px">
+      <span class="claude-note" title="Powered by advanced language models for structural interpretation">
         <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true" style="width: 30px; height: 30px">
         <span class="cn-text" style="font-family: var(--sans); font-weight: 700">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline. Our build is crafted to deliver the absolute best. And we are always on our way to make it better</span>
       </span>
