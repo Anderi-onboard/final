@@ -76,13 +76,14 @@
   .section > .head b{color:var(--terracotta);font-weight:400}
   .section > .head .idx{font-size:11px;color:var(--terracotta)}
   .panel{margin-top:16px;position:relative}
-  .panel::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
+  .panel::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
     backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicPanel 21s ease-in-out infinite;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%),linear-gradient(to right,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%),linear-gradient(to right,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect}
+  .panel > *{position:relative;z-index:1}
   @keyframes organicPanel{
     0%,100%{border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
     18%{border-radius:16px 20px 12px 18px / 18px 12px 19px 14px;backdrop-filter:blur(23px) saturate(1.26);-webkit-backdrop-filter:blur(23px) saturate(1.26)}
