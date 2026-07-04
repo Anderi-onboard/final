@@ -45,7 +45,7 @@
   "@keyframes organicLedger{0%,100%{border-radius:16px 13px 15px 11px / 12px 16px 11px 14px}14%{border-radius:14px 18px 10px 16px / 16px 10px 17px 12px}28%{border-radius:18px 10px 16px 12px / 11px 17px 12px 18px}42%{border-radius:11px 16px 18px 10px / 18px 12px 10px 16px}56%{border-radius:16px 11px 12px 17px / 10px 18px 16px 11px}70%{border-radius:12px 16px 17px 10px / 14px 11px 15px 17px}84%{border-radius:17px 10px 11px 15px / 12px 16px 10px 14px}}" +
   ".ledger-head{display:flex;align-items:center;justify-content:space-between;gap:8px}" +
   ".ledger-head .lbl{font-family:'Spinnaker';font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}" +
-  ".ledger-plan{font-family:'Spinnaker';font-size:9px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--terracotta);background:rgba(181,80,44,.1);border:1px solid rgba(181,80,44,.22);border-radius:999px;padding:3px 9px}" +
+  ".ledger-plan{font-family:'Spinnaker';font-size:9px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--pine);background:rgba(61,92,74,.1);border:1px solid rgba(61,92,74,.24);border-radius:999px;padding:3px 9px}" +
   ".ledger-bal{display:flex;align-items:baseline;gap:6px;margin-top:10px}" +
   ".ledger .count{font-family:'Spinnaker';font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}" +
   ".ledger-unit{font-family:'Spinnaker';font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}" +
@@ -84,7 +84,7 @@
   ".acct-menu .who span{font-size:10.5px;color:var(--ghost);font-family:'Spinnaker';letter-spacing:.01em;margin-top:3px;display:block}" +
   ".mi{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;font-size:13px;color:var(--dim);text-align:left;transition:background .15s,color .15s}" +
   ".mi:hover{background:rgba(42,32,22,.07);color:var(--ink)}" +
-  ".mi.plan b{margin-left:auto;font-size:9px;font-weight:500;letter-spacing:.1em;color:var(--terracotta);border:1px solid rgba(181,80,44,.32);border-radius:5px;padding:2px 7px;font-family:'Spinnaker';text-transform:uppercase}" +
+  ".mi.plan b{margin-left:auto;font-size:9px;font-weight:500;letter-spacing:.1em;color:var(--pine);border:1px solid rgba(61,92,74,.36);border-radius:5px;padding:2px 7px;font-family:'Spinnaker';text-transform:uppercase}" +
   "@media (prefers-reduced-motion: reduce){.ledger{animation:none;border-radius:16px}.side-foot{animation:none;border-radius:11px}}";
   var style = document.createElement("style");
   style.id = "bw-sidebar-css";

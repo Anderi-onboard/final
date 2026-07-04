@@ -1,4 +1,5 @@
 /* BourneWise webfonts — the entire, exhaustive font list for this app.
    No other font may be loaded or referenced anywhere:
-   BioRhyme (serif) · Spinnaker (sans) · Pacifico (brand wordmark only) */
-@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&display=swap');
+   BioRhyme (serif) · Spinnaker (sans) · Pacifico (brand wordmark only) ·
+   Fraunces (--lit, italic literary voice — ledes/pull-quotes/emphasis only) */
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500;1,9..144,600&display=swap');

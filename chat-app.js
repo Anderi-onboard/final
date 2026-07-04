@@ -242,7 +242,11 @@
       : "";
   }
   function gildText(t) {
-    return esc(t).replace(/\|([^|]+)\|/g, '<span class="gild">$1</span>');
+    var n = 0;
+    return esc(t).replace(/\|([^|]+)\|/g, function (_, term) {
+      n++;
+      return '<span class="gild' + (n % 2 === 0 ? ' alt' : '') + '">' + term + '</span>';
+    });
   }
   /* split the answer prose into a lede sentence + a follow-on paragraph */
   function splitParas(text) {
