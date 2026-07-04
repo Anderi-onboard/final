@@ -15,7 +15,7 @@
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;background:#fff;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
+  body{min-height:100%;background:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
     background-image:none;background-position:0 0,200px 140px}
   a{color:inherit;text-decoration:none}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
@@ -37,7 +37,10 @@
   .meta{margin-top:14px;font-size:12.5px;color:var(--ghost);letter-spacing:.03em}
   .lede{font-family:var(--serif);font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
 
-  .toc{margin-top:26px;padding:16px 20px;background:var(--paper-raised);border:1px solid var(--line);border-radius:12px;columns:2;column-gap:26px}
+  .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;border-radius:14px;
+    background:linear-gradient(150deg,rgba(244,233,210,.72),rgba(244,233,210,.5));
+    backdrop-filter:blur(13px) saturate(1.3);-webkit-backdrop-filter:blur(13px) saturate(1.3);
+    border:1px solid rgba(255,255,255,.45);box-shadow:0 6px 20px rgba(31,29,26,.1)}
   .toc a{display:block;font-size:13px;color:var(--dim);padding:3px 0;transition:color .15s;break-inside:avoid}
   .toc a:hover{color:var(--terracotta)}
   .toc a .n{color:var(--terracotta);font-size:11px;margin-right:8px}
