@@ -44,8 +44,8 @@
   /* current-ledger strip — same organic-glass recipe as index.html's ledger:
      low-opacity gradient, strong blur, feathered mask, slow animated radius */
   .ledgerstrip{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
-    background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));
-    backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicPill 18s ease-in-out infinite;
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 12px),transparent 100%),linear-gradient(to right,transparent 0,#000 20px,#000 calc(100% - 20px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 12px),transparent 100%),linear-gradient(to right,transparent 0,#000 20px,#000 calc(100% - 20px),transparent 100%);
@@ -73,8 +73,8 @@
   .billing-toggle .save{font-size:11px;color:var(--terracotta);font-weight:500}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;align-items:stretch}
   .plan{display:flex;flex-direction:column;padding:24px 22px;position:relative;
-    background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));
-    backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicPlan 20s ease-in-out infinite;
     /* top stays unfeathered (opaque from y:0) — the "MOST SELECTED" tag pokes
        above the card via a negative top offset, and a top fade clipped it */
@@ -114,8 +114,8 @@
 
   /* one-time top-up */
   .topup{margin-top:40px;padding:24px 26px;position:relative;overflow:hidden;
-    background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));
-    backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicTopup 22s ease-in-out infinite;
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%),linear-gradient(to right,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%),linear-gradient(to right,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
