@@ -49,14 +49,15 @@
     80%{border-radius:16px 13px 14px 17px;backdrop-filter:blur(18px) saturate(1.26);-webkit-backdrop-filter:blur(18px) saturate(1.26)}
   }
 
-  /* the one Prussian block — cyanotype hero */
-  .card-hero{background:var(--prussian);background-image:url("./assets/textures/cyanotype.svg");background-size:cover;background-position:center;color:#EAF1F8;padding:26px 28px 24px;position:relative;overflow:hidden}
-  /* soften the blue→cream seam so the hero reads as blended into the card,
+  /* the one hero block — no blue: warm ink instead of Prussian (cyanotype.svg
+     bakes its own blue rect, so it's dropped here rather than tinted) */
+  .card-hero{background:var(--ink);color:var(--paper-raised);padding:26px 28px 24px;position:relative;overflow:hidden}
+  /* soften the ink→cream seam so the hero reads as blended into the card,
      not a foreign block dropped on top of it */
   .card-hero::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:34px;background:linear-gradient(to bottom,transparent,rgba(244,233,210,.94));pointer-events:none}
-  .card-hero .lbl{color:#BFD4EE}
+  .card-hero .lbl{color:#C7B492}
   .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:34px;line-height:1.0;letter-spacing:-.02em;margin-top:7px}
-  .card-hero p{font-family:var(--serif);font-size:14.5px;color:#D8E4F2;margin-top:9px;max-width:30ch;text-wrap:pretty}
+  .card-hero p{font-family:var(--serif);font-size:14.5px;color:#D9CBAE;margin-top:9px;max-width:30ch;text-wrap:pretty}
   .card-hero .seal{position:absolute;right:-14px;bottom:-20px;opacity:.5}
 
   .card-body{padding:24px 28px 12px;display:flex;flex-direction:column;gap:10px}
@@ -102,7 +103,7 @@
       <div class="lbl">&#9670;&nbsp; Access the classical architecture</div>
       <h1>Enter the framework.</h1>
       <p>Sign in to maintain your consultation balance and the history of your inquiries across the variables of your devices.</p>
-      <svg class="seal" width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="#EAF1F8" stroke-width="1" aria-hidden="true">
+      <svg class="seal" width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="#D9CBAE" stroke-width="1" aria-hidden="true">
         <circle cx="60" cy="60" r="46"></circle><circle cx="60" cy="60" r="34"></circle>
         <path d="M60 14v92M14 60h92M28 28l64 64M92 28l-64 64" opacity=".5"></path>
       </svg>
