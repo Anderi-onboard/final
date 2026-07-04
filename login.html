@@ -52,9 +52,6 @@
   /* the one hero block — no blue: warm ink instead of Prussian (cyanotype.svg
      bakes its own blue rect, so it's dropped here rather than tinted) */
   .card-hero{background:var(--ink);color:var(--paper-raised);padding:26px 28px 24px;position:relative;overflow:hidden}
-  /* soften the ink→cream seam so the hero reads as blended into the card,
-     not a foreign block dropped on top of it */
-  .card-hero::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:34px;background:linear-gradient(to bottom,transparent,rgba(244,233,210,.94));pointer-events:none}
   .card-hero .lbl{color:#C7B492}
   .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:34px;line-height:1.0;letter-spacing:-.02em;margin-top:7px}
   .card-hero p{font-family:var(--serif);font-size:14.5px;color:#D9CBAE;margin-top:9px;max-width:30ch;text-wrap:pretty}

@@ -43,14 +43,15 @@
 
   /* current-ledger strip — same organic-glass recipe as index.html's ledger:
      low-opacity gradient, strong blur, feathered mask, slow animated radius */
-  .ledgerstrip{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
+  .ledgerstrip{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
+    padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
+  .ledgerstrip::before{content:'';position:absolute;inset:-26px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
     backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicPill 18s ease-in-out infinite;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%),linear-gradient(to right,transparent 0,#000 44px,#000 calc(100% - 44px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%),linear-gradient(to right,transparent 0,#000 44px,#000 calc(100% - 44px),transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect;
-    padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 48px,#000 calc(100% - 48px),transparent 100%),linear-gradient(to right,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 48px,#000 calc(100% - 48px),transparent 100%),linear-gradient(to right,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
   @keyframes organicPill{
     0%,100%{border-radius:23px 23px 23px 23px / 23px 23px 23px 23px;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
     25%{border-radius:20px 26px 22px 24px / 26px 20px 24px 22px;backdrop-filter:blur(23px) saturate(1.28);-webkit-backdrop-filter:blur(23px) saturate(1.28)}
@@ -73,16 +74,18 @@
   .billing-toggle .save{font-size:11px;color:var(--terracotta);font-weight:500}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;align-items:stretch}
   .plan{display:flex;flex-direction:column;padding:24px 22px;position:relative;
+    transition:transform .22s cubic-bezier(.4,0,.2,1)}
+  .plan:hover{transform:translateY(-2px)}
+  /* fog bleeds outward via ::before; the "MOST SELECTED" .ptag badge is its
+     own position:absolute child so it always paints above (z-index:auto,
+     positioned) regardless of how far the -1 layer behind it fades */
+  .plan::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
     backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicPlan 20s ease-in-out infinite;
-    /* top stays unfeathered (opaque from y:0) — the "MOST SELECTED" tag pokes
-       above the card via a negative top offset, and a top fade clipped it */
-    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 calc(100% - 26px),transparent 100%),linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
-    mask-image:linear-gradient(to bottom,#000 0,#000 calc(100% - 26px),transparent 100%),linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect;
-    transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .18s}
-  .plan:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(31,29,26,.1)}
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%),linear-gradient(to right,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%),linear-gradient(to right,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
   .plan.feat{box-shadow:0 14px 40px rgba(181,80,44,.18)}
   @keyframes organicPlan{
     0%,100%{border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
@@ -113,12 +116,13 @@
   .plan.feat .choose.current{background:var(--paper-dim);color:var(--dim)}
 
   /* one-time top-up */
-  .topup{margin-top:40px;padding:24px 26px;position:relative;overflow:hidden;
+  .topup{margin-top:40px;padding:24px 26px;position:relative}
+  .topup::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
     backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
     animation:organicTopup 22s ease-in-out infinite;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%),linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%),linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%),linear-gradient(to right,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%),linear-gradient(to right,transparent 0,#000 68px,#000 calc(100% - 68px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect}
   @keyframes organicTopup{
     0%,100%{border-radius:17px 14px 16px 12px / 13px 17px 11px 15px;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
@@ -171,9 +175,9 @@
   @media (max-width:860px){.packs{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:520px){.pagehead{padding:16px 18px}.shell{padding:0 18px 56px}.packs{grid-template-columns:1fr}}
   @media (prefers-reduced-motion: reduce){
-    .ledgerstrip{animation:none;border-radius:999px}
-    .plan{animation:none;border-radius:16px}
-    .topup{animation:none;border-radius:16px}
+    .ledgerstrip::before{animation:none;border-radius:999px}
+    .plan::before{animation:none;border-radius:16px}
+    .topup::before{animation:none;border-radius:16px}
   }
 </style>
 </head>
