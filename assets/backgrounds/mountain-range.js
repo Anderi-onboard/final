@@ -34,9 +34,15 @@
     + '@keyframes mtn-cloud-r{from{transform:translate3d(-1700px,0,0)}to{transform:translate3d(1700px,0,0)}}'
     + '@keyframes mtn-cloud-l{from{transform:translate3d(1700px,0,0)}to{transform:translate3d(-1700px,0,0)}}'
     /* fill is a PAINT property: animating it forces a full re-raster of these huge ridge
-       textures every frame. The colour shift is so slow that stepping it (≈4 jumps/sec)
-       is visually identical but cuts re-paints ~15x. translate flows stay GPU-composited. */
-    + '.mtn-bg .fill{animation-iteration-count:infinite;animation-timing-function:steps(30)}'
+       textures every frame, so it's stepped rather than smoothly interpolated to cut
+       repaints. IMPORTANT: steps(N) must be >= the number of colour stops (144) — with
+       only 30 steps across a 144-stop timeline, most sampled frames landed on a
+       browser-interpolated BLEND between two systems instead of a clean system colour,
+       which is exactly the "muddy/mixed" look this was meant to avoid. steps(144) gives
+       each of the 144 named systems its own clean, unblended hold (~4s each @ 576s
+       total) with one jump every 4s — actually fewer repaints/sec than the old steps(30)
+       had, not more. translate flows stay GPU-composited regardless. */
+    + '.mtn-bg .fill{animation-iteration-count:infinite;animation-timing-function:steps(144)}'
     + '.mtn-bg [class^="flow-"]{will-change:transform}'
     + '.mtn-bg .cloud-bob{animation:mtn-cloud-bob 8s ease-in-out infinite}'
     + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(0,0,0,0.24);stroke-width:1.2}'
