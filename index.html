@@ -71,8 +71,8 @@
 
   /* ── the ledger — modern frosted points card, matched to the composer glass ── */
   .ledger{position:relative;margin-top:14px;flex:none;overflow:hidden;
-    background:linear-gradient(150deg,rgba(244,233,210,.72),rgba(244,233,210,.5));
-    backdrop-filter:blur(13px) saturate(1.3);-webkit-backdrop-filter:blur(13px) saturate(1.3);
+    background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));
+    backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
     border:1px solid rgba(255,255,255,.45);border-radius:16px;padding:13px 14px 14px;
     box-shadow:0 6px 20px rgba(31,29,26,.12),inset 0 1px 0 rgba(255,255,255,.5);
     transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .18s,border-color .18s}
@@ -94,8 +94,8 @@
   body.rail .ledger{display:none}
 
   /* account footer — flat row, matched to the landing */
-  .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:11px;cursor:pointer;text-align:left;width:100%;background:rgba(244,233,210,.5);border:1px solid var(--line-soft);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);box-shadow:0 1px 4px rgba(31,29,26,.07),inset 0 1px 0 rgba(255,255,255,.32);transition:background .15s,border-color .15s}
-  .side-foot:hover{background:rgba(244,233,210,.82);border-color:var(--line)}
+  .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:11px;cursor:pointer;text-align:left;width:100%;background:rgba(244,233,210,.8);border:1px solid var(--line-soft);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 1px 4px rgba(31,29,26,.07),inset 0 1px 0 rgba(255,255,255,.32);transition:background .15s,border-color .15s}
+  .side-foot:hover{background:rgba(244,233,210,.96);border-color:var(--line)}
   .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}
   .side-foot .who{flex:1;min-width:0;line-height:1.3}
   .side-foot b{display:block;font-size:13px;font-weight:700;font-family:"Spinnaker"}
@@ -312,7 +312,7 @@
   @keyframes drip{0%{transform:translateY(-9px) scale(.3);opacity:0}25%{transform:translateY(0) scale(1);opacity:1}70%{opacity:1}92%{opacity:0}100%{opacity:0}}
 
   .composer-zone{padding:12px 56px 22px;position:relative}
-  .composer{max-width:840px;margin:0;display:flex;align-items:center;gap:9px;background:linear-gradient(150deg,rgba(244,233,210,.72),rgba(244,233,210,.5));backdrop-filter:blur(13px) saturate(1.3);-webkit-backdrop-filter:blur(13px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 14px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s}
+  .composer{max-width:840px;margin:0;display:flex;align-items:center;gap:9px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 14px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
   .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:Pacifico, cursive;transition:background .15s}
   .stria:hover{background:var(--paper-dim)}
