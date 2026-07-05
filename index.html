@@ -168,7 +168,7 @@
   .topbar h1{font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .units-chip{flex:none;font-size:11.5px;letter-spacing:.07em;color:var(--dim);background:var(--chip);border-radius:999px;padding:6px 13px;font-variant-numeric:tabular-nums}
 
-  .thread{flex:1;overflow-y:auto;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
+  .thread{flex:1;overflow-y:auto;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent;container-type:inline-size}
   .thread::-webkit-scrollbar{width:5px}
   .thread::-webkit-scrollbar-track{background:transparent}
   .thread::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:999px}
@@ -286,9 +286,20 @@
      fullBoardFigureHTML), so the wrapper only needs to match that content width at the
      SAME px-per-unit scale as the two-figure case (960px / 616 units ≈ 1.558px/unit;
      388 cropped units × 1.558 ≈ 605px) — otherwise the crop just gets stretched back
-     out to 960px and every glyph renders visibly larger than before. */
-  .reading-fig.is-full{width:min(605px,calc(100vw - 96px));max-width:none}
-  .reading-fig.is-full:has(.bw-af-name.rel){width:min(960px,calc(100vw - 96px))}
+     out to 960px and every glyph renders visibly larger than before.
+     Sized against .thread's own inline size (container query, set above) rather
+     than 100vw: vw is the FULL browser window, which ignores the sidebar's width
+     and silently overflowed the wide board past the real right edge on any
+     sidebar-visible layout. cqw fixed the WIDTH, but the box still grew only
+     rightward from its 740px-column left edge with no compensating margin, so
+     anything wider than 740px (the two-figure case always is) still overran
+     the column and the viewport on the right. The fix is a center-breakout:
+     .reading itself stays the normal 740px column, and the wide fig is pulled
+     left by half its own overhang so it's centered on the SAME midpoint as
+     that column (which is already centered in .thread) instead of anchored
+     to its left edge. */
+  .reading-fig.is-full{--fig-w:min(605px,calc(100cqw - 8px));width:var(--fig-w);max-width:none;margin-inline:calc((100% - var(--fig-w)) / 2)}
+  .reading-fig.is-full:has(.bw-af-name.rel){--fig-w:min(960px,calc(100cqw - 8px))}
   .reading-fig.is-full .bw-af-fig.bw-af-full{max-width:100%}
   .reading-fig .bw-af-fig.bw-af-full{max-width:min(720px,100%)}
   .reading .bw-cast,.reading .bw-figs{max-width:75%}
