@@ -15,7 +15,8 @@
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite;--sbw:132px}
+  body.rail{--sbw:30px}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,input:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
@@ -425,6 +426,7 @@
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:880px){
+    body{--sbw:0px}
     .sidebar{display:none}
     .topbar,.thread,.composer-zone{padding-left:18px;padding-right:18px}
     .reading-body{font-size:16.5px}
@@ -472,9 +474,9 @@
   body.is-empty .topbar{border-bottom:none}
   body.is-empty .topbar h1,body.is-empty .topbar .units-chip{display:none}
   body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 56px 20px}
-  body.is-empty .thread-inner{max-width:680px;margin:0;width:100%;display:flex;flex-direction:column;align-items:center}
+  body.is-empty .thread-inner{max-width:680px;margin:0;width:100%;display:flex;flex-direction:column;align-items:center;transform:translateX(calc(var(--sbw) * -1))}
   body.is-empty .composer-zone{flex:none;padding:0 56px 36px;display:flex;flex-direction:column;align-items:center}
-  body.is-empty .composer{margin:0;max-width:680px;width:100%}
+  body.is-empty .composer{margin:0;max-width:680px;width:100%;transform:translateX(calc(var(--sbw) * -1))}
   body.is-empty .disclaimer{display:none}
   #heroEmpty{display:block;text-align:center;padding:0 0 28px}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
