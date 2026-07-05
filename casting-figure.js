@@ -426,6 +426,40 @@
 
   function el(tag,cls){ var e=document.createElement(tag); if(cls) e.className=cls; return e; }
 
+  /* ── viewBox auto-fit for the annotated boards ──
+     The board paints its annotation text OUTSIDE the nominal viewBox
+     (overflow:visible carries it), so layout sizes the svg as if only
+     the bar columns existed — the chart then renders oversized and the
+     right-hand 变卦 annotations run off-screen. All the ink exists in
+     the DOM at insert time (reveals are opacity/transform only, which
+     getBBox ignores), so one measure per board is enough; re-measure
+     once webfonts land because glyph metrics shift the text extents. */
+  function fitAf(svg){
+    try {
+      var b = svg.getBBox();
+      if (!b || !b.width || !isFinite(b.width)) return;
+      svg.setAttribute("viewBox",
+        (b.x - 10) + " " + (b.y - 8) + " " + (b.width + 20) + " " + (b.height + 14));
+    } catch (e) { /* detached/hidden svg — leave the nominal viewBox */ }
+  }
+  function fitAllAf(){
+    document.querySelectorAll("svg.bw-af").forEach(fitAf);
+  }
+  if (typeof MutationObserver !== "undefined") {
+    new MutationObserver(function(muts){
+      for (var i = 0; i < muts.length; i++) {
+        var added = muts[i].addedNodes;
+        for (var j = 0; j < added.length; j++) {
+          var n = added[j];
+          if (n.nodeType !== 1) continue;
+          if (n.matches && n.matches("svg.bw-af")) fitAf(n);
+          else if (n.querySelectorAll) n.querySelectorAll("svg.bw-af").forEach(fitAf);
+        }
+      }
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAllAf);
+
   /* ── CSS ── */
   var injected = false;
   function injectCSS(){
