@@ -103,9 +103,13 @@
   /* ridge fill closes to the bottom; the curve is the open top edge for contours */
   function shape(i) { return W[i] + " L 4000 600 L -2000 600 Z"; }
 
+  /* contour clones per ridge: n*step (band depth) kept from the denser
+     original, but with ~20% fewer strokes at wider spacing — every 4s
+     palette step forces a full re-raster of each huge layer including
+     all its strokes, and this was the visible periodic stutter */
   var LAYERS = [
-    { n: 5, step: 14 }, { n: 6, step: 14 }, { n: 8, step: 13 }, { n: 12, step: 12 },
-    { n: 14, step: 11 }, { n: 18, step: 10 }, { n: 12, step: 9 }, { n: 7, step: 8 },
+    { n: 4, step: 17 }, { n: 5, step: 17 }, { n: 6, step: 17 }, { n: 9, step: 16 },
+    { n: 11, step: 14 }, { n: 14, step: 13 }, { n: 9, step: 12 }, { n: 6, step: 9 },
     { n: 3, step: 7 }, { n: 2, step: 5 }
   ];
   var CLOUDS = [

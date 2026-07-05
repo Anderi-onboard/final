@@ -23,7 +23,7 @@
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.68) 68%,rgba(0,0,0,.42) 86%,transparent 100%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.68) 68%,rgba(0,0,0,.42) 86%,transparent 100%)}
 
   /* minimal page header — logo + back link */
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1100px;margin:0 auto;width:100%}
@@ -36,18 +36,18 @@
   .wrap{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
   .card{width:min(440px,100%);overflow:hidden;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);
     box-shadow:0 14px 40px rgba(31,29,26,.12);
     animation:organicCard 19s ease-in-out infinite}
   /* no mask-feather here: .card-hero is a solid Prussian block clipped to
      the card's own radius — feathering the outer edge would fade that
      solid block into the mountain at the corners, so only the radius breathes */
   @keyframes organicCard{
-    0%,100%{border-radius:16px 14px 16px 13px;backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3)}
-    20%{border-radius:14px 17px 13px 16px;backdrop-filter:blur(24px) saturate(1.36);-webkit-backdrop-filter:blur(24px) saturate(1.36)}
-    40%{border-radius:17px 13px 16px 14px;backdrop-filter:blur(17px) saturate(1.24);-webkit-backdrop-filter:blur(17px) saturate(1.24)}
-    60%{border-radius:13px 16px 17px 13px;backdrop-filter:blur(25px) saturate(1.38);-webkit-backdrop-filter:blur(25px) saturate(1.38)}
-    80%{border-radius:16px 13px 14px 17px;backdrop-filter:blur(18px) saturate(1.26);-webkit-backdrop-filter:blur(18px) saturate(1.26)}
+    0%,100%{border-radius:16px 14px 16px 13px;backdrop-filter:blur(11px) saturate(1.3);-webkit-backdrop-filter:blur(11px) saturate(1.3)}
+    20%{border-radius:14px 17px 13px 16px;backdrop-filter:blur(13px) saturate(1.36);-webkit-backdrop-filter:blur(13px) saturate(1.36)}
+    40%{border-radius:17px 13px 16px 14px;backdrop-filter:blur(9px) saturate(1.24);-webkit-backdrop-filter:blur(9px) saturate(1.24)}
+    60%{border-radius:13px 16px 17px 13px;backdrop-filter:blur(14px) saturate(1.38);-webkit-backdrop-filter:blur(14px) saturate(1.38)}
+    80%{border-radius:16px 13px 14px 17px;backdrop-filter:blur(10px) saturate(1.26);-webkit-backdrop-filter:blur(10px) saturate(1.26)}
   }
 
   /* the one hero block — no blue: warm ink instead of Prussian (cyanotype.svg

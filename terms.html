@@ -22,7 +22,7 @@
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
   a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.68) 68%,rgba(0,0,0,.42) 86%,transparent 100%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.68) 68%,rgba(0,0,0,.42) 86%,transparent 100%)}
 
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:760px;margin:0 auto;width:100%}
   .brand{display:flex;align-items:center;gap:9px}
@@ -41,19 +41,19 @@
   .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;position:relative}
   .toc::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);
     animation:organicToc 20s ease-in-out infinite;
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect}
   .toc > *{position:relative;z-index:1}
   @keyframes organicToc{
-    0%,100%{border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
-    16%{border-radius:14px 18px 10px 16px / 16px 10px 17px 12px;backdrop-filter:blur(23px) saturate(1.26);-webkit-backdrop-filter:blur(23px) saturate(1.26)}
-    32%{border-radius:18px 10px 16px 12px / 11px 17px 12px 18px;backdrop-filter:blur(15px) saturate(1.15);-webkit-backdrop-filter:blur(15px) saturate(1.15)}
-    48%{border-radius:11px 16px 18px 10px / 18px 12px 10px 16px;backdrop-filter:blur(24px) saturate(1.28);-webkit-backdrop-filter:blur(24px) saturate(1.28)}
-    64%{border-radius:16px 11px 12px 17px / 10px 18px 16px 11px;backdrop-filter:blur(16px) saturate(1.18);-webkit-backdrop-filter:blur(16px) saturate(1.18)}
-    80%{border-radius:12px 16px 17px 10px / 14px 11px 15px 17px;backdrop-filter:blur(22px) saturate(1.24);-webkit-backdrop-filter:blur(22px) saturate(1.24)}
+    0%,100%{border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2)}
+    16%{border-radius:14px 18px 10px 16px / 16px 10px 17px 12px;backdrop-filter:blur(13px) saturate(1.26);-webkit-backdrop-filter:blur(13px) saturate(1.26)}
+    32%{border-radius:18px 10px 16px 12px / 11px 17px 12px 18px;backdrop-filter:blur(8px) saturate(1.15);-webkit-backdrop-filter:blur(8px) saturate(1.15)}
+    48%{border-radius:11px 16px 18px 10px / 18px 12px 10px 16px;backdrop-filter:blur(13px) saturate(1.28);-webkit-backdrop-filter:blur(13px) saturate(1.28)}
+    64%{border-radius:16px 11px 12px 17px / 10px 18px 16px 11px;backdrop-filter:blur(9px) saturate(1.18);-webkit-backdrop-filter:blur(9px) saturate(1.18)}
+    80%{border-radius:12px 16px 17px 10px / 14px 11px 15px 17px;backdrop-filter:blur(12px) saturate(1.24);-webkit-backdrop-filter:blur(12px) saturate(1.24)}
   }
   .toc a{display:block;font-size:13px;color:var(--dim);padding:3px 0;transition:color .15s;break-inside:avoid}
   .toc a:hover{color:var(--terracotta)}

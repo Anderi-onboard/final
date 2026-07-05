@@ -570,7 +570,10 @@
       /* ── casting IN PLACE: the annotated figure draws itself line by line, then
          the branches grow & the whole board comes alive — same element, no swap ── */
       ".bw-af-bar{display:flex;align-items:center;gap:13px;margin-bottom:13px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}",
-      ".bw-af-bar .bw-coins{flex:none}",
+      ".bw-af-bar .bw-coins{flex:none;gap:4px}",
+      /* board bar sits next to an 13px caps label — the full 22px loader reads
+         huge there; scale the circles to the label's cap height instead */
+      ".bw-af-bar .bw-af-loader{width:14px;height:14px;border-width:1.8px}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-af-bar .bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
