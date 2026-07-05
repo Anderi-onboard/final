@@ -75,7 +75,11 @@
   .section > .head b{color:var(--terracotta);font-weight:400}
   .section > .head .idx{font-size:11px;color:var(--terracotta)}
   .panel{margin-top:16px;position:relative}
-  .panel::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
+  /* HIERARCHY RULE (plans-page thinking): one misty glass focal box per
+     view — here the identity panel; the other panels sit on solid paper */
+  .panel:not(.glass){background:var(--paper-raised);border:1px solid var(--line-soft);border-radius:16px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 4px 14px rgba(42,32,22,.05)}
+  .panel.glass::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
     backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);
     animation:organicPanel 21s ease-in-out infinite;
@@ -142,7 +146,7 @@
 
   @media (max-width:880px){.sidebar{display:none}.shell{padding:30px 20px 70px}.field{width:180px}}
   @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F4EBE2}28%{background-color:#EFE4E1}42%{background-color:#EBE5EA}56%{background-color:#E6E5EE}70%{background-color:#EAE4E9}84%{background-color:#F1E9E0}}
-  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}.panel::before{animation:none;border-radius:16px}}
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}.panel.glass::before{animation:none;border-radius:16px}}
 </style>
 </head>
 <body>
@@ -158,7 +162,7 @@
     <!-- Account -->
     <section class="section">
       <div class="head"><b>&#9670;</b><span class="idx">01</span><span>Identity</span></div>
-      <div class="panel" id="acctPanel"></div>
+      <div class="panel glass" id="acctPanel"></div>
     </section>
 
     <!-- Plan -->
