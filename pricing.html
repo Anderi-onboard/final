@@ -15,7 +15,9 @@
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;background:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  body{min-height:100%;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F4EBE2}28%{background-color:#EFE4E1}42%{background-color:#EBE5EA}56%{background-color:#E6E5EE}70%{background-color:#EAE4E9}84%{background-color:#F1E9E0}}
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
@@ -87,6 +89,10 @@
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect}
+  /* stagger sibling cards so the three plans breathe out of phase
+     instead of pulsing in mechanical lockstep */
+  .plan:nth-child(2)::before{animation-delay:-6.7s}
+  .plan:nth-child(3)::before{animation-delay:-13.3s}
   .plan > *{position:relative;z-index:1}
   .plan.feat{box-shadow:0 14px 40px rgba(181,80,44,.18)}
   @keyframes organicPlan{

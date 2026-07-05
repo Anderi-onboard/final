@@ -15,8 +15,8 @@
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
-    background-image:none;background-position:0 0,200px 140px}
+  body{min-height:100%;display:flex;flex-direction:column;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F4EBE2}28%{background-color:#EFE4E1}42%{background-color:#EBE5EA}56%{background-color:#E6E5EE}70%{background-color:#EAE4E9}84%{background-color:#F1E9E0}}
   a{color:inherit;text-decoration:none}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
   a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
@@ -44,7 +44,7 @@
   .body{font-size:15px;color:var(--dim);margin-top:20px;max-width:42ch}
 
   .flourish{display:block;margin:24px auto 4px}
-  .flourish path{stroke:#2A2016;fill:none;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:240;animation:flow 2.2s .3s ease-out forwards;opacity:.5}
+  .flourish path{stroke:var(--ink);fill:none;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:240;animation:flow 2.2s .3s ease-out forwards;opacity:.5}
   .flourish path+path{animation-delay:.7s;opacity:.28}
   @keyframes flow{to{stroke-dashoffset:0}}
 
@@ -55,7 +55,7 @@
   .ghostbtn:hover{border-color:var(--terracotta)}
 
   footer{position:relative;z-index:2;text-align:center;padding:18px;font-size:11.5px;letter-spacing:var(--tracking-label);color:var(--ghost)}
-  @media (prefers-reduced-motion:reduce){.flourish path{animation:none;stroke-dashoffset:0;opacity:.5}}
+  @media (prefers-reduced-motion:reduce){.flourish path{animation:none;stroke-dashoffset:0;opacity:.5}body{animation:none;background-color:#F2EDE7}}
 </style>
 </head>
 <body>
