@@ -417,6 +417,7 @@
            sheng-ke arrows) and switch the whole board to its living, looping state */
         svg.removeAttribute("data-cast");
         svg.setAttribute("data-anim","1");
+        fitAf(svg);
         if (figEl){ figEl.classList.remove("casting"); figEl.classList.add("bw-af-live"); }
         if (status) status.textContent = "";
         setTimeout(resolve, 900);
@@ -435,6 +436,12 @@
      getBBox ignores), so one measure per board is enough; re-measure
      once webfonts land because glyph metrics shift the text extents. */
   function fitAf(svg){
+    /* while the cast animation runs, the annotations are invisible but the
+       fitted box would still reserve their space — the bars would sit
+       visibly right-of-centre in an empty plate. Keep the nominal centred
+       viewBox during the cast; finishCast() re-fits at the reveal, so the
+       board widens exactly when the labels bloom into that space. */
+    if (svg.hasAttribute("data-cast")) return;
     try {
       var b = svg.getBBox();
       if (!b || !b.width || !isFinite(b.width)) return;
@@ -573,7 +580,7 @@
       ".bw-af-arrow{fill:none;stroke-width:2;opacity:.55}",
       ".bw-af-tarrow{fill:none;stroke:var(--faint);stroke-width:1.4;stroke-linecap:round}",
       ".bw-af-branch{opacity:1}",
-      ".bw-af-legend{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft);width:100%}",
+      ".bw-af-legend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 16px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft);width:100%}",
       ".bw-af-legend span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}",
       ".bw-af-legend i{flex:none;width:13px;height:0;border-top:2px solid var(--line)}",
       ".bw-af-legend i.d-self{height:8px;width:8px;border:0;border-radius:50%;background:var(--terracotta)}",

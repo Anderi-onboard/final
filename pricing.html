@@ -61,6 +61,24 @@
   .billing-toggle button::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--paper);transition:transform .2s}
   .billing-toggle button.on::after{transform:translateX(22px)}
   .billing-toggle .save{font-size:11px;color:var(--terracotta);font-weight:500}
+  /* cadence estimator — steppers are actions (terracotta); the fitting
+     plan is a status (pine ring + tag), so the two accents never compete */
+  .cadence{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;margin:18px auto 0;width:max-content;max-width:100%;
+    padding:9px 18px;font-size:13px;color:var(--dim);background:rgba(244,233,210,.82);border:1px solid var(--line-soft);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
+  .cadence .cd-lbl{color:var(--faint);letter-spacing:.04em}
+  .cd-item{display:inline-flex;align-items:center;gap:7px}
+  .cd-item b{font-family:var(--serif);font-size:15px;min-width:2ch;text-align:center;color:var(--ink);font-variant-numeric:tabular-nums}
+  .cd-item i{font-size:11.5px;color:var(--faint);letter-spacing:.04em}
+  .cd-btn{width:22px;height:22px;line-height:1;border-radius:50%;border:1px solid var(--line);color:var(--dim);display:grid;place-items:center;font-size:14px;
+    transition:border-color .15s,color .15s,background .15s,transform .1s}
+  .cd-btn:hover{border-color:var(--terracotta);color:var(--terracotta)}
+  .cd-btn:active{transform:scale(.9)}
+  .cd-out{color:var(--dim)}
+  .cd-out b{font-family:var(--serif);color:var(--ink);font-variant-numeric:tabular-nums}
+  .cd-out em{font-style:normal;color:var(--pine);font-weight:600}
+  .plan.cd-fit{outline:2px solid var(--pine);outline-offset:3px}
+  .plan.cd-fit::after{content:'Fits your month';position:absolute;top:-11px;right:16px;z-index:2;
+    background:var(--pine);color:var(--paper-raised);font-size:10px;font-weight:600;letter-spacing:.08em;padding:4px 10px;border-radius:999px}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;align-items:stretch}
   .plan{display:flex;flex-direction:column;padding:24px 22px;position:relative;
     transition:transform .22s cubic-bezier(.4,0,.2,1)}
@@ -118,7 +136,9 @@
   .topup h3{font-family:var(--serif);font-weight:600;font-size:19px}
   .topup .sub{font-size:13px;color:var(--faint)}
   .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-  .pack{border:1px solid var(--line);border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;background:var(--paper-raised)}
+  .pack{border:1px solid var(--line);border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s,box-shadow .15s;background:var(--paper-raised)}
+  .pack:hover{border-color:var(--terracotta);transform:translateY(-2px);box-shadow:0 6px 16px rgba(42,32,22,.08)}
+  .pack:active{transform:translateY(0) scale(.98)}
   .pack:hover{border-color:var(--ink);transform:translateY(-1px)}
   .pack .u{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums}
   .pack .p{font-size:13px;color:var(--terracotta);margin-top:3px}
@@ -135,9 +155,16 @@
   .faq{margin-top:40px}
   .faq h3{font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:4px}
   .faq .sub{font-size:13px;color:var(--faint);margin-bottom:18px}
-  .qa{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px}
-  .qa .q{font-family:var(--serif);font-size:15px;margin-bottom:4px}
-  .qa .a{font-size:13.5px;color:var(--dim);line-height:1.5;text-wrap:pretty}
+  .qa{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 16px;align-items:start}
+  .qa-item{background:var(--paper-raised);border:1px solid var(--line-soft);border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
+  .qa .q{font-family:var(--serif);font-size:15px;width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:13px 16px;cursor:pointer}
+  .qa .q::after{content:'+';flex:none;font-family:var(--sans);color:var(--terracotta);font-size:15px;transition:transform .25s ease;transform-origin:center}
+  .qa-item.open .q::after{transform:rotate(45deg)}
+  .qa .aw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .qa-item.open .aw{grid-template-rows:1fr}
+  .qa .a{overflow:hidden;font-size:13.5px;color:var(--dim);line-height:1.5;text-wrap:pretty;padding:0 16px}
+  .qa-item.open .a{padding-bottom:13px}
+  @media (prefers-reduced-motion: reduce){.qa .aw{transition:none}.qa .q::after{transition:none}}
   @media (max-width:680px){.costs{grid-template-columns:1fr}.qa{grid-template-columns:1fr}}
 
   /* fine print + faq */
@@ -195,6 +222,22 @@
     <button id="billingSwitch" aria-label="Toggle annual billing"></button>
     <span class="yr-label">Annual</span>
     <span class="save">Save ~17%</span>
+  </div>
+
+  <!-- cadence estimator — set your monthly rhythm, the fitting plan lights up -->
+  <div class="cadence" aria-label="Estimate your cadence">
+    <span class="cd-lbl">Your month:</span>
+    <span class="cd-item">
+      <button class="cd-btn" data-t="stria" data-d="-1" aria-label="Fewer Stria">&minus;</button>
+      <b id="cdStria">8</b><i>Stria</i>
+      <button class="cd-btn" data-t="stria" data-d="1" aria-label="More Stria">+</button>
+    </span>
+    <span class="cd-item">
+      <button class="cd-btn" data-t="sortis" data-d="-1" aria-label="Fewer Sortis">&minus;</button>
+      <b id="cdSortis">2</b><i>Sortis</i>
+      <button class="cd-btn" data-t="sortis" data-d="1" aria-label="More Sortis">+</button>
+    </span>
+    <span class="cd-out">&asymp; <b id="cdUnits">5,400</b> units &middot; <em id="cdFit">Pro</em></span>
   </div>
 
   <section class="plans" aria-label="Plans">
@@ -260,12 +303,12 @@
     <h3>Common questions</h3>
     <p class="sub">Everything you need before you commit a balance.</p>
     <div class="qa">
-      <div><div class="q">Do units expire?</div><div class="a">Plan units refresh each billing month and do not roll over. One-time top-up units never expire while your account stays active.</div></div>
-      <div><div class="q">What happens when I run out?</div><div class="a">Inquiries pause until you add units or your plan renews. Nothing is lost—your history and open castings remain intact.</div></div>
-      <div><div class="q">Can I change or cancel a plan?</div><div class="a">Switch tiers or cancel anytime from your account. Changes apply at the next billing cycle; remaining units stay on your balance.</div></div>
-      <div><div class="q">Are units refundable?</div><div class="a">Once an inquiry is processed and a framework is generated, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div>
-      <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Stria 64 maps your immediate situation at 300 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,500 units—powered by a more advanced reasoning engine.</div></div>
-      <div><div class="q">Is my data private?</div><div class="a">Inquiries are encrypted at rest, never sold, never used to train broad models, and purged on request.</div></div>
+      <div class="qa-item open"><button class="q" aria-expanded="true">Do units expire?</button><div class="aw"><div class="a">Plan units refresh each billing month and do not roll over. One-time top-up units never expire while your account stays active.</div></div></div>
+      <div class="qa-item"><button class="q" aria-expanded="false">What happens when I run out?</button><div class="aw"><div class="a">Inquiries pause until you add units or your plan renews. Nothing is lost—your history and open castings remain intact.</div></div></div>
+      <div class="qa-item"><button class="q" aria-expanded="false">Can I change or cancel a plan?</button><div class="aw"><div class="a">Switch tiers or cancel anytime from your account. Changes apply at the next billing cycle; remaining units stay on your balance.</div></div></div>
+      <div class="qa-item"><button class="q" aria-expanded="false">Are units refundable?</button><div class="aw"><div class="a">Once an inquiry is processed and a framework is generated, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div></div>
+      <div class="qa-item"><button class="q" aria-expanded="false">What's the difference between Stria and Sortis?</button><div class="aw"><div class="a">Stria 64 maps your immediate situation at 300 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,500 units—powered by a more advanced reasoning engine.</div></div></div>
+      <div class="qa-item"><button class="q" aria-expanded="false">Is my data private?</button><div class="aw"><div class="a">Inquiries are encrypted at rest, never sold, never used to train broad models, and purged on request.</div></div></div>
     </div>
   </section>
 
@@ -346,6 +389,74 @@
       var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
       var s = A.state(); s.units += grant; A.save(s); paint();
       toast("+" + grant.toLocaleString("en-US") + " units added to your balance.");
+    });
+  });
+
+  /* ── ledger count-up: numbers tick to their new value instead of teleporting ── */
+  var countEl = document.getElementById("ledgerCount");
+  var shownUnits = A.state().units;
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function tickTo(target) {
+    if (reduced || Math.abs(target - shownUnits) < 2) {
+      shownUnits = target;
+      countEl.textContent = target.toLocaleString("en-US");
+      return;
+    }
+    var from = shownUnits, t0 = performance.now(), DUR = 550;
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / DUR);
+      k = 1 - Math.pow(1 - k, 3); /* ease-out cubic */
+      shownUnits = Math.round(from + (target - from) * k);
+      countEl.textContent = shownUnits.toLocaleString("en-US");
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  var paintBase = paint;
+  paint = function () {
+    var target = A.state().units;
+    paintBase();
+    countEl.textContent = shownUnits.toLocaleString("en-US"); /* undo teleport */
+    tickTo(target);
+  };
+
+  /* ── cadence estimator: set a monthly rhythm, the fitting plan lights up.
+     Steppers are actions (terracotta hover); the recommendation is a status,
+     so the ring/tag/readout use pine — the two accents never compete. ── */
+  var cd = { stria: 8, sortis: 2 };
+  var FIT_NAME = { free: "Free", pro: "Pro", premium: "Premium", over: "Premium + top-ups" };
+  function cdFitPlan(units) {
+    if (cd.sortis === 0 && cd.stria <= 1) return "free";
+    if (units <= 22500) return "pro";
+    if (units <= 45000) return "premium";
+    return "over";
+  }
+  function cdPaint() {
+    var units = cd.stria * 300 + cd.sortis * 1500;
+    document.getElementById("cdStria").textContent = cd.stria;
+    document.getElementById("cdSortis").textContent = cd.sortis;
+    document.getElementById("cdUnits").textContent = units.toLocaleString("en-US");
+    var fit = cdFitPlan(units);
+    document.getElementById("cdFit").textContent = FIT_NAME[fit];
+    document.querySelectorAll(".plan").forEach(function (p) {
+      p.classList.toggle("cd-fit",
+        p.getAttribute("data-plan") === (fit === "over" ? "premium" : fit));
+    });
+  }
+  document.querySelectorAll(".cd-btn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = b.getAttribute("data-t"), d = parseInt(b.getAttribute("data-d"), 10);
+      cd[t] = Math.max(0, Math.min(99, cd[t] + d));
+      cdPaint();
+    });
+  });
+  cdPaint();
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll(".qa-item .q").forEach(function (q) {
+    q.addEventListener("click", function () {
+      var item = q.closest(".qa-item");
+      var open = item.classList.toggle("open");
+      q.setAttribute("aria-expanded", open ? "true" : "false");
     });
   });
 
