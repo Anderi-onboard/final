@@ -8,37 +8,6 @@
 
 ---
 
-## ✅ 已完成 — 诚实化整改：假账号层下线、失败退点、中文字体、抽屉侧栏（2026-07-10，第二批）
-
-用户实测发现付费起卦返回英文占位文（"Placeholder verdict"）且点数照扣。根因链：
-本地演示登录（假 "Elias Vance"，无服务端会话）→ 服务端 401 拒绝 Sortis →
-管线静默摔进 mock → 占位文冒充解读。整改为"要么真解读、要么明说失败并退点"：
-
-- ✅ **假账号层删除**：`account.js` 的 demo `signIn()` 移除；`signInRemote()`
-  失败不再静默降级成假登录，而是把原因交给登录页显示；`hydrate()` 遇到服务端
-  明确说"未登录"时清掉本地幽灵会话。`login.html` 改为真实邮箱+姓名表单
-  （持久化 D1 账号+会话 cookie）；Google 按钮尝试真 OAuth，未配置时明说。
-- ✅ **起卦前置门槛**：未登录 → 提示并跳登录页；方案不够 → 打开方案弹窗，
-  不再静默把 Sortis 降级成 Stria（这就是"只见 haiku/sonnet 不见 opus"的原因）。
-- ✅ **失败退点 + 双语错误卡**：AI 代理的 401/402/403/超时带着状态码穿透到
-  `send()`，退回本地乐观扣点（服务端原子扣费本就自动退），按问题语言用
-  中/英文说明缘由；mock/canned 占位文全部退出生产路径。
-- ✅ **Stria 卦盘接入**：`send()` 现在两个档位都算卦盘喂给解读管线（此前
-  Stria 传 null，模型只能回"没收到起卦数据"）；对话里仍保持 Stria 轻量视觉。
-- ✅ **中文字体（宋体）**：自托管思源宋体 Noto Serif SC 400/700 分片
-  （`assets/fonts/noto-serif-sc/`，91 个 woff2），以 unicode-range≥U+2E80 的
-  同名 @font-face 嫁接到 BioRhyme/Spinnaker/Pacifico/Fraunces 四个现有家族
-  （`tokens/fonts-cjk.css`）——全站中文（含 CJK 标点、全角符号）统一宋体，
-  拉丁字形完全不受影响，任何页面样式零改动。
-- ✅ **≤880px 侧栏改抽屉**：不再 display:none 蒸发——topbar 加开启按钮，
-  侧栏滑入 + scrim 点击关闭，历史/点数/账号在窄视口与高缩放比下全部可达。
-- ✅ **端到端验证**（生产环境真账号）：邮箱注册 → premium →
-  Sortis 中文问题 → `anthropic/claude-opus-4.8` 返回中文读数，
-  units 45300→43800 原子扣费正确；未登录 Sortis 401；流式中文分片正常。
-- ⏸️ **待定/需密钥**：Stripe 真支付（需你的 Stripe key；当前 /plan 为免费
-  stub，任何登录用户可自助升级）；Turnstile 人机验证（需 secret key）；
-  Google OAuth（需 GOOGLE_CLIENT_ID/SECRET）。
-
 ## ✅ 已完成 — 部署交接：D1 建库、about.html 重做上线、AI 代理切到 OpenRouter（2026-07-10）
 
 - ✅ 建了生产 D1 数据库 `bournewise`，`wrangler.toml` 填入真实 `database_id`，

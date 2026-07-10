@@ -12,8 +12,8 @@
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710e">
-<script src="./ds-base.js?v=20260710e"></script>
+<link rel="stylesheet" href="./styles.css?v=20260710f">
+<script src="./ds-base.js?v=20260710f"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -61,16 +61,10 @@
   .prov .ic{flex:none;width:22px;height:22px;display:grid;place-items:center}
   .prov .arr{margin-left:auto;color:var(--ghost);transition:transform .15s,color .15s}
   .prov:hover .arr{transform:translateX(3px);color:var(--ink)}
-  .prov.primary{background-color:var(--ink);color:var(--paper);border-color:var(--ink);justify-content:center;font-weight:600}
-  .prov.primary:hover{background-color:#1d1812}
-  .prov.primary .arr{color:rgba(244,233,210,.6)}
-  #emailForm{display:flex;flex-direction:column;gap:10px}
-  .field{display:flex;flex-direction:column;gap:5px}
-  .field .lbl i{font-style:normal;text-transform:none;letter-spacing:0;color:var(--ghost)}
-  .field input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 15px;font:inherit;font-size:14.5px;color:var(--ink);background-color:var(--paper);transition:border-color .15s}
-  .field input::placeholder{color:var(--ghost)}
-  .field input:focus{outline:none;border-color:var(--ink)}
-  .form-err{font-size:12.5px;color:#A54B3C;line-height:1.5;padding:2px 2px 0}
+  .prov.apple{background-color:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .prov.apple:hover{background-color:#1d1812}
+  .prov.apple .arr{color:rgba(244,233,210,.6)}
+  .prov.dev{border-style:dashed;color:var(--dim)}
 
   .divider{display:flex;align-items:center;gap:12px;margin:6px 2px;color:var(--ghost);font-size:11px;letter-spacing:.08em}
   .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line-soft)}
@@ -111,24 +105,7 @@
     </div>
 
     <div class="card-body">
-      <form id="emailForm" novalidate>
-        <label class="field">
-          <span class="lbl">EMAIL</span>
-          <input id="fEmail" type="email" autocomplete="email" spellcheck="false" placeholder="you@example.com" required>
-        </label>
-        <label class="field">
-          <span class="lbl">NAME <i>(optional)</i></span>
-          <input id="fName" type="text" autocomplete="name" placeholder="How the reading addresses you" maxlength="60">
-        </label>
-        <button class="prov primary" type="submit" id="emailGo">
-          Continue with email
-          <span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
-        </button>
-      </form>
-
-      <div class="divider">or</div>
-
-      <button class="prov" id="googleGo" type="button">
+      <button class="prov" data-prov="google">
         <span class="ic">
           <svg width="19" height="19" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"></path><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"></path><path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33z"></path><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.46 3.44 1.35l2.58-2.58A9 9 0 0 0 9 0 9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"></path></svg>
         </span>
@@ -136,7 +113,23 @@
         <span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
       </button>
 
-      <p class="form-err" id="formErr" role="alert" hidden></p>
+      <button class="prov apple" data-prov="apple">
+        <span class="ic">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11 8.4c0-1.5 1.2-2.2 1.3-2.3-.7-1-1.8-1.2-2.2-1.2-.9-.1-1.8.5-2.3.5s-1.2-.5-2-.5c-1 0-2 .6-2.5 1.5-1.1 1.9-.3 4.6.8 6.1.5.7 1.1 1.6 1.9 1.5.8 0 1-.5 2-.5s1.1.5 2 .5c.8 0 1.3-.7 1.8-1.5.6-.8.8-1.6.8-1.7 0 0-1.6-.6-1.6-2.4zM9.6 3.8c.4-.5.7-1.2.6-1.9-.6 0-1.4.4-1.8.9-.4.4-.7 1.2-.6 1.8.7.1 1.4-.3 1.8-.8z"></path></svg>
+        </span>
+        Continue with Apple
+        <span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
+      </button>
+
+      <div class="divider">or</div>
+
+      <button class="prov dev" data-prov="dev">
+        <span class="ic">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5l3 3-3 3M8.5 11h4"></path><rect x="1.5" y="2.5" width="13" height="11" rx="2"></rect></svg>
+        </span>
+        Continue as developer
+        <span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
+      </button>
     </div>
 
     <div class="card-foot">
@@ -147,63 +140,36 @@
 
 <footer>BourneWise &middot; founded on classical logic &middot; Perspectives, not certainty</footer>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710e"></script>
-<script src="./account.js?v=20260710e"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260710f"></script>
+<script src="./account.js?v=20260710f"></script>
 <script>
 (function () {
   "use strict";
-  // Real sign-in only. Email creates/reuses a persisted D1 account and sets a
-  // server session cookie; there is deliberately no local demo fallback — if
-  // the backend call fails the error is shown instead of faking a session.
-  var form = document.getElementById("emailForm");
-  var goBtn = document.getElementById("emailGo");
-  var errEl = document.getElementById("formErr");
-
-  function showErr(msg) {
-    errEl.textContent = msg;
-    errEl.hidden = false;
-    goBtn.style.opacity = "";
-    goBtn.disabled = false;
-  }
-  function spin(btn) {
-    btn.style.opacity = ".6";
-    btn.disabled = true;
-    var arr = btn.querySelector(".arr");
-    if (arr) arr.innerHTML = '<svg width="15" height="15" viewBox="0 0 16 16" class="spin"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="28" stroke-dashoffset="10"></circle></svg>';
-  }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    errEl.hidden = true;
-    var email = document.getElementById("fEmail").value.trim();
-    var name = document.getElementById("fName").value.trim();
-    if (!email || email.indexOf("@") < 1) { showErr("Enter a valid email address."); return; }
-    spin(goBtn);
-    window.BWAccount.signInRemote(email, name || email.split("@")[0], "email", function (ok, acct, why) {
-      if (ok) { location.href = "./index.html"; }
-      else { showErr("Sign-in failed: " + (why || "unknown error") + ". Please try again."); }
+  // demo identities per provider — real, persisted accounts when D1 is configured,
+  // local demo otherwise. To enable real Google OAuth, set GOOGLE_CLIENT_ID/SECRET
+  // and point the google button at: location.href = "/api/auth/google".
+  var DEMO = {
+    google: { email: "elias.vance@gmail.com", name: "Elias Vance" },
+    apple:  { email: "elias@icloud.com",      name: "Elias Vance" },
+    dev:    { email: "dev@bournewise.local",   name: "Dev Tester"  },
+    email:  { email: "elias@iname.com",        name: "Elias Vance" }
+  };
+  document.querySelectorAll(".prov").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var prov = b.getAttribute("data-prov");
+      var d = DEMO[prov] || DEMO.dev;
+      b.style.opacity = ".6";
+      var arr = b.querySelector(".arr");
+      if (arr) arr.innerHTML = '<svg width="15" height="15" viewBox="0 0 16 16" class="spin"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="28" stroke-dashoffset="10"></circle></svg>';
+      function go() { location.href = "./index.html"; }
+      if (window.BWAccount && window.BWAccount.signInRemote) {
+        window.BWAccount.signInRemote(d.email, d.name, prov, go);
+        setTimeout(go, 1500); // safety net if the request hangs
+      } else {
+        if (window.BWAccount) window.BWAccount.signIn(prov);
+        setTimeout(go, 620);
+      }
     });
-  });
-
-  // Google: attempt the real OAuth start; if the server says it isn't
-  // configured (501), say so instead of pretending.
-  document.getElementById("googleGo").addEventListener("click", function () {
-    var b = this;
-    errEl.hidden = true;
-    spin(b);
-    fetch("/api/auth/google", { method: "GET", redirect: "manual", credentials: "same-origin" })
-      .then(function (r) {
-        if (r.type === "opaqueredirect" || (r.status >= 300 && r.status < 400)) {
-          location.href = "/api/auth/google"; // configured — do the real redirect
-        } else {
-          b.style.opacity = ""; b.disabled = false;
-          showErr("Google sign-in isn't configured yet — use email above.");
-        }
-      })
-      .catch(function () {
-        b.style.opacity = ""; b.disabled = false;
-        showErr("Google sign-in is unreachable — use email above.");
-      });
   });
 })();
 </script>

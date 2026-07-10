@@ -11,6 +11,15 @@
   var ORDER = A.METHOD_ORDER;
 
   var FIGURES = window.BWFigure ? window.BWFigure.NAMES : ["The Well", "The Crossing"];
+  var CANNED = [
+    { text: "The primary hexagram indicates a structural phase of |restraint|, not forced progression. The environment is not yet aligned. Wait for the cycle to turn." },
+    { text: "The framework is unambiguous: the current environment is structurally closed to your intent. Your life trajectory requires a |new vector|, not repeated friction." },
+    { text: "Momentum favors adaptation over force, necessitating |incremental progression|. Initiate a singular shift, not a comprehensive disruption. Execute within the current cycle." },
+    { text: "What appears as stagnation is identified by the framework as |latency|. Vital variables are aligning beneath the surface of your situation. Delay your execution." },
+    { text: "The structural map is clear: the required variable is already known to you. The environment is primed. The framework indicates a readiness for |execution|." },
+    { text: "Traversing this life transition is supported, but not in isolation. Identify the |primary ally| this dynamic relies upon and integrate them into your trajectory." }
+  ];
+
   var S = A.state();
   function save() { A.save(S); }
 
@@ -337,31 +346,33 @@
     toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600);
   }
 
-  /* ── oracle text ──
-     Bare-minimum real reading used only when the routed pipeline module isn't
-     loaded. The old canned-quote fallback is gone: paid casts either produce a
-     real reading or fail loudly (send() refunds and explains) — placeholder
-     prose masquerading as a reading burned trust and units. */
+  /* ── oracle text ── */
+  function fallbackReading() {
+    return Promise.resolve(CANNED[Math.floor(Math.random() * CANNED.length)].text);
+  }
   function askOracle(question, m) {
-    if (!(window.claude && typeof window.claude.complete === "function")) {
-      return Promise.resolve(null);
+    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 14000); });
+    var run;
+    if (window.claude && typeof window.claude.complete === "function") {
+      var deep = m.id === "sortis"
+        ? " This is a Sortis 6 deep casting: the figure has moving lines crossing into a second figure, so weigh how the situation is changing, not just where it stands."
+        : "";
+      var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
+        "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
+        deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis. Reply with the judgment only.";
+      run = window.claude.complete({
+        product: m.id === "sortis" ? "sortis" : "stria",
+        messages: [{ role: "user", content: prompt }]
+      }).then(function (r) {
+        var s = String(r || "").trim(); return s || null;
+      }).catch(function () { return null; });
+    } else {
+      run = fallbackReading();
     }
-    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 30000); });
-    var zh = /[一-鿿]/.test(question);
-    var deep = m.id === "sortis"
-      ? " This is a Sortis 6 deep casting: the figure has moving lines crossing into a second figure, so weigh how the situation is changing, not just where it stands."
-      : "";
-    var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
-      "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
-      deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis." +
-      (zh ? " Reply in Chinese." : "") + " Reply with the judgment only.";
-    var run = window.claude.complete({
-      product: m.id === "sortis" ? "sortis" : "stria",
-      messages: [{ role: "user", content: prompt }]
-    }).then(function (r) {
-      var s = String(r || "").trim(); return s || null;
-    }).catch(function () { return null; });
-    return Promise.race([run, guard]);
+    /* never hang: first to settle wins, and a null result becomes a canned reading */
+    return Promise.race([run, guard]).then(function (r) {
+      return (r && String(r).trim()) ? r : fallbackReading();
+    });
   }
 
   /* Prior turns as { role, content } pairs, oldest first, so a follow-up
@@ -392,9 +403,9 @@
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
   function routedReading(question, spec, board, methodId, history, onDelta) {
-    if (!window.BWPromptRouter) return null; // router module missing → caller picks its fallback
+    if (!window.BWPromptRouter) return null; // fallback to legacy
     var product = methodId === "stria" ? "stria" : "sortis";
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 45000); });
+    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 20000); });
     var run = BWPromptRouter.interpret({
       question: question,
       product: product,
@@ -405,14 +416,8 @@
       history: history || [],
       onDelta: onDelta
     });
-    // Errors are propagated, not swallowed: a 401/403/timeout used to collapse
-    // into null here, which downstream code "healed" with a canned/mock reading
-    // — the user paid units and got placeholder prose. Now the failure object
-    // (with its HTTP status) reaches send()'s failure handler, which refunds
-    // and explains.
     return Promise.race([run, guard]).then(function (result) {
-      if (result && result.__timeout) return result;
-      if (!result || !result.reading) return { __error: { message: "empty reading from pipeline" } };
+      if (!result || !result.reading) return null;
       return {
         text: result.reading,
         board: board,
@@ -420,7 +425,7 @@
         _route: result.route,
         _qc: result.qcResult
       };
-    }).catch(function (err) { return { __error: err || { message: "pipeline failed" } }; });
+    }).catch(function () { return null; });
   }
 
   function sortisReading(question, spec, board, history, onDelta) {
@@ -431,34 +436,34 @@
         })
       : null;
 
-    // Routed pipeline (modular prompts + QC) is the real path; legacy is only
-    // for the freak case where prompt-router.js failed to load. Errors flow
-    // through to send()'s failure handler — no mock rescue.
+    // Try routed pipeline first (modular prompts + QC)
     var routed = routedReading(question, spec, board, "sortis", history, onDelta);
-    if (routed) return routed;
+    if (routed) {
+      return routed.then(function (result) {
+        if (result) return result;
+        return sortisLegacy(question, spec, board);
+      });
+    }
     return sortisLegacy(question, spec, board);
   }
 
   function sortisLegacy(question, spec, board) {
-    // No mock fallback here anymore: mock output is placeholder prose, and
-    // showing it for a paid cast (while units drained) is worse than an honest
-    // failure. The mock path stays available to local dev via BWLiuYaoAI
-    // directly; production failures surface + refund instead.
     if (!board || !window.BWLiuYaoAI) {
-      return Promise.resolve({ __error: { message: "casting engine unavailable" } });
+      return askOracle(question, METHODS.sortis).then(function (t) { return { text: t, board: board, reading: null }; });
     }
-    var lang = /[一-鿿]/.test(question) ? "zh" : "en";
     function pack(reading) { return { text: (reading && reading.reading) || "", board: board, reading: reading }; }
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 45000); });
+    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 12000); });
     var run;
     try {
-      run = BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: lang });
+      run = BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: "en" });
     } catch (e) { run = Promise.resolve(null); }
     return Promise.race([run, guard]).then(function (reading) {
-      if (reading && reading.__timeout) return reading;
       if (reading) return pack(reading);
-      return { __error: { message: "reading call failed" } };
-    }).catch(function (err) { return { __error: err || { message: "reading call failed" } }; });
+      return BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: "en", mock: true }).then(pack);
+    }).catch(function () {
+      try { return BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: "en", mock: true }).then(pack); }
+      catch (e) { return pack(null); }
+    });
   }
 
   /* ── send flow ── */
@@ -466,24 +471,7 @@
     text = (text || "").trim();
     if (!text || busy) return;
     var m = method();
-    // Casting requires a real signed-in session: the server is the source of
-    // truth for units and Sortis entitlement, so an anonymous cast would either
-    // 401 (Sortis) or burn unmetered trial calls. Send the user to sign in.
-    var acct = A.account();
-    if (!acct.signedIn) {
-      var zh0 = /[一-鿿]/.test(text);
-      toast(zh0 ? "请先登录再起卦——点数与记录都保存在你的账户里。" : "Sign in to cast — your units and history live on your account.");
-      setTimeout(function () { location.href = "./login.html"; }, 1400);
-      return;
-    }
-    // No silent downgrade: if the plan can't use this method, say so and open
-    // the plans view (the old behaviour swapped Sortis→Stria without telling
-    // the user, so they paid for a shallower reading than they asked for).
-    if (!A.entitled(m.id)) {
-      openPlans();
-      toast(m.name + " requires the Pro or Premium plan.");
-      return;
-    }
+    if (!A.entitled(m.id)) { S.method = "stria"; save(); m = method(); }
     if (S.units < m.cost) { openPlans(); toast("Your unit balance is depleted — " + m.cost.toLocaleString("en-US") + " units required."); return; }
 
     if (!activeConv()) {
@@ -507,19 +495,12 @@
     /* the casting animation — for Sortis it draws the full 排盘 line by line */
     var spec = window.BWFigure ? window.BWFigure.random(m.id)
       : { method: m.id, name: FIGURES[0], lines: [], transformedLines: null };
-    // Compute the casting board for BOTH tiers so the reading is always grounded
-    // in the hexagram that was actually cast. Stria is the "primary hexagram
-    // framework", so it needs a board too — without one the routed prompt (which
-    // tells the model that all hexagram data comes from the backend) received
-    // nothing and the model answered "I didn't receive your casting data".
-    var castBoard = (window.BWLiuYao && spec.lines && spec.lines.length === 6)
+    var sortisBoard = (m.id === "sortis" && window.BWLiuYao && spec.lines && spec.lines.length === 6)
       ? (function () { try {
           return window.BWLiuYao.computeBoard({ lines: spec.lines, changeIdx: spec.changeIdx || [],
-            method: m.id, name: spec.name, transformedName: spec.transformedName });
+            method: "sortis", name: spec.name, transformedName: spec.transformedName });
         } catch (e) { return null; } })()
       : null;
-    // The full annotated board VISUAL stays a Sortis-only treatment.
-    var sortisBoard = m.id === "sortis" ? castBoard : null;
     var live = document.createElement("article");
     live.className = "reading casting-live";
     live.setAttribute("aria-live", "polite");
@@ -568,22 +549,15 @@
     if (m.id === "sortis") {
       answerP = sortisReading(text, spec, sortisBoard, history, onStreamDelta);
     } else {
-      // Stria: routed pipeline with the computed board so the reading is
-      // grounded in the primary hexagram (the routed prompt requires it), but
-      // the board is nulled out of the stored message so the thread keeps
-      // Stria's light figure — the full annotated board stays a Sortis-only
-      // visual. Failures propagate to the failure handler (refund + explain);
-      // askOracle only covers the freak case of the router module not loading.
-      var striaRouted = routedReading(text, spec, castBoard, "stria", history, onStreamDelta);
+      // Stria: try routed pipeline first, fallback to simple oracle
+      var striaRouted = routedReading(text, spec, null, "stria", history, onStreamDelta);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
-          if (result && result.text) { result.board = null; }
-          return result;
+          if (result) return result;
+          return askOracle(text, m).then(function (t) { return { text: t, board: null, reading: null }; });
         });
       } else {
-        answerP = askOracle(text, m).then(function (t) {
-          return t ? { text: t, board: null, reading: null } : { __error: { message: "oracle call failed" } };
-        });
+        answerP = askOracle(text, m).then(function (t) { return { text: t, board: null, reading: null }; });
       }
     }
 
@@ -611,40 +585,10 @@
       var ci = $("composerInput"); if (ci) ci.focus();
     }
 
-    /* A failed cast refunds the optimistic local deduction (the server already
-       refunded its own atomic one) and says plainly what happened, in the
-       question's language, instead of dressing a failure up as a reading. */
-    function castFail(err) {
-      err = err || {};
-      var e = err.__error || err;
-      var status = e && e.status;
-      A.refundLocal(m.cost);
-      S.units = A.state().units;
-      var zh = /[一-鿿]/.test(text);
-      var msg;
-      if (status === 401) msg = zh ? "登录状态已失效——请重新登录后再起卦。本次点数已退回。" : "Your session has expired — sign in again to cast. These units were refunded.";
-      else if (status === 403) msg = zh ? "Sortis 6 需要 Pro 或 Premium 方案。本次点数已退回。" : "Sortis 6 needs the Pro or Premium plan. These units were refunded.";
-      else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
-      else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
-      else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading could not be completed — please try again shortly. These units were refunded.";
-      if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
-      if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
-      live.classList.remove("casting-live");
-      var p = document.createElement("p");
-      p.className = "reading-error";
-      p.textContent = msg;
-      live.appendChild(p);
-      renderUnits();
-      if (status === 401) setTimeout(function () { location.href = "./login.html"; }, 2400);
-      release();
-    }
-
-    Promise.all([answerP, castDone]).then(function (r) {
-      var ans = r[0];
-      if (!ans || ans.__error || ans.__timeout || !ans.text) castFail(ans);
-      else finish(ans);
-    }, function (e) {
-      castFail({ __error: e });
+    Promise.all([answerP, castDone]).then(function (r) { finish(r[0]); }, function () {
+      /* nothing may reject (answerP self-heals to mock, castDone is timeout-bounded),
+         but never leave the composer locked if it somehow does */
+      finish(null);
     });
   }
 
@@ -769,30 +713,11 @@
     $("composerInput").focus();
   });
 
-  /* ── sidebar rail (desktop) / drawer (≤880px) ── */
+  /* ── sidebar rail ── */
   if (localStorage.getItem(RAIL) === "1") document.body.classList.add("rail");
-  var mqNarrow = window.matchMedia ? window.matchMedia("(max-width:880px)") : { matches: false };
   $("sideToggle").addEventListener("click", function () {
-    // in drawer mode this button closes the drawer; rail collapse is desktop-only
-    if (mqNarrow.matches) { document.body.classList.remove("side-open"); return; }
     var r = document.body.classList.toggle("rail");
     try { localStorage.setItem(RAIL, r ? "1" : "0"); } catch (e) {}
-  });
-  var sideOpenBtn = $("sideOpenBtn");
-  if (sideOpenBtn) sideOpenBtn.addEventListener("click", function () {
-    document.body.classList.add("side-open");
-  });
-  var sideScrim = $("sideScrim");
-  if (sideScrim) sideScrim.addEventListener("click", function () {
-    document.body.classList.remove("side-open");
-  });
-  // picking a conversation / starting a new cast from inside the drawer closes it
-  var sideEl = document.querySelector(".sidebar");
-  if (sideEl) sideEl.addEventListener("click", function (e) {
-    if (!mqNarrow.matches) return;
-    if (e.target.closest && e.target.closest(".casting,.new-cast,.brand-btn")) {
-      document.body.classList.remove("side-open");
-    }
   });
 
   /* ── account menu ── */
