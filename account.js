@@ -117,6 +117,20 @@
         save(s);
       } else {
         serverOn = false;
+        // Server explicitly says "not signed in" but the local mirror still
+        // carries a signed-in account → stale ghost (expired cookie / old demo
+        // sign-in). Clear it so the UI stops showing a paid plan the server has
+        // never heard of (which 401s every Sortis call). A null d (network /
+        // 501 backend-off) is NOT proof of sign-out, so leave state alone then.
+        if (d && d.signedIn === false) {
+          var st = load();
+          if (st.account && st.account.signedIn) {
+            st.account = clone(DEFAULT_ACCOUNT);
+            if (METHODS[st.method] && METHODS[st.method].gated) st.method = "stria";
+            save(st);
+            emit();
+          }
+        }
       }
       if (cb) cb(serverOn);
     });
@@ -135,6 +149,18 @@
     var s = load();
     s.units = Math.max(0, s.units - n);
     save(s);
+    return s.units;
+  }
+
+  // Local-only rollback of the optimistic deduction when a cast fails. The
+  // server already refunded its own atomic deduction (functions/api/claude.js
+  // refunds on upstream failure), so this must NOT hit /grant — it only undoes
+  // the local mirror so the balance shown matches the server.
+  function refundLocal(n) {
+    var s = load();
+    s.units += n;
+    save(s);
+    emit();
     return s.units;
   }
 
@@ -231,17 +257,24 @@
     return s.account;
   }
 
-  // Real, persisted sign-in via the accounts backend. Falls back to the local
-  // demo sign-in if the backend isn't there (501) so the button still works.
+  // Real, persisted sign-in via the accounts backend (creates/reuses a D1
+  // account and sets a server session cookie). No local-demo fallback: the old
+  // behaviour minted a fake signed-in account when the call failed, which then
+  // showed a paid plan the server had never issued — every Sortis call 401'd
+  // and the reading degraded to placeholder prose while units drained. On
+  // failure we report why (cb(false, null, reason)) so the caller can surface
+  // it instead of pretending sign-in worked.
   function signInRemote(email, name, provider, cb) {
     fetch("/api/auth/dev", {
       method: "POST", headers: { "content-type": "application/json" },
       credentials: "same-origin",
       body: JSON.stringify({ email: email, name: name, provider: provider || "email" })
     }).then(function (r) {
-      if (r.status === 501) return null;
-      return r.json().catch(function () { return null; });
-    }).then(function (d) {
+      return r.json().catch(function () { return null; }).then(function (d) {
+        return { status: r.status, d: d };
+      });
+    }).then(function (res) {
+      var d = res.d;
       if (d && d.ok && d.user) {
         serverOn = true;
         var s = load();
@@ -253,13 +286,13 @@
         save(s);
         if (cb) cb(true, s.account);
       } else {
-        // no backend → local demo sign-in, app still works
-        var a = signIn(provider || "email");
-        if (cb) cb(false, a);
+        var why = (d && d.error) ? d.error
+          : res.status === 501 ? "accounts backend not configured"
+          : "sign-in failed (" + res.status + ")";
+        if (cb) cb(false, null, why);
       }
-    }).catch(function () {
-      var a = signIn(provider || "email");
-      if (cb) cb(false, a);
+    }).catch(function (e) {
+      if (cb) cb(false, null, "network error — " + ((e && e.message) || e));
     });
   }
 
@@ -329,6 +362,7 @@
     entitled: entitled,
     deductUnits: deductUnits,
     addUnits: addUnits,
+    refundLocal: refundLocal,
     reconcileUnits: reconcileUnits,
     setPlan: setPlan,
     signIn: signIn,
