@@ -277,14 +277,34 @@
       var d = res.d;
       if (d && d.ok && d.user) {
         serverOn = true;
-        var s = load();
-        s.units = d.user.units;
-        s.account = {
-          name: d.user.name, email: d.user.email, plan: d.user.plan,
-          avatar: initials(d.user.name), signedIn: true, provider: provider || "email"
-        };
-        save(s);
-        if (cb) cb(true, s.account);
+        function finishSignIn(user) {
+          var s = load();
+          s.units = user.units;
+          s.account = {
+            name: user.name, email: user.email, plan: user.plan,
+            avatar: initials(user.name), signedIn: true, provider: provider || "email"
+          };
+          save(s);
+          if (cb) cb(true, s.account);
+        }
+        // Demo convenience: a fresh account lands on the free tier, but the
+        // point of the demo is trying Sortis 6 (Opus), which the plan gate
+        // requires Pro/Premium for. With no real payments wired yet, a brand-
+        // new demo sign-in is upgraded to a REAL Premium account server-side
+        // (a genuine session + plan, not the old fake-account trick) so the
+        // one-click demo both looks and works like Premium. Existing accounts
+        // keep whatever plan they already have.
+        if (d.user.plan === "free") {
+          api("/plan", "POST", { plan: "premium" }).then(function (pr) {
+            if (pr && pr.ok && typeof pr.units === "number") {
+              finishSignIn({ name: d.user.name, email: d.user.email, plan: "premium", units: pr.units });
+            } else {
+              finishSignIn(d.user);
+            }
+          });
+        } else {
+          finishSignIn(d.user);
+        }
       } else {
         var why = (d && d.error) ? d.error
           : res.status === 501 ? "accounts backend not configured"
