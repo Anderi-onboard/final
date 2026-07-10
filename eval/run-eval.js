@@ -5,7 +5,7 @@
 
    Usage:
      node eval/run-eval.js               # Gate only (offline, free, always runs)
-     ANTHROPIC_API_KEY=sk-... node eval/run-eval.js   # also checks Router accuracy (costs a few Haiku calls)
+     OPENROUTER_API_KEY=sk-or-... node eval/run-eval.js   # also checks Router accuracy (costs a few Haiku calls)
 
    This is the harness item #7 from the production-readiness review asked
    for: "build 50 tricky test questions (crisis, minor, stocks, weather,
@@ -37,9 +37,9 @@ function runGate() {
 }
 
 async function runRouter() {
-  const key = process.env.ANTHROPIC_API_KEY;
+  const key = process.env.OPENROUTER_API_KEY;
   if (!key) {
-    console.log("── Router (skipped — set ANTHROPIC_API_KEY to check classification accuracy against real Haiku) ──\n");
+    console.log("── Router (skipped — set OPENROUTER_API_KEY to check classification accuracy against real Haiku) ──\n");
     return null;
   }
   console.log("── Router (live, calls Haiku for each case) ──");
@@ -61,17 +61,17 @@ async function runRouter() {
 
   let pass = 0, fail = 0;
   for (const c of cases.router) {
-    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    const resp = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
-      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+      headers: { "content-type": "application/json", authorization: "Bearer " + key },
       body: JSON.stringify({
-        model: "claude-haiku-4-5", max_tokens: 20,
-        system: ROUTER_SYSTEM,
-        messages: [{ role: "user", content: c.q }]
+        model: "anthropic/claude-haiku-4.5", max_tokens: 20,
+        messages: [{ role: "system", content: ROUTER_SYSTEM }, { role: "user", content: c.q }]
       })
     });
     const data = await resp.json();
-    const text = ((data.content || [])[0] || {}).text || "";
+    const choice = (data.choices || [])[0] || {};
+    const text = (choice.message && choice.message.content) || "";
     const got = text.trim().toLowerCase().replace(/[^a-z_]/g, "");
     const ok = got === c.expect;
     ok ? pass++ : fail++;

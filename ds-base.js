@@ -17,7 +17,7 @@
   // The app calls window.claude.complete(promptString) OR
   // window.claude.complete({ system?, messages }) and expects a Promise<string>.
   // Here we forward that to the /api/claude Pages Function (functions/api/claude.js),
-  // which holds the secret ANTHROPIC_API_KEY. If the Function isn't deployed (or
+  // which holds the secret OPENROUTER_API_KEY. If the Function isn't deployed (or
   // errors), the call rejects and the app falls back to its deterministic mock
   // reading — so a key-less static deploy still works, just without live prose.
   if (!window.claude) {

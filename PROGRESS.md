@@ -4,9 +4,24 @@
 > 当前阶段：**字体已锁定为仅 BioRhyme / Spinnaker / Pacifico 三种，禁止出现任何其他字体**。
 > 其余美术（排版比例、留白、卦象对齐）仍在后期集中处理之列。
 
-最后更新：2026-07-03
+最后更新：2026-07-10
 
 ---
+
+## ✅ 已完成 — 部署交接：D1 建库、about.html 重做上线、AI 代理切到 OpenRouter（2026-07-10）
+
+- ✅ 建了生产 D1 数据库 `bournewise`，`wrangler.toml` 填入真实 `database_id`，
+  `schema.sql` 已对远程库执行（`users`/`ledger`/`castings`/`rate_limits` 四表就绪）。
+- ✅ 落地了 about.html 的视觉重做（去侧边栏、山脉背景贴边铺满、新配色、环境动效层）。
+- ✅ `functions/api/claude.js` 从直连 Anthropic 改为经 **OpenRouter** 调用 Claude
+  模型：请求体从 Anthropic 原生 `/v1/messages` 形状改为 OpenAI 兼容的
+  `/chat/completions` 形状（`system` 并入 `messages`，非流式响应从
+  `choices[0].message.content` 取文本）；流式路径把 OpenRouter 的
+  `choices[].delta.content` 分片重新编码成客户端 `prompt-router.js` 已经在解析的
+  Anthropic 风格 `content_block_delta` 事件，**前端解析逻辑完全没动**。环境变量
+  从 `ANTHROPIC_API_KEY` 改名为 `OPENROUTER_API_KEY`；模型 id 换成 OpenRouter 的
+  vendor-prefixed slug（如 `anthropic/claude-sonnet-4.6`），旧的 Anthropic 原生 id
+  仍保留在 `ALLOWED` 别名表里做兼容。`eval/run-eval.js` 的 Router 校验同步改造。
 
 ## ✅ 已完成 — 生产就绪审查修复：API 防刷、多轮记忆、Gate 正则 bug、Eval 库（2026-07-03，第四轮）
 

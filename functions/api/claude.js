@@ -1,7 +1,8 @@
 // functions/api/claude.js — BourneWise AI proxy (Cloudflare Pages Function).
 // Route = folder layout, so this serves  POST /api/claude.
 //
-// The browser never sees the Anthropic key. The front-end declares INTENT
+// Calls the Claude models through OpenRouter rather than Anthropic directly.
+// The browser never sees the OpenRouter key. The front-end declares INTENT
 // (product + role) and this Function picks the right model server-side:
 //
 //   product "stria"  → Sonnet 4.6   (baseline reading)
@@ -10,6 +11,13 @@
 //
 // A client MAY still pass an explicit `model`, but only allow-listed ids are
 // honoured — anything else is ignored and the intent-based default is used.
+//
+// OpenRouter speaks the OpenAI chat-completions shape, not Anthropic's native
+// /v1/messages shape. To avoid touching the client (prompt-router.js parses
+// Anthropic-style `content_block_delta` SSE events), this Function translates
+// in both directions: it builds an OpenAI-style request, and — for the
+// streaming path — re-encodes OpenRouter's `choices[].delta.content` chunks
+// back into the `content_block_delta` events the client already understands.
 //
 // ── Abuse protection (only active when env.DB is bound — see README) ──────
 // This endpoint used to be reachable with ZERO auth: anyone who found the
@@ -29,10 +37,10 @@
 // public production traffic. See README "Accounts, ledger & history".
 //
 // Secrets / vars (Pages → Settings → Environment, or .dev.vars locally):
-//   ANTHROPIC_API_KEY   (required)
-//   STRIA_MODEL         (optional override, default claude-sonnet-4-6)
-//   SORTIS_MODEL        (optional override, default claude-opus-4-8)
-//   UTILITY_MODEL       (optional override, default claude-haiku-4-5)
+//   OPENROUTER_API_KEY  (required)
+//   STRIA_MODEL         (optional override, default anthropic/claude-sonnet-4.6)
+//   SORTIS_MODEL        (optional override, default anthropic/claude-opus-4.8)
+//   UTILITY_MODEL       (optional override, default anthropic/claude-haiku-4.5)
 //   CLAUDE_MAX_TOKENS   (optional, default 1024)
 //
 // If the key is unset or this Function errors, the front-end falls back to its
@@ -47,26 +55,31 @@ const CORS = {
   'access-control-allow-headers': 'content-type'
 };
 
-// Canonical model ids the proxy is willing to call. Friendly aliases included.
+// Canonical model ids the proxy is willing to call — OpenRouter slugs
+// (vendor-prefixed). Old Anthropic-native ids are kept as aliases so any
+// caller still sending them resolves to the right OpenRouter model.
 const ALLOWED = {
-  'claude-opus-4-8': 'claude-opus-4-8',
-  'claude-sonnet-4-6': 'claude-sonnet-4-6',
-  'claude-haiku-4-5': 'claude-haiku-4-5',
-  opus: 'claude-opus-4-8',
-  sonnet: 'claude-sonnet-4-6',
-  haiku: 'claude-haiku-4-5'
+  'anthropic/claude-opus-4.8': 'anthropic/claude-opus-4.8',
+  'anthropic/claude-sonnet-4.6': 'anthropic/claude-sonnet-4.6',
+  'anthropic/claude-haiku-4.5': 'anthropic/claude-haiku-4.5',
+  'claude-opus-4-8': 'anthropic/claude-opus-4.8',
+  'claude-sonnet-4-6': 'anthropic/claude-sonnet-4.6',
+  'claude-haiku-4-5': 'anthropic/claude-haiku-4.5',
+  opus: 'anthropic/claude-opus-4.8',
+  sonnet: 'anthropic/claude-sonnet-4.6',
+  haiku: 'anthropic/claude-haiku-4.5'
 };
 
 function resolveModel(body, env) {
   if (body.model && ALLOWED[body.model]) return ALLOWED[body.model];
   const role = String(body.role || '').toLowerCase();
   if (role === 'router' || role === 'qc' || role === 'utility') {
-    return env.UTILITY_MODEL || 'claude-haiku-4-5';
+    return env.UTILITY_MODEL || 'anthropic/claude-haiku-4.5';
   }
   const product = String(body.product || '').toLowerCase();
-  if (product === 'sortis') return env.SORTIS_MODEL || 'claude-opus-4-8';
-  if (product === 'stria') return env.STRIA_MODEL || 'claude-sonnet-4-6';
-  return env.STRIA_MODEL || 'claude-sonnet-4-6';
+  if (product === 'sortis') return env.SORTIS_MODEL || 'anthropic/claude-opus-4.8';
+  if (product === 'stria') return env.STRIA_MODEL || 'anthropic/claude-sonnet-4.6';
+  return env.STRIA_MODEL || 'anthropic/claude-sonnet-4.6';
 }
 
 function clientIp(request) {
@@ -78,8 +91,8 @@ function clientIp(request) {
 export async function onRequestPost({ request, env }) {
   let refundTo = null; // { userId, amount } — set once we've deducted, cleared on success
   try {
-    if (!env.ANTHROPIC_API_KEY) {
-      return json({ error: 'ANTHROPIC_API_KEY not configured' }, 503);
+    if (!env.OPENROUTER_API_KEY) {
+      return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
     }
     const body = await request.json().catch(() => ({}));
     const messages = Array.isArray(body.messages) ? body.messages : [];
@@ -101,8 +114,15 @@ export async function onRequestPost({ request, env }) {
 
     const model = resolveModel(body, env);
     const max_tokens = clampTokens(body.max_tokens, env);
-    const payload = { model, max_tokens, messages };
-    if (body.system) payload.system = body.system;
+    // OpenAI-style shape: system goes in the messages array, not a sibling field.
+    const orMessages = body.system ? [{ role: 'system', content: body.system }, ...messages] : messages;
+    const payload = { model, max_tokens, messages: orMessages };
+    const openrouterHeaders = {
+      'content-type': 'application/json',
+      authorization: 'Bearer ' + env.OPENROUTER_API_KEY,
+      'http-referer': 'https://bournewise.com',
+      'x-title': 'BourneWise'
+    };
 
     // Streaming path: only the main reading call asks for this (router/qc
     // stay non-streaming — they're single short completions, nothing to
@@ -111,59 +131,70 @@ export async function onRequestPost({ request, env }) {
     // shape differs from here on.
     if (body.stream === true) {
       payload.stream = true;
-      const upstream = await fetch('https://api.anthropic.com/v1/messages', {
+      const upstream = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'x-api-key': env.ANTHROPIC_API_KEY,
-          'anthropic-version': '2023-06-01'
-        },
+        headers: openrouterHeaders,
         body: JSON.stringify(payload)
       });
 
       if (!upstream.ok || !upstream.body) {
-        if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:anthropic_' + upstream.status);
+        if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:openrouter_' + upstream.status);
         const detail = await upstream.text().catch(() => '');
-        return json({ error: 'anthropic ' + upstream.status, detail }, 502);
+        return json({ error: 'openrouter ' + upstream.status, detail }, 502);
       }
 
-      // Passthrough Anthropic's SSE bytes unchanged, then append one extra
-      // bw_meta event carrying unitsRemaining once the upstream stream ends
-      // — the only piece of information the client needs that Anthropic's
-      // stream itself doesn't carry. A failure mid-stream (after headers are
-      // already committed) can't be refunded here; that's a known, accepted
-      // gap of SSE — same tradeoff every streaming proxy makes.
+      // OpenRouter streams OpenAI-shaped chunks (`choices[0].delta.content`,
+      // terminated by a `data: [DONE]` record) — re-encode each one as the
+      // Anthropic-shaped `content_block_delta` event prompt-router.js already
+      // parses, then append the same trailing bw_meta event as before. A
+      // failure mid-stream (after headers are already committed) can't be
+      // refunded here; that's a known, accepted gap of SSE — same tradeoff
+      // every streaming proxy makes.
       const encoder = new TextEncoder();
-      const metaEvent = 'event: bw_meta\ndata: ' + JSON.stringify({ unitsRemaining, model }) + '\n\n';
-      const tail = new TransformStream({
-        flush(controller) { controller.enqueue(encoder.encode(metaEvent)); }
+      const decoder = new TextDecoder();
+      let buf = '';
+      const reencode = new TransformStream({
+        transform(chunk, controller) {
+          buf += decoder.decode(chunk, { stream: true });
+          const records = buf.split('\n\n');
+          buf = records.pop();
+          for (const rec of records) {
+            const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
+            if (!dataLine) continue;
+            const raw = dataLine.slice(5).trim();
+            if (raw === '[DONE]') continue;
+            let obj;
+            try { obj = JSON.parse(raw); } catch (e) { continue; }
+            const text = obj.choices && obj.choices[0] && obj.choices[0].delta && obj.choices[0].delta.content;
+            if (!text) continue;
+            const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
+            controller.enqueue(encoder.encode(event));
+          }
+        },
+        flush(controller) {
+          const metaEvent = 'event: bw_meta\ndata: ' + JSON.stringify({ unitsRemaining, model }) + '\n\n';
+          controller.enqueue(encoder.encode(metaEvent));
+        }
       });
-      return new Response(upstream.body.pipeThrough(tail), {
+      return new Response(upstream.body.pipeThrough(reencode), {
         status: 200,
         headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
       });
     }
 
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01'
-      },
+      headers: openrouterHeaders,
       body: JSON.stringify(payload)
     });
 
     if (!resp.ok) {
-      if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:anthropic_' + resp.status);
+      if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:openrouter_' + resp.status);
       const detail = await resp.text().catch(() => '');
-      return json({ error: 'anthropic ' + resp.status, detail }, 502);
+      return json({ error: 'openrouter ' + resp.status, detail }, 502);
     }
     const data = await resp.json();
-    const text = (data.content || [])
-      .filter((b) => b.type === 'text')
-      .map((b) => b.text)
-      .join('');
+    const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
     const result = { text, model };
     if (unitsRemaining != null) result.unitsRemaining = unitsRemaining;
     return json(result, 200);
@@ -174,7 +205,7 @@ export async function onRequestPost({ request, env }) {
 }
 
 // Auth + billing + rate-limit gate. Returns one of:
-//   { error: { status, body } }              — reject, never call Anthropic
+//   { error: { status, body } }              — reject, never call OpenRouter
 //   { refund: {userId, amount}, unitsRemaining } — deducted; refund on failure
 //   { unitsRemaining? }                        — allowed, nothing to refund
 async function guardRequest({ request, env, db, product, cost }) {
@@ -217,12 +248,12 @@ export async function onRequestGet({ env }) {
   return json({
     ok: true,
     service: 'bournewise-claude-proxy',
-    keyConfigured: !!env.ANTHROPIC_API_KEY,
+    keyConfigured: !!env.OPENROUTER_API_KEY,
     billingEnforced: !!env.DB,
     models: {
-      stria: env.STRIA_MODEL || 'claude-sonnet-4-6',
-      sortis: env.SORTIS_MODEL || 'claude-opus-4-8',
-      utility: env.UTILITY_MODEL || 'claude-haiku-4-5'
+      stria: env.STRIA_MODEL || 'anthropic/claude-sonnet-4.6',
+      sortis: env.SORTIS_MODEL || 'anthropic/claude-opus-4.8',
+      utility: env.UTILITY_MODEL || 'anthropic/claude-haiku-4.5'
     }
   }, 200);
 }

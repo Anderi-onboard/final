@@ -25,7 +25,7 @@ wrangler.toml       ← Pages config (local dev + deploy)
 
 ```bash
 npm install
-cp .dev.vars.example .dev.vars   # add your ANTHROPIC_API_KEY (optional)
+cp .dev.vars.example .dev.vars   # add your OPENROUTER_API_KEY (optional)
 npm run dev:fn                    # site + /api/claude function on :3000
 # or, static only (no backend): npm run dev
 ```
@@ -95,15 +95,15 @@ npx wrangler pages deploy .      # run from inside this folder
 Out of the box the site works with **no key** — readings fall back to a built-in
 deterministic interpretation of the Liu Yao board (real structure, generic prose).
 
-To get live, written readings from Claude:
+To get live, written readings from Claude (via OpenRouter):
 1. In your Pages project → **Settings → Environment variables**, add a secret:
-   - `ANTHROPIC_API_KEY` = your Anthropic API key
-   - (optional) `STRIA_MODEL` — defaults to `claude-sonnet-4-6`
-   - (optional) `SORTIS_MODEL` — defaults to `claude-opus-4-8`
-   - (optional) `UTILITY_MODEL` — defaults to `claude-haiku-4-5`
+   - `OPENROUTER_API_KEY` = your OpenRouter API key
+   - (optional) `STRIA_MODEL` — defaults to `anthropic/claude-sonnet-4.6`
+   - (optional) `SORTIS_MODEL` — defaults to `anthropic/claude-opus-4.8`
+   - (optional) `UTILITY_MODEL` — defaults to `anthropic/claude-haiku-4.5`
    - (optional) `CLAUDE_MAX_TOKENS` — defaults to `1024`
 2. Redeploy. The browser calls `/api/claude`, which the bundled
-   `functions/api/claude.js` proxies to Anthropic with your key kept server-side.
+   `functions/api/claude.js` proxies to OpenRouter with your key kept server-side.
 
 If the key is missing or the call fails, the front-end silently uses the mock
 reading, so the site never breaks.
