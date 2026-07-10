@@ -1,0 +1,17 @@
+# Cloudflare Pages response headers.
+#
+# Code and stylesheets must revalidate on every load (cheap 304 when unchanged)
+# so a fresh deploy shows up immediately instead of being served stale from the
+# browser's cache. Without this, Pages' default `max-age=14400` pins JS/CSS in
+# the browser for 4 hours, which made a new mountain-range.js / chat-app.js keep
+# rendering the previous version until the cache expired.
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Fonts are content-stable (their contents never change under the same name),
+# so they can stay cached for a year — no revalidation cost on repeat views.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
