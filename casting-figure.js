@@ -216,26 +216,17 @@
     });
   }
 
-  /* ── organic coin SVG (hand-drawn blob, no square hole) ── */
-  /* ── three coins (三枚铜钱): organic morphing blobs, each with a slowly
-     rotating square hole — the casting toss. Original loader artwork. ── */
+  /* ── organic loader: a single hollow, hand-drawn-style ring — its corners
+     morph asymmetrically while it drifts in a slow rotation, so it reads as
+     an imperfect circle being drawn-in-motion rather than a mechanical
+     spinner. Replaces the old three-coin toss icon (kept identical in the
+     live cast and the saved reading, so nothing shrinks or freezes when the
+     casting settles). ── */
   var BW_BLOB = "M -2.8 -22.7 C 3.8 -23.2, 16.0 -19.3, 19.5 -13.6 C 23.0 -7.9, 21.9 5.4, 18.1 11.4 C 14.5 17.5, 3.2 23.2, -2.8 22.6 C -8.8 22.0, -14.8 13.5, -17.8 7.9 C -20.8 2.3, -23.0 -5.7, -20.5 -10.8 C -17.9 -15.9, -9.4 -22.2, -2.8 -22.7 Z";
-  /* shared markup for the three coins — identical in the live cast and the saved
-     reading, so nothing shrinks or freezes when the casting settles. One blob
-     animation drives all three (staggered only by negative delay). */
   function coinsMarkup() {
-    var xs = [80, 160, 240], inner = "";
-    for (var i = 0; i < 3; i++) {
-      /* blobs share one phase so the three coins stay perfectly aligned;
-         only the square holes spin at staggered phases, for life */
-      var hdly = (-i * 1.6).toFixed(2);
-      inner += '<g transform="translate(' + xs[i] + ',60)">' +
-        '<path class="bw-coin-fill" d="' + BW_BLOB + '" fill="var(--chip)" opacity="0.5"></path>' +
-        '<path class="bw-coin-edge" d="' + BW_BLOB + '" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"></path>' +
-        '<rect class="bw-coin-hole" x="-8" y="-8" width="16" height="16" rx="1.6" fill="var(--paper-raised)" stroke="currentColor" stroke-width="1.5" style="animation-delay:' + hdly + 's"></rect>' +
-      '</g>';
-    }
-    return '<svg class="bw-coins-svg" viewBox="0 0 320 120" width="150" height="56" aria-hidden="true" style="overflow:visible">' + inner + '</svg>';
+    return '<span class="bw-af-loader" aria-hidden="true"></span>' +
+      '<span class="bw-af-loader b" aria-hidden="true"></span>' +
+      '<span class="bw-af-loader c" aria-hidden="true"></span>';
   }
   function makeCoins() {
     var tmp = el("span");
@@ -444,21 +435,28 @@
     s.textContent = [
       /* root */
       ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px}",
-      ".bw-cast-head{display:flex;align-items:center;gap:13px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
+      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-cast-status{color:var(--faint);font-size:10px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
+      ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
 
-      /* ── THE THREE COINS (三枚铜钱) — organic morphing blobs, square holes ── */
-      ".bw-coins{display:inline-flex;align-items:center;color:var(--ink)}",
-      ".bw-coins-svg{display:block;overflow:visible}",
-      /* ONE blob animation drives all three coins; every morph frame is recentered
-         to its own bounding box, so the blob breathes in place and the square hole
-         stays dead-centered in the coin throughout the animation */
-      ".bw-coin-edge,.bw-coin-fill{animation:bwBlob 3s linear infinite}",
-      ".bw-coin-hole{transform-box:fill-box;transform-origin:center;animation:bwHole 8s linear infinite}",
-      '@keyframes bwBlob{0%{d:path("M -2.8 -22.7 C 3.8 -23.2, 16.0 -19.3, 19.5 -13.6 C 23.0 -7.9, 21.9 5.4, 18.1 11.4 C 14.5 17.5, 3.2 23.2, -2.8 22.6 C -8.8 22.0, -14.8 13.5, -17.8 7.9 C -20.8 2.3, -23.0 -5.7, -20.5 -10.8 C -17.9 -15.9, -9.4 -22.2, -2.8 -22.7 Z")}12.5%{d:path("M -1.6 -22.5 C 5.0 -22.7, 15.8 -14.8, 19.3 -8.4 C 22.8 -2.0, 22.8 10.7, 19.3 15.8 C 15.8 20.9, 4.6 22.7, -1.6 22.3 C -7.8 21.8, -14.7 17.9, -17.8 13.0 C -20.8 8.2, -22.8 -1.0, -20.0 -6.9 C -17.3 -12.9, -8.2 -22.2, -1.6 -22.5 Z")}25%{d:path("M -0.4 -21.3 C 6.2 -21.4, 16.8 -13.3, 19.8 -7.3 C 22.9 -1.2, 21.3 10.2, 17.9 15.0 C 14.5 19.7, 5.8 21.3, -0.4 21.3 C -6.6 21.4, -15.9 19.9, -19.1 15.2 C -22.4 10.5, -22.9 -0.7, -19.8 -6.8 C -16.6 -12.9, -7.0 -21.3, -0.4 -21.3 Z")}37.5%{d:path("M 1.6 -21.8 C 8.5 -21.5, 18.6 -15.2, 21.1 -9.8 C 23.6 -4.7, 19.7 4.8, 16.5 9.9 C 13.3 15.2, 7.4 21.0, 1.6 21.5 C -4.2 22.0, -14.4 18.1, -18.0 12.7 C -21.7 7.3, -23.6 -5.6, -20.4 -11.3 C -17.1 -17.0, -5.3 -22.0, 1.6 -21.8 Z")}50%{d:path("M 3.7 -22.6 C 10.3 -22.0, 17.8 -15.4, 20.4 -10.2 C 23.0 -5.1, 21.9 2.8, 19.1 8.3 C 16.3 13.8, 9.7 22.2, 3.7 22.7 C -2.3 23.2, -13.0 17.4, -16.9 11.3 C -20.8 5.1, -23.0 -8.3, -19.5 -14.0 C -16.0 -19.6, -2.9 -23.2, 3.7 -22.6 Z")}62.5%{d:path("M 2.1 -22.3 C 7.9 -21.8, 13.6 -15.2, 16.8 -9.9 C 19.9 -4.5, 23.8 4.3, 21.3 9.7 C 18.9 15.1, 9.0 22.2, 2.1 22.5 C -4.8 22.8, -17.1 17.5, -20.3 11.5 C -23.8 5.6, -21.8 -7.4, -18.1 -13.0 C -14.3 -18.7, -3.7 -22.8, 2.1 -22.3 Z")}75%{d:path("M 0.2 -21.4 C 5.7 -21.4, 13.6 -18.0, 17.1 -12.9 C 20.8 -7.8, 24.5 3.6, 21.6 9.3 C 18.9 15.0, 7.5 21.3, 0.2 21.3 C -7.1 21.4, -19.1 15.2, -21.9 9.6 C -24.5 4.0, -19.6 -7.2, -16.0 -12.4 C -12.3 -17.6, -5.3 -21.3, 0.2 -21.4 Z")}87.5%{d:path("M -2.0 -21.5 C 4.1 -22.0, 15.6 -20.9, 19.1 -15.9 C 22.6 -10.9, 22.6 2.2, 19.1 8.5 C 15.6 14.8, 4.5 22.0, -2.0 21.7 C -8.5 21.4, -17.4 12.4, -20.0 6.7 C -22.6 0.9, -20.8 -8.1, -17.8 -12.8 C -14.7 -17.5, -8.1 -21.0, -2.0 -21.5 Z")}100%{d:path("M -2.8 -22.7 C 3.8 -23.2, 16.0 -19.3, 19.5 -13.6 C 23.0 -7.9, 21.9 5.4, 18.1 11.4 C 14.5 17.5, 3.2 23.2, -2.8 22.6 C -8.8 22.0, -14.8 13.5, -17.8 7.9 C -20.8 2.3, -23.0 -5.7, -20.5 -10.8 C -17.9 -15.9, -9.4 -22.2, -2.8 -22.7 Z")}}',
-      "@keyframes bwHole{to{transform:rotate(360deg)}}",
+      /* ── organic loader: three hollow hand-drawn rings (echoes the three-coin
+         toss), each morphing + turning on its own independent phase so they
+         read as three coins landing separately, not one mechanical spinner ── */
+      ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
+      ".bw-af-loader{display:block;flex:none;width:22px;height:22px;box-sizing:border-box;",
+        "border:2.1px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
+        "animation:bwLoaderMorph 3.6s ease-in-out infinite,bwLoaderSpin 10s linear infinite}",
+      ".bw-af-loader.b{animation-delay:-1.2s,-3.4s}",
+      ".bw-af-loader.c{animation-delay:-2.4s,-6.8s}",
+      "@keyframes bwLoaderMorph{",
+        "0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%}",
+        "20%{border-radius:58% 42% 38% 62% / 62% 44% 56% 38%}",
+        "40%{border-radius:38% 62% 55% 45% / 40% 60% 40% 60%}",
+        "60%{border-radius:63% 37% 44% 56% / 52% 48% 63% 37%}",
+        "80%{border-radius:42% 58% 60% 40% / 48% 58% 42% 52%}",
+      "}",
+      "@keyframes bwLoaderSpin{to{transform:rotate(360deg)}}",
 
       /* Standalone loader */
       ".bw-loader{display:inline-flex;align-items:center;color:var(--ink)}",
@@ -504,7 +502,7 @@
       ".bw-ix-head{padding:0 2px}",
       ".bw-ix-tag{font-size:11px;letter-spacing:.09em;color:var(--faint)}",
       ".bw-ix-head .bw-ix-tag b{color:var(--terracotta);font-weight:400}",
-      ".bw-zg{display:flex;gap:28px;align-items:center;padding:18px 24px;background:var(--paper-raised);border:1px solid var(--line);border-radius:12px}",
+      ".bw-zg{display:flex;gap:28px;align-items:center;padding:18px 24px;background:transparent;border:1px solid var(--line);border-radius:12px}",
       ".bw-zg-svg{flex:none;width:330px;height:auto;overflow:visible}",
       ".bw-zg-el{font-family:var(--serif);font-weight:600;font-size:13.5px;dominant-baseline:middle}",
       ".bw-zg-role{font-family:var(--sans);font-weight:500;font-size:11px;fill:var(--faint);letter-spacing:.02em}",
@@ -528,7 +526,7 @@
       "@media (max-width:600px){.bw-zg{flex-direction:column;align-items:stretch;gap:16px}.bw-zg-svg{width:100%}}",
 
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
-      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:9px;max-width:100%}",
+      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:9px;max-width:100%}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
       ".bw-af-el{font-family:var(--serif);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
@@ -538,10 +536,10 @@
       ".bw-af-tri-sym{font-size:15px;fill:var(--terracotta)}",
       ".bw-af-tri-en{font-family:var(--sans);font-size:8px;letter-spacing:.12em;fill:var(--faint)}",
       ".bw-af-name{font-family:var(--serif);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
-      ".bw-af-arrow{fill:none;stroke-width:2;opacity:.55}",
+      ".bw-af-arrow{fill:none;stroke-width:1.5;opacity:.5;stroke-linecap:round}",
       ".bw-af-tarrow{fill:none;stroke:var(--faint);stroke-width:1.4;stroke-linecap:round}",
       ".bw-af-branch{opacity:1}",
-      ".bw-af-legend{display:flex;flex-direction:column;align-items:center;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft)}",
+      ".bw-af-legend{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft);width:100%}",
       ".bw-af-legend span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}",
       ".bw-af-legend i{flex:none;width:13px;height:0;border-top:2px solid var(--line)}",
       ".bw-af-legend i.d-self{height:8px;width:8px;border:0;border-radius:50%;background:var(--terracotta)}",
@@ -571,14 +569,13 @@
       "@keyframes bwAftScale{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}",
       /* ── casting IN PLACE: the annotated figure draws itself line by line, then
          the branches grow & the whole board comes alive — same element, no swap ── */
-      ".bw-af-bar{display:flex;align-items:center;gap:11px;margin-bottom:9px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}",
+      ".bw-af-bar{display:flex;align-items:center;gap:13px;margin-bottom:13px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}",
       ".bw-af-bar .bw-coins{flex:none}",
-      ".bw-af-bar .bw-coins .bw-coins-svg{width:74px;height:28px}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-af-bar .bw-cast-status{color:var(--faint);font-size:10px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
+      ".bw-af-bar .bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
       /* the moment, as a compact inline row joined by organic ink dots */
-      ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
+      ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
       ".bw-af-moment .bw-af-dot{flex:none;opacity:.85}",
       ".bw-af-mt-date{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);font-weight:600}",
       ".bw-af-mt{display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap}",
@@ -660,7 +657,7 @@
 
       /* reduced motion */
       "@media (prefers-reduced-motion:reduce){",
-        ".bw-coins-svg,.bw-coins-svg *{animation:none!important}",
+        ".bw-af-loader{animation:none!important}",
         ".bw-fig .bw-ln.in{animation:none;opacity:1;transform:none}",
       "}"
     ].join("");
@@ -913,16 +910,20 @@
         '<text class="bw-af-mk ' + (li === selfLi ? "self" : "resp") + '" x="' + benMkX + '" y="' + yc + '" text-anchor="start" dominant-baseline="middle">' + mk + '</text></g>';
     }
 
-    /* moving → Self sheng-ke arrows, on the figure (Sortis only) */
+    /* moving → Self sheng-ke arrows, on the figure (Sortis only).
+       Bow scales with span so arcs NEST like brackets instead of crossing; with
+       3+ moving lines they thin out and the heads shrink so the stack stays legible. */
     var arrows = "", defs = "";
+    var manyTies = moving.length >= 3;
     if (hasBian) moving.forEach(function (s, i) {
       if (s === selfLi) return;
-      var r = elRel(els[s], els[selfLi]), col = r.kind === "peer" ? "var(--faint)" : r.color;
-      var y1 = cy(s), y2 = cy(selfLi), mid = (y1 + y2) / 2, peak = tiePeak + i * 8;
+      var r = elRel(els[s], els[selfLi]), col = r.kind === "peer" ? "var(--faint)" : "color-mix(in oklab, " + r.color + " 42%, var(--dim))";
+      var y1 = cy(s), y2 = cy(selfLi), mid = (y1 + y2) / 2;
+      var span = Math.abs(y2 - y1), peak = tiePeak + 2 + span * 0.16 + i * 3;
       var dp = 'M ' + tieX + ' ' + y1 + ' Q ' + peak + ' ' + mid + ' ' + tieX + ' ' + y2;
-      var mid2 = 'bwAf' + i;
-      defs += '<marker id="' + mid2 + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
-      arrows += '<path class="bw-af-arrow" d="' + dp + '" stroke="' + col + '" marker-end="url(#' + mid2 + ')" style="--len:' + (Math.abs(y2 - y1) + 90) + '"></path>';
+      var mid2 = 'bwAf' + i, mw = manyTies ? 7 : 8;
+      defs += '<marker id="' + mid2 + '" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="' + mw + '" markerHeight="' + mw + '" orient="auto-start-reverse"><path d="M4 3.2 L8.4 6 L4 8.8" fill="none" stroke="' + col + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></marker>';
+      arrows += '<path class="bw-af-arrow" d="' + dp + '" stroke="' + col + '" marker-end="url(#' + mid2 + ')" style="--len:' + (Math.abs(y2 - y1) + 90) + (manyTies ? ';opacity:.5;stroke-width:1.3' : '') + '"></path>';
     });
 
     /* the cross into the result figure */
@@ -1005,7 +1006,11 @@
     var benX = 246, benR = benX + BARW, benLeadX = benX - 6, benTextX = benX - 12;
     var tieX = benR, benMkX = 320;
     var bianX = 408, bianR = bianX + BARW, bianLeadX = bianR + 4, bianTextX = bianR + 10;
-    var arrowCx = 384, VW = 600, VH = 232;
+    /* no transformed figure to make room for: crop the canvas to the primary
+       column + its World/Resp marks instead of always reserving the full
+       two-figure width (was leaving ~40% of the SVG blank and reading as a
+       floating, over-wide chart disconnected from the text column below it) */
+    var arrowCx = 384, VW = hasBian ? 600 : 372, VH = 232;
     var benCx = benX + BARW / 2, bianCx = bianX + BARW / 2;
 
     function brush(x, y, w, h, col) {
@@ -1075,17 +1080,21 @@
     }
 
     /* moving → World sheng-ke ties: a faint solid guide + a flowing dashed current
-       on top (gen = bright fast stream, ctrl = firm pulse), all looping in place */
+       on top (gen = bright fast stream, ctrl = firm pulse), all looping in place.
+       Bow scales with span so arcs NEST instead of crossing; with 3+ ties the
+       guides fade back, currents thin, and heads shrink — the stack stays calm. */
+    var manyTies = board.moving.length >= 3;
     board.moving.forEach(function (s, i) {
       if (s === worldLi) return;
       var gA = EN_GI[L[s].element.en], gB = EN_GI[L[worldLi].element.en];
-      var r = elRel(gA, gB), col = r.kind === "peer" ? "var(--faint)" : r.color;
-      var y1 = cy(s), y2 = cy(worldLi), mid = (y1 + y2) / 2, peak = tieX + 16 + i * 8;
+      var r = elRel(gA, gB), col = r.kind === "peer" ? "var(--faint)" : "color-mix(in oklab, " + r.color + " 42%, var(--dim))";
+      var y1 = cy(s), y2 = cy(worldLi), mid = (y1 + y2) / 2;
+      var span = Math.abs(y2 - y1), peak = tieX + 8 + span * 0.16 + i * 3;
       var dp = 'M ' + tieX + ' ' + y1 + ' Q ' + peak + ' ' + mid + ' ' + tieX + ' ' + y2;
-      var id = 'bwAfb' + i, len = (Math.abs(y2 - y1) + 90);
-      defs += '<marker id="' + id + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
-      arrows += '<path class="bw-af-flowbase" d="' + dp + '" stroke="' + col + '" style="--len:' + len + '"></path>' +
-        '<path class="bw-af-flow ' + r.kind + '" d="' + dp + '" stroke="' + col + '" marker-end="url(#' + id + ')" style="--fi:' + i + '"></path>';
+      var id = 'bwAfb' + i, len = (Math.abs(y2 - y1) + 90), mw = manyTies ? 5 : 6;
+      defs += '<marker id="' + id + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="' + mw + '" markerHeight="' + mw + '" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
+      arrows += '<path class="bw-af-flowbase" d="' + dp + '" stroke="' + col + '" style="--len:' + len + (manyTies ? ';opacity:.14' : '') + '"></path>' +
+        '<path class="bw-af-flow ' + r.kind + '" d="' + dp + '" stroke="' + col + '" marker-end="url(#' + id + ')" style="--fi:' + i + (manyTies ? ';stroke-width:1.8' : '') + '"></path>';
     });
 
     /* the cross into the result figure + the 变卦 column (rel · ganzhi · element · World/Resp) */

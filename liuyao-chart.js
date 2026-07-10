@@ -318,7 +318,7 @@
       // ben rows: spirit | hidden | label | bar | right(mk+role+stars)
       ".lyc-fig.ben .lyc-line{display:grid;grid-template-columns:56px 62px max-content 78px minmax(90px,1fr);align-items:center;column-gap:8px}",
       ".lyc-fig.bian .lyc-line{display:grid;grid-template-columns:78px max-content 42px;align-items:center;column-gap:8px}",
-      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer;transition:background .14s}",
+      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer;transition:background .15s}",
       ".lyc-line:hover,.lyc-line.hot{background:color-mix(in oklab,var(--ink) 5%,transparent)}",
       ".lyc-line.bianrow{cursor:default}",
       ".lyc-line:focus{outline:1.5px solid color-mix(in oklab,var(--ink) 35%,transparent);outline-offset:-2px}",
@@ -341,7 +341,7 @@
       ".lyc-vsubj{font-size:11px;color:var(--dim)}",".lyc-vsubj b{color:var(--ink);font-weight:600}",
       ".lyc-vbadge{font-family:var(--serif);font-size:12.5px;padding:2px 11px;border:1px solid var(--ink);border-radius:999px;color:var(--ink)}",
       ".lyc-vtiming{font-size:11px;color:var(--faint)}",
-      ".lyc-readout{margin-top:9px;padding:9px 12px;background:var(--paper);border:1px solid var(--line-soft);border-radius:9px;min-height:46px}",
+      ".lyc-readout{margin-top:9px;padding:9px 12px;background:transparent;border:1px solid var(--line-soft);border-radius:9px;min-height:46px}",
       ".lyc-readout[data-empty]{display:flex;align-items:center;justify-content:center;min-height:36px}",
       ".lyc-ro-hint{font-size:11.5px;color:var(--ghost);letter-spacing:.03em}",
       ".lyc-ro-title{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}",

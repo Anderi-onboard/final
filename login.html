@@ -5,45 +5,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign in — BourneWise</title>
-<style>html,body{background:#fff}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&display=swap">
+<style>html,body{background:#F2EDE7}</style>
+<!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
+     already wears them — no fallback flash, no swap -->
+<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script src="./ds-base.js"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;display:flex;flex-direction:column;background:#fff;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
-    background-image:none;background-position:0 0,200px 140px}
+  body{min-height:100%;display:flex;flex-direction:column;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
 
   /* minimal page header — logo + back link */
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1100px;margin:0 auto;width:100%}
   .brand{display:flex;align-items:center;gap:9px}
   .mark{width:27px;height:22px;color:var(--ink)}
-  .brand b{font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:-.01em}
+  .brand b{font-family:var(--font-brand,cursive);font-weight:400;font-size:21px}
   .pagehead .ghost{font-size:13.5px;color:var(--dim);transition:color .15s;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
 
   .wrap{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
-  .card{width:min(440px,100%);background:var(--paper-raised);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 20px 54px rgba(31,29,26,.16)}
+  .card{width:min(440px,100%);overflow:hidden;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    box-shadow:0 14px 40px rgba(31,29,26,.12);
+    border-radius:16px 14px 16px 13px;backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);transform:translateZ(0);}
+  /* no mask-feather here: .card-hero is a solid Prussian block clipped to
+     the card's own radius — feathering the outer edge would fade that
+     solid block into the mountain at the corners, so only the radius breathes */
+  
 
-  /* the one Prussian block — cyanotype hero */
-  .card-hero{background:var(--prussian);background-image:url("./assets/textures/cyanotype.svg");background-size:cover;background-position:center;color:#EAF1F8;padding:26px 28px 24px;position:relative;overflow:hidden}
-  .card-hero .lbl{color:#BFD4EE}
+  /* the one hero block — no blue: warm ink instead of Prussian (cyanotype.svg
+     bakes its own blue rect, so it's dropped here rather than tinted) */
+  .card-hero{background:var(--ink);color:var(--paper-raised);padding:26px 28px 24px;position:relative;overflow:hidden}
+  .card-hero .lbl{color:#C7B492}
   .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:34px;line-height:1.0;letter-spacing:-.02em;margin-top:7px}
-  .card-hero p{font-family:var(--serif);font-size:14.5px;color:#D8E4F2;margin-top:9px;max-width:30ch;text-wrap:pretty}
+  .card-hero p{font-family:var(--serif);font-size:14.5px;color:#D9CBAE;margin-top:9px;max-width:30ch;text-wrap:pretty}
   .card-hero .seal{position:absolute;right:-14px;bottom:-20px;opacity:.5}
 
   .card-body{padding:24px 28px 12px;display:flex;flex-direction:column;gap:10px}
-  .prov{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);border-radius:11px;padding:12px 15px;font-size:14.5px;font-weight:500;background-color:var(--paper);transition:border-color .15s,transform .12s}
+  .prov{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);border-radius:11px;padding:12px 15px;font-size:14.5px;font-weight:500;background-color:var(--paper);transition:border-color .15s,transform .12s,background-color .15s,opacity .15s}
   .prov:hover{border-color:var(--ink);transform:translateY(-1px)}
   .prov .ic{flex:none;width:22px;height:22px;display:grid;place-items:center}
   .prov .arr{margin-left:auto;color:var(--ghost);transition:transform .15s,color .15s}
@@ -58,17 +71,18 @@
 
   .card-foot{padding:14px 28px 22px;text-align:center}
   .card-foot p{font-size:12px;color:var(--ghost);line-height:1.6}
-  .card-foot a{color:var(--dim);border-bottom:1px solid var(--line)}
+  .card-foot a{color:var(--dim);border-bottom:1px solid var(--line);transition:color .15s,border-color .15s}
   .card-foot a:hover{color:var(--terracotta);border-color:var(--terracotta)}
 
   footer{position:relative;z-index:2;text-align:center;padding:18px;font-size:11.5px;letter-spacing:var(--tracking-label);color:var(--ghost)}
 
   @media (max-width:520px){.pagehead{padding:16px 18px}.card-hero h1{font-size:29px}}
+  @media (prefers-reduced-motion: reduce){.card{animation:none}}
 </style>
 </head>
 <body>
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
 <header class="pagehead">
   <a class="brand" href="./index.html" aria-label="BourneWise home">
@@ -84,7 +98,7 @@
       <div class="lbl">&#9670;&nbsp; Access the classical architecture</div>
       <h1>Enter the framework.</h1>
       <p>Sign in to maintain your consultation balance and the history of your inquiries across the variables of your devices.</p>
-      <svg class="seal" width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="#EAF1F8" stroke-width="1" aria-hidden="true">
+      <svg class="seal" width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="#D9CBAE" stroke-width="1" aria-hidden="true">
         <circle cx="60" cy="60" r="46"></circle><circle cx="60" cy="60" r="34"></circle>
         <path d="M60 14v92M14 60h92M28 28l64 64M92 28l-64 64" opacity=".5"></path>
       </svg>

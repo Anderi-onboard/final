@@ -7,14 +7,18 @@
    (opacity 0.04–0.10 — squint test: pattern disappears, "paper"
    remains), and its own two type families.
 
-   Discipline carried over from the kit:
-   · --terracotta is THE accent — ≤3 uses per view, one gilded
-     keyword per reading.
-   · One Prussian-blue block per page, maximum (ledger / login hero).
+   Discipline carried over from the kit, expanded with a second accent
+   and a third type family (still disciplined — two jobs each, not
+   decoration for its own sake):
+   · --terracotta is the ACTION accent — CTAs, links, things you click.
+   · --pine is the STATUS accent — plan/tier badges, quiet emphasis.
+     Never used for anything clickable, so the two never compete.
+   · One Prussian-blue hero block per page, maximum (ledger / login hero).
    · Labels: 11.5px, +0.09em tracking, sentence case. Never all caps.
    · Textures ship at the opacity baked into the SVGs. Do not raise it.
-   · Fonts: BioRhyme (serif) / Spinnaker (sans) only — no font substitution,
-     loaded once via tokens/fonts.css. */
+   · Fonts: BioRhyme (serif, display) / Spinnaker (sans, everything else) /
+     Fraunces (--lit, italic literary voice — ledes, pull-quotes, reading
+     emphasis only, never headlines or labels), loaded via tokens/fonts.css. */
 
 [data-skin="paper"] {
   /* palette — aged Eurasian terracotta: tea-stained plaster grounds,
@@ -28,15 +32,18 @@
   --dim: #6A5238;           /* secondary text — walnut umber */
   --faint: #927A5C;         /* labels — faded sienna */
   --ghost: #AA9170;         /* fine print — dusty ochre */
-  --terracotta: #B5502C;    /* THE accent — deep burnt clay / fired terracotta */
-  --prussian: #284C82;      /* one block per page max — aged indigo */
+  --terracotta: #B5502C;    /* action accent — deep burnt clay / fired terracotta. CTAs, links, things you click. */
+  --prussian: #284C82;      /* one hero block per page max — aged indigo */
   --prussian-deep: #1C3E69;
+  --pine: #3D5C4A;          /* status accent — deep forest pine. Plan/tier badges, quiet emphasis — never CTAs. */
+  --pine-deep: #2C4436;
   --line: #CDB792;          /* borders on raised elements */
   --line-soft: #D8C7A4;     /* in-field rules */
 
-  /* two families, two jobs */
-  --serif: "BioRhyme", Georgia, serif; /* @kind font */   /* oracle voice, brand, numbers, italic titles */
+  /* three families, three jobs */
+  --serif: "BioRhyme", Georgia, serif; /* @kind font */   /* oracle voice, brand, numbers, display titles */
   --sans: "Spinnaker", system-ui, sans-serif; /* @kind font */  /* everything else */
+  --lit: "Fraunces", "BioRhyme", Georgia, serif; /* @kind font */  /* literary italic voice — ledes, pull-quotes, reading emphasis only */
   --font-serif: var(--serif);
   --font-sans: var(--sans);
 

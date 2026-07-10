@@ -12,7 +12,8 @@
 
 - ✅ 建了生产 D1 数据库 `bournewise`，`wrangler.toml` 填入真实 `database_id`，
   `schema.sql` 已对远程库执行（`users`/`ledger`/`castings`/`rate_limits` 四表就绪）。
-- ✅ 落地了 about.html 的视觉重做（去侧边栏、山脉背景贴边铺满、新配色、环境动效层）。
+- ✅ 落地了 about.html 的视觉重做（去侧边栏、山脉背景贴边铺满、新配色、环境动效层），
+  并随第五轮性能优化一起上线（含此前仓库缺失的 `assets/fonts/` 自托管字体）。
 - ✅ `functions/api/claude.js` 从直连 Anthropic 改为经 **OpenRouter** 调用 Claude
   模型：请求体从 Anthropic 原生 `/v1/messages` 形状改为 OpenAI 兼容的
   `/chat/completions` 形状（`system` 并入 `messages`，非流式响应从
@@ -22,6 +23,40 @@
   从 `ANTHROPIC_API_KEY` 改名为 `OPENROUTER_API_KEY`；模型 id 换成 OpenRouter 的
   vendor-prefixed slug（如 `anthropic/claude-sonnet-4.6`），旧的 Anthropic 原生 id
   仍保留在 `ALLOWED` 别名表里做兼容。`eval/run-eval.js` 的 Router 校验同步改造。
+- ✅ 部署到独立 Pages 项目 `bournewise-static`，自定义域名 `bournewise.com` 已从旧
+  项目（`bournewise-vite`）迁移过来（DNS CNAME 指向 + HTTPS 证书均已生效）。旧项目
+  保留未删，可随时回滚。
+
+## ✅ 已完成 — 全站性能优化：毛玻璃逐帧动画下线（2026-07-06，第五轮）
+
+用户反馈"效果满意但太卡"。定位到两类主因并修复，视觉效果保持不变：
+
+- ✅ **毛玻璃"呼吸"动画是头号元凶**：全站 9 处 organic* keyframes（index 的
+  ledger/side-foot/thread、pricing 的 pill/plan/topup、settings panel、
+  privacy/terms toc、login card、sidebar.js）在逐帧连续动画 `border-radius`
+  **和 `backdrop-filter: blur()` 的模糊半径本身**。这两个属性无法走合成器，
+  等于每个玻璃元素每帧都在主线程重算样式并以不同核宽重跑背景模糊。已全部
+  改为静态值（取 0% 关键帧，即原动画的基准帧）：羽化 mask 宽达 56–150px，
+  圆角 ±4px、模糊 ±5px 的摆动本来就在视觉上不可分辨，肉眼零损失。同时给
+  玻璃层加 `transform:translateZ(0)` 独立合成层，隔离重绘。
+- ✅ **山脉背景：等高线不再陪跑重栅格化**：mountain-range.js 里每条山脊的
+  填色 `<use>` 与 5–18 条描边等高线原来同在一个动画组——每 4 秒的调色板
+  step 跳变会连带全部 ~100 条描边路径重新栅格化。现拆成两个同步 flow 组：
+  填色层照常跳变，等高线层栅格化一次后永久缓存。
+- ✅ **山脉调色板 timing 修正（第六轮追加）**：原 `steps(72)` 是按关键帧区间
+  生效的——每个 4s 区间又被切成 72 小步，实际填色每 ~55ms 跳一次：巨幅山体
+  每秒重栅格化 ~18 次（性能大头），且大部分时刻显示两套调色板的浏览器混
+  色（发灰、"不宏伟"）。改为 `steps(1,jump-end)`：每个色标整段保持、边界干
+  净跳变，4 秒才重栅格化一次。另增 `--mtn-phase`（默认 -148s）：刷新不再
+  从最惨白的春季奶油色 0% 起步，而是落在浓郁的秋季 rust & amber 段；宿主
+  可在 .mtn-bg 上覆写。
+- ✅ 附带：composer 玻璃提升为独立合成层；claude-mark 呼吸动画加
+  `will-change:transform,filter` 走合成器；清理 reduced-motion 里针对已删
+  动画的圆角覆写；删除 pricing 三张卡的死 stagger delay。
+- 保留未动：山脉 translate3d 流动（合成器动画）、fill steps(72)（本来就是
+  4s 一跳非逐帧）、bgDrift steps(44)、打字机 placeholder——均非逐帧主线程负担。
+- ⏸️ 若低端核显仍嫌重，下一档是调低 .thread 大面积模糊半径或减少山脊层数
+  ——两者都会改变视觉，未动。
 
 ## ✅ 已完成 — 生产就绪审查修复：API 防刷、多轮记忆、Gate 正则 bug、Eval 库（2026-07-03，第四轮）
 

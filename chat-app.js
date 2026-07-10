@@ -101,17 +101,18 @@
       var b = document.createElement("button");
       b.className = "casting" + (c.id === S.activeId ? " active" : "");
       b.textContent = c.title;
+      b.title = c.title;
       b.addEventListener("click", function () { S.activeId = c.id; save(); renderAll(); });
       var del = document.createElement("button");
       del.className = "casting-del";
       del.innerHTML = "&times;";
-      del.title = "Delete this casting";
+      del.title = "Delete this inquiry";
       del.addEventListener("click", function (e) {
         e.stopPropagation();
         S.convs = S.convs.filter(function (x) { return x.id !== c.id; });
         if (S.activeId === c.id) S.activeId = S.convs.length ? S.convs[0].id : null;
         save(); A.deleteCastingRemote(c.id); renderAll();
-        toast("Casting burned.");
+        toast("Inquiry burned.");
       });
       wrap.appendChild(b);
       wrap.appendChild(del);
@@ -241,7 +242,11 @@
       : "";
   }
   function gildText(t) {
-    return esc(t).replace(/\|([^|]+)\|/g, '<span class="gild">$1</span>');
+    var n = 0;
+    return esc(t).replace(/\|([^|]+)\|/g, function (_, term) {
+      n++;
+      return '<span class="gild' + (n % 2 === 0 ? ' alt' : '') + '">' + term + '</span>';
+    });
   }
   /* split the answer prose into a lede sentence + a follow-on paragraph */
   function splitParas(text) {
@@ -294,10 +299,9 @@
 
   function renderThread() {
     var c = activeConv();
-    var title = c ? c.title : "New inquiry";
-    var titleEl = $("convTitle");
-    titleEl.textContent = title;
-    titleEl.title = title; // full text on hover — the header truncates it with an ellipsis
+    var titleText = c ? c.title : "New inquiry";
+    $("convTitle").textContent = titleText;
+    $("convTitle").title = titleText;
     threadInner.innerHTML = "";
     if (!c || !c.msgs.length) {
       document.body.classList.add("is-empty");
@@ -471,9 +475,6 @@
     if (S.units < m.cost) { openPlans(); toast("Your unit balance is depleted — " + m.cost.toLocaleString("en-US") + " units required."); return; }
 
     if (!activeConv()) {
-      // store the full question — every place this renders (topbar h1, sidebar
-      // .casting) already has its own overflow:hidden + text-overflow:ellipsis,
-      // so truncating here too just produced a double, inconsistently-cut ellipsis
       var conv = { id: Date.now().toString(36), title: text, msgs: [] };
       S.convs.unshift(conv);
       S.activeId = conv.id;
@@ -660,11 +661,25 @@
       setTimeout(function () { done && done(); }, secs.length * 170 + 220);
     }
     if (!words.length) { revealSecs(); return; }
+    /* rolling will-change window: promote only the next few words to compositor
+       layers (blur/clip/transform transitions then run off the main thread),
+       and release each word shortly after it lands — hundreds of simultaneous
+       layers would jank the compositor, a window of ~8 never does. */
+    var AHEAD = 8, TRAIL = 10, promoted = 0;
     var k = 0;
     (function tick() {
-      if (k >= words.length) { revealSecs(); return; }
+      if (k >= words.length) {
+        words.forEach(function (w) { w.style.willChange = "auto"; });
+        revealSecs(); return;
+      }
+      while (promoted < Math.min(k + AHEAD, words.length)) {
+        words[promoted].style.willChange = "opacity, transform, filter, clip-path";
+        promoted++;
+      }
       /* one word at a time, slowly, so the five reveal styles visibly take turns */
-      words[k].classList.add("on"); k++;
+      words[k].classList.add("on");
+      if (k - TRAIL >= 0) words[k - TRAIL].style.willChange = "auto";
+      k++;
       setTimeout(tick, 105);
     })();
   }

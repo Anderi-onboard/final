@@ -5,28 +5,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plans &amp; balance — BourneWise</title>
-<style>html,body{background:#EBDDC2}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&display=swap">
+<style>html,body{background:#F2EDE7}</style>
+<!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
+     already wears them — no fallback flash, no swap -->
+<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script src="./ds-base.js"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  body{min-height:100%;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
 
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1040px;margin:0 auto;width:100%}
   .brand{display:flex;align-items:center;gap:9px}
   .mark{width:27px;height:22px;color:var(--ink)}
-  .brand b{font-family:var(--serif);font-weight:600;font-size:18px}
+  .brand b{font-family:var(--font-brand,cursive);font-weight:400;font-size:21px}
   .nav{display:flex;align-items:center;gap:20px}
   .nav .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
   .nav .ghost:hover{color:var(--ink)}
@@ -41,15 +46,27 @@
   .hero h1 em{font-style:normal;font-weight:500;color:var(--terracotta)}
   .hero p{font-family:var(--serif);font-size:18px;color:var(--dim);margin-top:18px;max-width:50ch;margin-inline:auto;text-wrap:pretty}
 
-  /* current-ledger strip */
-  .ledgerstrip{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;background:var(--paper-raised);border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
+  /* current-ledger strip — same organic-glass recipe as index.html's ledger:
+     low-opacity gradient, strong blur, feathered mask, slow animated radius */
+  .ledgerstrip{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
+    padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
+  .ledgerstrip::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-radius:23px;transform:translateZ(0);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .ledgerstrip > *{position:relative;z-index:1}
+  
   .ledgerstrip b{font-family:var(--serif);font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
   .ledgerstrip .who{color:var(--faint)}
-  .ledgerstrip a{background:var(--chip);border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.04em;color:var(--ink)}
+  .ledgerstrip a{background:var(--chip);border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.04em;color:var(--ink);transition:background .15s}
   .ledgerstrip a:hover{background:var(--paper-dim)}
 
   /* plans */
   .billing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:32px;font-size:14px;color:var(--dim)}
+  .billing-toggle .mo-label,.billing-toggle .yr-label{transition:color .15s}
   .billing-toggle .active{color:var(--ink);font-weight:600}
   .billing-toggle button{position:relative;width:48px;height:26px;border-radius:99px;background:var(--line);border:none;cursor:pointer;transition:background .2s}
   .billing-toggle button.on{background:var(--terracotta)}
@@ -57,8 +74,22 @@
   .billing-toggle button.on::after{transform:translateX(22px)}
   .billing-toggle .save{font-size:11px;color:var(--terracotta);font-weight:500}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;align-items:stretch}
-  .plan{display:flex;flex-direction:column;background:var(--paper-raised);border:1px solid var(--line);border-radius:15px;padding:24px 22px;position:relative}
-  .plan.feat{border-color:var(--terracotta);box-shadow:0 14px 40px rgba(181,80,44,.13)}
+  .plan{display:flex;flex-direction:column;padding:24px 22px;position:relative;
+    transition:transform .22s cubic-bezier(.4,0,.2,1)}
+  .plan:hover{transform:translateY(-2px)}
+  /* fog bleeds outward via ::before; the "MOST SELECTED" .ptag badge is its
+     own position:absolute child so it always paints above (z-index:auto,
+     positioned) regardless of how far the -1 layer behind it fades */
+  .plan::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;transform:translateZ(0);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .plan > *{position:relative;z-index:1}
+  .plan.feat{box-shadow:0 14px 40px rgba(181,80,44,.18)}
+  
   .plan .ptag{position:absolute;top:-11px;left:22px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--terracotta);border-radius:6px;padding:3px 9px}
   .plan h2{font-family:var(--serif);font-weight:600;font-size:21px}
   .plan .desc{font-size:12.5px;color:var(--faint);margin-top:3px;min-height:34px}
@@ -72,7 +103,7 @@
   li svg{flex:none;margin-top:2px;color:var(--terracotta)}
   li.off{color:var(--ghost)}
   li.off svg{color:var(--ghost)}
-  .choose{margin-top:auto;border:1px solid var(--line);border-radius:10px;padding:11px;font-size:13.5px;font-weight:500;text-align:center;transition:border-color .15s,color .15s}
+  .choose{margin-top:auto;border:1px solid var(--line);border-radius:10px;padding:11px;font-size:13.5px;font-weight:500;text-align:center;transition:border-color .15s,color .15s,background .15s}
   .choose:hover{border-color:var(--ink)}
   .plan.feat .choose{background:var(--terracotta);border-color:var(--terracotta);color:var(--paper)}
   .plan.feat .choose:hover{background:#c9663f}
@@ -80,12 +111,21 @@
   .plan.feat .choose.current{background:var(--paper-dim);color:var(--dim)}
 
   /* one-time top-up */
-  .topup{margin-top:40px;background:var(--paper-raised);border:1px solid var(--line);border-radius:15px;padding:24px 26px}
+  .topup{margin-top:40px;padding:24px 26px;position:relative}
+  .topup::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-radius:17px 14px 16px 12px / 13px 17px 11px 15px;transform:translateZ(0);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .topup > *{position:relative;z-index:1}
+  
   .topup .th{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
   .topup h3{font-family:var(--serif);font-weight:600;font-size:19px}
   .topup .sub{font-size:13px;color:var(--faint)}
   .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-  .pack{border:1px solid var(--line);border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;background:var(--paper-raised)}
+  .pack{border:1px solid var(--line);border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;background:transparent}
   .pack:hover{border-color:var(--ink);transform:translateY(-1px)}
   .pack .u{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums}
   .pack .p{font-size:13px;color:var(--terracotta);margin-top:3px}
@@ -93,7 +133,7 @@
 
   /* what a unit buys + faq */
   .costs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-  .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:var(--paper-raised)}
+  .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:transparent}
   .cost .nm{font-family:var(--serif);font-size:15px}
   .cost .nm small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--faint);margin-top:2px}
   .cost .ct{font-family:var(--serif);font-size:18px;color:var(--terracotta);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -115,7 +155,7 @@
   .ribbon a:hover{background:rgba(244,233,210,.2)}
 
   .fineprint{margin-top:30px;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;font-size:12px;color:var(--ghost)}
-  .fineprint a{color:var(--dim);border-bottom:1px solid var(--line)}
+  .fineprint a{color:var(--dim);border-bottom:1px solid var(--line);transition:color .15s,border-color .15s}
   .fineprint a:hover{color:var(--terracotta);border-color:var(--terracotta)}
 
   .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
@@ -124,16 +164,21 @@
   @media (max-width:860px){.plans{grid-template-columns:1fr}}
   @media (max-width:860px){.packs{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:520px){.pagehead{padding:16px 18px}.shell{padding:0 18px 56px}.packs{grid-template-columns:1fr}}
+  @media (prefers-reduced-motion: reduce){
+    .ledgerstrip::before{animation:none}
+    .plan::before{animation:none}
+    .topup::before{animation:none}
+  }
 </style>
 </head>
 <body>
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
 <header class="pagehead">
   <a class="brand" href="./index.html" aria-label="BourneWise home">
     <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-    <b>BourneWise</b>
+    <b style="font-size: 18px; font-weight: 100">BourneWise</b>
   </a>
   <nav class="nav">
     <a class="ghost" href="./about.html">About</a>

@@ -5,28 +5,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — BourneWise</title>
-<style>html,body{background:#fff}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&display=swap">
+<style>html,body{background:#F2EDE7}</style>
+<!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
+     already wears them — no fallback flash, no swap -->
+<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script src="./ds-base.js"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;background:#fff;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
-    background-image:none;background-position:0 0,200px 140px}
+  body{min-height:100%;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
   a{color:inherit;text-decoration:none}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
   a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.42;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.85) 9%,rgba(0,0,0,.9) 22%,rgba(0,0,0,.4) 34%,transparent 48%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.85) 9%,rgba(0,0,0,.9) 22%,rgba(0,0,0,.4) 34%,transparent 48%)}
 
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:760px;margin:0 auto;width:100%}
   .brand{display:flex;align-items:center;gap:9px}
   .mark{width:26px;height:21px;color:var(--ink)}
-  .brand b{font-family:var(--serif);font-weight:600;font-size:18px}
+  .brand b{font-family:var(--font-brand,cursive);font-weight:400;font-size:21px}
   .pagehead .ghost{font-size:13.5px;color:var(--dim);transition:color .15s;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
 
@@ -35,9 +39,18 @@
   .legal .eyebrow b{color:var(--terracotta);font-weight:400}
   .legal h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:.98;letter-spacing:-.03em}
   .meta{margin-top:14px;font-size:12.5px;color:var(--ghost);letter-spacing:.03em}
-  .lede{font-family:var(--serif);font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
+  .lede{font-family:var(--lit,var(--serif));font-style:italic;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
 
-  .toc{margin-top:26px;padding:16px 20px;background:var(--paper-raised);border:1px solid var(--line);border-radius:12px;columns:2;column-gap:26px}
+  .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;position:relative}
+  .toc::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;transform:translateZ(0);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .toc > *{position:relative;z-index:1}
+  
   .toc a{display:block;font-size:13px;color:var(--dim);padding:3px 0;transition:color .15s;break-inside:avoid}
   .toc a:hover{color:var(--terracotta)}
   .toc a .n{color:var(--terracotta);font-size:11px;margin-right:8px}
@@ -51,7 +64,7 @@
   .clause li::marker{color:var(--terracotta)}
   .clause + .clause{border-top:1px solid var(--line-soft);padding-top:8px}
 
-  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--prussian);background:var(--paper-raised);border-radius:0 11px 11px 0;font-family:var(--serif);font-size:15.5px;color:var(--ink)}
+  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 11px 11px 0;font-family:var(--lit,var(--serif));font-style:italic;font-size:16.5px;color:var(--ink)}
 
   .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
   .legal-foot .links{display:flex;gap:18px;flex-wrap:wrap}
@@ -61,11 +74,12 @@
   .legal-foot .est{font-size:11.5px;letter-spacing:var(--tracking-label);color:var(--ghost)}
 
   @media (max-width:600px){.pagehead{padding:16px 18px}.legal{padding:24px 20px 60px}.toc{columns:1}}
+  @media (prefers-reduced-motion: reduce){.toc::before{animation:none}}
 </style>
 </head>
 <body>
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
 <header class="pagehead">
   <a class="brand" href="./index.html" aria-label="BourneWise home">
@@ -152,7 +166,7 @@
       <a href="./refund.html">Refund</a>
       <a href="./about.html">About</a>
     </div>
-    <span class="est">BourneWise &middot; est. on older logic</span>
+    <span class="est">BourneWise &middot; founded on classical logic</span>
   </div>
 </main>
 

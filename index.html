@@ -6,9 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BourneWise — Perspectives, not certainty</title>
 <style>html,body{background:#F2EDE7}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&display=swap">
+<!-- fonts are self-hosted (tokens/fonts.css); preload the faces used above the fold so
+     first paint already wears them — no fallback flash, no swap -->
+<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script src="./ds-base.js"></script>
 <style>
@@ -21,7 +26,10 @@
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
   /* ── animated mountain range — full-bleed backdrop; meet shows the whole artwork so its own transparent sky blends into the page (no hard seam) ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;transition:opacity .6s ease;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  /* chat mode: the reading is the hero — the range recedes so chart rows in the
+     glass's feathered edges stay legible over the saturated autumn palettes */
+  body:not(.is-empty) .mtn-bg{opacity:.42}
 
   /* ── sidebar — seamless chrome, matched to the landing: no divider, texture & mountains run through ── */
   .sidebar{position:relative;z-index:5;width:264px;flex-shrink:0;display:flex;flex-direction:column;padding:14px 12px 12px;background:transparent;
@@ -33,14 +41,15 @@
   .brand-btn:hover{opacity:.72}
   /* the page tint drifts in step with the mountain ridges — warm when the warm
      ridge (l4, 44s) dominates, cooler/dusky when the cool & dusk ridges lead */
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}14%{background-color:#F4EBE2}28%{background-color:#EFE4E1}42%{background-color:#EBE5EA}56%{background-color:#E6E5EE}70%{background-color:#EAE4E9}84%{background-color:#F1E9E0}}
-  .brand-word{font-family:var(--font-brand,cursive);font-weight:700;font-size:20px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
+  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
+  .brand-word{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px);
+    white-space:nowrap;transition:width .18s,opacity .18s}
   .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
   body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
   body.rail .brand-btn{gap:0;padding:0;justify-content:center;width:100%}
-  body.rail .brand-word{width:0;overflow:hidden}
-  .fade{transition:opacity .18s}
+  body.rail .brand-word{width:0;overflow:hidden;opacity:0}
+  .fade{transition:opacity .18s,width .18s}
   body.rail .fade{opacity:0;pointer-events:none}
 
   .new-cast{margin-top:16px;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14px;color:var(--terracotta);font-weight:500;transition:background .15s;text-align:left}
@@ -63,22 +72,38 @@
   .casting-row:hover{background:var(--paper-dim)}
   .casting-row .casting{flex:1;min-width:0}
   .casting-row .casting:hover{background:none}
-  .casting-del{flex:none;width:22px;height:22px;display:none;place-items:center;border-radius:5px;font-size:14px;color:var(--ghost);transition:color .15s,background .15s}
-  .casting-row:hover .casting-del{display:grid}
+  .casting-del{flex:none;width:22px;height:22px;display:grid;place-items:center;border-radius:5px;font-size:14px;color:var(--ghost);
+    opacity:0;pointer-events:none;transition:color .15s,background .15s,opacity .15s}
+  .casting-row:hover .casting-del{opacity:1;pointer-events:auto}
   .casting-del:hover{color:var(--terracotta);background:rgba(181,80,44,.1)}
 
-  /* ── the ledger — modern frosted points card, matched to the composer glass ── */
-  .ledger{position:relative;margin-top:14px;flex:none;overflow:hidden;
-    background:linear-gradient(150deg,rgba(244,233,210,.72),rgba(244,233,210,.5));
-    backdrop-filter:blur(13px) saturate(1.3);-webkit-backdrop-filter:blur(13px) saturate(1.3);
-    border:1px solid rgba(255,255,255,.45);border-radius:16px;padding:13px 14px 14px;
-    box-shadow:0 6px 20px rgba(31,29,26,.12),inset 0 1px 0 rgba(255,255,255,.5);
-    transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .18s,border-color .18s}
-  .ledger:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.72);
-    box-shadow:0 12px 28px rgba(31,29,26,.18),inset 0 1px 0 rgba(255,255,255,.62)}
+  /* ── the ledger — the actual .thread recipe (organic frosted glass), scaled
+     down: same low-opacity gradient + strong blur + feathered mask, PLUS the
+     part that was missing before — the slow animated organic border-radius,
+     so the glass reads as alive/atmospheric instead of a static tinted patch. ── */
+  /* the fog bleeds OUTWARD past the card's own edges: the glass treatment
+     lives on ::before, sized larger than .ledger itself (inset < 0).
+     z-index:-1 is required — an absolutely-positioned z-index:auto pseudo
+     otherwise paints ABOVE static in-flow content per CSS stacking order,
+     which blurred the real text instead of sitting behind it. */
+  .ledger{position:relative;margin-top:14px;flex:none;padding:13px 14px 14px}
+  .ledger::before{content:'';position:absolute;inset:-45px;z-index:-1;pointer-events:none;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);transform:translateZ(0);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%),linear-gradient(to right,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%),linear-gradient(to right,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+  /* belt-and-suspenders: force real content above the fog explicitly
+     rather than relying solely on z-index:-1 stacking order, which some
+     browsers/compositors handle inconsistently with backdrop-filter */
+  .ledger > *{position:relative;z-index:1}
+  .ledger{transition:transform .22s cubic-bezier(.4,0,.2,1)}
+  .ledger:hover{transform:translateY(-2px)}
+  
   .ledger-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .ledger-head .lbl{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
-  .ledger-plan{font-family:"Spinnaker";font-size:9px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--terracotta);background:rgba(181,80,44,.1);border:1px solid rgba(181,80,44,.22);border-radius:999px;padding:3px 9px}
+  .ledger-plan{font-family:"Spinnaker";font-size:9px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--pine);background:rgba(61,92,74,.1);border:1px solid rgba(61,92,74,.24);border-radius:999px;padding:3px 9px}
   .ledger-bal{display:flex;align-items:baseline;gap:6px;margin-top:10px}
   .ledger .count{font-family:"Spinnaker";font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
   .ledger-unit{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
@@ -91,9 +116,20 @@
   .exchange:hover .ex-arr{transform:translateX(2px)}
   body.rail .ledger{display:none}
 
-  /* account footer — flat row, matched to the landing */
-  .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:11px;cursor:pointer;text-align:left;width:100%;background:rgba(244,233,210,.5);border:1px solid var(--line-soft);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);box-shadow:0 1px 4px rgba(31,29,26,.07),inset 0 1px 0 rgba(255,255,255,.32);transition:background .15s,border-color .15s}
-  .side-foot:hover{background:rgba(244,233,210,.82);border-color:var(--line)}
+  /* account footer — flat row, matched to the landing; fog bleeds outward
+     via ::before, same technique as .ledger above */
+  .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;padding:9px 10px;cursor:pointer;text-align:left;width:100%}
+  .side-foot::before{content:'';position:absolute;inset:-28px;z-index:-1;pointer-events:none;
+    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+    backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);
+    border-radius:11px 9px 10px 8px / 8px 11px 7px 9px;transform:translateZ(0);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%),linear-gradient(to right,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%),linear-gradient(to right,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect;
+    transition:background .15s}
+  .side-foot:hover::before{background:linear-gradient(158deg,rgba(244,233,210,.32) 0%,rgba(235,221,194,.15) 52%,rgba(244,233,210,.3) 100%)}
+  .side-foot > *{position:relative;z-index:1}
+  
   .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}
   .side-foot .who{flex:1;min-width:0;line-height:1.3}
   .side-foot b{display:block;font-size:13px;font-weight:700;font-family:"Spinnaker"}
@@ -106,9 +142,11 @@
     border:1px solid rgba(255,255,255,.6);border-radius:13px;padding:6px;
     box-shadow:0 20px 54px rgba(31,29,26,.26),inset 0 1px 0 rgba(255,255,255,.7);
     backdrop-filter:blur(22px) saturate(1.55);-webkit-backdrop-filter:blur(22px) saturate(1.55);
-    display:none;flex-direction:column;z-index:30}
-  .acct-menu.open{display:flex;animation:acctPop .18s cubic-bezier(.4,0,.2,1)}
-  @keyframes acctPop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    display:flex;flex-direction:column;z-index:30;
+    opacity:0;transform:translateY(6px);visibility:hidden;pointer-events:none;
+    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
+  .acct-menu.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;
+    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1)}
   body.rail .sidebar{overflow:visible}
   body.rail .acct-menu{left:68px;bottom:4px}
   .acct-menu .who{padding:11px 12px 13px;border-bottom:1px solid rgba(42,32,22,.1);margin-bottom:4px}
@@ -116,14 +154,12 @@
   .acct-menu .who span{font-size:10.5px;color:var(--ghost);font-family:"Spinnaker";letter-spacing:.01em;margin-top:3px;display:block}
   .mi{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;font-size:13px;color:var(--dim);text-align:left;transition:background .15s,color .15s}
   .mi:hover{background:rgba(42,32,22,.07);color:var(--ink)}
-  .mi.plan b{margin-left:auto;font-size:9px;font-weight:500;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--terracotta);border:1px solid rgba(181,80,44,.32);border-radius:5px;padding:2px 7px;font-family:"Spinnaker";text-transform:uppercase}
+  .mi.plan b{margin-left:auto;font-size:9px;font-weight:500;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--pine);border:1px solid rgba(61,92,74,.36);border-radius:5px;padding:2px 7px;font-family:"Spinnaker";text-transform:uppercase}
 
   /* ── main — rides above the mountain backdrop ── */
   .main{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-width:0;font-family:"BioRhyme",var(--serif)}
   .topbar{display:flex;align-items:baseline;gap:14px;padding:18px 56px 14px}
-  /* flex-shrink alone won't truncate nowrap text — needs min-width:0 to
-     actually let the box shrink below its content's natural width */
-  .topbar h1{flex:1;min-width:0;font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar h1{font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .units-chip{flex:none;font-size:11.5px;letter-spacing:.07em;color:var(--dim);background:var(--chip);border-radius:999px;padding:6px 13px;font-variant-numeric:tabular-nums}
 
   .thread{flex:1;overflow-y:auto;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
@@ -139,33 +175,30 @@
      No blanket override — each role carries its own face. */
   body:not(.is-empty) .thread-inner{font-family:"BioRhyme",var(--serif),serif}
 
-  /* ── chat mode: organic frosted glass — hidden on landing, revealed on first cast ── */
-  body:not(.is-empty) .thread{
-    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
+  /* ── chat mode: organic frosted glass — lives on .main::before, a layer BEHIND the
+     content, so the feathered mask fades only the glass; thread content (chart edges,
+     bottom rows) is never masked or dimmed ── */
+  .main::before{
+    content:'';position:absolute;inset:44px 0 84px;z-index:0;pointer-events:none;
+    opacity:0;transition:opacity .5s ease;transform:translateZ(0);
+    background:linear-gradient(158deg,rgba(244,233,210,.46) 0%,rgba(235,221,194,.26) 52%,rgba(244,233,210,.42) 100%);
     backdrop-filter:blur(18px) saturate(1.2);
     -webkit-backdrop-filter:blur(18px) saturate(1.2);
     border-radius:24px 18px 22px 16px / 18px 24px 16px 20px;
-    animation:organicThread 18s ease-in-out infinite;
     /* foggy boundary — feather every edge so the glass dissolves into the page
        instead of ending on a hard rounded-rectangle line */
     -webkit-mask-image:
-      linear-gradient(to bottom, transparent 0, #000 64px, #000 calc(100% - 72px), transparent 100%),
-      linear-gradient(to right, transparent 0, #000 56px, #000 calc(100% - 56px), transparent 100%);
+      linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(100% - 150px), transparent 100%),
+      linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
     mask-image:
-      linear-gradient(to bottom, transparent 0, #000 64px, #000 calc(100% - 72px), transparent 100%),
-      linear-gradient(to right, transparent 0, #000 56px, #000 calc(100% - 56px), transparent 100%);
+      linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(100% - 150px), transparent 100%),
+      linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
     -webkit-mask-composite:source-in;
     mask-composite:intersect;
   }
-  @keyframes organicThread{
-    0%,100%{border-radius:24px 18px 22px 16px / 18px 24px 16px 20px}
-    14%{border-radius:20px 30px 14px 26px / 26px 14px 28px 18px}
-    28%{border-radius:30px 14px 26px 18px / 16px 28px 18px 30px}
-    43%{border-radius:16px 26px 30px 14px / 30px 18px 14px 26px}
-    57%{border-radius:26px 16px 18px 28px / 14px 30px 26px 14px}
-    71%{border-radius:18px 22px 28px 14px / 22px 16px 20px 28px}
-    85%{border-radius:28px 14px 16px 24px / 18px 26px 22px 16px}
-  }
+  body:not(.is-empty) .main::before{opacity:1}
+  .topbar,.thread{position:relative;z-index:1}
+  
 
   /* empty state — poster voice over the mountains; flex-centered so it can never overlap */
   .empty{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0;padding:30px 0}
@@ -183,7 +216,11 @@
   .reading .lbl b{color:var(--terracotta);font-weight:400}
   .reading-body{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:20px;text-wrap:pretty;color:var(--ink)}
   .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta)}
-  /* word stream — five reveal styles rotate word-by-word, slowly taking turns */
+  .reading-body .gild.alt{color:var(--pine);border-bottom-color:var(--pine)}
+  /* word stream — five reveal styles rotate word-by-word, slowly taking turns.
+     will-change is applied by chat-app.js as a ROLLING WINDOW (next ~8 words only,
+     released after reveal) — promoting every word at once explodes the layer count
+     and janks the compositor. */
   .reading-body .bw-rw{display:inline-block}
   .reading-body .bw-rw.on{opacity:1;filter:none;transform:none;clip-path:none}
   /* 1 · blur-reveal */
@@ -196,7 +233,7 @@
   .reading-body .rw-s3{opacity:0;transform:scaleX(.2);transform-origin:left center;transition:transform .42s steps(9),opacity .22s ease}
   /* 5 · ink-bleed (settles in from slightly larger + blurred) */
   .reading-body .rw-s4{opacity:0;transform:scale(1.14);filter:blur(4px);transition:opacity .5s ease,transform .6s ease,filter .6s ease}
-  .reading-body.bw-streamed .bw-rw{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;transition:none}
+  .reading-body.bw-streamed .bw-rw{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;transition:none;will-change:auto}
   /* eyebrow · title · badge — a clear written-answer hierarchy */
   .reading-body .rd-eyebrow{font-family:var(--sans);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px}
   .reading-body .rd-method{color:var(--terracotta);font-weight:700}
@@ -234,16 +271,21 @@
   .reading-insight p{margin:0 0 14px;font-size:16.5px;line-height:1.72}
   .reading-insight .ix-intro{color:var(--dim)}
   .fig-float{float:right;width:288px;max-width:75%;margin:2px 0 14px 28px;padding:0}
+  /* the looping board raster is confined to its own compositor layer so its
+     per-frame SVG repaints don't force the streaming text around it to repaint */
+  .reading-fig .bw-af{will-change:transform}
   /* the annotated casting figure is the reading's "representation" */
-  /* card boundary so the figure reads as an intentional block, not a
-     stray floating element misaligned with the text column below it —
-     the whole point is a visible edge, not making it hug .reading-body's
-     left margin (the figure's own flex column already centers its rows). */
-  .reading-fig{max-width:452px;margin:6px 0 14px;padding:18px 20px 15px;background:var(--paper-raised);border:1px solid var(--line);border-radius:14px}
-  .reading-fig .bw-af-fig{max-width:100%}
-  /* Sortis full board extends rightward past the text column (content is left-aligned)
-     so its dense labels render large enough to read comfortably */
-  .reading-fig.is-full{width:min(960px,calc(100vw - 96px));max-width:none;padding:22px 26px 18px}
+  .reading-fig{max-width:100%;margin:6px 0 10px}
+  .reading-fig .bw-af-fig{max-width:452px}
+  /* Sortis full board: with a transformed hexagram, two figures sit side by side so
+     the wrapper bleeds past the text column to give both room. With only the primary
+     figure, the SVG's own viewBox is already cropped to its content width (see
+     fullBoardFigureHTML), so the wrapper only needs to match that content width at the
+     SAME px-per-unit scale as the two-figure case (960px / 616 units ≈ 1.558px/unit;
+     388 cropped units × 1.558 ≈ 605px) — otherwise the crop just gets stretched back
+     out to 960px and every glyph renders visibly larger than before. */
+  .reading-fig.is-full{width:min(605px,calc(100vw - 96px));max-width:none;margin-left:calc((100% - min(605px,calc(100vw - 96px)))/2)}
+  .reading-fig.is-full:has(.bw-af-name.rel){width:min(960px,calc(100vw - 96px));margin-left:calc((100% - min(960px,calc(100vw - 96px)))/2)}
   .reading-fig.is-full .bw-af-fig.bw-af-full{max-width:100%}
   .reading-fig .bw-af-fig.bw-af-full{max-width:min(720px,100%)}
   .reading .bw-cast,.reading .bw-figs{max-width:75%}
@@ -285,7 +327,7 @@
   @media(max-width:540px){.reading-insight .ix-line{flex-wrap:wrap;gap:7px 10px}.reading-insight .ix-line-mk{margin-left:0}}
 
   /* ── the second figure (Sortis-only — drawn when lines are in motion) ── */
-  .reading-insight .ix-transform{clear:both;margin-top:4px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--prussian);border-radius:10px;background:var(--paper-raised)}
+  .reading-insight .ix-transform{clear:both;margin-top:4px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--prussian);border-radius:10px;background:transparent}
   .reading-insight .ix-t-head{display:flex;align-items:center;gap:10px;margin-bottom:7px}
   .reading-insight .ix-t-k{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
   .reading-insight .ix-t-arrow{color:var(--prussian);font-size:16px}
@@ -308,9 +350,9 @@
   @keyframes drip{0%{transform:translateY(-9px) scale(.3);opacity:0}25%{transform:translateY(0) scale(1);opacity:1}70%{opacity:1}92%{opacity:0}100%{opacity:0}}
 
   .composer-zone{padding:12px 56px 22px;position:relative}
-  .composer{max-width:840px;margin:0;display:flex;align-items:center;gap:9px;background:linear-gradient(150deg,rgba(244,233,210,.72),rgba(244,233,210,.5));backdrop-filter:blur(13px) saturate(1.3);-webkit-backdrop-filter:blur(13px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 14px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s}
+  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:9px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 14px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
-  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:Pacifico, cursive}
+  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:Pacifico, cursive;transition:background .15s}
   .stria:hover{background:var(--paper-dim)}
   .composer input{flex:1;background:none;border:none;outline:none;font-family:"BioRhyme",var(--serif),serif;font-size:16px;color:var(--ink);min-width:0}
   .composer input::placeholder{color:var(--faint)}
@@ -320,9 +362,11 @@
   .disclaimer{text-align:center;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
 
   /* ── method picker popover — the two castings, made distinct ── */
-  .method-menu{position:absolute;left:50%;transform:translateX(-50%);bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:13px;padding:7px;box-shadow:0 16px 44px rgba(31,29,26,.2);display:none;flex-direction:column;gap:2px;z-index:40}
-  .method-menu.open{display:flex;animation:mmPop .16s ease}
-  @keyframes mmPop{from{opacity:0;transform:translate(-50%,6px)}to{opacity:1;transform:translate(-50%,0)}}
+  .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:13px;padding:7px;box-shadow:0 16px 44px rgba(31,29,26,.2);display:flex;flex-direction:column;gap:2px;z-index:40;
+    opacity:0;transform:translate(-50%,6px);visibility:hidden;pointer-events:none;
+    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
+  .method-menu.open{opacity:1;transform:translate(-50%,0);visibility:visible;pointer-events:auto;
+    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1)}
   .mm-head{padding:8px 9px 6px}
   .mm-row{display:flex;align-items:flex-start;gap:11px;text-align:left;padding:11px 10px;border-radius:9px;transition:background .15s}
   .mm-row:hover{background:var(--paper-dim)}
@@ -330,7 +374,7 @@
   .mm-row.active .mm-dot{border-color:var(--terracotta);background:var(--terracotta);box-shadow:inset 0 0 0 2.5px var(--paper-raised)}
   .mm-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
   .mm-name{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px}
-  .mm-lock{font-style:normal;font-size:9px;letter-spacing:.09em;color:var(--terracotta);border:1px solid var(--terracotta);border-radius:5px;padding:1px 5px;text-transform:uppercase}
+  .mm-lock{font-style:normal;font-size:9px;letter-spacing:.09em;color:var(--pine);border:1px solid var(--pine);border-radius:5px;padding:1px 5px;text-transform:uppercase}
   .mm-tag{font-size:11px;letter-spacing:.04em;color:var(--faint)}
   .mm-blurb{font-size:12px;color:var(--dim);line-height:1.45;margin-top:3px;text-wrap:pretty}
   .mm-cost{flex:none;font-family:"BioRhyme",var(--serif);font-size:18px;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;line-height:1}
@@ -347,16 +391,17 @@
   .reading-chart + .reading-body .reading-lede{padding-top:2px}
 
   /* ── plans modal (paywall) ── */
-  .overlay{position:fixed;inset:0;background:rgba(31,29,26,.35);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
-  .overlay.open{display:flex}
+  .overlay{position:fixed;inset:0;background:rgba(31,29,26,.35);display:flex;align-items:center;justify-content:center;z-index:50;padding:24px;
+    opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility 0s linear .18s}
+  .overlay.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .18s ease}
   .modal{width:min(720px,100%);background:var(--paper);border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 24px 60px rgba(31,29,26,.25)}
   .modal-hero{background:var(--ink);background-image:radial-gradient(120% 140% at 0% 0%,rgba(181,80,44,.22),transparent 58%);color:var(--paper);padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between}
   .modal-hero h2{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;color:var(--paper);margin-top:3px}
   .modal-hero .lbl{color:var(--ghost)}
-  .modal-x{color:var(--paper);font-size:18px;line-height:1;padding:2px 6px;border-radius:6px}
+  .modal-x{color:var(--paper);font-size:18px;line-height:1;padding:2px 6px;border-radius:6px;transition:background .15s}
   .modal-x:hover{background:rgba(244,233,210,.16)}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px 26px 8px;align-items:stretch}
-  .plan{border:1px solid var(--line);border-radius:11px;padding:18px 16px 16px;background:var(--paper-raised);display:flex;flex-direction:column;gap:7px;position:relative}
+  .plan{border:1px solid var(--line);border-radius:11px;padding:18px 16px 16px;background:transparent;display:flex;flex-direction:column;gap:7px;position:relative}
   .plan.feat{border-color:var(--terracotta);box-shadow:0 12px 32px rgba(181,80,44,.12)}
   .plan .ptag{position:absolute;top:-10px;left:16px;font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--terracotta);border-radius:5px;padding:3px 8px}
   .plan h3{font-family:var(--serif);font-size:16px;font-weight:600}
@@ -401,14 +446,16 @@
   @media (prefers-reduced-motion: reduce){
     .drop{animation:none;opacity:1}
     .empty .flourish path{animation:none;stroke-dashoffset:0;opacity:.5}
-    body:not(.is-empty) .thread{animation:none;border-radius:18px}
+    body:not(.is-empty) .thread{animation:none}
+    .ledger::before{animation:none}
+    .side-foot::before{animation:none}
   }
   /* ── landing empty-state: marketing poster, shown when no conversation ── */
   .top-right{margin-left:auto;display:flex;align-items:center;gap:18px}
   .topbar .ghost{font-size:13px;color:var(--dim);transition:color .15s}
   .topbar .ghost:hover{color:var(--ink)}
-  .claude-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--dim);max-width:400px;line-height:1.25;text-align:left}
-  .claude-mark{flex:none;width:16px;height:16px;object-fit:contain;display:block;transform-origin:center;animation:claudeLive 3s ease-in-out infinite}
+  .claude-note{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;color:var(--dim);max-width:400px;line-height:1.25;text-align:left}
+  .claude-mark{flex:none;width:20px;height:20px;object-fit:contain;display:block;transform-origin:center;will-change:transform,filter;animation:claudeLive 3s ease-in-out infinite}
   @keyframes claudeLive{0%,100%{transform:scale(1);filter:brightness(1) drop-shadow(0 0 0px rgba(181,80,44,0))}50%{transform:scale(1.1);filter:brightness(1.15) drop-shadow(0 0 6px rgba(181,80,44,.4))}}
   .bw-hero-mark{flex:none;display:block}
   @keyframes bwWave{0%,100%{opacity:.48;transform:translateY(0)}50%{opacity:1;transform:translateY(-2px)}}
@@ -453,11 +500,11 @@
 </head>
 <body class="is-empty">
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
+<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
 <aside class="sidebar" data-screen-label="Landing sidebar">
   <div class="side-top">
-    <button class="brand-btn" id="brandBtn" aria-label="New casting">
+    <button class="brand-btn" id="brandBtn" aria-label="New inquiry">
       <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-label="BourneWise logomark"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
       <b class="brand-word fade">BourneWise</b>
     </button>
@@ -468,11 +515,11 @@
 
   <button class="new-cast" id="newCast">
     <span class="ic"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2.5v11M2.5 8h11"></path></svg></span>
-    <span class="fade" style="font-family: var(--sans); font-weight: 900">New casting</span>
+    <span class="fade" style="font-family: var(--sans); font-weight: 900">New inquiry</span>
   </button>
 
-  <nav class="castings fade" id="castList" aria-label="Recent castings">
-    <div class="lbl">Recent castings</div>
+  <nav class="castings fade" id="castList" aria-label="Recent inquiries">
+    <div class="lbl">Recent inquiries</div>
   </nav>
 
   <div class="ledger" data-screen-label="Ledger" style="border-width: 0px">
@@ -508,8 +555,8 @@
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
       <span class="claude-note" title="Powered by advanced language models for structural interpretation">
-        <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true" style="width: 30px; height: 30px">
-        <span class="cn-text" style="font-family: var(--sans); font-weight: 700">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline. Our build is crafted to deliver the absolute best. And we are always on our way to make it better</span>
+        <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true">
+        <span class="cn-text" style="font-family: var(--sans)">All information is interpreted and answered by Claude Opus 4.8, backed by deep customization and our engineered RAG pipeline.</span>
       </span>
       <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">About us</a>
     </div>
