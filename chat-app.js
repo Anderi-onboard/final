@@ -495,12 +495,19 @@
     /* the casting animation — for Sortis it draws the full 排盘 line by line */
     var spec = window.BWFigure ? window.BWFigure.random(m.id)
       : { method: m.id, name: FIGURES[0], lines: [], transformedLines: null };
-    var sortisBoard = (m.id === "sortis" && window.BWLiuYao && spec.lines && spec.lines.length === 6)
+    // Compute the casting board for BOTH tiers so the reading is always grounded
+    // in the hexagram that was actually cast. Stria is the "primary hexagram
+    // framework", so it needs a board too — without one the routed prompt (which
+    // tells the model that all hexagram data comes from the backend) received
+    // nothing and the model answered "I didn't receive your casting data".
+    var castBoard = (window.BWLiuYao && spec.lines && spec.lines.length === 6)
       ? (function () { try {
           return window.BWLiuYao.computeBoard({ lines: spec.lines, changeIdx: spec.changeIdx || [],
-            method: "sortis", name: spec.name, transformedName: spec.transformedName });
+            method: m.id, name: spec.name, transformedName: spec.transformedName });
         } catch (e) { return null; } })()
       : null;
+    // The full annotated board VISUAL stays a Sortis-only treatment.
+    var sortisBoard = m.id === "sortis" ? castBoard : null;
     var live = document.createElement("article");
     live.className = "reading casting-live";
     live.setAttribute("aria-live", "polite");
@@ -549,11 +556,15 @@
     if (m.id === "sortis") {
       answerP = sortisReading(text, spec, sortisBoard, history, onStreamDelta);
     } else {
-      // Stria: try routed pipeline first, fallback to simple oracle
-      var striaRouted = routedReading(text, spec, null, "stria", history, onStreamDelta);
+      // Stria: try routed pipeline first, fallback to simple oracle. Pass the
+      // computed board so the reading is grounded in the primary hexagram (the
+      // routed prompt requires it), but null it out of the stored message so the
+      // thread keeps Stria's light figure — the full annotated board stays a
+      // Sortis-only visual.
+      var striaRouted = routedReading(text, spec, castBoard, "stria", history, onStreamDelta);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
-          if (result) return result;
+          if (result) { result.board = null; return result; }
           return askOracle(text, m).then(function (t) { return { text: t, board: null, reading: null }; });
         });
       } else {
