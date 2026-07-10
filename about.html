@@ -5,78 +5,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About us — BourneWise</title>
-<style>html,body{background:#ECF1F6}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Spinnaker&family=Pacifico&display=swap">
+<style>html,body{background:#FDEFF2}</style>
+<!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
+     already wears them — no fallback flash, no swap -->
+<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script src="./ds-base.js"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{display:flex;background-color:#ECF1F6;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;
-    background-image:none;
-    background-position:0 0,200px 140px;animation:bgDrift 44s ease-in-out infinite}
 
-  /* ── animated mountain range — shared site backdrop, anchored to the viewport floor ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.28) 9%,rgba(0,0,0,.82) 22%,rgba(0,0,0,.85) 36%,rgba(0,0,0,.42) 50%,transparent 63%)}
+  /* ── this page's own palette — scoped to about.html only, everywhere else keeps
+     the standard terracotta "Paper" skin. Ordered light→dark, warm→cool, so it can
+     serve every role the skin already has a job for (surfaces, ink, the two accents). ── */
+  :root{
+    --paper: #FDEFF2;        /* base field */
+    --paper-raised: #EBF6F7; /* raised cards / inputs */
+    --paper-dim: #E6CDE3;    /* hover / active fills */
+    --chip: #BCE2E8;         /* pills */
+    --ink: #3B2A4C;          /* primary text + the ink band — a deep plum off the
+                                 lavender swatch, not navy: warm page, warm-leaning ink */
+    --dim: #6B5480;          /* secondary text */
+    --faint: #9683A0;        /* labels */
+    --ghost: #B7A8BE;        /* fine print */
+    --terracotta: #F2A0A1;   /* action accent — CTAs, links */
+    --prussian: #5A79BA;
+    --prussian-deep: #3F5A93;
+    --pine: #008899;         /* status accent — badges, quiet emphasis */
+    --pine-deep: #006B77;
+    --line: #CFE3EC;
+    --line-soft: #E2EEF3;
+  }
+
+  body{display:flex;background-color:#FDEFF2;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   a{color:inherit;text-decoration:none}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  /* ── sidebar — seamless, identical chrome to the landing: no divider, texture & mountains run through ── */
-  .sidebar{position:relative;z-index:2;width:264px;flex-shrink:0;display:flex;flex-direction:column;padding:14px 12px 12px;background:transparent;
-    transition:width .28s cubic-bezier(.4,0,.2,1);overflow:hidden;white-space:nowrap}
-  body.rail .sidebar{width:60px;padding-left:9px;padding-right:9px}
-  .side-top{display:flex;align-items:center;gap:8px;padding:2px 8px 0;min-height:36px}
-  .mark{flex:none;width:26px;height:21px;color:var(--ink)}
-  .brand-word{font-family:var(--font-brand,cursive);font-weight:700;font-size:17px;transform:translateY(-1px);transition:opacity .18s}
-  body.rail .brand-word{opacity:0;pointer-events:none}
-  .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
-  .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
-  body.rail .side-toggle{margin-left:0}
-  body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
-
-  .new-cast{margin-top:16px;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14px;color:var(--terracotta);font-weight:500;transition:background .15s}
-  .new-cast:hover{background:var(--paper-dim)}
-  .new-cast .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center}
-  body.rail .new-cast{justify-content:center;padding:7px 0;gap:0}
-  body.rail .new-cast span+span{opacity:0;pointer-events:none;width:0}
-
-  .castings{margin-top:22px;flex:1;min-height:0;display:flex;flex-direction:column;gap:1px;overflow-y:auto}
-  .castings .lbl{padding:0 8px 7px}
-  .cast-item{display:block;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}
-  .cast-item:hover{background:var(--paper-dim);color:var(--ink)}
-  .nav-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--dim);padding:7px 8px;border-radius:7px;transition:background .15s,color .15s}
-  .nav-item:hover{background:var(--paper-dim);color:var(--ink)}
-  .nav-item.on{color:var(--ink);background:var(--paper-dim)}
-  .nav-item svg{flex:none}
-  body.rail .castings .lbl{opacity:0}
-  body.rail .nav-item span{opacity:0;width:0;overflow:hidden}
-  body.rail .nav-item{justify-content:center;gap:0}
-
-  .side-foot{margin-top:auto;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:11px;background:rgba(244,233,210,.5);border:1px solid var(--line-soft);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);box-shadow:0 1px 4px rgba(31,29,26,.07),inset 0 1px 0 rgba(255,255,255,.32);transition:background .15s,border-color .15s}
-  .side-foot:hover{background:rgba(244,233,210,.82);border-color:var(--line)}
-  .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}
-  .side-foot .who{flex:1;min-width:0;line-height:1.3}
-  body.rail .side-foot{justify-content:center;padding:8px 0}
-  body.rail .side-foot .who,body.rail .side-foot .go{display:none}
-  .side-foot b{display:block;font-size:13px;font-weight:700;font-family:"Spinnaker"}
-  .side-foot i{font-style:normal;font-size:11px;letter-spacing:.04em;color:var(--ghost);font-family:"Spinnaker"}
-  .side-foot .go{flex:none;color:var(--faint)}
-
-  /* ── main — content rides above the mountain backdrop ── */
+  /* ── main — no app sidebar here: this is a marketing/about page, not the app
+     shell, same treatment as login/privacy/terms/refund/pricing/404 ── */
   .main{position:relative;z-index:1;flex:1;min-width:0;overflow-y:auto}
-  .shell{max-width:760px;margin:0 auto;padding:0 44px 70px}
-
-  /* topbar — quiet text link + one compact ink button, mirrors the landing */
-  .topbar{display:flex;justify-content:flex-end;align-items:center;gap:22px;padding:18px 0 0}
-  .topbar .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
-  .topbar .ghost:hover{color:var(--ink)}
-  .topbar .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s}
-  .topbar .cta:hover{background:#3A362F;transform:translateY(-1px)}
+  .wrapper{max-width:1080px;margin:0 auto;padding:16px 28px 64px}
 
   /* inkline — shared hand-stroke hover underline */
   .inkline{position:relative}
@@ -85,127 +59,191 @@
   .inkline path+path{opacity:.45;transition-delay:.08s}
   .inkline:hover path,.inkline:focus-visible path{stroke-dashoffset:0}
 
-  /* hero — same poster voice and self-drawing redline as the landing */
-  .hero{padding:54px 0 8px}
-  .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:20px;white-space:nowrap}
-  .eyebrow b{color:var(--terracotta);font-weight:400}
-  .hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(48px,6.4vw,84px);line-height:1.04;letter-spacing:-.03em;text-wrap:balance}
-  .redline{position:relative;display:inline-block}
-  .redline > svg{position:absolute;left:-2%;bottom:-.04em;width:104%;height:.2em;overflow:visible;pointer-events:none}
-  .redline path{stroke:var(--terracotta);fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:320;stroke-dashoffset:320;animation:redraw 8s 1s cubic-bezier(.4,0,.2,1) infinite}
-  .redline path+path{animation-delay:1.35s;opacity:.45}
-  @keyframes redraw{0%{stroke-dashoffset:320}9%{stroke-dashoffset:0}84%{stroke-dashoffset:0;opacity:1}92%{opacity:0}93%,100%{stroke-dashoffset:320;opacity:0}}
-  .flourish{display:block;margin:20px 0 0}
-  .flourish path{stroke-dasharray:240;stroke-dashoffset:240;animation:flow 2.4s .4s ease-out forwards;opacity:.55}
-  .flourish path+path{animation-delay:.75s;opacity:.3}
-  @keyframes flow{to{stroke-dashoffset:0}}
+  /* ── 1 · hero — no card, no border: the mountain bleeds edge-to-edge behind the
+     nav + poster line, then dissolves into the page before the text below. A boxed,
+     bordered, rounded-corner "hero card" with a cropped graphic inside it is the
+     one visual pattern that reads as generated-template rather than part of this
+     site — everywhere else (index/login) the range is a true full-bleed backdrop. ── */
+  .hero-slab{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:min(66vh,560px)}
+  .hero-slab .mtn-bg{position:absolute;inset:0;z-index:0;opacity:.96;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%)}
+  /* this page's own ridge palette (light→dark, matching the tokens above) instead of
+     the site-wide rotating terracotta seasons — static fill (no colour animation, so
+     no re-raster cost); the ridges still flow left/right via mountain-range.js's own
+     GPU-composited transform animation, only the paint stays still. */
+  .hero-slab .mtn-bg .l1{animation:none;fill:#FDEFF2}
+  .hero-slab .mtn-bg .l2{animation:none;fill:#EBF6F7}
+  .hero-slab .mtn-bg .l3{animation:none;fill:#BCE2E8}
+  .hero-slab .mtn-bg .l4{animation:none;fill:#E6CDE3}
+  .hero-slab .mtn-bg .l5{animation:none;fill:#F5B1AA}
+  .hero-slab .mtn-bg .l6{animation:none;fill:#F2A0A1}
+  .hero-slab .mtn-bg .l7{animation:none;fill:#E09E87}
+  .hero-slab .mtn-bg .l8{animation:none;fill:#84A2D4}
+  .hero-slab .mtn-bg .l9{animation:none;fill:#5A79BA}
+  .hero-slab .mtn-bg .l10{animation:none;fill:#008899}
+  .hero-slab .mtn-bg use[fill]{fill:#008899}
 
-  /* lead — oracle voice, with a Fraunces drop-cap */
-  .lead{font-family:"BioRhyme",var(--serif);font-size:clamp(21px,2.5vw,27px);line-height:1.5;margin-top:30px;max-width:640px;text-wrap:pretty}
-  .lead::first-letter{font-family:"BioRhyme",var(--serif,serif);font-weight:900;float:left;font-size:3.1em;line-height:.72;padding:8px 12px 0 0;color:var(--terracotta)}
+  /* ── ambient backdrop: a second, faint, page-long copy of the range so the
+     hero doesn't just stop dead into flat colour — the same ridges keep drifting,
+     very quietly, behind the statement/cards/ink-band all the way to the footer.
+     Fixed to the viewport (not scoped to the hero box) so it's there wherever
+     you've scrolled to; low opacity + a soft top fade keeps it from doubling up
+     visually with the vivid hero copy sitting on top of it. Static fill, same as
+     the hero copy — motion only, no colour re-raster, so a second full instance
+     stays cheap. ── */
+  .mtn-bg-ambient{position:fixed;inset:0;z-index:0;opacity:.15;pointer-events:none;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 100%);
+    mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 100%)}
+  .mtn-bg-ambient .l1{animation:none;fill:#FDEFF2}
+  .mtn-bg-ambient .l2{animation:none;fill:#EBF6F7}
+  .mtn-bg-ambient .l3{animation:none;fill:#BCE2E8}
+  .mtn-bg-ambient .l4{animation:none;fill:#E6CDE3}
+  .mtn-bg-ambient .l5{animation:none;fill:#F5B1AA}
+  .mtn-bg-ambient .l6{animation:none;fill:#F2A0A1}
+  .mtn-bg-ambient .l7{animation:none;fill:#E09E87}
+  .mtn-bg-ambient .l8{animation:none;fill:#84A2D4}
+  .mtn-bg-ambient .l9{animation:none;fill:#5A79BA}
+  .mtn-bg-ambient .l10{animation:none;fill:#008899}
+  .mtn-bg-ambient use[fill]{fill:#008899}
 
-  /* principles — numbered editorial rows, hairline ink rules between */
-  .principles{margin-top:46px}
-  .principle{padding:6px 0}
-  .p-head{display:flex;align-items:baseline;gap:11px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);white-space:nowrap}
-  .p-head .dia{color:var(--terracotta)}
-  .p-head .idx{font-family:var(--font-mono);font-size:11px;color:var(--terracotta);letter-spacing:.04em}
-  .p-head .ttl{color:var(--dim)}
-  .principle p{font-family:"BioRhyme",var(--serif);font-size:20px;line-height:1.55;margin-top:11px;max-width:600px;text-wrap:pretty}
-  .rule{display:block;margin:28px 0}
-  .rule path{stroke:#2A2016;fill:none;stroke-linecap:round;opacity:.5}
-  .rule path+path{opacity:.28}
+  .slab-nav{position:relative;z-index:1;display:flex;align-items:center;gap:20px;padding:20px 28px 0}
+  .slab-nav .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
+  .slab-nav .eyebrow b{color:var(--terracotta);font-weight:400}
+  .slab-nav .links{margin-left:auto;display:flex;align-items:center;gap:20px}
+  .slab-nav .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
+  .slab-nav .ghost:hover{color:var(--ink)}
+  .slab-nav .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s,background .15s}
+  .slab-nav .cta:hover{background:#291D35;transform:translateY(-1px)}
+  /* the headline sits low in the hero, over the ridges' darker foreground tones
+     (not the pale sky), so it needs light text — a card background no longer
+     guarantees contrast the way it did when the mountain was cropped inside one */
+  .hero-slab h1{position:relative;z-index:1;font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(38px,5.2vw,66px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance;
+    color:#FDEFF2;text-shadow:0 2px 20px rgba(59,42,76,.4),0 1px 3px rgba(59,42,76,.45);
+    margin-top:auto;padding:46px 28px 44px;max-width:17ch}
 
-  /* closing line + ghost CTA */
-  .close{margin-top:54px;padding-top:30px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:18px}
-  .close .said{font-family:var(--serif);font-style:normal;font-size:22px;color:var(--ink)}
-  .close .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 18px;border-radius:10px;transition:transform .15s}
-  .close .cta:hover{transform:translateY(-1px);background:#C9663F}
+  /* ── 2 · statement + method cards ── */
+  .duo{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;padding:58px 6px 8px}
+  .duo-l h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.32;letter-spacing:-.015em;text-wrap:pretty;max-width:19ch}
+  .duo-l .gild{font-family:var(--lit,"Fraunces",serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
+  .duo-l p{margin-top:20px;max-width:46ch;font-size:14.5px;line-height:1.7;color:var(--dim)}
+  .duo-l .mini{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--ink);border-radius:9px;padding:7px 15px;transition:background .15s,color .15s}
+  .duo-l .mini:hover{background:var(--ink);color:var(--paper)}
+  .duo-r{display:flex;flex-direction:column;gap:12px}
+  .m-card{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:transparent}
+  .m-card .mi{flex:none;width:24px;height:24px;color:var(--terracotta);margin-top:1px}
+  .m-card b{display:block;font-family:"BioRhyme",var(--serif);font-size:15px;font-weight:700}
+  .m-card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
+  .m-card p{margin-top:4px;font-size:13px;line-height:1.55;color:var(--dim)}
 
-  footer{margin-top:46px;display:flex;justify-content:space-between;align-items:baseline}
+  /* ── 3 · ink band — how to take the answer ── */
+  .band{margin-top:56px;background:var(--ink);color:var(--paper);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center}
+  .band h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;text-align:center}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;width:100%}
+  .tile{border:1px solid rgba(250,246,238,.16);background:rgba(250,246,238,.05);border-radius:13px;padding:22px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background .15s}
+  .tile:hover{background:rgba(250,246,238,.09)}
+  .tile .ti{width:26px;height:26px;color:var(--terracotta)}
+  .tile b{margin-top:34px;font-family:"BioRhyme",var(--serif);font-size:17px;font-weight:700}
+  .tile p{margin-top:7px;font-size:12px;line-height:1.5;color:rgba(250,246,238,.62)}
+  .band .cta{margin-top:36px;font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 20px;border-radius:10px;transition:transform .15s,background .15s}
+  .band .cta:hover{transform:translateY(-1px);background:#D97D7E}
+
+  /* fine print + footer */
+  .fine{margin-top:26px;text-align:center;font-size:12px;color:var(--faint);line-height:2}
+  footer{margin-top:34px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  footer a{transition:color .15s}
   footer a:hover{color:var(--ink)}
 
+  @media (max-width:920px){
+    .duo{grid-template-columns:1fr;gap:30px}
+    .tiles{grid-template-columns:1fr}
+  }
   @media (max-width:760px){
-    .sidebar{display:none}
-    .shell{padding:0 22px 56px}
-    .hero{padding-top:34px}
-    .principle p,.lead{font-size:18px}
+    .wrapper{padding:12px 16px 48px}
+    .hero-slab{min-height:min(52vh,420px)}
+    .slab-nav{padding:16px 20px 0}
+    .slab-nav .ghost{display:none}
+    .hero-slab h1{padding:40px 20px 34px}
+    .band{padding:40px 22px 36px}
   }
-  @media (prefers-reduced-motion: reduce){
-    .redline path{animation:none;stroke-dashoffset:0}
-    .flourish path{animation:none;stroke-dashoffset:0;opacity:.55}
-  }
-  @keyframes bgDrift{0%,100%{background-color:#ECF1F6}14%{background-color:#F2EDE7}28%{background-color:#F3EDE6}42%{background-color:#F0EDE8}56%{background-color:#EEE9F2}70%{background-color:#EDE8F0}84%{background-color:#EBF0F4}}
-  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#ECF1F6}}
+  @keyframes bgDrift{0%,100%{background-color:#FDEFF2}11%{background-color:#FDEFF2}14%{background-color:#EBF6F7}25%{background-color:#EBF6F7}28%{background-color:#E2EEF3}39%{background-color:#E2EEF3}42%{background-color:#E6CDE3}53%{background-color:#E6CDE3}56%{background-color:#F5DEE8}67%{background-color:#F5DEE8}70%{background-color:#EBF6F7}81%{background-color:#EBF6F7}84%{background-color:#FDEFF2}97%{background-color:#FDEFF2}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#FDEFF2}}
 </style>
 </head>
 <body>
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax meet" aria-hidden="true"></div>
-
+<div class="mtn-bg mtn-bg-ambient" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
 <main class="main" data-screen-label="About us">
-  <div class="shell" style="font-family: BioRhyme">
 
-    <nav class="topbar" aria-label="Site">
-      <a class="ghost inkline" href="./index.html">Home<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.6" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1.1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
-      <a class="cta" href="./index.html">Begin the dialogue</a>
+  <!-- 1 · hero: nav + poster line float directly on the full-bleed range, no card -->
+  <section class="hero-slab">
+    <div class="mtn-bg" data-vbw="1250" data-par="xMidYMax slice" style="--mtn-phase:-12s" aria-hidden="true"></div>
+    <nav class="slab-nav" aria-label="Site">
+      <span class="eyebrow"><b>&#9670;</b><span>About BourneWise</span></span>
+      <span class="links">
+        <a class="ghost" href="./pricing.html">Plans &amp; units</a>
+        <a class="cta" href="./index.html">Begin the dialogue</a>
+      </span>
     </nav>
+    <h1>Six lines, cast over the question you can&rsquo;t put down</h1>
+  </section>
 
-    <header class="hero">
-      <div class="eyebrow"><b>&#9670;</b><span>About BourneWise</span></div>
-      <h1 style="color: var(--ink)">The architecture of the world, decoded by modern synthesis</h1>
-      <svg class="flourish" width="190" height="14" viewBox="0 0 190 14" aria-hidden="true">
-        <path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 186 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
-        <path d="M10 13 C52 8 106 12 180 7" stroke="#2A2016" stroke-width="1" fill="none" stroke-linecap="round"></path>
-      </svg>
-    </header>
+  <div class="wrapper">
 
-    <p class="lead" style="font-weight: 500">BourneWise equips you with a causal framework that has structured human thought for twenty-six centuries. We have integrated this classical logic with advanced language models to provide an uncompromising analysis of life’s pivotal moments. We deliver perspectives, not certainty—an objective lens for your highest-stakes decisions, whether in commerce or the trajectory of your life.</p>
+    <!-- 2 · the statement + the three practical cards -->
+    <section class="duo">
+      <div class="duo-l">
+        <h2>A straight answer <span class="gild">with a spine</span> &mdash; ancient causal logic, spoken by a modern voice.</h2>
+        <p>For twenty-six centuries the same instrument has been used to reason about hard decisions: cast six lines, read the figure they form, follow what the structure implies. A language model writes the reading &mdash; but the figure decides what it is allowed to say. If the casting says wait, no amount of wishful asking turns it into go.</p>
+        <a class="mini" href="./pricing.html">See the full tariff</a>
+      </div>
+      <div class="duo-r">
+        <div class="m-card">
+          <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 15c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
+          <div><b>Stria 64 <span class="u">&middot; 300 Units</span></b>
+          <p>A same-day read of where things stand right now. Quick, and it doesn&rsquo;t pretend to be more than that.</p></div>
+        </div>
+        <div class="m-card">
+          <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 12.5c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 18c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
+          <div><b>Sortis 6 <span class="u">&middot; 1,500 Units</span></b>
+          <p>Moving lines, the figure they&rsquo;re turning into, read line by line &mdash; built for the decisions you&rsquo;ll still be living with in a year.</p></div>
+        </div>
+        <div class="m-card">
+          <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="6.5"></circle><path d="M12 6.5c0-2 1.4-3.5 3.4-3.5C15.4 5 14 6.5 12 6.5z"></path></svg>
+          <div><b>The Seed Grant <span class="u">&middot; 500 Units</span></b>
+          <p>Five hundred units on the house. See what this actually is before you spend anything on it.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="principles">
-
-      <section class="principle">
-        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">01</span><span class="ttl">Architected for precision</span></div>
-        <p style="font-weight: 400">The core framework originates from ancient causal philosophy and operates as a complete, logical system. Today, its mechanics are processed through advanced, customized models—ensuring rapid clarity for Stria 64 and deep, dynamic synthesis for Sortis 6.</p>
-      </section>
-
-      <svg class="rule" width="170" height="12" viewBox="0 0 170 12" aria-hidden="true">
-        <path stroke-width="1.5" d="M4 7 C40 3 88 9 166 5"></path>
-        <path stroke-width="1" d="M10 10 C60 7 112 11 158 8"></path>
-      </svg>
-
-      <section class="principle">
-        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">02</span><span class="ttl">Our temperament</span></div>
-        <p style="font-weight: 400">We prioritize clarity over comfort. An objective analysis you can build your life and strategy upon is worth more than a forecast that merely validates your hopes.</p>
-      </section>
-
-      <svg class="rule" width="170" height="12" viewBox="0 0 170 12" aria-hidden="true">
-        <path stroke-width="1.5" d="M4 7 C40 3 88 9 166 5"></path>
-        <path stroke-width="1" d="M10 10 C60 7 112 11 158 8"></path>
-      </svg>
-
-      <section class="principle">
-        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">03</span><span class="ttl">The human variable</span></div>
-        <p style="font-weight: 400">Behind every strategic inquiry is a professional mid-decision. The analysis is direct and objective; it is never cruel, and it strictly adheres to the structural limits of the framework.</p>
-      </section>
-
-      <svg class="rule" width="170" height="12" viewBox="0 0 170 12" aria-hidden="true">
-        <path stroke-width="1.5" d="M4 7 C40 3 88 9 166 5"></path>
-        <path stroke-width="1" d="M10 10 C60 7 112 11 158 8"></path>
-      </svg>
-
-      <section class="principle">
-        <div class="p-head"><span class="dia">&#9670;</span><span class="idx">04</span><span class="ttl">Privacy, encoded</span></div>
-        <p style="font-weight: 400">Your strategic inquiries remain strictly yours. Data is encrypted at rest, never sold, never utilized to train broad models, and definitively purged upon your request.</p>
-      </section>
-
-    </div>
-
-    <div class="close">
-      <span class="said" style="font-weight: 700; font-family: BioRhyme">Formulate your inquiry. Receive our objective analysis.</span>
+    <!-- 3 · ink band: the temperament, in three tiles -->
+    <section class="band">
+      <h2>How to take the answer</h2>
+      <div class="tiles">
+        <div class="tile">
+          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+          <b>Direct</b>
+          <p>No hedging, no disclaimers stacked on disclaimers. It follows what the figure implies, even to an answer you weren&rsquo;t hoping for.</p>
+        </div>
+        <div class="tile">
+          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10z"></path></svg>
+          <b>Never cruel</b>
+          <p>Blunt enough to matter, careful enough to remember there&rsquo;s a person reading it.</p>
+        </div>
+        <div class="tile">
+          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"></path><path d="M9 13l2.2 2.2L15.5 11"></path></svg>
+          <b>Yours to decide</b>
+          <p>A perspective, not a permission slip. What you do with it is still yours.</p>
+        </div>
+      </div>
       <a class="cta" href="./index.html">Begin the dialogue</a>
-    </div>
+    </section>
+
+    <p class="fine">Your castings are encrypted at rest, never sold, never used to train &mdash; and burned when you say so.
+      <a class="inkline" href="./privacy.html">The policy<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
+      &nbsp;&middot;&nbsp;
+      <a class="inkline" href="./terms.html">The terms<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
+    </p>
 
     <footer>
       <span class="lbl" style="font-family: Spinnaker; font-weight: 600">BourneWise &middot; founded on classical logic</span>
@@ -216,7 +254,5 @@
 </main>
 
 <script src="./assets/backgrounds/mountain-range.js"></script>
-<script src="./account.js"></script>
-<script src="./sidebar.js"></script>
 </body>
 </html>
