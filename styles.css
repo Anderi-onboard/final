@@ -1,6 +1,7 @@
 /* BourneWise — global CSS entry. @import lines only. */
-@import "tokens/fonts.css?v=20260710c";
-@import "tokens/colors.css?v=20260710c";
-@import "tokens/typography.css?v=20260710c";
-@import "tokens/spacing.css?v=20260710c";
-@import "tokens/paper.css?v=20260710c";
+@import "tokens/fonts.css?v=20260710d";
+@import "tokens/fonts-cjk.css?v=20260710d";
+@import "tokens/colors.css?v=20260710d";
+@import "tokens/typography.css?v=20260710d";
+@import "tokens/spacing.css?v=20260710d";
+@import "tokens/paper.css?v=20260710d";

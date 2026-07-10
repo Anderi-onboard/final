@@ -9,7 +9,7 @@
      .state()            -> full store (loads + normalises defaults)
      .save(s)            -> persist
      .account()          -> {name,email,plan,avatar,signedIn}
-     .signIn(provider)   -> set a demo account
+     .signInRemote(...)  -> real, persisted sign-in (server session; no demo fallback)
      .signOut()          -> reset to guest
      .entitled(methodId) -> can the current plan use this method?
      .deductUnits(n)     -> subtract n, persist, return new balance
@@ -117,6 +117,22 @@
         save(s);
       } else {
         serverOn = false;
+        // The server explicitly says "not signed in" (d = {signedIn:false}) but
+        // the local mirror still carries a signed-in account: that's a stale
+        // ghost (expired cookie, or the old demo sign-in). Clearing it here is
+        // what keeps the UI honest — otherwise the app shows "Premium" while
+        // every server call 401s and readings silently die. A null d (network
+        // failure / 501 backend-off) is NOT proof of sign-out, so leave the
+        // local state alone in that case.
+        if (d && d.signedIn === false) {
+          var st = load();
+          if (st.account && st.account.signedIn) {
+            st.account = clone(DEFAULT_ACCOUNT);
+            if (METHODS[st.method] && METHODS[st.method].gated) st.method = "stria";
+            save(st);
+            emit();
+          }
+        }
       }
       if (cb) cb(serverOn);
     });
@@ -145,6 +161,17 @@
     if (serverOn) {
       api("/grant", "POST", { amount: n, reason: reason || "topup" }).then(reconcileUnits);
     }
+    return s.units;
+  }
+
+  // Local-only refund for a failed cast. The server already refunded its own
+  // atomic deduction (functions/api/claude.js refunds on upstream failure), so
+  // this must NOT fire /grant — it only rolls back the optimistic local mirror.
+  function refundLocal(n) {
+    var s = load();
+    s.units += n;
+    save(s);
+    emit();
     return s.units;
   }
 
@@ -193,25 +220,6 @@
   function methodCost(id) { return (METHODS[id] || METHODS.stria).cost; }
   function planGrant(id) { return (PLANS[id] || PLANS.free).grant; }
 
-  function signIn(provider) {
-    var s = load();
-    var demos = {
-      google: { name: "Elias Vance", email: "elias.vance@gmail.com" },
-      apple:  { name: "Elias Vance", email: "elias@icloud.com" },
-      dev:    { name: "Dev Tester", email: "dev@bournewise.local" },
-      email:  { name: "Elias Vance", email: "elias@iname.com" }
-    };
-    var d = demos[provider] || demos.dev;
-    s.account = {
-      name: d.name, email: d.email,
-      plan: s.account && s.account.plan ? s.account.plan : "pro",
-      avatar: initials(d.name), signedIn: true, provider: provider
-    };
-    if (s.account.plan === "free") s.account.plan = "pro";
-    save(s);
-    return s.account;
-  }
-
   function signOut() {
     var s = load();
     var wasServer = serverOn;
@@ -231,17 +239,23 @@
     return s.account;
   }
 
-  // Real, persisted sign-in via the accounts backend. Falls back to the local
-  // demo sign-in if the backend isn't there (501) so the button still works.
+  // Real, persisted sign-in via the accounts backend. There is deliberately NO
+  // local-demo fallback anymore: the old behaviour silently minted a fake
+  // "signed-in" account when the backend call failed, which then displayed a
+  // paid plan the server had never heard of — every Sortis call 401'd and the
+  // reading degraded to a placeholder while units drained. Better to fail
+  // loudly and let the login page show the error.
   function signInRemote(email, name, provider, cb) {
     fetch("/api/auth/dev", {
       method: "POST", headers: { "content-type": "application/json" },
       credentials: "same-origin",
       body: JSON.stringify({ email: email, name: name, provider: provider || "email" })
     }).then(function (r) {
-      if (r.status === 501) return null;
-      return r.json().catch(function () { return null; });
-    }).then(function (d) {
+      return r.json().catch(function () { return null; }).then(function (d) {
+        return { status: r.status, d: d };
+      });
+    }).then(function (res) {
+      var d = res.d;
       if (d && d.ok && d.user) {
         serverOn = true;
         var s = load();
@@ -253,13 +267,13 @@
         save(s);
         if (cb) cb(true, s.account);
       } else {
-        // no backend → local demo sign-in, app still works
-        var a = signIn(provider || "email");
-        if (cb) cb(false, a);
+        var why = (d && d.error) ? d.error
+          : res.status === 501 ? "accounts backend not configured"
+          : "sign-in failed (" + res.status + ")";
+        if (cb) cb(false, null, why);
       }
-    }).catch(function () {
-      var a = signIn(provider || "email");
-      if (cb) cb(false, a);
+    }).catch(function (e) {
+      if (cb) cb(false, null, "network error — " + ((e && e.message) || e));
     });
   }
 
@@ -329,9 +343,9 @@
     entitled: entitled,
     deductUnits: deductUnits,
     addUnits: addUnits,
+    refundLocal: refundLocal,
     reconcileUnits: reconcileUnits,
     setPlan: setPlan,
-    signIn: signIn,
     signInRemote: signInRemote,
     signOut: signOut,
     hydrate: hydrate,

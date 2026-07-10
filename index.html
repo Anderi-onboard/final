@@ -14,8 +14,8 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710c">
-<script src="./ds-base.js?v=20260710c"></script>
+<link rel="stylesheet" href="./styles.css?v=20260710d">
+<script src="./ds-base.js?v=20260710d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -46,6 +46,9 @@
     white-space:nowrap;transition:width .18s,opacity .18s}
   .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
+  /* drawer opener in the topbar — hidden on desktop, shown ≤880px */
+  .side-open-btn{display:none;width:30px;height:30px;flex:none;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s;margin-right:6px}
+  .side-open-btn:hover{background:var(--paper-dim);color:var(--ink)}
   body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
   body.rail .brand-btn{gap:0;padding:0;justify-content:center;width:100%}
   body.rail .brand-word{width:0;overflow:hidden;opacity:0}
@@ -247,6 +250,7 @@
   /* live network text as the main reading streams in, before the full
      structured reading-body replaces it (see chat-app.js onStreamDelta) */
   .reading-stream-preview{font-family:BioRhyme, var(--serif), serif;font-size:18px;line-height:1.7;color:var(--ink);margin:6px 0 0;max-width:64ch;white-space:pre-wrap}
+  .reading-error{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.6;color:var(--dim);border-left:2px solid var(--terracotta);padding:3px 0 3px 14px;margin:12px 0 4px;max-width:58ch}
   .reading-stream-preview:empty{display:none}
   /* lede + supporting paragraph */
   .reading-body .rd-lede{font-family:"BioRhyme",var(--serif),serif;font-size:20.5px;line-height:1.62;font-weight:500;color:var(--ink);margin:0 0 16px;max-width:38ch}
@@ -422,7 +426,23 @@
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:880px){
-    .sidebar{display:none}
+    /* The sidebar becomes an off-canvas drawer instead of vanishing — history,
+       units and the account chip stay reachable at every viewport width/zoom. */
+    .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:40;width:282px;padding:14px 12px 12px;
+      background:var(--paper);border-right:1px solid var(--line-soft);box-shadow:0 0 46px rgba(31,29,26,.16);
+      transform:translateX(-103%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    body.side-open .sidebar{transform:translateX(0)}
+    /* rail (desktop collapsed) styling makes no sense inside the drawer —
+       neutralise it so the drawer always opens full */
+    body.rail .sidebar{width:282px;padding-left:12px;padding-right:12px}
+    body.rail .sidebar .fade{opacity:1;pointer-events:auto;width:auto;overflow:visible}
+    body.rail .sidebar .brand-word{width:auto;overflow:visible;opacity:1}
+    body.rail .sidebar .castings{opacity:1;pointer-events:auto}
+    body.rail .sidebar .ledger{display:flex}
+    body.rail .sidebar .side-foot .who,body.rail .sidebar .side-foot .go{display:flex}
+    .side-scrim{position:fixed;inset:0;z-index:39;background:rgba(31,29,26,.28);opacity:0;pointer-events:none;transition:opacity .28s}
+    body.side-open .side-scrim{opacity:1;pointer-events:auto}
+    .side-open-btn{display:grid}
     .topbar,.thread,.composer-zone{padding-left:18px;padding-right:18px}
     .reading-body{font-size:16.5px}
     .plans{grid-template-columns:1fr}
@@ -501,6 +521,7 @@
 <body class="is-empty">
 
 <div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<div class="side-scrim" id="sideScrim" aria-hidden="true"></div>
 
 <aside class="sidebar" data-screen-label="Landing sidebar">
   <div class="side-top">
@@ -551,6 +572,9 @@
 
 <main class="main" data-screen-label="Landing">
   <header class="topbar">
+    <button class="side-open-btn" id="sideOpenBtn" aria-label="Open menu" title="Menu">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="2.5" width="13" height="11" rx="2"></rect><path d="M6 2.5v11"></path></svg>
+    </button>
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New inquiry</h1>
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
@@ -588,15 +612,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710c"></script>
-<script src="./casting-figure.js?v=20260710c"></script>
-<script src="./liuyao-engine.js?v=20260710c"></script>
-<script src="./liuyao-ai.js?v=20260710c"></script>
-<script src="./liuyao-chart.js?v=20260710c"></script>
-<script src="./prompt-engine.js?v=20260710c"></script>
-<script src="./prompt-router.js?v=20260710c"></script>
-<script src="./account.js?v=20260710c"></script>
-<script src="./chat-app.js?v=20260710c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260710d"></script>
+<script src="./casting-figure.js?v=20260710d"></script>
+<script src="./liuyao-engine.js?v=20260710d"></script>
+<script src="./liuyao-ai.js?v=20260710d"></script>
+<script src="./liuyao-chart.js?v=20260710d"></script>
+<script src="./prompt-engine.js?v=20260710d"></script>
+<script src="./prompt-router.js?v=20260710d"></script>
+<script src="./account.js?v=20260710d"></script>
+<script src="./chat-app.js?v=20260710d"></script>
 <script>
 (function () {
   "use strict";
