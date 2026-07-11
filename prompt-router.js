@@ -215,6 +215,16 @@
           var roles = board._roles || (AI.deriveRoles ? AI.deriveRoles(board, priorKey) : {});
           var built = AI.buildMessages(board, roles, question, opts.category || "general", opts.gender, effectiveLang);
           boardData = built.messages[0].content;
+          // buildMessages() appends a "Return ONLY valid minified JSON …" output
+          // schema — that's for the standalone BWLiuYaoAI.interpret() path, whose
+          // caller parses JSON. In THIS routed pipeline the output format is
+          // governed entirely by result.system (the prose OUTPUT STRUCTURE), so
+          // the JSON instruction must be stripped. Left in, the model returns raw
+          // JSON (rendered as garbled braces/keys) with only a 2-4 sentence
+          // "reading" field — the "乱码 + 字数不够" the user saw. Keep only the
+          // QUESTION / CATEGORY / BOARD-facts portion that precedes the schema.
+          var schemaAt = boardData.indexOf("Return ONLY valid minified JSON");
+          if (schemaAt > 0) boardData = boardData.slice(0, schemaAt).trim();
         } catch (e) {
           if (window.console) console.warn("[prompt-router] board prompt build failed, using question only:", e && e.message);
         }
