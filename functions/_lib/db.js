@@ -1,7 +1,8 @@
 // functions/_lib/db.js — D1 data layer. The server is the source of truth for
 // accounts, units, and history. Plan grants mirror account.js (front-end mirror).
 
-export const PLAN_GRANT = { free: 300, pro: 22500, premium: 45000 };
+// Free signup now grants 500 units (new-user welcome grant).
+export const PLAN_GRANT = { free: 500, pro: 22500, premium: 45000 };
 export const METHOD_COST = { stria: 300, sortis: 1500 };
 export const PAID = { pro: true, premium: true };
 
@@ -33,6 +34,25 @@ export async function ensureUser(db, { email, name, provider }) {
 }
 
 export async function getUser(db, id) {
+  return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
+}
+
+export async function getUserByEmail(db, email) {
+  email = String(email || '').toLowerCase().trim();
+  if (!email) return null;
+  return db.prepare('SELECT * FROM users WHERE email = ?').bind(email).first();
+}
+
+// Create a brand-new email/password account with the free welcome grant.
+// Caller must have already checked the email isn't taken.
+export async function createEmailUser(db, { email, name, passwordHash }) {
+  email = String(email || '').toLowerCase().trim();
+  const id = uuid(), t = now();
+  await db.prepare(
+    'INSERT INTO users (id,email,name,provider,plan,units,password_hash,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)'
+  ).bind(id, email, name || email.split('@')[0], 'email', 'free', PLAN_GRANT.free, passwordHash || null, t, t).run();
+  await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
+    .bind(id, PLAN_GRANT.free, 'grant:signup', PLAN_GRANT.free, t).run();
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
 }
 

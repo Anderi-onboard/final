@@ -462,6 +462,15 @@
     text = (text || "").trim();
     if (!text || busy) return;
     var m = method();
+    // Sign-in required: units only exist on a real account, so a signed-out
+    // guest can't cast — send them to the login page. This is the "先登录才发
+    // 点数" rule: no free units before an account exists.
+    if (!S.account.signedIn) {
+      var zhq = /[一-鿿]/.test(text);
+      toast(zhq ? "请先登录或注册——注册即送 500 点。" : "Sign in or create an account to cast — new accounts get 500 units.");
+      setTimeout(function () { location.href = "./login.html"; }, 1300);
+      return;
+    }
     // No silent downgrade: if the plan can't use this method, say so and open
     // the plans view. The old code swapped Sortis→Stria without telling the
     // user, so they paid for a shallower reading (Sonnet, no board) than they

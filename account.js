@@ -26,7 +26,7 @@
   // ─── canonical tables (single source — never duplicate elsewhere) ───
 
   var PLANS = {
-    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 300,   methods: ["stria"], trial: true },
+    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 500,   methods: ["stria"], trial: true },
     pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 22500, methods: ["stria", "sortis"] },
     premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 45000, methods: ["stria", "sortis"] }
   };
@@ -55,7 +55,10 @@
     var s = null;
     try { s = JSON.parse(localStorage.getItem(STORE)); } catch (e) {}
     if (!s || typeof s !== "object") s = {};
-    if (typeof s.units !== "number") s.units = PLANS.free.grant;
+    // A signed-out guest has NO units — units are only granted after sign-in
+    // (the server issues the free welcome grant on account creation). The local
+    // balance is just a mirror of the server's, so a fresh guest starts at 0.
+    if (typeof s.units !== "number") s.units = 0;
     if (!METHODS[s.method]) s.method = "stria";
     if (!Array.isArray(s.convs)) s.convs = [];
     if (!("activeId" in s)) s.activeId = null;
@@ -219,37 +222,15 @@
   function methodCost(id) { return (METHODS[id] || METHODS.stria).cost; }
   function planGrant(id) { return (PLANS[id] || PLANS.free).grant; }
 
-  function signIn(provider) {
-    var s = load();
-    var demos = {
-      google: { name: "Elias Vance", email: "elias.vance@gmail.com" },
-      apple:  { name: "Elias Vance", email: "elias@icloud.com" },
-      dev:    { name: "Dev Tester", email: "dev@bournewise.local" },
-      email:  { name: "Elias Vance", email: "elias@iname.com" }
-    };
-    var d = demos[provider] || demos.dev;
-    s.account = {
-      name: d.name, email: d.email,
-      plan: s.account && s.account.plan ? s.account.plan : "pro",
-      avatar: initials(d.name), signedIn: true, provider: provider
-    };
-    if (s.account.plan === "free") s.account.plan = "pro";
-    save(s);
-    return s.account;
-  }
-
   function signOut() {
     var s = load();
-    var wasServer = serverOn;
     s.account = clone(DEFAULT_ACCOUNT);
     if (METHODS[s.method] && METHODS[s.method].gated) s.method = "stria";
-    // if we were syncing a real account, clear its local mirror (history + balance
-    // live on the server; the device returns to a fresh guest)
-    if (wasServer) {
-      s.convs = [];
-      s.activeId = null;
-      s.units = PLANS.free.grant;
-    }
+    // history + balance live on the server; the device returns to a fresh guest
+    // with NO units (units require a signed-in account).
+    s.convs = [];
+    s.activeId = null;
+    s.units = 0;
     save(s);
     // best-effort clear of the server session
     fetch("/api/auth/signout", { method: "POST", credentials: "same-origin" }).catch(function () {});
@@ -257,64 +238,53 @@
     return s.account;
   }
 
-  // Real, persisted sign-in via the accounts backend (creates/reuses a D1
-  // account and sets a server session cookie). No local-demo fallback: the old
-  // behaviour minted a fake signed-in account when the call failed, which then
-  // showed a paid plan the server had never issued — every Sortis call 401'd
-  // and the reading degraded to placeholder prose while units drained. On
-  // failure we report why (cb(false, null, reason)) so the caller can surface
-  // it instead of pretending sign-in worked.
-  function signInRemote(email, name, provider, cb) {
-    fetch("/api/auth/dev", {
+  // Adopt an authenticated user returned by the backend into the local mirror.
+  function adoptUser(user, provider) {
+    serverOn = true;
+    var s = load();
+    s.units = user.units;
+    s.account = {
+      name: user.name, email: user.email, plan: user.plan,
+      avatar: initials(user.name), signedIn: true, provider: provider || user.provider || "email"
+    };
+    save(s);
+    return s.account;
+  }
+
+  // POST an email auth route (register|login). cb(ok, account, reason).
+  function emailAuth(path, payload, cb) {
+    fetch("/api/auth/" + path, {
       method: "POST", headers: { "content-type": "application/json" },
-      credentials: "same-origin",
-      body: JSON.stringify({ email: email, name: name, provider: provider || "email" })
+      credentials: "same-origin", body: JSON.stringify(payload)
     }).then(function (r) {
-      return r.json().catch(function () { return null; }).then(function (d) {
-        return { status: r.status, d: d };
-      });
+      return r.json().catch(function () { return null; }).then(function (d) { return { status: r.status, d: d }; });
     }).then(function (res) {
       var d = res.d;
-      if (d && d.ok && d.user) {
-        serverOn = true;
-        function finishSignIn(user) {
-          var s = load();
-          s.units = user.units;
-          s.account = {
-            name: user.name, email: user.email, plan: user.plan,
-            avatar: initials(user.name), signedIn: true, provider: provider || "email"
-          };
-          save(s);
-          if (cb) cb(true, s.account);
-        }
-        // Demo convenience: a fresh account lands on the free tier, but the
-        // point of the demo is trying Sortis 6 (Opus), which the plan gate
-        // requires Pro/Premium for. With no real payments wired yet, a brand-
-        // new demo sign-in is upgraded to a REAL Premium account server-side
-        // (a genuine session + plan, not the old fake-account trick) so the
-        // one-click demo both looks and works like Premium. Existing accounts
-        // keep whatever plan they already have.
-        if (d.user.plan === "free") {
-          api("/plan", "POST", { plan: "premium" }).then(function (pr) {
-            if (pr && pr.ok && typeof pr.units === "number") {
-              finishSignIn({ name: d.user.name, email: d.user.email, plan: "premium", units: pr.units });
-            } else {
-              finishSignIn(d.user);
-            }
-          });
-        } else {
-          finishSignIn(d.user);
-        }
-      } else {
+      if (d && d.ok && d.user) { if (cb) cb(true, adoptUser(d.user, "email")); }
+      else {
         var why = (d && d.error) ? d.error
           : res.status === 501 ? "accounts backend not configured"
-          : "sign-in failed (" + res.status + ")";
+          : "request failed (" + res.status + ")";
         if (cb) cb(false, null, why);
       }
-    }).catch(function (e) {
-      if (cb) cb(false, null, "network error — " + ((e && e.message) || e));
-    });
+    }).catch(function (e) { if (cb) cb(false, null, "network error — " + ((e && e.message) || e)); });
   }
+
+  // Real, persisted email accounts.
+  function registerEmail(email, password, name, cb) { emailAuth("register", { email: email, password: password, name: name }, cb); }
+  function loginEmail(email, password, cb) { emailAuth("login", { email: email, password: password }, cb); }
+
+  // Which OAuth providers are live (have their keys set server-side)? cb(map).
+  function fetchProviders(cb) {
+    fetch("/api/auth/providers", { credentials: "same-origin" })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (cb) cb((d && d.providers) || {}); })
+      .catch(function () { if (cb) cb({}); });
+  }
+
+  // Kick off an OAuth sign-in — full-page redirect to the provider consent
+  // screen; the callback lands back on index.html with the session set.
+  function oauthStart(provider) { location.href = "/api/auth/oauth/" + provider; }
 
   // ─── plan descriptions (for settings page) ─────────────────────────
 
@@ -385,8 +355,10 @@
     refundLocal: refundLocal,
     reconcileUnits: reconcileUnits,
     setPlan: setPlan,
-    signIn: signIn,
-    signInRemote: signInRemote,
+    registerEmail: registerEmail,
+    loginEmail: loginEmail,
+    oauthStart: oauthStart,
+    fetchProviders: fetchProviders,
     signOut: signOut,
     hydrate: hydrate,
     onServer: onServer,
