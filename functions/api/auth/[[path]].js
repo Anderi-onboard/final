@@ -69,7 +69,9 @@ const OAUTH = {
   }
 };
 
-const SOCIAL_LABELS = { google: 'Google', apple: 'Apple', reddit: 'Reddit', github: 'GitHub', discord: 'Discord', facebook: 'Facebook' };
+// Only the providers actually surfaced on the login page. (OAUTH above keeps a
+// couple of extras wired generically in case they're re-enabled later.)
+const SOCIAL_LABELS = { google: 'Google', reddit: 'Reddit', discord: 'Discord' };
 
 export async function onRequest(context) {
   const { request, env, params } = context;
@@ -87,9 +89,7 @@ export async function onRequest(context) {
   if (route === 'providers' && request.method === 'GET') {
     const configured = {};
     Object.keys(SOCIAL_LABELS).forEach((k) => {
-      configured[k] = k === 'apple'
-        ? !!(env.APPLE_CLIENT_ID && env.APPLE_TEAM_ID && env.APPLE_KEY_ID && env.APPLE_PRIVATE_KEY)
-        : !!(env[k.toUpperCase() + '_CLIENT_ID'] && env[k.toUpperCase() + '_CLIENT_SECRET']);
+      configured[k] = !!(env[k.toUpperCase() + '_CLIENT_ID'] && env[k.toUpperCase() + '_CLIENT_SECRET']);
     });
     return json({ email: true, providers: configured }, 200);
   }
