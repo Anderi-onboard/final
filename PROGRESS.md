@@ -8,6 +8,29 @@
 
 ---
 
+## ✅ 已完成 — 第三方登录收尾：Google / Reddit / Discord + OAuth CSRF 防护（2026-07-12）
+
+三家社交登录的**代码链路上一轮其实已经打通**（后端 `functions/api/auth/[[path]].js`
+的通用 OAuth2 流程 + login.html 三个按钮 + `/api/auth/providers` 探测 + `ensureUser`
+自动建号）。本轮补齐真正影响"能上线"的两处缺口：
+
+- ✅ **补上 OAuth CSRF（login-CSRF）防护**：原先 `state` 被写死成 provider 名
+  （`state: key`），回调从不校验，等于没有 state 防护。现改为每次发起随机生成
+  `<provider>:<nonce>`，pin 到一个 10 分钟、HttpOnly、SameSite=Lax 的短命 cookie
+  （`session.js` 新增 `newOauthState/oauthStateCookie/readOauthState/clearOauthCookie`），
+  回调时比对 cookie 与回传 state（含 provider 前缀）一致才继续，成功后单次即清。
+- ✅ **授权参数按 provider 分流**：原先给所有 provider 都发 Google 专用的
+  `access_type=online` + `prompt=select_account`——其中 `select_account` 不是
+  Discord 合法的 `prompt` 值，Reddit 又需要 `duration`。现每个 provider 各带自己的
+  `extra`：Google 保留原两参、Discord 用 `prompt=consent`、Reddit 补 `duration=temporary`。
+- ✅ **配置文档补全**：`.dev.vars.example` 原来只写了 Google，现补上 Discord / Reddit
+  的开发者后台地址、统一回调 URI 规则
+  （`https://YOUR-DOMAIN/api/auth/oauth/<provider>/callback`）、Reddit 无 email →
+  `<username>@reddit.local` 的说明。
+- ⏳ **仍需人工配置**（代码这边无法代劳）：在三家开发者后台创建应用、登记上面的
+  回调 URI、拿到 CLIENT_ID/SECRET 后填进 Cloudflare Pages 环境变量（本地填 `.dev.vars`）。
+  key 一填按钮即自动点亮，无需改代码。
+
 ## ✅ 已完成 — 部署交接：D1 建库、about.html 重做上线、AI 代理切到 OpenRouter（2026-07-10）
 
 - ✅ 建了生产 D1 数据库 `bournewise`，`wrangler.toml` 填入真实 `database_id`，

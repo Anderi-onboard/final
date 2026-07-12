@@ -19,9 +19,26 @@ OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # Secret used to sign session cookies. Use a long random string in production.
 SESSION_SECRET=change-me-to-a-long-random-string
 
-# Google OAuth (optional). Without these, the app still has real persisted
-# accounts via email/dev sign-in; "Continue with Google" just stays inactive.
-# Authorized redirect URI in Google Cloud console:
-#   https://YOUR-DOMAIN/api/auth/google/callback
+# Social sign-in (all optional). A provider's button on /login.html lights up
+# only when BOTH its _CLIENT_ID and _CLIENT_SECRET are set; otherwise it shows
+# "soon" and stays disabled. Email/password sign-in works regardless.
+#
+# The redirect/callback URI is always  https://YOUR-DOMAIN/api/auth/oauth/<provider>/callback
+# Register that EXACT URI in each provider's developer console. For local dev
+# with `wrangler pages dev`, use  http://localhost:8788/api/auth/oauth/<provider>/callback
+
+# ── Google ──  console: https://console.cloud.google.com/apis/credentials
+#   OAuth client type "Web application"; add the callback URI above.
 # GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
 # GOOGLE_CLIENT_SECRET=xxxx
+
+# ── Discord ──  console: https://discord.com/developers/applications → OAuth2
+#   Add the callback URI as a Redirect. Scopes used: identify email.
+# DISCORD_CLIENT_ID=xxxxxxxxxxxxxxxxxx
+# DISCORD_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# ── Reddit ──  console: https://www.reddit.com/prefs/apps  ("create app" → web app)
+#   Set the "redirect uri" to the callback above. Reddit doesn't expose email,
+#   so accounts are keyed as <username>@reddit.local. Scope used: identity.
+# REDDIT_CLIENT_ID=xxxxxxxxxxxxxxxxxx
+# REDDIT_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxx

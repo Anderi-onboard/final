@@ -68,3 +68,24 @@ export function clearCookie() {
 }
 
 export const SESSION_COOKIE = COOKIE;
+
+// ── OAuth CSRF state ──────────────────────────────────────────────────────
+// The `state` we send to the provider is echoed back on the callback; we pin
+// it to a short-lived HttpOnly cookie so a forged callback (login-CSRF) can't
+// complete the flow. SameSite=Lax still rides the top-level redirect back.
+const OAUTH_COOKIE = 'bw_oauth';
+const OAUTH_MAX_AGE = 600; // 10 min — plenty for a consent screen
+
+export function newOauthState() {
+  return b64urlEncode(crypto.getRandomValues(new Uint8Array(16)));
+}
+export function oauthStateCookie(value) {
+  return OAUTH_COOKIE + '=' + encodeURIComponent(value) +
+    '; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=' + OAUTH_MAX_AGE;
+}
+export function clearOauthCookie() {
+  return OAUTH_COOKIE + '=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0';
+}
+export function readOauthState(request) {
+  return readCookie(request, OAUTH_COOKIE);
+}

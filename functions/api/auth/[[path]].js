@@ -13,7 +13,10 @@
 // (except Apple, which additionally needs a signed client-secret JWT — see note).
 // New accounts get the free welcome grant (db.PLAN_GRANT.free = 500 units).
 
-import { signSession, sessionCookie, clearCookie } from '../../_lib/session.js';
+import {
+  signSession, sessionCookie, clearCookie,
+  newOauthState, oauthStateCookie, clearOauthCookie, readOauthState
+} from '../../_lib/session.js';
 import { ensureUser, getUserByEmail, createEmailUser, publicUser } from '../../_lib/db.js';
 import { hashPassword, verifyPassword } from '../../_lib/password.js';
 
@@ -34,6 +37,7 @@ const OAUTH = {
     token: 'https://oauth2.googleapis.com/token',
     userinfo: 'https://openidconnect.googleapis.com/v1/userinfo',
     scope: 'openid email profile',
+    extra: { access_type: 'online', prompt: 'select_account' },
     email: (p) => p.email, name: (p) => p.name
   },
   github: {
@@ -49,6 +53,7 @@ const OAUTH = {
     token: 'https://discord.com/api/oauth2/token',
     userinfo: 'https://discord.com/api/users/@me',
     scope: 'identify email',
+    extra: { prompt: 'consent' }, // discord rejects google's `select_account`
     email: (p) => p.email, name: (p) => p.global_name || p.username
   },
   reddit: {
@@ -56,6 +61,7 @@ const OAUTH = {
     token: 'https://www.reddit.com/api/v1/access_token',
     userinfo: 'https://oauth.reddit.com/api/v1/me',
     scope: 'identity',
+    extra: { duration: 'temporary' }, // reddit requires a duration on authorize
     basicAuth: true,               // reddit token endpoint wants HTTP Basic
     email: (p) => (p.name ? p.name + '@reddit.local' : null), // reddit doesn't expose email
     name: (p) => p.name
@@ -134,11 +140,16 @@ export async function onRequest(context) {
     const cid = env[key.toUpperCase() + '_CLIENT_ID'];
     if (!cid) return json({ error: key + ' sign-in not configured' }, 501);
     const redirect = originOf(request) + '/api/auth/oauth/' + key + '/callback';
+    // random per-attempt state, pinned to an HttpOnly cookie for CSRF defense
+    const state = key + ':' + newOauthState();
     const url = cfg.authorize + '?' + new URLSearchParams({
-      client_id: cid, redirect_uri: redirect, response_type: 'code', scope: cfg.scope,
-      state: key, access_type: 'online', prompt: 'select_account'
+      client_id: cid, redirect_uri: redirect, response_type: 'code',
+      scope: cfg.scope, state, ...(cfg.extra || {})
     });
-    return Response.redirect(url, 302);
+    return new Response(null, {
+      status: 302,
+      headers: { location: url, 'set-cookie': oauthStateCookie(state) }
+    });
   }
 
   // ── OAuth callback:  /oauth/:provider/callback ──
@@ -149,8 +160,15 @@ export async function onRequest(context) {
     const cid = env[key.toUpperCase() + '_CLIENT_ID'];
     const secret = env[key.toUpperCase() + '_CLIENT_SECRET'];
     if (!cid || !secret) return json({ error: key + ' sign-in not configured' }, 501);
-    const code = new URL(request.url).searchParams.get('code');
-    if (!code) return json({ error: 'no code' }, 400);
+    const qs = new URL(request.url).searchParams;
+    // CSRF: the state we get back must match the one we set in the cookie.
+    const state = qs.get('state');
+    const cookieState = readOauthState(request);
+    if (!state || !cookieState || state !== cookieState || state.split(':')[0] !== key) {
+      return json({ error: 'invalid oauth state' }, 400, { 'set-cookie': clearOauthCookie() });
+    }
+    const code = qs.get('code');
+    if (!code) return json({ error: 'no code' }, 400, { 'set-cookie': clearOauthCookie() });
     const redirect = originOf(request) + '/api/auth/oauth/' + key + '/callback';
 
     // exchange code → access token
@@ -182,10 +200,10 @@ export async function onRequest(context) {
 
     const u = await ensureUser(db, { email, name: cfg.name(prof) || email.split('@')[0], provider: key });
     const session = await signSession({ uid: u.id, email: u.email, iat: Date.now() }, env.SESSION_SECRET);
-    return new Response(null, {
-      status: 302,
-      headers: { location: originOf(request) + '/index.html', 'set-cookie': sessionCookie(session) }
-    });
+    const headers = new Headers({ location: originOf(request) + '/index.html' });
+    headers.append('set-cookie', sessionCookie(session));
+    headers.append('set-cookie', clearOauthCookie()); // state cookie is single-use
+    return new Response(null, { status: 302, headers });
   }
 
   return json({ error: 'not found', route }, 404);
