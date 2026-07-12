@@ -808,16 +808,24 @@
   if (openBtn) openBtn.addEventListener("click", openPlans);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenu(); closeMethod(); } });
 
+  /* ── entry: ?q= from landing, #plans deep link ── */
+  var params = new URLSearchParams(location.search);
+  var q = (params.get("q") || "").trim();
+  if (q) history.replaceState(null, "", location.pathname);
+
   /* ── boot: hydrate from the server (if signed in), then paint ── */
   renderAll();                       // instant paint from local store
-  A.hydrate(function () { S = A.state(); renderAll(); });
+  A.hydrate(function () {
+    S = A.state(); renderAll();
+    // Fire the landing hand-off ONLY after hydrate resolves, so serverOn and
+    // the signed-in account are known before the cast is created — otherwise
+    // the casting could be produced (and its history written) before the
+    // session is established and never reach the server.
+    if (q) send(q);
+  });
   window.addEventListener("bw:account-synced", function () {
     S.units = A.state().units; renderUnits();
   });
 
-  /* ── entry: ?q= from landing, #plans deep link ── */
-  var params = new URLSearchParams(location.search);
-  var q = (params.get("q") || "").trim();
-  if (q) { history.replaceState(null, "", location.pathname); send(q); }
   if (location.hash === "#plans") openPlans();
 })();

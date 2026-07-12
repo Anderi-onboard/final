@@ -12,8 +12,8 @@
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710m">
-<script src="./ds-base.js?v=20260710m"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712a">
+<script src="./ds-base.js?v=20260712a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -24,7 +24,7 @@
      the earlier pink/mint scheme read as too light for a classical-divination
      brand. Everything below pulls the same warm tokens as index/login. */
 
-  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   a{color:inherit;text-decoration:none}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
@@ -40,7 +40,27 @@
   .main::-webkit-scrollbar{width:0;height:0}
   .page{position:relative;min-height:100vh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
     display:flex;flex-direction:column;justify-content:center;padding:0}
-  .page-inner{width:100%;max-width:1080px;margin:0 auto;padding:64px 28px}
+  .page-inner{position:relative;z-index:1;width:100%;max-width:1080px;margin:0 auto;padding:64px 28px}
+
+  /* ── per-page colour field: each scroll page below the hero carries its own
+     slow, GPU-composited colour animation behind the glass boxes. Only
+     transform + opacity animate (never background-color), so nothing repaints
+     per frame — that is what stops the backdrop-blur re-raster / frame-flash.
+     A different hue per page delivers the "scroll down → the background turns
+     another colour" beat the brief asks for. ── */
+  .page-fx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .page-fx b{position:absolute;display:block;border-radius:50%;filter:blur(64px);opacity:.5;will-change:transform,opacity}
+  /* page 2 — warm amber / terracotta dawn */
+  .fx-amber b:nth-child(1){width:58vw;height:58vw;left:-8vw;top:-6vh;background:radial-gradient(circle at 42% 42%,#F3C88C,transparent 68%);animation:blobA 27s ease-in-out infinite}
+  .fx-amber b:nth-child(2){width:50vw;height:50vw;right:-10vw;bottom:-12vh;background:radial-gradient(circle at 50% 50%,#D99A62,transparent 70%);animation:blobB 34s ease-in-out infinite}
+  .fx-amber b:nth-child(3){width:34vw;height:34vw;left:38vw;bottom:6vh;background:radial-gradient(circle at 50% 50%,#E7B47E,transparent 72%);animation:blobC 30s ease-in-out infinite}
+  /* page 3 — a cooler dusk: muted sage + clay, a clear colour change from p2 */
+  .fx-sage b:nth-child(1){width:56vw;height:56vw;left:-10vw;bottom:-10vh;background:radial-gradient(circle at 46% 46%,#AEBE9F,transparent 70%);animation:blobB 31s ease-in-out infinite}
+  .fx-sage b:nth-child(2){width:52vw;height:52vw;right:-12vw;top:-8vh;background:radial-gradient(circle at 50% 50%,#CFA588,transparent 70%);animation:blobA 36s ease-in-out infinite}
+  .fx-sage b:nth-child(3){width:30vw;height:30vw;left:44vw;top:10vh;background:radial-gradient(circle at 50% 50%,#BFAF95,transparent 72%);animation:blobC 28s ease-in-out infinite}
+  @keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,4vh) scale(1.14)}}
+  @keyframes blobB{0%,100%{transform:translate(0,0) scale(1.06)}50%{transform:translate(-5vw,-5vh) scale(.9)}}
+  @keyframes blobC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4vw,6vh) scale(1.12)}}
   /* content rises + fades in when its page is in view, fades back out when not */
   .page .rise{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
   .page.in-view .rise{opacity:1;transform:none}
@@ -112,21 +132,32 @@
   .duo-l .mini{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--ink);border-radius:9px;padding:7px 15px;transition:background .15s,color .15s}
   .duo-l .mini:hover{background:var(--ink);color:var(--paper)}
   .duo-r{display:flex;flex-direction:column;gap:12px}
-  .m-card{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:transparent}
+  /* frosted-glass box — the same translucent warm panel the login card uses, so
+     the colour field above drifts through it. transform:translateZ(0) pins it to
+     its own compositor layer so the blur samples a stable backdrop (no flash). */
+  .m-card{display:flex;gap:14px;align-items:flex-start;border-radius:12px;padding:16px 18px;
+    background:linear-gradient(158deg,rgba(247,238,220,.52) 0%,rgba(236,223,197,.22) 52%,rgba(247,238,220,.48) 100%);
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(11px) saturate(1.18);-webkit-backdrop-filter:blur(11px) saturate(1.18);transform:translateZ(0)}
   .m-card .mi{flex:none;width:24px;height:24px;color:var(--terracotta);margin-top:1px}
   .m-card b{display:block;font-family:"BioRhyme",var(--serif);font-size:15px;font-weight:700}
   .m-card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
   .m-card p{margin-top:4px;font-size:13px;line-height:1.55;color:var(--dim)}
 
   /* ── 3 · ink band — how to take the answer ── */
-  .band{margin-top:56px;background:var(--ink);color:var(--paper);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center}
+  /* the band is a glass box now too (was a solid dark slab) — dark ink text on
+     translucent warm glass, matching every other box on the page */
+  .band{margin-top:56px;color:var(--ink);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center;
+    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(12px) saturate(1.18);-webkit-backdrop-filter:blur(12px) saturate(1.18);transform:translateZ(0)}
   .band h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;text-align:center}
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;width:100%}
-  .tile{border:1px solid rgba(250,246,238,.16);background:rgba(250,246,238,.05);border-radius:13px;padding:22px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background .15s}
-  .tile:hover{background:rgba(250,246,238,.09)}
+  /* tiles sit ON the band glass — a translucent fill (no nested backdrop-filter)
+     keeps them cheap and flash-free while still reading as glass-on-glass */
+  .tile{border:1px solid rgba(42,32,22,.1);background:rgba(255,252,245,.34);border-radius:13px;padding:22px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background .15s}
+  .tile:hover{background:rgba(255,252,245,.52)}
   .tile .ti{width:26px;height:26px;color:var(--terracotta)}
   .tile b{margin-top:34px;font-family:"BioRhyme",var(--serif);font-size:17px;font-weight:700}
-  .tile p{margin-top:7px;font-size:12px;line-height:1.5;color:rgba(250,246,238,.62)}
+  .tile p{margin-top:7px;font-size:12px;line-height:1.5;color:var(--dim)}
   .band .cta{margin-top:36px;font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 20px;border-radius:10px;transition:transform .15s,background .15s}
   .band .cta:hover{transform:translateY(-1px);background:#D97D7E}
 
@@ -148,8 +179,7 @@
     .band{padding:40px 22px 36px}
     .duo{padding:0}
   }
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
-  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
+  @media (prefers-reduced-motion: reduce){.page-fx b{animation:none}}
 </style>
 </head>
 <body>
@@ -174,6 +204,7 @@
 
   <!-- page 2 · the statement + the three practical cards -->
   <section class="page">
+   <div class="page-fx fx-amber" aria-hidden="true"><b></b><b></b><b></b></div>
    <div class="page-inner">
     <section class="duo">
       <div class="duo-l rise">
@@ -202,8 +233,9 @@
    </div>
   </section>
 
-  <!-- page 3 · ink band: the temperament, in three tiles -->
+  <!-- page 3 · the temperament, in three tiles -->
   <section class="page">
+   <div class="page-fx fx-sage" aria-hidden="true"><b></b><b></b><b></b></div>
    <div class="page-inner">
     <section class="band rise">
       <h2>How to take the answer</h2>
@@ -241,7 +273,7 @@
   </section>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710m"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712a"></script>
 <script>
 (function () {
   // Fade/rise each page's content in when it snaps into view, back out when it

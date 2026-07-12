@@ -12,15 +12,15 @@
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710m">
-<script src="./ds-base.js?v=20260710m"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712a">
+<script src="./ds-base.js?v=20260712a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
-  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
+  body{min-height:100%;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  /* (body background-color drift removed — it re-rastered behind the glass cards
+     every frame and was a frame-flash source. The mountain range still moves.) */
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
@@ -125,15 +125,19 @@
   .topup h3{font-family:var(--serif);font-weight:600;font-size:19px}
   .topup .sub{font-size:13px;color:var(--faint)}
   .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-  .pack{border:1px solid var(--line);border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;background:transparent}
-  .pack:hover{border-color:var(--ink);transform:translateY(-1px)}
+  .pack{border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;
+    background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(10px) saturate(1.15);-webkit-backdrop-filter:blur(10px) saturate(1.15);transform:translateZ(0)}
+  .pack:hover{border-color:var(--ink);transform:translateY(-1px) translateZ(0)}
   .pack .u{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums}
   .pack .p{font-size:13px;color:var(--terracotta);margin-top:3px}
   .pack .bonus{font-size:11px;color:var(--ghost);margin-top:5px}
 
   /* what a unit buys + faq */
   .costs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-  .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:transparent}
+  .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-radius:11px;padding:14px 16px;
+    background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(10px) saturate(1.15);-webkit-backdrop-filter:blur(10px) saturate(1.15);transform:translateZ(0)}
   .cost .nm{font-family:var(--serif);font-size:15px}
   .cost .nm small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--faint);margin-top:2px}
   .cost .ct{font-family:var(--serif);font-size:18px;color:var(--terracotta);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -148,11 +152,15 @@
   @media (max-width:680px){.costs{grid-template-columns:1fr}.qa{grid-template-columns:1fr}}
 
   /* fine print + faq */
-  .ribbon{margin-top:40px;background:var(--ink);background-image:radial-gradient(110% 160% at 100% 0%,rgba(181,80,44,.2),transparent 56%);color:var(--paper);border-radius:15px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
-  .ribbon .lbl{color:var(--ghost)}
-  .ribbon .said{font-family:var(--serif);font-style:normal;font-size:20px;max-width:40ch;color:var(--paper)}
-  .ribbon a{background:rgba(244,233,210,.1);border:1px solid rgba(244,233,210,.32);border-radius:10px;padding:9px 18px;font-size:13.5px;color:var(--paper);transition:background .15s}
-  .ribbon a:hover{background:rgba(244,233,210,.2)}
+  /* the fine-print ribbon is a glass box now too (was a solid dark slab) —
+     dark ink on translucent warm glass, consistent with every card above */
+  .ribbon{margin-top:40px;color:var(--ink);border-radius:15px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(12px) saturate(1.18);-webkit-backdrop-filter:blur(12px) saturate(1.18);transform:translateZ(0)}
+  .ribbon .lbl{color:var(--faint)}
+  .ribbon .said{font-family:var(--serif);font-style:normal;font-size:20px;max-width:40ch;color:var(--ink)}
+  .ribbon a{background:rgba(181,80,44,.1);border:1px solid rgba(181,80,44,.4);border-radius:10px;padding:9px 18px;font-size:13.5px;color:var(--terracotta);font-weight:500;transition:background .15s}
+  .ribbon a:hover{background:rgba(181,80,44,.18)}
 
   .fineprint{margin-top:30px;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;font-size:12px;color:var(--ghost)}
   .fineprint a{color:var(--dim);border-bottom:1px solid var(--line);transition:color .15s,border-color .15s}
@@ -296,8 +304,8 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710m"></script>
-<script src="./account.js?v=20260710m"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712a"></script>
+<script src="./account.js?v=20260712a"></script>
 <script>
 (function () {
   "use strict";
