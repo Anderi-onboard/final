@@ -48,6 +48,14 @@
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to keep your ledger";
     $("miPlans").querySelector("b").textContent = A.planName(a.plan).toUpperCase();
+    // the sign-in coach-mark only nudges signed-out guests, and stays gone once
+    // dismissed
+    var coach = $("signinCoach");
+    if (coach) {
+      var dismissed = false;
+      try { dismissed = localStorage.getItem("bw:coachDismissed") === "1"; } catch (e) {}
+      coach.hidden = a.signedIn || dismissed;
+    }
   }
 
   function renderMethod() {
@@ -796,6 +804,22 @@
     acctBtn.setAttribute("aria-expanded", open ? "true" : "false");
   });
   document.addEventListener("click", function (e) { if (!acctMenu.contains(e.target)) closeMenu(); });
+
+  /* ── sign-in coach-mark: the whole callout is a shortcut to login; the ×
+     dismisses it for good. It points at the Guest footer just below it. ── */
+  var coachEl = $("signinCoach");
+  if (coachEl) {
+    coachEl.addEventListener("click", function () { location.href = "./login.html"; });
+    coachEl.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); location.href = "./login.html"; }
+    });
+    var coachX = $("coachClose");
+    if (coachX) coachX.addEventListener("click", function (e) {
+      e.stopPropagation();
+      try { localStorage.setItem("bw:coachDismissed", "1"); } catch (er) {}
+      coachEl.hidden = true;
+    });
+  }
   $("miPlans").addEventListener("click", function () { closeMenu(); openPlans(); });
   $("miSettings").addEventListener("click", function () { location.href = "./settings.html"; });
   $("miSignout").addEventListener("click", function () {
