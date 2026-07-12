@@ -759,12 +759,29 @@
     $("composerInput").focus();
   });
 
-  /* ── sidebar rail ── */
+  /* ── sidebar rail (desktop) / drawer (≤880px) ── */
   if (localStorage.getItem(RAIL) === "1") document.body.classList.add("rail");
+  var mqNarrow = window.matchMedia ? window.matchMedia("(max-width:880px)") : { matches: false };
   $("sideToggle").addEventListener("click", function () {
+    // in drawer mode this button closes the drawer; rail collapse is desktop-only
+    if (mqNarrow.matches) { document.body.classList.remove("side-open"); return; }
     var r = document.body.classList.toggle("rail");
     try { localStorage.setItem(RAIL, r ? "1" : "0"); } catch (e) {}
   });
+  var sideOpenBtn = $("sideOpenBtn");
+  if (sideOpenBtn) sideOpenBtn.addEventListener("click", function () { document.body.classList.add("side-open"); });
+  var sideScrim = $("sideScrim");
+  if (sideScrim) sideScrim.addEventListener("click", function () { document.body.classList.remove("side-open"); });
+  // choosing a conversation / starting a new one / opening the account menu from
+  // inside the drawer closes it
+  var sideEl = document.querySelector(".sidebar");
+  if (sideEl) sideEl.addEventListener("click", function (e) {
+    if (!mqNarrow.matches) return;
+    if (e.target.closest && e.target.closest(".casting,.new-cast,.brand-btn")) {
+      document.body.classList.remove("side-open");
+    }
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") document.body.classList.remove("side-open"); });
 
   /* ── account menu ── */
   var acctMenu = $("acctMenu"), acctBtn = $("acctBtn");

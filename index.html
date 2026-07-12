@@ -14,8 +14,8 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710l">
-<script src="./ds-base.js?v=20260710l"></script>
+<link rel="stylesheet" href="./styles.css?v=20260710m">
+<script src="./ds-base.js?v=20260710m"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -46,6 +46,9 @@
     white-space:nowrap;transition:width .18s,opacity .18s}
   .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
+  /* mobile drawer opener — lives in the topbar, hidden on desktop, shown ≤880px */
+  .side-open-btn{display:none;width:34px;height:34px;flex:none;place-items:center;border-radius:8px;color:var(--ink);transition:background .15s;margin-right:4px}
+  .side-open-btn:hover{background:var(--paper-dim)}
   body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
   body.rail .brand-btn{gap:0;padding:0;justify-content:center;width:100%}
   body.rail .brand-word{width:0;overflow:hidden;opacity:0}
@@ -423,13 +426,35 @@
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:880px){
-    .sidebar{display:none}
+    /* the sidebar becomes an off-canvas drawer instead of vanishing, so the
+       account chip, unit balance, history and "New inquiry" stay reachable on
+       phones and at high zoom. Opened by the topbar button, dismissed by the
+       scrim. */
+    .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:40;width:min(300px,86vw);padding:14px 12px 12px;
+      background:var(--paper);border-right:1px solid var(--line-soft);box-shadow:0 0 48px rgba(31,29,26,.18);
+      transform:translateX(-104%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    body.side-open .sidebar{transform:translateX(0)}
+    /* neutralise desktop "rail" collapse inside the drawer — always open full */
+    body.rail .sidebar{width:min(300px,86vw);padding-left:12px;padding-right:12px}
+    body.rail .sidebar .fade{opacity:1;pointer-events:auto;width:auto;overflow:visible}
+    body.rail .sidebar .brand-word{width:auto;overflow:visible;opacity:1}
+    body.rail .sidebar .castings{opacity:1;pointer-events:auto}
+    body.rail .sidebar .ledger{display:flex}
+    body.rail .sidebar .side-foot .who,body.rail .sidebar .side-foot .go{display:flex}
+    .side-scrim{position:fixed;inset:0;z-index:39;background:rgba(31,29,26,.30);opacity:0;pointer-events:none;transition:opacity .28s}
+    body.side-open .side-scrim{opacity:1;pointer-events:auto}
+    .side-open-btn{display:grid}
     .topbar,.thread,.composer-zone{padding-left:18px;padding-right:18px}
     .reading-body{font-size:16.5px}
     .plans{grid-template-columns:1fr}
     body.is-empty .thread{padding:0 18px 16px}
     body.is-empty .composer-zone{padding:0 18px 24px}
     body.is-empty .thread-inner{max-width:100%}
+  }
+  @media (max-width:700px){
+    /* the long Claude note crowds the phone topbar; the menu button + title +
+       units chip are what matter there */
+    .claude-note{display:none}
   }
   @media (max-width:560px){
     .topbar{padding:14px 18px 12px}
@@ -502,6 +527,7 @@
 <body class="is-empty">
 
 <div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<div class="side-scrim" id="sideScrim" aria-hidden="true"></div>
 
 <aside class="sidebar" data-screen-label="Landing sidebar">
   <div class="side-top">
@@ -552,6 +578,9 @@
 
 <main class="main" data-screen-label="Landing">
   <header class="topbar">
+    <button class="side-open-btn" id="sideOpenBtn" aria-label="Open menu" title="Menu">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h12M2 8h12M2 12h12"></path></svg>
+    </button>
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New inquiry</h1>
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
@@ -589,15 +618,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710l"></script>
-<script src="./casting-figure.js?v=20260710l"></script>
-<script src="./liuyao-engine.js?v=20260710l"></script>
-<script src="./liuyao-ai.js?v=20260710l"></script>
-<script src="./liuyao-chart.js?v=20260710l"></script>
-<script src="./prompt-engine.js?v=20260710l"></script>
-<script src="./prompt-router.js?v=20260710l"></script>
-<script src="./account.js?v=20260710l"></script>
-<script src="./chat-app.js?v=20260710l"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260710m"></script>
+<script src="./casting-figure.js?v=20260710m"></script>
+<script src="./liuyao-engine.js?v=20260710m"></script>
+<script src="./liuyao-ai.js?v=20260710m"></script>
+<script src="./liuyao-chart.js?v=20260710m"></script>
+<script src="./prompt-engine.js?v=20260710m"></script>
+<script src="./prompt-router.js?v=20260710m"></script>
+<script src="./account.js?v=20260710m"></script>
+<script src="./chat-app.js?v=20260710m"></script>
 <script>
 (function () {
   "use strict";

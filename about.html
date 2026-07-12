@@ -12,8 +12,8 @@
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710l">
-<script src="./ds-base.js?v=20260710l"></script>
+<link rel="stylesheet" href="./styles.css?v=20260710m">
+<script src="./ds-base.js?v=20260710m"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -30,10 +30,27 @@
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  /* ── main — no app sidebar here: this is a marketing/about page, not the app
-     shell, same treatment as login/privacy/terms/refund/pricing/404 ── */
-  .main{position:relative;z-index:1;flex:1;min-width:0;overflow-y:auto}
-  .wrapper{max-width:1080px;margin:0 auto;padding:16px 28px 64px}
+  /* ── full-page "deck": the About page scrolls one full screen at a time.
+     .main is the scroll container with y-mandatory snap; each .page is a full
+     viewport that snaps into place, and its content fades/rises in when the
+     page enters view and fades out as you scroll past — a page-turn feel. ── */
+  .main{position:relative;z-index:1;flex:1;min-width:0;height:100vh;height:100dvh;overflow-y:auto;
+    scroll-snap-type:y mandatory;scroll-behavior:smooth;overscroll-behavior-y:contain;
+    scrollbar-width:none}
+  .main::-webkit-scrollbar{width:0;height:0}
+  .page{position:relative;min-height:100vh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
+    display:flex;flex-direction:column;justify-content:center;padding:0}
+  .page-inner{width:100%;max-width:1080px;margin:0 auto;padding:64px 28px}
+  /* content rises + fades in when its page is in view, fades back out when not */
+  .page .rise{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+  .page.in-view .rise{opacity:1;transform:none}
+  .page .rise:nth-child(2){transition-delay:.06s}
+  .page .rise:nth-child(3){transition-delay:.12s}
+  /* scroll hint on the first page */
+  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--faint);
+    display:flex;flex-direction:column;align-items:center;gap:5px;font-size:var(--text-label);letter-spacing:var(--tracking-label);
+    animation:hintBob 2.2s ease-in-out infinite}
+  @keyframes hintBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
 
   /* inkline — shared hand-stroke hover underline */
   .inkline{position:relative}
@@ -47,7 +64,7 @@
      bordered, rounded-corner "hero card" with a cropped graphic inside it is the
      one visual pattern that reads as generated-template rather than part of this
      site — everywhere else (index/login) the range is a true full-bleed backdrop. ── */
-  .hero-slab{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:min(66vh,560px)}
+  .hero-slab{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
   .hero-slab .mtn-bg{position:absolute;inset:0;z-index:0;opacity:.96;
     -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%)}
   /* this page's own ridge palette (light→dark, matching the tokens above) instead of
@@ -124,12 +141,12 @@
     .tiles{grid-template-columns:1fr}
   }
   @media (max-width:760px){
-    .wrapper{padding:12px 16px 48px}
-    .hero-slab{min-height:min(52vh,420px)}
+    .page-inner{padding:48px 18px}
     .slab-nav{padding:16px 20px 0}
     .slab-nav .ghost{display:none}
     .hero-slab h1{padding:40px 20px 34px}
     .band{padding:40px 22px 36px}
+    .duo{padding:0}
   }
   @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
   @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
@@ -139,8 +156,8 @@
 
 <main class="main" data-screen-label="About us">
 
-  <!-- 1 · hero: nav + poster line float directly on the full-bleed range, no card -->
-  <section class="hero-slab">
+  <!-- page 1 · hero: nav + poster line float directly on the full-bleed range -->
+  <section class="page hero-slab">
     <div class="mtn-bg" data-vbw="1250" data-par="xMidYMax slice" style="--mtn-phase:-12s" aria-hidden="true"></div>
     <nav class="slab-nav" aria-label="Site">
       <span class="eyebrow"><b>&#9670;</b><span>About BourneWise</span></span>
@@ -150,18 +167,21 @@
       </span>
     </nav>
     <h1>Six lines, cast over the question you can&rsquo;t put down</h1>
+    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v9M4 8.5l4 4 4-4"></path></svg>
+    </div>
   </section>
 
-  <div class="wrapper">
-
-    <!-- 2 · the statement + the three practical cards -->
+  <!-- page 2 · the statement + the three practical cards -->
+  <section class="page">
+   <div class="page-inner">
     <section class="duo">
-      <div class="duo-l">
+      <div class="duo-l rise">
         <h2>A straight answer <span class="gild">with a spine</span> &mdash; ancient causal logic, spoken by a modern voice.</h2>
         <p>For twenty-six centuries the same instrument has been used to reason about hard decisions: cast six lines, read the figure they form, follow what the structure implies. A language model writes the reading &mdash; but the figure decides what it is allowed to say. If the casting says wait, no amount of wishful asking turns it into go.</p>
         <a class="mini" href="./pricing.html">See the full tariff</a>
       </div>
-      <div class="duo-r">
+      <div class="duo-r rise">
         <div class="m-card">
           <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 15c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
           <div><b>Stria 64 <span class="u">&middot; 300 Units</span></b>
@@ -179,9 +199,13 @@
         </div>
       </div>
     </section>
+   </div>
+  </section>
 
-    <!-- 3 · ink band: the temperament, in three tiles -->
-    <section class="band">
+  <!-- page 3 · ink band: the temperament, in three tiles -->
+  <section class="page">
+   <div class="page-inner">
+    <section class="band rise">
       <h2>How to take the answer</h2>
       <div class="tiles">
         <div class="tile">
@@ -203,20 +227,37 @@
       <a class="cta" href="./index.html">Begin the dialogue</a>
     </section>
 
-    <p class="fine">Your castings are encrypted at rest, never sold, never used to train &mdash; and burned when you say so.
+    <p class="fine rise">Your castings are encrypted at rest, never sold, never used to train &mdash; and burned when you say so.
       <a class="inkline" href="./privacy.html">The policy<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
       &nbsp;&middot;&nbsp;
       <a class="inkline" href="./terms.html">The terms<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
     </p>
 
-    <footer>
+    <footer class="rise">
       <span class="lbl" style="font-family: Spinnaker; font-weight: 600">BourneWise &middot; founded on classical logic</span>
       <span class="lbl"><a class="inkline" href="./index.html" style="font-family: Spinnaker; font-weight: 700">Back to BourneWise<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></span>
     </footer>
-
-  </div>
+   </div>
+  </section>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710l"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260710m"></script>
+<script>
+(function () {
+  // Fade/rise each page's content in when it snaps into view, back out when it
+  // leaves — the "text disappears, flip to the next page" feel.
+  var pages = document.querySelectorAll('.main .page');
+  if (!('IntersectionObserver' in window)) {
+    pages.forEach(function (p) { p.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { e.target.classList.toggle('in-view', e.isIntersecting && e.intersectionRatio > 0.4); });
+  }, { threshold: [0, 0.4, 0.75] });
+  pages.forEach(function (p) { io.observe(p); });
+  // first page visible immediately
+  if (pages[0]) pages[0].classList.add('in-view');
+})();
+</script>
 </body>
 </html>
