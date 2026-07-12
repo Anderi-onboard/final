@@ -43,7 +43,7 @@
     var foot = $("acctBtn");
     foot.querySelector(".avatar").textContent = a.signedIn ? (a.avatar || "EV") : "G";
     foot.querySelector("b").textContent = a.name;
-    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Not signed in";
+    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Sign in to begin";
     var menu = $("acctMenu");
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to keep your ledger";
@@ -788,6 +788,10 @@
   function closeMenu() { acctMenu.classList.remove("open"); acctBtn.setAttribute("aria-expanded", "false"); }
   acctBtn.addEventListener("click", function (e) {
     e.stopPropagation();
+    // A guest has no account menu to show — the footer IS the "login option".
+    // Login is only ever reached by an explicit click here (or by trying to
+    // send), never automatically on load. Signed-in users get the menu.
+    if (!S.account.signedIn) { location.href = "./login.html"; return; }
     var open = acctMenu.classList.toggle("open");
     acctBtn.setAttribute("aria-expanded", open ? "true" : "false");
   });

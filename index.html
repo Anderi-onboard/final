@@ -14,8 +14,8 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260712a">
-<script src="./ds-base.js?v=20260712a"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712b">
+<script src="./ds-base.js?v=20260712b"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -497,7 +497,19 @@
   body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 56px 20px}
   body.is-empty .thread-inner{max-width:680px;margin:0;width:100%;display:flex;flex-direction:column;align-items:center}
   body.is-empty .composer-zone{flex:none;padding:0 56px 36px;display:flex;flex-direction:column;align-items:center}
-  body.is-empty .composer{margin:0;max-width:680px;width:100%}
+  /* landing composer → a comic speech-bubble: pure-white fill, bold ink outline,
+     hard offset shadow (the manga-panel look), rounded-rect, and a little tail.
+     Smaller than the full-width chat pill. In chat mode the composer keeps its
+     frosted-glass pill — this white bubble is the homepage-only treatment. */
+  body.is-empty .composer{position:relative;overflow:visible;margin:0;max-width:544px;width:100%;
+    background:#fff;border:2px solid var(--ink);border-radius:22px;
+    box-shadow:4px 5px 0 rgba(42,32,22,.85);
+    backdrop-filter:none;-webkit-backdrop-filter:none;padding:8px 8px 8px 14px}
+  body.is-empty .composer:focus-within{border-color:var(--terracotta);box-shadow:4px 5px 0 rgba(181,80,44,.5)}
+  /* bubble tail — two stacked triangles (ink outline behind, white fill on top) */
+  body.is-empty .composer::before{content:"";position:absolute;left:40px;bottom:-16px;width:30px;height:18px;background:var(--ink);clip-path:polygon(0 0,100% 0,20% 100%)}
+  body.is-empty .composer::after{content:"";position:absolute;left:42px;bottom:-11px;width:25px;height:12px;background:#fff;clip-path:polygon(0 0,100% 0,20% 100%)}
+  body.is-empty .composer:focus-within::before{background:var(--terracotta)}
   body.is-empty .disclaimer{display:none}
   #heroEmpty{display:block;text-align:center;padding:0 0 28px}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
@@ -617,15 +629,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260712a"></script>
-<script src="./casting-figure.js?v=20260712a"></script>
-<script src="./liuyao-engine.js?v=20260712a"></script>
-<script src="./liuyao-ai.js?v=20260712a"></script>
-<script src="./liuyao-chart.js?v=20260712a"></script>
-<script src="./prompt-engine.js?v=20260712a"></script>
-<script src="./prompt-router.js?v=20260712a"></script>
-<script src="./account.js?v=20260712a"></script>
-<script src="./chat-app.js?v=20260712a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712b"></script>
+<script src="./casting-figure.js?v=20260712b"></script>
+<script src="./liuyao-engine.js?v=20260712b"></script>
+<script src="./liuyao-ai.js?v=20260712b"></script>
+<script src="./liuyao-chart.js?v=20260712b"></script>
+<script src="./prompt-engine.js?v=20260712b"></script>
+<script src="./prompt-router.js?v=20260712b"></script>
+<script src="./account.js?v=20260712b"></script>
+<script src="./chat-app.js?v=20260712b"></script>
 <script>
 (function () {
   "use strict";
