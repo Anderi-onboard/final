@@ -304,6 +304,16 @@
   .reading-stream-preview{font-family:var(--read);font-size:17px;line-height:1.7}
   .reading-insight p{font-size:16px;line-height:1.7}
   .reading-insight .turning{font-family:var(--read)}
+  /* markdown blocks inside a reading (headings / rules / lists / bold) rendered
+     by mdReading() — clean book-serif, Claude-style */
+  .reading-body .rd-h2{font-family:var(--read);font-size:18.5px;line-height:1.35;font-weight:700;letter-spacing:-.006em;color:var(--ink);margin:26px 0 9px}
+  .reading-body .rd-h3{font-family:var(--read);font-size:16px;line-height:1.4;font-weight:700;color:var(--ink);margin:20px 0 7px}
+  .reading-body .rd-hr{border:0;border-top:1px solid var(--line-soft);margin:22px 0}
+  .reading-body .rd-list{margin:0 0 16px;padding-left:22px}
+  .reading-body .rd-list li{font-family:var(--read);font-size:17px;line-height:1.66;margin:5px 0;padding-left:2px}
+  .reading-body .rd-list li::marker{color:var(--terracotta)}
+  .reading-body strong{font-weight:700;color:var(--ink)}
+  .reading-body em{font-style:italic}
 
   @media (prefers-reduced-motion:reduce){.reading-body .bw-rw{opacity:1;filter:none;transform:none;clip-path:none}.reading-body .rd-sec.rd-pending{opacity:1;transform:none}}
 

@@ -257,6 +257,48 @@
     if (sent.length <= 1) return sent;
     return [sent[0], sent.slice(1).join(" ")];
   }
+
+  /* Render the reading's markdown into clean HTML — the WHOLE reading, not just
+     the first two lines. The model writes # headings, ** bold **, --- rules and
+     - lists; the old renderer dumped only paras[0]+paras[1] as raw text, so a
+     full reading collapsed to two lines of literal "#"/"**" (the bug the user
+     saw). Inline: **bold**, *italic*, and |gilded| key terms. */
+  function mdInline(s) {
+    var h = esc(s);
+    h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    h = h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
+    var n = 0;
+    h = h.replace(/\|([^|]+)\|/g, function (_, t) { n++; return '<span class="gild' + (n % 2 === 0 ? " alt" : "") + '">' + t + "</span>"; });
+    return h;
+  }
+  function mdReading(text) {
+    var lines = String(text || "").replace(/\r/g, "").split("\n");
+    // drop a leading heading that only echoes the question ("# 你问：…", "# You asked…")
+    while (lines.length && !lines[0].trim()) lines.shift();
+    if (lines.length && /^#{1,6}\s*(你问|问[:：]|You asked|Your question|Q[:：])/i.test(lines[0].trim())) lines.shift();
+    var out = "", para = [], inList = false;
+    function flushP() { if (para.length) { out += '<p class="rd-para">' + mdInline(para.join(" ")) + "</p>"; para = []; } }
+    function closeL() { if (inList) { out += "</ul>"; inList = false; } }
+    for (var i = 0; i < lines.length; i++) {
+      var t = lines[i].trim();
+      if (!t) { flushP(); closeL(); continue; }
+      if (/^(---+|\*\*\*+|___+)$/.test(t)) { flushP(); closeL(); out += '<hr class="rd-hr">'; continue; }
+      var hm = t.match(/^(#{1,6})\s+(.*)$/);
+      if (hm) {
+        flushP(); closeL();
+        var lvl = hm[1].length;
+        var cls = lvl <= 1 ? "rd-title" : (lvl === 2 ? "rd-h2" : "rd-h3");
+        out += '<div class="' + cls + '">' + mdInline(hm[2]) + "</div>";
+        continue;
+      }
+      var lm = t.match(/^[-*+]\s+(.*)$/) || t.match(/^\d+[.)]\s+(.*)$/);
+      if (lm) { flushP(); if (!inList) { out += '<ul class="rd-list">'; inList = true; } out += "<li>" + mdInline(lm[1]) + "</li>"; continue; }
+      para.push(t);
+    }
+    flushP(); closeL();
+    return out;
+  }
+
   var V_LABEL = { favorable: "Favorable", unfavorable: "Unfavorable", mixed: "Mixed", unclear: "Unclear" };
   var V_TITLE = {
     favorable: "The figure supports it", unfavorable: "The figure resists it",
@@ -267,21 +309,15 @@
   function verdictHTML(msg) {
     var r = msg.reading || null;
 
+    // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
-      var paras = splitParas(msg.text);
-      var body = paras.length
-        ? '<p class="rd-lede stream-target">' + gildText(paras[0]) + '</p>' +
-          (paras[1] ? '<p class="rd-para stream-target">' + gildText(paras[1]) + '</p>' : "")
-        : "";
-      return '<div class="reading-body">' +
-        '<div class="rd-head"><h3 class="rd-title">The reading</h3></div>' + body + '</div>';
+      var prose = mdReading(msg.text);
+      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>';
     }
 
+    // Structured (legacy interpret) — full prose + key-line and timing sections.
     var badge = '<span class="rd-badge ' + r.verdict + '">' + (V_LABEL[r.verdict] || "Reading") + '</span>';
     var title = V_TITLE[r.verdict] || "The reading";
-    var paras2 = splitParas(r.reading);
-    var bodyP = (paras2[0] ? '<p class="rd-lede stream-target">' + gildText(paras2[0]) + '</p>' : "") +
-                (paras2[1] ? '<p class="rd-para stream-target">' + gildText(paras2[1]) + '</p>' : "");
     var keys = (r.keyLines || []).map(function (k) {
       return '<li><span class="rd-kl-n">Line ' + k.line + '</span><span class="rd-kl-note">' + esc(k.note || "") + '</span></li>';
     }).join("");
@@ -289,7 +325,7 @@
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
     return '<div class="reading-body">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
-      bodyP + keysSec + timeSec + '</div>';
+      mdReading(r.reading) + keysSec + timeSec + '</div>';
   }
   /* static, fully-painted reading (used on reload / conversation switch) */
   function readingHTML(msg) {
