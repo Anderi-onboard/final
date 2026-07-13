@@ -246,9 +246,9 @@
       var streamed = typeof opts.onDelta === "function" && canStream();
       var mainCall = streamed
         ? makeStreamComplete({ product: product, model: CONFIG.mainModel })({
-            system: result.system, messages: messages, max_tokens: 4096
+            system: result.system, messages: messages, max_tokens: 8192
           }, opts.onDelta)
-        : mainComplete({ system: result.system, messages: messages, max_tokens: 4096 });
+        : mainComplete({ system: result.system, messages: messages, max_tokens: 8192 });
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
@@ -303,7 +303,7 @@
           return mainComplete({
             system: result.system,
             messages: retryMessages,
-            max_tokens: 4096
+            max_tokens: 8192
           }).then(function (retryReading) {
             return {
               source: "router",

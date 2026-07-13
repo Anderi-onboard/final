@@ -580,12 +580,24 @@
        real tokens in ~1-2s instead of waiting out the whole pipeline in
        silence). Swapped out for the fully-structured verdictHTML() once the
        complete reading is in; see finish() below. */
-    var streamPreview = document.createElement("p");
-    streamPreview.className = "reading-stream-preview";
+    var streamPreview = document.createElement("div");
+    streamPreview.className = "reading-body reading-streaming";
     live.appendChild(streamPreview);
     threadInner.appendChild(live);
+    // Render the reading's real structure + font AS IT STREAMS — markdown →
+    // formatted HTML on every tick — instead of showing raw text and only
+    // reflowing once the whole reading has landed. Throttled (~90ms) so a long
+    // reading doesn't re-parse + repaint on every single token.
+    var streamLast = 0, streamPending = "", streamTimer = null;
+    function paintStream() {
+      streamTimer = null; streamLast = Date.now();
+      streamPreview.innerHTML = mdReading(streamPending);
+    }
     function onStreamDelta(chunk, fullSoFar) {
-      streamPreview.textContent = fullSoFar;
+      streamPending = fullSoFar;
+      var dt = Date.now() - streamLast;
+      if (dt >= 90) paintStream();
+      else if (!streamTimer) streamTimer = setTimeout(paintStream, 90 - dt);
     }
 
     /* Claude-style: lift the question to the top of the thread and reveal the full
@@ -649,6 +661,7 @@
       /* update only the chrome (balance + history) — leave the thread alone so the
          casting figure isn't wiped; the verdict then streams in naturally below it */
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
       revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
@@ -676,6 +689,7 @@
       else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
       else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading could not be completed — please try again shortly. These units were refunded.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
       var p = document.createElement("p");
