@@ -14,8 +14,8 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260712c">
-<script src="./ds-base.js?v=20260712c"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712d">
+<script src="./ds-base.js?v=20260712d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -288,6 +288,23 @@
   .reading-body .rd-kl-n{flex:none;font-weight:700;color:var(--terracotta);min-width:58px;letter-spacing:.02em}
   .reading-body .rd-kl-note{color:var(--dim)}
   .reading-body .rd-timing{font-size:14.5px;color:var(--dim);margin:0}
+
+  /* ── Claude-style reading type — the display BioRhyme slab read as clunky for
+     long readings. Swap the reading prose to a clean book serif at a
+     comfortable size, line-height and rhythm (like reading a well-set article);
+     the small uppercase eyebrows/section labels stay in the sans. These
+     override the heavier settings above. ── */
+  body:not(.is-empty) .thread-inner{--read:ui-serif,Georgia,"Iowan Old Style","Palatino Linotype","Noto Serif SC","Songti SC","Times New Roman",serif;font-family:var(--read)}
+  .reading-body{font-family:var(--read);font-size:17px;line-height:1.7;margin-top:16px;max-width:648px}
+  .reading-body .rd-title{font-family:var(--read);font-size:22px;line-height:1.28;font-weight:600;letter-spacing:-.012em}
+  /* one uniform measure for the whole column (lede + body align, like Claude) */
+  .reading-body .rd-lede{font-family:var(--read);font-size:18.5px;line-height:1.6;font-weight:600;letter-spacing:-.004em;margin:0 0 16px;max-width:none}
+  .reading-body .rd-para{font-family:var(--read);font-size:17px;line-height:1.7;margin:0 0 16px;max-width:none}
+  .reading-body .rd-sec{margin-top:28px;max-width:none}
+  .reading-stream-preview{font-family:var(--read);font-size:17px;line-height:1.7}
+  .reading-insight p{font-size:16px;line-height:1.7}
+  .reading-insight .turning{font-family:var(--read)}
+
   @media (prefers-reduced-motion:reduce){.reading-body .bw-rw{opacity:1;filter:none;transform:none;clip-path:none}.reading-body .rd-sec.rd-pending{opacity:1;transform:none}}
 
   /* ── embedded line-by-line analysis: figure floated into the prose ── */
@@ -643,15 +660,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260712c"></script>
-<script src="./casting-figure.js?v=20260712c"></script>
-<script src="./liuyao-engine.js?v=20260712c"></script>
-<script src="./liuyao-ai.js?v=20260712c"></script>
-<script src="./liuyao-chart.js?v=20260712c"></script>
-<script src="./prompt-engine.js?v=20260712c"></script>
-<script src="./prompt-router.js?v=20260712c"></script>
-<script src="./account.js?v=20260712c"></script>
-<script src="./chat-app.js?v=20260712c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712d"></script>
+<script src="./casting-figure.js?v=20260712d"></script>
+<script src="./liuyao-engine.js?v=20260712d"></script>
+<script src="./liuyao-ai.js?v=20260712d"></script>
+<script src="./liuyao-chart.js?v=20260712d"></script>
+<script src="./prompt-engine.js?v=20260712d"></script>
+<script src="./prompt-router.js?v=20260712d"></script>
+<script src="./account.js?v=20260712d"></script>
+<script src="./chat-app.js?v=20260712d"></script>
 <script>
 (function () {
   "use strict";

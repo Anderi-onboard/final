@@ -145,6 +145,21 @@
         flags: flags.join(" ") || "—"
       };
     });
+    // When the yongshen is off the board it lies hidden (伏神) under a flying
+    // line (飞神). Surface the flying/hidden facts the model needs to rule on
+    // whether it can come out (出伏) — otherwise it names 伏神 and stalls.
+    var yh = roles.yongHidden, yongStr = roles.yongshenKey + " — " + roles.yongElement.en;
+    if (yh) {
+      var fh = [];
+      if (yh.flyGeneratesHidden) fh.push("flying line feeds it (helps it surface)");
+      if (yh.hiddenControlsFly)  fh.push("it controls the flying line (can surface)");
+      if (yh.flyControlsHidden)  fh.push("flying line controls it (suppressed)");
+      yongStr += " — HIDDEN under line " + (yh.position + 1) +
+        ", as " + yh.hiddenBranch.el.en + " " + yh.hiddenBranch.animal +
+        "; flying line: " + yh.flyingRelative.en + " " + yh.flyingBranch.el.en + " " + yh.flyingBranch.animal +
+        (fh.length ? "; " + fh.join(", ") : "; no direct fly/hidden feed or control") +
+        " — must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too";
+    }
     return {
       date: board.meta.date + (board.meta.dateAuthoritative?"":" (approx)"),
       dayBranch: board.meta.dayPillar.branch.animal+" ("+board.meta.dayPillar.el.en+")",
@@ -153,7 +168,7 @@
       primary: (board.ben.name||"")+" — "+board.ben.upper.en+" over "+board.ben.lower.en+" · "+board.ben.palace.en+" "+board.ben.series.en+(board.ben.clash?" · Clashing":board.ben.combine?" · Combining":""),
       transformed: board.bian ? (board.bian.name||"")+" — "+board.bian.upper.en+" over "+board.bian.lower.en+(board.bian.clash?" · Clashing":board.bian.combine?" · Combining":"") : "none (still figure)",
       worldElement: board.lines[board.ben.worldLi].element.en,
-      yongshen: roles.yongshenKey+" — "+roles.yongElement.en+(roles.yongHidden?(" (HIDDEN under line "+(roles.yongHidden.position+1)+", as "+roles.yongHidden.hiddenBranch.el.en+" "+roles.yongHidden.hiddenBranch.animal+")"):""),
+      yongshen: yongStr,
       lines: L
     };
   }

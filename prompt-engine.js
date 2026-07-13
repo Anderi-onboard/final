@@ -80,7 +80,9 @@ Step 4 · WORLD-RESPONSE: World=self, Response=other/outcome. Generate/combine �
 
 Step 5 · SIX SPIRITS (qualify, don't determine fortune — only use if backend provides): Azure Dragon=joy/proper wealth; Vermilion Bird=speech/documents/news; Hook Snake=land/property/delay; Teng Snake=anxiety/strangeness/entanglement; White Tiger=ferocity/illness/decisiveness; Dark Warrior=secrecy/theft/ambiguity.
 
-Step 6 · SYNTHESIZE VERDICT: One clear verdict sentence: yongshen state + moving-line effects + world-response → succeed/fail/auspicious/inauspicious/advance/hold. No fence-sitting. INAUSPICIOUS BUFFER: serious bad readings (major illness, big loss) must include "the one thing you can control right now to reduce damage" (illness: see a doctor today — NOT a diagnosis). Never fatalistic. Buffer must be free/self-directed, never point to paid services.`;
+Step 6 · SYNTHESIZE VERDICT: One clear verdict sentence: yongshen state + moving-line effects + world-response → succeed/fail/auspicious/inauspicious/advance/hold. No fence-sitting. INAUSPICIOUS BUFFER: serious bad readings (major illness, big loss) must include "the one thing you can control right now to reduce damage" (illness: see a doctor today — NOT a diagnosis). Never fatalistic. Buffer must be free/self-directed, never point to paid services.
+
+HIDDEN SPIRIT (伏神) RESOLUTION: when the yongshen is absent from the six lines it lies hidden under a flying line (given in the board) — this applies even with no moving line. Never just name it: rule on whether it surfaces (出伏) — month/day support, flying line feeds it, it controls the flying line, or the day clashes the flying line loose — vs stays trapped (伏而不出) — flying line controls it, it drains into the flying line, or it rests/voids/entombs. Trapped = the thing is absent/out of reach now; surfacing = latent but reachable, usually delayed. Fold that verdict into Step 6.`;
 
   // ─── METHOD: STRIA64 FIVE ELEMENTS ────────────────────────────
   SEGMENTS.stria_method = `CORE METHOD: I Ching Five-Element Verdict Framework:
@@ -95,7 +97,9 @@ Step 6 · SYNTHESIZE VERDICT: One clear verdict sentence: yongshen state + movin
 
 5. MOVING LINE POSITION: Proper position (yang line in odd position / yin in even = settled, else displaced)? Central (lines 2/5 = centered, strong and balanced)? Responsive (1-4/2-5/3-6 opposite sex = distant support; same sex = no help)? Central + proper + responsive = strong; displaced + no response = exposed.
 
-READING STRUCTURE: Present (primary hexagram) → Process (mutual hexagram) → Direction (transformed hexagram).`;
+READING STRUCTURE: Present (primary hexagram) → Process (mutual hexagram) → Direction (transformed hexagram).
+
+HIDDEN SPIRIT (伏神) — valid on a single hexagram, no moving line needed: if the yongshen is absent from the six lines it lies hidden under a flying line (given in the board). NEVER just name it and move on — resolve it. It can surface (出伏) when month/day support it, when the flying line feeds it, when it controls the flying line, or when the day clashes the flying line loose; it stays trapped (伏而不出) when the flying line controls it, when it drains into the flying line, or when it rests/voids/entombs. Trapped hidden yongshen = the thing is absent or out of reach now; surfacing hidden yongshen = latent but reachable, usually with delay. State which, and what it means for the answer.`;
 
   // ─── UX RULES ─────────────────────────────────────────────────
   SEGMENTS.ux_core = `UX RULES:
