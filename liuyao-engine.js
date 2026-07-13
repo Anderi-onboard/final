@@ -439,6 +439,17 @@
       });
     });
 
+    // 月卦身 (gua-shen / body of the matter) — the subject the whole question
+    // hangs on. Classic rule: yang world line counts the body-branch from 子 at
+    // the first line; yin world line counts from 午. If that branch appears on a
+    // line, that line IS the body (卦身上卦); if not, 卦身不上卦 — the matter has
+    // no clear anchor/subject yet.
+    var wl = pal.worldLi;
+    var guashenBi = ((lines[wl] && lines[wl].yang) ? wl : wl + 6) % 12;
+    var guashenLines = [];
+    L.forEach(function(l, idx){ if (l.branch.bi === guashenBi) guashenLines.push(idx + 1); });
+    var guashen = { branch: brObj(guashenBi), onBoard: guashenLines.length > 0, lines: guashenLines };
+
     // hexagram-level relationships
     var benClash=!!SIX_CLASH[benPat], benCombine=!!SIX_COMBINE[benPat];
     var bianClash=false, bianCombine=false;
@@ -490,7 +501,7 @@
         full: bianFull
       } : null,
       lines: L, moving: changeIdx.slice().sort(function(a,b){return a-b;}),
-      hidden: hidden, sanhe: sanhe, reading: null
+      hidden: hidden, sanhe: sanhe, guashen: guashen, reading: null
     };
   }
 

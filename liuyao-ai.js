@@ -168,9 +168,16 @@
         (s.hasMoving ? " [contains a moving line — active]" : "");
     }).join("; ") || "none";
 
+    // 月卦身 — the body/subject of the matter
+    var gs = board.guashen;
+    var guashen = gs
+      ? (gs.branch.el.en + " " + gs.branch.animal + (gs.onBoard ? (" — on line " + gs.lines.join("/") + " (卦身上卦)") : " — NOT on the board (卦身不上卦: no clear subject/anchor yet)"))
+      : "n/a";
+
     return {
       date: board.meta.date + (board.meta.dateAuthoritative?"":" (approx)"),
       sanhe: sanhe,
+      guashen: guashen,
       dayBranch: board.meta.dayPillar.branch.animal+" ("+board.meta.dayPillar.el.en+")",
       monthElement: board.meta.monthBranch.el.en,
       voidBranches: board.meta.xunkong.map(function(b){return b.animal;}).join(", "),
