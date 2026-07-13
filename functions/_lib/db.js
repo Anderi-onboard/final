@@ -93,6 +93,75 @@ export async function setPlan(db, userId, plan) {
   return { ok: true, plan, units: bal };
 }
 
+// ── Payments (provider-agnostic fulfillment) ─────────────────────────────
+// The webhook layer normalizes each provider's payload into these calls, so
+// the money→units/plan logic lives in ONE place and reuses grantUnits/setPlan.
+
+// Idempotency guard: record that we've handled a provider event. Returns true
+// the FIRST time an event id is seen, false on any retry/duplicate — so a
+// re-delivered webhook can never grant twice. Call this before fulfilling.
+export async function markEvent(db, provider, eventId, type, userId) {
+  if (!eventId) return true; // nothing to dedupe on — let caller proceed
+  try {
+    await db.prepare('INSERT INTO billing_events (event_id,provider,type,user_id,created_at) VALUES (?,?,?,?,?)')
+      .bind(String(eventId), provider || 'unknown', type || null, userId || null, now()).run();
+    return true;
+  } catch (e) {
+    return false; // PRIMARY KEY conflict → already processed
+  }
+}
+
+// Map a provider customer id back to a user via a known subscription row.
+export async function getUserByCustomer(db, provider, customerId) {
+  if (!customerId) return null;
+  const row = await db.prepare(
+    'SELECT user_id FROM subscriptions WHERE provider=? AND customer_id=? ORDER BY updated_at DESC LIMIT 1'
+  ).bind(provider, String(customerId)).first();
+  return row ? getUser(db, row.user_id) : null;
+}
+
+// One-time top-up (a unit pack): grant the units.
+export async function fulfillTopup(db, userId, units, reason) {
+  const n = Math.max(0, parseInt(units, 10) || 0);
+  if (!n) return { ok: false, error: 'zero units' };
+  return grantUnits(db, userId, n, reason || 'topup:paid');
+}
+
+// Subscription created/renewed: upsert the subscription row, set the plan, and
+// grant that plan's monthly units. Idempotency is the caller's job (markEvent),
+// so a single renewal event grants exactly one month.
+export async function fulfillSubscription(db, s) {
+  const { userId, provider, subscriptionId, customerId, plan, status, periodEnd } = s || {};
+  if (!userId || !PLAN_GRANT.hasOwnProperty(plan) || plan === 'free') {
+    return { ok: false, error: 'bad subscription' };
+  }
+  const t = now();
+  await db.prepare(
+    'INSERT INTO subscriptions (id,user_id,provider,customer_id,plan,status,period_end,created_at,updated_at) ' +
+    'VALUES (?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET ' +
+    'plan=excluded.plan, status=excluded.status, period_end=excluded.period_end, ' +
+    'customer_id=excluded.customer_id, updated_at=excluded.updated_at'
+  ).bind(String(subscriptionId || (provider + ':' + userId)), userId, provider || 'unknown',
+         customerId ? String(customerId) : null, plan, status || 'active', periodEnd || null, t, t).run();
+  // active/trialing → apply the plan + monthly grant; other statuses just record
+  if (!status || status === 'active' || status === 'trialing') {
+    return setPlan(db, userId, plan);
+  }
+  return { ok: true, plan, recorded: true };
+}
+
+// Subscription canceled / expired / unpaid: mark it and drop the user to free
+// (units already granted are kept — they're paid for).
+export async function expireSubscription(db, subscriptionId, status) {
+  const t = now();
+  const row = await db.prepare('SELECT user_id FROM subscriptions WHERE id=?').bind(String(subscriptionId)).first();
+  await db.prepare('UPDATE subscriptions SET status=?, updated_at=? WHERE id=?')
+    .bind(status || 'canceled', t, String(subscriptionId)).run();
+  if (!row) return { ok: false, error: 'no subscription' };
+  await db.prepare('UPDATE users SET plan=?, updated_at=? WHERE id=?').bind('free', t, row.user_id).run();
+  return { ok: true, userId: row.user_id, plan: 'free' };
+}
+
 export async function listCastings(db, userId, limit) {
   const r = await db.prepare(
     'SELECT id,title,method,payload,created_at FROM castings WHERE user_id=? ORDER BY created_at DESC LIMIT ?'
