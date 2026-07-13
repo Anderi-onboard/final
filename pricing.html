@@ -12,8 +12,8 @@
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260712i">
-<script src="./ds-base.js?v=20260712i"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712j">
+<script src="./ds-base.js?v=20260712j"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -304,8 +304,8 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260712i"></script>
-<script src="./account.js?v=20260712i"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712j"></script>
+<script src="./account.js?v=20260712j"></script>
 <script>
 (function () {
   "use strict";
@@ -343,26 +343,49 @@
     });
   }
 
+  // Try the real hosted checkout first. When payments aren't configured yet
+  // (503) or the call fails, fall back to the local demo grant so the page keeps
+  // working exactly as before. 401 → the user needs a real account first.
+  function startCheckout(sku, fallback) {
+    fetch("/api/checkout", {
+      method: "POST", headers: { "content-type": "application/json" },
+      credentials: "same-origin", body: JSON.stringify({ sku: sku })
+    }).then(function (r) {
+      if (r.status === 401) { toast("Sign in to purchase."); setTimeout(function () { location.href = "./login.html"; }, 900); return null; }
+      if (r.status === 503) { if (fallback) fallback(); return null; }   // payments not live yet
+      return r.json().catch(function () { return null; });
+    }).then(function (d) {
+      if (d && d.url) { location.href = d.url; }
+      else if (d && d.error) { if (fallback) fallback(); }
+    }).catch(function () { if (fallback) fallback(); });
+  }
+
   document.querySelectorAll(".plan .choose").forEach(function (b) {
     b.addEventListener("click", function () {
       if (b.classList.contains("current")) return;
       var plan = b.closest(".plan").getAttribute("data-plan");
       var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
-      var s = A.state();
-      if (!s.account.signedIn) { s.account.signedIn = true; s.account.name = "Elias Vance"; s.account.email = "elias@iname.com"; s.account.avatar = "EV"; }
-      s.account.plan = plan;
-      s.units += grant;
-      if (annual) s.account.billing = "annual";
-      A.save(s); paint();
-      var label = A.planName(plan) + (annual ? " (annual)" : "") + " activated · +" + grant.toLocaleString("en-US") + " units";
-      toast(label);
+      function demo() {
+        var s = A.state();
+        if (!s.account.signedIn) { s.account.signedIn = true; s.account.name = "Elias Vance"; s.account.email = "elias@iname.com"; s.account.avatar = "EV"; }
+        s.account.plan = plan;
+        s.units += grant;
+        if (annual) s.account.billing = "annual";
+        A.save(s); paint();
+        toast(A.planName(plan) + (annual ? " (annual)" : "") + " activated · +" + grant.toLocaleString("en-US") + " units");
+      }
+      // the free trial never goes through checkout; paid plans do (with demo fallback)
+      if (plan === "free") { demo(); return; }
+      startCheckout(plan, demo);
     });
   });
   document.querySelectorAll(".pack").forEach(function (b) {
     b.addEventListener("click", function () {
       var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
-      var s = A.state(); s.units += grant; A.save(s); paint();
-      toast("+" + grant.toLocaleString("en-US") + " units added to your balance.");
+      startCheckout("pack" + grant, function () {
+        var s = A.state(); s.units += grant; A.save(s); paint();
+        toast("+" + grant.toLocaleString("en-US") + " units added to your balance.");
+      });
     });
   });
 

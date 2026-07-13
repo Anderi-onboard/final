@@ -130,8 +130,14 @@ export async function fulfillTopup(db, userId, units, reason) {
 // Subscription created/renewed: upsert the subscription row, set the plan, and
 // grant that plan's monthly units. Idempotency is the caller's job (markEvent),
 // so a single renewal event grants exactly one month.
+// `grant` distinguishes the two subscription events that both carry plan info:
+//   - a PAYMENT event (initial or renewal) → grant: true  → set plan + add the
+//     month's units (the money actually moved).
+//   - a lifecycle create/update event      → grant: false → set the plan flag
+//     only, no units — so the plan shows correctly without double-granting the
+//     month that the payment event already granted.
 export async function fulfillSubscription(db, s) {
-  const { userId, provider, subscriptionId, customerId, plan, status, periodEnd } = s || {};
+  const { userId, provider, subscriptionId, customerId, plan, status, periodEnd, grant } = s || {};
   if (!userId || !PLAN_GRANT.hasOwnProperty(plan) || plan === 'free') {
     return { ok: false, error: 'bad subscription' };
   }
@@ -143,11 +149,11 @@ export async function fulfillSubscription(db, s) {
     'customer_id=excluded.customer_id, updated_at=excluded.updated_at'
   ).bind(String(subscriptionId || (provider + ':' + userId)), userId, provider || 'unknown',
          customerId ? String(customerId) : null, plan, status || 'active', periodEnd || null, t, t).run();
-  // active/trialing → apply the plan + monthly grant; other statuses just record
-  if (!status || status === 'active' || status === 'trialing') {
-    return setPlan(db, userId, plan);
-  }
-  return { ok: true, plan, recorded: true };
+  const active = (!status || status === 'active' || status === 'trialing' || status === 'on_trial');
+  if (!active) return { ok: true, plan, recorded: true };
+  if (grant) return setPlan(db, userId, plan);              // plan + the month's units
+  await db.prepare('UPDATE users SET plan=?, updated_at=? WHERE id=?').bind(plan, t, userId).run();
+  return { ok: true, plan };
 }
 
 // Subscription canceled / expired / unpaid: mark it and drop the user to free
