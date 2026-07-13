@@ -402,7 +402,19 @@
   function routedReading(question, spec, board, methodId, history, onDelta) {
     if (!window.BWPromptRouter) return null; // router module missing → caller's own fallback
     var product = methodId === "stria" ? "stria" : "sortis";
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 45000); });
+    // STALL watchdog, not a flat deadline. The pipeline (route → stream → QC)
+    // legitimately runs well past 45s for a deep Opus reading, so we DON'T cap
+    // total time — the old flat 45s killed real casts that were still streaming
+    // ("解读超时" on a paid reading). Instead fail only if it goes silent: no
+    // first token, or the stream stops advancing, for STALL ms. Every streamed
+    // token resets the clock, so a slow-but-alive reading survives.
+    var STALL = 60000, timer = null, fireTimeout = null;
+    var guard = new Promise(function (res) {
+      fireTimeout = function () { res({ __timeout: true }); };
+      timer = setTimeout(fireTimeout, STALL);
+    });
+    function bump() { if (timer) clearTimeout(timer); timer = setTimeout(fireTimeout, STALL); }
+    var wrappedDelta = function (t, full) { bump(); if (onDelta) onDelta(t, full); };
     var run = BWPromptRouter.interpret({
       question: question,
       product: product,
@@ -411,12 +423,13 @@
       category: "general",
       // no lang override — BWPromptRouter detects it from the question text
       history: history || [],
-      onDelta: onDelta
+      onDelta: wrappedDelta
     });
     // Errors propagate (with their HTTP status) instead of collapsing to null —
     // downstream used to "heal" that with canned/mock prose, so the user paid
     // units and got a placeholder. send()'s failure handler refunds + explains.
     return Promise.race([run, guard]).then(function (result) {
+      if (timer) clearTimeout(timer);
       if (result && result.__timeout) return result;
       if (!result || !result.reading) return { __error: { message: "empty reading from pipeline" } };
       return {
@@ -426,7 +439,7 @@
         _route: result.route,
         _qc: result.qcResult
       };
-    }).catch(function (err) { return { __error: err || { message: "pipeline failed" } }; });
+    }).catch(function (err) { if (timer) clearTimeout(timer); return { __error: err || { message: "pipeline failed" } }; });
   }
 
   function sortisReading(question, spec, board, history, onDelta) {
@@ -453,7 +466,7 @@
     }
     var lang = /[一-鿿]/.test(question) ? "zh" : "en";
     function pack(reading) { return { text: (reading && reading.reading) || "", board: board, reading: reading }; }
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 45000); });
+    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 90000); });
     var run;
     try {
       run = BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: lang });
