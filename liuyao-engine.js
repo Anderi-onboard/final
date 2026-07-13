@@ -407,6 +407,38 @@
       }
     });
 
+    // 三合局 — three of the six lines whose branches form a triple-combination
+    // (申子辰→水 / 亥卯未→木 / 寅午戌→火 / 巳酉丑→金) fuse into one elemental bloc
+    // that acts together, far stronger than any single line. A half-frame (半合)
+    // is two of the three WITH the 帝旺 peak present; it completes when the third
+    // branch arrives (day/month/moving line) — itself a natural 应期.
+    var SANHE = [
+      { peak:0, members:[8,0,4], el:4 },   // 申子辰 → 水
+      { peak:3, members:[11,3,7], el:0 },  // 亥卯未 → 木
+      { peak:6, members:[2,6,10], el:1 },  // 寅午戌 → 火
+      { peak:9, members:[5,9,1], el:3 }    // 巳酉丑 → 金
+    ];
+    var byBranch = {};
+    L.forEach(function(l, idx){ var b=l.branch.bi; (byBranch[b]=byBranch[b]||[]).push(idx); });
+    var sanhe = [];
+    SANHE.forEach(function(g){
+      var hit = g.members.filter(function(b){ return byBranch[b]; });
+      var full = hit.length === 3;
+      var half = hit.length === 2 && hit.indexOf(g.peak) >= 0;
+      if (!full && !half) return;
+      var linePos = [];
+      hit.forEach(function(b){ byBranch[b].forEach(function(p){ linePos.push(p); }); });
+      var missBr = g.members.filter(function(b){ return hit.indexOf(b) < 0; });
+      sanhe.push({
+        type: full ? "full" : "half",
+        element: elObj(g.el),
+        branches: hit.map(function(b){ return brObj(b); }),
+        lines: linePos.map(function(p){ return p+1; }).sort(function(a,b){return a-b;}),
+        missing: missBr.length ? brObj(missBr[0]) : null,
+        hasMoving: linePos.some(function(p){ return L[p].moving; })
+      });
+    });
+
     // hexagram-level relationships
     var benClash=!!SIX_CLASH[benPat], benCombine=!!SIX_COMBINE[benPat];
     var bianClash=false, bianCombine=false;
@@ -458,7 +490,7 @@
         full: bianFull
       } : null,
       lines: L, moving: changeIdx.slice().sort(function(a,b){return a-b;}),
-      hidden: hidden, reading: null
+      hidden: hidden, sanhe: sanhe, reading: null
     };
   }
 

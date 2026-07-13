@@ -160,8 +160,17 @@
         (fh.length ? "; " + fh.join(", ") : "; no direct fly/hidden feed or control") +
         " — must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too";
     }
+    // 三合局 — elemental blocs formed by three (or two-plus-peak) line branches
+    var sanhe = (board.sanhe || []).map(function (s) {
+      return s.type + " " + s.element.en + " bloc on lines " + s.lines.join("/") +
+        " (" + s.branches.map(function (b) { return b.animal; }).join("+") +
+        (s.type === "half" && s.missing ? ", completes when " + s.missing.animal + " arrives" : "") + ")" +
+        (s.hasMoving ? " [contains a moving line — active]" : "");
+    }).join("; ") || "none";
+
     return {
       date: board.meta.date + (board.meta.dateAuthoritative?"":" (approx)"),
+      sanhe: sanhe,
       dayBranch: board.meta.dayPillar.branch.animal+" ("+board.meta.dayPillar.el.en+")",
       monthElement: board.meta.monthBranch.el.en,
       voidBranches: board.meta.xunkong.map(function(b){return b.animal;}).join(", "),
