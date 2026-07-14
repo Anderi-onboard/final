@@ -722,30 +722,17 @@
      stream the verdict word-by-word and fade the line-by-line analysis in ── */
   function revealReading(node, msg, convId, idx) {
     var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function keepTop() {
-      var thread = $("thread");
-      var users = thread.querySelectorAll(".msg-user");
-      var lastUser = users[users.length - 1];
-      if (lastUser) {
-        var tr = thread.getBoundingClientRect(), ur = lastUser.getBoundingClientRect();
-        thread.scrollTo({ top: thread.scrollTop + (ur.top - tr.top) - 24, behavior: "smooth" });
-      }
-    }
     return new Promise(function (resolve) {
       /* the casting animation already drew the annotated figure IN PLACE (cast());
-         leave it exactly where it is and append the structured verdict below it. */
+         leave it exactly where it is and append the structured verdict below it.
+         NO auto-scroll here — the old scroll-down-to-the-verdict jerked the view
+         back after the send had lifted the question up (the "上下回滚" complaint);
+         the reader keeps full control of the viewport. */
       node.classList.remove("casting-live");
       var frag = document.createElement("div");
       frag.innerHTML = verdictHTML(msg);
       while (frag.firstChild) node.appendChild(frag.firstChild);
       var bodyEl = node.querySelector(".reading-body");
-      /* bring the verdict into view so its word-stream is actually seen (the figure
-         keeps looping above it; the user can scroll back up to watch the board) */
-      var thread = $("thread");
-      if (bodyEl && thread) {
-        var br = bodyEl.getBoundingClientRect(), tr = thread.getBoundingClientRect();
-        thread.scrollTo({ top: thread.scrollTop + (br.top - tr.top) - 96, behavior: "smooth" });
-      }
       if (reduced || !bodyEl) { resolve(); return; }
       streamReading(bodyEl, function () {
         bodyEl.classList.add("bw-streamed");

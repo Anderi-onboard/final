@@ -205,10 +205,12 @@
     return '<span class="bw-tri-sym">'+tri.sym+'</span>'+
            '<span class="bw-tri-en">'+tri.en+'</span>';
   }
+  /* refined transform arrow: a long hairline shaft with a small open head —
+     no squiggle, no fat chevron. Reads as a typographic mark, not a doodle. */
   function arrowSVG(){
-    return '<svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="var(--faint)" '+
-      'stroke-width="1.4" stroke-linecap="round" aria-hidden="true">'+
-      '<path d="M2 8 C10 3 18 13 26 8"></path><path d="M21 4l5 4-5 4"></path></svg>';
+    return '<svg width="34" height="12" viewBox="0 0 34 12" fill="none" stroke="var(--ghost)" '+
+      'stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+
+      '<path d="M2 6 H 31"></path><path d="M26.5 2.8 L 31 6 L 26.5 9.2"></path></svg>';
   }
   function esc(s){
     return String(s==null?"":s).replace(/[&<>]/g,function(c){
@@ -435,7 +437,10 @@
     s.textContent = [
       /* root */
       ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px}",
-      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
+      /* pinned to the site sans — without this the header INHERITS the reading
+         column's book-serif (--read), which is exactly the off-brand face the
+         design bans. Labels are Spinnaker everywhere else on the site. */
+      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
@@ -464,19 +469,19 @@
       /* ── FIGURES ── */
       ".bw-figs{display:inline-flex;align-items:center;gap:18px}",
       ".bw-fig{display:block;overflow:visible}",
-      ".bw-fig .bw-ln{opacity:0;transform:translateY(4px);cursor:pointer}",
+      ".bw-fig .bw-ln{opacity:0;transform:translateY(4px);cursor:default}",
       /* Line reveal: gentle float-in from below — classical, unhurried */
       ".bw-fig .bw-ln.in{animation:bwLineFloat .8s cubic-bezier(.22,.7,.28,1) forwards}",
-      ".bw-fig .bw-ln.shown{opacity:1;transform:translateY(0)}",
-      ".bw-fig:hover .bw-ln.shown{opacity:.3;transition:opacity .2s}",
-      ".bw-fig:hover .bw-ln.shown:hover{opacity:1;transition:none}",
+      ".bw-fig .bw-ln.shown{opacity:1;transform:translateY(0);transition:transform .4s cubic-bezier(.22,.7,.28,1),filter .4s ease}",
+      /* micro-interaction: the hovered line alone breathes — a hair of lift and
+         a warm underglow. Nothing else dims, nothing jumps. */
+      ".bw-fig .bw-ln.shown:hover{transform:translateY(-1px);filter:drop-shadow(0 2px 4px rgba(181,80,44,.2))}",
       "@keyframes bwLineFloat{",
         "0%{opacity:0;transform:translateY(4px)}",
         "30%{opacity:.6}",
         "70%{transform:translateY(-1px)}",
         "100%{opacity:1;transform:translateY(0)}",
       "}",
-      ".bw-fig:hover .bw-ln.shown:hover{opacity:1 !important;filter:drop-shadow(0 0 3px rgba(181,80,44,.35));transition:none}",
       ".bw-fig-relating{opacity:0;transition:opacity .7s ease}",
       ".bw-fig-relating.lit{opacity:1}",
 
@@ -492,7 +497,7 @@
       ".bw-pair-arrow{display:flex;align-items:center;padding-bottom:18px}",
       ".bw-pair{display:inline-flex;align-items:center;gap:14px}",
       ".bw-fig-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:5px;",
-        "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1);cursor:crosshair}",
+        "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1)}",
       ".bw-fig-glyph{display:block}",
       ".bw-fig-name{font-family:var(--serif,serif);font-size:13px;color:var(--ink)}",
       ".bw-fig-name.relating{color:var(--prussian)}",
@@ -526,7 +531,7 @@
       "@media (max-width:600px){.bw-zg{flex-direction:column;align-items:stretch;gap:16px}.bw-zg-svg{width:100%}}",
 
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
-      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:9px;max-width:100%}",
+      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:100%}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
       ".bw-af-el{font-family:var(--serif);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
@@ -537,7 +542,7 @@
       ".bw-af-tri-en{font-family:var(--sans);font-size:8px;letter-spacing:.12em;fill:var(--faint)}",
       ".bw-af-name{font-family:var(--serif);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
       ".bw-af-arrow{fill:none;stroke-width:1.5;opacity:.5;stroke-linecap:round}",
-      ".bw-af-tarrow{fill:none;stroke:var(--faint);stroke-width:1.4;stroke-linecap:round}",
+      ".bw-af-tarrow{fill:none;stroke:var(--ghost);stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;opacity:.85}",
       ".bw-af-branch{opacity:1}",
       ".bw-af-legend{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft);width:100%}",
       ".bw-af-legend span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}",
@@ -930,8 +935,8 @@
     var tarrow = "", bian = "", bbranch = "";
     if (hasBian) {
       var ty = (cy(5) + cy(0)) / 2;
-      tarrow = '<path class="bw-af-tarrow" d="M 224 ' + ty + ' C 234 ' + (ty - 5) + ' 246 ' + (ty + 5) + ' 256 ' + ty + '"></path>' +
-        '<path class="bw-af-tarrow" d="M 251 ' + (ty - 4) + ' l 5 4 l -5 4"></path>';
+      tarrow = '<path class="bw-af-tarrow" d="M 225 ' + ty + ' L 255 ' + ty + '"></path>' +
+        '<path class="bw-af-tarrow" d="M 250.8 ' + (ty - 3) + ' L 255 ' + ty + ' L 250.8 ' + (ty + 3) + '"></path>';
       var bl = spec.transformedLines;
       for (var li2 = 5; li2 >= 0; li2--) {
         var yc2 = cy(li2), d2 = ((5 - li2) * 0.07 + 0.15).toFixed(3);
@@ -1101,8 +1106,8 @@
     var tarrow = "", bian = "", bbranch = "";
     if (hasBian) {
       var ty = (cy(5) + cy(0)) / 2;
-      tarrow = '<path class="bw-af-tarrow" d="M ' + (arrowCx - 16) + ' ' + ty + ' C ' + (arrowCx - 6) + ' ' + (ty - 5) + ' ' + (arrowCx + 6) + ' ' + (ty + 5) + ' ' + (arrowCx + 16) + ' ' + ty + '"></path>' +
-        '<path class="bw-af-tarrow" d="M ' + (arrowCx + 11) + ' ' + (ty - 4) + ' l 5 4 l -5 4"></path>';
+      tarrow = '<path class="bw-af-tarrow" d="M ' + (arrowCx - 15) + ' ' + ty + ' L ' + (arrowCx + 15) + ' ' + ty + '"></path>' +
+        '<path class="bw-af-tarrow" d="M ' + (arrowCx + 10.8) + ' ' + (ty - 3) + ' L ' + (arrowCx + 15) + ' ' + ty + ' L ' + (arrowCx + 10.8) + ' ' + (ty + 3) + '"></path>';
       for (var li2 = 5; li2 >= 0; li2--) {
         var b = bf[li2], yc2 = cy(li2);
         bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (WD[li2] + 0.5) + 's;--bd:' + (PH[li2] - 0.6).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, b.yang, "var(--prussian)", WD[li2] + 0.5, li2 * 0.9 + 0.6, flow) + '</g>';
