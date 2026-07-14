@@ -393,41 +393,47 @@
     var ordinals = ["First","Second","Third","Fourth","Fifth","Sixth"];
 
     return new Promise(function(resolve){
-      /* pacing: a line lands every 620ms and its ink takes 950ms to settle, so
-         each stroke finishes breathing before the next begins (the old 360ms
-         cadence with a 420ms animation overlapped strokes mid-flight \u2014 that was
-         the staccato). The transformed figure waits a full 750ms beat, then
-         arrives at a calmer 500ms cadence \u2014 an arrival, not a dump. */
-      var PER = 620, i = 0;
+      /* ONE unbroken rhythm \u2014 no phases. All twelve strokes (primary six, then
+         transformed six) land on the same steady 620ms heartbeat with zero
+         pause between the figures, and the annotations begin blooming while
+         the final strokes are still settling \u2014 a single continuous unfolding,
+         never "part one, stop, part two". Each stroke's 950ms settle always
+         finishes before its successor's midpoint, so nothing collides. */
+      var PER = 620;
+      var seq = benLn.concat(bianLn), k = 0;
       if (status) status.textContent = "Casting\u2026";
-      setTimeout(stepBen, 480);
+      setTimeout(step, 480);
 
-      function stepBen(){
-        if (i >= benLn.length){ setTimeout(stepBian, 750); return; }
-        if (status) status.textContent = ordinals[i]+" line\u2026";
-        benLn[i].classList.add("in");
-        i++;
-        setTimeout(stepBen, PER);
+      function step(){
+        if (k >= seq.length){ finishCast(); return; }
+        if (status) {
+          status.textContent = k < benLn.length
+            ? ordinals[k] + " line\u2026"
+            : "Transforming\u2026";
+        }
+        seq[k].classList.add("in");
+        k++;
+        /* annotations start blooming two strokes before the end \u2014 the finish
+           overlaps the last ink instead of waiting for it */
+        if (k === seq.length - 1) beginBloom();
+        setTimeout(step, PER);
       }
-      function stepBian(){
-        if (!bianLn.length){ finishCast(); return; }
-        if (status) status.textContent = "Moving lines\u2026";
-        var j = 0;
-        (function tick(){
-          if (j >= bianLn.length){ setTimeout(finishCast, 500); return; }
-          bianLn[j].classList.add("in");
-          j++;
-          setTimeout(tick, 500);
-        })();
+      var bloomed = false;
+      function beginBloom(){
+        /* stage 1: start the branch-label bloom (their keyframe animations fill
+           forwards, overriding the data-cast hide) while the last strokes are
+           still landing — data-cast stays ON so un-landed lines remain hidden */
+        if (bloomed) return; bloomed = true;
+        svg.setAttribute("data-anim","1");
       }
       function finishCast(){
-        /* reveal everything that hung off the figure (trigrams, names, branches,
-           sheng-ke arrows) and switch the whole board to its living, looping state */
+        beginBloom();
+        /* stage 2: the last stroke has landed — release the rest of the board
+           (marks → names → currents follow on their own staggered transitions) */
         svg.removeAttribute("data-cast");
-        svg.setAttribute("data-anim","1");
         if (figEl){ figEl.classList.remove("casting"); figEl.classList.add("bw-af-live"); }
         if (status) status.textContent = "";
-        setTimeout(resolve, 900);
+        setTimeout(resolve, 1100);
       }
     });
   }
@@ -462,10 +468,9 @@
     s.textContent = [
       /* root */
       ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px}",
-      /* pinned to the site sans — without this the header INHERITS the reading
-         column's book-serif (--read), which is exactly the off-brand face the
-         design bans. Labels are Spinnaker everywhere else on the site. */
-      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}",
+      /* the method header keeps the reading column's book face (inherited) —
+         reverted per design call; the board BELOW it stays all-sans */
+      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
@@ -634,7 +639,9 @@
       ".bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .6s ease .25s}",
       ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name{transition:opacity .7s ease .5s}",
       ".bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-tarrow{transition:opacity .8s ease .85s}",
-      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(9px);filter:blur(1.5px)}55%{opacity:1;filter:blur(0)}78%{transform:translateY(-.6px)}100%{opacity:1;transform:none}}",
+      /* opacity+transform ONLY — an animated filter:blur on SVG forces a full
+         re-raster every frame and was the frame-skip ("跳帧") source */
+      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(9px)}55%{opacity:1}78%{transform:translateY(-.6px)}100%{opacity:1;transform:none}}",
       /* ── the living board: everything loops gently & in step ── */
       "@media (prefers-reduced-motion:no-preference){",
         /* each ink line undulates on a slow, irregular ocean swell — per-line
@@ -1046,7 +1053,9 @@
     var TOP = 46, STEP = 25, BARW = 56;
     function cy(li) { return TOP + (5 - li) * STEP; }
     var benX = 246, benR = benX + BARW, benLeadX = benX - 6, benTextX = benX - 12;
-    var tieX = benR, benMkX = 320;
+    /* marks (○/✕) sit clearly right of the bar, and the Self/Resp label starts
+       clear of the marks — the old 318/320 put the ring ON the label */
+    var tieX = benR, benMkX = 342;
     var bianX = 408, bianR = bianX + BARW, bianLeadX = bianR + 4, bianTextX = bianR + 10;
     /* no transformed figure to make room for: crop the canvas to the primary
        column + its World/Resp marks instead of always reserving the full
@@ -1094,7 +1103,7 @@
       var row = afInk(benX, yc, BARW, l.yang, "var(--ink)", WD[li], li * 0.9, flow);
       if (l.moving) {
         /* moving-line mark to the RIGHT of the bar, brush-drawn: ○ old-yang · ✕ old-yin */
-        row += moveMark(benR + 12, yc, l.yang);
+        row += moveMark(benR + 20, yc, l.yang);
       }
       ben += '<g class="bw-af-ln" data-li="' + li + '" style="--wd:' + WD[li] + 's;--bd:' + PH[li] + 's">' + row + '</g>';
 
