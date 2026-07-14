@@ -378,7 +378,9 @@
     var figEl = container.querySelector(".bw-af-fig");
     var svg = container.querySelector("svg.bw-af");
     var status = container.querySelector(".bw-cast-status");
-    requestAnimationFrame(function(){ opticalCenter(container); });
+    /* synchronous — measuring right after innerHTML forces layout once, BEFORE
+       first paint, so the centering shift is never visible as a "refresh" */
+    opticalCenter(container);
 
     /* reduced-motion: figure is already fully painted & static; nothing to animate */
     if (reduced || !svg) {
@@ -468,9 +470,9 @@
     s.textContent = [
       /* root */
       ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px}",
-      /* the method header keeps the reading column's book face (inherited) —
-         reverted per design call; the board BELOW it stays all-sans */
-      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
+      /* Spinnaker, pinned — without this the header inherits the reading
+         column's book serif */
+      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:12px;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
@@ -949,7 +951,7 @@
       var row = afInk(benX, yc, BARW, lines[li].yang, "var(--ink)", 6 + li * 0.45, li * 0.9, flow);
       if (moving.indexOf(li) >= 0)
         row += '<circle cx="' + benCx + '" cy="' + yc + '" r="4.2" fill="var(--paper-raised)" stroke="var(--terracotta)" stroke-width="1.5"></circle>';
-      ben += '<g class="bw-af-ln" data-li="' + li + '" style="--wd:' + (6 + li * 0.45).toFixed(2) + 's;--bd:' + (-li * 0.8).toFixed(2) + 's">' + row + '</g>';
+      ben += '<g class="bw-af-ln" data-li="' + li + '" style="--wd:' + (6 + li * 0.45).toFixed(2) + 's;--bd:' + (li * 0.55).toFixed(2) + 's">' + row + '</g>';
       var elName = ELEMENTS[els[li]].en, role = relativeRole(els[li], selfGi);
       branch += '<g class="bw-af-branch" style="--d:' + d + 's;--fx:7px">' +
         '<text x="' + benTextX + '" y="' + yc + '" text-anchor="end" dominant-baseline="middle">' +
@@ -984,7 +986,7 @@
       var bl = spec.transformedLines;
       for (var li2 = 5; li2 >= 0; li2--) {
         var yc2 = cy(li2), d2 = ((5 - li2) * 0.07 + 0.15).toFixed(3);
-        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (6.3 + li2 * 0.45).toFixed(2) + 's;--bd:' + (-li2 * 0.8 - 0.5).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, bl[li2].yang, "var(--prussian)", 6.3 + li2 * 0.45, li2 * 0.9 + 0.6, flow) + '</g>';
+        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (6.3 + li2 * 0.45).toFixed(2) + 's;--bd:' + (li2 * 0.55 + 0.3).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, bl[li2].yang, "var(--prussian)", 6.3 + li2 * 0.45, li2 * 0.9 + 0.6, flow) + '</g>';
         bbranch += '<g class="bw-af-branch" style="--d:' + d2 + 's;--fx:-7px">' +
           '<text class="bw-af-bel" x="' + bianTextX + '" y="' + yc2 + '" text-anchor="start" dominant-baseline="middle">' + ELEMENTS[els2[li2]].en + '</text></g>';
       }
@@ -1097,7 +1099,10 @@
       return 'class="bw-af-branch bw-aft-' + (i % 5) + '" style="--d:' + (i * 0.075).toFixed(3) + 's;--fx:' + fx + 'px"';
     }
     /* non-harmonic per-line wave periods + phases → an irregular ocean swell */
-    var WD = [6.4, 7.7, 5.9, 8.3, 6.8, 7.2], PH = [0, -1.3, -2.7, -0.8, -3.4, -1.9];
+    /* phases are POSITIVE stagger — every line starts its swell from rest
+       (translateY 0). Negative phases made the whole figure jump to mid-wave
+       the instant the living state switched on (the reported "突然刷新"). */
+    var WD = [6.4, 7.7, 5.9, 8.3, 6.8, 7.2], PH = [0, 0.9, 1.7, 0.5, 2.1, 1.3];
     for (var li = 5; li >= 0; li--) {
       var l = L[li], yc = cy(li);
       var row = afInk(benX, yc, BARW, l.yang, "var(--ink)", WD[li], li * 0.9, flow);
@@ -1161,7 +1166,7 @@
         '<path class="bw-af-tarrow" d="M ' + (arrowCx + 10.8) + ' ' + (ty - 3) + ' L ' + (arrowCx + 15) + ' ' + ty + ' L ' + (arrowCx + 10.8) + ' ' + (ty + 3) + '"></path>';
       for (var li2 = 5; li2 >= 0; li2--) {
         var b = bf[li2], yc2 = cy(li2);
-        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (WD[li2] + 0.5) + 's;--bd:' + (PH[li2] - 0.6).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, b.yang, "var(--prussian)", WD[li2] + 0.5, li2 * 0.9 + 0.6, flow) + '</g>';
+        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (WD[li2] + 0.5) + 's;--bd:' + (PH[li2] * 0.5 + 0.35).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, b.yang, "var(--prussian)", WD[li2] + 0.5, li2 * 0.9 + 0.6, flow) + '</g>';
         var bmk = b.marker === "self" ? "Self" : (b.marker === "response" ? "Resp" : "");
         bbranch += '<g ' + aftAttr(-7) + '>' +
           '<text x="' + bianTextX + '" y="' + yc2 + '" text-anchor="start" dominant-baseline="middle">' +
