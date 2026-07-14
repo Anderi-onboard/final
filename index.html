@@ -14,8 +14,8 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260712l">
-<script src="./ds-base.js?v=20260712l"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712m">
+<script src="./ds-base.js?v=20260712m"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -346,6 +346,9 @@
      SAME px-per-unit scale as the two-figure case (960px / 616 units ≈ 1.558px/unit;
      388 cropped units × 1.558 ≈ 605px) — otherwise the crop just gets stretched back
      out to 960px and every glyph renders visibly larger than before. */
+  /* optical centering is applied per-cast by BWFigure.opticalCenter (the ink's
+     left/right extents differ each cast with the label text, so a constant
+     offset can't be right — JS measures the drawn ink and zeroes the drift) */
   .reading-fig.is-full{width:min(605px,calc(100vw - 96px));max-width:none;margin-left:calc((100% - min(605px,calc(100vw - 96px)))/2)}
   .reading-fig.is-full:has(.bw-af-name.rel){width:min(960px,calc(100vw - 96px));margin-left:calc((100% - min(960px,calc(100vw - 96px)))/2)}
   .reading-fig.is-full .bw-af-fig.bw-af-full{max-width:100%}
@@ -682,15 +685,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260712l"></script>
-<script src="./casting-figure.js?v=20260712l"></script>
-<script src="./liuyao-engine.js?v=20260712l"></script>
-<script src="./liuyao-ai.js?v=20260712l"></script>
-<script src="./liuyao-chart.js?v=20260712l"></script>
-<script src="./prompt-engine.js?v=20260712l"></script>
-<script src="./prompt-router.js?v=20260712l"></script>
-<script src="./account.js?v=20260712l"></script>
-<script src="./chat-app.js?v=20260712l"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712m"></script>
+<script src="./casting-figure.js?v=20260712m"></script>
+<script src="./liuyao-engine.js?v=20260712m"></script>
+<script src="./liuyao-ai.js?v=20260712m"></script>
+<script src="./liuyao-chart.js?v=20260712m"></script>
+<script src="./prompt-engine.js?v=20260712m"></script>
+<script src="./prompt-router.js?v=20260712m"></script>
+<script src="./account.js?v=20260712m"></script>
+<script src="./chat-app.js?v=20260712m"></script>
 <script>
 (function () {
   "use strict";

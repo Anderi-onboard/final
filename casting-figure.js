@@ -378,6 +378,7 @@
     var figEl = container.querySelector(".bw-af-fig");
     var svg = container.querySelector("svg.bw-af");
     var status = container.querySelector(".bw-cast-status");
+    requestAnimationFrame(function(){ opticalCenter(container); });
 
     /* reduced-motion: figure is already fully painted & static; nothing to animate */
     if (reduced || !svg) {
@@ -392,12 +393,17 @@
     var ordinals = ["First","Second","Third","Fourth","Fifth","Sixth"];
 
     return new Promise(function(resolve){
-      var PER = 360, i = 0;
+      /* pacing: a line lands every 620ms and its ink takes 950ms to settle, so
+         each stroke finishes breathing before the next begins (the old 360ms
+         cadence with a 420ms animation overlapped strokes mid-flight \u2014 that was
+         the staccato). The transformed figure waits a full 750ms beat, then
+         arrives at a calmer 500ms cadence \u2014 an arrival, not a dump. */
+      var PER = 620, i = 0;
       if (status) status.textContent = "Casting\u2026";
-      setTimeout(stepBen, 360);
+      setTimeout(stepBen, 480);
 
       function stepBen(){
-        if (i >= benLn.length){ stepBian(); return; }
+        if (i >= benLn.length){ setTimeout(stepBian, 750); return; }
         if (status) status.textContent = ordinals[i]+" line\u2026";
         benLn[i].classList.add("in");
         i++;
@@ -408,10 +414,10 @@
         if (status) status.textContent = "Moving lines\u2026";
         var j = 0;
         (function tick(){
-          if (j >= bianLn.length){ setTimeout(finishCast, 220); return; }
+          if (j >= bianLn.length){ setTimeout(finishCast, 500); return; }
           bianLn[j].classList.add("in");
           j++;
-          setTimeout(tick, PER*0.7);
+          setTimeout(tick, 500);
         })();
       }
       function finishCast(){
@@ -427,6 +433,25 @@
   }
 
   function el(tag,cls){ var e=document.createElement(tag); if(cls) e.className=cls; return e; }
+
+  /* ── optical centering: the drawn ink's left/right extents vary per cast
+     (label text lengths differ), so a centered CONTAINER can still read as
+     off-center. Measure the ink and zero the drift on the wrapper. ── */
+  function opticalCenter(container){
+    try{
+      if(!container) return;
+      var svg = container.querySelector('svg.bw-af'); if(!svg) return;
+      var sr = svg.getBoundingClientRect(); if(!sr.width) return;
+      var l = 1e9, r = -1e9;
+      svg.querySelectorAll('path,text,circle').forEach(function(n){
+        var b = n.getBoundingClientRect();
+        if(b.width || b.height){ if(b.left < l) l = b.left; if(b.right > r) r = b.right; }
+      });
+      if(r <= l) return;
+      var drift = (l + r) / 2 - (sr.left + sr.width / 2);
+      if (Math.abs(drift) > .5) container.style.transform = 'translateX(' + (-drift).toFixed(1) + 'px)';
+    }catch(e){}
+  }
 
   /* ── CSS ── */
   var injected = false;
@@ -499,7 +524,7 @@
       ".bw-fig-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:5px;",
         "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1)}",
       ".bw-fig-glyph{display:block}",
-      ".bw-fig-name{font-family:var(--serif,serif);font-size:13px;color:var(--ink)}",
+      ".bw-fig-name{font-family:var(--sans);font-size:13px;color:var(--ink)}",
       ".bw-fig-name.relating{color:var(--prussian)}",
 
       /* ── INSIGHT: the hexagram read line by line ── */
@@ -509,7 +534,7 @@
       ".bw-ix-head .bw-ix-tag b{color:var(--terracotta);font-weight:400}",
       ".bw-zg{display:flex;gap:28px;align-items:center;padding:18px 24px;background:transparent;border:1px solid var(--line);border-radius:12px}",
       ".bw-zg-svg{flex:none;width:330px;height:auto;overflow:visible}",
-      ".bw-zg-el{font-family:var(--serif);font-weight:600;font-size:13.5px;dominant-baseline:middle}",
+      ".bw-zg-el{font-family:var(--sans);font-weight:600;font-size:13.5px;dominant-baseline:middle}",
       ".bw-zg-role{font-family:var(--sans);font-weight:500;font-size:11px;fill:var(--faint);letter-spacing:.02em}",
       ".bw-zg-mk{font-size:10px;letter-spacing:.05em;text-anchor:end;dominant-baseline:middle;font-family:var(--sans);font-weight:600}",
       ".bw-zg-mk.self{fill:var(--terracotta)}",
@@ -519,7 +544,7 @@
       ".bw-zg-move{transform-box:fill-box;transform-origin:center}",
       ".bw-zg-row{opacity:1}",
       ".bw-zg-side{flex:1;min-width:0}",
-      ".bw-zg-note{font-family:var(--serif);font-size:15px;color:var(--ink);line-height:1.6;text-wrap:pretty}",
+      ".bw-zg-note{font-family:var(--sans);font-size:15px;color:var(--ink);line-height:1.6;text-wrap:pretty}",
       ".bw-zg-legend{display:flex;flex-direction:column;gap:6px;margin-top:15px;font-size:11px;letter-spacing:.03em;color:var(--faint)}",
       ".bw-zg-legend span{display:inline-flex;align-items:center;gap:9px}",
       ".bw-zg-legend i{flex:none;width:14px;height:0;border-top:2px solid var(--line);display:inline-block}",
@@ -533,14 +558,17 @@
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
       ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:100%}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
-      ".bw-af-el{font-family:var(--serif);font-size:11px;font-weight:600;fill:var(--ink)}",
+      /* SVG text at fractional scale renders fuzzy with default hinting — force
+         geometric precision so micro labels stay crisp at any board width */
+      ".bw-af text{text-rendering:geometricPrecision}",
+      ".bw-af-el{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
-      ".bw-af-bel{font-family:var(--serif);font-size:10.5px;font-weight:600;fill:var(--dim)}",
+      ".bw-af-bel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--dim)}",
       ".bw-af-mk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}",
       ".bw-af-mk.self{fill:var(--terracotta)}",".bw-af-mk.resp{fill:var(--prussian)}",
       ".bw-af-tri-sym{font-size:15px;fill:var(--terracotta)}",
-      ".bw-af-tri-en{font-family:var(--sans);font-size:8px;letter-spacing:.12em;fill:var(--faint)}",
-      ".bw-af-name{font-family:var(--serif);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
+      ".bw-af-tri-en{font-family:var(--sans);font-size:8.5px;letter-spacing:.12em;fill:var(--faint)}",
+      ".bw-af-name{font-family:var(--sans);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
       ".bw-af-arrow{fill:none;stroke-width:1.5;opacity:.5;stroke-linecap:round}",
       ".bw-af-tarrow{fill:none;stroke:var(--ghost);stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;opacity:.85}",
       ".bw-af-branch{opacity:1}",
@@ -585,7 +613,7 @@
       ".bw-af-mt-date{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);font-weight:600}",
       ".bw-af-mt{display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap}",
       ".bw-af-mt i{font-style:normal;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
-      ".bw-af-mt b{font-family:var(--serif);font-size:12px;font-weight:600;color:var(--ink)}",
+      ".bw-af-mt b{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink)}",
       ".bw-af-mt.hot b{color:var(--terracotta)}",
       ".bw-af-mt.vd b{font-size:11px;color:var(--prussian)}",
       /* moving-line marks ○/✕ (brush strokes, right of the bar) + the flowing sheng-ke ties */
@@ -594,11 +622,19 @@
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
       ".bw-af-fig.casting .bw-af-moment{opacity:0;transition:opacity .5s ease}",
       ".bw-af[data-cast] .bw-af-ln{opacity:0}",
-      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;animation:bwAfRow .42s cubic-bezier(.22,.7,.28,1)}",
+      /* a stroke of ink settling: drifts up from below through a slight blur,
+         overshoots a hair, then rests — 950ms, always finished before the next
+         line begins (620ms cadence + the animation's long soft tail) */
+      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;animation:bwAfRow .95s cubic-bezier(.2,.65,.25,1) both}",
       ".bw-af[data-cast] .bw-af-branch,.bw-af[data-cast] .bw-af-arrow,.bw-af[data-cast] .bw-af-tarrow,.bw-af[data-cast] .bw-af-flow,.bw-af[data-cast] .bw-af-flowbase,.bw-af[data-cast] .bw-af-mark,.bw-af[data-cast] .bw-af-markbg{opacity:0}",
       ".bw-af[data-cast] .bw-af-tri-sym,.bw-af[data-cast] .bw-af-tri-en,.bw-af[data-cast] .bw-af-name{opacity:0}",
-      ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name,.bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .5s ease}",
-      "@keyframes bwAfRow{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}",
+      /* the finish is a layered bloom, not a dump: annotations arrive in waves —
+         branches → moving marks → trigrams/names → sheng-ke currents */
+      ".bw-af .bw-af-branch{transition:opacity .6s ease}",
+      ".bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .6s ease .25s}",
+      ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name{transition:opacity .7s ease .5s}",
+      ".bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-tarrow{transition:opacity .8s ease .85s}",
+      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(9px);filter:blur(1.5px)}55%{opacity:1;filter:blur(0)}78%{transform:translateY(-.6px)}100%{opacity:1;transform:none}}",
       /* ── the living board: everything loops gently & in step ── */
       "@media (prefers-reduced-motion:no-preference){",
         /* each ink line undulates on a slow, irregular ocean swell — per-line
@@ -623,18 +659,18 @@
       /* full board: header + dense per-line branches (Sortis tier) */
       ".bw-af-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--sans);font-size:11px;color:var(--dim);padding-bottom:9px;margin-bottom:2px;border-bottom:1px solid var(--line-soft)}",
       ".bw-af-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
-      ".bw-af-gzp{color:var(--dim)}",".bw-af-gzp b{font-family:var(--serif);font-size:12.5px;color:var(--ink);font-weight:600}",
+      ".bw-af-gzp{color:var(--dim)}",".bw-af-gzp b{font-family:var(--sans);font-size:12.5px;color:var(--ink);font-weight:600}",
       ".bw-af-gzp.hot b{color:var(--terracotta)}",
-      ".bw-af-void{margin-left:auto;color:var(--dim)}",".bw-af-void b{font-family:var(--serif);color:var(--prussian)}",
-      ".bw-af-rel{font-family:var(--serif);font-size:10.5px;font-weight:600;fill:var(--ink)}",
+      ".bw-af-void{margin-left:auto;color:var(--dim)}",".bw-af-void b{font-family:var(--sans);color:var(--prussian)}",
+      ".bw-af-rel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--ink)}",
       ".bw-af-gz{font-family:var(--sans);font-size:9px;fill:var(--ink)}",
-      ".bw-af-fel{font-family:var(--sans);font-size:8.5px;fill:var(--faint)}",
-      ".bw-af-sp{font-family:var(--sans);font-size:8.5px;fill:var(--dim)}",
-      ".bw-af-hid{font-family:var(--sans);font-size:8px;fill:var(--faint);font-style:italic}",
-      ".bw-af-ss{font-family:var(--sans);font-size:7.5px;letter-spacing:.02em;fill:var(--prussian)}",
-      ".bw-af-flag{font-family:var(--sans);font-size:7.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--prussian)}",
+      ".bw-af-fel{font-family:var(--sans);font-size:9px;fill:var(--faint)}",
+      ".bw-af-sp{font-family:var(--sans);font-size:9px;fill:var(--dim)}",
+      ".bw-af-hid{font-family:var(--sans);font-size:8.5px;fill:var(--faint);font-style:italic}",
+      ".bw-af-ss{font-family:var(--sans);font-size:8.5px;letter-spacing:.02em;fill:var(--prussian)}",
+      ".bw-af-flag{font-family:var(--sans);font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--prussian)}",
       ".bw-af-tt{font-family:var(--sans);font-size:8.5px}",
-      ".bw-af-brel{font-family:var(--serif);font-size:10px;font-weight:600;fill:var(--prussian)}",".bw-af-brel.hot{fill:var(--terracotta)}",
+      ".bw-af-brel{font-family:var(--sans);font-size:10px;font-weight:600;fill:var(--prussian)}",".bw-af-brel.hot{fill:var(--terracotta)}",
       ".bw-af-full .bw-af-legend{margin-top:2px}",
       "@media (prefers-reduced-motion:no-preference){",
         /* lines float in bottom\u2192top, same brush as the casting figure */
@@ -781,12 +817,13 @@
     srcLines.forEach(function (s, i) {
       if (s === selfLi) return;
       var r = elRel(els[s], els[selfLi]), col = r.color;
-      var y1 = cy(s), y2 = cy(selfLi), mid = (y1 + y2) / 2;
+      var y1 = cy(s), y2raw = cy(selfLi), mid = (y1 + y2raw) / 2;
+      var y2 = y2raw + (y1 > y2raw ? 6 : -6); // stand off the target line
       var bow = gx - 13 - i * 7, len = Math.abs(y2 - y1) + 80;
       var dpath = 'M ' + gx + ' ' + y1 + ' Q ' + bow + ' ' + mid + ' ' + gx + ' ' + y2;
       var mid2 = 'bwZgArr' + i;
-      markers += '<marker id="' + mid2 + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">' +
-        '<path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
+      markers += '<marker id="' + mid2 + '" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse">' +
+        '<path d="M4 3.2 L8.4 6 L4 8.8" fill="none" stroke="' + col + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></marker>';
       arrow += '<path d="' + dpath + '" class="bw-zg-arrow" stroke="' + col + '" marker-end="url(#' + mid2 + ')" style="--bw-zg-len:' + len + ';--bw-zg-i:' + i + '"></path>' +
         '<path d="' + dpath + '" class="bw-zg-flow ' + r.kind + '" stroke="' + col + '" style="--bw-zg-i:' + i + '"></path>';
     });
@@ -992,7 +1029,7 @@
       pill("Year", rom(P.year)),
       pill("Month", rom(P.month)),
       pill("Day", rom(P.day), "hot"),
-      pill("Hour", rom(P.hour) + (P.hourKnown ? "" : "\u00b7?")),
+      pill("Hour", P.hourKnown ? rom(P.hour) : "\u2014"),
       pill("Void", BR_PY[k[0].bi] + " " + BR_PY[k[1].bi], "vd")
     ];
     return '<div class="bw-af-moment" aria-hidden="true">' +
@@ -1093,11 +1130,16 @@
       if (s === worldLi) return;
       var gA = EN_GI[L[s].element.en], gB = EN_GI[L[worldLi].element.en];
       var r = elRel(gA, gB), col = r.kind === "peer" ? "var(--faint)" : "color-mix(in oklab, " + r.color + " 42%, var(--dim))";
-      var y1 = cy(s), y2 = cy(worldLi), mid = (y1 + y2) / 2;
-      var span = Math.abs(y2 - y1), peak = tieX + 8 + span * 0.16 + i * 3;
+      var y1 = cy(s), y2raw = cy(worldLi), mid = (y1 + y2raw) / 2;
+      /* stop the current 6 units short of the target line so the head never
+         collides with the moving-line ring / Self label sitting there */
+      var y2 = y2raw + (y1 > y2raw ? 6 : -6);
+      var span = Math.abs(y2raw - y1), peak = tieX + 8 + span * 0.16 + i * 3;
       var dp = 'M ' + tieX + ' ' + y1 + ' Q ' + peak + ' ' + mid + ' ' + tieX + ' ' + y2;
-      var id = 'bwAfb' + i, len = (Math.abs(y2 - y1) + 90), mw = manyTies ? 5 : 6;
-      defs += '<marker id="' + id + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="' + mw + '" markerHeight="' + mw + '" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
+      var id = 'bwAfb' + i, len = (Math.abs(y2 - y1) + 90), mw = manyTies ? 4.5 : 5;
+      /* open chevron head — same stroke language as every other arrow on the
+         board (no filled wedges anywhere) */
+      defs += '<marker id="' + id + '" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="' + mw + '" markerHeight="' + mw + '" orient="auto-start-reverse"><path d="M4 3.2 L8.4 6 L4 8.8" fill="none" stroke="' + col + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></marker>';
       arrows += '<path class="bw-af-flowbase" d="' + dp + '" stroke="' + col + '" style="--len:' + len + (manyTies ? ';opacity:.14' : '') + '"></path>' +
         '<path class="bw-af-flow ' + r.kind + '" d="' + dp + '" stroke="' + col + '" marker-end="url(#' + id + ')" style="--fi:' + i + (manyTies ? ';stroke-width:1.8' : '') + '"></path>';
     });
@@ -1151,6 +1193,7 @@
   window.BWFigure = {
     random:    random,
     glyphSVG:  glyphSVG,
+    opticalCenter: opticalCenter,
     pairHTML:  pairHTML,
     cast:      cast,
     loaderEl:  loaderEl,
