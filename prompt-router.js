@@ -131,6 +131,9 @@
             if (typeof data.unitsRemaining === "number" && window.BWAccount && window.BWAccount.reconcileUnits) {
               window.BWAccount.reconcileUnits({ ok: true, units: data.unitsRemaining });
             }
+            // the backend refunded a reading that didn't finish cleanly — let the
+            // UI tell the user + offer a free retry
+            if (data.incomplete) { try { window.__bwReadingIncomplete = true; } catch (e) {} }
             return;
           }
           // Anthropic's own stream events (no custom "event:" line — those

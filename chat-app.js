@@ -624,6 +624,7 @@
       ? window.BWFigure.cast(castBox, spec, { board: sortisBoard })
       : new Promise(function (r) { setTimeout(r, 1600); });
 
+    try { window.__bwReadingIncomplete = false; } catch (e) {}
     var history = buildHistory(c, 3);
     var answerP;
     if (m.id === "sortis") {
@@ -664,6 +665,14 @@
       if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
+      // backend refunded a reading that didn't finish cleanly — tell the user it
+      // was free and they can recast (the balance already reconciled via bw_meta)
+      if (window.__bwReadingIncomplete) {
+        window.__bwReadingIncomplete = false;
+        S.units = A.state().units; renderUnits();
+        var zhi = /[一-鿿]/.test(text);
+        toast(zhi ? "本次解读未完整生成 — 点数已退回,可再摇一卦。" : "That reading came out incomplete — units refunded, cast again free.");
+      }
       revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
     }
     function release() {

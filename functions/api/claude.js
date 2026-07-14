@@ -153,6 +153,15 @@ export async function onRequestPost({ request, env }) {
       const encoder = new TextEncoder();
       const decoder = new TextDecoder();
       let buf = '';
+      let finishReason = null, sawText = false;
+      function scanRecord(raw) {
+        if (!raw || raw === '[DONE]') return null;
+        let obj;
+        try { obj = JSON.parse(raw); } catch (e) { return null; }
+        const ch = obj.choices && obj.choices[0];
+        if (ch && ch.finish_reason) finishReason = ch.finish_reason;
+        return ch && ch.delta && ch.delta.content;
+      }
       const reencode = new TransformStream({
         transform(chunk, controller) {
           buf += decoder.decode(chunk, { stream: true });
@@ -161,19 +170,34 @@ export async function onRequestPost({ request, env }) {
           for (const rec of records) {
             const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
             if (!dataLine) continue;
-            const raw = dataLine.slice(5).trim();
-            if (raw === '[DONE]') continue;
-            let obj;
-            try { obj = JSON.parse(raw); } catch (e) { continue; }
-            const text = obj.choices && obj.choices[0] && obj.choices[0].delta && obj.choices[0].delta.content;
+            const text = scanRecord(dataLine.slice(5).trim());
             if (!text) continue;
+            sawText = true;
             const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
             controller.enqueue(encoder.encode(event));
           }
         },
-        flush(controller) {
-          const metaEvent = 'event: bw_meta\ndata: ' + JSON.stringify({ unitsRemaining, model }) + '\n\n';
-          controller.enqueue(encoder.encode(metaEvent));
+        async flush(controller) {
+          // pick up a finish_reason sitting in the trailing (unsplit) buffer
+          if (buf) {
+            const dl = buf.split('\n').find((l) => l.indexOf('data:') === 0);
+            if (dl && scanRecord(dl.slice(5).trim())) sawText = true;
+          }
+          // A reading that didn't finish cleanly ('stop') was cut by the token
+          // cap ('length') or the upstream stream dropped — the atomic deduction
+          // already happened, so REFUND it: the user must never pay full units
+          // for a half reading (this was the "生成到一半还扣钱" waste).
+          const meta = { unitsRemaining, model, finishReason };
+          if (refundTo && (!sawText || finishReason !== 'stop')) {
+            try {
+              const r = await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:incomplete_' + (finishReason || 'drop'));
+              if (r && r.ok) meta.unitsRemaining = r.units;
+              meta.incomplete = true;
+              meta.refunded = true;
+              refundTo = null;
+            } catch (e) {}
+          }
+          controller.enqueue(encoder.encode('event: bw_meta\ndata: ' + JSON.stringify(meta) + '\n\n'));
         }
       });
       return new Response(upstream.body.pipeThrough(reencode), {
@@ -194,9 +218,20 @@ export async function onRequestPost({ request, env }) {
       return json({ error: 'openrouter ' + resp.status, detail }, 502);
     }
     const data = await resp.json();
-    const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
+    const choice = data.choices && data.choices[0];
+    const text = (choice && choice.message && choice.message.content) || '';
     const result = { text, model };
-    if (unitsRemaining != null) result.unitsRemaining = unitsRemaining;
+    // truncated by the token cap → refund (never charge for a half reading)
+    if (refundTo && choice && choice.finish_reason === 'length') {
+      try {
+        const r = await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:incomplete_length');
+        if (r && r.ok) result.unitsRemaining = r.units;
+        result.incomplete = true;
+        refundTo = null;
+      } catch (e) {}
+    } else if (unitsRemaining != null) {
+      result.unitsRemaining = unitsRemaining;
+    }
     return json(result, 200);
   } catch (e) {
     if (refundTo) { try { await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:error'); } catch (_) {} }
