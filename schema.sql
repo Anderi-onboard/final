@@ -47,3 +47,32 @@ CREATE TABLE IF NOT EXISTS rate_limits (
   count      INTEGER NOT NULL DEFAULT 0,
   created_at INTEGER NOT NULL
 );
+
+-- ── Payments (provider-agnostic core) ────────────────────────────────────
+-- Webhook idempotency: one row per provider event we've already fulfilled, so
+-- a retried/duplicated webhook can never double-grant units. Keyed by the
+-- provider's own event id.
+CREATE TABLE IF NOT EXISTS billing_events (
+  event_id   TEXT PRIMARY KEY,             -- provider event id
+  provider   TEXT NOT NULL,                -- 'stripe' | 'lemonsqueezy' | 'paddle'
+  type       TEXT,                         -- event type (audit)
+  user_id    TEXT,                         -- resolved user, if known
+  created_at INTEGER NOT NULL
+);
+
+-- Active subscriptions, so renewals re-grant and cancellations/expiries can
+-- downgrade the plan. One row per provider subscription id; customer_id maps
+-- later provider events back to the user.
+CREATE TABLE IF NOT EXISTS subscriptions (
+  id          TEXT PRIMARY KEY,            -- provider subscription id
+  user_id     TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  provider    TEXT NOT NULL,
+  customer_id TEXT,                        -- provider customer id
+  plan        TEXT NOT NULL,               -- pro | premium
+  status      TEXT NOT NULL,               -- active | canceled | past_due | expired
+  period_end  INTEGER,                     -- unix seconds, current period end
+  created_at  INTEGER NOT NULL,
+  updated_at  INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_subs_user ON subscriptions(user_id);
+CREATE INDEX IF NOT EXISTS idx_subs_customer ON subscriptions(provider, customer_id);

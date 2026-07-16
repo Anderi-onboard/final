@@ -14,13 +14,18 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260710m">
-<script src="./ds-base.js?v=20260710m"></script>
+<link rel="stylesheet" href="./styles.css?v=20260712o">
+<script src="./ds-base.js?v=20260712o"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
-  html,body{height:100%}
-  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative;animation:bgDrift 44s ease-in-out infinite}
+  /* the app is ONE fixed viewport — the page itself never scrolls (only the
+     thread inside does), so no aspect ratio can push the layout's proportions
+     off by scrolling the chrome/background out of frame */
+  html,body{height:100%;overflow:hidden}
+  body{--sbw:264px;display:flex;height:100vh;height:100dvh;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  body.rail{--sbw:60px}
+  @media (max-width:880px){body{--sbw:0px}}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,input:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
@@ -39,9 +44,9 @@
   .mark{flex:none;width:26px;height:21px;color:var(--ink)}
   .brand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:2px 4px 2px 0;border-radius:7px;transition:opacity .15s;text-align:left}
   .brand-btn:hover{opacity:.72}
-  /* the page tint drifts in step with the mountain ridges — warm when the warm
-     ridge (l4, 44s) dominates, cooler/dusky when the cool & dusk ridges lead */
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
+  /* (the old body background-color "bgDrift" crossfade was removed: re-sampling
+     it every frame behind the glass panels was the occasional frame-flash. The
+     mountains still animate via GPU transform, so the page keeps its motion.) */
   .brand-word{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px);
     white-space:nowrap;transition:width .18s,opacity .18s}
   .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:7px;color:var(--faint);transition:background .15s,color .15s}
@@ -140,6 +145,27 @@
   .side-foot .go{flex:none;color:var(--faint)}
   body.rail .side-foot{justify-content:center;padding:8px 0}
   body.rail .side-foot .who,body.rail .side-foot .go{display:none}
+
+  /* ── sign-in coach-mark — a comic-style floating callout that sits just above
+     the account footer, with a little arrow tip poking down to point at the
+     Guest / sign-in row. Nudges first-time visitors to sign in (500 free
+     units). Shown only to signed-out guests; dismissable, and remembered. ── */
+  .signin-coach{position:relative;margin:16px 5px 2px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;
+    white-space:normal;
+    border:2px solid var(--ink);border-radius:14px;box-shadow:3px 4px 0 rgba(42,32,22,.82);
+    padding:10px 24px 11px 12px;animation:coachPop .42s cubic-bezier(.2,.85,.3,1.4) both}
+  .signin-coach:hover{transform:translate(-1px,-1px);box-shadow:4px 5px 0 rgba(42,32,22,.82)}
+  .signin-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
+  .signin-coach .ct b{color:var(--ink);font-weight:700}
+  .signin-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
+    font-size:15px;line-height:1;color:var(--ghost);border-radius:5px;transition:background .15s,color .15s}
+  .signin-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
+  /* the arrow — ink outline triangle behind, white fill on top — pointing down
+     at the Guest footer directly below it */
+  .signin-coach::before{content:"";position:absolute;left:24px;bottom:-12px;width:22px;height:12px;background:var(--ink);clip-path:polygon(0 0,100% 0,30% 100%)}
+  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:#fff;clip-path:polygon(0 0,100% 0,30% 100%)}
+  @keyframes coachPop{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:none}}
+  body.rail .signin-coach{display:none}
   .acct-menu{position:absolute;left:6px;bottom:56px;width:230px;
     background:linear-gradient(150deg,rgba(244,233,210,.96),rgba(235,221,194,.84));
     border:1px solid rgba(255,255,255,.6);border-radius:13px;padding:6px;
@@ -165,7 +191,11 @@
   .topbar h1{font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .units-chip{flex:none;font-size:11.5px;letter-spacing:.07em;color:var(--dim);background:var(--chip);border-radius:999px;padding:6px 13px;font-variant-numeric:tabular-nums}
 
-  .thread{flex:1;overflow-y:auto;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
+  /* vertical-only: overflow-x locked (a bleeding board must never create a
+     horizontal scroll), and in chat mode the top/bottom edges dissolve into
+     the page instead of hard-clipping mid-line */
+  .thread{flex:1;overflow-y:auto;overflow-x:hidden;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
+  body:not(.is-empty) .thread{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34px,#000 calc(100% - 26px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 34px,#000 calc(100% - 26px),transparent 100%)}
   .thread::-webkit-scrollbar{width:5px}
   .thread::-webkit-scrollbar-track{background:transparent}
   .thread::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:999px}
@@ -214,7 +244,7 @@
   @keyframes flow{to{stroke-dashoffset:0}}
   .empty p{margin-top:18px;font-size:14px;color:var(--dim);max-width:320px}
 
-  .msg-user{align-self:flex-end;max-width:68%;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:15.5px;line-height:1.5;letter-spacing:-.005em;padding:13px 19px;border-radius:16px 16px 5px 16px;box-shadow:0 2px 10px rgba(31,29,26,.1)}
+  .msg-user{align-self:flex-end;max-width:68%;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:14px;line-height:1.55;letter-spacing:-.003em;padding:11px 17px;border-radius:16px 16px 5px 16px;box-shadow:0 2px 10px rgba(31,29,26,.1)}
   .reading{max-width:none}
   .reading .lbl b{color:var(--terracotta);font-weight:400}
   .reading-body{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:20px;text-wrap:pretty;color:var(--ink)}
@@ -262,11 +292,44 @@
   .reading-body .rd-h{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 11px;display:flex;align-items:center;gap:9px}
   .reading-body .rd-h::before{content:"";width:16px;height:2px;background:var(--terracotta);border-radius:2px;flex:none}
   .reading-body .rd-keys{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-  .reading-body .rd-keys li{display:flex;gap:14px;align-items:baseline;font-size:14px;line-height:1.45;padding:8px 0;border-top:1px solid var(--line-soft)}
+  .reading-body .rd-keys li{display:flex;gap:14px;align-items:baseline;font-size:13px;line-height:1.45;padding:8px 0;border-top:1px solid var(--line-soft)}
   .reading-body .rd-keys li:first-child{border-top:0}
   .reading-body .rd-kl-n{flex:none;font-weight:700;color:var(--terracotta);min-width:58px;letter-spacing:.02em}
   .reading-body .rd-kl-note{color:var(--dim)}
-  .reading-body .rd-timing{font-size:14.5px;color:var(--dim);margin:0}
+  .reading-body .rd-timing{font-size:13px;color:var(--dim);margin:0}
+
+  /* ── Claude-style reading type — the display BioRhyme slab read as clunky for
+     long readings. Swap the reading prose to a clean book serif at a
+     comfortable size, line-height and rhythm (like reading a well-set article);
+     the small uppercase eyebrows/section labels stay in the sans. These
+     override the heavier settings above. ── */
+  body:not(.is-empty) .thread-inner{--read:ui-serif,Georgia,"Iowan Old Style","Palatino Linotype","Noto Serif SC","Songti SC","Times New Roman",serif;font-family:var(--read)}
+  /* Claude-scale type: 15px body / 1.8 CJK line-height, and the column is
+     CENTERED in the thread (it used to sit flush-left inside the 740px column
+     while the composer centered — the visible mismatch). */
+  .reading-body{font-family:var(--read);font-size:15px;line-height:1.8;letter-spacing:.01em;margin:16px auto 0;max-width:648px}
+  .reading-body .rd-title{font-family:var(--read);font-size:19px;line-height:1.3;font-weight:600;letter-spacing:-.006em}
+  /* one uniform measure for the whole column (lede + body align, like Claude) */
+  .reading-body .rd-lede{font-family:var(--read);font-size:16px;line-height:1.75;font-weight:600;letter-spacing:0;margin:0 0 15px;max-width:none}
+  .reading-body .rd-para{font-family:var(--read);font-size:15px;line-height:1.8;margin:0 0 15px;max-width:none}
+  .reading-body .rd-sec{margin-top:24px;max-width:none}
+  /* live streaming: a quiet ink caret marks the writing edge */
+  .reading-streaming > *:last-child::after{content:"";display:inline-block;width:2px;height:.92em;margin-left:3px;vertical-align:-.1em;background:var(--terracotta);border-radius:1px;animation:bwCaret 1.1s steps(2,jump-none) infinite}
+  @keyframes bwCaret{0%{opacity:1}50%{opacity:0}}
+  .reading-stream-preview{font-family:var(--read);font-size:17px;line-height:1.7}
+  .reading-insight p{font-size:14.5px;line-height:1.75}
+  .reading-insight .turning{font-family:var(--read)}
+  /* markdown blocks inside a reading (headings / rules / lists / bold) rendered
+     by mdReading() — clean book-serif, Claude-style */
+  .reading-body .rd-h2{font-family:var(--read);font-size:16.5px;line-height:1.4;font-weight:700;letter-spacing:-.004em;color:var(--ink);margin:22px 0 8px}
+  .reading-body .rd-h3{font-family:var(--read);font-size:15px;line-height:1.45;font-weight:700;color:var(--ink);margin:18px 0 6px}
+  .reading-body .rd-hr{border:0;border-top:1px solid var(--line-soft);margin:20px 0}
+  .reading-body .rd-list{margin:0 0 15px;padding-left:20px}
+  .reading-body .rd-list li{font-family:var(--read);font-size:15px;line-height:1.75;margin:5px 0;padding-left:2px}
+  .reading-body .rd-list li::marker{color:var(--terracotta)}
+  .reading-body strong{font-weight:700;color:var(--ink)}
+  .reading-body em{font-style:italic}
+
   @media (prefers-reduced-motion:reduce){.reading-body .bw-rw{opacity:1;filter:none;transform:none;clip-path:none}.reading-body .rd-sec.rd-pending{opacity:1;transform:none}}
 
   /* ── embedded line-by-line analysis: figure floated into the prose ── */
@@ -278,8 +341,10 @@
   /* the looping board raster is confined to its own compositor layer so its
      per-frame SVG repaints don't force the streaming text around it to repaint */
   .reading-fig .bw-af{will-change:transform}
-  /* the annotated casting figure is the reading's "representation" */
-  .reading-fig{max-width:100%;margin:6px 0 10px}
+  /* the annotated casting figure is the reading's "representation" — generous
+     vertical air above and below so the board breathes instead of butting
+     against the question bubble and the prose */
+  .reading-fig{max-width:100%;margin:22px 0 30px}
   .reading-fig .bw-af-fig{max-width:452px}
   /* Sortis full board: with a transformed hexagram, two figures sit side by side so
      the wrapper bleeds past the text column to give both room. With only the primary
@@ -288,8 +353,13 @@
      SAME px-per-unit scale as the two-figure case (960px / 616 units ≈ 1.558px/unit;
      388 cropped units × 1.558 ≈ 605px) — otherwise the crop just gets stretched back
      out to 960px and every glyph renders visibly larger than before. */
-  .reading-fig.is-full{width:min(605px,calc(100vw - 96px));max-width:none;margin-left:calc((100% - min(605px,calc(100vw - 96px)))/2)}
-  .reading-fig.is-full:has(.bw-af-name.rel){width:min(960px,calc(100vw - 96px));margin-left:calc((100% - min(960px,calc(100vw - 96px)))/2)}
+  /* optical centering is applied per-cast by BWFigure.opticalCenter (the ink's
+     left/right extents differ each cast with the label text, so a constant
+     offset can't be right — JS measures the drawn ink and zeroes the drift).
+     Width caps subtract the REAL sidebar width (--sbw) so the bleeding board
+     can never exceed the thread and summon a horizontal scrollbar. */
+  .reading-fig.is-full{width:min(605px,calc(100vw - var(--sbw,264px) - 128px));max-width:none;margin-left:calc((100% - min(605px,calc(100vw - var(--sbw,264px) - 128px)))/2)}
+  .reading-fig.is-full:has(.bw-af-name.rel){width:min(960px,calc(100vw - var(--sbw,264px) - 128px));margin-left:calc((100% - min(960px,calc(100vw - var(--sbw,264px) - 128px)))/2)}
   .reading-fig.is-full .bw-af-fig.bw-af-full{max-width:100%}
   .reading-fig .bw-af-fig.bw-af-full{max-width:min(720px,100%)}
   .reading .bw-cast,.reading .bw-figs{max-width:75%}
@@ -353,12 +423,14 @@
   .drop:nth-child(3){animation-delay:.6s}
   @keyframes drip{0%{transform:translateY(-9px) scale(.3);opacity:0}25%{transform:translateY(0) scale(1);opacity:1}70%{opacity:1}92%{opacity:0}100%{opacity:0}}
 
-  .composer-zone{padding:12px 56px 22px;position:relative}
-  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:9px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 14px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
+  .composer-zone{padding:14px 56px 24px;position:relative}
+  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:11px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 17px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
   .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:Pacifico, cursive;transition:background .15s}
   .stria:hover{background:var(--paper-dim)}
-  .composer input{flex:1;background:none;border:none;outline:none;font-family:"BioRhyme",var(--serif),serif;font-size:16px;color:var(--ink);min-width:0}
+  /* CJK falls through BioRhyme (latin-only) to a proper Chinese serif, at a
+     size/tracking tuned for hanzi instead of the latin default */
+  .composer input{flex:1;background:none;border:none;outline:none;font-family:"BioRhyme","Noto Serif SC","Songti SC","Source Han Serif SC",var(--serif),serif;font-size:15.5px;letter-spacing:.01em;color:var(--ink);min-width:0}
   .composer input::placeholder{color:var(--faint)}
   .send{width:40px;height:40px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center;flex-shrink:0;transition:transform .15s,opacity .15s}
   .send:hover{transform:scale(1.06)}
@@ -517,7 +589,6 @@
   @keyframes msgIn{from{transform:translateY(10px)}to{transform:none}}
   body.rail .side-toggle{margin-left:0}
   @media (prefers-reduced-motion: reduce){
-    body{animation:none;background-color:#F2EDE7}
     .claude-mark{animation:none}
     .bwl1,.bwl2,.bwl3,.bwl4,.bwl5{animation:none;opacity:1}
     .msg-user,.reading{animation:none}
@@ -561,6 +632,11 @@
     <div class="ledger-meter"><span id="unitsBar"></span></div>
     <div class="ledger-cap" id="unitsCap" style="font-family: var(--sans)">of monthly balance</div>
     <button class="exchange" id="openPlans" style="font-family: var(--sans)">Add units <span class="ex-arr">&rarr;</span></button>
+  </div>
+
+  <div class="signin-coach" id="signinCoach" role="button" tabindex="0" aria-label="Sign in to claim 500 free units" hidden>
+    <button class="cx" id="coachClose" type="button" aria-label="Dismiss">&times;</button>
+    <span class="ct"><b>New here?</b> Sign in below to claim your <b>500 free units</b>.</span>
   </div>
 
   <button class="side-foot" id="acctBtn" aria-haspopup="true" aria-expanded="false" style="border-width: 0px 1px 1px">
@@ -618,15 +694,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260710m"></script>
-<script src="./casting-figure.js?v=20260710m"></script>
-<script src="./liuyao-engine.js?v=20260710m"></script>
-<script src="./liuyao-ai.js?v=20260710m"></script>
-<script src="./liuyao-chart.js?v=20260710m"></script>
-<script src="./prompt-engine.js?v=20260710m"></script>
-<script src="./prompt-router.js?v=20260710m"></script>
-<script src="./account.js?v=20260710m"></script>
-<script src="./chat-app.js?v=20260710m"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260712o"></script>
+<script src="./casting-figure.js?v=20260712o"></script>
+<script src="./liuyao-engine.js?v=20260712o"></script>
+<script src="./liuyao-ai.js?v=20260712o"></script>
+<script src="./liuyao-chart.js?v=20260712o"></script>
+<script src="./prompt-engine.js?v=20260712o"></script>
+<script src="./prompt-router.js?v=20260712o"></script>
+<script src="./account.js?v=20260712o"></script>
+<script src="./chat-app.js?v=20260712o"></script>
 <script>
 (function () {
   "use strict";

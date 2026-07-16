@@ -111,9 +111,33 @@
           avatar: initials(d.user.name), signedIn: true, provider: d.user.provider || "email"
         };
         if (Array.isArray(d.castings)) {
-          s.convs = d.castings.map(function (c) {
+          // MERGE, never blind-overwrite. The server list is authoritative for
+          // anything it knows about, but a cast whose syncCasting() never
+          // reached the server (offline at cast time, a ?q= send that fired
+          // before hydrate flipped serverOn true, a dropped request) lives only
+          // in the local mirror — replacing s.convs wholesale would silently
+          // erase it. So: take every server casting, then re-attach any local
+          // conversation the server has never heard of that actually holds a
+          // finished reading, and push those back up so they stick next time.
+          var serverConvs = d.castings.map(function (c) {
             var p = c.payload || {};
             return { id: c.id, title: c.title, msgs: p.msgs || [], method: c.method, _synced: true };
+          });
+          var serverIds = {};
+          serverConvs.forEach(function (c) { serverIds[c.id] = true; });
+          var localOnly = (s.convs || []).filter(function (c) {
+            if (!c || serverIds[c.id]) return false;
+            return (c.msgs || []).some(function (m) {
+              return m && m.role === "oracle" && String(m.text || "").trim();
+            });
+          });
+          s.convs = serverConvs.concat(localOnly);
+          // Persist the recovered ones so a later reload finds them server-side.
+          localOnly.forEach(function (c) {
+            api("/castings", "POST", {
+              id: c.id, title: c.title, method: c.method || s.method,
+              payload: { msgs: c.msgs || [] }
+            });
           });
         }
         if (METHODS[s.method] === undefined) s.method = "stria";
