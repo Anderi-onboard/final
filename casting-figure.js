@@ -434,7 +434,7 @@
     s.id = "bw-figure-css";
     s.textContent = [
       /* root */
-      ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px}",
+      ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px;font-family:var(--sans)}",
       ".bw-cast-head{display:flex;align-items:center;gap:15px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
@@ -494,7 +494,7 @@
       ".bw-fig-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:5px;",
         "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1);cursor:crosshair}",
       ".bw-fig-glyph{display:block}",
-      ".bw-fig-name{font-family:var(--serif,serif);font-size:13px;color:var(--ink)}",
+      ".bw-fig-name{font-family:var(--sans,sans-serif);font-size:13px;color:var(--ink)}",
       ".bw-fig-name.relating{color:var(--prussian)}",
 
       /* ── INSIGHT: the hexagram read line by line ── */
@@ -504,7 +504,7 @@
       ".bw-ix-head .bw-ix-tag b{color:var(--terracotta);font-weight:400}",
       ".bw-zg{display:flex;gap:28px;align-items:center;padding:18px 24px;background:transparent;border:1px solid var(--line);border-radius:12px}",
       ".bw-zg-svg{flex:none;width:330px;height:auto;overflow:visible}",
-      ".bw-zg-el{font-family:var(--serif);font-weight:600;font-size:13.5px;dominant-baseline:middle}",
+      ".bw-zg-el{font-family:var(--sans);font-weight:600;font-size:13.5px;dominant-baseline:middle}",
       ".bw-zg-role{font-family:var(--sans);font-weight:500;font-size:11px;fill:var(--faint);letter-spacing:.02em}",
       ".bw-zg-mk{font-size:10px;letter-spacing:.05em;text-anchor:end;dominant-baseline:middle;font-family:var(--sans);font-weight:600}",
       ".bw-zg-mk.self{fill:var(--terracotta)}",
@@ -514,7 +514,7 @@
       ".bw-zg-move{transform-box:fill-box;transform-origin:center}",
       ".bw-zg-row{opacity:1}",
       ".bw-zg-side{flex:1;min-width:0}",
-      ".bw-zg-note{font-family:var(--serif);font-size:15px;color:var(--ink);line-height:1.6;text-wrap:pretty}",
+      ".bw-zg-note{font-family:var(--sans);font-size:15px;color:var(--ink);line-height:1.6;text-wrap:pretty}",
       ".bw-zg-legend{display:flex;flex-direction:column;gap:6px;margin-top:15px;font-size:11px;letter-spacing:.03em;color:var(--faint)}",
       ".bw-zg-legend span{display:inline-flex;align-items:center;gap:9px}",
       ".bw-zg-legend i{flex:none;width:14px;height:0;border-top:2px solid var(--line);display:inline-block}",
@@ -526,16 +526,16 @@
       "@media (max-width:600px){.bw-zg{flex-direction:column;align-items:stretch;gap:16px}.bw-zg-svg{width:100%}}",
 
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
-      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:9px;max-width:100%}",
+      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:9px;max-width:100%;font-family:var(--sans)}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
-      ".bw-af-el{font-family:var(--serif);font-size:11px;font-weight:600;fill:var(--ink)}",
+      ".bw-af-el{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
-      ".bw-af-bel{font-family:var(--serif);font-size:10.5px;font-weight:600;fill:var(--dim)}",
+      ".bw-af-bel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--dim)}",
       ".bw-af-mk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}",
       ".bw-af-mk.self{fill:var(--terracotta)}",".bw-af-mk.resp{fill:var(--prussian)}",
       ".bw-af-tri-sym{font-size:15px;fill:var(--terracotta)}",
       ".bw-af-tri-en{font-family:var(--sans);font-size:8px;letter-spacing:.12em;fill:var(--faint)}",
-      ".bw-af-name{font-family:var(--serif);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
+      ".bw-af-name{font-family:var(--sans);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
       ".bw-af-arrow{fill:none;stroke-width:1.5;opacity:.5;stroke-linecap:round}",
       ".bw-af-tarrow{fill:none;stroke:var(--faint);stroke-width:1.4;stroke-linecap:round}",
       ".bw-af-branch{opacity:1}",
@@ -580,7 +580,7 @@
       ".bw-af-mt-date{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);font-weight:600}",
       ".bw-af-mt{display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap}",
       ".bw-af-mt i{font-style:normal;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
-      ".bw-af-mt b{font-family:var(--serif);font-size:12px;font-weight:600;color:var(--ink)}",
+      ".bw-af-mt b{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink)}",
       ".bw-af-mt.hot b{color:var(--terracotta)}",
       ".bw-af-mt.vd b{font-size:11px;color:var(--prussian)}",
       /* moving-line marks ○/✕ (brush strokes, right of the bar) + the flowing sheng-ke ties */
@@ -618,10 +618,10 @@
       /* full board: header + dense per-line branches (Sortis tier) */
       ".bw-af-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--sans);font-size:11px;color:var(--dim);padding-bottom:9px;margin-bottom:2px;border-bottom:1px solid var(--line-soft)}",
       ".bw-af-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
-      ".bw-af-gzp{color:var(--dim)}",".bw-af-gzp b{font-family:var(--serif);font-size:12.5px;color:var(--ink);font-weight:600}",
+      ".bw-af-gzp{color:var(--dim)}",".bw-af-gzp b{font-family:var(--sans);font-size:12.5px;color:var(--ink);font-weight:600}",
       ".bw-af-gzp.hot b{color:var(--terracotta)}",
-      ".bw-af-void{margin-left:auto;color:var(--dim)}",".bw-af-void b{font-family:var(--serif);color:var(--prussian)}",
-      ".bw-af-rel{font-family:var(--serif);font-size:10.5px;font-weight:600;fill:var(--ink)}",
+      ".bw-af-void{margin-left:auto;color:var(--dim)}",".bw-af-void b{font-family:var(--sans);color:var(--prussian)}",
+      ".bw-af-rel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--ink)}",
       ".bw-af-gz{font-family:var(--sans);font-size:9px;fill:var(--ink)}",
       ".bw-af-fel{font-family:var(--sans);font-size:8.5px;fill:var(--faint)}",
       ".bw-af-sp{font-family:var(--sans);font-size:8.5px;fill:var(--dim)}",
@@ -629,7 +629,7 @@
       ".bw-af-ss{font-family:var(--sans);font-size:7.5px;letter-spacing:.02em;fill:var(--prussian)}",
       ".bw-af-flag{font-family:var(--sans);font-size:7.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--prussian)}",
       ".bw-af-tt{font-family:var(--sans);font-size:8.5px}",
-      ".bw-af-brel{font-family:var(--serif);font-size:10px;font-weight:600;fill:var(--prussian)}",".bw-af-brel.hot{fill:var(--terracotta)}",
+      ".bw-af-brel{font-family:var(--sans);font-size:10px;font-weight:600;fill:var(--prussian)}",".bw-af-brel.hot{fill:var(--terracotta)}",
       ".bw-af-full .bw-af-legend{margin-top:2px}",
       "@media (prefers-reduced-motion:no-preference){",
         /* lines float in bottom\u2192top, same brush as the casting figure */
