@@ -205,10 +205,12 @@
     return '<span class="bw-tri-sym">'+tri.sym+'</span>'+
            '<span class="bw-tri-en">'+tri.en+'</span>';
   }
+  /* refined transform arrow: a long hairline shaft with a small open head —
+     no squiggle, no fat chevron. Reads as a typographic mark, not a doodle. */
   function arrowSVG(){
-    return '<svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="var(--faint)" '+
-      'stroke-width="1.4" stroke-linecap="round" aria-hidden="true">'+
-      '<path d="M2 8 C10 3 18 13 26 8"></path><path d="M21 4l5 4-5 4"></path></svg>';
+    return '<svg width="34" height="12" viewBox="0 0 34 12" fill="none" stroke="var(--ghost)" '+
+      'stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+
+      '<path d="M2 6 H 31"></path><path d="M26.5 2.8 L 31 6 L 26.5 9.2"></path></svg>';
   }
   function esc(s){
     return String(s==null?"":s).replace(/[&<>]/g,function(c){
@@ -376,6 +378,9 @@
     var figEl = container.querySelector(".bw-af-fig");
     var svg = container.querySelector("svg.bw-af");
     var status = container.querySelector(".bw-cast-status");
+    /* synchronous — measuring right after innerHTML forces layout once, BEFORE
+       first paint, so the centering shift is never visible as a "refresh" */
+    opticalCenter(container);
 
     /* reduced-motion: figure is already fully painted & static; nothing to animate */
     if (reduced || !svg) {
@@ -390,41 +395,71 @@
     var ordinals = ["First","Second","Third","Fourth","Fifth","Sixth"];
 
     return new Promise(function(resolve){
-      var PER = 360, i = 0;
+      /* ONE unbroken rhythm \u2014 no phases. All twelve strokes (primary six, then
+         transformed six) land on the same steady 620ms heartbeat with zero
+         pause between the figures, and the annotations begin blooming while
+         the final strokes are still settling \u2014 a single continuous unfolding,
+         never "part one, stop, part two". Each stroke's 950ms settle always
+         finishes before its successor's midpoint, so nothing collides. */
+      var PER = 620;
+      var seq = benLn.concat(bianLn), k = 0;
       if (status) status.textContent = "Casting\u2026";
-      setTimeout(stepBen, 360);
+      setTimeout(step, 480);
 
-      function stepBen(){
-        if (i >= benLn.length){ stepBian(); return; }
-        if (status) status.textContent = ordinals[i]+" line\u2026";
-        benLn[i].classList.add("in");
-        i++;
-        setTimeout(stepBen, PER);
+      function step(){
+        if (k >= seq.length){ finishCast(); return; }
+        if (status) {
+          status.textContent = k < benLn.length
+            ? ordinals[k] + " line\u2026"
+            : "Transforming\u2026";
+        }
+        seq[k].classList.add("in");
+        k++;
+        /* annotations start blooming two strokes before the end \u2014 the finish
+           overlaps the last ink instead of waiting for it */
+        if (k === seq.length - 1) beginBloom();
+        setTimeout(step, PER);
       }
-      function stepBian(){
-        if (!bianLn.length){ finishCast(); return; }
-        if (status) status.textContent = "Moving lines\u2026";
-        var j = 0;
-        (function tick(){
-          if (j >= bianLn.length){ setTimeout(finishCast, 220); return; }
-          bianLn[j].classList.add("in");
-          j++;
-          setTimeout(tick, PER*0.7);
-        })();
+      var bloomed = false;
+      function beginBloom(){
+        /* stage 1: start the branch-label bloom (their keyframe animations fill
+           forwards, overriding the data-cast hide) while the last strokes are
+           still landing — data-cast stays ON so un-landed lines remain hidden */
+        if (bloomed) return; bloomed = true;
+        svg.setAttribute("data-anim","1");
       }
       function finishCast(){
-        /* reveal everything that hung off the figure (trigrams, names, branches,
-           sheng-ke arrows) and switch the whole board to its living, looping state */
+        beginBloom();
+        /* stage 2: the last stroke has landed — release the rest of the board
+           (marks → names → currents follow on their own staggered transitions) */
         svg.removeAttribute("data-cast");
-        svg.setAttribute("data-anim","1");
         if (figEl){ figEl.classList.remove("casting"); figEl.classList.add("bw-af-live"); }
         if (status) status.textContent = "";
-        setTimeout(resolve, 900);
+        setTimeout(resolve, 1100);
       }
     });
   }
 
   function el(tag,cls){ var e=document.createElement(tag); if(cls) e.className=cls; return e; }
+
+  /* ── optical centering: the drawn ink's left/right extents vary per cast
+     (label text lengths differ), so a centered CONTAINER can still read as
+     off-center. Measure the ink and zero the drift on the wrapper. ── */
+  function opticalCenter(container){
+    try{
+      if(!container) return;
+      var svg = container.querySelector('svg.bw-af'); if(!svg) return;
+      var sr = svg.getBoundingClientRect(); if(!sr.width) return;
+      var l = 1e9, r = -1e9;
+      svg.querySelectorAll('path,text,circle').forEach(function(n){
+        var b = n.getBoundingClientRect();
+        if(b.width || b.height){ if(b.left < l) l = b.left; if(b.right > r) r = b.right; }
+      });
+      if(r <= l) return;
+      var drift = (l + r) / 2 - (sr.left + sr.width / 2);
+      if (Math.abs(drift) > .5) container.style.transform = 'translateX(' + (-drift).toFixed(1) + 'px)';
+    }catch(e){}
+  }
 
   /* ── CSS ── */
   var injected = false;
@@ -435,7 +470,9 @@
     s.textContent = [
       /* root */
       ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px;font-family:var(--sans)}",
-      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}",
+      /* Spinnaker, pinned — without this the header inherits the reading
+         column's book serif */
+      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:12px;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
@@ -464,19 +501,19 @@
       /* ── FIGURES ── */
       ".bw-figs{display:inline-flex;align-items:center;gap:18px}",
       ".bw-fig{display:block;overflow:visible}",
-      ".bw-fig .bw-ln{opacity:0;transform:translateY(4px);cursor:pointer}",
+      ".bw-fig .bw-ln{opacity:0;transform:translateY(4px);cursor:default}",
       /* Line reveal: gentle float-in from below — classical, unhurried */
       ".bw-fig .bw-ln.in{animation:bwLineFloat .8s cubic-bezier(.22,.7,.28,1) forwards}",
-      ".bw-fig .bw-ln.shown{opacity:1;transform:translateY(0)}",
-      ".bw-fig:hover .bw-ln.shown{opacity:.3;transition:opacity .2s}",
-      ".bw-fig:hover .bw-ln.shown:hover{opacity:1;transition:none}",
+      ".bw-fig .bw-ln.shown{opacity:1;transform:translateY(0);transition:transform .4s cubic-bezier(.22,.7,.28,1),filter .4s ease}",
+      /* micro-interaction: the hovered line alone breathes — a hair of lift and
+         a warm underglow. Nothing else dims, nothing jumps. */
+      ".bw-fig .bw-ln.shown:hover{transform:translateY(-1px);filter:drop-shadow(0 2px 4px rgba(181,80,44,.2))}",
       "@keyframes bwLineFloat{",
         "0%{opacity:0;transform:translateY(4px)}",
         "30%{opacity:.6}",
         "70%{transform:translateY(-1px)}",
         "100%{opacity:1;transform:translateY(0)}",
       "}",
-      ".bw-fig:hover .bw-ln.shown:hover{opacity:1 !important;filter:drop-shadow(0 0 3px rgba(181,80,44,.35));transition:none}",
       ".bw-fig-relating{opacity:0;transition:opacity .7s ease}",
       ".bw-fig-relating.lit{opacity:1}",
 
@@ -492,9 +529,9 @@
       ".bw-pair-arrow{display:flex;align-items:center;padding-bottom:18px}",
       ".bw-pair{display:inline-flex;align-items:center;gap:14px}",
       ".bw-fig-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:5px;",
-        "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1);cursor:crosshair}",
+        "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1)}",
       ".bw-fig-glyph{display:block}",
-      ".bw-fig-name{font-family:var(--sans,sans-serif);font-size:13px;color:var(--ink)}",
+      ".bw-fig-name{font-family:var(--sans);font-size:13px;color:var(--ink)}",
       ".bw-fig-name.relating{color:var(--prussian)}",
 
       /* ── INSIGHT: the hexagram read line by line ── */
@@ -526,18 +563,21 @@
       "@media (max-width:600px){.bw-zg{flex-direction:column;align-items:stretch;gap:16px}.bw-zg-svg{width:100%}}",
 
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
-      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:9px;max-width:100%;font-family:var(--sans)}",
+      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:100%;font-family:var(--sans)}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
+      /* SVG text at fractional scale renders fuzzy with default hinting — force
+         geometric precision so micro labels stay crisp at any board width */
+      ".bw-af text{text-rendering:geometricPrecision}",
       ".bw-af-el{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
       ".bw-af-bel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--dim)}",
       ".bw-af-mk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}",
       ".bw-af-mk.self{fill:var(--terracotta)}",".bw-af-mk.resp{fill:var(--prussian)}",
       ".bw-af-tri-sym{font-size:15px;fill:var(--terracotta)}",
-      ".bw-af-tri-en{font-family:var(--sans);font-size:8px;letter-spacing:.12em;fill:var(--faint)}",
+      ".bw-af-tri-en{font-family:var(--sans);font-size:8.5px;letter-spacing:.12em;fill:var(--faint)}",
       ".bw-af-name{font-family:var(--sans);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
       ".bw-af-arrow{fill:none;stroke-width:1.5;opacity:.5;stroke-linecap:round}",
-      ".bw-af-tarrow{fill:none;stroke:var(--faint);stroke-width:1.4;stroke-linecap:round}",
+      ".bw-af-tarrow{fill:none;stroke:var(--ghost);stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;opacity:.85}",
       ".bw-af-branch{opacity:1}",
       ".bw-af-legend{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint);padding-top:8px;border-top:1px solid var(--line-soft);width:100%}",
       ".bw-af-legend span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}",
@@ -589,11 +629,21 @@
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
       ".bw-af-fig.casting .bw-af-moment{opacity:0;transition:opacity .5s ease}",
       ".bw-af[data-cast] .bw-af-ln{opacity:0}",
-      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;animation:bwAfRow .42s cubic-bezier(.22,.7,.28,1)}",
+      /* a stroke of ink settling: drifts up from below through a slight blur,
+         overshoots a hair, then rests — 950ms, always finished before the next
+         line begins (620ms cadence + the animation's long soft tail) */
+      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;animation:bwAfRow .95s cubic-bezier(.2,.65,.25,1) both}",
       ".bw-af[data-cast] .bw-af-branch,.bw-af[data-cast] .bw-af-arrow,.bw-af[data-cast] .bw-af-tarrow,.bw-af[data-cast] .bw-af-flow,.bw-af[data-cast] .bw-af-flowbase,.bw-af[data-cast] .bw-af-mark,.bw-af[data-cast] .bw-af-markbg{opacity:0}",
       ".bw-af[data-cast] .bw-af-tri-sym,.bw-af[data-cast] .bw-af-tri-en,.bw-af[data-cast] .bw-af-name{opacity:0}",
-      ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name,.bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .5s ease}",
-      "@keyframes bwAfRow{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}",
+      /* the finish is a layered bloom, not a dump: annotations arrive in waves —
+         branches → moving marks → trigrams/names → sheng-ke currents */
+      ".bw-af .bw-af-branch{transition:opacity .6s ease}",
+      ".bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .6s ease .25s}",
+      ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name{transition:opacity .7s ease .5s}",
+      ".bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-tarrow{transition:opacity .8s ease .85s}",
+      /* opacity+transform ONLY — an animated filter:blur on SVG forces a full
+         re-raster every frame and was the frame-skip ("跳帧") source */
+      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(9px)}55%{opacity:1}78%{transform:translateY(-.6px)}100%{opacity:1;transform:none}}",
       /* ── the living board: everything loops gently & in step ── */
       "@media (prefers-reduced-motion:no-preference){",
         /* each ink line undulates on a slow, irregular ocean swell — per-line
@@ -623,11 +673,11 @@
       ".bw-af-void{margin-left:auto;color:var(--dim)}",".bw-af-void b{font-family:var(--sans);color:var(--prussian)}",
       ".bw-af-rel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--ink)}",
       ".bw-af-gz{font-family:var(--sans);font-size:9px;fill:var(--ink)}",
-      ".bw-af-fel{font-family:var(--sans);font-size:8.5px;fill:var(--faint)}",
-      ".bw-af-sp{font-family:var(--sans);font-size:8.5px;fill:var(--dim)}",
-      ".bw-af-hid{font-family:var(--sans);font-size:8px;fill:var(--faint);font-style:italic}",
-      ".bw-af-ss{font-family:var(--sans);font-size:7.5px;letter-spacing:.02em;fill:var(--prussian)}",
-      ".bw-af-flag{font-family:var(--sans);font-size:7.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--prussian)}",
+      ".bw-af-fel{font-family:var(--sans);font-size:9px;fill:var(--faint)}",
+      ".bw-af-sp{font-family:var(--sans);font-size:9px;fill:var(--dim)}",
+      ".bw-af-hid{font-family:var(--sans);font-size:8.5px;fill:var(--faint);font-style:italic}",
+      ".bw-af-ss{font-family:var(--sans);font-size:8.5px;letter-spacing:.02em;fill:var(--prussian)}",
+      ".bw-af-flag{font-family:var(--sans);font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--prussian)}",
       ".bw-af-tt{font-family:var(--sans);font-size:8.5px}",
       ".bw-af-brel{font-family:var(--sans);font-size:10px;font-weight:600;fill:var(--prussian)}",".bw-af-brel.hot{fill:var(--terracotta)}",
       ".bw-af-full .bw-af-legend{margin-top:2px}",
@@ -776,12 +826,13 @@
     srcLines.forEach(function (s, i) {
       if (s === selfLi) return;
       var r = elRel(els[s], els[selfLi]), col = r.color;
-      var y1 = cy(s), y2 = cy(selfLi), mid = (y1 + y2) / 2;
+      var y1 = cy(s), y2raw = cy(selfLi), mid = (y1 + y2raw) / 2;
+      var y2 = y2raw + (y1 > y2raw ? 6 : -6); // stand off the target line
       var bow = gx - 13 - i * 7, len = Math.abs(y2 - y1) + 80;
       var dpath = 'M ' + gx + ' ' + y1 + ' Q ' + bow + ' ' + mid + ' ' + gx + ' ' + y2;
       var mid2 = 'bwZgArr' + i;
-      markers += '<marker id="' + mid2 + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">' +
-        '<path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
+      markers += '<marker id="' + mid2 + '" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse">' +
+        '<path d="M4 3.2 L8.4 6 L4 8.8" fill="none" stroke="' + col + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></marker>';
       arrow += '<path d="' + dpath + '" class="bw-zg-arrow" stroke="' + col + '" marker-end="url(#' + mid2 + ')" style="--bw-zg-len:' + len + ';--bw-zg-i:' + i + '"></path>' +
         '<path d="' + dpath + '" class="bw-zg-flow ' + r.kind + '" stroke="' + col + '" style="--bw-zg-i:' + i + '"></path>';
     });
@@ -900,7 +951,7 @@
       var row = afInk(benX, yc, BARW, lines[li].yang, "var(--ink)", 6 + li * 0.45, li * 0.9, flow);
       if (moving.indexOf(li) >= 0)
         row += '<circle cx="' + benCx + '" cy="' + yc + '" r="4.2" fill="var(--paper-raised)" stroke="var(--terracotta)" stroke-width="1.5"></circle>';
-      ben += '<g class="bw-af-ln" data-li="' + li + '" style="--wd:' + (6 + li * 0.45).toFixed(2) + 's;--bd:' + (-li * 0.8).toFixed(2) + 's">' + row + '</g>';
+      ben += '<g class="bw-af-ln" data-li="' + li + '" style="--wd:' + (6 + li * 0.45).toFixed(2) + 's;--bd:' + (li * 0.55).toFixed(2) + 's">' + row + '</g>';
       var elName = ELEMENTS[els[li]].en, role = relativeRole(els[li], selfGi);
       branch += '<g class="bw-af-branch" style="--d:' + d + 's;--fx:7px">' +
         '<text x="' + benTextX + '" y="' + yc + '" text-anchor="end" dominant-baseline="middle">' +
@@ -930,12 +981,12 @@
     var tarrow = "", bian = "", bbranch = "";
     if (hasBian) {
       var ty = (cy(5) + cy(0)) / 2;
-      tarrow = '<path class="bw-af-tarrow" d="M 224 ' + ty + ' C 234 ' + (ty - 5) + ' 246 ' + (ty + 5) + ' 256 ' + ty + '"></path>' +
-        '<path class="bw-af-tarrow" d="M 251 ' + (ty - 4) + ' l 5 4 l -5 4"></path>';
+      tarrow = '<path class="bw-af-tarrow" d="M 225 ' + ty + ' L 255 ' + ty + '"></path>' +
+        '<path class="bw-af-tarrow" d="M 250.8 ' + (ty - 3) + ' L 255 ' + ty + ' L 250.8 ' + (ty + 3) + '"></path>';
       var bl = spec.transformedLines;
       for (var li2 = 5; li2 >= 0; li2--) {
         var yc2 = cy(li2), d2 = ((5 - li2) * 0.07 + 0.15).toFixed(3);
-        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (6.3 + li2 * 0.45).toFixed(2) + 's;--bd:' + (-li2 * 0.8 - 0.5).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, bl[li2].yang, "var(--prussian)", 6.3 + li2 * 0.45, li2 * 0.9 + 0.6, flow) + '</g>';
+        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (6.3 + li2 * 0.45).toFixed(2) + 's;--bd:' + (li2 * 0.55 + 0.3).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, bl[li2].yang, "var(--prussian)", 6.3 + li2 * 0.45, li2 * 0.9 + 0.6, flow) + '</g>';
         bbranch += '<g class="bw-af-branch" style="--d:' + d2 + 's;--fx:-7px">' +
           '<text class="bw-af-bel" x="' + bianTextX + '" y="' + yc2 + '" text-anchor="start" dominant-baseline="middle">' + ELEMENTS[els2[li2]].en + '</text></g>';
       }
@@ -987,7 +1038,7 @@
       pill("Year", rom(P.year)),
       pill("Month", rom(P.month)),
       pill("Day", rom(P.day), "hot"),
-      pill("Hour", rom(P.hour) + (P.hourKnown ? "" : "\u00b7?")),
+      pill("Hour", P.hourKnown ? rom(P.hour) : "\u2014"),
       pill("Void", BR_PY[k[0].bi] + " " + BR_PY[k[1].bi], "vd")
     ];
     return '<div class="bw-af-moment" aria-hidden="true">' +
@@ -1004,7 +1055,9 @@
     var TOP = 46, STEP = 25, BARW = 56;
     function cy(li) { return TOP + (5 - li) * STEP; }
     var benX = 246, benR = benX + BARW, benLeadX = benX - 6, benTextX = benX - 12;
-    var tieX = benR, benMkX = 320;
+    /* marks (○/✕) sit clearly right of the bar, and the Self/Resp label starts
+       clear of the marks — the old 318/320 put the ring ON the label */
+    var tieX = benR, benMkX = 342;
     var bianX = 408, bianR = bianX + BARW, bianLeadX = bianR + 4, bianTextX = bianR + 10;
     /* no transformed figure to make room for: crop the canvas to the primary
        column + its World/Resp marks instead of always reserving the full
@@ -1046,13 +1099,16 @@
       return 'class="bw-af-branch bw-aft-' + (i % 5) + '" style="--d:' + (i * 0.075).toFixed(3) + 's;--fx:' + fx + 'px"';
     }
     /* non-harmonic per-line wave periods + phases → an irregular ocean swell */
-    var WD = [6.4, 7.7, 5.9, 8.3, 6.8, 7.2], PH = [0, -1.3, -2.7, -0.8, -3.4, -1.9];
+    /* phases are POSITIVE stagger — every line starts its swell from rest
+       (translateY 0). Negative phases made the whole figure jump to mid-wave
+       the instant the living state switched on (the reported "突然刷新"). */
+    var WD = [6.4, 7.7, 5.9, 8.3, 6.8, 7.2], PH = [0, 0.9, 1.7, 0.5, 2.1, 1.3];
     for (var li = 5; li >= 0; li--) {
       var l = L[li], yc = cy(li);
       var row = afInk(benX, yc, BARW, l.yang, "var(--ink)", WD[li], li * 0.9, flow);
       if (l.moving) {
         /* moving-line mark to the RIGHT of the bar, brush-drawn: ○ old-yang · ✕ old-yin */
-        row += moveMark(benR + 12, yc, l.yang);
+        row += moveMark(benR + 20, yc, l.yang);
       }
       ben += '<g class="bw-af-ln" data-li="' + li + '" style="--wd:' + WD[li] + 's;--bd:' + PH[li] + 's">' + row + '</g>';
 
@@ -1088,11 +1144,16 @@
       if (s === worldLi) return;
       var gA = EN_GI[L[s].element.en], gB = EN_GI[L[worldLi].element.en];
       var r = elRel(gA, gB), col = r.kind === "peer" ? "var(--faint)" : "color-mix(in oklab, " + r.color + " 42%, var(--dim))";
-      var y1 = cy(s), y2 = cy(worldLi), mid = (y1 + y2) / 2;
-      var span = Math.abs(y2 - y1), peak = tieX + 8 + span * 0.16 + i * 3;
+      var y1 = cy(s), y2raw = cy(worldLi), mid = (y1 + y2raw) / 2;
+      /* stop the current 6 units short of the target line so the head never
+         collides with the moving-line ring / Self label sitting there */
+      var y2 = y2raw + (y1 > y2raw ? 6 : -6);
+      var span = Math.abs(y2raw - y1), peak = tieX + 8 + span * 0.16 + i * 3;
       var dp = 'M ' + tieX + ' ' + y1 + ' Q ' + peak + ' ' + mid + ' ' + tieX + ' ' + y2;
-      var id = 'bwAfb' + i, len = (Math.abs(y2 - y1) + 90), mw = manyTies ? 5 : 6;
-      defs += '<marker id="' + id + '" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="' + mw + '" markerHeight="' + mw + '" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="' + col + '"></path></marker>';
+      var id = 'bwAfb' + i, len = (Math.abs(y2 - y1) + 90), mw = manyTies ? 4.5 : 5;
+      /* open chevron head — same stroke language as every other arrow on the
+         board (no filled wedges anywhere) */
+      defs += '<marker id="' + id + '" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="' + mw + '" markerHeight="' + mw + '" orient="auto-start-reverse"><path d="M4 3.2 L8.4 6 L4 8.8" fill="none" stroke="' + col + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></marker>';
       arrows += '<path class="bw-af-flowbase" d="' + dp + '" stroke="' + col + '" style="--len:' + len + (manyTies ? ';opacity:.14' : '') + '"></path>' +
         '<path class="bw-af-flow ' + r.kind + '" d="' + dp + '" stroke="' + col + '" marker-end="url(#' + id + ')" style="--fi:' + i + (manyTies ? ';stroke-width:1.8' : '') + '"></path>';
     });
@@ -1101,11 +1162,11 @@
     var tarrow = "", bian = "", bbranch = "";
     if (hasBian) {
       var ty = (cy(5) + cy(0)) / 2;
-      tarrow = '<path class="bw-af-tarrow" d="M ' + (arrowCx - 16) + ' ' + ty + ' C ' + (arrowCx - 6) + ' ' + (ty - 5) + ' ' + (arrowCx + 6) + ' ' + (ty + 5) + ' ' + (arrowCx + 16) + ' ' + ty + '"></path>' +
-        '<path class="bw-af-tarrow" d="M ' + (arrowCx + 11) + ' ' + (ty - 4) + ' l 5 4 l -5 4"></path>';
+      tarrow = '<path class="bw-af-tarrow" d="M ' + (arrowCx - 15) + ' ' + ty + ' L ' + (arrowCx + 15) + ' ' + ty + '"></path>' +
+        '<path class="bw-af-tarrow" d="M ' + (arrowCx + 10.8) + ' ' + (ty - 3) + ' L ' + (arrowCx + 15) + ' ' + ty + ' L ' + (arrowCx + 10.8) + ' ' + (ty + 3) + '"></path>';
       for (var li2 = 5; li2 >= 0; li2--) {
         var b = bf[li2], yc2 = cy(li2);
-        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (WD[li2] + 0.5) + 's;--bd:' + (PH[li2] - 0.6).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, b.yang, "var(--prussian)", WD[li2] + 0.5, li2 * 0.9 + 0.6, flow) + '</g>';
+        bian += '<g class="bw-af-ln" data-bian="1" data-li="' + li2 + '" style="--wd:' + (WD[li2] + 0.5) + 's;--bd:' + (PH[li2] * 0.5 + 0.35).toFixed(2) + 's">' + afInk(bianX, yc2, BARW, b.yang, "var(--prussian)", WD[li2] + 0.5, li2 * 0.9 + 0.6, flow) + '</g>';
         var bmk = b.marker === "self" ? "Self" : (b.marker === "response" ? "Resp" : "");
         bbranch += '<g ' + aftAttr(-7) + '>' +
           '<text x="' + bianTextX + '" y="' + yc2 + '" text-anchor="start" dominant-baseline="middle">' +
@@ -1146,6 +1207,7 @@
   window.BWFigure = {
     random:    random,
     glyphSVG:  glyphSVG,
+    opticalCenter: opticalCenter,
     pairHTML:  pairHTML,
     cast:      cast,
     loaderEl:  loaderEl,

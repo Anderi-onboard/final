@@ -43,11 +43,19 @@
     var foot = $("acctBtn");
     foot.querySelector(".avatar").textContent = a.signedIn ? (a.avatar || "EV") : "G";
     foot.querySelector("b").textContent = a.name;
-    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Not signed in";
+    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Sign in to begin";
     var menu = $("acctMenu");
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to keep your ledger";
     $("miPlans").querySelector("b").textContent = A.planName(a.plan).toUpperCase();
+    // the sign-in coach-mark only nudges signed-out guests, and stays gone once
+    // dismissed
+    var coach = $("signinCoach");
+    if (coach) {
+      var dismissed = false;
+      try { dismissed = localStorage.getItem("bw:coachDismissed") === "1"; } catch (e) {}
+      coach.hidden = a.signedIn || dismissed;
+    }
   }
 
   function renderMethod() {
@@ -249,6 +257,48 @@
     if (sent.length <= 1) return sent;
     return [sent[0], sent.slice(1).join(" ")];
   }
+
+  /* Render the reading's markdown into clean HTML — the WHOLE reading, not just
+     the first two lines. The model writes # headings, ** bold **, --- rules and
+     - lists; the old renderer dumped only paras[0]+paras[1] as raw text, so a
+     full reading collapsed to two lines of literal "#"/"**" (the bug the user
+     saw). Inline: **bold**, *italic*, and |gilded| key terms. */
+  function mdInline(s) {
+    var h = esc(s);
+    h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    h = h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
+    var n = 0;
+    h = h.replace(/\|([^|]+)\|/g, function (_, t) { n++; return '<span class="gild' + (n % 2 === 0 ? " alt" : "") + '">' + t + "</span>"; });
+    return h;
+  }
+  function mdReading(text) {
+    var lines = String(text || "").replace(/\r/g, "").split("\n");
+    // drop a leading heading that only echoes the question ("# 你问：…", "# You asked…")
+    while (lines.length && !lines[0].trim()) lines.shift();
+    if (lines.length && /^#{1,6}\s*(你问|问[:：]|You asked|Your question|Q[:：])/i.test(lines[0].trim())) lines.shift();
+    var out = "", para = [], inList = false;
+    function flushP() { if (para.length) { out += '<p class="rd-para">' + mdInline(para.join(" ")) + "</p>"; para = []; } }
+    function closeL() { if (inList) { out += "</ul>"; inList = false; } }
+    for (var i = 0; i < lines.length; i++) {
+      var t = lines[i].trim();
+      if (!t) { flushP(); closeL(); continue; }
+      if (/^(---+|\*\*\*+|___+)$/.test(t)) { flushP(); closeL(); out += '<hr class="rd-hr">'; continue; }
+      var hm = t.match(/^(#{1,6})\s+(.*)$/);
+      if (hm) {
+        flushP(); closeL();
+        var lvl = hm[1].length;
+        var cls = lvl <= 1 ? "rd-title" : (lvl === 2 ? "rd-h2" : "rd-h3");
+        out += '<div class="' + cls + '">' + mdInline(hm[2]) + "</div>";
+        continue;
+      }
+      var lm = t.match(/^[-*+]\s+(.*)$/) || t.match(/^\d+[.)]\s+(.*)$/);
+      if (lm) { flushP(); if (!inList) { out += '<ul class="rd-list">'; inList = true; } out += "<li>" + mdInline(lm[1]) + "</li>"; continue; }
+      para.push(t);
+    }
+    flushP(); closeL();
+    return out;
+  }
+
   var V_LABEL = { favorable: "Favorable", unfavorable: "Unfavorable", mixed: "Mixed", unclear: "Unclear" };
   var V_TITLE = {
     favorable: "The figure supports it", unfavorable: "The figure resists it",
@@ -259,21 +309,15 @@
   function verdictHTML(msg) {
     var r = msg.reading || null;
 
+    // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
-      var paras = splitParas(msg.text);
-      var body = paras.length
-        ? '<p class="rd-lede stream-target">' + gildText(paras[0]) + '</p>' +
-          (paras[1] ? '<p class="rd-para stream-target">' + gildText(paras[1]) + '</p>' : "")
-        : "";
-      return '<div class="reading-body">' +
-        '<div class="rd-head"><h3 class="rd-title">The reading</h3></div>' + body + '</div>';
+      var prose = mdReading(msg.text);
+      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>';
     }
 
+    // Structured (legacy interpret) — full prose + key-line and timing sections.
     var badge = '<span class="rd-badge ' + r.verdict + '">' + (V_LABEL[r.verdict] || "Reading") + '</span>';
     var title = V_TITLE[r.verdict] || "The reading";
-    var paras2 = splitParas(r.reading);
-    var bodyP = (paras2[0] ? '<p class="rd-lede stream-target">' + gildText(paras2[0]) + '</p>' : "") +
-                (paras2[1] ? '<p class="rd-para stream-target">' + gildText(paras2[1]) + '</p>' : "");
     var keys = (r.keyLines || []).map(function (k) {
       return '<li><span class="rd-kl-n">Line ' + k.line + '</span><span class="rd-kl-note">' + esc(k.note || "") + '</span></li>';
     }).join("");
@@ -281,7 +325,7 @@
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
     return '<div class="reading-body">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
-      bodyP + keysSec + timeSec + '</div>';
+      mdReading(r.reading) + keysSec + timeSec + '</div>';
   }
   /* static, fully-painted reading (used on reload / conversation switch) */
   function readingHTML(msg) {
@@ -322,6 +366,12 @@
         a.innerHTML = readingHTML(m, c.id, i);
         threadInner.appendChild(a);
         if (window.BWLiuYaoChart) window.BWLiuYaoChart.wire(a);
+        // optical centering for reloaded boards (same as during a live cast)
+        if (window.BWFigure && window.BWFigure.opticalCenter) {
+          (function (art) {
+            requestAnimationFrame(function () { window.BWFigure.opticalCenter(art.querySelector(".reading-fig")); });
+          })(a);
+        }
       }
     });
     var t = $("thread");
@@ -394,7 +444,19 @@
   function routedReading(question, spec, board, methodId, history, onDelta) {
     if (!window.BWPromptRouter) return null; // router module missing → caller's own fallback
     var product = methodId === "stria" ? "stria" : "sortis";
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 45000); });
+    // STALL watchdog, not a flat deadline. The pipeline (route → stream → QC)
+    // legitimately runs well past 45s for a deep Opus reading, so we DON'T cap
+    // total time — the old flat 45s killed real casts that were still streaming
+    // ("解读超时" on a paid reading). Instead fail only if it goes silent: no
+    // first token, or the stream stops advancing, for STALL ms. Every streamed
+    // token resets the clock, so a slow-but-alive reading survives.
+    var STALL = 60000, timer = null, fireTimeout = null;
+    var guard = new Promise(function (res) {
+      fireTimeout = function () { res({ __timeout: true }); };
+      timer = setTimeout(fireTimeout, STALL);
+    });
+    function bump() { if (timer) clearTimeout(timer); timer = setTimeout(fireTimeout, STALL); }
+    var wrappedDelta = function (t, full) { bump(); if (onDelta) onDelta(t, full); };
     var run = BWPromptRouter.interpret({
       question: question,
       product: product,
@@ -403,12 +465,13 @@
       category: "general",
       // no lang override — BWPromptRouter detects it from the question text
       history: history || [],
-      onDelta: onDelta
+      onDelta: wrappedDelta
     });
     // Errors propagate (with their HTTP status) instead of collapsing to null —
     // downstream used to "heal" that with canned/mock prose, so the user paid
     // units and got a placeholder. send()'s failure handler refunds + explains.
     return Promise.race([run, guard]).then(function (result) {
+      if (timer) clearTimeout(timer);
       if (result && result.__timeout) return result;
       if (!result || !result.reading) return { __error: { message: "empty reading from pipeline" } };
       return {
@@ -418,7 +481,7 @@
         _route: result.route,
         _qc: result.qcResult
       };
-    }).catch(function (err) { return { __error: err || { message: "pipeline failed" } }; });
+    }).catch(function (err) { if (timer) clearTimeout(timer); return { __error: err || { message: "pipeline failed" } }; });
   }
 
   function sortisReading(question, spec, board, history, onDelta) {
@@ -445,7 +508,7 @@
     }
     var lang = /[一-鿿]/.test(question) ? "zh" : "en";
     function pack(reading) { return { text: (reading && reading.reading) || "", board: board, reading: reading }; }
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 45000); });
+    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 90000); });
     var run;
     try {
       run = BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: lang });
@@ -523,12 +586,24 @@
        real tokens in ~1-2s instead of waiting out the whole pipeline in
        silence). Swapped out for the fully-structured verdictHTML() once the
        complete reading is in; see finish() below. */
-    var streamPreview = document.createElement("p");
-    streamPreview.className = "reading-stream-preview";
+    var streamPreview = document.createElement("div");
+    streamPreview.className = "reading-body reading-streaming";
     live.appendChild(streamPreview);
     threadInner.appendChild(live);
+    // Render the reading's real structure + font AS IT STREAMS — markdown →
+    // formatted HTML on every tick — instead of showing raw text and only
+    // reflowing once the whole reading has landed. Throttled (~90ms) so a long
+    // reading doesn't re-parse + repaint on every single token.
+    var streamLast = 0, streamPending = "", streamTimer = null;
+    function paintStream() {
+      streamTimer = null; streamLast = Date.now();
+      streamPreview.innerHTML = mdReading(streamPending);
+    }
     function onStreamDelta(chunk, fullSoFar) {
-      streamPreview.textContent = fullSoFar;
+      streamPending = fullSoFar;
+      var dt = Date.now() - streamLast;
+      if (dt >= 90) paintStream();
+      else if (!streamTimer) streamTimer = setTimeout(paintStream, 90 - dt);
     }
 
     /* Claude-style: lift the question to the top of the thread and reveal the full
@@ -555,6 +630,7 @@
       ? window.BWFigure.cast(castBox, spec, { board: sortisBoard })
       : new Promise(function (r) { setTimeout(r, 1600); });
 
+    try { window.__bwReadingIncomplete = false; } catch (e) {}
     var history = buildHistory(c, 3);
     var answerP;
     if (m.id === "sortis") {
@@ -592,8 +668,17 @@
       /* update only the chrome (balance + history) — leave the thread alone so the
          casting figure isn't wiped; the verdict then streams in naturally below it */
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
+      // backend refunded a reading that didn't finish cleanly — tell the user it
+      // was free and they can recast (the balance already reconciled via bw_meta)
+      if (window.__bwReadingIncomplete) {
+        window.__bwReadingIncomplete = false;
+        S.units = A.state().units; renderUnits();
+        var zhi = /[一-鿿]/.test(text);
+        toast(zhi ? "本次解读未完整生成 — 点数已退回,可再摇一卦。" : "That reading came out incomplete — units refunded, cast again free.");
+      }
       revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
     }
     function release() {
@@ -619,6 +704,7 @@
       else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
       else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading could not be completed — please try again shortly. These units were refunded.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
       var p = document.createElement("p");
@@ -642,30 +728,17 @@
      stream the verdict word-by-word and fade the line-by-line analysis in ── */
   function revealReading(node, msg, convId, idx) {
     var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function keepTop() {
-      var thread = $("thread");
-      var users = thread.querySelectorAll(".msg-user");
-      var lastUser = users[users.length - 1];
-      if (lastUser) {
-        var tr = thread.getBoundingClientRect(), ur = lastUser.getBoundingClientRect();
-        thread.scrollTo({ top: thread.scrollTop + (ur.top - tr.top) - 24, behavior: "smooth" });
-      }
-    }
     return new Promise(function (resolve) {
       /* the casting animation already drew the annotated figure IN PLACE (cast());
-         leave it exactly where it is and append the structured verdict below it. */
+         leave it exactly where it is and append the structured verdict below it.
+         NO auto-scroll here — the old scroll-down-to-the-verdict jerked the view
+         back after the send had lifted the question up (the "上下回滚" complaint);
+         the reader keeps full control of the viewport. */
       node.classList.remove("casting-live");
       var frag = document.createElement("div");
       frag.innerHTML = verdictHTML(msg);
       while (frag.firstChild) node.appendChild(frag.firstChild);
       var bodyEl = node.querySelector(".reading-body");
-      /* bring the verdict into view so its word-stream is actually seen (the figure
-         keeps looping above it; the user can scroll back up to watch the board) */
-      var thread = $("thread");
-      if (bodyEl && thread) {
-        var br = bodyEl.getBoundingClientRect(), tr = thread.getBoundingClientRect();
-        thread.scrollTo({ top: thread.scrollTop + (br.top - tr.top) - 96, behavior: "smooth" });
-      }
       if (reduced || !bodyEl) { resolve(); return; }
       streamReading(bodyEl, function () {
         bodyEl.classList.add("bw-streamed");
@@ -788,10 +861,30 @@
   function closeMenu() { acctMenu.classList.remove("open"); acctBtn.setAttribute("aria-expanded", "false"); }
   acctBtn.addEventListener("click", function (e) {
     e.stopPropagation();
+    // A guest has no account menu to show — the footer IS the "login option".
+    // Login is only ever reached by an explicit click here (or by trying to
+    // send), never automatically on load. Signed-in users get the menu.
+    if (!S.account.signedIn) { location.href = "./login.html"; return; }
     var open = acctMenu.classList.toggle("open");
     acctBtn.setAttribute("aria-expanded", open ? "true" : "false");
   });
   document.addEventListener("click", function (e) { if (!acctMenu.contains(e.target)) closeMenu(); });
+
+  /* ── sign-in coach-mark: the whole callout is a shortcut to login; the ×
+     dismisses it for good. It points at the Guest footer just below it. ── */
+  var coachEl = $("signinCoach");
+  if (coachEl) {
+    coachEl.addEventListener("click", function () { location.href = "./login.html"; });
+    coachEl.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); location.href = "./login.html"; }
+    });
+    var coachX = $("coachClose");
+    if (coachX) coachX.addEventListener("click", function (e) {
+      e.stopPropagation();
+      try { localStorage.setItem("bw:coachDismissed", "1"); } catch (er) {}
+      coachEl.hidden = true;
+    });
+  }
   $("miPlans").addEventListener("click", function () { closeMenu(); openPlans(); });
   $("miSettings").addEventListener("click", function () { location.href = "./settings.html"; });
   $("miSignout").addEventListener("click", function () {
@@ -808,16 +901,24 @@
   if (openBtn) openBtn.addEventListener("click", openPlans);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenu(); closeMethod(); } });
 
+  /* ── entry: ?q= from landing, #plans deep link ── */
+  var params = new URLSearchParams(location.search);
+  var q = (params.get("q") || "").trim();
+  if (q) history.replaceState(null, "", location.pathname);
+
   /* ── boot: hydrate from the server (if signed in), then paint ── */
   renderAll();                       // instant paint from local store
-  A.hydrate(function () { S = A.state(); renderAll(); });
+  A.hydrate(function () {
+    S = A.state(); renderAll();
+    // Fire the landing hand-off ONLY after hydrate resolves, so serverOn and
+    // the signed-in account are known before the cast is created — otherwise
+    // the casting could be produced (and its history written) before the
+    // session is established and never reach the server.
+    if (q) send(q);
+  });
   window.addEventListener("bw:account-synced", function () {
     S.units = A.state().units; renderUnits();
   });
 
-  /* ── entry: ?q= from landing, #plans deep link ── */
-  var params = new URLSearchParams(location.search);
-  var q = (params.get("q") || "").trim();
-  if (q) { history.replaceState(null, "", location.pathname); send(q); }
   if (location.hash === "#plans") openPlans();
 })();
