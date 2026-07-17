@@ -6,6 +6,36 @@ export const PLAN_GRANT = { free: 500, pro: 22500, premium: 45000 };
 export const METHOD_COST = { stria: 300, sortis: 1500 };
 export const PAID = { pro: true, premium: true };
 
+// ── Metered billing (reserve → settle) ─────────────────────────────────────
+// A new cast still charges the flat METHOD_COST when it completes — current
+// margins are anchored there and stay untouched. Metering covers the two
+// cases where flat pricing was unfair or missing:
+//   1. A stream that DIES mid-reading: settle for the tokens actually
+//      delivered (at the rates below) and refund the rest of the reserve.
+//   2. A FOLLOW-UP on an existing casting (no new hexagram): reserve
+//      FOLLOW_COST up front, settle actual usage, refund the difference.
+// Rates are calibrated so a typical full cast (~4-5K in / ~1.5K out) lands at
+// the flat price — i.e. the per-token margin equals today's margin. Tune here.
+export const METERING = {
+  stria:  { inPer1k: 15, outPer1k: 160, minCharge: 15 },
+  sortis: { inPer1k: 75, outPer1k: 800, minCharge: 75 }
+};
+// Reserve/cap for an in-conversation follow-up: at most half a cast.
+export const FOLLOW_COST = { stria: 150, sortis: 750 };
+
+// tokens → units at a product's metering rates, clamped to [minCharge, cap].
+// usage is OpenRouter's {prompt_tokens, completion_tokens}; when a dropped
+// stream never delivered usage, fall back to a chars/4 estimate.
+export function unitsForUsage(product, usage, fallback, cap) {
+  const r = METERING[product] || METERING.stria;
+  const inTok = (usage && Number(usage.prompt_tokens)) ||
+    Math.ceil(((fallback && fallback.inChars) || 0) / 4);
+  const outTok = (usage && Number(usage.completion_tokens)) ||
+    Math.ceil(((fallback && fallback.outChars) || 0) / 4);
+  const raw = Math.ceil((inTok / 1000) * r.inPer1k + (outTok / 1000) * r.outPer1k);
+  return Math.max(r.minCharge, Math.min(cap, raw));
+}
+
 function uuid() {
   return (crypto.randomUUID && crypto.randomUUID()) ||
     ('u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10));

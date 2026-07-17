@@ -4,7 +4,39 @@
 > 当前阶段：**字体已锁定为仅 BioRhyme / Spinnaker / Pacifico 三种，禁止出现任何其他字体**。
 > 其余美术（排版比例、留白、卦象对齐）仍在后期集中处理之列。
 
-最后更新：2026-07-10
+最后更新：2026-07-17
+
+---
+
+## ✅ 已完成 — 计费重构:预扣-实结 + 断流止损 + 同卦追问（2026-07-17）
+
+用户反馈四连:①输出有时中断;②中断后只能全价重新起卦;③无法追问上一卦;
+④因此定价与判定机制需要重构。方向拍板:**维持现有利润,按实际消耗计费**。
+
+- ✅ **新起卦价格不变**(Stria 300 / Sortis 1500)——现有利润完全不动。
+- ✅ **断流按实结算**:`functions/api/claude.js` 流式路径重写为手动泵
+  (`pumpAndSettle`,挂 `waitUntil`,客户端断开也能结算)。捕获 OpenRouter 的
+  `finish_reason` + `usage`(请求带 `usage:{include:true}`);流没走到
+  `stop/end_turn/length` 即视为截断 → 只按实际输出计费、其余点数当场退回,
+  并在尾部 `bw_meta` 事件带 `{incomplete, charged, unitsRemaining}`。
+  客户端 toast 改为「只收已生成部分,发送"继续"可在同卦接着解读」。
+- ✅ **同卦追问(mode:"followup")**:同一对话里已有本方法的卦 → 再发消息
+  不再重新起卦,复用原 board(Stria 从 spec 重算)+ 最近 3 轮 history,
+  计费按实际 token 计量、**封顶半价**(150/750,`FOLLOW_COST`),结算退差。
+  追问跳过 QC(流式本就不重写)。UI 无卦象动画,直接流式作答。
+- ✅ **费率表** `functions/_lib/db.js` `METERING`:按「典型整卦 ≈ 一口价」锚定
+  (stria 15/160 per-1K in/out,sortis 75/800),即每 token 毛利率与现价一致;
+  调价只改这一处。`unitsForUsage()` 有 minCharge 下限与 cap 上限,无 usage 时
+  按字符数/4 兜底估算。
+- ✅ 判定链:`mode` 判定(followup 必须登录;Sortis 追问仍需 Pro)→
+  预扣(reserve)→ 生成 → 实结(settle)→ 退差,账单 reason 区分
+  `cast:*` / `follow:*` / `refund:truncated` / `refund:follow_settle`。
+- ✅ 验证:计费数学 node 单测(典型卦=一口价、断流退差、封顶、下限)+
+  流式泵仿真测试(完整流不误判 / 断流标记 incomplete / 无尾空行的最终
+  usage 记录正确解析)全部通过;改动文件 `node --check` 通过。
+- ⏳ 待观察:Stria 追问因输入(system+board+history)占比高,常触到 150 封顶
+  ——体感即「追问=半价」;若要更便宜需给 system 上 prompt cache 或降追问输入
+  费率,属后续调优,改 `METERING` 常量即可。
 
 ---
 
