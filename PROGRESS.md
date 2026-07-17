@@ -8,6 +8,38 @@
 
 ---
 
+## ✅ 已完成 — 体验四连修 + Creem 合规补缺(2026-07-17,同日第二轮)
+
+用户反馈:①多设备多分辨率可视化不佳;②某些页面背景动效缺失(体感);
+③聊天要 typewriter 打字机流式;④滑动不丝滑、字体未以正式字体首屏出现。
+另:Creem 商户审核缺支持邮箱可见性与首页法务链接。
+
+- ✅ **Typewriter**:`chat-app.js` 新增 `makeTypewriter()`——rAF 逐字符追赶
+  网络缓冲(积压 ~0.4s 内清空)、markdown 预览节流 66ms、复用既有
+  `.reading-streaming::after` 光标;起卦与追问两条流程统一接入;流式完成后
+  直接落定结构化判词,不再二次逐词动画。独立行为测试:渐进采样 15 个
+  不同长度、单调递增、markdown 结构成立、finish 回调正确。
+- ✅ **响应式**:360/768/1440/2560 四档 Playwright 审计。修复:terms/privacy
+  的 `.toc::before{inset:-40px}` 玻璃光晕手机端撑出视口(20px)→ 小屏收窄
+  -12px;pricing 的 `.plan/.topup/.ledgerstrip::before` 同因(22px/10px)→
+  520/860 断点分档收窄;pricing 手机端 nav CTA 缩排;全部卫星页
+  `html{overflow-x:clip}` 兜底(装饰出血不再产生横向滑动)。复测 9 页
+  横向滑动全部锁定。
+- ✅ **滑动丝滑**:about 深屏 `scroll-snap y mandatory + snap-stop:always` →
+  `proximity`(不再逐屏强吸);全站 backdrop-filter 模糊半径下调 ~40%
+  (22→13/20→12/18→11/16→10/12→9/11→8),玻璃观感保留、滚动合成开销大降。
+- ✅ **背景动效**:审计证实 9 页 × 4 分辨率 mtn-bg 全部在动——"缺失"实为
+  透明度过低的体感问题;terms/privacy/refund .42→.58、settings .5→.62。
+- ✅ **字体首屏**:全站补 BioRhyme-700 preload;新增 fonts-wait 门控
+  (`document.fonts.ready` 前 body 隐藏,900ms 兜底)——首屏一次性以正式
+  字体出现,无回退字体闪替。
+- ✅ **Creem 合规**:index 新增常显 `.site-foot`(Support 邮箱 +
+  Terms/Privacy/Refunds/Pricing 链接,空状态固定底部);about 页脚补邮箱
+  与 Refunds 链接。
+- 缓存版本:chat-app.js → `?v=20260717b`。
+
+---
+
 ## ✅ 已完成 — 计费重构:预扣-实结 + 断流止损 + 同卦追问（2026-07-17）
 
 用户反馈四连:①输出有时中断;②中断后只能全价重新起卦;③无法追问上一卦;
