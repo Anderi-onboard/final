@@ -48,6 +48,7 @@
       if (meta.role) payload.role = meta.role;
       if (meta.product) payload.product = meta.product;
       if (meta.model) payload.model = meta.model;
+      if (meta.mode) payload.mode = meta.mode; // "followup" → metered billing
 
       return fetch("/api/claude", {
         method: "POST",
@@ -97,6 +98,7 @@
       if (meta.role) payload.role = meta.role;
       if (meta.product) payload.product = meta.product;
       if (meta.model) payload.model = meta.model;
+      if (meta.mode) payload.mode = meta.mode; // "followup" → metered billing
 
       return fetch("/api/claude", {
         method: "POST",
@@ -131,8 +133,10 @@
             if (typeof data.unitsRemaining === "number" && window.BWAccount && window.BWAccount.reconcileUnits) {
               window.BWAccount.reconcileUnits({ ok: true, units: data.unitsRemaining });
             }
-            // the backend refunded a reading that didn't finish cleanly — let the
-            // UI tell the user + offer a free retry
+            // actual units charged this call (metered settle) — the UI shows it
+            if (typeof data.charged === "number") { try { window.__bwLastCharged = data.charged; } catch (e) {} }
+            // the backend settled a reading that didn't finish cleanly (charged
+            // only what was delivered) — let the UI tell the user
             if (data.incomplete) { try { window.__bwReadingIncomplete = true; } catch (e) {} }
             return;
           }
@@ -167,6 +171,7 @@
     opts = opts || {};
     var question = opts.question || "";
     var product = opts.product || (opts.method === "stria" ? "stria" : "sortis");
+    var mode = opts.mode === "followup" ? "followup" : null; // metered follow-up on an existing casting
     var board = opts.board;
     // explicit opts.lang (if the caller ever sets one) wins; otherwise the
     // language detected from the question itself (PE.buildSystemPrompt's
@@ -183,7 +188,7 @@
     // router + qc run on the cheap utility model; the main reading routes by
     // product (stria → Sonnet, sortis → Opus) on the backend.
     var routerComplete = makeComplete({ role: "router", model: CONFIG.routerModel });
-    var mainComplete = makeComplete({ product: product, model: CONFIG.mainModel });
+    var mainComplete = makeComplete({ product: product, model: CONFIG.mainModel, mode: mode });
     var qcComplete = makeComplete({ role: "qc", model: CONFIG.qcModel });
 
     // Step 1+2: Gate + Route (combined in buildSystemPrompt)
@@ -248,7 +253,7 @@
       // stay non-streaming; they're short and cheap either way.
       var streamed = typeof opts.onDelta === "function" && canStream();
       var mainCall = streamed
-        ? makeStreamComplete({ product: product, model: CONFIG.mainModel })({
+        ? makeStreamComplete({ product: product, model: CONFIG.mainModel, mode: mode })({
             system: result.system, messages: messages, max_tokens: 8192
           }, opts.onDelta)
         : mainComplete({ system: result.system, messages: messages, max_tokens: 8192 });
@@ -259,8 +264,11 @@
         // doesn't match the real board, before the LLM QC pass runs.
         var factCheck = PE.checkBoardFacts(reading, board);
 
-        // Step 4: QC pass (if enabled)
-        var shouldQC = CONFIG.enableQC !== null ? CONFIG.enableQC : (product === "sortis");
+        // Step 4: QC pass (if enabled). Follow-ups skip QC: they're metered,
+        // conversational, and stream to the user anyway (QC would only be
+        // telemetry) — a QC retry would double the metered spend for nothing.
+        var shouldQC = mode === "followup" ? false
+          : (CONFIG.enableQC !== null ? CONFIG.enableQC : (product === "sortis"));
         if (!shouldQC && factCheck.ok) {
           return {
             source: "router",

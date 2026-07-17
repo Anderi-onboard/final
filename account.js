@@ -33,18 +33,21 @@
 
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 300, tag: "Baseline analysis",
+      id: "stria", name: "Stria 64", cost: 300, followCap: 150, tag: "Baseline analysis",
       depth: "Primary hexagram framework",
       blurb: "Baseline analysis. A primary structural map of the situation you are currently navigating.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 1500, tag: "Causal synthesis",
+      id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Causal synthesis",
       depth: "Transformed hexagram framework",
       blurb: "Causal synthesis. Evaluates dynamic lines to project outcomes for complex, high-stakes decisions.",
       gated: true
     }
   };
+  // followCap mirrors functions/_lib/db.js FOLLOW_COST: an in-conversation
+  // follow-up RESERVES this much, the server settles to actual usage and
+  // refunds the difference (a follow-up costs at most half a cast).
   var METHOD_ORDER = ["stria", "sortis"];
 
   var DEFAULT_ACCOUNT = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
@@ -244,6 +247,7 @@
 
   function planName(id) { return (PLANS[id] || PLANS.free).name; }
   function methodCost(id) { return (METHODS[id] || METHODS.stria).cost; }
+  function followCost(id) { return (METHODS[id] || METHODS.stria).followCap; }
   function planGrant(id) { return (PLANS[id] || PLANS.free).grant; }
 
   function signOut() {
@@ -393,6 +397,7 @@
     planGrant: planGrant,
     planDescription: planDescription,
     methodCost: methodCost,
+    followCost: followCost,
     paintSidebar: paintSidebar,
     esc: esc
   };

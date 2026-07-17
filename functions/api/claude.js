@@ -47,7 +47,7 @@
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_COST } from '../_lib/db.js';
+import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_COST, FOLLOW_COST, unitsForUsage } from '../_lib/db.js';
 
 const CORS = {
   'access-control-allow-origin': '*',
@@ -88,7 +88,8 @@ function clientIp(request) {
     'unknown';
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(context) {
+  const { request, env } = context;
   let refundTo = null; // { userId, amount } — set once we've deducted, cleared on success
   try {
     if (!env.OPENROUTER_API_KEY) {
@@ -99,13 +100,20 @@ export async function onRequestPost({ request, env }) {
     if (!messages.length) return json({ error: 'no messages' }, 400);
 
     const product = String(body.product || '').toLowerCase();
-    const cost = product === 'sortis' ? METHOD_COST.sortis : product === 'stria' ? METHOD_COST.stria : 0;
+    // mode "followup" = a question ON the existing casting (no new hexagram):
+    // reserve at most half a cast and settle to actual usage afterwards. A
+    // "cast" reserves the flat method price exactly as before.
+    const mode = String(body.mode || '').toLowerCase() === 'followup' ? 'followup' : 'cast';
+    const flat = product === 'sortis' ? METHOD_COST.sortis : product === 'stria' ? METHOD_COST.stria : 0;
+    const cost = mode === 'followup'
+      ? (product === 'sortis' ? FOLLOW_COST.sortis : product === 'stria' ? FOLLOW_COST.stria : 0)
+      : flat;
 
     let unitsRemaining = null;
     const db = env.DB;
 
     if (db) {
-      const gate = await guardRequest({ request, env, db, product, cost });
+      const gate = await guardRequest({ request, env, db, product, cost, mode });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.refund) refundTo = gate.refund;
       if (gate.unitsRemaining != null) unitsRemaining = gate.unitsRemaining;
@@ -131,6 +139,9 @@ export async function onRequestPost({ request, env }) {
     // shape differs from here on.
     if (body.stream === true) {
       payload.stream = true;
+      // OpenRouter extension: ship prompt/completion token counts in the final
+      // stream chunk so settlement uses REAL usage, not an estimate.
+      payload.usage = { include: true };
       const upstream = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: openrouterHeaders,
@@ -146,37 +157,20 @@ export async function onRequestPost({ request, env }) {
       // OpenRouter streams OpenAI-shaped chunks (`choices[0].delta.content`,
       // terminated by a `data: [DONE]` record) — re-encode each one as the
       // Anthropic-shaped `content_block_delta` event prompt-router.js already
-      // parses, then append the same trailing bw_meta event as before. A
-      // failure mid-stream (after headers are already committed) can't be
-      // refunded here; that's a known, accepted gap of SSE — same tradeoff
-      // every streaming proxy makes.
-      const encoder = new TextEncoder();
-      const decoder = new TextDecoder();
-      let buf = '';
-      const reencode = new TransformStream({
-        transform(chunk, controller) {
-          buf += decoder.decode(chunk, { stream: true });
-          const records = buf.split('\n\n');
-          buf = records.pop();
-          for (const rec of records) {
-            const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
-            if (!dataLine) continue;
-            const raw = dataLine.slice(5).trim();
-            if (raw === '[DONE]') continue;
-            let obj;
-            try { obj = JSON.parse(raw); } catch (e) { continue; }
-            const text = obj.choices && obj.choices[0] && obj.choices[0].delta && obj.choices[0].delta.content;
-            if (!text) continue;
-            const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
-            controller.enqueue(encoder.encode(event));
-          }
-        },
-        flush(controller) {
-          const metaEvent = 'event: bw_meta\ndata: ' + JSON.stringify({ unitsRemaining, model }) + '\n\n';
-          controller.enqueue(encoder.encode(metaEvent));
-        }
+      // parses. The pump runs under waitUntil so BILLING SETTLEMENT survives
+      // even a client disconnect: on a clean finish a cast keeps its flat
+      // charge (unchanged economics); a stream that dies mid-reading — or any
+      // follow-up — settles for the tokens actually delivered and refunds the
+      // rest of the reserve. The trailing bw_meta event carries
+      // { unitsRemaining, model, charged, incomplete? } for the client.
+      const { readable, writable } = new TransformStream();
+      const run = pumpAndSettle({
+        upstream, writable, env, mode, product,
+        reserved: cost, refundTo, unitsRemaining, model,
+        inChars: JSON.stringify(payload.messages).length
       });
-      return new Response(upstream.body.pipeThrough(reencode), {
+      if (context.waitUntil) context.waitUntil(run);
+      return new Response(readable, {
         status: 200,
         headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
       });
@@ -195,8 +189,18 @@ export async function onRequestPost({ request, env }) {
     }
     const data = await resp.json();
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
+    let charged = refundTo ? cost : 0;
+    // Non-stream follow-up: settle to actual usage (the response is complete
+    // by definition, so a cast keeps its flat price — unchanged).
+    if (refundTo && mode === 'followup') {
+      const s = await settleMetered(env.DB, refundTo, product, data.usage,
+        { inChars: JSON.stringify(payload.messages).length, outChars: text.length }, cost, 'refund:follow_settle');
+      charged = s.charged;
+      if (s.units != null) unitsRemaining = s.units;
+    }
     const result = { text, model };
     if (unitsRemaining != null) result.unitsRemaining = unitsRemaining;
+    if (refundTo) result.charged = charged;
     return json(result, 200);
   } catch (e) {
     if (refundTo) { try { await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:error'); } catch (_) {} }
@@ -204,26 +208,116 @@ export async function onRequestPost({ request, env }) {
   }
 }
 
+// Read the upstream SSE, re-encode for the client, then SETTLE the reserve:
+//   cast + clean finish        → flat charge stands (same profit as before)
+//   cast + truncated stream    → charge metered actual, refund the rest
+//   followup (always metered)  → charge actual usage, refund unused reserve
+// Runs under waitUntil, so settlement happens even if the client goes away.
+async function pumpAndSettle(o) {
+  const writer = o.writable.getWriter();
+  const reader = o.upstream.body.getReader();
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+  let buf = '', outChars = 0, usage = null, finish = null, clientGone = false;
+  async function handleRecord(rec) {
+    const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
+    if (!dataLine) return;
+    const raw = dataLine.slice(5).trim();
+    if (raw === '[DONE]') return;
+    let obj;
+    try { obj = JSON.parse(raw); } catch (e) { return; }
+    if (obj.usage) usage = obj.usage;
+    const ch = obj.choices && obj.choices[0];
+    if (ch && ch.finish_reason) finish = ch.finish_reason;
+    const text = ch && ch.delta && ch.delta.content;
+    if (!text) return;
+    outChars += text.length;
+    if (!clientGone) {
+      const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
+      try { await writer.write(encoder.encode(event)); }
+      catch (e) { clientGone = true; }
+    }
+  }
+  try {
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      const records = buf.split('\n\n');
+      buf = records.pop();
+      for (const rec of records) await handleRecord(rec);
+      // client bailed: keep draining is pointless — stop and settle for what
+      // was delivered up to this point.
+      if (clientGone) { try { await reader.cancel(); } catch (e) {} break; }
+    }
+    // the upstream may end WITHOUT a trailing blank line — the residue is
+    // often exactly the final record carrying usage + finish_reason, and
+    // dropping it would misclassify a clean finish as a truncation.
+    if (buf.trim()) await handleRecord(buf);
+  } catch (e) { /* upstream died mid-stream → finish stays null → truncated */ }
+
+  // 'stop'/'end_turn' = model finished; 'length' = hit max_tokens (the reading
+  // is as long as we allow — that's a delivered reading, charge stands).
+  const complete = finish === 'stop' || finish === 'end_turn' || finish === 'length';
+  let charged = o.refundTo ? o.reserved : 0;
+  let units = o.unitsRemaining;
+  let incomplete = !complete;
+  if (o.refundTo && (o.mode === 'followup' || !complete)) {
+    try {
+      const s = await settleMetered(o.env.DB, o.refundTo, o.product, usage,
+        { inChars: o.inChars, outChars }, o.reserved,
+        o.mode === 'followup' ? 'refund:follow_settle' : 'refund:truncated');
+      charged = s.charged;
+      if (s.units != null) units = s.units;
+    } catch (e) { /* settlement failure must not kill the stream close */ }
+  }
+  if (!clientGone) {
+    const meta = { unitsRemaining: units, model: o.model, charged };
+    if (incomplete) meta.incomplete = true;
+    try { await writer.write(encoder.encode('event: bw_meta\ndata: ' + JSON.stringify(meta) + '\n\n')); }
+    catch (e) {}
+  }
+  try { await writer.close(); } catch (e) {}
+}
+
+// Charge metered actual (capped at the reserve), refund the difference.
+// Returns { charged, units } — units is the fresh balance when a refund ran.
+async function settleMetered(db, refundTo, product, usage, fallback, reserved, reason) {
+  const metered = unitsForUsage(product, usage, fallback, reserved);
+  const refund = reserved - metered;
+  if (refund > 0) {
+    const g = await grantUnits(db, refundTo.userId, refund, reason);
+    return { charged: metered, units: g && g.ok ? g.units : null };
+  }
+  return { charged: metered, units: null };
+}
+
 // Auth + billing + rate-limit gate. Returns one of:
 //   { error: { status, body } }              — reject, never call OpenRouter
 //   { refund: {userId, amount}, unitsRemaining } — deducted; refund on failure
 //   { unitsRemaining? }                        — allowed, nothing to refund
-async function guardRequest({ request, env, db, product, cost }) {
+async function guardRequest({ request, env, db, product, cost, mode }) {
   const session = await sessionFromRequest(request, env);
   const user = session ? await getUser(db, session.uid) : null;
+  const reason = (mode === 'followup' ? 'follow:' : 'cast:') + product;
+
+  // A follow-up is metered against an account ledger — no anonymous follow-ups.
+  if (mode === 'followup' && (product === 'sortis' || product === 'stria') && !user) {
+    return { error: { status: 401, body: { error: 'sign in required for follow-ups' } } };
+  }
 
   if (product === 'sortis') {
     if (!user) return { error: { status: 401, body: { error: 'sign in required for Sortis 6' } } };
     if (user.plan !== 'pro' && user.plan !== 'premium') {
       return { error: { status: 403, body: { error: 'Sortis 6 requires the Pro or Premium plan' } } };
     }
-    const spend = await spendUnits(db, user.id, cost, 'cast:sortis');
+    const spend = await spendUnits(db, user.id, cost, reason);
     if (!spend.ok) return { error: { status: 402, body: { error: 'insufficient units', units: spend.units } } };
     return { refund: { userId: user.id, amount: cost }, unitsRemaining: spend.units };
   }
 
   if (product === 'stria' && user) {
-    const spend = await spendUnits(db, user.id, cost, 'cast:stria');
+    const spend = await spendUnits(db, user.id, cost, reason);
     if (!spend.ok) return { error: { status: 402, body: { error: 'insufficient units', units: spend.units } } };
     return { refund: { userId: user.id, amount: cost }, unitsRemaining: spend.units };
   }

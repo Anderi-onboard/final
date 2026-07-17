@@ -62,7 +62,7 @@
     var m = method();
     $("methodChip").textContent = m.name;
     $("methodNote").textContent = "Perspectives, not certainty · " + m.name + " — " +
-      m.cost.toLocaleString("en-US") + " units per inquiry";
+      m.cost.toLocaleString("en-US") + " units per casting · follow-ups metered, at most half";
     renderMethodMenu();
   }
   function renderMethodMenu() {
@@ -441,7 +441,7 @@
      pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
-  function routedReading(question, spec, board, methodId, history, onDelta) {
+  function routedReading(question, spec, board, methodId, history, onDelta, mode) {
     if (!window.BWPromptRouter) return null; // router module missing → caller's own fallback
     var product = methodId === "stria" ? "stria" : "sortis";
     // STALL watchdog, not a flat deadline. The pipeline (route → stream → QC)
@@ -465,7 +465,8 @@
       category: "general",
       // no lang override — BWPromptRouter detects it from the question text
       history: history || [],
-      onDelta: wrappedDelta
+      onDelta: wrappedDelta,
+      mode: mode || null // "followup" → metered billing, no recast
     });
     // Errors propagate (with their HTTP status) instead of collapsing to null —
     // downstream used to "heal" that with canned/mock prose, so the user paid
@@ -539,7 +540,22 @@
     // user, so they paid for a shallower reading (Sonnet, no board) than they
     // asked for — which is exactly why Opus never showed up for a "Sortis" cast.
     if (!A.entitled(m.id)) { openPlans(); toast(m.name + " requires the Pro or Premium plan."); return; }
-    if (S.units < m.cost) { openPlans(); toast("Your unit balance is depleted — " + m.cost.toLocaleString("en-US") + " units required."); return; }
+
+    /* Follow-up detection: this conversation already holds a casting by the
+       same method → the new question rides ON that casting (metered billing,
+       at most half a cast, NO new hexagram) instead of recasting. So "what
+       did line 2 mean?" keeps its board and its context; a fresh hexagram
+       needs a fresh "New inquiry". */
+    var lastCast = null, convNow = activeConv();
+    if (convNow && window.BWPromptRouter) {
+      for (var li = convNow.msgs.length - 1; li >= 0; li--) {
+        var lmsg = convNow.msgs[li];
+        if (lmsg.role === "oracle" && lmsg.spec) { lastCast = lmsg; break; }
+      }
+    }
+    var isFollowup = !!(lastCast && lastCast.methodId === m.id);
+    var needed = isFollowup ? A.followCost(m.id) : m.cost;
+    if (S.units < needed) { openPlans(); toast("Your unit balance is depleted — " + needed.toLocaleString("en-US") + " units required."); return; }
 
     if (!activeConv()) {
       var conv = { id: Date.now().toString(36), title: text, msgs: [] };
@@ -549,12 +565,17 @@
     var c = activeConv();
     c.msgs.push({ role: "user", text: text });
     save();                                 // persist the question first
-    A.deductUnits(m.cost, "cast:" + m.id);  // spend on the store (+ server mirror)
+    /* optimistic local deduction — the server's atomic reserve/settle is the
+       authority; bw_meta reconciles the real balance back afterwards. A
+       follow-up reserves followCost and typically settles LOWER. */
+    A.deductUnits(needed, (isFollowup ? "follow:" : "cast:") + m.id);
     S.units = A.state().units;              // reconcile local balance only
     renderAll();
     if (S.units < m.cost && S.account.plan === "free") {
       toast("Low balance — upgrade to keep casting.");
     }
+
+    if (isFollowup) { followupFlow(c, text, m, lastCast, needed); return; }
 
     busy = true;
     $("sendBtn").disabled = true;
@@ -671,13 +692,15 @@
       if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
-      // backend refunded a reading that didn't finish cleanly — tell the user it
-      // was free and they can recast (the balance already reconciled via bw_meta)
+      // the backend settled an interrupted reading by ACTUAL output (metered)
+      // and refunded the unused reserve — tell the user they can continue on
+      // this same casting instead of recasting (balance reconciled via bw_meta)
       if (window.__bwReadingIncomplete) {
         window.__bwReadingIncomplete = false;
         S.units = A.state().units; renderUnits();
         var zhi = /[一-鿿]/.test(text);
-        toast(zhi ? "本次解读未完整生成 — 点数已退回,可再摇一卦。" : "That reading came out incomplete — units refunded, cast again free.");
+        toast(zhi ? "解读中断——只收取了已生成部分的点数,其余已退回。直接发送“继续”可在同一卦上接着解读。"
+                  : "The reading was cut short — you were only charged for what arrived. Send “continue” to pick it up on this same casting.");
       }
       revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
     }
@@ -722,6 +745,108 @@
     }, function (e) {
       castFail({ __error: e });
     });
+  }
+
+  /* ── follow-up flow: a further question ON the existing casting. No new
+     hexagram, no casting animation — the SAME board grounds the answer and
+     prior turns ride along as history. Billing is metered: the client
+     reserves followCost optimistically, the server settles to actual token
+     usage and refunds the difference (bw_meta carries the real balance +
+     the actual charge). An interrupted CAST plus a "continue" follow-up is
+     the recovery path that used to require paying for a whole recast. ── */
+  function followupFlow(c, text, m, lastCast, reserved) {
+    busy = true;
+    $("sendBtn").disabled = true;
+
+    // ground the follow-up in the SAME board that was cast: sortis stores it
+    // on the message; stria stores only the spec — recompute from its lines.
+    var board = lastCast.board || null;
+    if (!board && window.BWLiuYao && lastCast.spec && lastCast.spec.lines && lastCast.spec.lines.length === 6) {
+      try {
+        board = window.BWLiuYao.computeBoard({
+          lines: lastCast.spec.lines, changeIdx: lastCast.spec.changeIdx || [],
+          method: m.id, name: lastCast.spec.name, transformedName: lastCast.spec.transformedName
+        });
+      } catch (e) { board = null; }
+    }
+
+    var live = document.createElement("article");
+    live.className = "reading casting-live";
+    live.setAttribute("aria-live", "polite");
+    var streamPreview = document.createElement("div");
+    streamPreview.className = "reading-body reading-streaming";
+    live.appendChild(streamPreview);
+    threadInner.appendChild(live);
+    var streamLast = 0, streamPending = "", streamTimer = null;
+    function paintStream() { streamTimer = null; streamLast = Date.now(); streamPreview.innerHTML = mdReading(streamPending); }
+    function onDelta(chunk, full) {
+      streamPending = full;
+      var dt = Date.now() - streamLast;
+      if (dt >= 90) paintStream();
+      else if (!streamTimer) streamTimer = setTimeout(paintStream, 90 - dt);
+    }
+    var thread = $("thread");
+    thread.scrollTop = thread.scrollHeight;
+
+    try { window.__bwReadingIncomplete = false; window.__bwLastCharged = null; } catch (e) {}
+    var history = buildHistory(c, 3);
+    var run = routedReading(text, lastCast.spec, board, m.id, history, onDelta, "followup");
+
+    function release() {
+      busy = false;
+      var sb = $("sendBtn"); if (sb) sb.disabled = false;
+      var ci = $("composerInput"); if (ci) ci.focus();
+    }
+    function fail(err) {
+      err = err || {};
+      var e = err.__error || err;
+      var status = e && e.status;
+      A.refundLocal(reserved);
+      S.units = A.state().units;
+      var zh = /[一-鿿]/.test(text);
+      var msg;
+      if (status === 401) msg = zh ? "登录状态已失效——请重新登录。本次点数已退回。" : "Your session has expired — sign in again. These units were refunded.";
+      else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
+      else if (err.__timeout) msg = zh ? "回答超时——请再试一次。本次点数已退回。" : "The answer timed out — try again. These units were refunded.";
+      else msg = zh ? "回答未能完成——请稍后再试。本次点数已退回。" : "The answer could not be completed — try again shortly. These units were refunded.";
+      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
+      if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
+      live.classList.remove("casting-live");
+      var p = document.createElement("p");
+      p.className = "reading-error";
+      p.textContent = msg;
+      live.appendChild(p);
+      renderUnits();
+      release();
+    }
+    function finish(ans) {
+      // bw_meta reported the ACTUAL metered charge; fall back to the reserve.
+      var charged = (typeof window.__bwLastCharged === "number") ? window.__bwLastCharged : reserved;
+      try { window.__bwLastCharged = null; } catch (e) {}
+      var msg = {
+        role: "oracle", text: ans.text, method: m.name, methodId: m.id,
+        followup: true, figure: lastCast.figure, spec: null, board: null, reading: null,
+        ts: Date.now(), cost: charged
+      };
+      c.msgs.push(msg);
+      save();
+      A.syncCasting(c);
+      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
+      if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
+      S.units = A.state().units;      // bw_meta already reconciled the real balance
+      renderUnits(); renderList();
+      if (window.__bwReadingIncomplete) {
+        window.__bwReadingIncomplete = false;
+        var zhi = /[一-鿿]/.test(text);
+        toast(zhi ? "回答中断——只收取了已生成部分的点数。发送“继续”可接着写。"
+                  : "The answer was cut short — you were only charged for what arrived. Send “continue” to pick it up.");
+      }
+      revealReading(live, msg, c.id, c.msgs.length - 1).then(release, release);
+    }
+    run.then(function (ans) {
+      if (!ans || ans.__error || ans.__timeout || !ans.text) fail(ans);
+      else finish(ans);
+    }, function (e) { fail({ __error: e }); });
   }
 
   /* ── reveal an answer naturally: crossfade the cast into the reading, then
