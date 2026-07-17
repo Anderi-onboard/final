@@ -35,13 +35,13 @@
     stria: {
       id: "stria", name: "Stria 64", cost: 300, followCap: 150, tag: "Baseline analysis",
       depth: "Primary hexagram framework",
-      blurb: "Baseline analysis. A primary structural map of the situation you are currently navigating.",
+      blurb: "The quick read. A clear structural map of where things stand right now.",
       gated: false
     },
     sortis: {
       id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Causal synthesis",
       depth: "Transformed hexagram framework",
-      blurb: "Causal synthesis. Evaluates dynamic lines to project outcomes for complex, high-stakes decisions.",
+      blurb: "The deep read. Follows the moving lines to where things are heading — for the decisions you\u2019ll live with.",
       gated: true
     }
   };

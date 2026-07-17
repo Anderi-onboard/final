@@ -62,13 +62,13 @@
     var m = method();
     $("methodChip").textContent = m.name;
     $("methodNote").textContent = "Perspectives, not certainty · " + m.name + " — " +
-      m.cost.toLocaleString("en-US") + " units per casting · follow-ups metered, at most half";
+      m.cost.toLocaleString("en-US") + " units a casting · follow-up questions cost at most half";
     renderMethodMenu();
   }
   function renderMethodMenu() {
     var menu = $("methodMenu");
     if (!menu) return;
-    menu.innerHTML = '<div class="mm-head lbl">Select analysis depth</div>';
+    menu.innerHTML = '<div class="mm-head lbl">Choose how deep to go</div>';
     ORDER.forEach(function (id) {
       var m = METHODS[id];
       var ok = A.entitled(id);
@@ -85,7 +85,7 @@
         "</span>" +
         '<span class="mm-cost" style="font-family:\'BioRhyme\',serif">' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
       row.addEventListener("click", function () {
-        if (!ok) { closeMethod(); openPlans(); toast("Sortis 6 synthesis is unlocked on the Pro tier."); return; }
+        if (!ok) { closeMethod(); openPlans(); toast("Sortis 6 opens on the Pro plan."); return; }
         S.method = id; save(); renderMethod(); closeMethod();
       });
       menu.appendChild(row);
@@ -349,7 +349,7 @@
             '<path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 182 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>' +
             '<path d="M10 13 C52 8 106 12 176 7" stroke="#2A2016" stroke-width="1" fill="none" stroke-linecap="round"></path>' +
           "</svg>" +
-          "<p>Ask plainly. The oracle answers once, and honestly.</p>" +
+          "<p>Ask plainly. You\u2019ll get one honest reading \u2014 a way of seeing, yours to weigh.</p>" +
         "</div>";
       return;
     }
@@ -572,7 +572,7 @@
     // 点数" rule: no free units before an account exists.
     if (!S.account.signedIn) {
       var zhq = /[一-鿿]/.test(text);
-      toast(zhq ? "请先登录或注册——注册即送 500 点。" : "Sign in or create an account to cast — new accounts get 500 units.");
+      toast(zhq ? "请先登录或注册——注册即送 500 点。" : "Sign in to cast — a new account starts with 500 units on us.");
       setTimeout(function () { location.href = "./login.html"; }, 1300);
       return;
     }
@@ -580,7 +580,7 @@
     // the plans view. The old code swapped Sortis→Stria without telling the
     // user, so they paid for a shallower reading (Sonnet, no board) than they
     // asked for — which is exactly why Opus never showed up for a "Sortis" cast.
-    if (!A.entitled(m.id)) { openPlans(); toast(m.name + " requires the Pro or Premium plan."); return; }
+    if (!A.entitled(m.id)) { openPlans(); toast(m.name + " opens on Pro or Premium."); return; }
 
     /* Follow-up detection: this conversation already holds a casting by the
        same method → the new question rides ON that casting (metered billing,
@@ -596,7 +596,7 @@
     }
     var isFollowup = !!(lastCast && lastCast.methodId === m.id);
     var needed = isFollowup ? A.followCost(m.id) : m.cost;
-    if (S.units < needed) { openPlans(); toast("Your unit balance is depleted — " + needed.toLocaleString("en-US") + " units required."); return; }
+    if (S.units < needed) { openPlans(); toast("You\u2019re short on units — this one takes " + needed.toLocaleString("en-US") + "."); return; }
 
     if (!activeConv()) {
       var conv = { id: Date.now().toString(36), title: text, msgs: [] };
@@ -613,7 +613,7 @@
     S.units = A.state().units;              // reconcile local balance only
     renderAll();
     if (S.units < m.cost && S.account.plan === "free") {
-      toast("Low balance — upgrade to keep casting.");
+      toast("Running low — top up when you\u2019re ready.");
     }
 
     if (isFollowup) { followupFlow(c, text, m, lastCast, needed); return; }
@@ -759,7 +759,7 @@
       else if (status === 403) msg = zh ? "Sortis 6 需要 Pro 或 Premium 方案。本次点数已退回。" : "Sortis 6 needs the Pro or Premium plan. These units were refunded.";
       else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
       else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
-      else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading could not be completed — please try again shortly. These units were refunded.";
+      else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
@@ -839,7 +839,7 @@
       if (status === 401) msg = zh ? "登录状态已失效——请重新登录。本次点数已退回。" : "Your session has expired — sign in again. These units were refunded.";
       else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
       else if (err.__timeout) msg = zh ? "回答超时——请再试一次。本次点数已退回。" : "The answer timed out — try again. These units were refunded.";
-      else msg = zh ? "回答未能完成——请稍后再试。本次点数已退回。" : "The answer could not be completed — try again shortly. These units were refunded.";
+      else msg = zh ? "回答未能完成——请稍后再试。本次点数已退回。" : "The answer didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
