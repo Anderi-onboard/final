@@ -434,6 +434,47 @@
     return out.length > maxMsgs ? out.slice(out.length - maxMsgs) : out;
   }
 
+  /* ── typewriter stream renderer ──
+     Network tokens arrive in bursts; painting each burst wholesale reads as
+     blocky jumps. This reveals the text character-by-character instead: a rAF
+     loop chases the live buffer (clearing any backlog in ~0.4s so it never
+     falls behind the model), re-renders the markdown preview at most every
+     66ms, and keeps a blinking caret at the write head while the stream is
+     open. finish(cb) flushes the tail then hands off; cancel() just stops. */
+  function makeTypewriter(el) {
+    var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var target = "", shown = 0, painted = -1, lastPaint = 0, raf = null, closed = false, onDone = null;
+    function paint(now) {
+      lastPaint = now || (window.performance ? performance.now() : Date.now());
+      // the blinking caret rides .reading-streaming > *:last-child::after (CSS),
+      // so painting the sliced markdown is all that's needed here
+      el.innerHTML = mdReading(target.slice(0, shown)) || '<p class="rd-para"></p>';
+    }
+    function tick(now) {
+      raf = null;
+      var behind = target.length - shown;
+      if (behind > 0) shown = Math.min(target.length, shown + Math.max(1, Math.ceil(behind / 24)));
+      var finished = closed && shown >= target.length;
+      if (shown !== painted && (now - lastPaint >= 66 || finished)) { paint(now); painted = shown; }
+      if (!finished) { raf = requestAnimationFrame(tick); return; }
+      if (onDone) { var cb = onDone; onDone = null; cb(); }
+    }
+    function ensure() { if (!raf) raf = requestAnimationFrame(tick); }
+    return {
+      delta: function (full) {
+        target = String(full || "");
+        if (reduced) { shown = target.length; painted = shown; lastPaint = 0; paint(); return; }
+        ensure();
+      },
+      finish: function (cb) {
+        closed = true; onDone = cb || null;
+        if (reduced) { shown = target.length; paint(); if (onDone) { var f = onDone; onDone = null; f(); } return; }
+        ensure();
+      },
+      cancel: function () { closed = true; onDone = null; if (raf) { cancelAnimationFrame(raf); raf = null; } }
+    };
+  }
+
   /* Sortis 6 → full professional casting board + AI reading (the deep-tier experience).
      Stria stays the light per-line reading; the gap between the two IS the rigor.
 
@@ -611,21 +652,12 @@
     streamPreview.className = "reading-body reading-streaming";
     live.appendChild(streamPreview);
     threadInner.appendChild(live);
-    // Render the reading's real structure + font AS IT STREAMS — markdown →
-    // formatted HTML on every tick — instead of showing raw text and only
-    // reflowing once the whole reading has landed. Throttled (~90ms) so a long
-    // reading doesn't re-parse + repaint on every single token.
-    var streamLast = 0, streamPending = "", streamTimer = null;
-    function paintStream() {
-      streamTimer = null; streamLast = Date.now();
-      streamPreview.innerHTML = mdReading(streamPending);
-    }
-    function onStreamDelta(chunk, fullSoFar) {
-      streamPending = fullSoFar;
-      var dt = Date.now() - streamLast;
-      if (dt >= 90) paintStream();
-      else if (!streamTimer) streamTimer = setTimeout(paintStream, 90 - dt);
-    }
+    // Typewriter reveal: the reading types itself out character-by-character
+    // (structure + real font as it streams), chasing the live buffer instead
+    // of repainting whole network bursts — see makeTypewriter above.
+    var tw = makeTypewriter(streamPreview);
+    var streamedAny = false;
+    function onStreamDelta(chunk, fullSoFar) { streamedAny = true; tw.delta(fullSoFar); }
 
     /* Claude-style: lift the question to the top of the thread and reveal the full
        casting animation below it. A spacer guarantees there's room to scroll. */
@@ -689,7 +721,7 @@
       /* update only the chrome (balance + history) — leave the thread alone so the
          casting figure isn't wiped; the verdict then streams in naturally below it */
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
-      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
+      tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
       // the backend settled an interrupted reading by ACTUAL output (metered)
@@ -702,7 +734,9 @@
         toast(zhi ? "解读中断——只收取了已生成部分的点数,其余已退回。直接发送“继续”可在同一卦上接着解读。"
                   : "The reading was cut short — you were only charged for what arrived. Send “continue” to pick it up on this same casting.");
       }
-      revealReading(live, oracleMsg, c.id, c.msgs.length - 1).then(release, release);
+      // typed live already → paint the structured verdict instantly instead of
+      // re-animating the whole reading a second time
+      revealReading(live, oracleMsg, c.id, c.msgs.length - 1, streamedAny).then(release, release);
     }
     function release() {
       busy = false;
@@ -727,7 +761,7 @@
       else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
       else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading could not be completed — please try again shortly. These units were refunded.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
-      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
+      tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
       var p = document.createElement("p");
@@ -740,9 +774,11 @@
 
     Promise.all([answerP, castDone]).then(function (r) {
       var ans = r[0];
-      if (!ans || ans.__error || ans.__timeout || !ans.text) castFail(ans);
-      else finish(ans);
+      if (!ans || ans.__error || ans.__timeout || !ans.text) { tw.cancel(); castFail(ans); }
+      // let the typewriter flush its tail before the structured verdict swaps in
+      else tw.finish(function () { finish(ans); });
     }, function (e) {
+      tw.cancel();
       castFail({ __error: e });
     });
   }
@@ -777,14 +813,9 @@
     streamPreview.className = "reading-body reading-streaming";
     live.appendChild(streamPreview);
     threadInner.appendChild(live);
-    var streamLast = 0, streamPending = "", streamTimer = null;
-    function paintStream() { streamTimer = null; streamLast = Date.now(); streamPreview.innerHTML = mdReading(streamPending); }
-    function onDelta(chunk, full) {
-      streamPending = full;
-      var dt = Date.now() - streamLast;
-      if (dt >= 90) paintStream();
-      else if (!streamTimer) streamTimer = setTimeout(paintStream, 90 - dt);
-    }
+    var tw = makeTypewriter(streamPreview);
+    var streamedAny = false;
+    function onDelta(chunk, full) { streamedAny = true; tw.delta(full); }
     var thread = $("thread");
     thread.scrollTop = thread.scrollHeight;
 
@@ -809,7 +840,7 @@
       else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
       else if (err.__timeout) msg = zh ? "回答超时——请再试一次。本次点数已退回。" : "The answer timed out — try again. These units were refunded.";
       else msg = zh ? "回答未能完成——请稍后再试。本次点数已退回。" : "The answer could not be completed — try again shortly. These units were refunded.";
-      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
+      tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
       var p = document.createElement("p");
@@ -831,7 +862,7 @@
       c.msgs.push(msg);
       save();
       A.syncCasting(c);
-      if (streamTimer) { clearTimeout(streamTimer); streamTimer = null; }
+      tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       S.units = A.state().units;      // bw_meta already reconciled the real balance
       renderUnits(); renderList();
@@ -841,12 +872,12 @@
         toast(zhi ? "回答中断——只收取了已生成部分的点数。发送“继续”可接着写。"
                   : "The answer was cut short — you were only charged for what arrived. Send “continue” to pick it up.");
       }
-      revealReading(live, msg, c.id, c.msgs.length - 1).then(release, release);
+      revealReading(live, msg, c.id, c.msgs.length - 1, streamedAny).then(release, release);
     }
     run.then(function (ans) {
-      if (!ans || ans.__error || ans.__timeout || !ans.text) fail(ans);
-      else finish(ans);
-    }, function (e) { fail({ __error: e }); });
+      if (!ans || ans.__error || ans.__timeout || !ans.text) { tw.cancel(); fail(ans); }
+      else tw.finish(function () { finish(ans); });
+    }, function (e) { tw.cancel(); fail({ __error: e }); });
   }
 
   /* ── reveal an answer naturally: crossfade the cast into the reading, then

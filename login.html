@@ -5,10 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign in — BourneWise</title>
-<style>html,body{background:#F2EDE7}</style>
+<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
+<style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -45,7 +47,7 @@
     background:linear-gradient(158deg,rgba(244,233,210,.30) 0%,rgba(235,221,194,.12) 52%,rgba(244,233,210,.26) 100%);
     border:1px solid rgba(42,32,22,.10);
     box-shadow:0 14px 40px rgba(31,29,26,.12);
-    border-radius:16px 14px 16px 13px;backdrop-filter:blur(20px) saturate(1.25);-webkit-backdrop-filter:blur(20px) saturate(1.25);transform:translateZ(0);}
+    border-radius:16px 14px 16px 13px;backdrop-filter:blur(12px) saturate(1.25);-webkit-backdrop-filter:blur(12px) saturate(1.25);transform:translateZ(0);}
 
   /* hero: transparent now — dark ink text on the glass, not a solid dark slab */
   .card-hero{background:transparent;color:var(--ink);padding:26px 28px 18px;position:relative;overflow:hidden;border-bottom:1px solid rgba(42,32,22,.08)}

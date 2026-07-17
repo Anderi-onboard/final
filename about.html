@@ -5,10 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About us — BourneWise</title>
-<style>html,body{background:#F2EDE7}</style>
+<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
+<style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -35,10 +37,10 @@
      viewport that snaps into place, and its content fades/rises in when the
      page enters view and fades out as you scroll past — a page-turn feel. ── */
   .main{position:relative;z-index:1;flex:1;min-width:0;height:100vh;height:100dvh;overflow-y:auto;
-    scroll-snap-type:y mandatory;scroll-behavior:smooth;overscroll-behavior-y:contain;
+    scroll-snap-type:y proximity;scroll-behavior:smooth;overscroll-behavior-y:contain;
     scrollbar-width:none}
   .main::-webkit-scrollbar{width:0;height:0}
-  .page{position:relative;min-height:100vh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
+  .page{position:relative;min-height:100vh;min-height:100dvh;scroll-snap-align:start;
     display:flex;flex-direction:column;justify-content:center;padding:0}
   .page-inner{position:relative;z-index:1;width:100%;max-width:1080px;margin:0 auto;padding:64px 28px}
 
@@ -137,7 +139,7 @@
      its own compositor layer so the blur samples a stable backdrop (no flash). */
   .m-card{display:flex;gap:14px;align-items:flex-start;border-radius:12px;padding:16px 18px;
     background:linear-gradient(158deg,rgba(247,238,220,.52) 0%,rgba(236,223,197,.22) 52%,rgba(247,238,220,.48) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(11px) saturate(1.18);-webkit-backdrop-filter:blur(11px) saturate(1.18);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(8px) saturate(1.18);-webkit-backdrop-filter:blur(8px) saturate(1.18);transform:translateZ(0)}
   .m-card .mi{flex:none;width:24px;height:24px;color:var(--terracotta);margin-top:1px}
   .m-card b{display:block;font-family:"BioRhyme",var(--serif);font-size:15px;font-weight:700}
   .m-card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
@@ -148,7 +150,7 @@
      translucent warm glass, matching every other box on the page */
   .band{margin-top:56px;color:var(--ink);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center;
     background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(12px) saturate(1.18);-webkit-backdrop-filter:blur(12px) saturate(1.18);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(9px) saturate(1.18);-webkit-backdrop-filter:blur(9px) saturate(1.18);transform:translateZ(0)}
   .band h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;text-align:center}
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;width:100%}
   /* tiles sit ON the band glass — a translucent fill (no nested backdrop-filter)
@@ -266,7 +268,7 @@
     </p>
 
     <footer class="rise">
-      <span class="lbl" style="font-family: Spinnaker; font-weight: 600">BourneWise &middot; founded on classical logic</span>
+      <span class="lbl" style="font-family: Spinnaker; font-weight: 600">BourneWise &middot; founded on classical logic &middot; <a class="inkline" href="mailto:hello@bournewise.com" style="font-family:Spinnaker">hello@bournewise.com</a> &middot; <a class="inkline" href="./refund.html" style="font-family:Spinnaker">Refunds</a></span>
       <span class="lbl"><a class="inkline" href="./index.html" style="font-family: Spinnaker; font-weight: 700">Back to BourneWise<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></span>
     </footer>
    </div>

@@ -5,10 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plans &amp; balance — BourneWise</title>
-<style>html,body{background:#F2EDE7}</style>
+<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
+<style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -52,7 +54,7 @@
     padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
   .ledgerstrip::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(11px) saturate(1.2);-webkit-backdrop-filter:blur(11px) saturate(1.2);
     border-radius:23px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -82,7 +84,7 @@
      positioned) regardless of how far the -1 layer behind it fades */
   .plan::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(11px) saturate(1.2);-webkit-backdrop-filter:blur(11px) saturate(1.2);
     border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -114,7 +116,7 @@
   .topup{margin-top:40px;padding:24px 26px;position:relative}
   .topup::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(11px) saturate(1.2);-webkit-backdrop-filter:blur(11px) saturate(1.2);
     border-radius:17px 14px 16px 12px / 13px 17px 11px 15px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -169,9 +171,9 @@
   .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
-  @media (max-width:860px){.plans{grid-template-columns:1fr}}
+  @media (max-width:860px){.plans{grid-template-columns:1fr}.ledgerstrip::before,.plan::before,.topup::before{inset:-16px}}
   @media (max-width:860px){.packs{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:520px){.pagehead{padding:16px 18px}.shell{padding:0 18px 56px}.packs{grid-template-columns:1fr}}
+  @media (max-width:520px){.pagehead{padding:16px 18px}.shell{padding:0 18px 56px}.packs{grid-template-columns:1fr}.nav{gap:10px}.nav .cta{font-size:12px;padding:6px 10px}.ledgerstrip::before,.plan::before,.topup::before{inset:-12px}}
   @media (prefers-reduced-motion: reduce){
     .ledgerstrip::before{animation:none}
     .plan::before{animation:none}
