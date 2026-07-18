@@ -434,6 +434,35 @@
     return out.length > maxMsgs ? out.slice(out.length - maxMsgs) : out;
   }
 
+  /* ── follow-up vs new-question detection (Sonnet 5) ──
+     Same thread + same method no longer means "always follow-up": a small
+     Sonnet 5 classification decides whether the new message rides ON the
+     previous casting (FOLLOWUP → metered, ≤ half price) or raises a different
+     matter that deserves a fresh hexagram (NEW → full cast, in THIS thread,
+     history preserved). Unbilled utility call; 4s timeout or any failure
+     defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
+  function detectIntent(question, lastQuestion, lastReading) {
+    if (!(window.claude && typeof window.claude.complete === "function")) {
+      return Promise.resolve("followup");
+    }
+    var prompt =
+      "You route messages in a divination chat.\n" +
+      "Earlier casting question: \u00ab" + String(lastQuestion || "").slice(0, 300) + "\u00bb\n" +
+      "Reading excerpt: \u00ab" + String(lastReading || "").slice(0, 400) + "\u00bb\n" +
+      "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
+      "If the new message asks about, continues, doubts, clarifies, or says \"continue\" regarding the earlier question or its reading, reply FOLLOWUP. " +
+      "If it raises a different matter that needs a fresh casting, reply NEW. Reply with exactly one word.";
+    var guard = new Promise(function (res) { setTimeout(function () { res("followup"); }, 4000); });
+    var run = window.claude.complete({
+      role: "utility", model: "claude-sonnet-5", max_tokens: 8,
+      messages: [{ role: "user", content: prompt }]
+    }).then(function (r) {
+      var t = String(r || "").toUpperCase();
+      return t.indexOf("NEW") >= 0 && t.indexOf("FOLLOWUP") < 0 ? "new" : "followup";
+    }).catch(function () { return "followup"; });
+    return Promise.race([run, guard]);
+  }
+
   /* ── typewriter stream renderer ──
      Network tokens arrive in bursts; painting each burst wholesale reads as
      blocky jumps. This reveals the text character-by-character instead: a rAF
@@ -563,7 +592,7 @@
   }
 
   /* ── send flow ── */
-  function send(text) {
+  function send(text, decided) {
     text = (text || "").trim();
     if (!text || busy) return;
     var m = method();
@@ -587,14 +616,33 @@
        at most half a cast, NO new hexagram) instead of recasting. So "what
        did line 2 mean?" keeps its board and its context; a fresh hexagram
        needs a fresh "New inquiry". */
-    var lastCast = null, convNow = activeConv();
+    var lastCast = null, lastQuestion = "", convNow = activeConv();
     if (convNow && window.BWPromptRouter) {
       for (var li = convNow.msgs.length - 1; li >= 0; li--) {
         var lmsg = convNow.msgs[li];
-        if (lmsg.role === "oracle" && lmsg.spec) { lastCast = lmsg; break; }
+        if (lmsg.role === "oracle" && lmsg.spec) {
+          lastCast = lmsg;
+          for (var lj = li - 1; lj >= 0; lj--) {
+            if (convNow.msgs[lj].role === "user") { lastQuestion = convNow.msgs[lj].text; break; }
+          }
+          break;
+        }
       }
     }
-    var isFollowup = !!(lastCast && lastCast.methodId === m.id);
+    var candidate = !!(lastCast && lastCast.methodId === m.id);
+    /* Sonnet 5 decides follow-up vs new question (see detectIntent). Runs once
+       per send; the recursive re-entry carries the decision in `decided`. */
+    if (candidate && !decided) {
+      busy = true;
+      var sb0 = $("sendBtn"); if (sb0) sb0.disabled = true;
+      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text).then(function (intent) {
+        busy = false;
+        if (sb0) sb0.disabled = false;
+        send(text, intent === "new" ? "new" : "followup");
+      });
+      return;
+    }
+    var isFollowup = candidate && decided !== "new";
     var needed = isFollowup ? A.followCost(m.id) : m.cost;
     if (S.units < needed) { openPlans(); toast("You\u2019re short on units — this one takes " + needed.toLocaleString("en-US") + "."); return; }
 
@@ -620,6 +668,19 @@
 
     busy = true;
     $("sendBtn").disabled = true;
+
+    /* the classifier ruled this a NEW question inside an ongoing thread —
+       cast fresh (context still inherited via history) and surface the
+       pricing rule at the exact moment it applies */
+    if (decided === "new" && lastCast) {
+      var zhN = /[\u4e00-\u9fff]/.test(text);
+      var note = document.createElement("div");
+      note.className = "recast-note";
+      note.textContent = zhN
+        ? "\u8fd9\u770b\u8d77\u6765\u662f\u4e2a\u65b0\u95ee\u9898\u2014\u2014\u5df2\u4e3a\u5b83\u91cd\u65b0\u8d77\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u662f\u60f3\u7ee7\u7eed\u8ffd\u95ee\u4e0a\u4e00\u5366\uff0c\u76f4\u63a5\u56f4\u7ed5\u5b83\u63d0\u95ee\u5373\u53ef\uff0c\u8ffd\u95ee\u6309\u7528\u91cf\u8ba1\u8d39\u3001\u5c01\u9876\u534a\u4ef7\u3002"
+        : "This reads as a new question \u2014 a fresh hexagram was cast for it (" + m.cost.toLocaleString("en-US") + " units). To keep asking about the previous casting instead, just ask about it directly; follow-ups run metered, at most half.";
+      threadInner.appendChild(note);
+    }
 
     /* the casting animation — for Sortis it draws the full 排盘 line by line */
     var spec = window.BWFigure ? window.BWFigure.random(m.id)
