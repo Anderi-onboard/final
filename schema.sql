@@ -76,3 +76,26 @@ CREATE TABLE IF NOT EXISTS subscriptions (
 );
 CREATE INDEX IF NOT EXISTS idx_subs_user ON subscriptions(user_id);
 CREATE INDEX IF NOT EXISTS idx_subs_customer ON subscriptions(provider, customer_id);
+
+-- ── Billing (Creem merchant-of-record; provider-agnostic shapes) ────────────
+-- Webhook idempotency: one row per provider event id; only a fresh insert may
+-- move units, so replayed deliveries can never double-grant.
+CREATE TABLE IF NOT EXISTS billing_events (
+  event_id   TEXT PRIMARY KEY,             -- provider event id
+  provider   TEXT NOT NULL,                -- 'creem' | ...
+  type       TEXT,                         -- event type (audit)
+  user_id    TEXT,                         -- resolved user, if known
+  created_at INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS subscriptions (
+  id          TEXT PRIMARY KEY,            -- provider subscription id
+  user_id     TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  provider    TEXT NOT NULL,
+  customer_id TEXT,                        -- provider customer id
+  plan        TEXT NOT NULL,               -- pro | premium
+  status      TEXT NOT NULL,               -- active | canceling | canceled | past_due | expired
+  period_end  INTEGER,                     -- unix seconds, current period end
+  created_at  INTEGER NOT NULL,
+  updated_at  INTEGER NOT NULL
+);
