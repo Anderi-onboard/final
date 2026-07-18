@@ -193,6 +193,49 @@
   // appends the board + a strict JSON-output contract so parsing never breaks.
   var USER_PROMPT = ""; // ← user's master prompt goes here (or pass opts.systemPrompt)
 
+  /* ── TIMING REFERENCE — deterministic Gregorian translation of branch time ──
+     A Western reader cannot use "the Yin month" alone, and branch cycles
+     REPEAT (a branch month is a yearly solar window; a branch day recurs
+     every 12 days) — so timing must land as concrete, multiple possibilities.
+     Computed in JS from the casting date; the model quotes, never calculates. */
+  var BR_MONTH_WINDOW = [ // bi → approximate solar-term window [startM,startD,endM,endD]
+    [12,7,1,5],[1,6,2,3],[2,4,3,5],[3,6,4,4],[4,5,5,5],[5,6,6,5],
+    [6,6,7,6],[7,7,8,7],[8,8,9,7],[9,8,10,7],[10,8,11,6],[11,7,12,6]
+  ];
+  var BR_REF_PY = ["Zi","Chou","Yin","Mao","Chen","Si","Wu","Wei","Shen","You","Xu","Hai"];
+  var BR_REF_AN = ["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"];
+  function brRefName(bi){ return BR_REF_PY[bi] + "(" + BR_REF_AN[bi] + ")"; }
+  function timingReference(board){
+    var m = board && board.meta; if (!m) return "";
+    var base = new Date((m.date || "") + "T12:00:00Z");
+    if (isNaN(+base)) base = new Date();
+    function fmt(d){ return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.getUTCMonth()] + " " + d.getUTCDate(); }
+    var months = [];
+    for (var bi = 0; bi < 12; bi++){
+      var w = BR_MONTH_WINDOW[bi], y = base.getUTCFullYear();
+      var start = new Date(Date.UTC(y, w[0]-1, w[1]));
+      var end = new Date(Date.UTC(w[2] < w[0] ? y+1 : y, w[2]-1, w[3]));
+      if (end < base){ start = new Date(Date.UTC(y+1, w[0]-1, w[1])); end = new Date(Date.UTC(w[2] < w[0] ? y+2 : y+1, w[2]-1, w[3])); }
+      months.push(brRefName(bi) + " ≈ " + fmt(start) + "–" + fmt(end) + " " + end.getUTCFullYear());
+    }
+    var days = [];
+    var dayBi = m.dayPillar && m.dayPillar.branch ? m.dayPillar.branch.bi : null;
+    if (dayBi != null){
+      for (var b = 0; b < 12; b++){
+        var delta = (b - dayBi + 12) % 12; if (delta === 0) delta = 12; // "next", never today
+        var d1 = new Date(+base + delta * 86400000);
+        var d2 = new Date(+d1 + 12 * 86400000);
+        days.push(brRefName(b) + "=" + fmt(d1) + " then " + fmt(d2));
+      }
+    }
+    return [
+      "TIMING REFERENCE (Gregorian, computed from the casting date " + (m.date || "") + " — quote these, never recalculate):",
+      "Branch-month windows (solar, next from casting): " + months.join(" · "),
+      (days.length ? "Branch DAYS repeat every 12 days; next occurrences: " + days.join(" · ") : ""),
+      "RULE: whenever timing rests on a branch (X month / X day), attach the Gregorian dates from this table and, because cycles repeat, name the 2–3 nearest concrete possibilities — e.g. “the next Shen days: Aug 8, then Aug 20; failing those, the Shen month, Aug 8–Sep 7”. A bare branch name as timing is a defect."
+    ].filter(Boolean).join("\n");
+  }
+
   function buildMessages(board, roles, question, category, gender, lang){
     var schema = [
       "Return ONLY valid minified JSON, no prose, with EXACTLY these keys:",
@@ -202,7 +245,7 @@
       '"strength": "strong"|"weak"|"mixed",',
       '"keyLines": [{"line":1-6,"note":"<=16 words"}],  // the 2-3 lines that decide it',
       '"verdict": "favorable"|"unfavorable"|"mixed"|"unclear",',
-      '"timing": "<=12 words 应期, e.g. by the 申 month/day, or empty",',
+      '"timing": "<=18 words 应期 WITH Gregorian dates from TIMING REFERENCE, e.g. next Shen days Aug 8 / Aug 20, else Shen month Aug 8-Sep 7; or empty",',
       '"reading": "2-4 sentence answer in '+(lang==="zh"?"Chinese":"English")+', plain, second-person, no jargon dump"',
       '}',
       '',
@@ -227,6 +270,8 @@
       "",
       "BOARD (authoritative facts):",
       JSON.stringify(distill(board, roles)),
+      "",
+      timingReference(board),
       "",
       schema
     ].join("\n");
