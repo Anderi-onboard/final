@@ -25,3 +25,14 @@ SESSION_SECRET=change-me-to-a-long-random-string
 #   https://YOUR-DOMAIN/api/auth/google/callback
 # GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
 # GOOGLE_CLIENT_SECRET=xxxx
+
+# ── Creem payments (leave unset to keep the demo fallback) ──────────────────
+# Key prefix picks the API base automatically (creem_test_ → test-api.creem.io)
+CREEM_API_KEY=creem_test_xxxxxxxxxxxxxxxx
+CREEM_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxx
+CREEM_PRODUCT_PRO=prod_xxxxxxxx
+CREEM_PRODUCT_PREMIUM=prod_xxxxxxxx
+CREEM_PRODUCT_PACK4500=prod_xxxxxxxx
+CREEM_PRODUCT_PACK15000=prod_xxxxxxxx
+CREEM_PRODUCT_PACK30000=prod_xxxxxxxx
+CREEM_PRODUCT_PACK75000=prod_xxxxxxxx

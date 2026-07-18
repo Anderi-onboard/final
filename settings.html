@@ -137,6 +137,13 @@
           <div class="rl"><b>Manage subscription</b><span>Change cadence, upgrade or downgrade.</span></div>
           <div class="rr"><a class="btn ink" href="./pricing.html">Manage plans</a></div>
         </div>
+        <div class="row" id="subRow" hidden>
+          <div class="rl"><b>Your subscription</b><span id="subNote">Renews automatically. Cancel anytime — your units stay yours.</span></div>
+          <div class="rr" style="display:flex;gap:10px">
+            <button class="btn ink" id="portalBtn" type="button">Billing portal</button>
+            <button class="btn" id="cancelSubBtn" type="button" style="color:var(--terracotta);border-color:currentColor">Cancel subscription</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -263,7 +270,51 @@
   });
 
   render();
-  if (A.hydrate) A.hydrate(function () { render(); });
+  /* ── Creem subscription controls ── */
+  function refreshSubRow() {
+    var row = document.getElementById("subRow");
+    if (!row) return;
+    fetch("/api/billing/status", { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !d.subscription) { row.hidden = true; return; }
+        row.hidden = false;
+        var note = document.getElementById("subNote");
+        if (d.subscription.status === "canceling") {
+          note.textContent = "Cancellation scheduled — your plan stays active until the period ends.";
+          document.getElementById("cancelSubBtn").disabled = true;
+        } else {
+          note.textContent = "Renews automatically. Cancel anytime — your units stay yours.";
+          document.getElementById("cancelSubBtn").disabled = false;
+        }
+      }).catch(function () { row.hidden = true; });
+  }
+  var cancelBtn = document.getElementById("cancelSubBtn");
+  if (cancelBtn) cancelBtn.addEventListener("click", function () {
+    if (!confirm("Cancel your subscription? Your plan stays active until the period ends, and every unit you hold stays yours.")) return;
+    cancelBtn.disabled = true;
+    fetch("/api/billing/cancel", { method: "POST", credentials: "same-origin" })
+      .then(function (r) { return r.json().catch(function () { return {}; }); })
+      .then(function (d) {
+        toast(d.ok ? "Done — cancellation is scheduled." : (d.error || "Could not cancel — email hello@bournewise.com and we\u2019ll sort it."));
+        refreshSubRow();
+      }).catch(function () { cancelBtn.disabled = false; toast("Network hiccup — try again."); });
+  });
+  var portalBtn = document.getElementById("portalBtn");
+  if (portalBtn) portalBtn.addEventListener("click", function () {
+    fetch("/api/billing/portal", { method: "POST", credentials: "same-origin" })
+      .then(function (r) { return r.json().catch(function () { return {}; }); })
+      .then(function (d) { if (d.url) location.href = d.url; else toast(d.error || "Portal unavailable right now."); })
+      .catch(function () { toast("Network hiccup — try again."); });
+  });
+  /* back from Creem checkout: confirm + let hydrate pull the fresh plan */
+  if (new URLSearchParams(location.search).get("billing") === "success") {
+    history.replaceState(null, "", location.pathname);
+    toast("Payment received — your plan syncs in a few seconds.");
+    setTimeout(function () { if (A.hydrate) A.hydrate(function () { render(); refreshSubRow(); }); }, 2500);
+  }
+
+  if (A.hydrate) A.hydrate(function () { render(); refreshSubRow(); });
 })();
 </script>
 </body>

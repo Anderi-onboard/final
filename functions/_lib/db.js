@@ -172,3 +172,50 @@ export function publicUser(u) {
 }
 
 function safeParse(s) { try { return JSON.parse(s); } catch (e) { return {}; } }
+
+// ── Billing (Creem merchant-of-record) ──────────────────────────────────────
+// The production DB carries two provider-agnostic tables (see schema.sql):
+//   billing_events(event_id PK, provider, type, user_id, created_at)
+//   subscriptions(id PK, user_id, provider, customer_id, plan, status,
+//                 period_end, created_at, updated_at)
+// billing_events is the webhook idempotency ledger: INSERT OR IGNORE, and only
+// a FRESH row is allowed to move units — replayed/duplicated deliveries no-op.
+
+export async function recordBillingEvent(db, eventId, provider, type, userId) {
+  const r = await db.prepare(
+    'INSERT OR IGNORE INTO billing_events (event_id,provider,type,user_id,created_at) VALUES (?,?,?,?,?)'
+  ).bind(String(eventId), provider, type || null, userId || null, now()).run();
+  return { fresh: !!(r && r.meta && r.meta.changes > 0) };
+}
+
+export async function upsertSubscription(db, { id, userId, provider, customerId, plan, status, periodEnd }) {
+  const t = now();
+  await db.prepare(
+    'INSERT INTO subscriptions (id,user_id,provider,customer_id,plan,status,period_end,created_at,updated_at) ' +
+    'VALUES (?,?,?,?,?,?,?,?,?) ' +
+    'ON CONFLICT(id) DO UPDATE SET status=excluded.status, plan=excluded.plan, ' +
+    'customer_id=COALESCE(excluded.customer_id, subscriptions.customer_id), ' +
+    'period_end=COALESCE(excluded.period_end, subscriptions.period_end), updated_at=excluded.updated_at'
+  ).bind(String(id), userId, provider, customerId || null, plan, status, periodEnd || null, t, t).run();
+  return { ok: true };
+}
+
+export async function getSubscriptionByUser(db, userId, provider) {
+  return db.prepare(
+    "SELECT * FROM subscriptions WHERE user_id=? AND provider=? AND status IN ('active','trialing','past_due','canceling') " +
+    'ORDER BY updated_at DESC LIMIT 1'
+  ).bind(userId, provider).first();
+}
+
+export async function getSubscriptionById(db, id) {
+  return db.prepare('SELECT * FROM subscriptions WHERE id=?').bind(String(id)).first();
+}
+
+// Plan change WITHOUT a unit grant — webhook flows grant units separately
+// (per subscription.paid event, deduped), so the demo-era setPlan() grant
+// must not double-fire there.
+export async function setPlanQuiet(db, userId, plan) {
+  if (!PLAN_GRANT.hasOwnProperty(plan)) return { ok: false, error: 'bad plan' };
+  await db.prepare('UPDATE users SET plan=?, updated_at=? WHERE id=?').bind(plan, now(), userId).run();
+  return { ok: true, plan };
+}

@@ -8,6 +8,40 @@
 
 ---
 
+## ✅ 已完成 — Creem 支付接入(代码侧,2026-07-17,同日第三轮)
+
+- ✅ **POST /api/checkout**(`functions/api/checkout.js`):按 sku(pro/premium/
+  packNNNN)映射 env 里的 Creem product id,创建托管 checkout(metadata 带
+  userId+sku),返回跳转 URL。未配 `CREEM_API_KEY` 时返回 503——pricing 页
+  既有的演示回退继续生效,站点不因未配置而破。key 前缀 `creem_test_` 自动
+  切 test-api 域。
+- ✅ **POST /api/billing/webhook**(`functions/api/billing/[[path]].js`):
+  HMAC-SHA256 验签(constant-time 比较)→ `billing_events` 幂等(重放永不
+  重复发点)→ 事件处理:checkout.completed(充值包发点/订阅记 plan 不发点)、
+  subscription.active/paid(paid 是唯一月度发点事件,按 PLAN_GRANT)、
+  scheduled_cancel(标记 canceling,plan 保留到期末)、canceled/expired
+  (降级 free,已发点数保留)。无 metadata 的续费经 `subscriptions` 表反查。
+- ✅ **产品内取消**(Creem 审核硬性要求):POST /api/billing/cancel 调
+  `/v1/subscriptions/{id}/cancel`;settings 新增「Your subscription」行
+  (Cancel + Billing portal 按钮,canceling 态提示保留到期末)。另有
+  GET /api/billing/status、POST /api/billing/portal。
+- ✅ 成功回跳:checkout success_url → `settings.html?billing=success`,
+  toast + 延迟 hydrate 拉新 plan。
+- ✅ 数据层:生产 D1 已存在通用 `billing_events`/`subscriptions` 表(7/12 版
+  后端遗产),直接复用(provider='creem');schema.sql 补齐两表定义;db.js 新增
+  recordBillingEvent/upsertSubscription/getSubscriptionBy*/setPlanQuiet
+  (webhook 流发点与 plan 解耦,杜绝 setPlan 附带 grant 的双发)。
+- ✅ 验证:9 项 webhook 仿真全过——坏签名 400、pack 发点、事件重放不重复、
+  订阅 checkout 不发点、paid 发月度点、paid 重放不重复、无 metadata 续费
+  反查、canceled 降级留点、ledger reason 审计正确。
+- ⏳ **待用户在 Creem 后台完成**(代码已就绪):注册→建 6 个产品(Pro $19/mo、
+  Premium $29/mo、4 个 pack)→ Developers 拿 API key + webhook secret →
+  webhook URL 填 `https://bournewise.com/api/billing/webhook` → 6+2 个 env
+  填进 Pages(见 .dev.vars.example)→ 重新部署 → test 模式走通后切 live 申请
+  上线审核。
+
+---
+
 ## ✅ 已完成 — 体验四连修 + Creem 合规补缺(2026-07-17,同日第二轮)
 
 用户反馈:①多设备多分辨率可视化不佳;②某些页面背景动效缺失(体感);
