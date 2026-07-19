@@ -228,11 +228,23 @@
         days.push(brRefName(b) + "=" + fmt(d1) + " then " + fmt(d2));
       }
     }
+    // branch YEARS — the same 12 branches also name years ((y-4)%12 = branch
+    // index; boundary at Lichun, ~Feb 4). Long-horizon questions ("someday /
+    // in the future / after I graduate") must anchor on THIS scale, not on
+    // day/month windows.
+    var years = [];
+    var curY = base.getUTCFullYear();
+    for (var yb = 0; yb < 12; yb++){
+      var off = (yb - ((curY - 4) % 12) + 12) % 12; if (off === 0) off = 12; // next, never the current year
+      var y1 = curY + off;
+      years.push(brRefName(yb) + "=" + y1 + " then " + (y1 + 12));
+    }
     return [
       "TIMING REFERENCE (Gregorian, computed from the casting date " + (m.date || "") + " — quote these, never recalculate):",
       "Branch-month windows (solar, next from casting): " + months.join(" · "),
       (days.length ? "Branch DAYS repeat every 12 days; next occurrences: " + days.join(" · ") : ""),
-      "RULE: whenever timing rests on a branch (X month / X day), attach the Gregorian dates from this table and, because cycles repeat, name the 2–3 nearest concrete possibilities — e.g. “the next Shen days: Aug 8, then Aug 20; failing those, the Shen month, Aug 8–Sep 7”. A bare branch name as timing is a defect."
+      "Branch YEARS (next two occurrences; year boundary at Lichun, ~Feb 4): " + years.join(" · "),
+      "RULE: whenever timing rests on a branch, attach Gregorian anchors from this table AT THE SCALE THE QUESTION ASKS. Near-term question (“this month / lately”) → the 2–3 nearest branch-day dates, then the branch-month window (e.g. “the next Shen days: Aug 8, then Aug 20; failing those, the Shen month, Aug 8–Sep 7”). LONG-HORIZON question (“以后 / someday / years out”) → the branch's next YEAR-occurrences (e.g. “the next Yin year: 2034, then 2046”), NEVER this month's dates. A bare branch name as timing is a defect; so is a near-term date pasted onto a years-out question."
     ].filter(Boolean).join("\n");
   }
 
@@ -245,7 +257,7 @@
       '"strength": "strong"|"weak"|"mixed",',
       '"keyLines": [{"line":1-6,"note":"<=16 words"}],  // the 2-3 lines that decide it',
       '"verdict": "favorable"|"unfavorable"|"mixed"|"unclear",',
-      '"timing": "<=18 words 应期 WITH Gregorian dates from TIMING REFERENCE, e.g. next Shen days Aug 8 / Aug 20, else Shen month Aug 8-Sep 7; or empty",',
+      '"timing": "<=18 words 应期 WITH Gregorian anchors from TIMING REFERENCE at the scale the question asks (near → day/month dates; 以后/long-horizon → branch YEARS, e.g. next Yin year 2034); or empty",',
       '"reading": "2-4 sentence answer in '+(lang==="zh"?"Chinese":"English")+', plain, second-person, no jargon dump"',
       '}',
       '',
