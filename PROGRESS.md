@@ -424,3 +424,16 @@ about 与 pricing 的 nav / 页脚均加入 "How it works" 链接。
 
 已用 Playwright 在 1280 桌面与 390 移动分辨率逐页截图核验:布局正常、字体正确、
 无 console/page error;修正印章一处 HTML 实体笔误(卵→卦)。
+
+### 改版 — guide 改成 Payoneer 式分步向导(2026-07-19)
+
+按要求把 guide 从"滚动翻页"改成**一步一屏的注册引导**:
+- **左上角圆形进度环**(SVG dial):中心显示"第 N / 共 5",terracotta 弧随步数填充;
+  下方另有一条细线性进度条做二次读数。
+- 一次只显示一屏,底部「继续」推进(最后一步文案变为 "Bring your question" → 进入 app);
+  "Back" 回退、底部圆点 rail 可点跳。
+- 支持键盘(← / → / Enter / Space / Home / End)与移动端左右滑动手势;`#N` 深链直达某步。
+- 每屏不滚动整页,内容超高时仅在本屏内滚动;`prefers-reduced-motion` 关闭动效。
+- 五步内容不变(欢迎 / 选工具 / 如何问 / 卦象指向 / 唯一铁律+Claude 角色)。
+- 已用 Playwright 逐步点击核验:dial 1/5→5/5、进度 20%→100%、标题与终步 CTA 均正确,
+  桌面 1280 与移动 390 均正常,零 console/page error。
