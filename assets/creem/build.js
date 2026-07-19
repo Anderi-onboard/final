@@ -65,7 +65,7 @@ const fill = (n, ink, grey) => [0, 1, 2, 3, 4].map(i => (i >= 5 - n ? ink : grey
 const plates = [
   { file: 'plate-II-15000', roman: 'II', bg: CREAM, ink: INK, title: '15,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(2, INK, GREY) },
   { file: 'plate-III-30000', roman: 'III', bg: CREAM, ink: INK, title: '30,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(3, INK, GREY) },
-  { file: 'plate-IV-75000', roman: 'IV', bg: CREAM, ink: INK, title: '75,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(5, INK, GREY) },
+  { file: 'plate-IV-75000', roman: 'IV', bg: CREAM, ink: INK, title: '75,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(4, INK, GREY) },
   { file: 'plate-V-pro', roman: 'V', bg: CREAM, ink: INK, title: 'Pro', sub: '22,500 UNITS · MONTHLY', bars: fill(5, INK, GREY) },
   { file: 'plate-VI-premium', roman: 'VI', bg: DARK, ink: CREAMINK, title: 'Premium', sub: '45,000 UNITS · MONTHLY', bars: fill(5, CREAMINK, CREAMINK) },
 ];
