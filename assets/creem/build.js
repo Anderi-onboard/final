@@ -24,32 +24,33 @@ const bio800 = b64('BioRhyme-800.woff2');
 const bio700 = b64('BioRhyme-700.woff2');
 const spin = b64('Spinnaker-400.woff2');
 
-// ---- smooth thick sine wave, round caps ----
-function wave(cx, cy, halfW, amp, humps) {
-  const steps = 120, x0 = cx - halfW, x1 = cx + halfW;
-  let d = '';
-  for (let i = 0; i <= steps; i++) {
-    const t = i / steps;
-    const x = x0 + (x1 - x0) * t;
-    const y = cy + amp * Math.sin(t * Math.PI * 2 * humps + Math.PI * 0.15);
-    d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
-  }
-  return d;
-}
+// ---- the BourneWise trademark: the exact five wave paths from the logomark
+// (index.html · viewBox 0 0 512 416, g translate(240,1380), stroke-width 40,
+// round caps). Top → bottom. These are the registered mark and are reproduced
+// verbatim; only their stroke colour changes to signal a plan's fill level. ----
+const MARK_PATHS = [
+  'M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0',
+  'M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0',
+  'M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0',
+  'M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0',
+  'M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0',
+];
+// A one-off "overflow" wave that sits above the mark (75,000 top-up only):
+// the top path shifted up one band, kept muted so the mark itself stays whole.
+const OVERFLOW_PATH = 'M-40.96-1417.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0';
 
-// ---- the stacked-wave glyph: a circular silhouette used as a fill gauge ----
-function glyph(bars, { ink, grey, sw }) {
-  const boxW = 560, cx = 290, top = 70, stackH = 420, maxHalf = 245;
-  const gap = stackH / (bars.length - 1);
-  let out = `<svg viewBox="0 0 ${boxW} 560" width="560" height="560" xmlns="http://www.w3.org/2000/svg">`;
-  bars.forEach((b, i) => {
-    const cy = top + gap * i;
-    const halfW = maxHalf * b.w;
-    const amp = 15 + 6 * b.w;
-    const humps = halfW > 150 ? 2.1 : 1.5;
-    out += `<path d="${wave(cx, cy, halfW, amp, humps)}" fill="none" stroke="${b.filled ? ink : grey}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+// bars: array of 5 colours (top→bottom). overflow: colour for the extra wave,
+// or null. Width is pinned to 512 (viewBox width) so bar thickness is identical
+// across every plate; only the viewBox height/offset changes.
+function glyph(bars, overflow) {
+  const vb = overflow ? '0 -95 512 511' : '0 0 512 416';
+  let out = `<svg viewBox="${vb}" width="512" xmlns="http://www.w3.org/2000/svg" `
+    + `fill="none" stroke-linecap="round"><g transform="translate(240,1380)">`;
+  if (overflow) out += `<path style="stroke-width:40px" stroke="${overflow}" d="${OVERFLOW_PATH}"/>`;
+  MARK_PATHS.forEach((d, i) => {
+    out += `<path style="stroke-width:40px" stroke="${bars[i]}" d="${d}"/>`;
   });
-  return out + '</svg>';
+  return out + '</g></svg>';
 }
 
 function frame(stroke) {
@@ -60,17 +61,18 @@ function frame(stroke) {
 }
 
 const CREAM = '#F5F0E3', INK = '#16130F', GREY = '#D2CDC2', DARK = '#16130F', CREAMINK = '#F3EEE1';
-const W5 = [0.60, 0.86, 1.0, 0.84, 0.55];      // 5-bar circular silhouette
-const W6 = [0.55, 0.80, 1.0, 0.86, 0.74, 0.48]; // 6-bar (overflow) silhouette
-const bars5 = filledFromBottom => W5.map((w, i) => ({ w, filled: i >= 5 - filledFromBottom }));
+
+// Colour the five trademark bars top→bottom; the gauge fills from the bottom.
+// filledFromBottom = how many of the five are inked (the rest stay muted grey).
+const fill = (n, ink, grey) => [0, 1, 2, 3, 4].map(i => (i >= 5 - n ? ink : grey));
 
 // Plates track the Creem products: three one-time top-ups + two monthly plans.
 const plates = [
-  { file: 'plate-II-15000', roman: 'II', bg: CREAM, ink: INK, grey: GREY, title: '15,000 Units', sub: 'ONE-TIME TOP-UP', bars: bars5(2) },
-  { file: 'plate-III-30000', roman: 'III', bg: CREAM, ink: INK, grey: GREY, title: '30,000 Units', sub: 'ONE-TIME TOP-UP', bars: bars5(3) },
-  { file: 'plate-IV-75000', roman: 'IV', bg: CREAM, ink: INK, grey: GREY, title: '75,000 Units', sub: 'ONE-TIME TOP-UP', bars: W6.map((w, i) => ({ w, filled: i >= 1 })) },
-  { file: 'plate-V-pro', roman: 'V', bg: CREAM, ink: INK, grey: GREY, title: 'Pro', sub: '22,500 UNITS · MONTHLY', bars: W5.map(w => ({ w, filled: true })) },
-  { file: 'plate-VI-premium', roman: 'VI', bg: DARK, ink: CREAMINK, grey: '#3A342B', title: 'Premium', sub: '45,000 UNITS · MONTHLY', bars: W5.map(w => ({ w, filled: true })) },
+  { file: 'plate-II-15000', roman: 'II', bg: CREAM, ink: INK, title: '15,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(2, INK, GREY) },
+  { file: 'plate-III-30000', roman: 'III', bg: CREAM, ink: INK, title: '30,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(3, INK, GREY) },
+  { file: 'plate-IV-75000', roman: 'IV', bg: CREAM, ink: INK, title: '75,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(5, INK, GREY), overflow: GREY },
+  { file: 'plate-V-pro', roman: 'V', bg: CREAM, ink: INK, title: 'Pro', sub: '22,500 UNITS · MONTHLY', bars: fill(5, INK, GREY) },
+  { file: 'plate-VI-premium', roman: 'VI', bg: DARK, ink: CREAMINK, title: 'Premium', sub: '45,000 UNITS · MONTHLY', bars: fill(5, CREAMINK, CREAMINK) },
 ];
 
 const css = `
@@ -83,7 +85,7 @@ html,body{width:1920px;height:1080px;overflow:hidden}
 .frame{position:absolute;inset:0;width:1920px;height:1080px}
 .row{position:absolute;inset:0;display:flex;align-items:center}
 .gcol{width:820px;display:flex;align-items:center;justify-content:center;padding-left:60px}
-.gcol svg{width:520px;height:520px}
+.gcol svg{width:512px;height:auto}
 .tcol{flex:1;padding-right:150px;padding-left:20px}
 .ey{font-family:'Spinnaker';font-size:26px;letter-spacing:.44em;text-transform:uppercase}
 .ey2{font-family:'Spinnaker';font-size:22px;letter-spacing:.44em;text-transform:uppercase;margin-top:16px}
@@ -96,7 +98,7 @@ function pageHtml(p) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${css}
   body{background:${p.bg}}.ey,.ey2,.sub{color:${muted}}.title{color:${p.ink}}.dash{background:${muted}}
   </style></head><body><div class="stage">${frame(muted)}
-  <div class="row"><div class="gcol">${glyph(p.bars, { ink: p.ink, grey: p.grey, sw: 34 })}</div>
+  <div class="row"><div class="gcol">${glyph(p.bars, p.overflow || null)}</div>
   <div class="tcol"><div class="ey">Bournewise</div><div class="ey2">Plate ${p.roman} of VI</div>
   <div class="dash"></div><div class="title">${p.title}</div><div class="sub">${p.sub}</div></div></div>
   </div></body></html>`;
