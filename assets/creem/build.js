@@ -35,18 +35,13 @@ const MARK_PATHS = [
   'M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0',
   'M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0',
 ];
-// A one-off "overflow" wave that sits above the mark (75,000 top-up only):
-// the top path shifted up one band, kept muted so the mark itself stays whole.
-const OVERFLOW_PATH = 'M-40.96-1417.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0';
-
-// bars: array of 5 colours (top→bottom). overflow: colour for the extra wave,
-// or null. Width is pinned to 512 (viewBox width) so bar thickness is identical
-// across every plate; only the viewBox height/offset changes.
-function glyph(bars, overflow) {
-  const vb = overflow ? '0 -95 512 511' : '0 0 512 416';
-  let out = `<svg viewBox="${vb}" width="512" xmlns="http://www.w3.org/2000/svg" `
+// bars: array of exactly 5 colours (top→bottom). The mark is always the five
+// trademark waves — never more, never fewer; only their colour changes. Width
+// is pinned to 512 (the viewBox width) so bar thickness is identical on every
+// plate.
+function glyph(bars) {
+  let out = `<svg viewBox="0 0 512 416" width="512" xmlns="http://www.w3.org/2000/svg" `
     + `fill="none" stroke-linecap="round"><g transform="translate(240,1380)">`;
-  if (overflow) out += `<path style="stroke-width:40px" stroke="${overflow}" d="${OVERFLOW_PATH}"/>`;
   MARK_PATHS.forEach((d, i) => {
     out += `<path style="stroke-width:40px" stroke="${bars[i]}" d="${d}"/>`;
   });
@@ -70,7 +65,7 @@ const fill = (n, ink, grey) => [0, 1, 2, 3, 4].map(i => (i >= 5 - n ? ink : grey
 const plates = [
   { file: 'plate-II-15000', roman: 'II', bg: CREAM, ink: INK, title: '15,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(2, INK, GREY) },
   { file: 'plate-III-30000', roman: 'III', bg: CREAM, ink: INK, title: '30,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(3, INK, GREY) },
-  { file: 'plate-IV-75000', roman: 'IV', bg: CREAM, ink: INK, title: '75,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(5, INK, GREY), overflow: GREY },
+  { file: 'plate-IV-75000', roman: 'IV', bg: CREAM, ink: INK, title: '75,000 Units', sub: 'ONE-TIME TOP-UP', bars: fill(5, INK, GREY) },
   { file: 'plate-V-pro', roman: 'V', bg: CREAM, ink: INK, title: 'Pro', sub: '22,500 UNITS · MONTHLY', bars: fill(5, INK, GREY) },
   { file: 'plate-VI-premium', roman: 'VI', bg: DARK, ink: CREAMINK, title: 'Premium', sub: '45,000 UNITS · MONTHLY', bars: fill(5, CREAMINK, CREAMINK) },
 ];
@@ -98,7 +93,7 @@ function pageHtml(p) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${css}
   body{background:${p.bg}}.ey,.ey2,.sub{color:${muted}}.title{color:${p.ink}}.dash{background:${muted}}
   </style></head><body><div class="stage">${frame(muted)}
-  <div class="row"><div class="gcol">${glyph(p.bars, p.overflow || null)}</div>
+  <div class="row"><div class="gcol">${glyph(p.bars)}</div>
   <div class="tcol"><div class="ey">Bournewise</div><div class="ey2">Plate ${p.roman} of VI</div>
   <div class="dash"></div><div class="title">${p.title}</div><div class="sub">${p.sub}</div></div></div>
   </div></body></html>`;
