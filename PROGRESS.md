@@ -397,3 +397,30 @@
 - [ ] Stripe 真实支付（checkout + webhook → 自动发点数/改套餐），替换 `/plan`、`/grant` 的 stub
 - [ ] 部署配置：`wrangler d1 create` 填 database_id、跑 schema.sql、设 SESSION_SECRET
 - [ ] （可选）真实 Google OAuth：设 GOOGLE_CLIENT_ID/SECRET，login 的 google 按钮指向 `/api/auth/google`
+
+---
+
+## ✅ 已完成 — 用户引导教程 guide.html（2026-07-19）
+
+**目标**:留住用户 + 教育用户 + 绑定品牌价值。首次访客 5 分钟看完即上手。
+
+新增 `guide.html`,完全沿用 about.html 的 "Paper" 滚动模板(mountain-range 山峦 hero、
+scroll-snap 全屏翻页、玻璃卡片、per-page 颜色场、IntersectionObserver rise 动画、
+BioRhyme + Spinnaker + Fraunces 斜体 gild + terracotta)。五页:
+
+- **Hero** — "How to ask, and how to read what comes back"。
+- **01 选择工具** — Stria 64(from 300)/ Sortis 6(from 1,500)/ Units 计费说明
+  (按实际消耗计费、同线程追问更便宜、开局 500 免费)。
+- **02 如何问卦** — 4 条习惯:问真正困扰你的、说清楚再给点上下文、问"动向/抉择"
+  而非固定事实、诚心一卦别反复重卜。
+- **03 卦象指向什么 + 如何解读** — 卦是"力的地图"非判决;一卦多解、多向参考;
+  模糊性正是它对复杂人生的诚实(多样性/多向性)。
+- **04 唯一铁律 + Claude 的角色** — 印章「卦后并非万事大吉 · 仍需努力,自强不息」;
+  卦由确定性引擎起(旧逻辑不动),Claude 只"落字"、始终服从卦象、不为讨好而改写。
+  古法结构 + 现代之声,分工透明。
+
+导航接入:index 顶栏("How it works")+ 页脚 + 空状态问候语下方 `.greet-guide` 首访引导;
+about 与 pricing 的 nav / 页脚均加入 "How it works" 链接。
+
+已用 Playwright 在 1280 桌面与 390 移动分辨率逐页截图核验:布局正常、字体正确、
+无 console/page error;修正印章一处 HTML 实体笔误(卵→卦)。

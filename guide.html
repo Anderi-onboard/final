@@ -1,0 +1,337 @@
+<!-- BourneWise — A short apprenticeship (user guide). Part of the "Paper site" template (entry: index.html) -->
+<!DOCTYPE html>
+<html lang="en" data-skin="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A short apprenticeship — BourneWise</title>
+<meta name="description" content="How to ask a question worth casting, how to choose your instrument, and how to read what comes back — the small craft behind a BourneWise reading.">
+<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
+<style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
+<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./styles.css?v=20260712o">
+<script src="./ds-base.js?v=20260712o"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  em,i{font-style:normal}
+  html,body{height:100%}
+
+  /* This page reuses the site's warm "Paper" template — the same cream surfaces,
+     espresso ink, terracotta accent, full-page scroll-snap deck and per-page
+     colour field as About. It is a teaching page: one idea per screen, read
+     top to bottom like turning the pages of a manual. */
+
+  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+  button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
+  .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
+
+  .main{position:relative;z-index:1;flex:1;min-width:0;height:100vh;height:100dvh;overflow-y:auto;
+    scroll-snap-type:y proximity;scroll-behavior:smooth;overscroll-behavior-y:contain;
+    scrollbar-width:none}
+  .main::-webkit-scrollbar{width:0;height:0}
+  .page{position:relative;min-height:100vh;min-height:100dvh;scroll-snap-align:start;
+    display:flex;flex-direction:column;justify-content:center;padding:0}
+  .page-inner{position:relative;z-index:1;width:100%;max-width:1080px;margin:0 auto;padding:64px 28px}
+
+  .page-fx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .page-fx b{position:absolute;display:block;border-radius:50%;filter:blur(64px);opacity:.5;will-change:transform,opacity}
+  .fx-amber b:nth-child(1){width:58vw;height:58vw;left:-8vw;top:-6vh;background:radial-gradient(circle at 42% 42%,#F3C88C,transparent 68%);animation:blobA 27s ease-in-out infinite}
+  .fx-amber b:nth-child(2){width:50vw;height:50vw;right:-10vw;bottom:-12vh;background:radial-gradient(circle at 50% 50%,#D99A62,transparent 70%);animation:blobB 34s ease-in-out infinite}
+  .fx-amber b:nth-child(3){width:34vw;height:34vw;left:38vw;bottom:6vh;background:radial-gradient(circle at 50% 50%,#E7B47E,transparent 72%);animation:blobC 30s ease-in-out infinite}
+  .fx-sage b:nth-child(1){width:56vw;height:56vw;left:-10vw;bottom:-10vh;background:radial-gradient(circle at 46% 46%,#AEBE9F,transparent 70%);animation:blobB 31s ease-in-out infinite}
+  .fx-sage b:nth-child(2){width:52vw;height:52vw;right:-12vw;top:-8vh;background:radial-gradient(circle at 50% 50%,#CFA588,transparent 70%);animation:blobA 36s ease-in-out infinite}
+  .fx-sage b:nth-child(3){width:30vw;height:30vw;left:44vw;top:10vh;background:radial-gradient(circle at 50% 50%,#BFAF95,transparent 72%);animation:blobC 28s ease-in-out infinite}
+  .fx-clay b:nth-child(1){width:60vw;height:60vw;left:-12vw;top:-8vh;background:radial-gradient(circle at 44% 44%,#E3B79A,transparent 70%);animation:blobA 29s ease-in-out infinite}
+  .fx-clay b:nth-child(2){width:48vw;height:48vw;right:-8vw;bottom:-10vh;background:radial-gradient(circle at 50% 50%,#C98B78,transparent 70%);animation:blobB 33s ease-in-out infinite}
+  .fx-clay b:nth-child(3){width:32vw;height:32vw;left:40vw;top:8vh;background:radial-gradient(circle at 50% 50%,#D6A58A,transparent 72%);animation:blobC 31s ease-in-out infinite}
+  @keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,4vh) scale(1.14)}}
+  @keyframes blobB{0%,100%{transform:translate(0,0) scale(1.06)}50%{transform:translate(-5vw,-5vh) scale(.9)}}
+  @keyframes blobC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4vw,6vh) scale(1.12)}}
+  .page .rise{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+  .page.in-view .rise{opacity:1;transform:none}
+  .page .rise:nth-child(2){transition-delay:.06s}
+  .page .rise:nth-child(3){transition-delay:.12s}
+  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--faint);
+    display:flex;flex-direction:column;align-items:center;gap:5px;font-size:var(--text-label);letter-spacing:var(--tracking-label);
+    animation:hintBob 2.2s ease-in-out infinite}
+  @keyframes hintBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
+
+  .inkline{position:relative}
+  .inkline svg{position:absolute;left:0;bottom:-5px;width:100%;height:8px;overflow:visible;pointer-events:none}
+  .inkline path{stroke:var(--terracotta);fill:none;stroke-linecap:round;stroke-dasharray:110;stroke-dashoffset:110;transition:stroke-dashoffset .45s cubic-bezier(.4,0,.2,1)}
+  .inkline path+path{opacity:.45;transition-delay:.08s}
+  .inkline:hover path,.inkline:focus-visible path{stroke-dashoffset:0}
+
+  /* ── hero ── */
+  .hero-slab{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+  .hero-slab .mtn-bg{position:absolute;inset:0;z-index:0;opacity:.96;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%)}
+  .hero-slab .mtn-bg .l1{animation:none;fill:#FBF3E9}
+  .hero-slab .mtn-bg .l2{animation:none;fill:#F7E8D2}
+  .hero-slab .mtn-bg .l3{animation:none;fill:#F0D8B6}
+  .hero-slab .mtn-bg .l4{animation:none;fill:#E6BE8C}
+  .hero-slab .mtn-bg .l5{animation:none;fill:#DCA06A}
+  .hero-slab .mtn-bg .l6{animation:none;fill:#C97C4C}
+  .hero-slab .mtn-bg .l7{animation:none;fill:#AC5C36}
+  .hero-slab .mtn-bg .l8{animation:none;fill:#843F24}
+  .hero-slab .mtn-bg .l9{animation:none;fill:#4E2415}
+  .hero-slab .mtn-bg .l10{animation:none;fill:#241009}
+  .hero-slab .mtn-bg use[fill]{fill:#241009}
+
+  .slab-nav{position:relative;z-index:1;display:flex;align-items:center;gap:20px;padding:20px 28px 0}
+  .slab-nav .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
+  .slab-nav .eyebrow b{color:var(--terracotta);font-weight:400}
+  .slab-nav .links{margin-left:auto;display:flex;align-items:center;gap:20px}
+  .slab-nav .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
+  .slab-nav .ghost:hover{color:var(--ink)}
+  .slab-nav .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s,background .15s}
+  .slab-nav .cta:hover{background:#291D35;transform:translateY(-1px)}
+  .hero-slab .hero-kicker{position:relative;z-index:1;margin-top:auto;padding:0 28px;font-family:Spinnaker;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:#F0D8B6;text-shadow:0 1px 8px rgba(36,16,9,.55)}
+  .hero-slab h1{position:relative;z-index:1;font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(38px,5.2vw,66px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance;
+    color:#FBF3E9;text-shadow:0 2px 20px rgba(36,16,9,.45),0 1px 3px rgba(36,16,9,.5);
+    padding:12px 28px 44px;max-width:18ch}
+
+  /* ── section scaffolding shared by the teaching pages ── */
+  .sec-head{max-width:44ch}
+  .sec-head .kicker{font-family:Spinnaker;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--terracotta)}
+  .sec-head h2{margin-top:12px;font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.28;letter-spacing:-.015em;text-wrap:pretty}
+  .sec-head .gild{font-family:var(--lit,"Fraunces",serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
+  .sec-head p{margin-top:16px;max-width:52ch;font-size:14.5px;line-height:1.72;color:var(--dim)}
+
+  /* glass card, same recipe as About's .m-card */
+  .cards{margin-top:32px;display:grid;gap:12px}
+  .cards.two{grid-template-columns:1fr 1fr}
+  .cards.three{grid-template-columns:repeat(3,1fr)}
+  .card{border-radius:12px;padding:18px 20px;
+    background:linear-gradient(158deg,rgba(247,238,220,.52) 0%,rgba(236,223,197,.22) 52%,rgba(247,238,220,.48) 100%);
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(8px) saturate(1.18);-webkit-backdrop-filter:blur(8px) saturate(1.18);transform:translateZ(0)}
+  .card .ci{width:24px;height:24px;color:var(--terracotta)}
+  .card b{display:block;margin-top:13px;font-family:"BioRhyme",var(--serif);font-size:16px;font-weight:700}
+  .card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
+  .card p{margin-top:6px;font-size:13px;line-height:1.6;color:var(--dim)}
+  .card .ex{margin-top:10px;font-size:12.5px;line-height:1.5;color:var(--faint)}
+  .card .ex .yes{color:#6E7A50;font-weight:600}
+  .card .ex .no{color:#A9614E;font-weight:600}
+
+  /* numbered steps for "how to ask" */
+  .steps{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .step{display:flex;gap:15px;border-radius:12px;padding:18px 20px;
+    background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(8px) saturate(1.15);-webkit-backdrop-filter:blur(8px) saturate(1.15);transform:translateZ(0)}
+  .step .no{flex:none;font-family:"BioRhyme",var(--serif);font-weight:800;font-size:22px;color:var(--terracotta);line-height:1;width:34px}
+  .step b{display:block;font-family:"BioRhyme",var(--serif);font-size:15.5px;font-weight:700}
+  .step p{margin-top:5px;font-size:13px;line-height:1.6;color:var(--dim)}
+
+  /* the ink band — the one rule + who writes the words */
+  .band{color:var(--ink);border-radius:18px;padding:48px 40px 40px;
+    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(9px) saturate(1.18);-webkit-backdrop-filter:blur(9px) saturate(1.18);transform:translateZ(0)}
+  .band .kicker{font-family:Spinnaker;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--terracotta);text-align:center;display:block}
+  .band h2{margin-top:12px;font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(23px,2.8vw,32px);letter-spacing:-.015em;text-align:center;text-wrap:balance}
+  .band .seal{margin:14px auto 0;display:block;text-align:center;font-family:var(--lit,"Fraunces",serif);font-style:italic;font-size:17px;color:var(--dim)}
+  .band .lede{margin:20px auto 0;max-width:60ch;text-align:center;font-size:14.5px;line-height:1.75;color:var(--dim)}
+  .band .lede em{font-family:var(--lit,"Fraunces",serif);font-style:italic;color:var(--ink)}
+  .split{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .split .tile{border:1px solid rgba(42,32,22,.1);background:rgba(255,252,245,.34);border-radius:13px;padding:20px 20px 18px}
+  .split .tile .ti{width:24px;height:24px;color:var(--terracotta)}
+  .split .tile b{display:block;margin-top:12px;font-family:"BioRhyme",var(--serif);font-size:16px;font-weight:700}
+  .split .tile p{margin-top:6px;font-size:12.5px;line-height:1.6;color:var(--dim)}
+  .band .cta{margin:34px auto 0;display:block;width:max-content;font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:10px 24px;border-radius:10px;transition:transform .15s,background .15s}
+  .band .cta:hover{transform:translateY(-1px);background:#D97D7E}
+
+  .fine{margin-top:24px;text-align:center;font-size:12px;color:var(--faint);line-height:2}
+  footer{margin-top:30px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  footer a{transition:color .15s}
+  footer a:hover{color:var(--ink)}
+
+  @media (max-width:920px){
+    .cards.three{grid-template-columns:1fr}
+    .cards.two,.steps,.split{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .page-inner{padding:48px 18px}
+    .slab-nav{padding:16px 20px 0}
+    .slab-nav .ghost{display:none}
+    .hero-slab h1{padding:10px 20px 34px}
+    .hero-slab .hero-kicker{padding:0 20px}
+    .band{padding:38px 22px 34px}
+  }
+  @media (prefers-reduced-motion: reduce){.page-fx b{animation:none}}
+</style>
+</head>
+<body>
+
+<main class="main" data-screen-label="A short apprenticeship">
+
+  <!-- page 1 · hero -->
+  <section class="page hero-slab">
+    <div class="mtn-bg" data-vbw="1250" data-par="xMidYMax slice" style="--mtn-phase:-12s" aria-hidden="true"></div>
+    <nav class="slab-nav" aria-label="Site">
+      <span class="eyebrow"><b>&#9670;</b><span>A short apprenticeship</span></span>
+      <span class="links">
+        <a class="ghost" href="./about.html">About</a>
+        <a class="ghost" href="./pricing.html">Plans &amp; units</a>
+        <a class="cta" href="./index.html">Begin the dialogue</a>
+      </span>
+    </nav>
+    <p class="hero-kicker">Five minutes, once &middot; then the instrument is yours</p>
+    <h1>How to ask, and how to read what comes back</h1>
+    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v9M4 8.5l4 4 4-4"></path></svg>
+    </div>
+  </section>
+
+  <!-- page 2 · choose the instrument + what units are -->
+  <section class="page">
+   <div class="page-fx fx-amber" aria-hidden="true"><b></b><b></b><b></b></div>
+   <div class="page-inner">
+    <div class="sec-head rise">
+      <span class="kicker">01 &middot; Choose your instrument</span>
+      <h2>Two readings, <span class="gild">two depths</span> &mdash; and you only pay for what one actually costs.</h2>
+      <p>Both cast the same six lines over the same question. They differ in how far down they go &mdash; and in what you&rsquo;ll want depends entirely on the weight of what you&rsquo;re asking. A passing worry and a decision you&rsquo;ll live with for a year are not the same errand.</p>
+    </div>
+    <div class="cards three rise">
+      <div class="card">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 15c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
+        <b>Stria 64 <span class="u">&middot; from 300 units</span></b>
+        <p>A same-day read of where things stand right now: the figure, its temperament, the direction it leans. Quick, honest, and it doesn&rsquo;t pretend to be more than a clear look at the present.</p>
+        <p class="ex"><span class="yes">Reach for it when</span> you want your bearings, a gut-check, a first orientation.</p>
+      </div>
+      <div class="card">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 12.5c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 18c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
+        <b>Sortis 6 <span class="u">&middot; from 1,500 units</span></b>
+        <p>The full method: the moving lines, the second figure the situation is turning into, each changing line read on its own. Built for the fork in the road you&rsquo;ll still be living with a year from now.</p>
+        <p class="ex"><span class="yes">Reach for it when</span> the stakes are real and you want the whole structure, not a glance.</p>
+      </div>
+      <div class="card">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M7 7h7a2.5 2.5 0 0 1 0 5H9a2.5 2.5 0 0 0 0 5h8"></path></svg>
+        <b>Units, plainly</b>
+        <p>Units are the meter. A reading costs what it actually consumes &mdash; the numbers above are the starting draw, and you&rsquo;re charged for real use, no rounding up. A follow-up in the same thread is much cheaper than a fresh cast. Everyone begins with 500 on the house.</p>
+        <p class="ex"><a class="inkline" href="./pricing.html">See the full tariff<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></p>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- page 3 · how to ask -->
+  <section class="page">
+   <div class="page-fx fx-sage" aria-hidden="true"><b></b><b></b><b></b></div>
+   <div class="page-inner">
+    <div class="sec-head rise">
+      <span class="kicker">02 &middot; How to ask</span>
+      <h2>The question does half the work. <span class="gild">Ask well</span> and the reading has something to hold on to.</h2>
+      <p>An oracle answers the question you actually put to it &mdash; not the one you meant. A little care here is the difference between a reading that lands and one that talks past you. Four small habits, and you&rsquo;ll never need them again.</p>
+    </div>
+    <div class="steps rise">
+      <div class="step"><span class="no">1</span><div>
+        <b>Bring the one that&rsquo;s keeping you up</b>
+        <p>Not the safest question &mdash; the real one. The figure has the most to say about the thing you actually keep circling back to. Ask that.</p>
+      </div></div>
+      <div class="step"><span class="no">2</span><div>
+        <b>Say it plainly, then give it a spine</b>
+        <p>One clear sentence, then a line or two of context: who&rsquo;s involved, what&rsquo;s at stake, the fork you&rsquo;re standing at. Not a diary &mdash; just enough that the reading has something to bite on.</p>
+      </div></div>
+      <div class="step"><span class="no">3</span><div>
+        <b>Ask about a movement, not a fixed fact</b>
+        <p>&ldquo;Should I take the offer?&rdquo; reads far better than &ldquo;will it rain Tuesday?&rdquo; The instrument reasons about direction, timing and choice &mdash; give it a decision, and it comes alive.</p>
+      </div></div>
+      <div class="step"><span class="no">4</span><div>
+        <b>One honest cast, then sit with it</b>
+        <p>Re-casting the same question hoping for a kinder answer only buys you noise. Ask once, in good faith. If the answer stings, that&rsquo;s often the part worth reading twice.</p>
+      </div></div>
+    </div>
+   </div>
+  </section>
+
+  <!-- page 4 · what comes back, and how to read it -->
+  <section class="page">
+   <div class="page-fx fx-clay" aria-hidden="true"><b></b><b></b><b></b></div>
+   <div class="page-inner">
+    <div class="sec-head rise">
+      <span class="kicker">03 &middot; What comes back</span>
+      <h2>A figure is a map of forces &mdash; <span class="gild">not a verdict</span>, and rarely a single one.</h2>
+      <p>What returns is not a yes-or-no and not a fortune-cookie line. It is the shape of your situation: where the energy sits, which line is moving, which way the whole thing is tilting. Reading it is a small skill &mdash; here is the whole of it.</p>
+    </div>
+    <div class="cards three rise">
+      <div class="card">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L4 6v14l5-2 6 2 5-2V4l-5 2-6-2z"></path><path d="M9 4v14M15 6v14"></path></svg>
+        <b>What it points to</b>
+        <p>The figure describes structure and motion &mdash; a configuration of forces and where they&rsquo;re heading. Read it as terrain and weather, not as a lottery number. It tells you the lay of the land and which way the wind is blowing; the walking is still yours.</p>
+      </div>
+      <div class="card">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h11l5 4v10H4z"></path><path d="M15 5v4h5M8 14h8M8 17h5"></path></svg>
+        <b>Read it more than once</b>
+        <p>A good reading is layered. The same figure holds several true readings at once, depending on which thread of your life you lay it against &mdash; work, a person, your own nerve. Hold it up to each. The right one usually recognises itself.</p>
+      </div>
+      <div class="card">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        <b>Ambiguity is the honesty</b>
+        <p>When a reading holds more than one meaning, that isn&rsquo;t the instrument hedging &mdash; it&rsquo;s refusing to flatten a complicated life into a slogan. A single, tidy answer to a genuinely open question would be the lie. Take the plural view as a gift: it&rsquo;s telling you the door is still open.</p>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- page 5 · the one rule + who writes the words -->
+  <section class="page">
+   <div class="page-fx fx-amber" aria-hidden="true"><b></b><b></b><b></b></div>
+   <div class="page-inner">
+    <section class="band rise">
+      <span class="kicker">04 &middot; The one rule that outlives all the others</span>
+      <h2>A good omen is not a finish line.</h2>
+      <span class="seal" lang="zh">卦后并非万事大吉 &middot; 仍需努力,自强不息</span>
+      <p class="lede">A favourable figure tells you the wind is with you &mdash; it does not row the boat. An unfavourable one names the cost early, while you can still afford to pay it. Either way the outcome is not delivered to you; it is <em>earned</em>. The oracle can show you the grain of the wood. You still have to do the carving &mdash; <em>strive on, without ceasing</em>. That has been the discipline behind this instrument for twenty-six centuries, and it is the one thing we&rsquo;d ask you to carry out of here.</p>
+      <div class="split">
+        <div class="tile">
+          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"></path></svg>
+          <b>The figure is cast by the old logic</b>
+          <p>The six lines and the hexagram they form are produced by a faithful casting engine &mdash; the same causal method, untouched, that dynasties reasoned by. No model chooses the figure. Chance and structure do, exactly as they always have.</p>
+        </div>
+        <div class="tile">
+          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h9l3 3v11H4z"></path><path d="M13 5v3h3M8 11h5M8 14h3"></path><path d="M18 4l1.5 1.5L18 7l-1.5-1.5z"></path></svg>
+          <b>Claude finds the words &mdash; and only the words</b>
+          <p>The reading is written by Claude, held to the figure that was cast. The hexagram decides what may be said; the model finds a clear, human way to say it. It never overrules the casting to tell you what you&rsquo;d rather hear. Ancient structure, modern voice &mdash; and an honest line between the two.</p>
+        </div>
+      </div>
+      <a class="cta" href="./index.html">Now &mdash; bring your question</a>
+    </section>
+
+    <p class="fine rise">Your castings are encrypted at rest, never sold, never used to train &mdash; and burned when you say so.
+      <a class="inkline" href="./privacy.html">The policy<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
+      &nbsp;&middot;&nbsp;
+      <a class="inkline" href="./about.html">About BourneWise<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
+    </p>
+
+    <footer class="rise">
+      <span class="lbl" style="font-family: Spinnaker; font-weight: 600">BourneWise &middot; founded on classical logic &middot; <a class="inkline" href="mailto:hello@bournewise.com" style="font-family:Spinnaker">hello@bournewise.com</a> &middot; <a class="inkline" href="./refund.html" style="font-family:Spinnaker">Refunds</a></span>
+      <span class="lbl"><a class="inkline" href="./index.html" style="font-family: Spinnaker; font-weight: 700">Back to BourneWise<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></span>
+    </footer>
+   </div>
+  </section>
+</main>
+
+<script src="./assets/backgrounds/mountain-range.js?v=20260712o"></script>
+<script>
+(function () {
+  var pages = document.querySelectorAll('.main .page');
+  if (!('IntersectionObserver' in window)) {
+    pages.forEach(function (p) { p.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { e.target.classList.toggle('in-view', e.isIntersecting && e.intersectionRatio > 0.4); });
+  }, { threshold: [0, 0.4, 0.75] });
+  pages.forEach(function (p) { io.observe(p); });
+  // hero starts in view immediately
+  pages[0].classList.add('in-view');
+})();
+</script>
+</body>
+</html>

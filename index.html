@@ -580,6 +580,9 @@
   #heroEmpty{display:block;text-align:center;padding:0 0 28px}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
+  .greet-guide{margin-top:14px;font-size:13px;font-family:var(--sans)}
+  .greet-guide a{color:var(--dim);transition:color .15s}
+  .greet-guide a:hover{color:var(--ink)}
   .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:680px;width:100%;margin-top:16px}
   .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:8px 17px;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;font-family:var(--sans)}
   .chip:hover{background:rgba(42,32,22,.06);border-color:var(--ink);color:var(--ink)}
@@ -670,6 +673,7 @@
         <img class="claude-mark" src="./assets/claude-mark.png" alt="Claude" aria-hidden="true">
         <span class="cn-text" style="font-family: var(--sans)">Readings are written by Claude Opus 4.8 and held to the cast figure &mdash; the hexagram decides what may be said; the model finds the words.</span>
       </span>
+      <a class="ghost" href="./guide.html" style="font-weight: 700; font-family: var(--sans)">How it works</a>
       <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">About us</a>
     </div>
   </header>
@@ -681,6 +685,7 @@
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
           <h1 id="greetLine" style="font-family: var(--serif)">Bring the question you keep circling.</h1>
         </div>
+        <p class="greet-guide"><a class="inkline" href="./guide.html">New here? How to ask, and how to read what comes back<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></p>
       </section>
     </div>
   </section>
@@ -695,7 +700,7 @@
     </form>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
     <p class="disclaimer" id="methodNote">Perspectives, not certainty &middot; Stria 64 &mdash; 300 units per inquiry</p>
-    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Pricing</a></p>
+    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">How it works</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Pricing</a></p>
   </footer>
 </main>
 
