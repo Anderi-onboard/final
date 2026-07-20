@@ -591,10 +591,49 @@
     }).catch(function (err) { return { __error: err || { message: "reading call failed" } }; });
   }
 
+  /* ── stale-tab guard ──
+     A chat tab left open across a deploy keeps the OLD prompt engine in
+     memory — casts from it silently use outdated reading rules (bit us in
+     production: banned sections reappeared). Before each cast, compare the
+     build stamp this page loaded with the one currently served; on mismatch,
+     block the cast and ask for one reload. Fail-open on network errors so
+     the check can never break casting. */
+  var staleCheckAt = 0, staleKnown = false;
+  function checkBuildFresh() {
+    if (staleKnown) return Promise.resolve(false);
+    var now = Date.now();
+    if (!window.BW_BUILD || (now - staleCheckAt) < 60000) return Promise.resolve(true);
+    staleCheckAt = now;
+    var ctrl = ("AbortController" in window) ? new AbortController() : null;
+    var timer = ctrl && setTimeout(function () { ctrl.abort(); }, 1500);
+    return fetch("./version.json?cb=" + now, ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (timer) clearTimeout(timer);
+        if (j && j.v && j.v !== window.BW_BUILD) { staleKnown = true; return false; }
+        return true;
+      })
+      .catch(function () { if (timer) clearTimeout(timer); return true; });
+  }
+
   /* ── send flow ── */
+  var preflight = false;
   function send(text, decided) {
     text = (text || "").trim();
-    if (!text || busy) return;
+    if (!text || busy || preflight) return;
+    preflight = true;
+    checkBuildFresh().then(function (fresh) {
+      preflight = false;
+      if (!fresh) {
+        var zh = /[一-鿿]/.test(text);
+        toast(zh ? "网站刚更新过——刷新页面后再起卦(这一卦未计费)。" : "The site just updated — refresh the page, then cast (nothing was charged).");
+        return;
+      }
+      sendNow(text, decided);
+    });
+  }
+
+  function sendNow(text, decided) {
     var m = method();
     // Sign-in required: units only exist on a real account, so a signed-out
     // guest can't cast — send them to the login page. This is the "先登录才发
