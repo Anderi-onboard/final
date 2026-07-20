@@ -1244,6 +1244,36 @@
   if (openBtn) openBtn.addEventListener("click", openPlans);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenu(); closeMethod(); } });
 
+  /* ── keyboard, first-class: "/" focuses the composer, "n" starts a new
+     inquiry — both ignored while typing in any field. (Esc handled above.) ── */
+  document.addEventListener("keydown", function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var t = e.target;
+    if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
+    if (e.key === "/") { e.preventDefault(); var ci = $("composerInput"); if (ci) ci.focus(); }
+    else if (e.key === "n" || e.key === "N") { e.preventDefault(); var nc = $("newCast"); if (nc) nc.click(); }
+  });
+
+  /* ── reading progress — hairline across the top of the column, tracking how
+     far through the thread you've scrolled; hidden unless it overflows ── */
+  (function () {
+    var bar = $("readProgress"), fill = $("readProgressFill"), th = $("thread");
+    if (!bar || !fill || !th) return;
+    var raf = null;
+    function paint() {
+      raf = null;
+      var max = th.scrollHeight - th.clientHeight;
+      if (max < 240) { bar.classList.remove("on"); return; }
+      bar.classList.add("on");
+      fill.style.width = Math.min(100, (th.scrollTop / max) * 100) + "%";
+    }
+    function onScroll() { if (!raf) raf = requestAnimationFrame(paint); }
+    th.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    new MutationObserver(onScroll).observe(th, { childList: true, subtree: true });
+    paint();
+  })();
+
   /* ── entry: ?q= from landing, #plans deep link ── */
   var params = new URLSearchParams(location.search);
   var q = (params.get("q") || "").trim();

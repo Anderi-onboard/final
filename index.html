@@ -15,7 +15,7 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260720e">
+<link rel="stylesheet" href="./styles.css?v=20260720f">
 <script src="./ds-base.js?v=20260712o"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -215,8 +215,8 @@
   .main::before{
     content:'';position:absolute;inset:44px 0 84px;z-index:0;pointer-events:none;
     opacity:0;transition:opacity .5s ease;transform:translateZ(0);
-    background:linear-gradient(158deg,rgba(244,233,210,.46) 0%,rgba(235,221,194,.26) 52%,rgba(244,233,210,.42) 100%);
-    backdrop-filter:blur(11px) saturate(1.2);
+    background:linear-gradient(158deg,rgba(248,246,242,.30) 0%,rgba(246,244,240,.16) 52%,rgba(248,246,242,.28) 100%);
+    backdrop-filter:blur(11px) saturate(1.04);
     -webkit-backdrop-filter:blur(11px) saturate(1.2);
     border-radius:24px 18px 22px 16px / 18px 24px 16px 20px;
     /* foggy boundary — feather every edge so the glass dissolves into the page
@@ -232,6 +232,11 @@
   }
   body:not(.is-empty) .main::before{opacity:1}
   .topbar,.thread{position:relative;z-index:1}
+  /* reading progress — a hairline across the top of the column; only visible
+     in chat mode when the thread actually overflows */
+  .read-progress{position:absolute;top:0;left:0;right:0;height:2px;z-index:5;pointer-events:none;opacity:0;transition:opacity var(--dur-base) var(--ease-out)}
+  .read-progress i{display:block;height:100%;width:0;background:var(--terracotta);opacity:.75}
+  body:not(.is-empty) .read-progress.on{opacity:1}
   
 
   /* empty state — poster voice over the mountains; flex-centered so it can never overlap */
@@ -436,6 +441,8 @@
   .composer input::placeholder{color:var(--faint)}
   .send{width:40px;height:40px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center;flex-shrink:0;transition:transform .15s,opacity .15s}
   .send:hover{transform:scale(1.06)}
+  .send:disabled{animation:sendBreath 1.7s var(--ease-in-out) infinite}
+  @keyframes sendBreath{0%,100%{opacity:1}50%{opacity:.45}}
   .send[disabled]{opacity:.4;cursor:default;transform:none}
   .disclaimer{text-align:center;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
 
@@ -703,6 +710,7 @@
     <span class="ct"><b>New here?</b> Five short steps: how to ask, and how to read what comes back.</span>
   </div>
 
+  <div class="read-progress" id="readProgress" aria-hidden="true"><i id="readProgressFill"></i></div>
   <section class="thread" id="thread">
     <div class="thread-inner" id="threadInner">
       <section id="heroEmpty" class="hero-empty">
@@ -738,8 +746,8 @@
 <script src="./prompt-engine.js?v=20260720b"></script>
 <script src="./prompt-router.js?v=20260717a"></script>
 <script src="./account.js?v=20260717b"></script>
-<script>window.BW_BUILD="20260720e";</script>
-<script src="./chat-app.js?v=20260720e"></script>
+<script>window.BW_BUILD="20260720f";</script>
+<script src="./chat-app.js?v=20260720f"></script>
 <script>
 (function () {
   "use strict";
