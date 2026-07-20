@@ -19,3 +19,9 @@
   .pressable{transition:transform var(--dur-fast) var(--ease-out)}
   .pressable:active{transform:scale(.97) !important}
 }
+
+/* Cross-document view transitions — page navigation crossfades like turning
+   a page instead of flashing white. Progressive: browsers without support
+   simply ignore this block. */
+@view-transition{ navigation: auto; }
+::view-transition-old(root),::view-transition-new(root){animation-duration:var(--dur-base)}

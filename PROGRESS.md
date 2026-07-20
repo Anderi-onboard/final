@@ -580,3 +580,15 @@ terracotta 文字强调与键盘焦点框保留,只有底色不再变。liuyao-c
    按钮原地脉冲两下(terracotta)+ 双语 toast 指路;服务端 402 同样触发脉冲。
 Playwright 验证:令牌解析、草稿跨刷新往返、pressable 挂载、脉冲动画名,全过,零报错。
 版本:chat-app → 20260720e,BW_BUILD/version.json → 20260720e。
+
+### 第二档 — 交互手感(2026-07-20)
+
+1. **聊天玻璃去黄**:`.main::before` 的暖黄渐变(244,233,210)换成中性纸白雾
+   (248,246,242,浓度减半、saturate 1.04)——用户截图反馈的「悬停区域发黄」即此面板;
+   模糊保留(72 色山峦上的文字可读性靠它)。
+2. **等待呼吸**:起卦等待期 send 按钮 1.7s 呼吸(opacity 1→.45),界面「在想」而非「死了」。
+3. **键盘一等公民**:`/` 聚焦输入框、`n` 新问卦(输入状态自动忽略;Esc 关弹层已有)。
+4. **阅读进度线**:thread 顶部 2px terracotta 细线,溢出 240px 才出现,rAF 跟随滚动,
+   MutationObserver 覆盖流式增长。
+5. **跨页过渡**:`@view-transition{navigation:auto}` 全站渐变翻页(渐进增强)。
+版本:styles/motion → f,chat-app → 20260720f,BW_BUILD/version.json → 20260720f。
