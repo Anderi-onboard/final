@@ -557,3 +557,8 @@ no-cache,刷新即新;但长开标签页永远不刷新。修复:
 - Playwright 四相位采样验证:春(钢蓝)/夏(皇家蓝奶油)/秋(藏青)/冬(靛黑)四色
   截然不同,动画 running。
 - mountain-range.js ?v → 20260720c(九页),BW_BUILD/version.json → 20260720c。
+
+### 微调 — 取消排卦图悬停背景变色(2026-07-20)
+
+`.lyc-line:hover / .lyc-line.hot` 的灰底移除:行悬停仍驱动下方读爻面板、干支联动的
+terracotta 文字强调与键盘焦点框保留,只有底色不再变。liuyao-chart.js → ?v=20260720d。
