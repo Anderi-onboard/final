@@ -88,37 +88,29 @@
   .gild{font-family:var(--lit,"Fraunces",serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
   .lead-p{margin-top:16px;max-width:56ch;font-size:15px;line-height:1.72;color:var(--dim)}
 
-  /* glass card recipe (shared with About) */
-  .cards{margin-top:30px;display:grid;gap:12px}
-  .cards.three{grid-template-columns:repeat(3,1fr)}
-  .card{border-radius:13px;padding:18px 20px;
-    background:linear-gradient(158deg,rgba(247,238,220,.6) 0%,rgba(236,223,197,.3) 52%,rgba(247,238,220,.55) 100%);
-    border:1px solid rgba(205,183,146,.6);backdrop-filter:blur(9px) saturate(1.18);-webkit-backdrop-filter:blur(9px) saturate(1.18);transform:translateZ(0)}
-  .card .ci{width:24px;height:24px;color:var(--terracotta)}
-  .card b{display:block;margin-top:12px;font-family:"BioRhyme",var(--serif);font-size:16px;font-weight:700}
-  .card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
-  .card p{margin-top:6px;font-size:13px;line-height:1.6;color:var(--dim)}
-  .card .ex{margin-top:9px;font-size:12.5px;line-height:1.5;color:var(--faint)}
-  .card .ex .yes{color:#6E7A50;font-weight:600}
+  /* ── editorial entries — no boxes, no icons. A hairline rule, a hanging
+     header, prose beneath: the page reads like a printed manual, not a card
+     grid. The seal keeps its own quiet line. ── */
+  .entries{margin-top:36px;display:grid;gap:0 46px}
+  .entries.three{grid-template-columns:repeat(3,1fr)}
+  .entries.two{grid-template-columns:1fr 1fr}
+  .entry{border-top:1.5px solid rgba(42,32,22,.7);padding:15px 0 8px}
+  .entry .eh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .entry .eh b{font-family:"BioRhyme",var(--serif);font-size:17px;font-weight:700}
+  .entry .eh .u{font-family:Spinnaker;font-size:11.5px;letter-spacing:.14em;color:var(--terracotta);white-space:nowrap}
+  .entry p{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--dim)}
+  .entry .when{margin-top:10px;font-family:var(--lit,"Fraunces",serif);font-style:italic;font-size:13.5px;line-height:1.55;color:var(--ink)}
+  .entry .when::before{content:"\2014\00a0"}
 
-  /* numbered steps for "how to ask" */
-  .steps{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .stepc{display:flex;gap:15px;border-radius:13px;padding:17px 20px;
-    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.26) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(9px) saturate(1.15);-webkit-backdrop-filter:blur(9px) saturate(1.15);transform:translateZ(0)}
-  .stepc .no{flex:none;font-family:"BioRhyme",var(--serif);font-weight:800;font-size:22px;color:var(--terracotta);line-height:1;width:32px}
-  .stepc b{display:block;font-family:"BioRhyme",var(--serif);font-size:15.5px;font-weight:700}
-  .stepc p{margin-top:5px;font-size:13px;line-height:1.58;color:var(--dim)}
+  /* numbered habits — big hanging numeral against a rule, no box */
+  .habits{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:0 46px}
+  .habit{border-top:1.5px solid rgba(42,32,22,.7);padding:16px 0 12px;display:flex;gap:18px;align-items:flex-start}
+  .habit .no{flex:none;font-family:"BioRhyme",var(--serif);font-weight:800;font-size:34px;line-height:.85;color:var(--terracotta);width:42px}
+  .habit b{display:block;font-family:"BioRhyme",var(--serif);font-size:16px;font-weight:700}
+  .habit p{margin-top:8px;font-size:13.5px;line-height:1.68;color:var(--dim)}
 
-  /* the split — one rule + Claude's role */
+  /* the seal — one rule + Claude's role */
   .seal{margin:16px 0 4px;font-family:var(--lit,"Fraunces",serif);font-style:italic;font-size:17px;color:var(--dim)}
-  .split{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .split .tile{border-radius:13px;padding:18px 20px;
-    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.26) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(9px) saturate(1.15);-webkit-backdrop-filter:blur(9px) saturate(1.15);transform:translateZ(0)}
-  .split .tile .ti{width:24px;height:24px;color:var(--terracotta)}
-  .split .tile b{display:block;margin-top:11px;font-family:"BioRhyme",var(--serif);font-size:15.5px;font-weight:700}
-  .split .tile p{margin-top:6px;font-size:12.5px;line-height:1.58;color:var(--dim)}
 
   /* welcome (step 1) — the brand mark + a warm open */
   .welcome{text-align:center;max-width:34ch;margin:auto}
@@ -143,8 +135,7 @@
   .btn-next svg{width:15px;height:15px}
 
   @media (max-width:860px){
-    .cards.three{grid-template-columns:1fr}
-    .steps,.split{grid-template-columns:1fr}
+    .entries.three,.entries.two,.habits{grid-template-columns:1fr}
     .stage{align-items:flex-start}
     .step{align-items:flex-start}
   }
@@ -211,23 +202,21 @@
         <h2 class="lead-h">Two readings, <span class="gild">two depths</span> &mdash; you pay only for what one truly costs.</h2>
         <p class="lead-p">Both cast the same six lines over the same question; they differ in how far down they go. Which you want depends entirely on the weight of what you&rsquo;re asking &mdash; a passing worry and a decision you&rsquo;ll live with for a year are not the same errand.</p>
       </div>
-      <div class="cards three rise">
-        <div class="card">
-          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 15c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
-          <b>Stria 64 <span class="u">&middot; from 300 units</span></b>
+      <div class="entries three rise">
+        <div class="entry">
+          <div class="eh"><b>Stria 64</b><span class="u">FROM 300 UNITS</span></div>
           <p>A same-day read of where things stand right now: the figure, its temperament, the way it leans. Quick, honest, no pretence of being more than a clear look at the present.</p>
-          <p class="ex"><span class="yes">Reach for it when</span> you want your bearings, a gut-check, a first orientation.</p>
+          <p class="when">Reach for it when you want your bearings, a gut-check, a first orientation.</p>
         </div>
-        <div class="card">
-          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 12.5c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 18c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
-          <b>Sortis 6 <span class="u">&middot; from 1,500 units</span></b>
+        <div class="entry">
+          <div class="eh"><b>Sortis 6</b><span class="u">FROM 1,500 UNITS</span></div>
           <p>The full method: moving lines, the second figure the situation is turning into, each changing line read on its own. Built for the fork you&rsquo;ll still be living with a year from now.</p>
-          <p class="ex"><span class="yes">Reach for it when</span> the stakes are real and you want the whole structure, not a glance.</p>
+          <p class="when">Reach for it when the stakes are real and you want the whole structure, not a glance.</p>
         </div>
-        <div class="card">
-          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M7 7h7a2.5 2.5 0 0 1 0 5H9a2.5 2.5 0 0 0 0 5h8"></path></svg>
-          <b>Units, plainly</b>
-          <p>Units are the meter. A reading costs what it actually consumes &mdash; the figures above are the starting draw, and you&rsquo;re charged for real use, no rounding up. A follow-up in the same thread is far cheaper than a fresh cast. Everyone begins with 500 on the house.</p>
+        <div class="entry">
+          <div class="eh"><b>Units, plainly</b></div>
+          <p>Units are the meter. A reading costs what it actually consumes &mdash; the figures above are the starting draw, and you&rsquo;re charged for real use, no rounding up. A follow-up in the same thread is far cheaper than a fresh cast.</p>
+          <p class="when">Everyone begins with 500 on the house.</p>
         </div>
       </div>
     </div>
@@ -241,20 +230,20 @@
         <h2 class="lead-h">The question does half the work. <span class="gild">Ask well.</span></h2>
         <p class="lead-p">An oracle answers the question you actually put to it &mdash; not the one you meant. Four small habits, and you&rsquo;ll never need them spelled out again.</p>
       </div>
-      <div class="steps rise">
-        <div class="stepc"><span class="no">1</span><div>
+      <div class="habits rise">
+        <div class="habit"><span class="no">1</span><div>
           <b>Bring the one keeping you up</b>
           <p>Not the safest question &mdash; the real one. The figure has the most to say about the thing you keep circling back to. Ask that.</p>
         </div></div>
-        <div class="stepc"><span class="no">2</span><div>
+        <div class="habit"><span class="no">2</span><div>
           <b>Say it plainly, then give it a spine</b>
           <p>One clear sentence, then a line or two of context: who&rsquo;s involved, what&rsquo;s at stake, the fork you&rsquo;re at. Not a diary &mdash; just enough to bite on.</p>
         </div></div>
-        <div class="stepc"><span class="no">3</span><div>
+        <div class="habit"><span class="no">3</span><div>
           <b>Ask about a movement, not a fact</b>
           <p>&ldquo;Should I take the offer?&rdquo; reads far better than &ldquo;will it rain Tuesday?&rdquo; The instrument reasons about direction, timing and choice.</p>
         </div></div>
-        <div class="stepc"><span class="no">4</span><div>
+        <div class="habit"><span class="no">4</span><div>
           <b>One honest cast, then sit with it</b>
           <p>Re-casting the same question hoping for a kinder answer only buys you noise. Ask once, in good faith. If the answer stings, that&rsquo;s often the part worth reading twice.</p>
         </div></div>
@@ -270,20 +259,17 @@
         <h2 class="lead-h">A figure is a map of forces &mdash; <span class="gild">not a verdict</span>, and rarely a single one.</h2>
         <p class="lead-p">What returns is not a yes-or-no, and not a fortune-cookie line. It is the shape of your situation: where the energy sits, which line is moving, which way the whole thing is tilting.</p>
       </div>
-      <div class="cards three rise">
-        <div class="card">
-          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L4 6v14l5-2 6 2 5-2V4l-5 2-6-2z"></path><path d="M9 4v14M15 6v14"></path></svg>
-          <b>What it points to</b>
+      <div class="entries three rise">
+        <div class="entry">
+          <div class="eh"><b>What it points to</b></div>
           <p>The figure describes structure and motion &mdash; a configuration of forces and where they&rsquo;re heading. Read it as terrain and weather, not a lottery number. It tells you the lay of the land and which way the wind blows; the walking is still yours.</p>
         </div>
-        <div class="card">
-          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h11l5 4v10H4z"></path><path d="M15 5v4h5M8 14h8M8 17h5"></path></svg>
-          <b>Read it more than once</b>
+        <div class="entry">
+          <div class="eh"><b>Read it more than once</b></div>
           <p>A good reading is layered. The same figure holds several true readings at once, depending on which thread of your life you lay it against &mdash; work, a person, your own nerve. Hold it up to each. The right one usually recognises itself.</p>
         </div>
-        <div class="card">
-          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-          <b>Ambiguity is the honesty</b>
+        <div class="entry">
+          <div class="eh"><b>Ambiguity is the honesty</b></div>
           <p>When a reading holds more than one meaning, that isn&rsquo;t hedging &mdash; it&rsquo;s refusing to flatten a complicated life into a slogan. A single tidy answer to a genuinely open question would be the lie. Take the plural view as a gift: the door is still open.</p>
         </div>
       </div>
@@ -299,15 +285,13 @@
         <p class="seal" lang="zh">卦后并非万事大吉 &middot; 仍需努力,自强不息</p>
         <p class="lead-p">A favourable figure tells you the wind is with you &mdash; it does not row the boat. An unfavourable one names the cost early, while you can still afford to pay it. Either way the outcome isn&rsquo;t delivered; it is <em style="font-family:var(--lit);font-style:italic;color:var(--ink)">earned</em>. The oracle shows you the grain of the wood &mdash; you still do the carving.</p>
       </div>
-      <div class="split rise">
-        <div class="tile">
-          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"></path></svg>
-          <b>The figure is cast by the old logic</b>
+      <div class="entries two rise">
+        <div class="entry">
+          <div class="eh"><b>The figure is cast by the old logic</b></div>
           <p>The six lines and the hexagram they form come from a faithful casting engine &mdash; the same causal method, untouched, that dynasties reasoned by. No model chooses the figure. Chance and structure do, as they always have.</p>
         </div>
-        <div class="tile">
-          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h9l3 3v11H4z"></path><path d="M13 5v3h3M8 11h5M8 14h3"></path><path d="M18 4l1.5 1.5L18 7l-1.5-1.5z"></path></svg>
-          <b>Claude finds the words &mdash; and only the words</b>
+        <div class="entry">
+          <div class="eh"><b>Claude finds the words &mdash; and only the words</b></div>
           <p>The reading is written by Claude, held to the figure that was cast. The hexagram decides what may be said; the model finds a clear, human way to say it &mdash; and never overrules the casting to tell you what you&rsquo;d rather hear. Ancient structure, modern voice.</p>
         </div>
       </div>

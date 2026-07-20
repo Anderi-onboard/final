@@ -11,26 +11,29 @@
     + '.mtn-bg>svg{display:block;width:100%;height:100%}'
     /* ten ridges, ALL SYNCHRONISED to one shared timeline (same duration, same
        stops, same delay) so at any moment the whole mountain wears ONE palette,
-       then crossfades to the next. FIVE fixed professional combinations rotate,
+       then crossfades to the next. EIGHT fixed professional combinations rotate (warm/cool alternating so every switch is visible),
        each a 10-tone ramp ordered light->dark (hazy far ridge -> rich near ridge)
        with at most one deliberate contrast band:
-         0%   A - Terracotta Canyon  (brand default: cream -> terracotta -> espresso)
-         20%  B - Harbour Dusk       (cream -> prussian navy)
-         40%  C - Wheat & Ink        (gold ridges over navy bases)
-         60%  D - Aubergine & Ember  (plum ladder, one ember band)
-         80%  E - Winter Slate       (fog greys, one warm fawn band)
-       Each palette holds ~39s of its 40s slot; holdify() below inserts the hold
+         0%    A - Terracotta Canyon  (brand default: cream -> terracotta -> espresso)
+         12.5% B - Harbour Dusk       (cream -> prussian navy)
+         25%   G - Rose Dawn          (blush -> wine)
+         37.5% C - Wheat & Ink        (gold ridges over navy bases)
+         50%   F - Sage Valley        (warm cream -> deep moss)
+         62.5% D - Aubergine & Ember  (plum ladder, one ember band)
+         75%   H - Desert Night       (sand -> indigo, one ember band)
+         87.5% E - Winter Slate       (fog greys, one warm fawn band)
+       Each palette holds ~24s of its 25s slot; holdify() below inserts the hold
        keyframes so the ~1s crossfade is the only window where ridges repaint. */
-    + '@keyframes mtn-sys-l1{0%,100%{fill:#FBF3E9}20%{fill:#F3F5F8}40%{fill:#FBF6E6}60%{fill:#F8F0EB}80%{fill:#F5F4F1}}'
-    + '@keyframes mtn-sys-l2{0%,100%{fill:#F7E8D2}20%{fill:#E4EAF2}40%{fill:#F6EACA}60%{fill:#EFDFD6}80%{fill:#E9E8E3}}'
-    + '@keyframes mtn-sys-l3{0%,100%{fill:#F0D8B6}20%{fill:#CBD8E8}40%{fill:#EDD9A4}60%{fill:#E2C6BB}80%{fill:#D6D6D1}}'
-    + '@keyframes mtn-sys-l4{0%,100%{fill:#E6BE8C}20%{fill:#A6BEDA}40%{fill:#E0C078}60%{fill:#CFA090}80%{fill:#BBBEBE}}'
-    + '@keyframes mtn-sys-l5{0%,100%{fill:#DCA06A}20%{fill:#7E9FC4}40%{fill:#CFA452}60%{fill:#C77B5A}80%{fill:#B08A68}}'
-    + '@keyframes mtn-sys-l6{0%,100%{fill:#C97C4C}20%{fill:#5B7FA9}40%{fill:#B58839}60%{fill:#9A5F63}80%{fill:#7C848C}}'
-    + '@keyframes mtn-sys-l7{0%,100%{fill:#AC5C36}20%{fill:#42648E}40%{fill:#4E5F84}60%{fill:#7A4759}80%{fill:#616B75}}'
-    + '@keyframes mtn-sys-l8{0%,100%{fill:#843F24}20%{fill:#2F4C72}40%{fill:#384A6D}60%{fill:#5A3349}80%{fill:#47515C}}'
-    + '@keyframes mtn-sys-l9{0%,100%{fill:#4E2415}20%{fill:#1D3252}40%{fill:#25334F}60%{fill:#3A2034}80%{fill:#2F3741}}'
-    + '@keyframes mtn-sys-l10{0%,100%{fill:#241009}20%{fill:#101D33}40%{fill:#141D32}60%{fill:#1E101E}80%{fill:#191E26}}'
+    + '@keyframes mtn-sys-l1{0%,100%{fill:#FBF3E9}12.5%{fill:#F3F5F8}25%{fill:#FBF2EE}37.5%{fill:#FBF6E6}50%{fill:#F6F4EA}62.5%{fill:#F8F0EB}75%{fill:#F7F1E4}87.5%{fill:#F5F4F1}}'
+    + '@keyframes mtn-sys-l2{0%,100%{fill:#F7E8D2}12.5%{fill:#E4EAF2}25%{fill:#F6E2DC}37.5%{fill:#F6EACA}50%{fill:#EAEBD9}62.5%{fill:#EFDFD6}75%{fill:#EFE3CC}87.5%{fill:#E9E8E3}}'
+    + '@keyframes mtn-sys-l3{0%,100%{fill:#F0D8B6}12.5%{fill:#CBD8E8}25%{fill:#EFCCC5}37.5%{fill:#EDD9A4}50%{fill:#D8DFC0}62.5%{fill:#E2C6BB}75%{fill:#E2CFAC}87.5%{fill:#D6D6D1}}'
+    + '@keyframes mtn-sys-l4{0%,100%{fill:#E6BE8C}12.5%{fill:#A6BEDA}25%{fill:#E3ADA6}37.5%{fill:#E0C078}50%{fill:#BECBA0}62.5%{fill:#CFA090}75%{fill:#D3B382}87.5%{fill:#BBBEBE}}'
+    + '@keyframes mtn-sys-l5{0%,100%{fill:#DCA06A}12.5%{fill:#7E9FC4}25%{fill:#D48D89}37.5%{fill:#CFA452}50%{fill:#A3B884}62.5%{fill:#C77B5A}75%{fill:#C08F5B}87.5%{fill:#B08A68}}'
+    + '@keyframes mtn-sys-l6{0%,100%{fill:#C97C4C}12.5%{fill:#5B7FA9}25%{fill:#BC6C71}37.5%{fill:#B58839}50%{fill:#83A067}62.5%{fill:#9A5F63}75%{fill:#A66A44}87.5%{fill:#7C848C}}'
+    + '@keyframes mtn-sys-l7{0%,100%{fill:#AC5C36}12.5%{fill:#42648E}25%{fill:#9C4E5C}37.5%{fill:#4E5F84}50%{fill:#5F7F4E}62.5%{fill:#7A4759}75%{fill:#6E5573}87.5%{fill:#616B75}}'
+    + '@keyframes mtn-sys-l8{0%,100%{fill:#843F24}12.5%{fill:#2F4C72}25%{fill:#763747}37.5%{fill:#384A6D}50%{fill:#44603A}62.5%{fill:#5A3349}75%{fill:#4C3F63}87.5%{fill:#47515C}}'
+    + '@keyframes mtn-sys-l9{0%,100%{fill:#4E2415}12.5%{fill:#1D3252}25%{fill:#4E2331}37.5%{fill:#25334F}50%{fill:#2B4026}62.5%{fill:#3A2034}75%{fill:#33294A}87.5%{fill:#2F3741}}'
+    + '@keyframes mtn-sys-l10{0%,100%{fill:#241009}12.5%{fill:#101D33}25%{fill:#2A1119}37.5%{fill:#141D32}50%{fill:#172415}62.5%{fill:#1E101E}75%{fill:#1D1730}87.5%{fill:#191E26}}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
     + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
@@ -75,7 +78,7 @@
      carrying the PREVIOUS colour. Between a stop and its inserted twin the value is
      constant (zero repaint); the short window to the next stop crossfades smoothly.
      Kills both the per-frame re-raster and the hard flash at palette boundaries. */
-  var HOLD = 0.5;
+  var HOLD = 0.6;
   CSS = CSS.replace(/@keyframes (mtn-sys-l\d+)\{((?:[^{}]+\{[^{}]*\})+)\}/g, function (m, name, body) {
     var stops = [];
     body.replace(/([\d.,%]+)\{fill:(#[0-9A-Fa-f]+)\}/g, function (mm, sel, col) {
