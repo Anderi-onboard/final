@@ -101,7 +101,7 @@
       b.className = "casting" + (c.id === S.activeId ? " active" : "");
       b.textContent = c.title;
       b.title = c.title;
-      b.addEventListener("click", function () { S.activeId = c.id; save(); renderAll(); });
+      b.addEventListener("click", function () { S.activeId = c.id; save(); renderAll(); restoreDraft(); });
       var del = document.createElement("button");
       del.className = "casting-del";
       del.innerHTML = "&times;";
@@ -618,6 +618,39 @@
       .catch(function () { if (timer) clearTimeout(timer); return true; });
   }
 
+  /* ── composer drafts — the question you're composing survives conversation
+     switches, refreshes, and blocked casts (stale build, shortfall). Keyed per
+     conversation; cleared only when the cast actually commits. ── */
+  function draftKey() { var c = activeConv(); return "bw:draft:" + (c ? c.id : "new"); }
+  function saveDraft() {
+    try {
+      var v = $("composerInput").value;
+      if (v) localStorage.setItem(draftKey(), v); else localStorage.removeItem(draftKey());
+    } catch (e) {}
+  }
+  function restoreDraft() {
+    try { $("composerInput").value = localStorage.getItem(draftKey()) || ""; } catch (e) {}
+  }
+  function clearDraft() {
+    try { localStorage.removeItem(draftKey()); } catch (e) {}
+    var ci = $("composerInput"); if (ci) ci.value = "";
+  }
+  $("composerInput").addEventListener("input", saveDraft);
+
+  /* ── shortfall pulse — say "not enough units" where the number lives:
+     units chip, sidebar count and Add-units button flash terracotta. ── */
+  function pulseLedger() {
+    [$("unitsTop"), $("openPlans")].concat(
+      $("unitsSide") ? [$("unitsSide").closest(".ledger-bal")] : []
+    ).forEach(function (el) {
+      if (!el) return;
+      el.classList.remove("shortfall");
+      void el.offsetWidth;                 // restart the animation
+      el.classList.add("shortfall");
+      setTimeout(function () { el.classList.remove("shortfall"); }, 1100);
+    });
+  }
+
   /* ── send flow ── */
   var preflight = false;
   var autoContinuedOnce = false;   // one automatic continuation per truncated reading
@@ -686,7 +719,13 @@
     }
     var isFollowup = candidate && decided !== "new";
     var needed = isFollowup ? A.followCost(m.id) : m.cost;
-    if (S.units < needed) { openPlans(); toast("You\u2019re short on units — this one takes " + needed.toLocaleString("en-US") + "."); return; }
+    if (S.units < needed) {
+      pulseLedger();
+      var zhS = /[一-鿿]/.test(text);
+      toast(zhS ? "点数不够——这一卦需要 " + needed.toLocaleString("en-US") + " 点。左下角可充值。"
+                : "You\u2019re short on units — this one takes " + needed.toLocaleString("en-US") + ". Top up from the ledger.");
+      return;
+    }
 
     if (!activeConv()) {
       var conv = { id: Date.now().toString(36), title: text, msgs: [] };
@@ -696,6 +735,7 @@
     var c = activeConv();
     c.msgs.push({ role: "user", text: text });
     save();                                 // persist the question first
+    clearDraft();                           // the composed question is now spent
     /* optimistic local deduction — the server's atomic reserve/settle is the
        authority; bw_meta reconciles the real balance back afterwards. A
        follow-up reserves followCost and typically settles LOWER. */
@@ -873,7 +913,7 @@
       var msg;
       if (status === 401) msg = zh ? "登录状态已失效——请重新登录后再起卦。本次点数已退回。" : "Your session has expired — sign in again to cast. These units were refunded.";
       else if (status === 403) msg = zh ? "Sortis 6 需要 Pro 或 Premium 方案。本次点数已退回。" : "Sortis 6 needs the Pro or Premium plan. These units were refunded.";
-      else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
+      else if (status === 402) { msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
       else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
       else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
@@ -953,7 +993,7 @@
       var zh = /[一-鿿]/.test(text);
       var msg;
       if (status === 401) msg = zh ? "登录状态已失效——请重新登录。本次点数已退回。" : "Your session has expired — sign in again. These units were refunded.";
-      else if (status === 402) msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded.";
+      else if (status === 402) { msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
       else if (err.__timeout) msg = zh ? "回答超时——请再试一次。本次点数已退回。" : "The answer timed out — try again. These units were refunded.";
       else msg = zh ? "回答未能完成——请稍后再试。本次点数已退回。" : "The answer didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       tw.cancel();
@@ -1081,7 +1121,6 @@
     /* on the landing, an example is cycling in the placeholder → empty submit sends it */
     var ex = document.body.classList.contains("is-empty") ? (inp.dataset.example || "") : "";
     send(inp.value.trim() || ex);
-    inp.value = "";
   });
 
   /* ── method picker popover ── */
@@ -1101,6 +1140,7 @@
     $("sendBtn").disabled = false;
     S.activeId = null;
     save(); renderAll();
+    restoreDraft();
     $("composerInput").focus();
   });
 
@@ -1211,6 +1251,7 @@
 
   /* ── boot: hydrate from the server (if signed in), then paint ── */
   renderAll();                       // instant paint from local store
+  restoreDraft();                    // an unfinished question survives the refresh
   A.hydrate(function () {
     S = A.state(); renderAll();
     // Fire the landing hand-off ONLY after hydrate resolves, so serverOn and

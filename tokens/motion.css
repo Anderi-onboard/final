@@ -1,0 +1,21 @@
+/* BourneWise motion tokens — one hand on every transition.
+   Three curves, three durations; interactive CSS should reference these
+   instead of inventing new cubic-beziers. Decorative/ambient animations
+   (mountains, clouds, casting board) keep their own tuned timings. */
+:root{
+  --ease-out: cubic-bezier(.2,.8,.25,1);      /* things arriving / reacting */
+  --ease-in-out: cubic-bezier(.4,0,.2,1);     /* things moving elsewhere */
+  --ease-spring: cubic-bezier(.2,.85,.3,1.4); /* small playful pops (coach marks) */
+  --dur-fast: 120ms;   /* press, hover tint */
+  --dur-base: 240ms;   /* menus, reveals */
+  --dur-slow: 480ms;   /* panels, page-level */
+}
+
+/* Press state — interactive controls give slightly under the finger.
+   !important is deliberate: :active must beat page-level hover transforms
+   (e.g. translateY lifts) for the moment the pointer is down, and this file
+   loads before every page's inline styles. */
+@media (prefers-reduced-motion: no-preference){
+  .pressable{transition:transform var(--dur-fast) var(--ease-out)}
+  .pressable:active{transform:scale(.97) !important}
+}
