@@ -446,12 +446,14 @@
       return Promise.resolve("followup");
     }
     var prompt =
-      "You route messages in a divination chat.\n" +
+      "You route messages in a divination chat. A casting answers ONE matter; a different matter needs its own fresh casting.\n" +
       "Earlier casting question: \u00ab" + String(lastQuestion || "").slice(0, 300) + "\u00bb\n" +
       "Reading excerpt: \u00ab" + String(lastReading || "").slice(0, 400) + "\u00bb\n" +
       "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
-      "If the new message asks about, continues, doubts, clarifies, or says \"continue\" regarding the earlier question or its reading, reply FOLLOWUP. " +
-      "If it raises a different matter that needs a fresh casting, reply NEW. Reply with exactly one word.";
+      "FOLLOWUP = the new message stays on the SAME matter: continues it, doubts it, asks to clarify/expand a part of the reading, answers a question the reading asked, or says \"continue\".\n" +
+      "NEW = the new message asks about a DIFFERENT matter \u2014 different event, different person, different outcome being asked \u2014 even if the topic area sounds related. The test is the MATTER, not the topic: \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u7b2c\u4e00\u6b21\u300b then \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u8c08\u604b\u7231\u300b are two different matters \u2192 NEW. \u300a\u6211\u80fd\u521b\u4e1a\u6210\u529f\u5417\u300b then \u300a\u90a3\u5408\u4f19\u4eba\u9760\u8c31\u5417\u300b is the same venture \u2192 FOLLOWUP.\n" +
+      "When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.\n" +
+      "Reply with exactly one word.";
     var guard = new Promise(function (res) { setTimeout(function () { res("followup"); }, 4000); });
     var run = window.claude.complete({
       role: "utility", model: "claude-sonnet-5", max_tokens: 8,
@@ -618,6 +620,7 @@
 
   /* ── send flow ── */
   var preflight = false;
+  var autoContinuedOnce = false;   // one automatic continuation per truncated reading
   function send(text, decided) {
     text = (text || "").trim();
     if (!text || busy || preflight) return;
@@ -825,14 +828,27 @@
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
       // the backend settled an interrupted reading by ACTUAL output (metered)
-      // and refunded the unused reserve — tell the user they can continue on
-      // this same casting instead of recasting (balance reconciled via bw_meta)
+      // and refunded the unused reserve. Recasting would throw the figure away
+      // — so continue AUTOMATICALLY on this same casting (a metered follow-up),
+      // once per incident; if the continuation also cuts short, fall back to
+      // telling the user instead of looping.
       if (window.__bwReadingIncomplete) {
         window.__bwReadingIncomplete = false;
         S.units = A.state().units; renderUnits();
         var zhi = /[一-鿿]/.test(text);
-        toast(zhi ? "解读中断——只收取了已生成部分的点数,其余已退回。直接发送“继续”可在同一卦上接着解读。"
-                  : "The reading was cut short — you were only charged for what arrived. Send “continue” to pick it up on this same casting.");
+        if (!autoContinuedOnce) {
+          autoContinuedOnce = true;
+          toast(zhi ? "解读中断——已收取实际输出的点数,正在同一卦上自动续写…"
+                    : "The reading was cut short — charged only for what arrived; continuing on this same casting…");
+          setTimeout(function () {
+            send(zhi ? "继续" : "Continue", "followup");
+          }, 700);
+        } else {
+          toast(zhi ? "解读再次中断——只收取了已生成部分的点数。发送“继续”可接着写。"
+                    : "The reading was cut short again — you were only charged for what arrived. Send “continue” to pick it up.");
+        }
+      } else {
+        autoContinuedOnce = false;
       }
       // typed live already → paint the structured verdict instantly instead of
       // re-animating the whole reading a second time
@@ -1125,6 +1141,37 @@
     acctBtn.setAttribute("aria-expanded", open ? "true" : "false");
   });
   document.addEventListener("click", function (e) { if (!acctMenu.contains(e.target)) closeMenu(); });
+
+  /* ── guide coach-mark: comic callout under the "How it works" link, first
+     visit only. Clicking it (or the link itself) marks the guide as visited;
+     the × dismisses it for good. ── */
+  var gCoach = $("guideCoach");
+  if (gCoach) {
+    var gSeen = false, gGone = false;
+    try {
+      gSeen = localStorage.getItem("bw:guideVisited") === "1";
+      gGone = localStorage.getItem("bw:guideCoachDismissed") === "1";
+    } catch (e) {}
+    gCoach.hidden = gSeen || gGone;
+    function goGuide() {
+      try { localStorage.setItem("bw:guideVisited", "1"); } catch (e) {}
+      location.href = "./guide.html";
+    }
+    gCoach.addEventListener("click", goGuide);
+    gCoach.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goGuide(); }
+    });
+    var gx = $("guideCoachClose");
+    if (gx) gx.addEventListener("click", function (e) {
+      e.stopPropagation();
+      try { localStorage.setItem("bw:guideCoachDismissed", "1"); } catch (er) {}
+      gCoach.hidden = true;
+    });
+    var hiw = $("howItWorksLink");
+    if (hiw) hiw.addEventListener("click", function () {
+      try { localStorage.setItem("bw:guideVisited", "1"); } catch (e) {}
+    });
+  }
 
   /* ── sign-in coach-mark: the whole callout is a shortcut to login; the ×
      dismisses it for good. It points at the Guest footer just below it. ── */

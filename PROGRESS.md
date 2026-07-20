@@ -518,3 +518,28 @@ no-cache,刷新即新;但长开标签页永远不刷新。修复:
 - 用用户原卦(天山遁→观,2026-07-19 甲午日未月,三四爻动)在当前规则下真跑 Opus:
   判词一次成型(「不成——盘里没有落地窗口」)、正确解出伏财寅木「伏而不出」、
   零日期零72小时块、结尾重申+3问。同卦新旧对比即是修复的直接证据。
+
+---
+
+## ✅ 已完成 — 六项界面与体验反馈(2026-07-20)
+
+1. **首页问候语下的引导链接+墨线图形删除**(渲染成横贯页面的黑色笔刷,丑),改为
+   **漫画式悬浮窗** `.guide-coach`(仿 signin-coach:白底墨框、硬阴影、上指箭头指向
+   顶栏 How it works)。首次访问显示;点击→guide 并记 `bw:guideVisited`;×关闭记
+   `bw:guideCoachDismissed`;点过 How it works 链接同样视为已访问。
+2. **guide.html 去 AI 味重排版**:玻璃卡片 box + svg 图标全部移除,换编辑式排版
+   (`.entries`/`.habit`:1.5px 墨色顶规则线、悬挂标题、Spinnaker 字距价格、Fraunces
+   斜体 "Reach for it when…" 注、大号悬挂数字)。五步逐屏截图核验。
+3. **背景动效 8 套配色**:mountain-range.js 从 5 套扩到 8 套(新增 Rose Dawn 玫瑰、
+   Sage Valley 苔绿、Desert Night 沙靛),按暖冷交错排序,200s 一轮 → 每套 ~25s
+   (原 40s),HOLD 0.6%。诊断确认原动画本就在跑(10 条 running),「不变」是
+   40s×连续冷色系的感知问题。
+4. **解读中断自动续写**:主卦输出中断(bw_meta incomplete、按实际计费退回其余)时,
+   不再只 toast 让用户手发「继续」——自动以 followup 在**同一卦**上续写(700ms 后
+   auto-send「继续」),每次中断只自动续一次;续写再中断则回落为提示,防循环。
+5. **追问 vs 新卦误判**(「我什么时候第一次」→「我什么时候谈恋爱」被硬解同卦同用神):
+   detectIntent 提示词改为按「同一件事」判定,写入正反判例,拿不准偏 NEW;
+   prompt-engine §MOVE 同步改为两步测试(先判同事,不同事→温和引导新起一卦,
+   绝不把旧用神硬套新事)。
+6. 版本:BW_BUILD/version.json/chat-app/prompt-engine → 20260720b;
+   mountain-range.js ?v= 全站九个页面统一 bump。
