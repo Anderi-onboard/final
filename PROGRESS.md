@@ -543,3 +543,5 @@ no-cache,刷新即新;但长开标签页永远不刷新。修复:
    绝不把旧用神硬套新事)。
 6. 版本:BW_BUILD/version.json/chat-app/prompt-engine → 20260720b;
    mountain-range.js ?v= 全站九个页面统一 bump。
+
+<!-- deploy-kick: GitHub 503 window likely dropped the Pages webhook for 0068837 -->
