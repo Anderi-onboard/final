@@ -318,8 +318,11 @@
       // ben rows: spirit | hidden | label | bar | right(mk+role+stars)
       ".lyc-fig.ben .lyc-line{display:grid;grid-template-columns:56px 62px max-content 78px minmax(90px,1fr);align-items:center;column-gap:8px}",
       ".lyc-fig.bian .lyc-line{display:grid;grid-template-columns:78px max-content 42px;align-items:center;column-gap:8px}",
-      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer;transition:background .15s}",
-      ".lyc-line:hover,.lyc-line.hot{background:color-mix(in oklab,var(--ink) 5%,transparent)}",
+      // hover/hot no longer tint the row background (user call: the casting
+      // chart shouldn't colour-shift under the pointer). The hovered line
+      // still feeds the readout below, .lyc-gz.hot keeps its text accent, and
+      // keyboard focus keeps its outline — affordance without a paint change.
+      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer}",
       ".lyc-line.bianrow{cursor:default}",
       ".lyc-line:focus{outline:1.5px solid color-mix(in oklab,var(--ink) 35%,transparent);outline-offset:-2px}",
       ".lyc-spirit{font-size:11px;color:var(--dim);font-weight:500}",
