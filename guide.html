@@ -14,7 +14,7 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260712o">
+<link rel="stylesheet" href="./styles.css?v=20260720e">
 <script src="./ds-base.js?v=20260712o"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -171,7 +171,7 @@
     <span class="k" id="pkick">Step 1 of 5</span>
     <span class="t" id="ptitle">Welcome</span>
   </div>
-  <a class="wiz-exit" href="./index.html" aria-label="Skip and go to the app">
+  <a class="wiz-exit pressable" href="./index.html" aria-label="Skip and go to the app">
     <span>Skip</span>
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"></path></svg>
   </a>
@@ -302,11 +302,11 @@
 
 <!-- bottom: Back · dots · Continue -->
 <nav class="wiz-nav" aria-label="Walk-through navigation">
-  <button class="btn-back" id="btnBack" disabled>
+  <button class="btn-back pressable" id="btnBack" disabled>
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10 3L5 8l5 5"></path></svg>Back
   </button>
   <div class="dots" id="dots" role="tablist" aria-label="Steps"></div>
-  <button class="btn-next" id="btnNext">
+  <button class="btn-next pressable" id="btnNext">
     <span id="nextLabel">Begin the walk-through</span>
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3l5 5-5 5"></path></svg>
   </button>

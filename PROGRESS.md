@@ -562,3 +562,21 @@ no-cache,刷新即新;但长开标签页永远不刷新。修复:
 
 `.lyc-line:hover / .lyc-line.hot` 的灰底移除:行悬停仍驱动下方读爻面板、干支联动的
 terracotta 文字强调与键盘焦点框保留,只有底色不再变。liuyao-chart.js → ?v=20260720d。
+
+---
+
+## ✅ 已完成 — 交互手感第一档(2026-07-20)
+
+参照 Linear/Vercel/Stripe/Rauno 工艺派做法,不动艺术风格:
+1. **动效令牌** `tokens/motion.css`:三曲线(--ease-out/--ease-in-out/--ease-spring)+
+   三时长(120/240/480ms),挂进 styles.css(全站 ?v=20260720e);装饰性动画不动,
+   交互层今后统一引用。
+2. **按压态** `.pressable`:按下 scale(.97)、120ms 回弹(prefers-reduced-motion 关闭);
+   已挂 index 八个核心控件(发送/方法chip/新问卦/充值/侧栏开关/两个coach/账户栏)+
+   guide 向导三键。
+3. **草稿持久化**:composer 按会话存 localStorage;刷新/切换会话/被拦(版本过期、
+   点数不足)都不丢字;仅在卦真正提交时清除;提交 handler 不再预清空输入框。
+4. **点数不足就地反馈**:不再瞬间跳转定价页——顶部点数 chip、侧栏余额、Add units
+   按钮原地脉冲两下(terracotta)+ 双语 toast 指路;服务端 402 同样触发脉冲。
+Playwright 验证:令牌解析、草稿跨刷新往返、pressable 挂载、脉冲动画名,全过,零报错。
+版本:chat-app → 20260720e,BW_BUILD/version.json → 20260720e。
