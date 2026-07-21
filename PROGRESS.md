@@ -653,3 +653,20 @@ history 仍带最近三轮,模型既得主题又得上下文。bareRecast 单测
 - anti_failure 增 ANTI-CONDESCENSION + ANTI-FABRICATED-RECURRENCE 生成后自检。
 真实 Opus 验证(不同卦名 + 反驳性重卜历史):零「又是这盘」、零说教、精准接住论据
 (「你自控这条我信,不拿它说事儿……问题出在钱这条线本身」)。版本 → 20260720k。
+
+### 四项 — 重卜高温/防截断/乐观暖语气/活人感(2026-07-20)
+
+1. **重卜 temperature 拉满**:backend 接收 body.temperature(clamp 0–1)透传 OpenRouter;
+   prompt-router makeComplete/makeStreamComplete + interpret 透传;chat-app 检测 recastReq
+   → castTemp=1,重卜时模型跑热,「再起卦」真给新draw,不再近似复读。
+2. **输出中断修复**:clampTokens 上限 8192→16384;主读调用 max_tokens 8192→12000
+   (整篇 Sortis 4000–6000 CJK 字曾撞 8192 截断)。真实 12k 调用 finish_reason=stop 完整收尾。
+   auto-continue 仍兜底。
+3. **语气转乐观暖**(ux_core ① 重写 OPTIMISTIC FRAME):先把好处讲透讲足、坏处作
+   友好提醒项+给出路,绝不渲染厄运;honesty floor 不谎报信号(死爻仍点破,乐观在框架
+   与能量,不在说谎);答案是「此路不通」时立刻转向「但这条路开着」并把笔墨放在开口处。
+   QC 第7条同步。
+4. **恢复活人感**(deploy_voice 新增 ALIVE/WARM/PLAYFUL):像个来劲的朋友,轻松、有幽默、
+   有个性、会对你的话作真人反应;读起来像和站你这边的高人聊天,不是风控报告;像合规
+   备忘就判失败重写。真实验证:开头「先把话放桌上」、插话「我说得直白点你别急」,先整段
+   讲透好处再软提醒风险。版本 → 20260720l。

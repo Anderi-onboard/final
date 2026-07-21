@@ -128,6 +128,11 @@ export async function onRequestPost(context) {
     // OpenAI-style shape: system goes in the messages array, not a sibling field.
     const orMessages = body.system ? [{ role: 'system', content: body.system }, ...messages] : messages;
     const payload = { model, max_tokens, messages: orMessages };
+    // optional sampling temperature (Anthropic models: 0..1). Used to give a
+    // recast a genuinely fresher draw — the client sends temperature ≈ 1.
+    if (body.temperature != null && Number.isFinite(Number(body.temperature))) {
+      payload.temperature = Math.max(0, Math.min(1, Number(body.temperature)));
+    }
     const openrouterHeaders = {
       'content-type': 'application/json',
       authorization: 'Bearer ' + env.OPENROUTER_API_KEY,
@@ -361,7 +366,9 @@ export function onRequestOptions() {
 
 function clampTokens(req, env) {
   const n = Number(req || env.CLAUDE_MAX_TOKENS) || 1024;
-  return Math.max(256, Math.min(8192, n));
+  // ceiling raised to 16384: a full Sortis reading (4000-6000 CJK chars across
+  // all layers) was hitting the old 8192-token cap and truncating mid-sentence.
+  return Math.max(256, Math.min(16384, n));
 }
 
 function json(obj, status) {
