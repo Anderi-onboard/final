@@ -50,6 +50,14 @@
     + '.mtn-bg [class^="flow-"]{will-change:transform}'
     + '.mtn-bg .cloud-bob{animation:mtn-cloud-bob 8s ease-in-out infinite}'
     + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(0,0,0,0.24);stroke-width:1.2}'
+    /* LINE-ART mode — add class "line-art" to .mtn-bg. The filled ridges drop
+       out and only the contour lines remain: a clean topographic line-drawing
+       of the range, so text pages keep the living, moving backdrop without any
+       coloured wash competing with the words. The palette rotation still runs
+       underneath — a colour layer can fade in over this on chosen moments. */
+    + '.mtn-bg.line-art .fill{display:none}'
+    + '.mtn-bg.line-art [clip-path]>use{display:none}'
+    + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(42,32,22,0.34);stroke-width:1.1}'
     + '.mtn-bg .l1{animation-name:mtn-sys-l1;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.48}'
     + '.mtn-bg .l2{animation-name:mtn-sys-l2;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.60}'
     + '.mtn-bg .l3{animation-name:mtn-sys-l3;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.72}'

@@ -26,19 +26,12 @@
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px;border-radius:8px}
 
   /* ── the shared world: the same animated mountain range the app rides on,
-     held quiet behind the reading. Fixed, so the words scroll over the land.
-     A paper veil sits above it so ink stays legible through the whole page. ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
-    -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.5) 74%,transparent 96%);
-            mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.5) 74%,transparent 96%)}
-  .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(to bottom,
-      rgba(242,237,231,.72) 0%, rgba(242,237,231,.5) 22%,
-      rgba(242,237,231,.62) 50%, rgba(242,237,231,.74) 78%, rgba(242,237,231,.9) 100%)}
-  /* faint archival foxing — the tactile grain that keeps flat colour from
-     reading as a screen. Ships at the opacity baked into the SVG; kept low. */
-  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
-    background:url("./assets/textures/paper-foxing.svg");background-size:520px}
+     rendered as a LINE-DRAWING (see .line-art on the div) so the moving land
+     stays present behind the words without any coloured wash competing with
+     the reading. Fixed, so the words scroll over the range. ── */
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
+    -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%);
+            mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%)}
 
   .scroll-rail i{background:var(--terracotta)}
 
@@ -133,9 +126,7 @@
 </head>
 <body data-motion>
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
-<div class="veil" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
+<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 <div class="scroll-rail" aria-hidden="true"><i></i></div>
 
 <header class="top" id="top">
