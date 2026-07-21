@@ -215,16 +215,16 @@
   .main::before{
     content:'';position:absolute;inset:44px 0 84px;z-index:0;pointer-events:none;
     opacity:0;transition:opacity .5s ease;transform:translateZ(0);
-    /* the frosted glass DESATURATES its backdrop (saturate < 1) so it can never
-       pick up the warm cast of whichever mountain palette is behind it — the
-       earlier tan/yellow the panel showed came from saturate(1.2) BOOSTING the
-       warm ridges. A neutral paper veil (raised opacity) sits on top so the box
-       reads as calm frosted paper regardless of the 72-palette rotation. Both
-       vendor prefixes carry the SAME filter (the -webkit- one is what Chromium/
-       Edge actually applies — it must not diverge). */
-    background:linear-gradient(158deg,rgba(247,245,241,.52) 0%,rgba(245,243,239,.4) 52%,rgba(247,245,241,.5) 100%);
-    backdrop-filter:blur(13px) saturate(.62);
-    -webkit-backdrop-filter:blur(13px) saturate(.62);
+    /* the frosted glass FULLY DESATURATES its backdrop (saturate 0) so NO hue
+       from any of the 72 mountain palettes can bleed through — saturate(.62)
+       still let the most saturated amber ramps read as tan/yellow. What colour
+       the panel shows now comes ONLY from its own fixed warm-white veil below
+       (palette-independent), never from the ridges behind it. The blur keeps
+       the frosted texture. Both vendor prefixes MUST carry the same filter (the
+       -webkit- one is what Chromium/Edge actually applies). */
+    background:linear-gradient(158deg,rgba(245,244,242,.60) 0%,rgba(243,242,240,.5) 52%,rgba(245,244,242,.58) 100%);
+    backdrop-filter:blur(14px) saturate(0);
+    -webkit-backdrop-filter:blur(14px) saturate(0);
     border-radius:24px 18px 22px 16px / 18px 24px 16px 20px;
     /* foggy boundary — feather every edge so the glass dissolves into the page
        instead of ending on a hard rounded-rectangle line */
@@ -761,7 +761,7 @@
 <script src="./prompt-engine.js?v=20260720l"></script>
 <script src="./prompt-router.js?v=20260720l"></script>
 <script src="./account.js?v=20260717b"></script>
-<script>window.BW_BUILD="20260720l";</script>
+<script>window.BW_BUILD="20260720m";</script>
 <script src="./chat-app.js?v=20260720l"></script>
 <script>
 (function () {
