@@ -668,9 +668,11 @@
      ("应该再起一卦" → general → world line → an analysis of the asker). Returns
      true only when, after stripping the recast directive + filler, almost
      nothing meaningful is left (i.e. the message carries no new subject). */
+  var RECAST_RE = /(再|重新?|又)\s*(起|算|卜|摇|来|测)\s*一?\s*卦|再来一(卦|次)|重新起卦|重起一?卦|换一卦|重卜|再卜|cast\s+again|re-?cast|another\s+(cast|reading|hexagram)|throw\s+(it\s+)?again|start\s+(a\s+)?(new\s+)?cast/i;
+  function hasRecast(t) { return RECAST_RE.test(t || ""); }
   function bareRecast(t) {
     t = (t || "").trim();
-    var recast = /(再|重新?|又)\s*(起|算|卜|摇|来|测)\s*一?\s*卦|再来一(卦|次)|重新起卦|换一卦|重卜|cast\s+again|re-?cast|another\s+(cast|reading|hexagram)|throw\s+(it\s+)?again|start\s+(a\s+)?(new\s+)?cast/i;
+    var recast = RECAST_RE;
     if (!recast.test(t)) return false;
     var stripped = t.replace(recast, "")
       .replace(/\b(let|lets|let's|me|please|just|ok|okay|now|again|a|an|the|it|i|we|should|maybe|can|you|to|do|another|one|more|new|fresh)\b/gi, "")
@@ -736,12 +738,16 @@
        on the SAME matter. Force NEW (a new figure) and carry the previous
        question forward as the cast's subject — never run the classifier on a
        subject-less instruction, and never let it default to a self-reading. */
-    var carriedRecast = !!(lastCast && bareRecast(text) && (lastQuestion || (convNow && convNow.title)));
+    /* An explicit "cast again" ALWAYS means a fresh figure — never let the
+       classifier downgrade it to a same-board follow-up. A BARE recast (no
+       subject of its own) also inherits the prior question as its subject. */
+    var recastReq = !!(lastCast && hasRecast(text));
+    var carriedRecast = !!(recastReq && bareRecast(text) && (lastQuestion || (convNow && convNow.title)));
     var castQ = carriedRecast ? (lastQuestion || convNow.title) : text;
     /* Sonnet 5 decides follow-up vs new question (see detectIntent). Runs once
        per send; the recursive re-entry carries the decision in `decided`.
-       Skipped for a carried recast — we already know it's a fresh cast. */
-    if (candidate && !decided && !carriedRecast) {
+       Skipped for any recast request — that's already a fresh cast by intent. */
+    if (candidate && !decided && !recastReq) {
       busy = true;
       var sb0 = $("sendBtn"); if (sb0) sb0.disabled = true;
       detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text).then(function (intent) {
@@ -751,7 +757,7 @@
       });
       return;
     }
-    if (carriedRecast && !decided) decided = "new";
+    if (recastReq && !decided) decided = "new";
     var isFollowup = candidate && decided !== "new";
     var needed = isFollowup ? A.followCost(m.id) : m.cost;
     if (S.units < needed) {
@@ -794,13 +800,20 @@
       var note = document.createElement("div");
       note.className = "recast-note";
       if (carriedRecast) {
-        // a "cast again" that inherited the prior subject \u2014 say WHICH matter
+        // a bare "cast again" that inherited the prior subject \u2014 name the matter
         // the fresh figure is about, so the carry-over is transparent.
         var subj = String(castQ || "").replace(/\s+/g, " ").trim();
         if (subj.length > 40) subj = subj.slice(0, 40) + "\u2026";
         note.textContent = zhN
           ? "\u5df2\u5c31\u540c\u4e00\u4ef6\u4e8b\u91cd\u65b0\u8d77\u4e86\u4e00\u5366\uff1a\u300c" + subj + "\u300d\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u60f3\u6362\u4e2a\u95ee\u9898\uff0c\u76f4\u63a5\u628a\u65b0\u95ee\u9898\u8bf4\u6e05\u695a\u5373\u53ef\u3002"
           : "Recast a fresh hexagram for the same matter \u2014 \u201c" + subj + "\u201d (" + m.cost.toLocaleString("en-US") + " units). For a different matter, just state the new question in full.";
+      } else if (hasRecast(text)) {
+        // the message carries its own argument AND asks to recast \u2014 a fresh
+        // figure on the SAME ongoing matter. Don't call it a "new question";
+        // just note the fresh cast. Continuity is handled in the reading itself.
+        note.textContent = zhN
+          ? "\u5df2\u987a\u7740\u8fd9\u4ef6\u4e8b\u91cd\u65b0\u8d77\u4e86\u4e00\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002"
+          : "Cast a fresh hexagram for this, following the same thread (" + m.cost.toLocaleString("en-US") + " units).";
       } else {
         note.textContent = zhN
           ? "\u8fd9\u770b\u8d77\u6765\u662f\u4e2a\u65b0\u95ee\u9898\u2014\u2014\u5df2\u4e3a\u5b83\u91cd\u65b0\u8d77\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u662f\u60f3\u7ee7\u7eed\u8ffd\u95ee\u4e0a\u4e00\u5366\uff0c\u76f4\u63a5\u56f4\u7ed5\u5b83\u63d0\u95ee\u5373\u53ef\uff0c\u8ffd\u95ee\u6309\u7528\u91cf\u8ba1\u8d39\u3001\u5c01\u9876\u534a\u4ef7\u3002"
