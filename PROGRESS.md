@@ -604,3 +604,12 @@ Playwright 验证:令牌解析、草稿跨刷新往返、pressable 挂载、脉�
    补足 44×44 隐形点击区(::after,不改视觉大小),WCAG 2.5.5。
 版本:ds-base/styles/motion/chat-app → 20260720g,BW_BUILD/version.json → 20260720g。
 Playwright 验证:prefetch link 正确注入、复制往返成功(剪贴板=解读文本+done态)。
+
+### 病根修复 — 聊天玻璃面板泛黄(2026-07-20)
+
+用户两次反馈面板发黄未除。真因两处:(1) 上次去黄只改了无前缀 `backdrop-filter`,
+而 Chromium/Edge 实际生效的 `-webkit-backdrop-filter` 仍是 `saturate(1.2)`——在给背后
+暖色山峦**加饱和**染黄;(2) 中性薄纱太淡压不住背后 72 色轮转里的暖色系。
+修复:两个前缀统一为 `blur(13px) saturate(.62)`(**去饱和**,任何配色背后都不吃色),
+中性纸纱提到 ~.5。Playwright 钉最暖相位采样面板内部:RGB(234,234,234)、R−B=0、
+饱和度 0.000,确认无色偏。BW_BUILD/version.json → 20260720h。
