@@ -9,7 +9,7 @@
   --font-serif: "BioRhyme", Georgia, serif;
   --font-sans: "Spinnaker", system-ui, -apple-system, sans-serif;
   --font-mono: "Spinnaker", ui-monospace, monospace;
-  --font-brand: "Pacifico", cursive;
+  --font-brand: "BioRhyme", Georgia, serif;
 
   /* scale */
   --text-poster: clamp(40px, 6vw, 76px); /* hero/poster display */
