@@ -55,9 +55,15 @@
        of the range, so text pages keep the living, moving backdrop without any
        coloured wash competing with the words. The palette rotation still runs
        underneath — a colour layer can fade in over this on chosen moments. */
-    + '.mtn-bg.line-art .fill{display:none}'
-    + '.mtn-bg.line-art [clip-path]>use{display:none}'
+    + '.mtn-bg.line-art .fill{opacity:0;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg.line-art [clip-path]>use{opacity:0;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(42,32,22,0.34);stroke-width:1.1}'
+    /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
+       holds line-art off for a beat so the coloured ridges surge in, then adds
+       line-art so the colour recedes and leaves the line-drawing: background
+       floods in, then fades to rest. Transform-only sweep = GPU cheap. */
+    + '.mtn-bg.mtn-enter{animation:mtn-enter 1.15s cubic-bezier(.16,1,.3,1) both}'
+    + '@keyframes mtn-enter{from{transform:translateY(38px) scale(1.06)}to{transform:none}}'
     + '.mtn-bg .l1{animation-name:mtn-sys-l1;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.48}'
     + '.mtn-bg .l2{animation-name:mtn-sys-l2;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.60}'
     + '.mtn-bg .l3{animation-name:mtn-sys-l3;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.72}'
@@ -176,6 +182,7 @@
       st.textContent = CSS;
       document.head.appendChild(st);
     }
+    var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
       /* random palette starting point per page load (host may still pin --mtn-phase) */
       if (!el.style.getPropertyValue('--mtn-phase')) {
@@ -185,6 +192,17 @@
         vbw: el.dataset.vbw ? +el.dataset.vbw : 1000,
         par: el.dataset.par || 'xMidYMid slice'
       });
+
+      /* entrance flood: on a line-art backdrop, hold the line-art off for a
+         beat so the coloured ridges pour in, then restore it so the colour
+         fades to the resting line-drawing. Pure enhancement; reduced-motion
+         and no-JS keep the static line-art the HTML already declares. */
+      if (!reduce && el.classList.contains('line-art')) {
+        el.classList.remove('line-art');
+        el.classList.add('mtn-enter');
+        setTimeout(function () { el.classList.add('line-art'); }, 760);
+        setTimeout(function () { el.classList.remove('mtn-enter'); }, 1200);
+      }
     });
   }
 
