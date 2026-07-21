@@ -660,6 +660,24 @@
     });
   }
 
+  /* ── bare-recast detector ──
+     "再起一卦" / "重新起一卦" / "cast again" with NO subject of its own. The
+     user wants a FRESH hexagram, still about the matter already under
+     discussion — so we must inherit the previous question's subject, or the
+     cast falls through to a default self-reading of the literal instruction
+     ("应该再起一卦" → general → world line → an analysis of the asker). Returns
+     true only when, after stripping the recast directive + filler, almost
+     nothing meaningful is left (i.e. the message carries no new subject). */
+  function bareRecast(t) {
+    t = (t || "").trim();
+    var recast = /(再|重新?|又)\s*(起|算|卜|摇|来|测)\s*一?\s*卦|再来一(卦|次)|重新起卦|换一卦|重卜|cast\s+again|re-?cast|another\s+(cast|reading|hexagram)|throw\s+(it\s+)?again|start\s+(a\s+)?(new\s+)?cast/i;
+    if (!recast.test(t)) return false;
+    var stripped = t.replace(recast, "")
+      .replace(/\b(let|lets|let's|me|please|just|ok|okay|now|again|a|an|the|it|i|we|should|maybe|can|you|to|do|another|one|more|new|fresh)\b/gi, "")
+      .replace(/[应該该觉得我你想要不如可以吧啊呢嘛的了看試试试一下这這那此就请請帮幫再重新为為它他她这件事此事这事那事，。、,.!！?？:：;；\s\-—]/g, "");
+    return stripped.length <= 3;   // no subject of its own → carry the prior one
+  }
+
   /* ── send flow ── */
   var preflight = false;
   var autoContinuedOnce = false;   // one automatic continuation per truncated reading
@@ -714,9 +732,16 @@
       }
     }
     var candidate = !!(lastCast && lastCast.methodId === m.id);
+    /* A bare "cast again" inside a live thread: the user wants a FRESH hexagram
+       on the SAME matter. Force NEW (a new figure) and carry the previous
+       question forward as the cast's subject — never run the classifier on a
+       subject-less instruction, and never let it default to a self-reading. */
+    var carriedRecast = !!(lastCast && bareRecast(text) && (lastQuestion || (convNow && convNow.title)));
+    var castQ = carriedRecast ? (lastQuestion || convNow.title) : text;
     /* Sonnet 5 decides follow-up vs new question (see detectIntent). Runs once
-       per send; the recursive re-entry carries the decision in `decided`. */
-    if (candidate && !decided) {
+       per send; the recursive re-entry carries the decision in `decided`.
+       Skipped for a carried recast — we already know it's a fresh cast. */
+    if (candidate && !decided && !carriedRecast) {
       busy = true;
       var sb0 = $("sendBtn"); if (sb0) sb0.disabled = true;
       detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text).then(function (intent) {
@@ -726,6 +751,7 @@
       });
       return;
     }
+    if (carriedRecast && !decided) decided = "new";
     var isFollowup = candidate && decided !== "new";
     var needed = isFollowup ? A.followCost(m.id) : m.cost;
     if (S.units < needed) {
@@ -767,9 +793,19 @@
       var zhN = /[\u4e00-\u9fff]/.test(text);
       var note = document.createElement("div");
       note.className = "recast-note";
-      note.textContent = zhN
-        ? "\u8fd9\u770b\u8d77\u6765\u662f\u4e2a\u65b0\u95ee\u9898\u2014\u2014\u5df2\u4e3a\u5b83\u91cd\u65b0\u8d77\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u662f\u60f3\u7ee7\u7eed\u8ffd\u95ee\u4e0a\u4e00\u5366\uff0c\u76f4\u63a5\u56f4\u7ed5\u5b83\u63d0\u95ee\u5373\u53ef\uff0c\u8ffd\u95ee\u6309\u7528\u91cf\u8ba1\u8d39\u3001\u5c01\u9876\u534a\u4ef7\u3002"
-        : "This reads as a new question \u2014 a fresh hexagram was cast for it (" + m.cost.toLocaleString("en-US") + " units). To keep asking about the previous casting instead, just ask about it directly; follow-ups run metered, at most half.";
+      if (carriedRecast) {
+        // a "cast again" that inherited the prior subject \u2014 say WHICH matter
+        // the fresh figure is about, so the carry-over is transparent.
+        var subj = String(castQ || "").replace(/\s+/g, " ").trim();
+        if (subj.length > 40) subj = subj.slice(0, 40) + "\u2026";
+        note.textContent = zhN
+          ? "\u5df2\u5c31\u540c\u4e00\u4ef6\u4e8b\u91cd\u65b0\u8d77\u4e86\u4e00\u5366\uff1a\u300c" + subj + "\u300d\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u60f3\u6362\u4e2a\u95ee\u9898\uff0c\u76f4\u63a5\u628a\u65b0\u95ee\u9898\u8bf4\u6e05\u695a\u5373\u53ef\u3002"
+          : "Recast a fresh hexagram for the same matter \u2014 \u201c" + subj + "\u201d (" + m.cost.toLocaleString("en-US") + " units). For a different matter, just state the new question in full.";
+      } else {
+        note.textContent = zhN
+          ? "\u8fd9\u770b\u8d77\u6765\u662f\u4e2a\u65b0\u95ee\u9898\u2014\u2014\u5df2\u4e3a\u5b83\u91cd\u65b0\u8d77\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u662f\u60f3\u7ee7\u7eed\u8ffd\u95ee\u4e0a\u4e00\u5366\uff0c\u76f4\u63a5\u56f4\u7ed5\u5b83\u63d0\u95ee\u5373\u53ef\uff0c\u8ffd\u95ee\u6309\u7528\u91cf\u8ba1\u8d39\u3001\u5c01\u9876\u534a\u4ef7\u3002"
+          : "This reads as a new question \u2014 a fresh hexagram was cast for it (" + m.cost.toLocaleString("en-US") + " units). To keep asking about the previous casting instead, just ask about it directly; follow-ups run metered, at most half.";
+      }
       threadInner.appendChild(note);
     }
 
@@ -839,21 +875,21 @@
     var history = buildHistory(c, 3);
     var answerP;
     if (m.id === "sortis") {
-      answerP = sortisReading(text, spec, sortisBoard, history, onStreamDelta);
+      answerP = sortisReading(castQ, spec, sortisBoard, history, onStreamDelta);
     } else {
       // Stria: routed pipeline with the computed board so the reading is
       // grounded in the primary hexagram, but the board is nulled out of the
       // stored message so the thread keeps Stria's light figure (full board is
       // Sortis-only). Failures propagate to the failure handler; askOracle only
       // covers the freak case of the router module not loading.
-      var striaRouted = routedReading(text, spec, castBoard, "stria", history, onStreamDelta);
+      var striaRouted = routedReading(castQ, spec, castBoard, "stria", history, onStreamDelta);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
           if (result && result.text) { result.board = null; }
           return result;
         });
       } else {
-        answerP = askOracle(text, m).then(function (t) {
+        answerP = askOracle(castQ, m).then(function (t) {
           return t ? { text: t, board: null, reading: null } : { __error: { message: "oracle call failed" } };
         });
       }
