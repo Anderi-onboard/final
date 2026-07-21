@@ -49,6 +49,7 @@
       if (meta.product) payload.product = meta.product;
       if (meta.model) payload.model = meta.model;
       if (meta.mode) payload.mode = meta.mode; // "followup" → metered billing
+      if (meta.temperature != null) payload.temperature = meta.temperature;
 
       return fetch("/api/claude", {
         method: "POST",
@@ -99,6 +100,7 @@
       if (meta.product) payload.product = meta.product;
       if (meta.model) payload.model = meta.model;
       if (meta.mode) payload.mode = meta.mode; // "followup" → metered billing
+      if (meta.temperature != null) payload.temperature = meta.temperature;
 
       return fetch("/api/claude", {
         method: "POST",
@@ -172,6 +174,7 @@
     var question = opts.question || "";
     var product = opts.product || (opts.method === "stria" ? "stria" : "sortis");
     var mode = opts.mode === "followup" ? "followup" : null; // metered follow-up on an existing casting
+    var temperature = (typeof opts.temperature === "number") ? opts.temperature : null; // recasts run hot
     var board = opts.board;
     // explicit opts.lang (if the caller ever sets one) wins; otherwise the
     // language detected from the question itself (PE.buildSystemPrompt's
@@ -188,7 +191,7 @@
     // router + qc run on the cheap utility model; the main reading routes by
     // product (stria → Sonnet, sortis → Opus) on the backend.
     var routerComplete = makeComplete({ role: "router", model: CONFIG.routerModel });
-    var mainComplete = makeComplete({ product: product, model: CONFIG.mainModel, mode: mode });
+    var mainComplete = makeComplete({ product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature });
     var qcComplete = makeComplete({ role: "qc", model: CONFIG.qcModel });
 
     // Step 1+2: Gate + Route (combined in buildSystemPrompt)
@@ -252,11 +255,13 @@
       // out the whole gate→route→generate→QC pipeline in silence. Router/QC
       // stay non-streaming; they're short and cheap either way.
       var streamed = typeof opts.onDelta === "function" && canStream();
+      // 12000-token ceiling for the reading (was 8192): a full Sortis reading
+      // across all layers is 4000-6000 CJK chars and was truncating mid-sentence.
       var mainCall = streamed
-        ? makeStreamComplete({ product: product, model: CONFIG.mainModel, mode: mode })({
-            system: result.system, messages: messages, max_tokens: 8192
+        ? makeStreamComplete({ product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature })({
+            system: result.system, messages: messages, max_tokens: 12000
           }, opts.onDelta)
-        : mainComplete({ system: result.system, messages: messages, max_tokens: 8192 });
+        : mainComplete({ system: result.system, messages: messages, max_tokens: 12000 });
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)

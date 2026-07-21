@@ -522,7 +522,7 @@
      pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
-  function routedReading(question, spec, board, methodId, history, onDelta, mode) {
+  function routedReading(question, spec, board, methodId, history, onDelta, mode, temperature) {
     if (!window.BWPromptRouter) return null; // router module missing → caller's own fallback
     var product = methodId === "stria" ? "stria" : "sortis";
     // STALL watchdog, not a flat deadline. The pipeline (route → stream → QC)
@@ -547,7 +547,8 @@
       // no lang override — BWPromptRouter detects it from the question text
       history: history || [],
       onDelta: wrappedDelta,
-      mode: mode || null // "followup" → metered billing, no recast
+      mode: mode || null, // "followup" → metered billing, no recast
+      temperature: (typeof temperature === "number") ? temperature : null // recast → run hot
     });
     // Errors propagate (with their HTTP status) instead of collapsing to null —
     // downstream used to "heal" that with canned/mock prose, so the user paid
@@ -566,7 +567,7 @@
     }).catch(function (err) { if (timer) clearTimeout(timer); return { __error: err || { message: "pipeline failed" } }; });
   }
 
-  function sortisReading(question, spec, board, history, onDelta) {
+  function sortisReading(question, spec, board, history, onDelta, temperature) {
     if (!board) board = (window.BWLiuYao && spec && spec.lines && spec.lines.length === 6)
       ? window.BWLiuYao.computeBoard({
           lines: spec.lines, changeIdx: spec.changeIdx || [],
@@ -577,7 +578,7 @@
     // Routed pipeline (modular prompts + QC) is the real path; legacy only
     // covers the freak case where prompt-router.js failed to load. Errors flow
     // through to send()'s failure handler — no mock rescue.
-    var routed = routedReading(question, spec, board, "sortis", history, onDelta);
+    var routed = routedReading(question, spec, board, "sortis", history, onDelta, null, temperature);
     if (routed) return routed;
     return sortisLegacy(question, spec, board);
   }
@@ -886,16 +887,19 @@
 
     try { window.__bwReadingIncomplete = false; } catch (e) {}
     var history = buildHistory(c, 3);
+    // a recast runs the model HOT (temperature ≈ 1) so "再起卦" genuinely gives
+    // a fresh draw, not a near-copy of the last reading.
+    var castTemp = recastReq ? 1 : null;
     var answerP;
     if (m.id === "sortis") {
-      answerP = sortisReading(castQ, spec, sortisBoard, history, onStreamDelta);
+      answerP = sortisReading(castQ, spec, sortisBoard, history, onStreamDelta, castTemp);
     } else {
       // Stria: routed pipeline with the computed board so the reading is
       // grounded in the primary hexagram, but the board is nulled out of the
       // stored message so the thread keeps Stria's light figure (full board is
       // Sortis-only). Failures propagate to the failure handler; askOracle only
       // covers the freak case of the router module not loading.
-      var striaRouted = routedReading(castQ, spec, castBoard, "stria", history, onStreamDelta);
+      var striaRouted = routedReading(castQ, spec, castBoard, "stria", history, onStreamDelta, null, castTemp);
       if (striaRouted) {
         answerP = striaRouted.then(function (result) {
           if (result && result.text) { result.board = null; }
