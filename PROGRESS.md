@@ -613,3 +613,15 @@ Playwright 验证:prefetch link 正确注入、复制往返成功(剪贴板=解�
 修复:两个前缀统一为 `blur(13px) saturate(.62)`(**去饱和**,任何配色背后都不吃色),
 中性纸纱提到 ~.5。Playwright 钉最暖相位采样面板内部:RGB(234,234,234)、R−B=0、
 饱和度 0.000,确认无色偏。BW_BUILD/version.json → 20260720h。
+
+### 上下文修复 — 「再起一卦」承接主题(2026-07-20)
+
+病例:聊某事时说「应该再起一卦」(未强调针对此事),分流器判 NEW(对,要新卦),
+但传给模型的问题就是「应该再起一卦」——无主语 → general → 世爻 → 对用户本人做分析。
+修:新增 bareRecast() 检测无自带主语的重起指令(再起/重新起/换一卦/cast again…,
+剥离指令+中英填充词后残余≤3 字即判定);命中且线程有上一问时:
+- 强制 decided="new"(用户要新卦象),跳过分流器;
+- castQ 继承上一条真实问题作为新卦主题,传入 sortisReading/routedReading/askOracle;
+- recast-note 改为「已就同一件事重新起了一卦:「<上一问>」」,承接透明。
+history 仍带最近三轮,模型既得主题又得上下文。bareRecast 单测 11/12(中文全过)。
+版本:chat-app → 20260720i,BW_BUILD/version.json → 20260720i。
