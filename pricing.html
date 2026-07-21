@@ -28,7 +28,14 @@
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.44;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  /* paper veil + archival grain — the shared calm the guide uses, so the
+     cycling mountain palette can never drown the pricing table. Sits above the
+     ridges, below all content. */
+  .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(to bottom,rgba(242,237,231,.7) 0%,rgba(242,237,231,.48) 24%,rgba(242,237,231,.62) 52%,rgba(242,237,231,.76) 80%,rgba(242,237,231,.92) 100%)}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background:url("./assets/textures/paper-foxing.svg");background-size:520px}
 
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1040px;margin:0 auto;width:100%}
   .brand{display:flex;align-items:center;gap:9px}
@@ -184,6 +191,8 @@
 <body>
 
 <div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
 <header class="pagehead">
   <a class="brand" href="./index.html" aria-label="BourneWise home">
