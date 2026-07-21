@@ -3,6 +3,49 @@
 // to the optional /api/claude Pages Function so the AI reading works in prod.
 (() => {
   const base = '.';
+
+  /* ── hover / touch prefetch (quicklink pattern) ──
+     When the pointer settles on an internal page link — or a touch begins —
+     prefetch that page so the click resolves instantly. Idempotent per URL,
+     capped, and skipped on Save-Data / slow connections. Pure enhancement:
+     failure is silent and never blocks navigation. */
+  (function () {
+    try {
+      var conn = navigator.connection;
+      if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) return;
+    } catch (e) {}
+    var done = {}, count = 0, MAX = 8, timer = null;
+    function prefetch(url) {
+      if (!url || done[url] || count >= MAX) return;
+      done[url] = 1; count++;
+      var l = document.createElement('link');
+      l.rel = 'prefetch'; l.href = url; l.as = 'document';
+      document.head.appendChild(l);
+    }
+    function candidate(e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href]');
+      if (!a) return null;
+      if (a.target === '_blank' || a.hasAttribute('download')) return null;
+      var href = a.getAttribute('href') || '';
+      if (!/\.html($|[?#])|^\.?\/?[a-z0-9-]+$/i.test(href)) {
+        // only same-origin document links (relative .html or clean paths)
+        if (a.origin !== location.origin) return null;
+      }
+      if (a.origin && a.origin !== location.origin) return null;
+      if (/^(mailto:|tel:|#)/.test(href)) return null;
+      return a.href;
+    }
+    document.addEventListener('pointerover', function (e) {
+      var url = candidate(e);
+      if (!url) return;
+      clearTimeout(timer);
+      timer = setTimeout(function () { prefetch(url); }, 65);
+    }, { passive: true });
+    document.addEventListener('pointerout', function () { clearTimeout(timer); }, { passive: true });
+    document.addEventListener('touchstart', function (e) {
+      var url = candidate(e); if (url) prefetch(url);
+    }, { passive: true });
+  })();
   for (const p of ['styles.css']) {
     const href = base + '/' + p;
     if (document.querySelector('link[rel="stylesheet"][href="' + href + '"]')) continue;

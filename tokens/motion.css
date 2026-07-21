@@ -25,3 +25,18 @@
    simply ignore this block. */
 @view-transition{ navigation: auto; }
 ::view-transition-old(root),::view-transition-new(root){animation-duration:var(--dur-base)}
+
+/* Touch-target hardening — on coarse pointers (phones/tablets), small icon
+   controls get an invisible 44×44 minimum hit area via a centered ::after,
+   without changing their painted size. Applied to the known-small controls
+   across the app so taps land reliably (WCAG 2.5.5). */
+@media (pointer:coarse){
+  .cx, .casting-del, .side-toggle, .side-open-btn, .modal-x,
+  .wiz-exit, .method-menu .mm-row, .send, .brand-btn{
+    position:relative;
+  }
+  .cx::after, .casting-del::after, .modal-x::after, .wiz-exit::after{
+    content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    min-width:44px;min-height:44px;width:100%;height:100%;
+  }
+}

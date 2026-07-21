@@ -592,3 +592,15 @@ Playwright 验证:令牌解析、草稿跨刷新往返、pressable 挂载、脉�
    MutationObserver 覆盖流式增长。
 5. **跨页过渡**:`@view-transition{navigation:auto}` 全站渐变翻页(渐进增强)。
 版本:styles/motion → f,chat-app → 20260720f,BW_BUILD/version.json → 20260720f。
+
+### 第三档 — 交互手感(2026-07-20)
+
+1. **hover/touch 预取**(ds-base.js,全站):指针在内部页面链接停留 65ms 即注入
+   `<link rel="prefetch">`,触屏 touchstart 立即预取;按 URL 幂等、上限 8、Save-Data/2G
+   跳过;纯增强,失败静默。
+2. **复制解读**:每篇解读末尾加 Copy 按钮(委托点击 → clipboard,回退 execCommand,
+   「Copied/已复制」确认态);.rd-actions 淡入。
+3. **触屏 44px 硬化**:`@media (pointer:coarse)` 给 ×关闭/删除/退出/发送等小图标控件
+   补足 44×44 隐形点击区(::after,不改视觉大小),WCAG 2.5.5。
+版本:ds-base/styles/motion/chat-app → 20260720g,BW_BUILD/version.json → 20260720g。
+Playwright 验证:prefetch link 正确注入、复制往返成功(剪贴板=解读文本+done态)。
