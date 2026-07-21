@@ -312,7 +312,7 @@
     // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
       var prose = mdReading(msg.text);
-      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>';
+      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>' + readingActions();
     }
 
     // Structured (legacy interpret) — full prose + key-line and timing sections.
@@ -325,7 +325,16 @@
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
     return '<div class="reading-body">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
-      mdReading(r.reading) + keysSec + timeSec + '</div>';
+      mdReading(r.reading) + keysSec + timeSec + '</div>' + readingActions();
+  }
+
+  /* a quiet action row under each finished reading: copy the whole thing to
+     the clipboard (the low-friction "share" — the reading is the artifact). */
+  function readingActions() {
+    return '<div class="rd-actions" aria-hidden="false">' +
+      '<button type="button" class="rd-copy pressable" title="Copy this reading">' +
+      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="8" height="9" rx="1.5"></rect><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"></path></svg>' +
+      '<span class="rd-copy-lbl">Copy</span></button></div>';
   }
   /* static, fully-painted reading (used on reload / conversation switch) */
   function readingHTML(msg) {
@@ -1253,6 +1262,33 @@
     if (e.key === "/") { e.preventDefault(); var ci = $("composerInput"); if (ci) ci.focus(); }
     else if (e.key === "n" || e.key === "N") { e.preventDefault(); var nc = $("newCast"); if (nc) nc.click(); }
   });
+
+  /* ── copy a reading — delegated; grabs the reading body's text and drops it
+     on the clipboard, with a brief "Copied" confirmation on the button ── */
+  document.addEventListener("click", function (e) {
+    var btn = e.target && e.target.closest && e.target.closest(".rd-copy");
+    if (!btn) return;
+    var art = btn.closest(".reading");
+    var body = art && art.querySelector(".reading-body");
+    if (!body) return;
+    var text = (body.innerText || body.textContent || "").trim();
+    var lbl = btn.querySelector(".rd-copy-lbl");
+    function ok() {
+      btn.classList.add("done");
+      if (lbl) { var was = lbl.textContent; lbl.textContent = /[一-鿿]/.test(document.documentElement.lang) ? "已复制" : "Copied"; setTimeout(function () { lbl.textContent = was; btn.classList.remove("done"); }, 1600); }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, function () { fallbackCopy(text, ok); });
+    } else { fallbackCopy(text, ok); }
+  });
+  function fallbackCopy(text, cb) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      document.execCommand("copy"); document.body.removeChild(ta); cb();
+    } catch (e) {}
+  }
 
   /* ── reading progress — hairline across the top of the column, tracking how
      far through the thread you've scrolled; hidden unless it overflows ── */

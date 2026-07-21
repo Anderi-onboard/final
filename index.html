@@ -15,8 +15,8 @@
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260720f">
-<script src="./ds-base.js?v=20260712o"></script>
+<link rel="stylesheet" href="./styles.css?v=20260720g">
+<script src="./ds-base.js?v=20260720g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -254,6 +254,14 @@
   .reading{max-width:none}
   .reading .lbl b{color:var(--terracotta);font-weight:400}
   .reading-body{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:20px;text-wrap:pretty;color:var(--ink)}
+  /* reading actions — a quiet copy control under each finished reading */
+  .rd-actions{margin-top:20px;display:flex;gap:10px;animation:rdActionsIn var(--dur-slow) var(--ease-out) both}
+  @keyframes rdActionsIn{from{opacity:0}to{opacity:1}}
+  .rd-copy{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:12.5px;color:var(--dim);
+    border:1px solid var(--line);border-radius:9px;padding:6px 12px;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+  .rd-copy:hover{background:var(--paper-dim);color:var(--ink);border-color:var(--ink)}
+  .rd-copy.done{color:var(--terracotta);border-color:var(--terracotta)}
+  .rd-copy svg{opacity:.8}
   .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta)}
   .reading-body .gild.alt{color:var(--pine);border-bottom-color:var(--pine)}
   /* word stream — five reveal styles rotate word-by-word, slowly taking turns.
@@ -746,8 +754,8 @@
 <script src="./prompt-engine.js?v=20260720b"></script>
 <script src="./prompt-router.js?v=20260717a"></script>
 <script src="./account.js?v=20260717b"></script>
-<script>window.BW_BUILD="20260720f";</script>
-<script src="./chat-app.js?v=20260720f"></script>
+<script>window.BW_BUILD="20260720g";</script>
+<script src="./chat-app.js?v=20260720g"></script>
 <script>
 (function () {
   "use strict";
