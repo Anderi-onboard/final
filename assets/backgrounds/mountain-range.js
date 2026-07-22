@@ -58,8 +58,8 @@
        of the range, so text pages keep the living, moving backdrop without any
        coloured wash competing with the words. The palette rotation still runs
        underneath — a colour layer can fade in over this on chosen moments. */
-    + '.mtn-bg.line-art .fill{opacity:0;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
-    + '.mtn-bg.line-art [clip-path]>use{opacity:0;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg.line-art .fill{opacity:.34;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg.line-art [clip-path]>use{opacity:.3;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(42,32,22,0.34);stroke-width:1.1}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
@@ -124,8 +124,8 @@
      groups keep it in the document register; colour groups tint it as they
      pass. Uses colour index 1 (a hair off pure white) for a touch more read. */
   var sky = '';
-  for (var sk = 0; sk < SEQ.length; sk++) sky += (sk / SEQ.length * 100).toFixed(3) + '%{background-color:' + PAL[SEQ[sk]][1] + '}';
-  sky += '100%{background-color:' + PAL[SEQ[0]][1] + '}';
+  for (var sk = 0; sk < SEQ.length; sk++) sky += (sk / SEQ.length * 100).toFixed(3) + '%{background-color:' + PAL[SEQ[sk]][0] + '}';
+  sky += '100%{background-color:' + PAL[SEQ[0]][0] + '}';
   KF += '@keyframes mtn-sys-sky{' + sky + '}';
   CSS = CSS.replace('/*__MTN_KEYFRAMES__*/', KF);
 
