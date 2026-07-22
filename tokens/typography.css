@@ -1,9 +1,8 @@
 /* BourneWise typography.
    Two voices + brand mark, strictly cast — no other font may appear
    anywhere in the app:
-   BioRhyme  — headings, AI verdicts, display numbers (classical authority)
-   Spinnaker — body copy, UI labels, metadata, counters, CTAs (everything else)
-   Pacifico  — the brand wordmark, nothing else */
+   BioRhyme  — headings, AI verdicts, display numbers, the brand wordmark
+   Spinnaker — body copy, UI labels, metadata, counters, CTAs (everything else) */
 
 :root {
   --font-serif: "BioRhyme", Georgia, serif;
