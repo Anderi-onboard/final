@@ -17,6 +17,10 @@
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
     + '.mtn-bg>svg{display:block;width:100%;height:100%}'
+    /* the rotating page field — a fixed full-viewport colour that cycles through
+       the groups on the shared clock. Sits behind the ridges (same z, painted
+       first). Held-then-blended like the ridges, so it repaints ~once a cycle. */
+    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;animation:mtn-sys-sky 1440s linear infinite;animation-delay:var(--mtn-phase,-12s)}'
     /* ten ridges, ALL SYNCHRONISED to one shared timeline (same duration, same
        stops, same delay) so at any moment the whole mountain wears ONE palette,
        then crossfades to the next. the full 72-system seasonal rotation is BACK (restored from the
@@ -81,7 +85,7 @@
     + '.mtn-bg .cloud-1{animation:mtn-cloud-r 120s linear infinite}.mtn-bg .cloud-2{animation:mtn-cloud-l 96s linear infinite}'
     + '.mtn-bg .cloud-3{animation:mtn-cloud-r 74s linear -30s infinite}.mtn-bg .cloud-4{animation:mtn-cloud-l 132s linear -18s infinite}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 104s linear -50s infinite}.mtn-bg .cloud-6{animation:mtn-cloud-l 84s linear -12s infinite}'
-    + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use{animation:none!important}}';
+    + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important}}';
 
   /* holdify — rewrite every mtn-sys-l* keyframe list from evenly-spaced stops into
      hold-then-blend pairs: before each stop, insert a keyframe 0.5% (~1s) earlier
@@ -114,22 +118,31 @@
     body += '100%{fill:' + PAL[SEQ[0]][L - 1] + '}';
     KF += '@keyframes mtn-sys-l' + L + '{' + body + '}';
   }
+  /* the page field (.mtn-sky) cycles through each group's lightest tone, on the
+     same clock as the ridges — so the whole background rotates through the
+     colour groups instead of sitting on one fixed paper colour. Near-white
+     groups keep it in the document register; colour groups tint it as they
+     pass. Uses colour index 1 (a hair off pure white) for a touch more read. */
+  var sky = '';
+  for (var sk = 0; sk < SEQ.length; sk++) sky += (sk / SEQ.length * 100).toFixed(3) + '%{background-color:' + PAL[SEQ[sk]][1] + '}';
+  sky += '100%{background-color:' + PAL[SEQ[0]][1] + '}';
+  KF += '@keyframes mtn-sys-sky{' + sky + '}';
   CSS = CSS.replace('/*__MTN_KEYFRAMES__*/', KF);
 
   var HOLD = 0.07;
-  CSS = CSS.replace(/@keyframes (mtn-sys-l\d+)\{((?:[^{}]+\{[^{}]*\})+)\}/g, function (m, name, body) {
-    var stops = [];
-    body.replace(/([\d.,%]+)\{fill:(#[0-9A-Fa-f]+)\}/g, function (mm, sel, col) {
-      stops.push({ sel: sel, p: parseFloat(sel), c: col });
+  CSS = CSS.replace(/@keyframes (mtn-sys-(?:l\d+|sky))\{((?:[^{}]+\{[^{}]*\})+)\}/g, function (m, name, body) {
+    var prop = 'fill', stops = [];
+    body.replace(/([\d.,%]+)\{(fill|background-color):(#[0-9A-Fa-f]+)\}/g, function (mm, sel, pr, col) {
+      prop = pr; stops.push({ sel: sel, p: parseFloat(sel), c: col });
       return mm;
     });
     if (!stops.length) return m;
     var out = '';
     for (var i = 0; i < stops.length; i++) {
-      if (i > 0) out += (stops[i].p - HOLD).toFixed(3) + '%{fill:' + stops[i - 1].c + '}';
-      out += stops[i].sel + '{fill:' + stops[i].c + '}';
+      if (i > 0) out += (stops[i].p - HOLD).toFixed(3) + '%{' + prop + ':' + stops[i - 1].c + '}';
+      out += stops[i].sel + '{' + prop + ':' + stops[i].c + '}';
     }
-    out += (100 - HOLD).toFixed(3) + '%{fill:' + stops[stops.length - 1].c + '}';
+    out += (100 - HOLD).toFixed(3) + '%{' + prop + ':' + stops[stops.length - 1].c + '}';
     return '@keyframes ' + name + '{' + out + '}';
   });
 
@@ -214,6 +227,14 @@
       /* random palette starting point per page load (host may still pin --mtn-phase) */
       if (!el.style.getPropertyValue('--mtn-phase')) {
         el.style.setProperty('--mtn-phase', '-' + (Math.random() * 1440).toFixed(1) + 's');
+      }
+      /* rotating page field on the SAME clock, painted behind the ridges */
+      if (el.previousElementSibling == null || !el.previousElementSibling.classList.contains('mtn-sky')) {
+        var sky = document.createElement('div');
+        sky.className = 'mtn-sky';
+        sky.setAttribute('aria-hidden', 'true');
+        sky.style.setProperty('--mtn-phase', el.style.getPropertyValue('--mtn-phase'));
+        el.parentNode.insertBefore(sky, el);
       }
       if (!el.firstElementChild) el.innerHTML = build({
         vbw: el.dataset.vbw ? +el.dataset.vbw : 1000,
