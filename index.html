@@ -147,11 +147,11 @@
      the account footer, with a little arrow tip poking down to point at the
      Guest / sign-in row. Nudges first-time visitors to sign in (500 free
      units). Shown only to signed-out guests; dismissable, and remembered. ── */
-  .signin-coach{position:relative;margin:16px 5px 2px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;
+  .signin-coach{position:relative;margin:16px 5px 2px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
     white-space:normal;
-    border:2px solid var(--ink);border-radius:14px;box-shadow:3px 4px 0 rgba(42,32,22,.82);
-    padding:10px 24px 11px 12px;animation:coachPop .42s cubic-bezier(.2,.85,.3,1.4) both}
-  .signin-coach:hover{transform:translate(-1px,-1px);box-shadow:4px 5px 0 rgba(42,32,22,.82)}
+    border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
+    padding:10px 24px 11px 12px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) both}
+  .signin-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
   .signin-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
   .signin-coach .ct b{color:var(--ink);font-weight:700}
   .signin-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
@@ -159,9 +159,9 @@
   .signin-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
   /* the arrow — ink outline triangle behind, white fill on top — pointing down
      at the Guest footer directly below it */
-  .signin-coach::before{content:"";position:absolute;left:24px;bottom:-12px;width:22px;height:12px;background:var(--ink);clip-path:polygon(0 0,100% 0,30% 100%)}
-  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:#fff;clip-path:polygon(0 0,100% 0,30% 100%)}
-  @keyframes coachPop{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:none}}
+  .signin-coach::before{content:"";position:absolute;left:24px;bottom:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 0,100% 0,30% 100%)}
+  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:var(--paper-raised);clip-path:polygon(0 0,100% 0,30% 100%)}
+  @keyframes coachPop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   body.rail .signin-coach{display:none}
   .acct-menu{position:absolute;left:6px;bottom:56px;width:230px;
     background:linear-gradient(150deg,rgba(244,233,210,.96),rgba(235,221,194,.84));
@@ -609,17 +609,17 @@
      white callout pinned under the topbar's "How it works" link, arrow poking
      UP at it. First-time nudge to the walk-through; dismissable, remembered,
      and it retires itself once the guide has been visited. ── */
-  .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;
-    border:2px solid var(--ink);border-radius:14px;box-shadow:3px 4px 0 rgba(42,32,22,.82);
-    padding:10px 26px 11px 13px;animation:coachPop .42s cubic-bezier(.2,.85,.3,1.4) .8s both}
-  .guide-coach:hover{transform:translate(-1px,-1px);box-shadow:4px 5px 0 rgba(42,32,22,.82)}
+  .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
+    border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
+    padding:10px 26px 11px 13px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) .8s both}
+  .guide-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
   .guide-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
   .guide-coach .ct b{color:var(--ink);font-weight:700}
   .guide-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
     font-size:15px;line-height:1;color:var(--ghost);border-radius:5px;transition:background .15s,color .15s}
   .guide-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
-  .guide-coach::before{content:"";position:absolute;right:34px;top:-12px;width:22px;height:12px;background:var(--ink);clip-path:polygon(0 100%,100% 100%,70% 0)}
-  .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:#fff;clip-path:polygon(0 100%,100% 100%,70% 0)}
+  .guide-coach::before{content:"";position:absolute;right:34px;top:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 100%,100% 100%,70% 0)}
+  .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:var(--paper-raised);clip-path:polygon(0 100%,100% 100%,70% 0)}
   @media (max-width:760px){.guide-coach{right:14px;top:60px}}
   .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:680px;width:100%;margin-top:16px}
   .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:8px 17px;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;font-family:var(--sans)}
