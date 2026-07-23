@@ -58,8 +58,8 @@
        of the range, so text pages keep the living, moving backdrop without any
        coloured wash competing with the words. The palette rotation still runs
        underneath — a colour layer can fade in over this on chosen moments. */
-    + '.mtn-bg.line-art .fill{opacity:.34;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
-    + '.mtn-bg.line-art [clip-path]>use{opacity:.3;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg.line-art .fill{opacity:.62;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg.line-art [clip-path]>use{opacity:.5;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(42,32,22,0.34);stroke-width:1.1}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
@@ -94,11 +94,12 @@
      Kills both the per-frame re-raster and the hard flash at palette boundaries. */
 
   /* ── build the ridge keyframes from the 180 groups ─────────────────────────
-     Sequence = NEAR-WHITE PRIORITY with colour groups interspersed at random:
-     cycle every near-white group, and splice a random colour group after every
-     second one. So the resting rotation stays in the refined near-white register
-     (keeping the document feel), while colour washes through now and then. The
-     shuffle re-rolls per load, so which colours appear, and when, varies. */
+     Sequence ALTERNATES near-white and colour (1:1): a near-white group as the
+     readable rest, then a full colour group (any segment/tier — including the
+     deep 浓/艳 groups), and repeat. So the field never sits monochrome for long
+     and the heavy colours get real airtime, while near-white keeps returning as
+     breathing room. Colours are shuffled per load, so the run varies each time.
+     The group hexes themselves are used verbatim — only render opacity is tuned. */
   var PAL = PG.split(';').map(function (s) {
     var a = []; for (var k = 0; k < 10; k++) a.push('#' + s.substr(k * 6, 6)); return a;
   });
@@ -109,7 +110,7 @@
   var SEQ = [], ci = 0;
   for (var li = 0; li < LIGHT.length; li++) {
     SEQ.push(LIGHT[li]);
-    if (li % 2 === 1) SEQ.push(COLOR[ci++ % COLOR.length]);
+    SEQ.push(COLOR[ci++ % COLOR.length]);
   }
   var KF = '';
   for (var L = 1; L <= 10; L++) {
