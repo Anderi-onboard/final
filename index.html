@@ -603,6 +603,17 @@
   .site-foot a:hover{color:var(--terracotta)}
   body.is-empty .site-foot{position:fixed;left:0;right:0;bottom:10px;z-index:3}
   #heroEmpty{display:block;text-align:center;padding:0 0 28px}
+
+  /* Mobile topbar fix: the base .claude-note / .top-right rules above sit AFTER
+     the earlier max-width media queries, so those narrow-screen overrides lost
+     on source order — the long Claude note stayed in and shoved "How it works"/
+     "About us" into a wrapped, colliding stack against the menu button. Re-assert
+     the mobile treatment here (last-wins): drop the note, keep the nav one line. */
+  @media (max-width:700px){
+    .claude-note{display:none}
+    .top-right{gap:14px;flex-wrap:nowrap}
+    .topbar .ghost{white-space:nowrap}
+  }
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
