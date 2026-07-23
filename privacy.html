@@ -9,13 +9,10 @@
 <style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
-<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260720g">
-<script src="./ds-base.js?v=20260720g"></script>
+<link rel="stylesheet" href="./styles.css?v=20260723a">
+<script src="./ds-base.js?v=20260723a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -41,7 +38,7 @@
   .legal .eyebrow b{color:var(--terracotta);font-weight:400}
   .legal h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:.98;letter-spacing:-.03em}
   .meta{margin-top:14px;font-size:12.5px;color:var(--ghost);letter-spacing:.03em}
-  .lede{font-family:var(--lit,var(--serif));font-style:italic;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
+  .lede{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
 
   .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;position:relative}
   .toc::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
@@ -66,7 +63,7 @@
   .clause li::marker{color:var(--terracotta)}
   .clause + .clause{border-top:1px solid var(--line-soft);padding-top:8px}
 
-  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 11px 11px 0;font-family:var(--lit,var(--serif));font-style:italic;font-size:16.5px;color:var(--ink)}
+  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 11px 11px 0;font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--ink)}
 
   .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
   .legal-foot .links{display:flex;gap:18px;flex-wrap:wrap}
@@ -79,9 +76,9 @@
   @media (prefers-reduced-motion: reduce){.toc::before{animation:none}}
 </style>
 </head>
-<body>
+<body data-motion>
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
 <header class="pagehead">
   <a class="brand" href="./index.html" aria-label="BourneWise home">
@@ -172,6 +169,8 @@
   </div>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260720c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260723a"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260723a"></script>
+<script src="./ds-motion.js?v=20260723a"></script>
 </body>
 </html>

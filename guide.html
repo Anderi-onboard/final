@@ -1,422 +1,286 @@
-<!-- BourneWise — A short apprenticeship (stepped onboarding). Part of the "Paper site" template (entry: index.html) -->
+<!-- BourneWise — A short apprenticeship. Long-form, scroll-told. Part of the "Paper site" template (entry: index.html) -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A short apprenticeship — BourneWise</title>
-<meta name="description" content="A five-step walk-through: how to choose your reading, how to ask a question worth casting, and how to read what comes back.">
-<style>html{overflow:hidden}html,body{background:#F2EDE7}</style>
+<meta name="description" content="How to choose your reading, how to ask a question worth casting, and how to read what comes back — read at your own pace.">
+<style>html,body{background:#F2EDE7}</style>
 <style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
-<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260720g">
-<script src="./ds-base.js?v=20260720g"></script>
+<link rel="stylesheet" href="./styles.css?v=20260723a">
+<script src="./ds-base.js?v=20260723a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
-  html,body{height:100%}
-
-  /* ── A stepped walk-through (Payoneer-style): one panel at a time, a circular
-     progress dial top-left, "Continue" advances. Content is the same five
-     lessons as before, but you read one, then turn the page. Nothing scrolls
-     the whole document — each step fits the viewport (and scrolls inside itself
-     only if a small screen forces it). ── */
-  body{background:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
-    height:100vh;height:100dvh;overflow:hidden;position:relative;display:flex;flex-direction:column}
+  html{scroll-behavior:auto}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;position:relative;min-height:100%;overflow-x:hidden}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(181,80,44,.18)}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px;border-radius:8px}
 
-  /* soft, slow colour field behind everything — the brand's warm dawn, drifting.
-     Only transform/opacity animate, so it never repaints per frame. */
-  .field{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .field b{position:absolute;display:block;border-radius:50%;filter:blur(74px);opacity:.5;will-change:transform}
-  .field b:nth-child(1){width:56vw;height:56vw;left:-10vw;top:-12vh;background:radial-gradient(circle at 44% 44%,#F3C88C,transparent 68%);animation:dA 34s ease-in-out infinite}
-  .field b:nth-child(2){width:50vw;height:50vw;right:-12vw;bottom:-14vh;background:radial-gradient(circle at 50% 50%,#D99A62,transparent 70%);animation:dB 42s ease-in-out infinite}
-  .field b:nth-child(3){width:34vw;height:34vw;left:40vw;top:44vh;background:radial-gradient(circle at 50% 50%,#CFA588,transparent 72%);animation:dC 38s ease-in-out infinite}
-  @keyframes dA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5vw,4vh) scale(1.12)}}
-  @keyframes dB{0%,100%{transform:translate(0,0) scale(1.05)}50%{transform:translate(-4vw,-4vh) scale(.92)}}
-  @keyframes dC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4vw,5vh) scale(1.1)}}
+  /* ── the shared world: the same animated mountain range the app rides on,
+     rendered as a LINE-DRAWING (see .line-art on the div) so the moving land
+     stays present behind the words without any coloured wash competing with
+     the reading. Fixed, so the words scroll over the range. ── */
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
+    -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%);
+            mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%)}
 
-  /* ── top bar: circular progress dial (left) + exit (right) ── */
-  .wiz-top{position:relative;z-index:3;flex:none;display:flex;align-items:center;gap:16px;padding:22px 30px 8px}
-  .dial{position:relative;width:52px;height:52px;flex:none}
-  .dial svg{width:52px;height:52px;transform:rotate(-90deg)}
-  .dial .track{fill:none;stroke:rgba(139,110,74,.24);stroke-width:4}
-  .dial .fill{fill:none;stroke:var(--terracotta);stroke-width:4;stroke-linecap:round;
-    stroke-dasharray:138.23;stroke-dashoffset:138.23;transition:stroke-dashoffset .55s cubic-bezier(.4,0,.2,1)}
-  .dial .pnum{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:"BioRhyme",var(--serif);font-weight:700;font-size:15px;color:var(--ink)}
-  .dial .pnum small{font-family:var(--sans);font-weight:400;font-size:10px;color:var(--faint);margin-left:1px}
-  .wiz-track-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
-  .wiz-track-txt .k{font-family:Spinnaker;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--terracotta)}
-  .wiz-track-txt .t{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .wiz-exit{margin-left:auto;flex:none;font-size:13px;color:var(--dim);display:inline-flex;align-items:center;gap:6px;transition:color .15s}
-  .wiz-exit:hover{color:var(--ink)}
-  .wiz-exit svg{width:15px;height:15px}
+  .scroll-rail i{background:var(--terracotta)}
 
-  /* thin linear progress under the top bar, for a second read of "how far in" */
-  .wiz-bar{position:relative;z-index:3;flex:none;height:2px;margin:6px 30px 0;background:rgba(139,110,74,.18);border-radius:2px;overflow:hidden}
-  .wiz-bar i{display:block;height:100%;width:0;background:var(--terracotta);border-radius:2px;transition:width .55s cubic-bezier(.4,0,.2,1)}
+  /* ── top chrome — a hairline bar that turns solid once you leave the hero ── */
+  .top{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:16px;
+    padding:18px 34px;transition:background var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out);
+    border-bottom:1px solid transparent}
+  .top.stuck{background:rgba(242,237,231,.82);backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);
+    border-bottom-color:var(--line)}
+  .wordmark{display:inline-flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
+  .wordmark svg{width:30px;height:24px}
+  .top .spacer{margin-left:auto}
+  .enter{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+    display:inline-flex;align-items:center;gap:8px;padding:9px 4px;transition:color .18s}
+  .enter:hover{color:var(--ink)}
+  .enter svg{width:15px;height:15px}
 
-  /* ── stage: the panels ── */
-  .stage{position:relative;z-index:2;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 30px}
-  .step{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:8px 0;
-    opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1);
-    overflow-y:auto;scrollbar-width:none}
-  .step::-webkit-scrollbar{width:0;height:0}
-  .step.active{opacity:1;transform:none;pointer-events:auto}
-  .step.leaving{opacity:0;transform:translateY(-16px)}
-  .panel{width:100%;max-width:940px;margin:auto}
+  /* shared measures */
+  .wrap{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 34px}
+  .col{max-width:660px}
+  .kicker{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta)}
+  .gild{font-family:var(--serif);font-weight:700;color:var(--terracotta);
+    box-shadow:inset 0 -.08em 0 rgba(181,80,44,.32);padding-bottom:.02em}
 
-  /* per-step children rise in, staggered, once the step becomes active */
-  .step .rise{opacity:0;transform:translateY(18px)}
-  .step.active .rise{opacity:1;transform:none;transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
-  .step.active .rise:nth-child(1){transition-delay:.05s}
-  .step.active .rise:nth-child(2){transition-delay:.12s}
-  .step.active .rise:nth-child(3){transition-delay:.19s}
-  .step.active .rise:nth-child(4){transition-delay:.26s}
+  /* ── hero — the prologue. One held mark, a headline that unfurls word by
+     word, an invitation to begin reading. ── */
+  .hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding:132px 34px 90px;max-width:1120px;margin:0 auto}
+  .hero .mark{width:70px;height:57px;color:var(--terracotta)}
+  .hero h1{margin-top:30px;font-family:var(--serif);font-weight:800;
+    font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-.035em;max-width:15ch;text-wrap:balance}
+  .hero .sub{margin-top:30px;max-width:46ch;font-size:clamp(16px,1.5vw,18px);line-height:1.7;color:var(--dim)}
+  .hero .meta{margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .cue{position:absolute;left:34px;bottom:40px;display:inline-flex;align-items:center;gap:12px;
+    font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .cue .line{display:block;width:52px;height:1px;background:var(--faint);position:relative;overflow:hidden}
+  .cue .line::after{content:"";position:absolute;inset:0;width:40%;background:var(--terracotta);animation:cueRun 2.4s var(--ease-in-out) infinite}
+  @keyframes cueRun{0%{transform:translateX(-110%)}60%,100%{transform:translateX(320%)}}
 
-  /* headings shared across steps */
-  .kicker{font-family:Spinnaker;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--terracotta)}
-  .lead-h{margin-top:12px;font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(26px,3.4vw,40px);line-height:1.22;letter-spacing:-.02em;text-wrap:balance;max-width:20ch}
-  .gild{font-family:var(--lit,"Fraunces",serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
-  .lead-p{margin-top:16px;max-width:56ch;font-size:15px;line-height:1.72;color:var(--dim)}
+  /* ── a numbered section — the big hanging numeral, a kicker, a lead, then
+     the entries. The manual voice: rules and prose, no cards, no icons. ── */
+  .sec{position:relative;z-index:2;padding:96px 0}
+  .sec-head{position:relative}
+  .sec-no{font-family:var(--serif);font-weight:800;font-size:clamp(58px,11vw,142px);line-height:.8;
+    letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.4px rgba(181,80,44,.42);
+    text-stroke:1.4px rgba(181,80,44,.42)}
+  .sec-head .kicker{display:block;margin-top:20px}
+  .lead-h{margin-top:16px;font-family:var(--serif);font-weight:700;font-size:clamp(27px,3.8vw,46px);
+    line-height:1.14;letter-spacing:-.02em;max-width:19ch;text-wrap:balance}
+  .lead-p{margin-top:20px;max-width:54ch;font-size:16px;line-height:1.74;color:var(--dim)}
 
-  /* ── editorial entries — no boxes, no icons. A hairline rule, a hanging
-     header, prose beneath: the page reads like a printed manual, not a card
-     grid. The seal keeps its own quiet line. ── */
-  .entries{margin-top:36px;display:grid;gap:0 46px}
+  .entries{margin-top:52px;display:grid;gap:0 52px}
   .entries.three{grid-template-columns:repeat(3,1fr)}
   .entries.two{grid-template-columns:1fr 1fr}
-  .entry{border-top:1.5px solid rgba(42,32,22,.7);padding:15px 0 8px}
+  .entry{border-top:1.5px solid rgba(42,32,22,.62);padding:18px 0 8px}
   .entry .eh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .entry .eh b{font-family:"BioRhyme",var(--serif);font-size:17px;font-weight:700}
-  .entry .eh .u{font-family:Spinnaker;font-size:11.5px;letter-spacing:.14em;color:var(--terracotta);white-space:nowrap}
-  .entry p{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--dim)}
-  .entry .when{margin-top:10px;font-family:var(--lit,"Fraunces",serif);font-style:italic;font-size:13.5px;line-height:1.55;color:var(--ink)}
-  .entry .when::before{content:"\2014\00a0"}
+  .entry .eh b{font-family:var(--serif);font-size:18px;font-weight:700}
+  .entry .eh .u{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.14em;color:var(--terracotta);white-space:nowrap}
+  .entry p{margin-top:11px;font-size:14px;line-height:1.72;color:var(--dim)}
+  .entry .when{margin-top:12px;font-size:14px;line-height:1.6;color:var(--ink)}
+  .entry .when::before{content:"\2014\00a0";color:var(--terracotta)}
 
-  /* numbered habits — big hanging numeral against a rule, no box */
-  .habits{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:0 46px}
-  .habit{border-top:1.5px solid rgba(42,32,22,.7);padding:16px 0 12px;display:flex;gap:18px;align-items:flex-start}
-  .habit .no{flex:none;font-family:"BioRhyme",var(--serif);font-weight:800;font-size:34px;line-height:.85;color:var(--terracotta);width:42px}
-  .habit b{display:block;font-family:"BioRhyme",var(--serif);font-size:16px;font-weight:700}
-  .habit p{margin-top:8px;font-size:13.5px;line-height:1.68;color:var(--dim)}
+  .habits{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:0 52px}
+  .habit{border-top:1.5px solid rgba(42,32,22,.62);padding:20px 0 14px;display:flex;gap:20px;align-items:flex-start}
+  .habit .no{flex:none;font-family:var(--serif);font-weight:800;font-size:38px;line-height:.82;color:var(--terracotta);width:46px}
+  .habit b{display:block;font-family:var(--serif);font-size:17px;font-weight:700}
+  .habit p{margin-top:9px;font-size:14px;line-height:1.7;color:var(--dim)}
 
-  /* the seal — one rule + Claude's role */
-  .seal{margin:16px 0 4px;font-family:var(--lit,"Fraunces",serif);font-style:italic;font-size:17px;color:var(--dim)}
+  .seal{margin:20px 0 4px;font-family:var(--serif);font-weight:400;font-size:19px;letter-spacing:.02em;color:var(--terracotta)}
 
-  /* welcome (step 1) — the brand mark + a warm open */
-  .welcome{text-align:center;max-width:34ch;margin:auto}
-  .welcome .mark{width:64px;height:52px;margin:0 auto}
-  .welcome h1{margin-top:22px;font-family:"BioRhyme",var(--serif);font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.08;letter-spacing:-.03em;text-wrap:balance}
-  .welcome p{margin:18px auto 0;max-width:40ch;font-size:15px;line-height:1.72;color:var(--dim)}
-  .welcome .mins{margin-top:16px;font-family:Spinnaker;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
-
-  /* ── bottom nav: Back · Continue ── */
-  .wiz-nav{position:relative;z-index:3;flex:none;display:flex;align-items:center;gap:14px;padding:14px 30px 26px;max-width:1000px;margin:0 auto;width:100%}
-  .wiz-nav .dots{display:flex;gap:7px;margin:0 auto}
-  .wiz-nav .dot{width:7px;height:7px;border-radius:50%;background:rgba(139,110,74,.28);transition:background .3s,transform .3s;cursor:pointer}
-  .wiz-nav .dot.on{background:var(--terracotta);transform:scale(1.25)}
-  .btn-back{font-size:14px;color:var(--dim);display:inline-flex;align-items:center;gap:7px;padding:9px 6px;transition:color .15s,opacity .2s}
-  .btn-back:hover{color:var(--ink)}
-  .btn-back[disabled]{opacity:0;pointer-events:none}
-  .btn-back svg{width:15px;height:15px}
-  .btn-next{font-size:14px;font-weight:500;color:var(--paper);background:var(--ink);padding:11px 24px;border-radius:11px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s,background .15s}
-  .btn-next:hover{background:#291D35;transform:translateY(-1px)}
-  .btn-next.final{background:var(--terracotta)}
-  .btn-next.final:hover{background:#D97D7E}
-  .btn-next svg{width:15px;height:15px}
+  /* ── closing — the invitation into the app ── */
+  .close{position:relative;z-index:2;padding:70px 0 120px;text-align:center}
+  .close h2{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.6vw,56px);line-height:1.06;letter-spacing:-.03em;text-wrap:balance;max-width:16ch;margin:0 auto}
+  .close .go{margin-top:34px;display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:15px;
+    color:var(--paper);background:var(--ink);padding:15px 30px;border-radius:13px;transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast)}
+  .close .go:hover{background:#3A2A1C;transform:translateY(-2px)}
+  .close .go svg{width:16px;height:16px}
+  .close .tiny{margin-top:18px;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 
   @media (max-width:860px){
-    .entries.three,.entries.two,.habits{grid-template-columns:1fr}
-    .stage{align-items:flex-start}
-    .step{align-items:flex-start}
+    .entries.three,.entries.two,.habits{grid-template-columns:1fr;gap:0}
+    .habit{border-top-width:1.2px}
+    .sec{padding:74px 0}
   }
   @media (max-width:600px){
-    .wiz-top{padding:16px 18px 6px;gap:12px}
-    .wiz-bar{margin:6px 18px 0}
-    .stage{padding:6px 18px}
-    .wiz-nav{padding:12px 18px 20px}
-    .wiz-track-txt .t{max-width:46vw}
-    .wiz-exit span{display:none}
-    .btn-next{padding:11px 18px}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .field b{animation:none}
-    .step,.step .rise,.dial .fill,.wiz-bar i{transition:none}
+    .top{padding:14px 20px}
+    .wrap,.hero{padding-left:20px;padding-right:20px}
+    .cue{left:20px}
+    .hero{padding-top:110px}
   }
 </style>
 </head>
-<body>
+<body data-motion>
 
-<div class="field" aria-hidden="true"><b></b><b></b><b></b></div>
+<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<div class="scroll-rail" aria-hidden="true"><i></i></div>
 
-<!-- top: circular progress dial + exit -->
-<header class="wiz-top">
-  <div class="dial" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-label="Walk-through progress">
-    <svg viewBox="0 0 52 52" aria-hidden="true">
-      <circle class="track" cx="26" cy="26" r="22"></circle>
-      <circle class="fill" cx="26" cy="26" r="22"></circle>
-    </svg>
-    <span class="pnum" id="pnum">1<small id="ptot">/5</small></span>
-  </div>
-  <div class="wiz-track-txt">
-    <span class="k" id="pkick">Step 1 of 5</span>
-    <span class="t" id="ptitle">Welcome</span>
-  </div>
-  <a class="wiz-exit pressable" href="./index.html" aria-label="Skip and go to the app">
-    <span>Skip</span>
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"></path></svg>
+<header class="top" id="top">
+  <a class="wordmark" href="./index.html" aria-label="BourneWise home">
+    <svg viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+    <span>BourneWise</span>
+  </a>
+  <span class="spacer"></span>
+  <a class="enter pressable" href="./index.html">
+    <span>Open the app</span>
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
   </a>
 </header>
-<div class="wiz-bar" aria-hidden="true"><i id="wizBarFill"></i></div>
 
-<main class="stage" id="stage">
+<!-- ── PROLOGUE ─────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <svg class="mark" data-reveal="fade" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+  <h1 data-split>How to ask, and how to read what comes back</h1>
+  <p class="sub" data-reveal>Five short passages &mdash; once through and the instrument is yours for good. Read at your own pace; the app is one tap away, whenever you want it.</p>
+  <p class="meta" data-reveal>About five minutes &middot; you keep what you learn</p>
+  <span class="cue" aria-hidden="true"><span class="line"></span>Scroll to begin</span>
+</section>
 
-  <!-- STEP 1 · welcome -->
-  <section class="step" data-kick="A short apprenticeship" data-title="Welcome" data-cta="Begin the walk-through">
-    <div class="panel">
-      <div class="welcome">
-        <div class="rise">
-          <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-        </div>
-        <h1 class="rise">How to ask, and how to read what comes back</h1>
-        <p class="rise">Five short steps &mdash; once through and the instrument is yours for good. Read one, turn the page. You can leave any time; the app is one tap away.</p>
-        <p class="mins rise">About five minutes &middot; you keep what you learn</p>
+<!-- ── 01 · CHOOSE YOUR INSTRUMENT ──────────────────────────────────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head col">
+      <span class="sec-no" data-reveal>01</span>
+      <span class="kicker" data-reveal>Choose your instrument</span>
+      <h2 class="lead-h" data-split>Two readings, <span class="gild">two depths</span> &mdash; you pay only for what one truly costs.</h2>
+      <p class="lead-p" data-reveal>Both cast the same six lines over the same question; they differ in how far down they go. Which you want depends entirely on the weight of what you&rsquo;re asking &mdash; a passing worry and a decision you&rsquo;ll live with for a year are not the same errand.</p>
+    </div>
+    <div class="entries three" data-reveal-group>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>Stria 64</b><span class="u">FROM 300 UNITS</span></div>
+        <p>A same-day read of where things stand right now: the figure, its temperament, the way it leans. Quick, honest, no pretence of being more than a clear look at the present.</p>
+        <p class="when">Reach for it when you want your bearings, a gut-check, a first orientation.</p>
+      </div>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>Sortis 6</b><span class="u">FROM 1,500 UNITS</span></div>
+        <p>The full method: moving lines, the second figure the situation is turning into, each changing line read on its own. Built for the fork you&rsquo;ll still be living with a year from now.</p>
+        <p class="when">Reach for it when the stakes are real and you want the whole structure, not a glance.</p>
+      </div>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>Units, plainly</b></div>
+        <p>Units are the meter. A reading costs what it actually consumes &mdash; the figures above are the starting draw, and you&rsquo;re charged for real use, no rounding up. A follow-up in the same thread is far cheaper than a fresh cast.</p>
+        <p class="when">Everyone begins with 500 on the house.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STEP 2 · choose your instrument -->
-  <section class="step" data-kick="01 · Choose your instrument" data-title="Choose your instrument" data-cta="Continue">
-    <div class="panel">
-      <div class="rise">
-        <span class="kicker">01 &middot; Choose your instrument</span>
-        <h2 class="lead-h">Two readings, <span class="gild">two depths</span> &mdash; you pay only for what one truly costs.</h2>
-        <p class="lead-p">Both cast the same six lines over the same question; they differ in how far down they go. Which you want depends entirely on the weight of what you&rsquo;re asking &mdash; a passing worry and a decision you&rsquo;ll live with for a year are not the same errand.</p>
+<!-- ── 02 · HOW TO ASK ──────────────────────────────────────────────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head col">
+      <span class="sec-no" data-reveal>02</span>
+      <span class="kicker" data-reveal>How to ask</span>
+      <h2 class="lead-h" data-split>The question does half the work. <span class="gild">Ask well.</span></h2>
+      <p class="lead-p" data-reveal>An oracle answers the question you actually put to it &mdash; not the one you meant. Four small habits, and you&rsquo;ll never need them spelled out again.</p>
+    </div>
+    <div class="habits" data-reveal-group>
+      <div class="habit" data-reveal><span class="no">1</span><div>
+        <b>Bring the one keeping you up</b>
+        <p>Not the safest question &mdash; the real one. The figure has the most to say about the thing you keep circling back to. Ask that.</p>
+      </div></div>
+      <div class="habit" data-reveal><span class="no">2</span><div>
+        <b>Say it plainly, then give it a spine</b>
+        <p>One clear sentence, then a line or two of context: who&rsquo;s involved, what&rsquo;s at stake, the fork you&rsquo;re at. Not a diary &mdash; just enough to bite on.</p>
+      </div></div>
+      <div class="habit" data-reveal><span class="no">3</span><div>
+        <b>Ask about a movement, not a fact</b>
+        <p>&ldquo;Should I take the offer?&rdquo; reads far better than &ldquo;will it rain Tuesday?&rdquo; The instrument reasons about direction, timing and choice.</p>
+      </div></div>
+      <div class="habit" data-reveal><span class="no">4</span><div>
+        <b>One honest cast, then sit with it</b>
+        <p>Re-casting the same question hoping for a kinder answer only buys you noise. Ask once, in good faith. If the answer stings, that&rsquo;s often the part worth reading twice.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03 · WHAT COMES BACK ─────────────────────────────────────────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head col">
+      <span class="sec-no" data-reveal>03</span>
+      <span class="kicker" data-reveal>What comes back</span>
+      <h2 class="lead-h" data-split>A figure is a map of forces &mdash; <span class="gild">not a verdict</span>, and rarely a single one.</h2>
+      <p class="lead-p" data-reveal>What returns is not a yes-or-no, and not a fortune-cookie line. It is the shape of your situation: where the energy sits, which line is moving, which way the whole thing is tilting.</p>
+    </div>
+    <div class="entries three" data-reveal-group>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>What it points to</b></div>
+        <p>The figure describes structure and motion &mdash; a configuration of forces and where they&rsquo;re heading. Read it as terrain and weather, not a lottery number. It tells you the lay of the land and which way the wind blows; the walking is still yours.</p>
       </div>
-      <div class="entries three rise">
-        <div class="entry">
-          <div class="eh"><b>Stria 64</b><span class="u">FROM 300 UNITS</span></div>
-          <p>A same-day read of where things stand right now: the figure, its temperament, the way it leans. Quick, honest, no pretence of being more than a clear look at the present.</p>
-          <p class="when">Reach for it when you want your bearings, a gut-check, a first orientation.</p>
-        </div>
-        <div class="entry">
-          <div class="eh"><b>Sortis 6</b><span class="u">FROM 1,500 UNITS</span></div>
-          <p>The full method: moving lines, the second figure the situation is turning into, each changing line read on its own. Built for the fork you&rsquo;ll still be living with a year from now.</p>
-          <p class="when">Reach for it when the stakes are real and you want the whole structure, not a glance.</p>
-        </div>
-        <div class="entry">
-          <div class="eh"><b>Units, plainly</b></div>
-          <p>Units are the meter. A reading costs what it actually consumes &mdash; the figures above are the starting draw, and you&rsquo;re charged for real use, no rounding up. A follow-up in the same thread is far cheaper than a fresh cast.</p>
-          <p class="when">Everyone begins with 500 on the house.</p>
-        </div>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>Read it more than once</b></div>
+        <p>A good reading is layered. The same figure holds several true readings at once, depending on which thread of your life you lay it against &mdash; work, a person, your own nerve. Hold it up to each. The right one usually recognises itself.</p>
+      </div>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>Ambiguity is the honesty</b></div>
+        <p>When a reading holds more than one meaning, that isn&rsquo;t hedging &mdash; it&rsquo;s refusing to flatten a complicated life into a slogan. A single tidy answer to a genuinely open question would be the lie. Take the plural view as a gift: the door is still open.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STEP 3 · how to ask -->
-  <section class="step" data-kick="02 · How to ask" data-title="How to ask" data-cta="Continue">
-    <div class="panel">
-      <div class="rise">
-        <span class="kicker">02 &middot; How to ask</span>
-        <h2 class="lead-h">The question does half the work. <span class="gild">Ask well.</span></h2>
-        <p class="lead-p">An oracle answers the question you actually put to it &mdash; not the one you meant. Four small habits, and you&rsquo;ll never need them spelled out again.</p>
+<!-- ── 04 · THE ONE RULE ────────────────────────────────────────────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head col">
+      <span class="sec-no" data-reveal>04</span>
+      <span class="kicker" data-reveal>The one rule that outlives all the others</span>
+      <h2 class="lead-h" data-split>A good omen is <span class="gild">not a finish line.</span></h2>
+      <p class="seal" lang="zh" data-reveal>卦后并非万事大吉 &middot; 仍需努力,自强不息</p>
+      <p class="lead-p" data-reveal>A favourable figure tells you the wind is with you &mdash; it does not row the boat. An unfavourable one names the cost early, while you can still afford to pay it. Either way the outcome isn&rsquo;t delivered; it is <em class="gild">earned</em>. The oracle shows you the grain of the wood &mdash; you still do the carving.</p>
+    </div>
+    <div class="entries two" data-reveal-group>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>The figure is cast by the old logic</b></div>
+        <p>The six lines and the hexagram they form come from a faithful casting engine &mdash; the same causal method, untouched, that dynasties reasoned by. No model chooses the figure. Chance and structure do, as they always have.</p>
       </div>
-      <div class="habits rise">
-        <div class="habit"><span class="no">1</span><div>
-          <b>Bring the one keeping you up</b>
-          <p>Not the safest question &mdash; the real one. The figure has the most to say about the thing you keep circling back to. Ask that.</p>
-        </div></div>
-        <div class="habit"><span class="no">2</span><div>
-          <b>Say it plainly, then give it a spine</b>
-          <p>One clear sentence, then a line or two of context: who&rsquo;s involved, what&rsquo;s at stake, the fork you&rsquo;re at. Not a diary &mdash; just enough to bite on.</p>
-        </div></div>
-        <div class="habit"><span class="no">3</span><div>
-          <b>Ask about a movement, not a fact</b>
-          <p>&ldquo;Should I take the offer?&rdquo; reads far better than &ldquo;will it rain Tuesday?&rdquo; The instrument reasons about direction, timing and choice.</p>
-        </div></div>
-        <div class="habit"><span class="no">4</span><div>
-          <b>One honest cast, then sit with it</b>
-          <p>Re-casting the same question hoping for a kinder answer only buys you noise. Ask once, in good faith. If the answer stings, that&rsquo;s often the part worth reading twice.</p>
-        </div></div>
+      <div class="entry" data-reveal>
+        <div class="eh"><b>Claude finds the words &mdash; and only the words</b></div>
+        <p>The reading is written by Claude, held to the figure that was cast. The hexagram decides what may be said; the model finds a clear, human way to say it &mdash; and never overrules the casting to tell you what you&rsquo;d rather hear. Ancient structure, modern voice.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STEP 4 · what comes back -->
-  <section class="step" data-kick="03 · What comes back" data-title="What comes back" data-cta="Continue">
-    <div class="panel">
-      <div class="rise">
-        <span class="kicker">03 &middot; What comes back</span>
-        <h2 class="lead-h">A figure is a map of forces &mdash; <span class="gild">not a verdict</span>, and rarely a single one.</h2>
-        <p class="lead-p">What returns is not a yes-or-no, and not a fortune-cookie line. It is the shape of your situation: where the energy sits, which line is moving, which way the whole thing is tilting.</p>
-      </div>
-      <div class="entries three rise">
-        <div class="entry">
-          <div class="eh"><b>What it points to</b></div>
-          <p>The figure describes structure and motion &mdash; a configuration of forces and where they&rsquo;re heading. Read it as terrain and weather, not a lottery number. It tells you the lay of the land and which way the wind blows; the walking is still yours.</p>
-        </div>
-        <div class="entry">
-          <div class="eh"><b>Read it more than once</b></div>
-          <p>A good reading is layered. The same figure holds several true readings at once, depending on which thread of your life you lay it against &mdash; work, a person, your own nerve. Hold it up to each. The right one usually recognises itself.</p>
-        </div>
-        <div class="entry">
-          <div class="eh"><b>Ambiguity is the honesty</b></div>
-          <p>When a reading holds more than one meaning, that isn&rsquo;t hedging &mdash; it&rsquo;s refusing to flatten a complicated life into a slogan. A single tidy answer to a genuinely open question would be the lie. Take the plural view as a gift: the door is still open.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ── CLOSE ────────────────────────────────────────────────────────────── -->
+<section class="close">
+  <div class="wrap">
+    <h2 data-split>The instrument is yours. Bring your question.</h2>
+    <a class="go pressable" data-reveal href="./index.html">
+      Enter the app
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+    </a>
+    <p class="tiny" data-reveal>500 free units are waiting</p>
+  </div>
+</section>
 
-  <!-- STEP 5 · the one rule + Claude's role -->
-  <section class="step" data-kick="04 · The one rule" data-title="The one rule" data-cta="Bring your question" data-final="1" data-href="./index.html">
-    <div class="panel">
-      <div class="rise">
-        <span class="kicker">04 &middot; The one rule that outlives all the others</span>
-        <h2 class="lead-h">A good omen is <span class="gild">not a finish line.</span></h2>
-        <p class="seal" lang="zh">卦后并非万事大吉 &middot; 仍需努力,自强不息</p>
-        <p class="lead-p">A favourable figure tells you the wind is with you &mdash; it does not row the boat. An unfavourable one names the cost early, while you can still afford to pay it. Either way the outcome isn&rsquo;t delivered; it is <em style="font-family:var(--lit);font-style:italic;color:var(--ink)">earned</em>. The oracle shows you the grain of the wood &mdash; you still do the carving.</p>
-      </div>
-      <div class="entries two rise">
-        <div class="entry">
-          <div class="eh"><b>The figure is cast by the old logic</b></div>
-          <p>The six lines and the hexagram they form come from a faithful casting engine &mdash; the same causal method, untouched, that dynasties reasoned by. No model chooses the figure. Chance and structure do, as they always have.</p>
-        </div>
-        <div class="entry">
-          <div class="eh"><b>Claude finds the words &mdash; and only the words</b></div>
-          <p>The reading is written by Claude, held to the figure that was cast. The hexagram decides what may be said; the model finds a clear, human way to say it &mdash; and never overrules the casting to tell you what you&rsquo;d rather hear. Ancient structure, modern voice.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- bottom: Back · dots · Continue -->
-<nav class="wiz-nav" aria-label="Walk-through navigation">
-  <button class="btn-back pressable" id="btnBack" disabled>
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10 3L5 8l5 5"></path></svg>Back
-  </button>
-  <div class="dots" id="dots" role="tablist" aria-label="Steps"></div>
-  <button class="btn-next pressable" id="btnNext">
-    <span id="nextLabel">Begin the walk-through</span>
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3l5 5-5 5"></path></svg>
-  </button>
-</nav>
-
+<script src="./assets/backgrounds/mountain-range.js?v=20260723a"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260723a"></script>
+<script src="./ds-motion.js?v=20260723a"></script>
 <script>
-(function () {
-  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
-  var total = steps.length;
-  var i = 0;
-
-  var dial = document.querySelector('.dial');
-  var fill = document.querySelector('.dial .fill');
-  var CIRC = 2 * Math.PI * 22; // r=22 → ~138.23
-  var pnum = document.getElementById('pnum');
-  var ptot = document.getElementById('ptot');
-  var pkick = document.getElementById('pkick');
-  var ptitle = document.getElementById('ptitle');
-  var barFill = document.getElementById('wizBarFill');
-  var btnBack = document.getElementById('btnBack');
-  var btnNext = document.getElementById('btnNext');
-  var nextLabel = document.getElementById('nextLabel');
-  var dotsWrap = document.getElementById('dots');
-
-  fill.style.strokeDasharray = CIRC.toFixed(2);
-  ptot.textContent = '/' + total;
-
-  // build the dot rail
-  steps.forEach(function (s, n) {
-    var d = document.createElement('button');
-    d.className = 'dot';
-    d.type = 'button';
-    d.setAttribute('role', 'tab');
-    d.setAttribute('aria-label', 'Step ' + (n + 1));
-    d.addEventListener('click', function () { go(n); });
-    dotsWrap.appendChild(d);
-  });
-  var dots = Array.prototype.slice.call(dotsWrap.children);
-
-  function render(prev) {
-    steps.forEach(function (s, n) {
-      s.classList.toggle('active', n === i);
-      s.classList.toggle('leaving', prev != null && n === prev && n !== i);
-    });
-    dots.forEach(function (d, n) { d.classList.toggle('on', n === i); });
-
-    var cur = steps[i];
-    var frac = (i + 1) / total;
-    fill.style.strokeDashoffset = (CIRC * (1 - frac)).toFixed(2);
-    barFill.style.width = (frac * 100) + '%';
-    pnum.firstChild.textContent = String(i + 1);
-    dial.setAttribute('aria-valuenow', String(i + 1));
-    pkick.textContent = 'Step ' + (i + 1) + ' of ' + total;
-    ptitle.textContent = cur.getAttribute('data-title') || '';
-
-    btnBack.disabled = (i === 0);
-    var isFinal = cur.getAttribute('data-final') === '1';
-    nextLabel.textContent = cur.getAttribute('data-cta') || (isFinal ? 'Finish' : 'Continue');
-    btnNext.classList.toggle('final', isFinal);
-
-    // reset the active step's own scroll to the top
-    cur.scrollTop = 0;
-  }
-
-  function go(n) {
-    n = Math.max(0, Math.min(total - 1, n));
-    if (n === i) return;
-    var prev = i;
-    i = n;
-    render(prev);
-    if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
-  }
-
-  function next() {
-    var cur = steps[i];
-    if (i === total - 1) {
-      // final step → into the app
-      window.location.href = cur.getAttribute('data-href') || './index.html';
-      return;
-    }
-    go(i + 1);
-  }
-  function back() { if (i > 0) go(i - 1); }
-
-  btnNext.addEventListener('click', next);
-  btnBack.addEventListener('click', back);
-
-  document.addEventListener('keydown', function (e) {
-    if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
-    if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
-    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); back(); }
-    else if (e.key === 'Home') { e.preventDefault(); go(0); }
-    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
-  });
-
-  // touch swipe (left = next, right = back)
-  var tx = null, ty = null;
-  document.addEventListener('touchstart', function (e) { var t = e.changedTouches[0]; tx = t.clientX; ty = t.clientY; }, { passive: true });
-  document.addEventListener('touchend', function (e) {
-    if (tx == null) return;
-    var t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) { dx < 0 ? next() : back(); }
-    tx = ty = null;
-  }, { passive: true });
-
-  // deep-link: #2 opens step 2
-  var h = parseInt((location.hash || '').replace('#', ''), 10);
-  if (h >= 1 && h <= total) i = h - 1;
-  render(null);
-})();
+  /* solidify the top bar once the hero is behind us */
+  (function () {
+    var top = document.getElementById('top');
+    var hero = document.querySelector('.hero');
+    if (!('IntersectionObserver' in window)) { top.classList.add('stuck'); return; }
+    new IntersectionObserver(function (e) {
+      top.classList.toggle('stuck', !e[0].isIntersecting);
+    }, { rootMargin: '-72px 0px 0px 0px' }).observe(hero);
+  })();
 </script>
 </body>
 </html>

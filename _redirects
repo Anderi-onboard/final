@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+#
+# PROGRESS.md is an internal dev log that lives in the repo for contributors,
+# but must not be part of the public site. Serve a 404 for it (and any stray
+# dot/markdown dev files) instead of handing the file to visitors.
+/PROGRESS.md   /404.html   404

@@ -9,13 +9,10 @@
 <style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
-<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260720g">
-<script src="./ds-base.js?v=20260720g"></script>
+<link rel="stylesheet" href="./styles.css?v=20260723a">
+<script src="./ds-base.js?v=20260723a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -87,26 +84,12 @@
      one visual pattern that reads as generated-template rather than part of this
      site — everywhere else (index/login) the range is a true full-bleed backdrop. ── */
   .hero-slab{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
-  .hero-slab .mtn-bg{position:absolute;inset:0;z-index:0;opacity:.96;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 64%,transparent 100%)}
-  /* this page's own ridge palette (light→dark, matching the tokens above) instead of
-     the site-wide rotating terracotta seasons — static fill (no colour animation, so
-     no re-raster cost); the ridges still flow left/right via mountain-range.js's own
-     GPU-composited transform animation, only the paint stays still. */
-  /* warm terracotta ridge ramp (light cream far ridge → deep espresso near
-     ridge), static fill — no colour animation, just the GPU flow. This is the
-     same "Terracotta Canyon" ramp the site's rotating background opens on. */
-  .hero-slab .mtn-bg .l1{animation:none;fill:#FBF3E9}
-  .hero-slab .mtn-bg .l2{animation:none;fill:#F7E8D2}
-  .hero-slab .mtn-bg .l3{animation:none;fill:#F0D8B6}
-  .hero-slab .mtn-bg .l4{animation:none;fill:#E6BE8C}
-  .hero-slab .mtn-bg .l5{animation:none;fill:#DCA06A}
-  .hero-slab .mtn-bg .l6{animation:none;fill:#C97C4C}
-  .hero-slab .mtn-bg .l7{animation:none;fill:#AC5C36}
-  .hero-slab .mtn-bg .l8{animation:none;fill:#843F24}
-  .hero-slab .mtn-bg .l9{animation:none;fill:#4E2415}
-  .hero-slab .mtn-bg .l10{animation:none;fill:#241009}
-  .hero-slab .mtn-bg use[fill]{fill:#241009}
+  /* the shared world: a fixed, full-bleed line-drawing of the range with the
+     colour-group field rotating behind it (same as every other page) — the
+     hero and the sections below all ride on one backdrop. */
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
+    -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%);
+            mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%)}
   /* the second, page-long ambient mountain is gone: it overlapped the hero
      range and doubled the motion. The page now reads top→bottom — a mountain
      hero up top, clean paper below — with nothing stacked behind the content. */
@@ -123,13 +106,12 @@
      (not the pale sky), so it needs light text — a card background no longer
      guarantees contrast the way it did when the mountain was cropped inside one */
   .hero-slab h1{position:relative;z-index:1;font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(38px,5.2vw,66px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance;
-    color:#FBF3E9;text-shadow:0 2px 20px rgba(36,16,9,.45),0 1px 3px rgba(36,16,9,.5);
-    margin-top:auto;padding:46px 28px 44px;max-width:17ch}
+    color:var(--ink);margin-top:auto;padding:46px 28px 44px;max-width:17ch}
 
   /* ── 2 · statement + method cards ── */
   .duo{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;padding:58px 6px 8px}
   .duo-l h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.32;letter-spacing:-.015em;text-wrap:pretty;max-width:19ch}
-  .duo-l .gild{font-family:var(--lit,"Fraunces",serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
+  .duo-l .gild{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
   .duo-l p{margin-top:20px;max-width:46ch;font-size:14.5px;line-height:1.7;color:var(--dim)}
   .duo-l .mini{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--ink);border-radius:9px;padding:7px 15px;transition:background .15s,color .15s}
   .duo-l .mini:hover{background:var(--ink);color:var(--paper)}
@@ -190,7 +172,7 @@
 
   <!-- page 1 · hero: nav + poster line float directly on the full-bleed range -->
   <section class="page hero-slab">
-    <div class="mtn-bg" data-vbw="1250" data-par="xMidYMax slice" style="--mtn-phase:-12s" aria-hidden="true"></div>
+    <div class="mtn-bg line-art" data-vbw="1250" data-par="xMidYMax slice" aria-hidden="true"></div>
     <nav class="slab-nav" aria-label="Site">
       <span class="eyebrow"><b>&#9670;</b><span>About BourneWise</span></span>
       <span class="links">
@@ -276,7 +258,7 @@
   </section>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260720c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260723a"></script>
 <script>
 (function () {
   // Fade/rise each page's content in when it snaps into view, back out when it

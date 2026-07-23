@@ -16,9 +16,8 @@
    · One Prussian-blue hero block per page, maximum (ledger / login hero).
    · Labels: 11.5px, +0.09em tracking, sentence case. Never all caps.
    · Textures ship at the opacity baked into the SVGs. Do not raise it.
-   · Fonts: BioRhyme (serif, display) / Spinnaker (sans, everything else) /
-     Fraunces (--lit, italic literary voice — ledes, pull-quotes, reading
-     emphasis only, never headlines or labels), loaded via tokens/fonts.css. */
+   · Fonts: BioRhyme (serif, display + emphasis) / Spinnaker (sans, everything
+     else), loaded via tokens/fonts.css. */
 
 [data-skin="paper"] {
   /* palette — aged Eurasian terracotta: tea-stained plaster grounds,
@@ -43,7 +42,6 @@
   /* three families, three jobs */
   --serif: "BioRhyme", Georgia, serif; /* @kind font */   /* oracle voice, brand, numbers, display titles */
   --sans: "Spinnaker", system-ui, sans-serif; /* @kind font */  /* everything else */
-  --lit: "Fraunces", "BioRhyme", Georgia, serif; /* @kind font */  /* literary italic voice — ledes, pull-quotes, reading emphasis only */
   --font-serif: var(--serif);
   --font-sans: var(--sans);
 

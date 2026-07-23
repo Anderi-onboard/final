@@ -9,14 +9,10 @@
 <style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the faces used above the fold so
      first paint already wears them — no fallback flash, no swap -->
-<link rel="preload" href="./assets/fonts/BioRhyme-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/BioRhyme-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/Pacifico-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/Fraunces-500-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260720g">
-<script src="./ds-base.js?v=20260720g"></script>
+<link rel="stylesheet" href="./styles.css?v=20260723a">
+<script src="./ds-base.js?v=20260723a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -151,11 +147,11 @@
      the account footer, with a little arrow tip poking down to point at the
      Guest / sign-in row. Nudges first-time visitors to sign in (500 free
      units). Shown only to signed-out guests; dismissable, and remembered. ── */
-  .signin-coach{position:relative;margin:16px 5px 2px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;
+  .signin-coach{position:relative;margin:16px 5px 2px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
     white-space:normal;
-    border:2px solid var(--ink);border-radius:14px;box-shadow:3px 4px 0 rgba(42,32,22,.82);
-    padding:10px 24px 11px 12px;animation:coachPop .42s cubic-bezier(.2,.85,.3,1.4) both}
-  .signin-coach:hover{transform:translate(-1px,-1px);box-shadow:4px 5px 0 rgba(42,32,22,.82)}
+    border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
+    padding:10px 24px 11px 12px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) both}
+  .signin-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
   .signin-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
   .signin-coach .ct b{color:var(--ink);font-weight:700}
   .signin-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
@@ -163,9 +159,9 @@
   .signin-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
   /* the arrow — ink outline triangle behind, white fill on top — pointing down
      at the Guest footer directly below it */
-  .signin-coach::before{content:"";position:absolute;left:24px;bottom:-12px;width:22px;height:12px;background:var(--ink);clip-path:polygon(0 0,100% 0,30% 100%)}
-  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:#fff;clip-path:polygon(0 0,100% 0,30% 100%)}
-  @keyframes coachPop{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:none}}
+  .signin-coach::before{content:"";position:absolute;left:24px;bottom:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 0,100% 0,30% 100%)}
+  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:var(--paper-raised);clip-path:polygon(0 0,100% 0,30% 100%)}
+  @keyframes coachPop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   body.rail .signin-coach{display:none}
   .acct-menu{position:absolute;left:6px;bottom:56px;width:230px;
     background:linear-gradient(150deg,rgba(244,233,210,.96),rgba(235,221,194,.84));
@@ -448,7 +444,7 @@
   .composer-zone{padding:14px 56px 24px;position:relative}
   .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:11px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 17px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
-  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:Pacifico, cursive;transition:background .15s}
+  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:var(--serif);transition:background .15s}
   .stria:hover{background:var(--paper-dim)}
   /* CJK falls through BioRhyme (latin-only) to a proper Chinese serif, at a
      size/tracking tuned for hanzi instead of the latin default */
@@ -613,17 +609,17 @@
      white callout pinned under the topbar's "How it works" link, arrow poking
      UP at it. First-time nudge to the walk-through; dismissable, remembered,
      and it retires itself once the guide has been visited. ── */
-  .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;
-    border:2px solid var(--ink);border-radius:14px;box-shadow:3px 4px 0 rgba(42,32,22,.82);
-    padding:10px 26px 11px 13px;animation:coachPop .42s cubic-bezier(.2,.85,.3,1.4) .8s both}
-  .guide-coach:hover{transform:translate(-1px,-1px);box-shadow:4px 5px 0 rgba(42,32,22,.82)}
+  .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
+    border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
+    padding:10px 26px 11px 13px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) .8s both}
+  .guide-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
   .guide-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
   .guide-coach .ct b{color:var(--ink);font-weight:700}
   .guide-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
     font-size:15px;line-height:1;color:var(--ghost);border-radius:5px;transition:background .15s,color .15s}
   .guide-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
-  .guide-coach::before{content:"";position:absolute;right:34px;top:-12px;width:22px;height:12px;background:var(--ink);clip-path:polygon(0 100%,100% 100%,70% 0)}
-  .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:#fff;clip-path:polygon(0 100%,100% 100%,70% 0)}
+  .guide-coach::before{content:"";position:absolute;right:34px;top:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 100%,100% 100%,70% 0)}
+  .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:var(--paper-raised);clip-path:polygon(0 100%,100% 100%,70% 0)}
   @media (max-width:760px){.guide-coach{right:14px;top:60px}}
   .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:680px;width:100%;margin-top:16px}
   .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:8px 17px;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;font-family:var(--sans)}
@@ -648,7 +644,7 @@
 </head>
 <body class="is-empty">
 
-<div class="mtn-bg" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 <div class="side-scrim" id="sideScrim" aria-hidden="true"></div>
 
 <aside class="sidebar" data-screen-label="Landing sidebar">
@@ -753,16 +749,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260720c"></script>
-<script src="./casting-figure.js?v=20260712o"></script>
-<script src="./liuyao-engine.js?v=20260712o"></script>
-<script src="./liuyao-ai.js?v=20260719a"></script>
-<script src="./liuyao-chart.js?v=20260720d"></script>
-<script src="./prompt-engine.js?v=20260720o"></script>
-<script src="./prompt-router.js?v=20260720l"></script>
-<script src="./account.js?v=20260717b"></script>
-<script>window.BW_BUILD="20260720o";</script>
-<script src="./chat-app.js?v=20260720l"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260723a"></script>
+<script src="./casting-figure.js?v=20260723a"></script>
+<script src="./liuyao-engine.js?v=20260723a"></script>
+<script src="./liuyao-ai.js?v=20260723a"></script>
+<script src="./liuyao-chart.js?v=20260723a"></script>
+<script src="./prompt-engine.js?v=20260723a"></script>
+<script src="./prompt-router.js?v=20260723a"></script>
+<script src="./account.js?v=20260723a"></script>
+<script>window.BW_BUILD="20260723a";</script>
+<script src="./chat-app.js?v=20260723a"></script>
 <script>
 (function () {
   "use strict";
