@@ -82,6 +82,14 @@
   }
 
   function initLenis() {
+    // Smooth-scroll is OFF. Lenis runs a permanent requestAnimationFrame loop and
+    // hijacks wheel/touch to lerp the scroll position, writing a CSS var every
+    // frame; on top of the always-animating mountain background that produced the
+    // scroll stutter, dropped frames and stray repaints. Native scroll is
+    // browser/GPU-driven and never stutters — the IntersectionObserver reveals and
+    // the progress rail below still run, now off cheap passive native scroll events.
+    return null;
+    /* eslint-disable no-unreachable */
     if (reduce) return null;
     if (document.documentElement.getAttribute('data-motion-lenis') === 'off') return null;
     if (typeof Lenis === 'undefined') return null;      // vendor script absent → native scroll
