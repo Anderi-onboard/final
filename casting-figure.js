@@ -504,10 +504,7 @@
       ".bw-fig .bw-ln{opacity:0;transform:translateY(4px);cursor:default}",
       /* Line reveal: gentle float-in from below — classical, unhurried */
       ".bw-fig .bw-ln.in{animation:bwLineFloat .8s cubic-bezier(.22,.7,.28,1) forwards}",
-      ".bw-fig .bw-ln.shown{opacity:1;transform:translateY(0);transition:transform .4s cubic-bezier(.22,.7,.28,1),filter .4s ease}",
-      /* micro-interaction: the hovered line alone breathes — a hair of lift and
-         a warm underglow. Nothing else dims, nothing jumps. */
-      ".bw-fig .bw-ln.shown:hover{transform:translateY(-1px);filter:drop-shadow(0 2px 4px rgba(181,80,44,.2))}",
+      ".bw-fig .bw-ln.shown{opacity:1;transform:translateY(0)}",
       "@keyframes bwLineFloat{",
         "0%{opacity:0;transform:translateY(4px)}",
         "30%{opacity:.6}",

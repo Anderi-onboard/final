@@ -11,8 +11,8 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260723a">
-<script src="./ds-base.js?v=20260723a"></script>
+<link rel="stylesheet" href="./styles.css?v=20260723b">
+<script src="./ds-base.js?v=20260723b"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -444,7 +444,7 @@
   .composer-zone{padding:14px 56px 24px;position:relative}
   .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:11px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 17px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
-  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:var(--serif);transition:background .15s}
+  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:var(--font-brand);transition:background .15s}
   .stria:hover{background:var(--paper-dim)}
   /* CJK falls through BioRhyme (latin-only) to a proper Chinese serif, at a
      size/tracking tuned for hanzi instead of the latin default */
@@ -598,11 +598,22 @@
   body.is-empty .composer-zone{flex:none;padding:0 56px 36px;display:flex;flex-direction:column;align-items:center}
   body.is-empty .composer{margin:0;max-width:680px;width:100%}
   body.is-empty .disclaimer{display:none}
-  .site-foot{text-align:center;margin:6px 0 0;font-size:10px;letter-spacing:.04em;color:var(--ghost);font-family:"Spinnaker"}
+  .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 18px;font-size:11px;letter-spacing:.05em;line-height:2;word-spacing:.16em;color:var(--ghost);font-family:"Spinnaker"}
   .site-foot a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line-soft)}
   .site-foot a:hover{color:var(--terracotta)}
   body.is-empty .site-foot{position:fixed;left:0;right:0;bottom:10px;z-index:3}
   #heroEmpty{display:block;text-align:center;padding:0 0 28px}
+
+  /* Mobile topbar fix: the base .claude-note / .top-right rules above sit AFTER
+     the earlier max-width media queries, so those narrow-screen overrides lost
+     on source order — the long Claude note stayed in and shoved "How it works"/
+     "About us" into a wrapped, colliding stack against the menu button. Re-assert
+     the mobile treatment here (last-wins): drop the note, keep the nav one line. */
+  @media (max-width:700px){
+    .claude-note{display:none}
+    .top-right{gap:14px;flex-wrap:nowrap}
+    .topbar .ghost{white-space:nowrap}
+  }
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
@@ -749,16 +760,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260723a"></script>
-<script src="./casting-figure.js?v=20260723a"></script>
-<script src="./liuyao-engine.js?v=20260723a"></script>
-<script src="./liuyao-ai.js?v=20260723a"></script>
-<script src="./liuyao-chart.js?v=20260723a"></script>
-<script src="./prompt-engine.js?v=20260723a"></script>
-<script src="./prompt-router.js?v=20260723a"></script>
-<script src="./account.js?v=20260723a"></script>
-<script>window.BW_BUILD="20260723a";</script>
-<script src="./chat-app.js?v=20260723a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260723b"></script>
+<script src="./casting-figure.js?v=20260723b"></script>
+<script src="./liuyao-engine.js?v=20260723b"></script>
+<script src="./liuyao-ai.js?v=20260723b"></script>
+<script src="./liuyao-chart.js?v=20260723b"></script>
+<script src="./prompt-engine.js?v=20260723b"></script>
+<script src="./prompt-router.js?v=20260723b"></script>
+<script src="./account.js?v=20260723b"></script>
+<script>window.BW_BUILD="20260723b";</script>
+<script src="./chat-app.js?v=20260723b"></script>
 <script>
 (function () {
   "use strict";
