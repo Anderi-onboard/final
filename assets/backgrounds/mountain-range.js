@@ -20,7 +20,7 @@
     /* the rotating page field — a fixed full-viewport colour that cycles through
        the groups on the shared clock. Sits behind the ridges (same z, painted
        first). Held-then-blended like the ridges, so it repaints ~once a cycle. */
-    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;animation:mtn-sys-sky 1440s linear infinite;animation-delay:var(--mtn-phase,-12s)}'
+    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;animation:mtn-sys-sky 900s linear infinite;animation-delay:var(--mtn-phase,-12s)}'
     /* ten ridges, ALL SYNCHRONISED to one shared timeline (same duration, same
        stops, same delay) so at any moment the whole mountain wears ONE palette,
        then crossfades to the next. the full 72-system seasonal rotation is BACK (restored from the
@@ -67,16 +67,16 @@
        floods in, then fades to rest. Transform-only sweep = GPU cheap. */
     + '.mtn-bg.mtn-enter{animation:mtn-enter 1.15s cubic-bezier(.16,1,.3,1) both}'
     + '@keyframes mtn-enter{from{transform:translateY(38px) scale(1.06)}to{transform:none}}'
-    + '.mtn-bg .l1{animation-name:mtn-sys-l1;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.48}'
-    + '.mtn-bg .l2{animation-name:mtn-sys-l2;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.60}'
-    + '.mtn-bg .l3{animation-name:mtn-sys-l3;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.72}'
-    + '.mtn-bg .l4{animation-name:mtn-sys-l4;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.83}'
-    + '.mtn-bg .l5{animation-name:mtn-sys-l5;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.90}'
-    + '.mtn-bg .l6{animation-name:mtn-sys-l6;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.95}'
-    + '.mtn-bg .l7{animation-name:mtn-sys-l7;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:.97}'
-    + '.mtn-bg .l8{animation-name:mtn-sys-l8;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
-    + '.mtn-bg .l9{animation-name:mtn-sys-l9;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
-    + '.mtn-bg .l10{animation-name:mtn-sys-l10;animation-duration:1440s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
+    + '.mtn-bg .l1{animation-name:mtn-sys-l1;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.48}'
+    + '.mtn-bg .l2{animation-name:mtn-sys-l2;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.60}'
+    + '.mtn-bg .l3{animation-name:mtn-sys-l3;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.72}'
+    + '.mtn-bg .l4{animation-name:mtn-sys-l4;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.83}'
+    + '.mtn-bg .l5{animation-name:mtn-sys-l5;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.90}'
+    + '.mtn-bg .l6{animation-name:mtn-sys-l6;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.95}'
+    + '.mtn-bg .l7{animation-name:mtn-sys-l7;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.97}'
+    + '.mtn-bg .l8{animation-name:mtn-sys-l8;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
+    + '.mtn-bg .l9{animation-name:mtn-sys-l9;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
+    + '.mtn-bg .l10{animation-name:mtn-sys-l10;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
     + '.mtn-bg .flow-1{animation:mtn-flow-l 145s linear infinite}.mtn-bg .flow-2{animation:mtn-flow-r 128s linear infinite}'
     + '.mtn-bg .flow-3{animation:mtn-flow-l 112s linear infinite}.mtn-bg .flow-4{animation:mtn-flow-r 96s linear infinite}'
     + '.mtn-bg .flow-5{animation:mtn-flow-l 82s linear infinite}.mtn-bg .flow-6{animation:mtn-flow-r 70s linear infinite}'
@@ -103,14 +103,34 @@
   var PAL = PG.split(';').map(function (s) {
     var a = []; for (var k = 0; k < 10; k++) a.push('#' + s.substr(k * 6, 6)); return a;
   });
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = (Math.random() * (i + 1)) | 0, t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function hsv(hx) {
+    var r = parseInt(hx.substr(1, 2), 16) / 255, g = parseInt(hx.substr(3, 2), 16) / 255, b = parseInt(hx.substr(5, 2), 16) / 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, h = 0;
+    if (d) { if (mx === r) h = ((g - b) / d) % 6; else if (mx === g) h = (b - r) / d + 2; else h = (r - g) / d + 4; h *= 60; if (h < 0) h += 360; }
+    return { h: h, s: mx ? d / mx : 0 };
+  }
+  function hdist(a, b) { var d = Math.abs(a - b) % 360; return Math.min(d, 360 - d); }
+
   var NEARWHITE = PSEGNAMES.indexOf('近白段');
-  var LIGHT = [], COLOR = [];
-  for (var gi = 0; gi < PAL.length; gi++) (PSEG[gi] === NEARWHITE ? LIGHT : COLOR).push(gi);
-  for (var sh = COLOR.length - 1; sh > 0; sh--) { var jj = (Math.random() * (sh + 1)) | 0; var tt = COLOR[sh]; COLOR[sh] = COLOR[jj]; COLOR[jj] = tt; }
+  var LIGHT = [], CLASH = [], MONO = [];
+  for (var gi = 0; gi < PAL.length; gi++) {
+    if (PSEG[gi] === NEARWHITE) { LIGHT.push(gi); continue; }
+    /* does the ◆ contrast band sit on a genuinely different hue from the ramp? */
+    var cb = PCB[gi], hs = PAL[gi].map(hsv), others = [];
+    for (var i = 0; i < 10; i++) if (i !== cb && hs[i].s > 0.12) others.push(hs[i].h);
+    if (!others.length) for (var i2 = 0; i2 < 10; i2++) if (i2 !== cb) others.push(hs[i2].h);
+    others.sort(function (a, b) { return a - b; });
+    (hdist(hs[cb].h, others[others.length >> 1]) > 40 && hs[cb].s > 0.12 ? CLASH : MONO).push(gi);
+  }
+  shuffle(CLASH); shuffle(MONO); shuffle(LIGHT);
+  /* colour pool favours the real clashes; a quarter of the mono groups ride
+     along so the range still visits quiet single-hue moments. */
+  var CPOOL = shuffle(CLASH.concat(MONO.slice(0, Math.round(MONO.length * 0.25))));
   var SEQ = [], ci = 0;
   for (var li = 0; li < LIGHT.length; li++) {
     SEQ.push(LIGHT[li]);
-    SEQ.push(COLOR[ci++ % COLOR.length]);
+    SEQ.push(CPOOL[ci++ % CPOOL.length]);
   }
   var KF = '';
   for (var L = 1; L <= 10; L++) {
@@ -130,7 +150,7 @@
   KF += '@keyframes mtn-sys-sky{' + sky + '}';
   CSS = CSS.replace('/*__MTN_KEYFRAMES__*/', KF);
 
-  var HOLD = 0.07;
+  var HOLD = (100 / SEQ.length) * 0.7;  /* crossfade spans ~70% of each slot → continuous morph, brief settle */
   CSS = CSS.replace(/@keyframes (mtn-sys-(?:l\d+|sky))\{((?:[^{}]+\{[^{}]*\})+)\}/g, function (m, name, body) {
     var prop = 'fill', stops = [];
     body.replace(/([\d.,%]+)\{(fill|background-color):(#[0-9A-Fa-f]+)\}/g, function (mm, sel, pr, col) {
@@ -227,7 +247,7 @@
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
       /* random palette starting point per page load (host may still pin --mtn-phase) */
       if (!el.style.getPropertyValue('--mtn-phase')) {
-        el.style.setProperty('--mtn-phase', '-' + (Math.random() * 1440).toFixed(1) + 's');
+        el.style.setProperty('--mtn-phase', '-' + (Math.random() * 900).toFixed(1) + 's');
       }
       /* rotating page field on the SAME clock, painted behind the ridges */
       if (el.previousElementSibling == null || !el.previousElementSibling.classList.contains('mtn-sky')) {
