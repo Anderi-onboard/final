@@ -11,8 +11,8 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260726a">
-<script src="./ds-base.js?v=20260726a"></script>
+<link rel="stylesheet" href="./styles.css?v=20260726b">
+<script src="./ds-base.js?v=20260726b"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -155,11 +155,17 @@
     .duo{grid-template-columns:1fr;gap:30px}
     .tiles{grid-template-columns:1fr}
   }
+  /* Between roughly 700 and 900px the centred "Scroll" hint lands on the same
+     baseline as the headline's last line and reads as part of it. Give the
+     headline its own lane so the hint always sits clear beneath it. */
+  @media (max-width:900px){
+    .hero-slab h1{padding-bottom:92px}
+  }
   @media (max-width:760px){
     .page-inner{padding:48px 18px}
     .slab-nav{padding:16px 20px 0}
     .slab-nav .ghost{display:none}
-    .hero-slab h1{padding:40px 20px 34px}
+    .hero-slab h1{padding:40px 20px 88px}
     .band{padding:40px 22px 36px}
     .duo{padding:0}
   }
@@ -258,7 +264,7 @@
   </section>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260726a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726b"></script>
 <script>
 (function () {
   // Fade/rise each page's content in when it snaps into view, back out when it
