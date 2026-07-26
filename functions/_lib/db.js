@@ -188,6 +188,18 @@ export async function recordBillingEvent(db, eventId, provider, type, userId) {
   return { fresh: !!(r && r.meta && r.meta.changes > 0) };
 }
 
+// Release the idempotency claim when fulfilment FAILED after we'd already
+// staked it. The claim is taken before the grant so a duplicate delivery can
+// never double-pay; the cost is that a mid-fulfilment error would otherwise
+// leave the event marked done forever, and the provider's retry — the only
+// thing that could still deliver those units — would be waved off as a
+// duplicate. Paid customer, no units, no second chance. Dropping the row puts
+// the event back in play for exactly that retry.
+export async function deleteBillingEvent(db, eventId) {
+  await db.prepare('DELETE FROM billing_events WHERE event_id=?').bind(String(eventId)).run();
+  return { ok: true };
+}
+
 export async function upsertSubscription(db, { id, userId, provider, customerId, plan, status, periodEnd }) {
   const t = now();
   await db.prepare(

@@ -20,7 +20,7 @@
 import { sessionFromRequest } from '../../_lib/session.js';
 import {
   getUser, grantUnits, PLAN_GRANT,
-  recordBillingEvent, upsertSubscription, getSubscriptionByUser, getSubscriptionById, setPlanQuiet
+  recordBillingEvent, deleteBillingEvent, upsertSubscription, getSubscriptionByUser, getSubscriptionById, setPlanQuiet
 } from '../../_lib/db.js';
 import { creemBase } from '../checkout.js';
 
@@ -116,6 +116,20 @@ async function webhook(request, env, db) {
   if (!rec.fresh) return json({ ok: true, duplicate: true }, 200);
   if (!userId) return json({ ok: true, ignored: 'no user resolved' }, 200);
 
+  // Fulfilment runs under the claim taken above. If it throws part-way (a D1
+  // blip mid-grant), the claim must be released: otherwise the event stays
+  // marked handled, Creem's retry is dismissed as a duplicate, and a paying
+  // customer never receives their units. Release, then answer 500 so Creem
+  // does retry.
+  try {
+    return await fulfil();
+  } catch (e) {
+    await deleteBillingEvent(db, eventKey).catch(() => {});
+    return json({ error: 'fulfilment failed, will retry', detail: String((e && e.message) || e) }, 500);
+  }
+
+  async function fulfil() {
+
   const productId = productIdOf(obj);
   const plan = planForSku(meta.sku) || planForProduct(env, productId);
   const customerId = customerIdOf(obj);
@@ -181,6 +195,7 @@ async function webhook(request, env, db) {
   }
 
   return json({ ok: true, unhandled: type }, 200);
+  } // end fulfil()
 }
 
 // ── helpers ────────────────────────────────────────────────────────────────
