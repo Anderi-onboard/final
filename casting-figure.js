@@ -322,9 +322,6 @@
       'stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round"></path>';
   }
 
-  /* ── mouse tilt (disabled — no viewpoint-following on the figures) ── */
-  function attachTilt(wrap, reduced) { return; }
-
   /* ── build fig-wrap column — DOM matches pairHTML for seamless WYSIWYG handoff ── */
   function buildHexWrap(lines, figOpts, reduced) {
     figOpts = figOpts || {};
@@ -347,7 +344,6 @@
     wrap.appendChild(glyph);
     wrap.appendChild(tagLower);
     wrap.appendChild(name);
-    attachTilt(wrap, reduced);
 
     return {
       wrap: wrap,
@@ -525,8 +521,7 @@
       /* arrow + pair */
       ".bw-pair-arrow{display:flex;align-items:center;padding-bottom:18px}",
       ".bw-pair{display:inline-flex;align-items:center;gap:14px}",
-      ".bw-fig-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:5px;",
-        "transform-style:preserve-3d;transition:transform .2s cubic-bezier(.18,.72,.28,1)}",
+      ".bw-fig-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:5px}",
       ".bw-fig-glyph{display:block}",
       ".bw-fig-name{font-family:var(--sans);font-size:13px;color:var(--ink)}",
       ".bw-fig-name.relating{color:var(--prussian)}",
@@ -641,27 +636,15 @@
       /* opacity+transform ONLY — an animated filter:blur on SVG forces a full
          re-raster every frame and was the frame-skip ("跳帧") source */
       "@keyframes bwAfRow{0%{opacity:0;transform:translateY(9px)}55%{opacity:1}78%{transform:translateY(-.6px)}100%{opacity:1;transform:none}}",
-      /* ── the living board: everything loops gently & in step ── */
-      "@media (prefers-reduced-motion:no-preference){",
-        /* each ink line undulates on a slow, irregular ocean swell — per-line
-           non-harmonic periods (--wd) + offset phases (--bd) drift in and out of
-           sync so the figure never bobs in unison */
-        ".bw-af-live .bw-af-ln{animation:bwAfSwell var(--wd,7s) linear infinite;animation-delay:var(--bd,0s)}",
-        /* moving-line marks pulse */
-        ".bw-af-live .bw-af-mark{transform-box:fill-box;transform-origin:center;animation:bwAfMark 2.4s ease-in-out infinite}",
-        ".bw-af-live .bw-af-markbg{transform-box:fill-box;transform-origin:center;animation:bwAfMark 2.4s ease-in-out infinite}",
-        /* sheng-ke ties: a marching dashed current — solid-feel base + flowing dashes */
-        ".bw-af-live .bw-af-flow{stroke-dasharray:2 9;animation:bwAfFlow 1s linear infinite;animation-delay:calc(var(--fi,0)*.25s)}",
-        ".bw-af-live .bw-af-flow.gen{stroke-dasharray:2 8;stroke-width:2.6;animation-duration:.8s}",
-        ".bw-af-live .bw-af-flow.ctrl{stroke-dasharray:6 6;stroke-width:2.2;animation-duration:1.25s}",
-        ".bw-af-live .bw-af-flow.gen-rev{stroke-dasharray:2 9;stroke-width:1.9;opacity:.78;animation-name:bwAfFlowBack;animation-duration:1.7s}",
-        ".bw-af-live .bw-af-flow.ctrl-rev{stroke-dasharray:6 6;stroke-width:1.9;opacity:.78;animation-name:bwAfFlowBack;animation-duration:1.9s}",
-        ".bw-af-live .bw-af-flow.peer{stroke-dasharray:2 8;stroke-width:2;opacity:.7;animation-duration:2.1s}",
-      "}",
-      "@keyframes bwAfSwell{0%{transform:translateY(0)}6.25%{transform:translateY(-.84px)}12.5%{transform:translateY(-1.56px)}18.75%{transform:translateY(-2.03px)}25%{transform:translateY(-2.2px)}31.25%{transform:translateY(-2.03px)}37.5%{transform:translateY(-1.56px)}43.75%{transform:translateY(-.84px)}50%{transform:translateY(0)}56.25%{transform:translateY(.84px)}62.5%{transform:translateY(1.56px)}68.75%{transform:translateY(2.03px)}75%{transform:translateY(2.2px)}81.25%{transform:translateY(2.03px)}87.5%{transform:translateY(1.56px)}93.75%{transform:translateY(.84px)}100%{transform:translateY(0)}}",
-      "@keyframes bwAfMark{0%,100%{transform:scale(1)}50%{transform:scale(1.22)}}",
-      "@keyframes bwAfFlow{to{stroke-dashoffset:-11}}",
-      "@keyframes bwAfFlowBack{to{stroke-dashoffset:11}}",
+      /* ── the board settles after its single reveal and HOLDS STILL: no idle
+         loops, no perpetual motion. Sheng-ke ties render as static dashed
+         currents; moving-line marks stay put at rest. ── */
+      ".bw-af-live .bw-af-flow{stroke-dasharray:2 9}",
+      ".bw-af-live .bw-af-flow.gen{stroke-dasharray:2 8;stroke-width:2.6}",
+      ".bw-af-live .bw-af-flow.ctrl{stroke-dasharray:6 6;stroke-width:2.2}",
+      ".bw-af-live .bw-af-flow.gen-rev{stroke-dasharray:2 9;stroke-width:1.9;opacity:.78}",
+      ".bw-af-live .bw-af-flow.ctrl-rev{stroke-dasharray:6 6;stroke-width:1.9;opacity:.78}",
+      ".bw-af-live .bw-af-flow.peer{stroke-dasharray:2 8;stroke-width:2;opacity:.7}",
       /* full board: header + dense per-line branches (Sortis tier) */
       ".bw-af-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--sans);font-size:11px;color:var(--dim);padding-bottom:9px;margin-bottom:2px;border-bottom:1px solid var(--line-soft)}",
       ".bw-af-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
@@ -681,23 +664,18 @@
       "@media (prefers-reduced-motion:no-preference){",
         /* lines float in bottom\u2192top, same brush as the casting figure */
         ".bw-zg-row{opacity:0;transform:translateY(5px);transform-box:fill-box;animation:bwZgRow .7s cubic-bezier(.22,.7,.28,1) forwards;animation-delay:var(--d,0s)}",
-        /* the moving line breathes slowly */
-        ".bw-zg-move{animation:bwZgPulse 2.6s ease-in-out infinite;animation-delay:.9s}",
-        /* the sheng-ke guide draws itself once, after the lines settle */
+        /* the sheng-ke guide draws itself ONCE, after the lines settle, then stops */
         ".bw-zg-arrow{stroke-dasharray:var(--bw-zg-len);stroke-dashoffset:var(--bw-zg-len);animation:bwZgDraw .9s calc(.85s + var(--bw-zg-i,0)*.3s) ease forwards}",
-        /* then a flowing current runs along it \u2014 line-style + speed encode the tie & its strength */
-        ".bw-zg-flow{opacity:1;animation:bwZgFlowFwd 1s linear infinite;animation-delay:calc(1.15s + var(--bw-zg-i,0)*.3s)}",
-        ".bw-zg-flow.gen{stroke-dasharray:1.6 8.4;stroke-width:2.8;animation-duration:.85s}",          /* feeds you \u2014 fast bright stream */
-        ".bw-zg-flow.ctrl{stroke-dasharray:5 5;stroke-width:2.4;animation-duration:1.2s}",             /* checks you \u2014 firm pressure pulses */
-        ".bw-zg-flow.gen-rev{stroke-dasharray:1.6 8.4;stroke-width:1.9;opacity:.7;animation-name:bwZgFlowBack;animation-duration:1.8s}",  /* you feed it \u2014 slow drain outward */
-        ".bw-zg-flow.ctrl-rev{stroke-dasharray:5 5;stroke-width:1.9;opacity:.7;animation-name:bwZgFlowBack;animation-duration:1.9s}",     /* you check it \u2014 slow hold outward */
-        ".bw-zg-flow.peer{stroke-dasharray:2 8;stroke-width:2;opacity:.6;animation-duration:2.2s}",    /* shared element \u2014 gentle even drift */
+        /* the current holds as a static dashed tie \u2014 line-style encodes the tie & strength, but it does not march */
+        ".bw-zg-flow{opacity:1;stroke-dashoffset:0}",
+        ".bw-zg-flow.gen{stroke-dasharray:1.6 8.4;stroke-width:2.8}",          /* feeds you */
+        ".bw-zg-flow.ctrl{stroke-dasharray:5 5;stroke-width:2.4}",             /* checks you */
+        ".bw-zg-flow.gen-rev{stroke-dasharray:1.6 8.4;stroke-width:1.9;opacity:.7}",  /* you feed it */
+        ".bw-zg-flow.ctrl-rev{stroke-dasharray:5 5;stroke-width:1.9;opacity:.7}",     /* you check it */
+        ".bw-zg-flow.peer{stroke-dasharray:2 8;stroke-width:2;opacity:.6}",    /* shared element */
       "}",
       "@keyframes bwZgRow{to{opacity:1;transform:translateY(0)}}",
       "@keyframes bwZgDraw{to{stroke-dashoffset:0}}",
-      "@keyframes bwZgFlowFwd{to{stroke-dashoffset:-10}}",
-      "@keyframes bwZgFlowBack{to{stroke-dashoffset:10}}",
-      "@keyframes bwZgPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.55);opacity:.5}}",
       /* settle fallback: once added, the figure is guaranteed visible even if the
          entrance animation was interrupted (background tab, capture, print) */
       ".bw-zg-svg.settled .bw-zg-row{animation:none;opacity:1;transform:none}",
