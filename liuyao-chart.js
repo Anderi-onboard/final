@@ -213,13 +213,9 @@
         paint(li,true);
       }
       function clear(){ if(pinned!==null){show(pinned);return;} readout.setAttribute('data-empty','1'); readout.innerHTML='<span class="lyc-ro-hint">Hover or tap a line to read it</span>'; paint(-1,false); }
-      Array.prototype.forEach.call(rows,function(row){
-        var li=+row.getAttribute('data-li');
-        row.addEventListener('mouseenter',function(){ if(pinned===null) show(li); });
-        row.addEventListener('click',function(){ pinned=(pinned===li)?null:li; pinned===null?clear():show(li); });
-        row.addEventListener('keydown',function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); pinned=(pinned===li)?null:li; pinned===null?clear():show(li); } });
-      });
-      fig.querySelector('.lyc-figs').addEventListener('mouseleave',clear);
+      /* hover/tap line-reading interaction removed (user call): the casting
+         figure is a static reveal, no mouse-hover behaviour on the lines. */
+      void rows; void show; void clear; void paint; void pinned;
     });
   }
 
