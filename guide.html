@@ -64,7 +64,11 @@
   .hero .sub{margin-top:30px;max-width:46ch;font-size:clamp(16px,1.5vw,18px);line-height:1.7;color:var(--dim)}
   .hero .meta{margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
   .cue{position:absolute;left:34px;bottom:40px;display:inline-flex;align-items:center;gap:12px;
-    font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+    font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
+    transition:opacity .5s var(--ease-out)}
+  /* the invitation has been taken — retire it, so it never rides up into the
+     top bar and collides with the wordmark */
+  body.moved .cue{opacity:0;pointer-events:none}
   .cue .line{display:block;width:52px;height:1px;background:var(--faint);position:relative;overflow:hidden}
   .cue .line::after{content:"";position:absolute;inset:0;width:40%;background:var(--terracotta);animation:cueRun 2.4s var(--ease-in-out) infinite}
   @keyframes cueRun{0%{transform:translateX(-110%)}60%,100%{transform:translateX(320%)}}
@@ -276,6 +280,12 @@
   (function () {
     var top = document.getElementById('top');
     var hero = document.querySelector('.hero');
+    /* retire the "scroll to begin" cue as soon as the reader has moved */
+    var onScroll = function () {
+      document.body.classList.toggle('moved', window.scrollY > 40);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
     if (!('IntersectionObserver' in window)) { top.classList.add('stuck'); return; }
     new IntersectionObserver(function (e) {
       top.classList.toggle('stuck', !e[0].isIntersecting);

@@ -98,6 +98,18 @@
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:880px){body .sidebar{display:none}.shell{padding:30px 20px 70px}.field{width:180px}}
+  /* Phones: .rr is flex:none, so a row carrying two buttons (Billing portal +
+     Cancel subscription) refused to shrink and crushed the label column to one
+     word per line, with the buttons sitting on top of the text. Stack the row
+     instead — label first, controls beneath on their own full-width line. */
+  @media (max-width:560px){
+    .row{flex-wrap:wrap;align-items:flex-start;gap:11px}
+    .row .rl{flex:1 1 100%}
+    .row .rr{flex:1 1 100%;flex-wrap:wrap;justify-content:flex-start}
+    .row .rr .btn{flex:0 1 auto}
+    .id-row{flex-wrap:wrap}
+    .field{width:100%}
+  }
   @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
   @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}.panel::before{animation:none}}
 </style>

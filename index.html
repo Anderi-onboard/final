@@ -613,6 +613,12 @@
     .claude-note{display:none}
     .top-right{gap:14px;flex-wrap:nowrap}
     .topbar .ghost{white-space:nowrap}
+    /* The empty-state footer is pinned to the viewport on desktop, but on a
+       phone it wraps to three lines and lands ON TOP of the composer. Put it
+       back in normal flow so it simply sits under the input. Must come after
+       the .site-foot{position:fixed} rule above to win on source order. */
+    body.is-empty .site-foot{position:static;margin-top:12px}
+    body.is-empty .composer-zone{padding-bottom:16px}
   }
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
