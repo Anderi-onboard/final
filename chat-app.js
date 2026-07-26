@@ -374,7 +374,6 @@
         a.className = "reading";
         a.innerHTML = readingHTML(m, c.id, i);
         threadInner.appendChild(a);
-        if (window.BWLiuYaoChart) window.BWLiuYaoChart.wire(a);
         // optical centering for reloaded boards (same as during a live cast)
         if (window.BWFigure && window.BWFigure.opticalCenter) {
           (function (art) {
