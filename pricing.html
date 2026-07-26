@@ -11,8 +11,8 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260723b">
-<script src="./ds-base.js?v=20260723b"></script>
+<link rel="stylesheet" href="./styles.css?v=20260723c">
+<script src="./ds-base.js?v=20260723c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -65,6 +65,9 @@
 
   /* plans */
   .billing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:32px;font-size:14px;color:var(--dim)}
+  /* this display:flex would otherwise beat the [hidden] attribute's UA
+     display:none, leaving the annual toggle on screen — see the markup note */
+  .billing-toggle[hidden]{display:none}
   .billing-toggle .mo-label,.billing-toggle .yr-label{transition:color .15s}
   .billing-toggle .active{color:var(--ink);font-weight:600}
   .billing-toggle button{position:relative;width:48px;height:26px;border-radius:99px;background:var(--line);border:none;cursor:pointer;transition:background .2s}
@@ -207,7 +210,14 @@
     </div>
   </section>
 
-  <div class="billing-toggle">
+  <!-- Annual billing is HIDDEN until real annual products exist in Creem.
+       The toggle only ever repainted the displayed price: checkout still buys
+       CREEM_PRODUCT_PRO / _PREMIUM, i.e. the MONTHLY product. Showing "$15.83
+       / month, billed yearly · Save ~17%" and then charging $19 every month is
+       a mispriced sale, so the control stays out of the page until there are
+       annual product ids (and a matching unit-grant cadence — subscription.paid
+       fires once a year for an annual plan, not monthly). -->
+  <div class="billing-toggle" hidden>
     <span class="mo-label active">Monthly</span>
     <button id="billingSwitch" aria-label="Toggle annual billing"></button>
     <span class="yr-label">Annual</span>
@@ -305,10 +315,10 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260723b"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260723b"></script>
-<script src="./ds-motion.js?v=20260723b"></script>
-<script src="./account.js?v=20260723b"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260723c"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260723c"></script>
+<script src="./ds-motion.js?v=20260723c"></script>
+<script src="./account.js?v=20260723c"></script>
 <script>
 (function () {
   "use strict";
@@ -346,49 +356,48 @@
     });
   }
 
-  // Try the real hosted checkout first. When payments aren't configured yet
-  // (503) or the call fails, fall back to the local demo grant so the page keeps
-  // working exactly as before. 401 → the user needs a real account first.
-  function startCheckout(sku, fallback) {
+  // Real hosted checkout, and ONLY that. The demo-era fallback that granted the
+  // units locally when the call failed cannot survive on a live payments page:
+  // a 502 from Creem, a network blip or a missing env var would tell someone
+  // "Premium activated · +45,000 units" while the server — the only source of
+  // truth for plan and balance — still had them on free and unpaid. Say plainly
+  // that nothing was charged instead, and let them retry.
+  function startCheckout(sku) {
     fetch("/api/checkout", {
       method: "POST", headers: { "content-type": "application/json" },
       credentials: "same-origin", body: JSON.stringify({ sku: sku })
     }).then(function (r) {
       if (r.status === 401) { toast("Sign in to purchase."); setTimeout(function () { location.href = "./login.html"; }, 900); return null; }
-      if (r.status === 503) { if (fallback) fallback(); return null; }   // payments not live yet
-      return r.json().catch(function () { return null; });
-    }).then(function (d) {
-      if (d && d.url) { location.href = d.url; }
-      else if (d && d.error) { if (fallback) fallback(); }
-    }).catch(function () { if (fallback) fallback(); });
+      return r.json().catch(function () { return null; }).then(function (d) { return { status: r.status, body: d }; });
+    }).then(function (res) {
+      if (!res) return;
+      if (res.status === 200 && res.body && res.body.url) { location.href = res.body.url; return; }
+      if (res.status === 503) { toast("Payments aren’t switched on yet — nothing was charged."); return; }
+      toast("Couldn’t open checkout — nothing was charged. Please try again.");
+    }).catch(function () {
+      toast("Couldn’t open checkout — nothing was charged. Please try again.");
+    });
   }
 
   document.querySelectorAll(".plan .choose").forEach(function (b) {
     b.addEventListener("click", function () {
       if (b.classList.contains("current")) return;
       var plan = b.closest(".plan").getAttribute("data-plan");
-      var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
-      function demo() {
-        var s = A.state();
-        if (!s.account.signedIn) { s.account.signedIn = true; s.account.name = "Elias Vance"; s.account.email = "elias@iname.com"; s.account.avatar = "EV"; }
-        s.account.plan = plan;
-        s.units += grant;
-        if (annual) s.account.billing = "annual";
-        A.save(s); paint();
-        toast(A.planName(plan) + (annual ? " (annual)" : "") + " activated · +" + grant.toLocaleString("en-US") + " units");
+      // Free isn't a purchase — it's what a new account already carries, granted
+      // server-side at sign-up. Send them to sign in rather than inventing a
+      // local session and balance.
+      if (plan === "free") {
+        if (!A.state().account.signedIn) { location.href = "./login.html"; }
+        else { toast("You’re already on the free plan."); }
+        return;
       }
-      // the free trial never goes through checkout; paid plans do (with demo fallback)
-      if (plan === "free") { demo(); return; }
-      startCheckout(plan, demo);
+      startCheckout(plan);
     });
   });
   document.querySelectorAll(".pack").forEach(function (b) {
     b.addEventListener("click", function () {
       var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
-      startCheckout("pack" + grant, function () {
-        var s = A.state(); s.units += grant; A.save(s); paint();
-        toast("+" + grant.toLocaleString("en-US") + " units added to your balance.");
-      });
+      startCheckout("pack" + grant);
     });
   });
 

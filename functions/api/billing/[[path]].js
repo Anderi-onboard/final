@@ -151,6 +151,18 @@ async function webhook(request, env, db) {
     return json({ ok: true }, 200);
   }
 
+  // A renewal charge failed and Creem is retrying. Keep the plan and the units
+  // (they may well pay) but record the real status, so /status and the settings
+  // page stop claiming the subscription is healthy. canceled/expired below is
+  // what actually downgrades.
+  if (type === 'subscription.past_due') {
+    if (subId) {
+      const row = await getSubscriptionById(db, subId);
+      if (row) await upsertSubscription(db, { id: subId, userId, provider: PROVIDER, customerId, plan: row.plan, status: 'past_due', periodEnd: toTs(periodEnd) });
+    }
+    return json({ ok: true }, 200);
+  }
+
   if (type === 'subscription.scheduled_cancel') {
     if (subId) {
       const row = await getSubscriptionById(db, subId);
