@@ -11,8 +11,8 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260726c">
-<script src="./ds-base.js?v=20260726c"></script>
+<link rel="stylesheet" href="./styles.css?v=20260726d">
+<script src="./ds-base.js?v=20260726d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -93,9 +93,9 @@
      which blurred the real text instead of sitting behind it. */
   .ledger{position:relative;margin-top:14px;flex:none;padding:13px 14px 14px}
   .ledger::before{content:'';position:absolute;inset:-45px;z-index:-1;pointer-events:none;
-    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(11px) saturate(1.2);-webkit-backdrop-filter:blur(11px) saturate(1.2);
-    border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);transform:translateZ(0);
+    background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
+    backdrop-filter:blur(22px) saturate(0);-webkit-backdrop-filter:blur(22px) saturate(0);
+    border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;backdrop-filter:blur(24px) saturate(0);-webkit-backdrop-filter:blur(24px) saturate(0);transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%),linear-gradient(to right,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%),linear-gradient(to right,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect}
@@ -125,14 +125,14 @@
      via ::before, same technique as .ledger above */
   .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;padding:9px 10px;cursor:pointer;text-align:left;width:100%}
   .side-foot::before{content:'';position:absolute;inset:-28px;z-index:-1;pointer-events:none;
-    background:linear-gradient(158deg,rgba(244,233,210,.22) 0%,rgba(235,221,194,.07) 52%,rgba(244,233,210,.2) 100%);
-    backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);
+    background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
+    backdrop-filter:blur(20px) saturate(0);-webkit-backdrop-filter:blur(20px) saturate(0);
     border-radius:11px 9px 10px 8px / 8px 11px 7px 9px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%),linear-gradient(to right,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%),linear-gradient(to right,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);
     -webkit-mask-composite:source-in;mask-composite:intersect;
     transition:background .15s}
-  .side-foot:hover::before{background:linear-gradient(158deg,rgba(244,233,210,.32) 0%,rgba(235,221,194,.15) 52%,rgba(244,233,210,.3) 100%)}
+  .side-foot:hover::before{background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.24) 52%,rgba(255,255,255,.42) 100%)}
   .side-foot > *{position:relative;z-index:1}
   
   .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}
@@ -147,7 +147,7 @@
      the account footer, with a little arrow tip poking down to point at the
      Guest / sign-in row. Nudges first-time visitors to sign in (500 free
      units). Shown only to signed-out guests; dismissable, and remembered. ── */
-  .signin-coach{position:relative;margin:16px 5px 2px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
+  .signin-coach{position:relative;margin:16px 5px 2px;background:rgba(255,255,255,.66);backdrop-filter:blur(22px) saturate(0);-webkit-backdrop-filter:blur(22px) saturate(0);color:var(--ink);text-align:left;cursor:pointer;
     white-space:normal;
     border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
     padding:10px 24px 11px 12px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) both}
@@ -160,14 +160,14 @@
   /* the arrow — ink outline triangle behind, white fill on top — pointing down
      at the Guest footer directly below it */
   .signin-coach::before{content:"";position:absolute;left:24px;bottom:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 0,100% 0,30% 100%)}
-  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:var(--paper-raised);clip-path:polygon(0 0,100% 0,30% 100%)}
+  .signin-coach::after{content:"";position:absolute;left:26px;bottom:-8px;width:17px;height:9px;background:rgba(255,255,255,.82);clip-path:polygon(0 0,100% 0,30% 100%)}
   @keyframes coachPop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   body.rail .signin-coach{display:none}
   .acct-menu{position:absolute;left:6px;bottom:56px;width:230px;
-    background:linear-gradient(150deg,rgba(244,233,210,.96),rgba(235,221,194,.84));
+    background:linear-gradient(150deg,rgba(255,255,255,.64),rgba(250,251,252,.48));
     border:1px solid rgba(255,255,255,.6);border-radius:13px;padding:6px;
     box-shadow:0 20px 54px rgba(31,29,26,.26),inset 0 1px 0 rgba(255,255,255,.7);
-    backdrop-filter:blur(13px) saturate(1.4);-webkit-backdrop-filter:blur(13px) saturate(1.4);
+    backdrop-filter:blur(26px) saturate(0);-webkit-backdrop-filter:blur(26px) saturate(0);
     display:flex;flex-direction:column;z-index:30;
     opacity:0;transform:translateY(6px);visibility:hidden;pointer-events:none;
     transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
@@ -442,7 +442,7 @@
   @keyframes drip{0%{transform:translateY(-9px) scale(.3);opacity:0}25%{transform:translateY(0) scale(1);opacity:1}70%{opacity:1}92%{opacity:0}100%{opacity:0}}
 
   .composer-zone{padding:14px 56px 24px;position:relative}
-  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:11px;background:linear-gradient(150deg,rgba(244,233,210,.92),rgba(244,233,210,.8));backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 17px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
+  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:11px;background:linear-gradient(150deg,rgba(255,255,255,.78),rgba(255,255,255,.66));backdrop-filter:blur(24px) saturate(0);-webkit-backdrop-filter:blur(24px) saturate(0);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:9px 9px 9px 17px;box-shadow:0 6px 20px rgba(31,29,26,.12);transition:border-color .18s,box-shadow .18s;transform:translateZ(0)}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
   .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:999px;padding:8px 14px;flex-shrink:0;font-family:var(--font-brand);transition:background .15s}
   .stria:hover{background:var(--paper-dim)}
@@ -458,7 +458,7 @@
   .disclaimer{text-align:center;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
 
   /* ── method picker popover — the two castings, made distinct ── */
-  .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:13px;padding:7px;box-shadow:0 16px 44px rgba(31,29,26,.2);display:flex;flex-direction:column;gap:2px;z-index:40;
+  .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(0);-webkit-backdrop-filter:blur(24px) saturate(0);border:1px solid var(--line);border-radius:13px;padding:7px;box-shadow:0 16px 44px rgba(31,29,26,.2);display:flex;flex-direction:column;gap:2px;z-index:40;
     opacity:0;transform:translate(-50%,6px);visibility:hidden;pointer-events:none;
     transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
   .method-menu.open{opacity:1;transform:translate(-50%,0);visibility:visible;pointer-events:auto;
@@ -495,7 +495,7 @@
   .modal-hero h2{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;color:var(--paper);margin-top:3px}
   .modal-hero .lbl{color:var(--ghost)}
   .modal-x{color:var(--paper);font-size:18px;line-height:1;padding:2px 6px;border-radius:6px;transition:background .15s}
-  .modal-x:hover{background:rgba(244,233,210,.16)}
+  .modal-x:hover{background:rgba(255,255,255,.26)}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px 26px 8px;align-items:stretch}
   .plan{border:1px solid var(--line);border-radius:11px;padding:18px 16px 16px;background:transparent;display:flex;flex-direction:column;gap:7px;position:relative}
   .plan.feat{border-color:var(--terracotta);box-shadow:0 12px 32px rgba(181,80,44,.12)}
@@ -646,7 +646,7 @@
      white callout pinned under the topbar's "How it works" link, arrow poking
      UP at it. First-time nudge to the walk-through; dismissable, remembered,
      and it retires itself once the guide has been visited. ── */
-  .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
+  .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:rgba(255,255,255,.66);backdrop-filter:blur(22px) saturate(0);-webkit-backdrop-filter:blur(22px) saturate(0);color:var(--ink);text-align:left;cursor:pointer;
     border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
     padding:10px 26px 11px 13px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) .8s both}
   .guide-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
@@ -656,7 +656,7 @@
     font-size:15px;line-height:1;color:var(--ghost);border-radius:5px;transition:background .15s,color .15s}
   .guide-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
   .guide-coach::before{content:"";position:absolute;right:34px;top:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 100%,100% 100%,70% 0)}
-  .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:var(--paper-raised);clip-path:polygon(0 100%,100% 100%,70% 0)}
+  .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:rgba(255,255,255,.82);clip-path:polygon(0 100%,100% 100%,70% 0)}
   @media (max-width:760px){.guide-coach{right:14px;top:60px}}
   .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:680px;width:100%;margin-top:16px}
   .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:8px 17px;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;font-family:var(--sans)}
@@ -786,16 +786,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260726c"></script>
-<script src="./casting-figure.js?v=20260726c"></script>
-<script src="./liuyao-engine.js?v=20260726c"></script>
-<script src="./liuyao-ai.js?v=20260726c"></script>
-<script src="./liuyao-chart.js?v=20260726c"></script>
-<script src="./prompt-engine.js?v=20260726c"></script>
-<script src="./prompt-router.js?v=20260726c"></script>
-<script src="./account.js?v=20260726c"></script>
-<script>window.BW_BUILD="20260726c";</script>
-<script src="./chat-app.js?v=20260726c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726d"></script>
+<script src="./casting-figure.js?v=20260726d"></script>
+<script src="./liuyao-engine.js?v=20260726d"></script>
+<script src="./liuyao-ai.js?v=20260726d"></script>
+<script src="./liuyao-chart.js?v=20260726d"></script>
+<script src="./prompt-engine.js?v=20260726d"></script>
+<script src="./prompt-router.js?v=20260726d"></script>
+<script src="./account.js?v=20260726d"></script>
+<script>window.BW_BUILD="20260726d";</script>
+<script src="./chat-app.js?v=20260726d"></script>
 <script>
 (function () {
   "use strict";
