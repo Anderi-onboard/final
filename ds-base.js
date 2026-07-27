@@ -46,13 +46,22 @@
       var url = candidate(e); if (url) prefetch(url);
     }, { passive: true });
   })();
-  for (const p of ['styles.css']) {
-    const href = base + '/' + p;
-    if (document.querySelector('link[rel="stylesheet"][href="' + href + '"]')) continue;
-    const l = document.createElement('link');
-    l.rel = 'stylesheet'; l.href = href;
-    document.head.appendChild(l);
-  }
+  /* Fallback for a host page that ships no design-system <link> of its own.
+     The token files are linked directly — never @import-chained behind one
+     entry sheet, which serialises CSSOM construction and delays first paint.
+     The guard is FUNCTIONAL, not a href string match: pages carry a ?v= build
+     tag on their links, so comparing hrefs never matched and this injected a
+     second, untagged copy of the whole design system on every page load. */
+  (function () {
+    const present = getComputedStyle(document.documentElement)
+      .getPropertyValue('--font-serif').trim();
+    if (present) return;                     // tokens already linked — nothing to do
+    for (const t of ['fonts', 'colors', 'typography', 'spacing', 'paper', 'motion']) {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet'; l.href = base + '/tokens/' + t + '.css';
+      document.head.appendChild(l);
+    }
+  })();
   window.__dsBase = base;
   document.documentElement.style.setProperty('--ds-base', `url("${base}")`);
 
