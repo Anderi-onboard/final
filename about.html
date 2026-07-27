@@ -11,8 +11,13 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260726d">
-<script src="./ds-base.js?v=20260726d"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260726e">
+<script src="./ds-base.js?v=20260726e"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -87,7 +92,7 @@
   /* the shared world: a fixed, full-bleed line-drawing of the range with the
      colour-group field rotating behind it (same as every other page) — the
      hero and the sections below all ride on one backdrop. */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0);contain:paint;opacity:.9;
     -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%);
             mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%)}
   /* the second, page-long ambient mountain is gone: it overlapped the hero
@@ -121,7 +126,7 @@
      its own compositor layer so the blur samples a stable backdrop (no flash). */
   .m-card{display:flex;gap:14px;align-items:flex-start;border-radius:12px;padding:16px 18px;
     background:linear-gradient(158deg,rgba(247,238,220,.52) 0%,rgba(236,223,197,.22) 52%,rgba(247,238,220,.48) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(18px) saturate(0);-webkit-backdrop-filter:blur(18px) saturate(0);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
   .m-card .mi{flex:none;width:24px;height:24px;color:var(--terracotta);margin-top:1px}
   .m-card b{display:block;font-family:"BioRhyme",var(--serif);font-size:15px;font-weight:700}
   .m-card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
@@ -132,7 +137,7 @@
      translucent warm glass, matching every other box on the page */
   .band{margin-top:56px;color:var(--ink);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center;
     background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(20px) saturate(0);-webkit-backdrop-filter:blur(20px) saturate(0);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
   .band h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;text-align:center}
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;width:100%}
   /* tiles sit ON the band glass — a translucent fill (no nested backdrop-filter)
@@ -264,7 +269,7 @@
   </section>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260726d"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726e"></script>
 <script>
 (function () {
   // Fade/rise each page's content in when it snaps into view, back out when it

@@ -11,8 +11,13 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./styles.css?v=20260726d">
-<script src="./ds-base.js?v=20260726d"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260726e">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260726e">
+<script src="./ds-base.js?v=20260726e"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -25,7 +30,7 @@
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0);contain:paint;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
 
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1040px;margin:0 auto;width:100%}
   .brand{display:flex;align-items:center;gap:9px}
@@ -51,7 +56,7 @@
     padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
   .ledgerstrip::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
-    backdrop-filter:blur(22px) saturate(0);-webkit-backdrop-filter:blur(22px) saturate(0);
+    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
     border-radius:23px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -84,7 +89,7 @@
      positioned) regardless of how far the -1 layer behind it fades */
   .plan::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
-    backdrop-filter:blur(22px) saturate(0);-webkit-backdrop-filter:blur(22px) saturate(0);
+    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
     border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -116,7 +121,7 @@
   .topup{margin-top:40px;padding:24px 26px;position:relative}
   .topup::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
     background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
-    backdrop-filter:blur(22px) saturate(0);-webkit-backdrop-filter:blur(22px) saturate(0);
+    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
     border-radius:17px 14px 16px 12px / 13px 17px 11px 15px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
     mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -129,7 +134,7 @@
   .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
   .pack{border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;
     background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(20px) saturate(0);-webkit-backdrop-filter:blur(20px) saturate(0);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
   .pack:hover{border-color:var(--ink);transform:translateY(-1px) translateZ(0)}
   .pack .u{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums}
   .pack .p{font-size:13px;color:var(--terracotta);margin-top:3px}
@@ -139,7 +144,7 @@
   .costs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-radius:11px;padding:14px 16px;
     background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(20px) saturate(0);-webkit-backdrop-filter:blur(20px) saturate(0);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
   .cost .nm{font-family:var(--serif);font-size:15px}
   .cost .nm small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--faint);margin-top:2px}
   .cost .ct{font-family:var(--serif);font-size:18px;color:var(--terracotta);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -158,7 +163,7 @@
      dark ink on translucent warm glass, consistent with every card above */
   .ribbon{margin-top:40px;color:var(--ink);border-radius:15px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
     background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(24px) saturate(0);-webkit-backdrop-filter:blur(24px) saturate(0);transform:translateZ(0)}
+    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(16px) saturate(0);-webkit-backdrop-filter:blur(16px) saturate(0);transform:translateZ(0)}
   .ribbon .lbl{color:var(--faint)}
   .ribbon .said{font-family:var(--serif);font-style:normal;font-size:20px;max-width:40ch;color:var(--ink)}
   .ribbon a{background:rgba(181,80,44,.1);border:1px solid rgba(181,80,44,.4);border-radius:10px;padding:9px 18px;font-size:13.5px;color:var(--terracotta);font-weight:500;transition:background .15s}
@@ -315,10 +320,10 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260726d"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260726d"></script>
-<script src="./ds-motion.js?v=20260726d"></script>
-<script src="./account.js?v=20260726d"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726e"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260726e"></script>
+<script src="./ds-motion.js?v=20260726e"></script>
+<script src="./account.js?v=20260726e"></script>
 <script>
 (function () {
   "use strict";
