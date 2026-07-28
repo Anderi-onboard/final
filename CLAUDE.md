@@ -61,8 +61,17 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 - mono/label 类文字**加字距但永不全大写**,一律 sentence case。
 
 ### 间距与投影
-- 圆角**只有两个合法值**(见 `tokens/spacing.css`)。
-- slab/板块**永不投影**;只有浮层(弹窗、coach-mark、composer)才有阴影。
+- 表达层仍使用两种基础圆角令牌;应用 chrome 统一从 `tokens/refinement.css` 的
+  `--ui-radius` / `--ui-radius-small` 取值,避免各页继续散落任意圆角。
+- 内容板块不投影;只有浮层、composer、当前主套餐等需要表达层级的对象使用
+  极轻的 `--ui-shadow`,山脉始终是页面唯一的强视觉层。
+
+### 界面气质
+- 方向是 **Apple / OpenAI 式克制的系统界面**,不是照搬任一品牌:大留白、清楚层级、
+  中性半透明 chrome、44px 以上触控目标、极少的持续动画。
+- 山脉和排卦图负责表达与记忆点;导航、表单、套餐、账户面板必须安静、精确、退后。
+- 全站共享的最后一层修饰只写在 `tokens/refinement.css`;页面内 CSS 保留结构和页面
+  特性,不得再为同一种按钮/玻璃/导航在每页复制一套新视觉。
 
 ---
 
@@ -174,12 +183,11 @@ slab 无投影、构建标签全站一致、Pacifico 仅用于字标+chip。
 | 规范出处 | 规范怎么说 | 代码实际 | 数量 |
 |---|---|---|---|
 | `tokens/typography.css:37` | mono/label **永不全大写**,一律 sentence case | 全站大量 `text-transform:uppercase`(AVAILABLE UNITS / SCROLL TO BEGIN / SELF·RESP / FREE…) | **45 处** |
-| `tokens/spacing.css:17` | 圆角**只有两个合法值**:`--radius-blade:0` 与 `--radius-pill:999px` | 全是硬写 px,还有手绘感的四角异值(`24px 18px 22px 16px / …`);`var(--radius-*)` **一次都没用过** | **174 处** |
+| `tokens/spacing.css:17` | 旧规则只有两种圆角:`--radius-blade:0` 与 `--radius-pill:999px` | 现由 `refinement.css` 为应用 chrome 提供两个统一的中间圆角;旧页面内异形值待渐进清理 | 历史债务 |
 | `tokens/colors.css:23` | 组件**只引语义别名,永不写裸 hex** | 各页大量裸 hex(`#F2EDE7` `#C9663F` `#3a362f`…) | **156 处** |
 
-**我的判断**:这三条像是早期设计系统时代的"立法",而实际站点从没照它执行、或已经长过它了。
-现在的全大写标签、手绘异形圆角都是**刻意且好看**的,强行"修正"会毁掉现有观感。
-所以更可能是**规范该改**,而不是代码该改 —— 但这是你的决定。
+**当前裁决**:标签大小写和旧裸色仍按页面渐进清理,不做破坏式全局替换;圆角与层级已由
+`refinement.css` 收口。新代码必须遵守上面的现行规则,不得继续增加历史债务。
 
 ## 10 · 还需要你拍板的
 
