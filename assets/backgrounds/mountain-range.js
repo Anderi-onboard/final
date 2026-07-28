@@ -150,7 +150,7 @@
   KF += '@keyframes mtn-sys-sky{' + sky + '}';
   CSS = CSS.replace('/*__MTN_KEYFRAMES__*/', KF);
 
-  var HOLD = (100 / SEQ.length) * 0.7;  /* crossfade spans ~70% of each slot → continuous morph, brief settle */
+  var HOLD = (100 / SEQ.length) * 0.16;  /* brief blend, long hold — the documented rule. 0.7 meant the whole viewport repainted ~70% of the time. */
   CSS = CSS.replace(/@keyframes (mtn-sys-(?:l\d+|sky))\{((?:[^{}]+\{[^{}]*\})+)\}/g, function (m, name, body) {
     var prop = 'fill', stops = [];
     body.replace(/([\d.,%]+)\{(fill|background-color):(#[0-9A-Fa-f]+)\}/g, function (mm, sel, pr, col) {
