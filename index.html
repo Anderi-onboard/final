@@ -11,13 +11,13 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260726i">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260726i">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260726i">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260726i">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260726i">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260726i">
-<script src="./ds-base.js?v=20260726i"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260726j">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260726j">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260726j">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260726j">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260726j">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260726j">
+<script src="./ds-base.js?v=20260726j"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -791,17 +791,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260726i"></script>
-<script src="./casting-figure.js?v=20260726i"></script>
-<script src="./liuyao-engine.js?v=20260726i"></script>
-<script src="./liuyao-ai.js?v=20260726i"></script>
-<script src="./liuyao-chart.js?v=20260726i"></script>
-<script src="./prompt-engine.js?v=20260726i"></script>
-<script src="./prompt-router.js?v=20260726i"></script>
-<script src="./wave-wipe.js?v=20260726i"></script>
-<script src="./account.js?v=20260726i"></script>
-<script>window.BW_BUILD="20260726i";</script>
-<script src="./chat-app.js?v=20260726i"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726j"></script>
+<script src="./casting-figure.js?v=20260726j"></script>
+<script src="./liuyao-engine.js?v=20260726j"></script>
+<script src="./liuyao-ai.js?v=20260726j"></script>
+<script src="./liuyao-chart.js?v=20260726j"></script>
+<script src="./prompt-engine.js?v=20260726j"></script>
+<script src="./prompt-router.js?v=20260726j"></script>
+<script src="./account.js?v=20260726j"></script>
+<script>window.BW_BUILD="20260726j";</script>
+<script src="./chat-app.js?v=20260726j"></script>
 <script>
 (function () {
   "use strict";
@@ -847,10 +846,7 @@
     /* start somewhere random, then let the ridge carry each one off and bring
        the next in — the same wipe the content pages use, so the landing and the
        rest of the site move in one language instead of three. */
-    var k=Math.floor(Math.random()*prompts.length);
-    var ordered=prompts.slice(k).concat(prompts.slice(0,k));
-    el.textContent=ordered[0];
-    if(window.BWWipe) BWWipe.rotate(el, ordered, {duration:5200, every:34000});
+    el.textContent=prompts[Math.floor(Math.random()*prompts.length)];
   }
   var bb=document.getElementById('brandBtn');
   if(bb)bb.addEventListener('click',function(){
