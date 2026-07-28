@@ -4,13 +4,20 @@
    layer; controls and reading surfaces deliberately recede. */
 
 :root {
-  --ui-glass: rgba(250, 249, 247, .66);
-  --ui-glass-strong: rgba(252, 251, 249, .84);
-  --ui-line: rgba(42, 32, 22, .11);
-  --ui-line-strong: rgba(42, 32, 22, .18);
-  --ui-ink-soft: rgba(42, 32, 22, .72);
-  --ui-shadow: 0 1px 1px rgba(42, 32, 22, .04), 0 12px 36px rgba(42, 32, 22, .08);
-  --ui-shadow-raised: 0 2px 3px rgba(42, 32, 22, .05), 0 20px 56px rgba(42, 32, 22, .12);
+  /* Glass is deliberately colourless. It borrows its colour from the animated
+     mountain field below instead of painting a cream card over it. */
+  --ui-glass: rgba(255, 255, 255, .12);
+  --ui-glass-strong: rgba(255, 255, 255, .20);
+  --ui-glass-soft: rgba(255, 255, 255, .045);
+  --ui-line: color-mix(in srgb, var(--ink) 13%, transparent);
+  --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
+  --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
+  --ui-shadow: 0 1px 1px color-mix(in srgb, var(--ink) 4%, transparent),
+    0 14px 38px color-mix(in srgb, var(--ink) 8%, transparent);
+  --ui-shadow-raised: 0 2px 3px color-mix(in srgb, var(--ink) 5%, transparent),
+    0 22px 60px color-mix(in srgb, var(--ink) 12%, transparent);
+  --ui-glass-filter: blur(20px) saturate(82%) brightness(1.04);
+  --ui-glass-filter-strong: blur(28px) saturate(88%) brightness(1.06);
   --ui-radius: 18px;
   --ui-radius-small: 12px;
 }
@@ -31,8 +38,8 @@ body[data-page="pricing"] .pagehead {
   border-radius: 999px;
   background: var(--ui-glass);
   box-shadow: 0 1px 1px rgba(42,32,22,.03), 0 8px 24px rgba(42,32,22,.05);
-  backdrop-filter: blur(18px) saturate(110%);
-  -webkit-backdrop-filter: blur(18px) saturate(110%);
+  backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body:not([data-page="app"]) .brand b,
 body[data-page="pricing"] .brand b {
@@ -50,7 +57,7 @@ body[data-page="pricing"] .pagehead .ghost {
   border-radius: 999px;
 }
 body:not([data-page="app"]) .pagehead .ghost:hover,
-body[data-page="pricing"] .pagehead .ghost:hover { background: rgba(42,32,22,.055); }
+body[data-page="pricing"] .pagehead .ghost:hover { background: var(--ui-glass-strong); }
 
 /* App shell --------------------------------------------------------------- */
 body[data-page="app"] .sidebar { padding: 16px 14px 14px; }
@@ -60,7 +67,7 @@ body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
   border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
 }
-body[data-page="app"] .topbar .ghost:hover { background: rgba(42,32,22,.055); }
+body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-strong); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 330px; }
 body[data-page="app"] .claude-mark,
 body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
@@ -75,7 +82,8 @@ body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--i
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
   margin: 14px 2px 0; padding: 15px; border: 1px solid var(--ui-line) !important;
-  border-radius: var(--ui-radius); background: rgba(250,249,247,.42);
+  border-radius: var(--ui-radius); background: var(--ui-glass);
+  backdrop-filter: var(--ui-glass-filter); -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
@@ -99,25 +107,25 @@ body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !impo
 body[data-page="app"] .composer-zone { padding-bottom: 28px; }
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
-  border: 1px solid rgba(42,32,22,.13); border-radius: 22px;
-  background: rgba(252,251,249,.76); box-shadow: var(--ui-shadow);
-  backdrop-filter: blur(22px) saturate(115%); -webkit-backdrop-filter: blur(22px) saturate(115%);
+  border: 1px solid var(--ui-line); border-radius: 22px;
+  background: var(--ui-glass-strong); box-shadow: var(--ui-shadow);
+  backdrop-filter: var(--ui-glass-filter-strong); -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
 body[data-page="app"] .composer:focus-within {
-  border-color: rgba(42,32,22,.24); box-shadow: var(--ui-shadow), 0 0 0 3px rgba(255,255,255,.36);
+  border-color: var(--ui-line-strong); box-shadow: var(--ui-shadow), 0 0 0 3px var(--ui-glass-strong);
 }
 body[data-page="app"] .stria {
-  min-height: 42px; padding: 8px 14px; background: rgba(42,32,22,.055);
-  border: 1px solid rgba(42,32,22,.07); color: var(--ink);
+  min-height: 42px; padding: 8px 14px; background: var(--ui-glass);
+  border: 1px solid var(--ui-line); color: var(--ink);
 }
-body[data-page="app"] .stria:hover { background: rgba(42,32,22,.09); }
+body[data-page="app"] .stria:hover { background: var(--ui-glass-strong); }
 body[data-page="app"] .composer input { font-size: 16px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); }
 body[data-page="app"] .send:hover { background: var(--terracotta); transform: none; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
-  padding: 8px 14px; border-color: rgba(42,32,22,.12); background: rgba(250,249,247,.32);
+  padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
 body[data-page="app"] .method-menu,
@@ -125,14 +133,14 @@ body[data-page="app"] .acct-menu,
 body[data-page="app"] .guide-coach,
 body[data-page="app"] .signin-coach {
   background: var(--ui-glass-strong); border: 1px solid var(--ui-line);
-  box-shadow: var(--ui-shadow-raised); backdrop-filter: blur(24px) saturate(110%);
-  -webkit-backdrop-filter: blur(24px) saturate(110%);
+  box-shadow: var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
+  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
 body[data-page="app"] .method-menu { border-radius: 16px; padding: 8px; }
 body[data-page="app"] .mm-row { border-radius: 11px; }
 body[data-page="app"] .main::before {
-  inset: 52px 14px 86px; border-radius: 28px; background: rgba(250,249,247,.48);
-  backdrop-filter: blur(16px) saturate(40%); -webkit-backdrop-filter: blur(16px) saturate(40%);
+  inset: 52px 14px 86px; border-radius: 28px; background: var(--ui-glass-soft);
+  backdrop-filter: var(--ui-glass-filter); -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body[data-page="app"] .thread-inner { max-width: 720px; }
 body[data-page="app"] .msg-user { max-width: 82%; }
@@ -152,13 +160,13 @@ body[data-page="pricing"] .plan,
 body[data-page="pricing"] .topup,
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
-  background: rgba(250,249,247,.64); border-color: var(--ui-line);
-  box-shadow: none; backdrop-filter: blur(18px) saturate(90%);
-  -webkit-backdrop-filter: blur(18px) saturate(90%);
+  background: var(--ui-glass); border-color: var(--ui-line);
+  box-shadow: none; backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body[data-page="pricing"] .plan,
 body[data-page="settings"] .panel { border-radius: var(--ui-radius); }
-body[data-page="pricing"] .plan.feat { background: rgba(252,251,249,.82); box-shadow: var(--ui-shadow); }
+body[data-page="pricing"] .plan.feat { background: var(--ui-glass-strong); box-shadow: var(--ui-shadow); }
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
@@ -174,9 +182,9 @@ body[data-page="legal"] .lede { font-size: clamp(17px, 2vw, 20px); line-height: 
 body[data-page="legal"] .toc,
 body[data-page="legal"] .headline,
 body[data-page="legal"] .pull {
-  background: rgba(250,249,247,.56); border-color: var(--ui-line);
-  border-radius: var(--ui-radius); backdrop-filter: blur(14px) saturate(90%);
-  -webkit-backdrop-filter: blur(14px) saturate(90%);
+  background: var(--ui-glass); border-color: var(--ui-line);
+  border-radius: var(--ui-radius); backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body[data-page="legal"] .clause { scroll-margin-top: 96px; }
 body[data-page="legal"] .clause p,
@@ -184,7 +192,11 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
 
 @media (max-width: 880px) {
   body[data-page="app"] .topbar { padding-inline: 18px; }
-  body[data-page="app"] .sidebar { background: rgba(245,240,230,.94); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+  body[data-page="app"] .sidebar {
+    background: var(--ui-glass-strong);
+    backdrop-filter: var(--ui-glass-filter-strong);
+    -webkit-backdrop-filter: var(--ui-glass-filter-strong);
+  }
   body[data-page="app"] .composer { max-width: 680px; }
   body:not([data-page="app"]) .pagehead,
   body[data-page="pricing"] .pagehead { width: calc(100% - 24px); margin-top: 10px; }
