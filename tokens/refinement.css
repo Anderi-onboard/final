@@ -1,0 +1,208 @@
+/* BourneWise refinement layer.
+   Quiet, precise interface chrome inspired by the restraint of excellent
+   system software. The mountain and casting artwork remain the expressive
+   layer; controls and reading surfaces deliberately recede. */
+
+:root {
+  --ui-glass: rgba(250, 249, 247, .66);
+  --ui-glass-strong: rgba(252, 251, 249, .84);
+  --ui-line: rgba(42, 32, 22, .11);
+  --ui-line-strong: rgba(42, 32, 22, .18);
+  --ui-ink-soft: rgba(42, 32, 22, .72);
+  --ui-shadow: 0 1px 1px rgba(42, 32, 22, .04), 0 12px 36px rgba(42, 32, 22, .08);
+  --ui-shadow-raised: 0 2px 3px rgba(42, 32, 22, .05), 0 20px 56px rgba(42, 32, 22, .12);
+  --ui-radius: 18px;
+  --ui-radius-small: 12px;
+}
+
+html { color-scheme: light; }
+body { text-rendering: optimizeLegibility; }
+a, button, input { -webkit-tap-highlight-color: transparent; }
+button, a { transition-timing-function: var(--ease-out); }
+::selection { background: color-mix(in srgb, var(--terracotta) 22%, transparent); }
+
+/* Shared page chrome ------------------------------------------------------ */
+body:not([data-page="app"]) .pagehead,
+body[data-page="pricing"] .pagehead {
+  width: min(1180px, calc(100% - 48px));
+  margin: 14px auto 0;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--ui-line);
+  border-radius: 999px;
+  background: var(--ui-glass);
+  box-shadow: 0 1px 1px rgba(42,32,22,.03), 0 8px 24px rgba(42,32,22,.05);
+  backdrop-filter: blur(18px) saturate(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
+}
+body:not([data-page="app"]) .brand b,
+body[data-page="pricing"] .brand b {
+  font-family: var(--font-brand);
+  font-weight: 100;
+  -webkit-text-stroke: .45px currentColor;
+  letter-spacing: 0;
+}
+body:not([data-page="app"]) .pagehead .ghost,
+body[data-page="pricing"] .pagehead .ghost {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 999px;
+}
+body:not([data-page="app"]) .pagehead .ghost:hover,
+body[data-page="pricing"] .pagehead .ghost:hover { background: rgba(42,32,22,.055); }
+
+/* App shell --------------------------------------------------------------- */
+body[data-page="app"] .sidebar { padding: 16px 14px 14px; }
+body[data-page="app"] .side-top { padding-inline: 6px; }
+body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
+body[data-page="app"] .topbar .ghost {
+  min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
+  border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
+}
+body[data-page="app"] .topbar .ghost:hover { background: rgba(42,32,22,.055); }
+body[data-page="app"] .claude-note { opacity: .72; max-width: 330px; }
+body[data-page="app"] .claude-mark,
+body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
+body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,
+body[data-page="app"] .bwl5 { animation: none; }
+body[data-page="app"] .brand-btn,
+body[data-page="app"] .side-toggle,
+body[data-page="app"] .new-cast,
+body[data-page="app"] .casting,
+body[data-page="app"] .casting-row { border-radius: 10px; }
+body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
+body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
+body[data-page="app"] .ledger {
+  margin: 14px 2px 0; padding: 15px; border: 1px solid var(--ui-line) !important;
+  border-radius: var(--ui-radius); background: rgba(250,249,247,.42);
+}
+body[data-page="app"] .ledger::before { display: none; }
+body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
+body[data-page="app"] .ledger-meter { height: 4px; }
+body[data-page="app"] .exchange {
+  min-height: 38px; border-radius: 10px; box-shadow: none;
+  background: var(--ink); color: var(--paper-raised);
+}
+body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: none; transform: none; }
+body[data-page="app"] .side-foot { min-height: 48px; border-radius: 12px; }
+body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mask-image: none; -webkit-mask-image: none; }
+
+body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
+body[data-page="app"] #heroEmpty { padding-bottom: clamp(30px, 5vh, 54px); }
+body[data-page="app"] .greeting { max-width: 790px; gap: 20px; }
+body[data-page="app"] .greeting h1 {
+  max-width: 700px; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500;
+  line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
+}
+body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
+body[data-page="app"] .composer-zone { padding-bottom: 28px; }
+body[data-page="app"] .composer {
+  max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
+  border: 1px solid rgba(42,32,22,.13); border-radius: 22px;
+  background: rgba(252,251,249,.76); box-shadow: var(--ui-shadow);
+  backdrop-filter: blur(22px) saturate(115%); -webkit-backdrop-filter: blur(22px) saturate(115%);
+}
+body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
+body[data-page="app"] .composer:focus-within {
+  border-color: rgba(42,32,22,.24); box-shadow: var(--ui-shadow), 0 0 0 3px rgba(255,255,255,.36);
+}
+body[data-page="app"] .stria {
+  min-height: 42px; padding: 8px 14px; background: rgba(42,32,22,.055);
+  border: 1px solid rgba(42,32,22,.07); color: var(--ink);
+}
+body[data-page="app"] .stria:hover { background: rgba(42,32,22,.09); }
+body[data-page="app"] .composer input { font-size: 16px; letter-spacing: -.01em; }
+body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); }
+body[data-page="app"] .send:hover { background: var(--terracotta); transform: none; }
+body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
+body[data-page="app"] .chip {
+  padding: 8px 14px; border-color: rgba(42,32,22,.12); background: rgba(250,249,247,.32);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+body[data-page="app"] .method-menu,
+body[data-page="app"] .acct-menu,
+body[data-page="app"] .guide-coach,
+body[data-page="app"] .signin-coach {
+  background: var(--ui-glass-strong); border: 1px solid var(--ui-line);
+  box-shadow: var(--ui-shadow-raised); backdrop-filter: blur(24px) saturate(110%);
+  -webkit-backdrop-filter: blur(24px) saturate(110%);
+}
+body[data-page="app"] .method-menu { border-radius: 16px; padding: 8px; }
+body[data-page="app"] .mm-row { border-radius: 11px; }
+body[data-page="app"] .main::before {
+  inset: 52px 14px 86px; border-radius: 28px; background: rgba(250,249,247,.48);
+  backdrop-filter: blur(16px) saturate(40%); -webkit-backdrop-filter: blur(16px) saturate(40%);
+}
+body[data-page="app"] .thread-inner { max-width: 720px; }
+body[data-page="app"] .msg-user { max-width: 82%; }
+body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em; }
+body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
+
+/* Content pages ----------------------------------------------------------- */
+body[data-page="pricing"] .shell,
+body[data-page="legal"] .legal,
+body[data-page="settings"] .shell { position: relative; z-index: 1; }
+body[data-page="pricing"] .hero h1,
+body[data-page="legal"] .legal > h1,
+body[data-page="settings"] .pagetitle h1 {
+  letter-spacing: -.045em; text-wrap: balance;
+}
+body[data-page="pricing"] .plan,
+body[data-page="pricing"] .topup,
+body[data-page="settings"] .panel,
+body[data-page="login"] .card {
+  background: rgba(250,249,247,.64); border-color: var(--ui-line);
+  box-shadow: none; backdrop-filter: blur(18px) saturate(90%);
+  -webkit-backdrop-filter: blur(18px) saturate(90%);
+}
+body[data-page="pricing"] .plan,
+body[data-page="settings"] .panel { border-radius: var(--ui-radius); }
+body[data-page="pricing"] .plan.feat { background: rgba(252,251,249,.82); box-shadow: var(--ui-shadow); }
+body[data-page="pricing"] .choose,
+body[data-page="pricing"] .cta,
+body[data-page="login"] .submit,
+body[data-page="settings"] .btn { min-height: 44px; border-radius: 11px; box-shadow: none; }
+body[data-page="pricing"] .choose:hover,
+body[data-page="pricing"] .cta:hover,
+body[data-page="login"] .submit:hover,
+body[data-page="settings"] .btn:hover { transform: translateY(-1px); }
+
+body[data-page="legal"] .legal { max-width: 760px; }
+body[data-page="legal"] .legal > h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1; }
+body[data-page="legal"] .lede { font-size: clamp(17px, 2vw, 20px); line-height: 1.65; }
+body[data-page="legal"] .toc,
+body[data-page="legal"] .headline,
+body[data-page="legal"] .pull {
+  background: rgba(250,249,247,.56); border-color: var(--ui-line);
+  border-radius: var(--ui-radius); backdrop-filter: blur(14px) saturate(90%);
+  -webkit-backdrop-filter: blur(14px) saturate(90%);
+}
+body[data-page="legal"] .clause { scroll-margin-top: 96px; }
+body[data-page="legal"] .clause p,
+body[data-page="legal"] .clause li { line-height: 1.72; }
+
+@media (max-width: 880px) {
+  body[data-page="app"] .topbar { padding-inline: 18px; }
+  body[data-page="app"] .sidebar { background: rgba(245,240,230,.94); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+  body[data-page="app"] .composer { max-width: 680px; }
+  body:not([data-page="app"]) .pagehead,
+  body[data-page="pricing"] .pagehead { width: calc(100% - 24px); margin-top: 10px; }
+}
+
+@media (max-width: 560px) {
+  body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
+  body[data-page="app"] .greeting h1 { font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
+  body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
+  body[data-page="app"] .composer { min-height: 58px; border-radius: 18px; padding: 7px; }
+  body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
+  body[data-page="app"] .send { width: 40px; height: 40px; }
+  body[data-page="app"] .site-foot { line-height: 1.7; }
+  body:not([data-page="app"]) .pagehead,
+  body[data-page="pricing"] .pagehead { padding-left: 12px; }
+  body[data-page="pricing"] .pagehead .nav .ghost { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
