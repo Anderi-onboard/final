@@ -11,13 +11,13 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260726j">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260726j">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260726j">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260726j">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260726j">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260726j">
-<script src="./ds-base.js?v=20260726j"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260726k">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260726k">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260726k">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260726k">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260726k">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260726k">
+<script src="./ds-base.js?v=20260726k"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -55,7 +55,7 @@
   .ledgerstrip{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
     padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
   .ledgerstrip::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
-    background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
+    background:transparent;
     backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
     border-radius:23px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -88,7 +88,7 @@
      own position:absolute child so it always paints above (z-index:auto,
      positioned) regardless of how far the -1 layer behind it fades */
   .plan::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
-    background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
+    background:transparent;
     backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
     border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -120,7 +120,7 @@
   /* one-time top-up */
   .topup{margin-top:40px;padding:24px 26px;position:relative}
   .topup::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
-    background:linear-gradient(158deg,rgba(255,255,255,.46) 0%,rgba(255,255,255,.26) 52%,rgba(255,255,255,.42) 100%);
+    background:transparent;
     backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
     border-radius:17px 14px 16px 12px / 13px 17px 11px 15px;transform:translateZ(0);
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
@@ -320,10 +320,10 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260726j"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260726j"></script>
-<script src="./ds-motion.js?v=20260726j"></script>
-<script src="./account.js?v=20260726j"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726k"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260726k"></script>
+<script src="./ds-motion.js?v=20260726k"></script>
+<script src="./account.js?v=20260726k"></script>
 <script>
 (function () {
   "use strict";
