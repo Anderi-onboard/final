@@ -10,13 +10,13 @@
 <style>html.fonts-wait body{visibility:hidden}</style><script>(function(){var h=document.documentElement;h.classList.add("fonts-wait");function go(){h.classList.remove("fonts-wait")}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go,go);setTimeout(go,900)}else{go()}})();</script>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260726h">
-<script src="./ds-base.js?v=20260726h"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260726i">
+<script src="./ds-base.js?v=20260726i"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -53,7 +53,7 @@
   .enter svg{width:15px;height:15px}
 
   /* shared measures */
-  .wrap{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 34px}
+  .wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 34px}
   .col{max-width:660px}
   .kicker{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta)}
   .gild{font-family:var(--serif);font-weight:700;color:var(--terracotta);
@@ -61,13 +61,15 @@
 
   /* ── hero — the prologue. One held mark, a headline that unfurls word by
      word, an invitation to begin reading. ── */
-  .hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-    padding:132px 34px 90px;max-width:1120px;margin:0 auto}
-  .hero .mark{width:70px;height:57px;color:var(--terracotta)}
-  .hero h1{margin-top:30px;font-family:var(--serif);font-weight:800;
+  .hero{position:relative;z-index:2;min-height:100svh;display:grid;align-content:center;
+    grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);column-gap:clamp(36px,6vw,96px);
+    padding:132px 34px 90px;max-width:1240px;margin:0 auto}
+  .hero .mark{grid-column:1;width:70px;height:57px;color:var(--terracotta)}
+  .hero h1{grid-column:1;margin-top:30px;font-family:var(--serif);font-weight:800;
     font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-.035em;max-width:15ch;text-wrap:balance}
-  .hero .sub{margin-top:30px;max-width:46ch;font-size:clamp(16px,1.5vw,18px);line-height:1.7;color:var(--dim)}
-  .hero .meta{margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .hero .sub{grid-column:2;grid-row:2;align-self:start;margin-top:18px;
+    max-width:40ch;font-family:var(--serif);font-size:clamp(16px,1.35vw,19px);line-height:1.62;color:var(--ink)}
+  .hero .meta{grid-column:1;margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
   .cue{position:absolute;left:34px;bottom:40px;display:inline-flex;align-items:center;gap:12px;
     font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
     transition:opacity .5s var(--ease-out)}
@@ -80,16 +82,32 @@
 
   /* ── a numbered section — the big hanging numeral, a kicker, a lead, then
      the entries. The manual voice: rules and prose, no cards, no icons. ── */
-  .sec{position:relative;z-index:2;padding:96px 0}
-  .sec-head{position:relative}
-  .sec-no{font-family:var(--serif);font-weight:800;font-size:clamp(58px,11vw,142px);line-height:.8;
+  .sec{position:relative;z-index:2;padding:118px 0}
+  /* ── the editorial split: a display headline holds the left field, the prose
+     that answers it sits in its own column on the right. One rule for every
+     section, so the page has a spine instead of a different shape per block. ── */
+  .sec-head{position:relative;display:grid;
+    grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+    column-gap:clamp(36px,6vw,96px);align-items:start;max-width:none}
+  .sec-no{grid-column:1;font-family:var(--serif);font-weight:800;font-size:clamp(58px,11vw,142px);line-height:.8;
     letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.4px rgba(181,80,44,.42);
     text-stroke:1.4px rgba(181,80,44,.42)}
-  .sec-head .kicker{display:block;margin-top:20px}
-  .lead-h{margin-top:16px;font-family:var(--serif);font-weight:700;font-size:clamp(27px,3.8vw,46px);
-    line-height:1.14;letter-spacing:-.02em;max-width:19ch;text-wrap:balance}
-  .lead-p{margin-top:20px;max-width:54ch;font-size:16px;line-height:1.74;color:var(--dim)}
+  .sec-head .kicker{grid-column:1;display:block;margin-top:20px}
+  .lead-h{grid-column:1;margin-top:16px;font-family:var(--serif);font-weight:800;
+    font-size:clamp(30px,5.1vw,64px);
+    line-height:1.05;letter-spacing:-.032em;max-width:17ch;text-wrap:balance}
+  /* Sit the prose in the SAME grid row as the headline (row 3 — numeral, kicker,
+     headline), so the two columns start on one line instead of the prose
+     floating up beside the numeral. */
+  .lead-p{grid-column:2;grid-row:3;align-self:start;margin-top:18px;
+    max-width:40ch;font-family:var(--serif);font-size:clamp(16px,1.35vw,19px);
+    line-height:1.62;color:var(--ink)}
 
+  /* the split needs real width; below it, one column beats two crushed ones */
+  @media (max-width:900px){
+    .sec-head,.hero{grid-template-columns:minmax(0,1fr)}
+    .sec-head .lead-p,.hero .sub{grid-column:1;grid-row:auto;margin-top:22px;max-width:54ch}
+  }
   .entries{margin-top:52px;display:grid;gap:0 52px}
   .entries.three{grid-template-columns:repeat(3,1fr)}
   .entries.two{grid-template-columns:1fr 1fr}
@@ -161,7 +179,7 @@
 <!-- ── 01 · CHOOSE YOUR INSTRUMENT ──────────────────────────────────────── -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head col">
+    <div class="sec-head">
       <span class="sec-no" data-reveal>01</span>
       <span class="kicker" data-reveal>Choose your instrument</span>
       <h2 class="lead-h" data-split>Two readings, <span class="gild">two depths</span> &mdash; you pay only for what one truly costs.</h2>
@@ -190,7 +208,7 @@
 <!-- ── 02 · HOW TO ASK ──────────────────────────────────────────────────── -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head col">
+    <div class="sec-head">
       <span class="sec-no" data-reveal>02</span>
       <span class="kicker" data-reveal>How to ask</span>
       <h2 class="lead-h" data-split>The question does half the work. <span class="gild">Ask well.</span></h2>
@@ -220,7 +238,7 @@
 <!-- ── 03 · WHAT COMES BACK ─────────────────────────────────────────────── -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head col">
+    <div class="sec-head">
       <span class="sec-no" data-reveal>03</span>
       <span class="kicker" data-reveal>What comes back</span>
       <h2 class="lead-h" data-split>A figure is a map of forces &mdash; <span class="gild">not a verdict</span>, and rarely a single one.</h2>
@@ -246,7 +264,7 @@
 <!-- ── 04 · THE ONE RULE ────────────────────────────────────────────────── -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head col">
+    <div class="sec-head">
       <span class="sec-no" data-reveal>04</span>
       <span class="kicker" data-reveal>The one rule that outlives all the others</span>
       <h2 class="lead-h" data-split>A good omen is <span class="gild">not a finish line.</span></h2>
@@ -278,10 +296,9 @@
   </div>
 </section>
 
-<script src="./wave-wipe.js?v=20260726h"></script>
-<script src="./assets/backgrounds/mountain-range.js?v=20260726h"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260726h"></script>
-<script src="./ds-motion.js?v=20260726h"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726i"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260726i"></script>
+<script src="./ds-motion.js?v=20260726i"></script>
 <script>
   /* solidify the top bar once the hero is behind us */
   (function () {
@@ -300,14 +317,5 @@
   })();
 </script>
 
-<script>
-(function(){
-  if(!window.BWWipe) return;
-  /* the numbered sections arrive on the same ridge as the landing headline */
-  document.querySelectorAll('.sec').forEach(function(sec){
-    BWWipe.reveal(sec,{duration:1500});
-  });
-})();
-</script>
 </body>
 </html>

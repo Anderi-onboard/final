@@ -11,13 +11,13 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260726h">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260726h">
-<script src="./ds-base.js?v=20260726h"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260726i">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260726i">
+<script src="./ds-base.js?v=20260726i"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -110,14 +110,17 @@
   /* the headline sits low in the hero, over the ridges' darker foreground tones
      (not the pale sky), so it needs light text — a card background no longer
      guarantees contrast the way it did when the mountain was cropped inside one */
-  .hero-slab h1{position:relative;z-index:1;font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(38px,5.2vw,66px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance;
+  .hero-slab h1{position:relative;z-index:1;font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.032em;text-wrap:balance;
     color:var(--ink);margin-top:auto;padding:46px 28px 44px;max-width:17ch}
 
   /* ── 2 · statement + method cards ── */
-  .duo{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;padding:58px 6px 8px}
-  .duo-l h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.32;letter-spacing:-.015em;text-wrap:pretty;max-width:19ch}
+  .duo{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+    column-gap:clamp(36px,6vw,96px);align-items:start;padding:58px 6px 8px}
+  .duo-l h2{font-family:"BioRhyme",var(--serif);font-weight:800;font-size:clamp(28px,4.4vw,56px);
+    line-height:1.06;letter-spacing:-.03em;text-wrap:balance;max-width:17ch}
   .duo-l .gild{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
-  .duo-l p{margin-top:20px;max-width:46ch;font-size:14.5px;line-height:1.7;color:var(--dim)}
+  .duo-l p{margin-top:22px;max-width:40ch;font-family:var(--serif);
+    font-size:clamp(16px,1.35vw,19px);line-height:1.62;color:var(--ink)}
   .duo-l .mini{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--ink);border-radius:9px;padding:7px 15px;transition:background .15s,color .15s}
   .duo-l .mini:hover{background:var(--ink);color:var(--paper)}
   .duo-r{display:flex;flex-direction:column;gap:12px}
@@ -269,8 +272,7 @@
   </section>
 </main>
 
-<script src="./wave-wipe.js?v=20260726h"></script>
-<script src="./assets/backgrounds/mountain-range.js?v=20260726h"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260726i"></script>
 <script>
 (function () {
   // Fade/rise each page's content in when it snaps into view, back out when it
@@ -289,16 +291,5 @@
 })();
 </script>
 
-<script>
-(function(){
-  if(!window.BWWipe) return;
-  /* every screen after the hero is brought in by the shared ridge wipe,
-     so the deck reads as one continuous landscape rather than a stack of
-     separate panels. The hero is already the mountain, so it is left alone. */
-  document.querySelectorAll('.page:not(.hero-slab)').forEach(function(p){
-    BWWipe.reveal(p,{duration:1600});
-  });
-})();
-</script>
 </body>
 </html>
