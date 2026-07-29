@@ -244,10 +244,28 @@
       document.head.appendChild(st);
     }
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var cycleMs = 900000;
+    var clockKey = 'bw-mtn-clock';
+    var seenKey = 'bw-mtn-seen';
+    var clockStart;
+    var seen = false;
+    try {
+      clockStart = +(sessionStorage.getItem(clockKey) || 0);
+      if (!clockStart) {
+        clockStart = Date.now() - Math.random() * cycleMs;
+        sessionStorage.setItem(clockKey, String(clockStart));
+      }
+      seen = sessionStorage.getItem(seenKey) === '1';
+      sessionStorage.setItem(seenKey, '1');
+    } catch (e) {
+      clockStart = Date.now() - Math.random() * cycleMs;
+    }
+    var sharedPhase = -(((Date.now() - clockStart) % cycleMs) / 1000);
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
-      /* random palette starting point per page load (host may still pin --mtn-phase) */
+      /* One session-wide clock keeps the palette continuous across documents.
+         A new page resumes the current frame instead of choosing a new colour. */
       if (!el.style.getPropertyValue('--mtn-phase')) {
-        el.style.setProperty('--mtn-phase', '-' + (Math.random() * 900).toFixed(1) + 's');
+        el.style.setProperty('--mtn-phase', sharedPhase.toFixed(1) + 's');
       }
       /* rotating page field on the SAME clock, painted behind the ridges */
       if (el.previousElementSibling == null || !el.previousElementSibling.classList.contains('mtn-sky')) {
@@ -266,7 +284,7 @@
          beat so the coloured ridges pour in, then restore it so the colour
          fades to the resting line-drawing. Pure enhancement; reduced-motion
          and no-JS keep the static line-art the HTML already declares. */
-      if (!reduce && el.classList.contains('line-art')) {
+      if (!reduce && !seen && el.classList.contains('line-art')) {
         el.classList.remove('line-art');
         el.classList.add('mtn-enter');
         setTimeout(function () { el.classList.add('line-art'); }, 760);

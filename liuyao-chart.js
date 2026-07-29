@@ -8,8 +8,7 @@
    Hover / click a line → English explanation. Nothing leaks to chat text —
    this block holds the whole reading.
 
-   BWLiuYaoChart.html(board, reading?, opts?) -> string   (opts.animate)
-   BWLiuYaoChart.wire(container)                                                */
+   BWLiuYaoChart.html(board, reading?, opts?) -> string   (opts.animate)       */
 (function () {
   "use strict";
 
@@ -83,7 +82,7 @@
       ? '<span class="lyc-gz"><b>'+esc(pp(P.year))+'</b> yr</span><span class="lyc-gz"><b>'+esc(pp(P.month))+'</b> mo</span><span class="lyc-gz hot"><b>'+esc(pp(P.day))+'</b> day</span><span class="lyc-gz"><b>'+esc(pp(P.hour))+'</b> hr</span>'
       : '<span class="lyc-gz hot"><b>'+esc(STEM_PY[m.dayPillar.stem.idx]+"-"+BR_PY[m.dayPillar.branch.bi])+'</b> day</span><span class="lyc-gz"><b>'+esc(BR_PY[m.monthBranch.bi])+'</b> mo</span>';
     var ss = m.shensha, starItems=[];
-    function st(label,val){ if(val==null) return; starItems.push('<span class="lyc-star" title="'+esc(SS_GLOSS[label]||"")+'"><i>'+label+'</i>'+esc(val)+'</span>'); }
+    function st(label,val){ if(val==null) return; starItems.push('<span class="lyc-star"><i>'+label+'</i>'+esc(val)+'</span>'); }
     if (ss){
       st("Post-Horse",BR_PY[ss.postHorse.bi]); st("Peach",BR_PY[ss.peachBlossom.bi]);
       st("Prosperity",BR_PY[ss.lu.bi]); st("Noble",BR_PY[ss.noble[0].bi]+","+BR_PY[ss.noble[1].bi]);
@@ -104,14 +103,8 @@
     var arrow = hasBian ? '<div class="lyc-arrowcol">'+arrowSVG()+'</div>' : "";
     var figs = '<div class="lyc-figs'+(hasBian?' pair':'')+'">'+benFig+arrow+bianFig+'</div>';
 
-    /* ── per-line hover payload ── */
-    var payload = [];
-    for (var li=5; li>=0; li--) payload.push(lineReadout(L[li], roles?roles.perLine[li]:null, board.hidden.filter(function(h){return h.position===li;})[0], board));
-
     return '<figure class="lyc'+(hasBian?' has-bian':'')+'"'+(opts.animate===false?' data-static="1"':'')+'>'+
       header + figs + verdictStrip(reading)+
-      '<div class="lyc-readout" data-empty="1"><span class="lyc-ro-hint">Hover or tap a line to read it</span></div>'+
-      '<script type="application/json" class="lyc-data">'+JSON.stringify(payload)+'</script>'+
     '</figure>';
   }
 
@@ -127,8 +120,8 @@
       var label='<span class="lyc-lab'+(isYong?' yong':'')+'"><span class="lyc-rel">'+esc(REL_PY[l.relative.key])+'</span> '+esc(STEM_PY[l.stem.idx]+"-"+BR_PY[l.branch.bi])+' <span class="lyc-el">'+esc(l.element.en)+'</span></span>';
       var role=r?'<span class="lyc-role">'+esc(ROLE_PY[r.role])+'</span>':'';
       var mk=l.marker?'<b class="lyc-mk">'+(l.marker==="self"?"World":"Resp")+'</b>':'';
-      var stars=(l.shensha&&l.shensha.length)?'<span class="lyc-ssline">'+l.shensha.map(function(s){return '<i title="'+esc(SS_GLOSS[s.label]||"")+'">'+esc(s.label)+'</i>';}).join('')+'</span>':'';
-      rows+='<div class="lyc-line" data-li="'+li+'" tabindex="0" style="--d:'+((5-li)*0.085).toFixed(3)+'s">'+
+      var stars=(l.shensha&&l.shensha.length)?'<span class="lyc-ssline">'+l.shensha.map(function(s){return '<i>'+esc(s.label)+'</i>';}).join('')+'</span>':'';
+      rows+='<div class="lyc-line" data-li="'+li+'" style="--d:'+((5-li)*0.085).toFixed(3)+'s">'+
         spirit+hidden+label+'<span class="lyc-barcell">'+lineBar(l.yang,l.moving)+'</span><span class="lyc-rt">'+mk+role+stars+'</span>'+
       '</div>';
     }
@@ -179,47 +172,7 @@
     return '<div class="lyc-verdict v-'+esc(vk)+'"><span class="lyc-vsubj">Subject · <b>'+esc(yi.en||"")+'</b></span><span class="lyc-vbadge">'+esc(cap)+'</span>'+(reading.timing?'<span class="lyc-vtiming">'+esc(reading.timing)+'</span>':'')+'</div>';
   }
 
-  function lineReadout(l, r, hid, board){
-    var title="Line "+(l.idx+1)+(l.marker?(" · "+(l.marker==="self"?"World — where you stand":"Response — the other party")):"");
-    var lead=(r?ROLE_GLOSS[r.role]+" · ":"")+REL_GLOSS[l.relative.key];
-    var notes=[];
-    notes.push(SPIRIT_GLOSS[l.spirit.cn]||l.spirit.en);
-    notes.push("Najia "+STEM_PY[l.stem.idx]+"-"+BR_PY[l.branch.bi]+" ("+l.element.en+") · "+l.wangShuai.en.toLowerCase()+" this month");
-    if (l.shensha&&l.shensha.length) notes.push("Stars here: "+l.shensha.map(function(s){return s.label+" — "+(SS_GLOSS[s.label]||"");}).join("; "));
-    if (hid) notes.push("Hidden beneath: "+REL_PY[hid.relative.key]+" "+hid.hiddenBranch.el.en+" "+BR_PY[hid.hiddenBranch.bi]+" — latent, not yet in play");
-    if (l.void) notes.push("Void (xunkong) — empty for now, fills when its time comes");
-    if (l.monthClash) notes.push("Month-break — undercut by the month");
-    if (l.dayClash) notes.push("Day-clash — struck by the day branch");
-    if (l.dayCombine) notes.push("Day-bind — held in place by the day");
-    if (l.dayTomb) notes.push("Enters the day tomb — shut away, hard to act");
-    if (l.moving&&l.transform){ var t=l.transform;
-      notes.push("Moving → becomes "+REL_PY[t.relative.key]+" "+t.element.en+" "+BR_PY[t.branch.bi]+(t.jinTui?(" ("+t.jinTui.en+")"):"")+(t.feedsBen?" · turns back to feed it":t.controlsBen?" · turns back to check it":t.clashBen?" · clashes back":"")); }
-    return { title:title, lead:lead, notes:notes };
-  }
-
-  function wire(container){
-    var figs=container.querySelectorAll?container.querySelectorAll('.lyc'):[];
-    Array.prototype.forEach.call(figs,function(fig){
-      if(fig.__wired) return; fig.__wired=true;
-      var data=[]; try{ data=JSON.parse(fig.querySelector('.lyc-data').textContent); }catch(e){}
-      var readout=fig.querySelector('.lyc-readout');
-      var rows=fig.querySelectorAll('.lyc-line');
-      var pinned=null;
-      function paint(li,on){ Array.prototype.forEach.call(rows,function(row){ row.classList.toggle('hot', on&&+row.getAttribute('data-li')===li); }); }
-      function show(li){
-        var d=data[5-li]; if(!d) return;
-        readout.removeAttribute('data-empty');
-        readout.innerHTML='<div class="lyc-ro-title">'+esc(d.title)+'</div><div class="lyc-ro-lead">'+esc(d.lead)+'</div>'+(d.notes&&d.notes.length?'<ul class="lyc-ro-notes">'+d.notes.map(function(n){return '<li>'+esc(n)+'</li>';}).join('')+'</ul>':'');
-        paint(li,true);
-      }
-      function clear(){ if(pinned!==null){show(pinned);return;} readout.setAttribute('data-empty','1'); readout.innerHTML='<span class="lyc-ro-hint">Hover or tap a line to read it</span>'; paint(-1,false); }
-      /* hover/tap line-reading interaction removed (user call): the casting
-         figure is a static reveal, no mouse-hover behaviour on the lines. */
-      void rows; void show; void clear; void paint; void pinned;
-    });
-  }
-
-  window.BWLiuYaoChart = { html:html, wire:wire, cast:cast, applyReading:applyReading };
+  window.BWLiuYaoChart = { html:html, cast:cast, applyReading:applyReading };
 
   /* ── cast: draw the whole 排盘 AS the casting animation — coins toss in the
      header while the chart lays itself out line by line, bottom to top, in place.
@@ -298,7 +251,7 @@
       ".lyc-gz{font-size:10.5px;color:var(--dim)}",".lyc-gz b{font-family:var(--sans);font-size:12.5px;color:var(--ink);font-weight:600}",
       ".lyc-gz.hot b{color:var(--terracotta)}",
       ".lyc-void{margin-left:auto;font-size:10.5px;color:var(--dim)}",".lyc-void b{font-family:var(--sans);font-size:12px;color:var(--prussian)}",
-      ".lyc-star{font-size:10.5px;color:var(--ink);white-space:nowrap;cursor:help}",
+      ".lyc-star{font-size:10.5px;color:var(--ink);white-space:nowrap}",
       ".lyc-star i{font-style:normal;font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ghost);margin-right:4px}",
       // figures
       ".lyc-figs{display:flex;align-items:flex-start;gap:6px}",
@@ -314,13 +267,7 @@
       // ben rows: spirit | hidden | label | bar | right(mk+role+stars)
       ".lyc-fig.ben .lyc-line{display:grid;grid-template-columns:56px 62px max-content 78px minmax(90px,1fr);align-items:center;column-gap:8px}",
       ".lyc-fig.bian .lyc-line{display:grid;grid-template-columns:78px max-content 42px;align-items:center;column-gap:8px}",
-      // hover/hot no longer tint the row background (user call: the casting
-      // chart shouldn't colour-shift under the pointer). The hovered line
-      // still feeds the readout below, .lyc-gz.hot keeps its text accent, and
-      // keyboard focus keeps its outline — affordance without a paint change.
-      ".lyc-line{padding:4px 5px;border-radius:5px;cursor:pointer}",
-      ".lyc-line.bianrow{cursor:default}",
-      ".lyc-line:focus{outline:1.5px solid color-mix(in oklab,var(--ink) 35%,transparent);outline-offset:-2px}",
+      ".lyc-line{padding:4px 5px;border-radius:5px}",
       ".lyc-spirit{font-size:11px;color:var(--dim);font-weight:500}",
       ".lyc-hidden{font-size:9.5px;color:var(--dim)}",
       ".lyc-lab{font-size:11.5px;color:var(--ink);white-space:nowrap;min-width:0}",
@@ -334,20 +281,12 @@
       ".lyc-rt{display:flex;align-items:center;gap:5px;flex-wrap:wrap}",
       ".lyc-mk{font-family:var(--sans);font-size:10px;font-weight:600;color:var(--ink)}",
       ".lyc-ssline{display:inline-flex;gap:4px;flex-wrap:wrap}",
-      ".lyc-ssline i{font-style:normal;font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:var(--prussian);border:1px solid color-mix(in oklab,var(--prussian) 30%,transparent);border-radius:3px;padding:0 3px;cursor:help}",
-      // verdict + readout
+      ".lyc-ssline i{font-style:normal;font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:var(--prussian);border:1px solid color-mix(in oklab,var(--prussian) 30%,transparent);border-radius:3px;padding:0 3px}",
+      // verdict
       ".lyc-verdict{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1.5px solid var(--ink)}",
       ".lyc-vsubj{font-size:11px;color:var(--dim)}",".lyc-vsubj b{color:var(--ink);font-weight:600}",
       ".lyc-vbadge{font-family:var(--sans);font-size:12.5px;padding:2px 11px;border:1px solid var(--ink);border-radius:999px;color:var(--ink)}",
       ".lyc-vtiming{font-size:11px;color:var(--faint)}",
-      ".lyc-readout{margin-top:9px;padding:9px 12px;background:transparent;border:1px solid var(--line-soft);border-radius:9px;min-height:46px}",
-      ".lyc-readout[data-empty]{display:flex;align-items:center;justify-content:center;min-height:36px}",
-      ".lyc-ro-hint{font-size:11.5px;color:var(--ghost);letter-spacing:.03em}",
-      ".lyc-ro-title{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}",
-      ".lyc-ro-lead{font-family:var(--sans);font-size:13px;color:var(--ink);line-height:1.5}",
-      ".lyc-ro-notes{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px}",
-      ".lyc-ro-notes li{font-size:12px;color:var(--dim);line-height:1.45}",
-      ".lyc-ro-notes li:before{content:'\\2014';color:var(--faint);margin-right:6px}",
       "@media (prefers-reduced-motion:no-preference){.lyc:not([data-static]) .lyc-line{animation:lycRow .5s cubic-bezier(.22,.7,.28,1) backwards;animation-delay:var(--d,0s)}}",
       "@keyframes lycRow{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}",
       "@media (max-width:680px){.lyc-figs.pair{flex-direction:column;gap:10px}.lyc-fig.ben,.lyc-fig.bian{flex:1 1 auto}.lyc-arrowcol{transform:rotate(90deg)}}"

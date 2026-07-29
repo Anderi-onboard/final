@@ -30,11 +30,10 @@
   .pressable:active{transform:scale(.97) !important}
 }
 
-/* Cross-document view transitions — page navigation crossfades like turning
-   a page instead of flashing white. Progressive: browsers without support
-   simply ignore this block. */
-@view-transition{ navigation: auto; }
-::view-transition-old(root),::view-transition-new(root){animation-duration:var(--dur-base)}
+/* Cross-document root transitions are intentionally disabled. Duplicating the
+   full-screen animated SVG and every backdrop-filter during navigation forces
+   Chromium to composite two expensive page trees and can expose a bright frame.
+   The shared mountain clock provides continuity without stacking pages. */
 
 /* ── Scroll-reveal system ─────────────────────────────────────────────────
    Elements marked [data-reveal] start just below their resting place, dimmed,
