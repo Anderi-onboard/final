@@ -52,9 +52,15 @@ html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
 html[data-skin="paper"] body .mtn-bg [clip-path] > use { opacity: .13 !important; }
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
-  stroke: color-mix(in srgb, var(--ink) 24%, transparent) !important;
-  stroke-width: 1.15 !important;
+  stroke: color-mix(in srgb, #141413 30%, transparent) !important;
+  stroke-width: 2.05 !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { stroke-width: 1.6 !important; opacity: .72; }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { stroke-width: 2.45 !important; opacity: .5; }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { stroke-width: 1.9 !important; opacity: .62; }
 
 /* Replace every former glass-dependent component with an explicit opaque
    carrier. These selectors name the real page components so the visual change
@@ -194,7 +200,7 @@ body[data-page="app"] .stria {
   border: 1px solid var(--ui-line); color: var(--ink);
 }
 body[data-page="app"] .stria:hover { background: var(--cactus); }
-body[data-page="app"] .composer input { font-size: 16px; letter-spacing: -.01em; }
+body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); }
 body[data-page="app"] .send:hover { background: var(--terracotta); transform: none; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
@@ -231,6 +237,12 @@ body[data-page="app"] .thread-inner { max-width: 720px; }
 body[data-page="app"] .msg-user { max-width: 82%; }
 body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em; }
 body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
+body[data-page="app"] .rd-actions { flex-wrap: wrap; }
+body[data-page="app"] .rd-action {
+  background: var(--paper-raised); border-color: var(--ui-line);
+  border-radius: 10px 13px 9px 12px / 12px 9px 13px 10px;
+}
+body[data-page="app"] .rd-action:hover { background: var(--oat); border-color: var(--ui-line-strong); }
 
 /* Content pages ----------------------------------------------------------- */
 body[data-page="pricing"] .shell,
@@ -296,6 +308,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .composer { min-height: 58px; border-radius: 18px; padding: 7px; }
   body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
+  body[data-page="app"] .composer-help { display: none; }
   body[data-page="app"] .site-foot { line-height: 1.7; }
   body:not([data-page="app"]) .pagehead,
   body[data-page="pricing"] .pagehead { padding-left: 12px; }

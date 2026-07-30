@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260729c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260729d">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -223,14 +223,14 @@
   .reading{max-width:none}
   .reading .lbl b{color:var(--terracotta);font-weight:400}
   .reading-body{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:20px;text-wrap:pretty;color:var(--ink)}
-  /* reading actions — a quiet copy control under each finished reading */
+  /* response actions — compact, discoverable controls beneath a finished answer */
   .rd-actions{margin-top:20px;display:flex;gap:10px;animation:rdActionsIn var(--dur-slow) var(--ease-out) both}
   @keyframes rdActionsIn{from{opacity:0}to{opacity:1}}
-  .rd-copy{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:12.5px;color:var(--dim);
+  .rd-action{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:12.5px;color:var(--dim);
     border:1px solid var(--line);border-radius:9px;padding:6px 12px;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
-  .rd-copy:hover{background:var(--paper-dim);color:var(--ink);border-color:var(--ink)}
+  .rd-action:hover{background:var(--paper-dim);color:var(--ink);border-color:var(--ink)}
   .rd-copy.done{color:var(--terracotta);border-color:var(--terracotta)}
-  .rd-copy svg{opacity:.8}
+  .rd-action svg{opacity:.8}
   .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta)}
   .reading-body .gild.alt{color:var(--pine);border-bottom-color:var(--pine)}
   /* word stream — five reveal styles rotate word-by-word, slowly taking turns.
@@ -414,14 +414,16 @@
   .stria:hover{background:var(--paper-dim)}
   /* CJK falls through BioRhyme (latin-only) to a proper Chinese serif, at a
      size/tracking tuned for hanzi instead of the latin default */
-  .composer input{flex:1;background:none;border:none;outline:none;font-family:"BioRhyme","Noto Serif SC","Songti SC","Source Han Serif SC",var(--serif),serif;font-size:15.5px;letter-spacing:.01em;color:var(--ink);min-width:0}
-  .composer input::placeholder{color:var(--faint)}
+  .composer textarea{flex:1;align-self:center;resize:none;overflow-y:auto;max-height:120px;background:none;border:none;outline:none;font-family:"BioRhyme","Noto Serif SC","Songti SC","Source Han Serif SC",var(--serif),serif;font-size:15.5px;line-height:1.5;letter-spacing:.01em;color:var(--ink);min-width:0;padding:7px 0}
+  .composer textarea::placeholder{color:var(--faint)}
   .send{width:40px;height:40px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center;flex-shrink:0;transition:transform .15s,opacity .15s}
   .send:hover{transform:scale(1.06)}
   .send:disabled{animation:sendBreath 1.7s var(--ease-in-out) infinite}
   @keyframes sendBreath{0%,100%{opacity:1}50%{opacity:.45}}
   .send[disabled]{opacity:.4;cursor:default;transform:none}
   .disclaimer{text-align:center;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
+  .composer-help{max-width:700px;margin:8px auto 0;display:flex;justify-content:space-between;gap:16px;font-family:var(--sans);font-size:10.5px;line-height:1.4;color:var(--faint);letter-spacing:.02em}
+  .composer-help span:last-child{text-align:right}
 
   /* ── method picker popover — the two castings, made distinct ── */
   .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:13px;padding:7px;box-shadow:none;display:flex;flex-direction:column;gap:2px;z-index:40;
@@ -526,7 +528,7 @@
     .greeting h1{font-size:clamp(26px,8vw,42px)}
     .composer-zone{padding-bottom:18px}
     .composer{padding:7px 7px 7px 12px;gap:7px}
-    .composer input{font-size:15px}
+    .composer textarea{font-size:15px}
     .stria{padding:7px 11px;font-size:12px}
     .send{width:36px;height:36px}
     .disclaimer{font-size:10.5px}
@@ -739,11 +741,12 @@
   <footer class="composer-zone">
     <form class="composer" id="composerForm">
       <button type="button" class="stria pressable" id="methodChip" title="Change casting method" aria-haspopup="true" aria-expanded="false">Stria 64</button>
-      <input type="text" id="composerInput" placeholder="Say it plainly&hellip;" aria-label="Ask the oracle" autocomplete="off">
+      <textarea id="composerInput" rows="1" placeholder="Describe the situation, stakes, and timing&hellip;" aria-label="Ask the oracle" autocomplete="off"></textarea>
       <button type="submit" class="send pressable" id="sendBtn" aria-label="Cast">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 8h11M9 3.5L13.5 8 9 12.5"></path></svg>
       </button>
     </form>
+    <div class="composer-help" aria-hidden="true"><span>Enter to cast &middot; Shift+Enter for a new line</span><span>Follow-ups keep this casting as context</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
     <p class="disclaimer" id="methodNote">Perspectives, not certainty &middot; Stria 64 &mdash; 300 units per inquiry</p>
     <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">How it works</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Pricing</a></p>
@@ -752,46 +755,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260728c"></script>
-<script src="./casting-figure.js?v=20260729c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260729d"></script>
+<script src="./casting-figure.js?v=20260729d"></script>
 <script src="./liuyao-engine.js?v=20260728c"></script>
 <script src="./liuyao-ai.js?v=20260728c"></script>
 <script src="./liuyao-chart.js?v=20260729a"></script>
 <script src="./prompt-engine.js?v=20260728c"></script>
 <script src="./prompt-router.js?v=20260728c"></script>
 <script src="./account.js?v=20260728c"></script>
-<script>window.BW_BUILD="20260729c";</script>
-<script src="./chat-app.js?v=20260729c"></script>
-<script>
-(function () {
-  "use strict";
-  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var PROMPTS = [
-    "Should I hold my position, or adapt?",
-    "Is this relationship sound enough to last?",
-    "Is now the season to relocate?",
-    "What am I not seeing in this decision?",
-    "Is the timing right, or just convenient?"
-  ];
-  var input = document.getElementById("composerInput");
-  if (input && !reduced) {
-    var qi = 0, ci = 0, del = false;
-    (function tick() {
-      if (!document.body.classList.contains("is-empty") || document.activeElement === input || input.value) {
-        if (!document.body.classList.contains("is-empty")) input.placeholder = "Request further synthesis\u2026";
-        setTimeout(tick, 700); return;
-      }
-      var full = PROMPTS[qi]; ci += del ? -1 : 1;
-      input.dataset.example = full;
-      input.placeholder = full.slice(0, ci) + "\u258F";
-      var wait = del ? 22 : (45 + Math.random() * 65);
-      if (!del && ci === full.length) { del = true; wait = 2000; }
-      else if (del && ci === 0) { del = false; qi = (qi + 1) % PROMPTS.length; wait = 480; }
-      setTimeout(tick, wait);
-    })();
-  }
-})();
-</script>
+<script>window.BW_BUILD="20260729d";</script>
+<script src="./chat-app.js?v=20260729d"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

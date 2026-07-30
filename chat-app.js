@@ -328,13 +328,19 @@
       mdReading(r.reading) + keysSec + timeSec + '</div>' + readingActions();
   }
 
-  /* a quiet action row under each finished reading: copy the whole thing to
-     the clipboard (the low-friction "share" — the reading is the artifact). */
+  /* Actions expected on a finished AI response: preserve the artifact, continue
+     in context, or deliberately begin a separate inquiry. */
   function readingActions() {
     return '<div class="rd-actions" aria-hidden="false">' +
-      '<button type="button" class="rd-copy pressable" title="Copy this reading">' +
+      '<button type="button" class="rd-action rd-copy pressable" title="Copy this reading">' +
       '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="8" height="9" rx="1.5"></rect><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"></path></svg>' +
-      '<span class="rd-copy-lbl">Copy</span></button></div>';
+      '<span class="rd-copy-lbl">Copy</span></button>' +
+      '<button type="button" class="rd-action rd-follow pressable" title="Ask about this casting">' +
+      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3.5 3v-3H2.5z"></path></svg>' +
+      '<span>Follow up</span></button>' +
+      '<button type="button" class="rd-action rd-new pressable" title="Start a separate inquiry">' +
+      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3v10M3 8h10"></path></svg>' +
+      '<span>New inquiry</span></button></div>';
   }
   /* static, fully-painted reading (used on reload / conversation switch) */
   function readingHTML(msg) {
@@ -473,44 +479,31 @@
     return Promise.race([run, guard]);
   }
 
-  /* ── typewriter stream renderer ──
-     Network tokens arrive in bursts; painting each burst wholesale reads as
-     blocky jumps. This reveals the text character-by-character instead: a rAF
-     loop chases the live buffer (clearing any backlog in ~0.4s so it never
-     falls behind the model), re-renders the markdown preview at most every
-     66ms, and keeps a blinking caret at the write head while the stream is
-     open. finish(cb) flushes the tail then hands off; cancel() just stops. */
+  /* ── stream renderer ──
+     Paint the latest server buffer at a modest cadence. Artificially chasing
+     every character made Chromium parse and replace the entire markdown tree
+     many times per second, then the old reveal pass animated it all again. */
   function makeTypewriter(el) {
-    var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var target = "", shown = 0, painted = -1, lastPaint = 0, raf = null, closed = false, onDone = null;
-    function paint(now) {
-      lastPaint = now || (window.performance ? performance.now() : Date.now());
-      // the blinking caret rides .reading-streaming > *:last-child::after (CSS),
-      // so painting the sliced markdown is all that's needed here
-      el.innerHTML = mdReading(target.slice(0, shown)) || '<p class="rd-para"></p>';
+    var target = "", timer = null, cancelled = false;
+    function paint() {
+      timer = null;
+      if (cancelled) return;
+      el.innerHTML = mdReading(target) || '<p class="rd-para"></p>';
     }
-    function tick(now) {
-      raf = null;
-      var behind = target.length - shown;
-      if (behind > 0) shown = Math.min(target.length, shown + Math.max(1, Math.ceil(behind / 24)));
-      var finished = closed && shown >= target.length;
-      if (shown !== painted && (now - lastPaint >= 66 || finished)) { paint(now); painted = shown; }
-      if (!finished) { raf = requestAnimationFrame(tick); return; }
-      if (onDone) { var cb = onDone; onDone = null; cb(); }
+    function schedule() {
+      if (!timer) timer = setTimeout(paint, 96);
     }
-    function ensure() { if (!raf) raf = requestAnimationFrame(tick); }
     return {
       delta: function (full) {
         target = String(full || "");
-        if (reduced) { shown = target.length; painted = shown; lastPaint = 0; paint(); return; }
-        ensure();
+        schedule();
       },
       finish: function (cb) {
-        closed = true; onDone = cb || null;
-        if (reduced) { shown = target.length; paint(); if (onDone) { var f = onDone; onDone = null; f(); } return; }
-        ensure();
+        if (timer) { clearTimeout(timer); timer = null; }
+        paint();
+        if (cb) cb();
       },
-      cancel: function () { closed = true; onDone = null; if (raf) { cancelAnimationFrame(raf); raf = null; } }
+      cancel: function () { cancelled = true; if (timer) { clearTimeout(timer); timer = null; } }
     };
   }
 
@@ -639,12 +632,20 @@
   }
   function restoreDraft() {
     try { $("composerInput").value = localStorage.getItem(draftKey()) || ""; } catch (e) {}
+    sizeComposer();
   }
   function clearDraft() {
     try { localStorage.removeItem(draftKey()); } catch (e) {}
     var ci = $("composerInput"); if (ci) ci.value = "";
+    sizeComposer();
   }
-  $("composerInput").addEventListener("input", saveDraft);
+  function sizeComposer() {
+    var ci = $("composerInput");
+    if (!ci || ci.tagName !== "TEXTAREA") return;
+    ci.style.height = "auto";
+    ci.style.height = Math.min(ci.scrollHeight, 120) + "px";
+  }
+  $("composerInput").addEventListener("input", function () { saveDraft(); sizeComposer(); });
 
   /* ── shortfall pulse — say "not enough units" where the number lives:
      units chip, sidebar count and Add-units button flash terracotta. ── */
@@ -1097,10 +1098,9 @@
     }, function (e) { tw.cancel(); fail({ __error: e }); });
   }
 
-  /* ── reveal an answer naturally: crossfade the cast into the reading, then
-     stream the verdict word-by-word and fade the line-by-line analysis in ── */
-  function revealReading(node, msg, convId, idx) {
-    var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* ── settle the final answer once. Live server text may already have streamed;
+     replacing it with the structured version is the only final paint. ── */
+  function revealReading(node, msg, convId, idx, streamedAny) {
     return new Promise(function (resolve) {
       /* the casting animation already drew the annotated figure IN PLACE (cast());
          leave it exactly where it is and append the structured verdict below it.
@@ -1112,68 +1112,9 @@
       frag.innerHTML = verdictHTML(msg);
       while (frag.firstChild) node.appendChild(frag.firstChild);
       var bodyEl = node.querySelector(".reading-body");
-      if (reduced || !bodyEl) { resolve(); return; }
-      streamReading(bodyEl, function () {
-        bodyEl.classList.add("bw-streamed");
-        resolve();
-      });
+      if (bodyEl) bodyEl.classList.add("bw-streamed");
+      resolve();
     });
-  }
-
-  /* stream the verdict like a written answer: each word does a smooth blur-reveal,
-     in reading order across the lede + paragraphs, then the supporting sections rise in */
-  function wrapWords(p, out) {
-    var texts = [], stack = [p], n, c, i;
-    while (stack.length) {
-      n = stack.pop();
-      for (i = 0; i < n.childNodes.length; i++) {
-        c = n.childNodes[i];
-        if (c.nodeType === 3) { if (c.textContent.trim()) texts.push(c); }
-        else if (c.nodeType === 1) stack.push(c);
-      }
-    }
-    texts.forEach(function (tn) {
-      var parts = tn.textContent.split(/(\s+)/), frag = document.createDocumentFragment();
-      parts.forEach(function (w) {
-        if (!w) return;
-        if (/^\s+$/.test(w)) { frag.appendChild(document.createTextNode(w)); return; }
-        var s = document.createElement("span"); s.className = "bw-rw rw-s" + (out.length % 5); s.textContent = w;
-        out.push(s); frag.appendChild(s);
-      });
-      tn.parentNode.replaceChild(frag, tn);
-    });
-  }
-  function streamReading(bodyEl, done) {
-    var words = [];
-    [].slice.call(bodyEl.querySelectorAll(".stream-target")).forEach(function (p) { wrapWords(p, words); });
-    var secs = [].slice.call(bodyEl.querySelectorAll(".rd-sec"));
-    secs.forEach(function (s) { s.classList.add("rd-pending"); });
-    function revealSecs() {
-      secs.forEach(function (s, si) { setTimeout(function () { s.classList.add("rd-in"); }, si * 170); });
-      setTimeout(function () { done && done(); }, secs.length * 170 + 220);
-    }
-    if (!words.length) { revealSecs(); return; }
-    /* rolling will-change window: promote only the next few words to compositor
-       layers (blur/clip/transform transitions then run off the main thread),
-       and release each word shortly after it lands — hundreds of simultaneous
-       layers would jank the compositor, a window of ~8 never does. */
-    var AHEAD = 8, TRAIL = 10, promoted = 0;
-    var k = 0;
-    (function tick() {
-      if (k >= words.length) {
-        words.forEach(function (w) { w.style.willChange = "auto"; });
-        revealSecs(); return;
-      }
-      while (promoted < Math.min(k + AHEAD, words.length)) {
-        words[promoted].style.willChange = "opacity, transform, filter, clip-path";
-        promoted++;
-      }
-      /* one word at a time, slowly, so the five reveal styles visibly take turns */
-      words[k].classList.add("on");
-      if (k - TRAIL >= 0) words[k - TRAIL].style.willChange = "auto";
-      k++;
-      setTimeout(tick, 105);
-    })();
   }
 
   $("composerForm").addEventListener("submit", function (e) {
@@ -1182,6 +1123,13 @@
     /* on the landing, an example is cycling in the placeholder → empty submit sends it */
     var ex = document.body.classList.contains("is-empty") ? (inp.dataset.example || "") : "";
     send(inp.value.trim() || ex);
+  });
+  $("composerInput").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey && !e.isComposing) {
+      e.preventDefault();
+      if (typeof $("composerForm").requestSubmit === "function") $("composerForm").requestSubmit();
+      else $("sendBtn").click();
+    }
   });
 
   /* ── method picker popover ── */
@@ -1318,6 +1266,21 @@
   /* ── copy a reading — delegated; grabs the reading body's text and drops it
      on the clipboard, with a brief "Copied" confirmation on the button ── */
   document.addEventListener("click", function (e) {
+    var follow = e.target && e.target.closest && e.target.closest(".rd-follow");
+    if (follow) {
+      var followInput = $("composerInput");
+      if (followInput) {
+        followInput.placeholder = "Ask a follow-up about this casting\u2026";
+        followInput.focus();
+      }
+      return;
+    }
+    var fresh = e.target && e.target.closest && e.target.closest(".rd-new");
+    if (fresh) {
+      var newBtn = $("newCast");
+      if (newBtn) newBtn.click();
+      return;
+    }
     var btn = e.target && e.target.closest && e.target.closest(".rd-copy");
     if (!btn) return;
     var art = btn.closest(".reading");

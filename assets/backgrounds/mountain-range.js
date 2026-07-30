@@ -50,9 +50,14 @@
        inside the Terracotta Canyon band; hosts may override it on
        .mtn-bg (e.g. style="--mtn-phase:-52s" opens on Harbour Dusk). */
     + '.mtn-bg .fill{animation-iteration-count:infinite;animation-timing-function:linear}'
-    + '.mtn-bg [class^="flow-"]{will-change:transform}'
-    + '.mtn-bg .cloud-bob{animation:mtn-cloud-bob 8s ease-in-out infinite}'
-    + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(0,0,0,0.24);stroke-width:1.2}'
+    + '.mtn-bg [class^="flow-"]{will-change:auto}'
+    + '.mtn-bg .cloud-bob{animation:none}'
+    /* Anthropic-art line language: warm near-black, rounded brush ends and a
+       deliberately uneven cadence of weights rather than technical hairlines. */
+    + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(20,20,19,.28);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
+    + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:1.55;opacity:.72}'
+    + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:2.45;opacity:.5}'
+    + '.mtn-bg .contour use:nth-child(3n){stroke-width:1.9;opacity:.62}'
     /* LINE-ART mode — add class "line-art" to .mtn-bg. The filled ridges drop
        out and only the contour lines remain: a clean topographic line-drawing
        of the range, so text pages keep the living, moving backdrop without any
@@ -60,7 +65,7 @@
        underneath — a colour layer can fade in over this on chosen moments. */
     + '.mtn-bg.line-art .fill{opacity:.62;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art [clip-path]>use{opacity:.5;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
-    + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(42,32,22,0.34);stroke-width:1.1}'
+    + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(20,20,19,.3)}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
        line-art so the colour recedes and leaves the line-drawing: background
@@ -85,6 +90,18 @@
     + '.mtn-bg .cloud-1{animation:mtn-cloud-r 120s linear infinite}.mtn-bg .cloud-2{animation:mtn-cloud-l 96s linear infinite}'
     + '.mtn-bg .cloud-3{animation:mtn-cloud-r 74s linear -30s infinite}.mtn-bg .cloud-4{animation:mtn-cloud-l 132s linear -18s infinite}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 104s linear -50s infinite}.mtn-bg .cloud-6{animation:mtn-cloud-l 84s linear -12s infinite}'
+    /* Lightweight motion profile: keep the scene alive with three slow ridge
+       planes and two clouds. The remaining artwork is static, so extension-heavy
+       Chromium profiles do not have to composite sixteen perpetual animations. */
+    + '.mtn-bg .fill{animation:none;fill:#D9C9A5}'
+    + '.mtn-bg .l1,.mtn-bg .l2{fill:#F3EBDD}.mtn-bg .l3,.mtn-bg .l4{fill:#E9DDC5}.mtn-bg .l5,.mtn-bg .l6{fill:#DCC8A7}.mtn-bg .l7,.mtn-bg .l8{fill:#CDB28A}.mtn-bg .l9,.mtn-bg .l10{fill:#B9956E}'
+    + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
+    + '.mtn-bg .flow-3{animation:mtn-flow-l 240s linear infinite;will-change:transform}'
+    + '.mtn-bg .flow-6{animation:mtn-flow-r 210s linear infinite;will-change:transform}'
+    + '.mtn-bg .flow-9{animation:mtn-flow-l 280s linear infinite;will-change:transform}'
+    + '.mtn-bg [class^="cloud-"]{animation:none}'
+    + '.mtn-bg .cloud-2{animation:mtn-cloud-l 210s linear infinite;will-change:transform}'
+    + '.mtn-bg .cloud-5{animation:mtn-cloud-r 240s linear -50s infinite;will-change:transform}'
     + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important}}';
 
   /* holdify — rewrite every mtn-sys-l* keyframe list from evenly-spaced stops into
@@ -185,11 +202,15 @@
   /* ridge fill closes to the bottom; the curve is the open top edge for contours */
   function shape(i) { return W[i] + " L 4000 600 L -2000 600 Z"; }
 
+  /* Fewer, less evenly spaced strokes read as a hand-drawn landscape instead
+     of a technical contour map. The foreground remains denser, but no plane
+     becomes a grey wall of repeated hairlines. */
   var LAYERS = [
-    { n: 5, step: 14 }, { n: 6, step: 14 }, { n: 8, step: 13 }, { n: 12, step: 12 },
-    { n: 14, step: 11 }, { n: 18, step: 10 }, { n: 12, step: 9 }, { n: 7, step: 8 },
-    { n: 3, step: 7 }, { n: 2, step: 5 }
+    { n: 3, step: 19 }, { n: 3, step: 18 }, { n: 4, step: 17 }, { n: 5, step: 16 },
+    { n: 6, step: 14 }, { n: 7, step: 13 }, { n: 5, step: 12 }, { n: 4, step: 11 },
+    { n: 3, step: 9 }, { n: 2, step: 7 }
   ];
+  var LINE_WOBBLE = [0, 2.8, -1.6, 1.2, -2.4, 2.1, -.8];
   var CLOUDS = [
     { t: "translate(180,12) scale(1.6)", o: .55, d: "0s" },
     { t: "translate(470,50) scale(1.0)", o: .78, d: "-2.8s" },
@@ -213,7 +234,10 @@
     var ridges = '';
     LAYERS.forEach(function (L, idx) {
       var i = idx + 1, contour = '';
-      for (var k = 1; k <= L.n; k++) contour += '<use href="#mw' + i + 'c" y="' + (k * L.step).toFixed(2) + '"/>';
+      for (var k = 1; k <= L.n; k++) {
+        var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
+        contour += '<use href="#mw' + i + 'c" y="' + offset.toFixed(2) + '"/>';
+      }
       /* fill and contours ride in SEPARATE flow groups sharing the same animation
          (same timeline + start = always in sync). The fill layer re-rasters at each
          4s palette step; the ~100 stroked contour paths now sit in their own cached
@@ -225,7 +249,7 @@
     var clouds = '';
     CLOUDS.forEach(function (c, idx) {
       var cc = '';
-      for (var y = 5; y <= 25; y += 5) cc += '<use href="#mxy-cloud-c" y="' + y + '"/>';
+      [7, 15.5, 22].forEach(function (y) { cc += '<use href="#mxy-cloud-c" y="' + y + '"/>'; });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
         + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'

@@ -359,10 +359,9 @@
     };
   }
 
-  /* ── public: cast — the casting animation IS the annotated figure. The same
-     figure that holds the reading draws itself in place (coins toss → ink bars
-     appear line by line → trigrams/name → branches grow), so nothing is swapped
-     and the board never jumps position. ── */
+  /* ── public: cast — render the completed figure once, then reveal the whole
+     piece in one ink-settling gesture. This avoids a 6/12-step timer queue and
+     keeps the SVG on a single composited layer during the entrance. ── */
   function cast(container, spec, opts) {
     injectCSS();
     opts = opts||{};
@@ -387,54 +386,21 @@
       return Promise.resolve();
     }
 
-    var benLn = [].slice.call(svg.querySelectorAll('.bw-af-ln:not([data-bian])'))
-      .sort(function(a,b){ return (+a.getAttribute("data-li")) - (+b.getAttribute("data-li")); }); /* bottom → top */
-    var bianLn = [].slice.call(svg.querySelectorAll('.bw-af-ln[data-bian]'))
-      .sort(function(a,b){ return (+a.getAttribute("data-li")) - (+b.getAttribute("data-li")); });
-    var ordinals = ["First","Second","Third","Fourth","Fifth","Sixth"];
-
     return new Promise(function(resolve){
-      /* ONE unbroken rhythm \u2014 no phases. All twelve strokes (primary six, then
-         transformed six) land on the same steady 620ms heartbeat with zero
-         pause between the figures, and the annotations begin blooming while
-         the final strokes are still settling \u2014 a single continuous unfolding,
-         never "part one, stop, part two". Each stroke's 950ms settle always
-         finishes before its successor's midpoint, so nothing collides. */
-      var PER = 620;
-      var seq = benLn.concat(bianLn), k = 0;
-      if (status) status.textContent = "Casting\u2026";
-      setTimeout(step, 480);
+      if (status) status.textContent = "Forming the figure\u2026";
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          svg.classList.add("bw-cast-in");
+        });
+      });
+      setTimeout(finishCast, 920);
 
-      function step(){
-        if (k >= seq.length){ finishCast(); return; }
-        if (status) {
-          status.textContent = k < benLn.length
-            ? ordinals[k] + " line\u2026"
-            : "Transforming\u2026";
-        }
-        seq[k].classList.add("in");
-        k++;
-        /* annotations start blooming two strokes before the end \u2014 the finish
-           overlaps the last ink instead of waiting for it */
-        if (k === seq.length - 1) beginBloom();
-        setTimeout(step, PER);
-      }
-      var bloomed = false;
-      function beginBloom(){
-        /* stage 1: start the branch-label bloom (their keyframe animations fill
-           forwards, overriding the data-cast hide) while the last strokes are
-           still landing — data-cast stays ON so un-landed lines remain hidden */
-        if (bloomed) return; bloomed = true;
-        svg.setAttribute("data-anim","1");
-      }
       function finishCast(){
-        beginBloom();
-        /* stage 2: the last stroke has landed — release the rest of the board
-           (marks → names → currents follow on their own staggered transitions) */
         svg.removeAttribute("data-cast");
+        svg.classList.remove("bw-cast-in");
         if (figEl){ figEl.classList.remove("bw-casting"); figEl.classList.add("bw-af-live"); }
         if (status) status.textContent = "";
-        setTimeout(resolve, 1100);
+        resolve();
       }
     });
   }
@@ -558,9 +524,9 @@
       ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:100%;font-family:var(--sans);background:transparent}",
       ".bw-af-fig.bw-casting,.bw-af-fig.bw-casting:hover{position:relative;isolation:isolate;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
-      /* SVG text at fractional scale renders fuzzy with default hinting — force
-         geometric precision so micro labels stay crisp at any board width */
-      ".bw-af text{text-rendering:geometricPrecision}",
+      /* Let the browser preserve font hinting; geometricPrecision softens small
+         SVG labels on Windows at fractional display scaling. */
+      ".bw-af text{text-rendering:auto}",
       ".bw-af-el{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
       ".bw-af-bel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--dim)}",
@@ -600,16 +566,15 @@
       "@keyframes bwAftSlide{from{opacity:0;transform:translateX(6px)}to{opacity:1;transform:translateX(0)}}",
       "@keyframes bwAftBleed{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:translateX(0)}}",
       "@keyframes bwAftScale{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}",
-      /* ── casting IN PLACE: the annotated figure draws itself line by line, then
-         the branches grow & the whole board comes alive — same element, no swap ── */
-      ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:10px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
-      ".bw-af-bar::after{content:'';position:absolute;left:0;bottom:0;width:34px;height:2px;background:var(--terracotta);border-radius:58% 42% 55% 45%}",
+      /* ── casting IN PLACE: one completed figure, one reveal, no staged swap ── */
+      ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:2px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;gap:7px;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-af-bar .bw-cast-status::before{content:'';width:6px;height:6px;flex:none;background:var(--terracotta);border-radius:58% 42% 63% 37% / 44% 61% 39% 56%;animation:bwStatusPulse 1.4s ease-in-out infinite}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
       "@keyframes bwStatusPulse{0%,100%{transform:scale(.72);opacity:.45}50%{transform:scale(1);opacity:1}}",
+      ".bw-af-live .bw-af-loader{animation:none;transform:none}",
       /* the moment, as a compact inline row joined by organic ink dots */
       ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
       ".bw-af-moment .bw-af-dot{flex:none;opacity:.85}",
@@ -623,23 +588,9 @@
       ".bw-af-mark{fill:none;stroke-linecap:round}",
       ".bw-af-flowbase{fill:none;stroke-width:1.3;opacity:.26}",
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
-      ".bw-af-fig.bw-casting .bw-af-moment{opacity:0;transition:opacity .5s ease}",
-      ".bw-af[data-cast] .bw-af-ln{opacity:0}",
-      /* a stroke of ink settling: drifts up from below through a slight blur,
-         overshoots a hair, then rests — 950ms, always finished before the next
-         line begins (620ms cadence + the animation's long soft tail) */
-      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;transform-box:fill-box;transform-origin:left center;animation:bwAfRow .9s var(--ease-cinematic,cubic-bezier(.16,1,.3,1)) both}",
-      ".bw-af[data-cast] .bw-af-branch,.bw-af[data-cast] .bw-af-arrow,.bw-af[data-cast] .bw-af-tarrow,.bw-af[data-cast] .bw-af-flow,.bw-af[data-cast] .bw-af-flowbase,.bw-af[data-cast] .bw-af-mark,.bw-af[data-cast] .bw-af-markbg{opacity:0}",
-      ".bw-af[data-cast] .bw-af-tri-sym,.bw-af[data-cast] .bw-af-tri-en,.bw-af[data-cast] .bw-af-name{opacity:0}",
-      /* the finish is a layered bloom, not a dump: annotations arrive in waves —
-         branches → moving marks → trigrams/names → sheng-ke currents */
-      ".bw-af .bw-af-branch{transition:opacity .6s ease}",
-      ".bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .6s ease .25s}",
-      ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name{transition:opacity .7s ease .5s}",
-      ".bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-tarrow{transition:opacity .8s ease .85s}",
-      /* left-to-right ink landing: opacity + transform only, avoiding SVG blur
-         re-raster and the frame skips it caused */
-      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(5px) scaleX(.16) rotate(-.7deg)}45%{opacity:1}76%{transform:translateY(-.5px) scaleX(1.015) rotate(.18deg)}100%{opacity:1;transform:none}}",
+      ".bw-af[data-cast]{opacity:0;transform:translateY(7px);transform-origin:center}",
+      ".bw-af[data-cast].bw-cast-in{animation:bwAfWhole .86s var(--ease-cinematic,cubic-bezier(.16,1,.3,1)) both}",
+      "@keyframes bwAfWhole{0%{opacity:0;transform:translateY(7px)}38%{opacity:.72}100%{opacity:1;transform:none}}",
       /* ── the board settles after its single reveal and HOLDS STILL: no idle
          loops, no perpetual motion. Sheng-ke ties render as static dashed
          currents; moving-line marks stay put at rest. ── */
