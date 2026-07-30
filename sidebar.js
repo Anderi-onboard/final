@@ -1,6 +1,6 @@
-/* BourneWise — shared app sidebar.
+/* BourneWise — shared site sidebar.
    ONE canonical sidebar, mirroring index.html (the source of truth), injected on every
-   app/account page so the chrome is identical everywhere. Pure-text pages omit it.
+   casting/account page so the chrome is identical everywhere. Pure-text pages omit it.
    Load AFTER account.js:  <script src="./account.js"></script><script src="./sidebar.js"></script>
    It injects its own CSS + markup, then wires the rail toggle, casting history,
    ledger balance and the account menu from the shared BWAccount store. */
@@ -101,7 +101,7 @@
   var aside = document.createElement("aside");
   aside.className = "sidebar";
   aside.setAttribute("data-bw-shared", "");
-  aside.setAttribute("data-screen-label", (document.title.split("—")[0] || "App").trim() + " sidebar");
+  aside.setAttribute("data-screen-label", (document.title.split("—")[0] || "BourneWise").trim() + " sidebar");
   aside.innerHTML =
     '<div class="side-top">' +
       '<a class="brand-home" href="./index.html" aria-label="BourneWise home" title="Home">' + MARK +
@@ -146,7 +146,7 @@
   var A = window.BWAccount;
   var S = A ? A.state() : { convs: [], units: 0, account: { name: "Guest", plan: "free", signedIn: false }, activeId: null };
 
-  /* casting history → open the conversation back in the app */
+  /* casting history → open the conversation back in the casting view */
   var hist = aside.querySelector("#histList");
   if (S.convs && S.convs.length) {
     S.convs.slice(0, 10).forEach(function (c) {

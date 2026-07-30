@@ -1,22 +1,23 @@
 /* ds-motion.js — BourneWise shared motion layer.
-   One file gives every long-form page the same silk: Lenis inertial scroll,
-   a scroll-progress rail, IntersectionObserver reveals, and SplitText-style
-   word reveals on headings. Pure enhancement — if Lenis fails to load or the
-   visitor prefers reduced motion, the page is fully present and native scroll
-   takes over. Nothing here is required for content to be readable.
+   One file gives every long-form page the same silk: a scroll-progress rail,
+   IntersectionObserver reveals, and SplitText-style word reveals on headings.
+   Pure enhancement — with JS off or reduced motion on, the page is fully
+   present. Nothing here is required for content to be readable.
+
+   Scrolling is NATIVE. A JS scroll-hijacker (we shipped Lenis for a while)
+   runs a permanent rAF loop and lerps the scroll offset by hand, which fought
+   the always-animating mountain background and produced the very stutter it
+   was meant to cure. Native scroll is browser/GPU-driven and never stutters.
 
    Opt in per page with:  <body data-motion>   (or call BWMotion.start())
    Markup hooks:
      [data-reveal]            → rises into view (see tokens/motion.css)
      [data-reveal-group]      → auto-stagger direct [data-reveal] children (--i)
-     [data-split]             → heading whose words rise one after another
-   Respect the reader: [data-motion-lenis="off"] on <html> keeps native scroll
-   but still runs reveals. */
+     [data-split]             → heading whose words rise one after another */
 (function () {
   "use strict";
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var started = false;
-  var lenis = null;
 
   /* ── word-split a heading into <span class="w"><span class="ww">word</span></span>
      preserving spaces, so overflow:hidden can clip each word's rise. Skips if
@@ -64,6 +65,21 @@
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
     targets.forEach(function (t) { io.observe(t); });
+
+    /* The -12% bottom margin holds a reveal back until it has risen clear of the
+       fold. An element sitting in that last sliver of the DOCUMENT can therefore
+       never satisfy the threshold — there is no more page left to scroll, so it
+       stays at opacity 0 for good. (guide.html's closing "500 free units are
+       waiting" was invisible for exactly this reason.) Sweep the stragglers in
+       once the reader reaches the bottom. */
+    function sweep() {
+      if (scrollY + innerHeight < document.documentElement.scrollHeight - 2) return;
+      targets.forEach(function (t) { t.classList.add('is-in'); io.unobserve(t); });
+      removeEventListener('scroll', sweep);
+      removeEventListener('load', sweep);
+    }
+    addEventListener('scroll', sweep, { passive: true });
+    addEventListener('load', sweep);   // after fonts/images settle the height
   }
 
   /* progress rail — reflect scroll fraction into --scroll on <html> */
@@ -75,51 +91,21 @@
       var f = Math.min(1, Math.max(0, (y != null ? y : (scrollY || pageYOffset)) / max));
       doc.style.setProperty('--scroll', f.toFixed(4));
     }
-    if (lenis) { lenis.on('scroll', function (e) { set(e.animatedScroll != null ? e.animatedScroll : e.scroll); }); }
-    else { addEventListener('scroll', function () { set(); }, { passive: true }); }
+    addEventListener('scroll', function () { set(); }, { passive: true });
     set(0);
     return rail;
-  }
-
-  function initLenis() {
-    // Smooth-scroll is OFF. Lenis runs a permanent requestAnimationFrame loop and
-    // hijacks wheel/touch to lerp the scroll position, writing a CSS var every
-    // frame; on top of the always-animating mountain background that produced the
-    // scroll stutter, dropped frames and stray repaints. Native scroll is
-    // browser/GPU-driven and never stutters — the IntersectionObserver reveals and
-    // the progress rail below still run, now off cheap passive native scroll events.
-    return null;
-    /* eslint-disable no-unreachable */
-    if (reduce) return null;
-    if (document.documentElement.getAttribute('data-motion-lenis') === 'off') return null;
-    if (typeof Lenis === 'undefined') return null;      // vendor script absent → native scroll
-    try {
-      var l = new Lenis({
-        // sondaven-grade feel: a long, exponential ease and gentle wheel gain.
-        duration: 1.15,
-        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-        smoothWheel: true,
-        wheelMultiplier: 0.9,
-        touchMultiplier: 1.4,
-        lerp: 0.09
-      });
-      function raf(time) { l.raf(time); requestAnimationFrame(raf); }
-      requestAnimationFrame(raf);
-      return l;
-    } catch (e) { return null; }
   }
 
   function start() {
     if (started) return; started = true;
     document.querySelectorAll('[data-split]').forEach(split);
     markGroups();
-    lenis = initLenis();
     progress();
     observe();
     document.documentElement.classList.add('motion-ready');
   }
 
-  window.BWMotion = { start: start, get lenis() { return lenis; } };
+  window.BWMotion = { start: start };
 
   function boot() {
     if (document.body && document.body.hasAttribute('data-motion')) start();

@@ -9,14 +9,14 @@
 <style>html,body{background:#F2EDE7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260730a">
 <link rel="stylesheet" href="./tokens/colors.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260730a">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/paper.css?v=20260729b">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260730a">
 <link rel="stylesheet" href="./tokens/refinement.css?v=20260729b">
-<script src="./ds-base.js?v=20260728c"></script>
+<script src="./ds-base.js?v=20260730a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -28,7 +28,7 @@
   ::selection{background:rgba(181,80,44,.18)}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px;border-radius:8px}
 
-  /* ── the shared world: the same animated mountain range the app rides on,
+  /* ── the shared world: the same animated mountain range the site rides on,
      rendered as a LINE-DRAWING (see .line-art on the div) so the moving land
      stays present behind the words without any coloured wash competing with
      the reading. Fixed, so the words scroll over the range. ── */
@@ -127,7 +127,7 @@
 
   .seal{margin:20px 0 4px;font-family:var(--serif);font-weight:400;font-size:19px;letter-spacing:.02em;color:var(--terracotta)}
 
-  /* ── closing — the invitation into the app ── */
+  /* ── closing — the invitation into the site ── */
   .close{position:relative;z-index:2;padding:70px 0 120px;text-align:center}
   .close h2{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.6vw,56px);line-height:1.06;letter-spacing:-.03em;text-wrap:balance;max-width:16ch;margin:0 auto}
   .close .go{margin-top:34px;display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:15px;
@@ -162,7 +162,7 @@
   </a>
   <span class="spacer"></span>
   <a class="enter pressable" href="./index.html">
-    <span>Open the app</span>
+    <span>Open BourneWise</span>
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
   </a>
 </header>
@@ -171,7 +171,7 @@
 <section class="hero">
   <svg class="mark" data-reveal="fade" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
   <h1 data-split>How to ask, and how to read what comes back</h1>
-  <p class="sub" data-reveal>Five short passages &mdash; once through and the instrument is yours for good. Read at your own pace; the app is one tap away, whenever you want it.</p>
+  <p class="sub" data-reveal>Five short passages &mdash; once through and the instrument is yours for good. Read at your own pace; BourneWise is one click away, whenever you want it.</p>
   <p class="meta" data-reveal>About five minutes &middot; you keep what you learn</p>
   <span class="cue" aria-hidden="true"><span class="line"></span>Scroll to begin</span>
 </section>
@@ -289,7 +289,7 @@
   <div class="wrap">
     <h2 data-split>The instrument is yours. Bring your question.</h2>
     <a class="go pressable" data-reveal href="./index.html">
-      Enter the app
+      Enter BourneWise
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
     </a>
     <p class="tiny" data-reveal>500 free units are waiting</p>
@@ -297,8 +297,7 @@
 </section>
 
 <script src="./assets/backgrounds/mountain-range.js?v=20260728c"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260728c"></script>
-<script src="./ds-motion.js?v=20260728c"></script>
+<script src="./ds-motion.js?v=20260730a"></script>
 <script>
   /* solidify the top bar once the hero is behind us */
   (function () {

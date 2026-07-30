@@ -1,4 +1,4 @@
-/* BourneWise paper chat — working app logic (vanilla JS).
+/* BourneWise paper chat — working casting-view logic (vanilla JS).
    All state, plans, methods, and entitlements come from BWAccount (account.js).
    This file owns UI rendering and the casting flow — nothing else. */
 (function () {
@@ -1299,7 +1299,7 @@
     toast("Signed out — your history and balance remain secure.");
   });
 
-  /* ── plans live on the pricing page (no in-app modal) ── */
+  /* ── plans live on the pricing page (never a modal over the reading) ── */
   function openPlans() { location.href = "./pricing.html"; }
   var openBtn = $("openPlans");
   if (openBtn) openBtn.addEventListener("click", openPlans);

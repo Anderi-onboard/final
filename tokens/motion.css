@@ -82,7 +82,7 @@
 /* Touch-target hardening — on coarse pointers (phones/tablets), small icon
    controls get an invisible 44×44 minimum hit area via a centered ::after,
    without changing their painted size. Applied to the known-small controls
-   across the app so taps land reliably (WCAG 2.5.5). */
+   across the site so taps land reliably (WCAG 2.5.5). */
 @media (pointer:coarse){
   .cx, .casting-del, .side-toggle, .side-open-btn, .modal-x,
   .wiz-exit, .method-menu .mm-row, .send, .brand-btn{

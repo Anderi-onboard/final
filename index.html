@@ -1,4 +1,4 @@
-<!-- @template name="Paper site — landing" description="BourneWise single-page casting app — poster empty-state, inline chat, switchable Stria/Sortis, collapsible sidebar" -->
+<!-- @template name="Paper site — landing" description="BourneWise single-page casting workspace — poster empty-state, inline chat, switchable Stria/Sortis, collapsible sidebar" -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
@@ -10,18 +10,18 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260730a">
 <link rel="stylesheet" href="./tokens/colors.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260730a">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/paper.css?v=20260729b">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260730a">
 <link rel="stylesheet" href="./tokens/refinement.css?v=20260729b">
-<script src="./ds-base.js?v=20260728c"></script>
+<script src="./ds-base.js?v=20260730a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
-  /* the app is ONE fixed viewport — the page itself never scrolls (only the
+  /* the casting view is ONE fixed viewport — the page itself never scrolls (only the
      thread inside does), so no aspect ratio can push the layout's proportions
      off by scrolling the chrome/background out of frame */
   html,body{height:100%;overflow:hidden}
@@ -775,7 +775,7 @@
 <script src="./prompt-router.js?v=20260728c"></script>
 <script src="./account.js?v=20260728c"></script>
 <script>window.BW_BUILD="20260728c";</script>
-<script src="./chat-app.js?v=20260728c"></script>
+<script src="./chat-app.js?v=20260730a"></script>
 <script>
 (function () {
   "use strict";
