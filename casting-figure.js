@@ -1,5 +1,5 @@
-/* BourneWise — casting figure v5
-   Organic coin loader · irregular ink bars · single-rhythm line reveal
+/* BourneWise — casting figure v6
+   Organic coin toss · irregular ink bars · one continuous cast-to-figure reveal
    Flat editorial palette with no card, hover wash or mechanical spinner
    API: window.BWFigure.{random, glyphSVG, pairHTML, cast, loaderEl, NAMES} */
 (function () {
@@ -359,9 +359,10 @@
     };
   }
 
-  /* ── public: cast — render the completed figure once, then reveal the whole
-     piece in one ink-settling gesture. This avoids a 6/12-step timer queue and
-     keeps the SVG on a single composited layer during the entrance. ── */
+  /* ── public: cast — the final figure exists from the first frame. The three
+     existing coins make one coordinated toss; the six lines then settle
+     bottom-to-top while their annotations join the same continuous cadence.
+     Nothing is swapped, cloned or appended between loading and result. ── */
   function cast(container, spec, opts) {
     injectCSS();
     opts = opts||{};
@@ -387,18 +388,31 @@
     }
 
     return new Promise(function(resolve){
-      if (status) status.textContent = "Forming the figure\u2026";
+      if (figEl) {
+        figEl.classList.add("bw-cast-run");
+        figEl.setAttribute("aria-busy", "true");
+      }
+      if (status) status.textContent = "";
+      if (svg) {
+        svg.querySelectorAll(".bw-af-branch").forEach(function(branch, index){
+          branch.style.setProperty("--cast-d", (0.68 + Math.min(index * 0.025, 0.68)).toFixed(3) + "s");
+        });
+      }
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           svg.classList.add("bw-cast-in");
         });
       });
-      setTimeout(finishCast, 920);
+      setTimeout(finishCast, 2180);
 
       function finishCast(){
         svg.removeAttribute("data-cast");
         svg.classList.remove("bw-cast-in");
-        if (figEl){ figEl.classList.remove("bw-casting"); figEl.classList.add("bw-af-live"); }
+        if (figEl){
+          figEl.classList.remove("bw-casting", "bw-cast-run");
+          figEl.classList.add("bw-af-live");
+          figEl.removeAttribute("aria-busy");
+        }
         if (status) status.textContent = "";
         resolve();
       }
@@ -442,20 +456,14 @@
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
 
-      /* ── organic loader: three hollow hand-drawn rings. They lift, wobble and
-         settle on offset phases; none performs a mechanical 360° spinner. ── */
+      /* ── organic loader: three hollow hand-drawn rings at rest. During an
+         active cast they perform one coordinated toss, then stay still. ── */
       ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
       ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;background:var(--paper);",
         "border:2.3px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
-        "transform-origin:50% 58%;animation:bwLoaderWobble 2.5s var(--ease-in-out,ease-in-out) infinite}",
-      ".bw-af-loader.b{width:23px;height:20px;background:var(--terracotta);animation-delay:-.82s}",
-      ".bw-af-loader.c{width:20px;height:23px;animation-delay:-1.64s}",
-      "@keyframes bwLoaderWobble{",
-        "0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;transform:translateY(0) rotate(-3deg)}",
-        "28%{border-radius:58% 42% 40% 60% / 60% 43% 57% 40%;transform:translateY(-5px) rotate(7deg)}",
-        "56%{border-radius:39% 61% 55% 45% / 41% 59% 42% 58%;transform:translateY(1px) rotate(-1deg)}",
-        "78%{border-radius:62% 38% 45% 55% / 53% 47% 62% 38%;transform:translateY(-1px) rotate(3deg)}",
-      "}",
+        "transform-origin:50% 58%}",
+      ".bw-af-loader.b{width:23px;height:20px;background:var(--terracotta)}",
+      ".bw-af-loader.c{width:20px;height:23px}",
 
       /* Standalone loader */
       ".bw-loader{display:inline-flex;align-items:center;color:var(--ink)}",
@@ -570,11 +578,9 @@
       ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:2px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;gap:7px;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
-      ".bw-af-bar .bw-cast-status::before{content:'';width:6px;height:6px;flex:none;background:var(--terracotta);border-radius:58% 42% 63% 37% / 44% 61% 39% 56%;animation:bwStatusPulse 1.4s ease-in-out infinite}",
+      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
-      "@keyframes bwStatusPulse{0%,100%{transform:scale(.72);opacity:.45}50%{transform:scale(1);opacity:1}}",
-      ".bw-af-live .bw-af-loader{animation:none;transform:none}",
+      ".bw-af-live .bw-af-loader{transform:none}",
       /* the moment, as a compact inline row joined by organic ink dots */
       ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
       ".bw-af-moment .bw-af-dot{flex:none;opacity:.85}",
@@ -588,9 +594,74 @@
       ".bw-af-mark{fill:none;stroke-linecap:round}",
       ".bw-af-flowbase{fill:none;stroke-width:1.3;opacity:.26}",
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
-      ".bw-af[data-cast]{opacity:0;transform:translateY(7px);transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in{animation:bwAfWhole .86s var(--ease-cinematic,cubic-bezier(.16,1,.3,1)) both}",
-      "@keyframes bwAfWhole{0%{opacity:0;transform:translateY(7px)}38%{opacity:.72}100%{opacity:1;transform:none}}",
+      /* One continuous cast: coins gather and release; the final board is
+         already in place and reveals by structure instead of crossfading. */
+      ".bw-cast-run .bw-af-loader{will-change:transform,border-radius}",
+      ".bw-cast-run .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft 1.08s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-af-loader.b{animation:bwCoinMiddle 1.08s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-af-loader.c{animation:bwCoinRight 1.08s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.35s cubic-bezier(.16,1,.3,1) both}",
+      "@keyframes bwCoinLeft{",
+        "0%{transform:none}",
+        "24%{transform:translate(7px,-9px) rotate(12deg) scale(.92);border-radius:58% 42% 43% 57% / 61% 44% 56% 39%}",
+        "52%{transform:translate(3px,2px) rotate(-5deg) scale(1.04)}",
+        "72%{transform:translate(-1px,-1px) rotate(2deg)}",
+        "100%{transform:none}",
+      "}",
+      "@keyframes bwCoinMiddle{",
+        "0%{transform:none}",
+        "21%{transform:translateY(-13px) rotate(-9deg) scale(.9);border-radius:40% 60% 57% 43% / 58% 40% 60% 42%}",
+        "50%{transform:translateY(2px) rotate(5deg) scale(1.06)}",
+        "72%{transform:translateY(-1px) rotate(-2deg)}",
+        "100%{transform:none}",
+      "}",
+      "@keyframes bwCoinRight{",
+        "0%{transform:none}",
+        "26%{transform:translate(-7px,-8px) rotate(-13deg) scale(.93);border-radius:43% 57% 62% 38% / 39% 59% 41% 61%}",
+        "53%{transform:translate(-3px,2px) rotate(6deg) scale(1.04)}",
+        "73%{transform:translate(1px,-1px) rotate(-2deg)}",
+        "100%{transform:none}",
+      "}",
+      "@keyframes bwMethodSet{0%,18%{opacity:.58;transform:translateX(-3px)}58%,100%{opacity:1;transform:none}}",
+      ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend{opacity:0;transform:translateY(4px)}",
+      ".bw-cast-run .bw-af-moment{animation:bwCastMeta .5s .28s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-cast-run .bw-af-legend{animation:bwCastMeta .48s 1.62s cubic-bezier(.16,1,.3,1) forwards}",
+      "@keyframes bwCastMeta{to{opacity:1;transform:none}}",
+      ".bw-af[data-cast]{opacity:1;transform:none;transform-origin:center}",
+      ".bw-af[data-cast] .bw-af-ln{opacity:0;transform:translateY(8px) scaleX(.72);transform-box:fill-box;transform-origin:center}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln{animation:bwCastLine .52s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='0']{animation-delay:.44s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='1']{animation-delay:.56s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='2']{animation-delay:.68s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='3']{animation-delay:.80s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='4']{animation-delay:.92s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='5']{animation-delay:1.04s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='0']{animation-delay:.82s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='1']{animation-delay:.91s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='2']{animation-delay:1s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='3']{animation-delay:1.09s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='4']{animation-delay:1.18s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='5']{animation-delay:1.27s}",
+      "@keyframes bwCastLine{",
+        "0%{opacity:0;transform:translateY(8px) scaleX(.72)}",
+        "58%{opacity:1;transform:translateY(-1px) scaleX(1.025)}",
+        "100%{opacity:1;transform:none}",
+      "}",
+      ".bw-af[data-cast] .bw-af-branch{opacity:0;transform:translate(var(--fx,6px),2px)}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-branch{animation:bwCastBranch .58s var(--cast-d,.82s) cubic-bezier(.16,1,.3,1) forwards}",
+      "@keyframes bwCastBranch{to{opacity:1;transform:none}}",
+      ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){opacity:0;transform:translateY(4px);transform-box:fill-box;transform-origin:center}",
+      ".bw-af[data-cast].bw-cast-in :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){animation:bwCastLabel .5s 1.35s cubic-bezier(.16,1,.3,1) forwards}",
+      "@keyframes bwCastLabel{to{opacity:1;transform:none}}",
+      ".bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow){opacity:0}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-arrow{animation:bwCastArrow .55s 1.38s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-tarrow{animation:bwCastTarrow .55s 1.36s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-flowbase{animation:bwCastFlowBase .55s 1.42s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-flow{animation:bwCastFlow .55s 1.48s ease forwards}",
+      "@keyframes bwCastArrow{to{opacity:.5}}",
+      "@keyframes bwCastTarrow{to{opacity:.85}}",
+      "@keyframes bwCastFlowBase{to{opacity:.26}}",
+      "@keyframes bwCastFlow{to{opacity:1}}",
       /* ── the board settles after its single reveal and HOLDS STILL: no idle
          loops, no perpetual motion. Sheng-ke ties render as static dashed
          currents; moving-line marks stay put at rest. ── */
@@ -639,6 +710,7 @@
       "@media (prefers-reduced-motion:reduce){",
         ".bw-af-loader{animation:none!important}",
         ".bw-fig .bw-ln.in{animation:none;opacity:1;transform:none}",
+        ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend,.bw-af[data-cast] *{animation:none!important;opacity:1!important;transform:none!important}",
       "}"
     ].join("");
     document.head.appendChild(s);
@@ -849,7 +921,7 @@
     var moving = (spec.changeIdx || []).slice();
     var hasBian = !!spec.transformedLines;
     var els2 = hasBian ? lineElements(spec.transformedLines) : null;
-    var flow = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var flow = !opts.cast && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
     var TOP = 54, STEP = 23, BARW = 62;
     function cy(li) { return TOP + (5 - li) * STEP; }
@@ -980,7 +1052,7 @@
     var L = board.lines, bf = board.bian && board.bian.full, hasBian = !!bf;
     var worldLi = board.ben.worldLi;
     var hid = {}; (board.hidden || []).forEach(function (h) { hid[h.position] = h; });
-    var flow = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var flow = !opts.cast && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
     var TOP = 46, STEP = 25, BARW = 56;
     function cy(li) { return TOP + (5 - li) * STEP; }
