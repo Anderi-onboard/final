@@ -6,50 +6,27 @@
 (function () {
   "use strict";
 
-  /* ── 180 colour groups (user-supplied). PG packs each group as 10×6-hex
-     concatenated; groups separated by ";". PSEG = segment code, PSEGNAMES its
-     name; 近白段 (near-white) are the light/document groups, the rest colour. */
-  var PG="FEFAF5FCF6EFF8EDE1F4E6D6EFDECBDDE6E2D4DEDAE0CDB4CDB89CB8A184;FBFDFEF2F7FAEBF2F7E3ECF3D6E3ECCCDBE6C1D2DFEBD6CEAFC2D29DB2C4;FCFBF8F8F6F2F0EDE6EAE6DDE1DCD1D8D2C5CFD6DCC6BFB0B4AC9BA29886;FFFBFBFEF6F6FCF0F1F8E6E9F4DCE0E2EDE4D8E4DAEFCFD4DDB8BEC79FA6;FBFDF8F3F8EEECF4E5E5EFDCEDE3CCD8E6D0CCDEC2BED2B2ACC29E98AE88;FCFCFEF8F8FCF1F1F8EAEAF3E2E2EED8D8E6CECEDEEDE0C6BEBED0ACACC0;FEFCF2FCF8EAF8F1DCF4EACEEDE0BCE4D6ACDACB9CD2E0DCC4B688B0A274;F8FCFBEEF7F5E6F2EFDEEDE9D0E4DFC4DBD5B8D2CBF2DED2A6C0B894AEA4;FCFAFDF8F5FBF2EDF7ECE5F2E2D9EAD8CEE2CEC3DAE6E2C8BCB0CAA89CB8;FDFAF4FAF6EEF6F1E6EFE7D6E8DCC6DCEAE8D0E0DEDCCEB0C8B896B2A07C;FFFAF8FEF4F1FBEAE6F7E0DAF2D5CEEACFC8DFC0B8D2B0A8C69EA6B08C96;FCFDFDF5F7F8EEF1F2E7EBECDCE1E3D2D8DAC8CFD2EEDCD0B6BEC2A4ADB2;FAFCF6F5F9EEEEF5E2E7F0D8DCE8C8D0DEB8C4D4A8EAD8DEB2C2969EAE82;FEFBF0FCF7E8F8F0D8F2E8C8ECE0B8E2D2A4D6C492D6DCE4C4B07CAE9A66;FBFAFEF7F6FCF2F1FAE9E7F5E0DDF0EDE6D8E2DACACFCBE4BCB6D6A69EC4;FEFCFAFBF8F4F5F0EAEFE8DFE6DCD0DCD0C2D2C4B4C6D2CEC0B0A0AC9A88;F8FBFEEEF5FCE5EFF9DCE9F6CEDFF0C2D5EAB6CBE4F0E2CCA4BAD692A8C6;FDFAFAFAF6F6F4EEEEEEE6E6E6DCDCDCD0D2D2C4C8DEE4DAC4B4B8B09EA4;F8FCF9F2F8F4E9F2ECE0EBE3D4E2D8C8D8CCBCCEC0EEDCCEAABEAE96AC9A;FEFAEEFCF6E4F7F0D8F0E4C4E8D8B2D8E2E6CCD8DEDCC69CC8B084B29A6C;FFFCF9FEF4EEFCECE2F8E2D6F2D4C4ECC8B4E4BAA4CEDED8D2A48EBC8E78;FAFCFDF4F8FAEBF1F5E2EAEFD8E2E9CCD8E0C0CDD6F2E0D4AEBCC69CAAB6;FAFBF4F4F6ECECEFDEE4E8D2D8DEC2CCD4B2C0CAA2E6D6DCAEB88E9AA47A;FFFAFBFEF4F6FCEEF1F8E2E8F4D6DEE4EAE2D8E0D6EAC4CED8AEBAC298A6;FEFDF6FAF8ECF5F2E2F0ECD8E6E0C8DCD4B8D2C8A8D4DEE2C2B692AEA07C;F8FCFCF0F8F8E6F2F2DCECECD2E6E6C4DCDCB6D2D2A8C8C8EEDCCC94B2B2;FBFAFCF6F5F9EFEDF4E8E5EEDEDAE6D4CFDECAC4D6E4DCC6B8B0C6A49CB4;FDFAF2FAF6EAF4EEDCEEE6CEE6DCBEDACEAACEC098CEDAD8BCAC80A6946A;FAFAFEF5F5FCF0F0FAE6E6F6DCDCF0EEE4D6E2D6C6CACAE8B6B6DAA0A0C8;FDFCF8F9F5EEF4EEE4EEE7DAE4DACADACEBAD0C2AAC8D6D2BEB096A89A80;FFF9F9FDF3F3F9E9EAF5DFE1EFD2D4E7C4C7D4E0DED7B4B8C29EA4A88690;FCF7F6F9F2F1F5EBEAEDDEDEE4D0D1DDE2D6D2D8CCD0BCBEB9A3A89E8A90;FFFBF8FEF2ECFBE8DFF7DDD1F1CEC0EABFB0C8DCD8DCA79AC79086AE7A72;FDF8F8FAF3F3F4EBECEDE1E3E5D6D9DBC8CCCFBAC0E8DCC4BFA7AEA8919A;FFFAF6FDF4EEFAEAE0F6DFD2F0D0C0E8C0AEDFB09CB4CFC8C69382AC7A6A;FBF6F7F8F1F3F4EBEEECDEE3E3D1D8D6DED4CAD4C8CBB8C0B4A0AA9A8792;FFF6F6FEECEEFBDCE0F7CBD2F2B9C3A8D8CEE4899AD5768AA850686E3448;FFF8F2FEE9DCFBD9C6F7C7AFF1AE92EA9A7CE286663E9E8EB0563A7A3624;FDF7FAFAF1F6F2E2ECEAD3E18CA86ED0AECABE96B8A67CA27E5A7C543A54;FEF8F7FCF2F1F8EAE9EED8D6E4C6C4D2A8A6C09290DEC2868E64625E4240;FFF9F4FDF2E9F9E4D2F4D4BAEEC2A2E4A882D89066C2764A4A6E9E6E4028;FFF7F8FEEEF0F9DAE0F3C6CFE9A8B6DE8FA07EC0B4C06C809650625E3040;FFFAF4FEEFE0FBE2CCF7D3B48AA6BEEEB68CE4A070CE8250A05E34683A1E;FCF6F6F9F0F0F5E8E9E9D4D6DDC0C496A882C4A2A8A8858C82636C543E48;FFF4F6FDE9EDF8D2DBF2BAC734A896E2748ED25C7AAE42607E2C464A182A;FFF6F0FEE2D2FACCB2F4B08CEC8E62E27246D45A2E268E80A03E186A280E;FEF6F5FCEBEAF6D6D6EEBEBFE4A2A6C87882B25E6CD8A0407E36464E2030;FFF6FAFDECF4FAE0ECF4C6DEECAACCAEC456D07CB0B8629A8E42763A1A32;FEF5F4FCEAE8F6D4D0EFBAB4E29A92D07C723E5E9EA852467A382E4A1E18;FDF7FBF8ECF4F2DEECEACCE2B0A054D2A2CEBC86BC9A5E9E6E3E76422448;FEF8F2FEEEE2FBDCC6F6C6A6F0AE86E88C5CDE7440CE5C282E92827E3010;FFF4F5FDE8ECFADAE15EC4B42AA898E24E78C63A6692264E5E183A300E22;FFF2F4FEE4E8FAC8D2F4A8B822A494EE5C7CDE3E663050A48E1E444E0E26;FFF6EEFEDECAFAC2A2F4A278B8CC5A9EB83EE86A3EC64E2292340E5A1E06;FFF3F6FDE6EAF8C4D0F2A2B4EA7E96E8B03E2E9C8EC42E568E1C3A501024;FFF4EFEDD0C2E9C6B3DAB49ED1AC94C8A58E6A99BE9D8675918175857C76;FFF5EEFFE9D9E6C8B0DFBEA3CEAE91A4A7DBA68D759A86728E8172837C74;FFF5EBFFEAD4FBE1C4DDC2A1D4B997C1A98998A1D4AA9B848D8373807B73;FFF5EAE7D4BDE2CAADDCC2A1CBB18FC0A988A391748785B78C8373827D75;FFF6E7FBECD2DECCACD6C39EC4B38DBAAA86B0A484948B727A7EB07F7C72;FFF6E6E3D5BCDDCCACD6C5A0C5B48EABA6DA9AA2D5948C73898473807D74;FFF5D7F6E5B0C5B16DB7A354A997458B7D2E8159AB504915413D1C343322;FFF2ECFEDFCEFFCDB1D89368C98556A96C3E9561382E408D4F36203C2F23;FFF3EAFEDFC7DCA575D1955D6E95E7A46F359165327E5C344E391F3B3022;FFF3E9FFDFC6FECEA4D2975EC3894DB37F449267334D5BAD4E391E3A3022;FFF3E6DEB98ED5A970BB8C49AC7F379D742F6E4E0B5C44142135813C3424;FFF4E1FEE2B1CEAD6DC19E54A4833493772A5A4092554511453B1B383323;FFF4E0FDE3B0F5D593C2A156B293448E66BA826D2B726231463D1D363222;FFF5D6CFC08CC4B26DB8A5569B8A378B7D296040914F4A16423F1E373625;FFF0E9FFD9C4E68D55DA7A310778D69B530B8848024B2600381B00281606;FFF0E6E6A873E09347D5821CAB6706965B00825005181A89372000261804;FFF1E5FFDABCDF9346D28014BF7503935C097F4F00350281341E00251804;FFF1E2FEDCB1FEC87FC98A0FB37D10744DC2775408412D00302100231903;FFF1E1FFDCAFD59A3AC68904B17D0E8A62044E46B9654903322200241901;FFF2DBFEDE9DF9CD67BC92158373EB95770A705B095E4D022E2500201B03;FFF3CECCB669BFA6369C8713897804786B07463F003632012D00641E1D05;FFEEE5FED5BEEE7C1E398BFF0172B78B4A03492500351A002510001B0900;FFEEE2FED6B5FDC18ACA7B115B6BFC8552056F45014309AC241300180B00;FFEFE2EB9D50E0870DC97C0C455BEA563DD2462A01331E00241400190C00;FFEFDCFFD8A6D29016BA81119064056135CB3D2DC13020001F1400160D00;F0FBEDCADEC7BDD7BAB3D0B1A0BFA198B69A7BB5967D938079897C778079;EDFBEFDCF5E2B8D8C0ABD0B6A2C9AF71BCC08CAE9A78938475887E757F7A;EBFCF2D9F6E6CAF1DEA7D2BE9CCAB78DB8A768B4B3759388738882747F7B;EAFCF3D8F6E7B2D9C7A5D1BF9BCAB88CB8A888AEA161ABB3748A83737F7C;E9FCF6D5F6ECC5F1E5A2D3C797CABF92C2B986B0A884A5A0469296737F7D;E8FCF6BEE0D7AED9CF98C9BF8EC0B772BAC756A2A472938F738987758180;D7FFFAAFF6EF65C5BF45B8B3109C9A128C8C055C76055153144446223839;E7FDE2CCF3C7B6E9B27CB67D6BA970508D5A477D5305736C28453127362B;E2FEE79ECEAB83C3986DB98A129F8F408E661B63441D543C224636273A31;E1FEE8C2F5D181C39A69B78B479B713B8D67377F5F0453521F443624362F;DDFFEE95CFB675C5A65CBA9A389E812B8F752C816C0F5647024843243833;D9FFF3B4F6E56CC5B24EB8A539AC9B178F82097C9100544E164541213735;D9FFF4B3F6E693EDDB4EBAAA37AC9E0489AD1A7F7705544F164442213635;D6FFFAAFF6F065C4C045B8B52EABAA018E8F047C96267073164648203638;DEFED9BBF4B69DE99C55B05E169F7C2C91480C7034145E31002E14092012;D9FFE282CA995ABE8210A062018E590A7E52014B30013936002E1E062218;D8FFE3AAF7C555BF8525B174068E5D087B5400493101363C002C1E042117;D5FFEB9EF8D370EEC305B28B03A07F05778A086B58015C4D002D2501211B;D4FFEC70CCAB35C09A15B18F0D8E74017C6703474B003A30012D2601221D;D2FFF392F9E409C0AB09AE9D108794007970076963023936002A2900201F;D0FFFA5ECCC601BFBB11AEAC108B8B09797B046B6E023A3D002B33002023;D8FFD3A9F6A64EBA5803A68A0D966902733203602D002C13001D0A001406;D3FFDE94F9B85DEFA018AB6C15928D0C714B035F4000292C001C1100130B;D3FFE090F9BB0EBD7715A86F02938C086D72065E42034F38001E1400130C;CEFFE97CFBCE14F1BC0FA8850595780F7F8C005E5F044E41001D1800130F;E9FBFFBDDEE7ACD7E397C6D58EBDCD89B5C58192C273909C748890768085;ECF9FFD8F3FFAFD5E7A2CDE291BBD2BB9FD07798AB758E9E758691767E85;EFF8FFDDF1FFCEEAFFA8CCE7A0C3DF92B1CCB099CB8BA0B4788694767D85;F1F9FFC2DBEEB4D3EBA9CBE799BAD793B1CD7D97AF9D7DAB798694787F87;F1F8FFE2EFFFB9D1EDAEC8E89EB7D897AECD93A6C27E8CA29176A5787C85;F3F9FFC7D9F0BAD0EEB1C9EAA0B7D9C39ECAB399CA808DA47C8494797D86;F0F5FFDAE6FE97B1EC88A1E47D94D86679B89D4E8A3C456E343A562E3140;E5F9FFBBF0FF98E7FE4FB4D13CA6C52289A7267A955134841C415123353D;E9F8FFC6EDFF71BDE059AFD89A87E03486AE34779B396A8723415525343F;EAF8FFC8ECFFABE2FE5DB0DB4DA1CE4794C038789E724EA0244156233441;ECF7FF98C7EA7DB9E75C9DD04E8EC44881B5295883284A6D4728782B3643;EEF6FFD5E8FF89B5EB78A6E35E8AC7557BB576347931466D2E3C572C3342;EFF6FFD6E8FFC1DBFE7CA7E56F98D8AB5C9A536FA24F638D313D582B3240;F2F7FFABC0EF98B0EC8BA3E67286CA6778B87B34753D456E363B58313443;E1F8FFB2EDFF0EB9DD19A6C96566DB097390096580003648002837031E2A;E5F7FF6CC4EA36B5E816A6DC0C84B30E739F03658F41037A002840071D2B;E6F6FFC1E9FE3BB4EA05A3DF0893CD0B72A209628E4D026000263E081D2C;E9F5FFC8E7FFACD9FE399FEC248EDD993DA10E5D9E01315C0424450D1B2D;EAF5FFCAE6FE5AAEF33E9CEB2E8DDE116CB87A33A22150840925470E1B2D;ECF4FFD0E4FFB8D5FE5D98F1B360CC4978CE365AA3324C86152348131A2D;EEF4FF99B5F884A2F86580DE586ECF5061BB2D337F242863410046181A2E;DDF7FFACEBFE0BB1D68676FB4A57E706678300354600263400192500111B;E2F5FFB8E7FF92DAFE129CD39854E800679205567C630784001A2C00101F;E3F5FF45BFF611ADEA0B9CD78543D78623B500355200263D001A2E001020;E6F4FFC4E4FE2AA7FC1594E90871BA8C18A86E0AA9002347001533010E24;F5F6FFD2D5F0C9CBEDC1C3E9B1B1D8AAA9CDD1948A8B89A28482937D7C85;F6F6FFEDEBFFCFC9EBC7BFE5C0B7DECCA579A89FBE8F869F8680917E7A83;F8F5FFF1EAFFECDFFFCEBEE3C7B5DAB6A5C7C69B7393859C897F8F7F7A82;F8F5FEF2E9FFD5C7E8CEBDE1C8B5DAB7A4C6AE9DBAB997688A808F7F7982;FBF4FFF7E7FFF3DDFCD5BCDECEB3D5C6ACCBB49CB7A996ABA27C51817981;FAF4FDE1D0E8DBC5E3CCB3D3C5AACAC7A877B38B619784988D7F8D837B82;FEF0FFFFD7FED29DCFC88CC2AD70A59E63946351015E37554D32453D2E38;F3F4FFE1E4FFD3D5FF9E9CE3928DD57972B46E669F954E043E3956322F3F;F5F4FFC1B9EBB4A7E7AA98DFC77037846FB05C487E4F3F68433754383141;F5F3FFE7E1FFB6A6E6AA96DC917ABF846CAD78629A6B3A00423551352E3D;F7F3FFCAB5E6C0A3E0B794D79D78BA8F6BA8826196583E655F2F03392F3D;FAF1FFF4DCFFC9A0D9BF8FCDB482C09868A08D68025B3A5E4A334A3A2D39;FBF1FFF5DBFFF2C7FEC290CDB581BE957A02895D8C5C3A5D4A324A3B2C3A;FFF0FFFFD7FDD39DCEC88CC1BD7FB4A065958A6A017E54724F33473C2C36;F1F2FFDDDFFFCDCEFF9189EEDC592A7969C95E4D9E504281281D441C172B;F3F2FFB9ABF2AC95EF9072D48360C37753AF4A28744C25002D1B4121172B;F4F1FFE4DDFFAF94EEA280E3855FC27750AC4A2671412A012C193F201629;F6F0FFEADAFFE1C5FEB27DDCA46BCB88630274428C633B7433183C221527;F7F0FFC8A6EABE8FE4B47CDB975BB9874DA3593500441C5233183B241628;FAEFFFF4D5FFCA8BDABE76CC9F6C0D8F47967E3E814A194B361534251423;FFEDFEDBA0D7D487CDCB74C0AC539F9A458B873D77511844332200271320;EFF1FFDADCFE978EFFE46007E3340B6241BE5435A029065B1B063B110822;F2F0FFE0D9FFD3C5FF9F70F3B96806723AB6622F98341F00200337140720;F2EFFFE1D9FEAC85FAA06DEFBA6710845305642E9753297923053815071F;F5EEFFE9D6FEE0BFFEB368E5A454D29567097545065C257028033318061C;FBF7E7DDD8BCD5D0ACC4BF97BAB78EB2AF89BD827A8D8D738586747E7F75;F8F8E8EFF0D4D0D1AEC6C9A2B4B991CDA379909676888D748186747C7E75;F6F9E9EBF2D6E2EBC8C1CCA6B7C49DA6B38FC89A7597A2897F8777797E75;F5F9E9D4DBC0CAD3B1C1CDA6AFBC95A5B38F8C997BA983587E88757B8077;F3FAEAE6F3D9C4D5B4B9CDA9A7BD999EB49298AC8F81917BA37953777E76;F2FAE8D0DCC3C4D5B5BACEABA8BE9ACBA678C99B7681927C7C8879787F77;E8FCE1CFF2C493C0897FB4786FA86C558C568B69012B533228442E28362B;FCF6D7F1E8B1E5DB95B1A858A29A488580317572306F37033D3E1E323323;F7F8D8E9EBB4B4B873A5AA5CD77C4A7A83386B76365F69393A42222F3424;F7F8D5E8EBB4DADF99A6AC5E969F4F8893486C7838954E023A42232F3522;F2FADABAC894A9BB798BA0577B93486E8742475D233C5024632C01303829;EDFBDDD7F0BE9EBE818BB16D6E965360884A6E4B053250292E43292B372A;EDFBDED7F0BFC3E6A78CB3707BA6629C7601557B474E6E462F442B2A3629;E7FDDFA9CCA192C18A7FB67B619B61538C576F4E062A53322945302A392E;FDF5C7F1E494B7A93AA6990AC9451B706C0B615F083333002526001B1D05;F6F7CABABD6FA9AE4399A11878810C67720B586500502500212A00171E07;F6F8CAE5E999A8AE44969F16869212667200566308452A011F2800171E08;EFFACDD8EDA0C4E17D86A7327397198C6106476706223801162A00131F0B;EEFACED7EDA198B35183A53172971B55770C854B013B5914172C01121F09;E7FCD2CBF0A9B2E58B71AB47BD76024E8D30336D1F2C5C220D2D090F1F0E;E0FED894C78A75BB6E489D492E8D3A1D7F33034C1C003C173620000C2113;FDF4B8F1E275B0A216E85B04C91D036361063232002324001718000E1000;F5F7BBE2E87CD1DA418F9913BD65015B67084A57015D3903141B000A1100;F4F7BBB3B94DA0A90A8E9A00A8560A8751012D36001F2700131B000A1200;EBFAC0D1ED878CAF12799D03597A05805200764003172A000B1B00051300";
-  var PSEG=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6];
-  var PCB=[5,7,6,5,4,7,7,7,7,5,5,7,7,7,5,7,7,7,7,5,7,7,7,5,7,8,7,7,5,7,6,5,6,7,7,5,5,7,4,7,8,6,4,5,4,7,7,5,6,4,8,3,4,4,5,6,5,6,7,8,5,6,7,4,7,8,6,5,6,4,7,7,5,6,4,8,3,4,4,5,6,5,6,7,8,5,6,7,4,7,8,6,5,6,4,7,7,5,6,4,8,3,4,4,5,6,5,6,7,8,5,6,7,4,7,8,6,5,6,4,7,7,5,6,4,8,3,4,4,5,6,5,6,7,8,5,6,7,4,7,8,6,5,6,4,7,7,5,6,4,8,3,4,4,5,6,5,6,7,8,5,6,7,4,7,8,6,5,6,4,7,7,5,6,4,8,3,4,4,5];
-  var PSEGNAMES=["粉珊瑚段", "紫堇段", "蓝靛段", "近白段", "金赭段", "青绿段", "黄绿杂段"];
+  var scriptSrc = document.currentScript && document.currentScript.src;
+  var paletteUrl = scriptSrc
+    ? new URL("../palettes/color-groups-180.json?v=20260730b", scriptSrc).href
+    : "./assets/palettes/color-groups-180.json?v=20260730b";
+  var paletteDwellMs = 75000;
+  var paletteStep = 47;
+  var paletteTimer = 0;
+
 
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
     + '.mtn-bg>svg{display:block;width:100%;height:100%}'
-    /* the rotating page field — a fixed full-viewport colour that cycles through
-       the groups on the shared clock. Sits behind the ridges (same z, painted
-       first). Held-then-blended like the ridges, so it repaints ~once a cycle. */
-    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;animation:mtn-sys-sky 900s linear infinite;animation-delay:var(--mtn-phase,-12s)}'
-    /* ten ridges, ALL SYNCHRONISED to one shared timeline (same duration, same
-       stops, same delay) so at any moment the whole mountain wears ONE palette,
-       then crossfades to the next. the full 72-system seasonal rotation is BACK (restored from the
-       pre-perf-pass build): 72 user-supplied reference palettes, each a
-       10-tone ramp ordered light->dark with one deliberate contrast band,
-       sequenced as a year passing - spring (10) -> summer (16) -> autumn (34)
-       -> winter (12) and round again. 1440s cycle = ~20s per palette, so the
-       colour genuinely changes while you sit with a reading. The perf
-       machinery below (hold-then-blend keyframes, split fill/contour groups)
-       is what makes 72 paint-animations affordable:
-       Each palette holds ~24s of its 25s slot; holdify() below inserts the hold
-       keyframes so the ~1s crossfade is the only window where ridges repaint. */
-    + '/*__MTN_KEYFRAMES__*/'
+    /* The sky and ten ridges receive exact colours from the external 180-group
+       source. JavaScript changes them once per 75-second slot; there is no
+       perpetual fill animation or duplicate palette packed into this file. */
+    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
     + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
     + '@keyframes mtn-cloud-r{from{transform:translate3d(-1700px,0,0)}to{transform:translate3d(1700px,0,0)}}'
     + '@keyframes mtn-cloud-l{from{transform:translate3d(1700px,0,0)}to{transform:translate3d(-1700px,0,0)}}'
-    /* fill is a PAINT property: animating it forces a full re-raster of these huge ridge
-       textures, so it must not interpolate continuously. Each palette stop gets a HOLD
-       keyframe injected just before the next stop (see holdify() below): the colour
-       stays perfectly still for ~3.6s of its 4s slot, then crossfades to the next stop
-       over the last ~0.4s. Repaints happen only inside that brief crossfade window —
-       no per-frame re-raster, and no hard steps() flash at the boundary.
-       translate flows stay GPU-composited regardless.
-       --mtn-phase offsets the shared palette clock so a fresh page load opens mid-cycle
-       inside the Terracotta Canyon band; hosts may override it on
-       .mtn-bg (e.g. style="--mtn-phase:-52s" opens on Harbour Dusk). */
-    + '.mtn-bg .fill{animation-iteration-count:infinite;animation-timing-function:linear}'
     + '.mtn-bg [class^="flow-"]{will-change:auto}'
     + '.mtn-bg .cloud-bob{animation:none}'
     /* Anthropic-art line language: warm near-black, rounded brush ends and a
@@ -61,8 +38,7 @@
     /* LINE-ART mode — add class "line-art" to .mtn-bg. The filled ridges drop
        out and only the contour lines remain: a clean topographic line-drawing
        of the range, so text pages keep the living, moving backdrop without any
-       coloured wash competing with the words. The palette rotation still runs
-       underneath — a colour layer can fade in over this on chosen moments. */
+       coloured wash competing with the words. */
     + '.mtn-bg.line-art .fill{opacity:.62;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art [clip-path]>use{opacity:.5;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(20,20,19,.3)}'
@@ -72,16 +48,9 @@
        floods in, then fades to rest. Transform-only sweep = GPU cheap. */
     + '.mtn-bg.mtn-enter{animation:mtn-enter 1.15s cubic-bezier(.16,1,.3,1) both}'
     + '@keyframes mtn-enter{from{transform:translateY(38px) scale(1.06)}to{transform:none}}'
-    + '.mtn-bg .l1{animation-name:mtn-sys-l1;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.48}'
-    + '.mtn-bg .l2{animation-name:mtn-sys-l2;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.60}'
-    + '.mtn-bg .l3{animation-name:mtn-sys-l3;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.72}'
-    + '.mtn-bg .l4{animation-name:mtn-sys-l4;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.83}'
-    + '.mtn-bg .l5{animation-name:mtn-sys-l5;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.90}'
-    + '.mtn-bg .l6{animation-name:mtn-sys-l6;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.95}'
-    + '.mtn-bg .l7{animation-name:mtn-sys-l7;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:.97}'
-    + '.mtn-bg .l8{animation-name:mtn-sys-l8;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
-    + '.mtn-bg .l9{animation-name:mtn-sys-l9;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
-    + '.mtn-bg .l10{animation-name:mtn-sys-l10;animation-duration:900s;animation-delay:var(--mtn-phase,-12s);opacity:1}'
+    + '.mtn-bg .l1{opacity:.48}.mtn-bg .l2{opacity:.60}.mtn-bg .l3{opacity:.72}.mtn-bg .l4{opacity:.83}'
+    + '.mtn-bg .l5{opacity:.90}.mtn-bg .l6{opacity:.95}.mtn-bg .l7{opacity:.97}'
+    + '.mtn-bg .l8,.mtn-bg .l9,.mtn-bg .l10{opacity:1}'
     + '.mtn-bg .flow-1{animation:mtn-flow-l 145s linear infinite}.mtn-bg .flow-2{animation:mtn-flow-r 128s linear infinite}'
     + '.mtn-bg .flow-3{animation:mtn-flow-l 112s linear infinite}.mtn-bg .flow-4{animation:mtn-flow-r 96s linear infinite}'
     + '.mtn-bg .flow-5{animation:mtn-flow-l 82s linear infinite}.mtn-bg .flow-6{animation:mtn-flow-r 70s linear infinite}'
@@ -103,86 +72,6 @@
     + '.mtn-bg .cloud-2{animation:mtn-cloud-l 210s linear infinite;will-change:transform}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 240s linear -50s infinite;will-change:transform}'
     + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important}}';
-
-  /* holdify — rewrite every mtn-sys-l* keyframe list from evenly-spaced stops into
-     hold-then-blend pairs: before each stop, insert a keyframe 0.5% (~1s) earlier
-     carrying the PREVIOUS colour. Between a stop and its inserted twin the value is
-     constant (zero repaint); the short window to the next stop crossfades smoothly.
-     Kills both the per-frame re-raster and the hard flash at palette boundaries. */
-
-  /* ── build the ridge keyframes from the 180 groups ─────────────────────────
-     Sequence ALTERNATES near-white and colour (1:1): a near-white group as the
-     readable rest, then a full colour group (any segment/tier — including the
-     deep 浓/艳 groups), and repeat. So the field never sits monochrome for long
-     and the heavy colours get real airtime, while near-white keeps returning as
-     breathing room. Colours are shuffled per load, so the run varies each time.
-     The group hexes themselves are used verbatim — only render opacity is tuned. */
-  var PAL = PG.split(';').map(function (s) {
-    var a = []; for (var k = 0; k < 10; k++) a.push('#' + s.substr(k * 6, 6)); return a;
-  });
-  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = (Math.random() * (i + 1)) | 0, t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  function hsv(hx) {
-    var r = parseInt(hx.substr(1, 2), 16) / 255, g = parseInt(hx.substr(3, 2), 16) / 255, b = parseInt(hx.substr(5, 2), 16) / 255;
-    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, h = 0;
-    if (d) { if (mx === r) h = ((g - b) / d) % 6; else if (mx === g) h = (b - r) / d + 2; else h = (r - g) / d + 4; h *= 60; if (h < 0) h += 360; }
-    return { h: h, s: mx ? d / mx : 0 };
-  }
-  function hdist(a, b) { var d = Math.abs(a - b) % 360; return Math.min(d, 360 - d); }
-
-  var NEARWHITE = PSEGNAMES.indexOf('近白段');
-  var LIGHT = [], CLASH = [], MONO = [];
-  for (var gi = 0; gi < PAL.length; gi++) {
-    if (PSEG[gi] === NEARWHITE) { LIGHT.push(gi); continue; }
-    /* does the ◆ contrast band sit on a genuinely different hue from the ramp? */
-    var cb = PCB[gi], hs = PAL[gi].map(hsv), others = [];
-    for (var i = 0; i < 10; i++) if (i !== cb && hs[i].s > 0.12) others.push(hs[i].h);
-    if (!others.length) for (var i2 = 0; i2 < 10; i2++) if (i2 !== cb) others.push(hs[i2].h);
-    others.sort(function (a, b) { return a - b; });
-    (hdist(hs[cb].h, others[others.length >> 1]) > 40 && hs[cb].s > 0.12 ? CLASH : MONO).push(gi);
-  }
-  shuffle(CLASH); shuffle(MONO); shuffle(LIGHT);
-  /* colour pool favours the real clashes; a quarter of the mono groups ride
-     along so the range still visits quiet single-hue moments. */
-  var CPOOL = shuffle(CLASH.concat(MONO.slice(0, Math.round(MONO.length * 0.25))));
-  var SEQ = [], ci = 0;
-  for (var li = 0; li < LIGHT.length; li++) {
-    SEQ.push(LIGHT[li]);
-    SEQ.push(CPOOL[ci++ % CPOOL.length]);
-  }
-  var KF = '';
-  for (var L = 1; L <= 10; L++) {
-    var body = '';
-    for (var k = 0; k < SEQ.length; k++) body += (k / SEQ.length * 100).toFixed(3) + '%{fill:' + PAL[SEQ[k]][L - 1] + '}';
-    body += '100%{fill:' + PAL[SEQ[0]][L - 1] + '}';
-    KF += '@keyframes mtn-sys-l' + L + '{' + body + '}';
-  }
-  /* the page field (.mtn-sky) cycles through each group's lightest tone, on the
-     same clock as the ridges — so the whole background rotates through the
-     colour groups instead of sitting on one fixed paper colour. Near-white
-     groups keep it in the document register; colour groups tint it as they
-     pass. Uses colour index 1 (a hair off pure white) for a touch more read. */
-  var sky = '';
-  for (var sk = 0; sk < SEQ.length; sk++) sky += (sk / SEQ.length * 100).toFixed(3) + '%{background-color:' + PAL[SEQ[sk]][0] + '}';
-  sky += '100%{background-color:' + PAL[SEQ[0]][0] + '}';
-  KF += '@keyframes mtn-sys-sky{' + sky + '}';
-  CSS = CSS.replace('/*__MTN_KEYFRAMES__*/', KF);
-
-  var HOLD = (100 / SEQ.length) * 0.16;  /* brief blend, long hold — the documented rule. 0.7 meant the whole viewport repainted ~70% of the time. */
-  CSS = CSS.replace(/@keyframes (mtn-sys-(?:l\d+|sky))\{((?:[^{}]+\{[^{}]*\})+)\}/g, function (m, name, body) {
-    var prop = 'fill', stops = [];
-    body.replace(/([\d.,%]+)\{(fill|background-color):(#[0-9A-Fa-f]+)\}/g, function (mm, sel, pr, col) {
-      prop = pr; stops.push({ sel: sel, p: parseFloat(sel), c: col });
-      return mm;
-    });
-    if (!stops.length) return m;
-    var out = '';
-    for (var i = 0; i < stops.length; i++) {
-      if (i > 0) out += (stops[i].p - HOLD).toFixed(3) + '%{' + prop + ':' + stops[i - 1].c + '}';
-      out += stops[i].sel + '{' + prop + ':' + stops[i].c + '}';
-    }
-    out += (100 - HOLD).toFixed(3) + '%{' + prop + ':' + stops[stops.length - 1].c + '}';
-    return '@keyframes ' + name + '{' + out + '}';
-  });
 
   var W = {
     1: "M -2000 188 L -1860 186 C -1777 186 -1763 150 -1680 150 C -1570 150 -1550 178 -1440 178 L -1240 178 C -1176 178 -1164 166 -1100 166 C -1045 166 -1035 188 -980 188 L -780 195 C -660 195 -640 144 -520 144 C -428 144 -412 189 -320 189 L 0 184 L 140 186 C 223 186 237 150 320 150 C 430 150 450 178 560 178 L 760 178 C 824 178 836 166 900 166 C 955 166 965 188 1020 188 L 1220 195 C 1340 195 1360 144 1480 144 C 1572 144 1588 189 1680 189 L 2000 184 L 2140 186 C 2223 186 2237 150 2320 150 C 2430 150 2450 178 2560 178 L 2760 178 C 2824 178 2836 166 2900 166 C 2955 166 2965 188 3020 188 L 3220 195 C 3340 195 3360 144 3480 144 C 3572 144 3588 189 3680 189 L 4000 184",
@@ -260,6 +149,89 @@
       + '<title>Layered mountain background</title>' + defs + ridges + clouds + '</svg>';
   }
 
+  function srgbChannel(v) {
+    v /= 255;
+    return v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4);
+  }
+
+  function luminance(hex) {
+    var n = parseInt(hex.slice(1), 16);
+    return .2126 * srgbChannel(n >> 16)
+      + .7152 * srgbChannel((n >> 8) & 255)
+      + .0722 * srgbChannel(n & 255);
+  }
+
+  function readableOn(hex) {
+    var l = luminance(hex);
+    return (1.05 / (l + .05)) >= ((l + .05) / .05) ? "#FAF9F5" : "#141413";
+  }
+
+  function validPaletteGroup(group) {
+    return group && typeof group.id === "string"
+      && typeof group.cloud === "string"
+      && Array.isArray(group.rows) && group.rows.length === 10
+      && group.rows.every(function (hex) { return /^#[0-9a-f]{6}$/i.test(hex); });
+  }
+
+  function applyPalette(group) {
+    var root = document.documentElement;
+    var gemIndex = Array.isArray(group.gems) && group.gems.length
+      ? Math.max(0, Math.min(9, group.gems[0] - 1))
+      : 5;
+    root.dataset.bwPalette = group.id;
+    root.dataset.bwPaletteName = group.name || "";
+    root.dataset.bwPaletteSegment = group.seg || "";
+    root.style.setProperty("--bw-palette-cloud", group.cloud);
+    group.rows.forEach(function (hex, index) {
+      root.style.setProperty("--bw-palette-" + (index + 1), hex);
+      root.style.setProperty("--bw-palette-on-" + (index + 1), readableOn(hex));
+    });
+    root.style.setProperty("--bw-palette-gem", group.rows[gemIndex]);
+    root.style.setProperty("--bw-palette-on-gem", readableOn(group.rows[gemIndex]));
+
+    document.querySelectorAll(".mtn-bg").forEach(function (el) {
+      group.rows.forEach(function (hex, index) {
+        el.querySelectorAll(".fill.l" + (index + 1)).forEach(function (node) {
+          node.style.fill = hex;
+        });
+      });
+      el.querySelectorAll("[clip-path] > use").forEach(function (node) {
+        node.style.fill = group.cloud;
+      });
+    });
+
+    window.dispatchEvent(new CustomEvent("bw:palettechange", {
+      detail: { id: group.id, name: group.name, segment: group.seg }
+    }));
+  }
+
+  function startPaletteSystem(clockStart, reduce) {
+    fetch(paletteUrl, { cache: "force-cache" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("Palette data " + response.status);
+        return response.json();
+      })
+      .then(function (groups) {
+        if (!Array.isArray(groups) || groups.length !== 180 || !groups.every(validPaletteGroup)) {
+          throw new Error("Palette data failed validation");
+        }
+        function update() {
+          var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
+          var index = ((slot * paletteStep) % groups.length + groups.length) % groups.length;
+          applyPalette(groups[index]);
+          if (!reduce) {
+            clearTimeout(paletteTimer);
+            paletteTimer = setTimeout(update, paletteDwellMs - ((Date.now() - clockStart) % paletteDwellMs) + 32);
+          }
+        }
+        update();
+      })
+      .catch(function (error) {
+        document.documentElement.dataset.bwPalette = "fallback";
+        if (window.console && console.warn) console.warn("[BourneWise palette]", error.message);
+      });
+  }
+
   function init() {
     if (!document.getElementById('mtn-bg-css')) {
       var st = document.createElement('style');
@@ -268,8 +240,8 @@
       document.head.appendChild(st);
     }
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
-    var cycleMs = 900000;
-    var clockKey = 'bw-mtn-clock';
+    var cycleMs = paletteDwellMs * 180;
+    var clockKey = 'bw-palette-clock-v2';
     var seenKey = 'bw-mtn-seen';
     var clockStart;
     var seen = false;
@@ -315,6 +287,7 @@
         setTimeout(function () { el.classList.remove('mtn-enter'); }, 1200);
       }
     });
+    startPaletteSystem(clockStart, reduce);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

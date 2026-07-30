@@ -3,12 +3,19 @@
    shared translucent material, edge light and depth hierarchy. */
 
 :root {
-  --ui-glass: color-mix(in srgb, var(--paper-raised) 68%, transparent);
-  --ui-glass-strong: color-mix(in srgb, var(--paper-raised) 82%, transparent);
-  --ui-glass-soft: color-mix(in srgb, var(--paper-raised) 48%, transparent);
-  --ui-glass-warm: color-mix(in srgb, var(--oat) 68%, transparent);
-  --ui-line: color-mix(in srgb, white 56%, var(--ink) 14%);
-  --ui-line-strong: color-mix(in srgb, white 38%, var(--ink) 34%);
+  --bw-palette-cloud: var(--paper);
+  --bw-palette-1: var(--paper-raised);
+  --bw-palette-2: var(--oat);
+  --bw-palette-6: var(--terracotta);
+  --bw-palette-9: var(--ink);
+  --bw-palette-on-9: var(--paper);
+  --bw-palette-gem: var(--terracotta);
+  --ui-glass: color-mix(in srgb, var(--bw-palette-1) 68%, transparent);
+  --ui-glass-strong: color-mix(in srgb, var(--bw-palette-1) 82%, transparent);
+  --ui-glass-soft: color-mix(in srgb, var(--bw-palette-1) 48%, transparent);
+  --ui-glass-warm: color-mix(in srgb, var(--bw-palette-2) 68%, transparent);
+  --ui-line: color-mix(in srgb, white 58%, var(--bw-palette-6) 15%);
+  --ui-line-strong: color-mix(in srgb, white 38%, var(--bw-palette-6) 35%);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
   --ui-shadow: 0 10px 34px rgba(42,32,22,.09), inset 0 1px 0 rgba(255,255,255,.58);
   --ui-shadow-raised: 0 18px 52px rgba(42,32,22,.13), inset 0 1px 0 rgba(255,255,255,.7);
@@ -20,11 +27,11 @@
 
 html { color-scheme: light; }
 html[data-skin="paper"],
-html[data-skin="paper"] body { background-color: var(--paper); }
+html[data-skin="paper"] body { background-color: var(--bw-palette-cloud); }
 body { text-rendering: optimizeLegibility; }
 a, button, input { -webkit-tap-highlight-color: transparent; }
 button, a { transition-timing-function: var(--ease-out); }
-::selection { background: color-mix(in srgb, var(--terracotta) 22%, transparent); }
+::selection { background: color-mix(in srgb, var(--bw-palette-gem) 28%, transparent); }
 
 /* Clarity baseline --------------------------------------------------------
    Blur belongs only to named UI carriers below. Reading/casting surfaces stay
@@ -37,7 +44,8 @@ body[data-page="about"] .page-fx { display: none; }
    wash. It remains recognisably BourneWise but no longer competes with type. */
 html[data-skin="paper"] body .mtn-sky {
   animation: none !important;
-  background: var(--paper) !important;
+  background: var(--bw-palette-cloud) !important;
+  transition: background-color 1.6s var(--ease-out);
 }
 html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
 html[data-skin="paper"] body .mtn-bg [clip-path] > use { opacity: .13 !important; }
@@ -52,6 +60,10 @@ html[data-skin="paper"] body .mtn-bg .cloud-contour use {
 html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { stroke-width: 1.6 !important; opacity: .72; }
 html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { stroke-width: 2.45 !important; opacity: .5; }
 html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { stroke-width: 1.9 !important; opacity: .62; }
+html[data-skin="paper"] body .mtn-bg .fill,
+html[data-skin="paper"] body .mtn-bg [clip-path] > use {
+  transition: fill 1.6s var(--ease-out);
+}
 
 /* Shared glass carriers --------------------------------------------------- */
 html[data-skin="paper"] body :is(
@@ -185,6 +197,7 @@ body[data-page="app"] .greeting h1 {
   line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
 }
 body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
+body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
 body[data-page="app"] .composer-zone { padding-bottom: 28px; }
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
@@ -236,7 +249,13 @@ body[data-page="app"] .casting-live:hover {
   -webkit-backdrop-filter: none !important;
 }
 body[data-page="app"] .thread-inner { max-width: 720px; }
-body[data-page="app"] .msg-user { max-width: 82%; }
+body[data-page="app"] .msg-user {
+  max-width: 82%;
+  background: var(--bw-palette-9) !important;
+  color: var(--bw-palette-on-9) !important;
+  border-color: color-mix(in srgb, var(--bw-palette-9) 78%, white) !important;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--bw-palette-9) 18%, transparent);
+}
 body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em; }
 body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
@@ -248,6 +267,14 @@ body[data-page="app"] .rd-action {
   -webkit-backdrop-filter: blur(10px) saturate(110%);
 }
 body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); border-color: var(--ui-line-strong); }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-skin="paper"] body .mtn-sky,
+  html[data-skin="paper"] body .mtn-bg .fill,
+  html[data-skin="paper"] body .mtn-bg [clip-path] > use {
+    transition: none !important;
+  }
+}
 
 /* Content pages ----------------------------------------------------------- */
 body[data-page="pricing"] .shell,
