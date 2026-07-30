@@ -361,9 +361,9 @@
   .reading-insight p{margin:0 0 14px;font-size:16.5px;line-height:1.72}
   .reading-insight .ix-intro{color:var(--dim)}
   .fig-float{float:right;width:288px;max-width:75%;margin:2px 0 14px 28px;padding:0}
-  /* the looping board raster is confined to its own compositor layer so its
-     per-frame SVG repaints don't force the streaming text around it to repaint */
-  .reading-fig .bw-af{will-change:transform}
+  /* Do not force the animated SVG onto its own compositor layer. In Edge,
+     pointer hover can invalidate that layer while the cast is running and
+     expose its rectangular paper-coloured backing behind the transparent SVG. */
   /* the annotated casting figure is the reading's "representation" — generous
      vertical air above and below so the board breathes instead of butting
      against the question bubble and the prose */
