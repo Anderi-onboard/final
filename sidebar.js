@@ -37,8 +37,8 @@
   ".castings::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}" +
   ".castings::-webkit-scrollbar-button{display:none;height:0;width:0}" +
   ".castings .lbl{flex:none;padding:0 8px 7px;font-family:'Spinnaker';font-weight:900}" +
-  ".casting{flex:none;display:block;width:100%;text-align:left;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}" +
-  ".casting:hover{background:var(--paper-dim);color:var(--ink)}" +
+  ".castings .casting{flex:none;display:block;width:100%;text-align:left;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}" +
+  ".castings .casting:hover{background:var(--paper-dim);color:var(--ink)}" +
   ".hist-empty{margin:2px 8px;padding:13px 12px;border:1px dashed var(--line);border-radius:9px;font-size:12px;line-height:1.5;color:var(--faint);white-space:normal}" +
   "body.rail .castings{opacity:0;pointer-events:none}" +
   ".ledger{position:relative;margin-top:14px;flex:none;padding:13px 14px 14px;transition:transform .22s cubic-bezier(.4,0,.2,1)}" +

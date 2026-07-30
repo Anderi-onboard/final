@@ -75,9 +75,9 @@
   .castings::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}
   .castings::-webkit-scrollbar-button{display:none;height:0;width:0}
   .castings .lbl{flex:none;padding:0 8px 7px;font-family:"Spinnaker";font-weight:900}
-  .casting{flex:none;display:block;width:100%;text-align:left;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}
-  .casting:hover{background:var(--paper-dim);color:var(--ink)}
-  .casting.active{background:var(--paper-dim);color:var(--ink);font-weight:500}
+  .castings .casting{flex:none;display:block;width:100%;text-align:left;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}
+  .castings .casting:hover{background:var(--paper-dim);color:var(--ink)}
+  .castings .casting.active{background:var(--paper-dim);color:var(--ink);font-weight:500}
   .casting-row{display:flex;align-items:center;border-radius:7px;transition:background .15s}
   .casting-row:hover{background:var(--paper-dim)}
   .casting-row .casting{flex:1;min-width:0}
@@ -361,9 +361,9 @@
   .reading-insight p{margin:0 0 14px;font-size:16.5px;line-height:1.72}
   .reading-insight .ix-intro{color:var(--dim)}
   .fig-float{float:right;width:288px;max-width:75%;margin:2px 0 14px 28px;padding:0}
-  /* Do not force the animated SVG onto its own compositor layer. In Edge,
-     pointer hover can invalidate that layer while the cast is running and
-     expose its rectangular paper-coloured backing behind the transparent SVG. */
+  /* the looping board raster is confined to its own compositor layer so its
+     per-frame SVG repaints don't force the streaming text around it to repaint */
+  .reading-fig .bw-af{will-change:transform}
   /* the annotated casting figure is the reading's "representation" — generous
      vertical air above and below so the board breathes instead of butting
      against the question bubble and the prose */
