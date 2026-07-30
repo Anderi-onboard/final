@@ -1,20 +1,19 @@
-/* BourneWise editorial refinement layer.
-   Flat opaque fields, a constrained palette, irregular carrier shapes and
-   near-black gestural edges. No glossy glass, gradients or decorative shadow. */
+/* BourneWise glass refinement layer.
+   Existing geometry and spacing stay untouched; this layer only defines the
+   shared translucent material, edge light and depth hierarchy. */
 
 :root {
-  /* Legacy names stay in place so page CSS keeps working, but the values are
-     now opaque editorial carriers rather than backdrop-filtered glass. */
-  --ui-glass: color-mix(in srgb, var(--paper-raised) 94%, var(--oat));
-  --ui-glass-strong: var(--paper-raised);
-  --ui-glass-soft: transparent;
-  --ui-line: color-mix(in srgb, var(--ink) 24%, transparent);
-  --ui-line-strong: color-mix(in srgb, var(--ink) 58%, transparent);
+  --ui-glass: color-mix(in srgb, var(--paper-raised) 68%, transparent);
+  --ui-glass-strong: color-mix(in srgb, var(--paper-raised) 82%, transparent);
+  --ui-glass-soft: color-mix(in srgb, var(--paper-raised) 48%, transparent);
+  --ui-glass-warm: color-mix(in srgb, var(--oat) 68%, transparent);
+  --ui-line: color-mix(in srgb, white 56%, var(--ink) 14%);
+  --ui-line-strong: color-mix(in srgb, white 38%, var(--ink) 34%);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: none;
-  --ui-shadow-raised: none;
-  --ui-glass-filter: none;
-  --ui-glass-filter-strong: none;
+  --ui-shadow: 0 10px 34px rgba(42,32,22,.09), inset 0 1px 0 rgba(255,255,255,.58);
+  --ui-shadow-raised: 0 18px 52px rgba(42,32,22,.13), inset 0 1px 0 rgba(255,255,255,.7);
+  --ui-glass-filter: blur(14px) saturate(116%);
+  --ui-glass-filter-strong: blur(20px) saturate(122%);
   --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
   --ui-radius-small: 12px 15px 11px 14px / 14px 11px 15px 12px;
 }
@@ -28,16 +27,8 @@ button, a { transition-timing-function: var(--ease-out); }
 ::selection { background: color-mix(in srgb, var(--terracotta) 22%, transparent); }
 
 /* Clarity baseline --------------------------------------------------------
-   The earlier skin still carried page-local glass recipes. Pointer movement
-   made Chromium re-sample those layers, softening both the background and the
-   content above it. The editorial system is flat, so backdrop blur is banned
-   at the skin boundary, including pseudo-elements injected after this file. */
-html[data-skin="paper"] body *,
-html[data-skin="paper"] body *::before,
-html[data-skin="paper"] body *::after {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
+   Blur belongs only to named UI carriers below. Reading/casting surfaces stay
+   unfiltered, so pointer movement cannot recreate the old full-width tan box. */
 body[data-page="app"] .reading-body .rw-s0,
 body[data-page="app"] .reading-body .rw-s4 { filter: none !important; }
 body[data-page="about"] .page-fx { display: none; }
@@ -62,20 +53,20 @@ html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { stroke-width
 html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { stroke-width: 2.45 !important; opacity: .5; }
 html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { stroke-width: 1.9 !important; opacity: .62; }
 
-/* Replace every former glass-dependent component with an explicit opaque
-   carrier. These selectors name the real page components so the visual change
-   does not depend on token inheritance or stylesheet order. */
+/* Shared glass carriers --------------------------------------------------- */
 html[data-skin="paper"] body :is(
   .m-card, .band, .tile, .card, .plan, .topup, .pack, .cost, .ribbon,
   .panel, .toc, .pull, .headline
 ) {
-  background: var(--paper-raised) !important;
+  background: var(--ui-glass) !important;
   background-image: none !important;
   border: 1.25px solid var(--ui-line) !important;
-  box-shadow: none !important;
+  box-shadow: var(--ui-shadow) !important;
+  backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 html[data-skin="paper"] body :is(.band, .ribbon, .card-hero, .plan.feat) {
-  background: var(--oat) !important;
+  background: var(--ui-glass-warm) !important;
 }
 html[data-skin="paper"] body .headline,
 html[data-skin="paper"] body .headline :is(.lbl, p, b) {
@@ -86,8 +77,11 @@ html[data-skin="paper"] body :is(
   .ledger, .side-foot, .composer, .method-menu, .acct-menu,
   .signin-coach, .guide-coach, .top.stuck
 ) {
-  background: var(--paper-raised) !important;
-  box-shadow: none !important;
+  background: var(--ui-glass-strong) !important;
+  border-color: var(--ui-line) !important;
+  box-shadow: var(--ui-shadow) !important;
+  backdrop-filter: var(--ui-glass-filter-strong);
+  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
 html[data-skin="paper"] body :is(
   .ledger, .side-foot, .ledgerstrip, .plan, .topup, .panel, .toc
@@ -95,9 +89,12 @@ html[data-skin="paper"] body :is(
   content: none !important;
 }
 html[data-skin="paper"] body .ledgerstrip {
-  background: var(--paper-raised);
+  background: var(--ui-glass);
   border: 1.25px solid var(--ui-line);
   border-radius: 15px 18px 14px 17px / 17px 14px 18px 15px;
+  box-shadow: var(--ui-shadow);
+  backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 html[data-skin="paper"] body .m-card:nth-child(2n),
 html[data-skin="paper"] body .pack:nth-child(2n),
@@ -117,9 +114,9 @@ body[data-page="pricing"] .pagehead {
   border: 1.25px solid var(--ui-line);
   border-radius: 20px 25px 18px 23px / 23px 18px 25px 19px;
   background: var(--ui-glass);
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  box-shadow: var(--ui-shadow);
+  backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body:not([data-page="app"]) .brand b,
 body[data-page="pricing"] .brand b {
@@ -137,17 +134,22 @@ body[data-page="pricing"] .pagehead .ghost {
   border-radius: 999px;
 }
 body:not([data-page="app"]) .pagehead .ghost:hover,
-body[data-page="pricing"] .pagehead .ghost:hover { background: var(--oat); }
+body[data-page="pricing"] .pagehead .ghost:hover { background: var(--ui-glass-warm); }
 
 /* App shell --------------------------------------------------------------- */
-body[data-page="app"] .sidebar { padding: 16px 14px 14px; }
+body[data-page="app"] .sidebar {
+  padding: 16px 14px 14px;
+  background: color-mix(in srgb, var(--paper-raised) 62%, transparent);
+  border-right-color: var(--ui-line);
+  box-shadow: inset -1px 0 0 rgba(255,255,255,.34);
+}
 body[data-page="app"] .side-top { padding-inline: 6px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
   border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
 }
-body[data-page="app"] .topbar .ghost:hover { background: var(--oat); }
+body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 330px; }
 body[data-page="app"] .claude-mark,
 body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
@@ -162,17 +164,16 @@ body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--i
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
   margin: 14px 2px 0; padding: 15px; border: 1.25px solid var(--ui-line) !important;
-  border-radius: var(--ui-radius); background: var(--oat);
-  backdrop-filter: none; -webkit-backdrop-filter: none;
+  border-radius: var(--ui-radius); background: var(--ui-glass-warm);
 }
 body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
 body[data-page="app"] .ledger-meter { height: 4px; }
 body[data-page="app"] .exchange {
-  min-height: 38px; border-radius: 10px; box-shadow: none;
+  min-height: 38px; border-radius: 10px; box-shadow: 0 6px 18px rgba(31,29,26,.13);
   background: var(--ink); color: var(--paper-raised);
 }
-body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: none; transform: none; }
+body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: 0 8px 22px rgba(181,80,44,.18); transform: none; }
 body[data-page="app"] .side-foot { min-height: 48px; border-radius: 12px; }
 body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mask-image: none; -webkit-mask-image: none; }
 
@@ -188,33 +189,34 @@ body[data-page="app"] .composer-zone { padding-bottom: 28px; }
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
   border: 1.25px solid var(--ui-line); border-radius: 22px 27px 20px 25px / 25px 20px 27px 21px;
-  background: var(--paper-raised); box-shadow: none;
-  backdrop-filter: none; -webkit-backdrop-filter: none;
+  background: var(--ui-glass-strong); box-shadow: var(--ui-shadow-raised);
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
 body[data-page="app"] .composer:focus-within {
-  border-color: var(--ui-line-strong); box-shadow: var(--ui-shadow), 0 0 0 3px var(--ui-glass-strong);
+  border-color: var(--ui-line-strong);
+  box-shadow: var(--ui-shadow-raised), 0 0 0 3px color-mix(in srgb, var(--terracotta) 16%, transparent);
 }
 body[data-page="app"] .stria {
-  min-height: 42px; padding: 8px 14px; background: var(--oat);
+  min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
   border: 1px solid var(--ui-line); color: var(--ink);
 }
-body[data-page="app"] .stria:hover { background: var(--cactus); }
+body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
 body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); }
 body[data-page="app"] .send:hover { background: var(--terracotta); transform: none; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
-  padding: 8px 14px; border-color: var(--ui-line); background: var(--paper-raised);
-  backdrop-filter: none; -webkit-backdrop-filter: none;
+  padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass-soft);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.48);
+  backdrop-filter: blur(10px) saturate(112%);
+  -webkit-backdrop-filter: blur(10px) saturate(112%);
 }
 body[data-page="app"] .method-menu,
 body[data-page="app"] .acct-menu,
 body[data-page="app"] .guide-coach,
 body[data-page="app"] .signin-coach {
-  background: var(--paper-raised); border: 1.25px solid var(--ui-line);
-  box-shadow: none; backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: var(--ui-glass-strong); border: 1.25px solid var(--ui-line);
+  box-shadow: var(--ui-shadow-raised);
 }
 body[data-page="app"] .method-menu { border-radius: 16px; padding: 8px; }
 body[data-page="app"] .mm-row { border-radius: 11px; }
@@ -239,10 +241,13 @@ body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em
 body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
-  background: var(--paper-raised); border-color: var(--ui-line);
+  background: var(--ui-glass-soft); border-color: var(--ui-line);
   border-radius: 10px 13px 9px 12px / 12px 9px 13px 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.46);
+  backdrop-filter: blur(10px) saturate(110%);
+  -webkit-backdrop-filter: blur(10px) saturate(110%);
 }
-body[data-page="app"] .rd-action:hover { background: var(--oat); border-color: var(--ui-line-strong); }
+body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); border-color: var(--ui-line-strong); }
 
 /* Content pages ----------------------------------------------------------- */
 body[data-page="pricing"] .shell,
@@ -258,14 +263,14 @@ body[data-page="pricing"] .topup,
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
   background: var(--ui-glass); border-color: var(--ui-line);
-  box-shadow: none; backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  box-shadow: var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
+  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
 body[data-page="pricing"] .plan,
 body[data-page="settings"] .panel { border-radius: var(--ui-radius); }
 body[data-page="pricing"] .plan:nth-child(2n) { border-radius: 24px 18px 23px 19px / 18px 24px 20px 23px; }
 body[data-page="pricing"] .plan:nth-child(3n) { border-radius: 18px 25px 19px 23px / 24px 19px 23px 18px; }
-body[data-page="pricing"] .plan.feat { background: var(--oat); box-shadow: none; border-color: var(--ui-line-strong); }
+body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-shadow: var(--ui-shadow-raised); border-color: var(--ui-line-strong); }
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
@@ -282,8 +287,9 @@ body[data-page="legal"] .toc,
 body[data-page="legal"] .headline,
 body[data-page="legal"] .pull {
   background: var(--ui-glass); border-color: var(--ui-line);
-  border-radius: var(--ui-radius); backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  border-radius: var(--ui-radius); box-shadow: var(--ui-shadow);
+  backdrop-filter: var(--ui-glass-filter);
+  -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 body[data-page="legal"] .clause { scroll-margin-top: 96px; }
 body[data-page="legal"] .clause p,
@@ -292,9 +298,10 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
 @media (max-width: 880px) {
   body[data-page="app"] .topbar { padding-inline: 18px; }
   body[data-page="app"] .sidebar {
-    background: var(--paper-raised);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: var(--ui-glass-strong);
+    box-shadow: var(--ui-shadow-raised);
+    backdrop-filter: var(--ui-glass-filter-strong);
+    -webkit-backdrop-filter: var(--ui-glass-filter-strong);
   }
   body[data-page="app"] .composer { max-width: 680px; }
   body:not([data-page="app"]) .pagehead,
