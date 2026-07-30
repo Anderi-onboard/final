@@ -8,10 +8,17 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups-180.json?v=20260730c", scriptSrc).href
-    : "./assets/palettes/color-groups-180.json?v=20260730c";
+    ? new URL("../palettes/color-groups-180.json?v=20260730e", scriptSrc).href
+    : "./assets/palettes/color-groups-180.json?v=20260730e";
   var paletteDwellMs = 15000;
   var paletteStep = 47;
+  var palettePriorityWeight = 5;
+  var palettePrioritySegments = {
+    "近白段": true,
+    "金赭段": true,
+    "蓝靛段": true
+  };
+  var paletteScheduleSlots = 500;
   var paletteTimer = 0;
 
 
@@ -173,6 +180,20 @@
       && group.rows.every(function (hex) { return /^#[0-9a-f]{6}$/i.test(hex); });
   }
 
+  /* The source file is an art-palette catalogue, not a set of equally reliable
+     product themes. Near-white, gold/ochre and blue/indigo groups carry the
+     calmest combinations, so they receive five slots each. Every other group
+     keeps one slot: nothing is banned, but the heavier purple/green collisions
+     become occasional accents instead of the site's default atmosphere. */
+  function buildPaletteSchedule(groups) {
+    var schedule = [];
+    groups.forEach(function (group) {
+      var weight = palettePrioritySegments[group.seg] ? palettePriorityWeight : 1;
+      for (var i = 0; i < weight; i++) schedule.push(group);
+    });
+    return schedule;
+  }
+
   function applyPalette(group) {
     var root = document.documentElement;
     var gemIndex = Array.isArray(group.gems) && group.gems.length
@@ -215,10 +236,14 @@
         if (!Array.isArray(groups) || groups.length !== 180 || !groups.every(validPaletteGroup)) {
           throw new Error("Palette data failed validation");
         }
+        var schedule = buildPaletteSchedule(groups);
+        if (schedule.length !== paletteScheduleSlots) {
+          throw new Error("Palette schedule failed validation");
+        }
         function update() {
           var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
-          var index = ((slot * paletteStep) % groups.length + groups.length) % groups.length;
-          applyPalette(groups[index]);
+          var index = ((slot * paletteStep) % schedule.length + schedule.length) % schedule.length;
+          applyPalette(schedule[index]);
           if (!reduce) {
             clearTimeout(paletteTimer);
             paletteTimer = setTimeout(update, paletteDwellMs - ((Date.now() - clockStart) % paletteDwellMs) + 32);
@@ -240,8 +265,8 @@
       document.head.appendChild(st);
     }
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
-    var cycleMs = paletteDwellMs * 180;
-    var clockKey = 'bw-palette-clock-v2';
+    var cycleMs = paletteDwellMs * paletteScheduleSlots;
+    var clockKey = 'bw-palette-clock-v3';
     var seenKey = 'bw-mtn-seen';
     var clockStart;
     var seen = false;
