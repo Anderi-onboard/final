@@ -341,7 +341,7 @@
       if (mw) {
         var mb = mw.querySelector("b"), ms = mw.querySelector("span");
         if (mb) mb.textContent = a.name;
-        if (ms) ms.textContent = a.signedIn ? a.email : "Sign in to keep your ledger";
+        if (ms) ms.textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
       }
     }
     if (opts.units) {

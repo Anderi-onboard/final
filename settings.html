@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260730b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260730c">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -121,7 +121,7 @@
 <main class="main" data-screen-label="Settings">
   <div class="shell">
     <h1 class="pagetitle">Settings</h1>
-    <p class="subtitle">Your ledger, your inquiries, your terms — all in one place.</p>
+    <p class="subtitle">Your account, balance, and reading history.</p>
 
     <!-- Account -->
     <section class="section">
@@ -139,16 +139,16 @@
         </div>
         <div class="row">
           <div class="rl"><b>Ledger balance</b><span>Spend 300 on a Stria 64, 1,500 on a Sortis 6.</span></div>
-          <div class="rr" style="display:flex;gap:10px;align-items:center"><b style="font-family:var(--serif);font-size:20px" id="unitsBig">—</b><a class="btn terracotta" href="./pricing.html">Add units</a></div>
+          <div class="rr" style="display:flex;gap:10px;align-items:center"><b style="font-family:var(--serif);font-size:20px" id="unitsBig">—</b><a class="btn terracotta" href="./pricing.html">Get units</a></div>
         </div>
         <div class="row">
           <div class="rl"><b>Manage subscription</b><span>Change cadence, upgrade or downgrade.</span></div>
-          <div class="rr"><a class="btn ink" href="./pricing.html">Manage plans</a></div>
+          <div class="rr"><a class="btn ink" href="./pricing.html">View plans</a></div>
         </div>
         <div class="row" id="subRow" hidden>
           <div class="rl"><b>Your subscription</b><span id="subNote">Renews automatically. Cancel anytime — your units stay yours.</span></div>
           <div class="rr" style="display:flex;gap:10px">
-            <button class="btn ink" id="portalBtn" type="button">Billing portal</button>
+            <button class="btn ink" id="portalBtn" type="button">Manage billing</button>
             <button class="btn" id="cancelSubBtn" type="button" style="color:var(--terracotta);border-color:currentColor">Cancel subscription</button>
           </div>
         </div>
@@ -166,11 +166,11 @@
       <div class="head"><b>&#9670;</b><span class="idx">04</span><span>Privacy &amp; data</span></div>
       <div class="panel">
         <div class="row">
-          <div class="rl"><b>Inquiry history</b><span id="histCount">—</span></div>
-          <div class="rr"><button class="btn warn" id="clearHist">Burn all inquiries</button></div>
+          <div class="rl"><b>Reading history</b><span id="histCount">—</span></div>
+          <div class="rr"><button class="btn warn" id="clearHist">Delete reading history</button></div>
         </div>
         <div class="row">
-          <div class="rl"><b>Encrypted at rest</b><span>Inquiries are never sold, never used to train. They burn when you say so.</span></div>
+          <div class="rl"><b>Encrypted at rest</b><span>Readings are never sold or used to train. Delete them whenever you choose.</span></div>
           <div class="rr lbl">Always on</div>
         </div>
         <div class="row" id="sessionRow">
@@ -184,9 +184,9 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260730b"></script>
-<script src="./account.js?v=20260728c"></script>
-<script src="./sidebar.js?v=20260729c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260730c"></script>
+<script src="./account.js?v=20260730c"></script>
+<script src="./sidebar.js?v=20260730c"></script>
 <script>
 (function () {
   "use strict";
@@ -209,11 +209,11 @@
         '<div class="id-row"><span class="av">' + esc(a.avatar || A.initials(a.name)) + "</span>" +
         '<span class="id-main"><b>' + esc(a.name) + "</b><span>" + esc(a.email || "") + "</span></span>" +
         '<span class="prov-tag">' + esc(a.provider || "account") + "</span></div>" +
-        '<div class="row"><div class="rl"><b>Display name</b><span>The name on your inquiries.</span></div>' +
+        '<div class="row"><div class="rl"><b>Display name</b><span>The name on your readings.</span></div>' +
         '<div class="rr"><input class="field" id="fName" value="' + esc(a.name) + '"></div></div>' +
         '<div class="row"><div class="rl"><b>Email</b><span>Where the ledger receipts go.</span></div>' +
         '<div class="rr"><input class="field" id="fEmail" value="' + esc(a.email || "") + '"></div></div>' +
-        '<div class="row"><div class="rl"><b>Save changes</b><span>Updates apply across your inquiries.</span></div>' +
+        '<div class="row"><div class="rl"><b>Save changes</b><span>Updates apply across your readings.</span></div>' +
         '<div class="rr"><button class="btn ink" id="saveAcct">Save</button></div></div>';
       document.getElementById("saveAcct").addEventListener("click", function () {
         var s2 = A.state();
@@ -223,7 +223,7 @@
         A.save(s2); render(); toast("Identity updated.");
       });
     } else {
-      ap.innerHTML = '<div class="signedout-note">You\u2019re casting as a guest on this device. <a href="./login.html">Sign in</a> to keep your ledger and history everywhere.</div>';
+      ap.innerHTML = '<div class="signedout-note">You\u2019re using BourneWise as a guest on this device. <a href="./login.html">Sign in</a> to sync your balance and reading history.</div>';
     }
 
     /* plan */
@@ -254,8 +254,8 @@
     /* privacy */
     var n = s.convs.length;
     document.getElementById("histCount").textContent = n
-      ? n + (n === 1 ? " inquiry stored on this device." : " inquiries stored on this device.")
-      : "No inquiries stored yet.";
+      ? n + (n === 1 ? " reading stored on this device." : " readings stored on this device.")
+      : "No readings stored yet.";
 
     var sessSub = document.getElementById("sessSub"), sessRr = document.getElementById("sessRr");
     if (a.signedIn) {
@@ -265,16 +265,17 @@
         A.signOut(); render(); toast("Signed out — your ledger stays put on this device.");
       });
     } else {
-      sessSub.textContent = "Casting as a guest.";
+      sessSub.textContent = "Using BourneWise as a guest.";
       sessRr.innerHTML = '<a class="btn ink" href="./login.html">Sign in</a>';
     }
   }
 
   document.getElementById("clearHist").addEventListener("click", function () {
     var s = A.state();
-    if (!s.convs.length) { toast("There is nothing to burn."); return; }
+    if (!s.convs.length) { toast("There is no reading history to delete."); return; }
+    if (!window.confirm("Delete every reading from this device? This cannot be undone.")) return;
     s.convs = []; s.activeId = null; A.save(s); render();
-    toast("Every inquiry burned from this device.");
+    toast("Reading history deleted from this device.");
   });
 
   render();

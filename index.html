@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260730b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260730c">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -487,7 +487,7 @@
 
   @media (max-width:880px){
     /* the sidebar becomes an off-canvas drawer instead of vanishing, so the
-       account chip, unit balance, history and "New inquiry" stay reachable on
+       account chip, unit balance, history and "New casting" stay reachable on
        phones and at high zoom. Opened by the topbar button, dismissed by the
        scrim. */
     .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:40;width:min(300px,86vw);padding:14px 12px 12px;
@@ -521,7 +521,7 @@
     .top-right{gap:13px}
     /* On a phone the thread title only ever renders as a bare ellipsis once the
        nav and balance have taken their room — and it is already redundant with
-       the opening question in the thread and the sidebar's inquiry list. Drop
+       the opening question in the thread and the sidebar's reading list. Drop
        it here so the bar breathes; the nav links stay reachable (they exist
        nowhere else on this screen). */
     body:not(.is-empty) .topbar h1{display:none}
@@ -580,8 +580,8 @@
 
   /* Mobile topbar fix: the base .claude-note / .top-right rules above sit AFTER
      the earlier max-width media queries, so those narrow-screen overrides lost
-     on source order — the long Claude note stayed in and shoved "How it works"/
-     "About us" into a wrapped, colliding stack against the menu button. Re-assert
+     on source order — the long Claude note stayed in and shoved the navigation
+     into a wrapped, colliding stack against the menu button. Re-assert
      the mobile treatment here (last-wins): drop the note, keep the nav one line. */
   @media (max-width:700px){
     .claude-note{display:none}
@@ -589,7 +589,7 @@
     .topbar .ghost{white-space:nowrap}
     /* In a conversation the topbar carries the thread title as well as the
        nav, and the nav was being squeezed below its own content width — its
-       links then spilled past the right padding and "About us" was clipped
+       links then spilled past the right padding and the final link was clipped
        off the screen. Pin the nav at its natural size and let the title, which
        already ellipsises, absorb the whole squeeze instead. */
     .top-right{flex:none}
@@ -611,7 +611,7 @@
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
-     white callout pinned under the topbar's "How it works" link, arrow poking
+     white callout pinned under the topbar's "The method" link, arrow poking
      UP at it. First-time nudge to the walk-through; dismissable, remembered,
      and it retires itself once the guide has been visited. ── */
   .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
@@ -654,7 +654,7 @@
 
 <aside class="sidebar" data-screen-label="Landing sidebar">
   <div class="side-top">
-    <button class="brand-btn" id="brandBtn" aria-label="New inquiry">
+    <button class="brand-btn" id="brandBtn" aria-label="New casting">
       <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-label="BourneWise logomark"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
       <b class="brand-word fade">BourneWise</b>
     </button>
@@ -665,11 +665,11 @@
 
   <button class="new-cast pressable" id="newCast">
     <span class="ic"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2.5v11M2.5 8h11"></path></svg></span>
-    <span class="fade" style="font-family: var(--sans); font-weight: 900">New inquiry</span>
+    <span class="fade" style="font-family: var(--sans); font-weight: 900">New casting</span>
   </button>
 
-  <nav class="castings fade" id="castList" aria-label="Recent inquiries">
-    <div class="lbl">Recent inquiries</div>
+  <nav class="castings fade" id="castList" aria-label="Reading history">
+    <div class="lbl">Reading history</div>
   </nav>
 
   <div class="ledger" data-screen-label="Ledger" style="border-width: 0px">
@@ -683,12 +683,12 @@
     </div>
     <div class="ledger-meter"><span id="unitsBar"></span></div>
     <div class="ledger-cap" id="unitsCap" style="font-family: var(--sans)">of monthly balance</div>
-    <button class="exchange pressable" id="openPlans" style="font-family: var(--sans)">Add units <span class="ex-arr">&rarr;</span></button>
+    <button class="exchange pressable" id="openPlans" style="font-family: var(--sans)">Get units <span class="ex-arr">&rarr;</span></button>
   </div>
 
   <div class="signin-coach pressable" id="signinCoach" role="button" tabindex="0" aria-label="Sign in to claim 500 free units" hidden>
     <button class="cx" id="coachClose" type="button" aria-label="Dismiss">&times;</button>
-    <span class="ct"><b>New here?</b> Sign in below to claim your <b>500 free units</b>.</span>
+    <span class="ct"><b>First reading?</b> Sign in to claim <b>500 free units</b>.</span>
   </div>
 
   <button class="side-foot pressable" id="acctBtn" aria-haspopup="true" aria-expanded="false" style="border-width: 0px 1px 1px">
@@ -697,7 +697,7 @@
     <span class="go fade"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6.5L8 2.5l4 4M4 9.5l4 4 4-4"></path></svg></span>
   </button>
   <div class="acct-menu" id="acctMenu">
-    <div class="who"><b style="font-family: Spinnaker">Guest</b><span style="font-family: Spinnaker">Sign in to keep your ledger</span></div>
+    <div class="who"><b style="font-family: Spinnaker">Guest</b><span style="font-family: Spinnaker">Sign in to sync your balance and readings</span></div>
     <button class="mi plan" id="miPlans" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5l2 4.2 4.5.6-3.3 3.1.8 4.5L8 11.7l-4 2.2.8-4.5L1.5 6.3l4.5-.6z"></path></svg>Plan &amp; units<b>PRO</b></button>
     <button class="mi" id="miSettings" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="2.5"></circle><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"></path></svg>Settings</button>
     <button class="mi" id="miSignout" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2.5H3.5v11H6M10 5l3 3-3 3M13 8H6.5"></path></svg>Sign out</button>
@@ -709,21 +709,21 @@
     <button class="side-open-btn pressable" id="sideOpenBtn" aria-label="Open menu" title="Menu">
       <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h12M2 8h12M2 12h12"></path></svg>
     </button>
-    <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New inquiry</h1>
+    <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New casting</h1>
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
       <span class="claude-note" title="Powered by advanced language models for structural interpretation">
         <img class="claude-mark" src="./assets/claude-mark.png" alt="" width="20" height="20" decoding="async" aria-hidden="true">
         <span class="cn-text" style="font-family: var(--sans)">Readings are written by Claude Opus 4.8 and held to the cast figure &mdash; the hexagram decides what may be said; the model finds the words.</span>
       </span>
-      <a class="ghost" href="./guide.html" id="howItWorksLink" style="font-weight: 700; font-family: var(--sans)">How it works</a>
-      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">About us</a>
+      <a class="ghost" href="./guide.html" id="howItWorksLink" style="font-weight: 700; font-family: var(--sans)">The method</a>
+      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">Why BourneWise</a>
     </div>
   </header>
 
   <div class="guide-coach pressable" id="guideCoach" role="button" tabindex="0" aria-label="Open the five-minute walk-through" hidden>
     <button class="cx" id="guideCoachClose" type="button" aria-label="Dismiss">&times;</button>
-    <span class="ct"><b>New here?</b> Five short steps: how to ask, and how to read what comes back.</span>
+    <span class="ct"><b>New to BourneWise?</b> See the method in five short steps.</span>
   </div>
 
   <div class="read-progress" id="readProgress" aria-hidden="true"><i id="readProgressFill"></i></div>
@@ -732,7 +732,7 @@
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" style="font-family: var(--serif)">Bring the question you keep circling.</h1>
+          <h1 id="greetLine" style="font-family: var(--serif)">Name the decision in front of you.</h1>
         </div>
       </section>
     </div>
@@ -741,41 +741,41 @@
   <footer class="composer-zone">
     <form class="composer" id="composerForm">
       <button type="button" class="stria pressable" id="methodChip" title="Change casting method" aria-haspopup="true" aria-expanded="false">Stria 64</button>
-      <textarea id="composerInput" rows="1" placeholder="Describe the situation, stakes, and timing&hellip;" aria-label="Ask the oracle" autocomplete="off"></textarea>
+      <textarea id="composerInput" rows="1" placeholder="What changed, what matters, and what comes next?&hellip;" aria-label="Ask BourneWise" autocomplete="off"></textarea>
       <button type="submit" class="send pressable" id="sendBtn" aria-label="Cast">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 8h11M9 3.5L13.5 8 9 12.5"></path></svg>
       </button>
     </form>
     <div class="composer-help" aria-hidden="true"><span>Enter to cast &middot; Shift+Enter for a new line</span><span>Follow-ups keep this casting as context</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
-    <p class="disclaimer" id="methodNote">Perspectives, not certainty &middot; Stria 64 &mdash; 300 units per inquiry</p>
-    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">How it works</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Pricing</a></p>
+    <p class="disclaimer" id="methodNote">Perspectives, not certainty &middot; Stria 64 &mdash; 300 units per casting</p>
+    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans</a></p>
   </footer>
 </main>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260730b"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260730c"></script>
 <script src="./casting-figure.js?v=20260729d"></script>
 <script src="./liuyao-engine.js?v=20260728c"></script>
 <script src="./liuyao-ai.js?v=20260728c"></script>
 <script src="./liuyao-chart.js?v=20260729a"></script>
 <script src="./prompt-engine.js?v=20260728c"></script>
 <script src="./prompt-router.js?v=20260728c"></script>
-<script src="./account.js?v=20260728c"></script>
-<script>window.BW_BUILD="20260730b";</script>
-<script src="./chat-app.js?v=20260729d"></script>
+<script src="./account.js?v=20260730c"></script>
+<script>window.BW_BUILD="20260730c";</script>
+<script src="./chat-app.js?v=20260730c"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
   if(el){
     var prompts=[
-      'Detail the context of your decision.',
-      'What requires structural analysis?',
-      'State the situation plainly.',
-      'Name the variable you wish to examine.',
-      'Define the parameters of your question.',
-      'Specify what you need evaluated.'
+      'Name the decision in front of you.',
+      'What are you trying to decide?',
+      'Set out the situation. Plainly.',
+      'What changed \u2014 and what matters now?',
+      'Name the choice you keep circling.',
+      'Ask the question beneath the question.'
     ];
     /* start somewhere random, then let the ridge carry each one off and bring
        the next in — the same wipe the content pages use, so the landing and the

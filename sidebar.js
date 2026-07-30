@@ -110,15 +110,15 @@
     '</div>' +
     '<a class="new-cast" href="./index.html">' +
       '<span class="ic"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2.5v11M2.5 8h11"></path></svg></span>' +
-      '<span class="fade" style="font-family: BioRhyme; font-weight: 900">New inquiry</span>' +
+      '<span class="fade" style="font-family: BioRhyme; font-weight: 900">New casting</span>' +
     '</a>' +
-    '<nav class="castings fade" id="castList" aria-label="Recent inquiries"><div class="lbl">Recent inquiries</div><div id="histList"></div></nav>' +
+    '<nav class="castings fade" id="castList" aria-label="Reading history"><div class="lbl">Reading history</div><div id="histList"></div></nav>' +
     '<div class="ledger">' +
       '<div class="ledger-head"><span class="lbl">Available units</span><span class="ledger-plan" id="ledgerPlan">Basic</span></div>' +
       '<div class="ledger-bal"><span class="count" id="unitsSide" style="font-family: Spinnaker; font-weight: 700">&mdash;</span><span class="ledger-unit">units</span></div>' +
       '<div class="ledger-meter"><span id="unitsBar"></span></div>' +
       '<div class="ledger-cap" id="unitsCap">of monthly balance</div>' +
-      '<a class="exchange" href="./pricing.html">Add units <span class="ex-arr">&rarr;</span></a>' +
+      '<a class="exchange" href="./pricing.html">Get units <span class="ex-arr">&rarr;</span></a>' +
     '</div>' +
     '<button class="side-foot" id="acctBtn" aria-haspopup="true" aria-expanded="false">' +
       '<span class="avatar">G</span>' +
@@ -126,7 +126,7 @@
       '<span class="go fade"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6.5L8 2.5l4 4M4 9.5l4 4 4-4"></path></svg></span>' +
     '</button>' +
     '<div class="acct-menu" id="acctMenu">' +
-      '<div class="who"><b style="font-family: Spinnaker">Guest</b><span style="font-family: Spinnaker">Sign in to maintain your history and unit balance</span></div>' +
+      '<div class="who"><b style="font-family: Spinnaker">Guest</b><span style="font-family: Spinnaker">Sign in to sync your balance and readings</span></div>' +
       '<a class="mi plan" href="./pricing.html" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5l2 4.2 4.5.6-3.3 3.1.8 4.5L8 11.7l-4 2.2.8-4.5L1.5 6.3l4.5-.6z"></path></svg>Plan &amp; units<b id="miPlanBadge">BASIC</b></a>' +
       '<a class="mi" href="./settings.html" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="2.5"></circle><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"></path></svg>Settings</a>' +
       '<button class="mi" id="miSignout" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2.5H3.5v11H6M10 5l3 3-3 3M13 8H6.5"></path></svg>Sign out</button>' +
@@ -166,7 +166,7 @@
   } else {
     var d = document.createElement("div");
     d.className = "hist-empty";
-    d.textContent = "No inquiries yet. Once you ask, your history lives here.";
+    d.textContent = "No readings yet. Your first casting will appear here.";
     hist.appendChild(d);
   }
 

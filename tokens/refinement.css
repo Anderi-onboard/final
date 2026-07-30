@@ -142,8 +142,29 @@ body[data-page="pricing"] .pagehead .ghost {
   min-height: 38px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0 14px;
+  line-height: 1;
   border-radius: 999px;
+}
+body:not([data-page="app"]) .pagehead .cta,
+body[data-page="pricing"] .pagehead .cta {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+body[data-page="about"] .slab-nav .cta {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0;
+  line-height: 1;
+  white-space: nowrap;
 }
 body:not([data-page="app"]) .pagehead .ghost:hover,
 body[data-page="pricing"] .pagehead .ghost:hover { background: var(--ui-glass-warm); }

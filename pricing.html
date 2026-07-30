@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260730b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260730c">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -170,9 +170,9 @@
     <b style="font-size: 18px; font-weight: 100">BourneWise</b>
   </a>
   <nav class="nav">
-    <a class="ghost" href="./guide.html">How it works</a>
-    <a class="ghost" href="./about.html">About</a>
-    <a class="cta" href="./index.html">Begin the dialogue</a>
+    <a class="ghost" href="./guide.html">The method</a>
+    <a class="ghost" href="./about.html">Why BourneWise</a>
+    <a class="cta" href="./index.html">Ask BourneWise</a>
   </nav>
 </header>
 
@@ -185,7 +185,7 @@
       <span class="who" id="whoLine">Not signed in</span>
       <span>·</span>
       <span>Available units: <b id="ledgerCount">—</b></span>
-      <a href="./index.html#plans" id="ledgerCta">Begin the dialogue</a>
+      <a href="./index.html#plans" id="ledgerCta">Ask BourneWise</a>
     </div>
   </section>
 
@@ -211,10 +211,10 @@
       <div class="grant">Includes <b>300</b> units (one-time)</div>
       <ul>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>1 Stria 64 trial reading</li>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>3-day inquiry history</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>3-day reading history</li>
         <li class="off"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l8 8M12 4l-8 8"></path></svg>Sortis 6 not available</li>
       </ul>
-      <button class="choose" data-grant="300">Start free trial</button>
+      <button class="choose" data-grant="300">Create free account</button>
     </div>
 
     <div class="plan feat" data-plan="pro">
@@ -226,9 +226,9 @@
       <ul>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~75 Stria or ~15 Sortis / month</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Sortis 6 synthesis unlocked</li>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Full inquiry history</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Full reading history</li>
       </ul>
-      <button class="choose" data-grant="22500">Continue the dialogue</button>
+      <button class="choose" data-grant="22500">Choose Pro</button>
     </div>
 
     <div class="plan" data-plan="premium">
@@ -241,7 +241,7 @@
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Priority server processing</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Early access to new frameworks</li>
       </ul>
-      <button class="choose" data-grant="45000">Continue the dialogue</button>
+      <button class="choose" data-grant="45000">Choose Premium</button>
     </div>
   </section>
 
@@ -257,8 +257,8 @@
       <button class="pack" data-grant="75000"><div class="u">75,000</div><div class="p">$55</div><div class="bonus">~50 Sortis · +15% bonus</div></button>
     </div>
     <div class="costs">
-      <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · Sonnet</small></div><div class="ct">300<small> units / inquiry</small></div></div>
-      <div class="cost"><div class="nm">Sortis 6<small>Causal synthesis · Opus</small></div><div class="ct">1,500<small> units / inquiry</small></div></div>
+      <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · Sonnet</small></div><div class="ct">300<small> units / casting</small></div></div>
+      <div class="cost"><div class="nm">Sortis 6<small>Causal synthesis · Opus</small></div><div class="ct">1,500<small> units / casting</small></div></div>
     </div>
   </section>
 
@@ -267,24 +267,24 @@
     <p class="sub">Everything you need before you commit a balance.</p>
     <div class="qa">
       <div><div class="q">Do units expire?</div><div class="a">Plan units refresh each billing month and do not roll over. One-time top-up units never expire while your account stays active.</div></div>
-      <div><div class="q">What happens when I run out?</div><div class="a">Inquiries pause until you add units or your plan renews. Nothing is lost—your history and open castings remain intact.</div></div>
+      <div><div class="q">What happens when I run out?</div><div class="a">New castings pause until you get more units or your plan renews. Your reading history and open threads stay intact.</div></div>
       <div><div class="q">Can I change or cancel a plan?</div><div class="a">Switch tiers or cancel anytime from your account. Changes apply at the next billing cycle; remaining units stay on your balance.</div></div>
-      <div><div class="q">Are units refundable?</div><div class="a">Once an inquiry is processed and a framework is generated, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div>
+      <div><div class="q">Are units refundable?</div><div class="a">Once a casting is drawn and its reading begins, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div>
       <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Stria 64 maps your immediate situation at 300 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,500 units—powered by a more advanced reasoning engine.</div></div>
-      <div><div class="q">Is my data private?</div><div class="a">Inquiries are encrypted at rest, never sold, never used to train broad models, and purged on request.</div></div>
+      <div><div class="q">Is my data private?</div><div class="a">Readings are encrypted at rest, never sold, never used to train broad models, and deleted on request.</div></div>
     </div>
   </section>
 
   <section class="ribbon">
     <div>
       <div class="lbl">&#9670;&nbsp; The fine print, stated plainly</div>
-      <p class="said">Units are consumable digital assets. Once an inquiry is processed and a structural framework is generated, the analysis is delivered and the units are spent. They are non-refundable.</p>
+      <p class="said">Units are consumable digital assets. Once a casting is drawn and its reading begins, the service has been delivered and the units are spent. They are non-refundable.</p>
     </div>
     <a href="./refund.html">Review the refund policy</a>
   </section>
 
   <div class="fineprint">
-    <a href="./guide.html">How it works</a>
+    <a href="./guide.html">The method</a>
     <a href="./terms.html">Terms of Service</a>
     <a href="./privacy.html">Privacy Policy</a>
     <a href="./refund.html">Refund Policy</a>
@@ -294,10 +294,10 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260730b"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260730c"></script>
 <script src="./assets/vendor/lenis.min.js?v=20260728c"></script>
 <script src="./ds-motion.js?v=20260728c"></script>
-<script src="./account.js?v=20260728c"></script>
+<script src="./account.js?v=20260730c"></script>
 <script>
 (function () {
   "use strict";
@@ -325,13 +325,13 @@
     var s = A.state(), a = s.account;
     document.getElementById("ledgerCount").textContent = s.units.toLocaleString("en-US");
     document.getElementById("whoLine").textContent = a.signedIn ? (a.name + " · " + A.planName(a.plan)) : "Not signed in";
-    document.getElementById("ledgerCta").textContent = a.signedIn ? "Begin the dialogue" : "Sign in";
+    document.getElementById("ledgerCta").textContent = a.signedIn ? "Ask BourneWise" : "Sign in";
     document.getElementById("ledgerCta").setAttribute("href", a.signedIn ? "./index.html" : "./login.html");
     document.querySelectorAll(".plan").forEach(function (p) {
       var id = p.getAttribute("data-plan");
       var btn = p.querySelector(".choose");
       if (a.signedIn && a.plan === id) { btn.classList.add("current"); btn.textContent = "Your current plan"; }
-      else { btn.classList.remove("current"); btn.textContent = (id === "free" ? "Start free trial" : "Continue the dialogue"); }
+      else { btn.classList.remove("current"); btn.textContent = (id === "free" ? "Create free account" : (id === "pro" ? "Choose Pro" : "Choose Premium")); }
     });
   }
 

@@ -8,9 +8,9 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups-180.json?v=20260730b", scriptSrc).href
-    : "./assets/palettes/color-groups-180.json?v=20260730b";
-  var paletteDwellMs = 75000;
+    ? new URL("../palettes/color-groups-180.json?v=20260730c", scriptSrc).href
+    : "./assets/palettes/color-groups-180.json?v=20260730c";
+  var paletteDwellMs = 15000;
   var paletteStep = 47;
   var paletteTimer = 0;
 
@@ -19,7 +19,7 @@
     + '.mtn-bg{overflow:hidden;contain:strict}'
     + '.mtn-bg>svg{display:block;width:100%;height:100%}'
     /* The sky and ten ridges receive exact colours from the external 180-group
-       source. JavaScript changes them once per 75-second slot; there is no
+       source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
     + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'

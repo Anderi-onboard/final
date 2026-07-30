@@ -43,10 +43,10 @@
     var foot = $("acctBtn");
     foot.querySelector(".avatar").textContent = a.signedIn ? (a.avatar || "EV") : "G";
     foot.querySelector("b").textContent = a.name;
-    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Sign in to begin";
+    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Sign in to start a reading";
     var menu = $("acctMenu");
     menu.querySelector(".who b").textContent = a.name;
-    menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to keep your ledger";
+    menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
     $("miPlans").querySelector("b").textContent = A.planName(a.plan).toUpperCase();
     // the sign-in coach-mark only nudges signed-out guests, and stays gone once
     // dismissed
@@ -93,7 +93,7 @@
   }
 
   function renderList() {
-    castList.innerHTML = '<div class="lbl">Recent inquiries</div>';
+    castList.innerHTML = '<div class="lbl">Reading history</div>';
     S.convs.forEach(function (c) {
       var wrap = document.createElement("div");
       wrap.className = "casting-row" + (c.id === S.activeId ? " active" : "");
@@ -105,13 +105,13 @@
       var del = document.createElement("button");
       del.className = "casting-del";
       del.innerHTML = "&times;";
-      del.title = "Delete this inquiry";
+      del.title = "Delete this reading";
       del.addEventListener("click", function (e) {
         e.stopPropagation();
         S.convs = S.convs.filter(function (x) { return x.id !== c.id; });
         if (S.activeId === c.id) S.activeId = S.convs.length ? S.convs[0].id : null;
         save(); A.deleteCastingRemote(c.id); renderAll();
-        toast("Inquiry burned.");
+        toast("Reading deleted.");
       });
       wrap.appendChild(b);
       wrap.appendChild(del);
@@ -329,7 +329,7 @@
   }
 
   /* Actions expected on a finished AI response: preserve the artifact, continue
-     in context, or deliberately begin a separate inquiry. */
+     in context, or deliberately begin a separate casting. */
   function readingActions() {
     return '<div class="rd-actions" aria-hidden="false">' +
       '<button type="button" class="rd-action rd-copy pressable" title="Copy this reading">' +
@@ -338,9 +338,9 @@
       '<button type="button" class="rd-action rd-follow pressable" title="Ask about this casting">' +
       '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3.5 3v-3H2.5z"></path></svg>' +
       '<span>Follow up</span></button>' +
-      '<button type="button" class="rd-action rd-new pressable" title="Start a separate inquiry">' +
+      '<button type="button" class="rd-action rd-new pressable" title="Start a separate casting">' +
       '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3v10M3 8h10"></path></svg>' +
-      '<span>New inquiry</span></button></div>';
+      '<span>New casting</span></button></div>';
   }
   /* static, fully-painted reading (used on reload / conversation switch) */
   function readingHTML(msg) {
@@ -349,7 +349,7 @@
 
   function renderThread() {
     var c = activeConv();
-    var titleText = c ? c.title : "New inquiry";
+    var titleText = c ? c.title : "New casting";
     $("convTitle").textContent = titleText;
     $("convTitle").title = titleText;
     threadInner.innerHTML = "";
@@ -720,7 +720,7 @@
        same method → the new question rides ON that casting (metered billing,
        at most half a cast, NO new hexagram) instead of recasting. So "what
        did line 2 mean?" keeps its board and its context; a fresh hexagram
-       needs a fresh "New inquiry". */
+       needs a fresh "New casting". */
     var lastCast = null, lastQuestion = "", convNow = activeConv();
     if (convNow && window.BWPromptRouter) {
       for (var li = convNow.msgs.length - 1; li >= 0; li--) {
@@ -1191,7 +1191,7 @@
   });
   document.addEventListener("click", function (e) { if (!acctMenu.contains(e.target)) closeMenu(); });
 
-  /* ── guide coach-mark: comic callout under the "How it works" link, first
+  /* ── guide coach-mark: comic callout under the "The method" link, first
      visit only. Clicking it (or the link itself) marks the guide as visited;
      the × dismisses it for good. ── */
   var gCoach = $("guideCoach");
@@ -1254,7 +1254,7 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenu(); closeMethod(); } });
 
   /* ── keyboard, first-class: "/" focuses the composer, "n" starts a new
-     inquiry — both ignored while typing in any field. (Esc handled above.) ── */
+     casting — both ignored while typing in any field. (Esc handled above.) ── */
   document.addEventListener("keydown", function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var t = e.target;
@@ -1270,7 +1270,7 @@
     if (follow) {
       var followInput = $("composerInput");
       if (followInput) {
-        followInput.placeholder = "Ask a follow-up about this casting\u2026";
+        followInput.placeholder = "Ask what this casting means for your situation\u2026";
         followInput.focus();
       }
       return;
