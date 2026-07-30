@@ -43,16 +43,18 @@
 
   .shell{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 30px 70px}
 
-  .hero{text-align:center;padding:46px 0 30px}
+  .hero{position:relative;text-align:left;min-height:360px;padding:48px 46% 34px 0}
+  .pricing-art{position:absolute;right:0;top:30px;display:block;width:40%;height:auto;aspect-ratio:3/2;object-fit:cover;margin:0;
+    border-radius:32px 43px 29px 38px / 39px 28px 46px 32px;box-shadow:0 20px 58px rgba(42,32,22,.12)}
   .hero .eyebrow{display:inline-flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:18px}
   .hero .eyebrow b{color:var(--terracotta);font-weight:400}
   .hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(40px,5.6vw,72px);line-height:.98;letter-spacing:-.03em;text-wrap:balance}
   .hero h1 em{font-style:normal;font-weight:500;color:var(--terracotta)}
-  .hero p{font-family:var(--serif);font-size:18px;color:var(--dim);margin-top:18px;max-width:50ch;margin-inline:auto;text-wrap:pretty}
+  .hero p{font-family:var(--serif);font-size:18px;color:var(--dim);margin-top:18px;max-width:50ch;margin-inline:0;text-wrap:pretty}
 
   /* current-ledger strip — same organic-glass recipe as index.html's ledger:
      low-opacity gradient, strong blur, feathered mask, slow animated radius */
-  .ledgerstrip{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
+  .ledgerstrip{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px 0 0;width:max-content;max-width:100%;
     padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
   .ledgerstrip::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
     background:transparent;
@@ -156,7 +158,13 @@
   .qa{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px}
   .qa .q{font-family:var(--serif);font-size:15px;margin-bottom:4px}
   .qa .a{font-size:13.5px;color:var(--dim);line-height:1.5;text-wrap:pretty}
-  @media (max-width:680px){.costs{grid-template-columns:1fr}.qa{grid-template-columns:1fr}}
+  @media (max-width:680px){
+    .hero{text-align:center;min-height:0;padding:28px 0 22px}
+    .pricing-art{position:static;width:100%;max-width:100%;height:auto;margin:0 auto 18px}
+    .hero p{margin-inline:auto}
+    .ledgerstrip{margin-inline:auto}
+    .costs{grid-template-columns:1fr}.qa{grid-template-columns:1fr}
+  }
 
   /* fine print + faq */
   /* the fine-print ribbon is a glass box now too (was a solid dark slab) —
@@ -204,6 +212,7 @@
 
 <div class="shell">
   <section class="hero">
+    <img class="pricing-art" src="./assets/editorial/balanced-value.webp" alt="" width="1536" height="1024">
     <div class="eyebrow"><b>&#9670;</b><span>Plans &amp; balance</span></div>
     <h1>Honest readings, plainly priced</h1>
     <p>You keep a balance of units and spend them question by question — 300 for a Stria 64 read, 1,500 for a Sortis 6 synthesis, and follow-up questions on the same casting for at most half. Choose the rhythm that fits how often life asks.</p>
