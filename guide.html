@@ -70,8 +70,6 @@
   .hero .sub{grid-column:2;grid-row:2;align-self:start;margin-top:18px;
     max-width:40ch;font-family:var(--serif);font-size:clamp(16px,1.35vw,19px);line-height:1.62;color:var(--ink)}
   .hero .meta{grid-column:1;margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-  .guide-art{grid-column:2;grid-row:1;align-self:end;width:100%;height:auto;max-width:460px;justify-self:end;aspect-ratio:3/2;object-fit:cover;
-    border-radius:34px 45px 31px 40px / 42px 30px 48px 34px;box-shadow:0 20px 58px rgba(42,32,22,.13)}
   .cue{position:absolute;left:34px;bottom:40px;display:inline-flex;align-items:center;gap:12px;
     font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
     transition:opacity .5s var(--ease-out)}
@@ -109,7 +107,6 @@
   @media (max-width:900px){
     .sec-head,.hero{grid-template-columns:minmax(0,1fr)}
     .sec-head .lead-p,.hero .sub{grid-column:1;grid-row:auto;margin-top:22px;max-width:54ch}
-    .guide-art{grid-column:1;grid-row:auto;justify-self:start;width:min(620px,100%);margin-top:28px}
   }
   .entries{margin-top:52px;display:grid;gap:0 52px}
   .entries.three{grid-template-columns:repeat(3,1fr)}
@@ -173,7 +170,6 @@
 <!-- ── PROLOGUE ─────────────────────────────────────────────────────────── -->
 <section class="hero">
   <svg class="mark" data-reveal="fade" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-  <img class="guide-art" src="./assets/editorial/interpretation-light.webp" alt="" width="1536" height="1024">
   <h1 data-split>How to ask, and how to read what comes back</h1>
   <p class="sub" data-reveal>Five short passages &mdash; once through and the instrument is yours for good. Read at your own pace; the app is one tap away, whenever you want it.</p>
   <p class="meta" data-reveal>About five minutes &middot; you keep what you learn</p>
