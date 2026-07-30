@@ -55,6 +55,11 @@ const CORS = {
   'access-control-allow-headers': 'content-type'
 };
 
+// Temporary kill switch: keep auth/account/billing routes online while
+// preventing every AI proxy call (and therefore all OpenRouter spend).
+// Set to false to restore the service.
+const API_DISABLED = true;
+
 // Canonical model ids the proxy is willing to call — OpenRouter slugs
 // (vendor-prefixed). Old Anthropic-native ids are kept as aliases so any
 // caller still sending them resolves to the right OpenRouter model.
@@ -93,6 +98,9 @@ function clientIp(request) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  if (API_DISABLED) {
+    return json({ error: 'AI API temporarily disabled', code: 'API_DISABLED' }, 503);
+  }
   let refundTo = null; // { userId, amount } — set once we've deducted, cleared on success
   try {
     if (!env.OPENROUTER_API_KEY) {
@@ -347,6 +355,14 @@ async function guardRequest({ request, env, db, product, cost, mode }) {
 // key is configured, without ever leaking the key. Lets the front-end (and you)
 // verify the backend is wired before spending a unit.
 export async function onRequestGet({ env }) {
+  if (API_DISABLED) {
+    return json({
+      ok: false,
+      service: 'bournewise-claude-proxy',
+      disabled: true,
+      error: 'AI API temporarily disabled'
+    }, 503);
+  }
   return json({
     ok: true,
     service: 'bournewise-claude-proxy',
