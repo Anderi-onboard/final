@@ -1,43 +1,33 @@
-/* BourneWise "Paper" skin — the archival alternate direction.
+/* BourneWise "Paper" skin — editorial, hand-drawn and deliberately flat.
    Scope: set data-skin="paper" on <html> or any subtree root.
    Source: uploads/bournwise-kit (Claude-blueprint oracle chat).
 
-   This skin is a deliberate, SCOPED exception to the slab system's
-   hard-edge rules: soft radii (6–13px), faint paper textures
-   (opacity 0.04–0.10 — squint test: pattern disappears, "paper"
-   remains), and its own two type families.
-
-   Discipline carried over from the kit, expanded with a second accent
-   and a third type family (still disciplined — two jobs each, not
-   decoration for its own sake):
-   · --terracotta is the ACTION accent — CTAs, links, things you click.
-   · --pine is the STATUS accent — plan/tier badges, quiet emphasis.
-     Never used for anything clickable, so the two never compete.
-   · One Prussian-blue hero block per page, maximum (ledger / login hero).
-   · Labels: 11.5px, +0.09em tracking, sentence case. Never all caps.
-   · Textures ship at the opacity baked into the SVGs. Do not raise it.
-   · Fonts: BioRhyme (serif, display + emphasis) / Spinnaker (sans, everything
-     else), loaded via tokens/fonts.css. */
+   The system borrows the useful parts of Anthropic's editorial language
+   without imitating its illustrations: one warm ivory field, near-black
+   gestural marks, a clay action accent, muted carriers, generous space and
+   slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
-  /* palette — aged Eurasian terracotta: tea-stained plaster grounds,
-     burnt-clay accent, warm sepia inks. Deeper + more weathered than the
-     original cream skin; the whole field reads like old paper and fired earth. */
-  --paper: #EBDDC2;         /* base field — toasted, tea-stained plaster */
-  --paper-raised: #F4E9D2;  /* inputs, raised cards — lifted aged cream */
-  --paper-dim: #DECCAB;     /* hover / active fills — sun-faded clay */
-  --chip: #DAC7A3;          /* pills, method chips — kneaded earth */
-  --ink: #2A2016;           /* primary text — warm sepia-black, not neutral */
-  --dim: #6A5238;           /* secondary text — walnut umber */
-  --faint: #927A5C;         /* labels — faded sienna */
-  --ghost: #AA9170;         /* fine print — dusty ochre */
-  --terracotta: #B5502C;    /* action accent — deep burnt clay / fired terracotta. CTAs, links, things you click. */
-  --prussian: #284C82;      /* one hero block per page max — aged indigo */
-  --prussian-deep: #1C3E69;
-  --pine: #3D5C4A;          /* status accent — deep forest pine. Plan/tier badges, quiet emphasis — never CTAs. */
-  --pine-deep: #2C4436;
-  --line: #CDB792;          /* borders on raised elements */
-  --line-soft: #D8C7A4;     /* in-field rules */
+  /* verified editorial palette, adapted into interface roles */
+  --paper: #FAF9F5;         /* full canvas / ivory */
+  --paper-raised: #F0EEE6;  /* irregular carrier surfaces */
+  --paper-dim: #E8E6DC;     /* compact hover and selected states */
+  --chip: #E3DACC;          /* oat — quiet controls */
+  --ink: #141413;           /* dominant linework and type */
+  --dim: #55544F;
+  --faint: #74726B;
+  --ghost: #96938A;
+  --terracotta: #D97757;    /* clay — the only action accent */
+  --prussian: #56556C;      /* dark heather for transformed states */
+  --prussian-deep: #444358;
+  --pine: #536A61;          /* dark cactus for status, never action */
+  --pine-deep: #40554D;
+  --oat: #E3DACC;
+  --cactus: #BCD1CA;
+  --heather: #CBCADB;
+  --coral: #EBCECE;
+  --line: #C9C6BC;
+  --line-soft: #E1DED5;
 
   /* three families, three jobs */
   --serif: "BioRhyme", Georgia, serif; /* @kind font */   /* oracle voice, brand, numbers, display titles */
@@ -64,8 +54,8 @@
   --slab: var(--prussian);
   --text-main: var(--ink);
   --text-on-side: var(--ink);
-  --text-on-accent: var(--paper);
-  --text-on-slab: #EAF1F8;
+  --text-on-accent: var(--ink);
+  --text-on-slab: var(--paper);
   --text-muted: var(--dim);
   --hairline: var(--line);
   --wash: var(--paper-dim);

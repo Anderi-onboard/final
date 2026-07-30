@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="./tokens/colors.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260729b">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260728c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260729b">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -210,35 +210,10 @@
      No blanket override — each role carries its own face. */
   body:not(.is-empty) .thread-inner{font-family:"BioRhyme",var(--serif),serif}
 
-  /* ── chat mode: organic frosted glass — lives on .main::before, a layer BEHIND the
-     content, so the feathered mask fades only the glass; thread content (chart edges,
-     bottom rows) is never masked or dimmed ── */
-  .main::before{
-    content:'';position:absolute;inset:44px 0 84px;z-index:0;pointer-events:none;
-    opacity:0;transition:opacity .5s ease;transform:translateZ(0);
-    /* the frosted glass FULLY DESATURATES its backdrop (saturate 0) so NO hue
-       from any of the 72 mountain palettes can bleed through — saturate(.62)
-       still let the most saturated amber ramps read as tan/yellow. What colour
-       the panel shows now comes ONLY from its own fixed warm-white veil below
-       (palette-independent), never from the ridges behind it. The blur keeps
-       the frosted texture. Both vendor prefixes MUST carry the same filter (the
-       -webkit- one is what Chromium/Edge actually applies). */
-    background:linear-gradient(158deg,rgba(245,244,242,.60) 0%,rgba(243,242,240,.5) 52%,rgba(245,244,242,.58) 100%);
-    backdrop-filter:blur(14px) saturate(0);
-    -webkit-backdrop-filter:blur(14px) saturate(0);
-    border-radius:24px 18px 22px 16px / 18px 24px 16px 20px;
-    /* foggy boundary — feather every edge so the glass dissolves into the page
-       instead of ending on a hard rounded-rectangle line */
-    -webkit-mask-image:
-      linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(100% - 150px), transparent 100%),
-      linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
-    mask-image:
-      linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(100% - 150px), transparent 100%),
-      linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
-    -webkit-mask-composite:source-in;
-    mask-composite:intersect;
-  }
-  body:not(.is-empty) .main::before{opacity:1}
+  /* Readings and the live casting sit directly on the page. The former
+     full-width backdrop-filter panel was removed because Chromium repainted it
+     as a tan rectangle whenever pointer movement triggered recompositing. */
+  .main::before{content:none}
   .topbar,.thread{position:relative;z-index:1}
   /* reading progress — a hairline across the top of the column; only visible
      in chat mode when the thread actually overflows */
@@ -792,7 +767,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="./assets/backgrounds/mountain-range.js?v=20260728c"></script>
-<script src="./casting-figure.js?v=20260729a"></script>
+<script src="./casting-figure.js?v=20260729b"></script>
 <script src="./liuyao-engine.js?v=20260728c"></script>
 <script src="./liuyao-ai.js?v=20260728c"></script>
 <script src="./liuyao-chart.js?v=20260729a"></script>

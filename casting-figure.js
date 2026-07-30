@@ -1,6 +1,6 @@
-/* BourneWise — casting figure v4
-   Organic SVG coin loader (hand-drawn morphing blobs, no square hole)
-   Traditional trigram glyphs · ink-brush line reveal · mouse tilt
+/* BourneWise — casting figure v5
+   Organic coin loader · irregular ink bars · single-rhythm line reveal
+   Flat editorial palette with no card, hover wash or mechanical spinner
    API: window.BWFigure.{random, glyphSVG, pairHTML, cast, loaderEl, NAMES} */
 (function () {
   "use strict";
@@ -205,12 +205,12 @@
     return '<span class="bw-tri-sym">'+tri.sym+'</span>'+
            '<span class="bw-tri-en">'+tri.en+'</span>';
   }
-  /* refined transform arrow: a long hairline shaft with a small open head —
-     no squiggle, no fat chevron. Reads as a typographic mark, not a doodle. */
+  /* A restrained hand-drawn transform arrow: one slightly uneven stroke and
+     a small open head, matching the irregular bars without becoming decorative. */
   function arrowSVG(){
     return '<svg width="34" height="12" viewBox="0 0 34 12" fill="none" stroke="var(--ghost)" '+
       'stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+
-      '<path d="M2 6 H 31"></path><path d="M26.5 2.8 L 31 6 L 26.5 9.2"></path></svg>';
+      '<path d="M2 6 C10 5.2 19 6.8 31 6"></path><path d="M26.5 2.8 L 31 6 L 26.5 9.2"></path></svg>';
   }
   function esc(s){
     return String(s==null?"":s).replace(/[&<>]/g,function(c){
@@ -308,13 +308,16 @@
     return p;
   }
   function mkRect(x,y,w,h){ return mkBar(x,y,w,h); } /* alias for compat */
-  /* shared wave geometry: top & bottom edges flow as a soft S, like the mark's brush waves */
+  /* shared wave geometry: top & bottom edges flow as a soft, deliberately
+     inconsistent S so six lines feel drawn by one hand, not cloned geometry */
   function barPath(x,y,w,h){
-    var x2=x+w, y2=y+h, t=w/3, a=1.4;
+    var x2=x+w, y2=y+h, t=w/3;
+    var a=1.15 + (Math.round(y/(BAR+GAP))%3)*.22;
+    var b=a*.78;
     return "M "+x.toFixed(1)+" "+y.toFixed(1)+
       " C "+(x+t).toFixed(1)+" "+(y-a).toFixed(1)+" "+(x+2*t).toFixed(1)+" "+(y+a).toFixed(1)+" "+x2.toFixed(1)+" "+y.toFixed(1)+
       " L "+x2.toFixed(1)+" "+y2.toFixed(1)+
-      " C "+(x+2*t).toFixed(1)+" "+(y2+a).toFixed(1)+" "+(x+t).toFixed(1)+" "+(y2-a).toFixed(1)+" "+x.toFixed(1)+" "+y2.toFixed(1)+" Z";
+      " C "+(x+2*t).toFixed(1)+" "+(y2+b).toFixed(1)+" "+(x+t).toFixed(1)+" "+(y2-a).toFixed(1)+" "+x.toFixed(1)+" "+y2.toFixed(1)+" Z";
   }
   /* same brush look for static glyphSVG */
   function barStr(x,y,w,h){
@@ -473,23 +476,20 @@
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
 
-      /* ── organic loader: three hollow hand-drawn rings (echoes the three-coin
-         toss), each morphing + turning on its own independent phase so they
-         read as three coins landing separately, not one mechanical spinner ── */
+      /* ── organic loader: three hollow hand-drawn rings. They lift, wobble and
+         settle on offset phases; none performs a mechanical 360° spinner. ── */
       ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
-      ".bw-af-loader{display:block;flex:none;width:22px;height:22px;box-sizing:border-box;",
-        "border:2.1px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
-        "animation:bwLoaderMorph 3.6s ease-in-out infinite,bwLoaderSpin 10s linear infinite}",
-      ".bw-af-loader.b{animation-delay:-1.2s,-3.4s}",
-      ".bw-af-loader.c{animation-delay:-2.4s,-6.8s}",
-      "@keyframes bwLoaderMorph{",
-        "0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%}",
-        "20%{border-radius:58% 42% 38% 62% / 62% 44% 56% 38%}",
-        "40%{border-radius:38% 62% 55% 45% / 40% 60% 40% 60%}",
-        "60%{border-radius:63% 37% 44% 56% / 52% 48% 63% 37%}",
-        "80%{border-radius:42% 58% 60% 40% / 48% 58% 42% 52%}",
+      ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;",
+        "border:2.2px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
+        "transform-origin:50% 58%;animation:bwLoaderWobble 2.8s var(--ease-in-out,ease-in-out) infinite}",
+      ".bw-af-loader.b{animation-delay:-.92s}",
+      ".bw-af-loader.c{animation-delay:-1.84s}",
+      "@keyframes bwLoaderWobble{",
+        "0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;transform:translateY(0) rotate(-3deg)}",
+        "28%{border-radius:58% 42% 40% 60% / 60% 43% 57% 40%;transform:translateY(-3px) rotate(5deg)}",
+        "56%{border-radius:39% 61% 55% 45% / 41% 59% 42% 58%;transform:translateY(1px) rotate(-1deg)}",
+        "78%{border-radius:62% 38% 45% 55% / 53% 47% 62% 38%;transform:translateY(-1px) rotate(3deg)}",
       "}",
-      "@keyframes bwLoaderSpin{to{transform:rotate(360deg)}}",
 
       /* Standalone loader */
       ".bw-loader{display:inline-flex;align-items:center;color:var(--ink)}",
@@ -555,7 +555,8 @@
       "@media (max-width:600px){.bw-zg{flex-direction:column;align-items:stretch;gap:16px}.bw-zg-svg{width:100%}}",
 
       /* ── annotated casting figure: the per-line reading grown off the ink figure ── */
-      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:100%;font-family:var(--sans)}",
+      ".bw-af-fig{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:100%;font-family:var(--sans);background:transparent}",
+      ".bw-af-fig.bw-casting,.bw-af-fig.bw-casting:hover{position:relative;isolation:isolate;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}",
       ".bw-af{display:block;width:100%;height:auto;overflow:visible}",
       /* SVG text at fractional scale renders fuzzy with default hinting — force
          geometric precision so micro labels stay crisp at any board width */
@@ -601,7 +602,8 @@
       "@keyframes bwAftScale{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}",
       /* ── casting IN PLACE: the annotated figure draws itself line by line, then
          the branches grow & the whole board comes alive — same element, no swap ── */
-      ".bw-af-bar{display:flex;align-items:center;gap:13px;margin-bottom:13px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}",
+      ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:10px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
+      ".bw-af-bar::after{content:'';position:absolute;left:0;bottom:0;width:34px;height:2px;background:var(--terracotta);border-radius:58% 42% 55% 45%}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-af-bar .bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
@@ -624,7 +626,7 @@
       /* a stroke of ink settling: drifts up from below through a slight blur,
          overshoots a hair, then rests — 950ms, always finished before the next
          line begins (620ms cadence + the animation's long soft tail) */
-      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;animation:bwAfRow .95s cubic-bezier(.2,.65,.25,1) both}",
+      ".bw-af[data-cast] .bw-af-ln.in{opacity:1;transform-box:fill-box;transform-origin:left center;animation:bwAfRow .9s var(--ease-cinematic,cubic-bezier(.16,1,.3,1)) both}",
       ".bw-af[data-cast] .bw-af-branch,.bw-af[data-cast] .bw-af-arrow,.bw-af[data-cast] .bw-af-tarrow,.bw-af[data-cast] .bw-af-flow,.bw-af[data-cast] .bw-af-flowbase,.bw-af[data-cast] .bw-af-mark,.bw-af[data-cast] .bw-af-markbg{opacity:0}",
       ".bw-af[data-cast] .bw-af-tri-sym,.bw-af[data-cast] .bw-af-tri-en,.bw-af[data-cast] .bw-af-name{opacity:0}",
       /* the finish is a layered bloom, not a dump: annotations arrive in waves —
@@ -633,9 +635,9 @@
       ".bw-af .bw-af-mark,.bw-af .bw-af-markbg{transition:opacity .6s ease .25s}",
       ".bw-af .bw-af-tri-sym,.bw-af .bw-af-tri-en,.bw-af .bw-af-name{transition:opacity .7s ease .5s}",
       ".bw-af .bw-af-flow,.bw-af .bw-af-flowbase,.bw-af .bw-af-tarrow{transition:opacity .8s ease .85s}",
-      /* opacity+transform ONLY — an animated filter:blur on SVG forces a full
-         re-raster every frame and was the frame-skip ("跳帧") source */
-      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(9px)}55%{opacity:1}78%{transform:translateY(-.6px)}100%{opacity:1;transform:none}}",
+      /* left-to-right ink landing: opacity + transform only, avoiding SVG blur
+         re-raster and the frame skips it caused */
+      "@keyframes bwAfRow{0%{opacity:0;transform:translateY(5px) scaleX(.16) rotate(-.7deg)}45%{opacity:1}76%{transform:translateY(-.5px) scaleX(1.015) rotate(.18deg)}100%{opacity:1;transform:none}}",
       /* ── the board settles after its single reveal and HOLDS STILL: no idle
          loops, no perpetual motion. Sheng-ke ties render as static dashed
          currents; moving-line marks stay put at rest. ── */

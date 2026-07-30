@@ -1,28 +1,27 @@
-/* BourneWise refinement layer.
-   Quiet, precise interface chrome inspired by the restraint of excellent
-   system software. The mountain and casting artwork remain the expressive
-   layer; controls and reading surfaces deliberately recede. */
+/* BourneWise editorial refinement layer.
+   Flat opaque fields, a constrained palette, irregular carrier shapes and
+   near-black gestural edges. No glossy glass, gradients or decorative shadow. */
 
 :root {
-  /* Glass is deliberately colourless. It borrows its colour from the animated
-     mountain field below instead of painting a cream card over it. */
-  --ui-glass: rgba(255, 255, 255, .12);
-  --ui-glass-strong: rgba(255, 255, 255, .20);
-  --ui-glass-soft: rgba(255, 255, 255, .045);
-  --ui-line: color-mix(in srgb, var(--ink) 13%, transparent);
-  --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
+  /* Legacy names stay in place so page CSS keeps working, but the values are
+     now opaque editorial carriers rather than backdrop-filtered glass. */
+  --ui-glass: color-mix(in srgb, var(--paper-raised) 94%, var(--oat));
+  --ui-glass-strong: var(--paper-raised);
+  --ui-glass-soft: transparent;
+  --ui-line: color-mix(in srgb, var(--ink) 24%, transparent);
+  --ui-line-strong: color-mix(in srgb, var(--ink) 58%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: 0 1px 1px color-mix(in srgb, var(--ink) 4%, transparent),
-    0 14px 38px color-mix(in srgb, var(--ink) 8%, transparent);
-  --ui-shadow-raised: 0 2px 3px color-mix(in srgb, var(--ink) 5%, transparent),
-    0 22px 60px color-mix(in srgb, var(--ink) 12%, transparent);
-  --ui-glass-filter: blur(20px) saturate(82%) brightness(1.04);
-  --ui-glass-filter-strong: blur(28px) saturate(88%) brightness(1.06);
-  --ui-radius: 18px;
-  --ui-radius-small: 12px;
+  --ui-shadow: none;
+  --ui-shadow-raised: none;
+  --ui-glass-filter: none;
+  --ui-glass-filter-strong: none;
+  --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
+  --ui-radius-small: 12px 15px 11px 14px / 14px 11px 15px 12px;
 }
 
 html { color-scheme: light; }
+html[data-skin="paper"],
+html[data-skin="paper"] body { background-color: var(--paper); }
 body { text-rendering: optimizeLegibility; }
 a, button, input { -webkit-tap-highlight-color: transparent; }
 button, a { transition-timing-function: var(--ease-out); }
@@ -34,12 +33,12 @@ body[data-page="pricing"] .pagehead {
   width: min(1180px, calc(100% - 48px));
   margin: 14px auto 0;
   padding: 10px 12px 10px 16px;
-  border: 1px solid var(--ui-line);
-  border-radius: 999px;
+  border: 1.25px solid var(--ui-line);
+  border-radius: 20px 25px 18px 23px / 23px 18px 25px 19px;
   background: var(--ui-glass);
-  box-shadow: 0 1px 1px rgba(42,32,22,.03), 0 8px 24px rgba(42,32,22,.05);
-  backdrop-filter: var(--ui-glass-filter);
-  -webkit-backdrop-filter: var(--ui-glass-filter);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 body:not([data-page="app"]) .brand b,
 body[data-page="pricing"] .brand b {
@@ -57,7 +56,7 @@ body[data-page="pricing"] .pagehead .ghost {
   border-radius: 999px;
 }
 body:not([data-page="app"]) .pagehead .ghost:hover,
-body[data-page="pricing"] .pagehead .ghost:hover { background: var(--ui-glass-strong); }
+body[data-page="pricing"] .pagehead .ghost:hover { background: var(--oat); }
 
 /* App shell --------------------------------------------------------------- */
 body[data-page="app"] .sidebar { padding: 16px 14px 14px; }
@@ -67,7 +66,7 @@ body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
   border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
 }
-body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-strong); }
+body[data-page="app"] .topbar .ghost:hover { background: var(--oat); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 330px; }
 body[data-page="app"] .claude-mark,
 body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
@@ -77,13 +76,13 @@ body[data-page="app"] .brand-btn,
 body[data-page="app"] .side-toggle,
 body[data-page="app"] .new-cast,
 body[data-page="app"] .castings .casting,
-body[data-page="app"] .casting-row { border-radius: 10px; }
+body[data-page="app"] .casting-row { border-radius: var(--ui-radius-small); }
 body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
-  margin: 14px 2px 0; padding: 15px; border: 1px solid var(--ui-line) !important;
-  border-radius: var(--ui-radius); background: var(--ui-glass);
-  backdrop-filter: var(--ui-glass-filter); -webkit-backdrop-filter: var(--ui-glass-filter);
+  margin: 14px 2px 0; padding: 15px; border: 1.25px solid var(--ui-line) !important;
+  border-radius: var(--ui-radius); background: var(--oat);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
@@ -107,40 +106,51 @@ body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !impo
 body[data-page="app"] .composer-zone { padding-bottom: 28px; }
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
-  border: 1px solid var(--ui-line); border-radius: 22px;
-  background: var(--ui-glass-strong); box-shadow: var(--ui-shadow);
-  backdrop-filter: var(--ui-glass-filter-strong); -webkit-backdrop-filter: var(--ui-glass-filter-strong);
+  border: 1.25px solid var(--ui-line); border-radius: 22px 27px 20px 25px / 25px 20px 27px 21px;
+  background: var(--paper-raised); box-shadow: none;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
 body[data-page="app"] .composer:focus-within {
   border-color: var(--ui-line-strong); box-shadow: var(--ui-shadow), 0 0 0 3px var(--ui-glass-strong);
 }
 body[data-page="app"] .stria {
-  min-height: 42px; padding: 8px 14px; background: var(--ui-glass);
+  min-height: 42px; padding: 8px 14px; background: var(--oat);
   border: 1px solid var(--ui-line); color: var(--ink);
 }
-body[data-page="app"] .stria:hover { background: var(--ui-glass-strong); }
+body[data-page="app"] .stria:hover { background: var(--cactus); }
 body[data-page="app"] .composer input { font-size: 16px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); }
 body[data-page="app"] .send:hover { background: var(--terracotta); transform: none; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
-  padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 8px 14px; border-color: var(--ui-line); background: var(--paper-raised);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 body[data-page="app"] .method-menu,
 body[data-page="app"] .acct-menu,
 body[data-page="app"] .guide-coach,
 body[data-page="app"] .signin-coach {
-  background: var(--ui-glass-strong); border: 1px solid var(--ui-line);
-  box-shadow: var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
-  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
+  background: var(--paper-raised); border: 1.25px solid var(--ui-line);
+  box-shadow: none; backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 body[data-page="app"] .method-menu { border-radius: 16px; padding: 8px; }
 body[data-page="app"] .mm-row { border-radius: 11px; }
-body[data-page="app"] .main::before {
-  inset: 52px 14px 86px; border-radius: 28px; background: var(--ui-glass-soft);
-  backdrop-filter: var(--ui-glass-filter); -webkit-backdrop-filter: var(--ui-glass-filter);
+/* The old full-width frosted layer was the tan box that appeared when pointer
+   movement forced Chromium to re-composite backdrop-filter. The reading and
+   casting remain directly on the page; only compact controls get carriers. */
+body[data-page="app"] .main::before { display: none !important; }
+body[data-page="app"] .reading,
+body[data-page="app"] .reading:hover,
+body[data-page="app"] .reading-chart,
+body[data-page="app"] .reading-chart:hover,
+body[data-page="app"] .casting-live,
+body[data-page="app"] .casting-live:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 body[data-page="app"] .thread-inner { max-width: 720px; }
 body[data-page="app"] .msg-user { max-width: 82%; }
@@ -161,12 +171,14 @@ body[data-page="pricing"] .topup,
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
   background: var(--ui-glass); border-color: var(--ui-line);
-  box-shadow: none; backdrop-filter: var(--ui-glass-filter);
-  -webkit-backdrop-filter: var(--ui-glass-filter);
+  box-shadow: none; backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 body[data-page="pricing"] .plan,
 body[data-page="settings"] .panel { border-radius: var(--ui-radius); }
-body[data-page="pricing"] .plan.feat { background: var(--ui-glass-strong); box-shadow: var(--ui-shadow); }
+body[data-page="pricing"] .plan:nth-child(2n) { border-radius: 24px 18px 23px 19px / 18px 24px 20px 23px; }
+body[data-page="pricing"] .plan:nth-child(3n) { border-radius: 18px 25px 19px 23px / 24px 19px 23px 18px; }
+body[data-page="pricing"] .plan.feat { background: var(--oat); box-shadow: none; border-color: var(--ui-line-strong); }
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
@@ -183,8 +195,8 @@ body[data-page="legal"] .toc,
 body[data-page="legal"] .headline,
 body[data-page="legal"] .pull {
   background: var(--ui-glass); border-color: var(--ui-line);
-  border-radius: var(--ui-radius); backdrop-filter: var(--ui-glass-filter);
-  -webkit-backdrop-filter: var(--ui-glass-filter);
+  border-radius: var(--ui-radius); backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 body[data-page="legal"] .clause { scroll-margin-top: 96px; }
 body[data-page="legal"] .clause p,
@@ -193,9 +205,9 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
 @media (max-width: 880px) {
   body[data-page="app"] .topbar { padding-inline: 18px; }
   body[data-page="app"] .sidebar {
-    background: var(--ui-glass-strong);
-    backdrop-filter: var(--ui-glass-filter-strong);
-    -webkit-backdrop-filter: var(--ui-glass-filter-strong);
+    background: var(--paper-raised);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   body[data-page="app"] .composer { max-width: 680px; }
   body:not([data-page="app"]) .pagehead,
