@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="./tokens/colors.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260729b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260729b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260729c">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -46,13 +46,7 @@
   .lede{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
 
   .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;position:relative}
-  .toc::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
-    background:transparent;
-    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
-    border-radius:16px 13px 15px 11px / 12px 16px 11px 14px;transform:translateZ(0);
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .toc::before{content:none}
   .toc > *{position:relative;z-index:1}
   
   .toc a{display:block;font-size:13px;color:var(--dim);padding:3px 0;transition:color .15s;break-inside:avoid}

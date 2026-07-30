@@ -312,7 +312,7 @@
      inconsistent S so six lines feel drawn by one hand, not cloned geometry */
   function barPath(x,y,w,h){
     var x2=x+w, y2=y+h, t=w/3;
-    var a=1.15 + (Math.round(y/(BAR+GAP))%3)*.22;
+    var a=1.45 + (Math.round(y/(BAR+GAP))%3)*.28;
     var b=a*.78;
     return "M "+x.toFixed(1)+" "+y.toFixed(1)+
       " C "+(x+t).toFixed(1)+" "+(y-a).toFixed(1)+" "+(x+2*t).toFixed(1)+" "+(y+a).toFixed(1)+" "+x2.toFixed(1)+" "+y.toFixed(1)+
@@ -479,14 +479,14 @@
       /* ── organic loader: three hollow hand-drawn rings. They lift, wobble and
          settle on offset phases; none performs a mechanical 360° spinner. ── */
       ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
-      ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;",
-        "border:2.2px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
-        "transform-origin:50% 58%;animation:bwLoaderWobble 2.8s var(--ease-in-out,ease-in-out) infinite}",
-      ".bw-af-loader.b{animation-delay:-.92s}",
-      ".bw-af-loader.c{animation-delay:-1.84s}",
+      ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;background:var(--paper);",
+        "border:2.3px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
+        "transform-origin:50% 58%;animation:bwLoaderWobble 2.5s var(--ease-in-out,ease-in-out) infinite}",
+      ".bw-af-loader.b{width:23px;height:20px;background:var(--terracotta);animation-delay:-.82s}",
+      ".bw-af-loader.c{width:20px;height:23px;animation-delay:-1.64s}",
       "@keyframes bwLoaderWobble{",
         "0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;transform:translateY(0) rotate(-3deg)}",
-        "28%{border-radius:58% 42% 40% 60% / 60% 43% 57% 40%;transform:translateY(-3px) rotate(5deg)}",
+        "28%{border-radius:58% 42% 40% 60% / 60% 43% 57% 40%;transform:translateY(-5px) rotate(7deg)}",
         "56%{border-radius:39% 61% 55% 45% / 41% 59% 42% 58%;transform:translateY(1px) rotate(-1deg)}",
         "78%{border-radius:62% 38% 45% 55% / 53% 47% 62% 38%;transform:translateY(-1px) rotate(3deg)}",
       "}",
@@ -606,8 +606,10 @@
       ".bw-af-bar::after{content:'';position:absolute;left:0;bottom:0;width:34px;height:2px;background:var(--terracotta);border-radius:58% 42% 55% 45%}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-af-bar .bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
+      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;gap:7px;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
+      ".bw-af-bar .bw-cast-status::before{content:'';width:6px;height:6px;flex:none;background:var(--terracotta);border-radius:58% 42% 63% 37% / 44% 61% 39% 56%;animation:bwStatusPulse 1.4s ease-in-out infinite}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
+      "@keyframes bwStatusPulse{0%,100%{transform:scale(.72);opacity:.45}50%{transform:scale(1);opacity:1}}",
       /* the moment, as a compact inline row joined by organic ink dots */
       ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
       ".bw-af-moment .bw-af-dot{flex:none;opacity:.85}",

@@ -27,6 +27,81 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
 button, a { transition-timing-function: var(--ease-out); }
 ::selection { background: color-mix(in srgb, var(--terracotta) 22%, transparent); }
 
+/* Clarity baseline --------------------------------------------------------
+   The earlier skin still carried page-local glass recipes. Pointer movement
+   made Chromium re-sample those layers, softening both the background and the
+   content above it. The editorial system is flat, so backdrop blur is banned
+   at the skin boundary, including pseudo-elements injected after this file. */
+html[data-skin="paper"] body *,
+html[data-skin="paper"] body *::before,
+html[data-skin="paper"] body *::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+body[data-page="app"] .reading-body .rw-s0,
+body[data-page="app"] .reading-body .rw-s4 { filter: none !important; }
+body[data-page="about"] .page-fx { display: none; }
+
+/* Keep the animated range as quiet linework instead of a soft multicolour
+   wash. It remains recognisably BourneWise but no longer competes with type. */
+html[data-skin="paper"] body .mtn-sky {
+  animation: none !important;
+  background: var(--paper) !important;
+}
+html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
+html[data-skin="paper"] body .mtn-bg [clip-path] > use { opacity: .13 !important; }
+html[data-skin="paper"] body .mtn-bg .contour use,
+html[data-skin="paper"] body .mtn-bg .cloud-contour use {
+  stroke: color-mix(in srgb, var(--ink) 24%, transparent) !important;
+  stroke-width: 1.15 !important;
+}
+
+/* Replace every former glass-dependent component with an explicit opaque
+   carrier. These selectors name the real page components so the visual change
+   does not depend on token inheritance or stylesheet order. */
+html[data-skin="paper"] body :is(
+  .m-card, .band, .tile, .card, .plan, .topup, .pack, .cost, .ribbon,
+  .panel, .toc, .pull, .headline
+) {
+  background: var(--paper-raised) !important;
+  background-image: none !important;
+  border: 1.25px solid var(--ui-line) !important;
+  box-shadow: none !important;
+}
+html[data-skin="paper"] body :is(.band, .ribbon, .card-hero, .plan.feat) {
+  background: var(--oat) !important;
+}
+html[data-skin="paper"] body .headline,
+html[data-skin="paper"] body .headline :is(.lbl, p, b) {
+  background-image: none !important;
+  color: var(--ink) !important;
+}
+html[data-skin="paper"] body :is(
+  .ledger, .side-foot, .composer, .method-menu, .acct-menu,
+  .signin-coach, .guide-coach, .top.stuck
+) {
+  background: var(--paper-raised) !important;
+  box-shadow: none !important;
+}
+html[data-skin="paper"] body :is(
+  .ledger, .side-foot, .ledgerstrip, .plan, .topup, .panel, .toc
+)::before {
+  content: none !important;
+}
+html[data-skin="paper"] body .ledgerstrip {
+  background: var(--paper-raised);
+  border: 1.25px solid var(--ui-line);
+  border-radius: 15px 18px 14px 17px / 17px 14px 18px 15px;
+}
+html[data-skin="paper"] body .m-card:nth-child(2n),
+html[data-skin="paper"] body .pack:nth-child(2n),
+html[data-skin="paper"] body .cost:nth-child(2n) {
+  border-radius: 15px 11px 14px 12px / 12px 15px 11px 14px;
+}
+html[data-skin="paper"] body :is(.band .cta, .plan.feat .choose, .btn.terracotta) {
+  color: var(--ink) !important;
+}
+
 /* Shared page chrome ------------------------------------------------------ */
 body:not([data-page="app"]) .pagehead,
 body[data-page="pricing"] .pagehead {

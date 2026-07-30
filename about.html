@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="./tokens/colors.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260729b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260729b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260729c">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -53,7 +53,7 @@
      A different hue per page delivers the "scroll down → the background turns
      another colour" beat the brief asks for. ── */
   .page-fx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .page-fx b{position:absolute;display:block;border-radius:50%;filter:blur(64px);opacity:.5;will-change:transform,opacity}
+  .page-fx{display:none}
   /* page 2 — warm amber / terracotta dawn */
   .fx-amber b:nth-child(1){width:58vw;height:58vw;left:-8vw;top:-6vh;background:radial-gradient(circle at 42% 42%,#F3C88C,transparent 68%);animation:blobA 27s ease-in-out infinite}
   .fx-amber b:nth-child(2){width:50vw;height:50vw;right:-10vw;bottom:-12vh;background:radial-gradient(circle at 50% 50%,#D99A62,transparent 70%);animation:blobB 34s ease-in-out infinite}
@@ -124,29 +124,22 @@
   .duo-l .mini{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--ink);border-radius:9px;padding:7px 15px;transition:background .15s,color .15s}
   .duo-l .mini:hover{background:var(--ink);color:var(--paper)}
   .duo-r{display:flex;flex-direction:column;gap:12px}
-  /* frosted-glass box — the same translucent warm panel the login card uses, so
-     the colour field above drifts through it. transform:translateZ(0) pins it to
-     its own compositor layer so the blur samples a stable backdrop (no flash). */
+  /* flat editorial carrier — opaque enough to keep type crisp over the range */
   .m-card{display:flex;gap:14px;align-items:flex-start;border-radius:12px;padding:16px 18px;
-    background:linear-gradient(158deg,rgba(247,238,220,.52) 0%,rgba(236,223,197,.22) 52%,rgba(247,238,220,.48) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
+    background:var(--paper-raised);border:1px solid var(--line)}
   .m-card .mi{flex:none;width:24px;height:24px;color:var(--terracotta);margin-top:1px}
   .m-card b{display:block;font-family:"BioRhyme",var(--serif);font-size:15px;font-weight:700}
   .m-card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
   .m-card p{margin-top:4px;font-size:13px;line-height:1.55;color:var(--dim)}
 
   /* ── 3 · ink band — how to take the answer ── */
-  /* the band is a glass box now too (was a solid dark slab) — dark ink text on
-     translucent warm glass, matching every other box on the page */
+  /* one oat carrier holds the reading principles */
   .band{margin-top:56px;color:var(--ink);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center;
-    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
+    background:var(--oat);border:1px solid var(--line)}
   .band h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;text-align:center}
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;width:100%}
-  /* tiles sit ON the band glass — a translucent fill (no nested backdrop-filter)
-     keeps them cheap and flash-free while still reading as glass-on-glass */
-  .tile{border:1px solid rgba(42,32,22,.1);background:rgba(255,252,245,.34);border-radius:13px;padding:22px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background .15s}
-  .tile:hover{background:rgba(255,252,245,.52)}
+  .tile{border:1px solid var(--line);background:var(--paper-raised);border-radius:13px;padding:22px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background .15s}
+  .tile:hover{background:var(--paper)}
   .tile .ti{width:26px;height:26px;color:var(--terracotta)}
   .tile b{margin-top:34px;font-family:"BioRhyme",var(--serif);font-size:17px;font-weight:700}
   .tile p{margin-top:7px;font-size:12px;line-height:1.5;color:var(--dim)}

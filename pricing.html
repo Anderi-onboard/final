@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="./tokens/colors.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260728c">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260729b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260729c">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260728c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260729b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260729c">
 <script src="./ds-base.js?v=20260728c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -50,17 +50,10 @@
   .hero h1 em{font-style:normal;font-weight:500;color:var(--terracotta)}
   .hero p{font-family:var(--serif);font-size:18px;color:var(--dim);margin-top:18px;max-width:50ch;margin-inline:auto;text-wrap:pretty}
 
-  /* current-ledger strip — same organic-glass recipe as index.html's ledger:
-     low-opacity gradient, strong blur, feathered mask, slow animated radius */
+  /* current-ledger strip — compact opaque carrier */
   .ledgerstrip{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 0;width:max-content;max-width:100%;
     padding:8px 8px 8px 18px;font-size:13px;color:var(--dim)}
-  .ledgerstrip::before{content:'';position:absolute;inset:-34px;z-index:-1;pointer-events:none;
-    background:transparent;
-    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
-    border-radius:23px;transform:translateZ(0);
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 64px,#000 calc(100% - 64px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .ledgerstrip::before{content:none}
   .ledgerstrip > *{position:relative;z-index:1}
   
   .ledgerstrip b{font-family:var(--serif);font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -84,16 +77,7 @@
   .plan{display:flex;flex-direction:column;padding:24px 22px;position:relative;
     transition:transform .22s cubic-bezier(.4,0,.2,1)}
   .plan:hover{transform:translateY(-2px)}
-  /* fog bleeds outward via ::before; the "MOST SELECTED" .ptag badge is its
-     own position:absolute child so it always paints above (z-index:auto,
-     positioned) regardless of how far the -1 layer behind it fades */
-  .plan::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
-    background:transparent;
-    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
-    border-radius:18px 15px 17px 13px / 14px 18px 12px 16px;transform:translateZ(0);
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .plan::before{content:none}
   .plan > *{position:relative;z-index:1}
   .plan.feat{box-shadow:0 14px 40px rgba(181,80,44,.18)}
   
@@ -119,13 +103,7 @@
 
   /* one-time top-up */
   .topup{margin-top:40px;padding:24px 26px;position:relative}
-  .topup::before{content:'';position:absolute;inset:-40px;z-index:-1;pointer-events:none;
-    background:transparent;
-    backdrop-filter:blur(15px) saturate(0);-webkit-backdrop-filter:blur(15px) saturate(0);
-    border-radius:17px 14px 16px 12px / 13px 17px 11px 15px;transform:translateZ(0);
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    mask-image:linear-gradient(to bottom,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%),linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .topup::before{content:none}
   .topup > *{position:relative;z-index:1}
   
   .topup .th{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
@@ -133,8 +111,7 @@
   .topup .sub{font-size:13px;color:var(--faint)}
   .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
   .pack{border-radius:11px;padding:15px;text-align:left;transition:border-color .15s,transform .12s;
-    background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
+    background:var(--paper-raised);border:1px solid var(--line)}
   .pack:hover{border-color:var(--ink);transform:translateY(-1px) translateZ(0)}
   .pack .u{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums}
   .pack .p{font-size:13px;color:var(--terracotta);margin-top:3px}
@@ -143,8 +120,7 @@
   /* what a unit buys + faq */
   .costs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   .cost{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-radius:11px;padding:14px 16px;
-    background:linear-gradient(158deg,rgba(247,238,220,.5) 0%,rgba(236,223,197,.2) 52%,rgba(247,238,220,.46) 100%);
-    border:1px solid rgba(205,183,146,.55);backdrop-filter:blur(14px) saturate(0);-webkit-backdrop-filter:blur(14px) saturate(0);transform:translateZ(0)}
+    background:var(--paper-raised);border:1px solid var(--line)}
   .cost .nm{font-family:var(--serif);font-size:15px}
   .cost .nm small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--faint);margin-top:2px}
   .cost .ct{font-family:var(--serif);font-size:18px;color:var(--terracotta);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -159,11 +135,9 @@
   @media (max-width:680px){.costs{grid-template-columns:1fr}.qa{grid-template-columns:1fr}}
 
   /* fine print + faq */
-  /* the fine-print ribbon is a glass box now too (was a solid dark slab) —
-     dark ink on translucent warm glass, consistent with every card above */
+  /* the fine-print ribbon uses the same flat oat carrier */
   .ribbon{margin-top:40px;color:var(--ink);border-radius:15px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
-    background:linear-gradient(158deg,rgba(247,238,220,.55) 0%,rgba(236,223,197,.24) 52%,rgba(247,238,220,.5) 100%);
-    border:1px solid rgba(205,183,146,.5);backdrop-filter:blur(16px) saturate(0);-webkit-backdrop-filter:blur(16px) saturate(0);transform:translateZ(0)}
+    background:var(--oat);border:1px solid var(--line)}
   .ribbon .lbl{color:var(--faint)}
   .ribbon .said{font-family:var(--serif);font-style:normal;font-size:20px;max-width:40ch;color:var(--ink)}
   .ribbon a{background:rgba(181,80,44,.1);border:1px solid rgba(181,80,44,.4);border-radius:10px;padding:9px 18px;font-size:13.5px;color:var(--terracotta);font-weight:500;transition:background .15s}
