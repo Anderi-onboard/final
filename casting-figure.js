@@ -429,7 +429,7 @@
         /* stage 2: the last stroke has landed — release the rest of the board
            (marks → names → currents follow on their own staggered transitions) */
         svg.removeAttribute("data-cast");
-        if (figEl){ figEl.classList.remove("casting"); figEl.classList.add("bw-af-live"); }
+        if (figEl){ figEl.classList.remove("bw-casting"); figEl.classList.add("bw-af-live"); }
         if (status) status.textContent = "";
         setTimeout(resolve, 1100);
       }
@@ -619,7 +619,7 @@
       ".bw-af-mark{fill:none;stroke-linecap:round}",
       ".bw-af-flowbase{fill:none;stroke-width:1.3;opacity:.26}",
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
-      ".bw-af-fig.casting .bw-af-moment{opacity:0;transition:opacity .5s ease}",
+      ".bw-af-fig.bw-casting .bw-af-moment{opacity:0;transition:opacity .5s ease}",
       ".bw-af[data-cast] .bw-af-ln{opacity:0}",
       /* a stroke of ink settling: drifts up from below through a slight blur,
          overshoots a hair, then rests — 950ms, always finished before the next
@@ -975,7 +975,7 @@
     var svg = '<svg class="bw-af" viewBox="0 0 ' + VW + ' ' + VH + '"' + (opts.animate ? ' data-anim="1"' : '') + (opts.cast ? ' data-cast="1"' : '') + ' aria-hidden="true">' +
       '<defs>' + defs + '</defs>' + ben + bian + tarrow + arrows + branch + bbranch +
       benTags + bianTags + benName + bianName + '</svg>';
-    var cls = 'bw-af-fig' + (opts.cast ? ' casting' : ' bw-af-live');
+    var cls = 'bw-af-fig' + (opts.cast ? ' bw-casting' : ' bw-af-live');
     return '<figure class="' + cls + '">' + barHTML("Stria 64") + svg + annoLegend(hasBian && moving.length > 0) + '</figure>';
   }
 
@@ -1161,7 +1161,7 @@
     var svg = '<svg class="bw-af" viewBox="-8 0 ' + (VW + 16) + ' ' + VH + '"' + (opts.animate ? ' data-anim="1"' : '') + (opts.cast ? ' data-cast="1"' : '') + ' aria-hidden="true">' +
       '<defs>' + defs + '</defs>' + ben + bian + tarrow + arrows + branch + bbranch +
       benTags + bianTags + benName + bianName + '</svg>';
-    var cls = 'bw-af-fig bw-af-full' + (opts.cast ? ' casting' : ' bw-af-live');
+    var cls = 'bw-af-fig bw-af-full' + (opts.cast ? ' bw-casting' : ' bw-af-live');
     return '<figure class="' + cls + '">' + barHTML("Sortis 6") + headTableHTML(board) + svg + annoLegend(true) + '</figure>';
   }
 

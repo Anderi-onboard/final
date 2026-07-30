@@ -193,11 +193,11 @@
     var host = container.querySelector('.lyc-host');
     host.innerHTML = html(board, null, { animate:false });
     var fig = host.querySelector('.lyc');
-    fig.classList.add('casting');
+    fig.classList.add('lyc-casting');
     var status = container.querySelector('.lyc-caststatus');
     function rows(li){ return fig.querySelectorAll('.lyc-line[data-li="'+li+'"]'); }
     function drawAll(){ Array.prototype.forEach.call(fig.querySelectorAll('.lyc-line'), function(r){ r.classList.add('drawn'); }); }
-    if (reduced){ drawAll(); fig.classList.remove('casting'); status.textContent=''; if(coinHost) coinHost.classList.add('spent'); return Promise.resolve(); }
+    if (reduced){ drawAll(); fig.classList.remove('lyc-casting'); status.textContent=''; if(coinHost) coinHost.classList.add('spent'); return Promise.resolve(); }
     var ordinals = ["First","Second","Third","Fourth","Fifth","Sixth"];
     return new Promise(function(resolve){
       var i = 0;
@@ -211,7 +211,7 @@
       function done(){
         Array.prototype.forEach.call(fig.querySelectorAll('.lyc-line:not(.drawn)'), function(r){ r.classList.add('drawn'); });
         if (coinHost) coinHost.classList.add('spent');
-        setTimeout(function(){ status.textContent=''; fig.classList.remove('casting'); resolve(); }, 520);
+        setTimeout(function(){ status.textContent=''; fig.classList.remove('lyc-casting'); resolve(); }, 520);
       }
     });
   }
@@ -242,8 +242,8 @@
       ".lyc-castlabel{color:var(--terracotta);font-weight:600}",
       ".lyc-caststatus{color:var(--faint);font-size:10px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".lyc-caststatus:empty{display:none}",
-      ".lyc.casting .lyc-line{opacity:0;transform:translateY(9px)}",
-      ".lyc.casting .lyc-line.drawn{animation:lycRow .7s cubic-bezier(.22,.7,.28,1) forwards}",
+      ".lyc.lyc-casting .lyc-line{opacity:0;transform:translateY(9px)}",
+      ".lyc.lyc-casting .lyc-line.drawn{animation:lycRow .7s cubic-bezier(.22,.7,.28,1) forwards}",
       ".lyc-head{padding:0 1px 7px;border-bottom:1px solid var(--line-soft);margin-bottom:10px;display:flex;flex-direction:column;gap:4px}",
       ".lyc-line1,.lyc-line2{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}",
       ".lyc-line2{padding-top:4px;gap:5px 9px}",
