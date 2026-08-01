@@ -859,7 +859,16 @@
     // of repainting whole network bursts — see makeTypewriter above.
     var tw = makeTypewriter(streamPreview);
     var streamedAny = false;
-    function onStreamDelta(chunk, fullSoFar) { streamedAny = true; tw.delta(fullSoFar); }
+    var castVisualDone = false;
+    var pendingStreamText = "";
+    function onStreamDelta(chunk, fullSoFar) {
+      streamedAny = true;
+      pendingStreamText = fullSoFar;
+      /* Keep the interpretation behind the casting ritual. The request still
+         runs in parallel, but its prose opens only after the figure is fully
+         established and the five visible preparation steps have completed. */
+      if (castVisualDone) tw.delta(fullSoFar);
+    }
 
     /* Claude-style: lift the question to the top of the thread and reveal the full
        casting animation below it. A spacer guarantees there's room to scroll. */
@@ -884,6 +893,10 @@
     var castDone = window.BWFigure
       ? window.BWFigure.cast(castBox, spec, { board: sortisBoard })
       : new Promise(function (r) { setTimeout(r, 1600); });
+    castDone = Promise.resolve(castDone).then(function () {
+      castVisualDone = true;
+      if (pendingStreamText) tw.delta(pendingStreamText);
+    });
 
     try { window.__bwReadingIncomplete = false; } catch (e) {}
     var history = buildHistory(c, 3);

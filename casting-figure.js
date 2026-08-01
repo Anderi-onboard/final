@@ -388,14 +388,40 @@
     }
 
     return new Promise(function(resolve){
+      var castDuration = 5200;
+      var statusSteps = sortis ? [
+        "01 / 05 \u00b7 Casting lines\u2026",
+        "02 / 05 \u00b7 Setting trigrams\u2026",
+        "03 / 05 \u00b7 Finding moving lines\u2026",
+        "04 / 05 \u00b7 Mapping the change\u2026",
+        "05 / 05 \u00b7 Opening the reading\u2026"
+      ] : [
+        "01 / 05 \u00b7 Casting lines\u2026",
+        "02 / 05 \u00b7 Setting trigrams\u2026",
+        "03 / 05 \u00b7 Reading the structure\u2026",
+        "04 / 05 \u00b7 Weighing the relation\u2026",
+        "05 / 05 \u00b7 Opening the reading\u2026"
+      ];
+      var statusAt = [0, 950, 1950, 3000, 4200];
+      var statusTimers = [];
+      function showStatus(index){
+        if (!status) return;
+        status.textContent = statusSteps[index];
+        status.classList.remove("is-stepping");
+        void status.offsetWidth;
+        status.classList.add("is-stepping");
+      }
       if (figEl) {
         figEl.classList.add("bw-cast-run");
         figEl.setAttribute("aria-busy", "true");
       }
-      if (status) status.textContent = "";
+      statusAt.forEach(function(at, index){
+        if (at === 0) showStatus(index);
+        else statusTimers.push(setTimeout(function(){ showStatus(index); }, at));
+      });
       if (svg) {
         svg.querySelectorAll(".bw-af-branch").forEach(function(branch, index){
-          branch.style.setProperty("--cast-d", (0.68 + Math.min(index * 0.025, 0.68)).toFixed(3) + "s");
+          branch.style.setProperty("--cast-d", (1.05 + Math.min(index * 0.055, 1.75)).toFixed(3) + "s");
         });
       }
       requestAnimationFrame(function () {
@@ -403,9 +429,10 @@
           svg.classList.add("bw-cast-in");
         });
       });
-      setTimeout(finishCast, 2180);
+      setTimeout(finishCast, castDuration);
 
       function finishCast(){
+        statusTimers.forEach(clearTimeout);
         svg.removeAttribute("data-cast");
         svg.classList.remove("bw-cast-in");
         if (figEl){
@@ -586,8 +613,10 @@
       ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:2px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
+      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;min-width:0;max-width:min(48vw,260px);overflow:hidden;text-overflow:ellipsis;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s;white-space:nowrap}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
+      ".bw-af-bar .bw-cast-status.is-stepping{animation:bwStatusStep .46s cubic-bezier(.16,1,.3,1) both}",
+      "@keyframes bwStatusStep{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}",
       ".bw-af-live .bw-af-loader{transform:none}",
       /* the moment, as a compact inline row joined by organic ink dots */
       ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
@@ -605,10 +634,10 @@
       /* One continuous cast: coins gather and release; the final board is
          already in place and reveals by structure instead of crossfading. */
       ".bw-cast-run .bw-af-loader{will-change:transform,border-radius}",
-      ".bw-cast-run .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft 1.08s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-af-loader.b{animation:bwCoinMiddle 1.08s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-af-loader.c{animation:bwCoinRight 1.08s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.35s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft 1.38s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-af-loader.b{animation:bwCoinMiddle 1.38s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-af-loader.c{animation:bwCoinRight 1.38s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.65s cubic-bezier(.16,1,.3,1) both}",
       "@keyframes bwCoinLeft{",
         "0%{transform:none}",
         "24%{transform:translate(7px,-9px) rotate(12deg) scale(.92);border-radius:58% 42% 43% 57% / 61% 44% 56% 39%}",
@@ -633,23 +662,23 @@
       "@keyframes bwMethodSet{0%,18%{opacity:.58;transform:translateX(-3px)}58%,100%{opacity:1;transform:none}}",
       ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend{opacity:0;transform:translateY(4px)}",
       ".bw-cast-run .bw-af-moment{animation:bwCastMeta .5s .28s cubic-bezier(.16,1,.3,1) forwards}",
-      ".bw-cast-run .bw-af-legend{animation:bwCastMeta .48s 1.62s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-cast-run .bw-af-legend{animation:bwCastMeta .55s 4.02s cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastMeta{to{opacity:1;transform:none}}",
       ".bw-af[data-cast]{opacity:1;transform:none;transform-origin:center}",
       ".bw-af[data-cast] .bw-af-ln{opacity:0;transform:translateY(8px) scaleX(.72);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln{animation:bwCastLine .52s cubic-bezier(.16,1,.3,1) forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='0']{animation-delay:.44s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='1']{animation-delay:.56s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='2']{animation-delay:.68s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='3']{animation-delay:.80s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='4']{animation-delay:.92s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='5']{animation-delay:1.04s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='0']{animation-delay:.82s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='1']{animation-delay:.91s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='2']{animation-delay:1s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='3']{animation-delay:1.09s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='4']{animation-delay:1.18s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='5']{animation-delay:1.27s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln{animation:bwCastLine .72s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='0']{animation-delay:.62s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='1']{animation-delay:.92s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='2']{animation-delay:1.22s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='3']{animation-delay:1.52s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='4']{animation-delay:1.82s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='5']{animation-delay:2.12s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='0']{animation-delay:1.35s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='1']{animation-delay:1.60s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='2']{animation-delay:1.85s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='3']{animation-delay:2.10s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='4']{animation-delay:2.35s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='5']{animation-delay:2.60s}",
       "@keyframes bwCastLine{",
         "0%{opacity:0;transform:translateY(8px) scaleX(.72)}",
         "58%{opacity:1;transform:translateY(-1px) scaleX(1.025)}",
@@ -659,20 +688,18 @@
       ".bw-af[data-cast].bw-cast-in .bw-af-branch{animation:bwCastBranch .58s var(--cast-d,.82s) cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastBranch{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){opacity:0;transform:translateY(4px);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){animation:bwCastLabel .5s 1.35s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast].bw-cast-in :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){animation:bwCastLabel .6s 3.12s cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastLabel{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow){opacity:0}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-arrow{animation:bwCastArrow .55s 1.38s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-tarrow{animation:bwCastTarrow .55s 1.36s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-flowbase{animation:bwCastFlowBase .55s 1.42s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-flow{animation:bwCastFlow .55s 1.48s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-arrow{animation:bwCastArrow .7s 3.34s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-tarrow{animation:bwCastTarrow .7s 3.30s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-flowbase{animation:bwCastFlowBase .7s 3.42s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-flow{animation:bwCastFlow .7s 3.50s ease forwards}",
       "@keyframes bwCastArrow{to{opacity:.5}}",
       "@keyframes bwCastTarrow{to{opacity:.85}}",
       "@keyframes bwCastFlowBase{to{opacity:.26}}",
       "@keyframes bwCastFlow{to{opacity:1}}",
-      /* ── the board settles after its single reveal and HOLDS STILL: no idle
-         loops, no perpetual motion. Sheng-ke ties render as static dashed
-         currents; moving-line marks stay put at rest. ── */
+      /* ── the reveal settles into the perpetual living state below. ── */
       ".bw-af-live .bw-af-flow{stroke-dasharray:2 9}",
       ".bw-af-live .bw-af-flow.gen{stroke-dasharray:2 8;stroke-width:2.6}",
       ".bw-af-live .bw-af-flow.ctrl{stroke-dasharray:6 6;stroke-width:2.2}",
@@ -1053,7 +1080,7 @@
     return '<div class="bw-af-bar">' +
       '<span class="bw-coins">' + coinsMarkup() + '</span>' +
       '<span class="bw-cast-method">' + method + '</span>' +
-      '<span class="bw-cast-status"></span>' +
+      '<span class="bw-cast-status" role="status" aria-live="polite"></span>' +
     '</div>';
   }
   /* a small hand-drawn organic ink dot (black blob, no perfect circle) */

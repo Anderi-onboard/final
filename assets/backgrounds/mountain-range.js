@@ -8,8 +8,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups-180.json?v=20260801b", scriptSrc).href
-    : "./assets/palettes/color-groups-180.json?v=20260801b";
+    ? new URL("../palettes/color-groups-180.json?v=20260801c", scriptSrc).href
+    : "./assets/palettes/color-groups-180.json?v=20260801c";
   var paletteDwellMs = 15000;
   var paletteStep = 47;
   var palettePriorityWeight = 5;
