@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260801d">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260801d">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260801d">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260801d">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260801d">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260801d">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260801d">
-<script src="./ds-base.js?v=20260801d"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260801e">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260801e">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260801e">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260801e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260801e">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260801e">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260801e">
+<script src="./ds-base.js?v=20260801e"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -231,6 +231,26 @@
   .rd-action:hover{background:var(--paper-dim);color:var(--ink);border-color:var(--ink)}
   .rd-copy.done{color:var(--terracotta);border-color:var(--terracotta)}
   .rd-action svg{opacity:.8}
+  /* post-reading depth bridge — uses the existing paper/glass language and
+     turns a finished answer into an editable, deliberate next inquiry */
+  .rd-depth{margin-top:32px;padding:20px;border:1px solid color-mix(in oklab,var(--line) 76%,transparent);border-radius:18px;
+    background:color-mix(in oklab,var(--paper) 78%,transparent);box-shadow:0 12px 38px rgba(31,29,26,.055);
+    backdrop-filter:blur(16px) saturate(1.06);-webkit-backdrop-filter:blur(16px) saturate(1.06)}
+  .rd-depth-copy{max-width:640px}
+  .rd-depth-kicker{display:block;margin-bottom:7px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta)}
+  .rd-depth h4{font-family:"BioRhyme",var(--serif),serif;font-size:20px;line-height:1.25;letter-spacing:-.015em}
+  .rd-depth-copy p{margin-top:6px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--dim)}
+  .rd-prompts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:17px}
+  .rd-prompt{position:relative;min-width:0;min-height:92px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:13px 36px 13px 13px;
+    border:1px solid var(--line);border-radius:12px;background:color-mix(in oklab,var(--paper) 68%,transparent);color:var(--ink);
+    transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+  .rd-prompt span{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  .rd-prompt b{margin-top:8px;font-family:var(--sans);font-size:13px;line-height:1.35;font-weight:600;text-wrap:balance}
+  .rd-prompt svg{position:absolute;right:13px;bottom:13px;color:var(--terracotta);transition:transform var(--dur-fast) var(--ease-out)}
+  .rd-prompt:hover{transform:translateY(-2px);background:var(--paper);border-color:color-mix(in oklab,var(--terracotta) 52%,var(--line));box-shadow:0 8px 20px rgba(31,29,26,.07)}
+  .rd-prompt:hover svg{transform:translateX(3px)}
+  .rd-prompt:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
+  .rd-depth-note{margin:12px 1px 0;font-family:var(--sans);font-size:11px;line-height:1.45;color:var(--faint)}
   .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta)}
   .reading-body .gild.alt{color:var(--pine);border-bottom-color:var(--pine)}
   /* word stream — five reveal styles rotate word-by-word, slowly taking turns.
@@ -532,6 +552,9 @@
     .stria{padding:7px 11px;font-size:12px}
     .send{width:36px;height:36px}
     .disclaimer{font-size:10.5px}
+    .rd-depth{margin-top:26px;padding:16px;border-radius:15px}
+    .rd-prompts{grid-template-columns:1fr}
+    .rd-prompt{min-height:74px;padding:11px 36px 11px 12px}
     .modal-hero{padding:18px 18px}
     .plans{padding:16px 18px 6px}
   }
@@ -755,16 +778,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260801d"></script>
-<script src="./casting-figure.js?v=20260801d"></script>
-<script src="./liuyao-engine.js?v=20260801d"></script>
-<script src="./liuyao-ai.js?v=20260801d"></script>
-<script src="./liuyao-chart.js?v=20260801d"></script>
-<script src="./prompt-engine.js?v=20260801d"></script>
-<script src="./prompt-router.js?v=20260801d"></script>
-<script src="./account.js?v=20260801d"></script>
-<script>window.BW_BUILD="20260801d";</script>
-<script src="./chat-app.js?v=20260801d"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260801e"></script>
+<script src="./casting-figure.js?v=20260801e"></script>
+<script src="./liuyao-engine.js?v=20260801e"></script>
+<script src="./liuyao-ai.js?v=20260801e"></script>
+<script src="./liuyao-chart.js?v=20260801e"></script>
+<script src="./prompt-engine.js?v=20260801e"></script>
+<script src="./prompt-router.js?v=20260801e"></script>
+<script src="./account.js?v=20260801e"></script>
+<script>window.BW_BUILD="20260801e";</script>
+<script src="./chat-app.js?v=20260801e"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

@@ -312,7 +312,7 @@
     // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
       var prose = mdReading(msg.text);
-      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>' + readingActions();
+      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>' + readingDepth(msg) + readingActions();
     }
 
     // Structured (legacy interpret) — full prose + key-line and timing sections.
@@ -325,7 +325,35 @@
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
     return '<div class="reading-body">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
-      mdReading(r.reading) + keysSec + timeSec + '</div>' + readingActions();
+      mdReading(r.reading) + keysSec + timeSec + '</div>' + readingDepth(msg) + readingActions();
+  }
+
+  /* A reading should open the next useful layer, not end as a block of prose.
+     These lenses compose a follow-up without sending it: the reader can edit,
+     reconsider, and only spend units when they deliberately submit. */
+  function readingDepth(msg) {
+    var continued = !!(msg && msg.followup);
+    var prompts = continued ? [
+      ["Test it", "What in this reading should I question?"],
+      ["Make it real", "How would this look in practice?"],
+      ["Watch for", "What sign would show the situation has changed?"]
+    ] : [
+      ["Blind spot", "What am I not seeing yet in this situation?"],
+      ["First change", "What is most likely to change first?"],
+      ["Next move", "What is mine to do now?"]
+    ];
+    return '<section class="rd-depth" aria-label="Continue the inquiry">' +
+      '<div class="rd-depth-copy"><span class="rd-depth-kicker">Stay with the figure</span>' +
+      '<h4>' + (continued ? 'Go one layer further.' : 'Turn the reading into a next step.') + '</h4>' +
+      '<p>Choose one lens. It will be placed in the composer for you to shape before anything is sent.</p></div>' +
+      '<div class="rd-prompts">' + prompts.map(function (p) {
+        return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
+          '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
+          '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h9M9 4.5 12.5 8 9 11.5"></path></svg>' +
+        '</button>';
+      }).join("") + '</div>' +
+      '<p class="rd-depth-note">Nothing is sent until you press the arrow. Follow-ups keep this casting as context.</p>' +
+    '</section>';
   }
 
   /* Actions expected on a finished AI response: preserve the artifact, continue
@@ -1279,6 +1307,19 @@
   /* ── copy a reading — delegated; grabs the reading body's text and drops it
      on the clipboard, with a brief "Copied" confirmation on the button ── */
   document.addEventListener("click", function (e) {
+    var prompt = e.target && e.target.closest && e.target.closest(".rd-prompt");
+    if (prompt) {
+      var promptInput = $("composerInput");
+      if (promptInput) {
+        promptInput.value = prompt.getAttribute("data-prompt") || "";
+        promptInput.placeholder = "Ask what this casting means for your situation…";
+        saveDraft();
+        sizeComposer();
+        promptInput.focus();
+        try { promptInput.setSelectionRange(promptInput.value.length, promptInput.value.length); } catch (err) {}
+      }
+      return;
+    }
     var follow = e.target && e.target.closest && e.target.closest(".rd-follow");
     if (follow) {
       var followInput = $("composerInput");
