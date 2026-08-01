@@ -413,6 +413,14 @@
           figEl.classList.add("bw-af-live");
           figEl.removeAttribute("aria-busy");
         }
+        /* The reveal and the living figure are one motion, not two scenes.
+           Deferred SVG waves start from the exact resting paths only after the
+           board has settled, so there is no mid-wave snap at the hand-off. */
+        requestAnimationFrame(function () {
+          svg.querySelectorAll("animate[data-bw-ambient]").forEach(function(anim){
+            try { anim.beginElement(); } catch(e) {}
+          });
+        });
         if (status) status.textContent = "";
         resolve();
       }
@@ -671,6 +679,25 @@
       ".bw-af-live .bw-af-flow.gen-rev{stroke-dasharray:2 9;stroke-width:1.9;opacity:.78}",
       ".bw-af-live .bw-af-flow.ctrl-rev{stroke-dasharray:6 6;stroke-width:1.9;opacity:.78}",
       ".bw-af-live .bw-af-flow.peer{stroke-dasharray:2 8;stroke-width:2;opacity:.7}",
+      /* The settled figure stays alive. All motion is carried by existing ink:
+         a slow three-beat coin drift, breathing moving-line marks and currents
+         travelling through the already-drawn relationship paths. */
+      "@media (prefers-reduced-motion:no-preference){",
+        ".bw-af-live .bw-af-loader{will-change:transform;animation:bwCoinIdleA 4.8s cubic-bezier(.45,0,.55,1) infinite}",
+        ".bw-af-live .bw-af-loader.b{animation-name:bwCoinIdleB;animation-duration:4.2s;animation-delay:-1.15s}",
+        ".bw-af-live .bw-af-loader.c{animation-name:bwCoinIdleC;animation-duration:5.15s;animation-delay:-2.4s}",
+        ".bw-af-live .bw-af-mark{transform-box:fill-box;transform-origin:center;animation:bwMarkLive 3.6s cubic-bezier(.45,0,.55,1) infinite}",
+        ".bw-af-live .bw-af-flow{animation:bwFlowLive 4.8s linear infinite;animation-delay:calc(var(--fi,0) * -.72s)}",
+        ".bw-af-live .bw-af-flow.ctrl,.bw-af-live .bw-af-flow.ctrl-rev{animation-duration:6.4s;animation-direction:reverse}",
+        ".bw-af-live .bw-af-flow.peer{animation-duration:5.6s}",
+        ".bw-af-live .bw-af-tarrow{stroke-dasharray:4 7;animation:bwCrossLive 5.2s linear infinite}",
+      "}",
+      "@keyframes bwCoinIdleA{0%,100%{transform:none}28%{transform:translate(-.4px,-1.8px) rotate(-1.8deg)}63%{transform:translate(.5px,.6px) rotate(.8deg)}}",
+      "@keyframes bwCoinIdleB{0%,100%{transform:none}34%{transform:translateY(-2.2px) rotate(1.5deg) scale(1.025)}72%{transform:translate(-.3px,.5px) rotate(-.7deg)}}",
+      "@keyframes bwCoinIdleC{0%,100%{transform:none}24%{transform:translate(.5px,-1.3px) rotate(1.7deg)}58%{transform:translate(-.4px,-2px) rotate(-.9deg)}82%{transform:translateY(.4px)}}",
+      "@keyframes bwMarkLive{0%,100%{transform:scale(1);opacity:.78}42%{transform:scale(1.12) rotate(2deg);opacity:1}68%{transform:scale(.98) rotate(-1deg);opacity:.88}}",
+      "@keyframes bwFlowLive{to{stroke-dashoffset:-44}}",
+      "@keyframes bwCrossLive{to{stroke-dashoffset:-33}}",
       /* full board: header + dense per-line branches (Sortis tier) */
       ".bw-af-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--sans);font-size:11px;color:var(--dim);padding-bottom:9px;margin-bottom:2px;border-bottom:1px solid var(--line-soft)}",
       ".bw-af-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
@@ -709,6 +736,7 @@
       /* reduced motion */
       "@media (prefers-reduced-motion:reduce){",
         ".bw-af-loader{animation:none!important}",
+        ".bw-af-live .bw-af-flow,.bw-af-live .bw-af-mark,.bw-af-live .bw-af-tarrow{animation:none!important}",
         ".bw-fig .bw-ln.in{animation:none;opacity:1;transform:none}",
         ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend,.bw-af[data-cast] *{animation:none!important;opacity:1!important;transform:none!important}",
       "}"
@@ -890,7 +918,9 @@
     if (flow) {
       var frames = 30, vals = [], f;
       for (f = 0; f <= frames; f++) vals.push(afSineD(x0, yc, W, amp, 1.0, phase + 2 * Math.PI * (f / frames)));
-      p += '<animate attributeName="d" dur="' + dur + 's" repeatCount="indefinite" calcMode="spline" keyTimes="' + vals.map(function(_,j){return (j/frames).toFixed(3);}).join(";") + '" keySplines="' + vals.slice(1).map(function(){return ".42 0 .58 1";}).join(";") + '" values="' + vals.join(";") + '"></animate>';
+      p += '<animate data-bw-ambient="1" attributeName="d" dur="' + dur + 's" repeatCount="indefinite"' +
+        (flow === "deferred" ? ' begin="indefinite"' : '') +
+        ' calcMode="spline" keyTimes="' + vals.map(function(_,j){return (j/frames).toFixed(3);}).join(";") + '" keySplines="' + vals.slice(1).map(function(){return ".42 0 .58 1";}).join(";") + '" values="' + vals.join(";") + '"></animate>';
     }
     return p + '</path>';
   }
@@ -921,7 +951,8 @@
     var moving = (spec.changeIdx || []).slice();
     var hasBian = !!spec.transformedLines;
     var els2 = hasBian ? lineElements(spec.transformedLines) : null;
-    var flow = !opts.cast && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var flow = reduceMotion ? false : (opts.cast ? "deferred" : true);
 
     var TOP = 54, STEP = 23, BARW = 62;
     function cy(li) { return TOP + (5 - li) * STEP; }
@@ -1052,7 +1083,8 @@
     var L = board.lines, bf = board.bian && board.bian.full, hasBian = !!bf;
     var worldLi = board.ben.worldLi;
     var hid = {}; (board.hidden || []).forEach(function (h) { hid[h.position] = h; });
-    var flow = !opts.cast && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var flow = reduceMotion ? false : (opts.cast ? "deferred" : true);
 
     var TOP = 46, STEP = 25, BARW = 56;
     function cy(li) { return TOP + (5 - li) * STEP; }
