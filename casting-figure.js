@@ -112,6 +112,28 @@
     return b;
   }
 
+  /* Three-coin provenance for every line. The traditional 2/3-value method
+     yields 6 = old yin, 7 = young yang, 8 = young yin, 9 = old yang.
+     New casts store the face order; older casts derive a stable valid order. */
+  function coinFacesForLine(line, index, randomize) {
+    if (line && Array.isArray(line.coins) && line.coins.length === 3) {
+      return line.coins.map(function(v){ return !!v; }); /* true = yang face */
+    }
+    var yangFaces = line.changing ? (line.yang ? 3 : 0) : (line.yang ? 1 : 2);
+    var order = [0,1,2], faces = [false,false,false];
+    if (randomize) {
+      for (var i = 2; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = order[i]; order[i] = order[j]; order[j] = t;
+      }
+    } else {
+      var shift = ((index || 0) * 2 + (line.yang ? 0 : 1)) % 3;
+      order = [shift, (shift + 1) % 3, (shift + 2) % 3];
+    }
+    for (var k = 0; k < yangFaces; k++) faces[order[k]] = true;
+    return faces;
+  }
+
   /* ── public: random ── */
   function random(method) {
     var lines = [];
@@ -132,6 +154,7 @@
       });
       transformedName = NAMES[patternBits(transformedLines) % NAMES.length];
     }
+    lines.forEach(function(line, index){ line.coins = coinFacesForLine(line, index, true); });
     return { method:method, lines:lines, name:name,
       transformedLines:transformedLines, transformedName:transformedName, changeIdx:changeIdx };
   }
@@ -225,10 +248,13 @@
      live cast and the saved reading, so nothing shrinks or freezes when the
      casting settles). ── */
   var BW_BLOB = "M -2.8 -22.7 C 3.8 -23.2, 16.0 -19.3, 19.5 -13.6 C 23.0 -7.9, 21.9 5.4, 18.1 11.4 C 14.5 17.5, 3.2 23.2, -2.8 22.6 C -8.8 22.0, -14.8 13.5, -17.8 7.9 C -20.8 2.3, -23.0 -5.7, -20.5 -10.8 C -17.9 -15.9, -9.4 -22.2, -2.8 -22.7 Z";
-  function coinsMarkup() {
-    return '<span class="bw-af-loader" aria-hidden="true"></span>' +
-      '<span class="bw-af-loader b" aria-hidden="true"></span>' +
-      '<span class="bw-af-loader c" aria-hidden="true"></span>';
+  function coinsMarkup(faces) {
+    function side(index){
+      return faces && faces.length === 3 ? (faces[index] ? " side-yang" : " side-yin") : "";
+    }
+    return '<span class="bw-af-loader' + side(0) + '" aria-hidden="true"></span>' +
+      '<span class="bw-af-loader b' + side(1) + '" aria-hidden="true"></span>' +
+      '<span class="bw-af-loader c' + side(2) + '" aria-hidden="true"></span>';
   }
   function makeCoins() {
     var tmp = el("span");
@@ -388,40 +414,69 @@
     }
 
     return new Promise(function(resolve){
-      var castDuration = 5200;
-      var statusSteps = sortis ? [
-        "01 / 05 \u00b7 Casting lines\u2026",
-        "02 / 05 \u00b7 Setting trigrams\u2026",
-        "03 / 05 \u00b7 Finding moving lines\u2026",
-        "04 / 05 \u00b7 Mapping the change\u2026",
-        "05 / 05 \u00b7 Opening the reading\u2026"
-      ] : [
-        "01 / 05 \u00b7 Casting lines\u2026",
-        "02 / 05 \u00b7 Setting trigrams\u2026",
-        "03 / 05 \u00b7 Reading the structure\u2026",
-        "04 / 05 \u00b7 Weighing the relation\u2026",
-        "05 / 05 \u00b7 Opening the reading\u2026"
-      ];
-      var statusAt = [0, 950, 1950, 3000, 4200];
+      var castDuration = 12200;
+      var roundGap = 1500;
+      var coinSettleAt = 820;
       var statusTimers = [];
-      function showStatus(index){
+      var coinsEl = container.querySelector(".bw-coins");
+      var coinEls = coinsEl ? Array.prototype.slice.call(coinsEl.querySelectorAll(".bw-af-loader")) : [];
+      function showStatus(text){
         if (!status) return;
-        status.textContent = statusSteps[index];
+        status.textContent = text;
         status.classList.remove("is-stepping");
         void status.offsetWidth;
         status.classList.add("is-stepping");
+      }
+      function clearCoinFaces(){
+        coinEls.forEach(function(coin){ coin.classList.remove("side-yang", "side-yin"); });
+      }
+      function startLineRound(lineIndex){
+        clearCoinFaces();
+        if (coinsEl) {
+          coinsEl.setAttribute("aria-label", "Line " + (lineIndex + 1) + " of 6: coins in motion");
+          coinsEl.classList.remove("is-tossing");
+          void coinsEl.offsetWidth;
+          coinsEl.classList.add("is-tossing");
+        }
+        showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 coins in motion\u2026");
+      }
+      function settleLineRound(lineIndex){
+        var line = spec.lines[lineIndex];
+        var faces = coinFacesForLine(line, lineIndex, false);
+        if (coinsEl) coinsEl.classList.remove("is-tossing");
+        coinEls.forEach(function(coin, index){
+          coin.classList.add(faces[index] ? "side-yang" : "side-yin");
+        });
+        var faceText = faces.map(function(face){ return face ? "Yang" : "Yin"; }).join(" \u00b7 ");
+        var lineName = line.changing ? (line.yang ? "old yang" : "old yin") : (line.yang ? "young yang" : "young yin");
+        if (coinsEl) coinsEl.setAttribute("aria-label", "Line " + (lineIndex + 1) + " of 6: " + faceText + ", " + lineName);
+        showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 " + faceText + " \u2192 " + lineName);
       }
       if (figEl) {
         figEl.classList.add("bw-cast-run");
         figEl.setAttribute("aria-busy", "true");
       }
-      statusAt.forEach(function(at, index){
-        if (at === 0) showStatus(index);
-        else statusTimers.push(setTimeout(function(){ showStatus(index); }, at));
+      clearCoinFaces();
+      spec.lines.forEach(function(line, lineIndex){
+        var at = lineIndex * roundGap;
+        if (at === 0) startLineRound(lineIndex);
+        else statusTimers.push(setTimeout(function(){ startLineRound(lineIndex); }, at));
+        statusTimers.push(setTimeout(function(){ settleLineRound(lineIndex); }, at + coinSettleAt));
       });
+      statusTimers.push(setTimeout(function(){ showStatus("Setting the trigrams\u2026"); }, 9300));
+      statusTimers.push(setTimeout(function(){ showStatus(sortis ? "Mapping the change\u2026" : "Reading the structure\u2026"); }, 10150));
+      statusTimers.push(setTimeout(function(){ showStatus("Opening the reading\u2026"); }, 11250));
       if (svg) {
+        svg.querySelectorAll(".bw-af-ln:not([data-bian])").forEach(function(line){
+          var li = Number(line.getAttribute("data-li")) || 0;
+          line.style.setProperty("--line-d", (1.05 + li * 1.5).toFixed(2) + "s");
+        });
+        svg.querySelectorAll(".bw-af-ln[data-bian]").forEach(function(line){
+          var li = Number(line.getAttribute("data-li")) || 0;
+          line.style.setProperty("--line-d", (9.35 + li * 0.12).toFixed(2) + "s");
+        });
         svg.querySelectorAll(".bw-af-branch").forEach(function(branch, index){
-          branch.style.setProperty("--cast-d", (1.05 + Math.min(index * 0.055, 1.75)).toFixed(3) + "s");
+          branch.style.setProperty("--cast-d", (9.22 + Math.min(index * 0.04, 1.05)).toFixed(3) + "s");
         });
       }
       requestAnimationFrame(function () {
@@ -499,6 +554,10 @@
         "transform-origin:50% 58%}",
       ".bw-af-loader.b{width:23px;height:20px;background:var(--terracotta)}",
       ".bw-af-loader.c{width:20px;height:23px}",
+      /* Filled clay = yang face; hollow paper = yin face. These are the same
+         three circles, now carrying the result of each of the six tosses. */
+      ".bw-af-loader.side-yang{background:var(--terracotta);border-color:var(--terracotta)}",
+      ".bw-af-loader.side-yin{background:var(--paper);border-color:currentColor}",
 
       /* Standalone loader */
       ".bw-loader{display:inline-flex;align-items:center;color:var(--ink)}",
@@ -613,7 +672,7 @@
       ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:2px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;min-width:0;max-width:min(48vw,260px);overflow:hidden;text-overflow:ellipsis;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s;white-space:nowrap}",
+      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;min-width:0;max-width:min(58vw,380px);overflow:hidden;text-overflow:ellipsis;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s;white-space:nowrap}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
       ".bw-af-bar .bw-cast-status.is-stepping{animation:bwStatusStep .46s cubic-bezier(.16,1,.3,1) both}",
       "@keyframes bwStatusStep{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}",
@@ -631,12 +690,13 @@
       ".bw-af-mark{fill:none;stroke-linecap:round}",
       ".bw-af-flowbase{fill:none;stroke-width:1.3;opacity:.26}",
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
-      /* One continuous cast: coins gather and release; the final board is
-         already in place and reveals by structure instead of crossfading. */
-      ".bw-cast-run .bw-af-loader{will-change:transform,border-radius}",
-      ".bw-cast-run .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft 1.38s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-af-loader.b{animation:bwCoinMiddle 1.38s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-af-loader.c{animation:bwCoinRight 1.38s cubic-bezier(.16,1,.3,1) both}",
+      /* Six distinct throws: every round agitates the same three circles, then
+         their filled/hollow faces settle before the matching line lands. */
+      ".bw-cast-run .bw-af-loader{will-change:transform,border-radius,background-color;transition:background-color .24s ease,border-color .24s ease}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader{background:var(--paper)!important;border-color:currentColor}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft .82s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.b{animation:bwCoinMiddle .82s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.c{animation:bwCoinRight .82s cubic-bezier(.16,1,.3,1) both}",
       ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.65s cubic-bezier(.16,1,.3,1) both}",
       "@keyframes bwCoinLeft{",
         "0%{transform:none}",
@@ -662,39 +722,27 @@
       "@keyframes bwMethodSet{0%,18%{opacity:.58;transform:translateX(-3px)}58%,100%{opacity:1;transform:none}}",
       ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend{opacity:0;transform:translateY(4px)}",
       ".bw-cast-run .bw-af-moment{animation:bwCastMeta .5s .28s cubic-bezier(.16,1,.3,1) forwards}",
-      ".bw-cast-run .bw-af-legend{animation:bwCastMeta .55s 4.02s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-cast-run .bw-af-legend{animation:bwCastMeta .62s 11.05s cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastMeta{to{opacity:1;transform:none}}",
       ".bw-af[data-cast]{opacity:1;transform:none;transform-origin:center}",
       ".bw-af[data-cast] .bw-af-ln{opacity:0;transform:translateY(8px) scaleX(.72);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln{animation:bwCastLine .72s cubic-bezier(.16,1,.3,1) forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='0']{animation-delay:.62s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='1']{animation-delay:.92s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='2']{animation-delay:1.22s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='3']{animation-delay:1.52s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='4']{animation-delay:1.82s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln:not([data-bian])[data-li='5']{animation-delay:2.12s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='0']{animation-delay:1.35s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='1']{animation-delay:1.60s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='2']{animation-delay:1.85s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='3']{animation-delay:2.10s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='4']{animation-delay:2.35s}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln[data-bian][data-li='5']{animation-delay:2.60s}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-ln{animation:bwCastLine .78s var(--line-d,.9s) cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastLine{",
         "0%{opacity:0;transform:translateY(8px) scaleX(.72)}",
         "58%{opacity:1;transform:translateY(-1px) scaleX(1.025)}",
         "100%{opacity:1;transform:none}",
       "}",
       ".bw-af[data-cast] .bw-af-branch{opacity:0;transform:translate(var(--fx,6px),2px)}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-branch{animation:bwCastBranch .58s var(--cast-d,.82s) cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-branch{animation:bwCastBranch .7s var(--cast-d,9.2s) cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastBranch{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){opacity:0;transform:translateY(4px);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){animation:bwCastLabel .6s 3.12s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast].bw-cast-in :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){animation:bwCastLabel .68s 9.52s cubic-bezier(.16,1,.3,1) forwards}",
       "@keyframes bwCastLabel{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow){opacity:0}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-arrow{animation:bwCastArrow .7s 3.34s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-tarrow{animation:bwCastTarrow .7s 3.30s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-flowbase{animation:bwCastFlowBase .7s 3.42s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-flow{animation:bwCastFlow .7s 3.50s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-arrow{animation:bwCastArrow .82s 10.30s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-tarrow{animation:bwCastTarrow .82s 10.24s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-flowbase{animation:bwCastFlowBase .82s 10.38s ease forwards}",
+      ".bw-af[data-cast].bw-cast-in .bw-af-flow{animation:bwCastFlow .82s 10.48s ease forwards}",
       "@keyframes bwCastArrow{to{opacity:.5}}",
       "@keyframes bwCastTarrow{to{opacity:.85}}",
       "@keyframes bwCastFlowBase{to{opacity:.26}}",
@@ -1061,7 +1109,7 @@
       '<defs>' + defs + '</defs>' + ben + bian + tarrow + arrows + branch + bbranch +
       benTags + bianTags + benName + bianName + '</svg>';
     var cls = 'bw-af-fig' + (opts.cast ? ' bw-casting' : ' bw-af-live');
-    return '<figure class="' + cls + '">' + barHTML("Stria 64") + svg + annoLegend(hasBian && moving.length > 0) + '</figure>';
+    return '<figure class="' + cls + '">' + barHTML("Stria 64", spec) + svg + annoLegend(hasBian && moving.length > 0) + '</figure>';
   }
 
   function annoLegend(withMotion) {
@@ -1076,9 +1124,12 @@
      header. Three colours only (ink / prussian / terracotta); five-elements are TEXT. ── */
   function rom(p) { return STEM_PY[p.stem.idx] + "-" + BR_PY[p.branch.bi]; }
   /* persistent cast bar — coins + method label + (live) status — kept after the toss */
-  function barHTML(method) {
+  function barHTML(method, spec) {
+    var lastLine = spec && spec.lines && spec.lines[5];
+    var faces = lastLine ? coinFacesForLine(lastLine, 5, false) : null;
+    var faceLabel = faces ? faces.map(function(face){ return face ? "Yang" : "Yin"; }).join(", ") : "three casting coins";
     return '<div class="bw-af-bar">' +
-      '<span class="bw-coins">' + coinsMarkup() + '</span>' +
+      '<span class="bw-coins" role="img" aria-label="' + faceLabel + '">' + coinsMarkup(faces) + '</span>' +
       '<span class="bw-cast-method">' + method + '</span>' +
       '<span class="bw-cast-status" role="status" aria-live="polite"></span>' +
     '</div>';
@@ -1248,7 +1299,7 @@
       '<defs>' + defs + '</defs>' + ben + bian + tarrow + arrows + branch + bbranch +
       benTags + bianTags + benName + bianName + '</svg>';
     var cls = 'bw-af-fig bw-af-full' + (opts.cast ? ' bw-casting' : ' bw-af-live');
-    return '<figure class="' + cls + '">' + barHTML("Sortis 6") + headTableHTML(board) + svg + annoLegend(true) + '</figure>';
+    return '<figure class="' + cls + '">' + barHTML("Sortis 6", spec) + headTableHTML(board) + svg + annoLegend(true) + '</figure>';
   }
 
   /* ── public: insightHTML — the hexagram read line by line (standalone card). ── */
