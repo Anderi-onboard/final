@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260801e">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260801e">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260801e">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260801e">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260801e">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260801e">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260801e">
-<script src="./ds-base.js?v=20260801e"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260801g">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260801g">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260801g">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260801g">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260801g">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260801g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260801g">
+<script src="./ds-base.js?v=20260801g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -75,7 +75,9 @@
   .castings::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}
   .castings::-webkit-scrollbar-button{display:none;height:0;width:0}
   .castings .lbl{flex:none;padding:0 8px 7px;font-family:"Spinnaker";font-weight:900}
-  .castings .casting{flex:none;display:block;width:100%;text-align:left;font-size:13px;color:var(--dim);padding:6px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s,color .15s}
+  .castings .casting{flex:none;display:block;width:100%;min-width:0;text-align:left;font-size:13px;color:var(--dim);padding:7px 8px;border-radius:7px;overflow:hidden;transition:background .15s,color .15s}
+  .casting-title{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .casting-meta{display:block;margin-top:2px;font-size:9.5px;line-height:1.2;letter-spacing:.06em;color:var(--ghost)}
   .castings .casting:hover{background:var(--paper-dim);color:var(--ink)}
   .castings .casting.active{background:var(--paper-dim);color:var(--ink);font-weight:500}
   .casting-row{display:flex;align-items:center;border-radius:7px;transition:background .15s}
@@ -553,7 +555,7 @@
     .send{width:36px;height:36px}
     .disclaimer{font-size:10.5px}
     .rd-depth{margin-top:26px;padding:16px;border-radius:15px}
-    .rd-prompts{grid-template-columns:1fr}
+    .rd-prompts{grid-template-columns:repeat(2,minmax(0,1fr))}
     .rd-prompt{min-height:74px;padding:11px 36px 11px 12px}
     .modal-hero{padding:18px 18px}
     .plans{padding:16px 18px 6px}
@@ -631,6 +633,7 @@
     body:not(.is-empty) .site-foot{display:none}
     .disclaimer{margin-top:9px}
   }
+  @media (max-width:390px){.rd-prompts{grid-template-columns:1fr}}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink)}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
@@ -778,16 +781,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260801e"></script>
-<script src="./casting-figure.js?v=20260801e"></script>
-<script src="./liuyao-engine.js?v=20260801e"></script>
-<script src="./liuyao-ai.js?v=20260801e"></script>
-<script src="./liuyao-chart.js?v=20260801e"></script>
-<script src="./prompt-engine.js?v=20260801e"></script>
-<script src="./prompt-router.js?v=20260801e"></script>
-<script src="./account.js?v=20260801e"></script>
-<script>window.BW_BUILD="20260801e";</script>
-<script src="./chat-app.js?v=20260801e"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260801g"></script>
+<script src="./casting-figure.js?v=20260801g"></script>
+<script src="./liuyao-engine.js?v=20260801g"></script>
+<script src="./liuyao-ai.js?v=20260801g"></script>
+<script src="./liuyao-chart.js?v=20260801g"></script>
+<script src="./prompt-engine.js?v=20260801g"></script>
+<script src="./prompt-router.js?v=20260801g"></script>
+<script src="./account.js?v=20260801g"></script>
+<script>window.BW_BUILD="20260801g";</script>
+<script src="./chat-app.js?v=20260801g"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

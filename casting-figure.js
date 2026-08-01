@@ -430,6 +430,10 @@
       function clearCoinFaces(){
         coinEls.forEach(function(coin){ coin.classList.remove("side-yang", "side-yin"); });
       }
+      function roundPhase(lineIndex){
+        if (sortis) return lineIndex < 3 ? "mapping the present" : "locating the change";
+        return lineIndex < 3 ? "forming the inner trigram" : "forming the outer trigram";
+      }
       function startLineRound(lineIndex){
         clearCoinFaces();
         if (coinsEl) {
@@ -438,7 +442,7 @@
           void coinsEl.offsetWidth;
           coinsEl.classList.add("is-tossing");
         }
-        showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 coins in motion\u2026");
+        showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 " + roundPhase(lineIndex) + "\u2026");
       }
       function settleLineRound(lineIndex){
         var line = spec.lines[lineIndex];

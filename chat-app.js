@@ -99,9 +99,24 @@
       wrap.className = "casting-row" + (c.id === S.activeId ? " active" : "");
       var b = document.createElement("button");
       b.className = "casting" + (c.id === S.activeId ? " active" : "");
-      b.textContent = c.title;
+      var lastReading = null;
+      for (var ri = c.msgs.length - 1; ri >= 0; ri--) {
+        if (c.msgs[ri].role === "oracle") { lastReading = c.msgs[ri]; break; }
+      }
+      var metaMethod = lastReading && lastReading.method ? lastReading.method : "Reading";
+      var metaDate = lastReading && lastReading.ts
+        ? new Date(lastReading.ts).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "";
+      b.innerHTML = '<span class="casting-title">' + esc(c.title) + '</span>' +
+        '<span class="casting-meta">' + esc(metaMethod + (metaDate ? " · " + metaDate : "")) + '</span>';
       b.title = c.title;
-      b.addEventListener("click", function () { S.activeId = c.id; save(); renderAll(); restoreDraft(); });
+      b.addEventListener("click", function () {
+        S.activeId = c.id;
+        /* Returning to a reading should restore its method too. Otherwise a
+           Sortis thread could reopen with a Stria composer and the next send
+           would silently become a fresh cast instead of a continuation. */
+        if (lastReading && METHODS[lastReading.methodId]) S.method = lastReading.methodId;
+        save(); renderAll(); restoreDraft();
+      });
       var del = document.createElement("button");
       del.className = "casting-del";
       del.innerHTML = "&times;";
@@ -333,18 +348,33 @@
      reconsider, and only spend units when they deliberately submit. */
   function readingDepth(msg) {
     var continued = !!(msg && msg.followup);
+    var sortis = !!(msg && (msg.methodId === "sortis" || msg.method === "Sortis 6"));
+    var methodLabel = sortis ? "Sortis 6" : "Stria 64";
     var prompts = continued ? [
-      ["Test it", "What in this reading should I question?"],
-      ["Make it real", "How would this look in practice?"],
-      ["Watch for", "What sign would show the situation has changed?"]
+      ["Challenge", "What assumption in this reading is weakest?"],
+      ["Concrete", "How would this show up in practice?"],
+      ["Alternative", "What is the strongest alternative reading?"],
+      ["Boundary", "What is outside my control here?"],
+      ["Signal", "What sign would show the situation has changed?"],
+      ["Action", "What is the smallest responsible next move?"]
+    ] : (sortis ? [
+      ["Moving line", "Which moving line carries the decision?"],
+      ["Causal chain", "What is actually driving this change?"],
+      ["Transition", "Where is the transition most fragile?"],
+      ["Timing", "What should happen before I act?"],
+      ["Leverage", "Where can a small move change the outcome?"],
+      ["Decision test", "What would make this choice unwise?"]
     ] : [
+      ["Core pattern", "What is the central pattern in this figure?"],
+      ["My position", "Where do I have real leverage here?"],
+      ["Response", "What is the situation asking back from me?"],
       ["Blind spot", "What am I not seeing yet in this situation?"],
-      ["First change", "What is most likely to change first?"],
+      ["Near term", "What is most likely to change first?"],
       ["Next move", "What is mine to do now?"]
-    ];
-    return '<section class="rd-depth" aria-label="Continue the inquiry">' +
-      '<div class="rd-depth-copy"><span class="rd-depth-kicker">Stay with the figure</span>' +
-      '<h4>' + (continued ? 'Go one layer further.' : 'Turn the reading into a next step.') + '</h4>' +
+    ]);
+    return '<section class="rd-depth" aria-label="Continue the ' + methodLabel + ' inquiry">' +
+      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Stay with the figure</span>' +
+      '<h4>' + (continued ? 'Test the reading before you act.' : (sortis ? 'Trace the change from six angles.' : 'Read the structure from six angles.')) + '</h4>' +
       '<p>Choose one lens. It will be placed in the composer for you to shape before anything is sent.</p></div>' +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
