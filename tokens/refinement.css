@@ -184,10 +184,7 @@ body[data-page="app"] .topbar .ghost {
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 400px; }
-body[data-page="app"] .claude-mark,
-body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
-body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,
-body[data-page="app"] .bwl5 { animation: none; }
+body[data-page="app"] .claude-mark { animation-duration: 4.8s; }
 body[data-page="app"] .brand-btn,
 body[data-page="app"] .side-toggle,
 body[data-page="app"] .new-cast,
@@ -224,6 +221,7 @@ body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
   border: 1.25px solid var(--ui-line); border-radius: 22px 27px 20px 25px / 25px 20px 27px 21px;
   background: var(--ui-glass-strong); box-shadow: var(--ui-shadow-raised);
+  transition: transform 320ms var(--ease-out), border-color 220ms var(--ease-out), box-shadow 320ms var(--ease-out);
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
 body[data-page="app"] .composer:focus-within {
@@ -233,11 +231,13 @@ body[data-page="app"] .composer:focus-within {
 body[data-page="app"] .stria {
   min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
   border: 1px solid var(--ui-line); color: var(--ink);
+  transition: transform 220ms var(--ease-out), background-color 220ms var(--ease-out), border-color 220ms var(--ease-out);
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
 body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
-body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); }
-body[data-page="app"] .send:hover { background: var(--terracotta); transform: none; }
+body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:transform 220ms var(--ease-out),background-color 220ms var(--ease-out),box-shadow 220ms var(--ease-out); }
+body[data-page="app"] .send svg { transition: transform 260ms var(--ease-spring); }
+body[data-page="app"] .send:hover { background: var(--terracotta); }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
   padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass-soft);
@@ -289,12 +289,52 @@ body[data-page="app"] .rd-action {
 }
 body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); border-color: var(--ui-line-strong); }
 
+/* Quiet liveliness -------------------------------------------------------
+   Movement is limited to compositor-friendly opacity and transforms. This
+   keeps the glass responsive without repainting the large backdrop layers. */
+:is(a,button,input,textarea):focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--terracotta) 72%, white);
+  outline-offset: 3px;
+}
+@media (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  body[data-page="app"] .topbar .ghost,
+  body[data-page="app"] .new-cast,
+  body[data-page="app"] .castings .casting,
+  body[data-page="app"] .side-foot,
+  body[data-page="app"] .rd-action {
+    transition: transform 240ms var(--ease-out), background-color 220ms var(--ease-out), color 220ms var(--ease-out), border-color 220ms var(--ease-out), box-shadow 260ms var(--ease-out);
+  }
+  body[data-page="app"] .topbar .ghost:hover { transform: translateY(-1px); }
+  body[data-page="app"] .new-cast:hover,
+  body[data-page="app"] .castings .casting:hover { transform: translateX(2px); }
+  body[data-page="app"] .new-cast .ic { transition: transform 260ms var(--ease-spring), background-color 220ms var(--ease-out); }
+  body[data-page="app"] .new-cast:hover .ic { transform: scale(1.08); }
+  body[data-page="app"] .composer:hover,
+  body[data-page="app"] .composer:focus-within { transform: translateY(-2px); }
+  body[data-page="app"] .stria:hover { transform: translateY(-1px); }
+  body[data-page="app"] .send:hover { transform: scale(1.045); box-shadow: 0 8px 20px color-mix(in srgb,var(--terracotta) 24%,transparent); }
+  body[data-page="app"] .send:hover svg { transform: translateX(2px); }
+  body[data-page="app"] .rd-action:hover { transform: translateY(-1px); }
+  html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost) {
+    transition: transform 360ms var(--ease-out), box-shadow 360ms var(--ease-out), border-color 240ms var(--ease-out);
+  }
+  html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost):hover {
+    transform: translateY(-2px);
+    border-color: var(--ui-line-strong) !important;
+    box-shadow: var(--ui-shadow-raised) !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html[data-skin="paper"] body .mtn-sky,
   html[data-skin="paper"] body .mtn-bg .fill,
   html[data-skin="paper"] body .mtn-bg [clip-path] > use {
     transition: none !important;
   }
+  body[data-page="app"] .claude-mark,
+  body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
+  body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,
+  body[data-page="app"] .bwl5 { animation: none !important; }
 }
 
 /* Content pages ----------------------------------------------------------- */
