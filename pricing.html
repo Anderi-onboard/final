@@ -10,14 +10,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260801g">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260801g">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260801g">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260801g">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260801g">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260801g">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260801g">
-<script src="./ds-base.js?v=20260801g"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260801h">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260801h">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260801h">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260801h">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260801h">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260801h">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260801h">
+<script src="./ds-base.js?v=20260801h"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -180,7 +180,7 @@
   <section class="hero">
     <div class="eyebrow"><b>&#9670;</b><span>Plans &amp; balance</span></div>
     <h1>Honest readings, plainly priced</h1>
-    <p>You keep a balance of units and spend them question by question — 300 for a Stria 64 read, 1,500 for a Sortis 6 synthesis, and follow-up questions on the same casting for at most half. Choose the rhythm that fits how often life asks.</p>
+    <p>You keep a balance of units and spend them question by question — 300 for a Stria 64 read, 1,500 for a Sortis 6 synthesis, and follow-up questions on the same casting for at most half. Choose a plan based on how often you expect to cast.</p>
     <div class="ledgerstrip">
       <span class="who" id="whoLine">Not signed in</span>
       <span>·</span>
@@ -206,21 +206,21 @@
   <section class="plans" aria-label="Plans">
     <div class="plan" data-plan="free">
       <h2>Free</h2>
-      <div class="desc">A first look &mdash; enough to feel what a reading is.</div>
+      <div class="desc">Create an account, receive 500 units, and try one Stria 64 reading.</div>
       <div class="price"><span class="amt">$0</span><span class="per"></span></div>
-      <div class="grant">Includes <b>300</b> units (one-time)</div>
+      <div class="grant">Includes <b>500</b> units (one-time)</div>
       <ul>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>1 Stria 64 trial reading</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>3-day reading history</li>
         <li class="off"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l8 8M12 4l-8 8"></path></svg>Sortis 6 not available</li>
       </ul>
-      <button class="choose" data-grant="300">Create free account</button>
+      <button class="choose" data-grant="500">Create free account</button>
     </div>
 
     <div class="plan feat" data-plan="pro">
       <span class="ptag">Most selected</span>
       <h2>Pro</h2>
-      <div class="desc">For a steady practice &mdash; daily Stria reads, or a few deep Sortis sessions a month.</div>
+      <div class="desc">For regular use: daily Stria readings or several Sortis sessions each month.</div>
       <div class="price"><span class="amt" data-mo="19" data-yr="15.83">$19</span><span class="per">/ month</span></div>
       <div class="grant">Includes <b>22,500</b> units monthly</div>
       <ul>
@@ -233,7 +233,7 @@
 
     <div class="plan" data-plan="premium">
       <h2>Premium</h2>
-      <div class="desc">For seasons when much is moving &mdash; deep readings, as often as you need them.</div>
+      <div class="desc">For frequent deep readings and more room for follow-up questions.</div>
       <div class="price"><span class="amt" data-mo="29" data-yr="24.17">$29</span><span class="per">/ month</span></div>
       <div class="grant">Includes <b>45,000</b> units monthly</div>
       <ul>
@@ -294,10 +294,10 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260801g"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260801g"></script>
-<script src="./ds-motion.js?v=20260801g"></script>
-<script src="./account.js?v=20260801g"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260801h"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260801h"></script>
+<script src="./ds-motion.js?v=20260801h"></script>
+<script src="./account.js?v=20260801h"></script>
 <script>
 (function () {
   "use strict";

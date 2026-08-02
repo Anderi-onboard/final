@@ -62,13 +62,14 @@
     var m = method();
     $("methodChip").textContent = m.name;
     $("methodNote").textContent = "Perspectives, not certainty · " + m.name + " — " +
-      m.cost.toLocaleString("en-US") + " units a casting · follow-up questions cost at most half";
+      m.cost.toLocaleString("en-US") + " units per casting · follow-ups cost no more than " +
+      m.followCap.toLocaleString("en-US") + " units";
     renderMethodMenu();
   }
   function renderMethodMenu() {
     var menu = $("methodMenu");
     if (!menu) return;
-    menu.innerHTML = '<div class="mm-head lbl">Choose how deep to go</div>';
+    menu.innerHTML = '<div class="mm-head lbl">Choose the depth of this reading</div>';
     ORDER.forEach(function (id) {
       var m = METHODS[id];
       var ok = A.entitled(id);
@@ -373,16 +374,17 @@
       ["Next move", "What is mine to do now?"]
     ]);
     return '<section class="rd-depth" aria-label="Continue the ' + methodLabel + ' inquiry">' +
-      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Stay with the figure</span>' +
-      '<h4>' + (continued ? 'Test the reading before you act.' : (sortis ? 'Trace the change from six angles.' : 'Read the structure from six angles.')) + '</h4>' +
-      '<p>Choose one lens. It will be placed in the composer for you to shape before anything is sent.</p></div>' +
+      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Continue with this casting</span>' +
+      '<h4>' + (continued ? 'Test the reading before you act.' : (sortis ? 'Examine the change from six angles.' : 'Examine the figure from six angles.')) + '</h4>' +
+      '<p>Choose a question below. It will fill the composer, where you can edit it before sending.</p></div>' +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
           '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
           '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h9M9 4.5 12.5 8 9 11.5"></path></svg>' +
         '</button>';
       }).join("") + '</div>' +
-      '<p class="rd-depth-note">Nothing is sent until you press the arrow. Follow-ups keep this casting as context.</p>' +
+      '<p class="rd-depth-note">Nothing is sent until you press the arrow. A follow-up uses this casting and costs no more than ' +
+        (sortis ? '750' : '150') + ' units.</p>' +
     '</section>';
   }
 

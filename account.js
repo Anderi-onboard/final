@@ -33,15 +33,15 @@
 
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 300, followCap: 150, tag: "Baseline analysis",
-      depth: "Primary hexagram framework",
-      blurb: "The quick read. A clear structural map of where things stand right now.",
+      id: "stria", name: "Stria 64", cost: 300, followCap: 150, tag: "Present structure",
+      depth: "Primary hexagram",
+      blurb: "A clear reading of the primary figure: where the situation stands now.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Causal synthesis",
-      depth: "Transformed hexagram framework",
-      blurb: "The deep read. Follows the moving lines to where things are heading — for the decisions you\u2019ll live with.",
+      id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Change analysis",
+      depth: "Primary + transformed hexagrams",
+      blurb: "A deeper reading of the moving lines, what is changing, and where the situation may be heading.",
       gated: true
     }
   };
