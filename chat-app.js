@@ -32,22 +32,21 @@
     var u = S.units.toLocaleString("en-US");
     $("unitsSide").textContent = u;
     $("unitsTop").textContent = u + " units";
-    var grant = A.planGrant(S.account.plan);
-    var pct = Math.max(4, Math.min(100, Math.round(S.units / grant * 100)));
+    var pct = Math.max(4, Math.min(100, Math.round(S.units / 4500 * 100)));
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
-    var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
-    var cap = $("unitsCap"); if (cap) cap.textContent = A.planName(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo";
+    var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = "Usage";
+    var cap = $("unitsCap"); if (cap) cap.textContent = "Prepaid balance \u00b7 no expiry";
   }
   function renderAccount() {
     var a = S.account;
     var foot = $("acctBtn");
     foot.querySelector(".avatar").textContent = a.signedIn ? (a.avatar || "EV") : "G";
     foot.querySelector("b").textContent = a.name;
-    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Sign in to start a reading";
+    foot.querySelector("i").textContent = a.signedIn ? "Usage billing" : "Sign in to start a reading";
     var menu = $("acctMenu");
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
-    $("miPlans").querySelector("b").textContent = A.planName(a.plan).toUpperCase();
+    $("miPlans").querySelector("b").textContent = "PAYG";
     // the sign-in coach-mark only nudges signed-out guests, and stays gone once
     // dismissed
     var coach = $("signinCoach");
@@ -61,8 +60,8 @@
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
-    $("methodNote").textContent = m.name + " costs " +
-      m.cost.toLocaleString("en-US") + " units · follow-ups reuse this hexagram and cost up to " +
+    $("methodNote").textContent = m.name + " reserves up to " +
+      m.cost.toLocaleString("en-US") + " units · the final charge follows actual usage · follow-ups reserve up to " +
       m.followCap.toLocaleString("en-US") + " units";
     renderMethodMenu();
   }
@@ -72,21 +71,18 @@
     menu.innerHTML = '<div class="mm-head lbl">Choose an analysis depth</div>';
     ORDER.forEach(function (id) {
       var m = METHODS[id];
-      var ok = A.entitled(id);
       var active = id === S.method;
       var row = document.createElement("button");
-      row.className = "mm-row" + (active ? " active" : "") + (ok ? "" : " locked");
+      row.className = "mm-row" + (active ? " active" : "");
       row.innerHTML =
         '<span class="mm-dot" aria-hidden="true"></span>' +
         '<span class="mm-main">' +
-          '<span class="mm-name">' + m.name +
-            (ok ? "" : '<em class="mm-lock">Pro</em>') + '</span>' +
+          '<span class="mm-name">' + m.name + '</span>' +
           '<span class="mm-tag">' + m.tag + " · " + m.depth + "</span>" +
           '<span class="mm-blurb">' + m.blurb + "</span>" +
         "</span>" +
-        '<span class="mm-cost" style="font-family:\'BioRhyme\',serif">' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
+        '<span class="mm-cost" style="font-family:\'BioRhyme\',serif">up to ' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
       row.addEventListener("click", function () {
-  if (!ok) { closeMethod(); openPlans(); toast("Sortis 6 requires the Pro plan."); return; }
         S.method = id; save(); renderMethod(); closeMethod();
       });
       menu.appendChild(row);
@@ -471,14 +467,13 @@
       return Promise.resolve(null);
     }
     var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 30000); });
-    var zh = /[一-鿿]/.test(question);
     var deep = m.id === "sortis"
       ? " This is a Sortis 6 deep casting: the figure has moving lines crossing into a second figure, so weigh how the situation is changing, not just where it stands."
       : "";
     var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
       "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
       deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis." +
-      (zh ? " Reply in Chinese." : "") + " Reply with the judgment only.";
+      " Reply in English with the judgment only.";
     var run = window.claude.complete({
       product: m.id === "sortis" ? "sortis" : "stria",
       messages: [{ role: "user", content: prompt }]
@@ -641,7 +636,7 @@
     if (!board || !window.BWLiuYaoAI) {
       return Promise.resolve({ __error: { message: "casting engine unavailable" } });
     }
-    var lang = /[一-鿿]/.test(question) ? "zh" : "en";
+    var lang = "en";
     function pack(reading) { return { text: (reading && reading.reading) || "", board: board, reading: reading }; }
     var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 90000); });
     var run;
@@ -753,8 +748,7 @@
     checkBuildFresh().then(function (fresh) {
       preflight = false;
       if (!fresh) {
-        var zh = /[一-鿿]/.test(text);
-        toast(zh ? "网站刚更新过——刷新页面后再起卦(这一卦未计费)。" : "The site just updated — refresh the page, then cast (nothing was charged).");
+        toast("The site just updated — refresh the page, then cast. Nothing was charged.");
         return;
       }
       sendNow(text, decided);
@@ -767,8 +761,7 @@
     // guest can't cast — send them to the login page. This is the "先登录才发
     // 点数" rule: no free units before an account exists.
     if (!S.account.signedIn) {
-      var zhq = /[一-鿿]/.test(text);
-      toast(zhq ? "请先登录或注册——注册即送 500 点。" : "Sign in to cast — a new account starts with 500 units on us.");
+      toast("Sign in to cast — a new account starts with 500 units on us.");
       setTimeout(function () { location.href = "./login.html"; }, 1300);
       return;
     }
@@ -776,7 +769,7 @@
     // the plans view. The old code swapped Sortis→Stria without telling the
     // user, so they paid for a shallower reading (Sonnet, no board) than they
     // asked for — which is exactly why Opus never showed up for a "Sortis" cast.
-      if (!A.entitled(m.id)) { openPlans(); toast(m.name + " requires Pro or Premium."); return; }
+      if (!A.entitled(m.id)) return;
 
     /* Follow-up detection: this conversation already holds a casting by the
        same method → the new question rides ON that casting (metered billing,
@@ -825,9 +818,7 @@
     var needed = isFollowup ? A.followCost(m.id) : m.cost;
     if (S.units < needed) {
       pulseLedger();
-      var zhS = /[一-鿿]/.test(text);
-      toast(zhS ? "点数不够——这一卦需要 " + needed.toLocaleString("en-US") + " 点。左下角可充值。"
-      : "Insufficient units. This casting requires " + needed.toLocaleString("en-US") + ". Add units to continue.");
+      toast("Insufficient balance. This request reserves up to " + needed.toLocaleString("en-US") + " units; unused units are returned after generation.");
       return;
     }
 
@@ -846,7 +837,7 @@
     A.deductUnits(needed, (isFollowup ? "follow:" : "cast:") + m.id);
     S.units = A.state().units;              // reconcile local balance only
     renderAll();
-    if (S.units < m.cost && S.account.plan === "free") {
+    if (S.units < m.cost) {
       toast("Running low — top up when you\u2019re ready.");
     }
 
@@ -859,7 +850,6 @@
        cast fresh (context still inherited via history) and surface the
        pricing rule at the exact moment it applies */
     if (decided === "new" && lastCast) {
-      var zhN = /[\u4e00-\u9fff]/.test(text);
       var note = document.createElement("div");
       note.className = "recast-note";
       if (carriedRecast) {
@@ -867,20 +857,14 @@
         // the fresh figure is about, so the carry-over is transparent.
         var subj = String(castQ || "").replace(/\s+/g, " ").trim();
         if (subj.length > 40) subj = subj.slice(0, 40) + "\u2026";
-        note.textContent = zhN
-          ? "\u5df2\u5c31\u540c\u4e00\u4ef6\u4e8b\u91cd\u65b0\u8d77\u4e86\u4e00\u5366\uff1a\u300c" + subj + "\u300d\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u60f3\u6362\u4e2a\u95ee\u9898\uff0c\u76f4\u63a5\u628a\u65b0\u95ee\u9898\u8bf4\u6e05\u695a\u5373\u53ef\u3002"
-          : "Recast a fresh hexagram for the same matter \u2014 \u201c" + subj + "\u201d (" + m.cost.toLocaleString("en-US") + " units). For a different matter, just state the new question in full.";
+        note.textContent = "Recast a fresh hexagram for the same matter \u2014 \u201c" + subj + "\u201d (reserving up to " + m.cost.toLocaleString("en-US") + " units). For a different matter, state the new question in full.";
       } else if (hasRecast(text)) {
         // the message carries its own argument AND asks to recast \u2014 a fresh
         // figure on the SAME ongoing matter. Don't call it a "new question";
         // just note the fresh cast. Continuity is handled in the reading itself.
-        note.textContent = zhN
-          ? "\u5df2\u987a\u7740\u8fd9\u4ef6\u4e8b\u91cd\u65b0\u8d77\u4e86\u4e00\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002"
-          : "Cast a fresh hexagram for this, following the same thread (" + m.cost.toLocaleString("en-US") + " units).";
+        note.textContent = "Cast a fresh hexagram for this, following the same thread (reserving up to " + m.cost.toLocaleString("en-US") + " units).";
       } else {
-        note.textContent = zhN
-          ? "\u8fd9\u770b\u8d77\u6765\u662f\u4e2a\u65b0\u95ee\u9898\u2014\u2014\u5df2\u4e3a\u5b83\u91cd\u65b0\u8d77\u5366\uff08" + m.cost.toLocaleString("en-US") + " \u70b9\uff09\u3002\u82e5\u662f\u60f3\u7ee7\u7eed\u8ffd\u95ee\u4e0a\u4e00\u5366\uff0c\u76f4\u63a5\u56f4\u7ed5\u5b83\u63d0\u95ee\u5373\u53ef\uff0c\u8ffd\u95ee\u6309\u7528\u91cf\u8ba1\u8d39\u3001\u5c01\u9876\u534a\u4ef7\u3002"
-          : "This reads as a new question \u2014 a fresh hexagram was cast for it (" + m.cost.toLocaleString("en-US") + " units). To keep asking about the previous casting instead, just ask about it directly; follow-ups run metered, at most half.";
+        note.textContent = "This reads as a new question, so a fresh hexagram was cast with a reserve of up to " + m.cost.toLocaleString("en-US") + " units. To keep asking about the previous casting, ask about it directly; follow-ups are metered and reserve at most half.";
       }
       threadInner.appendChild(note);
     }
@@ -989,10 +973,12 @@
 
     function finish(ans) {
       ans = ans || { text: "", board: null, reading: null };
+      var charged = (typeof window.__bwLastCharged === "number") ? window.__bwLastCharged : m.cost;
+      try { window.__bwLastCharged = null; } catch (e) {}
       var oracleMsg = {
         role: "oracle", text: ans.text, method: m.name, methodId: m.id,
         figure: spec.name, spec: spec, board: ans.board || null, reading: ans.reading || null,
-        ts: Date.now(), cost: m.cost
+        ts: Date.now(), cost: charged
       };
       c.msgs.push(oracleMsg);
       c.method = m.id;
@@ -1012,17 +998,14 @@
       if (window.__bwReadingIncomplete) {
         window.__bwReadingIncomplete = false;
         S.units = A.state().units; renderUnits();
-        var zhi = /[一-鿿]/.test(text);
         if (!autoContinuedOnce) {
           autoContinuedOnce = true;
-          toast(zhi ? "解读中断——已收取实际输出的点数,正在同一卦上自动续写…"
-                    : "The reading was cut short — charged only for what arrived; continuing on this same casting…");
+          toast("The reading was cut short — charged only for what arrived; continuing on this same casting…");
           setTimeout(function () {
-            send(zhi ? "继续" : "Continue", "followup");
+            send("Continue", "followup");
           }, 700);
         } else {
-          toast(zhi ? "解读再次中断——只收取了已生成部分的点数。发送“继续”可接着写。"
-                    : "The reading was cut short again — you were only charged for what arrived. Send “continue” to pick it up.");
+          toast("The reading was cut short again — you were only charged for what arrived. Send “continue” to pick it up.");
         }
       } else {
         autoContinuedOnce = false;
@@ -1046,13 +1029,11 @@
       var status = e && e.status;
       A.refundLocal(m.cost);
       S.units = A.state().units;
-      var zh = /[一-鿿]/.test(text);
       var msg;
-      if (status === 401) msg = zh ? "登录状态已失效——请重新登录后再起卦。本次点数已退回。" : "Your session has expired — sign in again to cast. These units were refunded.";
-      else if (status === 403) msg = zh ? "Sortis 6 需要 Pro 或 Premium 方案。本次点数已退回。" : "Sortis 6 needs the Pro or Premium plan. These units were refunded.";
-      else if (status === 402) { msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
-      else if (err.__timeout) msg = zh ? "解读超时——请再试一次。本次点数已退回。" : "The reading timed out — please try again. These units were refunded.";
-      else msg = zh ? "解读未能完成——请稍后再试。本次点数已退回。" : "The reading didn\u2019t make it through — your units are back where they were. Try again in a moment.";
+      if (status === 401) msg = "Your session has expired — sign in again to cast. These units were refunded.";
+      else if (status === 402) { msg = "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
+      else if (err.__timeout) msg = "The reading timed out — please try again. These units were refunded.";
+      else msg = "The reading didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
@@ -1127,12 +1108,11 @@
       var status = e && e.status;
       A.refundLocal(reserved);
       S.units = A.state().units;
-      var zh = /[一-鿿]/.test(text);
       var msg;
-      if (status === 401) msg = zh ? "登录状态已失效——请重新登录。本次点数已退回。" : "Your session has expired — sign in again. These units were refunded.";
-      else if (status === 402) { msg = zh ? "服务端点数不足——请充值后再试。本次点数已退回。" : "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
-      else if (err.__timeout) msg = zh ? "回答超时——请再试一次。本次点数已退回。" : "The answer timed out — try again. These units were refunded.";
-      else msg = zh ? "回答未能完成——请稍后再试。本次点数已退回。" : "The answer didn\u2019t make it through — your units are back where they were. Try again in a moment.";
+      if (status === 401) msg = "Your session has expired — sign in again. These units were refunded.";
+      else if (status === 402) { msg = "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
+      else if (err.__timeout) msg = "The answer timed out — try again. These units were refunded.";
+      else msg = "The answer didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
@@ -1161,9 +1141,7 @@
       renderUnits(); renderList();
       if (window.__bwReadingIncomplete) {
         window.__bwReadingIncomplete = false;
-        var zhi = /[一-鿿]/.test(text);
-        toast(zhi ? "回答中断——只收取了已生成部分的点数。发送“继续”可接着写。"
-                  : "The answer was cut short — you were only charged for what arrived. Send “continue” to pick it up.");
+        toast("The answer was cut short — you were only charged for what arrived. Send “continue” to pick it up.");
       }
       revealReading(live, msg, c.id, c.msgs.length - 1, streamedAny).then(release, release);
     }
@@ -1378,7 +1356,7 @@
     var lbl = btn.querySelector(".rd-copy-lbl");
     function ok() {
       btn.classList.add("done");
-      if (lbl) { var was = lbl.textContent; lbl.textContent = /[一-鿿]/.test(document.documentElement.lang) ? "已复制" : "Copied"; setTimeout(function () { lbl.textContent = was; btn.classList.remove("done"); }, 1600); }
+      if (lbl) { var was = lbl.textContent; lbl.textContent = "Copied"; setTimeout(function () { lbl.textContent = was; btn.classList.remove("done"); }, 1600); }
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(ok, function () { fallbackCopy(text, ok); });

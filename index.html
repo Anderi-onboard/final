@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802f">
-<script src="./ds-base.js?v=20260802f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802g">
+<script src="./ds-base.js?v=20260802g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -286,7 +286,7 @@
      structured reading-body replaces it (see chat-app.js onStreamDelta) */
   .reading-stream-preview{font-family:BioRhyme, var(--serif), serif;font-size:18px;line-height:1.7;color:var(--ink);margin:6px 0 0;max-width:64ch;white-space:pre-wrap}
   .recast-note{font-family:var(--sans);font-size:11.5px;letter-spacing:.02em;color:var(--dim);border-left:2px solid var(--line);padding:4px 0 4px 12px;margin:4px 0 -14px;max-width:56ch}
-  .reading-error{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.6;color:var(--dim);border-left:2px solid var(--terracotta);padding:3px 0 3px 14px;margin:12px 0 4px;max-width:58ch}
+  .reading-error{font-family:var(--serif);font-style:normal;font-size:15px;line-height:1.6;color:var(--dim);border-left:2px solid var(--terracotta);padding:3px 0 3px 14px;margin:12px 0 4px;max-width:58ch}
   .reading-stream-preview:empty{display:none}
   /* lede + supporting paragraph */
   .reading-body .rd-lede{font-family:"BioRhyme",var(--serif),serif;font-size:20.5px;line-height:1.62;font-weight:500;color:var(--ink);margin:0 0 16px;max-width:38ch}
@@ -334,7 +334,7 @@
   .reading-body .rd-list li{font-family:var(--read);font-size:15px;line-height:1.75;margin:5px 0;padding-left:2px}
   .reading-body .rd-list li::marker{color:var(--terracotta)}
   .reading-body strong{font-weight:700;color:var(--ink)}
-  .reading-body em{font-style:italic}
+  .reading-body em{font-style:normal;font-weight:700}
 
   @media (prefers-reduced-motion:reduce){.reading-body .bw-rw{opacity:1;filter:none;transform:none;clip-path:none}.reading-body .rd-sec.rd-pending{opacity:1;transform:none}}
 
@@ -705,14 +705,14 @@
   <div class="ledger" data-screen-label="Ledger" style="border-width: 0px">
     <div class="ledger-head" style="font-family: var(--sans)">
       <span class="lbl">Available units</span>
-      <span class="ledger-plan" id="ledgerPlan">Basic</span>
+      <span class="ledger-plan" id="ledgerPlan">Usage</span>
     </div>
     <div class="ledger-bal">
       <span class="count" id="unitsSide" style="font-family: Spinnaker; font-weight: 700">&mdash;</span>
       <span class="ledger-unit" style="font-family: Spinnaker">units</span>
     </div>
     <div class="ledger-meter"><span id="unitsBar"></span></div>
-    <div class="ledger-cap" id="unitsCap" style="font-family: var(--sans)">of monthly balance</div>
+    <div class="ledger-cap" id="unitsCap" style="font-family: var(--sans)">Prepaid balance &middot; no expiry</div>
     <button class="exchange pressable" id="openPlans" style="font-family: var(--sans)">Get units <span class="ex-arr">&rarr;</span></button>
   </div>
 
@@ -728,7 +728,7 @@
   </button>
   <div class="acct-menu" id="acctMenu">
     <div class="who"><b style="font-family: Spinnaker">Guest</b><span style="font-family: Spinnaker">Sign in to sync your balance and readings</span></div>
-    <button class="mi plan" id="miPlans" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5l2 4.2 4.5.6-3.3 3.1.8 4.5L8 11.7l-4 2.2.8-4.5L1.5 6.3l4.5-.6z"></path></svg>Plan &amp; units<b>PRO</b></button>
+    <button class="mi plan" id="miPlans" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5l2 4.2 4.5.6-3.3 3.1.8 4.5L8 11.7l-4 2.2.8-4.5L1.5 6.3l4.5-.6z"></path></svg>Usage &amp; units<b>PAYG</b></button>
     <button class="mi" id="miSettings" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="2.5"></circle><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"></path></svg>Settings</button>
     <button class="mi" id="miSignout" style="font-family: Spinnaker"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2.5H3.5v11H6M10 5l3 3-3 3M13 8H6.5"></path></svg>Sign out</button>
   </div>
@@ -762,7 +762,7 @@
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
+          <h1 id="greetLine" aria-live="off" data-type-phase="type" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
         </div>
       </section>
     </div>
@@ -779,22 +779,22 @@
     <div class="composer-help" aria-hidden="true"><span>Enter to submit &middot; Shift+Enter for a new line</span><span>Follow-ups reuse the current hexagram</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
     <p class="disclaimer" id="methodNote">Stria 64 costs 300 units &middot; follow-ups reuse this hexagram and cost up to 150 units</p>
-    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans</a></p>
+    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Usage</a></p>
   </footer>
 </main>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802f"></script>
-<script src="./casting-figure.js?v=20260802f"></script>
-<script src="./liuyao-engine.js?v=20260802f"></script>
-<script src="./liuyao-ai.js?v=20260802f"></script>
-<script src="./liuyao-chart.js?v=20260802f"></script>
-<script src="./prompt-engine.js?v=20260802f"></script>
-<script src="./prompt-router.js?v=20260802f"></script>
-<script src="./account.js?v=20260802f"></script>
-<script>window.BW_BUILD="20260802f";</script>
-<script src="./chat-app.js?v=20260802f"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802g"></script>
+<script src="./casting-figure.js?v=20260802g"></script>
+<script src="./liuyao-engine.js?v=20260802g"></script>
+<script src="./liuyao-ai.js?v=20260802g"></script>
+<script src="./liuyao-chart.js?v=20260802g"></script>
+<script src="./prompt-engine.js?v=20260802g"></script>
+<script src="./prompt-router.js?v=20260802g"></script>
+<script src="./account.js?v=20260802g"></script>
+<script>window.BW_BUILD="20260802g";</script>
+<script src="./chat-app.js?v=20260802g"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -807,22 +807,56 @@
       'Include the context that can change the answer.',
       'Use one casting for one question.'
     ];
-    /* start somewhere random, then let the ridge carry each one off and bring
-       the next in — the same wipe the content pages use, so the landing and the
-       rest of the site move in one language instead of three. */
+    /* A real typewriter stream: write, hold, erase, move to the next prompt.
+       The headline keeps a fixed measure so the composer never jumps while the
+       string grows. Pauses resume cleanly after a hidden tab or an active chat. */
     var promptIndex=Math.floor(Math.random()*prompts.length);
-    el.textContent=prompts[promptIndex];
     var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.setInterval(function(){
-      if(document.hidden||!document.body.classList.contains('is-empty'))return;
-      promptIndex=(promptIndex+1)%prompts.length;
-      if(reduceMotion){el.textContent=prompts[promptIndex];return;}
-      el.classList.add('is-changing');
-      window.setTimeout(function(){
+    if(reduceMotion){
+      el.textContent=prompts[promptIndex];
+      el.setAttribute('data-type-phase','hold');
+      window.setInterval(function(){
+        if(document.hidden||!document.body.classList.contains('is-empty'))return;
+        promptIndex=(promptIndex+1)%prompts.length;
         el.textContent=prompts[promptIndex];
-        el.classList.remove('is-changing');
-      },380);
-    },7600);
+      },7600);
+    }else{
+      var chars=Array.from(prompts[promptIndex]);
+      var cursor=0;
+      var deleting=false;
+      el.textContent='';
+      function typeNext(){
+        if(document.hidden||!document.body.classList.contains('is-empty')){
+          window.setTimeout(typeNext,420);
+          return;
+        }
+        if(!deleting){
+          cursor+=1;
+          el.textContent=chars.slice(0,cursor).join('');
+          el.setAttribute('data-type-phase','type');
+          if(cursor<chars.length){
+            window.setTimeout(typeNext,34+Math.round(Math.random()*26));
+          }else{
+            deleting=true;
+            el.setAttribute('data-type-phase','hold');
+            window.setTimeout(typeNext,2300);
+          }
+          return;
+        }
+        cursor-=1;
+        el.textContent=chars.slice(0,Math.max(0,cursor)).join('');
+        el.setAttribute('data-type-phase','erase');
+        if(cursor>0){
+          window.setTimeout(typeNext,18+Math.round(Math.random()*12));
+        }else{
+          deleting=false;
+          promptIndex=(promptIndex+1)%prompts.length;
+          chars=Array.from(prompts[promptIndex]);
+          window.setTimeout(typeNext,320);
+        }
+      }
+      window.setTimeout(typeNext,260);
+    }
   }
   var bb=document.getElementById('brandBtn');
   if(bb)bb.addEventListener('click',function(){

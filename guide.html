@@ -1,321 +1,153 @@
-<!-- BourneWise — A short apprenticeship. Long-form, scroll-told. Part of the "Paper site" template (entry: index.html) -->
+<!-- BourneWise — step-by-step product guide -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to use BourneWise</title>
-  <meta name="description" content="How BourneWise generates a hexagram, uses Claude Opus 5 to interpret it, and charges units.">
-<style>html,body{background:#F2EDE7}</style>
+<meta name="description" content="A five-step guide to questions, reading depth, casting, interpretation, and usage billing.">
+<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802f">
-<script src="./ds-base.js?v=20260802f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802g">
+<script src="./ds-base.js?v=20260802g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  em,i{font-style:normal}
-  html{scroll-behavior:auto}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;position:relative;min-height:100%;overflow-x:hidden}
-  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
-  a{color:inherit;text-decoration:none}
-  ::selection{background:rgba(181,80,44,.18)}
-  button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px;border-radius:8px}
-
-  /* ── the shared world: the same animated mountain range the app rides on,
-     rendered as a LINE-DRAWING (see .line-art on the div) so the moving land
-     stays present behind the words without any coloured wash competing with
-     the reading. Fixed, so the words scroll over the range. ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
-    -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%);
-            mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%)}
-
-  .scroll-rail i{background:var(--terracotta)}
-
-  /* ── top chrome — a hairline bar that turns solid once you leave the hero ── */
-  .top{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:16px;
-    padding:18px 34px;transition:background var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out);
-    border-bottom:1px solid transparent}
-  .top.stuck{background:var(--paper-raised);
-    border-bottom-color:var(--line)}
-  .wordmark{display:inline-flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
-  .wordmark svg{width:30px;height:24px}
-  .top .spacer{margin-left:auto}
-  .enter{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
-    display:inline-flex;align-items:center;gap:8px;padding:9px 4px;transition:color .18s}
-  .enter:hover{color:var(--ink)}
-  .enter svg{width:15px;height:15px}
-
-  /* shared measures */
-  .wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 34px}
-  .col{max-width:660px}
-  .kicker{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta)}
-  .gild{font-family:var(--serif);font-weight:700;color:var(--terracotta);
-    box-shadow:inset 0 -.08em 0 rgba(181,80,44,.32);padding-bottom:.02em}
-
-  /* ── hero — the prologue. One held mark, a headline that unfurls word by
-     word, an invitation to begin reading. ── */
-  .hero{position:relative;z-index:2;min-height:100svh;display:grid;align-content:center;
-    grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);column-gap:clamp(36px,6vw,96px);
-    padding:132px 34px 90px;max-width:1240px;margin:0 auto}
-  .hero .mark{grid-column:1;width:70px;height:57px;color:var(--terracotta)}
-  .hero h1{grid-column:1;margin-top:30px;font-family:var(--serif);font-weight:800;
-    font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-.035em;max-width:15ch;text-wrap:balance}
-  .hero .sub{grid-column:2;grid-row:2;align-self:start;margin-top:18px;
-    max-width:40ch;font-family:var(--serif);font-size:clamp(16px,1.35vw,19px);line-height:1.62;color:var(--ink)}
-  .hero .meta{grid-column:1;margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-  .cue{position:absolute;left:34px;bottom:40px;display:inline-flex;align-items:center;gap:12px;
-    font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
-    transition:opacity .5s var(--ease-out)}
-  /* the invitation has been taken — retire it, so it never rides up into the
-     top bar and collides with the wordmark */
-  body.moved .cue{opacity:0;pointer-events:none}
-  .cue .line{display:block;width:52px;height:1px;background:var(--faint);position:relative;overflow:hidden}
-  .cue .line::after{content:"";position:absolute;inset:0;width:40%;background:var(--terracotta);animation:cueRun 2.4s var(--ease-in-out) infinite}
-  @keyframes cueRun{0%{transform:translateX(-110%)}60%,100%{transform:translateX(320%)}}
-
-  /* ── a numbered section — the big hanging numeral, a kicker, a lead, then
-     the entries. The manual voice: rules and prose, no cards, no icons. ── */
-  .sec{position:relative;z-index:2;padding:118px 0}
-  /* ── the editorial split: a display headline holds the left field, the prose
-     that answers it sits in its own column on the right. One rule for every
-     section, so the page has a spine instead of a different shape per block. ── */
-  .sec-head{position:relative;display:grid;
-    grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
-    column-gap:clamp(36px,6vw,96px);align-items:start;max-width:none}
-  .sec-no{grid-column:1;font-family:var(--serif);font-weight:800;font-size:clamp(58px,11vw,142px);line-height:.8;
-    letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.4px rgba(181,80,44,.42);
-    text-stroke:1.4px rgba(181,80,44,.42)}
-  .sec-head .kicker{grid-column:1;display:block;margin-top:20px}
-  .lead-h{grid-column:1;margin-top:16px;font-family:var(--serif);font-weight:800;
-    font-size:clamp(30px,5.1vw,64px);
-    line-height:1.05;letter-spacing:-.032em;max-width:17ch;text-wrap:balance}
-  /* Sit the prose in the SAME grid row as the headline (row 3 — numeral, kicker,
-     headline), so the two columns start on one line instead of the prose
-     floating up beside the numeral. */
-  .lead-p{grid-column:2;grid-row:3;align-self:start;margin-top:18px;
-    max-width:40ch;font-family:var(--serif);font-size:clamp(16px,1.35vw,19px);
-    line-height:1.62;color:var(--ink)}
-
-  /* the split needs real width; below it, one column beats two crushed ones */
-  @media (max-width:900px){
-    .sec-head,.hero{grid-template-columns:minmax(0,1fr)}
-    .sec-head .lead-p,.hero .sub{grid-column:1;grid-row:auto;margin-top:22px;max-width:54ch}
-  }
-  .entries{margin-top:52px;display:grid;gap:0 52px}
-  .entries.three{grid-template-columns:repeat(3,1fr)}
-  .entries.two{grid-template-columns:1fr 1fr}
-  .entry{border-top:1.5px solid rgba(42,32,22,.62);padding:18px 0 8px}
-  .entry .eh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .entry .eh b{font-family:var(--serif);font-size:18px;font-weight:700}
-  .entry .eh .u{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.14em;color:var(--terracotta);white-space:nowrap}
-  .entry p{margin-top:11px;font-size:14px;line-height:1.72;color:var(--dim)}
-  .entry .when{margin-top:12px;font-size:14px;line-height:1.6;color:var(--ink)}
-  .entry .when::before{content:"\2014\00a0";color:var(--terracotta)}
-
-  .habits{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:0 52px}
-  .habit{border-top:1.5px solid rgba(42,32,22,.62);padding:20px 0 14px;display:flex;gap:20px;align-items:flex-start}
-  .habit .no{flex:none;font-family:var(--serif);font-weight:800;font-size:38px;line-height:.82;color:var(--terracotta);width:46px}
-  .habit b{display:block;font-family:var(--serif);font-size:17px;font-weight:700}
-  .habit p{margin-top:9px;font-size:14px;line-height:1.7;color:var(--dim)}
-
-  .seal{margin:20px 0 4px;font-family:var(--serif);font-weight:400;font-size:19px;letter-spacing:.02em;color:var(--terracotta)}
-
-  /* ── closing — the invitation into the app ── */
-  .close{position:relative;z-index:2;padding:70px 0 120px;text-align:center}
-  .close h2{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.6vw,56px);line-height:1.06;letter-spacing:-.03em;text-wrap:balance;max-width:16ch;margin:0 auto}
-  .close .go{margin-top:34px;display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:15px;
-    color:var(--paper);background:var(--ink);padding:15px 30px;border-radius:13px;transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast)}
-  .close .go:hover{background:#3A2A1C;transform:translateY(-2px)}
-  .close .go svg{width:16px;height:16px}
-  .close .tiny{margin-top:18px;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-
-  @media (max-width:860px){
-    .entries.three,.entries.two,.habits{grid-template-columns:1fr;gap:0}
-    .habit{border-top-width:1.2px}
-    .sec{padding:74px 0}
-  }
-  @media (max-width:600px){
-    .top{padding:14px 20px}
-    .wrap,.hero{padding-left:20px;padding-right:20px}
-    .cue{left:20px}
-    .hero{padding-top:110px}
-  }
-
+  html,body{min-height:100%}
+  body{min-height:100dvh;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  button,a{font:inherit;color:inherit;background:none;border:0;text-decoration:none}button{cursor:pointer}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.88;mask-image:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.52) 65%,transparent 96%);-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.52) 65%,transparent 96%)}
+  .top{position:relative;z-index:4;width:min(1180px,calc(100% - 48px));margin:14px auto 0;display:flex;align-items:center;padding:10px 14px}
+  .wordmark{display:flex;align-items:center;gap:9px}.wordmark svg{width:27px;height:22px}.wordmark span{font-size:18px}
+  .exit{margin-left:auto;padding:10px 14px;border-radius:999px;font-size:12px;color:var(--dim)}.exit:hover{background:var(--ui-glass-warm);color:var(--ink)}
+  .guide-shell{position:relative;z-index:2;width:min(1180px,calc(100% - 48px));min-height:calc(100dvh - 108px);margin:22px auto 0;padding-bottom:34px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:22px}
+  .progress{align-self:start;position:sticky;top:24px;padding:24px 18px;border-radius:20px}
+  .progress-title{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin:0 0 18px 4px}
+  .progress-list{display:flex;flex-direction:column;gap:4px;list-style:none}
+  .progress-step{width:100%;display:grid;grid-template-columns:34px 1fr;align-items:center;gap:11px;padding:7px 6px;border-radius:12px;text-align:left;color:var(--faint)}
+  .progress-step:hover{background:color-mix(in srgb,var(--bw-palette-2) 28%,transparent);color:var(--ink)}
+  .progress-step .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);font-size:10px;font-variant-numeric:tabular-nums;transition:background .25s,color .25s,border-color .25s,transform .25s}
+  .progress-step .label{font-size:12px;line-height:1.2}
+  .progress-step.done,.progress-step.active{color:var(--ink)}
+  .progress-step.done .dot{background:color-mix(in srgb,var(--bw-palette-gem) 24%,transparent);border-color:var(--bw-palette-gem)}
+  .progress-step.active .dot{background:var(--bw-palette-gem);border-color:var(--bw-palette-gem);color:var(--bw-palette-on-gem);transform:scale(1.08)}
+  .guide-stage{min-height:650px;border-radius:28px;padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;overflow:hidden}
+  .lesson{display:none;animation:lessonIn .46s var(--ease-out) both}.lesson.active{display:block}
+  @keyframes lessonIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+  .lesson .kicker{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--bw-palette-gem)}
+  .lesson h1{margin-top:14px;max-width:15ch;font-family:var(--serif);font-size:clamp(38px,5.6vw,72px);font-weight:700;line-height:1.01;letter-spacing:-.05em;text-wrap:balance}
+  .lesson .lead{margin-top:22px;max-width:56ch;font-family:var(--serif);font-size:clamp(17px,1.8vw,21px);line-height:1.58;color:var(--ink)}
+  .lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+  .lesson-card{padding:20px;border-radius:17px}.lesson-card b{display:block;font-family:var(--serif);font-size:17px}.lesson-card p{margin-top:7px;font-size:13px;line-height:1.6;color:var(--dim)}
+  .example{margin-top:34px;padding:20px 22px;border-radius:17px}.example .label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bw-palette-gem)}.example p{margin-top:8px;font-family:var(--serif);font-size:17px;line-height:1.55}
+  .rates{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}.rate{padding:22px;border-radius:17px}.rate .name{font-family:var(--serif);font-size:20px}.rate .number{margin-top:20px;font-family:var(--serif);font-size:32px;line-height:1;color:var(--bw-palette-gem)}.rate small{display:block;margin-top:7px;color:var(--dim);line-height:1.5}
+  .controls{margin-top:auto;padding-top:36px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .controls .count{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .control-actions{display:flex;gap:9px}.back,.next{min-height:44px;padding:0 18px;border-radius:12px;font-size:13px}.back{border:1px solid color-mix(in srgb,var(--ink) 16%,transparent)}.next{background:var(--ink);color:var(--paper)}.back:disabled{opacity:.34;cursor:default}
+  @media(max-width:760px){.top{width:calc(100% - 24px)}.guide-shell{width:calc(100% - 24px);grid-template-columns:1fr;gap:12px;margin-top:12px}.progress{position:relative;top:auto;padding:12px}.progress-title{display:none}.progress-list{flex-direction:row;justify-content:space-between}.progress-step{display:flex;width:auto;padding:4px}.progress-step .label{display:none}.guide-stage{min-height:calc(100dvh - 190px);padding:28px 20px}.lesson-grid,.rates{grid-template-columns:1fr}.lesson h1{font-size:clamp(36px,11vw,54px)}.controls{padding-top:28px}}
+  @media(prefers-reduced-motion:reduce){.lesson{animation:none}}
 </style>
 </head>
-<body data-motion data-page="guide">
-
+<body data-page="guide">
 <div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
-<div class="scroll-rail" aria-hidden="true"><i></i></div>
 
-<header class="top" id="top">
+<header class="top">
   <a class="wordmark" href="./index.html" aria-label="BourneWise home">
     <svg viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
     <span>BourneWise</span>
   </a>
-  <span class="spacer"></span>
-  <a class="enter pressable" href="./index.html">
-      <span>Start a casting</span>
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
-  </a>
+  <a class="exit" href="./index.html">Exit guide</a>
 </header>
 
-<!-- ── PROLOGUE ─────────────────────────────────────────────────────────── -->
-<section class="hero">
-  <svg class="mark" data-reveal="fade" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-  <h1 data-split>How casting, interpretation, and billing work.</h1>
-  <p class="sub" data-reveal>Five sections explain the two analysis modes, what context to provide, what Claude receives, and how units are charged.</p>
-  <p class="meta" data-reveal>About five minutes</p>
-  <span class="cue" aria-hidden="true"><span class="line"></span>Continue</span>
-</section>
+<main class="guide-shell" data-screen-label="BourneWise guide">
+  <nav class="progress" aria-label="Guide progress">
+    <p class="progress-title">Your progress</p>
+    <ol class="progress-list">
+      <li><button class="progress-step active" data-step="0" aria-current="step"><span class="dot">1</span><span class="label">Question</span></button></li>
+      <li><button class="progress-step" data-step="1"><span class="dot">2</span><span class="label">Depth</span></button></li>
+      <li><button class="progress-step" data-step="2"><span class="dot">3</span><span class="label">Casting</span></button></li>
+      <li><button class="progress-step" data-step="3"><span class="dot">4</span><span class="label">Reading</span></button></li>
+      <li><button class="progress-step" data-step="4"><span class="dot">5</span><span class="label">Usage</span></button></li>
+    </ol>
+  </nav>
 
-<!-- ── 01 · CHOOSE YOUR INSTRUMENT ──────────────────────────────────────── -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-no" data-reveal>01</span>
-      <span class="kicker" data-reveal>Choose a reading depth</span>
-      <h2 class="lead-h" data-split>Two readings, <span class="gild">two depths</span> &mdash; choose the analysis your question needs.</h2>
-      <p class="lead-p" data-reveal>Both methods cast six lines. Stria reads the primary figure; Sortis also examines moving lines and the transformed figure.</p>
-    </div>
-    <div class="entries three" data-reveal-group>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>Stria 64</b><span class="u">FROM 300 UNITS</span></div>
-        <p>Interprets the primary hexagram and maps it to the situation described in your question.</p>
-        <p class="when">Use Stria when you need a concise analysis of current conditions.</p>
-      </div>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>Sortis 6</b><span class="u">FROM 1,500 UNITS</span></div>
-        <p>Analyzes the primary hexagram, every moving line, and the transformed hexagram.</p>
-        <p class="when">Use Sortis when the decision depends on how the situation is changing.</p>
-      </div>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>How units are charged</b></div>
-        <p>A new Stria casting costs 300 units; Sortis costs 1,500. Follow-ups reuse the same hexagram, are metered by usage, and are capped at half the original casting price.</p>
-        <p class="when">A new account receives 500 units once.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="guide-stage" aria-live="polite">
+    <article class="lesson active" data-lesson="0">
+      <p class="kicker">Step 1 · Frame the question</p>
+      <h1>Give the casting one clear subject.</h1>
+      <p class="lead">State the decision or situation first. Add only the people, constraints, and timeframe that could change the answer.</p>
+      <div class="lesson-grid"><div class="lesson-card"><b>Keep one subject</b><p>Use a new casting when the person, event, or outcome changes.</p></div><div class="lesson-card"><b>Name the real constraint</b><p>Budget, timing, obligations, and alternatives often matter more than background detail.</p></div></div>
+      <div class="example"><span class="label">Useful format</span><p>“I have two offers. One pays more; the other gives me control over my time. Which trade-off matters more over the next year?”</p></div>
+    </article>
 
-<!-- ── 02 · HOW TO ASK ──────────────────────────────────────────────────── -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-no" data-reveal>02</span>
-      <span class="kicker" data-reveal>How to ask</span>
-      <h2 class="lead-h" data-split>A clear question gives the reading <span class="gild">a clear subject.</span></h2>
-      <p class="lead-p" data-reveal>BourneWise reads the question you submit. Include the decision, who is involved, and what is at stake.</p>
-    </div>
-    <div class="habits" data-reveal-group>
-      <div class="habit" data-reveal><span class="no">1</span><div>
-        <b>Ask about one decision or situation</b>
-        <p>A casting is scoped to one subject. Use a new casting when the person, event, or outcome changes.</p>
-      </div></div>
-      <div class="habit" data-reveal><span class="no">2</span><div>
-        <b>Ask one question, then add the necessary context</b>
-        <p>Use one clear sentence, then add who is involved, what is at stake, and the choice you face. Keep only the context needed to understand the decision.</p>
-      </div></div>
-      <div class="habit" data-reveal><span class="no">3</span><div>
-        <b>Ask about direction, timing, or a choice</b>
-        <p>&ldquo;Should I take the offer?&rdquo; gives the system a decision to analyze. A factual lookup such as weather does not.</p>
-      </div></div>
-      <div class="habit" data-reveal><span class="no">4</span><div>
-        <b>Reuse the result for follow-ups</b>
-        <p>Ask follow-up questions in the same thread when the subject has not changed. Recasting the same question produces a new random input, not a more accurate answer.</p>
-      </div></div>
-    </div>
-  </div>
-</section>
+    <article class="lesson" data-lesson="1">
+      <p class="kicker">Step 2 · Choose the depth</p>
+      <h1>Use Stria for structure. Use Sortis for change.</h1>
+      <p class="lead">Both methods generate six lines. Sortis examines more of the resulting structure, so it reserves a larger usage ceiling.</p>
+      <div class="rates"><div class="rate"><div class="name">Stria 64</div><div class="number">300 max</div><small>Primary hexagram analysis. The final charge is settled from actual model usage.</small></div><div class="rate"><div class="name">Sortis 6</div><div class="number">1,500 max</div><small>Moving lines and transformed figure included. Available to every funded account.</small></div></div>
+    </article>
 
-<!-- ── 03 · WHAT COMES BACK ─────────────────────────────────────────────── -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-no" data-reveal>03</span>
-      <span class="kicker" data-reveal>What comes back</span>
-      <h2 class="lead-h" data-split>A figure describes a situation &mdash; <span class="gild">it does not decide for you.</span></h2>
-      <p class="lead-p" data-reveal>The result describes the present structure, the lines that are moving, and the direction those changes suggest.</p>
-    </div>
-    <div class="entries three" data-reveal-group>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>What it points to</b></div>
-        <p>Use the figure to understand present conditions and direction, not as a guaranteed prediction. It shows the situation; you still choose the action.</p>
-      </div>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>Read it more than once</b></div>
-        <p>Compare each interpretation with the facts you know. Keep the reading that explains the situation most concretely, and question anything that does not fit.</p>
-      </div>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>Why a reading may hold more than one meaning</b></div>
-        <p>A complicated situation may support more than one interpretation. Treat those alternatives as possibilities to test, not as equally certain predictions.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <article class="lesson" data-lesson="2">
+      <p class="kicker">Step 3 · Let the cast complete</p>
+      <h1>The figure is generated before the model writes.</h1>
+      <p class="lead">Three coin states build each line. Six completed lines form the primary hexagram; moving lines may also produce a transformed figure.</p>
+      <div class="lesson-grid"><div class="lesson-card"><b>Deterministic structure</b><p>The engine computes line values, relationships, and transformations from the cast.</p></div><div class="lesson-card"><b>Visible progress</b><p>The interface shows each line as it is completed, so the result does not appear as an unexplained jump.</p></div></div>
+      <div class="example"><span class="label">Important</span><p>The language model cannot redraw the lines or substitute another hexagram.</p></div>
+    </article>
 
-<!-- ── 04 · THE ONE RULE ────────────────────────────────────────────────── -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-no" data-reveal>04</span>
-      <span class="kicker" data-reveal>The operating limit</span>
-      <h2 class="lead-h" data-split>A supportive result is <span class="gild">not a guarantee.</span></h2>
-      <p class="seal" lang="zh" data-reveal>卦后并非万事大吉 &middot; 仍需努力,自强不息</p>
-      <p class="lead-p" data-reveal>A favourable figure describes supportive conditions; it does not guarantee success. An unfavourable one shows likely cost or resistance. Either way, your decisions and follow-through still matter.</p>
-    </div>
-    <div class="entries two" data-reveal-group>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>Casting runs before model inference</b></div>
-        <p>The casting engine generates six lines and computes the hexagram first. The model receives the result as fixed input and cannot change it.</p>
-      </div>
-      <div class="entry" data-reveal>
-        <div class="eh"><b>Claude Opus 5 writes the answer</b></div>
-        <p>Claude Opus 5 receives your question, the computed hexagram, and the relevant line data. It generates the explanation but does not generate the cast.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <article class="lesson" data-lesson="3">
+      <p class="kicker">Step 4 · Read and continue</p>
+      <h1>Treat the answer as a structured perspective.</h1>
+      <p class="lead">Compare the interpretation with the facts you know. Ask follow-up questions in the same thread when the subject remains unchanged.</p>
+      <div class="lesson-grid"><div class="lesson-card"><b>Follow the evidence</b><p>Look for the specific lines and relationships behind the conclusion.</p></div><div class="lesson-card"><b>Keep follow-ups attached</b><p>A follow-up reuses the current hexagram. A new subject requires a new casting.</p></div></div>
+      <div class="example"><span class="label">Operating limit</span><p>A supportive reading is not a guarantee. An adverse reading is not a command to stop. The decision remains yours.</p></div>
+    </article>
 
-<!-- ── CLOSE ────────────────────────────────────────────────────────────── -->
-<section class="close">
-  <div class="wrap">
-    <h2 data-split>Describe the situation and ask one specific question.</h2>
-    <a class="go pressable" data-reveal href="./index.html">
-      Start a reading
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
-    </a>
-    <p class="tiny" data-reveal>New accounts include 500 units</p>
-  </div>
-</section>
+    <article class="lesson" data-lesson="4">
+      <p class="kicker">Step 5 · Understand the charge</p>
+      <h1>You pay for the model usage the answer actually consumed.</h1>
+      <p class="lead">BourneWise reserves a maximum before generation, settles the charge from reported input and output tokens, then returns the unused reserve automatically.</p>
+      <div class="rates"><div class="rate"><div class="name">Stria metering</div><div class="number">15 / 160</div><small>Units per 1,000 input / output tokens. Minimum 15; maximum 300 for a new casting.</small></div><div class="rate"><div class="name">Sortis metering</div><div class="number">75 / 800</div><small>Units per 1,000 input / output tokens. Minimum 75; maximum 1,500 for a new casting.</small></div></div>
+      <div class="example"><span class="label">No subscription</span><p>Buy units when you need them. They stay on your balance and there is no automatic renewal.</p></div>
+    </article>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802f"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260802f"></script>
-<script src="./ds-motion.js?v=20260802f"></script>
+    <div class="controls"><span class="count" id="stepCount">Step 1 of 5</span><div class="control-actions"><button class="back" id="backStep" disabled>Back</button><button class="next" id="nextStep">Continue</button></div></div>
+  </section>
+</main>
+
+<script src="./assets/backgrounds/mountain-range.js?v=20260802g"></script>
 <script>
-  /* solidify the top bar once the hero is behind us */
-  (function () {
-    var top = document.getElementById('top');
-    var hero = document.querySelector('.hero');
-    /* retire the "scroll to begin" cue as soon as the reader has moved */
-    var onScroll = function () {
-      document.body.classList.toggle('moved', window.scrollY > 40);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    if (!('IntersectionObserver' in window)) { top.classList.add('stuck'); return; }
-    new IntersectionObserver(function (e) {
-      top.classList.toggle('stuck', !e[0].isIntersecting);
-    }, { rootMargin: '-72px 0px 0px 0px' }).observe(hero);
-  })();
+(function(){
+  var current=0;
+  var lessons=Array.from(document.querySelectorAll('.lesson'));
+  var steps=Array.from(document.querySelectorAll('.progress-step'));
+  var back=document.getElementById('backStep');
+  var next=document.getElementById('nextStep');
+  var count=document.getElementById('stepCount');
+  function show(index){
+    current=Math.max(0,Math.min(lessons.length-1,index));
+    lessons.forEach(function(node,i){node.classList.toggle('active',i===current);});
+    steps.forEach(function(node,i){
+      node.classList.toggle('active',i===current);
+      node.classList.toggle('done',i<current);
+      if(i===current)node.setAttribute('aria-current','step');else node.removeAttribute('aria-current');
+    });
+    back.disabled=current===0;
+    next.textContent=current===lessons.length-1?'Start a casting':'Continue';
+    count.textContent='Step '+(current+1)+' of '+lessons.length;
+  }
+  steps.forEach(function(node){node.addEventListener('click',function(){show(Number(node.dataset.step));});});
+  back.addEventListener('click',function(){show(current-1);});
+  next.addEventListener('click',function(){if(current===lessons.length-1){location.href='./index.html';return;}show(current+1);});
+  document.addEventListener('keydown',function(event){if(event.key==='ArrowRight')next.click();if(event.key==='ArrowLeft'&&!back.disabled)back.click();});
+  show(0);
+})();
 </script>
-
 </body>
 </html>

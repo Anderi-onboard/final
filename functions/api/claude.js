@@ -21,17 +21,13 @@
 //
 // ── Abuse protection (only active when env.DB is bound — see README) ──────
 // This endpoint used to be reachable with ZERO auth: anyone who found the
-// URL could POST directly and burn the real Anthropic key, and "Sortis 6 is
-// Pro-only" was enforced ONLY by a client-side check in account.js — trivial
-// to bypass with a raw request. Now, when D1 is configured:
-//   - product:"sortis"  → REQUIRES a signed-in session on a pro/premium
-//     plan; the server deducts 1,500 units atomically before calling
-//     Anthropic (refunded if the Anthropic call itself fails).
-//   - product:"stria" with a session → server deducts 300 units the same way.
-//   - product:"stria" with NO session (the anonymous free-trial guest) and
-//     any role:"router"/"qc"/"utility" call → no user ledger to charge, so
-//     instead we rate-limit by IP (rolling hour window) as a backstop
-//     against pure script abuse, without breaking the no-signup free trial.
+// URL could POST directly and burn the real API key. When D1 is configured,
+// both reading methods require a signed-in account with enough prepaid units.
+// The server atomically reserves the published maximum before calling the
+// model, then settles every successful response to measured token usage and
+// returns the unused part of the reserve.
+//   - generation calls without a session are rejected; router/qc/utility calls
+//     have no user ledger and are rate-limited by IP as an abuse backstop.
 // Without D1 bound, none of this can be enforced (there's no account store
 // to check against) — that mode is meant for local dev / static demos, not
 // public production traffic. See README "Accounts, ledger & history".
@@ -115,8 +111,8 @@ export async function onRequestPost(context) {
 
     const product = String(body.product || '').toLowerCase();
     // mode "followup" = a question ON the existing casting (no new hexagram):
-    // reserve at most half a cast and settle to actual usage afterwards. A
-    // "cast" reserves the flat method price exactly as before.
+    // reserve at most half a cast. Every generation settles to actual token
+    // usage after completion; the values below are reservation ceilings.
     const mode = String(body.mode || '').toLowerCase() === 'followup' ? 'followup' : 'cast';
     const flat = product === 'sortis' ? METHOD_COST.sortis : product === 'stria' ? METHOD_COST.stria : 0;
     const cost = mode === 'followup'
@@ -177,10 +173,8 @@ export async function onRequestPost(context) {
       // terminated by a `data: [DONE]` record) — re-encode each one as the
       // Anthropic-shaped `content_block_delta` event prompt-router.js already
       // parses. The pump runs under waitUntil so BILLING SETTLEMENT survives
-      // even a client disconnect: on a clean finish a cast keeps its flat
-      // charge (unchanged economics); a stream that dies mid-reading — or any
-      // follow-up — settles for the tokens actually delivered and refunds the
-      // rest of the reserve. The trailing bw_meta event carries
+      // even a client disconnect. Every response settles to actual token
+      // usage and refunds the unused reserve. The trailing bw_meta event carries
       // { unitsRemaining, model, charged, incomplete? } for the client.
       const { readable, writable } = new TransformStream();
       const run = pumpAndSettle({
@@ -209,11 +203,10 @@ export async function onRequestPost(context) {
     const data = await resp.json();
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
     let charged = refundTo ? cost : 0;
-    // Non-stream follow-up: settle to actual usage (the response is complete
-    // by definition, so a cast keeps its flat price — unchanged).
-    if (refundTo && mode === 'followup') {
+    // Non-stream generation: settle the reservation to actual usage.
+    if (refundTo) {
       const s = await settleMetered(env.DB, refundTo, product, data.usage,
-        { inChars: JSON.stringify(payload.messages).length, outChars: text.length }, cost, 'refund:follow_settle');
+        { inChars: JSON.stringify(payload.messages).length, outChars: text.length }, cost, 'refund:usage_settle');
       charged = s.charged;
       if (s.units != null) unitsRemaining = s.units;
     }
@@ -228,9 +221,8 @@ export async function onRequestPost(context) {
 }
 
 // Read the upstream SSE, re-encode for the client, then SETTLE the reserve:
-//   cast + clean finish        → flat charge stands (same profit as before)
-//   cast + truncated stream    → charge metered actual, refund the rest
-//   followup (always metered)  → charge actual usage, refund unused reserve
+// Every cast and follow-up charges measured usage, capped by its reservation.
+// Any unused reserve is returned, including after a truncated stream.
 // Runs under waitUntil, so settlement happens even if the client goes away.
 async function pumpAndSettle(o) {
   const writer = o.writable.getWriter();
@@ -281,11 +273,11 @@ async function pumpAndSettle(o) {
   let charged = o.refundTo ? o.reserved : 0;
   let units = o.unitsRemaining;
   let incomplete = !complete;
-  if (o.refundTo && (o.mode === 'followup' || !complete)) {
+  if (o.refundTo) {
     try {
       const s = await settleMetered(o.env.DB, o.refundTo, o.product, usage,
         { inChars: o.inChars, outChars }, o.reserved,
-        o.mode === 'followup' ? 'refund:follow_settle' : 'refund:truncated');
+        complete ? 'refund:usage_settle' : 'refund:truncated');
       charged = s.charged;
       if (s.units != null) units = s.units;
     } catch (e) { /* settlement failure must not kill the stream close */ }
@@ -320,16 +312,12 @@ async function guardRequest({ request, env, db, product, cost, mode }) {
   const user = session ? await getUser(db, session.uid) : null;
   const reason = (mode === 'followup' ? 'follow:' : 'cast:') + product;
 
-  // A follow-up is metered against an account ledger — no anonymous follow-ups.
-  if (mode === 'followup' && (product === 'sortis' || product === 'stria') && !user) {
-    return { error: { status: 401, body: { error: 'sign in required for follow-ups' } } };
+  // Every generation settles against a real prepaid ledger.
+  if ((product === 'sortis' || product === 'stria') && !user) {
+    return { error: { status: 401, body: { error: 'sign in required for generation' } } };
   }
 
   if (product === 'sortis') {
-    if (!user) return { error: { status: 401, body: { error: 'sign in required for Sortis 6' } } };
-    if (user.plan !== 'pro' && user.plan !== 'premium') {
-      return { error: { status: 403, body: { error: 'Sortis 6 requires the Pro or Premium plan' } } };
-    }
     const spend = await spendUnits(db, user.id, cost, reason);
     if (!spend.ok) return { error: { status: 402, body: { error: 'insufficient units', units: spend.units } } };
     return { refund: { userId: user.id, amount: cost }, unitsRemaining: spend.units };
@@ -341,13 +329,13 @@ async function guardRequest({ request, env, db, product, cost, mode }) {
     return { refund: { userId: user.id, amount: cost }, unitsRemaining: spend.units };
   }
 
-  // No authenticated user to bill (anonymous guest trial, or a router/qc
-  // utility call) — fall back to a per-IP rolling-hour rate limit so the
+  // Router/qc utility calls carry no product cost. Fall back to a per-IP
+  // rolling-hour rate limit so the
   // endpoint can't be scripted into unlimited free generations.
   const ip = clientIp(request);
   const hourBucket = Math.floor(Date.now() / 3600000);
   const isGeneration = cost > 0;
-  const max = isGeneration ? 30 : 120; // 30 anon casts/hr; 120 router+qc/hr (≈ backs 60 casts)
+  const max = isGeneration ? 30 : 120; // generation fallback; 120 router+qc calls/hr
   const bucketKey = 'ip:' + ip + ':' + (isGeneration ? 'cast' : 'util') + ':' + hourBucket;
   const rl = await bumpRateLimit(db, bucketKey, max);
   if (!rl.ok) return { error: { status: 429, body: { error: 'rate limit exceeded, try again later' } } };

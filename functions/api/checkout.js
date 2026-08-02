@@ -1,18 +1,15 @@
 // functions/api/checkout.js — POST /api/checkout
-// Creates a Creem hosted-checkout session for a plan or a unit pack and hands
+// Creates a Creem hosted-checkout session for a prepaid unit pack and hands
 // the browser its URL. pricing.html already speaks this contract: it POSTs
 // { sku } and redirects to { url }; on 503 (payments not configured yet) it
 // falls back to the local demo grant, so the page keeps working before the
 // Creem env vars exist.
 //
-//   sku "pro" | "premium"          → subscription products
 //   sku "pack4500" | "pack15000"…  → one-time unit top-ups
 //
 // Env (Pages → Settings → Variables and secrets):
 //   CREEM_API_KEY            required — creem_… (live) or creem_test_… (test);
 //                            the key prefix selects the API base automatically
-//   CREEM_PRODUCT_PRO        product id for the Pro subscription
-//   CREEM_PRODUCT_PREMIUM    product id for the Premium subscription
 //   CREEM_PRODUCT_PACK4500 … product ids for the unit packs (one per pack sku)
 //
 // The session's metadata carries { userId, sku } — the webhook uses it to
@@ -46,8 +43,9 @@ export async function onRequestPost({ request, env }) {
     const body = await request.json().catch(() => ({}));
     const sku = String(body.sku || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     if (!sku) return json({ error: 'no sku' }, 400);
+    if (!/^pack(4500|15000|30000|75000)$/.test(sku)) return json({ error: 'unknown sku' }, 400);
 
-    // sku → product id via env: pro → CREEM_PRODUCT_PRO, pack4500 → CREEM_PRODUCT_PACK4500
+    // sku → product id via env: pack4500 → CREEM_PRODUCT_PACK4500
     const productId = env['CREEM_PRODUCT_' + sku.toUpperCase()];
     if (!productId) return json({ error: 'unknown sku' }, 400);
 

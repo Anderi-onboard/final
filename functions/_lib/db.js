@@ -1,5 +1,6 @@
 // functions/_lib/db.js — D1 data layer. The server is the source of truth for
-// accounts, units, and history. Plan grants mirror account.js (front-end mirror).
+// accounts, prepaid units, and history. Legacy plan values remain readable so
+// existing accounts migrate without losing balances.
 
 // Free signup now grants 500 units (new-user welcome grant).
 export const PLAN_GRANT = { free: 500, pro: 22500, premium: 45000 };
@@ -7,15 +8,9 @@ export const METHOD_COST = { stria: 300, sortis: 1500 };
 export const PAID = { pro: true, premium: true };
 
 // ── Metered billing (reserve → settle) ─────────────────────────────────────
-// A new cast still charges the flat METHOD_COST when it completes — current
-// margins are anchored there and stay untouched. Metering covers the two
-// cases where flat pricing was unfair or missing:
-//   1. A stream that DIES mid-reading: settle for the tokens actually
-//      delivered (at the rates below) and refund the rest of the reserve.
-//   2. A FOLLOW-UP on an existing casting (no new hexagram): reserve
-//      FOLLOW_COST up front, settle actual usage, refund the difference.
-// Rates are calibrated so a typical full cast (~4-5K in / ~1.5K out) lands at
-// the flat price — i.e. the per-token margin equals today's margin. Tune here.
+// METHOD_COST is a reservation ceiling, never a flat final price. Every cast
+// and follow-up settles from measured prompt and completion tokens at the
+// rates below, then refunds the unused portion of the reserve.
 export const METERING = {
   stria:  { inPer1k: 15, outPer1k: 160, minCharge: 15 },
   sortis: { inPer1k: 75, outPer1k: 800, minCharge: 75 }

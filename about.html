@@ -1,288 +1,104 @@
-<!-- BourneWise — Why BourneWise. Part of the "Paper site" template (entry: index.html) -->
+<!-- BourneWise — Why BourneWise -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why BourneWise</title>
+<meta name="description" content="Why BourneWise separates the generated hexagram from the model-written interpretation.">
 <style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
-<!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
-     already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802f">
-<script src="./ds-base.js?v=20260802f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802g">
+<script src="./ds-base.js?v=20260802g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  em,i{font-style:normal}
-  html,body{height:100%}
-
-  /* This page uses the site's own warm "Paper" palette (tokens/paper.css) —
-     cream surfaces, espresso ink, real terracotta. No local pastel override:
-     the earlier pink/mint scheme read as too light for a classical-divination
-     brand. Everything below pulls the same warm tokens as index/login. */
-
-  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
-  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  html,body{min-height:100%}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
-  .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
-
-  /* ── full-page "deck": the About page scrolls one full screen at a time.
-     .main is the scroll container with y-mandatory snap; each .page is a full
-     viewport that snaps into place, and its content fades/rises in when the
-     page enters view and fades out as you scroll past — a page-turn feel. ── */
-  .main{position:relative;z-index:1;flex:1;min-width:0;height:100vh;height:100dvh;overflow-y:auto;
-    scroll-snap-type:y proximity;scroll-behavior:smooth;overscroll-behavior-y:contain;
-    scrollbar-width:none}
-  .main::-webkit-scrollbar{width:0;height:0}
-  .page{position:relative;min-height:100vh;min-height:100dvh;scroll-snap-align:start;
-    display:flex;flex-direction:column;justify-content:center;padding:0}
-  .page-inner{position:relative;z-index:1;width:100%;max-width:1080px;margin:0 auto;padding:64px 28px}
-
-  /* ── per-page colour field: each scroll page below the hero carries its own
-     slow, GPU-composited colour animation behind the glass boxes. Only
-     transform + opacity animate (never background-color), so nothing repaints
-     per frame — that is what stops the backdrop-blur re-raster / frame-flash.
-     A different hue per page delivers the "scroll down → the background turns
-     another colour" beat the brief asks for. ── */
-  .page-fx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .page-fx{display:none}
-  /* page 2 — warm amber / terracotta dawn */
-  .fx-amber b:nth-child(1){width:58vw;height:58vw;left:-8vw;top:-6vh;background:radial-gradient(circle at 42% 42%,#F3C88C,transparent 68%);animation:blobA 27s ease-in-out infinite}
-  .fx-amber b:nth-child(2){width:50vw;height:50vw;right:-10vw;bottom:-12vh;background:radial-gradient(circle at 50% 50%,#D99A62,transparent 70%);animation:blobB 34s ease-in-out infinite}
-  .fx-amber b:nth-child(3){width:34vw;height:34vw;left:38vw;bottom:6vh;background:radial-gradient(circle at 50% 50%,#E7B47E,transparent 72%);animation:blobC 30s ease-in-out infinite}
-  /* page 3 — a cooler dusk: muted sage + clay, a clear colour change from p2 */
-  .fx-sage b:nth-child(1){width:56vw;height:56vw;left:-10vw;bottom:-10vh;background:radial-gradient(circle at 46% 46%,#AEBE9F,transparent 70%);animation:blobB 31s ease-in-out infinite}
-  .fx-sage b:nth-child(2){width:52vw;height:52vw;right:-12vw;top:-8vh;background:radial-gradient(circle at 50% 50%,#CFA588,transparent 70%);animation:blobA 36s ease-in-out infinite}
-  .fx-sage b:nth-child(3){width:30vw;height:30vw;left:44vw;top:10vh;background:radial-gradient(circle at 50% 50%,#BFAF95,transparent 72%);animation:blobC 28s ease-in-out infinite}
-  @keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,4vh) scale(1.14)}}
-  @keyframes blobB{0%,100%{transform:translate(0,0) scale(1.06)}50%{transform:translate(-5vw,-5vh) scale(.9)}}
-  @keyframes blobC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4vw,6vh) scale(1.12)}}
-  /* content rises + fades in when its page is in view, fades back out when not */
-  .page .rise{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
-  .page.in-view .rise{opacity:1;transform:none}
-  .page .rise:nth-child(2){transition-delay:.06s}
-  .page .rise:nth-child(3){transition-delay:.12s}
-  /* scroll hint on the first page */
-  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--faint);
-    display:flex;flex-direction:column;align-items:center;gap:5px;font-size:var(--text-label);letter-spacing:var(--tracking-label);
-    animation:hintBob 2.2s ease-in-out infinite}
-  @keyframes hintBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
-
-  /* inkline — shared hand-stroke hover underline */
-  .inkline{position:relative}
-  .inkline svg{position:absolute;left:0;bottom:-5px;width:100%;height:8px;overflow:visible;pointer-events:none}
-  .inkline path{stroke:var(--terracotta);fill:none;stroke-linecap:round;stroke-dasharray:110;stroke-dashoffset:110;transition:stroke-dashoffset .45s cubic-bezier(.4,0,.2,1)}
-  .inkline path+path{opacity:.45;transition-delay:.08s}
-  .inkline:hover path,.inkline:focus-visible path{stroke-dashoffset:0}
-
-  /* ── 1 · hero — no card, no border: the mountain bleeds edge-to-edge behind the
-     nav + poster line, then dissolves into the page before the text below. A boxed,
-     bordered, rounded-corner "hero card" with a cropped graphic inside it is the
-     one visual pattern that reads as generated-template rather than part of this
-     site — everywhere else (index/login) the range is a true full-bleed backdrop. ── */
-  .hero-slab{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
-  /* the shared world: a fixed, full-bleed line-drawing of the range with the
-     colour-group field rotating behind it (same as every other page) — the
-     hero and the sections below all ride on one backdrop. */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
-    -webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%);
-            mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.55) 10%,rgba(0,0,0,.8) 46%,rgba(0,0,0,.6) 74%,transparent 96%)}
-  /* the second, page-long ambient mountain is gone: it overlapped the hero
-     range and doubled the motion. The page now reads top→bottom — a mountain
-     hero up top, clean paper below — with nothing stacked behind the content. */
-
-  .slab-nav{position:relative;z-index:1;display:flex;align-items:center;gap:20px;padding:20px 28px 0}
-  .slab-nav .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
-  .slab-nav .eyebrow b{color:var(--terracotta);font-weight:400}
-  .slab-nav .links{margin-left:auto;display:flex;align-items:center;gap:20px}
-  .slab-nav .ghost{font-size:13.5px;color:var(--dim);transition:color .15s}
-  .slab-nav .ghost:hover{color:var(--ink)}
-  .slab-nav .cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:7px 16px;border-radius:9px;transition:transform .15s,background .15s}
-  .slab-nav .cta:hover{background:#291D35;transform:translateY(-1px)}
-  /* the headline sits low in the hero, over the ridges' darker foreground tones
-     (not the pale sky), so it needs light text — a card background no longer
-     guarantees contrast the way it did when the mountain was cropped inside one */
-  .hero-slab h1{position:relative;z-index:1;font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.032em;text-wrap:balance;
-    color:var(--ink);margin-top:auto;padding:46px 28px 44px;max-width:17ch}
-
-  /* ── 2 · statement + method cards ── */
-  .duo{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
-    column-gap:clamp(36px,6vw,96px);align-items:start;padding:58px 6px 8px}
-  .duo-l h2{font-family:"BioRhyme",var(--serif);font-weight:800;font-size:clamp(28px,4.4vw,56px);
-    line-height:1.06;letter-spacing:-.03em;text-wrap:balance;max-width:17ch}
-  .duo-l .gild{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--terracotta);border-bottom:1.5px solid var(--terracotta);padding-bottom:1px}
-  .duo-l p{margin-top:22px;max-width:40ch;font-family:var(--serif);
-    font-size:clamp(16px,1.35vw,19px);line-height:1.62;color:var(--ink)}
-  .duo-l .mini{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--ink);border-radius:9px;padding:7px 15px;transition:background .15s,color .15s}
-  .duo-l .mini:hover{background:var(--ink);color:var(--paper)}
-  .duo-r{display:flex;flex-direction:column;gap:12px}
-  /* flat editorial carrier — opaque enough to keep type crisp over the range */
-  .m-card{display:flex;gap:14px;align-items:flex-start;border-radius:12px;padding:16px 18px;
-    background:var(--paper-raised);border:1px solid var(--line)}
-  .m-card .mi{flex:none;width:24px;height:24px;color:var(--terracotta);margin-top:1px}
-  .m-card b{display:block;font-family:"BioRhyme",var(--serif);font-size:15px;font-weight:700}
-  .m-card b .u{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--terracotta);white-space:nowrap}
-  .m-card p{margin-top:4px;font-size:13px;line-height:1.55;color:var(--dim)}
-
-  /* ── 3 · ink band — how to take the answer ── */
-  /* one oat carrier holds the reading principles */
-  .band{margin-top:56px;color:var(--ink);border-radius:18px;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center;
-    background:var(--oat);border:1px solid var(--line)}
-  .band h2{font-family:"BioRhyme",var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;text-align:center}
-  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;width:100%}
-  .tile{border:1px solid var(--line);background:var(--paper-raised);border-radius:13px;padding:22px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background .15s}
-  .tile:hover{background:var(--paper)}
-  .tile .ti{width:26px;height:26px;color:var(--terracotta)}
-  .tile b{margin-top:34px;font-family:"BioRhyme",var(--serif);font-size:17px;font-weight:700}
-  .tile p{margin-top:7px;font-size:12px;line-height:1.5;color:var(--dim)}
-  .band .cta{margin-top:36px;font-size:13.5px;font-weight:500;color:var(--paper);background:var(--terracotta);padding:9px 20px;border-radius:10px;transition:transform .15s,background .15s}
-  .band .cta:hover{transform:translateY(-1px);background:#D97D7E}
-
-  /* fine print + footer */
-  .fine{margin-top:26px;text-align:center;font-size:12px;color:var(--faint);line-height:2}
-  footer{margin-top:34px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-  footer a{transition:color .15s}
-  footer a:hover{color:var(--ink)}
-
-  @media (max-width:920px){
-    .duo{grid-template-columns:1fr;gap:30px}
-    .tiles{grid-template-columns:1fr}
-  }
-  /* Between roughly 700 and 900px the centred "Scroll" hint lands on the same
-     baseline as the headline's last line and reads as part of it. Give the
-     headline its own lane so the hint always sits clear beneath it. */
-  @media (max-width:900px){
-    .hero-slab h1{padding-bottom:92px}
-  }
-  @media (max-width:760px){
-    .page-inner{padding:48px 18px}
-    .slab-nav{padding:16px 20px 0}
-    .slab-nav .ghost{display:none}
-    .hero-slab h1{padding:40px 20px 88px}
-    .band{padding:40px 22px 36px}
-    .duo{padding:0}
-  }
-  @media (prefers-reduced-motion: reduce){.page-fx b{animation:none}}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.86;mask-image:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.55) 62%,transparent 96%);-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.55) 62%,transparent 96%)}
+  .pagehead{position:relative;z-index:4;display:flex;align-items:center;gap:18px;max-width:1180px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:9px}.mark{width:27px;height:22px}.brand b{font-size:18px}
+  .nav{margin-left:auto;display:flex;align-items:center;gap:8px}.ghost{font-size:13px;color:var(--dim);padding:9px 13px;border-radius:999px}.cta{padding:11px 18px;border-radius:11px;background:var(--ink);color:var(--paper);font-size:13px}
+  .why{position:relative;z-index:1;width:min(1120px,calc(100% - 48px));margin:0 auto;padding:72px 0 90px}
+  .why-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:clamp(34px,7vw,100px);align-items:end;padding:36px 4px 70px}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bw-palette-gem)}
+  h1,h2,h3{font-family:var(--serif);text-wrap:balance}
+  h1{margin-top:18px;max-width:12ch;font-size:clamp(48px,7.6vw,94px);font-weight:700;line-height:.97;letter-spacing:-.055em}
+  .hero-copy{font-family:var(--serif);font-size:clamp(17px,1.8vw,22px);line-height:1.58;color:var(--ink)}
+  .hero-copy small{display:block;margin-top:18px;font-family:var(--sans);font-size:12px;line-height:1.6;color:var(--dim)}
+  .why-panel{padding:clamp(26px,4vw,48px);margin-top:18px;border-radius:24px}
+  .panel-head{display:grid;grid-template-columns:90px minmax(0,1fr);gap:24px;align-items:start}
+  .panel-no{font-family:var(--serif);font-size:clamp(42px,6vw,72px);line-height:.9;color:var(--bw-palette-gem);font-variant-numeric:tabular-nums}
+  .panel-head h2{font-size:clamp(28px,4vw,48px);line-height:1.04;letter-spacing:-.04em}
+  .panel-head p{max-width:58ch;margin-top:14px;color:var(--dim)}
+  .sequence{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+  .why-card{min-height:185px;padding:22px;border-radius:18px;display:flex;flex-direction:column}
+  .why-card .tag{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bw-palette-gem)}
+  .why-card h3{margin-top:30px;font-size:19px;line-height:1.2}
+  .why-card p{margin-top:8px;font-size:13px;line-height:1.6;color:var(--dim)}
+  .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+  .method{padding:24px;border-radius:18px}.method-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}.method h3{font-size:22px}.method .cap{font-size:11px;color:var(--bw-palette-gem);white-space:nowrap}.method p{margin-top:10px;color:var(--dim)}
+  .boundary{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.boundary div{padding-top:17px;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}.boundary b{font-family:var(--serif);font-size:17px}.boundary p{margin-top:6px;font-size:13px;color:var(--dim)}
+  .close{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:22px;padding:28px 32px;border-radius:20px}.close h2{font-size:clamp(24px,3vw,38px);line-height:1.08}.close a{flex:none;background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:12px;font-size:13px}
+  footer{position:relative;z-index:1;width:min(1120px,calc(100% - 48px));margin:0 auto;padding:0 0 34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--dim);font-size:11px;letter-spacing:.04em}
+  @media(max-width:800px){.why-hero{grid-template-columns:1fr;align-items:start}.sequence,.boundary{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.panel-head{grid-template-columns:1fr}.panel-no{font-size:42px}.close{align-items:flex-start;flex-direction:column}.nav .ghost{display:none}}
+  @media(max-width:560px){.why{width:calc(100% - 28px);padding-top:42px}.why-hero{padding-bottom:46px}.why-panel{padding:22px 18px}.pagehead{width:calc(100% - 24px)}.close{padding:24px 20px}footer{width:calc(100% - 28px)}}
 </style>
 </head>
 <body data-page="about">
+<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
 
-<main class="main" data-screen-label="Why BourneWise">
+<header class="pagehead">
+  <a class="brand" href="./index.html" aria-label="BourneWise home">
+    <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+    <b>BourneWise</b>
+  </a>
+  <nav class="nav"><a class="ghost" href="./guide.html">The method</a><a class="ghost" href="./pricing.html">Usage</a><a class="cta" href="./index.html">Start a casting</a></nav>
+</header>
 
-  <!-- page 1 · hero: nav + poster line float directly on the full-bleed range -->
-  <section class="page hero-slab">
-    <div class="mtn-bg line-art" data-vbw="1250" data-par="xMidYMax slice" aria-hidden="true"></div>
-    <nav class="slab-nav" aria-label="Site">
-      <span class="eyebrow"><b>&#9670;</b><span>Why BourneWise</span></span>
-      <span class="links">
-        <a class="ghost" href="./guide.html">The method</a>
-        <a class="ghost" href="./pricing.html">Plans</a>
-      <a class="cta" href="./index.html">Start a casting</a>
-      </span>
-    </nav>
-    <h1>A fixed hexagram. A model-written explanation.</h1>
-    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v9M4 8.5l4 4 4-4"></path></svg>
+<main class="why" data-screen-label="Why BourneWise">
+  <section class="why-hero">
+    <div><p class="eyebrow">Why BourneWise</p><h1>The cast and the answer are separate systems.</h1></div>
+    <p class="hero-copy">BourneWise generates the hexagram first. Claude Opus 5 explains the result it receives. The model writes the interpretation; it does not choose the figure.<small>This separation keeps the source of the reading visible and gives every answer a fixed input you can inspect.</small></p>
+  </section>
+
+  <section class="why-panel">
+    <div class="panel-head"><span class="panel-no">01</span><div><h2>The sequence is fixed before inference begins.</h2><p>Every reading follows the same order. The model enters only after the casting engine has completed the figure.</p></div></div>
+    <div class="sequence">
+      <article class="why-card"><span class="tag">First</span><h3>Your question sets the subject.</h3><p>The decision, people involved, constraints, and timeframe define what the figure must address.</p></article>
+      <article class="why-card"><span class="tag">Then</span><h3>The engine generates six lines.</h3><p>The primary hexagram, moving lines, and transformed figure are computed independently of the language model.</p></article>
+      <article class="why-card"><span class="tag">Finally</span><h3>Claude writes from fixed data.</h3><p>The question and computed figure are passed to Claude Opus 5 as evidence for the explanation.</p></article>
     </div>
   </section>
 
-  <!-- page 2 · the statement + the three practical cards -->
-  <section class="page">
-   <div class="page-fx fx-amber" aria-hidden="true"><b></b><b></b><b></b></div>
-   <div class="page-inner">
-    <section class="duo">
-      <div class="duo-l rise">
-        <h2>The casting engine sets the result. <span class="gild">Claude Opus 5 explains it.</span></h2>
-        <p>BourneWise generates six lines and builds the hexagram before any model is called. Claude Opus 5 receives that fixed result and your question, then writes the answer. It cannot choose new lines or replace the figure.</p>
-        <a class="mini" href="./pricing.html">See plans</a>
-      </div>
-      <div class="duo-r rise">
-        <div class="m-card">
-          <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 15c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
-          <div><b>Stria 64 <span class="u">&middot; 300 Units</span></b>
-          <p>Uses the primary hexagram to analyze the current structure of the situation.</p></div>
-        </div>
-        <div class="m-card">
-          <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 12.5c3-2.4 6 2.4 9 0s6 2.4 9 0"></path><path d="M3 18c3-2.4 6 2.4 9 0s6 2.4 9 0"></path></svg>
-          <div><b>Sortis 6 <span class="u">&middot; 1,500 Units</span></b>
-          <p>Adds moving lines, the transformed hexagram, and line-by-line causal analysis.</p></div>
-        </div>
-        <div class="m-card">
-          <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="6.5"></circle><path d="M12 6.5c0-2 1.4-3.5 3.4-3.5C15.4 5 14 6.5 12 6.5z"></path></svg>
-          <div><b>Free account credit <span class="u">&middot; 500 Units</span></b>
-          <p>Create an account to test one Stria 64 reading before choosing a paid plan.</p></div>
-        </div>
-      </div>
-    </section>
-   </div>
+  <section class="why-panel">
+    <div class="panel-head"><span class="panel-no">02</span><div><h2>Choose the amount of structure your question needs.</h2><p>Both methods use the same casting sequence. They differ in how much of the resulting structure is interpreted.</p></div></div>
+    <div class="method-grid">
+      <article class="method"><div class="method-top"><h3>Stria 64</h3><span class="cap">RESERVES UP TO 300 UNITS</span></div><p>Reads the primary hexagram against the current situation. Best for a focused view of where things stand.</p></article>
+      <article class="method"><div class="method-top"><h3>Sortis 6</h3><span class="cap">RESERVES UP TO 1,500 UNITS</span></div><p>Adds moving lines, the transformed hexagram, and line-by-line change analysis. Best when the path of change matters.</p></article>
+    </div>
   </section>
 
-  <!-- page 3 · the temperament, in three tiles -->
-  <section class="page">
-   <div class="page-fx fx-sage" aria-hidden="true"><b></b><b></b><b></b></div>
-   <div class="page-inner">
-    <section class="band rise">
-      <h2>What the system does and does not do</h2>
-      <div class="tiles">
-        <div class="tile">
-          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
-          <b>Fixed input</b>
-          <p>The model receives the generated hexagram as data. It cannot redraw or override the result.</p>
-        </div>
-        <div class="tile">
-          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10z"></path></svg>
-          <b>Explicit uncertainty</b>
-          <p>The answer can state a strong interpretation, but it cannot turn an open situation into a guarantee.</p>
-        </div>
-        <div class="tile">
-          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"></path><path d="M9 13l2.2 2.2L15.5 11"></path></svg>
-          <b>User controlled</b>
-          <p>The system returns analysis, not permission or professional advice. You make the decision.</p>
-        </div>
-      </div>
-      <a class="cta" href="./index.html">Start a reading</a>
-    </section>
-
-    <p class="fine rise">Your castings are encrypted at rest, never sold, never used to train &mdash; and deleted when you choose.
-      <a class="inkline" href="./privacy.html">The policy<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
-      &nbsp;&middot;&nbsp;
-      <a class="inkline" href="./terms.html">The terms<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a>
-    </p>
-
-    <footer class="rise">
-        <span class="lbl" style="font-family: Spinnaker; font-weight: 600">BourneWise &middot; fixed hexagram input &middot; model-written interpretation &middot; <a class="inkline" href="mailto:hello@bournewise.com" style="font-family:Spinnaker">hello@bournewise.com</a> &middot; <a class="inkline" href="./refund.html" style="font-family:Spinnaker">Refunds</a></span>
-      <span class="lbl"><a class="inkline" href="./index.html" style="font-family: Spinnaker; font-weight: 700">Back to BourneWise<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path stroke-width="1.4" d="M2 4 C30 2 62 6 98 3"></path><path stroke-width="1" d="M5 7 C40 5 72 8 95 6"></path></svg></a></span>
-    </footer>
-   </div>
+  <section class="why-panel">
+    <div class="panel-head"><span class="panel-no">03</span><div><h2>A reading is an analysis, not delegated authority.</h2><p>The system can offer a strong interpretation without pretending an open situation has become certain.</p></div></div>
+    <div class="boundary">
+      <div><b>Fixed input</b><p>The model cannot redraw, replace, or override the generated hexagram.</p></div>
+      <div><b>Explicit limits</b><p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></div>
+      <div><b>Your decision</b><p>The reading gives you another structured view. You remain responsible for the action.</p></div>
+    </div>
   </section>
+
+  <section class="close"><h2>See the full process one step at a time.</h2><a href="./guide.html">Open the guide</a></section>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802f"></script>
-<script>
-(function () {
-  // Fade/rise each page's content in when it snaps into view, back out when it
-  // leaves — the "text disappears, flip to the next page" feel.
-  var pages = document.querySelectorAll('.main .page');
-  if (!('IntersectionObserver' in window)) {
-    pages.forEach(function (p) { p.classList.add('in-view'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { e.target.classList.toggle('in-view', e.isIntersecting && e.intersectionRatio > 0.4); });
-  }, { threshold: [0, 0.4, 0.75] });
-  pages.forEach(function (p) { io.observe(p); });
-  // first page visible immediately
-  if (pages[0]) pages[0].classList.add('in-view');
-})();
-</script>
-
+<footer><span>BourneWise · fixed hexagram input · model-written interpretation</span><span><a href="mailto:hello@bournewise.com">hello@bournewise.com</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a></span></footer>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802g"></script>
 </body>
 </html>

@@ -17,8 +17,8 @@
   --ui-line: color-mix(in srgb, white 58%, var(--bw-palette-6) 15%);
   --ui-line-strong: color-mix(in srgb, white 38%, var(--bw-palette-6) 35%);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: 0 10px 34px rgba(42,32,22,.09), inset 0 1px 0 rgba(255,255,255,.58);
-  --ui-shadow-raised: 0 18px 52px rgba(42,32,22,.13), inset 0 1px 0 rgba(255,255,255,.7);
+  --ui-shadow: 0 12px 34px rgba(42,32,22,.055), inset 0 1px 0 rgba(255,255,255,.54);
+  --ui-shadow-raised: 0 18px 48px rgba(42,32,22,.075), inset 0 1px 0 rgba(255,255,255,.64);
   --ui-glass-filter: blur(14px) saturate(116%);
   --ui-glass-filter-strong: blur(20px) saturate(122%);
   --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
@@ -32,6 +32,33 @@ body { text-rendering: optimizeLegibility; }
 a, button, input { -webkit-tap-highlight-color: transparent; }
 button, a { transition-timing-function: var(--ease-out); }
 ::selection { background: color-mix(in srgb, var(--bw-palette-gem) 28%, transparent); }
+
+/* Typography contract: BourneWise never relies on italics or underlines for
+   emphasis. Weight, colour, spacing and glass hierarchy carry that work. */
+html[data-skin="paper"] body :is(em, i, cite, dfn) { font-style: normal !important; }
+html[data-skin="paper"] body a {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
+html[data-skin="paper"] body :is(.gild, .reading-body .gild) {
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+html[data-skin="paper"] body .inkline svg { display: none !important; }
+
+/* One wordmark specification everywhere: Pacifico 400, 18px, with the same
+   optical baseline and stroke. Page-specific wordmark rules may size the
+   symbol, but never change the lettering. */
+html[data-skin="paper"] body :is(.brand-word, .brand b, .wordmark span) {
+  font-family: var(--font-brand) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  -webkit-text-stroke: .45px currentColor;
+  transform: translateY(-1px);
+}
 
 /* Clarity baseline --------------------------------------------------------
    Blur belongs only to named UI carriers below. Reading/casting surfaces stay
@@ -102,7 +129,7 @@ html[data-skin="paper"] body :is(
 }
 html[data-skin="paper"] body .ledgerstrip {
   background: var(--ui-glass);
-  border: 1.25px solid var(--ui-line);
+  border: .75px solid var(--ui-line);
   border-radius: 15px 18px 14px 17px / 17px 14px 18px 15px;
   box-shadow: var(--ui-shadow);
   backdrop-filter: var(--ui-glass-filter);
@@ -133,7 +160,7 @@ body[data-page="pricing"] .pagehead {
 body:not([data-page="app"]) .brand b,
 body[data-page="pricing"] .brand b {
   font-family: var(--font-brand);
-  font-weight: 100;
+  font-weight: 400;
   -webkit-text-stroke: .45px currentColor;
   letter-spacing: 0;
 }
@@ -209,40 +236,27 @@ body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mas
 
 body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
 body[data-page="app"] #heroEmpty { padding-bottom: clamp(30px, 5vh, 54px); }
-body[data-page="app"] .greeting { max-width: 790px; gap: 20px; }
+body[data-page="app"] .greeting { max-width: 790px; min-height: 4.25em; gap: 20px; }
 body[data-page="app"] .greeting h1 {
   max-width: 700px; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500;
-  line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
+  min-height: 4.08em; line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
+  color: var(--ink);
 }
-@supports ((background-clip: text) or (-webkit-background-clip: text)) {
-  body[data-page="app"] .greeting h1 {
-    color: var(--ink);
-    background-image: linear-gradient(
-      105deg,
-      var(--ink) 0%,
-      color-mix(in oklab, var(--ink) 84%, var(--bw-palette-6)) 10%,
-      color-mix(in oklab, var(--ink) 48%, var(--bw-palette-gem)) 20%,
-      color-mix(in oklab, var(--ink) 18%, var(--bw-palette-gem)) 27%,
-      color-mix(in oklab, var(--ink) 58%, var(--bw-palette-3)) 36%,
-      var(--ink) 47%,
-      color-mix(in oklab, var(--ink) 84%, var(--bw-palette-6)) 60%,
-      color-mix(in oklab, var(--ink) 52%, var(--bw-palette-gem)) 72%,
-      color-mix(in oklab, var(--ink) 22%, var(--bw-palette-gem)) 80%,
-      color-mix(in oklab, var(--ink) 62%, var(--bw-palette-3)) 89%,
-      var(--ink) 100%
-    );
-    background-position: 105% 50%;
-    background-size: 220% 100%;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: bwHeroTextStream 15s linear infinite;
-  }
+body[data-page="app"] .greeting h1::after {
+  content: "";
+  display: inline-block;
+  width: .075em;
+  height: .82em;
+  margin-left: .09em;
+  border-radius: 999px;
+  background: var(--bw-palette-gem);
+  vertical-align: -.04em;
+  animation: bwTypeCaret .9s steps(1,end) infinite;
 }
-@keyframes bwHeroTextStream {
-  from { background-position: 105% 50%; }
-  to { background-position: -105% 50%; }
+body[data-page="app"] .greeting h1[data-type-phase="hold"]::after { animation-duration: 1.15s; }
+@keyframes bwTypeCaret {
+  0%, 46% { opacity: 1; }
+  47%, 100% { opacity: .12; }
 }
 body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
 body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
@@ -365,8 +379,8 @@ body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); borde
   body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
   body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,
   body[data-page="app"] .bwl5,
-  body[data-page="app"] .greeting h1 { animation: none !important; }
-  body[data-page="app"] .greeting h1 { background-position: 50% 50%; }
+  body[data-page="app"] .greeting h1::after { animation: none !important; }
+  body[data-page="app"] .greeting h1::after { opacity: .55; }
 }
 
 /* Content pages ----------------------------------------------------------- */
@@ -377,6 +391,32 @@ body[data-page="pricing"] .hero h1,
 body[data-page="legal"] .legal > h1,
 body[data-page="settings"] .pagetitle h1 {
   letter-spacing: -.045em; text-wrap: balance;
+}
+
+/* Text-page material: a coloured glass film, not a thick card. The dynamic
+   palette supplies both tint layers, while the hairline and shallow shadow
+   keep boxes visually weightless. */
+html[data-skin="paper"] body:not([data-page="app"]) :is(
+  .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+  .why-panel, .why-card, .method, .close,
+  .progress, .guide-stage, .lesson-card, .example, .rate,
+  .ledgerstrip, .rate-card, .estimator, .pack, .term
+) {
+  background-color: color-mix(in srgb, var(--bw-palette-1) 22%, transparent) !important;
+  background-image: linear-gradient(135deg,
+    color-mix(in srgb, var(--bw-palette-1) 46%, transparent),
+    color-mix(in srgb, var(--bw-palette-3, var(--bw-palette-2)) 25%, transparent)) !important;
+  border: .75px solid color-mix(in srgb, white 66%, var(--bw-palette-6) 12%) !important;
+  box-shadow: 0 12px 32px rgba(42,32,22,.05), inset 0 1px 0 rgba(255,255,255,.6) !important;
+  backdrop-filter: blur(13px) saturate(116%) !important;
+  -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
+}
+html[data-skin="paper"] body:not([data-page="app"]) :is(
+  .why-card, .lesson-card, .rate, .rate-card, .pack, .term, .method
+):nth-child(2n) {
+  background-image: linear-gradient(145deg,
+    color-mix(in srgb, var(--bw-palette-2) 38%, transparent),
+    color-mix(in srgb, var(--bw-palette-4, var(--bw-palette-1)) 23%, transparent)) !important;
 }
 body[data-page="pricing"] .plan,
 body[data-page="pricing"] .topup,
@@ -432,7 +472,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   :root { --ui-glass-filter: blur(8px) saturate(110%); --ui-glass-filter-strong: blur(11px) saturate(114%); }
   body[data-page="app"] .topbar { padding-top: max(14px, env(safe-area-inset-top)); }
   body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
-  body[data-page="app"] .greeting h1 { font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
+  body[data-page="app"] .greeting h1 { min-height: 5.25em; font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
   body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
   body[data-page="app"] .composer { min-height: 58px; border-radius: 18px; padding: 7px; }
   body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
@@ -443,6 +483,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .site-foot { line-height: 1.7; }
   body:not([data-page="app"]) .pagehead,
   body[data-page="pricing"] .pagehead { padding-left: 12px; }
+  body:not([data-page="app"]) .pagehead .nav .ghost,
   body[data-page="pricing"] .pagehead .nav .ghost { display: none; }
 }
 

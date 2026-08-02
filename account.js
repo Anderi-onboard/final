@@ -1,10 +1,10 @@
-/* BourneWise — single source of truth for state, plans, methods, and entitlements.
+/* BourneWise — single source of truth for state, usage, methods, and access.
    Every page reads/writes through window.BWAccount. No other file touches localStorage
    for billing data or duplicates these definitions.
 
    window.BWAccount:
-     .PLANS              -> canonical plan table
-     .METHODS            -> canonical method table (cost, gating, descriptions)
+     .PLANS              -> legacy account tiers retained for stored records
+     .METHODS            -> canonical method table (reserve caps + descriptions)
      .METHOD_ORDER       -> display ordering ["stria","sortis"]
      .state()            -> full store (loads + normalises defaults)
      .save(s)            -> persist
@@ -26,9 +26,9 @@
   // ─── canonical tables (single source — never duplicate elsewhere) ───
 
   var PLANS = {
-    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 500,   methods: ["stria"], trial: true },
-    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 22500, methods: ["stria", "sortis"] },
-    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 45000, methods: ["stria", "sortis"] }
+    free:    { id: "free",    name: "Usage", price: 0, priceYear: 0, grant: 500,   methods: ["stria", "sortis"], trial: true },
+    pro:     { id: "pro",     name: "Usage", price: 0, priceYear: 0, grant: 22500, methods: ["stria", "sortis"] },
+    premium: { id: "premium", name: "Usage", price: 0, priceYear: 0, grant: 45000, methods: ["stria", "sortis"] }
   };
 
   var METHODS = {
@@ -42,7 +42,7 @@
       id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
       blurb: "Adds moving lines and the transformed hexagram to the analysis.",
-      gated: true
+      gated: false
     }
   };
   // followCap mirrors functions/_lib/db.js FOLLOW_COST: an in-conversation
@@ -76,9 +76,7 @@
   // ─── entitlements ───────────────────────────────────────────────────
 
   function entitled(methodId) {
-    if (!METHODS[methodId] || !METHODS[methodId].gated) return true;
-    var plan = load().account.plan;
-    return plan === "pro" || plan === "premium";
+    return !!METHODS[methodId];
   }
 
   // ─── server sync (D1-backed accounts) ───────────────────────────────
@@ -316,11 +314,7 @@
 
   // ─── plan descriptions (for settings page) ─────────────────────────
 
-  function planDescription(id) {
-    if (id === "free") return "Free · " + PLANS.free.grant + " Units trial · Stria 64 only";
-    if (id === "pro") return "$" + PLANS.pro.price + "/mo · " + PLANS.pro.grant.toLocaleString("en-US") + " Units monthly · Sortis 6 unlocked";
-    return "$" + PLANS.premium.price + "/mo · " + PLANS.premium.grant.toLocaleString("en-US") + " Units monthly · all methods";
-  }
+  function planDescription() { return "Pay as you go · prepaid units · no renewal"; }
 
   // ─── sidebar paint ──────────────────────────────────────────────────
 
@@ -334,7 +328,7 @@
       var i = foot.querySelector("i");
       if (av) av.textContent = a.signedIn ? (a.avatar || initials(a.name)) : "G";
       if (b) b.textContent = a.name;
-      if (i) i.textContent = a.signedIn ? (planName(a.plan) + " plan") : "Not signed in";
+      if (i) i.textContent = a.signedIn ? "Usage billing" : "Not signed in";
     }
     if (opts.menuWho) {
       var mw = resolve(opts.menuWho);

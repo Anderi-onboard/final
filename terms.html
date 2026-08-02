@@ -10,14 +10,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802f">
-<script src="./ds-base.js?v=20260802f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802g">
+<script src="./ds-base.js?v=20260802g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -43,7 +43,7 @@
   .legal .eyebrow b{color:var(--terracotta);font-weight:400}
   .legal h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:.98;letter-spacing:-.03em}
   .meta{margin-top:14px;font-size:12.5px;color:var(--ghost);letter-spacing:.03em}
-  .lede{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
+  .lede{font-family:var(--serif);font-style:normal;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
 
   .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;position:relative}
   .toc::before{content:none}
@@ -62,7 +62,7 @@
   .clause li::marker{color:var(--terracotta)}
   .clause + .clause{border-top:1px solid var(--line-soft);padding-top:8px}
 
-  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:var(--paper-raised);border-radius:0 11px 11px 0;font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--ink)}
+  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:var(--paper-raised);border-radius:0 11px 11px 0;font-family:var(--serif);font-style:normal;font-size:16.5px;color:var(--ink)}
 
   .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
   .legal-foot .links{display:flex;gap:18px;flex-wrap:wrap}
@@ -98,7 +98,7 @@
     <a href="#accept"><span class="n">01</span>Accepting these terms</a>
     <a href="#account"><span class="n">02</span>Your account</a>
     <a href="#units"><span class="n">03</span>Units &amp; castings</a>
-    <a href="#plans"><span class="n">04</span>Plans &amp; billing</a>
+    <a href="#plans"><span class="n">04</span>Usage &amp; billing</a>
     <a href="#nature"><span class="n">05</span>The nature of a reading</a>
     <a href="#conduct"><span class="n">06</span>Acceptable use</a>
     <a href="#ip"><span class="n">07</span>Ownership</a>
@@ -119,23 +119,23 @@
 
   <section class="clause" id="units">
     <h2><span class="n">03</span> Units &amp; castings</h2>
-        <p>A casting is paid for in <em>Units</em>. A Stria 64 costs 300 Units; a Sortis 6 costs 1,500 Units. Units are spent when you submit the question and the casting begins.</p>
-    <p>Units have no cash value, cannot be transferred between accounts, and are not a stored-value or payment instrument. They are consumed on use and, once a casting is drawn, they are non-refundable. See the <a href="./refund.html">Refund Policy</a> for the full detail.</p>
+    <p>A casting is paid for in <strong>Units</strong>. Stria reserves up to 300 Units and Sortis reserves up to 1,500 Units before generation. The final charge is calculated from actual input and output token usage, capped by that reserve, and unused Units return to your balance automatically.</p>
+    <p>Units have no cash value, cannot be transferred between accounts, and are not a stored-value or payment instrument. Units actually consumed by a completed generation are non-refundable. See the <a href="./refund.html">Refund Policy</a> for full detail.</p>
   </section>
 
   <section class="clause" id="plans">
-    <h2><span class="n">04</span> Plans &amp; billing</h2>
-    <p>Free is complimentary. Pro and Premium are paid subscriptions billed in advance on a recurring basis through our payment processor. Your monthly Unit grant is added at the start of each billing period.</p>
+    <h2><span class="n">04</span> Usage &amp; billing</h2>
+    <p>BourneWise uses prepaid, pay-as-you-go billing. You purchase Unit packs through our payment processor and spend them only when you generate a reading or follow-up. There is no subscription and no automatic renewal.</p>
     <ul>
-      <li>You can cancel at any time; cancellation stops the next renewal and takes effect at the end of the current period.</li>
-      <li>Prices may change with at least 30 days&rsquo; notice before your next renewal.</li>
-      <li>Failed payments may pause your grant and lock paid castings until resolved.</li>
+      <li>Purchased Units do not expire while your account remains open.</li>
+      <li>Rates and pack prices may change, but never retroactively alter Units already in your balance.</li>
+      <li>Failed payments do not add Units; your existing balance remains available.</li>
     </ul>
   </section>
 
   <section class="clause" id="nature">
     <h2><span class="n">05</span> The nature of a reading</h2>
-    <p>BourneWise is a tool for reflection. A reading is a <em>judgment, not a guarantee</em>, and not professional advice. It is not a substitute for a doctor, lawyer, financial adviser, or therapist. Do not rely on a casting for decisions about health, safety, legal matters, money, or anything where a wrong call carries real harm. You are responsible for what you choose to do.</p>
+    <p>BourneWise is a tool for reflection. A reading is a <strong>judgment, not a guarantee</strong>, and not professional advice. It is not a substitute for a doctor, lawyer, financial adviser, or therapist. Do not rely on a casting for decisions about health, safety, legal matters, money, or anything where a wrong call carries real harm. You are responsible for what you choose to do.</p>
   </section>
 
   <section class="clause" id="conduct">
@@ -182,8 +182,8 @@
   </div>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802f"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260802f"></script>
-<script src="./ds-motion.js?v=20260802f"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802g"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260802g"></script>
+<script src="./ds-motion.js?v=20260802g"></script>
 </body>
 </html>

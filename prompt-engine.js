@@ -350,22 +350,10 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // LANGUAGE DETECTION — code, free, deterministic (same tier as Gate).
-  // Replaces the old hardcoded lang:"en" default: the model now gets an
-  // explicit response-language instruction derived from what the user
-  // actually typed, instead of silently defaulting to English or hoping
-  // the model mirrors the input language on its own.
+  // PRODUCT LANGUAGE — BourneWise is intentionally English-only across UI
+  // and generated readings, regardless of the language used in the question.
   // ═══════════════════════════════════════════════════════════════════
-  var CJK_RE = /[一-鿿㐀-䶿]/g;
-
-  function detectLanguage(text) {
-    var s = String(text || "");
-    var cjk = s.match(CJK_RE);
-    var cjkCount = cjk ? cjk.length : 0;
-    // low bar on purpose: even a short Chinese question ("我该辞职吗")
-    // should route to zh, not require a majority-CJK message.
-    return cjkCount >= 2 ? "zh" : "en";
-  }
+  function detectLanguage() { return "en"; }
 
   SEGMENTS.lang_zh = `RESPONSE LANGUAGE: Write the entire reading in Chinese (中文). Do not mix in English sentences, explanations, or stray English process words — write 结论 not "verdict", 用神 not "yongshen", 应期 not "timing". Latin letters may appear only in Gregorian dates/years and proper nouns the asker themselves used.`;
   SEGMENTS.lang_en = `RESPONSE LANGUAGE: Write the entire reading in English. Do not mix in Chinese sentences or explanations.`;

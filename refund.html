@@ -10,14 +10,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802f">
-<script src="./ds-base.js?v=20260802f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802g">
+<script src="./ds-base.js?v=20260802g"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -43,7 +43,7 @@
   .legal .eyebrow b{color:var(--terracotta);font-weight:400}
   .legal h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:.98;letter-spacing:-.03em}
   .meta{margin-top:14px;font-size:12.5px;color:var(--ghost);letter-spacing:.03em}
-  .lede{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
+  .lede{font-family:var(--serif);font-style:normal;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
 
   /* the headline clause — the mandated non-refundable statement, given a Prussian block */
   .headline{margin-top:26px;background:var(--prussian);background-image:url("./assets/textures/cyanotype.svg");background-size:cover;background-position:center;color:#EAF1F8;border-radius:14px;padding:24px 26px}
@@ -60,7 +60,7 @@
   .clause li::marker{color:var(--terracotta)}
   .clause + .clause{border-top:1px solid var(--line-soft);padding-top:8px}
 
-  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 11px 11px 0;font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--ink)}
+  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 11px 11px 0;font-family:var(--serif);font-style:normal;font-size:16.5px;color:var(--ink)}
 
   .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
   .legal-foot .links{display:flex;gap:18px;flex-wrap:wrap}
@@ -82,7 +82,7 @@
     <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
     <b>BourneWise</b>
   </a>
-  <a class="ghost" href="./pricing.html">&larr; Back to plans</a>
+  <a class="ghost" href="./pricing.html">&larr; Back to usage</a>
 </header>
 
 <main class="legal">
@@ -93,20 +93,20 @@
 
   <div class="headline">
     <div class="lbl">&#9670;&nbsp; The one rule that matters</div>
-    <p><b>Units (entropy) are consumable digital assets and are non-refundable.</b> Once a casting is drawn, the figure is yours and the Units are spent.</p>
+    <p><b>Only the Units used by a completed generation are spent.</b> We reserve a maximum first, settle from actual token usage, and return the rest automatically.</p>
   </div>
 
   <section class="clause" id="units">
     <h2><span class="n">01</span> Why Units aren&rsquo;t refundable</h2>
-    <p>A Unit buys a casting — a one-time act of generation that consumes real compute the moment you ask. Because the value is delivered instantly and cannot be returned, spent Units are non-refundable, and unspent Units purchased in a top-up are non-refundable once the top-up completes. One exception works in your favour: if a reading is interrupted before it completes, you are charged only for what was actually generated and the rest returns to your balance automatically — the same metering applies to follow-up questions, which settle to actual usage and never cost more than half a casting. Units have no cash value and cannot be transferred or exchanged for money.</p>
+    <p>A Unit pays for model usage. Because that compute is delivered immediately, Units actually consumed by a generation are non-refundable. The same metering applies to interrupted readings and follow-up questions: only measured usage is charged, subject to the published minimum and reserve cap. Units have no cash value and cannot be transferred or exchanged for money.</p>
   </section>
 
-  <section class="clause" id="subs">
-    <h2><span class="n">02</span> Subscriptions</h2>
-    <p>Pro and Premium renew automatically. You can cancel anytime from <a href="./settings.html">Settings</a> or through the payment provider that handled the purchase; cancellation stops the next charge and you keep access until the end of the period you&rsquo;ve already paid for.</p>
+  <section class="clause" id="packs">
+    <h2><span class="n">02</span> Prepaid purchases</h2>
+    <p>BourneWise sells prepaid Unit packs. There is no subscription or automatic renewal. Purchased Units remain in your balance while your account is open.</p>
     <ul>
-      <li>We don&rsquo;t pro-rate partial months, and we don&rsquo;t refund a renewal simply because it went unused.</li>
-      <li>Monthly Unit grants expire at the end of the cycle unless your plan states otherwise; they don&rsquo;t roll over.</li>
+      <li>Completed Unit-pack purchases are generally non-refundable except where required by law or where an exception below applies.</li>
+      <li>We do not expire a purchased balance or charge an inactivity fee.</li>
     </ul>
   </section>
 
@@ -136,14 +136,14 @@
       <a href="./terms.html">Terms</a>
       <a href="./privacy.html">Privacy</a>
       <a class="on" href="./refund.html">Refund</a>
-      <a href="./pricing.html">Plans</a>
+      <a href="./pricing.html">Usage</a>
     </div>
         <span class="est">BourneWise &middot; fixed hexagram input &middot; model-written interpretation</span>
   </div>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802f"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260802f"></script>
-<script src="./ds-motion.js?v=20260802f"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802g"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260802g"></script>
+<script src="./ds-motion.js?v=20260802g"></script>
 </body>
 </html>
