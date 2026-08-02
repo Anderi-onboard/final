@@ -214,6 +214,36 @@ body[data-page="app"] .greeting h1 {
   max-width: 700px; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500;
   line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
 }
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  body[data-page="app"] .greeting h1 {
+    color: var(--ink);
+    background-image: linear-gradient(
+      105deg,
+      var(--ink) 0%,
+      color-mix(in oklab, var(--ink) 84%, var(--bw-palette-6)) 10%,
+      color-mix(in oklab, var(--ink) 48%, var(--bw-palette-gem)) 20%,
+      color-mix(in oklab, var(--ink) 18%, var(--bw-palette-gem)) 27%,
+      color-mix(in oklab, var(--ink) 58%, var(--bw-palette-3)) 36%,
+      var(--ink) 47%,
+      color-mix(in oklab, var(--ink) 84%, var(--bw-palette-6)) 60%,
+      color-mix(in oklab, var(--ink) 52%, var(--bw-palette-gem)) 72%,
+      color-mix(in oklab, var(--ink) 22%, var(--bw-palette-gem)) 80%,
+      color-mix(in oklab, var(--ink) 62%, var(--bw-palette-3)) 89%,
+      var(--ink) 100%
+    );
+    background-position: 105% 50%;
+    background-size: 220% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bwHeroTextStream 15s linear infinite;
+  }
+}
+@keyframes bwHeroTextStream {
+  from { background-position: 105% 50%; }
+  to { background-position: -105% 50%; }
+}
 body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
 body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
 body[data-page="app"] .composer-zone { padding-bottom: 28px; }
@@ -334,7 +364,9 @@ body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); borde
   body[data-page="app"] .claude-mark,
   body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
   body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,
-  body[data-page="app"] .bwl5 { animation: none !important; }
+  body[data-page="app"] .bwl5,
+  body[data-page="app"] .greeting h1 { animation: none !important; }
+  body[data-page="app"] .greeting h1 { background-position: 50% 50%; }
 }
 
 /* Content pages ----------------------------------------------------------- */
