@@ -357,6 +357,8 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
 }
 
 @media (max-width: 560px) {
+  :root { --ui-glass-filter: blur(8px) saturate(110%); --ui-glass-filter-strong: blur(11px) saturate(114%); }
+  body[data-page="app"] .topbar { padding-top: max(14px, env(safe-area-inset-top)); }
   body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
   body[data-page="app"] .greeting h1 { font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
   body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
@@ -364,6 +366,8 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
   body[data-page="app"] .composer-help { display: none; }
+  body[data-page="app"]:not(.is-empty) .composer-zone { padding-bottom: max(14px, env(safe-area-inset-bottom)); }
+  body[data-page="app"] :is(.send,.stria,.rd-action,.rd-prompt,.side-open-btn):active { transform: scale(.97); }
   body[data-page="app"] .site-foot { line-height: 1.7; }
   body:not([data-page="app"]) .pagehead,
   body[data-page="pricing"] .pagehead { padding-left: 12px; }

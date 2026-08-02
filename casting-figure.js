@@ -560,8 +560,10 @@
       ".bw-af-loader.c{width:20px;height:23px}",
       /* Filled clay = yang face; hollow paper = yin face. These are the same
          three circles, now carrying the result of each of the six tosses. */
-      ".bw-af-loader.side-yang{background:var(--terracotta);border-color:var(--terracotta)}",
-      ".bw-af-loader.side-yin{background:var(--paper);border-color:currentColor}",
+      /* The face changes, the ink outline does not. Keeping the same dark,
+         living edge on yin and yang makes the three coins read as one object. */
+      ".bw-af-loader.side-yang{background:var(--terracotta);border-color:var(--ink)}",
+      ".bw-af-loader.side-yin{background:var(--paper);border-color:var(--ink)}",
 
       /* Standalone loader */
       ".bw-loader{display:inline-flex;align-items:center;color:var(--ink)}",
@@ -680,6 +682,11 @@
       ".bw-af-bar .bw-cast-status:empty{display:none}",
       ".bw-af-bar .bw-cast-status.is-stepping{animation:bwStatusStep .46s cubic-bezier(.16,1,.3,1) both}",
       "@keyframes bwStatusStep{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}",
+      "@media (max-width:600px){",
+        ".bw-af-bar{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:11px;row-gap:8px;width:100%;white-space:normal;margin-bottom:16px}",
+        ".bw-af-bar .bw-cast-method{align-self:center;min-width:0}",
+        ".bw-af-bar .bw-cast-status{grid-column:1/-1;width:100%;max-width:none;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.45;letter-spacing:.045em}",
+      "}",
       ".bw-af-live .bw-af-loader{transform:none}",
       /* the moment, as a compact inline row joined by organic ink dots */
       ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
@@ -697,7 +704,7 @@
       /* Six distinct throws: every round agitates the same three circles, then
          their filled/hollow faces settle before the matching line lands. */
       ".bw-cast-run .bw-af-loader{will-change:transform,border-radius,background-color;transition:background-color .24s ease,border-color .24s ease}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader{background:var(--paper)!important;border-color:currentColor}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader{background:var(--paper)!important;border-color:var(--ink)!important}",
       ".bw-cast-run .bw-coins.is-tossing .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft .82s cubic-bezier(.16,1,.3,1) both}",
       ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.b{animation:bwCoinMiddle .82s cubic-bezier(.16,1,.3,1) both}",
       ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.c{animation:bwCoinRight .82s cubic-bezier(.16,1,.3,1) both}",
@@ -1021,7 +1028,12 @@
     injectCSS();
     if (!spec || !spec.lines) return "";
     opts = opts || {};
-    if (opts.board) return fullBoardFigureHTML(opts.board, spec, opts);
+    /* The complete Sortis board is deliberately dense and works at desktop
+       reading width. On a phone, shrinking all of it into ~350 px makes every
+       label illegible. Keep the cast and moving-line information, but use the
+       focused two-figure composition at mobile width. */
+    var compactBoard = !!(opts.board && window.matchMedia && window.matchMedia("(max-width:600px)").matches);
+    if (opts.board && !compactBoard) return fullBoardFigureHTML(opts.board, spec, opts);
     var lines = spec.lines;
     var els = lineElements(lines);
     var pinfo = PALACE[patternOf(lines)] || { palaceGi: trigramOf(lines, 0).gi, world: 6 };
@@ -1113,7 +1125,7 @@
       '<defs>' + defs + '</defs>' + ben + bian + tarrow + arrows + branch + bbranch +
       benTags + bianTags + benName + bianName + '</svg>';
     var cls = 'bw-af-fig' + (opts.cast ? ' bw-casting' : ' bw-af-live');
-    return '<figure class="' + cls + '">' + barHTML("Stria 64", spec) + svg + annoLegend(hasBian && moving.length > 0) + '</figure>';
+    return '<figure class="' + cls + '">' + barHTML(spec.method === "sortis" ? "Sortis 6" : "Stria 64", spec) + svg + annoLegend(hasBian && moving.length > 0) + '</figure>';
   }
 
   function annoLegend(withMotion) {

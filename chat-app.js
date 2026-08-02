@@ -703,7 +703,9 @@
     var ci = $("composerInput");
     if (!ci || ci.tagName !== "TEXTAREA") return;
     ci.style.height = "auto";
-    ci.style.height = Math.min(ci.scrollHeight, 120) + "px";
+    var contentHeight = ci.scrollHeight;
+    ci.style.height = Math.min(contentHeight, 120) + "px";
+    ci.style.overflowY = contentHeight > 120 ? "auto" : "hidden";
   }
   $("composerInput").addEventListener("input", function () { saveDraft(); sizeComposer(); });
 

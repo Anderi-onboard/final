@@ -10,14 +10,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260801h">
-<script src="./ds-base.js?v=20260801h"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802c">
+<script src="./ds-base.js?v=20260802c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -39,6 +39,7 @@
   .brand b{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
   .pagehead .ghost{font-size:13.5px;color:var(--dim);transition:color .15s;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
+  .back-short{display:none}
 
   .wrap{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
   /* one flat editorial carrier; no backdrop sampling or soft-focus edge */
@@ -79,6 +80,10 @@
   .field input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 14px;font:inherit;font-size:14.5px;color:var(--ink);background-color:var(--paper);transition:border-color .15s}
   .field input::placeholder{color:var(--ghost)}
   .field input:focus{outline:none;border-color:var(--ink)}
+  .pass-wrap{position:relative}
+  .pass-wrap input{padding-right:68px}
+  .pass-toggle{position:absolute;right:4px;top:50%;transform:translateY(-50%);min-width:52px;min-height:38px;border-radius:8px;color:var(--dim);font-size:12px;font-weight:600;letter-spacing:.02em;transition:background .15s,color .15s}
+  .pass-toggle:hover,.pass-toggle:focus-visible{background:var(--paper-dim);color:var(--ink);outline:none}
   .prov.submit{background-color:var(--ink);color:var(--paper);border-color:var(--ink);justify-content:center;font-weight:600;margin-top:2px}
   .prov.submit:hover{background-color:#1d1812}
   .prov.submit .arr{color:rgba(244,233,210,.6)}
@@ -90,6 +95,7 @@
 
   .divider{display:flex;align-items:center;gap:12px;margin:6px 2px;color:var(--ghost);font-size:11px;letter-spacing:.08em}
   .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line-soft)}
+  .oauth-providers{display:flex;flex-direction:column;gap:10px}
 
   .card-foot{padding:14px 28px 22px;text-align:center}
   .card-foot p{font-size:12px;color:var(--ghost);line-height:1.6}
@@ -98,7 +104,13 @@
 
   footer{position:relative;z-index:2;text-align:center;padding:18px;font-size:11.5px;letter-spacing:var(--tracking-label);color:var(--ghost)}
 
-  @media (max-width:520px){.pagehead{padding:16px 18px}.card-hero h1{font-size:29px}}
+  @media (max-width:520px){
+    .pagehead{padding:calc(14px + env(safe-area-inset-top)) 18px 14px}
+    .card-hero h1{font-size:29px}
+    .wrap{padding:12px 16px 24px;align-items:flex-start}
+    footer{padding-bottom:max(18px,env(safe-area-inset-bottom))}
+  }
+  @media (max-width:360px){.back-long{display:none}.back-short{display:inline}}
   @media (prefers-reduced-motion: reduce){.card{animation:none}}
 </style>
 </head>
@@ -111,7 +123,7 @@
     <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
     <b>BourneWise</b>
   </a>
-  <a class="ghost" href="./index.html">&larr; Back to BourneWise</a>
+  <a class="ghost" href="./index.html">&larr; <span class="back-long">Back to BourneWise</span><span class="back-short">Back</span></a>
 </header>
 
 <main class="wrap">
@@ -128,22 +140,25 @@
 
     <div class="card-body">
       <div class="tabs" role="tablist">
-        <button class="tab on" id="tabLogin" type="button">Sign in</button>
-        <button class="tab" id="tabRegister" type="button">Create account</button>
+        <button class="tab on" id="tabLogin" type="button" role="tab" aria-selected="true">Sign in</button>
+        <button class="tab" id="tabRegister" type="button" role="tab" aria-selected="false">Create account</button>
       </div>
 
       <form id="authForm" novalidate>
         <div class="field reveal-row">
-          <span class="flbl">NAME</span>
+          <label class="flbl" for="fName">NAME</label>
           <input id="fName" type="text" autocomplete="name" placeholder="How the reading addresses you" maxlength="60">
         </div>
         <div class="field">
-          <span class="flbl">EMAIL</span>
+          <label class="flbl" for="fEmail">EMAIL</label>
           <input id="fEmail" type="email" autocomplete="email" spellcheck="false" placeholder="you@example.com" required>
         </div>
         <div class="field">
-          <span class="flbl">PASSWORD</span>
-          <input id="fPass" type="password" autocomplete="current-password" placeholder="At least 8 characters" required>
+          <label class="flbl" for="fPass">PASSWORD</label>
+          <div class="pass-wrap">
+            <input id="fPass" type="password" autocomplete="current-password" placeholder="At least 8 characters" required>
+            <button class="pass-toggle" id="passToggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
         </div>
         <button class="prov submit" type="submit" id="authGo">
           <span class="lbltxt">Sign in</span>
@@ -152,7 +167,9 @@
         <p class="form-msg err" id="formMsg" role="alert" hidden></p>
       </form>
 
-      <div class="divider">or continue with</div>
+      <div class="divider" id="oauthDivider" hidden>or continue with</div>
+
+      <div class="oauth-providers" id="oauthProviders" hidden>
 
       <button class="prov" data-oauth="google">
         <span class="ic">
@@ -174,6 +191,7 @@
         </span>
         Discord<span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
       </button>
+      </div>
     </div>
 
     <div class="card-foot">
@@ -184,8 +202,8 @@
 
 <footer>BourneWise &middot; founded on classical logic &middot; Perspectives, not certainty</footer>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260801h"></script>
-<script src="./account.js?v=20260801h"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802c"></script>
+<script src="./account.js?v=20260802c"></script>
 <script>
 (function () {
   "use strict";
@@ -196,6 +214,8 @@
   var goLbl = go.querySelector(".lbltxt");
   var tabLogin = document.getElementById("tabLogin");
   var tabReg = document.getElementById("tabRegister");
+  var passInput = document.getElementById("fPass");
+  var passToggle = document.getElementById("passToggle");
   var mode = "login"; // login | register
 
   function setMode(m) {
@@ -203,6 +223,8 @@
     document.body.setAttribute("data-mode", m);
     tabLogin.classList.toggle("on", m === "login");
     tabReg.classList.toggle("on", m === "register");
+    tabLogin.setAttribute("aria-selected", m === "login" ? "true" : "false");
+    tabReg.setAttribute("aria-selected", m === "register" ? "true" : "false");
     goLbl.textContent = m === "login" ? "Sign in" : "Create account";
     document.getElementById("fPass").setAttribute("autocomplete", m === "login" ? "current-password" : "new-password");
     msg.hidden = true;
@@ -210,6 +232,15 @@
   tabLogin.addEventListener("click", function () { setMode("login"); });
   tabReg.addEventListener("click", function () { setMode("register"); });
   setMode("login");
+
+  passToggle.addEventListener("click", function () {
+    var showing = passInput.type === "text";
+    passInput.type = showing ? "password" : "text";
+    passToggle.textContent = showing ? "Show" : "Hide";
+    passToggle.setAttribute("aria-label", showing ? "Show password" : "Hide password");
+    passToggle.setAttribute("aria-pressed", showing ? "false" : "true");
+    passInput.focus();
+  });
 
   function showMsg(text, ok) {
     msg.textContent = text;
@@ -253,15 +284,17 @@
   });
   if (A && A.fetchProviders) {
     A.fetchProviders(function (map) {
+      var liveProviders = 0;
       Object.keys(oauthBtns).forEach(function (p) {
         if (!map[p]) {
-          var b = oauthBtns[p];
-          b.setAttribute("disabled", "");
-          b.title = "Not configured yet";
-          var arr = b.querySelector(".arr");
-          if (arr) arr.outerHTML = '<span class="soon">soon</span>';
+          oauthBtns[p].hidden = true;
+        } else {
+          oauthBtns[p].hidden = false;
+          liveProviders++;
         }
       });
+      document.getElementById("oauthDivider").hidden = liveProviders === 0;
+      document.getElementById("oauthProviders").hidden = liveProviders === 0;
     });
   }
 })();

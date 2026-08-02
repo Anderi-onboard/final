@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260801h">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260801h">
-<script src="./ds-base.js?v=20260801h"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802c">
+<script src="./ds-base.js?v=20260802c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -550,7 +550,7 @@
     .greeting h1{font-size:clamp(26px,8vw,42px)}
     .composer-zone{padding-bottom:18px}
     .composer{padding:9px 9px 9px 13px;gap:7px}
-    .composer textarea{font-size:15px;min-height:38px;padding:7px 0}
+    .composer textarea{font-size:15px;min-height:48px;padding:7px 0}
     .stria{padding:9px 11px;font-size:12px}
     .send{width:42px;height:42px}
     .disclaimer{font-size:10.5px}
@@ -610,6 +610,7 @@
      the mobile treatment here (last-wins): drop the note, keep the nav one line. */
   @media (max-width:700px){
     .claude-note{display:none}
+    body:not(.is-empty) .guide-coach{display:none!important}
     .top-right{gap:14px;flex-wrap:nowrap}
     .topbar .ghost{white-space:nowrap}
     /* In a conversation the topbar carries the thread title as well as the
@@ -634,6 +635,8 @@
     .disclaimer{margin-top:9px}
   }
   @media (max-width:390px){.rd-prompts{grid-template-columns:1fr}}
+  .why-short{display:none}
+  @media (max-width:360px){.why-long{display:none}.why-short{display:inline}}
   .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
   .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink);min-height:1.15em;transition:opacity .28s ease,transform .34s cubic-bezier(.16,1,.3,1)}
   .greeting h1.is-changing{opacity:0;transform:translateY(8px)}
@@ -744,7 +747,7 @@
         <span class="cn-text" style="font-family: var(--sans)">Claude writes the reading. The cast hexagram sets its structure and limits; the model does not choose the result.</span>
       </span>
       <a class="ghost" href="./guide.html" id="howItWorksLink" style="font-weight: 700; font-family: var(--sans)">The method</a>
-      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)">Why BourneWise</a>
+      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)"><span class="why-long">Why BourneWise</span><span class="why-short">Why</span></a>
     </div>
   </header>
 
@@ -782,16 +785,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260801h"></script>
-<script src="./casting-figure.js?v=20260801h"></script>
-<script src="./liuyao-engine.js?v=20260801h"></script>
-<script src="./liuyao-ai.js?v=20260801h"></script>
-<script src="./liuyao-chart.js?v=20260801h"></script>
-<script src="./prompt-engine.js?v=20260801h"></script>
-<script src="./prompt-router.js?v=20260801h"></script>
-<script src="./account.js?v=20260801h"></script>
-<script>window.BW_BUILD="20260801h";</script>
-<script src="./chat-app.js?v=20260801h"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802c"></script>
+<script src="./casting-figure.js?v=20260802c"></script>
+<script src="./liuyao-engine.js?v=20260802c"></script>
+<script src="./liuyao-ai.js?v=20260802c"></script>
+<script src="./liuyao-chart.js?v=20260802c"></script>
+<script src="./prompt-engine.js?v=20260802c"></script>
+<script src="./prompt-router.js?v=20260802c"></script>
+<script src="./account.js?v=20260802c"></script>
+<script>window.BW_BUILD="20260802c";</script>
+<script src="./chat-app.js?v=20260802c"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
