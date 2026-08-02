@@ -7,9 +7,9 @@ OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Optional model overrides (defaults shown, as OpenRouter model slugs). The
 # proxy routes by product/role:
-#   stria  → Sonnet 4.6     sortis → Opus 4.8     router/qc → Haiku 4.5
-# STRIA_MODEL=anthropic/claude-sonnet-4.6
-# SORTIS_MODEL=anthropic/claude-opus-4.8
+#   stria  → Opus 5          sortis → Opus 5        router/qc → Haiku 4.5
+# STRIA_MODEL=anthropic/claude-opus-5
+# SORTIS_MODEL=anthropic/claude-opus-5
 # UTILITY_MODEL=anthropic/claude-haiku-4.5
 
 # Optional cap on response length (clamped 256–8192).

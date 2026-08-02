@@ -4,20 +4,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BourneWise — Perspectives, not certainty</title>
+  <title>BourneWise — Hexagram-based decision analysis</title>
 <style>html,body{background:#F2EDE7}</style>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the faces used above the fold so
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802c">
-<script src="./ds-base.js?v=20260802c"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802d">
+<script src="./ds-base.js?v=20260802d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -742,9 +742,9 @@
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New casting</h1>
     <div class="top-right">
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
-      <span class="claude-note" title="How each reading is produced">
+      <span class="claude-note" title="How answers are generated">
         <img class="claude-mark" src="./assets/claude-mark.png" alt="" width="20" height="20" decoding="async" aria-hidden="true">
-        <span class="cn-text" style="font-family: var(--sans)">Claude writes the reading. The cast hexagram sets its structure and limits; the model does not choose the result.</span>
+            <span class="cn-text" style="font-family: var(--sans)">We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.</span>
       </span>
       <a class="ghost" href="./guide.html" id="howItWorksLink" style="font-weight: 700; font-family: var(--sans)">The method</a>
       <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)"><span class="why-long">Why BourneWise</span><span class="why-short">Why</span></a>
@@ -753,7 +753,7 @@
 
   <div class="guide-coach pressable" id="guideCoach" role="button" tabindex="0" aria-label="Open the five-minute walk-through" hidden>
     <button class="cx" id="guideCoachClose" type="button" aria-label="Dismiss">&times;</button>
-    <span class="ct"><b>New to BourneWise?</b> See the method in five short steps.</span>
+    <span class="ct"><b>How does this work?</b> See how casting, interpretation, and billing fit together.</span>
   </div>
 
   <div class="read-progress" id="readProgress" aria-hidden="true"><i id="readProgressFill"></i></div>
@@ -762,7 +762,7 @@
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" style="font-family: var(--serif)">Name the decision in front of you.</h1>
+          <h1 id="greetLine" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
         </div>
       </section>
     </div>
@@ -771,41 +771,41 @@
   <footer class="composer-zone">
     <form class="composer" id="composerForm">
       <button type="button" class="stria pressable" id="methodChip" title="Change casting method" aria-haspopup="true" aria-expanded="false">Stria 64</button>
-      <textarea id="composerInput" rows="1" placeholder="Describe the situation, then ask one clear question&hellip;" aria-label="Ask BourneWise" autocomplete="off"></textarea>
+        <textarea id="composerInput" rows="1" placeholder="Describe the situation, then ask one clear question&hellip;" aria-label="Casting question" autocomplete="off"></textarea>
       <button type="submit" class="send pressable" id="sendBtn" aria-label="Cast">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 8h11M9 3.5L13.5 8 9 12.5"></path></svg>
       </button>
     </form>
-    <div class="composer-help" aria-hidden="true"><span>Enter to cast &middot; Shift+Enter for a new line</span><span>Follow-up questions use this same casting</span></div>
+    <div class="composer-help" aria-hidden="true"><span>Enter to submit &middot; Shift+Enter for a new line</span><span>Follow-ups reuse the current hexagram</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
-    <p class="disclaimer" id="methodNote">Perspectives, not certainty &middot; Stria 64 &mdash; 300 units per casting &middot; follow-ups cost no more than 150 units</p>
+    <p class="disclaimer" id="methodNote">Stria 64 costs 300 units &middot; follow-ups reuse this hexagram and cost up to 150 units</p>
     <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans</a></p>
   </footer>
 </main>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802c"></script>
-<script src="./casting-figure.js?v=20260802c"></script>
-<script src="./liuyao-engine.js?v=20260802c"></script>
-<script src="./liuyao-ai.js?v=20260802c"></script>
-<script src="./liuyao-chart.js?v=20260802c"></script>
-<script src="./prompt-engine.js?v=20260802c"></script>
-<script src="./prompt-router.js?v=20260802c"></script>
-<script src="./account.js?v=20260802c"></script>
-<script>window.BW_BUILD="20260802c";</script>
-<script src="./chat-app.js?v=20260802c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802d"></script>
+<script src="./casting-figure.js?v=20260802d"></script>
+<script src="./liuyao-engine.js?v=20260802d"></script>
+<script src="./liuyao-ai.js?v=20260802d"></script>
+<script src="./liuyao-chart.js?v=20260802d"></script>
+<script src="./prompt-engine.js?v=20260802d"></script>
+<script src="./prompt-router.js?v=20260802d"></script>
+<script src="./account.js?v=20260802d"></script>
+<script>window.BW_BUILD="20260802d";</script>
+<script src="./chat-app.js?v=20260802d"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
   if(el){
     var prompts=[
-      'Name the decision you need to make.',
-      'Describe what changed \u2014 and why it matters.',
-      'Ask about the choice in front of you.',
-      'State the situation. Then ask what follows.',
-      'Bring one question you genuinely need answered.',
-      'Say what is at stake. Then ask plainly.'
+      'Describe the situation and ask one specific question.',
+      'State the decision, the constraints, and what you need to know.',
+      'Explain what changed, then ask what to do next.',
+      'Name the options and the trade-off between them.',
+      'Include the context that can change the answer.',
+      'Use one casting for one question.'
     ];
     /* start somewhere random, then let the ridge carry each one off and bring
        the next in — the same wipe the content pages use, so the landing and the

@@ -10,14 +10,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802c">
-<script src="./ds-base.js?v=20260802c"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802d">
+<script src="./ds-base.js?v=20260802d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -172,20 +172,20 @@
   <nav class="nav">
     <a class="ghost" href="./guide.html">The method</a>
     <a class="ghost" href="./about.html">Why BourneWise</a>
-    <a class="cta" href="./index.html">Ask BourneWise</a>
+      <a class="cta" href="./index.html">Start a casting</a>
   </nav>
 </header>
 
 <div class="shell">
   <section class="hero">
     <div class="eyebrow"><b>&#9670;</b><span>Plans &amp; balance</span></div>
-    <h1>Honest readings, plainly priced</h1>
-    <p>You keep a balance of units and spend them question by question — 300 for a Stria 64 read, 1,500 for a Sortis 6 synthesis, and follow-up questions on the same casting for at most half. Choose a plan based on how often you expect to cast.</p>
+    <h1>Pricing based on analysis depth and usage</h1>
+    <p>Stria costs 300 units per new hexagram. Sortis costs 1,500. Follow-ups reuse the same result, are metered by usage, and never exceed half the original casting price.</p>
     <div class="ledgerstrip">
       <span class="who" id="whoLine">Not signed in</span>
       <span>·</span>
       <span>Available units: <b id="ledgerCount">—</b></span>
-      <a href="./index.html#plans" id="ledgerCta">Ask BourneWise</a>
+          <a href="./index.html#plans" id="ledgerCta">Start a casting</a>
     </div>
   </section>
 
@@ -218,14 +218,14 @@
     </div>
 
     <div class="plan feat" data-plan="pro">
-      <span class="ptag">Most selected</span>
+      <span class="ptag">Recommended</span>
       <h2>Pro</h2>
-      <div class="desc">For regular use: daily Stria readings or several Sortis sessions each month.</div>
+      <div class="desc">For regular use of both Stria and Sortis, with full reading history.</div>
       <div class="price"><span class="amt" data-mo="19" data-yr="15.83">$19</span><span class="per">/ month</span></div>
       <div class="grant">Includes <b>22,500</b> units monthly</div>
       <ul>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~75 Stria or ~15 Sortis / month</li>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Sortis 6 synthesis unlocked</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Sortis 6 analysis unlocked</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Full reading history</li>
       </ul>
       <button class="choose" data-grant="22500">Choose Pro</button>
@@ -233,7 +233,7 @@
 
     <div class="plan" data-plan="premium">
       <h2>Premium</h2>
-      <div class="desc">For frequent deep readings and more room for follow-up questions.</div>
+      <div class="desc">For higher monthly usage, frequent Sortis analysis, and longer follow-up threads.</div>
       <div class="price"><span class="amt" data-mo="29" data-yr="24.17">$29</span><span class="per">/ month</span></div>
       <div class="grant">Includes <b>45,000</b> units monthly</div>
       <ul>
@@ -248,7 +248,7 @@
   <section class="topup" aria-label="One-time Units">
     <div class="th">
       <h3>Additional units</h3>
-      <span class="sub">For bridging the gap between sessions.</span>
+      <span class="sub">Add units without changing your subscription.</span>
     </div>
     <div class="packs">
       <button class="pack" data-grant="4500"><div class="u">4,500</div><div class="p">$8</div><div class="bonus">~3 Sortis or ~15 Stria</div></button>
@@ -257,27 +257,27 @@
       <button class="pack" data-grant="75000"><div class="u">75,000</div><div class="p">$55</div><div class="bonus">~50 Sortis · +15% bonus</div></button>
     </div>
     <div class="costs">
-      <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · Sonnet</small></div><div class="ct">300<small> units / casting</small></div></div>
-      <div class="cost"><div class="nm">Sortis 6<small>Causal synthesis · Opus</small></div><div class="ct">1,500<small> units / casting</small></div></div>
+      <div class="cost"><div class="nm">Stria 64<small>Primary hexagram · Claude Opus 5</small></div><div class="ct">300<small> units / casting</small></div></div>
+      <div class="cost"><div class="nm">Sortis 6<small>Moving lines + transformed hexagram · Claude Opus 5</small></div><div class="ct">1,500<small> units / casting</small></div></div>
     </div>
   </section>
 
   <section class="faq" aria-label="Common questions">
     <h3>Common questions</h3>
-    <p class="sub">Everything you need before you commit a balance.</p>
+    <p class="sub">Billing, limits, and data handling.</p>
     <div class="qa">
       <div><div class="q">Do units expire?</div><div class="a">Plan units refresh each billing month and do not roll over. One-time top-up units never expire while your account stays active.</div></div>
       <div><div class="q">What happens when I run out?</div><div class="a">New castings pause until you get more units or your plan renews. Your reading history and open threads stay intact.</div></div>
       <div><div class="q">Can I change or cancel a plan?</div><div class="a">Switch tiers or cancel anytime from your account. Changes apply at the next billing cycle; remaining units stay on your balance.</div></div>
       <div><div class="q">Are units refundable?</div><div class="a">Once a casting is drawn and its reading begins, those units are spent and non-refundable. Unused balances follow the refund policy.</div></div>
-      <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Stria 64 maps your immediate situation at 300 units. Sortis 6 evaluates dynamic permutations for high-stakes decisions at 1,500 units—powered by a more advanced reasoning engine.</div></div>
+      <div><div class="q">What's the difference between Stria and Sortis?</div><div class="a">Both use Claude Opus 5. Stria interprets the primary hexagram; Sortis also analyzes moving lines and the transformed hexagram.</div></div>
       <div><div class="q">Is my data private?</div><div class="a">Readings are encrypted at rest, never sold, never used to train broad models, and deleted on request.</div></div>
     </div>
   </section>
 
   <section class="ribbon">
     <div>
-      <div class="lbl">&#9670;&nbsp; The fine print, stated plainly</div>
+      <div class="lbl">&#9670;&nbsp; Refund rule</div>
       <p class="said">Units are consumable digital assets. Once a casting is drawn and its reading begins, the service has been delivered and the units are spent. They are non-refundable.</p>
     </div>
     <a href="./refund.html">Review the refund policy</a>
@@ -288,16 +288,16 @@
     <a href="./terms.html">Terms of Service</a>
     <a href="./privacy.html">Privacy Policy</a>
     <a href="./refund.html">Refund Policy</a>
-    <span>BourneWise · founded on classical logic</span>
+        <span>BourneWise · fixed hexagram input · model-written interpretation</span>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802c"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260802c"></script>
-<script src="./ds-motion.js?v=20260802c"></script>
-<script src="./account.js?v=20260802c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802d"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260802d"></script>
+<script src="./ds-motion.js?v=20260802d"></script>
+<script src="./account.js?v=20260802d"></script>
 <script>
 (function () {
   "use strict";
@@ -325,7 +325,7 @@
     var s = A.state(), a = s.account;
     document.getElementById("ledgerCount").textContent = s.units.toLocaleString("en-US");
     document.getElementById("whoLine").textContent = a.signedIn ? (a.name + " · " + A.planName(a.plan)) : "Not signed in";
-    document.getElementById("ledgerCta").textContent = a.signedIn ? "Ask BourneWise" : "Sign in";
+      document.getElementById("ledgerCta").textContent = a.signedIn ? "Start a casting" : "Sign in";
     document.getElementById("ledgerCta").setAttribute("href", a.signedIn ? "./index.html" : "./login.html");
     document.querySelectorAll(".plan").forEach(function (p) {
       var id = p.getAttribute("data-plan");

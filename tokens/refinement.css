@@ -183,7 +183,7 @@ body[data-page="app"] .topbar .ghost {
   border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
-body[data-page="app"] .claude-note { opacity: .72; max-width: 330px; }
+body[data-page="app"] .claude-note { opacity: .72; max-width: 400px; }
 body[data-page="app"] .claude-mark,
 body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
 body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,

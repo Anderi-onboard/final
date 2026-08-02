@@ -35,13 +35,13 @@
     stria: {
       id: "stria", name: "Stria 64", cost: 300, followCap: 150, tag: "Present structure",
       depth: "Primary hexagram",
-      blurb: "A clear reading of the primary figure: where the situation stands now.",
+      blurb: "Interprets the primary hexagram against your question.",
       gated: false
     },
     sortis: {
       id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
-      blurb: "A deeper reading of the moving lines, what is changing, and where the situation may be heading.",
+      blurb: "Adds moving lines and the transformed hexagram to the analysis.",
       gated: true
     }
   };

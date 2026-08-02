@@ -5,18 +5,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to use BourneWise</title>
-<meta name="description" content="How to choose a reading depth, frame a useful question, and understand the result.">
+  <meta name="description" content="How BourneWise generates a hexagram, uses Claude Opus 5 to interpret it, and charges units.">
 <style>html,body{background:#F2EDE7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802c">
-<script src="./ds-base.js?v=20260802c"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802d">
+<script src="./ds-base.js?v=20260802d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -162,7 +162,7 @@
   </a>
   <span class="spacer"></span>
   <a class="enter pressable" href="./index.html">
-    <span>Ask BourneWise</span>
+      <span>Start a casting</span>
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
   </a>
 </header>
@@ -170,10 +170,10 @@
 <!-- ── PROLOGUE ─────────────────────────────────────────────────────────── -->
 <section class="hero">
   <svg class="mark" data-reveal="fade" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-  <h1 data-split>Ask one clear question. Read the structure that answers it.</h1>
-  <p class="sub" data-reveal>Five short sections explain how to choose a reading, frame a useful question, and interpret the result.</p>
-  <p class="meta" data-reveal>About five minutes &middot; you keep what you learn</p>
-  <span class="cue" aria-hidden="true"><span class="line"></span>Scroll to begin</span>
+  <h1 data-split>How casting, interpretation, and billing work.</h1>
+  <p class="sub" data-reveal>Five sections explain the two analysis modes, what context to provide, what Claude receives, and how units are charged.</p>
+  <p class="meta" data-reveal>About five minutes</p>
+  <span class="cue" aria-hidden="true"><span class="line"></span>Continue</span>
 </section>
 
 <!-- ── 01 · CHOOSE YOUR INSTRUMENT ──────────────────────────────────────── -->
@@ -188,18 +188,18 @@
     <div class="entries three" data-reveal-group>
       <div class="entry" data-reveal>
         <div class="eh"><b>Stria 64</b><span class="u">FROM 300 UNITS</span></div>
-        <p>A same-day read of where things stand right now: the figure, its temperament, the way it leans. Quick, honest, no pretence of being more than a clear look at the present.</p>
-        <p class="when">Use Stria for orientation, a quick check, or a clear view of the present.</p>
+        <p>Interprets the primary hexagram and maps it to the situation described in your question.</p>
+        <p class="when">Use Stria when you need a concise analysis of current conditions.</p>
       </div>
       <div class="entry" data-reveal>
         <div class="eh"><b>Sortis 6</b><span class="u">FROM 1,500 UNITS</span></div>
-        <p>The full method: moving lines, the second figure the situation is turning into, each changing line read on its own. Built for the fork you&rsquo;ll still be living with a year from now.</p>
-        <p class="when">Use Sortis when the stakes are higher and you need the moving lines and transformed figure.</p>
+        <p>Analyzes the primary hexagram, every moving line, and the transformed hexagram.</p>
+        <p class="when">Use Sortis when the decision depends on how the situation is changing.</p>
       </div>
       <div class="entry" data-reveal>
-        <div class="eh"><b>Units, plainly</b></div>
-        <p>Units are the meter. A reading costs what it actually consumes &mdash; the figures above are the starting draw, and you&rsquo;re charged for real use, no rounding up. A follow-up in the same thread is far cheaper than a fresh cast.</p>
-        <p class="when">Everyone begins with 500 on the house.</p>
+        <div class="eh"><b>How units are charged</b></div>
+        <p>A new Stria casting costs 300 units; Sortis costs 1,500. Follow-ups reuse the same hexagram, are metered by usage, and are capped at half the original casting price.</p>
+        <p class="when">A new account receives 500 units once.</p>
       </div>
     </div>
   </div>
@@ -216,20 +216,20 @@
     </div>
     <div class="habits" data-reveal-group>
       <div class="habit" data-reveal><span class="no">1</span><div>
-        <b>Bring the one keeping you up</b>
-        <p>Not the safest question &mdash; the real one. The figure has the most to say about the thing you keep circling back to. Ask that.</p>
+        <b>Ask about one decision or situation</b>
+        <p>A casting is scoped to one subject. Use a new casting when the person, event, or outcome changes.</p>
       </div></div>
       <div class="habit" data-reveal><span class="no">2</span><div>
         <b>Ask one question, then add the necessary context</b>
         <p>Use one clear sentence, then add who is involved, what is at stake, and the choice you face. Keep only the context needed to understand the decision.</p>
       </div></div>
       <div class="habit" data-reveal><span class="no">3</span><div>
-        <b>Ask about a movement, not a fact</b>
-        <p>&ldquo;Should I take the offer?&rdquo; reads far better than &ldquo;will it rain Tuesday?&rdquo; The instrument reasons about direction, timing and choice.</p>
+        <b>Ask about direction, timing, or a choice</b>
+        <p>&ldquo;Should I take the offer?&rdquo; gives the system a decision to analyze. A factual lookup such as weather does not.</p>
       </div></div>
       <div class="habit" data-reveal><span class="no">4</span><div>
-        <b>One honest cast, then sit with it</b>
-        <p>Re-casting the same question hoping for a kinder answer only buys you noise. Ask once, in good faith. If the answer stings, that&rsquo;s often the part worth reading twice.</p>
+        <b>Reuse the result for follow-ups</b>
+        <p>Ask follow-up questions in the same thread when the subject has not changed. Recasting the same question produces a new random input, not a more accurate answer.</p>
       </div></div>
     </div>
   </div>
@@ -266,19 +266,19 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-no" data-reveal>04</span>
-      <span class="kicker" data-reveal>The one rule that outlives all the others</span>
-      <h2 class="lead-h" data-split>A good omen is <span class="gild">not a finish line.</span></h2>
+      <span class="kicker" data-reveal>The operating limit</span>
+      <h2 class="lead-h" data-split>A supportive result is <span class="gild">not a guarantee.</span></h2>
       <p class="seal" lang="zh" data-reveal>卦后并非万事大吉 &middot; 仍需努力,自强不息</p>
       <p class="lead-p" data-reveal>A favourable figure describes supportive conditions; it does not guarantee success. An unfavourable one shows likely cost or resistance. Either way, your decisions and follow-through still matter.</p>
     </div>
     <div class="entries two" data-reveal-group>
       <div class="entry" data-reveal>
-        <div class="eh"><b>The figure is cast by the old logic</b></div>
-        <p>The six lines and the hexagram they form come from a faithful casting engine &mdash; the same causal method, untouched, that dynasties reasoned by. No model chooses the figure. Chance and structure do, as they always have.</p>
+        <div class="eh"><b>Casting runs before model inference</b></div>
+        <p>The casting engine generates six lines and computes the hexagram first. The model receives the result as fixed input and cannot change it.</p>
       </div>
       <div class="entry" data-reveal>
-        <div class="eh"><b>Claude explains the fixed result</b></div>
-        <p>The hexagram is cast first and remains fixed. Claude explains that structure in the context of your question; it does not choose the lines, replace the figure, or change the result.</p>
+        <div class="eh"><b>Claude Opus 5 writes the answer</b></div>
+        <p>Claude Opus 5 receives your question, the computed hexagram, and the relevant line data. It generates the explanation but does not generate the cast.</p>
       </div>
     </div>
   </div>
@@ -287,18 +287,18 @@
 <!-- ── CLOSE ────────────────────────────────────────────────────────────── -->
 <section class="close">
   <div class="wrap">
-    <h2 data-split>The instrument is yours. Bring your question.</h2>
+    <h2 data-split>Describe the situation and ask one specific question.</h2>
     <a class="go pressable" data-reveal href="./index.html">
       Start a reading
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
     </a>
-    <p class="tiny" data-reveal>500 free units are waiting</p>
+    <p class="tiny" data-reveal>New accounts include 500 units</p>
   </div>
 </section>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802c"></script>
-<script src="./assets/vendor/lenis.min.js?v=20260802c"></script>
-<script src="./ds-motion.js?v=20260802c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802d"></script>
+<script src="./assets/vendor/lenis.min.js?v=20260802d"></script>
+<script src="./ds-motion.js?v=20260802d"></script>
 <script>
   /* solidify the top bar once the hero is behind us */
   (function () {

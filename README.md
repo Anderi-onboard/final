@@ -37,17 +37,19 @@ One Function, `functions/api/claude.js`, serves the whole backend:
 - `POST /api/claude` — the browser sends *intent* (`product` / `role`) and the
   proxy picks the model server-side, so model choice + cost control live in one
   place. The Anthropic key never reaches the client.
-  - `product: "stria"`  → **Sonnet 4.6** (baseline reading)
-  - `product: "sortis"` → **Opus 4.8** (deep causal synthesis)
+  - `product: "stria"`  → **Opus 5** (primary-hexagram analysis)
+  - `product: "sortis"` → **Opus 5** (moving-line and transformed-hexagram analysis)
   - `role: "router" | "qc"` → **Haiku 4.5** (cheap classify / quality-control)
   - an explicit `model` is honoured only if allow-listed (`opus`/`sonnet`/`haiku`)
 - `GET /api/claude` — health probe: confirms the route is live and whether the
   key is set (without leaking it). Useful to verify wiring before spending units.
 
 The Sortis pipeline is **Gate → Route → focused prompt → QC pass** (with one
-retry on QC failure); Stria runs a single Sonnet pass. If the key is missing or
-a call fails, the front-end falls back to its deterministic Liu Yao reading, so
-the site never breaks.
+retry on QC failure); Stria runs a single Opus pass. The configured
+`anthropic/claude-opus-5` slug is a provisional offline target: verify and
+replace it with the provider's official public model ID before enabling the API.
+If the key is missing or a call fails, the front-end falls back to its
+deterministic Liu Yao reading, so the site never breaks.
 
 ## Accounts, ledger & history (D1)
 
@@ -98,8 +100,8 @@ deterministic interpretation of the Liu Yao board (real structure, generic prose
 To get live, written readings from Claude (via OpenRouter):
 1. In your Pages project → **Settings → Environment variables**, add a secret:
    - `OPENROUTER_API_KEY` = your OpenRouter API key
-   - (optional) `STRIA_MODEL` — defaults to `anthropic/claude-sonnet-4.6`
-   - (optional) `SORTIS_MODEL` — defaults to `anthropic/claude-opus-4.8`
+   - (optional) `STRIA_MODEL` — prepared to default to `anthropic/claude-opus-5`
+   - (optional) `SORTIS_MODEL` — prepared to default to `anthropic/claude-opus-5`
    - (optional) `UTILITY_MODEL` — defaults to `anthropic/claude-haiku-4.5`
    - (optional) `CLAUDE_MAX_TOKENS` — defaults to `1024`
 2. Redeploy. The browser calls `/api/claude`, which the bundled

@@ -61,15 +61,15 @@
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
-    $("methodNote").textContent = "Perspectives, not certainty · " + m.name + " — " +
-      m.cost.toLocaleString("en-US") + " units per casting · follow-ups cost no more than " +
+    $("methodNote").textContent = m.name + " costs " +
+      m.cost.toLocaleString("en-US") + " units · follow-ups reuse this hexagram and cost up to " +
       m.followCap.toLocaleString("en-US") + " units";
     renderMethodMenu();
   }
   function renderMethodMenu() {
     var menu = $("methodMenu");
     if (!menu) return;
-    menu.innerHTML = '<div class="mm-head lbl">Choose the depth of this reading</div>';
+    menu.innerHTML = '<div class="mm-head lbl">Choose an analysis depth</div>';
     ORDER.forEach(function (id) {
       var m = METHODS[id];
       var ok = A.entitled(id);
@@ -86,7 +86,7 @@
         "</span>" +
         '<span class="mm-cost" style="font-family:\'BioRhyme\',serif">' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
       row.addEventListener("click", function () {
-        if (!ok) { closeMethod(); openPlans(); toast("Sortis 6 opens on the Pro plan."); return; }
+  if (!ok) { closeMethod(); openPlans(); toast("Sortis 6 requires the Pro plan."); return; }
         S.method = id; save(); renderMethod(); closeMethod();
       });
       menu.appendChild(row);
@@ -373,17 +373,17 @@
       ["Near term", "What is most likely to change first?"],
       ["Next move", "What is mine to do now?"]
     ]);
-    return '<section class="rd-depth" aria-label="Continue the ' + methodLabel + ' inquiry">' +
-      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Continue with this casting</span>' +
-      '<h4>' + (continued ? 'Test the reading before you act.' : (sortis ? 'Examine the change from six angles.' : 'Examine the figure from six angles.')) + '</h4>' +
-      '<p>Choose a question below. It will fill the composer, where you can edit it before sending.</p></div>' +
+    return '<section class="rd-depth" aria-label="Ask a follow-up using the same ' + methodLabel + ' hexagram">' +
+      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Same hexagram</span>' +
+      '<h4>' + (continued ? 'Check the previous answer against another constraint.' : (sortis ? 'Inspect the change before you decide.' : 'Inspect the current structure before you decide.')) + '</h4>' +
+      '<p>Select a prompt to place it in the composer. You can edit it before submitting.</p></div>' +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
           '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
           '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h9M9 4.5 12.5 8 9 11.5"></path></svg>' +
         '</button>';
       }).join("") + '</div>' +
-      '<p class="rd-depth-note">Nothing is sent until you press the arrow. A follow-up uses this casting and costs no more than ' +
+      '<p class="rd-depth-note">Nothing is sent until you submit. The same hexagram is included with every follow-up, which costs up to ' +
         (sortis ? '750' : '150') + ' units.</p>' +
     '</section>';
   }
@@ -418,13 +418,13 @@
       if (heroEmpty) { threadInner.appendChild(heroEmpty); return; }
       threadInner.innerHTML =
         '<div class="empty">' +
-          '<div class="eyebrow"><b>\u25C6</b>&nbsp; The oracle is listening</div>' +
-          "<h2>What weighs<br>on you?</h2>" +
+          '<div class="eyebrow"><b>\u25C6</b>&nbsp; New reading</div>' +
+          "<h2>Describe the situation.<br>Ask one question.</h2>" +
           '<svg class="flourish" width="186" height="14" viewBox="0 0 186 14" aria-hidden="true">' +
             '<path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 182 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>' +
             '<path d="M10 13 C52 8 106 12 176 7" stroke="#2A2016" stroke-width="1" fill="none" stroke-linecap="round"></path>' +
           "</svg>" +
-          "<p>Ask plainly. You\u2019ll get one honest reading \u2014 a way of seeing, yours to weigh.</p>" +
+          "<p>The casting engine creates a fixed hexagram. Claude Opus 5 interprets it against the context you provide.</p>" +
         "</div>";
       return;
     }
@@ -776,7 +776,7 @@
     // the plans view. The old code swapped Sortis→Stria without telling the
     // user, so they paid for a shallower reading (Sonnet, no board) than they
     // asked for — which is exactly why Opus never showed up for a "Sortis" cast.
-    if (!A.entitled(m.id)) { openPlans(); toast(m.name + " opens on Pro or Premium."); return; }
+      if (!A.entitled(m.id)) { openPlans(); toast(m.name + " requires Pro or Premium."); return; }
 
     /* Follow-up detection: this conversation already holds a casting by the
        same method → the new question rides ON that casting (metered billing,
@@ -827,7 +827,7 @@
       pulseLedger();
       var zhS = /[一-鿿]/.test(text);
       toast(zhS ? "点数不够——这一卦需要 " + needed.toLocaleString("en-US") + " 点。左下角可充值。"
-                : "You\u2019re short on units — this one takes " + needed.toLocaleString("en-US") + ". Top up from the ledger.");
+      : "Insufficient units. This casting requires " + needed.toLocaleString("en-US") + ". Add units to continue.");
       return;
     }
 

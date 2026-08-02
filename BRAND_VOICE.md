@@ -1,15 +1,18 @@
 # BourneWise voice
 
-BourneWise sounds calm, exact, and structurally confident. It makes a complex
-question feel legible without pretending that life is simple.
+BourneWise sounds like a careful developer explaining a system they built:
+calm, exact, specific about what happens, and explicit about what the system
+does not do.
 
 ## Principles
 
-1. Lead with the consequence, not the interface.
-2. Prefer a short, concrete verb over ceremony or metaphor.
-3. Use one sentence for one idea.
-4. Keep wit in headlines; keep controls literal.
-5. Say what the product can do. Never imply certainty.
+1. State what the system does before describing how it feels.
+2. Name the model, the casting step, the cost, and the limit when relevant.
+3. Prefer a short, concrete verb over ceremony or metaphor.
+4. Use one sentence for one idea.
+5. Keep controls literal. Reserve personality for headlines.
+6. Separate generation from interpretation: code casts the figure; Claude writes the answer.
+7. Say what the product can do. Never imply certainty.
 
 ## Canonical product language
 
@@ -28,3 +31,6 @@ question feel legible without pretending that life is simple.
 Avoid `Open the app`, `Enter the app`, `Begin the dialogue`, `Return to center`,
 and interchangeable use of `inquiry`, `reading`, and `casting`.
 
+Avoid unexplained phrases such as `the oracle is listening`, `bring the question
+you cannot put down`, or `the instrument is yours`. Replace them with the user
+action, system behavior, or constraint they are trying to describe.

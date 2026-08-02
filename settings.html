@@ -10,14 +10,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802c">
-<script src="./ds-base.js?v=20260802c"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802d">
+<script src="./ds-base.js?v=20260802d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -146,7 +146,7 @@
           <div class="rr"><a class="btn ink" href="./pricing.html">View plans</a></div>
         </div>
         <div class="row" id="subRow" hidden>
-          <div class="rl"><b>Your subscription</b><span id="subNote">Renews automatically. Cancel anytime — your units stay yours.</span></div>
+          <div class="rl"><b>Your subscription</b><span id="subNote">Renews automatically. Cancellation takes effect at the end of the billing period.</span></div>
           <div class="rr" style="display:flex;gap:10px">
             <button class="btn ink" id="portalBtn" type="button">Manage billing</button>
             <button class="btn" id="cancelSubBtn" type="button" style="color:var(--terracotta);border-color:currentColor">Cancel subscription</button>
@@ -184,9 +184,9 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802c"></script>
-<script src="./account.js?v=20260802c"></script>
-<script src="./sidebar.js?v=20260802c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802d"></script>
+<script src="./account.js?v=20260802d"></script>
+<script src="./sidebar.js?v=20260802d"></script>
 <script>
 (function () {
   "use strict";
@@ -245,7 +245,7 @@
         "<p>" + m.blurb + "</p></span>" +
         '<span class="mcost">' + m.cost.toLocaleString("en-US") + "</span>";
       row.addEventListener("click", function () {
-        if (!ok) { toast("Sortis 6 opens on the Pro plan."); location.href = "./pricing.html"; return; }
+        if (!ok) { toast("Sortis 6 requires the Pro plan."); location.href = "./pricing.html"; return; }
         var s2 = A.state(); s2.method = m.id; A.save(s2); render(); toast(m.name + " is now your default casting.");
       });
       mw.appendChild(row);
@@ -262,7 +262,7 @@
       sessSub.textContent = "Signed in as " + a.name + ".";
       sessRr.innerHTML = '<button class="btn" id="signout">Sign out</button>';
       document.getElementById("signout").addEventListener("click", function () {
-        A.signOut(); render(); toast("Signed out — your ledger stays put on this device.");
+        A.signOut(); render(); toast("Signed out. Local balance and history remain on this device.");
       });
     } else {
       sessSub.textContent = "Using BourneWise as a guest.";
@@ -293,28 +293,28 @@
           note.textContent = "Cancellation scheduled — your plan stays active until the period ends.";
           document.getElementById("cancelSubBtn").disabled = true;
         } else {
-          note.textContent = "Renews automatically. Cancel anytime — your units stay yours.";
+          note.textContent = "Renews automatically. Cancellation takes effect at the end of the billing period.";
           document.getElementById("cancelSubBtn").disabled = false;
         }
       }).catch(function () { row.hidden = true; });
   }
   var cancelBtn = document.getElementById("cancelSubBtn");
   if (cancelBtn) cancelBtn.addEventListener("click", function () {
-    if (!confirm("Cancel your subscription? Your plan stays active until the period ends, and every unit you hold stays yours.")) return;
+    if (!confirm("Cancel your subscription? Access continues until the end of the current billing period. Existing units remain available.")) return;
     cancelBtn.disabled = true;
     fetch("/api/billing/cancel", { method: "POST", credentials: "same-origin" })
       .then(function (r) { return r.json().catch(function () { return {}; }); })
       .then(function (d) {
-        toast(d.ok ? "Done — cancellation is scheduled." : (d.error || "Could not cancel — email hello@bournewise.com and we\u2019ll sort it."));
+        toast(d.ok ? "Cancellation scheduled." : (d.error || "Cancellation failed. Contact hello@bournewise.com."));
         refreshSubRow();
-      }).catch(function () { cancelBtn.disabled = false; toast("Network hiccup — try again."); });
+      }).catch(function () { cancelBtn.disabled = false; toast("Network request failed. Try again."); });
   });
   var portalBtn = document.getElementById("portalBtn");
   if (portalBtn) portalBtn.addEventListener("click", function () {
     fetch("/api/billing/portal", { method: "POST", credentials: "same-origin" })
       .then(function (r) { return r.json().catch(function () { return {}; }); })
       .then(function (d) { if (d.url) location.href = d.url; else toast(d.error || "Portal unavailable right now."); })
-      .catch(function () { toast("Network hiccup — try again."); });
+      .catch(function () { toast("Network request failed. Try again."); });
   });
   /* back from Creem checkout: confirm + let hydrate pull the fresh plan */
   if (new URLSearchParams(location.search).get("billing") === "success") {

@@ -5,8 +5,8 @@
 // The browser never sees the OpenRouter key. The front-end declares INTENT
 // (product + role) and this Function picks the right model server-side:
 //
-//   product "stria"  → Sonnet 4.6   (baseline reading)
-//   product "sortis" → Opus 4.8     (deep causal synthesis)
+//   product "stria"  → Opus 5       (baseline reading)
+//   product "sortis" → Opus 5       (moving-line and transformed-hexagram analysis)
 //   role    "router" / "qc"         → Haiku 4.5 (cheap classification / QC)
 //
 // A client MAY still pass an explicit `model`, but only allow-listed ids are
@@ -38,8 +38,8 @@
 //
 // Secrets / vars (Pages → Settings → Environment, or .dev.vars locally):
 //   OPENROUTER_API_KEY  (required)
-//   STRIA_MODEL         (optional override, default anthropic/claude-sonnet-4.6)
-//   SORTIS_MODEL        (optional override, default anthropic/claude-opus-4.8)
+//   STRIA_MODEL         (optional override, default anthropic/claude-opus-5)
+//   SORTIS_MODEL        (optional override, default anthropic/claude-opus-5)
 //   UTILITY_MODEL       (optional override, default anthropic/claude-haiku-4.5)
 //   CLAUDE_MAX_TOKENS   (optional, default 1024)
 //
@@ -64,6 +64,9 @@ const API_DISABLED = true;
 // (vendor-prefixed). Old Anthropic-native ids are kept as aliases so any
 // caller still sending them resolves to the right OpenRouter model.
 const ALLOWED = {
+  'anthropic/claude-opus-5': 'anthropic/claude-opus-5',
+  'claude-opus-5': 'anthropic/claude-opus-5',
+  'opus-5': 'anthropic/claude-opus-5',
   'anthropic/claude-opus-4.8': 'anthropic/claude-opus-4.8',
   'anthropic/claude-sonnet-5': 'anthropic/claude-sonnet-5',
   'claude-sonnet-5': 'anthropic/claude-sonnet-5',
@@ -73,7 +76,7 @@ const ALLOWED = {
   'claude-opus-4-8': 'anthropic/claude-opus-4.8',
   'claude-sonnet-4-6': 'anthropic/claude-sonnet-4.6',
   'claude-haiku-4-5': 'anthropic/claude-haiku-4.5',
-  opus: 'anthropic/claude-opus-4.8',
+  opus: 'anthropic/claude-opus-5',
   sonnet: 'anthropic/claude-sonnet-4.6',
   haiku: 'anthropic/claude-haiku-4.5'
 };
@@ -85,9 +88,9 @@ function resolveModel(body, env) {
     return env.UTILITY_MODEL || 'anthropic/claude-haiku-4.5';
   }
   const product = String(body.product || '').toLowerCase();
-  if (product === 'sortis') return env.SORTIS_MODEL || 'anthropic/claude-opus-4.8';
-  if (product === 'stria') return env.STRIA_MODEL || 'anthropic/claude-sonnet-4.6';
-  return env.STRIA_MODEL || 'anthropic/claude-sonnet-4.6';
+  if (product === 'sortis') return env.SORTIS_MODEL || 'anthropic/claude-opus-5';
+  if (product === 'stria') return env.STRIA_MODEL || 'anthropic/claude-opus-5';
+  return env.STRIA_MODEL || 'anthropic/claude-opus-5';
 }
 
 function clientIp(request) {
@@ -369,8 +372,8 @@ export async function onRequestGet({ env }) {
     keyConfigured: !!env.OPENROUTER_API_KEY,
     billingEnforced: !!env.DB,
     models: {
-      stria: env.STRIA_MODEL || 'anthropic/claude-sonnet-4.6',
-      sortis: env.SORTIS_MODEL || 'anthropic/claude-opus-4.8',
+      stria: env.STRIA_MODEL || 'anthropic/claude-opus-5',
+      sortis: env.SORTIS_MODEL || 'anthropic/claude-opus-5',
       utility: env.UTILITY_MODEL || 'anthropic/claude-haiku-4.5'
     }
   }, 200);
