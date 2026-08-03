@@ -132,6 +132,7 @@ async function webhook(request, env, db) {
 
   const productId = productIdOf(obj);
   const plan = planForSku(meta.sku) || planForProduct(env, productId);
+  const billingCycle = cycleForSku(meta.sku) || cycleForProduct(env, productId);
   const customerId = customerIdOf(obj);
   const periodEnd = subObj && (subObj.current_period_end_date || subObj.current_period_end) || null;
 
@@ -159,7 +160,8 @@ async function webhook(request, env, db) {
     const p = plan || (await getSubscriptionById(db, subId) || {}).plan;
     if (p && PLAN_GRANT[p]) {
       await setPlanQuiet(db, userId, p);
-      await grantUnits(db, userId, PLAN_GRANT[p], 'grant:creem:' + p);
+      const grant = PLAN_GRANT[p] * (billingCycle === 'annual' ? 12 : 1);
+      await grantUnits(db, userId, grant, 'grant:creem:' + p + ':' + billingCycle);
       if (subId) await upsertSubscription(db, { id: subId, userId, provider: PROVIDER, customerId, plan: p, status: 'active', periodEnd: toTs(periodEnd) });
     }
     return json({ ok: true }, 200);
@@ -201,13 +203,25 @@ async function webhook(request, env, db) {
 // ── helpers ────────────────────────────────────────────────────────────────
 function planForSku(sku) {
   sku = String(sku || '').toLowerCase();
-  return sku === 'pro' || sku === 'premium' ? sku : null;
+  if (sku === 'pro' || sku.indexOf('promonthly') === 0 || sku.indexOf('proannual') === 0) return 'pro';
+  if (sku === 'premium' || sku.indexOf('premiummonthly') === 0 || sku.indexOf('premiumannual') === 0) return 'premium';
+  return null;
 }
 function planForProduct(env, productId) {
   if (!productId) return null;
-  if (productId === env.CREEM_PRODUCT_PRO) return 'pro';
-  if (productId === env.CREEM_PRODUCT_PREMIUM) return 'premium';
+  if (productId === env.CREEM_PRODUCT_PROMONTHLY || productId === env.CREEM_PRODUCT_PROANNUAL || productId === env.CREEM_PRODUCT_PRO) return 'pro';
+  if (productId === env.CREEM_PRODUCT_PREMIUMMONTHLY || productId === env.CREEM_PRODUCT_PREMIUMANNUAL || productId === env.CREEM_PRODUCT_PREMIUM) return 'premium';
   return null;
+}
+function cycleForSku(sku) {
+  sku = String(sku || '').toLowerCase();
+  if (sku.indexOf('annual') !== -1) return 'annual';
+  if (sku.indexOf('monthly') !== -1 || sku === 'pro' || sku === 'premium') return 'monthly';
+  return null;
+}
+function cycleForProduct(env, productId) {
+  if (productId && (productId === env.CREEM_PRODUCT_PROANNUAL || productId === env.CREEM_PRODUCT_PREMIUMANNUAL)) return 'annual';
+  return 'monthly';
 }
 function productIdOf(obj) {
   const p = obj.product || (obj.order && obj.order.product) || (obj.subscription && obj.subscription.product);

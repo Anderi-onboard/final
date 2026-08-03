@@ -34,19 +34,21 @@
     $("unitsTop").textContent = u + " units";
     var pct = Math.max(4, Math.min(100, Math.round(S.units / 4500 * 100)));
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
-    var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = "Usage";
-    var cap = $("unitsCap"); if (cap) cap.textContent = "Prepaid balance \u00b7 no expiry";
+    var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
+    var cap = $("unitsCap"); if (cap) cap.textContent = S.account.plan === "free"
+      ? "Welcome and top-up units"
+      : "Plan units + top-ups";
   }
   function renderAccount() {
     var a = S.account;
     var foot = $("acctBtn");
     foot.querySelector(".avatar").textContent = a.signedIn ? (a.avatar || "EV") : "G";
     foot.querySelector("b").textContent = a.name;
-    foot.querySelector("i").textContent = a.signedIn ? "Usage billing" : "Sign in to start a reading";
+    foot.querySelector("i").textContent = a.signedIn ? (A.planName(a.plan) + " plan") : "Sign in to start a reading";
     var menu = $("acctMenu");
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
-    $("miPlans").querySelector("b").textContent = "PAYG";
+    $("miPlans").querySelector("b").textContent = a.signedIn ? A.planName(a.plan) : "Plans";
     // the sign-in coach-mark only nudges signed-out guests, and stays gone once
     // dismissed
     var coach = $("signinCoach");

@@ -3,7 +3,7 @@
    for billing data or duplicates these definitions.
 
    window.BWAccount:
-     .PLANS              -> legacy account tiers retained for stored records
+     .PLANS              -> canonical subscription and unit-grant table
      .METHODS            -> canonical method table (reserve caps + descriptions)
      .METHOD_ORDER       -> display ordering ["stria","sortis"]
      .state()            -> full store (loads + normalises defaults)
@@ -26,9 +26,9 @@
   // ─── canonical tables (single source — never duplicate elsewhere) ───
 
   var PLANS = {
-    free:    { id: "free",    name: "Usage", price: 0, priceYear: 0, grant: 500,   methods: ["stria", "sortis"], trial: true },
-    pro:     { id: "pro",     name: "Usage", price: 0, priceYear: 0, grant: 22500, methods: ["stria", "sortis"] },
-    premium: { id: "premium", name: "Usage", price: 0, priceYear: 0, grant: 45000, methods: ["stria", "sortis"] }
+    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 500,   methods: ["stria", "sortis"], trial: true },
+    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 22500, methods: ["stria", "sortis"] },
+    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 45000, methods: ["stria", "sortis"] }
   };
 
   var METHODS = {
@@ -314,7 +314,11 @@
 
   // ─── plan descriptions (for settings page) ─────────────────────────
 
-  function planDescription() { return "Pay as you go · prepaid units · no renewal"; }
+  function planDescription(id) {
+    if (id === "pro") return "$" + PLANS.pro.price + "/month · " + PLANS.pro.grant.toLocaleString("en-US") + " units each month";
+    if (id === "premium") return "$" + PLANS.premium.price + "/month · " + PLANS.premium.grant.toLocaleString("en-US") + " units each month";
+    return "500 welcome units · subscriptions and one-time top-ups available";
+  }
 
   // ─── sidebar paint ──────────────────────────────────────────────────
 
@@ -328,7 +332,7 @@
       var i = foot.querySelector("i");
       if (av) av.textContent = a.signedIn ? (a.avatar || initials(a.name)) : "G";
       if (b) b.textContent = a.name;
-      if (i) i.textContent = a.signedIn ? "Usage billing" : "Not signed in";
+      if (i) i.textContent = a.signedIn ? (planName(a.plan) + " plan") : "Not signed in";
     }
     if (opts.menuWho) {
       var mw = resolve(opts.menuWho);
