@@ -569,7 +569,7 @@
      pipeline: Gate → Route → Focused Prompt → QC Pass. This sends only the
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
-  function routedReading(question, spec, board, methodId, history, onDelta, mode, temperature) {
+  function routedReading(question, spec, board, methodId, history, onDelta, mode, temperature, rootQuestion) {
     if (!window.BWPromptRouter) return null; // router module missing → caller's own fallback
     var product = methodId === "stria" ? "stria" : "sortis";
     // STALL watchdog, not a flat deadline. The pipeline (route → stream → QC)
@@ -587,6 +587,7 @@
     var wrappedDelta = function (t, full) { bump(); if (onDelta) onDelta(t, full); };
     var run = BWPromptRouter.interpret({
       question: question,
+      rootQuestion: rootQuestion || question,
       product: product,
       board: board,
       method: methodId,
@@ -1095,7 +1096,7 @@
 
     try { window.__bwReadingIncomplete = false; window.__bwLastCharged = null; } catch (e) {}
     var history = buildHistory(c, 3);
-    var run = routedReading(text, lastCast.spec, board, m.id, history, onDelta, "followup");
+    var run = routedReading(text, lastCast.spec, board, m.id, history, onDelta, "followup", null, c.title || text);
 
     function release() {
       busy = false;

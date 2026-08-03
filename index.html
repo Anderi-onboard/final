@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260802g">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260802g">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260802g">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260802g">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260802g">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260802g">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260802g">
-<script src="./ds-base.js?v=20260802g"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260802h">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260802h">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260802h">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260802h">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260802h">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260802h">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260802h">
+<script src="./ds-base.js?v=20260802h"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -762,7 +762,7 @@
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" aria-live="off" data-type-phase="type" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
+          <h1 id="greetLine" aria-live="off" data-reveal-phase="enter" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
         </div>
       </section>
     </div>
@@ -785,16 +785,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260802g"></script>
-<script src="./casting-figure.js?v=20260802g"></script>
-<script src="./liuyao-engine.js?v=20260802g"></script>
-<script src="./liuyao-ai.js?v=20260802g"></script>
-<script src="./liuyao-chart.js?v=20260802g"></script>
-<script src="./prompt-engine.js?v=20260802g"></script>
-<script src="./prompt-router.js?v=20260802g"></script>
-<script src="./account.js?v=20260802g"></script>
-<script>window.BW_BUILD="20260802g";</script>
-<script src="./chat-app.js?v=20260802g"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260802h"></script>
+<script src="./casting-figure.js?v=20260802h"></script>
+<script src="./liuyao-engine.js?v=20260802h"></script>
+<script src="./liuyao-ai.js?v=20260802h"></script>
+<script src="./liuyao-chart.js?v=20260802h"></script>
+<script src="./prompt-engine.js?v=20260802h"></script>
+<script src="./prompt-router.js?v=20260802h"></script>
+<script src="./account.js?v=20260802h"></script>
+<script>window.BW_BUILD="20260802h";</script>
+<script src="./chat-app.js?v=20260802h"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -807,55 +807,65 @@
       'Include the context that can change the answer.',
       'Use one casting for one question.'
     ];
-    /* A real typewriter stream: write, hold, erase, move to the next prompt.
-       The headline keeps a fixed measure so the composer never jumps while the
-       string grows. Pauses resume cleanly after a hidden tab or an active chat. */
+    /* A slower word-stream with a one-shot blur reveal. Each phrase resolves
+       progressively, rests long enough to read, then softly leaves. Blur only
+       runs during the short transitions, not continuously. */
     var promptIndex=Math.floor(Math.random()*prompts.length);
     var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduceMotion){
       el.textContent=prompts[promptIndex];
-      el.setAttribute('data-type-phase','hold');
+      el.setAttribute('data-reveal-phase','hold');
       window.setInterval(function(){
         if(document.hidden||!document.body.classList.contains('is-empty'))return;
         promptIndex=(promptIndex+1)%prompts.length;
         el.textContent=prompts[promptIndex];
-      },7600);
+      },11000);
     }else{
-      var chars=Array.from(prompts[promptIndex]);
-      var cursor=0;
-      var deleting=false;
-      el.textContent='';
-      function typeNext(){
-        if(document.hidden||!document.body.classList.contains('is-empty')){
-          window.setTimeout(typeNext,420);
-          return;
-        }
-        if(!deleting){
-          cursor+=1;
-          el.textContent=chars.slice(0,cursor).join('');
-          el.setAttribute('data-type-phase','type');
-          if(cursor<chars.length){
-            window.setTimeout(typeNext,34+Math.round(Math.random()*26));
-          }else{
-            deleting=true;
-            el.setAttribute('data-type-phase','hold');
-            window.setTimeout(typeNext,2300);
-          }
-          return;
-        }
-        cursor-=1;
-        el.textContent=chars.slice(0,Math.max(0,cursor)).join('');
-        el.setAttribute('data-type-phase','erase');
-        if(cursor>0){
-          window.setTimeout(typeNext,18+Math.round(Math.random()*12));
-        }else{
-          deleting=false;
-          promptIndex=(promptIndex+1)%prompts.length;
-          chars=Array.from(prompts[promptIndex]);
-          window.setTimeout(typeNext,320);
-        }
+      var REVEAL_MS=1350;
+      var WORD_STAGGER_MS=105;
+      var HOLD_MS=5600;
+      var EXIT_MS=1050;
+      var GAP_MS=800;
+      function renderPrompt(text){
+        var words=text.split(/\s+/).filter(Boolean);
+        el.textContent='';
+        el.setAttribute('aria-label',text);
+        words.forEach(function(word,index){
+          var span=document.createElement('span');
+          span.className='bw-reveal-word';
+          span.setAttribute('aria-hidden','true');
+          span.style.setProperty('--word-index',index);
+          span.style.setProperty('--word-reverse',words.length-index-1);
+          span.textContent=word;
+          el.appendChild(span);
+          if(index<words.length-1)el.appendChild(document.createTextNode(' '));
+        });
+        el.setAttribute('data-reveal-phase','enter');
+        return words.length;
       }
-      window.setTimeout(typeNext,260);
+      function beginCycle(){
+        if(document.hidden||!document.body.classList.contains('is-empty')){
+          window.setTimeout(beginCycle,600);
+          return;
+        }
+        var wordCount=renderPrompt(prompts[promptIndex]);
+        var revealTime=REVEAL_MS+Math.max(0,wordCount-1)*WORD_STAGGER_MS;
+        window.setTimeout(function(){
+          if(document.hidden||!document.body.classList.contains('is-empty')){
+            window.setTimeout(beginCycle,600);
+            return;
+          }
+          el.setAttribute('data-reveal-phase','hold');
+          window.setTimeout(function(){
+            el.setAttribute('data-reveal-phase','exit');
+            window.setTimeout(function(){
+              promptIndex=(promptIndex+1)%prompts.length;
+              window.setTimeout(beginCycle,GAP_MS);
+            },EXIT_MS);
+          },HOLD_MS);
+        },revealTime);
+      }
+      window.setTimeout(beginCycle,520);
     }
   }
   var bb=document.getElementById('brandBtn');

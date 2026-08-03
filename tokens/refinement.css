@@ -242,21 +242,37 @@ body[data-page="app"] .greeting h1 {
   min-height: 4.08em; line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
   color: var(--ink);
 }
-body[data-page="app"] .greeting h1::after {
-  content: "";
+body[data-page="app"] .greeting h1 .bw-reveal-word {
   display: inline-block;
-  width: .075em;
-  height: .82em;
-  margin-left: .09em;
-  border-radius: 999px;
-  background: var(--bw-palette-gem);
-  vertical-align: -.04em;
-  animation: bwTypeCaret .9s steps(1,end) infinite;
+  opacity: 0;
+  filter: blur(9px);
+  transform: translate3d(0,.16em,0) scale(.985);
+  animation: bwBlurReveal 1350ms cubic-bezier(.2,.72,.2,1) forwards;
+  animation-delay: calc(var(--word-index) * 105ms);
+  will-change: opacity, filter, transform;
 }
-body[data-page="app"] .greeting h1[data-type-phase="hold"]::after { animation-duration: 1.15s; }
-@keyframes bwTypeCaret {
-  0%, 46% { opacity: 1; }
-  47%, 100% { opacity: .12; }
+body[data-page="app"] .greeting h1[data-reveal-phase="hold"] .bw-reveal-word {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  animation: none;
+  will-change: auto;
+}
+body[data-page="app"] .greeting h1[data-reveal-phase="exit"] .bw-reveal-word {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  animation: bwBlurLeave 1050ms cubic-bezier(.55,.05,.75,.35) forwards;
+  animation-delay: calc(var(--word-reverse) * 38ms);
+}
+@keyframes bwBlurReveal {
+  0% { opacity: 0; filter: blur(9px); transform: translate3d(0,.16em,0) scale(.985); }
+  58% { opacity: .88; }
+  100% { opacity: 1; filter: blur(0); transform: translate3d(0,0,0) scale(1); }
+}
+@keyframes bwBlurLeave {
+  0% { opacity: 1; filter: blur(0); transform: translate3d(0,0,0) scale(1); }
+  100% { opacity: 0; filter: blur(7px); transform: translate3d(0,-.1em,0) scale(.99); }
 }
 body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
 body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
@@ -379,8 +395,8 @@ body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); borde
   body[data-page="app"] .bwl1, body[data-page="app"] .bwl2,
   body[data-page="app"] .bwl3, body[data-page="app"] .bwl4,
   body[data-page="app"] .bwl5,
-  body[data-page="app"] .greeting h1::after { animation: none !important; }
-  body[data-page="app"] .greeting h1::after { opacity: .55; }
+  body[data-page="app"] .greeting h1 .bw-reveal-word { animation: none !important; }
+  body[data-page="app"] .greeting h1 .bw-reveal-word { opacity: 1; filter: none; transform: none; }
 }
 
 /* Content pages ----------------------------------------------------------- */
