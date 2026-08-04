@@ -4,31 +4,92 @@
 
 // Free signup now grants 500 units (new-user welcome grant).
 export const PLAN_GRANT = { free: 500, pro: 22500, premium: 45000 };
-export const METHOD_COST = { stria: 300, sortis: 1500 };
+// Opening reservation per cast — see the metering block below. Stria rose from
+// 300 because its model changed to Opus 5 and a Stria reading now meters around
+// 470 units; a 300 reservation would have under-held every single cast. It is
+// deliberately not higher than the 500-unit free grant, so a new account can
+// still afford its first reading.
+export const METHOD_COST = { stria: 500, sortis: 1500 };
 export const PAID = { pro: true, premium: true };
 
-// ── Metered billing (reserve → settle) ─────────────────────────────────────
-// METHOD_COST is a reservation ceiling, never a flat final price. Every cast
-// and follow-up settles from measured prompt and completion tokens at the
-// rates below, then refunds the unused portion of the reserve.
-export const METERING = {
-  stria:  { inPer1k: 15, outPer1k: 160, minCharge: 15 },
-  sortis: { inPer1k: 75, outPer1k: 800, minCharge: 75 }
+// ── Metered billing — strictly proportional, no ceiling ────────────────────
+// A reading is billed for the tokens it actually consumed. There is no cap and
+// no flat price: a short reading costs less than a long one, always, and the
+// charge tracks real cost instead of an assumed average.
+//
+// WHY THE RATES ARE KEYED BY MODEL, NOT BY PRODUCT
+// The model behind a product changes (Stria has already moved from Sonnet 4.6
+// to Opus 5, a 1.67x jump in per-token price). Rates attached to "stria" would
+// have kept charging the old model's price for the new model's cost — exactly
+// the drift that put Stria under 40% margin on some tiers. Billing the model
+// that actually ran means a model swap re-prices itself, with no constant to
+// remember to update. An unknown model bills at the most expensive known rate,
+// so a new model can never accidentally be sold below cost.
+//
+// HOW THE NUMBERS WERE DERIVED (units per 1,000 tokens)
+//   units = model price (USD) / D,  where D = $0.0002566 of model cost per unit
+// D is fixed by the CHEAPEST unit any customer can buy — Premium annual, at
+// $290 / 540,000 units = $0.000537 per unit. Solving for a 50% gross margin on
+// that tier (revenue = 2x cost, including the unbilled QC and router calls that
+// ride along with every cast) gives D. Because it is anchored to the cheapest
+// unit, 50% is a FLOOR: every other tier earns more.
+//
+//   tier                      $/unit      margin on a Sortis reading
+//   Premium annual   $290    0.000537     50%   ← the anchor
+//   Premium monthly  $29     0.000644     58%
+//   Pro annual       $190    0.000704     62%
+//   75,000 pack      $55     0.000733     63%
+//   Pro monthly      $19     0.000844     68%
+//   4,500 pack       $8      0.001778     85%
+//
+// To move the whole curve, change D and regenerate — every rate below is just
+// the model's OpenRouter price divided by it.
+export const MODEL_RATES = {
+  'anthropic/claude-opus-5':     { in: 19.5, out: 97.5 },  // $5 / $25 per M
+  'anthropic/claude-opus-4.8':   { in: 19.5, out: 97.5 },  // $5 / $25
+  'anthropic/claude-sonnet-4.6': { in: 11.7, out: 58.5 },  // $3 / $15
+  'anthropic/claude-sonnet-5':   { in: 7.8,  out: 39.0 },  // $2 / $10
+  'anthropic/claude-haiku-4.5':  { in: 3.9,  out: 19.5 }   // $1 / $5
 };
-// Reserve/cap for an in-conversation follow-up: at most half a cast.
-export const FOLLOW_COST = { stria: 150, sortis: 750 };
+const FALLBACK_RATE = MODEL_RATES['anthropic/claude-opus-5'];
 
-// tokens → units at a product's metering rates, clamped to [minCharge, cap].
-// usage is OpenRouter's {prompt_tokens, completion_tokens}; when a dropped
-// stream never delivered usage, fall back to a chars/4 estimate.
-export function unitsForUsage(product, usage, fallback, cap) {
-  const r = METERING[product] || METERING.stria;
-  const inTok = (usage && Number(usage.prompt_tokens)) ||
-    Math.ceil(((fallback && fallback.inChars) || 0) / 4);
-  const outTok = (usage && Number(usage.completion_tokens)) ||
-    Math.ceil(((fallback && fallback.outChars) || 0) / 4);
-  const raw = Math.ceil((inTok / 1000) * r.inPer1k + (outTok / 1000) * r.outPer1k);
-  return Math.max(r.minCharge, Math.min(cap, raw));
+// METHOD_COST / FOLLOW_COST are RESERVATIONS, not prices. They answer "can this
+// account afford to start?" and they keep an abandoned stream from being free.
+// The settlement afterwards is what the user actually pays, refunding whatever
+// the reservation over-held — or collecting the difference if a reading ran
+// long. Sized from measured usage with headroom: a Sortis reading meters around
+// 690 units, a Stria one around 470.
+export const FOLLOW_COST = { stria: 500, sortis: 800 };
+
+// Chinese runs about 1.064 tokens per character; Latin script about 0.287
+// (both measured against the Claude tokenizer). The old estimate assumed 4
+// characters per token for everything, which under-counted a Chinese reading
+// more than fourfold — the wrong direction, since this path only runs when a
+// stream died and we are billing without the provider's own usage numbers.
+const TOK_CJK = 1.064, TOK_LATIN = 0.287;
+function estimateTokens(chars, cjk) {
+  chars = Number(chars) || 0;
+  cjk = Math.min(Number(cjk) || 0, chars);
+  return Math.ceil(cjk * TOK_CJK + (chars - cjk) * TOK_LATIN);
+}
+
+// tokens → units at the rates of the model that ran. usage is OpenRouter's
+// {prompt_tokens, completion_tokens}; the fallback estimate is used only when a
+// dropped stream never delivered usage.
+export function unitsForUsage(model, usage, fallback) {
+  const r = MODEL_RATES[model] || FALLBACK_RATE;
+  const f = fallback || {};
+  const inTok = (usage && Number(usage.prompt_tokens)) || estimateTokens(f.inChars, f.inCjk);
+  const outTok = (usage && Number(usage.completion_tokens)) || estimateTokens(f.outChars, f.outCjk);
+  return Math.ceil((inTok / 1000) * r.in + (outTok / 1000) * r.out);
+}
+
+// Count CJK characters so the fallback estimate above can tell the two scripts
+// apart. Covers the CJK unified ideographs plus the punctuation that fills a
+// Chinese reading.
+export function countCjk(text) {
+  const m = String(text || '').match(/[　-〿㐀-䶿一-鿿豈-﫿＀-￯]/g);
+  return m ? m.length : 0;
 }
 
 function uuid() {
