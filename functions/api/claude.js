@@ -43,7 +43,7 @@
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_COST, FOLLOW_COST, unitsForUsage } from '../_lib/db.js';
+import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_COST, FOLLOW_COST, unitsForUsage, countCjk } from '../_lib/db.js';
 
 const CORS = {
   'access-control-allow-origin': '*',
@@ -177,10 +177,11 @@ export async function onRequestPost(context) {
       // usage and refunds the unused reserve. The trailing bw_meta event carries
       // { unitsRemaining, model, charged, incomplete? } for the client.
       const { readable, writable } = new TransformStream();
+      const promptText = JSON.stringify(payload.messages);
       const run = pumpAndSettle({
         upstream, writable, env, mode, product,
         reserved: cost, refundTo, unitsRemaining, model,
-        inChars: JSON.stringify(payload.messages).length
+        inChars: promptText.length, inCjk: countCjk(promptText)
       });
       if (context.waitUntil) context.waitUntil(run);
       return new Response(readable, {
@@ -205,8 +206,10 @@ export async function onRequestPost(context) {
     let charged = refundTo ? cost : 0;
     // Non-stream generation: settle the reservation to actual usage.
     if (refundTo) {
-      const s = await settleMetered(env.DB, refundTo, product, data.usage,
-        { inChars: JSON.stringify(payload.messages).length, outChars: text.length }, cost, 'refund:usage_settle');
+      const promptText = JSON.stringify(payload.messages);
+      const s = await settleMetered(env.DB, refundTo, model, data.usage,
+        { inChars: promptText.length, inCjk: countCjk(promptText), outChars: text.length, outCjk: countCjk(text) },
+        cost, 'refund:usage_settle');
       charged = s.charged;
       if (s.units != null) unitsRemaining = s.units;
     }
@@ -229,7 +232,7 @@ async function pumpAndSettle(o) {
   const reader = o.upstream.body.getReader();
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
-  let buf = '', outChars = 0, usage = null, finish = null, clientGone = false;
+  let buf = '', outChars = 0, outCjk = 0, usage = null, finish = null, clientGone = false;
   async function handleRecord(rec) {
     const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
     if (!dataLine) return;
@@ -243,6 +246,7 @@ async function pumpAndSettle(o) {
     const text = ch && ch.delta && ch.delta.content;
     if (!text) return;
     outChars += text.length;
+    outCjk += countCjk(text);   // for the fallback estimate if usage never arrives
     if (!clientGone) {
       const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
       try { await writer.write(encoder.encode(event)); }
@@ -275,8 +279,8 @@ async function pumpAndSettle(o) {
   let incomplete = !complete;
   if (o.refundTo) {
     try {
-      const s = await settleMetered(o.env.DB, o.refundTo, o.product, usage,
-        { inChars: o.inChars, outChars }, o.reserved,
+      const s = await settleMetered(o.env.DB, o.refundTo, o.model, usage,
+        { inChars: o.inChars, inCjk: o.inCjk, outChars, outCjk }, o.reserved,
         complete ? 'refund:usage_settle' : 'refund:truncated');
       charged = s.charged;
       if (s.units != null) units = s.units;
@@ -293,12 +297,33 @@ async function pumpAndSettle(o) {
 
 // Charge metered actual (capped at the reserve), refund the difference.
 // Returns { charged, units } — units is the fresh balance when a refund ran.
-async function settleMetered(db, refundTo, product, usage, fallback, reserved, reason) {
-  const metered = unitsForUsage(product, usage, fallback, reserved);
-  const refund = reserved - metered;
-  if (refund > 0) {
-    const g = await grantUnits(db, refundTo.userId, refund, reason);
+// Settle a reservation against what the generation actually used. The charge is
+// strictly proportional to tokens — there is no ceiling, so the reservation can
+// be over- OR under-held and both directions are corrected here:
+//   metered < reserved → refund the difference
+//   metered > reserved → collect the rest (a reading that ran long)
+// The top-up is limited to the balance on hand rather than pushing an account
+// negative: the reservation gate already proved they could pay the expected
+// amount, output is bounded by max_tokens, so the residue is small and it is
+// better absorbed than shown to someone as a debt.
+async function settleMetered(db, refundTo, model, usage, fallback, reserved, reason) {
+  const metered = unitsForUsage(model, usage, fallback);
+  const delta = reserved - metered;
+  if (delta > 0) {
+    const g = await grantUnits(db, refundTo.userId, delta, reason);
     return { charged: metered, units: g && g.ok ? g.units : null };
+  }
+  if (delta < 0) {
+    const extra = -delta;
+    const s = await spendUnits(db, refundTo.userId, extra, 'spend:overage');
+    if (s && s.ok) return { charged: metered, units: s.units };
+    // Not enough left to cover the overage — take what there is, down to zero.
+    const short = Math.max(0, Number(s && s.units) || 0);
+    if (short > 0) {
+      const s2 = await spendUnits(db, refundTo.userId, short, 'spend:overage_partial');
+      if (s2 && s2.ok) return { charged: reserved + short, units: s2.units };
+    }
+    return { charged: reserved, units: null };
   }
   return { charged: metered, units: null };
 }
