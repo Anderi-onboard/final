@@ -27,19 +27,23 @@
 
   var PLANS = {
     free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 500,   methods: ["stria", "sortis"], trial: true },
-    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 22500, methods: ["stria", "sortis"] },
-    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 45000, methods: ["stria", "sortis"] }
+    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 28500, methods: ["stria", "sortis"] },
+    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 43500, methods: ["stria", "sortis"] }
   };
 
+  // cost/followCap mirror the server RESERVATIONS (METHOD_COST / FOLLOW_COST),
+  // not what a reading is charged. The real charge is metered from tokens and
+  // comes back as unitsRemaining, which reconcileUnits() applies — so the
+  // balance shown after a reading is the settled one, usually lower than this.
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 300, followCap: 150, tag: "Present structure",
+      id: "stria", name: "Stria 64", cost: 500, followCap: 500, tag: "Present structure",
       depth: "Primary hexagram",
       blurb: "Interprets the primary hexagram against your question.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 1500, followCap: 750, tag: "Change analysis",
+      id: "sortis", name: "Sortis 6", cost: 900, followCap: 800, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
       blurb: "Adds moving lines and the transformed hexagram to the analysis.",
       gated: false

@@ -3,13 +3,41 @@
 // existing accounts migrate without losing balances.
 
 // Free signup now grants 500 units (new-user welcome grant).
-export const PLAN_GRANT = { free: 500, pro: 22500, premium: 45000 };
-// Opening reservation per cast — see the metering block below. Stria rose from
-// 300 because its model changed to Opus 5 and a Stria reading now meters around
-// 470 units; a 300 reservation would have under-held every single cast. It is
-// deliberately not higher than the 500-unit free grant, so a new account can
-// still afford its first reading.
-export const METHOD_COST = { stria: 500, sortis: 1500 };
+// ── ONE unit price, everywhere ─────────────────────────────────────────────
+// A unit is worth the same wherever it came from: $19 buys 30,000 of them,
+// $29 buys 46,000, a $5 top-up buys 8,000. Tiered "bulk discounts" used to make
+// the same unit worth anywhere from $0.000537 to $0.001778 — a 3.3x spread —
+// which meant the margin on an identical reading swung between 50% and 85%
+// depending on which package the reader happened to buy. One price makes the
+// margin uniform (~59%) and, more importantly, makes a unit something a reader
+// can actually reason about. Subscribing is still the better deal, but the
+// advantage now comes from what a plan includes — Sortis access, full history,
+// units that refill every month — not from a cheaper unit.
+export const UNIT_PRICE_USD = 1 / 1500;   // exactly 1,500 units per $1
+
+export const PLAN_GRANT = { free: 500, pro: 28500, premium: 43500 };
+
+// Annual plans pay ten months for twelve: the same monthly allowance x12,
+// granted at once. That discount is a deliberate margin trade (~51% against
+// ~59% monthly), which is what "two months free" costs.
+export const ANNUAL_MONTHS = 12;
+
+// One-time top-ups. Same unit price as the plans — the denominations differ,
+// the value of a unit does not.
+export const PACKS = [
+  { units: 7500, usd: 5 },
+  { units: 15000, usd: 10 },
+  { units: 30000, usd: 20 },
+  { units: 75000, usd: 50 }
+];
+
+// Opening reservation per cast — see the metering block below. These are holds,
+// not prices: sized just above measured usage (a Sortis reading meters ~690, a
+// Stria one ~470) so the gate never turns away someone who can actually afford
+// the reading. Sortis came down from 1,500, which was refusing accounts holding
+// 1,000 units for a reading that costs 690. Stria's stays at or under the
+// 500-unit free grant so a new account can still afford its first reading.
+export const METHOD_COST = { stria: 500, sortis: 900 };
 export const PAID = { pro: true, premium: true };
 
 // ── Metered billing — strictly proportional, no ceiling ────────────────────
@@ -28,22 +56,23 @@ export const PAID = { pro: true, premium: true };
 //
 // HOW THE NUMBERS WERE DERIVED (units per 1,000 tokens)
 //   units = model price (USD) / D,  where D = $0.0002566 of model cost per unit
-// D is fixed by the CHEAPEST unit any customer can buy — Premium annual, at
-// $290 / 540,000 units = $0.000537 per unit. Solving for a 50% gross margin on
-// that tier (revenue = 2x cost, including the unbilled QC and router calls that
-// ride along with every cast) gives D. Because it is anchored to the cheapest
-// unit, 50% is a FLOOR: every other tier earns more.
+// Reading it the other way: a unit sells for 1/1500 = $0.000667 and costs about
+// $0.000268 to honour once the unbilled QC and router calls that ride along with
+// a cast are counted, which is the ~60% margin below.
 //
-//   tier                      $/unit      margin on a Sortis reading
-//   Premium annual   $290    0.000537     50%   ← the anchor
-//   Premium monthly  $29     0.000644     58%
-//   Pro annual       $190    0.000704     62%
-//   75,000 pack      $55     0.000733     63%
-//   Pro monthly      $19     0.000844     68%
-//   4,500 pack       $8      0.001778     85%
+//   what a reader pays          $/unit     margin on a Sortis reading
+//   any monthly plan or pack    0.000667   59.8%
+//   any annual plan             0.000556   51.8%   (two months free)
+//
+// Only two numbers, because there is only one unit price. Annual is the single
+// deliberate exception: twelve months of units for ten months' money, which
+// costs exactly the ~8 points of margin between those rows. Both sit inside the
+// 50-65% band; annual is the floor, so if the model's price ever rises it is the
+// row to re-check first.
 //
 // To move the whole curve, change D and regenerate — every rate below is just
-// the model's OpenRouter price divided by it.
+// the model's OpenRouter price divided by it. Change UNIT_PRICE_USD instead and
+// you move what a dollar buys without touching what a reading costs to run.
 export const MODEL_RATES = {
   'anthropic/claude-opus-5':     { in: 19.5, out: 97.5 },  // $5 / $25 per M
   'anthropic/claude-opus-4.8':   { in: 19.5, out: 97.5 },  // $5 / $25

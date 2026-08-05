@@ -9,14 +9,14 @@
 <style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260803a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260803a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260803a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260803a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260803a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260803a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260803a">
-<script src="./ds-base.js?v=20260803a"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260805a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260805a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260805a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260805a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260805a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260805a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260805a">
+<script src="./ds-base.js?v=20260805a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{min-height:100%}
@@ -69,13 +69,13 @@
     </article>
     <article class="plan featured" data-plan="pro">
       <span class="plan-tag">Most useful</span><h3>Pro</h3><p class="desc">For regular readings and focused follow-up threads.</p>
-      <div class="plan-price"><b class="amount" data-monthly="$19" data-annual="$190">$19</b><span class="period">/ month</span></div><p class="grant"><b class="grant-amount" data-monthly="22,500" data-annual="270,000">22,500</b> units <span class="grant-period">monthly</span></p>
+      <div class="plan-price"><b class="amount" data-monthly="$19" data-annual="$190">$19</b><span class="period">/ month</span></div><p class="grant"><b class="grant-amount" data-monthly="28,500" data-annual="342,000">28,500</b> units <span class="grant-period">monthly</span></p>
       <ul><li>Both Stria and Sortis</li><li>Usage settles automatically</li><li>Top up without changing plans</li></ul>
       <button class="choose subscribe" data-plan="pro">Choose Pro</button>
     </article>
     <article class="plan" data-plan="premium">
       <h3>Premium</h3><p class="desc">For frequent Sortis readings and longer ongoing work.</p>
-      <div class="plan-price"><b class="amount" data-monthly="$29" data-annual="$290">$29</b><span class="period">/ month</span></div><p class="grant"><b class="grant-amount" data-monthly="45,000" data-annual="540,000">45,000</b> units <span class="grant-period">monthly</span></p>
+      <div class="plan-price"><b class="amount" data-monthly="$29" data-annual="$290">$29</b><span class="period">/ month</span></div><p class="grant"><b class="grant-amount" data-monthly="43,500" data-annual="522,000">43,500</b> units <span class="grant-period">monthly</span></p>
       <ul><li>Both Stria and Sortis</li><li>Larger recurring allowance</li><li>Top up without changing plans</li></ul>
       <button class="choose subscribe" data-plan="premium">Choose Premium</button>
     </article>
@@ -83,22 +83,22 @@
 
   <div class="section-head"><div><p class="eyebrow">Rates</p><h2>Transparent token metering</h2></div><p>Input covers your question, conversation context, and computed figure. Output is the written answer. These rates already include the service margin.</p></div>
   <section class="rates" aria-label="Usage rates">
-    <article class="rate-card"><div class="rate-top"><h3>Stria 64</h3><span class="reserve">300-unit reserve</span></div><div class="rate-row"><div class="rate-number"><b>15</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b>160</b><span>per 1,000 output tokens</span></div></div><p>Minimum charge 15 units. A new casting never exceeds 300 units; a follow-up never exceeds 150.</p></article>
-    <article class="rate-card"><div class="rate-top"><h3>Sortis 6</h3><span class="reserve">1,500-unit reserve</span></div><div class="rate-row"><div class="rate-number"><b>75</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b>800</b><span>per 1,000 output tokens</span></div></div><p>Minimum charge 75 units. A new casting never exceeds 1,500 units; a follow-up never exceeds 750.</p></article>
+    <article class="rate-card" data-rate="stria"><div class="rate-top"><h3>Stria 64</h3><span class="reserve" data-field="reserve">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
+    <article class="rate-card" data-rate="sortis"><div class="rate-top"><h3>Sortis 6</h3><span class="reserve" data-field="reserve">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
   </section>
 
   <section class="estimator" aria-label="Usage estimator">
     <div class="field"><label for="estimateMethod">Reading method</label><select id="estimateMethod"><option value="stria">Stria 64</option><option value="sortis">Sortis 6</option></select></div>
     <div class="field"><label for="estimateTokens">Expected output tokens</label><input id="estimateTokens" type="number" min="100" max="12000" step="100" value="1200"></div>
-    <div class="estimate"><b id="estimateUnits">—</b><span>estimated units with 5,000 input tokens</span></div>
+    <div class="estimate"><b id="estimateUnits">—</b><span id="estimateNote">estimated units for this reading</span></div>
   </section>
 
   <div class="section-head"><div><p class="eyebrow">One-time units</p><h2>Top up without changing plans.</h2></div><p>One-time unit purchases do not renew automatically and stay in the same balance as plan units.</p></div>
   <section class="packs" aria-label="Unit packs">
-    <button class="pack" data-grant="4500"><div class="u">4,500 units</div><div class="p">$8</div><div class="unit-price">$1.78 per 1,000 units</div></button>
-    <button class="pack" data-grant="15000"><div class="u">15,000 units</div><div class="p">$14</div><div class="unit-price">$0.93 per 1,000 units</div></button>
-    <button class="pack" data-grant="30000"><div class="u">30,000 units</div><div class="p">$25</div><div class="unit-price">$0.83 per 1,000 units</div></button>
-    <button class="pack" data-grant="75000"><div class="u">75,000 units</div><div class="p">$55</div><div class="unit-price">$0.73 per 1,000 units</div></button>
+    <button class="pack" data-grant="7500"><div class="u">7,500 units</div><div class="p">$5</div><div class="unit-price">1,500 units per $1 — same as a plan</div></button>
+    <button class="pack" data-grant="15000"><div class="u">15,000 units</div><div class="p">$10</div><div class="unit-price">1,500 units per $1 — same as a plan</div></button>
+    <button class="pack" data-grant="30000"><div class="u">30,000 units</div><div class="p">$20</div><div class="unit-price">1,500 units per $1 — same as a plan</div></button>
+    <button class="pack" data-grant="75000"><div class="u">75,000 units</div><div class="p">$50</div><div class="unit-price">1,500 units per $1 — same as a plan</div></button>
   </section>
 
   <section class="terms-grid" aria-label="Billing rules">
@@ -111,8 +111,8 @@
 </main>
 
 <div class="toast" id="toast"></div>
-<script src="./assets/backgrounds/mountain-range.js?v=20260803a"></script>
-<script src="./account.js?v=20260803a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260805a"></script>
+<script src="./account.js?v=20260805a"></script>
 <script>
 (function(){
   var A=window.BWAccount;
@@ -120,7 +120,32 @@
   function toast(message){toastEl.textContent=message;toastEl.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(function(){toastEl.classList.remove('on');},2600);}
   var annual=false;
   function paint(){var state=A.state(),account=state.account;document.getElementById('ledgerCount').textContent=state.units.toLocaleString('en-US');document.getElementById('whoLine').textContent=account.signedIn?account.name+' · '+A.planName(account.plan)+' plan':'Not signed in';var cta=document.getElementById('ledgerCta');cta.textContent=account.signedIn?'Start a casting':'Sign in';cta.href=account.signedIn?'./index.html':'./login.html';document.querySelectorAll('.plan').forEach(function(card){var button=card.querySelector('.choose');if(!button)return;var current=account.signedIn&&card.dataset.plan===account.plan;button.classList.toggle('current',current);if(current){button.textContent='Current plan';button.disabled=true;if(button.tagName==='A'){button.removeAttribute('href');button.setAttribute('aria-disabled','true');}}else if(card.dataset.plan==='free'){button.textContent='Create account';button.href='./login.html';button.removeAttribute('aria-disabled');}else if(button.classList.contains('subscribe')){button.textContent='Choose '+(card.dataset.plan==='pro'?'Pro':'Premium');button.disabled=false;}});}
-  function estimate(){var method=document.getElementById('estimateMethod').value;var out=Math.max(100,Number(document.getElementById('estimateTokens').value)||0);var input=5000;var rates=method==='sortis'?{i:75,o:800,min:75,max:1500}:{i:15,o:160,min:15,max:300};var units=Math.ceil(input/1000*rates.i+out/1000*rates.o);units=Math.max(rates.min,Math.min(rates.max,units));document.getElementById('estimateUnits').textContent=units.toLocaleString('en-US');}
+  var RATES=null;
+  // Rates come from /api/rates — the same constants the meter bills with — so
+  // this page can never advertise a price the server no longer charges.
+  function applyRates(r){RATES=r;
+    document.querySelectorAll('[data-rate]').forEach(function(card){
+      var p=r.products[card.getAttribute('data-rate')];if(!p)return;
+      card.querySelector('[data-field="in"]').textContent=p.unitsPer1kInput;
+      card.querySelector('[data-field="out"]').textContent=p.unitsPer1kOutput;
+      card.querySelector('[data-field="reserve"]').textContent='about '+p.typicalUnits.toLocaleString('en-US')+' units typical';
+      card.querySelector('[data-field="note"]').textContent='A typical reading works out to about '+p.typicalUnits.toLocaleString('en-US')+' units. We hold '+p.reserve.toLocaleString('en-US')+' while it writes and return whatever it did not use.';
+    });
+    estimate();
+  }
+  function estimate(){
+    var el=document.getElementById('estimateUnits');if(!el)return;
+    if(!RATES){el.textContent='—';return;}
+    var method=document.getElementById('estimateMethod').value;
+    var p=RATES.products[method];if(!p)return;
+    var out=Math.max(100,Number(document.getElementById('estimateTokens').value)||0);
+    // No floor and no ceiling: the charge is exactly proportional to tokens.
+    var units=Math.ceil(p.typicalInputTokens/1000*p.unitsPer1kInput+out/1000*p.unitsPer1kOutput);
+    el.textContent=units.toLocaleString('en-US');
+    var note=document.getElementById('estimateNote');
+    if(note)note.textContent='with the '+p.typicalInputTokens.toLocaleString('en-US')+'-token prompt this method sends';
+  }
+  fetch('/api/rates').then(function(r){return r.json()}).then(applyRates).catch(function(){});
   function checkout(sku){fetch('/api/checkout',{method:'POST',headers:{'content-type':'application/json'},credentials:'same-origin',body:JSON.stringify({sku:sku})}).then(function(response){if(response.status===401){toast('Sign in before opening checkout.');setTimeout(function(){location.href='./login.html';},900);return null;}return response.json().catch(function(){return null;}).then(function(body){return{status:response.status,body:body};});}).then(function(result){if(!result)return;if(result.status===200&&result.body&&result.body.url){location.href=result.body.url;return;}if(result.status===503){toast('Payments are not available yet. Nothing was charged.');return;}toast('Checkout could not open. Nothing was charged.');}).catch(function(){toast('Checkout could not open. Nothing was charged.');});}
   function paintCycle(){var sw=document.getElementById('billingSwitch');sw.classList.toggle('on',annual);sw.setAttribute('aria-checked',annual?'true':'false');document.querySelector('.mo-label').classList.toggle('active',!annual);document.querySelector('.yr-label').classList.toggle('active',annual);document.querySelectorAll('.amount').forEach(function(n){n.textContent=n.dataset[annual?'annual':'monthly'];});document.querySelectorAll('.period').forEach(function(n){n.textContent=annual?'/ year':'/ month';});document.querySelectorAll('.grant-amount').forEach(function(n){n.textContent=n.dataset[annual?'annual':'monthly'];});document.querySelectorAll('.grant-period').forEach(function(n){n.textContent=annual?'yearly':'monthly';});}
   document.getElementById('billingSwitch').addEventListener('click',function(){annual=!annual;paintCycle();});
