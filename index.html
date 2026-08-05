@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260805a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260805a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260805a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260805a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260805a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260805a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260805a">
-<script src="./ds-base.js?v=20260805a"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260805b">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260805b">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260805b">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260805b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260805b">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260805b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260805b">
+<script src="./ds-base.js?v=20260805b"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -111,12 +111,23 @@
   .ledger-head .lbl{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
   .ledger-plan{font-family:"Spinnaker";font-size:9px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--pine);background:rgba(61,92,74,.1);border:1px solid rgba(61,92,74,.24);border-radius:999px;padding:3px 9px}
   .ledger-bal{display:flex;align-items:baseline;gap:6px;margin-top:10px}
+  /* the precise balance sits under the headline for anyone who wants it —
+     the reader should not have to divide units by a rate in their head */
+  .ledger-exact{margin-top:3px;font-size:10.5px;letter-spacing:.02em;color:var(--ghost);font-variant-numeric:tabular-nums}
+  .ledger.low .count,.ledger.low .ledger-unit{color:var(--terracotta)}
+  .ledger.low .ledger-meter span{background:var(--terracotta)}
+  .units-chip.low{color:var(--terracotta)}
   .ledger .count{font-family:"Spinnaker";font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
   .ledger-unit{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
   .ledger-meter{margin-top:12px;height:6px;border-radius:999px;background:rgba(42,32,22,.12);overflow:hidden}
   .ledger-meter span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--terracotta),#D2774C);transition:width .55s cubic-bezier(.4,0,.2,1)}
   .ledger-cap{margin-top:7px;font-family:"Spinnaker";font-size:10px;letter-spacing:.03em;color:var(--ghost)}
-  .exchange{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;border:none;background:var(--terracotta);color:var(--paper);border-radius:10px;padding:9px;font-family:"Spinnaker";font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(181,80,44,.25);transition:transform .15s,background .15s,box-shadow .15s}
+  /* Topping up is a quiet option while there is plenty left, and only becomes
+     a real call to action once the balance is nearly spent. */
+  .exchange{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;border:1px solid var(--line);background:transparent;color:var(--dim);border-radius:10px;padding:9px;font-family:"Spinnaker";font-weight:600;font-size:12px;letter-spacing:.04em;transition:transform .15s,background .15s,box-shadow .15s,color .15s,border-color .15s}
+  .exchange:hover{color:var(--ink);border-color:var(--ink)}
+  .ledger.low .exchange{border-color:transparent;background:var(--terracotta);color:var(--paper);box-shadow:0 2px 10px rgba(181,80,44,.25)}
+  .ledger.low .exchange:hover{color:var(--paper)}
   .exchange:hover{transform:translateY(-1px);background:#C9663F;box-shadow:0 6px 16px rgba(181,80,44,.32)}
   .exchange .ex-arr{transition:transform .15s}
   .exchange:hover .ex-arr{transform:translateX(2px)}
@@ -704,13 +715,14 @@
 
   <div class="ledger" data-screen-label="Ledger" style="border-width: 0px">
     <div class="ledger-head" style="font-family: var(--sans)">
-      <span class="lbl">Available units</span>
+      <span class="lbl">Remaining</span>
       <span class="ledger-plan" id="ledgerPlan">Usage</span>
     </div>
     <div class="ledger-bal">
       <span class="count" id="unitsSide" style="font-family: Spinnaker; font-weight: 700">&mdash;</span>
-      <span class="ledger-unit" style="font-family: Spinnaker">units</span>
+      <span class="ledger-unit" id="unitsSideNoun" style="font-family: Spinnaker">readings left</span>
     </div>
+    <div class="ledger-exact" id="unitsExact" style="font-family: var(--sans)">&mdash;</div>
     <div class="ledger-meter"><span id="unitsBar"></span></div>
     <div class="ledger-cap" id="unitsCap" style="font-family: var(--sans)">Prepaid balance &middot; no expiry</div>
     <button class="exchange pressable" id="openPlans" style="font-family: var(--sans)">Get units <span class="ex-arr">&rarr;</span></button>
@@ -785,16 +797,16 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260805a"></script>
-<script src="./casting-figure.js?v=20260805a"></script>
-<script src="./liuyao-engine.js?v=20260805a"></script>
-<script src="./liuyao-ai.js?v=20260805a"></script>
-<script src="./liuyao-chart.js?v=20260805a"></script>
-<script src="./prompt-engine.js?v=20260805a"></script>
-<script src="./prompt-router.js?v=20260805a"></script>
-<script src="./account.js?v=20260805a"></script>
-<script>window.BW_BUILD="20260805a";</script>
-<script src="./chat-app.js?v=20260805a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260805b"></script>
+<script src="./casting-figure.js?v=20260805b"></script>
+<script src="./liuyao-engine.js?v=20260805b"></script>
+<script src="./liuyao-ai.js?v=20260805b"></script>
+<script src="./liuyao-chart.js?v=20260805b"></script>
+<script src="./prompt-engine.js?v=20260805b"></script>
+<script src="./prompt-router.js?v=20260805b"></script>
+<script src="./account.js?v=20260805b"></script>
+<script>window.BW_BUILD="20260805b";</script>
+<script src="./chat-app.js?v=20260805b"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

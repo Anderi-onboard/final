@@ -27,17 +27,65 @@
   var busy = false;
   var esc = A.esc;
 
-  /* ── render: ledger + account ── */
+  /* ── render: ledger + account ────────────────────────────────────────────
+     Units are shown the way a reader thinks about them: how many readings are
+     left, not an abstract balance they have to divide in their head. The exact
+     number stays visible underneath for anyone who wants it.
+
+     The figure only ever moves ONCE per reading, after settlement. A reading
+     reserves more than it usually costs (the hold covers a long one), so
+     painting the reserve and then the refund made the balance visibly jump
+     down and back up. displayUnits() holds the last settled value while a
+     reading is in flight, so what the reader sees is what they were charged. */
+  var settledUnits = null;      // last server-confirmed balance
+  var settling = false;         // a generation is in flight
+  var RATES = null;             // /api/rates — same numbers the meter bills with
+
+  function displayUnits() {
+    return (settling && settledUnits != null) ? settledUnits : S.units;
+  }
+  function unitsPerReading() {
+    var m = method();
+    if (RATES && RATES.products && RATES.products[m.id]) return RATES.products[m.id].typicalUnits;
+    return m.cost;              // reserve is a safe stand-in until rates load
+  }
+  function planAllowance() {
+    var p = A.PLANS && A.PLANS[S.account.plan];
+    return (p && p.grant) || 500;
+  }
+  function settleUnits(n) {     // the one place the balance is allowed to change
+    if (typeof n === "number") { settledUnits = n; S.units = n; }
+    else settledUnits = S.units;
+    settling = false;
+    renderUnits();
+  }
+
   function renderUnits() {
-    var u = S.units.toLocaleString("en-US");
-    $("unitsSide").textContent = u;
-    $("unitsTop").textContent = u + " units";
-    var pct = Math.max(4, Math.min(100, Math.round(S.units / 4500 * 100)));
+    var u = displayUnits();
+    var per = Math.max(1, unitsPerReading());
+    var left = Math.floor(u / per);
+    var side = $("unitsSide"); if (side) side.textContent = left.toLocaleString("en-US");
+    var noun = $("unitsSideNoun"); if (noun) noun.textContent = left === 1 ? "reading left" : "readings left";
+    var exact = $("unitsExact");
+    if (exact) exact.textContent = u.toLocaleString("en-US") + " units · about " + per.toLocaleString("en-US") + " each";
+    // the chip stays quiet until it has something worth saying
+    var chip = $("unitsTop");
+    if (chip) {
+      chip.textContent = left > 0 ? left.toLocaleString("en-US") + (left === 1 ? " reading" : " readings")
+                                  : "Out of units";
+      chip.classList.toggle("low", left <= 3);
+    }
+    var pct = Math.max(3, Math.min(100, Math.round(u / planAllowance() * 100)));
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
+    var ledger = $("unitsSide") && $("unitsSide").closest(".ledger");
+    if (ledger) ledger.classList.toggle("low", left <= 3);
     var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
-    var cap = $("unitsCap"); if (cap) cap.textContent = S.account.plan === "free"
-      ? "Welcome and top-up units"
-      : "Plan units + top-ups";
+    var cap = $("unitsCap");
+    if (cap) {
+      cap.textContent = left > 0
+        ? (S.account.plan === "free" ? "Welcome units · no expiry" : "Refills with your plan each month")
+        : (S.account.plan === "free" ? "Add units to keep reading" : "Refills with your plan — or top up now");
+    }
   }
   function renderAccount() {
     var a = S.account;
@@ -834,15 +882,16 @@
     c.msgs.push({ role: "user", text: text });
     save();                                 // persist the question first
     clearDraft();                           // the composed question is now spent
-    /* optimistic local deduction — the server's atomic reserve/settle is the
-       authority; bw_meta reconciles the real balance back afterwards. A
-       follow-up reserves followCost and typically settles LOWER. */
+    /* The reserve is taken locally so a second cast can't be fired against
+       units this one already claimed — but it is NOT shown. A reserve is
+       bigger than the usual charge, so painting it and then the refund made
+       the balance drop and bounce back. settling holds the displayed figure at
+       the last settled value until the real charge lands. */
+    settledUnits = S.units;
+    settling = true;
     A.deductUnits(needed, (isFollowup ? "follow:" : "cast:") + m.id);
-    S.units = A.state().units;              // reconcile local balance only
+    S.units = A.state().units;
     renderAll();
-    if (S.units < m.cost) {
-      toast("Running low — top up when you\u2019re ready.");
-    }
 
     if (isFollowup) { followupFlow(c, text, m, lastCast, needed); return; }
 
@@ -992,7 +1041,7 @@
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
-      renderUnits(); renderList();
+      settleUnits(A.state().units); renderList();
       // the backend settled an interrupted reading by ACTUAL output (metered)
       // and refunded the unused reserve. Recasting would throw the figure away
       // — so continue AUTOMATICALLY on this same casting (a metered follow-up),
@@ -1031,7 +1080,7 @@
       var e = err.__error || err;
       var status = e && e.status;
       A.refundLocal(m.cost);
-      S.units = A.state().units;
+      settleUnits(A.state().units);
       var msg;
       if (status === 401) msg = "Your session has expired — sign in again to cast. These units were refunded.";
       else if (status === 402) { msg = "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
@@ -1110,7 +1159,7 @@
       var e = err.__error || err;
       var status = e && e.status;
       A.refundLocal(reserved);
-      S.units = A.state().units;
+      settleUnits(A.state().units);
       var msg;
       if (status === 401) msg = "Your session has expired — sign in again. These units were refunded.";
       else if (status === 402) { msg = "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
@@ -1123,7 +1172,7 @@
       p.className = "reading-error";
       p.textContent = msg;
       live.appendChild(p);
-      renderUnits();
+      settleUnits(A.state().units);
       release();
     }
     function finish(ans) {
@@ -1402,6 +1451,11 @@
   /* ── boot: hydrate from the server (if signed in), then paint ── */
   renderAll();                       // instant paint from local store
   restoreDraft();                    // an unfinished question survives the refresh
+  /* what a reading really costs, from the code that bills it — so "readings
+     left" can never quote a number the meter has stopped charging. */
+  fetch("/api/rates").then(function (r) { return r.json(); })
+    .then(function (d) { RATES = d; renderUnits(); })
+    .catch(function () {});
   A.hydrate(function () {
     S = A.state(); renderAll();
     // Fire the landing hand-off ONLY after hydrate resolves, so serverOn and
