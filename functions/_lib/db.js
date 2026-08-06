@@ -31,13 +31,11 @@ export const PACKS = [
   { units: 75000, usd: 50 }
 ];
 
-// Opening reservation per cast — see the metering block below. These are holds,
-// not prices: sized just above measured usage (a Sortis reading meters ~690, a
-// Stria one ~470) so the gate never turns away someone who can actually afford
-// the reading. Sortis came down from 1,500, which was refusing accounts holding
-// 1,000 units for a reading that costs 690. Stria's stays at or under the
-// 500-unit free grant so a new account can still afford its first reading.
-export const METHOD_COST = { stria: 500, sortis: 900 };
+// TYPICAL cost of a reading, from measured usage. Nothing is held or deducted
+// against these — a reading is billed for the tokens it actually used, once it
+// is written. They exist so the interface can say roughly what a reading runs
+// before you ask for it, and they are the only numbers here a reader ever sees.
+export const METHOD_COST = { stria: 470, sortis: 690 };
 export const PAID = { pro: true, premium: true };
 
 // ── Metered billing — strictly proportional, no ceiling ────────────────────
@@ -82,13 +80,10 @@ export const MODEL_RATES = {
 };
 const FALLBACK_RATE = MODEL_RATES['anthropic/claude-opus-5'];
 
-// METHOD_COST / FOLLOW_COST are RESERVATIONS, not prices. They answer "can this
-// account afford to start?" and they keep an abandoned stream from being free.
-// The settlement afterwards is what the user actually pays, refunding whatever
-// the reservation over-held — or collecting the difference if a reading ran
-// long. Sized from measured usage with headroom: a Sortis reading meters around
-// 690 units, a Stria one around 470.
-export const FOLLOW_COST = { stria: 500, sortis: 800 };
+// Typical cost of a follow-up. Lower than a fresh reading because the answer is
+// shorter, higher than you might expect because the conversation so far is
+// re-sent as context and that context is billed like any other input.
+export const FOLLOW_COST = { stria: 330, sortis: 660 };
 
 // Chinese runs about 1.064 tokens per character; Latin script about 0.287
 // (both measured against the Claude tokenizer). The old estimate assumed 4

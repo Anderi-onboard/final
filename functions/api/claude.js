@@ -100,7 +100,7 @@ export async function onRequestPost(context) {
   if (API_DISABLED) {
     return json({ error: 'AI API temporarily disabled', code: 'API_DISABLED' }, 503);
   }
-  let refundTo = null; // { userId, amount } — set once we've deducted, cleared on success
+  let chargeTo = null; // { userId, reason } — who to bill once the reading is written
   try {
     if (!env.OPENROUTER_API_KEY) {
       return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
@@ -125,7 +125,7 @@ export async function onRequestPost(context) {
     if (db) {
       const gate = await guardRequest({ request, env, db, product, cost, mode });
       if (gate.error) return json(gate.error.body, gate.error.status);
-      if (gate.refund) refundTo = gate.refund;
+      if (gate.charge) chargeTo = gate.charge;
       if (gate.unitsRemaining != null) unitsRemaining = gate.unitsRemaining;
     }
     // no DB bound: unauthenticated, unmetered — documented limitation above.
@@ -164,7 +164,6 @@ export async function onRequestPost(context) {
       });
 
       if (!upstream.ok || !upstream.body) {
-        if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:openrouter_' + upstream.status);
         const detail = await upstream.text().catch(() => '');
         return json({ error: 'openrouter ' + upstream.status, detail }, 502);
       }
@@ -180,7 +179,7 @@ export async function onRequestPost(context) {
       const promptText = JSON.stringify(payload.messages);
       const run = pumpAndSettle({
         upstream, writable, env, mode, product,
-        reserved: cost, refundTo, unitsRemaining, model,
+        chargeTo, unitsRemaining, model,
         inChars: promptText.length, inCjk: countCjk(promptText)
       });
       if (context.waitUntil) context.waitUntil(run);
@@ -197,28 +196,25 @@ export async function onRequestPost(context) {
     });
 
     if (!resp.ok) {
-      if (refundTo) await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:openrouter_' + resp.status);
       const detail = await resp.text().catch(() => '');
       return json({ error: 'openrouter ' + resp.status, detail }, 502);
     }
     const data = await resp.json();
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
-    let charged = refundTo ? cost : 0;
-    // Non-stream generation: settle the reservation to actual usage.
-    if (refundTo) {
+    let charged = 0;
+    // Charge once, for what this generation actually used.
+    if (chargeTo) {
       const promptText = JSON.stringify(payload.messages);
-      const s = await settleMetered(env.DB, refundTo, model, data.usage,
-        { inChars: promptText.length, inCjk: countCjk(promptText), outChars: text.length, outCjk: countCjk(text) },
-        cost, 'refund:usage_settle');
+      const s = await chargeUsage(env.DB, chargeTo, model, data.usage,
+        { inChars: promptText.length, inCjk: countCjk(promptText), outChars: text.length, outCjk: countCjk(text) });
       charged = s.charged;
       if (s.units != null) unitsRemaining = s.units;
     }
     const result = { text, model };
     if (unitsRemaining != null) result.unitsRemaining = unitsRemaining;
-    if (refundTo) result.charged = charged;
+    if (chargeTo) result.charged = charged;
     return json(result, 200);
   } catch (e) {
-    if (refundTo) { try { await grantUnits(env.DB, refundTo.userId, refundTo.amount, 'refund:error'); } catch (_) {} }
     return json({ error: String((e && e.message) || e) }, 500);
   }
 }
@@ -274,14 +270,13 @@ async function pumpAndSettle(o) {
   // 'stop'/'end_turn' = model finished; 'length' = hit max_tokens (the reading
   // is as long as we allow — that's a delivered reading, charge stands).
   const complete = finish === 'stop' || finish === 'end_turn' || finish === 'length';
-  let charged = o.refundTo ? o.reserved : 0;
+  let charged = 0;
   let units = o.unitsRemaining;
   let incomplete = !complete;
-  if (o.refundTo) {
+  if (o.chargeTo) {
     try {
-      const s = await settleMetered(o.env.DB, o.refundTo, o.model, usage,
-        { inChars: o.inChars, inCjk: o.inCjk, outChars, outCjk }, o.reserved,
-        complete ? 'refund:usage_settle' : 'refund:truncated');
+      const s = await chargeUsage(o.env.DB, o.chargeTo, o.model, usage,
+        { inChars: o.inChars, inCjk: o.inCjk, outChars, outCjk });
       charged = s.charged;
       if (s.units != null) units = s.units;
     } catch (e) { /* settlement failure must not kill the stream close */ }
@@ -306,26 +301,26 @@ async function pumpAndSettle(o) {
 // negative: the reservation gate already proved they could pay the expected
 // amount, output is bounded by max_tokens, so the residue is small and it is
 // better absorbed than shown to someone as a debt.
-async function settleMetered(db, refundTo, model, usage, fallback, reserved, reason) {
-  const metered = unitsForUsage(model, usage, fallback);
-  const delta = reserved - metered;
-  if (delta > 0) {
-    const g = await grantUnits(db, refundTo.userId, delta, reason);
-    return { charged: metered, units: g && g.ok ? g.units : null };
+// Bill a finished generation for exactly what it used. One deduction, after
+// the fact — there is no hold, no refund, and no ceiling.
+//
+// If the charge is larger than what is left, it takes what is left and stops
+// at zero. That is deliberate: a reader who runs out mid-reading still gets
+// that reading in full. The shortfall is bounded (one generation, capped by
+// max_tokens) and is recorded in the ledger reason so it is visible rather
+// than silent. The next request is refused at the door instead.
+async function chargeUsage(db, chargeTo, model, usage, fallback) {
+  const owed = unitsForUsage(model, usage, fallback);
+  if (owed <= 0) return { charged: 0, units: null };
+  const s = await spendUnits(db, chargeTo.userId, owed, chargeTo.reason);
+  if (s && s.ok) return { charged: owed, units: s.units };
+  // Balance could not cover it — take the remainder down to zero.
+  const left = Math.max(0, Number(s && s.units) || 0);
+  if (left > 0) {
+    const s2 = await spendUnits(db, chargeTo.userId, left, chargeTo.reason + ':partial');
+    if (s2 && s2.ok) return { charged: left, units: s2.units };
   }
-  if (delta < 0) {
-    const extra = -delta;
-    const s = await spendUnits(db, refundTo.userId, extra, 'spend:overage');
-    if (s && s.ok) return { charged: metered, units: s.units };
-    // Not enough left to cover the overage — take what there is, down to zero.
-    const short = Math.max(0, Number(s && s.units) || 0);
-    if (short > 0) {
-      const s2 = await spendUnits(db, refundTo.userId, short, 'spend:overage_partial');
-      if (s2 && s2.ok) return { charged: reserved + short, units: s2.units };
-    }
-    return { charged: reserved, units: null };
-  }
-  return { charged: metered, units: null };
+  return { charged: 0, units: left };
 }
 
 // Auth + billing + rate-limit gate. Returns one of:
@@ -342,16 +337,20 @@ async function guardRequest({ request, env, db, product, cost, mode }) {
     return { error: { status: 401, body: { error: 'sign in required for generation' } } };
   }
 
-  if (product === 'sortis') {
-    const spend = await spendUnits(db, user.id, cost, reason);
-    if (!spend.ok) return { error: { status: 402, body: { error: 'insufficient units', units: spend.units } } };
-    return { refund: { userId: user.id, amount: cost }, unitsRemaining: spend.units };
-  }
-
-  if (product === 'stria' && user) {
-    const spend = await spendUnits(db, user.id, cost, reason);
-    if (!spend.ok) return { error: { status: 402, body: { error: 'insufficient units', units: spend.units } } };
-    return { refund: { userId: user.id, amount: cost }, unitsRemaining: spend.units };
+  // Admission, not payment. Nothing is deducted here: a reading is charged for
+  // what it actually used, once, after it has been written. Holding units up
+  // front meant reserving more than a reading usually costs, refunding the
+  // difference, and refusing readers who could afford the reading they asked
+  // for. The only question at the door is whether there is a balance to spend.
+  //
+  // A reader whose balance runs out mid-reading still gets that reading in
+  // full — the charge simply takes what is left. They are stopped at the next
+  // door, not halfway through the one they already walked in.
+  if (product === 'sortis' || product === 'stria') {
+    if (!(user.units > 0)) {
+      return { error: { status: 402, body: { error: 'out of units', units: user.units } } };
+    }
+    return { charge: { userId: user.id, reason }, unitsRemaining: user.units };
   }
 
   // Router/qc utility calls carry no product cost. Fall back to a per-IP

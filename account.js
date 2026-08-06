@@ -31,19 +31,20 @@
     premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 43500, methods: ["stria", "sortis"] }
   };
 
-  // cost/followCap mirror the server RESERVATIONS (METHOD_COST / FOLLOW_COST),
-  // not what a reading is charged. The real charge is metered from tokens and
-  // comes back as unitsRemaining, which reconcileUnits() applies — so the
-  // balance shown after a reading is the settled one, usually lower than this.
+  // cost/followCap are what a reading TYPICALLY runs, mirroring METHOD_COST /
+  // FOLLOW_COST on the server. Nothing is held against them: the real charge is
+  // metered from the tokens used and arrives as unitsRemaining, which
+  // reconcileUnits() applies. They exist only so the interface can say roughly
+  // what something costs before you ask for it.
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 500, followCap: 500, tag: "Present structure",
+      id: "stria", name: "Stria 64", cost: 470, followCap: 330, tag: "Present structure",
       depth: "Primary hexagram",
       blurb: "Interprets the primary hexagram against your question.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 900, followCap: 800, tag: "Change analysis",
+      id: "sortis", name: "Sortis 6", cost: 690, followCap: 660, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
       blurb: "Adds moving lines and the transformed hexagram to the analysis.",
       gated: false
