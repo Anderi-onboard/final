@@ -26,6 +26,7 @@
   var heroEmpty = document.getElementById("heroEmpty");
   var busy = false;
   var esc = A.esc;
+  var C = window.BWCopy;   // every reader-facing sentence lives in copy.js
 
   /* ── render: ledger + account ── */
   function renderUnits() {
@@ -37,9 +38,7 @@
     var pct = Math.max(4, Math.min(100, Math.round(S.units / allowance * 100)));
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
     var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
-    var cap = $("unitsCap"); if (cap) cap.textContent = S.account.plan === "free"
-      ? "Welcome and top-up units"
-      : "Plan units + top-ups";
+    var cap = $("unitsCap"); if (cap) cap.textContent = S.account.plan === "free" ? C.ledger.capFree : C.ledger.capPaid;
   }
   function renderAccount() {
     var a = S.account;
@@ -64,8 +63,7 @@
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
-    $("methodNote").textContent = m.name + " · you are charged for what the reading uses, about " +
-      m.cost.toLocaleString("en-US") + " units · follow-ups cost less, in proportion to their length";
+    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost);
     renderMethodMenu();
   }
   function renderMethodMenu() {
@@ -84,7 +82,7 @@
           '<span class="mm-tag">' + m.tag + " · " + m.depth + "</span>" +
           '<span class="mm-blurb">' + m.blurb + "</span>" +
         "</span>" +
-        '<span class="mm-cost" style="font-family:\'BioRhyme\',serif">~' + m.cost.toLocaleString("en-US") + '<small>units</small></span>';
+        '<span class="mm-cost" style="font-family:\'BioRhyme\',serif">' + C.composer.methodCost(m.cost) + '<small>units</small></span>';
       row.addEventListener("click", function () {
         S.method = id; save(); renderMethod(); closeMethod();
       });
@@ -126,7 +124,7 @@
         S.convs = S.convs.filter(function (x) { return x.id !== c.id; });
         if (S.activeId === c.id) S.activeId = S.convs.length ? S.convs[0].id : null;
         save(); A.deleteCastingRemote(c.id); renderAll();
-        toast("Reading deleted.");
+        toast(C.account.readingDeleted);
       });
       wrap.appendChild(b);
       wrap.appendChild(del);
@@ -514,26 +512,21 @@
      history preserved). Unbilled utility call; 4s timeout or any failure
      defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
   function detectIntent(question, lastQuestion, lastReading) {
-    if (!(window.claude && typeof window.claude.complete === "function")) {
-      return Promise.resolve("followup");
+    var PE = window.BWPromptEngine;
+    var R = PE && PE.INTENT_ROUTER;
+    // No engine, or no proxy to ask — treat it as a follow-up, the cheaper and
+    // least surprising outcome.
+    if (!R || !(window.claude && typeof window.claude.complete === "function")) {
+      return Promise.resolve((R && R.fallback) || "followup");
     }
-    var prompt =
-      "You route messages in a divination chat. A casting answers ONE matter; a different matter needs its own fresh casting.\n" +
-      "Earlier casting question: \u00ab" + String(lastQuestion || "").slice(0, 300) + "\u00bb\n" +
-      "Reading excerpt: \u00ab" + String(lastReading || "").slice(0, 400) + "\u00bb\n" +
-      "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
-      "FOLLOWUP = the new message stays on the SAME matter: continues it, doubts it, asks to clarify/expand a part of the reading, answers a question the reading asked, or says \"continue\".\n" +
-      "NEW = the new message asks about a DIFFERENT matter \u2014 different event, different person, different outcome being asked \u2014 even if the topic area sounds related. The test is the MATTER, not the topic: \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u7b2c\u4e00\u6b21\u300b then \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u8c08\u604b\u7231\u300b are two different matters \u2192 NEW. \u300a\u6211\u80fd\u521b\u4e1a\u6210\u529f\u5417\u300b then \u300a\u90a3\u5408\u4f19\u4eba\u9760\u8c31\u5417\u300b is the same venture \u2192 FOLLOWUP.\n" +
-      "When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.\n" +
-      "Reply with exactly one word.";
-    var guard = new Promise(function (res) { setTimeout(function () { res("followup"); }, 4000); });
+    var guard = new Promise(function (res) {
+      setTimeout(function () { res(R.fallback); }, R.timeoutMs);
+    });
     var run = window.claude.complete({
-      role: "utility", model: "claude-sonnet-5", max_tokens: 8,
-      messages: [{ role: "user", content: prompt }]
-    }).then(function (r) {
-      var t = String(r || "").toUpperCase();
-      return t.indexOf("NEW") >= 0 && t.indexOf("FOLLOWUP") < 0 ? "new" : "followup";
-    }).catch(function () { return "followup"; });
+      role: "utility", model: R.model, max_tokens: R.maxTokens,
+      messages: [{ role: "user", content: R.build(question, lastQuestion, lastReading) }]
+    }).then(function (r) { return R.read(r); })
+      .catch(function () { return R.fallback; });
     return Promise.race([run, guard]);
   }
 
@@ -752,7 +745,7 @@
     checkBuildFresh().then(function (fresh) {
       preflight = false;
       if (!fresh) {
-        toast("The site just updated — refresh the page, then cast. Nothing was charged.");
+        toast(C.errors.staleBuild);
         return;
       }
       sendNow(text, decided);
@@ -765,7 +758,7 @@
     // guest can't cast — send them to the login page. This is the "先登录才发
     // 点数" rule: no free units before an account exists.
     if (!S.account.signedIn) {
-      toast("Sign in to cast — a new account starts with 500 units on us.");
+      toast(C.account.signInToCast);
       setTimeout(function () { location.href = "./login.html"; }, 1300);
       return;
     }
@@ -826,7 +819,7 @@
        through this one. */
     if (S.units <= 0) {
       pulseLedger();
-      toast("You're out of units — top up to keep reading.");
+      toast(C.errors.outOfUnits);
       return;
     }
 
@@ -860,14 +853,14 @@
         // the fresh figure is about, so the carry-over is transparent.
         var subj = String(castQ || "").replace(/\s+/g, " ").trim();
         if (subj.length > 40) subj = subj.slice(0, 40) + "\u2026";
-        note.textContent = "Recast a fresh hexagram for the same matter \u2014 \u201c" + subj + "\u201d (about " + m.cost.toLocaleString("en-US") + " units). For a different matter, state the new question in full.";
+        note.textContent = C.casting.recastCarried(subj, m.cost);
       } else if (hasRecast(text)) {
         // the message carries its own argument AND asks to recast \u2014 a fresh
         // figure on the SAME ongoing matter. Don't call it a "new question";
         // just note the fresh cast. Continuity is handled in the reading itself.
-        note.textContent = "Cast a fresh hexagram for this, following the same thread (about " + m.cost.toLocaleString("en-US") + " units).";
+        note.textContent = C.casting.recastSameThread(m.cost);
       } else {
-        note.textContent = "This reads as a new question, so a fresh hexagram was cast, costing about " + m.cost.toLocaleString("en-US") + " units. To keep asking about the previous casting, ask about it directly; a follow-up costs only what its own answer uses.";
+        note.textContent = C.casting.routedToNew(m.cost);
       }
       threadInner.appendChild(note);
     }
@@ -1003,12 +996,12 @@
         S.units = A.state().units; renderUnits();
         if (!autoContinuedOnce) {
           autoContinuedOnce = true;
-          toast("The reading was cut short — charged only for what arrived; continuing on this same casting…");
+          toast(C.followUp.continuing);
           setTimeout(function () {
             send("Continue", "followup");
           }, 700);
         } else {
-          toast("The reading was cut short again — you were only charged for what arrived. Send “continue” to pick it up.");
+          toast(C.followUp.cutAgain);
         }
       } else {
         autoContinuedOnce = false;
@@ -1033,9 +1026,9 @@
       // nothing was deducted up front, so there is nothing to give back
       S.units = A.state().units;
       var msg;
-      if (status === 401) msg = "Your session has expired — sign in again to cast. These units were refunded.";
-      else if (status === 402) { msg = "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
-      else if (err.__timeout) msg = "The reading timed out — please try again. These units were refunded.";
+      if (status === 401) msg = C.errors.sessionExpired;
+      else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
+      else if (err.__timeout) msg = C.errors.timedOut;
       else msg = "The reading didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
@@ -1111,9 +1104,9 @@
       var status = e && e.status;
       S.units = A.state().units;
       var msg;
-      if (status === 401) msg = "Your session has expired — sign in again. These units were refunded.";
-      else if (status === 402) { msg = "Not enough units on the server — add units and try again. These units were refunded."; pulseLedger(); }
-      else if (err.__timeout) msg = "The answer timed out — try again. These units were refunded.";
+      if (status === 401) msg = C.errors.sessionExpired;
+      else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
+      else if (err.__timeout) msg = C.errors.answerTimedOut;
       else msg = "The answer didn\u2019t make it through — your units are back where they were. Try again in a moment.";
       tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
@@ -1143,7 +1136,7 @@
       renderUnits(); renderList();
       if (window.__bwReadingIncomplete) {
         window.__bwReadingIncomplete = false;
-        toast("The answer was cut short — you were only charged for what arrived. Send “continue” to pick it up.");
+        toast(C.followUp.answerCut);
       }
       revealReading(live, msg, c.id, c.msgs.length - 1, streamedAny).then(release, release);
     }
@@ -1299,7 +1292,7 @@
     A.signOut();
     S = A.state();
     renderAll();
-    toast("Signed out — your history and balance remain secure.");
+    toast(C.account.signedOut);
   });
 
   /* ── plans live on the pricing page (no in-app modal) ── */

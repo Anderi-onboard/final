@@ -503,6 +503,35 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
   // PUBLIC API
   // ═══════════════════════════════════════════════════════════════════
 
+  /* ── Follow-up routing (the classifier the chat calls before every send) ──
+     This is model-facing text, so it lives here with the rest of it rather
+     than inline in the interface. The chat asks for a decision; the wording of
+     how that decision is made belongs to the prompt layer.
+
+     A casting answers ONE matter. Stretching it over a second matter produces
+     a wrong reading, which is why a genuine tie resolves to NEW: a fresh cast
+     costs a little more, a wrong reading costs the reader's trust. */
+  var INTENT_ROUTER = {
+    model: "claude-sonnet-5",
+    maxTokens: 8,
+    timeoutMs: 4000,
+    fallback: "followup",
+    build: function (question, lastQuestion, lastReading) {
+      return "You route messages in a divination chat. A casting answers ONE matter; a different matter needs its own fresh casting.\n" +
+        "Earlier casting question: \u00ab" + String(lastQuestion || "").slice(0, 300) + "\u00bb\n" +
+        "Reading excerpt: \u00ab" + String(lastReading || "").slice(0, 400) + "\u00bb\n" +
+        "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
+        "FOLLOWUP = the new message stays on the SAME matter: continues it, doubts it, asks to clarify/expand a part of the reading, answers a question the reading asked, or says \"continue\".\n" +
+        "NEW = the new message asks about a DIFFERENT matter \u2014 different event, different person, different outcome being asked \u2014 even if the topic area sounds related. The test is the MATTER, not the topic: \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u7b2c\u4e00\u6b21\u300b then \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u8c08\u604b\u7231\u300b are two different matters \u2192 NEW. \u300a\u6211\u80fd\u521b\u4e1a\u6210\u529f\u5417\u300b then \u300a\u90a3\u5408\u4f19\u4eba\u9760\u8c31\u5417\u300b is the same venture \u2192 FOLLOWUP.\n" +
+        "When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.\n" +
+        "Reply with exactly one word.";
+    },
+    read: function (reply) {
+      var t = String(reply || "").toUpperCase();
+      return t.indexOf("NEW") >= 0 && t.indexOf("FOLLOWUP") < 0 ? "new" : "followup";
+    }
+  };
+
   window.BWPromptEngine = {
     // Core functions
     gate: gate,
@@ -514,6 +543,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     // For customization
     SEGMENTS: SEGMENTS,
     ROUTES: ROUTES,
+    INTENT_ROUTER: INTENT_ROUTER,
 
     // Convenience: full pipeline
     buildSystemPrompt: function (question, product, claudeComplete, options) {
