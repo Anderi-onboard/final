@@ -78,7 +78,14 @@
       // because a reader watching a balance move deserves to know why.
       continuing: "The reading was cut short — charged only for what arrived; continuing on this same casting…",
       cutAgain: "The reading was cut short again — you were only charged for what arrived. Send “continue” to pick it up.",
-      answerCut: "The answer was cut short — you were only charged for what arrived. Send “continue” to carry on."
+      answerCut: "The answer was cut short — you were only charged for what arrived. Send “continue” to carry on.",
+      // Shown under the suggested follow-up prompts. It must state the charge
+      // honestly: a follow-up re-sends the figure and the thread so far, and is
+      // billed for that, in proportion — there is no cap to promise.
+      promptsNote: function (typical) {
+        return "Nothing is sent until you submit. The same hexagram rides along with every follow-up, " +
+          "which is charged for what it uses — usually around " + n(typical) + " units.";
+      }
     },
 
     /* ── account and session ────────────────────────────────────────────── */
