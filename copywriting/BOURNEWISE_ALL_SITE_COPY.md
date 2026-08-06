@@ -226,7 +226,7 @@ Follow-ups reuse the current hexagram
 
 @@ s01.index.html.051
 <!-- source: index.html:781 | kind: text -->
-Stria 64 bills for what it writes · about 470 units, follow-ups less
+Stria 64 bills for what it writes · about 440 units, follow-ups less
 
 @@ s01.index.html.052
 <!-- source: index.html:782 | kind: text -->
@@ -936,7 +936,7 @@ Stria 64
 
 @@ s04.about.html.026
 <!-- source: about.html:84 | kind: text -->
-ABOUT 470 UNITS
+ABOUT 440 UNITS
 
 @@ s04.about.html.027
 <!-- source: about.html:84 | kind: text -->
@@ -948,7 +948,7 @@ Sortis 6
 
 @@ s04.about.html.029
 <!-- source: about.html:85 | kind: text -->
-ABOUT 690 UNITS
+ABOUT 780 UNITS
 
 @@ s04.about.html.030
 <!-- source: about.html:85 | kind: text -->
@@ -1568,7 +1568,7 @@ Units
 
 @@ s08.terms.html.029
 <!-- source: terms.html:122 | kind: text -->
-. Nothing is held or deducted before a reading is written. Once it is complete, it is charged in proportion to the input and output tokens it actually used — a shorter reading costs less than a longer one, and there is no fixed price and no ceiling. A typical Stria casting comes to roughly 470 Units and a typical Sortis casting to roughly 690; a follow-up is charged the same way, for its own context and answer.
+. Nothing is held or deducted before a reading is written. Once it is complete, it is charged in proportion to the input and output tokens it actually used — a shorter reading costs less than a longer one, and there is no fixed price and no ceiling. A typical Stria casting comes to roughly 440 Units and a typical Sortis casting to roughly 780; a follow-up is charged the same way, for its own context and answer.
 
 @@ s08.terms.html.030
 <!-- source: terms.html:123 | kind: text -->

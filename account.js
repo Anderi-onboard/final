@@ -38,21 +38,23 @@
   // what something costs before you ask for it.
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 470, followCap: 330, tag: "Present structure",
+      id: "stria", name: "Stria 64", cost: 440, followCap: 490, tag: "Present structure",
       depth: "Primary hexagram",
       blurb: "Interprets the primary hexagram against your question.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 690, followCap: 660, tag: "Change analysis",
+      id: "sortis", name: "Sortis 6", cost: 780, followCap: 640, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
       blurb: "Adds moving lines and the transformed hexagram to the analysis.",
       gated: false
     }
   };
-  // followCap mirrors functions/_lib/db.js FOLLOW_COST: an in-conversation
-  // follow-up RESERVES this much, the server settles to actual usage and
-  // refunds the difference (a follow-up costs at most half a cast).
+  // followCap mirrors functions/_lib/db.js FOLLOW_COST — the TYPICAL cost of an
+  // in-conversation follow-up. Nothing is reserved and nothing is refunded; the
+  // name is older than the billing model. Note Stria's follow-up now runs dearer
+  // than a fresh Stria reading: the answer is short but the whole conversation
+  // is re-sent as input, and input is what dominates that bill.
   var METHOD_ORDER = ["stria", "sortis"];
 
   var DEFAULT_ACCOUNT = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };

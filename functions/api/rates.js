@@ -30,16 +30,19 @@ export function onRequestGet({ env }) {
       model,
       unitsPer1kInput: rate.in,
       unitsPer1kOutput: rate.out,
-      reserve: METHOD_COST[product],
-      followUpReserve: FOLLOW_COST[product],
+      // Named "typical", not "reserve": nothing is held against these. The old
+      // names outlived the reservation they described.
+      typical: METHOD_COST[product],
+      typicalFollowUp: FOLLOW_COST[product],
       // Measured, so an estimate on the pricing page matches the real bill:
       // the prompt carries the method's instructions plus the computed figure,
       // which is why input is thousands of tokens before the reader types a word.
-      typicalInputTokens: product === 'sortis' ? 13540 : 11260,
-      typicalOutputTokens: product === 'sortis' ? 4345 : 2554,
+      // Re-measured with extended thinking off — see METHOD_COST in _lib/db.js.
+      typicalInputTokens: product === 'sortis' ? 17885 : 15119,
+      typicalOutputTokens: product === 'sortis' ? 4300 : 1300,
       typicalUnits: Math.ceil(
-        (product === 'sortis' ? 13.54 : 11.26) * rate.in +
-        (product === 'sortis' ? 4.345 : 2.554) * rate.out
+        (product === 'sortis' ? 17.885 : 15.119) * rate.in +
+        (product === 'sortis' ? 4.3 : 1.3) * rate.out
       )
     };
   }

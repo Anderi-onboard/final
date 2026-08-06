@@ -35,7 +35,19 @@ export const PACKS = [
 // against these — a reading is billed for the tokens it actually used, once it
 // is written. They exist so the interface can say roughly what a reading runs
 // before you ask for it, and they are the only numbers here a reader ever sees.
-export const METHOD_COST = { stria: 470, sortis: 690 };
+//
+// Re-measured after extended thinking was turned off in api/claude.js (it was
+// spending most of the token budget on reasoning the reader never saw, which
+// inflated every one of these). Same board, Opus 5, thinking off:
+//   sortis initial    725 / 767 / 848 units   (3693 / 4067 / 4889 chars)
+//   stria  initial    417 / 428 units         (1202 / 1288 chars)
+//   sortis follow-up  600 / 643 units
+//   stria  follow-up  480 units
+// Rounded to the median, then up rather than down: a reader should not be
+// surprised by a charge larger than the figure shown before they asked.
+// IF CLAUDE_THINKING IS EVER SET BACK TO "on", these roughly double — re-measure
+// before trusting them.
+export const METHOD_COST = { stria: 440, sortis: 780 };
 export const PAID = { pro: true, premium: true };
 
 // ── Metered billing — strictly proportional, no ceiling ────────────────────
@@ -82,8 +94,11 @@ const FALLBACK_RATE = MODEL_RATES['anthropic/claude-opus-5'];
 
 // Typical cost of a follow-up. Lower than a fresh reading because the answer is
 // shorter, higher than you might expect because the conversation so far is
-// re-sent as context and that context is billed like any other input.
-export const FOLLOW_COST = { stria: 330, sortis: 660 };
+// re-sent as context and that context is billed like any other input. Stria's
+// was the worst of the four: 330 against a measured 480, because a Stria
+// follow-up carries the same conversation as a Sortis one while its own answer
+// stays short, so input dominates the bill. See METHOD_COST for the samples.
+export const FOLLOW_COST = { stria: 490, sortis: 640 };
 
 // Chinese runs about 1.064 tokens per character; Latin script about 0.287
 // (both measured against the Claude tokenizer). The old estimate assumed 4

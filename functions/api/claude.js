@@ -38,6 +38,8 @@
 //   SORTIS_MODEL        (optional override, default anthropic/claude-opus-5)
 //   UTILITY_MODEL       (optional override, default anthropic/claude-haiku-4.5)
 //   CLAUDE_MAX_TOKENS   (optional, default 1024)
+//   CLAUDE_THINKING     (optional, "on" to re-enable extended thinking — see
+//                        the note at the payload below before you do)
 //
 // If the key is unset or this Function errors, the front-end falls back to its
 // deterministic local reading — the site still works, just without live prose.
@@ -110,9 +112,10 @@ export async function onRequestPost(context) {
     if (!messages.length) return json({ error: 'no messages' }, 400);
 
     const product = String(body.product || '').toLowerCase();
-    // mode "followup" = a question ON the existing casting (no new hexagram):
-    // reserve at most half a cast. Every generation settles to actual token
-    // usage after completion; the values below are reservation ceilings.
+    // mode "followup" = a question ON the existing casting (no new hexagram).
+    // Nothing is reserved against these: they are the TYPICAL cost of each kind
+    // of generation, used to pick the rate-limit bucket below and to tell the
+    // reader roughly what to expect. The real charge is metered after the fact.
     const mode = String(body.mode || '').toLowerCase() === 'followup' ? 'followup' : 'cast';
     const flat = product === 'sortis' ? METHOD_COST.sortis : product === 'stria' ? METHOD_COST.stria : 0;
     const cost = mode === 'followup'
@@ -135,6 +138,19 @@ export async function onRequestPost(context) {
     // OpenAI-style shape: system goes in the messages array, not a sibling field.
     const orMessages = body.system ? [{ role: 'system', content: body.system }, ...messages] : messages;
     const payload = { model, max_tokens, messages: orMessages };
+    // Extended thinking OFF unless explicitly asked for. Opus 5 turns it on by
+    // default, and its thinking is drawn from the SAME max_tokens budget as the
+    // reading — the reader never sees a token of it, but it is charged for all
+    // of them. Measured on one board, four identical requests at max_tokens
+    // 12000: thinking ate 9-11k of the budget and the reading was cut off
+    // mid-sentence at 257 / 1126 / 1769 / 2444 chars, each costing $0.389.
+    // The same prompt with thinking off finished cleanly (finish_reason "stop")
+    // at 4067-4889 chars for $0.196-0.217. So it was truncating every reading
+    // AND doubling the bill. Note that finish_reason "length" arrives looking
+    // like an ordinary completion, which is why this stayed invisible.
+    if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
+      payload.reasoning = { enabled: false };
+    }
     // optional sampling temperature (Anthropic models: 0..1). Used to give a
     // recast a genuinely fresher draw — the client sends temperature ≈ 1.
     if (body.temperature != null && Number.isFinite(Number(body.temperature))) {
@@ -267,9 +283,12 @@ async function pumpAndSettle(o) {
     if (buf.trim()) await handleRecord(buf);
   } catch (e) { /* upstream died mid-stream → finish stays null → truncated */ }
 
-  // 'stop'/'end_turn' = model finished; 'length' = hit max_tokens (the reading
-  // is as long as we allow — that's a delivered reading, charge stands).
-  const complete = finish === 'stop' || finish === 'end_turn' || finish === 'length';
+  // 'stop'/'end_turn' = the model finished its sentence. 'length' = it ran out
+  // of budget mid-word, which is NOT a finished reading — it used to be counted
+  // as one, so the client's auto-continue never fired for the single most
+  // common way a reading gets cut off. The charge is unaffected either way:
+  // chargeUsage bills measured tokens regardless of how the stream ended.
+  const complete = finish === 'stop' || finish === 'end_turn';
   let charged = 0;
   let units = o.unitsRemaining;
   let incomplete = !complete;
