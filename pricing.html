@@ -9,14 +9,14 @@
 <style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260806b">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260806b">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260806b">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260806b">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260806b">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260806b">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260806b">
-<script src="./ds-base.js?v=20260806b"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260806c">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260806c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260806c">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260806c">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260806c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260806c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260806c">
+<script src="./ds-base.js?v=20260806c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{min-height:100%}
@@ -52,7 +52,7 @@
 </header>
 
 <main class="shell" data-screen-label="Plans and units">
-  <section class="hero"><div><p class="eyebrow">Plans &amp; units</p><h1>Choose a balance that fits.</h1></div><p class="hero-copy">Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is still charged from actual model usage.<small>A maximum is reserved before generation. Unused units return to your balance when the response completes.</small></p></section>
+  <section class="hero"><div><p class="eyebrow">Plans &amp; units</p><h1>Choose a balance that fits.</h1></div><p class="hero-copy">Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is still charged from actual model usage.<small>Nothing is held before generation. A reading is charged once it is written, for the tokens it actually used.</small></p></section>
 
   <section class="ledgerstrip"><span class="identity" id="whoLine">Not signed in</span><span>Available units <b id="ledgerCount">—</b></span><a id="ledgerCta" href="./login.html">Sign in</a></section>
 
@@ -111,8 +111,8 @@
 </main>
 
 <div class="toast" id="toast"></div>
-<script src="./assets/backgrounds/mountain-range.js?v=20260806b"></script>
-<script src="./account.js?v=20260806b"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260806c"></script>
+<script src="./account.js?v=20260806c"></script>
 <script>
 (function(){
   var A=window.BWAccount;
