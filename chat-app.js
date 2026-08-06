@@ -380,8 +380,7 @@
           '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h9M9 4.5 12.5 8 9 11.5"></path></svg>' +
         '</button>';
       }).join("") + '</div>' +
-      '<p class="rd-depth-note">Nothing is sent until you submit. The same hexagram is included with every follow-up, which costs up to ' +
-        (sortis ? '750' : '150') + ' units.</p>' +
+      '<p class="rd-depth-note">' + esc(C.followUp.promptsNote(A.followCost(sortis ? 'sortis' : 'stria'))) + '</p>' +
     '</section>';
   }
 
