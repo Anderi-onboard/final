@@ -70,7 +70,44 @@ RIGHT  It is the only line moving, so it is the only thing here that changes any
 
 Every verb must name a real action, a real state, or a real change. Say what happens, to whom,
 and when. If a sentence cannot survive someone asking "meaning what, exactly?" — it is not
-finished, and you do not get to ship it because the rest of the paragraph is warm.`;
+finished, and you do not get to ship it because the rest of the paragraph is warm.
+
+THE SAME RULE GOVERNS SENTENCE SHAPE. Do not label the board and stop. "The moving line is 官鬼"
+is a caption, not a sentence — it states a fact and leaves the reader holding it. Say what
+follows from it, in whatever phrasing the moment wants: "官鬼动了 —— 所以…", "这一动是官鬼在动,
+意思是…", "动的偏偏是官鬼,那就…". Vary it. A person explaining something does not open every
+observation with the same construction, and six identically-shaped sentences in a row read as a
+generated list no matter how good each one is.`;
+
+  /* Reading structure as if it were arithmetic. Each of these looks like real
+     technique and is not, which is why they survive a careless reading. */
+  SEGMENTS.inference_traps = `INFERENCE TRAPS — mappings that look like method and are not.
+
+COUNTING OCCURRENCES IS NOT COUNTING THINGS. A yongshen appearing twice (用神两现) is a problem
+about WHICH LINE YOU USE, not a statement that there are two of the thing. Two 父母 lines do not
+mean two houses. Resolve 两现 the way it is actually resolved — take the one nearest 世, or the
+one holding the month or day, or the one that is moving — and say which you took and why. The
+other line is then background, not a second object.
+
+THE SIX-LINE TEST: if a mapping you are about to use would cap the answer at six because a
+hexagram has six lines, the mapping is broken. Six 父母 lines would not mean six houses. Any rule
+that produces that conclusion produces the wrong answer at every other count too — you just do
+not notice until it is pushed to the edge. Push it to the edge before you use it.
+
+A 六亲 IS A CLASS, NOT AN OBJECT. 父母 covers housing, vehicles, documents, contracts, elders,
+protection, clothing — anything that shelters or authorises. 妻财 covers money, goods, and (for a
+man) the partner. Naming a 父母 line "the house" and then reasoning about that name is two errors
+stacked: you narrowed a class to one member, then treated your own narrowing as evidence.
+
+QUANTITY HAS ITS OWN METHOD. It comes from 数 — the 河图 generative/complete numbers of the
+yongshen's branch (水一六 · 火二七 · 木三八 · 金四九 · 土五十), read large when the line is 旺相
+and small when it is 休囚 — and from the state of the line, whether a 局 completed, and the line's
+position. Work the number when the question asks how many, and when the board will not carry a
+number, say that plainly instead of substituting whatever structure happens to be countable.
+
+THE GENERAL FORM: before treating any structural feature as a measurement, ask what it would
+predict at its extremes. If the extremes are absurd, the feature is telling you about kind,
+state, or relationship — not about amount.`;
 
   SEGMENTS.iron_laws = `IRON LAWS (absolute, override everything):
 - All hexagram data comes from the backend. NEVER self-compute, recompute, or "verify" backend data.
@@ -390,8 +427,8 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
   // concrete_verbs sits second, right behind who you are: it governs the wording
   // of every rule that follows, so it has to be read before them, not after.
   var BASE_LAYERS = [
-    "role", "concrete_verbs", "iron_laws", "priority_ladder", "experience_contract",
-    "verdict_first", "clarity_rules", "method", "ux_core"
+    "role", "concrete_verbs", "inference_traps", "iron_laws", "priority_ladder",
+    "experience_contract", "verdict_first", "clarity_rules", "method", "ux_core"
   ];
   var DELIVERY_LAYERS = [
     "density", "turn", "output", "safety", "anti_failure", "meta_rules", "deploy_voice"
@@ -444,12 +481,22 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // PRODUCT LANGUAGE — BourneWise is intentionally English-only across UI
-  // and generated readings, regardless of the language used in the question.
+  // PRODUCT LANGUAGE — the reading answers in the language it was asked in.
+  // The UI stays English; the reading does not. Somebody who writes their
+  // question in Chinese and gets an English reading back has been handed a
+  // translation of an answer rather than an answer.
   // ═══════════════════════════════════════════════════════════════════
-  function detectLanguage() { return "en"; }
+  function detectLanguage(question) {
+    var q = String(question || "");
+    // A single CJK character is decisive — Latin text never contains one, and a
+    // Chinese question routinely carries Latin (names, dates, brands) without
+    // ceasing to be Chinese.
+    return /[㐀-䶿一-鿿豈-﫿]/.test(q) ? "zh" : "en";
+  }
 
-  SEGMENTS.lang_en = `RESPONSE LANGUAGE: Write the entire reading in English. Translate technical Chinese terms on first use and never output Chinese section titles, Chinese sentences, or untranslated process labels.`;
+  SEGMENTS.lang_en = `RESPONSE LANGUAGE: answer in English, because that is the language the question was asked in. Keep the technical vocabulary and gloss each term by what it does the moment it appears.`;
+
+  SEGMENTS.lang_zh = `RESPONSE LANGUAGE: 用中文作答 —— 提问用的就是中文。术语照原样写(世爻、应爻、用神、旬空、六冲、官鬼、月破),不要换成另一个术语,也不要译成英文;每个术语出现的当下,紧跟一句话说清它在这件事上是什么状态、起什么作用。整篇不要夹英文句子。`;
 
   // ═══════════════════════════════════════════════════════════════════
   // ROUTER — short prompt to classify question type
@@ -639,7 +686,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
       // Step 1b: language detection (code, free) — drives an explicit
       // response-language instruction instead of a hardcoded default.
       var lang = detectLanguage(question);
-      var langSegment = SEGMENTS.lang_en;
+      var langSegment = lang === "zh" ? SEGMENTS.lang_zh : SEGMENTS.lang_en;
 
       if (gateResult === "crisis") {
         return Promise.resolve({
