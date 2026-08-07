@@ -14,8 +14,25 @@
   var S = A.state();
   function save() { A.save(S); }
 
+  /* Is this text Chinese? NOT "does it contain a CJK character" — an ENGLISH
+     reading is required to keep the Liu Yao vocabulary untranslated, so that
+     test calls every English reading Chinese. Proportion separates them
+     cleanly: Chinese prose runs well over half CJK, English prose carrying a
+     dozen terms stays in the low single digits. */
+  function isZh(text) {
+    var s = String(text || "");
+    if (!s) return false;
+    return (s.match(/[㐀-䶿一-鿿豈-﫿]/g) || []).length / s.length > 0.15;
+  }
+
   function activeConv() {
     for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === S.activeId) return S.convs[i];
+    return null;
+  }
+  // A reading can settle after the reader has already moved to another thread,
+  // so late work looks the conversation up by id rather than asking what is open.
+  function convById(id) {
+    for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === id) return S.convs[i];
     return null;
   }
   function method() { return METHODS[S.method] || METHODS.stria; }
@@ -350,16 +367,52 @@
      Language follows the reading itself — the reader is looking at that text,
      so a footnote in another language is decoration. */
   function readingFootnote(text) {
-    var s = String(text || "");
-    // NOT "contains a CJK character". An ENGLISH reading is required to keep the
-    // Liu Yao vocabulary untranslated, so that test calls every English reading
-    // Chinese. Proportion separates them cleanly: Chinese prose runs well over
-    // half CJK, English prose carrying a dozen terms stays in low single digits.
-    var cjk = (s.match(/[㐀-䶿一-鿿豈-﫿]/g) || []).length;
-    var zh = s.length > 0 && cjk / s.length > 0.15;
+    var zh = isZh(text);
     var body = (C.readingFooter && (zh ? C.readingFooter.zh : C.readingFooter.en)) || "";
     if (!body) return "";
     return '<p class="rd-footnote" lang="' + (zh ? 'zh' : 'en') + '">' + esc(body) + '</p>';
+  }
+
+  /* Write the follow-up prompts from the reading that just landed, then swap
+     them into the panel already on screen.
+
+     Unbilled utility call, fired after the reading settles so it costs the
+     reader nothing in waiting. The panel is painted with the static set first,
+     so there is never a gap and never a spinner; if this returns something
+     better it replaces that section IN PLACE. Deliberately not a re-render of
+     the thread — repainting the whole conversation is what used to snap the
+     viewport back after a send, and the reader is mid-reading here. */
+  function suggestFollowUps(node, msg, conv) {
+    var PE = window.BWPromptEngine;
+    var R = PE && PE.FOLLOWUP_SUGGEST;
+    var text = msg && (msg.text || (msg.reading && msg.reading.reading));
+    if (!R || !text || !(window.claude && typeof window.claude.complete === "function")) return;
+    if (msg.prompts) return;
+
+    var asked = "";
+    if (conv && conv.msgs) {
+      for (var i = conv.msgs.length - 1; i >= 0; i--) {
+        if (conv.msgs[i] && conv.msgs[i].role === "user") { asked = conv.msgs[i].text || ""; break; }
+      }
+    }
+    var methodLabel = (msg.methodId === "sortis" || msg.method === "Sortis 6") ? "Sortis 6" : "Stria 64";
+    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, R.timeoutMs); });
+    var run = window.claude.complete({
+      role: "utility", model: R.model, max_tokens: R.maxTokens,
+      messages: [{ role: "user", content: R.build(asked, text, methodLabel) }]
+    }).then(function (r) { return R.read(r); }).catch(function () { return null; });
+
+    Promise.race([run, guard]).then(function (made) {
+      if (!made || !made.length) return;          // keep the static set, say nothing
+      msg.prompts = made;
+      try { save(); } catch (e) {}
+      var old = node && node.querySelector(".rd-depth");
+      if (!old) return;
+      var frag = document.createElement("div");
+      frag.innerHTML = readingDepth(msg);
+      var fresh = frag.firstChild;
+      if (fresh) old.parentNode.replaceChild(fresh, old);
+    });
   }
 
   /* A reading should open the next useful layer, not end as a block of prose.
@@ -369,7 +422,11 @@
     var continued = !!(msg && msg.followup);
     var sortis = !!(msg && (msg.methodId === "sortis" || msg.method === "Sortis 6"));
     var methodLabel = sortis ? "Sortis 6" : "Stria 64";
-    var prompts = continued ? [
+    // Written from the reading when suggestFollowUps() managed it. The static
+    // set below is the floor, not the intent: it asks nothing this particular
+    // reading raised, so it is what a reader sees only when generation failed.
+    var made = msg && Array.isArray(msg.prompts) && msg.prompts.length >= 3 ? msg.prompts : null;
+    var prompts = made || (continued ? [
       ["Challenge", "What assumption in this reading is weakest?"],
       ["Concrete", "How would this show up in practice?"],
       ["Alternative", "What is the strongest alternative reading?"],
@@ -390,18 +447,21 @@
       ["Blind spot", "What am I not seeing yet in this situation?"],
       ["Near term", "What is most likely to change first?"],
       ["Next move", "What is mine to do now?"]
-    ]);
-    return '<section class="rd-depth" aria-label="Ask a follow-up using the same ' + methodLabel + ' hexagram">' +
-      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Same hexagram</span>' +
-      '<h4>' + (continued ? 'Check the previous answer against another constraint.' : (sortis ? 'Inspect the change before you decide.' : 'Inspect the current structure before you decide.')) + '</h4>' +
-      '<p>Select a prompt to place it in the composer. You can edit it before submitting.</p></div>' +
+    ]));
+    // The panel speaks whatever the prompts on it speak.
+    var zhPanel = isZh(prompts.map(function (p) { return p[1]; }).join(""));
+    var L = (C.followUp.panel && (zhPanel ? C.followUp.panel.zh : C.followUp.panel.en)) || C.followUp.panel.en;
+    return '<section class="rd-depth" lang="' + (zhPanel ? 'zh' : 'en') + '" aria-label="' + esc(L.aria(methodLabel)) + '">' +
+      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + esc(L.kicker(methodLabel)) + '</span>' +
+      '<h4>' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '</h4>' +
+      '<p>' + esc(L.hint) + '</p></div>' +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
           '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
           '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h9M9 4.5 12.5 8 9 11.5"></path></svg>' +
         '</button>';
       }).join("") + '</div>' +
-      '<p class="rd-depth-note">' + esc(C.followUp.promptsNote(A.followCost(sortis ? 'sortis' : 'stria'))) + '</p>' +
+      '<p class="rd-depth-note">' + esc(L.note(A.followCost(sortis ? 'sortis' : 'stria'))) + '</p>' +
     '</section>';
   }
 
@@ -1182,6 +1242,8 @@
       var bodyEl = node.querySelector(".reading-body");
       if (bodyEl) bodyEl.classList.add("bw-streamed");
       resolve();
+      // after the reader has the reading — never gating it
+      try { suggestFollowUps(node, msg, convById(convId)); } catch (e) {}
     });
   }
 

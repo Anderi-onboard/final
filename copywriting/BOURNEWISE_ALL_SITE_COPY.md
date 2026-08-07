@@ -1989,6 +1989,10 @@ The answer was cut short — you were only charged for what arrived. Send “con
 <!-- source: copy.js | kind: template -->
 Nothing is sent until you submit. The same hexagram rides along with every follow-up, which is charged for what it uses — usually around 690 units.
 
+@@ s11.copy.js.followUp.panel
+<!-- source: copy.js | kind: text -->
+[object Object]
+
 ### `readingFooter`
 
 @@ s11.copy.js.readingFooter.en

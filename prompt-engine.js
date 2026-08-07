@@ -683,6 +683,61 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     }
   };
 
+  /* ── Follow-up suggestions (the buttons under a finished reading) ──────────
+     These used to be eighteen sentences hardcoded in the interface — "What is
+     the central pattern in this figure?" under every Stria reading ever
+     produced. They asked nothing the reading had not already answered, and a
+     generic question printed under a specific answer reads as furniture.
+
+     So they are written from the reading itself, after it lands. The whole
+     value is specificity: a good one names the line, the term or the claim the
+     reader just read, and asks the thing that reading deliberately left open.
+     Cheap utility call, unbilled, and every failure path falls back to the
+     static set rather than showing an empty panel. */
+  var FOLLOWUP_SUGGEST = {
+    model: "claude-sonnet-5",
+    maxTokens: 700,
+    timeoutMs: 9000,
+    count: 6,
+    build: function (question, reading, methodLabel) {
+      return "Under a divination reading, a reader is offered a few follow-up questions they can " +
+        "ask about THE SAME casting — no new hexagram is drawn. Write them.\n\n" +
+        "THE QUESTION THEY ASKED: «" + String(question || "").slice(0, 400) + "»\n\n" +
+        "THE READING THEY JUST FINISHED:\n«" + String(reading || "").slice(0, 9000) + "»\n\n" +
+        "Write " + this.count + " follow-ups. Every one must come out of THIS reading:\n" +
+        "· Name the actual thing — the line, the term, the timing anchor, the specific claim. " +
+        "\"Which moving line carries the decision?\" is furniture; \"这个缺的申，什么时候能补上\" is a question.\n" +
+        "· Prefer what the reading itself flagged as open, soft, or interpretive, and what it " +
+        "explicitly declined to answer. Those are the places another pass genuinely adds something.\n" +
+        "· Each must be answerable from the SAME casting. Nothing that would need a fresh hexagram.\n" +
+        "· No two may be the same question reworded.\n" +
+        "· Write them in the language of the reading above, in the reader's own voice — first " +
+        "person, the way they would actually type it, not an interview prompt.\n" +
+        "· No mushy verbs. Every one has to name something checkable.\n\n" +
+        "FORMAT — exactly " + this.count + " lines, nothing else, no numbering, no preamble:\n" +
+        "short label (2-4 words) | the question in full\n";
+    },
+    read: function (reply) {
+      var out = [];
+      String(reply || "").split("\n").forEach(function (raw) {
+        var line = raw.replace(/^\s*(?:[-*•]|\d+[.)])\s*/, "").trim();
+        var bar = line.indexOf("|");
+        if (bar < 1) return;
+        var label = line.slice(0, bar).trim().replace(/^\*+|\*+$/g, "");
+        var prompt = line.slice(bar + 1).trim().replace(/^\*+|\*+$/g, "");
+        // A label that ran long is a model that ignored the format, and a prompt
+        // too short to be a sentence is a fragment. The floor has to be measured
+        // per script: 「这盘能信几分？」 is a whole question in seven characters,
+        // while seven characters of English is not yet a phrase.
+        var cjk = (prompt.match(/[㐀-䶿一-鿿豈-﫿]/g) || []).length;
+        var floor = cjk > prompt.length / 3 ? 5 : 12;
+        if (!label || !prompt || label.length > 28 || prompt.length < floor) return;
+        out.push([label, prompt]);
+      });
+      return out.length >= 3 ? out.slice(0, 6) : null;
+    }
+  };
+
   window.BWPromptEngine = {
     // Core functions
     gate: gate,
@@ -695,6 +750,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     SEGMENTS: SEGMENTS,
     ROUTES: ROUTES,
     INTENT_ROUTER: INTENT_ROUTER,
+    FOLLOWUP_SUGGEST: FOLLOWUP_SUGGEST,
 
     // Convenience: full pipeline
     buildSystemPrompt: function (question, product, claudeComplete, options) {

@@ -85,6 +85,37 @@
       promptsNote: function (typical) {
         return "Nothing is sent until you submit. The same hexagram rides along with every follow-up, " +
           "which is charged for what it uses — usually around " + n(typical) + " units.";
+      },
+      /* The frame around the follow-up buttons. Once those buttons are written
+         from the reading they arrive in the reading's language, and Chinese
+         prompts sitting inside an English panel look like a half-finished
+         translation. This immediate frame follows the reading; the rest of the
+         interface stays English. */
+      panel: {
+        en: {
+          kicker: function (method) { return method + " · Same hexagram"; },
+          headContinued: "Check the previous answer against another constraint.",
+          headSortis: "Inspect the change before you decide.",
+          headStria: "Inspect the current structure before you decide.",
+          hint: "Select a prompt to place it in the composer. You can edit it before submitting.",
+          aria: function (method) { return "Ask a follow-up using the same " + method + " hexagram"; },
+          note: function (typical) {
+            return "Nothing is sent until you submit. The same hexagram rides along with every " +
+              "follow-up, which is charged for what it uses — usually around " + n(typical) + " units.";
+          }
+        },
+        zh: {
+          kicker: function (method) { return method + " · 同一卦"; },
+          headContinued: "换个角度，再核一遍刚才那个答案。",
+          headSortis: "决定之前，把这一动看清楚。",
+          headStria: "决定之前，把眼下的结构看清楚。",
+          hint: "点一条，它会填进输入框，发送前你可以改。",
+          aria: function (method) { return "用同一个 " + method + " 卦追问"; },
+          note: function (typical) {
+            return "不点发送就什么都不会发出去。每次追问都带着同一个卦一起走，按实际用量计费 —— " +
+              "通常在 " + n(typical) + " 点左右。";
+          }
+        }
       }
     },
 
