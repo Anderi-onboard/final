@@ -16,240 +16,244 @@ screen-reader name).
 Runtime strings live in `copy.js` and appear in their own section at the end;
 they are functions of live numbers, so they are shown as templates.
 
-**459 blocks** across 10 pages, plus the runtime copy module.
+**460 blocks** across 10 pages, plus the runtime copy module.
 
 ---
 
 ## 1. index.html
 
-*The app — sidebar, casting workbench, composer* — 57 blocks
+*The app — sidebar, casting workbench, composer* — 58 blocks
 
 @@ s01.index.html.001
 <!-- source: index.html:7 | kind: title -->
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.002
-<!-- source: index.html:690 | kind: aria-label -->
+<!-- source: index.html:710 | kind: aria-label -->
 New casting
 
 @@ s01.index.html.003
-<!-- source: index.html:691 | kind: aria-label -->
+<!-- source: index.html:711 | kind: aria-label -->
 BourneWise logomark
 
 @@ s01.index.html.004
-<!-- source: index.html:694 | kind: aria-label -->
+<!-- source: index.html:714 | kind: aria-label -->
 Collapse sidebar
 
 @@ s01.index.html.005
-<!-- source: index.html:704 | kind: aria-label -->
+<!-- source: index.html:724 | kind: aria-label -->
 Reading history
 
 @@ s01.index.html.006
-<!-- source: index.html:722 | kind: aria-label -->
+<!-- source: index.html:742 | kind: aria-label -->
 Sign in to claim 500 free units
 
 @@ s01.index.html.007
-<!-- source: index.html:723 | kind: aria-label -->
+<!-- source: index.html:743 | kind: aria-label -->
 Dismiss
 
 @@ s01.index.html.008
-<!-- source: index.html:742 | kind: aria-label -->
+<!-- source: index.html:762 | kind: aria-label -->
 Open menu
 
 @@ s01.index.html.009
-<!-- source: index.html:757 | kind: aria-label -->
+<!-- source: index.html:777 | kind: aria-label -->
 Open the five-minute walk-through
 
 @@ s01.index.html.010
-<!-- source: index.html:777 | kind: aria-label -->
-Casting question
+<!-- source: index.html:797 | kind: aria-label -->
+Earlier castings to carry
 
 @@ s01.index.html.011
-<!-- source: index.html:778 | kind: aria-label -->
-Cast
+<!-- source: index.html:801 | kind: aria-label -->
+Casting question
 
 @@ s01.index.html.012
-<!-- source: index.html:783 | kind: aria-label -->
-Casting method
+<!-- source: index.html:802 | kind: aria-label -->
+Cast
 
 @@ s01.index.html.013
-<!-- source: index.html:777 | kind: placeholder -->
-Describe the situation, then ask one clear question…
+<!-- source: index.html:807 | kind: aria-label -->
+Casting method
 
 @@ s01.index.html.014
-<!-- source: index.html:694 | kind: title -->
-Collapse sidebar
+<!-- source: index.html:801 | kind: placeholder -->
+Describe the situation, then ask one clear question…
 
 @@ s01.index.html.015
-<!-- source: index.html:742 | kind: title -->
-Menu
+<!-- source: index.html:714 | kind: title -->
+Collapse sidebar
 
 @@ s01.index.html.016
-<!-- source: index.html:748 | kind: title -->
-How answers are generated
+<!-- source: index.html:762 | kind: title -->
+Menu
 
 @@ s01.index.html.017
-<!-- source: index.html:776 | kind: title -->
-Change casting method
+<!-- source: index.html:768 | kind: title -->
+How answers are generated
 
 @@ s01.index.html.018
+<!-- source: index.html:800 | kind: title -->
+Change casting method
+
+@@ s01.index.html.019
 <!-- source: index.html:7 | kind: text -->
 BourneWise — Hexagram-based decision analysis
 
-@@ s01.index.html.019
-<!-- source: index.html:692 | kind: text -->
+@@ s01.index.html.020
+<!-- source: index.html:712 | kind: text -->
 BourneWise
 
-@@ s01.index.html.020
-<!-- source: index.html:701 | kind: text -->
+@@ s01.index.html.021
+<!-- source: index.html:721 | kind: text -->
 New casting
 
-@@ s01.index.html.021
-<!-- source: index.html:705 | kind: text -->
+@@ s01.index.html.022
+<!-- source: index.html:725 | kind: text -->
 Reading history
 
-@@ s01.index.html.022
-<!-- source: index.html:710 | kind: text -->
+@@ s01.index.html.023
+<!-- source: index.html:730 | kind: text -->
 Available units
 
-@@ s01.index.html.023
-<!-- source: index.html:711 | kind: text -->
+@@ s01.index.html.024
+<!-- source: index.html:731 | kind: text -->
 Usage
 
-@@ s01.index.html.024
-<!-- source: index.html:714 | kind: text -->
+@@ s01.index.html.025
+<!-- source: index.html:734 | kind: text -->
 —
 
-@@ s01.index.html.025
-<!-- source: index.html:715 | kind: text -->
+@@ s01.index.html.026
+<!-- source: index.html:735 | kind: text -->
 units
 
-@@ s01.index.html.026
-<!-- source: index.html:718 | kind: text -->
+@@ s01.index.html.027
+<!-- source: index.html:738 | kind: text -->
 Prepaid balance · no expiry
 
-@@ s01.index.html.027
-<!-- source: index.html:719 | kind: text -->
+@@ s01.index.html.028
+<!-- source: index.html:739 | kind: text -->
 Get units
 
-@@ s01.index.html.028
-<!-- source: index.html:719 | kind: text -->
+@@ s01.index.html.029
+<!-- source: index.html:739 | kind: text -->
 →
 
-@@ s01.index.html.029
-<!-- source: index.html:723 | kind: text -->
+@@ s01.index.html.030
+<!-- source: index.html:743 | kind: text -->
 ×
 
-@@ s01.index.html.030
-<!-- source: index.html:724 | kind: text -->
+@@ s01.index.html.031
+<!-- source: index.html:744 | kind: text -->
 First reading?
 
-@@ s01.index.html.031
-<!-- source: index.html:724 | kind: text -->
+@@ s01.index.html.032
+<!-- source: index.html:744 | kind: text -->
 Sign in to claim
 
-@@ s01.index.html.032
-<!-- source: index.html:724 | kind: text -->
+@@ s01.index.html.033
+<!-- source: index.html:744 | kind: text -->
 500 free units
 
-@@ s01.index.html.033
-<!-- source: index.html:729 | kind: text -->
+@@ s01.index.html.034
+<!-- source: index.html:749 | kind: text -->
 Guest
 
-@@ s01.index.html.034
-<!-- source: index.html:729 | kind: text -->
+@@ s01.index.html.035
+<!-- source: index.html:749 | kind: text -->
 Not signed in
 
-@@ s01.index.html.035
-<!-- source: index.html:733 | kind: text -->
+@@ s01.index.html.036
+<!-- source: index.html:753 | kind: text -->
 Sign in to sync your balance and readings
 
-@@ s01.index.html.036
-<!-- source: index.html:734 | kind: text -->
+@@ s01.index.html.037
+<!-- source: index.html:754 | kind: text -->
 Plans & units
 
-@@ s01.index.html.037
-<!-- source: index.html:734 | kind: text -->
+@@ s01.index.html.038
+<!-- source: index.html:754 | kind: text -->
 Plans
 
-@@ s01.index.html.038
-<!-- source: index.html:735 | kind: text -->
+@@ s01.index.html.039
+<!-- source: index.html:755 | kind: text -->
 Settings
 
-@@ s01.index.html.039
-<!-- source: index.html:736 | kind: text -->
+@@ s01.index.html.040
+<!-- source: index.html:756 | kind: text -->
 Sign out
 
-@@ s01.index.html.040
-<!-- source: index.html:747 | kind: text -->
+@@ s01.index.html.041
+<!-- source: index.html:767 | kind: text -->
 — units
 
-@@ s01.index.html.041
-<!-- source: index.html:750 | kind: text -->
+@@ s01.index.html.042
+<!-- source: index.html:770 | kind: text -->
 We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.
 
-@@ s01.index.html.042
-<!-- source: index.html:752 | kind: text -->
+@@ s01.index.html.043
+<!-- source: index.html:772 | kind: text -->
 The method
 
-@@ s01.index.html.043
-<!-- source: index.html:753 | kind: text -->
+@@ s01.index.html.044
+<!-- source: index.html:773 | kind: text -->
 Why BourneWise
 
-@@ s01.index.html.044
-<!-- source: index.html:753 | kind: text -->
+@@ s01.index.html.045
+<!-- source: index.html:773 | kind: text -->
 Why
 
-@@ s01.index.html.045
-<!-- source: index.html:759 | kind: text -->
+@@ s01.index.html.046
+<!-- source: index.html:779 | kind: text -->
 How does this work?
 
-@@ s01.index.html.046
-<!-- source: index.html:759 | kind: text -->
+@@ s01.index.html.047
+<!-- source: index.html:779 | kind: text -->
 See how casting, interpretation, and billing fit together.
 
-@@ s01.index.html.047
-<!-- source: index.html:768 | kind: text -->
+@@ s01.index.html.048
+<!-- source: index.html:788 | kind: text -->
 Describe the situation and ask one specific question.
 
-@@ s01.index.html.048
-<!-- source: index.html:776 | kind: text -->
+@@ s01.index.html.049
+<!-- source: index.html:800 | kind: text -->
 Stria 64
 
-@@ s01.index.html.049
-<!-- source: index.html:782 | kind: text -->
+@@ s01.index.html.050
+<!-- source: index.html:806 | kind: text -->
 Enter to submit · Shift+Enter for a new line
 
-@@ s01.index.html.050
-<!-- source: index.html:782 | kind: text -->
+@@ s01.index.html.051
+<!-- source: index.html:806 | kind: text -->
 Follow-ups reuse the current hexagram
 
-@@ s01.index.html.051
-<!-- source: index.html:784 | kind: text -->
+@@ s01.index.html.052
+<!-- source: index.html:808 | kind: text -->
 Stria 64 bills for what it writes · about 440 units, follow-ups less
 
-@@ s01.index.html.052
-<!-- source: index.html:785 | kind: text -->
+@@ s01.index.html.053
+<!-- source: index.html:809 | kind: text -->
 Support:
 
-@@ s01.index.html.053
-<!-- source: index.html:785 | kind: text -->
+@@ s01.index.html.054
+<!-- source: index.html:809 | kind: text -->
 hello@bournewise.com
 
-@@ s01.index.html.054
-<!-- source: index.html:785 | kind: text -->
+@@ s01.index.html.055
+<!-- source: index.html:809 | kind: text -->
 ·
 
-@@ s01.index.html.055
-<!-- source: index.html:785 | kind: text -->
+@@ s01.index.html.056
+<!-- source: index.html:809 | kind: text -->
 Terms
 
-@@ s01.index.html.056
-<!-- source: index.html:785 | kind: text -->
+@@ s01.index.html.057
+<!-- source: index.html:809 | kind: text -->
 Privacy
 
-@@ s01.index.html.057
-<!-- source: index.html:785 | kind: text -->
+@@ s01.index.html.058
+<!-- source: index.html:809 | kind: text -->
 Refunds
 
 ---
@@ -1992,6 +1996,44 @@ Nothing is sent until you submit. The same hexagram rides along with every follo
 @@ s11.copy.js.followUp.panel
 <!-- source: copy.js | kind: text -->
 [object Object]
+
+### `carry`
+
+@@ s11.copy.js.carry.open
+<!-- source: copy.js | kind: text -->
+Carry an earlier casting
+
+@@ s11.copy.js.carry.openHint
+<!-- source: copy.js | kind: text -->
+Bring a previous conversation in as background
+
+@@ s11.copy.js.carry.head
+<!-- source: copy.js | kind: text -->
+Which conversation should ride along?
+
+@@ s11.copy.js.carry.note
+<!-- source: copy.js | kind: text -->
+Its questions and readings travel with this thread as background. No new hexagram is drawn, and the earlier casting is not re-read.
+
+@@ s11.copy.js.carry.empty
+<!-- source: copy.js | kind: text -->
+Nothing earlier to carry yet.
+
+@@ s11.copy.js.carry.carrying
+<!-- source: copy.js | kind: template -->
+Carrying · 690
+
+@@ s11.copy.js.carry.drop
+<!-- source: copy.js | kind: text -->
+Stop carrying this
+
+@@ s11.copy.js.carry.dropped
+<!-- source: copy.js | kind: text -->
+That conversation is no longer riding along.
+
+@@ s11.copy.js.carry.added
+<!-- source: copy.js | kind: template -->
+“690” is now riding along with this thread.
 
 ### `readingFooter`
 

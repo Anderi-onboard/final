@@ -77,6 +77,105 @@
     }
   }
 
+  /* ── carrying an earlier conversation into this one ───────────────────────
+     A casting used to be the billing unit, so every thread had a reason to stay
+     short and a reader who opened a new window lost everything they had already
+     explained. Billing is per token now: a long thread costs exactly what it
+     uses, and there is no longer any reason to make someone repeat themselves.
+
+     What travels is the earlier conversation's questions and readings, as
+     background text. The earlier HEXAGRAM is deliberately not re-read — that
+     casting answered its own question, and stretching it over a second matter
+     is the wrong-reading failure the intent router already exists to prevent. */
+  var CARRY_PER_READING = 1800, CARRY_TOTAL = 9000;
+
+  function carryDigest(conv) {
+    var parts = [], total = 0;
+    for (var i = 0; i < conv.msgs.length && total < CARRY_TOTAL; i++) {
+      var m = conv.msgs[i];
+      if (!m || !m.text) continue;
+      var chunk = m.role === "user"
+        ? "They asked: " + String(m.text).slice(0, 400)
+        : "The reading said: " + String(m.text).slice(0, CARRY_PER_READING);
+      parts.push(chunk);
+      total += chunk.length;
+    }
+    return parts.join("\n\n");
+  }
+
+  function carryable() {
+    return S.convs.filter(function (c) {
+      return c.id !== S.activeId && c.msgs && c.msgs.some(function (m) { return m.role === "oracle" && m.text; });
+    }).slice(0, 8);
+  }
+
+  function renderCarry() {
+    var bar = $("carryBar");
+    if (!bar) return;
+    var c = activeConv();
+    var carried = c && c.carried;
+    if (carried) {
+      bar.innerHTML = '<span class="carry-chip"><b>' + esc(C.carry.carrying(carried.title)) + '</b>' +
+        '<button type="button" class="carry-drop pressable" id="carryDrop" title="' + esc(C.carry.drop) + '" aria-label="' + esc(C.carry.drop) + '">' +
+        '<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"></path></svg></button></span>';
+      $("carryDrop").addEventListener("click", function () {
+        var cur = activeConv(); if (!cur) return;
+        delete cur.carried; save(); renderCarry(); toast(C.carry.dropped);
+      });
+      return;
+    }
+    // Nothing to offer when there is no earlier conversation — an affordance
+    // that opens an empty list is worse than no affordance.
+    if (!carryable().length) { bar.innerHTML = ""; return; }
+    bar.innerHTML = '<button type="button" class="carry-open pressable" id="carryOpen" aria-haspopup="true" aria-expanded="false" title="' + esc(C.carry.openHint) + '">' +
+      '<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">' +
+      '<path d="M2.5 4.5h6l1.5 2h3.5v5.5a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1z"></path></svg>' +
+      '<span>' + esc(C.carry.open) + '</span></button>';
+    $("carryOpen").addEventListener("click", function (e) {
+      e.stopPropagation();
+      var menu = $("carryMenu");
+      if (menu.classList.contains("open")) { closeCarry(); return; }
+      renderCarryMenu();
+      menu.classList.add("open");
+      $("carryOpen").setAttribute("aria-expanded", "true");
+    });
+  }
+
+  function closeCarry() {
+    var menu = $("carryMenu");
+    if (menu) menu.classList.remove("open");
+    var btn = $("carryOpen");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  function renderCarryMenu() {
+    var menu = $("carryMenu");
+    if (!menu) return;
+    var list = carryable();
+    menu.innerHTML = '<div class="mm-head lbl">' + esc(C.carry.head) + '</div>';
+    if (!list.length) {
+      menu.insertAdjacentHTML("beforeend", '<p class="cm-empty">' + esc(C.carry.empty) + '</p>');
+      return;
+    }
+    list.forEach(function (conv) {
+      var reads = conv.msgs.filter(function (m) { return m.role === "oracle" && m.text; }).length;
+      var row = document.createElement("button");
+      row.type = "button";
+      row.className = "cm-row pressable";
+      row.innerHTML = '<span class="cm-title">' + esc(conv.title || "Untitled casting") + '</span>' +
+        '<span class="cm-meta">' + (conv.method || "") + (conv.method ? " · " : "") +
+        reads + (reads === 1 ? " reading" : " readings") + '</span>';
+      row.addEventListener("click", function () {
+        var cur = activeConv();
+        if (!cur) return;
+        cur.carried = { id: conv.id, title: conv.title || "Untitled casting", digest: carryDigest(conv) };
+        save(); closeCarry(); renderCarry(); toast(C.carry.added(cur.carried.title));
+      });
+      menu.appendChild(row);
+    });
+    menu.insertAdjacentHTML("beforeend", '<p class="cm-note">' + esc(C.carry.note) + '</p>');
+  }
+
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
@@ -529,7 +628,7 @@
     t.scrollTop = t.scrollHeight;
   }
 
-  function renderAll() { renderUnits(); renderAccount(); renderMethod(); renderList(); renderThread(); }
+  function renderAll() { renderUnits(); renderAccount(); renderMethod(); renderCarry(); renderList(); renderThread(); }
 
   function toast(msg) {
     toastEl.textContent = msg;
@@ -572,16 +671,34 @@
      the model is never asked to recast (§MOVE in meta_rules already covers
      that), it just now gets to see what was said. */
   function buildHistory(conv, maxTurns) {
-    if (!conv || !conv.msgs || conv.msgs.length < 2) return [];
+    if (!conv || !conv.msgs) return [];
     var prior = conv.msgs.slice(0, -1); // exclude the question just pushed for this send
     var out = [];
+    // A conversation carried in from elsewhere rides at the head, marked as
+    // background. It is NOT trimmed with the rest: the reader chose it
+    // deliberately, and dropping it to respect a turn budget would silently
+    // undo what they asked for.
+    if (conv.carried && conv.carried.digest) {
+      out.push({ role: "user", content:
+        "[CARRIED CONTEXT — an earlier conversation of theirs, titled «" + conv.carried.title +
+        "». Background only: it tells you what they have already asked and been told, so you " +
+        "do not make them repeat it. Do NOT re-read that earlier hexagram or treat its casting " +
+        "as evidence for this question — this question has its own casting.]\n\n" +
+        conv.carried.digest });
+      out.push({ role: "assistant", content:
+        "Understood — I have their earlier conversation as background and will read only the " +
+        "casting in front of me." });
+    }
     for (var i = 0; i < prior.length; i++) {
       var m = prior[i];
       if (m.role === "user") out.push({ role: "user", content: m.text });
       else if (m.role === "oracle") out.push({ role: "assistant", content: String(m.text || "").slice(0, 2000) });
     }
+    var carriedHead = (conv.carried && conv.carried.digest) ? 2 : 0;
+    var head = out.slice(0, carriedHead), tail = out.slice(carriedHead);
     var maxMsgs = (maxTurns || 3) * 2;
-    return out.length > maxMsgs ? out.slice(out.length - maxMsgs) : out;
+    if (tail.length > maxMsgs) tail = tail.slice(tail.length - maxMsgs);
+    return head.concat(tail);
   }
 
   /* ── follow-up vs new-question detection (Sonnet 5) ──
@@ -1272,6 +1389,8 @@
   });
   document.addEventListener("click", function (e) {
     if (!methodMenu.contains(e.target) && e.target !== methodChip) closeMethod();
+    var cMenu = $("carryMenu"), cBtn = $("carryOpen");
+    if (cMenu && !cMenu.contains(e.target) && e.target !== cBtn && !(cBtn && cBtn.contains(e.target))) closeCarry();
   });
 
   $("newCast").addEventListener("click", function () {

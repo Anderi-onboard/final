@@ -119,6 +119,24 @@
       }
     },
 
+    /* ── carrying an earlier casting into this one ──────────────────────────
+       Billing is per token now, not per casting, so keeping a long thread alive
+       costs a reader nothing extra and there is no reason to make them repeat
+       themselves in a fresh window. This is the bridge for the case the product
+       could not handle before: they already started somewhere new. */
+    carry: {
+      open: "Carry an earlier casting",
+      openHint: "Bring a previous conversation in as background",
+      head: "Which conversation should ride along?",
+      note: "Its questions and readings travel with this thread as background. " +
+        "No new hexagram is drawn, and the earlier casting is not re-read.",
+      empty: "Nothing earlier to carry yet.",
+      carrying: function (title) { return "Carrying · " + title; },
+      drop: "Stop carrying this",
+      dropped: "That conversation is no longer riding along.",
+      added: function (title) { return "“" + title + "” is now riding along with this thread."; }
+    },
+
     /* ── the note under every finished reading ──────────────────────────────
        Set below the reading in smaller type, never inside it. A caution folded
        into the prose either softens the verdict or gets skimmed past with the

@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260807b">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260807b">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260807b">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260807b">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260807b">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260807b">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260807b">
-<script src="./ds-base.js?v=20260807b"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260807c">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260807c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260807c">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260807c">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260807c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260807c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260807c">
+<script src="./ds-base.js?v=20260807c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -446,6 +446,26 @@
   .send:disabled{animation:sendBreath 1.7s var(--ease-in-out) infinite}
   @keyframes sendBreath{0%,100%{opacity:1}50%{opacity:.45}}
   .send[disabled]{opacity:.4;cursor:default;transform:none}
+  /* Carrying an earlier conversation in. The picker is the method menu — same
+     component, same glass, only anchored higher — so this adds a capability
+     without adding a second popover language to the app. */
+  .carry-zone{position:relative;display:flex;justify-content:center;margin-bottom:10px}
+  .carry-bar{display:flex;justify-content:center;min-height:0}
+  .carry-bar:empty{display:none}
+  .carry-open{display:inline-flex;align-items:center;gap:7px;min-height:30px;padding:5px 11px;border-radius:999px;background:transparent;font-family:var(--sans);font-size:11.5px;color:var(--faint);transition:color .16s,background .16s}
+  .carry-open:hover{color:var(--ink);background:var(--paper-dim)}
+  .carry-open svg{opacity:.75}
+  .carry-chip{display:inline-flex;align-items:center;gap:9px;max-width:min(560px,100%);padding:5px 6px 5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper-raised);font-family:var(--sans);font-size:11.5px;color:var(--dim)}
+  .carry-chip b{font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .carry-drop{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--faint);transition:color .16s,background .16s}
+  .carry-drop:hover{color:var(--terracotta);background:var(--paper-dim)}
+  .method-menu.carry-menu{bottom:calc(100% + 10px);width:340px;max-width:min(340px,calc(100vw - 40px))}
+  .cm-row{display:flex;flex-direction:column;gap:3px;text-align:left;padding:10px;border-radius:9px;background:transparent;transition:background .15s}
+  .cm-row:hover{background:var(--paper-dim)}
+  .cm-title{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cm-meta{font-family:var(--sans);font-size:10.5px;letter-spacing:.03em;color:var(--faint)}
+  .cm-note{padding:2px 10px 8px;font-family:var(--sans);font-size:10.5px;line-height:1.5;color:var(--faint)}
+  .cm-empty{padding:12px 10px;font-family:var(--sans);font-size:12px;color:var(--faint)}
   .disclaimer{text-align:center;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
   .composer-help{max-width:700px;margin:8px auto 0;display:flex;justify-content:space-between;gap:16px;font-family:var(--sans);font-size:10.5px;line-height:1.4;color:var(--faint);letter-spacing:.02em}
   .composer-help span:last-child{text-align:right}
@@ -772,6 +792,10 @@
   </section>
 
   <footer class="composer-zone">
+    <div class="carry-zone" id="carryZone">
+      <div class="carry-bar" id="carryBar"></div>
+      <div class="method-menu carry-menu" id="carryMenu" role="menu" aria-label="Earlier castings to carry"></div>
+    </div>
     <form class="composer" id="composerForm">
       <button type="button" class="stria pressable" id="methodChip" title="Change casting method" aria-haspopup="true" aria-expanded="false">Stria 64</button>
         <textarea id="composerInput" rows="1" placeholder="Describe the situation, then ask one clear question&hellip;" aria-label="Casting question" autocomplete="off"></textarea>
@@ -788,17 +812,17 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260807b"></script>
-<script src="./casting-figure.js?v=20260807b"></script>
-<script src="./liuyao-engine.js?v=20260807b"></script>
-<script src="./liuyao-ai.js?v=20260807b"></script>
-<script src="./liuyao-chart.js?v=20260807b"></script>
-<script src="./copy.js?v=20260807b"></script>
-<script src="./prompt-engine.js?v=20260807b"></script>
-<script src="./prompt-router.js?v=20260807b"></script>
-<script src="./account.js?v=20260807b"></script>
-<script>window.BW_BUILD="20260807b";</script>
-<script src="./chat-app.js?v=20260807b"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260807c"></script>
+<script src="./casting-figure.js?v=20260807c"></script>
+<script src="./liuyao-engine.js?v=20260807c"></script>
+<script src="./liuyao-ai.js?v=20260807c"></script>
+<script src="./liuyao-chart.js?v=20260807c"></script>
+<script src="./copy.js?v=20260807c"></script>
+<script src="./prompt-engine.js?v=20260807c"></script>
+<script src="./prompt-router.js?v=20260807c"></script>
+<script src="./account.js?v=20260807c"></script>
+<script>window.BW_BUILD="20260807c";</script>
+<script src="./chat-app.js?v=20260807c"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
