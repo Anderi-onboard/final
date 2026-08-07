@@ -325,7 +325,8 @@
     // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
       var prose = mdReading(msg.text);
-      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>' + readingDepth(msg) + readingActions();
+      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') +
+        readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
 
     // Structured (legacy interpret) — full prose + key-line and timing sections.
@@ -338,7 +339,27 @@
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
     return '<div class="reading-body">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
-      mdReading(r.reading) + keysSec + timeSec + '</div>' + readingDepth(msg) + readingActions();
+      mdReading(r.reading) + keysSec + timeSec + readingFootnote(r.reading) + '</div>' +
+      readingDepth(msg) + readingActions();
+  }
+
+  /* The caution under every finished reading. Rendered by the app rather than
+     asked of the model: a notice that matters on every reading cannot depend on
+     the model remembering to write it, and one written INSIDE the prose either
+     blunts the verdict or gets skimmed with the rest of the paragraph.
+     Language follows the reading itself — the reader is looking at that text,
+     so a footnote in another language is decoration. */
+  function readingFootnote(text) {
+    var s = String(text || "");
+    // NOT "contains a CJK character". An ENGLISH reading is required to keep the
+    // Liu Yao vocabulary untranslated, so that test calls every English reading
+    // Chinese. Proportion separates them cleanly: Chinese prose runs well over
+    // half CJK, English prose carrying a dozen terms stays in low single digits.
+    var cjk = (s.match(/[㐀-䶿一-鿿豈-﫿]/g) || []).length;
+    var zh = s.length > 0 && cjk / s.length > 0.15;
+    var body = (C.readingFooter && (zh ? C.readingFooter.zh : C.readingFooter.en)) || "";
+    if (!body) return "";
+    return '<p class="rd-footnote" lang="' + (zh ? 'zh' : 'en') + '">' + esc(body) + '</p>';
   }
 
   /* A reading should open the next useful layer, not end as a block of prose.

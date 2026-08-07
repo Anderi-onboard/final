@@ -88,6 +88,27 @@
       }
     },
 
+    /* ── the note under every finished reading ──────────────────────────────
+       Set below the reading in smaller type, never inside it. A caution folded
+       into the prose either softens the verdict or gets skimmed past with the
+       rest of the paragraph; standing apart, it is read as what it is. It
+       follows the language the reading was written in, because a caution nobody
+       parses is decoration.
+       Keep both versions saying the same four things: don't decide anything
+       large on this alone, check it against what you can actually observe, the
+       platform is still being built, and what a casting is actually for. */
+    readingFooter: {
+      en: "Please don't make major decisions on this reading alone — the technology behind it is " +
+        "still improving, and we will keep building toward a more capable and stable platform. " +
+        "Hold what you read here against what you can actually observe, take your time, and " +
+        "decide from your real circumstances. A casting offers possible directions, a more " +
+        "flexible way to think about where you are, and a mirror to look at yourself in — " +
+        "it does not offer certainty.",
+      zh: "请不要仅凭这篇解读做重大决定 —— 背后的技术仍在改进，我们也会一直把这个平台做得更准、更稳。" +
+        "把读到的东西拿去和你能真正看到的情况对照，慢慢审，按你的实际处境决定。" +
+        "卦给的是可能的方向、一种更活的想问题的角度，以及一面照自己的镜子 —— 它给不了定论。"
+    },
+
     /* ── account and session ────────────────────────────────────────────── */
     account: {
       signInToCast: "Sign in to cast — a new account starts with 500 units on us.",

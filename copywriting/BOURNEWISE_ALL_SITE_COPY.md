@@ -29,67 +29,67 @@ they are functions of live numbers, so they are shown as templates.
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.002
-<!-- source: index.html:687 | kind: aria-label -->
+<!-- source: index.html:690 | kind: aria-label -->
 New casting
 
 @@ s01.index.html.003
-<!-- source: index.html:688 | kind: aria-label -->
+<!-- source: index.html:691 | kind: aria-label -->
 BourneWise logomark
 
 @@ s01.index.html.004
-<!-- source: index.html:691 | kind: aria-label -->
+<!-- source: index.html:694 | kind: aria-label -->
 Collapse sidebar
 
 @@ s01.index.html.005
-<!-- source: index.html:701 | kind: aria-label -->
+<!-- source: index.html:704 | kind: aria-label -->
 Reading history
 
 @@ s01.index.html.006
-<!-- source: index.html:719 | kind: aria-label -->
+<!-- source: index.html:722 | kind: aria-label -->
 Sign in to claim 500 free units
 
 @@ s01.index.html.007
-<!-- source: index.html:720 | kind: aria-label -->
+<!-- source: index.html:723 | kind: aria-label -->
 Dismiss
 
 @@ s01.index.html.008
-<!-- source: index.html:739 | kind: aria-label -->
+<!-- source: index.html:742 | kind: aria-label -->
 Open menu
 
 @@ s01.index.html.009
-<!-- source: index.html:754 | kind: aria-label -->
+<!-- source: index.html:757 | kind: aria-label -->
 Open the five-minute walk-through
 
 @@ s01.index.html.010
-<!-- source: index.html:774 | kind: aria-label -->
+<!-- source: index.html:777 | kind: aria-label -->
 Casting question
 
 @@ s01.index.html.011
-<!-- source: index.html:775 | kind: aria-label -->
+<!-- source: index.html:778 | kind: aria-label -->
 Cast
 
 @@ s01.index.html.012
-<!-- source: index.html:780 | kind: aria-label -->
+<!-- source: index.html:783 | kind: aria-label -->
 Casting method
 
 @@ s01.index.html.013
-<!-- source: index.html:774 | kind: placeholder -->
+<!-- source: index.html:777 | kind: placeholder -->
 Describe the situation, then ask one clear question…
 
 @@ s01.index.html.014
-<!-- source: index.html:691 | kind: title -->
+<!-- source: index.html:694 | kind: title -->
 Collapse sidebar
 
 @@ s01.index.html.015
-<!-- source: index.html:739 | kind: title -->
+<!-- source: index.html:742 | kind: title -->
 Menu
 
 @@ s01.index.html.016
-<!-- source: index.html:745 | kind: title -->
+<!-- source: index.html:748 | kind: title -->
 How answers are generated
 
 @@ s01.index.html.017
-<!-- source: index.html:773 | kind: title -->
+<!-- source: index.html:776 | kind: title -->
 Change casting method
 
 @@ s01.index.html.018
@@ -97,159 +97,159 @@ Change casting method
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.019
-<!-- source: index.html:689 | kind: text -->
+<!-- source: index.html:692 | kind: text -->
 BourneWise
 
 @@ s01.index.html.020
-<!-- source: index.html:698 | kind: text -->
+<!-- source: index.html:701 | kind: text -->
 New casting
 
 @@ s01.index.html.021
-<!-- source: index.html:702 | kind: text -->
+<!-- source: index.html:705 | kind: text -->
 Reading history
 
 @@ s01.index.html.022
-<!-- source: index.html:707 | kind: text -->
+<!-- source: index.html:710 | kind: text -->
 Available units
 
 @@ s01.index.html.023
-<!-- source: index.html:708 | kind: text -->
+<!-- source: index.html:711 | kind: text -->
 Usage
 
 @@ s01.index.html.024
-<!-- source: index.html:711 | kind: text -->
+<!-- source: index.html:714 | kind: text -->
 —
 
 @@ s01.index.html.025
-<!-- source: index.html:712 | kind: text -->
+<!-- source: index.html:715 | kind: text -->
 units
 
 @@ s01.index.html.026
-<!-- source: index.html:715 | kind: text -->
+<!-- source: index.html:718 | kind: text -->
 Prepaid balance · no expiry
 
 @@ s01.index.html.027
-<!-- source: index.html:716 | kind: text -->
+<!-- source: index.html:719 | kind: text -->
 Get units
 
 @@ s01.index.html.028
-<!-- source: index.html:716 | kind: text -->
+<!-- source: index.html:719 | kind: text -->
 →
 
 @@ s01.index.html.029
-<!-- source: index.html:720 | kind: text -->
+<!-- source: index.html:723 | kind: text -->
 ×
 
 @@ s01.index.html.030
-<!-- source: index.html:721 | kind: text -->
+<!-- source: index.html:724 | kind: text -->
 First reading?
 
 @@ s01.index.html.031
-<!-- source: index.html:721 | kind: text -->
+<!-- source: index.html:724 | kind: text -->
 Sign in to claim
 
 @@ s01.index.html.032
-<!-- source: index.html:721 | kind: text -->
+<!-- source: index.html:724 | kind: text -->
 500 free units
 
 @@ s01.index.html.033
-<!-- source: index.html:726 | kind: text -->
+<!-- source: index.html:729 | kind: text -->
 Guest
 
 @@ s01.index.html.034
-<!-- source: index.html:726 | kind: text -->
+<!-- source: index.html:729 | kind: text -->
 Not signed in
 
 @@ s01.index.html.035
-<!-- source: index.html:730 | kind: text -->
+<!-- source: index.html:733 | kind: text -->
 Sign in to sync your balance and readings
 
 @@ s01.index.html.036
-<!-- source: index.html:731 | kind: text -->
+<!-- source: index.html:734 | kind: text -->
 Plans & units
 
 @@ s01.index.html.037
-<!-- source: index.html:731 | kind: text -->
+<!-- source: index.html:734 | kind: text -->
 Plans
 
 @@ s01.index.html.038
-<!-- source: index.html:732 | kind: text -->
+<!-- source: index.html:735 | kind: text -->
 Settings
 
 @@ s01.index.html.039
-<!-- source: index.html:733 | kind: text -->
+<!-- source: index.html:736 | kind: text -->
 Sign out
 
 @@ s01.index.html.040
-<!-- source: index.html:744 | kind: text -->
+<!-- source: index.html:747 | kind: text -->
 — units
 
 @@ s01.index.html.041
-<!-- source: index.html:747 | kind: text -->
+<!-- source: index.html:750 | kind: text -->
 We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.
 
 @@ s01.index.html.042
-<!-- source: index.html:749 | kind: text -->
+<!-- source: index.html:752 | kind: text -->
 The method
 
 @@ s01.index.html.043
-<!-- source: index.html:750 | kind: text -->
+<!-- source: index.html:753 | kind: text -->
 Why BourneWise
 
 @@ s01.index.html.044
-<!-- source: index.html:750 | kind: text -->
+<!-- source: index.html:753 | kind: text -->
 Why
 
 @@ s01.index.html.045
-<!-- source: index.html:756 | kind: text -->
+<!-- source: index.html:759 | kind: text -->
 How does this work?
 
 @@ s01.index.html.046
-<!-- source: index.html:756 | kind: text -->
+<!-- source: index.html:759 | kind: text -->
 See how casting, interpretation, and billing fit together.
 
 @@ s01.index.html.047
-<!-- source: index.html:765 | kind: text -->
+<!-- source: index.html:768 | kind: text -->
 Describe the situation and ask one specific question.
 
 @@ s01.index.html.048
-<!-- source: index.html:773 | kind: text -->
+<!-- source: index.html:776 | kind: text -->
 Stria 64
 
 @@ s01.index.html.049
-<!-- source: index.html:779 | kind: text -->
+<!-- source: index.html:782 | kind: text -->
 Enter to submit · Shift+Enter for a new line
 
 @@ s01.index.html.050
-<!-- source: index.html:779 | kind: text -->
+<!-- source: index.html:782 | kind: text -->
 Follow-ups reuse the current hexagram
 
 @@ s01.index.html.051
-<!-- source: index.html:781 | kind: text -->
+<!-- source: index.html:784 | kind: text -->
 Stria 64 bills for what it writes · about 440 units, follow-ups less
 
 @@ s01.index.html.052
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:785 | kind: text -->
 Support:
 
 @@ s01.index.html.053
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:785 | kind: text -->
 hello@bournewise.com
 
 @@ s01.index.html.054
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:785 | kind: text -->
 ·
 
 @@ s01.index.html.055
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:785 | kind: text -->
 Terms
 
 @@ s01.index.html.056
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:785 | kind: text -->
 Privacy
 
 @@ s01.index.html.057
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:785 | kind: text -->
 Refunds
 
 ---
@@ -1988,6 +1988,16 @@ The answer was cut short — you were only charged for what arrived. Send “con
 @@ s11.copy.js.followUp.promptsNote
 <!-- source: copy.js | kind: template -->
 Nothing is sent until you submit. The same hexagram rides along with every follow-up, which is charged for what it uses — usually around 690 units.
+
+### `readingFooter`
+
+@@ s11.copy.js.readingFooter.en
+<!-- source: copy.js | kind: text -->
+Please don't make major decisions on this reading alone — the technology behind it is still improving, and we will keep building toward a more capable and stable platform. Hold what you read here against what you can actually observe, take your time, and decide from your real circumstances. A casting offers possible directions, a more flexible way to think about where you are, and a mirror to look at yourself in — it does not offer certainty.
+
+@@ s11.copy.js.readingFooter.zh
+<!-- source: copy.js | kind: text -->
+请不要仅凭这篇解读做重大决定 —— 背后的技术仍在改进，我们也会一直把这个平台做得更准、更稳。把读到的东西拿去和你能真正看到的情况对照，慢慢审，按你的实际处境决定。卦给的是可能的方向、一种更活的想问题的角度，以及一面照自己的镜子 —— 它给不了定论。
 
 ### `account`
 
