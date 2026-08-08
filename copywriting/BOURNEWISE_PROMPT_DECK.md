@@ -819,5 +819,9 @@ New message: ««the new message»»
 FOLLOWUP = the new message stays on the SAME matter: continues it, doubts it, asks to clarify/expand a part of the reading, answers a question the reading asked, or says "continue".
 NEW = the new message asks about a DIFFERENT matter — different event, different person, different outcome being asked — even if the topic area sounds related. The test is the MATTER, not the topic: 《我什么时候第一次》 then 《我什么时候谈恋爱》 are two different matters → NEW. 《我能创业成功吗》 then 《那合伙人靠谱吗》 is the same venture → FOLLOWUP.
 When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.
-Reply with exactly one word.
+
+Then name the yongshen the NEW MESSAGE rests on, so the board in hand can be checked for it:
+wealth (妻财 — a wife/partner for a man, money, goods, how someone else judges) · officer (官鬼 — a husband/partner for a woman, work, rank, rivals, pressure) · parent (父母 — housing, vehicles, documents, elders, shelter) · output (子孙 — children, pleasure, ease, release from constraint) · peer (兄弟 — siblings, friends, rivals for the same thing) · self (the asker’s own state, read from 世爻)
+
+Reply on ONE line, exactly: FOLLOWUP|<yongshen>  or  NEW|<yongshen>
 ```

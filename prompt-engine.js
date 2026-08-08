@@ -762,6 +762,53 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     return { ok: issues.length === 0, issues: issues };
   }
 
+  /* Can THIS board carry a question that rests on THIS yongshen?
+
+     The follow-up router asks whether a message is the same matter. That is the
+     wrong test on its own: a question can be plainly the same matter and still
+     be unanswerable on the board in hand. Asking "what does she like about my
+     body" after an intimacy reading is the same matter by any semantic measure,
+     but it puts the entire weight on 妻财 — and if 妻财 is hidden and controlled
+     by its flying line, as it was, the answer would be invented rather than read.
+
+     Whether a board can carry a line is not a judgement. It is a lookup on
+     computed data, so it runs here in code, and the router asks it before
+     reusing a casting.
+
+       firm   the line is on the board and not void — read it
+       soft   present but hidden, void, entombed or controlled — readable with a
+              stated discount, fine for a question that leans on it in passing
+       weak   the whole question rests on a line the board only shows this
+              faintly — recast, because reusing it produces confident invention */
+  function boardCarries(board, key) {
+    if (!board || !board.lines || !key) return { grade: "firm", why: "" };
+    var open = null, i;
+    for (i = 0; i < board.lines.length; i++) {
+      var l = board.lines[i];
+      if (l.relative && l.relative.key === key) { if (!open || (!l.void && open.void)) open = l; }
+    }
+    var cn = (open && open.relative.cn) || key;
+    if (open && !open.void) {
+      var caged = open.wangShuai && (open.wangShuai.cn === "死" || open.wangShuai.cn === "囚");
+      return caged
+        ? { grade: "soft", why: cn + " is on the board but " + open.wangShuai.cn + " this month", cn: cn }
+        : { grade: "firm", why: cn + " sits open on line " + (open.idx + 1), cn: cn };
+    }
+    if (open && open.void) return { grade: "soft", why: cn + " is on the board but void", cn: cn };
+
+    var hid = null;
+    for (i = 0; i < (board.hidden || []).length; i++) {
+      if (board.hidden[i].relative && board.hidden[i].relative.key === key) hid = board.hidden[i];
+    }
+    if (!hid) return { grade: "weak", why: cn + " is neither on the board nor hidden behind it", cn: cn };
+    cn = (hid.relative && hid.relative.cn) || cn;
+    // Hidden is workable until the flying line above it also controls it — then
+    // the line is both out of sight and held down, and nothing reliable is left.
+    return hid.flyControlsHidden
+      ? { grade: "weak", why: cn + " is hidden AND controlled by the line above it", cn: cn }
+      : { grade: "soft", why: cn + " is hidden behind the line above it", cn: cn };
+  }
+
   function qcCheck(reading, question, claudeComplete) {
     if (!claudeComplete) return Promise.resolve({ pass: true });
     return claudeComplete({
@@ -801,12 +848,36 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
         "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
         "FOLLOWUP = the new message stays on the SAME matter: continues it, doubts it, asks to clarify/expand a part of the reading, answers a question the reading asked, or says \"continue\".\n" +
         "NEW = the new message asks about a DIFFERENT matter \u2014 different event, different person, different outcome being asked \u2014 even if the topic area sounds related. The test is the MATTER, not the topic: \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u7b2c\u4e00\u6b21\u300b then \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u8c08\u604b\u7231\u300b are two different matters \u2192 NEW. \u300a\u6211\u80fd\u521b\u4e1a\u6210\u529f\u5417\u300b then \u300a\u90a3\u5408\u4f19\u4eba\u9760\u8c31\u5417\u300b is the same venture \u2192 FOLLOWUP.\n" +
-        "When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.\n" +
-        "Reply with exactly one word.";
+        "When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.\n\n" +
+        "Then name the yongshen the NEW MESSAGE rests on, so the board in hand can be checked for it:\n" +
+        "wealth (\u59bb\u8d22 \u2014 a wife/partner for a man, money, goods, how someone else judges) · " +
+        "officer (\u5b98\u9b3c \u2014 a husband/partner for a woman, work, rank, rivals, pressure) · " +
+        "parent (\u7236\u6bcd \u2014 housing, vehicles, documents, elders, shelter) · " +
+        "output (\u5b50\u5b59 \u2014 children, pleasure, ease, release from constraint) · " +
+        "peer (\u5144\u5f1f \u2014 siblings, friends, rivals for the same thing) · " +
+        "self (the asker\u2019s own state, read from \u4e16\u723b)\n\n" +
+        "Reply on ONE line, exactly: FOLLOWUP|<yongshen>  or  NEW|<yongshen>";
     },
     read: function (reply) {
       var t = String(reply || "").toUpperCase();
-      return t.indexOf("NEW") >= 0 && t.indexOf("FOLLOWUP") < 0 ? "new" : "followup";
+      var m = t.match(/\b(WEALTH|OFFICER|PARENT|OUTPUT|PEER|SELF)\b/);
+      return {
+        intent: t.indexOf("NEW") >= 0 && t.indexOf("FOLLOWUP") < 0 ? "new" : "followup",
+        yongshen: m ? m[1].toLowerCase() : null
+      };
+    },
+    /* The semantic answer is only half of it. A message can be the same matter
+       by any reading and still rest its whole weight on a line this board barely
+       shows — that is the case a router judging topic alone gets wrong, and it
+       gets it wrong in the expensive direction, by answering confidently off a
+       board that cannot support the answer. */
+    decide: function (parsed, board, carries) {
+      var out = (parsed && parsed.intent) || "followup";
+      if (out !== "followup" || !parsed || !parsed.yongshen || !board) return { intent: out, reason: "" };
+      if (parsed.yongshen === "self") return { intent: out, reason: "" };
+      var c = carries(board, parsed.yongshen);
+      if (c.grade !== "weak") return { intent: out, reason: "" };
+      return { intent: "new", reason: "the previous casting cannot carry this: " + c.why };
     }
   };
 
@@ -873,6 +944,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     qcCheck: qcCheck,
     checkBoardFacts: checkBoardFacts,
     checkReadability: checkReadability,
+    boardCarries: boardCarries,
 
     // For customization
     SEGMENTS: SEGMENTS,

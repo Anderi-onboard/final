@@ -29,6 +29,23 @@
     for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === S.activeId) return S.convs[i];
     return null;
   }
+  /* The board behind a stored casting. Sortis keeps the computed board on the
+     message; Stria keeps only the spec, so the thread shows its lighter figure —
+     either way a follow-up has to be grounded in the SAME hexagram that was
+     cast, so the spec is recomputed when the board is not there. */
+  function boardOf(cast, methodId) {
+    if (!cast) return null;
+    if (cast.board) return cast.board;
+    var sp = cast.spec;
+    if (!(window.BWLiuYao && sp && sp.lines && sp.lines.length === 6)) return null;
+    try {
+      return window.BWLiuYao.computeBoard({
+        lines: sp.lines, changeIdx: sp.changeIdx || [],
+        method: methodId, name: sp.name, transformedName: sp.transformedName
+      });
+    } catch (e) { return null; }
+  }
+
   // A reading can settle after the reader has already moved to another thread,
   // so late work looks the conversation up by id rather than asking what is open.
   function convById(id) {
@@ -708,7 +725,7 @@
      matter that deserves a fresh hexagram (NEW → full cast, in THIS thread,
      history preserved). Unbilled utility call; 4s timeout or any failure
      defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
-  function detectIntent(question, lastQuestion, lastReading) {
+  function detectIntent(question, lastQuestion, lastReading, lastBoard) {
     var PE = window.BWPromptEngine;
     var R = PE && PE.INTENT_ROUTER;
     // No engine, or no proxy to ask — treat it as a follow-up, the cheaper and
@@ -722,8 +739,17 @@
     var run = window.claude.complete({
       role: "utility", model: R.model, max_tokens: R.maxTokens,
       messages: [{ role: "user", content: R.build(question, lastQuestion, lastReading) }]
-    }).then(function (r) { return R.read(r); })
-      .catch(function () { return R.fallback; });
+    }).then(function (r) {
+      var parsed = R.read(r);
+      // Same matter is only half the test. A message can be plainly the same
+      // matter and still rest its whole weight on a line the previous board
+      // barely shows — reusing that casting answers confidently off evidence
+      // that isn't there. boardCarries() settles it from computed data.
+      if (R.decide && PE.boardCarries && lastBoard) {
+        return R.decide(parsed, lastBoard, PE.boardCarries).intent;
+      }
+      return parsed && parsed.intent ? parsed.intent : R.fallback;
+    }).catch(function () { return R.fallback; });
     return Promise.race([run, guard]);
   }
 
@@ -1000,7 +1026,8 @@
     if (candidate && !decided && !recastReq) {
       busy = true;
       var sb0 = $("sendBtn"); if (sb0) sb0.disabled = true;
-      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text).then(function (intent) {
+      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text,
+        boardOf(lastCast, m.id)).then(function (intent) {
         busy = false;
         if (sb0) sb0.disabled = false;
         send(text, intent === "new" ? "new" : "followup");
@@ -1263,15 +1290,7 @@
 
     // ground the follow-up in the SAME board that was cast: sortis stores it
     // on the message; stria stores only the spec — recompute from its lines.
-    var board = lastCast.board || null;
-    if (!board && window.BWLiuYao && lastCast.spec && lastCast.spec.lines && lastCast.spec.lines.length === 6) {
-      try {
-        board = window.BWLiuYao.computeBoard({
-          lines: lastCast.spec.lines, changeIdx: lastCast.spec.changeIdx || [],
-          method: m.id, name: lastCast.spec.name, transformedName: lastCast.spec.transformedName
-        });
-      } catch (e) { board = null; }
-    }
+    var board = boardOf(lastCast, m.id);
 
     var live = document.createElement("article");
     live.className = "reading casting-live";
