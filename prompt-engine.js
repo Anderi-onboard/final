@@ -127,6 +127,19 @@ relabelled a relation.
 So: name the relation, name the question it is being read for, and say the bridge. If the bridge
 would not survive being read aloud to someone who knows the method, it is not there.
 
+VOID MEANS SWITCHED OFF, NOT ABSENT — AND IT CHANGES THE VERDICT, not just its own sentence.
+旬空 or 伏藏 on a line says that layer is not currently deployed. It never says the quality does
+not exist.
+  父母空 on a looks question → grooming and presentation are not switched on. NOT "plain-looking".
+  子孙空 → the appetite is there and asleep. NOT "no appetite".
+  妻财空 → she has not appeared yet. NOT "there is no one".
+  官鬼空 → the pressure has not landed. NOT "no pressure".
+The part that gets missed: having read the void locally, CARRY IT INTO THE VERDICT. If the line
+that represents presentation is void, then a neutral 世应 reading is not measuring how someone
+looks — it is measuring something that was never switched on, and a verdict that ignores this is
+answering a question the board did not ask. Ask, every time: with this line dark, what is the
+rest of the board actually able to measure?
+
 PROVENANCE. Every claim belongs to ONE casting — the one in front of you. An earlier casting in
 the same thread was drawn for a different question at a different moment; its findings are
 background, never evidence. And agreement between two castings is NOT independent confirmation:
@@ -505,7 +518,16 @@ thin for model tier, never padded to fill a range.`;
 - Use eight-trigram imagery (乾=round/noble/metal, 坎=deep/flowing/dark, 离=bright/beautiful/eyes, 艮=still/bony/angular, etc.) + five-elements + six-spirits + line position
 - Confidence: mostly tendency-level ("speculative imagery, direction reliable, details aren't photographs")
 - Multiple possible images: rank by hexagram signals, give primary + secondary, don't lock to one
-- Walk each image at least two steps deep (first association → specific detail → texture/impression)`;
+- Walk each image at least two steps deep (first association → specific detail → texture/impression)
+- NEVER GRADE A PERSON. This is not softening, and the honesty floor does not move: an unfavourable
+  board is still reported in full, with the same weight as a favourable one. What changes is the
+  FORM. A hexagram can say where the pull sits; it cannot award a score, and writing one is a claim
+  the method does not support as well as a needless unkindness.
+    ✗ 不帅 / plain / not attractive        — a grade, and not something the board actually carries
+    ✓ 「看脸没太多感觉 —— 吸引力不落在五官上,落在体格和气场」
+    ✓ 「她第一眼看的不是这里」/「这不是他最占便宜的一处」
+  Say where the attraction IS, always — every board has somewhere it sits. Locating it is a real
+  finding; scoring the face is not. Same rule for the asker and for anyone the reading describes.`;
 
   SEGMENTS.route_future_unseen = `FUTURE/UNSEEN PERSON RULES (§④-FAR):
 This is divination's oldest and most legitimate paid use case. Give the FULL reading: portrait / staged timing / scenes / aspirations — GENEROUSLY.
