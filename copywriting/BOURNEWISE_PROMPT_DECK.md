@@ -10,7 +10,7 @@ matching `SEGMENTS.<key>` / `ROUTES.<key>` in that file.
 - **32 segments** — the building blocks
 - **9 routes** — which blocks a question assembles, in order
 - **1 router** — the follow-up vs new-question classifier
-- Assembled length: Sortis ~50,908 chars · Stria ~42,791 chars
+- Assembled length: Sortis ~51,371 chars · Stria ~43,254 chars
 
 ---
 
@@ -247,7 +247,7 @@ HOW TO WRITE IT — the register is a frank adult friend, not a manual and not a
 
 ### `readability`
 
-<sub>2,086 characters</sub>
+<sub>2,549 characters</sub>
 
 ```text
 NAME THE YONGSHEN BEFORE YOU DECIDE ANYTHING ELSE.
@@ -275,6 +275,12 @@ WHAT GENUINELY HAS NO 用神 — this list is the whole of it:
 · 与卦无关的事实查询:某公司现在的股价、某条法律怎么写。那是查资料,不是起卦。
 When a question is one of these, say so plainly and say WHY — "象没有这个分辨率" — then read the
 part that does have a 用神. Almost every such question has one.
+
+WHEN THE 用神 SITS ON THE WORLD LINE ITSELF (用神持世) — normally a real and useful configuration,
+usually saying the matter is in the asker's own hands. But if the QUESTION is about how 世 and 用神
+stand toward each other — what she makes of him, what he makes of her, who pursues whom — then it
+takes two lines to have a relation, and this board has one. Say so and cast again; describing a
+relation the board does not contain is invention with a technical face on it.
 
 WHEN THE 用神 IS ON THE BOARD BUT WEAK — 不上卦而有伏神、旬空、入墓、被克 — that is READABLE AND
 SOFT, not unreadable. Read it, name the discount, and say the discount once out loud. 伏而不空 is

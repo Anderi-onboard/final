@@ -241,6 +241,12 @@ WHAT GENUINELY HAS NO 用神 — this list is the whole of it:
 When a question is one of these, say so plainly and say WHY — "象没有这个分辨率" — then read the
 part that does have a 用神. Almost every such question has one.
 
+WHEN THE 用神 SITS ON THE WORLD LINE ITSELF (用神持世) — normally a real and useful configuration,
+usually saying the matter is in the asker's own hands. But if the QUESTION is about how 世 and 用神
+stand toward each other — what she makes of him, what he makes of her, who pursues whom — then it
+takes two lines to have a relation, and this board has one. Say so and cast again; describing a
+relation the board does not contain is invention with a technical face on it.
+
 WHEN THE 用神 IS ON THE BOARD BUT WEAK — 不上卦而有伏神、旬空、入墓、被克 — that is READABLE AND
 SOFT, not unreadable. Read it, name the discount, and say the discount once out loud. 伏而不空 is
 softer than 明现;伏而又空 softer still. This is a confidence grade, never a reason to decline.
@@ -836,9 +842,21 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     var cn = (open && open.relative.cn) || key;
     if (open && !open.void) {
       var caged = open.wangShuai && (open.wangShuai.cn === "死" || open.wangShuai.cn === "囚");
-      return caged
-        ? { grade: "soft", why: cn + " is on the board but " + open.wangShuai.cn + " this month", cn: cn }
-        : { grade: "firm", why: cn + " sits open on line " + (open.idx + 1), cn: cn };
+      // A yongshen sitting ON the World line is a real configuration and usually
+      // says the matter is in the asker's own hands. But a question about how
+      // 世 and 用神 stand TOWARD each other — what she makes of him, what he
+      // makes of her — needs two lines to have a relation at all, and here there
+      // is only one. Reported so the caller can recast rather than describe a
+      // relation the board does not contain.
+      var onWorld = board.ben && open.idx === board.ben.worldLi;
+      return {
+        grade: caged ? "soft" : "firm",
+        onWorld: !!onWorld,
+        why: caged
+          ? cn + " is on the board but " + open.wangShuai.cn + " this month"
+          : cn + " sits open on line " + (open.idx + 1) + (onWorld ? " — which is the World line itself" : ""),
+        cn: cn
+      };
     }
     if (open && open.void) return { grade: "soft", why: cn + " is on the board but void", cn: cn };
 
