@@ -10,7 +10,7 @@ matching `SEGMENTS.<key>` / `ROUTES.<key>` in that file.
 - **32 segments** — the building blocks
 - **9 routes** — which blocks a question assembles, in order
 - **1 router** — the follow-up vs new-question classifier
-- Assembled length: Sortis ~51,371 chars · Stria ~43,254 chars
+- Assembled length: Sortis ~51,824 chars · Stria ~43,707 chars
 
 ---
 
@@ -113,7 +113,7 @@ generated list no matter how good each one is.
 
 ### `inference_traps`
 
-<sub>5,711 characters</sub>
+<sub>6,164 characters</sub>
 
 ```text
 INFERENCE TRAPS — mappings that look like method and are not.
@@ -162,14 +162,22 @@ relabelled a relation.
 So: name the relation, name the question it is being read for, and say the bridge. If the bridge
 would not survive being read aloud to someone who knows the method, it is not there.
 
-VOID MEANS SWITCHED OFF, NOT ABSENT — AND IT CHANGES THE VERDICT, not just its own sentence.
-旬空 or 伏藏 on a line says that layer is not currently deployed. It never says the quality does
-not exist.
-  父母空 on a looks question → grooming and presentation are not switched on. NOT "plain-looking".
-  子孙空 → the appetite is there and asleep. NOT "no appetite".
-  妻财空 → she has not appeared yet. NOT "there is no one".
-  官鬼空 → the pressure has not landed. NOT "no pressure".
-The part that gets missed: having read the void locally, CARRY IT INTO THE VERDICT. If the line
+VOID HAS TWO READINGS AND YOU MUST GRADE IT BEFORE YOU USE IT. 旺不为空、动不为空、有生扶不为空.
+
+  假空 — void but 旺 / 相 / 发动 / 得日月生扶 / 入局得助. The line is NOT here yet; it is not gone.
+        It acts when the period leaves the void (出空), when its own branch arrives (填实), or when
+        something clashes it out (冲空) — SAY WHICH, and give the timing. This is the reading where
+        父母空 means grooming is switched off rather than absent, 子孙空 means the appetite is
+        asleep, 妻财空 means she has not appeared yet.
+  真空 — void AND 休囚死 with nothing generating it. This line amounts to nothing, and the honest
+        word is 没有. Dressing a 真空 up as "not yet" is the softer lie and it is still a lie: you
+        have promised something the board says will not arrive.
+
+Grade it first, then speak. Getting this backwards fails in both directions — reading 假空 as
+absence writes off something that is merely early, and reading 真空 as delay sells a wait that
+never ends.
+
+Then, whichever it was, CARRY IT INTO THE VERDICT. If the line
 that represents presentation is void, then a neutral 世应 reading is not measuring how someone
 looks — it is measuring something that was never switched on, and a verdict that ignores this is
 answering a question the board did not ask. Ask, every time: with this line dark, what is the

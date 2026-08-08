@@ -127,14 +127,22 @@ relabelled a relation.
 So: name the relation, name the question it is being read for, and say the bridge. If the bridge
 would not survive being read aloud to someone who knows the method, it is not there.
 
-VOID MEANS SWITCHED OFF, NOT ABSENT — AND IT CHANGES THE VERDICT, not just its own sentence.
-旬空 or 伏藏 on a line says that layer is not currently deployed. It never says the quality does
-not exist.
-  父母空 on a looks question → grooming and presentation are not switched on. NOT "plain-looking".
-  子孙空 → the appetite is there and asleep. NOT "no appetite".
-  妻财空 → she has not appeared yet. NOT "there is no one".
-  官鬼空 → the pressure has not landed. NOT "no pressure".
-The part that gets missed: having read the void locally, CARRY IT INTO THE VERDICT. If the line
+VOID HAS TWO READINGS AND YOU MUST GRADE IT BEFORE YOU USE IT. 旺不为空、动不为空、有生扶不为空.
+
+  假空 — void but 旺 / 相 / 发动 / 得日月生扶 / 入局得助. The line is NOT here yet; it is not gone.
+        It acts when the period leaves the void (出空), when its own branch arrives (填实), or when
+        something clashes it out (冲空) — SAY WHICH, and give the timing. This is the reading where
+        父母空 means grooming is switched off rather than absent, 子孙空 means the appetite is
+        asleep, 妻财空 means she has not appeared yet.
+  真空 — void AND 休囚死 with nothing generating it. This line amounts to nothing, and the honest
+        word is 没有. Dressing a 真空 up as "not yet" is the softer lie and it is still a lie: you
+        have promised something the board says will not arrive.
+
+Grade it first, then speak. Getting this backwards fails in both directions — reading 假空 as
+absence writes off something that is merely early, and reading 真空 as delay sells a wait that
+never ends.
+
+Then, whichever it was, CARRY IT INTO THE VERDICT. If the line
 that represents presentation is void, then a neutral 世应 reading is not measuring how someone
 looks — it is measuring something that was never switched on, and a verdict that ignores this is
 answering a question the board did not ask. Ask, every time: with this line dark, what is the
@@ -858,7 +866,33 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
         cn: cn
       };
     }
-    if (open && open.void) return { grade: "soft", why: cn + " is on the board but void", cn: cn };
+    if (open && open.void) {
+      // 旺不为空、动不为空、有生扶不为空. A void line that is strong or moving is
+      // 假空 — merely not here yet, and it acts once the period leaves the void
+      // or the branch itself arrives. A void line that is ALSO 休囚死 is 真空 and
+      // amounts to nothing; reading that as "not yet" is the softer lie.
+      var strong = open.wangShuai && (open.wangShuai.cn === "旺" || open.wangShuai.cn === "相");
+      // 入局得助 also lifts a line out of 真空, and the frame counts for more when
+      // the branch it is missing is supplied by the month or the day. sanhe[].lines
+      // is 1-based, matching how a diviner names them.
+      var frame = null;
+      (board.sanhe || []).forEach(function (f) {
+        if (f.lines && f.lines.indexOf(open.idx + 1) >= 0) frame = frame || f;
+      });
+      var mb = board.meta && board.meta.monthBranch, db = board.meta && board.meta.dayPillar;
+      var framePropped = !!(frame && frame.missing && (
+        (mb && frame.missing.bi === mb.bi) || (db && db.branch && frame.missing.bi === db.branch.bi)));
+      var live = strong || open.moving || !!frame;
+      return live
+        ? { grade: "soft", onWorld: !!(board.ben && open.idx === board.ben.worldLi),
+            why: cn + " is void but " + (strong ? open.wangShuai.cn
+                  : open.moving ? "moving"
+                  : framePropped ? "held in a " + frame.element.cn + " frame the month or day completes"
+                  : "held in a " + frame.element.cn + " frame") +
+                  " — 假空, not here yet rather than absent", cn: cn }
+        : { grade: "weak", onWorld: !!(board.ben && open.idx === board.ben.worldLi),
+            why: cn + " is void AND " + ((open.wangShuai && open.wangShuai.cn) || "weak") + " — 真空, this line amounts to nothing", cn: cn };
+    }
 
     var hid = null;
     for (i = 0; i < (board.hidden || []).length; i++) {
