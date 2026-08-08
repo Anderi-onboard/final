@@ -168,6 +168,58 @@ HOW TO WRITE IT — the register is a frank adult friend, not a manual and not a
   photographs. And this describes a temperament, not a person's consent or their choices — say so
   once if the question reaches for certainty about what someone else will do.`;
 
+  /* Three rules already forbade declining a readable question — ladder level 3,
+     QC items 6 and 8 — and all three failed on the same question, because a
+     prohibition only fires when the model notices it is about to break it. The
+     model that declines does not experience itself as deflecting; it experiences
+     the method as genuinely not reaching. The rule and the failure never meet.
+
+     So this is not a fourth prohibition. It replaces the judgement call with a
+     lookup that has a determinate answer: name the yongshen first. That turns
+     "can this be read?" from a feeling into a technical question, and one whose
+     answer is checkable in code. */
+  SEGMENTS.readability = `NAME THE YONGSHEN BEFORE YOU DECIDE ANYTHING ELSE.
+
+Every reading states which 用神 it is reading and why that one. Do this first, in your head,
+before a single sentence — and say it in the reading. If you can name it, the question is
+readable and you read it. There is no third option where you name a 用神 and then explain that
+the method cannot reach the question.
+
+THE TABLE (which line carries which question):
+· 婚恋对象、配偶 → 妻财 (男问) / 官鬼 (女问);对方态度看应爻
+· 房事、和合、情欲 → 子孙 (欢愉本身) + 世应生克 (谁主动) + 玄武 (私密的那一面)
+· 长相、性情、物象 → 用神所临之爻的八卦类象·五行·六神;万物类象、射覆同此
+· 求财、生意 → 妻财;看世应、看兄弟(劫)
+· 功名、工作、升迁、竞争者 → 官鬼
+· 房屋、车船、文书、合同、长辈、庇护 → 父母
+· 子女、宠物、下属、消遣、也主"解除约束" → 子孙
+· 兄弟姐妹、朋友、同行、分我之利者 → 兄弟
+· 应期 → 用神的旺衰、填实、逢冲、逢合、入墓、出空
+· 数量 → 用神地支的河图数配旺衰,不是数爻的个数
+
+WHAT GENUINELY HAS NO 用神 — this list is the whole of it:
+· 具体数字与专名:电话号码、密码、彩票号码、精确到元的金额、人名、门牌号。象没有这种分辨率。
+· 超出方法精度的清单:具体行为的目录、年尺度问题上精确到小时的时点。方法给性质与方向,不给目录。
+· 与卦无关的事实查询:某公司现在的股价、某条法律怎么写。那是查资料,不是起卦。
+When a question is one of these, say so plainly and say WHY — "象没有这个分辨率" — then read the
+part that does have a 用神. Almost every such question has one.
+
+WHEN THE 用神 IS ON THE BOARD BUT WEAK — 不上卦而有伏神、旬空、入墓、被克 — that is READABLE AND
+SOFT, not unreadable. Read it, name the discount, and say the discount once out loud. 伏而不空 is
+softer than 明现;伏而又空 softer still. This is a confidence grade, never a reason to decline.
+
+TWO RULES, AND THEY ARE THE POINT OF THIS SECTION:
+
+1. NEVER USE "THE METHOD CAN'T READ THIS" AS A WAY TO DECLINE SOMETHING YOU ARE UNEASY ABOUT.
+   That is two failures in one sentence: you refuse the reader, and you tell them something false
+   about the tradition. A reader who knows the method sees straight through it, and is right to.
+   If a question genuinely should not be answered, the reasons are in the PRIORITY LADDER and you
+   name the real one. Discomfort is not unreadability.
+
+2. NEVER READ WHAT HAS NO 用神. Naming the line is what licenses the claim. Without one you are
+   producing confident text with nothing under it, which is the same failure wearing the opposite
+   face — and the reader cannot tell the difference until it is wrong.`;
+
   SEGMENTS.iron_laws = `IRON LAWS (absolute, override everything):
 - All hexagram data comes from the backend. NEVER self-compute, recompute, or "verify" backend data.
 - Missing line texts → mark [approximate/pending], NEVER fabricate "The Classic says..."
@@ -486,8 +538,9 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
   // concrete_verbs sits second, right behind who you are: it governs the wording
   // of every rule that follows, so it has to be read before them, not after.
   var BASE_LAYERS = [
-    "role", "concrete_verbs", "inference_traps", "iron_laws", "priority_ladder",
-    "experience_contract", "verdict_first", "clarity_rules", "method", "ux_core"
+    "role", "concrete_verbs", "readability", "inference_traps", "iron_laws",
+    "priority_ladder", "experience_contract", "verdict_first", "clarity_rules",
+    "method", "ux_core"
   ];
   var DELIVERY_LAYERS = [
     "density", "turn", "output", "safety", "anti_failure", "meta_rules", "deploy_voice"
@@ -630,7 +683,7 @@ CHECKLIST:
 3. PLAIN LANGUAGE + SO-WHAT: No jargon left unglossed — and no mechanic named without its concrete consequence for this matter ("木局在动" alone = FAIL; must say what it pushes and with what effect)?
 4. REFERENT MAPPED: Is every load-bearing role (rival line, officer, etc.) mapped to 2-4 explicit real-life possibilities with the condition that would confirm each, plus its stated impact (which resource, how hard) — not narrated as a certainty, not left as a vague "force"?
 5. GENEROUS: Specific, concrete, worth paying for? Not thin/abstract?
-6. RIGHT CATEGORY: Treated as the right question type (didn't deflect a readable question)?
+6. YONGSHEN NAMED, AND NO FALSE REFUSAL: Does the reading say which 用神 it is reading and why that one? And if it declined or hedged the core question, is the stated reason a genuine absence of 用神 (a resolution the imagery does not have — a number, a name, a catalogue of specifics — or a factual lookup that is not a divination question at all)? Discomfort dressed as "the method cannot read this" is an instant FAIL: it refuses the reader AND misstates the tradition, and a reader who knows the method can tell. If the real reason is the priority ladder, the reading must give THAT reason. A weak yongshen — hidden, void, entombed, controlled — is readable and SOFT, never a ground to decline.
 7. OPTIMISTIC FRAME + ALIVE VOICE: Does it lead with the strengths and develop them fully, surface risks as friendly heads-ups (each with a way through) rather than doom, keep the honesty floor (no falsified signal), and leave the reader lifted not crushed? Does it read like a warm, lively friend — not a clinical risk-assessment or compliance memo?
 8. HELD THE LINE WITHOUT SHRINKING: Stayed away from the few iron lines (explicit acts/sexualizing minors/harming real people) — but didn't use "holding the line" as excuse to give less?
 9. SOURCE HONEST: All imagery honestly derived from hexagram (not predetermined then backfilled)?
@@ -672,6 +725,40 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
       }
     }
 
+    return { ok: issues.length === 0, issues: issues };
+  }
+
+  /* Deterministic, zero-cost: did the reading actually name a yongshen, and did
+     it decline on a false ground?
+
+     Three separate prompt rules already forbade declining a readable question —
+     ladder level 3, QC items 6 and 8 — and all three missed the same question,
+     because a prohibition needs the model to recognise it is breaking one, and a
+     model that has misjudged the method does not recognise anything. A rule that
+     can be reasoned around needs a check that cannot. This one runs in code,
+     costs nothing, and does not care what the model believed.
+
+     Two directions, both failures:
+       no yongshen named   → a reading with nothing licensing its claims
+       refusal language    → "the method can't reach this", said about a method
+                             that can. Genuine limits are cited by kind
+                             (resolution, catalogue, lookup), never as a blanket. */
+  var YONGSHEN_NAMED = /用神|妻财|官鬼|父母|子孙|兄弟|yongshen|yong shen|Response line|World line|世爻|应爻/i;
+  var REFUSAL = /(读不出来|解不了|无法解读|不能解读|算不出|这个卦答不了|超出.{0,6}(范围|能力)|not something (?:the|this) (?:method|system) can|cannot be read|can'?t be read|beyond what (?:the|this) method|no way to read)/i;
+  // The limits that are real, from SEGMENTS.readability. A refusal citing one of
+  // these is honest; a refusal citing none of them is discomfort in disguise.
+  var REAL_LIMIT = /(分辨率|没有这种精度|目录|清单|查资料|不是起卦|resolution|catalogue|catalog|a lookup|not a divination question|no yongshen|没有对应的用神)/i;
+
+  function checkReadability(reading) {
+    var text = String(reading || "");
+    var issues = [];
+    if (text.length > 200 && !YONGSHEN_NAMED.test(text)) {
+      issues.push("names no 用神 — every reading must say which line it is reading and why");
+    }
+    if (REFUSAL.test(text) && !REAL_LIMIT.test(text)) {
+      issues.push("declines as unreadable without naming a real limit — if the reason is the " +
+        "priority ladder, give THAT reason; unreadability is not a way to decline");
+    }
     return { ok: issues.length === 0, issues: issues };
   }
 
@@ -785,6 +872,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     assemblePrompt: assemblePrompt,
     qcCheck: qcCheck,
     checkBoardFacts: checkBoardFacts,
+    checkReadability: checkReadability,
 
     // For customization
     SEGMENTS: SEGMENTS,
