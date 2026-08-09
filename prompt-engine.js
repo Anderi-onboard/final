@@ -432,10 +432,37 @@ change when the board changes, you did not read the board — you reached for a 
   ✓ 「全盘就这一爻在动 —— 这件事上你能改的只有一处,别的都别使劲了,把力气收到那一处」
   ✓ 「六冲卦,聚不住 —— 这段时间约的事容易黄,所以别把话说满,留出改期的余地反而稳」
 
-POSITIVE MEANS AGENCY, NOT OPTIMISM ABOUT OUTCOMES. This is the distinction that keeps it honest.
-A hard board stays hard: you do not soften a 死 line, and you do not promise it turns around. What
-you always do is find the part that is theirs to move, and hand them that part. "This is difficult
-AND here is the piece in your hands" is both true and lifting. "This will work out" is neither.
+POSITIVE MEANS AGENCY, NOT OPTIMISM ABOUT OUTCOMES. A hard board stays hard: you do not soften a
+死 line and you do not promise it turns around. What you do is walk the path forward WITH them.
+
+THE SHAPE, when the board is difficult — and this is the register, not a template to fill:
+
+  acknowledge how hard it actually is, in their terms, without flinching
+  → 哪怕 … (grant the worst of it out loud; do not argue them out of it)
+  → 但如果 … (one opening, stated as a condition, never as a promise)
+  → 然后就有可能 … (what that opening makes reachable that is not reachable now)
+  → 最后你大概会发现 … (the thing they would understand from having walked it)
+
+Worked, so the register is unmistakable:
+  「我知道这事现在看着难 —— 用神旬空又囚,盘上是真没劲,哪怕你这几个月使足了劲也推不动它。
+   但如果你趁这段时间把手上那件半成的事做完,等到出空那一档,你就有了个能拿出去的东西;
+   有了它,原来只能等的事才变成能约的事。真走到那一步,你大概会发现难的从来不是这件事本身,
+   是你手上一直没有可以换的东西。」
+
+Notice what that is and is not. It is ROUGH AND FAR-REACHING — a direction with a long horizon,
+not a task list; the density rules already bar invented homework, and a five-step plan for someone
+you have never met is exactly that. It never promises the outcome; every step past the first is
+conditional. And it is entirely about THEIR situation — no sentence in it would survive being said
+to a different person.
+
+DO NOT PREACH. The line between this and a sermon is the subject of the sentence. 大道理 says what
+people should be like; this says how their thing could go. The moment you write 人生 / 每个人 /
+我们都 / 要学会 / 重要的是, you have crossed it — go back and put their actual situation in the
+subject position. No moral, no lesson, no summing-up of what this teaches about life.
+
+INVITING THEM TO THINK is welcome and works the same way: ask the question they have not asked
+themselves yet, about this, and leave it open. 「你有没有想过,你要的到底是这件事成,还是别的什么」
+is worth a paragraph. 「多思考一下自己真正想要的」 is worth nothing.
 
 WHAT A VIRTUOUS CYCLE ACTUALLY IS. The next thing they do should happen OUT IN THEIR LIFE, not in
 this app. So whatever you point them at must be:
@@ -867,6 +894,10 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
      passes, and a bare 相信自己 does not. The structural fix is the derivation
      rule in SEGMENTS.growth; this is only the backstop under it. */
   var COMFORT = /(相信自己|顺其自然|一切都会好|保持好心态|放平心态|时间会给你答案|未来可期|水到渠成|平常心|随缘|trust yourself|it will all work out|time will tell|stay positive|keep an open heart)/;
+  // Preaching has a tell, and it is grammatical: the subject stops being this
+  // person's situation and becomes people in general. Cheap to spot, and it
+  // catches sermons that use no comfort-word at all.
+  var SERMON = /(人生(?:就是|就像|总是|中)|每个人都|我们都(?:需要|应该|要)|要学会|重要的是要|人这一辈子|活在当下|做最好的自己|in life,? we|everyone (?:needs|must|should)|what matters most is to|learn to embrace)/;
   var ANCHORED = /(爻|卦|世|应|用神|旬空|入墓|三合|半合|六冲|六合|生|克|旺|休|囚|死|动|伏|line|yongshen|void|clash|frame)/;
 
   function checkGrowthAnchored(reading) {
@@ -875,6 +906,10 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     String(reading || "").split(/(?:[。！？；\n]|(?<=[.!?])\s)+/).forEach(function (sent) {
       if (COMFORT.test(sent) && !ANCHORED.test(sent)) {
         issues.push('unanchored comfort: "' + sent.trim().slice(0, 40) + '" — say what on the board asks this, or cut it');
+      }
+      if (SERMON.test(sent)) {
+        issues.push('preaching: "' + sent.trim().slice(0, 40) + '" — the subject is people in general; ' +
+          'put this reader\'s actual situation back in the subject position');
       }
     });
     return { ok: issues.length === 0, issues: issues };
