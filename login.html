@@ -203,7 +203,7 @@
 <footer>BourneWise &middot; fixed hexagram input &middot; Claude Opus 5 interpretation</footer>
 
 <script src="./assets/backgrounds/mountain-range.js?v=20260807d"></script>
-<script src="./account.js?v=20260807d"></script>
+<script src="./account.js?v=20260808a"></script>
 <script>
 (function () {
   "use strict";
@@ -250,9 +250,16 @@
   function spin(btn) {
     btn.style.opacity = ".6"; btn.disabled = true;
     var arr = btn.querySelector(".arr");
-    if (arr) arr.innerHTML = '<svg width="15" height="15" viewBox="0 0 16 16" class="spin"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="28" stroke-dashoffset="10"></circle></svg>';
+    if (arr) {
+      if (!arr.dataset.idleHtml) arr.dataset.idleHtml = arr.innerHTML;
+      arr.innerHTML = '<span class="bw-organic-loader" aria-hidden="true"><i></i><i></i><i></i></span>';
+    }
   }
-  function unspin(btn) { btn.style.opacity = ""; btn.disabled = false; }
+  function unspin(btn) {
+    btn.style.opacity = ""; btn.disabled = false;
+    var arr = btn.querySelector(".arr");
+    if (arr && arr.dataset.idleHtml) arr.innerHTML = arr.dataset.idleHtml;
+  }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -299,6 +306,5 @@
   }
 })();
 </script>
-<style>.spin{animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}</style>
 </body>
 </html>

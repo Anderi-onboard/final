@@ -179,7 +179,7 @@
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
-    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost);
+    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost, m.reserve);
     renderMethodMenu();
   }
   function renderMethodMenu() {
@@ -224,6 +224,7 @@
         '<span class="casting-meta">' + esc(metaMethod + (metaDate ? " · " + metaDate : "")) + '</span>';
       b.title = c.title;
       b.addEventListener("click", function () {
+        if (window.BWFigure && window.BWFigure.cancel) window.BWFigure.cancel();
         S.activeId = c.id;
         /* Returning to a reading should restore its method too. Otherwise a
            Sortis thread could reopen with a Stria composer and the next send
@@ -583,7 +584,8 @@
     return figureHTML(msg) + verdictHTML(msg);
   }
 
-  function renderThread() {
+  function renderThread(opts) {
+    opts = opts || {};
     var c = activeConv();
     var titleText = c ? c.title : "New casting";
     $("convTitle").textContent = titleText;
@@ -608,7 +610,7 @@
     c.msgs.forEach(function (m, i) {
       if (m.role === "user") {
         var u = document.createElement("div");
-        u.className = "msg-user";
+        u.className = "msg-user" + (opts.animateLast && i === c.msgs.length - 1 ? " is-new" : "");
         u.textContent = m.text;
         threadInner.appendChild(u);
       } else {
@@ -624,11 +626,16 @@
         }
       }
     });
+    /* Only the latest figure keeps the quiet living state. Historical figures
+       remain fully legible but static, so a long thread does not accumulate
+       dozens of perpetual SVG animations. */
+    var liveFigures = threadInner.querySelectorAll(".bw-af-fig.bw-af-live");
+    if (liveFigures.length) liveFigures[liveFigures.length - 1].classList.add("bw-motion-current");
     var t = $("thread");
     t.scrollTop = t.scrollHeight;
   }
 
-  function renderAll() { renderUnits(); renderAccount(); renderMethod(); renderCarry(); renderList(); renderThread(); }
+  function renderAll(opts) { renderUnits(); renderAccount(); renderMethod(); renderCarry(); renderList(); renderThread(opts); }
 
   function toast(msg) {
     toastEl.textContent = msg;
@@ -732,11 +739,27 @@
      every character made Chromium parse and replace the entire markdown tree
      many times per second, then the old reveal pass animated it all again. */
   function makeTypewriter(el) {
-    var target = "", timer = null, cancelled = false;
+    var target = "", timer = null, cancelled = false, painted = "";
+    var line = document.createElement("p");
+    line.className = "rd-para rd-stream-text";
+    var textNode = document.createTextNode("");
+    line.appendChild(textNode);
+    el.appendChild(line);
+    function readableStreamText(value) {
+      return String(value || "")
+        .replace(/^#{1,6}\s*/gm, "")
+        .replace(/\*\*/g, "")
+        .replace(/(^|[^*])\*([^*\n]*)\*?/g, "$1$2")
+        .replace(/\|/g, "")
+        .replace(/^[-+]\s+/gm, "• ");
+    }
     function paint() {
       timer = null;
       if (cancelled) return;
-      el.innerHTML = mdReading(target) || '<p class="rd-para"></p>';
+      var next = readableStreamText(target);
+      if (next.indexOf(painted) === 0) textNode.appendData(next.slice(painted.length));
+      else textNode.data = next;
+      painted = next;
     }
     function schedule() {
       if (!timer) timer = setTimeout(paint, 96);
@@ -748,7 +771,7 @@
       },
       finish: function (cb) {
         if (timer) { clearTimeout(timer); timer = null; }
-        paint();
+        if (!cancelled) el.innerHTML = mdReading(target) || '<p class="rd-para"></p>';
         if (cb) cb();
       },
       cancel: function () { cancelled = true; if (timer) { clearTimeout(timer); timer = null; } }
@@ -1009,12 +1032,11 @@
     }
     if (recastReq && !decided) decided = "new";
     var isFollowup = candidate && decided !== "new";
-    var needed = isFollowup ? A.followCost(m.id) : m.cost;
-    /* Any balance at all admits a reading, and the reading you start always
-       finishes — it is billed for what it used when it is done, even if that
-       empties the balance. You are stopped at the next question, not part-way
-       through this one. */
-    if (S.units <= 0) {
+    var needed = isFollowup ? m.followReserve : m.reserve;
+    /* Match the server admission maximum so a request never appears to start
+       locally and then fails at the billing gate. The hold is not painted as a
+       balance jump; the final measured settlement arrives once with bw_meta. */
+    if (S.units < needed) {
       pulseLedger();
       toast(C.errors.outOfUnits);
       return;
@@ -1029,10 +1051,9 @@
     c.msgs.push({ role: "user", text: text });
     save();                                 // persist the question first
     clearDraft();                           // the composed question is now spent
-    /* Nothing is deducted here. The server bills the finished reading for the
-       tokens it actually used and returns the new balance, so the figure moves
-       once, downward, by the real amount. */
-    renderAll();
+    /* The server reserves the maximum atomically. The local number stays still
+       during generation and reconciles once to the final measured charge. */
+    renderAll({ animateLast: true });
 
     if (isFollowup) { followupFlow(c, text, m, lastCast, needed); return; }
 
@@ -1079,7 +1100,7 @@
     // The full annotated board VISUAL stays a Sortis-only treatment.
     var sortisBoard = m.id === "sortis" ? castBoard : null;
     var live = document.createElement("article");
-    live.className = "reading casting-live";
+    live.className = "reading casting-live is-new";
     live.setAttribute("aria-live", "polite");
     var castBox = document.createElement("div");
     castBox.className = "reading-fig" + (sortisBoard ? " is-full" : "");
@@ -1274,7 +1295,7 @@
     }
 
     var live = document.createElement("article");
-    live.className = "reading casting-live";
+    live.className = "reading casting-live is-new";
     live.setAttribute("aria-live", "polite");
     var streamPreview = document.createElement("div");
     streamPreview.className = "reading-body reading-streaming";
@@ -1394,6 +1415,7 @@
   });
 
   $("newCast").addEventListener("click", function () {
+    if (window.BWFigure && window.BWFigure.cancel) window.BWFigure.cancel();
     busy = false;
     $("sendBtn").disabled = false;
     S.activeId = null;
@@ -1578,7 +1600,7 @@
       var max = th.scrollHeight - th.clientHeight;
       if (max < 240) { bar.classList.remove("on"); return; }
       bar.classList.add("on");
-      fill.style.width = Math.min(100, (th.scrollTop / max) * 100) + "%";
+      fill.style.transform = "scaleX(" + Math.min(1, th.scrollTop / max).toFixed(4) + ")";
     }
     function onScroll() { if (!raf) raf = requestAnimationFrame(paint); }
     th.addEventListener("scroll", onScroll, { passive: true });

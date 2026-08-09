@@ -3,12 +3,13 @@
    instead of inventing new cubic-beziers. Decorative/ambient animations
    (mountains, clouds, casting board) keep their own tuned timings. */
 :root{
-  --ease-out: cubic-bezier(.2,.8,.25,1);      /* things arriving / reacting */
-  --ease-in-out: cubic-bezier(.4,0,.2,1);     /* things moving elsewhere */
-  --ease-spring: cubic-bezier(.2,.85,.3,1.4); /* small playful pops (coach marks) */
-  --dur-fast: 120ms;   /* press, hover tint */
-  --dur-base: 240ms;   /* menus, reveals */
-  --dur-slow: 480ms;   /* panels, page-level */
+  --ease-out: cubic-bezier(.23,1,.32,1);       /* things arriving / reacting */
+  --ease-in-out: cubic-bezier(.77,0,.175,1);   /* things moving elsewhere */
+  --ease-drawer: cubic-bezier(.32,.72,0,1);    /* off-canvas surfaces */
+  --ease-spring: cubic-bezier(.2,.85,.3,1.18); /* restrained playful feedback */
+  --dur-fast: 140ms;   /* press, hover tint */
+  --dur-base: 190ms;   /* menus, reveals */
+  --dur-slow: 360ms;   /* panels, page-level */
 
   /* Editorial reveal curves — the long, weighted easings that give a
      smooth-scrolled page its "settling into place" feel. --ease-cinematic is
@@ -17,8 +18,8 @@
      one motion signature instead of each page inventing its own. */
   --ease-cinematic: cubic-bezier(.16,1,.3,1);   /* reveals arriving — long tail */
   --ease-quart:     cubic-bezier(.76,0,.24,1);  /* section-scale moves */
-  --dur-reveal: 900ms;  /* element rising into view */
-  --dur-lede:  1150ms;  /* a headline unfurling word-by-word */
+  --dur-reveal: 760ms;  /* element rising into view */
+  --dur-lede:  980ms;   /* a headline unfurling word-by-word */
 }
 
 /* Press state — interactive controls give slightly under the finger.

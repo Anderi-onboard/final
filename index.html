@@ -162,10 +162,10 @@
     border:none;border-radius:13px;padding:6px;
     box-shadow:none;
     display:flex;flex-direction:column;z-index:30;
-    opacity:0;transform:translateY(6px);visibility:hidden;pointer-events:none;
-    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
+    opacity:0;transform:translateY(5px) scale(.985);transform-origin:24px 100%;visibility:hidden;pointer-events:none;
+    transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out),visibility 0s linear var(--dur-base)}
   .acct-menu.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;
-    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1)}
+    transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out)}
   body.rail .sidebar{overflow:visible}
   body.rail .acct-menu{left:68px;bottom:4px}
   .acct-menu .who{padding:11px 12px 13px;border-bottom:1px solid rgba(42,32,22,.1);margin-bottom:4px}
@@ -206,7 +206,7 @@
   /* reading progress — a hairline across the top of the column; only visible
      in chat mode when the thread actually overflows */
   .read-progress{position:absolute;top:0;left:0;right:0;height:2px;z-index:5;pointer-events:none;opacity:0;transition:opacity var(--dur-base) var(--ease-out)}
-  .read-progress i{display:block;height:100%;width:0;background:var(--terracotta);opacity:.75}
+  .read-progress i{display:block;height:100%;width:100%;background:var(--terracotta);opacity:.75;transform:scaleX(0);transform-origin:0 50%}
   body:not(.is-empty) .read-progress.on{opacity:1}
   
 
@@ -324,6 +324,7 @@
   .reading-body .rd-sec{margin-top:24px;max-width:none}
   /* live streaming: a quiet ink caret marks the writing edge */
   .reading-streaming > *:last-child::after{content:"";display:inline-block;width:2px;height:.92em;margin-left:3px;vertical-align:-.1em;background:var(--terracotta);border-radius:1px;animation:bwCaret 1.1s steps(2,jump-none) infinite}
+  .rd-stream-text{white-space:pre-wrap}
   @keyframes bwCaret{0%{opacity:1}50%{opacity:0}}
   .reading-stream-preview{font-family:var(--read);font-size:17px;line-height:1.7}
   .reading-insight p{font-size:14.5px;line-height:1.75}
@@ -472,10 +473,10 @@
 
   /* ── method picker popover — the two castings, made distinct ── */
   .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:13px;padding:7px;box-shadow:none;display:flex;flex-direction:column;gap:2px;z-index:40;
-    opacity:0;transform:translate(-50%,6px);visibility:hidden;pointer-events:none;
-    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
+    opacity:0;transform:translate(-50%,5px) scale(.985);transform-origin:50% 100%;visibility:hidden;pointer-events:none;
+    transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out),visibility 0s linear var(--dur-base)}
   .method-menu.open{opacity:1;transform:translate(-50%,0);visibility:visible;pointer-events:auto;
-    transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1)}
+    transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out)}
   .mm-head{padding:8px 9px 6px}
   .mm-row{display:flex;align-items:flex-start;gap:11px;text-align:left;padding:11px 10px;border-radius:9px;transition:background .15s}
   .mm-row:hover{background:var(--paper-dim)}
@@ -501,9 +502,10 @@
 
   /* ── plans modal (paywall) ── */
   .overlay{position:fixed;inset:0;background:rgba(31,29,26,.35);display:flex;align-items:center;justify-content:center;z-index:50;padding:24px;
-    opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility 0s linear .18s}
-  .overlay.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .18s ease}
-  .modal{width:min(720px,100%);background:var(--paper);border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 24px 60px rgba(31,29,26,.25)}
+    opacity:0;visibility:hidden;pointer-events:none;transition:opacity var(--dur-base) var(--ease-out),visibility 0s linear var(--dur-base)}
+  .overlay.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity var(--dur-base) var(--ease-out)}
+  .modal{width:min(720px,100%);background:var(--paper);border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 24px 60px rgba(31,29,26,.25);opacity:0;transform:scale(.97);transform-origin:center;transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+  .overlay.open .modal{opacity:1;transform:none}
   .modal-hero{background:var(--ink);background-image:radial-gradient(120% 140% at 0% 0%,rgba(181,80,44,.22),transparent 58%);color:var(--paper);padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between}
   .modal-hero h2{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;color:var(--paper);margin-top:3px}
   .modal-hero .lbl{color:var(--ghost)}
@@ -540,7 +542,7 @@
       transform:translateX(-104%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
     body.side-open .sidebar{transform:translateX(0)}
     /* neutralise desktop "rail" collapse inside the drawer — always open full */
-    body.rail .sidebar{width:min(300px,86vw);padding-left:12px;padding-right:12px}
+    body.rail .sidebar{width:min(300px,86vw);padding-left:12px;padding-right:12px;overflow:hidden}
     body.rail .sidebar .fade{opacity:1;pointer-events:auto;width:auto;overflow:visible}
     body.rail .sidebar .brand-word{width:auto;overflow:visible;opacity:1}
     body.rail .sidebar .castings{opacity:1;pointer-events:auto}
@@ -572,10 +574,12 @@
     body:not(.is-empty) .topbar h1{display:none}
     .greeting h1{font-size:clamp(26px,8vw,42px)}
     .composer-zone{padding-bottom:18px}
-    .composer{padding:9px 9px 9px 13px;gap:7px}
-    .composer textarea{font-size:15px;min-height:48px;padding:7px 0}
-    .stria{padding:9px 11px;font-size:12px}
-    .send{width:42px;height:42px}
+    .composer{display:grid;grid-template-columns:auto 1fr auto;align-items:center;row-gap:5px;padding:11px 10px 9px 13px;border-radius:24px}
+    .composer textarea{grid-column:1/-1;grid-row:1;font-size:15px;min-height:62px;max-height:132px;padding:7px 3px;overflow-y:auto}
+    .stria{grid-column:1;grid-row:2;padding:8px 11px;font-size:12px}
+    .send{grid-column:3;grid-row:2;width:42px;height:42px}
+    .composer-help{display:none}
+    .method-menu{bottom:126px;max-width:calc(100% - 36px)}
     .disclaimer{font-size:10.5px}
     .rd-depth{margin-top:26px;padding:16px;border-radius:15px}
     .rd-prompts{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -624,7 +628,12 @@
   .site-foot a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line-soft)}
   .site-foot a:hover{color:var(--terracotta)}
   body.is-empty .site-foot{position:fixed;left:0;right:0;bottom:10px;z-index:3}
-  #heroEmpty{display:block;text-align:center;padding:0 0 28px}
+  /* The opening prompt is the page's visual anchor. Centre it against the
+     entire usable canvas (viewport minus the sidebar), not merely the space
+     left between the top bar and composer. That keeps its centre stable when
+     either surrounding region changes height. */
+  body.is-empty #heroEmpty{position:fixed;inset:0 0 0 var(--sbw);z-index:1;display:grid;place-items:center;text-align:center;padding:0;pointer-events:none}
+  body.is-empty #heroEmpty .greeting{max-width:680px;width:calc(100% - 36px)}
 
   /* Mobile topbar fix: the base .claude-note / .top-right rules above sit AFTER
      the earlier max-width media queries, so those narrow-screen overrides lost
@@ -656,12 +665,26 @@
        live thread end on the composer and its one-line note. */
     body:not(.is-empty) .site-foot{display:none}
     .disclaimer{margin-top:9px}
+    /* Keep the mobile headline centred independently of the animated mark.
+       Equal side padding makes the text's horizontal centre the canvas centre. */
+    body.is-empty #heroEmpty{inset:0}
+    body.is-empty #heroEmpty .greeting{display:block}
+    body.is-empty #heroEmpty .greeting .bw-hero-mark{position:absolute;left:0;top:50%;transform:translateY(-50%);width:38px!important;height:31px!important}
+    body.is-empty #heroEmpty .greeting h1{width:100%;box-sizing:border-box;padding:0 48px;text-align:center}
   }
   @media (max-width:390px){.rd-prompts{grid-template-columns:1fr}}
   .why-short{display:none}
+  .plans-short{display:none}
+  @media (max-width:520px){.plans-long{display:none}.plans-short{display:inline}}
   @media (max-width:360px){.why-long{display:none}.why-short{display:inline}}
-  .greeting{display:flex;align-items:center;justify-content:center;gap:16px}
-  .greeting h1{font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink);min-height:1.15em;transition:opacity .38s var(--ease-out),transform .52s var(--ease-cinematic),letter-spacing .52s var(--ease-cinematic);will-change:opacity,transform}
+  .greeting{position:relative;display:block;width:100%}
+  .greeting .bw-hero-mark{position:absolute;left:0;top:50%;transform:translateY(-50%)}
+  .greeting h1{width:100%;text-align:center;font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink);min-height:1.15em;transition:opacity .38s var(--ease-out),transform .52s var(--ease-cinematic),letter-spacing .52s var(--ease-cinematic);will-change:opacity,transform}
+  @media (max-width:700px){
+    .greeting{display:flex;align-items:center;justify-content:center;gap:12px}
+    .greeting .bw-hero-mark{position:static;transform:none;width:38px!important;height:31px!important}
+    .greeting h1{width:auto;text-align:left}
+  }
   .greeting h1.is-changing{opacity:0;transform:translateY(-9px) scale(.992);letter-spacing:-.055em}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
      white callout pinned under the topbar's "The method" link, arrow poking
@@ -690,14 +713,17 @@
   .stream.out .stream-text,.stream.out .stream-tag{opacity:0}
   .tok{display:inline-block;animation:tokDrop .5s both cubic-bezier(.2,.7,.3,1)}
   @keyframes tokDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-  .msg-user,.reading{animation:msgIn .42s cubic-bezier(.2,.7,.3,1)}
-  @keyframes msgIn{from{transform:translateY(10px)}to{transform:none}}
+  .msg-user.is-new,.reading.is-new{animation:msgIn var(--dur-base) var(--ease-out) both}
+  @keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   body.rail .side-toggle{margin-left:0}
   @media (prefers-reduced-motion: reduce){
     .claude-mark{animation:none}
     .bwl1,.bwl2,.bwl3,.bwl4,.bwl5{animation:none;opacity:1}
     .msg-user,.reading{animation:none}
+    .send:disabled{animation:none}
+    .signin-coach,.guide-coach{animation:coachFade .2s ease both}
   }
+  @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
 </head>
 <body class="is-empty" data-page="app">
@@ -771,6 +797,7 @@
       </span>
       <a class="ghost" href="./guide.html" id="howItWorksLink" style="font-weight: 700; font-family: var(--sans)">The method</a>
       <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)"><span class="why-long">Why BourneWise</span><span class="why-short">Why</span></a>
+      <a class="ghost" href="./pricing.html" style="font-weight: 700; font-family: var(--sans)"><span class="plans-long">Plans &amp; units</span><span class="plans-short">Plans</span></a>
     </div>
   </header>
 
@@ -801,11 +828,12 @@
         <textarea id="composerInput" rows="1" placeholder="Describe the situation, then ask one clear question&hellip;" aria-label="Casting question" autocomplete="off"></textarea>
       <button type="submit" class="send pressable" id="sendBtn" aria-label="Cast">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 8h11M9 3.5L13.5 8 9 12.5"></path></svg>
+        <span class="bw-organic-loader" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
     </form>
     <div class="composer-help" aria-hidden="true"><span>Enter to submit &middot; Shift+Enter for a new line</span><span>Follow-ups reuse the current hexagram</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
-    <p class="disclaimer" id="methodNote">Stria 64 bills for what it writes &middot; about 440 units, follow-ups less</p>
+    <p class="disclaimer" id="methodNote">Stria 64 &middot; about 440 units typical &middot; 520 maximum, with unused units returned</p>
     <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans &amp; units</a></p>
   </footer>
 </main>
@@ -817,12 +845,12 @@
 <script src="./liuyao-engine.js?v=20260807d"></script>
 <script src="./liuyao-ai.js?v=20260807d"></script>
 <script src="./liuyao-chart.js?v=20260807d"></script>
-<script src="./copy.js?v=20260807d"></script>
+<script src="./copy.js?v=20260808a"></script>
 <script src="./prompt-engine.js?v=20260807d"></script>
 <script src="./prompt-router.js?v=20260807d"></script>
-<script src="./account.js?v=20260807d"></script>
+<script src="./account.js?v=20260808a"></script>
 <script>window.BW_BUILD="20260807d";</script>
-<script src="./chat-app.js?v=20260807d"></script>
+<script src="./chat-app.js?v=20260808a"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

@@ -31,30 +31,24 @@
     premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 43500, methods: ["stria", "sortis"] }
   };
 
-  // cost/followCap are what a reading TYPICALLY runs, mirroring METHOD_COST /
-  // FOLLOW_COST on the server. Nothing is held against them: the real charge is
-  // metered from the tokens used and arrives as unitsRemaining, which
-  // reconcileUnits() applies. They exist only so the interface can say roughly
-  // what something costs before you ask for it.
+  // cost/followCap are typical measured usage. reserve/followReserve mirror the
+  // server-side admission maximums; the unused portion returns on settlement.
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 440, followCap: 490, tag: "Present structure",
+      id: "stria", name: "Stria 64", cost: 440, reserve: 520, followCap: 490, followReserve: 560, tag: "Present structure",
       depth: "Primary hexagram",
       blurb: "Interprets the primary hexagram against your question.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 780, followCap: 640, tag: "Change analysis",
+      id: "sortis", name: "Sortis 6", cost: 780, reserve: 900, followCap: 640, followReserve: 720, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
       blurb: "Adds moving lines and the transformed hexagram to the analysis.",
       gated: false
     }
   };
-  // followCap mirrors functions/_lib/db.js FOLLOW_COST — the TYPICAL cost of an
-  // in-conversation follow-up. Nothing is reserved and nothing is refunded; the
-  // name is older than the billing model. Note Stria's follow-up now runs dearer
-  // than a fresh Stria reading: the answer is short but the whole conversation
-  // is re-sent as input, and input is what dominates that bill.
+  // A Stria follow-up can cost more than a fresh Stria reading because the
+  // complete conversation is re-sent as input even when the answer is short.
   var METHOD_ORDER = ["stria", "sortis"];
 
   var DEFAULT_ACCOUNT = { name: "Guest", email: "", plan: "free", avatar: "G", signedIn: false };
@@ -200,12 +194,13 @@
   }
 
   function addUnits(n, reason) {
+    // Server balances are changed only by signed Creem webhooks or AI billing.
+    // This helper remains for the no-backend local demo and must never mint a
+    // production balance from the browser.
+    if (serverOn) return load().units;
     var s = load();
     s.units += n;
     save(s);
-    if (serverOn) {
-      api("/grant", "POST", { amount: n, reason: reason || "topup" }).then(reconcileUnits);
-    }
     return s.units;
   }
 
@@ -220,10 +215,10 @@
   function setPlan(plan) {
     var s = load();
     if (!PLANS[plan]) return s.units;
+    if (serverOn) return s.units;
     s.account.plan = plan;
     if (plan !== "free") s.units += PLANS[plan].grant;
     save(s);
-    if (serverOn) api("/plan", "POST", { plan: plan }).then(reconcileUnits);
     return s.units;
   }
 

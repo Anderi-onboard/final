@@ -4,7 +4,49 @@
 > 当前阶段：**字体已锁定为仅 BioRhyme / Spinnaker / Pacifico 三种，禁止出现任何其他字体**。
 > 其余美术（排版比例、留白、卦象对齐）仍在后期集中处理之列。
 
-最后更新：2026-07-17
+最后更新：2026-08-08
+
+---
+
+## ✅ Claude 最新分支整合 + Creem Test Mode 加固（2026-08-08）
+
+- ✅ 初始页轮换主标题改为相对整个可用画布（视口减去侧栏）水平、垂直双向
+  精确居中，不再被顶栏或输入栏高度推偏；实测 1440×900 中心 `(852, 450)`，
+  390×844 中心 `(195, 422)`，两端横向溢出均为 0。
+- ✅ Creem 交接文档扩展为 8 个产品逐字段填写表，包含名称、描述、计费类型、
+  周期、美元/美分价格、feature 文案、税务字段、成功页和 Cloudflare 变量映射。
+- ✅ Pricing 前端不拆成四张订阅卡：Pro / Premium 各保留一张，并使用原生可
+  勾选的 `Annually` 复选框切换月付/年付价格、units、按钮文案与 Creem SKU；
+  手机端实测无横向溢出。
+- ✅ 账单邮件交给 Merchant of Record：Pricing 明示 Creem 会在每次成功付款后
+  自动发送收据与 Portal 链接；Settings 将入口命名为 `Receipts & billing`，
+  支付成功提示明确邮件已发送；8 个产品增加统一 Private Note 填写模板。
+- ✅ 补齐 `refund.created` / `dispute.created`：按退款比例撤回相应购买点数，
+  余额永不低于 0，事件 ID 幂等防止重复撤回；退款 checkout metadata 也可正确
+  找回所属 BourneWise 用户。
+- ✅ 从 `origin/claude/bournewise-handoff-priorities-19xcmh` 建立
+  `codex/creem-integration`：保留 Claude 的 8 项提示词/追问改进，同时恢复
+  本地已完成的主页精确居中、右上角 Plans、紧凑 Pricing 和品牌副主题。
+- ✅ Claude 体验改动已纳入：关闭 Opus 5 extended thinking、修复数字卦号、
+  取消僵硬九字段输出、按用户语言回答、区分板面证据与生活推断、动态追问、
+  跨对话携带上下文、亲密关系问题不再拒判用神。
+- ✅ Creem 产品矩阵统一为 8 项：Pro/Premium 月付与年付 + 7,500 / 15,000 /
+  30,000 / 75,000 四档点数包；修复 `pack4500` 与价格页 `pack7500` 的致命错配。
+- ✅ 取消订阅接口显式发送 `{ mode: "scheduled", onExecute: "cancel" }`，保证
+  产品内文案所说的“当前周期末取消”与 Creem API 行为一致。
+- ✅ 余额扣减与发点改为 D1 条件算术更新 + 事务批处理，避免并发请求覆盖余额。
+- ✅ 删除浏览器可直接调用的 `/api/account/grant`、`/plan`、`/spend` 演示接口；
+  生产余额现在只能由已签名的 Creem webhook 或服务端 AI 结算改变。
+- ✅ 按量计费改为“预留公开上限 → 实际 token 结算 → 自动返还差额”；前端只在
+  完成时刷新一次余额，不显示中途跳动，同时堵住 1 点余额调用完整 Opus 的漏洞。
+- ✅ Pricing / Settings / Terms / Refunds 对齐同一计费说明、同一支持邮箱；移除
+  不存在的 App Store / Google Play 退款路径。
+- ✅ 手机端输入框改为两层布局：问题独占整行，方法和发送键留在底部，解决
+  placeholder 被压成窄列和空输入框出现内部滚动的问题。
+- ✅ 全站文案包从最终源码重新生成；审计结果 `STALE: 0`。
+- ⚠️ Creem 当前禁止 metaphysical / fortune-telling / spiritual outcome
+  services。代码可继续接 Test Mode，但 Live 审核前必须把真实产品流程发给
+  Creem support 并取得书面 eligibility 确认；严禁通过隐去 I Ching 流程规避。
 
 ---
 
@@ -71,9 +113,9 @@
 - ✅ 验证:9 项 webhook 仿真全过——坏签名 400、pack 发点、事件重放不重复、
   订阅 checkout 不发点、paid 发月度点、paid 重放不重复、无 metadata 续费
   反查、canceled 降级留点、ledger reason 审计正确。
-- ⏳ **待用户在 Creem 后台完成**(代码已就绪):注册→建 6 个产品(Pro $19/mo、
-  Premium $29/mo、4 个 pack)→ Developers 拿 API key + webhook secret →
-  webhook URL 填 `https://bournewise.com/api/billing/webhook` → 6+2 个 env
+- ⏳ **待用户在 Creem 后台完成**(代码已就绪):注册→建 8 个产品(Pro/Premium
+  月付与年付共 4 个订阅、4 个 pack)→ Developers 拿 API key + webhook secret →
+  webhook URL 填 `https://bournewise.com/api/billing/webhook` → 8+2 个 env
   填进 Pages(见 .dev.vars.example)→ 重新部署 → test 模式走通后切 live 申请
   上线审核。
 

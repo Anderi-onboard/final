@@ -46,10 +46,9 @@
     /* ── the composer, and what a reading will cost ─────────────────────── */
     composer: {
       placeholder: "Say it plainly…",
-      // Cost is stated as what it is: charged after the fact, for what was used.
-      methodNote: function (name, typical) {
-        return name + " · you are charged for what the reading uses, about " +
-          n(typical) + " units · follow-ups cost less, in proportion to their length";
+      methodNote: function (name, typical, maximum) {
+        return name + " · about " + n(typical) + " units typical · " +
+          n(maximum) + " maximum, with unused units returned";
       },
       methodCost: function (typical) { return "~" + n(typical); }
     },

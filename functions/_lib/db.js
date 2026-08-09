@@ -31,10 +31,10 @@ export const PACKS = [
   { units: 75000, usd: 50 }
 ];
 
-// TYPICAL cost of a reading, from measured usage. Nothing is held or deducted
-// against these — a reading is billed for the tokens it actually used, once it
-// is written. They exist so the interface can say roughly what a reading runs
-// before you ask for it, and they are the only numbers here a reader ever sees.
+// TYPICAL cost of a reading, from measured usage. Separate reserve constants
+// below define the maximum held at admission; settlement still follows the
+// tokens actually used. These values let the interface set expectations before
+// the request begins.
 //
 // Re-measured after extended thinking was turned off in api/claude.js (it was
 // spending most of the token budget on reasoning the reader never saw, which
@@ -48,12 +48,16 @@ export const PACKS = [
 // IF CLAUDE_THINKING IS EVER SET BACK TO "on", these roughly double — re-measure
 // before trusting them.
 export const METHOD_COST = { stria: 440, sortis: 780 };
+// Maximum held at admission. Settlement is still proportional to measured
+// tokens, but can never exceed the amount the reader accepted at the start.
+// The headroom covers the longest clean samples measured with thinking off.
+export const METHOD_RESERVE = { stria: 520, sortis: 900 };
 export const PAID = { pro: true, premium: true };
 
-// ── Metered billing — strictly proportional, no ceiling ────────────────────
-// A reading is billed for the tokens it actually consumed. There is no cap and
-// no flat price: a short reading costs less than a long one, always, and the
-// charge tracks real cost instead of an assumed average.
+// ── Metered billing with a published ceiling ───────────────────────────────
+// A reading is billed for the tokens it actually consumed, up to the maximum
+// held at admission. Shorter readings cost less; unusually long output never
+// creates debt or a surprise charge above the accepted maximum.
 //
 // WHY THE RATES ARE KEYED BY MODEL, NOT BY PRODUCT
 // The model behind a product changes (Stria has already moved from Sonnet 4.6
@@ -99,6 +103,7 @@ const FALLBACK_RATE = MODEL_RATES['anthropic/claude-opus-5'];
 // follow-up carries the same conversation as a Sortis one while its own answer
 // stays short, so input dominates the bill. See METHOD_COST for the samples.
 export const FOLLOW_COST = { stria: 490, sortis: 640 };
+export const FOLLOW_RESERVE = { stria: 560, sortis: 720 };
 
 // Chinese runs about 1.064 tokens per character; Latin script about 0.287
 // (both measured against the Claude tokenizer). The old estimate assumed 4
@@ -181,26 +186,66 @@ export async function createEmailUser(db, { email, name, passwordHash }) {
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
 }
 
-// Atomic-enough spend: re-read, guard balance, write new balance + ledger row.
+// Conditional arithmetic update + ledger insert in one D1 transaction. This
+// prevents two simultaneous readings from both passing a stale balance check.
 export async function spendUnits(db, userId, cost, reason) {
-  const u = await getUser(db, userId);
-  if (!u) return { ok: false, error: 'no user' };
-  if (u.units < cost) return { ok: false, error: 'insufficient', units: u.units };
-  const bal = u.units - cost, t = now();
-  await db.prepare('UPDATE users SET units=?, updated_at=? WHERE id=?').bind(bal, t, userId).run();
-  await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
-    .bind(userId, -cost, reason || 'spend', bal, t).run();
-  return { ok: true, units: bal };
+  cost = Math.max(0, Math.floor(Number(cost) || 0));
+  if (!cost) {
+    const u = await getUser(db, userId);
+    return u ? { ok: true, units: u.units } : { ok: false, error: 'no user' };
+  }
+  const t = now();
+  const out = await db.batch([
+    db.prepare('UPDATE users SET units=units-?, updated_at=? WHERE id=? AND units>=?')
+      .bind(cost, t, userId, cost),
+    db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) SELECT id,?,?,units,? FROM users WHERE id=? AND changes()=1')
+      .bind(-cost, reason || 'spend', t, userId),
+    db.prepare('SELECT units FROM users WHERE id=?').bind(userId)
+  ]);
+  const changed = Number(out[0] && out[0].meta && out[0].meta.changes) > 0;
+  const row = out[2] && out[2].results && out[2].results[0];
+  if (!row) return { ok: false, error: 'no user' };
+  return changed ? { ok: true, units: row.units } : { ok: false, error: 'insufficient', units: row.units };
 }
 
 export async function grantUnits(db, userId, amount, reason) {
-  const u = await getUser(db, userId);
-  if (!u) return { ok: false, error: 'no user' };
-  const bal = u.units + amount, t = now();
-  await db.prepare('UPDATE users SET units=?, updated_at=? WHERE id=?').bind(bal, t, userId).run();
-  await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
-    .bind(userId, amount, reason || 'grant', bal, t).run();
-  return { ok: true, units: bal };
+  amount = Math.max(0, Math.floor(Number(amount) || 0));
+  if (!amount) {
+    const u = await getUser(db, userId);
+    return u ? { ok: true, units: u.units } : { ok: false, error: 'no user' };
+  }
+  const t = now();
+  const out = await db.batch([
+    db.prepare('UPDATE users SET units=units+?, updated_at=? WHERE id=?').bind(amount, t, userId),
+    db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) SELECT id,?,?,units,? FROM users WHERE id=? AND changes()=1')
+      .bind(amount, reason || 'grant', t, userId),
+    db.prepare('SELECT units FROM users WHERE id=?').bind(userId)
+  ]);
+  const row = out[2] && out[2].results && out[2].results[0];
+  return row ? { ok: true, units: row.units } : { ok: false, error: 'no user' };
+}
+
+// Remove as much of a reversed purchase grant as is still present, without
+// ever pushing an account below zero. The ledger row is written with the exact
+// amount removed and the post-reversal balance. This is used only for signed
+// provider refund/dispute webhooks, never from a browser route.
+export async function revokeUnits(db, userId, amount, reason) {
+  amount = Math.max(0, Math.floor(Number(amount) || 0));
+  if (!amount) {
+    const u = await getUser(db, userId);
+    return u ? { ok: true, units: u.units } : { ok: false, error: 'no user' };
+  }
+  const t = now();
+  const out = await db.batch([
+    db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) SELECT id,-MIN(?,units),?,MAX(0,units-?),? FROM users WHERE id=? AND units>0')
+      .bind(amount, reason || 'revoke', amount, t, userId),
+    db.prepare('UPDATE users SET units=MAX(0,units-?), updated_at=? WHERE id=? AND units>0')
+      .bind(amount, t, userId),
+    db.prepare('SELECT units FROM users WHERE id=?').bind(userId)
+  ]);
+  const row = out[2] && out[2].results && out[2].results[0];
+  if (!row) return { ok: false, error: 'no user' };
+  return { ok: true, units: row.units };
 }
 
 // Switch plan and add that plan's monthly grant.
@@ -233,7 +278,8 @@ export async function saveCasting(db, userId, { id, title, method, payload }) {
   const t = now();
   await db.prepare(
     'INSERT INTO castings (id,user_id,title,method,payload,created_at) VALUES (?,?,?,?,?,?) ' +
-    'ON CONFLICT(id) DO UPDATE SET title=excluded.title, payload=excluded.payload'
+    'ON CONFLICT(id) DO UPDATE SET title=excluded.title, method=excluded.method, payload=excluded.payload ' +
+    'WHERE castings.user_id=excluded.user_id'
   ).bind(String(id), userId, String(title || 'Untitled'), String(method || 'stria'), JSON.stringify(payload || {}), t).run();
   return { ok: true };
 }

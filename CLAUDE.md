@@ -110,7 +110,10 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 - 浏览器只声明**意图**(`product`/`role`),模型由服务端选,key 永不下发。
 - 环境变量(Pages → Settings → Environment variables):
   `OPENROUTER_API_KEY` `SESSION_SECRET` `CREEM_API_KEY` `CREEM_WEBHOOK_SECRET`
-  `CREEM_PRODUCT_PRO` `CREEM_PRODUCT_PREMIUM` `STRIA_MODEL` `SORTIS_MODEL`
+  `CREEM_PRODUCT_PROMONTHLY` `CREEM_PRODUCT_PROANNUAL`
+  `CREEM_PRODUCT_PREMIUMMONTHLY` `CREEM_PRODUCT_PREMIUMANNUAL`
+  `CREEM_PRODUCT_PACK7500` `CREEM_PRODUCT_PACK15000`
+  `CREEM_PRODUCT_PACK30000` `CREEM_PRODUCT_PACK75000` `STRIA_MODEL` `SORTIS_MODEL`
   `UTILITY_MODEL` `CLAUDE_MAX_TOKENS`,D1 绑定 `DB`。
 - **支付是 Creem,不是 Stripe。**
 - 无 key / 无 D1 时必须静默降级到本地 guest 模式,**站点永不崩**。

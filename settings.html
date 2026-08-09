@@ -138,7 +138,7 @@
           <div class="rr"><span class="plan-badge" id="planBadge">—</span></div>
         </div>
         <div class="row">
-          <div class="rl"><b>Available balance</b><span>Nothing is held before a reading. It is charged once, when it is written, in proportion to the tokens it used.</span></div>
+          <div class="rl"><b>Available balance</b><span>A published maximum is held while an answer is generated. Measured usage is settled when it finishes, and the unused difference returns automatically.</span></div>
           <div class="rr" style="display:flex;gap:10px;align-items:center"><b style="font-family:var(--serif);font-size:20px" id="unitsBig">—</b><a class="btn terracotta" href="./pricing.html">Get units</a></div>
         </div>
         <div class="row">
@@ -146,9 +146,9 @@
           <div class="rr"><a class="btn ink" href="./pricing.html">View plans</a></div>
         </div>
         <div class="row" id="subRow" hidden>
-          <div class="rl"><b>Your subscription</b><span id="subNote">Renews automatically. Cancellation takes effect at the end of the billing period.</span></div>
+          <div class="rl"><b>Receipts &amp; billing</b><span id="subNote">Open your secure Creem portal for receipts, invoices, payment methods, and subscription controls.</span></div>
           <div class="rr" style="display:flex;gap:10px">
-            <button class="btn ink" id="portalBtn" type="button">Manage billing</button>
+            <button class="btn ink" id="portalBtn" type="button">Receipts &amp; billing</button>
             <button class="btn" id="cancelSubBtn" type="button" style="color:var(--terracotta);border-color:currentColor">Cancel subscription</button>
           </div>
         </div>
@@ -185,7 +185,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="./assets/backgrounds/mountain-range.js?v=20260807d"></script>
-<script src="./account.js?v=20260807d"></script>
+<script src="./account.js?v=20260808a"></script>
 <script src="./sidebar.js?v=20260807d"></script>
 <script>
 (function () {
@@ -285,10 +285,10 @@
         row.hidden = false;
         var cancelBtn = document.getElementById("cancelSubBtn");
         if (d.subscription.status === "canceling") {
-          document.getElementById("subNote").textContent = "Cancellation scheduled — the plan remains active through the current billing period.";
+          document.getElementById("subNote").textContent = "Cancellation scheduled. Receipts and invoices remain available in the Creem portal, and the plan stays active through the current period.";
           cancelBtn.disabled = true;
         } else {
-          document.getElementById("subNote").textContent = "Renews automatically. Manage the cycle or cancel before the next renewal.";
+          document.getElementById("subNote").textContent = "Creem emails every receipt. Open the portal for invoices, payment methods, renewal details, or cancellation.";
           cancelBtn.disabled = false;
         }
       }).catch(function () { row.hidden = true; });
@@ -312,7 +312,7 @@
   /* back from Creem checkout: confirm + let hydrate pull the fresh balance */
   if (new URLSearchParams(location.search).get("billing") === "success") {
     history.replaceState(null, "", location.pathname);
-    toast("Payment received — your plan and unit balance are syncing.");
+    toast("Payment received. Creem has emailed your receipt; your units are syncing now.");
     setTimeout(function () { if (A.hydrate) A.hydrate(function () { render(); refreshSubRow(); }); }, 2500);
   }
 
