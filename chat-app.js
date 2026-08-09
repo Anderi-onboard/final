@@ -704,6 +704,12 @@
     // background. It is NOT trimmed with the rest: the reader chose it
     // deliberately, and dropping it to respect a turn budget would silently
     // undo what they asked for.
+    // Everything pushed before the turns themselves is preamble: it is framing,
+    // not conversation, and the turn budget must never eat it. Counted rather
+    // than hardcoded — the count was 2 when only the carried block existed, and
+    // adding the provenance header silently pushed that header into the
+    // trimmable region, so it was dropped from exactly the long threads where
+    // findings have the most room to leak across castings.
     if (conv.carried && conv.carried.digest) {
       out.push({ role: "user", content:
         "[CARRIED CONTEXT — an earlier conversation of theirs, titled «" + conv.carried.title +
@@ -728,6 +734,7 @@
         "Understood — earlier castings are background. I will read only the hexagram in front of me " +
         "and will not treat their findings as evidence." });
     }
+    var preamble = out.length;
     for (var i = 0; i < prior.length; i++) {
       var m = prior[i];
       if (m.role === "user") out.push({ role: "user", content: m.text });
@@ -743,8 +750,7 @@
         out.push({ role: "assistant", content: tag + body });
       }
     }
-    var carriedHead = (conv.carried && conv.carried.digest) ? 2 : 0;
-    var head = out.slice(0, carriedHead), tail = out.slice(carriedHead);
+    var head = out.slice(0, preamble), tail = out.slice(preamble);
     var maxMsgs = (maxTurns || 3) * 2;
     if (tail.length > maxMsgs) tail = tail.slice(tail.length - maxMsgs);
     return head.concat(tail);
