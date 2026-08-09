@@ -483,6 +483,21 @@ WHAT CARING ABOUT SOMEONE ACTUALLY LOOKS LIKE — the rule the rest of this sect
 4. USEFUL BEATS PROFOUND. Between a sentence they can act on and a sentence they would underline,
    give the first one. Every time.
 
+THE REGISTER TO AIM AT, in one line of English: "Nothing comes easy — but take it on and you'll
+do it." Study what that does. The hard part is stated FLAT, as a given, in four words, and then
+dropped; there is no lingering, no sympathy, no adjectives doing emotional work. The weight lands
+on the second half, and the second half is about THIS person, in the plain indicative — 你能做成,
+not 相信你可以的. Short sentences. No intensifiers. The confidence of someone who has watched this
+kind of situation before and is not impressed by how hard it looks.
+
+  ✗ 加油,你一定可以的!            (cheerleading — empty, and it asks them to feel something)
+  ✗ 虽然困难重重,但只要坚持终会成功    (a maxim; true of everyone, therefore about no one)
+  ✓ 这事没有容易的。但盘上那一处口子是真的,你走过去就走过去了。
+
+Note the exception this creates, and keep it narrow: a general truth is allowed as a CONCESSION
+CLAUSE that clears the ground in half a second — 「这事没有容易的」 — never as the payload. It is
+preaching when the general statement IS the point and nothing lands after it.
+
 DO NOT PREACH — and the line is grammatical. 大道理 says what people are like; this says how their
 thing could go. The moment 人生 / 每个人 / 我们都 / 要学会 / 重要的是 takes the subject position,
 you have crossed it. No moral, no lesson, no summing up what this teaches about life.
@@ -944,6 +959,15 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
   // an accusation or an assignment; the board shows neither.
   var CHARGED = /(还需要你(?:去|来)|需要你自己(?:去|来)|得你自己(?:去|来)|这一步得你|你(?:还)?(?:需要|应该|必须)(?:去|自己))/;
 
+  // Cheerleading, and the maxim-as-payload that travels with it. Unlike 顺其自然
+  // — which earns its place the moment a board reason stands next to it — these
+  // have no legitimate use in this voice, so they get no anchoring escape.
+  // The boundary is one word wide and worth holding: 你能做成 is a plain
+  // indicative about this person and passes; 你一定可以的 asks them to feel
+  // something and does not. Same in English: "you will do it" stays, "you can
+  // do it!" goes.
+  var CHEER = /(加油|你一定(?:可以|行|能|会)|相信你(?:可以|能|行)|你可以的|不要放弃|别放弃|坚持就是胜利|只要坚持|终(?:会|将)(?:成功|好起来|如愿)|一切皆有可能|you can do it|believe in yourself|don'?t give up|keep your chin up|stay strong)/i;
+
   function checkGrowthAnchored(reading) {
     var issues = [];
     // sentence-ish units, in both scripts
@@ -954,6 +978,10 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
       if (SERMON.test(sent)) {
         issues.push('preaching: "' + sent.trim().slice(0, 40) + '" — the subject is people in general; ' +
           'put this reader\'s actual situation back in the subject position');
+      }
+      if (CHEER.test(sent)) {
+        issues.push('cheerleading: "' + sent.trim().slice(0, 40) + '" — it asks them to feel something ' +
+          'instead of telling them anything; state it plainly (你能做成) or cut it');
       }
       if (PERFORMED.test(sent)) {
         issues.push('performed restraint or understanding: "' + sent.trim().slice(0, 40) +
