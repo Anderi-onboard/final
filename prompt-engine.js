@@ -503,6 +503,24 @@ WHAT CARING ABOUT SOMEONE ACTUALLY LOOKS LIKE — the rule the rest of this sect
    it. The whole passage is worth writing only when the board actually raised it — the same SWAP
    test applies, and if it would fit under any other reading, cut it.
 
+   TWO WAYS THIS PASSAGE GOES WRONG, both of which read as depth:
+
+   a. A METAPHOR STANDING IN FOR THE EXPLANATION. 「知道那头的账单长什么样」 feels concrete because
+      a bill is a physical object — but there is no bill, nothing is itemised, and the reader
+      cannot check a single line of it. This is 托着 wearing better clothes: the vividness of the
+      image disguises the emptiness of the claim, which makes it harder to catch, not easier.
+      THE TEST: say the plain version first. 「热恋要持续盯着:我还被要着吗,这还活着吗」 — that is
+      concrete and needs no image at all. If the plain version turns out to be vague too, the
+      metaphor was covering for you. An image may illuminate something already said clearly; it
+      may never do the saying.
+
+   b. INVENTING A BACKSTORY FOR PEOPLE YOU HAVE NEVER MET. 「多半是见过另一头的人」 asserts a
+      psychological history for a whole category of strangers on no evidence whatsoever. You can
+      describe what an ARRANGEMENT does — that is structural and checkable. You cannot say how
+      people arrived at it, what they went through first, or what they learned. Describe the road,
+      not the biography of everyone walking it. If a sentence explains why this kind of person
+      became this way, delete it: you do not know, and neither does the board.
+
 THE REGISTER TO AIM AT, in one line of English: "Nothing comes easy — but take it on and you'll
 do it." Study what that does. The hard part is stated FLAT, as a given, in four words, and then
 dropped; there is no lingering, no sympathy, no adjectives doing emotional work. The weight lands
@@ -994,11 +1012,20 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
   // described without its price is advertising. Scoped to the paragraph, since
   // the shape is claim-then-elaborate across a few sentences.
   var TYPE_CLAIM = /(有(?:的|些)?人(?:一辈子|一生)?(?:要|求|想要|图|追求)的就是|有(?:的|些)人(?:天生|本来)就|这(?:种|类)人(?:一辈子|一生)|some people (?:spend their (?:life|lives)|just want|are simply))/i;
+  // Inventing a psychological history for a category of strangers. Structurally
+  // clean to spot: a type-word next to a past-experience or causal-origin verb.
+  // What an arrangement DOES is describable; how people came to it is not.
+  var INVENTED_PAST = /((?:这|那)(?:种|类)人(?:多半|大多|往往|通常|一般)?(?:都)?(?:是|曾|经历|见过|吃过|受过|走过|试过)|(?:多半|大多|往往|通常)是(?:见过|经历过|吃过|受过|试过)|(?:有(?:的|些)人|这(?:种|类)人)之所以[^。！？\n]{0,30}(?:是因为|因为)|people like (?:this|these|that)[^.!?\n]{0,40}(?:been through|been the|have seen|learned it|come from|grew up)|they (?:have all|usually|typically)[^.!?\n]{0,20}(?:been through|seen it|learned))/i;
+
   var COST_NAMED = /(代价|换来的|换的是|放弃|舍(?:掉|弃)|付出的是|不要的是|失去|让出|牺牲|拿.{0,6}换|costs?|price|gives? up|trades? away|in exchange for|what (?:they|you) lose|sacrific)/i;
 
   function checkGrowthAnchored(reading) {
     var issues = [];
     String(reading || "").split(/\n{2,}/).forEach(function (para) {
+      if (INVENTED_PAST.test(para)) {
+        issues.push('invents a history for strangers: "' + para.trim().slice(0, 40) +
+          '" — describe what the arrangement DOES, never how people came to it; you do not know');
+      }
       if (TYPE_CLAIM.test(para) && !COST_NAMED.test(para)) {
         issues.push('opened a door and walked past it: "' + para.trim().slice(0, 40) +
           '" — naming a kind of person owes their actual shape, and what it COSTS them is the test');
