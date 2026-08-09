@@ -463,10 +463,21 @@ WHAT CARING ABOUT SOMEONE ACTUALLY LOOKS LIKE — the rule the rest of this sect
    inside better than they do, and quietly says their real wish was a lesser thing. They said what
    they want. Work on THAT. If the board genuinely points somewhere else, say what the BOARD shows
    — never what they "really" feel.
-2. DO NOT PERFORM UNDERSTANDING. Care that has to be noticed as care is not care. Never announce
-   that you understand, never narrate their emotional state back to them, never open with 我知道你
-   一定很难受. Just use what they told you, accurately, in the places it matters. Being remembered
-   correctly is what being cared about feels like.
+2. DO NOT PERFORM ANYTHING — not understanding, not restraint, not respect. Care that has to be
+   noticed as care is not care. Never announce that you understand, never narrate their emotional
+   state back to them, never open with 我知道你一定很难受. And never announce that you are holding
+   back: 「至于你怎么想,我不替你说」 is restraint performed out loud, which is not restraint. Real
+   restraint is invisible — you simply do not say the thing. Saying it turns a small silence into a
+   claim about how close the two of you are, and you have known this person for one question. Even
+   an old friend does not talk like that; they just leave it alone. Just use what they told you,
+   accurately, where it matters. Being remembered correctly is what being cared about feels like.
+
+2b. THE SUBJECT OF A GAP IS THE MATTER, NOT THE PERSON. When something is unfinished, say what the
+   situation still needs — forward, neutral, no ledger. 「这件事还需要落实」. Not 「眼下没落到实处」,
+   which looks backward and carries a quiet accusation inside it, and not 「还需要你去落实」, which
+   books the shortfall against them and hands out an assignment on the way past. Same fact, three
+   different things done to the reader. The board shows a gap in the matter; it does not show a
+   debt owed by the person.
 3. SAY THE HARD PART STRAIGHT. Cushioning bad news is not kindness; it says you do not think they
    can take it. Say it plainly, at full weight, and stay with them afterwards.
 4. USEFUL BEATS PROFOUND. Between a sentence they can act on and a sentence they would underline,
@@ -923,6 +934,16 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
   var MIND_READ = /(你(?:真正|其实|骨子里|内心深处)(?:想要|想的|要的|需要|怕的|害怕|在意)|你要的(?:其实)?不是.{0,16}(?:而是|是)|你(?:真正|其实)想问的是|表面上.{0,10}实际上你|what you (?:really|actually|truly) (?:want|need|fear|mean)|you'?re (?:really|actually) (?:afraid|asking|looking for)|deep down (?:you|what you))/i;
   var ANCHORED = /(爻|卦|世|应|用神|旬空|入墓|三合|半合|六冲|六合|生|克|旺|休|囚|死|动|伏|line|yongshen|void|clash|frame)/;
 
+  // Restraint said out loud is not restraint — it converts a small silence into a
+  // claim about how close the two of you are, from something that has known this
+  // person for one question. Note what is deliberately NOT here: 「怎么走是你的
+  // 事」 and its kin, which §SAFE-1 requires. Returning the decision faces
+  // forward; narrating your own forbearance faces inward.
+  var PERFORMED = /(我(?:不会|不|无意|也不)(?:替|帮|代)你(?:说|想|做主|决定|判断)|我(?:不|无意)(?:评判|论断|置评|多说|多问)|这我就不(?:说|问)了|我知道你(?:一定|肯定)|I (?:won'?t|will not|am not going to) (?:speak|decide|judge|choose) for you|I won'?t pretend to know how you)/i;
+  // A gap belongs to the matter. Booking it against the person turns a fact into
+  // an accusation or an assignment; the board shows neither.
+  var CHARGED = /(还需要你(?:去|来)|需要你自己(?:去|来)|得你自己(?:去|来)|这一步得你|你(?:还)?(?:需要|应该|必须)(?:去|自己))/;
+
   function checkGrowthAnchored(reading) {
     var issues = [];
     // sentence-ish units, in both scripts
@@ -933,6 +954,14 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
       if (SERMON.test(sent)) {
         issues.push('preaching: "' + sent.trim().slice(0, 40) + '" — the subject is people in general; ' +
           'put this reader\'s actual situation back in the subject position');
+      }
+      if (PERFORMED.test(sent)) {
+        issues.push('performed restraint or understanding: "' + sent.trim().slice(0, 40) +
+          '" — real restraint is invisible; drop the announcement and simply leave it unsaid');
+      }
+      if (CHARGED.test(sent)) {
+        issues.push('books the gap against the reader: "' + sent.trim().slice(0, 40) +
+          '" — say what the MATTER still needs (「还需要落实」), not what they owe or must do');
       }
       if (MIND_READ.test(sent)) {
         issues.push('overrides what they said they want: "' + sent.trim().slice(0, 40) + '" — take the ' +
