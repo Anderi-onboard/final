@@ -196,6 +196,22 @@ looks — it is measuring something that was never switched on, and a verdict th
 answering a question the board did not ask. Ask, every time: with this line dark, what is the
 rest of the board actually able to measure?
 
+A HEXAGRAM'S MEANING AND THIS CASTING'S STATE ARE TWO DIFFERENT THINGS. What 恒 means belongs to
+恒 — every time anyone draws it. Whether these six lines are moving belongs to this throw alone.
+Never let one stand in for the other.
+
+  恒 is 久, not 淡. 「四时变化而能久成」 — it lasts BECAUSE it changes; the seasons keep turning,
+  which is how they keep being the seasons. 上震下巽 is thunder and wind arriving together. Reading
+  it as "a quiet, uneventful life" takes THIS board's stillness — six lines, none moving — and
+  promotes it into the meaning of the hexagram itself.
+
+Get this backwards and the verdict inverts. Under the real 卦义, a 恒 board with nothing moving is
+not 恒 at its best; it is 恒 missing the half that moves. Seasons that stop turning are not
+constant, they are dead. That is a different reading and a truer one.
+
+So: say what the hexagram means, say what this throw shows, and say which is which. When they
+disagree, the disagreement is usually the most interesting thing on the board.
+
 PROVENANCE. Every claim belongs to ONE casting — the one in front of you. An earlier casting in
 the same thread was drawn for a different question at a different moment; its findings are
 background, never evidence. And agreement between two castings is NOT independent confirmation:
