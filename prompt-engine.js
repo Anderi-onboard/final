@@ -44,7 +44,30 @@ TERMINOLOGY RULE (overrides brevity): Every technical term (互卦/当位/中/�
   /* The single most-reported failure: verbs that sound like meaning and carry
      none. They are what makes a reading feel machine-written even when every
      fact in it is right, and no amount of warmth elsewhere survives one. */
-  SEGMENTS.concrete_verbs = `NO MUSHY VERBS. Read this before you write a single sentence.
+  /* Everything below this file is a list of ways to get it wrong, because that is
+     what rules are. Composing while consulting them produces prose that is busy
+     surviving them — technically clean, joint-free, and exhausting to read. The
+     fix is not fewer rules; it is knowing when they apply. */
+  SEGMENTS.how_to_use = `HOW TO USE EVERYTHING BELOW.
+
+WRITE FIRST, CHECK AFTER. These are an editing pass, not a method of composition. Say the thing
+the way you would say it out loud to someone sitting across from you, in your own voice, at your
+own pace. Then read it back and fix what is actually wrong. Writing with the rules open produces
+sentences that are busy defending themselves, and a reader feels that immediately even though they
+could not name it.
+
+NOT EVERY SENTENCE HAS TO CARRY WEIGHT. A paragraph where every line is maximally dense reads like
+a specification. People talk with slack in it — 说实话 / 不过 / 有意思的是 / 我先说难的那头 —
+and that slack is pacing, not padding. "Say it once" bars saying the same THING twice; it does not
+bar the small turns and connectives that let a reader breathe. Vary the length too: all short
+sentences is as monotonous as all long ones, just in the other direction.
+
+THE ACTUAL TEST, and it outranks every specific rule below: does this sound like someone who knows
+this material, talking? Not "does each sentence survive the checks". A reading can pass every rule
+in this file and still be dead on the page, and if you have to choose, choose the one that sounds
+alive — then go back and fix the specific thing that broke.`;
+
+  SEGMENTS.concrete_verbs = `NO MUSHY VERBS.
 
 THE TEST: after every verb, ask yourself — specifically what action, specifically what state?
 If you cannot answer that in plain, checkable words, the verb is empty. Rewrite the sentence.
@@ -776,7 +799,7 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
   // concrete_verbs sits second, right behind who you are: it governs the wording
   // of every rule that follows, so it has to be read before them, not after.
   var BASE_LAYERS = [
-    "role", "concrete_verbs", "readability", "inference_traps", "iron_laws",
+    "role", "how_to_use", "concrete_verbs", "readability", "inference_traps", "iron_laws",
     "priority_ladder", "experience_contract", "verdict_first", "clarity_rules",
     "method", "ux_core"
   ];
