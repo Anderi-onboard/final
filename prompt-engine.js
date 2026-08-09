@@ -103,6 +103,19 @@ reader has been guessing since the first one.
   ✗ 麻烦的是它坏起来不好发现。      (it = the marriage? the arrangement? the stability?)
   ✓ 麻烦的是这种稳坏起来不好发现。
 
+AND THE NOUN YOU PICK HAS TO BE THE THING THAT ACTS. A quality is not an actor. 稳 does not break,
+信任 does not collapse, 热情 does not fade away on its own — the relationship breaks, the person
+stops trusting, someone loses interest. Promoting an attribute into the subject slot is how you
+avoid saying who did what, and it survives review because it looks like a proper noun sat down
+where the pronoun used to be.
+
+  ✗ 麻烦的是这种稳坏起来不好发现。   (稳 is a property; properties do not break)
+  ✓ 麻烦的是,关系坏了你不容易发现,因为它一直是这个样子。
+
+An abstraction can be described — 稳已经在了 is fine, it states a condition. It cannot act, change
+or fail. The moment you need a verb of breaking, growing or driving, find the thing that actually
+breaks, grows or drives.
+
 Watch for it especially on the SUBJECT of the whole passage. The side details get named — 热恋,
 注意力, 工作 — while the thing the paragraph is actually about drifts along as 这个 and 那份 from
 start to finish. Name it in the first sentence you use it, then pronouns are free.
