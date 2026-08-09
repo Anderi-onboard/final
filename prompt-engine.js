@@ -483,6 +483,26 @@ WHAT CARING ABOUT SOMEONE ACTUALLY LOOKS LIKE — the rule the rest of this sect
 4. USEFUL BEATS PROFOUND. Between a sentence they can act on and a sentence they would underline,
    give the first one. Every time.
 
+5. IF YOU OPEN A DOOR, WALK THROUGH IT. The most common way this section fails is not a banned
+   phrase — it is a generous-sounding gesture at something real, abandoned in the same breath.
+   「有人一辈子要的就是这个」 asserts that a whole kind of person exists, gives them nothing, and
+   moves on. It reads as insight and contains none.
+   So: name a kind of person, a way of living, a path — and you now owe its actual shape.
+     · what they get, mechanically. Not "peace of mind" — WHAT the arrangement does for them that
+       makes the rest of their life work differently.
+     · WHAT IT COSTS. This is the test, and it is not optional. A road described without its price
+       is advertising, not thinking. If you cannot say what someone gives up to live this way, you
+       do not understand it well enough to have raised it.
+     · how you would recognise it from outside — something observable, on an ordinary day.
+     · where it goes wrong, and how close that failure sits to the good version. Usually very
+       close; say how narrow the gap is and what distinguishes the two sides.
+   Then land it back on the actual consequences in a life — a decision that gets easier, a risk
+   that gets harder to see. Depth that never touches a consequence is decoration.
+   And keep it DESCRIPTIVE. You are holding up a portrait they can measure themselves against, not
+   telling them which one they are. Rule 1 still governs: describe the road, never assign them to
+   it. The whole passage is worth writing only when the board actually raised it — the same SWAP
+   test applies, and if it would fit under any other reading, cut it.
+
 THE REGISTER TO AIM AT, in one line of English: "Nothing comes easy — but take it on and you'll
 do it." Study what that does. The hard part is stated FLAT, as a given, in four words, and then
 dropped; there is no lingering, no sympathy, no adjectives doing emotional work. The weight lands
@@ -936,18 +956,18 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
      sentence that says 顺其自然 while citing 六冲 and saying what to do about it
      passes, and a bare 相信自己 does not. The structural fix is the derivation
      rule in SEGMENTS.growth; this is only the backstop under it. */
-  var COMFORT = /(相信自己|顺其自然|一切都会好|保持好心态|放平心态|时间会给你答案|未来可期|水到渠成|平常心|随缘|trust yourself|it will all work out|time will tell|stay positive|keep an open heart)/;
+  var COMFORT = /(相信自己|顺其自然|一切都会好|保持好心态|放平心态|时间会给你答案|未来可期|水到渠成|平常心|随缘|trust yourself|it will all work out|time will tell|stay positive|keep an open heart)/i;
   // Preaching has a tell, and it is grammatical: the subject stops being this
   // person's situation and becomes people in general. Cheap to spot, and it
   // catches sermons that use no comfort-word at all.
-  var SERMON = /(人生(?:就是|就像|总是|中)|每个人都|我们都(?:需要|应该|要)|要学会|重要的是要|人这一辈子|活在当下|做最好的自己|in life,? we|everyone (?:needs|must|should)|what matters most is to|learn to embrace)/;
+  var SERMON = /(人生(?:就是|就像|总是|中)|每个人都|我们都(?:需要|应该|要)|要学会|重要的是要|人这一辈子|活在当下|做最好的自己|in life,? we|everyone (?:needs|must|should)|what matters most is to|learn to embrace)/i;
   // Overriding what someone told you they want, and calling it insight. The tell
   // is the same every time: the subject is 你 and the predicate asserts their
   // interior. It reads as perceptive and lands as a put-down — it says the wish
   // they actually stated was the lesser one. Rhetorical questions count: a
   // verdict does not stop being a verdict for ending in a question mark.
   var MIND_READ = /(你(?:真正|其实|骨子里|内心深处)(?:想要|想的|要的|需要|怕的|害怕|在意)|你要的(?:其实)?不是.{0,16}(?:而是|是)|你(?:真正|其实)想问的是|表面上.{0,10}实际上你|what you (?:really|actually|truly) (?:want|need|fear|mean)|you'?re (?:really|actually) (?:afraid|asking|looking for)|deep down (?:you|what you))/i;
-  var ANCHORED = /(爻|卦|世|应|用神|旬空|入墓|三合|半合|六冲|六合|生|克|旺|休|囚|死|动|伏|line|yongshen|void|clash|frame)/;
+  var ANCHORED = /(爻|卦|世|应|用神|旬空|入墓|三合|半合|六冲|六合|生|克|旺|休|囚|死|动|伏|line|yongshen|void|clash|frame)/i;
 
   // Restraint said out loud is not restraint — it converts a small silence into a
   // claim about how close the two of you are, from something that has known this
@@ -968,8 +988,22 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
   // do it!" goes.
   var CHEER = /(加油|你一定(?:可以|行|能|会)|相信你(?:可以|能|行)|你可以的|不要放弃|别放弃|坚持就是胜利|只要坚持|终(?:会|将)(?:成功|好起来|如愿)|一切皆有可能|you can do it|believe in yourself|don'?t give up|keep your chin up|stay strong)/i;
 
+  // Gesturing at a kind of person and walking straight past. Not a banned phrase
+  // — the phrase is fine, the abandonment is the defect — so this checks for the
+  // thing that proves the door was walked through: the cost. A way of living
+  // described without its price is advertising. Scoped to the paragraph, since
+  // the shape is claim-then-elaborate across a few sentences.
+  var TYPE_CLAIM = /(有(?:的|些)?人(?:一辈子|一生)?(?:要|求|想要|图|追求)的就是|有(?:的|些)人(?:天生|本来)就|这(?:种|类)人(?:一辈子|一生)|some people (?:spend their (?:life|lives)|just want|are simply))/i;
+  var COST_NAMED = /(代价|换来的|换的是|放弃|舍(?:掉|弃)|付出的是|不要的是|失去|让出|牺牲|拿.{0,6}换|costs?|price|gives? up|trades? away|in exchange for|what (?:they|you) lose|sacrific)/i;
+
   function checkGrowthAnchored(reading) {
     var issues = [];
+    String(reading || "").split(/\n{2,}/).forEach(function (para) {
+      if (TYPE_CLAIM.test(para) && !COST_NAMED.test(para)) {
+        issues.push('opened a door and walked past it: "' + para.trim().slice(0, 40) +
+          '" — naming a kind of person owes their actual shape, and what it COSTS them is the test');
+      }
+    });
     // sentence-ish units, in both scripts
     String(reading || "").split(/(?:[。！？；\n]|(?<=[.!?])\s)+/).forEach(function (sent) {
       if (COMFORT.test(sent) && !ANCHORED.test(sent)) {
