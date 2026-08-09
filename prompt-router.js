@@ -315,7 +315,7 @@
           };
         }
 
-        var qcPromise = shouldQC ? PE.qcCheck(reading, question, qcComplete) : Promise.resolve({ pass: true });
+        var qcPromise = shouldQC ? PE.qcCheck(reading, question, qcComplete, board) : Promise.resolve({ pass: true });
 
         return qcPromise.then(function (qc) {
           var combinedPass = qc.pass && factCheck.ok && readCheck.ok;

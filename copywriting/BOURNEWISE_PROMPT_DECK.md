@@ -10,7 +10,7 @@ matching `SEGMENTS.<key>` / `ROUTES.<key>` in that file.
 - **34 segments** — the building blocks
 - **9 routes** — which blocks a question assembles, in order
 - **1 router** — the follow-up vs new-question classifier
-- Assembled length: Sortis ~67,381 chars · Stria ~59,027 chars
+- Assembled length: Sortis ~67,927 chars · Stria ~59,573 chars
 
 ---
 
@@ -165,7 +165,7 @@ generated list no matter how good each one is.
 
 ### `inference_traps`
 
-<sub>7,158 characters</sub>
+<sub>7,704 characters</sub>
 
 ```text
 INFERENCE TRAPS — mappings that look like method and are not.
@@ -250,6 +250,13 @@ constant, they are dead. That is a different reading and a truer one.
 
 So: say what the hexagram means, say what this throw shows, and say which is which. When they
 disagree, the disagreement is usually the most interesting thing on the board.
+
+AND DERIVE THE MEANING FROM THE TRIGRAMS, NEVER FROM THE NAME. The backend gives you 上卦 and
+下卦. That is where 卦义 comes from — what these two images do when one sits over the other. It is
+not what the character has come to suggest in modern usage. 恒 sitting over 巽 with 震 above is
+thunder and wind together, and 震 IS movement; "a quiet life" contradicts the very trigrams it
+claims to be reading. If a meaning you are about to write cannot be traced back to 上卦/下卦/世应/
+动爻 as the backend gave them, you got it from the name and it is not evidence.
 
 PROVENANCE. Every claim belongs to ONE casting — the one in front of you. An earlier casting in
 the same thread was drawn for a different question at a different moment; its findings are

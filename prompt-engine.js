@@ -212,6 +212,13 @@ constant, they are dead. That is a different reading and a truer one.
 So: say what the hexagram means, say what this throw shows, and say which is which. When they
 disagree, the disagreement is usually the most interesting thing on the board.
 
+AND DERIVE THE MEANING FROM THE TRIGRAMS, NEVER FROM THE NAME. The backend gives you 上卦 and
+下卦. That is where 卦义 comes from — what these two images do when one sits over the other. It is
+not what the character has come to suggest in modern usage. 恒 sitting over 巽 with 震 above is
+thunder and wind together, and 震 IS movement; "a quiet life" contradicts the very trigrams it
+claims to be reading. If a meaning you are about to write cannot be traced back to 上卦/下卦/世应/
+动爻 as the backend gave them, you got it from the name and it is not evidence.
+
 PROVENANCE. Every claim belongs to ONE casting — the one in front of you. An earlier casting in
 the same thread was drawn for a different question at a different moment; its findings are
 background, never evidence. And agreement between two castings is NOT independent confirmation:
@@ -987,6 +994,8 @@ CHECKLIST:
 3. PLAIN LANGUAGE + SO-WHAT: No jargon left unglossed — and no mechanic named without its concrete consequence for this matter ("木局在动" alone = FAIL; must say what it pushes and with what effect)?
 4. REFERENT MAPPED: Is every load-bearing role (rival line, officer, etc.) mapped to 2-4 explicit real-life possibilities with the condition that would confirm each, plus its stated impact (which resource, how hard) — not narrated as a certainty, not left as a vague "force"?
 5. GENEROUS: Specific, concrete, worth paying for? Not thin/abstract?
+6a. HEXAGRAM MEANING DERIVED FROM THESE TRIGRAMS, NOT FROM THE NAME: every claim about what the hexagram MEANS must follow from the two trigrams above and their relation. 恒 is 上震下巽 — thunder and wind — and 震 is movement; a reading that turns 恒 into "a quiet, uneventful life" has taken a modern association with the character and contradicted the trigrams it is sitting on. FAIL any 卦义 claim you cannot trace to 上卦/下卦/世应/动爻 as given. Classical text quoted from memory rather than derived: FAIL, the backend carries none.
+6b. HEXAGRAM MEANING vs THIS CASTING'S STATE, kept apart: what the hexagram means is true every time anyone draws it; how many lines are moving belongs to this throw alone. A reading that promotes this board's stillness into the hexagram's meaning (or uses the hexagram's meaning to paper over what this board actually shows) = FAIL. When the two genuinely disagree, the reading must say so rather than blend them.
 6. YONGSHEN NAMED, AND NO FALSE REFUSAL: Does the reading say which 用神 it is reading and why that one? And if it declined or hedged the core question, is the stated reason a genuine absence of 用神 (a resolution the imagery does not have — a number, a name, a catalogue of specifics — or a factual lookup that is not a divination question at all)? Discomfort dressed as "the method cannot read this" is an instant FAIL: it refuses the reader AND misstates the tradition, and a reader who knows the method can tell. If the real reason is the priority ladder, the reading must give THAT reason. A weak yongshen — hidden, void, entombed, controlled — is readable and SOFT, never a ground to decline.
 7. OPTIMISTIC FRAME + ALIVE VOICE: Does it lead with the strengths and develop them fully, surface risks as friendly heads-ups (each with a way through) rather than doom, keep the honesty floor (no falsified signal), and leave the reader lifted not crushed? Does it read like a warm, lively friend — not a clinical risk-assessment or compliance memo?
 8. HELD THE LINE WITHOUT SHRINKING: Stayed away from the few iron lines (explicit acts/sexualizing minors/harming real people) — but didn't use "holding the line" as excuse to give less?
@@ -1245,11 +1254,32 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
       : { grade: "soft", why: cn + " is hidden behind the line above it", cn: cn };
   }
 
-  function qcCheck(reading, question, claudeComplete) {
+  /* The checker was being asked whether a reading is faithful to the board while
+     never being shown the board. Everything structural in the checklist — is the
+     yongshen right, does the 卦义 follow from these trigrams, are the line facts
+     real — was unverifiable, so those items could only ever pass. This renders
+     the few facts it needs, compactly. */
+  function qcBoardBrief(board) {
+    if (!board || !board.lines) return "";
+    var N = ["初", "二", "三", "四", "五", "上"];
+    var rows = board.lines.map(function (l, i) {
+      return N[i] + "爻 " + l.stem.cn + l.branch.cn + " " + l.element.cn + " " + l.relative.cn +
+        " " + (l.spirit ? l.spirit.cn : "") + " " + (l.wangShuai ? l.wangShuai.cn : "") +
+        (l.moving ? " 动" : "") + (l.void ? " 空" : "") +
+        (i === board.ben.worldLi ? " 世" : (i === board.ben.respLi ? " 应" : ""));
+    }).reverse().join("\n");
+    var moving = board.lines.filter(function (l) { return l.moving; }).length;
+    return "[THE ACTUAL BOARD — check every structural claim against this]\n" +
+      "下卦 " + board.ben.lower.cn + " · 上卦 " + board.ben.upper.cn + " · " + board.ben.palace.cn +
+      " · 动爻 " + moving + " 条\n" + rows + "\n[/BOARD]\n\n";
+  }
+
+  function qcCheck(reading, question, claudeComplete, board) {
     if (!claudeComplete) return Promise.resolve({ pass: true });
     return claudeComplete({
       system: QC_SYSTEM,
-      messages: [{ role: "user", content: "QUESTION: " + question + "\n\nREADING TO CHECK:\n" + reading }],
+      messages: [{ role: "user", content: qcBoardBrief(board) + "QUESTION: " + question +
+        "\n\nREADING TO CHECK:\n" + reading }],
       max_tokens: 500
     }).then(function (text) {
       var t = (text || "").trim();
