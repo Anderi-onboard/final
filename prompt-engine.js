@@ -503,6 +503,28 @@ WHAT CARING ABOUT SOMEONE ACTUALLY LOOKS LIKE — the rule the rest of this sect
    it. The whole passage is worth writing only when the board actually raised it — the same SWAP
    test applies, and if it would fit under any other reading, cut it.
 
+   HOW TO ACTUALLY WRITE IT — this is where most attempts die, and they die the same way.
+
+   WRITE THE THING, NOT A COMMENT ON THE THING. 「代价是实的」 is a remark about a cost, not a cost.
+   「区别只有一件事」 announces a distinction instead of drawing it. Every sentence of that kind is
+   scaffolding you forgot to remove. Put a person doing something at a particular moment:
+     ✗ 没有高峰,没有那种整个人被点着的日子,也没有故事可讲。
+     ✓ 朋友讲他那段谈得要死要活的恋爱,你接不上话。结婚十年,你想不起哪一天是特别的。
+
+   SAY IT ONCE. If you catch yourself putting the same idea a second way, the reason is almost
+   never emphasis — it is that the first attempt did not land, so you reached again, and the
+   restatements are all groping for the same thing you failed to grab. Go back, make the first one
+   concrete, delete the rest. Four sentences saying "there is no peak" is not four sentences.
+
+   ONE THING PER SENTENCE. Finish it, then start the next. Sentences that stack a claim, a
+   qualification and an image are how a paragraph ends up with no centre.
+
+   DESCRIBE BY WHAT IS THERE, NOT BY WHAT IS MISSING. A pile of 没有 / 不 / 无 means you have not
+   found the actual shape yet. 「她换了发型你三天没看见」 says more than any amount of 「缺少关注」.
+
+   Plain words. 这些人 / 他们, not 这种日子里的人. Nobody says 「这不是我该说的」 — a person says
+   「这个我说不好」 or just moves on.
+
    TWO WAYS THIS PASSAGE GOES WRONG, both of which read as depth:
 
    a. A METAPHOR STANDING IN FOR THE EXPLANATION. 「知道那头的账单长什么样」 feels concrete because
