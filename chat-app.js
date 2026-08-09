@@ -29,6 +29,23 @@
     for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === S.activeId) return S.convs[i];
     return null;
   }
+  /* The board behind a stored casting. Sortis keeps the computed board on the
+     message; Stria keeps only the spec, so the thread shows its lighter figure —
+     either way a follow-up has to be grounded in the SAME hexagram that was
+     cast, so the spec is recomputed when the board is not there. */
+  function boardOf(cast, methodId) {
+    if (!cast) return null;
+    if (cast.board) return cast.board;
+    var sp = cast.spec;
+    if (!(window.BWLiuYao && sp && sp.lines && sp.lines.length === 6)) return null;
+    try {
+      return window.BWLiuYao.computeBoard({
+        lines: sp.lines, changeIdx: sp.changeIdx || [],
+        method: methodId, name: sp.name, transformedName: sp.transformedName
+      });
+    } catch (e) { return null; }
+  }
+
   // A reading can settle after the reader has already moved to another thread,
   // so late work looks the conversation up by id rather than asking what is open.
   function convById(id) {
@@ -677,7 +694,16 @@
      last reading. Capped to the last few exchanges to bound token growth;
      the model is never asked to recast (§MOVE in meta_rules already covers
      that), it just now gets to see what was said. */
-  function buildHistory(conv, maxTurns) {
+  /* freshCasting: this send is drawing a NEW hexagram, so everything already in
+     the thread belongs to a DIFFERENT casting. Left unmarked it arrives as the
+     assistant's own prior turns — the strongest possible signal that those
+     conclusions are established — and the new reading inherits them. Worse than
+     repetition: a 生克 relation read on the old board gets carried across and
+     re-used as a finding about the new question, which is a claim nothing on the
+     board in front of it supports.
+     Follow-ups pass false, because there the prior turns ARE this casting's own
+     conversation and carry legitimately. */
+  function buildHistory(conv, maxTurns, freshCasting) {
     if (!conv || !conv.msgs) return [];
     var prior = conv.msgs.slice(0, -1); // exclude the question just pushed for this send
     var out = [];
@@ -685,6 +711,12 @@
     // background. It is NOT trimmed with the rest: the reader chose it
     // deliberately, and dropping it to respect a turn budget would silently
     // undo what they asked for.
+    // Everything pushed before the turns themselves is preamble: it is framing,
+    // not conversation, and the turn budget must never eat it. Counted rather
+    // than hardcoded — the count was 2 when only the carried block existed, and
+    // adding the provenance header silently pushed that header into the
+    // trimmable region, so it was dropped from exactly the long threads where
+    // findings have the most room to leak across castings.
     if (conv.carried && conv.carried.digest) {
       out.push({ role: "user", content:
         "[CARRIED CONTEXT — an earlier conversation of theirs, titled «" + conv.carried.title +
@@ -696,13 +728,36 @@
         "Understood — I have their earlier conversation as background and will read only the " +
         "casting in front of me." });
     }
+    if (freshCasting && prior.some(function (m) { return m.role === "oracle"; })) {
+      out.push({ role: "user", content:
+        "[EARLIER CASTINGS IN THIS THREAD — background only. Each reading below was drawn for its " +
+        "OWN question on its OWN hexagram. Use them so you do not repeat yourself and so you know " +
+        "what has already been asked. Do NOT carry their conclusions into this reading, do NOT " +
+        "count agreement with them as confirmation, and above all do NOT reuse a 生克/合冲/比和 " +
+        "reading made there: those relations were mapped to human meaning for a DIFFERENT question, " +
+        "and the same relation means something else here. This question has its own casting — read " +
+        "that one.]" });
+      out.push({ role: "assistant", content:
+        "Understood — earlier castings are background. I will read only the hexagram in front of me " +
+        "and will not treat their findings as evidence." });
+    }
+    var preamble = out.length;
     for (var i = 0; i < prior.length; i++) {
       var m = prior[i];
       if (m.role === "user") out.push({ role: "user", content: m.text });
-      else if (m.role === "oracle") out.push({ role: "assistant", content: String(m.text || "").slice(0, 2000) });
+      else if (m.role === "oracle") {
+        var body = String(m.text || "").slice(0, 2000);
+        // Name the hexagram each earlier reading belongs to, so a claim can
+        // always be traced back to the casting that actually produced it.
+        var sp = m.spec;
+        var tag = freshCasting
+          ? "[from an earlier casting" + (sp && sp.name ? " — " + sp.name +
+              (sp.transformedName ? " → " + sp.transformedName : "") : "") + ", background only]\n"
+          : "";
+        out.push({ role: "assistant", content: tag + body });
+      }
     }
-    var carriedHead = (conv.carried && conv.carried.digest) ? 2 : 0;
-    var head = out.slice(0, carriedHead), tail = out.slice(carriedHead);
+    var head = out.slice(0, preamble), tail = out.slice(preamble);
     var maxMsgs = (maxTurns || 3) * 2;
     if (tail.length > maxMsgs) tail = tail.slice(tail.length - maxMsgs);
     return head.concat(tail);
@@ -715,7 +770,7 @@
      matter that deserves a fresh hexagram (NEW → full cast, in THIS thread,
      history preserved). Unbilled utility call; 4s timeout or any failure
      defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
-  function detectIntent(question, lastQuestion, lastReading) {
+  function detectIntent(question, lastQuestion, lastReading, lastBoard) {
     var PE = window.BWPromptEngine;
     var R = PE && PE.INTENT_ROUTER;
     // No engine, or no proxy to ask — treat it as a follow-up, the cheaper and
@@ -729,8 +784,17 @@
     var run = window.claude.complete({
       role: "utility", model: R.model, max_tokens: R.maxTokens,
       messages: [{ role: "user", content: R.build(question, lastQuestion, lastReading) }]
-    }).then(function (r) { return R.read(r); })
-      .catch(function () { return R.fallback; });
+    }).then(function (r) {
+      var parsed = R.read(r);
+      // Same matter is only half the test. A message can be plainly the same
+      // matter and still rest its whole weight on a line the previous board
+      // barely shows — reusing that casting answers confidently off evidence
+      // that isn't there. boardCarries() settles it from computed data.
+      if (R.decide && PE.boardCarries && lastBoard) {
+        return R.decide(parsed, lastBoard, PE.boardCarries).intent;
+      }
+      return parsed && parsed.intent ? parsed.intent : R.fallback;
+    }).catch(function () { return R.fallback; });
     return Promise.race([run, guard]);
   }
 
@@ -1023,7 +1087,8 @@
     if (candidate && !decided && !recastReq) {
       busy = true;
       var sb0 = $("sendBtn"); if (sb0) sb0.disabled = true;
-      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text).then(function (intent) {
+      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text,
+        boardOf(lastCast, m.id)).then(function (intent) {
         busy = false;
         if (sb0) sb0.disabled = false;
         send(text, intent === "new" ? "new" : "followup");
@@ -1159,7 +1224,7 @@
     });
 
     try { window.__bwReadingIncomplete = false; } catch (e) {}
-    var history = buildHistory(c, 3);
+    var history = buildHistory(c, 3, true);   // fresh hexagram — demote what came before
     // a recast runs the model HOT (temperature ≈ 1) so "再起卦" genuinely gives
     // a fresh draw, not a near-copy of the last reading.
     var castTemp = recastReq ? 1 : null;
@@ -1284,15 +1349,7 @@
 
     // ground the follow-up in the SAME board that was cast: sortis stores it
     // on the message; stria stores only the spec — recompute from its lines.
-    var board = lastCast.board || null;
-    if (!board && window.BWLiuYao && lastCast.spec && lastCast.spec.lines && lastCast.spec.lines.length === 6) {
-      try {
-        board = window.BWLiuYao.computeBoard({
-          lines: lastCast.spec.lines, changeIdx: lastCast.spec.changeIdx || [],
-          method: m.id, name: lastCast.spec.name, transformedName: lastCast.spec.transformedName
-        });
-      } catch (e) { board = null; }
-    }
+    var board = boardOf(lastCast, m.id);
 
     var live = document.createElement("article");
     live.className = "reading casting-live is-new";
@@ -1308,7 +1365,7 @@
     thread.scrollTop = thread.scrollHeight;
 
     try { window.__bwReadingIncomplete = false; window.__bwLastCharged = null; } catch (e) {}
-    var history = buildHistory(c, 3);
+    var history = buildHistory(c, 3, false);  // same casting — its own conversation carries
     var run = routedReading(text, lastCast.spec, board, m.id, history, onDelta, "followup", null, c.title || text);
 
     function release() {

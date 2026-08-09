@@ -292,13 +292,20 @@
         // — catches the AI citing a line number or moving-line count that
         // doesn't match the real board, before the LLM QC pass runs.
         var factCheck = PE.checkBoardFacts(reading, board);
+        // ...and the same kind of check on the other axis: did the reading name
+        // a yongshen, and did it decline on a ground that is actually real?
+        // Three prompt rules already forbade declining a readable question and
+        // all three missed it, so this one runs in code where it cannot be
+        // reasoned around. Merged into factCheck so a catch rides the retry
+        // that already exists rather than adding a second round-trip.
+        var readCheck = PE.checkReadability ? PE.checkReadability(reading) : { ok: true, issues: [] };
 
         // Step 4: QC pass (if enabled). Follow-ups skip QC: they're metered,
         // conversational, and stream to the user anyway (QC would only be
         // telemetry) — a QC retry would double the metered spend for nothing.
         var shouldQC = mode === "followup" ? false
           : (CONFIG.enableQC !== null ? CONFIG.enableQC : (product === "sortis"));
-        if (!shouldQC && factCheck.ok) {
+        if (!shouldQC && factCheck.ok && readCheck.ok) {
           return {
             source: "router",
             route: result.route,
@@ -308,10 +315,10 @@
           };
         }
 
-        var qcPromise = shouldQC ? PE.qcCheck(reading, question, qcComplete) : Promise.resolve({ pass: true });
+        var qcPromise = shouldQC ? PE.qcCheck(reading, question, qcComplete, board) : Promise.resolve({ pass: true });
 
         return qcPromise.then(function (qc) {
-          var combinedPass = qc.pass && factCheck.ok;
+          var combinedPass = qc.pass && factCheck.ok && readCheck.ok;
           if (combinedPass) {
             return {
               source: "router",
@@ -323,18 +330,19 @@
           }
 
           var detail = (qc.detail ? qc.detail + "\n" : "") +
-            (factCheck.ok ? "" : "FACTUAL MISMATCH vs the real board — " + factCheck.issues.join("; "));
+            (factCheck.ok ? "" : "FACTUAL MISMATCH vs the real board — " + factCheck.issues.join("; ") + "\n") +
+            (readCheck.ok ? "" : "READABILITY — " + readCheck.issues.join("; "));
 
           // Once text has streamed to the user it can't be un-shown — a
           // silent rewrite would contradict what they already read. Surface
           // the QC/fact-check miss as telemetry instead of retrying.
           if (streamed) {
-            return { source: "router", route: result.route, reading: reading, verdict: "complete_streamed_unverified", qcResult: qc, factCheck: factCheck };
+            return { source: "router", route: result.route, reading: reading, verdict: "complete_streamed_unverified", qcResult: qc, factCheck: factCheck, readCheck: readCheck };
           }
 
           // QC or fact-check failed — retry once with the feedback
           if (CONFIG.maxRetries < 1) {
-            return { source: "router", route: result.route, reading: reading, verdict: "qc_failed", qcResult: qc, factCheck: factCheck };
+            return { source: "router", route: result.route, reading: reading, verdict: "qc_failed", qcResult: qc, factCheck: factCheck, readCheck: readCheck };
           }
 
           var retryContent = userContent + "\n\n[QUALITY FEEDBACK FROM PREVIOUS ATTEMPT - FIX THESE ISSUES]\n" + detail + "\n\n[Generate the complete reading again, fixing the above issues.]";
