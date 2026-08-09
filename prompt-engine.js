@@ -95,6 +95,18 @@ Every verb must name a real action, a real state, or a real change. Say what hap
 and when. If a sentence cannot survive someone asking "meaning what, exactly?" — it is not
 finished, and you do not get to ship it because the rest of the paragraph is warm.
 
+AND THE SAME RULE GOVERNS NOUNS — 它 / 这个 / 这一层 / 那份 / this / it. Every pronoun has to point
+back at something you actually named. When you catch yourself referring to a thing four times
+without ever having said what it is, the fix is not a better pronoun: you never named it, and the
+reader has been guessing since the first one.
+
+  ✗ 麻烦的是它坏起来不好发现。      (it = the marriage? the arrangement? the stability?)
+  ✓ 麻烦的是这种稳坏起来不好发现。
+
+Watch for it especially on the SUBJECT of the whole passage. The side details get named — 热恋,
+注意力, 工作 — while the thing the paragraph is actually about drifts along as 这个 and 那份 from
+start to finish. Name it in the first sentence you use it, then pronouns are free.
+
 THE SAME RULE GOVERNS SENTENCE SHAPE. Do not label the board and stop. "The moving line is 官鬼"
 is a caption, not a sentence — it states a fact and leaves the reader holding it. Say what
 follows from it, in whatever phrasing the moment wants: "官鬼动了 —— 所以…", "这一动是官鬼在动,
