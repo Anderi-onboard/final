@@ -10,7 +10,7 @@
 // Public and cacheable: nothing here is per-user.
 
 import {
-  MODEL_RATES, METHOD_COST, FOLLOW_COST, METHOD_RESERVE, FOLLOW_RESERVE, PLAN_GRANT, PACKS,
+  MODEL_RATES, METHOD_COST, FOLLOW_COST, PLAN_GRANT, PACKS,
   UNIT_PRICE_USD, ANNUAL_MONTHS
 } from '../_lib/db.js';
 
@@ -32,8 +32,6 @@ export function onRequestGet({ env }) {
       unitsPer1kOutput: rate.out,
       typical: METHOD_COST[product],
       typicalFollowUp: FOLLOW_COST[product],
-      maximum: METHOD_RESERVE[product],
-      followUpMaximum: FOLLOW_RESERVE[product],
       // Measured, so an estimate on the pricing page matches the real bill:
       // the prompt carries the method's instructions plus the computed figure,
       // which is why input is thousands of tokens before the reader types a word.

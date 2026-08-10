@@ -22,10 +22,11 @@
 // ── Abuse protection (only active when env.DB is bound — see README) ──────
 // This endpoint used to be reachable with ZERO auth: anyone who found the
 // URL could POST directly and burn the real API key. When D1 is configured,
-// both reading methods require a signed-in account with enough prepaid units.
-// The server atomically reserves the published maximum before calling the
-// model, then settles every successful response to measured token usage and
-// returns the unused part of the reserve.
+// both reading methods require a signed-in account with a positive balance.
+// Nothing is held up front: the server checks the balance, calls the model,
+// then charges measured token usage in full — no reservation, no ceiling. A
+// reading that outruns the balance still finishes and still bills, leaving the
+// account negative; the next request is what gets refused.
 //   - generation calls without a session are rejected; router/qc/utility calls
 //     have no user ledger and are rate-limited by IP as an abuse backstop.
 // Without D1 bound, none of this can be enforced (there's no account store
@@ -45,7 +46,7 @@
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_RESERVE, FOLLOW_RESERVE, unitsForUsage, countCjk } from '../_lib/db.js';
+import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk } from '../_lib/db.js';
 
 const CORS = {
   'access-control-allow-origin': '*',
@@ -113,19 +114,15 @@ export async function onRequestPost(context) {
 
     const product = String(body.product || '').toLowerCase();
     // mode "followup" = a question ON the existing casting (no new hexagram).
-    // The admission hold is the published maximum for this request. The final
-    // charge is still metered from real usage; unused units are returned.
+    // It changes only what the charge is labelled in the ledger — both modes
+    // are billed the same way, from the tokens they actually use.
     const mode = String(body.mode || '').toLowerCase() === 'followup' ? 'followup' : 'cast';
-    const flat = product === 'sortis' ? METHOD_RESERVE.sortis : product === 'stria' ? METHOD_RESERVE.stria : 0;
-    const cost = mode === 'followup'
-      ? (product === 'sortis' ? FOLLOW_RESERVE.sortis : product === 'stria' ? FOLLOW_RESERVE.stria : 0)
-      : flat;
 
     let unitsRemaining = null;
     const db = env.DB;
 
     if (db) {
-      const gate = await guardRequest({ request, env, db, product, cost, mode });
+      const gate = await guardRequest({ request, env, db, product, mode });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.charge) chargeTo = gate.charge;
       if (gate.unitsRemaining != null) unitsRemaining = gate.unitsRemaining;
@@ -180,7 +177,8 @@ export async function onRequestPost(context) {
 
       if (!upstream.ok || !upstream.body) {
         const detail = await upstream.text().catch(() => '');
-        await releaseReservation(db, chargeTo, 'upstream');
+        // Nothing was held and no tokens were produced, so there is nothing to
+        // undo — the reader is simply not charged.
         chargeTo = null;
         return json({ error: 'openrouter ' + upstream.status, detail }, 502);
       }
@@ -189,8 +187,8 @@ export async function onRequestPost(context) {
       // terminated by a `data: [DONE]` record) — re-encode each one as the
       // Anthropic-shaped `content_block_delta` event prompt-router.js already
       // parses. The pump runs under waitUntil so BILLING SETTLEMENT survives
-      // even a client disconnect. Every response settles to actual token
-      // usage and refunds the unused reserve. The trailing bw_meta event carries
+      // even a client disconnect. Every response is charged for the tokens it
+      // actually produced. The trailing bw_meta event carries
       // { unitsRemaining, model, charged, incomplete? } for the client.
       const { readable, writable } = new TransformStream();
       const promptText = JSON.stringify(payload.messages);
@@ -214,7 +212,6 @@ export async function onRequestPost(context) {
 
     if (!resp.ok) {
       const detail = await resp.text().catch(() => '');
-      await releaseReservation(db, chargeTo, 'upstream');
       chargeTo = null;
       return json({ error: 'openrouter ' + resp.status, detail }, 502);
     }
@@ -235,14 +232,14 @@ export async function onRequestPost(context) {
     if (chargeTo) result.charged = charged;
     return json(result, 200);
   } catch (e) {
-    await releaseReservation(env.DB, chargeTo, 'error').catch(() => {});
+    // Thrown before settlement, so no charge was ever applied.
     return json({ error: String((e && e.message) || e) }, 500);
   }
 }
 
-// Read the upstream SSE, re-encode for the client, then SETTLE the reserve:
-// Every cast and follow-up charges measured usage, capped by its reservation.
-// Any unused reserve is returned, including after a truncated stream.
+// Read the upstream SSE, re-encode for the client, then SETTLE: every cast and
+// follow-up is charged its measured usage, including after a truncated stream —
+// where the charge covers what actually arrived, and no more.
 // Runs under waitUntil, so settlement happens even if the client goes away.
 async function pumpAndSettle(o) {
   const writer = o.writable.getWriter();
@@ -314,27 +311,21 @@ async function pumpAndSettle(o) {
   try { await writer.close(); } catch (e) {}
 }
 
-// Settle the admission hold against measured usage. The published maximum is a
-// real ceiling: longer output never creates debt or a surprise extra charge.
+// Bill the reading for exactly what it used. There is no cap to clip against
+// and no hold to settle — `owed` is the charge. It may take the balance below
+// zero; see chargeUnits() for why that is the correct outcome rather than a
+// bug to guard against.
 async function chargeUsage(db, chargeTo, model, usage, fallback) {
-  const owed = unitsForUsage(model, usage, fallback);
-  const reserved = Math.max(0, Number(chargeTo && chargeTo.reserved) || 0);
-  const charged = Math.min(Math.max(0, owed), reserved);
-  const refund = reserved - charged;
-  if (!refund) return { charged, units: null };
-  const s = await grantUnits(db, chargeTo.userId, refund, chargeTo.reason + ':release');
-  return { charged, units: s && s.units != null ? s.units : null };
-}
-
-async function releaseReservation(db, chargeTo, suffix) {
-  if (!db || !chargeTo || !(chargeTo.reserved > 0)) return;
-  await grantUnits(db, chargeTo.userId, chargeTo.reserved, chargeTo.reason + ':release:' + suffix);
+  const owed = Math.max(0, unitsForUsage(model, usage, fallback));
+  if (!owed) return { charged: 0, units: null };
+  const s = await chargeUnits(db, chargeTo.userId, owed, chargeTo.reason);
+  return { charged: owed, units: s && s.units != null ? s.units : null };
 }
 
 // Auth + billing + rate-limit gate. Returns one of:
-//   { error: { status, body } }              — reject, never call OpenRouter
-//   { charge, unitsRemaining } — maximum reserved; settle or release later
-async function guardRequest({ request, env, db, product, cost, mode }) {
+//   { error: { status, body } }   — reject, never call OpenRouter
+//   { charge, unitsRemaining }    — cleared to run; bill it after it is written
+async function guardRequest({ request, env, db, product, mode }) {
   const session = await sessionFromRequest(request, env);
   const user = session ? await getUser(db, session.uid) : null;
   const reason = (mode === 'followup' ? 'follow:' : 'cast:') + product;
@@ -345,20 +336,23 @@ async function guardRequest({ request, env, db, product, cost, mode }) {
   }
 
   if (product === 'sortis' || product === 'stria') {
-    const held = await spendUnits(db, user.id, cost, reason + ':reserve');
-    if (!held.ok) return { error: { status: 402, body: { error: 'insufficient units', units: held.units, required: cost } } };
-    return { charge: { userId: user.id, reason, reserved: cost }, unitsRemaining: held.units };
+    // Any positive balance buys entry. Asking for more than that would mean
+    // guessing what this particular reading is going to cost, and every such
+    // guess has to sit above typical usage — which turns into refusing readers
+    // who could have afforded what they actually asked for.
+    if (!(user.units > 0)) {
+      return { error: { status: 402, body: { error: 'insufficient units', units: user.units } } };
+    }
+    return { charge: { userId: user.id, reason }, unitsRemaining: user.units };
   }
 
-  // Router/qc utility calls carry no product cost. Fall back to a per-IP
-  // rolling-hour rate limit so the
-  // endpoint can't be scripted into unlimited free generations.
+  // Router/qc utility calls have no user ledger to bill. Fall back to a per-IP
+  // rolling-hour rate limit so the endpoint can't be scripted into unlimited
+  // free completions.
   const ip = clientIp(request);
   const hourBucket = Math.floor(Date.now() / 3600000);
-  const isGeneration = cost > 0;
-  const max = isGeneration ? 30 : 120; // generation fallback; 120 router+qc calls/hr
-  const bucketKey = 'ip:' + ip + ':' + (isGeneration ? 'cast' : 'util') + ':' + hourBucket;
-  const rl = await bumpRateLimit(db, bucketKey, max);
+  const bucketKey = 'ip:' + ip + ':util:' + hourBucket;
+  const rl = await bumpRateLimit(db, bucketKey, 120);  // 120 router+qc calls/hr
   if (!rl.ok) return { error: { status: 429, body: { error: 'rate limit exceeded, try again later' } } };
   return {};
 }

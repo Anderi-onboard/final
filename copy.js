@@ -46,9 +46,8 @@
     /* ── the composer, and what a reading will cost ─────────────────────── */
     composer: {
       placeholder: "Say it plainly…",
-      methodNote: function (name, typical, maximum) {
-        return name + " · about " + n(typical) + " units typical · " +
-          n(maximum) + " maximum, with unused units returned";
+      methodNote: function (name, typical) {
+        return name + " · about " + n(typical) + " units typical · charged for what it uses";
       },
       methodCost: function (typical) { return "~" + n(typical); }
     },
@@ -159,7 +158,7 @@
 
     /* ── account and session ────────────────────────────────────────────── */
     account: {
-      signInToCast: "Sign in to cast — a new account starts with 500 units on us.",
+      signInToCast: "Sign in to cast — a new account starts with 1,500 units on us.",
       signedOut: "Signed out — your history and balance remain secure.",
       readingDeleted: "Reading deleted."
     },

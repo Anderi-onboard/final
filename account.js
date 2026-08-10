@@ -4,7 +4,7 @@
 
    window.BWAccount:
      .PLANS              -> canonical subscription and unit-grant table
-     .METHODS            -> canonical method table (reserve caps + descriptions)
+     .METHODS            -> canonical method table (typical costs + descriptions)
      .METHOD_ORDER       -> display ordering ["stria","sortis"]
      .state()            -> full store (loads + normalises defaults)
      .save(s)            -> persist
@@ -26,22 +26,23 @@
   // ─── canonical tables (single source — never duplicate elsewhere) ───
 
   var PLANS = {
-    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 500,   methods: ["stria", "sortis"], trial: true },
+    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 1500,  methods: ["stria", "sortis"], trial: true },
     pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 28500, methods: ["stria", "sortis"] },
     premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 43500, methods: ["stria", "sortis"] }
   };
 
-  // cost/followCap are typical measured usage. reserve/followReserve mirror the
-  // server-side admission maximums; the unused portion returns on settlement.
+  // cost/followCap are typical measured usage, shown so a reader can plan. They
+  // are estimates and nothing more — the server bills measured tokens with no
+  // reservation and no ceiling, so the real charge lands above or below these.
   var METHODS = {
     stria: {
-      id: "stria", name: "Stria 64", cost: 440, reserve: 520, followCap: 490, followReserve: 560, tag: "Present structure",
+      id: "stria", name: "Stria 64", cost: 440, followCap: 490, tag: "Present structure",
       depth: "Primary hexagram",
       blurb: "Interprets the primary hexagram against your question.",
       gated: false
     },
     sortis: {
-      id: "sortis", name: "Sortis 6", cost: 780, reserve: 900, followCap: 640, followReserve: 720, tag: "Change analysis",
+      id: "sortis", name: "Sortis 6", cost: 780, followCap: 640, tag: "Change analysis",
       depth: "Primary + transformed hexagrams",
       blurb: "Adds moving lines and the transformed hexagram to the analysis.",
       gated: false

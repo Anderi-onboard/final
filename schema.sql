@@ -10,7 +10,10 @@ CREATE TABLE IF NOT EXISTS users (
   name          TEXT NOT NULL,
   provider      TEXT NOT NULL DEFAULT 'email',-- email | google | apple | reddit | github | discord ...
   plan          TEXT NOT NULL DEFAULT 'free',
-  units         INTEGER NOT NULL DEFAULT 500, -- free signup welcome grant
+  units         INTEGER NOT NULL DEFAULT 1500, -- free signup welcome grant.
+                                               -- May go negative: a reading that
+                                               -- outruns the balance still finishes
+                                               -- and still bills. See chargeUnits().
   password_hash TEXT,                         -- pbkdf2$… for email accounts; NULL for OAuth
   created_at    INTEGER NOT NULL,
   updated_at    INTEGER NOT NULL
