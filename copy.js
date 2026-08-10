@@ -46,10 +46,9 @@
     /* ── the composer, and what a reading will cost ─────────────────────── */
     composer: {
       placeholder: "Say it plainly…",
-      // Cost is stated as what it is: charged after the fact, for what was used.
-      methodNote: function (name, typical) {
-        return name + " · you are charged for what the reading uses, about " +
-          n(typical) + " units · follow-ups cost less, in proportion to their length";
+      methodNote: function (name, typical, maximum) {
+        return name + " · about " + n(typical) + " units typical · " +
+          n(maximum) + " maximum, with unused units returned";
       },
       methodCost: function (typical) { return "~" + n(typical); }
     },
@@ -85,7 +84,77 @@
       promptsNote: function (typical) {
         return "Nothing is sent until you submit. The same hexagram rides along with every follow-up, " +
           "which is charged for what it uses — usually around " + n(typical) + " units.";
+      },
+      /* The frame around the follow-up buttons. Once those buttons are written
+         from the reading they arrive in the reading's language, and Chinese
+         prompts sitting inside an English panel look like a half-finished
+         translation. This immediate frame follows the reading; the rest of the
+         interface stays English. */
+      panel: {
+        en: {
+          kicker: function (method) { return method + " · Same hexagram"; },
+          headContinued: "Check the previous answer against another constraint.",
+          headSortis: "Inspect the change before you decide.",
+          headStria: "Inspect the current structure before you decide.",
+          hint: "Select a prompt to place it in the composer. You can edit it before submitting.",
+          aria: function (method) { return "Ask a follow-up using the same " + method + " hexagram"; },
+          note: function (typical) {
+            return "Nothing is sent until you submit. The same hexagram rides along with every " +
+              "follow-up, which is charged for what it uses — usually around " + n(typical) + " units.";
+          }
+        },
+        zh: {
+          kicker: function (method) { return method + " · 同一卦"; },
+          headContinued: "换个角度，再核一遍刚才那个答案。",
+          headSortis: "决定之前，把这一动看清楚。",
+          headStria: "决定之前，把眼下的结构看清楚。",
+          hint: "点一条，它会填进输入框，发送前你可以改。",
+          aria: function (method) { return "用同一个 " + method + " 卦追问"; },
+          note: function (typical) {
+            return "不点发送就什么都不会发出去。每次追问都带着同一个卦一起走，按实际用量计费 —— " +
+              "通常在 " + n(typical) + " 点左右。";
+          }
+        }
       }
+    },
+
+    /* ── carrying an earlier casting into this one ──────────────────────────
+       Billing is per token now, not per casting, so keeping a long thread alive
+       costs a reader nothing extra and there is no reason to make them repeat
+       themselves in a fresh window. This is the bridge for the case the product
+       could not handle before: they already started somewhere new. */
+    carry: {
+      open: "Carry an earlier casting",
+      openHint: "Bring a previous conversation in as background",
+      head: "Which conversation should ride along?",
+      note: "Its questions and readings travel with this thread as background. " +
+        "No new hexagram is drawn, and the earlier casting is not re-read.",
+      empty: "Nothing earlier to carry yet.",
+      carrying: function (title) { return "Carrying · " + title; },
+      drop: "Stop carrying this",
+      dropped: "That conversation is no longer riding along.",
+      added: function (title) { return "“" + title + "” is now riding along with this thread."; }
+    },
+
+    /* ── the note under every finished reading ──────────────────────────────
+       Set below the reading in smaller type, never inside it. A caution folded
+       into the prose either softens the verdict or gets skimmed past with the
+       rest of the paragraph; standing apart, it is read as what it is. It
+       follows the language the reading was written in, because a caution nobody
+       parses is decoration.
+       Keep both versions saying the same four things: don't decide anything
+       large on this alone, check it against what you can actually observe, the
+       platform is still being built, and what a casting is actually for. */
+    readingFooter: {
+      en: "Please don't make major decisions on this reading alone — the technology behind it is " +
+        "still improving, and we will keep building toward a more capable and stable platform. " +
+        "Hold what you read here against what you can actually observe, take your time, and " +
+        "decide from your real circumstances. A casting offers possible directions, a more " +
+        "flexible way to think about where you are, and a mirror to look at yourself in — " +
+        "it does not offer certainty.",
+      zh: "请不要仅凭这篇解读做重大决定 —— 背后的技术仍在改进，我们也会一直把这个平台做得更准、更稳。" +
+        "把读到的东西拿去和你能真正看到的情况对照，慢慢审，按你的实际处境决定。" +
+        "卦给的是可能的方向、一种更活的想问题的角度，以及一面照自己的镜子 —— 它给不了定论。"
     },
 
     /* ── account and session ────────────────────────────────────────────── */

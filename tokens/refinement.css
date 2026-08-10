@@ -10,17 +10,17 @@
   --bw-palette-9: var(--ink);
   --bw-palette-on-9: var(--paper);
   --bw-palette-gem: var(--terracotta);
-  --ui-glass: color-mix(in srgb, var(--bw-palette-1) 68%, transparent);
-  --ui-glass-strong: color-mix(in srgb, var(--bw-palette-1) 82%, transparent);
-  --ui-glass-soft: color-mix(in srgb, var(--bw-palette-1) 48%, transparent);
-  --ui-glass-warm: color-mix(in srgb, var(--bw-palette-2) 68%, transparent);
-  --ui-line: color-mix(in srgb, white 58%, var(--bw-palette-6) 15%);
-  --ui-line-strong: color-mix(in srgb, white 38%, var(--bw-palette-6) 35%);
+  --ui-glass: color-mix(in srgb, var(--bw-palette-1) 72%, transparent);
+  --ui-glass-strong: color-mix(in srgb, var(--bw-palette-1) 88%, transparent);
+  --ui-glass-soft: color-mix(in srgb, var(--bw-palette-1) 54%, transparent);
+  --ui-glass-warm: color-mix(in srgb, var(--bw-palette-2) 72%, transparent);
+  --ui-line: color-mix(in srgb, white 66%, var(--bw-palette-6) 12%);
+  --ui-line-strong: color-mix(in srgb, white 42%, var(--bw-palette-6) 32%);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: 0 12px 34px rgba(42,32,22,.055), inset 0 1px 0 rgba(255,255,255,.54);
-  --ui-shadow-raised: 0 18px 48px rgba(42,32,22,.075), inset 0 1px 0 rgba(255,255,255,.64);
-  --ui-glass-filter: blur(14px) saturate(116%);
-  --ui-glass-filter-strong: blur(20px) saturate(122%);
+  --ui-shadow: 0 10px 30px rgba(42,32,22,.05), 0 1px 2px rgba(42,32,22,.035), inset 0 1px 0 rgba(255,255,255,.66);
+  --ui-shadow-raised: 0 16px 42px rgba(42,32,22,.075), 0 2px 5px rgba(42,32,22,.04), inset 0 1px 0 rgba(255,255,255,.76);
+  --ui-glass-filter: blur(11px) saturate(114%);
+  --ui-glass-filter-strong: blur(14px) saturate(118%);
   --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
   --ui-radius-small: 12px 15px 11px 14px / 14px 11px 15px 12px;
 }
@@ -281,7 +281,7 @@ body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
   border: 1.25px solid var(--ui-line); border-radius: 22px 27px 20px 25px / 25px 20px 27px 21px;
   background: var(--ui-glass-strong); box-shadow: var(--ui-shadow-raised);
-  transition: transform 320ms var(--ease-out), border-color 220ms var(--ease-out), box-shadow 320ms var(--ease-out);
+  transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease, background-color var(--dur-base) ease;
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
 body[data-page="app"] .composer:focus-within {
@@ -291,12 +291,12 @@ body[data-page="app"] .composer:focus-within {
 body[data-page="app"] .stria {
   min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
   border: 1px solid var(--ui-line); color: var(--ink);
-  transition: transform 220ms var(--ease-out), background-color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
 body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
-body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:transform 220ms var(--ease-out),background-color 220ms var(--ease-out),box-shadow 220ms var(--ease-out); }
-body[data-page="app"] .send svg { transition: transform 260ms var(--ease-spring); }
+body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:transform var(--dur-fast) var(--ease-out),background-color var(--dur-base) ease,box-shadow var(--dur-base) ease; }
+body[data-page="app"] .send svg { transition: transform var(--dur-fast) var(--ease-out); }
 body[data-page="app"] .send:hover { background: var(--terracotta); }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
@@ -349,6 +349,93 @@ body[data-page="app"] .rd-action {
 }
 body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); border-color: var(--ui-line-strong); }
 
+/* Reusable line-art language ---------------------------------------------
+   Rounded, slightly uneven ink now appears as low-contrast material, never as
+   a foreground decal competing with the page's copy. */
+html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.topup) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.topup)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -34px;
+  bottom: -30px;
+  width: 190px;
+  height: 112px;
+  pointer-events: none;
+  opacity: .17;
+  background: url("../assets/textures/ink-currents.svg") center / contain no-repeat;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(135deg,transparent 4%,#000 52%);
+  mask-image: linear-gradient(135deg,transparent 4%,#000 52%);
+}
+html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.topup):nth-child(2n)::after {
+  right: -42px;
+  bottom: -46px;
+  width: 158px;
+  height: 158px;
+  opacity: .14;
+  background-image: url("../assets/textures/ink-orbits.svg");
+}
+html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.topup) > * {
+  position: relative;
+  z-index: 1;
+}
+body[data-page="app"] .reading-body :is(h2,h3) { position: relative; }
+body[data-page="app"] .reading-body :is(h2,h3)::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 19px;
+  margin: 0 0 8px -2px;
+  opacity: .48;
+  background: url("../assets/textures/ink-knot.svg") left center / contain no-repeat;
+}
+
+/* Organic state indicator. Three imperfect ink loops move as one current,
+   replacing mechanical rotation while remaining compact and legible. */
+.bw-organic-loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 28px;
+  height: 16px;
+  color: currentColor;
+}
+.bw-organic-loader > i {
+  display: block;
+  width: 7px;
+  height: 8px;
+  box-sizing: border-box;
+  border: 1.5px solid currentColor;
+  border-radius: 46% 54% 62% 38% / 57% 43% 56% 44%;
+  transform-origin: 50% 70%;
+  animation: bwOrganicCurrent 780ms var(--ease-in-out) infinite;
+}
+.bw-organic-loader > i:nth-child(2) {
+  width: 8px;
+  height: 7px;
+  border-radius: 58% 42% 47% 53% / 42% 61% 39% 58%;
+  animation-delay: -520ms;
+}
+.bw-organic-loader > i:nth-child(3) {
+  height: 9px;
+  border-radius: 42% 58% 54% 46% / 61% 39% 57% 43%;
+  animation-delay: -260ms;
+}
+@keyframes bwOrganicCurrent {
+  0%,100% { transform: translateY(1px) scaleX(1); opacity: .48; }
+  45% { transform: translateY(-3px) scaleX(.76); opacity: 1; }
+  72% { transform: translateY(0) scaleX(1.04); opacity: .72; }
+}
+body[data-page="app"] .send .bw-organic-loader { display: none; }
+body[data-page="app"] .send:disabled > svg { display: none; }
+body[data-page="app"] .send:disabled .bw-organic-loader { display: inline-flex; }
+
 /* Quiet liveliness -------------------------------------------------------
    Movement is limited to compositor-friendly opacity and transforms. This
    keeps the glass responsive without repainting the large backdrop layers. */
@@ -356,32 +443,33 @@ body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); borde
   outline: 2px solid color-mix(in srgb, var(--terracotta) 72%, white);
   outline-offset: 3px;
 }
-@media (pointer:fine) and (prefers-reduced-motion:no-preference) {
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
   body[data-page="app"] .topbar .ghost,
   body[data-page="app"] .new-cast,
   body[data-page="app"] .castings .casting,
   body[data-page="app"] .side-foot,
   body[data-page="app"] .rd-action {
-    transition: transform 240ms var(--ease-out), background-color 220ms var(--ease-out), color 220ms var(--ease-out), border-color 220ms var(--ease-out), box-shadow 260ms var(--ease-out);
+    transition: background-color var(--dur-base) ease, color var(--dur-base) ease, border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
   }
-  body[data-page="app"] .topbar .ghost:hover { transform: translateY(-1px); }
-  body[data-page="app"] .new-cast:hover,
-  body[data-page="app"] .castings .casting:hover { transform: translateX(2px); }
-  body[data-page="app"] .new-cast .ic { transition: transform 260ms var(--ease-spring), background-color 220ms var(--ease-out); }
-  body[data-page="app"] .new-cast:hover .ic { transform: scale(1.08); }
-  body[data-page="app"] .composer:hover,
-  body[data-page="app"] .composer:focus-within { transform: translateY(-2px); }
-  body[data-page="app"] .stria:hover { transform: translateY(-1px); }
-  body[data-page="app"] .send:hover { transform: scale(1.045); box-shadow: 0 8px 20px color-mix(in srgb,var(--terracotta) 24%,transparent); }
-  body[data-page="app"] .send:hover svg { transform: translateX(2px); }
-  body[data-page="app"] .rd-action:hover { transform: translateY(-1px); }
+  body[data-page="app"] .new-cast .ic { transition: background-color var(--dur-base) ease; }
+  body[data-page="app"] .send:hover { box-shadow: 0 7px 18px color-mix(in srgb,var(--terracotta) 20%,transparent); }
+  body[data-page="app"] .send:hover svg { transform: translateX(1px); }
   html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost) {
-    transition: transform 360ms var(--ease-out), box-shadow 360ms var(--ease-out), border-color 240ms var(--ease-out);
+    transition: box-shadow var(--dur-base) ease, border-color var(--dur-base) ease, background-color var(--dur-base) ease;
   }
   html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost):hover {
-    transform: translateY(-2px);
     border-color: var(--ui-line-strong) !important;
     box-shadow: var(--ui-shadow-raised) !important;
+  }
+}
+
+/* Physical feedback belongs to the press itself. It is fast enough to feel
+   immediate and applies equally well to touch, mouse and pen. */
+@media (prefers-reduced-motion:no-preference) {
+  body[data-page="app"] :is(.pressable,.send,.stria,.rd-action,.rd-prompt):active,
+  html[data-skin="paper"] body:not([data-page="app"]) :is(button,.cta,.choose):active {
+    transform: scale(.975) !important;
+    transition-duration: var(--dur-fast) !important;
   }
 }
 
@@ -397,7 +485,9 @@ body[data-page="app"] .rd-action:hover { background: var(--ui-glass-warm); borde
   body[data-page="app"] .bwl5,
   body[data-page="app"] .greeting h1 .bw-reveal-word { animation: none !important; }
   body[data-page="app"] .greeting h1 .bw-reveal-word { opacity: 1; filter: none; transform: none; }
+  .bw-organic-loader > i { animation: bwOrganicFade 800ms ease infinite; transform: none; }
 }
+@keyframes bwOrganicFade { 0%,100%{opacity:.38} 50%{opacity:1} }
 
 /* Content pages ----------------------------------------------------------- */
 body[data-page="pricing"] .shell,
@@ -501,6 +591,11 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="pricing"] .pagehead { padding-left: 12px; }
   body:not([data-page="app"]) .pagehead .nav .ghost,
   body[data-page="pricing"] .pagehead .nav .ghost { display: none; }
+  html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.topup)::after {
+    opacity: .11;
+    transform: scale(.88);
+    transform-origin: right bottom;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

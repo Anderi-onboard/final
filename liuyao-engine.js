@@ -230,8 +230,20 @@
   /* ═══════════ 6. HELPERS ═══════════ */
   function patternOf(lines){ var b=0; for (var i=0;i<6;i++) if (lines[i].yang) b|=(1<<i); return b; }
   function triIndex(lines, off){ var b=0; for (var i=0;i<3;i++) if (lines[off+i].yang) b|=(1<<i); return b; }
+  /* A line may arrive as a boolean, as 0/1, or as {yang, changing}. The number
+     form used to fall through to `!!l.yang` — undefined on a number — so every
+     numeric line silently became yin and ANY hexagram passed that way computed
+     as 坤为地 with no error raised. A wrong board is worse than a thrown one:
+     it reads perfectly, it just answers a question nobody asked. */
   function normLines(lines){
-    return lines.map(function(l){ return { yang:(typeof l==="boolean")?l:!!l.yang, changing:!!(l&&l.changing) }; });
+    return lines.map(function(l, i){
+      var yang;
+      if (typeof l === "boolean") yang = l;
+      else if (l === 0 || l === 1) yang = !!l;
+      else if (l && typeof l === "object" && "yang" in l) yang = !!l.yang;
+      else throw new Error("computeBoard: line " + i + " must be a boolean, 0/1, or {yang} — got " + JSON.stringify(l));
+      return { yang: yang, changing: !!(l && l.changing) };
+    });
   }
   function elObj(gi){ return { gi:gi, en:EL_EN[gi], cn:EL_CN[gi], color:EL_COLOR[gi] }; }
   function brObj(bi){ return { bi:bi, cn:BR_CN[bi], py:BR_PY[bi], animal:BR_ANIMAL[bi], el:elObj(BR_EL[bi]) }; }

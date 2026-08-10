@@ -6,6 +6,7 @@
   "use strict";
 
   var NS = "http://www.w3.org/2000/svg";
+  var activeCast = null;
 
   /* 64 hexagram poetic names — ONE-TO-ONE by pattern (bit0=line1, bottom).
      pattern = lowerTb | (upperTb<<3); tb: 0坤 1震 2坎 3兑 4艮 5离 6巽 7乾.
@@ -395,7 +396,10 @@
     var reduced = opts.reduced!=null ? opts.reduced
       : window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var sortis = spec.method==="sortis";
-    var methodLabel = sortis?"Sortis 6":"Stria 64";
+
+    /* A second cast owns the stage. Cancel the first timeline instead of
+       letting old timers mutate a conversation the user has already left. */
+    cancelCast();
 
     /* render the FINAL annotated figure, in cast mode (lines + branches start hidden).
        The coin bar + method label live INSIDE the figure HTML and persist after. */
@@ -407,25 +411,42 @@
        first paint, so the centering shift is never visible as a "refresh" */
     opticalCenter(container);
 
-    /* reduced-motion: figure is already fully painted & static; nothing to animate */
-    if (reduced || !svg) {
-      if (status) status.textContent = "";
+    if (!svg) {
       return Promise.resolve();
     }
 
     return new Promise(function(resolve){
-      var castDuration = 12200;
-      var roundGap = 1500;
-      var coinSettleAt = 820;
-      var statusTimers = [];
       var coinsEl = container.querySelector(".bw-coins");
       var coinEls = coinsEl ? Array.prototype.slice.call(coinsEl.querySelectorAll(".bw-af-loader")) : [];
+      var pending = [];
+      var cancelled = false;
+      var finished = false;
+      var statusMotion = null;
+      var linePause = reduced ? 360 : 1500;
+      var tossTime = reduced ? 130 : 820;
+
+      function wait(ms){
+        return new Promise(function(done){
+          var item = { id: 0, done: done };
+          item.id = setTimeout(function(){
+            pending = pending.filter(function(x){ return x !== item; });
+            done(!cancelled);
+          }, ms);
+          pending.push(item);
+        });
+      }
       function showStatus(text){
         if (!status) return;
         status.textContent = text;
-        status.classList.remove("is-stepping");
-        void status.offsetWidth;
-        status.classList.add("is-stepping");
+        if (statusMotion && statusMotion.cancel) statusMotion.cancel();
+        if (status.animate) {
+          statusMotion = status.animate(
+            reduced
+              ? [{opacity:.35},{opacity:1}]
+              : [{opacity:0,transform:"translateY(3px)"},{opacity:1,transform:"translateY(0)"}],
+            {duration:reduced ? 160 : 260,easing:"cubic-bezier(.23,1,.32,1)"}
+          );
+        }
       }
       function clearCoinFaces(){
         coinEls.forEach(function(coin){ coin.classList.remove("side-yang", "side-yin"); });
@@ -438,9 +459,13 @@
         clearCoinFaces();
         if (coinsEl) {
           coinsEl.setAttribute("aria-label", "Line " + (lineIndex + 1) + " of 6: coins in motion");
-          coinsEl.classList.remove("is-tossing");
-          void coinsEl.offsetWidth;
-          coinsEl.classList.add("is-tossing");
+          if (!reduced) {
+            coinsEl.classList.remove("is-tossing");
+            /* Each round gets a fresh animation without a synchronous layout read. */
+            requestAnimationFrame(function(){
+              if (!cancelled) coinsEl.classList.add("is-tossing");
+            });
+          }
         }
         showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 " + roundPhase(lineIndex) + "\u2026");
       }
@@ -455,62 +480,85 @@
         var lineName = line.changing ? (line.yang ? "old yang" : "old yin") : (line.yang ? "young yang" : "young yin");
         if (coinsEl) coinsEl.setAttribute("aria-label", "Line " + (lineIndex + 1) + " of 6: " + faceText + ", " + lineName);
         showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 " + faceText + " \u2192 " + lineName);
+        var primaryLine = svg.querySelector('.bw-af-ln[data-li="' + lineIndex + '"]:not([data-bian])');
+        if (primaryLine) primaryLine.classList.add("is-cast");
       }
       if (figEl) {
         figEl.classList.add("bw-cast-run");
         figEl.setAttribute("aria-busy", "true");
       }
       clearCoinFaces();
-      spec.lines.forEach(function(line, lineIndex){
-        var at = lineIndex * roundGap;
-        if (at === 0) startLineRound(lineIndex);
-        else statusTimers.push(setTimeout(function(){ startLineRound(lineIndex); }, at));
-        statusTimers.push(setTimeout(function(){ settleLineRound(lineIndex); }, at + coinSettleAt));
-      });
-      statusTimers.push(setTimeout(function(){ showStatus("Setting the trigrams\u2026"); }, 9300));
-      statusTimers.push(setTimeout(function(){ showStatus(sortis ? "Mapping the change\u2026" : "Reading the structure\u2026"); }, 10150));
-      statusTimers.push(setTimeout(function(){ showStatus("Opening the reading\u2026"); }, 11250));
-      if (svg) {
-        svg.querySelectorAll(".bw-af-ln:not([data-bian])").forEach(function(line){
-          var li = Number(line.getAttribute("data-li")) || 0;
-          line.style.setProperty("--line-d", (1.05 + li * 1.5).toFixed(2) + "s");
-        });
-        svg.querySelectorAll(".bw-af-ln[data-bian]").forEach(function(line){
-          var li = Number(line.getAttribute("data-li")) || 0;
-          line.style.setProperty("--line-d", (9.35 + li * 0.12).toFixed(2) + "s");
-        });
-        svg.querySelectorAll(".bw-af-branch").forEach(function(branch, index){
-          branch.style.setProperty("--cast-d", (9.22 + Math.min(index * 0.04, 1.05)).toFixed(3) + "s");
-        });
-      }
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          svg.classList.add("bw-cast-in");
-        });
-      });
-      setTimeout(finishCast, castDuration);
 
-      function finishCast(){
-        statusTimers.forEach(clearTimeout);
+      activeCast = {
+        container: container,
+        cancel: function(){
+          if (cancelled || finished) return;
+          cancelled = true;
+          pending.splice(0).forEach(function(item){ clearTimeout(item.id); item.done(false); });
+          if (statusMotion && statusMotion.cancel) statusMotion.cancel();
+          if (coinsEl) coinsEl.classList.remove("is-tossing");
+          finishCast(true);
+        }
+      };
+
+      (async function runCast(){
+        for (var lineIndex = 0; lineIndex < 6; lineIndex++) {
+          startLineRound(lineIndex);
+          if (!await wait(tossTime)) return;
+          settleLineRound(lineIndex);
+          if (!await wait(linePause - tossTime)) return;
+        }
+
+        showStatus("Setting the trigrams\u2026");
+        svg.querySelectorAll('.bw-af-ln[data-bian]').forEach(function(node, index){
+          setTimeout(function(){ if (!cancelled) node.classList.add("is-cast"); }, reduced ? 0 : index * 70);
+        });
+        if (!await wait(reduced ? 180 : 560)) return;
+
+        showStatus(sortis ? "Mapping the change\u2026" : "Reading the structure\u2026");
+        svg.querySelectorAll('.bw-af-branch').forEach(function(node, index){
+          setTimeout(function(){ if (!cancelled) node.classList.add("is-cast"); }, reduced ? 0 : Math.min(index * 18, 360));
+        });
+        svg.querySelectorAll('.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name').forEach(function(node){ node.classList.add("is-cast"); });
+        if (!await wait(reduced ? 180 : 620)) return;
+
+        showStatus("Opening the reading\u2026");
+        svg.querySelectorAll('.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow').forEach(function(node){ node.classList.add("is-cast"); });
+        var legend = container.querySelector('.bw-af-legend');
+        if (legend) legend.classList.add("is-cast");
+        if (!await wait(reduced ? 220 : 720)) return;
+        finishCast(false);
+      })();
+
+      function finishCast(wasCancelled){
+        if (finished) return;
+        finished = true;
         svg.removeAttribute("data-cast");
-        svg.classList.remove("bw-cast-in");
         if (figEl){
           figEl.classList.remove("bw-casting", "bw-cast-run");
-          figEl.classList.add("bw-af-live");
+          if (!wasCancelled) {
+            document.querySelectorAll(".bw-motion-current").forEach(function(node){ node.classList.remove("bw-motion-current"); });
+            figEl.classList.add("bw-af-live", "bw-motion-current");
+          }
           figEl.removeAttribute("aria-busy");
         }
         /* The reveal and the living figure are one motion, not two scenes.
            Deferred SVG waves start from the exact resting paths only after the
            board has settled, so there is no mid-wave snap at the hand-off. */
-        requestAnimationFrame(function () {
+        if (!wasCancelled) requestAnimationFrame(function () {
           svg.querySelectorAll("animate[data-bw-ambient]").forEach(function(anim){
             try { anim.beginElement(); } catch(e) {}
           });
         });
         if (status) status.textContent = "";
+        if (activeCast && activeCast.container === container) activeCast = null;
         resolve();
       }
     });
+  }
+
+  function cancelCast(container){
+    if (activeCast && (!container || activeCast.container === container)) activeCast.cancel();
   }
 
   function el(tag,cls){ var e=document.createElement(tag); if(cls) e.className=cls; return e; }
@@ -556,7 +604,7 @@
       ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;background:var(--paper);",
         "border:2.3px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
         "transform-origin:50% 58%}",
-      ".bw-af-loader.b{width:23px;height:20px;background:var(--terracotta)}",
+      ".bw-af-loader.b{width:23px;height:20px}",
       ".bw-af-loader.c{width:20px;height:23px}",
       /* Filled clay = yang face; hollow paper = yin face. These are the same
          three circles, now carrying the result of each of the six tosses. */
@@ -680,8 +728,6 @@
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;min-width:0;max-width:min(58vw,380px);overflow:hidden;text-overflow:ellipsis;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s;white-space:nowrap}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
-      ".bw-af-bar .bw-cast-status.is-stepping{animation:bwStatusStep .46s cubic-bezier(.16,1,.3,1) both}",
-      "@keyframes bwStatusStep{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}",
       "@media (max-width:600px){",
         ".bw-af-bar{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:11px;row-gap:8px;width:100%;white-space:normal;margin-bottom:16px}",
         ".bw-af-bar .bw-cast-method{align-self:center;min-width:0}",
@@ -703,57 +749,57 @@
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
       /* Six distinct throws: every round agitates the same three circles, then
          their filled/hollow faces settle before the matching line lands. */
-      ".bw-cast-run .bw-af-loader{will-change:transform,border-radius,background-color;transition:background-color .24s ease,border-color .24s ease}",
+      ".bw-cast-run .bw-af-loader{will-change:transform;transition:background-color var(--dur-base,190ms) var(--ease-out,cubic-bezier(.23,1,.32,1)),border-color var(--dur-base,190ms) var(--ease-out,cubic-bezier(.23,1,.32,1))}",
       ".bw-cast-run .bw-coins.is-tossing .bw-af-loader{background:var(--paper)!important;border-color:var(--ink)!important}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft .82s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.b{animation:bwCoinMiddle .82s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.c{animation:bwCoinRight .82s cubic-bezier(.16,1,.3,1) both}",
-      ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.65s cubic-bezier(.16,1,.3,1) both}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.b{animation:bwCoinMiddle .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
+      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.c{animation:bwCoinRight .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
+      ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.65s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
       "@keyframes bwCoinLeft{",
         "0%{transform:none}",
-        "24%{transform:translate(7px,-9px) rotate(12deg) scale(.92);border-radius:58% 42% 43% 57% / 61% 44% 56% 39%}",
+        "24%{transform:translate(7px,-9px) rotate(12deg) scaleY(.18)}",
         "52%{transform:translate(3px,2px) rotate(-5deg) scale(1.04)}",
-        "72%{transform:translate(-1px,-1px) rotate(2deg)}",
+        "72%{transform:translate(-1px,-1px) rotate(2deg) scale(.99)}",
         "100%{transform:none}",
       "}",
       "@keyframes bwCoinMiddle{",
         "0%{transform:none}",
-        "21%{transform:translateY(-13px) rotate(-9deg) scale(.9);border-radius:40% 60% 57% 43% / 58% 40% 60% 42%}",
+        "21%{transform:translateY(-13px) rotate(-9deg) scaleY(.16)}",
         "50%{transform:translateY(2px) rotate(5deg) scale(1.06)}",
-        "72%{transform:translateY(-1px) rotate(-2deg)}",
+        "72%{transform:translateY(-1px) rotate(-2deg) scale(.99)}",
         "100%{transform:none}",
       "}",
       "@keyframes bwCoinRight{",
         "0%{transform:none}",
-        "26%{transform:translate(-7px,-8px) rotate(-13deg) scale(.93);border-radius:43% 57% 62% 38% / 39% 59% 41% 61%}",
+        "26%{transform:translate(-7px,-8px) rotate(-13deg) scaleY(.2)}",
         "53%{transform:translate(-3px,2px) rotate(6deg) scale(1.04)}",
-        "73%{transform:translate(1px,-1px) rotate(-2deg)}",
+        "73%{transform:translate(1px,-1px) rotate(-2deg) scale(.99)}",
         "100%{transform:none}",
       "}",
       "@keyframes bwMethodSet{0%,18%{opacity:.58;transform:translateX(-3px)}58%,100%{opacity:1;transform:none}}",
       ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend{opacity:0;transform:translateY(4px)}",
       ".bw-cast-run .bw-af-moment{animation:bwCastMeta .5s .28s cubic-bezier(.16,1,.3,1) forwards}",
-      ".bw-cast-run .bw-af-legend{animation:bwCastMeta .62s 11.05s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-cast-run .bw-af-legend.is-cast{animation:bwCastMeta .62s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastMeta{to{opacity:1;transform:none}}",
       ".bw-af[data-cast]{opacity:1;transform:none;transform-origin:center}",
       ".bw-af[data-cast] .bw-af-ln{opacity:0;transform:translateY(8px) scaleX(.72);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-ln{animation:bwCastLine .78s var(--line-d,.9s) cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast] .bw-af-ln.is-cast{animation:bwCastLine .78s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastLine{",
         "0%{opacity:0;transform:translateY(8px) scaleX(.72)}",
         "58%{opacity:1;transform:translateY(-1px) scaleX(1.025)}",
         "100%{opacity:1;transform:none}",
       "}",
       ".bw-af[data-cast] .bw-af-branch{opacity:0;transform:translate(var(--fx,6px),2px)}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-branch{animation:bwCastBranch .7s var(--cast-d,9.2s) cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast] .bw-af-branch.is-cast{animation:bwCastBranch .7s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastBranch{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){opacity:0;transform:translateY(4px);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast].bw-cast-in :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){animation:bwCastLabel .68s 9.52s cubic-bezier(.16,1,.3,1) forwards}",
+      ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name).is-cast{animation:bwCastLabel .68s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastLabel{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow){opacity:0}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-arrow{animation:bwCastArrow .82s 10.30s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-tarrow{animation:bwCastTarrow .82s 10.24s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-flowbase{animation:bwCastFlowBase .82s 10.38s ease forwards}",
-      ".bw-af[data-cast].bw-cast-in .bw-af-flow{animation:bwCastFlow .82s 10.48s ease forwards}",
+      ".bw-af[data-cast] .bw-af-arrow.is-cast{animation:bwCastArrow .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
+      ".bw-af[data-cast] .bw-af-tarrow.is-cast{animation:bwCastTarrow .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
+      ".bw-af[data-cast] .bw-af-flowbase.is-cast{animation:bwCastFlowBase .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
+      ".bw-af[data-cast] .bw-af-flow.is-cast{animation:bwCastFlow .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastArrow{to{opacity:.5}}",
       "@keyframes bwCastTarrow{to{opacity:.85}}",
       "@keyframes bwCastFlowBase{to{opacity:.26}}",
@@ -769,21 +815,23 @@
          a slow three-beat coin drift, breathing moving-line marks and currents
          travelling through the already-drawn relationship paths. */
       "@media (prefers-reduced-motion:no-preference){",
-        ".bw-af-live .bw-af-loader{will-change:transform;animation:bwCoinIdleA 4.8s cubic-bezier(.45,0,.55,1) infinite}",
-        ".bw-af-live .bw-af-loader.b{animation-name:bwCoinIdleB;animation-duration:4.2s;animation-delay:-1.15s}",
-        ".bw-af-live .bw-af-loader.c{animation-name:bwCoinIdleC;animation-duration:5.15s;animation-delay:-2.4s}",
-        ".bw-af-live .bw-af-mark{transform-box:fill-box;transform-origin:center;animation:bwMarkLive 3.6s cubic-bezier(.45,0,.55,1) infinite}",
-        ".bw-af-live .bw-af-flow{animation:bwFlowLive 4.8s linear infinite;animation-delay:calc(var(--fi,0) * -.72s)}",
-        ".bw-af-live .bw-af-flow.ctrl,.bw-af-live .bw-af-flow.ctrl-rev{animation-duration:6.4s;animation-direction:reverse}",
-        ".bw-af-live .bw-af-flow.peer{animation-duration:5.6s}",
-        ".bw-af-live .bw-af-tarrow{stroke-dasharray:4 7;animation:bwCrossLive 5.2s linear infinite}",
+        ".bw-motion-current .bw-af-loader{will-change:transform,border-radius;animation:bwCoinIdleA 4.8s cubic-bezier(.45,0,.55,1) infinite,bwCoinContour 7.2s ease-in-out infinite}",
+        ".bw-motion-current .bw-af-loader.b{animation-name:bwCoinIdleB,bwCoinContour;animation-duration:4.2s,6.7s;animation-delay:-1.15s,-2.2s}",
+        ".bw-motion-current .bw-af-loader.c{animation-name:bwCoinIdleC,bwCoinContour;animation-duration:5.15s,7.8s;animation-delay:-2.4s,-4.1s}",
+        ".bw-motion-current .bw-af-mark{transform-box:fill-box;transform-origin:center;animation:bwMarkLive 3.6s cubic-bezier(.45,0,.55,1) infinite}",
+        ".bw-motion-current .bw-af-flow{animation:bwFlowLive 4.8s linear infinite;animation-delay:calc(var(--fi,0) * -.72s)}",
+        ".bw-motion-current .bw-af-flow.ctrl,.bw-motion-current .bw-af-flow.ctrl-rev{animation-duration:6.4s;animation-direction:reverse}",
+        ".bw-motion-current .bw-af-flow.peer{animation-duration:5.6s}",
+        ".bw-motion-current .bw-af-tarrow{stroke-dasharray:4 7;animation:bwCrossLive 5.2s linear infinite}",
       "}",
       "@keyframes bwCoinIdleA{0%,100%{transform:none}28%{transform:translate(-.4px,-1.8px) rotate(-1.8deg)}63%{transform:translate(.5px,.6px) rotate(.8deg)}}",
       "@keyframes bwCoinIdleB{0%,100%{transform:none}34%{transform:translateY(-2.2px) rotate(1.5deg) scale(1.025)}72%{transform:translate(-.3px,.5px) rotate(-.7deg)}}",
       "@keyframes bwCoinIdleC{0%,100%{transform:none}24%{transform:translate(.5px,-1.3px) rotate(1.7deg)}58%{transform:translate(-.4px,-2px) rotate(-.9deg)}82%{transform:translateY(.4px)}}",
+      "@keyframes bwCoinContour{0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%}45%{border-radius:55% 45% 42% 58% / 53% 43% 57% 47%}72%{border-radius:43% 57% 54% 46% / 47% 58% 42% 53%}}",
       "@keyframes bwMarkLive{0%,100%{transform:scale(1);opacity:.78}42%{transform:scale(1.12) rotate(2deg);opacity:1}68%{transform:scale(.98) rotate(-1deg);opacity:.88}}",
       "@keyframes bwFlowLive{to{stroke-dashoffset:-44}}",
       "@keyframes bwCrossLive{to{stroke-dashoffset:-33}}",
+      "body.bw-motion-paused .bw-motion-current,body.bw-motion-paused .bw-motion-current *{animation-play-state:paused!important}",
       /* full board: header + dense per-line branches (Sortis tier) */
       ".bw-af-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--sans);font-size:11px;color:var(--dim);padding-bottom:9px;margin-bottom:2px;border-bottom:1px solid var(--line-soft)}",
       ".bw-af-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
@@ -824,7 +872,10 @@
         ".bw-af-loader{animation:none!important}",
         ".bw-af-live .bw-af-flow,.bw-af-live .bw-af-mark,.bw-af-live .bw-af-tarrow{animation:none!important}",
         ".bw-fig .bw-ln.in{animation:none;opacity:1;transform:none}",
-        ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend,.bw-af[data-cast] *{animation:none!important;opacity:1!important;transform:none!important}",
+        ".bw-af[data-cast] *{animation:none!important}",
+        ".bw-af[data-cast] .bw-af-ln.is-cast,.bw-af[data-cast] .bw-af-branch.is-cast,.bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name).is-cast,.bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow).is-cast{opacity:1!important;transform:none!important}",
+        ".bw-casting .bw-af-moment{opacity:1;transform:none}",
+        ".bw-casting .bw-af-legend.is-cast{opacity:1;transform:none}",
       "}"
     ].join("");
     document.head.appendChild(s);
@@ -1338,6 +1389,7 @@
     opticalCenter: opticalCenter,
     pairHTML:  pairHTML,
     cast:      cast,
+    cancel:    cancelCast,
     loaderEl:  loaderEl,
     insightHTML: insightHTML,
     annotatedFigureHTML: annotatedFigureHTML,
@@ -1345,4 +1397,8 @@
     legendHTML: legendHTML,
     NAMES:     NAMES
   };
+
+  document.addEventListener("visibilitychange", function(){
+    document.body.classList.toggle("bw-motion-paused", document.hidden);
+  });
 })();

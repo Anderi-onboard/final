@@ -7,14 +7,14 @@
 //
 //   sku "promonthly" | "proannual" | "premiummonthly" | "premiumannual"
 //                                      → recurring subscription products
-//   sku "pack4500" | "pack15000"…    → one-time unit top-ups
+//   sku "pack7500" | "pack15000"…    → one-time unit top-ups
 //
 // Env (Pages → Settings → Variables and secrets):
 //   CREEM_API_KEY            required — creem_… (live) or creem_test_… (test);
 //                            the key prefix selects the API base automatically
 //   CREEM_PRODUCT_PROMONTHLY / PROANNUAL
 //   CREEM_PRODUCT_PREMIUMMONTHLY / PREMIUMANNUAL
-//   CREEM_PRODUCT_PACK4500 … product ids for the unit packs (one per pack sku)
+//   CREEM_PRODUCT_PACK7500 … product ids for the unit packs (one per pack sku)
 //
 // The session's metadata carries { userId, sku } — the webhook uses it to
 // credit the right account without trusting anything client-side.
@@ -47,11 +47,11 @@ export async function onRequestPost({ request, env }) {
     const body = await request.json().catch(() => ({}));
     const sku = String(body.sku || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     if (!sku) return json({ error: 'no sku' }, 400);
-    if (!/^(?:(?:pro|premium)(?:monthly|annual)|pack(?:4500|15000|30000|75000))$/.test(sku)) {
+    if (!/^(?:(?:pro|premium)(?:monthly|annual)|pack(?:7500|15000|30000|75000))$/.test(sku)) {
       return json({ error: 'unknown sku' }, 400);
     }
 
-    // sku → product id via env: pack4500 → CREEM_PRODUCT_PACK4500
+    // sku → product id via env: pack7500 → CREEM_PRODUCT_PACK7500
     const productId = env['CREEM_PRODUCT_' + sku.toUpperCase()];
     if (!productId) return json({ error: 'unknown sku' }, 400);
 

@@ -14,8 +14,42 @@
   var S = A.state();
   function save() { A.save(S); }
 
+  /* Is this text Chinese? NOT "does it contain a CJK character" — an ENGLISH
+     reading is required to keep the Liu Yao vocabulary untranslated, so that
+     test calls every English reading Chinese. Proportion separates them
+     cleanly: Chinese prose runs well over half CJK, English prose carrying a
+     dozen terms stays in the low single digits. */
+  function isZh(text) {
+    var s = String(text || "");
+    if (!s) return false;
+    return (s.match(/[㐀-䶿一-鿿豈-﫿]/g) || []).length / s.length > 0.15;
+  }
+
   function activeConv() {
     for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === S.activeId) return S.convs[i];
+    return null;
+  }
+  /* The board behind a stored casting. Sortis keeps the computed board on the
+     message; Stria keeps only the spec, so the thread shows its lighter figure —
+     either way a follow-up has to be grounded in the SAME hexagram that was
+     cast, so the spec is recomputed when the board is not there. */
+  function boardOf(cast, methodId) {
+    if (!cast) return null;
+    if (cast.board) return cast.board;
+    var sp = cast.spec;
+    if (!(window.BWLiuYao && sp && sp.lines && sp.lines.length === 6)) return null;
+    try {
+      return window.BWLiuYao.computeBoard({
+        lines: sp.lines, changeIdx: sp.changeIdx || [],
+        method: methodId, name: sp.name, transformedName: sp.transformedName
+      });
+    } catch (e) { return null; }
+  }
+
+  // A reading can settle after the reader has already moved to another thread,
+  // so late work looks the conversation up by id rather than asking what is open.
+  function convById(id) {
+    for (var i = 0; i < S.convs.length; i++) if (S.convs[i].id === id) return S.convs[i];
     return null;
   }
   function method() { return METHODS[S.method] || METHODS.stria; }
@@ -60,10 +94,109 @@
     }
   }
 
+  /* ── carrying an earlier conversation into this one ───────────────────────
+     A casting used to be the billing unit, so every thread had a reason to stay
+     short and a reader who opened a new window lost everything they had already
+     explained. Billing is per token now: a long thread costs exactly what it
+     uses, and there is no longer any reason to make someone repeat themselves.
+
+     What travels is the earlier conversation's questions and readings, as
+     background text. The earlier HEXAGRAM is deliberately not re-read — that
+     casting answered its own question, and stretching it over a second matter
+     is the wrong-reading failure the intent router already exists to prevent. */
+  var CARRY_PER_READING = 1800, CARRY_TOTAL = 9000;
+
+  function carryDigest(conv) {
+    var parts = [], total = 0;
+    for (var i = 0; i < conv.msgs.length && total < CARRY_TOTAL; i++) {
+      var m = conv.msgs[i];
+      if (!m || !m.text) continue;
+      var chunk = m.role === "user"
+        ? "They asked: " + String(m.text).slice(0, 400)
+        : "The reading said: " + String(m.text).slice(0, CARRY_PER_READING);
+      parts.push(chunk);
+      total += chunk.length;
+    }
+    return parts.join("\n\n");
+  }
+
+  function carryable() {
+    return S.convs.filter(function (c) {
+      return c.id !== S.activeId && c.msgs && c.msgs.some(function (m) { return m.role === "oracle" && m.text; });
+    }).slice(0, 8);
+  }
+
+  function renderCarry() {
+    var bar = $("carryBar");
+    if (!bar) return;
+    var c = activeConv();
+    var carried = c && c.carried;
+    if (carried) {
+      bar.innerHTML = '<span class="carry-chip"><b>' + esc(C.carry.carrying(carried.title)) + '</b>' +
+        '<button type="button" class="carry-drop pressable" id="carryDrop" title="' + esc(C.carry.drop) + '" aria-label="' + esc(C.carry.drop) + '">' +
+        '<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"></path></svg></button></span>';
+      $("carryDrop").addEventListener("click", function () {
+        var cur = activeConv(); if (!cur) return;
+        delete cur.carried; save(); renderCarry(); toast(C.carry.dropped);
+      });
+      return;
+    }
+    // Nothing to offer when there is no earlier conversation — an affordance
+    // that opens an empty list is worse than no affordance.
+    if (!carryable().length) { bar.innerHTML = ""; return; }
+    bar.innerHTML = '<button type="button" class="carry-open pressable" id="carryOpen" aria-haspopup="true" aria-expanded="false" title="' + esc(C.carry.openHint) + '">' +
+      '<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">' +
+      '<path d="M2.5 4.5h6l1.5 2h3.5v5.5a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1z"></path></svg>' +
+      '<span>' + esc(C.carry.open) + '</span></button>';
+    $("carryOpen").addEventListener("click", function (e) {
+      e.stopPropagation();
+      var menu = $("carryMenu");
+      if (menu.classList.contains("open")) { closeCarry(); return; }
+      renderCarryMenu();
+      menu.classList.add("open");
+      $("carryOpen").setAttribute("aria-expanded", "true");
+    });
+  }
+
+  function closeCarry() {
+    var menu = $("carryMenu");
+    if (menu) menu.classList.remove("open");
+    var btn = $("carryOpen");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  function renderCarryMenu() {
+    var menu = $("carryMenu");
+    if (!menu) return;
+    var list = carryable();
+    menu.innerHTML = '<div class="mm-head lbl">' + esc(C.carry.head) + '</div>';
+    if (!list.length) {
+      menu.insertAdjacentHTML("beforeend", '<p class="cm-empty">' + esc(C.carry.empty) + '</p>');
+      return;
+    }
+    list.forEach(function (conv) {
+      var reads = conv.msgs.filter(function (m) { return m.role === "oracle" && m.text; }).length;
+      var row = document.createElement("button");
+      row.type = "button";
+      row.className = "cm-row pressable";
+      row.innerHTML = '<span class="cm-title">' + esc(conv.title || "Untitled casting") + '</span>' +
+        '<span class="cm-meta">' + (conv.method || "") + (conv.method ? " · " : "") +
+        reads + (reads === 1 ? " reading" : " readings") + '</span>';
+      row.addEventListener("click", function () {
+        var cur = activeConv();
+        if (!cur) return;
+        cur.carried = { id: conv.id, title: conv.title || "Untitled casting", digest: carryDigest(conv) };
+        save(); closeCarry(); renderCarry(); toast(C.carry.added(cur.carried.title));
+      });
+      menu.appendChild(row);
+    });
+    menu.insertAdjacentHTML("beforeend", '<p class="cm-note">' + esc(C.carry.note) + '</p>');
+  }
+
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
-    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost);
+    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost, m.reserve);
     renderMethodMenu();
   }
   function renderMethodMenu() {
@@ -108,6 +241,7 @@
         '<span class="casting-meta">' + esc(metaMethod + (metaDate ? " · " + metaDate : "")) + '</span>';
       b.title = c.title;
       b.addEventListener("click", function () {
+        if (window.BWFigure && window.BWFigure.cancel) window.BWFigure.cancel();
         S.activeId = c.id;
         /* Returning to a reading should restore its method too. Otherwise a
            Sortis thread could reopen with a Stria composer and the next send
@@ -325,7 +459,8 @@
     // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
       var prose = mdReading(msg.text);
-      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') + '</div>' + readingDepth(msg) + readingActions();
+      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') +
+        readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
 
     // Structured (legacy interpret) — full prose + key-line and timing sections.
@@ -338,7 +473,63 @@
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
     return '<div class="reading-body">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
-      mdReading(r.reading) + keysSec + timeSec + '</div>' + readingDepth(msg) + readingActions();
+      mdReading(r.reading) + keysSec + timeSec + readingFootnote(r.reading) + '</div>' +
+      readingDepth(msg) + readingActions();
+  }
+
+  /* The caution under every finished reading. Rendered by the app rather than
+     asked of the model: a notice that matters on every reading cannot depend on
+     the model remembering to write it, and one written INSIDE the prose either
+     blunts the verdict or gets skimmed with the rest of the paragraph.
+     Language follows the reading itself — the reader is looking at that text,
+     so a footnote in another language is decoration. */
+  function readingFootnote(text) {
+    var zh = isZh(text);
+    var body = (C.readingFooter && (zh ? C.readingFooter.zh : C.readingFooter.en)) || "";
+    if (!body) return "";
+    return '<p class="rd-footnote" lang="' + (zh ? 'zh' : 'en') + '">' + esc(body) + '</p>';
+  }
+
+  /* Write the follow-up prompts from the reading that just landed, then swap
+     them into the panel already on screen.
+
+     Unbilled utility call, fired after the reading settles so it costs the
+     reader nothing in waiting. The panel is painted with the static set first,
+     so there is never a gap and never a spinner; if this returns something
+     better it replaces that section IN PLACE. Deliberately not a re-render of
+     the thread — repainting the whole conversation is what used to snap the
+     viewport back after a send, and the reader is mid-reading here. */
+  function suggestFollowUps(node, msg, conv) {
+    var PE = window.BWPromptEngine;
+    var R = PE && PE.FOLLOWUP_SUGGEST;
+    var text = msg && (msg.text || (msg.reading && msg.reading.reading));
+    if (!R || !text || !(window.claude && typeof window.claude.complete === "function")) return;
+    if (msg.prompts) return;
+
+    var asked = "";
+    if (conv && conv.msgs) {
+      for (var i = conv.msgs.length - 1; i >= 0; i--) {
+        if (conv.msgs[i] && conv.msgs[i].role === "user") { asked = conv.msgs[i].text || ""; break; }
+      }
+    }
+    var methodLabel = (msg.methodId === "sortis" || msg.method === "Sortis 6") ? "Sortis 6" : "Stria 64";
+    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, R.timeoutMs); });
+    var run = window.claude.complete({
+      role: "utility", model: R.model, max_tokens: R.maxTokens,
+      messages: [{ role: "user", content: R.build(asked, text, methodLabel) }]
+    }).then(function (r) { return R.read(r); }).catch(function () { return null; });
+
+    Promise.race([run, guard]).then(function (made) {
+      if (!made || !made.length) return;          // keep the static set, say nothing
+      msg.prompts = made;
+      try { save(); } catch (e) {}
+      var old = node && node.querySelector(".rd-depth");
+      if (!old) return;
+      var frag = document.createElement("div");
+      frag.innerHTML = readingDepth(msg);
+      var fresh = frag.firstChild;
+      if (fresh) old.parentNode.replaceChild(fresh, old);
+    });
   }
 
   /* A reading should open the next useful layer, not end as a block of prose.
@@ -348,7 +539,11 @@
     var continued = !!(msg && msg.followup);
     var sortis = !!(msg && (msg.methodId === "sortis" || msg.method === "Sortis 6"));
     var methodLabel = sortis ? "Sortis 6" : "Stria 64";
-    var prompts = continued ? [
+    // Written from the reading when suggestFollowUps() managed it. The static
+    // set below is the floor, not the intent: it asks nothing this particular
+    // reading raised, so it is what a reader sees only when generation failed.
+    var made = msg && Array.isArray(msg.prompts) && msg.prompts.length >= 3 ? msg.prompts : null;
+    var prompts = made || (continued ? [
       ["Challenge", "What assumption in this reading is weakest?"],
       ["Concrete", "How would this show up in practice?"],
       ["Alternative", "What is the strongest alternative reading?"],
@@ -369,18 +564,21 @@
       ["Blind spot", "What am I not seeing yet in this situation?"],
       ["Near term", "What is most likely to change first?"],
       ["Next move", "What is mine to do now?"]
-    ]);
-    return '<section class="rd-depth" aria-label="Ask a follow-up using the same ' + methodLabel + ' hexagram">' +
-      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + methodLabel + ' · Same hexagram</span>' +
-      '<h4>' + (continued ? 'Check the previous answer against another constraint.' : (sortis ? 'Inspect the change before you decide.' : 'Inspect the current structure before you decide.')) + '</h4>' +
-      '<p>Select a prompt to place it in the composer. You can edit it before submitting.</p></div>' +
+    ]));
+    // The panel speaks whatever the prompts on it speak.
+    var zhPanel = isZh(prompts.map(function (p) { return p[1]; }).join(""));
+    var L = (C.followUp.panel && (zhPanel ? C.followUp.panel.zh : C.followUp.panel.en)) || C.followUp.panel.en;
+    return '<section class="rd-depth" lang="' + (zhPanel ? 'zh' : 'en') + '" aria-label="' + esc(L.aria(methodLabel)) + '">' +
+      '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + esc(L.kicker(methodLabel)) + '</span>' +
+      '<h4>' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '</h4>' +
+      '<p>' + esc(L.hint) + '</p></div>' +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
           '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
           '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h9M9 4.5 12.5 8 9 11.5"></path></svg>' +
         '</button>';
       }).join("") + '</div>' +
-      '<p class="rd-depth-note">' + esc(C.followUp.promptsNote(A.followCost(sortis ? 'sortis' : 'stria'))) + '</p>' +
+      '<p class="rd-depth-note">' + esc(L.note(A.followCost(sortis ? 'sortis' : 'stria'))) + '</p>' +
     '</section>';
   }
 
@@ -403,7 +601,8 @@
     return figureHTML(msg) + verdictHTML(msg);
   }
 
-  function renderThread() {
+  function renderThread(opts) {
+    opts = opts || {};
     var c = activeConv();
     var titleText = c ? c.title : "New casting";
     $("convTitle").textContent = titleText;
@@ -428,7 +627,7 @@
     c.msgs.forEach(function (m, i) {
       if (m.role === "user") {
         var u = document.createElement("div");
-        u.className = "msg-user";
+        u.className = "msg-user" + (opts.animateLast && i === c.msgs.length - 1 ? " is-new" : "");
         u.textContent = m.text;
         threadInner.appendChild(u);
       } else {
@@ -444,11 +643,16 @@
         }
       }
     });
+    /* Only the latest figure keeps the quiet living state. Historical figures
+       remain fully legible but static, so a long thread does not accumulate
+       dozens of perpetual SVG animations. */
+    var liveFigures = threadInner.querySelectorAll(".bw-af-fig.bw-af-live");
+    if (liveFigures.length) liveFigures[liveFigures.length - 1].classList.add("bw-motion-current");
     var t = $("thread");
     t.scrollTop = t.scrollHeight;
   }
 
-  function renderAll() { renderUnits(); renderAccount(); renderMethod(); renderList(); renderThread(); }
+  function renderAll(opts) { renderUnits(); renderAccount(); renderMethod(); renderCarry(); renderList(); renderThread(opts); }
 
   function toast(msg) {
     toastEl.textContent = msg;
@@ -490,17 +694,73 @@
      last reading. Capped to the last few exchanges to bound token growth;
      the model is never asked to recast (§MOVE in meta_rules already covers
      that), it just now gets to see what was said. */
-  function buildHistory(conv, maxTurns) {
-    if (!conv || !conv.msgs || conv.msgs.length < 2) return [];
+  /* freshCasting: this send is drawing a NEW hexagram, so everything already in
+     the thread belongs to a DIFFERENT casting. Left unmarked it arrives as the
+     assistant's own prior turns — the strongest possible signal that those
+     conclusions are established — and the new reading inherits them. Worse than
+     repetition: a 生克 relation read on the old board gets carried across and
+     re-used as a finding about the new question, which is a claim nothing on the
+     board in front of it supports.
+     Follow-ups pass false, because there the prior turns ARE this casting's own
+     conversation and carry legitimately. */
+  function buildHistory(conv, maxTurns, freshCasting) {
+    if (!conv || !conv.msgs) return [];
     var prior = conv.msgs.slice(0, -1); // exclude the question just pushed for this send
     var out = [];
+    // A conversation carried in from elsewhere rides at the head, marked as
+    // background. It is NOT trimmed with the rest: the reader chose it
+    // deliberately, and dropping it to respect a turn budget would silently
+    // undo what they asked for.
+    // Everything pushed before the turns themselves is preamble: it is framing,
+    // not conversation, and the turn budget must never eat it. Counted rather
+    // than hardcoded — the count was 2 when only the carried block existed, and
+    // adding the provenance header silently pushed that header into the
+    // trimmable region, so it was dropped from exactly the long threads where
+    // findings have the most room to leak across castings.
+    if (conv.carried && conv.carried.digest) {
+      out.push({ role: "user", content:
+        "[CARRIED CONTEXT — an earlier conversation of theirs, titled «" + conv.carried.title +
+        "». Background only: it tells you what they have already asked and been told, so you " +
+        "do not make them repeat it. Do NOT re-read that earlier hexagram or treat its casting " +
+        "as evidence for this question — this question has its own casting.]\n\n" +
+        conv.carried.digest });
+      out.push({ role: "assistant", content:
+        "Understood — I have their earlier conversation as background and will read only the " +
+        "casting in front of me." });
+    }
+    if (freshCasting && prior.some(function (m) { return m.role === "oracle"; })) {
+      out.push({ role: "user", content:
+        "[EARLIER CASTINGS IN THIS THREAD — background only. Each reading below was drawn for its " +
+        "OWN question on its OWN hexagram. Use them so you do not repeat yourself and so you know " +
+        "what has already been asked. Do NOT carry their conclusions into this reading, do NOT " +
+        "count agreement with them as confirmation, and above all do NOT reuse a 生克/合冲/比和 " +
+        "reading made there: those relations were mapped to human meaning for a DIFFERENT question, " +
+        "and the same relation means something else here. This question has its own casting — read " +
+        "that one.]" });
+      out.push({ role: "assistant", content:
+        "Understood — earlier castings are background. I will read only the hexagram in front of me " +
+        "and will not treat their findings as evidence." });
+    }
+    var preamble = out.length;
     for (var i = 0; i < prior.length; i++) {
       var m = prior[i];
       if (m.role === "user") out.push({ role: "user", content: m.text });
-      else if (m.role === "oracle") out.push({ role: "assistant", content: String(m.text || "").slice(0, 2000) });
+      else if (m.role === "oracle") {
+        var body = String(m.text || "").slice(0, 2000);
+        // Name the hexagram each earlier reading belongs to, so a claim can
+        // always be traced back to the casting that actually produced it.
+        var sp = m.spec;
+        var tag = freshCasting
+          ? "[from an earlier casting" + (sp && sp.name ? " — " + sp.name +
+              (sp.transformedName ? " → " + sp.transformedName : "") : "") + ", background only]\n"
+          : "";
+        out.push({ role: "assistant", content: tag + body });
+      }
     }
+    var head = out.slice(0, preamble), tail = out.slice(preamble);
     var maxMsgs = (maxTurns || 3) * 2;
-    return out.length > maxMsgs ? out.slice(out.length - maxMsgs) : out;
+    if (tail.length > maxMsgs) tail = tail.slice(tail.length - maxMsgs);
+    return head.concat(tail);
   }
 
   /* ── follow-up vs new-question detection (Sonnet 5) ──
@@ -510,7 +770,7 @@
      matter that deserves a fresh hexagram (NEW → full cast, in THIS thread,
      history preserved). Unbilled utility call; 4s timeout or any failure
      defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
-  function detectIntent(question, lastQuestion, lastReading) {
+  function detectIntent(question, lastQuestion, lastReading, lastBoard) {
     var PE = window.BWPromptEngine;
     var R = PE && PE.INTENT_ROUTER;
     // No engine, or no proxy to ask — treat it as a follow-up, the cheaper and
@@ -524,8 +784,17 @@
     var run = window.claude.complete({
       role: "utility", model: R.model, max_tokens: R.maxTokens,
       messages: [{ role: "user", content: R.build(question, lastQuestion, lastReading) }]
-    }).then(function (r) { return R.read(r); })
-      .catch(function () { return R.fallback; });
+    }).then(function (r) {
+      var parsed = R.read(r);
+      // Same matter is only half the test. A message can be plainly the same
+      // matter and still rest its whole weight on a line the previous board
+      // barely shows — reusing that casting answers confidently off evidence
+      // that isn't there. boardCarries() settles it from computed data.
+      if (R.decide && PE.boardCarries && lastBoard) {
+        return R.decide(parsed, lastBoard, PE.boardCarries).intent;
+      }
+      return parsed && parsed.intent ? parsed.intent : R.fallback;
+    }).catch(function () { return R.fallback; });
     return Promise.race([run, guard]);
   }
 
@@ -534,11 +803,27 @@
      every character made Chromium parse and replace the entire markdown tree
      many times per second, then the old reveal pass animated it all again. */
   function makeTypewriter(el) {
-    var target = "", timer = null, cancelled = false;
+    var target = "", timer = null, cancelled = false, painted = "";
+    var line = document.createElement("p");
+    line.className = "rd-para rd-stream-text";
+    var textNode = document.createTextNode("");
+    line.appendChild(textNode);
+    el.appendChild(line);
+    function readableStreamText(value) {
+      return String(value || "")
+        .replace(/^#{1,6}\s*/gm, "")
+        .replace(/\*\*/g, "")
+        .replace(/(^|[^*])\*([^*\n]*)\*?/g, "$1$2")
+        .replace(/\|/g, "")
+        .replace(/^[-+]\s+/gm, "• ");
+    }
     function paint() {
       timer = null;
       if (cancelled) return;
-      el.innerHTML = mdReading(target) || '<p class="rd-para"></p>';
+      var next = readableStreamText(target);
+      if (next.indexOf(painted) === 0) textNode.appendData(next.slice(painted.length));
+      else textNode.data = next;
+      painted = next;
     }
     function schedule() {
       if (!timer) timer = setTimeout(paint, 96);
@@ -550,7 +835,7 @@
       },
       finish: function (cb) {
         if (timer) { clearTimeout(timer); timer = null; }
-        paint();
+        if (!cancelled) el.innerHTML = mdReading(target) || '<p class="rd-para"></p>';
         if (cb) cb();
       },
       cancel: function () { cancelled = true; if (timer) { clearTimeout(timer); timer = null; } }
@@ -802,7 +1087,8 @@
     if (candidate && !decided && !recastReq) {
       busy = true;
       var sb0 = $("sendBtn"); if (sb0) sb0.disabled = true;
-      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text).then(function (intent) {
+      detectIntent(text, lastQuestion || (convNow && convNow.title), lastCast.text,
+        boardOf(lastCast, m.id)).then(function (intent) {
         busy = false;
         if (sb0) sb0.disabled = false;
         send(text, intent === "new" ? "new" : "followup");
@@ -811,12 +1097,11 @@
     }
     if (recastReq && !decided) decided = "new";
     var isFollowup = candidate && decided !== "new";
-    var needed = isFollowup ? A.followCost(m.id) : m.cost;
-    /* Any balance at all admits a reading, and the reading you start always
-       finishes — it is billed for what it used when it is done, even if that
-       empties the balance. You are stopped at the next question, not part-way
-       through this one. */
-    if (S.units <= 0) {
+    var needed = isFollowup ? m.followReserve : m.reserve;
+    /* Match the server admission maximum so a request never appears to start
+       locally and then fails at the billing gate. The hold is not painted as a
+       balance jump; the final measured settlement arrives once with bw_meta. */
+    if (S.units < needed) {
       pulseLedger();
       toast(C.errors.outOfUnits);
       return;
@@ -831,10 +1116,9 @@
     c.msgs.push({ role: "user", text: text });
     save();                                 // persist the question first
     clearDraft();                           // the composed question is now spent
-    /* Nothing is deducted here. The server bills the finished reading for the
-       tokens it actually used and returns the new balance, so the figure moves
-       once, downward, by the real amount. */
-    renderAll();
+    /* The server reserves the maximum atomically. The local number stays still
+       during generation and reconciles once to the final measured charge. */
+    renderAll({ animateLast: true });
 
     if (isFollowup) { followupFlow(c, text, m, lastCast, needed); return; }
 
@@ -881,7 +1165,7 @@
     // The full annotated board VISUAL stays a Sortis-only treatment.
     var sortisBoard = m.id === "sortis" ? castBoard : null;
     var live = document.createElement("article");
-    live.className = "reading casting-live";
+    live.className = "reading casting-live is-new";
     live.setAttribute("aria-live", "polite");
     var castBox = document.createElement("div");
     castBox.className = "reading-fig" + (sortisBoard ? " is-full" : "");
@@ -940,7 +1224,7 @@
     });
 
     try { window.__bwReadingIncomplete = false; } catch (e) {}
-    var history = buildHistory(c, 3);
+    var history = buildHistory(c, 3, true);   // fresh hexagram — demote what came before
     // a recast runs the model HOT (temperature ≈ 1) so "再起卦" genuinely gives
     // a fresh draw, not a near-copy of the last reading.
     var castTemp = recastReq ? 1 : null;
@@ -1065,18 +1349,10 @@
 
     // ground the follow-up in the SAME board that was cast: sortis stores it
     // on the message; stria stores only the spec — recompute from its lines.
-    var board = lastCast.board || null;
-    if (!board && window.BWLiuYao && lastCast.spec && lastCast.spec.lines && lastCast.spec.lines.length === 6) {
-      try {
-        board = window.BWLiuYao.computeBoard({
-          lines: lastCast.spec.lines, changeIdx: lastCast.spec.changeIdx || [],
-          method: m.id, name: lastCast.spec.name, transformedName: lastCast.spec.transformedName
-        });
-      } catch (e) { board = null; }
-    }
+    var board = boardOf(lastCast, m.id);
 
     var live = document.createElement("article");
-    live.className = "reading casting-live";
+    live.className = "reading casting-live is-new";
     live.setAttribute("aria-live", "polite");
     var streamPreview = document.createElement("div");
     streamPreview.className = "reading-body reading-streaming";
@@ -1089,7 +1365,7 @@
     thread.scrollTop = thread.scrollHeight;
 
     try { window.__bwReadingIncomplete = false; window.__bwLastCharged = null; } catch (e) {}
-    var history = buildHistory(c, 3);
+    var history = buildHistory(c, 3, false);  // same casting — its own conversation carries
     var run = routedReading(text, lastCast.spec, board, m.id, history, onDelta, "followup", null, c.title || text);
 
     function release() {
@@ -1161,6 +1437,8 @@
       var bodyEl = node.querySelector(".reading-body");
       if (bodyEl) bodyEl.classList.add("bw-streamed");
       resolve();
+      // after the reader has the reading — never gating it
+      try { suggestFollowUps(node, msg, convById(convId)); } catch (e) {}
     });
   }
 
@@ -1189,9 +1467,12 @@
   });
   document.addEventListener("click", function (e) {
     if (!methodMenu.contains(e.target) && e.target !== methodChip) closeMethod();
+    var cMenu = $("carryMenu"), cBtn = $("carryOpen");
+    if (cMenu && !cMenu.contains(e.target) && e.target !== cBtn && !(cBtn && cBtn.contains(e.target))) closeCarry();
   });
 
   $("newCast").addEventListener("click", function () {
+    if (window.BWFigure && window.BWFigure.cancel) window.BWFigure.cancel();
     busy = false;
     $("sendBtn").disabled = false;
     S.activeId = null;
@@ -1376,7 +1657,7 @@
       var max = th.scrollHeight - th.clientHeight;
       if (max < 240) { bar.classList.remove("on"); return; }
       bar.classList.add("on");
-      fill.style.width = Math.min(100, (th.scrollTop / max) * 100) + "%";
+      fill.style.transform = "scaleX(" + Math.min(1, th.scrollTop / max).toFixed(4) + ")";
     }
     function onScroll() { if (!raf) raf = requestAnimationFrame(paint); }
     th.addEventListener("scroll", onScroll, { passive: true });

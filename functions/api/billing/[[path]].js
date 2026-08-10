@@ -11,15 +11,18 @@
 //                                  from subscription.paid, never here)
 //   subscription.active → record/refresh the subscription row + plan
 //   subscription.paid   → THE grant event: plan's monthly units, once per event
+//   refund.created / dispute.created → reverse the corresponding grant, capped
+//                                      at the account's remaining balance
 //   subscription.canceled / expired → downgrade to free (units are kept)
 //   subscription.scheduled_cancel   → mark canceling; plan stays until period end
 //
 // Env: CREEM_API_KEY, CREEM_WEBHOOK_SECRET (Developers → Webhook),
-//      CREEM_PRODUCT_PRO / CREEM_PRODUCT_PREMIUM (reverse product→plan map).
+//      CREEM_PRODUCT_PROMONTHLY / PROANNUAL and
+//      CREEM_PRODUCT_PREMIUMMONTHLY / PREMIUMANNUAL (product→plan map).
 
 import { sessionFromRequest } from '../../_lib/session.js';
 import {
-  getUser, grantUnits, PLAN_GRANT,
+  getUser, grantUnits, revokeUnits, PLAN_GRANT,
   recordBillingEvent, deleteBillingEvent, upsertSubscription, getSubscriptionByUser, getSubscriptionById, setPlanQuiet
 } from '../../_lib/db.js';
 import { creemBase } from '../checkout.js';
@@ -57,7 +60,8 @@ export async function onRequest(context) {
     if (!sub) return json({ error: 'no active subscription' }, 404);
     const r = await fetch(creemBase(env) + '/v1/subscriptions/' + encodeURIComponent(sub.id) + '/cancel', {
       method: 'POST',
-      headers: { 'x-api-key': env.CREEM_API_KEY, 'content-type': 'application/json' }
+      headers: { 'x-api-key': env.CREEM_API_KEY, 'content-type': 'application/json' },
+      body: JSON.stringify({ mode: 'scheduled', onExecute: 'cancel' })
     });
     if (!r.ok) {
       const detail = await r.text().catch(() => '');
@@ -102,7 +106,7 @@ async function webhook(request, env, db) {
 
   // Resolve who this event belongs to: metadata we planted at checkout, or the
   // subscription row we stored on an earlier event.
-  const meta = obj.metadata || (obj.subscription && obj.subscription.metadata) || {};
+  const meta = obj.metadata || (obj.checkout && obj.checkout.metadata) || (obj.subscription && obj.subscription.metadata) || {};
   let userId = meta.userId || null;
   const subObj = type === 'checkout.completed' ? (obj.subscription || null) : obj;
   const subId = subObj && subObj.object === 'subscription' ? subObj.id : (obj.subscription && obj.subscription.id) || null;
@@ -167,14 +171,38 @@ async function webhook(request, env, db) {
     return json({ ok: true }, 200);
   }
 
+  // A refund or chargeback reverses the corresponding grant, but never creates
+  // a negative balance. For a partial refund, revoke the same proportion of
+  // the original units. Signed, idempotent webhook delivery is the only entry
+  // point, so replayed events cannot revoke twice.
+  if (type === 'refund.created' || type === 'dispute.created') {
+    const sku = String(meta.sku || '').toLowerCase();
+    const packUnits = sku.indexOf('pack') === 0
+      ? (parseInt(sku.slice(4), 10) || 0)
+      : packUnitsForProduct(env, productId);
+    const reversedPlan = plan || (subId && (await getSubscriptionById(db, subId) || {}).plan);
+    const originalGrant = packUnits || (reversedPlan && PLAN_GRANT[reversedPlan]
+      ? PLAN_GRANT[reversedPlan] * (billingCycle === 'annual' ? 12 : 1)
+      : 0);
+    const paid = Number(obj.transaction && (obj.transaction.amount_paid || obj.transaction.amount)) || Number(obj.order && obj.order.amount) || 0;
+    const reversed = type === 'refund.created' ? Number(obj.refund_amount || 0) : Number(obj.amount || paid || 0);
+    const units = paid > 0 && reversed > 0
+      ? Math.min(originalGrant, Math.max(1, Math.round(originalGrant * reversed / paid)))
+      : originalGrant;
+    if (units > 0) await revokeUnits(db, userId, units, (type === 'refund.created' ? 'refund:creem:' : 'dispute:creem:') + (obj.id || eventKey));
+    const subscriptionEnded = obj.subscription && (obj.subscription.status === 'canceled' || obj.subscription.status === 'expired');
+    if (subscriptionEnded) await setPlanQuiet(db, userId, 'free');
+    return json({ ok: true, unitsReversed: units }, 200);
+  }
+
   // A renewal charge failed and Creem is retrying. Keep the plan and the units
   // (they may well pay) but record the real status, so /status and the settings
   // page stop claiming the subscription is healthy. canceled/expired below is
   // what actually downgrades.
-  if (type === 'subscription.past_due') {
+  if (type === 'subscription.past_due' || type === 'subscription.unpaid') {
     if (subId) {
       const row = await getSubscriptionById(db, subId);
-      if (row) await upsertSubscription(db, { id: subId, userId, provider: PROVIDER, customerId, plan: row.plan, status: 'past_due', periodEnd: toTs(periodEnd) });
+      if (row) await upsertSubscription(db, { id: subId, userId, provider: PROVIDER, customerId, plan: row.plan, status: type === 'subscription.unpaid' ? 'unpaid' : 'past_due', periodEnd: toTs(periodEnd) });
     }
     return json({ ok: true }, 200);
   }
@@ -212,6 +240,12 @@ function planForProduct(env, productId) {
   if (productId === env.CREEM_PRODUCT_PROMONTHLY || productId === env.CREEM_PRODUCT_PROANNUAL || productId === env.CREEM_PRODUCT_PRO) return 'pro';
   if (productId === env.CREEM_PRODUCT_PREMIUMMONTHLY || productId === env.CREEM_PRODUCT_PREMIUMANNUAL || productId === env.CREEM_PRODUCT_PREMIUM) return 'premium';
   return null;
+}
+function packUnitsForProduct(env, productId) {
+  if (!productId) return 0;
+  const packs = [7500, 15000, 30000, 75000];
+  for (const amount of packs) if (productId === env['CREEM_PRODUCT_PACK' + amount]) return amount;
+  return 0;
 }
 function cycleForSku(sku) {
   sku = String(sku || '').toLowerCase();

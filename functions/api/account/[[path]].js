@@ -1,9 +1,6 @@
 // functions/api/account/[[path]].js — the account API (server source of truth).
 // One catch-all dispatches every /api/account/* route by method + path.
 //   GET    /api/account/me              → { signedIn, user, castings }
-//   POST   /api/account/spend           { cost, reason }      → deduct units
-//   POST   /api/account/grant           { amount, reason }    → add units (top-up)
-//   POST   /api/account/plan            { plan }              → switch plan + grant
 //   GET    /api/account/castings        → history list
 //   POST   /api/account/castings        { id,title,method,payload }
 //   DELETE /api/account/castings/:id    → remove one
@@ -14,8 +11,7 @@
 
 import { sessionFromRequest, clearCookie } from '../../_lib/session.js';
 import {
-  getUser, publicUser, spendUnits, grantUnits, setPlan,
-  listCastings, saveCasting, deleteCasting, METHOD_COST
+  getUser, publicUser, listCastings, saveCasting, deleteCasting
 } from '../../_lib/db.js';
 
 const CORS = {
@@ -52,28 +48,6 @@ export async function onRequest(context) {
   // everything below requires a session
   if (!sess) return json({ error: 'not signed in' }, 401);
   const uid = sess.uid;
-
-  if (route === 'spend' && request.method === 'POST') {
-    const b = await body(request);
-    const cost = Number(b.cost) || (METHOD_COST[b.method] || 0);
-    if (cost <= 0) return json({ error: 'bad cost' }, 400);
-    const r = await spendUnits(db, uid, cost, b.reason || ('cast:' + (b.method || 'stria')));
-    return json(r, r.ok ? 200 : 402);
-  }
-
-  if (route === 'grant' && request.method === 'POST') {
-    const b = await body(request);
-    const amount = Number(b.amount) || 0;
-    if (amount <= 0) return json({ error: 'bad amount' }, 400);
-    const r = await grantUnits(db, uid, amount, b.reason || 'topup');
-    return json(r, r.ok ? 200 : 400);
-  }
-
-  if (route === 'plan' && request.method === 'POST') {
-    const b = await body(request);
-    const r = await setPlan(db, uid, String(b.plan || ''));
-    return json(r, r.ok ? 200 : 400);
-  }
 
   if (route === 'castings' && request.method === 'GET') {
     return json({ castings: await listCastings(db, uid, 50) }, 200);

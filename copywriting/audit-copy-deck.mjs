@@ -1,8 +1,11 @@
 // Check every block in the site-copy deck against the file it claims to come
 // from. A block is stale when its text no longer appears anywhere in that file.
 import { readFileSync, existsSync } from 'node:fs';
-const REPO = '/home/user/final/';
-const deck = readFileSync(REPO + 'copywriting/BOURNEWISE_ALL_SITE_COPY.md', 'utf8');
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const at = file => resolve(REPO, file);
+const deck = readFileSync(at('copywriting/BOURNEWISE_ALL_SITE_COPY.md'), 'utf8');
 
 const blocks = [];
 const re = /^@@ (\S+)\n<!-- source: ([^|]+)\| kind: ([^>]*?)-->\n([\s\S]*?)(?=\n@@ |\n## |\n*$)/gm;
@@ -15,7 +18,7 @@ const cache = new Map();
 function fileText(path) {
   const file = path.split(':')[0].trim();
   if (!cache.has(file)) {
-    cache.set(file, existsSync(REPO + file) ? readFileSync(REPO + file, 'utf8') : null);
+    cache.set(file, existsSync(at(file)) ? readFileSync(at(file), 'utf8') : null);
   }
   return cache.get(file);
 }
@@ -25,14 +28,17 @@ function fileText(path) {
 const norm = s => s
   .replace(/&mdash;/g, '—').replace(/&middot;/g, '·').replace(/&amp;/g, '&')
   .replace(/&hellip;/g, '…').replace(/&rarr;/g, '→').replace(/&times;/g, '×')
+  .replace(/&nbsp;/g, ' ')
+  .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+  .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
   .replace(/[’‘]/g, "'").replace(/[“”]/g, '"')
-  .replace(/\s+/g, ' ').trim();
+  .replace(/\s+/g, ' ').trim().toLowerCase();
 
 let ok = 0, stale = [], missingFile = 0, skipped = 0;
 for (const b of blocks) {
   const src = fileText(b.source);
   if (src === null) { missingFile++; continue; }
-  if (b.kind === 'template') { skipped++; continue; }   // built at runtime from parts
+  if (b.source.startsWith('copy.js') || b.kind === 'template') { skipped++; continue; }
   if (!b.text || b.text.length < 4) { skipped++; continue; }
   // placeholders can't be matched literally
   const probe = norm(b.text).split(/\{\{[a-z]+\}\}/i)[0].trim();

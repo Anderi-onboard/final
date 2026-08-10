@@ -16,247 +16,251 @@ screen-reader name).
 Runtime strings live in `copy.js` and appear in their own section at the end;
 they are functions of live numbers, so they are shown as templates.
 
-**459 blocks** across 10 pages, plus the runtime copy module.
+**457 blocks** across 10 pages, plus the runtime copy module.
 
 ---
 
 ## 1. index.html
 
-*The app — sidebar, casting workbench, composer* — 57 blocks
+*The app — sidebar, casting workbench, composer* — 58 blocks
 
 @@ s01.index.html.001
 <!-- source: index.html:7 | kind: title -->
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.002
-<!-- source: index.html:687 | kind: aria-label -->
+<!-- source: index.html:731 | kind: aria-label -->
 New casting
 
 @@ s01.index.html.003
-<!-- source: index.html:688 | kind: aria-label -->
+<!-- source: index.html:732 | kind: aria-label -->
 BourneWise logomark
 
 @@ s01.index.html.004
-<!-- source: index.html:691 | kind: aria-label -->
+<!-- source: index.html:735 | kind: aria-label -->
 Collapse sidebar
 
 @@ s01.index.html.005
-<!-- source: index.html:701 | kind: aria-label -->
+<!-- source: index.html:745 | kind: aria-label -->
 Reading history
 
 @@ s01.index.html.006
-<!-- source: index.html:719 | kind: aria-label -->
+<!-- source: index.html:763 | kind: aria-label -->
 Sign in to claim 500 free units
 
 @@ s01.index.html.007
-<!-- source: index.html:720 | kind: aria-label -->
+<!-- source: index.html:764 | kind: aria-label -->
 Dismiss
 
 @@ s01.index.html.008
-<!-- source: index.html:739 | kind: aria-label -->
+<!-- source: index.html:783 | kind: aria-label -->
 Open menu
 
 @@ s01.index.html.009
-<!-- source: index.html:754 | kind: aria-label -->
+<!-- source: index.html:799 | kind: aria-label -->
 Open the five-minute walk-through
 
 @@ s01.index.html.010
-<!-- source: index.html:774 | kind: aria-label -->
-Casting question
+<!-- source: index.html:819 | kind: aria-label -->
+Earlier castings to carry
 
 @@ s01.index.html.011
-<!-- source: index.html:775 | kind: aria-label -->
-Cast
+<!-- source: index.html:823 | kind: aria-label -->
+Casting question
 
 @@ s01.index.html.012
-<!-- source: index.html:780 | kind: aria-label -->
-Casting method
+<!-- source: index.html:824 | kind: aria-label -->
+Cast
 
 @@ s01.index.html.013
-<!-- source: index.html:774 | kind: placeholder -->
-Describe the situation, then ask one clear question…
+<!-- source: index.html:829 | kind: aria-label -->
+Casting method
 
 @@ s01.index.html.014
-<!-- source: index.html:691 | kind: title -->
-Collapse sidebar
+<!-- source: index.html:823 | kind: placeholder -->
+Describe the situation, then ask one clear question…
 
 @@ s01.index.html.015
-<!-- source: index.html:739 | kind: title -->
-Menu
+<!-- source: index.html:735 | kind: title -->
+Collapse sidebar
 
 @@ s01.index.html.016
-<!-- source: index.html:745 | kind: title -->
-How answers are generated
+<!-- source: index.html:783 | kind: title -->
+Menu
 
 @@ s01.index.html.017
-<!-- source: index.html:773 | kind: title -->
-Change casting method
+<!-- source: index.html:789 | kind: title -->
+How answers are generated
 
 @@ s01.index.html.018
+<!-- source: index.html:822 | kind: title -->
+Change casting method
+
+@@ s01.index.html.019
 <!-- source: index.html:7 | kind: text -->
 BourneWise — Hexagram-based decision analysis
 
-@@ s01.index.html.019
-<!-- source: index.html:689 | kind: text -->
+@@ s01.index.html.020
+<!-- source: index.html:733 | kind: text -->
 BourneWise
 
-@@ s01.index.html.020
-<!-- source: index.html:698 | kind: text -->
+@@ s01.index.html.021
+<!-- source: index.html:742 | kind: text -->
 New casting
 
-@@ s01.index.html.021
-<!-- source: index.html:702 | kind: text -->
+@@ s01.index.html.022
+<!-- source: index.html:746 | kind: text -->
 Reading history
 
-@@ s01.index.html.022
-<!-- source: index.html:707 | kind: text -->
+@@ s01.index.html.023
+<!-- source: index.html:751 | kind: text -->
 Available units
 
-@@ s01.index.html.023
-<!-- source: index.html:708 | kind: text -->
+@@ s01.index.html.024
+<!-- source: index.html:752 | kind: text -->
 Usage
 
-@@ s01.index.html.024
-<!-- source: index.html:711 | kind: text -->
+@@ s01.index.html.025
+<!-- source: index.html:755 | kind: text -->
 —
 
-@@ s01.index.html.025
-<!-- source: index.html:712 | kind: text -->
+@@ s01.index.html.026
+<!-- source: index.html:756 | kind: text -->
 units
 
-@@ s01.index.html.026
-<!-- source: index.html:715 | kind: text -->
+@@ s01.index.html.027
+<!-- source: index.html:759 | kind: text -->
 Prepaid balance · no expiry
 
-@@ s01.index.html.027
-<!-- source: index.html:716 | kind: text -->
+@@ s01.index.html.028
+<!-- source: index.html:760 | kind: text -->
 Get units
 
-@@ s01.index.html.028
-<!-- source: index.html:716 | kind: text -->
+@@ s01.index.html.029
+<!-- source: index.html:760 | kind: text -->
 →
 
-@@ s01.index.html.029
-<!-- source: index.html:720 | kind: text -->
+@@ s01.index.html.030
+<!-- source: index.html:764 | kind: text -->
 ×
 
-@@ s01.index.html.030
-<!-- source: index.html:721 | kind: text -->
+@@ s01.index.html.031
+<!-- source: index.html:765 | kind: text -->
 First reading?
 
-@@ s01.index.html.031
-<!-- source: index.html:721 | kind: text -->
+@@ s01.index.html.032
+<!-- source: index.html:765 | kind: text -->
 Sign in to claim
 
-@@ s01.index.html.032
-<!-- source: index.html:721 | kind: text -->
+@@ s01.index.html.033
+<!-- source: index.html:765 | kind: text -->
 500 free units
 
-@@ s01.index.html.033
-<!-- source: index.html:726 | kind: text -->
+@@ s01.index.html.034
+<!-- source: index.html:770 | kind: text -->
 Guest
 
-@@ s01.index.html.034
-<!-- source: index.html:726 | kind: text -->
+@@ s01.index.html.035
+<!-- source: index.html:770 | kind: text -->
 Not signed in
 
-@@ s01.index.html.035
-<!-- source: index.html:730 | kind: text -->
+@@ s01.index.html.036
+<!-- source: index.html:774 | kind: text -->
 Sign in to sync your balance and readings
 
-@@ s01.index.html.036
-<!-- source: index.html:731 | kind: text -->
+@@ s01.index.html.037
+<!-- source: index.html:775 | kind: text -->
 Plans & units
 
-@@ s01.index.html.037
-<!-- source: index.html:731 | kind: text -->
+@@ s01.index.html.038
+<!-- source: index.html:775 | kind: text -->
 Plans
 
-@@ s01.index.html.038
-<!-- source: index.html:732 | kind: text -->
+@@ s01.index.html.039
+<!-- source: index.html:776 | kind: text -->
 Settings
 
-@@ s01.index.html.039
-<!-- source: index.html:733 | kind: text -->
+@@ s01.index.html.040
+<!-- source: index.html:777 | kind: text -->
 Sign out
 
-@@ s01.index.html.040
-<!-- source: index.html:744 | kind: text -->
+@@ s01.index.html.041
+<!-- source: index.html:788 | kind: text -->
 — units
 
-@@ s01.index.html.041
-<!-- source: index.html:747 | kind: text -->
+@@ s01.index.html.042
+<!-- source: index.html:791 | kind: text -->
 We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.
 
-@@ s01.index.html.042
-<!-- source: index.html:749 | kind: text -->
+@@ s01.index.html.043
+<!-- source: index.html:793 | kind: text -->
 The method
 
-@@ s01.index.html.043
-<!-- source: index.html:750 | kind: text -->
+@@ s01.index.html.044
+<!-- source: index.html:794 | kind: text -->
 Why BourneWise
 
-@@ s01.index.html.044
-<!-- source: index.html:750 | kind: text -->
+@@ s01.index.html.045
+<!-- source: index.html:794 | kind: text -->
 Why
 
-@@ s01.index.html.045
-<!-- source: index.html:756 | kind: text -->
+@@ s01.index.html.046
+<!-- source: index.html:801 | kind: text -->
 How does this work?
 
-@@ s01.index.html.046
-<!-- source: index.html:756 | kind: text -->
+@@ s01.index.html.047
+<!-- source: index.html:801 | kind: text -->
 See how casting, interpretation, and billing fit together.
 
-@@ s01.index.html.047
-<!-- source: index.html:765 | kind: text -->
+@@ s01.index.html.048
+<!-- source: index.html:810 | kind: text -->
 Describe the situation and ask one specific question.
 
-@@ s01.index.html.048
-<!-- source: index.html:773 | kind: text -->
+@@ s01.index.html.049
+<!-- source: index.html:822 | kind: text -->
 Stria 64
 
-@@ s01.index.html.049
-<!-- source: index.html:779 | kind: text -->
+@@ s01.index.html.050
+<!-- source: index.html:828 | kind: text -->
 Enter to submit · Shift+Enter for a new line
 
-@@ s01.index.html.050
-<!-- source: index.html:779 | kind: text -->
+@@ s01.index.html.051
+<!-- source: index.html:828 | kind: text -->
 Follow-ups reuse the current hexagram
 
-@@ s01.index.html.051
-<!-- source: index.html:781 | kind: text -->
-Stria 64 bills for what it writes · about 470 units, follow-ups less
-
 @@ s01.index.html.052
-<!-- source: index.html:782 | kind: text -->
-Support:
+<!-- source: index.html:830 | kind: text -->
+Stria 64 · about 440 units typical · 520 maximum, with unused units returned
 
 @@ s01.index.html.053
-<!-- source: index.html:782 | kind: text -->
-hello@bournewise.com
+<!-- source: index.html:831 | kind: text -->
+Support:
 
 @@ s01.index.html.054
-<!-- source: index.html:782 | kind: text -->
-·
+<!-- source: index.html:831 | kind: text -->
+hello@bournewise.com
 
 @@ s01.index.html.055
-<!-- source: index.html:782 | kind: text -->
-Terms
+<!-- source: index.html:831 | kind: text -->
+·
 
 @@ s01.index.html.056
-<!-- source: index.html:782 | kind: text -->
-Privacy
+<!-- source: index.html:831 | kind: text -->
+Terms
 
 @@ s01.index.html.057
-<!-- source: index.html:782 | kind: text -->
+<!-- source: index.html:831 | kind: text -->
+Privacy
+
+@@ s01.index.html.058
+<!-- source: index.html:831 | kind: text -->
 Refunds
 
 ---
 
 ## 2. pricing.html
 
-*Plans, rates and unit packs* — 80 blocks
+*Plans, rates and unit packs* — 78 blocks
 
 @@ s02.pricing.html.001
 <!-- source: pricing.html:7 | kind: title -->
@@ -267,7 +271,7 @@ Plans & units — BourneWise
 Monthly and annual BourneWise plans with included units, plus one-time unit top-ups and transparent usage metering.
 
 @@ s02.pricing.html.003
-<!-- source: pricing.html:47 | kind: aria-label -->
+<!-- source: pricing.html:48 | kind: aria-label -->
 BourneWise home
 
 @@ s02.pricing.html.004
@@ -275,307 +279,299 @@ BourneWise home
 Billing cycle
 
 @@ s02.pricing.html.005
-<!-- source: pricing.html:61 | kind: aria-label -->
-Use annual billing
-
-@@ s02.pricing.html.006
-<!-- source: pricing.html:63 | kind: aria-label -->
+<!-- source: pricing.html:65 | kind: aria-label -->
 Subscription plans
 
-@@ s02.pricing.html.007
-<!-- source: pricing.html:85 | kind: aria-label -->
+@@ s02.pricing.html.006
+<!-- source: pricing.html:87 | kind: aria-label -->
 Usage rates
 
-@@ s02.pricing.html.008
-<!-- source: pricing.html:90 | kind: aria-label -->
+@@ s02.pricing.html.007
+<!-- source: pricing.html:92 | kind: aria-label -->
 Usage estimator
 
-@@ s02.pricing.html.009
-<!-- source: pricing.html:97 | kind: aria-label -->
+@@ s02.pricing.html.008
+<!-- source: pricing.html:99 | kind: aria-label -->
 Unit packs
 
-@@ s02.pricing.html.010
-<!-- source: pricing.html:104 | kind: aria-label -->
+@@ s02.pricing.html.009
+<!-- source: pricing.html:106 | kind: aria-label -->
 Billing rules
 
-@@ s02.pricing.html.011
+@@ s02.pricing.html.010
 <!-- source: pricing.html:7 | kind: text -->
 Plans & units — BourneWise
 
-@@ s02.pricing.html.012
-<!-- source: pricing.html:49 | kind: text -->
+@@ s02.pricing.html.011
+<!-- source: pricing.html:50 | kind: text -->
 BourneWise
 
-@@ s02.pricing.html.013
-<!-- source: pricing.html:51 | kind: text -->
+@@ s02.pricing.html.012
+<!-- source: pricing.html:52 | kind: text -->
 The method
 
-@@ s02.pricing.html.014
-<!-- source: pricing.html:51 | kind: text -->
+@@ s02.pricing.html.013
+<!-- source: pricing.html:52 | kind: text -->
 Why BourneWise
 
-@@ s02.pricing.html.015
-<!-- source: pricing.html:51 | kind: text -->
+@@ s02.pricing.html.014
+<!-- source: pricing.html:52 | kind: text -->
 Start a casting
 
-@@ s02.pricing.html.016
-<!-- source: pricing.html:55 | kind: text -->
+@@ s02.pricing.html.015
+<!-- source: pricing.html:56 | kind: text -->
 Plans & units
 
-@@ s02.pricing.html.017
-<!-- source: pricing.html:55 | kind: text -->
+@@ s02.pricing.html.016
+<!-- source: pricing.html:56 | kind: text -->
 Choose a balance that fits.
 
+@@ s02.pricing.html.017
+<!-- source: pricing.html:56 | kind: text -->
+Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is charged from measured model usage.
+
 @@ s02.pricing.html.018
-<!-- source: pricing.html:55 | kind: text -->
-Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is still charged from actual model usage.
+<!-- source: pricing.html:56 | kind: text -->
+A maximum is held when generation starts. The final charge settles from actual tokens, and unused units return as soon as the answer finishes.
 
 @@ s02.pricing.html.019
-<!-- source: pricing.html:55 | kind: text -->
-Nothing is held before generation. A reading is charged once it is written, for the tokens it actually used.
-
-@@ s02.pricing.html.020
-<!-- source: pricing.html:57 | kind: text -->
+<!-- source: pricing.html:58 | kind: text -->
 Not signed in
 
-@@ s02.pricing.html.021
-<!-- source: pricing.html:57 | kind: text -->
+@@ s02.pricing.html.020
+<!-- source: pricing.html:58 | kind: text -->
 Available units
 
-@@ s02.pricing.html.022
-<!-- source: pricing.html:57 | kind: text -->
+@@ s02.pricing.html.021
+<!-- source: pricing.html:58 | kind: text -->
 Sign in
 
-@@ s02.pricing.html.023
-<!-- source: pricing.html:59 | kind: text -->
-Subscriptions
-
-@@ s02.pricing.html.024
-<!-- source: pricing.html:59 | kind: text -->
-Units included every cycle.
-
-@@ s02.pricing.html.025
-<!-- source: pricing.html:59 | kind: text -->
-Monthly plans renew each month. Annual plans cost less and place the full year’s units in your balance at renewal.
-
-@@ s02.pricing.html.026
+@@ s02.pricing.html.022
 <!-- source: pricing.html:61 | kind: text -->
 Monthly
 
-@@ s02.pricing.html.027
-<!-- source: pricing.html:61 | kind: text -->
-Annual
+@@ s02.pricing.html.023
+<!-- source: pricing.html:62 | kind: text -->
+Annually
 
-@@ s02.pricing.html.028
-<!-- source: pricing.html:61 | kind: text -->
+@@ s02.pricing.html.024
+<!-- source: pricing.html:63 | kind: text -->
 Save 2 months
 
-@@ s02.pricing.html.029
-<!-- source: pricing.html:65 | kind: text -->
+@@ s02.pricing.html.025
+<!-- source: pricing.html:67 | kind: text -->
 Free
 
-@@ s02.pricing.html.030
-<!-- source: pricing.html:65 | kind: text -->
+@@ s02.pricing.html.026
+<!-- source: pricing.html:67 | kind: text -->
 Create an account and explore the service before paying.
 
-@@ s02.pricing.html.031
-<!-- source: pricing.html:66 | kind: text -->
+@@ s02.pricing.html.027
+<!-- source: pricing.html:68 | kind: text -->
 once
 
-@@ s02.pricing.html.032
-<!-- source: pricing.html:66 | kind: text -->
+@@ s02.pricing.html.028
+<!-- source: pricing.html:68 | kind: text -->
 welcome units
 
-@@ s02.pricing.html.033
-<!-- source: pricing.html:67 | kind: text -->
+@@ s02.pricing.html.029
+<!-- source: pricing.html:69 | kind: text -->
 No recurring charge
 
-@@ s02.pricing.html.034
-<!-- source: pricing.html:67 | kind: text -->
+@@ s02.pricing.html.030
+<!-- source: pricing.html:69 | kind: text -->
 Both reading methods
 
-@@ s02.pricing.html.035
-<!-- source: pricing.html:67 | kind: text -->
+@@ s02.pricing.html.031
+<!-- source: pricing.html:69 | kind: text -->
 One shared unit balance
 
-@@ s02.pricing.html.036
-<!-- source: pricing.html:68 | kind: text -->
+@@ s02.pricing.html.032
+<!-- source: pricing.html:70 | kind: text -->
 Create account
 
-@@ s02.pricing.html.037
-<!-- source: pricing.html:71 | kind: text -->
+@@ s02.pricing.html.033
+<!-- source: pricing.html:73 | kind: text -->
 Most useful
 
-@@ s02.pricing.html.038
-<!-- source: pricing.html:71 | kind: text -->
+@@ s02.pricing.html.034
+<!-- source: pricing.html:73 | kind: text -->
 Pro
 
-@@ s02.pricing.html.039
-<!-- source: pricing.html:71 | kind: text -->
+@@ s02.pricing.html.035
+<!-- source: pricing.html:73 | kind: text -->
 For regular readings and focused follow-up threads.
 
-@@ s02.pricing.html.040
-<!-- source: pricing.html:72 | kind: text -->
+@@ s02.pricing.html.036
+<!-- source: pricing.html:74 | kind: text -->
 / month
 
-@@ s02.pricing.html.041
-<!-- source: pricing.html:72 | kind: text -->
+@@ s02.pricing.html.037
+<!-- source: pricing.html:74 | kind: text -->
 units
 
-@@ s02.pricing.html.042
-<!-- source: pricing.html:72 | kind: text -->
+@@ s02.pricing.html.038
+<!-- source: pricing.html:74 | kind: text -->
 monthly
 
-@@ s02.pricing.html.043
-<!-- source: pricing.html:73 | kind: text -->
+@@ s02.pricing.html.039
+<!-- source: pricing.html:75 | kind: text -->
 Both Stria and Sortis
 
-@@ s02.pricing.html.044
-<!-- source: pricing.html:73 | kind: text -->
+@@ s02.pricing.html.040
+<!-- source: pricing.html:75 | kind: text -->
 Usage settles automatically
 
-@@ s02.pricing.html.045
-<!-- source: pricing.html:73 | kind: text -->
+@@ s02.pricing.html.041
+<!-- source: pricing.html:75 | kind: text -->
 Top up without changing plans
 
-@@ s02.pricing.html.046
-<!-- source: pricing.html:74 | kind: text -->
+@@ s02.pricing.html.042
+<!-- source: pricing.html:76 | kind: text -->
 Choose Pro
 
-@@ s02.pricing.html.047
-<!-- source: pricing.html:77 | kind: text -->
+@@ s02.pricing.html.043
+<!-- source: pricing.html:79 | kind: text -->
 Premium
 
-@@ s02.pricing.html.048
-<!-- source: pricing.html:77 | kind: text -->
+@@ s02.pricing.html.044
+<!-- source: pricing.html:79 | kind: text -->
 For frequent Sortis readings and longer ongoing work.
 
-@@ s02.pricing.html.049
-<!-- source: pricing.html:79 | kind: text -->
+@@ s02.pricing.html.045
+<!-- source: pricing.html:81 | kind: text -->
 Larger recurring allowance
 
-@@ s02.pricing.html.050
-<!-- source: pricing.html:80 | kind: text -->
+@@ s02.pricing.html.046
+<!-- source: pricing.html:82 | kind: text -->
 Choose Premium
 
-@@ s02.pricing.html.051
-<!-- source: pricing.html:84 | kind: text -->
+@@ s02.pricing.html.047
+<!-- source: pricing.html:86 | kind: text -->
 Rates
 
-@@ s02.pricing.html.052
-<!-- source: pricing.html:84 | kind: text -->
+@@ s02.pricing.html.048
+<!-- source: pricing.html:86 | kind: text -->
 Transparent token metering
 
-@@ s02.pricing.html.053
-<!-- source: pricing.html:84 | kind: text -->
+@@ s02.pricing.html.049
+<!-- source: pricing.html:86 | kind: text -->
 Input covers your question, conversation context, and computed figure. Output is the written answer. These rates already include the service margin.
 
-@@ s02.pricing.html.054
-<!-- source: pricing.html:86 | kind: text -->
+@@ s02.pricing.html.050
+<!-- source: pricing.html:88 | kind: text -->
 Stria 64
 
-@@ s02.pricing.html.055
-<!-- source: pricing.html:86 | kind: text -->
+@@ s02.pricing.html.051
+<!-- source: pricing.html:88 | kind: text -->
 per 1,000 input tokens
 
-@@ s02.pricing.html.056
-<!-- source: pricing.html:86 | kind: text -->
+@@ s02.pricing.html.052
+<!-- source: pricing.html:88 | kind: text -->
 per 1,000 output tokens
 
-@@ s02.pricing.html.057
-<!-- source: pricing.html:86 | kind: text -->
+@@ s02.pricing.html.053
+<!-- source: pricing.html:88 | kind: text -->
 Charged on the tokens the reading actually uses — a shorter reading costs less, always.
 
-@@ s02.pricing.html.058
-<!-- source: pricing.html:87 | kind: text -->
+@@ s02.pricing.html.054
+<!-- source: pricing.html:89 | kind: text -->
 Sortis 6
 
-@@ s02.pricing.html.059
-<!-- source: pricing.html:91 | kind: text -->
+@@ s02.pricing.html.055
+<!-- source: pricing.html:93 | kind: text -->
 Reading method
 
-@@ s02.pricing.html.060
-<!-- source: pricing.html:92 | kind: text -->
+@@ s02.pricing.html.056
+<!-- source: pricing.html:94 | kind: text -->
 Expected output tokens
 
-@@ s02.pricing.html.061
-<!-- source: pricing.html:93 | kind: text -->
+@@ s02.pricing.html.057
+<!-- source: pricing.html:95 | kind: text -->
 estimated units for this reading
 
-@@ s02.pricing.html.062
-<!-- source: pricing.html:96 | kind: text -->
+@@ s02.pricing.html.058
+<!-- source: pricing.html:98 | kind: text -->
 One-time units
 
-@@ s02.pricing.html.063
-<!-- source: pricing.html:96 | kind: text -->
+@@ s02.pricing.html.059
+<!-- source: pricing.html:98 | kind: text -->
 Top up without changing plans.
 
-@@ s02.pricing.html.064
-<!-- source: pricing.html:96 | kind: text -->
+@@ s02.pricing.html.060
+<!-- source: pricing.html:98 | kind: text -->
 One-time unit purchases do not renew automatically and stay in the same balance as plan units.
 
-@@ s02.pricing.html.065
-<!-- source: pricing.html:98 | kind: text -->
+@@ s02.pricing.html.061
+<!-- source: pricing.html:100 | kind: text -->
 7,500 units
 
-@@ s02.pricing.html.066
-<!-- source: pricing.html:98 | kind: text -->
+@@ s02.pricing.html.062
+<!-- source: pricing.html:100 | kind: text -->
 1,500 units per $1 — same as a plan
 
-@@ s02.pricing.html.067
-<!-- source: pricing.html:99 | kind: text -->
+@@ s02.pricing.html.063
+<!-- source: pricing.html:101 | kind: text -->
 15,000 units
 
-@@ s02.pricing.html.068
-<!-- source: pricing.html:100 | kind: text -->
+@@ s02.pricing.html.064
+<!-- source: pricing.html:102 | kind: text -->
 30,000 units
 
-@@ s02.pricing.html.069
-<!-- source: pricing.html:101 | kind: text -->
+@@ s02.pricing.html.065
+<!-- source: pricing.html:103 | kind: text -->
 75,000 units
 
-@@ s02.pricing.html.070
-<!-- source: pricing.html:105 | kind: text -->
+@@ s02.pricing.html.066
+<!-- source: pricing.html:107 | kind: text -->
 Two ways to add units
 
-@@ s02.pricing.html.071
-<!-- source: pricing.html:105 | kind: text -->
+@@ s02.pricing.html.067
+<!-- source: pricing.html:107 | kind: text -->
 Use a recurring plan for predictable volume or buy a one-time pack whenever you need it.
 
-@@ s02.pricing.html.072
-<!-- source: pricing.html:106 | kind: text -->
+@@ s02.pricing.html.068
+<!-- source: pricing.html:108 | kind: text -->
 Automatic settlement
 
-@@ s02.pricing.html.073
-<!-- source: pricing.html:106 | kind: text -->
+@@ s02.pricing.html.069
+<!-- source: pricing.html:108 | kind: text -->
 The service reserves the maximum, settles actual usage, and returns the rest without a support request.
 
-@@ s02.pricing.html.074
-<!-- source: pricing.html:107 | kind: text -->
+@@ s02.pricing.html.070
+<!-- source: pricing.html:109 | kind: text -->
 One shared balance
 
-@@ s02.pricing.html.075
-<!-- source: pricing.html:107 | kind: text -->
+@@ s02.pricing.html.071
+<!-- source: pricing.html:109 | kind: text -->
 Plan units and top-ups fund both Stria and Sortis whenever the account has enough balance.
 
-@@ s02.pricing.html.076
-<!-- source: pricing.html:110 | kind: text -->
+@@ s02.pricing.html.072
+<!-- source: pricing.html:112 | kind: text -->
+Receipts are sent automatically.
+
+@@ s02.pricing.html.073
+<!-- source: pricing.html:112 | kind: text -->
+After every successful payment, Creem emails the receipt and a secure link for invoices, payment methods, and subscription management.
+
+@@ s02.pricing.html.074
+<!-- source: pricing.html:114 | kind: text -->
 Terms
 
-@@ s02.pricing.html.077
-<!-- source: pricing.html:110 | kind: text -->
+@@ s02.pricing.html.075
+<!-- source: pricing.html:114 | kind: text -->
 Privacy
 
-@@ s02.pricing.html.078
-<!-- source: pricing.html:110 | kind: text -->
+@@ s02.pricing.html.076
+<!-- source: pricing.html:114 | kind: text -->
 Refunds
 
-@@ s02.pricing.html.079
-<!-- source: pricing.html:110 | kind: text -->
+@@ s02.pricing.html.077
+<!-- source: pricing.html:114 | kind: text -->
 hello@bournewise.com
 
-@@ s02.pricing.html.080
-<!-- source: pricing.html:110 | kind: text -->
+@@ s02.pricing.html.078
+<!-- source: pricing.html:114 | kind: text -->
 BourneWise · subscriptions, top-ups, and metered usage
 
 ---
@@ -936,7 +932,7 @@ Stria 64
 
 @@ s04.about.html.026
 <!-- source: about.html:84 | kind: text -->
-ABOUT 470 UNITS
+ABOUT 440 UNITS
 
 @@ s04.about.html.027
 <!-- source: about.html:84 | kind: text -->
@@ -948,7 +944,7 @@ Sortis 6
 
 @@ s04.about.html.029
 <!-- source: about.html:85 | kind: text -->
-ABOUT 690 UNITS
+ABOUT 780 UNITS
 
 @@ s04.about.html.030
 <!-- source: about.html:85 | kind: text -->
@@ -956,11 +952,11 @@ Adds moving lines, the transformed hexagram, and line-by-line change analysis. B
 
 @@ s04.about.html.031
 <!-- source: about.html:90 | kind: text -->
-A reading is an analysis, not delegated authority.
+A reading supports reflection. It does not replace judgment.
 
 @@ s04.about.html.032
 <!-- source: about.html:90 | kind: text -->
-The system can offer a strong interpretation without pretending an open situation has become certain.
+The result is useful when it helps you inspect assumptions, notice change, and choose a next step without pretending an open situation has become certain.
 
 @@ s04.about.html.033
 <!-- source: about.html:92 | kind: text -->
@@ -980,11 +976,11 @@ The answer should separate concrete signals from imaginative extension and uncer
 
 @@ s04.about.html.037
 <!-- source: about.html:94 | kind: text -->
-Your decision
+Reflection and growth
 
 @@ s04.about.html.038
 <!-- source: about.html:94 | kind: text -->
-The reading gives you another structured view. You remain responsible for the action.
+Return to the answer after acting. Compare what changed, what held, and what you would decide differently next time.
 
 @@ s04.about.html.039
 <!-- source: about.html:98 | kind: text -->
@@ -1140,7 +1136,7 @@ BourneWise · fixed hexagram input · Claude Opus 5 interpretation
 
 ## 6. settings.html
 
-*Account, plan and data* — 25 blocks
+*Account, plan and data* — 24 blocks
 
 @@ s06.settings.html.001
 <!-- source: settings.html:7 | kind: title -->
@@ -1176,7 +1172,7 @@ Available balance
 
 @@ s06.settings.html.009
 <!-- source: settings.html:141 | kind: text -->
-Nothing is held before a reading. It is charged once, when it is written, in proportion to the tokens it used.
+A published maximum is held while an answer is generated. Measured usage is settled when it finishes, and the unused difference returns automatically.
 
 @@ s06.settings.html.010
 <!-- source: settings.html:142 | kind: text -->
@@ -1196,49 +1192,45 @@ View plans
 
 @@ s06.settings.html.014
 <!-- source: settings.html:149 | kind: text -->
-Your subscription
+Receipts & billing
 
 @@ s06.settings.html.015
 <!-- source: settings.html:149 | kind: text -->
-Renews automatically. Cancellation takes effect at the end of the billing period.
+Open your secure Creem portal for receipts, invoices, payment methods, and subscription controls.
 
 @@ s06.settings.html.016
-<!-- source: settings.html:151 | kind: text -->
-Manage billing
-
-@@ s06.settings.html.017
 <!-- source: settings.html:152 | kind: text -->
 Cancel subscription
 
-@@ s06.settings.html.018
+@@ s06.settings.html.017
 <!-- source: settings.html:160 | kind: text -->
 Casting defaults
 
-@@ s06.settings.html.019
+@@ s06.settings.html.018
 <!-- source: settings.html:166 | kind: text -->
 Privacy & data
 
-@@ s06.settings.html.020
+@@ s06.settings.html.019
 <!-- source: settings.html:169 | kind: text -->
 Reading history
 
-@@ s06.settings.html.021
+@@ s06.settings.html.020
 <!-- source: settings.html:170 | kind: text -->
 Delete reading history
 
-@@ s06.settings.html.022
+@@ s06.settings.html.021
 <!-- source: settings.html:173 | kind: text -->
 Encrypted at rest
 
-@@ s06.settings.html.023
+@@ s06.settings.html.022
 <!-- source: settings.html:173 | kind: text -->
 Readings are never sold or used to train. Delete them whenever you choose.
 
-@@ s06.settings.html.024
+@@ s06.settings.html.023
 <!-- source: settings.html:174 | kind: text -->
 Always on
 
-@@ s06.settings.html.025
+@@ s06.settings.html.024
 <!-- source: settings.html:177 | kind: text -->
 This session
 
@@ -1568,11 +1560,11 @@ Units
 
 @@ s08.terms.html.029
 <!-- source: terms.html:122 | kind: text -->
-. Nothing is held or deducted before a reading is written. Once it is complete, it is charged in proportion to the input and output tokens it actually used — a shorter reading costs less than a longer one, and there is no fixed price and no ceiling. A typical Stria casting comes to roughly 470 Units and a typical Sortis casting to roughly 690; a follow-up is charged the same way, for its own context and answer.
+. When generation begins, BourneWise places a method-specific maximum charge against your balance. Once the answer finishes, the service settles from measured input and output token usage and immediately returns any unused Units. A shorter reading therefore costs less, while the published maximum prevents an answer from costing more than the amount accepted at the start.
 
 @@ s08.terms.html.030
 <!-- source: terms.html:123 | kind: text -->
-If your balance runs out partway through a reading, that reading is still completed in full and the charge takes only what remains. Further castings require a positive balance.
+A typical Stria casting uses roughly 440 Units and reserves at most 520. A typical Sortis casting uses roughly 780 Units and reserves at most 900. Follow-ups use the same measured settlement with their own lower maximum. A request starts only when the available balance can cover its maximum; interrupted generations settle only the measured work received.
 
 @@ s08.terms.html.031
 <!-- source: terms.html:124 | kind: text -->
@@ -1762,7 +1754,7 @@ Why Units aren&rsquo;t refundable
 
 @@ s09.refund.html.014
 <!-- source: refund.html:101 | kind: text -->
-A Unit pays for model usage. Because that compute is delivered immediately, Units actually consumed by a generation are non-refundable. The same metering applies to interrupted readings and follow-up questions: only measured usage is charged, subject to the published minimum and reserve cap. Units have no cash value and cannot be transferred or exchanged for money.
+A Unit pays for model usage. Because that compute is delivered immediately, Units actually consumed by a generation are non-refundable. The same metering applies to interrupted readings and follow-up questions: only measured usage is charged, up to the published maximum accepted before generation. Units have no cash value and cannot be transferred or exchanged for money.
 
 @@ s09.refund.html.015
 <!-- source: refund.html:105 | kind: text -->
@@ -1838,11 +1830,11 @@ Write to
 
 @@ s09.refund.html.033
 <!-- source: refund.html:132 | kind: text -->
-billing@bournewise.com
+hello@bournewise.com
 
 @@ s09.refund.html.034
 <!-- source: refund.html:132 | kind: text -->
-within 30 days of the charge, from the email on your account, with the date and amount. We aim to reply within two business days, and approved refunds return to your original payment method within 5&ndash;10 business days. Purchases made through the Apple App Store or Google Play are refunded under their policies — contact them directly.
+within 30 days of the charge, from the email on your account, with the date and amount. We aim to reply within two business days, and approved refunds return to the original payment method within 5&ndash;10 business days.
 
 @@ s09.refund.html.035
 <!-- source: refund.html:137 | kind: text -->
@@ -1924,34 +1916,34 @@ BourneWise · fixed hexagram input · model-written interpretation
 ### `ledger`
 
 @@ s11.copy.js.ledger.label
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Available units
 
 @@ s11.copy.js.ledger.unit
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 units
 
 @@ s11.copy.js.ledger.capFree
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Welcome and top-up units
 
 @@ s11.copy.js.ledger.capPaid
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Plan units + top-ups
 
 @@ s11.copy.js.ledger.action
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Get units
 
 ### `composer`
 
 @@ s11.copy.js.composer.placeholder
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Say it plainly…
 
 @@ s11.copy.js.composer.methodNote
 <!-- source: copy.js | kind: template -->
-Sortis 6 · you are charged for what the reading uses, about 690 units · follow-ups cost less, in proportion to their length
+Sortis 6 · about 690 units typical · 900 maximum, with unused units returned
 
 @@ s11.copy.js.composer.methodCost
 <!-- source: copy.js | kind: template -->
@@ -1961,7 +1953,7 @@ Sortis 6 · you are charged for what the reading uses, about 690 units · follow
 
 @@ s11.copy.js.casting.recastCarried
 <!-- source: copy.js | kind: template -->
-Recast a fresh hexagram for the same matter — “Sortis 6” (about 690 units). For a different matter, state the new question in full.
+Recast a fresh hexagram for the same matter — “这件事” (about 690 units). For a different matter, state the new question in full.
 
 @@ s11.copy.js.casting.recastSameThread
 <!-- source: copy.js | kind: template -->
@@ -1974,66 +1966,176 @@ This reads as a new question, so a fresh hexagram was cast, costing about 690 un
 ### `followUp`
 
 @@ s11.copy.js.followUp.continuing
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The reading was cut short — charged only for what arrived; continuing on this same casting…
 
 @@ s11.copy.js.followUp.cutAgain
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The reading was cut short again — you were only charged for what arrived. Send “continue” to pick it up.
 
 @@ s11.copy.js.followUp.answerCut
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The answer was cut short — you were only charged for what arrived. Send “continue” to carry on.
 
 @@ s11.copy.js.followUp.promptsNote
 <!-- source: copy.js | kind: template -->
 Nothing is sent until you submit. The same hexagram rides along with every follow-up, which is charged for what it uses — usually around 690 units.
 
+#### `followUp.panel`
+
+##### `followUp.panel.en`
+
+@@ s11.copy.js.followUp.panel.en.kicker
+<!-- source: copy.js | kind: template -->
+Sortis 6 · Same hexagram
+
+@@ s11.copy.js.followUp.panel.en.headContinued
+<!-- source: copy.js | kind: runtime text -->
+Check the previous answer against another constraint.
+
+@@ s11.copy.js.followUp.panel.en.headSortis
+<!-- source: copy.js | kind: runtime text -->
+Inspect the change before you decide.
+
+@@ s11.copy.js.followUp.panel.en.headStria
+<!-- source: copy.js | kind: runtime text -->
+Inspect the current structure before you decide.
+
+@@ s11.copy.js.followUp.panel.en.hint
+<!-- source: copy.js | kind: runtime text -->
+Select a prompt to place it in the composer. You can edit it before submitting.
+
+@@ s11.copy.js.followUp.panel.en.aria
+<!-- source: copy.js | kind: template -->
+Ask a follow-up using the same Sortis 6 hexagram
+
+@@ s11.copy.js.followUp.panel.en.note
+<!-- source: copy.js | kind: template -->
+Nothing is sent until you submit. The same hexagram rides along with every follow-up, which is charged for what it uses — usually around 690 units.
+
+##### `followUp.panel.zh`
+
+@@ s11.copy.js.followUp.panel.zh.kicker
+<!-- source: copy.js | kind: template -->
+Sortis 6 · 同一卦
+
+@@ s11.copy.js.followUp.panel.zh.headContinued
+<!-- source: copy.js | kind: runtime text -->
+换个角度，再核一遍刚才那个答案。
+
+@@ s11.copy.js.followUp.panel.zh.headSortis
+<!-- source: copy.js | kind: runtime text -->
+决定之前，把这一动看清楚。
+
+@@ s11.copy.js.followUp.panel.zh.headStria
+<!-- source: copy.js | kind: runtime text -->
+决定之前，把眼下的结构看清楚。
+
+@@ s11.copy.js.followUp.panel.zh.hint
+<!-- source: copy.js | kind: runtime text -->
+点一条，它会填进输入框，发送前你可以改。
+
+@@ s11.copy.js.followUp.panel.zh.aria
+<!-- source: copy.js | kind: template -->
+用同一个 Sortis 6 卦追问
+
+@@ s11.copy.js.followUp.panel.zh.note
+<!-- source: copy.js | kind: template -->
+不点发送就什么都不会发出去。每次追问都带着同一个卦一起走，按实际用量计费 —— 通常在 690 点左右。
+
+### `carry`
+
+@@ s11.copy.js.carry.open
+<!-- source: copy.js | kind: runtime text -->
+Carry an earlier casting
+
+@@ s11.copy.js.carry.openHint
+<!-- source: copy.js | kind: runtime text -->
+Bring a previous conversation in as background
+
+@@ s11.copy.js.carry.head
+<!-- source: copy.js | kind: runtime text -->
+Which conversation should ride along?
+
+@@ s11.copy.js.carry.note
+<!-- source: copy.js | kind: runtime text -->
+Its questions and readings travel with this thread as background. No new hexagram is drawn, and the earlier casting is not re-read.
+
+@@ s11.copy.js.carry.empty
+<!-- source: copy.js | kind: runtime text -->
+Nothing earlier to carry yet.
+
+@@ s11.copy.js.carry.carrying
+<!-- source: copy.js | kind: template -->
+Carrying · 这件事
+
+@@ s11.copy.js.carry.drop
+<!-- source: copy.js | kind: runtime text -->
+Stop carrying this
+
+@@ s11.copy.js.carry.dropped
+<!-- source: copy.js | kind: runtime text -->
+That conversation is no longer riding along.
+
+@@ s11.copy.js.carry.added
+<!-- source: copy.js | kind: template -->
+“这件事” is now riding along with this thread.
+
+### `readingFooter`
+
+@@ s11.copy.js.readingFooter.en
+<!-- source: copy.js | kind: runtime text -->
+Please don't make major decisions on this reading alone — the technology behind it is still improving, and we will keep building toward a more capable and stable platform. Hold what you read here against what you can actually observe, take your time, and decide from your real circumstances. A casting offers possible directions, a more flexible way to think about where you are, and a mirror to look at yourself in — it does not offer certainty.
+
+@@ s11.copy.js.readingFooter.zh
+<!-- source: copy.js | kind: runtime text -->
+请不要仅凭这篇解读做重大决定 —— 背后的技术仍在改进，我们也会一直把这个平台做得更准、更稳。把读到的东西拿去和你能真正看到的情况对照，慢慢审，按你的实际处境决定。卦给的是可能的方向、一种更活的想问题的角度，以及一面照自己的镜子 —— 它给不了定论。
+
 ### `account`
 
 @@ s11.copy.js.account.signInToCast
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Sign in to cast — a new account starts with 500 units on us.
 
 @@ s11.copy.js.account.signedOut
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Signed out — your history and balance remain secure.
 
 @@ s11.copy.js.account.readingDeleted
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Reading deleted.
 
 ### `errors`
 
 @@ s11.copy.js.errors.outOfUnits
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 You're out of units — top up to keep reading.
 
 @@ s11.copy.js.errors.staleBuild
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The site just updated — refresh the page, then cast. Nothing was charged.
 
 @@ s11.copy.js.errors.sessionExpired
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Your session has expired — sign in again to cast. Nothing was charged.
 
 @@ s11.copy.js.errors.serverShort
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 Not enough units on the server — add units and try again. Nothing was charged.
 
 @@ s11.copy.js.errors.timedOut
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The reading timed out — please try again. Nothing was charged.
 
 @@ s11.copy.js.errors.castFailed
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The reading didn’t make it through — nothing was charged. Try again in a moment.
 
 @@ s11.copy.js.errors.answerTimedOut
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The answer timed out — try again. Nothing was charged.
 
 @@ s11.copy.js.errors.answerFailed
-<!-- source: copy.js | kind: text -->
+<!-- source: copy.js | kind: runtime text -->
 The answer didn’t make it through — nothing was charged. Try again in a moment.
 

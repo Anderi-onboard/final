@@ -38,12 +38,14 @@
 //   SORTIS_MODEL        (optional override, default anthropic/claude-opus-5)
 //   UTILITY_MODEL       (optional override, default anthropic/claude-haiku-4.5)
 //   CLAUDE_MAX_TOKENS   (optional, default 1024)
+//   CLAUDE_THINKING     (optional, "on" to re-enable extended thinking — see
+//                        the note at the payload below before you do)
 //
 // If the key is unset or this Function errors, the front-end falls back to its
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_COST, FOLLOW_COST, unitsForUsage, countCjk } from '../_lib/db.js';
+import { getUser, spendUnits, grantUnits, bumpRateLimit, METHOD_RESERVE, FOLLOW_RESERVE, unitsForUsage, countCjk } from '../_lib/db.js';
 
 const CORS = {
   'access-control-allow-origin': '*',
@@ -110,13 +112,13 @@ export async function onRequestPost(context) {
     if (!messages.length) return json({ error: 'no messages' }, 400);
 
     const product = String(body.product || '').toLowerCase();
-    // mode "followup" = a question ON the existing casting (no new hexagram):
-    // reserve at most half a cast. Every generation settles to actual token
-    // usage after completion; the values below are reservation ceilings.
+    // mode "followup" = a question ON the existing casting (no new hexagram).
+    // The admission hold is the published maximum for this request. The final
+    // charge is still metered from real usage; unused units are returned.
     const mode = String(body.mode || '').toLowerCase() === 'followup' ? 'followup' : 'cast';
-    const flat = product === 'sortis' ? METHOD_COST.sortis : product === 'stria' ? METHOD_COST.stria : 0;
+    const flat = product === 'sortis' ? METHOD_RESERVE.sortis : product === 'stria' ? METHOD_RESERVE.stria : 0;
     const cost = mode === 'followup'
-      ? (product === 'sortis' ? FOLLOW_COST.sortis : product === 'stria' ? FOLLOW_COST.stria : 0)
+      ? (product === 'sortis' ? FOLLOW_RESERVE.sortis : product === 'stria' ? FOLLOW_RESERVE.stria : 0)
       : flat;
 
     let unitsRemaining = null;
@@ -135,6 +137,19 @@ export async function onRequestPost(context) {
     // OpenAI-style shape: system goes in the messages array, not a sibling field.
     const orMessages = body.system ? [{ role: 'system', content: body.system }, ...messages] : messages;
     const payload = { model, max_tokens, messages: orMessages };
+    // Extended thinking OFF unless explicitly asked for. Opus 5 turns it on by
+    // default, and its thinking is drawn from the SAME max_tokens budget as the
+    // reading — the reader never sees a token of it, but it is charged for all
+    // of them. Measured on one board, four identical requests at max_tokens
+    // 12000: thinking ate 9-11k of the budget and the reading was cut off
+    // mid-sentence at 257 / 1126 / 1769 / 2444 chars, each costing $0.389.
+    // The same prompt with thinking off finished cleanly (finish_reason "stop")
+    // at 4067-4889 chars for $0.196-0.217. So it was truncating every reading
+    // AND doubling the bill. Note that finish_reason "length" arrives looking
+    // like an ordinary completion, which is why this stayed invisible.
+    if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
+      payload.reasoning = { enabled: false };
+    }
     // optional sampling temperature (Anthropic models: 0..1). Used to give a
     // recast a genuinely fresher draw — the client sends temperature ≈ 1.
     if (body.temperature != null && Number.isFinite(Number(body.temperature))) {
@@ -165,6 +180,8 @@ export async function onRequestPost(context) {
 
       if (!upstream.ok || !upstream.body) {
         const detail = await upstream.text().catch(() => '');
+        await releaseReservation(db, chargeTo, 'upstream');
+        chargeTo = null;
         return json({ error: 'openrouter ' + upstream.status, detail }, 502);
       }
 
@@ -197,6 +214,8 @@ export async function onRequestPost(context) {
 
     if (!resp.ok) {
       const detail = await resp.text().catch(() => '');
+      await releaseReservation(db, chargeTo, 'upstream');
+      chargeTo = null;
       return json({ error: 'openrouter ' + resp.status, detail }, 502);
     }
     const data = await resp.json();
@@ -209,12 +228,14 @@ export async function onRequestPost(context) {
         { inChars: promptText.length, inCjk: countCjk(promptText), outChars: text.length, outCjk: countCjk(text) });
       charged = s.charged;
       if (s.units != null) unitsRemaining = s.units;
+      chargeTo = null;
     }
     const result = { text, model };
     if (unitsRemaining != null) result.unitsRemaining = unitsRemaining;
     if (chargeTo) result.charged = charged;
     return json(result, 200);
   } catch (e) {
+    await releaseReservation(env.DB, chargeTo, 'error').catch(() => {});
     return json({ error: String((e && e.message) || e) }, 500);
   }
 }
@@ -267,9 +288,12 @@ async function pumpAndSettle(o) {
     if (buf.trim()) await handleRecord(buf);
   } catch (e) { /* upstream died mid-stream → finish stays null → truncated */ }
 
-  // 'stop'/'end_turn' = model finished; 'length' = hit max_tokens (the reading
-  // is as long as we allow — that's a delivered reading, charge stands).
-  const complete = finish === 'stop' || finish === 'end_turn' || finish === 'length';
+  // 'stop'/'end_turn' = the model finished its sentence. 'length' = it ran out
+  // of budget mid-word, which is NOT a finished reading — it used to be counted
+  // as one, so the client's auto-continue never fired for the single most
+  // common way a reading gets cut off. The charge is unaffected either way:
+  // chargeUsage bills measured tokens regardless of how the stream ended.
+  const complete = finish === 'stop' || finish === 'end_turn';
   let charged = 0;
   let units = o.unitsRemaining;
   let incomplete = !complete;
@@ -290,43 +314,26 @@ async function pumpAndSettle(o) {
   try { await writer.close(); } catch (e) {}
 }
 
-// Charge metered actual (capped at the reserve), refund the difference.
-// Returns { charged, units } — units is the fresh balance when a refund ran.
-// Settle a reservation against what the generation actually used. The charge is
-// strictly proportional to tokens — there is no ceiling, so the reservation can
-// be over- OR under-held and both directions are corrected here:
-//   metered < reserved → refund the difference
-//   metered > reserved → collect the rest (a reading that ran long)
-// The top-up is limited to the balance on hand rather than pushing an account
-// negative: the reservation gate already proved they could pay the expected
-// amount, output is bounded by max_tokens, so the residue is small and it is
-// better absorbed than shown to someone as a debt.
-// Bill a finished generation for exactly what it used. One deduction, after
-// the fact — there is no hold, no refund, and no ceiling.
-//
-// If the charge is larger than what is left, it takes what is left and stops
-// at zero. That is deliberate: a reader who runs out mid-reading still gets
-// that reading in full. The shortfall is bounded (one generation, capped by
-// max_tokens) and is recorded in the ledger reason so it is visible rather
-// than silent. The next request is refused at the door instead.
+// Settle the admission hold against measured usage. The published maximum is a
+// real ceiling: longer output never creates debt or a surprise extra charge.
 async function chargeUsage(db, chargeTo, model, usage, fallback) {
   const owed = unitsForUsage(model, usage, fallback);
-  if (owed <= 0) return { charged: 0, units: null };
-  const s = await spendUnits(db, chargeTo.userId, owed, chargeTo.reason);
-  if (s && s.ok) return { charged: owed, units: s.units };
-  // Balance could not cover it — take the remainder down to zero.
-  const left = Math.max(0, Number(s && s.units) || 0);
-  if (left > 0) {
-    const s2 = await spendUnits(db, chargeTo.userId, left, chargeTo.reason + ':partial');
-    if (s2 && s2.ok) return { charged: left, units: s2.units };
-  }
-  return { charged: 0, units: left };
+  const reserved = Math.max(0, Number(chargeTo && chargeTo.reserved) || 0);
+  const charged = Math.min(Math.max(0, owed), reserved);
+  const refund = reserved - charged;
+  if (!refund) return { charged, units: null };
+  const s = await grantUnits(db, chargeTo.userId, refund, chargeTo.reason + ':release');
+  return { charged, units: s && s.units != null ? s.units : null };
+}
+
+async function releaseReservation(db, chargeTo, suffix) {
+  if (!db || !chargeTo || !(chargeTo.reserved > 0)) return;
+  await grantUnits(db, chargeTo.userId, chargeTo.reserved, chargeTo.reason + ':release:' + suffix);
 }
 
 // Auth + billing + rate-limit gate. Returns one of:
 //   { error: { status, body } }              — reject, never call OpenRouter
-//   { refund: {userId, amount}, unitsRemaining } — deducted; refund on failure
-//   { unitsRemaining? }                        — allowed, nothing to refund
+//   { charge, unitsRemaining } — maximum reserved; settle or release later
 async function guardRequest({ request, env, db, product, cost, mode }) {
   const session = await sessionFromRequest(request, env);
   const user = session ? await getUser(db, session.uid) : null;
@@ -337,20 +344,10 @@ async function guardRequest({ request, env, db, product, cost, mode }) {
     return { error: { status: 401, body: { error: 'sign in required for generation' } } };
   }
 
-  // Admission, not payment. Nothing is deducted here: a reading is charged for
-  // what it actually used, once, after it has been written. Holding units up
-  // front meant reserving more than a reading usually costs, refunding the
-  // difference, and refusing readers who could afford the reading they asked
-  // for. The only question at the door is whether there is a balance to spend.
-  //
-  // A reader whose balance runs out mid-reading still gets that reading in
-  // full — the charge simply takes what is left. They are stopped at the next
-  // door, not halfway through the one they already walked in.
   if (product === 'sortis' || product === 'stria') {
-    if (!(user.units > 0)) {
-      return { error: { status: 402, body: { error: 'out of units', units: user.units } } };
-    }
-    return { charge: { userId: user.id, reason }, unitsRemaining: user.units };
+    const held = await spendUnits(db, user.id, cost, reason + ':reserve');
+    if (!held.ok) return { error: { status: 402, body: { error: 'insufficient units', units: held.units, required: cost } } };
+    return { charge: { userId: user.id, reason, reserved: cost }, unitsRemaining: held.units };
   }
 
   // Router/qc utility calls carry no product cost. Fall back to a per-IP

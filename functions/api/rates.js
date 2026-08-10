@@ -10,7 +10,7 @@
 // Public and cacheable: nothing here is per-user.
 
 import {
-  MODEL_RATES, METHOD_COST, FOLLOW_COST, PLAN_GRANT, PACKS,
+  MODEL_RATES, METHOD_COST, FOLLOW_COST, METHOD_RESERVE, FOLLOW_RESERVE, PLAN_GRANT, PACKS,
   UNIT_PRICE_USD, ANNUAL_MONTHS
 } from '../_lib/db.js';
 
@@ -30,16 +30,19 @@ export function onRequestGet({ env }) {
       model,
       unitsPer1kInput: rate.in,
       unitsPer1kOutput: rate.out,
-      reserve: METHOD_COST[product],
-      followUpReserve: FOLLOW_COST[product],
+      typical: METHOD_COST[product],
+      typicalFollowUp: FOLLOW_COST[product],
+      maximum: METHOD_RESERVE[product],
+      followUpMaximum: FOLLOW_RESERVE[product],
       // Measured, so an estimate on the pricing page matches the real bill:
       // the prompt carries the method's instructions plus the computed figure,
       // which is why input is thousands of tokens before the reader types a word.
-      typicalInputTokens: product === 'sortis' ? 13540 : 11260,
-      typicalOutputTokens: product === 'sortis' ? 4345 : 2554,
+      // Re-measured with extended thinking off — see METHOD_COST in _lib/db.js.
+      typicalInputTokens: product === 'sortis' ? 17885 : 15119,
+      typicalOutputTokens: product === 'sortis' ? 4300 : 1300,
       typicalUnits: Math.ceil(
-        (product === 'sortis' ? 13.54 : 11.26) * rate.in +
-        (product === 'sortis' ? 4.345 : 2.554) * rate.out
+        (product === 'sortis' ? 17.885 : 15.119) * rate.in +
+        (product === 'sortis' ? 4.3 : 1.3) * rate.out
       )
     };
   }

@@ -30,8 +30,6 @@
   /* accent stripe (the decisive 4th-color slab cutting a seam) */
   --slab-thickness: 14px;
 
-  /* motion — flat and decisive; fades + small translates, no bounces */
-  --ease-out: cubic-bezier(.2, .7, .3, 1); /* @kind other */
-  --speed-fast: 120ms; /* @kind other */
-  --speed-base: 200ms; /* @kind other */
+  /* Motion primitives live in motion.css. Keeping spacing free of timing
+     values means a page can never silently override the shared cadence. */
 }

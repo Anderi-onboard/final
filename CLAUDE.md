@@ -110,7 +110,10 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 - 浏览器只声明**意图**(`product`/`role`),模型由服务端选,key 永不下发。
 - 环境变量(Pages → Settings → Environment variables):
   `OPENROUTER_API_KEY` `SESSION_SECRET` `CREEM_API_KEY` `CREEM_WEBHOOK_SECRET`
-  `CREEM_PRODUCT_PRO` `CREEM_PRODUCT_PREMIUM` `STRIA_MODEL` `SORTIS_MODEL`
+  `CREEM_PRODUCT_PROMONTHLY` `CREEM_PRODUCT_PROANNUAL`
+  `CREEM_PRODUCT_PREMIUMMONTHLY` `CREEM_PRODUCT_PREMIUMANNUAL`
+  `CREEM_PRODUCT_PACK7500` `CREEM_PRODUCT_PACK15000`
+  `CREEM_PRODUCT_PACK30000` `CREEM_PRODUCT_PACK75000` `STRIA_MODEL` `SORTIS_MODEL`
   `UTILITY_MODEL` `CLAUDE_MAX_TOKENS`,D1 绑定 `DB`。
 - **支付是 Creem,不是 Stripe。**
 - 无 key / 无 D1 时必须静默降级到本地 guest 模式,**站点永不崩**。
@@ -123,8 +126,22 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 - **象→实**:每条承重爻必须翻译成具体可查的现实变量(并说"去查什么");只映射真机制,不编数据。
 - **乐观但不说谎**:先把好处讲透,坏处作友好提醒并给出路;死爻仍要点破,乐观在框架不在谎报。
 - **禁催促收尾**:不许出现"今天问得尽兴了/这个收尾/该歇了/改天再来"这类话。
-- 篇幅:Sortis 5000–6000 字,Stria 2000–3000 字。
+- **不许用模糊动词**(一级)。「托着/承载/加持/沉淀/牵引」这类词听着像有内容、其实什么都没说。
+  检验法:每个动词都要能被追问"具体是什么动作、什么状态",答不上来就换掉。
+  「父母持世 —— 你被学业托着」✗ → 「你现在是学生:时间归学校排,住的花的大半靠家里」✓
+- **盘面事实用肯定语气,伸进用户生活的推测必须说"可能"**。「父母不上卦」是断言;
+  「所以你没房」是对一个没见过的人的猜测 —— 猜错一句,读的人连说对的部分也不信了。
+- **先点用神,再动笔**。每篇必须说清读的是哪个用神、为什么是它。
+  **不许拿"这个读不出来"当回避手段** —— 方法上读不读得出(有没有用神)和该不该答(优先级阶梯)
+  是两根独立的轴,用前者去做后者的活,等于既拒绝了用户又谎报了这门方法。
+- 篇幅:主解读 Sortis 3000–4000 字、Stria 1500–2500 字;按键追问 300–6000 字,按问题大小走,
+  **不设刻板字数法则**。短是因为问题小,不是因为给得少 —— 信息量和温度永远不许缩水。
+- **问什么答什么**:问应期就算应期(并按时辰→日→月→年整条列出),问长相就走取象·万物类象·射覆,
+  问能不能就给决断。没问时间的人不要塞应期给他。
+- **不许打印固定编号的段落乐章**。标题要有、而且最好有,但必须从它下面那几段的内容里长出来;
+  能安在别篇解读上的标题一律删掉。场景、取象、老话、把握照旧要有,但落在该落的地方,不许摆盒子。
 - 「再起一卦」= 必须真的新卦(temperature 拉满),不得近似复读;且要承接上文主题。
+- 解读**跟随用户语言**(`detectLanguage`),界面仍是英文。每篇末尾由程序(不是模型)渲染免责提醒。
 
 ---
 
