@@ -467,8 +467,12 @@
     // 月卦身 (gua-shen / body of the matter) — the subject the whole question
     // hangs on. Classic rule: yang world line counts the body-branch from 子 at
     // the first line; yin world line counts from 午. If that branch appears on a
-    // line, that line IS the body (卦身上卦); if not, 卦身不上卦 — the matter has
-    // no clear anchor/subject yet.
+    // line, that line IS the body (卦身上卦) and annotates it. If not, 卦身不上卦 —
+    // which means only that no line carries it. The folk gloss "the matter has no
+    // clear anchor yet" does not follow and must not be attached here or
+    // downstream: 卦身 is absent in 33 of the 64 hexagrams, and whether it lands
+    // is fully determined by the figure, so its absence says nothing the figure
+    // has not already said.
     var wl = pal.worldLi;
     var guashenBi = ((lines[wl] && lines[wl].yang) ? wl : wl + 6) % 12;
     var guashenLines = [];
