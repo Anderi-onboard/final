@@ -1,0 +1,327 @@
+/* BourneWise content pages — shared editorial layout, borders, and motion.
+   Intentionally not loaded by index.html. */
+
+body:not([data-page="app"]){
+  --cp-ink:var(--ink,#171512);
+  --cp-accent:var(--bw-palette-gem,var(--terracotta,#B5502C));
+  --cp-on-accent:var(--bw-palette-on-gem,var(--paper,#F7F2E8));
+  --cp-carrier:color-mix(in srgb,var(--paper-raised,#F8F3E9) 84%,transparent);
+  --cp-carrier-strong:color-mix(in srgb,var(--paper-raised,#F8F3E9) 94%,transparent);
+  --cp-tint:color-mix(in srgb,var(--cp-accent) 8%,var(--paper-raised,#F8F3E9));
+  --cp-line:color-mix(in srgb,var(--cp-ink) 15%,transparent);
+  --cp-line-strong:color-mix(in srgb,var(--cp-ink) 29%,transparent);
+  --cp-line-accent:color-mix(in srgb,var(--cp-accent) 54%,transparent);
+  --cp-radius-lg:27px 31px 25px 29px / 30px 25px 32px 26px;
+  --cp-radius-md:18px 22px 17px 20px / 21px 17px 23px 18px;
+  --cp-radius-sm:11px 14px 10px 13px / 13px 10px 14px 11px;
+  --cp-shadow:0 16px 42px rgba(22,19,15,.055),inset 0 1px rgba(255,255,255,.5);
+  --cp-fast:140ms;
+  --cp-base:220ms;
+  --cp-enter:420ms;
+  --cp-ease-out:cubic-bezier(.23,1,.32,1);
+  --cp-ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+
+body:not([data-page="app"]) :where(button,a,input,select){-webkit-tap-highlight-color:transparent}
+body:not([data-page="app"]) :where(button,a,input,select):focus-visible{
+  outline:2px solid var(--cp-accent)!important;
+  outline-offset:3px;
+}
+body:not([data-page="app"]) :where(button,a)[class]:active:not(:disabled){transform:scale(.975)}
+
+/* One header specification across every standalone page. */
+body:not([data-page="app"]) :where(.pagehead,.top){
+  width:min(1180px,calc(100% - 32px));
+  max-width:1180px;
+  min-height:62px;
+  margin:14px auto 0;
+  padding:10px 16px;
+  border:1px solid var(--cp-line);
+  border-radius:17px 21px 16px 19px / 19px 16px 22px 17px;
+  background:var(--cp-carrier);
+  box-shadow:inset 0 1px rgba(255,255,255,.48);
+  -webkit-backdrop-filter:blur(10px) saturate(108%);
+  backdrop-filter:blur(10px) saturate(108%);
+}
+body:not([data-page="app"]) :where(.brand,.wordmark){min-height:40px}
+body:not([data-page="app"]) :where(.brand b,.wordmark span){
+  font-family:var(--font-brand,"Pacifico",cursive)!important;
+  font-weight:400!important;
+  -webkit-text-stroke:0!important;
+  transform:none!important;
+  letter-spacing:0;
+}
+body:not([data-page="app"]) :where(.pagehead .ghost,.top .exit,.nav .ghost){
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 12px;
+  border:1px solid transparent;
+  border-radius:999px;
+  transition:color var(--cp-fast),border-color var(--cp-fast),background-color var(--cp-fast);
+}
+body:not([data-page="app"]) :where(.pagehead .cta,.top .cta){
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 17px;
+  border-radius:var(--cp-radius-sm);
+  transition:background-color var(--cp-fast),color var(--cp-fast),border-color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out);
+}
+
+/* Thin paper-glass carriers with a slightly irregular, drawn edge. */
+body[data-page="about"] :where(.why-panel,.why-card,.method,.close),
+body[data-page="guide"] :where(.progress,.guide-stage,.lesson-card,.example,.rate),
+body[data-page="login"] :where(.card,.tabs,.prov,.field input),
+body[data-page="pricing"] :where(.ledgerstrip,.annual-check,.plan,.rate-card,.estimator,.pack,.term,.field input,.field select),
+body[data-page="settings"] :where(.panel,.field,.btn),
+body[data-page="legal"] :where(.toc,.pull),
+body[data-page="not-found"] :where(.primary,.ghostbtn){
+  border:1px solid var(--cp-line);
+  background-color:var(--cp-carrier);
+  box-shadow:var(--cp-shadow);
+}
+body[data-page="about"] :where(.why-panel,.close),
+body[data-page="guide"] .guide-stage,
+body[data-page="login"] .card,
+body[data-page="pricing"] :where(.estimator,.ledgerstrip),
+body[data-page="settings"] .panel,
+body[data-page="legal"] .toc{
+  border-radius:var(--cp-radius-lg);
+}
+body[data-page="about"] :where(.why-card,.method),
+body[data-page="guide"] :where(.progress,.lesson-card,.example,.rate),
+body[data-page="pricing"] :where(.plan,.rate-card,.pack,.term),
+body[data-page="login"] :where(.tabs,.prov,.field input),
+body[data-page="settings"] :where(.field,.btn),
+body[data-page="legal"] .pull,
+body[data-page="not-found"] :where(.primary,.ghostbtn){
+  border-radius:var(--cp-radius-md);
+}
+
+/* Static linework: one mark per major carrier, never a repeated wallpaper. */
+body[data-page="about"] .why-panel,
+body[data-page="guide"] .guide-stage,
+body[data-page="login"] .card-hero,
+body[data-page="settings"] .panel,
+body[data-page="legal"] .toc{position:relative;isolation:isolate;overflow:hidden}
+body[data-page="about"] .why-panel::after,
+body[data-page="guide"] .guide-stage::after,
+body[data-page="login"] .card-hero::after,
+body[data-page="settings"] .panel::after,
+body[data-page="legal"] .toc::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  width:220px;
+  height:220px;
+  right:-62px;
+  top:-74px;
+  background:url("../assets/textures/ink-orbits.svg") center/contain no-repeat;
+  opacity:.055;
+  transform:rotate(-8deg);
+}
+body[data-page="about"] .why-panel:nth-of-type(even)::after,
+body[data-page="settings"] .section:nth-of-type(even) .panel::after{
+  right:auto;
+  left:-74px;
+  top:auto;
+  bottom:-86px;
+  background-image:url("../assets/textures/ink-currents.svg");
+  transform:rotate(6deg);
+}
+
+/* About: editorial hierarchy, with the explanation on a real carrier. */
+body[data-page="about"] .why{width:min(1120px,calc(100% - 40px));padding:48px 0 84px}
+body[data-page="about"] .why-hero{min-height:56vh;align-items:center;padding:38px 4px 64px}
+body[data-page="about"] .why-hero h1{max-width:11ch}
+body[data-page="about"] .hero-copy{
+  padding:24px 25px;
+  border:1px solid var(--cp-line);
+  border-radius:var(--cp-radius-lg);
+  background:var(--cp-carrier-strong);
+  box-shadow:var(--cp-shadow);
+}
+body[data-page="about"] .why-panel{margin-top:20px;padding:clamp(30px,4.5vw,54px)}
+body[data-page="about"] .why-card,
+body[data-page="about"] .method{box-shadow:none;background:color-mix(in srgb,var(--cp-carrier-strong) 88%,transparent)}
+body[data-page="about"] .boundary div{border-top-color:var(--cp-line)}
+body[data-page="about"] .close{background:var(--cp-tint)}
+body[data-page="about"] .close a{border:1px solid var(--cp-ink);transition:background-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+
+/* Guide: progress is clear without animating every keyboard step. */
+body[data-page="guide"] .guide-shell{gap:18px;margin-top:18px}
+body[data-page="guide"] .progress{padding:22px 16px;box-shadow:none}
+body[data-page="guide"] .progress-step{
+  border:1px solid transparent;
+  transition:color var(--cp-fast),border-color var(--cp-fast),background-color var(--cp-fast);
+}
+body[data-page="guide"] .progress-step .dot{
+  border-color:var(--cp-line-strong);
+  background:var(--cp-carrier-strong);
+  transition:background-color var(--cp-base),color var(--cp-base),border-color var(--cp-base);
+}
+body[data-page="guide"] .progress-step.active .dot{
+  transform:none;
+  border-color:var(--cp-ink);
+  background:var(--cp-accent);
+  color:var(--cp-on-accent);
+  border-radius:46% 54% 43% 57% / 55% 42% 58% 45%;
+}
+body[data-page="guide"] .progress-step.done .dot{border-color:var(--cp-line-accent);background:var(--cp-tint)}
+body[data-page="guide"] .guide-stage{padding:clamp(30px,5vw,64px);background:var(--cp-carrier-strong)}
+body[data-page="guide"] .lesson{animation:none!important}
+body[data-page="guide"] :where(.lesson-card,.example,.rate){box-shadow:none;background:color-mix(in srgb,var(--paper-raised) 80%,transparent)}
+body[data-page="guide"] :where(.back,.next){
+  min-height:44px;
+  border:1px solid var(--cp-line);
+  border-radius:var(--cp-radius-sm);
+  transition:background-color var(--cp-fast),border-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out);
+}
+
+/* Login: one composed carrier, legible fields, no hover travel. */
+body[data-page="login"] .wrap{padding:28px 20px 40px}
+body[data-page="login"] .card{width:min(460px,100%);background:var(--cp-carrier-strong)}
+body[data-page="login"] .card-hero{background:var(--cp-tint);border-bottom:1px solid var(--cp-line);padding:30px 30px 22px}
+body[data-page="login"] .card-body{padding:26px 30px 14px}
+body[data-page="login"] .card-foot{padding:14px 30px 26px}
+body[data-page="login"] .tabs{box-shadow:none;background:color-mix(in srgb,var(--cp-accent) 6%,var(--paper-raised));padding:4px}
+body[data-page="login"] .tab{transition:color var(--cp-fast),background-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="login"] .tab.on{border:1px solid var(--cp-line);box-shadow:none;background:var(--cp-carrier-strong)}
+body[data-page="login"] .prov{min-height:48px;box-shadow:none;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast),opacity var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+body[data-page="login"] .prov:hover{transform:none}
+body[data-page="login"] .prov .arr{transition:color var(--cp-fast)}
+body[data-page="login"] .prov:hover .arr{transform:none}
+body[data-page="login"] .field input{min-height:48px;box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="login"] .field input:focus{border-color:var(--cp-line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--cp-accent) 14%,transparent)}
+body[data-page="login"][data-mode="register"] .reveal-row{animation:cp-field-in var(--cp-base) var(--cp-ease-out) both}
+
+/* Pricing: hierarchy comes from borders and colour, never card lifts. */
+body[data-page="pricing"] .shell{width:min(1120px,100%)}
+body[data-page="pricing"] .hero{min-height:45vh;align-items:center;padding-top:44px}
+body[data-page="pricing"] .ledgerstrip{box-shadow:none;background:var(--cp-tint)}
+body[data-page="pricing"] .annual-check,
+body[data-page="pricing"] .plan,
+body[data-page="pricing"] .pack{transform:none!important}
+body[data-page="pricing"] .annual-check{box-shadow:none;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast)}
+body[data-page="pricing"] .plan{padding:28px 24px;box-shadow:none;transition:border-color var(--cp-base),background-color var(--cp-base)}
+body[data-page="pricing"] .plan.featured{
+  border-color:var(--cp-line-accent);
+  background:color-mix(in srgb,var(--cp-accent) 7%,var(--paper-raised));
+  box-shadow:inset 0 3px var(--cp-accent),var(--cp-shadow);
+}
+body[data-page="pricing"] :where(.rate-card,.pack,.term){box-shadow:none}
+body[data-page="pricing"] .rate-number{border-top-color:var(--cp-line)}
+body[data-page="pricing"] .field :where(input,select){min-height:48px;box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="pricing"] .field :where(input,select):focus{outline:none;border-color:var(--cp-line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--cp-accent) 14%,transparent)}
+body[data-page="pricing"] .choose{
+  border:1px solid var(--cp-line-strong);
+  border-radius:var(--cp-radius-sm);
+  transition:background-color var(--cp-fast),border-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out);
+}
+body[data-page="pricing"] .toast,
+body[data-page="settings"] .toast{transition:opacity var(--cp-base),transform var(--cp-base) var(--cp-ease-out)}
+
+/* Settings: wider reading measure and calm, structural rows. */
+body[data-page="settings"] .main{scrollbar-gutter:stable}
+body[data-page="settings"] .shell{max-width:760px;padding:50px 44px 94px}
+body[data-page="settings"] .pagetitle{font-size:clamp(42px,5vw,62px)}
+body[data-page="settings"] .subtitle{max-width:48ch}
+body[data-page="settings"] .section{margin-top:46px}
+body[data-page="settings"] .panel{background:var(--cp-carrier-strong);box-shadow:var(--cp-shadow)}
+body[data-page="settings"] :where(.row + .row,.mrow + .mrow){border-top-color:var(--cp-line)}
+body[data-page="settings"] .field{min-height:44px;background:var(--cp-carrier-strong);box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="settings"] .field:focus{border-color:var(--cp-line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--cp-accent) 14%,transparent)}
+body[data-page="settings"] .btn{min-height:40px;box-shadow:none!important;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+body[data-page="settings"] .mrow{transition:background-color var(--cp-fast)}
+body[data-page="settings"] .danger{border-color:color-mix(in srgb,var(--terracotta) 38%,transparent)}
+
+/* Legal pages: quieter reading measure and a real document structure. */
+body[data-page="legal"] .pagehead{max-width:980px}
+body[data-page="legal"] .legal{
+  max-width:900px;
+  margin-top:28px;
+  padding:54px 44px 88px;
+  border:1px solid var(--cp-line);
+  border-radius:31px 27px 34px 28px / 28px 34px 27px 32px;
+  background:color-mix(in srgb,var(--paper-raised) 78%,transparent);
+  box-shadow:var(--cp-shadow);
+}
+body[data-page="legal"] .legal h1{max-width:12ch;font-size:clamp(44px,6.5vw,72px)}
+body[data-page="legal"] .lede{max-width:62ch;font-size:19px}
+body[data-page="legal"] .toc{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 30px;
+  columns:auto;
+  padding:22px 24px;
+  background:var(--cp-tint);
+  box-shadow:none;
+}
+body[data-page="legal"] .toc a{min-height:34px;display:flex;align-items:center;border-bottom:1px solid color-mix(in srgb,var(--cp-line) 70%,transparent);transition:color var(--cp-fast),border-color var(--cp-fast)}
+body[data-page="legal"] .clause{max-width:72ch;margin-top:44px;scroll-margin-top:26px}
+body[data-page="legal"] .clause h2{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:baseline}
+body[data-page="legal"] .clause h2 .n{font-size:15px;color:var(--cp-accent)}
+body[data-page="legal"] .clause p,
+body[data-page="legal"] .clause li{font-size:15.5px;line-height:1.78}
+body[data-page="legal"] .clause + .clause{padding-top:22px;border-top-color:var(--cp-line)}
+body[data-page="legal"] .pull{padding:20px 22px;border-left:3px solid var(--cp-accent);background:var(--cp-tint);box-shadow:none}
+body[data-page="legal"] .legal-foot{border-top-color:var(--cp-line)}
+
+/* 404: a single rare flourish can explain the missing line. */
+body[data-page="not-found"] .wrap::before{
+  content:"";
+  position:absolute;
+  width:min(520px,82vw);
+  aspect-ratio:1.7;
+  z-index:-1;
+  background:url("../assets/textures/ink-knot.svg") center/contain no-repeat;
+  opacity:.045;
+}
+body[data-page="not-found"] .brokenfig{animation:cp-figure-in var(--cp-enter) var(--cp-ease-out) both}
+body[data-page="not-found"] .flourish path{animation-duration:1.25s;animation-timing-function:var(--cp-ease-in-out)}
+body[data-page="not-found"] .primary{background:var(--cp-ink);color:var(--paper);border-color:var(--cp-ink);box-shadow:none;transition:background-color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+body[data-page="not-found"] .primary:hover{transform:none}
+body[data-page="not-found"] .ghostbtn{box-shadow:none;transition:border-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+
+@keyframes cp-field-in{from{opacity:0;transform:translateY(-6px);clip-path:inset(0 0 22%)}to{opacity:1;transform:none;clip-path:inset(0)}}
+@keyframes cp-figure-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+@media (hover:hover) and (pointer:fine){
+  body:not([data-page="app"]) :where(.pagehead .ghost,.top .exit,.nav .ghost):hover{color:var(--cp-ink);border-color:var(--cp-line);background:color-mix(in srgb,var(--paper-raised) 72%,transparent)}
+  body[data-page="guide"] .progress-step:hover{color:var(--cp-ink);border-color:var(--cp-line);background:var(--cp-tint)}
+  body[data-page="login"] .prov:hover{border-color:var(--cp-line-strong);background-color:var(--cp-tint)}
+  body[data-page="pricing"] :where(.annual-check,.plan,.pack):hover{border-color:var(--cp-line-strong)}
+  body[data-page="settings"] .mrow:hover{background:var(--cp-tint)}
+  body[data-page="legal"] :where(.toc a,.legal-foot a):hover{color:var(--cp-accent)}
+  body[data-page="not-found"] .ghostbtn:hover{border-color:var(--cp-line-accent);color:var(--cp-accent)}
+}
+
+@media (max-width:800px){
+  body:not([data-page="app"]) :where(.pagehead,.top){width:calc(100% - 24px);margin-top:10px;padding:8px 12px}
+  body[data-page="about"] .why-hero{min-height:auto;padding-top:46px}
+  body[data-page="pricing"] .hero{min-height:auto}
+  body[data-page="legal"] .legal{padding:42px 24px 72px}
+}
+@media (max-width:600px){
+  body[data-page="login"] .wrap{padding:14px 12px 28px;align-items:flex-start}
+  body[data-page="login"] .card-hero{padding:25px 22px 19px}
+  body[data-page="login"] .card-body{padding:22px 22px 12px}
+  body[data-page="login"] .card-foot{padding:12px 22px 22px}
+  body[data-page="legal"] .legal{padding:36px 18px 64px}
+  body[data-page="legal"] .toc{grid-template-columns:1fr;padding:18px}
+  body[data-page="settings"] .shell{padding:36px 16px 76px}
+  body[data-page="settings"] .panel{border-radius:22px 25px 20px 24px / 24px 20px 27px 21px}
+  body[data-page="guide"] .guide-stage{padding:30px 20px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  body:not([data-page="app"]) *,body:not([data-page="app"]) *::before,body:not([data-page="app"]) *::after{
+    scroll-behavior:auto!important;
+  }
+  body[data-page="login"][data-mode="register"] .reveal-row,
+  body[data-page="not-found"] .brokenfig{animation-duration:200ms;animation-name:cp-fade}
+  body[data-page="not-found"] .flourish path{animation:none;stroke-dashoffset:0}
+}
+@keyframes cp-fade{from{opacity:.35}to{opacity:1}}
