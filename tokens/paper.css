@@ -8,6 +8,8 @@
    slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
+  --paper-grain-image: url("../assets/textures/paper-grain.webp");
+  --paper-grain-size: 512px 512px;
   /* verified editorial palette, adapted into interface roles */
   --paper: #FAF9F5;         /* full canvas / ivory */
   --paper-raised: #F0EEE6;  /* irregular carrier surfaces */
@@ -72,8 +74,8 @@ html[data-skin="paper"] body::after {
   inset: 0;
   z-index: 2147483646;
   pointer-events: none;
-  background: url("../assets/textures/paper-grain.webp") 0 0 / 512px 512px repeat;
-  opacity: .52;
+  background: var(--paper-grain-image) 0 0 / var(--paper-grain-size) repeat;
+  opacity: .68;
   mix-blend-mode: multiply;
 }
 

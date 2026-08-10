@@ -18,7 +18,12 @@
     "金赭段": true,
     "蓝靛段": true
   };
-  var paletteScheduleSlots = 500;
+  var paletteExcludedSegments = {
+    "粉珊瑚段": true,
+    "青绿段": true,
+    "黄绿杂段": true
+  };
+  var paletteScheduleSlots = 370;
   var paletteTimer = 0;
 
 
@@ -180,14 +185,42 @@
       && group.rows.every(function (hex) { return /^#[0-9a-f]{6}$/i.test(hex); });
   }
 
-  /* The source file is an art-palette catalogue, not a set of equally reliable
-     product themes. Near-white, gold/ochre and blue/indigo groups carry the
-     calmest combinations, so they receive five slots each. Every other group
-     keeps one slot: nothing is banned, but the heavier purple/green collisions
-     become occasional accents instead of the site's default atmosphere. */
+  function hueOf(hex) {
+    var n = parseInt(hex.slice(1), 16);
+    var r = (n >> 16) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min, h = 0;
+    if (d) {
+      if (max === r) h = ((g - b) / d) % 6;
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+    }
+    return (h * 60 + 360) % 360;
+  }
+
+  function paletteGem(group) {
+    var index = Array.isArray(group.gems) && group.gems.length
+      ? Math.max(0, Math.min(9, group.gems[0] - 1))
+      : 5;
+    return group.rows[index];
+  }
+
+  function activePaletteGroup(group) {
+    if (paletteExcludedSegments[group.seg]) return false;
+    if (group.seg !== "近白段") return true;
+    var hue = hueOf(paletteGem(group));
+    var red = hue >= 335 || hue <= 25;
+    var green = hue >= 75 && hue <= 170;
+    return !red && !green;
+  }
+
+  /* Red and green catalogue segments are intentionally out of rotation. The
+     near-white segment stays, but its red- and green-led subgroups are filtered
+     by their designated gem colour. Blue/indigo, gold/ochre and the remaining
+     near-whites keep the five-slot preference; violet remains occasional. */
   function buildPaletteSchedule(groups) {
     var schedule = [];
     groups.forEach(function (group) {
+      if (!activePaletteGroup(group)) return;
       var weight = palettePrioritySegments[group.seg] ? palettePriorityWeight : 1;
       for (var i = 0; i < weight; i++) schedule.push(group);
     });
