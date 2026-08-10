@@ -62,3 +62,21 @@
   --side-wash: var(--paper-dim);
   --focus-ring: var(--terracotta);
 }
+
+/* A single fixed paper veil makes every field and carrier feel printed on the
+   same stock. The alpha-only WebP is 20 KB and never participates in layout or
+   animation, so the moving mountain SVG remains the only ambient compositor. */
+html[data-skin="paper"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  pointer-events: none;
+  background: url("../assets/textures/paper-grain.webp") 0 0 / 512px 512px repeat;
+  opacity: .52;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-contrast: more) {
+  html[data-skin="paper"] body::after { opacity: .26; }
+}
