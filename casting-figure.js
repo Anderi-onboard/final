@@ -53,14 +53,14 @@
      gi = five-element index in generating order (Wood0 Fire1 Earth2 Metal3 Water4);
      nat = the trigram's classical image, used to mark where the reading comes from. */
   var TRIGRAMS = [
-    { sym:"☷", en:"Earth",    gi:2, nat:"yielding, receptive" },
-    { sym:"☳", en:"Thunder",  gi:0, nat:"arousing, sudden movement" },
-    { sym:"☵", en:"Water",    gi:4, nat:"depth, the unavoidable" },
-    { sym:"☱", en:"Lake",     gi:3, nat:"openness, quiet joy" },
-    { sym:"☶", en:"Mountain", gi:2, nat:"stillness, the immovable" },
-    { sym:"☲", en:"Fire",     gi:1, nat:"clarity, what clings and shows" },
-    { sym:"☴", en:"Wind",     gi:0, nat:"gentle, persistent pressure" },
-    { sym:"☰", en:"Heaven",   gi:3, nat:"force, pure initiative" }
+    { bits:0, en:"Earth",    gi:2, nat:"yielding, receptive" },
+    { bits:1, en:"Thunder",  gi:0, nat:"arousing, sudden movement" },
+    { bits:2, en:"Water",    gi:4, nat:"depth, the unavoidable" },
+    { bits:3, en:"Lake",     gi:3, nat:"openness, quiet joy" },
+    { bits:4, en:"Mountain", gi:2, nat:"stillness, the immovable" },
+    { bits:5, en:"Fire",     gi:1, nat:"clarity, what clings and shows" },
+    { bits:6, en:"Wind",     gi:0, nat:"gentle, persistent pressure" },
+    { bits:7, en:"Heaven",   gi:3, nat:"force, pure initiative" }
   ];
 
   /* Five elements in generating order — colours tuned to the Paper palette */
@@ -226,7 +226,7 @@
   function coinsStr(){ return '<span class="bw-coins">'+coinsMarkup()+'</span>'; }
 
   function triLbl(tri){
-    return '<span class="bw-tri-sym">'+tri.sym+'</span>'+
+    return '<span class="bw-tri-sym">'+trigramMarkSVG(tri)+'</span>'+
            '<span class="bw-tri-en">'+tri.en+'</span>';
   }
   /* A restrained hand-drawn transform arrow: one slightly uneven stroke and
@@ -456,16 +456,8 @@
         return lineIndex < 3 ? "forming the inner trigram" : "forming the outer trigram";
       }
       function startLineRound(lineIndex){
-        clearCoinFaces();
         if (coinsEl) {
-          coinsEl.setAttribute("aria-label", "Line " + (lineIndex + 1) + " of 6: coins in motion");
-          if (!reduced) {
-            coinsEl.classList.remove("is-tossing");
-            /* Each round gets a fresh animation without a synchronous layout read. */
-            requestAnimationFrame(function(){
-              if (!cancelled) coinsEl.classList.add("is-tossing");
-            });
-          }
+          coinsEl.setAttribute("aria-label", "Line " + (lineIndex + 1) + " of 6: resolving coin faces");
         }
         showStatus("Line " + (lineIndex + 1) + " / 6 \u00b7 " + roundPhase(lineIndex) + "\u2026");
       }
@@ -474,6 +466,7 @@
         var faces = coinFacesForLine(line, lineIndex, false);
         if (coinsEl) coinsEl.classList.remove("is-tossing");
         coinEls.forEach(function(coin, index){
+          coin.classList.remove("side-yang", "side-yin");
           coin.classList.add(faces[index] ? "side-yang" : "side-yin");
         });
         var faceText = faces.map(function(face){ return face ? "Yang" : "Yin"; }).join(" \u00b7 ");
@@ -519,7 +512,7 @@
         svg.querySelectorAll('.bw-af-branch').forEach(function(node, index){
           setTimeout(function(){ if (!cancelled) node.classList.add("is-cast"); }, reduced ? 0 : Math.min(index * 18, 360));
         });
-        svg.querySelectorAll('.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name').forEach(function(node){ node.classList.add("is-cast"); });
+        svg.querySelectorAll('.bw-af-tri-mark,.bw-af-tri-en,.bw-af-name').forEach(function(node){ node.classList.add("is-cast"); });
         if (!await wait(reduced ? 180 : 620)) return;
 
         showStatus("Opening the reading\u2026");
@@ -555,6 +548,31 @@
         resolve();
       }
     });
+  }
+  function trigramRowsSVG(tri, x, top, width, height, gap) {
+    var out = "";
+    for (var row = 0; row < 3; row++) {
+      var bit = (tri.bits >> (2 - row)) & 1;
+      var y = top + row * gap;
+      if (bit) {
+        out += '<path d="' + barPath(x, y, width, height) + '"></path>';
+      } else {
+        var half = (width - 5) / 2;
+        out += '<path d="' + barPath(x, y, half, height) + '"></path>' +
+          '<path d="' + barPath(x + width - half, y, half, height) + '"></path>';
+      }
+    }
+    return out;
+  }
+  function trigramMarkSVG(tri) {
+    return '<svg viewBox="0 0 30 22" aria-hidden="true" focusable="false">' +
+      '<g fill="currentColor" stroke="currentColor" stroke-width=".35" stroke-linecap="round" stroke-linejoin="round">' +
+      trigramRowsSVG(tri, 2, 2, 26, 3.2, 7.3) + '</g></svg>';
+  }
+  function trigramTagSVG(cx, tri, symY) {
+    return '<g class="bw-af-tri-mark" fill="var(--terracotta)" stroke="var(--terracotta)" stroke-width=".3" stroke-linecap="round" stroke-linejoin="round">' +
+      trigramRowsSVG(tri, cx - 13, symY - 13, 26, 3, 6.1) + '</g>' +
+      '<text class="bw-af-tri-en" x="' + cx + '" y="' + (symY + 11) + '" text-anchor="middle">' + esc(tri.en) + '</text>';
   }
 
   function cancelCast(container){
@@ -602,10 +620,7 @@
          active cast they perform one coordinated toss, then stay still. ── */
       ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
       ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;background:var(--paper);",
-        "border:2.3px solid currentColor;border-radius:47% 53% 61% 39% / 44% 51% 49% 56%;",
-        "transform-origin:50% 58%}",
-      ".bw-af-loader.b{width:23px;height:20px}",
-      ".bw-af-loader.c{width:20px;height:23px}",
+        "border:2.2px solid var(--ink);border-radius:50%;transition:background-color .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
       /* Filled clay = yang face; hollow paper = yin face. These are the same
          three circles, now carrying the result of each of the six tosses. */
       /* The face changes, the ink outline does not. Keeping the same dark,
@@ -636,7 +651,8 @@
       ".bw-tri-tag{display:flex;align-items:center;gap:8px;opacity:0;transform:translateY(4px);",
         "transition:opacity .45s ease,transform .45s ease;pointer-events:none}",
       ".bw-tri-tag.vis{opacity:1;transform:translateY(0)}",
-      ".bw-tri-sym{font-size:21px;color:var(--terracotta);line-height:1}",
+      ".bw-tri-sym{display:inline-flex;width:25px;color:var(--terracotta);line-height:1}",
+      ".bw-tri-sym svg{display:block;width:25px;height:auto;overflow:visible}",
       ".bw-tri-en{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}",
       ".bw-tri-tag-static{display:inline-flex;align-items:center;gap:8px;opacity:1;transform:none}",
 
@@ -688,7 +704,7 @@
       ".bw-af-bel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--dim)}",
       ".bw-af-mk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}",
       ".bw-af-mk.self{fill:var(--terracotta)}",".bw-af-mk.resp{fill:var(--prussian)}",
-      ".bw-af-tri-sym{font-size:15px;fill:var(--terracotta)}",
+      ".bw-af-tri-mark{color:var(--terracotta)}",
       ".bw-af-tri-en{font-family:var(--sans);font-size:8.5px;letter-spacing:.12em;fill:var(--faint)}",
       ".bw-af-name{font-family:var(--sans);font-size:14px;font-weight:600;fill:var(--ink)}",".bw-af-name.rel{fill:var(--prussian)}",
       ".bw-af-arrow{fill:none;stroke-width:1.5;opacity:.5;stroke-linecap:round}",
@@ -749,51 +765,22 @@
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
       /* Six distinct throws: every round agitates the same three circles, then
          their filled/hollow faces settle before the matching line lands. */
-      ".bw-cast-run .bw-af-loader{will-change:transform;transition:background-color var(--dur-base,190ms) var(--ease-out,cubic-bezier(.23,1,.32,1)),border-color var(--dur-base,190ms) var(--ease-out,cubic-bezier(.23,1,.32,1))}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader{background:var(--paper)!important;border-color:var(--ink)!important}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader:not(.b):not(.c){animation:bwCoinLeft .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.b{animation:bwCoinMiddle .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
-      ".bw-cast-run .bw-coins.is-tossing .bw-af-loader.c{animation:bwCoinRight .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
+      ".bw-cast-run .bw-af-loader{transition:background-color .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
       ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.65s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
-      "@keyframes bwCoinLeft{",
-        "0%{transform:none}",
-        "24%{transform:translate(7px,-9px) rotate(12deg) scaleY(.18)}",
-        "52%{transform:translate(3px,2px) rotate(-5deg) scale(1.04)}",
-        "72%{transform:translate(-1px,-1px) rotate(2deg) scale(.99)}",
-        "100%{transform:none}",
-      "}",
-      "@keyframes bwCoinMiddle{",
-        "0%{transform:none}",
-        "21%{transform:translateY(-13px) rotate(-9deg) scaleY(.16)}",
-        "50%{transform:translateY(2px) rotate(5deg) scale(1.06)}",
-        "72%{transform:translateY(-1px) rotate(-2deg) scale(.99)}",
-        "100%{transform:none}",
-      "}",
-      "@keyframes bwCoinRight{",
-        "0%{transform:none}",
-        "26%{transform:translate(-7px,-8px) rotate(-13deg) scaleY(.2)}",
-        "53%{transform:translate(-3px,2px) rotate(6deg) scale(1.04)}",
-        "73%{transform:translate(1px,-1px) rotate(-2deg) scale(.99)}",
-        "100%{transform:none}",
-      "}",
       "@keyframes bwMethodSet{0%,18%{opacity:.58;transform:translateX(-3px)}58%,100%{opacity:1;transform:none}}",
       ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend{opacity:0;transform:translateY(4px)}",
       ".bw-cast-run .bw-af-moment{animation:bwCastMeta .5s .28s cubic-bezier(.16,1,.3,1) forwards}",
       ".bw-cast-run .bw-af-legend.is-cast{animation:bwCastMeta .62s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastMeta{to{opacity:1;transform:none}}",
       ".bw-af[data-cast]{opacity:1;transform:none;transform-origin:center}",
-      ".bw-af[data-cast] .bw-af-ln{opacity:0;transform:translateY(8px) scaleX(.72);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast] .bw-af-ln.is-cast{animation:bwCastLine .78s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
-      "@keyframes bwCastLine{",
-        "0%{opacity:0;transform:translateY(8px) scaleX(.72)}",
-        "58%{opacity:1;transform:translateY(-1px) scaleX(1.025)}",
-        "100%{opacity:1;transform:none}",
-      "}",
+      ".bw-af[data-cast] .bw-af-ln{opacity:0}",
+      ".bw-af[data-cast] .bw-af-ln.is-cast{animation:bwCastLine .52s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
+      "@keyframes bwCastLine{to{opacity:1}}",
       ".bw-af[data-cast] .bw-af-branch{opacity:0;transform:translate(var(--fx,6px),2px)}",
       ".bw-af[data-cast] .bw-af-branch.is-cast{animation:bwCastBranch .7s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastBranch{to{opacity:1;transform:none}}",
-      ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name){opacity:0;transform:translateY(4px);transform-box:fill-box;transform-origin:center}",
-      ".bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name).is-cast{animation:bwCastLabel .68s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
+      ".bw-af[data-cast] :is(.bw-af-tri-mark,.bw-af-tri-en,.bw-af-name){opacity:0;transform:translateY(4px);transform-box:fill-box;transform-origin:center}",
+      ".bw-af[data-cast] :is(.bw-af-tri-mark,.bw-af-tri-en,.bw-af-name).is-cast{animation:bwCastLabel .68s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
       "@keyframes bwCastLabel{to{opacity:1;transform:none}}",
       ".bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow){opacity:0}",
       ".bw-af[data-cast] .bw-af-arrow.is-cast{animation:bwCastArrow .82s var(--ease-out,cubic-bezier(.23,1,.32,1)) forwards}",
@@ -815,19 +802,12 @@
          a slow three-beat coin drift, breathing moving-line marks and currents
          travelling through the already-drawn relationship paths. */
       "@media (prefers-reduced-motion:no-preference){",
-        ".bw-motion-current .bw-af-loader{will-change:transform,border-radius;animation:bwCoinIdleA 4.8s cubic-bezier(.45,0,.55,1) infinite,bwCoinContour 7.2s ease-in-out infinite}",
-        ".bw-motion-current .bw-af-loader.b{animation-name:bwCoinIdleB,bwCoinContour;animation-duration:4.2s,6.7s;animation-delay:-1.15s,-2.2s}",
-        ".bw-motion-current .bw-af-loader.c{animation-name:bwCoinIdleC,bwCoinContour;animation-duration:5.15s,7.8s;animation-delay:-2.4s,-4.1s}",
         ".bw-motion-current .bw-af-mark{transform-box:fill-box;transform-origin:center;animation:bwMarkLive 3.6s cubic-bezier(.45,0,.55,1) infinite}",
         ".bw-motion-current .bw-af-flow{animation:bwFlowLive 4.8s linear infinite;animation-delay:calc(var(--fi,0) * -.72s)}",
         ".bw-motion-current .bw-af-flow.ctrl,.bw-motion-current .bw-af-flow.ctrl-rev{animation-duration:6.4s;animation-direction:reverse}",
         ".bw-motion-current .bw-af-flow.peer{animation-duration:5.6s}",
         ".bw-motion-current .bw-af-tarrow{stroke-dasharray:4 7;animation:bwCrossLive 5.2s linear infinite}",
       "}",
-      "@keyframes bwCoinIdleA{0%,100%{transform:none}28%{transform:translate(-.4px,-1.8px) rotate(-1.8deg)}63%{transform:translate(.5px,.6px) rotate(.8deg)}}",
-      "@keyframes bwCoinIdleB{0%,100%{transform:none}34%{transform:translateY(-2.2px) rotate(1.5deg) scale(1.025)}72%{transform:translate(-.3px,.5px) rotate(-.7deg)}}",
-      "@keyframes bwCoinIdleC{0%,100%{transform:none}24%{transform:translate(.5px,-1.3px) rotate(1.7deg)}58%{transform:translate(-.4px,-2px) rotate(-.9deg)}82%{transform:translateY(.4px)}}",
-      "@keyframes bwCoinContour{0%,100%{border-radius:47% 53% 61% 39% / 44% 51% 49% 56%}45%{border-radius:55% 45% 42% 58% / 53% 43% 57% 47%}72%{border-radius:43% 57% 54% 46% / 47% 58% 42% 53%}}",
       "@keyframes bwMarkLive{0%,100%{transform:scale(1);opacity:.78}42%{transform:scale(1.12) rotate(2deg);opacity:1}68%{transform:scale(.98) rotate(-1deg);opacity:.88}}",
       "@keyframes bwFlowLive{to{stroke-dashoffset:-44}}",
       "@keyframes bwCrossLive{to{stroke-dashoffset:-33}}",
@@ -873,7 +853,7 @@
         ".bw-af-live .bw-af-flow,.bw-af-live .bw-af-mark,.bw-af-live .bw-af-tarrow{animation:none!important}",
         ".bw-fig .bw-ln.in{animation:none;opacity:1;transform:none}",
         ".bw-af[data-cast] *{animation:none!important}",
-        ".bw-af[data-cast] .bw-af-ln.is-cast,.bw-af[data-cast] .bw-af-branch.is-cast,.bw-af[data-cast] :is(.bw-af-tri-sym,.bw-af-tri-en,.bw-af-name).is-cast,.bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow).is-cast{opacity:1!important;transform:none!important}",
+        ".bw-af[data-cast] .bw-af-ln.is-cast,.bw-af[data-cast] .bw-af-branch.is-cast,.bw-af[data-cast] :is(.bw-af-tri-mark,.bw-af-tri-en,.bw-af-name).is-cast,.bw-af[data-cast] :is(.bw-af-arrow,.bw-af-tarrow,.bw-af-flowbase,.bw-af-flow).is-cast{opacity:1!important;transform:none!important}",
         ".bw-casting .bw-af-moment{opacity:1;transform:none}",
         ".bw-casting .bw-af-legend.is-cast{opacity:1;transform:none}",
       "}"
@@ -1115,8 +1095,7 @@
       return brush(x, y, half, h, col) + brush(x + w - half, y, half, h, col);
     }
     function triTag(cx, tri, symY) {
-      return '<text class="bw-af-tri-sym" x="' + cx + '" y="' + symY + '" text-anchor="middle">' + tri.sym + '</text>' +
-        '<text class="bw-af-tri-en" x="' + cx + '" y="' + (symY + 11) + '" text-anchor="middle">' + esc(tri.en) + '</text>';
+      return trigramTagSVG(cx, tri, symY);
     }
 
     /* primary column: bars · moving rings · branches (element · role) · World/Resp */
@@ -1256,8 +1235,7 @@
       return brush(x, y, half, h, col) + brush(x + w - half, y, half, h, col);
     }
     function triTag(cx, tri, symY) {
-      return '<text class="bw-af-tri-sym" x="' + cx + '" y="' + symY + '" text-anchor="middle">' + tri.sym + '</text>' +
-        '<text class="bw-af-tri-en" x="' + cx + '" y="' + (symY + 11) + '" text-anchor="middle">' + esc(tri.en) + '</text>';
+      return trigramTagSVG(cx, tri, symY);
     }
     /* moving-line mark, drawn in the same ink-brush language as the figure and set
        to the RIGHT of the bar (like the Self/Resp labels): ○ old-yang · ✕ old-yin */

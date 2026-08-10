@@ -8,8 +8,8 @@
    slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
-  --paper-grain-image: url("../assets/textures/paper-grain.webp");
-  --paper-grain-size: 512px 512px;
+  --paper-grain-image: url("../assets/textures/halftone-micro.webp");
+  --paper-grain-size: 256px 256px;
   /* verified editorial palette, adapted into interface roles */
   --paper: #FAF9F5;         /* full canvas / ivory */
   --paper-raised: #F0EEE6;  /* irregular carrier surfaces */
@@ -65,9 +65,8 @@
   --focus-ring: var(--terracotta);
 }
 
-/* A single fixed paper veil makes every field and carrier feel printed on the
-   same stock. The alpha-only WebP is 20 KB and never participates in layout or
-   animation, so the moving mountain SVG remains the only ambient compositor. */
+/* A single fixed micro-halftone screen unifies every field without pretending
+   the display is stained paper. It is deliberately faint and never animates. */
 html[data-skin="paper"] body::after {
   content: "";
   position: fixed;
@@ -75,10 +74,10 @@ html[data-skin="paper"] body::after {
   z-index: 2147483646;
   pointer-events: none;
   background: var(--paper-grain-image) 0 0 / var(--paper-grain-size) repeat;
-  opacity: .68;
+  opacity: .09;
   mix-blend-mode: multiply;
 }
 
 @media (prefers-contrast: more) {
-  html[data-skin="paper"] body::after { opacity: .26; }
+  html[data-skin="paper"] body::after { opacity: .08; }
 }

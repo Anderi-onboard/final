@@ -295,9 +295,7 @@ body[data-page="app"] .stria {
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
 body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
-body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:transform var(--dur-fast) var(--ease-out),background-color var(--dur-base) ease,box-shadow var(--dur-base) ease; }
-body[data-page="app"] .send svg { transition: transform var(--dur-fast) var(--ease-out); }
-body[data-page="app"] .send:hover { background: var(--terracotta); }
+body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:background-color 140ms ease,opacity 140ms ease; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
   padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass-soft);
@@ -452,8 +450,7 @@ body[data-page="app"] .send:disabled .bw-organic-loader { display: inline-flex; 
     transition: background-color var(--dur-base) ease, color var(--dur-base) ease, border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
   }
   body[data-page="app"] .new-cast .ic { transition: background-color var(--dur-base) ease; }
-  body[data-page="app"] .send:hover { box-shadow: 0 7px 18px color-mix(in srgb,var(--terracotta) 20%,transparent); }
-  body[data-page="app"] .send:hover svg { transform: translateX(1px); }
+  body[data-page="app"] .send:hover { background: var(--terracotta); }
   html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost) {
     transition: box-shadow var(--dur-base) ease, border-color var(--dur-base) ease, background-color var(--dur-base) ease;
   }

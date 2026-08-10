@@ -11,7 +11,7 @@
     ? new URL("../palettes/color-groups-180.json?v=20260802h", scriptSrc).href
     : "./assets/palettes/color-groups-180.json?v=20260802h";
   var paletteDwellMs = 15000;
-  var paletteStep = 47;
+  var paletteStep = 1;
   var palettePriorityWeight = 5;
   var palettePrioritySegments = {
     "近白段": true,
@@ -219,11 +219,21 @@
      near-whites keep the five-slot preference; violet remains occasional. */
   function buildPaletteSchedule(groups) {
     var schedule = [];
-    groups.forEach(function (group) {
-      if (!activePaletteGroup(group)) return;
-      var weight = palettePrioritySegments[group.seg] ? palettePriorityWeight : 1;
-      for (var i = 0; i < weight; i++) schedule.push(group);
+    var tierOrder = { "浓": 0, "艳": 1, "中": 2, "淡": 3 };
+    var eligible = groups.filter(activePaletteGroup).slice().sort(function (a, b) {
+      var tierA = tierOrder[a.tier] == null ? 9 : tierOrder[a.tier];
+      var tierB = tierOrder[b.tier] == null ? 9 : tierOrder[b.tier];
+      return tierA - tierB || a.id.localeCompare(b.id);
     });
+    /* Interleave preference passes instead of placing five identical slots next
+       to each other. Darker groups lead every session, while the 15-second
+       cadence and blue / gold / near-white preference remain intact. */
+    for (var pass = 0; pass < palettePriorityWeight; pass++) {
+      eligible.forEach(function (group) {
+        var weight = palettePrioritySegments[group.seg] ? palettePriorityWeight : 1;
+        if (pass < weight) schedule.push(group);
+      });
+    }
     return schedule;
   }
 
@@ -299,20 +309,20 @@
     }
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
     var cycleMs = paletteDwellMs * paletteScheduleSlots;
-    var clockKey = 'bw-palette-clock-v3';
+    var clockKey = 'bw-palette-clock-v4';
     var seenKey = 'bw-mtn-seen';
     var clockStart;
     var seen = false;
     try {
       clockStart = +(sessionStorage.getItem(clockKey) || 0);
       if (!clockStart) {
-        clockStart = Date.now() - Math.random() * cycleMs;
+        clockStart = Date.now();
         sessionStorage.setItem(clockKey, String(clockStart));
       }
       seen = sessionStorage.getItem(seenKey) === '1';
       sessionStorage.setItem(seenKey, '1');
     } catch (e) {
-      clockStart = Date.now() - Math.random() * cycleMs;
+      clockStart = Date.now();
     }
     var sharedPhase = -(((Date.now() - clockStart) % cycleMs) / 1000);
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
