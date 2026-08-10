@@ -135,27 +135,59 @@
     return faces;
   }
 
+  /* Toss three coins for one line, the way the method actually works.
+     背 counts 3, 字 counts 2, so the sum is 6 + (number of yang faces):
+       0 yang faces → 6 老阴  yin, moving    (1/8)
+       1            → 7 少阳  yang, static   (3/8)
+       2            → 8 少阴  yin, static    (3/8)
+       3            → 9 老阳  yang, moving   (1/8)
+     Each line therefore moves with probability 1/4, INDEPENDENTLY of the other
+     five. This replaces a draw that set yin/yang on a fair coin and then forced
+     exactly one or two moving lines chosen from a shuffled pool — which made a
+     still hexagram impossible and three moving lines impossible, neither of
+     which is true of the method the comment above already claimed to implement.
+     Yin/yang is unaffected (少阳+老阳 = 1/2, same as before); only the
+     distribution of movement changes, and it changes to the real one. */
+  function tossLine() {
+    var faces = [Math.random() < 0.5, Math.random() < 0.5, Math.random() < 0.5];
+    var yangFaces = (faces[0] ? 1 : 0) + (faces[1] ? 1 : 0) + (faces[2] ? 1 : 0);
+    return {
+      yang: yangFaces === 1 || yangFaces === 3,
+      changing: yangFaces === 0 || yangFaces === 3,
+      coins: faces
+    };
+  }
+
   /* ── public: random ── */
   function random(method) {
-    var lines = [];
-    for (var i = 0; i < N; i++) lines.push({ yang: Math.random() < 0.5, changing: false });
+    var lines = [], i;
+    for (i = 0; i < N; i++) lines.push(tossLine());
+
+    /* Stria reads the primary hexagram only, so a moving line has nothing to
+       act on there. Flatten movement for Stria and re-derive its coin faces so
+       the displayed provenance matches the static line the reader is shown;
+       the yin/yang of the figure is identical either way. */
+    if (method !== "sortis") {
+      lines.forEach(function (line, index) {
+        line.changing = false;
+        line.coins = coinFacesForLine(line, index, true);
+      });
+    }
+
     var name = NAMES[patternBits(lines) % NAMES.length];
     var transformedLines = null, transformedName = null, changeIdx = [];
-    if (method === "sortis") {
-      var k = 1 + (Math.random() < 0.55 ? 1 : 0);
-      var pool = [0,1,2,3,4,5];
-      for (var s = pool.length-1; s > 0; s--) {
-        var j = Math.floor(Math.random()*(s+1));
-        var t = pool[s]; pool[s]=pool[j]; pool[j]=t;
-      }
-      changeIdx = pool.slice(0,k).sort(function(a,b){return a-b;});
-      changeIdx.forEach(function(i){ lines[i].changing = true; });
-      transformedLines = lines.map(function(l){
+    for (i = 0; i < N; i++) if (lines[i].changing) changeIdx.push(i);
+
+    /* No moving line is a legitimate outcome (about 18% of Sortis casts): the
+       figure is 静卦 and is read on the primary alone. Leave transformedLines
+       null so the second figure and the transform copy stay out — both already
+       guard on it. */
+    if (changeIdx.length) {
+      transformedLines = lines.map(function (l) {
         return { yang: l.changing ? !l.yang : l.yang, changing: false };
       });
       transformedName = NAMES[patternBits(transformedLines) % NAMES.length];
     }
-    lines.forEach(function(line, index){ line.coins = coinFacesForLine(line, index, true); });
     return { method:method, lines:lines, name:name,
       transformedLines:transformedLines, transformedName:transformedName, changeIdx:changeIdx };
   }

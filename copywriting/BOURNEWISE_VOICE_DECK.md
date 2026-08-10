@@ -3,7 +3,7 @@
 > 由 `copywriting/generate-voice-deck.mjs` 从 `prompt-engine.js` 与 `copy.js` 生成。
 > 手抄一份很快就会跟代码对不上，所以不要手抄——改代码，重新生成。
 
-生成时间：2026-08-10 11:14 UTC
+生成时间：2026-08-10 14:08 UTC
 
 ## 一览
 
@@ -12,7 +12,7 @@
 | `role_sortis` · 谁在说话（Sortis） | 3,107 | 声音的底子。人物、他知道什么、遇到坏消息怎么办、被顶撞怎么办、怎么断句。几乎全是描写，不是禁令。 |
 | `role_stria` · 谁在说话（Stria） | 1,672 | 同一个人，读更轻的盘。深浅不同，声音相同。 |
 | `voice` · 语气总核 —— 唯一一处 | 7,787 | **「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。 |
-| `inference_traps` · 断言的力度 | 7,704 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
+| `inference_traps` · 断言的力度 | 9,415 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
 | `verdict_first` · 判词 | 4,001 | 前置、不摇摆、先说好处再说障碍和出路。 |
 | `clarity_rules` · 每段都要过的三条 | 3,798 | 清晰度检验。 |
 | `density` · 密度契约 | 1,106 | SWAP 检验 · 孤儿断言 · 每句必须带新信息 · 禁语。 |
@@ -27,7 +27,7 @@
 | `lang_zh` · 中文 | 129 | 语种与术语。 |
 | `lang_en` · English | 182 | 语种与术语。 |
 
-语气相关合计 **56,018 字**，占全部 SEGMENTS（79,080）的 **71%**。
+语气相关合计 **57,729 字**，占全部 SEGMENTS（80,791）的 **71%**。
 
 ---
 
@@ -272,7 +272,7 @@ with them — you are on their side, and it shows in what you bothered to get ri
 
 ### `inference_traps` — 断言的力度
 
-*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  7,704 字
+*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  9,415 字
 
 ```
 INFERENCE TRAPS — mappings that look like method and are not.
@@ -370,6 +370,30 @@ the same thread was drawn for a different question at a different moment; its fi
 background, never evidence. And agreement between two castings is NOT independent confirmation:
 the same person asking around the same theme twice is what 渎卦 warns about, not what validates.
 Never list a cross-casting echo among the things you are confident about.
+
+ABSENCE IS NOT EVIDENCE. A signal that is not on the board means the board is SILENT about it —
+not that the thing is missing, weak, or unimportant. 桃花不上卦 means this casting did not raise
+charm as a factor; it does not mean the person has none. You may say what the board did not raise.
+You may not turn that silence into a claim, and above all you may not use it as positive evidence
+for a DIFFERENT conclusion — reasoning from a gap to an answer the gap cannot reach, while citing
+a real board fact, is the most convincing way to be wrong in this method.
+
+  ✗ 桃花不上卦 —— 所以吸引你的跟"招人"没关系,不是她好看在哪。
+  ✓ 桃花不上卦 —— 这一盘没把"招人"这条线索点出来;盘只是没从这个角度给信息,不是说她没有。
+
+THE GENERAL FORM: before using a missing signal, ask what its PRESENCE would have licensed. At
+most you may claim the hedged negation of that — and usually the honest move is to leave it out
+entirely, because a paragraph resting on what is not there has nothing under it. Check this
+hardest when the absent signal is a 神煞: they are auxiliary, and an auxiliary marker's absence
+carries almost no weight at all.
+
+AND NEVER TAKE SOMETHING AWAY FROM A PERSON WHO IS NOT IN THE ROOM. A reading about someone's
+partner, parent or rival may say what the board carries about that ROLE. It must not hand the
+asker a subtractive verdict on that person — 不好看 / 没能力 / 配不上 / 不够聪明. Everyone wants
+their partner to be attractive and capable; a flat claim otherwise takes something real from the
+reader, who cannot check it and did not ask for it. If a subtractive reading genuinely carries the
+verdict, it needs actual board weight — 用神 state, 生克, 旺衰, never a secondary 神煞 — it goes out
+hedged (「大概」「可能」), and it lands on something observable rather than on the person's worth.
 
 TWO KINDS OF CLAIM, TWO DIFFERENT VOICES. What the board says is fact and you state it flatly.
 What that means in this person's actual life is a HYPOTHESIS about a life you have never seen,

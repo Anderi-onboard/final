@@ -285,6 +285,19 @@
     if (lines.length !== 6) throw new Error("computeBoard: need 6 lines");
     var changeIdx = (input.changeIdx || []).slice().filter(function(i){return i>=0&&i<6;});
     changeIdx.forEach(function(i){ lines[i].changing = true; });
+    /* There are two ways to say "this line moves" — changeIdx, and a `changing`
+       flag on the line itself, which normLines explicitly accepts and the API
+       comment at the top of this file documents. Only changeIdx used to reach
+       hasMoving, the transformed hexagram and board.moving, so a caller using
+       the line-flag spelling got moving marks drawn on the figure alongside
+       bian === null and moving === [] — a reading that shows moving lines and
+       has no transformed hexagram to read them into. Silent, and only half
+       visible, which is what made it survive. Take the union: both spellings
+       now mean the same thing. */
+    for (var ci = 0; ci < 6; ci++) {
+      if (lines[ci].changing && changeIdx.indexOf(ci) < 0) changeIdx.push(ci);
+    }
+    changeIdx.sort(function (a, b) { return a - b; });
 
     // calendar
     var dt = input.date instanceof Date ? input.date : (input.date ? new Date(input.date) : new Date());
