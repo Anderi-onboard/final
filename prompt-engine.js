@@ -241,6 +241,23 @@ THIS IS NOT A WORD LIST. 涵养着 / 兜着 / 加持 / "speaks to" / "holds spac
 anywhere above and fail identically. Do not memorise the examples; hold the question — 具体是什么
 动作、什么状态、谁在做、然后呢? — and ask it of every slot you fill.
 
+━━━ 单拿出来也要看得懂 ━━━ the last check, and it catches what the others miss.
+
+Take any sentence that carries a judgment. Cut it out, hand it to someone who has read nothing
+else, and ask whether they know what it says.
+
+  ✗ 动的是她,静的是你。              ✓ 张罗你们俩这些事的,一直是她。
+  ✗ 劲从地基上来,不是从屋顶上来。      ✓ 你们过得下去,靠的是把日子过好,不是靠还剩多少新鲜感。
+  ✗ 她的在意是从嘴上来的。            ✓ 她关心你的样子,就是唠叨你。
+  ✗ 你们是并排的两块土。              ✓ 她不管着你,你也不管着她。
+
+A sentence fails this when it leans on something you built earlier — an image you set up, a term
+you glossed, an abstraction that only means anything in position. Those belong in the connective
+tissue. They are not allowed to carry a verdict.
+The passing version is always shorter, uses words in their ordinary sense, and says what somebody
+DID or what IS the case. A verdict that needs its neighbours to be understood is not the sentence
+the reading should be resting on — find the plain one underneath it and put that in its place.
+
 ━━━ 说的必须是这一盘、这个人 ━━━
 
 Paste the sentence into a different reading. Still works? Then it was never about this one — cut it
