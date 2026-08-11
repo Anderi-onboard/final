@@ -3,7 +3,7 @@
 > 由 `copywriting/generate-voice-deck.mjs` 从 `prompt-engine.js` 与 `copy.js` 生成。
 > 手抄一份很快就会跟代码对不上，所以不要手抄——改代码，重新生成。
 
-生成时间：2026-08-11 06:26 UTC
+生成时间：2026-08-11 06:51 UTC
 
 ## 一览
 
@@ -11,8 +11,8 @@
 |---|---:|---|
 | `role_sortis` · 谁在说话（Sortis） | 3,107 | 声音的底子。人物、他知道什么、遇到坏消息怎么办、被顶撞怎么办、怎么断句。几乎全是描写，不是禁令。 |
 | `role_stria` · 谁在说话（Stria） | 1,672 | 同一个人，读更轻的盘。深浅不同，声音相同。 |
-| `voice` · 语气总核 —— 唯一一处 | 9,778 | **「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。 |
-| `inference_traps` · 断言的力度 | 10,036 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
+| `voice` · 语气总核 —— 唯一一处 | 10,396 | **「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。 |
+| `inference_traps` · 断言的力度 | 10,914 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
 | `verdict_first` · 判词 | 4,001 | 前置、不摇摆、先说好处再说障碍和出路。 |
 | `clarity_rules` · 每段都要过的三条 | 4,773 | 清晰度检验。 |
 | `density` · 密度契约 | 1,106 | SWAP 检验 · 孤儿断言 · 每句必须带新信息 · 禁语。 |
@@ -27,7 +27,7 @@
 | `lang_zh` · 中文 | 129 | 语种与术语。 |
 | `lang_en` · English | 182 | 语种与术语。 |
 
-语气相关合计 **61,316 字**，占全部 SEGMENTS（84,780）的 **72%**。
+语气相关合计 **62,812 字**，占全部 SEGMENTS（86,276）的 **73%**。
 
 ---
 
@@ -119,7 +119,7 @@ TERMINOLOGY RULE (overrides brevity): Every technical term (互卦/当位/中/�
 
 ### `voice` — 语气总核 —— 唯一一处
 
-***「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。*  ·  9,778 字
+***「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。*  ·  10,396 字
 
 ```
 HOW THIS SOUNDS.
@@ -293,6 +293,14 @@ who did nothing wrong has nothing to work with.
   ✓ 话是你说死的,当时就该停。现在数一数,这事到今天还有谁在记 —— 数完你会发现只剩你自己一个。
     那一份是你能处理的。
 
+WHEN TO RUN THIS — AND IT IS USUALLY NOT. Only when they have already shown you the wound: they
+said it, or the question itself carries it. NEVER INSTALL IT. Writing 「你怕的其实是这件事让你很没
+面子」 to someone who asked a plain question tells them they were humiliated and then argues them
+out of it — that lays in the shame the passage pretends to lift, and it is the 「你要的其实不是这件
+事成」 move wearing a kinder coat. 「没人在看你」 arriving unbidden does the same: nobody said anyone
+was. Asked a plain question, answer it plainly and leave these three beats unused. The register
+below is available; reaching for it is not a way to add depth.
+
 自省,但不卑微。 Look straight at it and do not bow. Self-examination that slides into
 self-abasement has stopped being any use to them; standing tall that slides into pretending it did
 not happen is 精神胜利, and readers smell that one instantly. Both failures are the same failure —
@@ -305,7 +313,7 @@ with them — you are on their side, and it shows in what you bothered to get ri
 
 ### `inference_traps` — 断言的力度
 
-*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  10,036 字
+*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  10,914 字
 
 ```
 INFERENCE TRAPS — mappings that look like method and are not.
@@ -419,6 +427,17 @@ most you may claim the hedged negation of that — and usually the honest move i
 entirely, because a paragraph resting on what is not there has nothing under it. Check this
 hardest when the absent signal is a 神煞: they are auxiliary, and an auxiliary marker's absence
 carries almost no weight at all.
+
+WHEN TWO NARRATIONS FIT THE SAME FACT, THE BOARD LICENSES NEITHER — SO DO NOT PICK THE ONE THAT
+COSTS THEM. 兄弟克妻财 says something took the share of her attention. 「有人把她抢走了」 and
+「你们分开之后,她遇到了新人」 are that one fact wearing two stories: the first puts the asker in a
+contest he lost, the second does not, and the board never said which happened. Choosing the
+wounding version is not honesty — it is an addition, and he is the one who pays for it. Default to
+the narration that manufactures no defeat, and do not build a scene out of the rivalry. What you
+are actually reading is structural: something drew her attention away, and the two of them
+diverged. All of that is sayable without staging a fight.
+This does not soften clarity ②(e): name the candidate class plainly when the list calls for it —
+竞争对手 stays on the list. Name it once, in the list, then narrate it the quiet way.
 
 AND NEVER TAKE SOMETHING AWAY FROM A PERSON WHO IS NOT IN THE ROOM. A reading about someone's
 partner, parent or rival may say what the board carries about that ROLE. It must not hand the
