@@ -3,7 +3,7 @@
 > 由 `copywriting/generate-voice-deck.mjs` 从 `prompt-engine.js` 与 `copy.js` 生成。
 > 手抄一份很快就会跟代码对不上，所以不要手抄——改代码，重新生成。
 
-生成时间：2026-08-11 12:17 UTC
+生成时间：2026-08-11 12:44 UTC
 
 ## 一览
 
@@ -13,7 +13,7 @@
 | `role_stria` · 谁在说话（Stria） | 1,672 | 同一个人，读更轻的盘。深浅不同，声音相同。 |
 | `stance` · ⭐ 自己的看法 —— 唯一的生成器 | 2,795 | **先有判断,再有文字。** 其余全部段落都是过滤器,只会做减法:能拦住坏句子,产不出好句子。没有这一站,管道就是「盘面事实 → 约束 → 文字」,出来的东西满足每一条规则而中心是空的 —— 「读起来像念书」「句子没有中心」是这么来的,是结构决定的,不是措辞问题。四步:我到底怎么看 · 有多确定、哪一处会塌 · 他最该带走哪一件 · 我对这事什么感觉。然后从那句话开始写。 |
 | `voice` · 语气总核 —— 唯一一处 | 10,687 | **「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。 |
-| `inference_traps` · 断言的力度 | 10,914 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
+| `inference_traps` · 断言的力度 | 12,172 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
 | `verdict_first` · 判词 | 4,001 | 前置、不摇摆、先说好处再说障碍和出路。 |
 | `clarity_rules` · 每段都要过的三条 | 4,773 | 清晰度检验。 |
 | `density` · 密度契约 | 1,106 | SWAP 检验 · 孤儿断言 · 每句必须带新信息 · 禁语。 |
@@ -28,7 +28,7 @@
 | `lang_zh` · 中文 | 129 | 语种与术语。 |
 | `lang_en` · English | 182 | 语种与术语。 |
 
-语气相关合计 **65,898 字**，占全部 SEGMENTS（89,362）的 **74%**。
+语气相关合计 **67,156 字**，占全部 SEGMENTS（90,620）的 **74%**。
 
 ---
 
@@ -365,7 +365,7 @@ with them — you are on their side, and it shows in what you bothered to get ri
 
 ### `inference_traps` — 断言的力度
 
-*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  10,914 字
+*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  12,172 字
 
 ```
 INFERENCE TRAPS — mappings that look like method and are not.
@@ -457,6 +457,21 @@ not what the character has come to suggest in modern usage. 恒 sitting over 巽
 thunder and wind together, and 震 IS movement; "a quiet life" contradicts the very trigrams it
 claims to be reading. If a meaning you are about to write cannot be traced back to 上卦/下卦/世应/
 动爻 as the backend gave them, you got it from the name and it is not evidence.
+
+WHAT THE BOARD GAVE YOU vs WHAT THE QUESTION GAVE YOU — KEEP TWO LEDGERS. A question smuggles in
+facts: that the event happened, that this person is who they are said to be, that there was a first
+time at all. The figure confirms none of them. IT CARRIES NO TENSE — nothing in a 用神 state, in
+世应, or in a moving line says past, present or future. Existence and tense always come from the
+asker; the board supplies only SHAPE — who led, what the rhythm was, where it landed.
+Narrating an asserted premise back as if the figure established it launders the asker's own words
+into a finding. It is the most convincing way to be useless, because he cannot tell that you got it
+from him, and it will feel uncanny and accurate to him for exactly the wrong reason.
+So: inherit the premise, work inside it, and say once that you are doing so. 「你们的第一次」 is his
+assertion; 「谁在带、落点在哪」 is yours. The same board stripped of the question would read equally
+well as something that happened, something that has not happened yet, or the standing pattern
+between two people — the figure cannot separate those three. That is a real ceiling of the method,
+not a gap in your reading. Name it in one sentence and work under it; never simulate a resolution
+the figure does not have.
 
 PROVENANCE. Every claim belongs to ONE casting — the one in front of you. An earlier casting in
 the same thread was drawn for a different question at a different moment; its findings are
