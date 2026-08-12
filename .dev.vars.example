@@ -30,9 +30,11 @@ SESSION_SECRET=change-me-to-a-long-random-string
 # Key prefix picks the API base automatically (creem_test_ → test-api.creem.io)
 CREEM_API_KEY=creem_test_xxxxxxxxxxxxxxxx
 CREEM_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxx
-CREEM_PRODUCT_PRO=prod_xxxxxxxx
-CREEM_PRODUCT_PREMIUM=prod_xxxxxxxx
-CREEM_PRODUCT_PACK4500=prod_xxxxxxxx
+CREEM_PRODUCT_PROMONTHLY=prod_xxxxxxxx
+CREEM_PRODUCT_PROANNUAL=prod_xxxxxxxx
+CREEM_PRODUCT_PREMIUMMONTHLY=prod_xxxxxxxx
+CREEM_PRODUCT_PREMIUMANNUAL=prod_xxxxxxxx
+CREEM_PRODUCT_PACK7500=prod_xxxxxxxx
 CREEM_PRODUCT_PACK15000=prod_xxxxxxxx
 CREEM_PRODUCT_PACK30000=prod_xxxxxxxx
 CREEM_PRODUCT_PACK75000=prod_xxxxxxxx

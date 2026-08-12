@@ -172,14 +172,19 @@ async function webhook(request, env, db) {
 }
 
 // ── helpers ────────────────────────────────────────────────────────────────
+// Each billing interval is its own Creem product, so a plan arrives as
+// "pro"/"premium" or as "promonthly"/"proannual"/"premiummonthly"/…
 function planForSku(sku) {
-  sku = String(sku || '').toLowerCase();
+  sku = String(sku || '').toLowerCase().replace(/(monthly|annual)$/, '');
   return sku === 'pro' || sku === 'premium' ? sku : null;
 }
 function planForProduct(env, productId) {
   if (!productId) return null;
-  if (productId === env.CREEM_PRODUCT_PRO) return 'pro';
-  if (productId === env.CREEM_PRODUCT_PREMIUM) return 'premium';
+  for (const plan of ['pro', 'premium']) {
+    for (const suffix of ['', 'MONTHLY', 'ANNUAL']) {
+      if (productId === env['CREEM_PRODUCT_' + plan.toUpperCase() + suffix]) return plan;
+    }
+  }
   return null;
 }
 function productIdOf(obj) {
