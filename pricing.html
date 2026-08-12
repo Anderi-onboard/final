@@ -235,26 +235,26 @@
       <h2>Pro</h2>
       <div class="desc">For a steady practice &mdash; daily Stria reads, or a few deep Sortis sessions a month.</div>
       <div class="price"><span class="amt" data-mo="19" data-yr="15.83">$19</span><span class="per">/ month</span></div>
-      <div class="grant">Includes <b>22,500</b> units monthly</div>
+      <div class="grant">Includes <b>28,500</b> units monthly</div>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~75 Stria or ~15 Sortis / month</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~95 Stria or ~19 Sortis / month</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Sortis 6 synthesis unlocked</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Full inquiry history</li>
       </ul>
-      <button class="choose" data-grant="22500">Continue the dialogue</button>
+      <button class="choose" data-grant="28500">Continue the dialogue</button>
     </div>
 
     <div class="plan" data-plan="premium">
       <h2>Premium</h2>
       <div class="desc">For seasons when much is moving &mdash; deep readings, as often as you need them.</div>
       <div class="price"><span class="amt" data-mo="29" data-yr="24.17">$29</span><span class="per">/ month</span></div>
-      <div class="grant">Includes <b>45,000</b> units monthly</div>
+      <div class="grant">Includes <b>43,500</b> units monthly</div>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~150 Stria or ~30 Sortis / month</li>
+        <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>~145 Stria or ~29 Sortis / month</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Priority server processing</li>
         <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.5 3.5L13 4.5"></path></svg>Early access to new frameworks</li>
       </ul>
-      <button class="choose" data-grant="45000">Continue the dialogue</button>
+      <button class="choose" data-grant="43500">Continue the dialogue</button>
     </div>
   </section>
 
@@ -264,10 +264,10 @@
       <span class="sub">For bridging the gap between sessions.</span>
     </div>
     <div class="packs">
-      <button class="pack" data-grant="4500"><div class="u">4,500</div><div class="p">$8</div><div class="bonus">~3 Sortis or ~15 Stria</div></button>
-      <button class="pack" data-grant="15000"><div class="u">15,000</div><div class="p">$14</div><div class="bonus">~10 Sortis · +7% bonus</div></button>
-      <button class="pack" data-grant="30000"><div class="u">30,000</div><div class="p">$25</div><div class="bonus">~20 Sortis · +11% bonus</div></button>
-      <button class="pack" data-grant="75000"><div class="u">75,000</div><div class="p">$55</div><div class="bonus">~50 Sortis · +15% bonus</div></button>
+      <button class="pack" data-grant="7500"><div class="u">7,500</div><div class="p">$6</div><div class="bonus">~5 Sortis or ~25 Stria</div></button>
+      <button class="pack" data-grant="15000"><div class="u">15,000</div><div class="p">$11</div><div class="bonus">~10 Sortis · +9% bonus</div></button>
+      <button class="pack" data-grant="30000"><div class="u">30,000</div><div class="p">$19</div><div class="bonus">~20 Sortis · +26% bonus</div></button>
+      <button class="pack" data-grant="75000"><div class="u">75,000</div><div class="p">$42</div><div class="bonus">~50 Sortis · +43% bonus</div></button>
     </div>
     <div class="costs">
       <div class="cost"><div class="nm">Stria 64<small>Baseline analysis · Sonnet</small></div><div class="ct">300<small> units / inquiry</small></div></div>
@@ -367,18 +367,21 @@
       if (b.classList.contains("current")) return;
       var plan = b.closest(".plan").getAttribute("data-plan");
       var grant = parseInt(b.getAttribute("data-grant"), 10) || 0;
+      // annual bills twelve months up front and grants twelve months of units
+      var granted = annual ? grant * 12 : grant;
       function demo() {
         var s = A.state();
         if (!s.account.signedIn) { s.account.signedIn = true; s.account.name = "Elias Vance"; s.account.email = "elias@iname.com"; s.account.avatar = "EV"; }
         s.account.plan = plan;
-        s.units += grant;
+        s.units += granted;
         if (annual) s.account.billing = "annual";
         A.save(s); paint();
-        toast(A.planName(plan) + (annual ? " (annual)" : "") + " activated · +" + grant.toLocaleString("en-US") + " units");
+        toast(A.planName(plan) + (annual ? " (annual)" : "") + " activated · +" + granted.toLocaleString("en-US") + " units");
       }
       // the free trial never goes through checkout; paid plans do (with demo fallback)
       if (plan === "free") { demo(); return; }
-      startCheckout(plan, demo);
+      // each billing interval is its own Creem product: pro → promonthly / proannual
+      startCheckout(plan + (annual ? "annual" : "monthly"), demo);
     });
   });
   document.querySelectorAll(".pack").forEach(function (b) {
