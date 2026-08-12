@@ -1,8 +1,8 @@
 // functions/_lib/db.js — D1 data layer. The server is the source of truth for
 // accounts, units, and history. Plan grants mirror account.js (front-end mirror).
 
-// Free signup now grants 500 units (new-user welcome grant).
-// free is one full Sortis 6 synthesis, so a first look is a complete reading
+// Free signup grants 1,500 units — one full Sortis 6, so a first look is a
+// complete reading rather than a baseline-only trial.
 export const PLAN_GRANT = { free: 1500, pro: 28500, premium: 43500 };
 export const METHOD_COST = { stria: 300, sortis: 1500 };
 export const PAID = { pro: true, premium: true };

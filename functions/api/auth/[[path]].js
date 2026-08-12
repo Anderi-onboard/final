@@ -11,7 +11,7 @@
 // _lib/password.js). OAuth providers are config-driven: a provider activates
 // only when its {PROVIDER}_CLIENT_ID / {PROVIDER}_CLIENT_SECRET env vars are set
 // (except Apple, which additionally needs a signed client-secret JWT — see note).
-// New accounts get the free welcome grant (db.PLAN_GRANT.free = 500 units).
+// New accounts get the free welcome grant (db.PLAN_GRANT.free = 1,500 units).
 
 import { signSession, sessionCookie, clearCookie } from '../../_lib/session.js';
 import { ensureUser, getUserByEmail, createEmailUser, publicUser } from '../../_lib/db.js';

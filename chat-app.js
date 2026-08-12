@@ -601,7 +601,7 @@
     // 点数" rule: no free units before an account exists.
     if (!S.account.signedIn) {
       var zhq = /[一-鿿]/.test(text);
-      toast(zhq ? "请先登录或注册——注册即送 500 点。" : "Sign in to cast — a new account starts with 500 units on us.");
+      toast(zhq ? "请先登录或注册——注册即送 1,500 点。" : "Sign in to cast — a new account starts with 1,500 units on us.");
       setTimeout(function () { location.href = "./login.html"; }, 1300);
       return;
     }
