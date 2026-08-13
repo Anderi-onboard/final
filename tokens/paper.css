@@ -10,8 +10,8 @@
 [data-skin="paper"] {
   --paper-grain-image: url("../assets/textures/oil-relief-swirl-mask.png");
   --paper-grain-size: 360px 360px;
-  --paper-fiber-image: url("../assets/textures/editorial-fiber-grid.svg");
-  --paper-fiber-size: 128px 128px;
+  --paper-fiber-image: url("../assets/textures/editorial-fiber-grid.svg?v=20260813b");
+  --paper-fiber-size: 256px 256px;
   /* verified editorial palette, adapted into interface roles */
   --paper: #E7E1D7;         /* full canvas / muted warm paper */
   --paper-raised: #DED8CD;  /* irregular carrier surfaces */
@@ -79,16 +79,16 @@ html[data-skin="paper"] body::after {
   background-position: 0 0, 19px 11px;
   background-size: var(--paper-fiber-size), var(--paper-grain-size);
   background-repeat: repeat;
-  opacity: .18;
+  opacity: .24;
   mix-blend-mode: multiply;
 }
 
 /* Editorial and legal pages carry more uninterrupted flat colour, so their
    paper relief can be stronger without competing with dense controls. */
 html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
-  opacity: .34;
+  opacity: .46;
 }
 
 @media (prefers-contrast: more) {
-  html[data-skin="paper"] body::after { opacity: .24; }
+  html[data-skin="paper"] body::after { opacity: .31; }
 }

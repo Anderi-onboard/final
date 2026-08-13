@@ -364,7 +364,7 @@ html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.top
   width: 190px;
   height: 112px;
   pointer-events: none;
-  opacity: .17;
+  opacity: .24;
   background: url("../assets/textures/ink-currents.svg") center / contain no-repeat;
   mix-blend-mode: multiply;
   -webkit-mask-image: none;
@@ -720,7 +720,7 @@ html[data-skin="paper"] body :is(
     .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
     .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
     .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
-  ):hover::after { opacity: .29; }
+  ):hover::after { opacity: .38; }
 }
 
 /* The finished interpretation owns the page. The full casting board remains

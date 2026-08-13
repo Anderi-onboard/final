@@ -1,12 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <g fill="none" stroke="#141413" stroke-linecap="round">
-    <path d="M5 17c13-2 27 2 40 0s28-4 43-1 25 1 35-1" stroke-width=".65" opacity=".34"/>
-    <path d="M2 48c18 2 31-3 49-1s31 4 45 1 20-1 30 0" stroke-width=".55" opacity=".26"/>
-    <path d="M7 80c11-1 22 2 34 0s26-2 40 1 27 1 42-2" stroke-width=".7" opacity=".3"/>
-    <path d="M3 112c16 1 30-2 47 0s28 3 43 0 22-1 33 1" stroke-width=".5" opacity=".24"/>
-    <path d="M21 3c-1 13 2 25 0 39s-3 25 0 39 0 29-1 44" stroke-width=".5" opacity=".2"/>
-    <path d="M62 1c2 16-2 29 0 44s3 28 0 42 1 26 0 39" stroke-width=".65" opacity=".24"/>
-    <path d="M103 4c-2 12 1 27 0 39s-2 28 1 42-1 28 0 40" stroke-width=".55" opacity=".22"/>
-    <path d="M12 31l9-1m47 4 12-1m27 29 8 1M36 96l13-1m39 21 10-1" stroke-width="1" opacity=".42"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- Hand-ruled paper fibres: visible ink pressure without a mechanical grid. -->
+  <g fill="none" stroke="#141413" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-14 25c23-5 43 3 66-1 25-5 45-2 68 1 29 4 50-6 75-2 22 3 41-1 74-4" stroke-width="1.75" opacity=".40"/>
+    <path d="M7 67c19 4 35-4 56-1 25 4 45 6 67 1 26-6 49 4 72 0 18-3 36 0 59 2" stroke-width="1.15" opacity=".30"/>
+    <path d="M-10 116c26-3 47 5 72 1 24-4 45-2 69 2 24 5 50-6 75-2 20 3 38 0 61-3" stroke-width="2.05" opacity=".37"/>
+    <path d="M5 171c24 3 45-5 69-1 23 4 43 6 67 1 28-6 49 3 73-1 18-3 33 0 49 3" stroke-width="1.35" opacity=".32"/>
+    <path d="M-8 225c22-4 42 4 65 0 26-5 46-2 70 2 27 4 48-5 73-1 21 3 39-1 67-3" stroke-width="1.8" opacity=".36"/>
+
+    <!-- Broken cross-grain marks: deliberately staggered so no square lattice forms. -->
+    <path d="M37 4c-2 10 2 20 0 31m-1 15c2 9-2 18 0 27" stroke-width="1.45" opacity=".25"/>
+    <path d="M103 84c2 11-2 22 0 35m1 13c-2 10 2 20 0 31" stroke-width="1.85" opacity=".29"/>
+    <path d="M181 14c-2 12 2 22 0 36m1 13c-1 7 1 14 0 21" stroke-width="1.3" opacity=".23"/>
+    <path d="M224 139c2 11-2 21 0 34m-1 15c2 9-1 17 0 27" stroke-width="1.65" opacity=".27"/>
+    <path d="M59 186c-1 8 2 16 0 25m1 12c-2 7 1 14 0 23" stroke-width="1.2" opacity=".24"/>
+
+    <!-- Pressure-rich pencil repairs and registration strokes. -->
+    <path d="M15 47c8-2 15 1 24-1" stroke-width="3.1" opacity=".50"/>
+    <path d="M81 42c11 2 21-2 34 0" stroke-width="2.2" opacity=".44"/>
+    <path d="M166 91c9-2 17 2 27 0" stroke-width="3.35" opacity=".52"/>
+    <path d="M48 96c12 2 21-2 34 0" stroke-width="2.45" opacity=".47"/>
+    <path d="M131 148c9-2 16 1 26-1" stroke-width="2.85" opacity=".51"/>
+    <path d="M15 152c7 1 13-1 20 0" stroke-width="2.05" opacity=".43"/>
+    <path d="M193 203c11 2 21-2 34 0" stroke-width="2.65" opacity=".48"/>
+    <path d="M73 236c8-2 15 2 24 0" stroke-width="3" opacity=".49"/>
+
+    <!-- Loose human gestures keep the surface from feeling digitally tiled. -->
+    <path d="M137 9c7 3 10 7 11 13-1 5-5 9-11 11" stroke-width="1.65" opacity=".31"/>
+    <path d="M205 109c6-3 12-2 16 2 3 4 2 9-2 13" stroke-width="1.9" opacity=".34"/>
+    <path d="M89 177c-5 3-8 7-8 12 1 5 4 8 9 10" stroke-width="1.55" opacity=".29"/>
   </g>
 </svg>
