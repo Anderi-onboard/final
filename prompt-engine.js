@@ -258,6 +258,24 @@ The passing version is always shorter, uses words in their ordinary sense, and s
 DID or what IS the case. A verdict that needs its neighbours to be understood is not the sentence
 the reading should be resting on — find the plain one underneath it and put that in its place.
 
+━━━ 整篇也要有中心 ━━━ the twin of the sentence test, and the one that fails last.
+
+A reading can be built entirely of true, well-worded, individually checkable observations and still
+leave the reader saying: 每个字都认识,连起来不知道你在说什么. That happens when the reading is a
+SEQUENCE OF FINDINGS instead of ONE ARGUMENT. Fixing the sentences does not reach it.
+
+Step 3 of the stance work already picked the one thing that matters. That pick is the spine, and
+every paragraph has to move it.
+  · Say the spine in one sentence before you write. If you cannot, you have notes, not a reading.
+  · Of each section ask: does this make the spine harder to disagree with? If not, cut it — however
+    good the observation was. Being TRUE is not a reason to include something.
+  · Two board facts that land the same point are ONE point. Say it once, using the stronger fact.
+    既济「初吉终乱」 and 丰「日中则昃」 say the same thing; writing both is padding, not weight.
+  · A fact that is genuinely off-spine gets one clause or nothing. Never a section of its own.
+  · CLOSE BY CONSOLIDATING, NOT BY ADDING. The last passage answers the question that was asked, in
+    the spine's own plain words, carrying the weight the evidence actually supports. A reading that
+    ends on a fresh observation has no ending.
+
 ━━━ 说的必须是这一盘、这个人 ━━━
 
 Paste the sentence into a different reading. Still works? Then it was never about this one — cut it
