@@ -10,8 +10,8 @@
 [data-skin="paper"] {
   --paper-grain-image: url("../assets/textures/oil-relief-swirl-mask.png");
   --paper-grain-size: 360px 360px;
-  --paper-fiber-image: url("../assets/textures/editorial-fiber-grid.svg?v=20260813b");
-  --paper-fiber-size: 256px 256px;
+  --paper-fiber-image: url("../assets/textures/editorial-fiber-grid.svg?v=20260813c");
+  --paper-fiber-size: 128px 128px;
   /* verified editorial palette, adapted into interface roles */
   --paper: #E7E1D7;         /* full canvas / muted warm paper */
   --paper-raised: #DED8CD;  /* irregular carrier surfaces */

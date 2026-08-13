@@ -20,7 +20,7 @@
   button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--lab-9);outline-offset:2px}
   .lab-shell{height:100%;display:grid;grid-template-columns:410px minmax(0,1fr)}
   .controls{position:relative;z-index:20;min-width:0;overflow:auto;padding:22px 18px 28px;background:color-mix(in srgb,var(--paper) 91%,transparent);border-right:1px solid var(--line)}
-  .controls::after,.preview::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:url("./assets/textures/editorial-fiber-grid.svg?v=20260813b"),url("./assets/textures/oil-relief-swirl-mask.png");background-position:0 0,19px 11px;background-size:256px 256px,360px 360px;background-repeat:repeat;opacity:.24;mix-blend-mode:multiply;z-index:50}
+  .controls::after,.preview::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:url("./assets/textures/editorial-fiber-grid.svg?v=20260813c"),url("./assets/textures/oil-relief-swirl-mask.png");background-position:0 0,19px 11px;background-size:128px 128px,360px 360px;background-repeat:repeat;opacity:.24;mix-blend-mode:multiply;z-index:50}
   .controls::after{position:absolute}
   .eyebrow{margin:0 0 7px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
   h1{margin:0;font:400 26px/1.08 "BioRhyme",Georgia,serif;letter-spacing:-.035em}
@@ -86,8 +86,7 @@
   .utility{display:flex;gap:11px;margin-top:18px;font-size:10px}.utility a,.utility button{color:var(--dim);border:0;border-bottom:1px solid var(--line);background:transparent;text-decoration:none;padding:2px 0}
   .preview{position:relative;isolation:isolate;overflow:hidden;background:var(--lab-sky)}
   .preview-sky{position:absolute;inset:0;z-index:-4;background:var(--lab-sky);transition:background-color 180ms ease}
-  .preview-haze,.preview-water{position:absolute;inset:0;z-index:-3;pointer-events:none;transition:background-color 180ms ease}
-  .preview-haze{background:var(--lab-haze,var(--lab-2));clip-path:polygon(0 40%,18% 44%,38% 38%,62% 46%,82% 39%,100% 43%,100% 100%,0 100%)}
+  .preview-water{position:absolute;inset:0;z-index:-3;pointer-events:none;transition:background-color 180ms ease}
   .preview-water{background:var(--lab-water,var(--lab-5));clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%)}
   .wave-scene{position:absolute;inset:0;z-index:-3;overflow:hidden;opacity:.88;pointer-events:none}
   .wave-scene svg{display:block;width:100%;height:100%}
@@ -124,7 +123,7 @@
   <aside class="controls" aria-label="Palette controls">
     <p class="eyebrow">Internal colour system</p>
     <h1>Palette motion lab</h1>
-    <p class="intro">完整的本地色组管理工具。编辑背景三层与十层波浪，或从图片识别颜色；所有自定义内容只存于当前浏览器。</p>
+    <p class="intro">完整的本地色组管理工具。编辑天空、水面与十层波浪，或从图片识别颜色；所有自定义内容只存于当前浏览器。</p>
     <div class="search-wrap">
       <input class="search" id="search" type="search" placeholder="搜索名称、编号、色段…" autocomplete="off">
       <span class="result-count" id="resultCount">—</span>
@@ -189,7 +188,6 @@
   </aside>
   <section class="preview" aria-label="Live BourneWise page preview">
     <div class="preview-sky"></div>
-    <div class="preview-haze"></div>
     <div class="preview-water"></div>
     <div class="wave-scene" id="waveScene" aria-hidden="true"></div>
     <div class="poster-ui">
@@ -240,7 +238,7 @@
     var cloud=validHex(n.cloud)?n.cloud.toUpperCase():n.rows[0];
     n.backgrounds=n.backgrounds||{};
     n.backgrounds.sky=validHex(n.backgrounds.sky)?n.backgrounds.sky.toUpperCase():cloud;
-    n.backgrounds.haze=validHex(n.backgrounds.haze)?n.backgrounds.haze.toUpperCase():n.rows[1];
+    delete n.backgrounds.haze;
     n.backgrounds.water=validHex(n.backgrounds.water)?n.backgrounds.water.toUpperCase():n.rows[4];
     n.cloud=n.backgrounds.sky;
     return n;
@@ -270,13 +268,13 @@
     var c=slotValues(),labels=slotLabels();$('colourList').textContent='';
     c.forEach(function(hex,i){var row=document.createElement('div');row.className='colour-row'+(i===activeSlot?' active':'');row.innerHTML='<label>'+labels[i]+'</label><input type="color" value="'+hex+'" aria-label="'+labels[i]+' 选色板"><input class="hex" value="'+hex+'" maxlength="7" aria-label="'+labels[i]+' hex">';var picker=row.querySelector('[type=color]'),text=row.querySelector('.hex');function commit(v){v=v.toUpperCase();if(!validHex(v))return;setSlot(i,v);picker.value=v;text.value=v;selectSlot(i);applyPreview()}row.addEventListener('pointerdown',function(){selectSlot(i)});picker.addEventListener('input',function(){commit(picker.value)});text.addEventListener('input',function(){if(validHex(text.value))commit(text.value)});text.addEventListener('blur',function(){text.value=getSlot(i)});$('colourList').appendChild(row)})
   }
-  function applyPreview(){var root=document.documentElement;root.style.setProperty('--lab-sky',current.backgrounds.sky);root.style.setProperty('--lab-haze',current.backgrounds.haze);root.style.setProperty('--lab-water',current.backgrounds.water);current.rows.forEach(function(hex,i){root.style.setProperty('--lab-'+(i+1),hex);document.querySelectorAll('.fill.l'+(i+1)).forEach(function(n){n.style.fill=hex})})}
+  function applyPreview(){var root=document.documentElement;root.style.setProperty('--lab-sky',current.backgrounds.sky);root.style.removeProperty('--lab-haze');root.style.setProperty('--lab-water',current.backgrounds.water);current.rows.forEach(function(hex,i){root.style.setProperty('--lab-'+(i+1),hex);document.querySelectorAll('.fill.l'+(i+1)).forEach(function(n){n.style.fill=hex})})}
   function headingName(g){return g.name&&g.name.trim()?g.name:'#'+g.id}
   function setUpdateState(){var draft=current.id==='DRAFT';$('update').disabled=draft;$('update').textContent=draft?'草稿需先指定编号':'保存当前编号';$('restoreOfficial').disabled=draft||current.custom||!official.some(function(g){return g.id===current.id});$('deleteCurrent').disabled=draft;$('deleteCurrent').textContent=current.custom?'删除此自定义编号':'删除当前编号';$('updateHint').textContent=draft?'新建草稿没有固定编号，可另存为新编号。':'保存会按 #'+current.id+' 直接覆盖当前浏览器中的版本；删除后可从下方恢复。'}
   function loadGroup(g){clearTimeout(autoSaveTimer);current=normalise(g);baseline=clone(current);activeSlot=Math.min(activeSlot,11);$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+(current.seg||'自定义');$('groupName').value=current.name||'';$('groupSegment').value=current.seg||'自定义';$('saveStatus').textContent='已保存';setUpdateState();populateSelect();renderEditor();applyPreview();closeResults()}
   function currentIndex(){return allGroups().findIndex(function(g){return g.id===current.id})}
   function step(delta){var list=allGroups(),i=currentIndex();if(i<0)i=delta>0?-1:0;loadGroup(list[(i+delta+list.length)%list.length])}
-  function resultColours(g){g=normalise(g);return [g.backgrounds.sky,g.backgrounds.haze,g.backgrounds.water,g.rows[8]]}
+  function resultColours(g){g=normalise(g);return [g.backgrounds.sky,g.backgrounds.water,g.rows[4],g.rows[8]]}
   function search(){
     var q=$('search').value.trim().toLowerCase();
     var needle=q;
@@ -293,7 +291,7 @@
   function renderSaved(){var list=$('savedList');list.textContent='';$('savedCount').textContent=custom.length;if(!custom.length){list.innerHTML='<p class="saved-empty">尚未创建额外编号；修改原始编号会直接保存在原位置。</p>';return}custom.slice().reverse().forEach(function(g){var row=document.createElement('div'),label=g.name&&g.name.trim()?g.name:'#'+g.id;row.className='saved-item';row.innerHTML='<button class="saved-load" type="button"><b>'+esc(label)+'</b><small>#'+esc(g.id)+' · '+new Date(g.savedAt).toLocaleDateString()+'</small></button><button class="saved-delete" type="button" aria-label="删除 '+esc(label)+'">×</button>';row.querySelector('.saved-load').addEventListener('click',function(){loadGroup(g)});row.querySelector('.saved-delete').addEventListener('click',function(){if(current&&current.id===g.id){deleteCurrent();return}custom=custom.filter(function(x){return x.id!==g.id});persist();populateSelect();renderSaved();toast('已删除 '+displayName(g)+'，当前色组不变')});list.appendChild(row)})}
   function renderDeleted(){var list=$('deletedList');list.textContent='';$('deletedCount').textContent=deletedIds.length;if(!deletedIds.length){list.innerHTML='<p class="saved-empty">没有已删除的原始编号。</p>';return}deletedIds.forEach(function(id){var g=official.find(function(x){return x.id===id}),row=document.createElement('div'),label=g&&g.name?g.name:'#'+id;row.className='saved-item';row.innerHTML='<span class="saved-load"><b>#'+esc(id)+' '+esc(label)+'</b><small>已从搜索、下拉框和总览隐藏</small></span><button class="saved-delete" type="button">恢复</button>';row.querySelector('button').addEventListener('click',function(){deletedIds=deletedIds.filter(function(x){return x!==id});persistDeleted();rebuildSource();renderDeleted();toast('已恢复 #'+id)});list.appendChild(row)})}
   function syncForm(silent){current.name=$('groupName').value.trim();current.seg=$('groupSegment').value.trim()||'自定义';$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.id==='DRAFT'?'Draft':current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+current.seg;if(!silent)markDirty()}
-  function makeDraft(from,blank){var g=blank?{rows:['#C8C2B7','#BEB7AB','#B4AC9F','#AAA193','#968B7B','#8C806F','#817563','#766A58','#6B5F4D','#605442'],backgrounds:{sky:'#DDD8CF',haze:'#CFC8BC',water:'#ACA18F'}}:normalise(from);g.id='DRAFT';g.name=blank?'':(from.name&&from.name.trim()?from.name+' · copy':'');g.seg='自定义';g.tier='Custom';g.custom=false;g.cloud=g.backgrounds.sky;loadGroup(g);saveNew()}
+  function makeDraft(from,blank){var g=blank?{rows:['#C8C2B7','#BEB7AB','#B4AC9F','#AAA193','#968B7B','#8C806F','#817563','#766A58','#6B5F4D','#605442'],backgrounds:{sky:'#DDD8CF',water:'#ACA18F'}}:normalise(from);g.id='DRAFT';g.name=blank?'':(from.name&&from.name.trim()?from.name+' · copy':'');g.seg='自定义';g.tier='Custom';g.custom=false;g.cloud=g.backgrounds.sky;loadGroup(g);saveNew()}
   function saveNew(){syncForm(true);var g=clone(current),origin=current.sourceId||(!current.custom&&current.id!=='DRAFT'?current.id:null);g.id='C'+Date.now().toString(36).toUpperCase();g.custom=true;g.overridden=false;g.tier='Custom';g.savedAt=Date.now();if(origin)g.sourceId=origin;custom.push(g);persist();populateSegments();renderSaved();loadGroup(g);toast('新编号已创建，可直接改色')}
   function updateCurrent(silent){if(current.id==='DRAFT')return;syncForm(true);current.updatedAt=Date.now();if(current.custom){var i=custom.findIndex(function(g){return g.id===current.id});if(i<0){custom.push(clone(current))}else custom[i]=clone(current);persist();renderSaved()}else{current.overridden=true;overrides[current.id]=clone(current);persistOverrides();var j=source.findIndex(function(g){return g.id===current.id});if(j>-1)source[j]=clone(current)}populateSegments();populateSelect();baseline=clone(current);$('saveStatus').textContent='已保存';$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+current.seg;setUpdateState();if(!silent)toast('已保存 #'+current.id+(current.name?' '+current.name:''))}
   function restoreOfficial(){var g=official.find(function(x){return x.id===current.id});if(!g)return;delete overrides[current.id];persistOverrides();var i=source.findIndex(function(x){return x.id===g.id});if(i>-1)source[i]=clone(g);loadGroup(g);toast('已恢复 #'+g.id+' 官方原版')}
@@ -305,7 +303,7 @@
   function extractImage(img){var limit=parseInt($('extractLimit').value,10)||24,canvas=$('imageCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true}),scale=Math.min(1,260/img.naturalWidth,260/img.naturalHeight);canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));ctx.drawImage(img,0,0,canvas.width,canvas.height);var d=ctx.getImageData(0,0,canvas.width,canvas.height).data,bins=new Map();for(var i=0;i<d.length;i+=8){if(d[i+3]<160)continue;var key=(d[i]>>3)+'_'+(d[i+1]>>3)+'_'+(d[i+2]>>3),v=bins.get(key)||[0,0,0,0];v[0]+=d[i];v[1]+=d[i+1];v[2]+=d[i+2];v[3]++;bins.set(key,v)}var ranked=Array.from(bins.values()).sort(function(a,b){return b[3]-a[3]}).map(function(v){return[Math.round(v[0]/v[3]),Math.round(v[1]/v[3]),Math.round(v[2]/v[3]),v[3]]}),picked=[],threshold=limit>=36?18:limit>=24?23:30;function dist(a,b){var dr=a[0]-b[0],dg=a[1]-b[1],db=a[2]-b[2];return Math.sqrt(dr*dr+dg*dg+db*db)}ranked.some(function(c){if(picked.every(function(p){return dist(c,p)>threshold}))picked.push(c);return picked.length===Math.ceil(limit*.7)});var remaining=ranked.filter(function(c){return picked.indexOf(c)<0});while(picked.length<limit&&remaining.length){var bestIndex=0,best=-1;remaining.forEach(function(c,i){var nearest=picked.length?Math.min.apply(null,picked.map(function(p){return dist(c,p)})):255,frequency=Math.log(c[3]+1)*3,score=nearest+frequency;if(score>best){best=score;bestIndex=i}});picked.push(remaining.splice(bestIndex,1)[0])}return picked.slice(0,limit).map(function(c){return rgbHex(c[0],c[1],c[2])})}
   function renderExtracted(){var box=$('extracted');box.textContent='';extractedColours.forEach(function(hex){var b=document.createElement('button');b.className='swatch-button';b.type='button';b.style.setProperty('--swatch',hex);b.innerHTML='<span>'+hex+'</span>';b.addEventListener('click',function(){setSlot(activeSlot,hex);renderEditor();applyPreview();toast('已应用到'+slotLabels()[activeSlot])});box.appendChild(b)});$('extractSummary').textContent=extractedColours.length?'已识别 '+extractedColours.length+' 色；包含高频主色与低频层次':'上传后识别主要颜色与明暗层次';$('imageResult').classList.toggle('ready',!!extractedColours.length);$('addExtracted').disabled=!extractedColours.length;$('applyExtracted').disabled=!extractedColours.length}
   function handleImage(file){if(!file||!file.type.startsWith('image/')){toast('请选择图片文件');return}imageFileName=file.name.replace(/\.[^.]+$/,'');var url=URL.createObjectURL(file),img=$('imagePreview');img.onload=function(){try{loadedImage=img;extractedColours=extractImage(img);renderExtracted();toast('已识别 '+extractedColours.length+' 个颜色')}catch(e){toast('无法读取这张图片')}URL.revokeObjectURL(url)};img.src=url}
-  function draftFromExtracted(){if(!extractedColours.length)return;var sorted=extractedColours.slice().sort(function(a,b){function lum(h){return .2126*parseInt(h.slice(1,3),16)+.7152*parseInt(h.slice(3,5),16)+.0722*parseInt(h.slice(5,7),16)}return lum(b)-lum(a)}),g={id:'DRAFT',name:imageFileName||'',seg:'自定义',tier:'Custom',custom:false,backgrounds:{sky:sorted[0],haze:sorted[Math.min(1,sorted.length-1)],water:sorted[Math.min(3,sorted.length-1)]},rows:[]};for(var i=0;i<10;i++)g.rows.push(sorted[(i+2)%sorted.length]);g.cloud=g.backgrounds.sky;loadGroup(g);saveNew();switchPane('editorPane');toast('已从图片创建新编号')}
+  function draftFromExtracted(){if(!extractedColours.length)return;var sorted=extractedColours.slice().sort(function(a,b){function lum(h){return .2126*parseInt(h.slice(1,3),16)+.7152*parseInt(h.slice(3,5),16)+.0722*parseInt(h.slice(5,7),16)}return lum(b)-lum(a)}),g={id:'DRAFT',name:imageFileName||'',seg:'自定义',tier:'Custom',custom:false,backgrounds:{sky:sorted[0],water:sorted[Math.min(3,sorted.length-1)]},rows:[]};for(var i=0;i<10;i++)g.rows.push(sorted[(i+2)%sorted.length]);g.cloud=g.backgrounds.sky;loadGroup(g);saveNew();switchPane('editorPane');toast('已从图片创建新编号')}
   function switchPane(id){document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('active',p.id===id)});document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.dataset.pane===id)})}
   buildScene();loadStored();renderSaved();renderDeleted();renderLibrary();
   $('autoSave').checked=localStorage.getItem(AUTOSAVE_STORAGE)!=='0';

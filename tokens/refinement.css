@@ -25,6 +25,33 @@
   --ui-radius-small: 12px 15px 11px 14px / 14px 11px 15px 12px;
 }
 
+/* Registered colours make custom properties genuinely interpolable. The
+   runtime supplies the 400ms top-to-bottom stagger between landscape planes. */
+@property --bw-palette-cloud { syntax: "<color>"; inherits: true; initial-value: #DED8CD; }
+@property --bw-palette-water { syntax: "<color>"; inherits: true; initial-value: #B4AA9A; }
+@property --bw-palette-1 { syntax: "<color>"; inherits: true; initial-value: #D7D0C4; }
+@property --bw-palette-2 { syntax: "<color>"; inherits: true; initial-value: #CEC4B5; }
+@property --bw-palette-3 { syntax: "<color>"; inherits: true; initial-value: #C8BDAD; }
+@property --bw-palette-4 { syntax: "<color>"; inherits: true; initial-value: #C2B49F; }
+@property --bw-palette-5 { syntax: "<color>"; inherits: true; initial-value: #BBAA92; }
+@property --bw-palette-6 { syntax: "<color>"; inherits: true; initial-value: #B39F82; }
+@property --bw-palette-7 { syntax: "<color>"; inherits: true; initial-value: #A99275; }
+@property --bw-palette-8 { syntax: "<color>"; inherits: true; initial-value: #A0866A; }
+@property --bw-palette-9 { syntax: "<color>"; inherits: true; initial-value: #967B60; }
+@property --bw-palette-10 { syntax: "<color>"; inherits: true; initial-value: #88705A; }
+@property --bw-palette-gem { syntax: "<color>"; inherits: true; initial-value: #B5502C; }
+
+html[data-skin="paper"] {
+  transition:
+    --bw-palette-cloud 1.5s var(--ease-in-out), --bw-palette-water 1.5s var(--ease-in-out),
+    --bw-palette-1 1.5s var(--ease-in-out), --bw-palette-2 1.5s var(--ease-in-out),
+    --bw-palette-3 1.5s var(--ease-in-out), --bw-palette-4 1.5s var(--ease-in-out),
+    --bw-palette-5 1.5s var(--ease-in-out), --bw-palette-6 1.5s var(--ease-in-out),
+    --bw-palette-7 1.5s var(--ease-in-out), --bw-palette-8 1.5s var(--ease-in-out),
+    --bw-palette-9 1.5s var(--ease-in-out), --bw-palette-10 1.5s var(--ease-in-out),
+    --bw-palette-gem 1.5s var(--ease-in-out);
+}
+
 html { color-scheme: light; }
 html[data-skin="paper"],
 html[data-skin="paper"] body { background-color: var(--bw-palette-cloud); }
@@ -72,7 +99,7 @@ body[data-page="about"] .page-fx { display: none; }
 html[data-skin="paper"] body .mtn-sky {
   animation: none !important;
   background: var(--bw-palette-cloud) !important;
-  transition: background-color 1.6s var(--ease-out);
+  transition: background-color 1.5s var(--ease-in-out);
 }
 html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
 html[data-skin="paper"] body .mtn-bg [clip-path] > use { opacity: .13 !important; }
@@ -89,7 +116,14 @@ html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { stroke-width
 html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { stroke-width: 1.9 !important; opacity: .62; }
 html[data-skin="paper"] body .mtn-bg .fill,
 html[data-skin="paper"] body .mtn-bg [clip-path] > use {
-  transition: fill 1.6s var(--ease-out);
+  transition: fill 1.5s var(--ease-in-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-skin="paper"] { transition-duration: .2s; }
+  html[data-skin="paper"] body .mtn-sky,
+  html[data-skin="paper"] body .mtn-bg .fill,
+  html[data-skin="paper"] body .mtn-bg [clip-path] > use { transition-duration: .2s; }
 }
 
 /* Shared glass carriers --------------------------------------------------- */

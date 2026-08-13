@@ -4,12 +4,13 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260812a", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260812a";
+    ? new URL("../palettes/color-groups.json?v=20260813c", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260813c";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
   var paletteTimer = 0;
+  var paletteLayerTimers = [];
 
 
   var CSS = ''
@@ -18,9 +19,9 @@
     /* The sky and ten ridges receive colours from the extensible external
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
-    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD)}'
+    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
     + '.mtn-sky::after{content:"";position:absolute;inset:0;pointer-events:none}'
-    + '.mtn-sky::after{background:var(--bw-palette-water,#B4AA9A);clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%)}'
+    + '.mtn-sky::after{background:var(--bw-palette-water,#B4AA9A);clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
     + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
@@ -231,7 +232,12 @@
     });
   }
 
-  function applyPalette(group) {
+  function queuePaletteLayer(delay, fn, immediate) {
+    if (immediate || delay === 0) fn();
+    else paletteLayerTimers.push(setTimeout(fn, delay));
+  }
+
+  function applyPalette(group, immediate) {
     var root = document.documentElement;
     /* The catalogue can contain very pale lilacs and candy-bright accents.
        Keep their hue relationships, but force every live UI colour into the
@@ -245,29 +251,40 @@
     var gemIndex = Array.isArray(group.gems) && group.gems.length
       ? Math.max(0, Math.min(9, group.gems[0] - 1))
       : 5;
+    paletteLayerTimers.forEach(clearTimeout);
+    paletteLayerTimers = [];
     root.dataset.bwPalette = group.id;
     root.dataset.bwPaletteName = group.name || "";
     root.dataset.bwPaletteSegment = group.seg || "";
-    root.style.setProperty("--bw-palette-cloud", tonedCloud);
     root.style.removeProperty("--bw-palette-haze");
-    root.style.setProperty("--bw-palette-water", tonedWater);
-    tonedRows.forEach(function (hex, index) {
-      root.style.setProperty("--bw-palette-" + (index + 1), hex);
-      root.style.setProperty("--bw-palette-on-" + (index + 1), readableOn(hex));
-    });
-    root.style.setProperty("--bw-palette-gem", tonedRows[gemIndex]);
-    root.style.setProperty("--bw-palette-on-gem", readableOn(tonedRows[gemIndex]));
-
-    document.querySelectorAll(".mtn-bg").forEach(function (el) {
-      tonedRows.forEach(function (hex, index) {
-        el.querySelectorAll(".fill.l" + (index + 1)).forEach(function (node) {
-          node.style.fill = hex;
-        });
-      });
-      el.querySelectorAll("[clip-path] > use").forEach(function (node) {
+    /* Sky, ten ridges, then water: every plane interpolates for 1.5 seconds,
+       while neighbouring planes start 400ms apart. */
+    queuePaletteLayer(0, function () {
+      root.style.setProperty("--bw-palette-cloud", tonedCloud);
+      document.querySelectorAll(".mtn-bg [clip-path] > use").forEach(function (node) {
         node.style.fill = tonedCloud;
       });
+    }, immediate);
+
+    tonedRows.forEach(function (hex, index) {
+      queuePaletteLayer((index + 1) * 400, function () {
+        root.style.setProperty("--bw-palette-" + (index + 1), hex);
+        root.style.setProperty("--bw-palette-on-" + (index + 1), readableOn(hex));
+        document.querySelectorAll(".mtn-bg").forEach(function (el) {
+          el.querySelectorAll(".fill.l" + (index + 1)).forEach(function (node) {
+            node.style.fill = hex;
+          });
+        });
+        if (index === gemIndex) {
+          root.style.setProperty("--bw-palette-gem", hex);
+          root.style.setProperty("--bw-palette-on-gem", readableOn(hex));
+        }
+      }, immediate);
     });
+
+    queuePaletteLayer(4400, function () {
+      root.style.setProperty("--bw-palette-water", tonedWater);
+    }, immediate);
 
     window.dispatchEvent(new CustomEvent("bw:palettechange", {
       detail: { id: group.id, name: group.name, segment: group.seg }
@@ -286,10 +303,12 @@
         }
         var schedule = buildPaletteSchedule(groups);
         paletteScheduleSlots = schedule.length;
+        var firstApply = true;
         function update() {
           var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
           var index = ((slot * paletteStep) % schedule.length + schedule.length) % schedule.length;
-          applyPalette(schedule[index]);
+          applyPalette(schedule[index], firstApply || reduce);
+          firstApply = false;
           if (!reduce) {
             clearTimeout(paletteTimer);
             paletteTimer = setTimeout(update, paletteDwellMs - ((Date.now() - clockStart) % paletteDwellMs) + 32);
