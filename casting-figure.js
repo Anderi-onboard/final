@@ -253,10 +253,46 @@
     function side(index){
       return faces && faces.length === 3 ? (faces[index] ? " side-yang" : " side-yin") : "";
     }
-    return '<span class="bw-af-loader' + side(0) + '" aria-hidden="true"></span>' +
-      '<span class="bw-af-loader b' + side(1) + '" aria-hidden="true"></span>' +
-      '<span class="bw-af-loader c' + side(2) + '" aria-hidden="true"></span>';
+    var still = typeof matchMedia === 'function' &&
+      matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var paths = COIN_PATHS.map(function (c, i) {
+      return '<path class="bw-af-loader' + (i ? (i === 1 ? ' b' : ' c') : '') + side(i) + '" d="' + c.base + '">' +
+        (still ? '' :
+          '<animate attributeName="d" dur="' + c.dur + '" repeatCount="indefinite" values="' +
+          c.frames + '"/>') +
+        '</path>';
+    }).join('');
+    return '<svg class="bw-af-coins" viewBox="48 18 224 84" preserveAspectRatio="xMidYMid meet" ' +
+      'aria-hidden="true" focusable="false">' + paths + '</svg>';
   }
+
+  /* The coins, taken from the sixty-pillar project's home-page mark: same path
+     data and the same three durations (5s / 6s / 5.5s), so they never sync up
+     and read as three coins settling separately rather than one spinner. They
+     replace three CSS circles that could only ever be circles.
+
+     Each coin is a <path> carrying the .bw-af-loader class the cast animation
+     already drives, so classList.add("side-yang") and querySelectorAll continue
+     to work untouched — the shape changed, the wiring did not.
+
+     One SVG rather than three, because the spacing between the coins is part of
+     the artwork: it lives in the viewBox, at the positions it was drawn at.
+     The box is cropped to the coins (x 48-272, y 18-102) so the mark does not
+     carry the tall empty margins of the original 320x120 frame into a text row.
+
+     SMIL ignores prefers-reduced-motion and CSS cannot switch it off, so the
+     <animate> elements are simply omitted — same three coins, at rest. */
+  var COIN_PATHS = [
+    { dur:'5s',
+      base:'M 60 60 C 60 30, 100 30, 100 60 C 100 90, 60 90, 60 60 Z',
+      frames:'M 60 60 C 60 30, 100 30, 100 60 C 100 90, 60 90, 60 60 Z;M 60 60 C 55 35, 105 25, 100 55 C 110 90, 65 95, 60 60 Z;M 60 60 C 65 28, 95 40, 100 65 C 95 95, 55 85, 60 60 Z;M 60 60 C 60 30, 100 30, 100 60 C 100 90, 60 90, 60 60 Z' },
+    { dur:'6s',
+      base:'M 140 60 C 140 28, 180 28, 180 60 C 180 92, 140 92, 140 60 Z',
+      frames:'M 140 60 C 140 28, 180 28, 180 60 C 180 92, 140 92, 140 60 Z;M 140 62 C 135 32, 185 30, 180 62 C 185 98, 135 92, 140 62 Z;M 140 58 C 145 30, 175 32, 180 58 C 175 96, 145 88, 140 58 Z;M 140 60 C 140 28, 180 28, 180 60 C 180 92, 140 92, 140 60 Z' },
+    { dur:'5.5s',
+      base:'M 220 60 C 220 30, 260 30, 260 60 C 260 90, 220 90, 220 60 Z',
+      frames:'M 220 60 C 220 30, 260 30, 260 60 C 260 90, 220 90, 220 60 Z;M 220 62 C 215 32, 265 28, 260 62 C 265 96, 215 92, 220 62 Z;M 220 58 C 225 28, 255 34, 260 58 C 255 94, 225 88, 220 58 Z;M 220 60 C 220 30, 260 30, 260 60 C 260 90, 220 90, 220 60 Z' }
+  ];
   function makeCoins() {
     var tmp = el("span");
     tmp.innerHTML = coinsMarkup();
@@ -618,15 +654,26 @@
 
       /* ── organic loader: three hollow hand-drawn rings at rest. During an
          active cast they perform one coordinated toss, then stay still. ── */
-      ".bw-coins{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}",
-      ".bw-af-loader{display:block;flex:none;width:21px;height:21px;box-sizing:border-box;background:var(--paper);",
-        "border:2.2px solid var(--ink);border-radius:50%;transition:background-color .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
-      /* Filled clay = yang face; hollow paper = yin face. These are the same
-         three circles, now carrying the result of each of the six tosses. */
+      /* The spacing between the coins lives inside the SVG now, so the row no
+         longer sets a gap of its own. --bw-coins-w is the one knob a call site
+         gets: the viewBox does the scaling, so a caller can change the size and
+         can never change the proportions. */
+      ".bw-coins{display:inline-flex;align-items:center;color:var(--ink)}",
+      ".bw-af-coins{display:block;flex:none;width:var(--bw-coins-w,96px);height:auto;overflow:visible}",
+
+      /* Filled clay = yang face; pale field = yin face. Both track the palette
+         the mountain range is currently showing — mountain-range.js rewrites
+         --bw-palette-gem and --bw-palette-cloud on :root every 15s, so the
+         coins turn with the background instead of holding a fixed terracotta
+         while everything behind them moves to another colour group. The static
+         tokens stay as the fallback for any context without the backdrop. */
+      ".bw-af-loader{fill:var(--bw-palette-cloud,var(--paper));stroke:var(--ink);stroke-width:2.4;",
+        "stroke-linecap:round;transition:fill .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
       /* The face changes, the ink outline does not. Keeping the same dark,
-         living edge on yin and yang makes the three coins read as one object. */
-      ".bw-af-loader.side-yang{background:var(--terracotta);border-color:var(--ink)}",
-      ".bw-af-loader.side-yin{background:var(--paper);border-color:var(--ink)}",
+         living edge on yin and yang makes the three coins read as one object —
+         and keeping it OFF the palette keeps the edge legible on every group. */
+      ".bw-af-loader.side-yang{fill:var(--bw-palette-gem,var(--terracotta))}",
+      ".bw-af-loader.side-yin{fill:var(--bw-palette-cloud,var(--paper))}",
 
       /* Standalone loader */
       ".bw-loader{display:inline-flex;align-items:center;color:var(--ink)}",
@@ -765,7 +812,7 @@
       ".bw-af-flow{fill:none;stroke-width:2.2;stroke-linecap:round}",
       /* Six distinct throws: every round agitates the same three circles, then
          their filled/hollow faces settle before the matching line lands. */
-      ".bw-cast-run .bw-af-loader{transition:background-color .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
+      ".bw-cast-run .bw-af-loader{transition:fill .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
       ".bw-cast-run .bw-cast-method{animation:bwMethodSet 1.65s var(--ease-out,cubic-bezier(.23,1,.32,1)) both}",
       "@keyframes bwMethodSet{0%,18%{opacity:.58;transform:translateX(-3px)}58%,100%{opacity:1;transform:none}}",
       ".bw-casting .bw-af-moment,.bw-casting .bw-af-legend{opacity:0;transform:translateY(4px)}",
@@ -849,6 +896,8 @@
 
       /* reduced motion */
       "@media (prefers-reduced-motion:reduce){",
+        /* the coins' shape animation is SMIL, which CSS cannot stop —
+           coinsMarkup() omits those <animate> elements when motion is reduced */
         ".bw-af-loader{animation:none!important}",
         ".bw-af-live .bw-af-flow,.bw-af-live .bw-af-mark,.bw-af-live .bw-af-tarrow{animation:none!important}",
         ".bw-fig .bw-ln.in{animation:none;opacity:1;transform:none}",
