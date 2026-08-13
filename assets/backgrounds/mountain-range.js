@@ -1,39 +1,27 @@
-/* BourneWise · animated mountain-range background (paper skin).
-   Usage: place <div class="mtn-bg" aria-hidden="true"></div> anywhere and load
-   this script. It injects the layered SVG, expands contour lines, and scopes its
-   own CSS. Style the .mtn-bg box (position/size/opacity) from the host page.
-   Ten parallax ridges flow at different speeds; six clouds drift over them. */
+/* BourneWise · animated mountain-range background (paper skin). */
 (function () {
   "use strict";
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups-180.json?v=20260802h", scriptSrc).href
-    : "./assets/palettes/color-groups-180.json?v=20260802h";
+    ? new URL("../palettes/color-groups.json?v=20260812a", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260812a";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
-  var palettePriorityWeight = 5;
-  var palettePrioritySegments = {
-    "近白段": true,
-    "金赭段": true,
-    "蓝靛段": true
-  };
-  var paletteExcludedSegments = {
-    "粉珊瑚段": true,
-    "青绿段": true,
-    "黄绿杂段": true
-  };
-  var paletteScheduleSlots = 370;
+  var paletteScheduleSlots = 1;
   var paletteTimer = 0;
 
 
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
     + '.mtn-bg>svg{display:block;width:100%;height:100%}'
-    /* The sky and ten ridges receive exact colours from the external 180-group
+    /* The sky and ten ridges receive colours from the extensible external
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
-    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none}'
+    + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD)}'
+    + '.mtn-sky::before,.mtn-sky::after{content:"";position:absolute;inset:0;pointer-events:none}'
+    + '.mtn-sky::before{background:var(--bw-palette-haze,#D2CBC0);clip-path:polygon(0 40%,18% 44%,38% 38%,62% 46%,82% 39%,100% 43%,100% 100%,0 100%)}'
+    + '.mtn-sky::after{background:var(--bw-palette-water,#B4AA9A);clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%)}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
     + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
@@ -75,7 +63,7 @@
        planes and two clouds. The remaining artwork is static, so extension-heavy
        Chromium profiles do not have to composite sixteen perpetual animations. */
     + '.mtn-bg .fill{animation:none;fill:#D9C9A5}'
-    + '.mtn-bg .l1,.mtn-bg .l2{fill:#F3EBDD}.mtn-bg .l3,.mtn-bg .l4{fill:#E9DDC5}.mtn-bg .l5,.mtn-bg .l6{fill:#DCC8A7}.mtn-bg .l7,.mtn-bg .l8{fill:#CDB28A}.mtn-bg .l9,.mtn-bg .l10{fill:#B9956E}'
+    + '.mtn-bg .l1,.mtn-bg .l2{fill:#D7D0C4}.mtn-bg .l3,.mtn-bg .l4{fill:#CEC4B5}.mtn-bg .l5,.mtn-bg .l6{fill:#C2B49F}.mtn-bg .l7,.mtn-bg .l8{fill:#B39F82}.mtn-bg .l9,.mtn-bg .l10{fill:#967B60}'
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg .flow-3{animation:mtn-flow-l 240s linear infinite;will-change:transform}'
     + '.mtn-bg .flow-6{animation:mtn-flow-r 210s linear infinite;will-change:transform}'
@@ -83,7 +71,7 @@
     + '.mtn-bg [class^="cloud-"]{animation:none}'
     + '.mtn-bg .cloud-2{animation:mtn-cloud-l 210s linear infinite;will-change:transform}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 240s linear -50s infinite;will-change:transform}'
-    + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important}}';
+    + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important;transform:none!important}}';
 
   var W = {
     1: "M -2000 188 L -1860 186 C -1777 186 -1763 150 -1680 150 C -1570 150 -1550 178 -1440 178 L -1240 178 C -1176 178 -1164 166 -1100 166 C -1045 166 -1035 188 -980 188 L -780 195 C -660 195 -640 144 -520 144 C -428 144 -412 189 -320 189 L 0 184 L 140 186 C 223 186 237 150 320 150 C 430 150 450 178 560 178 L 760 178 C 824 178 836 166 900 166 C 955 166 965 188 1020 188 L 1220 195 C 1340 195 1360 144 1480 144 C 1572 144 1588 189 1680 189 L 2000 184 L 2140 186 C 2223 186 2237 150 2320 150 C 2430 150 2450 178 2560 178 L 2760 178 C 2824 178 2836 166 2900 166 C 2955 166 2965 188 3020 188 L 3220 195 C 3340 195 3360 144 3480 144 C 3572 144 3588 189 3680 189 L 4000 184",
@@ -175,7 +163,35 @@
 
   function readableOn(hex) {
     var l = luminance(hex);
-    return (1.05 / (l + .05)) >= ((l + .05) / .05) ? "#FAF9F5" : "#141413";
+    return (1.05 / (l + .05)) >= ((l + .05) / .05) ? "#ECE6DC" : "#141413";
+  }
+
+  function mutedHex(hex, maxLightness, maxSaturation, minLightness) {
+    var n = parseInt(hex.slice(1), 16);
+    var r = (n >> 16) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+    var l = (max + min) / 2, s = d ? d / (1 - Math.abs(2 * l - 1)) : 0, h = 0;
+    if (d) {
+      if (max === r) h = ((g - b) / d) % 6;
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+      h = (h * 60 + 360) % 360;
+    }
+    l = Math.max(minLightness || 0, Math.min(l, maxLightness));
+    s = Math.min(s, maxSaturation);
+    var c = (1 - Math.abs(2 * l - 1)) * s;
+    var x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    var m = l - c / 2;
+    var rr = 0, gg = 0, bb = 0;
+    if (h < 60) { rr = c; gg = x; }
+    else if (h < 120) { rr = x; gg = c; }
+    else if (h < 180) { gg = c; bb = x; }
+    else if (h < 240) { gg = x; bb = c; }
+    else if (h < 300) { rr = x; bb = c; }
+    else { rr = c; bb = x; }
+    return '#' + [rr, gg, bb].map(function (channel) {
+      return Math.round((channel + m) * 255).toString(16).padStart(2, '0');
+    }).join('').toUpperCase();
   }
 
   function validPaletteGroup(group) {
@@ -204,63 +220,54 @@
     return group.rows[index];
   }
 
-  function activePaletteGroup(group) {
-    if (paletteExcludedSegments[group.seg]) return false;
-    if (group.seg !== "近白段") return true;
-    var hue = hueOf(paletteGem(group));
-    var red = hue >= 335 || hue <= 25;
-    var green = hue >= 75 && hue <= 170;
-    return !red && !green;
-  }
-
-  /* Red and green catalogue segments are intentionally out of rotation. The
-     near-white segment stays, but its red- and green-led subgroups are filtered
-     by their designated gem colour. Blue/indigo, gold/ochre and the remaining
-     near-whites keep the five-slot preference; violet remains occasional. */
+  /* The curated file is now authoritative: every retained group participates
+     once. Removing a group in the manager removes it from the published file,
+     so the runtime no longer carries a second, hidden exclusion algorithm. */
   function buildPaletteSchedule(groups) {
-    var schedule = [];
     var tierOrder = { "浓": 0, "艳": 1, "中": 2, "淡": 3 };
-    var eligible = groups.filter(activePaletteGroup).slice().sort(function (a, b) {
+    return groups.slice().sort(function (a, b) {
       var tierA = tierOrder[a.tier] == null ? 9 : tierOrder[a.tier];
       var tierB = tierOrder[b.tier] == null ? 9 : tierOrder[b.tier];
       return tierA - tierB || a.id.localeCompare(b.id);
     });
-    /* Interleave preference passes instead of placing five identical slots next
-       to each other. Darker groups lead every session, while the 15-second
-       cadence and blue / gold / near-white preference remain intact. */
-    for (var pass = 0; pass < palettePriorityWeight; pass++) {
-      eligible.forEach(function (group) {
-        var weight = palettePrioritySegments[group.seg] ? palettePriorityWeight : 1;
-        if (pass < weight) schedule.push(group);
-      });
-    }
-    return schedule;
   }
 
   function applyPalette(group) {
     var root = document.documentElement;
+    /* The catalogue can contain very pale lilacs and candy-bright accents.
+       Keep their hue relationships, but force every live UI colour into the
+       same low-glare editorial range before exposing it as a CSS token. */
+    var tonedRows = group.rows.map(function (hex) { return mutedHex(hex, .60, .26); });
+    var backgrounds = group.backgrounds || {};
+    /* Keep the sky distinctly lighter than the water and ridges without
+       introducing a bright white field or another visual treatment. */
+    var tonedCloud = mutedHex(backgrounds.sky || group.cloud, .82, .14, .76);
+    var tonedHaze = mutedHex(backgrounds.haze || group.rows[1], .72, .18, .56);
+    var tonedWater = mutedHex(backgrounds.water || group.rows[4], .64, .22, .42);
     var gemIndex = Array.isArray(group.gems) && group.gems.length
       ? Math.max(0, Math.min(9, group.gems[0] - 1))
       : 5;
     root.dataset.bwPalette = group.id;
     root.dataset.bwPaletteName = group.name || "";
     root.dataset.bwPaletteSegment = group.seg || "";
-    root.style.setProperty("--bw-palette-cloud", group.cloud);
-    group.rows.forEach(function (hex, index) {
+    root.style.setProperty("--bw-palette-cloud", tonedCloud);
+    root.style.setProperty("--bw-palette-haze", tonedHaze);
+    root.style.setProperty("--bw-palette-water", tonedWater);
+    tonedRows.forEach(function (hex, index) {
       root.style.setProperty("--bw-palette-" + (index + 1), hex);
       root.style.setProperty("--bw-palette-on-" + (index + 1), readableOn(hex));
     });
-    root.style.setProperty("--bw-palette-gem", group.rows[gemIndex]);
-    root.style.setProperty("--bw-palette-on-gem", readableOn(group.rows[gemIndex]));
+    root.style.setProperty("--bw-palette-gem", tonedRows[gemIndex]);
+    root.style.setProperty("--bw-palette-on-gem", readableOn(tonedRows[gemIndex]));
 
     document.querySelectorAll(".mtn-bg").forEach(function (el) {
-      group.rows.forEach(function (hex, index) {
+      tonedRows.forEach(function (hex, index) {
         el.querySelectorAll(".fill.l" + (index + 1)).forEach(function (node) {
           node.style.fill = hex;
         });
       });
       el.querySelectorAll("[clip-path] > use").forEach(function (node) {
-        node.style.fill = group.cloud;
+        node.style.fill = tonedCloud;
       });
     });
 
@@ -276,13 +283,11 @@
         return response.json();
       })
       .then(function (groups) {
-        if (!Array.isArray(groups) || groups.length !== 180 || !groups.every(validPaletteGroup)) {
+        if (!Array.isArray(groups) || !groups.length || !groups.every(validPaletteGroup)) {
           throw new Error("Palette data failed validation");
         }
         var schedule = buildPaletteSchedule(groups);
-        if (schedule.length !== paletteScheduleSlots) {
-          throw new Error("Palette schedule failed validation");
-        }
+        paletteScheduleSlots = schedule.length;
         function update() {
           var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
           var index = ((slot * paletteStep) % schedule.length + schedule.length) % schedule.length;
@@ -308,7 +313,9 @@
       document.head.appendChild(st);
     }
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
-    var cycleMs = paletteDwellMs * paletteScheduleSlots;
+    /* The animation phase only needs a stable long clock; palette count is
+       discovered asynchronously and may grow beyond the original catalogue. */
+    var cycleMs = 86400000;
     var clockKey = 'bw-palette-clock-v4';
     var seenKey = 'bw-mtn-seen';
     var clockStart;
@@ -339,10 +346,12 @@
         sky.style.setProperty('--mtn-phase', el.style.getPropertyValue('--mtn-phase'));
         el.parentNode.insertBefore(sky, el);
       }
-      if (!el.firstElementChild) el.innerHTML = build({
+      if (!el.firstElementChild) {
+        el.innerHTML = build({
         vbw: el.dataset.vbw ? +el.dataset.vbw : 1000,
         par: el.dataset.par || 'xMidYMid slice'
-      });
+        });
+      }
 
       /* entrance flood: on a line-art backdrop, hold the line-art off for a
          beat so the coloured ridges pour in, then restore it so the colour

@@ -5,33 +5,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Settings — BourneWise</title>
-<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
+<style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260810a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260811b">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260810a">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260810e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260811h">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260810b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260811g">
 <script src="./ds-base.js?v=20260810a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{display:flex;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  body{display:flex;background-color:#E7E1D7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   a{color:inherit;text-decoration:none}
   input,select{font:inherit;color:inherit}
   button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:6px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.62;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 10%,rgba(0,0,0,.9) 30%,rgba(0,0,0,.4) 48%,transparent 64%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 10%,rgba(0,0,0,.9) 30%,rgba(0,0,0,.4) 48%,transparent 64%)}
-
-  /* sidebar: injected + styled by sidebar.js (shared chrome, identical to chat) */
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.62; */
 
   /* main */
   .main{position:relative;z-index:1;flex:1;min-width:0;overflow-y:auto}
@@ -54,11 +52,11 @@
   .row .rl span{font-size:12.5px;color:var(--faint)}
   .row .rr{flex:none}
 
-  .field{width:230px;max-width:46vw;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:14px;transition:border-color .15s,box-shadow .15s}
+  .field{width:230px;max-width:46vw;background:var(--paper-raised);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:14px;transition:border-color .15s,box-shadow .15s}
   .field:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.14)}
 
   .id-row{display:flex;align-items:center;gap:14px;padding:18px 20px}
-  .id-row .av{flex:none;width:52px;height:52px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:18px;font-weight:600;font-family:var(--serif)}
+  .id-row .av{flex:none;width:52px;height:52px;border-radius:50%;background:var(--prussian);color:#D8DDE0;display:grid;place-items:center;font-size:18px;font-weight:600;font-family:var(--serif)}
   .id-row .id-main{flex:1}
   .id-row .id-main b{font-family:var(--serif);font-size:18px}
   .id-row .id-main span{display:block;font-size:12.5px;color:var(--faint)}
@@ -109,10 +107,9 @@
     .id-row{flex-wrap:wrap}
     .field{width:100%}
   }
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
-  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}.panel::before{animation:none}}
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#E7E1D7}.panel::before{animation:none}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260810d">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260811e">
 </head>
 <body data-page="settings">
 
@@ -185,9 +182,9 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260810c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260811g"></script>
 <script src="./account.js?v=20260810a"></script>
-<script src="./sidebar.js?v=20260810a"></script>
+<script src="./sidebar.js?v=20260811b"></script>
 <script>
 (function () {
   "use strict";

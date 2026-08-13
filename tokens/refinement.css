@@ -14,11 +14,11 @@
   --ui-glass-strong: color-mix(in srgb, var(--bw-palette-1) 88%, transparent);
   --ui-glass-soft: color-mix(in srgb, var(--bw-palette-1) 54%, transparent);
   --ui-glass-warm: color-mix(in srgb, var(--bw-palette-2) 72%, transparent);
-  --ui-line: color-mix(in srgb, white 66%, var(--bw-palette-6) 12%);
-  --ui-line-strong: color-mix(in srgb, white 42%, var(--bw-palette-6) 32%);
+  --ui-line: color-mix(in srgb, var(--paper-raised) 72%, var(--bw-palette-6) 18%);
+  --ui-line-strong: color-mix(in srgb, var(--paper-dim) 54%, var(--bw-palette-6) 36%);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: 0 10px 30px rgba(42,32,22,.05), 0 1px 2px rgba(42,32,22,.035), inset 0 1px 0 rgba(255,255,255,.66);
-  --ui-shadow-raised: 0 16px 42px rgba(42,32,22,.075), 0 2px 5px rgba(42,32,22,.04), inset 0 1px 0 rgba(255,255,255,.76);
+  --ui-shadow: 0 10px 30px rgba(42,32,22,.07), 0 1px 2px rgba(42,32,22,.05);
+  --ui-shadow-raised: 0 16px 42px rgba(42,32,22,.09), 0 2px 5px rgba(42,32,22,.055);
   --ui-glass-filter: blur(11px) saturate(114%);
   --ui-glass-filter-strong: blur(14px) saturate(118%);
   --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
@@ -201,7 +201,7 @@ body[data-page="app"] .sidebar {
   padding: 16px 14px 14px;
   background: color-mix(in srgb, var(--paper-raised) 62%, transparent);
   border-right-color: var(--ui-line);
-  box-shadow: inset -1px 0 0 rgba(255,255,255,.34);
+  box-shadow: inset -1px 0 0 rgba(226,218,205,.28);
 }
 body[data-page="app"] .side-top { padding-inline: 6px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
@@ -299,7 +299,7 @@ body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink);
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
   padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass-soft);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.48);
+  box-shadow: inset 0 1px 0 rgba(226,218,205,.3);
   backdrop-filter: blur(10px) saturate(112%);
   -webkit-backdrop-filter: blur(10px) saturate(112%);
 }
@@ -332,7 +332,7 @@ body[data-page="app"] .msg-user {
   max-width: 82%;
   background: var(--bw-palette-9) !important;
   color: var(--bw-palette-on-9) !important;
-  border-color: color-mix(in srgb, var(--bw-palette-9) 78%, white) !important;
+  border-color: color-mix(in srgb, var(--bw-palette-9) 78%, var(--paper-dim)) !important;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--bw-palette-9) 18%, transparent);
 }
 body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em; }
@@ -341,7 +341,7 @@ body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
   background: var(--ui-glass-soft); border-color: var(--ui-line);
   border-radius: 10px 13px 9px 12px / 12px 9px 13px 10px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.46);
+  box-shadow: inset 0 1px 0 rgba(226,218,205,.28);
   backdrop-filter: blur(10px) saturate(110%);
   -webkit-backdrop-filter: blur(10px) saturate(110%);
 }
@@ -367,8 +367,8 @@ html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.top
   opacity: .17;
   background: url("../assets/textures/ink-currents.svg") center / contain no-repeat;
   mix-blend-mode: multiply;
-  -webkit-mask-image: linear-gradient(135deg,transparent 4%,#000 52%);
-  mask-image: linear-gradient(135deg,transparent 4%,#000 52%);
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 html[data-skin="paper"] body :is(.pack,.lesson-card,.why-card,.m-card,.cost,.topup):nth-child(2n)::after {
   right: -42px;
@@ -438,7 +438,7 @@ body[data-page="app"] .send:disabled .bw-organic-loader { display: inline-flex; 
    Movement is limited to compositor-friendly opacity and transforms. This
    keeps the glass responsive without repainting the large backdrop layers. */
 :is(a,button,input,textarea):focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--terracotta) 72%, white);
+  outline: 2px solid color-mix(in srgb, var(--terracotta) 72%, var(--paper-dim));
   outline-offset: 3px;
 }
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
@@ -505,21 +505,18 @@ html[data-skin="paper"] body:not([data-page="app"]) :is(
   .progress, .guide-stage, .lesson-card, .example, .rate,
   .ledgerstrip, .rate-card, .estimator, .pack, .term
 ) {
-  background-color: color-mix(in srgb, var(--bw-palette-1) 22%, transparent) !important;
-  background-image: linear-gradient(135deg,
-    color-mix(in srgb, var(--bw-palette-1) 46%, transparent),
-    color-mix(in srgb, var(--bw-palette-3, var(--bw-palette-2)) 25%, transparent)) !important;
-  border: .75px solid color-mix(in srgb, white 66%, var(--bw-palette-6) 12%) !important;
-  box-shadow: 0 12px 32px rgba(42,32,22,.05), inset 0 1px 0 rgba(255,255,255,.6) !important;
+  background-color: color-mix(in srgb, var(--bw-palette-1) 52%, rgba(42,32,22,.18)) !important;
+  background-image: none !important;
+  border: .75px solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
+  box-shadow: 0 12px 32px rgba(42,32,22,.075) !important;
   backdrop-filter: blur(13px) saturate(116%) !important;
   -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
 }
 html[data-skin="paper"] body:not([data-page="app"]) :is(
   .why-card, .lesson-card, .rate, .rate-card, .pack, .term, .method
 ):nth-child(2n) {
-  background-image: linear-gradient(145deg,
-    color-mix(in srgb, var(--bw-palette-2) 38%, transparent),
-    color-mix(in srgb, var(--bw-palette-4, var(--bw-palette-1)) 23%, transparent)) !important;
+  background-color: color-mix(in srgb, var(--bw-palette-2) 48%, rgba(42,32,22,.2)) !important;
+  background-image: none !important;
 }
 body[data-page="pricing"] .plan,
 body[data-page="pricing"] .topup,
@@ -597,4 +594,102 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }
+}
+
+/* Environment-native surfaces -------------------------------------------
+   Containers no longer introduce their own card colour or permanent
+   hairline. They inherit the moving landscape beneath them; hover/focus adds
+   one quiet environmental wash. The main sidebar is the sole pale carrier. */
+:root {
+  --ui-environment-hover: color-mix(in srgb, var(--bw-palette-gem) 10%, transparent);
+  --ui-environment-focus: color-mix(in srgb, var(--bw-palette-cloud) 48%, transparent);
+}
+
+body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, var(--paper-raised) 84%, transparent) !important;
+  border-right-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html[data-skin="paper"] body[data-page="app"] :is(
+  .ledger, .composer, .stria, .chip,
+  .rd-action, .rd-prompt, .msg-user
+) {
+  background: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Floating UI still needs a readable plane, but it uses the current sky
+   colour rather than a separate white/tan card colour. */
+html[data-skin="paper"] body[data-page="app"] :is(.method-menu, .acct-menu, .guide-coach, .signin-coach) {
+  background: var(--bw-palette-cloud) !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html[data-skin="paper"] body[data-page="app"] .composer:focus-within {
+  background: color-mix(in srgb, var(--paper-dim) 86%, transparent) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* The composer and method entry are actions, not passive content. Give both
+   the same pale carrier as the sidebar so their affordance remains visible
+   against every live palette, while keeping the permanent border removed. */
+html[data-skin="paper"] body[data-page="app"] .composer,
+html[data-skin="paper"] body[data-page="app"] #howItWorksLink,
+html[data-skin="paper"] body[data-page="app"] .guide-coach {
+  background: color-mix(in srgb, var(--paper-raised) 88%, transparent) !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html[data-skin="paper"] body[data-page="app"] #howItWorksLink {
+  padding-inline: 13px;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  html[data-skin="paper"] body[data-page="app"] .composer:hover,
+  html[data-skin="paper"] body[data-page="app"] #howItWorksLink:hover,
+  html[data-skin="paper"] body[data-page="app"] .guide-coach:hover {
+    background: color-mix(in srgb, var(--paper-dim) 90%, transparent) !important;
+  }
+}
+
+html[data-skin="paper"] body:not([data-page="app"]) :is(
+  .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+  .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
+  .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
+) {
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  html[data-skin="paper"] body[data-page="app"] :is(
+    .ledger, .composer, .stria, .chip,
+    .rd-action, .rd-prompt, .msg-user
+  ):hover,
+  html[data-skin="paper"] body:not([data-page="app"]) :is(
+    .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+    .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
+    .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
+  ):hover {
+    background-color: var(--ui-environment-hover) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
 }

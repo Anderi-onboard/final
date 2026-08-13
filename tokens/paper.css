@@ -8,28 +8,28 @@
    slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
-  --paper-grain-image: url("../assets/textures/halftone-micro.webp");
-  --paper-grain-size: 256px 256px;
+  --paper-grain-image: url("../assets/textures/oil-relief-swirl-mask.png");
+  --paper-grain-size: 360px 360px;
   /* verified editorial palette, adapted into interface roles */
-  --paper: #FAF9F5;         /* full canvas / ivory */
-  --paper-raised: #F0EEE6;  /* irregular carrier surfaces */
-  --paper-dim: #E8E6DC;     /* compact hover and selected states */
-  --chip: #E3DACC;          /* oat — quiet controls */
+  --paper: #E7E1D7;         /* full canvas / muted warm paper */
+  --paper-raised: #DED8CD;  /* irregular carrier surfaces */
+  --paper-dim: #D4CEC3;     /* compact hover and selected states */
+  --chip: #CBBFAD;          /* oat — quiet controls */
   --ink: #141413;           /* dominant linework and type */
   --dim: #55544F;
   --faint: #74726B;
   --ghost: #96938A;
-  --terracotta: #D97757;    /* clay — the only action accent */
-  --prussian: #56556C;      /* dark heather for transformed states */
+  --terracotta: #A85E46;    /* clay — the only action accent */
+  --prussian: #505064;      /* dark heather for transformed states */
   --prussian-deep: #444358;
-  --pine: #536A61;          /* dark cactus for status, never action */
+  --pine: #4D6159;          /* dark cactus for status, never action */
   --pine-deep: #40554D;
-  --oat: #E3DACC;
-  --cactus: #BCD1CA;
-  --heather: #CBCADB;
-  --coral: #EBCECE;
-  --line: #C9C6BC;
-  --line-soft: #E1DED5;
+  --oat: #CBBFAD;
+  --cactus: #9BAFA8;
+  --heather: #A7A6B8;
+  --coral: #C7AAAA;
+  --line: #B8B0A4;
+  --line-soft: #CEC7BC;
 
   /* three families, three jobs */
   --serif: "BioRhyme", Georgia, serif; /* @kind font */   /* oracle voice, brand, numbers, display titles */
@@ -65,8 +65,8 @@
   --focus-ring: var(--terracotta);
 }
 
-/* A single fixed micro-halftone screen unifies every field without pretending
-   the display is stained paper. It is deliberately faint and never animates. */
+/* A generated low-relief swirl screen gives solid fields the hand-worked
+   surface of the poster reference without turning into dust or film grain. */
 html[data-skin="paper"] body::after {
   content: "";
   position: fixed;
@@ -74,10 +74,16 @@ html[data-skin="paper"] body::after {
   z-index: 2147483646;
   pointer-events: none;
   background: var(--paper-grain-image) 0 0 / var(--paper-grain-size) repeat;
-  opacity: .09;
+  opacity: .108;
   mix-blend-mode: multiply;
 }
 
+/* Editorial and legal pages carry more uninterrupted flat colour, so their
+   paper relief can be stronger without competing with dense controls. */
+html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
+  opacity: .216;
+}
+
 @media (prefers-contrast: more) {
-  html[data-skin="paper"] body::after { opacity: .08; }
+  html[data-skin="paper"] body::after { opacity: .24; }
 }

@@ -5,32 +5,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign in — BourneWise</title>
-<style>html{overflow-x:clip}html,body{background:#F2EDE7}</style>
+<style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the core faces so first paint
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260810a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260811b">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260810a">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260810e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260811h">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260810b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260811g">
 <script src="./ds-base.js?v=20260810a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
   html,body{height:100%}
-  body{min-height:100%;display:flex;flex-direction:column;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
-  @keyframes bgDrift{0%,100%{background-color:#F2EDE7}11%{background-color:#F2EDE7}14%{background-color:#F4EBE2}25%{background-color:#F4EBE2}28%{background-color:#EFE4E1}39%{background-color:#EFE4E1}42%{background-color:#EBE5EA}53%{background-color:#EBE5EA}56%{background-color:#E6E5EE}67%{background-color:#E6E5EE}70%{background-color:#EAE4E9}81%{background-color:#EAE4E9}84%{background-color:#F1E9E0}97%{background-color:#F1E9E0}}/* holdified: colour holds ~87% of each slot; brief 1.3s crossfades keep the drift but stop per-frame backdrop-blur re-runs */
-  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#F2EDE7}}
+  body{min-height:100%;display:flex;flex-direction:column;background-color:#E7E1D7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  @media (prefers-reduced-motion: reduce){body{animation:none;background-color:#E7E1D7}}
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   button:focus-visible,a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;border-radius:8px}
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;}
 
   /* minimal page header — logo + back link */
   .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1100px;margin:0 auto;width:100%}
@@ -96,6 +95,7 @@
   .divider{display:flex;align-items:center;gap:12px;margin:6px 2px;color:var(--ghost);font-size:11px;letter-spacing:.08em}
   .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line-soft)}
   .oauth-providers{display:flex;flex-direction:column;gap:10px}
+  .oauth-providers svg{filter:saturate(.58) brightness(.82) contrast(.95)}
 
   .card-foot{padding:14px 28px 22px;text-align:center}
   .card-foot p{font-size:12px;color:var(--ghost);line-height:1.6}
@@ -113,7 +113,7 @@
   @media (max-width:360px){.back-long{display:none}.back-short{display:inline}}
   @media (prefers-reduced-motion: reduce){.card{animation:none}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260810d">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260811e">
 </head>
 <body data-page="login">
 
@@ -174,21 +174,21 @@
 
       <button class="prov" data-oauth="google">
         <span class="ic">
-          <svg width="19" height="19" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"></path><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"></path><path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33z"></path><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.46 3.44 1.35l2.58-2.58A9 9 0 0 0 9 0 9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"></path></svg>
+          <svg width="19" height="19" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4F6F9A" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"></path><path fill="#4F755D" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"></path><path fill="#A8883F" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33z"></path><path fill="#9A5149" d="M9 3.58c1.32 0 2.5.46 3.44 1.35l2.58-2.58A9 9 0 0 0 9 0 9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"></path></svg>
         </span>
         Google<span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
       </button>
 
       <button class="prov" data-oauth="reddit">
         <span class="ic">
-          <svg width="19" height="19" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#FF4500"></circle><path fill="#fff" d="M16.7 10a1.4 1.4 0 0 0-2.37-1 6.9 6.9 0 0 0-3.6-1.14l.6-2.9 2 .43a1 1 0 1 0 .12-.6l-2.3-.5a.3.3 0 0 0-.36.23l-.68 3.2A6.9 6.9 0 0 0 6.9 8a1.4 1.4 0 1 0-1.9 1.86 2.6 2.6 0 0 0-.03.4c0 2.1 2.44 3.8 5.45 3.8s5.45-1.7 5.45-3.8c0-.13 0-.26-.03-.39A1.4 1.4 0 0 0 16.7 10zm-9 .9a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.55 2.6c-.68.68-2.02.73-2.41.73-.4 0-1.73-.05-2.41-.73a.26.26 0 0 1 .37-.37c.43.43 1.35.58 2.04.58.7 0 1.61-.15 2.04-.58a.26.26 0 1 1 .37.37zm-.16-1.6a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path></svg>
+          <svg width="19" height="19" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#A55234"></circle><path fill="#E8E2D8" d="M16.7 10a1.4 1.4 0 0 0-2.37-1 6.9 6.9 0 0 0-3.6-1.14l.6-2.9 2 .43a1 1 0 1 0 .12-.6l-2.3-.5a.3.3 0 0 0-.36.23l-.68 3.2A6.9 6.9 0 0 0 6.9 8a1.4 1.4 0 1 0-1.9 1.86 2.6 2.6 0 0 0-.03.4c0 2.1 2.44 3.8 5.45 3.8s5.45-1.7 5.45-3.8c0-.13 0-.26-.03-.39A1.4 1.4 0 0 0 16.7 10zm-9 .9a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.55 2.6c-.68.68-2.02.73-2.41.73-.4 0-1.73-.05-2.41-.73a.26.26 0 0 1 .37-.37c.43.43 1.35.58 2.04.58.7 0 1.61-.15 2.04-.58a.26.26 0 1 1 .37.37zm-.16-1.6a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path></svg>
         </span>
         Reddit<span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
       </button>
 
       <button class="prov" data-oauth="discord">
         <span class="ic">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="#5865F2" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.25.5a18.3 18.3 0 0 1 4.35 1.35 16.6 16.6 0 0 0-14-.02A17.6 17.6 0 0 1 9.86 3.5L9.6 3a19.8 19.8 0 0 0-4.9 1.4C1.58 9 .74 13.5 1.16 17.9a19.9 19.9 0 0 0 6.03 3.05l.4-.66c-.66-.25-1.29-.55-1.88-.9l.15-.11a14.2 14.2 0 0 0 12.28 0l.15.11c-.59.35-1.22.65-1.88.9l.4.66a19.9 19.9 0 0 0 6.03-3.05c.5-5.13-.85-9.6-3.94-13.5zM8.5 15.3c-.97 0-1.77-.9-1.77-2s.78-2 1.77-2 1.79.9 1.77 2c0 1.1-.79 2-1.77 2zm7 0c-.97 0-1.77-.9-1.77-2s.78-2 1.77-2 1.79.9 1.77 2c0 1.1-.78 2-1.77 2z"></path></svg>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#5B638F" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.25.5a18.3 18.3 0 0 1 4.35 1.35 16.6 16.6 0 0 0-14-.02A17.6 17.6 0 0 1 9.86 3.5L9.6 3a19.8 19.8 0 0 0-4.9 1.4C1.58 9 .74 13.5 1.16 17.9a19.9 19.9 0 0 0 6.03 3.05l.4-.66c-.66-.25-1.29-.55-1.88-.9l.15-.11a14.2 14.2 0 0 0 12.28 0l.15.11c-.59.35-1.22.65-1.88.9l.4.66a19.9 19.9 0 0 0 6.03-3.05c.5-5.13-.85-9.6-3.94-13.5zM8.5 15.3c-.97 0-1.77-.9-1.77-2s.78-2 1.77-2 1.79.9 1.77 2c0 1.1-.79 2-1.77 2zm7 0c-.97 0-1.77-.9-1.77-2s.78-2 1.77-2 1.79.9 1.77 2c0 1.1-.78 2-1.77 2z"></path></svg>
         </span>
         Discord<span class="arr"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 8h9M8.5 4l4 4-4 4"></path></svg></span>
       </button>
@@ -203,7 +203,7 @@
 
 <footer>BourneWise &middot; fixed hexagram input &middot; Claude Opus 5 interpretation</footer>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260810c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260811g"></script>
 <script src="./account.js?v=20260810a"></script>
 <script>
 (function () {

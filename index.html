@@ -5,18 +5,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BourneWise — Hexagram-based decision analysis</title>
-<style>html,body{background:#F2EDE7}</style>
+<style>html,body{background:#E7E1D7}</style>
 <!-- fonts are self-hosted (tokens/fonts.css); preload the faces used above the fold so
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260810a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260811b">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260810a">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260810e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260811h">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260810c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260811g">
 <script src="./ds-base.js?v=20260810a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -25,7 +25,7 @@
      thread inside does), so no aspect ratio can push the layout's proportions
      off by scrolling the chrome/background out of frame */
   html,body{height:100%;overflow:hidden}
-  body{--sbw:264px;display:flex;height:100vh;height:100dvh;background-color:#F2EDE7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  body{--sbw:264px;display:flex;height:100vh;height:100dvh;background-color:#E7E1D7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
   body.rail{--sbw:60px}
   @media (max-width:880px){body{--sbw:0px}}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
@@ -33,9 +33,8 @@
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
   /* ── animated mountain range — full-bleed backdrop; meet shows the whole artwork so its own transparent sky blends into the page (no hard seam) ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;transition:opacity .6s ease;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.88) 12%,rgba(0,0,0,.92) 42%,rgba(0,0,0,.62) 66%,transparent 90%)}
-  /* chat mode: the reading is the hero — the range recedes so chart rows in the
-     glass's feathered edges stay legible over the saturated autumn palettes */
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;transition:opacity .6s ease}
+  /* In a reading, let the answer remain the visual foreground. */
   body:not(.is-empty) .mtn-bg{opacity:.42}
 
   /* ── sidebar — seamless chrome, matched to the landing: no divider, texture & mountains run through ── */
@@ -90,9 +89,8 @@
   .casting-del:hover{color:var(--terracotta);background:rgba(181,80,44,.1)}
 
   /* ── the ledger — the actual .thread recipe (organic frosted glass), scaled
-     down: same low-opacity gradient + strong blur + feathered mask, PLUS the
-     part that was missing before — the slow animated organic border-radius,
-     so the glass reads as alive/atmospheric instead of a static tinted patch. ── */
+     down to a single muted field with strong blur and a slowly breathing
+     organic border-radius, so it reads as atmospheric instead of decorative. ── */
   /* the fog bleeds OUTWARD past the card's own edges: the glass treatment
      lives on ::before, sized larger than .ledger itself (inset < 0).
      z-index:-1 is required — an absolutely-positioned z-index:auto pseudo
@@ -114,7 +112,7 @@
   .ledger .count{font-family:"Spinnaker";font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
   .ledger-unit{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
   .ledger-meter{margin-top:12px;height:6px;border-radius:999px;background:rgba(42,32,22,.12);overflow:hidden}
-  .ledger-meter span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--terracotta),#D2774C);transition:width .55s cubic-bezier(.4,0,.2,1)}
+  .ledger-meter span{display:block;height:100%;width:0;border-radius:999px;background:var(--terracotta);transition:width .55s cubic-bezier(.4,0,.2,1)}
   .ledger-cap{margin-top:7px;font-family:"Spinnaker";font-size:10px;letter-spacing:.03em;color:var(--ghost)}
   .exchange{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;border:none;background:var(--terracotta);color:var(--paper);border-radius:10px;padding:9px;font-family:"Spinnaker";font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(181,80,44,.25);transition:transform .15s,background .15s,box-shadow .15s}
   .exchange:hover{transform:translateY(-1px);background:#C9663F;box-shadow:0 6px 16px rgba(181,80,44,.32)}
@@ -129,7 +127,7 @@
   .side-foot:hover::before{background:transparent}
   .side-foot > *{position:relative;z-index:1}
   
-  .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}
+  .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#D8DDE0;display:grid;place-items:center;font-size:11.5px;font-weight:600}
   .side-foot .who{flex:1;min-width:0;line-height:1.3}
   .side-foot b{display:block;font-size:13px;font-weight:700;font-family:"Spinnaker"}
   .side-foot i{font-style:normal;font-size:11px;letter-spacing:.04em;color:var(--ghost);font-family:"Spinnaker"}
@@ -185,7 +183,6 @@
      horizontal scroll), and in chat mode the top/bottom edges dissolve into
      the page instead of hard-clipping mid-line */
   .thread{flex:1;overflow-y:auto;overflow-x:hidden;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
-  body:not(.is-empty) .thread{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34px,#000 calc(100% - 26px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 34px,#000 calc(100% - 26px),transparent 100%)}
   .thread::-webkit-scrollbar{width:5px}
   .thread::-webkit-scrollbar-track{background:transparent}
   .thread::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:999px}
@@ -381,7 +378,7 @@
   .reading-insight .el i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
   .reading-insight .mk{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:5px;white-space:nowrap;vertical-align:middle;position:relative;top:-1px}
   .reading-insight .mk.self{background:var(--terracotta);color:var(--paper)}
-  .reading-insight .mk.resp{background:var(--prussian);color:#EAF1F8}
+  .reading-insight .mk.resp{background:var(--prussian);color:#D8DDE0}
   .reading-insight .mk.move{border:1.4px solid var(--terracotta);color:var(--terracotta)}
   .reading-insight .turning{border-left:2px solid var(--terracotta);padding:2px 0 2px 18px;margin:2px 0 16px;color:var(--ink);font-family:BioRhyme, var(--serif)}
   .reading-insight .legend-inline{clear:both;display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:6px;padding-top:15px;
@@ -426,7 +423,7 @@
 
   .drops{display:flex;align-items:flex-end;gap:9px;margin-top:11px;padding-left:2px}
   .casting-load{display:flex;align-items:center;gap:13px;margin-top:11px}
-  .casting-load img{display:block;border-radius:11px;border:1px solid var(--line);background:#F2E4CC;box-shadow:0 1px 4px rgba(31,29,26,.08)}
+  .casting-load img{display:block;border-radius:11px;border:1px solid var(--line);background:#D8C7AA;box-shadow:0 1px 4px rgba(31,29,26,.08)}
   .casting-load .drops{margin-top:0}
   .drop{width:7px;height:7px;background:var(--ink);border-radius:54% 46% 50% 50%;animation:drip 2.2s ease-out infinite;animation-fill-mode:backwards}
   .drop:nth-child(2){width:9px;height:9px;animation-delay:.3s;border-radius:48% 52% 55% 45%}
@@ -505,7 +502,7 @@
   .overlay.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity var(--dur-base) var(--ease-out)}
   .modal{width:min(720px,100%);background:var(--paper);border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 24px 60px rgba(31,29,26,.25);opacity:0;transform:scale(.97);transform-origin:center;transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
   .overlay.open .modal{opacity:1;transform:none}
-  .modal-hero{background:var(--ink);background-image:radial-gradient(120% 140% at 0% 0%,rgba(181,80,44,.22),transparent 58%);color:var(--paper);padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between}
+  .modal-hero{background:var(--ink);background-image:none;color:var(--paper);padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between}
   .modal-hero h2{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;color:var(--paper);margin-top:3px}
   .modal-hero .lbl{color:var(--ghost)}
   .modal-x{color:var(--paper);font-size:18px;line-height:1;padding:2px 6px;border-radius:6px;transition:background .15s}
@@ -623,15 +620,14 @@
   body.is-empty .composer-zone{flex:none;padding:0 56px 36px;display:flex;flex-direction:column;align-items:center}
   body.is-empty .composer{margin:0;max-width:680px;width:100%}
   body.is-empty .disclaimer{display:none}
-  .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 18px;font-size:11px;letter-spacing:.05em;line-height:2;word-spacing:.16em;color:var(--ghost);font-family:"Spinnaker"}
-  .site-foot a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line-soft)}
-  .site-foot a:hover{color:var(--terracotta)}
+  .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 18px;font-size:11px;font-weight:600;letter-spacing:.05em;line-height:2;word-spacing:.16em;color:var(--bw-palette-9,var(--ink));font-family:"Spinnaker"}
+  .site-foot a{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb,currentColor 42%,transparent)}
+  .site-foot a:hover{color:var(--bw-palette-gem,var(--terracotta))}
   body.is-empty .site-foot{position:fixed;left:0;right:0;bottom:10px;z-index:3}
-  /* The opening prompt is the page's visual anchor. Centre it against the
-     entire usable canvas (viewport minus the sidebar), not merely the space
-     left between the top bar and composer. That keeps its centre stable when
-     either surrounding region changes height. */
-  body.is-empty #heroEmpty{position:fixed;inset:0 0 0 var(--sbw);z-index:1;display:grid;place-items:center;text-align:center;padding:0;pointer-events:none}
+  /* The opening prompt owns the geometric centre of the working canvas. Its
+     left edge follows --sbw, so it travels with the composer as the desktop
+     sidebar expands or collapses instead of remaining pinned to the viewport. */
+  body.is-empty #heroEmpty{position:fixed;inset:0 0 0 var(--sbw);z-index:1;display:grid;place-items:center;text-align:center;padding:0;pointer-events:none;transition:left .28s cubic-bezier(.4,0,.2,1)}
   body.is-empty #heroEmpty .greeting{max-width:680px;width:calc(100% - 36px)}
 
   /* Mobile topbar fix: the base .claude-note / .top-right rules above sit AFTER
@@ -683,6 +679,15 @@
     .greeting{display:flex;align-items:center;justify-content:center;gap:12px}
     .greeting .bw-hero-mark{position:static;transform:none;width:38px!important;height:31px!important}
     .greeting h1{width:auto;text-align:left}
+  }
+  /* The headline itself, rather than the mark-plus-type cluster, owns the exact
+     geometric centre of the empty canvas. The mark is decorative and therefore
+     never participates in the centring calculation. */
+  body.is-empty #heroEmpty .greeting{display:grid;place-items:center}
+  body.is-empty #heroEmpty .greeting h1{width:100%;padding:0 56px;text-align:center}
+  @media (max-width:700px){
+    body.is-empty #heroEmpty .greeting .bw-hero-mark{position:absolute;left:50%;top:auto;bottom:calc(100% + 15px);transform:translateX(-50%);width:38px!important;height:31px!important}
+    body.is-empty #heroEmpty .greeting h1{width:100%;padding:0 18px;text-align:center}
   }
   .greeting h1.is-changing{opacity:0;transform:translateY(-9px) scale(.992);letter-spacing:-.055em}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
@@ -839,7 +844,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260810c"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260811g"></script>
 <script src="./casting-figure.js?v=20260810b"></script>
 <script src="./liuyao-engine.js?v=20260810a"></script>
 <script src="./liuyao-ai.js?v=20260810a"></script>
@@ -928,6 +933,35 @@
     var nc=document.getElementById('newCast');
     if(nc)nc.click();
   });
+  /* Restore the landing-page question suggestions. They are quiet placeholder
+     guidance, rotate only while the field is empty and unfocused, and also
+     populate data-example for the existing empty-submit shortcut. */
+  var promptInput=document.getElementById('composerInput');
+  if(promptInput){
+    var examples=[
+      'Should I accept the offer if it delays the work I care about?',
+      'What am I missing before I commit to this partnership?',
+      'Which constraint matters most in this decision?',
+      'Is this the right moment to leave, or should I wait?',
+      'What changed, and what should I do next?'
+    ];
+    var exampleIndex=Math.floor(Math.random()*examples.length);
+    function assignExample(){
+      var example=examples[exampleIndex];
+      promptInput.dataset.example=example;
+      promptInput.placeholder=example;
+      exampleIndex=(exampleIndex+1)%examples.length;
+    }
+    function showExample(){
+      if(!document.body.classList.contains('is-empty')||document.activeElement===promptInput||promptInput.value)return;
+      assignExample();
+    }
+    /* Seed the guidance even when a saved draft is present, so clearing that
+       draft immediately reveals a useful prompt without waiting for a blur. */
+    assignExample();
+    window.setInterval(showExample,7600);
+    promptInput.addEventListener('blur',showExample);
+  }
 })();
 </script>
 </body>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BourneWise — 色组总览</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
+<style>
+:root{--paper:#ded8cd;--dim:#55514c;--ink:#151413;--soft:#d2cbc0;--line:rgba(21,20,19,.15)}
+*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:"Spinnaker",system-ui,sans-serif}body{margin:0;min-height:100vh;background:var(--paper)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:url("./assets/textures/oil-relief-swirl-mask.png") 0 0/360px 360px;opacity:.1;mix-blend-mode:multiply;z-index:20}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+.top{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:minmax(250px,1fr) minmax(300px,600px) auto;gap:18px;align-items:center;padding:18px 24px;background:color-mix(in srgb,var(--paper) 93%,transparent);backdrop-filter:blur(14px)}
+.title p{margin:0 0 3px;font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--dim)}h1{margin:0;font:400 24px/1.05 "BioRhyme",serif;letter-spacing:-.035em}
+.filters{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:6px}.filters input,.filters select{height:40px;border:0;background:color-mix(in srgb,var(--soft) 76%,transparent);padding:0 12px;outline:0}.filters input:focus,.filters select:focus{box-shadow:inset 0 -2px var(--ink)}
+.upload{height:40px;display:flex;align-items:center;gap:8px;padding:0 12px;background:var(--ink);color:var(--paper);font-size:10px;white-space:nowrap}.upload input{position:absolute;width:1px;height:1px;opacity:0}.upload select{height:26px;border:0;background:rgba(255,255,255,.16);color:inherit;font-size:9px}.upload option{color:#151413}
+.reference{display:none;position:sticky;top:76px;z-index:25;grid-template-columns:74px minmax(0,1fr) auto;gap:14px;align-items:center;padding:10px 24px;background:color-mix(in srgb,var(--soft) 92%,transparent)}.reference.ready{display:grid}.reference img{width:74px;height:50px;object-fit:cover}.reference strong{display:block;font-size:11px}.reference p{margin:4px 0 0;font-size:9px;color:var(--dim)}.reference-swatches{display:flex;gap:3px;margin-top:6px}.reference-swatches i{width:28px;height:14px}.clear{border:0;background:transparent;font-size:10px;border-bottom:1px solid var(--line)}
+.status{display:flex;justify-content:space-between;padding:20px 24px 10px;font-size:10px;color:var(--dim)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;padding:0 24px 40px}
+.card{position:relative;min-height:210px;border:0;background:transparent;padding:0;text-align:left;overflow:hidden;isolation:isolate}.card::after{content:"";position:absolute;inset:0;border:1px solid transparent;pointer-events:none;transition:border-color 160ms ease}.card:hover::after,.card:focus-visible::after{border-color:rgba(21,20,19,.42)}
+.scene{position:absolute;inset:0;background:var(--sky);overflow:hidden}.sun{position:absolute;right:12%;top:13%;width:16px;height:16px;border-radius:50%;background:var(--sun)}
+.wave{position:absolute;left:-8%;width:116%;height:52%;border-radius:50% 50% 0 0/44% 44% 0 0;background:var(--c);transform:translateY(var(--y)) rotate(var(--r));transform-origin:center bottom;box-shadow:inset 0 1px rgba(21,20,19,.14)}
+.w1{bottom:44%;--y:0;--r:-2deg}.w2{bottom:34%;--y:0;--r:2deg}.w3{bottom:23%;--y:0;--r:-1deg}.w4{bottom:11%;--y:0;--r:1deg}.w5{bottom:-7%;--y:0;--r:-1deg}
+.caption{position:absolute;z-index:5;left:12px;right:12px;bottom:10px;display:flex;align-items:end;justify-content:space-between;gap:8px;color:var(--text)}.caption b{display:block;font:400 15px/1.2 "BioRhyme",serif}.caption small{font-size:8px;letter-spacing:.08em;text-transform:uppercase;opacity:.72}.score{font:9px/1 monospace;background:color-mix(in srgb,var(--sky) 76%,transparent);padding:4px 5px;display:none}.image-mode .score{display:block}
+.empty{grid-column:1/-1;padding:70px 20px;text-align:center;font:400 20px/1.4 "BioRhyme",serif;color:var(--dim)}
+@media(max-width:760px){.top{position:relative;grid-template-columns:1fr;padding:16px}.filters{grid-template-columns:1fr}.reference{top:0;padding-inline:16px}.grid{grid-template-columns:1fr 1fr;padding-inline:12px}.card{min-height:180px}.status{padding-inline:12px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.card{min-height:230px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="title"><p>Internal colour system</p><h1>色组总览</h1></div>
+  <div class="filters"><input id="search" type="search" placeholder="搜索编号、名称或色段，例如 031、薄樱雾、蓝靛段"><select id="segment"><option value="">全部色段</option></select></div>
+  <label class="upload">上传图片 · 按近似色排序 <select id="extractLimit" aria-label="识别颜色数量"><option value="12">12色</option><option value="24" selected>24色</option><option value="36">36色</option></select><input id="imageInput" type="file" accept="image/*"></label>
+</header>
+<section class="reference" id="reference"><img id="referenceImage" alt="参考图片"><div><strong>正在按图片主色匹配</strong><div class="reference-swatches" id="referenceSwatches"></div><p>分数越低越接近；点击任一构图进入可编辑动态页面。</p></div><button class="clear" id="clearImage">清除图片匹配</button></section>
+<div class="status"><span id="count">正在载入…</span><span>点击色组进入编辑器</span></div>
+<main class="grid" id="grid"></main>
+<canvas id="canvas" hidden></canvas>
+<script>
+(function(){'use strict';
+var STORAGE='bw-custom-palettes-v2',OVERRIDE_STORAGE='bw-palette-overrides-v1',DELETED_STORAGE='bw-deleted-palette-ids-v1',groups=[],imageColours=[],imageURL='';var $=function(id){return document.getElementById(id)};
+function validHex(v){return /^#[0-9a-f]{6}$/i.test(v)}function hexRgb(h){return[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]}function rgbHex(c){return'#'+c.map(function(v){return Math.round(v).toString(16).padStart(2,'0')}).join('').toUpperCase()}
+function normalise(g){g=JSON.parse(JSON.stringify(g));g.cloud=g.backgrounds&&validHex(g.backgrounds.sky)?g.backgrounds.sky:(validHex(g.cloud)?g.cloud:g.rows[0]);return g}
+function luminance(h){var c=hexRgb(h);return .2126*c[0]+.7152*c[1]+.0722*c[2]}function textColour(g){return luminance(g.rows[8])<115?'#F4EFE6':'#151413'}
+function groupScore(g){if(!imageColours.length)return 0;var palette=[g.cloud].concat(g.rows),total=0;imageColours.forEach(function(h){var a=hexRgb(h),best=1e9;palette.forEach(function(p){var b=hexRgb(p),dr=a[0]-b[0],dg=a[1]-b[1],db=a[2]-b[2];best=Math.min(best,Math.sqrt(dr*dr+dg*dg+db*db))});total+=best});return total/imageColours.length}
+function searchable(g){return[g.id,g.name,g.seg,g.tier,g.custom?'custom 自定义':''].join(' ').toLowerCase()}
+function esc(v){return String(v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function render(){var q=$('search').value.trim().toLowerCase(),seg=$('segment').value,list=groups.filter(function(g){return(!q||searchable(g).includes(q))&&(!seg||g.seg===seg)});if(imageColours.length)list.sort(function(a,b){return groupScore(a)-groupScore(b)});$('grid').textContent='';document.body.classList.toggle('image-mode',!!imageColours.length);$('count').textContent=list.length+' / '+groups.length+' 组';if(!list.length){$('grid').innerHTML='<div class="empty">没有找到对应色组</div>';return}list.forEach(function(g){var c=[g.rows[1],g.rows[3],g.rows[5],g.rows[7],g.rows[9]],a=document.createElement('a'),label=g.name&&g.name.trim()?g.name:'#'+g.id;a.className='card';a.href='./palette-guide.html?palette='+encodeURIComponent(g.id);a.setAttribute('aria-label','编辑 '+(g.custom?'自定义 ':'#'+g.id+' ')+label);a.style.cssText='--sky:'+g.cloud+';--sun:'+g.rows[0]+';--text:'+textColour(g);a.innerHTML='<div class="scene"><i class="sun"></i>'+c.map(function(x,i){return'<i class="wave w'+(i+1)+'" style="--c:'+x+'"></i>'}).join('')+'<span class="caption"><span><small>'+(g.custom?'CUSTOM':'#'+esc(g.id))+(g.overridden?' · LOCAL':'')+' · '+esc(g.seg||'自定义')+'</small><b>'+esc(label)+'</b></span><em class="score">Δ '+groupScore(g).toFixed(0)+'</em></span></div>'; $('grid').appendChild(a)})}
+function extract(img){var limit=parseInt($('extractLimit').value,10)||24,canvas=$('canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true}),s=Math.min(1,260/img.naturalWidth,260/img.naturalHeight);canvas.width=Math.max(1,Math.round(img.naturalWidth*s));canvas.height=Math.max(1,Math.round(img.naturalHeight*s));ctx.drawImage(img,0,0,canvas.width,canvas.height);var d=ctx.getImageData(0,0,canvas.width,canvas.height).data,bins=new Map();for(var i=0;i<d.length;i+=8){if(d[i+3]<160)continue;var k=(d[i]>>3)+'_'+(d[i+1]>>3)+'_'+(d[i+2]>>3),v=bins.get(k)||[0,0,0,0];v[0]+=d[i];v[1]+=d[i+1];v[2]+=d[i+2];v[3]++;bins.set(k,v)}var ranked=Array.from(bins.values()).sort(function(a,b){return b[3]-a[3]}).map(function(v){return[v[0]/v[3],v[1]/v[3],v[2]/v[3],v[3]]}),picked=[],threshold=limit>=36?18:limit>=24?23:30;function dist(a,b){var x=a[0]-b[0],y=a[1]-b[1],z=a[2]-b[2];return Math.sqrt(x*x+y*y+z*z)}ranked.some(function(c){if(picked.every(function(p){return dist(c,p)>threshold}))picked.push(c);return picked.length===Math.ceil(limit*.7)});var remaining=ranked.filter(function(c){return picked.indexOf(c)<0});while(picked.length<limit&&remaining.length){var bi=0,best=-1;remaining.forEach(function(c,i){var near=picked.length?Math.min.apply(null,picked.map(function(p){return dist(c,p)})):255,score=near+Math.log(c[3]+1)*3;if(score>best){best=score;bi=i}});picked.push(remaining.splice(bi,1)[0])}return picked.slice(0,limit).map(rgbHex)}
+function useImage(file){if(!file||!file.type.startsWith('image/'))return;if(imageURL)URL.revokeObjectURL(imageURL);imageURL=URL.createObjectURL(file);var img=$('referenceImage');img.onload=function(){imageColours=extract(img);$('referenceSwatches').innerHTML=imageColours.map(function(c){return'<i style="background:'+c+'"></i>'}).join('');$('reference').classList.add('ready');render()};img.src=imageURL}
+$('search').addEventListener('input',render);$('segment').addEventListener('change',render);$('imageInput').addEventListener('change',function(){useImage(this.files[0])});$('extractLimit').addEventListener('change',function(){var img=$('referenceImage');if(!img.src)return;imageColours=extract(img);$('referenceSwatches').innerHTML=imageColours.map(function(c){return'<i style="background:'+c+'"></i>'}).join('');render()});$('clearImage').addEventListener('click',function(){imageColours=[];$('imageInput').value='';$('reference').classList.remove('ready');render()});
+fetch('./assets/palettes/color-groups.json').then(function(r){return r.json()}).then(function(data){var stored=[],overrides={},deleted=[];try{var raw=JSON.parse(localStorage.getItem(STORAGE)||'[]');stored=Array.isArray(raw)?raw.filter(function(g){return g&&Array.isArray(g.rows)&&g.rows.length===10}).map(normalise):[]}catch(e){}try{var ov=JSON.parse(localStorage.getItem(OVERRIDE_STORAGE)||'{}');overrides=ov&&typeof ov==='object'&&!Array.isArray(ov)?ov:{}}catch(e){}try{var del=JSON.parse(localStorage.getItem(DELETED_STORAGE)||'[]');deleted=Array.isArray(del)?del.map(String):[]}catch(e){}groups=data.map(normalise).filter(function(g){return deleted.indexOf(g.id)<0}).map(function(g){if(!overrides[g.id])return g;var edited=normalise(overrides[g.id]);edited.id=g.id;edited.custom=false;edited.overridden=true;return edited}).concat(stored);Array.from(new Set(groups.map(function(g){return g.seg||'自定义'}))).forEach(function(seg){var o=document.createElement('option');o.value=seg;o.textContent=seg;$('segment').appendChild(o)});render()}).catch(function(){$('count').textContent='色组数据加载失败'});
+})();
+</script>
+</body>
+</html>

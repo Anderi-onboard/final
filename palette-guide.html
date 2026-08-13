@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN" data-skin="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BourneWise — Palette motion lab</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
+<style>
+  :root{
+    --paper:#ded8cd;--paper-dim:#d4cec3;--ink:#141413;--dim:#56534f;--faint:#77736c;
+    --line:rgba(20,20,19,.16);--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1);
+    --lab-sky:#d8d2c9;--lab-1:#d2cbc1;--lab-2:#cbc3b8;--lab-3:#c4bbaf;--lab-4:#bdb2a5;
+    --lab-5:#b5a99a;--lab-6:#ada08f;--lab-7:#a49684;--lab-8:#9a8b78;--lab-9:#8e7e69;--lab-10:#82715d;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);font-family:"Spinnaker",system-ui,sans-serif}
+  button,input,select{font:inherit;color:inherit}
+  button{cursor:pointer}
+  button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--lab-9);outline-offset:2px}
+  .lab-shell{height:100%;display:grid;grid-template-columns:410px minmax(0,1fr)}
+  .controls{position:relative;z-index:20;min-width:0;overflow:auto;padding:22px 18px 28px;background:color-mix(in srgb,var(--paper) 91%,transparent);border-right:1px solid var(--line)}
+  .controls::after,.preview::after{content:"";position:fixed;inset:0;pointer-events:none;background:url("./assets/textures/oil-relief-swirl-mask.png") 0 0/360px 360px repeat;opacity:.12;mix-blend-mode:multiply;z-index:50}
+  .controls::after{position:absolute}
+  .eyebrow{margin:0 0 7px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  h1{margin:0;font:400 26px/1.08 "BioRhyme",Georgia,serif;letter-spacing:-.035em}
+  .intro{margin:9px 0 20px;font-size:11px;line-height:1.55;color:var(--dim)}
+  .search-wrap{position:relative}
+  .search{width:100%;height:42px;border:0;background:color-mix(in srgb,var(--paper-dim) 72%,transparent);padding:0 40px 0 12px;outline:0}
+  .result-count{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--faint)}
+  .results{display:none;position:absolute;z-index:60;left:18px;right:18px;max-height:278px;overflow:auto;background:var(--paper);border:1px solid var(--line);box-shadow:0 18px 46px rgba(20,20,19,.16)}
+  .results.open{display:block}
+  .result{width:100%;display:flex;align-items:center;gap:9px;border:0;background:transparent;padding:9px 11px;text-align:left}
+  .result:hover,.result[aria-selected="true"]{background:var(--paper-dim)}
+  .result-preview{display:grid;grid-template-columns:repeat(4,1fr);width:48px;height:26px;flex:none;overflow:hidden}
+  .result-preview i{display:block}
+  .result-copy{min-width:0}.result-copy b{display:block;font:400 12px/1.25 "BioRhyme",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-copy small{font-size:9px;color:var(--faint)}
+  .nav-row{display:grid;grid-template-columns:38px 1fr 38px;gap:6px;margin-top:8px}
+  .nav-row button,.select{height:38px;border:0;background:color-mix(in srgb,var(--paper-dim) 68%,transparent)}
+  .nav-row button:active,.action:active{transform:scale(.97)}
+  .select{width:100%;padding:0 8px;min-width:0}
+  .current-meta{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:18px 0 11px}
+  .current-meta strong{font:400 16px/1.25 "BioRhyme",serif}.current-meta span{font-size:9px;letter-spacing:.11em;color:var(--faint);text-transform:uppercase;text-align:right}
+  .group-fields{display:grid;grid-template-columns:minmax(0,1fr) auto 112px;gap:6px;margin-bottom:9px}
+  .group-fields input,.group-fields select,.group-fields button{height:36px;min-width:0;border:0;background:color-mix(in srgb,var(--paper-dim) 72%,transparent);padding:0 10px;font-size:11px}
+  .draft-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+  .workflow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0 10px;padding:8px 10px;background:color-mix(in srgb,var(--paper-dim) 58%,transparent);font-size:9px;color:var(--dim)}
+  .workflow label{display:flex;align-items:center;gap:6px;white-space:nowrap}.workflow input{accent-color:var(--ink)}.save-status{font-weight:600;color:var(--ink)}
+  .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:12px 0 10px;background:color-mix(in srgb,var(--ink) 10%,transparent);padding:2px}
+  .tab{height:34px;border:0;background:transparent;font-size:10px;color:var(--dim)}
+  .tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  .pane{display:none}.pane.active{display:block}
+  .section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0}
+  .section-head b{font-size:10px;letter-spacing:.12em;text-transform:uppercase}.section-head span{font-size:9px;color:var(--faint)}
+  .colour-list{display:grid;gap:5px}
+  .colour-row{display:grid;grid-template-columns:52px 34px minmax(0,1fr);align-items:center;gap:7px;min-height:32px;padding:2px 4px;border-left:2px solid transparent}
+  .colour-row.active{border-left-color:var(--ink);background:color-mix(in srgb,var(--paper-dim) 60%,transparent)}
+  .colour-row label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .colour-row input[type="color"]{appearance:none;width:34px;height:28px;border:0;padding:0;background:transparent;cursor:pointer}
+  .colour-row input[type="color"]::-webkit-color-swatch-wrapper{padding:0}.colour-row input[type="color"]::-webkit-color-swatch{border:0}
+  .hex{height:30px;border:0;border-bottom:1px solid var(--line);background:transparent;padding:0 4px;font:11px/1 monospace;text-transform:uppercase;outline:0}
+  .editor-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:14px}
+  .action{min-height:38px;border:0;background:var(--ink);color:var(--paper);padding:8px 10px;font-size:11px;transition:transform 140ms var(--ease-out),background-color 160ms ease}
+  .action.secondary{background:var(--paper-dim);color:var(--ink)}
+  .action:disabled{opacity:.34;cursor:not-allowed}
+  .action-note{grid-column:1/-1;margin:0;padding:2px 1px 0;font-size:9px;line-height:1.45;color:var(--faint)}
+  .dropzone{display:grid;place-items:center;min-height:104px;border:1px dashed var(--line);padding:16px;text-align:center;color:var(--dim);font-size:11px;cursor:pointer;background:color-mix(in srgb,var(--paper-dim) 36%,transparent)}
+  .dropzone input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .image-result{display:none;grid-template-columns:96px minmax(0,1fr);gap:12px;margin-top:12px;align-items:start}.image-result.ready{display:grid}
+  .image-result img{width:96px;height:96px;object-fit:cover;background:var(--paper-dim)}
+  .extracted{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+  .swatch-button{position:relative;min-height:42px;border:0;padding:0;background:var(--swatch);box-shadow:inset 0 0 0 1px rgba(20,20,19,.13)}
+  .swatch-button span{position:absolute;inset:auto 3px 3px;background:rgba(245,241,233,.82);font:8px/1.3 monospace;color:#141413}
+  .image-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+  .extract-options{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:9px;color:var(--faint)}.extract-options select{height:30px;border:0;background:var(--paper-dim);padding:0 8px;font-size:10px}
+  .library-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:9px}
+  .library-item{position:relative}.library-item .swatch-button{width:100%;min-height:52px}.library-delete{position:absolute;right:2px;top:2px;width:18px;height:18px;border:0;background:rgba(20,20,19,.72);color:#fff;font-size:11px;line-height:1}
+  .library-empty{font-size:10px;color:var(--faint);line-height:1.55}
+  .saved-head{display:flex;align-items:center;justify-content:space-between;margin-top:19px;padding-top:15px;border-top:1px solid var(--line)}
+  .saved-head b{font-size:10px;letter-spacing:.14em;text-transform:uppercase}.saved-head span{font-size:9px;color:var(--faint)}
+  .saved-list{display:grid;gap:4px;margin-top:8px}
+  .saved-empty{font-size:10px;color:var(--faint);line-height:1.5}
+  .saved-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;background:color-mix(in srgb,var(--paper-dim) 66%,transparent)}
+  .saved-load{border:0;background:transparent;text-align:left;padding:9px;min-width:0}.saved-load b{display:block;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.saved-load small{font-size:9px;color:var(--faint)}
+  .saved-delete{border:0;background:transparent;padding:9px;color:var(--faint)}.saved-delete:hover{color:var(--ink)}
+  .utility{display:flex;gap:11px;margin-top:18px;font-size:10px}.utility a,.utility button{color:var(--dim);border:0;border-bottom:1px solid var(--line);background:transparent;text-decoration:none;padding:2px 0}
+  .preview{position:relative;isolation:isolate;overflow:hidden;background:var(--lab-sky)}
+  .preview-sky{position:absolute;inset:0;z-index:-4;background:var(--lab-sky);transition:background-color 180ms ease}
+  .preview-haze,.preview-water{position:absolute;inset:0;z-index:-3;pointer-events:none;transition:background-color 180ms ease}
+  .preview-haze{background:var(--lab-haze,var(--lab-2));clip-path:polygon(0 40%,18% 44%,38% 38%,62% 46%,82% 39%,100% 43%,100% 100%,0 100%)}
+  .preview-water{background:var(--lab-water,var(--lab-5));clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%)}
+  .wave-scene{position:absolute;inset:0;z-index:-3;overflow:hidden;opacity:.88;pointer-events:none}
+  .wave-scene svg{display:block;width:100%;height:100%}
+  .wave-scene .fill{transition:fill 180ms ease}
+  .wave-scene .contour use{fill:none;stroke:rgba(20,20,19,.26);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+  .wave-scene .contour use:nth-child(3n+1){stroke-width:1.5;opacity:.72}.wave-scene .contour use:nth-child(3n+2){stroke-width:2.4;opacity:.48}
+  @keyframes flowLeft{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}
+  @keyframes flowRight{from{transform:translate3d(-2000px,0,0)}to{transform:translate3d(0,0,0)}}
+  .flow-1,.flow-4,.flow-7,.flow-10{animation:flowLeft 180s linear infinite}.flow-2,.flow-5,.flow-8{animation:flowRight 220s linear infinite}.flow-3,.flow-6,.flow-9{animation:flowLeft 270s linear infinite}
+  .poster-ui{position:absolute;inset:0;display:flex;flex-direction:column;z-index:2}
+  .poster-top{display:flex;align-items:center;gap:18px;padding:24px 32px;color:var(--ink)}
+  .poster-mark{width:35px;height:29px;flex:none}.poster-mark path{fill:none;stroke:currentColor;stroke-width:3.5;stroke-linecap:round}
+  .poster-note{margin-left:auto;max-width:390px;font-size:11px;line-height:1.35;color:color-mix(in srgb,var(--ink) 70%,transparent)}
+  .poster-link{font-size:12px;color:var(--ink);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--ink) 30%,transparent)}
+  .hero{flex:1;display:grid;place-items:center;text-align:center;padding:0 7vw 8vh}
+  .hero h2{max-width:820px;margin:0;font:400 clamp(42px,6.5vw,96px)/1.04 "BioRhyme",Georgia,serif;letter-spacing:-.055em;text-wrap:balance}
+  .hero-mark{display:block;margin:24px auto 0;width:52px;height:42px;color:var(--lab-9)}
+  .hero-mark path{fill:none;stroke:currentColor;stroke-width:4;stroke-linecap:round}
+  .composer{align-self:center;width:min(720px,calc(100% - 44px));min-height:64px;margin:0 auto 18px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 10px 9px 12px;background:color-mix(in srgb,var(--paper) 84%,transparent)}
+  .method{font:400 13px/1 "BioRhyme",serif;padding:10px 13px;background:color-mix(in srgb,var(--paper-dim) 75%,transparent)}
+  .prompt{color:color-mix(in srgb,var(--ink) 65%,transparent);font:400 15px/1.35 "BioRhyme",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .send{width:44px;height:44px;border:0;border-radius:50%;background:var(--lab-9);color:var(--lab-sky);font-size:20px;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
+  .send:active{transform:scale(.97)}
+  .poster-foot{text-align:center;padding:0 20px 17px;font-size:10px;color:var(--lab-9);letter-spacing:.05em}
+  .toast{position:absolute;left:50%;bottom:90px;z-index:30;transform:translate(-50%,8px);opacity:0;background:var(--ink);color:var(--paper);padding:9px 13px;font-size:10px;pointer-events:none;transition:opacity 180ms var(--ease-out),transform 180ms var(--ease-out)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  @media(max-width:980px){.lab-shell{grid-template-columns:350px minmax(0,1fr)}.poster-note{display:none}.poster-top{padding:18px}.hero h2{font-size:clamp(38px,7vw,66px)}}
+  @media(max-width:700px){html,body{overflow:auto}.lab-shell{height:auto;min-height:100%;display:flex;flex-direction:column}.controls{order:2;border:0;overflow:visible}.preview{height:72vh;min-height:560px}.poster-top{gap:12px}.poster-link:last-child{display:none}.composer{width:calc(100% - 24px)}.method{display:none}.hero{padding-inline:22px}.hero h2{font-size:clamp(36px,11vw,54px)}}
+  @media(prefers-reduced-motion:reduce){.wave-scene [class^="flow-"]{animation:none!important}.fill,.preview-sky,.send{transition:background-color 180ms ease,color 180ms ease,fill 180ms ease!important}}
+</style>
+</head>
+<body>
+<main class="lab-shell">
+  <aside class="controls" aria-label="Palette controls">
+    <p class="eyebrow">Internal colour system</p>
+    <h1>Palette motion lab</h1>
+    <p class="intro">完整的本地色组管理工具。编辑背景三层与十层波浪，或从图片识别颜色；所有自定义内容只存于当前浏览器。</p>
+    <div class="search-wrap">
+      <input class="search" id="search" type="search" placeholder="搜索名称、编号、色段…" autocomplete="off">
+      <span class="result-count" id="resultCount">—</span>
+    </div>
+    <div class="results" id="results" role="listbox"></div>
+    <div class="nav-row">
+      <button id="previous" type="button" aria-label="Previous palette">←</button>
+      <select class="select" id="paletteSelect" aria-label="Choose palette"></select>
+      <button id="next" type="button" aria-label="Next palette">→</button>
+    </div>
+    <div class="current-meta"><strong id="paletteName">Loading…</strong><span id="paletteMeta"></span></div>
+    <div class="group-fields">
+      <input id="groupName" type="text" maxlength="48" placeholder="名称可留空，仅显示编号" aria-label="Palette name">
+      <button id="clearName" type="button">清除名称</button>
+      <input id="groupSegment" list="segmentOptions" maxlength="24" value="自定义" placeholder="色段" aria-label="Palette segment">
+      <datalist id="segmentOptions"><option value="自定义"></datalist>
+    </div>
+    <div class="draft-actions">
+      <button class="action secondary" id="newBlank" type="button">新建并编辑</button>
+      <button class="action secondary" id="duplicate" type="button">复制为新编号</button>
+    </div>
+    <div class="workflow"><span><b class="save-status" id="saveStatus">已保存</b> · 选组 → 改色 → 继续下一组</span><label><input id="autoSave" type="checkbox" checked>自动保存</label></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" type="button" data-pane="editorPane" aria-selected="true">色组编辑</button>
+      <button class="tab" type="button" data-pane="imagePane" aria-selected="false">图片取色</button>
+      <button class="tab" type="button" data-pane="libraryPane" aria-selected="false">颜色列表</button>
+    </div>
+    <section class="pane active" id="editorPane">
+      <div class="section-head"><b>背景与波浪</b><span id="activeTarget">当前：天空</span></div>
+      <div class="colour-list" id="colourList"></div>
+      <div class="editor-actions">
+        <button class="action secondary" id="reset" type="button">撤销本轮修改</button>
+        <button class="action" id="update" type="button">保存当前编号</button>
+        <button class="action secondary" id="addCurrent" type="button">当前色加入列表</button>
+        <button class="action secondary" id="restoreOfficial" type="button">恢复此编号官方原版</button>
+        <button class="action secondary" id="deleteCurrent" type="button">删除当前编号</button>
+        <p class="action-note" id="updateHint">保存会按编号直接覆盖浏览器中的当前版本；名称可以留空。</p>
+      </div>
+    </section>
+    <section class="pane" id="imagePane">
+      <label class="dropzone" id="dropzone">点击或拖入图片<br>在浏览器本地识别主色，不上传
+        <input id="imageInput" type="file" accept="image/*">
+      </label>
+      <div class="image-result" id="imageResult"><img id="imagePreview" alt="Uploaded colour reference"><div class="extracted" id="extracted"></div></div>
+      <canvas id="imageCanvas" hidden></canvas>
+      <div class="extract-options"><span id="extractSummary">上传后识别主要颜色与明暗层次</span><label>识别数量 <select id="extractLimit"><option value="12">12</option><option value="24" selected>24</option><option value="36">36</option></select></label></div>
+      <div class="image-actions">
+        <button class="action secondary" id="addExtracted" type="button" disabled>全部加入颜色列表</button>
+        <button class="action" id="applyExtracted" type="button" disabled>生成并创建新编号</button>
+      </div>
+    </section>
+    <section class="pane" id="libraryPane">
+      <div class="section-head"><b>可复用颜色列表</b><span id="libraryCount">0</span></div>
+      <p class="saved-empty">点击颜色即可应用到当前选中的背景或波浪层。颜色列表会保存在浏览器中。</p>
+      <div class="library-grid" id="libraryList"></div>
+    </section>
+    <div class="saved-head"><b>已存自定义组</b><span id="savedCount">0</span></div>
+    <div class="saved-list" id="savedList"></div>
+    <div class="saved-head"><b>已删除原始编号</b><span id="deletedCount">0</span></div>
+    <div class="saved-list" id="deletedList"></div>
+    <div class="utility"><a href="./palette-overview.html">全部色组总览</a><a href="./index.html">返回网站</a><button id="export" type="button">复制当前 JSON</button><button id="exportAll" type="button">复制有效色组 JSON</button><button id="downloadAll" type="button">下载正式色组文件</button></div>
+  </aside>
+  <section class="preview" aria-label="Live BourneWise page preview">
+    <div class="preview-sky"></div>
+    <div class="preview-haze"></div>
+    <div class="preview-water"></div>
+    <div class="wave-scene" id="waveScene" aria-hidden="true"></div>
+    <div class="poster-ui">
+      <header class="poster-top">
+        <svg class="poster-mark" viewBox="0 0 40 32" aria-hidden="true"><path d="M3 7c7 3 12 3 18 0M8 13c7 3 14 3 22 0M4 19c8 3 15 3 25 0M10 25c7 2 13 2 20 0"/></svg>
+        <span class="poster-note">We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.</span>
+        <a class="poster-link" href="#">The method</a><a class="poster-link" href="#">Why BourneWise</a>
+      </header>
+      <div class="hero"><div><h2>Use one casting<br>for one question.</h2><svg class="hero-mark" viewBox="0 0 60 48" aria-hidden="true"><path d="M6 8c10 4 19 4 29 0M14 16c11 4 21 4 35 0M7 25c13 4 25 4 42 0M15 34c11 4 22 4 34 0M22 42c8 3 15 3 23 0"/></svg></div></div>
+      <div class="composer"><span class="method">Sortis 6</span><span class="prompt">Describe the situation, then ask one clear question…</span><button class="send" aria-label="Preview send button">→</button></div>
+      <footer class="poster-foot">Perspectives, not certainty · The method · Terms · Privacy · Plans &amp; units</footer>
+    </div>
+    <div class="toast" id="toast"></div>
+  </section>
+</main>
+<script>
+(function(){
+  'use strict';
+  var STORAGE='bw-custom-palettes-v2',LEGACY_STORAGE='bw-custom-palettes-v1',OVERRIDE_STORAGE='bw-palette-overrides-v1',DELETED_STORAGE='bw-deleted-palette-ids-v1',LIBRARY_STORAGE='bw-colour-library-v1',AUTOSAVE_STORAGE='bw-palette-autosave-v1';
+  var official=[],source=[],custom=[],overrides={},deletedIds=[],library=[],filtered=[],current=null,baseline=null,activeSlot=0,extractedColours=[],imageFileName='',loadedImage=null;
+  var autoSaveTimer=null;
+  var W=[
+    'M -2000 188 L -1860 186 C -1777 186 -1763 150 -1680 150 C -1570 150 -1550 178 -1440 178 L -1240 178 C -1176 178 -1164 166 -1100 166 C -1045 166 -1035 188 -980 188 L -780 195 C -660 195 -640 144 -520 144 C -428 144 -412 189 -320 189 L 0 184 L 140 186 C 223 186 237 150 320 150 C 430 150 450 178 560 178 L 760 178 C 824 178 836 166 900 166 C 955 166 965 188 1020 188 L 1220 195 C 1340 195 1360 144 1480 144 C 1572 144 1588 189 1680 189 L 2000 184 L 2140 186 C 2223 186 2237 150 2320 150 C 2430 150 2450 178 2560 178 L 2760 178 C 2824 178 2836 166 2900 166 C 2955 166 2965 188 3020 188 L 3220 195 C 3340 195 3360 144 3480 144 C 3572 144 3588 189 3680 189 L 4000 184',
+    'M -2000 229 L -1860 228 C -1777 228 -1763 204 -1680 204 C -1570 204 -1550 223 -1440 223 L -1240 223 C -1176 223 -1164 215 -1100 215 C -1045 215 -1035 229 -980 229 L -780 234 C -660 234 -640 200 -520 200 C -428 200 -412 230 -320 230 L 0 227 L 140 228 C 223 228 237 204 320 204 C 430 204 450 223 560 223 L 760 223 C 824 223 836 215 900 215 C 955 215 965 229 1020 229 L 1220 234 C 1340 234 1360 200 1480 200 C 1572 200 1588 230 1680 230 L 2000 227 L 2140 228 C 2223 228 2237 204 2320 204 C 2430 204 2450 223 2560 223 L 2760 223 C 2824 223 2836 215 2900 215 C 2955 215 2965 229 3020 229 L 3220 234 C 3340 234 3360 200 3480 200 C 3572 200 3588 230 3680 230 L 4000 227',
+    'M -2000 270 L -1960 269 C -1872 269 -1848 214 -1760 214 C -1690 214 -1670 263 -1600 263 L -1330 258 C -1261 258 -1249 232 -1180 232 C -1074 232 -1056 265 -950 265 L -870 268 C -795 268 -775 205 -700 205 C -638 205 -622 277 -560 277 L -360 273 C -307 273 -293 240 -240 240 C -161 240 -139 267 -60 267 L 0 266 L 40 269 C 128 269 152 214 240 214 C 310 214 330 263 400 263 L 670 258 C 739 258 751 232 820 232 C 926 232 944 265 1050 265 L 1130 268 C 1205 268 1225 205 1300 205 C 1362 205 1378 277 1440 277 L 1640 273 C 1693 273 1707 240 1760 240 C 1839 240 1861 267 1940 267 L 2000 266 L 2040 269 C 2128 269 2152 214 2240 214 C 2310 214 2330 263 2400 263 L 2670 258 C 2739 258 2751 232 2820 232 C 2926 232 2944 265 3050 265 L 3130 268 C 3205 268 3225 205 3300 205 C 3362 205 3378 277 3440 277 L 3640 273 C 3693 273 3707 240 3760 240 C 3839 240 3861 267 3940 267 L 4000 266',
+    'M -2000 374 L -1880 372 C -1742 372 -1718 282 -1580 282 C -1479 282 -1461 364 -1360 364 L -980 361 C -855 361 -845 308 -720 308 C -547 308 -533 368 -360 368 L 0 372 L 120 372 C 258 372 282 282 420 282 C 521 282 539 364 640 364 L 1020 361 C 1145 361 1155 308 1280 308 C 1453 308 1467 368 1640 368 L 2000 372 L 2120 372 C 2258 372 2282 282 2420 282 C 2521 282 2539 364 2640 364 L 3020 361 C 3145 361 3155 308 3280 308 C 3453 308 3467 368 3640 368 L 4000 372',
+    'M -2000 440 L -1910 438 C -1835 438 -1815 356 -1740 356 C -1683 356 -1667 434 -1610 434 L -1320 432 C -1256 432 -1244 380 -1180 380 C -1093 380 -1077 440 -990 440 L -740 446 C -630 446 -610 340 -500 340 C -408 340 -392 441 -300 441 L 0 436 L 90 438 C 165 438 185 356 260 356 C 317 356 333 434 390 434 L 680 432 C 744 432 756 380 820 380 C 907 380 923 440 1010 440 L 1260 446 C 1370 446 1390 340 1500 340 C 1592 340 1608 441 1700 441 L 2000 436 L 2090 438 C 2165 438 2185 356 2260 356 C 2317 356 2333 434 2390 434 L 2680 432 C 2744 432 2756 380 2820 380 C 2907 380 2923 440 3010 440 L 3260 446 C 3370 446 3390 340 3500 340 C 3592 340 3608 441 3700 441 L 4000 436',
+    'M -2000 500 L -1690 498 C -1602 498 -1568 330 -1480 330 C -1413 330 -1387 496 -1320 496 L -820 495 C -723 495 -697 366 -600 366 C -468 366 -432 498 -300 498 L 0 500 L 310 498 C 398 498 432 330 520 330 C 587 330 613 496 680 496 L 1180 495 C 1277 495 1303 366 1400 366 C 1532 366 1568 498 1700 498 L 2000 500 L 2310 498 C 2398 498 2432 330 2520 330 C 2587 330 2613 496 2680 496 L 3180 495 C 3277 495 3303 366 3400 366 C 3532 366 3568 498 3700 498 L 4000 500',
+    'M -2000 524 L -1880 523 C -1742 523 -1718 494 -1580 494 C -1479 494 -1461 521 -1360 521 L -980 520 C -855 520 -845 502 -720 502 C -547 502 -533 522 -360 522 L 0 523 L 120 523 C 258 523 282 494 420 494 C 521 494 539 521 640 521 L 1020 520 C 1145 520 1155 502 1280 502 C 1453 502 1467 522 1640 522 L 2000 523 L 2120 523 C 2258 523 2282 494 2420 494 C 2521 494 2539 521 2640 521 L 3020 520 C 3145 520 3155 502 3280 502 C 3453 502 3467 522 3640 522 L 4000 523',
+    'M -2000 538 L -1840 536 C -1752 536 -1728 512 -1640 512 C -1570 512 -1550 533 -1480 533 L -1150 531 C -1081 531 -1069 520 -1000 520 C -903 520 -887 538 -790 538 L -540 543 C -461 543 -439 508 -360 508 C -298 508 -282 538 -220 538 L 0 534 L 160 536 C 248 536 272 512 360 512 C 430 512 450 533 520 533 L 850 531 C 919 531 931 520 1000 520 C 1097 520 1113 538 1210 538 L 1460 543 C 1539 543 1561 508 1640 508 C 1702 508 1718 538 1780 538 L 2000 534 L 2160 536 C 2248 536 2272 512 2360 512 C 2430 512 2450 533 2520 533 L 2850 531 C 2919 531 2931 520 3000 520 C 3097 520 3113 538 3210 538 L 3460 543 C 3539 543 3561 508 3640 508 C 3702 508 3718 538 3780 538 L 4000 534',
+    'M -2000 568 L -1780 566 C -1662 566 -1618 556 -1500 556 C -1366 556 -1314 561 -1180 561 L -800 561 C -674 561 -626 560 -500 560 C -391 560 -349 565 -240 565 L 0 566 L 220 566 C 338 566 382 556 500 556 C 634 556 686 561 820 561 L 1200 561 C 1326 561 1374 560 1500 560 C 1609 560 1651 565 1760 565 L 2000 566 L 2220 566 C 2338 566 2382 556 2500 556 C 2634 556 2686 561 2820 561 L 3200 561 C 3326 561 3374 560 3500 560 C 3609 560 3651 565 3760 565 L 4000 566',
+    'M -2000 588 L -1760 588 C -1609 588 -1551 582 -1400 582 C -1266 582 -1214 587 -1080 587 L -700 587 C -574 587 -526 584 -400 584 C -240 584 -180 586 -20 586 L 0 586 L 240 588 C 391 588 449 582 600 582 C 734 582 786 587 920 587 L 1300 587 C 1426 587 1474 584 1600 584 C 1760 584 1820 586 1980 586 L 2000 586 L 2240 588 C 2391 588 2449 582 2600 582 C 2734 582 2786 587 2920 587 L 3300 587 C 3426 587 3474 584 3600 584 C 3760 584 3820 586 3980 586 L 4000 586'
+  ];
+  var L=[3,3,4,5,6,7,5,4,3,2],STEP=[19,18,17,16,14,13,12,11,9,7];
+  var $=function(id){return document.getElementById(id)};
+  function clone(g){return JSON.parse(JSON.stringify(g))}
+  function validHex(v){return /^#[0-9a-f]{6}$/i.test(v)}
+  function buildScene(){
+    var defs='',body='';
+    W.forEach(function(d,i){var n=i+1;defs+='<path id="labw'+n+'" d="'+d+' L 4000 600 L -2000 600 Z"/><path id="labc'+n+'" d="'+d+'"/>';var lines='';for(var k=1;k<=L[i];k++)lines+='<use href="#labc'+n+'" y="'+(k*STEP[i])+'"/>';body+='<g class="flow-'+n+'"><use href="#labw'+n+'" class="fill l'+n+'"/></g><g class="flow-'+n+'"><g class="contour">'+lines+'</g></g>'});
+    $('waveScene').innerHTML='<svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"><defs>'+defs+'</defs>'+body+'</svg>';
+  }
+  function esc(v){return String(v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function normalise(g){
+    var n=clone(g),rows=Array.isArray(n.rows)?n.rows.slice(0,10):[];
+    while(rows.length<10)rows.push(rows[rows.length-1]||'#90877A');
+    n.rows=rows.map(function(c){return validHex(c)?c.toUpperCase():'#90877A'});
+    var cloud=validHex(n.cloud)?n.cloud.toUpperCase():n.rows[0];
+    n.backgrounds=n.backgrounds||{};
+    n.backgrounds.sky=validHex(n.backgrounds.sky)?n.backgrounds.sky.toUpperCase():cloud;
+    n.backgrounds.haze=validHex(n.backgrounds.haze)?n.backgrounds.haze.toUpperCase():n.rows[1];
+    n.backgrounds.water=validHex(n.backgrounds.water)?n.backgrounds.water.toUpperCase():n.rows[4];
+    n.cloud=n.backgrounds.sky;
+    return n;
+  }
+  function allGroups(){return source.concat(custom)}
+  function validGroup(g){return g&&Array.isArray(g.rows)&&g.rows.length===10&&g.rows.every(validHex)}
+  function loadStored(){
+    try{var modern=localStorage.getItem(STORAGE),raw=modern||localStorage.getItem(LEGACY_STORAGE)||'[]',v=JSON.parse(raw);custom=Array.isArray(v)?v.filter(validGroup).map(normalise):[];if(!modern&&custom.length)localStorage.setItem(STORAGE,JSON.stringify(custom))}catch(e){custom=[]}
+    try{var o=JSON.parse(localStorage.getItem(OVERRIDE_STORAGE)||'{}');overrides=o&&typeof o==='object'&&!Array.isArray(o)?o:{}}catch(e){overrides={}}
+    try{var d=JSON.parse(localStorage.getItem(DELETED_STORAGE)||'[]');deletedIds=Array.isArray(d)?Array.from(new Set(d.map(String))):[]}catch(e){deletedIds=[]}
+    try{var l=JSON.parse(localStorage.getItem(LIBRARY_STORAGE)||'[]');library=Array.isArray(l)?Array.from(new Set(l.filter(validHex).map(function(c){return c.toUpperCase()}))):[]}catch(e){library=[]}
+  }
+  function persist(){localStorage.setItem(STORAGE,JSON.stringify(custom))}
+  function persistOverrides(){localStorage.setItem(OVERRIDE_STORAGE,JSON.stringify(overrides))}
+  function persistDeleted(){localStorage.setItem(DELETED_STORAGE,JSON.stringify(deletedIds))}
+  function persistLibrary(){localStorage.setItem(LIBRARY_STORAGE,JSON.stringify(library))}
+  function displayName(g){return g.name&&g.name.trim()?'#'+g.id+' '+g.name:'#'+g.id}
+  function populateSelect(){var list=allGroups(),select=$('paletteSelect');select.textContent='';list.forEach(function(g){var o=document.createElement('option');o.value=g.id;o.textContent=(g.custom?'Custom · ':'')+displayName(g);select.appendChild(o)});if(current)select.value=current.id}
+  function populateSegments(){var list=$('segmentOptions'),seen={自定义:true};list.textContent='<option value="自定义">';allGroups().forEach(function(g){var seg=g.seg||'自定义';if(seen[seg])return;seen[seg]=true;var o=document.createElement('option');o.value=seg;list.appendChild(o)})}
+  function slotValues(){return [current.backgrounds.sky,current.backgrounds.haze,current.backgrounds.water].concat(current.rows)}
+  function slotLabels(){return ['天空','雾层','水面','波浪 01','波浪 02','波浪 03','波浪 04','波浪 05','波浪 06','波浪 07','波浪 08','波浪 09','波浪 10']}
+  function getSlot(i){return slotValues()[i]}
+  function markDirty(){if(!current)return;$('saveStatus').textContent='有未保存修改';clearTimeout(autoSaveTimer);if($('autoSave').checked&&current.id!=='DRAFT')autoSaveTimer=setTimeout(function(){updateCurrent(true)},350)}
+  function setSlot(i,v){v=v.toUpperCase();if(i===0){current.backgrounds.sky=v;current.cloud=v}else if(i===1)current.backgrounds.haze=v;else if(i===2)current.backgrounds.water=v;else current.rows[i-3]=v;markDirty()}
+  function selectSlot(i){activeSlot=i;document.querySelectorAll('.colour-row').forEach(function(row,n){row.classList.toggle('active',n===i)});$('activeTarget').textContent='当前：'+slotLabels()[i]}
+  function renderEditor(){
+    var c=slotValues(),labels=slotLabels();$('colourList').textContent='';
+    c.forEach(function(hex,i){var row=document.createElement('div');row.className='colour-row'+(i===activeSlot?' active':'');row.innerHTML='<label>'+labels[i]+'</label><input type="color" value="'+hex+'" aria-label="'+labels[i]+' 选色板"><input class="hex" value="'+hex+'" maxlength="7" aria-label="'+labels[i]+' hex">';var picker=row.querySelector('[type=color]'),text=row.querySelector('.hex');function commit(v){v=v.toUpperCase();if(!validHex(v))return;setSlot(i,v);picker.value=v;text.value=v;selectSlot(i);applyPreview()}row.addEventListener('pointerdown',function(){selectSlot(i)});picker.addEventListener('input',function(){commit(picker.value)});text.addEventListener('input',function(){if(validHex(text.value))commit(text.value)});text.addEventListener('blur',function(){text.value=getSlot(i)});$('colourList').appendChild(row)})
+  }
+  function applyPreview(){var root=document.documentElement;root.style.setProperty('--lab-sky',current.backgrounds.sky);root.style.setProperty('--lab-haze',current.backgrounds.haze);root.style.setProperty('--lab-water',current.backgrounds.water);current.rows.forEach(function(hex,i){root.style.setProperty('--lab-'+(i+1),hex);document.querySelectorAll('.fill.l'+(i+1)).forEach(function(n){n.style.fill=hex})})}
+  function headingName(g){return g.name&&g.name.trim()?g.name:'#'+g.id}
+  function setUpdateState(){var draft=current.id==='DRAFT';$('update').disabled=draft;$('update').textContent=draft?'草稿需先指定编号':'保存当前编号';$('restoreOfficial').disabled=draft||current.custom||!official.some(function(g){return g.id===current.id});$('deleteCurrent').disabled=draft;$('deleteCurrent').textContent=current.custom?'删除此自定义编号':'删除当前编号';$('updateHint').textContent=draft?'新建草稿没有固定编号，可另存为新编号。':'保存会按 #'+current.id+' 直接覆盖当前浏览器中的版本；删除后可从下方恢复。'}
+  function loadGroup(g){clearTimeout(autoSaveTimer);current=normalise(g);baseline=clone(current);activeSlot=Math.min(activeSlot,12);$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+(current.seg||'自定义');$('groupName').value=current.name||'';$('groupSegment').value=current.seg||'自定义';$('saveStatus').textContent='已保存';setUpdateState();populateSelect();renderEditor();applyPreview();closeResults()}
+  function currentIndex(){return allGroups().findIndex(function(g){return g.id===current.id})}
+  function step(delta){var list=allGroups(),i=currentIndex();if(i<0)i=delta>0?-1:0;loadGroup(list[(i+delta+list.length)%list.length])}
+  function resultColours(g){g=normalise(g);return [g.backgrounds.sky,g.backgrounds.haze,g.backgrounds.water,g.rows[8]]}
+  function search(){
+    var q=$('search').value.trim().toLowerCase();
+    var needle=q;
+    if(q==='蓝靛'||q==='蓝色'||q==='蓝')needle='蓝靛段';
+    else if(q==='金赭'||q==='黄色'||q==='黄')needle='金赭段';
+    else if(q==='紫'||q==='紫色')needle='紫堇段';
+    filtered=allGroups().filter(function(g){return !q||[g.id,g.name,g.seg,g.tier,g.custom?'custom':''].join(' ').toLowerCase().indexOf(needle)>-1});
+    $('resultCount').textContent=filtered.length;$('results').textContent='';
+    filtered.slice(0,80).forEach(function(g){var b=document.createElement('button'),label=g.name&&g.name.trim()?g.name:'#'+g.id;b.className='result';b.type='button';b.setAttribute('role','option');b.setAttribute('aria-selected',current&&g.id===current.id);b.innerHTML='<span class="result-preview">'+resultColours(g).map(function(c){return'<i style="background:'+c+'"></i>'}).join('')+'</span><span class="result-copy"><b>'+esc(label)+'</b><small>'+(g.custom?'Custom':'#'+esc(g.id))+' · '+esc(g.seg||'自定义')+'</small></span>';b.addEventListener('click',function(){loadGroup(g);$('search').value='' });$('results').appendChild(b)});
+    $('results').classList.add('open');
+  }
+  function closeResults(){$('results').classList.remove('open')}
+  function toast(text){var t=$('toast');t.textContent=text;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(function(){t.classList.remove('show')},1500)}
+  function renderSaved(){var list=$('savedList');list.textContent='';$('savedCount').textContent=custom.length;if(!custom.length){list.innerHTML='<p class="saved-empty">尚未创建额外编号；修改原始编号会直接保存在原位置。</p>';return}custom.slice().reverse().forEach(function(g){var row=document.createElement('div'),label=g.name&&g.name.trim()?g.name:'#'+g.id;row.className='saved-item';row.innerHTML='<button class="saved-load" type="button"><b>'+esc(label)+'</b><small>#'+esc(g.id)+' · '+new Date(g.savedAt).toLocaleDateString()+'</small></button><button class="saved-delete" type="button" aria-label="删除 '+esc(label)+'">×</button>';row.querySelector('.saved-load').addEventListener('click',function(){loadGroup(g)});row.querySelector('.saved-delete').addEventListener('click',function(){if(current&&current.id===g.id){deleteCurrent();return}custom=custom.filter(function(x){return x.id!==g.id});persist();populateSelect();renderSaved();toast('已删除 '+displayName(g)+'，当前色组不变')});list.appendChild(row)})}
+  function renderDeleted(){var list=$('deletedList');list.textContent='';$('deletedCount').textContent=deletedIds.length;if(!deletedIds.length){list.innerHTML='<p class="saved-empty">没有已删除的原始编号。</p>';return}deletedIds.forEach(function(id){var g=official.find(function(x){return x.id===id}),row=document.createElement('div'),label=g&&g.name?g.name:'#'+id;row.className='saved-item';row.innerHTML='<span class="saved-load"><b>#'+esc(id)+' '+esc(label)+'</b><small>已从搜索、下拉框和总览隐藏</small></span><button class="saved-delete" type="button">恢复</button>';row.querySelector('button').addEventListener('click',function(){deletedIds=deletedIds.filter(function(x){return x!==id});persistDeleted();rebuildSource();renderDeleted();toast('已恢复 #'+id)});list.appendChild(row)})}
+  function syncForm(silent){current.name=$('groupName').value.trim();current.seg=$('groupSegment').value.trim()||'自定义';$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.id==='DRAFT'?'Draft':current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+current.seg;if(!silent)markDirty()}
+  function makeDraft(from,blank){var g=blank?{rows:['#C8C2B7','#BEB7AB','#B4AC9F','#AAA193','#968B7B','#8C806F','#817563','#766A58','#6B5F4D','#605442'],backgrounds:{sky:'#DDD8CF',haze:'#CFC8BC',water:'#ACA18F'}}:normalise(from);g.id='DRAFT';g.name=blank?'':(from.name&&from.name.trim()?from.name+' · copy':'');g.seg='自定义';g.tier='Custom';g.custom=false;g.cloud=g.backgrounds.sky;loadGroup(g);saveNew()}
+  function saveNew(){syncForm(true);var g=clone(current),origin=current.sourceId||(!current.custom&&current.id!=='DRAFT'?current.id:null);g.id='C'+Date.now().toString(36).toUpperCase();g.custom=true;g.overridden=false;g.tier='Custom';g.savedAt=Date.now();if(origin)g.sourceId=origin;custom.push(g);persist();populateSegments();renderSaved();loadGroup(g);toast('新编号已创建，可直接改色')}
+  function updateCurrent(silent){if(current.id==='DRAFT')return;syncForm(true);current.updatedAt=Date.now();if(current.custom){var i=custom.findIndex(function(g){return g.id===current.id});if(i<0){custom.push(clone(current))}else custom[i]=clone(current);persist();renderSaved()}else{current.overridden=true;overrides[current.id]=clone(current);persistOverrides();var j=source.findIndex(function(g){return g.id===current.id});if(j>-1)source[j]=clone(current)}populateSegments();populateSelect();baseline=clone(current);$('saveStatus').textContent='已保存';$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+current.seg;setUpdateState();if(!silent)toast('已保存 #'+current.id+(current.name?' '+current.name:''))}
+  function restoreOfficial(){var g=official.find(function(x){return x.id===current.id});if(!g)return;delete overrides[current.id];persistOverrides();var i=source.findIndex(function(x){return x.id===g.id});if(i>-1)source[i]=clone(g);loadGroup(g);toast('已恢复 #'+g.id+' 官方原版')}
+  function rebuildSource(){source=official.filter(function(g){return deletedIds.indexOf(g.id)<0}).map(function(g){var override=overrides[g.id];if(!override)return clone(g);var edited=normalise(override);edited.id=g.id;edited.custom=false;edited.overridden=true;return edited});populateSegments();populateSelect();search();closeResults()}
+  function deleteCurrent(){var id=current.id,listBefore=allGroups(),oldIndex=listBefore.findIndex(function(g){return g.id===id}),nextId=(listBefore[oldIndex+1]||listBefore[oldIndex-1]||{}).id;if(current.custom){custom=custom.filter(function(g){return g.id!==id});persist();renderSaved()}else{deletedIds.push(id);deletedIds=Array.from(new Set(deletedIds));delete overrides[id];persistOverrides();persistDeleted();rebuildSource();renderDeleted()}var list=allGroups(),next=list.find(function(g){return g.id===nextId})||list[Math.min(Math.max(oldIndex,0),Math.max(list.length-1,0))];if(next)loadGroup(next);else makeDraft(null,true);toast('已删除 #'+id+'，当前停留在相邻色组')}
+  function addLibraryColour(hex){hex=hex.toUpperCase();if(!validHex(hex)||library.indexOf(hex)>-1)return;library.push(hex);persistLibrary();renderLibrary()}
+  function renderLibrary(){var list=$('libraryList');list.textContent='';$('libraryCount').textContent=library.length;if(!library.length){list.innerHTML='<p class="library-empty">颜色列表为空。可从编辑器或图片识别结果加入。</p>';return}library.forEach(function(hex,i){var item=document.createElement('div');item.className='library-item';item.innerHTML='<button class="swatch-button" type="button" style="--swatch:'+hex+'" aria-label="应用 '+hex+'"><span>'+hex+'</span></button><button class="library-delete" type="button" aria-label="删除 '+hex+'">×</button>';item.querySelector('.swatch-button').addEventListener('click',function(){setSlot(activeSlot,hex);renderEditor();applyPreview();toast('已应用到'+slotLabels()[activeSlot])});item.querySelector('.library-delete').addEventListener('click',function(){library.splice(i,1);persistLibrary();renderLibrary()});list.appendChild(item)})}
+  function rgbHex(r,g,b){return'#'+[r,g,b].map(function(v){return Math.max(0,Math.min(255,v)).toString(16).padStart(2,'0')}).join('').toUpperCase()}
+  function extractImage(img){var limit=parseInt($('extractLimit').value,10)||24,canvas=$('imageCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true}),scale=Math.min(1,260/img.naturalWidth,260/img.naturalHeight);canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));ctx.drawImage(img,0,0,canvas.width,canvas.height);var d=ctx.getImageData(0,0,canvas.width,canvas.height).data,bins=new Map();for(var i=0;i<d.length;i+=8){if(d[i+3]<160)continue;var key=(d[i]>>3)+'_'+(d[i+1]>>3)+'_'+(d[i+2]>>3),v=bins.get(key)||[0,0,0,0];v[0]+=d[i];v[1]+=d[i+1];v[2]+=d[i+2];v[3]++;bins.set(key,v)}var ranked=Array.from(bins.values()).sort(function(a,b){return b[3]-a[3]}).map(function(v){return[Math.round(v[0]/v[3]),Math.round(v[1]/v[3]),Math.round(v[2]/v[3]),v[3]]}),picked=[],threshold=limit>=36?18:limit>=24?23:30;function dist(a,b){var dr=a[0]-b[0],dg=a[1]-b[1],db=a[2]-b[2];return Math.sqrt(dr*dr+dg*dg+db*db)}ranked.some(function(c){if(picked.every(function(p){return dist(c,p)>threshold}))picked.push(c);return picked.length===Math.ceil(limit*.7)});var remaining=ranked.filter(function(c){return picked.indexOf(c)<0});while(picked.length<limit&&remaining.length){var bestIndex=0,best=-1;remaining.forEach(function(c,i){var nearest=picked.length?Math.min.apply(null,picked.map(function(p){return dist(c,p)})):255,frequency=Math.log(c[3]+1)*3,score=nearest+frequency;if(score>best){best=score;bestIndex=i}});picked.push(remaining.splice(bestIndex,1)[0])}return picked.slice(0,limit).map(function(c){return rgbHex(c[0],c[1],c[2])})}
+  function renderExtracted(){var box=$('extracted');box.textContent='';extractedColours.forEach(function(hex){var b=document.createElement('button');b.className='swatch-button';b.type='button';b.style.setProperty('--swatch',hex);b.innerHTML='<span>'+hex+'</span>';b.addEventListener('click',function(){setSlot(activeSlot,hex);renderEditor();applyPreview();toast('已应用到'+slotLabels()[activeSlot])});box.appendChild(b)});$('extractSummary').textContent=extractedColours.length?'已识别 '+extractedColours.length+' 色；包含高频主色与低频层次':'上传后识别主要颜色与明暗层次';$('imageResult').classList.toggle('ready',!!extractedColours.length);$('addExtracted').disabled=!extractedColours.length;$('applyExtracted').disabled=!extractedColours.length}
+  function handleImage(file){if(!file||!file.type.startsWith('image/')){toast('请选择图片文件');return}imageFileName=file.name.replace(/\.[^.]+$/,'');var url=URL.createObjectURL(file),img=$('imagePreview');img.onload=function(){try{loadedImage=img;extractedColours=extractImage(img);renderExtracted();toast('已识别 '+extractedColours.length+' 个颜色')}catch(e){toast('无法读取这张图片')}URL.revokeObjectURL(url)};img.src=url}
+  function draftFromExtracted(){if(!extractedColours.length)return;var sorted=extractedColours.slice().sort(function(a,b){function lum(h){return .2126*parseInt(h.slice(1,3),16)+.7152*parseInt(h.slice(3,5),16)+.0722*parseInt(h.slice(5,7),16)}return lum(b)-lum(a)}),g={id:'DRAFT',name:imageFileName||'',seg:'自定义',tier:'Custom',custom:false,backgrounds:{sky:sorted[0],haze:sorted[Math.min(1,sorted.length-1)],water:sorted[Math.min(3,sorted.length-1)]},rows:[]};for(var i=0;i<10;i++)g.rows.push(sorted[(i+2)%sorted.length]);g.cloud=g.backgrounds.sky;loadGroup(g);saveNew();switchPane('editorPane');toast('已从图片创建新编号')}
+  function switchPane(id){document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('active',p.id===id)});document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.dataset.pane===id)})}
+  buildScene();loadStored();renderSaved();renderDeleted();renderLibrary();
+  $('autoSave').checked=localStorage.getItem(AUTOSAVE_STORAGE)!=='0';
+  fetch('./assets/palettes/color-groups.json').then(function(r){if(!r.ok)throw Error(r.status);return r.json()}).then(function(data){official=data.map(normalise);rebuildSource();renderDeleted();var requested=new URLSearchParams(location.search).get('palette'),initial=allGroups().find(function(g){return g.id===requested})||source[0]||custom[0];if(initial)loadGroup(initial);else makeDraft(null,true);search();closeResults()}).catch(function(){toast('色组文件加载失败')});
+  $('search').addEventListener('input',search);$('search').addEventListener('focus',search);document.addEventListener('pointerdown',function(e){if(!e.target.closest('.search-wrap')&&!e.target.closest('.results'))closeResults()});
+  $('paletteSelect').addEventListener('change',function(){var id=this.value,g=allGroups().find(function(x){return x.id===id});if(g)loadGroup(g)});$('previous').addEventListener('click',function(){step(-1)});$('next').addEventListener('click',function(){step(1)});
+  $('reset').addEventListener('click',function(){clearTimeout(autoSaveTimer);current=clone(baseline);$('groupName').value=current.name||'';$('groupSegment').value=current.seg||'自定义';$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+(current.seg||'自定义');$('saveStatus').textContent='已保存';setUpdateState();renderEditor();applyPreview();toast('已撤销本轮未保存修改')});
+  $('newBlank').addEventListener('click',function(){makeDraft(null,true)});$('duplicate').addEventListener('click',function(){makeDraft(current,false)});$('update').addEventListener('click',function(){updateCurrent(false)});$('restoreOfficial').addEventListener('click',restoreOfficial);$('deleteCurrent').addEventListener('click',deleteCurrent);
+  $('groupName').addEventListener('input',syncForm);$('clearName').addEventListener('click',function(){$('groupName').value='';syncForm();toast('名称已清除，保存后仅显示 #'+current.id)});$('groupSegment').addEventListener('input',syncForm);$('addCurrent').addEventListener('click',function(){var before=library.length;addLibraryColour(getSlot(activeSlot));toast(library.length===before?'颜色列表中已存在':'已加入颜色列表')});
+  $('autoSave').addEventListener('change',function(){localStorage.setItem(AUTOSAVE_STORAGE,this.checked?'1':'0');if(this.checked&&$('saveStatus').textContent==='有未保存修改'&&current.id!=='DRAFT')updateCurrent(true)});
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){switchPane(t.dataset.pane)})});
+  $('imageInput').addEventListener('change',function(){handleImage(this.files[0])});$('dropzone').addEventListener('dragover',function(e){e.preventDefault()});$('dropzone').addEventListener('drop',function(e){e.preventDefault();handleImage(e.dataTransfer.files[0])});
+  $('extractLimit').addEventListener('change',function(){if(!loadedImage)return;extractedColours=extractImage(loadedImage);renderExtracted();toast('已重新识别 '+extractedColours.length+' 色')});
+  $('addExtracted').addEventListener('click',function(){extractedColours.forEach(addLibraryColour);toast('识别颜色已加入列表')});$('applyExtracted').addEventListener('click',draftFromExtracted);
+  $('export').addEventListener('click',function(){navigator.clipboard.writeText(JSON.stringify(current,null,2)).then(function(){toast('当前色组 JSON 已复制')}).catch(function(){toast('浏览器未允许剪贴板，请通过 localhost 打开')})});
+  $('exportAll').addEventListener('click',function(){navigator.clipboard.writeText(JSON.stringify(allGroups(),null,2)).then(function(){toast('已复制 '+allGroups().length+' 个有效色组')}).catch(function(){toast('浏览器未允许剪贴板')})});
+  $('downloadAll').addEventListener('click',function(){var blob=new Blob([JSON.stringify(allGroups(),null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='color-groups.json';a.click();setTimeout(function(){URL.revokeObjectURL(url)},1000);toast('已下载 '+allGroups().length+' 组正式色组文件')});
+})();
+</script>
+</body>
+</html>

@@ -53,7 +53,7 @@
   ".ledger .count{font-family:'Spinnaker';font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}" +
   ".ledger-unit{font-family:'Spinnaker';font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}" +
   ".ledger-meter{margin-top:12px;height:6px;border-radius:999px;background:rgba(42,32,22,.12);overflow:hidden}" +
-  ".ledger-meter span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--terracotta),#D2774C);transition:width .55s cubic-bezier(.4,0,.2,1)}" +
+  ".ledger-meter span{display:block;height:100%;width:0;border-radius:999px;background:var(--terracotta);transition:width .55s cubic-bezier(.4,0,.2,1)}" +
   ".ledger-cap{margin-top:7px;font-family:'Spinnaker';font-size:10px;letter-spacing:.03em;color:var(--ghost)}" +
   ".exchange{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;border:none;background:var(--terracotta);color:var(--paper);border-radius:10px;padding:9px;font-family:'Spinnaker';font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(181,80,44,.25);transition:transform .15s,background .15s,box-shadow .15s}" +
   ".exchange:hover{transform:translateY(-1px);background:#C9663F;box-shadow:0 6px 16px rgba(181,80,44,.32)}" +
@@ -65,7 +65,7 @@
   ".side-foot > *{position:relative;z-index:1}" +
   ".side-foot:hover::before{background:transparent}" +
   "" +
-  ".avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#EAF1F8;display:grid;place-items:center;font-size:11.5px;font-weight:600}" +
+  ".avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#D8DDE0;display:grid;place-items:center;font-size:11.5px;font-weight:600}" +
   ".side-foot .who{flex:1;min-width:0;line-height:1.3}" +
   ".side-foot b{display:block;font-size:13px;font-weight:700;font-family:'Spinnaker'}" +
   ".side-foot i{font-style:normal;font-size:11px;letter-spacing:.04em;color:var(--ghost);font-family:'Spinnaker'}" +

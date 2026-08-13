@@ -31,8 +31,22 @@ body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close){
   border:0!important;border-radius:0!important;box-shadow:none!important;
   backdrop-filter:none!important;-webkit-backdrop-filter:none!important;scroll-snap-align:start;
 }
-body[data-page="about"] .why-hero{grid-template-columns:minmax(0,1.25fr) minmax(260px,.55fr);align-content:center;background:var(--bw-palette-cloud,var(--paper));color:var(--ink)}
-body[data-page="about"] .why-hero h1{font-size:clamp(54px,7.6vw,118px);max-width:10ch;line-height:.89;letter-spacing:-.065em}
+body[data-page="about"] .why-hero{
+  position:relative;isolation:isolate;overflow:hidden;box-sizing:border-box!important;min-height:calc(100svh - 81px)!important;
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:1fr auto;
+  column-gap:clamp(20px,2.2vw,38px);align-content:stretch;align-items:end;
+  background-color:var(--bw-palette-cloud,var(--paper));background-image:none!important;color:var(--ink)
+}
+body[data-page="about"] .why-hero-title{position:relative;z-index:1;grid-column:1/8;grid-row:2;align-self:end}
+body[data-page="about"] .why-hero h1{font-size:clamp(54px,7.15vw,112px);max-width:9.7ch;line-height:.89;letter-spacing:-.062em}
+body[data-page="about"] .why-hero .hero-copy{position:relative;z-index:1;grid-column:9/-1;grid-row:2;align-self:end;max-width:31ch;margin:0 0 .45em}
+body[data-page="about"] .poster-specimen{
+  position:absolute;z-index:0;top:2%;right:2%;width:min(45vw,650px);height:62%;pointer-events:none;
+  background:var(--bw-palette-9,#4f513f);
+  -webkit-mask:url("../assets/editorial/botanical-pine-mask.png") 50% 50%/contain no-repeat;
+  mask:url("../assets/editorial/botanical-pine-mask.png") 50% 50%/contain no-repeat;
+  opacity:.22;transform:rotate(2deg)
+}
 html[data-skin="paper"] body[data-page="about"] .hero-copy{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;background-image:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 html[data-skin="paper"] body[data-page="about"] .pagehead .cta{min-height:0;padding:8px 0;border:0;border-bottom:1px solid currentColor;border-radius:0;background:transparent;color:var(--ink)}
 body[data-page="about"] .editorial-spread{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);align-items:end;gap:clamp(32px,7vw,110px);background:var(--bw-palette-9,#50523f);color:var(--bw-palette-on-9,var(--paper))}
@@ -68,15 +82,22 @@ body[data-page="guide"][data-poster-step="2"]{--guide-field:var(--bw-palette-9,#
 body[data-page="guide"][data-poster-step="3"]{--guide-field:var(--bw-palette-6,#a9a084);--guide-ink:var(--bw-palette-on-6,var(--ink))}
 body[data-page="guide"][data-poster-step="4"]{--guide-field:var(--bw-palette-2,#e7dfce);--guide-ink:var(--bw-palette-on-2,var(--ink))}
 body[data-page="guide"] .top{color:var(--guide-ink)}
-body[data-page="guide"] .guide-shell{width:100%;min-height:calc(100svh - 66px);margin:0;padding:0 clamp(24px,5vw,80px) 44px;grid-template-columns:170px minmax(0,1fr);gap:clamp(28px,6vw,96px)}
+body[data-page="guide"] .guide-shell{width:100%;min-height:calc(100svh - 66px);margin:0;padding:0 clamp(24px,5vw,80px) 44px;grid-template-columns:156px minmax(0,1fr);gap:clamp(34px,5.5vw,88px)}
 body[data-page="guide"] .progress{top:20px;padding:38px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
 body[data-page="guide"] .progress-title{color:inherit;opacity:.62}
 body[data-page="guide"] .progress-step{border-radius:0;color:inherit;opacity:.46;background:transparent!important}
 body[data-page="guide"] .progress-step.active,body[data-page="guide"] .progress-step.done{color:inherit;opacity:1}
 body[data-page="guide"] .progress-step .dot{border-color:currentColor;color:inherit;background:transparent!important;transform:none!important}
 html[data-skin="paper"] body[data-page="guide"] .progress-step.active .dot{background:var(--guide-ink)!important;color:var(--guide-field)!important;border-color:var(--guide-ink)!important;border-radius:50%!important}
-body[data-page="guide"] .guide-stage{min-height:calc(100svh - 74px);padding:clamp(42px,7vw,104px) 0 28px;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible}
-body[data-page="guide"] .lesson{animation:posterLessonIn .42s var(--ease-out) both}
+body[data-page="guide"] .guide-stage{position:relative;isolation:isolate;box-sizing:border-box!important;min-height:calc(100svh - 74px);padding:clamp(52px,9vh,104px) 0 28px;border:0!important;border-radius:0!important;background-color:transparent!important;background-image:none!important;box-shadow:none!important;overflow:hidden}
+body[data-page="guide"] .guide-specimen{
+  position:absolute;z-index:0;top:8%;right:-1%;width:min(38vw,520px);height:70%;pointer-events:none;
+  background:currentColor;
+  -webkit-mask:url("../assets/editorial/botanical-pine-mask.png") 50% 50%/contain no-repeat;
+  mask:url("../assets/editorial/botanical-pine-mask.png") 50% 50%/contain no-repeat;
+  opacity:.13;transform:rotate(2deg)
+}
+body[data-page="guide"] .lesson{position:relative;z-index:1;width:min(74%,820px);animation:posterLessonIn .42s var(--ease-out) both}
 @keyframes posterLessonIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 body[data-page="guide"] .lesson .kicker{color:inherit;opacity:.64}
 body[data-page="guide"] .lesson h1{font-size:clamp(54px,7vw,104px);max-width:11ch;line-height:.88;letter-spacing:-.065em}
@@ -88,7 +109,7 @@ body[data-page="guide"] .lesson-grid>*:nth-child(odd),body[data-page="guide"] .r
 body[data-page="guide"] .lesson-grid>*:nth-child(even),body[data-page="guide"] .rates>*:nth-child(even){padding-left:clamp(18px,4vw,56px)!important;border-left:1px solid currentColor!important}
 body[data-page="guide"] :is(.lesson-card p,.rate small){color:inherit;opacity:.7}
 body[data-page="guide"] .rate .number,body[data-page="guide"] .example .label{color:inherit}
-body[data-page="guide"] .controls{border-top:1px solid currentColor}
+body[data-page="guide"] .controls{position:relative;z-index:1;width:min(74%,820px);border-top:1px solid currentColor}
 body[data-page="guide"] :is(.back,.next){border-radius:0;border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;padding:0;min-height:36px}
 
 /* LEGAL — opening poster, then editorial spreads on scroll. */
@@ -120,14 +141,19 @@ body[data-page="legal"] .legal-foot a,body[data-page="legal"] .legal-foot .est{c
 
 @media(max-width:760px){
   body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close){min-height:auto;padding:74px 22px!important;grid-template-columns:1fr}
-  body[data-page="about"] .why-hero{min-height:calc(100svh - 62px)}
+  body[data-page="about"] .why-hero{min-height:calc(100svh - 62px)!important;grid-template-rows:minmax(22vh,1fr) auto auto;gap:22px}
+  body[data-page="about"] .why-hero-title{grid-column:1;grid-row:2}
+  body[data-page="about"] .why-hero .hero-copy{grid-column:1;grid-row:3;max-width:36ch;margin:0}
+  body[data-page="about"] .poster-specimen{top:1%;right:-12%;width:82vw;height:48%;opacity:.17}
   body[data-page="about"] .editorial-spread{min-height:90svh;align-content:space-between}
   body[data-page="about"] .why-panel{gap:50px}
   body[data-page="about"] .sequence,body[data-page="about"] .boundary,body[data-page="about"] .method-grid{grid-template-columns:1fr}
   body[data-page="about"] .close{min-height:72svh;gap:48px}
   body[data-page="guide"] .guide-shell{grid-template-columns:1fr;padding:0 20px 30px;gap:0}
   body[data-page="guide"] .progress{position:relative;top:auto;padding:14px 0}
-  body[data-page="guide"] .guide-stage{min-height:calc(100svh - 142px);padding-top:42px}
+  body[data-page="guide"] .guide-stage{min-height:calc(100svh - 142px);padding-top:42px;overflow:hidden}
+  body[data-page="guide"] :is(.lesson,.controls){width:100%}
+  body[data-page="guide"] .guide-specimen{top:8%;right:-28%;width:92vw;height:52%;opacity:.09}
   body[data-page="guide"] .lesson h1{font-size:clamp(48px,15vw,78px)}
   body[data-page="guide"] :is(.lesson-grid,.rates){grid-template-columns:1fr}
   body[data-page="guide"] .lesson-grid>*:nth-child(n),body[data-page="guide"] .rates>*:nth-child(n){padding:22px 0!important;border-left:0!important}
