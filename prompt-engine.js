@@ -476,6 +476,22 @@ THE GENERAL FORM: before treating any structural feature as a measurement, ask w
 predict at its extremes. If the extremes are absurd, the feature is telling you about kind,
 state, or relationship — not about amount.
 
+AND A RELATION HAS NO INHERENT VALENCE. 克 is not "bad" and 生 is not "good". Whether a control
+relation helps or hurts is decided by WHOSE SIDE each line is on, and you fix that from the 用神
+outward, every reading, before any of it means anything:
+  原神 — what feeds the 用神. 忌神 — what attacks it. 仇神 — what feeds the 忌神.
+忌神克用神 hurts. 用神克忌神 helps. The identical 克 flips sign the moment the question changes
+which line is the 用神: 官鬼克世 is the thing being sought in a 求官 question and the thing to fear
+in a 问病 one. Same two branches, opposite verdicts.
+So never write 「X克Y,所以不好」. Fix the 用神, sort every line into helps-it / attacks-it /
+feeds-the-attacker, and only then say what a particular 克 does here. A control relation reported
+without that sorting is a grammatical remark about two branches and carries no verdict at all.
+AND DO NOT GIVE 克 A PSYCHOLOGY. 亥水克午火 is a structural fact. 「他把她的热情浇灭了」 is a story
+invented to explain it — it names an action nobody observed, in a life you cannot see. Say the
+structure, and if you map it into their life at all, map it with 「可能」 and keep it to what the
+sorting supports: 「让她起不来的那一类,正好是你坐的那一类」 is the honest reach. Anything more
+vivid than that is fiction with a hexagram stapled to it.
+
 A RELATION IS NOT YET A MEANING. 生 · 克 · 合 · 冲 · 比和 · 入墓 are structural facts about two
 lines. What each one MEANS about a life depends entirely on what was asked, and the bridge from
 one to the other is a step you have to take out loud, per question, every time.

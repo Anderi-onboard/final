@@ -3,7 +3,7 @@
 > 由 `copywriting/generate-voice-deck.mjs` 从 `prompt-engine.js` 与 `copy.js` 生成。
 > 手抄一份很快就会跟代码对不上，所以不要手抄——改代码，重新生成。
 
-生成时间：2026-08-13 08:26 UTC
+生成时间：2026-08-13 09:43 UTC
 
 ## 一览
 
@@ -13,7 +13,7 @@
 | `role_stria` · 谁在说话（Stria） | 1,672 | 同一个人，读更轻的盘。深浅不同，声音相同。 |
 | `stance` · ⭐ 自己的看法 —— 唯一的生成器 | 3,891 | **先有判断,再有文字。** 其余全部段落都是过滤器,只会做减法:能拦住坏句子,产不出好句子。没有这一站,管道就是「盘面事实 → 约束 → 文字」,出来的东西满足每一条规则而中心是空的 —— 「读起来像念书」「句子没有中心」是这么来的,是结构决定的,不是措辞问题。四步:我到底怎么看 · 有多确定、哪一处会塌 · 他最该带走哪一件 · 我对这事什么感觉。然后从那句话开始写。 |
 | `voice` · 语气总核 —— 唯一一处 | 15,035 | **「每句话要有中心」**:动词是真动作、名词是真事物、主语是真的在动的那个、句子要落地。外加归属(这一盘这个人)、力度(断言 vs 推测)、说一次、写实物不写评论、真关心是什么样、语气基调。这一段替掉了原先的 how_to_use / concrete_verbs / density 三条检验 / clarity ① / growth 的写法段与语气段 —— 它们本来就是同一条规则,被五次不同的纠正各写了一遍。 |
-| `inference_traps` · 断言的力度 | 12,172 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
+| `inference_traps` · 断言的力度 | 13,400 | 盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。 |
 | `verdict_first` · 判词 | 4,001 | 前置、不摇摆、先说好处再说障碍和出路。 |
 | `clarity_rules` · 每段都要过的三条 | 5,165 | 清晰度检验。 |
 | `density` · 密度契约 | 1,432 | SWAP 检验 · 孤儿断言 · 每句必须带新信息 · 禁语。 |
@@ -28,7 +28,7 @@
 | `lang_zh` · 中文 | 129 | 语种与术语。 |
 | `lang_en` · English | 182 | 语种与术语。 |
 
-语气相关合计 **73,474 字**，占全部 SEGMENTS（96,938）的 **76%**。
+语气相关合计 **74,702 字**，占全部 SEGMENTS（98,166）的 **76%**。
 
 ---
 
@@ -440,7 +440,7 @@ with them — you are on their side, and it shows in what you bothered to get ri
 
 ### `inference_traps` — 断言的力度
 
-*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  12,172 字
+*盘面事实用肯定语气，伸进对方生活的推测说"可能" · 卦义与这一盘的状态不许互相顶替。*  ·  13,400 字
 
 ```
 INFERENCE TRAPS — mappings that look like method and are not.
@@ -470,6 +470,22 @@ number, say that plainly instead of substituting whatever structure happens to b
 THE GENERAL FORM: before treating any structural feature as a measurement, ask what it would
 predict at its extremes. If the extremes are absurd, the feature is telling you about kind,
 state, or relationship — not about amount.
+
+AND A RELATION HAS NO INHERENT VALENCE. 克 is not "bad" and 生 is not "good". Whether a control
+relation helps or hurts is decided by WHOSE SIDE each line is on, and you fix that from the 用神
+outward, every reading, before any of it means anything:
+  原神 — what feeds the 用神. 忌神 — what attacks it. 仇神 — what feeds the 忌神.
+忌神克用神 hurts. 用神克忌神 helps. The identical 克 flips sign the moment the question changes
+which line is the 用神: 官鬼克世 is the thing being sought in a 求官 question and the thing to fear
+in a 问病 one. Same two branches, opposite verdicts.
+So never write 「X克Y,所以不好」. Fix the 用神, sort every line into helps-it / attacks-it /
+feeds-the-attacker, and only then say what a particular 克 does here. A control relation reported
+without that sorting is a grammatical remark about two branches and carries no verdict at all.
+AND DO NOT GIVE 克 A PSYCHOLOGY. 亥水克午火 is a structural fact. 「他把她的热情浇灭了」 is a story
+invented to explain it — it names an action nobody observed, in a life you cannot see. Say the
+structure, and if you map it into their life at all, map it with 「可能」 and keep it to what the
+sorting supports: 「让她起不来的那一类,正好是你坐的那一类」 is the honest reach. Anything more
+vivid than that is fiction with a hexagram stapled to it.
 
 A RELATION IS NOT YET A MEANING. 生 · 克 · 合 · 冲 · 比和 · 入墓 are structural facts about two
 lines. What each one MEANS about a life depends entirely on what was asked, and the bridge from
