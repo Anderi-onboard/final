@@ -627,7 +627,14 @@
   /* The opening prompt owns the geometric centre of the working canvas. Its
      left edge follows --sbw, so it travels with the composer as the desktop
      sidebar expands or collapses instead of remaining pinned to the viewport. */
-  body.is-empty #heroEmpty{position:fixed;inset:0 0 0 var(--sbw);z-index:1;display:grid;place-items:center;text-align:center;padding:0;pointer-events:none;transition:left .28s cubic-bezier(.4,0,.2,1)}
+  /* ...and it centres in the band the reader can actually use, not in the
+     whole viewport. Centred on the viewport the prompt sat 46px low: dead
+     centre counts the topbar and the composer as free space, so the text
+     drifted down toward the composer and left a gap under the topbar. These
+     two reserves take that furniture out of the sum, the same way --sbw
+     states the sidebar's width rather than measuring it. */
+  body.is-empty{--hero-top-reserve:66px;--hero-bottom-reserve:159px}
+  body.is-empty #heroEmpty{position:fixed;inset:0 0 0 var(--sbw);z-index:1;display:grid;place-items:center;text-align:center;padding:var(--hero-top-reserve) 0 var(--hero-bottom-reserve);box-sizing:border-box;pointer-events:none;transition:left .28s cubic-bezier(.4,0,.2,1)}
   body.is-empty #heroEmpty .greeting{max-width:680px;width:calc(100% - 36px)}
 
   /* Mobile topbar fix: the base .claude-note / .top-right rules above sit AFTER
@@ -662,6 +669,9 @@
     .disclaimer{margin-top:9px}
     /* Keep the mobile headline centred independently of the animated mark.
        Equal side padding makes the text's horizontal centre the canvas centre. */
+    /* Narrow screens carry a shorter topbar and a composer that sits closer to
+       the edge, so the band is re-stated rather than inherited. */
+    body.is-empty{--hero-top-reserve:52px;--hero-bottom-reserve:150px}
     body.is-empty #heroEmpty{inset:0}
     body.is-empty #heroEmpty .greeting{display:block}
     body.is-empty #heroEmpty .greeting .bw-hero-mark{position:absolute;left:0;top:50%;transform:translateY(-50%);width:38px!important;height:31px!important}

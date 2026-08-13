@@ -256,13 +256,14 @@
     var still = typeof matchMedia === 'function' &&
       matchMedia('(prefers-reduced-motion:reduce)').matches;
     var paths = COIN_PATHS.map(function (c, i) {
-      return '<path class="bw-af-loader' + (i ? (i === 1 ? ' b' : ' c') : '') + side(i) + '" d="' + c.base + '">' +
+      return '<path class="bw-af-loader' + (i ? (i === 1 ? ' b' : ' c') : '') + side(i) + '"' +
+        (c.dx ? ' transform="translate(' + c.dx + ' 0)"' : '') + ' d="' + c.base + '">' +
         (still ? '' :
           '<animate attributeName="d" dur="' + c.dur + '" repeatCount="indefinite" values="' +
           c.frames + '"/>') +
         '</path>';
     }).join('');
-    return '<svg class="bw-af-coins" viewBox="48 18 224 84" preserveAspectRatio="xMidYMid meet" ' +
+    return '<svg class="bw-af-coins" viewBox="74 24 172 75" preserveAspectRatio="xMidYMid meet" ' +
       'aria-hidden="true" focusable="false">' + paths + '</svg>';
   }
 
@@ -275,21 +276,29 @@
      already drives, so classList.add("side-yang") and querySelectorAll continue
      to work untouched — the shape changed, the wiring did not.
 
-     One SVG rather than three, because the spacing between the coins is part of
-     the artwork: it lives in the viewBox, at the positions it was drawn at.
-     The box is cropped to the coins (x 48-272, y 18-102) so the mark does not
-     carry the tall empty margins of the original 320x120 frame into a text row.
+     One SVG rather than three: the coins live in one coordinate space, so the
+     set scales as a unit and can never drift out of alignment.
+
+     Two things ARE changed from the original, both about fitting a 11px text
+     row rather than a hero block:
+
+       - The outer coins are translated 22 units inward. Drawn for a hero the
+         coins sat a full coin-width apart, which at header size reads as three
+         loose dots rather than one mark. Only the transform moved; the path
+         data and the morph are untouched.
+       - The box is cropped to what the coins actually occupy, so the mark does
+         not carry the original 320x120 frame's empty margins into the row.
 
      SMIL ignores prefers-reduced-motion and CSS cannot switch it off, so the
      <animate> elements are simply omitted — same three coins, at rest. */
   var COIN_PATHS = [
-    { dur:'5s',
+    { dur:'5s', dx:22,
       base:'M 60 60 C 60 30, 100 30, 100 60 C 100 90, 60 90, 60 60 Z',
       frames:'M 60 60 C 60 30, 100 30, 100 60 C 100 90, 60 90, 60 60 Z;M 60 60 C 55 35, 105 25, 100 55 C 110 90, 65 95, 60 60 Z;M 60 60 C 65 28, 95 40, 100 65 C 95 95, 55 85, 60 60 Z;M 60 60 C 60 30, 100 30, 100 60 C 100 90, 60 90, 60 60 Z' },
     { dur:'6s',
       base:'M 140 60 C 140 28, 180 28, 180 60 C 180 92, 140 92, 140 60 Z',
       frames:'M 140 60 C 140 28, 180 28, 180 60 C 180 92, 140 92, 140 60 Z;M 140 62 C 135 32, 185 30, 180 62 C 185 98, 135 92, 140 62 Z;M 140 58 C 145 30, 175 32, 180 58 C 175 96, 145 88, 140 58 Z;M 140 60 C 140 28, 180 28, 180 60 C 180 92, 140 92, 140 60 Z' },
-    { dur:'5.5s',
+    { dur:'5.5s', dx:-22,
       base:'M 220 60 C 220 30, 260 30, 260 60 C 260 90, 220 90, 220 60 Z',
       frames:'M 220 60 C 220 30, 260 30, 260 60 C 260 90, 220 90, 220 60 Z;M 220 62 C 215 32, 265 28, 260 62 C 265 96, 215 92, 220 62 Z;M 220 58 C 225 28, 255 34, 260 58 C 255 94, 225 88, 220 58 Z;M 220 60 C 220 30, 260 30, 260 60 C 260 90, 220 90, 220 60 Z' }
   ];
@@ -659,7 +668,7 @@
          gets: the viewBox does the scaling, so a caller can change the size and
          can never change the proportions. */
       ".bw-coins{display:inline-flex;align-items:center;color:var(--ink)}",
-      ".bw-af-coins{display:block;flex:none;width:var(--bw-coins-w,96px);height:auto;overflow:visible}",
+      ".bw-af-coins{display:block;flex:none;width:var(--bw-coins-w,66px);height:auto;overflow:visible}",
 
       /* Filled clay = yang face; pale field = yin face. Both track the palette
          the mountain range is currently showing — mountain-range.js rewrites
@@ -667,8 +676,13 @@
          coins turn with the background instead of holding a fixed terracotta
          while everything behind them moves to another colour group. The static
          tokens stay as the fallback for any context without the backdrop. */
-      ".bw-af-loader{fill:var(--bw-palette-cloud,var(--paper));stroke:var(--ink);stroke-width:2.4;",
-        "stroke-linecap:round;transition:fill .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
+      /* non-scaling-stroke keeps the outline at a real 2.2px whatever size the
+         mark is drawn at. Scaled with the shape it thinned to about 1px in the
+         header, which read as a weak, flat line next to 11px type — and it is
+         the outline alone that makes a yin coin visible. */
+      ".bw-af-loader{fill:var(--bw-palette-cloud,var(--paper));stroke:var(--ink);stroke-width:2.2px;",
+        "vector-effect:non-scaling-stroke;stroke-linecap:round;",
+        "transition:fill .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}",
       /* The face changes, the ink outline does not. Keeping the same dark,
          living edge on yin and yang makes the three coins read as one object —
          and keeping it OFF the palette keeps the edge legible on every group. */

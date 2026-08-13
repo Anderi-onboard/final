@@ -8,9 +8,14 @@
    slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
-  --paper-grain-image: url("../assets/textures/oil-relief-swirl-mask.png");
+  /* Texture off. Both overlays that carry it — the full-viewport one below and
+     the per-card one in refinement.css — read these two tokens and nothing
+     else, so switching them to `none` removes the texture everywhere from one
+     place, and restoring the two url() lines brings it back exactly as it was.
+     The SVG and PNG stay in assets/ for that reason. */
+  --paper-grain-image: none;
   --paper-grain-size: 360px 360px;
-  --paper-fiber-image: url("../assets/textures/editorial-fiber-grid.svg?v=20260813c");
+  --paper-fiber-image: none;
   --paper-fiber-size: 128px 128px;
   /* verified editorial palette, adapted into interface roles */
   --paper: #E7E1D7;         /* full canvas / muted warm paper */
