@@ -20,7 +20,7 @@
   button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--lab-9);outline-offset:2px}
   .lab-shell{height:100%;display:grid;grid-template-columns:410px minmax(0,1fr)}
   .controls{position:relative;z-index:20;min-width:0;overflow:auto;padding:22px 18px 28px;background:color-mix(in srgb,var(--paper) 91%,transparent);border-right:1px solid var(--line)}
-  .controls::after,.preview::after{content:"";position:fixed;inset:0;pointer-events:none;background:url("./assets/textures/oil-relief-swirl-mask.png") 0 0/360px 360px repeat;opacity:.12;mix-blend-mode:multiply;z-index:50}
+  .controls::after,.preview::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:url("./assets/textures/editorial-fiber-grid.svg"),url("./assets/textures/oil-relief-swirl-mask.png");background-position:0 0,19px 11px;background-size:128px 128px,360px 360px;background-repeat:repeat;opacity:.18;mix-blend-mode:multiply;z-index:50}
   .controls::after{position:absolute}
   .eyebrow{margin:0 0 7px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
   h1{margin:0;font:400 26px/1.08 "BioRhyme",Georgia,serif;letter-spacing:-.035em}
@@ -260,11 +260,11 @@
   function displayName(g){return g.name&&g.name.trim()?'#'+g.id+' '+g.name:'#'+g.id}
   function populateSelect(){var list=allGroups(),select=$('paletteSelect');select.textContent='';list.forEach(function(g){var o=document.createElement('option');o.value=g.id;o.textContent=(g.custom?'Custom · ':'')+displayName(g);select.appendChild(o)});if(current)select.value=current.id}
   function populateSegments(){var list=$('segmentOptions'),seen={自定义:true};list.textContent='<option value="自定义">';allGroups().forEach(function(g){var seg=g.seg||'自定义';if(seen[seg])return;seen[seg]=true;var o=document.createElement('option');o.value=seg;list.appendChild(o)})}
-  function slotValues(){return [current.backgrounds.sky,current.backgrounds.haze,current.backgrounds.water].concat(current.rows)}
-  function slotLabels(){return ['天空','雾层','水面','波浪 01','波浪 02','波浪 03','波浪 04','波浪 05','波浪 06','波浪 07','波浪 08','波浪 09','波浪 10']}
+  function slotValues(){return [current.backgrounds.sky,current.backgrounds.water].concat(current.rows)}
+  function slotLabels(){return ['天空','水面','波浪 01','波浪 02','波浪 03','波浪 04','波浪 05','波浪 06','波浪 07','波浪 08','波浪 09','波浪 10']}
   function getSlot(i){return slotValues()[i]}
   function markDirty(){if(!current)return;$('saveStatus').textContent='有未保存修改';clearTimeout(autoSaveTimer);if($('autoSave').checked&&current.id!=='DRAFT')autoSaveTimer=setTimeout(function(){updateCurrent(true)},350)}
-  function setSlot(i,v){v=v.toUpperCase();if(i===0){current.backgrounds.sky=v;current.cloud=v}else if(i===1)current.backgrounds.haze=v;else if(i===2)current.backgrounds.water=v;else current.rows[i-3]=v;markDirty()}
+  function setSlot(i,v){v=v.toUpperCase();if(i===0){current.backgrounds.sky=v;current.cloud=v}else if(i===1)current.backgrounds.water=v;else current.rows[i-2]=v;markDirty()}
   function selectSlot(i){activeSlot=i;document.querySelectorAll('.colour-row').forEach(function(row,n){row.classList.toggle('active',n===i)});$('activeTarget').textContent='当前：'+slotLabels()[i]}
   function renderEditor(){
     var c=slotValues(),labels=slotLabels();$('colourList').textContent='';
@@ -273,7 +273,7 @@
   function applyPreview(){var root=document.documentElement;root.style.setProperty('--lab-sky',current.backgrounds.sky);root.style.setProperty('--lab-haze',current.backgrounds.haze);root.style.setProperty('--lab-water',current.backgrounds.water);current.rows.forEach(function(hex,i){root.style.setProperty('--lab-'+(i+1),hex);document.querySelectorAll('.fill.l'+(i+1)).forEach(function(n){n.style.fill=hex})})}
   function headingName(g){return g.name&&g.name.trim()?g.name:'#'+g.id}
   function setUpdateState(){var draft=current.id==='DRAFT';$('update').disabled=draft;$('update').textContent=draft?'草稿需先指定编号':'保存当前编号';$('restoreOfficial').disabled=draft||current.custom||!official.some(function(g){return g.id===current.id});$('deleteCurrent').disabled=draft;$('deleteCurrent').textContent=current.custom?'删除此自定义编号':'删除当前编号';$('updateHint').textContent=draft?'新建草稿没有固定编号，可另存为新编号。':'保存会按 #'+current.id+' 直接覆盖当前浏览器中的版本；删除后可从下方恢复。'}
-  function loadGroup(g){clearTimeout(autoSaveTimer);current=normalise(g);baseline=clone(current);activeSlot=Math.min(activeSlot,12);$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+(current.seg||'自定义');$('groupName').value=current.name||'';$('groupSegment').value=current.seg||'自定义';$('saveStatus').textContent='已保存';setUpdateState();populateSelect();renderEditor();applyPreview();closeResults()}
+  function loadGroup(g){clearTimeout(autoSaveTimer);current=normalise(g);baseline=clone(current);activeSlot=Math.min(activeSlot,11);$('paletteName').textContent=headingName(current);$('paletteMeta').textContent=(current.custom?'Custom':'#'+current.id)+(current.overridden?' · Local edit':'')+' · '+(current.seg||'自定义');$('groupName').value=current.name||'';$('groupSegment').value=current.seg||'自定义';$('saveStatus').textContent='已保存';setUpdateState();populateSelect();renderEditor();applyPreview();closeResults()}
   function currentIndex(){return allGroups().findIndex(function(g){return g.id===current.id})}
   function step(delta){var list=allGroups(),i=currentIndex();if(i<0)i=delta>0?-1:0;loadGroup(list[(i+delta+list.length)%list.length])}
   function resultColours(g){g=normalise(g);return [g.backgrounds.sky,g.backgrounds.haze,g.backgrounds.water,g.rows[8]]}

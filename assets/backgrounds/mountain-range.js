@@ -19,8 +19,7 @@
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
     + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD)}'
-    + '.mtn-sky::before,.mtn-sky::after{content:"";position:absolute;inset:0;pointer-events:none}'
-    + '.mtn-sky::before{background:var(--bw-palette-haze,#D2CBC0);clip-path:polygon(0 40%,18% 44%,38% 38%,62% 46%,82% 39%,100% 43%,100% 100%,0 100%)}'
+    + '.mtn-sky::after{content:"";position:absolute;inset:0;pointer-events:none}'
     + '.mtn-sky::after{background:var(--bw-palette-water,#B4AA9A);clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%)}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
@@ -242,7 +241,6 @@
     /* Keep the sky distinctly lighter than the water and ridges without
        introducing a bright white field or another visual treatment. */
     var tonedCloud = mutedHex(backgrounds.sky || group.cloud, .82, .14, .76);
-    var tonedHaze = mutedHex(backgrounds.haze || group.rows[1], .72, .18, .56);
     var tonedWater = mutedHex(backgrounds.water || group.rows[4], .64, .22, .42);
     var gemIndex = Array.isArray(group.gems) && group.gems.length
       ? Math.max(0, Math.min(9, group.gems[0] - 1))
@@ -251,7 +249,7 @@
     root.dataset.bwPaletteName = group.name || "";
     root.dataset.bwPaletteSegment = group.seg || "";
     root.style.setProperty("--bw-palette-cloud", tonedCloud);
-    root.style.setProperty("--bw-palette-haze", tonedHaze);
+    root.style.removeProperty("--bw-palette-haze");
     root.style.setProperty("--bw-palette-water", tonedWater);
     tonedRows.forEach(function (hex, index) {
       root.style.setProperty("--bw-palette-" + (index + 1), hex);

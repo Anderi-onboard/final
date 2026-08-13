@@ -665,31 +665,119 @@ html[data-skin="paper"] body[data-page="app"] #howItWorksLink {
   }
 }
 
+/* Textured boundaries -----------------------------------------------------
+   Cards share the page colour. A locally offset fibre screen gives them a
+   physical edge without a permanent outline or another opaque box colour. */
+html[data-skin="paper"] body :is(
+  .ledger, .composer, .method-menu, .acct-menu,
+  .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+  .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
+  .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
+) {
+  position: relative;
+  isolation: isolate;
+}
+html[data-skin="paper"] body .method-menu,
+html[data-skin="paper"] body .acct-menu { position: absolute; }
+html[data-skin="paper"] body :is(
+  .ledger, .composer, .method-menu, .acct-menu,
+  .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+  .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
+  .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
+)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: var(--paper-fiber-image), var(--paper-grain-image);
+  background-position: 7px 5px, 47px 31px;
+  background-size: var(--paper-fiber-size), var(--paper-grain-size);
+  background-repeat: repeat;
+  opacity: .17;
+  mix-blend-mode: multiply;
+}
+html[data-skin="paper"] body :is(
+  .m-card, .tile, .card, .panel, .why-card, .lesson-card, .plan, .topup, .pack, .term, .cost
+):nth-of-type(2n)::after {
+  background-position: 39px 23px, 117px 73px;
+}
+
+/* Hover is a legibility state, not a moving flourish: raise contrast once,
+   keep geometry fixed, and use focus-visible for the keyboard equivalent. */
+@media (hover:hover) and (pointer:fine) {
+  html[data-skin="paper"] body :is(
+    .ledger, .composer, .method-menu, .acct-menu,
+    .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+    .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
+    .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
+  ):hover {
+    background-color: color-mix(in srgb, var(--bw-palette-cloud) 22%, transparent) !important;
+  }
+  html[data-skin="paper"] body :is(
+    .ledger, .composer, .method-menu, .acct-menu,
+    .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
+    .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
+    .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
+  ):hover::after { opacity: .29; }
+}
+
+/* The finished interpretation owns the page. The full casting board remains
+   visible while it is being made, then clears out instead of becoming a large
+   screenshot above a narrow answer column. */
+body[data-page="app"] .thread-inner { max-width: 920px; }
+body[data-page="app"] .reading-body { max-width: 760px; font-size: 16px; line-height: 1.82; }
+body[data-page="app"] .reading-body .rd-para,
+body[data-page="app"] .reading-body .rd-list li { font-size: 16px; }
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none; }
+body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type {
+  position: relative;
+  padding-top: 18px;
+}
+body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type::before {
+  content: "";
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: -14px;
+  height: 28px;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--bw-palette-cloud) 24%, transparent);
+  filter: blur(9px);
+  opacity: .55;
+}
+
+/* Final cascade guard: base content-page styles still declare thin borders.
+   The environment-native treatment is deliberately borderless at rest. */
 html[data-skin="paper"] body:not([data-page="app"]) :is(
   .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
   .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
   .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
-) {
-  background-color: transparent !important;
-  background-image: none !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+) { border: 0 !important; }
+
+@media (max-width:700px) {
+  body[data-page="app"] .reading-body { max-width: 100%; font-size: 15.5px; }
+  body[data-page="app"] .reading-body .rd-para,
+  body[data-page="app"] .reading-body .rd-list li { font-size: 15.5px; }
 }
 
-@media (hover:hover) and (pointer:fine) {
-  html[data-skin="paper"] body[data-page="app"] :is(
-    .ledger, .composer, .stria, .chip,
-    .rd-action, .rd-prompt, .msg-user
-  ):hover,
-  html[data-skin="paper"] body:not([data-page="app"]) :is(
-    .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
-    .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
-    .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
-  ):hover {
-    background-color: var(--ui-environment-hover) !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
-  }
+/* A very small optical hand-off between scrolling content and the fixed input
+   carrier. It softens only the seam, never the reading itself. */
+body[data-page="app"]:not(.is-empty) .composer-zone::before {
+  content: "";
+  position: absolute;
+  left: 56px;
+  right: 56px;
+  top: -13px;
+  height: 26px;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--bw-palette-cloud) 18%, transparent);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-mask-image: linear-gradient(to bottom,transparent,#000 45%,transparent);
+  mask-image: linear-gradient(to bottom,transparent,#000 45%,transparent);
+}
+@media (max-width:880px) {
+  body[data-page="app"]:not(.is-empty) .composer-zone::before { left: 18px; right: 18px; }
 }

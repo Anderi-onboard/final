@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="./tokens/colors.css?v=20260811b">
 <link rel="stylesheet" href="./tokens/typography.css?v=20260810a">
 <link rel="stylesheet" href="./tokens/spacing.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260811h">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260813a">
 <link rel="stylesheet" href="./tokens/motion.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260811g">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260813a">
 <script src="./ds-base.js?v=20260810a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -617,7 +617,7 @@
   body.is-empty .topbar h1,body.is-empty .topbar .units-chip{display:none}
   body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 56px 20px}
   body.is-empty .thread-inner{max-width:680px;margin:0;width:100%;display:flex;flex-direction:column;align-items:center}
-  body.is-empty .composer-zone{flex:none;padding:0 56px 36px;display:flex;flex-direction:column;align-items:center}
+  body.is-empty .composer-zone{position:fixed;left:var(--sbw);right:0;bottom:34px;z-index:3;padding:0 56px 28px;display:flex;flex-direction:column;align-items:center;transition:left .28s cubic-bezier(.4,0,.2,1)}
   body.is-empty .composer{margin:0;max-width:680px;width:100%}
   body.is-empty .disclaimer{display:none}
   .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 18px;font-size:11px;font-weight:600;letter-spacing:.05em;line-height:2;word-spacing:.16em;color:var(--bw-palette-9,var(--ink));font-family:"Spinnaker"}
@@ -652,7 +652,7 @@
        back in normal flow so it simply sits under the input. Must come after
        the .site-foot{position:fixed} rule above to win on source order. */
     body.is-empty .site-foot{position:static;margin-top:12px}
-    body.is-empty .composer-zone{padding-bottom:16px}
+    body.is-empty .composer-zone{left:0;bottom:34px;padding:0 18px 16px}
     /* Inside a conversation the phone bottom was carrying the composer, a
        two-line disclaimer AND a six-link site footer stacked on top of each
        other — they read as one crowded block pressed against the input. The
@@ -844,7 +844,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260811g"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260813a"></script>
 <script src="./casting-figure.js?v=20260810b"></script>
 <script src="./liuyao-engine.js?v=20260810a"></script>
 <script src="./liuyao-ai.js?v=20260810a"></script>
