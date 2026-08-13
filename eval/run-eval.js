@@ -47,7 +47,7 @@ async function runRouter() {
   // in sync by hand; see prompt-inspector.html's ROUTER_SYSTEM_DISPLAY for
   // the same duplication and why it exists.
   const ROUTER_SYSTEM = [
-    "You are a question classifier for a divination system. Given a user's question, output ONLY one of these category labels (nothing else):",
+    "You are a question classifier for an I Ching consultation system. Given a user's question, output ONLY one of these category labels (nothing else):",
     "- relationship (love, marriage, breakup, \"does she like me\", person dynamics, intimacy)",
     "- timing (when, how long, what age, what year, application period)",
     "- wealth (money, career, business, promotion, job)",

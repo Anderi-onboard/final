@@ -189,7 +189,7 @@
     };
   }
 
-  // The user drops THEIR divination prompt into USER_PROMPT below. The protocol
+  // The user drops THEIR reading prompt into USER_PROMPT below. The protocol
   // appends the board + a strict JSON-output contract so parsing never breaks.
   var USER_PROMPT = ""; // ← user's master prompt goes here (or pass opts.systemPrompt)
 

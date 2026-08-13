@@ -343,7 +343,7 @@
       if (heroEmpty) { threadInner.appendChild(heroEmpty); return; }
       threadInner.innerHTML =
         '<div class="empty">' +
-          '<div class="eyebrow"><b>\u25C6</b>&nbsp; The oracle is listening</div>' +
+          '<div class="eyebrow"><b>\u25C6</b>&nbsp; The figure is taking shape</div>' +
           "<h2>What weighs<br>on you?</h2>" +
           '<svg class="flourish" width="186" height="14" viewBox="0 0 186 14" aria-hidden="true">' +
             '<path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 182 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>' +
@@ -387,7 +387,7 @@
     toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600);
   }
 
-  /* ── oracle text ──
+  /* ── reading text ──
      Minimal real reading used only when the routed pipeline module isn't
      loaded. The old canned-quote fallback is gone: a paid cast must produce a
      real reading or fail loudly (send() refunds + explains). Returns null on
@@ -401,7 +401,7 @@
     var deep = m.id === "sortis"
       ? " This is a Sortis 6 deep casting: the figure has moving lines crossing into a second figure, so weigh how the situation is changing, not just where it stands."
       : "";
-    var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
+    var prompt = "You are BourneWise. You read the I Ching plainly and without flattery. Question: \"" + question +
       "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
       deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis." +
       (zh ? " Reply in Chinese." : "") + " Reply with the judgment only.";
@@ -446,7 +446,7 @@
       return Promise.resolve("followup");
     }
     var prompt =
-      "You route messages in a divination chat.\n" +
+      "You route messages in an I Ching consultation.\n" +
       "Earlier casting question: \u00ab" + String(lastQuestion || "").slice(0, 300) + "\u00bb\n" +
       "Reading excerpt: \u00ab" + String(lastReading || "").slice(0, 400) + "\u00bb\n" +
       "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
@@ -763,7 +763,7 @@
         });
       } else {
         answerP = askOracle(text, m).then(function (t) {
-          return t ? { text: t, board: null, reading: null } : { __error: { message: "oracle call failed" } };
+          return t ? { text: t, board: null, reading: null } : { __error: { message: "model call failed" } };
         });
       }
     }
