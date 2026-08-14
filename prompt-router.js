@@ -38,6 +38,22 @@
   // picks the model from that (Sonnet for stria, Opus for sortis, Haiku for
   // router/qc) so model choice lives server-side. An explicit allow-listed
   // model still wins, for back-compat.
+  /* The fields the server needs to BUILD the prompt. It assembles from intent
+     now, so anything not forwarded here is simply missing on the other side —
+     and missing degrades silently (an intent call with no question still gets a
+     well-formed prompt, just an empty one). `system` is deliberately absent:
+     /api/claude rejects a client-supplied one outright. */
+  var INTENT_FIELDS = ["question", "mode", "reading", "methodLabel",
+                       "lastQuestion", "lastReading", "max_tokens"];
+  function carryIntent(payload, input) {
+    if (!input || typeof input !== "object") return payload;
+    for (var i = 0; i < INTENT_FIELDS.length; i++) {
+      var k = INTENT_FIELDS[i];
+      if (input[k] != null) payload[k] = input[k];
+    }
+    return payload;
+  }
+
   function makeComplete(meta) {
     meta = meta || {};
     return function (input) {
@@ -45,8 +61,7 @@
       if (typeof input === "string") {
         payload = { messages: [{ role: "user", content: input }] };
       } else {
-        payload = { system: input.system, messages: input.messages };
-        if (input.max_tokens) payload.max_tokens = input.max_tokens;
+        payload = carryIntent({ messages: input.messages }, input);
       }
       if (meta.role) payload.role = meta.role;
       if (meta.product) payload.product = meta.product;
@@ -123,8 +138,7 @@
   function makeStreamComplete(meta) {
     meta = meta || {};
     return function (input, onDelta) {
-      var payload = { system: input.system, messages: input.messages, stream: true };
-      if (input.max_tokens) payload.max_tokens = input.max_tokens;
+      var payload = carryIntent({ messages: input.messages, stream: true }, input);
       if (meta.role) payload.role = meta.role;
       if (meta.product) payload.product = meta.product;
       if (meta.model) payload.model = meta.model;
