@@ -191,11 +191,17 @@ export async function onRequestPost(context) {
       return json({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }, 200);
     }
     const systemPrompt = built.system;
+    // A role that builds its own user turn replaces the client's placeholder.
+    const turnMessages = built.userOverride
+      ? messages.slice(0, -1).concat([{ role: 'user', content: built.userOverride }])
+      : messages;
 
     const model = resolveModel(body, env);
     const max_tokens = clampTokens(body.max_tokens, env, product);
     // OpenAI-style shape: system goes in the messages array, not a sibling field.
-    const orMessages = systemPrompt ? [{ role: 'system', content: systemPrompt }, ...messages] : messages;
+    const orMessages = systemPrompt
+      ? [{ role: 'system', content: systemPrompt }, ...turnMessages]
+      : turnMessages;
     const payload = { model, max_tokens, messages: orMessages };
     // Extended thinking OFF unless explicitly asked for. Opus 5 turns it on by
     // default, and its thinking is drawn from the SAME max_tokens budget as the
@@ -432,13 +438,20 @@ async function buildSystem({ body, env, product, mode, messages }) {
     return (d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content) || '';
   };
 
+  /* These two build a COMPLETE USER TURN, not a system prompt — that is how the
+     engine has always written them, and how the client used them before the
+     move server-side. Putting the text in the system slot and leaving the
+     client's placeholder ("Route this message.") as the user turn made the
+     model hunt for a message it could not see and answer by asking for the
+     inputs that were, in fact, already in front of it. So: no system prompt,
+     and the built text REPLACES the user turn. */
   if (role === 'intent') {
-    return { system: PromptEngine.INTENT_ROUTER.build(
+    return { userOverride: PromptEngine.INTENT_ROUTER.build(
       str(body.question, 2000), str(body.lastQuestion, 2000), str(body.lastReading, 8000)
     ) };
   }
   if (role === 'followup' || role === 'followup_suggest') {
-    return { system: PromptEngine.FOLLOWUP_SUGGEST.build(
+    return { userOverride: PromptEngine.FOLLOWUP_SUGGEST.build(
       str(body.question, 2000), str(body.reading, 20000), str(body.methodLabel, 40)
     ) };
   }
