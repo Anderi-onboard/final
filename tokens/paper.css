@@ -8,9 +8,6 @@
    slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   --paper-motif-wheel: none;
   --paper-motif-lotus: none;
   --ornament-scroll: none;
@@ -19,8 +16,6 @@
   --ornament-wheel: none;
   --ornament-cloud: none;
   --ornament-beaded: none;
-=======
->>>>>>> Stashed changes
   /* Texture off. Both overlays that carry it — the full-viewport one below and
      the per-card one in refinement.css — read these two tokens and nothing
      else, so switching them to `none` removes the texture everywhere from one
@@ -30,7 +25,6 @@
   --paper-grain-size: 360px 360px;
   --paper-fiber-image: none;
   --paper-fiber-size: 128px 128px;
->>>>>>> 8e806b556d197ed6a078ee16115bccdf25e96e0c
   /* verified editorial palette, adapted into interface roles */
   --paper: #E7E1D7;         /* full canvas / muted warm paper */
   --paper-raised: #DED8CD;  /* irregular carrier surfaces */

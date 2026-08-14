@@ -17,9 +17,11 @@
  */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '');
-const read = (f) => readFileSync(`${ROOT}/${f}`, 'utf8');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const read = (f) => readFileSync(resolve(ROOT, f), 'utf8');
 
 const claude = read('functions/api/claude.js');
 const router = read('prompt-router.js');
@@ -110,6 +112,24 @@ for (const role of apiRoles) {
     `chat-app.js asks for role "${role}", which functions/api/claude.js does not handle`
   );
 }
+
+/* Roles whose prompt is a complete USER TURN, not a system prompt. The engine
+   writes INTENT_ROUTER.build() and FOLLOWUP_SUGGEST.build() as the whole message
+   a model should answer; serving them as a system prompt while the client's
+   placeholder stayed in the user slot made the model look for a message that
+   was not there and ask for inputs it had already been given. */
+for (const role of ['intent', 'followup']) {
+  const branch = buildSystemSrc.slice(buildSystemSrc.indexOf(`role === '${role}'`));
+  const head = branch.slice(0, 400);
+  assert.ok(
+    /userOverride/.test(head),
+    `buildSystem() serves role "${role}" as a system prompt — its build() writes a user turn`
+  );
+}
+assert.ok(
+  /messages\.slice\(0, -1\)\.concat/.test(claude),
+  'the built user turn never replaces the client placeholder'
+);
 
 console.log(`request contract OK — ${mustForward.length} assembly inputs `
   + `(${mustForward.join(', ')}) forwarded by both builders; `

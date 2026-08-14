@@ -1319,7 +1319,7 @@
       if (status === 401) msg = C.errors.sessionExpired;
       else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
       else if (err.__timeout) msg = C.errors.timedOut;
-      else msg = "The reading didn\u2019t make it through — your units are back where they were. Try again in a moment.";
+      else msg = "The reading didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
@@ -1389,7 +1389,7 @@
       if (status === 401) msg = C.errors.sessionExpired;
       else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
       else if (err.__timeout) msg = C.errors.answerTimedOut;
-      else msg = "The answer didn\u2019t make it through — your units are back where they were. Try again in a moment.";
+      else msg = "The answer didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
       tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
