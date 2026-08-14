@@ -11,14 +11,14 @@
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
-  --paper-motif-wheel: url("../assets/editorial/baoxianghua/generated/04-scroll-rosette.png?v=20260813c");
-  --paper-motif-lotus: url("../assets/editorial/baoxianghua/generated/08-cloud-medallion.png?v=20260813c");
-  --ornament-scroll: url("../assets/editorial/baoxianghua/generated/04-scroll-rosette.png?v=20260813b");
-  --ornament-layered: url("../assets/editorial/baoxianghua/generated/05-layered-rosette.png?v=20260813b");
-  --ornament-simple: url("../assets/editorial/baoxianghua/generated/06-simple-rosette.png?v=20260813b");
-  --ornament-wheel: url("../assets/editorial/baoxianghua/generated/07-petal-wheel.png?v=20260813b");
-  --ornament-cloud: url("../assets/editorial/baoxianghua/generated/08-cloud-medallion.png?v=20260813b");
-  --ornament-beaded: url("../assets/editorial/baoxianghua/generated/09-beaded-medallion.png?v=20260813b");
+  --paper-motif-wheel: none;
+  --paper-motif-lotus: none;
+  --ornament-scroll: none;
+  --ornament-layered: none;
+  --ornament-simple: none;
+  --ornament-wheel: none;
+  --ornament-cloud: none;
+  --ornament-beaded: none;
 =======
 >>>>>>> Stashed changes
   /* Texture off. Both overlays that carry it — the full-viewport one below and
