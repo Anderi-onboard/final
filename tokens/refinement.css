@@ -725,17 +725,22 @@ html[data-skin="paper"] body :is(
   z-index: -1;
   pointer-events: none;
   border-radius: inherit;
-  background-image: var(--paper-fiber-image), var(--paper-grain-image);
-  background-position: 7px 5px, 47px 31px;
-  background-size: var(--paper-fiber-size), var(--paper-grain-size);
-  background-repeat: repeat;
-  opacity: .17;
-  mix-blend-mode: multiply;
+  background-color: color-mix(in srgb, var(--cp-ink) 68%, transparent);
+  -webkit-mask-image: var(--paper-motif-wheel), var(--paper-motif-lotus);
+  mask-image: var(--paper-motif-wheel), var(--paper-motif-lotus);
+  -webkit-mask-position: 7px 5px, 111px 73px;
+  mask-position: 7px 5px, 111px 73px;
+  -webkit-mask-size: 190px 190px, 248px 248px;
+  mask-size: 190px 190px, 248px 248px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  opacity: .03;
 }
 html[data-skin="paper"] body :is(
   .m-card, .tile, .card, .panel, .why-card, .lesson-card, .plan, .topup, .pack, .term, .cost
 ):nth-of-type(2n)::after {
-  background-position: 39px 23px, 117px 73px;
+  -webkit-mask-position: 49px 31px, 173px 109px;
+  mask-position: 49px 31px, 173px 109px;
 }
 
 /* Hover is a legibility state, not a moving flourish: raise contrast once,

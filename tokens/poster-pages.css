@@ -4,6 +4,48 @@
 }
 :is(body[data-page="about"],body[data-page="guide"],body[data-page="legal"]) .mtn-bg,
 :is(body[data-page="about"],body[data-page="guide"],body[data-page="legal"]) .mtn-sky{display:none!important}
+body[data-page="about"] .poster-specimen,
+body[data-page="guide"] .guide-specimen{display:none!important}
+
+/* Pure Baoxianghua medallions are the visual material outside the copy.
+   Every composition reuses complete, front-facing emblems; nothing grows a
+   stem or becomes a botanical illustration. Palette colour is applied by
+   masking the transparent generated linework. */
+:is(body[data-page="about"],body[data-page="guide"],body[data-page="legal"],body[data-page="pricing"]) :is(.why-hero,.why-panel,.editorial-spread,.guide-stage,.legal-poster-intro,.clause,.hero,.plans,.rates,.packs){position:relative;isolation:isolate;overflow:hidden}
+:is(body[data-page="about"],body[data-page="guide"],body[data-page="legal"],body[data-page="pricing"]) :is(.why-hero,.why-panel,.editorial-spread,.guide-stage,.legal-poster-intro,.clause,.hero,.plans,.rates,.packs)::before{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  width:clamp(250px,34vw,540px);aspect-ratio:1;
+  background-color:currentColor;
+  -webkit-mask:var(--ornament-scroll) center/contain no-repeat;
+  mask:var(--ornament-scroll) center/contain no-repeat;
+  opacity:.045;
+}
+body[data-page="about"] .why-hero::before{right:-8%;bottom:-14%;width:clamp(360px,48vw,720px);--ornament:var(--ornament-scroll)}
+body[data-page="about"] .editorial-spread::after,
+body[data-page="about"] .why-panel::after,
+body[data-page="legal"] .clause::after,
+body[data-page="pricing"] :is(.plans,.packs)::after{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  width:clamp(130px,17vw,260px);aspect-ratio:1;background-color:currentColor;
+  -webkit-mask:var(--ornament-simple) center/contain no-repeat;
+  mask:var(--ornament-simple) center/contain no-repeat;opacity:.052;
+}
+body[data-page="about"] .editorial-spread::before{right:-7%;top:7%;-webkit-mask-image:var(--ornament-layered);mask-image:var(--ornament-layered)}
+body[data-page="about"] .editorial-spread::after{left:7%;bottom:6%;opacity:.04}
+body[data-page="about"] .why-panel::before{left:-9%;top:-15%;-webkit-mask-image:var(--ornament-beaded);mask-image:var(--ornament-beaded)}
+body[data-page="about"] .why-panel::after{right:5%;bottom:4%;opacity:.04}
+body[data-page="guide"] .guide-stage::before{right:-9%;top:6%;width:clamp(330px,43vw,660px);-webkit-mask-image:var(--ornament-cloud);mask-image:var(--ornament-cloud);opacity:.085}
+body[data-page="legal"] .legal-poster-intro::before{right:-8%;top:-12%;width:clamp(380px,52vw,780px);-webkit-mask-image:var(--ornament-beaded);mask-image:var(--ornament-beaded);opacity:.07}
+body[data-page="legal"] .clause::before{left:-10%;bottom:-20%;-webkit-mask-image:var(--ornament-scroll);mask-image:var(--ornament-scroll)}
+body[data-page="legal"] .clause::after{right:6%;top:7%}
+body[data-page="legal"] .clause:nth-of-type(even)::before{left:auto;right:-10%;top:-18%;bottom:auto;-webkit-mask-image:var(--ornament-cloud);mask-image:var(--ornament-cloud)}
+body[data-page="pricing"] .hero::before{right:-7%;bottom:-26%;width:clamp(330px,44vw,650px);-webkit-mask-image:var(--ornament-cloud);mask-image:var(--ornament-cloud);opacity:.07}
+body[data-page="pricing"] .plans::before{left:-7%;top:-18%;-webkit-mask-image:var(--ornament-wheel);mask-image:var(--ornament-wheel)}
+body[data-page="pricing"] .plans::after{right:3%;bottom:-14%}
+body[data-page="pricing"] .rates::before{right:-6%;bottom:-18%;-webkit-mask-image:var(--ornament-beaded);mask-image:var(--ornament-beaded)}
+body[data-page="pricing"] .packs::before{left:-8%;bottom:-16%;-webkit-mask-image:var(--ornament-cloud);mask-image:var(--ornament-cloud)}
+body[data-page="pricing"] .packs::after{right:4%;top:-10%}
+:is(body[data-page="about"],body[data-page="guide"],body[data-page="legal"],body[data-page="pricing"]) :is(.why-hero,.why-panel,.editorial-spread,.guide-stage,.legal-poster-intro,.clause,.hero,.plans,.rates,.packs)>*{position:relative;z-index:1}
 
 /* Shared masthead: a line of type, never a floating capsule. */
 body[data-page="about"] .pagehead,
@@ -140,6 +182,10 @@ body[data-page="legal"] .legal-foot a,body[data-page="legal"] .legal-foot .est{c
 .has-poster-observer .poster-section.poster-visible{opacity:1;transform:none}
 
 @media(max-width:760px){
+  :is(body[data-page="about"],body[data-page="guide"],body[data-page="legal"],body[data-page="pricing"]) :is(.why-hero,.why-panel,.editorial-spread,.guide-stage,.legal-poster-intro,.clause,.hero,.plans,.rates,.packs)::before{opacity:.055;width:min(76vw,430px)}
+  body[data-page="about"] :is(.editorial-spread,.why-panel)::after,
+  body[data-page="legal"] .clause::after,
+  body[data-page="pricing"] :is(.plans,.packs)::after{opacity:.04}
   body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close){min-height:auto;padding:74px 22px!important;grid-template-columns:1fr}
   body[data-page="about"] .why-hero{min-height:calc(100svh - 62px)!important;grid-template-rows:minmax(22vh,1fr) auto auto;gap:22px}
   body[data-page="about"] .why-hero-title{grid-column:1;grid-row:2}
