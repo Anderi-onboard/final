@@ -1,4 +1,32 @@
-/* prompt-engine.js — Modular prompt architecture for Sortis6 & Stria64
+/* functions/_lib/prompt-engine.js — the reading engine, SERVER SIDE ONLY.
+   ─────────────────────────────────────────────────────────────────────
+   ⚠️  THIS FILE MUST NEVER BE SERVED TO A BROWSER.
+
+   It used to sit at the web root and load via <script src>, which meant two
+   things at once:
+
+     · the entire instruction stack — the product's core trade secret — was
+       readable by anyone at /prompt-engine.js, and
+     · the browser assembled the system prompt and POSTed it up for the API to
+       forward verbatim, so anyone with a free account could send their OWN
+       system prompt and have the server run it on the owner's OpenRouter key,
+       with iron_laws, the priority ladder, crisis handling and the minor
+       protections all stripped out.
+
+   Now the browser declares INTENT only (product, mode, the question text) and
+   this module assembles the prompt inside the Function, where the key already
+   lives. /api/claude ignores any client-supplied `system` field outright.
+
+   Underscore-prefixed dir → Pages does not route it, so it is unreachable over
+   HTTP. Keep it that way: never import this from a file under the web root, and
+   never re-add a <script> tag for it. tests/prompt-secrecy.mjs enforces both.
+
+   The non-secret validators (checkBoardFacts / checkReadability / boardCarries)
+   are pure code with no prompt text in them and still run in the browser — they
+   live in prompt-checks.js.
+
+   ── original architecture note ──────────────────────────────────────────
+   Modular prompt architecture for Sortis6 & Stria64
    ─────────────────────────────────────────────────────────────────────
    Problem: A 938-line monolithic system prompt causes rule amnesia.
    Solution: Split into focused segments, route by question type,
@@ -23,8 +51,6 @@
    - Each segment is static → Anthropic prompt caching applies
    - Segments are concatenated in stable order → cache hits
 */
-(function () {
-  "use strict";
 
   // ═══════════════════════════════════════════════════════════════════
   // SEGMENT REGISTRY — each segment is a focused rule block
@@ -1703,7 +1729,7 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     }
   };
 
-  window.BWPromptEngine = {
+export const PromptEngine = {
     // Core functions
     gate: gate,
     routeQuestion: routeQuestion,
@@ -1718,6 +1744,10 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
     ROUTES: ROUTES,
     INTENT_ROUTER: INTENT_ROUTER,
     FOLLOWUP_SUGGEST: FOLLOWUP_SUGGEST,
+    // The two standalone sub-prompts. /api/claude serves these for the `qc`
+    // and `router` roles so the client never holds a copy.
+    QC_SYSTEM: QC_SYSTEM,
+    ROUTER_SYSTEM: ROUTER_SYSTEM,
 
     // Convenience: full pipeline
     buildSystemPrompt: function (question, product, claudeComplete, options) {
@@ -1780,4 +1810,3 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
       return Math.ceil(prompt.length / 3.5);
     }
   };
-})();

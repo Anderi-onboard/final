@@ -2,7 +2,9 @@
 // site-copy deck deliberately leaves out.
 import { writeFileSync } from 'node:fs';
 global.window = global;
-await import('/home/user/final/prompt-engine.js');
+const { PromptEngine } = await import('/home/user/final/functions/_lib/prompt-engine.js');
+globalThis.window = globalThis.window || {};
+window.BWPromptEngine = PromptEngine;
 const PE = global.window.BWPromptEngine;
 
 const SEG_NOTES = {
@@ -31,7 +33,7 @@ let md = `# BourneWise — prompt deck (model-facing text)
 Every word the MODEL reads. The companion to \`copywriting/BOURNEWISE_ALL_SITE_COPY.md\`,
 which covers every word a READER sees and deliberately excludes what is here.
 
-Source of truth: \`prompt-engine.js\`. Editing this file does nothing on its own —
+Source of truth: \`functions/_lib/prompt-engine.js\`. Editing this file does nothing on its own —
 it is for reading, reviewing and drafting. Changes are applied by editing the
 matching \`SEGMENTS.<key>\` / \`ROUTES.<key>\` in that file.
 

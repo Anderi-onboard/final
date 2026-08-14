@@ -5,3 +5,16 @@
 # Serve a 404 for them instead of handing the file to visitors.
 /PROGRESS.md   /404.html   404
 /CLAUDE.md     /404.html   404
+
+# The instruction stack is the product. Generated decks under copywriting/ are
+# verbatim copies of it and are gitignored, but this directory is inside the
+# served tree — so anything that lands here by accident (a stray regeneration
+# before a deploy) would be public. Serve a 404 for the whole directory.
+/copywriting/*   /404.html   404
+
+# Development directories. None of these are part of the site, and eval/ in
+# particular drives the prompt engine — a harness is a map of what it tests.
+/eval/*          /404.html   404
+/tests/*         /404.html   404
+/scripts/*       /404.html   404
+/artifacts/*     /404.html   404

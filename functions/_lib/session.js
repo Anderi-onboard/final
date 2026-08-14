@@ -21,15 +21,33 @@ function b64urlDecode(str) {
 const enc = new TextEncoder();
 const dec = new TextDecoder();
 
+// There is no default secret, deliberately. This used to fall back to the
+// literal string 'bournewise-dev-secret' when SESSION_SECRET was unset, which
+// meant a single missing environment variable silently turned every session
+// into a forgeable one: anyone could mint a cookie for any uid — someone else's
+// account, or a fresh one — and spend from it. A misconfigured deploy must fail
+// loudly instead, so callers get a 503 and nobody gets a session at all.
 async function hmacKey(secret) {
+  if (!secret || String(secret).length < 16) {
+    throw new Error('SESSION_SECRET is missing or too short — refusing to sign or verify sessions');
+  }
   return crypto.subtle.importKey(
-    'raw', enc.encode(secret || 'bournewise-dev-secret'),
+    'raw', enc.encode(secret),
     { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']
   );
 }
 
+export function sessionSecretConfigured(env) {
+  return !!(env && env.SESSION_SECRET && String(env.SESSION_SECRET).length >= 16);
+}
+
 export async function signSession(payload, secret) {
-  const body = b64urlEncode(enc.encode(JSON.stringify(payload)));
+  // exp is what makes the cookie's Max-Age mean anything. Max-Age is a hint to
+  // a browser we do not control; a stolen token is replayed with curl, which
+  // ignores it entirely. Without a signed expiry a leaked session was valid
+  // forever and could not be revoked.
+  const withExp = { ...payload, exp: Date.now() + MAX_AGE * 1000 };
+  const body = b64urlEncode(enc.encode(JSON.stringify(withExp)));
   const key = await hmacKey(secret);
   const sig = await crypto.subtle.sign('HMAC', key, enc.encode(body));
   return body + '.' + b64urlEncode(sig);
@@ -42,7 +60,14 @@ export async function verifySession(token, secret) {
     const key = await hmacKey(secret);
     const ok = await crypto.subtle.verify('HMAC', key, b64urlDecode(sig), enc.encode(body));
     if (!ok) return null;
-    return JSON.parse(dec.decode(b64urlDecode(body)));
+    const payload = JSON.parse(dec.decode(b64urlDecode(body)));
+    // Tokens minted before exp existed carry none; treat their iat as the
+    // start of the same window so old sessions age out instead of being
+    // grandfathered in forever.
+    const expiry = Number(payload && payload.exp)
+      || (Number(payload && payload.iat) ? Number(payload.iat) + MAX_AGE * 1000 : 0);
+    if (!expiry || Date.now() > expiry) return null;
+    return payload;
   } catch (e) {
     return null;
   }

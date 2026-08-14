@@ -63,6 +63,8 @@ function json(obj) {
     headers: {
       'content-type': 'application/json',
       'cache-control': 'public, max-age=300',
+      // Intentionally open: this is the public price list — no credentials, no
+      // user data, nothing to authorise. The other API routes are same-origin.
       'access-control-allow-origin': '*'
     }
   });

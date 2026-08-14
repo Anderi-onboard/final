@@ -502,8 +502,8 @@
      the thread — repainting the whole conversation is what used to snap the
      viewport back after a send, and the reader is mid-reading here. */
   function suggestFollowUps(node, msg, conv) {
-    var PE = window.BWPromptEngine;
-    var R = PE && PE.FOLLOWUP_SUGGEST;
+    var PC = window.BWPromptChecks;
+    var R = PC && PC.FOLLOWUP_SUGGEST;
     var text = msg && (msg.text || (msg.reading && msg.reading.reading));
     if (!R || !text || !(window.claude && typeof window.claude.complete === "function")) return;
     if (msg.prompts) return;
@@ -516,9 +516,12 @@
     }
     var methodLabel = (msg.methodId === "sortis" || msg.method === "Sortis 6") ? "Sortis 6" : "Stria 64";
     var guard = new Promise(function (res) { setTimeout(function () { res(null); }, R.timeoutMs); });
+    /* The prompt that asks for these is a trade secret, so it is built inside
+       the Function: we send the material and the server supplies the wording. */
     var run = window.claude.complete({
-      role: "utility", model: R.model, max_tokens: R.maxTokens,
-      messages: [{ role: "user", content: R.build(asked, text, methodLabel) }]
+      role: "followup", max_tokens: R.maxTokens,
+      question: asked, reading: text, methodLabel: methodLabel,
+      messages: [{ role: "user", content: "Write the follow-up questions for this reading." }]
     }).then(function (r) { return R.read(r); }).catch(function () { return null; });
 
     Promise.race([run, guard]).then(function (made) {
@@ -773,8 +776,8 @@
      history preserved). Unbilled utility call; 4s timeout or any failure
      defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
   function detectIntent(question, lastQuestion, lastReading, lastBoard) {
-    var PE = window.BWPromptEngine;
-    var R = PE && PE.INTENT_ROUTER;
+    var PC = window.BWPromptChecks;
+    var R = PC && PC.INTENT_ROUTER;
     // No engine, or no proxy to ask — treat it as a follow-up, the cheaper and
     // least surprising outcome.
     if (!R || !(window.claude && typeof window.claude.complete === "function")) {
@@ -784,16 +787,17 @@
       setTimeout(function () { res(R.fallback); }, R.timeoutMs);
     });
     var run = window.claude.complete({
-      role: "utility", model: R.model, max_tokens: R.maxTokens,
-      messages: [{ role: "user", content: R.build(question, lastQuestion, lastReading) }]
+      role: "intent", max_tokens: R.maxTokens,
+      question: question, lastQuestion: lastQuestion, lastReading: lastReading,
+      messages: [{ role: "user", content: "Route this message." }]
     }).then(function (r) {
       var parsed = R.read(r);
       // Same matter is only half the test. A message can be plainly the same
       // matter and still rest its whole weight on a line the previous board
       // barely shows — reusing that casting answers confidently off evidence
       // that isn't there. boardCarries() settles it from computed data.
-      if (R.decide && PE.boardCarries && lastBoard) {
-        return R.decide(parsed, lastBoard, PE.boardCarries).intent;
+      if (R.decide && PC.boardCarries && lastBoard) {
+        return R.decide(parsed, lastBoard, PC.boardCarries).intent;
       }
       return parsed && parsed.intent ? parsed.intent : R.fallback;
     }).catch(function () { return R.fallback; });

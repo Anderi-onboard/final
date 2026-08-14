@@ -2,7 +2,7 @@
 /**
  * Dump the assembled system prompt for reading.
  *
- *   node scripts/dump-prompt.js
+ *   node scripts/dump-prompt.mjs
  *     → artifacts/full-prompt.txt   (greppable / diffable)
  *     → artifacts/full-prompt.html  (navigable, self-contained)
  *
@@ -16,21 +16,19 @@
  * faces are Latin-only (see tokens/fonts.css unicode-range) — the Chinese in
  * the prompt renders in a system CJK face here exactly as it does in the app.
  */
-'use strict';
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { PromptEngine } from '../functions/_lib/prompt-engine.js';
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'artifacts');
 const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 
-// prompt-engine.js is a browser IIFE that assigns window.BWPromptEngine.
-global.window = {};
-new Function(read('prompt-engine.js'))();
-const ENGINE = global.window.BWPromptEngine;
+const ENGINE = PromptEngine;
 
 const SEGMENTS = Object.fromEntries(
-  [...read('prompt-engine.js').matchAll(/SEGMENTS\.([a-z_0-9]+)\s*=\s*`([\s\S]*?)`;/g)]
+  [...read('functions/_lib/prompt-engine.js').matchAll(/SEGMENTS\.([a-z_0-9]+)\s*=\s*`([\s\S]*?)`;/g)]
     .map(m => [m[1], m[2]])
 );
 

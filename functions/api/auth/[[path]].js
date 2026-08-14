@@ -13,15 +13,65 @@
 // (except Apple, which additionally needs a signed client-secret JWT — see note).
 // New accounts get the free welcome grant (db.PLAN_GRANT.free = 500 units).
 
-import { signSession, sessionCookie, clearCookie } from '../../_lib/session.js';
-import { ensureUser, getUserByEmail, createEmailUser, publicUser } from '../../_lib/db.js';
+import {
+  signSession, sessionCookie, clearCookie, sessionSecretConfigured, readCookie
+} from '../../_lib/session.js';
+import { ensureUser, getUserByEmail, createEmailUser, publicUser, bumpRateLimit } from '../../_lib/db.js';
 import { hashPassword, verifyPassword } from '../../_lib/password.js';
 
-const CORS = {
-  'access-control-allow-origin': '*',
-  'access-control-allow-methods': 'GET, POST, OPTIONS',
-  'access-control-allow-headers': 'content-type'
-};
+const ALLOWED_ORIGINS = [
+  'https://bournewise.com',
+  'https://www.bournewise.com',
+  'http://localhost:8788',
+  'http://127.0.0.1:8788'
+];
+function corsFor(request) {
+  const origin = request && request.headers.get('origin');
+  const ok = origin && (ALLOWED_ORIGINS.includes(origin) || /^https:\/\/[a-z0-9-]+\.bournewise\.pages\.dev$/.test(origin));
+  return {
+    'access-control-allow-origin': ok ? origin : ALLOWED_ORIGINS[0],
+    'access-control-allow-methods': 'GET, POST, OPTIONS',
+    'access-control-allow-headers': 'content-type',
+    'access-control-allow-credentials': 'true',
+    vary: 'origin'
+  };
+}
+let CORS = corsFor(null);
+
+// OAuth CSRF: the `state` parameter used to be the literal provider name, which
+// is a constant an attacker knows in advance. That made the callback accept any
+// code anyone cared to send it — the login-CSRF shape, where a victim ends up
+// silently signed into the ATTACKER'S account and everything they then cast is
+// written to it. State is now a random nonce stored in a short-lived cookie and
+// required to match on the way back.
+const STATE_COOKIE = 'bw_oauth_state';
+function newState() {
+  const b = crypto.getRandomValues(new Uint8Array(24));
+  return btoa(String.fromCharCode(...b)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+function stateCookie(provider, nonce) {
+  return STATE_COOKIE + '=' + encodeURIComponent(provider + ':' + nonce) +
+    '; Path=/api/auth; HttpOnly; Secure; SameSite=Lax; Max-Age=600';
+}
+function clearStateCookie() {
+  return STATE_COOKIE + '=; Path=/api/auth; HttpOnly; Secure; SameSite=Lax; Max-Age=0';
+}
+
+function clientIp(request) {
+  return request.headers.get('cf-connecting-ip') ||
+    (request.headers.get('x-forwarded-for') || '').split(',')[0].trim() || 'unknown';
+}
+
+// Credential endpoints had no rate limit at all: password guessing was unlimited,
+// and registration was unlimited too — which mattered most, because every new
+// account carries a 1,500-unit welcome grant, so a script could mint free model
+// budget indefinitely.
+async function limited(db, request, bucket, max) {
+  if (!db) return false;
+  const key = 'ip:' + clientIp(request) + ':' + bucket + ':' + Math.floor(Date.now() / 3600000);
+  const rl = await bumpRateLimit(db, key, max);
+  return !rl.ok;
+}
 
 // Standard OAuth2 providers. Each needs {KEY}_CLIENT_ID + {KEY}_CLIENT_SECRET.
 // `apple` is intentionally absent from the auto-generic flow: its client secret
@@ -75,11 +125,19 @@ const SOCIAL_LABELS = { google: 'Google', reddit: 'Reddit', discord: 'Discord' }
 
 export async function onRequest(context) {
   const { request, env, params } = context;
+  CORS = corsFor(request);
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
 
   const segs = Array.isArray(params.path) ? params.path : (params.path ? [params.path] : []);
   const route = segs.join('/');
   const db = env.DB;
+
+  // Anything that mints a session needs a real signing secret. Fail closed and
+  // say so, rather than handing out cookies signed with a guessable default.
+  const mintsSession = route === 'register' || route === 'login' || segs[0] === 'oauth';
+  if (mintsSession && !sessionSecretConfigured(env)) {
+    return json({ error: 'sessions are not configured on this deployment' }, 503);
+  }
 
   if (route === 'signout' && request.method === 'POST') {
     return json({ ok: true }, 200, { 'set-cookie': clearCookie() });
@@ -98,6 +156,9 @@ export async function onRequest(context) {
 
   // ── email + password ──
   if (route === 'register' && request.method === 'POST') {
+    if (await limited(db, request, 'register', 10)) {
+      return json({ error: 'too many sign-ups from this address — try again later' }, 429);
+    }
     const b = await body(request);
     const email = String(b.email || '').toLowerCase().trim();
     const password = String(b.password || '');
@@ -112,6 +173,9 @@ export async function onRequest(context) {
   }
 
   if (route === 'login' && request.method === 'POST') {
+    if (await limited(db, request, 'login', 30)) {
+      return json({ error: 'too many sign-in attempts — try again later' }, 429);
+    }
     const b = await body(request);
     const email = String(b.email || '').toLowerCase().trim();
     const password = String(b.password || '');
@@ -134,11 +198,15 @@ export async function onRequest(context) {
     const cid = env[key.toUpperCase() + '_CLIENT_ID'];
     if (!cid) return json({ error: key + ' sign-in not configured' }, 501);
     const redirect = originOf(request) + '/api/auth/oauth/' + key + '/callback';
+    const nonce = newState();
     const url = cfg.authorize + '?' + new URLSearchParams({
       client_id: cid, redirect_uri: redirect, response_type: 'code', scope: cfg.scope,
-      state: key, access_type: 'online', prompt: 'select_account'
+      state: key + ':' + nonce, access_type: 'online', prompt: 'select_account'
     });
-    return Response.redirect(url, 302);
+    return new Response(null, {
+      status: 302,
+      headers: { location: url, 'set-cookie': stateCookie(key, nonce), ...CORS }
+    });
   }
 
   // ── OAuth callback:  /oauth/:provider/callback ──
@@ -149,8 +217,21 @@ export async function onRequest(context) {
     const cid = env[key.toUpperCase() + '_CLIENT_ID'];
     const secret = env[key.toUpperCase() + '_CLIENT_SECRET'];
     if (!cid || !secret) return json({ error: key + ' sign-in not configured' }, 501);
-    const code = new URL(request.url).searchParams.get('code');
+    const qs = new URL(request.url).searchParams;
+    const code = qs.get('code');
     if (!code) return json({ error: 'no code' }, 400);
+
+    // The nonce we planted before the redirect has to come back, in the state
+    // parameter AND in the cookie, and match. Without this the callback accepts
+    // any code from anyone (see the note on STATE_COOKIE above).
+    const expected = readCookie(request, STATE_COOKIE) || '';
+    const got = qs.get('state') || '';
+    const nonce = expected.startsWith(key + ':') ? expected.slice(key.length + 1) : '';
+    if (!nonce || got !== key + ':' + nonce) {
+      return json({ error: 'sign-in link expired or came from somewhere else — start again' }, 400, {
+        'set-cookie': clearStateCookie()
+      });
+    }
     const redirect = originOf(request) + '/api/auth/oauth/' + key + '/callback';
 
     // exchange code → access token
@@ -182,10 +263,11 @@ export async function onRequest(context) {
 
     const u = await ensureUser(db, { email, name: cfg.name(prof) || email.split('@')[0], provider: key });
     const session = await signSession({ uid: u.id, email: u.email, iat: Date.now() }, env.SESSION_SECRET);
-    return new Response(null, {
-      status: 302,
-      headers: { location: originOf(request) + '/index.html', 'set-cookie': sessionCookie(session) }
-    });
+    // Two Set-Cookie headers: install the session, retire the one-shot state.
+    const headers = new Headers({ location: originOf(request) + '/index.html' });
+    headers.append('set-cookie', sessionCookie(session));
+    headers.append('set-cookie', clearStateCookie());
+    return new Response(null, { status: 302, headers });
   }
 
   return json({ error: 'not found', route }, 404);

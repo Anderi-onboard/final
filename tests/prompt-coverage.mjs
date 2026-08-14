@@ -23,7 +23,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-const src = readFileSync(new URL('../prompt-engine.js', import.meta.url), 'utf8');
+const src = readFileSync(new URL('../functions/_lib/prompt-engine.js', import.meta.url), 'utf8');
 
 const SEGMENTS = Object.fromEntries(
   [...src.matchAll(/SEGMENTS\.([a-z_0-9]+)\s*=\s*`([\s\S]*?)`;/g)].map(m => [m[1], m[2]])
