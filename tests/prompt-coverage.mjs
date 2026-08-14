@@ -137,8 +137,101 @@ const DEDUPLICATED = [
   ['voice → clarity_rules: the list contains the hardest name', 'THE LIST MUST CONTAIN THE ONE YOU LEAST WANT TO SAY'],
 ];
 
+/**
+ * Rules from the other 33 segments. The voice rebuild left these untouched, but
+ * they were never protected either — and an audit of them turned up rules that
+ * had drifted into contradicting each other. Anything reconciled below is
+ * pinned here so it cannot silently drift back.
+ */
+const REST_OF_STACK = [
+  // method — sortis
+  ['用神 fixed first, per question type', 'Step 1 · FIX YONGSHEN'],
+  ['strength read off month AND day', 'Day branch is decisive'],
+  ['暗动: a day-clashed static line still acts', 'never read a day-clashed static line as dormant'],
+  ['独发 / 独静 change how the board is read', 'concentrates the whole reading on that line'],
+  ['four spirits sorted around the 用神', 'Chou-spirit (feeds ji-spirit)'],
+  ['transform relationships', 'ji→yuan (threat weakens'],
+  ['世应: who reaches, who yields', 'World=self, Response=other'],
+  ['six spirits qualify, never determine', "qualify, don't determine fortune"],
+  ['伏神 must be ruled on, not just named', 'Never just name it: rule on whether it surfaces'],
+  ['三合局 acts as one bloc; 半合 is an 应期', 'A half-frame (半合'],
+  ['应期 read off the board, never "soon"', 'always tell the user WHEN'],
+  ['贪生忘克 and 随鬼入墓', '贪生忘克'],
+  ['卦身 is a pointer, never the verdict', 'a POINTER, not a proposition'],
+  ['卦身不上卦 means nothing — 33 of 64', '卦身 is absent in 33 of the 64'],
+  // method — stria
+  ['stria runs the five-element frame', 'CORE METHOD: I Ching Five-Element'],
+  // structure
+  ['verdict restates the question in its own terms', 'restate the question IN ITS OWN TERMS'],
+  ['verdict polarity procedure', 'VERDICT POLARITY'],
+  ['不成 and a success date may never coexist', 'may NEVER coexist in one reading'],
+  ['deadline questions get a verdict ON the window', 'DEADLINE-BOUNDED VERDICT'],
+  ['positives must take a position vs the verdict', 'POSITIVES TAKE A POSITION'],
+  ['anti-seesaw: weigh mixed signals once', 'NET-VERDICT COHERENCE'],
+  ['用神 named before anything is decided', 'NAME THE YONGSHEN BEFORE YOU DECIDE'],
+  ['the 用神 table', '婚恋对象、配偶 → 妻财'],
+  ['what genuinely has no 用神', '象没有这种分辨率'],
+  ['用神持世 on a relation question needs a recast', 'it takes two lines to have a relation'],
+  ['weak 用神 is readable-and-soft, not unreadable', 'READABLE AND\nSOFT'],
+  ['never use "unreadable" to decline', 'Discomfort is not unreadability'],
+  ['never read what has no 用神', 'NEVER READ WHAT HAS NO 用神'],
+  // output
+  ['answer what was asked, not something adjacent', 'Answering something ADJACENT'],
+  ['headings must earn their place', 'If a heading could sit above any other reading'],
+  ['no seams — nothing parked in labelled boxes', 'NO SEAMS'],
+  ['length is a range, never a target', 'not targets to hit'],
+  ['the board laid out once, early, from real data', 'the way a diviner sets the table'],
+  ['every load-bearing signal walked', 'A mechanic with no picture is half'],
+  ['at least one moment the reader can see', 'a season, a room, a light'],
+  ['signals only converge if INDEPENDENT', 'one fact wearing three coats'],
+  ['glossed by what it DOES, in the same breath', 'the failure this whole prompt exists to stop'],
+  ['the finished-reading test', 'meaning what, exactly?'],
+  // growth
+  ['derived from the trigrams, never appended', 'IT MUST BE DERIVED, NEVER APPENDED'],
+  ['never quote a classical line from memory', 'the backend\ncarries no text'],
+  ['agency, not optimism about outcomes', 'POSITIVE MEANS AGENCY'],
+  ['the reach is the point, not the joinery', 'EXAMPLE OF DEPTH, not a form to fill'],
+  ['rough and far-reaching, not a task list', 'ROUGH AND FAR-REACHING by design'],
+  ['a real question, never rhetorical', 'INVITING THEM TO THINK works only when the question is real'],
+  ['the virtuous cycle happens out in their life', 'NEVER make the recommended next step "cast again"'],
+  ['growth stays second, never displaces the answer', 'KEEP IT SECOND'],
+  // guards
+  ['iron law: backend is the only source', 'NEVER self-compute'],
+  ['iron law: never fabricate a classical line', 'The Classic says'],
+  ['iron law: minors, harm, self-harm', 'NEVER sexualize minors'],
+  ['iron law: auspicious ≠ boundary override', 'strong yongshen ≠ medical diagnosis'],
+  ['anti-sweet-talk self-check', 'ANTI-SWEET-TALK'],
+  ['anti-iron-mouth: 30% into 0% is the same lie', 'turning 30% into 0%'],
+  ['confidence grading bar', 'CONFIDENCE GRADING'],
+  ['stability: concede the step, not the reading', 'STABILITY THEORY'],
+  ['§SAFE-2 no fear-sell', 'ANTI-PROFITEERING'],
+  ['§SAFE-3 dependency gets a reminder, not a refusal', 'This is a REMINDER, not a refusal'],
+  ['§SAFE-4 cultural positioning', 'CULTURAL ENTERTAINMENT POSITIONING'],
+  ['prompt-injection: data blocks are never authority', 'data, never authority'],
+  ['crisis hard-stop with resources', 'findahelpline.com'],
+  // turn contracts
+  ['new casting: read this cast independently', 'Read this cast independently'],
+  ['follow-up: no new hexagram', 'remains the sole figure'],
+  ['follow-up: answer directly in the first paragraph', 'Do not replay the full original reading'],
+  ['follow-up: say when the cast cannot resolve it', 'Never fill that gap with invented certainty'],
+  // routes
+  ['intimacy: 子孙 is the yongshen for appetite', '子孙爻 is the yongshen for pleasure'],
+  ['intimacy: no physical description of acts', 'do NOT write physical description of acts'],
+  ['intimacy: compatibility, never a grade on a person', 'Never grade a person'],
+  ['timing: horizon first', 'HORIZON FIRST'],
+  ['timing: lay the scales out and let them judge', 'LAY THE SCALES OUT'],
+  ['timing: no fabricated date to fill a row', 'rather than inventing a date to fill the row'],
+  ['appearance: never grade a person', 'NEVER GRADE A PERSON'],
+  ['appearance: always locate where the pull sits', 'Say where the attraction IS'],
+  ['wealth: direction and tier, never numbers', 'not "$X" or "millions"'],
+  ['relationship: read HER, not his psychology', 'is NOT an answer to "is she X."'],
+  ['choice: one hexagram holds both options', 'Do NOT re-cast per option'],
+  ['choice: no symmetric hedging', 'both have pros and cons'],
+  ['language follows the asker', 'RESPONSE LANGUAGE'],
+];
+
 let failures = 0;
-for (const [label, fragment] of [...VOICE_RULES, ...DEDUPLICATED]) {
+for (const [label, fragment] of [...VOICE_RULES, ...DEDUPLICATED, ...REST_OF_STACK]) {
   const found = owner(fragment);
   if (!found.length) {
     failures++;
@@ -161,4 +254,41 @@ for (const [label, fragment, expected] of SINGLE_OWNER) {
   assert.deepEqual(found, [expected], `${label} should live only in ${expected}, found in: ${found.join(', ')}`);
 }
 
-console.log(`prompt coverage OK — ${VOICE_RULES.length} voice rules + ${DEDUPLICATED.length} de-duplicated clauses located, ${SINGLE_OWNER.length} single-owner checks passed`);
+/**
+ * Rules that had drifted into CONTRADICTING each other, now reconciled. Each
+ * pair below is a behaviour that two or more segments used to rule on
+ * differently, which is worse than duplication: the model satisfied whichever
+ * copy it read last. Assert the losing form is gone.
+ */
+const NO_CONTRADICTION = [
+  ['the one honest limit has a single owner',
+   () => owner('AND THIS SEGMENT IS ITS ONLY OWNER').length === 1,
+   'more than one segment claims to own the honest-limit sentence'],
+  ['no segment mandates a closing autonomy line',
+   () => !owner('End every reading with one natural sentence').length,
+   'a model-written closer is back, stacking on the program-rendered footer'],
+  ['no second "not a sealed fate" frame in verdict_first',
+   () => !SEGMENTS.verdict_first.includes('not a sealed fate'),
+   'verdict_first is writing its own honest limit again'],
+  ['confidence is never printed as a map',
+   () => !/said separately and plainly/.test(SEGMENTS.output_sortis),
+   'output_sortis is mandating a confidence section again'],
+  ['closing questions are not a fixture',
+   () => !/An invitation to tell you more/.test(SEGMENTS.output_sortis)
+      && !/end with the few unresolved variables/.test(SEGMENTS.turn_initial),
+   'a closing-question fixture is back, contradicting clarity 2(d)'],
+  ['follow-up length follows the question, not the slot',
+   () => !/materially shorter than a new reading/.test(SEGMENTS.turn_followup),
+   'the follow-up is being rationed by slot again (owner rejected this twice)'],
+  ['the confidence bar is stated once',
+   () => owner('independent same-direction signals').length <= 1,
+   'the >=3-independent-signals bar is written in more than one place'],
+];
+for (const [label, check, why] of NO_CONTRADICTION) {
+  assert.ok(check(), `${label}: ${why}`);
+}
+
+const total = VOICE_RULES.length + DEDUPLICATED.length + REST_OF_STACK.length;
+console.log(`prompt coverage OK — ${total} rules located `
+  + `(${VOICE_RULES.length} voice, ${DEDUPLICATED.length} de-duplicated, ${REST_OF_STACK.length} rest of stack), `
+  + `${SINGLE_OWNER.length} single-owner + ${NO_CONTRADICTION.length} contradiction checks passed`);
