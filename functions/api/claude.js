@@ -74,10 +74,17 @@ function corsFor(request) {
 }
 const CORS = corsFor(null);
 
-// Temporary kill switch: keep auth/account/billing routes online while
-// preventing every AI proxy call (and therefore all OpenRouter spend).
-// Set to false to restore the service.
-const API_DISABLED = true;
+// Cost kill switch: keeps auth/account/billing online while blocking every AI
+// proxy call, and therefore all OpenRouter spend. Flip to true to stop spending
+// immediately without taking the site down.
+//
+// Re-enabled 2026-08-14 at the owner's request, in the same change that moved
+// the prompt server-side. Note what that means: spend resumes the moment this
+// deploys. Two environment variables have to be right first — OPENROUTER_API_KEY
+// (or every call 503s) and SESSION_SECRET, which is now required rather than
+// falling back to a default, so without it nobody can sign in and no reading
+// can be billed to anyone.
+const API_DISABLED = false;
 
 // Canonical model ids the proxy is willing to call — OpenRouter slugs
 // (vendor-prefixed). Old Anthropic-native ids are kept as aliases so any
@@ -172,7 +179,8 @@ export async function onRequestPost(context) {
     try {
       built = await buildSystem({ body, env, product, mode, messages });
     } catch (e) {
-      return json({ error: 'prompt assembly failed', detail: String((e && e.message) || e) }, 500);
+      console.error('prompt assembly failed', e);
+      return json({ error: 'prompt assembly failed' }, 500);
     }
     // Crisis is decided here, not in the browser. It used to be a client-side
     // branch on the route the client had computed itself, which meant the whole
@@ -235,7 +243,8 @@ export async function onRequestPost(context) {
         // Nothing was held and no tokens were produced, so there is nothing to
         // undo — the reader is simply not charged.
         chargeTo = null;
-        return json({ error: 'openrouter ' + upstream.status, detail }, 502);
+        console.error('openrouter stream error', upstream.status, detail);
+        return json({ error: 'openrouter ' + upstream.status }, 502);
       }
 
       // OpenRouter streams OpenAI-shaped chunks (`choices[0].delta.content`,
@@ -268,7 +277,8 @@ export async function onRequestPost(context) {
     if (!resp.ok) {
       const detail = await resp.text().catch(() => '');
       chargeTo = null;
-      return json({ error: 'openrouter ' + resp.status, detail }, 502);
+      console.error('openrouter error', resp.status, detail);
+      return json({ error: 'openrouter ' + resp.status }, 502);
     }
     const data = await resp.json();
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
@@ -287,8 +297,14 @@ export async function onRequestPost(context) {
     if (chargeTo) result.charged = charged;
     return json(result, 200);
   } catch (e) {
-    // Thrown before settlement, so no charge was ever applied.
-    return json({ error: String((e && e.message) || e) }, 500);
+    // Thrown before settlement, so no charge was ever applied. The message goes
+    // to the log, not to the caller: an upstream error body is written by
+    // someone else and relaying it verbatim hands out whatever it happens to
+    // contain. Nothing here has ever carried the key — it only goes into an
+    // outbound authorization header — but a response is the wrong place to
+    // find that out.
+    console.error('claude proxy error', e);
+    return json({ error: 'reading failed' }, 500);
   }
 }
 
