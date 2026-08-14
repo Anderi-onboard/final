@@ -172,9 +172,9 @@
       sessionExpired: "Your session has expired — sign in again to cast. Nothing was charged.",
       serverShort: "Not enough units on the server — add units and try again. Nothing was charged.",
       timedOut: "The reading timed out — please try again. Nothing was charged.",
-      castFailed: "The reading didn’t make it through — nothing was charged. Try again in a moment.",
+      castFailed: "The reading didn’t make it through. Metered usage settles on what the model actually produced, so check the balance above rather than assuming a refund. Try again in a moment.",
       answerTimedOut: "The answer timed out — try again. Nothing was charged.",
-      answerFailed: "The answer didn’t make it through — nothing was charged. Try again in a moment."
+      answerFailed: "The answer didn’t make it through. Metered usage settles on what the model actually produced, so check the balance above rather than assuming a refund. Try again in a moment."
     }
   };
 

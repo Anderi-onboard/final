@@ -193,6 +193,13 @@
           }
         }
 
+        /* A CUT STREAM IS NOT A FAILED READING. When the connection dies
+           part-way, the text that already arrived is on the reader's screen and
+           has already been PAID FOR — the server settles metered usage in
+           pumpAndSettle whatever happens to the socket. Rejecting here threw
+           that away and replaced it with "your units are back where they were",
+           which was both a loss and a lie about their balance. Resolve with
+           what we have, flag it incomplete, and let the reading stand. */
         function pump() {
           return reader.read().then(function (res) {
             if (res.done) {
@@ -204,6 +211,13 @@
             buf = records.pop(); // last chunk may be incomplete — keep it buffered
             records.forEach(function (rec) { if (rec.trim()) handleEvent(rec); });
             return pump();
+          }, function (readErr) {
+            if (buf.trim()) { try { handleEvent(buf); } catch (e) {} }
+            if (fullText) {
+              try { window.__bwReadingIncomplete = true; } catch (e) {}
+              return fullText;                 // keep the part that arrived
+            }
+            throw readErr;                     // nothing arrived — a real failure
           });
         }
         return pump();
