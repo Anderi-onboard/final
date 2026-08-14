@@ -1,0 +1,238 @@
+/* BourneWise luxury monogram + misted glass experiment.
+   The texture is an original Baoxianghua system, not a copied fashion mark. */
+
+html[data-skin="paper"] {
+  --lux-micro-pattern: url("../assets/textures/baoxianghua-micro-monogram.png?v=20260814c");
+  --lux-editorial-pattern: url("../assets/textures/baoxianghua-editorial-field.png?v=20260814c");
+  --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
+  --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
+  --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
+  --lux-glass-hover: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 76%, transparent);
+  --lux-glass-edge: color-mix(in srgb, var(--bw-palette-on-cloud, var(--ink)) 13%, transparent);
+  --lux-glass-shadow: color-mix(in srgb, var(--bw-palette-on-cloud, var(--ink)) 14%, transparent);
+  --lux-glass-blur: 20px;
+  --lux-glass-blur-heavy: 28px;
+}
+
+html[data-skin="paper"] body {
+  isolation: isolate;
+  background-color: var(--bw-palette-cloud, var(--paper));
+}
+
+/* Small, evenly repeated medallions across every route, including landing. */
+html[data-skin="paper"] body::after {
+  inset: 0;
+  z-index: 1;
+  background-color: color-mix(in srgb, var(--bw-palette-on-cloud, var(--ink)) 70%, transparent);
+  -webkit-mask-image: var(--lux-micro-pattern);
+  mask-image: var(--lux-micro-pattern);
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  -webkit-mask-size: 360px 360px;
+  mask-size: 360px 360px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  opacity: .14;
+}
+
+html[data-skin="paper"] body > :not(.mtn-bg):not(script):not(style) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Editorial routes use a precomposed field: regular micro-monograms leave
+   deliberate clearings for two larger, complete medallions. */
+html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
+  -webkit-mask-image: var(--lux-editorial-pattern);
+  mask-image: var(--lux-editorial-pattern);
+  -webkit-mask-position: top center;
+  mask-position: top center;
+  -webkit-mask-size: max(1180px, 100vw) auto;
+  mask-size: max(1180px, 100vw) auto;
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
+  opacity: .18;
+}
+
+/* Shared misted material. It has no visible border; separation comes from
+   blur, a restrained inset highlight, and a soft ambient shadow. */
+:where(
+  .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,
+  .pagehead,.top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,
+  .estimator,.pack,.term,.billing-mail-note,.toast,.progress,.controls,
+  .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
+) {
+  border: 0 !important;
+  background-color: var(--lux-glass) !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: blur(var(--lux-glass-blur)) saturate(116%);
+  backdrop-filter: blur(var(--lux-glass-blur)) saturate(116%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 40%, transparent),
+    0 14px 42px -28px var(--lux-glass-shadow) !important;
+}
+
+:where(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
+  background-color: var(--lux-glass-strong) !important;
+  -webkit-backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
+  backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
+}
+
+/* A glass surface should remain still; only its material weight changes. */
+@media (hover:hover) and (pointer:fine) {
+  :where(.plan,.rate-card,.pack,.term,.lesson-card,.method,.why-card,.clause):hover {
+    transform: none !important;
+    background-color: var(--lux-glass-hover) !important;
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, white 52%, transparent),
+      0 18px 48px -30px var(--lux-glass-shadow) !important;
+  }
+}
+
+:where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step) {
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 90ms ease-out !important;
+}
+:where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step):active {
+  transform: scale(.985) !important;
+}
+
+/* App chrome and answer surfaces. The moving landscape remains behind the
+   glass rather than being baked into the controls. */
+body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 76%, transparent) !important;
+}
+body[data-page="app"] :is(.composer,.method-menu,.carry-menu) {
+  background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 62%, transparent) !important;
+}
+body[data-page="app"] :is(.msg-user,.reading) {
+  border: 0 !important;
+  background-color: var(--lux-glass-quiet) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(112%);
+  backdrop-filter: blur(14px) saturate(112%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 28%, transparent) !important;
+}
+body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)::before,
+body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)::after {
+  border: 0 !important;
+}
+
+/* Pricing is texture-led. Remove the landscape and the raster editorial
+   image; keep its copy as a transparent glass note over the monogram field. */
+body[data-page="pricing"] .mtn-bg,
+body[data-page="pricing"] .editorial-spread--usage .editorial-plate {
+  display: none !important;
+}
+body[data-page="pricing"] .editorial-spread--usage {
+  min-height: 260px;
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-items: end;
+  border: 0 !important;
+  background-color: var(--lux-glass-quiet) !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: blur(16px) saturate(112%);
+  backdrop-filter: blur(16px) saturate(112%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 28%, transparent) !important;
+}
+body[data-page="pricing"] .editorial-spread--usage figcaption {
+  max-width: 52ch;
+}
+body[data-page="pricing"] :is(.plan,.rate-card,.estimator,.pack,.term,.ledgerstrip,.billing-toggle,.billing-mail-note) {
+  border: 0 !important;
+  background-color: var(--lux-glass) !important;
+}
+
+/* Long-form pages become one continuous editorial field. Their text is not
+   trapped in glass cards; only navigation and true controls use material. */
+body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) {
+  color: var(--bw-palette-on-cloud, var(--ink)) !important;
+  background-color: var(--bw-palette-cloud, var(--paper)) !important;
+}
+body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close),
+body[data-page="legal"] :is(.legal-poster-intro,.clause,.legal-foot),
+body[data-page="guide"] :is(.guide-stage,.lesson,.example,.lesson-card,.rate) {
+  color: var(--bw-palette-on-cloud, var(--ink)) !important;
+  border: 0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel)::before,
+body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel)::after,
+body[data-page="legal"] :is(.legal-poster-intro,.clause)::before,
+body[data-page="legal"] :is(.legal-poster-intro,.clause)::after,
+body[data-page="guide"] .guide-stage::before {
+  content: none !important;
+}
+body[data-page="about"] :is(.why-card,.method,.boundary > div),
+body[data-page="guide"] :is(.lesson-card,.rate,.example),
+body[data-page="legal"] :is(.toc,.pull,.headline) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+body[data-page="guide"] {
+  --guide-ink: var(--bw-palette-on-cloud, var(--ink));
+  background-color: var(--bw-palette-cloud, var(--paper)) !important;
+}
+body[data-page="guide"] .progress,
+body[data-page="guide"] .controls {
+  background-color: var(--lux-glass) !important;
+}
+
+/* Login/settings/utility routes use one strong material plane over the same
+   small monogram field. */
+body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.section,.not-found,.nf-card) {
+  border: 0 !important;
+  background-color: var(--lux-glass-strong) !important;
+  -webkit-backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
+  backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 42%, transparent),
+    0 28px 70px -46px var(--lux-glass-shadow) !important;
+}
+
+@media (max-width: 760px) {
+  html[data-skin="paper"] body::after {
+    -webkit-mask-size: 300px 300px;
+    mask-size: 300px 300px;
+    opacity: .12;
+  }
+  html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
+    -webkit-mask-size: 940px auto;
+    mask-size: 940px auto;
+    opacity: .16;
+  }
+  :where(.sidebar,.pagehead,.top,.card,.section .panel) {
+    --lux-glass-blur-heavy: 22px;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :where(
+    .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
+    .top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,.estimator,.pack,
+    .term,.billing-mail-note,.toast,.progress,.controls,.section .panel,
+    .account-menu,.popover,.modal,.dialog,.sheet
+  ) {
+    background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 94%, transparent) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :where(.sidebar,.composer,.pagehead,.top,.card,.plan,.rate-card,.estimator,.pack,.progress,.controls,.section .panel) {
+    border: 1px solid currentColor !important;
+    background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 96%, transparent) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step) {
+    transition: color 160ms ease, background-color 160ms ease !important;
+    transform: none !important;
+  }
+}

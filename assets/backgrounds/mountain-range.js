@@ -20,8 +20,9 @@
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
     + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
-    + '.mtn-sky::after{content:"";position:absolute;inset:0;pointer-events:none}'
-    + '.mtn-sky::after{background:var(--bw-palette-water,#B4AA9A);clip-path:polygon(0 73%,20% 70%,44% 76%,68% 71%,100% 75%,100% 100%,0 100%);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
+    /* The base sky is the only flat colour plane. The former hard-edged water
+       polygon and all filled ridge bands are intentionally absent. */
+    + '.mtn-sky::after{content:none}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
     + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
@@ -39,9 +40,18 @@
        out and only the contour lines remain: a clean topographic line-drawing
        of the range, so text pages keep the living, moving backdrop without any
        coloured wash competing with the words. */
-    + '.mtn-bg.line-art .fill{opacity:.62;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg.line-art [clip-path]>use{opacity:.5;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
-    + '.mtn-bg.line-art .contour use,.mtn-bg.line-art .cloud-contour use{stroke:rgba(20,20,19,.3)}'
+    + '.mtn-bg .contour.l1 use{stroke:color-mix(in srgb,var(--bw-palette-1,#756F68) 42%,transparent)}'
+    + '.mtn-bg .contour.l2 use{stroke:color-mix(in srgb,var(--bw-palette-2,#756F68) 42%,transparent)}'
+    + '.mtn-bg .contour.l3 use{stroke:color-mix(in srgb,var(--bw-palette-3,#756F68) 44%,transparent)}'
+    + '.mtn-bg .contour.l4 use{stroke:color-mix(in srgb,var(--bw-palette-4,#756F68) 44%,transparent)}'
+    + '.mtn-bg .contour.l5 use{stroke:color-mix(in srgb,var(--bw-palette-5,#756F68) 46%,transparent)}'
+    + '.mtn-bg .contour.l6 use{stroke:color-mix(in srgb,var(--bw-palette-6,#756F68) 46%,transparent)}'
+    + '.mtn-bg .contour.l7 use{stroke:color-mix(in srgb,var(--bw-palette-7,#756F68) 48%,transparent)}'
+    + '.mtn-bg .contour.l8 use{stroke:color-mix(in srgb,var(--bw-palette-8,#756F68) 48%,transparent)}'
+    + '.mtn-bg .contour.l9 use{stroke:color-mix(in srgb,var(--bw-palette-9,#756F68) 50%,transparent)}'
+    + '.mtn-bg .contour.l10 use{stroke:color-mix(in srgb,var(--bw-palette-10,#756F68) 50%,transparent)}'
+    + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent)}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
        line-art so the colour recedes and leaves the line-drawing: background
@@ -62,8 +72,6 @@
     /* Lightweight motion profile: keep the scene alive with three slow ridge
        planes and two clouds. The remaining artwork is static, so extension-heavy
        Chromium profiles do not have to composite sixteen perpetual animations. */
-    + '.mtn-bg .fill{animation:none;fill:#D9C9A5}'
-    + '.mtn-bg .l1,.mtn-bg .l2{fill:#D7D0C4}.mtn-bg .l3,.mtn-bg .l4{fill:#CEC4B5}.mtn-bg .l5,.mtn-bg .l6{fill:#C2B49F}.mtn-bg .l7,.mtn-bg .l8{fill:#B39F82}.mtn-bg .l9,.mtn-bg .l10{fill:#967B60}'
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg .flow-3{animation:mtn-flow-l 240s linear infinite;will-change:transform}'
     + '.mtn-bg .flow-6{animation:mtn-flow-r 210s linear infinite;will-change:transform}'
@@ -88,9 +96,6 @@
   var CLOUD = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30 C 116 32 116 44 100 42 C 96 50 76 48 70 40 C 64 50 40 50 34 40 C 22 44 6 42 18 30 Z";
   var CLOUDC = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30";
 
-  /* ridge fill closes to the bottom; the curve is the open top edge for contours */
-  function shape(i) { return W[i] + " L 4000 600 L -2000 600 Z"; }
-
   /* Fewer, less evenly spaced strokes read as a hand-drawn landscape instead
      of a technical contour map. The foreground remains denser, but no plane
      becomes a grey wall of repeated hairlines. */
@@ -114,7 +119,6 @@
     var par = (opts && opts.par) || 'xMidYMid slice';
     var defs = '<defs>';
     for (var i = 1; i <= 10; i++) {
-      defs += '<path id="mw' + i + '" d="' + shape(i) + '"/>';
       defs += '<path id="mw' + i + 'c" d="' + W[i] + '"/>';
     }
     defs += '<path id="mxy-cloud" d="' + CLOUD + '"/><path id="mxy-cloud-c" d="' + CLOUDC + '"/>';
@@ -127,12 +131,7 @@
         var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
         contour += '<use href="#mw' + i + 'c" y="' + offset.toFixed(2) + '"/>';
       }
-      /* fill and contours ride in SEPARATE flow groups sharing the same animation
-         (same timeline + start = always in sync). The fill layer re-rasters at each
-         4s palette step; the ~100 stroked contour paths now sit in their own cached
-         composited layers and are never re-stroked. */
-      ridges += '<g class="flow-' + i + '"><use href="#mw' + i + '" class="fill l' + i + '"/></g>'
-        + '<g class="flow-' + i + '"><g class="contour">' + contour + '</g></g>';
+      ridges += '<g class="flow-' + i + '"><g class="contour l' + i + '">' + contour + '</g></g>';
     });
 
     var clouds = '';
@@ -145,8 +144,8 @@
         + '<g class="cloud-contour">' + cc + '</g></g></g></g></g>';
     });
 
-    return '<svg viewBox="0 0 ' + vbw + ' 600" preserveAspectRatio="' + par + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mountain range">'
-      + '<title>Layered mountain background</title>' + defs + ridges + clouds + '</svg>';
+    return '<svg viewBox="0 0 ' + vbw + ' 600" preserveAspectRatio="' + par + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rounded contour landscape">'
+      + '<title>Moving contour landscape and clouds</title>' + defs + ridges + clouds + '</svg>';
   }
 
   function srgbChannel(v) {
