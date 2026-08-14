@@ -52,7 +52,12 @@ export const PACKS = [
 // little high is a better neighbour than one that runs low.
 // IF CLAUDE_THINKING IS EVER SET BACK TO "on", these roughly double — re-measure
 // before trusting them.
-export const METHOD_COST = { stria: 440, sortis: 780 };
+// OFFLINE FALLBACK ONLY. /api/rates derives the real figures from the
+// assembled prompt at request time; these exist for callers that cannot reach
+// the engine. They are a snapshot and they WILL drift — the previous pair sat
+// 49% below the real charge for months because the prompt grew and nobody
+// re-measured. Never quote these to a user; quote /api/rates.
+export const METHOD_COST = { stria: 785, sortis: 998 };
 export const PAID = { pro: true, premium: true };
 
 // ── Metered billing, no ceiling ────────────────────────────────────────────
@@ -115,7 +120,7 @@ const FALLBACK_RATE = MODEL_RATES['anthropic/claude-opus-5'];
 // was the worst of the four: 330 against a measured 480, because a Stria
 // follow-up carries the same conversation as a Sortis one while its own answer
 // stays short, so input dominates the bill. See METHOD_COST for the samples.
-export const FOLLOW_COST = { stria: 490, sortis: 640 };
+export const FOLLOW_COST = { stria: 731, sortis: 797 };  // offline fallback — see METHOD_COST
 
 // Chinese runs about 1.064 tokens per character; Latin script about 0.287
 // (both measured against the Claude tokenizer). The old estimate assumed 4
@@ -123,7 +128,11 @@ export const FOLLOW_COST = { stria: 490, sortis: 640 };
 // more than fourfold — the wrong direction, since this path only runs when a
 // stream died and we are billing without the provider's own usage numbers.
 const TOK_CJK = 1.064, TOK_LATIN = 0.287;
-function estimateTokens(chars, cjk) {
+// Exported so /api/rates can size the prompt with the SAME function that
+// bills it. The rate card used to carry its own hardcoded token counts and
+// drifted 49% behind the real prompt; anything that quotes a cost now derives
+// it from here.
+export function estimateTokens(chars, cjk) {
   chars = Number(chars) || 0;
   cjk = Math.min(Number(cjk) || 0, chars);
   return Math.ceil(cjk * TOK_CJK + (chars - cjk) * TOK_LATIN);
