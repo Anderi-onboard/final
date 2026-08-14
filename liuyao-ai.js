@@ -168,10 +168,17 @@
         (s.hasMoving ? " [contains a moving line — active]" : "");
     }).join("; ") || "none";
 
-    // 月卦身 — the body/subject of the matter
+    // 月卦身 — a pointer at a line, not a proposition about the matter.
+    // This used to ship the folk gloss "no clear subject/anchor yet" attached to
+    // 卦身不上卦, so every reading inherited a conclusion the board cannot carry:
+    // 卦身 is absent in 33 of the 64 hexagrams, and whether it lands is fully
+    // determined by the figure the model was already given, so its absence adds
+    // nothing to what the figure already said. Ship the fact, never the gloss.
     var gs = board.guashen;
     var guashen = gs
-      ? (gs.branch.el.en + " " + gs.branch.animal + (gs.onBoard ? (" — on line " + gs.lines.join("/") + " (卦身上卦)") : " — NOT on the board (卦身不上卦: no clear subject/anchor yet)"))
+      ? (gs.branch.el.en + " " + gs.branch.animal + (gs.onBoard
+          ? (" — on line " + gs.lines.join("/") + " (卦身上卦: it annotates that line; if that is the yongshen, say so)")
+          : " — not among the six line branches (卦身不上卦). Structural, and true of half the 64 hexagrams: it licenses no conclusion about the matter or the asker. Do not mention it."))
       : "n/a";
 
     return {

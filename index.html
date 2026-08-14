@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260811b">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260813e">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260813d">
-<script src="./ds-base.js?v=20260810a"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260814a">
+<script src="./ds-base.js?v=20260814a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -137,7 +137,7 @@
 
   /* ── sign-in coach-mark — a comic-style floating callout that sits just above
      the account footer, with a little arrow tip poking down to point at the
-     Guest / sign-in row. Nudges first-time visitors to sign in (500 free
+     Guest / sign-in row. Nudges first-time visitors to sign in (1,500 free
      units). Shown only to signed-out guests; dismissable, and remembered. ── */
   .signin-coach{position:relative;margin:16px 5px 2px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
     white-space:normal;
@@ -620,6 +620,14 @@
   body.is-empty .composer-zone{position:fixed;left:var(--sbw);right:0;bottom:34px;z-index:3;padding:0 56px 28px;display:flex;flex-direction:column;align-items:center;transition:left .28s cubic-bezier(.4,0,.2,1)}
   body.is-empty .composer{margin:0;max-width:680px;width:100%}
   body.is-empty .disclaimer{display:none}
+  /* Reading page: the composer sits under a hexagram and a long piece of prose,
+     so everything stacked beneath it competes with the reading for the last of
+     the reader's attention. Keep only the support line, and give it room so it
+     reads as the page ending rather than as another control. The empty state is
+     a landing page and keeps the full set. */
+  body:not(.is-empty) .composer-help,
+  body:not(.is-empty) .disclaimer{display:none}
+  body:not(.is-empty) .site-foot{margin-top:26px}
   .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 18px;font-size:11px;font-weight:600;letter-spacing:.05em;line-height:2;word-spacing:.16em;color:var(--bw-palette-9,var(--ink));font-family:"Spinnaker"}
   .site-foot a{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb,currentColor 42%,transparent)}
   .site-foot a:hover{color:var(--bw-palette-gem,var(--terracotta))}
@@ -779,9 +787,9 @@
     <button class="exchange pressable" id="openPlans" style="font-family: var(--sans)">Get units <span class="ex-arr">&rarr;</span></button>
   </div>
 
-  <div class="signin-coach pressable" id="signinCoach" role="button" tabindex="0" aria-label="Sign in to claim 500 free units" hidden>
+  <div class="signin-coach pressable" id="signinCoach" role="button" tabindex="0" aria-label="Sign in to claim 1,500 free units" hidden>
     <button class="cx" id="coachClose" type="button" aria-label="Dismiss">&times;</button>
-    <span class="ct"><b>First reading?</b> Sign in to claim <b>500 free units</b>.</span>
+    <span class="ct"><b>First reading?</b> Sign in to claim <b>1,500 free units</b>.</span>
   </div>
 
   <button class="side-foot pressable" id="acctBtn" aria-haspopup="true" aria-expanded="false" style="border-width: 0px 1px 1px">
@@ -847,24 +855,24 @@
     </form>
     <div class="composer-help" aria-hidden="true"><span>Enter to submit &middot; Shift+Enter for a new line</span><span>Follow-ups reuse the current hexagram</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
-    <p class="disclaimer" id="methodNote">Stria 64 &middot; about 440 units typical &middot; 520 maximum, with unused units returned</p>
+    <p class="disclaimer" id="methodNote">Stria 64 &middot; about 440 units typical &middot; charged for what it uses</p>
     <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans &amp; units</a></p>
   </footer>
 </main>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260813c"></script>
-<script src="./casting-figure.js?v=20260810b"></script>
-<script src="./liuyao-engine.js?v=20260810a"></script>
-<script src="./liuyao-ai.js?v=20260810a"></script>
-<script src="./liuyao-chart.js?v=20260810a"></script>
-<script src="./copy.js?v=20260810a"></script>
-<script src="./prompt-engine.js?v=20260810a"></script>
-<script src="./prompt-router.js?v=20260810a"></script>
-<script src="./account.js?v=20260810a"></script>
-<script>window.BW_BUILD="20260810a";</script>
-<script src="./chat-app.js?v=20260810a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260814a"></script>
+<script src="./casting-figure.js?v=20260814a"></script>
+<script src="./liuyao-engine.js?v=20260814a"></script>
+<script src="./liuyao-ai.js?v=20260814a"></script>
+<script src="./liuyao-chart.js?v=20260814a"></script>
+<script src="./copy.js?v=20260814a"></script>
+<script src="./prompt-engine.js?v=20260814a"></script>
+<script src="./prompt-router.js?v=20260814a"></script>
+<script src="./account.js?v=20260814a"></script>
+<script>window.BW_BUILD="20260814a";</script>
+<script src="./chat-app.js?v=20260814a"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
