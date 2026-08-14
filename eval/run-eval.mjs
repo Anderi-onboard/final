@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-/* eval/run-eval.js — regression harness for prompt-engine.js.
-   Run after ANY edit to prompt-engine.js (a new route, a reworded segment,
+/* eval/run-eval.js — regression harness for the prompt engine.
+   Run after ANY edit to functions/_lib/prompt-engine.js (a new route, a reworded segment,
    a Gate pattern change) to confirm nothing broke.
 
    Usage:
@@ -9,16 +9,22 @@
 
    This is the harness item #7 from the production-readiness review asked
    for: "build 50 tricky test questions (crisis, minor, stocks, weather,
-   ex), re-run after every prompt-engine.js change, keep Gate/Router
+   ex), re-run after every prompt-engine.js change (it lives in functions/_lib now), keep Gate/Router
    accuracy ≥ 95%." Starter corpus is in eval/cases.json — extend it as you
    find real failure cases. */
 "use strict";
-const path = require("path");
-const fs = require("fs");
+import path from "node:path";
+import fs from "node:fs";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 global.window = {};
-require(path.join(__dirname, "..", "prompt-engine.js"));
-const PE = global.window.BWPromptEngine;
+// The engine is an ES module under functions/_lib now (it holds trade
+// secrets and must never be served). Load it and republish the shape this
+// harness expects.
+import { PromptEngine } from "../functions/_lib/prompt-engine.js";
+const PE = PromptEngine;
 
 const cases = JSON.parse(fs.readFileSync(path.join(__dirname, "cases.json"), "utf8"));
 
@@ -43,7 +49,7 @@ async function runRouter() {
     return null;
   }
   console.log("── Router (live, calls Haiku for each case) ──");
-  // ROUTER_SYSTEM is private inside prompt-engine.js (not exported) — kept
+  // ROUTER_SYSTEM is exported for the API to serve under role "router" — kept
   // in sync by hand; see prompt-inspector.html's ROUTER_SYSTEM_DISPLAY for
   // the same duplication and why it exists.
   const ROUTER_SYSTEM = [

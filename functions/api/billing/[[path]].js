@@ -28,14 +28,28 @@ import {
 import { creemBase } from '../checkout.js';
 
 const PROVIDER = 'creem';
-const CORS = {
-  'access-control-allow-origin': '*',
-  'access-control-allow-methods': 'GET, POST, OPTIONS',
-  'access-control-allow-headers': 'content-type'
-};
+const ALLOWED_ORIGINS = [
+  'https://bournewise.com',
+  'https://www.bournewise.com',
+  'http://localhost:8788',
+  'http://127.0.0.1:8788'
+];
+function corsFor(request) {
+  const origin = request && request.headers.get('origin');
+  const ok = origin && (ALLOWED_ORIGINS.includes(origin) || /^https:\/\/[a-z0-9-]+\.bournewise\.pages\.dev$/.test(origin));
+  return {
+    'access-control-allow-origin': ok ? origin : ALLOWED_ORIGINS[0],
+    'access-control-allow-methods': 'GET, POST, OPTIONS',
+    'access-control-allow-headers': 'content-type',
+    'access-control-allow-credentials': 'true',
+    vary: 'origin'
+  };
+}
+let CORS = corsFor(null);
 
 export async function onRequest(context) {
   const { request, env, params } = context;
+  CORS = corsFor(request);
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
   const segs = Array.isArray(params.path) ? params.path : (params.path ? [params.path] : []);
   const route = segs.join('/');

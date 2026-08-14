@@ -8,5 +8,17 @@ dist/
 eval/copy-audit/
 design-qa.md
 
+# generated prompt dumps — a verbatim second copy of prompt-engine.js, and
+# artifacts/ is served publicly, so there is no reason to deploy 280 KB of
+# duplicate text. Regenerate with: node scripts/dump-prompt.mjs
+artifacts/full-prompt.txt
+artifacts/full-prompt.html
+
 # os / editor
 .DS_Store
+
+# generated prompt decks — full copies of the instruction stack, which is the
+# product. copywriting/ is inside the served tree, so a committed deck is a
+# public deck. Regenerate locally with the generate-*.mjs scripts beside them.
+copywriting/BOURNEWISE_PROMPT_DECK.md
+copywriting/BOURNEWISE_VOICE_DECK.md

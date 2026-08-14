@@ -67,7 +67,7 @@
 
   // ── Claude bridge ────────────────────────────────────────────────────────
   // The app calls window.claude.complete(promptString) OR
-  // window.claude.complete({ system?, messages }) and expects a Promise<string>.
+  // window.claude.complete({ messages, ...intent }) and expects a Promise<string>.
   // Here we forward that to the /api/claude Pages Function (functions/api/claude.js),
   // which holds the secret OPENROUTER_API_KEY. If the Function isn't deployed (or
   // errors), the call rejects and the app falls back to its deterministic mock
@@ -77,13 +77,16 @@
       complete(input) {
         const payload = (typeof input === 'string')
           ? { messages: [{ role: 'user', content: input }] }
-          : { system: input.system, messages: input.messages };
-        // forward routing intent so the proxy picks the right model
+          : { messages: input.messages };
+        // The proxy assembles the system prompt from intent, so every field it
+        // builds from has to be forwarded — a dropped one degrades silently
+        // into a well-formed prompt with nothing in it. `system` is never sent:
+        // /api/claude rejects a client-supplied one.
         if (typeof input === 'object' && input) {
-          if (input.product) payload.product = input.product;
-          if (input.role) payload.role = input.role;
-          if (input.model) payload.model = input.model;
-          if (input.max_tokens) payload.max_tokens = input.max_tokens;
+          for (const k of ['product', 'role', 'model', 'max_tokens', 'mode', 'temperature',
+                           'question', 'reading', 'methodLabel', 'lastQuestion', 'lastReading']) {
+            if (input[k] != null) payload[k] = input[k];
+          }
         }
         return fetch('/api/claude', {
           method: 'POST',

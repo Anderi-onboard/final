@@ -1,7 +1,10 @@
-/* prompt-router.js — Integration layer: wires BWPromptEngine into the existing
+/* prompt-router.js — Integration layer: declares INTENT to /api/claude and
+   drives the reading pipeline. The prompt engine it used to wire in is server
+   side now (functions/_lib/prompt-engine.js); see the note at makeRouted.
+   Originally: wired the in-browser engine into the existing
    BWLiuYaoAI.interpret() and chat-app.js askOracle() flows.
    ─────────────────────────────────────────────────────────────────────────────
-   Drop-in: include this script AFTER prompt-engine.js and BEFORE chat-app.js.
+   Drop-in: include this script AFTER prompt-checks.js and BEFORE chat-app.js.
    It monkey-patches the AI layer to use modular prompts + optional QC pass.
 
    Configuration (set via BWPromptRouter.configure()):
@@ -35,6 +38,22 @@
   // picks the model from that (Sonnet for stria, Opus for sortis, Haiku for
   // router/qc) so model choice lives server-side. An explicit allow-listed
   // model still wins, for back-compat.
+  /* The fields the server needs to BUILD the prompt. It assembles from intent
+     now, so anything not forwarded here is simply missing on the other side —
+     and missing degrades silently (an intent call with no question still gets a
+     well-formed prompt, just an empty one). `system` is deliberately absent:
+     /api/claude rejects a client-supplied one outright. */
+  var INTENT_FIELDS = ["question", "mode", "reading", "methodLabel",
+                       "lastQuestion", "lastReading", "max_tokens"];
+  function carryIntent(payload, input) {
+    if (!input || typeof input !== "object") return payload;
+    for (var i = 0; i < INTENT_FIELDS.length; i++) {
+      var k = INTENT_FIELDS[i];
+      if (input[k] != null) payload[k] = input[k];
+    }
+    return payload;
+  }
+
   function makeComplete(meta) {
     meta = meta || {};
     return function (input) {
@@ -42,8 +61,7 @@
       if (typeof input === "string") {
         payload = { messages: [{ role: "user", content: input }] };
       } else {
-        payload = { system: input.system, messages: input.messages };
-        if (input.max_tokens) payload.max_tokens = input.max_tokens;
+        payload = carryIntent({ messages: input.messages }, input);
       }
       if (meta.role) payload.role = meta.role;
       if (meta.product) payload.product = meta.product;
@@ -120,8 +138,7 @@
   function makeStreamComplete(meta) {
     meta = meta || {};
     return function (input, onDelta) {
-      var payload = { system: input.system, messages: input.messages, stream: true };
-      if (input.max_tokens) payload.max_tokens = input.max_tokens;
+      var payload = carryIntent({ messages: input.messages, stream: true }, input);
       if (meta.role) payload.role = meta.role;
       if (meta.product) payload.product = meta.product;
       if (meta.model) payload.model = meta.model;
@@ -206,20 +223,19 @@
     // formatter so it never inherits a language from user input.
     var lang = opts.lang;
 
-    var PE = window.BWPromptEngine;
-    if (!PE) {
-      console.warn("[prompt-router] BWPromptEngine not loaded, falling back to default");
-      return null; // caller falls back to original flow
-    }
+    /* The prompt engine now lives in functions/_lib/ — every segment in it is a
+       trade secret, and while it was in the browser the assembled system prompt
+       was also POSTed up for the API to run verbatim, so any account could send
+       its own. The browser declares intent; the server gates, routes, assembles
+       and returns the reading. What is left here is the post-generation
+       validation, which is pure code and holds no instructions. */
+    var PC = window.BWPromptChecks || {};
 
-    // Router + QC run on the utility model; both reading methods route to the
-    // configured Opus model on the backend.
-    var routerComplete = makeComplete({ role: "router", model: CONFIG.routerModel });
     var mainComplete = makeComplete({ product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature });
-    var qcComplete = makeComplete({ role: "qc", model: CONFIG.qcModel });
 
-    // Step 1+2: Gate + Route (combined in buildSystemPrompt)
-    return PE.buildSystemPrompt(question, product, routerComplete, { mode: mode || "initial" }).then(function (result) {
+    // Step 1+2 (gate + route) happen server-side now; this resolves immediately
+    // and keeps the rest of the pipeline's shape unchanged.
+    return Promise.resolve({ route: "server", turnMode: mode || "initial" }).then(function (result) {
       // Crisis or minor-blocked: return safety response directly
       if (result.route === "crisis") {
         return {
@@ -283,22 +299,22 @@
       // across all layers is 4000-6000 CJK chars and was truncating mid-sentence.
       var mainCall = streamed
         ? makeStreamComplete({ product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature })({
-            system: result.system, messages: messages, max_tokens: 12000
+            question: question, messages: messages, max_tokens: 12000
           }, opts.onDelta)
-        : mainComplete({ system: result.system, messages: messages, max_tokens: 12000 });
+        : mainComplete({ question: question, messages: messages, max_tokens: 12000 });
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
         // — catches the AI citing a line number or moving-line count that
         // doesn't match the real board, before the LLM QC pass runs.
-        var factCheck = PE.checkBoardFacts(reading, board);
+        var factCheck = PC.checkBoardFacts ? PC.checkBoardFacts(reading, board) : { ok: true, issues: [] };
         // ...and the same kind of check on the other axis: did the reading name
         // a yongshen, and did it decline on a ground that is actually real?
         // Three prompt rules already forbade declining a readable question and
         // all three missed it, so this one runs in code where it cannot be
         // reasoned around. Merged into factCheck so a catch rides the retry
         // that already exists rather than adding a second round-trip.
-        var readCheck = PE.checkReadability ? PE.checkReadability(reading) : { ok: true, issues: [] };
+        var readCheck = PC.checkReadability ? PC.checkReadability(reading) : { ok: true, issues: [] };
 
         // Step 4: QC pass (if enabled). Follow-ups skip QC: they're metered,
         // conversational, and stream to the user anyway (QC would only be
@@ -315,7 +331,17 @@
           };
         }
 
-        var qcPromise = shouldQC ? PE.qcCheck(reading, question, qcComplete, board) : Promise.resolve({ pass: true });
+        /* QC's checklist is a segment, so it stays on the server: the client
+           asks for role "qc" and sends only the material to be checked. */
+        var qcPromise = shouldQC
+          ? makeComplete({ role: "qc", model: CONFIG.qcModel })({
+              question: question,
+              messages: [{ role: "user", content: "QUESTION: " + question + "\n\nREADING TO CHECK:\n" + reading }],
+              max_tokens: 400
+            }).then(function (verdict) {
+              return { pass: !/^\s*REWRITE:/im.test(String(verdict || "")), raw: verdict };
+            }).catch(function () { return { pass: true }; })
+          : Promise.resolve({ pass: true });
 
         return qcPromise.then(function (qc) {
           var combinedPass = qc.pass && factCheck.ok && readCheck.ok;
@@ -366,24 +392,11 @@
     });
   }
 
-  // ─── Token cost analysis ──────────────────────────────────────
-  function analyzeCosts() {
-    var PE = window.BWPromptEngine;
-    if (!PE) return null;
-
-    var products = ["sortis", "stria"];
-    var routes = Object.keys(PE.ROUTES);
-    var analysis = {};
-
-    products.forEach(function (p) {
-      analysis[p] = {};
-      routes.forEach(function (r) {
-        analysis[p][r] = PE.estimateTokens(r, p);
-      });
-    });
-
-    return analysis;
-  }
+  /* Token cost analysis used to walk SEGMENTS and ROUTES here. Both are trade
+     secrets and now live server-side, so the sizes are no longer knowable in a
+     browser — which is the point. Run `node scripts/dump-prompt.mjs` for the
+     per-segment breakdown. */
+  function analyzeCosts() { return null; }
 
   // ─── Public API ───────────────────────────────────────────────
   window.BWPromptRouter = {

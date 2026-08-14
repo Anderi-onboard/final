@@ -6,11 +6,13 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const REPO = '/home/user/final/';
 global.window = global;
-await import(REPO + 'prompt-engine.js');
+const { PromptEngine } = await import(REPO + 'functions/_lib/prompt-engine.js');
+globalThis.window = globalThis.window || {};
+window.BWPromptEngine = PromptEngine;
 await import(REPO + 'copy.js');
 const S = global.window.BWPromptEngine.SEGMENTS;
 const C = global.window.BWCopy;
-const src = readFileSync(REPO + 'prompt-engine.js', 'utf8');
+const src = readFileSync(REPO + 'functions/_lib/prompt-engine.js', 'utf8');
 
 // What each tone segment is responsible for, in the order they reach the model.
 const VOICE = [
@@ -58,7 +60,7 @@ const CHECKS = [
 const out = [];
 out.push('# BourneWise · 语气与用语的全部来源');
 out.push('');
-out.push('> 由 `copywriting/generate-voice-deck.mjs` 从 `prompt-engine.js` 与 `copy.js` 生成。');
+out.push('> 由 `copywriting/generate-voice-deck.mjs` 从 `functions/_lib/prompt-engine.js` 与 `copy.js` 生成。');
 out.push('> 手抄一份很快就会跟代码对不上，所以不要手抄——改代码，重新生成。');
 out.push('');
 out.push('生成时间：' + new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC');
