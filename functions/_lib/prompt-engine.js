@@ -1626,9 +1626,20 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
      than inline in the interface. The chat asks for a decision; the wording of
      how that decision is made belongs to the prompt layer.
 
-     A casting answers ONE matter. Stretching it over a second matter produces
-     a wrong reading, which is why a genuine tie resolves to NEW: a fresh cast
-     costs a little more, a wrong reading costs the reader's trust. */
+     A casting answers ONE matter, so the test is the MATTER, never the topic.
+
+     A genuine tie used to resolve to NEW, on the grounds that "a fresh cast
+     merely costs a little more". Billing is purely metered — there is no
+     per-casting fee for that argument to rest on — and worse, the argument ran
+     against the method: re-casting a matter that already has a board is 渎卦,
+     and inference_traps says in as many words that two castings on one theme do
+     not corroborate each other.
+
+     The tie now resolves to FOLLOWUP, for a reason that is actually true of
+     this code: decide() below turns a follow-up into a new casting whenever the
+     board in hand cannot carry the yongshen the question rests on, and nothing
+     anywhere turns a needless new casting back. FOLLOWUP is the recoverable
+     answer; NEW is terminal. Lean toward the one that can still be corrected. */
   var INTENT_ROUTER = {
     model: "claude-sonnet-5",
     maxTokens: 8,
@@ -1641,7 +1652,8 @@ Output format: either "ALL PASS" or "REWRITE: [items] — [fixes needed]"`;
         "New message: \u00ab" + String(question || "").slice(0, 300) + "\u00bb\n" +
         "FOLLOWUP = the new message stays on the SAME matter: continues it, doubts it, asks to clarify/expand a part of the reading, answers a question the reading asked, or says \"continue\".\n" +
         "NEW = the new message asks about a DIFFERENT matter \u2014 different event, different person, different outcome being asked \u2014 even if the topic area sounds related. The test is the MATTER, not the topic: \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u7b2c\u4e00\u6b21\u300b then \u300a\u6211\u4ec0\u4e48\u65f6\u5019\u8c08\u604b\u7231\u300b are two different matters \u2192 NEW. \u300a\u6211\u80fd\u521b\u4e1a\u6210\u529f\u5417\u300b then \u300a\u90a3\u5408\u4f19\u4eba\u9760\u8c31\u5417\u300b is the same venture \u2192 FOLLOWUP.\n" +
-        "When genuinely torn, prefer NEW: stretching one casting over two matters produces a wrong reading; a fresh cast merely costs a little more.\n\n" +
+        "Both mistakes are real, so do not lean either way out of habit. Stretching one casting across two matters gives a confident reading of the wrong board. Re-casting a matter that already has a board is \u6e0e\u5366 \u2014 and two boards on one matter do not corroborate each other, they just leave you holding two.\n" +
+        "So decide on the MATTER alone. If you genuinely cannot tell, answer FOLLOWUP: a follow-up whose yongshen the casting in hand cannot carry is turned into a new casting right after this call, while nothing turns a needless new casting back. FOLLOWUP is the recoverable answer.\n\n" +
         "Then name the yongshen the NEW MESSAGE rests on, so the board in hand can be checked for it:\n" +
         "wealth (\u59bb\u8d22 \u2014 a wife/partner for a man, money, goods, how someone else judges) · " +
         "officer (\u5b98\u9b3c \u2014 a husband/partner for a woman, work, rank, rivals, pressure) · " +
