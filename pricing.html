@@ -9,14 +9,14 @@
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260811b">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260813e">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260810a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260813d">
-<script src="./ds-base.js?v=20260810a"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260814a">
+<script src="./ds-base.js?v=20260814a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{min-height:100%}
@@ -31,7 +31,7 @@
   .section-head{margin-top:54px;display:flex;align-items:end;justify-content:space-between;gap:24px}.section-head h2{font-size:clamp(28px,4vw,44px);line-height:1.05;letter-spacing:-.04em}.section-head p{max-width:48ch;color:var(--dim);font-size:13px}
   .billing-toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;font-size:13px;color:var(--dim)}.billing-toggle span{transition:color .18s}.billing-toggle .mo-label.active{color:var(--ink);font-weight:600}.annual-check{display:flex;align-items:center;gap:8px;min-height:38px;padding:7px 12px;border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);border-radius:12px;background:color-mix(in srgb,var(--paper-raised) 72%,transparent);cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s var(--ease-out);user-select:none}.annual-check:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--bw-palette-gem) 58%,transparent)}.annual-check:has(input:checked){color:var(--ink);font-weight:600;border-color:color-mix(in srgb,var(--bw-palette-gem) 65%,transparent);background:color-mix(in srgb,var(--bw-palette-gem) 10%,var(--paper-raised))}.annual-check input{width:18px;height:18px;margin:0;accent-color:var(--bw-palette-gem);cursor:pointer}.annual-check input:focus-visible{outline:2px solid var(--bw-palette-gem);outline-offset:3px}.billing-toggle .save{padding:3px 8px;border-radius:999px;color:var(--bw-palette-gem);background:color-mix(in srgb,var(--bw-palette-gem) 10%,transparent);font-size:10px;font-weight:600;letter-spacing:.05em}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;align-items:stretch}.plan{position:relative;display:flex;flex-direction:column;padding:25px 22px;border-radius:20px;transition:transform .2s var(--ease-out),border-color .2s}.plan:hover{transform:translateY(-2px)}.plan.featured{border-color:color-mix(in srgb,var(--bw-palette-gem) 48%,transparent);box-shadow:0 16px 42px color-mix(in srgb,var(--bw-palette-gem) 13%,transparent)}.plan-tag{position:absolute;right:18px;top:18px;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--bw-palette-gem) 12%,transparent);color:var(--bw-palette-gem);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}.plan h3{font-size:22px}.plan .desc{min-height:42px;margin-top:5px;color:var(--dim);font-size:12.5px}.plan-price{display:flex;align-items:baseline;gap:5px;margin-top:18px}.plan-price b{font-family:var(--serif);font-size:42px;line-height:1;letter-spacing:-.04em;color:var(--bw-palette-gem)}.plan-price span{font-size:11px;color:var(--dim)}.plan .grant{margin-top:10px;font-size:13px}.plan .grant b{font-family:var(--serif);color:var(--bw-palette-gem)}.plan ul{list-style:none;margin:20px 0 22px;display:grid;gap:8px;color:var(--dim);font-size:12.5px}.plan li::before{content:'✓';margin-right:8px;color:var(--bw-palette-gem);font-weight:700}.choose{margin-top:auto;width:100%;min-height:44px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:11px;background:color-mix(in srgb,var(--bw-palette-1) 32%,transparent);font-size:13px;font-weight:600;transition:background .18s,border-color .18s,color .18s}.choose:hover{border-color:var(--ink)}.featured .choose{background:var(--ink);border-color:var(--ink);color:var(--paper)}.choose.current{opacity:.62;cursor:default}
-  .rates{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.rate-card{padding:26px;border-radius:20px}.rate-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}.rate-card h3{font-size:22px}.reserve{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--bw-palette-gem);text-transform:uppercase}.rate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.rate-number{padding-top:14px;border-top:1px solid color-mix(in srgb,var(--ink) 17%,transparent)}.rate-number b{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--bw-palette-gem)}.rate-number span{display:block;margin-top:7px;font-size:11px;color:var(--dim)}.rate-card p{margin-top:20px;font-size:13px;color:var(--dim)}
+  .rates{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.rate-card{padding:26px;border-radius:20px}.rate-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}.rate-card h3{font-size:22px}.typical{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--bw-palette-gem);text-transform:uppercase}.rate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.rate-number{padding-top:14px;border-top:1px solid color-mix(in srgb,var(--ink) 17%,transparent)}.rate-number b{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--bw-palette-gem)}.rate-number span{display:block;margin-top:7px;font-size:11px;color:var(--dim)}.rate-card p{margin-top:20px;font-size:13px;color:var(--dim)}
   .estimator{margin-top:16px;padding:26px;border-radius:20px;display:grid;grid-template-columns:1.1fr 1fr auto;gap:18px;align-items:end}.field label{display:block;margin-bottom:7px;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--dim)}.field input,.field select{width:100%;min-height:45px;border:1px solid color-mix(in srgb,var(--ink) 15%,transparent);border-radius:11px;padding:0 13px;background:color-mix(in srgb,var(--bw-palette-1) 35%,transparent);font:inherit;color:var(--ink)}.estimate{min-width:160px;padding:8px 0;text-align:right}.estimate b{display:block;font-family:var(--serif);font-size:31px;color:var(--bw-palette-gem);font-variant-numeric:tabular-nums}.estimate span{font-size:11px;color:var(--dim)}
   .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.pack{padding:22px 18px;border-radius:18px;text-align:left}.pack .u{font-family:var(--serif);font-size:25px;font-variant-numeric:tabular-nums}.pack .p{margin-top:12px;font-size:20px;color:var(--bw-palette-gem)}.pack .unit-price{margin-top:5px;font-size:11px;color:var(--dim)}.pack:hover{transform:translateY(-2px)}
   .terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.term{padding:22px;border-radius:18px}.term b{font-family:var(--serif);font-size:17px}.term p{margin-top:7px;font-size:13px;color:var(--dim)}
@@ -41,9 +41,9 @@
   @media(max-width:820px){.plans{grid-template-columns:1fr}.plan .desc{min-height:0}.rates{grid-template-columns:1fr}.packs{grid-template-columns:1fr 1fr}.terms-grid{grid-template-columns:1fr}.estimator{grid-template-columns:1fr 1fr}.estimate{grid-column:1/-1;text-align:left}.nav .ghost{display:none}}
   @media(max-width:560px){.pagehead{padding:16px 18px}.shell{padding:0 18px 64px}.hero{padding-top:28px}.hero h1{font-size:clamp(36px,12vw,52px)}.packs,.estimator{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.estimate{grid-column:auto}.ledgerstrip{width:100%;border-radius:17px;justify-content:space-between;flex-wrap:wrap;padding:12px 13px}.ledgerstrip a{flex:1 1 100%;text-align:center}.billing-toggle{flex-wrap:wrap}.nav{gap:6px}.nav .cta{font-size:12px;padding:7px 10px}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260811e">
-<link rel="stylesheet" href="./tokens/poster-pages.css?v=20260813a">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260814d">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/poster-pages.css?v=20260814a">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260814e">
 </head>
 <body data-page="pricing">
 <div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
@@ -56,7 +56,7 @@
 </header>
 
 <main class="shell" data-screen-label="Plans and units">
-  <section class="hero"><div><p class="eyebrow">Plans &amp; units</p><h1>Choose a balance that fits.</h1></div><p class="hero-copy">Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is charged from measured model usage.<small>A maximum is held when generation starts. The final charge settles from actual tokens, and unused units return as soon as the answer finishes.</small></p></section>
+  <section class="hero"><div><p class="eyebrow">Plans &amp; units</p><h1>Choose a balance that fits.</h1></div><p class="hero-copy">Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is charged from measured model usage.<small>Nothing is held when generation starts. The charge is the tokens the answer actually used — no reservation, no ceiling — and a reading already underway always finishes.</small></p></section>
 
   <section class="ledgerstrip"><span class="identity" id="whoLine">Not signed in</span><span>Available units <b id="ledgerCount">—</b></span><a id="ledgerCta" href="./login.html">Sign in</a></section>
 
@@ -68,7 +68,7 @@
   <section class="plans" aria-label="Subscription plans">
     <article class="plan" data-plan="free">
       <h3>Free</h3><p class="desc">Create an account and explore the service before paying.</p>
-      <div class="plan-price"><b>$0</b><span>once</span></div><p class="grant"><b>500</b> welcome units</p>
+      <div class="plan-price"><b>$0</b><span>once</span></div><p class="grant"><b>1,500</b> welcome units</p>
       <ul><li>No recurring charge</li><li>Both reading methods</li><li>One shared unit balance</li></ul>
       <a class="choose" href="./login.html" style="display:grid;place-items:center">Create account</a>
     </article>
@@ -92,8 +92,8 @@
     <figcaption><span class="editorial-index">USAGE NOTE</span><b>Reserve first. Settle what was used.</b><p>Unused units return to the same balance as soon as generation completes.</p></figcaption>
   </figure>
   <section class="rates" aria-label="Usage rates">
-    <article class="rate-card" data-rate="stria"><div class="rate-top"><h3>Stria 64</h3><span class="reserve" data-field="reserve">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
-    <article class="rate-card" data-rate="sortis"><div class="rate-top"><h3>Sortis 6</h3><span class="reserve" data-field="reserve">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
+    <article class="rate-card" data-rate="stria"><div class="rate-top"><h3>Stria 64</h3><span class="typical" data-field="typical">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
+    <article class="rate-card" data-rate="sortis"><div class="rate-top"><h3>Sortis 6</h3><span class="typical" data-field="typical">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
   </section>
 
   <section class="estimator" aria-label="Usage estimator">
@@ -112,7 +112,7 @@
 
   <section class="terms-grid" aria-label="Billing rules">
     <article class="term"><b>Two ways to add units</b><p>Use a recurring plan for predictable volume or buy a one-time pack whenever you need it.</p></article>
-    <article class="term"><b>Automatic settlement</b><p>The service reserves the maximum, settles actual usage, and returns the rest without a support request.</p></article>
+    <article class="term"><b>Charged for what you use</b><p>No units are held in advance and nothing is capped. A reading is billed the tokens it used, and one already underway finishes even if the balance runs out.</p></article>
     <article class="term"><b>One shared balance</b><p>Plan units and top-ups fund both Stria and Sortis whenever the account has enough balance.</p></article>
   </section>
 
@@ -123,7 +123,7 @@
 
 <div class="toast" id="toast"></div>
 <script src="./assets/backgrounds/mountain-range.js?v=20260814a"></script>
-<script src="./account.js?v=20260810a"></script>
+<script src="./account.js?v=20260814a"></script>
 <script>
 (function(){
   var A=window.BWAccount;
@@ -139,8 +139,8 @@
       var p=r.products[card.getAttribute('data-rate')];if(!p)return;
       card.querySelector('[data-field="in"]').textContent=p.unitsPer1kInput;
       card.querySelector('[data-field="out"]').textContent=p.unitsPer1kOutput;
-      card.querySelector('[data-field="reserve"]').textContent='about '+p.typicalUnits.toLocaleString('en-US')+' typical · '+p.maximum.toLocaleString('en-US')+' max';
-      card.querySelector('[data-field="note"]').textContent='A typical reading works out to about '+p.typicalUnits.toLocaleString('en-US')+' units, and a follow-up about '+p.typicalFollowUp.toLocaleString('en-US')+'. The service holds at most '+p.maximum.toLocaleString('en-US')+' units, settles measured usage, and returns the difference.';
+      card.querySelector('[data-field="typical"]').textContent='about '+p.typicalUnits.toLocaleString('en-US')+' typical';
+      card.querySelector('[data-field="note"]').textContent='A typical reading works out to about '+p.typicalUnits.toLocaleString('en-US')+' units, and a follow-up about '+p.typicalFollowUp.toLocaleString('en-US')+'. Both figures are estimates: the charge is measured from the tokens the answer actually used, so a short one costs less and a long one costs more.';
     });
     estimate();
   }
@@ -151,10 +151,9 @@
     var p=RATES.products[method];if(!p)return;
     var out=Math.max(100,Number(document.getElementById('estimateTokens').value)||0);
     var raw=Math.ceil(p.typicalInputTokens/1000*p.unitsPer1kInput+out/1000*p.unitsPer1kOutput);
-    var units=Math.min(raw,p.maximum);
-    el.textContent=units.toLocaleString('en-US');
+    el.textContent=raw.toLocaleString('en-US');
     var note=document.getElementById('estimateNote');
-    if(note)note.textContent=(raw>p.maximum?'maximum charge':'estimate')+' with the '+p.typicalInputTokens.toLocaleString('en-US')+'-token prompt this method sends';
+    if(note)note.textContent='estimate with the '+p.typicalInputTokens.toLocaleString('en-US')+'-token prompt this method sends';
   }
   fetch('/api/rates').then(function(r){return r.json()}).then(applyRates).catch(function(){});
   function checkout(sku){fetch('/api/checkout',{method:'POST',headers:{'content-type':'application/json'},credentials:'same-origin',body:JSON.stringify({sku:sku})}).then(function(response){if(response.status===401){toast('Sign in before opening checkout.');setTimeout(function(){location.href='./login.html';},900);return null;}return response.json().catch(function(){return null;}).then(function(body){return{status:response.status,body:body};});}).then(function(result){if(!result)return;if(result.status===200&&result.body&&result.body.url){location.href=result.body.url;return;}if(result.status===503){toast('Payments are not available yet. Nothing was charged.');return;}toast('Checkout could not open. Nothing was charged.');}).catch(function(){toast('Checkout could not open. Nothing was charged.');});}

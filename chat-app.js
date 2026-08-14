@@ -67,8 +67,10 @@
     var u = S.units.toLocaleString("en-US");
     $("unitsSide").textContent = u;
     $("unitsTop").textContent = u + " units";
-    // the meter measures against this account's real allowance, not a fixed 4,500
-    var allowance = ((A.PLANS && A.PLANS[S.account.plan] || {}).grant) || 500;
+    // the meter measures against this account's real allowance, not a fixed 4,500.
+    // The clamp also covers a negative balance — a reading that outran the
+    // balance still finished, so the bar bottoms out rather than inverting.
+    var allowance = ((A.PLANS && A.PLANS[S.account.plan] || {}).grant) || 1500;
     var pct = Math.max(4, Math.min(100, Math.round(S.units / allowance * 100)));
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
     var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
@@ -196,7 +198,7 @@
   function renderMethod() {
     var m = method();
     $("methodChip").textContent = m.name;
-    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost, m.reserve);
+    $("methodNote").textContent = C.composer.methodNote(m.name, m.cost);
     renderMethodMenu();
   }
   function renderMethodMenu() {
@@ -1097,11 +1099,12 @@
     }
     if (recastReq && !decided) decided = "new";
     var isFollowup = candidate && decided !== "new";
-    var needed = isFollowup ? m.followReserve : m.reserve;
-    /* Match the server admission maximum so a request never appears to start
-       locally and then fails at the billing gate. The hold is not painted as a
-       balance jump; the final measured settlement arrives once with bw_meta. */
-    if (S.units < needed) {
+    /* Mirror the server gate exactly — any positive balance is let through.
+       Gating on a typical-cost estimate here would refuse readings the server
+       would happily have run, which is the failure this used to have. A reading
+       that outruns the balance still finishes and still bills; it is the NEXT
+       request that gets stopped. */
+    if (!(S.units > 0)) {
       pulseLedger();
       toast(C.errors.outOfUnits);
       return;
@@ -1116,11 +1119,11 @@
     c.msgs.push({ role: "user", text: text });
     save();                                 // persist the question first
     clearDraft();                           // the composed question is now spent
-    /* The server reserves the maximum atomically. The local number stays still
-       during generation and reconciles once to the final measured charge. */
+    /* Nothing is deducted up front. The local number stays still through
+       generation and reconciles once, to the measured charge in bw_meta. */
     renderAll({ animateLast: true });
 
-    if (isFollowup) { followupFlow(c, text, m, lastCast, needed); return; }
+    if (isFollowup) { followupFlow(c, text, m, lastCast, m.followCap); return; }
 
     busy = true;
     $("sendBtn").disabled = true;
@@ -1269,8 +1272,8 @@
       tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       renderUnits(); renderList();
-      // the backend settled an interrupted reading by ACTUAL output (metered)
-      // and refunded the unused reserve. Recasting would throw the figure away
+      // the backend charged an interrupted reading for its ACTUAL output only.
+      // Recasting would throw the figure away
       // — so continue AUTOMATICALLY on this same casting (a metered follow-up),
       // once per incident; if the continuation also cuts short, fall back to
       // telling the user instead of looping.
@@ -1338,12 +1341,12 @@
 
   /* ── follow-up flow: a further question ON the existing casting. No new
      hexagram, no casting animation — the SAME board grounds the answer and
-     prior turns ride along as history. Billing is metered: the client
-     reserves followCost optimistically, the server settles to actual token
-     usage and refunds the difference (bw_meta carries the real balance +
-     the actual charge). An interrupted CAST plus a "continue" follow-up is
-     the recovery path that used to require paying for a whole recast. ── */
-  function followupFlow(c, text, m, lastCast, reserved) {
+     prior turns ride along as history. Billing is metered with no ceiling: the
+     server charges the tokens this answer actually used, and bw_meta carries
+     the real balance and the real charge back. `estimate` is only the stand-in
+     shown if bw_meta never arrives. An interrupted CAST plus a "continue"
+     follow-up is the recovery path that used to require a whole recast. ── */
+  function followupFlow(c, text, m, lastCast, estimate) {
     busy = true;
     $("sendBtn").disabled = true;
 
@@ -1394,8 +1397,8 @@
       release();
     }
     function finish(ans) {
-      // bw_meta reported the ACTUAL metered charge; fall back to the reserve.
-      var charged = (typeof window.__bwLastCharged === "number") ? window.__bwLastCharged : reserved;
+      // bw_meta reported the ACTUAL metered charge; fall back to the estimate.
+      var charged = (typeof window.__bwLastCharged === "number") ? window.__bwLastCharged : estimate;
       try { window.__bwLastCharged = null; } catch (e) {}
       var msg = {
         role: "oracle", text: ans.text, method: m.name, methodId: m.id,

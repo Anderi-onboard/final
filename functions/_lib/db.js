@@ -2,7 +2,6 @@
 // accounts, prepaid units, and history. Legacy plan values remain readable so
 // existing accounts migrate without losing balances.
 
-// Free signup now grants 500 units (new-user welcome grant).
 // ── ONE unit price, everywhere ─────────────────────────────────────────────
 // A unit is worth the same wherever it came from: $19 buys 30,000 of them,
 // $29 buys 46,000, a $5 top-up buys 8,000. Tiered "bulk discounts" used to make
@@ -15,7 +14,13 @@
 // units that refill every month — not from a cheaper unit.
 export const UNIT_PRICE_USD = 1 / 1500;   // exactly 1,500 units per $1
 
-export const PLAN_GRANT = { free: 500, pro: 28500, premium: 43500 };
+// The free grant has to clear a real reading with room to spare, or the signup
+// funnel is broken on arrival. At 500 it did not: a Sortis reading measures
+// around 780 units, so a new account could not cast the flagship method even
+// once, and Stria at ~440 left nothing for the follow-up that makes a reading
+// useful. 1,500 buys a Sortis reading and a follow-up, or three Stria readings
+// — enough to see what the product actually does before deciding to pay.
+export const PLAN_GRANT = { free: 1500, pro: 28500, premium: 43500 };
 
 // Annual plans pay ten months for twelve: the same monthly allowance x12,
 // granted at once. That discount is a deliberate margin trade (~51% against
@@ -31,10 +36,10 @@ export const PACKS = [
   { units: 75000, usd: 50 }
 ];
 
-// TYPICAL cost of a reading, from measured usage. Separate reserve constants
-// below define the maximum held at admission; settlement still follows the
-// tokens actually used. These values let the interface set expectations before
-// the request begins.
+// TYPICAL cost of a reading, from measured usage. ESTIMATE ONLY — nothing is
+// held, capped or gated on these numbers; they exist so the interface can set
+// an expectation before the request begins. The bill is whatever the tokens
+// come to.
 //
 // Re-measured after extended thinking was turned off in api/claude.js (it was
 // spending most of the token budget on reasoning the reader never saw, which
@@ -43,21 +48,29 @@ export const PACKS = [
 //   stria  initial    417 / 428 units         (1202 / 1288 chars)
 //   sortis follow-up  600 / 643 units
 //   stria  follow-up  480 units
-// Rounded to the median, then up rather than down: a reader should not be
-// surprised by a charge larger than the figure shown before they asked.
+// Rounded to the median, then up rather than down: an estimate that runs a
+// little high is a better neighbour than one that runs low.
 // IF CLAUDE_THINKING IS EVER SET BACK TO "on", these roughly double — re-measure
 // before trusting them.
 export const METHOD_COST = { stria: 440, sortis: 780 };
-// Maximum held at admission. Settlement is still proportional to measured
-// tokens, but can never exceed the amount the reader accepted at the start.
-// The headroom covers the longest clean samples measured with thinking off.
-export const METHOD_RESERVE = { stria: 520, sortis: 900 };
 export const PAID = { pro: true, premium: true };
 
-// ── Metered billing with a published ceiling ───────────────────────────────
-// A reading is billed for the tokens it actually consumed, up to the maximum
-// held at admission. Shorter readings cost less; unusually long output never
-// creates debt or a surprise charge above the accepted maximum.
+// ── Metered billing, no ceiling ────────────────────────────────────────────
+// A reading is billed for the tokens it actually consumed. Full stop. A short
+// answer costs little, a long one costs more, and the charge tracks the work
+// in both directions — 359 units used is 359 units charged.
+//
+// There is deliberately no reservation and no cap. Both were tried and both
+// were wrong in the same way: a ceiling has to be set above typical usage to
+// avoid clipping the bill, and admission then has to demand that whole ceiling
+// up front, so readers who could comfortably afford a reading were refused one.
+// Charging proportionally needs neither number.
+//
+// A reading already in flight is never interrupted for money. Admission asks
+// only that the balance is positive; settlement then charges the full measured
+// amount even when that takes the balance below zero. The reader gets the
+// reading they started, and the next request is the one that gets refused —
+// see chargeUnits() for why the settlement debit has no balance guard.
 //
 // WHY THE RATES ARE KEYED BY MODEL, NOT BY PRODUCT
 // The model behind a product changes (Stria has already moved from Sonnet 4.6
@@ -103,7 +116,6 @@ const FALLBACK_RATE = MODEL_RATES['anthropic/claude-opus-5'];
 // follow-up carries the same conversation as a Sortis one while its own answer
 // stays short, so input dominates the bill. See METHOD_COST for the samples.
 export const FOLLOW_COST = { stria: 490, sortis: 640 };
-export const FOLLOW_RESERVE = { stria: 560, sortis: 720 };
 
 // Chinese runs about 1.064 tokens per character; Latin script about 0.287
 // (both measured against the Claude tokenizer). The old estimate assumed 4
@@ -206,6 +218,36 @@ export async function spendUnits(db, userId, cost, reason) {
   const row = out[2] && out[2].results && out[2].results[0];
   if (!row) return { ok: false, error: 'no user' };
   return changed ? { ok: true, units: row.units } : { ok: false, error: 'insufficient', units: row.units };
+}
+
+// Settlement debit — the counterpart to spendUnits, and deliberately WITHOUT
+// its `units>=?` guard. By the time this runs the model has already written
+// the reading and the tokens are already spent upstream; refusing the debit
+// would not un-spend them, it would just hand out the reading for free. So the
+// charge always lands, even when it takes the balance below zero.
+//
+// That negative balance is the mechanism behind "finish the reading they
+// started": a reader who runs out mid-reading still gets it in full, and the
+// shortfall sits on the account until they top up. guardRequest() refuses the
+// NEXT request, which is the right place to stop — before work is done, not
+// after. The ledger row records the true delta either way, so a balance can
+// always be reconstructed by replaying it.
+export async function chargeUnits(db, userId, amount, reason) {
+  amount = Math.max(0, Math.floor(Number(amount) || 0));
+  if (!amount) {
+    const u = await getUser(db, userId);
+    return u ? { ok: true, units: u.units } : { ok: false, error: 'no user' };
+  }
+  const t = now();
+  const out = await db.batch([
+    db.prepare('UPDATE users SET units=units-?, updated_at=? WHERE id=?').bind(amount, t, userId),
+    db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) SELECT id,?,?,units,? FROM users WHERE id=?')
+      .bind(-amount, reason || 'charge', t, userId),
+    db.prepare('SELECT units FROM users WHERE id=?').bind(userId)
+  ]);
+  const row = out[2] && out[2].results && out[2].results[0];
+  if (!row) return { ok: false, error: 'no user' };
+  return { ok: true, units: row.units };
 }
 
 export async function grantUnits(db, userId, amount, reason) {

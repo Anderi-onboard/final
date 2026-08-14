@@ -32,7 +32,7 @@ html[data-skin="paper"] body::after {
   mask-size: 360px 360px;
   -webkit-mask-repeat: repeat;
   mask-repeat: repeat;
-  opacity: .105;
+  opacity: .14;
 }
 
 html[data-skin="paper"] body > :not(.mtn-bg):not(script):not(style) {
@@ -51,7 +51,7 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
   mask-size: max(1180px, 100vw) auto;
   -webkit-mask-repeat: repeat-y;
   mask-repeat: repeat-y;
-  opacity: .095;
+  opacity: .18;
 }
 
 /* Shared misted material. It has no visible border; separation comes from
@@ -198,12 +198,12 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
   html[data-skin="paper"] body::after {
     -webkit-mask-size: 300px 300px;
     mask-size: 300px 300px;
-    opacity: .09;
+    opacity: .12;
   }
   html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
     -webkit-mask-size: 940px auto;
     mask-size: 940px auto;
-    opacity: .085;
+    opacity: .16;
   }
   :where(.sidebar,.pagehead,.top,.card,.section .panel) {
     --lux-glass-blur-heavy: 22px;
