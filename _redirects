@@ -18,3 +18,6 @@
 /tests/*         /404.html   404
 /scripts/*       /404.html   404
 /artifacts/*     /404.html   404
+
+# Retired visual experiments must not remain publicly reachable.
+/baoxianghua-compositions.html   /404.html   404

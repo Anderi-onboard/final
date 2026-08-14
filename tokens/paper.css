@@ -8,23 +8,6 @@
    slightly irregular edges. Surfaces stay opaque and two-dimensional. */
 
 [data-skin="paper"] {
-  --paper-motif-wheel: none;
-  --paper-motif-lotus: none;
-  --ornament-scroll: none;
-  --ornament-layered: none;
-  --ornament-simple: none;
-  --ornament-wheel: none;
-  --ornament-cloud: none;
-  --ornament-beaded: none;
-  /* Texture off. Both overlays that carry it — the full-viewport one below and
-     the per-card one in refinement.css — read these two tokens and nothing
-     else, so switching them to `none` removes the texture everywhere from one
-     place, and restoring the two url() lines brings it back exactly as it was.
-     The SVG and PNG stay in assets/ for that reason. */
-  --paper-grain-image: none;
-  --paper-grain-size: 360px 360px;
-  --paper-fiber-image: none;
-  --paper-fiber-size: 128px 128px;
   /* verified editorial palette, adapted into interface roles */
   --paper: #E7E1D7;         /* full canvas / muted warm paper */
   --paper-raised: #DED8CD;  /* irregular carrier surfaces */
@@ -78,40 +61,4 @@
   --wash: var(--paper-dim);
   --side-wash: var(--paper-dim);
   --focus-ring: var(--terracotta);
-}
-
-/* Complete, front-facing Baoxianghua medallions replace the former fibre +
-   oil screens. No stems, vines or open botanical fragments are used. They
-   work as a low-contrast ink watermark, so colour comes from the active
-   palette while the ornamental geometry remains fixed. */
-html[data-skin="paper"] body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 2147483646;
-  pointer-events: none;
-  background-color: color-mix(in srgb, var(--bw-palette-on-cloud, var(--ink)) 72%, transparent);
-  -webkit-mask-image: var(--paper-motif-wheel), var(--paper-motif-lotus);
-  mask-image: var(--paper-motif-wheel), var(--paper-motif-lotus);
-  -webkit-mask-position: 26px 18px, 344px 246px;
-  mask-position: 26px 18px, 344px 246px;
-  -webkit-mask-size: 460px 460px, 640px 640px;
-  mask-size: 460px 460px, 640px 640px;
-  -webkit-mask-repeat: repeat;
-  mask-repeat: repeat;
-  opacity: .012;
-}
-
-/* Editorial and legal pages carry more uninterrupted flat colour, so their
-   paper relief can be stronger without competing with dense controls. */
-html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
-  -webkit-mask-position: 38px 24px, 448px 302px;
-  mask-position: 38px 24px, 448px 302px;
-  -webkit-mask-size: 560px 560px, 760px 760px;
-  mask-size: 560px 560px, 760px 760px;
-  opacity: .018;
-}
-
-@media (prefers-contrast: more) {
-  html[data-skin="paper"] body::after { opacity: .07; }
 }

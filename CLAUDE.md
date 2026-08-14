@@ -252,9 +252,11 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 ## 7 · 工作流(必须遵守)
 
 1. **构建标签**:任何 HTML/CSS/JS 改动,必须把全站 `?v=` 与 `version.json` 一起 bump 到同一个新标签(如 `20260726c`)。漏 bump = 用户看到的还是旧缓存(历史上多次"改了没生效"都是这个原因)。
-2. **分支**:在自己的 `claude/session-*` 分支上做,rebase 到最新 `main` 再开 PR。**先 `git fetch origin main`**,另一个会话可能刚推过。
-3. **验证要用证据**:改布局就截图/量几何,改动画就采样,不要凭感觉说"修好了"。截图前**禁用缓存**,否则会被旧文件骗。
-4. **不要碰**:`PROGRESS.md` 已被 `_redirects` 挡在公网外,保持这样。
+2. **禁止直接写 `main`**:`main` 是唯一生产分支,任何 Claude/Codex/人工会话都不得直接 commit、push 或 fast-forward 到它。只能从最新 `origin/main` 建立自己的任务分支,完成后经 PR 合入。
+3. **分支隔离**:Claude 在自己的 `claude/session-*` 分支上做,Codex 在独立集成分支上做。开始前先 `git fetch origin main`,从最新 `origin/main` 分叉;提交 PR 前再次合入或 rebase 最新 `origin/main`。不同会话不得共用一个工作分支。
+4. **PR 是唯一上线入口**:生产变更必须通过 PR 进入 `main`;如果 GitHub 拒绝分支名,换用不与现有 ref 冲突的名字,不得改为直接推 `main`。PR 合入后其他会话重新 fetch,不要沿用旧基线继续提交。
+5. **验证要用证据**:改布局就截图/量几何,改动画就采样,不要凭感觉说"修好了"。截图前**禁用缓存**,否则会被旧文件骗。
+6. **不要碰**:`PROGRESS.md` 已被 `_redirects` 挡在公网外,保持这样。
 
 ---
 

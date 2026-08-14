@@ -771,15 +771,20 @@
   /* ── follow-up vs new-question detection (Sonnet 5) ──
      Same thread + same method no longer means "always follow-up": a small
      Sonnet 5 classification decides whether the new message rides ON the
-     previous casting (FOLLOWUP → metered, ≤ half price) or raises a different
-     matter that deserves a fresh hexagram (NEW → full cast, in THIS thread,
-     history preserved). Unbilled utility call; 4s timeout or any failure
-     defaults to FOLLOWUP — the cheaper, least-surprising outcome. */
+     previous casting (FOLLOWUP → answered from the board in hand) or raises a
+     different matter that deserves a fresh hexagram (NEW → full cast, in THIS
+     thread, history preserved). Both are billed the same way — purely by what
+     they use — so this is a METHOD decision, never a price one.
+
+     Unbilled utility call; a 4s timeout or any failure defaults to FOLLOWUP,
+     because that is the answer that can still be corrected: decide() promotes a
+     follow-up to a new casting when the board cannot carry the yongshen, and
+     nothing demotes a needless new casting back. */
   function detectIntent(question, lastQuestion, lastReading, lastBoard) {
     var PC = window.BWPromptChecks;
     var R = PC && PC.INTENT_ROUTER;
-    // No engine, or no proxy to ask — treat it as a follow-up, the cheaper and
-    // least surprising outcome.
+    // No checks module, or no proxy to ask — treat it as a follow-up: the
+    // board in hand still gets checked downstream, so this stays correctable.
     if (!R || !(window.claude && typeof window.claude.complete === "function")) {
       return Promise.resolve((R && R.fallback) || "followup");
     }

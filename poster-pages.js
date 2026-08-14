@@ -4,10 +4,10 @@
   var body = document.body;
   var page = body && body.dataset.page;
   var patternSources = [
-    "./assets/textures/lianqian/lianqian-dense-clay.webp?v=20260815a",
-    "./assets/textures/lianqian/lianqian-outline-silver.webp?v=20260815a",
-    "./assets/textures/lianqian/lianqian-spaced-medallion.webp?v=20260815a",
-    "./assets/textures/lianqian/lianqian-diagonal-clay.webp?v=20260815a"
+    "./assets/textures/lianqian/lianqian-dense-clay.webp?v=20260815d",
+    "./assets/textures/lianqian/lianqian-outline-silver.webp?v=20260815d",
+    "./assets/textures/lianqian/lianqian-spaced-medallion.webp?v=20260815d",
+    "./assets/textures/lianqian/lianqian-diagonal-clay.webp?v=20260815d"
   ];
 
   function installPatternStage() {

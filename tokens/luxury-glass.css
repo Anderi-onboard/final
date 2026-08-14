@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay.webp?v=20260815a");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver.webp?v=20260815a");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion.webp?v=20260815a");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay.webp?v=20260815a");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay.webp?v=20260815d");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver.webp?v=20260815d");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion.webp?v=20260815d");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay.webp?v=20260815d");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -22,8 +22,11 @@ html[data-skin="paper"] body {
 
 /* A quiet connected-coin field replaces the former floral monogram. */
 html[data-skin="paper"] body::after {
+  content: "";
+  position: fixed;
   inset: 0;
   z-index: 1;
+  pointer-events: none;
   background: var(--lq-outline) 0 0 / 300px 300px repeat;
   -webkit-mask-image: none;
   mask-image: none;
@@ -77,7 +80,6 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
 .lq-texture-layer[data-pattern="1"] { --lq-size: 310px; --lq-opacity: .34; }
 .lq-texture-layer[data-pattern="2"] { --lq-size: 390px; --lq-opacity: .22; }
 .lq-texture-layer[data-pattern="3"] { --lq-size: 350px; --lq-opacity: .24; }
-}
 
 /* Shared misted material. It has no visible border; separation comes from
    blur, a restrained inset highlight, and a soft ambient shadow. */
@@ -101,15 +103,6 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
   background-color: var(--lux-glass-strong) !important;
   -webkit-backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
   backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
-}
-
-/* Retire the previous Baoxianghua relief from every component surface. */
-html[data-skin="paper"] body :is(
-  .ledger,.composer,.method-menu,.acct-menu,.m-card,.band,.tile,.card,.panel,
-  .toc,.pull,.headline,.why-card,.method,.progress,.guide-stage,.lesson-card,
-  .example,.rate,.ledgerstrip,.rate-card,.estimator,.plan,.topup,.pack,.term,.cost
-)::after {
-  content: none !important;
 }
 
 /* A glass surface should remain still; only its material weight changes. */
