@@ -8,5 +8,11 @@ dist/
 eval/copy-audit/
 design-qa.md
 
+# generated prompt dumps — a verbatim second copy of prompt-engine.js, and
+# artifacts/ is served publicly, so there is no reason to deploy 280 KB of
+# duplicate text. Regenerate with: node scripts/dump-prompt.js
+artifacts/full-prompt.txt
+artifacts/full-prompt.html
+
 # os / editor
 .DS_Store
