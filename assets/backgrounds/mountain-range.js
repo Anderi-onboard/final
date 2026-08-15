@@ -20,8 +20,9 @@
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
     + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
-    /* The base sky is the only flat colour plane. The former hard-edged water
-       polygon and all filled ridge bands are intentionally absent. */
+    /* The sky stays the only rectangular colour plane. The rest of the group
+       is carried by rounded SVG landforms, so every palette colour is visible
+       without bringing back the old hard-edged horizontal panels. */
     + '.mtn-sky::after{content:none}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
     + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
@@ -36,10 +37,17 @@
     + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:1.55;opacity:.72}'
     + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:2.45;opacity:.5}'
     + '.mtn-bg .contour use:nth-child(3n){stroke-width:1.9;opacity:.62}'
-    /* LINE-ART mode — add class "line-art" to .mtn-bg. The filled ridges drop
-       out and only the contour lines remain: a clean topographic line-drawing
-       of the range, so text pages keep the living, moving backdrop without any
-       coloured wash competing with the words. */
+    + '.mtn-bg .fill{animation:none;opacity:.9;transition:fill 1.5s cubic-bezier(.77,0,.175,1),opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg .fill.l1{fill:var(--bw-palette-1,#D7D0C4)}.mtn-bg .fill.l2{fill:var(--bw-palette-2,#D7D0C4)}'
+    + '.mtn-bg .fill.l3{fill:var(--bw-palette-3,#CEC4B5)}.mtn-bg .fill.l4{fill:var(--bw-palette-4,#CEC4B5)}'
+    + '.mtn-bg .fill.l5{fill:var(--bw-palette-5,#C2B49F)}.mtn-bg .fill.l6{fill:var(--bw-palette-6,#C2B49F)}'
+    + '.mtn-bg .fill.l7{fill:var(--bw-palette-7,#B39F82)}.mtn-bg .fill.l8{fill:var(--bw-palette-8,#B39F82)}'
+    + '.mtn-bg .fill.l9{fill:var(--bw-palette-9,#967B60)}.mtn-bg .fill.l10{fill:var(--bw-palette-10,#967B60)}'
+    + '.mtn-bg .mtn-water{fill:var(--bw-palette-water,#B4AA9A);opacity:.68;transition:fill 1.5s cubic-bezier(.77,0,.175,1)}'
+    /* LINE-ART mode retains the colour group as a quiet wash underneath the
+       hand-drawn contours instead of deleting nine of the ten visible roles. */
+    + '.mtn-bg.line-art .fill{opacity:.72}'
+    + '.mtn-bg.line-art .mtn-water{opacity:.5}'
     + '.mtn-bg.line-art [clip-path]>use{opacity:.5;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .contour.l1 use{stroke:color-mix(in srgb,var(--bw-palette-1,#756F68) 42%,transparent)}'
     + '.mtn-bg .contour.l2 use{stroke:color-mix(in srgb,var(--bw-palette-2,#756F68) 42%,transparent)}'
@@ -95,6 +103,11 @@
   };
   var CLOUD = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30 C 116 32 116 44 100 42 C 96 50 76 48 70 40 C 64 50 40 50 34 40 C 22 44 6 42 18 30 Z";
   var CLOUDC = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30";
+  var WATER = "M -2000 476 C -1660 442 -1320 510 -980 478 C -640 446 -300 514 40 480 C 380 446 720 508 1060 476 C 1400 444 1740 510 2080 478 C 2420 446 2760 514 3100 480 C 3440 448 3740 502 4000 476 L 4000 526 C 3700 548 3400 498 3060 530 C 2720 562 2380 500 2040 532 C 1700 564 1360 502 1020 530 C 680 558 340 504 0 532 C -340 560 -680 500 -1020 530 C -1360 560 -1700 502 -2000 526 Z";
+
+  /* Close each rounded ridge to the viewport floor; only the organic top edge
+     is exposed because nearer layers cover the closing edges. */
+  function shape(i) { return W[i] + " L 4000 600 L -2000 600 Z"; }
 
   /* Fewer, less evenly spaced strokes read as a hand-drawn landscape instead
      of a technical contour map. The foreground remains denser, but no plane
@@ -119,6 +132,7 @@
     var par = (opts && opts.par) || 'xMidYMid slice';
     var defs = '<defs>';
     for (var i = 1; i <= 10; i++) {
+      defs += '<path id="mw' + i + '" d="' + shape(i) + '"/>';
       defs += '<path id="mw' + i + 'c" d="' + W[i] + '"/>';
     }
     defs += '<path id="mxy-cloud" d="' + CLOUD + '"/><path id="mxy-cloud-c" d="' + CLOUDC + '"/>';
@@ -131,7 +145,9 @@
         var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
         contour += '<use href="#mw' + i + 'c" y="' + offset.toFixed(2) + '"/>';
       }
-      ridges += '<g class="flow-' + i + '"><g class="contour l' + i + '">' + contour + '</g></g>';
+      ridges += '<g class="flow-' + i + '"><use href="#mw' + i + '" class="fill l' + i + '"/>'
+        + '<g class="contour l' + i + '">' + contour + '</g></g>';
+      if (i === 6) ridges += '<path class="mtn-water" d="' + WATER + '"/>';
     });
 
     var clouds = '';
@@ -283,6 +299,9 @@
 
     queuePaletteLayer(4400, function () {
       root.style.setProperty("--bw-palette-water", tonedWater);
+      document.querySelectorAll(".mtn-water").forEach(function (node) {
+        node.style.fill = tonedWater;
+      });
     }, immediate);
 
     window.dispatchEvent(new CustomEvent("bw:palettechange", {
