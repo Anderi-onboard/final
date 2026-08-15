@@ -276,3 +276,214 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
     transform: none !important;
   }
 }
+
+/* Soft Peach lock ---------------------------------------------------------
+   UI chrome no longer inherits the rotating landscape palette. The animated
+   landscape may keep changing behind the product, while every control and
+   carrier stays in one stable, reference-led material system. */
+html[data-skin="paper"] {
+  --soft-peach: #FFDE96;
+  --soft-peach-accent: #DE795D;
+  --soft-peach-cream: #F4E8CE;
+  --soft-peach-paper: #EBDDCA;
+  --soft-peach-ink: #34251F;
+  --soft-peach-muted: #765B4E;
+  --soft-peach-line: color-mix(in srgb, var(--soft-peach-ink) 16%, transparent);
+  --soft-peach-glass: color-mix(in srgb, var(--soft-peach) 58%, transparent);
+  --soft-peach-glass-soft: color-mix(in srgb, var(--soft-peach-cream) 48%, transparent);
+  --soft-peach-glass-strong: color-mix(in srgb, var(--soft-peach) 76%, transparent);
+  --soft-peach-glass-hover: color-mix(in srgb, var(--soft-peach) 84%, transparent);
+  --soft-peach-shadow: color-mix(in srgb, var(--soft-peach-ink) 18%, transparent);
+  --lux-glass: var(--soft-peach-glass);
+  --lux-glass-quiet: var(--soft-peach-glass-soft);
+  --lux-glass-strong: var(--soft-peach-glass-strong);
+  --lux-glass-hover: var(--soft-peach-glass-hover);
+  --lux-glass-edge: var(--soft-peach-line);
+  --lux-glass-shadow: var(--soft-peach-shadow);
+}
+
+html[data-skin="paper"] body {
+  --cp-ink: var(--soft-peach-ink);
+  --cp-accent: var(--soft-peach-accent);
+  --cp-on-accent: var(--soft-peach-ink);
+  --cp-carrier: var(--soft-peach-glass);
+  --cp-carrier-strong: var(--soft-peach-glass-strong);
+  --cp-tint: color-mix(in srgb, var(--soft-peach-accent) 12%, var(--soft-peach));
+  --cp-line: var(--soft-peach-line);
+  --cp-line-strong: color-mix(in srgb, var(--soft-peach-ink) 31%, transparent);
+  --cp-line-accent: color-mix(in srgb, var(--soft-peach-accent) 62%, transparent);
+  --terracotta: var(--soft-peach-accent);
+  --ink: var(--soft-peach-ink);
+  --dim: var(--soft-peach-muted);
+}
+
+/* Stable glass carriers. The repeated texture remains visible underneath,
+   but the carrier colour itself never changes with the environment. */
+html[data-skin="paper"] body :is(
+  .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,
+  .pagehead,.top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,
+  .estimator,.pack,.term,.billing-mail-note,.toast,.progress,.controls,
+  .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
+) {
+  color: var(--soft-peach-ink);
+  border-color: transparent !important;
+  background-color: var(--soft-peach-glass) !important;
+  background-image: none !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 34%, transparent),
+    0 16px 44px -32px var(--soft-peach-shadow) !important;
+}
+html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
+  background-color: var(--soft-peach-glass-strong) !important;
+}
+@media (hover:hover) and (pointer:fine) {
+  html[data-skin="paper"] body :is(.plan,.rate-card,.pack,.term,.lesson-card,.method,.why-card):hover {
+    background-color: var(--soft-peach-glass-hover) !important;
+  }
+}
+
+/* App: retain the established sidebar/composer layout, freeze only its UI
+   material. Reading content remains quieter than the controls. */
+html[data-skin="paper"] body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, var(--soft-peach) 82%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.composer,.method-menu,.carry-menu,.guide-coach,.signin-coach) {
+  background-color: color-mix(in srgb, var(--soft-peach) 68%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.msg-user,.reading) {
+  color: var(--soft-peach-ink) !important;
+  background-color: color-mix(in srgb, var(--soft-peach-cream) 48%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="app"] .msg-user {
+  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, transparent) !important;
+  color: #251A17 !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.send,.exchange) {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.stria,.chip,.rd-action,.rd-prompt) {
+  color: var(--soft-peach-ink) !important;
+}
+
+/* Pricing keeps the living landscape. Its plans are fixed peach glass, so
+   the texture and line-art can be read through the material without tinting
+   every control a different colour. */
+html[data-skin="paper"] body[data-page="pricing"] .mtn-bg,
+html[data-skin="paper"] body[data-page="pricing"] .mtn-sky {
+  display: block !important;
+}
+html[data-skin="paper"] body[data-page="pricing"] :is(
+  .plan,.rate-card,.estimator,.pack,.term,.ledgerstrip,.billing-toggle,.billing-mail-note
+) {
+  color: var(--soft-peach-ink) !important;
+  border: 0 !important;
+  background-color: var(--soft-peach-glass) !important;
+  background-image: none !important;
+}
+html[data-skin="paper"] body[data-page="pricing"] :is(.plan.featured,.plan.feat) {
+  background-color: var(--soft-peach-glass-strong) !important;
+  box-shadow: inset 0 3px 0 var(--soft-peach-accent), 0 16px 44px -32px var(--soft-peach-shadow) !important;
+}
+html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+
+/* Text pages: one flat colour per major editorial field. There are no
+   gradients and no glass behind body copy; measure and alignment are kept
+   deliberately consistent from section to section. */
+html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) {
+  background-color: var(--soft-peach-cream) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .why-hero,
+html[data-skin="paper"] body[data-page="legal"] .legal-poster-intro {
+  background-color: var(--soft-peach-cream) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .editorial-spread,
+html[data-skin="paper"] body[data-page="about"] .close,
+html[data-skin="paper"] body[data-page="legal"] .legal-foot {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .editorial-spread--reflection,
+html[data-skin="paper"] body[data-page="about"] .why-panel:nth-of-type(4),
+html[data-skin="paper"] body[data-page="legal"] .clause:nth-of-type(3n) {
+  background-color: var(--soft-peach-paper) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .why-panel,
+html[data-skin="paper"] body[data-page="legal"] .clause {
+  background-color: var(--soft-peach) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .why-panel:nth-of-type(3),
+html[data-skin="paper"] body[data-page="legal"] .clause:nth-of-type(even) {
+  background-color: #E8A276 !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] :is(.why-hero-title,.hero-copy,.panel-head),
+html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro>*,.clause>*) {
+  min-width: 0;
+}
+html[data-skin="paper"] body[data-page="about"] :is(.panel-head p,.why-card p,.method p,.boundary p),
+html[data-skin="paper"] body[data-page="legal"] .clause :is(p,li) {
+  max-width: 58ch;
+}
+
+html[data-skin="paper"] body[data-page="guide"] {
+  --guide-field: var(--soft-peach) !important;
+  --guide-ink: var(--soft-peach-ink) !important;
+  background-color: var(--guide-field) !important;
+}
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="1"] { --guide-field: var(--soft-peach-paper) !important; }
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="2"] { --guide-field: #E8A276 !important; }
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="3"] { --guide-field: var(--soft-peach-accent) !important; }
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="4"] { --guide-field: var(--soft-peach-cream) !important; }
+html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: min(78%, 840px); }
+html[data-skin="paper"] body[data-page="guide"] .lesson .lead { max-width: 50ch; }
+
+/* Utility pages use the previous single-carrier composition over the fixed
+   Soft Peach material. Form fields are opaque enough to stay legible. */
+html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.section,.not-found,.nf-card) {
+  background-color: var(--soft-peach-glass-strong) !important;
+}
+html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(input,select,.field,.tabs,.prov) {
+  color: var(--soft-peach-ink) !important;
+  border-color: transparent !important;
+  background-color: color-mix(in srgb, var(--soft-peach-cream) 82%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="login"] :is(.card-hero,.tab.on) {
+  background-color: color-mix(in srgb, var(--soft-peach) 86%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="login"] :is(.prov.submit) {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="settings"] > .toast {
+  position: fixed !important;
+  left: 50%;
+  z-index: 60;
+}
+
+@media (max-width: 760px) {
+  html[data-skin="paper"] body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close),
+  html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro,.clause,.legal-foot) {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: 100%; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html[data-skin="paper"] body :is(
+    .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
+    .top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,.estimator,.pack,
+    .term,.billing-mail-note,.toast,.progress,.controls,.section .panel,
+    .account-menu,.popover,.modal,.dialog,.sheet
+  ) {
+    background-color: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
+  }
+}
