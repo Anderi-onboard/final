@@ -252,9 +252,11 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 ## 7 · 工作流(必须遵守)
 
 1. **构建标签**:任何 HTML/CSS/JS 改动,必须把全站 `?v=` 与 `version.json` 一起 bump 到同一个新标签(如 `20260726c`)。漏 bump = 用户看到的还是旧缓存(历史上多次"改了没生效"都是这个原因)。
-2. **分支**:在自己的 `claude/session-*` 分支上做,rebase 到最新 `main` 再开 PR。**先 `git fetch origin main`**,另一个会话可能刚推过。
-3. **验证要用证据**:改布局就截图/量几何,改动画就采样,不要凭感觉说"修好了"。截图前**禁用缓存**,否则会被旧文件骗。
-4. **不要碰**:`PROGRESS.md` 已被 `_redirects` 挡在公网外,保持这样。
+2. **分支职责**:`main` 是 Cloudflare 自动部署的生产分支;任务分支和 PR 由 Cloudflare 生成预览部署。`production` 仅作为经过验证版本的可追溯镜像/回滚锚点,不是日常开发入口。
+3. **分支隔离**:Claude 在自己的 `claude/session-*` 分支上做,Codex 在独立集成分支上做。开始前先 `git fetch origin main`,从最新 `origin/main` 分叉;提交前再次合入或 rebase 最新 `origin/main`。不同会话不得共用一个工作分支。
+4. **发布保留溯源**:只有验证通过的 PR 才能进入 `main`;不得让 Claude/Codex 直接 push `main`。`production` 镜像使用普通 merge commit,不得 squash、rebase 或 force-push。发布记录写入 `RELEASES.md`,必须列出构建标签、视觉来源提交、Claude 功能提交和验证证据。
+5. **验证要用证据**:改布局就截图/量几何,改动画就采样,不要凭感觉说"修好了"。截图前**禁用缓存**,否则会被旧文件骗。
+6. **不要碰**:`PROGRESS.md` 已被 `_redirects` 挡在公网外,保持这样。
 
 ---
 

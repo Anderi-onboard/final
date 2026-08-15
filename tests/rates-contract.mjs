@@ -17,12 +17,14 @@
  */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { onRequestGet } from '../functions/api/rates.js';
 import { PromptEngine } from '../functions/_lib/prompt-engine.js';
 import { MODEL_RATES, METHOD_COST, FOLLOW_COST, estimateTokens } from '../functions/_lib/db.js';
 
-const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '');
-const src = readFileSync(`${ROOT}/functions/api/rates.js`, 'utf8');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const src = readFileSync(resolve(ROOT, 'functions/api/rates.js'), 'utf8');
 
 // ── nothing is typed in ────────────────────────────────────────────────────
 assert.ok(/PromptEngine\.assemblePrompt\(/.test(src),

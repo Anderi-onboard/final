@@ -699,9 +699,7 @@ html[data-skin="paper"] body[data-page="app"] #howItWorksLink {
   }
 }
 
-/* Textured boundaries -----------------------------------------------------
-   Cards share the page colour. A locally offset fibre screen gives them a
-   physical edge without a permanent outline or another opaque box colour. */
+/* Surface boundaries ----------------------------------------------------- */
 html[data-skin="paper"] body :is(
   .ledger, .composer, .method-menu, .acct-menu,
   .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
@@ -713,36 +711,6 @@ html[data-skin="paper"] body :is(
 }
 html[data-skin="paper"] body .method-menu,
 html[data-skin="paper"] body .acct-menu { position: absolute; }
-html[data-skin="paper"] body :is(
-  .ledger, .composer, .method-menu, .acct-menu,
-  .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
-  .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
-  .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
-)::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  border-radius: inherit;
-  background-color: color-mix(in srgb, var(--cp-ink) 68%, transparent);
-  -webkit-mask-image: var(--paper-motif-wheel), var(--paper-motif-lotus);
-  mask-image: var(--paper-motif-wheel), var(--paper-motif-lotus);
-  -webkit-mask-position: 7px 5px, 111px 73px;
-  mask-position: 7px 5px, 111px 73px;
-  -webkit-mask-size: 190px 190px, 248px 248px;
-  mask-size: 190px 190px, 248px 248px;
-  -webkit-mask-repeat: repeat;
-  mask-repeat: repeat;
-  opacity: .03;
-}
-html[data-skin="paper"] body :is(
-  .m-card, .tile, .card, .panel, .why-card, .lesson-card, .plan, .topup, .pack, .term, .cost
-):nth-of-type(2n)::after {
-  -webkit-mask-position: 49px 31px, 173px 109px;
-  mask-position: 49px 31px, 173px 109px;
-}
-
 /* Hover is a legibility state, not a moving flourish: raise contrast once,
    keep geometry fixed, and use focus-visible for the keyboard equivalent. */
 @media (hover:hover) and (pointer:fine) {

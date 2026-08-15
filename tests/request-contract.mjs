@@ -17,9 +17,11 @@
  */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '');
-const read = (f) => readFileSync(`${ROOT}/${f}`, 'utf8');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const read = (f) => readFileSync(resolve(ROOT, f), 'utf8');
 
 const claude = read('functions/api/claude.js');
 const router = read('prompt-router.js');

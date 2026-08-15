@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260814l">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260814l">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260814l">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260814l">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260814l">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260814l">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260814l">
-<script src="./ds-base.js?v=20260814l"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260815i">
+<script src="./ds-base.js?v=20260815i"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -66,6 +66,9 @@
   .new-cast .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center}
   body.rail .new-cast{justify-content:center;padding:7px 0;gap:0}
   body.rail .new-cast .fade{width:0;overflow:hidden}
+  .mobile-side-nav{display:none}
+  .mobile-side-nav a{display:flex;align-items:center;min-height:38px;padding:7px 8px;border-radius:8px;color:var(--dim);font-family:var(--sans);font-size:13px;font-weight:700;text-decoration:none;transition:background-color .15s,color .15s}
+  .mobile-side-nav a:hover,.mobile-side-nav a:focus-visible{background:var(--paper-dim);color:var(--ink)}
 
   .castings{margin-top:22px;flex:1;min-height:0;display:flex;flex-direction:column;gap:1px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
   .castings::-webkit-scrollbar{width:5px}
@@ -536,15 +539,19 @@
     .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:40;width:min(300px,86vw);padding:14px 12px 12px;
       background:var(--paper);border-right:1px solid var(--line-soft);box-shadow:0 0 48px rgba(31,29,26,.18);
       transform:translateX(-104%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    body[data-page="app"] .sidebar{position:fixed!important;z-index:40!important}
     body.side-open .sidebar{transform:translateX(0)}
+    body[data-page="app"].side-open .sidebar{background-color:var(--paper-raised)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
     /* neutralise desktop "rail" collapse inside the drawer — always open full */
     body.rail .sidebar{width:min(300px,86vw);padding-left:12px;padding-right:12px;overflow:hidden}
     body.rail .sidebar .fade{opacity:1;pointer-events:auto;width:auto;overflow:visible}
     body.rail .sidebar .brand-word{width:auto;overflow:visible;opacity:1}
     body.rail .sidebar .castings{opacity:1;pointer-events:auto}
     body.rail .sidebar .ledger{display:flex}
-    body.rail .sidebar .side-foot .who,body.rail .sidebar .side-foot .go{display:flex}
+    body.rail .sidebar .side-foot .who{display:block}
+    body.rail .sidebar .side-foot .go{display:flex}
     .side-scrim{position:fixed;inset:0;z-index:39;background:rgba(31,29,26,.30);opacity:0;pointer-events:none;transition:opacity .28s}
+    body[data-page="app"] .side-scrim{position:fixed!important;inset:0!important;z-index:39!important}
     body.side-open .side-scrim{opacity:1;pointer-events:auto}
     .side-open-btn{display:grid}
     .topbar,.thread,.composer-zone{padding-left:18px;padding-right:18px}
@@ -654,6 +661,9 @@
     .claude-note{display:none}
     body:not(.is-empty) .guide-coach{display:none!important}
     .top-right{gap:14px;flex-wrap:nowrap}
+    body[data-page="app"] .top-right .ghost{display:none!important}
+    .mobile-side-nav{display:grid;gap:2px;margin:8px 0 2px}
+    body.side-open .guide-coach{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
     .topbar .ghost{white-space:nowrap}
     /* In a conversation the topbar carries the thread title as well as the
        nav, and the nav was being squeezed below its own content width — its
@@ -747,7 +757,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260814l">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260815i">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -769,6 +779,12 @@
     <span class="ic"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2.5v11M2.5 8h11"></path></svg></span>
     <span class="fade" style="font-family: var(--sans); font-weight: 900">New casting</span>
   </button>
+
+  <nav class="mobile-side-nav fade" aria-label="Site navigation">
+    <a href="./guide.html">The method</a>
+    <a href="./about.html">Why BourneWise</a>
+    <a href="./pricing.html">Plans &amp; units</a>
+  </nav>
 
   <nav class="castings fade" id="castList" aria-label="Reading history">
     <div class="lbl">Reading history</div>
@@ -863,17 +879,17 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260814l"></script>
-<script src="./casting-figure.js?v=20260814l"></script>
-<script src="./liuyao-engine.js?v=20260814l"></script>
-<script src="./liuyao-ai.js?v=20260814l"></script>
-<script src="./liuyao-chart.js?v=20260814l"></script>
-<script src="./copy.js?v=20260814l"></script>
-<script src="./prompt-checks.js?v=20260814l"></script>
-<script src="./prompt-router.js?v=20260814l"></script>
-<script src="./account.js?v=20260814l"></script>
-<script>window.BW_BUILD="20260814l";</script>
-<script src="./chat-app.js?v=20260814l"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260815i"></script>
+<script src="./casting-figure.js?v=20260815i"></script>
+<script src="./liuyao-engine.js?v=20260815i"></script>
+<script src="./liuyao-ai.js?v=20260815i"></script>
+<script src="./liuyao-chart.js?v=20260815i"></script>
+<script src="./copy.js?v=20260815i"></script>
+<script src="./prompt-checks.js?v=20260815i"></script>
+<script src="./prompt-router.js?v=20260815i"></script>
+<script src="./account.js?v=20260815i"></script>
+<script>window.BW_BUILD="20260815e";</script>
+<script src="./chat-app.js?v=20260815i"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
