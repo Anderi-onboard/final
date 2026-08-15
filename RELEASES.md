@@ -1,12 +1,15 @@
 # BourneWise release provenance
 
-This file records the source lineage of production releases. The `production`
-branch is append-only: release merges keep their parents, and it must never be
-squashed, rebased, or force-pushed.
+This file records the source lineage of production releases. Cloudflare builds
+pull-request branches as previews and deploys `main` to the public site. The
+`production` branch is an append-only verified mirror and rollback anchor:
+release merges keep their parents, and it must never be squashed, rebased, or
+force-pushed.
 
 ## 20260815e — Lianqian production baseline
 
-- Release branch: `production`
+- Production target: `main` via pull request
+- Verified mirror: `production`
 - Integration branch: `codex-creem-integration`
 - Visual lineage:
   - `aa49ba2` — replace Baoxianghua with the section-aware Lianqian texture system
@@ -22,5 +25,6 @@ squashed, rebased, or force-pushed.
   - billing, copy, request, stream recovery, prompt secrecy, prompt coverage,
     session, and rate-card contracts pass
 
-Cloudflare Pages must use `production` as its Production branch. Other branches
-may receive preview deployments, but they are never the public release source.
+The integration branch is previewed before merge. Once its pull request lands
+in `main`, Cloudflare promotes the same traceable commit graph to the public
+site; `production` retains the verified release point for audit and rollback.
