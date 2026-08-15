@@ -1,12 +1,15 @@
 # BourneWise release provenance
 
-This file records the source lineage of production releases. The `production`
-branch is append-only: release merges keep their parents, and it must never be
-squashed, rebased, or force-pushed.
+This file records the source lineage of production releases. Cloudflare builds
+pull-request branches as previews and deploys `main` to the public site. The
+`production` branch is an append-only verified mirror and rollback anchor:
+release merges keep their parents, and it must never be squashed, rebased, or
+force-pushed.
 
 ## 20260815e — Lianqian production baseline
 
-- Release branch: `production`
+- Production target: `main` via pull request
+- Verified mirror: `production`
 - Integration branch: `codex-creem-integration`
 - Visual lineage:
   - `aa49ba2` — replace Baoxianghua with the section-aware Lianqian texture system
@@ -22,5 +25,22 @@ squashed, rebased, or force-pushed.
   - billing, copy, request, stream recovery, prompt secrecy, prompt coverage,
     session, and rate-card contracts pass
 
-Cloudflare Pages must use `production` as its Production branch. Other branches
-may receive preview deployments, but they are never the public release source.
+The integration branch is previewed before merge. Once its pull request lands
+in `main`, Cloudflare promotes the same traceable commit graph to the public
+site; `production` retains the verified release point for audit and rollback.
+
+## 20260815i — Square Lianqian grid and restored palette field
+
+- Production target: `main` via pull request #56
+- Verified mirror: `production` after public deployment
+- Integration branch: `codex-creem-integration`
+- Visual lineage:
+  - `73e5af5` — compact, seamless Lianqian texture assets
+  - `14204b5` — restore all ten animated ridge colours plus sky and water
+  - current release — render every connected-coin texture on a square grid
+- Functional lineage: unchanged from the `20260815e` baseline
+- Verification:
+  - 180 palette groups retain ten ridge colours plus sky and water
+  - Lianqian repeats compute to equal horizontal and vertical CSS dimensions
+  - billing, palette, texture, and copy contracts pass
+  - local About and app routes render without console errors or horizontal overflow

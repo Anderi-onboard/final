@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay.webp?v=20260815e");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver.webp?v=20260815e");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion.webp?v=20260815e");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay.webp?v=20260815e");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260815i");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260815i");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260815i");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260815i");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -27,7 +27,7 @@ html[data-skin="paper"] body::after {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: var(--lq-outline) 0 0 / 300px 300px repeat;
+  background: var(--lq-outline) 0 0 / 30px 30px repeat;
   -webkit-mask-image: none;
   mask-image: none;
   mix-blend-mode: multiply;
@@ -37,7 +37,7 @@ html[data-skin="paper"] body::after {
 /* The casting/chat route uses the same artwork at a smaller scale, creating
    a denser textile field without increasing its visual weight. */
 html[data-skin="paper"] body[data-page="app"]::after {
-  background-size: 228px 228px;
+  background-size: 24px 24px;
   opacity: .105;
 }
 
@@ -62,24 +62,51 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
 }
 .lq-texture-layer {
   position: absolute;
-  inset: -4%;
-  background-position: center;
+  inset: 0;
+  background-position: 0 0;
   background-repeat: repeat;
-  background-size: var(--lq-size, 360px) var(--lq-size, 360px);
+  /* The scanned plates have slightly uneven measured repeat periods. Render
+     their connected coins on a square grid so circular details stay circular
+     instead of inheriting the scan's vertical stretch. */
+  background-size: var(--lq-size, 28px) var(--lq-size, 28px);
   mix-blend-mode: multiply;
   opacity: 0;
-  transform: scale(1.015);
-  transition: opacity 680ms var(--ease-out), transform 900ms var(--ease-out);
+  transform: none;
+  transition: opacity 680ms var(--ease-out);
   will-change: opacity;
 }
 .lq-texture-layer.is-current {
   opacity: var(--lq-opacity, .2);
-  transform: scale(1);
 }
-.lq-texture-layer[data-pattern="0"] { --lq-size: 330px; --lq-opacity: .16; }
-.lq-texture-layer[data-pattern="1"] { --lq-size: 310px; --lq-opacity: .34; }
-.lq-texture-layer[data-pattern="2"] { --lq-size: 390px; --lq-opacity: .22; }
-.lq-texture-layer[data-pattern="3"] { --lq-size: 350px; --lq-opacity: .24; }
+.lq-texture-layer[data-pattern="0"] { --lq-size: 27px; --lq-opacity: .15; }
+.lq-texture-layer[data-pattern="1"] { --lq-size: 25px; --lq-opacity: .3; }
+.lq-texture-layer[data-pattern="2"] { --lq-size: 66px; --lq-opacity: .2; }
+.lq-texture-layer[data-pattern="3"] { --lq-size: 30px; --lq-opacity: .2; }
+
+/* Coloured coins behave like editorial art, not badges. They occupy the
+   breathing room beside copy and are cut directly from the same pattern. */
+.lq-accent {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  width: clamp(72px, 9vw, 138px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  opacity: .66;
+}
+body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
+  .why-hero,.why-panel,.guide-stage,.legal-poster-intro,.clause
+) > :not(.lq-accent) {
+  position: relative;
+  z-index: 1;
+}
+.lq-accent--about-hero { top: 28%; right: 5.5%; width: clamp(86px, 9vw, 132px); }
+.lq-accent--about-panel { right: 7%; bottom: 8%; width: clamp(58px, 7vw, 94px); opacity: .52; }
+.lq-accent--guide { top: 11%; right: 5%; width: clamp(88px, 10vw, 148px); }
+.lq-accent--legal-intro { top: 16%; left: 52%; right: auto; width: clamp(82px, 8vw, 124px); }
+.lq-accent--legal-clause { right: 7%; bottom: 9%; width: clamp(54px, 6vw, 82px); opacity: .5; }
 
 /* Shared misted material. It has no visible border; separation comes from
    blur, a restrained inset highlight, and a soft ambient shadow. */
@@ -230,20 +257,26 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
 
 @media (max-width: 760px) {
   html[data-skin="paper"] body::after {
-    background-size: 260px 260px;
+    background-size: 25px 25px;
     opacity: .105;
   }
   html[data-skin="paper"] body[data-page="app"]::after {
-    background-size: 190px 190px;
+    background-size: 21px 21px;
     opacity: .095;
   }
   html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
     content: none;
   }
-  .lq-texture-layer[data-pattern="0"] { --lq-size: 270px; --lq-opacity: .15; }
-  .lq-texture-layer[data-pattern="1"] { --lq-size: 250px; --lq-opacity: .31; }
-  .lq-texture-layer[data-pattern="2"] { --lq-size: 320px; --lq-opacity: .2; }
-  .lq-texture-layer[data-pattern="3"] { --lq-size: 285px; --lq-opacity: .22; }
+  .lq-texture-layer[data-pattern="0"] { --lq-size: 23px; --lq-opacity: .14; }
+  .lq-texture-layer[data-pattern="1"] { --lq-size: 22px; --lq-opacity: .28; }
+  .lq-texture-layer[data-pattern="2"] { --lq-size: 56px; --lq-opacity: .19; }
+  .lq-texture-layer[data-pattern="3"] { --lq-size: 25px; --lq-opacity: .19; }
+  .lq-accent { width: 62px; opacity: .48; }
+  .lq-accent--about-hero { top: 8%; right: 14px; width: 66px; }
+  .lq-accent--guide { top: 9%; right: 14px; width: 76px; }
+  .lq-accent--legal-intro { top: 13%; left: auto; right: 14px; width: 66px; }
+  .lq-accent--about-panel,
+  .lq-accent--legal-clause { right: 16px; bottom: 7%; width: 54px; opacity: .4; }
   :where(.sidebar,.pagehead,.top,.card,.section .panel) {
     --lux-glass-blur-heavy: 22px;
   }
@@ -274,5 +307,216 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
   :where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step) {
     transition: color 160ms ease, background-color 160ms ease !important;
     transform: none !important;
+  }
+}
+
+/* Soft Peach lock ---------------------------------------------------------
+   UI chrome no longer inherits the rotating landscape palette. The animated
+   landscape may keep changing behind the product, while every control and
+   carrier stays in one stable, reference-led material system. */
+html[data-skin="paper"] {
+  --soft-peach: #FFDE96;
+  --soft-peach-accent: #DE795D;
+  --soft-peach-cream: #F4E8CE;
+  --soft-peach-paper: #EBDDCA;
+  --soft-peach-ink: #34251F;
+  --soft-peach-muted: #765B4E;
+  --soft-peach-line: color-mix(in srgb, var(--soft-peach-ink) 16%, transparent);
+  --soft-peach-glass: color-mix(in srgb, var(--soft-peach) 58%, transparent);
+  --soft-peach-glass-soft: color-mix(in srgb, var(--soft-peach-cream) 48%, transparent);
+  --soft-peach-glass-strong: color-mix(in srgb, var(--soft-peach) 76%, transparent);
+  --soft-peach-glass-hover: color-mix(in srgb, var(--soft-peach) 84%, transparent);
+  --soft-peach-shadow: color-mix(in srgb, var(--soft-peach-ink) 18%, transparent);
+  --lux-glass: var(--soft-peach-glass);
+  --lux-glass-quiet: var(--soft-peach-glass-soft);
+  --lux-glass-strong: var(--soft-peach-glass-strong);
+  --lux-glass-hover: var(--soft-peach-glass-hover);
+  --lux-glass-edge: var(--soft-peach-line);
+  --lux-glass-shadow: var(--soft-peach-shadow);
+}
+
+html[data-skin="paper"] body {
+  --cp-ink: var(--soft-peach-ink);
+  --cp-accent: var(--soft-peach-accent);
+  --cp-on-accent: var(--soft-peach-ink);
+  --cp-carrier: var(--soft-peach-glass);
+  --cp-carrier-strong: var(--soft-peach-glass-strong);
+  --cp-tint: color-mix(in srgb, var(--soft-peach-accent) 12%, var(--soft-peach));
+  --cp-line: var(--soft-peach-line);
+  --cp-line-strong: color-mix(in srgb, var(--soft-peach-ink) 31%, transparent);
+  --cp-line-accent: color-mix(in srgb, var(--soft-peach-accent) 62%, transparent);
+  --terracotta: var(--soft-peach-accent);
+  --ink: var(--soft-peach-ink);
+  --dim: var(--soft-peach-muted);
+}
+
+/* Stable glass carriers. The repeated texture remains visible underneath,
+   but the carrier colour itself never changes with the environment. */
+html[data-skin="paper"] body :is(
+  .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,
+  .pagehead,.top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,
+  .estimator,.pack,.term,.billing-mail-note,.toast,.progress,.controls,
+  .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
+) {
+  color: var(--soft-peach-ink);
+  border-color: transparent !important;
+  background-color: var(--soft-peach-glass) !important;
+  background-image: none !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 34%, transparent),
+    0 16px 44px -32px var(--soft-peach-shadow) !important;
+}
+html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
+  background-color: var(--soft-peach-glass-strong) !important;
+}
+@media (hover:hover) and (pointer:fine) {
+  html[data-skin="paper"] body :is(.plan,.rate-card,.pack,.term,.lesson-card,.method,.why-card):hover {
+    background-color: var(--soft-peach-glass-hover) !important;
+  }
+}
+
+/* App: retain the established sidebar/composer layout, freeze only its UI
+   material. Reading content remains quieter than the controls. */
+html[data-skin="paper"] body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, var(--soft-peach) 82%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.composer,.method-menu,.carry-menu,.guide-coach,.signin-coach) {
+  background-color: color-mix(in srgb, var(--soft-peach) 68%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.msg-user,.reading) {
+  color: var(--soft-peach-ink) !important;
+  background-color: color-mix(in srgb, var(--soft-peach-cream) 48%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="app"] .msg-user {
+  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, transparent) !important;
+  color: #251A17 !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.send,.exchange) {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.stria,.chip,.rd-action,.rd-prompt) {
+  color: var(--soft-peach-ink) !important;
+}
+
+/* Pricing keeps the living landscape. Its plans are fixed peach glass, so
+   the texture and line-art can be read through the material without tinting
+   every control a different colour. */
+html[data-skin="paper"] body[data-page="pricing"] .mtn-bg,
+html[data-skin="paper"] body[data-page="pricing"] .mtn-sky {
+  display: block !important;
+}
+html[data-skin="paper"] body[data-page="pricing"] :is(
+  .plan,.rate-card,.estimator,.pack,.term,.ledgerstrip,.billing-toggle,.billing-mail-note
+) {
+  color: var(--soft-peach-ink) !important;
+  border: 0 !important;
+  background-color: var(--soft-peach-glass) !important;
+  background-image: none !important;
+}
+html[data-skin="paper"] body[data-page="pricing"] :is(.plan.featured,.plan.feat) {
+  background-color: var(--soft-peach-glass-strong) !important;
+  box-shadow: inset 0 3px 0 var(--soft-peach-accent), 0 16px 44px -32px var(--soft-peach-shadow) !important;
+}
+html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+
+/* Text pages: one flat colour per major editorial field. There are no
+   gradients and no glass behind body copy; measure and alignment are kept
+   deliberately consistent from section to section. */
+html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) {
+  background-color: var(--soft-peach-cream) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .why-hero,
+html[data-skin="paper"] body[data-page="legal"] .legal-poster-intro {
+  background-color: var(--soft-peach-cream) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .editorial-spread,
+html[data-skin="paper"] body[data-page="about"] .close,
+html[data-skin="paper"] body[data-page="legal"] .legal-foot {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .editorial-spread--reflection,
+html[data-skin="paper"] body[data-page="about"] .why-panel:nth-of-type(4),
+html[data-skin="paper"] body[data-page="legal"] .clause:nth-of-type(3n) {
+  background-color: var(--soft-peach-paper) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .why-panel,
+html[data-skin="paper"] body[data-page="legal"] .clause {
+  background-color: var(--soft-peach) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] .why-panel:nth-of-type(3),
+html[data-skin="paper"] body[data-page="legal"] .clause:nth-of-type(even) {
+  background-color: #E8A276 !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="about"] :is(.why-hero-title,.hero-copy,.panel-head),
+html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro>*,.clause>*) {
+  min-width: 0;
+}
+html[data-skin="paper"] body[data-page="about"] :is(.panel-head p,.why-card p,.method p,.boundary p),
+html[data-skin="paper"] body[data-page="legal"] .clause :is(p,li) {
+  max-width: 58ch;
+}
+
+html[data-skin="paper"] body[data-page="guide"] {
+  --guide-field: var(--soft-peach) !important;
+  --guide-ink: var(--soft-peach-ink) !important;
+  background-color: var(--guide-field) !important;
+}
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="1"] { --guide-field: var(--soft-peach-paper) !important; }
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="2"] { --guide-field: #E8A276 !important; }
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="3"] { --guide-field: var(--soft-peach-accent) !important; }
+html[data-skin="paper"] body[data-page="guide"][data-poster-step="4"] { --guide-field: var(--soft-peach-cream) !important; }
+html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: min(78%, 840px); }
+html[data-skin="paper"] body[data-page="guide"] .lesson .lead { max-width: 50ch; }
+
+/* Utility pages use the previous single-carrier composition over the fixed
+   Soft Peach material. Form fields are opaque enough to stay legible. */
+html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.section,.not-found,.nf-card) {
+  background-color: var(--soft-peach-glass-strong) !important;
+}
+html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(input,select,.field,.tabs,.prov) {
+  color: var(--soft-peach-ink) !important;
+  border-color: transparent !important;
+  background-color: color-mix(in srgb, var(--soft-peach-cream) 82%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="login"] :is(.card-hero,.tab.on) {
+  background-color: color-mix(in srgb, var(--soft-peach) 86%, transparent) !important;
+}
+html[data-skin="paper"] body[data-page="login"] :is(.prov.submit) {
+  background-color: var(--soft-peach-accent) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="settings"] > .toast {
+  position: fixed !important;
+  left: 50%;
+  z-index: 60;
+}
+
+@media (max-width: 760px) {
+  html[data-skin="paper"] body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close),
+  html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro,.clause,.legal-foot) {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: 100%; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html[data-skin="paper"] body :is(
+    .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
+    .top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,.estimator,.pack,
+    .term,.billing-mail-note,.toast,.progress,.controls,.section .panel,
+    .account-menu,.popover,.modal,.dialog,.sheet
+  ) {
+    background-color: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
   }
 }

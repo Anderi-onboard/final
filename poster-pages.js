@@ -4,11 +4,41 @@
   var body = document.body;
   var page = body && body.dataset.page;
   var patternSources = [
-    "./assets/textures/lianqian/lianqian-dense-clay.webp?v=20260815e",
-    "./assets/textures/lianqian/lianqian-outline-silver.webp?v=20260815e",
-    "./assets/textures/lianqian/lianqian-spaced-medallion.webp?v=20260815e",
-    "./assets/textures/lianqian/lianqian-diagonal-clay.webp?v=20260815e"
+    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260815i",
+    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260815i",
+    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260815i",
+    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260815i"
   ];
+  var accentSources = {
+    coin: "./assets/textures/lianqian/lianqian-accent-coin.webp?v=20260815i",
+    medallion: "./assets/textures/lianqian/lianqian-accent-medallion.webp?v=20260815i"
+  };
+
+  function appendAccent(target, type, modifier) {
+    if (!target || target.querySelector(".lq-accent")) return;
+    var accent = document.createElement("img");
+    accent.className = "lq-accent " + modifier;
+    accent.src = accentSources[type];
+    accent.alt = "";
+    accent.setAttribute("aria-hidden", "true");
+    accent.decoding = "async";
+    accent.draggable = false;
+    target.appendChild(accent);
+  }
+
+  function installAccents() {
+    if (page === "about") {
+      appendAccent(document.querySelector(".why-hero"), "coin", "lq-accent--about-hero");
+      appendAccent(document.querySelectorAll(".why-panel")[1], "coin", "lq-accent--about-panel");
+    } else if (page === "guide") {
+      appendAccent(document.querySelector(".guide-stage"), "medallion", "lq-accent--guide");
+    } else if (page === "legal") {
+      appendAccent(document.querySelector(".legal-poster-intro"), "coin", "lq-accent--legal-intro");
+      Array.prototype.forEach.call(document.querySelectorAll(".clause"), function (clause, index) {
+        if ((index + 1) % 3 === 0) appendAccent(clause, "coin", "lq-accent--legal-clause");
+      });
+    }
+  }
 
   function installPatternStage() {
     if (["about", "guide", "legal"].indexOf(page) === -1) return;
@@ -67,6 +97,7 @@
   }
 
   installPatternStage();
+  installAccents();
 
   var selector = [
     'body[data-page="about"] .why > *',
