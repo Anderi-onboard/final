@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "node --no-warnings tests/billing-contract.mjs && node --no-warnings tests/palette-contract.mjs && node copywriting/audit-copy-deck.mjs",
+    "test": "node --no-warnings tests/billing-contract.mjs && node --no-warnings tests/palette-contract.mjs && node --no-warnings tests/texture-contract.mjs && node copywriting/audit-copy-deck.mjs",
     "dev": "npx serve . -l 3000 --no-clipboard",
     "start": "npx serve . -l 3000 --no-clipboard",
     "dev:fn": "npx wrangler pages dev . --port 3000",

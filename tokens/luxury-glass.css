@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260815h");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260815h");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260815h");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260815h");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260815i");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260815i");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260815i");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260815i");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -27,7 +27,7 @@ html[data-skin="paper"] body::after {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: var(--lq-outline) 0 0 / 30px 30.35px repeat;
+  background: var(--lq-outline) 0 0 / 30px 30px repeat;
   -webkit-mask-image: none;
   mask-image: none;
   mix-blend-mode: multiply;
@@ -37,7 +37,7 @@ html[data-skin="paper"] body::after {
 /* The casting/chat route uses the same artwork at a smaller scale, creating
    a denser textile field without increasing its visual weight. */
 html[data-skin="paper"] body[data-page="app"]::after {
-  background-size: 24px 24.28px;
+  background-size: 24px 24px;
   opacity: .105;
 }
 
@@ -65,7 +65,10 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
   inset: 0;
   background-position: 0 0;
   background-repeat: repeat;
-  background-size: var(--lq-size-x, 28px) var(--lq-size-y, 28px);
+  /* The scanned plates have slightly uneven measured repeat periods. Render
+     their connected coins on a square grid so circular details stay circular
+     instead of inheriting the scan's vertical stretch. */
+  background-size: var(--lq-size, 28px) var(--lq-size, 28px);
   mix-blend-mode: multiply;
   opacity: 0;
   transform: none;
@@ -75,10 +78,10 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
 .lq-texture-layer.is-current {
   opacity: var(--lq-opacity, .2);
 }
-.lq-texture-layer[data-pattern="0"] { --lq-size-x: 27px; --lq-size-y: 27.32px; --lq-opacity: .15; }
-.lq-texture-layer[data-pattern="1"] { --lq-size-x: 25px; --lq-size-y: 25.3px; --lq-opacity: .3; }
-.lq-texture-layer[data-pattern="2"] { --lq-size-x: 66px; --lq-size-y: 71.5px; --lq-opacity: .2; }
-.lq-texture-layer[data-pattern="3"] { --lq-size-x: 30px; --lq-size-y: 30px; --lq-opacity: .2; }
+.lq-texture-layer[data-pattern="0"] { --lq-size: 27px; --lq-opacity: .15; }
+.lq-texture-layer[data-pattern="1"] { --lq-size: 25px; --lq-opacity: .3; }
+.lq-texture-layer[data-pattern="2"] { --lq-size: 66px; --lq-opacity: .2; }
+.lq-texture-layer[data-pattern="3"] { --lq-size: 30px; --lq-opacity: .2; }
 
 /* Coloured coins behave like editorial art, not badges. They occupy the
    breathing room beside copy and are cut directly from the same pattern. */
@@ -254,20 +257,20 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
 
 @media (max-width: 760px) {
   html[data-skin="paper"] body::after {
-    background-size: 25px 25.3px;
+    background-size: 25px 25px;
     opacity: .105;
   }
   html[data-skin="paper"] body[data-page="app"]::after {
-    background-size: 21px 21.25px;
+    background-size: 21px 21px;
     opacity: .095;
   }
   html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
     content: none;
   }
-  .lq-texture-layer[data-pattern="0"] { --lq-size-x: 23px; --lq-size-y: 23.28px; --lq-opacity: .14; }
-  .lq-texture-layer[data-pattern="1"] { --lq-size-x: 22px; --lq-size-y: 22.26px; --lq-opacity: .28; }
-  .lq-texture-layer[data-pattern="2"] { --lq-size-x: 56px; --lq-size-y: 60.67px; --lq-opacity: .19; }
-  .lq-texture-layer[data-pattern="3"] { --lq-size-x: 25px; --lq-size-y: 25px; --lq-opacity: .19; }
+  .lq-texture-layer[data-pattern="0"] { --lq-size: 23px; --lq-opacity: .14; }
+  .lq-texture-layer[data-pattern="1"] { --lq-size: 22px; --lq-opacity: .28; }
+  .lq-texture-layer[data-pattern="2"] { --lq-size: 56px; --lq-opacity: .19; }
+  .lq-texture-layer[data-pattern="3"] { --lq-size: 25px; --lq-opacity: .19; }
   .lq-accent { width: 62px; opacity: .48; }
   .lq-accent--about-hero { top: 8%; right: 14px; width: 66px; }
   .lq-accent--guide { top: 9%; right: 14px; width: 76px; }
