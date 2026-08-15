@@ -1245,9 +1245,40 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
     return /[㐀-䶿一-鿿豈-﫿]/.test(q) ? "zh" : "en";
   }
 
-  SEGMENTS.lang_en = `RESPONSE LANGUAGE: answer in English, because that is the language the question was asked in. Keep the technical vocabulary and gloss each term by what it does the moment it appears.`;
+  SEGMENTS.lang_en = `RESPONSE LANGUAGE: answer in English, because that is the language the question was asked in.
 
-  SEGMENTS.lang_zh = `RESPONSE LANGUAGE: 用中文作答 —— 提问用的就是中文。术语照原样写(世爻、应爻、用神、旬空、六冲、官鬼、月破),不要换成另一个术语,也不要译成英文;每个术语出现的当下,紧跟一句话说清它在这件事上是什么状态、起什么作用。整篇不要夹英文句子。`;
+ONE LANGUAGE, ALL THE WAY THROUGH. Not a single Han character appears anywhere in an English
+reading — not in a parenthesis, not as a gloss beside a romanisation, not in the board summary, not
+in a heading. A reader who does not read Chinese must never hit a character they cannot pronounce,
+and one that is only there for flavour is worse than useless: it makes the sentence stop.
+
+The backend already hands you every term in a form you can use, so this costs you no precision:
+  · branches and stems — take the romanisation the board carries and drop the tone marks:
+    Zi, Chou, Yin, Mao, Chen, Si, Wu, Wei, Shen, You, Xu, Hai · Jia, Yi, Bing, Ding, Wu, Ji,
+    Geng, Xin, Ren, Gui. A void period is "the Zi-Chou void", never a pair of characters.
+  · six relatives — the English name the board gives: Wealth, Pressure, Parent, Output, Peer.
+  · six spirits — likewise: Azure Dragon, Vermilion Bird, Hook Snake, Serpent, White Tiger,
+    Dark Warrior.
+  · hexagrams — the English name the board gives (Great Possession, Opposition), never the
+    characters, and never a bare number.
+  · the machinery has ordinary English names and they are the right ones: World line, Response
+    line, moving line, void, month-break, day-clash, covert motion, three-harmony bloc, half-bloc,
+    hidden line, flying line, advancing line, retreating line, thriving / resting / imprisoned /
+    dead.
+  · yongshen keeps its romanisation, because that is what the term is called in English writing on
+    this method. Gloss it the first time it appears and then use it plainly.
+
+Gloss every term by WHAT IT DOES the moment it appears, in the same breath — "the Response line,
+which is his side of this, is void: he is there, but nothing is coming from him right now."`;
+
+  SEGMENTS.lang_zh = `RESPONSE LANGUAGE: 用中文作答 —— 提问用的就是中文。
+
+**一篇只用一种语言,从头到尾。** 术语照原样写(世爻、应爻、用神、旬空、六冲、官鬼、月破),不要换成
+另一个术语,也不要译成英文;更不要写成 yongshen、World line、Wealth 这类罗马化或英译的形式 ——
+中文读者看到那些只会卡住。整篇不夹英文句子,也不夹英文单词。
+
+每个术语出现的当下,紧跟一句话说清它在这件事上是什么状态、起什么作用:「应爻是他那一头,现在空着 ——
+人在,但那边没有东西过来。」`;
 
   // ═══════════════════════════════════════════════════════════════════
   // ROUTER — short prompt to classify question type
