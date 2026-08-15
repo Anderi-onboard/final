@@ -5,6 +5,7 @@
 # Serve a 404 for them instead of handing the file to visitors.
 /PROGRESS.md   /404.html   404
 /CLAUDE.md     /404.html   404
+/RELEASES.md   /404.html   404
 
 # The instruction stack is the product. Generated decks under copywriting/ are
 # verbatim copies of it and are gitignored, but this directory is inside the
