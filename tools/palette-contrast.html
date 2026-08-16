@@ -111,7 +111,12 @@ const ROLES = [
   ['index', '.ledger-cap', 'body'], ['index', '.ledger-plan', 'body'],
   ['index', '.claude-note', 'body'], ['index', '.disclaimer', 'body'],
   ['index', '.guide-coach', 'body'], ['index', '.ledger-unit', 'body'],
-  ['settings', '.panel p', 'body'], ['login', '.card p', 'body']
+  ['settings', '.panel p', 'body'], ['login', '.card p', 'body'],
+  /* Solid blocks carry their own fill, so they are a separate risk from the
+     glass they sit on and were not covered before. */
+  ['settings', '.btn.warn', 'body'], ['settings', '.btn.terracotta', 'body'],
+  ['settings', '.btn.ink', 'body'], ['settings', '.plan-badge', 'body'],
+  ['pricing', '.choose', 'body'], ['index', '.ledger-plan', 'body']
 ];
 const NEED = { body: 4.5, large: 3 };
 /* Panels whose neutrality is the accepted glass criterion. */

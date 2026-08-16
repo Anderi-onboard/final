@@ -22,16 +22,28 @@
      than staining the panel, which is the part that is supposed to shift as
      the palette rotates. */
   --ui-glass-tint: 255 255 255;
-  --ui-glass: rgb(var(--ui-glass-tint) / .50);
-  --ui-glass-strong: rgb(var(--ui-glass-tint) / .66);
-  --ui-glass-soft: rgb(var(--ui-glass-tint) / .36);
-  --ui-glass-warm: rgb(var(--ui-glass-tint) / .58);
+  /* Thinner than before. At .50/.66 the panels were frosted plastic: you could
+     tell something was behind them but not what, and a material you cannot see
+     through is not read as glass. The lost opacity is bought back by
+     brightness() in the filter, which lifts the backdrop instead of covering
+     it — so the panel gets lighter under dark text while staying transparent. */
+  --ui-glass: rgb(var(--ui-glass-tint) / .42);
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .58);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .28);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .50);
   /* Specular top edge + hairline bottom: the two cues that separate "glass"
      from "a translucent rectangle". Applied as an inset shadow so it rides
      the radius without a pseudo-element. */
+  /* A rim on all four sides, not just the top, plus a soft glow falling in
+     from the top edge. Real glass is brightest where light bends at the
+     boundary, and that rim is most of what identifies the material at a
+     glance — a single top highlight reads as a bevel instead. */
   --ui-glass-edge:
-    inset 0 1px 0 rgb(255 255 255 / .58),
-    inset 0 -1px 0 rgb(255 255 255 / .16);
+    inset 0 1px 0 rgb(255 255 255 / .70),
+    inset 1px 0 0 rgb(255 255 255 / .30),
+    inset -1px 0 0 rgb(255 255 255 / .30),
+    inset 0 -1px 0 rgb(255 255 255 / .12),
+    inset 0 20px 30px -24px rgb(255 255 255 / .60);
   --ui-line: color-mix(in srgb, var(--ink) 12%, transparent);
   --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
@@ -56,8 +68,19 @@
   /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
      rather than Apple's 180%: at 180% the warm palettes bloom and the cast
      comes straight back through the backdrop instead of through the tint. */
-  --ui-glass-filter: blur(22px) saturate(128%);
-  --ui-glass-filter-strong: blur(26px) saturate(132%);
+  --ui-glass-filter: blur(26px) saturate(132%) brightness(1.06);
+  --ui-glass-filter-strong: blur(32px) saturate(136%) brightness(1.07);
+
+  /* SOLID — the other material, and deliberately not a weaker glass.
+     Actions and badges are opaque, flat, and seated by a tight shadow. They
+     were getting no shadow at all, which is why their edges looked frayed: a
+     solid block laid straight onto a drifting blurred landscape has nothing
+     between its edge and the contour lines running underneath, so the boundary
+     shimmers as the background moves. The shadow is short and slightly darker
+     than the glass ladder's — it is a contact shadow, not elevation. */
+  --ui-solid-shadow:
+    0 1px 1px rgba(42,32,22,.16),
+    0 2px 6px rgba(42,32,22,.11);
   /* One radius, two sizes. These were eight-value wobble radii — a
      hand-drawn gesture that reads as a wavering edge under a blur and is the
      source of most of the 26 distinct radii on the site. Glass has a
@@ -867,4 +890,45 @@ html[data-skin="paper"] body[data-page="pricing"] .billing-toggle {
   margin-inline: auto;
   padding: 0 6px 0 18px;
   border-radius: var(--ui-radius-pill) !important;
+}
+
+/* Solid blocks ------------------------------------------------------------
+   The trade-off, stated once: glass is the material of surfaces — panels,
+   menus, the composer, the sidebar. Solid is the material of actions and
+   status — buttons, badges, chips. Nothing is given half of each, because a
+   half-translucent button is the one thing that reads as neither.
+
+   These blocks were opaque and flat already, and carried no shadow at all.
+   Over a still page that is fine; over a landscape that drifts and blurs
+   behind them it leaves the edge with nothing to sit against, and the
+   boundary frays as the contour lines pass underneath. A short contact
+   shadow fixes it without turning the button into a floating card.
+
+   The self-coloured 1px border is dropped: a border the same colour as the
+   fill adds nothing but one more antialiased ring at the corner radius,
+   which is the other half of the soft edge. */
+html[data-skin="paper"] body :is(
+  .btn, .cta, .choose, .send, .exchange, .next, .plan-badge, .prov-tag,
+  .plan-tag, .chip, .mo-label.active, .av
+) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: var(--ui-solid-shadow) !important;
+}
+html[data-skin="paper"] body :is(.btn, .cta, .choose, .send, .exchange, .next) {
+  border-width: 0 !important;
+}
+/* Pressing a solid block should look like pressing something solid: the
+   contact shadow tightens rather than the whole block scaling away. */
+html[data-skin="paper"] body :is(.btn, .cta, .choose, .send, .exchange, .next):active {
+  box-shadow: 0 1px 1px rgba(42,32,22,.20) !important;
+}
+
+/* A destructive/secondary action was drawn as 50% white with a transparent
+   border — glass wearing a button's job, and the one control on the page with
+   no edge at all. It is a solid quiet block now: same material as its
+   neighbour, lower voice. */
+html[data-skin="paper"] body .btn.warn {
+  background: color-mix(in srgb, var(--soft-peach-accent) 12%, #FFFFFF) !important;
+  color: color-mix(in srgb, var(--soft-peach-accent) 55%, var(--soft-peach-ink)) !important;
 }

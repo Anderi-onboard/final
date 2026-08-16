@@ -26,6 +26,10 @@
   --faint: #5C5A54;
   --ghost: var(--faint);
   --terracotta: #A85E46;    /* clay — the only action accent */
+  --danger: #A54B3C;        /* form errors only. Deliberately not --terracotta:
+                               terracotta means "you can click this", and an error
+                               message is not an action. They are close on purpose
+                               (same family) and must stay distinct in role. */
   --prussian: #505064;      /* dark heather for transformed states */
   --prussian-deep: #444358;
   --pine: #4D6159;          /* dark cactus for status, never action */
