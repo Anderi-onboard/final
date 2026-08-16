@@ -688,7 +688,7 @@
       ".bw-cast{display:flex;flex-direction:column;gap:15px;margin-top:10px;font-family:var(--sans)}",
       /* Spinnaker, pinned — without this the header inherits the reading
          column's book serif */
-      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:12px;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap}",
+      ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:12px;letter-spacing:.17em;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
       ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
@@ -746,7 +746,7 @@
       ".bw-tri-tag.vis{opacity:1;transform:translateY(0)}",
       ".bw-tri-sym{display:inline-flex;width:25px;color:var(--terracotta);line-height:1}",
       ".bw-tri-sym svg{display:block;width:25px;height:auto;overflow:visible}",
-      ".bw-tri-en{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}",
+      ".bw-tri-en{font-size:9.5px;letter-spacing:.12em;color:var(--faint)}",
       ".bw-tri-tag-static{display:inline-flex;align-items:center;gap:8px;opacity:1;transform:none}",
 
       /* arrow + pair */
@@ -795,7 +795,7 @@
       ".bw-af-el{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink)}",
       ".bw-af-role{font-family:var(--sans);font-size:9px;font-weight:500;fill:var(--faint);letter-spacing:.02em}",
       ".bw-af-bel{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--dim)}",
-      ".bw-af-mk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}",
+      ".bw-af-mk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.05em;}",
       ".bw-af-mk.self{fill:var(--terracotta)}",".bw-af-mk.resp{fill:var(--prussian)}",
       ".bw-af-tri-mark{color:var(--terracotta)}",
       ".bw-af-tri-en{font-family:var(--sans);font-size:8.5px;letter-spacing:.12em;fill:var(--faint)}",
@@ -846,9 +846,9 @@
       /* the moment, as a compact inline row joined by organic ink dots */
       ".bw-af-moment{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 9px;margin-bottom:6px;font-family:var(--sans)}",
       ".bw-af-moment .bw-af-dot{flex:none;opacity:.85}",
-      ".bw-af-mt-date{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);font-weight:600}",
+      ".bw-af-mt-date{font-size:9px;letter-spacing:.1em;color:var(--ghost);font-weight:600}",
       ".bw-af-mt{display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap}",
-      ".bw-af-mt i{font-style:normal;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
+      ".bw-af-mt i{font-style:normal;font-size:8px;letter-spacing:.1em;color:var(--ghost)}",
       ".bw-af-mt b{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink)}",
       ".bw-af-mt.hot b{color:var(--terracotta)}",
       ".bw-af-mt.vd b{font-size:11px;color:var(--prussian)}",
@@ -907,7 +907,7 @@
       "body.bw-motion-paused .bw-motion-current,body.bw-motion-paused .bw-motion-current *{animation-play-state:paused!important}",
       /* full board: header + dense per-line branches (Sortis tier) */
       ".bw-af-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--sans);font-size:11px;color:var(--dim);padding-bottom:9px;margin-bottom:2px;border-bottom:1px solid var(--line-soft)}",
-      ".bw-af-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost)}",
+      ".bw-af-tag{font-size:9px;letter-spacing:.1em;color:var(--ghost)}",
       ".bw-af-gzp{color:var(--dim)}",".bw-af-gzp b{font-family:var(--sans);font-size:12.5px;color:var(--ink);font-weight:600}",
       ".bw-af-gzp.hot b{color:var(--terracotta)}",
       ".bw-af-void{margin-left:auto;color:var(--dim)}",".bw-af-void b{font-family:var(--sans);color:var(--prussian)}",
@@ -917,7 +917,7 @@
       ".bw-af-sp{font-family:var(--sans);font-size:9px;fill:var(--dim)}",
       ".bw-af-hid{font-family:var(--sans);font-size:8.5px;fill:var(--faint);font-style:italic}",
       ".bw-af-ss{font-family:var(--sans);font-size:8.5px;letter-spacing:.02em;fill:var(--prussian)}",
-      ".bw-af-flag{font-family:var(--sans);font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--prussian)}",
+      ".bw-af-flag{font-family:var(--sans);font-size:8.5px;letter-spacing:.04em;fill:var(--prussian)}",
       ".bw-af-tt{font-family:var(--sans);font-size:8.5px}",
       ".bw-af-brel{font-family:var(--sans);font-size:10px;font-weight:600;fill:var(--prussian)}",".bw-af-brel.hot{fill:var(--terracotta)}",
       ".bw-af-full .bw-af-legend{margin-top:2px}",

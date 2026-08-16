@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260816c");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260816c");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260816c");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260816c");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260816d");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260816d");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260816d");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260816d");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -245,7 +245,13 @@ body[data-page="guide"] .controls {
 
 /* Login/settings/utility routes use one strong material plane over the same
    small monogram field. */
-body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.section,.not-found,.nf-card) {
+/* .section is NOT in this list, deliberately. On settings each <section> wraps
+   exactly one .panel at the same x and the same width, so listing both painted
+   one card twice: two 66% white planes stacked, compositing to 88% over the
+   panel and 66% along the header strip that only has one. That tone step is
+   the "box inside a box" — there is only ever one box, drawn twice.
+   The section stays a transparent grouping element; the panel is the surface. */
+body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.not-found,.nf-card) {
   border: 0 !important;
   background-color: var(--lux-glass-strong) !important;
   -webkit-backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
@@ -444,9 +450,19 @@ html[data-skin="paper"] body[data-page="pricing"] :is(
   background-color: var(--soft-peach-glass) !important;
   background-image: none !important;
 }
+/* The featured plan used `inset 0 3px 0 <accent>` — a hard, unblurred 3px slab
+   of pure accent across the top, which the 14px radius then clips at both
+   upper corners, leaving two ragged stubs. It also replaced the box-shadow
+   outright, so the one card meant to look most considered was the only one
+   without the specular glass edge, and it carried a different ambient shadow
+   (-32px spread) from its two neighbours.
+   Featured is now said with elevation and a tinted rim: it sits one step
+   higher on the same ladder, and its hairline picks up the accent. Nothing
+   about it is a different kind of object from the cards beside it. */
 html[data-skin="paper"] body[data-page="pricing"] :is(.plan.featured,.plan.feat) {
   background-color: var(--soft-peach-glass-strong) !important;
-  box-shadow: inset 0 3px 0 var(--soft-peach-accent), 0 16px 44px -32px var(--soft-peach-shadow) !important;
+  border-color: color-mix(in srgb, var(--soft-peach-accent) 46%, transparent) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised) !important;
 }
 html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
   background-color: var(--soft-peach-accent) !important;
@@ -510,7 +526,7 @@ html[data-skin="paper"] body[data-page="guide"] .lesson .lead { max-width: 50ch;
 
 /* Utility pages use the previous single-carrier composition over the fixed
    Soft Peach material. Form fields are opaque enough to stay legible. */
-html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.section,.not-found,.nf-card) {
+html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.not-found,.nf-card) {
   background-color: var(--soft-peach-glass-strong) !important;
 }
 html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(input,select,.field,.tabs,.prov) {

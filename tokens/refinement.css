@@ -35,8 +35,24 @@
   --ui-line: color-mix(in srgb, var(--ink) 12%, transparent);
   --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: 0 10px 30px rgba(42,32,22,.07), 0 1px 2px rgba(42,32,22,.05);
-  --ui-shadow-raised: 0 16px 42px rgba(42,32,22,.09), 0 2px 5px rgba(42,32,22,.055);
+  /* ELEVATION — three steps, each a contact shadow plus an ambient one.
+     A single wide blur is what reads as coarse: with nothing tight underneath
+     it, the card has no seat and the blur's edge becomes the only thing the
+     eye can find, so it looks like a smudge rather than a lift. The short
+     first layer does the seating; the long layers stay under .05 alpha and
+     never gain a spread, because spread is what turns a shadow into a band. */
+  --ui-shadow:
+    0 1px 2px rgba(42,32,22,.05),
+    0 6px 14px rgba(42,32,22,.045),
+    0 14px 32px rgba(42,32,22,.035);
+  --ui-shadow-raised:
+    0 1px 2px rgba(42,32,22,.055),
+    0 8px 20px rgba(42,32,22,.05),
+    0 22px 48px rgba(42,32,22,.045);
+  --ui-shadow-overlay:
+    0 1px 2px rgba(42,32,22,.06),
+    0 12px 28px rgba(42,32,22,.06),
+    0 36px 76px rgba(42,32,22,.055);
   /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
      rather than Apple's 180%: at 180% the warm palettes bloom and the cast
      comes straight back through the backdrop instead of through the tint. */
