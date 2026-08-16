@@ -33,10 +33,10 @@
      alone just looks like blurrier clear glass: a much wider blur so no edge
      behind survives, saturation pulled back toward neutral because scattering
      desaturates, and a fine grain in the surface itself. */
-  --ui-glass: rgb(var(--ui-glass-tint) / .46);
-  --ui-glass-strong: rgb(var(--ui-glass-tint) / .62);
-  --ui-glass-soft: rgb(var(--ui-glass-tint) / .32);
-  --ui-glass-warm: rgb(var(--ui-glass-tint) / .54);
+  --ui-glass: rgb(var(--ui-glass-tint) / .60);
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .76);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .44);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .68);
   /* Specular top edge + hairline bottom: the two cues that separate "glass"
      from "a translucent rectangle". Applied as an inset shadow so it rides
      the radius without a pseudo-element. */
@@ -46,13 +46,21 @@
      glance — a single top highlight reads as a bevel instead. */
   /* Frosted glass has a softer, wider rim than clear glass — the scattering
      spreads the edge light instead of concentrating it in a specular line. */
+  /* A soft edge, not a drawn one. Frosted glass has no specular line at its
+     rim — the scattering that hides shapes behind it also spreads the edge
+     light, so a crisp 1px highlight on all four sides reads as a cut acrylic
+     sheet rather than frost. The hard rim is replaced by a diffuse inward
+     glow: bright at the top where light falls, fading over ~14px, with only
+     a trace of a rim left to keep the panel from dissolving entirely. */
   --ui-glass-edge:
-    inset 0 1px 0 rgb(255 255 255 / .62),
-    inset 1px 0 0 rgb(255 255 255 / .26),
-    inset -1px 0 0 rgb(255 255 255 / .26),
-    inset 0 -1px 0 rgb(255 255 255 / .14),
-    inset 0 26px 40px -28px rgb(255 255 255 / .55);
-  --ui-line: color-mix(in srgb, var(--ink) 12%, transparent);
+    inset 0 0 0 1px rgb(255 255 255 / .26),
+    inset 0 10px 16px -10px rgb(255 255 255 / .50),
+    inset 0 -12px 18px -14px rgb(255 255 255 / .16),
+    inset 0 0 22px 2px rgb(255 255 255 / .14);
+  /* Softened with the rim. At 12% this drew a visible dark outline around
+     every frosted panel — the one hard edge on a material whose whole point
+     is that it has none. */
+  --ui-line: color-mix(in srgb, var(--ink) 5%, transparent);
   --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
   /* ELEVATION — three steps, each a contact shadow plus an ambient one.
