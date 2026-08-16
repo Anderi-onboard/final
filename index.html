@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260816e">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260816e">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260816e">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260816e">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260816e">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260816e">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260816e">
-<script src="./ds-base.js?v=20260816e"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260816f">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260816f">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260816f">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260816f">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260816f">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260816f">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260816f">
+<script src="./ds-base.js?v=20260816f"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -25,7 +25,7 @@
      thread inside does), so no aspect ratio can push the layout's proportions
      off by scrolling the chrome/background out of frame */
   html,body{height:100%;overflow:hidden}
-  body{--sbw:264px;display:flex;height:100vh;height:100dvh;background-color:#E7E1D7;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+  body{--sbw:264px;display:flex;height:100vh;height:100dvh;background-color:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
   body.rail{--sbw:60px}
   @media (max-width:880px){body{--sbw:0px}}
   button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
@@ -118,7 +118,7 @@
   .ledger-meter span{display:block;height:100%;width:0;border-radius:var(--ui-radius-pill);background:var(--terracotta);transition:width .55s cubic-bezier(.4,0,.2,1)}
   .ledger-cap{margin-top:7px;font-family:"Spinnaker";font-size:10px;letter-spacing:.03em;color:var(--ghost)}
   .exchange{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;border:none;background:var(--terracotta);color:var(--paper);border-radius:var(--ui-radius-small);padding:9px;font-family:"Spinnaker";font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(181,80,44,.25);transition:transform .15s,background .15s,box-shadow .15s}
-  .exchange:hover{transform:translateY(-1px);background:#C9663F;box-shadow:0 6px 16px rgba(181,80,44,.32)}
+  .exchange:hover{transform:translateY(-1px);background:color-mix(in srgb,var(--terracotta) 88%,black);box-shadow:0 6px 16px rgba(181,80,44,.32)}
   .exchange .ex-arr{transition:transform .15s}
   .exchange:hover .ex-arr{transform:translateX(2px)}
   body.rail .ledger{display:none}
@@ -130,7 +130,7 @@
   .side-foot:hover::before{background:transparent}
   .side-foot > *{position:relative;z-index:1}
   
-  .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:#D8DDE0;display:grid;place-items:center;font-size:11.5px;font-weight:600}
+  .avatar{flex:none;width:30px;height:30px;border-radius:50%;background:var(--prussian);color:var(--prussian-on);display:grid;place-items:center;font-size:11.5px;font-weight:600}
   .side-foot .who{flex:1;min-width:0;line-height:1.3}
   .side-foot b{display:block;font-size:13px;font-weight:700;font-family:"Spinnaker"}
   .side-foot i{font-style:normal;font-size:11px;letter-spacing:.04em;color:var(--ghost);font-family:"Spinnaker"}
@@ -381,7 +381,7 @@
   .reading-insight .el i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
   .reading-insight .mk{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.05em;padding:2px 7px;border-radius:var(--ui-radius-small);white-space:nowrap;vertical-align:middle;position:relative;top:-1px}
   .reading-insight .mk.self{background:var(--terracotta);color:var(--paper)}
-  .reading-insight .mk.resp{background:var(--prussian);color:#D8DDE0}
+  .reading-insight .mk.resp{background:var(--prussian);color:var(--prussian-on)}
   .reading-insight .mk.move{border:var(--ui-hairline) solid var(--terracotta);color:var(--terracotta)}
   .reading-insight .turning{border-left:2px solid var(--terracotta);padding:2px 0 2px 18px;margin:2px 0 16px;color:var(--ink);font-family:BioRhyme, var(--serif)}
   .reading-insight .legend-inline{clear:both;display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:6px;padding-top:15px;
@@ -426,7 +426,7 @@
 
   .drops{display:flex;align-items:flex-end;gap:9px;margin-top:11px;padding-left:2px}
   .casting-load{display:flex;align-items:center;gap:13px;margin-top:11px}
-  .casting-load img{display:block;border-radius:var(--ui-radius-small);border:1px solid var(--line);background:#D8C7AA;box-shadow:0 1px 4px rgba(31,29,26,.08)}
+  .casting-load img{display:block;border-radius:var(--ui-radius-small);border:1px solid var(--line);background:var(--chip);box-shadow:0 1px 4px rgba(31,29,26,.08)}
   .casting-load .drops{margin-top:0}
   .drop{width:7px;height:7px;background:var(--ink);border-radius:54% 46% 50% 50%;animation:drip 2.2s ease-out infinite;animation-fill-mode:backwards}
   .drop:nth-child(2){width:9px;height:9px;animation-delay:.3s;border-radius:48% 52% 55% 45%}
@@ -525,7 +525,7 @@
   .plan button{margin-top:auto;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:9px;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.02em;transition:border-color .15s,background .15s,color .15s}
   .plan button:hover{border-color:var(--ink)}
   .plan.feat button{background:var(--terracotta);border-color:var(--terracotta);color:var(--paper)}
-  .plan.feat button:hover{background:#c9663f}
+  .plan.feat button:hover{background:color-mix(in srgb,var(--terracotta) 88%,black)}
   .modal .fine{text-align:center;padding:12px 26px 20px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);text-wrap:pretty}
 
   .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:9px 18px;border-radius:var(--ui-radius-pill);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
@@ -757,7 +757,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260816e">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260816f">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -879,13 +879,13 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260816e"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260816f"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260816e"></script>
-<script src="./liuyao-ai.js?v=20260816e"></script>
+<script src="./liuyao-engine.js?v=20260816f"></script>
+<script src="./liuyao-ai.js?v=20260816f"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -898,7 +898,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260816e";
+      s.src = "./casting-figure.js?v=20260816f";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -911,19 +911,19 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260816e"></script>
-<script src="./prompt-checks.js?v=20260816e"></script>
-<script src="./prompt-router.js?v=20260816e"></script>
-<script src="./account.js?v=20260816e"></script>
+<script src="./copy.js?v=20260816f"></script>
+<script src="./prompt-checks.js?v=20260816f"></script>
+<script src="./prompt-router.js?v=20260816f"></script>
+<script src="./account.js?v=20260816f"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It was a
    second hand-maintained build literal and it drifted: it read 20260815e while
-   the site shipped 20260816e, so the check reported every fresh session as
+   the site shipped 20260816f, so the check reported every fresh session as
    stale. Derive it from this page's own cache-busting tag instead — one tag to
    bump, and the two can no longer disagree. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260816e"></script>
+<script src="./chat-app.js?v=20260816f"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

@@ -31,6 +31,10 @@
                                message is not an action. They are close on purpose
                                (same family) and must stay distinct in role. */
   --prussian: #505064;      /* dark heather for transformed states */
+  --prussian-on: #D8DDE0;   /* type on --prussian. Cooler than --paper on purpose:
+                               paper's warmth goes muddy on the heather. */
+  --prussian-on-dim: #BFD4EE; /* the quiet label tier on --prussian, e.g. the
+                               eyebrow over a cyanotype headline. */
   --prussian-deep: #444358;
   --pine: #4D6159;          /* dark cactus for status, never action */
   --pine-deep: #40554D;
