@@ -117,6 +117,15 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
   CSS `url()` 里的 SVG 读不到色组变量,180 组配色下必然撞色(见 `AUDIT-20260816.md` §1)。
 - **性能红线**:绝不逐帧动画 `background-color`/`filter`/`backdrop-filter`。用 hold-then-crossfade,只动 transform/opacity。
 
+### 首屏 JS(index.html)
+- **`casting-figure.js` 不在关键路径上。** 空状态从不摇卦,所以它由 `window.BWCasting`
+  在 idle / composer 获得焦点时加载,`sendNow()` 开头 await 它并重入。
+  ⚠️ 不要把它改回阻塞 `<script>`,也不要在模块顶层读 `window.BWFigure.*` ——
+  那样会把 85KB 重新钉回首屏(`FIGURES` 常量就是这么钉住的,现已改成 `figureNames()`)。
+- **`liuyao-chart.js` 没有被任何代码调用**,它只是 publish `window.BWLiuYaoChart` 并往
+  `<head>` 注入一段样式。script 标签已移除,文件保留;哪天真有人用它再加回来。
+- 关键路径 290KB → **230KB**。
+
 ### 动效令牌 `tokens/motion.css`
 - 曲线:`--ease-out` / `--ease-in-out` / `--ease-spring` / `--ease-cinematic`
 - 时长:120 / 240 / 480ms;揭示类 `--dur-reveal:900ms`
@@ -337,7 +346,7 @@ slab 无投影、构建标签全站一致、Pacifico 仅用于字标+chip。
 
 | 规范出处 | 规范怎么说 | 代码实际 | 数量 |
 |---|---|---|---|
-| `tokens/typography.css:37` | mono/label **永不全大写**,一律 sentence case | 全站大量 `text-transform:uppercase`(AVAILABLE UNITS / SCROLL TO BEGIN / SELF·RESP / FREE…) | **45 处** |
+| ~~`tokens/typography.css:37`~~ 大小写 | mono/label **永不全大写**,一律 sentence case | ✅ **已解决**(2026-08-16):39 处 `text-transform:uppercase` + 2 处硬编码全大写 → 0。HTML 本来就是 sentence case,是 CSS 在转大写,所以删声明即可,字距保留 | — |
 | ~~`tokens/spacing.css:17`~~ 圆角 | 只应有少数几档圆角 | ✅ **已解决**(2026-08-16):全站 174 处裸圆角 → 0,全部走 4 个 token | — |
 | ~~边框小数像素~~ | 1x 屏上必然糊成灰线 | ✅ **已解决**:13 处 → 0,统一 `--ui-hairline` | — |
 | ~~对比度~~ | 180 组配色没有任何一组做过校验 | ✅ **已解决**:`tools/palette-contrast.html` 跑全 180 组,失败 0 | — |

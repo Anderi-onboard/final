@@ -834,3 +834,21 @@ html[data-skin="paper"] body :is(.eyebrow, .plan-tag, .typical, .example .label)
 html[data-skin="paper"] body .plan-tag {
   background: color-mix(in srgb, var(--soft-peach-accent) 16%, transparent) !important;
 }
+
+/* Billing cycle toggle ----------------------------------------------------
+   .billing-toggle is a centring flex wrapper — it has no width of its own, so
+   it spans the shell. That was invisible until it was added to the shared
+   glass-carrier list, at which point a layout helper started drawing a panel:
+   measured, a 980px box around 275px of content, 28% filled, on a page where
+   every other box runs 85–100%. A box that is three-quarters empty reads as a
+   mistake no matter what material it is made of.
+   Let it hug its content, and give it the 44px the design law asks of a touch
+   target — it is the only control on the conversion page. */
+html[data-skin="paper"] body[data-page="pricing"] .billing-toggle {
+  width: max-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin-inline: auto;
+  padding: 0 6px 0 18px;
+  border-radius: var(--ui-radius-pill) !important;
+}

@@ -10,7 +10,12 @@
   var METHODS = A.METHODS;
   var ORDER = A.METHOD_ORDER;
 
-  var FIGURES = window.BWFigure ? window.BWFigure.NAMES : ["The Well", "The Crossing"];
+  /* Resolved on use, not at init: casting-figure.js is loaded off the
+     critical path now, so capturing this at module scope would freeze the
+     placeholder pair in even after the real artwork arrived. */
+  function figureNames() {
+    return (window.BWFigure && window.BWFigure.NAMES) || ["The Well", "The Crossing"];
+  }
   var S = A.state();
   function save() { A.save(S); }
 
@@ -1061,6 +1066,19 @@
   }
 
   function sendNow(text, decided) {
+    /* casting-figure.js is fetched off the critical path (see index.html). It
+       is normally already here by the time anyone submits, but a fast reader
+       can beat it — wait and re-enter rather than casting with the fallback
+       spec, which has no lines and would draw an empty figure. On a load
+       failure re-enter anyway: the existing fallback keeps the site working,
+       which is the standing rule for a missing dependency. */
+    if (!window.BWFigure && window.BWCasting) {
+      window.BWCasting.load().then(
+        function () { sendNow(text, decided); },
+        function () { sendNow(text, decided); }
+      );
+      return;
+    }
     var m = method();
     // Sign-in required: units only exist on a real account, so a signed-out
     // guest can't cast — send them to the login page. This is the "先登录才发
@@ -1175,7 +1193,7 @@
 
     /* the casting animation — for Sortis it draws the full 排盘 line by line */
     var spec = window.BWFigure ? window.BWFigure.random(m.id)
-      : { method: m.id, name: FIGURES[0], lines: [], transformedLines: null };
+      : { method: m.id, name: figureNames()[0], lines: [], transformedLines: null };
     // Compute the casting board for BOTH tiers so the reading is always grounded
     // in the hexagram actually cast. Stria is the "primary hexagram framework",
     // so it needs a board too — without one the routed prompt (which tells the
