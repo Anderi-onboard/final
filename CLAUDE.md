@@ -258,6 +258,50 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 5. **验证要用证据**:改布局就截图/量几何,改动画就采样,不要凭感觉说"修好了"。截图前**禁用缓存**,否则会被旧文件骗。
 6. **不要碰**:`PROGRESS.md` 已被 `_redirects` 挡在公网外,保持这样。
 
+### 7.1 · 分支名不能是另一条分支的前缀(踩过,会让 push 静默失效)
+
+git 的 ref 是文件系统路径,同一个名字**不能既是文件又是目录**。仓库里存在分支 `codex`
+时,`codex/creem-integration` 永远创建不了:
+
+```
+fatal: cannot lock ref 'refs/heads/codex/creem-integration':
+       'refs/heads/codex' exists; cannot create 'refs/heads/codex/creem-integration'
+```
+
+8-10 到 8-15 之间就是这么坏的:codex 在本地一直用 `codex/creem-integration`,推不上去,
+于是远端改叫 `codex-creem-integration`。**本地和远端从此指向两条不同的分支** ——
+`git pull` 拉回来的不是自己刚推的东西,这就是那几天"云端和本地不同步"的全部原因。
+
+规则:
+- 用 `claude/xxx`、`codex/xxx` 这种带斜杠的命名时,**不得同时存在裸的 `claude` / `codex` 分支**。
+- push 被拒时先看错误是不是 `cannot lock ref`。**是的话去删掉冲突的父级分支,不要改名绕过** ——
+  改名会制造两条同名不同物的分支,比原问题更难查。
+
+### 7.2 · 文件归属(冲突几乎全部来自这里)
+
+8-10 到 8-15 的 72 个 commit 里,十个 HTML 各被改了 40+ 次,纹理系统在 5 天里被推翻 6 轮
+(纸纹 → 强化 → 关闭 → 宝相花 → 莲芡 → 退役 → 再修)。原因不是谁做错了,是**没人知道哪块归谁**。
+
+| 区域 | 主责 | 其他会话动之前 |
+|---|---|---|
+| `tokens/*.css`、`assets/textures/`、`assets/palettes/`、`assets/backgrounds/` | 视觉会话(Codex) | 先在 PR 里说明 |
+| `prompt-*.js`、`liuyao-ai.js`、`eval/` | 解读会话 | 先在 PR 里说明 |
+| `functions/`、`schema.sql`、计费 | 后端会话 | 先在 PR 里说明 |
+| `*.html` 的结构与文案 | 谁开工谁认领,**在 PR 标题里写明动了哪几页** | — |
+
+**同一个视觉决定(纹理、配色、字体)只能有一个来源。** 拿不准就问 owner,不要各改各的 ——
+互相覆盖的代价远高于等一次确认。
+
+### 7.3 · 同步用 rebase,分支不过夜
+
+8-14 一天出现 5 个 merge commit,其中两个标题就在处理冲突后果
+(`Resolve merge and increase texture visibility`、`Merge origin/main and preserve Lianqian textures`)。
+同一条分支活了 5 天、往里灌了 4 次 `main`,**同一批冲突被重解了 4 次**。
+
+- 同步最新 `main` 用 `git rebase origin/main`,不要 `git merge origin/main`。
+- 任务分支尽量当天开当天合;超过一天先合一次,别攒。
+
+
 ---
 
 ## 8 · 历史版本的风格与规范(供对照挑选)
