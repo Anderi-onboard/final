@@ -1,9 +1,12 @@
 # Cloudflare Pages redirects.
 #
-# PROGRESS.md (dev log) and CLAUDE.md (the working brief for the agents on this
-# repo) live here for contributors, but must not be part of the public site.
+# PROGRESS.md (dev log), the AUDIT-*.md findings, and CLAUDE.md (the working
+# brief for the agents on this repo) live here for contributors, but must not
+# be part of the public site. An audit in particular is a list of this site's
+# weak points with reproduction steps — the last thing to leave reachable.
 # Serve a 404 for them instead of handing the file to visitors.
 /PROGRESS.md   /404.html   404
+/AUDIT-*.md    /404.html   404
 /CLAUDE.md     /404.html   404
 /RELEASES.md   /404.html   404
 
