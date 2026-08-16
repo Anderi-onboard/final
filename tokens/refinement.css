@@ -27,10 +27,16 @@
      through is not read as glass. The lost opacity is bought back by
      brightness() in the filter, which lifts the backdrop instead of covering
      it — so the panel gets lighter under dark text while staying transparent. */
-  --ui-glass: rgb(var(--ui-glass-tint) / .42);
-  --ui-glass-strong: rgb(var(--ui-glass-tint) / .58);
-  --ui-glass-soft: rgb(var(--ui-glass-tint) / .28);
-  --ui-glass-warm: rgb(var(--ui-glass-tint) / .50);
+  /* FROSTED, not clear. Clear glass refracts — you read shapes through it.
+     Frosted glass scatters — you read light and colour through it but not
+     shape. That difference is carried by three things together, and any one
+     alone just looks like blurrier clear glass: a much wider blur so no edge
+     behind survives, saturation pulled back toward neutral because scattering
+     desaturates, and a fine grain in the surface itself. */
+  --ui-glass: rgb(var(--ui-glass-tint) / .46);
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .62);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .32);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .54);
   /* Specular top edge + hairline bottom: the two cues that separate "glass"
      from "a translucent rectangle". Applied as an inset shadow so it rides
      the radius without a pseudo-element. */
@@ -38,12 +44,14 @@
      from the top edge. Real glass is brightest where light bends at the
      boundary, and that rim is most of what identifies the material at a
      glance — a single top highlight reads as a bevel instead. */
+  /* Frosted glass has a softer, wider rim than clear glass — the scattering
+     spreads the edge light instead of concentrating it in a specular line. */
   --ui-glass-edge:
-    inset 0 1px 0 rgb(255 255 255 / .70),
-    inset 1px 0 0 rgb(255 255 255 / .30),
-    inset -1px 0 0 rgb(255 255 255 / .30),
-    inset 0 -1px 0 rgb(255 255 255 / .12),
-    inset 0 20px 30px -24px rgb(255 255 255 / .60);
+    inset 0 1px 0 rgb(255 255 255 / .62),
+    inset 1px 0 0 rgb(255 255 255 / .26),
+    inset -1px 0 0 rgb(255 255 255 / .26),
+    inset 0 -1px 0 rgb(255 255 255 / .14),
+    inset 0 26px 40px -28px rgb(255 255 255 / .55);
   --ui-line: color-mix(in srgb, var(--ink) 12%, transparent);
   --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
@@ -68,8 +76,16 @@
   /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
      rather than Apple's 180%: at 180% the warm palettes bloom and the cast
      comes straight back through the backdrop instead of through the tint. */
-  --ui-glass-filter: blur(26px) saturate(132%) brightness(1.06);
-  --ui-glass-filter-strong: blur(32px) saturate(136%) brightness(1.07);
+  --ui-glass-filter: blur(44px) saturate(112%) brightness(1.05);
+  --ui-glass-filter-strong: blur(56px) saturate(114%) brightness(1.06);
+  /* The grain is the part that actually reads as "frosted". feTurbulence at a
+     high base frequency is per-pixel noise, so it stays fine at any DPI and
+     costs one inlined SVG rather than a texture file. */
+  --ui-frost-grain: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'>\
+<filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/>\
+<feColorMatrix type='saturate' values='0'/></filter>\
+<rect width='140' height='140' filter='url(%23f)' opacity='0.42'/></svg>");
 
   /* SOLID — the other material, and deliberately not a weaker glass.
      Actions and badges are opaque, flat, and seated by a tight shadow. They
@@ -944,3 +960,21 @@ html[data-skin="paper"] body .btn.warn {
    This is not a login-page bug, it is a bug anywhere markup uses `hidden` and
    CSS sets display on the same element, so the guard is global. */
 [hidden] { display: none !important; }
+
+/* Frost grain -------------------------------------------------------------
+   Applied last so it beats the carriers' `background-image: none !important`.
+   Kept at a low alpha: the grain should be felt at the surface, not seen as
+   dots — past about .05 it stops reading as frost and starts reading as a
+   dirty panel. Solid blocks are excluded; they are not glass. */
+html[data-skin="paper"] body :is(
+  .sidebar, .composer, .method-menu, .carry-menu, .coach, .coach-card,
+  .pagehead, .top, .card, .card-hero, .ledgerstrip, .billing-toggle, .plan,
+  .rate-card, .estimator, .pack, .term, .toast, .progress, .controls,
+  .panel, .account-menu, .acct-menu, .popover, .modal, .dialog, .sheet,
+  .ledger, .side-foot, .signin-coach, .guide-coach
+) {
+  background-image: var(--ui-frost-grain) !important;
+  background-size: 140px 140px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
