@@ -86,14 +86,27 @@
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
     $("miPlans").querySelector("b").textContent = a.signedIn ? A.planName(a.plan) : "Plans";
-    // the sign-in coach-mark only nudges signed-out guests, and stays gone once
-    // dismissed
-    var coach = $("signinCoach");
-    if (coach) {
-      var dismissed = false;
-      try { dismissed = localStorage.getItem("bw:coachDismissed") === "1"; } catch (e) {}
-      coach.hidden = a.signedIn || dismissed;
-    }
+    syncCoachMarks();
+  }
+
+  /* One coach-mark at a time.
+     The sign-in nudge and the guide nudge used to decide their own visibility
+     independently — one here in the account render, one at init — and neither
+     knew about the other. A first-time signed-out visitor therefore got both
+     at once, top-right and bottom-left, and had two interruptions to clear
+     before reading anything. The sign-in nudge takes precedence because it
+     carries the offer; the guide nudge is still there on the next visit. */
+  function syncCoachMarks() {
+    var signin = $("signinCoach"), guide = $("guideCoach");
+    var signinDone = false, guideSeen = false, guideDone = false;
+    try {
+      signinDone = localStorage.getItem("bw:coachDismissed") === "1";
+      guideSeen = localStorage.getItem("bw:guideVisited") === "1";
+      guideDone = localStorage.getItem("bw:guideCoachDismissed") === "1";
+    } catch (e) {}
+    var showSignin = !A.state().signedIn && !signinDone;
+    if (signin) signin.hidden = !showSignin;
+    if (guide) guide.hidden = guideSeen || guideDone || showSignin;
   }
 
   /* ── carrying an earlier conversation into this one ───────────────────────
@@ -1536,12 +1549,7 @@
      the × dismisses it for good. ── */
   var gCoach = $("guideCoach");
   if (gCoach) {
-    var gSeen = false, gGone = false;
-    try {
-      gSeen = localStorage.getItem("bw:guideVisited") === "1";
-      gGone = localStorage.getItem("bw:guideCoachDismissed") === "1";
-    } catch (e) {}
-    gCoach.hidden = gSeen || gGone;
+    syncCoachMarks();
     function goGuide() {
       try { localStorage.setItem("bw:guideVisited", "1"); } catch (e) {}
       location.href = "./guide.html";
@@ -1554,7 +1562,7 @@
     if (gx) gx.addEventListener("click", function (e) {
       e.stopPropagation();
       try { localStorage.setItem("bw:guideCoachDismissed", "1"); } catch (er) {}
-      gCoach.hidden = true;
+      syncCoachMarks();
     });
     var hiw = $("howItWorksLink");
     if (hiw) hiw.addEventListener("click", function () {
@@ -1574,7 +1582,9 @@
     if (coachX) coachX.addEventListener("click", function (e) {
       e.stopPropagation();
       try { localStorage.setItem("bw:coachDismissed", "1"); } catch (er) {}
-      coachEl.hidden = true;
+      /* Dismissing the sign-in nudge is exactly when the guide nudge becomes
+         eligible, so re-decide both rather than only hiding this one. */
+      syncCoachMarks();
     });
   }
   $("miPlans").addEventListener("click", function () { closeMenu(); openPlans(); });

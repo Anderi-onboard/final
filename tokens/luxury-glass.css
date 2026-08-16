@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260816a");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260816a");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260816a");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260816a");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260816b");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260816b");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260816b");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260816b");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -230,7 +230,7 @@ body[data-page="about"] :is(.why-card,.method,.boundary > div),
 body[data-page="guide"] :is(.lesson-card,.rate,.example),
 body[data-page="legal"] :is(.toc,.pull,.headline) {
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius:0!important;
   background: transparent !important;
   box-shadow: none !important;
 }
@@ -310,22 +310,36 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
   }
 }
 
-/* Soft Peach lock ---------------------------------------------------------
-   UI chrome no longer inherits the rotating landscape palette. The animated
-   landscape may keep changing behind the product, while every control and
-   carrier stays in one stable, reference-led material system. */
+/* Chrome lock -------------------------------------------------------------
+   UI chrome does not inherit the rotating landscape palette. The landscape
+   keeps changing behind the product; every control and carrier stays in one
+   stable material system. That decision is kept.
+
+   What changed is the material. The carriers used to be a 58–84% wash of
+   #FFDE96 — a saturated gold — so every panel on the site was gold, not
+   glass, and the composited surface measured |R−B| 68 mean / 89 max across
+   all 180 colour groups. Two consequences followed from that one choice:
+   the site read yellow under every palette, and --dim on a gold carrier put
+   six text roles below WCAG at every single group.
+
+   The carrier is now neutral and translucent, and the warmth arrives the way
+   it does in real glass: through the backdrop, lifted by saturate(), not
+   mixed into the panel. Accent and ink keep their values — those are brand,
+   not material. */
 html[data-skin="paper"] {
   --soft-peach: #FFDE96;
   --soft-peach-accent: #DE795D;
   --soft-peach-cream: #F4E8CE;
   --soft-peach-paper: #EBDDCA;
   --soft-peach-ink: #34251F;
-  --soft-peach-muted: #765B4E;
-  --soft-peach-line: color-mix(in srgb, var(--soft-peach-ink) 16%, transparent);
-  --soft-peach-glass: color-mix(in srgb, var(--soft-peach) 58%, transparent);
-  --soft-peach-glass-soft: color-mix(in srgb, var(--soft-peach-cream) 48%, transparent);
-  --soft-peach-glass-strong: color-mix(in srgb, var(--soft-peach) 76%, transparent);
-  --soft-peach-glass-hover: color-mix(in srgb, var(--soft-peach) 84%, transparent);
+  /* was #765B4E: 3.7:1 on the old carrier, and it is used for nearly every
+     secondary line on the site. Darkened to clear 4.5:1 on the new one. */
+  --soft-peach-muted: #5C463B;
+  --soft-peach-line: color-mix(in srgb, var(--soft-peach-ink) 14%, transparent);
+  --soft-peach-glass: var(--ui-glass);
+  --soft-peach-glass-soft: var(--ui-glass-soft);
+  --soft-peach-glass-strong: var(--ui-glass-strong);
+  --soft-peach-glass-hover: rgb(var(--ui-glass-tint) / .78);
   --soft-peach-shadow: color-mix(in srgb, var(--soft-peach-ink) 18%, transparent);
   --lux-glass: var(--soft-peach-glass);
   --lux-glass-quiet: var(--soft-peach-glass-soft);
@@ -359,12 +373,16 @@ html[data-skin="paper"] body :is(
   .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
 ) {
   color: var(--soft-peach-ink);
-  border-color: transparent !important;
+  /* A transparent border makes a translucent panel float with no edge, which
+     is the difference between glass and a wash. Glass is read at its rim. */
+  border-color: var(--ui-line) !important;
   background-color: var(--soft-peach-glass) !important;
   background-image: none !important;
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 34%, transparent),
-    0 16px 44px -32px var(--soft-peach-shadow) !important;
+  /* The carriers had no backdrop-filter at all, so nothing behind them was
+     ever refracted — the single biggest reason none of this read as glass. */
+  -webkit-backdrop-filter: var(--ui-glass-filter);
+  backdrop-filter: var(--ui-glass-filter);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
 }
 html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
   background-color: var(--soft-peach-glass-strong) !important;
@@ -378,14 +396,26 @@ html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.
 /* App: retain the established sidebar/composer layout, freeze only its UI
    material. Reading content remains quieter than the controls. */
 html[data-skin="paper"] body[data-page="app"] .sidebar {
-  background-color: color-mix(in srgb, var(--soft-peach) 82%, transparent) !important;
+  background-color: var(--ui-glass-strong) !important;
+  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
+  backdrop-filter: var(--ui-glass-filter-strong);
 }
+/* The composer and the menus that spawn from it are the most-looked-at glass
+   on the site, so they carry the heavier blur and sit a step more opaque than
+   the panels behind them. */
 html[data-skin="paper"] body[data-page="app"] :is(.composer,.method-menu,.carry-menu,.guide-coach,.signin-coach) {
-  background-color: color-mix(in srgb, var(--soft-peach) 68%, transparent) !important;
+  background-color: var(--ui-glass-strong) !important;
+  border: var(--ui-hairline) solid var(--ui-line) !important;
+  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
+  backdrop-filter: var(--ui-glass-filter-strong);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised) !important;
 }
+/* Reading surfaces stay quieter than the controls and take no blur: long-form
+   text over a refracted backdrop is harder to read, and the reading pane is
+   the one place on the site where legibility outranks material. */
 html[data-skin="paper"] body[data-page="app"] :is(.msg-user,.reading) {
   color: var(--soft-peach-ink) !important;
-  background-color: color-mix(in srgb, var(--soft-peach-cream) 48%, transparent) !important;
+  background-color: var(--ui-glass-soft) !important;
 }
 html[data-skin="paper"] body[data-page="app"] .msg-user {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, transparent) !important;
@@ -519,4 +549,35 @@ html[data-skin="paper"] body[data-page="settings"] > .toast {
   ) {
     background-color: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
   }
+}
+
+/* Texture under long-form copy --------------------------------------------
+   The connected-coin field runs at .15–.30 multiply. Over the poster pages'
+   saturated grounds that puts its own light-to-dark span in the same range as
+   the body text, so the eye separates pattern from copy line by line instead
+   of reading. Cut it on the three text routes: still legible as material at
+   arm's length, no longer competing at reading distance. */
+body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) .lq-texture-layer.is-current {
+  opacity: calc(var(--lq-opacity, .2) * .40);
+}
+
+/* Secondary actions -------------------------------------------------------
+   "Back" was drawn as a bare underline in the inherited colour at the page's
+   own opacity, which on the darker poster steps left it near-invisible — a
+   navigation control you have to hunt for. Give it the same glass body as
+   every other control so it is quiet by weight rather than by disappearing. */
+html[data-skin="paper"] body[data-page="guide"] :is(.back, .next) {
+  min-height: 40px;
+  padding: 0 16px !important;
+  border: var(--ui-hairline) solid var(--ui-line) !important;
+  border-radius: var(--ui-radius-small) !important;
+  background: var(--ui-glass) !important;
+  -webkit-backdrop-filter: var(--ui-glass-filter);
+  backdrop-filter: var(--ui-glass-filter);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
+  color: var(--soft-peach-ink) !important;
+}
+html[data-skin="paper"] body[data-page="guide"] .next {
+  background: var(--soft-peach-accent) !important;
+  border-color: transparent !important;
 }

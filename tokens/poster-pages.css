@@ -109,10 +109,18 @@ body[data-page="guide"] .lesson .kicker{color:inherit;opacity:.64}
 body[data-page="guide"] .lesson h1{font-size:clamp(54px,7vw,104px);max-width:11ch;line-height:.88;letter-spacing:-.065em}
 body[data-page="guide"] .lesson .lead{max-width:44ch;color:inherit;opacity:.78}
 body[data-page="guide"] :is(.lesson-overview,.lesson-visual){display:none!important}
-body[data-page="guide"] :is(.lesson-grid,.rates){margin-top:clamp(42px,7vw,84px);gap:0;border-top:1px solid currentColor}
-body[data-page="guide"] :is(.lesson-card,.rate,.example){padding:22px 0!important;border:0!important;border-bottom:1px solid currentColor;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-body[data-page="guide"] .lesson-grid>*:nth-child(odd),body[data-page="guide"] .rates>*:nth-child(odd){padding-right:clamp(18px,4vw,56px)!important}
-body[data-page="guide"] .lesson-grid>*:nth-child(even),body[data-page="guide"] .rates>*:nth-child(even){padding-left:clamp(18px,4vw,56px)!important;border-left:1px solid currentColor!important}
+/* The column gutter used to be one-sided padding: odd cards got padding-right
+   and even cards got padding-left, each leaving the other side at 0. That is
+   invisible while both columns are transparent, and becomes a defect the
+   moment either gets a background — measured, the tinted right-hand card had
+   padding-right: 0, so any line that filled the measure ran into the edge of
+   the colour block. It read as fine only because those two lines happened to
+   wrap early.
+   The separation now lives in the grid's column-gap, which no background can
+   cross, and every card keeps symmetric padding of its own. */
+body[data-page="guide"] :is(.lesson-grid,.rates){margin-top:clamp(42px,7vw,84px);column-gap:clamp(36px,8vw,112px);row-gap:0;border-top:1px solid currentColor}
+body[data-page="guide"] :is(.lesson-card,.rate,.example){padding:22px clamp(14px,2vw,20px)!important;border:0!important;border-bottom:1px solid currentColor;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body[data-page="guide"] .lesson-grid>*:nth-child(even),body[data-page="guide"] .rates>*:nth-child(even){box-shadow:inset 1px 0 0 currentColor}
 body[data-page="guide"] :is(.lesson-card p,.rate small){color:inherit;opacity:.7}
 body[data-page="guide"] .rate .number,body[data-page="guide"] .example .label{color:inherit}
 body[data-page="guide"] .controls{position:relative;z-index:1;width:min(74%,820px);border-top:1px solid currentColor}

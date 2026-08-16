@@ -39,7 +39,7 @@ body:not([data-page="app"]) :where(.pagehead,.top){
   margin:14px auto 0;
   padding:10px 16px;
   border:1px solid var(--cp-line);
-  border-radius:17px 21px 16px 19px / 19px 16px 22px 17px;
+  border-radius:var(--ui-radius);
   background:var(--cp-carrier);
   box-shadow:0 1px 0 rgba(22,19,15,.055);
   -webkit-backdrop-filter:blur(10px) saturate(108%);
@@ -55,7 +55,7 @@ body:not([data-page="app"]) :where(.pagehead .ghost,.top .exit,.nav .ghost){
   align-items:center;
   padding:0 12px;
   border:1px solid transparent;
-  border-radius:999px;
+  border-radius:var(--ui-radius-pill);
   transition:color var(--cp-fast),border-color var(--cp-fast),background-color var(--cp-fast);
 }
 body:not([data-page="app"]) :where(.pagehead .cta,.top .cta){
@@ -281,7 +281,7 @@ body[data-page="legal"] .toc{
   margin:44px auto 0;
   padding:30px 28px 26px;
   border:0;
-  border-radius:2px;
+  border-radius:var(--ui-radius-small);
   background:color-mix(in srgb,var(--cp-archive) 88%,var(--paper-raised))!important;
   box-shadow:none;
   -webkit-backdrop-filter:none!important;
@@ -303,7 +303,7 @@ html[data-skin="paper"] body[data-page="legal"] .toc{
   background-color:color-mix(in srgb,var(--cp-archive) 88%,var(--paper-raised))!important;
   background-image:none!important;
   border:0!important;
-  border-radius:2px!important;
+  border-radius:var(--ui-radius-small)!important;
   box-shadow:none!important;
   -webkit-backdrop-filter:none!important;
   backdrop-filter:none!important;
@@ -353,7 +353,7 @@ body[data-page="not-found"] .ghostbtn{box-shadow:none;transition:border-color va
   overflow:hidden;
   background:var(--cp-archive);
   border:1px solid color-mix(in srgb,var(--cp-ink) 12%,transparent);
-  border-radius:2px;
+  border-radius:var(--ui-radius-small);
   box-shadow:none;
 }
 .editorial-plate img,.lesson-visual img{
@@ -442,7 +442,7 @@ body[data-page="pricing"] .editorial-spread{margin-top:34px;margin-bottom:34px}
   body[data-page="legal"] .legal{padding:50px 18px 72px}
   body[data-page="legal"] .toc{width:100%;grid-template-columns:1fr;padding:28px 20px 20px}
   body[data-page="settings"] .shell{padding:36px 16px 76px}
-  body[data-page="settings"] .panel{border-radius:22px 25px 20px 24px / 24px 20px 27px 21px}
+  body[data-page="settings"] .panel{border-radius:var(--ui-radius)}
   body[data-page="guide"] .guide-stage{padding:30px 20px}
   .editorial-spread{margin:54px auto 70px}
   .editorial-spread figcaption b{font-size:27px}
@@ -460,3 +460,38 @@ body[data-page="pricing"] .editorial-spread{margin-top:34px;margin-bottom:34px}
   body[data-page="not-found"] .flourish path{animation:none;stroke-dashoffset:0}
 }
 @keyframes cp-fade{from{opacity:.35}to{opacity:1}}
+
+/* Legal index rows --------------------------------------------------------
+   .toc a was `min-height:34px; align-items:center`, so an entry that wraps to
+   two lines grows its row and its neighbour floats to the row's midpoint —
+   landing on neither of the wrapped entry's baselines. One wrapped entry out
+   of ten is enough to make the whole block read as misaligned, which is what
+   05/06 did. Align on the first baseline so the numbers line up across the
+   row whatever the labels do. */
+body[data-page="legal"] .toc a{align-items:baseline}
+body[data-page="legal"] .toc a .n{align-self:baseline}
+
+/* The poster ground was painted on the section rather than the page, so above
+   the first section the body colour showed through as a band with a hard edge
+   across the full width — a strip of a different colour that marks nothing. */
+html[data-skin="paper"] body[data-page="legal"]{
+  background-color: var(--soft-peach-cream) !important;
+}
+/* The closing texture band began at a hard horizontal edge that aligned with
+   nothing. Fade it in so it reads as the page running out rather than as a
+   second element starting. */
+html[data-skin="paper"] body[data-page="legal"] .lq-texture-stage{
+  -webkit-mask-image: linear-gradient(to bottom, #000 0 62%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0 62%, transparent 100%);
+}
+/* The band above the first section was the landscape's sky plane, still
+   painted full-viewport on a route that hides the ridges. On a poster page
+   with its own ground it contributes nothing but an edge. */
+html[data-skin="paper"] body[data-page="legal"] .mtn-sky{display:none}
+/* The band is the root element, not the sky: html carries the rotating cloud
+   colour for every route, and on a legal page the body's own ground starts
+   below the header offset, so the root shows through above it. Give the root
+   the poster ground on this route so there is one continuous field. */
+html[data-skin="paper"]:has(body[data-page="legal"]){
+  background-color: var(--soft-peach-cream) !important;
+}

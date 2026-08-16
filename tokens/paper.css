@@ -14,9 +14,17 @@
   --paper-dim: #D4CEC3;     /* compact hover and selected states */
   --chip: #CBBFAD;          /* oat — quiet controls */
   --ink: #141413;           /* dominant linework and type */
-  --dim: #55544F;
-  --faint: #74726B;
-  --ghost: #96938A;
+  /* Three text greys, not four. Measured on the glass carriers across all 180
+     colour groups, the old ramp put --faint at 3.7:1 and --ghost at 2.4:1 —
+     below the 4.5:1 floor everywhere, for roles that are real copy (the
+     casting disclaimer, the balance caption, the composer hint). A tier that
+     cannot be read is not a tier in the hierarchy, it is text that is missing,
+     so --ghost now resolves to --faint rather than staying available as a
+     shade to reach for. Hierarchy below --dim is carried by size, weight and
+     tracking, which these roles already have. */
+  --dim: #4C4B46;
+  --faint: #5C5A54;
+  --ghost: var(--faint);
   --terracotta: #A85E46;    /* clay — the only action accent */
   --prussian: #505064;      /* dark heather for transformed states */
   --prussian-deep: #444358;

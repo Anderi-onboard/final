@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260816a", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260816a";
+    ? new URL("../palettes/color-groups.json?v=20260816b", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260816b";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -68,8 +68,12 @@
        it — near and far stay clean, which is what keeps it from reading as a
        watermark. No per-frame work: these are <use> nodes riding the existing
        flow transform. */
+    /* g.moire, not .moire: the per-plane `.mtn-bg .l4{opacity:.83}` rules below
+       carry the same specificity and come later in this sheet, so a bare class
+       selector loses the tie and the bands inherit the plane's opacity instead
+       of their own. The element name buys the one point that settles it. */
     + '.mtn-bg .moire use{fill:none;stroke-width:.85;stroke-linecap:round;vector-effect:non-scaling-stroke}'
-    + '.mtn-bg .moire{opacity:.42;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg g.moire{opacity:.42;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .moire.l4 use{stroke:color-mix(in srgb,var(--bw-palette-4,#756F68) 30%,transparent)}'
     + '.mtn-bg .moire.l5 use{stroke:color-mix(in srgb,var(--bw-palette-5,#756F68) 30%,transparent)}'
     + '.mtn-bg .moire.l6 use{stroke:color-mix(in srgb,var(--bw-palette-6,#756F68) 32%,transparent)}'
@@ -78,8 +82,8 @@
        would also halve every moiré band — line-art is the resting state, so
        that would silently decide the shipping strength. Opt out and set it. */
     + '.mtn-bg.line-art .moire use{opacity:1}'
-    + '.mtn-bg.line-art .moire{opacity:.34}'
-    + '@media (prefers-reduced-motion:reduce){.mtn-bg .moire{opacity:.3}}'
+    + '.mtn-bg.line-art g.moire{opacity:.34}'
+    + '@media (prefers-reduced-motion:reduce){.mtn-bg g.moire{opacity:.3}}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
        line-art so the colour recedes and leaves the line-drawing: background

@@ -1,0 +1,193 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>palette contrast + colour-cast audit</title>
+<!--
+  Runs every published colour group against the real pages and reports two
+  numbers per text role:
+
+    contrast — WCAG ratio of the text colour against the surface it actually
+               sits on. The surface is resolved by walking ancestors and
+               compositing each translucent layer down onto the sky colour,
+               which is what the eye sees. backdrop-filter blur is ignored:
+               it redistributes colour spatially but barely moves the mean,
+               so the ratio is right to about a tenth.
+
+    cast     — R minus B of the composited surface. This is the yellow-cast
+               measure the glass rework was accepted on; a neutral panel sits
+               near zero regardless of how warm the palette behind it is.
+
+  Open with ?limit=N to sample the first N groups while iterating.
+-->
+<style>
+  body { margin: 0; font: 12px/1.45 ui-monospace, monospace; background: #14140f; color: #d6cfc2 }
+  #out { padding: 10px; white-space: pre }
+  iframe { position: absolute; left: -6000px; width: 1280px; height: 800px; border: 0 }
+  .bad { color: #ff8f6b } .warn { color: #e8c46a } .ok { color: #8fbf7a }
+</style>
+<div id="out">running…</div>
+<script type="module">
+const params = new URLSearchParams(location.search);
+const LIMIT = Number(params.get('limit') || 0);
+
+/* Ported verbatim from mountain-range.js so the audit tests the colours the
+   runtime actually publishes, not the raw catalogue values. */
+function mutedHex(hex, maxL, maxS, minL) {
+  const n = parseInt(hex.slice(1), 16);
+  const r = (n >> 16) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+  let l = (max + min) / 2, s = d ? d / (1 - Math.abs(2 * l - 1)) : 0, h = 0;
+  if (d) {
+    if (max === r) h = ((g - b) / d) % 6;
+    else if (max === g) h = (b - r) / d + 2;
+    else h = (r - g) / d + 4;
+    h = (h * 60 + 360) % 360;
+  }
+  l = Math.max(minL || 0, Math.min(l, maxL));
+  s = Math.min(s, maxS);
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+  const m = l - c / 2;
+  let rr = 0, gg = 0, bb = 0;
+  if (h < 60) [rr, gg, bb] = [c, x, 0];
+  else if (h < 120) [rr, gg, bb] = [x, c, 0];
+  else if (h < 180) [rr, gg, bb] = [0, c, x];
+  else if (h < 240) [rr, gg, bb] = [0, x, c];
+  else if (h < 300) [rr, gg, bb] = [x, 0, c];
+  else [rr, gg, bb] = [c, 0, x];
+  const hx = (v) => Math.round((v + m) * 255).toString(16).padStart(2, '0');
+  return '#' + hx(rr) + hx(gg) + hx(bb);
+}
+
+/* color-mix() resolves to `color(srgb r g b / a)` with 0–1 components, while
+   plain declarations resolve to `rgb(r g b / a)` with 0–255. Reading the first
+   form on the second form's scale turns every glass panel into near-black and
+   makes every contrast ratio meaningless, so branch on the notation. */
+const parseRGB = (s) => {
+  if (!s) return null;
+  const m = s.match(/-?[\d.]+/g);
+  if (!m || m.length < 3) return null;
+  const unit = /^color\(/.test(s.trim()) ? 255 : 1;
+  return { r: +m[0] * unit, g: +m[1] * unit, b: +m[2] * unit, a: m.length > 3 ? +m[3] : 1 };
+};
+const hexToRGB = (h) => ({
+  r: parseInt(h.slice(1, 3), 16), g: parseInt(h.slice(3, 5), 16),
+  b: parseInt(h.slice(5, 7), 16), a: 1
+});
+const over = (fg, bg) => ({
+  r: fg.r * fg.a + bg.r * (1 - fg.a),
+  g: fg.g * fg.a + bg.g * (1 - fg.a),
+  b: fg.b * fg.a + bg.b * (1 - fg.a),
+  a: 1
+});
+const chan = (v) => { v /= 255; return v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); };
+const lum = (c) => .2126 * chan(c.r) + .7152 * chan(c.g) + .0722 * chan(c.b);
+const ratio = (a, b) => {
+  const la = lum(a), lb = lum(b);
+  return (Math.max(la, lb) + .05) / (Math.min(la, lb) + .05);
+};
+
+/* The surface under a text node: composite every translucent ancestor
+   background down, ending on the sky. */
+function surfaceOf(el, win, sky) {
+  const stack = [];
+  for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
+    const bg = parseRGB(win.getComputedStyle(n).backgroundColor);
+    if (bg && bg.a > 0) stack.push(bg);
+    if (bg && bg.a >= .999) break;
+  }
+  let base = sky;
+  for (let i = stack.length - 1; i >= 0; i--) base = over(stack[i], base);
+  return base;
+}
+
+/* Text roles worth holding to a standard, with the size class WCAG uses. */
+const ROLES = [
+  ['pricing', '.plan h3', 'large'], ['pricing', '.plan .desc', 'body'],
+  ['pricing', '.plan .amount', 'large'], ['pricing', '.plan .period', 'body'],
+  ['pricing', '.pagehead a', 'body'], ['pricing', '.mo-label', 'body'],
+  ['pricing', '.fineprint', 'body'], ['pricing', '.eyebrow', 'body'],
+  ['pricing', '.plan-tag', 'body'], ['pricing', '.pack .grant-period', 'body'],
+  ['index', '.greeting', 'large'], ['index', '.composer-help', 'body'],
+  ['index', '.ledger-cap', 'body'], ['index', '.ledger-plan', 'body'],
+  ['index', '.claude-note', 'body'], ['index', '.disclaimer', 'body'],
+  ['index', '.guide-coach', 'body'], ['index', '.ledger-unit', 'body'],
+  ['settings', '.panel p', 'body'], ['login', '.card p', 'body']
+];
+const NEED = { body: 4.5, large: 3 };
+/* Panels whose neutrality is the accepted glass criterion. */
+const CAST_TARGETS = [['index', '.composer'], ['index', '.ledger'],
+  ['index', '.side-foot'], ['pricing', '.plan'], ['login', '.card']];
+
+const groups = await (await fetch('../assets/palettes/color-groups.json')).json();
+const pages = [...new Set([...ROLES.map(r => r[0]), ...CAST_TARGETS.map(c => c[0])])];
+const frames = {};
+await Promise.all(pages.map(p => new Promise(res => {
+  const f = document.createElement('iframe');
+  f.src = `../${p}.html`;
+  f.onload = () => { frames[p] = f; setTimeout(res, 1800); };
+  document.body.appendChild(f);
+})));
+
+const out = document.getElementById('out');
+const list = LIMIT ? groups.slice(0, LIMIT) : groups;
+const fails = [];
+const missing = new Set();
+let castMax = 0, castSum = 0, castN = 0;
+const worst = {};
+
+for (const g of list) {
+  const rows = g.rows.map(h => mutedHex(h, .60, .26));
+  const bgs = g.backgrounds || {};
+  const cloud = mutedHex(bgs.sky || g.cloud, .82, .14, .76);
+  const water = mutedHex(bgs.water || g.rows[4], .64, .22, .42);
+  const gem = rows[Math.max(0, Math.min(9, (g.gems && g.gems[0] || 6) - 1))];
+  for (const p of pages) {
+    const root = frames[p].contentDocument.documentElement;
+    root.style.setProperty('--bw-palette-cloud', cloud);
+    root.style.setProperty('--bw-palette-water', water);
+    root.style.setProperty('--bw-palette-gem', gem);
+    rows.forEach((hex, i) => root.style.setProperty(`--bw-palette-${i + 1}`, hex));
+  }
+  const sky = hexToRGB(cloud);
+
+  for (const [page, sel, size] of ROLES) {
+    const doc = frames[page].contentDocument, win = frames[page].contentWindow;
+    const el = doc.querySelector(sel);
+    /* A selector that matches nothing must be loud: a silent skip reads as a
+       pass and is how a role drops out of the audit without anyone noticing. */
+    if (!el) { missing.add(`${page} ${sel}`); continue; }
+    const fg = parseRGB(win.getComputedStyle(el).color);
+    const surf = surfaceOf(el, win, sky);
+    const r = ratio(over(fg, surf), surf);
+    const key = `${page} ${sel}`;
+    if (!worst[key] || r < worst[key].r) worst[key] = { r, group: g.id + ' ' + g.name, need: NEED[size] };
+    if (r < NEED[size]) fails.push({ group: g.id, name: g.name, key, r, need: NEED[size] });
+  }
+  for (const [page, sel] of CAST_TARGETS) {
+    const doc = frames[page].contentDocument, win = frames[page].contentWindow;
+    const el = doc.querySelector(sel);
+    if (!el) { missing.add(`${page} ${sel}`); continue; }
+    const surf = surfaceOf(el, win, sky);
+    const cast = Math.abs(surf.r - surf.b);
+    castMax = Math.max(castMax, cast); castSum += cast; castN++;
+  }
+}
+
+const byRole = {};
+for (const f of fails) (byRole[f.key] ||= []).push(f);
+let txt = `groups tested: ${list.length}\n`;
+if (missing.size) txt += `\n<span class="bad">SELECTORS MATCHING NOTHING (not audited): ${[...missing].join(', ')}</span>\n`;
+txt += `\n— colour cast (|R−B|) on glass panels —\n`;
+txt += `  mean ${(castSum / castN).toFixed(1)}   max ${castMax.toFixed(1)}   samples ${castN}\n`;
+txt += `\n— worst-case contrast per text role, across every group —\n`;
+for (const [k, v] of Object.entries(worst).sort((a, b) => a[1].r - b[1].r)) {
+  const cls = v.r < v.need ? 'bad' : v.r < v.need * 1.15 ? 'warn' : 'ok';
+  txt += `  <span class="${cls}">${v.r.toFixed(2).padStart(6)} / need ${v.need}</span>  ${k.padEnd(28)} worst at ${v.group}\n`;
+}
+txt += `\n— failing (role, count of groups) —\n`;
+const rows2 = Object.entries(byRole).sort((a, b) => b[1].length - a[1].length);
+if (!rows2.length) txt += '  none\n';
+for (const [k, v] of rows2) txt += `  ${String(v.length).padStart(4)}  ${k}\n`;
+out.innerHTML = txt;
+document.title = 'done';
+</script>

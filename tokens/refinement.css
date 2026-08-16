@@ -10,19 +10,48 @@
   --bw-palette-9: var(--ink);
   --bw-palette-on-9: var(--paper);
   --bw-palette-gem: var(--terracotta);
-  --ui-glass: color-mix(in srgb, var(--bw-palette-1) 72%, transparent);
-  --ui-glass-strong: color-mix(in srgb, var(--bw-palette-1) 88%, transparent);
-  --ui-glass-soft: color-mix(in srgb, var(--bw-palette-1) 54%, transparent);
-  --ui-glass-warm: color-mix(in srgb, var(--bw-palette-2) 72%, transparent);
-  --ui-line: color-mix(in srgb, var(--paper-raised) 72%, var(--bw-palette-6) 18%);
-  --ui-line-strong: color-mix(in srgb, var(--paper-dim) 54%, var(--bw-palette-6) 36%);
+  /* GLASS — one material, defined once.
+     The tint is neutral white on purpose. It used to be a colour-mix of
+     --bw-palette-1, i.e. the palette's own cream, which is why panels read
+     yellow: measured across all 180 groups the composited surface sat at
+     |R−B| 68 mean / 89 max. Glass should take its warmth from the backdrop
+     it is over, never add its own — a panel that carries cream in the tint
+     is warm even where the backdrop behind it is cold, and no opacity
+     setting can fix that because the cream is in the panel.
+     The backdrop still comes through: saturate() lifts what is behind rather
+     than staining the panel, which is the part that is supposed to shift as
+     the palette rotates. */
+  --ui-glass-tint: 255 255 255;
+  --ui-glass: rgb(var(--ui-glass-tint) / .50);
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .66);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .36);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .58);
+  /* Specular top edge + hairline bottom: the two cues that separate "glass"
+     from "a translucent rectangle". Applied as an inset shadow so it rides
+     the radius without a pseudo-element. */
+  --ui-glass-edge:
+    inset 0 1px 0 rgb(255 255 255 / .58),
+    inset 0 -1px 0 rgb(255 255 255 / .16);
+  --ui-line: color-mix(in srgb, var(--ink) 12%, transparent);
+  --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
   --ui-shadow: 0 10px 30px rgba(42,32,22,.07), 0 1px 2px rgba(42,32,22,.05);
   --ui-shadow-raised: 0 16px 42px rgba(42,32,22,.09), 0 2px 5px rgba(42,32,22,.055);
-  --ui-glass-filter: blur(11px) saturate(114%);
-  --ui-glass-filter-strong: blur(14px) saturate(118%);
-  --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
-  --ui-radius-small: 12px 15px 11px 14px / 14px 11px 15px 12px;
+  /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
+     rather than Apple's 180%: at 180% the warm palettes bloom and the cast
+     comes straight back through the backdrop instead of through the tint. */
+  --ui-glass-filter: blur(22px) saturate(128%);
+  --ui-glass-filter-strong: blur(26px) saturate(132%);
+  /* One radius, two sizes. These were eight-value wobble radii — a
+     hand-drawn gesture that reads as a wavering edge under a blur and is the
+     source of most of the 26 distinct radii on the site. Glass has a
+     machined edge; that is most of what makes it read as glass. */
+  --ui-radius: 14px;
+  --ui-radius-small: 10px;
+  --ui-radius-chip: 6px;   /* badges, tags, inline code — a third size is a
+                              system; twenty-six loose numbers is not. */
+  --ui-radius-pill: 999px;
+  --ui-hairline: 1px;
 }
 
 /* Registered colours make custom properties genuinely interpolable. The
@@ -102,7 +131,10 @@ html[data-skin="paper"] body .mtn-sky {
   transition: background-color 1.5s var(--ease-in-out);
 }
 html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
-html[data-skin="paper"] body .mtn-bg [clip-path] > use { opacity: .13 !important; }
+/* Written for the cloud group, which is the other clipped node in the range.
+   Excluding the moire group matters: its bands are also clipped <use>, and at
+   .13 !important the texture is decided here by a rule that was never about it. */
+html[data-skin="paper"] body .mtn-bg [clip-path]:not(.moire) > use { opacity: .13 !important; }
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
   stroke: color-mix(in srgb, #141413 30%, transparent) !important;
@@ -133,8 +165,8 @@ html[data-skin="paper"] body :is(
 ) {
   background: var(--ui-glass) !important;
   background-image: none !important;
-  border: 1.25px solid var(--ui-line) !important;
-  box-shadow: var(--ui-shadow) !important;
+  border: var(--ui-hairline) solid var(--ui-line) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
@@ -152,7 +184,7 @@ html[data-skin="paper"] body :is(
 ) {
   background: var(--ui-glass-strong) !important;
   border-color: var(--ui-line) !important;
-  box-shadow: var(--ui-shadow) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
   backdrop-filter: var(--ui-glass-filter-strong);
   -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
@@ -163,16 +195,16 @@ html[data-skin="paper"] body :is(
 }
 html[data-skin="paper"] body .ledgerstrip {
   background: var(--ui-glass);
-  border: .75px solid var(--ui-line);
-  border-radius: 15px 18px 14px 17px / 17px 14px 18px 15px;
-  box-shadow: var(--ui-shadow);
+  border: var(--ui-hairline) solid var(--ui-line);
+  border-radius: var(--ui-radius);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow);
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 html[data-skin="paper"] body .m-card:nth-child(2n),
 html[data-skin="paper"] body .pack:nth-child(2n),
 html[data-skin="paper"] body .cost:nth-child(2n) {
-  border-radius: 15px 11px 14px 12px / 12px 15px 11px 14px;
+  border-radius: var(--ui-radius);
 }
 html[data-skin="paper"] body :is(.band .cta, .plan.feat .choose, .btn.terracotta) {
   color: var(--ink) !important;
@@ -184,10 +216,10 @@ body[data-page="pricing"] .pagehead {
   width: min(1180px, calc(100% - 48px));
   margin: 14px auto 0;
   padding: 10px 12px 10px 16px;
-  border: 1.25px solid var(--ui-line);
-  border-radius: 20px 25px 18px 23px / 23px 18px 25px 19px;
+  border: var(--ui-hairline) solid var(--ui-line);
+  border-radius: var(--ui-radius);
   background: var(--ui-glass);
-  box-shadow: var(--ui-shadow);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow);
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
@@ -206,7 +238,7 @@ body[data-page="pricing"] .pagehead .ghost {
   justify-content: center;
   padding: 0 14px;
   line-height: 1;
-  border-radius: 999px;
+  border-radius: var(--ui-radius-pill);
 }
 body:not([data-page="app"]) .pagehead .cta,
 body[data-page="pricing"] .pagehead .cta {
@@ -241,7 +273,7 @@ body[data-page="app"] .side-top { padding-inline: 6px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
-  border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
+  border-radius: var(--ui-radius-pill); font-size: 12.5px; font-weight: 500 !important;
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 400px; }
@@ -254,18 +286,18 @@ body[data-page="app"] .casting-row { border-radius: var(--ui-radius-small); }
 body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
-  margin: 14px 2px 0; padding: 15px; border: 1.25px solid var(--ui-line) !important;
+  margin: 14px 2px 0; padding: 15px; border: var(--ui-hairline) solid var(--ui-line) !important;
   border-radius: var(--ui-radius); background: var(--ui-glass-warm);
 }
 body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
 body[data-page="app"] .ledger-meter { height: 4px; }
 body[data-page="app"] .exchange {
-  min-height: 38px; border-radius: 10px; box-shadow: 0 6px 18px rgba(31,29,26,.13);
+  min-height: 38px; border-radius: var(--ui-radius-small); box-shadow: 0 6px 18px rgba(31,29,26,.13);
   background: var(--ink); color: var(--paper-raised);
 }
 body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: 0 8px 22px rgba(181,80,44,.18); transform: none; }
-body[data-page="app"] .side-foot { min-height: 48px; border-radius: 12px; }
+body[data-page="app"] .side-foot { min-height: 48px; border-radius: var(--ui-radius-small); }
 body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mask-image: none; -webkit-mask-image: none; }
 
 body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
@@ -313,8 +345,8 @@ body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
 body[data-page="app"] .composer-zone { padding-bottom: 28px; }
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
-  border: 1.25px solid var(--ui-line); border-radius: 22px 27px 20px 25px / 25px 20px 27px 21px;
-  background: var(--ui-glass-strong); box-shadow: var(--ui-shadow-raised);
+  border: var(--ui-hairline) solid var(--ui-line); border-radius: var(--ui-radius);
+  background: var(--ui-glass-strong); box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
   transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease, background-color var(--dur-base) ease;
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
@@ -324,7 +356,7 @@ body[data-page="app"] .composer:focus-within {
 }
 body[data-page="app"] .stria {
   min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
-  border: 1px solid var(--ui-line); color: var(--ink);
+  border: var(--ui-hairline) solid var(--ui-line); color: var(--ink);
   transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
@@ -341,11 +373,11 @@ body[data-page="app"] .method-menu,
 body[data-page="app"] .acct-menu,
 body[data-page="app"] .guide-coach,
 body[data-page="app"] .signin-coach {
-  background: var(--ui-glass-strong); border: 1.25px solid var(--ui-line);
-  box-shadow: var(--ui-shadow-raised);
+  background: var(--ui-glass-strong); border: var(--ui-hairline) solid var(--ui-line);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
 }
-body[data-page="app"] .method-menu { border-radius: 16px; padding: 8px; }
-body[data-page="app"] .mm-row { border-radius: 11px; }
+body[data-page="app"] .method-menu { border-radius: var(--ui-radius); padding: 8px; }
+body[data-page="app"] .mm-row { border-radius: var(--ui-radius-small); }
 /* The old full-width frosted layer was the tan box that appeared when pointer
    movement forced Chromium to re-composite backdrop-filter. The reading and
    casting remain directly on the page; only compact controls get carriers. */
@@ -374,7 +406,7 @@ body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
   background: var(--ui-glass-soft); border-color: var(--ui-line);
-  border-radius: 10px 13px 9px 12px / 12px 9px 13px 10px;
+  border-radius: var(--ui-radius-small);
   box-shadow: inset 0 1px 0 rgba(226,218,205,.28);
   backdrop-filter: blur(10px) saturate(110%);
   -webkit-backdrop-filter: blur(10px) saturate(110%);
@@ -443,7 +475,7 @@ body[data-page="app"] .reading-body :is(h2,h3)::before {
   width: 7px;
   height: 8px;
   box-sizing: border-box;
-  border: 1.5px solid currentColor;
+  border: var(--ui-hairline) solid currentColor;
   border-radius: 46% 54% 62% 38% / 57% 43% 56% 44%;
   transform-origin: 50% 70%;
   animation: bwOrganicCurrent 780ms var(--ease-in-out) infinite;
@@ -490,7 +522,7 @@ body[data-page="app"] .send:disabled .bw-organic-loader { display: inline-flex; 
   }
   html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost):hover {
     border-color: var(--ui-line-strong) !important;
-    box-shadow: var(--ui-shadow-raised) !important;
+    box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised) !important;
   }
 }
 
@@ -541,7 +573,7 @@ html[data-skin="paper"] body:not([data-page="app"]) :is(
 ) {
   background-color: color-mix(in srgb, var(--bw-palette-1) 52%, rgba(42,32,22,.18)) !important;
   background-image: none !important;
-  border: .75px solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
+  border: var(--ui-hairline) solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
   box-shadow: 0 12px 32px rgba(42,32,22,.075) !important;
   backdrop-filter: blur(13px) saturate(116%) !important;
   -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
@@ -557,18 +589,18 @@ body[data-page="pricing"] .topup,
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
   background: var(--ui-glass); border-color: var(--ui-line);
-  box-shadow: var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
   -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
 body[data-page="pricing"] .plan,
 body[data-page="settings"] .panel { border-radius: var(--ui-radius); }
-body[data-page="pricing"] .plan:nth-child(2n) { border-radius: 24px 18px 23px 19px / 18px 24px 20px 23px; }
-body[data-page="pricing"] .plan:nth-child(3n) { border-radius: 18px 25px 19px 23px / 24px 19px 23px 18px; }
-body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-shadow: var(--ui-shadow-raised); border-color: var(--ui-line-strong); }
+body[data-page="pricing"] .plan:nth-child(2n) { border-radius: var(--ui-radius); }
+body[data-page="pricing"] .plan:nth-child(3n) { border-radius: var(--ui-radius); }
+body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised); border-color: var(--ui-line-strong); }
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
-body[data-page="settings"] .btn { min-height: 44px; border-radius: 11px; box-shadow: none; }
+body[data-page="settings"] .btn { min-height: 44px; border-radius: var(--ui-radius-small); box-shadow: none; }
 body[data-page="pricing"] .choose:hover,
 body[data-page="pricing"] .cta:hover,
 body[data-page="login"] .submit:hover,
@@ -581,7 +613,7 @@ body[data-page="legal"] .toc,
 body[data-page="legal"] .headline,
 body[data-page="legal"] .pull {
   background: var(--ui-glass); border-color: var(--ui-line);
-  border-radius: var(--ui-radius); box-shadow: var(--ui-shadow);
+  border-radius: var(--ui-radius); box-shadow: var(--ui-glass-edge), var(--ui-shadow);
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
@@ -593,7 +625,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .topbar { padding-inline: 18px; }
   body[data-page="app"] .sidebar {
     background: var(--ui-glass-strong);
-    box-shadow: var(--ui-shadow-raised);
+    box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
     backdrop-filter: var(--ui-glass-filter-strong);
     -webkit-backdrop-filter: var(--ui-glass-filter-strong);
   }
@@ -608,7 +640,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
   body[data-page="app"] .greeting h1 { min-height: 5.25em; font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
   body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
-  body[data-page="app"] .composer { min-height: 58px; border-radius: 18px; padding: 7px; }
+  body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 7px; }
   body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
   body[data-page="app"] .composer-help { display: none; }
@@ -787,4 +819,18 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
 }
 @media (max-width:880px) {
   body[data-page="app"]:not(.is-empty) .composer-zone::before { left: 18px; right: 18px; }
+}
+
+/* Accent-coloured micro-labels ------------------------------------------
+   .eyebrow and .plan-tag paint 9–11px tracked uppercase in the palette's gem
+   colour. The gem is chosen for the landscape, where it sits against ridge
+   fills, not for 9px type on a near-white carrier: measured worst cases were
+   3.71:1 and 3.81:1 against a 4.5 floor, at every colour group. Pull the same
+   hue toward ink until it clears — the label stays recognisably the accent,
+   and unlike the gem it does not move when the palette rotates. */
+html[data-skin="paper"] body :is(.eyebrow, .plan-tag, .typical, .example .label) {
+  color: color-mix(in srgb, var(--soft-peach-accent) 42%, var(--soft-peach-ink)) !important;
+}
+html[data-skin="paper"] body .plan-tag {
+  background: color-mix(in srgb, var(--soft-peach-accent) 16%, transparent) !important;
 }
