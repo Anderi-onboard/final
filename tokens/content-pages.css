@@ -502,3 +502,29 @@ html[data-skin="paper"] body[data-page="legal"] .mtn-sky{display:none}
 html[data-skin="paper"]:has(body[data-page="legal"]){
   background-color: var(--soft-peach-cream) !important;
 }
+
+/* Poster-route header ----------------------------------------------------
+   On the legal and poster pages the pagehead is a full-bleed bar carrying a
+   wordmark and one back link. It was inheriting the shared glass carrier, so
+   it drew a 1360x80 translucent panel with square corners that ended at a hard
+   edge against the poster ground — a box around something that never needed
+   one, and the only square-cornered surface on a site where every other
+   surface is a 14px card.
+   Nothing here needs a container. Drop the box and keep the hairline, which
+   is the only part that was doing work. */
+html[data-skin="paper"] body:is([data-page="legal"],[data-page="about"],[data-page="guide"]) .pagehead {
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-bottom: var(--ui-hairline) solid var(--ui-line) !important;
+  border-radius: 0 !important;
+}
+/* The .lq-accent marks are inline SVG now, so they take colour rather than
+   carrying it. Keep them quiet and let them follow the rotating gem. */
+html[data-skin="paper"] body .lq-accent {
+  color: var(--bw-palette-gem, var(--terracotta));
+  height: auto;
+}

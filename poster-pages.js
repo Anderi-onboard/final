@@ -4,25 +4,54 @@
   var body = document.body;
   var page = body && body.dataset.page;
   var patternSources = [
-    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260816f",
-    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260816f",
-    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260816f",
-    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260816f"
+    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260816g",
+    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260816g",
+    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260816g",
+    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260816g"
   ];
-  var accentSources = {
-    coin: "./assets/textures/lianqian/lianqian-accent-coin.webp?v=20260816f",
-    medallion: "./assets/textures/lianqian/lianqian-accent-medallion.webp?v=20260816f"
-  };
+  /* The accent marks used to be 112x112 webp crops. At that size they were
+     already below one device pixel per source pixel on any 2x screen, so they
+     rendered soft, and because the artwork was cut out of a larger tile the
+     outer ring of the motif was clipped — blurry and incomplete at once.
+     A connected-coin motif is strictly constructible: circles on a square
+     pitch that overlap, each with the square hole. Drawing it means it is
+     sharp at every zoom and DPI, complete by construction, and takes the
+     palette through currentColor instead of baking one colour into a file. */
+  function coinMark(rings) {
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 120 120");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "1.6");
+    svg.setAttribute("aria-hidden", "true");
+    var add = function (tag, attrs) {
+      var n = document.createElementNS(NS, tag);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      svg.appendChild(n);
+    };
+    /* One centre coin plus a ring of four at the cardinal points, at a pitch
+       that makes neighbours intersect — the overlap is what turns separate
+       coins into 连钱, and the negative space between them into the四-petal. */
+    var pitch = rings ? 30 : 34, r = pitch * 0.86, hole = pitch * 0.2;
+    var centres = [[60, 60], [60 - pitch, 60], [60 + pitch, 60], [60, 60 - pitch], [60, 60 + pitch]];
+    centres.forEach(function (c) {
+      add("circle", { cx: c[0], cy: c[1], r: r.toFixed(2) });
+      add("path", {
+        d: "M" + c[0] + " " + (c[1] - hole) + "L" + (c[0] + hole) + " " + c[1] +
+           "L" + c[0] + " " + (c[1] + hole) + "L" + (c[0] - hole) + " " + c[1] + "Z"
+      });
+    });
+    if (rings) centres.forEach(function (c) {
+      add("circle", { cx: c[0], cy: c[1], r: (r * 0.58).toFixed(2) });
+    });
+    return svg;
+  }
 
   function appendAccent(target, type, modifier) {
     if (!target || target.querySelector(".lq-accent")) return;
-    var accent = document.createElement("img");
-    accent.className = "lq-accent " + modifier;
-    accent.src = accentSources[type];
-    accent.alt = "";
-    accent.setAttribute("aria-hidden", "true");
-    accent.decoding = "async";
-    accent.draggable = false;
+    var accent = coinMark(type === "medallion");
+    accent.setAttribute("class", "lq-accent " + modifier);
     target.appendChild(accent);
   }
 

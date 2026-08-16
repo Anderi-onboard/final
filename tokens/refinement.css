@@ -932,3 +932,15 @@ html[data-skin="paper"] body .btn.warn {
   background: color-mix(in srgb, var(--soft-peach-accent) 12%, #FFFFFF) !important;
   color: color-mix(in srgb, var(--soft-peach-accent) 55%, var(--soft-peach-ink)) !important;
 }
+
+/* [hidden] must actually hide -------------------------------------------
+   The UA rule is `[hidden]{display:none}`, which any class selector that sets
+   display beats on specificity. .oauth-providers{display:flex} did exactly
+   that, so the sign-in page's provider gating — which is written correctly and
+   fails safe, hiding every button when /api/auth/providers reports none
+   configured — had no effect: measured, all three buttons carried hidden=true
+   and computed display:flex. In production with no OAuth keys set that is three
+   dead controls on the sign-up path, each leading to "not configured".
+   This is not a login-page bug, it is a bug anywhere markup uses `hidden` and
+   CSS sets display on the same element, so the guard is global. */
+[hidden] { display: none !important; }
