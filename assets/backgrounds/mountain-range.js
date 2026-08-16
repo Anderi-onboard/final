@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260815i", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260815i";
+    ? new URL("../palettes/color-groups.json?v=20260816a", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260816a";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -60,6 +60,26 @@
     + '.mtn-bg .contour.l9 use{stroke:color-mix(in srgb,var(--bw-palette-9,#756F68) 50%,transparent)}'
     + '.mtn-bg .contour.l10 use{stroke:color-mix(in srgb,var(--bw-palette-10,#756F68) 50%,transparent)}'
     + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent)}'
+    /* MOIRÉ — the only page texture. It is not a tile laid over the site: each
+       band is the ridge's own contour path re-used at a fractional rotation,
+       clipped to that ridge's silhouette. So it drifts with the layer it
+       belongs to, inherits that layer's palette colour, and stops at the
+       skyline instead of covering the page. Only the four middle planes carry
+       it — near and far stay clean, which is what keeps it from reading as a
+       watermark. No per-frame work: these are <use> nodes riding the existing
+       flow transform. */
+    + '.mtn-bg .moire use{fill:none;stroke-width:.85;stroke-linecap:round;vector-effect:non-scaling-stroke}'
+    + '.mtn-bg .moire{opacity:.42;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg .moire.l4 use{stroke:color-mix(in srgb,var(--bw-palette-4,#756F68) 30%,transparent)}'
+    + '.mtn-bg .moire.l5 use{stroke:color-mix(in srgb,var(--bw-palette-5,#756F68) 30%,transparent)}'
+    + '.mtn-bg .moire.l6 use{stroke:color-mix(in srgb,var(--bw-palette-6,#756F68) 32%,transparent)}'
+    + '.mtn-bg .moire.l7 use{stroke:color-mix(in srgb,var(--bw-palette-7,#756F68) 32%,transparent)}'
+    /* `.line-art [clip-path]>use` above was written for the cloud group and
+       would also halve every moiré band — line-art is the resting state, so
+       that would silently decide the shipping strength. Opt out and set it. */
+    + '.mtn-bg.line-art .moire use{opacity:1}'
+    + '.mtn-bg.line-art .moire{opacity:.34}'
+    + '@media (prefers-reduced-motion:reduce){.mtn-bg .moire{opacity:.3}}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
        line-art so the colour recedes and leaves the line-drawing: background
@@ -118,6 +138,18 @@
     { n: 3, step: 9 }, { n: 2, step: 7 }
   ];
   var LINE_WOBBLE = [0, 2.8, -1.6, 1.2, -2.4, 2.1, -.8];
+
+  /* Which planes carry the moiré, and how. `n` bands at `gap` units apart,
+     each turned by a fraction of a degree — the tilt is what beats against
+     the ridge's own waveform. Keep the tilt under ~1°: past that the bands
+     separate and you can count them, which is the moment it stops being
+     texture and starts being stripes. */
+  var MOIRE = {
+    4: { n: 20, gap: 3.4, tilt: .30 },
+    5: { n: 24, gap: 3.0, tilt: .26 },
+    6: { n: 24, gap: 2.8, tilt: .34 },
+    7: { n: 18, gap: 3.2, tilt: .22 }
+  };
   var CLOUDS = [
     { t: "translate(180,12) scale(1.6)", o: .55, d: "0s" },
     { t: "translate(470,50) scale(1.0)", o: .78, d: "-2.8s" },
@@ -134,6 +166,7 @@
     for (var i = 1; i <= 10; i++) {
       defs += '<path id="mw' + i + '" d="' + shape(i) + '"/>';
       defs += '<path id="mw' + i + 'c" d="' + W[i] + '"/>';
+      if (MOIRE[i]) defs += '<clipPath id="mwclip' + i + '"><use href="#mw' + i + '"/></clipPath>';
     }
     defs += '<path id="mxy-cloud" d="' + CLOUD + '"/><path id="mxy-cloud-c" d="' + CLOUDC + '"/>';
     defs += '<clipPath id="mcloud-clip"><use href="#mxy-cloud"/></clipPath></defs>';
@@ -145,8 +178,19 @@
         var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
         contour += '<use href="#mw' + i + 'c" y="' + offset.toFixed(2) + '"/>';
       }
+      var moire = '';
+      if (MOIRE[i]) {
+        var M = MOIRE[i];
+        for (var m = 0; m < M.n; m++) {
+          var t = m - (M.n - 1) / 2;
+          moire += '<use href="#mw' + i + 'c" transform="rotate('
+            + (t * M.tilt).toFixed(3) + ' 500 300) translate(0 '
+            + (t * M.gap).toFixed(2) + ')"/>';
+        }
+        moire = '<g class="moire l' + i + '" clip-path="url(#mwclip' + i + ')">' + moire + '</g>';
+      }
       ridges += '<g class="flow-' + i + '"><use href="#mw' + i + '" class="fill l' + i + '"/>'
-        + '<g class="contour l' + i + '">' + contour + '</g></g>';
+        + moire + '<g class="contour l' + i + '">' + contour + '</g></g>';
       if (i === 6) ridges += '<path class="mtn-water" d="' + WATER + '"/>';
     });
 

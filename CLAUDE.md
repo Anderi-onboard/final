@@ -87,6 +87,12 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 - **撞色偏置**:◆ 对比带与主色相 HSV 距离 > 40° 判为撞色组,优先入池;另取 25% 单色组维持安静时刻。
 - 序列按 `近白 → 彩色` 1:1 交替。
 - 线稿模式 `.mtn-bg.line-art`:填充降到 `opacity:.62`,保留等高线。
+- **摩尔纹是全站唯一的纹理**,写在 `mountain-range.js` 的 `MOIRE` 表里,不是独立图层、
+  不是贴图。每条带就是该层自己的等高线 `#mw{i}c` 在极小角度上的重复,`clip-path` 裁在
+  该层山形内 —— 所以它跟着那一层视差漂移、继承那一层的色组、**到天际线为止**。
+  只有第 4–7 层(中景)带纹理,远近两端留空,这是它不像水印的原因。倾角保持 ≤1°:
+  再大就能数出条纹,纹理变成条子。不要再往页面上叠 `background-image` 纹理 ——
+  CSS `url()` 里的 SVG 读不到色组变量,180 组配色下必然撞色(见 `AUDIT-20260816.md` §1)。
 - **性能红线**:绝不逐帧动画 `background-color`/`filter`/`backdrop-filter`。用 hold-then-crossfade,只动 transform/opacity。
 
 ### 动效令牌 `tokens/motion.css`
