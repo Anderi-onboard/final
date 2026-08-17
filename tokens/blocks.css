@@ -25,10 +25,18 @@ body.blocks-route {
   --bk-gap: 3px;                 /* the ground showing between blocks */
   --bk-pad: clamp(18px, 1.9vw, 28px);
   margin: 0;
-  background: var(--bk-ink);
   color: var(--bk-ink);
   font-family: var(--sans);
 }
+/* The ground between blocks is paper, not ink. This needs the [data-skin]
+   qualifier to land at all: refinement.css sets `html[data-skin="paper"] body`,
+   which outspecifies a plain `body.blocks-route` no matter how late it loads —
+   so the ink ground this route declared for weeks was never actually painted,
+   and every gap has been showing paper. Paper is the better answer (the
+   references separate their fields with paper, not with a dark rule), so this
+   makes what shipped explicit instead of reinstating an ink ground nobody has
+   seen. --bk-ink stays: it is the type colour. */
+html[data-skin="paper"] body.blocks-route { background: var(--bk-bone); }
 /* The range and every glass carrier are switched off here rather than
    overridden piecemeal — this route does not use that material at all. */
 body.blocks-route .mtn-bg,
@@ -75,22 +83,66 @@ body.blocks-route .bk-go {
   background: var(--bk-clay); color: var(--bk-cream);
   padding: 9px 15px; font-size: 13px;
 }
-body.blocks-route .bk-go--big { display: inline-block; margin-top: 20px; padding: 12px 18px; }
+/* align-self, not display:inline-block — the title cells are flex columns, so
+   a block child stretches to the full column width and the button reads as a
+   bar across the composition rather than as a button. */
+body.blocks-route .bk-go--big { align-self: flex-start; margin-top: 20px; padding: 12px 18px; }
 
-/* ── the compositions ───────────────────────────────────────────────────── */
+/* ── the compositions ───────────────────────────────────────────────────────
+   NOT a twelve-column grid. That was the structural mistake: twelfths can only
+   land on .083, .167, .25, .333 … and the reference divides at .37, .53, .72,
+   .79 — not one of its edges falls on a twelfth. A column system cannot
+   express those ratios, so every attempt to tune spans produced something that
+   read as a web layout rather than as the composition.
+
+   Each composition is instead a fixed-aspect frame with explicit fractional
+   tracks, measured off the reference:
+
+     A  .37 / .35 / .28      title left, banded middle, full-height right
+     B  1        rows .37/.63    one band over one field
+     C  .42 / .37 / .21     title, plate, full-height right column
+     D  .54 / .19 / .27     title, narrow pattern, full-height right column
+
+   Three rules hold across all of them and are why they read as one system:
+   the rightmost column always runs the full height to the edge; no two tracks
+   in a composition are equal; and the horizontal division, where there is one,
+   sits near the middle but never on it. */
 body.blocks-route .bk-main { display: flex; flex-direction: column; gap: var(--bk-gap); }
 body.blocks-route .bk {
   display: grid;
   gap: var(--bk-gap);
-  grid-template-columns: repeat(12, 1fr);
-  /* auto, not a min height. A minimum turns every short block into a mostly
-     empty one, and the reference has no mostly-empty blocks: each is exactly
-     as tall as what it holds, and the air lives in the padding. */
-  grid-auto-rows: auto;
+  /* The frame is a fixed aspect, as the reference's slides are. Below the
+     breakpoint it releases, because a 16:9 frame on a phone is a letterbox. */
+  aspect-ratio: 16 / 7.4;
+  min-height: 420px;
 }
+body.blocks-route .bk--a { grid-template-columns: .37fr .35fr .28fr; grid-template-rows: .34fr .66fr; }
+/* B is a band pair, not a slide. Holding it to 16:7.4 stretches two bands to
+   the height of a three-column composition and puts the empty back. */
+body.blocks-route .bk--b { grid-template-columns: 1fr; grid-template-rows: .34fr .66fr;
+  aspect-ratio: 16 / 3.4; min-height: 260px; }
+/* B carrying the type in its FIRST row is a different frame, not the same one
+   flipped: a .34 row is sized for a pattern band, and putting a heading plus a
+   call to action in it overflows into overflow:hidden, which clips the
+   headline in half. The proportion follows what the row has to hold. */
+body.blocks-route .bk--b2 { grid-template-columns: 1fr; grid-template-rows: .56fr .44fr;
+  aspect-ratio: 16 / 4.2; min-height: 330px; }
+body.blocks-route .bk--c { grid-template-columns: .42fr .37fr .21fr; grid-template-rows: .58fr .42fr; }
+body.blocks-route .bk--d { grid-template-columns: .54fr .19fr .27fr; grid-template-rows: .48fr .52fr; }
+
+/* Placement is declared per cell rather than by span counts, because the
+   shapes are specific: an L, a band, a full-height rail. */
+body.blocks-route [data-at="left-tall"]  { grid-column: 1; grid-row: 1 / -1; }
+body.blocks-route [data-at="left-top"]   { grid-column: 1; grid-row: 1; }
+body.blocks-route [data-at="mid-top"]    { grid-column: 2; grid-row: 1; }
+body.blocks-route [data-at="mid-tall"]   { grid-column: 2; grid-row: 1 / -1; }
+body.blocks-route [data-at="mid-bottom"] { grid-column: 2; grid-row: 2; }
+body.blocks-route [data-at="right-tall"] { grid-column: 3; grid-row: 1 / -1; }
+body.blocks-route [data-at="band-top"]   { grid-column: 1 / -1; grid-row: 1; }
+body.blocks-route [data-at="band-bottom"]{ grid-column: 1 / -1; grid-row: 2; }
+body.blocks-route [data-at="wide-bottom"]{ grid-column: 1 / 3;  grid-row: 2; }
+
 body.blocks-route .bk-cell { padding: var(--bk-pad); min-width: 0; position: relative; overflow: hidden; }
-/* Pattern and landscape cells hold no copy, so they carry no padding — the
-   field should run to the block's edge the way it does in the reference. */
 body.blocks-route .bk-cell:is([data-pattern], [data-land], [data-mark]) { padding: 0; }
 
 body.blocks-route [data-fill="bone"]  { background: var(--bk-bone); }
@@ -102,40 +154,36 @@ body.blocks-route [data-fill="teal"]  { background: var(--bk-teal);  color: var(
 body.blocks-route [data-fill="ochre"] { background: var(--bk-ochre); }
 body.blocks-route [data-fill="dusty"] { background: var(--bk-dusty); }
 
-/* Unequal by design. Equal blocks read as a table; the reference never uses
-   two the same size in one composition. */
-/* Every row must sum to 12. A composition that leaves a column empty reads as
-   a layout that failed rather than as negative space — in the reference the
-   blocks always reach both edges, and the air is inside them. */
-body.blocks-route .bk-cell--title { grid-column: span 8; }
-body.blocks-route .bk-cell--wide  { grid-column: span 9; }
-body.blocks-route .bk-cell--half  { grid-column: span 6; }
-body.blocks-route .bk-cell--third { grid-column: span 4; }
-/* No row spanning. A cell that spans two rows leaves the next row already
-   part-occupied, so the spans after it overflow twelve and wrap — which is
-   exactly where the dead ground on this page was coming from. */
-body.blocks-route .bk-cell--tall  { grid-column: span 4; }
-body.blocks-route .bk-cell--sq    { grid-column: span 3; }
-body.blocks-route .bk-cell--strip { grid-column: span 12; min-height: 74px; }
-body.blocks-route .bk-cell--land  { grid-column: span 3; min-height: 168px; }
-body.blocks-route .bk-cell--steps { grid-column: span 12; display: grid;
-  grid-template-columns: repeat(3, 1fr); gap: 22px; list-style: none; }
+/* The title sits at the foot of its block, not the head — in every reference
+   slide the type is anchored to the bottom-left of the field it lives in. */
+body.blocks-route .bk-cell--title { display: flex; flex-direction: column; justify-content: flex-end; }
+body.blocks-route .bk-cell--steps { display: grid; align-content: center;
+  grid-template-columns: repeat(3, 1fr); gap: 22px; list-style: none; margin: 0; }
 body.blocks-route .bk-cell--steps b { display: block; font-family: var(--serif); font-size: 16px; margin-bottom: 5px; }
 body.blocks-route .bk-cell--steps .bk-eyebrow { margin-bottom: 5px; }
+body.blocks-route .bk-cell--body { display: flex; flex-direction: column; justify-content: center; }
 
 /* Pattern fields are always the light motif on a coloured ground — never ink
    on cream. In the reference every field is two-tone that way round, and a
    dark motif on a light block stops being a texture and becomes an image. */
-body.blocks-route .bk-cell[data-pattern] { color: var(--bk-cream); }
+/* Marks follow the same rule as pattern fields: the light motif on a coloured
+   ground. Left to inherit, a mark on ochre came out ink-black. */
+body.blocks-route .bk-cell:is([data-pattern], [data-mark], [data-land]) { color: var(--bk-cream); }
 body.blocks-route .bk-cell svg { display: block; width: 100%; height: 100%; }
 body.blocks-route .bk-cell:is([data-pattern], [data-land]) svg { position: absolute; inset: 0; }
-body.blocks-route .bk-cell[data-mark] { display: grid; place-items: center; }
-body.blocks-route .bk-cell[data-mark] { padding: 18px; }
-body.blocks-route .bk-cell[data-mark] svg { width: 100%; max-width: 132px; height: auto; }
+body.blocks-route .bk-cell[data-mark] { display: grid; place-items: center; padding: 14%; }
+body.blocks-route .bk-cell[data-mark] svg { width: 100%; height: auto; }
 
 @media (max-width: 900px) {
-  body.blocks-route .bk { grid-template-columns: repeat(4, 1fr); }
-  body.blocks-route .bk-cell { grid-column: span 4 !important; grid-row: auto !important; }
-  body.blocks-route .bk-cell--land { min-height: 170px; }
+  /* The fixed frame is released here: a 16:9 composition on a phone is a
+     letterbox, so the blocks stack and each takes the height it needs. */
+  body.blocks-route .bk {
+    aspect-ratio: auto; min-height: 0;
+    grid-template-columns: 1fr !important; grid-template-rows: none !important;
+  }
+  body.blocks-route .bk-cell { grid-column: 1 !important; grid-row: auto !important; }
+  body.blocks-route .bk-cell:is([data-pattern]) { min-height: 92px; }
+  body.blocks-route .bk-cell:is([data-land]) { min-height: 170px; }
+  body.blocks-route .bk-cell--steps { grid-template-columns: 1fr; }
   body.blocks-route .bk-nav { gap: 12px; }
 }

@@ -16,7 +16,7 @@
          the motif into a spike — and the ratio is the motif: 1:3.4 is a leaf,
          1:8 is a needle. Height yields to width, never the other way. */
       var vw = Math.max(14, Math.min(w / 7, 30));
-      var vh = Math.min(h * .78, vw * 3.4);
+      var vh = Math.min(h * .78, vw * 2.6);
       return { fill: M.vesicaRow(w, h, { pitch: vw * 1.75, vw: vw, vh: vh }) };
     },
     tally: function (w, h) {
@@ -36,8 +36,11 @@
       return '<g fill="currentColor">' + M.hexagram([1, 0, 0, 0, 1, 0], { w: 120, t: 9, gap: 7 }) + '</g>';
     },
     florette: function () {
+      /* hole + h must stay ≤ 56 so the rosette clears the 120 viewBox below;
+         26 × 48 is the leaf ratio the pattern fields use, kept the same here
+         so the mark and the fields are recognisably one motif at two sizes. */
       return '<g fill="currentColor" transform="translate(60 60)">'
-        + M.florette({ w: 34, h: 62 }) + '<circle r="9" fill="currentColor" opacity="0"/></g>';
+        + M.florette({ w: 26, h: 48, hole: 8 }) + '</g>';
     },
     ring: function () { return '<g fill="currentColor" transform="translate(11 11)">' + M.dotRing({ r: 8, dot: .17 }) + '</g>'; }
   };
@@ -60,7 +63,8 @@
          same rounded-contour construction as the animated range, so a still
          image on this route is recognisably the same country as the moving one
          on the app routes — and unlike a raster it is sharp at every DPI. */
-      body = M.landscape(parseInt(land, 10) * 131 + 7, w, h, { layers: 4 });
+      body = M.landscape(parseInt(land, 10) * 131 + 7, w, h,
+        { layers: 4, fill: h / w < .22 ? .42 : 1 });
     } else if (mk && MARK[mk]) {
       body = MARK[mk]();
       vb = mk === "ring" ? "0 0 22 22" : "0 0 120 120";

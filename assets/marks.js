@@ -62,21 +62,31 @@
      background is drawing, rather than a grey rectangle or a stock image. */
   function landscape(seed, w, h, opts) {
     opts = opts || {};
-    var layers = opts.layers || 4, out = "", uid = "lsc" + seed;
+    /* `fill` scales only the filled masses, never the contours. In a short wide
+       band every layer's fill reaches the bottom edge, so the masses stack over
+       almost the whole cell and the ground colour stops showing — the plate
+       goes pale and loses the duotone. Thinning the masses there leaves the
+       contours, which are what carries the band at that height anyway. */
+    var layers = opts.layers || 4, fo = opts.fill == null ? 1 : opts.fill,
+        out = "", uid = "lsc" + seed;
     out += '<clipPath id="' + uid + '"><rect width="' + w + '" height="' + h + '"/></clipPath>';
     out += '<g clip-path="url(#' + uid + ')">';
     for (var i = 0; i < layers; i++) {
       var t = i / (layers - 1 || 1);
       var top = ridgePath(seed + i * 977, w, h, { steps: 5 + i, amp: .34 - t * .16, base: .40 + t * .30 });
+      /* Read as a duotone plate: light ink on a coloured ground, the same way
+         round as every pattern field. The old values (7–14% fill, ink on
+         cream) put the range at the bottom of the tonal range on the lightest
+         block on the page — technically an image, visually a smudge. */
       out += '<path d="' + top + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="currentColor" opacity="'
-        + (0.07 + t * 0.07).toFixed(3) + '"/>';
-      out += '<path d="' + top + '" fill="none" stroke="currentColor" stroke-width="1.1" opacity="'
-        + (0.5 - t * 0.1).toFixed(2) + '" stroke-linecap="round"/>';
+        + ((0.11 + t * 0.10) * fo).toFixed(3) + '"/>';
+      out += '<path d="' + top + '" fill="none" stroke="currentColor" stroke-width="1.3" opacity="'
+        + (0.7 - t * 0.12).toFixed(2) + '" stroke-linecap="round"/>';
       /* contour lines below each crest, thinning with distance — the range's
          own device for reading depth without shading */
       for (var k = 1; k <= 2 + i; k++) {
         out += '<path d="' + top + '" fill="none" stroke="currentColor" stroke-width="'
-          + (0.75 - t * 0.2).toFixed(2) + '" opacity="' + (0.2 - t * 0.04).toFixed(2)
+          + (0.9 - t * 0.22).toFixed(2) + '" opacity="' + (0.3 - t * 0.06).toFixed(2)
           + '" transform="translate(0 ' + R(k * (7 + i * 2)) + ')"/>';
       }
     }
@@ -129,8 +139,13 @@
   /* ── flat-field patterns ────────────────────────────────────────────────
      Each is one motif on a strict pitch. Ratios, not absolute sizes, carry
      the character, so every function takes its proportions as parameters. */
+  /* w is the leaf's actual width. A quadratic only reaches HALF its control
+     offset at the midpoint, so the control has to sit at w, not w/2 — putting
+     it at w/2 drew every leaf at half its nominal width, which is why the
+     1:3.4 ratio cap in blocks.js was really producing 1:6.8 needles. The ratio
+     is the motif; halving one side of it changes what the motif is. */
   var vesica = function (w, h) {
-    return "M0 " + R(-h / 2) + " Q" + R(w / 2) + " 0 0 " + R(h / 2) + " Q" + R(-w / 2) + " 0 0 " + R(-h / 2) + " Z";
+    return "M0 " + R(-h / 2) + " Q" + R(w) + " 0 0 " + R(h / 2) + " Q" + R(-w) + " 0 0 " + R(-h / 2) + " Z";
   };
 
   function vesicaRow(w, h, o) {
@@ -172,9 +187,17 @@
     return d;
   }
 
+  /* Petals are pushed out along their own axis by `hole` rather than all
+     meeting at the centre. Meeting at the centre is what turns a rosette into
+     a starburst: the overlapping inner thirds fuse into a solid disc, and the
+     only thing left reading as shape is the eight points sticking out of it.
+     Holding the tips off the centre leaves the eye a ring to read instead. */
   function florette(o) {
-    o = o || {}; var n = o.n || 8, w = o.w || 30, h = o.h || 54, s = "";
-    for (var i = 0; i < n; i++) s += '<path d="' + vesica(w, h) + '" transform="rotate(' + R(i * 360 / n) + ')"/>';
+    o = o || {}; var n = o.n || 8, w = o.w || 26, h = o.h || 48,
+        hole = o.hole == null ? 8 : o.hole, s = "";
+    for (var i = 0; i < n; i++)
+      s += '<path d="' + vesica(w, h) + '" transform="rotate(' + R(i * 360 / n)
+         + ') translate(0 ' + R(-(hole + h / 2)) + ')"/>';
     return s;
   }
 

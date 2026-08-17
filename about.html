@@ -15,14 +15,14 @@
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260816n">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260816n">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260817a">
 </head>
 <body class="blocks-route" data-page="about">
 
@@ -37,44 +37,43 @@
 
 <main class="bk-main">
 
-  <!-- Every composition below is a set of unequal rectangles. The title lives
-       in one of them; the rest carry pattern or data. Nothing floats, nothing
-       has a radius, nothing has a shadow — depth comes from adjacency. -->
-  <section class="bk bk--hero">
-    <div class="bk-cell bk-cell--title" data-fill="brick">
+  <!-- Composition A — .37 / .35 / .28 columns, .34 / .66 rows.
+       Title anchored to the foot of the left field; a banded middle; a
+       full-height rail at the right edge. -->
+  <section class="bk bk--a">
+    <div class="bk-cell bk-cell--title" data-at="left-tall" data-fill="brick">
       <p class="bk-eyebrow">Why BourneWise</p>
       <h1>The cast and the answer are separate systems.</h1>
     </div>
-    <div class="bk-cell bk-cell--tall" data-fill="olive" data-pattern="vesica"></div>
-    <div class="bk-cell bk-cell--wide" data-fill="bone">
+    <div class="bk-cell" data-at="mid-top" data-fill="olive" data-pattern="vesica"></div>
+    <div class="bk-cell bk-cell--body" data-at="mid-bottom" data-fill="bone">
       <p class="bk-lead">BourneWise generates the hexagram first. Claude Opus 5 explains the result it
       receives. The model writes the interpretation; it does not choose the figure.</p>
       <p class="bk-note">This separation keeps the source of the reading visible and gives every answer
       a fixed input you can inspect.</p>
     </div>
-    <div class="bk-cell bk-cell--sq" data-fill="clay" data-mark="hexagram"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="clay" data-mark="hexagram"></div>
   </section>
 
-  <section class="bk bk--note">
-    <div class="bk-cell bk-cell--title" data-fill="dusty">
+  <!-- Composition B — one band over one field, .37 / .63. -->
+  <section class="bk bk--b">
+    <div class="bk-cell" data-at="band-top" data-fill="dusty" data-pattern="tally"></div>
+    <div class="bk-cell bk-cell--title" data-at="band-bottom" data-fill="bone">
       <p class="bk-eyebrow">Field note 01</p>
       <h2>The figure exists before the prose.</h2>
       <p class="bk-note">Question, cast, and interpretation remain visible as three separate stages.</p>
     </div>
-    <div class="bk-cell bk-cell--land" data-fill="cream" data-land="4"></div>
-    <div class="bk-cell" style="grid-column:span 1" data-fill="clay"></div>
-    <div class="bk-cell bk-cell--strip" data-fill="ochre" data-pattern="tally"></div>
   </section>
 
-  <section class="bk bk--seq">
-    <div class="bk-cell bk-cell--title" data-fill="olive">
+  <!-- Composition C — .42 / .37 / .21 columns, .53 / .47 rows. -->
+  <section class="bk bk--c">
+    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="olive">
       <p class="bk-eyebrow">01 — Sequence</p>
       <h2>The sequence is fixed before inference begins.</h2>
-      <p class="bk-note">Every reading follows the same order. The model enters only after the casting
-      engine has completed the figure.</p>
     </div>
-    <div class="bk-cell bk-cell--third" data-fill="brick" data-pattern="scallop"></div>
-    <ol class="bk-cell bk-cell--steps" data-fill="bone">
+    <div class="bk-cell" data-at="mid-top" data-fill="teal" data-land="4"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="brick" data-pattern="scallop"></div>
+    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="bone">
       <li><span class="bk-eyebrow">First</span><b>Your question sets the subject.</b>
         <p>The decision, people involved, constraints, and timeframe define what the figure must address.</p></li>
       <li><span class="bk-eyebrow">Then</span><b>The engine generates six lines.</b>
@@ -82,61 +81,52 @@
       <li><span class="bk-eyebrow">Finally</span><b>Claude writes from fixed data.</b>
         <p>The question and computed figure are passed to Claude Opus 5 as evidence for the explanation.</p></li>
     </ol>
-    
   </section>
 
-  <section class="bk bk--methods">
-    <div class="bk-cell bk-cell--title" data-fill="teal">
+  <!-- Composition D — .54 / .19 / .27 columns, .48 / .52 rows. -->
+  <section class="bk bk--d">
+    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="teal">
       <p class="bk-eyebrow">02 — Depth</p>
       <h2>Choose the amount of structure your question needs.</h2>
+    </div>
+    <div class="bk-cell" data-at="mid-top" data-fill="clay" data-pattern="wave"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="ochre" data-mark="florette"></div>
+    <div class="bk-cell bk-cell--body" data-at="wide-bottom" data-fill="bone">
+      <p class="bk-eyebrow">Stria 64 · about 440 units — Sortis 6 · about 780 units</p>
+      <p class="bk-lead">Stria reads the primary hexagram against the current situation. Sortis adds
+      moving lines, the transformed hexagram, and line-by-line change analysis.</p>
       <p class="bk-note">Both methods use the same casting sequence. They differ in how much of the
       resulting structure is interpreted.</p>
     </div>
-    <div class="bk-cell bk-cell--third" data-fill="ochre" data-pattern="vesica"></div>
-    <div class="bk-cell bk-cell--half" data-fill="bone">
-      <p class="bk-eyebrow">Stria 64 · about 440 units</p>
-      <p>Reads the primary hexagram against the current situation. Best for a focused view of where
-      things stand.</p>
-    </div>
-    <div class="bk-cell bk-cell--half" data-fill="cream">
-      <p class="bk-eyebrow">Sortis 6 · about 780 units</p>
-      <p>Adds moving lines, the transformed hexagram, and line-by-line change analysis. Best when the
-      path of change matters.</p>
-    </div>
-    <div class="bk-cell bk-cell--strip" data-fill="clay" data-pattern="wave"></div>
   </section>
 
-  <section class="bk bk--limits">
-    <div class="bk-cell bk-cell--title" data-fill="brick">
+  <!-- Composition C again, mirrored in content: the repeat is the system. -->
+  <section class="bk bk--c">
+    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="brick">
       <p class="bk-eyebrow">03 — Limits</p>
       <h2>A reading supports reflection. It does not replace judgment.</h2>
-      <p class="bk-note">The result is useful when it helps you inspect assumptions, notice change, and
-      choose a next step without pretending an open situation has become certain.</p>
     </div>
-    <div class="bk-cell bk-cell--third" data-fill="olive" data-mark="florette"></div>
-    <div class="bk-cell bk-cell--third" data-fill="bone">
-      <p class="bk-eyebrow">Fixed input</p>
-      <p>The model cannot redraw, replace, or override the generated hexagram.</p></div>
-    <div class="bk-cell bk-cell--third" data-fill="cream">
-      <p class="bk-eyebrow">Explicit limits</p>
-      <p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></div>
-    <div class="bk-cell bk-cell--third" data-fill="dusty">
-      <p class="bk-eyebrow">Reflection and growth</p>
-      <p>Return to the answer after acting. Compare what changed, what held, and what you would decide
-      differently next time.</p></div>
-    <div class="bk-cell bk-cell--strip" data-fill="ochre" data-pattern="scallop"></div>
+    <div class="bk-cell" data-at="mid-top" data-fill="ochre" data-pattern="vesica"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="olive" data-mark="florette"></div>
+    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="cream">
+      <li><span class="bk-eyebrow">Fixed input</span><b>The figure cannot be redrawn.</b>
+        <p>The model cannot replace or override the generated hexagram.</p></li>
+      <li><span class="bk-eyebrow">Explicit limits</span><b>Signal and extension stay apart.</b>
+        <p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></li>
+      <li><span class="bk-eyebrow">Reflection</span><b>Return after the decision.</b>
+        <p>Compare what changed, what held, and what you would decide differently next time.</p></li>
+    </ol>
   </section>
 
-  <section class="bk bk--close">
-    <div class="bk-cell bk-cell--title" data-fill="bone">
+  <!-- Composition B closes it, type over field this time — the B2 proportion,
+       because a heading and a call to action need more than a band's height. -->
+  <section class="bk bk--b2">
+    <div class="bk-cell bk-cell--title" data-at="band-top" data-fill="bone">
       <p class="bk-eyebrow">Field note 02</p>
       <h2>Return after the decision.</h2>
-      <p class="bk-note">Reflection becomes useful when it changes the next action, not when it merely
-      preserves an answer.</p>
       <a class="bk-go bk-go--big" href="./guide.html">See the full process one step at a time →</a>
     </div>
-    <div class="bk-cell bk-cell--land" data-fill="cream" data-land="7"></div>
-    <div class="bk-cell" style="grid-column:span 1" data-fill="teal"></div>
+    <div class="bk-cell" data-at="band-bottom" data-fill="olive" data-land="7"></div>
   </section>
 
 </main>
@@ -149,7 +139,7 @@
   <a href="./privacy.html">Privacy</a>
 </footer>
 
-<script src="./assets/marks.js?v=20260816n"></script>
-<script src="./assets/blocks.js?v=20260816n"></script>
+<script src="./assets/marks.js?v=20260817a"></script>
+<script src="./assets/blocks.js?v=20260817a"></script>
 </body>
 </html>

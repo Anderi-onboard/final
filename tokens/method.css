@@ -24,7 +24,9 @@ body[data-page="guide"] .mt-foot  { grid-column: 1 / -1; grid-row: 3; }
   background: var(--bk-cream);
   padding: var(--mt-pad) 0 var(--mt-pad) clamp(16px, 2vw, 30px);
   margin-top: var(--bk-gap);
-  position: sticky; top: 0; align-self: start;
+  /* Stretched, not align-self:start. Started, the cream ends where the last
+     rail item ends and the column below it goes to page ground — which reads
+     as the rail having been cut off rather than as a column. */
 }
 .mt-rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .mt-rail button {
@@ -52,14 +54,19 @@ body[data-page="guide"] .mt-foot  { grid-column: 1 / -1; grid-row: 3; }
 }
 
 /* ── the steps ──────────────────────────────────────────────────────────── */
-#mtMain { position: relative; margin: var(--bk-gap) 0 0 var(--bk-gap); }
+/* A grid with one visible child, so the shown step stretches to the full row
+   instead of hugging its content and leaving page ground below it. */
+#mtMain { position: relative; display: grid; margin: var(--bk-gap) 0 0 var(--bk-gap); }
 .mt-step {
   display: none;
   grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
-  /* Rows hug their content. A 1fr row here stretched the step to the full
-     viewport and put the dead space back in the middle — the same fault the
-     block route had, in a different place. */
-  grid-template-rows: auto auto auto auto;
+  /* The third row takes the slack, and everything in it is align-self:start —
+     so the extra height collects between the copy and the closing band, inside
+     the step's own colour. That is the one place a void is free: it is a
+     coloured field, which the references are full of. Letting the step hug its
+     content instead pushes the same void outside the block, where it is bare
+     ground and reads as the page having run out. */
+  grid-template-rows: auto auto 1fr auto;
   gap: 0 clamp(24px, 3vw, 56px);
   padding: var(--mt-pad) var(--mt-pad) 0;
   outline: none;
@@ -71,7 +78,9 @@ body[data-page="guide"] .mt-foot  { grid-column: 1 / -1; grid-row: 3; }
    the word is read as texture first and as language second, and the crop is
    what forces that order. */
 .mt-display {
-  grid-column: 1; margin: 0 0 20px -.055em;
+  /* The gap under an 86px display is not the gap under a paragraph. At 20px
+     the lead sat on the headline's baseline and read as a fourth line of it. */
+  grid-column: 1; margin: 0 0 clamp(26px, 2.4vw, 40px) -.055em;
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(38px, 5.6vw, 86px); line-height: .96;
   letter-spacing: -.035em;
