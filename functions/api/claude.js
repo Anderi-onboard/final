@@ -532,12 +532,18 @@ async function guardRequest({ request, env, db, product, mode }) {
        A FOLLOW-UP is never covered. That is the model: the first answer is
        whole and free, and paying starts when the reader wants to go deeper
        into their own casting. */
-    if (mode !== 'followup' && user.free_readings > 0) {
+    if (mode !== 'followup') {
+      /* Always ASK, never pre-check. Gating this on `user.free_readings > 0`
+         meant that on a database without the column the expression read
+         `undefined > 0` — false — so the claim was never attempted and a new
+         account with no units could do nothing at all. consumeFreeReading owns
+         the decision, including the pre-migration path where the entitlement is
+         derived from the ledger instead of stored. */
       const claim = await consumeFreeReading(db, user.id, 'free-reading:' + product);
       if (claim.claimed) {
         return { charge: null, unitsRemaining: claim.units, freeReadings: claim.freeReadings };
       }
-      // Lost the race to a simultaneous request — fall through to the balance.
+      // Already used, or lost the race — fall through to the balance.
     }
 
     // Any positive balance buys entry. Asking for more than that would mean

@@ -69,8 +69,11 @@ assert.equal(db.ledger[0][1], 0, 'a free reading moves no units, so its ledger d
 
 // ── the guard spends it on a cast and never on a follow-up ─────────────────
 const claude = readFileSync(`${ROOT}/functions/api/claude.js`, 'utf8');
-assert.ok(/mode !== 'followup' && user\.free_readings > 0/.test(claude),
+assert.ok(/if \(mode !== 'followup'\) \{/.test(claude),
   'the free reading is no longer restricted to a new casting — a follow-up would eat it');
+assert.ok(!/user\.free_readings > 0/.test(claude),
+  'the guard pre-checks user.free_readings again: on a database without the column that '
+  + 'reads undefined > 0, the claim is never attempted, and a new account can do nothing');
 assert.ok(/TOPUP_FOR_FOLLOWUP/.test(claude),
   'the client cannot tell "pay to go deeper" apart from "you ran out"');
 assert.ok(/charge: null/.test(claude),
