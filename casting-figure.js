@@ -265,7 +265,7 @@
      a small open head, matching the irregular bars without becoming decorative. */
   function arrowSVG(){
     return '<svg width="34" height="12" viewBox="0 0 34 12" fill="none" stroke="var(--ghost)" '+
-      'stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+
+      'stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+
       '<path d="M2 6 C10 5.2 19 6.8 31 6"></path><path d="M26.5 2.8 L 31 6 L 26.5 9.2"></path></svg>';
   }
   function esc(s){

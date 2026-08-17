@@ -19,14 +19,22 @@
       var vh = Math.min(h * .78, vw * 2.6);
       return { fill: M.vesicaRow(w, h, { pitch: vw * 1.75, vw: vw, vh: vh }) };
     },
+    /* Line weight is a fraction of the motif's own pitch, never a loose number.
+       Tied to pitch, a field keeps the same ink-to-ground ratio at any cell
+       size, and the weights stay in step with each other when one changes.
+       Below about a quarter of the pitch the stroke stops reading as drawn
+       and starts reading as a faint ruling — which is what these were. */
     tally: function (w, h) {
-      return { stroke: M.tally(w, h, { pitch: 15, lean: 4.5 }), width: 3 };
+      var pitch = 15;
+      return { stroke: M.tally(w, h, { pitch: pitch, lean: 4.5 }), width: pitch * .30 };
     },
     wave: function (w, h) {
-      return { stroke: M.waveField(w, h, { pitch: 26, amp: .26 }), width: 4.5 };
+      var pitch = 26;
+      return { stroke: M.waveField(w, h, { pitch: pitch, amp: .26 }), width: pitch * .27 };
     },
     scallop: function (w, h) {
-      return { stroke: M.scallop(w, h, { pitch: Math.max(34, w / 12) }), width: 5 };
+      var pitch = Math.max(34, w / 12);
+      return { stroke: M.scallop(w, h, { pitch: pitch }), width: pitch * .21 };
     }
   };
   var MARK = {

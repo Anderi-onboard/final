@@ -60,8 +60,11 @@
   /* Softened with the rim. At 12% this drew a visible dark outline around
      every frosted panel — the one hard edge on a material whose whole point
      is that it has none. */
-  --ui-line: color-mix(in srgb, var(--ink) 5%, transparent);
-  --ui-line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
+  /* A 1px border at 5% ink is a line you cannot see — the panel edge was being
+     carried entirely by the glass highlight, and on the lighter palette groups
+     there was nothing there at all. Thin is the rule; invisible is a bug. */
+  --ui-line: color-mix(in srgb, var(--ink) 11%, transparent);
+  --ui-line-strong: color-mix(in srgb, var(--ink) 28%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
   /* ELEVATION — three steps, each a contact shadow plus an ambient one.
      A single wide blur is what reads as coarse: with nothing tight underneath

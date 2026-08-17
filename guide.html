@@ -1,6 +1,8 @@
-<!-- BourneWise — The method. Block-composition route (see tokens/blocks.css).
-     One flat colour per step, display type cropped by its container, and the
-     teaching moved from description into things you can actually operate. -->
+<!-- BourneWise — The method. Square-card route (see tokens/method.css): every
+     card is one composition on a 1:1 frame, and the page is what you get when
+     you set them next to each other. Each of the five steps takes one row —
+     the name, the thing itself, and a field — so the teaching is operable
+     rather than described. -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
@@ -14,15 +16,15 @@
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260817a">
-<link rel="stylesheet" href="./tokens/method.css?v=20260817a">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260817b">
+<link rel="stylesheet" href="./tokens/method.css?v=20260817b">
 </head>
 <body class="blocks-route" data-page="guide">
 
@@ -35,62 +37,66 @@
   </nav>
 </header>
 
-<!-- The rail is the navigation, not decoration: every step is reachable from
-     every other, which is what a reference needs and a slideshow prevents. -->
-<nav class="mt-rail" aria-label="Steps">
-  <ol id="mtRail">
-    <li><button type="button" data-go="0"><i>01</i><span>Question</span></button></li>
-    <li><button type="button" data-go="1"><i>02</i><span>Depth</span></button></li>
-    <li><button type="button" data-go="2"><i>03</i><span>Casting</span></button></li>
-    <li><button type="button" data-go="3"><i>04</i><span>Reading</span></button></li>
-    <li><button type="button" data-go="4"><i>05</i><span>Usage</span></button></li>
-  </ol>
-  <p class="mt-hint"><kbd>←</kbd><kbd>→</kbd> to move between steps</p>
-</nav>
+<main class="mt-grid">
 
-<main id="mtMain">
-
-  <!-- 1 ─────────────────────────────────────────────────────────────────── -->
-  <section class="mt-step" id="step-1" data-fill="brick" tabindex="-1">
-    <p class="bk-eyebrow">Step 01 · Frame the question</p>
-    <h1 class="mt-display">Give the casting<br>one clear subject.</h1>
-    <div class="mt-body">
-      <p class="bk-lead">State the decision or situation first. Add only the people, constraints, and
-      timeframe that could change the answer.</p>
-      <p class="bk-note">The question frames the cast. The completed figure then frames the interpretation.</p>
+  <!-- ── masthead row ─────────────────────────────────────────────────── -->
+  <section class="mt-card" data-fill="brick">
+    <div class="mt-stack">
+      <span>Question</span><span>Depth</span><span>Casting</span>
+      <span>Reading</span><span>Charge</span><span>Follow-up</span>
     </div>
-    <div class="mt-aside">
-      <dl class="mt-defs">
-        <div><dt>Keep one subject</dt><dd>Use a new casting when the person, event, or outcome changes.</dd></div>
-        <div><dt>Name the real constraint</dt><dd>Budget, timing, obligations, and alternatives often matter
-        more than background detail.</dd></div>
-      </dl>
-      <!-- Teaching by doing: the reader writes a question and gets the same
-           checks the product applies, before spending anything. -->
-      <div class="mt-try">
-        <label class="bk-eyebrow" for="mtQ">Try one — nothing is cast or charged</label>
-        <textarea id="mtQ" rows="3" placeholder="I have two offers. One pays more; the other gives me control over my time. Which trade-off matters more over the next year?"></textarea>
-        <ul class="mt-checks" id="mtChecks">
-          <li data-k="len">Enough context to work from</li>
-          <li data-k="one">One subject, not several</li>
-          <li data-k="when">A timeframe the answer can aim at</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-field" data-pattern="tally" data-fill="clay"></div>
   </section>
 
-  <!-- 2 ─────────────────────────────────────────────────────────────────── -->
-  <section class="mt-step" id="step-2" data-fill="teal" tabindex="-1">
-    <p class="bk-eyebrow">Step 02 · Choose the depth</p>
-    <h1 class="mt-display">Stria for structure.<br>Sortis for change.</h1>
-    <div class="mt-body">
-      <p class="bk-lead">Both methods generate six lines. Sortis examines more of the resulting
-      structure, so it writes more and costs more to run.</p>
+  <section class="mt-card" data-fill="cream" data-bleed data-figure="hexagram">
+    <h1 class="mt-display">The method</h1>
+    <div class="mt-fill"></div>
+    <p class="mt-meta">Five steps, from the sentence you write to the units you spend</p>
+  </section>
+
+  <section class="mt-card" data-fill="bone">
+    <p class="mt-meta">What this page is</p>
+    <div class="mt-fill"></div>
+    <p>Every part of a reading is shown here as the thing itself rather than as
+    a description of it. Write a question and see the checks run. Toss the coins.
+    Move the length and watch the charge follow.</p>
+    <p class="mt-meta" style="margin-top:3.35cqw">Nothing on this page is cast or charged</p>
+  </section>
+
+  <!-- ── 01 · the question ────────────────────────────────────────────── -->
+  <section class="mt-card mt-card--half" data-fill="olive">
+    <p class="mt-meta">Step 01</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display">Give the casting one clear subject.</h2>
+    <p class="mt-meta" style="margin-top:3.35cqw">The question frames the cast; the figure frames the reading</p>
+  </section>
+
+  <section class="mt-card" data-fill="cream">
+    <div class="mt-work mt-try">
+      <p class="mt-meta">Try one — nothing is cast or charged</p>
+      <textarea id="mtQ" rows="4" placeholder="I have two offers. One pays more; the other gives me control over my time. Which trade-off matters more over the next year?"></textarea>
+      <ul class="mt-checks" id="mtChecks">
+        <li data-k="len">Enough context to work from</li>
+        <li data-k="one">One subject, not several</li>
+        <li data-k="when">A timeframe the answer can aim at</li>
+      </ul>
+      <div class="mt-fill"></div>
+      <p class="mt-meta">Use a new casting when the person, event, or outcome changes</p>
     </div>
-    <div class="mt-aside">
-      <!-- A comparison you operate rather than read: switching method redraws
-           the figure below so the difference is visible, not asserted. -->
+  </section>
+
+  <section class="mt-card" data-fill="dusty" data-pattern="tally"></section>
+
+  <!-- ── 02 · the depth ───────────────────────────────────────────────── -->
+  <section class="mt-card mt-card--half" data-fill="teal">
+    <p class="mt-meta">Step 02</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display">Stria reads structure. Sortis reads change.</h2>
+    <p class="mt-meta" style="margin-top:3.35cqw">Both cast six lines; they differ in how much is interpreted</p>
+  </section>
+
+  <section class="mt-card" data-fill="bone">
+    <div class="mt-work">
+      <p class="mt-meta">Switch the method — the figures redraw</p>
       <div class="mt-switch" role="radiogroup" aria-label="Method">
         <button type="button" role="radio" aria-checked="true" data-method="stria">
           <b>Stria 64</b><i>~440 units</i>
@@ -103,86 +109,93 @@
       </div>
       <div class="mt-compare" id="mtCompare"></div>
     </div>
-    <div class="mt-field" data-pattern="vesica" data-fill="olive"></div>
   </section>
 
-  <!-- 3 ─────────────────────────────────────────────────────────────────── -->
-  <section class="mt-step" id="step-3" data-fill="olive" tabindex="-1">
-    <p class="bk-eyebrow">Step 03 · Let the cast complete</p>
-    <h1 class="mt-display">The figure is made<br>before the model writes.</h1>
-    <div class="mt-body">
-      <p class="bk-lead">Three coin states build each line. Six completed lines form the primary
-      hexagram; moving lines may also produce a transformed figure.</p>
-      <p class="bk-note">The language model cannot redraw the lines or substitute another hexagram.</p>
-    </div>
-    <div class="mt-aside">
-      <!-- The one step that was pure description before. Casting is a physical
-           process, so the page casts: six real tosses, drawn line by line. -->
-      <div class="mt-cast">
-        <div class="mt-cast-fig" id="mtFig" aria-live="polite"></div>
-        <dl class="mt-readout" id="mtRead"></dl>
-        <button class="bk-go" type="button" id="mtCastBtn">Toss the coins</button>
-        <p class="bk-note" id="mtCastNote">Each line is three coins. Two of eight outcomes move.</p>
-      </div>
-    </div>
-    <div class="mt-field" data-pattern="scallop" data-fill="brick"></div>
+  <section class="mt-card" data-fill="olive" data-pattern="vesica"></section>
+
+  <!-- ── 03 · the cast ────────────────────────────────────────────────── -->
+  <section class="mt-card mt-card--half" data-fill="brick">
+    <p class="mt-meta">Step 03</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display">The figure is made before the model writes.</h2>
+    <p class="mt-meta" style="margin-top:3.35cqw">The model cannot redraw a line or substitute another hexagram</p>
   </section>
 
-  <!-- 4 ─────────────────────────────────────────────────────────────────── -->
-  <section class="mt-step" id="step-4" data-fill="dusty" tabindex="-1">
-    <p class="bk-eyebrow">Step 04 · Read and continue</p>
-    <h1 class="mt-display">Treat the answer as<br>a structured perspective.</h1>
-    <div class="mt-body">
-      <p class="bk-lead">Compare the interpretation with the facts you know. Ask follow-up questions in
-      the same thread when the subject remains unchanged.</p>
-      <p class="bk-note">A supportive reading is not a guarantee. An adverse reading is not a command to
-      stop. The decision remains yours.</p>
+  <section class="mt-card" data-fill="cream">
+    <div class="mt-cast">
+      <p class="mt-meta">Three coins a line. Two of eight outcomes move.</p>
+      <div class="mt-cast-fig" id="mtFig" aria-live="polite"></div>
+      <dl class="mt-readout" id="mtRead"></dl>
+      <div class="mt-fill"></div>
+      <button class="bk-go" type="button" id="mtCastBtn">Toss the coins</button>
     </div>
-    <div class="mt-aside">
+  </section>
+
+  <section class="mt-card" data-fill="teal" data-land="4"></section>
+
+  <!-- ── 04 · the reading ─────────────────────────────────────────────── -->
+  <section class="mt-card mt-card--half" data-fill="dusty">
+    <p class="mt-meta">Step 04</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display">Treat the answer as a structured perspective.</h2>
+    <p class="mt-meta" style="margin-top:3.35cqw">The decision stays yours</p>
+  </section>
+
+  <section class="mt-card" data-fill="bone">
+    <div class="mt-work">
+      <p class="mt-meta">Reading it well</p>
+      <div class="mt-fill"></div>
       <dl class="mt-defs">
-        <div><dt>Follow the evidence</dt><dd>Look for the specific lines and relationships behind the
-        conclusion.</dd></div>
-        <div><dt>Keep follow-ups attached</dt><dd>A follow-up reuses the current hexagram. A new subject
-        requires a new casting.</dd></div>
+        <div><dt>Follow the evidence</dt><dd>Look for the specific lines and relationships
+        behind the conclusion, and compare them with the facts you already know.</dd></div>
+        <div><dt>Keep follow-ups attached</dt><dd>A follow-up reuses the current hexagram.
+        A new subject requires a new casting.</dd></div>
       </dl>
+      <div class="mt-fill"></div>
+      <p class="mt-meta">A supportive reading is not a guarantee; an adverse one is not a command</p>
     </div>
-    <div class="mt-field" data-pattern="wave" data-fill="clay"></div>
   </section>
 
-  <!-- 5 ─────────────────────────────────────────────────────────────────── -->
-  <section class="mt-step" id="step-5" data-fill="ochre" tabindex="-1">
-    <p class="bk-eyebrow">Step 05 · Understand the charge</p>
-    <h1 class="mt-display">You pay for what<br>the answer actually used.</h1>
-    <div class="mt-body">
-      <p class="bk-lead">Nothing is held in advance. When an answer finishes, the charge is computed
-      from the input and output tokens it actually reported — no reservation and no ceiling — and a
-      reading already underway always finishes.</p>
+  <section class="mt-card" data-fill="clay" data-pattern="scallop"></section>
+
+  <!-- ── 05 · the charge ──────────────────────────────────────────────── -->
+  <section class="mt-card mt-card--half" data-fill="ochre">
+    <p class="mt-meta">Step 05</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display">You pay for what the answer actually used.</h2>
+    <p class="mt-meta" style="margin-top:3.35cqw">No reservation, no ceiling, and a reading underway always finishes</p>
+  </section>
+
+  <section class="mt-card" data-fill="cream">
+    <div class="mt-work mt-meter">
+      <p class="mt-meta">Units per 1,000 tokens — input 19.5 · output 97.5</p>
+      <label for="mtLen">Answer length</label>
+      <input type="range" id="mtLen" min="600" max="4000" step="100" value="1800">
+      <p class="mt-figure"><b id="mtCost">440</b><span class="mt-meta" id="mtCostNote">units · about 1,800 words</span></p>
+      <div class="mt-fill"></div>
+      <p class="mt-meta">An estimate. Both methods meter at the same rate.</p>
     </div>
-    <div class="mt-aside">
-      <!-- Metering is arithmetic, so let the reader do the arithmetic. -->
-      <div class="mt-meter">
-        <p class="bk-eyebrow">Units per 1,000 tokens — input 19.5 · output 97.5</p>
-        <label for="mtLen">Answer length</label>
-        <input type="range" id="mtLen" min="600" max="4000" step="100" value="1800">
-        <p class="mt-figure"><b id="mtCost">440</b><span id="mtCostNote">units · about 1,800 words</span></p>
-        <p class="bk-note">An estimate. A shorter answer costs less, a longer one more, and both
-        methods meter at the same rate.</p>
-      </div>
-    </div>
-    <div class="mt-field" data-pattern="vesica" data-fill="brick"></div>
+  </section>
+
+  <section class="mt-card" data-fill="brick" data-bleed>
+    <p class="mt-meta">Ready</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display">Cast one</h2>
+    <a class="bk-go" href="./index.html" style="margin-top:3.35cqw">Start a casting →</a>
   </section>
 
 </main>
 
-<footer class="mt-foot">
-  <button type="button" id="mtBack">← Back</button>
-  <span id="mtCount">Step 1 of 5</span>
-  <button type="button" id="mtNext" class="bk-go">Continue →</button>
-  <a class="mt-exit" href="./index.html">Start a casting</a>
+<footer class="bk-foot">
+  <span>BourneWise</span>
+  <a href="./about.html">Why BourneWise</a>
+  <a href="./pricing.html">Plans &amp; units</a>
+  <a href="./terms.html">Terms</a>
+  <a href="./privacy.html">Privacy</a>
 </footer>
 
-<script src="./assets/marks.js?v=20260817a"></script>
-<script src="./assets/blocks.js?v=20260817a"></script>
-<script src="./assets/method.js?v=20260817a"></script>
+<script src="./assets/marks.js?v=20260817b"></script>
+<script src="./assets/blocks.js?v=20260817b"></script>
+<script src="./assets/method.js?v=20260817b"></script>
 </body>
 </html>

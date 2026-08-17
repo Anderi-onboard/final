@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260817a", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260817a";
+    ? new URL("../palettes/color-groups.json?v=20260817b", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260817b";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -33,10 +33,10 @@
     + '.mtn-bg .cloud-bob{animation:none}'
     /* Anthropic-art line language: warm near-black, rounded brush ends and a
        deliberately uneven cadence of weights rather than technical hairlines. */
-    + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(20,20,19,.28);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
-    + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:1.55;opacity:.72}'
-    + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:2.45;opacity:.5}'
-    + '.mtn-bg .contour use:nth-child(3n){stroke-width:1.9;opacity:.62}'
+    + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(20,20,19,.28);stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
+    + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:2.1;opacity:.72}'
+    + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:3.3;opacity:.5}'
+    + '.mtn-bg .contour use:nth-child(3n){stroke-width:2.6;opacity:.62}'
     + '.mtn-bg .fill{animation:none;opacity:.9;transition:fill 1.5s cubic-bezier(.77,0,.175,1),opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .fill.l1{fill:var(--bw-palette-1,#D7D0C4)}.mtn-bg .fill.l2{fill:var(--bw-palette-2,#D7D0C4)}'
     + '.mtn-bg .fill.l3{fill:var(--bw-palette-3,#CEC4B5)}.mtn-bg .fill.l4{fill:var(--bw-palette-4,#CEC4B5)}'
@@ -72,7 +72,7 @@
        carry the same specificity and come later in this sheet, so a bare class
        selector loses the tie and the bands inherit the plane's opacity instead
        of their own. The element name buys the one point that settles it. */
-    + '.mtn-bg .moire use{fill:none;stroke-width:.85;stroke-linecap:round;vector-effect:non-scaling-stroke}'
+    + '.mtn-bg .moire use{fill:none;stroke-width:1.15;stroke-linecap:round;vector-effect:non-scaling-stroke}'
     + '.mtn-bg g.moire{opacity:.42;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .moire.l4 use{stroke:color-mix(in srgb,var(--bw-palette-4,#756F68) 30%,transparent)}'
     + '.mtn-bg .moire.l5 use{stroke:color-mix(in srgb,var(--bw-palette-5,#756F68) 30%,transparent)}'

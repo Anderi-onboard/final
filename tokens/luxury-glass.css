@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260817a");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260817a");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260817a");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260817a");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260817b");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260817b");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260817b");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260817b");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -172,24 +172,9 @@ body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)
 
 /* Pricing is texture-led. Remove the landscape and the raster editorial
    image; keep its copy as a transparent glass note over the monogram field. */
-body[data-page="pricing"] .mtn-bg,
-body[data-page="pricing"] .editorial-spread--usage .editorial-plate {
-  display: none !important;
-}
-body[data-page="pricing"] .editorial-spread--usage {
-  min-height: 260px;
-  grid-template-columns: minmax(0, 1fr) !important;
-  align-items: end;
-  border: 0 !important;
-  background-color: var(--lux-glass-quiet) !important;
-  background-image: none !important;
-  -webkit-backdrop-filter: blur(16px) saturate(112%);
-  backdrop-filter: blur(16px) saturate(112%);
-  box-shadow: inset 0 1px 0 color-mix(in srgb, white 28%, transparent) !important;
-}
-body[data-page="pricing"] .editorial-spread--usage figcaption {
-  max-width: 52ch;
-}
+/* The usage spread is gone from pricing.html: hiding its plate left a 260px
+   empty panel, which is the "strange box" it always read as. Nothing here
+   replaces it — the sentence it carried now sits with the rates. */
 body[data-page="pricing"] :is(.plan,.rate-card,.estimator,.pack,.term,.ledgerstrip,.billing-toggle,.billing-mail-note) {
   border: 0 !important;
   background-color: var(--lux-glass) !important;
