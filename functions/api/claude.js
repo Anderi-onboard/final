@@ -274,6 +274,21 @@ export async function onRequestPost(context) {
       });
     }
 
+    /* A full reading takes 60-90s to generate and the non-streaming path waits
+       for all of it before a single byte moves, so the connection dies before
+       the answer exists — measured against production: HTTP 000 at 73 seconds,
+       zero bytes, and the reader still charged 1090 units because settlement
+       runs regardless. Streaming is not an optimisation here, it is what keeps
+       the request alive, so a reading is never generated without it. Utility
+       roles are short and stay non-streaming. */
+    if ((product === 'sortis' || product === 'stria') && body.stream !== true) {
+      chargeTo = null;
+      return json({
+        error: 'a reading must be requested with stream:true — the non-streaming path cannot outlast generation',
+        code: 'STREAM_REQUIRED'
+      }, 400);
+    }
+
     const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: openrouterHeaders,
@@ -324,6 +339,12 @@ async function pumpAndSettle(o) {
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
   let buf = '', outChars = 0, outCjk = 0, usage = null, finish = null, clientGone = false;
+  // What actually REACHED the reader, as opposed to what the upstream produced.
+  // A request whose connection dies before the first byte lands used to be
+  // billed in full: the settlement runs under waitUntil and counted upstream
+  // output regardless of whether any of it was written. Measured in production
+  // — a request that returned HTTP 000 with zero bytes still charged 1090 units.
+  let delivered = 0;
   async function handleRecord(rec) {
     const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
     if (!dataLine) return;
@@ -340,7 +361,7 @@ async function pumpAndSettle(o) {
     outCjk += countCjk(text);   // for the fallback estimate if usage never arrives
     if (!clientGone) {
       const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
-      try { await writer.write(encoder.encode(event)); }
+      try { await writer.write(encoder.encode(event)); delivered += text.length; }
       catch (e) { clientGone = true; }
     }
   }
@@ -371,6 +392,16 @@ async function pumpAndSettle(o) {
   let charged = 0;
   let units = o.unitsRemaining;
   let incomplete = !complete;
+  // Nothing reached the reader, so there is nothing to bill them for. The
+  // tokens were still produced and the provider still charges us for them —
+  // that cost is ours, not theirs. Billing a reader for prose they never saw is
+  // the one settlement outcome that cannot be defended, and metered billing
+  // without a reservation is exactly what makes it possible.
+  if (o.chargeTo && delivered === 0) {
+    console.error('claude proxy: stream delivered nothing, not charging',
+      { model: o.model, upstreamChars: outChars, finish });
+    o.chargeTo = null;
+  }
   if (o.chargeTo) {
     try {
       const s = await chargeUsage(o.env.DB, o.chargeTo, o.model, usage,

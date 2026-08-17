@@ -78,5 +78,24 @@ for (const [name, src] of [['chat-app.js', chat], ['copy.js', copy]]) {
   }
 }
 
+// ── nothing delivered means nothing charged ────────────────────────────────
+// Settlement runs under waitUntil, so a request whose connection dies before
+// the first byte used to bill in full. Measured in production: HTTP 000, zero
+// bytes, 1090 units charged.
+assert.ok(/delivered\s*===\s*0/.test(pump),
+  'pumpAndSettle bills again without checking whether anything reached the reader');
+assert.ok(/delivered \+= text\.length/.test(pump),
+  'pumpAndSettle no longer counts what it successfully wrote to the client');
+
+// ── a reading is never generated without a stream ──────────────────────────
+// The non-streaming path cannot outlast a 60-90s generation; it produced a dead
+// connection AND a charge.
+assert.ok(/STREAM_REQUIRED/.test(claude),
+  '/api/claude accepts a non-streamed reading again — it will time out and bill for nothing');
+assert.ok(!/complete_after_retry/.test(router),
+  'the unreachable non-streamed QC retry is back, and it posts a system prompt the proxy rejects');
+assert.ok(!/system: result\.system/.test(router),
+  'prompt-router.js posts result.system again — /api/claude answers that with a 400');
+
 console.log('stream recovery OK — partial readings survive a cut stream, '
-  + 'a dead stream still errors, and no copy promises a refund');
+  + 'a dead stream still errors, nothing undelivered is billed, and no copy promises a refund');
