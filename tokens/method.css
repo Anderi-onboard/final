@@ -1,0 +1,180 @@
+/* The method route -----------------------------------------------------------
+   Image-1 grammar on top of the block route: one flat colour per step, display
+   type large enough that the container crops it, and every functional label at
+   9–10px in the margins. There is no middle type size anywhere on this page —
+   that gap is the whole effect. */
+
+body[data-page="guide"] {
+  --mt-pad: clamp(22px, 4vw, 64px);
+  --mt-rail: 188px;
+  display: grid;
+  grid-template-columns: var(--mt-rail) minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+/* Explicit placement. With four children and three rows the footer was being
+   auto-placed into the rail's column instead of spanning under both. */
+body[data-page="guide"] .bk-head { grid-column: 1 / -1; grid-row: 1; }
+body[data-page="guide"] .mt-rail { grid-column: 1; grid-row: 2; }
+body[data-page="guide"] #mtMain   { grid-column: 2; grid-row: 2; }
+body[data-page="guide"] .mt-foot  { grid-column: 1 / -1; grid-row: 3; }
+
+/* ── the rail ───────────────────────────────────────────────────────────── */
+.mt-rail {
+  background: var(--bk-cream);
+  padding: var(--mt-pad) 0 var(--mt-pad) clamp(16px, 2vw, 30px);
+  margin-top: var(--bk-gap);
+  position: sticky; top: 0; align-self: start;
+}
+.mt-rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.mt-rail button {
+  display: flex; align-items: baseline; gap: 10px; width: 100%;
+  padding: 9px 10px 9px 0; border: 0; background: none; cursor: pointer;
+  color: var(--bk-ink); text-align: left; font: inherit;
+  opacity: .42; transition: opacity 180ms var(--ease-out);
+}
+.mt-rail button i {
+  font-style: normal; font-family: var(--mono, var(--sans));
+  font-size: 9.5px; letter-spacing: .12em;
+}
+.mt-rail button span { font-size: 13.5px; }
+.mt-rail button:hover, .mt-rail button:focus-visible { opacity: .78; }
+/* Visited steps stay legible: a reference the reader has already been through
+   should not dim back to the same weight as one they have not. */
+.mt-rail button[data-seen="1"] { opacity: .6; }
+.mt-rail button[aria-current="step"] { opacity: 1; }
+.mt-rail button[aria-current="step"] span { font-weight: 700; }
+.mt-hint { margin: 22px 0 0; font-size: 10px; opacity: .5; }
+.mt-hint kbd {
+  display: inline-block; min-width: 17px; text-align: center;
+  border: 1px solid color-mix(in srgb, var(--bk-ink) 26%, transparent);
+  padding: 1px 4px; margin-right: 3px; font: inherit; font-size: 9.5px;
+}
+
+/* ── the steps ──────────────────────────────────────────────────────────── */
+#mtMain { position: relative; margin: var(--bk-gap) 0 0 var(--bk-gap); }
+.mt-step {
+  display: none;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+  /* Rows hug their content. A 1fr row here stretched the step to the full
+     viewport and put the dead space back in the middle — the same fault the
+     block route had, in a different place. */
+  grid-template-rows: auto auto auto auto;
+  gap: 0 clamp(24px, 3vw, 56px);
+  padding: var(--mt-pad) var(--mt-pad) 0;
+  outline: none;
+}
+.mt-step.is-on { display: grid; }
+.mt-step .bk-eyebrow { grid-column: 1 / -1; margin-bottom: 18px; }
+
+/* Cropped display type. The container clips it on purpose — in the reference
+   the word is read as texture first and as language second, and the crop is
+   what forces that order. */
+.mt-display {
+  grid-column: 1; margin: 0 0 20px -.055em;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(38px, 5.6vw, 86px); line-height: .96;
+  letter-spacing: -.035em;
+}
+.mt-body { grid-column: 1; align-self: start; max-width: 46ch; }
+.mt-aside { grid-column: 2; grid-row: 2 / 4; align-self: start; display: grid; gap: 20px; }
+
+.mt-defs { margin: 0; display: grid; gap: 16px; }
+.mt-defs dt { font-family: var(--serif); font-size: 15px; margin-bottom: 4px; }
+.mt-defs dd { margin: 0; font-size: 13px; line-height: 1.5; opacity: .84; }
+
+/* The pattern band closes each step at the foot, flush to both edges. */
+.mt-field {
+  grid-column: 1 / -1; align-self: end;
+  margin: clamp(22px, 3vw, 44px) calc(var(--mt-pad) * -1) 0;
+  min-height: 78px; position: relative; overflow: hidden;
+  color: var(--bk-cream);
+}
+.mt-field svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ── interactive parts ──────────────────────────────────────────────────── */
+.mt-try textarea {
+  width: 100%; margin-top: 8px; padding: 12px 13px; resize: vertical;
+  font: inherit; font-size: 13.5px; line-height: 1.5;
+  color: var(--bk-ink); background: var(--bk-cream);
+  border: 0; border-radius: 0;
+}
+.mt-try textarea::placeholder { color: var(--bk-ink); opacity: .42; }
+.mt-checks { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 7px; }
+.mt-checks li {
+  font-size: 12.5px; opacity: .55; display: flex; gap: 9px; align-items: baseline;
+  transition: opacity 200ms var(--ease-out);
+}
+.mt-checks li::before {
+  content: "○"; font-size: 11px; line-height: 1;
+}
+.mt-checks li[data-ok="1"] { opacity: 1; }
+.mt-checks li[data-ok="1"]::before { content: "●"; }
+
+.mt-switch { display: grid; gap: 2px; }
+.mt-switch button {
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 12px;
+  padding: 14px 16px; border: 0; cursor: pointer; text-align: left;
+  font: inherit; color: var(--bk-ink);
+  background: color-mix(in srgb, var(--bk-cream) 55%, transparent);
+  transition: background 180ms var(--ease-out);
+}
+.mt-switch button b { font-family: var(--serif); font-size: 15px; font-weight: 400; }
+.mt-switch button i { font-style: normal; font-size: 10px; letter-spacing: .1em; opacity: .7; }
+.mt-switch button span { grid-column: 1 / -1; font-size: 12.5px; opacity: .8; }
+.mt-switch button[aria-checked="true"] { background: var(--bk-cream); }
+.mt-compare { display: grid; gap: 10px; }
+.mt-compare .row { display: flex; align-items: center; gap: 14px; font-size: 12.5px; }
+.mt-compare .row b { font-family: var(--mono, var(--sans)); font-size: 11px; letter-spacing: .1em; min-width: 84px; }
+.mt-compare svg { color: var(--bk-cream); }
+
+.mt-cast { display: grid; gap: 14px; justify-items: start; }
+.mt-cast-fig { min-height: 132px; display: flex; align-items: center; gap: 30px; }
+.mt-cast-fig svg { color: var(--bk-cream); height: 132px; width: auto; }
+.mt-readout { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 12px; }
+.mt-readout dt { font-family: var(--mono, var(--sans)); font-size: 10px; letter-spacing: .1em; opacity: .7; }
+.mt-readout dd { margin: 0; }
+
+.mt-meter label { display: block; margin: 14px 0 6px; font-size: 12.5px; opacity: .8; }
+.mt-meter input[type="range"] { width: 100%; accent-color: var(--bk-brick); }
+.mt-figure { margin: 12px 0 0; display: flex; align-items: baseline; gap: 10px; }
+.mt-figure b { font-family: var(--serif); font-size: 42px; line-height: 1; font-weight: 400; }
+.mt-figure span { font-size: 12.5px; opacity: .8; }
+
+/* ── foot ───────────────────────────────────────────────────────────────── */
+.mt-foot {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px var(--mt-pad); margin-top: var(--bk-gap);
+  background: var(--bk-cream);
+}
+.mt-foot button {
+  border: 0; background: none; font: inherit; font-size: 13px;
+  color: var(--bk-ink); cursor: pointer; padding: 9px 0;
+}
+.mt-foot button.bk-go { padding: 9px 15px; color: var(--bk-cream); }
+.mt-foot button[disabled] { opacity: .3; cursor: default; }
+.mt-foot #mtCount { font-family: var(--mono, var(--sans)); font-size: 10px; letter-spacing: .12em; opacity: .6; }
+.mt-foot .mt-exit { margin-left: auto; font-size: 13px; color: inherit; text-decoration: none; }
+
+@media (max-width: 900px) {
+  body[data-page="guide"] { grid-template-columns: minmax(0, 1fr); }
+  .mt-rail { position: static; padding: 16px var(--mt-pad); }
+  .mt-rail ol { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; }
+  .mt-rail button { flex-direction: column; gap: 2px; padding: 6px 0; }
+  .mt-rail button span { font-size: 11px; }
+  .mt-hint { display: none; }
+  #mtMain { margin-left: 0; }
+  .mt-step { grid-template-columns: minmax(0, 1fr); }
+  .mt-aside { grid-column: 1; grid-row: auto; }
+}
+
+/* The lead is supporting copy, not a second headline. On this route it was
+   inheriting the display serif from the block layer and reading as part of the
+   title — which is exactly the middle size the reference does not have. */
+body[data-page="guide"] .bk-lead {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+body[data-page="guide"] .mt-body .bk-note { font-size: 13px; }

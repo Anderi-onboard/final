@@ -71,8 +71,13 @@
   }
 
   var cells = [].slice.call(document.querySelectorAll("[data-pattern],[data-land],[data-mark]"));
-  function all() { cells.forEach(render); }
+  /* Skip anything with no box yet. On the method route the fields live inside
+     steps that are display:none until shown, so measuring them at load gives
+     zero and draws nothing — which is why those bands came up empty. Callers
+     re-run this when a step becomes visible. */
+  function all() { cells.forEach(function (c) { if (c.clientWidth > 0) render(c); }); }
   all();
+  window.BWBlocks = { render: all };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */
