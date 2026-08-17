@@ -408,7 +408,39 @@ body[data-page="app"] .greeting h1[data-reveal-phase="exit"] .bw-reveal-word {
 }
 body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
 body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
-body[data-page="app"] .composer-zone { padding-bottom: 28px; }
+/* isolation, not just position: the scrim below is z-index:-1, and without a
+   stacking context here that -1 escapes the zone entirely and paints beneath
+   the fixed range instead of over it. */
+body[data-page="app"] .composer-zone { padding-bottom: 28px; z-index: 1; isolation: isolate; }
+
+/* The composer's two caption lines — the keyboard hint and the support footer —
+   float on the range with no material behind them. That is the one text
+   context tools/palette-contrast.html never covered: it measures text on glass
+   panels, and these sit on the ridges themselves, where a mid-grey crest and
+   --faint are close enough to be unreadable. They get the same neutral-white
+   scrim as every other carrier (never a palette tint — see the glass rules),
+   fading upward so it reads as the chrome lifting off the landscape rather
+   than as a box, and their ink goes up one step to --dim. */
+body[data-page="app"] .composer-zone::after {
+  content: "";
+  position: absolute;
+  /* Pulled past the zone's own bottom edge: .site-foot renders below it — the
+     zone is position:fixed and the footer overflows — so a scrim stopping at
+     the box left the support line on bare ridge at 1.24:1. */
+  inset: auto 0 -34px;
+  height: 152px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgb(var(--ui-glass-tint) / 0),
+    rgb(var(--ui-glass-tint) / .58) 42%,
+    rgb(var(--ui-glass-tint) / .90));
+}
+body[data-page="app"] .composer-help { color: var(--dim); }
+/* The footer sits lowest, over the darkest ridge, where even the scrim leaves
+   --dim at 3.57:1 against 11px text. It is a row of links, so full ink is the
+   honest weight for it anyway. */
+body[data-page="app"] :is(.site-foot, .site-foot a) { color: var(--ink); }
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
   border: var(--ui-hairline) solid var(--ui-line); border-radius: var(--ui-radius);

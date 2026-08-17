@@ -64,8 +64,22 @@ body[data-page="guide"] .mt-display {
   margin: 0 0 0 -.05em;
   text-wrap: balance;
 }
-/* Half-size display, for cards that carry a full sentence rather than a name. */
-body[data-page="guide"] .mt-card--half .mt-display { font-size: 12.86cqw; line-height: 1.02; }
+/* Half-size display, for cards that carry a full sentence rather than a name.
+   It is the ONLY second size — a step card and a sentence card use the same
+   one, so combining a heading with a widget in one card introduces no new
+   type size, it just fills the card that used to hold only the heading. */
+body[data-page="guide"] :is(.mt-card--half, .mt-card--step) .mt-display {
+  font-size: 12.86cqw; line-height: 1.02;
+}
+
+/* ── step cards ───────────────────────────────────────────────────────────
+   The name of the step and the thing it explains, in one square. Split over
+   two cards each step left a colour void under every heading and took six
+   rows to say five things, so each square read as a tile in a long scroll
+   rather than as a part of the page. */
+.mt-card--step { gap: 3.35cqw; }
+.mt-card--step .mt-display { margin-bottom: 0; }
+.mt-card--step > :is(.mt-work, .mt-cast) { flex: 1 1 auto; justify-content: flex-end; }
 /* Deliberate crop. The word is read as texture first and as language second,
    and running it past the edge is what forces that order. */
 body[data-page="guide"] .mt-card[data-bleed] .mt-display { white-space: nowrap; margin-left: -7.83cqw; }
@@ -147,9 +161,15 @@ body[data-page="guide"] .mt-compare .row b { font-family: var(--mono, var(--sans
 .mt-compare svg { color: currentColor; width: 24.6cqw; height: auto; }
 
 .mt-cast { display: flex; flex-direction: column; gap: 3.35cqw; height: 100%; }
-.mt-cast-fig { display: flex; align-items: center; gap: 6.71cqw; min-height: 29.07cqw; }
-.mt-cast-fig svg { height: 29.07cqw; width: auto; }
-.mt-readout { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 1.12cqw 3.35cqw; }
+/* Sized so the pair of figures, the readout, the button and the note all clear
+   one square. At 29cqw the card overflowed by 89px and overflow:hidden ate the
+   note — the crop is for display type, never for content. */
+.mt-cast-fig { display: flex; align-items: center; gap: 5cqw; min-height: 20cqw; }
+.mt-cast-fig svg { height: 20cqw; width: auto; }
+/* Three label/value pairs on one row rather than three rows: the readout is a
+   caption on the figures, and stacked it cost the card its last 24px. */
+.mt-readout { margin: 0; display: flex; flex-wrap: wrap; gap: .6cqw 4cqw; align-items: baseline; }
+.mt-readout dd { margin: 0 0 0 1.4cqw; }
 body[data-page="guide"] .mt-readout dt { font-family: var(--mono, var(--sans)); font-size: max(9px, 2.46cqw);
   letter-spacing: .1em; opacity: .7; }
 

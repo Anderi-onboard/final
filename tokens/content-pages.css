@@ -227,7 +227,9 @@ body[data-page="login"][data-mode="register"] .reveal-row{animation:cp-field-in 
 
 /* Pricing: hierarchy comes from borders and colour, never card lifts. */
 body[data-page="pricing"] .shell{width:min(1120px,100%)}
-body[data-page="pricing"] .hero{min-height:45vh;align-items:center;padding-top:44px}
+/* 45vh of forced height for a title and two paragraphs is where this page
+   reads as air. The hero is as tall as what it holds. */
+body[data-page="pricing"] .hero{min-height:0;align-items:center;padding-top:26px}
 body[data-page="pricing"] .ledgerstrip{box-shadow:none;background:var(--cp-tint)}
 body[data-page="pricing"] .annual-check,
 body[data-page="pricing"] .plan,
