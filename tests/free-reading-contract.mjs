@@ -86,5 +86,28 @@ const schema = readFileSync(`${ROOT}/schema.sql`, 'utf8');
 assert.ok(/ADD COLUMN free_readings INTEGER NOT NULL DEFAULT 0/.test(schema),
   'the migration must give EXISTING accounts 0 free readings — they had the old grant');
 
+// ── the code must survive arriving before its migration ───────────────────
+// Naming free_readings in the INSERT took production registration to HTTP 500
+// the moment it shipped, because a deploy and a D1 migration are not atomic.
+const dbSrc = readFileSync(`${ROOT}/functions/_lib/db.js`, 'utf8');
+for (const insert of dbSrc.match(/INSERT INTO users \([^)]*\)/g) || []) {
+  assert.ok(
+    !insert.includes('free_readings'),
+    'an INSERT INTO users names free_readings — that is a 500 on every signup '
+    + 'until the migration runs, and deploys do not wait for migrations'
+  );
+}
+assert.ok(/async function grantFreeReadings/.test(dbSrc),
+  'the entitlement is no longer set by a statement that is allowed to fail');
+
+// And a claim against a database without the column must decline, not throw.
+const noColumn = {
+  prepare(sql) { return { sql, bind() { return this; }, async run() { return {}; } }; },
+  async batch() { throw new Error('no such column: free_readings'); }
+};
+const declined = await consumeFreeReading(noColumn, 'u1', 'free-reading:sortis');
+assert.equal(declined.claimed, false,
+  'a claim before the migration must decline quietly so the caller falls through to units');
+
 console.log('free reading OK — one per signup, claimable once under a race, '
-  + 'never consumed by a follow-up, and visible to the interface');
+  + 'never consumed by a follow-up, visible to the interface, and safe before its migration');

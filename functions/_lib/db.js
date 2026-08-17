@@ -188,8 +188,9 @@ export async function ensureUser(db, { email, name, provider }) {
   }
   const id = uuid(), t = now();
   await db.prepare(
-    'INSERT INTO users (id,email,name,provider,plan,units,free_readings,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)'
-  ).bind(id, email, name || 'Seeker', provider || 'email', 'free', PLAN_GRANT.free, SIGNUP_FREE_READINGS, t, t).run();
+    'INSERT INTO users (id,email,name,provider,plan,units,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?)'
+  ).bind(id, email, name || 'Seeker', provider || 'email', 'free', PLAN_GRANT.free, t, t).run();
+  await grantFreeReadings(db, id, SIGNUP_FREE_READINGS);
   // The welcome is a reading, not a balance, so that is what the ledger records.
   // delta 0 keeps the running balance honest — nothing was added to spend.
   await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
@@ -213,11 +214,31 @@ export async function createEmailUser(db, { email, name, passwordHash }) {
   email = String(email || '').toLowerCase().trim();
   const id = uuid(), t = now();
   await db.prepare(
-    'INSERT INTO users (id,email,name,provider,plan,units,free_readings,password_hash,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)'
-  ).bind(id, email, name || email.split('@')[0], 'email', 'free', PLAN_GRANT.free, SIGNUP_FREE_READINGS, passwordHash || null, t, t).run();
+    'INSERT INTO users (id,email,name,provider,plan,units,password_hash,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)'
+  ).bind(id, email, name || email.split('@')[0], 'email', 'free', PLAN_GRANT.free, passwordHash || null, t, t).run();
+  await grantFreeReadings(db, id, SIGNUP_FREE_READINGS);
   await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
     .bind(id, 0, 'grant:free-reading', PLAN_GRANT.free, t).run();
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
+}
+
+/* Set the signup entitlement in a SEPARATE statement that is allowed to fail.
+
+   A deploy and a D1 migration are not atomic, and this is what that costs when
+   you forget it: naming free_readings in the INSERT took production
+   registration to HTTP 500 the moment the code shipped, because the column did
+   not exist yet. Nobody could create an account.
+
+   So the column is never required by a write that must succeed. Before the
+   migration this throws and is swallowed — the account is created with no free
+   reading, which is recoverable — and after it, it does its job. Code has to
+   survive arriving before its migration, because sometimes it will. */
+async function grantFreeReadings(db, userId, count) {
+  try {
+    await db.prepare('UPDATE users SET free_readings=? WHERE id=?').bind(count, userId).run();
+  } catch (e) {
+    console.error('free_readings column missing — run the migration in schema.sql', e && e.message);
+  }
 }
 
 /* Spend one free reading, if the account still has one. Conditional on the
@@ -226,11 +247,18 @@ export async function createEmailUser(db, { email, name, passwordHash }) {
    request is the one that got it. */
 export async function consumeFreeReading(db, userId, reason) {
   const t = now();
-  const out = await db.batch([
-    db.prepare('UPDATE users SET free_readings=free_readings-1, updated_at=? WHERE id=? AND free_readings>0')
-      .bind(t, userId),
-    db.prepare('SELECT units, free_readings FROM users WHERE id=?').bind(userId)
-  ]);
+  let out;
+  try {
+    out = await db.batch([
+      db.prepare('UPDATE users SET free_readings=free_readings-1, updated_at=? WHERE id=? AND free_readings>0')
+        .bind(t, userId),
+      db.prepare('SELECT units, free_readings FROM users WHERE id=?').bind(userId)
+    ]);
+  } catch (e) {
+    // Column not migrated yet: nobody holds an entitlement, so nobody claims
+    // one. The caller falls through to the unit balance.
+    return { claimed: false, units: null, freeReadings: 0 };
+  }
   const claimed = !!(out[0] && out[0].meta && out[0].meta.changes);
   const row = (out[1] && out[1].results && out[1].results[0]) || null;
   if (claimed) {
