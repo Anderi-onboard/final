@@ -23,7 +23,7 @@ body.blocks-route {
   --bk-ochre:  #C79A55;
   --bk-dusty:  #C9A99E;
   --bk-gap: 3px;                 /* the ground showing between blocks */
-  --bk-pad: clamp(20px, 2.6vw, 38px);
+  --bk-pad: clamp(18px, 1.9vw, 28px);
   margin: 0;
   background: var(--bk-ink);
   color: var(--bk-ink);
@@ -55,7 +55,7 @@ body.blocks-route .bk-eyebrow {
   opacity: .72;
 }
 body.blocks-route :is(p, li) { font-size: 13.5px; line-height: 1.55; margin: 0; }
-body.blocks-route .bk-note { margin-top: 12px; opacity: .82; max-width: 46ch; }
+body.blocks-route .bk-note { margin-top: 10px; opacity: .82; max-width: 44ch; }
 
 /* ── header / footer: flush bars, not floating chrome ───────────────────── */
 body.blocks-route .bk-head,
@@ -83,7 +83,10 @@ body.blocks-route .bk {
   display: grid;
   gap: var(--bk-gap);
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(96px, auto);
+  /* auto, not a min height. A minimum turns every short block into a mostly
+     empty one, and the reference has no mostly-empty blocks: each is exactly
+     as tall as what it holds, and the air lives in the padding. */
+  grid-auto-rows: auto;
 }
 body.blocks-route .bk-cell { padding: var(--bk-pad); min-width: 0; position: relative; overflow: hidden; }
 /* Pattern and landscape cells hold no copy, so they carry no padding — the
@@ -108,15 +111,22 @@ body.blocks-route .bk-cell--title { grid-column: span 8; }
 body.blocks-route .bk-cell--wide  { grid-column: span 9; }
 body.blocks-route .bk-cell--half  { grid-column: span 6; }
 body.blocks-route .bk-cell--third { grid-column: span 4; }
-body.blocks-route .bk-cell--tall  { grid-column: span 4; grid-row: span 2; }
+/* No row spanning. A cell that spans two rows leaves the next row already
+   part-occupied, so the spans after it overflow twelve and wrap — which is
+   exactly where the dead ground on this page was coming from. */
+body.blocks-route .bk-cell--tall  { grid-column: span 4; }
 body.blocks-route .bk-cell--sq    { grid-column: span 3; }
-body.blocks-route .bk-cell--strip { grid-column: span 12; min-height: 96px; }
-body.blocks-route .bk-cell--land  { grid-column: span 3; min-height: 210px; }
+body.blocks-route .bk-cell--strip { grid-column: span 12; min-height: 74px; }
+body.blocks-route .bk-cell--land  { grid-column: span 3; min-height: 168px; }
 body.blocks-route .bk-cell--steps { grid-column: span 12; display: grid;
-  grid-template-columns: repeat(3, 1fr); gap: 26px; list-style: none; }
+  grid-template-columns: repeat(3, 1fr); gap: 22px; list-style: none; }
 body.blocks-route .bk-cell--steps b { display: block; font-family: var(--serif); font-size: 16px; margin-bottom: 5px; }
 body.blocks-route .bk-cell--steps .bk-eyebrow { margin-bottom: 5px; }
 
+/* Pattern fields are always the light motif on a coloured ground — never ink
+   on cream. In the reference every field is two-tone that way round, and a
+   dark motif on a light block stops being a texture and becomes an image. */
+body.blocks-route .bk-cell[data-pattern] { color: var(--bk-cream); }
 body.blocks-route .bk-cell svg { display: block; width: 100%; height: 100%; }
 body.blocks-route .bk-cell:is([data-pattern], [data-land]) svg { position: absolute; inset: 0; }
 body.blocks-route .bk-cell[data-mark] { display: grid; place-items: center; }
