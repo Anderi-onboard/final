@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260816j", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260816j";
+    ? new URL("../palettes/color-groups.json?v=20260816k", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260816k";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -142,6 +142,15 @@
     { n: 3, step: 9 }, { n: 2, step: 7 }
   ];
   var LINE_WOBBLE = [0, 2.8, -1.6, 1.2, -2.4, 2.1, -.8];
+  /* A second wobble, on x. The contour copies were offset only vertically, so
+     every line under a crest was exactly parallel to it — which is the one
+     thing a hand never does. Shifting each copy sideways by a few units, on a
+     cycle of a different length from the y wobble (5 against 7, so the pair
+     does not repeat for 35 lines), makes the spacing between contours open and
+     close along the ridge the way drawn hatching does.
+     Deterministic on purpose, exactly as the casting figure's brush is: random
+     per render would reshuffle on every navigation and read as a fault. */
+  var LINE_DRIFT = [0, -3.4, 2.2, -1.1, 4.0];
 
   /* Which planes carry the moiré, and how. `n` bands at `gap` units apart,
      each turned by a fraction of a degree — the tilt is what beats against
@@ -180,7 +189,9 @@
       var i = idx + 1, contour = '';
       for (var k = 1; k <= L.n; k++) {
         var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
-        contour += '<use href="#mw' + i + 'c" y="' + offset.toFixed(2) + '"/>';
+        var drift = LINE_DRIFT[(k * 2 + i) % LINE_DRIFT.length] * (1 + i * .18);
+        contour += '<use href="#mw' + i + 'c" x="' + drift.toFixed(2)
+          + '" y="' + offset.toFixed(2) + '"/>';
       }
       var moire = '';
       if (MOIRE[i]) {

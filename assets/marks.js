@@ -84,6 +84,48 @@
     return out;
   }
 
+  /* ── the BourneWise brush ───────────────────────────────────────────────
+     Extracted from barPath() in casting-figure.js, which is where the hand
+     drawn quality on the Sortis figure actually comes from. The rule is not
+     "add noise" — it is five specific things, and the fourth is the one that
+     matters most:
+
+       1. A bar is not a rectangle. Its two long edges are single cubic S
+          curves: the control points pull one way at 1/3 and the other way at
+          2/3, so each edge rises then dips once. One inflection, not many.
+       2. The two edges are not mirror images. The far edge runs at 0.78 of
+          the near edge's amplitude, so the shape is never symmetrical and
+          never reads as a machined slab.
+       3. Amplitude is about 12–17% of the short dimension. Below that it
+          looks like a printing error; above it, like a banana.
+       4. The variation is DETERMINISTIC AND CYCLIC, not random — the source
+          steps amplitude on (index mod 3), so neighbours never match but the
+          same element always draws identically. Random jitter per instance
+          would flicker on every re-render and reshuffle on every navigation,
+          which reads as a fault rather than as a hand.
+       5. The shape is filled AND stroked in its own colour at ~4% of the
+          short dimension, with round joins and caps. That last part is what
+          turns a vector outline into something that looks laid down with ink:
+          the stroke swells the form slightly and rounds every corner.
+
+     Everything drawn on the site should be able to take this brush, so it
+     lives here rather than staying inside the casting figure. */
+  function brushRect(x, y, w, h, i) {
+    var a = 1.45 + (Math.abs(i || 0) % 3) * .28;   /* the 3-cycle, see (4) */
+    a = a * (h / 12);                               /* amplitude scales with weight */
+    var b = a * .78, t = w / 3, x2 = x + w, y2 = y + h;
+    return "M " + R(x) + " " + R(y)
+      + " C " + R(x + t) + " " + R(y - a) + " " + R(x + 2 * t) + " " + R(y + a) + " " + R(x2) + " " + R(y)
+      + " L " + R(x2) + " " + R(y2)
+      + " C " + R(x + 2 * t) + " " + R(y2 + b) + " " + R(x + t) + " " + R(y2 - a) + " " + R(x) + " " + R(y2) + " Z";
+  }
+  /* The attributes that go with the brush. Kept beside the geometry so a
+     caller cannot take the shape and forget the stroke that makes it ink. */
+  function brushAttrs(h) {
+    return 'fill="currentColor" stroke="currentColor" stroke-width="' + R(Math.max(.35, h * .042))
+      + '" stroke-linejoin="round" stroke-linecap="round"';
+  }
+
   /* ── flat-field patterns ────────────────────────────────────────────────
      Each is one motif on a strict pitch. Ratios, not absolute sizes, carry
      the character, so every function takes its proportions as parameters. */
@@ -162,15 +204,19 @@
 
   /* A hexagram: six lines, yin broken, yang solid — the product's own mark,
      drawn at the same weight as everything else here. */
+  /* Six lines, drawn with the brush above rather than as rectangles — this is
+     the same figure the casting animation draws, so the mark on a marketing
+     page and the mark in the product are one drawing. */
   function hexagram(lines, o) {
     o = o || {}; var w = o.w || 96, gap = o.gap || 5, t = o.t || 7, s = "";
+    var at = brushAttrs(t);
     for (var i = 0; i < 6; i++) {
       var y = (5 - i) * (t + gap);
-      if (lines[i]) s += '<rect x="0" y="' + y + '" width="' + w + '" height="' + t + '" rx="1"/>';
+      if (lines[i]) s += '<path ' + at + ' d="' + brushRect(0, y, w, t, i) + '"/>';
       else {
         var seg = (w - w * .22) / 2;
-        s += '<rect x="0" y="' + y + '" width="' + R(seg) + '" height="' + t + '" rx="1"/>';
-        s += '<rect x="' + R(w - seg) + '" y="' + y + '" width="' + R(seg) + '" height="' + t + '" rx="1"/>';
+        s += '<path ' + at + ' d="' + brushRect(0, y, seg, t, i) + '"/>';
+        s += '<path ' + at + ' d="' + brushRect(w - seg, y, seg, t, i + 1) + '"/>';
       }
     }
     return s;
@@ -183,6 +229,7 @@
   root.BWMarks = {
     rng: rng, svg: svg, sineV: sineV,
     ridgePath: ridgePath, landscape: landscape,
+    brushRect: brushRect, brushAttrs: brushAttrs,
     vesica: vesica, vesicaRow: vesicaRow, splitDisc: splitDisc,
     scallop: scallop, waveField: waveField, tally: tally,
     florette: florette, dotRing: dotRing, coin: coin, hexagram: hexagram
