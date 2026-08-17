@@ -11,7 +11,7 @@
 
 import {
   MODEL_RATES, METHOD_COST, FOLLOW_COST, PLAN_GRANT, PACKS,
-  UNIT_PRICE_USD, ANNUAL_MONTHS, estimateTokens
+  UNIT_PRICE_USD, ANNUAL_MONTHS, estimateTokens, SIGNUP_FREE_READINGS
 } from '../_lib/db.js';
 import { PromptEngine } from '../_lib/prompt-engine.js';
 
@@ -91,7 +91,9 @@ export function onRequestGet({ env }) {
     unitPriceUsd: UNIT_PRICE_USD,
     unitsPerUsd: Math.round(1 / UNIT_PRICE_USD),
     plans: {
-      free: { usd: 0, units: PLAN_GRANT.free },
+      // The free tier is no longer a balance. It is one complete reading —
+      // whatever that reading turns out to cost — and then top-ups.
+      free: { usd: 0, units: PLAN_GRANT.free, freeReadings: SIGNUP_FREE_READINGS },
       pro: { usd: 19, units: PLAN_GRANT.pro, annualUsd: 190, annualUnits: PLAN_GRANT.pro * ANNUAL_MONTHS },
       premium: { usd: 29, units: PLAN_GRANT.premium, annualUsd: 290, annualUnits: PLAN_GRANT.premium * ANNUAL_MONTHS }
     },

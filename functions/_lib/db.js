@@ -20,7 +20,18 @@ export const UNIT_PRICE_USD = 1 / 1500;   // exactly 1,500 units per $1
 // once, and Stria at ~440 left nothing for the follow-up that makes a reading
 // useful. 1,500 buys a Sortis reading and a follow-up, or three Stria readings
 // — enough to see what the product actually does before deciding to pay.
-export const PLAN_GRANT = { free: 1500, pro: 28500, premium: 43500 };
+// A new account starts with NO units and one whole reading instead. The old
+// 1,500-unit welcome had a failure the entitlement does not: units can be spent
+// on something that does not finish, so a newcomer could arrive, watch a
+// balance drain, and never once see what the product actually does. A reading
+// either happens or it does not, and this one happens whatever it costs —
+// settlement skips it rather than billing it.
+//
+// Follow-ups are NOT covered. That is deliberate and it is the business model:
+// the first answer is complete and free, and paying begins when the reader
+// wants to go deeper into their own casting.
+export const PLAN_GRANT = { free: 0, pro: 28500, premium: 43500 };
+export const SIGNUP_FREE_READINGS = 1;
 
 // Annual plans pay ten months for twelve: the same monthly allowance x12,
 // granted at once. That discount is a deliberate margin trade (~51% against
@@ -177,10 +188,12 @@ export async function ensureUser(db, { email, name, provider }) {
   }
   const id = uuid(), t = now();
   await db.prepare(
-    'INSERT INTO users (id,email,name,provider,plan,units,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?)'
-  ).bind(id, email, name || 'Seeker', provider || 'email', 'free', PLAN_GRANT.free, t, t).run();
+    'INSERT INTO users (id,email,name,provider,plan,units,free_readings,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)'
+  ).bind(id, email, name || 'Seeker', provider || 'email', 'free', PLAN_GRANT.free, SIGNUP_FREE_READINGS, t, t).run();
+  // The welcome is a reading, not a balance, so that is what the ledger records.
+  // delta 0 keeps the running balance honest — nothing was added to spend.
   await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
-    .bind(id, PLAN_GRANT.free, 'grant:free', PLAN_GRANT.free, t).run();
+    .bind(id, 0, 'grant:free-reading', PLAN_GRANT.free, t).run();
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
 }
 
@@ -200,11 +213,31 @@ export async function createEmailUser(db, { email, name, passwordHash }) {
   email = String(email || '').toLowerCase().trim();
   const id = uuid(), t = now();
   await db.prepare(
-    'INSERT INTO users (id,email,name,provider,plan,units,password_hash,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)'
-  ).bind(id, email, name || email.split('@')[0], 'email', 'free', PLAN_GRANT.free, passwordHash || null, t, t).run();
+    'INSERT INTO users (id,email,name,provider,plan,units,free_readings,password_hash,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)'
+  ).bind(id, email, name || email.split('@')[0], 'email', 'free', PLAN_GRANT.free, SIGNUP_FREE_READINGS, passwordHash || null, t, t).run();
   await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
-    .bind(id, PLAN_GRANT.free, 'grant:signup', PLAN_GRANT.free, t).run();
+    .bind(id, 0, 'grant:free-reading', PLAN_GRANT.free, t).run();
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
+}
+
+/* Spend one free reading, if the account still has one. Conditional on the
+   count so two simultaneous first readings cannot both claim it — the UPDATE
+   only matches while free_readings > 0, and `changes` tells us whether this
+   request is the one that got it. */
+export async function consumeFreeReading(db, userId, reason) {
+  const t = now();
+  const out = await db.batch([
+    db.prepare('UPDATE users SET free_readings=free_readings-1, updated_at=? WHERE id=? AND free_readings>0')
+      .bind(t, userId),
+    db.prepare('SELECT units, free_readings FROM users WHERE id=?').bind(userId)
+  ]);
+  const claimed = !!(out[0] && out[0].meta && out[0].meta.changes);
+  const row = (out[1] && out[1].results && out[1].results[0]) || null;
+  if (claimed) {
+    await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
+      .bind(userId, 0, reason || 'free-reading', row ? row.units : 0, t).run();
+  }
+  return { claimed, units: row ? row.units : null, freeReadings: row ? row.free_readings : 0 };
 }
 
 // Conditional arithmetic update + ledger insert in one D1 transaction. This
@@ -359,7 +392,11 @@ export async function bumpRateLimit(db, key, max) {
 export function publicUser(u) {
   return u && {
     id: u.id, email: u.email, name: u.name, provider: u.provider,
-    plan: u.plan, units: u.units, signedIn: true
+    plan: u.plan, units: u.units,
+    // The interface has to be able to say "your first reading is on us" rather
+    // than showing a balance of 0, which reads as "you cannot do anything".
+    freeReadings: u.free_readings || 0,
+    signedIn: true
   };
 }
 

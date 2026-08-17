@@ -46,7 +46,7 @@
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk } from '../_lib/db.js';
+import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk, consumeFreeReading } from '../_lib/db.js';
 import { PromptEngine } from '../_lib/prompt-engine.js';
 
 // Same-origin only. The old '*' let any page on the internet POST here; the
@@ -526,12 +526,38 @@ async function guardRequest({ request, env, db, product, mode }) {
   }
 
   if (product === 'sortis' || product === 'stria') {
+    /* A NEW CASTING may be covered by the signup entitlement: one complete
+       reading, spent before units and never partially — it runs to the end
+       whatever it costs, and settlement skips it rather than billing it.
+       A FOLLOW-UP is never covered. That is the model: the first answer is
+       whole and free, and paying starts when the reader wants to go deeper
+       into their own casting. */
+    if (mode !== 'followup' && user.free_readings > 0) {
+      const claim = await consumeFreeReading(db, user.id, 'free-reading:' + product);
+      if (claim.claimed) {
+        return { charge: null, unitsRemaining: claim.units, freeReadings: claim.freeReadings };
+      }
+      // Lost the race to a simultaneous request — fall through to the balance.
+    }
+
     // Any positive balance buys entry. Asking for more than that would mean
     // guessing what this particular reading is going to cost, and every such
     // guess has to sit above typical usage — which turns into refusing readers
     // who could have afforded what they actually asked for.
     if (!(user.units > 0)) {
-      return { error: { status: 402, body: { error: 'insufficient units', units: user.units } } };
+      return {
+        error: {
+          status: 402,
+          body: {
+            error: 'insufficient units',
+            units: user.units,
+            // Tells the client which of the two walls it hit: a reader who has
+            // used their free reading and wants to follow up needs a different
+            // sentence from one who has simply run out.
+            code: mode === 'followup' ? 'TOPUP_FOR_FOLLOWUP' : 'TOPUP_REQUIRED'
+          }
+        }
+      };
     }
     return { charge: { userId: user.id, reason }, unitsRemaining: user.units };
   }
