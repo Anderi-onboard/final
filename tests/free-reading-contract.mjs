@@ -105,9 +105,41 @@ const noColumn = {
   prepare(sql) { return { sql, bind() { return this; }, async run() { return {}; } }; },
   async batch() { throw new Error('no such column: free_readings'); }
 };
-const declined = await consumeFreeReading(noColumn, 'u1', 'free-reading:sortis');
-assert.equal(declined.claimed, false,
-  'a claim before the migration must decline quietly so the caller falls through to units');
+/* Before the migration the entitlement is DERIVED from the ledger instead of
+   declined. Declining would leave a fresh account with no units and no reading
+   — a signup that can do nothing, which is the failure the old 1,500-unit
+   grant existed to prevent. Verified both ways. */
+function ledgerDb(priorCasts) {
+  const rows = [];
+  return {
+    rows,
+    prepare(sql) {
+      return {
+        sql, args: [],
+        bind(...a) { this.args = a; return this; },
+        async first() {
+          if (this.sql.includes('COUNT(*)')) return { n: priorCasts };
+          if (this.sql.startsWith('SELECT units')) return { units: 0 };
+          return null;
+        },
+        async run() { if (this.sql.startsWith('INSERT INTO ledger')) rows.push(this.args); return {}; }
+      };
+    },
+    async batch() { throw new Error('no such column: free_readings'); }
+  };
+}
+
+const fresh = ledgerDb(0);
+const firstEver = await consumeFreeReading(fresh, 'u1', 'free-reading:sortis');
+assert.equal(firstEver.claimed, true,
+  'before the migration, an account with no casting in its ledger must still get its free reading');
+assert.equal(fresh.rows.length, 1, 'the derived claim must leave its own ledger row');
+
+const returning = ledgerDb(3);
+const notAgain = await consumeFreeReading(returning, 'u1', 'free-reading:sortis');
+assert.equal(notAgain.claimed, false,
+  'an account that has already cast must not get a second free reading from the fallback');
+assert.equal(returning.rows.length, 0, 'a declined claim writes nothing');
 
 console.log('free reading OK — one per signup, claimable once under a race, '
   + 'never consumed by a follow-up, visible to the interface, and safe before its migration');

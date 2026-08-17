@@ -222,6 +222,25 @@ export async function createEmailUser(db, { email, name, passwordHash }) {
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
 }
 
+/* Pre-migration fallback for the signup entitlement: an account with no
+   casting in its ledger has not had its free reading yet. Derived rather than
+   stored, so it works on a database that has never been migrated. */
+async function consumeFirstReadingFromLedger(db, userId, reason) {
+  const t = now();
+  try {
+    const prior = await db.prepare(
+      "SELECT COUNT(*) AS n FROM ledger WHERE user_id=? AND (reason LIKE 'cast:%' OR reason LIKE 'follow:%' OR reason LIKE 'free-reading%')"
+    ).bind(userId).first();
+    if (prior && Number(prior.n) > 0) return { claimed: false, units: null, freeReadings: 0 };
+    const u = await db.prepare('SELECT units FROM users WHERE id=?').bind(userId).first();
+    await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
+      .bind(userId, 0, reason || 'free-reading', u ? u.units : 0, t).run();
+    return { claimed: true, units: u ? u.units : 0, freeReadings: 0 };
+  } catch (e2) {
+    return { claimed: false, units: null, freeReadings: 0 };
+  }
+}
+
 /* Set the signup entitlement in a SEPARATE statement that is allowed to fail.
 
    A deploy and a D1 migration are not atomic, and this is what that costs when
@@ -255,9 +274,17 @@ export async function consumeFreeReading(db, userId, reason) {
       db.prepare('SELECT units, free_readings FROM users WHERE id=?').bind(userId)
     ]);
   } catch (e) {
-    // Column not migrated yet: nobody holds an entitlement, so nobody claims
-    // one. The caller falls through to the unit balance.
-    return { claimed: false, units: null, freeReadings: 0 };
+    /* Column not migrated yet. Declining here would leave a new account with
+       no units AND no reading — a signup that can do nothing, which is the
+       exact failure the 1,500-unit grant was raised to fix.
+
+       So fall back to a fact that needs no migration: has this account ever
+       been charged for a casting? The ledger is append-only and already
+       records every one. No prior cast means this is the first, and the first
+       is free. It is one query on a small per-user table, it only runs before
+       the migration, and it cannot double-grant, because the settlement that
+       follows a paid reading writes the row that closes it off. */
+    return consumeFirstReadingFromLedger(db, userId, reason);
   }
   const claimed = !!(out[0] && out[0].meta && out[0].meta.changes);
   const row = (out[1] && out[1].results && out[1].results[0]) || null;
