@@ -570,6 +570,19 @@
       ["Near term", "What is most likely to change first?"],
       ["Next move", "What is mine to do now?"]
     ]));
+    /* The AXES come first, and they are the point of this panel now.
+       A first reading answers the question it was asked and is kept off the
+       axes it was not — that is a rule in the output segment, not an accident —
+       so these are the reads of the same board that genuinely have not
+       happened yet. The generated prompts below them go deeper on the axis
+       already answered, which is worth offering and is not where the value is.
+
+       "Check it back" is deliberately not time-gated. Gating it would make it a
+       hook, and hooks are barred (SAFE-3); the reader knows when something has
+       happened better than a timer does. */
+    var PC = window.BWPromptChecks || {};
+    var axes = (PC.FOLLOWUP_AXES && PC.FOLLOWUP_AXES[sortis ? "sortis" : "stria"]) || [];
+
     // The panel speaks whatever the prompts on it speak.
     var zhPanel = isZh(prompts.map(function (p) { return p[1]; }).join(""));
     var L = (C.followUp.panel && (zhPanel ? C.followUp.panel.zh : C.followUp.panel.en)) || C.followUp.panel.en;
@@ -577,6 +590,10 @@
       '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + esc(L.kicker(methodLabel)) + '</span>' +
       '<h4>' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '</h4>' +
       '<p>' + esc(L.hint) + '</p></div>' +
+      (axes.length && !continued ? '<div class="rd-axes">' + axes.map(function (a) {
+        return '<button type="button" class="rd-axis pressable" data-prompt="' + esc(a.q) + '" data-axis="' + esc(a.key) + '">' +
+          '<b>' + esc(a.label) + '</b></button>';
+      }).join("") + '</div>' : '') +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
           '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
@@ -1606,7 +1623,11 @@
   /* ── copy a reading — delegated; grabs the reading body's text and drops it
      on the clipboard, with a brief "Copied" confirmation on the button ── */
   document.addEventListener("click", function (e) {
-    var prompt = e.target && e.target.closest && e.target.closest(".rd-prompt");
+    // Both kinds of chip fill the composer rather than sending: the reader
+    // edits, reconsiders, and only spends when they deliberately submit. That
+    // is the interaction rule the whole panel was built on — an axis chip is a
+    // different question, not a different button.
+    var prompt = e.target && e.target.closest && (e.target.closest(".rd-prompt") || e.target.closest(".rd-axis"));
     if (prompt) {
       var promptInput = $("composerInput");
       if (promptInput) {

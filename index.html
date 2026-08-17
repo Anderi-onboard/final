@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260815p">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260815p">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260815p">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260815p">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260815p">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260815p">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260815p">
-<script src="./ds-base.js?v=20260815p"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260815q">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260815q">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260815q">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260815q">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260815q">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260815q">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260815q">
+<script src="./ds-base.js?v=20260815q"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -243,6 +243,20 @@
   .rd-depth h4{font-family:"BioRhyme",var(--serif),serif;font-size:20px;line-height:1.25;letter-spacing:-.015em}
   .rd-depth-copy p{margin-top:6px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--dim)}
   .rd-prompts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:17px}
+  /* The axes: a different read of the same board, not more of the same reading.
+     Deliberately lighter than the prompt cards below them — they are a row of
+     doors, not a wall of questions, and a reader who wants none of them should
+     be able to see that in one glance. */
+  .rd-axes{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 13px}
+  .rd-axis{padding:7px 14px;min-height:36px;border-radius:var(--ui-radius-small,999px);
+    border:1px solid color-mix(in srgb,var(--ink) 17%,transparent);background:transparent;
+    color:var(--ink);font-family:var(--font-sans);font-size:12.5px;letter-spacing:var(--tracking-label);
+    cursor:pointer;transition:background .12s var(--ease-out),border-color .12s var(--ease-out)}
+  .rd-axis b{font-weight:400}
+  .rd-axis:hover{background:color-mix(in srgb,var(--ink) 6%,transparent);
+    border-color:color-mix(in srgb,var(--terracotta,#A95D39) 55%,transparent)}
+  .rd-axis:focus-visible{outline:2px solid var(--terracotta,#A95D39);outline-offset:2px}
+  @media (max-width:640px){.rd-axis{font-size:12px;padding:6px 12px}}
   .rd-prompt{position:relative;min-width:0;min-height:92px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:13px 36px 13px 13px;
     border:1px solid var(--line);border-radius:12px;background:color-mix(in oklab,var(--paper) 68%,transparent);color:var(--ink);
     transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
@@ -757,7 +771,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260815p">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260815q">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -879,17 +893,17 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260815p"></script>
-<script src="./casting-figure.js?v=20260815p"></script>
-<script src="./liuyao-engine.js?v=20260815p"></script>
-<script src="./liuyao-ai.js?v=20260815p"></script>
-<script src="./liuyao-chart.js?v=20260815p"></script>
-<script src="./copy.js?v=20260815p"></script>
-<script src="./prompt-checks.js?v=20260815p"></script>
-<script src="./prompt-router.js?v=20260815p"></script>
-<script src="./account.js?v=20260815p"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260815q"></script>
+<script src="./casting-figure.js?v=20260815q"></script>
+<script src="./liuyao-engine.js?v=20260815q"></script>
+<script src="./liuyao-ai.js?v=20260815q"></script>
+<script src="./liuyao-chart.js?v=20260815q"></script>
+<script src="./copy.js?v=20260815q"></script>
+<script src="./prompt-checks.js?v=20260815q"></script>
+<script src="./prompt-router.js?v=20260815q"></script>
+<script src="./account.js?v=20260815q"></script>
 <script>window.BW_BUILD="20260815e";</script>
-<script src="./chat-app.js?v=20260815p"></script>
+<script src="./chat-app.js?v=20260815q"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');

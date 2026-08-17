@@ -181,7 +181,44 @@
     }
   };
 
+  /* ── FOLLOW-UP AXES ───────────────────────────────────────────────────────
+     A casting answers one matter, but it carries several AXES, and the output
+     rules deliberately keep a first reading off the ones that were not asked
+     about: "Do NOT hand someone 应期 machinery when they did not ask when. Do
+     NOT hand someone a portrait when they asked about money."
+
+     That is why the old follow-up chips did not work. They asked for more of
+     the reading just given — "what is the weakest assumption", "where is the
+     leverage" — and a reading that did its job has already answered those. The
+     better the first reading, the emptier the chip.
+
+     These are different questions of the SAME board, on axes the first reading
+     was right to leave alone. Each one routes to a segment set that already
+     exists (prompt-engine ROUTES) — the machinery was always there, the
+     interface just never offered it.
+
+     Labels and question text are interface copy, not instructions, which is
+     why they can live in the browser. The prompts they route into stay on the
+     server. */
+  var FOLLOWUP_AXES = {
+    sortis: [
+      { key: "timing",     label: "When",        q: "What is the timing on this? Walk the 应期 down the scales — hour, day, month, year — and say which one you think it is." },
+      { key: "other",      label: "Their side",  q: "Read the other party from this same board — what does their side of it look like, and what are they responding to?" },
+      { key: "imagery",    label: "What it looks like", q: "Work the 取象 on this board: what does the thing at the centre of this actually look like, in concrete detail?" },
+      { key: "quantity",   label: "How many",    q: "How many? Work it from the 用神 branch's 河图 number against its strength, not by counting lines." },
+      { key: "review",     label: "Check it back", q: "Something has happened since this casting. Read the board back against it: what did it get right, what did it miss, and what does that change?" }
+    ],
+    stria: [
+      { key: "timing",     label: "When",        q: "What is the timing on this, at the scale the question actually lives on?" },
+      { key: "other",      label: "Their side",  q: "Read the other side of this from the same figure — what is it responding to?" },
+      { key: "imagery",    label: "What it looks like", q: "Work the imagery on this figure: what does the thing at the centre of it actually look like?" },
+      { key: "review",     label: "Check it back", q: "Something has happened since this casting. Read the figure back against it — what held, what did not?" }
+    ]
+  };
+
+
   window.BWPromptChecks = {
+    FOLLOWUP_AXES: FOLLOWUP_AXES,
     INTENT_ROUTER: INTENT_ROUTER,
     FOLLOWUP_SUGGEST: FOLLOWUP_SUGGEST,
     checkBoardFacts: checkBoardFacts,
