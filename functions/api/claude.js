@@ -178,28 +178,9 @@ export async function onRequestPost(context) {
         code: 'CLIENT_SYSTEM_REJECTED'
       }, 400);
     }
-    /* TEMPORARY: a streaming reading dies with a 502 that Cloudflare wrote, not
-       us — text/plain, "error code: 502", none of our CORS headers — meaning the
-       invocation is being killed rather than returning an error. `?stage=N`
-       cuts the request short at successive points so the kill can be bracketed
-       from outside. It reports SIZES and booleans, never prompt text.
-         1  before the upstream fetch          (assembly + guard + router)
-         2  after it, reporting status only    (isolates the fetch itself)
-         3  upstream body returned raw         (isolates pumpAndSettle/waitUntil)
-       Remove all of it once the 502 is understood. */
-    const stageParam = new URL(request.url).searchParams.get('stage');
-    const stageNo = /^[123]$/.test(String(stageParam)) ? Number(stageParam) : 0;
-    const stage = stageNo === 1;
-    const mark = {};
-    mark.guard = 'ok';
-    mark.product = product; mark.mode = mode; mark.stream = body.stream === true;
-    mark.freeClaim = !!freeClaim; mark.chargeTo = !!chargeTo;
-
     let built;
     try {
       built = await buildSystem({ body, env, product, mode, messages });
-      mark.assembled = built && built.system ? built.system.length : 0;
-      mark.route = (built && built.route) || null;
     } catch (e) {
       console.error('prompt assembly failed', e);
       return json({ error: 'prompt assembly failed' }, 500);
@@ -213,12 +194,6 @@ export async function onRequestPost(context) {
       return json({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }, 200);
     }
     const systemPrompt = built.system;
-    if (stage) {
-      mark.model = resolveModel(body, env);
-      mark.max_tokens = clampTokens(body.max_tokens, env, product);
-      mark.messageChars = messages.reduce((n, m) => n + String((m && m.content) || '').length, 0);
-      return json({ stage: 'before-upstream', mark }, 200);
-    }
     // A role that builds its own user turn replaces the client's placeholder.
     const turnMessages = built.userOverride
       ? messages.slice(0, -1).concat([{ role: 'user', content: built.userOverride }])
@@ -266,31 +241,11 @@ export async function onRequestPost(context) {
       // OpenRouter extension: ship prompt/completion token counts in the final
       // stream chunk so settlement uses REAL usage, not an estimate.
       payload.usage = { include: true };
-      const t0 = Date.now();
       const upstream = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: openrouterHeaders,
         body: JSON.stringify(payload)
       });
-      if (stageNo === 2) {
-        // The fetch survived. Say so, with the upstream's own verdict, and stop
-        // before a single byte is re-encoded.
-        const head = await upstream.text().catch(() => '').then((s) => s.slice(0, 300));
-        return json({
-          stage: 'after-upstream', ms: Date.now() - t0,
-          status: upstream.status, ok: upstream.ok, hasBody: !!upstream.body,
-          contentType: upstream.headers.get('content-type'), head
-        }, 200);
-      }
-      if (stageNo === 3 && upstream.ok && upstream.body) {
-        // Hand the upstream stream straight through: no TransformStream, no
-        // waitUntil, no settlement. If this lives and the real path dies, the
-        // fault is in the pump, not the model call.
-        return new Response(upstream.body, {
-          status: 200,
-          headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
-        });
-      }
 
       if (!upstream.ok || !upstream.body) {
         if (freeClaim) { await releaseFreeReading(db, freeClaim.userId, freeClaim.reason); freeClaim = null; }
@@ -298,8 +253,7 @@ export async function onRequestPost(context) {
         // Nothing was held and no tokens were produced, so there is nothing to
         // undo — the reader is simply not charged.
         chargeTo = null;
-        console.error('openrouter stream error', upstream.status, detail);
-        return json({ error: 'openrouter ' + upstream.status }, 502);
+        return upstreamError(upstream.status, detail);
       }
 
       // OpenRouter streams OpenAI-shaped chunks (`choices[0].delta.content`,
@@ -355,8 +309,7 @@ export async function onRequestPost(context) {
     if (!resp.ok) {
       const detail = await resp.text().catch(() => '');
       chargeTo = null;
-      console.error('openrouter error', resp.status, detail);
-      return json({ error: 'openrouter ' + resp.status }, 502);
+      return upstreamError(resp.status, detail);
     }
     const data = await resp.json();
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
@@ -694,4 +647,40 @@ function json(obj, status) {
     status,
     headers: { 'content-type': 'application/json', ...CORS }
   });
+}
+
+/* The model provider refused. Two things have to be true of what we send back.
+ *
+ * IT MUST NOT BE A 502. Cloudflare Pages substitutes its own error page for a
+ * Function's 502 — text/plain, "error code: 502", sixteen bytes, none of our
+ * headers — so the body we wrote is discarded at the edge and the caller gets
+ * an opaque failure instead of the reason. That is not theoretical: readings
+ * died for hours behind it while OpenRouter had been answering, in plain
+ * English and in 45ms, "you requested up to 12000 tokens, but can only afford
+ * 1217". The whole outage was a balance of about two cents, and the platform
+ * ate the sentence that said so. 503 passes through; 502 does not.
+ *
+ * IT MUST NOT RELAY THE UPSTREAM BODY. That body is written by someone else
+ * and can carry anything; it goes to the log, where we can read it, and never
+ * into a response. What the caller gets is our own sentence plus the upstream
+ * status, which is enough to tell a broken key from an empty balance from a
+ * provider outage — the three things anyone debugging this needs to separate.
+ */
+function upstreamError(status, detail) {
+  console.error('openrouter error', status, detail);
+  const out = { upstream: status, code: 'UPSTREAM_UNAVAILABLE', error: 'the reading service is unavailable' };
+  if (status === 402) {
+    // Worth naming exactly: nothing is wrong with the code, the site, or the
+    // reader's balance. The provider account needs topping up, and no reading
+    // can be generated until it is.
+    out.code = 'UPSTREAM_CREDIT';
+    out.error = 'the reading service is out of credit — no reading can be generated until it is topped up';
+  } else if (status === 401 || status === 403) {
+    out.code = 'UPSTREAM_AUTH';
+    out.error = 'the reading service rejected our credentials';
+  } else if (status === 429) {
+    out.code = 'UPSTREAM_RATE';
+    out.error = 'the reading service is rate limiting us — try again shortly';
+  }
+  return json(out, 503);
 }

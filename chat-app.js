@@ -1340,6 +1340,7 @@
       var msg;
       if (status === 401) msg = C.errors.sessionExpired;
       else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
+      else if (status === 503) msg = C.errors.upstreamDown;
       else if (err.__timeout) msg = C.errors.timedOut;
       else msg = "The reading didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
@@ -1410,6 +1411,7 @@
       var msg;
       if (status === 401) msg = C.errors.sessionExpired;
       else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
+      else if (status === 503) msg = C.errors.upstreamDown;
       else if (err.__timeout) msg = C.errors.answerTimedOut;
       else msg = "The answer didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
       tw.cancel();
