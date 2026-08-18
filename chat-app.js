@@ -440,7 +440,99 @@
   function xrLookup(sym) {
     if (!XR_CAT) return null;
     var key = (XR_CAT.aliases && XR_CAT.aliases[sym]) || sym;
-    return XR_CAT.symbols[key] ? { key: key, entry: XR_CAT.symbols[key] } : null;
+    if (XR_CAT.symbols[key]) return { key: key, entry: XR_CAT.symbols[key] };
+    // 巳火 / 子水 — the branch written with its element, which is how a reading
+    // actually says it.
+    var c = XR_CAT.compounds || {};
+    for (var b in c) if (c[b] === key) return { key: b, entry: XR_CAT.symbols[b] };
+    return null;
+  }
+
+  /* ── the parse path ────────────────────────────────────────────────────────
+     Everywhere the reading writes a symbol OUTRIGHT — 妻财, 官鬼, 巳火 — is
+     recoverable by reading the text, with no help from the model and no tokens
+     spent. Only the translated nouns ("审批那一关") need a mark, because nothing
+     in that string says which symbol it came from.
+
+     So the two paths divide the work: this one takes everything literal, the
+     marks take what is genuinely unrecoverable. That also removes the model as
+     a single point of failure — the first run with marks enabled produced six.
+
+     Precision over recall. A single character is matched only where context
+     settles it: a branch before 日/月/年, a trigram beside 卦/宫 or after 上/下.
+     Bare 木火土金水 are never matched — they appear inside ordinary words, and a
+     false underline is worse than a missing one. Each symbol is annotated once
+     per reading, at its first mention; a page where 妻财 is underlined eleven
+     times is a page nobody clicks. */
+  var xrSeen = null;
+  /* Seed the seen-set from the marks BEFORE anything renders. A mark carries a
+     real translation ("跟你分同一份利的那一方"); an auto-match carries only the
+     term. When a reading has both for one symbol, the mark is the one worth
+     showing — and without this the reader got both, three times over for 兄弟. */
+  function xrReset(text) {
+    xrSeen = {};
+    if (!XR_CAT) return;
+    String(text || "").replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+      if (!xrUseful(word, sym)) return "";
+      var hit = xrLookup(sym);
+      if (hit) xrSeen[hit.key] = hit.entry.id;
+      return "";
+    });
+  }
+  function xrHits() {
+    var out = [];
+    for (var k in xrSeen) out.push(xrSeen[k]);
+    return out.sort(function (a, b) { return a - b; });
+  }
+  function xrScanText(chunk) {
+    if (!XR_CAT || !XR_CAT.matching || !xrSeen) return chunk;
+    var M = XR_CAT.matching, out = "", i = 0;
+    function take(term, symKey) {
+      var hit = xrLookup(symKey);
+      if (!hit || xrSeen[hit.key]) return false;
+      xrSeen[hit.key] = hit.entry.id;
+      out += '<button type="button" class="xr" data-xr="' + esc(hit.key) + '" aria-expanded="false">'
+        + term + '</button>';
+      return true;
+    }
+    scan: while (i < chunk.length) {
+      for (var d = 0; d < M.direct.length; d++) {           // longest first
+        var t = M.direct[d];
+        if (chunk.substr(i, t.length) === t) {
+          if (take(t, t)) { i += t.length; continue scan; }
+          out += t; i += t.length; continue scan;
+        }
+      }
+      var ch = chunk.charAt(i), nxt = chunk.charAt(i + 1), prv = chunk.charAt(i - 1);
+      if (M.branches.indexOf(ch) !== -1 && M.branchSuffix.indexOf(nxt) !== -1) {
+        if (take(ch, ch)) { i += 1; continue; }
+      }
+      if (M.trigrams.indexOf(ch) !== -1
+          && (M.trigramSuffix.indexOf(nxt) !== -1 || M.trigramPrefix.indexOf(prv) !== -1)) {
+        if (take(ch, ch)) { i += 1; continue; }
+      }
+      out += ch; i += 1;
+    }
+    return out;
+  }
+  /* Walk the rendered HTML, touching only the text between tags, and never the
+     inside of a mark that already became a button. */
+  function xrAuto(html) {
+    if (!XR_CAT || !xrSeen) return html;
+    var out = "", depth = 0, i = 0;
+    while (i < html.length) {
+      var lt = html.indexOf("<", i);
+      if (lt === -1) { out += depth ? html.slice(i) : xrScanText(html.slice(i)); break; }
+      var text = html.slice(i, lt);
+      out += depth ? text : xrScanText(text);
+      var gt = html.indexOf(">", lt);
+      if (gt === -1) { out += html.slice(lt); break; }
+      var tag = html.slice(lt, gt + 1);
+      if (/^<button[^>]*class="xr"/.test(tag)) depth++;
+      else if (depth && /^<\/button/.test(tag)) depth--;
+      out += tag; i = gt + 1;
+    }
+    return out;
   }
   // Strip the markers to bare words — for the streaming preview, for copy, and
   // as the fallback whenever the annotation cannot be built.
@@ -467,13 +559,24 @@
   function xrInline(h) {
     return h.replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
       if (!xrUseful(word, sym)) return word;
+      /* An underline that does nothing when clicked is worse than no underline:
+         it promises something and then withdraws it. The catalogue is fetched
+         at startup and a reading takes a minute to stream, so by render time it
+         is loaded and an unknown symbol — a state like 旬空, which has no 类象 —
+         can be dropped to plain text here. Before it lands, keep the button and
+         let the click resolve it. */
+      if (XR_CAT && !xrLookup(sym)) return word;
       return '<button type="button" class="xr" data-xr="' + esc(sym) + '" aria-expanded="false">'
         + word + '</button>';
     });
   }
+  xrCatalogue();
 
   function mdInline(s) {
-    var h = xrInline(esc(s));
+    // marks first (they own the braces), then the parse path over what is left,
+    // then the rest — bold/italic/gild use * and |, neither of which appears in
+    // the HTML these two emit.
+    var h = xrAuto(xrInline(esc(s)));
     h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     h = h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
     var n = 0;
@@ -481,6 +584,7 @@
     return h;
   }
   function mdReading(text) {
+    xrReset(text);   // one annotation per symbol per reading; marks claim theirs first
     var lines = String(text || "").replace(/\r/g, "").split("\n");
     // drop a leading heading that only echoes the question ("# 你问：…", "# You asked…")
     while (lines.length && !lines[0].trim()) lines.shift();
@@ -521,7 +625,10 @@
     // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
       var prose = mdReading(msg.text);
-      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') +
+      // 数字集 — which symbols this reading actually touched, by catalogue id.
+      // Cheap to carry, and it is the reading's own index of itself.
+      return '<div class="reading-body" data-xiang="' + xrHits().join(",") + '">'
+        + (prose || '<p class="rd-para"></p>') +
         readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
 

@@ -102,7 +102,10 @@ assert.match(seg, /从没听过六爻的人/, 'and gives a one-line test for whe
 // xrPlain strips it (stream preview, fallback); xrInline renders it. If the two
 // drift, the preview shows raw braces or a marker survives into the prose.
 const pats = chat.match(/\/\\\{\(\[\^\{\}\|\]\{1,40\}\)\\\|\(\[\^\{\}\|\]\{1,12\}\)\\\}\/g/g) || [];
-assert.equal(pats.length, 2, 'xrPlain and xrInline must share one marker pattern, character for character');
+assert.equal(pats.length, 3,
+  'xrPlain (strip), xrInline (render) and xrReset (seed) must share ONE marker pattern, '
+  + 'character for character — if they drift the preview shows raw braces, or a mark renders '
+  + 'without having claimed its symbol');
 
 const RE = /\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g;
 const strip = (s) => s.replace(RE, '$1');
@@ -116,11 +119,19 @@ assert.equal(strip('用 {} 表示空集'), '用 {} 表示空集');
 // gild matches /\|([^|]+)\|/ — two pipes. Two markers on one line offer it the
 // pipe of the first and the pipe of the second, and it would swallow the span
 // between them, destroying both.
-assert.match(chat, /var h = xrInline\(esc\(s\)\);/,
-  'mdInline must resolve 取象 markers before anything else touches the pipes');
+// Order: marks own the braces, so they resolve first; the parse path then
+// scans what is left; bold/italic/gild come last and use * and |, neither of
+// which appears in the HTML the first two emit.
+assert.match(chat, /var h = xrAuto\(xrInline\(esc\(s\)\)\);/,
+  'mdInline must resolve marks, then auto-match, before anything touches the pipes');
 const inlineBody = chat.slice(chat.indexOf('function mdInline'));
-assert.ok(inlineBody.indexOf('xrInline') < inlineBody.indexOf('gild'),
+// anchor on the gild REPLACEMENT, not the word — it appears in a comment above
+const gildAt = inlineBody.indexOf('class="gild');
+assert.ok(gildAt > 0, 'the gild rule is still in mdInline');
+assert.ok(inlineBody.indexOf('xrInline') < gildAt,
   'the gild rule would pair the pipes of two adjacent markers');
+assert.ok(inlineBody.indexOf('xrAuto') < gildAt,
+  'auto-matching must finish before gild rewrites the string');
 
 // ── 5. the stream preview and Copy never leak the machinery ────────────────
 assert.match(chat, /return xrPlain\(value\)/,
@@ -151,5 +162,57 @@ assert.match(seg, /\{实际的词\|符号\}/, 'the syntax is stated literally, o
 assert.match(seg, /8 到 20/, 'the mark count is bounded — a fully underlined page gets clicked nowhere');
 // output_sortis forbids labelled boxes; a "生克分析" section would contradict it.
 assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself, not a new section');
+
+/* ── 9. the parse path ──────────────────────────────────────────────────────
+   Everywhere the reading writes a symbol outright — 妻财, 官鬼, 巳火 — is
+   recoverable from the text with no model help and no tokens. Only translated
+   nouns need a mark. Splitting it this way also removes the model as a single
+   point of failure: the first run with marks enabled produced six.
+
+   Precision over recall is the whole discipline. A bare 木火土金水 appears inside
+   ordinary words, and an underline on 离开 pointing at the Fire trigram is worse
+   than a symbol left unannotated. */
+const M = cat.matching;
+assert.ok(M && M.direct.length >= 20, 'the matcher needs a direct-match list');
+for (let i = 1; i < M.direct.length; i++) {
+  assert.ok(M.direct[i - 1].length >= M.direct[i].length,
+    `direct terms must be longest-first, or 子 matches inside 子孙: "${M.direct[i - 1]}" before "${M.direct[i]}"`);
+}
+assert.ok(M.direct.every((t) => t.length >= 2), 'single characters never match unconditionally');
+assert.deepEqual(M.skipStandalone.slice().sort(), ['土', '水', '木', '火', '金'].sort(),
+  'bare elements are never matched — they live inside ordinary words');
+assert.ok(M.branchSuffix.includes('日') && M.branchSuffix.includes('月'),
+  'a lone branch counts only before 日/月/年');
+assert.ok(M.trigramSuffix.includes('卦') && M.trigramPrefix.includes('上'),
+  'a lone trigram needs 卦/宫 after it or 上/下 before it');
+for (const c of Object.values(cat.compounds)) {
+  assert.ok(M.direct.includes(c), `compound ${c} must be matchable — readings write branches that way`);
+}
+assert.match(chat, /function xrScanText/, 'the scanner exists');
+assert.match(chat, /function xrAuto/, 'and only touches text between tags');
+
+// ── 10. the 数字集 ─────────────────────────────────────────────────────────
+const ids = Object.values(cat.symbols).map((v) => v.id);
+assert.equal(new Set(ids).size, ids.length, "catalogue ids must be unique — they are the set's alphabet");
+assert.ok(ids.every((n) => Number.isInteger(n) && n > 0), 'ids are positive integers');
+assert.match(chat, /data-xiang="/, 'the reading publishes the set of symbols it touched');
+assert.match(chat, /function xrHits\(\)/, 'built from what was actually annotated, not from what was searched for');
+
+// ── 11. a mark beats an auto-match for the same symbol ─────────────────────
+// A mark carries a translation; an auto-match carries only the term. Before the
+// seed, a reading holding both annotated 兄弟 three times.
+assert.match(chat, /function xrReset\(text\)/, 'the seen-set is seeded from the marks before rendering');
+assert.match(chat, /xrReset\(text\);/, 'and mdReading passes the reading in');
+
+// ── 12. states are not 象 ──────────────────────────────────────────────────
+// 旬空 has no 类象: it is a condition of a line, not something the line stands
+// for. A live reading marked {假空|旬空}, which could only ever open nothing.
+for (const t of cat.notSymbols) {
+  assert.ok(!cat.symbols[t], `${t} is a state, not a symbol, and must not be stocked`);
+  assert.ok(!M.direct.includes(t), `${t} must not be matchable`);
+}
+assert.ok(cat.notSymbols.includes('旬空') && cat.notSymbols.includes('用神'),
+  'the state list covers what readings actually say');
+assert.match(seg, /术语的状态\(旬空、月破、假空、发动\)也不要标/, 'and the prompt says so too');
 
 console.log(`xiang-trace: ok — ${syms.length} symbols, all offered and all resolvable`);
