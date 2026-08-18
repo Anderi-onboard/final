@@ -135,13 +135,19 @@
       if (l.marker) flags.push(l.marker==="self"?"World":"Response");
       if (l.void) flags.push("void");
       if (l.dayClash) flags.push("day-clash");
-      if (l.dayCombine) flags.push("day-bind");
+      /* "day-bind" sat next to "month-break" and got read as its twin: two live
+         readings of this board in a row summarised 日合 + 月破 as "日破月破,
+         双破", then explained 亥合寅 correctly a paragraph later. A bind is the
+         opposite of a break — it holds a line still rather than wrecking it —
+         so the token says which it is instead of relying on the reader to know
+         that "bind" is not a kind of breaking. */
+      if (l.dayCombine) flags.push("day-combine(held-not-broken)");
       if (l.monthClash) flags.push("month-break");
       if (l.dayTomb) flags.push("enters-day-tomb");
       if (l.fanyin) flags.push("reversal");
       if (l.fuyin) flags.push("locked");
       if (l.moving) {
-        flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+")"):""));
+        flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+" "+l.transform.relative.cn+")"):""));
         if (l.transform) {
           // said explicitly, because "void" after a transform is ambiguous
           flags.push(l.transform.backToVoid ? "transform-is-void" : "transform-not-void");
@@ -152,9 +158,17 @@
           if (l.transform.backToTomb) flags.push("transform-entombs-back");
         }
       }
+      /* The 六亲 goes out with its Chinese name attached. The English names are
+         glosses, not translations — "Pressure" is 官鬼 and "Peer" is 兄弟 — and
+         a reading written in Chinese has to get back to the glyph before it can
+         use the term. A live reading made exactly that trip and landed wrong,
+         calling the hidden 官鬼酉金 "兄弟酉金": plausible, because for a wealth
+         question the drainer and the wealth-divider both take from the subject,
+         and irrecoverable, because 官鬼 and 兄弟 mean different things to the
+         person reading. Ship both names and there is no trip to make. */
       return {
         line: l.idx+1,
-        relative: l.relative.en,
+        relative: l.relative.en+" ("+l.relative.cn+")",
         najia: l.element.en+" "+l.branch.animal,
         spirit: l.spirit.en,
         strength: l.wangShuai.en,
@@ -214,10 +228,10 @@
       if (fly && fly.moving && fly.transform && fly.transform.branch.bi === h.hiddenBranch.bi) {
         notes.push("the flying line transforms into THIS VERY BRANCH — the hidden one is being brought out by the line that covers it");
       }
-      return h.relative.en + " " + h.hiddenBranch.el.en + " " + h.hiddenBranch.animal +
+      return h.relative.en + " (" + h.relative.cn + ") " + h.hiddenBranch.el.en + " " + h.hiddenBranch.animal +
         " hidden under line " + (h.position + 1) +
         " [role here: " + elRole(h.hiddenBranch.el.gi) + "]" +
-        "; flying line: " + h.flyingRelative.en + " " + h.flyingBranch.el.en + " " + h.flyingBranch.animal +
+        "; flying line: " + h.flyingRelative.en + " (" + h.flyingRelative.cn + ") " + h.flyingBranch.el.en + " " + h.flyingBranch.animal +
         (notes.length ? "; " + notes.join("; ") : "; no direct fly/hidden feed or control") +
         " — rule on can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day";
     });

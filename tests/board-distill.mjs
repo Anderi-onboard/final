@@ -87,11 +87,11 @@ assert.notEqual(distilled.hidden, 'none — all six relatives appear among the l
 
 // 子孙 is the 原神 for a wealth question — the subject's only source, and off
 // the board entirely. It must be named, and named as the source.
-assert.match(distilled.hidden, /Output Fire Snake hidden under line 5/,
+assert.match(distilled.hidden, /Output \(子孙\) Fire Snake hidden under line 5/,
   'the hidden 子孙巳火 under line 5 must be reported');
 assert.match(distilled.hidden, /role here: Support/,
   'and labelled with the role it plays for THIS question — it feeds the subject');
-assert.match(distilled.hidden, /Pressure Metal Rooster hidden under line 3/,
+assert.match(distilled.hidden, /Pressure \(官鬼\) Metal Rooster hidden under line 3/,
   'the second hidden spirit is reported too, not just the most interesting one');
 
 // The three facts that decide 出伏 here, none of which a per-line flag can
@@ -103,7 +103,37 @@ assert.match(distilled.hidden, /flying line is VOID/,
 assert.match(distilled.hidden, /transforms into THIS VERY BRANCH/,
   'a moving line transforming into the branch hidden beneath it IS that branch surfacing');
 
-// ── 3. the promise the system prompt makes is kept ─────────────────────────
+/* ── 3. every 六亲 ships with its Chinese name ──────────────────────────────
+   The English names are glosses, not translations: "Pressure" is 官鬼 and
+   "Peer" is 兄弟. A Chinese reading has to travel back to the glyph before it
+   can use the term, and a live reading made that trip and landed wrong,
+   calling the hidden 官鬼酉金 "兄弟酉金" — plausible, since for a wealth
+   question the drainer and the wealth-divider both take from the subject, and
+   not something the reader can catch. Carrying both names removes the trip. */
+const SIX = { Resource: '父母', Peer: '兄弟', Output: '子孙', Wealth: '妻财', Pressure: '官鬼' };
+for (const l of distilled.lines) {
+  const m = /^(\w+) \((.+)\)$/.exec(l.relative);
+  assert.ok(m, `line ${l.line} relative "${l.relative}" must read "English (中文)"`);
+  assert.equal(m[2], SIX[m[1]], `line ${l.line}: ${m[1]} is ${SIX[m[1]]}, not ${m[2]}`);
+}
+assert.match(distilled.hidden, /Pressure \(官鬼\)/, 'hidden spirits carry the glyph too');
+assert.match(distilled.hidden, /flying line: Wealth \(妻财\)/, 'and so does the flying line');
+assert.match(moving[0].flags, /\(Output 子孙\)/, 'and so does a transform target');
+
+/* ── 4. a bind must not read as a break ────────────────────────────────────
+   Two consecutive live readings of this board summarised 日合 + 月破 as
+   "日破月破, 双破" — then explained 亥合寅 correctly a paragraph later. The
+   tokens were "day-bind" and "month-break", which look like a matched pair. */
+const bound = distilled.lines.filter((l) => /day-combine/.test(l.flags));
+assert.equal(bound.length, 2, 'fixture invariant: lines 2 and 6 are day-combined and month-broken');
+for (const l of bound) {
+  assert.doesNotMatch(l.flags, /day-bind\b/,
+    `line ${l.line}: "day-bind" pairs visually with "month-break" and gets read as one`);
+  assert.match(l.flags, /day-combine\(held-not-broken\)/,
+    `line ${l.line}: the token must say a bind holds rather than breaks`);
+}
+
+// ── 5. the promise the system prompt makes is kept ─────────────────────────
 const sys = AI.buildMessages(board, roles, 'q', 'wealth', undefined, 'en').system;
 if (/hidden spirits/.test(sys)) {
   assert.ok(distilled.hidden,
