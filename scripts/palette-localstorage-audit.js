@@ -17,13 +17,31 @@
    different from assets/palettes/color-groups.json, with nothing wrong on
    either side. Work that was never exported lives only here.
 
-   WHERE TO RUN IT. localStorage is scoped per ORIGIN, and the port is part of
-   the origin. http://localhost:8000, http://localhost:5500, file:// and
-   https://bournewise.com each have their own separate store. Editing on one
-   and looking on another shows you nothing — which reads exactly like the work
-   is gone. Open the same host AND port you edited on. If you do not remember
-   it, try the ports your usual server picks (8000, 8080, 5500, 3000, 5173)
-   and run this on each; it is read-only and safe to run anywhere.
+   WHERE TO RUN IT. localStorage is scoped per ORIGIN — scheme, host AND port,
+   all three. These are five separate stores that cannot see each other:
+
+     http://127.0.0.1:4173     http://localhost:4173     file:///...
+     http://localhost:3000     https://bournewise.com
+
+   Note the first two. 127.0.0.1 and localhost are NOT the same origin, and
+   looking on the wrong one of that pair shows an empty store, which reads
+   exactly like the work is gone. Type the host the way you typed it then.
+
+   THE ORIGIN IS THE ADDRESS, NOT THE FILE. Any page served on that scheme,
+   host and port can read that origin's localStorage — it does not have to be
+   palette-guide.html, and the original files do not have to be there. So if
+   the editor was served on http://127.0.0.1:4173, serving anything at all on
+   127.0.0.1:4173 and opening it is enough to reach the data:
+
+     npx serve . -l 4173          (or: python3 -m http.server 4173 --bind 127.0.0.1)
+
+   IF IT WAS AN AGENT'S BUILT-IN BROWSER. That browser runs inside a sandboxed
+   container which is destroyed when its session ends, and its storage is not
+   written to your machine — which is why nothing turns up locally no matter
+   where you look. The data survives only while that container does. To reach
+   it, go back to THAT session, not a new one, start a server on the same port
+   inside it, and run this there. If the session is gone, so is the store;
+   check before assuming either way.
 */
 (async function paletteAudit() {
   const KEYS = {
