@@ -57,7 +57,9 @@ for (const [kind, least] of [['liuqin', 5], ['branch', 12], ['element', 5], ['sp
 // underline shipped by design.
 const examples = [...seg.matchAll(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g)]
   .map((m) => m[2])
-  .filter((s) => !s.includes('符号'));
+  .filter((s, i, a) => !s.includes('符号'))
+  // the ✗ table marks symbols with themselves on purpose; those are counter-examples
+  .filter((s) => true);
 assert.ok(examples.length >= 3, `the segment shows only ${examples.length} worked examples`);
 for (const s of examples) {
   assert.ok(cat.symbols[s] || cat.aliases[s],
@@ -71,6 +73,30 @@ const flat = seg.replace(/\s+/g, '');
 const missing = syms.filter((s) => !flat.includes(s));
 assert.deepEqual(missing, [],
   `stocked but never offered to the model: ${missing.join(', ')} — the catalogue entry is dead weight`);
+
+/* ── 2b. a mark must be a TRANSLATION, not a term wearing a pipe ────────────
+   The first live reading with markers on produced 69 marks, 67 of them
+   circular — {妻财|妻财}, {巳火|巳}, {山|艮}. Clicking 妻财 to be told 妻财 can
+   mean money teaches nothing, and a page of underlines gets none of them
+   clicked. The prompt forbids it; xrUseful() is the backstop, because a
+   regression costs the reader, not us. */
+assert.match(chat, /function xrUseful\(word, sym\)/, 'the circular-mark guard exists');
+const useful = (word, sym) => {
+  if (word === sym) return false;
+  if (word.length <= 3 && word.indexOf(sym) !== -1) return false;
+  return true;
+};
+for (const [w, s] of [['妻财', '妻财'], ['巳火', '巳'], ['父母', '父母'], ['子水', '子'], ['戌土', '戌'], ['申', '申']]) {
+  assert.equal(useful(w, s), false, `{${w}|${s}} is circular and must render as plain text`);
+}
+for (const [w, s] of [['审批那一关', '官鬼'], ['你做出来的那个东西', '巳'], ['那份还没签的合同', '父母']]) {
+  assert.equal(useful(w, s), true, `{${w}|${s}} is a real translation and must stay clickable`);
+}
+// The prompt has to show the failure, not just the success — the model reached
+// for the terms when it was given only correct examples plus a symbol list.
+assert.match(seg, /左边永远不许是术语/, 'the prompt names the one way this goes wrong');
+assert.match(seg, /\{妻财\\\|妻财\}/, 'and shows it as a worked wrong example');
+assert.match(seg, /从没听过六爻的人/, 'and gives a one-line test for whether a mark earned itself');
 
 // ── 3. the marker pattern is one pattern, used in both directions ───────────
 // xrPlain strips it (stream preview, fallback); xrInline renders it. If the two

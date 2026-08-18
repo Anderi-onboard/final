@@ -447,10 +447,26 @@
   function xrPlain(s) {
     return String(s || "").replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, "$1");
   }
+  /* A mark is only worth an underline if a TRANSLATION happened. Tagging a term
+     with itself — {妻财|妻财}, {巳火|巳} — is circular: the reader clicks 妻财
+     to be told 妻财 can mean money. Measured on the first live reading with
+     markers enabled: 69 marks, 67 of them circular, which would have printed a
+     page of underlines nobody would click any of.
+
+     The prompt now forbids it outright; this is the backstop, because the cost
+     of a regression lands entirely on the reader. A word that is just the
+     symbol, or the symbol plus one element character, renders as ordinary
+     text. */
+  function xrUseful(word, sym) {
+    if (word === sym) return false;
+    if (word.length <= 3 && word.indexOf(sym) !== -1) return false;
+    return true;
+  }
   /* Rendered before the |gild| rule below, which needs two pipes and would
      otherwise pair the pipe of one marker with the pipe of the next. */
   function xrInline(h) {
     return h.replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+      if (!xrUseful(word, sym)) return word;
       return '<button type="button" class="xr" data-xr="' + esc(sym) + '" aria-expanded="false">'
         + word + '</button>';
     });
