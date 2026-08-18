@@ -121,20 +121,37 @@
     var perLine = (roles && roles.perLine) || {};
     var L = board.lines.map(function(l){
       var r = perLine[l.idx] || { roleEn: "" };
+      /* ORDER MATTERS. Every flag here describes THIS line, except the ones
+         about the transform — so the transform goes LAST, after which anything
+         may be read as belonging to it. "MOVING→Fire Snake (Output)" used to be
+         pushed FIRST and the line's own "void" second, producing the string
+         "MOVING→Fire Snake (Output) void" — which reads, correctly and wrongly,
+         as "the Fire Snake is void". A live reading took it that way and built
+         a section and a timing claim on a Snake that was never void; the void
+         belonged to the Rat it transformed FROM. The engine already knows the
+         difference (transform.backToVoid), so state it rather than leave the
+         reader to infer it from word order. */
       var flags = [];
-      if (l.moving) flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+")"):""));
       if (l.marker) flags.push(l.marker==="self"?"World":"Response");
       if (l.void) flags.push("void");
       if (l.dayClash) flags.push("day-clash");
       if (l.dayCombine) flags.push("day-bind");
       if (l.monthClash) flags.push("month-break");
       if (l.dayTomb) flags.push("enters-day-tomb");
-      if (l.transform&&l.transform.jinTui) flags.push(l.transform.jinTui.en);
-      if (l.transform&&l.transform.clashBen) flags.push("transform-clashes-back");
-      if (l.transform&&l.transform.feedsBen) flags.push("transform-feeds-back");
-      if (l.transform&&l.transform.controlsBen) flags.push("transform-controls-back");
       if (l.fanyin) flags.push("reversal");
       if (l.fuyin) flags.push("locked");
+      if (l.moving) {
+        flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+")"):""));
+        if (l.transform) {
+          // said explicitly, because "void" after a transform is ambiguous
+          flags.push(l.transform.backToVoid ? "transform-is-void" : "transform-not-void");
+          if (l.transform.jinTui) flags.push(l.transform.jinTui.en);
+          if (l.transform.clashBen) flags.push("transform-clashes-back");
+          if (l.transform.feedsBen) flags.push("transform-feeds-back");
+          if (l.transform.controlsBen) flags.push("transform-controls-back");
+          if (l.transform.backToTomb) flags.push("transform-entombs-back");
+        }
+      }
       return {
         line: l.idx+1,
         relative: l.relative.en,
@@ -160,6 +177,54 @@
         (fh.length ? "; " + fh.join(", ") : "; no direct fly/hidden feed or control") +
         " — must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too";
     }
+    /* ── 伏神 roster ────────────────────────────────────────────────────────
+       Every 六亲 missing from the six lines lies hidden under a flying line,
+       and the block above reports that ONLY when the missing one happens to be
+       the 用神. That is too narrow by exactly the case that decides most
+       boards: when the 原神 is the one off the board, the subject has no
+       visible source at all, and whether it can surface IS the answer.
+
+       Measured on a live reading. Wealth question, 用神 妻财 present on two
+       lines, so nothing here fired — while 子孙 (its only generator; the board
+       held no Fire whatsoever) sat hidden under the single moving line, and
+       官鬼 sat hidden under the other 妻财. The model was handed a subject with
+       no source and never told the source existed. It reconstructed 子孙 from
+       the transform target alone and missed that the same branch was also the
+       hidden one underneath — which is the whole 出伏 story.
+
+       So: report them all, each with the role it plays for THIS question, and
+       with the facts that decide 出伏 — including two the per-line flags cannot
+       carry, because they are relations between a line and something not on it:
+       a void or moving flying line loosens its grip, and a moving line that
+       transforms into the very branch hidden beneath it is that branch coming
+       out. Judgement stays with the model; these are its inputs. */
+    var elRole = function (gi) {
+      var e = roles.elements || {};
+      var k = gi===e.yong?"yong":gi===e.yuan?"yuan":gi===e.ji?"ji":gi===e.chou?"chou":"drain";
+      return (roles.info && roles.info[k]) ? roles.info[k].en + " — " + roles.info[k].desc : k;
+    };
+    var hiddenAll = (board.hidden || []).map(function (h) {
+      var fly = board.lines[h.position];
+      var notes = [];
+      if (h.flyGeneratesHidden) notes.push("flying line feeds it (helps it surface)");
+      if (h.hiddenControlsFly) notes.push("it controls the flying line (can surface)");
+      if (h.flyControlsHidden) notes.push("flying line controls it (suppressed)");
+      if (fly && fly.void) notes.push("flying line is VOID — a void flying line lets the hidden one surface");
+      if (fly && fly.moving) notes.push("flying line is MOVING");
+      if (fly && fly.moving && fly.transform && fly.transform.branch.bi === h.hiddenBranch.bi) {
+        notes.push("the flying line transforms into THIS VERY BRANCH — the hidden one is being brought out by the line that covers it");
+      }
+      return h.relative.en + " " + h.hiddenBranch.el.en + " " + h.hiddenBranch.animal +
+        " hidden under line " + (h.position + 1) +
+        " [role here: " + elRole(h.hiddenBranch.el.gi) + "]" +
+        "; flying line: " + h.flyingRelative.en + " " + h.flyingBranch.el.en + " " + h.flyingBranch.animal +
+        (notes.length ? "; " + notes.join("; ") : "; no direct fly/hidden feed or control") +
+        " — rule on can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day";
+    });
+    var hiddenStr = hiddenAll.length
+      ? hiddenAll.join("  ||  ")
+      : "none — all six relatives appear among the lines";
+
     // 三合局 — elemental blocs formed by three (or two-plus-peak) line branches
     var sanhe = (board.sanhe || []).map(function (s) {
       return s.type + " " + s.element.en + " bloc on lines " + s.lines.join("/") +
@@ -192,6 +257,7 @@
       transformed: board.bian ? (board.bian.name||"")+" — "+board.bian.upper.en+" over "+board.bian.lower.en+(board.bian.clash?" · Clashing":board.bian.combine?" · Combining":"") : "none (still figure)",
       worldElement: board.lines[board.ben.worldLi].element.en,
       yongshen: yongStr,
+      hidden: hiddenStr,
       lines: L
     };
   }
