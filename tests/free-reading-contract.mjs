@@ -15,7 +15,7 @@
  */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { PLAN_GRANT, SIGNUP_FREE_READINGS, consumeFreeReading, publicUser } from '../functions/_lib/db.js';
+import { PLAN_GRANT, SIGNUP_FREE_READINGS, consumeFreeReading, releaseFreeReading, publicUser } from '../functions/_lib/db.js';
 
 const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '');
 
@@ -118,7 +118,7 @@ const noColumn = {
    declined. Declining would leave a fresh account with no units and no reading
    — a signup that can do nothing, which is the failure the old 1,500-unit
    grant existed to prevent. Verified both ways. */
-function ledgerDb(priorCasts) {
+function ledgerDb(priorCasts, claims = 0, voids = 0) {
   const rows = [];
   return {
     rows,
@@ -127,7 +127,7 @@ function ledgerDb(priorCasts) {
         sql, args: [],
         bind(...a) { this.args = a; return this; },
         async first() {
-          if (this.sql.includes('COUNT(*)')) return { n: priorCasts };
+          if (this.sql.includes('SUM(')) return { spent: priorCasts, claims, voids };
           if (this.sql.startsWith('SELECT units')) return { units: 0 };
           return null;
         },
@@ -144,11 +144,57 @@ assert.equal(firstEver.claimed, true,
   'before the migration, an account with no casting in its ledger must still get its free reading');
 assert.equal(fresh.rows.length, 1, 'the derived claim must leave its own ledger row');
 
+const claimedNotVoided = ledgerDb(0, 1, 0);
+assert.equal((await consumeFreeReading(claimedNotVoided, 'u1', 'free-reading:sortis')).claimed, false,
+  'an outstanding claim must count as used — otherwise a reader gets unlimited free readings '
+  + 'by starting one and never finishing it');
+
 const returning = ledgerDb(3);
 const notAgain = await consumeFreeReading(returning, 'u1', 'free-reading:sortis');
 assert.equal(notAgain.claimed, false,
   'an account that has already cast must not get a second free reading from the fallback');
 assert.equal(returning.rows.length, 0, 'a declined claim writes nothing');
+
+/* ── a claim that delivered nothing must be given back ────────────────────
+   The claim happens BEFORE generation, which is what stops two simultaneous
+   first readings both running free. Everything between that claim and the
+   first delivered byte is therefore a window where a new account can lose the
+   one thing it came for. Measured in production: a 502 on the streaming path
+   burned the entitlement and the reader got an error page. */
+assert.ok(/releaseFreeReading/.test(dbSrc), 'there is no way to give a free reading back');
+assert.ok(/freeClaim/.test(claudeCode),
+  'the request does not carry its free-reading claim, so nothing can return it');
+assert.ok(/delivered === 0/.test(claudeCode) && /releaseFreeReading\(o\.env\.DB/.test(claudeCode),
+  'a stream that delivered nothing does not return the entitlement');
+assert.ok(/pumpAndSettle\([\s\S]{0,400}?\}\)\.catch\(/.test(claudeCode),
+  'pumpAndSettle runs under waitUntil with no catch — an unhandled rejection there '
+  + 'takes the invocation down and the caller sees a bare 502');
+
+// The ledger fallback must net claims against voids, or a released claim still
+// reads as the account's free reading having been used.
+const releasedDb = (() => {
+  const rows = [];
+  return {
+    rows,
+    prepare(sql) {
+      return {
+        sql, args: [],
+        bind(...a) { this.args = a; return this; },
+        async first() {
+          if (this.sql.includes('SUM(')) return { spent: 0, claims: 1, voids: 1 };
+          if (this.sql.startsWith('SELECT units')) return { units: 0 };
+          return null;
+        },
+        async run() { if (this.sql.startsWith('INSERT INTO ledger')) rows.push(this.args); return {}; }
+      };
+    },
+    async batch() { throw new Error('no such column: free_readings'); }
+  };
+})();
+const afterRelease = await consumeFreeReading(releasedDb, 'u1', 'free-reading:sortis');
+assert.equal(afterRelease.claimed, true,
+  'a claim that was released must be claimable again — otherwise a failed request '
+  + 'costs the reader their free reading permanently');
 
 console.log('free reading OK — one per signup, claimable once under a race, '
   + 'never consumed by a follow-up, visible to the interface, and safe before its migration');

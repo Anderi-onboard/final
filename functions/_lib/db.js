@@ -222,16 +222,46 @@ export async function createEmailUser(db, { email, name, passwordHash }) {
   return db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
 }
 
+/* Give back a free reading that was claimed for a request that then delivered
+   nothing. The claim has to happen BEFORE generation — that is what stops two
+   simultaneous first readings both running free — so any failure between the
+   claim and the first delivered byte would otherwise cost a new account the one
+   thing it came for, silently. Measured: a 502 on the streaming path burned the
+   entitlement and the reader saw an error page.
+
+   Both storage modes are reversed. With the column, increment it back. Without
+   it, the claim was a ledger row, and the ledger is append-only — so write a
+   void row and have the pre-migration count net them off. */
+export async function releaseFreeReading(db, userId, reason) {
+  const t = now();
+  try {
+    await db.prepare('UPDATE users SET free_readings=free_readings+1, updated_at=? WHERE id=?')
+      .bind(t, userId).run();
+  } catch (e) { /* column not migrated — the ledger row below is the record */ }
+  try {
+    await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) SELECT id,?,?,units,? FROM users WHERE id=?')
+      .bind(0, 'free-reading-void:' + (reason || ''), t, userId).run();
+  } catch (e) { /* nothing else to undo */ }
+}
+
 /* Pre-migration fallback for the signup entitlement: an account with no
    casting in its ledger has not had its free reading yet. Derived rather than
    stored, so it works on a database that has never been migrated. */
 async function consumeFirstReadingFromLedger(db, userId, reason) {
   const t = now();
   try {
+    /* Claims minus voids. A claim that was released because the request
+       delivered nothing must not count as the account's free reading. */
     const prior = await db.prepare(
-      "SELECT COUNT(*) AS n FROM ledger WHERE user_id=? AND (reason LIKE 'cast:%' OR reason LIKE 'follow:%' OR reason LIKE 'free-reading%')"
+      "SELECT"
+      + " SUM(CASE WHEN reason LIKE 'cast:%' OR reason LIKE 'follow:%' THEN 1 ELSE 0 END) AS spent,"
+      + " SUM(CASE WHEN reason LIKE 'free-reading:%' OR reason = 'free-reading' THEN 1 ELSE 0 END) AS claims,"
+      + " SUM(CASE WHEN reason LIKE 'free-reading-void:%' THEN 1 ELSE 0 END) AS voids"
+      + " FROM ledger WHERE user_id=?"
     ).bind(userId).first();
-    if (prior && Number(prior.n) > 0) return { claimed: false, units: null, freeReadings: 0 };
+    const used = Number((prior && prior.spent) || 0)
+      + Math.max(0, Number((prior && prior.claims) || 0) - Number((prior && prior.voids) || 0));
+    if (used > 0) return { claimed: false, units: null, freeReadings: 0 };
     const u = await db.prepare('SELECT units FROM users WHERE id=?').bind(userId).first();
     await db.prepare('INSERT INTO ledger (user_id,delta,reason,balance,created_at) VALUES (?,?,?,?,?)')
       .bind(userId, 0, reason || 'free-reading', u ? u.units : 0, t).run();

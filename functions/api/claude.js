@@ -46,7 +46,7 @@
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk, consumeFreeReading } from '../_lib/db.js';
+import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk, consumeFreeReading, releaseFreeReading } from '../_lib/db.js';
 import { PromptEngine } from '../_lib/prompt-engine.js';
 
 // Same-origin only. The old '*' let any page on the internet POST here; the
@@ -138,7 +138,9 @@ export async function onRequestPost(context) {
   if (API_DISABLED) {
     return json({ error: 'AI API temporarily disabled', code: 'API_DISABLED' }, 503);
   }
-  let chargeTo = null; // { userId, reason } — who to bill once the reading is written
+  let chargeTo = null;  // { userId, reason } — who to bill once the reading is written
+  let freeClaim = null; // { userId, reason } — a signup entitlement already spent
+                        // on this request, to be returned if nothing is delivered
   try {
     if (!env.OPENROUTER_API_KEY) {
       return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
@@ -160,6 +162,7 @@ export async function onRequestPost(context) {
       const gate = await guardRequest({ request, env, db, product, mode });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.charge) chargeTo = gate.charge;
+      if (gate.freeClaim) freeClaim = gate.freeClaim;
       if (gate.unitsRemaining != null) unitsRemaining = gate.unitsRemaining;
     }
     // no DB bound: unauthenticated, unmetered — documented limitation above.
@@ -245,6 +248,7 @@ export async function onRequestPost(context) {
       });
 
       if (!upstream.ok || !upstream.body) {
+        if (freeClaim) { await releaseFreeReading(db, freeClaim.userId, freeClaim.reason); freeClaim = null; }
         const detail = await upstream.text().catch(() => '');
         // Nothing was held and no tokens were produced, so there is nothing to
         // undo — the reader is simply not charged.
@@ -263,9 +267,17 @@ export async function onRequestPost(context) {
       const { readable, writable } = new TransformStream();
       const promptText = JSON.stringify(payload.messages);
       const run = pumpAndSettle({
-        upstream, writable, env, mode, product,
-        chargeTo, unitsRemaining, model,
+        upstream, writable, env, db, mode, product,
+        chargeTo, freeClaim, unitsRemaining, model,
         inChars: promptText.length, inCjk: countCjk(promptText)
+      }).catch(async (e) => {
+        /* An unhandled rejection inside waitUntil takes the whole invocation
+           down and the caller sees a bare 502 with no body — which is what a
+           reader hit, losing their one free reading to an error page. Contain
+           it here, and give the entitlement back. */
+        console.error('pumpAndSettle failed', e);
+        if (freeClaim) { try { await releaseFreeReading(env.DB, freeClaim.userId, freeClaim.reason); } catch (e2) {} }
+        try { await writable.getWriter().close(); } catch (e2) {}
       });
       if (context.waitUntil) context.waitUntil(run);
       return new Response(readable, {
@@ -397,10 +409,15 @@ async function pumpAndSettle(o) {
   // that cost is ours, not theirs. Billing a reader for prose they never saw is
   // the one settlement outcome that cannot be defended, and metered billing
   // without a reservation is exactly what makes it possible.
-  if (o.chargeTo && delivered === 0) {
-    console.error('claude proxy: stream delivered nothing, not charging',
+  if (delivered === 0) {
+    console.error('claude proxy: stream delivered nothing',
       { model: o.model, upstreamChars: outChars, finish });
+    // Nothing reached the reader, so neither the balance nor the signup
+    // entitlement may be spent on it.
     o.chargeTo = null;
+    if (o.freeClaim && o.env && o.env.DB) {
+      try { await releaseFreeReading(o.env.DB, o.freeClaim.userId, o.freeClaim.reason); } catch (e) {}
+    }
   }
   if (o.chargeTo) {
     try {
@@ -541,7 +558,14 @@ async function guardRequest({ request, env, db, product, mode }) {
          derived from the ledger instead of stored. */
       const claim = await consumeFreeReading(db, user.id, 'free-reading:' + product);
       if (claim.claimed) {
-        return { charge: null, unitsRemaining: claim.units, freeReadings: claim.freeReadings };
+        // freeClaim travels with the request so it can be handed back if this
+        // reading never reaches the reader.
+        return {
+          charge: null,
+          freeClaim: { userId: user.id, reason: 'free-reading:' + product },
+          unitsRemaining: claim.units,
+          freeReadings: claim.freeReadings
+        };
       }
       // Already used, or lost the race — fall through to the balance.
     }
