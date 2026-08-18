@@ -710,8 +710,10 @@ body[data-page="settings"] .pagetitle h1 {
 html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is(
   .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
   .why-panel, .why-card, .method, .close,
-  .progress, .guide-stage, .lesson-card, .example, .rate,
-  .ledgerstrip, .rate-card, .estimator, .pack, .term
+  .progress, .guide-stage, .lesson-card, .example, .rate
+  /* pricing's carriers are no longer here: .plan, .rate-card, .estimator,
+     .pack, .term and .ledgerstrip all take the one neutral glass now, so
+     the page stops rendering three white cards above a field of khaki. */
 ) {
   background-color: color-mix(in srgb, var(--bw-palette-1) 52%, rgba(42,32,22,.18)) !important;
   background-image: none !important;
@@ -729,8 +731,14 @@ html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is
    --bw-palette-1 at 52% and blurs at 13px rather than the frosted filter;
    it currently loses to luxury-glass.css on the pages that load it, but it
    is the same violation and should be retired the same way. */
-body[data-page="pricing"] .plan,
-body[data-page="pricing"] .topup,
+/* Every carrier on pricing takes the SAME material. .plan was on the neutral
+   glass while .rate-card, .estimator, .pack and .term were still on the
+   legacy palette-tinted block (--bw-palette-1 52% over a dark mix), so the
+   page rendered three white cards above a page of khaki boxes — two
+   materials, one page. Screenshotting over the live range is what made it
+   obvious; a fullPage capture paints the fixed backdrop only once at the
+   top and hides it. */
+body[data-page="pricing"] :is(.plan, .topup, .rate-card, .estimator, .pack, .term, .ledgerstrip),
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
   background: var(--ui-glass); border-color: var(--ui-line);
