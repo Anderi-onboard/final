@@ -26,15 +26,15 @@
        and starts reading as a faint ruling — which is what these were. */
     tally: function (w, h) {
       var pitch = 15;
-      return { stroke: M.tally(w, h, { pitch: pitch, lean: 4.5 }), width: pitch * .30 };
+      return { stroke: M.tally(w, h, { pitch: pitch, lean: 4.5 }), width: pitch * .38 };
     },
     wave: function (w, h) {
       var pitch = 26;
-      return { stroke: M.waveField(w, h, { pitch: pitch, amp: .26 }), width: pitch * .27 };
+      return { stroke: M.waveField(w, h, { pitch: pitch, amp: .26 }), width: pitch * .36 };
     },
     scallop: function (w, h) {
       var pitch = Math.max(34, w / 12);
-      return { stroke: M.scallop(w, h, { pitch: pitch }), width: pitch * .21 };
+      return { stroke: M.scallop(w, h, { pitch: pitch }), width: pitch * .28 };
     }
   };
   var MARK = {

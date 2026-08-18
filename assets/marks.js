@@ -81,13 +81,13 @@
       out += '<path d="' + top + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="currentColor" opacity="'
         + ((0.11 + t * 0.10) * fo).toFixed(3) + '"/>';
       out += '<path d="' + top + '" fill="none" stroke="currentColor" stroke-width="'
-        + (2.3 - t * 0.4).toFixed(2) + '" opacity="'
+        + (3.7 - t * 0.65).toFixed(2) + '" opacity="'
         + (0.7 - t * 0.12).toFixed(2) + '" stroke-linecap="round"/>';
       /* contour lines below each crest, thinning with distance — the range's
          own device for reading depth without shading */
       for (var k = 1; k <= 2 + i; k++) {
         out += '<path d="' + top + '" fill="none" stroke="currentColor" stroke-width="'
-          + (1.5 - t * 0.35).toFixed(2) + '" opacity="' + (0.3 - t * 0.06).toFixed(2)
+          + (2.5 - t * 0.55).toFixed(2) + '" opacity="' + (0.3 - t * 0.06).toFixed(2)
           + '" transform="translate(0 ' + R(k * (7 + i * 2)) + ')"/>';
       }
     }
