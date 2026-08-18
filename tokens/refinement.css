@@ -788,3 +788,102 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
 @media (max-width:880px) {
   body[data-page="app"]:not(.is-empty) .composer-zone::before { left: 18px; right: 18px; }
 }
+
+/* ── 取象溯源 ────────────────────────────────────────────────────────────────
+   A reading turns a symbol into one concrete noun. These marks show where that
+   happened and, on click, what else the symbol covers.
+
+   The register is deliberate. Underneath a verdict, a list of alternatives can
+   read two ways: as the reading hedging, or as the map the choice was made
+   from. It is the second. So the mark sits QUIET — a dotted rule the colour of
+   the text, no colour of its own, nothing that competes with the |gild| terms
+   or asks to be clicked. It offers itself on hover and not before.
+
+   The casting figure has no pointer interaction and keeps none: this lives in
+   the prose only, and it opens on CLICK. Hover changes the affordance, never
+   the content — a tooltip that fires on hover would put the machinery in the
+   way of anyone simply reading. */
+.reading-body .xr {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px dotted color-mix(in srgb, var(--ink) 38%, transparent);
+  transition: border-color var(--dur-fast, 120ms) var(--ease-out, ease),
+              color var(--dur-fast, 120ms) var(--ease-out, ease);
+}
+/* A comfortable tap target without disturbing the line box it sits in. */
+.reading-body .xr::before {
+  content: "";
+  position: absolute;
+  inset: -11px -4px;
+}
+.reading-body .xr:hover,
+.reading-body .xr:focus-visible {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+  border-bottom-style: solid;
+}
+.reading-body .xr:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+.reading-body .xr[aria-expanded="true"] {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+  border-bottom-style: solid;
+}
+/* Catalogue missing or symbol unknown — never leave a dead underline. */
+.reading-body .xr-mute { border-bottom: 0; cursor: default; color: inherit; }
+.reading-body .xr-mute::before { content: none; }
+
+.reading-body .xr-panel {
+  margin: 10px 0 18px;
+  padding: 12px 14px 13px;
+  border-left: 2px solid color-mix(in srgb, var(--terracotta) 42%, transparent);
+  background: color-mix(in srgb, var(--bw-palette-1) 42%, transparent);
+  border-radius: 0 var(--ui-radius-small, 12px) var(--ui-radius-small, 12px) 0;
+  animation: xr-in var(--dur-fast, 120ms) var(--ease-out, ease) both;
+}
+.reading-body .xr-lead {
+  margin: 0 0 7px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  color: var(--dim);
+}
+.reading-body .xr-panel[lang="zh"] .xr-lead { line-height: 1.65; }
+/* Multi-column, so a dozen short entries read as one field rather than a
+   column the eye has to walk down. */
+.reading-body .xr-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 22px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  line-height: 1.72;
+  color: var(--dim);
+}
+.reading-body .xr-list li { break-inside: avoid; padding-left: 9px; position: relative; }
+.reading-body .xr-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--terracotta) 55%, transparent);
+}
+@media (min-width: 760px) { .reading-body .xr-list { columns: 3; } }
+@media (max-width: 480px) { .reading-body .xr-list { columns: 1; } }
+
+@keyframes xr-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .reading-body .xr-panel { animation: none; }
+  .reading-body .xr { transition: none; }
+}

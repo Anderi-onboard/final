@@ -412,8 +412,52 @@
      - lists; the old renderer dumped only paras[0]+paras[1] as raw text, so a
      full reading collapsed to two lines of literal "#"/"**" (the bug the user
      saw). Inline: **bold**, *italic*, and |gilded| key terms. */
+  /* ── 取象溯源 ──────────────────────────────────────────────────────────
+     The reading marks the moment a symbol became a real-world noun:
+     {审批那一关|官鬼}. The reader sees only 审批那一关, underlined; clicking it
+     opens what else 官鬼 covers.
+
+     Only the PAIRING is written by the model — four tokens. Every list comes
+     from assets/xiangshu/lei-xiang.json, fetched once and cached here, because
+     a symbol carries dozens of nouns and generating them would cost hundreds
+     of tokens a reading, differ every time, and be impossible to check.
+
+     Two things this must never do. It must never leave a dead underline: an
+     unknown symbol, or a catalogue that failed to load, renders as ordinary
+     text with the braces stripped — the reading is what matters and it is
+     never held hostage to an annotation. And it must never touch the casting
+     figure, which has no pointer interaction at all and is staying that way. */
+  var XR_CAT = null, xrPending = null;
+  function xrCatalogue() {
+    if (XR_CAT) return Promise.resolve(XR_CAT);
+    if (xrPending) return xrPending;
+    xrPending = fetch("./assets/xiangshu/lei-xiang.json?v=" + (window.BW_BUILD || ""), { cache: "force-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { XR_CAT = (j && j.symbols) ? j : null; return XR_CAT; })
+      .catch(function () { return null; });
+    return xrPending;
+  }
+  function xrLookup(sym) {
+    if (!XR_CAT) return null;
+    var key = (XR_CAT.aliases && XR_CAT.aliases[sym]) || sym;
+    return XR_CAT.symbols[key] ? { key: key, entry: XR_CAT.symbols[key] } : null;
+  }
+  // Strip the markers to bare words — for the streaming preview, for copy, and
+  // as the fallback whenever the annotation cannot be built.
+  function xrPlain(s) {
+    return String(s || "").replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, "$1");
+  }
+  /* Rendered before the |gild| rule below, which needs two pipes and would
+     otherwise pair the pipe of one marker with the pipe of the next. */
+  function xrInline(h) {
+    return h.replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+      return '<button type="button" class="xr" data-xr="' + esc(sym) + '" aria-expanded="false">'
+        + word + '</button>';
+    });
+  }
+
   function mdInline(s) {
-    var h = esc(s);
+    var h = xrInline(esc(s));
     h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     h = h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
     var n = 0;
@@ -838,7 +882,9 @@
     line.appendChild(textNode);
     el.appendChild(line);
     function readableStreamText(value) {
-      return String(value || "")
+      // 取象 markers first: the pipe strip below would otherwise leave
+      // "{审批那一关官鬼}" on screen for the length of the stream.
+      return xrPlain(value)
         .replace(/^#{1,6}\s*/gm, "")
         .replace(/\*\*/g, "")
         .replace(/(^|[^*])\*([^*\n]*)\*?/g, "$1$2")
@@ -1502,6 +1548,49 @@
     if (cMenu && !cMenu.contains(e.target) && e.target !== cBtn && !(cBtn && cBtn.contains(e.target))) closeCarry();
   });
 
+  /* 取象溯源 — open what else a symbol covers, under the sentence that used it.
+     Delegated, because the reading's markdown tree is rebuilt on every stream
+     tick and per-element listeners would be re-attached hundreds of times.
+
+     The panel goes after the block the word sits in rather than under the word
+     itself: an absolutely-positioned box under an inline word overlaps the
+     lines below it, and a reading is a wall of text with nowhere to overlap
+     into. The word is repeated as the panel's first line, so the connection is
+     visible without a pointer. */
+  document.addEventListener("click", function (e) {
+    var btn = e.target && e.target.closest && e.target.closest("button.xr");
+    if (!btn) return;
+    e.preventDefault();
+    var open = btn.getAttribute("aria-expanded") === "true";
+    var host = btn.closest(".rd-para, .rd-h2, .rd-h3, .rd-title, li") || btn.parentNode;
+    var existing = btn.__xrPanel;
+    if (open) {
+      btn.setAttribute("aria-expanded", "false");
+      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      btn.__xrPanel = null;
+      return;
+    }
+    xrCatalogue().then(function () {
+      var hit = xrLookup(btn.getAttribute("data-xr"));
+      // No entry, or the catalogue never loaded: leave the reading alone.
+      if (!hit) { btn.classList.add("xr-mute"); btn.setAttribute("aria-expanded", "false"); return; }
+      var zh = isZh((host.textContent || "") + (btn.textContent || ""));
+      var list = zh ? hit.entry.zh : (hit.entry.enAlso || hit.entry.zh);
+      var name = zh ? hit.key : (hit.entry.en || hit.key);
+      var p = document.createElement("div");
+      p.className = "xr-panel";
+      p.setAttribute("lang", zh ? "zh" : "en");
+      var lead = zh
+        ? "「" + btn.textContent + "」这里读的是 " + name + "。同一路还管:"
+        : "“" + btn.textContent + "” is " + name + " read one way. The same one also covers:";
+      var items = list.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+      p.innerHTML = '<p class="xr-lead">' + esc(lead) + "</p><ul class=\"xr-list\">" + items + "</ul>";
+      host.parentNode.insertBefore(p, host.nextSibling);
+      btn.setAttribute("aria-expanded", "true");
+      btn.__xrPanel = p;
+    });
+  });
+
   $("newCast").addEventListener("click", function () {
     if (window.BWFigure && window.BWFigure.cancel) window.BWFigure.cancel();
     busy = false;
@@ -1662,7 +1751,14 @@
     var art = btn.closest(".reading");
     var body = art && art.querySelector(".reading-body");
     if (!body) return;
-    var text = (body.innerText || body.textContent || "").trim();
+    /* Copy the reading, not the annotations. An open 取象 panel is a sibling of
+       the paragraph it belongs to, so innerText on the whole body would paste
+       a symbol's catalogue into the middle of the prose. Walk the blocks and
+       skip the panels; the marked words themselves are already plain text. */
+    var text = Array.prototype.filter
+      .call(body.children, function (el) { return !el.classList.contains("xr-panel"); })
+      .map(function (el) { return el.innerText || el.textContent || ""; })
+      .join("\n\n").replace(/\n{3,}/g, "\n\n").trim();
     var lbl = btn.querySelector(".rd-copy-lbl");
     function ok() {
       btn.classList.add("done");
