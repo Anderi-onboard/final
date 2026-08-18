@@ -136,3 +136,22 @@ body[data-page="legal"] :is(.mtn-bg, .mtn-sky) { display: none !important; }
   body[data-page="legal"] .clause :is(p, ul) { grid-column: 1; }
   body[data-page="legal"] .clause h2 { display: flex; gap: 10px; }
 }
+
+/* ── .headline and .pull ────────────────────────────────────────────────────
+   Three separate rules in refinement.css were still handing these two glass:
+   the shared carrier block, its filter twin, and a legal-specific rule. Rather
+   than chase each one, this settles it at the same specificity shape the
+   strongest of them uses — html[data-skin] + body[data-page] + :is() = (0,3,2)
+   — so source order decides and legal.css, which loads last here, wins.
+   Glass is wrong on this route at all: the range is off, so a blurred
+   translucent carrier has nothing to refract and composites to a grey smear. */
+html[data-skin="paper"] body[data-page="legal"] :is(.headline, .pull) {
+  background: var(--bk-cream) !important;
+  border: 0 !important;
+  border-left: 3px solid var(--terracotta) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 18px 22px;
+}

@@ -703,7 +703,11 @@ body[data-page="settings"] .pagetitle h1 {
 /* Text-page material: a coloured glass film, not a thick card. The dynamic
    palette supplies both tint layers, while the hairline and shallow shadow
    keep boxes visually weightless. */
-html[data-skin="paper"] body:not([data-page="app"]) :is(
+/* The legal route is excluded from both carrier blocks: it left the glass
+   system for the block route, and legal.css owns its chrome now. Excluding
+   it here is the fix — stacking another !important layer on top is what
+   produced the override war that kept eating changes. */
+html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is(
   .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
   .why-panel, .why-card, .method, .close,
   .progress, .guide-stage, .lesson-card, .example, .rate,
@@ -750,13 +754,16 @@ body[data-page="settings"] .btn:hover { transform: translateY(-1px); }
 body[data-page="legal"] .legal { max-width: 760px; }
 body[data-page="legal"] .legal > h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1; }
 body[data-page="legal"] .lede { font-size: clamp(17px, 2vw, 20px); line-height: 1.65; }
-body[data-page="legal"] .toc,
-body[data-page="legal"] .headline,
-body[data-page="legal"] .pull {
-  background: var(--ui-glass); border-color: var(--ui-line);
-  border-radius: var(--ui-radius); box-shadow: var(--ui-glass-edge), var(--ui-shadow);
-  backdrop-filter: var(--ui-glass-filter);
-  -webkit-backdrop-filter: var(--ui-glass-filter);
+/* The legal route left the glass system when it moved onto the block route:
+   the range is switched off there, so a blurred translucent carrier has
+   nothing behind it to refract and composites to a flat grey smear on the
+   paper. .toc is already handled in legal.css; .headline and .pull get the
+   route's own material here — flat, square, seated on the paper. */
+body[data-page="legal"] :is(.headline, .pull) {
+  background: var(--bk-cream, #EFE6E0);
+  border: 0; border-left: 3px solid var(--terracotta);
+  border-radius: 0; box-shadow: none;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 body[data-page="legal"] .clause { scroll-margin-top: 96px; }
 body[data-page="legal"] .clause p,
@@ -930,7 +937,7 @@ body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type:
 
 /* Final cascade guard: base content-page styles still declare thin borders.
    The environment-native treatment is deliberately borderless at rest. */
-html[data-skin="paper"] body:not([data-page="app"]) :is(
+html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is(
   .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
   .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
   .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
