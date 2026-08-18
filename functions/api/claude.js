@@ -178,12 +178,18 @@ export async function onRequestPost(context) {
         code: 'CLIENT_SYSTEM_REJECTED'
       }, 400);
     }
-    /* TEMPORARY: a streaming reading returns a bare Cloudflare 502 in ~3s with
-       no body and nothing in any response to say why, while the same streaming
-       branch serves utility roles fine. `?stage=1` reports how far a request
-       gets, so the failure can be located from outside. It reports SIZES and
-       booleans, never prompt text. Remove once the 502 is understood. */
-    const stage = new URL(request.url).searchParams.get('stage') === '1';
+    /* TEMPORARY: a streaming reading dies with a 502 that Cloudflare wrote, not
+       us — text/plain, "error code: 502", none of our CORS headers — meaning the
+       invocation is being killed rather than returning an error. `?stage=N`
+       cuts the request short at successive points so the kill can be bracketed
+       from outside. It reports SIZES and booleans, never prompt text.
+         1  before the upstream fetch          (assembly + guard + router)
+         2  after it, reporting status only    (isolates the fetch itself)
+         3  upstream body returned raw         (isolates pumpAndSettle/waitUntil)
+       Remove all of it once the 502 is understood. */
+    const stageParam = new URL(request.url).searchParams.get('stage');
+    const stageNo = /^[123]$/.test(String(stageParam)) ? Number(stageParam) : 0;
+    const stage = stageNo === 1;
     const mark = {};
     mark.guard = 'ok';
     mark.product = product; mark.mode = mode; mark.stream = body.stream === true;
@@ -260,11 +266,31 @@ export async function onRequestPost(context) {
       // OpenRouter extension: ship prompt/completion token counts in the final
       // stream chunk so settlement uses REAL usage, not an estimate.
       payload.usage = { include: true };
+      const t0 = Date.now();
       const upstream = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: openrouterHeaders,
         body: JSON.stringify(payload)
       });
+      if (stageNo === 2) {
+        // The fetch survived. Say so, with the upstream's own verdict, and stop
+        // before a single byte is re-encoded.
+        const head = await upstream.text().catch(() => '').then((s) => s.slice(0, 300));
+        return json({
+          stage: 'after-upstream', ms: Date.now() - t0,
+          status: upstream.status, ok: upstream.ok, hasBody: !!upstream.body,
+          contentType: upstream.headers.get('content-type'), head
+        }, 200);
+      }
+      if (stageNo === 3 && upstream.ok && upstream.body) {
+        // Hand the upstream stream straight through: no TransformStream, no
+        // waitUntil, no settlement. If this lives and the real path dies, the
+        // fault is in the pump, not the model call.
+        return new Response(upstream.body, {
+          status: 200,
+          headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
+        });
+      }
 
       if (!upstream.ok || !upstream.body) {
         if (freeClaim) { await releaseFreeReading(db, freeClaim.userId, freeClaim.reason); freeClaim = null; }
