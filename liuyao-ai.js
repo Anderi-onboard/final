@@ -226,7 +226,13 @@
       if (fly && fly.void) notes.push("flying line is VOID — a void flying line lets the hidden one surface");
       if (fly && fly.moving) notes.push("flying line is MOVING");
       if (fly && fly.moving && fly.transform && fly.transform.branch.bi === h.hiddenBranch.bi) {
-        notes.push("the flying line transforms into THIS VERY BRANCH — the hidden one is being brought out by the line that covers it");
+        /* Name the branch rather than pointing at it. "THIS VERY BRANCH" was
+           an abstract term with no ready Chinese equivalent, and a live Chinese
+           reading carried the bare word across: "还正好变成这个branch". A
+           concrete name has an obvious translation and nothing to borrow. */
+        notes.push("the flying line transforms into " + h.hiddenBranch.el.en + " " + h.hiddenBranch.animal
+          + " (" + h.hiddenBranch.cn + ") — the same one hidden beneath it, so the line that covers it "
+          + "is itself bringing it out");
       }
       return h.relative.en + " (" + h.relative.cn + ") " + h.hiddenBranch.el.en + " " + h.hiddenBranch.animal +
         " hidden under line " + (h.position + 1) +

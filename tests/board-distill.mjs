@@ -100,8 +100,14 @@ assert.match(distilled.hidden, /flying line controls it \(suppressed\)/,
   'flying-over-hidden control is reported');
 assert.match(distilled.hidden, /flying line is VOID/,
   'a void flying line loosens its grip — omitting it hides the way out');
-assert.match(distilled.hidden, /transforms into THIS VERY BRANCH/,
+assert.match(distilled.hidden, /transforms into Fire Snake \(巳\) — the same one hidden beneath it/,
   'a moving line transforming into the branch hidden beneath it IS that branch surfacing');
+/* Named, not pointed at. "THIS VERY BRANCH" is an abstract term with no ready
+   Chinese equivalent, and a live Chinese reading carried the bare English word
+   across: "还正好变成这个branch". Nothing in the board text may ask the model to
+   translate a term of art when the concrete name would do. */
+assert.doesNotMatch(distilled.hidden, /THIS VERY BRANCH/,
+  'name the branch — an abstract pointer gets borrowed into the reading untranslated');
 
 /* ── 3. every 六亲 ships with its Chinese name ──────────────────────────────
    The English names are glosses, not translations: "Pressure" is 官鬼 and
