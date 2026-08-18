@@ -146,4 +146,28 @@ if (/hidden spirits/.test(sys)) {
     'the system prompt tells the model hidden spirits are among the given facts — so they must be given');
 }
 
+/* ── 6. palace, series and trigrams carry their glyphs ─────────────────────
+   Same failure mode as the 六亲, one level up. "Wind Palace" came back as
+   「风宫」 in a live reading: 风 is the trigram's image, 巽 is the palace, and
+   风宫 is not a thing. A Chinese reading should never have to reconstruct a
+   name it can simply be given. */
+assert.match(distilled.primary, /Wind Palace\(巽宫\)/, 'the palace ships with its glyph');
+assert.match(distilled.primary, /Wandering Soul\(游魂\)/, 'so does the series');
+assert.match(distilled.primary, /Mountain\(艮\) over Thunder\(震\)/, 'so do the trigrams');
+assert.match(distilled.transformed, /Wind\(巽\) over Thunder\(震\)/, 'and the transformed figure too');
+
+/* ── 7. the Chinese language rule names the board's terms ──────────────────
+   lang_zh already forbade English words, and a reading leaked "branch" three
+   times anyway — the board says "branch" everywhere and Chinese had never been
+   given the counterpart, so at the moment of writing there was no word to
+   reach for. A prohibition without the replacement is not a rule the model can
+   follow. */
+const { PromptEngine } = await import('../functions/_lib/prompt-engine.js');
+const zh = PromptEngine.SEGMENTS.lang_zh;
+for (const [en, cn] of [['branch', '地支'], ['void', '旬空'], ['moving', '发动'], ['palace', '宫']]) {
+  assert.ok(zh.includes(en) && zh.includes(cn),
+    `lang_zh must map the board's "${en}" to ${cn}, not merely ban English`);
+}
+assert.match(zh, /巽宫/, 'lang_zh names the palace trap it exists to prevent');
+
 console.log('board-distill: ok');

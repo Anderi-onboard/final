@@ -273,8 +273,13 @@
       dayBranch: board.meta.dayPillar.branch.animal+" ("+board.meta.dayPillar.el.en+")",
       monthElement: board.meta.monthBranch.el.en,
       voidBranches: board.meta.xunkong.map(function(b){return b.animal;}).join(", "),
-      primary: (board.ben.name||"")+" — "+board.ben.upper.en+" over "+board.ben.lower.en+" · "+board.ben.palace.en+" "+board.ben.series.en+(board.ben.clash?" · Clashing":board.ben.combine?" · Combining":""),
-      transformed: board.bian ? (board.bian.name||"")+" — "+board.bian.upper.en+" over "+board.bian.lower.en+(board.bian.clash?" · Clashing":board.bian.combine?" · Combining":"") : "none (still figure)",
+      /* Trigram, palace and series ship with their glyphs, for the same reason
+         the 六亲 do: the English is a gloss, and a Chinese reading that has to
+         translate one back can translate it wrong. "Wind Palace" came out as
+         「风宫」 in a live reading — 风 is the image, 巽 is the palace, and 风宫
+         is not a thing. The glyph removes the guess. */
+      primary: (board.ben.name||"")+" — "+board.ben.upper.en+"("+board.ben.upper.cn+") over "+board.ben.lower.en+"("+board.ben.lower.cn+") · "+board.ben.palace.en+"("+board.ben.palace.cn+") "+board.ben.series.en+"("+board.ben.series.cn+")"+(board.ben.clash?" · Clashing":board.ben.combine?" · Combining":""),
+      transformed: board.bian ? (board.bian.name||"")+" — "+board.bian.upper.en+"("+board.bian.upper.cn+") over "+board.bian.lower.en+"("+board.bian.lower.cn+")"+(board.bian.clash?" · Clashing":board.bian.combine?" · Combining":"") : "none (still figure)",
       worldElement: board.lines[board.ben.worldLi].element.en,
       yongshen: yongStr,
       hidden: hiddenStr,

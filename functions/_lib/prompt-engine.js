@@ -1283,6 +1283,12 @@ which is his side of this, is void: he is there, but nothing is coming from him 
 另一个术语,也不要译成英文;更不要写成 yongshen、World line、Wealth 这类罗马化或英译的形式 ——
 中文读者看到那些只会卡住。整篇不夹英文句子,也不夹英文单词。
 
+**盘面是用英文递给你的,那是输入,不是可以借用的词。** 每个概念都有本来的中文名,用那个:
+branch = 地支(子丑寅卯…),void = 旬空,moving = 发动,transform = 化出,hidden/flying = 伏神/飞神,
+World/Response = 世爻/应爻,palace = 宫(Wind Palace 是巽宫,不是「风宫」——宫名取卦名不取卦象),
+bloc = 合局。**一个英文词都不许留在成品里**:写到某个概念时手边没有中文说法,那是还没想清楚这个词
+在这件事上指什么,想清楚了中文自然就有了 —— 不是把英文原词抄进去。
+
 每个术语出现的当下,紧跟一句话说清它在这件事上是什么状态、起什么作用:「应爻是他那一头,现在空着 ——
 人在,但那边没有东西过来。」
 
