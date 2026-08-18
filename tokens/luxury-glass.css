@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260818e");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260818e");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260818e");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260818e");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260818f");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260818f");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260818f");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260818f");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);

@@ -855,8 +855,43 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
   color: var(--dim);
 }
 .reading-body .xr-panel[lang="zh"] .xr-lead { line-height: 1.65; }
-/* Multi-column, so a dozen short entries read as one field rather than a
-   column the eye has to walk down. */
+/* First level: which 象 the symbol runs in. A row of quiet chips, because the
+   reader is choosing among siblings, not reading a list. */
+.reading-body .xr-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 9px;
+}
+.reading-body .xr-cat {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  line-height: 1;
+  letter-spacing: .01em;
+  color: var(--dim);
+  background: color-mix(in srgb, var(--bw-palette-1) 66%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  border-radius: 999px;
+  padding: 7px 11px;
+  cursor: pointer;
+  transition: color var(--dur-fast, 120ms) var(--ease-out, ease),
+              border-color var(--dur-fast, 120ms) var(--ease-out, ease);
+}
+.reading-body .xr-cat:hover,
+.reading-body .xr-cat:focus-visible {
+  color: var(--terracotta);
+  border-color: color-mix(in srgb, var(--terracotta) 46%, transparent);
+}
+.reading-body .xr-cat:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+.reading-body .xr-cat[aria-expanded="true"] {
+  color: var(--terracotta);
+  border-color: color-mix(in srgb, var(--terracotta) 62%, transparent);
+  background: color-mix(in srgb, var(--terracotta) 8%, transparent);
+}
+.reading-body .xr-list[hidden] { display: none; }
+
+/* Second level: what that 象 actually turns up as. Multi-column, so a dozen
+   short entries read as one field rather than a column the eye walks down. */
 .reading-body .xr-list {
   margin: 0;
   padding: 0;

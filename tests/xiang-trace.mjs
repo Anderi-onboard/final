@@ -32,12 +32,25 @@ const seg = PromptEngine.SEGMENTS.xiang_chain;
 const syms = Object.keys(cat.symbols);
 assert.ok(syms.length >= 36, `catalogue holds only ${syms.length} symbols`);
 for (const [k, v] of Object.entries(cat.symbols)) {
-  assert.ok(Array.isArray(v.zh) && v.zh.length >= 4, `${k}: needs a usable Chinese list`);
-  assert.ok(Array.isArray(v.enAlso) && v.enAlso.length === v.zh.length,
-    `${k}: the English list must match the Chinese one entry for entry — the panel picks by `
-    + `the reading's language and a short list would silently drop meanings`);
-  assert.ok(v.en && v.kind, `${k}: needs an English name and a kind`);
-  for (const t of v.zh.concat(v.enAlso)) assert.ok(t && t.trim(), `${k}: empty entry`);
+  /* TWO LEVELS, kept apart. A symbol runs in several 象 (父母 → 文书, 房产,
+     长辈…), and each 象 is itself a family of concrete things (文书 → 合同,
+     证书, 执照, 批文…). Flattened into one comma-list the distinction vanishes,
+     and a reader meeting 文书 in the conclusion reads it as 证书 and stops. */
+  assert.ok(Array.isArray(v.cats) && v.cats.length >= 2,
+    `${k}: needs at least two 象 — one branch is not a family`);
+  assert.ok(v.en && v.kind && v.id, `${k}: needs an English name, a kind and an id`);
+  for (const c of v.cats) {
+    assert.ok(c.zh && c.en, `${k}: an 象 needs both names`);
+    assert.ok(c.items && Array.isArray(c.items.zh) && c.items.zh.length >= 3,
+      `${k}·${c.zh}: an 象 with no concrete things under it is the flat list again`);
+    assert.equal(c.items.en.length, c.items.zh.length,
+      `${k}·${c.zh}: the English items must match entry for entry — the panel picks by the `
+      + `reading's language and a short list would silently drop meanings`);
+    for (const t of c.items.zh.concat(c.items.en)) assert.ok(t && t.trim(), `${k}·${c.zh}: empty entry`);
+    // An 象 must not simply restate the symbol, and an item must not restate its 象.
+    assert.notEqual(c.zh, k, `${k}: an 象 named after the symbol says nothing`);
+    assert.ok(!c.items.zh.includes(c.zh), `${k}·${c.zh}: lists itself as one of its own instances`);
+  }
 }
 for (const [alias, target] of Object.entries(cat.aliases)) {
   assert.ok(cat.symbols[target], `alias ${alias} → ${target}, which is not in the catalogue`);
@@ -202,6 +215,10 @@ const ids = Object.values(cat.symbols).map((v) => v.id);
 assert.equal(new Set(ids).size, ids.length, "catalogue ids must be unique — they are the set's alphabet");
 assert.ok(ids.every((n) => Number.isInteger(n) && n > 0), 'ids are positive integers');
 assert.match(chat, /data-xiang="/, 'the reading publishes the set of symbols it touched');
+assert.match(chat, /hit\.entry\.cats/, 'the panel reads the two-level shape');
+assert.match(chat, /class="xr-cat"/, 'the first level is the 象 row');
+assert.match(chat, /c\.items\.zh : c\.items\.en/, 'the second level opens one 象 into its concrete things');
+assert.doesNotMatch(chat, /entry\.enAlso/, 'the old flat shape is gone from the renderer');
 assert.match(chat, /function xrHits\(\)/, 'built from what was actually annotated, not from what was searched for');
 
 // ── 11. a mark beats an auto-match for the same symbol ─────────────────────

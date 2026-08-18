@@ -1697,17 +1697,46 @@
       var hit = xrLookup(btn.getAttribute("data-xr"));
       // No entry, or the catalogue never loaded: leave the reading alone.
       if (!hit) { btn.classList.add("xr-mute"); btn.setAttribute("aria-expanded", "false"); return; }
+      /* Two levels, because the symbol and the 象 are not the same kind of
+         thing. 父母 covers 文书; 文书 is itself 合同, 证书, 执照, 批文. Flattened
+         into one comma-list the distinction disappears, and a reader who meets
+         文书 in the conclusion takes it to mean 证书 and stops there. So the
+         first level names the 象 this reading picked among, and the second
+         opens one of them into what it actually turns up as. */
       var zh = isZh((host.textContent || "") + (btn.textContent || ""));
-      var list = zh ? hit.entry.zh : (hit.entry.enAlso || hit.entry.zh);
+      var cats = hit.entry.cats || [];
       var name = zh ? hit.key : (hit.entry.en || hit.key);
       var p = document.createElement("div");
       p.className = "xr-panel";
       p.setAttribute("lang", zh ? "zh" : "en");
       var lead = zh
-        ? "「" + btn.textContent + "」这里读的是 " + name + "。同一路还管:"
-        : "“" + btn.textContent + "” is " + name + " read one way. The same one also covers:";
-      var items = list.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
-      p.innerHTML = '<p class="xr-lead">' + esc(lead) + "</p><ul class=\"xr-list\">" + items + "</ul>";
+        ? "「" + btn.textContent + "」这里读的是 " + name + "。这一路还分这几支 —— 点开看它具体是些什么:"
+        : "“" + btn.textContent + "” is " + name + " read one way. It runs in these branches — open one to see what it actually is:";
+      var chips = cats.map(function (c, i) {
+        return '<button type="button" class="xr-cat" data-i="' + i + '" aria-expanded="false">'
+          + esc(zh ? c.zh : c.en) + "</button>";
+      }).join("");
+      p.innerHTML = '<p class="xr-lead">' + esc(lead) + "</p>"
+        + '<div class="xr-cats">' + chips + "</div>"
+        + '<ul class="xr-list" hidden></ul>';
+      // Second level, opened from the chip row. One open at a time: this sits
+      // inside a paragraph of prose, and a fully expanded tree would bury it.
+      var slot = p.querySelector(".xr-list");
+      p.addEventListener("click", function (ev) {
+        var chip = ev.target && ev.target.closest && ev.target.closest("button.xr-cat");
+        if (!chip) return;
+        ev.preventDefault();
+        var was = chip.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(p.querySelectorAll(".xr-cat"), function (c) {
+          c.setAttribute("aria-expanded", "false");
+        });
+        if (was) { slot.hidden = true; slot.innerHTML = ""; return; }
+        var c = cats[Number(chip.getAttribute("data-i"))];
+        var items = ((c && c.items && (zh ? c.items.zh : c.items.en)) || []);
+        slot.innerHTML = items.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+        slot.hidden = !items.length;
+        chip.setAttribute("aria-expanded", "true");
+      });
       host.parentNode.insertBefore(p, host.nextSibling);
       btn.setAttribute("aria-expanded", "true");
       btn.__xrPanel = p;

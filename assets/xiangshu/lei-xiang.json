@@ -1,7 +1,7 @@
 {
  "version": 1,
- "what": "万物类象 — what each symbol on the board can stand for. Static data, never generated. The reading names ONE of these; this file holds the rest so a reader can see the map the choice was made from.",
- "why": "A reading translates a symbol into one concrete thing: 官鬼 becomes 审批那一关. That translation is a judgement, and hiding it makes the reading look like it read the noun off the board. Showing the other branches is the honest version — and it costs the model nothing, because only the pairing (word ↔ symbol) is written by the model; every list below is looked up here.",
+ "what": "万物类象 — two levels. A symbol stands for a family of 象 (文书, 房产, 长辈…), and each 象 is itself a family of concrete things (合同, 证书, 执照, 批文…). Static data, never generated.",
+ "why": "A reading names ONE thing: 父母 becomes 文书. Left there, a reader takes 文书 to mean 证书 and stops — the word is a category, not an instance, and flattening the two into one comma-list hid that. So the library keeps them apart: click the word to see which 象 it came from, click an 象 to see what it actually turns up as. Only the pairing (word ↔ symbol) is ever written by the model.",
  "aliases": {
   "parent": "父母",
   "Resource": "父母",
@@ -20,778 +20,2878 @@
   "父母": {
    "kind": "liuqin",
    "en": "Resource",
-   "zh": [
-    "父母、长辈、师长",
-    "文书、合同、证照",
-    "房屋、田宅",
-    "车船、行装",
-    "学业、消息",
-    "平台规则、上级单位",
-    "庇护你的东西",
-    "辛劳、操持"
-   ],
-   "enAlso": [
-    "parents, elders, teachers",
-    "documents, contracts, licences",
-    "housing, property",
-    "vehicles, what carries you",
-    "study, news",
-    "platform rules, the authority above you",
-    "whatever shelters you",
-    "toil, the running of things"
+   "cats": [
+    {
+     "zh": "文书",
+     "en": "paperwork",
+     "items": {
+      "zh": [
+       "合同",
+       "证书",
+       "执照",
+       "资质",
+       "批文",
+       "备案",
+       "协议",
+       "保单",
+       "录取通知",
+       "判决书",
+       "发票、账本",
+       "说明书、文档"
+      ],
+      "en": [
+       "a contract",
+       "a certificate",
+       "a licence",
+       "a qualification",
+       "an approval",
+       "a filing",
+       "an agreement",
+       "an insurance policy",
+       "an offer letter",
+       "a court ruling",
+       "invoices, books",
+       "manuals, documentation"
+      ]
+     }
+    },
+    {
+     "zh": "房产",
+     "en": "property",
+     "items": {
+      "zh": [
+       "房子",
+       "土地",
+       "办公室",
+       "店面",
+       "仓库",
+       "租约",
+       "装修",
+       "地基、围墙"
+      ],
+      "en": [
+       "a house",
+       "land",
+       "an office",
+       "a shopfront",
+       "a warehouse",
+       "a lease",
+       "fitting-out work",
+       "foundations, walls"
+      ]
+     }
+    },
+    {
+     "zh": "长辈",
+     "en": "elders",
+     "items": {
+      "zh": [
+       "父母",
+       "老师",
+       "师父",
+       "上级、主管",
+       "出资人",
+       "监护人",
+       "前辈、引路人"
+      ],
+      "en": [
+       "parents",
+       "a teacher",
+       "a mentor",
+       "a boss or supervisor",
+       "whoever put up the money",
+       "a guardian",
+       "someone further along than you"
+      ]
+     }
+    },
+    {
+     "zh": "车船",
+     "en": "what carries you",
+     "items": {
+      "zh": [
+       "车",
+       "船",
+       "飞机",
+       "通勤的路",
+       "行李、行装",
+       "搬运的工具"
+      ],
+      "en": [
+       "a car",
+       "a boat",
+       "a plane",
+       "the commute itself",
+       "luggage, kit",
+       "whatever moves things for you"
+      ]
+     }
+    },
+    {
+     "zh": "平台",
+     "en": "the thing you sit on",
+     "items": {
+      "zh": [
+       "平台规则",
+       "上级单位",
+       "主管机关",
+       "渠道方的条款",
+       "你挂靠的那套体系",
+       "服务器、基础设施"
+      ],
+      "en": [
+       "platform rules",
+       "the parent organisation",
+       "a regulator",
+       "a channel's terms",
+       "the system you operate under",
+       "servers, infrastructure"
+      ]
+     }
+    },
+    {
+     "zh": "学业",
+     "en": "study and word-of-mouth",
+     "items": {
+      "zh": [
+       "学历",
+       "课程、培训",
+       "考试",
+       "论文",
+       "消息、通知",
+       "口碑、名声传出去的那部分"
+      ],
+      "en": [
+       "a degree",
+       "courses, training",
+       "an examination",
+       "a thesis",
+       "news, an announcement",
+       "word getting around about you"
+      ]
+     }
+    },
+    {
+     "zh": "操劳",
+     "en": "the toil",
+     "items": {
+      "zh": [
+       "亲手做的活",
+       "跑腿、办手续",
+       "加班",
+       "照顾人",
+       "反复返工的那一摊"
+      ],
+      "en": [
+       "work done by hand",
+       "errands, paperwork queues",
+       "overtime",
+       "caring for someone",
+       "the part you keep redoing"
+      ]
+     }
+    }
    ],
    "id": 1
   },
   "兄弟": {
    "kind": "liuqin",
    "en": "Peer",
-   "zh": [
-    "兄弟姐妹、同辈",
-    "朋友、同事",
-    "同行、竞争对手",
-    "合伙人、分成的一方",
-    "分掉你那一份的成本",
-    "口舌、争夺",
-    "门户、阻隔"
-   ],
-   "enAlso": [
-    "siblings, age-mates",
-    "friends, colleagues",
-    "rivals in the same trade",
-    "partners, whoever splits the take",
-    "costs that eat your share",
-    "quarrels, contention",
-    "a doorway, something in the way"
+   "cats": [
+    {
+     "zh": "同辈",
+     "en": "peers",
+     "items": {
+      "zh": [
+       "兄弟姐妹",
+       "同学",
+       "同事",
+       "同龄的朋友",
+       "同门"
+      ],
+      "en": [
+       "siblings",
+       "classmates",
+       "colleagues",
+       "friends your own age",
+       "people from the same training"
+      ]
+     }
+    },
+    {
+     "zh": "同行",
+     "en": "rivals",
+     "items": {
+      "zh": [
+       "竞品",
+       "同赛道的人",
+       "抢同一批客户的",
+       "模仿你的人",
+       "比价的对手"
+      ],
+      "en": [
+       "a competing product",
+       "others in the same lane",
+       "whoever wants the same customers",
+       "imitators",
+       "whoever you get priced against"
+      ]
+     }
+    },
+    {
+     "zh": "分利的",
+     "en": "whoever splits it",
+     "items": {
+      "zh": [
+       "合伙人",
+       "股东",
+       "中介、代理",
+       "抽成的渠道",
+       "分销商",
+       "要分红的人"
+      ],
+      "en": [
+       "a partner",
+       "a shareholder",
+       "a broker or agent",
+       "a channel taking a cut",
+       "a distributor",
+       "anyone owed a share"
+      ]
+     }
+    },
+    {
+     "zh": "耗费",
+     "en": "what eats it",
+     "items": {
+      "zh": [
+       "成本",
+       "手续费、平台抽成",
+       "房租",
+       "人工",
+       "被浪费掉的时间",
+       "被分走的精力"
+      ],
+      "en": [
+       "costs",
+       "fees and platform cuts",
+       "rent",
+       "wages",
+       "time wasted",
+       "attention pulled away"
+      ]
+     }
+    },
+    {
+     "zh": "争夺",
+     "en": "contention",
+     "items": {
+      "zh": [
+       "争执、吵架",
+       "议价",
+       "抢单",
+       "口舌是非",
+       "僵持不下的那件事"
+      ],
+      "en": [
+       "an argument",
+       "haggling",
+       "fighting for the same deal",
+       "gossip and friction",
+       "the thing that has stalled in a standoff"
+      ]
+     }
+    },
+    {
+     "zh": "阻隔",
+     "en": "what stands in the way",
+     "items": {
+      "zh": [
+       "门、墙",
+       "中间那道关",
+       "挡在中间的人",
+       "难跨的那一步"
+      ],
+      "en": [
+       "a door, a wall",
+       "the gate in the middle",
+       "whoever stands between",
+       "the step that is hard to get over"
+      ]
+     }
+    }
    ],
    "id": 2
   },
   "子孙": {
    "kind": "liuqin",
    "en": "Output",
-   "zh": [
-    "子女、晚辈、学生",
-    "下属、徒弟",
-    "产品、作品、出品",
-    "技术、手艺",
-    "医药、解厄的东西",
-    "快乐、放松",
-    "六畜、宠物",
-    "财的源头"
-   ],
-   "enAlso": [
-    "children, juniors, students",
-    "subordinates, apprentices",
-    "the product, the work itself",
-    "craft, technique",
-    "medicine, whatever relieves it",
-    "ease, enjoyment",
-    "animals, pets",
-    "the source money comes from"
+   "cats": [
+    {
+     "zh": "出品",
+     "en": "what you make",
+     "items": {
+      "zh": [
+       "产品",
+       "作品",
+       "服务",
+       "课程",
+       "内容",
+       "一门手艺做出来的东西"
+      ],
+      "en": [
+       "a product",
+       "a piece of work",
+       "a service",
+       "a course",
+       "content",
+       "whatever the craft turns out"
+      ]
+     }
+    },
+    {
+     "zh": "晚辈",
+     "en": "juniors",
+     "items": {
+      "zh": [
+       "子女",
+       "学生",
+       "徒弟",
+       "下属",
+       "带的新人"
+      ],
+      "en": [
+       "children",
+       "students",
+       "apprentices",
+       "subordinates",
+       "the newcomer you are training"
+      ]
+     }
+    },
+    {
+     "zh": "解厄",
+     "en": "what relieves it",
+     "items": {
+      "zh": [
+       "医药",
+       "治疗",
+       "休息",
+       "保险",
+       "化解的办法",
+       "那个能替你挡一下的东西"
+      ],
+      "en": [
+       "medicine",
+       "treatment",
+       "rest",
+       "insurance",
+       "the way out of it",
+       "whatever takes the hit for you"
+      ]
+     }
+    },
+    {
+     "zh": "财源",
+     "en": "where money comes from",
+     "items": {
+      "zh": [
+       "复购的客户",
+       "持续的收入",
+       "被动收入",
+       "口碑带来的单",
+       "能自己转起来的那部分"
+      ],
+      "en": [
+       "repeat customers",
+       "recurring income",
+       "income that arrives without you",
+       "work that arrives by reputation",
+       "the part that runs itself"
+      ]
+     }
+    },
+    {
+     "zh": "技术",
+     "en": "craft",
+     "items": {
+      "zh": [
+       "手艺",
+       "方法、诀窍",
+       "工具",
+       "专利",
+       "积累下来的能力"
+      ],
+      "en": [
+       "a skill",
+       "a method, a knack",
+       "tools",
+       "a patent",
+       "capability you have built up"
+      ]
+     }
+    },
+    {
+     "zh": "欢喜",
+     "en": "ease",
+     "items": {
+      "zh": [
+       "快乐",
+       "放松",
+       "玩、休闲",
+       "宠物",
+       "让你不紧绷的那件事"
+      ],
+      "en": [
+       "gladness",
+       "letting go",
+       "play, leisure",
+       "a pet",
+       "whatever loosens you"
+      ]
+     }
+    }
    ],
    "id": 3
   },
   "妻财": {
    "kind": "liuqin",
    "en": "Wealth",
-   "zh": [
-    "钱财、收入",
-    "货物、库存",
-    "妻子、女友（男命）",
-    "仓库、器皿",
-    "薪水、利润",
-    "你占有的东西",
-    "帮你做事的人手"
-   ],
-   "enAlso": [
-    "money, income",
-    "goods, stock",
-    "wife or girlfriend (for a man)",
-    "storage, vessels",
-    "wages, profit",
-    "what you hold",
-    "the hands that work for you"
+   "cats": [
+    {
+     "zh": "钱",
+     "en": "money",
+     "items": {
+      "zh": [
+       "现金",
+       "收入",
+       "利润",
+       "工资",
+       "分红",
+       "回款",
+       "存款"
+      ],
+      "en": [
+       "cash",
+       "income",
+       "profit",
+       "salary",
+       "a dividend",
+       "money coming back in",
+       "savings"
+      ]
+     }
+    },
+    {
+     "zh": "货",
+     "en": "goods",
+     "items": {
+      "zh": [
+       "商品",
+       "库存",
+       "原料",
+       "设备",
+       "要卖的东西"
+      ],
+      "en": [
+       "merchandise",
+       "stock",
+       "materials",
+       "equipment",
+       "whatever is for sale"
+      ]
+     }
+    },
+    {
+     "zh": "产业",
+     "en": "holdings",
+     "items": {
+      "zh": [
+       "店",
+       "公司股份",
+       "投资",
+       "收租的东西",
+       "账户"
+      ],
+      "en": [
+       "a shop",
+       "a stake in a company",
+       "investments",
+       "whatever pays you rent",
+       "an account"
+      ]
+     }
+    },
+    {
+     "zh": "女方",
+     "en": "the woman (for a man)",
+     "items": {
+      "zh": [
+       "妻子",
+       "女友",
+       "相亲对象",
+       "前任"
+      ],
+      "en": [
+       "a wife",
+       "a girlfriend",
+       "someone being introduced",
+       "an ex"
+      ]
+     }
+    },
+    {
+     "zh": "人手",
+     "en": "the hands",
+     "items": {
+      "zh": [
+       "员工",
+       "帮工",
+       "外包",
+       "替你做事的人"
+      ],
+      "en": [
+       "employees",
+       "helpers",
+       "contractors",
+       "whoever does it for you"
+      ]
+     }
+    },
+    {
+     "zh": "器物",
+     "en": "things",
+     "items": {
+      "zh": [
+       "器皿、家什",
+       "仓库",
+       "日用的东西",
+       "被你占着的那些物件"
+      ],
+      "en": [
+       "utensils and furnishings",
+       "storage",
+       "daily objects",
+       "the things you keep"
+      ]
+     }
+    }
    ],
    "id": 4
   },
   "官鬼": {
    "kind": "liuqin",
    "en": "Pressure",
-   "zh": [
-    "工作、职位",
-    "上司、权威、官方",
-    "审批、合规、监管",
-    "丈夫、男友（女命）",
-    "疾病、病症",
-    "官司、纠纷",
-    "竞争压力、威胁",
-    "盗贼、意外",
-    "心事、忧疑"
-   ],
-   "enAlso": [
-    "a job, a post",
-    "a boss, any authority",
-    "approval, compliance, regulators",
-    "husband or boyfriend (for a woman)",
-    "illness",
-    "lawsuits, disputes",
-    "competitive pressure, threat",
-    "theft, mishap",
-    "worry, what sits on your mind"
+   "cats": [
+    {
+     "zh": "职务",
+     "en": "the post",
+     "items": {
+      "zh": [
+       "工作",
+       "职位",
+       "职称",
+       "编制",
+       "头衔",
+       "那个位子"
+      ],
+      "en": [
+       "a job",
+       "a position",
+       "a rank",
+       "a permanent post",
+       "a title",
+       "the seat itself"
+      ]
+     }
+    },
+    {
+     "zh": "上头",
+     "en": "authority",
+     "items": {
+      "zh": [
+       "上司",
+       "甲方",
+       "监管",
+       "审批那一关",
+       "评审、评委",
+       "执法的人"
+      ],
+      "en": [
+       "a boss",
+       "the client who decides",
+       "a regulator",
+       "the approval step",
+       "a review panel",
+       "whoever enforces"
+      ]
+     }
+    },
+    {
+     "zh": "男方",
+     "en": "the man (for a woman)",
+     "items": {
+      "zh": [
+       "丈夫",
+       "男友",
+       "追求者",
+       "前任"
+      ],
+      "en": [
+       "a husband",
+       "a boyfriend",
+       "someone pursuing her",
+       "an ex"
+      ]
+     }
+    },
+    {
+     "zh": "病",
+     "en": "illness",
+     "items": {
+      "zh": [
+       "病症",
+       "旧疾",
+       "伤",
+       "查出来的问题"
+      ],
+      "en": [
+       "a complaint",
+       "something long-standing",
+       "an injury",
+       "what a check turned up"
+      ]
+     }
+    },
+    {
+     "zh": "讼",
+     "en": "disputes",
+     "items": {
+      "zh": [
+       "官司",
+       "纠纷",
+       "投诉",
+       "索赔",
+       "被追责的事"
+      ],
+      "en": [
+       "a lawsuit",
+       "a dispute",
+       "a complaint",
+       "a claim",
+       "being held to account"
+      ]
+     }
+    },
+    {
+     "zh": "压",
+     "en": "what presses",
+     "items": {
+      "zh": [
+       "竞争压力",
+       "责任",
+       "期限",
+       "风险",
+       "不敢想的那件事",
+       "躲不过去的那一关"
+      ],
+      "en": [
+       "competitive pressure",
+       "responsibility",
+       "a deadline",
+       "risk",
+       "the thing you avoid thinking about",
+       "the step you cannot go around"
+      ]
+     }
+    },
+    {
+     "zh": "意外",
+     "en": "what comes at you",
+     "items": {
+      "zh": [
+       "盗窃",
+       "失窃、丢东西",
+       "突发的事",
+       "被算计"
+      ],
+      "en": [
+       "theft",
+       "losing something",
+       "something sudden",
+       "being played"
+      ]
+     }
+    }
    ],
    "id": 5
   },
   "世爻": {
    "kind": "position",
    "en": "World line",
-   "zh": [
-    "你自己",
-    "你的立场、处境",
-    "这件事你这一头",
-    "问卦的人本身"
-   ],
-   "enAlso": [
-    "you",
-    "your standing, your position",
-    "your side of the matter",
-    "the person asking"
+   "cats": [
+    {
+     "zh": "你",
+     "en": "you",
+     "items": {
+      "zh": [
+       "你自己",
+       "你的身体、精神",
+       "你的名分、位置",
+       "你能做主的范围"
+      ],
+      "en": [
+       "yourself",
+       "your body and spirits",
+       "your standing",
+       "what is yours to decide"
+      ]
+     }
+    },
+    {
+     "zh": "你这一头",
+     "en": "your side",
+     "items": {
+      "zh": [
+       "你的立场",
+       "你的打算",
+       "你手上的资源",
+       "你出的那一份"
+      ],
+      "en": [
+       "your position",
+       "what you intend",
+       "what you have to work with",
+       "what you are putting in"
+      ]
+     }
+    },
+    {
+     "zh": "处境",
+     "en": "where you stand",
+     "items": {
+      "zh": [
+       "眼下的局面",
+       "你被什么托着、被什么压着",
+       "进退的余地"
+      ],
+      "en": [
+       "how things stand now",
+       "what holds you up and what bears down",
+       "how much room you have"
+      ]
+     }
+    }
    ],
    "id": 6
   },
   "应爻": {
    "kind": "position",
    "en": "Response line",
-   "zh": [
-    "对方、他那一头",
-    "客户、市场",
-    "合作方、投资方",
-    "外部环境",
-    "你要面对的那一面"
-   ],
-   "enAlso": [
-    "the other party",
-    "customers, the market",
-    "a partner or backer",
-    "the outside",
-    "whatever you are facing"
+   "cats": [
+    {
+     "zh": "对方",
+     "en": "the other party",
+     "items": {
+      "zh": [
+       "他/她",
+       "客户",
+       "甲方",
+       "合作方",
+       "谈判桌对面的人"
+      ],
+      "en": [
+       "him or her",
+       "a customer",
+       "the client",
+       "a partner",
+       "whoever is across the table"
+      ]
+     }
+    },
+    {
+     "zh": "外面",
+     "en": "the outside",
+     "items": {
+      "zh": [
+       "市场",
+       "行情",
+       "舆论",
+       "大环境",
+       "轮不到你决定的那部分"
+      ],
+      "en": [
+       "the market",
+       "conditions",
+       "what people are saying",
+       "the wider environment",
+       "the part that is not yours to decide"
+      ]
+     }
+    },
+    {
+     "zh": "远处",
+     "en": "what is far off",
+     "items": {
+      "zh": [
+       "外地",
+       "远方的人",
+       "还没到跟前的事"
+      ],
+      "en": [
+       "another place",
+       "someone far away",
+       "what has not arrived yet"
+      ]
+     }
+    }
    ],
    "id": 7
   },
   "子": {
    "kind": "branch",
    "en": "Rat",
-   "zh": [
-    "水、江河沟渠",
-    "夜半 23–1 点",
-    "北方",
-    "耳、肾",
-    "智谋、隐秘",
-    "流动的东西",
-    "鼠"
-   ],
-   "enAlso": [
-    "water, channels",
-    "midnight, 23:00–01:00",
-    "north",
-    "ears, kidneys",
-    "cunning, what is kept private",
-    "anything that flows",
-    "the Rat"
+   "cats": [
+    {
+     "zh": "水",
+     "en": "water",
+     "items": {
+      "zh": [
+       "江河",
+       "沟渠",
+       "井",
+       "雨",
+       "下水道",
+       "饮品"
+      ],
+      "en": [
+       "rivers",
+       "channels",
+       "a well",
+       "rain",
+       "drains",
+       "drink"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "夜半 23–1 点",
+       "冬月",
+       "正北"
+      ],
+      "en": [
+       "23:00–01:00",
+       "the eleventh month",
+       "due north"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "耳",
+       "肾",
+       "泌尿",
+       "血液"
+      ],
+      "en": [
+       "ears",
+       "kidneys",
+       "the urinary tract",
+       "blood"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "机灵",
+       "隐秘",
+       "流动不定",
+       "繁衍"
+      ],
+      "en": [
+       "quick-witted",
+       "secretive",
+       "never still",
+       "multiplying"
+      ]
+     }
+    }
    ],
    "id": 8
   },
   "丑": {
    "kind": "branch",
    "en": "Ox",
-   "zh": [
-    "土、田园",
-    "1–3 点",
-    "东北",
-    "脾、腹",
-    "金库",
-    "桥梁、坟墓",
-    "迟缓、牵拖",
-    "牛"
-   ],
-   "enAlso": [
-    "earth, farmland",
-    "01:00–03:00",
-    "northeast",
-    "spleen, belly",
-    "the Metal store",
-    "bridges, graves",
-    "slowness, drag",
-    "the Ox"
+   "cats": [
+    {
+     "zh": "土",
+     "en": "earth",
+     "items": {
+      "zh": [
+       "田",
+       "坟",
+       "桥",
+       "矿",
+       "泥"
+      ],
+      "en": [
+       "fields",
+       "a grave",
+       "a bridge",
+       "a mine",
+       "mud"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "1–3 点",
+       "腊月",
+       "东北偏北"
+      ],
+      "en": [
+       "01:00–03:00",
+       "the twelfth month",
+       "north-northeast"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "脾",
+       "腹",
+       "肌肉"
+      ],
+      "en": [
+       "spleen",
+       "belly",
+       "muscle"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "慢",
+       "扛得住",
+       "牵拖不清",
+       "攒着不放"
+      ],
+      "en": [
+       "slow",
+       "able to bear it",
+       "tangled",
+       "holding on"
+      ]
+     }
+    }
    ],
    "id": 9
   },
   "寅": {
    "kind": "branch",
    "en": "Tiger",
-   "zh": [
-    "木、山林",
-    "3–5 点",
-    "东北",
-    "胆、手足",
-    "道路、文书",
-    "发动、起头",
-    "虎"
-   ],
-   "enAlso": [
-    "wood, forest",
-    "03:00–05:00",
-    "northeast",
-    "gallbladder, limbs",
-    "roads, documents",
-    "starting, setting off",
-    "the Tiger"
+   "cats": [
+    {
+     "zh": "木",
+     "en": "wood",
+     "items": {
+      "zh": [
+       "山林",
+       "大树",
+       "木材",
+       "柱子"
+      ],
+      "en": [
+       "forest",
+       "a great tree",
+       "timber",
+       "a pillar"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "3–5 点",
+       "正月",
+       "东北偏东"
+      ],
+      "en": [
+       "03:00–05:00",
+       "the first month",
+       "east-northeast"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "胆",
+       "手足",
+       "筋"
+      ],
+      "en": [
+       "gallbladder",
+       "hands and feet",
+       "sinews"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "起头",
+       "冲",
+       "刚",
+       "要动"
+      ],
+      "en": [
+       "setting out",
+       "charging",
+       "hard",
+       "wanting to move"
+      ]
+     }
+    }
    ],
    "id": 10
   },
   "卯": {
    "kind": "branch",
    "en": "Rabbit",
-   "zh": [
-    "木、草木",
-    "5–7 点",
-    "正东",
-    "肝、指",
-    "门窗、舟车",
-    "街道、市集",
-    "兔"
-   ],
-   "enAlso": [
-    "wood, growing things",
-    "05:00–07:00",
-    "due east",
-    "liver, fingers",
-    "doors, windows, vehicles",
-    "streets, markets",
-    "the Rabbit"
+   "cats": [
+    {
+     "zh": "木",
+     "en": "wood",
+     "items": {
+      "zh": [
+       "草木",
+       "花",
+       "门窗",
+       "舟车",
+       "纸"
+      ],
+      "en": [
+       "grass and plants",
+       "flowers",
+       "doors and windows",
+       "boats and carts",
+       "paper"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "5–7 点",
+       "二月",
+       "正东"
+      ],
+      "en": [
+       "05:00–07:00",
+       "the second month",
+       "due east"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "肝",
+       "指",
+       "毛发"
+      ],
+      "en": [
+       "liver",
+       "fingers",
+       "hair"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "柔",
+       "繁茂",
+       "街市热闹",
+       "来回穿梭"
+      ],
+      "en": [
+       "pliant",
+       "luxuriant",
+       "the busy street",
+       "going back and forth"
+      ]
+     }
+    }
    ],
    "id": 11
   },
   "辰": {
    "kind": "branch",
    "en": "Dragon",
-   "zh": [
-    "土、水库",
-    "7–9 点",
-    "东南",
-    "皮肤、肩",
-    "池塘、土坝",
-    "争斗、变化",
-    "龙"
-   ],
-   "enAlso": [
-    "earth, the Water store",
-    "07:00–09:00",
-    "southeast",
-    "skin, shoulders",
-    "ponds, embankments",
-    "struggle, change",
-    "the Dragon"
+   "cats": [
+    {
+     "zh": "土",
+     "en": "earth",
+     "items": {
+      "zh": [
+       "水库",
+       "池塘",
+       "土坝",
+       "湿地"
+      ],
+      "en": [
+       "a reservoir",
+       "a pond",
+       "an embankment",
+       "wetland"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "7–9 点",
+       "三月",
+       "东南偏东"
+      ],
+      "en": [
+       "07:00–09:00",
+       "the third month",
+       "east-southeast"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "皮肤",
+       "肩",
+       "背"
+      ],
+      "en": [
+       "skin",
+       "shoulders",
+       "the back"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "变化",
+       "争斗",
+       "藏着东西",
+       "翻脸快"
+      ],
+      "en": [
+       "change",
+       "struggle",
+       "holding something back",
+       "turning suddenly"
+      ]
+     }
+    }
    ],
    "id": 12
   },
   "巳": {
    "kind": "branch",
    "en": "Snake",
-   "zh": [
-    "火、炉灶",
-    "9–11 点",
-    "东南",
-    "小肠、面",
-    "电、光",
-    "弯曲的路",
-    "文明、才艺",
-    "蛇"
-   ],
-   "enAlso": [
-    "fire, the stove",
-    "09:00–11:00",
-    "southeast",
-    "small intestine, the face",
-    "electricity, light",
-    "a winding road",
-    "culture, skill",
-    "the Snake"
+   "cats": [
+    {
+     "zh": "火",
+     "en": "fire",
+     "items": {
+      "zh": [
+       "炉灶",
+       "电",
+       "光",
+       "窑",
+       "化工"
+      ],
+      "en": [
+       "a stove",
+       "electricity",
+       "light",
+       "a kiln",
+       "chemicals"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "9–11 点",
+       "四月",
+       "东南偏南"
+      ],
+      "en": [
+       "09:00–11:00",
+       "the fourth month",
+       "south-southeast"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "小肠",
+       "面",
+       "咽喉"
+      ],
+      "en": [
+       "the small intestine",
+       "the face",
+       "the throat"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "文采",
+       "弯弯绕",
+       "缠",
+       "看着静其实动"
+      ],
+      "en": [
+       "eloquence",
+       "roundabout",
+       "coiling",
+       "still on the surface, moving underneath"
+      ]
+     }
+    }
    ],
    "id": 13
   },
   "午": {
    "kind": "branch",
    "en": "Horse",
-   "zh": [
-    "火、烈日",
-    "11–13 点",
-    "正南",
-    "心、目",
-    "火烛、炉",
-    "繁华、市面",
-    "马"
-   ],
-   "enAlso": [
-    "fire, the noon sun",
-    "11:00–13:00",
-    "due south",
-    "heart, eyes",
-    "flame, hearth",
-    "bustle, the busy street",
-    "the Horse"
+   "cats": [
+    {
+     "zh": "火",
+     "en": "fire",
+     "items": {
+      "zh": [
+       "烈日",
+       "火烛",
+       "炉",
+       "热闹的市面"
+      ],
+      "en": [
+       "the noon sun",
+       "flame",
+       "a furnace",
+       "a crowded market"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "11–13 点",
+       "五月",
+       "正南"
+      ],
+      "en": [
+       "11:00–13:00",
+       "the fifth month",
+       "due south"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "心",
+       "目",
+       "血"
+      ],
+      "en": [
+       "the heart",
+       "eyes",
+       "blood"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "急",
+       "亮",
+       "张扬",
+       "来得快去得快"
+      ],
+      "en": [
+       "urgent",
+       "bright",
+       "showy",
+       "quick to come and go"
+      ]
+     }
+    }
    ],
    "id": 14
   },
   "未": {
    "kind": "branch",
    "en": "Goat",
-   "zh": [
-    "土、田园",
-    "13–15 点",
-    "西南",
-    "脾胃、脊",
-    "木库",
-    "庭院、酒食",
-    "羊"
-   ],
-   "enAlso": [
-    "earth, farmland",
-    "13:00–15:00",
-    "southwest",
-    "stomach, spine",
-    "the Wood store",
-    "courtyards, food and drink",
-    "the Goat"
+   "cats": [
+    {
+     "zh": "土",
+     "en": "earth",
+     "items": {
+      "zh": [
+       "田园",
+       "庭院",
+       "木库",
+       "酒食"
+      ],
+      "en": [
+       "farmland",
+       "a courtyard",
+       "the Wood store",
+       "food and drink"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "13–15 点",
+       "六月",
+       "西南偏南"
+      ],
+      "en": [
+       "13:00–15:00",
+       "the sixth month",
+       "south-southwest"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "脾胃",
+       "脊",
+       "口"
+      ],
+      "en": [
+       "stomach and spleen",
+       "the spine",
+       "the mouth"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "温吞",
+       "念旧",
+       "犹豫",
+       "和气"
+      ],
+      "en": [
+       "mild",
+       "attached to the past",
+       "hesitant",
+       "easy-going"
+      ]
+     }
+    }
    ],
    "id": 15
   },
   "申": {
    "kind": "branch",
    "en": "Monkey",
-   "zh": [
-    "金、金属",
-    "15–17 点",
-    "西南",
-    "筋骨、肺",
-    "道路、驿马",
-    "机械、器具",
-    "变动、奔走",
-    "猴"
-   ],
-   "enAlso": [
-    "metal",
-    "15:00–17:00",
-    "southwest",
-    "sinews, lungs",
-    "roads, the post-horse",
-    "machinery, tools",
-    "movement, being on the go",
-    "the Monkey"
+   "cats": [
+    {
+     "zh": "金",
+     "en": "metal",
+     "items": {
+      "zh": [
+       "金属",
+       "机械",
+       "刀具",
+       "车",
+       "道路"
+      ],
+      "en": [
+       "metal",
+       "machinery",
+       "cutting tools",
+       "vehicles",
+       "roads"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "15–17 点",
+       "七月",
+       "西南偏西"
+      ],
+      "en": [
+       "15:00–17:00",
+       "the seventh month",
+       "west-southwest"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "筋骨",
+       "肺",
+       "大肠"
+      ],
+      "en": [
+       "sinew and bone",
+       "lungs",
+       "the large intestine"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "机敏",
+       "奔走",
+       "变动",
+       "坐不住"
+      ],
+      "en": [
+       "sharp",
+       "on the move",
+       "changeable",
+       "unable to sit still"
+      ]
+     }
+    }
    ],
    "id": 16
   },
   "酉": {
    "kind": "branch",
    "en": "Rooster",
-   "zh": [
-    "金、刀刃",
-    "17–19 点",
-    "正西",
-    "肺、口",
-    "金银、首饰",
-    "酒、口舌",
-    "门户",
-    "鸡"
-   ],
-   "enAlso": [
-    "metal, a blade",
-    "17:00–19:00",
-    "due west",
-    "lungs, mouth",
-    "silver, jewellery",
-    "wine, talk",
-    "a gate",
-    "the Rooster"
+   "cats": [
+    {
+     "zh": "金",
+     "en": "metal",
+     "items": {
+      "zh": [
+       "刀刃",
+       "金银首饰",
+       "酒",
+       "门",
+       "精细的器物"
+      ],
+      "en": [
+       "a blade",
+       "silver and jewellery",
+       "wine",
+       "a gate",
+       "fine objects"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "17–19 点",
+       "八月",
+       "正西"
+      ],
+      "en": [
+       "17:00–19:00",
+       "the eighth month",
+       "due west"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "肺",
+       "口",
+       "皮毛"
+      ],
+      "en": [
+       "lungs",
+       "the mouth",
+       "skin and hair"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "讲究",
+       "口舌",
+       "准时",
+       "挑剔"
+      ],
+      "en": [
+       "particular",
+       "talkative",
+       "punctual",
+       "fussy"
+      ]
+     }
+    }
    ],
    "id": 17
   },
   "戌": {
    "kind": "branch",
    "en": "Dog",
-   "zh": [
-    "土、山冈",
-    "19–21 点",
-    "西北",
-    "腿、命门",
-    "火库",
-    "印章、命令",
-    "守卫、看门",
-    "狗"
-   ],
-   "enAlso": [
-    "earth, high ground",
-    "19:00–21:00",
-    "northwest",
-    "legs",
-    "the Fire store",
-    "seals, orders",
-    "guarding, keeping watch",
-    "the Dog"
+   "cats": [
+    {
+     "zh": "土",
+     "en": "earth",
+     "items": {
+      "zh": [
+       "山冈",
+       "围墙",
+       "火库",
+       "印章"
+      ],
+      "en": [
+       "high ground",
+       "a wall",
+       "the Fire store",
+       "a seal"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "19–21 点",
+       "九月",
+       "西北偏西"
+      ],
+      "en": [
+       "19:00–21:00",
+       "the ninth month",
+       "west-northwest"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "腿",
+       "踝",
+       "命门"
+      ],
+      "en": [
+       "legs",
+       "ankles",
+       "the lower back"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "忠",
+       "守",
+       "看门",
+       "认死理"
+      ],
+      "en": [
+       "loyal",
+       "guarding",
+       "keeping watch",
+       "stubborn about principle"
+      ]
+     }
+    }
    ],
    "id": 18
   },
   "亥": {
    "kind": "branch",
    "en": "Pig",
-   "zh": [
-    "水、江湖",
-    "21–23 点",
-    "西北",
-    "头、肾",
-    "藏、孕育",
-    "楼阁、厕所",
-    "猪"
-   ],
-   "enAlso": [
-    "water, rivers and lakes",
-    "21:00–23:00",
-    "northwest",
-    "head, kidneys",
-    "storing, gestation",
-    "upper rooms, the privy",
-    "the Pig"
+   "cats": [
+    {
+     "zh": "水",
+     "en": "water",
+     "items": {
+      "zh": [
+       "江湖",
+       "大海",
+       "楼阁",
+       "厕所",
+       "酒"
+      ],
+      "en": [
+       "rivers and lakes",
+       "the sea",
+       "upper rooms",
+       "the privy",
+       "liquor"
+      ]
+     }
+    },
+    {
+     "zh": "时位",
+     "en": "time and place",
+     "items": {
+      "zh": [
+       "21–23 点",
+       "十月",
+       "西北偏北"
+      ],
+      "en": [
+       "21:00–23:00",
+       "the tenth month",
+       "north-northwest"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "头",
+       "肾",
+       "膀胱"
+      ],
+      "en": [
+       "the head",
+       "kidneys",
+       "the bladder"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "厚道",
+       "能藏",
+       "孕育",
+       "不争"
+      ],
+      "en": [
+       "generous",
+       "able to keep things",
+       "gestating",
+       "not contending"
+      ]
+     }
+    }
    ],
    "id": 19
   },
   "木": {
    "kind": "element",
    "en": "Wood",
-   "zh": [
-    "生长、伸展",
-    "肝胆",
-    "东方、青色",
-    "树木、纸张",
-    "文教、仁"
-   ],
-   "enAlso": [
-    "growth, reaching out",
-    "liver and gallbladder",
-    "east, green",
-    "trees, paper",
-    "learning, benevolence"
+   "cats": [
+    {
+     "zh": "物",
+     "en": "things",
+     "items": {
+      "zh": [
+       "树",
+       "纸",
+       "布",
+       "家具",
+       "书"
+      ],
+      "en": [
+       "trees",
+       "paper",
+       "cloth",
+       "furniture",
+       "books"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "肝胆",
+       "筋",
+       "眼"
+      ],
+      "en": [
+       "liver and gallbladder",
+       "sinews",
+       "the eyes"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "生长",
+       "伸展",
+       "仁",
+       "直"
+      ],
+      "en": [
+       "growth",
+       "reaching out",
+       "kindness",
+       "straightness"
+      ]
+     }
+    },
+    {
+     "zh": "位",
+     "en": "east and green",
+     "items": {
+      "zh": [
+       "东方",
+       "青绿",
+       "春"
+      ],
+      "en": [
+       "east",
+       "green",
+       "spring"
+      ]
+     }
+    }
    ],
    "id": 20
   },
   "火": {
    "kind": "element",
    "en": "Fire",
-   "zh": [
-    "炎上、明亮",
-    "心、血、目",
-    "南方、赤色",
-    "光、电、炉",
-    "礼、急躁"
-   ],
-   "enAlso": [
-    "rising, brightness",
-    "heart, blood, eyes",
-    "south, red",
-    "light, electricity, the hearth",
-    "ceremony, haste"
+   "cats": [
+    {
+     "zh": "物",
+     "en": "things",
+     "items": {
+      "zh": [
+       "灯",
+       "电",
+       "炉",
+       "文书",
+       "美的东西"
+      ],
+      "en": [
+       "lamps",
+       "electricity",
+       "a stove",
+       "documents",
+       "beautiful things"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "心",
+       "血",
+       "目"
+      ],
+      "en": [
+       "the heart",
+       "blood",
+       "eyes"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "向上",
+       "明亮",
+       "礼",
+       "急"
+      ],
+      "en": [
+       "rising",
+       "brightness",
+       "courtesy",
+       "haste"
+      ]
+     }
+    },
+    {
+     "zh": "位",
+     "en": "south and red",
+     "items": {
+      "zh": [
+       "南方",
+       "赤红",
+       "夏"
+      ],
+      "en": [
+       "south",
+       "red",
+       "summer"
+      ]
+     }
+    }
    ],
    "id": 21
   },
   "土": {
    "kind": "element",
    "en": "Earth",
-   "zh": [
-    "承载、稳重",
-    "脾胃",
-    "中央、黄色",
-    "田地、房产",
-    "信、迟缓"
-   ],
-   "enAlso": [
-    "carrying, steadiness",
-    "stomach and spleen",
-    "centre, yellow",
-    "land, property",
-    "trust, slowness"
+   "cats": [
+    {
+     "zh": "物",
+     "en": "things",
+     "items": {
+      "zh": [
+       "田地",
+       "房产",
+       "砖石",
+       "陶器",
+       "仓"
+      ],
+      "en": [
+       "land",
+       "property",
+       "brick and stone",
+       "pottery",
+       "a granary"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "脾胃",
+       "肌肉",
+       "腹"
+      ],
+      "en": [
+       "stomach and spleen",
+       "muscle",
+       "the belly"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "承载",
+       "稳",
+       "信",
+       "慢"
+      ],
+      "en": [
+       "carrying",
+       "steadiness",
+       "trustworthiness",
+       "slowness"
+      ]
+     }
+    },
+    {
+     "zh": "位",
+     "en": "centre and yellow",
+     "items": {
+      "zh": [
+       "中央",
+       "黄",
+       "四季末"
+      ],
+      "en": [
+       "the centre",
+       "yellow",
+       "the close of each season"
+      ]
+     }
+    }
    ],
    "id": 22
   },
   "金": {
    "kind": "element",
    "en": "Metal",
-   "zh": [
-    "收敛、锋利",
-    "肺、皮毛",
-    "西方、白色",
-    "金属、刀刃、规矩",
-    "义、肃杀"
-   ],
-   "enAlso": [
-    "gathering in, sharpness",
-    "lungs, skin",
-    "west, white",
-    "metal, blades, rules",
-    "duty, severity"
+   "cats": [
+    {
+     "zh": "物",
+     "en": "things",
+     "items": {
+      "zh": [
+       "刀",
+       "钱",
+       "机械",
+       "首饰",
+       "规矩"
+      ],
+      "en": [
+       "a blade",
+       "coin",
+       "machinery",
+       "jewellery",
+       "rules"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "肺",
+       "皮毛",
+       "大肠"
+      ],
+      "en": [
+       "lungs",
+       "skin and hair",
+       "the large intestine"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "收敛",
+       "锋利",
+       "义",
+       "肃"
+      ],
+      "en": [
+       "gathering in",
+       "sharpness",
+       "duty",
+       "severity"
+      ]
+     }
+    },
+    {
+     "zh": "位",
+     "en": "west and white",
+     "items": {
+      "zh": [
+       "西方",
+       "白",
+       "秋"
+      ],
+      "en": [
+       "west",
+       "white",
+       "autumn"
+      ]
+     }
+    }
    ],
    "id": 23
   },
   "水": {
    "kind": "element",
    "en": "Water",
-   "zh": [
-    "润下、流动",
-    "肾、耳",
-    "北方、黑色",
-    "江河、酒液",
-    "智、隐秘"
-   ],
-   "enAlso": [
-    "flowing down",
-    "kidneys, ears",
-    "north, black",
-    "rivers, liquor",
-    "wits, what stays hidden"
+   "cats": [
+    {
+     "zh": "物",
+     "en": "things",
+     "items": {
+      "zh": [
+       "江河",
+       "酒",
+       "油",
+       "流动的钱",
+       "网络"
+      ],
+      "en": [
+       "rivers",
+       "liquor",
+       "oil",
+       "money in motion",
+       "networks"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "肾",
+       "耳",
+       "血"
+      ],
+      "en": [
+       "kidneys",
+       "ears",
+       "blood"
+      ]
+     }
+    },
+    {
+     "zh": "性",
+     "en": "the character",
+     "items": {
+      "zh": [
+       "润下",
+       "流动",
+       "智",
+       "隐"
+      ],
+      "en": [
+       "flowing down",
+       "movement",
+       "wits",
+       "concealment"
+      ]
+     }
+    },
+    {
+     "zh": "位",
+     "en": "north and black",
+     "items": {
+      "zh": [
+       "北方",
+       "黑",
+       "冬"
+      ],
+      "en": [
+       "north",
+       "black",
+       "winter"
+      ]
+     }
+    }
    ],
    "id": 24
   },
   "青龙": {
    "kind": "spirit",
    "en": "Azure Dragon",
-   "zh": [
-    "喜庆、婚嫁",
-    "正财、进项",
-    "酒色、宴乐",
-    "和善、体面"
-   ],
-   "enAlso": [
-    "celebration, marriage",
-    "honest income",
-    "wine and pleasure",
-    "goodwill, dignity"
+   "cats": [
+    {
+     "zh": "事",
+     "en": "what it brings",
+     "items": {
+      "zh": [
+       "喜事",
+       "婚嫁",
+       "正财",
+       "升迁",
+       "宴饮"
+      ],
+      "en": [
+       "good news",
+       "a marriage",
+       "honest income",
+       "promotion",
+       "a feast"
+      ]
+     }
+    },
+    {
+     "zh": "人",
+     "en": "the person",
+     "items": {
+      "zh": [
+       "和善",
+       "体面",
+       "有酒色之好"
+      ],
+      "en": [
+       "kindly",
+       "presentable",
+       "fond of wine and pleasure"
+      ]
+     }
+    }
    ],
    "id": 25
   },
   "朱雀": {
    "kind": "spirit",
    "en": "Vermilion Bird",
-   "zh": [
-    "口舌、争论",
-    "文书、消息",
-    "宣传、说话那一摊",
-    "官非、火"
-   ],
-   "enAlso": [
-    "argument, talk",
-    "documents, news",
-    "publicity, whatever does the talking",
-    "litigation, fire"
+   "cats": [
+    {
+     "zh": "事",
+     "en": "what it brings",
+     "items": {
+      "zh": [
+       "口舌",
+       "文书",
+       "消息",
+       "宣传",
+       "官非"
+      ],
+      "en": [
+       "argument",
+       "documents",
+       "news",
+       "publicity",
+       "litigation"
+      ]
+     }
+    },
+    {
+     "zh": "人",
+     "en": "the person",
+     "items": {
+      "zh": [
+       "能说",
+       "急",
+       "爱表达"
+      ],
+      "en": [
+       "articulate",
+       "quick",
+       "given to speaking out"
+      ]
+     }
+    }
    ],
    "id": 26
   },
   "勾陈": {
    "kind": "spirit",
    "en": "Hook Earth",
-   "zh": [
-    "田土、房产",
-    "迟滞、拖延",
-    "牵连、旧事",
-    "厚重、不灵活"
-   ],
-   "enAlso": [
-    "land, property",
-    "delay, dragging",
-    "entanglement, old business",
-    "weight, inflexibility"
+   "cats": [
+    {
+     "zh": "事",
+     "en": "what it brings",
+     "items": {
+      "zh": [
+       "田土房产",
+       "迟滞",
+       "旧事翻出",
+       "牵连"
+      ],
+      "en": [
+       "land and property",
+       "delay",
+       "old business resurfacing",
+       "entanglement"
+      ]
+     }
+    },
+    {
+     "zh": "人",
+     "en": "the person",
+     "items": {
+      "zh": [
+       "厚重",
+       "固执",
+       "不灵活"
+      ],
+      "en": [
+       "solid",
+       "stubborn",
+       "inflexible"
+      ]
+     }
+    }
    ],
    "id": 27
   },
   "螣蛇": {
    "kind": "spirit",
    "en": "Coiling Snake",
-   "zh": [
-    "缠绕、反复",
-    "虚惊一场",
-    "怪异、多疑",
-    "梦、心神不宁"
-   ],
-   "enAlso": [
-    "coiling, going round again",
-    "a fright that comes to nothing",
-    "the strange, suspicion",
-    "dreams, unrest"
+   "cats": [
+    {
+     "zh": "事",
+     "en": "what it brings",
+     "items": {
+      "zh": [
+       "虚惊",
+       "反复",
+       "怪事",
+       "梦",
+       "缠住不放"
+      ],
+      "en": [
+       "a fright that comes to nothing",
+       "going round again",
+       "something odd",
+       "dreams",
+       "being held and not let go"
+      ]
+     }
+    },
+    {
+     "zh": "人",
+     "en": "the person",
+     "items": {
+      "zh": [
+       "多疑",
+       "心思绕",
+       "不安"
+      ],
+      "en": [
+       "suspicious",
+       "convoluted",
+       "unsettled"
+      ]
+     }
+    }
    ],
    "id": 28
   },
   "白虎": {
    "kind": "spirit",
    "en": "White Tiger",
-   "zh": [
-    "伤病、血光",
-    "凶丧",
-    "刚猛、不留情面",
-    "道路、军警"
-   ],
-   "enAlso": [
-    "injury, blood",
-    "mourning",
-    "force, bluntness",
-    "roads, uniforms"
+   "cats": [
+    {
+     "zh": "事",
+     "en": "what it brings",
+     "items": {
+      "zh": [
+       "伤病",
+       "血光",
+       "丧事",
+       "刚断",
+       "道路之事"
+      ],
+      "en": [
+       "injury",
+       "blood",
+       "mourning",
+       "a hard decision",
+       "something on the road"
+      ]
+     }
+    },
+    {
+     "zh": "人",
+     "en": "the person",
+     "items": {
+      "zh": [
+       "刚猛",
+       "不留情面",
+       "军警一类"
+      ],
+      "en": [
+       "forceful",
+       "blunt",
+       "the uniformed sort"
+      ]
+     }
+    }
    ],
    "id": 29
   },
   "玄武": {
    "kind": "spirit",
    "en": "Dark Tortoise",
-   "zh": [
-    "暗昧、看不清",
-    "隐私、私情",
-    "盗窃、暗中的损失",
-    "水、流动"
-   ],
-   "enAlso": [
-    "obscurity, not seeing clearly",
-    "privacy, an affair",
-    "theft, quiet losses",
-    "water, drift"
+   "cats": [
+    {
+     "zh": "事",
+     "en": "what it brings",
+     "items": {
+      "zh": [
+       "暗昧",
+       "私情",
+       "盗窃",
+       "暗中的损失",
+       "看不清"
+      ],
+      "en": [
+       "obscurity",
+       "an affair",
+       "theft",
+       "quiet losses",
+       "not seeing clearly"
+      ]
+     }
+    },
+    {
+     "zh": "人",
+     "en": "the person",
+     "items": {
+      "zh": [
+       "心思深",
+       "会藏",
+       "不明说"
+      ],
+      "en": [
+       "deep",
+       "able to conceal",
+       "never quite saying it"
+      ]
+     }
+    }
    ],
    "id": 30
   },
   "乾": {
    "kind": "trigram",
    "en": "Heaven",
-   "zh": [
-    "天、君、父",
-    "首、骨",
-    "圆、金玉",
-    "刚健、决断"
-   ],
-   "enAlso": [
-    "heaven, ruler, father",
-    "the head, bones",
-    "roundness, gold and jade",
-    "vigour, decisiveness"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "天",
+       "君",
+       "父",
+       "金玉",
+       "圆的东西"
+      ],
+      "en": [
+       "heaven",
+       "the ruler",
+       "the father",
+       "gold and jade",
+       "round things"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "当家的",
+       "决策者",
+       "刚健的人",
+       "出资方"
+      ],
+      "en": [
+       "whoever heads it",
+       "the decider",
+       "someone vigorous",
+       "the one funding it"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "首",
+       "骨",
+       "肺"
+      ],
+      "en": [
+       "the head",
+       "bones",
+       "lungs"
+      ]
+     }
+    }
    ],
    "id": 31
   },
   "兑": {
    "kind": "trigram",
    "en": "Lake",
-   "zh": [
-    "泽、少女",
-    "口、舌",
-    "喜悦、言谈",
-    "缺损、毁折"
-   ],
-   "enAlso": [
-    "marsh, the youngest daughter",
-    "mouth, tongue",
-    "delight, speech",
-    "a chip, a break"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "泽",
+       "口",
+       "缺口",
+       "刀",
+       "少女"
+      ],
+      "en": [
+       "a marsh",
+       "the mouth",
+       "a gap",
+       "a blade",
+       "the youngest daughter"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "能说会道",
+       "谈判",
+       "娱乐",
+       "有毁损的事"
+      ],
+      "en": [
+       "a persuasive talker",
+       "negotiation",
+       "entertainment",
+       "something chipped or broken"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "口舌",
+       "肺",
+       "齿"
+      ],
+      "en": [
+       "mouth and tongue",
+       "lungs",
+       "teeth"
+      ]
+     }
+    }
    ],
    "id": 32
   },
   "离": {
    "kind": "trigram",
    "en": "Fire",
-   "zh": [
-    "火、日、中女",
-    "目、心",
-    "文明、华丽",
-    "中虚、附丽"
-   ],
-   "enAlso": [
-    "fire, sun, the middle daughter",
-    "eyes, heart",
-    "culture, brilliance",
-    "hollow within, clinging"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "火",
+       "日",
+       "文书",
+       "华丽的东西",
+       "中虚的东西"
+      ],
+      "en": [
+       "fire",
+       "the sun",
+       "documents",
+       "showy things",
+       "things hollow at the centre"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "文化",
+       "名声",
+       "美",
+       "眼见为实的事"
+      ],
+      "en": [
+       "culture",
+       "reputation",
+       "beauty",
+       "what is seen"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "目",
+       "心",
+       "血"
+      ],
+      "en": [
+       "eyes",
+       "the heart",
+       "blood"
+      ]
+     }
+    }
    ],
    "id": 33
   },
   "震": {
    "kind": "trigram",
    "en": "Thunder",
-   "zh": [
-    "雷、长男",
-    "足、肝",
-    "动、起、惊",
-    "大路、青色"
-   ],
-   "enAlso": [
-    "thunder, the eldest son",
-    "feet, liver",
-    "movement, starting, alarm",
-    "the main road, green"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "雷",
+       "大路",
+       "长男",
+       "青色",
+       "竹木"
+      ],
+      "en": [
+       "thunder",
+       "the main road",
+       "the eldest son",
+       "green",
+       "bamboo and wood"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "起头",
+       "震动",
+       "急切",
+       "出发"
+      ],
+      "en": [
+       "starting",
+       "a shock",
+       "urgency",
+       "setting off"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "足",
+       "肝",
+       "声音"
+      ],
+      "en": [
+       "feet",
+       "the liver",
+       "the voice"
+      ]
+     }
+    }
    ],
    "id": 34
   },
   "巽": {
    "kind": "trigram",
    "en": "Wind",
-   "zh": [
-    "风、长女",
-    "股、气",
-    "入、渗透",
-    "绳直、进退不定"
-   ],
-   "enAlso": [
-    "wind, the eldest daughter",
-    "thighs, breath",
-    "entering, seeping in",
-    "cord and straightness, wavering"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "风",
+       "绳",
+       "长女",
+       "草木",
+       "气"
+      ],
+      "en": [
+       "wind",
+       "cord",
+       "the eldest daughter",
+       "plants",
+       "breath"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "渗透",
+       "传开",
+       "反复不定",
+       "做买卖"
+      ],
+      "en": [
+       "seeping in",
+       "spreading",
+       "wavering",
+       "trade"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "股",
+       "气",
+       "头发"
+      ],
+      "en": [
+       "thighs",
+       "breath",
+       "hair"
+      ]
+     }
+    }
    ],
    "id": 35
   },
   "坎": {
    "kind": "trigram",
    "en": "Water",
-   "zh": [
-    "水、中男",
-    "耳、血",
-    "险、陷",
-    "隐伏、劳苦"
-   ],
-   "enAlso": [
-    "water, the middle son",
-    "ears, blood",
-    "danger, a pit",
-    "lying hidden, hard labour"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "水",
+       "险",
+       "陷坑",
+       "中男",
+       "隐伏的东西"
+      ],
+      "en": [
+       "water",
+       "danger",
+       "a pit",
+       "the middle son",
+       "what lies hidden"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "劳苦",
+       "风险",
+       "暗中的事",
+       "智取"
+      ],
+      "en": [
+       "hard labour",
+       "risk",
+       "what happens out of sight",
+       "winning by wits"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "耳",
+       "肾",
+       "血"
+      ],
+      "en": [
+       "ears",
+       "kidneys",
+       "blood"
+      ]
+     }
+    }
    ],
    "id": 36
   },
   "艮": {
    "kind": "trigram",
    "en": "Mountain",
-   "zh": [
-    "山、少男",
-    "手、背",
-    "止、守",
-    "门阙、稳固"
-   ],
-   "enAlso": [
-    "mountain, the youngest son",
-    "hands, back",
-    "stopping, holding",
-    "a gateway, solidity"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "山",
+       "门阙",
+       "少男",
+       "石",
+       "路的尽头"
+      ],
+      "en": [
+       "a mountain",
+       "a gateway",
+       "the youngest son",
+       "stone",
+       "where the road ends"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "停下",
+       "守着",
+       "阻挡",
+       "不动"
+      ],
+      "en": [
+       "stopping",
+       "holding",
+       "blocking",
+       "not moving"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "手",
+       "背",
+       "鼻"
+      ],
+      "en": [
+       "hands",
+       "the back",
+       "the nose"
+      ]
+     }
+    }
    ],
    "id": 37
   },
   "坤": {
    "kind": "trigram",
    "en": "Earth",
-   "zh": [
-    "地、母",
-    "腹、脾",
-    "顺、容",
-    "众多、方正"
-   ],
-   "enAlso": [
-    "earth, mother",
-    "belly, spleen",
-    "yielding, holding",
-    "multitude, squareness"
+   "cats": [
+    {
+     "zh": "象",
+     "en": "the image",
+     "items": {
+      "zh": [
+       "地",
+       "母",
+       "众多",
+       "方正的东西",
+       "布"
+      ],
+      "en": [
+       "earth",
+       "the mother",
+       "multitude",
+       "square things",
+       "cloth"
+      ]
+     }
+    },
+    {
+     "zh": "人事",
+     "en": "in human terms",
+     "items": {
+      "zh": [
+       "顺从",
+       "承载",
+       "群众",
+       "积累"
+      ],
+      "en": [
+       "yielding",
+       "carrying",
+       "the many",
+       "accumulation"
+      ]
+     }
+    },
+    {
+     "zh": "身",
+     "en": "the body",
+     "items": {
+      "zh": [
+       "腹",
+       "脾",
+       "肉"
+      ],
+      "en": [
+       "the belly",
+       "the spleen",
+       "flesh"
+      ]
+     }
+    }
    ],
    "id": 38
   }
