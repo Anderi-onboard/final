@@ -39,6 +39,32 @@ assert.deepEqual(offenders, [],
   `these carry a tag that is not version.json's ${version} — a page stamped differently from `
   + `version.json blocks every cast, and reloading serves the same mismatch:\n  ` + offenders.join('\n  '));
 
+/* Cache-busting tags live inside JS files too, and those are the ones that rot
+   silently: mountain-range.js pinned the palette catalogue at ?v=20260815i
+   while the rest of the site moved on, so a browser that had already fetched
+   color-groups.json would keep the stale copy through every palette change.
+   Nothing breaks — the old file still parses — which is exactly why nobody
+   notices. Scan every served JS for a ?v= that is not the current tag. */
+const jsFiles = [];
+(function walk(dir) {
+  for (const entry of readdirSync(`${ROOT}/${dir}`, { withFileTypes: true })) {
+    if (['node_modules', '.git', 'tests', 'scripts', 'eval', 'functions', 'copywriting', 'artifacts'].includes(entry.name)) continue;
+    const rel = dir ? `${dir}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) walk(rel);
+    else if (entry.name.endsWith('.js')) jsFiles.push(rel);
+  }
+})('');
+
+const jsOffenders = [];
+for (const f of jsFiles) {
+  for (const m of readFileSync(`${ROOT}/${f}`, 'utf8').matchAll(/\?v=(2026[01][0-9][0-3][0-9][a-z])/g)) {
+    if (m[1] !== version) jsOffenders.push(`${f}: ?v=${m[1]}`);
+  }
+}
+assert.deepEqual(jsOffenders, [],
+  `these JS files request an asset at a stale cache tag, so the browser keeps serving the old `
+  + `copy after the asset changes:\n  ` + jsOffenders.join('\n  '));
+
 // index.html's stamp is the one the guard actually compares, so pin it by name.
 const index = readFileSync(`${ROOT}/index.html`, 'utf8');
 const stamp = index.match(/BW_BUILD\s*=\s*"([^"]+)"/);
