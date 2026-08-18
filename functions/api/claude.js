@@ -178,9 +178,22 @@ export async function onRequestPost(context) {
         code: 'CLIENT_SYSTEM_REJECTED'
       }, 400);
     }
+    /* TEMPORARY: a streaming reading returns a bare Cloudflare 502 in ~3s with
+       no body and nothing in any response to say why, while the same streaming
+       branch serves utility roles fine. `?stage=1` reports how far a request
+       gets, so the failure can be located from outside. It reports SIZES and
+       booleans, never prompt text. Remove once the 502 is understood. */
+    const stage = new URL(request.url).searchParams.get('stage') === '1';
+    const mark = {};
+    mark.guard = 'ok';
+    mark.product = product; mark.mode = mode; mark.stream = body.stream === true;
+    mark.freeClaim = !!freeClaim; mark.chargeTo = !!chargeTo;
+
     let built;
     try {
       built = await buildSystem({ body, env, product, mode, messages });
+      mark.assembled = built && built.system ? built.system.length : 0;
+      mark.route = (built && built.route) || null;
     } catch (e) {
       console.error('prompt assembly failed', e);
       return json({ error: 'prompt assembly failed' }, 500);
@@ -194,6 +207,12 @@ export async function onRequestPost(context) {
       return json({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }, 200);
     }
     const systemPrompt = built.system;
+    if (stage) {
+      mark.model = resolveModel(body, env);
+      mark.max_tokens = clampTokens(body.max_tokens, env, product);
+      mark.messageChars = messages.reduce((n, m) => n + String((m && m.content) || '').length, 0);
+      return json({ stage: 'before-upstream', mark }, 200);
+    }
     // A role that builds its own user turn replaces the client's placeholder.
     const turnMessages = built.userOverride
       ? messages.slice(0, -1).concat([{ role: 'user', content: built.userOverride }])
