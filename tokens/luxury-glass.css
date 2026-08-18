@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260817f");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260817f");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260817f");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260817f");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260817g");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260817g");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260817g");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260817g");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -514,7 +514,11 @@ html[data-skin="paper"] body[data-page="guide"] .lesson .lead { max-width: 50ch;
 html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.not-found,.nf-card) {
   background-color: var(--soft-peach-glass-strong) !important;
 }
-html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(input,select,.field,.tabs,.prov) {
+/* .field is deliberately NOT in this list. It is the wrapper holding the
+   label and the input, so giving it a control's border and ground drew a
+   box around the label with a second box for the input inside it. Only
+   things you actually type in or press are controls. */
+html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(input,select,.tabs,.prov) {
   color: var(--soft-peach-ink) !important;
   /* Inputs are solid, not glass. Text you are being asked to type and check
      should not have a moving landscape refracting behind it, and a field with
@@ -526,12 +530,11 @@ html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(
    and 82% cream fields, which is why it looked like a different product from
    the page it is reached from. The hero is a surface, so it is glass; the
    active tab is a control, so it is solid. Same two materials as everywhere. */
-html[data-skin="paper"] body[data-page="login"] .card-hero {
-  background-color: var(--ui-glass-warm) !important;
-  -webkit-backdrop-filter: var(--ui-glass-filter);
-  backdrop-filter: var(--ui-glass-filter);
-  border-bottom: var(--ui-hairline) solid var(--ui-line) !important;
-}
+/* The .card-hero background override is gone. It set --ui-glass-warm on a
+   hero that sits INSIDE a card already painted --ui-glass-strong, so the
+   two translucencies composited to a different tone and drew a seam
+   across the card — and with !important it silently undid the fix made
+   in login.html. One carrier, one material. */
 html[data-skin="paper"] body[data-page="login"] .tab.on {
   background-color: #FFFFFF !important;
   box-shadow: var(--ui-solid-shadow) !important;

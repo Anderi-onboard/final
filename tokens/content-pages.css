@@ -211,7 +211,10 @@ body[data-page="guide"] :where(.back,.next){
 /* Login: one composed carrier, legible fields, no hover travel. */
 body[data-page="login"] .wrap{padding:28px 20px 40px}
 body[data-page="login"] .card{width:min(460px,100%);background:var(--cp-carrier-strong)}
-body[data-page="login"] .card-hero{background:var(--cp-tint);border-bottom:1px solid var(--cp-line);padding:30px 30px 22px}
+/* No background. This was the fourth file painting .card-hero, and an opaque
+   tint at that — a solid warm band across the top of a glass card. The hero
+   is part of the card, so it takes the card's material and nothing else. */
+body[data-page="login"] .card-hero{border-bottom:1px solid var(--cp-line);padding:30px 30px 22px}
 body[data-page="login"] .card-body{padding:26px 30px 14px}
 body[data-page="login"] .card-foot{padding:14px 30px 26px}
 body[data-page="login"] .tabs{box-shadow:none;background:color-mix(in srgb,var(--cp-accent) 6%,var(--paper-raised));padding:4px}

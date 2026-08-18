@@ -246,7 +246,12 @@ html[data-skin="paper"] body :is(
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
-html[data-skin="paper"] body :is(.band, .ribbon, .card-hero, .plan.feat) {
+/* .card-hero is out of this list. The others stand on the page on their own,
+   where a warmer glass is a legitimate step in the ladder; .card-hero sits
+   INSIDE .card, so a second translucency composites over the first and
+   draws a seam across the middle of the card. Three separate files were
+   painting this one element — this was the third. */
+html[data-skin="paper"] body :is(.band, .ribbon, .plan.feat) {
   background: var(--ui-glass-warm) !important;
 }
 html[data-skin="paper"] body .headline,
