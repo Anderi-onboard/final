@@ -13,14 +13,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260817e">
-<script src="./ds-base.js?v=20260817e"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260817f">
+<script src="./ds-base.js?v=20260817f"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -39,7 +39,10 @@
   .brand{display:flex;align-items:center;gap:9px}
   .mark{width:27px;height:22px;color:var(--ink)}
   .brand b{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
-  .pagehead .ghost{font-size:13.5px;color:var(--dim);transition:color .15s;white-space:nowrap}
+  /* gap, not the literal space in the markup: .ghost is laid out as flex by
+     the shared chrome rules, and a whitespace-only text node between flex
+     items is discarded — which is why the arrow was welded to the word. */
+  .pagehead .ghost{display:inline-flex;align-items:center;gap:.42em;font-size:13.5px;color:var(--dim);transition:color .15s;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
   .back-short{display:none}
 
@@ -51,9 +54,14 @@
     box-shadow:none;
     border-radius:var(--ui-radius) var(--ui-radius) var(--ui-radius) var(--ui-radius-small);}
 
-  .card-hero{background:var(--ui-glass-warm);color:var(--ink);padding:26px 28px 18px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  /* No background of its own. The hero sat on --ui-glass-warm INSIDE a card
+     that is already --ui-glass-strong, so two translucent layers composited
+     to a different tone than the body below and drew a horizontal seam
+     across the card. One carrier, one material; the rule underneath is the
+     divider. */
+  .card-hero{color:var(--ink);padding:24px 28px 16px;position:relative;overflow:hidden;border-bottom:1px solid var(--ui-line)}
   .card-hero .lbl{color:var(--faint)}
-  .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:34px;line-height:1.0;letter-spacing:-.02em;margin-top:7px;color:var(--ink)}
+  .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(32px,3.1vw,42px);line-height:.98;letter-spacing:-.03em;margin-top:9px;color:var(--ink)}
   .card-hero p{font-family:var(--serif);font-size:14.5px;color:var(--dim);margin-top:9px;max-width:30ch;text-wrap:pretty}
   /* The seal was stroked with a literal colour in a presentation attribute,
      which cannot take var(). Route it through currentColor so it follows the
@@ -119,8 +127,8 @@
   @media (max-width:360px){.back-long{display:none}.back-short{display:inline}}
   @media (prefers-reduced-motion: reduce){.card{animation:none}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260817e">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260817e">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260817f">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260817f">
 </head>
 <body data-page="login">
 
@@ -210,8 +218,8 @@
 
 <footer>BourneWise &middot; fixed hexagram input &middot; Claude Opus 5 interpretation</footer>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260817e"></script>
-<script src="./account.js?v=20260817e"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260817f"></script>
+<script src="./account.js?v=20260817f"></script>
 <script>
 (function () {
   "use strict";
