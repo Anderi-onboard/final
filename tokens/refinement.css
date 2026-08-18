@@ -204,14 +204,24 @@ html[data-skin="paper"] body .mtn-bg [clip-path]:not(.moire) > use { opacity: .1
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
   stroke: color-mix(in srgb, #141413 30%, transparent) !important;
-  stroke-width: 2.05 !important;
+  /* No stroke-width here. This rule covers BOTH contour groups, so setting a
+     width flattened all three ridge variants to one number — and with
+     !important it beat the engine's own sheet outright. The range's
+     contours were a uniform 2.05px no matter what mountain-range.js said,
+     which is why two rounds of thickening it changed nothing. Colour and
+     joins belong here; the weights belong with the geometry. */
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
-html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { stroke-width: 1.6 !important; opacity: .72; }
-html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { stroke-width: 2.45 !important; opacity: .5; }
-html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { stroke-width: 1.9 !important; opacity: .62; }
+/* Contour WIDTH is not set here any more. It was — at 1.6/2.45/1.9 with
+   !important — and because that outspecifies the engine's own injected
+   sheet, two separate rounds of thickening mountain-range.js changed
+   nothing at all on screen. One definition, and it lives with the
+   geometry that sizes itself against it. Only opacity stays here. */
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { opacity: .72; }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { opacity: .5; }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { opacity: .62; }
 html[data-skin="paper"] body .mtn-bg .fill,
 html[data-skin="paper"] body .mtn-bg [clip-path] > use {
   transition: fill 1.5s var(--ease-in-out);
@@ -676,12 +686,15 @@ html[data-skin="paper"] body:not([data-page="app"]) :is(
   backdrop-filter: blur(13px) saturate(116%) !important;
   -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
 }
-html[data-skin="paper"] body:not([data-page="app"]) :is(
-  .why-card, .lesson-card, .rate, .rate-card, .pack, .term, .method
-):nth-child(2n) {
-  background-color: color-mix(in srgb, var(--bw-palette-2) 48%, rgba(42,32,22,.2)) !important;
-  background-image: none !important;
-}
+/* The alternating carrier tint is gone. It mixed --bw-palette-2 into every
+   second card, which is the palette-in-glass pattern the glass rules ban —
+   and because :nth-child pushed it to (0,4,2) it outspecified the neutral
+   glass and won, so a row of four packs read as two different materials.
+   Rhythm across a row is the job of content, not of a tint on the even
+   ones. NOTE: the block above still tints every carrier with
+   --bw-palette-1 at 52% and blurs at 13px rather than the frosted filter;
+   it currently loses to luxury-glass.css on the pages that load it, but it
+   is the same violation and should be retired the same way. */
 body[data-page="pricing"] .plan,
 body[data-page="pricing"] .topup,
 body[data-page="settings"] .panel,

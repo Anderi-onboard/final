@@ -149,8 +149,12 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 **低于节距的四分之一左右,笔画就不再读作"画出来的",而是读作一条淡淡的格线。**
 山脉等高线 2/1.55/2.45/1.9 → **4/3.2/4.9/3.9**,摩尔纹 .85 → **1.7**;
 山景色版山脊 → **3.7−.65t**、等高线 → **2.5−.55t**(`marks.js` 的 `landscape()`)。
-⚠️ 这些值在两轮里各加粗过一次(第一轮不够,owner 两次都说"还是太细")——
-**下次再嫌细,继续按分数往上走,别退回散数。**
+⚠️ **两轮加粗全都没上屏,原因不是数值不够,是被覆盖了。** `refinement.css` 有一条
+`html[data-skin="paper"] body .mtn-bg :is(.contour,.cloud-contour) use{stroke-width:2.05!important}`,
+**同时命中两个等高线组**,于是山脉三档变化被压成一个数,而且 `!important` + 更高特异性
+直接盖过引擎自己注入的样式表 —— 无论 `mountain-range.js` 写什么,屏幕上一直是均匀 2.05px。
+现在宽度只在 `mountain-range.js` 里定义一处,`refinement.css` 只留颜色和线帽。
+**再遇到"改了没效果",先量 `getComputedStyle`,不要直接加大数值。**
 ⚠️ **Sortis 爻的 `stroke-width:0.5` 不在此列**:那不是线,是把填充形状撑开磨圆的手法(短边的 4%,见上),加粗它是把爻变胖。
 `--ui-line` 从 5% 墨提到 **11%**:1px 描边在 5% 上根本看不见,面板边缘全靠玻璃高光扛着。**细是规范,看不见是 bug。**
 
