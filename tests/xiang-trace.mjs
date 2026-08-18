@@ -183,8 +183,14 @@ assert.deepEqual(M.skipStandalone.slice().sort(), ['土', '水', '木', '火', '
   'bare elements are never matched — they live inside ordinary words');
 assert.ok(M.branchSuffix.includes('日') && M.branchSuffix.includes('月'),
   'a lone branch counts only before 日/月/年');
-assert.ok(M.trigramSuffix.includes('卦') && M.trigramPrefix.includes('上'),
-  'a lone trigram needs 卦/宫 after it or 上/下 before it');
+// 艮上震下 — the standard way a reading writes a figure's construction puts
+// 上/下 AFTER the trigram; 上艮下震 puts it before. Both positions count, or
+// half the trigrams in every board layout go unannotated.
+assert.ok(M.trigramSuffix.includes('卦') && M.trigramSuffix.includes('宫'),
+  'a lone trigram counts beside 卦/宫');
+assert.ok(M.trigramSuffix.includes('上') && M.trigramSuffix.includes('下')
+  && M.trigramPrefix.includes('上') && M.trigramPrefix.includes('下'),
+  'both 艮上震下 and 上艮下震 are written; 上/下 must count on either side');
 for (const c of Object.values(cat.compounds)) {
   assert.ok(M.direct.includes(c), `compound ${c} must be matchable — readings write branches that way`);
 }
