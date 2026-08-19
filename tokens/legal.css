@@ -64,7 +64,7 @@ body[data-page="legal"] .legal-poster-intro h1 {
   font-size: clamp(36px, 5.4vw, 72px); line-height: .98;
   letter-spacing: -.032em;
 }
-body[data-page="legal"] .legal-poster-intro .meta { font-size: 12.5px; color: var(--dim); }
+body[data-page="legal"] .legal-poster-intro .meta { font-size: 13px; color: var(--dim); }
 body[data-page="legal"] .legal-poster-intro .lede {
   grid-column: 2; grid-row: 1;
   font-family: var(--serif); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.5;
@@ -79,7 +79,7 @@ html[data-skin="paper"] body[data-page="legal"] .toc {
   backdrop-filter: none !important;
   border: 0 !important; box-shadow: none !important; border-radius: 0 !important;
 }
-body[data-page="legal"] .toc a { font-size: 12.5px; display: flex; gap: 8px; padding: 2px 0; }
+body[data-page="legal"] .toc a { font-size: 13px; display: flex; gap: 8px; padding: 2px 0; }
 body[data-page="legal"] .toc a:hover { color: var(--terracotta); }
 
 /* ── the clauses ────────────────────────────────────────────────────────── */
@@ -116,7 +116,7 @@ body[data-page="legal"] .clause h2 .n {
 body[data-page="legal"] .clause :is(p, ul, .pull) { grid-column: 2; max-width: 78ch; }
 body[data-page="legal"] .clause :is(p, ul):first-of-type { margin-top: 0; }
 body[data-page="legal"] .clause :is(p, li) {
-  font-family: var(--serif); font-size: 14.5px; line-height: 1.62; margin-top: 9px;
+  font-family: var(--serif); font-size: 15px; line-height: 1.62; margin-top: 9px;
 }
 body[data-page="legal"] .clause ul { margin: 4px 0 0; padding-left: 18px; }
 body[data-page="legal"] .clause li { margin-top: 5px; }

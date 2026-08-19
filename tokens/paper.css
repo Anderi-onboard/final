@@ -53,7 +53,7 @@
 
   /* type jobs (kit-exact) */
   --text-reading: 23px;     /* oracle answers — serif, line-height 1.55 */
-  --text-label: 11.5px;     /* system labels — sans, tracked */
+  --text-label: 12px;       /* system labels — sans, tracked */
   --tracking-label: .09em;
 
   /* textures (paths relative to project root — re-resolve per page) */

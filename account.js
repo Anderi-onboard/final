@@ -320,7 +320,10 @@
   function planDescription(id) {
     if (id === "pro") return "$" + PLANS.pro.price + "/month · " + PLANS.pro.grant.toLocaleString("en-US") + " units each month";
     if (id === "premium") return "$" + PLANS.premium.price + "/month · " + PLANS.premium.grant.toLocaleString("en-US") + " units each month";
-    return "500 welcome units · subscriptions and one-time top-ups available";
+    // Read the grant rather than restating it. This line said "500" while the
+    // table above it said 1500 and pricing.html said 1,500 — the free grant was
+    // raised and the sentence describing it was not.
+    return PLANS.free.grant.toLocaleString("en-US") + " welcome units · subscriptions and one-time top-ups available";
   }
 
   // ─── sidebar paint ──────────────────────────────────────────────────

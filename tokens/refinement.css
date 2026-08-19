@@ -354,7 +354,7 @@ body[data-page="app"] .side-top { padding-inline: 6px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
-  border-radius: var(--ui-radius-pill); font-size: 12.5px; font-weight: 500 !important;
+  border-radius: var(--ui-radius-pill); font-size: 13px; font-weight: 500 !important;
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 400px; }
@@ -498,7 +498,7 @@ body[data-page="app"] .stria {
   transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
-body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
+body[data-page="app"] .composer textarea { font-size: 15px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:background-color 140ms ease,opacity 140ms ease; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
@@ -922,9 +922,9 @@ html[data-skin="paper"] body .acct-menu { position: absolute; }
    visible while it is being made, then clears out instead of becoming a large
    screenshot above a narrow answer column. */
 body[data-page="app"] .thread-inner { max-width: 920px; }
-body[data-page="app"] .reading-body { max-width: 760px; font-size: 16px; line-height: 1.82; }
+body[data-page="app"] .reading-body { max-width: 760px; font-size: 15px; line-height: 1.82; }
 body[data-page="app"] .reading-body .rd-para,
-body[data-page="app"] .reading-body .rd-list li { font-size: 16px; }
+body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type {
   position: relative;
@@ -952,9 +952,9 @@ html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is
 ) { border: 0 !important; }
 
 @media (max-width:700px) {
-  body[data-page="app"] .reading-body { max-width: 100%; font-size: 15.5px; }
+  body[data-page="app"] .reading-body { max-width: 100%; font-size: 15px; }
   body[data-page="app"] .reading-body .rd-para,
-  body[data-page="app"] .reading-body .rd-list li { font-size: 15.5px; }
+  body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
 }
 
 /* A very small optical hand-off between scrolling content and the fixed input

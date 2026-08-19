@@ -690,7 +690,7 @@
          column's book serif */
       ".bw-cast-head{display:flex;align-items:center;gap:15px;font-family:var(--sans);font-size:12px;letter-spacing:.17em;white-space:nowrap}",
       ".bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-cast-status{color:var(--faint);font-size:11.5px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
+      ".bw-cast-status{color:var(--faint);font-size:12px;letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:opacity .3s}",
       ".bw-cast-status:empty{display:none}",
 
       /* ── organic loader: three hollow hand-drawn rings at rest. During an
@@ -835,7 +835,7 @@
       ".bw-af-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:2px;font-size:12.5px;letter-spacing:.08em;text-transform:none;white-space:nowrap;position:relative}",
       ".bw-af-bar .bw-coins{flex:none}",
       ".bw-af-bar .bw-cast-method{color:var(--terracotta);font-weight:600}",
-      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;min-width:0;max-width:min(58vw,380px);overflow:hidden;text-overflow:ellipsis;color:var(--dim);font-size:11.5px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s;white-space:nowrap}",
+      ".bw-af-bar .bw-cast-status{display:inline-flex;align-items:center;min-width:0;max-width:min(58vw,380px);overflow:hidden;text-overflow:ellipsis;color:var(--dim);font-size:12px;letter-spacing:.06em;font-variant-numeric:tabular-nums;transition:opacity .3s;white-space:nowrap}",
       ".bw-af-bar .bw-cast-status:empty{display:none}",
       "@media (max-width:600px){",
         ".bw-af-bar{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:11px;row-gap:8px;width:100%;white-space:normal;margin-bottom:16px}",

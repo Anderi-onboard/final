@@ -69,7 +69,7 @@ body.blocks-route .bk-eyebrow {
   letter-spacing: .13em;
   opacity: .72;
 }
-body.blocks-route :is(p, li) { font-size: 13.5px; line-height: 1.55; margin: 0; }
+body.blocks-route :is(p, li) { font-size: 13px; line-height: 1.55; margin: 0; }
 body.blocks-route .bk-note { margin-top: 10px; opacity: .82; max-width: 44ch; }
 
 /* ── header / footer: flush bars, not floating chrome ───────────────────── */
