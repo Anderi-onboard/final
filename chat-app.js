@@ -472,7 +472,7 @@
   function xrReset(text) {
     xrSeen = {};
     if (!XR_CAT) return;
-    String(text || "").replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+    String(text || "").replace(/\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
       if (!xrUseful(word, sym)) return "";
       var hit = xrLookup(sym);
       if (hit) xrSeen[hit.key] = hit.entry.id;
@@ -622,7 +622,7 @@
   // Strip the markers to bare words — for the streaming preview, for copy, and
   // as the fallback whenever the annotation cannot be built.
   function xrPlain(s) {
-    return String(s || "").replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, "$1");
+    return String(s || "").replace(/\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g, "$1");
   }
   /* A mark is only worth an underline if a TRANSLATION happened. Tagging a term
      with itself — {妻财|妻财}, {巳火|巳} — is circular: the reader clicks 妻财
@@ -637,12 +637,19 @@
   function xrUseful(word, sym) {
     if (word === sym) return false;
     if (word.length <= 3 && word.indexOf(sym) !== -1) return false;
+    /* Too long to underline. A live reading marked a whole candidate list —
+       "{可能是同行竞品;可能是要分你成的合伙人;…|兄弟}", 60-odd characters — and
+       with the pattern capped at 40 it did not match at all, so the reader
+       would have seen the raw braces sitting in the prose. The pattern is wide
+       now and the judgement lives here instead: an over-long mark degrades to
+       plain text, which still reads correctly, never to visible punctuation. */
+    if (word.length > 40) return false;
     return true;
   }
   /* Rendered before the |gild| rule below, which needs two pipes and would
      otherwise pair the pipe of one marker with the pipe of the next. */
   function xrInline(h) {
-    return h.replace(/\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+    return h.replace(/\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
       if (!xrUseful(word, sym)) return word;
       /* An underline that does nothing when clicked is worse than no underline:
          it promises something and then withdraws it. The catalogue is fetched

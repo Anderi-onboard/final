@@ -4,14 +4,14 @@
   var body = document.body;
   var page = body && body.dataset.page;
   var patternSources = [
-    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260819c",
-    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260819c",
-    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260819c",
-    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260819c"
+    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260819d",
+    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260819d",
+    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260819d",
+    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260819d"
   ];
   var accentSources = {
-    coin: "./assets/textures/lianqian/lianqian-accent-coin.webp?v=20260819c",
-    medallion: "./assets/textures/lianqian/lianqian-accent-medallion.webp?v=20260819c"
+    coin: "./assets/textures/lianqian/lianqian-accent-coin.webp?v=20260819d",
+    medallion: "./assets/textures/lianqian/lianqian-accent-medallion.webp?v=20260819d"
   };
 
   function appendAccent(target, type, modifier) {

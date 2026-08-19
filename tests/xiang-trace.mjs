@@ -97,11 +97,21 @@ assert.match(chat, /function xrUseful\(word, sym\)/, 'the circular-mark guard ex
 const useful = (word, sym) => {
   if (word === sym) return false;
   if (word.length <= 3 && word.indexOf(sym) !== -1) return false;
+  if (word.length > 40) return false;
   return true;
 };
 for (const [w, s] of [['妻财', '妻财'], ['巳火', '巳'], ['父母', '父母'], ['子水', '子'], ['戌土', '戌'], ['申', '申']]) {
   assert.equal(useful(w, s), false, `{${w}|${s}} is circular and must render as plain text`);
 }
+/* NO MARKER SHAPE MAY EVER REACH THE READER AS BRACES. A live reading marked a
+   whole candidate list — 60-odd characters — and with the pattern capped at 40
+   it matched nothing, leaving "{可能是同行竞品;…|兄弟}" sitting in the prose. The
+   pattern is wide enough to catch any mark; the length judgement lives in
+   xrUseful, so an over-long one degrades to plain text instead. */
+assert.equal(useful('可能是同行竞品;可能是要分你成的合伙人;可能是抽走你利润的那个渠道;也可能是你自己另外那摊分走精力的事', '兄弟'),
+  false, 'an over-long mark must not become an underline');
+assert.match(chat, /word\.length > 40/, 'the length judgement lives in xrUseful, not in the pattern');
+
 for (const [w, s] of [['审批那一关', '官鬼'], ['你做出来的那个东西', '巳'], ['那份还没签的合同', '父母']]) {
   assert.equal(useful(w, s), true, `{${w}|${s}} is a real translation and must stay clickable`);
 }
@@ -119,19 +129,25 @@ assert.match(seg, /你写在括号里的那句解释,就是标记/,
 // ── 3. the marker pattern is one pattern, used in both directions ───────────
 // xrPlain strips it (stream preview, fallback); xrInline renders it. If the two
 // drift, the preview shows raw braces or a marker survives into the prose.
-const pats = chat.match(/\/\\\{\(\[\^\{\}\|\]\{1,40\}\)\\\|\(\[\^\{\}\|\]\{1,12\}\)\\\}\/g/g) || [];
+const pats = chat.match(/\/\\\{\(\[\^\{\}\|\]\{1,120\}\)\\\|\(\[\^\{\}\|\]\{1,12\}\)\\\}\/g/g) || [];
 assert.equal(pats.length, 3,
   'xrPlain (strip), xrInline (render) and xrReset (seed) must share ONE marker pattern, '
   + 'character for character — if they drift the preview shows raw braces, or a mark renders '
   + 'without having claimed its symbol');
 
-const RE = /\{([^{}|]{1,40})\|([^{}|]{1,12})\}/g;
+const RE = /\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g;
 const strip = (s) => s.replace(RE, '$1');
 assert.equal(strip('动的偏偏是{审批那一关|官鬼} —— 所以卡你的不是能力。'),
   '动的偏偏是审批那一关 —— 所以卡你的不是能力。');
 assert.equal(strip('{她|妻财}张罗,{他|官鬼}点头'), '她张罗,他点头');
 // Prose braces that are not markers survive untouched rather than eating text.
 assert.equal(strip('用 {} 表示空集'), '用 {} 表示空集');
+// However long the mark, stripping leaves no brace behind.
+{
+  const long = '{可能是同行竞品;可能是要分你成的合伙人;可能是抽走你利润的那个渠道;也可能是你自己另外那摊分走精力的事|兄弟}';
+  assert.doesNotMatch(strip('在你这局里,' + long + '。'), /[{}]/,
+    'a mark too long to underline must still lose its braces — the reader must never see them');
+}
 
 // ── 4. markers are rendered BEFORE |gild| ──────────────────────────────────
 // gild matches /\|([^|]+)\|/ — two pipes. Two markers on one line offer it the
@@ -185,8 +201,10 @@ assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself
    output_sortis sets. The marks themselves are a few dozen characters, so the
    loss was the walk being shortened and scenes being cut. The segment has to
    say so, or it quietly buys annotation with length. */
-assert.match(seg, /标记更不许让这一篇变短/,
-  'the segment must defend the length floor it was measured to erode');
+assert.match(seg, /标记不改变篇幅 —— 两个方向都不改/,
+  'the segment must hold BOTH bounds: it was measured eroding the floor, then overshooting the ceiling');
+assert.match(seg, /篇幅照旧 3000–4000 字,标记照旧 8 到 20 处/,
+  'and must state the two limits together, since treating marks as a length dial is the failure');
 
 /* ── 9. the parse path ──────────────────────────────────────────────────────
    Everywhere the reading writes a symbol outright — 妻财, 官鬼, 巳火 — is
