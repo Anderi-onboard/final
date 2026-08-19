@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260819f", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260819f";
+    ? new URL("../palettes/color-groups.json?v=20260819g", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260819g";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;

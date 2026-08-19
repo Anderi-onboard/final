@@ -630,16 +630,32 @@ export function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS });
 }
 
+/* The output ceiling. A READING'S BUDGET IS DECIDED HERE, not by the browser:
+ * the client used to send max_tokens 12000 and that number drove the model, which
+ * both contradicts "the browser declares intent only" and put the one hard,
+ * deterministic length control in the least trustworthy place. For a reading the
+ * request is now ignored and the server ceiling applies; utility roles may still
+ * ask for less than their own small ceiling, since a category label needs nothing.
+ *
+ * IT IS A COST RAIL, NOT A LENGTH CONTROL, and the distinction matters because
+ * it has bitten here before. A cap only shortens a reading by TRUNCATING it, in
+ * the middle of a sentence, and reporting finish_reason "length" that looks like
+ * an ordinary completion — which is exactly how extended thinking silently cut
+ * readings off at 257 / 1126 / 1769 / 2444 characters. So the ceiling is set well
+ * above anything a real reading reaches and never used to aim at a target length;
+ * that job belongs to the floor in output_sortis. Measured across five live
+ * readings: 2448-4904 completion tokens, 20-41% of the budget, so nothing is
+ * anywhere near it and nothing gets cut.
+ */
+const READING_CEILING = 16384;
 function clampTokens(req, env, product) {
-  const n = Number(req || env.CLAUDE_MAX_TOKENS) || 1024;
-  // A reading gets the full ceiling: 16384, raised from 8192 because a full
-  // Sortis reading (4000-6000 CJK chars across all layers) was truncating
-  // mid-sentence. Utility roles get 512 — they emit a category label, a short
-  // QC verdict or a handful of suggested questions, and nothing they legitimately
-  // do needs more. The split matters because the utility path is the one with no
-  // session and no ledger behind it.
-  const ceiling = (product === 'sortis' || product === 'stria') ? 16384 : 512;
-  return Math.max(64, Math.min(ceiling, n));
+  const reading = product === 'sortis' || product === 'stria';
+  const envCap = Number(env.CLAUDE_MAX_TOKENS) || 0;
+  if (reading) return Math.max(64, Math.min(READING_CEILING, envCap || READING_CEILING));
+  // Utility roles emit a category label, a short QC verdict or a few suggested
+  // questions. Nothing they legitimately do needs more, and this is the path with
+  // no session and no ledger behind it.
+  return Math.max(64, Math.min(512, Number(req || envCap) || 1024));
 }
 
 function json(obj, status) {

@@ -213,7 +213,7 @@ assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself
 assert.match(seg, /标记跟篇幅是两条线/, 'the segment must decouple marks from length');
 assert.doesNotMatch(seg, /3000/, 'and must not restate the length rule — output_sortis owns it');
 const outS = PromptEngine.SEGMENTS.output_sortis;
-assert.match(outS, /starts at 3000 characters/, 'the floor lives in output_sortis');
+assert.match(outS, /starts at 3500 characters/, 'the floor lives in output_sortis');
 assert.match(outS, /The floor is real and the ceiling is not/, 'and there is no upper bound');
 assert.match(outS, /Going long is not a fault/, 'said plainly, so it is not read as a grudging allowance');
 assert.doesNotMatch(outS, /runs 3000-4000/, 'the old two-sided range is gone');

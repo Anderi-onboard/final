@@ -324,7 +324,9 @@
       }
       var mainCall = makeStreamComplete({
         product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature
-      })({ question: question, messages: messages, max_tokens: 12000 }, opts.onDelta);
+      // No max_tokens: a reading's output budget is the server's to set, and a
+      // magic number here was driving the model from the least trustworthy place.
+      })({ question: question, messages: messages }, opts.onDelta);
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
