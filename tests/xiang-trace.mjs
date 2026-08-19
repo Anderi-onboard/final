@@ -180,6 +180,13 @@ assert.match(seg, /\{实际的词\|符号\}/, 'the syntax is stated literally, o
 assert.match(seg, /8 到 20/, 'the mark count is bounded — a fully underlined page gets clicked nowhere');
 // output_sortis forbids labelled boxes; a "生克分析" section would contradict it.
 assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself, not a new section');
+/* Measured: readings ran 8.6k / 12.5k / 9.5k characters before this segment
+   existed and 7.4k / 7.6k after — two in a row under the 3000-character floor
+   output_sortis sets. The marks themselves are a few dozen characters, so the
+   loss was the walk being shortened and scenes being cut. The segment has to
+   say so, or it quietly buys annotation with length. */
+assert.match(seg, /标记更不许让这一篇变短/,
+  'the segment must defend the length floor it was measured to erode');
 
 /* ── 9. the parse path ──────────────────────────────────────────────────────
    Everywhere the reading writes a symbol outright — 妻财, 官鬼, 巳火 — is
