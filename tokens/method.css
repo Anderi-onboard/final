@@ -109,11 +109,21 @@ body[data-page="guide"] .mt-card p:not(.mt-meta), body[data-page="guide"] .mt-ca
 .mt-fill { flex: 1 1 auto; }      /* pushes the block below it to the foot */
 
 /* ── the masthead card ────────────────────────────────────────────────────
-   The reference opens on a column of repeated words bleeding off the left
-   edge. Ours lists what the page covers, in the order it covers it. */
-.mt-stack { display: flex; flex-direction: column; justify-content: center; height: 100%;
-  margin-left: -20.12cqw; }
-body[data-page="guide"] .mt-stack span { font-family: var(--serif); font-size: 13.42cqw; line-height: 1.16;
+   The reference opens on a column of display words cut by the card edge.
+   Ours lists what the page covers, in the order it covers it.
+
+   ⚠️ It bleeds on the VERTICAL axis, not the horizontal one. These six words
+   are 172–273cqw-scaled px wide inside a 427px box, so nothing overflows
+   sideways on its own — a horizontal crop has to be manufactured with a
+   negative margin, and then every line loses its first letter at once:
+   "uestion / epth / asting / eading / harge / ollow-up", six non-words. The
+   reference survives that only because it repeats ONE word, so the reader
+   recovers it from any row. Six different words cannot be recovered.
+   The column is genuinely taller than the square (6 × 1.16em > 100%), so
+   cropping top and bottom is the same effect with nothing invented, and it
+   reads the way a contents list should: it continues past the frame. */
+.mt-stack { display: flex; flex-direction: column; justify-content: center; height: 100%; }
+body[data-page="guide"] .mt-stack span { font-family: var(--serif); font-size: 16.86cqw; line-height: 1.16;
   white-space: nowrap; letter-spacing: -.03em; }
 /* The masthead column alternates WEIGHT, not opacity — same device as the
    headlines, so the page has one idea about emphasis rather than two. */

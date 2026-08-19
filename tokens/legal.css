@@ -108,7 +108,12 @@ body[data-page="legal"] .clause h2 {
 body[data-page="legal"] .clause h2 .n {
   font-family: var(--serif); font-size: 13px; color: var(--terracotta); letter-spacing: 0;
 }
-body[data-page="legal"] .clause :is(p, ul) { grid-column: 2; max-width: 78ch; }
+/* ⚠️ .pull belongs in this list. It is a div, so leaving it out does not
+   leave it alone — the grid auto-places it into column 1, the numbering rail,
+   where a 40-word clause becomes eleven lines in a 120px column with the
+   whole text column empty beside it. Anything that is body content goes in
+   column 2; only the h2 stays in the rail. */
+body[data-page="legal"] .clause :is(p, ul, .pull) { grid-column: 2; max-width: 78ch; }
 body[data-page="legal"] .clause :is(p, ul):first-of-type { margin-top: 0; }
 body[data-page="legal"] .clause :is(p, li) {
   font-family: var(--serif); font-size: 14.5px; line-height: 1.62; margin-top: 9px;
@@ -133,7 +138,7 @@ body[data-page="legal"] :is(.mtn-bg, .mtn-sky) { display: none !important; }
   body[data-page="legal"] .legal-poster-intro { grid-template-columns: minmax(0, 1fr); }
   body[data-page="legal"] .legal-poster-intro :is(.lede, .toc) { grid-column: 1; grid-row: auto; }
   body[data-page="legal"] .clause { grid-template-columns: minmax(0, 1fr); }
-  body[data-page="legal"] .clause :is(p, ul) { grid-column: 1; }
+  body[data-page="legal"] .clause :is(p, ul, .pull) { grid-column: 1; }
   body[data-page="legal"] .clause h2 { display: flex; gap: 10px; }
 }
 
