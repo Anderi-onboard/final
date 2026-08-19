@@ -12,6 +12,13 @@
    by route, and the split is not arbitrary: these pages already switch the
    animated range off, so there is nothing behind them for glass to refract. */
 
+/* border-box for the whole route. The glass pages set this in their own
+   inline reset; these pages never did, so any control with width:100% and
+   padding measured wider than its column — the method page's textarea ran
+   29px past the card edge. */
+body.blocks-route, body.blocks-route *, body.blocks-route *::before,
+body.blocks-route *::after { box-sizing: border-box; }
+
 body.blocks-route {
   --bk-ink:    #1A1714;
   --bk-bone:   #E8DDD8;

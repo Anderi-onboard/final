@@ -123,4 +123,68 @@
     len.addEventListener("input", calc);
     calc();
   }
+
+  /* ── woven weight ───────────────────────────────────────────────────────
+     One typeface, weight alternating word by word — the same face at two
+     weights rather than two faces. Split here rather than in the markup so
+     the copy stays plain text and stays editable.
+
+     Deterministic by word index, exactly as the brush is by bar index: a
+     random assignment would reshuffle on every navigation and read as a
+     rendering fault rather than as a decision. */
+  [].slice.call(document.querySelectorAll("[data-weave]")).forEach(function (el) {
+    if (el.dataset.woven) return;
+    var words = el.textContent.trim().split(/\s+/);
+    el.textContent = "";
+    words.forEach(function (w, i) {
+      var span = document.createElement("span");
+      span.setAttribute("data-w", String(i % 2));
+      span.textContent = w;
+      el.appendChild(span);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+    });
+    el.dataset.woven = "1";
+  });
+
+  /* ── click to turn the card ─────────────────────────────────────────────
+     A step card carries its name and the thing it teaches. The name is what
+     you see; one click swaps to the widget in the same square, with a short
+     white blink so the change reads as the card turning rather than as a
+     crossfade. Nothing keeps running afterwards.
+
+     The click is ignored when it lands on something operable, otherwise
+     typing in the textarea or dragging the slider would flip the card out
+     from under the reader. */
+  [].slice.call(document.querySelectorAll(".mt-card--flip")).forEach(function (card) {
+    var faces = [].slice.call(card.querySelectorAll(".mt-face"));
+    if (faces.length < 2) return;
+    var hint = card.querySelector(".mt-hint");
+    var i = 0, busy = false;
+
+    function turn() {
+      if (busy) return;
+      busy = true;
+      var next = (i + 1) % faces.length;
+      card.classList.add("is-flashing");
+      setTimeout(function () {
+        faces[i].classList.remove("is-on");
+        faces[next].classList.add("is-on");
+        i = next;
+        card.setAttribute("aria-expanded", i === 1 ? "true" : "false");
+        if (hint) hint.textContent = i === 1 ? "Tap to go back" : hint.dataset.rest || hint.textContent;
+      }, 90);
+      setTimeout(function () { card.classList.remove("is-flashing"); busy = false; }, 300);
+    }
+
+    if (hint) hint.dataset.rest = hint.textContent;
+    card.addEventListener("click", function (e) {
+      if (e.target.closest("input, textarea, button, select, a, label")) return;
+      turn();
+    });
+    card.addEventListener("keydown", function (e) {
+      if (e.target !== card) return;
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); turn(); }
+    });
+  });
+
 }());

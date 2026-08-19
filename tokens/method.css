@@ -115,7 +115,13 @@ body[data-page="guide"] .mt-card p:not(.mt-meta), body[data-page="guide"] .mt-ca
   margin-left: -20.12cqw; }
 body[data-page="guide"] .mt-stack span { font-family: var(--serif); font-size: 13.42cqw; line-height: 1.16;
   white-space: nowrap; letter-spacing: -.03em; }
-.mt-stack span:nth-child(even) { opacity: .58; }
+/* The masthead column alternates WEIGHT, not opacity — same device as the
+   headlines, so the page has one idea about emphasis rather than two. */
+.mt-stack span:nth-child(even) { font-weight: 300; }
+.mt-stack span:nth-child(odd) { font-weight: 700; }
+body[data-page="guide"] .mt-stack span {
+  text-shadow: 0 0 .04em rgb(255 255 255 / .30), 0 0 .22em rgb(255 255 255 / .18);
+}
 
 /* ── working cards ────────────────────────────────────────────────────────
    These hold the interactions. They keep the square: every widget below is
@@ -196,4 +202,69 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
      aspect here and takes the height its content needs. */
   .mt-card { aspect-ratio: auto; min-height: 62vw; }
   .mt-card:is([data-pattern], [data-land]) { min-height: 30vw; }
+}
+
+/* ── woven weight, and a light in the type ─────────────────────────────────
+   One typeface, weight alternating word by word. BioRhyme is a variable font
+   (wght 200–800) shipped as a single file, so this costs no extra bytes and
+   introduces no fourth family — the three-font rule holds.
+
+   The alternation is deterministic: even words light, odd words heavy, by
+   index. The same rule the brush follows, and for the same reason — random
+   per render would reshuffle on every navigation and read as a fault. */
+body[data-page="guide"] .mt-display [data-w="0"] { font-weight: 300; }
+body[data-page="guide"] .mt-display [data-w="1"] { font-weight: 700; }
+
+/* The glow is a halo of neutral white, never a palette tint — the same rule
+   the glass follows. It is static: nothing here pulses. Two stops, a tight one
+   for the edge and a wide one for the bloom, both well under half an em so the
+   counters stay open and the type stays readable rather than fogged. */
+body[data-page="guide"] .mt-display {
+  text-shadow:
+    0 0 .04em rgb(255 255 255 / .34),
+    0 0 .22em rgb(255 255 255 / .22);
+}
+
+/* ── the two faces ─────────────────────────────────────────────────────────
+   A step card holds its name and the thing it teaches. The name is what you
+   see; one click swaps to the widget in place. The faces stack absolutely
+   inside .mt-faces rather than on the card itself, so the card keeps its
+   percentage inset and every cqw below still measures against the same box. */
+.mt-faces { position: relative; flex: 1 1 auto; min-height: 0; }
+.mt-face {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 180ms var(--ease-out);
+}
+.mt-face.is-on { opacity: 1; visibility: visible; pointer-events: auto; }
+.mt-face[data-face="work"] { justify-content: flex-end; }
+
+.mt-card--flip { cursor: pointer; }
+.mt-card--flip:focus-visible { outline: 2px solid currentColor; outline-offset: -6px; }
+body[data-page="guide"] .mt-hint {
+  margin: 0; font-family: var(--mono, var(--sans));
+  font-size: max(9px, 2.46cqw); letter-spacing: .12em; opacity: .5;
+  transition: opacity 160ms var(--ease-out);
+}
+.mt-card--flip:hover .mt-hint { opacity: .82; }
+
+/* The flash. A short white wash over the whole card as the faces cross, so
+   the swap reads as the card blinking rather than as a fade. It runs once per
+   click and leaves nothing running — the casting figure's rule, applied here:
+   once it lands, nothing keeps moving. */
+.mt-card--flip::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: rgb(255 255 255 / .55); opacity: 0;
+}
+.mt-card--flip.is-flashing::after { animation: mt-blink 260ms var(--ease-out) 1; }
+@keyframes mt-blink {
+  0%   { opacity: 0; }
+  18%  { opacity: .9; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mt-face { transition: none; }
+  .mt-card--flip.is-flashing::after { animation: none; }
 }
