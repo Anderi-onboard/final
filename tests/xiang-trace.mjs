@@ -201,10 +201,15 @@ assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself
    output_sortis sets. The marks themselves are a few dozen characters, so the
    loss was the walk being shortened and scenes being cut. The segment has to
    say so, or it quietly buys annotation with length. */
-assert.match(seg, /标记不改变篇幅 —— 两个方向都不改/,
-  'the segment must hold BOTH bounds: it was measured eroding the floor, then overshooting the ceiling');
-assert.match(seg, /篇幅照旧 3000–4000 字,标记照旧 8 到 20 处/,
-  'and must state the two limits together, since treating marks as a length dial is the failure');
+/* LENGTH HAS ONE OWNER, AND IT IS NOT THIS SEGMENT. output_sortis sets
+   3000-4000. Restating it here gave the rule two owners, and the readings
+   promptly swung — 2788 and 2904 under the floor, then 5379 and 4736 over the
+   ceiling — because I kept adjusting the copy that should not have existed.
+   The segment may say marks are unrelated to length; it may not set a number. */
+assert.match(seg, /标记跟篇幅是两条线/, 'the segment must decouple marks from length');
+assert.doesNotMatch(seg, /3000/, 'and must not restate the length range — output_sortis owns it');
+assert.match(PromptEngine.SEGMENTS.output_sortis, /3000-4000/, 'which is where the range lives');
+assert.match(seg, /8 到 20 处/, 'the mark count is this segment\'s own number, so it stays here');
 
 /* ── 9. the parse path ──────────────────────────────────────────────────────
    Everywhere the reading writes a symbol outright — 妻财, 官鬼, 巳火 — is
