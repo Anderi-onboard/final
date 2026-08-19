@@ -922,3 +922,74 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
   .reading-body .xr-panel { animation: none; }
   .reading-body .xr { transition: none; }
 }
+
+/* ── 取象链条 ────────────────────────────────────────────────────────────────
+   The closing summary: which forces this casting moved, how they act on each
+   other, and what each one does. Computed from the 六亲 ring, which is fixed by
+   the method, so it costs nothing and cannot disagree with the reading.
+
+   Open, not collapsed — this is the part a reader reaches for, and putting it
+   behind a click would hide the one thing they came back down the page for. It
+   still has to read as an appendix to the prose rather than a rival ending, so
+   it sits behind a rule, in the label face, at label size. */
+.reading-body .xr-chain {
+  margin: 34px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+}
+.reading-body .xr-chain-lead {
+  margin: 0 0 11px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .012em;
+  color: var(--dim);
+}
+.reading-body .xr-edges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 0 0 9px;
+}
+.reading-body .xr-edge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  background: color-mix(in srgb, var(--bw-palette-1) 52%, transparent);
+  color: var(--dim);
+}
+.reading-body .xr-edge b { font-weight: 600; color: var(--ink); }
+.reading-body .xr-edge i {
+  font-style: normal;
+  font-size: 10.5px;
+  letter-spacing: .04em;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+/* 生 feeds, 克 restrains — the one place a colour carries meaning rather than
+   decoration, so the two are told apart by hue and never by hue alone: the
+   words 生 / 克 are always printed. */
+.reading-body .xr-edge.sheng i { color: var(--pine); background: color-mix(in srgb, var(--pine) 11%, transparent); }
+.reading-body .xr-edge.ke i { color: var(--terracotta); background: color-mix(in srgb, var(--terracotta) 11%, transparent); }
+
+.reading-body .xr-act {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  line-height: 1.62;
+  color: var(--dim);
+}
+.reading-body .xr-act b { flex: 0 0 3.6em; font-weight: 600; color: var(--ink); }
+.reading-body .xr-chain[lang="en"] .xr-act b { flex-basis: 7em; }
+@media (max-width: 520px) {
+  .reading-body .xr-act { flex-direction: column; gap: 1px; }
+  .reading-body .xr-act b { flex: none; }
+}

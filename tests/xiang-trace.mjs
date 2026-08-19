@@ -238,4 +238,48 @@ assert.ok(cat.notSymbols.includes('旬空') && cat.notSymbols.includes('用神')
   'the state list covers what readings actually say');
 assert.match(seg, /术语的状态\(旬空、月破、假空、发动\)也不要标/, 'and the prompt says so too');
 
-console.log(`xiang-trace: ok — ${syms.length} symbols, all offered and all resolvable`);
+/* ── 13. 动词象意 live in the closing chain, and NOWHERE else ───────────────
+   Owner's placement rule, and it is right: a verb list hung under each of
+   twenty annotated nouns is noise twenty times over, and a verb only means
+   anything once you can see what it acts on. The closing 串联 is also the part
+   a reader actually reaches for. So the per-noun panel shows 象 → concrete
+   things, and the chain shows what each force DOES. */
+for (const [k, v] of Object.entries(cat.symbols)) {
+  assert.ok(v.acts && Array.isArray(v.acts.zh) && v.acts.zh.length >= 3,
+    `${k}: needs its 动词象意 — what this force does`);
+  assert.equal(v.acts.en.length, v.acts.zh.length, `${k}: acts must match entry for entry`);
+  for (const t of v.acts.zh.concat(v.acts.en)) assert.ok(t && t.trim(), `${k}: empty act`);
+}
+// The panel builder must not reach for acts; the chain builder must.
+const panelSrc = chat.slice(chat.indexOf('var cats = hit.entry.cats'), chat.indexOf('host.parentNode.insertBefore(p'));
+assert.ok(panelSrc.length > 200, 'located the panel builder');
+assert.doesNotMatch(panelSrc, /\bacts\b/,
+  'the per-noun panel must not show 动词象意 — they belong only in the closing chain');
+const chainSrc = chat.slice(chat.indexOf('function xrChain'), chat.indexOf('function xrAuto'));
+assert.match(chainSrc, /\.acts\[/, 'the closing chain is where the verbs are shown');
+assert.match(chat, /xrChain\(msg\.text\)/, 'and it is rendered into the reading');
+// Before the disclaimer, which stays last.
+assert.ok(chat.indexOf('xrChain(msg.text)') < chat.indexOf('readingFootnote(msg.text)'),
+  'the chain goes above the disclaimer, not after it');
+
+// ── 14. the ring is a legend, not a finding ────────────────────────────────
+// 生克 between the six relatives is fixed by the method and identical on every
+// board. Ten edge chips read as a discovery about THIS casting; two cycle lines
+// read as the legend it is.
+assert.ok(cat.relations && cat.relations.sheng.length === 5 && cat.relations.ke.length === 5,
+  'both relations are five-cycles over the five relatives');
+const ring = ['父母', '兄弟', '子孙', '妻财', '官鬼'];
+for (const rel of ['sheng', 'ke']) {
+  const from = cat.relations[rel].map((p) => p[0]).sort();
+  const to = cat.relations[rel].map((p) => p[1]).sort();
+  assert.deepEqual(from, ring.slice().sort(), `${rel}: every relative feeds exactly once`);
+  assert.deepEqual(to, ring.slice().sort(), `${rel}: every relative is fed exactly once`);
+}
+assert.match(chainSrc, /function chain\(pairs/, 'runs are walked, not emitted edge by edge');
+assert.match(chainSrc, /present\.length < 2/, 'one relative is not a chain and renders nothing');
+assert.match(chainSrc, /固定的关系/, 'and the lead says outright that the ring is fixed');
+
+const nCat = Object.values(cat.symbols).reduce((n, v) => n + v.cats.length, 0);
+const nItem = Object.values(cat.symbols).reduce((n, v) => n + v.cats.reduce((m, c) => m + c.items.zh.length, 0), 0);
+const nAct = Object.values(cat.symbols).reduce((n, v) => n + v.acts.zh.length, 0);
+console.log(`xiang-trace: ok — ${syms.length} symbols · ${nCat} 象 · ${nItem} things · ${nAct} 动词象意`);

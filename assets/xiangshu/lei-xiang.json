@@ -1,6 +1,6 @@
 {
  "version": 1,
- "what": "万物类象 — two levels. A symbol stands for a family of 象 (文书, 房产, 长辈…), and each 象 is itself a family of concrete things (合同, 证书, 执照, 批文…). Static data, never generated.",
+ "what": "万物类象 — three axes. A symbol runs in several 象 (文书, 房产, 长辈…); each 象 is a family of concrete things (合同, 证书, 执照…); and separately the symbol has 动词象意 — what that force DOES. Static data, never generated.",
  "why": "A reading names ONE thing: 父母 becomes 文书. Left there, a reader takes 文书 to mean 证书 and stops — the word is a category, not an instance, and flattening the two into one comma-list hid that. So the library keeps them apart: click the word to see which 象 it came from, click an 象 to see what it actually turns up as. Only the pairing (word ↔ symbol) is ever written by the model.",
  "aliases": {
   "parent": "父母",
@@ -190,9 +190,73 @@
        "the part you keep redoing"
       ]
      }
+    },
+    {
+     "zh": "遮盖",
+     "en": "what covers you",
+     "items": {
+      "zh": [
+       "衣服",
+       "伞",
+       "屋顶",
+       "围墙",
+       "保险",
+       "挡风的那层东西"
+      ],
+      "en": [
+       "clothing",
+       "an umbrella",
+       "a roof",
+       "a wall",
+       "insurance",
+       "whatever keeps the weather off"
+      ]
+     }
+    },
+    {
+     "zh": "根基",
+     "en": "the footing",
+     "items": {
+      "zh": [
+       "地基",
+       "本钱",
+       "家底",
+       "学过的东西",
+       "撑住你的那一层"
+      ],
+      "en": [
+       "foundations",
+       "starting capital",
+       "what the family has",
+       "what you were taught",
+       "the layer holding you up"
+      ]
+     }
     }
    ],
-   "id": 1
+   "id": 1,
+   "acts": {
+    "zh": [
+     "托着",
+     "护着",
+     "供着",
+     "教着",
+     "压着",
+     "操持",
+     "反复地办",
+     "背在身上"
+    ],
+    "en": [
+     "holds it up",
+     "shelters it",
+     "provides for it",
+     "teaches it",
+     "presses down on it",
+     "keeps it running",
+     "files it again",
+     "carries it"
+    ]
+   }
   },
   "兄弟": {
    "kind": "liuqin",
@@ -319,9 +383,67 @@
        "the step that is hard to get over"
       ]
      }
+    },
+    {
+     "zh": "邻里",
+     "en": "those alongside",
+     "items": {
+      "zh": [
+       "邻居",
+       "同乡",
+       "同一栋楼的人",
+       "常打交道的外人"
+      ],
+      "en": [
+       "neighbours",
+       "people from home",
+       "whoever shares the building",
+       "the outsiders you deal with daily"
+      ]
+     }
+    },
+    {
+     "zh": "风声",
+     "en": "what blows through",
+     "items": {
+      "zh": [
+       "风",
+       "传言",
+       "一阵一阵的热度",
+       "来去不定的东西"
+      ],
+      "en": [
+       "wind",
+       "rumour",
+       "a fad that comes in waves",
+       "what arrives and leaves"
+      ]
+     }
     }
    ],
-   "id": 2
+   "id": 2,
+   "acts": {
+    "zh": [
+     "分走",
+     "争",
+     "抢",
+     "挡",
+     "耗",
+     "比",
+     "拉扯",
+     "替你担一点"
+    ],
+    "en": [
+     "takes a share",
+     "contends",
+     "grabs",
+     "blocks",
+     "drains",
+     "measures against",
+     "pulls back and forth",
+     "carries a little for you"
+    ]
+   }
   },
   "子孙": {
    "kind": "liuqin",
@@ -450,9 +572,63 @@
        "whatever loosens you"
       ]
      }
+    },
+    {
+     "zh": "信仰",
+     "en": "what you lean on",
+     "items": {
+      "zh": [
+       "僧道",
+       "信念",
+       "修行",
+       "让你安心的那套说法"
+      ],
+      "en": [
+       "clergy",
+       "conviction",
+       "practice",
+       "the account of things that settles you"
+      ]
+     }
+    },
+    {
+     "zh": "六畜",
+     "en": "the animals",
+     "items": {
+      "zh": [
+       "牲口",
+       "宠物",
+       "养的东西"
+      ],
+      "en": [
+       "livestock",
+       "a pet",
+       "whatever you keep and feed"
+      ]
+     }
     }
    ],
-   "id": 3
+   "id": 3,
+   "acts": {
+    "zh": [
+     "生出",
+     "化解",
+     "泄掉",
+     "松开",
+     "护住",
+     "替你挡",
+     "让它转起来"
+    ],
+    "en": [
+     "produces",
+     "dissolves",
+     "drains off",
+     "loosens",
+     "guards",
+     "takes the hit for you",
+     "gets it turning"
+    ]
+   }
   },
   "妻财": {
    "kind": "liuqin",
@@ -575,9 +751,65 @@
        "the things you keep"
       ]
      }
+    },
+    {
+     "zh": "食禄",
+     "en": "what feeds you",
+     "items": {
+      "zh": [
+       "饭食",
+       "酒",
+       "日常开销",
+       "养活你的那份"
+      ],
+      "en": [
+       "food",
+       "drink",
+       "daily spending",
+       "the part that keeps you fed"
+      ]
+     }
+    },
+    {
+     "zh": "凭据",
+     "en": "proof of it",
+     "items": {
+      "zh": [
+       "账",
+       "流水",
+       "合约上的数",
+       "看得见的凭证"
+      ],
+      "en": [
+       "the accounts",
+       "the ledger",
+       "the number on the contract",
+       "evidence you can point to"
+      ]
+     }
     }
    ],
-   "id": 4
+   "id": 4,
+   "acts": {
+    "zh": [
+     "进来",
+     "被收下",
+     "被占住",
+     "被花掉",
+     "被分掉",
+     "养着",
+     "换出去"
+    ],
+    "en": [
+     "comes in",
+     "is taken",
+     "is tied up",
+     "is spent",
+     "is split",
+     "feeds",
+     "is traded away"
+    ]
+   }
   },
   "官鬼": {
    "kind": "liuqin",
@@ -722,9 +954,85 @@
        "being played"
       ]
      }
+    },
+    {
+     "zh": "功名",
+     "en": "standing",
+     "items": {
+      "zh": [
+       "名分",
+       "资历",
+       "评级",
+       "被承认的那一层"
+      ],
+      "en": [
+       "a title",
+       "seniority",
+       "a rating",
+       "the recognition itself"
+      ]
+     }
+    },
+    {
+     "zh": "心魔",
+     "en": "what haunts",
+     "items": {
+      "zh": [
+       "鬼神",
+       "梦魇",
+       "放不下的事",
+       "半夜想起来的那件"
+      ],
+      "en": [
+       "spirits",
+       "a nightmare",
+       "what will not be put down",
+       "the thing that wakes you"
+      ]
+     }
+    },
+    {
+     "zh": "天灾",
+     "en": "what falls on you",
+     "items": {
+      "zh": [
+       "雷电",
+       "风雨",
+       "停电、断网",
+       "轮不到你决定的坏事"
+      ],
+      "en": [
+       "thunder",
+       "storms",
+       "an outage",
+       "the bad thing you did not choose"
+      ]
+     }
     }
    ],
-   "id": 5
+   "id": 5,
+   "acts": {
+    "zh": [
+     "克",
+     "管",
+     "审",
+     "罚",
+     "逼",
+     "缠住",
+     "盯着",
+     "顶在前头"
+    ],
+    "en": [
+     "restrains",
+     "governs",
+     "reviews",
+     "penalises",
+     "forces",
+     "entangles",
+     "watches",
+     "stands in front"
+    ]
+   }
   },
   "世爻": {
    "kind": "position",
@@ -781,9 +1089,45 @@
        "how much room you have"
       ]
      }
+    },
+    {
+     "zh": "你的力气",
+     "en": "what you have to spend",
+     "items": {
+      "zh": [
+       "时间",
+       "精神",
+       "本钱",
+       "还能撑多久"
+      ],
+      "en": [
+       "time",
+       "attention",
+       "capital",
+       "how long you can hold"
+      ]
+     }
     }
    ],
-   "id": 6
+   "id": 6,
+   "acts": {
+    "zh": [
+     "动",
+     "守",
+     "撑",
+     "让步",
+     "下决心",
+     "抽身"
+    ],
+    "en": [
+     "moves",
+     "holds",
+     "bears it",
+     "gives ground",
+     "decides",
+     "pulls out"
+    ]
+   }
   },
   "应爻": {
    "kind": "position",
@@ -844,9 +1188,43 @@
        "what has not arrived yet"
       ]
      }
+    },
+    {
+     "zh": "对面的态度",
+     "en": "how they are toward you",
+     "items": {
+      "zh": [
+       "接不接",
+       "给不给回应",
+       "是不是真心",
+       "拖着还是痛快"
+      ],
+      "en": [
+       "whether they take it",
+       "whether they answer",
+       "whether they mean it",
+       "whether they drag or move"
+      ]
+     }
     }
    ],
-   "id": 7
+   "id": 7,
+   "acts": {
+    "zh": [
+     "回应",
+     "不回应",
+     "接住",
+     "推回来",
+     "观望"
+    ],
+    "en": [
+     "answers",
+     "stays silent",
+     "takes it",
+     "pushes it back",
+     "waits and watches"
+    ]
+   }
   },
   "子": {
    "kind": "branch",
@@ -927,7 +1305,21 @@
      }
     }
    ],
-   "id": 8
+   "id": 8,
+   "acts": {
+    "zh": [
+     "流动",
+     "渗",
+     "悄悄地来",
+     "繁衍"
+    ],
+    "en": [
+     "flows",
+     "seeps",
+     "comes quietly",
+     "multiplies"
+    ]
+   }
   },
   "丑": {
    "kind": "branch",
@@ -1004,7 +1396,21 @@
      }
     }
    ],
-   "id": 9
+   "id": 9,
+   "acts": {
+    "zh": [
+     "拖",
+     "扛",
+     "藏在库里",
+     "慢慢磨"
+    ],
+    "en": [
+     "drags",
+     "shoulders it",
+     "keeps it in store",
+     "grinds slowly"
+    ]
+   }
   },
   "寅": {
    "kind": "branch",
@@ -1079,7 +1485,19 @@
      }
     }
    ],
-   "id": 10
+   "id": 10,
+   "acts": {
+    "zh": [
+     "起头",
+     "冲出去",
+     "顶上"
+    ],
+    "en": [
+     "sets out",
+     "charges",
+     "takes it on"
+    ]
+   }
   },
   "卯": {
    "kind": "branch",
@@ -1156,7 +1574,19 @@
      }
     }
    ],
-   "id": 11
+   "id": 11,
+   "acts": {
+    "zh": [
+     "长开",
+     "穿来穿去",
+     "攀附"
+    ],
+    "en": [
+     "spreads",
+     "goes back and forth",
+     "climbs on"
+    ]
+   }
   },
   "辰": {
    "kind": "branch",
@@ -1231,7 +1661,19 @@
      }
     }
    ],
-   "id": 12
+   "id": 12,
+   "acts": {
+    "zh": [
+     "翻",
+     "蓄住",
+     "变脸"
+    ],
+    "en": [
+     "turns over",
+     "holds it back",
+     "changes face"
+    ]
+   }
   },
   "巳": {
    "kind": "branch",
@@ -1308,7 +1750,19 @@
      }
     }
    ],
-   "id": 13
+   "id": 13,
+   "acts": {
+    "zh": [
+     "绕",
+     "缠",
+     "忽明忽暗"
+    ],
+    "en": [
+     "winds around",
+     "coils",
+     "flickers"
+    ]
+   }
   },
   "午": {
    "kind": "branch",
@@ -1383,7 +1837,19 @@
      }
     }
    ],
-   "id": 14
+   "id": 14,
+   "acts": {
+    "zh": [
+     "旺起来",
+     "张扬",
+     "来得快去得快"
+    ],
+    "en": [
+     "blazes up",
+     "makes a show",
+     "comes and goes fast"
+    ]
+   }
   },
   "未": {
    "kind": "branch",
@@ -1458,7 +1924,19 @@
      }
     }
    ],
-   "id": 15
+   "id": 15,
+   "acts": {
+    "zh": [
+     "和稀泥",
+     "念旧",
+     "慢半拍"
+    ],
+    "en": [
+     "smooths it over",
+     "clings to the past",
+     "is half a beat late"
+    ]
+   }
   },
   "申": {
    "kind": "branch",
@@ -1535,7 +2013,19 @@
      }
     }
    ],
-   "id": 16
+   "id": 16,
+   "acts": {
+    "zh": [
+     "动身",
+     "奔走",
+     "换来换去"
+    ],
+    "en": [
+     "sets off",
+     "runs about",
+     "keeps swapping"
+    ]
+   }
   },
   "酉": {
    "kind": "branch",
@@ -1612,7 +2102,19 @@
      }
     }
    ],
-   "id": 17
+   "id": 17,
+   "acts": {
+    "zh": [
+     "挑剔",
+     "切割",
+     "说出来"
+    ],
+    "en": [
+     "picks at it",
+     "cuts it apart",
+     "says it aloud"
+    ]
+   }
   },
   "戌": {
    "kind": "branch",
@@ -1687,7 +2189,19 @@
      }
     }
    ],
-   "id": 18
+   "id": 18,
+   "acts": {
+    "zh": [
+     "守住",
+     "看门",
+     "认死理"
+    ],
+    "en": [
+     "guards it",
+     "keeps watch",
+     "holds to the principle"
+    ]
+   }
   },
   "亥": {
    "kind": "branch",
@@ -1764,7 +2278,19 @@
      }
     }
    ],
-   "id": 19
+   "id": 19,
+   "acts": {
+    "zh": [
+     "藏",
+     "孕",
+     "不争"
+    ],
+    "en": [
+     "stores",
+     "gestates",
+     "does not contend"
+    ]
+   }
   },
   "木": {
    "kind": "element",
@@ -1841,7 +2367,21 @@
      }
     }
    ],
-   "id": 20
+   "id": 20,
+   "acts": {
+    "zh": [
+     "生长",
+     "伸出去",
+     "顶开",
+     "抽条"
+    ],
+    "en": [
+     "grows",
+     "reaches out",
+     "pushes through",
+     "shoots up"
+    ]
+   }
   },
   "火": {
    "kind": "element",
@@ -1918,7 +2458,21 @@
      }
     }
    ],
-   "id": 21
+   "id": 21,
+   "acts": {
+    "zh": [
+     "烧起来",
+     "照亮",
+     "急起来",
+     "很快烧完"
+    ],
+    "en": [
+     "flares",
+     "lights it",
+     "turns urgent",
+     "burns out fast"
+    ]
+   }
   },
   "土": {
    "kind": "element",
@@ -1995,7 +2549,21 @@
      }
     }
    ],
-   "id": 22
+   "id": 22,
+   "acts": {
+    "zh": [
+     "承住",
+     "埋起来",
+     "拖住",
+     "积起来"
+    ],
+    "en": [
+     "carries it",
+     "buries it",
+     "drags on it",
+     "accumulates"
+    ]
+   }
   },
   "金": {
    "kind": "element",
@@ -2072,7 +2640,21 @@
      }
     }
    ],
-   "id": 23
+   "id": 23,
+   "acts": {
+    "zh": [
+     "收住",
+     "切开",
+     "定规矩",
+     "肃清"
+    ],
+    "en": [
+     "gathers in",
+     "cuts",
+     "sets the rule",
+     "clears out"
+    ]
+   }
   },
   "水": {
    "kind": "element",
@@ -2149,7 +2731,21 @@
      }
     }
    ],
-   "id": 24
+   "id": 24,
+   "acts": {
+    "zh": [
+     "流走",
+     "渗进去",
+     "泡软",
+     "藏起来"
+    ],
+    "en": [
+     "flows away",
+     "seeps in",
+     "softens it",
+     "conceals"
+    ]
+   }
   },
   "青龙": {
    "kind": "spirit",
@@ -2192,7 +2788,19 @@
      }
     }
    ],
-   "id": 25
+   "id": 25,
+   "acts": {
+    "zh": [
+     "成全",
+     "热闹起来",
+     "顺水推舟"
+    ],
+    "en": [
+     "brings it off",
+     "livens it up",
+     "goes with the current"
+    ]
+   }
   },
   "朱雀": {
    "kind": "spirit",
@@ -2235,7 +2843,19 @@
      }
     }
    ],
-   "id": 26
+   "id": 26,
+   "acts": {
+    "zh": [
+     "说出去",
+     "传开",
+     "吵起来"
+    ],
+    "en": [
+     "speaks it",
+     "spreads it",
+     "starts the row"
+    ]
+   }
   },
   "勾陈": {
    "kind": "spirit",
@@ -2276,7 +2896,19 @@
      }
     }
    ],
-   "id": 27
+   "id": 27,
+   "acts": {
+    "zh": [
+     "拖住",
+     "牵连进来",
+     "翻旧账"
+    ],
+    "en": [
+     "holds it back",
+     "drags others in",
+     "reopens old accounts"
+    ]
+   }
   },
   "螣蛇": {
    "kind": "spirit",
@@ -2319,7 +2951,19 @@
      }
     }
    ],
-   "id": 28
+   "id": 28,
+   "acts": {
+    "zh": [
+     "缠住",
+     "反复",
+     "虚惊一场"
+    ],
+    "en": [
+     "entangles",
+     "goes round again",
+     "frightens and comes to nothing"
+    ]
+   }
   },
   "白虎": {
    "kind": "spirit",
@@ -2362,7 +3006,19 @@
      }
     }
    ],
-   "id": 29
+   "id": 29,
+   "acts": {
+    "zh": [
+     "伤",
+     "断",
+     "硬来"
+    ],
+    "en": [
+     "wounds",
+     "cuts it off",
+     "forces it"
+    ]
+   }
   },
   "玄武": {
    "kind": "spirit",
@@ -2405,7 +3061,19 @@
      }
     }
    ],
-   "id": 30
+   "id": 30,
+   "acts": {
+    "zh": [
+     "瞒",
+     "偷",
+     "暗中挪走"
+    ],
+    "en": [
+     "conceals",
+     "steals",
+     "moves it quietly"
+    ]
+   }
   },
   "乾": {
    "kind": "trigram",
@@ -2466,7 +3134,19 @@
      }
     }
    ],
-   "id": 31
+   "id": 31,
+   "acts": {
+    "zh": [
+     "决断",
+     "主事",
+     "顶到底"
+    ],
+    "en": [
+     "decides",
+     "takes charge",
+     "sees it through"
+    ]
+   }
   },
   "兑": {
    "kind": "trigram",
@@ -2527,7 +3207,19 @@
      }
     }
    ],
-   "id": 32
+   "id": 32,
+   "acts": {
+    "zh": [
+     "说服",
+     "缺一块",
+     "取悦"
+    ],
+    "en": [
+     "persuades",
+     "chips a piece off",
+     "pleases"
+    ]
+   }
   },
   "离": {
    "kind": "trigram",
@@ -2588,7 +3280,19 @@
      }
     }
    ],
-   "id": 33
+   "id": 33,
+   "acts": {
+    "zh": [
+     "照出来",
+     "附上去",
+     "显摆"
+    ],
+    "en": [
+     "shows it",
+     "attaches to",
+     "displays"
+    ]
+   }
   },
   "震": {
    "kind": "trigram",
@@ -2649,7 +3353,19 @@
      }
     }
    ],
-   "id": 34
+   "id": 34,
+   "acts": {
+    "zh": [
+     "动",
+     "惊",
+     "起来"
+    ],
+    "en": [
+     "moves",
+     "startles",
+     "rises"
+    ]
+   }
   },
   "巽": {
    "kind": "trigram",
@@ -2710,7 +3426,19 @@
      }
     }
    ],
-   "id": 35
+   "id": 35,
+   "acts": {
+    "zh": [
+     "渗进去",
+     "来回摇摆",
+     "传开"
+    ],
+    "en": [
+     "seeps in",
+     "sways",
+     "spreads"
+    ]
+   }
   },
   "坎": {
    "kind": "trigram",
@@ -2771,7 +3499,19 @@
      }
     }
    ],
-   "id": 36
+   "id": 36,
+   "acts": {
+    "zh": [
+     "陷",
+     "流",
+     "冒险"
+    ],
+    "en": [
+     "falls in",
+     "flows",
+     "takes the risk"
+    ]
+   }
   },
   "艮": {
    "kind": "trigram",
@@ -2832,7 +3572,19 @@
      }
     }
    ],
-   "id": 37
+   "id": 37,
+   "acts": {
+    "zh": [
+     "停",
+     "挡",
+     "守着不动"
+    ],
+    "en": [
+     "stops",
+     "blocks",
+     "holds still"
+    ]
+   }
   },
   "坤": {
    "kind": "trigram",
@@ -2893,7 +3645,19 @@
      }
     }
    ],
-   "id": 38
+   "id": 38,
+   "acts": {
+    "zh": [
+     "承受",
+     "容纳",
+     "积攒"
+    ],
+    "en": [
+     "bears it",
+     "holds it all",
+     "gathers"
+    ]
+   }
   }
  },
  "compounds": {
@@ -3005,5 +3769,62 @@
    "金",
    "水"
   ]
+ },
+ "relations": {
+  "note": "The 六亲 ring. Fixed by the method, identical on every board, so the closing chain is computed rather than written.",
+  "sheng": [
+   [
+    "父母",
+    "兄弟"
+   ],
+   [
+    "兄弟",
+    "子孙"
+   ],
+   [
+    "子孙",
+    "妻财"
+   ],
+   [
+    "妻财",
+    "官鬼"
+   ],
+   [
+    "官鬼",
+    "父母"
+   ]
+  ],
+  "ke": [
+   [
+    "父母",
+    "子孙"
+   ],
+   [
+    "子孙",
+    "官鬼"
+   ],
+   [
+    "官鬼",
+    "兄弟"
+   ],
+   [
+    "兄弟",
+    "妻财"
+   ],
+   [
+    "妻财",
+    "父母"
+   ]
+  ],
+  "label": {
+   "sheng": {
+    "zh": "生",
+    "en": "feeds"
+   },
+   "ke": {
+    "zh": "克",
+    "en": "restrains"
+   }
+  }
  }
 }

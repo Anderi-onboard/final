@@ -515,6 +515,91 @@
     }
     return out;
   }
+  /* ── the closing 串联 ──────────────────────────────────────────────────────
+     The 动词象意 — what each force DOES — live here and nowhere else. Hung
+     under every annotated noun they would be noise twenty times over; a verb
+     only means something once you can see what it acts ON, which is the chain.
+     And this is the part a reader actually reaches for, so it sits open rather
+     than behind another click.
+
+     Computed, not written. The 六亲 生克 ring is fixed by the method and
+     identical on every board, so the arrows cost nothing and cannot be wrong.
+     Restricted to the relatives this reading actually touched — a full ring
+     including forces the reading never raised would be a diagram, not a
+     summary. Fewer than two and there is no chain to draw, so nothing renders. */
+  function xrChain(text) {
+    if (!XR_CAT || !XR_CAT.relations || !xrSeen) return "";
+    var R = XR_CAT.relations, zh = isZh(text);
+    var ring = ["父母", "兄弟", "子孙", "妻财", "官鬼"];
+    var present = ring.filter(function (k) { return xrSeen[k]; });
+    if (present.length < 2) return "";
+    var nm = function (k) { return zh ? k : (XR_CAT.symbols[k] ? XR_CAT.symbols[k].en : k); };
+    /* Both relations are five-cycles over the same five relatives, so when a
+       reading touches all of them the honest rendering is TWO LINES, not ten
+       edge chips. Ten chips look like a finding about this casting and are not
+       — the ring is fixed by the method and identical on every board. Walk the
+       cycle instead and print the runs of relatives this reading actually
+       raised, which is a legend for the paragraphs above it. */
+    function chain(pairs, cls, word) {
+      var next = {}, i;
+      for (i = 0; i < pairs.length; i++) next[pairs[i][0]] = pairs[i][1];
+      var runs = [], used = {};
+      for (i = 0; i < present.length; i++) {
+        var head = present[i];
+        // start only where the run genuinely starts: nothing present feeds in
+        var feeder = null, k;
+        for (k in next) if (next[k] === head && xrSeen[k]) feeder = k;
+        if (feeder && !used[head]) continue;
+        if (used[head]) continue;
+        var run = [], node = head, guard = 0;
+        while (node && xrSeen[node] && !used[node] && guard++ < 6) {
+          used[node] = 1; run.push(node); node = next[node];
+        }
+        if (run.length > 1) runs.push(run);
+      }
+      // a closed cycle has no start, so nothing was picked up above
+      if (!runs.length && present.length > 1) {
+        var start = present[0], run2 = [], node2 = start, guard2 = 0;
+        while (node2 && xrSeen[node2] && guard2++ < 6) {
+          run2.push(node2); node2 = next[node2];
+          if (node2 === start) { run2.push(start); break; }
+        }
+        if (run2.length > 1) runs.push(run2);
+      }
+      if (!runs.length) return "";
+      return runs.map(function (r) {
+        return '<span class="xr-edge ' + cls + '"><i>' + esc(word) + "</i>"
+          + r.map(function (n) { return "<b>" + esc(nm(n)) + "</b>"; }).join('<u>→</u>')
+          + "</span>";
+      }).join("");
+    }
+    var sheng = chain(R.sheng, "sheng", zh ? R.label.sheng.zh : R.label.sheng.en);
+    var ke = chain(R.ke, "ke", zh ? R.label.ke.zh : R.label.ke.en);
+    if (!sheng && !ke) return "";
+    // Verbs for what a reading reads as an actor: the relatives, the two
+    // positions, the six spirits. A branch's or a trigram's "behaviour" is too
+    // abstract to earn a row here.
+    var actors = [];
+    for (var k in xrSeen) {
+      var e = XR_CAT.symbols[k];
+      if (e && e.acts && ["liuqin", "position", "spirit"].indexOf(e.kind) !== -1) actors.push(k);
+    }
+    actors.sort(function (a, b) { return XR_CAT.symbols[a].id - XR_CAT.symbols[b].id; });
+    var rows = actors.map(function (k) {
+      var list = (XR_CAT.symbols[k].acts[zh ? "zh" : "en"] || []);
+      return '<div class="xr-act"><b>' + esc(nm(k)) + "</b><span>"
+        + esc(list.join(zh ? "、" : " · ")) + "</span></div>";
+    }).join("");
+    return '<section class="xr-chain" lang="' + (zh ? "zh" : "en") + '">'
+      + '<p class="xr-chain-lead">' + esc(zh
+          ? "这一卦动过的几路 —— 生克是六亲之间固定的关系,不是这一卦独有的;下面是它们各自在做什么"
+          : "The forces this casting moved. The ring is fixed between the six relatives, not a finding "
+            + "about this board; below it is what each one does") + "</p>"
+      + (sheng ? '<div class="xr-edges">' + sheng + "</div>" : "")
+      + (ke ? '<div class="xr-edges">' + ke + "</div>" : "")
+      + rows + "</section>";
+  }
+
   /* Walk the rendered HTML, touching only the text between tags, and never the
      inside of a mark that already became a button. */
   function xrAuto(html) {
@@ -627,8 +712,9 @@
       var prose = mdReading(msg.text);
       // 数字集 — which symbols this reading actually touched, by catalogue id.
       // Cheap to carry, and it is the reading's own index of itself.
+      // reading → the closing 串联 → the disclaimer, which stays last
       return '<div class="reading-body" data-xiang="' + xrHits().join(",") + '">'
-        + (prose || '<p class="rd-para"></p>') +
+        + (prose || '<p class="rd-para"></p>') + xrChain(msg.text) +
         readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
 
