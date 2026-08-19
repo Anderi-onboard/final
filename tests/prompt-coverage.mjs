@@ -179,7 +179,13 @@ const REST_OF_STACK = [
   ['answer what was asked, not something adjacent', 'Answering something ADJACENT'],
   ['headings must earn their place', 'If a heading could sit above any other reading'],
   ['no seams — nothing parked in labelled boxes', 'NO SEAMS'],
-  ['length: never pad, never clip', 'Never pad to reach a number and never clip'],
+  // The ceiling was removed by the owner on 08-19 — a reader came for a reading
+  // of their own casting and wants more of it, so a floor protects them and a
+  // ceiling only takes from them. The two halves of the old rule live on: never
+  // pad up to a number, never cut down to one.
+  ['length: never pad', 'Never pad to reach a number'],
+  ['length: no ceiling, nothing trimmed to approach one', 'The floor is real and the ceiling is not'],
+  ['length: going long is not a fault', 'Going long is not a fault'],
   ['length: a short opening reading is a signal', 'is a SIGNAL, not a valid short answer'],
   ['the board laid out once, early, from real data', 'the way a diviner sets the table'],
   ['every load-bearing signal walked', 'A mechanic with no picture is half'],

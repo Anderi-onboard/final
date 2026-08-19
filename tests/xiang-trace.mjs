@@ -201,14 +201,22 @@ assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself
    output_sortis sets. The marks themselves are a few dozen characters, so the
    loss was the walk being shortened and scenes being cut. The segment has to
    say so, or it quietly buys annotation with length. */
-/* LENGTH HAS ONE OWNER, AND IT IS NOT THIS SEGMENT. output_sortis sets
-   3000-4000. Restating it here gave the rule two owners, and the readings
-   promptly swung — 2788 and 2904 under the floor, then 5379 and 4736 over the
-   ceiling — because I kept adjusting the copy that should not have existed.
-   The segment may say marks are unrelated to length; it may not set a number. */
+/* LENGTH HAS ONE OWNER, AND IT IS NOT THIS SEGMENT. output_sortis sets it.
+   Restating it here gave the rule two owners and the readings promptly swung —
+   under the floor twice, then well over — because I kept adjusting the copy
+   that should not have existed. The segment may say marks are unrelated to
+   length; it may not set a number.
+
+   The ceiling itself is gone, by the owner's ruling on 08-19: a reader came for
+   a reading of their own casting and wants more of it, so a floor protects them
+   and a ceiling only takes from them. */
 assert.match(seg, /标记跟篇幅是两条线/, 'the segment must decouple marks from length');
-assert.doesNotMatch(seg, /3000/, 'and must not restate the length range — output_sortis owns it');
-assert.match(PromptEngine.SEGMENTS.output_sortis, /3000-4000/, 'which is where the range lives');
+assert.doesNotMatch(seg, /3000/, 'and must not restate the length rule — output_sortis owns it');
+const outS = PromptEngine.SEGMENTS.output_sortis;
+assert.match(outS, /starts at 3000 characters/, 'the floor lives in output_sortis');
+assert.match(outS, /The floor is real and the ceiling is not/, 'and there is no upper bound');
+assert.match(outS, /Going long is not a fault/, 'said plainly, so it is not read as a grudging allowance');
+assert.doesNotMatch(outS, /runs 3000-4000/, 'the old two-sided range is gone');
 assert.match(seg, /8 到 20 处/, 'the mark count is this segment\'s own number, so it stays here');
 
 /* ── 9. the parse path ──────────────────────────────────────────────────────
@@ -251,7 +259,55 @@ assert.equal(new Set(ids).size, ids.length, "catalogue ids must be unique — th
 assert.ok(ids.every((n) => Number.isInteger(n) && n > 0), 'ids are positive integers');
 assert.match(chat, /data-xiang="/, 'the reading publishes the set of symbols it touched');
 assert.match(chat, /hit\.entry\.cats/, 'the panel reads the two-level shape');
-assert.match(chat, /class="xr-cat"/, 'the first level is the 象 row');
+assert.match(chat, /class="xr-cat'/, 'the first level is the 象 row');
+/* A map needs a "you are here". The panel listed the siblings without saying
+   which branch the reading actually took, so the reader could not tell the
+   chosen one from the merely available. Read the catalogue backwards to find
+   it: 「审批那一关」 contains 审批, which is 官鬼·上头. */
+assert.match(chat, /var here = -1, hereLen = 0/, 'the panel works out which 象 the phrase came from');
+assert.match(chat, /score > hereLen/, 'longest agreement wins, so an incidental short hit cannot win');
+/* Atom to atom, both directions. A mark is prose — 「审批、许可、合规那一关」 —
+   and the catalogue sometimes stores a phrase — 官鬼·上头 holds 审批那一关.
+   Neither contains the other whole, so a one-directional test misses a pair
+   that plainly belongs together. */
+assert.match(chat, /w\.indexOf\(t\) === -1 && t\.indexOf\(w\) === -1/,
+  'either side may contain the other');
+assert.match(chat, /wordAtoms = word\.split/, 'the marked phrase is split into atoms too');
+{
+  const where = (word, sym) => {
+    const e = cat.symbols[sym];
+    let here = -1, len = 0;
+    const atoms = word.split(/[、,，。;；:：\s]+/).filter((t) => t.length >= 2);
+    atoms.push(word);
+    e.cats.forEach((c, i) => c.items.zh.forEach((it) => String(it).split(/[、,，]/).forEach((t0) => {
+      const t = t0.trim();
+      if (t.length < 2) return;
+      for (const w of atoms) {
+        if (w.indexOf(t) === -1 && t.indexOf(w) === -1) continue;
+        const sc = Math.min(t.length, w.length);
+        if (sc > len) { here = i; len = sc; }
+      }
+    })));
+    return here < 0 ? null : e.cats[here].zh;
+  };
+  assert.equal(where('审批、许可、合规那一关', '官鬼'), '上头',
+    'the phrase-vs-phrase case that one-directional matching missed');
+  assert.equal(where('要跑的手续、要拿的资质、要签的合同、要交代的上头', '父母'), '文书');
+  assert.equal(where('你交付出去的那套东西、你自己的手艺', '子孙'), '技术');
+  // Pure paraphrase carries no catalogue noun and must simply not highlight,
+  // rather than guessing a branch.
+  assert.equal(where('让你耗在里头出不来的那摊事', '父母'), null,
+    'a paraphrase with no catalogue noun must resolve to nothing, not to a guess');
+}
+assert.match(chat, /i === here \? " is-here" : ""/, 'that branch is marked in the row');
+assert.match(chat, /if \(here >= 0\) \{/, 'and opened, so the reader lands where they are standing');
+assert.match(css, /\.xr-cat\.is-here/, 'and it is styled distinctly from its siblings');
+
+// Touch and keyboard. CLAUDE.md asks for 44px targets; a 26px chip is not one,
+// and a panel with no keyboard exit strands anyone who opened it.
+assert.match(css, /\.xr-cat::before \{ content: ""; position: absolute; inset:/,
+  'the chip hit area is expanded beyond its visual box');
+assert.match(chat, /e\.key !== "Escape"/, 'Escape closes the panel');
 assert.match(chat, /c\.items\.zh : c\.items\.en/, 'the second level opens one 象 into its concrete things');
 assert.doesNotMatch(chat, /entry\.enAlso/, 'the old flat shape is gone from the renderer');
 assert.match(chat, /function xrHits\(\)/, 'built from what was actually annotated, not from what was searched for');

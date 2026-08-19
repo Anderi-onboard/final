@@ -1764,6 +1764,18 @@
     if (cMenu && !cMenu.contains(e.target) && e.target !== cBtn && !(cBtn && cBtn.contains(e.target))) closeCarry();
   });
 
+  /* Escape closes the 取象 panel the reader last opened. Without it the only way
+     out is to find the underlined word again, which on a long reading can be
+     several screens back. */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var open = document.querySelector('.reading-body .xr[aria-expanded="true"]');
+    if (!open) return;
+    e.preventDefault();
+    open.click();
+    open.focus();
+  });
+
   /* 取象溯源 — open what else a symbol covers, under the sentence that used it.
      Delegated, because the reading's markdown tree is rebuilt on every stream
      tick and per-element listeners would be re-attached hundreds of times.
@@ -1798,15 +1810,52 @@
          opens one of them into what it actually turns up as. */
       var zh = isZh((host.textContent || "") + (btn.textContent || ""));
       var cats = hit.entry.cats || [];
+      /* WHICH 象 DID THIS READING TAKE? The panel used to list the siblings
+         without ever saying where the reader was standing among them — a map
+         with no "you are here". The catalogue answers it read backwards: if the
+         marked phrase contains one of an 象's concrete things (「审批那一关」
+         contains 审批, which is 官鬼·上头), that is the branch the reading took.
+         Longest match wins, so 审批 beats a shorter incidental hit. */
+      var here = -1, hereLen = 0, word = btn.textContent || "";
+      /* Compared atom to atom, in both directions. A marked phrase is written as
+         prose — 「审批、许可、合规那一关」 — and the catalogue sometimes stores a
+         phrase too — 官鬼·上头 holds 审批那一关. Neither contains the other whole,
+         so a one-directional substring test misses a pair that plainly belongs
+         together. Split both on their separators and let either side contain the
+         other. Two characters minimum, and the longest agreement wins. */
+      var wordAtoms = word.split(/[、,，。;；:：\s]+/).filter(function (t) { return t.length >= 2; });
+      wordAtoms.push(word);
+      for (var ci = 0; ci < cats.length; ci++) {
+        var its = (cats[ci].items && cats[ci].items[zh ? "zh" : "en"]) || [];
+        for (var ii = 0; ii < its.length; ii++) {
+          var parts = String(its[ii]).split(/[、,，]/);
+          for (var pi = 0; pi < parts.length; pi++) {
+            var t = parts[pi].trim();
+            if (t.length < 2) continue;
+            for (var wi = 0; wi < wordAtoms.length; wi++) {
+              var w = wordAtoms[wi];
+              if (w.indexOf(t) === -1 && t.indexOf(w) === -1) continue;
+              var score = Math.min(t.length, w.length);
+              if (score > hereLen) { here = ci; hereLen = score; }
+            }
+          }
+        }
+      }
       var name = zh ? hit.key : (hit.entry.en || hit.key);
       var p = document.createElement("div");
       p.className = "xr-panel";
       p.setAttribute("lang", zh ? "zh" : "en");
-      var lead = zh
-        ? "「" + btn.textContent + "」这里读的是 " + name + "。这一路还分这几支 —— 点开看它具体是些什么:"
-        : "“" + btn.textContent + "” is " + name + " read one way. It runs in these branches — open one to see what it actually is:";
+      var lead = here >= 0
+        ? (zh
+            ? "「" + word + "」是 " + name + " 走的" + cats[here].zh + "这一支。同一路还有别的分支,点开看它们具体是些什么:"
+            : "“" + word + "” is " + name + " taken as " + cats[here].en
+              + ". The same one runs in other branches too — open one to see what it is:")
+        : (zh
+            ? "「" + word + "」这里读的是 " + name + "。这一路分这几支 —— 点开看它具体是些什么:"
+            : "“" + word + "” is " + name + " read one way. It runs in these branches — open one to see what it actually is:");
       var chips = cats.map(function (c, i) {
-        return '<button type="button" class="xr-cat" data-i="' + i + '" aria-expanded="false">'
+        return '<button type="button" class="xr-cat' + (i === here ? " is-here" : "")
+          + '" data-i="' + i + '" aria-expanded="false">'
           + esc(zh ? c.zh : c.en) + "</button>";
       }).join("");
       p.innerHTML = '<p class="xr-lead">' + esc(lead) + "</p>"
@@ -1815,6 +1864,13 @@
       // Second level, opened from the chip row. One open at a time: this sits
       // inside a paragraph of prose, and a fully expanded tree would bury it.
       var slot = p.querySelector(".xr-list");
+      if (here >= 0) {
+        var mine = p.querySelector('.xr-cat[data-i="' + here + '"]');
+        var hi = (cats[here].items && cats[here].items[zh ? "zh" : "en"]) || [];
+        slot.innerHTML = hi.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+        slot.hidden = !hi.length;
+        if (mine) mine.setAttribute("aria-expanded", "true");
+      }
       p.addEventListener("click", function (ev) {
         var chip = ev.target && ev.target.closest && ev.target.closest("button.xr-cat");
         if (!chip) return;

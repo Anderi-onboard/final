@@ -874,8 +874,30 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
   border-radius: 999px;
   padding: 7px 11px;
   cursor: pointer;
+  /* 44px touch target without a 44px-tall chip: the box stays visually small
+     and the hit area is expanded underneath it. */
+  position: relative;
+  min-height: 30px;
   transition: color var(--dur-fast, 120ms) var(--ease-out, ease),
               border-color var(--dur-fast, 120ms) var(--ease-out, ease);
+}
+.reading-body .xr-cat::before { content: ""; position: absolute; inset: -7px -2px; }
+/* The branch this reading actually took. The row is a map; without this it is a
+   map with no "you are here", and the reader cannot tell which sibling was
+   chosen from the ones merely available. */
+.reading-body .xr-cat.is-here {
+  border-color: color-mix(in srgb, var(--terracotta) 52%, transparent);
+  color: var(--terracotta);
+}
+.reading-body .xr-cat.is-here::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: var(--terracotta);
 }
 .reading-body .xr-cat:hover,
 .reading-body .xr-cat:focus-visible {
