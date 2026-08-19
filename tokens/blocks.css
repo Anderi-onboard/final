@@ -202,3 +202,24 @@ body.blocks-route .bk-cell[data-mark] svg { width: 100%; height: auto; }
 
 /* Same reason, for every other native control on these routes. */
 body.blocks-route :is(button, input, select, textarea) { font-family: inherit; }
+
+/* ── woven weight and the light in the type ────────────────────────────────
+   One typeface, weight alternating word by word — the same face at two
+   weights, never two faces. BioRhyme is a variable font (wght 200–800) in a
+   single file, so this adds no family and no bytes.
+
+   The alternation is deterministic, by word index, exactly as the brush steps
+   on index mod 3: a random assignment reshuffles on every navigation and reads
+   as a rendering fault rather than as a decision. Splitting happens in
+   blocks.js so the copy stays plain editable text.
+
+   The glow is neutral white, never a palette tint — the same rule the glass
+   follows. Both radii stay under half an em, or the counters fill in and it
+   reads as fog instead of light. It is static; nothing here pulses. */
+body.blocks-route [data-weave] [data-w="0"] { font-weight: 300; }
+body.blocks-route [data-weave] [data-w="1"] { font-weight: 700; }
+body.blocks-route [data-weave] {
+  text-shadow:
+    0 0 .04em rgb(255 255 255 / .34),
+    0 0 .22em rgb(255 255 255 / .22);
+}

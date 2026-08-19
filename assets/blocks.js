@@ -35,6 +35,38 @@
     scallop: function (w, h) {
       var pitch = Math.max(34, w / 12);
       return { stroke: M.scallop(w, h, { pitch: pitch }), width: pitch * .28 };
+    },
+    /* The logomark as a field. Four abstract motifs was a thin vocabulary for a
+       site with its own symbol sitting unused in seven page headers — this is
+       the brand itself, at field scale, in the same ridge language as the
+       background it sits in front of. */
+    brand: function (w, h) {
+      return { raw: M.brandField(w, h, { pitch: Math.max(110, Math.min(w / 2.6, 190)) }) };
+    },
+    /* Solid and broken bars — the product's own alphabet, drawn with the same
+       brush as the reading figure rather than as a lookalike. */
+    yao: function (w, h) {
+      var bw = Math.max(46, Math.min(w / 3.4, 96));
+      return { raw: '<g opacity=".92">' + M.yaoField(w, h, { bw: bw, t: bw * .12, gap: bw * .11 }) + '</g>' };
+    },
+    /* The connected-coin motif. It has been defined in marks.js all along and
+       never used anywhere — stroked, never filled, because filling unions the
+       discs into a clover and the square holes vanish. */
+    coin: function (w, h) {
+      var pitch = Math.max(30, Math.min(w / 7, 54));
+      /* M.coin draws ONE cluster of five overlapping discs, not a field, so the
+         cluster is tiled here. Rows step by 2*pitch because each cluster is two
+         pitches tall, and alternate rows offset by one pitch so the chain
+         interlocks instead of stacking into columns. */
+      var d = "", row = 0, step = pitch * 2;
+      for (var y = 0; y < h + step; y += step, row++) {
+        for (var x = (row % 2 ? -pitch : 0); x < w + step; x += step) {
+          d += '<g transform="translate(' + Math.round(x) + ' ' + Math.round(y) + ')">'
+             + M.coin({ pitch: pitch }) + '</g>';
+        }
+      }
+      return { raw: '<g fill="none" stroke="currentColor" stroke-width="' + (pitch * .10).toFixed(2)
+        + '" stroke-linejoin="round" opacity=".9">' + d + '</g>' };
     }
   };
   var MARK = {
@@ -50,7 +82,11 @@
       return '<g fill="currentColor" transform="translate(60 60)">'
         + M.florette({ w: 26, h: 48, hole: 8 }) + '</g>';
     },
-    ring: function () { return '<g fill="currentColor" transform="translate(11 11)">' + M.dotRing({ r: 8, dot: .17 }) + '</g>'; }
+    /* The header wears the real logomark. It used to wear a dot ring — a
+       generic ornament standing in for a brand that was inlined in seven HTML
+       files and reachable from none of the generated marks. */
+    ring: function () { return M.brandMark({ size: 512 }); },
+    brand: function () { return M.brandMark({ size: 512 }); }
   };
 
   function render(el) {
@@ -62,10 +98,15 @@
 
     if (pat && PATTERN[pat]) {
       var p = PATTERN[pat](w, h);
-      body = p.fill
-        ? '<g fill="currentColor" opacity=".9">' + p.fill + '</g>'
-        : '<path d="' + p.stroke + '" fill="none" stroke="currentColor" stroke-width="' + p.width
-          + '" stroke-linecap="round" opacity=".9"/>';
+      /* Three shapes a pattern can take: filled markup, a stroked path, or raw
+         markup that carries its own paint (the logomark is stroked, the yao
+         bars are filled — one wrapper cannot describe both). */
+      body = p.raw
+        ? p.raw
+        : p.fill
+          ? '<g fill="currentColor" opacity=".9">' + p.fill + '</g>'
+          : '<path d="' + p.stroke + '" fill="none" stroke="currentColor" stroke-width="' + p.width
+            + '" stroke-linecap="round" opacity=".9"/>';
     } else if (land != null) {
       /* The landscape blocks stand in for photographs. They are drawn from the
          same rounded-contour construction as the animated range, so a still
@@ -75,12 +116,34 @@
         { layers: 4, fill: h / w < .22 ? .42 : 1 });
     } else if (mk && MARK[mk]) {
       body = MARK[mk]();
-      vb = mk === "ring" ? "0 0 22 22" : "0 0 120 120";
+      vb = (mk === "ring" || mk === "brand") ? "0 0 512 416" : "0 0 120 120";
       extra = 'preserveAspectRatio="xMidYMid meet"';
     } else return;
 
     el.innerHTML = M.svg(body, vb, extra);
   }
+
+  /* ── woven weight ───────────────────────────────────────────────────────
+     One typeface, weight alternating word by word — the same face at two
+     weights rather than two faces. Split here rather than in the markup so
+     the copy stays plain text and stays editable.
+
+     Deterministic by word index, exactly as the brush is by bar index: a
+     random assignment would reshuffle on every navigation and read as a
+     rendering fault rather than as a decision. */
+  [].slice.call(document.querySelectorAll("[data-weave]")).forEach(function (el) {
+    if (el.dataset.woven) return;
+    var words = el.textContent.trim().split(/\s+/);
+    el.textContent = "";
+    words.forEach(function (w, i) {
+      var span = document.createElement("span");
+      span.setAttribute("data-w", String(i % 2));
+      span.textContent = w;
+      el.appendChild(span);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+    });
+    el.dataset.woven = "1";
+  });
 
   var cells = [].slice.call(document.querySelectorAll("[data-pattern],[data-land],[data-mark]"));
   /* Skip anything with no box yet. On the method route the fields live inside

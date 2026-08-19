@@ -212,18 +212,14 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
    The alternation is deterministic: even words light, odd words heavy, by
    index. The same rule the brush follows, and for the same reason — random
    per render would reshuffle on every navigation and read as a fault. */
-body[data-page="guide"] .mt-display [data-w="0"] { font-weight: 300; }
-body[data-page="guide"] .mt-display [data-w="1"] { font-weight: 700; }
+/* The weight pair and the glow moved to blocks.css: they belong to the
+   block route, not to this page. */
 
 /* The glow is a halo of neutral white, never a palette tint — the same rule
    the glass follows. It is static: nothing here pulses. Two stops, a tight one
    for the edge and a wide one for the bloom, both well under half an em so the
    counters stay open and the type stays readable rather than fogged. */
-body[data-page="guide"] .mt-display {
-  text-shadow:
-    0 0 .04em rgb(255 255 255 / .34),
-    0 0 .22em rgb(255 255 255 / .22);
-}
+
 
 /* ── the two faces ─────────────────────────────────────────────────────────
    A step card holds its name and the thing it teaches. The name is what you

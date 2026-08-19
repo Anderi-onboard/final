@@ -202,6 +202,68 @@
     return s;
   }
 
+  /* ── the logomark ───────────────────────────────────────────────────────
+     Five stacked wave strokes — the same ridge language as the animated range,
+     which is why the background and the brand read as one thing. Copied here
+     from the page headers so there is ONE definition: it was inlined in seven
+     HTML files and absent from every generated mark, so the block routes were
+     wearing a generic dot ring instead of the brand.
+
+     Native box is 512x416 with a 40-unit stroke; scaling the whole group keeps
+     the logo's own weight-to-size ratio at any tile size, which is the same
+     rule the pattern fields follow — weight is a fraction of the motif, never
+     a loose number. */
+  var BRAND_D = [
+    "M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0",
+    "M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0",
+    "M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0",
+    "M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0",
+    "M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"
+  ];
+  function brandMark(o) {
+    o = o || {};
+    var k = (o.size || 512) / 512;
+    return '<g transform="scale(' + R(k) + ') translate(240 1380)" fill="none" '
+      + 'stroke="currentColor" stroke-width="40" stroke-linecap="round">'
+      + BRAND_D.map(function (d) { return '<path d="' + d + '"/>'; }).join("") + '</g>';
+  }
+  /* The logomark as a repeating field. Rows offset by half a pitch so the
+     stack reads as a weave rather than as a column of copies. */
+  function brandField(w, h, o) {
+    o = o || {}; var pitch = o.pitch || 150, k = pitch / 512, s = "", row = 0;
+    var step = 416 * k * (o.rowGap == null ? .92 : o.rowGap);
+    for (var y = -step; y < h + step; y += step, row++) {
+      var off = row % 2 ? pitch / 2 : 0;
+      for (var x = -pitch + off; x < w + pitch; x += pitch) {
+        s += '<g transform="translate(' + R(x) + ' ' + R(y) + ')">' + brandMark({ size: pitch }) + '</g>';
+      }
+    }
+    return s;
+  }
+
+  /* The yao rows themselves as a field: solid and broken bars on a strict
+     grid, drawn with the brush so they are the same object as the figure on
+     the reading page rather than a lookalike. */
+  function yaoField(w, h, o) {
+    o = o || {}; var bw = o.bw || 74, t = o.t || 9, gap = o.gap || 8, s = "", row = 0;
+    var stepY = t + gap, stepX = bw + gap * 2;
+    var at = brushAttrs(t);
+    for (var y = 0; y < h + stepY; y += stepY, row++) {
+      for (var x = (row % 2 ? -stepX / 2 : 0); x < w + stepX; x += stepX) {
+        /* deterministic: the pattern of solid and broken repeats on a cycle of
+           5 against a row cycle of 2, so it does not visibly tile */
+        if ((row * 3 + Math.round(x / stepX)) % 5 < 3) {
+          s += '<path ' + at + ' d="' + brushRect(x, y, bw, t, row) + '"/>';
+        } else {
+          var seg = (bw - bw * .26) / 2;
+          s += '<path ' + at + ' d="' + brushRect(x, y, seg, t, row) + '"/>';
+          s += '<path ' + at + ' d="' + brushRect(x + bw - seg, y, seg, t, row + 1) + '"/>';
+        }
+      }
+    }
+    return s;
+  }
+
   function dotRing(o) {
     o = o || {}; var n = o.n || 12, r = o.r || 9, dot = o.dot || .16, s = "";
     for (var i = 0; i < n; i++) {
@@ -256,6 +318,7 @@
     brushRect: brushRect, brushAttrs: brushAttrs,
     vesica: vesica, vesicaRow: vesicaRow, splitDisc: splitDisc,
     scallop: scallop, waveField: waveField, tally: tally,
-    florette: florette, dotRing: dotRing, coin: coin, hexagram: hexagram
+    florette: florette, dotRing: dotRing, coin: coin, hexagram: hexagram,
+    brandMark: brandMark, brandField: brandField, yaoField: yaoField
   };
 }());
