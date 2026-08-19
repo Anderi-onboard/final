@@ -110,6 +110,11 @@ for (const [w, s] of [['审批那一关', '官鬼'], ['你做出来的那个东�
 assert.match(seg, /左边永远不许是术语/, 'the prompt names the one way this goes wrong');
 assert.match(seg, /\{妻财\\\|妻财\}/, 'and shows it as a worked wrong example');
 assert.match(seg, /从没听过六爻的人/, 'and gives a one-line test for whether a mark earned itself');
+/* The biggest source of missed marks is a translation written as a parenthetical
+   gloss — 上艮(山,挡在前头不动的那件事). The work is done; it just never became a
+   mark, and the gloss does the catalogue's job in prose instead. */
+assert.match(seg, /你写在括号里的那句解释,就是标记/,
+  'the prompt must catch the parenthetical gloss — it is where marks go missing');
 
 // ── 3. the marker pattern is one pattern, used in both directions ───────────
 // xrPlain strips it (stream preview, fallback); xrInline renders it. If the two
