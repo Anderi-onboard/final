@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260819g", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260819g";
+    ? new URL("../palettes/color-groups.json?v=20260820a", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260820a";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -237,10 +237,22 @@
 
   /* The curated file is now authoritative: every retained group participates
      once. Removing a group in the manager removes it from the published file,
-     so the runtime no longer carries a second, hidden exclusion algorithm. */
+     so the runtime no longer carries a second, hidden exclusion algorithm.
+
+     Segment order is explicit, not alphabetical. The recovered reference
+     palettes (自定义) open the cycle and hand over to 蓝靛段; everything else
+     follows in catalogue order. Segments absent from this list sort after the
+     named ones rather than silently jumping to the front. Within a segment the
+     old tier-then-id rule still applies, so 自定义 needs no real tier: its
+     "Custom" tier only decides order among its own 33 groups. */
+  var segmentOrder = ["自定义", "蓝靛段", "近白段", "粉珊瑚段", "金赭段", "青绿段", "紫堇段", "黄绿杂段"];
+
   function buildPaletteSchedule(groups) {
     var tierOrder = { "浓": 0, "艳": 1, "中": 2, "淡": 3 };
     return groups.slice().sort(function (a, b) {
+      var segA = segmentOrder.indexOf(a.seg); if (segA < 0) segA = segmentOrder.length;
+      var segB = segmentOrder.indexOf(b.seg); if (segB < 0) segB = segmentOrder.length;
+      if (segA !== segB) return segA - segB;
       var tierA = tierOrder[a.tier] == null ? 9 : tierOrder[a.tier];
       var tierB = tierOrder[b.tier] == null ? 9 : tierOrder[b.tier];
       return tierA - tierB || a.id.localeCompare(b.id);
