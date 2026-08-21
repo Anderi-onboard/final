@@ -48,11 +48,24 @@ assert.match(
   "the seed must reach buildPaletteSchedule"
 );
 
+/* The opening bias: a visitor should land inside 自定义 or 蓝靛段, and BOTH
+   halves must still be shuffled. A head that is not shuffled would put every
+   first-time visitor on the same group again, which is the thing the shuffle
+   replaced. */
+assert.match(background, /var OPENING_SEGMENTS = \["自定义", "蓝靛段"\]/,
+  "the cycle must open inside 自定义 or 蓝靛段");
+assert.match(background, /shuffle\(head\)\.concat\(shuffle\(tail\)\)/,
+  "both the opening segments and the remainder must be shuffled, not just the tail");
+for (const seg of ["自定义", "蓝靛段"]) {
+  assert.ok(groups.some((group) => group.seg === seg),
+    `OPENING_SEGMENTS names ${seg} but the catalogue has no such segment`);
+}
+
 /* Fisher–Yates over a copy is a permutation: assert the shuffle cannot drop or
    duplicate a group, since a silent drop would simply retire a palette. */
-const shuffleSrc = background.match(/function buildPaletteSchedule[\s\S]*?\n  \}/)?.[0] ?? "";
+const shuffleSrc = background.match(/function buildPaletteSchedule[\s\S]*?\n  \}\n/)?.[0] ?? "";
 assert.match(shuffleSrc, /groups\.slice\(\)/, "shuffle must copy, never reorder the caller's array");
-assert.match(shuffleSrc, /for \(var i = out\.length - 1; i > 0; i--\)/, "shuffle must be a full Fisher–Yates pass");
+assert.match(background, /for \(var i = list\.length - 1; i > 0; i--\)/, "shuffle must be a full Fisher–Yates pass");
 
 assert.match(background, /class=\"fill l/, "palette ridge fills must be rendered");
 assert.match(background, /class=\"mtn-water\"/, "palette water role must be rendered");
