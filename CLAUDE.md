@@ -359,16 +359,14 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
 - **开始了的解读一定读完。**结算全额扣,余额可以扣成负数;
   被拒的是**下一次**请求,不是正在写的这一篇。`chargeUnits()` 因此故意不带余额守卫。
 - `METHOD_COST` / `FOLLOW_COST` 只是**展示用估值**,不参与任何判断。
-- ⚠️ **免费额度:服务端和前端现在说的不是一回事,owner 未拍板前不要按任一侧改代码。**
-  服务端(权威)是 `PLAN_GRANT.free = 0` 点 + `SIGNUP_FREE_READINGS = 1` ——
-  **零点数,送一次完整解读**,ledger 记 `grant:free-reading` / `delta 0`,
-  注释写着「The welcome is a reading, not a balance」。
-  而 `account.js` 的 `PLANS.free.grant`、`pricing.html`、`settings.html` **四处仍写 1,500 点**,
-  新用户被告知有 1,500 点、实际余额是 0。main 上新的登录文案
-  「the first one is on us — whole, not a sample」已经是新模型的说法,
-  **说明服务端那次改动是有意的,只是前端没跟上。**
-  两条路二选一(前端改成"首卦免费" / 服务端改回发点),是 owner 的决定。详见 `OVERVIEW.md` §8。
-  ~~免费额度 1500~~ 是本行的旧说法,已与代码不符;曾经是 500,连一卦都起不了。
+- ⭐ **免费额度 = 首卦免费,不是一笔点数**(owner 08-21 拍板,前后端已对齐)。
+  服务端 `PLAN_GRANT.free = 0` + `SIGNUP_FREE_READINGS = 1`,ledger 记
+  `grant:free-reading` / `delta 0`(「The welcome is a reading, not a balance」);
+  前端 `PLANS.free = { grant: 0, freeReadings: 1 }`,**所有文案从这张表读,不许再写死数字**。
+  **为什么不是点数**:点数余额会在解读写到一半时用完,而且第一次来的人根本不知道 1,500
+  算多算少 —— 一篇完整解读没有这个歧义,它会写完,而且它就是产品本身不是样品。
+  ~~1500 点~~ / ~~500 点~~ 都是旧说法。这行曾经三处互相矛盾(服务端 0、前端 1500、
+  `planDescription()` 写死 500),**根因是同一个数字被抄了四遍** —— 所以现在只许读表。
 - ⚠️ 这条被 codex 会话加回过 reserve+cap 一次,导致新用户一卦都起不了。改这里前先问 owner。
 
 ---

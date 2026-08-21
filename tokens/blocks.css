@@ -216,8 +216,11 @@ body.blocks-route :is(button, input, select, textarea) { font-family: inherit; }
    The glow is neutral white, never a palette tint — the same rule the glass
    follows. Both radii stay under half an em, or the counters fill in and it
    reads as fog instead of light. It is static; nothing here pulses. */
-body.blocks-route [data-weave] [data-w="0"] { font-weight: 300; }
-body.blocks-route [data-weave] [data-w="1"] { font-weight: 700; }
+/* The WEIGHTS moved to tokens/typography.css — the weave is a type device and
+   both material systems share their type, so every route gets it.
+   The GLOW stays here, and stays on this route only: it is white, and white
+   light only reads against a saturated colour field. Over the near-white paper
+   of the glass routes it either disappears or smears the counters. */
 body.blocks-route [data-weave] {
   text-shadow:
     0 0 .04em rgb(255 255 255 / .34),
