@@ -30,8 +30,12 @@
     "cloud": "#FEF9F7",
     "backgrounds": {
       "sky": "#FEF9F7",
+      "haze": "#FFECE1",
       "water": "#A0C5DA"
-    }
+    },
+    "updatedAt": 1786532799164,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "004",
@@ -64,8 +68,12 @@
     "cloud": "#B3D5F4",
     "backgrounds": {
       "sky": "#B3D5F4",
+      "haze": "#D8F8F6",
       "water": "#9ACAC8"
-    }
+    },
+    "updatedAt": 1786532626612,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "005",
@@ -95,11 +103,7 @@
     "gems": [
       4
     ],
-    "cloud": "#F6FBFF",
-    "backgrounds": {
-      "sky": "#F6FBFF",
-      "water": "#99BDDE"
-    }
+    "cloud": "#F6FBFF"
   },
   {
     "id": "006",
@@ -132,8 +136,12 @@
     "cloud": "#F9FAFF",
     "backgrounds": {
       "sky": "#F9FAFF",
+      "haze": "#EFEEFF",
       "water": "#EBC437"
-    }
+    },
+    "updatedAt": 1786532520352,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "008",
@@ -163,11 +171,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FEF9F9",
-    "backgrounds": {
-      "sky": "#FEF9F9",
-      "water": "#ADC09F"
-    }
+    "cloud": "#FEF9F9"
   },
   {
     "id": "009",
@@ -197,11 +201,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FDFAF6",
-    "backgrounds": {
-      "sky": "#FDFAF6",
-      "water": "#C1B794"
-    }
+    "cloud": "#FDFAF6"
   },
   {
     "id": "012",
@@ -231,11 +231,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F1FDFE",
-    "backgrounds": {
-      "sky": "#F1FDFE",
-      "water": "#D7ADA8"
-    }
+    "cloud": "#F1FDFE"
   },
   {
     "id": "013",
@@ -265,11 +261,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F8FBFE",
-    "backgrounds": {
-      "sky": "#F8FBFE",
-      "water": "#AFB5D7"
-    }
+    "cloud": "#F8FBFE"
   },
   {
     "id": "016",
@@ -299,11 +291,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FEF9F8",
-    "backgrounds": {
-      "sky": "#FEF9F8",
-      "water": "#92C2C2"
-    }
+    "cloud": "#FEF9F8"
   },
   {
     "id": "017",
@@ -333,11 +321,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FFFAF2",
-    "backgrounds": {
-      "sky": "#FFFAF2",
-      "water": "#C1BA95"
-    }
+    "cloud": "#FFFAF2"
   },
   {
     "id": "020",
@@ -367,11 +351,7 @@
     "gems": [
       5
     ],
-    "cloud": "#F6FBFD",
-    "backgrounds": {
-      "sky": "#F6FBFD",
-      "water": "#9EC6D8"
-    }
+    "cloud": "#F6FBFD"
   },
   {
     "id": "021",
@@ -401,11 +381,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FAFAFA",
-    "backgrounds": {
-      "sky": "#FAFAFA",
-      "water": "#BFB2D3"
-    }
+    "cloud": "#FAFAFA"
   },
   {
     "id": "024",
@@ -435,11 +411,7 @@
     "gems": [
       5
     ],
-    "cloud": "#FFFBF9",
-    "backgrounds": {
-      "sky": "#FFFBF9",
-      "water": "#DAB6A3"
-    }
+    "cloud": "#FFFBF9"
   },
   {
     "id": "028",
@@ -469,11 +441,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F7FBFE",
-    "backgrounds": {
-      "sky": "#F7FBFE",
-      "water": "#9EC6D9"
-    }
+    "cloud": "#F7FBFE"
   },
   {
     "id": "031",
@@ -503,11 +471,7 @@
     "gems": [
       6
     ],
-    "cloud": "#FFFAFA",
-    "backgrounds": {
-      "sky": "#FFFAFA",
-      "water": "#9E7740"
-    }
+    "cloud": "#FFFAFA"
   },
   {
     "id": "032",
@@ -537,11 +501,7 @@
     "gems": [
       5
     ],
-    "cloud": "#FFF7F7",
-    "backgrounds": {
-      "sky": "#FFF7F7",
-      "water": "#BC7773"
-    }
+    "cloud": "#FFF7F7"
   },
   {
     "id": "033",
@@ -571,11 +531,7 @@
     "gems": [
       6
     ],
-    "cloud": "#FFFBFA",
-    "backgrounds": {
-      "sky": "#FFFBFA",
-      "water": "#AF6E5D"
-    }
+    "cloud": "#FFFBFA"
   },
   {
     "id": "034",
@@ -605,11 +561,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FFF7F6",
-    "backgrounds": {
-      "sky": "#FFF7F6",
-      "water": "#B18151"
-    }
+    "cloud": "#FFF7F6"
   },
   {
     "id": "035",
@@ -639,11 +591,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FFFDFC",
-    "backgrounds": {
-      "sky": "#FFFDFC",
-      "water": "#A7704B"
-    }
+    "cloud": "#FFFDFC"
   },
   {
     "id": "039",
@@ -673,11 +621,7 @@
     "gems": [
       4
     ],
-    "cloud": "#FFF5F5",
-    "backgrounds": {
-      "sky": "#FFF5F5",
-      "water": "#B46849"
-    }
+    "cloud": "#FFF5F5"
   },
   {
     "id": "040",
@@ -707,11 +651,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FFF5F4",
-    "backgrounds": {
-      "sky": "#FFF5F4",
-      "water": "#BC7772"
-    }
+    "cloud": "#FFF5F4"
   },
   {
     "id": "041",
@@ -741,11 +681,7 @@
     "gems": [
       8
     ],
-    "cloud": "#FDF5F5",
-    "backgrounds": {
-      "sky": "#FDF5F5",
-      "water": "#419AAB"
-    }
+    "cloud": "#FDF5F5"
   },
   {
     "id": "042",
@@ -775,11 +711,7 @@
     "gems": [
       6
     ],
-    "cloud": "#FFFEFE",
-    "backgrounds": {
-      "sky": "#FFFEFE",
-      "water": "#2E8E94"
-    }
+    "cloud": "#FFFEFE"
   },
   {
     "id": "043",
@@ -809,11 +741,7 @@
     "gems": [
       4
     ],
-    "cloud": "#FFF5F3",
-    "backgrounds": {
-      "sky": "#FFF5F3",
-      "water": "#B76B4D"
-    }
+    "cloud": "#FFF5F3"
   },
   {
     "id": "044",
@@ -843,11 +771,7 @@
     "gems": [
       5
     ],
-    "cloud": "#FDF5F4",
-    "backgrounds": {
-      "sky": "#FDF5F4",
-      "water": "#BB786D"
-    }
+    "cloud": "#FDF5F4"
   },
   {
     "id": "045",
@@ -877,11 +801,7 @@
     "gems": [
       4
     ],
-    "cloud": "#FFF7F8",
-    "backgrounds": {
-      "sky": "#FFF7F8",
-      "water": "#B66364"
-    }
+    "cloud": "#FFF7F8"
   },
   {
     "id": "046",
@@ -914,8 +834,12 @@
     "cloud": "#FFF4F6",
     "backgrounds": {
       "sky": "#FFF4F6",
+      "haze": "#E0AFA6",
       "water": "#ABCDF2"
-    }
+    },
+    "updatedAt": 1786533648499,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "047",
@@ -948,8 +872,12 @@
     "cloud": "#FFF4F5",
     "backgrounds": {
       "sky": "#FFF4F5",
+      "haze": "#D7B8B7",
       "water": "#419D98"
-    }
+    },
+    "updatedAt": 1786533678234,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "048",
@@ -979,11 +907,7 @@
     "gems": [
       5
     ],
-    "cloud": "#FDF5F6",
-    "backgrounds": {
-      "sky": "#FDF5F6",
-      "water": "#BC7677"
-    }
+    "cloud": "#FDF5F6"
   },
   {
     "id": "049",
@@ -1013,11 +937,7 @@
     "gems": [
       6
     ],
-    "cloud": "#FFF2F3",
-    "backgrounds": {
-      "sky": "#FFF2F3",
-      "water": "#A96F4F"
-    }
+    "cloud": "#FFF2F3"
   },
   {
     "id": "050",
@@ -1047,11 +967,7 @@
     "gems": [
       4
     ],
-    "cloud": "#FCF4F3",
-    "backgrounds": {
-      "sky": "#FCF4F3",
-      "water": "#0493A0"
-    }
+    "cloud": "#FCF4F3"
   },
   {
     "id": "051",
@@ -1081,11 +997,7 @@
     "gems": [
       8
     ],
-    "cloud": "#FEF0EF",
-    "backgrounds": {
-      "sky": "#FEF0EF",
-      "water": "#4599B0"
-    }
+    "cloud": "#FEF0EF"
   },
   {
     "id": "052",
@@ -1116,11 +1028,7 @@
       3,
       4
     ],
-    "cloud": "#FFFEFD",
-    "backgrounds": {
-      "sky": "#FFFEFD",
-      "water": "#C47264"
-    }
+    "cloud": "#FFFEFD"
   },
   {
     "id": "053",
@@ -1151,11 +1059,7 @@
       4,
       7
     ],
-    "cloud": "#FFF7F5",
-    "backgrounds": {
-      "sky": "#FFF7F5",
-      "water": "#B16B41"
-    }
+    "cloud": "#FFF7F5"
   },
   {
     "id": "054",
@@ -1186,11 +1090,7 @@
       4,
       5
     ],
-    "cloud": "#FFF2F4",
-    "backgrounds": {
-      "sky": "#FFF2F4",
-      "water": "#758C3F"
-    }
+    "cloud": "#FFF2F4"
   },
   {
     "id": "055",
@@ -1221,11 +1121,7 @@
       5,
       6
     ],
-    "cloud": "#FCF3F5",
-    "backgrounds": {
-      "sky": "#FCF3F5",
-      "water": "#429D94"
-    }
+    "cloud": "#FCF3F5"
   },
   {
     "id": "056",
@@ -1255,11 +1151,7 @@
     "gems": [
       6
     ],
-    "cloud": "#FFFBF7",
-    "backgrounds": {
-      "sky": "#FFFBF7",
-      "water": "#5E80B3"
-    }
+    "cloud": "#FFFBF7"
   },
   {
     "id": "057",
@@ -1289,11 +1181,7 @@
     "gems": [
       5
     ],
-    "cloud": "#FFF9F3",
-    "backgrounds": {
-      "sky": "#FFF9F3",
-      "water": "#A4698B"
-    }
+    "cloud": "#FFF9F3"
   },
   {
     "id": "058",
@@ -1326,8 +1214,12 @@
     "cloud": "#EAB76C",
     "backgrounds": {
       "sky": "#EAB76C",
+      "haze": "#F6E0B7",
       "water": "#998D4C"
-    }
+    },
+    "updatedAt": 1786533717490,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "059",
@@ -1360,8 +1252,12 @@
     "cloud": "#FFFAF0",
     "backgrounds": {
       "sky": "#FFFAF0",
+      "haze": "#96C7CB",
       "water": "#5C9064"
-    }
+    },
+    "updatedAt": 1786533768519,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "060",
@@ -1391,11 +1287,7 @@
     "gems": [
       8
     ],
-    "cloud": "#FDFAF4",
-    "backgrounds": {
-      "sky": "#FDFAF4",
-      "water": "#6A7CB4"
-    }
+    "cloud": "#FDFAF4"
   },
   {
     "id": "062",
@@ -1428,8 +1320,12 @@
     "cloud": "#FFFBE9",
     "backgrounds": {
       "sky": "#FFFBE9",
+      "haze": "#EDE09E",
       "water": "#5B862E"
-    }
+    },
+    "updatedAt": 1786533788300,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "063",
@@ -1459,11 +1355,7 @@
     "gems": [
       7
     ],
-    "cloud": "#FFF9F5",
-    "backgrounds": {
-      "sky": "#FFF9F5",
-      "water": "#0182B2"
-    }
+    "cloud": "#FFF9F5"
   },
   {
     "id": "064",
@@ -1493,11 +1385,7 @@
     "gems": [
       4
     ],
-    "cloud": "#FFF8F1",
-    "backgrounds": {
-      "sky": "#FFF8F1",
-      "water": "#A86605"
-    }
+    "cloud": "#FFF8F1"
   },
   {
     "id": "065",
@@ -1530,8 +1418,12 @@
     "cloud": "#FFFDFB",
     "backgrounds": {
       "sky": "#FFFDFB",
+      "haze": "#FFD7AF",
       "water": "#3F79C1"
-    }
+    },
+    "updatedAt": 1786530952108,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "066",
@@ -1561,11 +1453,7 @@
     "gems": [
       8
     ],
-    "cloud": "#FFFAF3",
-    "backgrounds": {
-      "sky": "#FFFAF3",
-      "water": "#236BAE"
-    }
+    "cloud": "#FFFAF3"
   },
   {
     "id": "067",
@@ -1598,8 +1486,12 @@
     "cloud": "#FFFBF6",
     "backgrounds": {
       "sky": "#FFFBF6",
+      "haze": "#FDDA9E",
       "water": "#736B00"
-    }
+    },
+    "updatedAt": 1786533809384,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "072",
@@ -1632,8 +1524,12 @@
     "cloud": "#FFFBF8",
     "backgrounds": {
       "sky": "#FFFBF8",
+      "haze": "#FED5B1",
       "water": "#0875BC"
-    }
+    },
+    "updatedAt": 1786533838318,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "073",
@@ -1666,8 +1562,12 @@
     "cloud": "#FFF6ED",
     "backgrounds": {
       "sky": "#FFF6ED",
+      "haze": "#FED6AC",
       "water": "#2D6DD0"
-    }
+    },
+    "updatedAt": 1786533863685,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "074",
@@ -1700,8 +1600,12 @@
     "cloud": "#FFFEFC",
     "backgrounds": {
       "sky": "#FFFEFC",
+      "haze": "#FED5AF",
       "water": "#097E92"
-    }
+    },
+    "updatedAt": 1786533916657,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "075",
@@ -1731,11 +1635,7 @@
     "gems": [
       4
     ],
-    "cloud": "#FFF8EF",
-    "backgrounds": {
-      "sky": "#FFF8EF",
-      "water": "#3B62E5"
-    }
+    "cloud": "#FFF8EF"
   },
   {
     "id": "077",
@@ -1769,8 +1669,12 @@
     "cloud": "#FF8585",
     "backgrounds": {
       "sky": "#FF8585",
+      "haze": "#FFD69B",
       "water": "#3D35E6"
-    }
+    },
+    "updatedAt": 1786533959224,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "078",
@@ -1804,8 +1708,12 @@
     "cloud": "#FFF9EA",
     "backgrounds": {
       "sky": "#FFF9EA",
+      "haze": "#FEDA67",
       "water": "#687603"
-    }
+    },
+    "updatedAt": 1786533990026,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "089",
@@ -1835,11 +1743,7 @@
     "gems": [
       4
     ],
-    "cloud": "#ECFFFF",
-    "backgrounds": {
-      "sky": "#ECFFFF",
-      "water": "#0A7A7F"
-    }
+    "cloud": "#ECFFFF"
   },
   {
     "id": "096",
@@ -1869,11 +1773,7 @@
     "gems": [
       7
     ],
-    "cloud": "#E8FFFB",
-    "backgrounds": {
-      "sky": "#E8FFFB",
-      "water": "#AA263D"
-    }
+    "cloud": "#E8FFFB"
   },
   {
     "id": "097",
@@ -1903,11 +1803,7 @@
     "gems": [
       7
     ],
-    "cloud": "#E8FFFC",
-    "backgrounds": {
-      "sky": "#E8FFFC",
-      "water": "#006D7A"
-    }
+    "cloud": "#E8FFFC"
   },
   {
     "id": "101",
@@ -1937,11 +1833,7 @@
     "gems": [
       8
     ],
-    "cloud": "#EBFFF4",
-    "backgrounds": {
-      "sky": "#EBFFF4",
-      "water": "#00746B"
-    }
+    "cloud": "#EBFFF4"
   },
   {
     "id": "108",
@@ -1971,11 +1863,7 @@
     "gems": [
       6
     ],
-    "cloud": "#F8FDFF",
-    "backgrounds": {
-      "sky": "#F8FDFF",
-      "water": "#5295BA"
-    }
+    "cloud": "#F8FDFF"
   },
   {
     "id": "109",
@@ -2005,11 +1893,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F2FBFF",
-    "backgrounds": {
-      "sky": "#F2FBFF",
-      "water": "#5E84B6"
-    }
+    "cloud": "#F2FBFF"
   },
   {
     "id": "111",
@@ -2040,11 +1924,7 @@
       5,
       6
     ],
-    "cloud": "#F4FAFF",
-    "backgrounds": {
-      "sky": "#F4FAFF",
-      "water": "#6F7EB6"
-    }
+    "cloud": "#F4FAFF"
   },
   {
     "id": "112",
@@ -2077,8 +1957,12 @@
     "cloud": "#FCFEFF",
     "backgrounds": {
       "sky": "#FCFEFF",
+      "haze": "#C4E4FF",
       "water": "#147FBB"
-    }
+    },
+    "updatedAt": 1786534104292,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "113",
@@ -2108,11 +1992,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F5FAFF",
-    "backgrounds": {
-      "sky": "#F5FAFF",
-      "water": "#9F6C07"
-    }
+    "cloud": "#F5FAFF"
   },
   {
     "id": "115",
@@ -2145,8 +2025,12 @@
     "cloud": "#FDFDFF",
     "backgrounds": {
       "sky": "#FDFDFF",
+      "haze": "#D0DFFE",
       "water": "#B75552"
-    }
+    },
+    "updatedAt": 1786534122720,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "117",
@@ -2176,11 +2060,7 @@
     "gems": [
       6
     ],
-    "cloud": "#FBFEFF",
-    "backgrounds": {
-      "sky": "#FBFEFF",
-      "water": "#0A6FA5"
-    }
+    "cloud": "#FBFEFF"
   },
   {
     "id": "118",
@@ -2210,11 +2090,7 @@
     "gems": [
       5
     ],
-    "cloud": "#EFF9FF",
-    "backgrounds": {
-      "sky": "#EFF9FF",
-      "water": "#5673C2"
-    }
+    "cloud": "#EFF9FF"
   },
   {
     "id": "119",
@@ -2244,11 +2120,7 @@
     "gems": [
       6
     ],
-    "cloud": "#F5FBFF",
-    "backgrounds": {
-      "sky": "#F5FBFF",
-      "water": "#2B6DB2"
-    }
+    "cloud": "#F5FBFF"
   },
   {
     "id": "123",
@@ -2281,8 +2153,12 @@
     "cloud": "#F8FBFF",
     "backgrounds": {
       "sky": "#F8FBFF",
+      "haze": "#CAE0FE",
       "water": "#A05F06"
-    }
+    },
+    "updatedAt": 1786534193872,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "126",
@@ -2312,11 +2188,7 @@
     "gems": [
       8
     ],
-    "cloud": "#F7FDFF",
-    "backgrounds": {
-      "sky": "#F7FDFF",
-      "water": "#964703"
-    }
+    "cloud": "#F7FDFF"
   },
   {
     "id": "127",
@@ -2347,11 +2219,7 @@
       3,
       4
     ],
-    "cloud": "#F3FBFF",
-    "backgrounds": {
-      "sky": "#F3FBFF",
-      "water": "#066490"
-    }
+    "cloud": "#F3FBFF"
   },
   {
     "id": "128",
@@ -2382,11 +2250,7 @@
       4,
       7
     ],
-    "cloud": "#F8FCFF",
-    "backgrounds": {
-      "sky": "#F8FCFF",
-      "water": "#926304"
-    }
+    "cloud": "#F8FCFF"
   },
   {
     "id": "129",
@@ -2420,8 +2284,12 @@
     "cloud": "#4999DF",
     "backgrounds": {
       "sky": "#4999DF",
+      "haze": "#E4993A",
       "water": "#1445EB"
-    }
+    },
+    "updatedAt": 1786534258981,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "130",
@@ -2452,11 +2320,7 @@
       5,
       6
     ],
-    "cloud": "#F1F8FF",
-    "backgrounds": {
-      "sky": "#F1F8FF",
-      "water": "#7E5300"
-    }
+    "cloud": "#F1F8FF"
   },
   {
     "id": "143",
@@ -2489,8 +2353,12 @@
     "cloud": "#F7BBEB",
     "backgrounds": {
       "sky": "#F7BBEB",
+      "haze": "#FFCCFA",
       "water": "#927309"
-    }
+    },
+    "updatedAt": 1786534311658,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "146",
@@ -2520,11 +2388,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F8F6FF",
-    "backgrounds": {
-      "sky": "#F8F6FF",
-      "water": "#686300"
-    }
+    "cloud": "#F8F6FF"
   },
   {
     "id": "151",
@@ -2557,8 +2421,12 @@
     "cloud": "#E1F9D7",
     "backgrounds": {
       "sky": "#E1F9D7",
+      "haze": "#9CBA69",
       "water": "#08774C"
-    }
+    },
+    "updatedAt": 1786534342450,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "152",
@@ -2592,8 +2460,12 @@
     "cloud": "#FFF8FD",
     "backgrounds": {
       "sky": "#FFF8FD",
+      "haze": "#FFCCCC",
       "water": "#C70000"
-    }
+    },
+    "updatedAt": 1786534429988,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "159",
@@ -2623,11 +2495,7 @@
     "gems": [
       7
     ],
-    "cloud": "#F4FEEF",
-    "backgrounds": {
-      "sky": "#F4FEEF",
-      "water": "#AD7153"
-    }
+    "cloud": "#F4FEEF"
   },
   {
     "id": "169",
@@ -2657,11 +2525,7 @@
     "gems": [
       6
     ],
-    "cloud": "#F2FFEE",
-    "backgrounds": {
-      "sky": "#F2FFEE",
-      "water": "#A2530F"
-    }
+    "cloud": "#F2FFEE"
   },
   {
     "id": "176",
@@ -2691,11 +2555,7 @@
     "gems": [
       8
     ],
-    "cloud": "#F7FFF0",
-    "backgrounds": {
-      "sky": "#F7FFF0",
-      "water": "#0763A9"
-    }
+    "cloud": "#F7FFF0"
   },
   {
     "id": "179",
@@ -2729,8 +2589,12 @@
     "cloud": "#F0D0D0",
     "backgrounds": {
       "sky": "#F0D0D0",
+      "haze": "#DF5353",
       "water": "#B8DCFF"
-    }
+    },
+    "updatedAt": 1786530931111,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "180",
@@ -2764,16 +2628,22 @@
     "cloud": "#CDD8F9",
     "backgrounds": {
       "sky": "#CDD8F9",
+      "haze": "#F08228",
       "water": "#F50000"
-    }
+    },
+    "updatedAt": 1786530831493,
+    "overridden": true,
+    "custom": false
   },
   {
     "id": "CMSPYGJAT",
     "name": "art-01",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F6F2EA",
+      "haze": "#E8D9C7",
       "water": "#D3A985"
     },
     "rows": [
@@ -2789,15 +2659,19 @@
       "#1B1612"
     ],
     "cloud": "#F6F2EA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786531048373,
+    "updatedAt": 1786531310407
   },
   {
     "id": "CMSPYI768",
     "name": "architecture-01",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#ECE4C7",
+      "haze": "#DAC6AA",
       "water": "#A6AAB4"
     },
     "rows": [
@@ -2813,15 +2687,19 @@
       "#353627"
     ],
     "cloud": "#ECE4C7",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786531125968,
+    "updatedAt": 1786531308189
   },
   {
     "id": "CMSPYN41D",
     "name": "landscape-031",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#C3CCEA",
+      "haze": "#C7CAC5",
       "water": "#CA9A40"
     },
     "rows": [
@@ -2837,15 +2715,19 @@
       "#A7977B"
     ],
     "cloud": "#C3CCEA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786531355185,
+    "updatedAt": 1786535101189
   },
   {
     "id": "CMSPYSTGE",
     "name": "portrait-03",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#977966",
+      "haze": "#775849",
       "water": "#35150E"
     },
     "rows": [
@@ -2861,15 +2743,19 @@
       "#B58973"
     ],
     "cloud": "#977966",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786531621406,
+    "updatedAt": 1786535084928
   },
   {
     "id": "CMSPZ7Q1V",
     "name": "portrait-03",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#AA8C7A",
+      "haze": "#9B7E6A",
       "water": "#7B5C4C"
     },
     "rows": [
@@ -2885,15 +2771,19 @@
       "#120C04"
     ],
     "cloud": "#AA8C7A",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786532316835,
+    "updatedAt": 1786532320481
   },
   {
     "id": "CMSPZ9527",
     "name": "portrait-02",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#AFD0DA",
+      "haze": "#B29E92",
       "water": "#9B8C84"
     },
     "rows": [
@@ -2909,15 +2799,19 @@
       "#030101"
     ],
     "cloud": "#AFD0DA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786532382943,
+    "updatedAt": 1786532383980
   },
   {
     "id": "CMSPZA9WG",
     "name": "street-01",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FDF9E2",
+      "haze": "#FDEEC3",
       "water": "#FCDC8C"
     },
     "rows": [
@@ -2933,15 +2827,19 @@
       "#548088"
     ],
     "cloud": "#FDF9E2",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786532435872,
+    "updatedAt": 1786532437292
   },
   {
     "id": "CMSPZD7WY",
     "name": "ffb0ea2d1cd00e3e178e7bfd6fdc4ef5",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FDFEFD",
+      "haze": "#F6F4ED",
       "water": "#D2DFF5"
     },
     "rows": [
@@ -2957,15 +2855,19 @@
       "#B5B1B4"
     ],
     "cloud": "#FDFEFD",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786532573266,
+    "updatedAt": 1786532573869
   },
   {
     "id": "CMSPZHJCP",
     "name": "4f46bcbe9448d07be2506c23c95b11c9",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#C5CACD",
+      "haze": "#C3B394",
       "water": "#949B9B"
     },
     "rows": [
@@ -2981,15 +2883,19 @@
       "#15160C"
     ],
     "cloud": "#C5CACD",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786532774713,
+    "updatedAt": 1786532775499
   },
   {
     "id": "CMSPZY5W1",
     "name": "0f79155456c76bbec84b2f4c183957e8",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FBFBDA",
+      "haze": "#F7E5D2",
       "water": "#DCD2C4"
     },
     "rows": [
@@ -3005,15 +2911,18 @@
       "#B39C94"
     ],
     "cloud": "#FBFBDA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786533550417
   },
   {
     "id": "CMSPZYAIB",
     "name": "0f79155456c76bbec84b2f4c183957e8",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F7E5D2",
+      "haze": "#F6D2B4",
       "water": "#CCBBB3"
     },
     "rows": [
@@ -3029,15 +2938,19 @@
       "#0F0603"
     ],
     "cloud": "#F7E5D2",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786533556403,
+    "updatedAt": 1786534569154
   },
   {
     "id": "CMSPZYHS1",
     "name": "356b3b66b6f53d953108ab469384feef",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FDD9CB",
+      "haze": "#ECCBBE",
       "water": "#D0AB32"
     },
     "rows": [
@@ -3053,7 +2966,9 @@
       "#897812"
     ],
     "cloud": "#FDD9CB",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786533565825,
+    "updatedAt": 1786533575663
   },
   {
     "rows": [
@@ -3070,22 +2985,27 @@
     ],
     "backgrounds": {
       "sky": "#DDD8CF",
+      "haze": "#CFC8BC",
       "water": "#ACA18F"
     },
     "id": "CMSQ0KD0A",
     "name": "",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "cloud": "#DDD8CF",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534586074
   },
   {
     "id": "CMSQ0KJ33",
     "name": "4a8b626eb68bb244ace6a49d4ab80567",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#E2DDC0",
+      "haze": "#CBCDBB",
       "water": "#A4B9B5"
     },
     "rows": [
@@ -3101,15 +3021,18 @@
       "#7B837C"
     ],
     "cloud": "#E2DDC0",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534593951
   },
   {
     "id": "CMSQ0KNFT",
     "name": "4a8b626eb68bb244ace6a49d4ab80567",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#E2DDC0",
+      "haze": "#CBC5B2",
       "water": "#93ACA4"
     },
     "rows": [
@@ -3125,15 +3048,18 @@
       "#33333A"
     ],
     "cloud": "#E2DDC0",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534599593
   },
   {
     "id": "CMSQ0KT1Z",
     "name": "5bce0dac7471a9ef8678d9bebf12dd17",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#DCD4CA",
+      "haze": "#DAC5AB",
       "water": "#C5B49A"
     },
     "rows": [
@@ -3149,15 +3075,18 @@
       "#030303"
     ],
     "cloud": "#DCD4CA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534606871
   },
   {
     "id": "CMSQ0L431",
     "name": "48004953cb966a9f3f4372ba1de852d3",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F5C9A3",
+      "haze": "#ECB48C",
       "water": "#F3A473"
     },
     "rows": [
@@ -3173,15 +3102,18 @@
       "#0D0312"
     ],
     "cloud": "#F5C9A3",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534621165
   },
   {
     "id": "CMSQ0L8UY",
     "name": "48004953cb966a9f3f4372ba1de852d3",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F5C9A3",
+      "haze": "#F3B48B",
       "water": "#DDB906"
     },
     "rows": [
@@ -3197,15 +3129,18 @@
       "#9172BD"
     ],
     "cloud": "#F5C9A3",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534627354
   },
   {
     "id": "CMSQ0LIEQ",
     "name": "48004953cb966a9f3f4372ba1de852d3",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FAD2B3",
+      "haze": "#F5C9A3",
       "water": "#F3B48B"
     },
     "rows": [
@@ -3221,15 +3156,18 @@
       "#6A9CDD"
     ],
     "cloud": "#FAD2B3",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534639730
   },
   {
     "id": "CMSQ0LONC",
     "name": "4e25e5989f248325d08a126707435bdb",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F5F4F4",
+      "haze": "#FAE5DA",
       "water": "#FCC6CC"
     },
     "rows": [
@@ -3245,15 +3183,19 @@
       "#1F170A"
     ],
     "cloud": "#F5F4F4",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534647816,
+    "updatedAt": 1786534651021
   },
   {
     "id": "CMSQ0M5ZM",
     "name": "5a88a01f9c055710ade755ca35d43ff2",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F1F7E9",
+      "haze": "#E6F1CD",
       "water": "#B2B56B"
     },
     "rows": [
@@ -3269,15 +3211,19 @@
       "#192A0A"
     ],
     "cloud": "#F1F7E9",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534670290,
+    "updatedAt": 1786534719783
   },
   {
     "id": "CMSQ0NGFI",
     "name": "b36f57ed41ccf2f23c9ec2bb803f94b3",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FBFCFB",
+      "haze": "#BBD4D1",
       "water": "#A3AB7C"
     },
     "rows": [
@@ -3293,15 +3239,19 @@
       "#042303"
     ],
     "cloud": "#FBFCFB",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534730478,
+    "updatedAt": 1786534735132
   },
   {
     "id": "CMSQ0NQLH",
     "name": "1c3a560cf75ba43990c5b2c234aebdac",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F3F4EC",
+      "haze": "#CDCA0D",
       "water": "#7A9B7C"
     },
     "rows": [
@@ -3317,15 +3267,19 @@
       "#030303"
     ],
     "cloud": "#F3F4EC",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534743653,
+    "updatedAt": 1786534746085
   },
   {
     "id": "CMSQ0NXVR",
     "name": "ad44da32d1672d9b9ee727cb9a05cf12",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FBFBFA",
+      "haze": "#B09E33",
       "water": "#717273"
     },
     "rows": [
@@ -3341,15 +3295,19 @@
       "#020101"
     ],
     "cloud": "#FBFBFA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534753095,
+    "updatedAt": 1786534759520
   },
   {
     "id": "CMSQ0O7LA",
     "name": "89e0e74d46f4b5eaff8206119bbb2cc0",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FCFBF9",
+      "haze": "#99AEB8",
       "water": "#657C84"
     },
     "rows": [
@@ -3365,15 +3323,18 @@
       "#1C1A15"
     ],
     "cloud": "#FCFBF9",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534765678
   },
   {
     "id": "CMSQ0OEEN",
     "name": "8985bc913f0f5d36308d561d40f0703b",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#E8D0C6",
+      "haze": "#E3B28C",
       "water": "#C4ABA4"
     },
     "rows": [
@@ -3389,15 +3350,19 @@
       "#040203"
     ],
     "cloud": "#E8D0C6",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534774511,
+    "updatedAt": 1786534778865
   },
   {
     "id": "CMSQ0P1I7",
     "name": "f02e45b876b3df6a1e29eca390c8b366",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#D6CBDB",
+      "haze": "#DCBEA9",
       "water": "#CBAB94"
     },
     "rows": [
@@ -3413,15 +3378,19 @@
       "#1C2C22"
     ],
     "cloud": "#D6CBDB",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534804447,
+    "updatedAt": 1786534808348
   },
   {
     "id": "CMSQ0PY0Y",
     "name": "1ecb9c15a01c0baaddeeb21fe43f5a8b",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FCF3E3",
+      "haze": "#FBE5C3",
       "water": "#E3BB94"
     },
     "rows": [
@@ -3437,15 +3406,18 @@
       "#36190E"
     ],
     "cloud": "#FCF3E3",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534846594
   },
   {
     "id": "CMSQ0Q9S6",
     "name": "4cce27547e54d6835b5f287df0430033",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FBEBBC",
+      "haze": "#F4DC9C",
       "water": "#ECB34C"
     },
     "rows": [
@@ -3461,15 +3433,19 @@
       "#431A0B"
     ],
     "cloud": "#FBEBBC",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534861830,
+    "updatedAt": 1786534868075
   },
   {
     "id": "CMSQ0RCXM",
     "name": "8679e4babe198c3ba025d1b53f2a28e4",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FAFBFB",
+      "haze": "#E4E4EC",
       "water": "#DCBB9C"
     },
     "rows": [
@@ -3485,15 +3461,19 @@
       "#38281A"
     ],
     "cloud": "#FAFBFB",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534912570,
+    "updatedAt": 1786534916234
   },
   {
     "id": "CMSQ0RK19",
     "name": "c2d8c8ecb142e0a869da7f1f3cb39cbb",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#E5E4E2",
+      "haze": "#DDCBBB",
       "water": "#D2B194"
     },
     "rows": [
@@ -3509,15 +3489,19 @@
       "#170A08"
     ],
     "cloud": "#E5E4E2",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534921773,
+    "updatedAt": 1786534924975
   },
   {
     "id": "CMSQ0SKVO",
     "name": "98d865495415299a9f880c6c8e6e3a89",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#F3ECDA",
+      "haze": "#EBDCBB",
       "water": "#C9BB9B"
     },
     "rows": [
@@ -3533,15 +3517,18 @@
       "#342725"
     ],
     "cloud": "#F3ECDA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534969524
   },
   {
     "id": "CMSQ0SPUU",
     "name": "d5f4e0ad283a9fabcd2f94ce455e4036",
     "seg": "自定义",
     "tier": "Custom",
+    "custom": true,
     "backgrounds": {
       "sky": "#FAFBFA",
+      "haze": "#EDCC5B",
       "water": "#EBAC14"
     },
     "rows": [
@@ -3557,6 +3544,7 @@
       "#2B231C"
     ],
     "cloud": "#FAFBFA",
-    "recovered": true
+    "overridden": false,
+    "savedAt": 1786534975974
   }
 ]

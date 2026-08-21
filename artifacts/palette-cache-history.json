@@ -1,0 +1,518 @@
+{
+  "records": 20,
+  "history": [
+    {
+      "sequence": 133,
+      "key": "bw-colour-library-v1",
+      "text": "[\"#334455\"]",
+      "parsed": [
+        "#334455"
+      ]
+    },
+    {
+      "sequence": 134,
+      "key": "bw-custom-palettes-v2",
+      "text": "[{\"rows\":[\"#C8C2B7\",\"#BEB7AB\",\"#B4AC9F\",\"#AAA193\",\"#A09687\",\"#968B7B\",\"#8C806F\",\"#817563\",\"#766A58\",\"#6B5F4D\"],\"backgrounds\":{\"sky\":\"#DDD8CF\",\"haze\":\"#334455\",\"water\":\"#ACA18F\"},\"id\":\"CMSPO887W\",\"name\":\"QA palette\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"cloud\":\"#DDD8CF\",\"savedAt\":1786513864604}]",
+      "parsed": [
+        {
+          "rows": [
+            "#C8C2B7",
+            "#BEB7AB",
+            "#B4AC9F",
+            "#AAA193",
+            "#A09687",
+            "#968B7B",
+            "#8C806F",
+            "#817563",
+            "#766A58",
+            "#6B5F4D"
+          ],
+          "backgrounds": {
+            "sky": "#DDD8CF",
+            "haze": "#334455",
+            "water": "#ACA18F"
+          },
+          "id": "CMSPO887W",
+          "name": "QA palette",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "cloud": "#DDD8CF",
+          "savedAt": 1786513864604
+        }
+      ]
+    },
+    {
+      "sequence": 137,
+      "key": "bw-colour-library-v1",
+      "text": "[]",
+      "parsed": []
+    },
+    {
+      "sequence": 138,
+      "key": "bw-custom-palettes-v2",
+      "text": "[]",
+      "parsed": []
+    },
+    {
+      "sequence": 140,
+      "key": "bw-custom-palettes-v2",
+      "text": "[{\"id\":\"CMSPXIWL8\",\"name\":\"QA updated name\",\"seg\":\"QA 色段\",\"tier\":\"Custom\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#BCA5CC\",\"#B29DBA\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#123456\",\"water\":\"#A0C5DA\"},\"custom\":true,\"savedAt\":1786529479292,\"updatedAt\":1786529479786}]",
+      "parsed": [
+        {
+          "id": "CMSPXIWL8",
+          "name": "QA updated name",
+          "seg": "QA 色段",
+          "tier": "Custom",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#BCA5CC",
+            "#B29DBA",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#123456",
+            "water": "#A0C5DA"
+          },
+          "custom": true,
+          "savedAt": 1786529479292,
+          "updatedAt": 1786529479786
+        }
+      ]
+    },
+    {
+      "sequence": 142,
+      "key": "bw-custom-palettes-v2",
+      "text": "[]",
+      "parsed": []
+    },
+    {
+      "sequence": 144,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"001\":{\"id\":\"001\",\"name\":\"春·杏霞白\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#BCA5CC\",\"#B29DBA\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#123456\",\"water\":\"#A0C5DA\"},\"updatedAt\":1786529993387,\"overridden\":true}}",
+      "parsed": {
+        "001": {
+          "id": "001",
+          "name": "春·杏霞白",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#BCA5CC",
+            "#B29DBA",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#123456",
+            "water": "#A0C5DA"
+          },
+          "updatedAt": 1786529993387,
+          "overridden": true
+        }
+      }
+    },
+    {
+      "sequence": 146,
+      "key": "bw-palette-overrides-v1",
+      "text": "{}",
+      "parsed": {}
+    },
+    {
+      "sequence": 148,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"001\":{\"id\":\"001\",\"name\":\"春·杏霞白\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#BCA5CC\",\"#B29DBA\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#123456\",\"water\":\"#A0C5DA\"},\"updatedAt\":1786530280923,\"overridden\":true}}",
+      "parsed": {
+        "001": {
+          "id": "001",
+          "name": "春·杏霞白",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#BCA5CC",
+            "#B29DBA",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#123456",
+            "water": "#A0C5DA"
+          },
+          "updatedAt": 1786530280923,
+          "overridden": true
+        }
+      }
+    },
+    {
+      "sequence": 150,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"001\":{\"id\":\"001\",\"name\":\"\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#BCA5CC\",\"#B29DBA\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#123456\",\"water\":\"#A0C5DA\"},\"updatedAt\":1786530356294,\"overridden\":true,\"custom\":false}}",
+      "parsed": {
+        "001": {
+          "id": "001",
+          "name": "",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#BCA5CC",
+            "#B29DBA",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#123456",
+            "water": "#A0C5DA"
+          },
+          "updatedAt": 1786530356294,
+          "overridden": true,
+          "custom": false
+        }
+      }
+    },
+    {
+      "sequence": 152,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"001\":{\"id\":\"001\",\"name\":\"\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#BCA5CC\",\"#B29DBA\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#123456\",\"water\":\"#A0C5DA\"},\"updatedAt\":1786530414465,\"overridden\":true,\"custom\":false}}",
+      "parsed": {
+        "001": {
+          "id": "001",
+          "name": "",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#BCA5CC",
+            "#B29DBA",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#123456",
+            "water": "#A0C5DA"
+          },
+          "updatedAt": 1786530414465,
+          "overridden": true,
+          "custom": false
+        }
+      }
+    },
+    {
+      "sequence": 154,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"001\":{\"id\":\"001\",\"name\":\"\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#BCA5CC\",\"#B29DBA\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#123456\",\"water\":\"#A0C5DA\"},\"updatedAt\":1786530524085,\"overridden\":true,\"custom\":false}}",
+      "parsed": {
+        "001": {
+          "id": "001",
+          "name": "",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#BCA5CC",
+            "#B29DBA",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#123456",
+            "water": "#A0C5DA"
+          },
+          "updatedAt": 1786530524085,
+          "overridden": true,
+          "custom": false
+        }
+      }
+    },
+    {
+      "sequence": 156,
+      "key": "bw-palette-overrides-v1",
+      "text": "{}",
+      "parsed": {}
+    },
+    {
+      "sequence": 158,
+      "key": "bw-deleted-palette-ids-v1",
+      "text": "[]",
+      "parsed": []
+    },
+    {
+      "sequence": 160,
+      "key": "bw-deleted-palette-ids-v1",
+      "text": "[]",
+      "parsed": []
+    },
+    {
+      "sequence": 162,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"050\":{\"id\":\"050\",\"name\":\"藕堇\",\"seg\":\"粉珊瑚段\",\"tier\":\"淡\",\"pattern\":\"1|3|3|3\",\"harmony\":\"冷暖交替\",\"families\":3,\"rows\":[\"#FDF0EF\",\"#DFB0A1\",\"#D49D86\",\"#CA8B77\",\"#0493A0\",\"#2B7E8C\",\"#0E717C\",\"#5C2A2C\",\"#47201F\",\"#311C1C\"],\"breaks\":[1,4,7],\"gems\":[4],\"cloud\":\"#FCF4F3\",\"backgrounds\":{\"sky\":\"#FCF4F3\",\"haze\":\"#123456\",\"water\":\"#0493A0\"},\"updatedAt\":1786533236606,\"overridden\":true}}",
+      "parsed": {
+        "050": {
+          "id": "050",
+          "name": "藕堇",
+          "seg": "粉珊瑚段",
+          "tier": "淡",
+          "pattern": "1|3|3|3",
+          "harmony": "冷暖交替",
+          "families": 3,
+          "rows": [
+            "#FDF0EF",
+            "#DFB0A1",
+            "#D49D86",
+            "#CA8B77",
+            "#0493A0",
+            "#2B7E8C",
+            "#0E717C",
+            "#5C2A2C",
+            "#47201F",
+            "#311C1C"
+          ],
+          "breaks": [
+            1,
+            4,
+            7
+          ],
+          "gems": [
+            4
+          ],
+          "cloud": "#FCF4F3",
+          "backgrounds": {
+            "sky": "#FCF4F3",
+            "haze": "#123456",
+            "water": "#0493A0"
+          },
+          "updatedAt": 1786533236606,
+          "overridden": true
+        }
+      }
+    },
+    {
+      "sequence": 164,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"050\":{\"id\":\"050\",\"name\":\"藕堇\",\"seg\":\"粉珊瑚段\",\"tier\":\"淡\",\"pattern\":\"1|3|3|3\",\"harmony\":\"冷暖交替\",\"families\":3,\"rows\":[\"#FDF0EF\",\"#DFB0A1\",\"#D49D86\",\"#CA8B77\",\"#0493A0\",\"#2B7E8C\",\"#0E717C\",\"#5C2A2C\",\"#47201F\",\"#311C1C\"],\"breaks\":[1,4,7],\"gems\":[4],\"cloud\":\"#FCF4F3\",\"backgrounds\":{\"sky\":\"#FCF4F3\",\"haze\":\"#123456\",\"water\":\"#0493A0\"},\"updatedAt\":1786533294340,\"overridden\":true,\"custom\":false}}",
+      "parsed": {
+        "050": {
+          "id": "050",
+          "name": "藕堇",
+          "seg": "粉珊瑚段",
+          "tier": "淡",
+          "pattern": "1|3|3|3",
+          "harmony": "冷暖交替",
+          "families": 3,
+          "rows": [
+            "#FDF0EF",
+            "#DFB0A1",
+            "#D49D86",
+            "#CA8B77",
+            "#0493A0",
+            "#2B7E8C",
+            "#0E717C",
+            "#5C2A2C",
+            "#47201F",
+            "#311C1C"
+          ],
+          "breaks": [
+            1,
+            4,
+            7
+          ],
+          "gems": [
+            4
+          ],
+          "cloud": "#FCF4F3",
+          "backgrounds": {
+            "sky": "#FCF4F3",
+            "haze": "#123456",
+            "water": "#0493A0"
+          },
+          "updatedAt": 1786533294340,
+          "overridden": true,
+          "custom": false
+        }
+      }
+    },
+    {
+      "sequence": 166,
+      "key": "bw-custom-palettes-v2",
+      "text": "[{\"rows\":[\"#C8C2B7\",\"#BEB7AB\",\"#B4AC9F\",\"#AAA193\",\"#968B7B\",\"#8C806F\",\"#817563\",\"#766A58\",\"#6B5F4D\",\"#605442\"],\"backgrounds\":{\"sky\":\"#DDD8CF\",\"haze\":\"#CFC8BC\",\"water\":\"#ACA18F\"},\"id\":\"CMSPZT83P\",\"name\":\"\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"cloud\":\"#DDD8CF\",\"overridden\":false,\"savedAt\":1786533320005},{\"rows\":[\"#C8C2B7\",\"#BEB7AB\",\"#B4AC9F\",\"#AAA193\",\"#968B7B\",\"#8C806F\",\"#817563\",\"#766A58\",\"#6B5F4D\",\"#605442\"],\"backgrounds\":{\"sky\":\"#DDD8CF\",\"haze\":\"#CFC8BC\",\"water\":\"#ACA18F\"},\"id\":\"CMSPZT8EG\",\"name\":\"\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"cloud\":\"#DDD8CF\",\"overridden\":false,\"savedAt\":1786533320392}]",
+      "parsed": [
+        {
+          "rows": [
+            "#C8C2B7",
+            "#BEB7AB",
+            "#B4AC9F",
+            "#AAA193",
+            "#968B7B",
+            "#8C806F",
+            "#817563",
+            "#766A58",
+            "#6B5F4D",
+            "#605442"
+          ],
+          "backgrounds": {
+            "sky": "#DDD8CF",
+            "haze": "#CFC8BC",
+            "water": "#ACA18F"
+          },
+          "id": "CMSPZT83P",
+          "name": "",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "cloud": "#DDD8CF",
+          "overridden": false,
+          "savedAt": 1786533320005
+        },
+        {
+          "rows": [
+            "#C8C2B7",
+            "#BEB7AB",
+            "#B4AC9F",
+            "#AAA193",
+            "#968B7B",
+            "#8C806F",
+            "#817563",
+            "#766A58",
+            "#6B5F4D",
+            "#605442"
+          ],
+          "backgrounds": {
+            "sky": "#DDD8CF",
+            "haze": "#CFC8BC",
+            "water": "#ACA18F"
+          },
+          "id": "CMSPZT8EG",
+          "name": "",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "cloud": "#DDD8CF",
+          "overridden": false,
+          "savedAt": 1786533320392
+        }
+      ]
+    },
+    {
+      "sequence": 168,
+      "key": "bw-custom-palettes-v2",
+      "text": "[]",
+      "parsed": []
+    },
+    {
+      "sequence": 169,
+      "key": "bw-palette-overrides-v1",
+      "text": "{}",
+      "parsed": {}
+    }
+  ]
+}

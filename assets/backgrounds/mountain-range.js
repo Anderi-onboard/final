@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260815i", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260815i";
+    ? new URL("../palettes/color-groups.json?v=recovered114-20260820", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=recovered114-20260820";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -25,8 +25,11 @@
        without bringing back the old hard-edged horizontal panels. */
     + '.mtn-sky::after{content:none}'
     + '@keyframes mtn-cloud-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}'
-    + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-2000px,0,0)}}'
-    + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(2000px,0,0)}}'
+    /* A short drift keeps the repeated path's closing edge far outside every
+       common viewport. The old 2000px travel could pull that closure on-screen
+       as a huge oval colour slab when the app changed layout after submit. */
+    + '@keyframes mtn-flow-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-320px,0,0)}}'
+    + '@keyframes mtn-flow-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(320px,0,0)}}'
     + '@keyframes mtn-cloud-r{from{transform:translate3d(-1700px,0,0)}to{transform:translate3d(1700px,0,0)}}'
     + '@keyframes mtn-cloud-l{from{transform:translate3d(1700px,0,0)}to{transform:translate3d(-1700px,0,0)}}'
     + '.mtn-bg [class^="flow-"]{will-change:auto}'
@@ -228,11 +231,42 @@
     return (h * 60 + 360) % 360;
   }
 
-  function paletteGem(group) {
-    var index = Array.isArray(group.gems) && group.gems.length
-      ? Math.max(0, Math.min(9, group.gems[0] - 1))
-      : 5;
-    return group.rows[index];
+  function saturationOf(hex) {
+    var n = parseInt(hex.slice(1), 16);
+    var r = (n >> 16) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+    var l = (max + min) / 2;
+    return d ? d / (1 - Math.abs(2 * l - 1)) : 0;
+  }
+
+  function contrastRatio(a, b) {
+    var la = luminance(a), lb = luminance(b);
+    return (Math.max(la, lb) + .05) / (Math.min(la, lb) + .05);
+  }
+
+  /* Each colour group still paints the landscape in full. UI chrome selects a
+     single readable accent from that group, excluding saturated green and
+     purple candidates that made controls feel either heavy or frivolous. */
+  function chooseUiAccent(group, background) {
+    var candidates = group.rows.filter(function (hex) {
+      var h = hueOf(hex), s = saturationOf(hex);
+      if (s < .11) return true;
+      return !(h >= 75 && h <= 175) && !(h >= 255 && h <= 325);
+    });
+    if (!candidates.length) candidates = group.rows.slice();
+    var best = null, bestScore = -Infinity;
+    candidates.forEach(function (source) {
+      /* In particular, pale yellows are pulled down into an ochre register so
+         the sidebar and input carriers remain visible on the light sky. */
+      var toned = mutedHex(source, .50, .48, .28);
+      var h = hueOf(source), s = saturationOf(source);
+      var familyBonus = (h >= 185 && h <= 250) ? 1.25
+        : (h >= 20 && h < 75) ? 1.05
+        : (h > 325 || h < 20) ? .72 : .2;
+      var score = contrastRatio(toned, background) * 1.8 + familyBonus + Math.min(s, .6);
+      if (score > bestScore) { bestScore = score; best = toned; }
+    });
+    return best || mutedHex(group.rows[5], .50, .48, .28);
   }
 
   /* The curated file is now authoritative: every retained group participates
@@ -263,9 +297,7 @@
        introducing a bright white field or another visual treatment. */
     var tonedCloud = mutedHex(backgrounds.sky || group.cloud, .82, .14, .76);
     var tonedWater = mutedHex(backgrounds.water || group.rows[4], .64, .22, .42);
-    var gemIndex = Array.isArray(group.gems) && group.gems.length
-      ? Math.max(0, Math.min(9, group.gems[0] - 1))
-      : 5;
+    var uiAccent = chooseUiAccent(group, tonedCloud);
     paletteLayerTimers.forEach(clearTimeout);
     paletteLayerTimers = [];
     root.dataset.bwPalette = group.id;
@@ -281,6 +313,11 @@
       });
     }, immediate);
 
+    queuePaletteLayer(400, function () {
+      root.style.setProperty("--bw-palette-gem", uiAccent);
+      root.style.setProperty("--bw-palette-on-gem", readableOn(uiAccent));
+    }, immediate);
+
     tonedRows.forEach(function (hex, index) {
       queuePaletteLayer((index + 1) * 400, function () {
         root.style.setProperty("--bw-palette-" + (index + 1), hex);
@@ -290,10 +327,6 @@
             node.style.fill = hex;
           });
         });
-        if (index === gemIndex) {
-          root.style.setProperty("--bw-palette-gem", hex);
-          root.style.setProperty("--bw-palette-on-gem", readableOn(hex));
-        }
       }, immediate);
     });
 

@@ -501,6 +501,28 @@ html[data-skin="paper"] body[data-page="settings"] > .toast {
   z-index: 60;
 }
 
+/* The landscape may use every retained group, but app chrome follows the
+   group's curated non-green/non-purple accent selected by mountain-range.js.
+   This replaces the washed-out fixed yellow without making controls unstable. */
+html[data-skin="paper"] body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, var(--bw-palette-gem) 26%, var(--bw-palette-cloud) 74%) !important;
+  transition: background-color 1.5s var(--ease-in-out);
+}
+html[data-skin="paper"] body[data-page="app"] :is(.composer,.method-menu,.carry-menu,.guide-coach,.signin-coach) {
+  background-color: color-mix(in srgb, var(--bw-palette-gem) 17%, color-mix(in srgb, var(--bw-palette-cloud) 83%, transparent)) !important;
+  transition: background-color 1.5s var(--ease-in-out), border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
+}
+html[data-skin="paper"] body[data-page="app"] :is(.send,.exchange,.new-cast .ic) {
+  background-color: var(--bw-palette-gem) !important;
+  color: var(--bw-palette-on-gem) !important;
+  transition: background-color 1.5s var(--ease-in-out), color 1.5s var(--ease-in-out), opacity 140ms ease;
+}
+html[data-skin="paper"] body[data-page="app"] .msg-user {
+  background-color: color-mix(in srgb, var(--bw-palette-gem) 72%, var(--bw-palette-cloud)) !important;
+  color: var(--bw-palette-on-gem) !important;
+  transition: background-color 1.5s var(--ease-in-out), color 1.5s var(--ease-in-out);
+}
+
 @media (max-width: 760px) {
   html[data-skin="paper"] body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close),
   html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro,.clause,.legal-foot) {

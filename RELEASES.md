@@ -29,6 +29,25 @@ The integration branch is previewed before merge. Once its pull request lands
 in `main`, Cloudflare promotes the same traceable commit graph to the public
 site; `production` retains the verified release point for audit and rollback.
 
+## 20260815j — Compact documents and stable casting entry
+
+- Production target: `main` via pull request after local visual approval
+- Integration branch: `codex-creem-integration`
+- Visual changes:
+  - about, guide, terms, privacy, and refunds now use one compact editorial
+    document system instead of full-screen poster panels
+  - app chrome follows a deeper readable accent from the active palette while
+    excluding saturated green and purple candidates
+  - ridge travel stays inside the safe SVG repeat area, removing the large
+    closing-edge slab that could enter from the right
+- Functional changes:
+  - the HTML build stamp matches `version.json`, so the freshness guard no
+    longer rejects every cast as an outdated page
+  - an automated build/version contract prevents this failure from recurring
+- Verification:
+  - build/version, billing, palette, texture, and copy contracts pass
+  - app, guide, about, and legal layouts were checked in the local browser
+
 ## 20260815i — Square Lianqian grid and restored palette field
 
 - Production target: `main` via pull request #56

@@ -8,7 +8,7 @@ assert.ok(Array.isArray(groups) && groups.length > 0, "palette catalogue must co
 assert.equal(new Set(groups.map((group) => group.id)).size, groups.length, "palette ids must be unique");
 
 for (const group of groups) {
-  assert.match(group.id, /^\d{3}$/, `invalid palette id: ${group.id}`);
+  assert.match(group.id, /^(?:\d{3}|C[A-Z0-9]+)$/, `invalid palette id: ${group.id}`);
   assert.equal(group.rows?.length, 10, `${group.id} must expose ten ridge colours`);
   group.rows.forEach((hex) => assert.match(hex, /^#[0-9A-F]{6}$/i));
   assert.match(group.backgrounds?.sky || "", /^#[0-9A-F]{6}$/i, `${group.id} missing sky`);
