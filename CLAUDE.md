@@ -19,19 +19,31 @@ BourneWise —— 六爻(Liu Yao)算法 + AI 疗愈决策 SaaS。
 ## 2 · 架构地图
 
 ```
-index.html          应用本体(空状态=落地页,会话=聊天页)
-guide.html          长滚动教程   about.html  pricing.html  login.html
-settings.html       privacy/terms/refund/404.html
-styles.css          只有 @import,指向 tokens/*
-tokens/*.css        colors / fonts / typography / spacing / paper / motion
-assets/backgrounds/mountain-range.js   动态山脉背景引擎(114 色组)
-assets/palettes/color-groups.json      色组数据(唯一权威)   palette-guide.html 色组管理器
-casting-figure.js   排卦图与排卦动画(BWFigure)
-liuyao-engine.js    六爻排盘   liuyao-ai.js  prompt-engine.js  prompt-router.js
-chat-app.js         聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js
-functions/api/      claude.js(AI 代理) auth/ account/ billing/ checkout.js
+玻璃路由   index.html(应用本体:空状态=落地页,会话=聊天页)
+           pricing.html  login.html  settings.html  404.html
+色块路由   about.html  guide.html(「The method」,正方形卡片)
+           terms/privacy/refund.html(法务,共用色块系统)
+tokens/*.css   colors / fonts / typography / spacing / paper / motion
+               + refinement(玻璃) blocks(色块) method(方法页) legal(法务)
+assets/backgrounds/mountain-range.js   山脉背景引擎(114 色组,每访客随机洗牌)
+assets/palettes/color-groups.json      色组数据(唯一权威)
+assets/palettes/color-groups-180.json  180 组存档(改之前,只读)
+assets/marks.js  几何母题生成 → assets/blocks.js 填充色块路由
+assets/weave.js  织字重(全站)
+casting-figure.js   排卦图与排卦动画(BWFigure,延迟加载)
+liuyao-engine.js    六爻排盘(纯函数)  liuyao-ai.js  prompt-router.js  prompt-checks.js
+chat-app.js  聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js  copy.js
+functions/_middleware.js   拦住内部文件(_redirects 做不到,见 ARCHITECTURE §3D)
+functions/_lib/     prompt-engine.js(解读语气,服务端)db.js session.js password.js
+functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
 ```
+
+⚠️ 这张图 08-21 前是过期的,列了两个已经不在那儿的文件:
+**`styles.css` 根本不存在**(页面直接 `<link>` 各个 token 文件,不走 `@import` 链 ——
+`@import` 会串行化 CSSOM 构建、拖慢首屏);
+**`prompt-engine.js` 不在仓库根目录**,08-14 安全审计后移到 `functions/_lib/`,
+因为提示词栈就是产品本身,放在浏览器里等于开源它。
 
 **单一数据源**:账户/点数/历史一律走 `account.js`(BWAccount),不要在别处复制状态逻辑。
 
