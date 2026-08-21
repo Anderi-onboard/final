@@ -1,0 +1,276 @@
+/* The method route -----------------------------------------------------------
+   Reference 1 is a grid of square cards, and the square is the unit: each card
+   is one composition, complete on its own, and the page is what you get when
+   you set them next to each other. It is not a slide deck and not a stepper.
+
+   Every measurement below is a fraction of the card's own side, taken off the
+   reference at 380px:
+
+       inset          20 / 380   = 5.3%
+       meta label      8 / 380   = 2.1%
+       body copy    10.5 / 380   = 2.8%
+       display        82 / 380   = 21.6%   (leading 1.0)
+       gap             7 / 380   = 1.8%
+
+   They are written in cqw against the card, not in vw or px, so a card is the
+   same composition at any column width — which is the only way a grid of
+   squares stays one system when it reflows.
+
+   Two things about cqw that are easy to get wrong, and both were:
+
+   1. An element's cqw resolves against its nearest ANCESTOR container, never
+      against itself. So the card's own inset cannot be in cqw — written that
+      way it silently fell back to the viewport and came out at 76px instead
+      of 25px. The inset is a percentage, which resolves against the grid
+      area, i.e. the card side. Percentage padding uses the inline size on all
+      four edges, which is exactly right for a square.
+   2. cqw is 1% of the container's CONTENT box, not its border box. With a
+      5.3% inset on each side that box is .894 of the card, so every fraction
+      above is multiplied by 1/.894 = 1.118 to land on the reference value.
+      Display 21.6% of the card side is therefore 23.48cqw, not 21.6cqw. */
+
+body[data-page="guide"] { margin: 0; }
+
+.mt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--bk-gap);
+  margin-top: var(--bk-gap);
+}
+
+.mt-card {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;              /* the crop: type runs off the card edge */
+  padding: 5.3%;      /* NOT cqw — see note below */
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+/* Fields go edge to edge. A pattern with an inset is a picture of a pattern. */
+.mt-card:is([data-pattern], [data-land]) { padding: 0; color: var(--bk-cream); }
+.mt-card:is([data-pattern], [data-land]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ── the two type sizes, and nothing between them ─────────────────────────
+   The reference sets a display and a functional label and simply omits the
+   middle. That gap is the effect; a comfortable 18px subhead destroys it. */
+body[data-page="guide"] .mt-display {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 23.48cqw;
+  line-height: .96;
+  letter-spacing: -.035em;
+  margin: 0 0 0 -.05em;
+  text-wrap: balance;
+}
+/* Half-size display, for cards that carry a full sentence rather than a name.
+   It is the ONLY second size — a step card and a sentence card use the same
+   one, so combining a heading with a widget in one card introduces no new
+   type size, it just fills the card that used to hold only the heading. */
+body[data-page="guide"] :is(.mt-card--half, .mt-card--step) .mt-display {
+  font-size: 12.86cqw; line-height: 1.02;
+}
+
+/* ── step cards ───────────────────────────────────────────────────────────
+   The name of the step and the thing it explains, in one square. Split over
+   two cards each step left a colour void under every heading and took six
+   rows to say five things, so each square read as a tile in a long scroll
+   rather than as a part of the page. */
+.mt-card--step { gap: 3.35cqw; }
+.mt-card--step .mt-display { margin-bottom: 0; }
+.mt-card--step > :is(.mt-work, .mt-cast) { flex: 1 1 auto; justify-content: flex-end; }
+/* Deliberate crop. The word is read as texture first and as language second,
+   and running it past the edge is what forces that order. */
+body[data-page="guide"] .mt-card[data-bleed] .mt-display { white-space: nowrap; margin-left: -7.83cqw; }
+
+/* The drawn overlay sits across the display type, not beside it — in the
+   reference the branch crosses the word and neither one moves out of the
+   way. It is inert to the pointer so it never eats a click. */
+.mt-fig-art {
+  position: absolute; right: -5%; top: 3%; width: 76%; height: 58%;
+  pointer-events: none; opacity: .85; color: var(--bk-ink);
+}
+.mt-fig-art svg { width: 100%; height: 100%; }
+
+body[data-page="guide"] .mt-meta {
+  margin: 0;
+  font-family: var(--mono, var(--sans));
+  font-size: max(9px, 2.46cqw);
+  letter-spacing: .12em;
+  line-height: 1.5;
+  opacity: .74;
+}
+body[data-page="guide"] .mt-card p:not(.mt-meta), body[data-page="guide"] .mt-card li, body[data-page="guide"] .mt-card dd {
+  font-size: max(12px, 3.24cqw);
+  line-height: 1.5;
+  margin: 0;
+}
+.mt-fill { flex: 1 1 auto; }      /* pushes the block below it to the foot */
+
+/* ── the masthead card ────────────────────────────────────────────────────
+   The reference opens on a column of display words cut by the card edge.
+   Ours lists what the page covers, in the order it covers it.
+
+   ⚠️ It bleeds on the VERTICAL axis, not the horizontal one. These six words
+   are 172–273cqw-scaled px wide inside a 427px box, so nothing overflows
+   sideways on its own — a horizontal crop has to be manufactured with a
+   negative margin, and then every line loses its first letter at once:
+   "uestion / epth / asting / eading / harge / ollow-up", six non-words. The
+   reference survives that only because it repeats ONE word, so the reader
+   recovers it from any row. Six different words cannot be recovered.
+   The column is genuinely taller than the square (6 × 1.16em > 100%), so
+   cropping top and bottom is the same effect with nothing invented, and it
+   reads the way a contents list should: it continues past the frame. */
+.mt-stack { display: flex; flex-direction: column; justify-content: center; height: 100%; }
+body[data-page="guide"] .mt-stack span { font-family: var(--serif); font-size: 16.86cqw; line-height: 1.16;
+  white-space: nowrap; letter-spacing: -.03em; }
+/* The masthead column alternates WEIGHT, not opacity — same device as the
+   headlines, so the page has one idea about emphasis rather than two. */
+.mt-stack span:nth-child(even) { font-weight: 300; }
+.mt-stack span:nth-child(odd) { font-weight: 700; }
+body[data-page="guide"] .mt-stack span {
+  text-shadow: 0 0 .04em rgb(255 255 255 / .30), 0 0 .22em rgb(255 255 255 / .18);
+}
+
+/* ── working cards ────────────────────────────────────────────────────────
+   These hold the interactions. They keep the square: every widget below is
+   sized to fit one, because a card that grows turns the whole row into
+   rectangles and there is no grid of squares left. */
+.mt-work { display: flex; flex-direction: column; gap: 3.35cqw; height: 100%; min-height: 0; }
+.mt-work > .mt-meta { margin-bottom: 1.12cqw; }
+
+body[data-page="guide"] .mt-try textarea {
+  width: 100%; padding: 3.35cqw; resize: none;
+  font: inherit; font-size: max(12px, 3.24cqw); line-height: 1.5;
+  color: var(--bk-ink);
+  /* Tinted from the ground rather than set to a named colour: this card is
+     cream, so a cream field on it was an invisible input — the reader could
+     not see there was anywhere to type. */
+  background: color-mix(in srgb, var(--bk-ink) 8%, transparent);
+  border: 0; border-radius: 0;
+}
+.mt-try textarea::placeholder { color: var(--bk-ink); opacity: .44; }
+.mt-checks { list-style: none; margin: 3.35cqw 0 0; padding: 0; display: grid; gap: 1.79cqw; }
+body[data-page="guide"] .mt-checks li { opacity: .5; display: flex; gap: 2.46cqw; align-items: baseline;
+  transition: opacity 200ms var(--ease-out); }
+.mt-checks li::before { content: "○"; font-size: .82em; line-height: 1; }
+.mt-checks li[data-ok="1"] { opacity: 1; }
+.mt-checks li[data-ok="1"]::before { content: "●"; }
+
+.mt-switch { display: grid; gap: 2px; }
+body[data-page="guide"] .mt-switch button {
+  display: grid; grid-template-columns: 1fr auto; gap: 1px 3.35cqw;
+  padding: 3.35cqw; border: 0; cursor: pointer; text-align: left;
+  font: inherit; color: var(--bk-ink);
+  background: color-mix(in srgb, var(--bk-cream) 52%, transparent);
+  transition: background 180ms var(--ease-out);
+}
+body[data-page="guide"] .mt-switch button b { font-family: var(--serif); font-weight: 400; font-size: max(14px, 4.02cqw); }
+body[data-page="guide"] .mt-switch button i { font-style: normal; font-size: max(9px, 2.46cqw); letter-spacing: .1em; opacity: .72; }
+body[data-page="guide"] .mt-switch button span { grid-column: 1 / -1; font-size: max(11px, 3.02cqw); opacity: .82; }
+.mt-switch button[aria-checked="true"] { background: var(--bk-cream); }
+.mt-compare { display: grid; gap: 2.24cqw; }
+.mt-compare .row { display: flex; align-items: center; gap: 3.35cqw; }
+body[data-page="guide"] .mt-compare .row b { font-family: var(--mono, var(--sans)); font-weight: 400;
+  font-size: max(9px, 2.46cqw); letter-spacing: .1em; min-width: 22.36cqw; opacity: .74; }
+.mt-compare svg { color: currentColor; width: 24.6cqw; height: auto; }
+
+.mt-cast { display: flex; flex-direction: column; gap: 3.35cqw; height: 100%; }
+/* Sized so the pair of figures, the readout, the button and the note all clear
+   one square. At 29cqw the card overflowed by 89px and overflow:hidden ate the
+   note — the crop is for display type, never for content. */
+.mt-cast-fig { display: flex; align-items: center; gap: 5cqw; min-height: 20cqw; }
+.mt-cast-fig svg { height: 20cqw; width: auto; }
+/* Three label/value pairs on one row rather than three rows: the readout is a
+   caption on the figures, and stacked it cost the card its last 24px. */
+.mt-readout { margin: 0; display: flex; flex-wrap: wrap; gap: .6cqw 4cqw; align-items: baseline; }
+.mt-readout dd { margin: 0 0 0 1.4cqw; }
+body[data-page="guide"] .mt-readout dt { font-family: var(--mono, var(--sans)); font-size: max(9px, 2.46cqw);
+  letter-spacing: .1em; opacity: .7; }
+
+.mt-meter label { display: block; margin: 2.24cqw 0 1.12cqw; opacity: .82; }
+.mt-meter input[type="range"] { width: 100%; accent-color: var(--bk-brick); }
+.mt-figure { margin: 3.35cqw 0 0; display: flex; align-items: baseline; gap: 2.8cqw; }
+body[data-page="guide"] .mt-figure b { font-family: var(--serif); font-weight: 400; font-size: 14.53cqw; line-height: 1; }
+
+.mt-defs { margin: 0; display: grid; gap: 3.35cqw; }
+body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(13px, 3.8cqw); margin-bottom: .67cqw; }
+.mt-defs dd { margin: 0; opacity: .84; }
+
+/* The call to action is a filled bar hard against the inset, as in the
+   reference — not a pill and not centred. */
+.mt-card .bk-go { align-self: flex-start; padding: 2.91cqw 3.8cqw;
+  font-size: max(11px, 2.91cqw); text-decoration: none; }
+
+@media (max-width: 900px) {
+  .mt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .mt-grid { grid-template-columns: minmax(0, 1fr); }
+  /* A full-width square is most of a phone screen. The card releases its
+     aspect here and takes the height its content needs. */
+  .mt-card { aspect-ratio: auto; min-height: 62vw; }
+  .mt-card:is([data-pattern], [data-land]) { min-height: 30vw; }
+}
+
+/* ── woven weight, and a light in the type ─────────────────────────────────
+   One typeface, weight alternating word by word. BioRhyme is a variable font
+   (wght 200–800) shipped as a single file, so this costs no extra bytes and
+   introduces no fourth family — the three-font rule holds.
+
+   The alternation is deterministic: even words light, odd words heavy, by
+   index. The same rule the brush follows, and for the same reason — random
+   per render would reshuffle on every navigation and read as a fault. */
+/* The weight pair and the glow moved to blocks.css: they belong to the
+   block route, not to this page. */
+
+/* The glow is a halo of neutral white, never a palette tint — the same rule
+   the glass follows. It is static: nothing here pulses. Two stops, a tight one
+   for the edge and a wide one for the bloom, both well under half an em so the
+   counters stay open and the type stays readable rather than fogged. */
+
+
+/* ── the two faces ─────────────────────────────────────────────────────────
+   A step card holds its name and the thing it teaches. The name is what you
+   see; one click swaps to the widget in place. The faces stack absolutely
+   inside .mt-faces rather than on the card itself, so the card keeps its
+   percentage inset and every cqw below still measures against the same box. */
+.mt-faces { position: relative; flex: 1 1 auto; min-height: 0; }
+.mt-face {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 180ms var(--ease-out);
+}
+.mt-face.is-on { opacity: 1; visibility: visible; pointer-events: auto; }
+.mt-face[data-face="work"] { justify-content: flex-end; }
+
+.mt-card--flip { cursor: pointer; }
+.mt-card--flip:focus-visible { outline: 2px solid currentColor; outline-offset: -6px; }
+body[data-page="guide"] .mt-hint {
+  margin: 0; font-family: var(--mono, var(--sans));
+  font-size: max(9px, 2.46cqw); letter-spacing: .12em; opacity: .5;
+  transition: opacity 160ms var(--ease-out);
+}
+.mt-card--flip:hover .mt-hint { opacity: .82; }
+
+/* The flash. A short white wash over the whole card as the faces cross, so
+   the swap reads as the card blinking rather than as a fade. It runs once per
+   click and leaves nothing running — the casting figure's rule, applied here:
+   once it lands, nothing keeps moving. */
+.mt-card--flip::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: rgb(255 255 255 / .55); opacity: 0;
+}
+.mt-card--flip.is-flashing::after { animation: mt-blink 260ms var(--ease-out) 1; }
+@keyframes mt-blink {
+  0%   { opacity: 0; }
+  18%  { opacity: .9; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mt-face { transition: none; }
+  .mt-card--flip.is-flashing::after { animation: none; }
+}

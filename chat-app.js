@@ -10,7 +10,12 @@
   var METHODS = A.METHODS;
   var ORDER = A.METHOD_ORDER;
 
-  var FIGURES = window.BWFigure ? window.BWFigure.NAMES : ["The Well", "The Crossing"];
+  /* Resolved on use, not at init: casting-figure.js is loaded off the
+     critical path now, so capturing this at module scope would freeze the
+     placeholder pair in even after the real artwork arrived. */
+  function figureNames() {
+    return (window.BWFigure && window.BWFigure.NAMES) || ["The Well", "The Crossing"];
+  }
   var S = A.state();
   function save() { A.save(S); }
 
@@ -86,14 +91,27 @@
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
     $("miPlans").querySelector("b").textContent = a.signedIn ? A.planName(a.plan) : "Plans";
-    // the sign-in coach-mark only nudges signed-out guests, and stays gone once
-    // dismissed
-    var coach = $("signinCoach");
-    if (coach) {
-      var dismissed = false;
-      try { dismissed = localStorage.getItem("bw:coachDismissed") === "1"; } catch (e) {}
-      coach.hidden = a.signedIn || dismissed;
-    }
+    syncCoachMarks();
+  }
+
+  /* One coach-mark at a time.
+     The sign-in nudge and the guide nudge used to decide their own visibility
+     independently — one here in the account render, one at init — and neither
+     knew about the other. A first-time signed-out visitor therefore got both
+     at once, top-right and bottom-left, and had two interruptions to clear
+     before reading anything. The sign-in nudge takes precedence because it
+     carries the offer; the guide nudge is still there on the next visit. */
+  function syncCoachMarks() {
+    var signin = $("signinCoach"), guide = $("guideCoach");
+    var signinDone = false, guideSeen = false, guideDone = false;
+    try {
+      signinDone = localStorage.getItem("bw:coachDismissed") === "1";
+      guideSeen = localStorage.getItem("bw:guideVisited") === "1";
+      guideDone = localStorage.getItem("bw:guideCoachDismissed") === "1";
+    } catch (e) {}
+    var showSignin = !A.state().signedIn && !signinDone;
+    if (signin) signin.hidden = !showSignin;
+    if (guide) guide.hidden = guideSeen || guideDone || showSignin;
   }
 
   /* ── carrying an earlier conversation into this one ───────────────────────
@@ -412,8 +430,263 @@
      - lists; the old renderer dumped only paras[0]+paras[1] as raw text, so a
      full reading collapsed to two lines of literal "#"/"**" (the bug the user
      saw). Inline: **bold**, *italic*, and |gilded| key terms. */
+  /* ── 取象溯源 ──────────────────────────────────────────────────────────
+     The reading marks the moment a symbol became a real-world noun:
+     {审批那一关|官鬼}. The reader sees only 审批那一关, underlined; clicking it
+     opens what else 官鬼 covers.
+
+     Only the PAIRING is written by the model — four tokens. Every list comes
+     from assets/xiangshu/lei-xiang.json, fetched once and cached here, because
+     a symbol carries dozens of nouns and generating them would cost hundreds
+     of tokens a reading, differ every time, and be impossible to check.
+
+     Two things this must never do. It must never leave a dead underline: an
+     unknown symbol, or a catalogue that failed to load, renders as ordinary
+     text with the braces stripped — the reading is what matters and it is
+     never held hostage to an annotation. And it must never touch the casting
+     figure, which has no pointer interaction at all and is staying that way. */
+  var XR_CAT = null, xrPending = null;
+  function xrCatalogue() {
+    if (XR_CAT) return Promise.resolve(XR_CAT);
+    if (xrPending) return xrPending;
+    xrPending = fetch("./assets/xiangshu/lei-xiang.json?v=" + (window.BW_BUILD || ""), { cache: "force-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { XR_CAT = (j && j.symbols) ? j : null; return XR_CAT; })
+      .catch(function () { return null; });
+    return xrPending;
+  }
+  function xrLookup(sym) {
+    if (!XR_CAT) return null;
+    var key = (XR_CAT.aliases && XR_CAT.aliases[sym]) || sym;
+    if (XR_CAT.symbols[key]) return { key: key, entry: XR_CAT.symbols[key] };
+    // 巳火 / 子水 — the branch written with its element, which is how a reading
+    // actually says it.
+    var c = XR_CAT.compounds || {};
+    for (var b in c) if (c[b] === key) return { key: b, entry: XR_CAT.symbols[b] };
+    return null;
+  }
+
+  /* ── the parse path ────────────────────────────────────────────────────────
+     Everywhere the reading writes a symbol OUTRIGHT — 妻财, 官鬼, 巳火 — is
+     recoverable by reading the text, with no help from the model and no tokens
+     spent. Only the translated nouns ("审批那一关") need a mark, because nothing
+     in that string says which symbol it came from.
+
+     So the two paths divide the work: this one takes everything literal, the
+     marks take what is genuinely unrecoverable. That also removes the model as
+     a single point of failure — the first run with marks enabled produced six.
+
+     Precision over recall. A single character is matched only where context
+     settles it: a branch before 日/月/年, a trigram beside 卦/宫 or after 上/下.
+     Bare 木火土金水 are never matched — they appear inside ordinary words, and a
+     false underline is worse than a missing one. Each symbol is annotated once
+     per reading, at its first mention; a page where 妻财 is underlined eleven
+     times is a page nobody clicks. */
+  var xrSeen = null;
+  /* Seed the seen-set from the marks BEFORE anything renders. A mark carries a
+     real translation ("跟你分同一份利的那一方"); an auto-match carries only the
+     term. When a reading has both for one symbol, the mark is the one worth
+     showing — and without this the reader got both, three times over for 兄弟. */
+  function xrReset(text) {
+    xrSeen = {};
+    if (!XR_CAT) return;
+    String(text || "").replace(/\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+      if (!xrUseful(word, sym)) return "";
+      var hit = xrLookup(sym);
+      if (hit) xrSeen[hit.key] = hit.entry.id;
+      return "";
+    });
+  }
+  function xrHits() {
+    var out = [];
+    for (var k in xrSeen) out.push(xrSeen[k]);
+    return out.sort(function (a, b) { return a - b; });
+  }
+  function xrScanText(chunk) {
+    if (!XR_CAT || !XR_CAT.matching || !xrSeen) return chunk;
+    var M = XR_CAT.matching, out = "", i = 0;
+    function take(term, symKey) {
+      var hit = xrLookup(symKey);
+      if (!hit || xrSeen[hit.key]) return false;
+      xrSeen[hit.key] = hit.entry.id;
+      out += '<button type="button" class="xr" data-xr="' + esc(hit.key) + '" aria-expanded="false">'
+        + term + '</button>';
+      return true;
+    }
+    scan: while (i < chunk.length) {
+      for (var d = 0; d < M.direct.length; d++) {           // longest first
+        var t = M.direct[d];
+        if (chunk.substr(i, t.length) === t) {
+          if (take(t, t)) { i += t.length; continue scan; }
+          out += t; i += t.length; continue scan;
+        }
+      }
+      var ch = chunk.charAt(i), nxt = chunk.charAt(i + 1), prv = chunk.charAt(i - 1);
+      if (M.branches.indexOf(ch) !== -1 && M.branchSuffix.indexOf(nxt) !== -1) {
+        if (take(ch, ch)) { i += 1; continue; }
+      }
+      if (M.trigrams.indexOf(ch) !== -1
+          && (M.trigramSuffix.indexOf(nxt) !== -1 || M.trigramPrefix.indexOf(prv) !== -1)) {
+        if (take(ch, ch)) { i += 1; continue; }
+      }
+      out += ch; i += 1;
+    }
+    return out;
+  }
+  /* ── the closing 串联 ──────────────────────────────────────────────────────
+     The 动词象意 — what each force DOES — live here and nowhere else. Hung
+     under every annotated noun they would be noise twenty times over; a verb
+     only means something once you can see what it acts ON, which is the chain.
+     And this is the part a reader actually reaches for, so it sits open rather
+     than behind another click.
+
+     Computed, not written. The 六亲 生克 ring is fixed by the method and
+     identical on every board, so the arrows cost nothing and cannot be wrong.
+     Restricted to the relatives this reading actually touched — a full ring
+     including forces the reading never raised would be a diagram, not a
+     summary. Fewer than two and there is no chain to draw, so nothing renders. */
+  function xrChain(text) {
+    if (!XR_CAT || !XR_CAT.relations || !xrSeen) return "";
+    var R = XR_CAT.relations, zh = isZh(text);
+    var ring = ["父母", "兄弟", "子孙", "妻财", "官鬼"];
+    var present = ring.filter(function (k) { return xrSeen[k]; });
+    if (present.length < 2) return "";
+    var nm = function (k) { return zh ? k : (XR_CAT.symbols[k] ? XR_CAT.symbols[k].en : k); };
+    /* Both relations are five-cycles over the same five relatives, so when a
+       reading touches all of them the honest rendering is TWO LINES, not ten
+       edge chips. Ten chips look like a finding about this casting and are not
+       — the ring is fixed by the method and identical on every board. Walk the
+       cycle instead and print the runs of relatives this reading actually
+       raised, which is a legend for the paragraphs above it. */
+    function chain(pairs, cls, word) {
+      var next = {}, i;
+      for (i = 0; i < pairs.length; i++) next[pairs[i][0]] = pairs[i][1];
+      var runs = [], used = {};
+      for (i = 0; i < present.length; i++) {
+        var head = present[i];
+        // start only where the run genuinely starts: nothing present feeds in
+        var feeder = null, k;
+        for (k in next) if (next[k] === head && xrSeen[k]) feeder = k;
+        if (feeder && !used[head]) continue;
+        if (used[head]) continue;
+        var run = [], node = head, guard = 0;
+        while (node && xrSeen[node] && !used[node] && guard++ < 6) {
+          used[node] = 1; run.push(node); node = next[node];
+        }
+        if (run.length > 1) runs.push(run);
+      }
+      // a closed cycle has no start, so nothing was picked up above
+      if (!runs.length && present.length > 1) {
+        var start = present[0], run2 = [], node2 = start, guard2 = 0;
+        while (node2 && xrSeen[node2] && guard2++ < 6) {
+          run2.push(node2); node2 = next[node2];
+          if (node2 === start) { run2.push(start); break; }
+        }
+        if (run2.length > 1) runs.push(run2);
+      }
+      if (!runs.length) return "";
+      return runs.map(function (r) {
+        return '<span class="xr-edge ' + cls + '"><i>' + esc(word) + "</i>"
+          + r.map(function (n) { return "<b>" + esc(nm(n)) + "</b>"; }).join('<u>→</u>')
+          + "</span>";
+      }).join("");
+    }
+    var sheng = chain(R.sheng, "sheng", zh ? R.label.sheng.zh : R.label.sheng.en);
+    var ke = chain(R.ke, "ke", zh ? R.label.ke.zh : R.label.ke.en);
+    if (!sheng && !ke) return "";
+    // Verbs for what a reading reads as an actor: the relatives, the two
+    // positions, the six spirits. A branch's or a trigram's "behaviour" is too
+    // abstract to earn a row here.
+    var actors = [];
+    for (var k in xrSeen) {
+      var e = XR_CAT.symbols[k];
+      if (e && e.acts && ["liuqin", "position", "spirit"].indexOf(e.kind) !== -1) actors.push(k);
+    }
+    actors.sort(function (a, b) { return XR_CAT.symbols[a].id - XR_CAT.symbols[b].id; });
+    var rows = actors.map(function (k) {
+      var list = (XR_CAT.symbols[k].acts[zh ? "zh" : "en"] || []);
+      return '<div class="xr-act"><b>' + esc(nm(k)) + "</b><span>"
+        + esc(list.join(zh ? "、" : " · ")) + "</span></div>";
+    }).join("");
+    return '<section class="xr-chain" lang="' + (zh ? "zh" : "en") + '">'
+      + '<p class="xr-chain-lead">' + esc(zh
+          ? "这一卦动过的几路 —— 生克是六亲之间固定的关系,不是这一卦独有的;下面是它们各自在做什么"
+          : "The forces this casting moved. The ring is fixed between the six relatives, not a finding "
+            + "about this board; below it is what each one does") + "</p>"
+      + (sheng ? '<div class="xr-edges">' + sheng + "</div>" : "")
+      + (ke ? '<div class="xr-edges">' + ke + "</div>" : "")
+      + rows + "</section>";
+  }
+
+  /* Walk the rendered HTML, touching only the text between tags, and never the
+     inside of a mark that already became a button. */
+  function xrAuto(html) {
+    if (!XR_CAT || !xrSeen) return html;
+    var out = "", depth = 0, i = 0;
+    while (i < html.length) {
+      var lt = html.indexOf("<", i);
+      if (lt === -1) { out += depth ? html.slice(i) : xrScanText(html.slice(i)); break; }
+      var text = html.slice(i, lt);
+      out += depth ? text : xrScanText(text);
+      var gt = html.indexOf(">", lt);
+      if (gt === -1) { out += html.slice(lt); break; }
+      var tag = html.slice(lt, gt + 1);
+      if (/^<button[^>]*class="xr"/.test(tag)) depth++;
+      else if (depth && /^<\/button/.test(tag)) depth--;
+      out += tag; i = gt + 1;
+    }
+    return out;
+  }
+  // Strip the markers to bare words — for the streaming preview, for copy, and
+  // as the fallback whenever the annotation cannot be built.
+  function xrPlain(s) {
+    return String(s || "").replace(/\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g, "$1");
+  }
+  /* A mark is only worth an underline if a TRANSLATION happened. Tagging a term
+     with itself — {妻财|妻财}, {巳火|巳} — is circular: the reader clicks 妻财
+     to be told 妻财 can mean money. Measured on the first live reading with
+     markers enabled: 69 marks, 67 of them circular, which would have printed a
+     page of underlines nobody would click any of.
+
+     The prompt now forbids it outright; this is the backstop, because the cost
+     of a regression lands entirely on the reader. A word that is just the
+     symbol, or the symbol plus one element character, renders as ordinary
+     text. */
+  function xrUseful(word, sym) {
+    if (word === sym) return false;
+    if (word.length <= 3 && word.indexOf(sym) !== -1) return false;
+    /* Too long to underline. A live reading marked a whole candidate list —
+       "{可能是同行竞品;可能是要分你成的合伙人;…|兄弟}", 60-odd characters — and
+       with the pattern capped at 40 it did not match at all, so the reader
+       would have seen the raw braces sitting in the prose. The pattern is wide
+       now and the judgement lives here instead: an over-long mark degrades to
+       plain text, which still reads correctly, never to visible punctuation. */
+    if (word.length > 40) return false;
+    return true;
+  }
+  /* Rendered before the |gild| rule below, which needs two pipes and would
+     otherwise pair the pipe of one marker with the pipe of the next. */
+  function xrInline(h) {
+    return h.replace(/\{([^{}|]{1,120})\|([^{}|]{1,12})\}/g, function (_, word, sym) {
+      if (!xrUseful(word, sym)) return word;
+      /* An underline that does nothing when clicked is worse than no underline:
+         it promises something and then withdraws it. The catalogue is fetched
+         at startup and a reading takes a minute to stream, so by render time it
+         is loaded and an unknown symbol — a state like 旬空, which has no 类象 —
+         can be dropped to plain text here. Before it lands, keep the button and
+         let the click resolve it. */
+      if (XR_CAT && !xrLookup(sym)) return word;
+      return '<button type="button" class="xr" data-xr="' + esc(sym) + '" aria-expanded="false">'
+        + word + '</button>';
+    });
+  }
+  xrCatalogue();
+
   function mdInline(s) {
-    var h = esc(s);
+    // marks first (they own the braces), then the parse path over what is left,
+    // then the rest — bold/italic/gild use * and |, neither of which appears in
+    // the HTML these two emit.
+    var h = xrAuto(xrInline(esc(s)));
     h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     h = h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
     var n = 0;
@@ -421,6 +694,7 @@
     return h;
   }
   function mdReading(text) {
+    xrReset(text);   // one annotation per symbol per reading; marks claim theirs first
     var lines = String(text || "").replace(/\r/g, "").split("\n");
     // drop a leading heading that only echoes the question ("# 你问：…", "# You asked…")
     while (lines.length && !lines[0].trim()) lines.shift();
@@ -461,7 +735,11 @@
     // Routed/prose readings (the real path) — render the FULL markdown reading.
     if (!r || !r.reading) {
       var prose = mdReading(msg.text);
-      return '<div class="reading-body">' + (prose || '<p class="rd-para"></p>') +
+      // 数字集 — which symbols this reading actually touched, by catalogue id.
+      // Cheap to carry, and it is the reading's own index of itself.
+      // reading → the closing 串联 → the disclaimer, which stays last
+      return '<div class="reading-body" data-xiang="' + xrHits().join(",") + '">'
+        + (prose || '<p class="rd-para"></p>') + xrChain(msg.text) +
         readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
 
@@ -570,6 +848,19 @@
       ["Near term", "What is most likely to change first?"],
       ["Next move", "What is mine to do now?"]
     ]));
+    /* The AXES come first, and they are the point of this panel now.
+       A first reading answers the question it was asked and is kept off the
+       axes it was not — that is a rule in the output segment, not an accident —
+       so these are the reads of the same board that genuinely have not
+       happened yet. The generated prompts below them go deeper on the axis
+       already answered, which is worth offering and is not where the value is.
+
+       "Check it back" is deliberately not time-gated. Gating it would make it a
+       hook, and hooks are barred (SAFE-3); the reader knows when something has
+       happened better than a timer does. */
+    var PC = window.BWPromptChecks || {};
+    var axes = (PC.FOLLOWUP_AXES && PC.FOLLOWUP_AXES[sortis ? "sortis" : "stria"]) || [];
+
     // The panel speaks whatever the prompts on it speak.
     var zhPanel = isZh(prompts.map(function (p) { return p[1]; }).join(""));
     var L = (C.followUp.panel && (zhPanel ? C.followUp.panel.zh : C.followUp.panel.en)) || C.followUp.panel.en;
@@ -577,6 +868,10 @@
       '<div class="rd-depth-copy"><span class="rd-depth-kicker">' + esc(L.kicker(methodLabel)) + '</span>' +
       '<h4>' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '</h4>' +
       '<p>' + esc(L.hint) + '</p></div>' +
+      (axes.length && !continued ? '<div class="rd-axes">' + axes.map(function (a) {
+        return '<button type="button" class="rd-axis pressable" data-prompt="' + esc(a.q) + '" data-axis="' + esc(a.key) + '">' +
+          '<b>' + esc(a.label) + '</b></button>';
+      }).join("") + '</div>' : '') +
       '<div class="rd-prompts">' + prompts.map(function (p) {
         return '<button type="button" class="rd-prompt pressable" data-prompt="' + esc(p[1]) + '">' +
           '<span>' + esc(p[0]) + '</span><b>' + esc(p[1]) + '</b>' +
@@ -821,7 +1116,9 @@
     line.appendChild(textNode);
     el.appendChild(line);
     function readableStreamText(value) {
-      return String(value || "")
+      // 取象 markers first: the pipe strip below would otherwise leave
+      // "{审批那一关官鬼}" on screen for the length of the stream.
+      return xrPlain(value)
         .replace(/^#{1,6}\s*/gm, "")
         .replace(/\*\*/g, "")
         .replace(/(^|[^*])\*([^*\n]*)\*?/g, "$1$2")
@@ -1048,6 +1345,19 @@
   }
 
   function sendNow(text, decided) {
+    /* casting-figure.js is fetched off the critical path (see index.html). It
+       is normally already here by the time anyone submits, but a fast reader
+       can beat it — wait and re-enter rather than casting with the fallback
+       spec, which has no lines and would draw an empty figure. On a load
+       failure re-enter anyway: the existing fallback keeps the site working,
+       which is the standing rule for a missing dependency. */
+    if (!window.BWFigure && window.BWCasting) {
+      window.BWCasting.load().then(
+        function () { sendNow(text, decided); },
+        function () { sendNow(text, decided); }
+      );
+      return;
+    }
     var m = method();
     // Sign-in required: units only exist on a real account, so a signed-out
     // guest can't cast — send them to the login page. This is the "先登录才发
@@ -1162,7 +1472,7 @@
 
     /* the casting animation — for Sortis it draws the full 排盘 line by line */
     var spec = window.BWFigure ? window.BWFigure.random(m.id)
-      : { method: m.id, name: FIGURES[0], lines: [], transformedLines: null };
+      : { method: m.id, name: figureNames()[0], lines: [], transformedLines: null };
     // Compute the casting board for BOTH tiers so the reading is always grounded
     // in the hexagram actually cast. Stria is the "primary hexagram framework",
     // so it needs a board too — without one the routed prompt (which tells the
@@ -1323,6 +1633,7 @@
       var msg;
       if (status === 401) msg = C.errors.sessionExpired;
       else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
+      else if (status === 503) msg = C.errors.upstreamDown;
       else if (err.__timeout) msg = C.errors.timedOut;
       else msg = "The reading didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
@@ -1393,6 +1704,7 @@
       var msg;
       if (status === 401) msg = C.errors.sessionExpired;
       else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
+      else if (status === 503) msg = C.errors.upstreamDown;
       else if (err.__timeout) msg = C.errors.answerTimedOut;
       else msg = "The answer didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
       tw.cancel();
@@ -1483,6 +1795,134 @@
     if (cMenu && !cMenu.contains(e.target) && e.target !== cBtn && !(cBtn && cBtn.contains(e.target))) closeCarry();
   });
 
+  /* Escape closes the 取象 panel the reader last opened. Without it the only way
+     out is to find the underlined word again, which on a long reading can be
+     several screens back. */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var open = document.querySelector('.reading-body .xr[aria-expanded="true"]');
+    if (!open) return;
+    e.preventDefault();
+    open.click();
+    open.focus();
+  });
+
+  /* 取象溯源 — open what else a symbol covers, under the sentence that used it.
+     Delegated, because the reading's markdown tree is rebuilt on every stream
+     tick and per-element listeners would be re-attached hundreds of times.
+
+     The panel goes after the block the word sits in rather than under the word
+     itself: an absolutely-positioned box under an inline word overlaps the
+     lines below it, and a reading is a wall of text with nowhere to overlap
+     into. The word is repeated as the panel's first line, so the connection is
+     visible without a pointer. */
+  document.addEventListener("click", function (e) {
+    var btn = e.target && e.target.closest && e.target.closest("button.xr");
+    if (!btn) return;
+    e.preventDefault();
+    var open = btn.getAttribute("aria-expanded") === "true";
+    var host = btn.closest(".rd-para, .rd-h2, .rd-h3, .rd-title, li") || btn.parentNode;
+    var existing = btn.__xrPanel;
+    if (open) {
+      btn.setAttribute("aria-expanded", "false");
+      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      btn.__xrPanel = null;
+      return;
+    }
+    xrCatalogue().then(function () {
+      var hit = xrLookup(btn.getAttribute("data-xr"));
+      // No entry, or the catalogue never loaded: leave the reading alone.
+      if (!hit) { btn.classList.add("xr-mute"); btn.setAttribute("aria-expanded", "false"); return; }
+      /* Two levels, because the symbol and the 象 are not the same kind of
+         thing. 父母 covers 文书; 文书 is itself 合同, 证书, 执照, 批文. Flattened
+         into one comma-list the distinction disappears, and a reader who meets
+         文书 in the conclusion takes it to mean 证书 and stops there. So the
+         first level names the 象 this reading picked among, and the second
+         opens one of them into what it actually turns up as. */
+      var zh = isZh((host.textContent || "") + (btn.textContent || ""));
+      var cats = hit.entry.cats || [];
+      /* WHICH 象 DID THIS READING TAKE? The panel used to list the siblings
+         without ever saying where the reader was standing among them — a map
+         with no "you are here". The catalogue answers it read backwards: if the
+         marked phrase contains one of an 象's concrete things (「审批那一关」
+         contains 审批, which is 官鬼·上头), that is the branch the reading took.
+         Longest match wins, so 审批 beats a shorter incidental hit. */
+      var here = -1, hereLen = 0, word = btn.textContent || "";
+      /* Compared atom to atom, in both directions. A marked phrase is written as
+         prose — 「审批、许可、合规那一关」 — and the catalogue sometimes stores a
+         phrase too — 官鬼·上头 holds 审批那一关. Neither contains the other whole,
+         so a one-directional substring test misses a pair that plainly belongs
+         together. Split both on their separators and let either side contain the
+         other. Two characters minimum, and the longest agreement wins. */
+      var wordAtoms = word.split(/[、,，。;；:：\s]+/).filter(function (t) { return t.length >= 2; });
+      wordAtoms.push(word);
+      for (var ci = 0; ci < cats.length; ci++) {
+        var its = (cats[ci].items && cats[ci].items[zh ? "zh" : "en"]) || [];
+        for (var ii = 0; ii < its.length; ii++) {
+          var parts = String(its[ii]).split(/[、,，]/);
+          for (var pi = 0; pi < parts.length; pi++) {
+            var t = parts[pi].trim();
+            if (t.length < 2) continue;
+            for (var wi = 0; wi < wordAtoms.length; wi++) {
+              var w = wordAtoms[wi];
+              if (w.indexOf(t) === -1 && t.indexOf(w) === -1) continue;
+              var score = Math.min(t.length, w.length);
+              if (score > hereLen) { here = ci; hereLen = score; }
+            }
+          }
+        }
+      }
+      var name = zh ? hit.key : (hit.entry.en || hit.key);
+      var p = document.createElement("div");
+      p.className = "xr-panel";
+      p.setAttribute("lang", zh ? "zh" : "en");
+      var lead = here >= 0
+        ? (zh
+            ? "「" + word + "」是 " + name + " 走的" + cats[here].zh + "这一支。同一路还有别的分支,点开看它们具体是些什么:"
+            : "“" + word + "” is " + name + " taken as " + cats[here].en
+              + ". The same one runs in other branches too — open one to see what it is:")
+        : (zh
+            ? "「" + word + "」这里读的是 " + name + "。这一路分这几支 —— 点开看它具体是些什么:"
+            : "“" + word + "” is " + name + " read one way. It runs in these branches — open one to see what it actually is:");
+      var chips = cats.map(function (c, i) {
+        return '<button type="button" class="xr-cat' + (i === here ? " is-here" : "")
+          + '" data-i="' + i + '" aria-expanded="false">'
+          + esc(zh ? c.zh : c.en) + "</button>";
+      }).join("");
+      p.innerHTML = '<p class="xr-lead">' + esc(lead) + "</p>"
+        + '<div class="xr-cats">' + chips + "</div>"
+        + '<ul class="xr-list" hidden></ul>';
+      // Second level, opened from the chip row. One open at a time: this sits
+      // inside a paragraph of prose, and a fully expanded tree would bury it.
+      var slot = p.querySelector(".xr-list");
+      if (here >= 0) {
+        var mine = p.querySelector('.xr-cat[data-i="' + here + '"]');
+        var hi = (cats[here].items && cats[here].items[zh ? "zh" : "en"]) || [];
+        slot.innerHTML = hi.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+        slot.hidden = !hi.length;
+        if (mine) mine.setAttribute("aria-expanded", "true");
+      }
+      p.addEventListener("click", function (ev) {
+        var chip = ev.target && ev.target.closest && ev.target.closest("button.xr-cat");
+        if (!chip) return;
+        ev.preventDefault();
+        var was = chip.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(p.querySelectorAll(".xr-cat"), function (c) {
+          c.setAttribute("aria-expanded", "false");
+        });
+        if (was) { slot.hidden = true; slot.innerHTML = ""; return; }
+        var c = cats[Number(chip.getAttribute("data-i"))];
+        var items = ((c && c.items && (zh ? c.items.zh : c.items.en)) || []);
+        slot.innerHTML = items.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+        slot.hidden = !items.length;
+        chip.setAttribute("aria-expanded", "true");
+      });
+      host.parentNode.insertBefore(p, host.nextSibling);
+      btn.setAttribute("aria-expanded", "true");
+      btn.__xrPanel = p;
+    });
+  });
+
   $("newCast").addEventListener("click", function () {
     if (window.BWFigure && window.BWFigure.cancel) window.BWFigure.cancel();
     busy = false;
@@ -1536,12 +1976,7 @@
      the × dismisses it for good. ── */
   var gCoach = $("guideCoach");
   if (gCoach) {
-    var gSeen = false, gGone = false;
-    try {
-      gSeen = localStorage.getItem("bw:guideVisited") === "1";
-      gGone = localStorage.getItem("bw:guideCoachDismissed") === "1";
-    } catch (e) {}
-    gCoach.hidden = gSeen || gGone;
+    syncCoachMarks();
     function goGuide() {
       try { localStorage.setItem("bw:guideVisited", "1"); } catch (e) {}
       location.href = "./guide.html";
@@ -1554,7 +1989,7 @@
     if (gx) gx.addEventListener("click", function (e) {
       e.stopPropagation();
       try { localStorage.setItem("bw:guideCoachDismissed", "1"); } catch (er) {}
-      gCoach.hidden = true;
+      syncCoachMarks();
     });
     var hiw = $("howItWorksLink");
     if (hiw) hiw.addEventListener("click", function () {
@@ -1574,7 +2009,9 @@
     if (coachX) coachX.addEventListener("click", function (e) {
       e.stopPropagation();
       try { localStorage.setItem("bw:coachDismissed", "1"); } catch (er) {}
-      coachEl.hidden = true;
+      /* Dismissing the sign-in nudge is exactly when the guide nudge becomes
+         eligible, so re-decide both rather than only hiding this one. */
+      syncCoachMarks();
     });
   }
   $("miPlans").addEventListener("click", function () { closeMenu(); openPlans(); });
@@ -1606,7 +2043,11 @@
   /* ── copy a reading — delegated; grabs the reading body's text and drops it
      on the clipboard, with a brief "Copied" confirmation on the button ── */
   document.addEventListener("click", function (e) {
-    var prompt = e.target && e.target.closest && e.target.closest(".rd-prompt");
+    // Both kinds of chip fill the composer rather than sending: the reader
+    // edits, reconsiders, and only spends when they deliberately submit. That
+    // is the interaction rule the whole panel was built on — an axis chip is a
+    // different question, not a different button.
+    var prompt = e.target && e.target.closest && (e.target.closest(".rd-prompt") || e.target.closest(".rd-axis"));
     if (prompt) {
       var promptInput = $("composerInput");
       if (promptInput) {
@@ -1639,7 +2080,14 @@
     var art = btn.closest(".reading");
     var body = art && art.querySelector(".reading-body");
     if (!body) return;
-    var text = (body.innerText || body.textContent || "").trim();
+    /* Copy the reading, not the annotations. An open 取象 panel is a sibling of
+       the paragraph it belongs to, so innerText on the whole body would paste
+       a symbol's catalogue into the middle of the prose. Walk the blocks and
+       skip the panels; the marked words themselves are already plain text. */
+    var text = Array.prototype.filter
+      .call(body.children, function (el) { return !el.classList.contains("xr-panel"); })
+      .map(function (el) { return el.innerText || el.textContent || ""; })
+      .join("\n\n").replace(/\n{3,}/g, "\n\n").trim();
     var lbl = btn.querySelector(".rd-copy-lbl");
     function ok() {
       btn.classList.add("done");

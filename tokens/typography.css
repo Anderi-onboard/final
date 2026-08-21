@@ -40,3 +40,20 @@
   --tracking-meta: .08em;
   --tracking-wide: .12em;
 }
+
+/* ── Woven weight ─────────────────────────────────────────────────────────
+   The display device: one variable face, weight alternating between words.
+   BioRhyme carries wght 200–800 in a single woff2, so this adds no font and
+   no bytes — the three-font rule is untouched.
+
+   Site-wide on purpose. It used to be scoped to .blocks-route, which left the
+   glass routes' headlines single-weight and made the two halves of the site
+   read as two typographic voices. Material differs by route (see blocks.css);
+   type does not.
+
+   300/700 rather than 400/700: against 700 a 400 barely separates at display
+   size, and the gap is the whole effect. The split is done in
+   assets/weave.js — deterministic by word index, and skipped on one-word
+   headings, where alternation is not a pattern. */
+[data-weave] [data-w="0"] { font-weight: 300; }
+[data-weave] [data-w="1"] { font-weight: 700; }

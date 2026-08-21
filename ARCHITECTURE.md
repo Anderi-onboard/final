@@ -1,0 +1,323 @@
+# ARCHITECTURE — BourneWise 仓库结构
+
+> 本文管 **仓库**:分支归属、文件权属、发布路径、以及冲突怎么裁。
+> `OVERVIEW.md` 管 **系统**:这是什么程序、技术规格、怎么运转 —— 第一次接触先读它。
+> `CLAUDE.md` 管 **代码**:设计法则、语气、性能红线。三份都是权威,不重叠。
+> 冲突时:本文 > CLAUDE.md > 代码注释;但**任何一份与代码不符,都以代码为准并回来改文档**。
+>
+> 建档日期 2026-08-21。建档原因:三个 agent 在同一个仓库上并行推了两周,
+> 出现了两份互不知情的 114 组色卡、两套针对同一批页面的相反材质系统、
+> 以及一条"以谁为准"没人写下来过的模糊地带。
+
+---
+
+## 1 · 谁在推,推到哪
+
+仓库里有**三个执行者**,git 作者名不能直接对应到人:
+
+| 作者名 | 实际是谁 | 说明 |
+|---|---|---|
+| `Claude` | Claude Code 会话 | 每个会话一条 `claude/*` 分支 |
+| `808andrei909` | owner 本机 git(codex CLI 提交) | 推 `codex*` 分支 |
+| `Anderi-onboard` | owner 的 GitHub 账号 | 网页端合并提交、PR 操作 |
+
+⚠️ **`808andrei909` 和 `Anderi-onboard` 是同一个人的两个身份**,不是两个贡献者。
+按作者名统计分支归属会得到错的结论。
+
+### 分支表(2026-08-21 实测)
+
+| 分支 | 落后/领先 main | 角色 | 状态 |
+|---|---|---|---|
+| **`main`** | — | **生产**,Cloudflare 自动部署 | 唯一真相 |
+| `production` | 37 / 1 | 已验证版本的**回滚锚点** | 停在 08-15,**不是日常入口** |
+| `claude/final-saas-promotion-7nxvjo` | 0 / 28 | 本会话工作分支 → PR #61 | 已合 main,可合并 |
+| `claude/bournewise-handoff-priorities-19xcmh` | 0 / 1 | 仅一条 RELEASES 记录 | 待合或丢弃 |
+| `claude/repo-hygiene-audit` | 37 / 1 | 分支卫生审计文档 | **文档未进 main** |
+| `claude/texture-and-craft-audit` | 37 / 1 | 纹理审计文档 | **文档未进 main** |
+| `codex-creem-integration` | 38 / 1 | codex 工作分支 | 基线陈旧,见 §2 |
+| `codex` | 77 / 90 | 07-28 遗留 | **死分支** |
+| 其余 7 条 `claude/session-*` 等 | 77 / 27–101 | 6–7 周前的历史会话 | **死分支** |
+
+---
+
+## 1.5 · 仲裁规则(先读这条,其余都从它推出来)
+
+> **以最新为准 —— 但"最新"指 `main` 上的最新,不是任何分支上时间戳最新的那个提交。**
+
+判断哪个版本算数,看的是**基线**,不是时间戳:
+
+- 从最新 `origin/main` 分叉、做完再合回来的提交 —— 它是**后继**,它算数。
+- 从一个陈旧基线上推出来的提交 —— 它是**分叉**,时间戳再新也不算数。
+  它没有看见 main 上已经发生的事,所以它"改"的是一个已经不存在的版本。
+
+**当前的具体裁定:codex 的 `ad42888`(08-21)不算最新。**
+它推的时间比 main 的 `eb102de`(08-20)晚一天,但它的基线是 08-15、落后 38 个提交。
+它不是在 main 之后,它是在 main 旁边。**所以 §2 里凡是它和 main 冲突的地方,一律 main 赢** ——
+不是因为 main 更好,是因为它根本没参与那场对话。
+
+⚠️ **这不是在怪 codex。** 一个 agent 只能看见它基线上的东西。
+**规则的意义是让"看不见"不再发生**,见 §2.5 的协议。
+
+### 分支规矩
+
+1. **`main` 是唯一发布源。** 任何人(含 Claude / codex)**不得直接 push `main`**,只走 PR。
+2. **一个会话一条分支。** 不同会话不得共用工作分支。
+3. **开工前 `git fetch origin main` 并从最新 `origin/main` 分叉;提交前再合一次。**
+   这条不是形式主义,是这次全部返工的根因。
+4. **`production` 用普通 merge commit 镜像,不得 squash / rebase / force-push。**
+5. **死分支不要复活**,需要里面的东西就 cherry-pick 单个文件。
+
+---
+
+## 2 · 已裁决的矛盾
+
+这一节记录**两个执行者对同一问题给出相反答案**的地方,以及裁决理由。
+以后遇到同类问题,按同样的理由裁。
+
+### ① 色组 id:数字重编 vs 保留管理器 id —— **裁定:数字重编(main)**
+
+两边**颜色完全一致**:81 个共有 id 的 `rows` 逐一相同,33 组自定义的 `rows` 集合相同,
+`seg` 33/33 相同,名称 32/33 相同。**唯一分歧是 id 命名。**
+
+| | main (`eb102de`) | codex (`ad42888`) |
+|---|---|---|
+| 自定义组 id | 重编为 `181–213` | 保留 `CMSPYGJAT` 等管理器 id |
+| `palette-contract` | 保持 `/^\d{3}$/` | 放宽为 `/^(?:\d{3}\|C[A-Z0-9]+)$/` |
+
+**裁定理由**:main 还加了「每个段必须是连续 id 区块」的断言,`CMSPYGJAT` 永远满足不了。
+段序、段区间、以及色卡管理器都依赖 id 可排序。**两条不能共存,连续区间的价值更高。**
+原始管理器 id 已记录在 CLAUDE.md §11,没有信息丢失。
+
+### ② 三条内容路由的材质:生成式母题 vs 光栅纹理 —— **裁定:生成式(本分支)**
+
+codex 的 `tokens/document-pages.css`(613 行,新增)和本分支的
+`blocks.css` / `method.css` / `legal.css` **针对完全相同的三条路由**
+(`about` / `guide` / `legal`),用**相反的材质系统**:
+
+| | codex `document-pages.css` | 本分支 `blocks.css` 等 |
+|---|---|---|
+| 底 | `--soft-peach-cream #FFE096` 锁死 `!important` | `--bk-*` 色块调色板 |
+| 纹样 | `.lq-texture-layer` 光栅贴图 | `marks.js` 参数生成,走 `currentColor` |
+
+**裁定理由**:CLAUDE.md 已写明 Soft Peach 锁死是全站发黄的病根
+(实测面板合成色 |R−B| 均值 68 / 最大 89),且**CSS `url()` 里的贴图读不到色组变量,
+114 组配色下必然撞色**。
+
+⚠️ **但这不是 codex 的错。** 论证这两条的 `AUDIT-20260816.md` **只存在于本分支**,
+main 上没有,所以 codex 无从知道。**这才是真正要修的东西**:见 §5 第 1 条。
+
+### ③ `window.BW_BUILD`:字面量 vs 推导 —— **裁定:推导**
+
+main 的 `tests/build-tag.mjs` 要求 `BW_BUILD` 是字面量并与 `version.json` 相等;
+本分支改成从页面自己的 `?v=` 标签推导。
+
+**裁定理由**:字面量是**第二个手工维护的标签**,它已经漂过一次(落后两个版本,
+导致每个新会话都被判为过期)。**推导让"不一致"从构造上不可能发生**,比"用测试抓不一致"强。
+测试已更新为两种写法都接受,推导形式只断言推导存在(运行时计算的值,比对字面量没有意义)。
+
+### ④ CLAUDE.md 里两条**代码从未实现**的规范 —— **已删除**
+
+- 「撞色偏置:对比带与主色相 HSV 距离 > 40° 优先入池」
+- 「近白 / 彩色 1:1 交替」
+
+两次核对(08-20、08-21)`buildPaletteSchedule` 里都**没有任何相关逻辑**。
+按 CLAUDE.md 自己的规矩(以代码为准)删除。
+**教训:规范写了但没实现,比没写更糟 —— 下一个人会以为它在跑,并在它之上做决定。**
+
+---
+
+## 2.5 · 多 agent 协作协议
+
+这一节是**可执行的**。每条都对应一个真实出过的事故,不是通用建议。
+
+### A · 开工前(四条命令,不许跳)
+
+```bash
+git fetch origin main
+git log --oneline -15 origin/main          # 别人这两周做了什么
+git rev-list --count HEAD..origin/main     # 我落后多少 —— 不是 0 就先合
+cat ARCHITECTURE.md CLAUDE.md              # 已裁决的事不要重裁
+```
+
+**落后 `origin/main` 超过 0 个提交就先合,再开工。** 落后 38 个提交时开工的代价这次量到了:
+613 行 `document-pages.css` + 一整套 id 方案,全部作废,因为 main 上已经有了答案。
+
+### B · 认领(开工第一件事,写进 PR 描述)
+
+**声明你要碰哪些文件。** 不需要锁,需要的是**可见**。
+两个 agent 同时重建同一条路由,是因为谁都不知道对方在做。
+
+| 表面 | 一次只应有一个 agent | 理由 |
+|---|---|---|
+| `tokens/*.css` 的某一条路由 | 是 | 材质系统整体一致,拆着做必然打架 |
+| `assets/palettes/color-groups.json` | 是 | 整体替换语义,合并没有意义 |
+| `assets/backgrounds/mountain-range.js` | 是 | 引擎 |
+| `functions/**` | 是 | 计费与提示词,错了要花钱 |
+| 单个页面的内容文案 | 否 | 可并行 |
+
+### C · 提交前
+
+```bash
+git fetch origin main && git merge origin/main    # 再合一次
+for t in tests/*.mjs; do node "$t" || echo "FAIL $t"; done   # 必须 17/17
+```
+
+构建标签全站 + `version.json` bump 到同一个新值(`tests/build-tag.mjs` 守着)。
+
+### D · 合并时的三个机械陷阱(三个都踩过)
+
+1. ⚠️ **`git checkout --ours -- <file>` 取的是整个文件,不是那个冲突块。**
+   它会把对方在**同一文件里已经干净合并**的改动一起丢掉。
+   这次第一遍就这样弄丢了 main 的 `segmentOrder`。
+   **要么逐块解,要么先确认对方在该文件里零实质改动。**
+
+2. ⚠️ **删除会静默合并。** 你的分支删了某文件、对方没碰它 → git 判定"删除"胜出,**不报冲突**。
+   这次 `color-groups-180.json` 就是这么丢的 —— 而且我上一轮刚说过要留它。
+   **合并后必须跑这条对账:**
+   ```bash
+   comm -23 <(git ls-tree -r --name-only origin/main | sort) \
+            <(git ls-tree -r --name-only HEAD | sort)
+   ```
+   列出来的每个文件都要能说出"我是有意删的,理由是 X"。说不出就是丢了。
+
+3. ⚠️ **冲突块里绝大多数是构建标签,少数是真内容。** 先分类再动手:
+   把两侧的标签正规化后比对,相同的机械解决,不同的逐个读。
+   这次 30 个块里 23 个是纯标签 —— 不分类就会把 7 个真冲突淹在噪音里。
+
+### E · 交接:**裁决必须和它裁的代码一起进 `main`**
+
+**留在分支上的结论等于没有结论。**
+
+`AUDIT-20260816.md` 论证了光栅纹理为什么在 114 组配色下必然撞色 —— 它只在一条分支上,
+main 上没有。于是 codex 在六天后又建了一套光栅纹理系统。**它不是没读文档,是文档不在它能看到的地方。**
+
+所以:**任何 `*.md` 的裁决、审计、规范,和它约束的代码走同一个 PR。**
+不允许"代码先进 main,文档留在分支上以后再说"。
+
+### F · 分歧仲裁
+
+两个 agent 给出相反方案时,按顺序问:
+
+1. **谁的基线更新?** 陈旧基线上的方案直接出局(§1.5)。
+2. **有没有测试或实测数字支持?** 有的赢。「我觉得更好看」不构成理由。
+3. **哪个能让另一个的不变量继续成立?** 例:数字 id 能保住"段是连续区间",管理器 id 不能。
+4. **仍然平手 → 停下来问 owner,不要自己选一个然后往下做。**
+
+裁完**写进 §2**,连同理由。理由比结论重要 —— 下一次是新情况,能复用的是理由。
+
+---
+
+## 3 · 文件权属
+
+判断一个文件能不能改、改哪里,先看它属于哪一类。
+
+### A. 权威源(手写,唯一真相)
+
+| 文件 | 管什么 |
+|---|---|
+| `CLAUDE.md` | 设计法则 / 语气 / 性能红线 |
+| `ARCHITECTURE.md` | 本文:仓库结构 |
+| `assets/palettes/color-groups.json` | **114 组色卡** —— 由 `palette-guide.html` 管理器整体替换,**不是打补丁** |
+| `account.js` | 账户 / 点数 / 历史的**单一数据源**(`BWAccount`) |
+| `functions/_lib/prompt-engine.js` | 解读语气引擎(**服务端**,08-14 安全审计后移入) |
+| `tokens/*.css` | 设计令牌与各路由样式 |
+| `version.json` + 全站 `?v=` | 构建标签,**必须同步** |
+
+### B. 生成物(不要手改,改生成器)
+
+| 文件 | 生成器 |
+|---|---|
+| `copywriting/*_DECK.md` | `copywriting/generate-*-deck.mjs`(且已 gitignore) |
+| 色块路由的全部图案 / 山景 / 标记 | `assets/marks.js` → `assets/blocks.js` |
+| `artifacts/*` | 恢复与 QA 产物,只读留档 |
+
+#### 色卡溯源档(`artifacts/palette-*`,08-21 从 codex 分支取回)
+
+owner 在本机改的色卡曾经找不到,由 codex 从
+`Chrome Default/Local Storage/leveldb` 恢复。**这是 114 这个数字的唯一来源证明**,
+已核对:恢复档 114 组与线上 `color-groups.json` **颜色集合逐一相同**。
+
+| 文件 | 内容 |
+|---|---|
+| `palette-recovery-full-2026-08-12.json` | 完整快照:官方 180 → 删 99 → 留 81(**其中 24 组被 owner 改过**)+ 自定义 33 = **114** |
+| `palette-recovery-latest-2026-08-13.json` | 08-13 替换自定义清单后的状态(自定义 1 组,合计 82) |
+| `palette-cache-history.json` / `palette-chrome-cache-history.json` | 管理器缓存变更史 |
+| `color-groups-recovered-114.json` | 恢复出的目录,保留原管理器 id |
+
+⚠️ **不要用这些文件覆盖 `color-groups.json`** —— 它们保留的是管理器 id(`CMSPYGJAT`),
+线上用的是重编后的 `181–213`(§2①)。它们的用途是**溯源和对账**,不是发布源。
+
+### C. 已死(存在但没有任何代码引用 —— 不要在上面加功能)
+
+| 文件 | 状态 |
+|---|---|
+| `liuyao-chart.js` | 只 publish 一个没人调用的全局;script 标签已移除,文件保留 |
+| 色卡的 `pattern` / `harmony` / `families` / `breaks` 字段 | **实测引用 0 次**,纯管理器元数据 |
+| `functions/**/lemonsqueezy*` | 支付已改 Creem,**不要用它** |
+| `assets/fonts/Fraunces-*`、`BioRhyme-400/700/800` | 违禁字体 / 已被可变字体取代 |
+
+### D. 必须挡在公网外(`_redirects`)
+
+`PROGRESS.md` · `AUDIT-*.md` · `CLAUDE.md` · `RELEASES.md` · `copywriting/*` ·
+`eval/*` · `tests/*` · `scripts/*` · `artifacts/*` · `tools/*` ·
+`palette-guide.html` · `palette-overview.html` · `baoxianghua-compositions.html`
+
+⚠️ **新增本文件后,`ARCHITECTURE.md` 也必须加进这份名单**(已加)。
+判据很简单:**它是不是一张"这个站哪里薄弱"的地图?** 是就挡掉。
+
+---
+
+## 4 · 发布路径
+
+```
+claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生产
+                                │
+                                └──普通 merge──▶  production(回滚锚点)
+```
+
+每次改 HTML / CSS / JS **必须**:
+
+1. 全站 `?v=` 与 `version.json` bump 到**同一个新标签**(`tests/build-tag.mjs` 守着)
+2. `for t in tests/*.mjs; do node "$t"; done` —— **17/17 通过**
+3. 改布局就量几何、改动画就采样;**截图前禁用缓存**
+4. 发布记录写入 `RELEASES.md`:构建标签、视觉来源提交、功能提交、验证证据
+
+### 现有测试(17 条,全部必须绿)
+
+`billing-contract` · `board-distill` · `build-tag` · `followup-axes` ·
+`free-reading-contract` · `language-purity` · `palette-contract` · `prompt-coverage` ·
+`prompt-secrecy` · `rates-contract` · `request-contract` · `session-contract` ·
+`stream-recovery` · `texture-contract` · `token-cap` · `upstream-error` · `xiang-trace`
+
+---
+
+## 5 · 待办(按优先级)
+
+1. ⭐ **把 `AUDIT-20260816.md` 合进 `main`。**
+   §2② 那次返工的**唯一根因**是这份文档只在一条分支上。
+   **裁决理由必须和被裁决的代码住在一起**,否则下一个 agent 会再做一次同样的事。
+   `claude/repo-hygiene-audit` 和 `claude/texture-and-craft-audit` 同理 —— 两份审计都没进 main。
+2. **`production` 落后 main 37 个提交**,停在 08-15。作为回滚锚点它现在指向的是一个很旧的版本。
+3. **决定 `codex-creem-integration` 怎么处理。** 它只有 1 个独有提交,里面有两样值得留的:
+   - ✅ `artifacts/palette-recovery-*.json` —— **08-21 已取回**(见 §3),溯源已核对
+   - ⬜ `chooseUiAccent()` —— 用实测对比度挑 UI 强调色,比写死 `gems[0]` 好,**尚未取**
+   其余(`document-pages.css`、id 放宽)按 §2 已裁掉。**取完第二样即可归档该分支。**
+4. **清理 9 条死分支**(落后 77 个提交、6–7 周未动)。
+5. **CLAUDE.md §2 架构图过期**:它把 `styles.css` 和 `prompt-engine.js` 列在仓库根目录,
+   两个都已不在那里(前者不存在,后者在 `functions/_lib/`)。
+6. **21 个元素被 3–4 个样式表同时上色**(login `.card`、settings `.panel` 被四个)。
+   这是每一次"改了没效果"的根源。
+7. 约 47 处裸 hex 待清(`refinement.css` / `poster-pages.css` / `luxury-glass.css`)。
+
+---
+
+## 6 · 给下一个 agent 的四条
+
+1. **开工前先 `git fetch origin main` 看别人做了什么。** 这次两个 114 组色卡、
+   两套相反的路由材质,全部出自"没看最新 main 就开工"。
+2. **合并后跑一次文件对账**(§2.5 D-2)。删除不报冲突,会静默生效 ——
+   本文作者就在写这份文档的同一次合并里丢掉了 `color-groups-180.json`,
+   而且是在上一轮刚说过"要留着它"之后。**说过要留,不等于留住了;要量。**
+3. **"改了没效果"永远先量 `getComputedStyle`,不要加大数值。**
+   历史上每一次都是另一个样式表在抢同一个元素,不是数值不够。
+4. **文档和它裁决的代码必须一起进 main。** 留在分支上的结论等于没有结论。

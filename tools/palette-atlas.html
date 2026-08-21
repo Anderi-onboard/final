@@ -1,0 +1,286 @@
+<title>Palette Atlas</title>
+<style>
+:root{
+  /* Taken from the engine this report is about, so the page is in the same
+     material as its subject. The neutral is warm-biased toward clay &#8212; a pure
+     grey beside 1,800 tinted swatches reads as an accident. */
+  --ink:#1A1714; --bone:#E8DDD8; --cream:#EFE6E0; --paper:#F3EDE8;
+  --clay:#B5573A; --teal:#3E6B70; --ochre:#C79A55;
+  --bg:var(--paper); --surface:var(--cream); --sunk:var(--bone);
+  --fg:var(--ink); --fg-dim:#5A5049; --rule:rgba(26,23,20,.16);
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141210; --surface:#1E1A17; --sunk:#100E0C;
+    --fg:#EFE6E0; --fg-dim:#A79B92; --rule:rgba(239,230,224,.18);
+    --clay:#D97B5C; --teal:#6FA3A9;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141210; --surface:#1E1A17; --sunk:#100E0C;
+  --fg:#EFE6E0; --fg-dim:#A79B92; --rule:rgba(239,230,224,.18);
+  --clay:#D97B5C; --teal:#6FA3A9;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1{font-size:clamp(38px,6.4vw,74px);line-height:.98}
+h2{font-size:clamp(24px,3vw,34px);line-height:1.1}
+h3{font-size:18px}
+p{margin:0;max-width:66ch}
+.lab{font-family:var(--mono);font-size:11px;letter-spacing:.09em;color:var(--fg-dim);margin:0}
+.stack{display:flex;flex-direction:column;gap:14px}
+
+/* masthead &#8212; flush band, square, in the block grammar of the site */
+header{background:var(--ink);color:var(--cream);margin-bottom:3px}
+header .wrap{padding-top:44px;padding-bottom:38px;display:flex;flex-direction:column;gap:18px}
+header .lab{color:rgba(239,230,224,.66)}
+header p{color:rgba(239,230,224,.86);font-size:16px}
+header h1{color:var(--cream)}
+
+section{padding-top:52px}
+.rule{height:1px;background:var(--rule);margin-top:52px}
+
+/* the headline numbers */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:3px;margin-top:26px}
+.fig{background:var(--surface);padding:22px 20px 20px;display:flex;flex-direction:column;gap:6px}
+.fig b{font-family:var(--display);font-size:44px;line-height:1;font-weight:600;
+  font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.fig .lab{margin-top:2px}
+.fig small{font-size:13px;color:var(--fg-dim);line-height:1.45}
+.fig--hot b{color:var(--clay)}
+.fig--cool b{color:var(--teal)}
+
+/* the atlas: catalogue on the left, what is actually painted on the right */
+.atlas{margin-top:24px;background:var(--surface);padding:18px 16px}
+.atlas-head{display:grid;grid-template-columns:118px 1fr 26px 1fr;gap:0 10px;
+  align-items:end;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.atlas-head .side{display:flex;align-items:center;gap:7px}
+.dot{width:9px;height:9px;flex:none}
+.dot--cat{background:var(--clay)} .dot--live{background:var(--teal)}
+.grp{display:grid;grid-template-columns:118px 1fr 26px 1fr;gap:0 10px;align-items:center;
+  padding:1px 0}
+.grp:hover{background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.meta{font-family:var(--mono);font-size:9.5px;color:var(--fg-dim);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.strip{display:grid;grid-template-columns:repeat(10,1fr);gap:1px;height:16px}
+.sw{height:100%}
+.arrow{font-family:var(--mono);font-size:10px;color:var(--fg-dim);text-align:center}
+.atlas-scroll{overflow-x:auto}
+.atlas-inner{min-width:640px}
+
+/* hue bars */
+.hues{display:flex;flex-direction:column;gap:3px;margin-top:22px}
+.hue{display:grid;grid-template-columns:132px 1fr 62px;gap:12px;align-items:center}
+.hue .bar{height:19px;background:var(--sunk);position:relative}
+.hue .bar i{position:absolute;inset:0 auto 0 0;display:block}
+.hue .n{font-family:var(--mono);font-size:11px;text-align:right;font-variant-numeric:tabular-nums;color:var(--fg-dim)}
+.hue .k{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:3px;margin-top:24px}
+.step{background:var(--surface);padding:18px 18px 20px;display:flex;flex-direction:column;gap:7px}
+.step code{font-family:var(--mono);font-size:11.5px;color:var(--clay);word-break:break-word}
+.step p{font-size:13px;color:var(--fg-dim)}
+
+/* the conflict callout */
+.warn{margin-top:24px;background:var(--surface);border-left:4px solid var(--clay);padding:20px 22px}
+.warn h3{margin-bottom:8px}
+table{border-collapse:collapse;width:100%;margin-top:14px;font-size:13.5px}
+th,td{text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--fg-dim);font-weight:400}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl-scroll{overflow-x:auto}
+</style>
+
+<header>
+  <div class="wrap">
+    <p class="lab">BourneWise &#183; background engine &#183; measured 17 Aug 2026</p>
+    <h1>Every colour the<br>catalogue keeps,<br>and the ten it shows.</h1>
+    <p>The site ships 180 colour groups of ten steps each &#8212; 1,800 hand-picked values. Almost
+    none of them reach the screen as authored. Every colour passes through a clamp on its way
+    to a CSS token, and the clamp is doing far more work than the catalogue is.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <p class="lab">What the measurement found</p>
+  <div class="figs">
+    <div class="fig fig--hot"><b>90.6%</b><p class="lab">Ridge colours flattened</p>
+      <small>1,630 of 1,800 exceed the saturation cap and are set to exactly 0.26. The
+      catalogue's mean saturation is 0.675; the screen's is 0.251.</small></div>
+    <div class="fig fig--hot"><b>100%</b><p class="lab">Skies at one lightness</p>
+      <small>Every group's sky is clamped to L 0.82 and S 0.14. Across all 180 groups the sky
+      varies in hue only &#8212; never in value.</small></div>
+    <div class="fig fig--cool"><b>57%</b><p class="lab">Water clamped in value</p>
+      <small>40% hit the lightness floor of 0.42 and 17% the ceiling of 0.64, so the water
+      band is nearly a constant tone.</small></div>
+    <div class="fig fig--cool"><b>45 min</b><p class="lab">Full cycle</p>
+      <small>180 groups at 15s each. Not the 900s the notes claim.</small></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>The pipeline</h2>
+  <p style="margin-top:10px;color:var(--fg-dim)">Four of the eleven fields in each catalogue
+  entry are rendered. The rest &#8212; pattern, harmony, families, breaks &#8212; are metadata that no
+  code reads.</p>
+  <div class="pipe">
+    <div class="step"><p class="lab">1 &#183; Source</p><code>color-groups.json</code>
+      <p>180 groups. Ten <code style="color:inherit">rows</code>, a sky, a water, and a gem
+      index are read; everything else is unused.</p></div>
+    <div class="step"><p class="lab">2 &#183; Clamp</p><code>mutedHex(hex, maxL, maxS, minL)</code>
+      <p>Converts to HSL, clamps lightness and saturation, converts back. Hue is never
+      touched &#8212; it is the only channel that survives intact.</p></div>
+    <div class="step"><p class="lab">3 &#183; Tokens</p><code>--bw-palette-1 &#8230; -10, -cloud, -water, -gem</code>
+      <p>Rows land on ten ridge planes 400ms apart, each interpolating for 1.5s; water
+      follows at 4.4s.</p></div>
+    <div class="step"><p class="lab">4 &#183; Surfaces</p><code>fill &#183; stroke 42&#8211;44% &#183; water .68</code>
+      <p>Contours mix the same colour to 42&#8211;44%, so the line work is a lighter tint of its
+      own plane rather than a separate ink.</p></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>The atlas</h2>
+  <p style="margin-top:10px;color:var(--fg-dim)">All 180 groups, in the order they actually
+  play. Left is the catalogue; right is what <code>mutedHex</code> hands to the page. The
+  right-hand column going flat is the finding &#8212; you do not have to take the percentage on
+  faith.</p>
+  <div class="atlas">
+    <div class="atlas-scroll"><div class="atlas-inner">
+      <div class="atlas-head">
+        <p class="lab">Group</p>
+        <div class="side"><span class="dot dot--cat"></span><span class="lab">As catalogued</span></div>
+        <span></span>
+        <div class="side"><span class="dot dot--live"></span><span class="lab">As painted</span></div>
+      </div>
+      <div id="atlas"></div>
+    </div></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Hue survives; nothing else does</h2>
+  <p style="margin-top:10px;color:var(--fg-dim)">Because the clamp never touches hue, the
+  colour identity of a group is carried entirely by where it sits on the wheel. This is the
+  distribution across all 1,800 ridge values &#8212; and it is the one axis with real range left
+  in it.</p>
+  <div class="hues" id="hues"></div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Two things the notes get wrong</h2>
+  <div class="warn">
+    <h3>The play order is not alternating</h3>
+    <p style="color:var(--fg-dim)">CLAUDE.md &#167;4 describes a sequence that alternates near-white
+    and colour 1:1, with a clash bias that promotes high-contrast groups. The code does neither.
+    <code style="font-family:var(--mono);font-size:12.5px;color:var(--clay)">buildPaletteSchedule</code>
+    sorts by tier and then by id, so the site sits in one tier for many minutes before stepping
+    to the next.</p>
+    <div class="tbl-scroll"><table>
+      <tr><th>Tier</th><th>Groups</th><th>Runs for</th><th>Effect</th></tr>
+      <tr><td>&#27987; &#183; deep</td><td class="num">35</td><td class="num">8.8 min</td><td>Opens the cycle at its most saturated</td></tr>
+      <tr><td>&#33395; &#183; vivid</td><td class="num">20</td><td class="num">5.0 min</td><td>The shortest stretch</td></tr>
+      <tr><td>&#20013; &#183; mid</td><td class="num">40</td><td class="num">10.0 min</td><td></td></tr>
+      <tr><td>&#28129; &#183; pale</td><td class="num">85</td><td class="num">21.2 min</td><td>Nearly half the cycle, then a hard jump back to deep</td></tr>
+    </table></div>
+  </div>
+  <div class="warn">
+    <h3>The cycle is 2,700s, not 900s</h3>
+    <p style="color:var(--fg-dim)">180 groups at a 15s dwell. A visitor who stays five minutes
+    sees twenty groups drawn from one tier &#8212; never the range the catalogue implies.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>What this means if you want more colour</h2>
+  <p style="margin-top:10px;color:var(--fg-dim)">The catalogue is not the constraint. Raising
+  the ridge saturation cap from 0.26 is the single change that would let the 180 groups read as
+  180 groups; 90.6% of the values are waiting behind it. The sky cap is the second: at one fixed
+  lightness it can only ever shift hue, which is why the upper half of the screen looks the same
+  in every group. Both were set to keep glare down, and both are one number.</p>
+</section>
+
+</div>
+
+<script>
+const DATA = [{"id":"001","n":"\u6625\u00b7\u674f\u971e\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF9F6","#FFECE1","#B7D6E8","#ABCCE2","#A0C5DA","#BCA5CC","#B29DBA","#A38479","#957D72","#887871"],"k":"#FEF9F7","w":"#A0C5DA","g":5},{"id":"002","n":"\u51ac\u00b7\u971c\u9752\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFFAEF","#D9DEC6","#CCD6B8","#C6CDAB","#ADB8D9","#A6ADCF","#9CA6C6","#978E6B","#89866F","#817D6E"],"k":"#FDFAF1","w":"#ADB8D9","g":7},{"id":"003","n":"\u4e9a\u9ebb\u7070\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F4FDF4","#E2F7E4","#BED3EC","#B4C9E6","#92C1C3","#89B7BC","#7AB1B3","#80937A","#788977","#757F72"],"k":"#F6FDF5","w":"#92C1C3","g":6},{"id":"004","n":"\u6625\u00b7\u6a31\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#EFFEFC","#D8F8F6","#CAF2EC","#A7D3CF","#9ACAC8","#D3A0A2","#C29B99","#A48288","#967B7E","#897679"],"k":"#F1FDFC","w":"#9ACAC8","g":5},{"id":"005","n":"\u590f\u00b7\u82e5\u83dc\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F5FCFF","#EFD5C9","#E8CAB9","#E4C0AF","#99BDDE","#98B2CE","#8FABC4","#7692A4","#738897","#718089"],"k":"#F6FBFF","w":"#99BDDE","g":4},{"id":"006","n":"\u51ac\u00b7\u6708\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FAFAFF","#EFEEFF","#DACAE6","#D3BEDC","#C9B7D7","#BFAD8C","#B2A484","#858AAC","#808197","#787B8A"],"k":"#F9FAFF","w":"#C9B7D7","g":7},{"id":"007","n":"\u79cb\u00b7\u7ec3\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF8FF","#FEE9FB","#C0D9C1","#B2D0B8","#D2ABB8","#CAA1AB","#BF9AA6","#9B829F","#8E7D8E","#827784"],"k":"#FFF8FE","w":"#D2ABB8","g":7},{"id":"008","n":"\u9752\u78c1\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF9F9","#F0D2D5","#EBC6C7","#E6BDC1","#ADC09F","#A1B798","#9DAE8F","#829575","#7B8A76","#788073"],"k":"#FEF9F9","w":"#ADC09F","g":7},{"id":"009","n":"\u4e01\u9999\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF9F4","#FFEDDB","#C1D3E8","#B7C9E2","#C1B794","#B5AF8B","#AFA685","#A4856E","#927F6F","#87796F"],"k":"#FDFAF6","w":"#C1B794","g":7},{"id":"010","n":"\u7802\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FBFBEF","#F1F3DA","#EBEACB","#C4CEAC","#B7C5A3","#ABAAD5","#A5A1C2","#8C8F72","#818670","#7C7D6E"],"k":"#FBFBF2","w":"#B7C5A3","g":5},{"id":"011","n":"\u6625\u00b7\u8584\u6a31\u96fe","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F3FEF5","#E0F7E6","#DDC9E3","#D6BDD9","#CDB6D4","#8BBAB6","#83AFAE","#80A7A3","#758B7C","#708077"],"k":"#F4FDF7","w":"#CDB6D4","g":6},{"id":"012","n":"\u51ac\u00b7\u96ea\u9f20","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F0FEFF","#C2E2E6","#B2D9E0","#A6D2D8","#D7ADA8","#CDA49C","#C39C98","#AB837C","#987E78","#8A7875"],"k":"#F1FDFE","w":"#D7ADA8","g":7},{"id":"013","n":"\u82e5\u8349\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F7FBFF","#E6F2FF","#DECFB2","#D3C6A5","#AFB5D7","#A9AACD","#9EA3C4","#768FAB","#778498","#727D89"],"k":"#F8FBFE","w":"#AFB5D7","g":7},{"id":"014","n":"\u79cb\u00b7\u7825\u7c89","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FBF9FF","#F4ECFF","#E1C8DE","#DBBCD4","#D2B4CF","#ABB491","#9FAB8B","#8E87A9","#867F95","#7C7988"],"k":"#FBFAFE","w":"#D2B4CF","g":7},{"id":"015","n":"\u85e4\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF8FC","#FFEAF3","#FDDDEF","#AFD3BF","#A2CAB7","#D0A0AE","#C09AA2","#9E8395","#927C88","#857780"],"k":"#FEF9FB","w":"#A2CAB7","g":5},{"id":"016","n":"\u8d1d\u58f3\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF9F8","#FFEBE7","#EBC7C2","#E4BDB4","#92C2C2","#89B7BB","#83AFAF","#679698","#6C898C","#6C8081"],"k":"#FEF9F8","w":"#92C2C2","g":7},{"id":"017","n":"\u6de1\u7f25\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFFAF1","#CFDCF2","#C4D1ED","#B8CAE8","#C1BA95","#B5B18D","#AFA886","#A08A6B","#8F836E","#857C6E"],"k":"#FFFAF2","w":"#C1BA95","g":7},{"id":"018","n":"\u7070\u6885\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F8FCF1","#EAF5DE","#BDD9C4","#AED1BC","#A7C9B0","#BFA5C2","#B79CB5","#89916E","#7F8771","#7A7E6F"],"k":"#F8FCF3","w":"#A7C9B0","g":7},{"id":"019","n":"\u767d\u7dd1","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F1FEF8","#DBF8ED","#E8C6D3","#E2BBC7","#C7B594","#BBAC8A","#B4A385","#6C9789","#6E8A83","#6E807A"],"k":"#F2FDF9","w":"#C7B594","g":7},{"id":"020","n":"\u9e1f\u306e\u5b50","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F4FCFF","#DDF5FF","#CAEFFC","#A8D0DF","#9EC6D8","#D3A298","#C19C91","#A4847C","#967D75","#897773"],"k":"#F6FBFD","w":"#9EC6D8","g":5},{"id":"021","n":"\u6625\u00b7\u6843\u971e\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F8FAFF","#E9D8C3","#E1CEB3","#DDC4A8","#BFB2D3","#B8A7C8","#ADA0C0","#818DAE","#7E8499","#787D8B"],"k":"#FAFAFA","w":"#BFB2D3","g":7},{"id":"022","n":"\u51ac\u00b7\u94a2\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FCF9FF","#F7EBFF","#E2C7DD","#DCBCD2","#D3B4CD","#9FB79A","#94AE94","#9784A3","#8C7D91","#807886"],"k":"#FDF9FF","w":"#D3B4CD","g":7},{"id":"023","n":"\u82d4\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF8FA","#FFEAEE","#B2DADB","#A4D1D5","#D5ABA9","#CBA29D","#BE9C9B","#A6808E","#957B82","#88767C"],"k":"#FEF9FA","w":"#D5ABA9","g":7},{"id":"024","n":"\u6de1\u7ea2\u6885\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FFF9F7","#FFECE2","#FFE1D4","#E4C0B0","#DAB6A3","#88B7CF","#8AABC0","#7491A2","#718795","#6F7E87"],"k":"#FFFBF9","w":"#DAB6A3","g":5},{"id":"025","n":"\u8c61\u7259\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FDFBEF","#D1DBF2","#C7D0ED","#BBC9E8","#B6BD99","#AAB592","#A5AB8A","#998D6A","#8A856E","#827D6E"],"k":"#FDFBF1","w":"#B6BD99","g":7},{"id":"026","n":"\u6c34\u6d45\u8471\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F5FDF3","#E3F7E3","#B2D9DE","#A4D0D8","#9AC9CE","#9EB0CF","#99A5C4","#909EB9","#7A8B72","#777E75"],"k":"#F8FBF8","w":"#9AC9CE","g":8},{"id":"027","n":"\u7070\u85e4\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#EFFEFB","#D8F8F5","#EBC6CA","#E4BBBC","#96BED0","#8EB4C7","#87ACBC","#689793","#6C8A89","#6D807E"],"k":"#F6FCFB","w":"#96BED0","g":7},{"id":"028","n":"\u79cb\u00b7\u67af\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#F9FBFC","#E4F3FF","#B6D7E7","#AACDE1","#9EC6D9","#C5AA8E","#B9A186","#A1876B","#90816D","#85796D"],"k":"#F7FBFE","w":"#9EC6D9","g":7},{"id":"029","n":"\u6de1\u6854\u6897\u767d","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FAFAFC","#EEEFFF","#E3E6FF","#CCCBA8","#BFC39E","#81BCBC","#83AFB2","#858BA6","#7F8197","#777B8A"],"k":"#FAFAFE","w":"#BFC39E","g":5},{"id":"030","n":"\u751f\u6210\u308a","s":"\u8fd1\u767d\u6bb5","t":"\u6de1","r":["#FEF8FE","#EDD2DD","#E9C6D1","#E2BDCC","#A5C2A6","#99B99F","#95B096","#A0839D","#927D8D","#857884"],"k":"#FDF9FC","w":"#A5C2A6","g":7},{"id":"031","n":"\u8584\u6a31\u96fe","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF1F1","#FED9D5","#93B78B","#7AA87A","#9E7740","#8A692D","#835809","#59272D","#441E1F","#331A1C"],"k":"#FFFAFA","w":"#9E7740","g":6},{"id":"032","n":"\u7070\u85d5","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF1F2","#FED8D6","#FEC2C4","#CB8889","#BC7773","#09808C","#0D6E7C","#004149","#00313A","#03272C"],"k":"#FFF7F7","w":"#BC7773","g":5},{"id":"033","n":"\u674f\u7c89","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF2F1","#90C9CA","#70B9BF","#57ADAF","#AF6E5D","#9D5F49","#954D3A","#5C2A27","#46211B","#331A18"],"k":"#FFFBFA","w":"#AF6E5D","g":6},{"id":"034","n":"\u6a31\u9f20","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF2F0","#FFD9D0","#CCA27A","#BB9260","#B18151","#20827A","#09706E","#5F2222","#441E1A","#331A19"],"k":"#FFF7F6","w":"#B18151","g":7},{"id":"035","n":"\u73ca\u745a\u767d","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF3F2","#FED9D3","#70B9C1","#55A8B6","#A7704B","#946237","#865431","#5F231A","#441F16","#331A16"],"k":"#FFFDFC","w":"#A7704B","g":7},{"id":"036","n":"\u6885\u9f20","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF1F3","#FFD7DC","#FFC0CD","#C7889E","#B97588","#6E7926","#596A1F","#353E09","#25300B","#20250D"],"k":"#FFF9FA","w":"#B97588","g":5},{"id":"037","n":"\u6a31\u6843\u971e","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF1F4","#FED7DE","#72BBB6","#55AAAA","#409D98","#A45B3A","#875335","#774732","#44202E","#321920"],"k":"#FFFAFB","w":"#409D98","g":5},{"id":"038","n":"\u6843\u6731","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FEF1F4","#E0AEAD","#D69A94","#CC8888","#379388","#1D827D","#16736A","#61242F","#462023","#331A1D"],"k":"#FFFDFD","w":"#379388","g":7},{"id":"039","n":"\u85d5\u7d2b\u7c89","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF3F4","#FED8D8","#7ABBA5","#5DAB98","#B46849","#985E40","#89513A","#582731","#441E22","#331A1E"],"k":"#FFF5F5","w":"#B46849","g":4},{"id":"040","n":"\u73ab\u7470\u7070","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF2F2","#FFD8D6","#FEC2C3","#C88A8A","#BC7772","#1E7F8F","#136D80","#004246","#003238","#03282B"],"k":"#FFF5F4","w":"#BC7772","g":7},{"id":"041","n":"\u73ca\u745a\u7802","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF0F0","#FED8D7","#72B8C7","#59A7BC","#419AAB","#9B6144","#875334","#592729","#491A18","#331A1A"],"k":"#FDF5F5","w":"#419AAB","g":8},{"id":"042","n":"\u7ea2\u6885","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF3F3","#FED9D4","#CEA17B","#BD9061","#2E8E94","#167D88","#007075","#59272B","#441E1E","#331A1B"],"k":"#FFFEFE","w":"#2E8E94","g":6},{"id":"043","n":"\u674f\u6843\u6696","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF0EE","#90C8CD","#71B9C3","#57ACB4","#B76B4D","#986248","#8C533E","#5C2B22","#462217","#331B16"],"k":"#FFF5F3","w":"#B76B4D","g":4},{"id":"044","n":"\u7070\u73ab","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF0EF","#FFD9D3","#FEC3BF","#CC8983","#BB786D","#0A8280","#057072","#004242","#003335","#032828"],"k":"#FDF5F4","w":"#BB786D","g":5},{"id":"045","n":"\u7261\u4e39","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF3F5","#FFD7DD","#71BABA","#54AAAF","#B66364","#9B5A54","#8B4D4D","#572738","#431D28","#321A22"],"k":"#FFF7F8","w":"#B66364","g":4},{"id":"046","n":"\u6731\u73ca\u745a","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FEF1F5","#E0AFA6","#D59B8C","#CB8A7E","#319196","#1B808A","#0C7277","#612434","#462026","#331A1F"],"k":"#FFF4F6","w":"#319196","g":7},{"id":"047","n":"\u8607\u82b3","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FDF0F1","#FFD8D7","#72BBB5","#5DA9A9","#419D98","#676BA4","#5D5B8F","#5E212E","#412023","#301B1E"],"k":"#FFF4F5","w":"#419D98","g":7},{"id":"048","n":"\u6843\u7d2b","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFEFF1","#FED8D9","#FFC1C8","#CB888E","#BC7677","#088281","#057073","#0B6161","#003631","#042826"],"k":"#FDF5F6","w":"#BC7677","g":5},{"id":"049","n":"\u6885\u8d64","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FEF1F3","#FFD8DA","#77BBAA","#5AAB9D","#A96F4F","#96603C","#8F4E29","#56292E","#412020","#301B1D"],"k":"#FFF2F3","w":"#A96F4F","g":6},{"id":"050","n":"\u85d5\u5807","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FDF0EF","#DFB0A1","#D49D86","#CA8B77","#0493A0","#2B7E8C","#0E717C","#5C2A2C","#47201F","#311C1C"],"k":"#FCF4F3","w":"#0493A0","g":4},{"id":"051","n":"\u73ca\u745a\u6731\u6a59","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FDF0F0","#FFD8D4","#74B7CA","#5CA6C0","#4599B0","#9A623F","#85552F","#75482D","#4B1C22","#301B1B"],"k":"#FEF0EF","w":"#4599B0","g":8},{"id":"052","n":"\u7261\u4e39\u7fe0","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF6F5","#FFDBD5","#FEC3BE","#D5847C","#C47264","#2C7E8D","#226C7E","#00414C","#00313D","#04272E"],"k":"#FFFEFD","w":"#C47264","g":3},{"id":"053","n":"\u6731\u7c89\u975b","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF2EF","#FFD9CF","#72B8C6","#58A7BB","#B16B41","#96613A","#845439","#5F221F","#441F18","#301C19"],"k":"#FFF7F5","w":"#B16B41","g":4},{"id":"054","n":"\u73ca\u745a\u9ec4\u7eff","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF3F6","#D8B695","#C9A478","#C19365","#758C3F","#5F7D34","#5B6C34","#5B2934","#462025","#301B1F"],"k":"#FFF2F4","w":"#758C3F","g":4},{"id":"055","n":"\u6885\u7ea2\u91d1","s":"\u7c89\u73ca\u745a\u6bb5","t":"\u6de1","r":["#FFF1F5","#FFD7E0","#73BBB2","#56ABA7","#429D94","#A55A3F","#904D2D","#582734","#431D25","#301B20"],"k":"#FCF3F5","w":"#429D94","g":5},{"id":"056","n":"\u7802\u767d\u91d1","s":"\u91d1\u8d6d\u6bb5","t":"\u6de1","r":["#FFF3E8","#D7B695","#C6A57D","#6B93C1","#5E80B3","#4B74A3","#1C487C","#21395F","#182E4A","#192538"],"k":"#FFFBF7","w":"#5E80B3","g":6},{"id":"057","n":"\u7ec3\u7802","s":"\u91d1\u8d6d\u6bb5","t":"\u6de1","r":["#FFF3E6","#FBDEB8","#8CAEDA","#7C9BCE","#A4698B","#9C5378","#5F3D00","#4A3200","#3C2602","#2C2009"],"k":"#FFF9F3","w":"#A4698B","g":5},{"id":"058","n":"\u67af\u8349","s":"\u91d1\u8d6d\u6bb5","t":"\u6de1","r":["#FFF3E3","#F6E0B7","#EFCE9D","#AD9D60","#998D4C","#4675A2","#35639A","#32587C","#3F2805","#2D1F09"],"k":"#FEFAF4","w":"#998D4C","g":6},{"id":"059","n":"\u9a7c\u767d","s":"\u91d1\u8d6d\u6bb5","t":"\u6de1","r":["#FFF4E0","#96C7CB","#78B8C1","#57ACB3","#5C9064","#468059","#604101","#4C3500","#3E2903","#2E220B"],"k":"#FFFAF0","w":"#5C9064","g":7},{"id":"060","n":"\u9ea6\u7802","s":"\u91d1\u8d6d\u6bb5","t":"\u6de1","r":["#FFF4E1","#F5E1B7","#C3A775","#B0975C","#6A7CB4","#606AA2","#4F5F91","#2C365F","#23264E","#1B2136"],"k":"#FDFAF4","w":"#6A7CB4","g":8},{"id":"061","n":"\u571f\u767d","s":"\u91d1\u8d6d\u6bb5","t":"\u6de1","r":["#FBF5E0","#A8BEE3","#96ABDB","#819DD1","#8D8342","#7A751B","#71650B","#4A3900","#362D02","#2A2109"],"k":"#FFFBEA","w":"#8D8342","g":5},{"id":"062","n":"\u7425\u73c0\u7802","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FEF5D7","#EDE09E","#84AA63","#65994C","#5B862E","#32549F","#263B94","#221700","#110900","#0F0400"],"k":"#FFFBE9","w":"#5B862E","g":6},{"id":"063","n":"\u871c\u91d1","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF2EC","#FFD5BC","#FEBC9A","#1699C5","#0182B2","#755101","#5B4100","#2D0F00","#190400","#150000"],"k":"#FFF9F5","w":"#0182B2","g":7},{"id":"064","n":"\u7126\u7cd6","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF4EB","#FFD7AC","#C98E50","#B57A25","#A86605","#036856","#025248","#004236","#00110C","#000907"],"k":"#FFF8F1","w":"#A86605","g":4},{"id":"065","n":"\u9ec4\u571f","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF3E9","#FFD7AF","#FEBE86","#4D90D2","#3F79C1","#206AAD","#514B02","#3B3A00","#1A0700","#120200"],"k":"#FFFDFB","w":"#3F79C1","g":7},{"id":"066","n":"\u9a7c","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF3E7","#CDAC71","#BA9747","#3381BE","#236BAE","#005C96","#3B2300","#261500","#180800","#110200"],"k":"#FFFAF3","w":"#236BAE","g":8},{"id":"067","n":"\u673d\u53f6","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF3E4","#FDDA9E","#5DA4DA","#478DCD","#736B00","#5A5900","#382000","#231200","#160600","#100300"],"k":"#FFFBF6","w":"#736B00","g":6},{"id":"068","n":"\u8702\u871c","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF5E5","#F9DB9D","#F2C679","#AF8321","#947209","#414BAD","#3B3B85","#28306E","#070330","#05021C"],"k":"#FFFBF4","w":"#947209","g":5},{"id":"069","n":"\u4e9a\u9ebb\u91d1","s":"\u91d1\u8d6d\u6bb5","t":"\u4e2d","r":["#FFF5DA","#A2ADE8","#9194DE","#7884D4","#707003","#575E04","#372600","#231800","#160A00","#0E0400"],"k":"#FFFBF3","w":"#707003","g":6},{"id":"070","n":"\u8d6d\u77f3","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF4DC","#F9DC84","#80A73D","#5D9418","#4A47D0","#4437A3","#2E2A8D","#00111F","#000314","#000013"],"k":"#FFFAEE","w":"#4A47D0","g":4},{"id":"071","n":"\u9ec4\u680c","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF5D7","#8FAAF5","#7C8FED","#5E7EE4","#6B6700","#515503","#454300","#13003F","#070020","#030016"],"k":"#FFFBE8","w":"#6B6700","g":7},{"id":"072","n":"\u67ff\u6a59","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF2EA","#FED5B1","#419EE8","#2784DD","#0875BC","#025A6B","#004556","#170D00","#0E0000","#070000"],"k":"#FFFBF8","w":"#0875BC","g":7},{"id":"073","n":"\u7092\u6817","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF4EC","#FED6AC","#FEBB7E","#3786E2","#2D6DD0","#624D03","#493C00","#00121B","#00040F","#000111"],"k":"#FFF6ED","w":"#2D6DD0","g":5},{"id":"074","n":"\u9508\u91d1","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF1E6","#FED5AF","#0AA9C3","#0F90AD","#097E92","#0848A9","#0A27A0","#00286C","#100000","#050000"],"k":"#FFFEFC","w":"#097E92","g":6},{"id":"075","n":"\u9676\u571f","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF5E7","#FED895","#FFBD55","#4E82E4","#3B62E5","#2559BC","#004D31","#003826","#13000A","#0B0003"],"k":"#FFF8EF","w":"#3B62E5","g":4},{"id":"076","n":"\u7425\u73c0\u6df1","s":"\u91d1\u8d6d\u6bb5","t":"\u6d53","r":["#FFF3E5","#BCB056","#A39C13","#2874CF","#205ABD","#004E9D","#162400","#041400","#000800","#000300"],"k":"#FFF8EE","w":"#205ABD","g":8},{"id":"077","n":"\u5c71\u5439\u70c8","s":"\u91d1\u8d6d\u6bb5","t":"\u8273","r":["#FFF5E9","#FFD69B","#029FE7","#0B86CF","#3D35E6","#3A26B4","#181A00","#070A00","#020200","#000100"],"k":"#FFFBF5","w":"#3D35E6","g":3},{"id":"078","n":"\u91d1\u8d6d\u7130","s":"\u91d1\u8d6d\u6bb5","t":"\u8273","r":["#FFF4DD","#FEDA67","#F8C115","#848A0D","#687603","#2833BA","#28159B","#130282","#000020","#010015"],"k":"#FFF9EA","w":"#687603","g":4},{"id":"079","n":"\u6a59\u7130","s":"\u91d1\u8d6d\u6bb5","t":"\u8273","r":["#FFF4DE","#A09FFD","#927FF8","#766BF2","#5D6804","#445402","#001C33","#000B20","#000021","#010016"],"k":"#FFFAED","w":"#5D6804","g":4},{"id":"080","n":"\u871c\u7130","s":"\u91d1\u8d6d\u6bb5","t":"\u8273","r":["#FFF7C4","#EAE36D","#09AC9C","#02938B","#4941CD","#450AC0","#2D06A0","#200005","#0F0000","#0B0000"],"k":"#FFFBE6","w":"#4941CD","g":5},{"id":"081","n":"\u767d\u7dd1","s":"\u9752\u7eff\u6bb5","t":"\u6de1","r":["#E9FBEB","#D2B0D0","#C89AC0","#B98BB8","#3D9381","#248276","#097564","#224520","#16351C","#162715"],"k":"#F1FFF3","w":"#3D9381","g":6},{"id":"082","n":"\u9752\u78c1\u767d","s":"\u9752\u7eff\u6bb5","t":"\u6de1","r":["#E8FBEC","#C3EFD4","#73B7CA","#5BA6BF","#4499AF","#5F6BAF","#585C90","#09442A","#043423","#0F281B"],"k":"#F0FFF5","w":"#4499AF","g":5},{"id":"083","n":"\u82d4\u767d","s":"\u9752\u7eff\u6bb5","t":"\u6de1","r":["#E5FBEF","#BEF0DB","#A8E4C5","#C089AE","#B27799","#1B817F","#007073","#0D4429","#053422","#10281A"],"k":"#EFFFF6","w":"#B27799","g":6},{"id":"084","n":"\u6c34\u6d45\u8471","s":"\u9752\u7eff\u6bb5","t":"\u6de1","r":["#E6FBEF","#BFF0D9","#80BA9D","#64AB90","#579D7C","#9B5B6F","#894D5B","#7C3E52","#432031","#311A23"],"k":"#EFFFF7","w":"#579D7C","g":7},{"id":"085","n":"\u82e5\u83dc","s":"\u9752\u7eff\u6bb5","t":"\u6de1","r":["#E5FCF1","#BCF0DD","#A6E4C8","#C588A3","#B7768D","#A76884","#7C5F26","#67521F","#00372A","#072821"],"k":"#EEFFF9","w":"#B7768D","g":8},{"id":"086","n":"\u8584\u8377\u767d","s":"\u9752\u7eff\u6bb5","t":"\u6de1","r":["#E3FCF4","#89CACF","#69BAC6","#B57B9A","#A76986","#9D567F","#015541","#004437","#003729","#0A2B23"],"k":"#F0FEFA","w":"#A76986","g":5},{"id":"087","n":"\u82e5\u7af9","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#D9FFF6","#9BF2E6","#A78DD5","#9974C2","#106DAC","#075799","#002E2A","#001C1B","#000F0C","#000909"],"k":"#EDFFFC","w":"#106DAC","g":6},{"id":"088","n":"\u9752\u78c1","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#D9FFF5","#9CF2E5","#76E4CD","#14A18E","#088A80","#90334A","#792233","#6A052A","#240006","#160002"],"k":"#F2FFFD","w":"#088A80","g":7},{"id":"089","n":"\u82d4\u7eff","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#D6FEFD","#E29BA3","#D68085","#C96A79","#0A7A7F","#06656D","#00302E","#001E1E","#001110","#000A0A"],"k":"#ECFFFF","w":"#0A7A7F","g":4},{"id":"090","n":"\u6d45\u8471","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#E5FDE5","#B6F0C2","#39B2A3","#039D95","#844E99","#743980","#5E2D71","#002009","#001003","#000A00"],"k":"#F0FFF3","w":"#844E99","g":7},{"id":"091","n":"\u7fe1\u7fe0\u6de1","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#E1FEE9","#CC9FD0","#C184BD","#AF71B5","#077D67","#056759","#045646","#002408","#001204","#000B00"],"k":"#F1FFF4","w":"#077D67","g":8},{"id":"092","n":"\u6a44\u6984\u9752","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#DFFEEC","#A9F2D1","#57B188","#209F79","#0B8D61","#4F4C9C","#45328F","#0D0C49","#07012D","#02031C"],"k":"#F0FFF6","w":"#0B8D61","g":6},{"id":"093","n":"\u677e\u53f6","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#DFFEEB","#AAF2CF","#8EE3B3","#BF6C9B","#AE5580","#00656A","#005058","#002013","#000F08","#000A03"],"k":"#F4FFF9","w":"#AE5580","g":5},{"id":"094","n":"\u9752\u78a7\u6de1","s":"\u9752\u7eff\u6bb5","t":"\u4e2d","r":["#DAFFF3","#9EF2E1","#40B29C","#009E8E","#0F8B77","#86366B","#791554","#5A1B46","#00120A","#000A05"],"k":"#F3FFFB","w":"#0F8B77","g":6},{"id":"095","n":"\u9752\u78a7","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#DAFFF2","#82F6DD","#4DE8C1","#C25AA2","#BC288A","#992D7C","#7B0226","#5D0012","#000709","#000307"],"k":"#EEFFFA","w":"#BC288A","g":4},{"id":"096","n":"\u9306\u6d45\u8471","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#D8FFF5","#3DC2CE","#15AABD","#BE435C","#AA263D","#950937","#3F0024","#26000F","#140006","#0D0002"],"k":"#E8FFFB","w":"#AA263D","g":7},{"id":"097","n":"\u6df1\u7dd1\u9752","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#D7FFFA","#78F6F1","#E1716A","#CF5545","#006D7A","#005765","#360030","#1F0017","#0F000C","#0A0006"],"k":"#E8FFFC","w":"#006D7A","g":7},{"id":"098","n":"\u7af9\u9752","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#D7FFF9","#79F6EF","#2EE8D7","#1093BA","#037BA4","#97032F","#780018","#5C0019","#14000B","#0C0003"],"k":"#EDFFFD","w":"#037BA4","g":5},{"id":"099","n":"\u7fe0\u7389","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#E1FFDF","#CD95D9","#C377C6","#AF61BF","#06774C","#005F43","#3C0031","#240018","#12000D","#0B0005"],"k":"#F5FFF7","w":"#06774C","g":6},{"id":"100","n":"\u68ee\u9752","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#DFFFE6","#9BF5C1","#D8709F","#C95282","#852BB1","#6F2287","#581477","#001411","#000505","#000302"],"k":"#F0FFF4","w":"#852BB1","g":4},{"id":"101","n":"\u5b54\u96c0","s":"\u9752\u7eff\u6bb5","t":"\u6d53","r":["#DDFFEA","#E38FB7","#D96F9C","#C95793","#00746B","#025D5A","#014B45","#260023","#13000E","#090008"],"k":"#EBFFF4","w":"#00746B","g":8},{"id":"102","n":"\u7fe1\u7fe0\u7130","s":"\u9752\u7eff\u6bb5","t":"\u8273","r":["#DBFFEF","#67FBD3","#B672E3","#B23DDD","#9A1FD6","#8B064F","#6D0034","#000F0E","#000304","#000203"],"k":"#F3FFF9","w":"#9A1FD6","g":3},{"id":"103","n":"\u9752\u78a7\u70c8","s":"\u9752\u7eff\u6bb5","t":"\u8273","r":["#D9FFF2","#5DFBDC","#23EABF","#D84081","#C60C60","#2334BA","#24179B","#150700","#0D0000","#060000"],"k":"#E9FFF8","w":"#C60C60","g":4},{"id":"104","n":"\u7fe0\u7130","s":"\u9752\u7eff\u6bb5","t":"\u8273","r":["#DAFFF1","#60FBD9","#02AAAF","#0D909A","#077D81","#8A0354","#6C0039","#52002F","#00030D","#000012"],"k":"#E8FFF8","w":"#077D81","g":4},{"id":"105","n":"\u78a7\u7130","s":"\u9752\u7eff\u6bb5","t":"\u8273","r":["#D8FFF6","#51FBE9","#0AE9CD","#C748AD","#B6248E","#9E0086","#750029","#560015","#000408","#00000D"],"k":"#EDFFFA","w":"#B6248E","g":5},{"id":"106","n":"\u767d\u85cd","s":"\u84dd\u975b\u6bb5","t":"\u6de1","r":["#F0F5FF","#B9B8E1","#ACA3D7","#9F8F52","#8B803F","#81712F","#1E477D","#22385F","#192E4A","#192438"],"k":"#FAFCFF","w":"#8B803F","g":6},{"id":"107","n":"\u85cd\u767d","s":"\u84dd\u975b\u6bb5","t":"\u6de1","r":["#F0F6FF","#D6E3FE","#B8AC76","#A49D5F","#7F75AF","#7560A5","#2F4371","#28345D","#1D2A48","#1C2132"],"k":"#F6F9FF","w":"#7F75AF","g":5},{"id":"108","n":"\u971c\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u6de1","r":["#E9F8FF","#C3E9FF","#A0DEFA","#63A7C6","#5295BA","#9C6046","#8F4E28","#744835","#452312","#311C0F"],"k":"#F8FDFF","w":"#5295BA","g":6},{"id":"109","n":"\u6708\u767d\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u6de1","r":["#E8F8FF","#DEB29D","#D29E81","#C98D71","#5E84B6","#5472A5","#034E6B","#003E5B","#023246","#0F2736"],"k":"#F2FBFF","w":"#5E84B6","g":7},{"id":"110","n":"\u6de1\u7f25","s":"\u84dd\u975b\u6bb5","t":"\u6de1","r":["#EAF8FF","#C6E9FF","#AEA2D5","#A28FC6","#A86983","#98586E","#864D66","#033E5A","#002E4B","#0D2533"],"k":"#F9FCFF","w":"#A86983","g":8},{"id":"111","n":"\u6c34\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u6de1","r":["#ECF7FF","#D6B694","#C8A577","#BF9464","#6F7EB6","#626BAF","#50609E","#03415C","#0B3148","#0C2533"],"k":"#F4FAFF","w":"#6F7EB6","g":5},{"id":"112","n":"\u7a7a\u9752","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#EFF8FF","#C4E4FF","#5AA5D9","#428ECC","#147FBB","#755100","#5A4201","#251600","#130800","#110300"],"k":"#FCFEFF","w":"#147FBB","g":6},{"id":"113","n":"\u52ff\u5fd8\u8349","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#EFF6FF","#CEE0FF","#ADD0FE","#B97D2B","#9F6C07","#036944","#02543B","#001937","#000728","#00051B"],"k":"#F5FAFF","w":"#9F6C07","g":7},{"id":"114","n":"\u7f25","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#F1F7FF","#CDE1FF","#9194DD","#837CCD","#6B68CF","#775003","#5C4100","#4D3100","#000D24","#00051C"],"k":"#F5F9FF","w":"#6B68CF","g":4},{"id":"115","n":"\u77e2\u8f66\u83ca","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#F2F7FF","#D0DFFE","#B0CFFF","#CA6B6E","#B75552","#A4444A","#682D6C","#5A1357","#010530","#02041A"],"k":"#FDFDFF","w":"#B75552","g":7},{"id":"116","n":"\u9752\u78a7\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#F1F5FF","#91B3E8","#7B9BDF","#99760C","#7E6500","#6F5400","#342700","#201800","#140B00","#0D0500"],"k":"#F4F7FF","w":"#7E6500","g":8},{"id":"117","n":"\u5929\u9752","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#ECF9FF","#B9E7FF","#D48566","#C26F43","#0A6FA5","#005992","#002B37","#001A25","#000D15","#000811"],"k":"#FBFEFF","w":"#0A6FA5","g":6},{"id":"118","n":"\u94a2\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#EBF9FF","#B8E7FE","#7BDCFF","#628AD4","#5673C2","#9C290E","#792707","#631B0B","#000F1A","#000714"],"k":"#EFF9FF","w":"#5673C2","g":5},{"id":"119","n":"\u96fe\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u4e2d","r":["#EBF7FF","#DDA27E","#CE8B56","#C4753F","#2B6DB2","#24579E","#002E3E","#001C2C","#000F19","#000713"],"k":"#F5FBFF","w":"#2B6DB2","g":6},{"id":"120","n":"\u7fa4\u9752","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#EEF8FF","#C1E3FF","#88A535","#679200","#AF045A","#8F023F","#740039","#1A002F","#0A0016","#050011"],"k":"#F1F9FF","w":"#AF045A","g":4},{"id":"121","n":"\u7d3a\u78a7","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#E9F6FF","#DE9E5C","#CD8518","#BD7105","#5352BF","#4A39A6","#342C90","#2C0000","#160000","#0C0000"],"k":"#FDFEFF","w":"#5352BF","g":7},{"id":"122","n":"\u6df1\u7f25","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#EEF6FF","#CBDFFE","#7192EE","#6378DF","#4667D1","#774000","#593300","#1A0B00","#120000","#0A0000"],"k":"#FCFDFF","w":"#4667D1","g":7},{"id":"123","n":"\u975b\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#F0F7FF","#CAE0FE","#A5CFFE","#C26D0B","#A05F06","#604E00","#473D00","#140035","#07001A","#040015"],"k":"#F8FBFF","w":"#A05F06","g":5},{"id":"124","n":"\u591c\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#F3F6FF","#D3DCFE","#8C8AEB","#806EDA","#675DCD","#624D00","#493C01","#3A2C00","#170000","#090000"],"k":"#FEFEFF","w":"#675DCD","g":6},{"id":"125","n":"\u77f3\u6cb9\u84dd","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#EFF4FF","#D2DDFE","#B4CAFE","#92890D","#767600","#696205","#4E2186","#3E0D66","#190000","#080000"],"k":"#F7F9FF","w":"#767600","g":4},{"id":"126","n":"\u7d3a","s":"\u84dd\u975b\u6bb5","t":"\u6d53","r":["#E5F9FF","#7EAFF4","#6596ED","#BA5109","#964703","#833500","#42000F","#280002","#150001","#110000"],"k":"#F7FDFF","w":"#964703","g":8},{"id":"127","n":"\u7fa4\u9752\u70c8","s":"\u84dd\u975b\u6bb5","t":"\u8273","r":["#EAF7FF","#BCE3FE","#EB6739","#CF5301","#066490","#004D79","#2B0E00","#170200","#130000","#040000"],"k":"#F3FBFF","w":"#066490","g":3},{"id":"128","n":"\u975b\u7130","s":"\u84dd\u975b\u6bb5","t":"\u8273","r":["#EDF9FF","#BAE4FF","#84D5FE","#B2740C","#926304","#832B00","#612400","#4C1500","#01001E","#010014"],"k":"#F8FCFF","w":"#926304","g":4},{"id":"129","n":"\u94b4\u7130","s":"\u84dd\u975b\u6bb5","t":"\u8273","r":["#F1FAFF","#E4993A","#C88507","#B57102","#1445EB","#251DD2","#310F00","#1B0300","#140000","#030000"],"k":"#EEF7FF","w":"#1445EB","g":4},{"id":"130","n":"\u84dd\u7130","s":"\u84dd\u975b\u6bb5","t":"\u8273","r":["#EDF6FF","#C5E0FF","#EA6736","#CD5502","#7E5300","#604301","#4F3200","#030037","#020018","#020013"],"k":"#F1F8FF","w":"#7E5300","g":5},{"id":"131","n":"\u767d\u85e4","s":"\u7d2b\u5807\u6bb5","t":"\u6de1","r":["#FAF1FF","#A9C7A3","#8EB88F","#81AA79","#438BAC","#37799D","#006E93","#4C2E53","#3C223D","#2B1C2E"],"k":"#FDF8FF","w":"#438BAC","g":6},{"id":"132","n":"\u6de1\u85e4","s":"\u7d2b\u5807\u6bb5","t":"\u6de1","r":["#FAF2FF","#F4D7FD","#BD9ECC","#B18ABB","#A07CB1","#567F3C","#486D3F","#264219","#193216","#192713"],"k":"#FEF8FF","w":"#A07CB1","g":5},{"id":"133","n":"\u4e01\u9999\u767d","s":"\u7d2b\u5807\u6bb5","t":"\u6de1","r":["#FDF0FF","#F9D6F8","#EBC4F1","#8DA870","#769861","#985B78","#8E4764","#482C52","#38213D","#2A1C2F"],"k":"#FDF9FE","w":"#769861","g":6},{"id":"134","n":"\u7070\u5807","s":"\u7d2b\u5807\u6bb5","t":"\u6de1","r":["#FFEFFF","#FBD5F5","#D198B0","#C4859A","#B67691","#3D8160","#2A7056","#186444","#3E223A","#2F1A29"],"k":"#FEF8FD","w":"#B67691","g":7},{"id":"135","n":"\u85e4\u767d\u7d2b","s":"\u7d2b\u5807\u6bb5","t":"\u6de1","r":["#F5F4FF","#E5DDFF","#D3CDFF","#99A468","#839558","#7A8647","#745687","#654870","#2B274F","#221F34"],"k":"#FBFBFF","w":"#839558","g":8},{"id":"136","n":"\u8584\u7d2b","s":"\u7d2b\u5807\u6bb5","t":"\u6de1","r":["#F6F3FF","#C0B5DF","#B4A1D2","#85985F","#6F894F","#657B2E","#474D00","#353E0A","#2D3108","#222710"],"k":"#FCFBFF","w":"#6F894F","g":5},{"id":"137","n":"\u85e4\u7d2b","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#F5F3FF","#E3D8FF","#9CA451","#819233","#8A4C91","#7A3778","#330061","#22003C","#110028","#0B0118"],"k":"#FAF8FF","w":"#8A4C91","g":6},{"id":"138","n":"\u695d","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#F9F2FF","#F0D2FE","#E1BBFF","#C76A85","#B4546A","#824803","#653B01","#542C00","#150029","#0C0016"],"k":"#FDFBFF","w":"#B4546A","g":7},{"id":"139","n":"\u6854\u6897","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#F8F2FF","#99BE87","#77AD6D","#6A9C4E","#A93D78","#8C345D","#351058","#26013E","#15002A","#0C0017"],"k":"#FBF7FF","w":"#A93D78","g":4},{"id":"140","n":"\u83eb","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#F9F4FF","#ECD4FE","#AE8AD0","#A171BC","#2E7B37","#00672E","#035616","#002104","#001002","#000900"],"k":"#FCF7FF","w":"#2E7B37","g":7},{"id":"141","n":"\u85b0\u8863","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#FDF2FF","#8CC092","#65B07C","#549F60","#0A7697","#046183","#00516A","#2E013B","#1C0022","#0E0014"],"k":"#FEFAFF","w":"#0A7697","g":8},{"id":"142","n":"\u8461\u8404\u9f20","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#FCF1FF","#FBCDFE","#CD80A9","#BF678F","#AC5585","#27691E","#005619","#2F0033","#1B001A","#100012"],"k":"#FFFAFF","w":"#AC5585","g":6},{"id":"143","n":"\u7d2b\u9f20","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#FEF0FF","#FFCCFA","#F1B5F4","#AD8420","#927309","#9D281A","#792610","#30002E","#1C0017","#110010"],"k":"#FFFAFE","w":"#927309","g":5},{"id":"144","n":"\u6de1\u6854\u6897","s":"\u7d2b\u5807\u6bb5","t":"\u4e2d","r":["#F4F4FF","#E0D9FE","#9C90DA","#8E78C9","#7868BC","#5F5C00","#474A00","#3C3A00","#0E0E00","#060700"],"k":"#F9F8FF","w":"#7868BC","g":6},{"id":"145","n":"\u6df1\u85e4","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#F7F5FF","#E2D6FE","#CDC1FE","#8A8C0C","#6E7903","#636505","#591A7D","#47065D","#000700","#000200"],"k":"#FEFDFF","w":"#6E7903","g":4},{"id":"146","n":"\u5807\u9752","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#F7F3FF","#93BC70","#6DAB4F","#837608","#686300","#5B5100","#3A0034","#24001B","#12000F","#090005"],"k":"#F8F6FF","w":"#686300","g":7},{"id":"147","n":"\u8304\u7d2b","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#F8F4FF","#E7D4FF","#8CA431","#6C9102","#92328B","#7F166F","#390028","#210012","#100008","#0D0003"],"k":"#F9F6FF","w":"#92328B","g":7},{"id":"148","n":"\u7d2b\u6c34\u6676","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#F7F1FF","#ECD2FF","#DABAFE","#009A93","#0C8181","#724400","#563500","#442600","#160001","#0E0100"],"k":"#FBF5FF","w":"#0C8181","g":5},{"id":"149","n":"\u6851\u7d2b","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#FBF3FF","#95BB74","#6FAA53","#61981D","#A13078","#8D125C","#241F00","#121000","#0D0200","#030100"],"k":"#FDFAFF","w":"#A13078","g":6},{"id":"150","n":"\u6df1\u83eb","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#FCF3FF","#FCCAFF","#CA74BC","#BC57A2","#297300","#005E08","#164A00","#001500","#000600","#000400"],"k":"#FEF6FF","w":"#297300","g":4},{"id":"151","n":"\u8461\u8404","s":"\u7d2b\u5807\u6bb5","t":"\u6d53","r":["#FBF1FF","#9CBA69","#79A844","#70940D","#08774C","#025F43","#004E2F","#2A0010","#150002","#0D0001"],"k":"#FFFCFF","w":"#08774C","g":8},{"id":"152","n":"\u5807\u7130","s":"\u7d2b\u5807\u6bb5","t":"\u8273","r":["#FFF0FB","#FFCBEE","#E65F92","#E6036D","#C60069","#005C34","#00452C","#001000","#000500","#000000"],"k":"#FFF8FD","w":"#C60069","g":3},{"id":"153","n":"\u7d2b\u7130","s":"\u7d2b\u5807\u6bb5","t":"\u8273","r":["#F5F5FF","#DDD8FF","#C5C2FD","#6F9100","#527C02","#76038F","#5E0068","#140900","#020000","#010000"],"k":"#F7F6FF","w":"#527C02","g":4},{"id":"154","n":"\u54c1\u7d2b\u70c8","s":"\u7d2b\u5807\u6bb5","t":"\u8273","r":["#F2F3FF","#DCD8FF","#C86AD0","#BB48B6","#AE00BC","#4C5102","#343F00","#292D00","#180000","#050100"],"k":"#F6F4FF","w":"#AE00BC","g":4},{"id":"155","n":"\u83eb\u70c8","s":"\u7d2b\u5807\u6bb5","t":"\u8273","r":["#F6F1FF","#E7D3FE","#D3BCFE","#7D8D0E","#607902","#586400","#550087","#40005D","#010600","#010100"],"k":"#F7F4FF","w":"#607902","g":5},{"id":"156","n":"\u82e5\u8349\u767d","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6de1","r":["#F4F8E2","#BAC297","#A4B37F","#8989C1","#7D76B0","#6B6AA3","#443D7B","#3A315C","#2B2849","#242137"],"k":"#F8FDEC","w":"#7D76B0","g":6},{"id":"157","n":"\u5ae9\u82bd\u767d","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6de1","r":["#EFF9E6","#D3ECC5","#BA9FCE","#AE8BBD","#5B8D60","#38804E","#3B4C14","#2A3E10","#252F11","#1C2610"],"k":"#F6FEED","w":"#5B8D60","g":5},{"id":"158","n":"\u67f3\u767d","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6de1","r":["#F0F9E5","#D5ECC3","#C7DDA9","#71AD88","#5D9C7D","#8C5F8C","#824B7B","#6A466A","#29320C","#1D260F"],"k":"#F6FEEE","w":"#5D9C7D","g":6},{"id":"159","n":"\u82d4\u6c34","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6de1","r":["#F0F8EA","#CCB1D6","#C29CC7","#B28DBF","#AD7153","#976444","#315223","#194415","#1F3415","#192917"],"k":"#F4FEEF","w":"#AD7153","g":7},{"id":"160","n":"\u9752\u67f3\u767d","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6de1","r":["#ECFAE8","#CCEECB","#9CB584","#84A672","#8F70A6","#825F92","#705485","#462D54","#391E42","#291C30"],"k":"#F3FEF0","w":"#8F70A6","g":8},{"id":"161","n":"\u8c46\u767d","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6de1","r":["#EDFAE7","#C5B4DC","#B99FCF","#A890C7","#3D9380","#008475","#007563","#2D4317","#213318","#1B2611"],"k":"#F3FFF0","w":"#3D9380","g":5},{"id":"162","n":"\u82e5\u8349","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#FAF7D8","#E5E4A1","#88A95F","#6A9848","#618529","#604696","#562A86","#1B1A00","#0B0C00","#080600"],"k":"#FCFDE3","w":"#618529","g":6},{"id":"163","n":"\u5ae9\u82bd","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#F6F8D9","#DCE7A5","#D0D480","#A176C3","#925FAC","#3C6601","#225400","#1C1A00","#0C0C00","#090600"],"k":"#FBFDE4","w":"#925FAC","g":7},{"id":"164","n":"\u67f3\u7eff","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#F4F9DA","#D7E8A8","#98A554","#7C9338","#738106","#674392","#583077","#432664","#160029","#0C0114"],"k":"#F8FEE5","w":"#738106","g":4},{"id":"165","n":"\u82d4","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#F5F9D9","#DAE7A6","#CED481","#8E7DCE","#8065B9","#6B57AA","#175813","#004514","#0B0F00","#030800"],"k":"#F7FEE5","w":"#8065B9","g":7},{"id":"166","n":"\u6a44\u6984","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#EDFBDE","#6AC3BF","#30B1B3","#1E84BA","#006EAB","#015F8B","#232E00","#111E00","#091000","#020900"],"k":"#F4FFE8","w":"#006EAB","g":8},{"id":"167","n":"\u9752\u67f3","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#EFFADD","#CDEBAF","#B388CC","#A66FB7","#007B5B","#056450","#182D00","#061D00","#030F00","#010900"],"k":"#F4FFE9","w":"#007B5B","g":6},{"id":"168","n":"\u62b9\u8336","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#EBFCE0","#C4EDB6","#B2DC93","#7C973E","#60862A","#7E328A","#662A67","#502058","#1C0020","#0F000F"],"k":"#F4FFEA","w":"#60862A","g":5},{"id":"169","n":"\u8349\u7eff","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u4e2d","r":["#E9FCE1","#CC9FD1","#C184BE","#AE71B5","#A2530F","#844600","#193000","#052000","#031100","#010A00"],"k":"#F2FFEE","w":"#A2530F","g":6},{"id":"170","n":"\u6df1\u6a44\u6984","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#E6FEDA","#B7F0A8","#1FB27D","#019973","#8B28AB","#741F82","#5C1172","#001412","#000606","#000303"],"k":"#F2FFEF","w":"#8B28AB","g":4},{"id":"171","n":"\u82d4\u6df1","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#F6F9D0","#4ABDDF","#10A6D2","#0D94B4","#A22F77","#8D115A","#750051","#00170E","#000703","#000401"],"k":"#FCFEDC","w":"#A22F77","g":7},{"id":"172","n":"\u677e\u7eff","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#F8F9CF","#DDE68E","#50AF65","#049B55","#008838","#5F309D","#50197E","#000C2E","#000022","#000017"],"k":"#FBFEDC","w":"#008838","g":7},{"id":"173","n":"\u9ec4\u7eff\u6d53","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#F5FAD1","#D7E891","#CBD460","#8671DD","#7A56C6","#3C5B00","#244800","#1A002E","#0A0015","#05000F"],"k":"#F7FFE1","w":"#7A56C6","g":5},{"id":"174","n":"\u9752\u82d4","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#EFFBD3","#CBEC99","#BE78CB","#B15BB4","#9B48AA","#443BA7","#3D139B","#261A71","#000C01","#000801"],"k":"#F6FFE2","w":"#9B48AA","g":6},{"id":"175","n":"\u7af9\u7eff","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#F1FBD2","#CFEB96","#C2D766","#936CD7","#8B46CF","#6E42B0","#004F1C","#00391A","#000804","#000301"],"k":"#F6FFE3","w":"#8B46CF","g":4},{"id":"176","n":"\u68ee\u5f71","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u6d53","r":["#EEFCD4","#EA8EA1","#DF6F80","#0B7ABF","#0763A9","#005487","#002524","#001314","#000706","#000405"],"k":"#F7FFF0","w":"#0763A9","g":8},{"id":"177","n":"\u9ec4\u7eff\u70c8","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u8273","r":["#E6FFD2","#B3F294","#C26DD8","#BF35CD","#046E4A","#03573F","#120051","#08002C","#020019","#020014"],"k":"#F3FFEB","w":"#046E4A","g":3},{"id":"178","n":"\u67f3\u7130","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u8273","r":["#E4FFD7","#AAF49B","#95E268","#039D45","#068348","#730097","#5B026D","#420059","#0C000D","#070006"],"k":"#F6FFF4","w":"#068348","g":4},{"id":"179","n":"\u82d4\u7130","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u8273","r":["#E5FFE4","#BA96F5","#AF74E9","#985EE4","#A20090","#85006B","#002119","#000F0B","#000402","#000201"],"k":"#F5FFF4","w":"#A20090","g":4},{"id":"180","n":"\u8349\u7130","s":"\u9ec4\u7eff\u6742\u6bb5","t":"\u8273","r":["#F8FAC6","#DBE876","#61AB2E","#2D980D","#772CB9","#68049A","#4E0182","#050035","#02001A","#020015"],"k":"#FBFFD5","w":"#772CB9","g":5}];
+
+/* The same clamp the engine uses, so the right-hand strip is not an
+   approximation of the output \u2014 it is the output. */
+function hex2hsl(h){
+  const n=parseInt(h.slice(1),16), r=(n>>16&255)/255, g=(n>>8&255)/255, b=(n&255)/255;
+  const mx=Math.max(r,g,b), mn=Math.min(r,g,b), d=mx-mn, l=(mx+mn)/2;
+  let s=d?d/(1-Math.abs(2*l-1)):0, hu=0;
+  if(d){ if(mx===r) hu=((g-b)/d)%6; else if(mx===g) hu=(b-r)/d+2; else hu=(r-g)/d+4;
+    hu=(hu*60+360)%360; }
+  return [hu,s,l];
+}
+function muted(hex,maxL,maxS,minL){
+  let [h,s,l]=hex2hsl(hex);
+  l=Math.max(minL||0,Math.min(l,maxL)); s=Math.min(s,maxS);
+  const c=(1-Math.abs(2*l-1))*s, x=c*(1-Math.abs((h/60)%2-1)), m=l-c/2;
+  let r=0,g=0,b=0;
+  if(h<60){r=c;g=x} else if(h<120){r=x;g=c} else if(h<180){g=c;b=x}
+  else if(h<240){g=x;b=c} else if(h<300){r=x;b=c} else {r=c;b=x}
+  return '#'+[r,g,b].map(v=>Math.round((v+m)*255).toString(16).padStart(2,'0')).join('');
+}
+
+const TIER={"\u6d53":0,"\u8273":1,"\u4e2d":2,"\u6de1":3};
+const sched=DATA.slice().sort((a,b)=>(TIER[a.t]??9)-(TIER[b.t]??9)||a.id.localeCompare(b.id));
+
+const strip=(cols)=>'<div class="strip">'+cols.map(c=>
+  `<span class="sw" style="background:${c}"></span>`).join('')+'</div>';
+
+document.getElementById('atlas').innerHTML = sched.map(g=>{
+  const live=g.r.map(h=>muted(h,.60,.26));
+  return `<div class="grp"><div class="meta" title="${g.n}">${g.id} \u00b7 ${g.t} \u00b7 ${g.n}</div>`
+    + strip(g.r) + '<div class="arrow">&rarr;</div>' + strip(live) + '</div>';
+}).join('');
+
+/* Hue families, counted off the same 1,800 values. */
+const BANDS=[[0,30,'red'],[30,60,'orange'],[60,90,'yellow'],[90,150,'green'],
+  [150,210,'teal'],[210,260,'blue'],[260,300,'violet'],[300,360,'magenta']];
+const count={}, TOTAL=DATA.length*10; let neutral=0;
+for(const g of DATA) for(const hx of g.r){
+  const [h,s]=hex2hsl(hx);
+  if(s<.08){ neutral++; continue; }
+  const band=BANDS.find(b=>h>=b[0]&&h<b[1])||BANDS[0];
+  count[band[2]]=(count[band[2]]||0)+1;
+}
+const max=Math.max(...Object.values(count),neutral);
+const swatchFor=name=>{
+  const b=BANDS.find(x=>x[2]===name);
+  return b?muted('#'+hslHex((b[0]+b[1])/2),.60,.26):'#8a8078';
+};
+function hslHex(h){
+  const c=1,x=1-Math.abs((h/60)%2-1); let r=0,g=0,b=0;
+  if(h<60){r=c;g=x} else if(h<120){r=x;g=c} else if(h<180){g=c;b=x}
+  else if(h<240){g=x;b=c} else if(h<300){r=x;b=c} else {r=c;b=x}
+  return [r,g,b].map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('');
+}
+const rows=[...BANDS.map(b=>[b[2],count[b[2]]||0,swatchFor(b[2])]),
+            ['near-neutral',neutral,'#9c928a']];
+document.getElementById('hues').innerHTML = rows.map(([name,n,col])=>
+  `<div class="hue"><span class="k">${name}</span>
+     <span class="bar"><i style="width:${(n/max*100).toFixed(1)}%;background:${col}"></i></span>
+     <span class="n">${n} \u00b7 ${(n/TOTAL*100).toFixed(1)}%</span></div>`).join('');
+</script>

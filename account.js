@@ -25,10 +25,24 @@
 
   // ─── canonical tables (single source — never duplicate elsewhere) ───
 
+  /* `grant` is units. `freeReadings` is whole readings, and the free plan is
+     the only one that has any.
+
+     The welcome used to be 1,500 units and is now one complete reading — the
+     server made that change (PLAN_GRANT.free = 0, SIGNUP_FREE_READINGS = 1,
+     ledger row `grant:free-reading` at delta 0, "The welcome is a reading, not
+     a balance") and this table did not follow, so the site advertised 1,500
+     units to accounts the server had opened at zero.
+
+     The two are not interchangeable and the difference is the point: a unit
+     balance can run out mid-reading, and a first-time visitor cannot know
+     whether 1,500 is generous or barely anything. One whole reading has no
+     such ambiguity — it finishes, and it is the actual product rather than a
+     sample of it. Anything shown to a user comes from here. */
   var PLANS = {
-    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 1500,  methods: ["stria", "sortis"], trial: true },
-    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 28500, methods: ["stria", "sortis"] },
-    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 43500, methods: ["stria", "sortis"] }
+    free:    { id: "free",    name: "Free",    price: 0,  priceYear: 0,   grant: 0,     freeReadings: 1, methods: ["stria", "sortis"], trial: true },
+    pro:     { id: "pro",     name: "Pro",     price: 19, priceYear: 190, grant: 28500, freeReadings: 0, methods: ["stria", "sortis"] },
+    premium: { id: "premium", name: "Premium", price: 29, priceYear: 290, grant: 43500, freeReadings: 0, methods: ["stria", "sortis"] }
   };
 
   // cost/followCap are typical measured usage, shown so a reader can plan. They
@@ -320,7 +334,12 @@
   function planDescription(id) {
     if (id === "pro") return "$" + PLANS.pro.price + "/month · " + PLANS.pro.grant.toLocaleString("en-US") + " units each month";
     if (id === "premium") return "$" + PLANS.premium.price + "/month · " + PLANS.premium.grant.toLocaleString("en-US") + " units each month";
-    return "500 welcome units · subscriptions and one-time top-ups available";
+    // Free carries readings, not units, so describe what it actually holds.
+    // Read it off the table rather than restating it: this line has been wrong
+    // twice already, both times because it named a number the table owned.
+    var n = PLANS.free.freeReadings;
+    return (n === 1 ? "Your first reading is free" : n + " free readings")
+      + " · subscriptions and one-time top-ups available";
   }
 
   // ─── sidebar paint ──────────────────────────────────────────────────

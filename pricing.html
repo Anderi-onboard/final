@@ -6,44 +6,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plans &amp; units — BourneWise</title>
 <meta name="description" content="Monthly and annual BourneWise plans with included units, plus one-time unit top-ups and transparent usage metering.">
+<!-- Paint guard, runs before any stylesheet: --paper is not defined yet here,
+     so this one value must stay a literal. It has to equal --paper in
+     tokens/paper.css; if that changes, change this too. -->
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260815i">
-<script src="./ds-base.js?v=20260815i"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260821f">
+<script src="./ds-base.js?v=20260821f"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{min-height:100%}
   body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
   a,button{font:inherit;color:inherit;text-decoration:none}button{border:0;cursor:pointer}
   .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.86;}
-  .pagehead{position:relative;z-index:4;display:flex;align-items:center;gap:18px;max-width:1040px;margin:0 auto;padding:20px 30px}.brand{display:flex;align-items:center;gap:9px}.brand .mark{width:27px;height:22px}.nav{margin-left:auto;display:flex;align-items:center;gap:8px}.nav .ghost{font-size:13px;color:var(--dim);padding:9px 13px;border-radius:999px}.nav .cta{font-size:13px;background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:10px}
-  .shell{position:relative;z-index:1;max-width:1040px;width:100%;margin:0 auto;padding:0 30px 80px}
-  .hero{text-align:center;padding:34px 0 20px}.eyebrow{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--bw-palette-gem)}
-  h1,h2,h3{font-family:var(--serif);text-wrap:balance}.hero h1{margin:14px auto 0;max-width:15ch;font-size:clamp(40px,5.6vw,68px);font-weight:700;line-height:.98;letter-spacing:-.045em}.hero-copy{max-width:58ch;margin:16px auto 0;font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--dim)}.hero-copy small{display:block;margin-top:10px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
-  .ledgerstrip{display:flex;align-items:center;justify-content:center;gap:14px;width:max-content;max-width:100%;margin:4px auto 0;padding:8px 8px 8px 18px;border-radius:999px;font-size:13px}.ledgerstrip .identity{color:var(--dim)}.ledgerstrip b{font-family:var(--serif);font-size:17px;font-variant-numeric:tabular-nums}.ledgerstrip a{background:var(--ink);color:var(--paper);padding:7px 14px;border-radius:999px;font-size:12px}
-  .section-head{margin-top:54px;display:flex;align-items:end;justify-content:space-between;gap:24px}.section-head h2{font-size:clamp(28px,4vw,44px);line-height:1.05;letter-spacing:-.04em}.section-head p{max-width:48ch;color:var(--dim);font-size:13px}
-  .billing-toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;font-size:13px;color:var(--dim)}.billing-toggle span{transition:color .18s}.billing-toggle .mo-label.active{color:var(--ink);font-weight:600}.annual-check{display:flex;align-items:center;gap:8px;min-height:38px;padding:7px 12px;border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);border-radius:12px;background:color-mix(in srgb,var(--paper-raised) 72%,transparent);cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s var(--ease-out);user-select:none}.annual-check:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--bw-palette-gem) 58%,transparent)}.annual-check:has(input:checked){color:var(--ink);font-weight:600;border-color:color-mix(in srgb,var(--bw-palette-gem) 65%,transparent);background:color-mix(in srgb,var(--bw-palette-gem) 10%,var(--paper-raised))}.annual-check input{width:18px;height:18px;margin:0;accent-color:var(--bw-palette-gem);cursor:pointer}.annual-check input:focus-visible{outline:2px solid var(--bw-palette-gem);outline-offset:3px}.billing-toggle .save{padding:3px 8px;border-radius:999px;color:var(--bw-palette-gem);background:color-mix(in srgb,var(--bw-palette-gem) 10%,transparent);font-size:10px;font-weight:600;letter-spacing:.05em}
-  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;align-items:stretch}.plan{position:relative;display:flex;flex-direction:column;padding:25px 22px;border-radius:20px;transition:transform .2s var(--ease-out),border-color .2s}.plan:hover{transform:translateY(-2px)}.plan.featured{border-color:color-mix(in srgb,var(--bw-palette-gem) 48%,transparent);box-shadow:0 16px 42px color-mix(in srgb,var(--bw-palette-gem) 13%,transparent)}.plan-tag{position:absolute;right:18px;top:18px;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--bw-palette-gem) 12%,transparent);color:var(--bw-palette-gem);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}.plan h3{font-size:22px}.plan .desc{min-height:42px;margin-top:5px;color:var(--dim);font-size:12.5px}.plan-price{display:flex;align-items:baseline;gap:5px;margin-top:18px}.plan-price b{font-family:var(--serif);font-size:42px;line-height:1;letter-spacing:-.04em;color:var(--bw-palette-gem)}.plan-price span{font-size:11px;color:var(--dim)}.plan .grant{margin-top:10px;font-size:13px}.plan .grant b{font-family:var(--serif);color:var(--bw-palette-gem)}.plan ul{list-style:none;margin:20px 0 22px;display:grid;gap:8px;color:var(--dim);font-size:12.5px}.plan li::before{content:'✓';margin-right:8px;color:var(--bw-palette-gem);font-weight:700}.choose{margin-top:auto;width:100%;min-height:44px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:11px;background:color-mix(in srgb,var(--bw-palette-1) 32%,transparent);font-size:13px;font-weight:600;transition:background .18s,border-color .18s,color .18s}.choose:hover{border-color:var(--ink)}.featured .choose{background:var(--ink);border-color:var(--ink);color:var(--paper)}.choose.current{opacity:.62;cursor:default}
-  .rates{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.rate-card{padding:26px;border-radius:20px}.rate-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}.rate-card h3{font-size:22px}.typical{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--bw-palette-gem);text-transform:uppercase}.rate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.rate-number{padding-top:14px;border-top:1px solid color-mix(in srgb,var(--ink) 17%,transparent)}.rate-number b{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--bw-palette-gem)}.rate-number span{display:block;margin-top:7px;font-size:11px;color:var(--dim)}.rate-card p{margin-top:20px;font-size:13px;color:var(--dim)}
-  .estimator{margin-top:16px;padding:26px;border-radius:20px;display:grid;grid-template-columns:1.1fr 1fr auto;gap:18px;align-items:end}.field label{display:block;margin-bottom:7px;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--dim)}.field input,.field select{width:100%;min-height:45px;border:1px solid color-mix(in srgb,var(--ink) 15%,transparent);border-radius:11px;padding:0 13px;background:color-mix(in srgb,var(--bw-palette-1) 35%,transparent);font:inherit;color:var(--ink)}.estimate{min-width:160px;padding:8px 0;text-align:right}.estimate b{display:block;font-family:var(--serif);font-size:31px;color:var(--bw-palette-gem);font-variant-numeric:tabular-nums}.estimate span{font-size:11px;color:var(--dim)}
-  .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.pack{padding:22px 18px;border-radius:18px;text-align:left}.pack .u{font-family:var(--serif);font-size:25px;font-variant-numeric:tabular-nums}.pack .p{margin-top:12px;font-size:20px;color:var(--bw-palette-gem)}.pack .unit-price{margin-top:5px;font-size:11px;color:var(--dim)}.pack:hover{transform:translateY(-2px)}
-  .terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.term{padding:22px;border-radius:18px}.term b{font-family:var(--serif);font-size:17px}.term p{margin-top:7px;font-size:13px;color:var(--dim)}
+  .pagehead{position:relative;z-index:4;display:flex;align-items:center;gap:18px;max-width:1040px;margin:0 auto;padding:20px 30px}.brand{display:flex;align-items:center;gap:9px}.brand .mark{width:27px;height:22px}.nav{margin-left:auto;display:flex;align-items:center;gap:8px}.nav .ghost{font-size:13px;color:var(--dim);padding:9px 13px;border-radius:var(--ui-radius-pill)}.nav .cta{font-size:13px;background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:var(--ui-radius-small)}
+  .shell{position:relative;z-index:1;max-width:1040px;width:100%;margin:0 auto;padding:0 30px 48px}
+  .hero{text-align:center;padding:26px 0 16px}.eyebrow{font-family:var(--mono,var(--sans));font-size:10px;font-weight:400;letter-spacing:.13em;color:var(--dim)}
+  h1,h2,h3{font-family:var(--serif);text-wrap:balance}.hero h1{margin:14px auto 0;max-width:15ch;font-size:clamp(40px,5.6vw,68px);font-weight:700;line-height:.98;letter-spacing:-.045em}.hero-copy{max-width:58ch;margin:14px auto 0;font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--dim)}.hero-copy small{display:block;margin-top:10px;font-family:var(--sans);font-size:12px;color:var(--faint)}
+  .ledgerstrip{display:flex;align-items:center;justify-content:center;gap:14px;width:max-content;max-width:100%;margin:4px auto 0;padding:8px 8px 8px 18px;border-radius:var(--ui-radius-pill);font-size:13px}.ledgerstrip .identity{color:var(--dim)}.ledgerstrip b{font-family:var(--serif);font-size:18px;font-variant-numeric:tabular-nums}.ledgerstrip a{background:var(--ink);color:var(--paper);padding:7px 14px;border-radius:var(--ui-radius-pill);font-size:12px}
+  .section-head{margin-top:34px;display:flex;align-items:end;justify-content:space-between;gap:24px}.section-head h2{font-size:clamp(32px,5vw,60px);line-height:1;letter-spacing:-.042em}.section-head p{max-width:48ch;color:var(--dim);font-size:13px}
+  .billing-toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;font-size:13px;color:var(--dim)}.billing-toggle span{transition:color .18s}.billing-toggle .mo-label.active{color:var(--ink);font-weight:600}.annual-check{display:flex;align-items:center;gap:8px;min-height:38px;padding:7px 12px;border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);border-radius:var(--ui-radius-small);background:color-mix(in srgb,var(--paper-raised) 72%,transparent);cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s var(--ease-out);user-select:none}.annual-check:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--bw-palette-gem) 58%,transparent)}.annual-check:has(input:checked){color:var(--ink);font-weight:600;border-color:color-mix(in srgb,var(--bw-palette-gem) 65%,transparent);background:color-mix(in srgb,var(--bw-palette-gem) 10%,var(--paper-raised))}.annual-check input{width:18px;height:18px;margin:0;accent-color:var(--bw-palette-gem);cursor:pointer}.annual-check input:focus-visible{outline:2px solid var(--bw-palette-gem);outline-offset:3px}.billing-toggle .save{padding:3px 8px;border-radius:var(--ui-radius-pill);color:var(--bw-palette-gem);background:color-mix(in srgb,var(--bw-palette-gem) 10%,transparent);font-size:10px;font-weight:600;letter-spacing:.05em}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;align-items:stretch}.plan{position:relative;display:flex;flex-direction:column;padding:22px 20px;border-radius:var(--ui-radius);transition:transform .2s var(--ease-out),border-color .2s}.plan:hover{transform:translateY(-2px)}.plan.featured{border-color:color-mix(in srgb,var(--bw-palette-gem) 48%,transparent);box-shadow:0 16px 42px color-mix(in srgb,var(--bw-palette-gem) 13%,transparent)}.plan-tag{position:absolute;right:18px;top:18px;padding:4px 8px;border-radius:var(--ui-radius-pill);background:color-mix(in srgb,var(--bw-palette-gem) 12%,transparent);color:var(--bw-palette-gem);font-size:10px;font-weight:600;letter-spacing:.08em}.plan h3{font-size:22px}.plan .desc{margin-top:5px;color:var(--dim);font-size:13px}.plan-price{display:flex;align-items:baseline;gap:5px;margin-top:18px}.plan-price b{font-family:var(--serif);font-size:42px;line-height:1;letter-spacing:-.04em;color:var(--bw-palette-gem)}.plan-price span{font-size:11px;color:var(--dim)}.plan .grant{margin-top:10px;font-size:13px}.plan .grant b{font-family:var(--serif);color:var(--bw-palette-gem)}.plan ul{list-style:none;margin:16px 0 18px;display:grid;gap:8px;color:var(--dim);font-size:13px}.plan li::before{content:'✓';margin-right:8px;color:var(--bw-palette-gem);font-weight:700}.choose{margin-top:auto;width:100%;min-height:44px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:var(--ui-radius-small);background:color-mix(in srgb,var(--bw-palette-1) 32%,transparent);font-size:13px;font-weight:600;transition:background .18s,border-color .18s,color .18s}.choose:hover{border-color:var(--ink)}.featured .choose{background:var(--ink);border-color:var(--ink);color:var(--paper)}.choose.current{opacity:.62;cursor:default}
+  .rates{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.rate-card{padding:22px;border-radius:var(--ui-radius)}.rate-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}.rate-card h3{font-size:22px}.typical{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--bw-palette-gem)}.rate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.rate-number{padding-top:14px;border-top:1px solid color-mix(in srgb,var(--ink) 17%,transparent)}.rate-number b{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--bw-palette-gem)}.rate-number span{display:block;margin-top:7px;font-size:11px;color:var(--dim)}.rate-card p{margin-top:16px;font-size:13px;color:var(--dim)}
+  .estimator{margin-top:16px;padding:26px;border-radius:var(--ui-radius);display:grid;grid-template-columns:1.1fr 1fr auto;gap:18px;align-items:end}.field label{display:block;margin-bottom:7px;font-size:10px;font-weight:600;letter-spacing:.11em;color:var(--dim)}.field input,.field select{width:100%;min-height:45px;border:1px solid color-mix(in srgb,var(--ink) 15%,transparent);border-radius:var(--ui-radius-small);padding:0 13px;background:color-mix(in srgb,var(--bw-palette-1) 35%,transparent);font:inherit;color:var(--ink)}.estimate{min-width:160px;padding:8px 0;text-align:right}.estimate b{display:block;font-family:var(--serif);font-size:30px;color:var(--bw-palette-gem);font-variant-numeric:tabular-nums}.estimate span{font-size:11px;color:var(--dim)}
+  .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.pack{padding:22px 18px;border-radius:var(--ui-radius);text-align:left}.pack .u{font-family:var(--serif);font-size:25px;font-variant-numeric:tabular-nums}.pack .p{margin-top:12px;font-size:20px;color:var(--bw-palette-gem)}.pack .unit-price{margin-top:5px;font-size:11px;color:var(--dim)}.pack:hover{transform:translateY(-2px)}
+  .terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.term{padding:22px;border-radius:var(--ui-radius)}.term b{font-family:var(--serif);font-size:18px}.term p{margin-top:7px;font-size:13px;color:var(--dim)}
   .billing-mail-note{max-width:68ch;margin:24px auto 0;text-align:center;font-size:12px;color:var(--dim)}.billing-mail-note b{color:var(--ink)}
   .fineprint{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:24px;font-size:11px;color:var(--dim)}
-  .toast{position:fixed;left:50%;bottom:28px;z-index:30;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:var(--paper);padding:10px 17px;border-radius:999px;font-size:12px;transition:.25s}.toast.on{opacity:1;transform:translate(-50%,0)}
+  .toast{position:fixed;left:50%;bottom:28px;z-index:30;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:var(--paper);padding:10px 17px;border-radius:var(--ui-radius-pill);font-size:12px;transition:.25s}.toast.on{opacity:1;transform:translate(-50%,0)}
   @media(max-width:820px){.plans{grid-template-columns:1fr}.plan .desc{min-height:0}.rates{grid-template-columns:1fr}.packs{grid-template-columns:1fr 1fr}.terms-grid{grid-template-columns:1fr}.estimator{grid-template-columns:1fr 1fr}.estimate{grid-column:1/-1;text-align:left}.nav .ghost{display:none}}
-  @media(max-width:560px){.pagehead{padding:16px 18px}.shell{padding:0 18px 64px}.hero{padding-top:28px}.hero h1{font-size:clamp(36px,12vw,52px)}.packs,.estimator{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.estimate{grid-column:auto}.ledgerstrip{width:100%;border-radius:17px;justify-content:space-between;flex-wrap:wrap;padding:12px 13px}.ledgerstrip a{flex:1 1 100%;text-align:center}.billing-toggle{flex-wrap:wrap}.nav{gap:6px}.nav .cta{font-size:12px;padding:7px 10px}}
+  @media(max-width:560px){.pagehead{padding:16px 18px}.shell{padding:0 18px 64px}.hero{padding-top:28px}.hero h1{font-size:clamp(36px,12vw,52px)}.packs,.estimator{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.estimate{grid-column:auto}.ledgerstrip{width:100%;border-radius:var(--ui-radius);justify-content:space-between;flex-wrap:wrap;padding:12px 13px}.ledgerstrip a{flex:1 1 100%;text-align:center}.billing-toggle{flex-wrap:wrap}.nav{gap:6px}.nav .cta{font-size:12px;padding:7px 10px}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/poster-pages.css?v=20260815i">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260815i">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/poster-pages.css?v=20260821f">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821f">
 </head>
 <body data-page="pricing">
 <div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
@@ -56,7 +59,7 @@
 </header>
 
 <main class="shell" data-screen-label="Plans and units">
-  <section class="hero"><div><p class="eyebrow">Plans &amp; units</p><h1>Choose a balance that fits.</h1></div><p class="hero-copy">Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is charged from measured model usage.<small>Nothing is held when generation starts. The charge is the tokens the answer actually used — no reservation, no ceiling — and a reading already underway always finishes.</small></p></section>
+  <section class="hero"><div><p class="eyebrow">Plans &amp; units</p><h1 data-weave>Choose a balance that fits.</h1></div><p class="hero-copy">Subscribe for a recurring unit allowance or add units once. Both spend from the same balance, and every answer is charged from measured model usage.<small>Nothing is held when generation starts. The charge is the tokens the answer actually used — no reservation, no ceiling — and a reading already underway always finishes.</small></p></section>
 
   <section class="ledgerstrip"><span class="identity" id="whoLine">Not signed in</span><span>Available units <b id="ledgerCount">—</b></span><a id="ledgerCta" href="./login.html">Sign in</a></section>
 
@@ -68,8 +71,8 @@
   <section class="plans" aria-label="Subscription plans">
     <article class="plan" data-plan="free">
       <h3>Free</h3><p class="desc">Create an account and explore the service before paying.</p>
-      <div class="plan-price"><b>$0</b><span>once</span></div><p class="grant"><b>1,500</b> welcome units</p>
-      <ul><li>No recurring charge</li><li>Both reading methods</li><li>One shared unit balance</li></ul>
+      <div class="plan-price"><b>$0</b><span>once</span></div><p class="grant">Your <b>first reading</b> is free</p>
+      <ul><li>No recurring charge</li><li>A whole reading, not a sample</li><li>Both reading methods</li></ul>
       <a class="choose" href="./login.html" style="display:grid;place-items:center">Create account</a>
     </article>
     <article class="plan featured" data-plan="pro">
@@ -86,11 +89,11 @@
     </article>
   </section>
 
-  <div class="section-head"><div><p class="eyebrow">Rates</p><h2>Transparent token metering</h2></div><p>Input covers your question, conversation context, and computed figure. Output is the written answer. These rates already include the service margin.</p></div>
-  <figure class="editorial-spread editorial-spread--usage">
-    <div class="editorial-plate"><span class="editorial-eyelet" aria-hidden="true"></span><img src="./assets/editorial/measured-usage.webp" alt="A hand balances measured units against a receipt while unused units remain beside the scale." width="1440" height="960" loading="lazy" decoding="async"></div>
-    <figcaption><span class="editorial-index">USAGE NOTE</span><b>Reserve first. Settle what was used.</b><p>Unused units return to the same balance as soon as generation completes.</p></figcaption>
-  </figure>
+  <!-- The usage note used to live in a 260px glass box whose image was set to
+       display:none, so it was an empty panel — and it described reserving units
+       up front and refunding the remainder, which is not how this bills. There
+       is no reservation to explain, so the sentence goes with the rates. -->
+  <div class="section-head"><div><p class="eyebrow">Rates</p><h2 data-weave>Transparent token metering</h2></div><p>Input covers your question, conversation context, and computed figure. Output is the written answer. These rates already include the service margin. Nothing is held before an answer runs: the charge is computed once it finishes, from the tokens it actually reported.</p></div>
   <section class="rates" aria-label="Usage rates">
     <article class="rate-card" data-rate="stria"><div class="rate-top"><h3>Stria 64</h3><span class="typical" data-field="typical">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
     <article class="rate-card" data-rate="sortis"><div class="rate-top"><h3>Sortis 6</h3><span class="typical" data-field="typical">—</span></div><div class="rate-row"><div class="rate-number"><b data-field="in">—</b><span>per 1,000 input tokens</span></div><div class="rate-number"><b data-field="out">—</b><span>per 1,000 output tokens</span></div></div><p data-field="note">Charged on the tokens the reading actually uses — a shorter reading costs less, always.</p></article>
@@ -102,7 +105,7 @@
     <div class="estimate"><b id="estimateUnits">—</b><span id="estimateNote">estimated units for this reading</span></div>
   </section>
 
-  <div class="section-head"><div><p class="eyebrow">One-time units</p><h2>Top up without changing plans.</h2></div><p>One-time unit purchases do not renew automatically and stay in the same balance as plan units.</p></div>
+  <div class="section-head"><div><p class="eyebrow">One-time units</p><h2 data-weave>Top up without changing plans.</h2></div><p>One-time unit purchases do not renew automatically and stay in the same balance as plan units.</p></div>
   <section class="packs" aria-label="Unit packs">
     <button class="pack" data-grant="7500"><div class="u">7,500 units</div><div class="p">$5</div><div class="unit-price">1,500 units per $1 — same as a plan</div></button>
     <button class="pack" data-grant="15000"><div class="u">15,000 units</div><div class="p">$10</div><div class="unit-price">1,500 units per $1 — same as a plan</div></button>
@@ -122,8 +125,8 @@
 </main>
 
 <div class="toast" id="toast"></div>
-<script src="./assets/backgrounds/mountain-range.js?v=20260815i"></script>
-<script src="./account.js?v=20260815i"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260821f"></script>
+<script src="./account.js?v=20260821f"></script>
 <script>
 (function(){
   var A=window.BWAccount;
@@ -165,5 +168,6 @@
   paint();paintCycle();estimate();if(A.hydrate)A.hydrate(paint);
 })();
 </script>
+<script src="./assets/weave.js?v=20260821f" defer></script>
 </body>
 </html>

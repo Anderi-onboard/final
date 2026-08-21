@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260815i", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260815i";
+    ? new URL("../palettes/color-groups.json?v=20260821f", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260821f";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -33,10 +33,10 @@
     + '.mtn-bg .cloud-bob{animation:none}'
     /* Anthropic-art line language: warm near-black, rounded brush ends and a
        deliberately uneven cadence of weights rather than technical hairlines. */
-    + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(20,20,19,.28);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
-    + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:1.55;opacity:.72}'
-    + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:2.45;opacity:.5}'
-    + '.mtn-bg .contour use:nth-child(3n){stroke-width:1.9;opacity:.62}'
+    + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(20,20,19,.28);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
+    + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:3.2;opacity:.72}'
+    + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:4.9;opacity:.5}'
+    + '.mtn-bg .contour use:nth-child(3n){stroke-width:3.9;opacity:.62}'
     + '.mtn-bg .fill{animation:none;opacity:.9;transition:fill 1.5s cubic-bezier(.77,0,.175,1),opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .fill.l1{fill:var(--bw-palette-1,#D7D0C4)}.mtn-bg .fill.l2{fill:var(--bw-palette-2,#D7D0C4)}'
     + '.mtn-bg .fill.l3{fill:var(--bw-palette-3,#CEC4B5)}.mtn-bg .fill.l4{fill:var(--bw-palette-4,#CEC4B5)}'
@@ -60,6 +60,30 @@
     + '.mtn-bg .contour.l9 use{stroke:color-mix(in srgb,var(--bw-palette-9,#756F68) 50%,transparent)}'
     + '.mtn-bg .contour.l10 use{stroke:color-mix(in srgb,var(--bw-palette-10,#756F68) 50%,transparent)}'
     + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent)}'
+    /* MOIRÉ — the only page texture. It is not a tile laid over the site: each
+       band is the ridge's own contour path re-used at a fractional rotation,
+       clipped to that ridge's silhouette. So it drifts with the layer it
+       belongs to, inherits that layer's palette colour, and stops at the
+       skyline instead of covering the page. Only the four middle planes carry
+       it — near and far stay clean, which is what keeps it from reading as a
+       watermark. No per-frame work: these are <use> nodes riding the existing
+       flow transform. */
+    /* g.moire, not .moire: the per-plane `.mtn-bg .l4{opacity:.83}` rules below
+       carry the same specificity and come later in this sheet, so a bare class
+       selector loses the tie and the bands inherit the plane's opacity instead
+       of their own. The element name buys the one point that settles it. */
+    + '.mtn-bg .moire use{fill:none;stroke-width:1.7;stroke-linecap:round;vector-effect:non-scaling-stroke}'
+    + '.mtn-bg g.moire{opacity:.42;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg .moire.l4 use{stroke:color-mix(in srgb,var(--bw-palette-4,#756F68) 30%,transparent)}'
+    + '.mtn-bg .moire.l5 use{stroke:color-mix(in srgb,var(--bw-palette-5,#756F68) 30%,transparent)}'
+    + '.mtn-bg .moire.l6 use{stroke:color-mix(in srgb,var(--bw-palette-6,#756F68) 32%,transparent)}'
+    + '.mtn-bg .moire.l7 use{stroke:color-mix(in srgb,var(--bw-palette-7,#756F68) 32%,transparent)}'
+    /* `.line-art [clip-path]>use` above was written for the cloud group and
+       would also halve every moiré band — line-art is the resting state, so
+       that would silently decide the shipping strength. Opt out and set it. */
+    + '.mtn-bg.line-art .moire use{opacity:1}'
+    + '.mtn-bg.line-art g.moire{opacity:.34}'
+    + '@media (prefers-reduced-motion:reduce){.mtn-bg g.moire{opacity:.3}}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
        line-art so the colour recedes and leaves the line-drawing: background
@@ -118,6 +142,27 @@
     { n: 3, step: 9 }, { n: 2, step: 7 }
   ];
   var LINE_WOBBLE = [0, 2.8, -1.6, 1.2, -2.4, 2.1, -.8];
+  /* A second wobble, on x. The contour copies were offset only vertically, so
+     every line under a crest was exactly parallel to it — which is the one
+     thing a hand never does. Shifting each copy sideways by a few units, on a
+     cycle of a different length from the y wobble (5 against 7, so the pair
+     does not repeat for 35 lines), makes the spacing between contours open and
+     close along the ridge the way drawn hatching does.
+     Deterministic on purpose, exactly as the casting figure's brush is: random
+     per render would reshuffle on every navigation and read as a fault. */
+  var LINE_DRIFT = [0, -3.4, 2.2, -1.1, 4.0];
+
+  /* Which planes carry the moiré, and how. `n` bands at `gap` units apart,
+     each turned by a fraction of a degree — the tilt is what beats against
+     the ridge's own waveform. Keep the tilt under ~1°: past that the bands
+     separate and you can count them, which is the moment it stops being
+     texture and starts being stripes. */
+  var MOIRE = {
+    4: { n: 20, gap: 3.4, tilt: .30 },
+    5: { n: 24, gap: 3.0, tilt: .26 },
+    6: { n: 24, gap: 2.8, tilt: .34 },
+    7: { n: 18, gap: 3.2, tilt: .22 }
+  };
   var CLOUDS = [
     { t: "translate(180,12) scale(1.6)", o: .55, d: "0s" },
     { t: "translate(470,50) scale(1.0)", o: .78, d: "-2.8s" },
@@ -134,6 +179,7 @@
     for (var i = 1; i <= 10; i++) {
       defs += '<path id="mw' + i + '" d="' + shape(i) + '"/>';
       defs += '<path id="mw' + i + 'c" d="' + W[i] + '"/>';
+      if (MOIRE[i]) defs += '<clipPath id="mwclip' + i + '"><use href="#mw' + i + '"/></clipPath>';
     }
     defs += '<path id="mxy-cloud" d="' + CLOUD + '"/><path id="mxy-cloud-c" d="' + CLOUDC + '"/>';
     defs += '<clipPath id="mcloud-clip"><use href="#mxy-cloud"/></clipPath></defs>';
@@ -143,10 +189,23 @@
       var i = idx + 1, contour = '';
       for (var k = 1; k <= L.n; k++) {
         var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
-        contour += '<use href="#mw' + i + 'c" y="' + offset.toFixed(2) + '"/>';
+        var drift = LINE_DRIFT[(k * 2 + i) % LINE_DRIFT.length] * (1 + i * .18);
+        contour += '<use href="#mw' + i + 'c" x="' + drift.toFixed(2)
+          + '" y="' + offset.toFixed(2) + '"/>';
+      }
+      var moire = '';
+      if (MOIRE[i]) {
+        var M = MOIRE[i];
+        for (var m = 0; m < M.n; m++) {
+          var t = m - (M.n - 1) / 2;
+          moire += '<use href="#mw' + i + 'c" transform="rotate('
+            + (t * M.tilt).toFixed(3) + ' 500 300) translate(0 '
+            + (t * M.gap).toFixed(2) + ')"/>';
+        }
+        moire = '<g class="moire l' + i + '" clip-path="url(#mwclip' + i + ')">' + moire + '</g>';
       }
       ridges += '<g class="flow-' + i + '"><use href="#mw' + i + '" class="fill l' + i + '"/>'
-        + '<g class="contour l' + i + '">' + contour + '</g></g>';
+        + moire + '<g class="contour l' + i + '">' + contour + '</g></g>';
       if (i === 6) ridges += '<path class="mtn-water" d="' + WATER + '"/>';
     });
 
@@ -237,14 +296,47 @@
 
   /* The curated file is now authoritative: every retained group participates
      once. Removing a group in the manager removes it from the published file,
-     so the runtime no longer carries a second, hidden exclusion algorithm. */
-  function buildPaletteSchedule(groups) {
-    var tierOrder = { "浓": 0, "艳": 1, "中": 2, "淡": 3 };
-    return groups.slice().sort(function (a, b) {
-      var tierA = tierOrder[a.tier] == null ? 9 : tierOrder[a.tier];
-      var tierB = tierOrder[b.tier] == null ? 9 : tierOrder[b.tier];
-      return tierA - tierB || a.id.localeCompare(b.id);
-    });
+     so the runtime no longer carries a second, hidden exclusion algorithm.
+
+     ── Order is shuffled per visitor, not sorted ──────────────────────────
+     Any fixed order — by tier, by segment — means the site spends a long
+     unbroken stretch inside one part of the catalogue and then jumps. Sorting
+     by segment put all 34 自定义 groups first: eight and a half minutes of one
+     segment, and since a new session's clock starts at now, EVERY first-time
+     visitor opened on the same group and walked the same 28-minute path. The
+     catalogue's range was there and nobody saw it. A shuffle is what makes 114
+     groups read as 114.
+
+     ⚠️ Seeded, and the seed lives in sessionStorage — NOT Math.random() at
+     each call. This is the same rule the brush and LINE_DRIFT follow: reshuffle
+     on every navigation and the background reorders itself mid-visit, which
+     reads as a rendering fault, not as design. One draw per session, then the
+     same permutation on every page of that session; the next visitor gets a
+     different one. Same reason the phase clock is stored beside it.
+
+     mulberry32: a 32-bit PRNG small enough to inline and stable across
+     engines, so the sequence depends on the seed and nothing else. */
+  function mulberry32(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a = (a + 0x6D2B79F5) >>> 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function buildPaletteSchedule(groups, seed) {
+    /* Sort by id first so the input order is fixed regardless of how the file
+       is serialised — the shuffle must depend on the seed alone, otherwise the
+       "same seed, same order" guarantee quietly depends on file layout. */
+    var out = groups.slice().sort(function (a, b) { return a.id.localeCompare(b.id); });
+    var rand = mulberry32(seed);
+    for (var i = out.length - 1; i > 0; i--) {          /* Fisher–Yates */
+      var j = Math.floor(rand() * (i + 1));
+      var tmp = out[i]; out[i] = out[j]; out[j] = tmp;
+    }
+    return out;
   }
 
   function queuePaletteLayer(delay, fn, immediate) {
@@ -309,7 +401,7 @@
     }));
   }
 
-  function startPaletteSystem(clockStart, reduce) {
+  function startPaletteSystem(clockStart, reduce, seed) {
     fetch(paletteUrl, { cache: "force-cache" })
       .then(function (response) {
         if (!response.ok) throw new Error("Palette data " + response.status);
@@ -319,7 +411,7 @@
         if (!Array.isArray(groups) || !groups.length || !groups.every(validPaletteGroup)) {
           throw new Error("Palette data failed validation");
         }
-        var schedule = buildPaletteSchedule(groups);
+        var schedule = buildPaletteSchedule(groups, seed);
         paletteScheduleSlots = schedule.length;
         var firstApply = true;
         function update() {
@@ -352,8 +444,10 @@
        discovered asynchronously and may grow beyond the original catalogue. */
     var cycleMs = 86400000;
     var clockKey = 'bw-palette-clock-v4';
+    var seedKey = 'bw-palette-seed-v1';
     var seenKey = 'bw-mtn-seen';
     var clockStart;
+    var paletteSeed = 0;
     var seen = false;
     try {
       clockStart = +(sessionStorage.getItem(clockKey) || 0);
@@ -361,10 +455,24 @@
         clockStart = Date.now();
         sessionStorage.setItem(clockKey, String(clockStart));
       }
+      /* Drawn once per session and stored beside the clock, for the reason
+         given at buildPaletteSchedule: the order has to survive navigation.
+         Both keys are read before either is written, so a page that loads
+         mid-session inherits the phase AND the permutation. */
+      paletteSeed = +(sessionStorage.getItem(seedKey) || 0);
+      if (!paletteSeed) {
+        paletteSeed = (Math.random() * 4294967296) >>> 0 || 1;
+        sessionStorage.setItem(seedKey, String(paletteSeed));
+      }
       seen = sessionStorage.getItem(seenKey) === '1';
       sessionStorage.setItem(seenKey, '1');
     } catch (e) {
+      /* Private mode / storage blocked: still shuffle, just per page load.
+         A visitor who cannot persist anything has no cross-page continuity to
+         protect, so a fresh draw is the honest fallback rather than a constant
+         that would hand every such visitor the same order. */
       clockStart = Date.now();
+      paletteSeed = (Math.random() * 4294967296) >>> 0 || 1;
     }
     var sharedPhase = -(((Date.now() - clockStart) % cycleMs) / 1000);
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
@@ -399,7 +507,7 @@
         setTimeout(function () { el.classList.remove('mtn-enter'); }, 1200);
       }
     });
-    startPaletteSystem(clockStart, reduce);
+    startPaletteSystem(clockStart, reduce, paletteSeed);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

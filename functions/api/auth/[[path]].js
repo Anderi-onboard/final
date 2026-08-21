@@ -11,7 +11,8 @@
 // _lib/password.js). OAuth providers are config-driven: a provider activates
 // only when its {PROVIDER}_CLIENT_ID / {PROVIDER}_CLIENT_SECRET env vars are set
 // (except Apple, which additionally needs a signed client-secret JWT — see note).
-// New accounts get the free welcome grant (db.PLAN_GRANT.free = 500 units).
+// New accounts open at zero units and one free reading (db.PLAN_GRANT.free = 0,
+// db.SIGNUP_FREE_READINGS = 1). The welcome is a reading, not a balance.
 
 import {
   signSession, sessionCookie, clearCookie, sessionSecretConfigured, readCookie
@@ -64,8 +65,10 @@ function clientIp(request) {
 
 // Credential endpoints had no rate limit at all: password guessing was unlimited,
 // and registration was unlimited too — which mattered most, because every new
-// account carries a 1,500-unit welcome grant, so a script could mint free model
-// budget indefinitely.
+// account carries a free reading, so a script could mint free model budget
+// indefinitely. (It was a 1,500-unit grant when this was written; the shape of
+// the abuse is the same either way — one whole reading is worth more than 1,500
+// units, so the limit matters more now, not less.)
 async function limited(db, request, bucket, max) {
   if (!db) return false;
   const key = 'ip:' + clientIp(request) + ':' + bucket + ':' + Math.floor(Date.now() / 3600000);

@@ -311,11 +311,22 @@
       var streamed = typeof opts.onDelta === "function" && canStream();
       // 12000-token ceiling for the reading (was 8192): a full Sortis reading
       // across all layers is 4000-6000 CJK chars and was truncating mid-sentence.
-      var mainCall = streamed
-        ? makeStreamComplete({ product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature })({
-            question: question, messages: messages, max_tokens: 12000
-          }, opts.onDelta)
-        : mainComplete({ question: question, messages: messages, max_tokens: 12000 });
+      /* A reading is only ever requested as a stream. Generating one takes
+         60-90 seconds and the non-streaming path waits for all of it before a
+         byte moves, so the connection dies before the answer exists — and the
+         server settles anyway, which is how a reader ends up paying for prose
+         that never arrived. The proxy now refuses a non-streamed reading, so
+         there is no point making the request: say so here instead. */
+      if (!streamed) {
+        return Promise.reject(new Error(
+          "This browser can't receive a streamed reading, and a reading is too long to arrive any other way."
+        ));
+      }
+      var mainCall = makeStreamComplete({
+        product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature
+      // No max_tokens: a reading's output budget is the server's to set, and a
+      // magic number here was driving the model from the least trustworthy place.
+      })({ question: question, messages: messages }, opts.onDelta);
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
@@ -373,34 +384,29 @@
             (factCheck.ok ? "" : "FACTUAL MISMATCH vs the real board — " + factCheck.issues.join("; ") + "\n") +
             (readCheck.ok ? "" : "READABILITY — " + readCheck.issues.join("; "));
 
-          // Once text has streamed to the user it can't be un-shown — a
-          // silent rewrite would contradict what they already read. Surface
-          // the QC/fact-check miss as telemetry instead of retrying.
-          if (streamed) {
-            return { source: "router", route: result.route, reading: reading, verdict: "complete_streamed_unverified", qcResult: qc, factCheck: factCheck, readCheck: readCheck };
-          }
+          /* Text that has streamed to the reader cannot be un-shown, and a
+             silent rewrite would contradict what they just watched arrive. So
+             a QC or fact-check miss is surfaced as telemetry, never acted on.
 
-          // QC or fact-check failed — retry once with the feedback
-          if (CONFIG.maxRetries < 1) {
-            return { source: "router", route: result.route, reading: reading, verdict: "qc_failed", qcResult: qc, factCheck: factCheck, readCheck: readCheck };
-          }
+             There used to be a retry branch below this for the non-streamed
+             case. Streaming is now the only way a reading is generated — the
+             non-streaming path could not outlast generation and the proxy
+             refuses it — so that branch was unreachable, and it still carried
+             the old contract (it posted `system`, which the proxy now rejects
+             outright). Removed rather than left to rot: dead code that would
+             fail if it ever ran is worse than no code.
 
-          var retryContent = userContent + "\n\n[QUALITY FEEDBACK FROM PREVIOUS ATTEMPT - FIX THESE ISSUES]\n" + detail + "\n\n[Generate the complete reading again, fixing the above issues.]";
-          var retryMessages = history.concat([{ role: "user", content: retryContent }]);
-
-          return mainComplete({
-            system: result.system,
-            messages: retryMessages,
-            max_tokens: 8192
-          }).then(function (retryReading) {
-            return {
-              source: "router",
-              route: result.route,
-              reading: retryReading,
-              verdict: "complete_after_retry",
-              qcResult: qc
-            };
-          });
+             If a checked-before-shown reading is ever wanted, the place to do
+             it is the server, before the first byte goes out. */
+          return {
+            source: "router",
+            route: result.route,
+            reading: reading,
+            verdict: "complete_unverified",
+            qcResult: qc,
+            factCheck: factCheck,
+            readCheck: readCheck
+          };
         });
       });
     });

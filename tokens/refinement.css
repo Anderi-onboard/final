@@ -10,19 +10,114 @@
   --bw-palette-9: var(--ink);
   --bw-palette-on-9: var(--paper);
   --bw-palette-gem: var(--terracotta);
-  --ui-glass: color-mix(in srgb, var(--bw-palette-1) 72%, transparent);
-  --ui-glass-strong: color-mix(in srgb, var(--bw-palette-1) 88%, transparent);
-  --ui-glass-soft: color-mix(in srgb, var(--bw-palette-1) 54%, transparent);
-  --ui-glass-warm: color-mix(in srgb, var(--bw-palette-2) 72%, transparent);
-  --ui-line: color-mix(in srgb, var(--paper-raised) 72%, var(--bw-palette-6) 18%);
-  --ui-line-strong: color-mix(in srgb, var(--paper-dim) 54%, var(--bw-palette-6) 36%);
+  /* GLASS — one material, defined once.
+     The tint is neutral white on purpose. It used to be a colour-mix of
+     --bw-palette-1, i.e. the palette's own cream, which is why panels read
+     yellow: measured across all 180 groups the composited surface sat at
+     |R−B| 68 mean / 89 max. Glass should take its warmth from the backdrop
+     it is over, never add its own — a panel that carries cream in the tint
+     is warm even where the backdrop behind it is cold, and no opacity
+     setting can fix that because the cream is in the panel.
+     The backdrop still comes through: saturate() lifts what is behind rather
+     than staining the panel, which is the part that is supposed to shift as
+     the palette rotates. */
+  --ui-glass-tint: 255 255 255;
+  /* Thinner than before. At .50/.66 the panels were frosted plastic: you could
+     tell something was behind them but not what, and a material you cannot see
+     through is not read as glass. The lost opacity is bought back by
+     brightness() in the filter, which lifts the backdrop instead of covering
+     it — so the panel gets lighter under dark text while staying transparent. */
+  /* FROSTED, not clear. Clear glass refracts — you read shapes through it.
+     Frosted glass scatters — you read light and colour through it but not
+     shape. That difference is carried by three things together, and any one
+     alone just looks like blurrier clear glass: a much wider blur so no edge
+     behind survives, saturation pulled back toward neutral because scattering
+     desaturates, and a fine grain in the surface itself. */
+  --ui-glass: rgb(var(--ui-glass-tint) / .60);
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .76);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .44);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .68);
+  /* Specular top edge + hairline bottom: the two cues that separate "glass"
+     from "a translucent rectangle". Applied as an inset shadow so it rides
+     the radius without a pseudo-element. */
+  /* A rim on all four sides, not just the top, plus a soft glow falling in
+     from the top edge. Real glass is brightest where light bends at the
+     boundary, and that rim is most of what identifies the material at a
+     glance — a single top highlight reads as a bevel instead. */
+  /* Frosted glass has a softer, wider rim than clear glass — the scattering
+     spreads the edge light instead of concentrating it in a specular line. */
+  /* A soft edge, not a drawn one. Frosted glass has no specular line at its
+     rim — the scattering that hides shapes behind it also spreads the edge
+     light, so a crisp 1px highlight on all four sides reads as a cut acrylic
+     sheet rather than frost. The hard rim is replaced by a diffuse inward
+     glow: bright at the top where light falls, fading over ~14px, with only
+     a trace of a rim left to keep the panel from dissolving entirely. */
+  --ui-glass-edge:
+    inset 0 0 0 1px rgb(255 255 255 / .26),
+    inset 0 10px 16px -10px rgb(255 255 255 / .50),
+    inset 0 -12px 18px -14px rgb(255 255 255 / .16),
+    inset 0 0 22px 2px rgb(255 255 255 / .14);
+  /* Softened with the rim. At 12% this drew a visible dark outline around
+     every frosted panel — the one hard edge on a material whose whole point
+     is that it has none. */
+  /* A 1px border at 5% ink is a line you cannot see — the panel edge was being
+     carried entirely by the glass highlight, and on the lighter palette groups
+     there was nothing there at all. Thin is the rule; invisible is a bug. */
+  --ui-line: color-mix(in srgb, var(--ink) 11%, transparent);
+  --ui-line-strong: color-mix(in srgb, var(--ink) 28%, transparent);
   --ui-ink-soft: color-mix(in srgb, var(--ink) 72%, transparent);
-  --ui-shadow: 0 10px 30px rgba(42,32,22,.07), 0 1px 2px rgba(42,32,22,.05);
-  --ui-shadow-raised: 0 16px 42px rgba(42,32,22,.09), 0 2px 5px rgba(42,32,22,.055);
-  --ui-glass-filter: blur(11px) saturate(114%);
-  --ui-glass-filter-strong: blur(14px) saturate(118%);
-  --ui-radius: 20px 24px 18px 22px / 23px 18px 25px 19px;
-  --ui-radius-small: 12px 15px 11px 14px / 14px 11px 15px 12px;
+  /* ELEVATION — three steps, each a contact shadow plus an ambient one.
+     A single wide blur is what reads as coarse: with nothing tight underneath
+     it, the card has no seat and the blur's edge becomes the only thing the
+     eye can find, so it looks like a smudge rather than a lift. The short
+     first layer does the seating; the long layers stay under .05 alpha and
+     never gain a spread, because spread is what turns a shadow into a band. */
+  --ui-shadow:
+    0 1px 2px rgba(42,32,22,.05),
+    0 6px 14px rgba(42,32,22,.045),
+    0 14px 32px rgba(42,32,22,.035);
+  --ui-shadow-raised:
+    0 1px 2px rgba(42,32,22,.055),
+    0 8px 20px rgba(42,32,22,.05),
+    0 22px 48px rgba(42,32,22,.045);
+  --ui-shadow-overlay:
+    0 1px 2px rgba(42,32,22,.06),
+    0 12px 28px rgba(42,32,22,.06),
+    0 36px 76px rgba(42,32,22,.055);
+  /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
+     rather than Apple's 180%: at 180% the warm palettes bloom and the cast
+     comes straight back through the backdrop instead of through the tint. */
+  --ui-glass-filter: blur(44px) saturate(112%) brightness(1.05);
+  --ui-glass-filter-strong: blur(56px) saturate(114%) brightness(1.06);
+  /* The grain is the part that actually reads as "frosted". feTurbulence at a
+     high base frequency is per-pixel noise, so it stays fine at any DPI and
+     costs one inlined SVG rather than a texture file. */
+  --ui-frost-grain: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'>\
+<filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/>\
+<feColorMatrix type='saturate' values='0'/></filter>\
+<rect width='140' height='140' filter='url(%23f)' opacity='0.42'/></svg>");
+
+  /* SOLID — the other material, and deliberately not a weaker glass.
+     Actions and badges are opaque, flat, and seated by a tight shadow. They
+     were getting no shadow at all, which is why their edges looked frayed: a
+     solid block laid straight onto a drifting blurred landscape has nothing
+     between its edge and the contour lines running underneath, so the boundary
+     shimmers as the background moves. The shadow is short and slightly darker
+     than the glass ladder's — it is a contact shadow, not elevation. */
+  --ui-solid-shadow:
+    0 1px 1px rgba(42,32,22,.16),
+    0 2px 6px rgba(42,32,22,.11);
+  /* One radius, two sizes. These were eight-value wobble radii — a
+     hand-drawn gesture that reads as a wavering edge under a blur and is the
+     source of most of the 26 distinct radii on the site. Glass has a
+     machined edge; that is most of what makes it read as glass. */
+  --ui-radius: 14px;
+  --ui-radius-small: 10px;
+  --ui-radius-chip: 6px;   /* badges, tags, inline code — a third size is a
+                              system; twenty-six loose numbers is not. */
+  --ui-radius-pill: 999px;
+  --ui-hairline: 1px;
 }
 
 /* Registered colours make custom properties genuinely interpolable. The
@@ -102,18 +197,31 @@ html[data-skin="paper"] body .mtn-sky {
   transition: background-color 1.5s var(--ease-in-out);
 }
 html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
-html[data-skin="paper"] body .mtn-bg [clip-path] > use { opacity: .13 !important; }
+/* Written for the cloud group, which is the other clipped node in the range.
+   Excluding the moire group matters: its bands are also clipped <use>, and at
+   .13 !important the texture is decided here by a rule that was never about it. */
+html[data-skin="paper"] body .mtn-bg [clip-path]:not(.moire) > use { opacity: .13 !important; }
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
   stroke: color-mix(in srgb, #141413 30%, transparent) !important;
-  stroke-width: 2.05 !important;
+  /* No stroke-width here. This rule covers BOTH contour groups, so setting a
+     width flattened all three ridge variants to one number — and with
+     !important it beat the engine's own sheet outright. The range's
+     contours were a uniform 2.05px no matter what mountain-range.js said,
+     which is why two rounds of thickening it changed nothing. Colour and
+     joins belong here; the weights belong with the geometry. */
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
-html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { stroke-width: 1.6 !important; opacity: .72; }
-html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { stroke-width: 2.45 !important; opacity: .5; }
-html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { stroke-width: 1.9 !important; opacity: .62; }
+/* Contour WIDTH is not set here any more. It was — at 1.6/2.45/1.9 with
+   !important — and because that outspecifies the engine's own injected
+   sheet, two separate rounds of thickening mountain-range.js changed
+   nothing at all on screen. One definition, and it lives with the
+   geometry that sizes itself against it. Only opacity stays here. */
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+1) { opacity: .72; }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n+2) { opacity: .5; }
+html[data-skin="paper"] body .mtn-bg .contour use:nth-child(3n) { opacity: .62; }
 html[data-skin="paper"] body .mtn-bg .fill,
 html[data-skin="paper"] body .mtn-bg [clip-path] > use {
   transition: fill 1.5s var(--ease-in-out);
@@ -133,12 +241,17 @@ html[data-skin="paper"] body :is(
 ) {
   background: var(--ui-glass) !important;
   background-image: none !important;
-  border: 1.25px solid var(--ui-line) !important;
-  box-shadow: var(--ui-shadow) !important;
+  border: var(--ui-hairline) solid var(--ui-line) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
-html[data-skin="paper"] body :is(.band, .ribbon, .card-hero, .plan.feat) {
+/* .card-hero is out of this list. The others stand on the page on their own,
+   where a warmer glass is a legitimate step in the ladder; .card-hero sits
+   INSIDE .card, so a second translucency composites over the first and
+   draws a seam across the middle of the card. Three separate files were
+   painting this one element — this was the third. */
+html[data-skin="paper"] body :is(.band, .ribbon, .plan.feat) {
   background: var(--ui-glass-warm) !important;
 }
 html[data-skin="paper"] body .headline,
@@ -152,7 +265,7 @@ html[data-skin="paper"] body :is(
 ) {
   background: var(--ui-glass-strong) !important;
   border-color: var(--ui-line) !important;
-  box-shadow: var(--ui-shadow) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
   backdrop-filter: var(--ui-glass-filter-strong);
   -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
@@ -163,16 +276,16 @@ html[data-skin="paper"] body :is(
 }
 html[data-skin="paper"] body .ledgerstrip {
   background: var(--ui-glass);
-  border: .75px solid var(--ui-line);
-  border-radius: 15px 18px 14px 17px / 17px 14px 18px 15px;
-  box-shadow: var(--ui-shadow);
+  border: var(--ui-hairline) solid var(--ui-line);
+  border-radius: var(--ui-radius);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow);
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
 html[data-skin="paper"] body .m-card:nth-child(2n),
 html[data-skin="paper"] body .pack:nth-child(2n),
 html[data-skin="paper"] body .cost:nth-child(2n) {
-  border-radius: 15px 11px 14px 12px / 12px 15px 11px 14px;
+  border-radius: var(--ui-radius);
 }
 html[data-skin="paper"] body :is(.band .cta, .plan.feat .choose, .btn.terracotta) {
   color: var(--ink) !important;
@@ -184,10 +297,10 @@ body[data-page="pricing"] .pagehead {
   width: min(1180px, calc(100% - 48px));
   margin: 14px auto 0;
   padding: 10px 12px 10px 16px;
-  border: 1.25px solid var(--ui-line);
-  border-radius: 20px 25px 18px 23px / 23px 18px 25px 19px;
+  border: var(--ui-hairline) solid var(--ui-line);
+  border-radius: var(--ui-radius);
   background: var(--ui-glass);
-  box-shadow: var(--ui-shadow);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow);
   backdrop-filter: var(--ui-glass-filter);
   -webkit-backdrop-filter: var(--ui-glass-filter);
 }
@@ -206,7 +319,7 @@ body[data-page="pricing"] .pagehead .ghost {
   justify-content: center;
   padding: 0 14px;
   line-height: 1;
-  border-radius: 999px;
+  border-radius: var(--ui-radius-pill);
 }
 body:not([data-page="app"]) .pagehead .cta,
 body[data-page="pricing"] .pagehead .cta {
@@ -241,7 +354,7 @@ body[data-page="app"] .side-top { padding-inline: 6px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
-  border-radius: 999px; font-size: 12.5px; font-weight: 500 !important;
+  border-radius: var(--ui-radius-pill); font-size: 13px; font-weight: 500 !important;
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
 body[data-page="app"] .claude-note { opacity: .72; max-width: 400px; }
@@ -254,18 +367,18 @@ body[data-page="app"] .casting-row { border-radius: var(--ui-radius-small); }
 body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
-  margin: 14px 2px 0; padding: 15px; border: 1.25px solid var(--ui-line) !important;
+  margin: 14px 2px 0; padding: 15px; border: var(--ui-hairline) solid var(--ui-line) !important;
   border-radius: var(--ui-radius); background: var(--ui-glass-warm);
 }
 body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
 body[data-page="app"] .ledger-meter { height: 4px; }
 body[data-page="app"] .exchange {
-  min-height: 38px; border-radius: 10px; box-shadow: 0 6px 18px rgba(31,29,26,.13);
+  min-height: 38px; border-radius: var(--ui-radius-small); box-shadow: 0 6px 18px rgba(31,29,26,.13);
   background: var(--ink); color: var(--paper-raised);
 }
 body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: 0 8px 22px rgba(181,80,44,.18); transform: none; }
-body[data-page="app"] .side-foot { min-height: 48px; border-radius: 12px; }
+body[data-page="app"] .side-foot { min-height: 48px; border-radius: var(--ui-radius-small); }
 body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mask-image: none; -webkit-mask-image: none; }
 
 body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
@@ -310,11 +423,68 @@ body[data-page="app"] .greeting h1[data-reveal-phase="exit"] .bw-reveal-word {
 }
 body[data-page="app"] .bw-hero-mark { width: 45px !important; height: 37px !important; opacity: .88; }
 body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
-body[data-page="app"] .composer-zone { padding-bottom: 28px; }
+/* isolation, not just position: the scrim below is z-index:-1, and without a
+   stacking context here that -1 escapes the zone entirely and paints beneath
+   the fixed range instead of over it. */
+body[data-page="app"] .composer-zone { padding-bottom: 28px; z-index: 1; isolation: isolate; }
+
+/* The composer's two caption lines — the keyboard hint and the support footer —
+   float on the range with no material behind them. That is the one text
+   context tools/palette-contrast.html never covered: it measures text on glass
+   panels, and these sit on the ridges themselves, where a mid-grey crest and
+   --faint are close enough to be unreadable. They get the same neutral-white
+   scrim as every other carrier (never a palette tint — see the glass rules),
+   fading upward so it reads as the chrome lifting off the landscape rather
+   than as a box, and their ink goes up one step to --dim. */
+body[data-page="app"] .composer-zone::after {
+  content: "";
+  position: absolute;
+  /* Pulled past the zone's own bottom edge: .site-foot renders below it — the
+     zone is position:fixed and the footer overflows — so a scrim stopping at
+     the box left the support line on bare ridge at 1.24:1. */
+  inset: auto 0 -34px;
+  height: 152px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgb(var(--ui-glass-tint) / 0),
+    rgb(var(--ui-glass-tint) / .58) 42%,
+    rgb(var(--ui-glass-tint) / .90));
+}
+body[data-page="app"] .composer-help { color: var(--dim); }
+/* The footer sits lowest, over the darkest ridge, where even the scrim leaves
+   --dim at 3.57:1 against 11px text. It is a row of links, so full ink is the
+   honest weight for it anyway. */
+body[data-page="app"] :is(.site-foot, .site-foot a) { color: var(--ink); }
+
+/* The same fix for the two short glass pages. Their footers sit at y~850 in a
+   900px viewport, which is squarely on the range's darkest lower ridges, and
+   --faint at 11.5px measured 1.2:1 against them. Scoped to these two because
+   they are the pages whose footer always lands over the ridges: a long page
+   scrolls its footer onto paper, these never do. */
+html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer {
+  position: relative;
+  color: var(--ink);
+}
+html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer a { color: var(--ink); }
+html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer::before {
+  content: "";
+  position: absolute;
+  /* No negative bottom inset: these pages are exactly one viewport tall, so
+     a scrim hanging 40px below the footer added 40px of scroll and put a
+     scrollbar on a page that used to fit. It only has to reach the text. */
+  inset: -20px 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgb(var(--ui-glass-tint) / 0),
+    rgb(var(--ui-glass-tint) / .62) 40%,
+    rgb(var(--ui-glass-tint) / .90));
+}
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
-  border: 1.25px solid var(--ui-line); border-radius: 22px 27px 20px 25px / 25px 20px 27px 21px;
-  background: var(--ui-glass-strong); box-shadow: var(--ui-shadow-raised);
+  border: var(--ui-hairline) solid var(--ui-line); border-radius: var(--ui-radius);
+  background: var(--ui-glass-strong); box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
   transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease, background-color var(--dur-base) ease;
 }
 body[data-page="app"] .composer:hover { border-color: var(--ui-line-strong); }
@@ -324,11 +494,11 @@ body[data-page="app"] .composer:focus-within {
 }
 body[data-page="app"] .stria {
   min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
-  border: 1px solid var(--ui-line); color: var(--ink);
+  border: var(--ui-hairline) solid var(--ui-line); color: var(--ink);
   transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
-body[data-page="app"] .composer textarea { font-size: 16px; letter-spacing: -.01em; }
+body[data-page="app"] .composer textarea { font-size: 15px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:background-color 140ms ease,opacity 140ms ease; }
 body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
 body[data-page="app"] .chip {
@@ -341,11 +511,11 @@ body[data-page="app"] .method-menu,
 body[data-page="app"] .acct-menu,
 body[data-page="app"] .guide-coach,
 body[data-page="app"] .signin-coach {
-  background: var(--ui-glass-strong); border: 1.25px solid var(--ui-line);
-  box-shadow: var(--ui-shadow-raised);
+  background: var(--ui-glass-strong); border: var(--ui-hairline) solid var(--ui-line);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
 }
-body[data-page="app"] .method-menu { border-radius: 16px; padding: 8px; }
-body[data-page="app"] .mm-row { border-radius: 11px; }
+body[data-page="app"] .method-menu { border-radius: var(--ui-radius); padding: 8px; }
+body[data-page="app"] .mm-row { border-radius: var(--ui-radius-small); }
 /* The old full-width frosted layer was the tan box that appeared when pointer
    movement forced Chromium to re-composite backdrop-filter. The reading and
    casting remain directly on the page; only compact controls get carriers. */
@@ -374,7 +544,7 @@ body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
   background: var(--ui-glass-soft); border-color: var(--ui-line);
-  border-radius: 10px 13px 9px 12px / 12px 9px 13px 10px;
+  border-radius: var(--ui-radius-small);
   box-shadow: inset 0 1px 0 rgba(226,218,205,.28);
   backdrop-filter: blur(10px) saturate(110%);
   -webkit-backdrop-filter: blur(10px) saturate(110%);
@@ -443,7 +613,7 @@ body[data-page="app"] .reading-body :is(h2,h3)::before {
   width: 7px;
   height: 8px;
   box-sizing: border-box;
-  border: 1.5px solid currentColor;
+  border: var(--ui-hairline) solid currentColor;
   border-radius: 46% 54% 62% 38% / 57% 43% 56% 44%;
   transform-origin: 50% 70%;
   animation: bwOrganicCurrent 780ms var(--ease-in-out) infinite;
@@ -490,7 +660,7 @@ body[data-page="app"] .send:disabled .bw-organic-loader { display: inline-flex; 
   }
   html[data-skin="paper"] body :is(.m-card,.card,.tile,.plan,.topup,.pack,.cost):hover {
     border-color: var(--ui-line-strong) !important;
-    box-shadow: var(--ui-shadow-raised) !important;
+    box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised) !important;
   }
 }
 
@@ -533,42 +703,57 @@ body[data-page="settings"] .pagetitle h1 {
 /* Text-page material: a coloured glass film, not a thick card. The dynamic
    palette supplies both tint layers, while the hairline and shallow shadow
    keep boxes visually weightless. */
-html[data-skin="paper"] body:not([data-page="app"]) :is(
+/* The legal route is excluded from both carrier blocks: it left the glass
+   system for the block route, and legal.css owns its chrome now. Excluding
+   it here is the fix — stacking another !important layer on top is what
+   produced the override war that kept eating changes. */
+html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is(
   .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
   .why-panel, .why-card, .method, .close,
-  .progress, .guide-stage, .lesson-card, .example, .rate,
-  .ledgerstrip, .rate-card, .estimator, .pack, .term
+  .progress, .guide-stage, .lesson-card, .example, .rate
+  /* pricing's carriers are no longer here: .plan, .rate-card, .estimator,
+     .pack, .term and .ledgerstrip all take the one neutral glass now, so
+     the page stops rendering three white cards above a field of khaki. */
 ) {
   background-color: color-mix(in srgb, var(--bw-palette-1) 52%, rgba(42,32,22,.18)) !important;
   background-image: none !important;
-  border: .75px solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
+  border: var(--ui-hairline) solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
   box-shadow: 0 12px 32px rgba(42,32,22,.075) !important;
   backdrop-filter: blur(13px) saturate(116%) !important;
   -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
 }
-html[data-skin="paper"] body:not([data-page="app"]) :is(
-  .why-card, .lesson-card, .rate, .rate-card, .pack, .term, .method
-):nth-child(2n) {
-  background-color: color-mix(in srgb, var(--bw-palette-2) 48%, rgba(42,32,22,.2)) !important;
-  background-image: none !important;
-}
-body[data-page="pricing"] .plan,
-body[data-page="pricing"] .topup,
+/* The alternating carrier tint is gone. It mixed --bw-palette-2 into every
+   second card, which is the palette-in-glass pattern the glass rules ban —
+   and because :nth-child pushed it to (0,4,2) it outspecified the neutral
+   glass and won, so a row of four packs read as two different materials.
+   Rhythm across a row is the job of content, not of a tint on the even
+   ones. NOTE: the block above still tints every carrier with
+   --bw-palette-1 at 52% and blurs at 13px rather than the frosted filter;
+   it currently loses to luxury-glass.css on the pages that load it, but it
+   is the same violation and should be retired the same way. */
+/* Every carrier on pricing takes the SAME material. .plan was on the neutral
+   glass while .rate-card, .estimator, .pack and .term were still on the
+   legacy palette-tinted block (--bw-palette-1 52% over a dark mix), so the
+   page rendered three white cards above a page of khaki boxes — two
+   materials, one page. Screenshotting over the live range is what made it
+   obvious; a fullPage capture paints the fixed backdrop only once at the
+   top and hides it. */
+body[data-page="pricing"] :is(.plan, .topup, .rate-card, .estimator, .pack, .term, .ledgerstrip),
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
   background: var(--ui-glass); border-color: var(--ui-line);
-  box-shadow: var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
   -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
 body[data-page="pricing"] .plan,
 body[data-page="settings"] .panel { border-radius: var(--ui-radius); }
-body[data-page="pricing"] .plan:nth-child(2n) { border-radius: 24px 18px 23px 19px / 18px 24px 20px 23px; }
-body[data-page="pricing"] .plan:nth-child(3n) { border-radius: 18px 25px 19px 23px / 24px 19px 23px 18px; }
-body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-shadow: var(--ui-shadow-raised); border-color: var(--ui-line-strong); }
+body[data-page="pricing"] .plan:nth-child(2n) { border-radius: var(--ui-radius); }
+body[data-page="pricing"] .plan:nth-child(3n) { border-radius: var(--ui-radius); }
+body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised); border-color: var(--ui-line-strong); }
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
-body[data-page="settings"] .btn { min-height: 44px; border-radius: 11px; box-shadow: none; }
+body[data-page="settings"] .btn { min-height: 44px; border-radius: var(--ui-radius-small); box-shadow: none; }
 body[data-page="pricing"] .choose:hover,
 body[data-page="pricing"] .cta:hover,
 body[data-page="login"] .submit:hover,
@@ -577,13 +762,16 @@ body[data-page="settings"] .btn:hover { transform: translateY(-1px); }
 body[data-page="legal"] .legal { max-width: 760px; }
 body[data-page="legal"] .legal > h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1; }
 body[data-page="legal"] .lede { font-size: clamp(17px, 2vw, 20px); line-height: 1.65; }
-body[data-page="legal"] .toc,
-body[data-page="legal"] .headline,
-body[data-page="legal"] .pull {
-  background: var(--ui-glass); border-color: var(--ui-line);
-  border-radius: var(--ui-radius); box-shadow: var(--ui-shadow);
-  backdrop-filter: var(--ui-glass-filter);
-  -webkit-backdrop-filter: var(--ui-glass-filter);
+/* The legal route left the glass system when it moved onto the block route:
+   the range is switched off there, so a blurred translucent carrier has
+   nothing behind it to refract and composites to a flat grey smear on the
+   paper. .toc is already handled in legal.css; .headline and .pull get the
+   route's own material here — flat, square, seated on the paper. */
+body[data-page="legal"] :is(.headline, .pull) {
+  background: var(--bk-cream, #EFE6E0);
+  border: 0; border-left: 3px solid var(--terracotta);
+  border-radius: 0; box-shadow: none;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 body[data-page="legal"] .clause { scroll-margin-top: 96px; }
 body[data-page="legal"] .clause p,
@@ -593,7 +781,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .topbar { padding-inline: 18px; }
   body[data-page="app"] .sidebar {
     background: var(--ui-glass-strong);
-    box-shadow: var(--ui-shadow-raised);
+    box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
     backdrop-filter: var(--ui-glass-filter-strong);
     -webkit-backdrop-filter: var(--ui-glass-filter-strong);
   }
@@ -608,7 +796,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
   body[data-page="app"] .greeting h1 { min-height: 5.25em; font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
   body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
-  body[data-page="app"] .composer { min-height: 58px; border-radius: 18px; padding: 7px; }
+  body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 7px; }
   body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
   body[data-page="app"] .composer-help { display: none; }
@@ -734,9 +922,9 @@ html[data-skin="paper"] body .acct-menu { position: absolute; }
    visible while it is being made, then clears out instead of becoming a large
    screenshot above a narrow answer column. */
 body[data-page="app"] .thread-inner { max-width: 920px; }
-body[data-page="app"] .reading-body { max-width: 760px; font-size: 16px; line-height: 1.82; }
+body[data-page="app"] .reading-body { max-width: 760px; font-size: 15px; line-height: 1.82; }
 body[data-page="app"] .reading-body .rd-para,
-body[data-page="app"] .reading-body .rd-list li { font-size: 16px; }
+body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type {
   position: relative;
@@ -757,16 +945,16 @@ body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type:
 
 /* Final cascade guard: base content-page styles still declare thin borders.
    The environment-native treatment is deliberately borderless at rest. */
-html[data-skin="paper"] body:not([data-page="app"]) :is(
+html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is(
   .pagehead, .top, .m-card, .band, .tile, .card, .panel, .toc, .pull, .headline,
   .why-card, .method, .progress, .guide-stage, .lesson-card, .example, .rate,
   .ledgerstrip, .rate-card, .estimator, .plan, .topup, .pack, .term, .cost
 ) { border: 0 !important; }
 
 @media (max-width:700px) {
-  body[data-page="app"] .reading-body { max-width: 100%; font-size: 15.5px; }
+  body[data-page="app"] .reading-body { max-width: 100%; font-size: 15px; }
   body[data-page="app"] .reading-body .rd-para,
-  body[data-page="app"] .reading-body .rd-list li { font-size: 15.5px; }
+  body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
 }
 
 /* A very small optical hand-off between scrolling content and the fixed input
@@ -787,4 +975,334 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
 }
 @media (max-width:880px) {
   body[data-page="app"]:not(.is-empty) .composer-zone::before { left: 18px; right: 18px; }
+}
+
+/* Accent-coloured micro-labels ------------------------------------------
+   .eyebrow and .plan-tag paint 9–11px tracked uppercase in the palette's gem
+   colour. The gem is chosen for the landscape, where it sits against ridge
+   fills, not for 9px type on a near-white carrier: measured worst cases were
+   3.71:1 and 3.81:1 against a 4.5 floor, at every colour group. Pull the same
+   hue toward ink until it clears — the label stays recognisably the accent,
+   and unlike the gem it does not move when the palette rotates. */
+html[data-skin="paper"] body :is(.eyebrow, .plan-tag, .typical, .example .label) {
+  color: color-mix(in srgb, var(--soft-peach-accent) 42%, var(--soft-peach-ink)) !important;
+}
+html[data-skin="paper"] body .plan-tag {
+  background: color-mix(in srgb, var(--soft-peach-accent) 16%, transparent) !important;
+}
+
+/* Billing cycle toggle ----------------------------------------------------
+   .billing-toggle is a centring flex wrapper — it has no width of its own, so
+   it spans the shell. That was invisible until it was added to the shared
+   glass-carrier list, at which point a layout helper started drawing a panel:
+   measured, a 980px box around 275px of content, 28% filled, on a page where
+   every other box runs 85–100%. A box that is three-quarters empty reads as a
+   mistake no matter what material it is made of.
+   Let it hug its content, and give it the 44px the design law asks of a touch
+   target — it is the only control on the conversion page. */
+html[data-skin="paper"] body[data-page="pricing"] .billing-toggle {
+  width: max-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin-inline: auto;
+  padding: 0 6px 0 18px;
+  border-radius: var(--ui-radius-pill) !important;
+}
+
+/* Solid blocks ------------------------------------------------------------
+   The trade-off, stated once: glass is the material of surfaces — panels,
+   menus, the composer, the sidebar. Solid is the material of actions and
+   status — buttons, badges, chips. Nothing is given half of each, because a
+   half-translucent button is the one thing that reads as neither.
+
+   These blocks were opaque and flat already, and carried no shadow at all.
+   Over a still page that is fine; over a landscape that drifts and blurs
+   behind them it leaves the edge with nothing to sit against, and the
+   boundary frays as the contour lines pass underneath. A short contact
+   shadow fixes it without turning the button into a floating card.
+
+   The self-coloured 1px border is dropped: a border the same colour as the
+   fill adds nothing but one more antialiased ring at the corner radius,
+   which is the other half of the soft edge. */
+html[data-skin="paper"] body :is(
+  .btn, .cta, .choose, .send, .exchange, .next, .plan-badge, .prov-tag,
+  .plan-tag, .chip, .mo-label.active, .av
+) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: var(--ui-solid-shadow) !important;
+}
+html[data-skin="paper"] body :is(.btn, .cta, .choose, .send, .exchange, .next) {
+  border-width: 0 !important;
+}
+/* Pressing a solid block should look like pressing something solid: the
+   contact shadow tightens rather than the whole block scaling away. */
+html[data-skin="paper"] body :is(.btn, .cta, .choose, .send, .exchange, .next):active {
+  box-shadow: 0 1px 1px rgba(42,32,22,.20) !important;
+}
+
+/* A destructive/secondary action was drawn as 50% white with a transparent
+   border — glass wearing a button's job, and the one control on the page with
+   no edge at all. It is a solid quiet block now: same material as its
+   neighbour, lower voice. */
+html[data-skin="paper"] body .btn.warn {
+  background: color-mix(in srgb, var(--soft-peach-accent) 12%, #FFFFFF) !important;
+  color: color-mix(in srgb, var(--soft-peach-accent) 55%, var(--soft-peach-ink)) !important;
+}
+
+/* [hidden] must actually hide -------------------------------------------
+   The UA rule is `[hidden]{display:none}`, which any class selector that sets
+   display beats on specificity. .oauth-providers{display:flex} did exactly
+   that, so the sign-in page's provider gating — which is written correctly and
+   fails safe, hiding every button when /api/auth/providers reports none
+   configured — had no effect: measured, all three buttons carried hidden=true
+   and computed display:flex. In production with no OAuth keys set that is three
+   dead controls on the sign-up path, each leading to "not configured".
+   This is not a login-page bug, it is a bug anywhere markup uses `hidden` and
+   CSS sets display on the same element, so the guard is global. */
+[hidden] { display: none !important; }
+
+/* Frost grain -------------------------------------------------------------
+   Applied last so it beats the carriers' `background-image: none !important`.
+   Kept at a low alpha: the grain should be felt at the surface, not seen as
+   dots — past about .05 it stops reading as frost and starts reading as a
+   dirty panel. Solid blocks are excluded; they are not glass. */
+html[data-skin="paper"] body :is(
+  .sidebar, .composer, .method-menu, .carry-menu, .coach, .coach-card,
+  .pagehead, .top, .card, .card-hero, .ledgerstrip, .billing-toggle, .plan,
+  .rate-card, .estimator, .pack, .term, .toast, .progress, .controls,
+  .panel, .account-menu, .acct-menu, .popover, .modal, .dialog, .sheet,
+  .ledger, .side-foot, .signin-coach, .guide-coach
+) {
+  background-image: var(--ui-frost-grain) !important;
+  background-size: 140px 140px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+/* ── 取象溯源 ────────────────────────────────────────────────────────────────
+   A reading turns a symbol into one concrete noun. These marks show where that
+   happened and, on click, what else the symbol covers.
+
+   The register is deliberate. Underneath a verdict, a list of alternatives can
+   read two ways: as the reading hedging, or as the map the choice was made
+   from. It is the second. So the mark sits QUIET — a dotted rule the colour of
+   the text, no colour of its own, nothing that competes with the |gild| terms
+   or asks to be clicked. It offers itself on hover and not before.
+
+   The casting figure has no pointer interaction and keeps none: this lives in
+   the prose only, and it opens on CLICK. Hover changes the affordance, never
+   the content — a tooltip that fires on hover would put the machinery in the
+   way of anyone simply reading. */
+.reading-body .xr {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px dotted color-mix(in srgb, var(--ink) 38%, transparent);
+  transition: border-color var(--dur-fast, 120ms) var(--ease-out, ease),
+              color var(--dur-fast, 120ms) var(--ease-out, ease);
+}
+/* A comfortable tap target without disturbing the line box it sits in. */
+.reading-body .xr::before {
+  content: "";
+  position: absolute;
+  inset: -11px -4px;
+}
+.reading-body .xr:hover,
+.reading-body .xr:focus-visible {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+  border-bottom-style: solid;
+}
+.reading-body .xr:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+.reading-body .xr[aria-expanded="true"] {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+  border-bottom-style: solid;
+}
+/* Catalogue missing or symbol unknown — never leave a dead underline. */
+.reading-body .xr-mute { border-bottom: 0; cursor: default; color: inherit; }
+.reading-body .xr-mute::before { content: none; }
+
+.reading-body .xr-panel {
+  margin: 10px 0 18px;
+  padding: 12px 14px 13px;
+  border-left: 2px solid color-mix(in srgb, var(--terracotta) 42%, transparent);
+  background: color-mix(in srgb, var(--bw-palette-1) 42%, transparent);
+  border-radius: 0 var(--ui-radius-small, 12px) var(--ui-radius-small, 12px) 0;
+  animation: xr-in var(--dur-fast, 120ms) var(--ease-out, ease) both;
+}
+.reading-body .xr-lead {
+  margin: 0 0 7px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  color: var(--dim);
+}
+.reading-body .xr-panel[lang="zh"] .xr-lead { line-height: 1.65; }
+/* First level: which 象 the symbol runs in. A row of quiet chips, because the
+   reader is choosing among siblings, not reading a list. */
+.reading-body .xr-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 9px;
+}
+.reading-body .xr-cat {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .01em;
+  color: var(--dim);
+  background: color-mix(in srgb, var(--bw-palette-1) 66%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  border-radius: 999px;
+  padding: 7px 11px;
+  cursor: pointer;
+  /* 44px touch target without a 44px-tall chip: the box stays visually small
+     and the hit area is expanded underneath it. */
+  position: relative;
+  min-height: 30px;
+  transition: color var(--dur-fast, 120ms) var(--ease-out, ease),
+              border-color var(--dur-fast, 120ms) var(--ease-out, ease);
+}
+.reading-body .xr-cat::before { content: ""; position: absolute; inset: -7px -2px; }
+/* The branch this reading actually took. The row is a map; without this it is a
+   map with no "you are here", and the reader cannot tell which sibling was
+   chosen from the ones merely available. */
+.reading-body .xr-cat.is-here {
+  border-color: color-mix(in srgb, var(--terracotta) 52%, transparent);
+  color: var(--terracotta);
+}
+.reading-body .xr-cat.is-here::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+.reading-body .xr-cat:hover,
+.reading-body .xr-cat:focus-visible {
+  color: var(--terracotta);
+  border-color: color-mix(in srgb, var(--terracotta) 46%, transparent);
+}
+.reading-body .xr-cat:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+.reading-body .xr-cat[aria-expanded="true"] {
+  color: var(--terracotta);
+  border-color: color-mix(in srgb, var(--terracotta) 62%, transparent);
+  background: color-mix(in srgb, var(--terracotta) 8%, transparent);
+}
+.reading-body .xr-list[hidden] { display: none; }
+
+/* Second level: what that 象 actually turns up as. Multi-column, so a dozen
+   short entries read as one field rather than a column the eye walks down. */
+.reading-body .xr-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 22px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.72;
+  color: var(--dim);
+}
+.reading-body .xr-list li { break-inside: avoid; padding-left: 9px; position: relative; }
+.reading-body .xr-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--terracotta) 55%, transparent);
+}
+@media (min-width: 760px) { .reading-body .xr-list { columns: 3; } }
+@media (max-width: 480px) { .reading-body .xr-list { columns: 1; } }
+
+@keyframes xr-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .reading-body .xr-panel { animation: none; }
+  .reading-body .xr { transition: none; }
+}
+
+/* ── 取象链条 ────────────────────────────────────────────────────────────────
+   The closing summary: which forces this casting moved, how they act on each
+   other, and what each one does. Computed from the 六亲 ring, which is fixed by
+   the method, so it costs nothing and cannot disagree with the reading.
+
+   Open, not collapsed — this is the part a reader reaches for, and putting it
+   behind a click would hide the one thing they came back down the page for. It
+   still has to read as an appendix to the prose rather than a rival ending, so
+   it sits behind a rule, in the label face, at label size. */
+.reading-body .xr-chain {
+  margin: 34px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+}
+.reading-body .xr-chain-lead {
+  margin: 0 0 11px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .012em;
+  color: var(--dim);
+}
+.reading-body .xr-edges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 0 0 9px;
+}
+.reading-body .xr-edge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  background: color-mix(in srgb, var(--bw-palette-1) 52%, transparent);
+  color: var(--dim);
+}
+.reading-body .xr-edge b { font-weight: 600; color: var(--ink); }
+.reading-body .xr-edge i {
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: .04em;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+/* 生 feeds, 克 restrains — the one place a colour carries meaning rather than
+   decoration, so the two are told apart by hue and never by hue alone: the
+   words 生 / 克 are always printed. */
+.reading-body .xr-edge.sheng i { color: var(--pine); background: color-mix(in srgb, var(--pine) 11%, transparent); }
+.reading-body .xr-edge.ke i { color: var(--terracotta); background: color-mix(in srgb, var(--terracotta) 11%, transparent); }
+
+.reading-body .xr-act {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.62;
+  color: var(--dim);
+}
+.reading-body .xr-act b { flex: 0 0 3.6em; font-weight: 600; color: var(--ink); }
+.reading-body .xr-chain[lang="en"] .xr-act b { flex-basis: 7em; }
+@media (max-width: 520px) {
+  .reading-body .xr-act { flex-direction: column; gap: 1px; }
+  .reading-body .xr-act b { flex: none; }
 }
