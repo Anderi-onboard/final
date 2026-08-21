@@ -57,3 +57,42 @@
    headings, where alternation is not a pattern. */
 [data-weave] [data-w="0"] { font-weight: 300; }
 [data-weave] [data-w="1"] { font-weight: 700; }
+
+/* ── Glow ─────────────────────────────────────────────────────────────────
+   Display type emits a little light. Which light depends entirely on what it
+   is sitting on, and the two cases are opposites — one token each, so no page
+   has to decide.
+
+   --glow-on-color   White, for type on a saturated field (the block routes:
+                     cream letterforms on brick, olive, teal). This is the
+                     reference case — light against colour.
+
+   --glow-on-paper   The glyph's OWN colour, for type on paper or glass. Here
+                     the type is dark ink on a near-white ground, so a white
+                     halo has no contrast to give and simply disappears; the
+                     visible bloom is the letterform's own hue spreading.
+                     currentColor means it follows the rotating palette by
+                     itself and no colour is ever written down.
+
+   Both keep the tight ring under .06em and the outer halo under .34em. Past
+   that the counters fill in and it stops reading as light and starts reading
+   as fog — the same limit the method page found. Static: nothing pulses. */
+:root {
+  --glow-on-color:
+    0 0 .04em rgb(255 255 255 / .34),
+    0 0 .22em rgb(255 255 255 / .22);
+  --glow-on-paper:
+    0 0 .05em color-mix(in srgb, currentColor 24%, transparent),
+    0 0 .30em color-mix(in srgb, currentColor 15%, transparent);
+}
+
+/* Glass routes: woven headings and the display numerals. The numerals are the
+   page's loudest objects — a price, a unit count, a balance — and they are the
+   one thing a reader looks for, so they are what earns the light. */
+html[data-skin="paper"] body:not(.blocks-route) :is(
+  [data-weave],
+  .plan-price b, .rate-number b, .pack .u, .ledgerstrip b,
+  .count, .amount, .pagetitle
+) {
+  text-shadow: var(--glow-on-paper);
+}
