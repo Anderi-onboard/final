@@ -935,12 +935,12 @@
       threadInner.innerHTML =
         '<div class="empty">' +
           '<div class="eyebrow"><b>\u25C6</b>&nbsp; New reading</div>' +
-          "<h2>Describe the situation.<br>Ask one question.</h2>" +
+          "<h2>Say what happened.<br>Then ask the one thing you need to know.</h2>" +
           '<svg class="flourish" width="186" height="14" viewBox="0 0 186 14" aria-hidden="true">' +
             '<path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 182 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>' +
             '<path d="M10 13 C52 8 106 12 176 7" stroke="#2A2016" stroke-width="1" fill="none" stroke-linecap="round"></path>' +
           "</svg>" +
-          "<p>The casting engine creates a fixed hexagram. Claude Opus 5 interprets it against the context you provide.</p>" +
+          "<p>Six lines are cast by a fixed procedure, and Claude reads them against what you wrote. It explains the figure; it never picks it.</p>" +
         "</div>";
       return;
     }

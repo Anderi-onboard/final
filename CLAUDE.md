@@ -563,6 +563,32 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
 
 ---
 
+### 界面文案(`copy.js` 是唯一来源,但页面里也有)
+
+`copy.js` 开头那条自己写的规矩要当真:**「a reader has a balance and asks questions;
+they do not have "reservations", "settlements" or "metering"」**。
+⚠️ 08-21 核对时,pricing 页 60px 的二级标题就是 **"Transparent token metering"** ——
+**被自己文件明令禁止的词,印在全站第二大的字号上。** 同类还有
+"recurring unit allowance"、"charged from measured model usage"、
+"The casting engine creates a fixed hexagram. Claude Opus 5 interprets it against the context you provide."
+—— 最后这句是把架构图写成了句子。
+
+三条判据,和 §6 解读语气同源(那边管模型说的话,这边管界面说的话):
+1. **不许把机器讲给读者。** engine / metering / allowance / interprets / measured usage
+   都是我们内部的词。读者有的是:问题、余额、答案、六爻。
+2. **最大的字不许是操作说明。** 首页曾经六句轮换全是祈使句
+   ("Describe the situation and ask one specific question"),68px。
+   **指令该有的尺寸是输入框占位符那个尺寸**,而且那里已经在说了 ——
+   说两遍没有帮助,把它说得最响会让落地页读起来像说明书。
+   那个位置该说的是**这个产品是什么**。
+3. **一组轮换文案必须同一个语域。** 混着换本身就是不专业。
+
+⭐ **写好 = 写准,不是写华丽。** 标准就是 §6 那张对照表:
+「动的是她,静的是你」→「张罗你们俩这些事的,一直是她」——
+**好的那句永远更短、词都是本来的意思、说的是谁做了什么。**
+
+---
+
 ## 7 · 工作流(必须遵守)
 
 1. **构建标签**:任何 HTML/CSS/JS 改动,必须把全站 `?v=` 与 `version.json` 一起 bump 到同一个新标签(如 `20260726c`)。漏 bump = 用户看到的还是旧缓存(历史上多次"改了没生效"都是这个原因)。

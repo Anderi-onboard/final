@@ -92,10 +92,10 @@
       panel: {
         en: {
           kicker: function (method) { return method + " · Same hexagram"; },
-          headContinued: "Check the previous answer against another constraint.",
-          headSortis: "Inspect the change before you decide.",
-          headStria: "Inspect the current structure before you decide.",
-          hint: "Select a prompt to place it in the composer. You can edit it before submitting.",
+          headContinued: "Hold the last answer against one more condition.",
+          headSortis: "See what moved before you decide.",
+          headStria: "See how it stands before you decide.",
+          hint: "Pick one and it lands in the box. Change any of it before you send.",
           aria: function (method) { return "Ask a follow-up using the same " + method + " hexagram"; },
           note: function (typical) {
             return "Nothing is sent until you submit. The same hexagram rides along with every " +
