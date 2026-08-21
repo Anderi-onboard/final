@@ -24,7 +24,8 @@ guide.html          长滚动教程   about.html  pricing.html  login.html
 settings.html       privacy/terms/refund/404.html
 styles.css          只有 @import,指向 tokens/*
 tokens/*.css        colors / fonts / typography / spacing / paper / motion
-assets/backgrounds/mountain-range.js   动态山脉背景引擎(180 色组)
+assets/backgrounds/mountain-range.js   动态山脉背景引擎(114 色组)
+assets/palettes/color-groups.json      色组数据(唯一权威)   palette-guide.html 色组管理器
 casting-figure.js   排卦图与排卦动画(BWFigure)
 liuyao-engine.js    六爻排盘   liuyao-ai.js  prompt-engine.js  prompt-router.js
 chat-app.js         聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js
@@ -78,14 +79,25 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 ## 4 · 背景与动效系统
 
 ### 山脉背景 `mountain-range.js`
-- **180 个色组**,每组 10 阶(浅→深),分 7 段:近白段 30 组,其余 6 段各 25 组。
+- **114 个色组**,每组 10 阶(浅→深),分 8 段。**这个数字是删出来的,不是攒出来的** ——
+  owner 在 `palette-guide.html` 里删掉的组会从发布文件里消失,`mountain-range.js`
+  的注释写着这条:「Removing a group in the manager removes it from the published file」。
+  所以看到组数变少是正常的,不要"补回来"(见 §11)。
+- **段 = 连续 id 区间**,不是从颜色算出来的。id 有空号(删掉的),但区间不重叠:
+  `001–028` 近白段 14、`031–055` 粉珊瑚段 22、`056–078` 金赭段 17、`089–101` 青绿段 4、
+  `108–130` 蓝靛段 15、`143–152` 紫堇段 4、`159–179` 黄绿杂段 4、`180–213` 自定义 34。
+  新增组必须接在末尾另起一段,插进中间会破坏区间(`tests/palette-contract.mjs` 会挡下)。
 - 10 层山脊 + `.mtn-sky` 页面场,**全部同步**到一条时间线 —— 任一时刻整座山穿同一套配色,再整体交叉渐变到下一套。
 - 周期 **900s**,`HOLD = (100/SEQ.length)*0.7` —— 渐变占每格约 70%,连续变形而非跳变。
 - 山脉相位使用 `sessionStorage` 中的会话时钟跨页面连续;禁止每次导航重新随机。
 - 禁止整页跨文档 View Transition:它会同时合成两套全屏 SVG 与玻璃层,造成闪帧。
 - 线稿入场动画每个浏览会话只播放一次,页面之间切换不重复入场。
 - **撞色偏置**:◆ 对比带与主色相 HSV 距离 > 40° 判为撞色组,优先入池;另取 25% 单色组维持安静时刻。
-- 序列按 `近白 → 彩色` 1:1 交替。
+- **播放顺序按段,段序写死在 `segmentOrder`**:自定义 → 蓝靛段 → 近白段 → 粉珊瑚段 →
+  金赭段 → 青绿段 → 紫堇段 → 黄绿杂段;段内仍按 tier(浓→艳→中→淡)再按 id。
+  新会话的 `clockStart = Date.now()`,所以**新访客看到的第一套一定是自定义段的第一组**。
+  ⚠️ 旧规范写的「`近白 → 彩色` 1:1 交替」**从未在代码里存在过** —— 08-20 核对时
+  `buildPaletteSchedule` 只有 tier→id 排序,没有任何交替逻辑。这条已按代码更正。
 - 线稿模式 `.mtn-bg.line-art`:填充降到 `opacity:.62`,保留等高线。
 - **性能红线**:绝不逐帧动画 `background-color`/`filter`/`backdrop-filter`。用 hold-then-crossfade,只动 transform/opacity。
 
@@ -330,3 +342,83 @@ slab 无投影、构建标签全站一致、Pacifico 仅用于字标+chip。
 3. **空状态到底要什么**:问候语 + 输入框(现状),还是加回示例 chip / 介绍流?§8 第 13 与 14 条互相矛盾。
 4. **卦象排版三连**(§8 末尾 TODO 1–3)要不要这轮处理?
 5. **顶栏 Claude 说明文字**:手机端已隐藏,桌面端保留 —— 可以吗?
+
+---
+
+---
+
+## 11 · 色组:114 组是删出来的(2026-08-20)
+
+owner 在 `palette-guide.html` 里删过一轮,上传的 `colorgroups.json` 是**删完剩下的结果**,
+不是增量补丁。所以这次是**整份替换**:`180 → 114`,123 组不再出现在发布文件里。
+
+⚠️ **这里踩过一次坑,别再踩**:第一版我把这 114 组当增量去"合"进仓库的 180 组,
+结果算出 213 —— 等于把 owner 刚删掉的全加了回来。判断依据其实一直写在
+`mountain-range.js` 的注释里:「The curated file is now authoritative … Removing a
+group in the manager removes it from the published file」。
+**下次看到组数变少,先假设是有意删的**,去问,别自动补齐。
+
+旧的 180 组在 git 历史里(本次提交的父提交),owner 本地另有备份。
+
+### 唯一的加工:33 个 id 重编为 181–213
+
+管理器生成的 id(`CMSPYGJAT` 这种)过不了 `tests/palette-contract.mjs` 的三位数字校验;
+且自定义段从 `#180`(草焰)起,重编后正好接成 `180–213` 一整块,保住 §4 的 id 区间不变量。
+**色值、名字、其他字段一个都没动。** 原 id 留档:
+
+| 新 id | 原 id | 名称 | sky / water |
+|---|---|---|---|
+| `181` | `CMSPYGJAT` | art-01 | #F6F2EA / #D3A985 |
+| `182` | `CMSPYI768` | architecture-01 | #ECE4C7 / #A6AAB4 |
+| `183` | `CMSPYN41D` | landscape-031 | #C3CCEA / #CA9A40 |
+| `184` | `CMSPYSTGE` | portrait-03 | #977966 / #35150E |
+| `185` | `CMSPZ7Q1V` | portrait-03 | #AA8C7A / #7B5C4C |
+| `186` | `CMSPZ9527` | portrait-02 | #AFD0DA / #9B8C84 |
+| `187` | `CMSPZA9WG` | street-01 | #FDF9E2 / #FCDC8C |
+| `188` | `CMSPZD7WY` | ffb0ea2d1cd00e3e178e7bfd6fdc4ef5 | #FDFEFD / #D2DFF5 |
+| `189` | `CMSPZHJCP` | 4f46bcbe9448d07be2506c23c95b11c9 | #C5CACD / #949B9B |
+| `190` | `CMSPZY5W1` | 0f79155456c76bbec84b2f4c183957e8 | #FBFBDA / #DCD2C4 |
+| `191` | `CMSPZYAIB` | 0f79155456c76bbec84b2f4c183957e8 | #F7E5D2 / #CCBBB3 |
+| `192` | `CMSPZYHS1` | 356b3b66b6f53d953108ab469384feef | #FDD9CB / #D0AB32 |
+| `193` | `CMSQ0KD0A` | (无名) | #DDD8CF / #ACA18F |
+| `194` | `CMSQ0KJ33` | 4a8b626eb68bb244ace6a49d4ab80567 | #E2DDC0 / #A4B9B5 |
+| `195` | `CMSQ0KNFT` | 4a8b626eb68bb244ace6a49d4ab80567 | #E2DDC0 / #93ACA4 |
+| `196` | `CMSQ0KT1Z` | 5bce0dac7471a9ef8678d9bebf12dd17 | #DCD4CA / #C5B49A |
+| `197` | `CMSQ0L431` | 48004953cb966a9f3f4372ba1de852d3 | #F5C9A3 / #F3A473 |
+| `198` | `CMSQ0L8UY` | 48004953cb966a9f3f4372ba1de852d3 | #F5C9A3 / #DDB906 |
+| `199` | `CMSQ0LIEQ` | 48004953cb966a9f3f4372ba1de852d3 | #FAD2B3 / #F3B48B |
+| `200` | `CMSQ0LONC` | 4e25e5989f248325d08a126707435bdb | #F5F4F4 / #FCC6CC |
+| `201` | `CMSQ0M5ZM` | 5a88a01f9c055710ade755ca35d43ff2 | #F1F7E9 / #B2B56B |
+| `202` | `CMSQ0NGFI` | b36f57ed41ccf2f23c9ec2bb803f94b3 | #FBFCFB / #A3AB7C |
+| `203` | `CMSQ0NQLH` | 1c3a560cf75ba43990c5b2c234aebdac | #F3F4EC / #7A9B7C |
+| `204` | `CMSQ0NXVR` | ad44da32d1672d9b9ee727cb9a05cf12 | #FBFBFA / #717273 |
+| `205` | `CMSQ0O7LA` | 89e0e74d46f4b5eaff8206119bbb2cc0 | #FCFBF9 / #657C84 |
+| `206` | `CMSQ0OEEN` | 8985bc913f0f5d36308d561d40f0703b | #E8D0C6 / #C4ABA4 |
+| `207` | `CMSQ0P1I7` | f02e45b876b3df6a1e29eca390c8b366 | #D6CBDB / #CBAB94 |
+| `208` | `CMSQ0PY0Y` | 1ecb9c15a01c0baaddeeb21fe43f5a8b | #FCF3E3 / #E3BB94 |
+| `209` | `CMSQ0Q9S6` | 4cce27547e54d6835b5f287df0430033 | #FBEBBC / #ECB34C |
+| `210` | `CMSQ0RCXM` | 8679e4babe198c3ba025d1b53f2a28e4 | #FAFBFB / #DCBB9C |
+| `211` | `CMSQ0RK19` | c2d8c8ecb142e0a869da7f1f3cb39cbb | #E5E4E2 / #D2B194 |
+| `212` | `CMSQ0SKVO` | 98d865495415299a9f880c6c8e6e3a89 | #F3ECDA / #C9BB9B |
+| `213` | `CMSQ0SPUU` | d5f4e0ad283a9fabcd2f94ce455e4036 | #FAFBFA / #EBAC14 |
+
+25 个名字是 32 位 hash(从参考图取色时生成的),1 个原本无名、补为「参考 01」。
+要改名请在管理器里改 —— 那是 owner 的数据。
+
+### 这 33 组缺什么
+
+- **无 `gems`** -> 引擎 `paletteGem()` 退回第 6 阶。这是兜底,不是设计选择。
+- **无 `breaks` / `pattern` / `harmony` / `families`** -> 运行时不读,只有管理器 UI 用。
+- **`tier` 是 `Custom`** -> 不在 `tierOrder` 里,兜底 9。自定义段整段排在最前,
+  所以这个值只决定它 34 组内部的先后,不影响别的段。
+
+曾试过从 `rows` 反推这些字段,**放弃了**:拿当时的 180 组当标注集验证,
+`seg` 命中 20%、`harmony` 21%、`tier` 68%、`pattern` 69%。
+`seg` 低是因为它根本不是颜色属性(是 id 区间),`harmony` 低说明它也是人定的。
+**推不出来就别推** —— 填一堆大半是错的元数据,比留空更难查。
+
+### 验证
+
+本地起静态服务,新会话打开 `index.html`,读
+`document.documentElement.dataset.bwPaletteSegment` 应为 `自定义`、
+`dataset.bwPalette` 应为 `180`(自定义段第一组)。08-20 实测通过。
