@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260821j", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260821j";
+    ? new URL("../palettes/color-groups.json?v=20260821m", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260821m";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -343,10 +343,44 @@
     };
   }
 
-  /* Which segments a visitor should meet first. These are the owner-curated
-     reference palettes and the indigo run — the strongest colour in the
-     catalogue, and the ones worth spending a first impression on. */
+  /* Which groups a visitor should meet first: the owner-curated reference
+     palettes and the indigo run, filtered to the ones that actually carry
+     colour on screen.
+
+     ⚠️ Segment membership is NOT the same as being colourful, and assuming it
+     was is why the first version of this looked like it had done nothing.
+     Measured mean on-screen saturation per segment, after the .26 clamp:
+
+       青绿 .260   金赭 .260   粉珊瑚 .259   蓝靛 .258
+       紫堇 .247   近白 .220   自定义 .219   ← second lowest on the site
+
+     自定义 spans .096 to .260. Roughly half of it is near-grey — sky values
+     like #FDFEFD and #FBFBDA — so "open inside 自定义" landed on a washed-out
+     group about as often as not, which is indistinguishable from no bias at
+     all. The catalogue's segment names describe where a group came from, not
+     what it looks like.
+
+     So the pool is filtered by the thing that was actually wanted: colour the
+     eye receives. 33 of 114 groups qualify (14 indigo, 19 custom), about
+     eight minutes of opening. */
   var OPENING_SEGMENTS = ["自定义", "蓝靛段"];
+  var OPENING_MIN_SATURATION = 0.23;
+
+  /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
+     value that reaches the screen, not the one on the card. Cheap: 114 groups
+     x 10 colours, once per session. */
+  function onScreenSaturation(group) {
+    var total = 0;
+    for (var i = 0; i < group.rows.length; i++) {
+      var hex = group.rows[i];
+      var n = parseInt(hex.slice(1), 16);
+      var r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+      var max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, s = 0;
+      if (max !== min) s = l > .5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
+      total += Math.min(s, .26);            /* the same ceiling applyPalette uses */
+    }
+    return total / group.rows.length;
+  }
 
   function buildPaletteSchedule(groups, seed) {
     /* Sort by id first so the input order is fixed regardless of how the file
@@ -363,22 +397,19 @@
       return list;
     }
 
-    /* Two shuffled halves, not one — the opening segments play first, then
+    /* Two shuffled halves, not one — the opening pool plays first, then
        everything else, and both are shuffled.
 
        This is a bias on WHICH GROUP OPENS, not a return to sorted order. The
-       segment sort that this replaced put all 34 自定义 together at the front:
-       eight and a half unbroken minutes of one segment before the catalogue
-       moved on, and the same opening group for every first-time visitor. Here
-       the head is shuffled too, so a visitor opens somewhere inside 自定义 or
-       蓝靛段 but not on the same group as the last one, and the tail is a full
-       shuffle of the rest.
-
-       Head is 49 of 114 groups, so the strong colour holds the first ~12
-       minutes and the remaining ~16 are the rest of the catalogue. */
+       segment sort this replaced put all 34 自定义 together at the front:
+       eight and a half unbroken minutes of one segment, and the same opening
+       group for every first-time visitor. The head is shuffled too, so a
+       visitor opens on colour without opening where the last visitor did. */
     var head = [], tail = [];
     for (var k = 0; k < sorted.length; k++) {
-      (OPENING_SEGMENTS.indexOf(sorted[k].seg) >= 0 ? head : tail).push(sorted[k]);
+      var inSeg = OPENING_SEGMENTS.indexOf(sorted[k].seg) >= 0;
+      (inSeg && onScreenSaturation(sorted[k]) >= OPENING_MIN_SATURATION ? head : tail)
+        .push(sorted[k]);
     }
     /* If the catalogue ever loses those segment names, fall back to one plain
        shuffle rather than opening on an empty list. */

@@ -143,7 +143,10 @@
   function carryable() {
     return S.convs.filter(function (c) {
       return c.id !== S.activeId && c.msgs && c.msgs.some(function (m) { return m.role === "oracle" && m.text; });
-    }).slice(0, 8);
+    /* No cap: the menu scrolls (see .cm-list in index.html), so a limit here
+       would hide history for no reason. It used to be eight purely to stop the
+       menu growing off the top of the composer. */
+    });
   }
 
   function renderCarry() {
@@ -194,6 +197,13 @@
       menu.insertAdjacentHTML("beforeend", '<p class="cm-empty">' + esc(C.carry.empty) + '</p>');
       return;
     }
+    var scroll = document.createElement("div");
+    scroll.className = "cm-scroll";
+    var listEl = document.createElement("div");
+    listEl.className = "cm-list";
+    scroll.appendChild(listEl);
+    menu.appendChild(scroll);
+
     list.forEach(function (conv) {
       var reads = conv.msgs.filter(function (m) { return m.role === "oracle" && m.text; }).length;
       var row = document.createElement("button");
@@ -208,9 +218,20 @@
         cur.carried = { id: conv.id, title: conv.title || "Untitled casting", digest: carryDigest(conv) };
         save(); closeCarry(); renderCarry(); toast(C.carry.added(cur.carried.title));
       });
-      menu.appendChild(row);
+      listEl.appendChild(row);
     });
     menu.insertAdjacentHTML("beforeend", '<p class="cm-note">' + esc(C.carry.note) + '</p>');
+
+    /* The bottom fade is a statement about content, so it is driven by the
+       measurement rather than left on: shown while something is still below,
+       hidden once the list is at its end. Without the scroll check it would
+       sit over a short list and imply history that is not there. */
+    function markMore() {
+      var more = listEl.scrollHeight - listEl.clientHeight - listEl.scrollTop > 2;
+      scroll.setAttribute("data-more", more ? "1" : "0");
+    }
+    listEl.addEventListener("scroll", markMore, { passive: true });
+    markMore();
   }
 
   function renderMethod() {
@@ -914,12 +935,12 @@
       threadInner.innerHTML =
         '<div class="empty">' +
           '<div class="eyebrow"><b>\u25C6</b>&nbsp; New reading</div>' +
-          "<h2>Describe the situation.<br>Ask one question.</h2>" +
+          "<h2>Say what happened.<br>Then ask the one thing you need to know.</h2>" +
           '<svg class="flourish" width="186" height="14" viewBox="0 0 186 14" aria-hidden="true">' +
             '<path d="M4 10 C32 2 60 2 84 8 C110 14 146 12 182 4" stroke="#2A2016" stroke-width="1.5" fill="none" stroke-linecap="round"></path>' +
             '<path d="M10 13 C52 8 106 12 176 7" stroke="#2A2016" stroke-width="1" fill="none" stroke-linecap="round"></path>' +
           "</svg>" +
-          "<p>The casting engine creates a fixed hexagram. Claude Opus 5 interprets it against the context you provide.</p>" +
+          "<p>Six lines are cast by a fixed procedure, and Claude reads them against what you wrote. It explains the figure; it never picks it.</p>" +
         "</div>";
       return;
     }

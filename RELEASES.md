@@ -6,6 +6,59 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## 20260821l — The interface stops describing its own machinery
+
+- Production target: `main` via pull request
+- Verified mirror: `production` after public deployment
+- Working branch: `claude/final-saas-promotion-7nxvjo`
+
+### Copy
+- `3a2c0ba` — `copy.js` opens with its own rule: a reader has a balance and asks
+  questions, and does not have "reservations", "settlements" or "metering".
+  Checked against the site, pricing's 60px section heading read **Transparent
+  token metering** — a word its own file bans, in the second-largest type on the
+  site. Rewritten to the standard §6 already sets for readings, which is not
+  ornament: the better line is shorter, every word means what it usually means,
+  and it says who did what.
+
+  | before | after |
+  |---|---|
+  | Transparent token metering | The arithmetic, in the open |
+  | Choose a balance that fits. | Nothing is held back, and nothing is cut off. |
+  | The casting engine creates a fixed hexagram. Claude Opus 5 interprets it against the context you provide. | Six lines are cast by a fixed procedure, and Claude reads them against what you wrote. It explains the figure; it never picks it. |
+
+  The pricing headline is the billing model said once: nothing is reserved on
+  entry, and `chargeUnits()` has no balance guard, so a reading that has begun
+  finishes and bills even into the negative. Both halves are literally true.
+
+- `d5ae355` — the six rotating display lines stopped being instructions. They
+  had been imperatives at 68px ("Describe the situation and ask one specific
+  question"), which is form-field help text at display size. The instruction
+  already exists in the composer's own placeholder, where someone is about to
+  type.
+
+### Palette
+- `d5ae355` — the opening bias now filters by measured on-screen saturation,
+  not segment name. 自定义 averages .219 after the clamp — second lowest on the
+  site, spanning .096 to .260 — so "open inside 自定义" landed on a washed-out
+  group about half the time, which is why the first version looked like it had
+  done nothing. 33 groups clear .23; 16/16 fresh visitors opened at ≥.232,
+  mean .251, on 16 distinct groups.
+
+### Interface
+- `d5ae355` — the carry menu scrolls, and the eight-casting cap is gone with it.
+  Bottom fade is driven by the scroll measurement, so it never implies history
+  that is not there.
+- `d5ae355` — glow extended to every display line and loud numeral on the glass
+  routes, through the same two tokens.
+
+### Verification
+- 19/19 contract tests
+- ten pages load clean, no JavaScript errors, no missing assets
+- all six display lines sit in three or four lines at 1440
+- build tag `20260821l` across every asset reference and `version.json`
+
+
 ## 20260821j — Readable at last: contrast, frame rate, and the opening colour
 
 - Production target: `main` via pull request

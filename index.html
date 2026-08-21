@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260821j">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260821j">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260821j">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260821j">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260821j">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260821j">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260821j">
-<script src="./ds-base.js?v=20260821j"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260821m">
+<script src="./ds-base.js?v=20260821m"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -475,6 +475,21 @@
   .carry-drop{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--faint);transition:color .16s,background .16s}
   .carry-drop:hover{color:var(--terracotta);background:var(--paper-dim)}
   .method-menu.carry-menu{bottom:calc(100% + 10px);width:340px;max-width:min(340px,calc(100vw - 40px))}
+  /* The list scrolls instead of growing. It used to be capped at eight castings
+     purely so the menu could not run off the top of the composer; with a scroll
+     area the cap is no longer doing that job, so the whole history is reachable.
+     max-height is in svh, not px: on a short window a fixed height would still
+     overflow the viewport it was meant to fit inside. */
+  .carry-menu .cm-list{display:flex;flex-direction:column;gap:2px;max-height:min(42svh,340px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--ink) 26%,transparent) transparent}
+  .carry-menu .cm-list::-webkit-scrollbar{width:8px}
+  .carry-menu .cm-list::-webkit-scrollbar-track{background:transparent}
+  .carry-menu .cm-list::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--ink) 22%,transparent);border-radius:var(--ui-radius-pill);border:2px solid transparent;background-clip:padding-box}
+  .carry-menu .cm-list::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--ink) 38%,transparent);background-clip:padding-box}
+  /* A scroll area with no visible edge reads as a list that simply stops. The
+     fade says there is more below without adding a control. */
+  .carry-menu .cm-scroll{position:relative}
+  .carry-menu .cm-scroll::after{content:"";position:absolute;left:0;right:8px;bottom:0;height:22px;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--paper-raised));opacity:0;transition:opacity .18s var(--ease-out)}
+  .carry-menu .cm-scroll[data-more="1"]::after{opacity:1}
   .cm-row{display:flex;flex-direction:column;gap:3px;text-align:left;padding:10px;border-radius:var(--ui-radius-small);background:transparent;transition:background .15s}
   .cm-row:hover{background:var(--paper-dim)}
   .cm-title{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -772,7 +787,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821j">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821m">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -866,7 +881,11 @@
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" aria-live="off" data-reveal-phase="enter" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
+          <!-- The static text is what shows before the script runs, and to anyone whose
+     script never runs. It must be one of the six below, not the old
+     instruction it was left as — otherwise first paint says one thing and
+     the swap says another. -->
+          <h1 id="greetLine" aria-live="off" data-reveal-phase="enter" style="font-family: var(--serif)">The figure is settled before a word is written about it.</h1>
         </div>
       </section>
     </div>
@@ -894,13 +913,13 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260821j"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260821m"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260821j"></script>
-<script src="./liuyao-ai.js?v=20260821j"></script>
+<script src="./liuyao-engine.js?v=20260821m"></script>
+<script src="./liuyao-ai.js?v=20260821m"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -913,7 +932,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260821j";
+      s.src = "./casting-figure.js?v=20260821m";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -926,10 +945,10 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260821j"></script>
-<script src="./prompt-checks.js?v=20260821j"></script>
-<script src="./prompt-router.js?v=20260821j"></script>
-<script src="./account.js?v=20260821j"></script>
+<script src="./copy.js?v=20260821m"></script>
+<script src="./prompt-checks.js?v=20260821m"></script>
+<script src="./prompt-router.js?v=20260821m"></script>
+<script src="./account.js?v=20260821m"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It used to
    be a second hand-maintained build literal, and it drifted: it sat two releases
@@ -941,18 +960,34 @@ window.BWCasting = (function () {
    for a tag that is only being described. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260821j"></script>
+<script src="./chat-app.js?v=20260821m"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
   if(el){
+    /* These are the largest words on the site — 68px, the first thing anyone
+       reads. They used to be six instructions: "Describe the situation and ask
+       one specific question", "State the decision, the constraints, and what
+       you need to know". That is form-field help text set at display size, and
+       it addresses the reader in the imperative before they have been told
+       what this is.
+
+       The instruction already exists, at the size an instruction should be:
+       the composer's own placeholder says it, six inches lower, where someone
+       is about to type. Saying it twice does not help, and saying it loudest
+       makes a landing page read like a manual.
+
+       So this line says what the product is instead. All six are the same kind
+       of sentence — plain, declarative, about the thing rather than at the
+       reader — because a rotating set that changes register is its own kind of
+       unprofessional. */
     var prompts=[
-      'Describe the situation and ask one specific question.',
-      'State the decision, the constraints, and what you need to know.',
-      'Explain what changed, then ask what to do next.',
-      'Name the options and the trade-off between them.',
-      'Include the context that can change the answer.',
-      'Use one casting for one question.'
+      'You bring the question. The coins bring the shape.',
+      'Six lines fall, and not one of them was chosen to please you.',
+      'The figure is settled before a word is written about it.',
+      'The reading explains the board. It never picks it.',
+      'Something fixed to argue with, on a day you cannot decide.',
+      'Every answer shows the board it came from.'
     ];
     /* A slower word-stream with a one-shot blur reveal. Each phrase resolves
        progressively, rests long enough to read, then softly leaves. Blur only
@@ -1051,6 +1086,6 @@ window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").spl
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260821j" defer></script>
+<script src="./assets/weave.js?v=20260821m" defer></script>
 </body>
 </html>
