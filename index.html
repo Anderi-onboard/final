@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260821l">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260821l">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260821l">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260821l">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260821l">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260821l">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260821l">
-<script src="./ds-base.js?v=20260821l"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260821m">
+<script src="./ds-base.js?v=20260821m"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -787,7 +787,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821l">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821m">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -881,7 +881,11 @@
       <section id="heroEmpty" class="hero-empty">
         <div class="greeting">
           <svg class="bw-hero-mark" viewBox="0 0 512 416" fill="none" stroke="var(--terracotta)" stroke-linecap="round" aria-hidden="true" style="width:49px;height:40px"><g transform="translate(240,1380)"><path class="bwl1" style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path class="bwl2" style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path class="bwl3" style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path class="bwl4" style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path class="bwl5" style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-          <h1 id="greetLine" aria-live="off" data-reveal-phase="enter" style="font-family: var(--serif)">Describe the situation and ask one specific question.</h1>
+          <!-- The static text is what shows before the script runs, and to anyone whose
+     script never runs. It must be one of the six below, not the old
+     instruction it was left as — otherwise first paint says one thing and
+     the swap says another. -->
+          <h1 id="greetLine" aria-live="off" data-reveal-phase="enter" style="font-family: var(--serif)">The figure is settled before a word is written about it.</h1>
         </div>
       </section>
     </div>
@@ -909,13 +913,13 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260821l"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260821m"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260821l"></script>
-<script src="./liuyao-ai.js?v=20260821l"></script>
+<script src="./liuyao-engine.js?v=20260821m"></script>
+<script src="./liuyao-ai.js?v=20260821m"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -928,7 +932,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260821l";
+      s.src = "./casting-figure.js?v=20260821m";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -941,10 +945,10 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260821l"></script>
-<script src="./prompt-checks.js?v=20260821l"></script>
-<script src="./prompt-router.js?v=20260821l"></script>
-<script src="./account.js?v=20260821l"></script>
+<script src="./copy.js?v=20260821m"></script>
+<script src="./prompt-checks.js?v=20260821m"></script>
+<script src="./prompt-router.js?v=20260821m"></script>
+<script src="./account.js?v=20260821m"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It used to
    be a second hand-maintained build literal, and it drifted: it sat two releases
@@ -956,7 +960,7 @@ window.BWCasting = (function () {
    for a tag that is only being described. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260821l"></script>
+<script src="./chat-app.js?v=20260821m"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -1082,6 +1086,6 @@ window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").spl
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260821l" defer></script>
+<script src="./assets/weave.js?v=20260821m" defer></script>
 </body>
 </html>
