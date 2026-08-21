@@ -1,0 +1,162 @@
+/* Legal route ----------------------------------------------------------------
+   These pages were on the poster template, which forced every clause to
+   `min-height: 86svh` with a 160px inset. Eighteen clauses at a screen each
+   made the terms page 9,656px tall, and the reveal observer left most of it at
+   opacity 0 in any view that did not scroll — a contract you cannot read is
+   worse than an ugly one.
+
+   They now sit on the block route: flush bars, square corners, paper ground,
+   and a document that is as long as its text and no longer. The clause number
+   runs in a left rail so the text column keeps a single measure. */
+
+body[data-page="legal"] {
+  --lg-rail: clamp(120px, 15vw, 210px);
+  --lg-pad: clamp(20px, 4vw, 56px);
+  background: var(--bk-bone);
+  color: var(--bk-ink);
+}
+
+/* ── flush chrome, matching the other block-route pages ─────────────────── */
+/* refinement.css paints .pagehead and .toc as glass with !important, in a
+   selector shared with pricing, login and settings. Those pages still want it;
+   this route does not, and it is the wrong material here — glass over an
+   opaque colour field is just a grey smear. Overriding is correct; editing the
+   shared rule would take the material away from three pages that use it. */
+/* The prefix is html[data-skin] + body[data-page] on purpose. refinement.css's
+   chrome rule is `html[data-skin="paper"] body:not([data-page="app"]) :is(...)`
+   — (0,3,2). Both rules are !important, so specificity decides and a plain
+   `body[data-page="legal"] .pagehead` (0,2,1) quietly loses. Matching its
+   shape and winning on source order is the fix; piling on more !important is
+   not, since it was never the tiebreaker. */
+html[data-skin="paper"] body[data-page="legal"] .pagehead {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 16px var(--lg-pad);
+  background: var(--bk-cream) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 0 0 var(--bk-gap) !important;
+}
+
+body[data-page="legal"] .legal { max-width: none; margin: 0; padding: 0; }
+
+/* ── the masthead block ─────────────────────────────────────────────────── */
+/* Two columns, both starting at the top and both hugging their content. Giving
+   the lede a row span instead left the left column's rows stretched to its
+   height, which is where the 300px hole under the title came from. */
+body[data-page="legal"] .legal-poster-intro {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .62fr);
+  grid-template-rows: auto;
+  gap: 12px clamp(30px, 5vw, 80px);
+  align-items: start;
+  align-content: start;
+  padding: clamp(30px, 4vw, 56px) var(--lg-pad) clamp(26px, 3vw, 44px);
+  background: var(--bk-cream);
+}
+body[data-page="legal"] .legal-poster-intro > :is(.eyebrow, h1, .meta) { grid-column: 1; margin: 0; }
+body[data-page="legal"] .legal-poster-intro h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(36px, 5.4vw, 72px); line-height: .98;
+  letter-spacing: -.032em;
+}
+body[data-page="legal"] .legal-poster-intro .meta { font-size: 13px; color: var(--dim); }
+body[data-page="legal"] .legal-poster-intro .lede {
+  grid-column: 2; grid-row: 1;
+  font-family: var(--serif); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.5;
+  color: var(--bk-ink); margin: 0;
+}
+html[data-skin="paper"] body[data-page="legal"] .toc {
+  grid-column: 2; grid-row: 2 / span 2;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px 18px; margin: 0; padding: 0; columns: auto;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 0 !important; box-shadow: none !important; border-radius: 0 !important;
+}
+body[data-page="legal"] .toc a { font-size: 13px; display: flex; gap: 8px; padding: 2px 0; }
+body[data-page="legal"] .toc a:hover { color: var(--terracotta); }
+
+/* ── the clauses ────────────────────────────────────────────────────────── */
+body[data-page="legal"] .clause {
+  min-height: 0;
+  max-width: none;
+  display: grid;
+  grid-template-columns: var(--lg-rail) minmax(0, 1fr);
+  gap: 0 clamp(18px, 2.4vw, 38px);
+  margin: 0;
+  padding: clamp(22px, 2.6vw, 34px) var(--lg-pad);
+  background: var(--bk-cream);
+  border: 0;
+  scroll-margin-top: 12px;
+}
+/* Alternating ground, so a long contract still has a rhythm to scroll past
+   without giving every clause a full screen to itself. */
+body[data-page="legal"] .clause:nth-of-type(even) { background: var(--bk-bone); }
+
+body[data-page="legal"] .clause h2 {
+  grid-column: 1; grid-row: 1;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  font-family: var(--sans); font-size: 12px; letter-spacing: .09em;
+  margin: 0; padding-top: 3px; text-wrap: balance;
+}
+body[data-page="legal"] .clause h2 .n {
+  font-family: var(--serif); font-size: 13px; color: var(--terracotta); letter-spacing: 0;
+}
+/* ⚠️ .pull belongs in this list. It is a div, so leaving it out does not
+   leave it alone — the grid auto-places it into column 1, the numbering rail,
+   where a 40-word clause becomes eleven lines in a 120px column with the
+   whole text column empty beside it. Anything that is body content goes in
+   column 2; only the h2 stays in the rail. */
+body[data-page="legal"] .clause :is(p, ul, .pull) { grid-column: 2; max-width: 78ch; }
+body[data-page="legal"] .clause :is(p, ul):first-of-type { margin-top: 0; }
+body[data-page="legal"] .clause :is(p, li) {
+  font-family: var(--serif); font-size: 15px; line-height: 1.62; margin-top: 9px;
+}
+body[data-page="legal"] .clause ul { margin: 4px 0 0; padding-left: 18px; }
+body[data-page="legal"] .clause li { margin-top: 5px; }
+
+body[data-page="legal"] .legal-foot {
+  min-height: 0;
+  margin-top: var(--bk-gap);
+  padding: clamp(26px, 3vw, 44px) var(--lg-pad);
+  background: var(--bk-ink);
+  color: var(--bk-cream);
+}
+
+/* The range is off here for the same reason it is off on the other block
+   routes: these pages are opaque colour fields, so there is nothing for a
+   translucent material to refract and nothing for the range to show through. */
+body[data-page="legal"] :is(.mtn-bg, .mtn-sky) { display: none !important; }
+
+@media (max-width: 760px) {
+  body[data-page="legal"] .legal-poster-intro { grid-template-columns: minmax(0, 1fr); }
+  body[data-page="legal"] .legal-poster-intro :is(.lede, .toc) { grid-column: 1; grid-row: auto; }
+  body[data-page="legal"] .clause { grid-template-columns: minmax(0, 1fr); }
+  body[data-page="legal"] .clause :is(p, ul, .pull) { grid-column: 1; }
+  body[data-page="legal"] .clause h2 { display: flex; gap: 10px; }
+}
+
+/* ── .headline and .pull ────────────────────────────────────────────────────
+   Three separate rules in refinement.css were still handing these two glass:
+   the shared carrier block, its filter twin, and a legal-specific rule. Rather
+   than chase each one, this settles it at the same specificity shape the
+   strongest of them uses — html[data-skin] + body[data-page] + :is() = (0,3,2)
+   — so source order decides and legal.css, which loads last here, wins.
+   Glass is wrong on this route at all: the range is off, so a blurred
+   translucent carrier has nothing to refract and composites to a grey smear. */
+html[data-skin="paper"] body[data-page="legal"] :is(.headline, .pull) {
+  background: var(--bk-cream) !important;
+  border: 0 !important;
+  border-left: 3px solid var(--terracotta) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 18px 22px;
+}

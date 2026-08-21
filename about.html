@@ -1,4 +1,7 @@
-<!-- BourneWise — Why BourneWise -->
+<!-- BourneWise — Why BourneWise. Block-composition route: this page is built
+     from flat unequal rectangles and generated pattern fields, not from cards
+     floating on the landscape. See tokens/blocks.css for why the two routes
+     use different materials. -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
@@ -6,114 +9,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why BourneWise</title>
 <meta name="description" content="Why BourneWise separates the generated hexagram from the model-written interpretation.">
+<!-- Paint guard, runs before any stylesheet: --paper is not defined yet here,
+     so this one value must stay a literal. It has to equal --paper in
+     tokens/paper.css; if that changes, change this too. -->
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260820a">
-<script src="./ds-base.js?v=20260820a"></script>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  html,body{min-height:100%}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.86;}
-  .pagehead{position:relative;z-index:4;display:flex;align-items:center;gap:18px;max-width:1180px;margin:0 auto}
-  .brand{display:flex;align-items:center;gap:9px}.mark{width:27px;height:22px}.brand b{font-size:18px}
-  .nav{margin-left:auto;display:flex;align-items:center;gap:8px}.ghost{font-size:13px;color:var(--dim);padding:9px 13px;border-radius:999px}.cta{padding:11px 18px;border-radius:11px;background:var(--ink);color:var(--paper);font-size:13px}
-  .why{position:relative;z-index:1;width:min(1120px,calc(100% - 48px));margin:0 auto;padding:72px 0 90px}
-  .why-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:clamp(34px,7vw,100px);align-items:end;padding:36px 4px 70px}
-  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bw-palette-gem)}
-  h1,h2,h3{font-family:var(--serif);text-wrap:balance}
-  h1{margin-top:18px;max-width:12ch;font-size:clamp(48px,7.6vw,94px);font-weight:700;line-height:.97;letter-spacing:-.055em}
-  .hero-copy{font-family:var(--serif);font-size:clamp(17px,1.8vw,22px);line-height:1.58;color:var(--ink)}
-  .hero-copy small{display:block;margin-top:18px;font-family:var(--sans);font-size:12px;line-height:1.6;color:var(--dim)}
-  .why-panel{padding:clamp(26px,4vw,48px);margin-top:18px;border-radius:24px}
-  .panel-head{display:grid;grid-template-columns:90px minmax(0,1fr);gap:24px;align-items:start}
-  .panel-no{font-family:var(--serif);font-size:clamp(42px,6vw,72px);line-height:.9;color:var(--bw-palette-gem);font-variant-numeric:tabular-nums}
-  .panel-head h2{font-size:clamp(28px,4vw,48px);line-height:1.04;letter-spacing:-.04em}
-  .panel-head p{max-width:58ch;margin-top:14px;color:var(--dim)}
-  .sequence{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
-  .why-card{min-height:185px;padding:22px;border-radius:18px;display:flex;flex-direction:column}
-  .why-card .tag{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bw-palette-gem)}
-  .why-card h3{margin-top:30px;font-size:19px;line-height:1.2}
-  .why-card p{margin-top:8px;font-size:13px;line-height:1.6;color:var(--dim)}
-  .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
-  .method{padding:24px;border-radius:18px}.method-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}.method h3{font-size:22px}.method .cap{font-size:11px;color:var(--bw-palette-gem);white-space:nowrap}.method p{margin-top:10px;color:var(--dim)}
-  .boundary{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.boundary div{padding-top:17px;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}.boundary b{font-family:var(--serif);font-size:17px}.boundary p{margin-top:6px;font-size:13px;color:var(--dim)}
-  .close{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:22px;padding:28px 32px;border-radius:20px}.close h2{font-size:clamp(24px,3vw,38px);line-height:1.08}.close a{flex:none;background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:12px;font-size:13px}
-  footer{position:relative;z-index:1;width:min(1120px,calc(100% - 48px));margin:0 auto;padding:0 0 34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--dim);font-size:11px;letter-spacing:.04em}
-  @media(max-width:800px){.why-hero{grid-template-columns:1fr;align-items:start}.sequence,.boundary{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.panel-head{grid-template-columns:1fr}.panel-no{font-size:42px}.close{align-items:flex-start;flex-direction:column}.nav .ghost{display:none}}
-  @media(max-width:560px){.why{width:calc(100% - 28px);padding-top:42px}.why-hero{padding-bottom:46px}.why-panel{padding:22px 18px}.pagehead{width:calc(100% - 24px)}.close{padding:24px 20px}footer{width:calc(100% - 28px)}}
-</style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/poster-pages.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260820a">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260821e">
 </head>
-<body data-page="about">
-<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<body class="blocks-route" data-page="about">
 
-<header class="pagehead">
-  <a class="brand" href="./index.html" aria-label="BourneWise home">
-    <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-    <b>BourneWise</b>
-  </a>
-  <nav class="nav"><a class="ghost" href="./guide.html">The method</a><a class="ghost" href="./pricing.html">Plans &amp; units</a><a class="cta" href="./index.html">Start a casting</a></nav>
+<header class="bk-head">
+  <a class="bk-brand" href="./index.html"><span class="bk-mark" data-mark="ring"></span><b>BourneWise</b></a>
+  <nav class="bk-nav">
+    <a href="./guide.html">The method</a>
+    <a href="./pricing.html">Plans &amp; units</a>
+    <a class="bk-go" href="./index.html">Start a casting</a>
+  </nav>
 </header>
 
-<main class="why" data-screen-label="Why BourneWise">
-  <section class="why-hero">
-    <div class="poster-specimen" aria-hidden="true"></div>
-    <div class="why-hero-title"><p class="eyebrow">Why BourneWise</p><h1>The cast and the answer are separate systems.</h1></div>
-    <p class="hero-copy">BourneWise generates the hexagram first. Claude Opus 5 explains the result it receives. The model writes the interpretation; it does not choose the figure.<small>This separation keeps the source of the reading visible and gives every answer a fixed input you can inspect.</small></p>
+<main class="bk-main">
+
+  <!-- Composition A — .37 / .35 / .28 columns, .34 / .66 rows.
+       Title anchored to the foot of the left field; a banded middle; a
+       full-height rail at the right edge. -->
+  <section class="bk bk--a">
+    <div class="bk-cell bk-cell--title" data-at="left-tall" data-fill="brick">
+      <p class="bk-eyebrow">Why BourneWise</p>
+      <h1 data-weave>The cast and the answer are separate systems.</h1>
+    </div>
+    <div class="bk-cell" data-at="mid-top" data-fill="olive" data-pattern="vesica"></div>
+    <div class="bk-cell bk-cell--body" data-at="mid-bottom" data-fill="bone">
+      <p class="bk-lead">BourneWise generates the hexagram first. Claude Opus 5 explains the result it
+      receives. The model writes the interpretation; it does not choose the figure.</p>
+      <p class="bk-note">This separation keeps the source of the reading visible and gives every answer
+      a fixed input you can inspect.</p>
+    </div>
+    <div class="bk-cell" data-at="right-tall" data-fill="clay" data-mark="hexagram"></div>
   </section>
 
-  <figure class="editorial-spread editorial-spread--casting">
-    <div class="editorial-plate"><span class="editorial-eyelet" aria-hidden="true"></span><img src="./assets/editorial/casting-to-reading.webp" alt="A hand passes three casting coins toward a six-line hexagram and a written interpretation." width="1440" height="960" loading="eager" decoding="async"></div>
-    <figcaption><span class="editorial-index">FIELD NOTE 01</span><b>The figure exists before the prose.</b><p>Question, cast, and interpretation remain visible as three separate stages.</p></figcaption>
-  </figure>
-
-  <section class="why-panel">
-    <div class="panel-head"><span class="panel-no">01</span><div><h2>The sequence is fixed before inference begins.</h2><p>Every reading follows the same order. The model enters only after the casting engine has completed the figure.</p></div></div>
-    <div class="sequence">
-      <article class="why-card"><span class="tag">First</span><h3>Your question sets the subject.</h3><p>The decision, people involved, constraints, and timeframe define what the figure must address.</p></article>
-      <article class="why-card"><span class="tag">Then</span><h3>The engine generates six lines.</h3><p>The primary hexagram, moving lines, and transformed figure are computed independently of the language model.</p></article>
-      <article class="why-card"><span class="tag">Finally</span><h3>Claude writes from fixed data.</h3><p>The question and computed figure are passed to Claude Opus 5 as evidence for the explanation.</p></article>
+  <!-- Composition B — one band over one field, .37 / .63. -->
+  <section class="bk bk--b">
+    <div class="bk-cell" data-at="band-top" data-fill="dusty" data-pattern="tally"></div>
+    <div class="bk-cell bk-cell--title" data-at="band-bottom" data-fill="bone">
+      <p class="bk-eyebrow">Field note 01</p>
+      <h2 data-weave>The figure exists before the prose.</h2>
+      <p class="bk-note">Question, cast, and interpretation remain visible as three separate stages.</p>
     </div>
   </section>
 
-  <section class="why-panel">
-    <div class="panel-head"><span class="panel-no">02</span><div><h2>Choose the amount of structure your question needs.</h2><p>Both methods use the same casting sequence. They differ in how much of the resulting structure is interpreted.</p></div></div>
-    <div class="method-grid">
-      <article class="method"><div class="method-top"><h3>Stria 64</h3><span class="cap">ABOUT 440 UNITS</span></div><p>Reads the primary hexagram against the current situation. Best for a focused view of where things stand.</p></article>
-      <article class="method"><div class="method-top"><h3>Sortis 6</h3><span class="cap">ABOUT 780 UNITS</span></div><p>Adds moving lines, the transformed hexagram, and line-by-line change analysis. Best when the path of change matters.</p></article>
+  <!-- Composition C — .42 / .37 / .21 columns, .53 / .47 rows. -->
+  <section class="bk bk--c">
+    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="olive">
+      <p class="bk-eyebrow">01 — Sequence</p>
+      <h2 data-weave>The sequence is fixed before inference begins.</h2>
+    </div>
+    <div class="bk-cell" data-at="mid-top" data-fill="teal" data-land="4"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="brick" data-pattern="yao"></div>
+    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="bone">
+      <li><span class="bk-eyebrow">First</span><b>Your question sets the subject.</b>
+        <p>The decision, people involved, constraints, and timeframe define what the figure must address.</p></li>
+      <li><span class="bk-eyebrow">Then</span><b>The engine generates six lines.</b>
+        <p>The primary hexagram, moving lines, and transformed figure are computed independently of the language model.</p></li>
+      <li><span class="bk-eyebrow">Finally</span><b>Claude writes from fixed data.</b>
+        <p>The question and computed figure are passed to Claude Opus 5 as evidence for the explanation.</p></li>
+    </ol>
+  </section>
+
+  <!-- Composition D — .54 / .19 / .27 columns, .48 / .52 rows. -->
+  <section class="bk bk--d">
+    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="teal">
+      <p class="bk-eyebrow">02 — Depth</p>
+      <h2 data-weave>Choose the amount of structure your question needs.</h2>
+    </div>
+    <div class="bk-cell" data-at="mid-top" data-fill="clay" data-pattern="coin"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="ochre" data-mark="florette"></div>
+    <div class="bk-cell bk-cell--body" data-at="wide-bottom" data-fill="bone">
+      <p class="bk-eyebrow">Stria 64 · about 440 units — Sortis 6 · about 780 units</p>
+      <p class="bk-lead">Stria reads the primary hexagram against the current situation. Sortis adds
+      moving lines, the transformed hexagram, and line-by-line change analysis.</p>
+      <p class="bk-note">Both methods use the same casting sequence. They differ in how much of the
+      resulting structure is interpreted.</p>
     </div>
   </section>
 
-  <section class="why-panel">
-    <div class="panel-head"><span class="panel-no">03</span><div><h2>A reading supports reflection. It does not replace judgment.</h2><p>The result is useful when it helps you inspect assumptions, notice change, and choose a next step without pretending an open situation has become certain.</p></div></div>
-    <div class="boundary">
-      <div><b>Fixed input</b><p>The model cannot redraw, replace, or override the generated hexagram.</p></div>
-      <div><b>Explicit limits</b><p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></div>
-      <div><b>Reflection and growth</b><p>Return to the answer after acting. Compare what changed, what held, and what you would decide differently next time.</p></div>
+  <!-- Composition C again, mirrored in content: the repeat is the system. -->
+  <section class="bk bk--c">
+    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="brick">
+      <p class="bk-eyebrow">03 — Limits</p>
+      <h2 data-weave>A reading supports reflection. It does not replace judgment.</h2>
     </div>
+    <div class="bk-cell" data-at="mid-top" data-fill="ochre" data-pattern="brand"></div>
+    <div class="bk-cell" data-at="right-tall" data-fill="olive" data-mark="florette"></div>
+    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="cream">
+      <li><span class="bk-eyebrow">Fixed input</span><b>The figure cannot be redrawn.</b>
+        <p>The model cannot replace or override the generated hexagram.</p></li>
+      <li><span class="bk-eyebrow">Explicit limits</span><b>Signal and extension stay apart.</b>
+        <p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></li>
+      <li><span class="bk-eyebrow">Reflection</span><b>Return after the decision.</b>
+        <p>Compare what changed, what held, and what you would decide differently next time.</p></li>
+    </ol>
   </section>
 
-  <figure class="editorial-spread editorial-spread--reflection">
-    <div class="editorial-plate"><span class="editorial-eyelet" aria-hidden="true"></span><img src="./assets/editorial/reflection-path.webp" alt="A figure follows a looping path from footprints toward three new shoots." width="1440" height="960" loading="lazy" decoding="async"></div>
-    <figcaption><span class="editorial-index">FIELD NOTE 02</span><b>Return after the decision.</b><p>Reflection becomes useful when it changes the next action, not when it merely preserves an answer.</p></figcaption>
-  </figure>
+  <!-- Composition B closes it, type over field this time — the B2 proportion,
+       because a heading and a call to action need more than a band's height. -->
+  <section class="bk bk--b2">
+    <div class="bk-cell bk-cell--title" data-at="band-top" data-fill="bone">
+      <p class="bk-eyebrow">Field note 02</p>
+      <h2 data-weave>Return after the decision.</h2>
+      <a class="bk-go bk-go--big" href="./guide.html">See the full process one step at a time →</a>
+    </div>
+    <div class="bk-cell" data-at="band-bottom" data-fill="olive" data-land="7"></div>
+  </section>
 
-  <section class="close"><h2>See the full process one step at a time.</h2><a href="./guide.html">Open the guide</a></section>
 </main>
 
-<footer><span>BourneWise · fixed hexagram input · model-written interpretation</span><span><a href="mailto:hello@bournewise.com">hello@bournewise.com</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a></span></footer>
-<script src="./assets/backgrounds/mountain-range.js?v=20260820a"></script>
-<script src="./poster-pages.js?v=20260820a"></script>
+<footer class="bk-foot">
+  <span>BourneWise</span>
+  <a href="./index.html">Start a casting</a>
+  <a href="./pricing.html">Plans &amp; units</a>
+  <a href="./terms.html">Terms</a>
+  <a href="./privacy.html">Privacy</a>
+</footer>
+
+<script src="./assets/marks.js?v=20260821e"></script>
+<script src="./assets/blocks.js?v=20260821e"></script>
+<script src="./assets/weave.js?v=20260821e" defer></script>
 </body>
 </html>

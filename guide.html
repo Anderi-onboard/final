@@ -1,164 +1,202 @@
-<!-- BourneWise — step-by-step product guide -->
+<!-- BourneWise — The method. Square-card route (see tokens/method.css): every
+     card is one composition on a 1:1 frame, and the page is what you get when
+     you set them next to each other. Each of the five steps takes one row —
+     the name, the thing itself, and a field — so the teaching is operable
+     rather than described. -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to use BourneWise</title>
-<meta name="description" content="A five-step guide to questions, reading depth, casting, interpretation, and usage billing.">
+<title>The method</title>
+<meta name="description" content="How a BourneWise reading is produced, one step at a time.">
+<!-- Paint guard, runs before any stylesheet: --paper is not defined yet here,
+     so this one value must stay a literal. It has to equal --paper in
+     tokens/paper.css; if that changes, change this too. -->
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260820a">
-<script src="./ds-base.js?v=20260820a"></script>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  html,body{min-height:100%}
-  body{min-height:100dvh;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  button,a{font:inherit;color:inherit;background:none;border:0;text-decoration:none}button{cursor:pointer}
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.88;}
-  .top{position:relative;z-index:4;width:min(1180px,calc(100% - 48px));margin:14px auto 0;display:flex;align-items:center;padding:10px 14px}
-  .wordmark{display:flex;align-items:center;gap:9px}.wordmark svg{width:27px;height:22px}.wordmark span{font-size:18px}
-  .exit{margin-left:auto;padding:10px 14px;border-radius:999px;font-size:12px;color:var(--dim)}.exit:hover{background:var(--ui-glass-warm);color:var(--ink)}
-  .guide-shell{position:relative;z-index:2;width:min(1180px,calc(100% - 48px));min-height:calc(100dvh - 108px);margin:22px auto 0;padding-bottom:34px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:22px}
-  .progress{align-self:start;position:sticky;top:24px;padding:24px 18px;border-radius:20px}
-  .progress-title{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin:0 0 18px 4px}
-  .progress-list{display:flex;flex-direction:column;gap:4px;list-style:none}
-  .progress-step{width:100%;display:grid;grid-template-columns:34px 1fr;align-items:center;gap:11px;padding:7px 6px;border-radius:12px;text-align:left;color:var(--faint)}
-  .progress-step:hover{background:color-mix(in srgb,var(--bw-palette-2) 28%,transparent);color:var(--ink)}
-  .progress-step .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);font-size:10px;font-variant-numeric:tabular-nums;transition:background .25s,color .25s,border-color .25s,transform .25s}
-  .progress-step .label{font-size:12px;line-height:1.2}
-  .progress-step.done,.progress-step.active{color:var(--ink)}
-  .progress-step.done .dot{background:color-mix(in srgb,var(--bw-palette-gem) 24%,transparent);border-color:var(--bw-palette-gem)}
-  .progress-step.active .dot{background:var(--bw-palette-gem);border-color:var(--bw-palette-gem);color:var(--bw-palette-on-gem);transform:scale(1.08)}
-  .guide-stage{min-height:650px;border-radius:28px;padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;overflow:hidden}
-  .lesson{display:none;animation:lessonIn .46s var(--ease-out) both}.lesson.active{display:block}
-  @keyframes lessonIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
-  .lesson .kicker{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--bw-palette-gem)}
-  .lesson h1{margin-top:14px;max-width:15ch;font-family:var(--serif);font-size:clamp(38px,5.6vw,72px);font-weight:700;line-height:1.01;letter-spacing:-.05em;text-wrap:balance}
-  .lesson .lead{margin-top:22px;max-width:56ch;font-family:var(--serif);font-size:clamp(17px,1.8vw,21px);line-height:1.58;color:var(--ink)}
-  .lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
-  .lesson-card{padding:20px;border-radius:17px}.lesson-card b{display:block;font-family:var(--serif);font-size:17px}.lesson-card p{margin-top:7px;font-size:13px;line-height:1.6;color:var(--dim)}
-  .example{margin-top:34px;padding:20px 22px;border-radius:17px}.example .label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bw-palette-gem)}.example p{margin-top:8px;font-family:var(--serif);font-size:17px;line-height:1.55}
-  .rates{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}.rate{padding:22px;border-radius:17px}.rate .name{font-family:var(--serif);font-size:20px}.rate .number{margin-top:20px;font-family:var(--serif);font-size:32px;line-height:1;color:var(--bw-palette-gem)}.rate small{display:block;margin-top:7px;color:var(--dim);line-height:1.5}
-  .controls{margin-top:auto;padding-top:36px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .controls .count{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
-  .control-actions{display:flex;gap:9px}.back,.next{min-height:44px;padding:0 18px;border-radius:12px;font-size:13px}.back{border:1px solid color-mix(in srgb,var(--ink) 16%,transparent)}.next{background:var(--ink);color:var(--paper)}.back:disabled{opacity:.34;cursor:default}
-  @media(max-width:760px){.top{width:calc(100% - 24px)}.guide-shell{width:calc(100% - 24px);grid-template-columns:1fr;gap:12px;margin-top:12px}.progress{position:relative;top:auto;padding:12px}.progress-title{display:none}.progress-list{flex-direction:row;justify-content:space-between}.progress-step{display:flex;width:auto;padding:4px}.progress-step .label{display:none}.guide-stage{min-height:calc(100dvh - 190px);padding:28px 20px}.lesson-grid,.rates{grid-template-columns:1fr}.lesson h1{font-size:clamp(36px,11vw,54px)}.controls{padding-top:28px}}
-  @media(prefers-reduced-motion:reduce){.lesson{animation:none}}
-</style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/poster-pages.css?v=20260820a">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260820a">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260821e">
+<link rel="stylesheet" href="./tokens/method.css?v=20260821e">
 </head>
-<body data-page="guide">
-<div class="mtn-bg line-art" data-vbw="1400" data-par="xMidYMax slice" aria-hidden="true"></div>
+<body class="blocks-route" data-page="guide">
 
-<header class="top">
-  <a class="wordmark" href="./index.html" aria-label="BourneWise home">
-    <svg viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
-    <span>BourneWise</span>
-  </a>
-  <a class="exit" href="./index.html">Exit guide</a>
+<header class="bk-head">
+  <a class="bk-brand" href="./index.html"><span class="bk-mark" data-mark="ring"></span><b>BourneWise</b></a>
+  <nav class="bk-nav">
+    <a href="./about.html">Why BourneWise</a>
+    <a href="./pricing.html">Plans &amp; units</a>
+    <a class="bk-go" href="./index.html">Start a casting</a>
+  </nav>
 </header>
 
-<main class="guide-shell" data-screen-label="BourneWise guide">
-  <nav class="progress" aria-label="Guide progress">
-    <p class="progress-title">Your progress</p>
-    <ol class="progress-list">
-      <li><button class="progress-step active" data-step="0" aria-current="step"><span class="dot">1</span><span class="label">Question</span></button></li>
-      <li><button class="progress-step" data-step="1"><span class="dot">2</span><span class="label">Depth</span></button></li>
-      <li><button class="progress-step" data-step="2"><span class="dot">3</span><span class="label">Casting</span></button></li>
-      <li><button class="progress-step" data-step="3"><span class="dot">4</span><span class="label">Reading</span></button></li>
-      <li><button class="progress-step" data-step="4"><span class="dot">5</span><span class="label">Usage</span></button></li>
-    </ol>
-  </nav>
+<main class="mt-grid">
 
-  <section class="guide-stage" aria-live="polite">
-    <div class="guide-specimen" aria-hidden="true"></div>
-    <article class="lesson active" data-lesson="0">
-      <p class="kicker">Step 1 · Frame the question</p>
-      <h1>Give the casting one clear subject.</h1>
-      <p class="lead">State the decision or situation first. Add only the people, constraints, and timeframe that could change the answer.</p>
-      <figure class="lesson-overview">
-        <div class="editorial-plate"><span class="editorial-eyelet" aria-hidden="true"></span><img src="./assets/editorial/casting-to-reading.webp" alt="A question moves through a six-line casting into a written interpretation." width="1440" height="960" decoding="async"></div>
-        <figcaption><b>One subject enters the whole sequence.</b><p>The question frames the cast. The completed figure then frames the interpretation.</p></figcaption>
-      </figure>
-      <div class="lesson-grid"><div class="lesson-card"><b>Keep one subject</b><p>Use a new casting when the person, event, or outcome changes.</p></div><div class="lesson-card"><b>Name the real constraint</b><p>Budget, timing, obligations, and alternatives often matter more than background detail.</p></div></div>
-      <div class="example"><span class="label">Useful format</span><p>“I have two offers. One pays more; the other gives me control over my time. Which trade-off matters more over the next year?”</p></div>
-    </article>
-
-    <article class="lesson" data-lesson="1">
-      <p class="kicker">Step 2 · Choose the depth</p>
-      <h1>Use Stria for structure. Use Sortis for change.</h1>
-      <p class="lead">Both methods generate six lines. Sortis examines more of the resulting structure, so it writes more and costs more to run.</p>
-      <div class="rates"><div class="rate"><div class="name">Stria 64</div><div class="number">~440 units</div><small>Primary hexagram analysis. A typical reading — the charge is measured from actual model usage.</small></div><div class="rate"><div class="name">Sortis 6</div><div class="number">~780 units</div><small>Moving lines and transformed figure included. Available to every funded account.</small></div></div>
-    </article>
-
-    <article class="lesson" data-lesson="2">
-      <p class="kicker">Step 3 · Let the cast complete</p>
-      <h1>The figure is generated before the model writes.</h1>
-      <p class="lead">Three coin states build each line. Six completed lines form the primary hexagram; moving lines may also produce a transformed figure.</p>
-      <figure class="lesson-visual"><span class="editorial-eyelet" aria-hidden="true"></span><img src="./assets/editorial/casting-to-reading.webp" alt="Three casting coins become six lines, then a written interpretation." width="1440" height="960" loading="lazy" decoding="async"></figure>
-      <div class="lesson-grid"><div class="lesson-card"><b>Deterministic structure</b><p>The engine computes line values, relationships, and transformations from the cast.</p></div><div class="lesson-card"><b>Visible progress</b><p>The interface shows each line as it is completed, so the result does not appear as an unexplained jump.</p></div></div>
-      <div class="example"><span class="label">Important</span><p>The language model cannot redraw the lines or substitute another hexagram.</p></div>
-    </article>
-
-    <article class="lesson" data-lesson="3">
-      <p class="kicker">Step 4 · Read and continue</p>
-      <h1>Treat the answer as a structured perspective.</h1>
-      <p class="lead">Compare the interpretation with the facts you know. Ask follow-up questions in the same thread when the subject remains unchanged.</p>
-      <div class="lesson-grid"><div class="lesson-card"><b>Follow the evidence</b><p>Look for the specific lines and relationships behind the conclusion.</p></div><div class="lesson-card"><b>Keep follow-ups attached</b><p>A follow-up reuses the current hexagram. A new subject requires a new casting.</p></div></div>
-      <div class="example"><span class="label">Operating limit</span><p>A supportive reading is not a guarantee. An adverse reading is not a command to stop. The decision remains yours.</p></div>
-    </article>
-
-    <article class="lesson" data-lesson="4">
-      <p class="kicker">Step 5 · Understand the charge</p>
-      <h1>You pay for the model usage the answer actually consumed.</h1>
-      <p class="lead">Nothing is held in advance. When an answer finishes, the charge is computed from the input and output tokens it actually reported — no reservation and no ceiling — and a reading already underway always finishes.</p>
-      <div class="rates"><div class="rate"><div class="name">Metering</div><div class="number">19.5 / 97.5</div><small>Units per 1,000 input / output tokens. Both methods run the same model, so both meter at the same rate.</small></div><div class="rate"><div class="name">What that comes to</div><div class="number">440 / 780</div><small>Units for a typical Stria / Sortis reading. An estimate — a shorter answer costs less, a longer one more.</small></div></div>
-      <div class="example"><span class="label">Plans or top-ups</span><p>Subscribe for units each billing cycle or add a one-time pack. Both feed the same balance, and each answer still settles from actual usage.</p></div>
-    </article>
-
-    <div class="controls"><span class="count" id="stepCount">Step 1 of 5</span><div class="control-actions"><button class="back" id="backStep" disabled>Back</button><button class="next" id="nextStep">Continue</button></div></div>
+  <!-- ── row 1 · what this is ─────────────────────────────────────────── -->
+  <section class="mt-card" data-fill="brick">
+    <div class="mt-stack">
+      <span>Question</span><span>Depth</span><span>Casting</span>
+      <span>Reading</span><span>Charge</span><span>Follow-up</span>
+    </div>
   </section>
+
+  <section class="mt-card" data-fill="cream" data-bleed data-figure="hexagram">
+    <h1 class="mt-display" data-weave>The method</h1>
+    <div class="mt-fill"></div>
+    <p class="mt-meta">Five steps, from the sentence you write to the units you spend</p>
+  </section>
+
+  <section class="mt-card" data-fill="bone">
+    <p class="mt-meta">What this page is</p>
+    <div class="mt-fill"></div>
+    <p>Every part of a reading is shown here as the thing itself rather than as
+    a description of it. Write a question and watch the checks run. Toss the
+    coins. Move the length and watch the charge follow.</p>
+    <p class="mt-meta" style="margin-top:3.35cqw">Nothing on this page is cast or charged</p>
+  </section>
+
+  <!-- ── row 2 · question, depth ──────────────────────────────────────── -->
+  <!-- Each step is one card: the name and the thing it explains together.
+       Split across two cards they left a colour void under every heading and
+       took six rows to say five things. -->
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="olive" tabindex="0" role="button" aria-expanded="false">
+    <p class="mt-meta">Step 01 · Frame it</p>
+    <div class="mt-faces">
+      <div class="mt-face is-on" data-face="name">
+        <h2 class="mt-display" data-weave>One clear subject.</h2>
+      </div>
+      <div class="mt-face" data-face="work">
+        <div class="mt-work mt-try">
+          <textarea id="mtQ" rows="3" placeholder="I have two offers. One pays more; the other gives me control over my time. Which matters more over the next year?"></textarea>
+          <ul class="mt-checks" id="mtChecks">
+            <li data-k="len">Enough context to work from</li>
+            <li data-k="one">One subject, not several</li>
+            <li data-k="when">A timeframe to aim at</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="mt-hint" aria-hidden="true">Write one and watch the checks</p>
+  </section>
+
+  <section class="mt-card" data-fill="dusty" data-pattern="brand"></section>
+
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="teal" tabindex="0" role="button" aria-expanded="false">
+    <p class="mt-meta">Step 02 · Choose the depth</p>
+    <div class="mt-faces">
+      <div class="mt-face is-on" data-face="name">
+        <h2 class="mt-display" data-weave>Structure, or change.</h2>
+      </div>
+      <div class="mt-face" data-face="work">
+        <div class="mt-work">
+          <div class="mt-switch" role="radiogroup" aria-label="Method">
+            <button type="button" role="radio" aria-checked="true" data-method="stria">
+              <b>Stria 64</b><i>~440 units</i>
+              <span>Primary hexagram analysis.</span>
+            </button>
+            <button type="button" role="radio" aria-checked="false" data-method="sortis">
+              <b>Sortis 6</b><i>~780 units</i>
+              <span>Moving lines and transformed figure included.</span>
+            </button>
+          </div>
+          <div class="mt-compare" id="mtCompare"></div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-hint" aria-hidden="true">Switch it and the figures redraw</p>
+  </section>
+
+  <!-- ── row 3 · casting, reading ─────────────────────────────────────── -->
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="brick" tabindex="0" role="button" aria-expanded="false">
+    <p class="mt-meta">Step 03 · Let it complete</p>
+    <div class="mt-faces">
+      <div class="mt-face is-on" data-face="name">
+        <h2 class="mt-display" data-weave>The figure comes first.</h2>
+      </div>
+      <div class="mt-face" data-face="work">
+        <div class="mt-cast">
+          <div class="mt-cast-fig" id="mtFig" aria-live="polite"></div>
+          <dl class="mt-readout" id="mtRead"></dl>
+          <button class="bk-go" type="button" id="mtCastBtn">Toss the coins</button>
+          <p class="mt-meta">Three coins a line. Two of eight outcomes move.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-hint" aria-hidden="true">Toss a real set of coins</p>
+  </section>
+
+  <section class="mt-card" data-fill="olive" data-land="4"></section>
+
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="dusty" tabindex="0" role="button" aria-expanded="false">
+    <p class="mt-meta">Step 04 · Read and continue</p>
+    <div class="mt-faces">
+      <div class="mt-face is-on" data-face="name">
+        <h2 class="mt-display" data-weave>A view, not a verdict.</h2>
+      </div>
+      <div class="mt-face" data-face="work">
+        <div class="mt-work">
+          <dl class="mt-defs">
+            <div><dt>Follow the evidence</dt><dd>Look for the lines and relationships behind the
+            conclusion, and compare them with what you already know.</dd></div>
+            <div><dt>Keep follow-ups attached</dt><dd>A follow-up reuses the current hexagram.
+            A new subject needs a new casting.</dd></div>
+          </dl>
+          <p class="mt-meta">A supportive reading is not a guarantee; an adverse one is not a command</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-hint" aria-hidden="true">What to look for</p>
+  </section>
+
+  <!-- ── row 4 · the charge, and the way in ───────────────────────────── -->
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="ochre" tabindex="0" role="button" aria-expanded="false">
+    <p class="mt-meta">Step 05 · What it costs</p>
+    <div class="mt-faces">
+      <div class="mt-face is-on" data-face="name">
+        <h2 class="mt-display" data-weave>You pay for what ran.</h2>
+      </div>
+      <div class="mt-face" data-face="work">
+        <div class="mt-work mt-meter">
+          <p class="mt-meta">Units per 1,000 tokens — input 19.5 · output 97.5</p>
+          <label for="mtLen">Answer length</label>
+          <input type="range" id="mtLen" min="600" max="4000" step="100" value="1800">
+          <p class="mt-figure"><b id="mtCost">440</b><span class="mt-meta" id="mtCostNote">units · about 1,800 words</span></p>
+          <p class="mt-meta">Nothing is held in advance, and a reading underway always finishes</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-hint" aria-hidden="true">Move the length, watch the charge</p>
+  </section>
+
+  <section class="mt-card" data-fill="clay" data-pattern="coin"></section>
+
+  <section class="mt-card" data-fill="bone" data-bleed data-figure="hexagram">
+    <p class="mt-meta">Ready</p>
+    <div class="mt-fill"></div>
+    <h2 class="mt-display" data-weave>Cast one</h2>
+    <a class="bk-go" href="./index.html" style="margin-top:3.35cqw">Start a casting →</a>
+  </section>
+
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260820a"></script>
-<script>
-(function(){
-  var current=0;
-  var lessons=Array.from(document.querySelectorAll('.lesson'));
-  var steps=Array.from(document.querySelectorAll('.progress-step'));
-  var back=document.getElementById('backStep');
-  var next=document.getElementById('nextStep');
-  var count=document.getElementById('stepCount');
-  function show(index){
-    current=Math.max(0,Math.min(lessons.length-1,index));
-    document.body.dataset.posterStep=String(current);
-    lessons.forEach(function(node,i){node.classList.toggle('active',i===current);});
-    steps.forEach(function(node,i){
-      node.classList.toggle('active',i===current);
-      node.classList.toggle('done',i<current);
-      if(i===current)node.setAttribute('aria-current','step');else node.removeAttribute('aria-current');
-    });
-    back.disabled=current===0;
-    next.textContent=current===lessons.length-1?'Start a casting':'Continue';
-    count.textContent='Step '+(current+1)+' of '+lessons.length;
-  }
-  steps.forEach(function(node){node.addEventListener('click',function(){show(Number(node.dataset.step));});});
-  back.addEventListener('click',function(){show(current-1);});
-  next.addEventListener('click',function(){if(current===lessons.length-1){location.href='./index.html';return;}show(current+1);});
-  document.addEventListener('keydown',function(event){if(event.key==='ArrowRight')next.click();if(event.key==='ArrowLeft'&&!back.disabled)back.click();});
-  show(0);
-})();
-</script>
-<script src="./poster-pages.js?v=20260820a"></script>
+<footer class="bk-foot">
+  <span>BourneWise</span>
+  <a href="./about.html">Why BourneWise</a>
+  <a href="./pricing.html">Plans &amp; units</a>
+  <a href="./terms.html">Terms</a>
+  <a href="./privacy.html">Privacy</a>
+</footer>
+
+<script src="./assets/marks.js?v=20260821e"></script>
+<script src="./assets/blocks.js?v=20260821e"></script>
+<script src="./assets/method.js?v=20260821e"></script>
+<script src="./assets/weave.js?v=20260821e" defer></script>
 </body>
 </html>

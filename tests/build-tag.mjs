@@ -65,12 +65,28 @@ assert.deepEqual(jsOffenders, [],
   `these JS files request an asset at a stale cache tag, so the browser keeps serving the old `
   + `copy after the asset changes:\n  ` + jsOffenders.join('\n  '));
 
-// index.html's stamp is the one the guard actually compares, so pin it by name.
+// index.html's stamp is the one the guard actually compares. It may be written
+// either way, and the two need different checks:
+//
+//   literal   window.BW_BUILD="20260821a"   — a second hand-maintained tag, so
+//             it can drift from version.json. Assert the values match.
+//   derived   read off this page's own ?v= tag — it cannot drift, because there
+//             is only one tag. Assert the derivation is present; comparing a
+//             value is meaningless when it is computed at run time.
+//
+// Derived is preferred: the literal form is what drifted in the first place,
+// sitting two releases behind and reporting every fresh session as stale. The
+// tag sweep above already guarantees index.html's own ?v= equals version.json,
+// so a derived stamp is transitively correct.
 const index = readFileSync(`${ROOT}/index.html`, 'utf8');
-const stamp = index.match(/BW_BUILD\s*=\s*"([^"]+)"/);
-assert.ok(stamp, 'index.html no longer stamps window.BW_BUILD — the stale-tab guard cannot run');
-assert.equal(stamp[1], version,
-  `index.html stamps ${stamp[1]} but version.json serves ${version} — casting is blocked in production`);
+const literal = index.match(/BW_BUILD\s*=\s*"(2026[01][0-9][0-3][0-9][a-z])"/);
+const derived = /BW_BUILD\s*=\s*\(\(document\.querySelector\('script\[src\*="\?v="\]'\)/.test(index);
+assert.ok(literal || derived,
+  'index.html no longer stamps window.BW_BUILD — the stale-tab guard cannot run');
+if (literal) {
+  assert.equal(literal[1], version,
+    `index.html stamps ${literal[1]} but version.json serves ${version} — casting is blocked in production`);
+}
 
 // And the guard has to still be there, or none of this matters.
 const chat = readFileSync(`${ROOT}/chat-app.js`, 'utf8');

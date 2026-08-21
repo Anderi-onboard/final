@@ -10,7 +10,12 @@
   var METHODS = A.METHODS;
   var ORDER = A.METHOD_ORDER;
 
-  var FIGURES = window.BWFigure ? window.BWFigure.NAMES : ["The Well", "The Crossing"];
+  /* Resolved on use, not at init: casting-figure.js is loaded off the
+     critical path now, so capturing this at module scope would freeze the
+     placeholder pair in even after the real artwork arrived. */
+  function figureNames() {
+    return (window.BWFigure && window.BWFigure.NAMES) || ["The Well", "The Crossing"];
+  }
   var S = A.state();
   function save() { A.save(S); }
 
@@ -86,14 +91,27 @@
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
     $("miPlans").querySelector("b").textContent = a.signedIn ? A.planName(a.plan) : "Plans";
-    // the sign-in coach-mark only nudges signed-out guests, and stays gone once
-    // dismissed
-    var coach = $("signinCoach");
-    if (coach) {
-      var dismissed = false;
-      try { dismissed = localStorage.getItem("bw:coachDismissed") === "1"; } catch (e) {}
-      coach.hidden = a.signedIn || dismissed;
-    }
+    syncCoachMarks();
+  }
+
+  /* One coach-mark at a time.
+     The sign-in nudge and the guide nudge used to decide their own visibility
+     independently — one here in the account render, one at init — and neither
+     knew about the other. A first-time signed-out visitor therefore got both
+     at once, top-right and bottom-left, and had two interruptions to clear
+     before reading anything. The sign-in nudge takes precedence because it
+     carries the offer; the guide nudge is still there on the next visit. */
+  function syncCoachMarks() {
+    var signin = $("signinCoach"), guide = $("guideCoach");
+    var signinDone = false, guideSeen = false, guideDone = false;
+    try {
+      signinDone = localStorage.getItem("bw:coachDismissed") === "1";
+      guideSeen = localStorage.getItem("bw:guideVisited") === "1";
+      guideDone = localStorage.getItem("bw:guideCoachDismissed") === "1";
+    } catch (e) {}
+    var showSignin = !A.state().signedIn && !signinDone;
+    if (signin) signin.hidden = !showSignin;
+    if (guide) guide.hidden = guideSeen || guideDone || showSignin;
   }
 
   /* ── carrying an earlier conversation into this one ───────────────────────
@@ -1327,6 +1345,19 @@
   }
 
   function sendNow(text, decided) {
+    /* casting-figure.js is fetched off the critical path (see index.html). It
+       is normally already here by the time anyone submits, but a fast reader
+       can beat it — wait and re-enter rather than casting with the fallback
+       spec, which has no lines and would draw an empty figure. On a load
+       failure re-enter anyway: the existing fallback keeps the site working,
+       which is the standing rule for a missing dependency. */
+    if (!window.BWFigure && window.BWCasting) {
+      window.BWCasting.load().then(
+        function () { sendNow(text, decided); },
+        function () { sendNow(text, decided); }
+      );
+      return;
+    }
     var m = method();
     // Sign-in required: units only exist on a real account, so a signed-out
     // guest can't cast — send them to the login page. This is the "先登录才发
@@ -1441,7 +1472,7 @@
 
     /* the casting animation — for Sortis it draws the full 排盘 line by line */
     var spec = window.BWFigure ? window.BWFigure.random(m.id)
-      : { method: m.id, name: FIGURES[0], lines: [], transformedLines: null };
+      : { method: m.id, name: figureNames()[0], lines: [], transformedLines: null };
     // Compute the casting board for BOTH tiers so the reading is always grounded
     // in the hexagram actually cast. Stria is the "primary hexagram framework",
     // so it needs a board too — without one the routed prompt (which tells the
@@ -1945,12 +1976,7 @@
      the × dismisses it for good. ── */
   var gCoach = $("guideCoach");
   if (gCoach) {
-    var gSeen = false, gGone = false;
-    try {
-      gSeen = localStorage.getItem("bw:guideVisited") === "1";
-      gGone = localStorage.getItem("bw:guideCoachDismissed") === "1";
-    } catch (e) {}
-    gCoach.hidden = gSeen || gGone;
+    syncCoachMarks();
     function goGuide() {
       try { localStorage.setItem("bw:guideVisited", "1"); } catch (e) {}
       location.href = "./guide.html";
@@ -1963,7 +1989,7 @@
     if (gx) gx.addEventListener("click", function (e) {
       e.stopPropagation();
       try { localStorage.setItem("bw:guideCoachDismissed", "1"); } catch (er) {}
-      gCoach.hidden = true;
+      syncCoachMarks();
     });
     var hiw = $("howItWorksLink");
     if (hiw) hiw.addEventListener("click", function () {
@@ -1983,7 +2009,9 @@
     if (coachX) coachX.addEventListener("click", function (e) {
       e.stopPropagation();
       try { localStorage.setItem("bw:coachDismissed", "1"); } catch (er) {}
-      coachEl.hidden = true;
+      /* Dismissing the sign-in nudge is exactly when the guide nudge becomes
+         eligible, so re-decide both rather than only hiding this one. */
+      syncCoachMarks();
     });
   }
   $("miPlans").addEventListener("click", function () { closeMenu(); openPlans(); });

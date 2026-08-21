@@ -32,15 +32,27 @@ assert.equal(
   `each segment must be one contiguous id block, got ${segmentRuns.map((run) => `${run.seg}:${run.from}-${run.to}`).join(" ")}`
 );
 
-/* The recovered reference palettes open the cycle and hand over to 蓝靛段.
-   Without this the runtime silently falls back to alphabetical segment order. */
-const scheduleOrder = background.match(/var segmentOrder = \[([^\]]+)\]/);
-assert.ok(scheduleOrder, "buildPaletteSchedule must declare an explicit segmentOrder");
-const declared = scheduleOrder[1].match(/"([^"]+)"/g).map((s) => s.slice(1, -1));
-assert.deepEqual(declared.slice(0, 2), ["自定义", "蓝靛段"], "cycle must open on 自定义 then 蓝靛段");
-for (const seg of new Set(groups.map((group) => group.seg))) {
-  assert.ok(declared.includes(seg), `segment ${seg} exists in the catalogue but is missing from segmentOrder`);
-}
+/* Play order is a per-visitor shuffle, so there is no fixed sequence to assert.
+   What must hold is that it is SEEDED and that the seed persists: an unseeded
+   shuffle reorders the background on every navigation, which reads as a fault
+   rather than as design. These three assertions pin that down. */
+assert.match(background, /function mulberry32/, "schedule must use a seeded PRNG, not Math.random() per call");
+assert.match(
+  background,
+  /sessionStorage\.setItem\(seedKey/,
+  "the shuffle seed must persist in sessionStorage or every navigation reshuffles"
+);
+assert.match(
+  background,
+  /buildPaletteSchedule\(groups, seed\)/,
+  "the seed must reach buildPaletteSchedule"
+);
+
+/* Fisher–Yates over a copy is a permutation: assert the shuffle cannot drop or
+   duplicate a group, since a silent drop would simply retire a palette. */
+const shuffleSrc = background.match(/function buildPaletteSchedule[\s\S]*?\n  \}/)?.[0] ?? "";
+assert.match(shuffleSrc, /groups\.slice\(\)/, "shuffle must copy, never reorder the caller's array");
+assert.match(shuffleSrc, /for \(var i = out\.length - 1; i > 0; i--\)/, "shuffle must be a full Fisher–Yates pass");
 
 assert.match(background, /class=\"fill l/, "palette ridge fills must be rendered");
 assert.match(background, /class=\"mtn-water\"/, "palette water role must be rendered");

@@ -13,9 +13,15 @@ body:not([data-page="app"]){
   --cp-line-accent:color-mix(in srgb,var(--cp-accent) 54%,transparent);
   --cp-archive:#C8AD83;
   --cp-archive-ink:#E3D7C4;
-  --cp-radius-lg:27px 31px 25px 29px / 30px 25px 32px 26px;
-  --cp-radius-md:18px 22px 17px 20px / 21px 17px 23px 18px;
-  --cp-radius-sm:11px 14px 10px 13px / 13px 10px 14px 11px;
+  /* These were a second radius family holding eight-value wobble radii, and
+     because the values lived in a variable rather than in a border-radius
+     declaration they survived the pass that collapsed every literal radius on
+     the site. They are why the settings panel still computed 27px 30px per
+     corner while everything beside it was a crisp 14px. Point them at the one
+     scale rather than deleting them, so the pages using them keep working. */
+  --cp-radius-lg:var(--ui-radius);
+  --cp-radius-md:var(--ui-radius);
+  --cp-radius-sm:var(--ui-radius-small);
   --cp-shadow:0 1px 0 rgba(22,19,15,.065);
   --cp-fast:140ms;
   --cp-base:220ms;
@@ -39,7 +45,7 @@ body:not([data-page="app"]) :where(.pagehead,.top){
   margin:14px auto 0;
   padding:10px 16px;
   border:1px solid var(--cp-line);
-  border-radius:17px 21px 16px 19px / 19px 16px 22px 17px;
+  border-radius:var(--ui-radius);
   background:var(--cp-carrier);
   box-shadow:0 1px 0 rgba(22,19,15,.055);
   -webkit-backdrop-filter:blur(10px) saturate(108%);
@@ -55,7 +61,7 @@ body:not([data-page="app"]) :where(.pagehead .ghost,.top .exit,.nav .ghost){
   align-items:center;
   padding:0 12px;
   border:1px solid transparent;
-  border-radius:999px;
+  border-radius:var(--ui-radius-pill);
   transition:color var(--cp-fast),border-color var(--cp-fast),background-color var(--cp-fast);
 }
 body:not([data-page="app"]) :where(.pagehead .cta,.top .cta){
@@ -205,7 +211,10 @@ body[data-page="guide"] :where(.back,.next){
 /* Login: one composed carrier, legible fields, no hover travel. */
 body[data-page="login"] .wrap{padding:28px 20px 40px}
 body[data-page="login"] .card{width:min(460px,100%);background:var(--cp-carrier-strong)}
-body[data-page="login"] .card-hero{background:var(--cp-tint);border-bottom:1px solid var(--cp-line);padding:30px 30px 22px}
+/* No background. This was the fourth file painting .card-hero, and an opaque
+   tint at that — a solid warm band across the top of a glass card. The hero
+   is part of the card, so it takes the card's material and nothing else. */
+body[data-page="login"] .card-hero{border-bottom:1px solid var(--cp-line);padding:30px 30px 22px}
 body[data-page="login"] .card-body{padding:26px 30px 14px}
 body[data-page="login"] .card-foot{padding:14px 30px 26px}
 body[data-page="login"] .tabs{box-shadow:none;background:color-mix(in srgb,var(--cp-accent) 6%,var(--paper-raised));padding:4px}
@@ -221,7 +230,9 @@ body[data-page="login"][data-mode="register"] .reveal-row{animation:cp-field-in 
 
 /* Pricing: hierarchy comes from borders and colour, never card lifts. */
 body[data-page="pricing"] .shell{width:min(1120px,100%)}
-body[data-page="pricing"] .hero{min-height:45vh;align-items:center;padding-top:44px}
+/* 45vh of forced height for a title and two paragraphs is where this page
+   reads as air. The hero is as tall as what it holds. */
+body[data-page="pricing"] .hero{min-height:0;align-items:center;padding-top:26px}
 body[data-page="pricing"] .ledgerstrip{box-shadow:none;background:var(--cp-tint)}
 body[data-page="pricing"] .annual-check,
 body[data-page="pricing"] .plan,
@@ -231,7 +242,8 @@ body[data-page="pricing"] .plan{padding:28px 24px;box-shadow:none;transition:bor
 body[data-page="pricing"] .plan.featured{
   border-color:var(--cp-line-accent);
   background:color-mix(in srgb,var(--cp-accent) 7%,var(--paper-raised));
-  box-shadow:inset 0 3px var(--cp-accent),var(--cp-shadow);
+  /* see luxury-glass.css: the 3px accent slab is replaced by elevation + rim */
+  box-shadow:var(--ui-glass-edge),var(--ui-shadow-raised);
 }
 body[data-page="pricing"] :where(.rate-card,.pack,.term){box-shadow:none}
 body[data-page="pricing"] .rate-number{border-top-color:var(--cp-line)}
@@ -271,7 +283,7 @@ body[data-page="legal"] .legal{
   box-shadow:none;
 }
 body[data-page="legal"] .legal h1{max-width:12ch;font-size:clamp(44px,6.5vw,72px)}
-body[data-page="legal"] .lede{max-width:62ch;font-size:19px}
+body[data-page="legal"] .lede{max-width:62ch;font-size:18px}
 body[data-page="legal"] .toc{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -281,7 +293,7 @@ body[data-page="legal"] .toc{
   margin:44px auto 0;
   padding:30px 28px 26px;
   border:0;
-  border-radius:2px;
+  border-radius:var(--ui-radius-small);
   background:color-mix(in srgb,var(--cp-archive) 88%,var(--paper-raised))!important;
   box-shadow:none;
   -webkit-backdrop-filter:none!important;
@@ -303,7 +315,7 @@ html[data-skin="paper"] body[data-page="legal"] .toc{
   background-color:color-mix(in srgb,var(--cp-archive) 88%,var(--paper-raised))!important;
   background-image:none!important;
   border:0!important;
-  border-radius:2px!important;
+  border-radius:var(--ui-radius-small)!important;
   box-shadow:none!important;
   -webkit-backdrop-filter:none!important;
   backdrop-filter:none!important;
@@ -316,7 +328,7 @@ body[data-page="legal"] .clause{max-width:62ch;margin-left:auto;margin-right:aut
 body[data-page="legal"] .clause h2{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:baseline}
 body[data-page="legal"] .clause h2 .n{font-size:15px;color:var(--cp-accent)}
 body[data-page="legal"] .clause p,
-body[data-page="legal"] .clause li{font-size:15.5px;line-height:1.78}
+body[data-page="legal"] .clause li{font-size:15px;line-height:1.78}
 body[data-page="legal"] .clause + .clause{padding-top:22px;border-top-color:var(--cp-line)}
 body[data-page="legal"] .pull{padding:20px 22px;border-left:3px solid var(--cp-accent);background:var(--cp-tint);box-shadow:none}
 body[data-page="legal"] .legal-foot{border-top-color:var(--cp-line)}
@@ -353,7 +365,7 @@ body[data-page="not-found"] .ghostbtn{box-shadow:none;transition:border-color va
   overflow:hidden;
   background:var(--cp-archive);
   border:1px solid color-mix(in srgb,var(--cp-ink) 12%,transparent);
-  border-radius:2px;
+  border-radius:var(--ui-radius-small);
   box-shadow:none;
 }
 .editorial-plate img,.lesson-visual img{
@@ -393,7 +405,7 @@ body[data-page="not-found"] .ghostbtn{box-shadow:none;transition:border-color va
   line-height:1.08;
   letter-spacing:-.035em;
 }
-.editorial-spread figcaption p{margin-top:12px;font-size:12.5px;line-height:1.65;color:var(--dim)}
+.editorial-spread figcaption p{margin-top:12px;font-size:13px;line-height:1.65;color:var(--dim)}
 body[data-page="about"] .editorial-spread--reflection{direction:rtl}
 body[data-page="about"] .editorial-spread--reflection>*{direction:ltr}
 body[data-page="pricing"] .editorial-spread{margin-top:34px;margin-bottom:34px}
@@ -409,8 +421,8 @@ body[data-page="pricing"] .editorial-spread{margin-top:34px;margin-bottom:34px}
 }
 .lesson-overview .editorial-plate{min-width:0}
 .lesson-overview figcaption{padding:0 0 10px}
-.lesson-overview figcaption b{display:block;font-family:var(--serif);font-size:19px;line-height:1.2}
-.lesson-overview figcaption p{margin-top:7px;font-size:11.5px;line-height:1.55;color:var(--dim)}
+.lesson-overview figcaption b{display:block;font-family:var(--serif);font-size:18px;line-height:1.2}
+.lesson-overview figcaption p{margin-top:7px;font-size:12px;line-height:1.55;color:var(--dim)}
 
 @keyframes cp-field-in{from{opacity:0;transform:translateY(-6px);clip-path:inset(0 0 22%)}to{opacity:1;transform:none;clip-path:inset(0)}}
 @keyframes cp-figure-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -442,7 +454,7 @@ body[data-page="pricing"] .editorial-spread{margin-top:34px;margin-bottom:34px}
   body[data-page="legal"] .legal{padding:50px 18px 72px}
   body[data-page="legal"] .toc{width:100%;grid-template-columns:1fr;padding:28px 20px 20px}
   body[data-page="settings"] .shell{padding:36px 16px 76px}
-  body[data-page="settings"] .panel{border-radius:22px 25px 20px 24px / 24px 20px 27px 21px}
+  body[data-page="settings"] .panel{border-radius:var(--ui-radius)}
   body[data-page="guide"] .guide-stage{padding:30px 20px}
   .editorial-spread{margin:54px auto 70px}
   .editorial-spread figcaption b{font-size:27px}
@@ -460,3 +472,64 @@ body[data-page="pricing"] .editorial-spread{margin-top:34px;margin-bottom:34px}
   body[data-page="not-found"] .flourish path{animation:none;stroke-dashoffset:0}
 }
 @keyframes cp-fade{from{opacity:.35}to{opacity:1}}
+
+/* Legal index rows --------------------------------------------------------
+   .toc a was `min-height:34px; align-items:center`, so an entry that wraps to
+   two lines grows its row and its neighbour floats to the row's midpoint —
+   landing on neither of the wrapped entry's baselines. One wrapped entry out
+   of ten is enough to make the whole block read as misaligned, which is what
+   05/06 did. Align on the first baseline so the numbers line up across the
+   row whatever the labels do. */
+body[data-page="legal"] .toc a{align-items:baseline}
+body[data-page="legal"] .toc a .n{align-self:baseline}
+
+/* The poster ground was painted on the section rather than the page, so above
+   the first section the body colour showed through as a band with a hard edge
+   across the full width — a strip of a different colour that marks nothing. */
+html[data-skin="paper"] body[data-page="legal"]{
+  background-color: var(--soft-peach-cream) !important;
+}
+/* The closing texture band began at a hard horizontal edge that aligned with
+   nothing. Fade it in so it reads as the page running out rather than as a
+   second element starting. */
+html[data-skin="paper"] body[data-page="legal"] .lq-texture-stage{
+  -webkit-mask-image: linear-gradient(to bottom, #000 0 62%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0 62%, transparent 100%);
+}
+/* The band above the first section was the landscape's sky plane, still
+   painted full-viewport on a route that hides the ridges. On a poster page
+   with its own ground it contributes nothing but an edge. */
+html[data-skin="paper"] body[data-page="legal"] .mtn-sky{display:none}
+/* The band is the root element, not the sky: html carries the rotating cloud
+   colour for every route, and on a legal page the body's own ground starts
+   below the header offset, so the root shows through above it. Give the root
+   the poster ground on this route so there is one continuous field. */
+html[data-skin="paper"]:has(body[data-page="legal"]){
+  background-color: var(--soft-peach-cream) !important;
+}
+
+/* Poster-route header ----------------------------------------------------
+   On the legal and poster pages the pagehead is a full-bleed bar carrying a
+   wordmark and one back link. It was inheriting the shared glass carrier, so
+   it drew a 1360x80 translucent panel with square corners that ended at a hard
+   edge against the poster ground — a box around something that never needed
+   one, and the only square-cornered surface on a site where every other
+   surface is a 14px card.
+   Nothing here needs a container. Drop the box and keep the hairline, which
+   is the only part that was doing work. */
+html[data-skin="paper"] body:is([data-page="legal"],[data-page="about"],[data-page="guide"]) .pagehead {
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-bottom: var(--ui-hairline) solid var(--ui-line) !important;
+  border-radius: 0 !important;
+}
+/* The .lq-accent marks are inline SVG now, so they take colour rather than
+   carrying it. Keep them quiet and let them follow the rotating gem. */
+html[data-skin="paper"] body .lq-accent {
+  color: var(--bw-palette-gem, var(--terracotta));
+  height: auto;
+}
