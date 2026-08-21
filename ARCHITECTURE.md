@@ -355,8 +355,14 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 4. **清理 9 条死分支**(落后 77 个提交、6–7 周未动)。
 5. **CLAUDE.md §2 架构图过期**:它把 `styles.css` 和 `prompt-engine.js` 列在仓库根目录,
    两个都已不在那里(前者不存在,后者在 `functions/_lib/`)。
-6. **21 个元素被 3–4 个样式表同时上色**(login `.card`、settings `.panel` 被四个)。
-   这是每一次"改了没效果"的根源。
+6. **样式表归属:已量化并钉住,退役待做。**(08-21 更新,原记"21 个元素",实测是 **35 个**)
+   `luxury-glass.css` 才是玻璃路由的实际所有者(127 胜 / refinement 61 胜),
+   而 CLAUDE.md 说玻璃定义在 refinement —— **文档指错了家,所以改了没效果**。
+   它 495 个「选择器×属性」里 **372 个(75%)从不获胜**,但**不能机械删除**:
+   测量看不到交互后才存在的浮层与 `:hover/:focus/:active`。
+   `tests/style-ownership.mjs` 已上:两张遗留表只许变小,路由的样式表集合不许再加,
+   色块路由不许沾这三张表。**下一步是逐状态截图核对后分批退役**,
+   目标是 `legal.css` 那个形状:一条路由一张表,20 胜 0 负。
 7. 约 47 处裸 hex 待清(`refinement.css` / `poster-pages.css` / `luxury-glass.css`)。
 
 ---

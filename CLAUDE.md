@@ -215,7 +215,28 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 ⚠️ **Sortis 爻的 `stroke-width:0.5` 不在此列**:那不是线,是把填充形状撑开磨圆的手法(短边的 4%,见上),加粗它是把爻变胖。
 `--ui-line` 从 5% 墨提到 **11%**:1px 描边在 5% 上根本看不见,面板边缘全靠玻璃高光扛着。**细是规范,看不见是 bug。**
 
-### 玻璃(唯一材质,定义在 `tokens/refinement.css`)
+### 玻璃(唯一材质,**声明**在 `tokens/refinement.css`)
+
+⚠️ **但玻璃路由上真正说了算的是 `tokens/luxury-glass.css`,不是 refinement。**
+实测(08-21,五个玻璃页 × 两个视口,统计每个「元素 × 属性」最终谁赢):
+
+| 样式表 | 胜 | 负 |
+|---|---|---|
+| `luxury-glass.css` | **127** | 438 |
+| `refinement.css` | 61 | 247 |
+| `content-pages.css` | 20 | 110 |
+| `legal.css` | **20** | **0** ← 单一所有者应有的样子 |
+| 页内 `<style>` | **0** | 103 ← 一条都不生效 |
+
+**改 refinement.css 却看不到变化,原因就是这个** —— luxury-glass 用 112 个 `!important`
+以大约二比一压过它。全站 35 个元素被 ≥3 张表同时上色,pricing 的 `.choose`、
+settings 的 `.panel`、login 的 `.card` 各被 4 张。**色块路由是 0 个**,因为它一条路由只有一张表。
+
+luxury-glass 的 495 个「选择器×属性」里 **372 个(75%)在任何页面任何视口都从不获胜**。
+⚠️ **但不能就这么删** —— 测量只能看到有盒子的元素,`.method-menu` / `.toast` / `.modal` /
+`.account-menu` 要交互后才存在,`:hover` / `:focus` / `:active` 也不在覆盖里。
+退役它需要逐状态截图核对,不是跑个脚本。`tests/style-ownership.mjs` 先把它钉住:
+**这两张遗留表只许变小,不许变大;十条路由的样式表集合不许再加。**
 - **底色必须是中性白** `--ui-glass-tint: 255 255 255`,四档不透明度
   `--ui-glass-soft/.36` · `--ui-glass/.50` · `--ui-glass-warm/.58` · `--ui-glass-strong/.66`。
   ⚠️ **禁止把色组混进玻璃底色。** 曾经 `--ui-glass = color-mix(--bw-palette-1 72%)`、
