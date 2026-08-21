@@ -1,5 +1,19 @@
 # Cloudflare Pages redirects.
 #
+# ⚠️ THIS FILE CANNOT ENFORCE THE BLOCKLIST BELOW. Cloudflare Pages serves a
+# matching static asset FIRST and only consults _redirects when nothing matches,
+# so every rule here that names a file which actually exists has never fired.
+# Measured in production 2026-08-21: /CLAUDE.md, /PROGRESS.md, /RELEASES.md,
+# /palette-guide.html, /tests/*, /scripts/*, /tools/* all answered 200 with
+# their real content. The only entries that 404'd were /eval/* and
+# /copywriting/*, whose files are not deployed at all — the list worked exactly
+# where it was not needed.
+#
+# functions/_middleware.js is what actually denies these paths; Functions run
+# before asset resolution. This file is kept in step so the two do not
+# disagree, and tests/private-files.mjs asserts both.
+
+#
 # PROGRESS.md (dev log), the AUDIT-*.md findings, and CLAUDE.md (the working
 # brief for the agents on this repo) live here for contributors, but must not
 # be part of the public site. An audit in particular is a list of this site's
