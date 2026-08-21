@@ -129,9 +129,10 @@ body[data-page="guide"] .mt-stack span { font-family: var(--serif); font-size: 1
    headlines, so the page has one idea about emphasis rather than two. */
 .mt-stack span:nth-child(even) { font-weight: 300; }
 .mt-stack span:nth-child(odd) { font-weight: 700; }
-body[data-page="guide"] .mt-stack span {
-  text-shadow: 0 0 .04em rgb(255 255 255 / .30), 0 0 .22em rgb(255 255 255 / .18);
-}
+/* The glow comes from --glow-on-color in typography.css, applied on the block
+   route in blocks.css. This used to carry its own .30/.18 pair — a third,
+   slightly different set of numbers for the same effect, which is how a device
+   stops being one device. */
 
 /* ── working cards ────────────────────────────────────────────────────────
    These hold the interactions. They keep the square: every widget below is

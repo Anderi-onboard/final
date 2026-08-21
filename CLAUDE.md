@@ -19,19 +19,31 @@ BourneWise —— 六爻(Liu Yao)算法 + AI 疗愈决策 SaaS。
 ## 2 · 架构地图
 
 ```
-index.html          应用本体(空状态=落地页,会话=聊天页)
-guide.html          长滚动教程   about.html  pricing.html  login.html
-settings.html       privacy/terms/refund/404.html
-styles.css          只有 @import,指向 tokens/*
-tokens/*.css        colors / fonts / typography / spacing / paper / motion
-assets/backgrounds/mountain-range.js   动态山脉背景引擎(114 色组)
-assets/palettes/color-groups.json      色组数据(唯一权威)   palette-guide.html 色组管理器
-casting-figure.js   排卦图与排卦动画(BWFigure)
-liuyao-engine.js    六爻排盘   liuyao-ai.js  prompt-engine.js  prompt-router.js
-chat-app.js         聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js
-functions/api/      claude.js(AI 代理) auth/ account/ billing/ checkout.js
+玻璃路由   index.html(应用本体:空状态=落地页,会话=聊天页)
+           pricing.html  login.html  settings.html  404.html
+色块路由   about.html  guide.html(「The method」,正方形卡片)
+           terms/privacy/refund.html(法务,共用色块系统)
+tokens/*.css   colors / fonts / typography / spacing / paper / motion
+               + refinement(玻璃) blocks(色块) method(方法页) legal(法务)
+assets/backgrounds/mountain-range.js   山脉背景引擎(114 色组,每访客随机洗牌)
+assets/palettes/color-groups.json      色组数据(唯一权威)
+assets/palettes/color-groups-180.json  180 组存档(改之前,只读)
+assets/marks.js  几何母题生成 → assets/blocks.js 填充色块路由
+assets/weave.js  织字重(全站)
+casting-figure.js   排卦图与排卦动画(BWFigure,延迟加载)
+liuyao-engine.js    六爻排盘(纯函数)  liuyao-ai.js  prompt-router.js  prompt-checks.js
+chat-app.js  聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js  copy.js
+functions/_middleware.js   拦住内部文件(_redirects 做不到,见 ARCHITECTURE §3D)
+functions/_lib/     prompt-engine.js(解读语气,服务端)db.js session.js password.js
+functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
 ```
+
+⚠️ 这张图 08-21 前是过期的,列了两个已经不在那儿的文件:
+**`styles.css` 根本不存在**(页面直接 `<link>` 各个 token 文件,不走 `@import` 链 ——
+`@import` 会串行化 CSSOM 构建、拖慢首屏);
+**`prompt-engine.js` 不在仓库根目录**,08-14 安全审计后移到 `functions/_lib/`,
+因为提示词栈就是产品本身,放在浏览器里等于开源它。
 
 **单一数据源**:账户/点数/历史一律走 `account.js`(BWAccount),不要在别处复制状态逻辑。
 
@@ -152,8 +164,20 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
   所以这件事**不新增任何字体、不新增任何字节**,三字体规则照样成立。
 - 交替是**确定性的**:按词序 `i % 2`,偶数 300 / 奇数 700。和笔触的 `index mod 3` 同一条道理 ——
   逐次随机会在每次导航时重排,读起来是渲染故障不是设计。拆词在 `method.js` 里做,正文保持纯文本可编辑。
-- 微光 = **中性白**双层 `text-shadow`(`.04em/.34` 紧边 + `.22em/.22` 外晕),**不许掺色组**,和玻璃同一条规矩。
-  两个半径都压在半 em 以内,否则字腔糊死,变成雾不是光。**它是静态的,不呼吸、不脉动。**
+- 辉光是**两个令牌,按底色选**,写在 `tokens/typography.css`,全站只此一处定义:
+
+  | 令牌 | 用在哪 | 是什么光 |
+  |---|---|---|
+  | `--glow-on-color` | 色块路由(饱和色域上的浅字) | **中性白**双层,**不许掺色组** |
+  | `--glow-on-paper` | 玻璃路由(纸/玻璃上的深墨字) | **字自己的颜色**(`currentColor`)向外散 |
+
+  ⭐ **不是同一种光,因为底色相反。** 参考图是浅字落深底,白光才成立;
+  玻璃路由是深墨字落近白底,**白光在那儿没有对比可给,等于没画**。
+  纸底上能被看见的是字自身色相的晕 —— 用 `currentColor` 写,它自动跟着 114 组配色走,
+  一个颜色都不用写死。两条都保持紧边 ≤ `.06em`、外晕 ≤ `.34em`,
+  再大字腔糊死,变成雾不是光。**静态,不呼吸、不脉动。**
+- 上辉光的对象:织字重的标题,加上**页面最响的那几个数字** —— 价格、点数、余额。
+  它们是读者真正在找的东西,所以由它们承光。
 
 ### 点击原位翻卡(方法页)
 - 每张步骤卡有两面:**名字**(大字)和**它教的那个东西**(部件)。点一下原位换面,中间一记**白闪**,
@@ -203,7 +227,28 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 ⚠️ **Sortis 爻的 `stroke-width:0.5` 不在此列**:那不是线,是把填充形状撑开磨圆的手法(短边的 4%,见上),加粗它是把爻变胖。
 `--ui-line` 从 5% 墨提到 **11%**:1px 描边在 5% 上根本看不见,面板边缘全靠玻璃高光扛着。**细是规范,看不见是 bug。**
 
-### 玻璃(唯一材质,定义在 `tokens/refinement.css`)
+### 玻璃(唯一材质,**声明**在 `tokens/refinement.css`)
+
+⚠️ **但玻璃路由上真正说了算的是 `tokens/luxury-glass.css`,不是 refinement。**
+实测(08-21,五个玻璃页 × 两个视口,统计每个「元素 × 属性」最终谁赢):
+
+| 样式表 | 胜 | 负 |
+|---|---|---|
+| `luxury-glass.css` | **127** | 438 |
+| `refinement.css` | 61 | 247 |
+| `content-pages.css` | 20 | 110 |
+| `legal.css` | **20** | **0** ← 单一所有者应有的样子 |
+| 页内 `<style>` | **0** | 103 ← 一条都不生效 |
+
+**改 refinement.css 却看不到变化,原因就是这个** —— luxury-glass 用 112 个 `!important`
+以大约二比一压过它。全站 35 个元素被 ≥3 张表同时上色,pricing 的 `.choose`、
+settings 的 `.panel`、login 的 `.card` 各被 4 张。**色块路由是 0 个**,因为它一条路由只有一张表。
+
+luxury-glass 的 495 个「选择器×属性」里 **372 个(75%)在任何页面任何视口都从不获胜**。
+⚠️ **但不能就这么删** —— 测量只能看到有盒子的元素,`.method-menu` / `.toast` / `.modal` /
+`.account-menu` 要交互后才存在,`:hover` / `:focus` / `:active` 也不在覆盖里。
+退役它需要逐状态截图核对,不是跑个脚本。`tests/style-ownership.mjs` 先把它钉住:
+**这两张遗留表只许变小,不许变大;十条路由的样式表集合不许再加。**
 - **底色必须是中性白** `--ui-glass-tint: 255 255 255`,四档不透明度
   `--ui-glass-soft/.36` · `--ui-glass/.50` · `--ui-glass-warm/.58` · `--ui-glass-strong/.66`。
   ⚠️ **禁止把色组混进玻璃底色。** 曾经 `--ui-glass = color-mix(--bw-palette-1 72%)`、
@@ -258,7 +303,12 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 - 山脉相位使用 `sessionStorage` 中的会话时钟跨页面连续;禁止每次导航重新随机。
 - 禁止整页跨文档 View Transition:它会同时合成两套全屏 SVG 与玻璃层,造成闪帧。
 - 线稿入场动画每个浏览会话只播放一次,页面之间切换不重复入场。
-- ⭐ **播放顺序是每位访客各洗一次的随机序,不是排序**(2026-08-21)。
+- ⭐ **播放顺序是每位访客各洗一次的随机序,但开局偏置到 `自定义` + `蓝靛段`**(2026-08-21)。
+  `OPENING_SEGMENTS` 那两段(49 组)先播、其余 65 组后播,**两半都洗牌**。
+  所以访客一定开在最强的那批颜色里,但不会和上一位开在同一组 ——
+  实测 14 位新访客 14 次都落在这两段(自定义 11 / 蓝靛 3,正好是两段大小比),11 个不同开局。
+  ⚠️ **偏置的是"哪一组开局",不是回到排序**:被它取代的段排序把 34 组自定义连成一整块,
+  开头 8.5 分钟不换段,且每个新访客开在同一组。头部照样洗牌才是关键。
   **任何固定顺序都会让站点在目录的一小块里连续待很久,然后硬跳。** 按段排时 34 组自定义
   全排在最前 = **开头 8.5 分钟只有一个段**;而新会话 `clockStart = Date.now()`,于是
   **每个首次访客都从同一组开始、走同一条 28.5 分钟的路** —— 目录的跨度在那儿,没人看得到。
@@ -279,7 +329,22 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
   只有第 4–7 层(中景)带纹理,远近两端留空,这是它不像水印的原因。倾角保持 ≤1°:
   再大就能数出条纹,纹理变成条子。不要再往页面上叠 `background-image` 纹理 ——
   CSS `url()` 里的 SVG 读不到色组变量,180 组配色下必然撞色(见 `AUDIT-20260816.md` §1)。
+- ⭐ **山脊静止,只有云在漂**(2026-08-21,性能实测)。app 路由 1440×900、18 块玻璃 chrome:
+
+  | 配置 | fps |
+  |---|---|
+  | 3 层山脊漂移 + 2 云(此前上线的) | **21** |
+  | 山脊静止 + 4 云漂移(现在) | **55** |
+  | 完全没有山脉 | 60 |
+
+  **代价不是动画层数,是二元的。** 2 层漂移和 10 层漂移实测一样慢,只停近景 6 层也毫无改善 ——
+  山脊是贯穿 4000px 画布的路径,**只要有一层在动,它上面每个 `backdrop-filter` 区域当帧就失效重新模糊**。
+  云则几乎免费:每朵小、且裹在 `clip-path` 里,很少和玻璃面板相交,6 朵全漂测不出开销。
+  山脉真正的生命从来不是 14px/s 的漂移,**是每 15 秒那次配色交叉渐变** —— 和排卦图"落定即静止"同一条规矩。
+  ⚠️ 此前文件里那 10 层 + 6 云的声明**是死代码**:下面的 profile 块无条件覆盖了它们,
+  实际跑的一直是 3 层 + 2 云。已删,不要照着那份"声明"估算开销。
 - **性能红线**:绝不逐帧动画 `background-color`/`filter`/`backdrop-filter`。用 hold-then-crossfade,只动 transform/opacity。
+  **推论:也不要在 `backdrop-filter` 底下逐帧移动大面积图形** —— 那和逐帧动画 filter 是同一笔开销。
 
 ### 首屏 JS(index.html)
 - **`casting-figure.js` 不在关键路径上。** 空状态从不摇卦,所以它由 `window.BWCasting`

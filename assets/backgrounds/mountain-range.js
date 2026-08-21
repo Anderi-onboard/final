@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260821f", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260821f";
+    ? new URL("../palettes/color-groups.json?v=20260821j", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260821j";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -93,23 +93,40 @@
     + '.mtn-bg .l1{opacity:.48}.mtn-bg .l2{opacity:.60}.mtn-bg .l3{opacity:.72}.mtn-bg .l4{opacity:.83}'
     + '.mtn-bg .l5{opacity:.90}.mtn-bg .l6{opacity:.95}.mtn-bg .l7{opacity:.97}'
     + '.mtn-bg .l8,.mtn-bg .l9,.mtn-bg .l10{opacity:1}'
-    + '.mtn-bg .flow-1{animation:mtn-flow-l 145s linear infinite}.mtn-bg .flow-2{animation:mtn-flow-r 128s linear infinite}'
-    + '.mtn-bg .flow-3{animation:mtn-flow-l 112s linear infinite}.mtn-bg .flow-4{animation:mtn-flow-r 96s linear infinite}'
-    + '.mtn-bg .flow-5{animation:mtn-flow-l 82s linear infinite}.mtn-bg .flow-6{animation:mtn-flow-r 70s linear infinite}'
-    + '.mtn-bg .flow-7{animation:mtn-flow-l 58s linear infinite}.mtn-bg .flow-8{animation:mtn-flow-r 48s linear infinite}'
-    + '.mtn-bg .flow-9{animation:mtn-flow-l 40s linear infinite}.mtn-bg .flow-10{animation:mtn-flow-r 32s linear infinite}'
-    + '.mtn-bg .cloud-1{animation:mtn-cloud-r 120s linear infinite}.mtn-bg .cloud-2{animation:mtn-cloud-l 96s linear infinite}'
-    + '.mtn-bg .cloud-3{animation:mtn-cloud-r 74s linear -30s infinite}.mtn-bg .cloud-4{animation:mtn-cloud-l 132s linear -18s infinite}'
-    + '.mtn-bg .cloud-5{animation:mtn-cloud-r 104s linear -50s infinite}.mtn-bg .cloud-6{animation:mtn-cloud-l 84s linear -12s infinite}'
-    /* Lightweight motion profile: keep the scene alive with three slow ridge
-       planes and two clouds. The remaining artwork is static, so extension-heavy
-       Chromium profiles do not have to composite sixteen perpetual animations. */
+    /* ── MOTION PROFILE: the ridges hold still, the clouds drift ───────────
+       Measured 2026-08-21 on the app route at 1440x900 (18 blurred chrome
+       surfaces over the range):
+
+         3 drifting ridge planes + 2 clouds   21 fps   ← what shipped
+         ridges still, 6 clouds drifting      54 fps
+         no range at all                      60 fps
+
+       The cost is NOT the number of animated planes. Two drifting ridges
+       measured the same as ten, and stopping only the near six changed
+       nothing. It is binary: a ridge path spans the full 4000px canvas, so
+       the moment any of them moves, every backdrop-filter region above it is
+       invalidated and re-blurred that frame. Ten planes or one, the blur
+       work is identical.
+
+       Clouds are free for the opposite reason — each is small and lives
+       inside a clip-path, so it rarely intersects a blurred panel. Six of
+       them drifting cost nothing measurable.
+
+       So the ridges stop and the clouds carry the motion, which also lines up
+       with what the rest of the site already does: the casting figure settles
+       and holds, and the range's real life was never the 14px-per-second
+       drift — it is the palette crossfade every 15 seconds.
+
+       ⚠️ The previous 10-plane and 6-cloud declarations that used to sit here
+       were dead: the profile block below them overrode all of it
+       unconditionally, so the site has been running 3 ridges + 2 clouds while
+       appearing to declare sixteen animations. Removed rather than left to
+       mislead the next reader. */
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
-    + '.mtn-bg .flow-3{animation:mtn-flow-l 240s linear infinite;will-change:transform}'
-    + '.mtn-bg .flow-6{animation:mtn-flow-r 210s linear infinite;will-change:transform}'
-    + '.mtn-bg .flow-9{animation:mtn-flow-l 280s linear infinite;will-change:transform}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'
+    + '.mtn-bg .cloud-1{animation:mtn-cloud-r 220s linear infinite;will-change:transform}'
     + '.mtn-bg .cloud-2{animation:mtn-cloud-l 210s linear infinite;will-change:transform}'
+    + '.mtn-bg .cloud-4{animation:mtn-cloud-l 264s linear -18s infinite;will-change:transform}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 240s linear -50s infinite;will-change:transform}'
     + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important;transform:none!important}}';
 
@@ -326,17 +343,47 @@
     };
   }
 
+  /* Which segments a visitor should meet first. These are the owner-curated
+     reference palettes and the indigo run — the strongest colour in the
+     catalogue, and the ones worth spending a first impression on. */
+  var OPENING_SEGMENTS = ["自定义", "蓝靛段"];
+
   function buildPaletteSchedule(groups, seed) {
     /* Sort by id first so the input order is fixed regardless of how the file
        is serialised — the shuffle must depend on the seed alone, otherwise the
        "same seed, same order" guarantee quietly depends on file layout. */
-    var out = groups.slice().sort(function (a, b) { return a.id.localeCompare(b.id); });
+    var sorted = groups.slice().sort(function (a, b) { return a.id.localeCompare(b.id); });
     var rand = mulberry32(seed);
-    for (var i = out.length - 1; i > 0; i--) {          /* Fisher–Yates */
-      var j = Math.floor(rand() * (i + 1));
-      var tmp = out[i]; out[i] = out[j]; out[j] = tmp;
+
+    function shuffle(list) {                             /* Fisher–Yates */
+      for (var i = list.length - 1; i > 0; i--) {
+        var j = Math.floor(rand() * (i + 1));
+        var t = list[i]; list[i] = list[j]; list[j] = t;
+      }
+      return list;
     }
-    return out;
+
+    /* Two shuffled halves, not one — the opening segments play first, then
+       everything else, and both are shuffled.
+
+       This is a bias on WHICH GROUP OPENS, not a return to sorted order. The
+       segment sort that this replaced put all 34 自定义 together at the front:
+       eight and a half unbroken minutes of one segment before the catalogue
+       moved on, and the same opening group for every first-time visitor. Here
+       the head is shuffled too, so a visitor opens somewhere inside 自定义 or
+       蓝靛段 but not on the same group as the last one, and the tail is a full
+       shuffle of the rest.
+
+       Head is 49 of 114 groups, so the strong colour holds the first ~12
+       minutes and the remaining ~16 are the rest of the catalogue. */
+    var head = [], tail = [];
+    for (var k = 0; k < sorted.length; k++) {
+      (OPENING_SEGMENTS.indexOf(sorted[k].seg) >= 0 ? head : tail).push(sorted[k]);
+    }
+    /* If the catalogue ever loses those segment names, fall back to one plain
+       shuffle rather than opening on an empty list. */
+    if (!head.length) return shuffle(sorted);
+    return shuffle(head).concat(shuffle(tail));
   }
 
   function queuePaletteLayer(delay, fn, immediate) {
