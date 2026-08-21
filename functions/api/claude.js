@@ -46,7 +46,7 @@
 // deterministic local reading — the site still works, just without live prose.
 
 import { sessionFromRequest } from '../_lib/session.js';
-import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk } from '../_lib/db.js';
+import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk, consumeFreeReading, releaseFreeReading } from '../_lib/db.js';
 import { PromptEngine } from '../_lib/prompt-engine.js';
 
 // Same-origin only. The old '*' let any page on the internet POST here; the
@@ -138,7 +138,9 @@ export async function onRequestPost(context) {
   if (API_DISABLED) {
     return json({ error: 'AI API temporarily disabled', code: 'API_DISABLED' }, 503);
   }
-  let chargeTo = null; // { userId, reason } — who to bill once the reading is written
+  let chargeTo = null;  // { userId, reason } — who to bill once the reading is written
+  let freeClaim = null; // { userId, reason } — a signup entitlement already spent
+                        // on this request, to be returned if nothing is delivered
   try {
     if (!env.OPENROUTER_API_KEY) {
       return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
@@ -160,6 +162,7 @@ export async function onRequestPost(context) {
       const gate = await guardRequest({ request, env, db, product, mode });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.charge) chargeTo = gate.charge;
+      if (gate.freeClaim) freeClaim = gate.freeClaim;
       if (gate.unitsRemaining != null) unitsRemaining = gate.unitsRemaining;
     }
     // no DB bound: unauthenticated, unmetered — documented limitation above.
@@ -245,12 +248,12 @@ export async function onRequestPost(context) {
       });
 
       if (!upstream.ok || !upstream.body) {
+        if (freeClaim) { await releaseFreeReading(db, freeClaim.userId, freeClaim.reason); freeClaim = null; }
         const detail = await upstream.text().catch(() => '');
         // Nothing was held and no tokens were produced, so there is nothing to
         // undo — the reader is simply not charged.
         chargeTo = null;
-        console.error('openrouter stream error', upstream.status, detail);
-        return json({ error: 'openrouter ' + upstream.status }, 502);
+        return upstreamError(upstream.status, detail);
       }
 
       // OpenRouter streams OpenAI-shaped chunks (`choices[0].delta.content`,
@@ -263,15 +266,38 @@ export async function onRequestPost(context) {
       const { readable, writable } = new TransformStream();
       const promptText = JSON.stringify(payload.messages);
       const run = pumpAndSettle({
-        upstream, writable, env, mode, product,
-        chargeTo, unitsRemaining, model,
+        upstream, writable, env, db, mode, product,
+        chargeTo, freeClaim, unitsRemaining, model,
         inChars: promptText.length, inCjk: countCjk(promptText)
+      }).catch(async (e) => {
+        /* An unhandled rejection inside waitUntil takes the whole invocation
+           down and the caller sees a bare 502 with no body — which is what a
+           reader hit, losing their one free reading to an error page. Contain
+           it here, and give the entitlement back. */
+        console.error('pumpAndSettle failed', e);
+        if (freeClaim) { try { await releaseFreeReading(env.DB, freeClaim.userId, freeClaim.reason); } catch (e2) {} }
+        try { await writable.getWriter().close(); } catch (e2) {}
       });
       if (context.waitUntil) context.waitUntil(run);
       return new Response(readable, {
         status: 200,
         headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
       });
+    }
+
+    /* A full reading takes 60-90s to generate and the non-streaming path waits
+       for all of it before a single byte moves, so the connection dies before
+       the answer exists — measured against production: HTTP 000 at 73 seconds,
+       zero bytes, and the reader still charged 1090 units because settlement
+       runs regardless. Streaming is not an optimisation here, it is what keeps
+       the request alive, so a reading is never generated without it. Utility
+       roles are short and stay non-streaming. */
+    if ((product === 'sortis' || product === 'stria') && body.stream !== true) {
+      chargeTo = null;
+      return json({
+        error: 'a reading must be requested with stream:true — the non-streaming path cannot outlast generation',
+        code: 'STREAM_REQUIRED'
+      }, 400);
     }
 
     const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -283,8 +309,7 @@ export async function onRequestPost(context) {
     if (!resp.ok) {
       const detail = await resp.text().catch(() => '');
       chargeTo = null;
-      console.error('openrouter error', resp.status, detail);
-      return json({ error: 'openrouter ' + resp.status }, 502);
+      return upstreamError(resp.status, detail);
     }
     const data = await resp.json();
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
@@ -324,6 +349,12 @@ async function pumpAndSettle(o) {
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
   let buf = '', outChars = 0, outCjk = 0, usage = null, finish = null, clientGone = false;
+  // What actually REACHED the reader, as opposed to what the upstream produced.
+  // A request whose connection dies before the first byte lands used to be
+  // billed in full: the settlement runs under waitUntil and counted upstream
+  // output regardless of whether any of it was written. Measured in production
+  // — a request that returned HTTP 000 with zero bytes still charged 1090 units.
+  let delivered = 0;
   async function handleRecord(rec) {
     const dataLine = rec.split('\n').find((l) => l.indexOf('data:') === 0);
     if (!dataLine) return;
@@ -340,7 +371,7 @@ async function pumpAndSettle(o) {
     outCjk += countCjk(text);   // for the fallback estimate if usage never arrives
     if (!clientGone) {
       const event = 'data: ' + JSON.stringify({ type: 'content_block_delta', delta: { type: 'text_delta', text } }) + '\n\n';
-      try { await writer.write(encoder.encode(event)); }
+      try { await writer.write(encoder.encode(event)); delivered += text.length; }
       catch (e) { clientGone = true; }
     }
   }
@@ -371,6 +402,21 @@ async function pumpAndSettle(o) {
   let charged = 0;
   let units = o.unitsRemaining;
   let incomplete = !complete;
+  // Nothing reached the reader, so there is nothing to bill them for. The
+  // tokens were still produced and the provider still charges us for them —
+  // that cost is ours, not theirs. Billing a reader for prose they never saw is
+  // the one settlement outcome that cannot be defended, and metered billing
+  // without a reservation is exactly what makes it possible.
+  if (delivered === 0) {
+    console.error('claude proxy: stream delivered nothing',
+      { model: o.model, upstreamChars: outChars, finish });
+    // Nothing reached the reader, so neither the balance nor the signup
+    // entitlement may be spent on it.
+    o.chargeTo = null;
+    if (o.freeClaim && o.env && o.env.DB) {
+      try { await releaseFreeReading(o.env.DB, o.freeClaim.userId, o.freeClaim.reason); } catch (e) {}
+    }
+  }
   if (o.chargeTo) {
     try {
       const s = await chargeUsage(o.env.DB, o.chargeTo, o.model, usage,
@@ -495,12 +541,51 @@ async function guardRequest({ request, env, db, product, mode }) {
   }
 
   if (product === 'sortis' || product === 'stria') {
+    /* A NEW CASTING may be covered by the signup entitlement: one complete
+       reading, spent before units and never partially — it runs to the end
+       whatever it costs, and settlement skips it rather than billing it.
+       A FOLLOW-UP is never covered. That is the model: the first answer is
+       whole and free, and paying starts when the reader wants to go deeper
+       into their own casting. */
+    if (mode !== 'followup') {
+      /* Always ASK, never pre-check. Gating this on `user.free_readings > 0`
+         meant that on a database without the column the expression read
+         `undefined > 0` — false — so the claim was never attempted and a new
+         account with no units could do nothing at all. consumeFreeReading owns
+         the decision, including the pre-migration path where the entitlement is
+         derived from the ledger instead of stored. */
+      const claim = await consumeFreeReading(db, user.id, 'free-reading:' + product);
+      if (claim.claimed) {
+        // freeClaim travels with the request so it can be handed back if this
+        // reading never reaches the reader.
+        return {
+          charge: null,
+          freeClaim: { userId: user.id, reason: 'free-reading:' + product },
+          unitsRemaining: claim.units,
+          freeReadings: claim.freeReadings
+        };
+      }
+      // Already used, or lost the race — fall through to the balance.
+    }
+
     // Any positive balance buys entry. Asking for more than that would mean
     // guessing what this particular reading is going to cost, and every such
     // guess has to sit above typical usage — which turns into refusing readers
     // who could have afforded what they actually asked for.
     if (!(user.units > 0)) {
-      return { error: { status: 402, body: { error: 'insufficient units', units: user.units } } };
+      return {
+        error: {
+          status: 402,
+          body: {
+            error: 'insufficient units',
+            units: user.units,
+            // Tells the client which of the two walls it hit: a reader who has
+            // used their free reading and wants to follow up needs a different
+            // sentence from one who has simply run out.
+            code: mode === 'followup' ? 'TOPUP_FOR_FOLLOWUP' : 'TOPUP_REQUIRED'
+          }
+        }
+      };
     }
     return { charge: { userId: user.id, reason }, unitsRemaining: user.units };
   }
@@ -545,16 +630,32 @@ export function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS });
 }
 
+/* The output ceiling. A READING'S BUDGET IS DECIDED HERE, not by the browser:
+ * the client used to send max_tokens 12000 and that number drove the model, which
+ * both contradicts "the browser declares intent only" and put the one hard,
+ * deterministic length control in the least trustworthy place. For a reading the
+ * request is now ignored and the server ceiling applies; utility roles may still
+ * ask for less than their own small ceiling, since a category label needs nothing.
+ *
+ * IT IS A COST RAIL, NOT A LENGTH CONTROL, and the distinction matters because
+ * it has bitten here before. A cap only shortens a reading by TRUNCATING it, in
+ * the middle of a sentence, and reporting finish_reason "length" that looks like
+ * an ordinary completion — which is exactly how extended thinking silently cut
+ * readings off at 257 / 1126 / 1769 / 2444 characters. So the ceiling is set well
+ * above anything a real reading reaches and never used to aim at a target length;
+ * that job belongs to the floor in output_sortis. Measured across five live
+ * readings: 2448-4904 completion tokens, 20-41% of the budget, so nothing is
+ * anywhere near it and nothing gets cut.
+ */
+const READING_CEILING = 16384;
 function clampTokens(req, env, product) {
-  const n = Number(req || env.CLAUDE_MAX_TOKENS) || 1024;
-  // A reading gets the full ceiling: 16384, raised from 8192 because a full
-  // Sortis reading (4000-6000 CJK chars across all layers) was truncating
-  // mid-sentence. Utility roles get 512 — they emit a category label, a short
-  // QC verdict or a handful of suggested questions, and nothing they legitimately
-  // do needs more. The split matters because the utility path is the one with no
-  // session and no ledger behind it.
-  const ceiling = (product === 'sortis' || product === 'stria') ? 16384 : 512;
-  return Math.max(64, Math.min(ceiling, n));
+  const reading = product === 'sortis' || product === 'stria';
+  const envCap = Number(env.CLAUDE_MAX_TOKENS) || 0;
+  if (reading) return Math.max(64, Math.min(READING_CEILING, envCap || READING_CEILING));
+  // Utility roles emit a category label, a short QC verdict or a few suggested
+  // questions. Nothing they legitimately do needs more, and this is the path with
+  // no session and no ledger behind it.
+  return Math.max(64, Math.min(512, Number(req || envCap) || 1024));
 }
 
 function json(obj, status) {
@@ -562,4 +663,40 @@ function json(obj, status) {
     status,
     headers: { 'content-type': 'application/json', ...CORS }
   });
+}
+
+/* The model provider refused. Two things have to be true of what we send back.
+ *
+ * IT MUST NOT BE A 502. Cloudflare Pages substitutes its own error page for a
+ * Function's 502 — text/plain, "error code: 502", sixteen bytes, none of our
+ * headers — so the body we wrote is discarded at the edge and the caller gets
+ * an opaque failure instead of the reason. That is not theoretical: readings
+ * died for hours behind it while OpenRouter had been answering, in plain
+ * English and in 45ms, "you requested up to 12000 tokens, but can only afford
+ * 1217". The whole outage was a balance of about two cents, and the platform
+ * ate the sentence that said so. 503 passes through; 502 does not.
+ *
+ * IT MUST NOT RELAY THE UPSTREAM BODY. That body is written by someone else
+ * and can carry anything; it goes to the log, where we can read it, and never
+ * into a response. What the caller gets is our own sentence plus the upstream
+ * status, which is enough to tell a broken key from an empty balance from a
+ * provider outage — the three things anyone debugging this needs to separate.
+ */
+function upstreamError(status, detail) {
+  console.error('openrouter error', status, detail);
+  const out = { upstream: status, code: 'UPSTREAM_UNAVAILABLE', error: 'the reading service is unavailable' };
+  if (status === 402) {
+    // Worth naming exactly: nothing is wrong with the code, the site, or the
+    // reader's balance. The provider account needs topping up, and no reading
+    // can be generated until it is.
+    out.code = 'UPSTREAM_CREDIT';
+    out.error = 'the reading service is out of credit — no reading can be generated until it is topped up';
+  } else if (status === 401 || status === 403) {
+    out.code = 'UPSTREAM_AUTH';
+    out.error = 'the reading service rejected our credentials';
+  } else if (status === 429) {
+    out.code = 'UPSTREAM_RATE';
+    out.error = 'the reading service is rate limiting us — try again shortly';
+  }
+  return json(out, 503);
 }

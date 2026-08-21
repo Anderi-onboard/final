@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260817m", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260817m";
+    ? new URL("../palettes/color-groups.json?v=20260821a", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260821a";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -296,14 +296,47 @@
 
   /* The curated file is now authoritative: every retained group participates
      once. Removing a group in the manager removes it from the published file,
-     so the runtime no longer carries a second, hidden exclusion algorithm. */
-  function buildPaletteSchedule(groups) {
-    var tierOrder = { "浓": 0, "艳": 1, "中": 2, "淡": 3 };
-    return groups.slice().sort(function (a, b) {
-      var tierA = tierOrder[a.tier] == null ? 9 : tierOrder[a.tier];
-      var tierB = tierOrder[b.tier] == null ? 9 : tierOrder[b.tier];
-      return tierA - tierB || a.id.localeCompare(b.id);
-    });
+     so the runtime no longer carries a second, hidden exclusion algorithm.
+
+     ── Order is shuffled per visitor, not sorted ──────────────────────────
+     Any fixed order — by tier, by segment — means the site spends a long
+     unbroken stretch inside one part of the catalogue and then jumps. Sorting
+     by segment put all 34 自定义 groups first: eight and a half minutes of one
+     segment, and since a new session's clock starts at now, EVERY first-time
+     visitor opened on the same group and walked the same 28-minute path. The
+     catalogue's range was there and nobody saw it. A shuffle is what makes 114
+     groups read as 114.
+
+     ⚠️ Seeded, and the seed lives in sessionStorage — NOT Math.random() at
+     each call. This is the same rule the brush and LINE_DRIFT follow: reshuffle
+     on every navigation and the background reorders itself mid-visit, which
+     reads as a rendering fault, not as design. One draw per session, then the
+     same permutation on every page of that session; the next visitor gets a
+     different one. Same reason the phase clock is stored beside it.
+
+     mulberry32: a 32-bit PRNG small enough to inline and stable across
+     engines, so the sequence depends on the seed and nothing else. */
+  function mulberry32(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a = (a + 0x6D2B79F5) >>> 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function buildPaletteSchedule(groups, seed) {
+    /* Sort by id first so the input order is fixed regardless of how the file
+       is serialised — the shuffle must depend on the seed alone, otherwise the
+       "same seed, same order" guarantee quietly depends on file layout. */
+    var out = groups.slice().sort(function (a, b) { return a.id.localeCompare(b.id); });
+    var rand = mulberry32(seed);
+    for (var i = out.length - 1; i > 0; i--) {          /* Fisher–Yates */
+      var j = Math.floor(rand() * (i + 1));
+      var tmp = out[i]; out[i] = out[j]; out[j] = tmp;
+    }
+    return out;
   }
 
   function queuePaletteLayer(delay, fn, immediate) {
@@ -368,7 +401,7 @@
     }));
   }
 
-  function startPaletteSystem(clockStart, reduce) {
+  function startPaletteSystem(clockStart, reduce, seed) {
     fetch(paletteUrl, { cache: "force-cache" })
       .then(function (response) {
         if (!response.ok) throw new Error("Palette data " + response.status);
@@ -378,7 +411,7 @@
         if (!Array.isArray(groups) || !groups.length || !groups.every(validPaletteGroup)) {
           throw new Error("Palette data failed validation");
         }
-        var schedule = buildPaletteSchedule(groups);
+        var schedule = buildPaletteSchedule(groups, seed);
         paletteScheduleSlots = schedule.length;
         var firstApply = true;
         function update() {
@@ -411,8 +444,10 @@
        discovered asynchronously and may grow beyond the original catalogue. */
     var cycleMs = 86400000;
     var clockKey = 'bw-palette-clock-v4';
+    var seedKey = 'bw-palette-seed-v1';
     var seenKey = 'bw-mtn-seen';
     var clockStart;
+    var paletteSeed = 0;
     var seen = false;
     try {
       clockStart = +(sessionStorage.getItem(clockKey) || 0);
@@ -420,10 +455,24 @@
         clockStart = Date.now();
         sessionStorage.setItem(clockKey, String(clockStart));
       }
+      /* Drawn once per session and stored beside the clock, for the reason
+         given at buildPaletteSchedule: the order has to survive navigation.
+         Both keys are read before either is written, so a page that loads
+         mid-session inherits the phase AND the permutation. */
+      paletteSeed = +(sessionStorage.getItem(seedKey) || 0);
+      if (!paletteSeed) {
+        paletteSeed = (Math.random() * 4294967296) >>> 0 || 1;
+        sessionStorage.setItem(seedKey, String(paletteSeed));
+      }
       seen = sessionStorage.getItem(seenKey) === '1';
       sessionStorage.setItem(seenKey, '1');
     } catch (e) {
+      /* Private mode / storage blocked: still shuffle, just per page load.
+         A visitor who cannot persist anything has no cross-page continuity to
+         protect, so a fresh draw is the honest fallback rather than a constant
+         that would hand every such visitor the same order. */
       clockStart = Date.now();
+      paletteSeed = (Math.random() * 4294967296) >>> 0 || 1;
     }
     var sharedPhase = -(((Date.now() - clockStart) % cycleMs) / 1000);
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
@@ -458,7 +507,7 @@
         setTimeout(function () { el.classList.remove('mtn-enter'); }, 1200);
       }
     });
-    startPaletteSystem(clockStart, reduce);
+    startPaletteSystem(clockStart, reduce, paletteSeed);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

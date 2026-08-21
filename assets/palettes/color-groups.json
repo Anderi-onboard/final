@@ -13,8 +13,8 @@
       "#B7D6E8",
       "#ABCCE2",
       "#A0C5DA",
-      "#BCA5CC",
-      "#B29DBA",
+      "#97B1D3",
+      "#9DAAB9",
       "#A38479",
       "#957D72",
       "#887871"
@@ -34,74 +34,6 @@
     }
   },
   {
-    "id": "002",
-    "name": "冬·霜青白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#FFFAEF",
-      "#D9DEC6",
-      "#CCD6B8",
-      "#C6CDAB",
-      "#ADB8D9",
-      "#A6ADCF",
-      "#9CA6C6",
-      "#978E6B",
-      "#89866F",
-      "#817D6E"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FDFAF1",
-    "backgrounds": {
-      "sky": "#FDFAF1",
-      "water": "#ADB8D9"
-    }
-  },
-  {
-    "id": "003",
-    "name": "亚麻灰白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#F4FDF4",
-      "#E2F7E4",
-      "#BED3EC",
-      "#B4C9E6",
-      "#92C1C3",
-      "#89B7BC",
-      "#7AB1B3",
-      "#80937A",
-      "#788977",
-      "#757F72"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F6FDF5",
-    "backgrounds": {
-      "sky": "#F6FDF5",
-      "water": "#92C1C3"
-    }
-  },
-  {
     "id": "004",
     "name": "春·樱白",
     "seg": "近白段",
@@ -113,12 +45,12 @@
       "#EFFEFC",
       "#D8F8F6",
       "#CAF2EC",
-      "#A7D3CF",
+      "#FDD7CE",
       "#9ACAC8",
       "#D3A0A2",
-      "#C29B99",
-      "#A48288",
-      "#967B7E",
+      "#CA241C",
+      "#3A0811",
+      "#47060D",
       "#897679"
     ],
     "breaks": [
@@ -129,9 +61,9 @@
     "gems": [
       5
     ],
-    "cloud": "#F1FDFC",
+    "cloud": "#B3D5F4",
     "backgrounds": {
-      "sky": "#F1FDFC",
+      "sky": "#B3D5F4",
       "water": "#9ACAC8"
     }
   },
@@ -180,9 +112,9 @@
     "rows": [
       "#FAFAFF",
       "#EFEEFF",
-      "#DACAE6",
-      "#D3BEDC",
-      "#C9B7D7",
+      "#ABD2E3",
+      "#EACE99",
+      "#DF6868",
       "#BFAD8C",
       "#B2A484",
       "#858AAC",
@@ -200,41 +132,7 @@
     "cloud": "#F9FAFF",
     "backgrounds": {
       "sky": "#F9FAFF",
-      "water": "#C9B7D7"
-    }
-  },
-  {
-    "id": "007",
-    "name": "秋·练白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#FFF8FF",
-      "#FEE9FB",
-      "#C0D9C1",
-      "#B2D0B8",
-      "#D2ABB8",
-      "#CAA1AB",
-      "#BF9AA6",
-      "#9B829F",
-      "#8E7D8E",
-      "#827784"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FFF8FE",
-    "backgrounds": {
-      "sky": "#FFF8FE",
-      "water": "#D2ABB8"
+      "water": "#EBC437"
     }
   },
   {
@@ -306,72 +204,6 @@
     }
   },
   {
-    "id": "010",
-    "name": "砂白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "3|2|2|3",
-    "harmony": "双极",
-    "families": 3,
-    "rows": [
-      "#FBFBEF",
-      "#F1F3DA",
-      "#EBEACB",
-      "#C4CEAC",
-      "#B7C5A3",
-      "#ABAAD5",
-      "#A5A1C2",
-      "#8C8F72",
-      "#818670",
-      "#7C7D6E"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FBFBF2",
-    "backgrounds": {
-      "sky": "#FBFBF2",
-      "water": "#B7C5A3"
-    }
-  },
-  {
-    "id": "011",
-    "name": "春·薄樱雾",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|3|3|2",
-    "harmony": "分裂补色",
-    "families": 3,
-    "rows": [
-      "#F3FEF5",
-      "#E0F7E6",
-      "#DDC9E3",
-      "#D6BDD9",
-      "#CDB6D4",
-      "#8BBAB6",
-      "#83AFAE",
-      "#80A7A3",
-      "#758B7C",
-      "#708077"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [],
-    "cloud": "#F4FDF7",
-    "backgrounds": {
-      "sky": "#F4FDF7",
-      "water": "#CDB6D4"
-    }
-  },
-  {
     "id": "012",
     "name": "冬·雪鼠",
     "seg": "近白段",
@@ -437,74 +269,6 @@
     "backgrounds": {
       "sky": "#F8FBFE",
       "water": "#AFB5D7"
-    }
-  },
-  {
-    "id": "014",
-    "name": "秋·砥粉",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|3|2|3",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#FBF9FF",
-      "#F4ECFF",
-      "#E1C8DE",
-      "#DBBCD4",
-      "#D2B4CF",
-      "#ABB491",
-      "#9FAB8B",
-      "#8E87A9",
-      "#867F95",
-      "#7C7988"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FBFAFE",
-    "backgrounds": {
-      "sky": "#FBFAFE",
-      "water": "#D2B4CF"
-    }
-  },
-  {
-    "id": "015",
-    "name": "藤白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "3|2|2|3",
-    "harmony": "双极",
-    "families": 3,
-    "rows": [
-      "#FFF8FC",
-      "#FFEAF3",
-      "#FDDDEF",
-      "#AFD3BF",
-      "#A2CAB7",
-      "#D0A0AE",
-      "#C09AA2",
-      "#9E8395",
-      "#927C88",
-      "#857780"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FEF9FB",
-    "backgrounds": {
-      "sky": "#FEF9FB",
-      "water": "#A2CAB7"
     }
   },
   {
@@ -576,74 +340,6 @@
     }
   },
   {
-    "id": "018",
-    "name": "灰梅白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|3|2|3",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#F8FCF1",
-      "#EAF5DE",
-      "#BDD9C4",
-      "#AED1BC",
-      "#A7C9B0",
-      "#BFA5C2",
-      "#B79CB5",
-      "#89916E",
-      "#7F8771",
-      "#7A7E6F"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F8FCF3",
-    "backgrounds": {
-      "sky": "#F8FCF3",
-      "water": "#A7C9B0"
-    }
-  },
-  {
-    "id": "019",
-    "name": "白緑",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "四分色",
-    "families": 3,
-    "rows": [
-      "#F1FEF8",
-      "#DBF8ED",
-      "#E8C6D3",
-      "#E2BBC7",
-      "#C7B594",
-      "#BBAC8A",
-      "#B4A385",
-      "#6C9789",
-      "#6E8A83",
-      "#6E807A"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F2FDF9",
-    "backgrounds": {
-      "sky": "#F2FDF9",
-      "water": "#C7B594"
-    }
-  },
-  {
     "id": "020",
     "name": "鸟の子",
     "seg": "近白段",
@@ -712,74 +408,6 @@
     }
   },
   {
-    "id": "022",
-    "name": "冬·钢白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|3|2|3",
-    "harmony": "冷暖交替",
-    "families": 3,
-    "rows": [
-      "#FCF9FF",
-      "#F7EBFF",
-      "#E2C7DD",
-      "#DCBCD2",
-      "#D3B4CD",
-      "#9FB79A",
-      "#94AE94",
-      "#9784A3",
-      "#8C7D91",
-      "#807886"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FDF9FF",
-    "backgrounds": {
-      "sky": "#FDF9FF",
-      "water": "#D3B4CD"
-    }
-  },
-  {
-    "id": "023",
-    "name": "苔白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#FFF8FA",
-      "#FFEAEE",
-      "#B2DADB",
-      "#A4D1D5",
-      "#D5ABA9",
-      "#CBA29D",
-      "#BE9C9B",
-      "#A6808E",
-      "#957B82",
-      "#88767C"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FEF9FA",
-    "backgrounds": {
-      "sky": "#FEF9FA",
-      "water": "#D5ABA9"
-    }
-  },
-  {
     "id": "024",
     "name": "淡红梅白",
     "seg": "近白段",
@@ -814,108 +442,6 @@
     }
   },
   {
-    "id": "025",
-    "name": "象牙白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#FDFBEF",
-      "#D1DBF2",
-      "#C7D0ED",
-      "#BBC9E8",
-      "#B6BD99",
-      "#AAB592",
-      "#A5AB8A",
-      "#998D6A",
-      "#8A856E",
-      "#827D6E"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FDFBF1",
-    "backgrounds": {
-      "sky": "#FDFBF1",
-      "water": "#B6BD99"
-    }
-  },
-  {
-    "id": "026",
-    "name": "水浅葱白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|3|3|2",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#F5FDF3",
-      "#E3F7E3",
-      "#B2D9DE",
-      "#A4D0D8",
-      "#9AC9CE",
-      "#9EB0CF",
-      "#99A5C4",
-      "#909EB9",
-      "#7A8B72",
-      "#777E75"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#F8FBF8",
-    "backgrounds": {
-      "sky": "#F8FBF8",
-      "water": "#9AC9CE"
-    }
-  },
-  {
-    "id": "027",
-    "name": "灰藤白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#EFFEFB",
-      "#D8F8F5",
-      "#EBC6CA",
-      "#E4BBBC",
-      "#96BED0",
-      "#8EB4C7",
-      "#87ACBC",
-      "#689793",
-      "#6C8A89",
-      "#6D807E"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F6FCFB",
-    "backgrounds": {
-      "sky": "#F6FCFB",
-      "water": "#96BED0"
-    }
-  },
-  {
     "id": "028",
     "name": "秋·枯白",
     "seg": "近白段",
@@ -947,74 +473,6 @@
     "backgrounds": {
       "sky": "#F7FBFE",
       "water": "#9EC6D9"
-    }
-  },
-  {
-    "id": "029",
-    "name": "淡桔梗白",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "3|2|2|3",
-    "harmony": "四分色",
-    "families": 3,
-    "rows": [
-      "#FAFAFC",
-      "#EEEFFF",
-      "#E3E6FF",
-      "#CCCBA8",
-      "#BFC39E",
-      "#81BCBC",
-      "#83AFB2",
-      "#858BA6",
-      "#7F8197",
-      "#777B8A"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FAFAFE",
-    "backgrounds": {
-      "sky": "#FAFAFE",
-      "water": "#BFC39E"
-    }
-  },
-  {
-    "id": "030",
-    "name": "生成り",
-    "seg": "近白段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#FEF8FE",
-      "#EDD2DD",
-      "#E9C6D1",
-      "#E2BDCC",
-      "#A5C2A6",
-      "#99B99F",
-      "#95B096",
-      "#A0839D",
-      "#927D8D",
-      "#857884"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FDF9FC",
-    "backgrounds": {
-      "sky": "#FDF9FC",
-      "water": "#A5C2A6"
     }
   },
   {
@@ -1185,109 +643,6 @@
     "backgrounds": {
       "sky": "#FFFDFC",
       "water": "#A7704B"
-    }
-  },
-  {
-    "id": "036",
-    "name": "梅鼠",
-    "seg": "粉珊瑚段",
-    "tier": "淡",
-    "pattern": "3|2|2|3",
-    "harmony": "三分色",
-    "families": 2,
-    "rows": [
-      "#FFF1F3",
-      "#FFD7DC",
-      "#FFC0CD",
-      "#C7889E",
-      "#B97588",
-      "#6E7926",
-      "#596A1F",
-      "#353E09",
-      "#25300B",
-      "#20250D"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#FFF9FA",
-    "backgrounds": {
-      "sky": "#FFF9FA",
-      "water": "#B97588"
-    }
-  },
-  {
-    "id": "037",
-    "name": "樱桃霞",
-    "seg": "粉珊瑚段",
-    "tier": "淡",
-    "pattern": "2|3|3|2",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#FFF1F4",
-      "#FED7DE",
-      "#72BBB6",
-      "#55AAAA",
-      "#409D98",
-      "#A45B3A",
-      "#875335",
-      "#774732",
-      "#44202E",
-      "#321920"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FFFAFB",
-    "backgrounds": {
-      "sky": "#FFFAFB",
-      "water": "#409D98"
-    }
-  },
-  {
-    "id": "038",
-    "name": "桃朱",
-    "seg": "粉珊瑚段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "双极",
-    "families": 3,
-    "rows": [
-      "#FEF1F4",
-      "#E0AEAD",
-      "#D69A94",
-      "#CC8888",
-      "#379388",
-      "#1D827D",
-      "#16736A",
-      "#61242F",
-      "#462023",
-      "#331A1D"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FFFDFD",
-    "backgrounds": {
-      "sky": "#FFFDFD",
-      "water": "#379388"
     }
   },
   {
@@ -1541,9 +896,9 @@
       "#E0AFA6",
       "#D59B8C",
       "#CB8A7E",
-      "#319196",
-      "#1B808A",
-      "#0C7277",
+      "#7376D9",
+      "#489BDB",
+      "#0C4479",
       "#612434",
       "#462026",
       "#331A1F"
@@ -1559,7 +914,7 @@
     "cloud": "#FFF4F6",
     "backgrounds": {
       "sky": "#FFF4F6",
-      "water": "#319196"
+      "water": "#ABCDF2"
     }
   },
   {
@@ -1571,8 +926,8 @@
     "harmony": "四分色",
     "families": 3,
     "rows": [
-      "#FDF0F1",
-      "#FFD8D7",
+      "#A30512",
+      "#D26765",
       "#72BBB5",
       "#5DA9A9",
       "#419D98",
@@ -1954,9 +1309,9 @@
       "#EFCE9D",
       "#AD9D60",
       "#998D4C",
-      "#4675A2",
-      "#35639A",
-      "#32587C",
+      "#0F273E",
+      "#16355A",
+      "#12273B",
       "#3F2805",
       "#2D1F09"
     ],
@@ -1968,9 +1323,9 @@
     "gems": [
       6
     ],
-    "cloud": "#FEFAF4",
+    "cloud": "#EAB76C",
     "backgrounds": {
-      "sky": "#FEFAF4",
+      "sky": "#EAB76C",
       "water": "#998D4C"
     }
   },
@@ -1983,10 +1338,10 @@
     "harmony": "三分色",
     "families": 3,
     "rows": [
-      "#FFF4E0",
+      "#EABE6C",
       "#96C7CB",
-      "#78B8C1",
-      "#57ACB3",
+      "#A7394A",
+      "#5669B3",
       "#5C9064",
       "#468059",
       "#604101",
@@ -2043,41 +1398,6 @@
     }
   },
   {
-    "id": "061",
-    "name": "土白",
-    "seg": "金赭段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "双极",
-    "families": 3,
-    "rows": [
-      "#FBF5E0",
-      "#A8BEE3",
-      "#96ABDB",
-      "#819DD1",
-      "#8D8342",
-      "#7A751B",
-      "#71650B",
-      "#4A3900",
-      "#362D02",
-      "#2A2109"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#FFFBEA",
-    "backgrounds": {
-      "sky": "#FFFBEA",
-      "water": "#8D8342"
-    }
-  },
-  {
     "id": "062",
     "name": "琥珀砂",
     "seg": "金赭段",
@@ -2091,8 +1411,8 @@
       "#84AA63",
       "#65994C",
       "#5B862E",
-      "#32549F",
-      "#263B94",
+      "#DC7C2E",
+      "#3D9226",
       "#221700",
       "#110900",
       "#0F0400"
@@ -2194,8 +1514,8 @@
       "#4D90D2",
       "#3F79C1",
       "#206AAD",
-      "#514B02",
-      "#3B3A00",
+      "#501D02",
+      "#3D0C00",
       "#1A0700",
       "#120200"
     ],
@@ -2256,10 +1576,10 @@
     "harmony": "分裂补色",
     "families": 3,
     "rows": [
-      "#FFF3E4",
+      "#E5BA85",
       "#FDDA9E",
-      "#5DA4DA",
-      "#478DCD",
+      "#1E5E8F",
+      "#052748",
       "#736B00",
       "#5A5900",
       "#382000",
@@ -2282,142 +1602,6 @@
     }
   },
   {
-    "id": "068",
-    "name": "蜂蜜",
-    "seg": "金赭段",
-    "tier": "中",
-    "pattern": "3|2|3|2",
-    "harmony": "冷暖交替",
-    "families": 2,
-    "rows": [
-      "#FFF5E5",
-      "#F9DB9D",
-      "#F2C679",
-      "#AF8321",
-      "#947209",
-      "#414BAD",
-      "#3B3B85",
-      "#28306E",
-      "#070330",
-      "#05021C"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FFFBF4",
-    "backgrounds": {
-      "sky": "#FFFBF4",
-      "water": "#947209"
-    }
-  },
-  {
-    "id": "069",
-    "name": "亚麻金",
-    "seg": "金赭段",
-    "tier": "中",
-    "pattern": "1|3|2|4",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#FFF5DA",
-      "#A2ADE8",
-      "#9194DE",
-      "#7884D4",
-      "#707003",
-      "#575E04",
-      "#372600",
-      "#231800",
-      "#160A00",
-      "#0E0400"
-    ],
-    "breaks": [
-      1,
-      4,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FFFBF3",
-    "backgrounds": {
-      "sky": "#FFFBF3",
-      "water": "#707003"
-    }
-  },
-  {
-    "id": "070",
-    "name": "赭石",
-    "seg": "金赭段",
-    "tier": "浓",
-    "pattern": "2|2|3|3",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#FFF4DC",
-      "#F9DC84",
-      "#80A73D",
-      "#5D9418",
-      "#4A47D0",
-      "#4437A3",
-      "#2E2A8D",
-      "#00111F",
-      "#000314",
-      "#000013"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#FFFAEE",
-    "backgrounds": {
-      "sky": "#FFFAEE",
-      "water": "#4A47D0"
-    }
-  },
-  {
-    "id": "071",
-    "name": "黄栌",
-    "seg": "金赭段",
-    "tier": "浓",
-    "pattern": "1|3|3|3",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#FFF5D7",
-      "#8FAAF5",
-      "#7C8FED",
-      "#5E7EE4",
-      "#6B6700",
-      "#515503",
-      "#454300",
-      "#13003F",
-      "#070020",
-      "#030016"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FFFBE8",
-    "backgrounds": {
-      "sky": "#FFFBE8",
-      "water": "#6B6700"
-    }
-  },
-  {
     "id": "072",
     "name": "柿橙",
     "seg": "金赭段",
@@ -2431,8 +1615,8 @@
       "#419EE8",
       "#2784DD",
       "#0875BC",
-      "#025A6B",
-      "#004556",
+      "#F0BD05",
+      "#63A9BB",
       "#170D00",
       "#0E0000",
       "#070000"
@@ -2465,8 +1649,8 @@
       "#FEBB7E",
       "#3786E2",
       "#2D6DD0",
-      "#624D03",
-      "#493C00",
+      "#BFB17D",
+      "#95BAE9",
       "#00121B",
       "#00040F",
       "#000111"
@@ -2496,14 +1680,14 @@
     "rows": [
       "#FFF1E6",
       "#FED5AF",
-      "#0AA9C3",
-      "#0F90AD",
-      "#097E92",
-      "#0848A9",
-      "#0A27A0",
-      "#00286C",
-      "#100000",
-      "#050000"
+      "#82C20A",
+      "#92CEA1",
+      "#099019",
+      "#D69E05",
+      "#DD4646",
+      "#37D73A",
+      "#8E4848",
+      "#CB4848"
     ],
     "breaks": [
       2,
@@ -2554,40 +1738,6 @@
     }
   },
   {
-    "id": "076",
-    "name": "琥珀深",
-    "seg": "金赭段",
-    "tier": "浓",
-    "pattern": "1|2|3|4",
-    "harmony": "同族+一撞",
-    "families": 4,
-    "rows": [
-      "#FFF3E5",
-      "#BCB056",
-      "#A39C13",
-      "#2874CF",
-      "#205ABD",
-      "#004E9D",
-      "#162400",
-      "#041400",
-      "#000800",
-      "#000300"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#FFF8EE",
-    "backgrounds": {
-      "sky": "#FFF8EE",
-      "water": "#205ABD"
-    }
-  },
-  {
     "id": "077",
     "name": "山吹烈",
     "seg": "金赭段",
@@ -2601,7 +1751,7 @@
       "#029FE7",
       "#0B86CF",
       "#3D35E6",
-      "#3A26B4",
+      "#EE382B",
       "#181A00",
       "#070A00",
       "#020200",
@@ -2616,9 +1766,9 @@
       3,
       4
     ],
-    "cloud": "#FFFBF5",
+    "cloud": "#FF8585",
     "backgrounds": {
-      "sky": "#FFFBF5",
+      "sky": "#FF8585",
       "water": "#3D35E6"
     }
   },
@@ -2636,11 +1786,11 @@
       "#F8C115",
       "#848A0D",
       "#687603",
-      "#2833BA",
-      "#28159B",
-      "#130282",
-      "#000020",
-      "#010015"
+      "#B9272F",
+      "#9D1531",
+      "#830229",
+      "#D0D0E2",
+      "#FFB3B3"
     ],
     "breaks": [
       3,
@@ -2655,349 +1805,6 @@
     "backgrounds": {
       "sky": "#FFF9EA",
       "water": "#687603"
-    }
-  },
-  {
-    "id": "079",
-    "name": "橙焰",
-    "seg": "金赭段",
-    "tier": "艳",
-    "pattern": "1|3|2|4",
-    "harmony": "补色对撞",
-    "families": 4,
-    "rows": [
-      "#FFF4DE",
-      "#A09FFD",
-      "#927FF8",
-      "#766BF2",
-      "#5D6804",
-      "#445402",
-      "#001C33",
-      "#000B20",
-      "#000021",
-      "#010016"
-    ],
-    "breaks": [
-      1,
-      4,
-      6
-    ],
-    "gems": [
-      4,
-      5
-    ],
-    "cloud": "#FFFAED",
-    "backgrounds": {
-      "sky": "#FFFAED",
-      "water": "#5D6804"
-    }
-  },
-  {
-    "id": "080",
-    "name": "蜜焰",
-    "seg": "金赭段",
-    "tier": "艳",
-    "pattern": "2|2|3|3",
-    "harmony": "四分色",
-    "families": 4,
-    "rows": [
-      "#FFF7C4",
-      "#EAE36D",
-      "#09AC9C",
-      "#02938B",
-      "#4941CD",
-      "#450AC0",
-      "#2D06A0",
-      "#200005",
-      "#0F0000",
-      "#0B0000"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#FFFBE6",
-    "backgrounds": {
-      "sky": "#FFFBE6",
-      "water": "#4941CD"
-    }
-  },
-  {
-    "id": "081",
-    "name": "白緑",
-    "seg": "青绿段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#E9FBEB",
-      "#D2B0D0",
-      "#C89AC0",
-      "#B98BB8",
-      "#3D9381",
-      "#248276",
-      "#097564",
-      "#224520",
-      "#16351C",
-      "#162715"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F1FFF3",
-    "backgrounds": {
-      "sky": "#F1FFF3",
-      "water": "#3D9381"
-    }
-  },
-  {
-    "id": "082",
-    "name": "青磁白",
-    "seg": "青绿段",
-    "tier": "淡",
-    "pattern": "2|3|2|3",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#E8FBEC",
-      "#C3EFD4",
-      "#73B7CA",
-      "#5BA6BF",
-      "#4499AF",
-      "#5F6BAF",
-      "#585C90",
-      "#09442A",
-      "#043423",
-      "#0F281B"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#F0FFF5",
-    "backgrounds": {
-      "sky": "#F0FFF5",
-      "water": "#4499AF"
-    }
-  },
-  {
-    "id": "083",
-    "name": "苔白",
-    "seg": "青绿段",
-    "tier": "淡",
-    "pattern": "3|2|2|3",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#E5FBEF",
-      "#BEF0DB",
-      "#A8E4C5",
-      "#C089AE",
-      "#B27799",
-      "#1B817F",
-      "#007073",
-      "#0D4429",
-      "#053422",
-      "#10281A"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#EFFFF6",
-    "backgrounds": {
-      "sky": "#EFFFF6",
-      "water": "#B27799"
-    }
-  },
-  {
-    "id": "084",
-    "name": "水浅葱",
-    "seg": "青绿段",
-    "tier": "淡",
-    "pattern": "2|3|3|2",
-    "harmony": "补色对撞",
-    "families": 2,
-    "rows": [
-      "#E6FBEF",
-      "#BFF0D9",
-      "#80BA9D",
-      "#64AB90",
-      "#579D7C",
-      "#9B5B6F",
-      "#894D5B",
-      "#7C3E52",
-      "#432031",
-      "#311A23"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#EFFFF7",
-    "backgrounds": {
-      "sky": "#EFFFF7",
-      "water": "#579D7C"
-    }
-  },
-  {
-    "id": "085",
-    "name": "若菜",
-    "seg": "青绿段",
-    "tier": "淡",
-    "pattern": "3|3|2|2",
-    "harmony": "四分色",
-    "families": 3,
-    "rows": [
-      "#E5FCF1",
-      "#BCF0DD",
-      "#A6E4C8",
-      "#C588A3",
-      "#B7768D",
-      "#A76884",
-      "#7C5F26",
-      "#67521F",
-      "#00372A",
-      "#072821"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#EEFFF9",
-    "backgrounds": {
-      "sky": "#EEFFF9",
-      "water": "#B7768D"
-    }
-  },
-  {
-    "id": "086",
-    "name": "薄荷白",
-    "seg": "青绿段",
-    "tier": "淡",
-    "pattern": "1|2|3|4",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#E3FCF4",
-      "#89CACF",
-      "#69BAC6",
-      "#B57B9A",
-      "#A76986",
-      "#9D567F",
-      "#015541",
-      "#004437",
-      "#003729",
-      "#0A2B23"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#F0FEFA",
-    "backgrounds": {
-      "sky": "#F0FEFA",
-      "water": "#A76986"
-    }
-  },
-  {
-    "id": "087",
-    "name": "若竹",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "2|2|2|4",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#D9FFF6",
-      "#9BF2E6",
-      "#A78DD5",
-      "#9974C2",
-      "#106DAC",
-      "#075799",
-      "#002E2A",
-      "#001C1B",
-      "#000F0C",
-      "#000909"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#EDFFFC",
-    "backgrounds": {
-      "sky": "#EDFFFC",
-      "water": "#106DAC"
-    }
-  },
-  {
-    "id": "088",
-    "name": "青磁",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "3|2|3|2",
-    "harmony": "邻近+双撞",
-    "families": 2,
-    "rows": [
-      "#D9FFF5",
-      "#9CF2E5",
-      "#76E4CD",
-      "#14A18E",
-      "#088A80",
-      "#90334A",
-      "#792233",
-      "#6A052A",
-      "#240006",
-      "#160002"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F2FFFD",
-    "backgrounds": {
-      "sky": "#F2FFFD",
-      "water": "#088A80"
     }
   },
   {
@@ -3032,210 +1839,6 @@
     "backgrounds": {
       "sky": "#ECFFFF",
       "water": "#0A7A7F"
-    }
-  },
-  {
-    "id": "090",
-    "name": "浅葱",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "2|2|3|3",
-    "harmony": "分裂补色",
-    "families": 3,
-    "rows": [
-      "#E5FDE5",
-      "#B6F0C2",
-      "#39B2A3",
-      "#039D95",
-      "#844E99",
-      "#743980",
-      "#5E2D71",
-      "#002009",
-      "#001003",
-      "#000A00"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F0FFF3",
-    "backgrounds": {
-      "sky": "#F0FFF3",
-      "water": "#844E99"
-    }
-  },
-  {
-    "id": "091",
-    "name": "翡翠淡",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "1|3|3|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#E1FEE9",
-      "#CC9FD0",
-      "#C184BD",
-      "#AF71B5",
-      "#077D67",
-      "#056759",
-      "#045646",
-      "#002408",
-      "#001204",
-      "#000B00"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#F1FFF4",
-    "backgrounds": {
-      "sky": "#F1FFF4",
-      "water": "#077D67"
-    }
-  },
-  {
-    "id": "092",
-    "name": "橄榄青",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "2|3|2|3",
-    "harmony": "三分色",
-    "families": 2,
-    "rows": [
-      "#DFFEEC",
-      "#A9F2D1",
-      "#57B188",
-      "#209F79",
-      "#0B8D61",
-      "#4F4C9C",
-      "#45328F",
-      "#0D0C49",
-      "#07012D",
-      "#02031C"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F0FFF6",
-    "backgrounds": {
-      "sky": "#F0FFF6",
-      "water": "#0B8D61"
-    }
-  },
-  {
-    "id": "093",
-    "name": "松叶",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "3|2|2|3",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#DFFEEB",
-      "#AAF2CF",
-      "#8EE3B3",
-      "#BF6C9B",
-      "#AE5580",
-      "#00656A",
-      "#005058",
-      "#002013",
-      "#000F08",
-      "#000A03"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#F4FFF9",
-    "backgrounds": {
-      "sky": "#F4FFF9",
-      "water": "#AE5580"
-    }
-  },
-  {
-    "id": "094",
-    "name": "青碧淡",
-    "seg": "青绿段",
-    "tier": "中",
-    "pattern": "2|3|3|2",
-    "harmony": "双极",
-    "families": 3,
-    "rows": [
-      "#DAFFF3",
-      "#9EF2E1",
-      "#40B29C",
-      "#009E8E",
-      "#0F8B77",
-      "#86366B",
-      "#791554",
-      "#5A1B46",
-      "#00120A",
-      "#000A05"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F3FFFB",
-    "backgrounds": {
-      "sky": "#F3FFFB",
-      "water": "#0F8B77"
-    }
-  },
-  {
-    "id": "095",
-    "name": "青碧",
-    "seg": "青绿段",
-    "tier": "浓",
-    "pattern": "3|3|2|2",
-    "harmony": "分裂补色",
-    "families": 4,
-    "rows": [
-      "#DAFFF2",
-      "#82F6DD",
-      "#4DE8C1",
-      "#C25AA2",
-      "#BC288A",
-      "#992D7C",
-      "#7B0226",
-      "#5D0012",
-      "#000709",
-      "#000307"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#EEFFFA",
-    "backgrounds": {
-      "sky": "#EEFFFA",
-      "water": "#BC288A"
     }
   },
   {
@@ -3307,108 +1910,6 @@
     }
   },
   {
-    "id": "098",
-    "name": "竹青",
-    "seg": "青绿段",
-    "tier": "浓",
-    "pattern": "3|2|3|2",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#D7FFF9",
-      "#79F6EF",
-      "#2EE8D7",
-      "#1093BA",
-      "#037BA4",
-      "#97032F",
-      "#780018",
-      "#5C0019",
-      "#14000B",
-      "#0C0003"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#EDFFFD",
-    "backgrounds": {
-      "sky": "#EDFFFD",
-      "water": "#037BA4"
-    }
-  },
-  {
-    "id": "099",
-    "name": "翠玉",
-    "seg": "青绿段",
-    "tier": "浓",
-    "pattern": "1|3|2|4",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#E1FFDF",
-      "#CD95D9",
-      "#C377C6",
-      "#AF61BF",
-      "#06774C",
-      "#005F43",
-      "#3C0031",
-      "#240018",
-      "#12000D",
-      "#0B0005"
-    ],
-    "breaks": [
-      1,
-      4,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F5FFF7",
-    "backgrounds": {
-      "sky": "#F5FFF7",
-      "water": "#06774C"
-    }
-  },
-  {
-    "id": "100",
-    "name": "森青",
-    "seg": "青绿段",
-    "tier": "浓",
-    "pattern": "2|2|3|3",
-    "harmony": "分裂补色",
-    "families": 4,
-    "rows": [
-      "#DFFFE6",
-      "#9BF5C1",
-      "#D8709F",
-      "#C95282",
-      "#852BB1",
-      "#6F2287",
-      "#581477",
-      "#001411",
-      "#000505",
-      "#000302"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F0FFF4",
-    "backgrounds": {
-      "sky": "#F0FFF4",
-      "water": "#852BB1"
-    }
-  },
-  {
     "id": "101",
     "name": "孔雀",
     "seg": "青绿段",
@@ -3440,214 +1941,6 @@
     "backgrounds": {
       "sky": "#EBFFF4",
       "water": "#00746B"
-    }
-  },
-  {
-    "id": "102",
-    "name": "翡翠焰",
-    "seg": "青绿段",
-    "tier": "艳",
-    "pattern": "2|3|2|3",
-    "harmony": "补色对撞",
-    "families": 4,
-    "rows": [
-      "#DBFFEF",
-      "#67FBD3",
-      "#B672E3",
-      "#B23DDD",
-      "#9A1FD6",
-      "#8B064F",
-      "#6D0034",
-      "#000F0E",
-      "#000304",
-      "#000203"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      3,
-      4
-    ],
-    "cloud": "#F3FFF9",
-    "backgrounds": {
-      "sky": "#F3FFF9",
-      "water": "#9A1FD6"
-    }
-  },
-  {
-    "id": "103",
-    "name": "青碧烈",
-    "seg": "青绿段",
-    "tier": "艳",
-    "pattern": "3|2|2|3",
-    "harmony": "四分色",
-    "families": 4,
-    "rows": [
-      "#D9FFF2",
-      "#5DFBDC",
-      "#23EABF",
-      "#D84081",
-      "#C60C60",
-      "#2334BA",
-      "#24179B",
-      "#150700",
-      "#0D0000",
-      "#060000"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      4,
-      7
-    ],
-    "cloud": "#E9FFF8",
-    "backgrounds": {
-      "sky": "#E9FFF8",
-      "water": "#C60C60"
-    }
-  },
-  {
-    "id": "104",
-    "name": "翠焰",
-    "seg": "青绿段",
-    "tier": "艳",
-    "pattern": "2|3|3|2",
-    "harmony": "同族+一撞",
-    "families": 4,
-    "rows": [
-      "#DAFFF1",
-      "#60FBD9",
-      "#02AAAF",
-      "#0D909A",
-      "#077D81",
-      "#8A0354",
-      "#6C0039",
-      "#52002F",
-      "#00030D",
-      "#000012"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      4,
-      5
-    ],
-    "cloud": "#E8FFF8",
-    "backgrounds": {
-      "sky": "#E8FFF8",
-      "water": "#077D81"
-    }
-  },
-  {
-    "id": "105",
-    "name": "碧焰",
-    "seg": "青绿段",
-    "tier": "艳",
-    "pattern": "3|3|2|2",
-    "harmony": "分裂补色",
-    "families": 4,
-    "rows": [
-      "#D8FFF6",
-      "#51FBE9",
-      "#0AE9CD",
-      "#C748AD",
-      "#B6248E",
-      "#9E0086",
-      "#750029",
-      "#560015",
-      "#000408",
-      "#00000D"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#EDFFFA",
-    "backgrounds": {
-      "sky": "#EDFFFA",
-      "water": "#B6248E"
-    }
-  },
-  {
-    "id": "106",
-    "name": "白藍",
-    "seg": "蓝靛段",
-    "tier": "淡",
-    "pattern": "1|2|3|4",
-    "harmony": "冷暖交替",
-    "families": 3,
-    "rows": [
-      "#F0F5FF",
-      "#B9B8E1",
-      "#ACA3D7",
-      "#9F8F52",
-      "#8B803F",
-      "#81712F",
-      "#1E477D",
-      "#22385F",
-      "#192E4A",
-      "#192438"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FAFCFF",
-    "backgrounds": {
-      "sky": "#FAFCFF",
-      "water": "#8B803F"
-    }
-  },
-  {
-    "id": "107",
-    "name": "藍白",
-    "seg": "蓝靛段",
-    "tier": "淡",
-    "pattern": "2|2|2|4",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#F0F6FF",
-      "#D6E3FE",
-      "#B8AC76",
-      "#A49D5F",
-      "#7F75AF",
-      "#7560A5",
-      "#2F4371",
-      "#28345D",
-      "#1D2A48",
-      "#1C2132"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#F6F9FF",
-    "backgrounds": {
-      "sky": "#F6F9FF",
-      "water": "#7F75AF"
     }
   },
   {
@@ -3719,40 +2012,6 @@
     }
   },
   {
-    "id": "110",
-    "name": "淡缥",
-    "seg": "蓝靛段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#EAF8FF",
-      "#C6E9FF",
-      "#AEA2D5",
-      "#A28FC6",
-      "#A86983",
-      "#98586E",
-      "#864D66",
-      "#033E5A",
-      "#002E4B",
-      "#0D2533"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#F9FCFF",
-    "backgrounds": {
-      "sky": "#F9FCFF",
-      "water": "#A86983"
-    }
-  },
-  {
     "id": "111",
     "name": "水蓝",
     "seg": "蓝靛段",
@@ -3801,11 +2060,11 @@
       "#5AA5D9",
       "#428ECC",
       "#147FBB",
-      "#755100",
-      "#5A4201",
-      "#251600",
-      "#130800",
-      "#110300"
+      "#E5BE61",
+      "#DBAE33",
+      "#7A0606",
+      "#B2652E",
+      "#EC3B13"
     ],
     "breaks": [
       2,
@@ -3856,40 +2115,6 @@
     }
   },
   {
-    "id": "114",
-    "name": "缥",
-    "seg": "蓝靛段",
-    "tier": "中",
-    "pattern": "2|3|3|2",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#F1F7FF",
-      "#CDE1FF",
-      "#9194DD",
-      "#837CCD",
-      "#6B68CF",
-      "#775003",
-      "#5C4100",
-      "#4D3100",
-      "#000D24",
-      "#00051C"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F5F9FF",
-    "backgrounds": {
-      "sky": "#F5F9FF",
-      "water": "#6B68CF"
-    }
-  },
-  {
     "id": "115",
     "name": "矢车菊",
     "seg": "蓝靛段",
@@ -3904,8 +2129,8 @@
       "#CA6B6E",
       "#B75552",
       "#A4444A",
-      "#682D6C",
-      "#5A1357",
+      "#957D97",
+      "#8C788B",
       "#010530",
       "#02041A"
     ],
@@ -3921,40 +2146,6 @@
     "backgrounds": {
       "sky": "#FDFDFF",
       "water": "#B75552"
-    }
-  },
-  {
-    "id": "116",
-    "name": "青碧蓝",
-    "seg": "蓝靛段",
-    "tier": "中",
-    "pattern": "1|2|3|4",
-    "harmony": "邻近+双撞",
-    "families": 2,
-    "rows": [
-      "#F1F5FF",
-      "#91B3E8",
-      "#7B9BDF",
-      "#99760C",
-      "#7E6500",
-      "#6F5400",
-      "#342700",
-      "#201800",
-      "#140B00",
-      "#0D0500"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#F4F7FF",
-    "backgrounds": {
-      "sky": "#F4F7FF",
-      "water": "#7E6500"
     }
   },
   {
@@ -4060,108 +2251,6 @@
     }
   },
   {
-    "id": "120",
-    "name": "群青",
-    "seg": "蓝靛段",
-    "tier": "浓",
-    "pattern": "2|2|3|3",
-    "harmony": "三分色",
-    "families": 4,
-    "rows": [
-      "#EEF8FF",
-      "#C1E3FF",
-      "#88A535",
-      "#679200",
-      "#AF045A",
-      "#8F023F",
-      "#740039",
-      "#1A002F",
-      "#0A0016",
-      "#050011"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F1F9FF",
-    "backgrounds": {
-      "sky": "#F1F9FF",
-      "water": "#AF045A"
-    }
-  },
-  {
-    "id": "121",
-    "name": "紺碧",
-    "seg": "蓝靛段",
-    "tier": "浓",
-    "pattern": "1|3|3|3",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#E9F6FF",
-      "#DE9E5C",
-      "#CD8518",
-      "#BD7105",
-      "#5352BF",
-      "#4A39A6",
-      "#342C90",
-      "#2C0000",
-      "#160000",
-      "#0C0000"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FDFEFF",
-    "backgrounds": {
-      "sky": "#FDFEFF",
-      "water": "#5352BF"
-    }
-  },
-  {
-    "id": "122",
-    "name": "深缥",
-    "seg": "蓝靛段",
-    "tier": "浓",
-    "pattern": "2|3|2|3",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#EEF6FF",
-      "#CBDFFE",
-      "#7192EE",
-      "#6378DF",
-      "#4667D1",
-      "#774000",
-      "#593300",
-      "#1A0B00",
-      "#120000",
-      "#0A0000"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FCFDFF",
-    "backgrounds": {
-      "sky": "#FCFDFF",
-      "water": "#4667D1"
-    }
-  },
-  {
     "id": "123",
     "name": "靛蓝",
     "seg": "蓝靛段",
@@ -4177,9 +2266,9 @@
       "#A05F06",
       "#604E00",
       "#473D00",
-      "#140035",
-      "#07001A",
-      "#040015"
+      "#2E6303",
+      "#8A73C9",
+      "#0E4081"
     ],
     "breaks": [
       3,
@@ -4193,74 +2282,6 @@
     "backgrounds": {
       "sky": "#F8FBFF",
       "water": "#A05F06"
-    }
-  },
-  {
-    "id": "124",
-    "name": "夜蓝",
-    "seg": "蓝靛段",
-    "tier": "浓",
-    "pattern": "2|3|3|2",
-    "harmony": "冷暖交替",
-    "families": 4,
-    "rows": [
-      "#F3F6FF",
-      "#D3DCFE",
-      "#8C8AEB",
-      "#806EDA",
-      "#675DCD",
-      "#624D00",
-      "#493C01",
-      "#3A2C00",
-      "#170000",
-      "#090000"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FEFEFF",
-    "backgrounds": {
-      "sky": "#FEFEFF",
-      "water": "#675DCD"
-    }
-  },
-  {
-    "id": "125",
-    "name": "石油蓝",
-    "seg": "蓝靛段",
-    "tier": "浓",
-    "pattern": "3|3|2|2",
-    "harmony": "补色对撞",
-    "families": 4,
-    "rows": [
-      "#EFF4FF",
-      "#D2DDFE",
-      "#B4CAFE",
-      "#92890D",
-      "#767600",
-      "#696205",
-      "#4E2186",
-      "#3E0D66",
-      "#190000",
-      "#080000"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F7F9FF",
-    "backgrounds": {
-      "sky": "#F7F9FF",
-      "water": "#767600"
     }
   },
   {
@@ -4382,10 +2403,10 @@
       "#B57102",
       "#1445EB",
       "#251DD2",
-      "#310F00",
-      "#1B0300",
-      "#140000",
-      "#030000"
+      "#E35416",
+      "#F42B10",
+      "#233D8B",
+      "#FD3030"
     ],
     "breaks": [
       1,
@@ -4396,9 +2417,9 @@
       4,
       5
     ],
-    "cloud": "#EEF7FF",
+    "cloud": "#4999DF",
     "backgrounds": {
-      "sky": "#EEF7FF",
+      "sky": "#4999DF",
       "water": "#1445EB"
     }
   },
@@ -4438,415 +2459,6 @@
     }
   },
   {
-    "id": "131",
-    "name": "白藤",
-    "seg": "紫堇段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "四分色",
-    "families": 3,
-    "rows": [
-      "#FAF1FF",
-      "#A9C7A3",
-      "#8EB88F",
-      "#81AA79",
-      "#438BAC",
-      "#37799D",
-      "#006E93",
-      "#4C2E53",
-      "#3C223D",
-      "#2B1C2E"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FDF8FF",
-    "backgrounds": {
-      "sky": "#FDF8FF",
-      "water": "#438BAC"
-    }
-  },
-  {
-    "id": "132",
-    "name": "淡藤",
-    "seg": "紫堇段",
-    "tier": "淡",
-    "pattern": "2|3|2|3",
-    "harmony": "同族+一撞",
-    "families": 2,
-    "rows": [
-      "#FAF2FF",
-      "#F4D7FD",
-      "#BD9ECC",
-      "#B18ABB",
-      "#A07CB1",
-      "#567F3C",
-      "#486D3F",
-      "#264219",
-      "#193216",
-      "#192713"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FEF8FF",
-    "backgrounds": {
-      "sky": "#FEF8FF",
-      "water": "#A07CB1"
-    }
-  },
-  {
-    "id": "133",
-    "name": "丁香白",
-    "seg": "紫堇段",
-    "tier": "淡",
-    "pattern": "3|2|2|3",
-    "harmony": "分裂补色",
-    "families": 3,
-    "rows": [
-      "#FDF0FF",
-      "#F9D6F8",
-      "#EBC4F1",
-      "#8DA870",
-      "#769861",
-      "#985B78",
-      "#8E4764",
-      "#482C52",
-      "#38213D",
-      "#2A1C2F"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FDF9FE",
-    "backgrounds": {
-      "sky": "#FDF9FE",
-      "water": "#769861"
-    }
-  },
-  {
-    "id": "134",
-    "name": "灰堇",
-    "seg": "紫堇段",
-    "tier": "淡",
-    "pattern": "2|3|3|2",
-    "harmony": "冷暖交替",
-    "families": 3,
-    "rows": [
-      "#FFEFFF",
-      "#FBD5F5",
-      "#D198B0",
-      "#C4859A",
-      "#B67691",
-      "#3D8160",
-      "#2A7056",
-      "#186444",
-      "#3E223A",
-      "#2F1A29"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FEF8FD",
-    "backgrounds": {
-      "sky": "#FEF8FD",
-      "water": "#B67691"
-    }
-  },
-  {
-    "id": "135",
-    "name": "藤白紫",
-    "seg": "紫堇段",
-    "tier": "淡",
-    "pattern": "3|3|2|2",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#F5F4FF",
-      "#E5DDFF",
-      "#D3CDFF",
-      "#99A468",
-      "#839558",
-      "#7A8647",
-      "#745687",
-      "#654870",
-      "#2B274F",
-      "#221F34"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#FBFBFF",
-    "backgrounds": {
-      "sky": "#FBFBFF",
-      "water": "#839558"
-    }
-  },
-  {
-    "id": "136",
-    "name": "薄紫",
-    "seg": "紫堇段",
-    "tier": "淡",
-    "pattern": "1|2|3|4",
-    "harmony": "四分色",
-    "families": 2,
-    "rows": [
-      "#F6F3FF",
-      "#C0B5DF",
-      "#B4A1D2",
-      "#85985F",
-      "#6F894F",
-      "#657B2E",
-      "#474D00",
-      "#353E0A",
-      "#2D3108",
-      "#222710"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#FCFBFF",
-    "backgrounds": {
-      "sky": "#FCFBFF",
-      "water": "#6F894F"
-    }
-  },
-  {
-    "id": "137",
-    "name": "藤紫",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "2|2|2|4",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#F5F3FF",
-      "#E3D8FF",
-      "#9CA451",
-      "#819233",
-      "#8A4C91",
-      "#7A3778",
-      "#330061",
-      "#22003C",
-      "#110028",
-      "#0B0118"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FAF8FF",
-    "backgrounds": {
-      "sky": "#FAF8FF",
-      "water": "#8A4C91"
-    }
-  },
-  {
-    "id": "138",
-    "name": "楝",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "3|2|3|2",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#F9F2FF",
-      "#F0D2FE",
-      "#E1BBFF",
-      "#C76A85",
-      "#B4546A",
-      "#824803",
-      "#653B01",
-      "#542C00",
-      "#150029",
-      "#0C0016"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FDFBFF",
-    "backgrounds": {
-      "sky": "#FDFBFF",
-      "water": "#B4546A"
-    }
-  },
-  {
-    "id": "139",
-    "name": "桔梗",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "1|3|2|4",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#F8F2FF",
-      "#99BE87",
-      "#77AD6D",
-      "#6A9C4E",
-      "#A93D78",
-      "#8C345D",
-      "#351058",
-      "#26013E",
-      "#15002A",
-      "#0C0017"
-    ],
-    "breaks": [
-      1,
-      4,
-      6
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#FBF7FF",
-    "backgrounds": {
-      "sky": "#FBF7FF",
-      "water": "#A93D78"
-    }
-  },
-  {
-    "id": "140",
-    "name": "菫",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "2|2|3|3",
-    "harmony": "补色对撞",
-    "families": 2,
-    "rows": [
-      "#F9F4FF",
-      "#ECD4FE",
-      "#AE8AD0",
-      "#A171BC",
-      "#2E7B37",
-      "#00672E",
-      "#035616",
-      "#002104",
-      "#001002",
-      "#000900"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FCF7FF",
-    "backgrounds": {
-      "sky": "#FCF7FF",
-      "water": "#2E7B37"
-    }
-  },
-  {
-    "id": "141",
-    "name": "薰衣",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "1|3|3|3",
-    "harmony": "四分色",
-    "families": 3,
-    "rows": [
-      "#FDF2FF",
-      "#8CC092",
-      "#65B07C",
-      "#549F60",
-      "#0A7697",
-      "#046183",
-      "#00516A",
-      "#2E013B",
-      "#1C0022",
-      "#0E0014"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#FEFAFF",
-    "backgrounds": {
-      "sky": "#FEFAFF",
-      "water": "#0A7697"
-    }
-  },
-  {
-    "id": "142",
-    "name": "葡萄鼠",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "2|3|2|3",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#FCF1FF",
-      "#FBCDFE",
-      "#CD80A9",
-      "#BF678F",
-      "#AC5585",
-      "#27691E",
-      "#005619",
-      "#2F0033",
-      "#1B001A",
-      "#100012"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FFFAFF",
-    "backgrounds": {
-      "sky": "#FFFAFF",
-      "water": "#AC5585"
-    }
-  },
-  {
     "id": "143",
     "name": "紫鼠",
     "seg": "紫堇段",
@@ -4858,7 +2470,7 @@
       "#FEF0FF",
       "#FFCCFA",
       "#F1B5F4",
-      "#AD8420",
+      "#B9564B",
       "#927309",
       "#9D281A",
       "#792610",
@@ -4874,78 +2486,10 @@
     "gems": [
       5
     ],
-    "cloud": "#FFFAFE",
+    "cloud": "#F7BBEB",
     "backgrounds": {
-      "sky": "#FFFAFE",
+      "sky": "#F7BBEB",
       "water": "#927309"
-    }
-  },
-  {
-    "id": "144",
-    "name": "淡桔梗",
-    "seg": "紫堇段",
-    "tier": "中",
-    "pattern": "2|3|3|2",
-    "harmony": "邻近+双撞",
-    "families": 2,
-    "rows": [
-      "#F4F4FF",
-      "#E0D9FE",
-      "#9C90DA",
-      "#8E78C9",
-      "#7868BC",
-      "#5F5C00",
-      "#474A00",
-      "#3C3A00",
-      "#0E0E00",
-      "#060700"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F9F8FF",
-    "backgrounds": {
-      "sky": "#F9F8FF",
-      "water": "#7868BC"
-    }
-  },
-  {
-    "id": "145",
-    "name": "深藤",
-    "seg": "紫堇段",
-    "tier": "浓",
-    "pattern": "3|3|2|2",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#F7F5FF",
-      "#E2D6FE",
-      "#CDC1FE",
-      "#8A8C0C",
-      "#6E7903",
-      "#636505",
-      "#591A7D",
-      "#47065D",
-      "#000700",
-      "#000200"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#FEFDFF",
-    "backgrounds": {
-      "sky": "#FEFDFF",
-      "water": "#6E7903"
     }
   },
   {
@@ -4983,142 +2527,6 @@
     }
   },
   {
-    "id": "147",
-    "name": "茄紫",
-    "seg": "紫堇段",
-    "tier": "浓",
-    "pattern": "2|2|2|4",
-    "harmony": "同族+一撞",
-    "families": 4,
-    "rows": [
-      "#F8F4FF",
-      "#E7D4FF",
-      "#8CA431",
-      "#6C9102",
-      "#92328B",
-      "#7F166F",
-      "#390028",
-      "#210012",
-      "#100008",
-      "#0D0003"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F9F6FF",
-    "backgrounds": {
-      "sky": "#F9F6FF",
-      "water": "#92328B"
-    }
-  },
-  {
-    "id": "148",
-    "name": "紫水晶",
-    "seg": "紫堇段",
-    "tier": "浓",
-    "pattern": "3|2|3|2",
-    "harmony": "三分色",
-    "families": 4,
-    "rows": [
-      "#F7F1FF",
-      "#ECD2FF",
-      "#DABAFE",
-      "#009A93",
-      "#0C8181",
-      "#724400",
-      "#563500",
-      "#442600",
-      "#160001",
-      "#0E0100"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#FBF5FF",
-    "backgrounds": {
-      "sky": "#FBF5FF",
-      "water": "#0C8181"
-    }
-  },
-  {
-    "id": "149",
-    "name": "桑紫",
-    "seg": "紫堇段",
-    "tier": "浓",
-    "pattern": "1|3|2|4",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#FBF3FF",
-      "#95BB74",
-      "#6FAA53",
-      "#61981D",
-      "#A13078",
-      "#8D125C",
-      "#241F00",
-      "#121000",
-      "#0D0200",
-      "#030100"
-    ],
-    "breaks": [
-      1,
-      4,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FDFAFF",
-    "backgrounds": {
-      "sky": "#FDFAFF",
-      "water": "#A13078"
-    }
-  },
-  {
-    "id": "150",
-    "name": "深菫",
-    "seg": "紫堇段",
-    "tier": "浓",
-    "pattern": "2|2|3|3",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#FCF3FF",
-      "#FCCAFF",
-      "#CA74BC",
-      "#BC57A2",
-      "#297300",
-      "#005E08",
-      "#164A00",
-      "#001500",
-      "#000600",
-      "#000400"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#FEF6FF",
-    "backgrounds": {
-      "sky": "#FEF6FF",
-      "water": "#297300"
-    }
-  },
-  {
     "id": "151",
     "name": "葡萄",
     "seg": "紫堇段",
@@ -5130,7 +2538,7 @@
       "#FBF1FF",
       "#9CBA69",
       "#79A844",
-      "#70940D",
+      "#FFFFFF",
       "#08774C",
       "#025F43",
       "#004E2F",
@@ -5146,9 +2554,9 @@
     "gems": [
       8
     ],
-    "cloud": "#FFFCFF",
+    "cloud": "#E1F9D7",
     "backgrounds": {
-      "sky": "#FFFCFF",
+      "sky": "#E1F9D7",
       "water": "#08774C"
     }
   },
@@ -5162,10 +2570,10 @@
     "families": 4,
     "rows": [
       "#FFF0FB",
-      "#FFCBEE",
-      "#E65F92",
-      "#E6036D",
-      "#C60069",
+      "#8BB828",
+      "#E66060",
+      "#C0D9AF",
+      "#0A573B",
       "#005C34",
       "#00452C",
       "#001000",
@@ -5184,214 +2592,7 @@
     "cloud": "#FFF8FD",
     "backgrounds": {
       "sky": "#FFF8FD",
-      "water": "#C60069"
-    }
-  },
-  {
-    "id": "153",
-    "name": "紫焰",
-    "seg": "紫堇段",
-    "tier": "艳",
-    "pattern": "3|2|2|3",
-    "harmony": "补色对撞",
-    "families": 4,
-    "rows": [
-      "#F5F5FF",
-      "#DDD8FF",
-      "#C5C2FD",
-      "#6F9100",
-      "#527C02",
-      "#76038F",
-      "#5E0068",
-      "#140900",
-      "#020000",
-      "#010000"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      4,
-      7
-    ],
-    "cloud": "#F7F6FF",
-    "backgrounds": {
-      "sky": "#F7F6FF",
-      "water": "#527C02"
-    }
-  },
-  {
-    "id": "154",
-    "name": "品紫烈",
-    "seg": "紫堇段",
-    "tier": "艳",
-    "pattern": "2|3|3|2",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#F2F3FF",
-      "#DCD8FF",
-      "#C86AD0",
-      "#BB48B6",
-      "#AE00BC",
-      "#4C5102",
-      "#343F00",
-      "#292D00",
-      "#180000",
-      "#050100"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      4,
-      5
-    ],
-    "cloud": "#F6F4FF",
-    "backgrounds": {
-      "sky": "#F6F4FF",
-      "water": "#AE00BC"
-    }
-  },
-  {
-    "id": "155",
-    "name": "菫烈",
-    "seg": "紫堇段",
-    "tier": "艳",
-    "pattern": "3|3|2|2",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#F6F1FF",
-      "#E7D3FE",
-      "#D3BCFE",
-      "#7D8D0E",
-      "#607902",
-      "#586400",
-      "#550087",
-      "#40005D",
-      "#010600",
-      "#010100"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#F7F4FF",
-    "backgrounds": {
-      "sky": "#F7F4FF",
-      "water": "#607902"
-    }
-  },
-  {
-    "id": "156",
-    "name": "若草白",
-    "seg": "黄绿杂段",
-    "tier": "淡",
-    "pattern": "1|2|3|4",
-    "harmony": "分裂补色",
-    "families": 2,
-    "rows": [
-      "#F4F8E2",
-      "#BAC297",
-      "#A4B37F",
-      "#8989C1",
-      "#7D76B0",
-      "#6B6AA3",
-      "#443D7B",
-      "#3A315C",
-      "#2B2849",
-      "#242137"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F8FDEC",
-    "backgrounds": {
-      "sky": "#F8FDEC",
-      "water": "#7D76B0"
-    }
-  },
-  {
-    "id": "157",
-    "name": "嫩芽白",
-    "seg": "黄绿杂段",
-    "tier": "淡",
-    "pattern": "2|2|2|4",
-    "harmony": "冷暖交替",
-    "families": 3,
-    "rows": [
-      "#EFF9E6",
-      "#D3ECC5",
-      "#BA9FCE",
-      "#AE8BBD",
-      "#5B8D60",
-      "#38804E",
-      "#3B4C14",
-      "#2A3E10",
-      "#252F11",
-      "#1C2610"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#F6FEED",
-    "backgrounds": {
-      "sky": "#F6FEED",
-      "water": "#5B8D60"
-    }
-  },
-  {
-    "id": "158",
-    "name": "柳白",
-    "seg": "黄绿杂段",
-    "tier": "淡",
-    "pattern": "3|2|3|2",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#F0F9E5",
-      "#D5ECC3",
-      "#C7DDA9",
-      "#71AD88",
-      "#5D9C7D",
-      "#8C5F8C",
-      "#824B7B",
-      "#6A466A",
-      "#29320C",
-      "#1D260F"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F6FEEE",
-    "backgrounds": {
-      "sky": "#F6FEEE",
-      "water": "#5D9C7D"
+      "water": "#C70000"
     }
   },
   {
@@ -5429,313 +2630,6 @@
     }
   },
   {
-    "id": "160",
-    "name": "青柳白",
-    "seg": "黄绿杂段",
-    "tier": "淡",
-    "pattern": "2|2|3|3",
-    "harmony": "同族+一撞",
-    "families": 2,
-    "rows": [
-      "#ECFAE8",
-      "#CCEECB",
-      "#9CB584",
-      "#84A672",
-      "#8F70A6",
-      "#825F92",
-      "#705485",
-      "#462D54",
-      "#391E42",
-      "#291C30"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#F3FEF0",
-    "backgrounds": {
-      "sky": "#F3FEF0",
-      "water": "#8F70A6"
-    }
-  },
-  {
-    "id": "161",
-    "name": "豆白",
-    "seg": "黄绿杂段",
-    "tier": "淡",
-    "pattern": "1|3|3|3",
-    "harmony": "分裂补色",
-    "families": 3,
-    "rows": [
-      "#EDFAE7",
-      "#C5B4DC",
-      "#B99FCF",
-      "#A890C7",
-      "#3D9380",
-      "#008475",
-      "#007563",
-      "#2D4317",
-      "#213318",
-      "#1B2611"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      5,
-      6
-    ],
-    "cloud": "#F3FFF0",
-    "backgrounds": {
-      "sky": "#F3FFF0",
-      "water": "#3D9380"
-    }
-  },
-  {
-    "id": "162",
-    "name": "若草",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "2|3|2|3",
-    "harmony": "冷暖交替",
-    "families": 3,
-    "rows": [
-      "#FAF7D8",
-      "#E5E4A1",
-      "#88A95F",
-      "#6A9848",
-      "#618529",
-      "#604696",
-      "#562A86",
-      "#1B1A00",
-      "#0B0C00",
-      "#080600"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#FCFDE3",
-    "backgrounds": {
-      "sky": "#FCFDE3",
-      "water": "#618529"
-    }
-  },
-  {
-    "id": "163",
-    "name": "嫩芽",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "3|2|2|3",
-    "harmony": "补色对撞",
-    "families": 3,
-    "rows": [
-      "#F6F8D9",
-      "#DCE7A5",
-      "#D0D480",
-      "#A176C3",
-      "#925FAC",
-      "#3C6601",
-      "#225400",
-      "#1C1A00",
-      "#0C0C00",
-      "#090600"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FBFDE4",
-    "backgrounds": {
-      "sky": "#FBFDE4",
-      "water": "#925FAC"
-    }
-  },
-  {
-    "id": "164",
-    "name": "柳绿",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "2|3|3|2",
-    "harmony": "四分色",
-    "families": 2,
-    "rows": [
-      "#F4F9DA",
-      "#D7E8A8",
-      "#98A554",
-      "#7C9338",
-      "#738106",
-      "#674392",
-      "#583077",
-      "#432664",
-      "#160029",
-      "#0C0114"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F8FEE5",
-    "backgrounds": {
-      "sky": "#F8FEE5",
-      "water": "#738106"
-    }
-  },
-  {
-    "id": "165",
-    "name": "苔",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "3|3|2|2",
-    "harmony": "同族+一撞",
-    "families": 3,
-    "rows": [
-      "#F5F9D9",
-      "#DAE7A6",
-      "#CED481",
-      "#8E7DCE",
-      "#8065B9",
-      "#6B57AA",
-      "#175813",
-      "#004514",
-      "#0B0F00",
-      "#030800"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#F7FEE5",
-    "backgrounds": {
-      "sky": "#F7FEE5",
-      "water": "#8065B9"
-    }
-  },
-  {
-    "id": "166",
-    "name": "橄榄",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "1|2|3|4",
-    "harmony": "三分色",
-    "families": 3,
-    "rows": [
-      "#EDFBDE",
-      "#6AC3BF",
-      "#30B1B3",
-      "#1E84BA",
-      "#006EAB",
-      "#015F8B",
-      "#232E00",
-      "#111E00",
-      "#091000",
-      "#020900"
-    ],
-    "breaks": [
-      1,
-      3,
-      6
-    ],
-    "gems": [
-      8
-    ],
-    "cloud": "#F4FFE8",
-    "backgrounds": {
-      "sky": "#F4FFE8",
-      "water": "#006EAB"
-    }
-  },
-  {
-    "id": "167",
-    "name": "青柳",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "2|2|2|4",
-    "harmony": "邻近+双撞",
-    "families": 3,
-    "rows": [
-      "#EFFADD",
-      "#CDEBAF",
-      "#B388CC",
-      "#A66FB7",
-      "#007B5B",
-      "#056450",
-      "#182D00",
-      "#061D00",
-      "#030F00",
-      "#010900"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F4FFE9",
-    "backgrounds": {
-      "sky": "#F4FFE9",
-      "water": "#007B5B"
-    }
-  },
-  {
-    "id": "168",
-    "name": "抹茶",
-    "seg": "黄绿杂段",
-    "tier": "中",
-    "pattern": "3|2|3|2",
-    "harmony": "补色对撞",
-    "families": 2,
-    "rows": [
-      "#EBFCE0",
-      "#C4EDB6",
-      "#B2DC93",
-      "#7C973E",
-      "#60862A",
-      "#7E328A",
-      "#662A67",
-      "#502058",
-      "#1C0020",
-      "#0F000F"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#F4FFEA",
-    "backgrounds": {
-      "sky": "#F4FFEA",
-      "water": "#60862A"
-    }
-  },
-  {
     "id": "169",
     "name": "草绿",
     "seg": "黄绿杂段",
@@ -5767,210 +2661,6 @@
     "backgrounds": {
       "sky": "#F2FFEE",
       "water": "#A2530F"
-    }
-  },
-  {
-    "id": "170",
-    "name": "深橄榄",
-    "seg": "黄绿杂段",
-    "tier": "浓",
-    "pattern": "2|2|3|3",
-    "harmony": "同族+一撞",
-    "families": 4,
-    "rows": [
-      "#E6FEDA",
-      "#B7F0A8",
-      "#1FB27D",
-      "#019973",
-      "#8B28AB",
-      "#741F82",
-      "#5C1172",
-      "#001412",
-      "#000606",
-      "#000303"
-    ],
-    "breaks": [
-      2,
-      4,
-      7
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F2FFEF",
-    "backgrounds": {
-      "sky": "#F2FFEF",
-      "water": "#8B28AB"
-    }
-  },
-  {
-    "id": "171",
-    "name": "苔深",
-    "seg": "黄绿杂段",
-    "tier": "浓",
-    "pattern": "1|3|3|3",
-    "harmony": "三分色",
-    "families": 4,
-    "rows": [
-      "#F6F9D0",
-      "#4ABDDF",
-      "#10A6D2",
-      "#0D94B4",
-      "#A22F77",
-      "#8D115A",
-      "#750051",
-      "#00170E",
-      "#000703",
-      "#000401"
-    ],
-    "breaks": [
-      1,
-      4,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FCFEDC",
-    "backgrounds": {
-      "sky": "#FCFEDC",
-      "water": "#A22F77"
-    }
-  },
-  {
-    "id": "172",
-    "name": "松绿",
-    "seg": "黄绿杂段",
-    "tier": "浓",
-    "pattern": "2|3|2|3",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#F8F9CF",
-      "#DDE68E",
-      "#50AF65",
-      "#049B55",
-      "#008838",
-      "#5F309D",
-      "#50197E",
-      "#000C2E",
-      "#000022",
-      "#000017"
-    ],
-    "breaks": [
-      2,
-      5,
-      7
-    ],
-    "gems": [
-      7
-    ],
-    "cloud": "#FBFEDC",
-    "backgrounds": {
-      "sky": "#FBFEDC",
-      "water": "#008838"
-    }
-  },
-  {
-    "id": "173",
-    "name": "黄绿浓",
-    "seg": "黄绿杂段",
-    "tier": "浓",
-    "pattern": "3|2|2|3",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#F5FAD1",
-      "#D7E891",
-      "#CBD460",
-      "#8671DD",
-      "#7A56C6",
-      "#3C5B00",
-      "#244800",
-      "#1A002E",
-      "#0A0015",
-      "#05000F"
-    ],
-    "breaks": [
-      3,
-      5,
-      7
-    ],
-    "gems": [
-      5
-    ],
-    "cloud": "#F7FFE1",
-    "backgrounds": {
-      "sky": "#F7FFE1",
-      "water": "#7A56C6"
-    }
-  },
-  {
-    "id": "174",
-    "name": "青苔",
-    "seg": "黄绿杂段",
-    "tier": "浓",
-    "pattern": "2|3|3|2",
-    "harmony": "分裂补色",
-    "families": 4,
-    "rows": [
-      "#EFFBD3",
-      "#CBEC99",
-      "#BE78CB",
-      "#B15BB4",
-      "#9B48AA",
-      "#443BA7",
-      "#3D139B",
-      "#261A71",
-      "#000C01",
-      "#000801"
-    ],
-    "breaks": [
-      2,
-      5,
-      8
-    ],
-    "gems": [
-      6
-    ],
-    "cloud": "#F6FFE2",
-    "backgrounds": {
-      "sky": "#F6FFE2",
-      "water": "#9B48AA"
-    }
-  },
-  {
-    "id": "175",
-    "name": "竹绿",
-    "seg": "黄绿杂段",
-    "tier": "浓",
-    "pattern": "3|3|2|2",
-    "harmony": "同族+一撞",
-    "families": 4,
-    "rows": [
-      "#F1FBD2",
-      "#CFEB96",
-      "#C2D766",
-      "#936CD7",
-      "#8B46CF",
-      "#6E42B0",
-      "#004F1C",
-      "#00391A",
-      "#000804",
-      "#000301"
-    ],
-    "breaks": [
-      3,
-      6,
-      8
-    ],
-    "gems": [
-      4
-    ],
-    "cloud": "#F6FFE3",
-    "backgrounds": {
-      "sky": "#F6FFE3",
-      "water": "#8B46CF"
     }
   },
   {
@@ -6008,76 +2698,6 @@
     }
   },
   {
-    "id": "177",
-    "name": "黄绿烈",
-    "seg": "黄绿杂段",
-    "tier": "艳",
-    "pattern": "2|2|2|4",
-    "harmony": "邻近+双撞",
-    "families": 4,
-    "rows": [
-      "#E6FFD2",
-      "#B3F294",
-      "#C26DD8",
-      "#BF35CD",
-      "#046E4A",
-      "#03573F",
-      "#120051",
-      "#08002C",
-      "#020019",
-      "#020014"
-    ],
-    "breaks": [
-      2,
-      4,
-      6
-    ],
-    "gems": [
-      3,
-      4
-    ],
-    "cloud": "#F3FFEB",
-    "backgrounds": {
-      "sky": "#F3FFEB",
-      "water": "#046E4A"
-    }
-  },
-  {
-    "id": "178",
-    "name": "柳焰",
-    "seg": "黄绿杂段",
-    "tier": "艳",
-    "pattern": "3|2|3|2",
-    "harmony": "双极",
-    "families": 4,
-    "rows": [
-      "#E4FFD7",
-      "#AAF49B",
-      "#95E268",
-      "#039D45",
-      "#068348",
-      "#730097",
-      "#5B026D",
-      "#420059",
-      "#0C000D",
-      "#070006"
-    ],
-    "breaks": [
-      3,
-      5,
-      8
-    ],
-    "gems": [
-      4,
-      7
-    ],
-    "cloud": "#F6FFF4",
-    "backgrounds": {
-      "sky": "#F6FFF4",
-      "water": "#068348"
-    }
-  },
-  {
     "id": "179",
     "name": "苔焰",
     "seg": "黄绿杂段",
@@ -6087,11 +2707,11 @@
     "families": 4,
     "rows": [
       "#E5FFE4",
-      "#BA96F5",
-      "#AF74E9",
-      "#985EE4",
-      "#A20090",
-      "#85006B",
+      "#701A1A",
+      "#DBC3F4",
+      "#CFE396",
+      "#C16325",
+      "#406C87",
       "#002119",
       "#000F0B",
       "#000402",
@@ -6106,31 +2726,31 @@
       4,
       5
     ],
-    "cloud": "#F5FFF4",
+    "cloud": "#F0D0D0",
     "backgrounds": {
-      "sky": "#F5FFF4",
-      "water": "#A20090"
+      "sky": "#F0D0D0",
+      "water": "#B8DCFF"
     }
   },
   {
     "id": "180",
     "name": "草焰",
-    "seg": "黄绿杂段",
+    "seg": "自定义",
     "tier": "艳",
     "pattern": "2|2|3|3",
     "harmony": "冷暖交替",
     "families": 4,
     "rows": [
-      "#F8FAC6",
-      "#DBE876",
-      "#61AB2E",
-      "#2D980D",
-      "#772CB9",
-      "#68049A",
-      "#4E0182",
-      "#050035",
-      "#02001A",
-      "#020015"
+      "#FF824D",
+      "#A6CDF2",
+      "#DF6288",
+      "#8378D3",
+      "#BA2C2C",
+      "#760404",
+      "#615B80",
+      "#AB6844",
+      "#6059A6",
+      "#241D62"
     ],
     "breaks": [
       2,
@@ -6141,10 +2761,802 @@
       5,
       6
     ],
-    "cloud": "#FBFFD5",
+    "cloud": "#CDD8F9",
     "backgrounds": {
-      "sky": "#FBFFD5",
-      "water": "#772CB9"
+      "sky": "#CDD8F9",
+      "water": "#F50000"
     }
+  },
+  {
+    "id": "181",
+    "name": "art-01",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F6F2EA",
+      "water": "#D3A985"
+    },
+    "rows": [
+      "#B5B8B5",
+      "#D3A985",
+      "#A89686",
+      "#C58858",
+      "#89796A",
+      "#A65C33",
+      "#64554A",
+      "#7A3A1A",
+      "#3A322D",
+      "#1B1612"
+    ],
+    "cloud": "#F6F2EA",
+    "recovered": true
+  },
+  {
+    "id": "182",
+    "name": "architecture-01",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#ECE4C7",
+      "water": "#A6AAB4"
+    },
+    "rows": [
+      "#C7A888",
+      "#A6AAB4",
+      "#99A489",
+      "#E68858",
+      "#AA8768",
+      "#697359",
+      "#996649",
+      "#2B7A94",
+      "#764C37",
+      "#353627"
+    ],
+    "cloud": "#ECE4C7",
+    "recovered": true
+  },
+  {
+    "id": "183",
+    "name": "landscape-031",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#C3CCEA",
+      "water": "#CA9A40"
+    },
+    "rows": [
+      "#F9C32F",
+      "#C8B970",
+      "#B7B49B",
+      "#CA9A40",
+      "#BFC8E3",
+      "#CA9A40",
+      "#E5C594",
+      "#C8B970",
+      "#6B652E",
+      "#A7977B"
+    ],
+    "cloud": "#C3CCEA",
+    "recovered": true
+  },
+  {
+    "id": "184",
+    "name": "portrait-03",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#977966",
+      "water": "#35150E"
+    },
+    "rows": [
+      "#493429",
+      "#35150E",
+      "#99774D",
+      "#977966",
+      "#775849",
+      "#493429",
+      "#35150E",
+      "#0C0701",
+      "#583D2D",
+      "#B58973"
+    ],
+    "cloud": "#977966",
+    "recovered": true
+  },
+  {
+    "id": "185",
+    "name": "portrait-03",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#AA8C7A",
+      "water": "#7B5C4C"
+    },
+    "rows": [
+      "#8B6C5A",
+      "#7B5C4C",
+      "#6B4E41",
+      "#5B4236",
+      "#4E392D",
+      "#422D24",
+      "#34231B",
+      "#2B1C14",
+      "#1C120C",
+      "#120C04"
+    ],
+    "cloud": "#AA8C7A",
+    "recovered": true
+  },
+  {
+    "id": "186",
+    "name": "portrait-02",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#AFD0DA",
+      "water": "#9B8C84"
+    },
+    "rows": [
+      "#8B9B9D",
+      "#792C20",
+      "#937B6C",
+      "#566A74",
+      "#7C5C44",
+      "#4D4A43",
+      "#792C20",
+      "#332B23",
+      "#151A0C",
+      "#030101"
+    ],
+    "cloud": "#AFD0DA",
+    "recovered": true
+  },
+  {
+    "id": "187",
+    "name": "street-01",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FDF9E2",
+      "water": "#FCDC8C"
+    },
+    "rows": [
+      "#FBE4A4",
+      "#FCDC8C",
+      "#F9BB6B",
+      "#CFB497",
+      "#F4AC5C",
+      "#E88C4D",
+      "#BD9472",
+      "#C48C49",
+      "#B58144",
+      "#548088"
+    ],
+    "cloud": "#FDF9E2",
+    "recovered": true
+  },
+  {
+    "id": "188",
+    "name": "ffb0ea2d1cd00e3e178e7bfd6fdc4ef5",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FDFEFD",
+      "water": "#D2DFF5"
+    },
+    "rows": [
+      "#E3E5EB",
+      "#D2DFF5",
+      "#DDDBDB",
+      "#CCD4E4",
+      "#D5D1CE",
+      "#DDCABD",
+      "#B1C2E6",
+      "#BDBCC1",
+      "#DAB396",
+      "#B5B1B4"
+    ],
+    "cloud": "#FDFEFD",
+    "recovered": true
+  },
+  {
+    "id": "189",
+    "name": "4f46bcbe9448d07be2506c23c95b11c9",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#C5CACD",
+      "water": "#949B9B"
+    },
+    "rows": [
+      "#B39B75",
+      "#949B9B",
+      "#94895D",
+      "#6C7D6A",
+      "#556C52",
+      "#7A5542",
+      "#664433",
+      "#334334",
+      "#352114",
+      "#15160C"
+    ],
+    "cloud": "#C5CACD",
+    "recovered": true
+  },
+  {
+    "id": "190",
+    "name": "0f79155456c76bbec84b2f4c183957e8",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FBFBDA",
+      "water": "#DCD2C4"
+    },
+    "rows": [
+      "#F6D2B4",
+      "#DCD2C4",
+      "#F2BE82",
+      "#CCBBB3",
+      "#BCBBC4",
+      "#BDABA4",
+      "#F2A537",
+      "#ABABBC",
+      "#CB9D94",
+      "#B39C94"
+    ],
+    "cloud": "#FBFBDA",
+    "recovered": true
+  },
+  {
+    "id": "191",
+    "name": "0f79155456c76bbec84b2f4c183957e8",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F7E5D2",
+      "water": "#CCBBB3"
+    },
+    "rows": [
+      "#DCD2C4",
+      "#CCBBB3",
+      "#ABABBC",
+      "#B4A29C",
+      "#A28D8C",
+      "#AB7B75",
+      "#635CD4",
+      "#6A5554",
+      "#BB4035",
+      "#0F0603"
+    ],
+    "cloud": "#F7E5D2",
+    "recovered": true
+  },
+  {
+    "id": "192",
+    "name": "356b3b66b6f53d953108ab469384feef",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FDD9CB",
+      "water": "#D0AB32"
+    },
+    "rows": [
+      "#E3AC9B",
+      "#D0AB32",
+      "#D39C93",
+      "#A29BB5",
+      "#CC8B84",
+      "#BC7C7B",
+      "#8E839D",
+      "#BB7626",
+      "#B46B6C",
+      "#897812"
+    ],
+    "cloud": "#FDD9CB",
+    "recovered": true
+  },
+  {
+    "rows": [
+      "#C8C2B7",
+      "#BEB7AB",
+      "#B4AC9F",
+      "#AAA193",
+      "#968B7B",
+      "#8C806F",
+      "#817563",
+      "#766A58",
+      "#6B5F4D",
+      "#605442"
+    ],
+    "backgrounds": {
+      "sky": "#DDD8CF",
+      "water": "#ACA18F"
+    },
+    "id": "193",
+    "name": "参考 01",
+    "seg": "自定义",
+    "tier": "Custom",
+    "cloud": "#DDD8CF",
+    "recovered": true
+  },
+  {
+    "id": "194",
+    "name": "4a8b626eb68bb244ace6a49d4ab80567",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#E2DDC0",
+      "water": "#A4B9B5"
+    },
+    "rows": [
+      "#BEB9A6",
+      "#A4B9B5",
+      "#9BB3AC",
+      "#ADAB96",
+      "#93ACA4",
+      "#7EA19B",
+      "#939B93",
+      "#A28E7E",
+      "#838B84",
+      "#7B837C"
+    ],
+    "cloud": "#E2DDC0",
+    "recovered": true
+  },
+  {
+    "id": "195",
+    "name": "4a8b626eb68bb244ace6a49d4ab80567",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#E2DDC0",
+      "water": "#93ACA4"
+    },
+    "rows": [
+      "#AABAB5",
+      "#93ACA4",
+      "#93938D",
+      "#7B837C",
+      "#946C68",
+      "#6B6A66",
+      "#72534C",
+      "#4C5B5C",
+      "#544443",
+      "#33333A"
+    ],
+    "cloud": "#E2DDC0",
+    "recovered": true
+  },
+  {
+    "id": "196",
+    "name": "5bce0dac7471a9ef8678d9bebf12dd17",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#DCD4CA",
+      "water": "#C5B49A"
+    },
+    "rows": [
+      "#71DAF1",
+      "#C5B49A",
+      "#B4A285",
+      "#13A1B9",
+      "#927D63",
+      "#7D6B53",
+      "#65523B",
+      "#0D4B7D",
+      "#523D2B",
+      "#030303"
+    ],
+    "cloud": "#DCD4CA",
+    "recovered": true
+  },
+  {
+    "id": "197",
+    "name": "48004953cb966a9f3f4372ba1de852d3",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F5C9A3",
+      "water": "#F3A473"
+    },
+    "rows": [
+      "#DDB906",
+      "#F3A473",
+      "#EC8D5B",
+      "#6A9CDD",
+      "#E37B43",
+      "#7B844C",
+      "#24735D",
+      "#095DDF",
+      "#831314",
+      "#0D0312"
+    ],
+    "cloud": "#F5C9A3",
+    "recovered": true
+  },
+  {
+    "id": "198",
+    "name": "48004953cb966a9f3f4372ba1de852d3",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F5C9A3",
+      "water": "#DDB906"
+    },
+    "rows": [
+      "#BFB8C9",
+      "#DDB906",
+      "#F3A473",
+      "#DC9B7C",
+      "#ED9463",
+      "#90A98D",
+      "#6A9CDD",
+      "#E4834C",
+      "#7B844C",
+      "#9172BD"
+    ],
+    "cloud": "#F5C9A3",
+    "recovered": true
+  },
+  {
+    "id": "199",
+    "name": "48004953cb966a9f3f4372ba1de852d3",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FAD2B3",
+      "water": "#F3B48B"
+    },
+    "rows": [
+      "#E4BC9B",
+      "#F3B48B",
+      "#DDB906",
+      "#F3A473",
+      "#E4A384",
+      "#B5A8BF",
+      "#ED9463",
+      "#90A98D",
+      "#CD8B74",
+      "#6A9CDD"
+    ],
+    "cloud": "#FAD2B3",
+    "recovered": true
+  },
+  {
+    "id": "200",
+    "name": "4e25e5989f248325d08a126707435bdb",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F5F4F4",
+      "water": "#FCC6CC"
+    },
+    "rows": [
+      "#D4D9DE",
+      "#FCC6CC",
+      "#FDC5A4",
+      "#DCC3B5",
+      "#E38741",
+      "#B46DA4",
+      "#7B7B5B",
+      "#736944",
+      "#5B543A",
+      "#1F170A"
+    ],
+    "cloud": "#F5F4F4",
+    "recovered": true
+  },
+  {
+    "id": "201",
+    "name": "5a88a01f9c055710ade755ca35d43ff2",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F1F7E9",
+      "water": "#B2B56B"
+    },
+    "rows": [
+      "#CACD84",
+      "#B2B56B",
+      "#A2A553",
+      "#9D9B2C",
+      "#709A65",
+      "#8A8523",
+      "#6A8B34",
+      "#5C731C",
+      "#3C625B",
+      "#192A0A"
+    ],
+    "cloud": "#F1F7E9",
+    "recovered": true
+  },
+  {
+    "id": "202",
+    "name": "b36f57ed41ccf2f23c9ec2bb803f94b3",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FBFCFB",
+      "water": "#A3AB7C"
+    },
+    "rows": [
+      "#D4CB46",
+      "#A3AB7C",
+      "#A3AA04",
+      "#E37603",
+      "#748C4B",
+      "#637C33",
+      "#5C740C",
+      "#4B5C04",
+      "#223C14",
+      "#042303"
+    ],
+    "cloud": "#FBFCFB",
+    "recovered": true
+  },
+  {
+    "id": "203",
+    "name": "1c3a560cf75ba43990c5b2c234aebdac",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F3F4EC",
+      "water": "#7A9B7C"
+    },
+    "rows": [
+      "#DB9B72",
+      "#7A9B7C",
+      "#6B931B",
+      "#537B1B",
+      "#346B1C",
+      "#435B06",
+      "#1B541C",
+      "#0D341A",
+      "#2C1402",
+      "#030303"
+    ],
+    "cloud": "#F3F4EC",
+    "recovered": true
+  },
+  {
+    "id": "204",
+    "name": "ad44da32d1672d9b9ee727cb9a05cf12",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FBFBFA",
+      "water": "#717273"
+    },
+    "rows": [
+      "#D98988",
+      "#717273",
+      "#6C5B0C",
+      "#84430C",
+      "#53440C",
+      "#7B230B",
+      "#333513",
+      "#5B1305",
+      "#2C1305",
+      "#020101"
+    ],
+    "cloud": "#FBFBFA",
+    "recovered": true
+  },
+  {
+    "id": "205",
+    "name": "89e0e74d46f4b5eaff8206119bbb2cc0",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FCFBF9",
+      "water": "#657C84"
+    },
+    "rows": [
+      "#B3734B",
+      "#657C84",
+      "#A45B34",
+      "#646B1C",
+      "#835C3B",
+      "#54542C",
+      "#73442B",
+      "#533523",
+      "#2C3B33",
+      "#1C1A15"
+    ],
+    "cloud": "#FCFBF9",
+    "recovered": true
+  },
+  {
+    "id": "206",
+    "name": "8985bc913f0f5d36308d561d40f0703b",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#E8D0C6",
+      "water": "#C4ABA4"
+    },
+    "rows": [
+      "#EEB101",
+      "#C4ABA4",
+      "#E39364",
+      "#DC7C4B",
+      "#D4631B",
+      "#C44B0C",
+      "#614E4F",
+      "#BC2C0B",
+      "#630C04",
+      "#040203"
+    ],
+    "cloud": "#E8D0C6",
+    "recovered": true
+  },
+  {
+    "id": "207",
+    "name": "f02e45b876b3df6a1e29eca390c8b366",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#D6CBDB",
+      "water": "#CBAB94"
+    },
+    "rows": [
+      "#EAAE52",
+      "#CBAB94",
+      "#BC9582",
+      "#C37453",
+      "#A5735B",
+      "#6B6C73",
+      "#8C4C34",
+      "#4B4B44",
+      "#3B3D2B",
+      "#1C2C22"
+    ],
+    "cloud": "#D6CBDB",
+    "recovered": true
+  },
+  {
+    "id": "208",
+    "name": "1ecb9c15a01c0baaddeeb21fe43f5a8b",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FCF3E3",
+      "water": "#E3BB94"
+    },
+    "rows": [
+      "#F4D39C",
+      "#E3BB94",
+      "#BB9E89",
+      "#C3946C",
+      "#E38C38",
+      "#A2826D",
+      "#8B6A55",
+      "#C24623",
+      "#74523C",
+      "#36190E"
+    ],
+    "cloud": "#FCF3E3",
+    "recovered": true
+  },
+  {
+    "id": "209",
+    "name": "4cce27547e54d6835b5f287df0430033",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FBEBBC",
+      "water": "#ECB34C"
+    },
+    "rows": [
+      "#F3C56B",
+      "#ECB34C",
+      "#C4AB8D",
+      "#C98641",
+      "#A48269",
+      "#C3740B",
+      "#A45B14",
+      "#8B450C",
+      "#642A0B",
+      "#431A0B"
+    ],
+    "cloud": "#FBEBBC",
+    "recovered": true
+  },
+  {
+    "id": "210",
+    "name": "8679e4babe198c3ba025d1b53f2a28e4",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FAFBFB",
+      "water": "#DCBB9C"
+    },
+    "rows": [
+      "#F5DBBC",
+      "#DCBB9C",
+      "#ACB3E3",
+      "#C5A29C",
+      "#9B9BDC",
+      "#8384D5",
+      "#6463D3",
+      "#735C67",
+      "#383A90",
+      "#38281A"
+    ],
+    "cloud": "#FAFBFB",
+    "recovered": true
+  },
+  {
+    "id": "211",
+    "name": "c2d8c8ecb142e0a869da7f1f3cb39cbb",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#E5E4E2",
+      "water": "#D2B194"
+    },
+    "rows": [
+      "#EABCA3",
+      "#D2B194",
+      "#DA929D",
+      "#DB9374",
+      "#AC8BBC",
+      "#CD7D62",
+      "#CB644B",
+      "#3A5789",
+      "#73473B",
+      "#170A08"
+    ],
+    "cloud": "#E5E4E2",
+    "recovered": true
+  },
+  {
+    "id": "212",
+    "name": "98d865495415299a9f880c6c8e6e3a89",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#F3ECDA",
+      "water": "#C9BB9B"
+    },
+    "rows": [
+      "#ECC493",
+      "#C9BB9B",
+      "#D4B37C",
+      "#B39D73",
+      "#A49354",
+      "#A37342",
+      "#897663",
+      "#83643C",
+      "#5B4A35",
+      "#342725"
+    ],
+    "cloud": "#F3ECDA",
+    "recovered": true
+  },
+  {
+    "id": "213",
+    "name": "d5f4e0ad283a9fabcd2f94ce455e4036",
+    "seg": "自定义",
+    "tier": "Custom",
+    "backgrounds": {
+      "sky": "#FAFBFA",
+      "water": "#EBAC14"
+    },
+    "rows": [
+      "#C4BAA5",
+      "#EBAC14",
+      "#ACA493",
+      "#DA7D5A",
+      "#8B857A",
+      "#E46B0C",
+      "#726D64",
+      "#D33C0C",
+      "#7B341C",
+      "#2B231C"
+    ],
+    "cloud": "#FAFBFA",
+    "recovered": true
   }
 ]

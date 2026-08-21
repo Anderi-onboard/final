@@ -24,7 +24,8 @@ guide.html          长滚动教程   about.html  pricing.html  login.html
 settings.html       privacy/terms/refund/404.html
 styles.css          只有 @import,指向 tokens/*
 tokens/*.css        colors / fonts / typography / spacing / paper / motion
-assets/backgrounds/mountain-range.js   动态山脉背景引擎(180 色组)
+assets/backgrounds/mountain-range.js   动态山脉背景引擎(114 色组)
+assets/palettes/color-groups.json      色组数据(唯一权威)   palette-guide.html 色组管理器
 casting-figure.js   排卦图与排卦动画(BWFigure)
 liuyao-engine.js    六爻排盘   liuyao-ai.js  prompt-engine.js  prompt-router.js
 chat-app.js         聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js
@@ -233,26 +234,44 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 ## 4 · 背景与动效系统
 
 ### 山脉背景 `mountain-range.js`
-- **180 个色组**,每组 10 阶(浅→深),分 7 段:近白段 30 组,其余 6 段各 25 组。
+- **114 个色组**,每组 10 阶(浅→深),分 8 段。**这个数字是删出来的,不是攒出来的** ——
+  owner 在 `palette-guide.html` 里删掉的组会从发布文件里消失,`mountain-range.js`
+  的注释写着这条:「Removing a group in the manager removes it from the published file」。
+  所以看到组数变少是正常的,不要"补回来"(见 §11)。
+- **段 = 连续 id 区间**,不是从颜色算出来的。id 有空号(删掉的),但区间不重叠:
+  `001–028` 近白段 14、`031–055` 粉珊瑚段 22、`056–078` 金赭段 17、`089–101` 青绿段 4、
+  `108–130` 蓝靛段 15、`143–152` 紫堇段 4、`159–179` 黄绿杂段 4、`180–213` 自定义 34。
+  新增组必须接在末尾另起一段,插进中间会破坏区间(`tests/palette-contract.mjs` 会挡下)。
 - ⭐ **色卡不是屏幕上的颜色。** 每个值都先过 `mutedHex(hex, maxL, maxS, minL)`:转 HSL、
   夹住明度和饱和度、再转回来。**色相从不改动 —— 它是唯一完整活下来的通道。**
-  实测(全 1800 个山脊色):色卡平均饱和度 **.675**,上屏后 **.251**;
-  **1630/1800 = 90.6% 被压到正好 .26**。天空 `maxL=.82` **180/180 全部触顶**,
-  所以整个上半屏在 180 组里**只换色相、从不换明度**。水面 57% 被明度上下限夹住。
-  **想让 180 组读起来像 180 组,要动的是这两个数字,不是色卡。** 色卡不是瓶颈。
+  实测(114 组 / 1140 个山脊色,2026-08-21 重测):色卡平均饱和度 **.599**,上屏 **.242**,
+  **84.0%(958/1140)被压到 .26**。天空 `mutedHex(sky,.82,.14,.76)` 窗口只有 .76–.82,
+  **94% 触顶**、去重后只剩 53 种、**任意两组最大单通道差 31/255**。
+  ⚠️ 上一版这里写的是 180 组时代的数字(.675→.251 / 90.6% / 天空 180/180 触顶、差 13/255)。
+  自定义那 34 组把天空拉开了 **2.4 倍** —— 之前"整个上半屏在所有配色里是同一块灰白"**已不成立**。
+  山脊那边仍有 84% 被 `.26` 削平,这条没变。**要再拉开,动的是这三个数字,不是色卡。**
 - JSON 里只有 `rows`(10)、`backgrounds.sky`、`backgrounds.water`、`gems[0]` 被读;
-  `pattern` / `harmony` / `families` / `breaks` 是**没有任何代码读的元数据**。
+  `pattern` / `harmony` / `families` / `breaks` 是**没有任何代码读的元数据**(实测引用 0 次)。
 - 10 层山脊 + `.mtn-sky` 页面场,**全部同步**到一条时间线 —— 任一时刻整座山穿同一套配色,再整体交叉渐变到下一套。
-- 每组停留 **15s**(`paletteDwellMs`),180 组 → 整轮 **2700s = 45 分钟**。
-  ~~周期 900s~~ 是过期数字,`HOLD` 常量在代码里已不存在。
+- 每组停留 **15s**(`paletteDwellMs`),114 组 → 整轮 **1710s = 28.5 分钟**。
+  ~~周期 900s / 2700s~~ 都是过期数字,`HOLD` 常量在代码里已不存在。
 - 山脉相位使用 `sessionStorage` 中的会话时钟跨页面连续;禁止每次导航重新随机。
 - 禁止整页跨文档 View Transition:它会同时合成两套全屏 SVG 与玻璃层,造成闪帧。
 - 线稿入场动画每个浏览会话只播放一次,页面之间切换不重复入场。
-- ⚠️ **播放顺序:按 tier 排序,不是交替。** ~~撞色偏置~~ 和 ~~近白/彩色 1:1 交替~~ **代码里都不存在**,
-  `buildPaletteSchedule()` 只做一件事:按 `浓 → 艳 → 中 → 淡` 排序,同 tier 内按 id。
-  于是站点会**在同一档里连续待很久**:浓 35 组 = 8.8 分钟、艳 20 组 = 5 分钟、中 40 组 = 10 分钟、
-  淡 85 组 = **21 分钟**(占整轮近一半),然后硬跳回浓。
-  待五分钟的访客只会看到同一档里的二十组,**永远看不到色谱表所暗示的跨度**。要改先决定是不是真要交替。
+- ⭐ **播放顺序是每位访客各洗一次的随机序,不是排序**(2026-08-21)。
+  **任何固定顺序都会让站点在目录的一小块里连续待很久,然后硬跳。** 按段排时 34 组自定义
+  全排在最前 = **开头 8.5 分钟只有一个段**;而新会话 `clockStart = Date.now()`,于是
+  **每个首次访客都从同一组开始、走同一条 28.5 分钟的路** —— 目录的跨度在那儿,没人看得到。
+  洗牌才是让 114 组读起来像 114 组的东西。
+  ⚠️ **种子化,种子存在 `sessionStorage`(`bw-palette-seed-v1`),不是每次调 `Math.random()`。**
+  这和笔触、`LINE_DRIFT` 是同一条规矩:每次导航重洗,背景会在访问途中自己重排,
+  **读起来是渲染故障不是设计**。一个会话抽一次,该会话每个页面同一个排列;下一位访客换一个。
+  实测:一个访客四次导航种子与时钟不变、色组不跳;8 个独立访客 8 个不同种子、8 个不同开局。
+  隐私模式/存储被禁时按页抽 —— 那种访客本来就没有跨页连续性要保。
+  `mulberry32` + Fisher–Yates 写在 `buildPaletteSchedule` 里,`tests/palette-contract.mjs` 守着
+  「必须种子化 + 种子必须持久化 + 必须是全排列」三条。
+  ⚠️ 旧规范写过的「`近白 → 彩色` 1:1 交替」和「撞色偏置」**在代码里从未存在过**,
+  两次核对(08-20 / 08-21)`buildPaletteSchedule` 都没有任何相关逻辑。已按代码删除。
 - 线稿模式 `.mtn-bg.line-art`:填充降到 `opacity:.62`,保留等高线。
 - **摩尔纹是全站唯一的纹理**,写在 `mountain-range.js` 的 `MOIRE` 表里,不是独立图层、
   不是贴图。每条带就是该层自己的等高线 `#mw{i}c` 在极小角度上的重复,`clip-path` 裁在
@@ -443,8 +462,11 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
 - **先点用神,再动笔**。每篇必须说清读的是哪个用神、为什么是它。
   **不许拿"这个读不出来"当回避手段** —— 方法上读不读得出(有没有用神)和该不该答(优先级阶梯)
   是两根独立的轴,用前者去做后者的活,等于既拒绝了用户又谎报了这门方法。
-- 篇幅:主解读 Sortis 3000–4000 字、Stria 1500–2500 字;按键追问 300–6000 字,按问题大小走,
-  **不设刻板字数法则**。短是因为问题小,不是因为给得少 —— 信息量和温度永远不许缩水。
+- 篇幅:**只有下限,没有上限**。主解读 Sortis 3500 字起、Stria 1500 字起;按键追问 300–6000 字,
+  按问题大小走,**不设刻板字数法则**。短是因为问题小,不是因为给得少 —— 信息量和温度永远不许缩水。
+  ⚠️ 上限是 owner 08-19 明确撤掉的:**写长了不是毛病** —— 用户来看的就是自己那一卦的解读,
+  巴不得多读一些;盘上真有那么多东西、写到四五千字,那是把活干完了。为了凑一个整齐的数字
+  砍掉正在说的那段,读的人实实在在少拿了东西,而什么也没省下。**盘读完就停,不是数字到了就停。**
 - **问什么答什么**:问应期就算应期(并按时辰→日→月→年整条列出),问长相就走取象·万物类象·射覆,
   问能不能就给决断。没问时间的人不要塞应期给他。
 - **比喻的言外之意也是断言**。用一个象之前先问:它顺带说了什么?「光走了这么久,它自己会回来」
@@ -546,3 +568,83 @@ slab 无投影、构建标签全站一致、Pacifico 仅用于字标+chip。
 3. **空状态到底要什么**:问候语 + 输入框(现状),还是加回示例 chip / 介绍流?§8 第 13 与 14 条互相矛盾。
 4. **卦象排版三连**(§8 末尾 TODO 1–3)要不要这轮处理?
 5. **顶栏 Claude 说明文字**:手机端已隐藏,桌面端保留 —— 可以吗?
+
+---
+
+---
+
+## 11 · 色组:114 组是删出来的(2026-08-20)
+
+owner 在 `palette-guide.html` 里删过一轮,上传的 `colorgroups.json` 是**删完剩下的结果**,
+不是增量补丁。所以这次是**整份替换**:`180 → 114`,123 组不再出现在发布文件里。
+
+⚠️ **这里踩过一次坑,别再踩**:第一版我把这 114 组当增量去"合"进仓库的 180 组,
+结果算出 213 —— 等于把 owner 刚删掉的全加了回来。判断依据其实一直写在
+`mountain-range.js` 的注释里:「The curated file is now authoritative … Removing a
+group in the manager removes it from the published file」。
+**下次看到组数变少,先假设是有意删的**,去问,别自动补齐。
+
+旧的 180 组在 git 历史里(本次提交的父提交),owner 本地另有备份。
+
+### 唯一的加工:33 个 id 重编为 181–213
+
+管理器生成的 id(`CMSPYGJAT` 这种)过不了 `tests/palette-contract.mjs` 的三位数字校验;
+且自定义段从 `#180`(草焰)起,重编后正好接成 `180–213` 一整块,保住 §4 的 id 区间不变量。
+**色值、名字、其他字段一个都没动。** 原 id 留档:
+
+| 新 id | 原 id | 名称 | sky / water |
+|---|---|---|---|
+| `181` | `CMSPYGJAT` | art-01 | #F6F2EA / #D3A985 |
+| `182` | `CMSPYI768` | architecture-01 | #ECE4C7 / #A6AAB4 |
+| `183` | `CMSPYN41D` | landscape-031 | #C3CCEA / #CA9A40 |
+| `184` | `CMSPYSTGE` | portrait-03 | #977966 / #35150E |
+| `185` | `CMSPZ7Q1V` | portrait-03 | #AA8C7A / #7B5C4C |
+| `186` | `CMSPZ9527` | portrait-02 | #AFD0DA / #9B8C84 |
+| `187` | `CMSPZA9WG` | street-01 | #FDF9E2 / #FCDC8C |
+| `188` | `CMSPZD7WY` | ffb0ea2d1cd00e3e178e7bfd6fdc4ef5 | #FDFEFD / #D2DFF5 |
+| `189` | `CMSPZHJCP` | 4f46bcbe9448d07be2506c23c95b11c9 | #C5CACD / #949B9B |
+| `190` | `CMSPZY5W1` | 0f79155456c76bbec84b2f4c183957e8 | #FBFBDA / #DCD2C4 |
+| `191` | `CMSPZYAIB` | 0f79155456c76bbec84b2f4c183957e8 | #F7E5D2 / #CCBBB3 |
+| `192` | `CMSPZYHS1` | 356b3b66b6f53d953108ab469384feef | #FDD9CB / #D0AB32 |
+| `193` | `CMSQ0KD0A` | (无名) | #DDD8CF / #ACA18F |
+| `194` | `CMSQ0KJ33` | 4a8b626eb68bb244ace6a49d4ab80567 | #E2DDC0 / #A4B9B5 |
+| `195` | `CMSQ0KNFT` | 4a8b626eb68bb244ace6a49d4ab80567 | #E2DDC0 / #93ACA4 |
+| `196` | `CMSQ0KT1Z` | 5bce0dac7471a9ef8678d9bebf12dd17 | #DCD4CA / #C5B49A |
+| `197` | `CMSQ0L431` | 48004953cb966a9f3f4372ba1de852d3 | #F5C9A3 / #F3A473 |
+| `198` | `CMSQ0L8UY` | 48004953cb966a9f3f4372ba1de852d3 | #F5C9A3 / #DDB906 |
+| `199` | `CMSQ0LIEQ` | 48004953cb966a9f3f4372ba1de852d3 | #FAD2B3 / #F3B48B |
+| `200` | `CMSQ0LONC` | 4e25e5989f248325d08a126707435bdb | #F5F4F4 / #FCC6CC |
+| `201` | `CMSQ0M5ZM` | 5a88a01f9c055710ade755ca35d43ff2 | #F1F7E9 / #B2B56B |
+| `202` | `CMSQ0NGFI` | b36f57ed41ccf2f23c9ec2bb803f94b3 | #FBFCFB / #A3AB7C |
+| `203` | `CMSQ0NQLH` | 1c3a560cf75ba43990c5b2c234aebdac | #F3F4EC / #7A9B7C |
+| `204` | `CMSQ0NXVR` | ad44da32d1672d9b9ee727cb9a05cf12 | #FBFBFA / #717273 |
+| `205` | `CMSQ0O7LA` | 89e0e74d46f4b5eaff8206119bbb2cc0 | #FCFBF9 / #657C84 |
+| `206` | `CMSQ0OEEN` | 8985bc913f0f5d36308d561d40f0703b | #E8D0C6 / #C4ABA4 |
+| `207` | `CMSQ0P1I7` | f02e45b876b3df6a1e29eca390c8b366 | #D6CBDB / #CBAB94 |
+| `208` | `CMSQ0PY0Y` | 1ecb9c15a01c0baaddeeb21fe43f5a8b | #FCF3E3 / #E3BB94 |
+| `209` | `CMSQ0Q9S6` | 4cce27547e54d6835b5f287df0430033 | #FBEBBC / #ECB34C |
+| `210` | `CMSQ0RCXM` | 8679e4babe198c3ba025d1b53f2a28e4 | #FAFBFB / #DCBB9C |
+| `211` | `CMSQ0RK19` | c2d8c8ecb142e0a869da7f1f3cb39cbb | #E5E4E2 / #D2B194 |
+| `212` | `CMSQ0SKVO` | 98d865495415299a9f880c6c8e6e3a89 | #F3ECDA / #C9BB9B |
+| `213` | `CMSQ0SPUU` | d5f4e0ad283a9fabcd2f94ce455e4036 | #FAFBFA / #EBAC14 |
+
+25 个名字是 32 位 hash(从参考图取色时生成的),1 个原本无名、补为「参考 01」。
+要改名请在管理器里改 —— 那是 owner 的数据。
+
+### 这 33 组缺什么
+
+- **无 `gems`** -> 引擎 `paletteGem()` 退回第 6 阶。这是兜底,不是设计选择。
+- **无 `breaks` / `pattern` / `harmony` / `families`** -> 运行时不读,只有管理器 UI 用。
+- **`tier` 是 `Custom`** -> 不在 `tierOrder` 里,兜底 9。自定义段整段排在最前,
+  所以这个值只决定它 34 组内部的先后,不影响别的段。
+
+曾试过从 `rows` 反推这些字段,**放弃了**:拿当时的 180 组当标注集验证,
+`seg` 命中 20%、`harmony` 21%、`tier` 68%、`pattern` 69%。
+`seg` 低是因为它根本不是颜色属性(是 id 区间),`harmony` 低说明它也是人定的。
+**推不出来就别推** —— 填一堆大半是错的元数据,比留空更难查。
+
+### 验证
+
+本地起静态服务,新会话打开 `index.html`,读
+`document.documentElement.dataset.bwPaletteSegment` 应为 `自定义`、
+`dataset.bwPalette` 应为 `180`(自定义段第一组)。08-20 实测通过。

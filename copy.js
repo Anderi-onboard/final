@@ -173,6 +173,11 @@
       serverShort: "Not enough units on the server — add units and try again. Nothing was charged.",
       timedOut: "The reading timed out — please try again. Nothing was charged.",
       castFailed: "The reading didn’t make it through. Metered usage settles on what the model actually produced, so check the balance above rather than assuming a refund. Try again in a moment.",
+      /* The model provider refused before generating anything. The generic
+         failure line below tells the reader to check their balance rather than
+         assume a refund — true when a reading died mid-flight, and alarming
+         nonsense when nothing was ever produced. This one says what happened. */
+      upstreamDown: "The reading service is unavailable right now — nothing was generated and nothing was charged. Your free reading is still yours. Please try again shortly.",
       answerTimedOut: "The answer timed out — try again. Nothing was charged.",
       answerFailed: "The answer didn’t make it through. Metered usage settles on what the model actually produced, so check the balance above rather than assuming a refund. Try again in a moment."
     }

@@ -68,15 +68,54 @@ assert.ok(/return fullText;\s*\/\/ keep the part that arrived/.test(streamFn)
 assert.ok(/throw readErr/.test(streamFn),
   'a stream that delivered nothing must still surface as an error');
 
-// ── no user-facing copy promises a refund ─────────────────────────────────
-for (const [name, src] of [['chat-app.js', chat], ['copy.js', copy]]) {
-  for (const claim of ['back where they were', 'nothing was charged', 'units refunded']) {
-    assert.ok(
-      !src.includes(claim),
-      `${name} tells the reader "${claim}" — settlement bills delivered tokens, so that is not true`
-    );
+/* ── no user-facing copy promises a refund it cannot make ──────────────────
+   The claim is only false where a generation actually ran: a reading that
+   streamed and was cut off has billed for the tokens it delivered, and telling
+   that reader "nothing was charged" is a lie about their balance.
+
+   It is TRUE, and worth saying, on every path that fails before a token is
+   produced — a stale build, an expired session, an empty server balance, a
+   timeout, a provider refusal. Five such lines already say so.
+
+   This used to be a flat substring ban across both files, which only passed
+   because those five lines happen to start the sentence with a capital N.
+   Checking case-insensitively against the lines that actually describe a
+   half-delivered reading is the rule that was meant. */
+const REFUND_CLAIMS = ['back where they were', 'nothing was charged', 'units refunded'];
+const MID_STREAM_COPY = [
+  ['copy.js castFailed', (copy.match(/castFailed:.*/) || [''])[0]],
+  ['copy.js answerFailed', (copy.match(/answerFailed:.*/) || [''])[0]],
+  // chat-app.js writes the apostrophe as a ’ escape, copy.js as the glyph.
+  ...(chat.match(/msg = "The (?:reading|answer) didn(?:’|\\u2019)t make it through[^"]*"/g) || []).map(
+    (s, i) => [`chat-app.js fallback ${i + 1}`, s])
+];
+assert.equal(MID_STREAM_COPY.length, 4, 'expected four pieces of mid-stream failure copy');
+for (const [where, text] of MID_STREAM_COPY) {
+  assert.ok(text, `${where}: copy not found — the check below would pass vacuously`);
+  for (const claim of REFUND_CLAIMS) {
+    assert.ok(!text.toLowerCase().includes(claim),
+      `${where} tells the reader "${claim}" — settlement bills delivered tokens, so that is not true`);
   }
 }
 
+// ── nothing delivered means nothing charged ────────────────────────────────
+// Settlement runs under waitUntil, so a request whose connection dies before
+// the first byte used to bill in full. Measured in production: HTTP 000, zero
+// bytes, 1090 units charged.
+assert.ok(/delivered\s*===\s*0/.test(pump),
+  'pumpAndSettle bills again without checking whether anything reached the reader');
+assert.ok(/delivered \+= text\.length/.test(pump),
+  'pumpAndSettle no longer counts what it successfully wrote to the client');
+
+// ── a reading is never generated without a stream ──────────────────────────
+// The non-streaming path cannot outlast a 60-90s generation; it produced a dead
+// connection AND a charge.
+assert.ok(/STREAM_REQUIRED/.test(claude),
+  '/api/claude accepts a non-streamed reading again — it will time out and bill for nothing');
+assert.ok(!/complete_after_retry/.test(router),
+  'the unreachable non-streamed QC retry is back, and it posts a system prompt the proxy rejects');
+assert.ok(!/system: result\.system/.test(router),
+  'prompt-router.js posts result.system again — /api/claude answers that with a 400');
+
 console.log('stream recovery OK — partial readings survive a cut stream, '
-  + 'a dead stream still errors, and no copy promises a refund');
+  + 'a dead stream still errors, nothing undelivered is billed, and no copy promises a refund');

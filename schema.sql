@@ -10,10 +10,17 @@ CREATE TABLE IF NOT EXISTS users (
   name          TEXT NOT NULL,
   provider      TEXT NOT NULL DEFAULT 'email',-- email | google | apple | reddit | github | discord ...
   plan          TEXT NOT NULL DEFAULT 'free',
-  units         INTEGER NOT NULL DEFAULT 1500, -- free signup welcome grant.
+  units         INTEGER NOT NULL DEFAULT 0,   -- purchased balance. A new account
+                                               -- starts EMPTY and gets one whole
+                                               -- reading instead (free_readings).
                                                -- May go negative: a reading that
                                                -- outruns the balance still finishes
                                                -- and still bills. See chargeUnits().
+  free_readings INTEGER NOT NULL DEFAULT 0,   -- complete readings owed to this
+                                               -- account at no charge. Signup grants
+                                               -- 1. Spent BEFORE units, and never
+                                               -- partially: the free one runs to the
+                                               -- end whatever it costs.
   password_hash TEXT,                         -- pbkdf2$… for email accounts; NULL for OAuth
   created_at    INTEGER NOT NULL,
   updated_at    INTEGER NOT NULL
@@ -79,3 +86,11 @@ CREATE TABLE IF NOT EXISTS subscriptions (
 );
 CREATE INDEX IF NOT EXISTS idx_subs_user ON subscriptions(user_id);
 CREATE INDEX IF NOT EXISTS idx_subs_customer ON subscriptions(provider, customer_id);
+
+-- ── migration: units-on-signup → one free reading ──────────────────────────
+-- Run once against an existing database. New installs get the column from the
+-- CREATE above; this adds it for accounts that already exist. They are given 0
+-- free readings on purpose — they already received the old 1,500-unit grant,
+-- and handing them a reading on top would be paying the welcome twice.
+--
+--   ALTER TABLE users ADD COLUMN free_readings INTEGER NOT NULL DEFAULT 0;
