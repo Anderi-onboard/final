@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260821i");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260821i");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260821i");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260821i");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260821j");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260821j");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260821j");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260821j");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
   --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
@@ -319,7 +319,7 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
    not material. */
 html[data-skin="paper"] {
   --soft-peach: #FFDE96;
-  --soft-peach-accent: #DE795D;
+  --soft-peach-accent: #A85E46;  /* was #DE795D — see refinement.css, solid buttons */
   --soft-peach-cream: #F4E8CE;
   --soft-peach-paper: #EBDDCA;
   --soft-peach-ink: #34251F;
@@ -413,8 +413,8 @@ html[data-skin="paper"] body[data-page="app"] .msg-user {
   color: #251A17 !important;
 }
 html[data-skin="paper"] body[data-page="app"] :is(.send,.exchange) {
-  background-color: var(--soft-peach-accent) !important;
-  color: var(--soft-peach-ink) !important;
+  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
+  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
 }
 html[data-skin="paper"] body[data-page="app"] :is(.stria,.chip,.rd-action,.rd-prompt) {
   color: var(--soft-peach-ink) !important;
@@ -450,8 +450,8 @@ html[data-skin="paper"] body[data-page="pricing"] :is(.plan.featured,.plan.feat)
   box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised) !important;
 }
 html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
-  background-color: var(--soft-peach-accent) !important;
-  color: var(--soft-peach-ink) !important;
+  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
+  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
 }
 
 /* Text pages: one flat colour per major editorial field. There are no
@@ -540,8 +540,8 @@ html[data-skin="paper"] body[data-page="login"] .tab.on {
   box-shadow: var(--ui-solid-shadow) !important;
 }
 html[data-skin="paper"] body[data-page="login"] :is(.prov.submit) {
-  background-color: var(--soft-peach-accent) !important;
-  color: var(--soft-peach-ink) !important;
+  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
+  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
 }
 html[data-skin="paper"] body[data-page="settings"] > .toast {
   position: fixed !important;
