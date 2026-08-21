@@ -1,0 +1,1986 @@
+{
+  "source": ".tmp-chrome-palette.ldb",
+  "blocks": 460,
+  "records": 5,
+  "history": [
+    {
+      "sequence": 507513,
+      "valueType": 1,
+      "key": "bw-colour-library-v1",
+      "text": "[\"#C7CAC5\",\"#B7B49B\",\"#E4E5E8\",\"#A7977B\",\"#C8B970\",\"#E5C594\"]",
+      "parsed": [
+        "#C7CAC5",
+        "#B7B49B",
+        "#E4E5E8",
+        "#A7977B",
+        "#C8B970",
+        "#E5C594"
+      ]
+    },
+    {
+      "sequence": 507868,
+      "valueType": 1,
+      "key": "bw-palette-overrides-v1",
+      "text": "{\"112\":{\"id\":\"112\",\"name\":\"空青\",\"seg\":\"蓝靛段\",\"tier\":\"中\",\"pattern\":\"2|3|2|3\",\"harmony\":\"补色对撞\",\"families\":2,\"rows\":[\"#EFF8FF\",\"#C4E4FF\",\"#5AA5D9\",\"#428ECC\",\"#147FBB\",\"#E5BE61\",\"#DBAE33\",\"#7A0606\",\"#B2652E\",\"#EC3B13\"],\"breaks\":[2,5,7],\"gems\":[6],\"cloud\":\"#FCFEFF\",\"backgrounds\":{\"sky\":\"#FCFEFF\",\"haze\":\"#C4E4FF\",\"water\":\"#147FBB\"},\"updatedAt\":1786534104292,\"overridden\":true},\"115\":{\"id\":\"115\",\"name\":\"矢车菊\",\"seg\":\"蓝靛段\",\"tier\":\"中\",\"pattern\":\"3|3|2|2\",\"harmony\":\"三分色\",\"families\":3,\"rows\":[\"#F2F7FF\",\"#D0DFFE\",\"#B0CFFF\",\"#CA6B6E\",\"#B75552\",\"#A4444A\",\"#957D97\",\"#8C788B\",\"#010530\",\"#02041A\"],\"breaks\":[3,6,8],\"gems\":[7],\"cloud\":\"#FDFDFF\",\"backgrounds\":{\"sky\":\"#FDFDFF\",\"haze\":\"#D0DFFE\",\"water\":\"#B75552\"},\"updatedAt\":1786534122720,\"overridden\":true},\"123\":{\"id\":\"123\",\"name\":\"靛蓝\",\"seg\":\"蓝靛段\",\"tier\":\"浓\",\"pattern\":\"3|2|2|3\",\"harmony\":\"分裂补色\",\"families\":4,\"rows\":[\"#F0F7FF\",\"#CAE0FE\",\"#A5CFFE\",\"#C26D0B\",\"#A05F06\",\"#604E00\",\"#473D00\",\"#2E6303\",\"#8A73C9\",\"#0E4081\"],\"breaks\":[3,5,7],\"gems\":[5],\"cloud\":\"#F8FBFF\",\"backgrounds\":{\"sky\":\"#F8FBFF\",\"haze\":\"#CAE0FE\",\"water\":\"#A05F06\"},\"updatedAt\":1786534193872,\"overridden\":true},\"129\":{\"id\":\"129\",\"name\":\"钴焰\",\"seg\":\"蓝靛段\",\"tier\":\"艳\",\"pattern\":\"1|3|2|4\",\"harmony\":\"冷暖交替\",\"families\":4,\"rows\":[\"#F1FAFF\",\"#E4993A\",\"#C88507\",\"#B57102\",\"#1445EB\",\"#251DD2\",\"#E35416\",\"#F42B10\",\"#233D8B\",\"#FD3030\"],\"breaks\":[1,4,6],\"gems\":[4,5],\"cloud\":\"#4999DF\",\"backgrounds\":{\"sky\":\"#4999DF\",\"haze\":\"#E4993A\",\"water\":\"#1445EB\"},\"updatedAt\":1786534258981,\"overridden\":true},\"143\":{\"id\":\"143\",\"name\":\"紫鼠\",\"seg\":\"紫堇段\",\"tier\":\"中\",\"pattern\":\"3|2|2|3\",\"harmony\":\"三分色\",\"families\":3,\"rows\":[\"#FEF0FF\",\"#FFCCFA\",\"#F1B5F4\",\"#B9564B\",\"#927309\",\"#9D281A\",\"#792610\",\"#30002E\",\"#1C0017\",\"#110010\"],\"breaks\":[3,5,7],\"gems\":[5],\"cloud\":\"#F7BBEB\",\"backgrounds\":{\"sky\":\"#F7BBEB\",\"haze\":\"#FFCCFA\",\"water\":\"#927309\"},\"updatedAt\":1786534311658,\"overridden\":true},\"151\":{\"id\":\"151\",\"name\":\"葡萄\",\"seg\":\"紫堇段\",\"tier\":\"浓\",\"pattern\":\"1|3|3|3\",\"harmony\":\"分裂补色\",\"families\":4,\"rows\":[\"#FBF1FF\",\"#9CBA69\",\"#79A844\",\"#FFFFFF\",\"#08774C\",\"#025F43\",\"#004E2F\",\"#2A0010\",\"#150002\",\"#0D0001\"],\"breaks\":[1,4,7],\"gems\":[8],\"cloud\":\"#E1F9D7\",\"backgrounds\":{\"sky\":\"#E1F9D7\",\"haze\":\"#9CBA69\",\"water\":\"#08774C\"},\"updatedAt\":1786534342450,\"overridden\":true},\"152\":{\"id\":\"152\",\"name\":\"堇焰\",\"seg\":\"紫堇段\",\"tier\":\"艳\",\"pattern\":\"2|3|2|3\",\"harmony\":\"冷暖交替\",\"families\":4,\"rows\":[\"#FFF0FB\",\"#8BB828\",\"#E66060\",\"#C0D9AF\",\"#0A573B\",\"#005C34\",\"#00452C\",\"#001000\",\"#000500\",\"#000000\"],\"breaks\":[2,5,7],\"gems\":[3,4],\"cloud\":\"#FFF8FD\",\"backgrounds\":{\"sky\":\"#FFF8FD\",\"haze\":\"#FFCCCC\",\"water\":\"#C70000\"},\"updatedAt\":1786534429988,\"overridden\":true},\"179\":{\"id\":\"179\",\"name\":\"苔焰\",\"seg\":\"黄绿杂段\",\"tier\":\"艳\",\"pattern\":\"1|3|2|4\",\"harmony\":\"分裂补色\",\"families\":4,\"rows\":[\"#E5FFE4\",\"#701A1A\",\"#DBC3F4\",\"#CFE396\",\"#C16325\",\"#406C87\",\"#002119\",\"#000F0B\",\"#000402\",\"#000201\"],\"breaks\":[1,4,6],\"gems\":[4,5],\"cloud\":\"#F0D0D0\",\"backgrounds\":{\"sky\":\"#F0D0D0\",\"haze\":\"#DF5353\",\"water\":\"#B8DCFF\"},\"updatedAt\":1786530931111,\"overridden\":true},\"180\":{\"id\":\"180\",\"name\":\"草焰\",\"seg\":\"自定义\",\"tier\":\"艳\",\"pattern\":\"2|2|3|3\",\"harmony\":\"冷暖交替\",\"families\":4,\"rows\":[\"#FF824D\",\"#A6CDF2\",\"#DF6288\",\"#8378D3\",\"#BA2C2C\",\"#760404\",\"#615B80\",\"#AB6844\",\"#6059A6\",\"#241D62\"],\"breaks\":[2,4,7],\"gems\":[5,6],\"cloud\":\"#CDD8F9\",\"backgrounds\":{\"sky\":\"#CDD8F9\",\"haze\":\"#F08228\",\"water\":\"#F50000\"},\"updatedAt\":1786530831493,\"overridden\":true},\"065\":{\"id\":\"065\",\"name\":\"黄土\",\"seg\":\"金赭段\",\"tier\":\"中\",\"pattern\":\"3|3|2|2\",\"harmony\":\"邻近+双撞\",\"families\":3,\"rows\":[\"#FFF3E9\",\"#FFD7AF\",\"#FEBE86\",\"#4D90D2\",\"#3F79C1\",\"#206AAD\",\"#501D02\",\"#3D0C00\",\"#1A0700\",\"#120200\"],\"breaks\":[3,6,8],\"gems\":[7],\"cloud\":\"#FFFDFB\",\"backgrounds\":{\"sky\":\"#FFFDFB\",\"haze\":\"#FFD7AF\",\"water\":\"#3F79C1\"},\"updatedAt\":1786530952108,\"overridden\":true},\"004\":{\"id\":\"004\",\"name\":\"春·樱白\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"3|2|2|3\",\"harmony\":\"邻近+双撞\",\"families\":2,\"rows\":[\"#EFFEFC\",\"#D8F8F6\",\"#CAF2EC\",\"#FDD7CE\",\"#9ACAC8\",\"#D3A0A2\",\"#CA241C\",\"#3A0811\",\"#47060D\",\"#897679\"],\"breaks\":[3,5,7],\"gems\":[5],\"cloud\":\"#B3D5F4\",\"backgrounds\":{\"sky\":\"#B3D5F4\",\"haze\":\"#D8F8F6\",\"water\":\"#9ACAC8\"},\"updatedAt\":1786532626612,\"overridden\":true,\"custom\":false},\"006\":{\"id\":\"006\",\"name\":\"冬·月白\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"分裂补色\",\"families\":3,\"rows\":[\"#FAFAFF\",\"#EFEEFF\",\"#ABD2E3\",\"#EACE99\",\"#DF6868\",\"#BFAD8C\",\"#B2A484\",\"#858AAC\",\"#808197\",\"#787B8A\"],\"breaks\":[2,5,7],\"gems\":[7],\"cloud\":\"#F9FAFF\",\"backgrounds\":{\"sky\":\"#F9FAFF\",\"haze\":\"#EFEEFF\",\"water\":\"#EBC437\"},\"updatedAt\":1786532520352,\"overridden\":true},\"001\":{\"id\":\"001\",\"name\":\"春·杏霞白\",\"seg\":\"近白段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#FFF9F6\",\"#FFECE1\",\"#B7D6E8\",\"#ABCCE2\",\"#A0C5DA\",\"#97B1D3\",\"#9DAAB9\",\"#A38479\",\"#957D72\",\"#887871\"],\"breaks\":[2,5,7],\"gems\":[5],\"cloud\":\"#FEF9F7\",\"backgrounds\":{\"sky\":\"#FEF9F7\",\"haze\":\"#FFECE1\",\"water\":\"#A0C5DA\"},\"updatedAt\":1786532799164,\"overridden\":true},\"046\":{\"id\":\"046\",\"name\":\"朱珊瑚\",\"seg\":\"粉珊瑚段\",\"tier\":\"淡\",\"pattern\":\"1|3|3|3\",\"harmony\":\"补色对撞\",\"families\":3,\"rows\":[\"#FEF1F5\",\"#E0AFA6\",\"#D59B8C\",\"#CB8A7E\",\"#7376D9\",\"#489BDB\",\"#0C4479\",\"#612434\",\"#462026\",\"#331A1F\"],\"breaks\":[1,4,7],\"gems\":[7],\"cloud\":\"#FFF4F6\",\"backgrounds\":{\"sky\":\"#FFF4F6\",\"haze\":\"#E0AFA6\",\"water\":\"#ABCDF2\"},\"updatedAt\":1786533648499,\"overridden\":true},\"047\":{\"id\":\"047\",\"name\":\"蘇芳\",\"seg\":\"粉珊瑚段\",\"tier\":\"淡\",\"pattern\":\"2|3|2|3\",\"harmony\":\"四分色\",\"families\":3,\"rows\":[\"#A30512\",\"#D26765\",\"#72BBB5\",\"#5DA9A9\",\"#419D98\",\"#676BA4\",\"#5D5B8F\",\"#5E212E\",\"#412023\",\"#301B1E\"],\"breaks\":[2,5,7],\"gems\":[7],\"cloud\":\"#FFF4F5\",\"backgrounds\":{\"sky\":\"#FFF4F5\",\"haze\":\"#D7B8B7\",\"water\":\"#419D98\"},\"updatedAt\":1786533678234,\"overridden\":true},\"058\":{\"id\":\"058\",\"name\":\"枯草\",\"seg\":\"金赭段\",\"tier\":\"淡\",\"pattern\":\"3|2|3|2\",\"harmony\":\"同族+一撞\",\"families\":3,\"rows\":[\"#FFF3E3\",\"#F6E0B7\",\"#EFCE9D\",\"#AD9D60\",\"#998D4C\",\"#0F273E\",\"#16355A\",\"#12273B\",\"#3F2805\",\"#2D1F09\"],\"breaks\":[3,5,8],\"gems\":[6],\"cloud\":\"#EAB76C\",\"backgrounds\":{\"sky\":\"#EAB76C\",\"haze\":\"#F6E0B7\",\"water\":\"#998D4C\"},\"updatedAt\":1786533717490,\"overridden\":true},\"059\":{\"id\":\"059\",\"name\":\"驼白\",\"seg\":\"金赭段\",\"tier\":\"淡\",\"pattern\":\"1|3|2|4\",\"harmony\":\"三分色\",\"families\":3,\"rows\":[\"#EABE6C\",\"#96C7CB\",\"#A7394A\",\"#5669B3\",\"#5C9064\",\"#468059\",\"#604101\",\"#4C3500\",\"#3E2903\",\"#2E220B\"],\"breaks\":[1,4,6],\"gems\":[7],\"cloud\":\"#FFFAF0\",\"backgrounds\":{\"sky\":\"#FFFAF0\",\"haze\":\"#96C7CB\",\"water\":\"#5C9064\"},\"updatedAt\":1786533768519,\"overridden\":true},\"062\":{\"id\":\"062\",\"name\":\"琥珀砂\",\"seg\":\"金赭段\",\"tier\":\"中\",\"pattern\":\"2|3|2|3\",\"harmony\":\"分裂补色\",\"families\":3,\"rows\":[\"#FEF5D7\",\"#EDE09E\",\"#84AA63\",\"#65994C\",\"#5B862E\",\"#DC7C2E\",\"#3D9226\",\"#221700\",\"#110900\",\"#0F0400\"],\"breaks\":[2,5,7],\"gems\":[6],\"cloud\":\"#FFFBE9\",\"backgrounds\":{\"sky\":\"#FFFBE9\",\"haze\":\"#EDE09E\",\"water\":\"#5B862E\"},\"updatedAt\":1786533788300,\"overridden\":true},\"067\":{\"id\":\"067\",\"name\":\"朽叶\",\"seg\":\"金赭段\",\"tier\":\"中\",\"pattern\":\"2|2|2|4\",\"harmony\":\"分裂补色\",\"families\":3,\"rows\":[\"#E5BA85\",\"#FDDA9E\",\"#1E5E8F\",\"#052748\",\"#736B00\",\"#5A5900\",\"#382000\",\"#231200\",\"#160600\",\"#100300\"],\"breaks\":[2,4,6],\"gems\":[6],\"cloud\":\"#FFFBF6\",\"backgrounds\":{\"sky\":\"#FFFBF6\",\"haze\":\"#FDDA9E\",\"water\":\"#736B00\"},\"updatedAt\":1786533809384,\"overridden\":true},\"072\":{\"id\":\"072\",\"name\":\"柿橙\",\"seg\":\"金赭段\",\"tier\":\"浓\",\"pattern\":\"2|3|2|3\",\"harmony\":\"分裂补色\",\"families\":4,\"rows\":[\"#FFF2EA\",\"#FED5B1\",\"#419EE8\",\"#2784DD\",\"#0875BC\",\"#F0BD05\",\"#63A9BB\",\"#170D00\",\"#0E0000\",\"#070000\"],\"breaks\":[2,5,7],\"gems\":[7],\"cloud\":\"#FFFBF8\",\"backgrounds\":{\"sky\":\"#FFFBF8\",\"haze\":\"#FED5B1\",\"water\":\"#0875BC\"},\"updatedAt\":1786533838318,\"overridden\":true},\"073\":{\"id\":\"073\",\"name\":\"炒栗\",\"seg\":\"金赭段\",\"tier\":\"浓\",\"pattern\":\"3|2|2|3\",\"harmony\":\"冷暖交替\",\"families\":4,\"rows\":[\"#FFF4EC\",\"#FED6AC\",\"#FEBB7E\",\"#3786E2\",\"#2D6DD0\",\"#BFB17D\",\"#95BAE9\",\"#00121B\",\"#00040F\",\"#000111\"],\"breaks\":[3,5,7],\"gems\":[5],\"cloud\":\"#FFF6ED\",\"backgrounds\":{\"sky\":\"#FFF6ED\",\"haze\":\"#FED6AC\",\"water\":\"#2D6DD0\"},\"updatedAt\":1786533863685,\"overridden\":true},\"074\":{\"id\":\"074\",\"name\":\"锈金\",\"seg\":\"金赭段\",\"tier\":\"浓\",\"pattern\":\"2|3|3|2\",\"harmony\":\"补色对撞\",\"families\":4,\"rows\":[\"#FFF1E6\",\"#FED5AF\",\"#82C20A\",\"#92CEA1\",\"#099019\",\"#D69E05\",\"#DD4646\",\"#37D73A\",\"#8E4848\",\"#CB4848\"],\"breaks\":[2,5,8],\"gems\":[6],\"cloud\":\"#FFFEFC\",\"backgrounds\":{\"sky\":\"#FFFEFC\",\"haze\":\"#FED5AF\",\"water\":\"#097E92\"},\"updatedAt\":1786533916657,\"overridden\":true},\"077\":{\"id\":\"077\",\"name\":\"山吹烈\",\"seg\":\"金赭段\",\"tier\":\"艳\",\"pattern\":\"2|2|2|4\",\"harmony\":\"分裂补色\",\"families\":4,\"rows\":[\"#FFF5E9\",\"#FFD69B\",\"#029FE7\",\"#0B86CF\",\"#3D35E6\",\"#EE382B\",\"#181A00\",\"#070A00\",\"#020200\",\"#000100\"],\"breaks\":[2,4,6],\"gems\":[3,4],\"cloud\":\"#FF8585\",\"backgrounds\":{\"sky\":\"#FF8585\",\"haze\":\"#FFD69B\",\"water\":\"#3D35E6\"},\"updatedAt\":1786533959224,\"overridden\":true},\"078\":{\"id\":\"078\",\"name\":\"金赭焰\",\"seg\":\"金赭段\",\"tier\":\"艳\",\"pattern\":\"3|2|3|2\",\"harmony\":\"冷暖交替\",\"families\":4,\"rows\":[\"#FFF4DD\",\"#FEDA67\",\"#F8C115\",\"#848A0D\",\"#687603\",\"#B9272F\",\"#9D1531\",\"#830229\",\"#D0D0E2\",\"#FFB3B3\"],\"breaks\":[3,5,8],\"gems\":[4,7],\"cloud\":\"#FFF9EA\",\"backgrounds\":{\"sky\":\"#FFF9EA\",\"haze\":\"#FEDA67\",\"water\":\"#687603\"},\"updatedAt\":1786533990026,\"overridden\":true}}",
+      "parsed": {
+        "112": {
+          "id": "112",
+          "name": "空青",
+          "seg": "蓝靛段",
+          "tier": "中",
+          "pattern": "2|3|2|3",
+          "harmony": "补色对撞",
+          "families": 2,
+          "rows": [
+            "#EFF8FF",
+            "#C4E4FF",
+            "#5AA5D9",
+            "#428ECC",
+            "#147FBB",
+            "#E5BE61",
+            "#DBAE33",
+            "#7A0606",
+            "#B2652E",
+            "#EC3B13"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            6
+          ],
+          "cloud": "#FCFEFF",
+          "backgrounds": {
+            "sky": "#FCFEFF",
+            "haze": "#C4E4FF",
+            "water": "#147FBB"
+          },
+          "updatedAt": 1786534104292,
+          "overridden": true
+        },
+        "115": {
+          "id": "115",
+          "name": "矢车菊",
+          "seg": "蓝靛段",
+          "tier": "中",
+          "pattern": "3|3|2|2",
+          "harmony": "三分色",
+          "families": 3,
+          "rows": [
+            "#F2F7FF",
+            "#D0DFFE",
+            "#B0CFFF",
+            "#CA6B6E",
+            "#B75552",
+            "#A4444A",
+            "#957D97",
+            "#8C788B",
+            "#010530",
+            "#02041A"
+          ],
+          "breaks": [
+            3,
+            6,
+            8
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#FDFDFF",
+          "backgrounds": {
+            "sky": "#FDFDFF",
+            "haze": "#D0DFFE",
+            "water": "#B75552"
+          },
+          "updatedAt": 1786534122720,
+          "overridden": true
+        },
+        "123": {
+          "id": "123",
+          "name": "靛蓝",
+          "seg": "蓝靛段",
+          "tier": "浓",
+          "pattern": "3|2|2|3",
+          "harmony": "分裂补色",
+          "families": 4,
+          "rows": [
+            "#F0F7FF",
+            "#CAE0FE",
+            "#A5CFFE",
+            "#C26D0B",
+            "#A05F06",
+            "#604E00",
+            "#473D00",
+            "#2E6303",
+            "#8A73C9",
+            "#0E4081"
+          ],
+          "breaks": [
+            3,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#F8FBFF",
+          "backgrounds": {
+            "sky": "#F8FBFF",
+            "haze": "#CAE0FE",
+            "water": "#A05F06"
+          },
+          "updatedAt": 1786534193872,
+          "overridden": true
+        },
+        "129": {
+          "id": "129",
+          "name": "钴焰",
+          "seg": "蓝靛段",
+          "tier": "艳",
+          "pattern": "1|3|2|4",
+          "harmony": "冷暖交替",
+          "families": 4,
+          "rows": [
+            "#F1FAFF",
+            "#E4993A",
+            "#C88507",
+            "#B57102",
+            "#1445EB",
+            "#251DD2",
+            "#E35416",
+            "#F42B10",
+            "#233D8B",
+            "#FD3030"
+          ],
+          "breaks": [
+            1,
+            4,
+            6
+          ],
+          "gems": [
+            4,
+            5
+          ],
+          "cloud": "#4999DF",
+          "backgrounds": {
+            "sky": "#4999DF",
+            "haze": "#E4993A",
+            "water": "#1445EB"
+          },
+          "updatedAt": 1786534258981,
+          "overridden": true
+        },
+        "143": {
+          "id": "143",
+          "name": "紫鼠",
+          "seg": "紫堇段",
+          "tier": "中",
+          "pattern": "3|2|2|3",
+          "harmony": "三分色",
+          "families": 3,
+          "rows": [
+            "#FEF0FF",
+            "#FFCCFA",
+            "#F1B5F4",
+            "#B9564B",
+            "#927309",
+            "#9D281A",
+            "#792610",
+            "#30002E",
+            "#1C0017",
+            "#110010"
+          ],
+          "breaks": [
+            3,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#F7BBEB",
+          "backgrounds": {
+            "sky": "#F7BBEB",
+            "haze": "#FFCCFA",
+            "water": "#927309"
+          },
+          "updatedAt": 1786534311658,
+          "overridden": true
+        },
+        "151": {
+          "id": "151",
+          "name": "葡萄",
+          "seg": "紫堇段",
+          "tier": "浓",
+          "pattern": "1|3|3|3",
+          "harmony": "分裂补色",
+          "families": 4,
+          "rows": [
+            "#FBF1FF",
+            "#9CBA69",
+            "#79A844",
+            "#FFFFFF",
+            "#08774C",
+            "#025F43",
+            "#004E2F",
+            "#2A0010",
+            "#150002",
+            "#0D0001"
+          ],
+          "breaks": [
+            1,
+            4,
+            7
+          ],
+          "gems": [
+            8
+          ],
+          "cloud": "#E1F9D7",
+          "backgrounds": {
+            "sky": "#E1F9D7",
+            "haze": "#9CBA69",
+            "water": "#08774C"
+          },
+          "updatedAt": 1786534342450,
+          "overridden": true
+        },
+        "152": {
+          "id": "152",
+          "name": "堇焰",
+          "seg": "紫堇段",
+          "tier": "艳",
+          "pattern": "2|3|2|3",
+          "harmony": "冷暖交替",
+          "families": 4,
+          "rows": [
+            "#FFF0FB",
+            "#8BB828",
+            "#E66060",
+            "#C0D9AF",
+            "#0A573B",
+            "#005C34",
+            "#00452C",
+            "#001000",
+            "#000500",
+            "#000000"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            3,
+            4
+          ],
+          "cloud": "#FFF8FD",
+          "backgrounds": {
+            "sky": "#FFF8FD",
+            "haze": "#FFCCCC",
+            "water": "#C70000"
+          },
+          "updatedAt": 1786534429988,
+          "overridden": true
+        },
+        "179": {
+          "id": "179",
+          "name": "苔焰",
+          "seg": "黄绿杂段",
+          "tier": "艳",
+          "pattern": "1|3|2|4",
+          "harmony": "分裂补色",
+          "families": 4,
+          "rows": [
+            "#E5FFE4",
+            "#701A1A",
+            "#DBC3F4",
+            "#CFE396",
+            "#C16325",
+            "#406C87",
+            "#002119",
+            "#000F0B",
+            "#000402",
+            "#000201"
+          ],
+          "breaks": [
+            1,
+            4,
+            6
+          ],
+          "gems": [
+            4,
+            5
+          ],
+          "cloud": "#F0D0D0",
+          "backgrounds": {
+            "sky": "#F0D0D0",
+            "haze": "#DF5353",
+            "water": "#B8DCFF"
+          },
+          "updatedAt": 1786530931111,
+          "overridden": true
+        },
+        "180": {
+          "id": "180",
+          "name": "草焰",
+          "seg": "自定义",
+          "tier": "艳",
+          "pattern": "2|2|3|3",
+          "harmony": "冷暖交替",
+          "families": 4,
+          "rows": [
+            "#FF824D",
+            "#A6CDF2",
+            "#DF6288",
+            "#8378D3",
+            "#BA2C2C",
+            "#760404",
+            "#615B80",
+            "#AB6844",
+            "#6059A6",
+            "#241D62"
+          ],
+          "breaks": [
+            2,
+            4,
+            7
+          ],
+          "gems": [
+            5,
+            6
+          ],
+          "cloud": "#CDD8F9",
+          "backgrounds": {
+            "sky": "#CDD8F9",
+            "haze": "#F08228",
+            "water": "#F50000"
+          },
+          "updatedAt": 1786530831493,
+          "overridden": true
+        },
+        "065": {
+          "id": "065",
+          "name": "黄土",
+          "seg": "金赭段",
+          "tier": "中",
+          "pattern": "3|3|2|2",
+          "harmony": "邻近+双撞",
+          "families": 3,
+          "rows": [
+            "#FFF3E9",
+            "#FFD7AF",
+            "#FEBE86",
+            "#4D90D2",
+            "#3F79C1",
+            "#206AAD",
+            "#501D02",
+            "#3D0C00",
+            "#1A0700",
+            "#120200"
+          ],
+          "breaks": [
+            3,
+            6,
+            8
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#FFFDFB",
+          "backgrounds": {
+            "sky": "#FFFDFB",
+            "haze": "#FFD7AF",
+            "water": "#3F79C1"
+          },
+          "updatedAt": 1786530952108,
+          "overridden": true
+        },
+        "004": {
+          "id": "004",
+          "name": "春·樱白",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "3|2|2|3",
+          "harmony": "邻近+双撞",
+          "families": 2,
+          "rows": [
+            "#EFFEFC",
+            "#D8F8F6",
+            "#CAF2EC",
+            "#FDD7CE",
+            "#9ACAC8",
+            "#D3A0A2",
+            "#CA241C",
+            "#3A0811",
+            "#47060D",
+            "#897679"
+          ],
+          "breaks": [
+            3,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#B3D5F4",
+          "backgrounds": {
+            "sky": "#B3D5F4",
+            "haze": "#D8F8F6",
+            "water": "#9ACAC8"
+          },
+          "updatedAt": 1786532626612,
+          "overridden": true,
+          "custom": false
+        },
+        "006": {
+          "id": "006",
+          "name": "冬·月白",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "分裂补色",
+          "families": 3,
+          "rows": [
+            "#FAFAFF",
+            "#EFEEFF",
+            "#ABD2E3",
+            "#EACE99",
+            "#DF6868",
+            "#BFAD8C",
+            "#B2A484",
+            "#858AAC",
+            "#808197",
+            "#787B8A"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#F9FAFF",
+          "backgrounds": {
+            "sky": "#F9FAFF",
+            "haze": "#EFEEFF",
+            "water": "#EBC437"
+          },
+          "updatedAt": 1786532520352,
+          "overridden": true
+        },
+        "001": {
+          "id": "001",
+          "name": "春·杏霞白",
+          "seg": "近白段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#FFF9F6",
+            "#FFECE1",
+            "#B7D6E8",
+            "#ABCCE2",
+            "#A0C5DA",
+            "#97B1D3",
+            "#9DAAB9",
+            "#A38479",
+            "#957D72",
+            "#887871"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FEF9F7",
+          "backgrounds": {
+            "sky": "#FEF9F7",
+            "haze": "#FFECE1",
+            "water": "#A0C5DA"
+          },
+          "updatedAt": 1786532799164,
+          "overridden": true
+        },
+        "046": {
+          "id": "046",
+          "name": "朱珊瑚",
+          "seg": "粉珊瑚段",
+          "tier": "淡",
+          "pattern": "1|3|3|3",
+          "harmony": "补色对撞",
+          "families": 3,
+          "rows": [
+            "#FEF1F5",
+            "#E0AFA6",
+            "#D59B8C",
+            "#CB8A7E",
+            "#7376D9",
+            "#489BDB",
+            "#0C4479",
+            "#612434",
+            "#462026",
+            "#331A1F"
+          ],
+          "breaks": [
+            1,
+            4,
+            7
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#FFF4F6",
+          "backgrounds": {
+            "sky": "#FFF4F6",
+            "haze": "#E0AFA6",
+            "water": "#ABCDF2"
+          },
+          "updatedAt": 1786533648499,
+          "overridden": true
+        },
+        "047": {
+          "id": "047",
+          "name": "蘇芳",
+          "seg": "粉珊瑚段",
+          "tier": "淡",
+          "pattern": "2|3|2|3",
+          "harmony": "四分色",
+          "families": 3,
+          "rows": [
+            "#A30512",
+            "#D26765",
+            "#72BBB5",
+            "#5DA9A9",
+            "#419D98",
+            "#676BA4",
+            "#5D5B8F",
+            "#5E212E",
+            "#412023",
+            "#301B1E"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#FFF4F5",
+          "backgrounds": {
+            "sky": "#FFF4F5",
+            "haze": "#D7B8B7",
+            "water": "#419D98"
+          },
+          "updatedAt": 1786533678234,
+          "overridden": true
+        },
+        "058": {
+          "id": "058",
+          "name": "枯草",
+          "seg": "金赭段",
+          "tier": "淡",
+          "pattern": "3|2|3|2",
+          "harmony": "同族+一撞",
+          "families": 3,
+          "rows": [
+            "#FFF3E3",
+            "#F6E0B7",
+            "#EFCE9D",
+            "#AD9D60",
+            "#998D4C",
+            "#0F273E",
+            "#16355A",
+            "#12273B",
+            "#3F2805",
+            "#2D1F09"
+          ],
+          "breaks": [
+            3,
+            5,
+            8
+          ],
+          "gems": [
+            6
+          ],
+          "cloud": "#EAB76C",
+          "backgrounds": {
+            "sky": "#EAB76C",
+            "haze": "#F6E0B7",
+            "water": "#998D4C"
+          },
+          "updatedAt": 1786533717490,
+          "overridden": true
+        },
+        "059": {
+          "id": "059",
+          "name": "驼白",
+          "seg": "金赭段",
+          "tier": "淡",
+          "pattern": "1|3|2|4",
+          "harmony": "三分色",
+          "families": 3,
+          "rows": [
+            "#EABE6C",
+            "#96C7CB",
+            "#A7394A",
+            "#5669B3",
+            "#5C9064",
+            "#468059",
+            "#604101",
+            "#4C3500",
+            "#3E2903",
+            "#2E220B"
+          ],
+          "breaks": [
+            1,
+            4,
+            6
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#FFFAF0",
+          "backgrounds": {
+            "sky": "#FFFAF0",
+            "haze": "#96C7CB",
+            "water": "#5C9064"
+          },
+          "updatedAt": 1786533768519,
+          "overridden": true
+        },
+        "062": {
+          "id": "062",
+          "name": "琥珀砂",
+          "seg": "金赭段",
+          "tier": "中",
+          "pattern": "2|3|2|3",
+          "harmony": "分裂补色",
+          "families": 3,
+          "rows": [
+            "#FEF5D7",
+            "#EDE09E",
+            "#84AA63",
+            "#65994C",
+            "#5B862E",
+            "#DC7C2E",
+            "#3D9226",
+            "#221700",
+            "#110900",
+            "#0F0400"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            6
+          ],
+          "cloud": "#FFFBE9",
+          "backgrounds": {
+            "sky": "#FFFBE9",
+            "haze": "#EDE09E",
+            "water": "#5B862E"
+          },
+          "updatedAt": 1786533788300,
+          "overridden": true
+        },
+        "067": {
+          "id": "067",
+          "name": "朽叶",
+          "seg": "金赭段",
+          "tier": "中",
+          "pattern": "2|2|2|4",
+          "harmony": "分裂补色",
+          "families": 3,
+          "rows": [
+            "#E5BA85",
+            "#FDDA9E",
+            "#1E5E8F",
+            "#052748",
+            "#736B00",
+            "#5A5900",
+            "#382000",
+            "#231200",
+            "#160600",
+            "#100300"
+          ],
+          "breaks": [
+            2,
+            4,
+            6
+          ],
+          "gems": [
+            6
+          ],
+          "cloud": "#FFFBF6",
+          "backgrounds": {
+            "sky": "#FFFBF6",
+            "haze": "#FDDA9E",
+            "water": "#736B00"
+          },
+          "updatedAt": 1786533809384,
+          "overridden": true
+        },
+        "072": {
+          "id": "072",
+          "name": "柿橙",
+          "seg": "金赭段",
+          "tier": "浓",
+          "pattern": "2|3|2|3",
+          "harmony": "分裂补色",
+          "families": 4,
+          "rows": [
+            "#FFF2EA",
+            "#FED5B1",
+            "#419EE8",
+            "#2784DD",
+            "#0875BC",
+            "#F0BD05",
+            "#63A9BB",
+            "#170D00",
+            "#0E0000",
+            "#070000"
+          ],
+          "breaks": [
+            2,
+            5,
+            7
+          ],
+          "gems": [
+            7
+          ],
+          "cloud": "#FFFBF8",
+          "backgrounds": {
+            "sky": "#FFFBF8",
+            "haze": "#FED5B1",
+            "water": "#0875BC"
+          },
+          "updatedAt": 1786533838318,
+          "overridden": true
+        },
+        "073": {
+          "id": "073",
+          "name": "炒栗",
+          "seg": "金赭段",
+          "tier": "浓",
+          "pattern": "3|2|2|3",
+          "harmony": "冷暖交替",
+          "families": 4,
+          "rows": [
+            "#FFF4EC",
+            "#FED6AC",
+            "#FEBB7E",
+            "#3786E2",
+            "#2D6DD0",
+            "#BFB17D",
+            "#95BAE9",
+            "#00121B",
+            "#00040F",
+            "#000111"
+          ],
+          "breaks": [
+            3,
+            5,
+            7
+          ],
+          "gems": [
+            5
+          ],
+          "cloud": "#FFF6ED",
+          "backgrounds": {
+            "sky": "#FFF6ED",
+            "haze": "#FED6AC",
+            "water": "#2D6DD0"
+          },
+          "updatedAt": 1786533863685,
+          "overridden": true
+        },
+        "074": {
+          "id": "074",
+          "name": "锈金",
+          "seg": "金赭段",
+          "tier": "浓",
+          "pattern": "2|3|3|2",
+          "harmony": "补色对撞",
+          "families": 4,
+          "rows": [
+            "#FFF1E6",
+            "#FED5AF",
+            "#82C20A",
+            "#92CEA1",
+            "#099019",
+            "#D69E05",
+            "#DD4646",
+            "#37D73A",
+            "#8E4848",
+            "#CB4848"
+          ],
+          "breaks": [
+            2,
+            5,
+            8
+          ],
+          "gems": [
+            6
+          ],
+          "cloud": "#FFFEFC",
+          "backgrounds": {
+            "sky": "#FFFEFC",
+            "haze": "#FED5AF",
+            "water": "#097E92"
+          },
+          "updatedAt": 1786533916657,
+          "overridden": true
+        },
+        "077": {
+          "id": "077",
+          "name": "山吹烈",
+          "seg": "金赭段",
+          "tier": "艳",
+          "pattern": "2|2|2|4",
+          "harmony": "分裂补色",
+          "families": 4,
+          "rows": [
+            "#FFF5E9",
+            "#FFD69B",
+            "#029FE7",
+            "#0B86CF",
+            "#3D35E6",
+            "#EE382B",
+            "#181A00",
+            "#070A00",
+            "#020200",
+            "#000100"
+          ],
+          "breaks": [
+            2,
+            4,
+            6
+          ],
+          "gems": [
+            3,
+            4
+          ],
+          "cloud": "#FF8585",
+          "backgrounds": {
+            "sky": "#FF8585",
+            "haze": "#FFD69B",
+            "water": "#3D35E6"
+          },
+          "updatedAt": 1786533959224,
+          "overridden": true
+        },
+        "078": {
+          "id": "078",
+          "name": "金赭焰",
+          "seg": "金赭段",
+          "tier": "艳",
+          "pattern": "3|2|3|2",
+          "harmony": "冷暖交替",
+          "families": 4,
+          "rows": [
+            "#FFF4DD",
+            "#FEDA67",
+            "#F8C115",
+            "#848A0D",
+            "#687603",
+            "#B9272F",
+            "#9D1531",
+            "#830229",
+            "#D0D0E2",
+            "#FFB3B3"
+          ],
+          "breaks": [
+            3,
+            5,
+            8
+          ],
+          "gems": [
+            4,
+            7
+          ],
+          "cloud": "#FFF9EA",
+          "backgrounds": {
+            "sky": "#FFF9EA",
+            "haze": "#FEDA67",
+            "water": "#687603"
+          },
+          "updatedAt": 1786533990026,
+          "overridden": true
+        }
+      }
+    },
+    {
+      "sequence": 507880,
+      "valueType": 1,
+      "key": "bw-deleted-palette-ids-v1",
+      "text": "[\"002\",\"003\",\"007\",\"010\",\"011\",\"014\",\"015\",\"018\",\"019\",\"022\",\"023\",\"026\",\"027\",\"029\",\"030\",\"025\",\"036\",\"037\",\"038\",\"061\",\"068\",\"069\",\"070\",\"071\",\"076\",\"079\",\"080\",\"081\",\"082\",\"083\",\"084\",\"085\",\"086\",\"087\",\"088\",\"090\",\"091\",\"092\",\"093\",\"094\",\"095\",\"098\",\"099\",\"100\",\"102\",\"103\",\"104\",\"105\",\"106\",\"107\",\"110\",\"114\",\"116\",\"120\",\"121\",\"122\",\"124\",\"125\",\"131\",\"132\",\"133\",\"134\",\"135\",\"136\",\"137\",\"138\",\"139\",\"140\",\"141\",\"142\",\"144\",\"145\",\"147\",\"148\",\"149\",\"150\",\"153\",\"154\",\"155\",\"156\",\"157\",\"158\",\"160\",\"161\",\"162\",\"163\",\"164\",\"165\",\"166\",\"167\",\"168\",\"170\",\"171\",\"172\",\"173\",\"174\",\"175\",\"177\",\"178\"]",
+      "parsed": [
+        "002",
+        "003",
+        "007",
+        "010",
+        "011",
+        "014",
+        "015",
+        "018",
+        "019",
+        "022",
+        "023",
+        "026",
+        "027",
+        "029",
+        "030",
+        "025",
+        "036",
+        "037",
+        "038",
+        "061",
+        "068",
+        "069",
+        "070",
+        "071",
+        "076",
+        "079",
+        "080",
+        "081",
+        "082",
+        "083",
+        "084",
+        "085",
+        "086",
+        "087",
+        "088",
+        "090",
+        "091",
+        "092",
+        "093",
+        "094",
+        "095",
+        "098",
+        "099",
+        "100",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "110",
+        "114",
+        "116",
+        "120",
+        "121",
+        "122",
+        "124",
+        "125",
+        "131",
+        "132",
+        "133",
+        "134",
+        "135",
+        "136",
+        "137",
+        "138",
+        "139",
+        "140",
+        "141",
+        "142",
+        "144",
+        "145",
+        "147",
+        "148",
+        "149",
+        "150",
+        "153",
+        "154",
+        "155",
+        "156",
+        "157",
+        "158",
+        "160",
+        "161",
+        "162",
+        "163",
+        "164",
+        "165",
+        "166",
+        "167",
+        "168",
+        "170",
+        "171",
+        "172",
+        "173",
+        "174",
+        "175",
+        "177",
+        "178"
+      ]
+    },
+    {
+      "sequence": 508004,
+      "valueType": 1,
+      "key": "bw-custom-palettes-v2",
+      "text": "[{\"id\":\"CMSPYGJAT\",\"name\":\"art-01\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F6F2EA\",\"haze\":\"#E8D9C7\",\"water\":\"#D3A985\"},\"rows\":[\"#B5B8B5\",\"#D3A985\",\"#A89686\",\"#C58858\",\"#89796A\",\"#A65C33\",\"#64554A\",\"#7A3A1A\",\"#3A322D\",\"#1B1612\"],\"cloud\":\"#F6F2EA\",\"overridden\":false,\"savedAt\":1786531048373,\"updatedAt\":1786531310407},{\"id\":\"CMSPYI768\",\"name\":\"architecture-01\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#ECE4C7\",\"haze\":\"#DAC6AA\",\"water\":\"#A6AAB4\"},\"rows\":[\"#C7A888\",\"#A6AAB4\",\"#99A489\",\"#E68858\",\"#AA8768\",\"#697359\",\"#996649\",\"#2B7A94\",\"#764C37\",\"#353627\"],\"cloud\":\"#ECE4C7\",\"overridden\":false,\"savedAt\":1786531125968,\"updatedAt\":1786531308189},{\"id\":\"CMSPYN41D\",\"name\":\"landscape-031\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#C3CCEA\",\"haze\":\"#C7CAC5\",\"water\":\"#CA9A40\"},\"rows\":[\"#F9C32F\",\"#C8B970\",\"#B7B49B\",\"#CA9A40\",\"#BFC8E3\",\"#CA9A40\",\"#E5C594\",\"#C8B970\",\"#6B652E\",\"#A7977B\"],\"cloud\":\"#C3CCEA\",\"overridden\":false,\"savedAt\":1786531355185,\"updatedAt\":1786535101189},{\"id\":\"CMSPYSTGE\",\"name\":\"portrait-03\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#977966\",\"haze\":\"#775849\",\"water\":\"#35150E\"},\"rows\":[\"#493429\",\"#35150E\",\"#99774D\",\"#977966\",\"#775849\",\"#493429\",\"#35150E\",\"#0C0701\",\"#583D2D\",\"#B58973\"],\"cloud\":\"#977966\",\"overridden\":false,\"savedAt\":1786531621406,\"updatedAt\":1786535084928},{\"id\":\"CMSPZ7Q1V\",\"name\":\"portrait-03\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#AA8C7A\",\"haze\":\"#9B7E6A\",\"water\":\"#7B5C4C\"},\"rows\":[\"#8B6C5A\",\"#7B5C4C\",\"#6B4E41\",\"#5B4236\",\"#4E392D\",\"#422D24\",\"#34231B\",\"#2B1C14\",\"#1C120C\",\"#120C04\"],\"cloud\":\"#AA8C7A\",\"overridden\":false,\"savedAt\":1786532316835,\"updatedAt\":1786532320481},{\"id\":\"CMSPZ9527\",\"name\":\"portrait-02\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#AFD0DA\",\"haze\":\"#B29E92\",\"water\":\"#9B8C84\"},\"rows\":[\"#8B9B9D\",\"#792C20\",\"#937B6C\",\"#566A74\",\"#7C5C44\",\"#4D4A43\",\"#792C20\",\"#332B23\",\"#151A0C\",\"#030101\"],\"cloud\":\"#AFD0DA\",\"overridden\":false,\"savedAt\":1786532382943,\"updatedAt\":1786532383980},{\"id\":\"CMSPZA9WG\",\"name\":\"street-01\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FDF9E2\",\"haze\":\"#FDEEC3\",\"water\":\"#FCDC8C\"},\"rows\":[\"#FBE4A4\",\"#FCDC8C\",\"#F9BB6B\",\"#CFB497\",\"#F4AC5C\",\"#E88C4D\",\"#BD9472\",\"#C48C49\",\"#B58144\",\"#548088\"],\"cloud\":\"#FDF9E2\",\"overridden\":false,\"savedAt\":1786532435872,\"updatedAt\":1786532437292},{\"id\":\"CMSPZD7WY\",\"name\":\"ffb0ea2d1cd00e3e178e7bfd6fdc4ef5\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FDFEFD\",\"haze\":\"#F6F4ED\",\"water\":\"#D2DFF5\"},\"rows\":[\"#E3E5EB\",\"#D2DFF5\",\"#DDDBDB\",\"#CCD4E4\",\"#D5D1CE\",\"#DDCABD\",\"#B1C2E6\",\"#BDBCC1\",\"#DAB396\",\"#B5B1B4\"],\"cloud\":\"#FDFEFD\",\"overridden\":false,\"savedAt\":1786532573266,\"updatedAt\":1786532573869},{\"id\":\"CMSPZHJCP\",\"name\":\"4f46bcbe9448d07be2506c23c95b11c9\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#C5CACD\",\"haze\":\"#C3B394\",\"water\":\"#949B9B\"},\"rows\":[\"#B39B75\",\"#949B9B\",\"#94895D\",\"#6C7D6A\",\"#556C52\",\"#7A5542\",\"#664433\",\"#334334\",\"#352114\",\"#15160C\"],\"cloud\":\"#C5CACD\",\"overridden\":false,\"savedAt\":1786532774713,\"updatedAt\":1786532775499},{\"id\":\"CMSPZY5W1\",\"name\":\"0f79155456c76bbec84b2f4c183957e8\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FBFBDA\",\"haze\":\"#F7E5D2\",\"water\":\"#DCD2C4\"},\"rows\":[\"#F6D2B4\",\"#DCD2C4\",\"#F2BE82\",\"#CCBBB3\",\"#BCBBC4\",\"#BDABA4\",\"#F2A537\",\"#ABABBC\",\"#CB9D94\",\"#B39C94\"],\"cloud\":\"#FBFBDA\",\"overridden\":false,\"savedAt\":1786533550417},{\"id\":\"CMSPZYAIB\",\"name\":\"0f79155456c76bbec84b2f4c183957e8\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F7E5D2\",\"haze\":\"#F6D2B4\",\"water\":\"#CCBBB3\"},\"rows\":[\"#DCD2C4\",\"#CCBBB3\",\"#ABABBC\",\"#B4A29C\",\"#A28D8C\",\"#AB7B75\",\"#635CD4\",\"#6A5554\",\"#BB4035\",\"#0F0603\"],\"cloud\":\"#F7E5D2\",\"overridden\":false,\"savedAt\":1786533556403,\"updatedAt\":1786534569154},{\"id\":\"CMSPZYHS1\",\"name\":\"356b3b66b6f53d953108ab469384feef\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FDD9CB\",\"haze\":\"#ECCBBE\",\"water\":\"#D0AB32\"},\"rows\":[\"#E3AC9B\",\"#D0AB32\",\"#D39C93\",\"#A29BB5\",\"#CC8B84\",\"#BC7C7B\",\"#8E839D\",\"#BB7626\",\"#B46B6C\",\"#897812\"],\"cloud\":\"#FDD9CB\",\"overridden\":false,\"savedAt\":1786533565825,\"updatedAt\":1786533575663},{\"rows\":[\"#C8C2B7\",\"#BEB7AB\",\"#B4AC9F\",\"#AAA193\",\"#968B7B\",\"#8C806F\",\"#817563\",\"#766A58\",\"#6B5F4D\",\"#605442\"],\"backgrounds\":{\"sky\":\"#DDD8CF\",\"haze\":\"#CFC8BC\",\"water\":\"#ACA18F\"},\"id\":\"CMSQ0KD0A\",\"name\":\"\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"cloud\":\"#DDD8CF\",\"overridden\":false,\"savedAt\":1786534586074},{\"id\":\"CMSQ0KJ33\",\"name\":\"4a8b626eb68bb244ace6a49d4ab80567\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#E2DDC0\",\"haze\":\"#CBCDBB\",\"water\":\"#A4B9B5\"},\"rows\":[\"#BEB9A6\",\"#A4B9B5\",\"#9BB3AC\",\"#ADAB96\",\"#93ACA4\",\"#7EA19B\",\"#939B93\",\"#A28E7E\",\"#838B84\",\"#7B837C\"],\"cloud\":\"#E2DDC0\",\"overridden\":false,\"savedAt\":1786534593951},{\"id\":\"CMSQ0KNFT\",\"name\":\"4a8b626eb68bb244ace6a49d4ab80567\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#E2DDC0\",\"haze\":\"#CBC5B2\",\"water\":\"#93ACA4\"},\"rows\":[\"#AABAB5\",\"#93ACA4\",\"#93938D\",\"#7B837C\",\"#946C68\",\"#6B6A66\",\"#72534C\",\"#4C5B5C\",\"#544443\",\"#33333A\"],\"cloud\":\"#E2DDC0\",\"overridden\":false,\"savedAt\":1786534599593},{\"id\":\"CMSQ0KT1Z\",\"name\":\"5bce0dac7471a9ef8678d9bebf12dd17\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#DCD4CA\",\"haze\":\"#DAC5AB\",\"water\":\"#C5B49A\"},\"rows\":[\"#71DAF1\",\"#C5B49A\",\"#B4A285\",\"#13A1B9\",\"#927D63\",\"#7D6B53\",\"#65523B\",\"#0D4B7D\",\"#523D2B\",\"#030303\"],\"cloud\":\"#DCD4CA\",\"overridden\":false,\"savedAt\":1786534606871},{\"id\":\"CMSQ0L431\",\"name\":\"48004953cb966a9f3f4372ba1de852d3\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F5C9A3\",\"haze\":\"#ECB48C\",\"water\":\"#F3A473\"},\"rows\":[\"#DDB906\",\"#F3A473\",\"#EC8D5B\",\"#6A9CDD\",\"#E37B43\",\"#7B844C\",\"#24735D\",\"#095DDF\",\"#831314\",\"#0D0312\"],\"cloud\":\"#F5C9A3\",\"overridden\":false,\"savedAt\":1786534621165},{\"id\":\"CMSQ0L8UY\",\"name\":\"48004953cb966a9f3f4372ba1de852d3\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F5C9A3\",\"haze\":\"#F3B48B\",\"water\":\"#DDB906\"},\"rows\":[\"#BFB8C9\",\"#DDB906\",\"#F3A473\",\"#DC9B7C\",\"#ED9463\",\"#90A98D\",\"#6A9CDD\",\"#E4834C\",\"#7B844C\",\"#9172BD\"],\"cloud\":\"#F5C9A3\",\"overridden\":false,\"savedAt\":1786534627354},{\"id\":\"CMSQ0LIEQ\",\"name\":\"48004953cb966a9f3f4372ba1de852d3\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FAD2B3\",\"haze\":\"#F5C9A3\",\"water\":\"#F3B48B\"},\"rows\":[\"#E4BC9B\",\"#F3B48B\",\"#DDB906\",\"#F3A473\",\"#E4A384\",\"#B5A8BF\",\"#ED9463\",\"#90A98D\",\"#CD8B74\",\"#6A9CDD\"],\"cloud\":\"#FAD2B3\",\"overridden\":false,\"savedAt\":1786534639730},{\"id\":\"CMSQ0LONC\",\"name\":\"4e25e5989f248325d08a126707435bdb\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F5F4F4\",\"haze\":\"#FAE5DA\",\"water\":\"#FCC6CC\"},\"rows\":[\"#D4D9DE\",\"#FCC6CC\",\"#FDC5A4\",\"#DCC3B5\",\"#E38741\",\"#B46DA4\",\"#7B7B5B\",\"#736944\",\"#5B543A\",\"#1F170A\"],\"cloud\":\"#F5F4F4\",\"overridden\":false,\"savedAt\":1786534647816,\"updatedAt\":1786534651021},{\"id\":\"CMSQ0M5ZM\",\"name\":\"5a88a01f9c055710ade755ca35d43ff2\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F1F7E9\",\"haze\":\"#E6F1CD\",\"water\":\"#B2B56B\"},\"rows\":[\"#CACD84\",\"#B2B56B\",\"#A2A553\",\"#9D9B2C\",\"#709A65\",\"#8A8523\",\"#6A8B34\",\"#5C731C\",\"#3C625B\",\"#192A0A\"],\"cloud\":\"#F1F7E9\",\"overridden\":false,\"savedAt\":1786534670290,\"updatedAt\":1786534719783},{\"id\":\"CMSQ0NGFI\",\"name\":\"b36f57ed41ccf2f23c9ec2bb803f94b3\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FBFCFB\",\"haze\":\"#BBD4D1\",\"water\":\"#A3AB7C\"},\"rows\":[\"#D4CB46\",\"#A3AB7C\",\"#A3AA04\",\"#E37603\",\"#748C4B\",\"#637C33\",\"#5C740C\",\"#4B5C04\",\"#223C14\",\"#042303\"],\"cloud\":\"#FBFCFB\",\"overridden\":false,\"savedAt\":1786534730478,\"updatedAt\":1786534735132},{\"id\":\"CMSQ0NQLH\",\"name\":\"1c3a560cf75ba43990c5b2c234aebdac\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F3F4EC\",\"haze\":\"#CDCA0D\",\"water\":\"#7A9B7C\"},\"rows\":[\"#DB9B72\",\"#7A9B7C\",\"#6B931B\",\"#537B1B\",\"#346B1C\",\"#435B06\",\"#1B541C\",\"#0D341A\",\"#2C1402\",\"#030303\"],\"cloud\":\"#F3F4EC\",\"overridden\":false,\"savedAt\":1786534743653,\"updatedAt\":1786534746085},{\"id\":\"CMSQ0NXVR\",\"name\":\"ad44da32d1672d9b9ee727cb9a05cf12\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FBFBFA\",\"haze\":\"#B09E33\",\"water\":\"#717273\"},\"rows\":[\"#D98988\",\"#717273\",\"#6C5B0C\",\"#84430C\",\"#53440C\",\"#7B230B\",\"#333513\",\"#5B1305\",\"#2C1305\",\"#020101\"],\"cloud\":\"#FBFBFA\",\"overridden\":false,\"savedAt\":1786534753095,\"updatedAt\":1786534759520},{\"id\":\"CMSQ0O7LA\",\"name\":\"89e0e74d46f4b5eaff8206119bbb2cc0\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FCFBF9\",\"haze\":\"#99AEB8\",\"water\":\"#657C84\"},\"rows\":[\"#B3734B\",\"#657C84\",\"#A45B34\",\"#646B1C\",\"#835C3B\",\"#54542C\",\"#73442B\",\"#533523\",\"#2C3B33\",\"#1C1A15\"],\"cloud\":\"#FCFBF9\",\"overridden\":false,\"savedAt\":1786534765678},{\"id\":\"CMSQ0OEEN\",\"name\":\"8985bc913f0f5d36308d561d40f0703b\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#E8D0C6\",\"haze\":\"#E3B28C\",\"water\":\"#C4ABA4\"},\"rows\":[\"#EEB101\",\"#C4ABA4\",\"#E39364\",\"#DC7C4B\",\"#D4631B\",\"#C44B0C\",\"#614E4F\",\"#BC2C0B\",\"#630C04\",\"#040203\"],\"cloud\":\"#E8D0C6\",\"overridden\":false,\"savedAt\":1786534774511,\"updatedAt\":1786534778865},{\"id\":\"CMSQ0P1I7\",\"name\":\"f02e45b876b3df6a1e29eca390c8b366\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#D6CBDB\",\"haze\":\"#DCBEA9\",\"water\":\"#CBAB94\"},\"rows\":[\"#EAAE52\",\"#CBAB94\",\"#BC9582\",\"#C37453\",\"#A5735B\",\"#6B6C73\",\"#8C4C34\",\"#4B4B44\",\"#3B3D2B\",\"#1C2C22\"],\"cloud\":\"#D6CBDB\",\"overridden\":false,\"savedAt\":1786534804447,\"updatedAt\":1786534808348},{\"id\":\"CMSQ0PY0Y\",\"name\":\"1ecb9c15a01c0baaddeeb21fe43f5a8b\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FCF3E3\",\"haze\":\"#FBE5C3\",\"water\":\"#E3BB94\"},\"rows\":[\"#F4D39C\",\"#E3BB94\",\"#BB9E89\",\"#C3946C\",\"#E38C38\",\"#A2826D\",\"#8B6A55\",\"#C24623\",\"#74523C\",\"#36190E\"],\"cloud\":\"#FCF3E3\",\"overridden\":false,\"savedAt\":1786534846594},{\"id\":\"CMSQ0Q9S6\",\"name\":\"4cce27547e54d6835b5f287df0430033\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FBEBBC\",\"haze\":\"#F4DC9C\",\"water\":\"#ECB34C\"},\"rows\":[\"#F3C56B\",\"#ECB34C\",\"#C4AB8D\",\"#C98641\",\"#A48269\",\"#C3740B\",\"#A45B14\",\"#8B450C\",\"#642A0B\",\"#431A0B\"],\"cloud\":\"#FBEBBC\",\"overridden\":false,\"savedAt\":1786534861830,\"updatedAt\":1786534868075},{\"id\":\"CMSQ0RCXM\",\"name\":\"8679e4babe198c3ba025d1b53f2a28e4\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FAFBFB\",\"haze\":\"#E4E4EC\",\"water\":\"#DCBB9C\"},\"rows\":[\"#F5DBBC\",\"#DCBB9C\",\"#ACB3E3\",\"#C5A29C\",\"#9B9BDC\",\"#8384D5\",\"#6463D3\",\"#735C67\",\"#383A90\",\"#38281A\"],\"cloud\":\"#FAFBFB\",\"overridden\":false,\"savedAt\":1786534912570,\"updatedAt\":1786534916234},{\"id\":\"CMSQ0RK19\",\"name\":\"c2d8c8ecb142e0a869da7f1f3cb39cbb\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#E5E4E2\",\"haze\":\"#DDCBBB\",\"water\":\"#D2B194\"},\"rows\":[\"#EABCA3\",\"#D2B194\",\"#DA929D\",\"#DB9374\",\"#AC8BBC\",\"#CD7D62\",\"#CB644B\",\"#3A5789\",\"#73473B\",\"#170A08\"],\"cloud\":\"#E5E4E2\",\"overridden\":false,\"savedAt\":1786534921773,\"updatedAt\":1786534924975},{\"id\":\"CMSQ0SKVO\",\"name\":\"98d865495415299a9f880c6c8e6e3a89\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#F3ECDA\",\"haze\":\"#EBDCBB\",\"water\":\"#C9BB9B\"},\"rows\":[\"#ECC493\",\"#C9BB9B\",\"#D4B37C\",\"#B39D73\",\"#A49354\",\"#A37342\",\"#897663\",\"#83643C\",\"#5B4A35\",\"#342725\"],\"cloud\":\"#F3ECDA\",\"overridden\":false,\"savedAt\":1786534969524},{\"id\":\"CMSQ0SPUU\",\"name\":\"d5f4e0ad283a9fabcd2f94ce455e4036\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"backgrounds\":{\"sky\":\"#FAFBFA\",\"haze\":\"#EDCC5B\",\"water\":\"#EBAC14\"},\"rows\":[\"#C4BAA5\",\"#EBAC14\",\"#ACA493\",\"#DA7D5A\",\"#8B857A\",\"#E46B0C\",\"#726D64\",\"#D33C0C\",\"#7B341C\",\"#2B231C\"],\"cloud\":\"#FAFBFA\",\"overridden\":false,\"savedAt\":1786534975974}]",
+      "parsed": [
+        {
+          "id": "CMSPYGJAT",
+          "name": "art-01",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F6F2EA",
+            "haze": "#E8D9C7",
+            "water": "#D3A985"
+          },
+          "rows": [
+            "#B5B8B5",
+            "#D3A985",
+            "#A89686",
+            "#C58858",
+            "#89796A",
+            "#A65C33",
+            "#64554A",
+            "#7A3A1A",
+            "#3A322D",
+            "#1B1612"
+          ],
+          "cloud": "#F6F2EA",
+          "overridden": false,
+          "savedAt": 1786531048373,
+          "updatedAt": 1786531310407
+        },
+        {
+          "id": "CMSPYI768",
+          "name": "architecture-01",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#ECE4C7",
+            "haze": "#DAC6AA",
+            "water": "#A6AAB4"
+          },
+          "rows": [
+            "#C7A888",
+            "#A6AAB4",
+            "#99A489",
+            "#E68858",
+            "#AA8768",
+            "#697359",
+            "#996649",
+            "#2B7A94",
+            "#764C37",
+            "#353627"
+          ],
+          "cloud": "#ECE4C7",
+          "overridden": false,
+          "savedAt": 1786531125968,
+          "updatedAt": 1786531308189
+        },
+        {
+          "id": "CMSPYN41D",
+          "name": "landscape-031",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#C3CCEA",
+            "haze": "#C7CAC5",
+            "water": "#CA9A40"
+          },
+          "rows": [
+            "#F9C32F",
+            "#C8B970",
+            "#B7B49B",
+            "#CA9A40",
+            "#BFC8E3",
+            "#CA9A40",
+            "#E5C594",
+            "#C8B970",
+            "#6B652E",
+            "#A7977B"
+          ],
+          "cloud": "#C3CCEA",
+          "overridden": false,
+          "savedAt": 1786531355185,
+          "updatedAt": 1786535101189
+        },
+        {
+          "id": "CMSPYSTGE",
+          "name": "portrait-03",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#977966",
+            "haze": "#775849",
+            "water": "#35150E"
+          },
+          "rows": [
+            "#493429",
+            "#35150E",
+            "#99774D",
+            "#977966",
+            "#775849",
+            "#493429",
+            "#35150E",
+            "#0C0701",
+            "#583D2D",
+            "#B58973"
+          ],
+          "cloud": "#977966",
+          "overridden": false,
+          "savedAt": 1786531621406,
+          "updatedAt": 1786535084928
+        },
+        {
+          "id": "CMSPZ7Q1V",
+          "name": "portrait-03",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#AA8C7A",
+            "haze": "#9B7E6A",
+            "water": "#7B5C4C"
+          },
+          "rows": [
+            "#8B6C5A",
+            "#7B5C4C",
+            "#6B4E41",
+            "#5B4236",
+            "#4E392D",
+            "#422D24",
+            "#34231B",
+            "#2B1C14",
+            "#1C120C",
+            "#120C04"
+          ],
+          "cloud": "#AA8C7A",
+          "overridden": false,
+          "savedAt": 1786532316835,
+          "updatedAt": 1786532320481
+        },
+        {
+          "id": "CMSPZ9527",
+          "name": "portrait-02",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#AFD0DA",
+            "haze": "#B29E92",
+            "water": "#9B8C84"
+          },
+          "rows": [
+            "#8B9B9D",
+            "#792C20",
+            "#937B6C",
+            "#566A74",
+            "#7C5C44",
+            "#4D4A43",
+            "#792C20",
+            "#332B23",
+            "#151A0C",
+            "#030101"
+          ],
+          "cloud": "#AFD0DA",
+          "overridden": false,
+          "savedAt": 1786532382943,
+          "updatedAt": 1786532383980
+        },
+        {
+          "id": "CMSPZA9WG",
+          "name": "street-01",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FDF9E2",
+            "haze": "#FDEEC3",
+            "water": "#FCDC8C"
+          },
+          "rows": [
+            "#FBE4A4",
+            "#FCDC8C",
+            "#F9BB6B",
+            "#CFB497",
+            "#F4AC5C",
+            "#E88C4D",
+            "#BD9472",
+            "#C48C49",
+            "#B58144",
+            "#548088"
+          ],
+          "cloud": "#FDF9E2",
+          "overridden": false,
+          "savedAt": 1786532435872,
+          "updatedAt": 1786532437292
+        },
+        {
+          "id": "CMSPZD7WY",
+          "name": "ffb0ea2d1cd00e3e178e7bfd6fdc4ef5",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FDFEFD",
+            "haze": "#F6F4ED",
+            "water": "#D2DFF5"
+          },
+          "rows": [
+            "#E3E5EB",
+            "#D2DFF5",
+            "#DDDBDB",
+            "#CCD4E4",
+            "#D5D1CE",
+            "#DDCABD",
+            "#B1C2E6",
+            "#BDBCC1",
+            "#DAB396",
+            "#B5B1B4"
+          ],
+          "cloud": "#FDFEFD",
+          "overridden": false,
+          "savedAt": 1786532573266,
+          "updatedAt": 1786532573869
+        },
+        {
+          "id": "CMSPZHJCP",
+          "name": "4f46bcbe9448d07be2506c23c95b11c9",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#C5CACD",
+            "haze": "#C3B394",
+            "water": "#949B9B"
+          },
+          "rows": [
+            "#B39B75",
+            "#949B9B",
+            "#94895D",
+            "#6C7D6A",
+            "#556C52",
+            "#7A5542",
+            "#664433",
+            "#334334",
+            "#352114",
+            "#15160C"
+          ],
+          "cloud": "#C5CACD",
+          "overridden": false,
+          "savedAt": 1786532774713,
+          "updatedAt": 1786532775499
+        },
+        {
+          "id": "CMSPZY5W1",
+          "name": "0f79155456c76bbec84b2f4c183957e8",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FBFBDA",
+            "haze": "#F7E5D2",
+            "water": "#DCD2C4"
+          },
+          "rows": [
+            "#F6D2B4",
+            "#DCD2C4",
+            "#F2BE82",
+            "#CCBBB3",
+            "#BCBBC4",
+            "#BDABA4",
+            "#F2A537",
+            "#ABABBC",
+            "#CB9D94",
+            "#B39C94"
+          ],
+          "cloud": "#FBFBDA",
+          "overridden": false,
+          "savedAt": 1786533550417
+        },
+        {
+          "id": "CMSPZYAIB",
+          "name": "0f79155456c76bbec84b2f4c183957e8",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F7E5D2",
+            "haze": "#F6D2B4",
+            "water": "#CCBBB3"
+          },
+          "rows": [
+            "#DCD2C4",
+            "#CCBBB3",
+            "#ABABBC",
+            "#B4A29C",
+            "#A28D8C",
+            "#AB7B75",
+            "#635CD4",
+            "#6A5554",
+            "#BB4035",
+            "#0F0603"
+          ],
+          "cloud": "#F7E5D2",
+          "overridden": false,
+          "savedAt": 1786533556403,
+          "updatedAt": 1786534569154
+        },
+        {
+          "id": "CMSPZYHS1",
+          "name": "356b3b66b6f53d953108ab469384feef",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FDD9CB",
+            "haze": "#ECCBBE",
+            "water": "#D0AB32"
+          },
+          "rows": [
+            "#E3AC9B",
+            "#D0AB32",
+            "#D39C93",
+            "#A29BB5",
+            "#CC8B84",
+            "#BC7C7B",
+            "#8E839D",
+            "#BB7626",
+            "#B46B6C",
+            "#897812"
+          ],
+          "cloud": "#FDD9CB",
+          "overridden": false,
+          "savedAt": 1786533565825,
+          "updatedAt": 1786533575663
+        },
+        {
+          "rows": [
+            "#C8C2B7",
+            "#BEB7AB",
+            "#B4AC9F",
+            "#AAA193",
+            "#968B7B",
+            "#8C806F",
+            "#817563",
+            "#766A58",
+            "#6B5F4D",
+            "#605442"
+          ],
+          "backgrounds": {
+            "sky": "#DDD8CF",
+            "haze": "#CFC8BC",
+            "water": "#ACA18F"
+          },
+          "id": "CMSQ0KD0A",
+          "name": "",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "cloud": "#DDD8CF",
+          "overridden": false,
+          "savedAt": 1786534586074
+        },
+        {
+          "id": "CMSQ0KJ33",
+          "name": "4a8b626eb68bb244ace6a49d4ab80567",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#E2DDC0",
+            "haze": "#CBCDBB",
+            "water": "#A4B9B5"
+          },
+          "rows": [
+            "#BEB9A6",
+            "#A4B9B5",
+            "#9BB3AC",
+            "#ADAB96",
+            "#93ACA4",
+            "#7EA19B",
+            "#939B93",
+            "#A28E7E",
+            "#838B84",
+            "#7B837C"
+          ],
+          "cloud": "#E2DDC0",
+          "overridden": false,
+          "savedAt": 1786534593951
+        },
+        {
+          "id": "CMSQ0KNFT",
+          "name": "4a8b626eb68bb244ace6a49d4ab80567",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#E2DDC0",
+            "haze": "#CBC5B2",
+            "water": "#93ACA4"
+          },
+          "rows": [
+            "#AABAB5",
+            "#93ACA4",
+            "#93938D",
+            "#7B837C",
+            "#946C68",
+            "#6B6A66",
+            "#72534C",
+            "#4C5B5C",
+            "#544443",
+            "#33333A"
+          ],
+          "cloud": "#E2DDC0",
+          "overridden": false,
+          "savedAt": 1786534599593
+        },
+        {
+          "id": "CMSQ0KT1Z",
+          "name": "5bce0dac7471a9ef8678d9bebf12dd17",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#DCD4CA",
+            "haze": "#DAC5AB",
+            "water": "#C5B49A"
+          },
+          "rows": [
+            "#71DAF1",
+            "#C5B49A",
+            "#B4A285",
+            "#13A1B9",
+            "#927D63",
+            "#7D6B53",
+            "#65523B",
+            "#0D4B7D",
+            "#523D2B",
+            "#030303"
+          ],
+          "cloud": "#DCD4CA",
+          "overridden": false,
+          "savedAt": 1786534606871
+        },
+        {
+          "id": "CMSQ0L431",
+          "name": "48004953cb966a9f3f4372ba1de852d3",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F5C9A3",
+            "haze": "#ECB48C",
+            "water": "#F3A473"
+          },
+          "rows": [
+            "#DDB906",
+            "#F3A473",
+            "#EC8D5B",
+            "#6A9CDD",
+            "#E37B43",
+            "#7B844C",
+            "#24735D",
+            "#095DDF",
+            "#831314",
+            "#0D0312"
+          ],
+          "cloud": "#F5C9A3",
+          "overridden": false,
+          "savedAt": 1786534621165
+        },
+        {
+          "id": "CMSQ0L8UY",
+          "name": "48004953cb966a9f3f4372ba1de852d3",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F5C9A3",
+            "haze": "#F3B48B",
+            "water": "#DDB906"
+          },
+          "rows": [
+            "#BFB8C9",
+            "#DDB906",
+            "#F3A473",
+            "#DC9B7C",
+            "#ED9463",
+            "#90A98D",
+            "#6A9CDD",
+            "#E4834C",
+            "#7B844C",
+            "#9172BD"
+          ],
+          "cloud": "#F5C9A3",
+          "overridden": false,
+          "savedAt": 1786534627354
+        },
+        {
+          "id": "CMSQ0LIEQ",
+          "name": "48004953cb966a9f3f4372ba1de852d3",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FAD2B3",
+            "haze": "#F5C9A3",
+            "water": "#F3B48B"
+          },
+          "rows": [
+            "#E4BC9B",
+            "#F3B48B",
+            "#DDB906",
+            "#F3A473",
+            "#E4A384",
+            "#B5A8BF",
+            "#ED9463",
+            "#90A98D",
+            "#CD8B74",
+            "#6A9CDD"
+          ],
+          "cloud": "#FAD2B3",
+          "overridden": false,
+          "savedAt": 1786534639730
+        },
+        {
+          "id": "CMSQ0LONC",
+          "name": "4e25e5989f248325d08a126707435bdb",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F5F4F4",
+            "haze": "#FAE5DA",
+            "water": "#FCC6CC"
+          },
+          "rows": [
+            "#D4D9DE",
+            "#FCC6CC",
+            "#FDC5A4",
+            "#DCC3B5",
+            "#E38741",
+            "#B46DA4",
+            "#7B7B5B",
+            "#736944",
+            "#5B543A",
+            "#1F170A"
+          ],
+          "cloud": "#F5F4F4",
+          "overridden": false,
+          "savedAt": 1786534647816,
+          "updatedAt": 1786534651021
+        },
+        {
+          "id": "CMSQ0M5ZM",
+          "name": "5a88a01f9c055710ade755ca35d43ff2",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F1F7E9",
+            "haze": "#E6F1CD",
+            "water": "#B2B56B"
+          },
+          "rows": [
+            "#CACD84",
+            "#B2B56B",
+            "#A2A553",
+            "#9D9B2C",
+            "#709A65",
+            "#8A8523",
+            "#6A8B34",
+            "#5C731C",
+            "#3C625B",
+            "#192A0A"
+          ],
+          "cloud": "#F1F7E9",
+          "overridden": false,
+          "savedAt": 1786534670290,
+          "updatedAt": 1786534719783
+        },
+        {
+          "id": "CMSQ0NGFI",
+          "name": "b36f57ed41ccf2f23c9ec2bb803f94b3",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FBFCFB",
+            "haze": "#BBD4D1",
+            "water": "#A3AB7C"
+          },
+          "rows": [
+            "#D4CB46",
+            "#A3AB7C",
+            "#A3AA04",
+            "#E37603",
+            "#748C4B",
+            "#637C33",
+            "#5C740C",
+            "#4B5C04",
+            "#223C14",
+            "#042303"
+          ],
+          "cloud": "#FBFCFB",
+          "overridden": false,
+          "savedAt": 1786534730478,
+          "updatedAt": 1786534735132
+        },
+        {
+          "id": "CMSQ0NQLH",
+          "name": "1c3a560cf75ba43990c5b2c234aebdac",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F3F4EC",
+            "haze": "#CDCA0D",
+            "water": "#7A9B7C"
+          },
+          "rows": [
+            "#DB9B72",
+            "#7A9B7C",
+            "#6B931B",
+            "#537B1B",
+            "#346B1C",
+            "#435B06",
+            "#1B541C",
+            "#0D341A",
+            "#2C1402",
+            "#030303"
+          ],
+          "cloud": "#F3F4EC",
+          "overridden": false,
+          "savedAt": 1786534743653,
+          "updatedAt": 1786534746085
+        },
+        {
+          "id": "CMSQ0NXVR",
+          "name": "ad44da32d1672d9b9ee727cb9a05cf12",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FBFBFA",
+            "haze": "#B09E33",
+            "water": "#717273"
+          },
+          "rows": [
+            "#D98988",
+            "#717273",
+            "#6C5B0C",
+            "#84430C",
+            "#53440C",
+            "#7B230B",
+            "#333513",
+            "#5B1305",
+            "#2C1305",
+            "#020101"
+          ],
+          "cloud": "#FBFBFA",
+          "overridden": false,
+          "savedAt": 1786534753095,
+          "updatedAt": 1786534759520
+        },
+        {
+          "id": "CMSQ0O7LA",
+          "name": "89e0e74d46f4b5eaff8206119bbb2cc0",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FCFBF9",
+            "haze": "#99AEB8",
+            "water": "#657C84"
+          },
+          "rows": [
+            "#B3734B",
+            "#657C84",
+            "#A45B34",
+            "#646B1C",
+            "#835C3B",
+            "#54542C",
+            "#73442B",
+            "#533523",
+            "#2C3B33",
+            "#1C1A15"
+          ],
+          "cloud": "#FCFBF9",
+          "overridden": false,
+          "savedAt": 1786534765678
+        },
+        {
+          "id": "CMSQ0OEEN",
+          "name": "8985bc913f0f5d36308d561d40f0703b",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#E8D0C6",
+            "haze": "#E3B28C",
+            "water": "#C4ABA4"
+          },
+          "rows": [
+            "#EEB101",
+            "#C4ABA4",
+            "#E39364",
+            "#DC7C4B",
+            "#D4631B",
+            "#C44B0C",
+            "#614E4F",
+            "#BC2C0B",
+            "#630C04",
+            "#040203"
+          ],
+          "cloud": "#E8D0C6",
+          "overridden": false,
+          "savedAt": 1786534774511,
+          "updatedAt": 1786534778865
+        },
+        {
+          "id": "CMSQ0P1I7",
+          "name": "f02e45b876b3df6a1e29eca390c8b366",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#D6CBDB",
+            "haze": "#DCBEA9",
+            "water": "#CBAB94"
+          },
+          "rows": [
+            "#EAAE52",
+            "#CBAB94",
+            "#BC9582",
+            "#C37453",
+            "#A5735B",
+            "#6B6C73",
+            "#8C4C34",
+            "#4B4B44",
+            "#3B3D2B",
+            "#1C2C22"
+          ],
+          "cloud": "#D6CBDB",
+          "overridden": false,
+          "savedAt": 1786534804447,
+          "updatedAt": 1786534808348
+        },
+        {
+          "id": "CMSQ0PY0Y",
+          "name": "1ecb9c15a01c0baaddeeb21fe43f5a8b",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FCF3E3",
+            "haze": "#FBE5C3",
+            "water": "#E3BB94"
+          },
+          "rows": [
+            "#F4D39C",
+            "#E3BB94",
+            "#BB9E89",
+            "#C3946C",
+            "#E38C38",
+            "#A2826D",
+            "#8B6A55",
+            "#C24623",
+            "#74523C",
+            "#36190E"
+          ],
+          "cloud": "#FCF3E3",
+          "overridden": false,
+          "savedAt": 1786534846594
+        },
+        {
+          "id": "CMSQ0Q9S6",
+          "name": "4cce27547e54d6835b5f287df0430033",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FBEBBC",
+            "haze": "#F4DC9C",
+            "water": "#ECB34C"
+          },
+          "rows": [
+            "#F3C56B",
+            "#ECB34C",
+            "#C4AB8D",
+            "#C98641",
+            "#A48269",
+            "#C3740B",
+            "#A45B14",
+            "#8B450C",
+            "#642A0B",
+            "#431A0B"
+          ],
+          "cloud": "#FBEBBC",
+          "overridden": false,
+          "savedAt": 1786534861830,
+          "updatedAt": 1786534868075
+        },
+        {
+          "id": "CMSQ0RCXM",
+          "name": "8679e4babe198c3ba025d1b53f2a28e4",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FAFBFB",
+            "haze": "#E4E4EC",
+            "water": "#DCBB9C"
+          },
+          "rows": [
+            "#F5DBBC",
+            "#DCBB9C",
+            "#ACB3E3",
+            "#C5A29C",
+            "#9B9BDC",
+            "#8384D5",
+            "#6463D3",
+            "#735C67",
+            "#383A90",
+            "#38281A"
+          ],
+          "cloud": "#FAFBFB",
+          "overridden": false,
+          "savedAt": 1786534912570,
+          "updatedAt": 1786534916234
+        },
+        {
+          "id": "CMSQ0RK19",
+          "name": "c2d8c8ecb142e0a869da7f1f3cb39cbb",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#E5E4E2",
+            "haze": "#DDCBBB",
+            "water": "#D2B194"
+          },
+          "rows": [
+            "#EABCA3",
+            "#D2B194",
+            "#DA929D",
+            "#DB9374",
+            "#AC8BBC",
+            "#CD7D62",
+            "#CB644B",
+            "#3A5789",
+            "#73473B",
+            "#170A08"
+          ],
+          "cloud": "#E5E4E2",
+          "overridden": false,
+          "savedAt": 1786534921773,
+          "updatedAt": 1786534924975
+        },
+        {
+          "id": "CMSQ0SKVO",
+          "name": "98d865495415299a9f880c6c8e6e3a89",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#F3ECDA",
+            "haze": "#EBDCBB",
+            "water": "#C9BB9B"
+          },
+          "rows": [
+            "#ECC493",
+            "#C9BB9B",
+            "#D4B37C",
+            "#B39D73",
+            "#A49354",
+            "#A37342",
+            "#897663",
+            "#83643C",
+            "#5B4A35",
+            "#342725"
+          ],
+          "cloud": "#F3ECDA",
+          "overridden": false,
+          "savedAt": 1786534969524
+        },
+        {
+          "id": "CMSQ0SPUU",
+          "name": "d5f4e0ad283a9fabcd2f94ce455e4036",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "backgrounds": {
+            "sky": "#FAFBFA",
+            "haze": "#EDCC5B",
+            "water": "#EBAC14"
+          },
+          "rows": [
+            "#C4BAA5",
+            "#EBAC14",
+            "#ACA493",
+            "#DA7D5A",
+            "#8B857A",
+            "#E46B0C",
+            "#726D64",
+            "#D33C0C",
+            "#7B341C",
+            "#2B231C"
+          ],
+          "cloud": "#FAFBFA",
+          "overridden": false,
+          "savedAt": 1786534975974
+        }
+      ]
+    },
+    {
+      "sequence": 508722,
+      "valueType": 1,
+      "key": "bw-custom-palettes-v2",
+      "text": "[{\"rows\":[\"#C8C2B7\",\"#BEB7AB\",\"#B4AC9F\",\"#AAA193\",\"#968B7B\",\"#8C806F\",\"#817563\",\"#766A58\",\"#6B5F4D\",\"#605442\"],\"backgrounds\":{\"sky\":\"#DDD8CF\",\"haze\":\"#CFC8BC\",\"water\":\"#ACA18F\"},\"id\":\"CMSR3SVA4\",\"name\":\"\",\"seg\":\"自定义\",\"tier\":\"Custom\",\"custom\":true,\"cloud\":\"#DDD8CF\",\"overridden\":false,\"savedAt\":1786600488028}]",
+      "parsed": [
+        {
+          "rows": [
+            "#C8C2B7",
+            "#BEB7AB",
+            "#B4AC9F",
+            "#AAA193",
+            "#968B7B",
+            "#8C806F",
+            "#817563",
+            "#766A58",
+            "#6B5F4D",
+            "#605442"
+          ],
+          "backgrounds": {
+            "sky": "#DDD8CF",
+            "haze": "#CFC8BC",
+            "water": "#ACA18F"
+          },
+          "id": "CMSR3SVA4",
+          "name": "",
+          "seg": "自定义",
+          "tier": "Custom",
+          "custom": true,
+          "cloud": "#DDD8CF",
+          "overridden": false,
+          "savedAt": 1786600488028
+        }
+      ]
+    }
+  ]
+}
