@@ -90,9 +90,15 @@
    page's loudest objects — a price, a unit count, a balance — and they are the
    one thing a reader looks for, so they are what earns the light. */
 html[data-skin="paper"] body:not(.blocks-route) :is(
-  [data-weave],
+  /* display type — the largest words on each route */
+  [data-weave], h1, .hero h1, #greetLine, .pagetitle,
+  .section-head h2, .empty h2, .legal-poster-intro h1,
+  /* the loud numerals: a price, a count, a balance — what a reader is
+     actually hunting for on the page, so they are what carry the light */
   .plan-price b, .rate-number b, .pack .u, .ledgerstrip b,
-  .count, .amount, .pagetitle
+  .count, .amount, .grant-amount, .u, .unit-price b, .units-big,
+  /* the brand wordmark, which is display type by any other name */
+  .brand b, .brand-word
 ) {
   text-shadow: var(--glow-on-paper);
 }
