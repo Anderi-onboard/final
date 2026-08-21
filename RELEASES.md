@@ -6,6 +6,47 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## 20260821e — Two material routes, one type voice, first reading free
+
+- Production target: `main` via pull request #61
+- Verified mirror: `production` after public deployment
+- Working branch: `claude/final-saas-promotion-7nxvjo` (32 commits, 59 files)
+- Base: merged `origin/main` at `41200ba` before release, so the 114-group
+  catalogue and the 取象 reading feature ship intact alongside this work.
+
+### Visual lineage
+- `03b9881` — generated mark system; About rebuilt as flat blocks
+- `345dd80` — the Sortis brush extracted into a site-wide rule; contours stop
+  running parallel to the ridge
+- `1e0ddf4` — the method page gets woven weight, a light in the type, and
+  cards that turn in place
+- `e295269` — the real brand mark replaces a generic dot ring; 4 motifs → 7
+- `cc49c53` — type scale collapsed onto three per-family ladders
+- `ace9abd` — the woven weight goes site-wide; the glow stays on colour
+
+### Functional lineage
+- `4868668` — palette order becomes a per-visitor seeded shuffle
+- `ace9abd` — free tier aligned to the server: one whole reading, zero units
+- `5477f28` / `e25968d` — one element, one stylesheet; pricing carriers unified
+
+### Provenance and process
+- `a6de659` — ARCHITECTURE.md; palette recovery archive recovered from the
+  codex branch and verified colour-for-colour against the live catalogue
+- `d4069d7` — the 180-group archive restored after the merge dropped it
+  silently; multi-agent protocol written
+- `5e26473` — OVERVIEW.md
+
+### Verification
+- 17/17 contract tests pass, including `build-tag`, `palette-contract`
+  (shuffle seeded + persisted + full permutation) and `free-reading-contract`
+- ten pages load with no JavaScript errors and no missing assets
+- no horizontal scroll at 390px; the flagged overflows measure identical to
+  before this branch, so they predate it
+- build tag `20260821e` across every asset reference and `version.json`
+- palette clamping re-measured on the 114-group catalogue: ridge saturation
+  .599 → .242, sky spread 31/255 (2.4× the 180-group era)
+
+
 ## 20260815e — Lianqian production baseline
 
 - Production target: `main` via pull request
