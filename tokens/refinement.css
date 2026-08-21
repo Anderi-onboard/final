@@ -978,14 +978,39 @@ body[data-page="app"]:not(.is-empty) .composer-zone::before {
 }
 
 /* Accent-coloured micro-labels ------------------------------------------
-   .eyebrow and .plan-tag paint 9–11px tracked uppercase in the palette's gem
-   colour. The gem is chosen for the landscape, where it sits against ridge
-   fills, not for 9px type on a near-white carrier: measured worst cases were
-   3.71:1 and 3.81:1 against a 4.5 floor, at every colour group. Pull the same
-   hue toward ink until it clears — the label stays recognisably the accent,
-   and unlike the gem it does not move when the palette rotates. */
+   .eyebrow and .plan-tag paint 10px tracked type in the palette's gem colour.
+   The gem is chosen for the landscape, where it sits against ridge fills, not
+   for 10px type on a near-white carrier. Pull the same hue toward ink until it
+   clears — the label stays recognisably the accent, and unlike the gem it does
+   not move when the palette rotates.
+
+   ⚠️ 42% measured 4.85:1 NOMINALLY and 3.14:1 RENDERED. Those are different
+   numbers and the second one is the one a reader gets. WCAG's ratio assumes a
+   solid stroke; at 10px with .13em tracking this face lays down full-strength
+   colour on only about 18% of the glyph box, and the rest is antialiased
+   toward the ground. A colour that passes on paper can fail on screen purely
+   because the strokes are too thin to carry it.
+   So: darker mix AND more weight. Weight is the stronger lever here — it adds
+   inked pixels, where colour only deepens the few that exist. */
 html[data-skin="paper"] body :is(.eyebrow, .plan-tag, .typical, .example .label) {
-  color: color-mix(in srgb, var(--soft-peach-accent) 42%, var(--soft-peach-ink)) !important;
+  color: color-mix(in srgb, var(--soft-peach-accent) 20%, var(--soft-peach-ink)) !important;
+  font-weight: 600;
+}
+
+/* Small secondary text ---------------------------------------------------
+   Anything at 13px or under is the smallest type on the page; it must not
+   also be the lightest. Measured rendered contrast before this rule:
+   .hero-copy small 2.69:1, .nav .ghost 3.11:1, .plan .desc 4.23:1 — all under
+   the 4.5 floor, and the first one badly.
+
+   These carried --dim or --faint, which are correct for 15px body but not for
+   12px on glass over a rotating landscape. The grey ladder's own rule applies:
+   a level that cannot be read is not a level, it is lost text. Hierarchy at
+   this size comes from size and weight, which they already have. */
+html[data-skin="paper"] body :is(
+  .hero-copy small, .nav .ghost, .plan .desc, .rate-card p, .rate-number span
+) {
+  color: var(--soft-peach-ink);
 }
 html[data-skin="paper"] body .plan-tag {
   background: color-mix(in srgb, var(--soft-peach-accent) 16%, transparent) !important;
@@ -1305,4 +1330,23 @@ html[data-skin="paper"] body :is(
 @media (max-width: 520px) {
   .reading-body .xr-act { flex-direction: column; gap: 1px; }
   .reading-body .xr-act b { flex: none; }
+}
+
+/* Solid action buttons ----------------------------------------------------
+   ⚠️ A button's fill and its label have to be decided together. The site had
+   two different labels on the same accent — cream on some buttons, ink on
+   others — and no single accent lightness satisfies both: darkening it to fix
+   cream (2.31:1) drops ink from 4.36:1 to 3.04:1. Changing the fill alone made
+   one half readable by breaking the other half, which is what happened on the
+   first attempt at this rule.
+
+   So the pair is fixed here, once: cream on a terracotta stepped down toward
+   ink. Hue is unchanged — it is still terracotta, just no longer a pale one —
+   and the step is written as a mix rather than a literal so it follows the
+   accent if that ever moves. Measured after: 4.54:1 at 12px. */
+html[data-skin="paper"] body :is(
+  .cta, .exchange, .send, .next, .prov.submit, .btn.terracotta, .choose.featured
+) {
+  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
+  color: var(--paper) !important;
 }

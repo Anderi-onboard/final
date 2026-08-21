@@ -221,8 +221,6 @@ body.blocks-route :is(button, input, select, textarea) { font-family: inherit; }
    The GLOW stays here, and stays on this route only: it is white, and white
    light only reads against a saturated colour field. Over the near-white paper
    of the glass routes it either disappears or smears the counters. */
-body.blocks-route [data-weave] {
-  text-shadow:
-    0 0 .04em rgb(255 255 255 / .34),
-    0 0 .22em rgb(255 255 255 / .22);
+body.blocks-route :is([data-weave], .bk-lead, .bk-cell--steps b, .mt-display, .mt-stack span) {
+  text-shadow: var(--glow-on-color);
 }

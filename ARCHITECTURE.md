@@ -26,17 +26,17 @@
 
 ### 分支表(2026-08-21 实测)
 
-| 分支 | 落后/领先 main | 角色 | 状态 |
-|---|---|---|---|
-| **`main`** | — | **生产**,Cloudflare 自动部署 | 唯一真相 |
-| `production` | 37 / 1 | 已验证版本的**回滚锚点** | 停在 08-15,**不是日常入口** |
-| `claude/final-saas-promotion-7nxvjo` | 0 / 28 | 本会话工作分支 → PR #61 | 已合 main,可合并 |
-| `claude/bournewise-handoff-priorities-19xcmh` | 0 / 1 | 仅一条 RELEASES 记录 | 待合或丢弃 |
-| `claude/repo-hygiene-audit` | 37 / 1 | 分支卫生审计文档 | **文档未进 main** |
-| `claude/texture-and-craft-audit` | 37 / 1 | 纹理审计文档 | **文档未进 main** |
-| `codex-creem-integration` | 38 / 1 | codex 工作分支 | 基线陈旧,见 §2 |
-| `codex` | 77 / 90 | 07-28 遗留 | **死分支** |
-| 其余 7 条 `claude/session-*` 等 | 77 / 27–101 | 6–7 周前的历史会话 | **死分支** |
+| 分支 | 角色 | 状态(08-21 收盘) |
+|---|---|---|
+| **`main`** | **生产**,Cloudflare 自动部署 | 唯一真相。已发布 `20260821f` |
+| `production` | 已验证版本的**回滚锚点** | ⚠️ **落后 main 73 个提交**,停在 08-15 —— 它现在指向一个很旧的版本,见 §5-2 |
+| `claude/final-saas-promotion-7nxvjo` | 本会话工作分支 | PR #61、#62 均已合入 main |
+| `claude/repo-hygiene-audit` | 分支卫生审计 | ✅ 结论已并入 §2.5 B / B.1 / C,**可删** |
+| `claude/texture-and-craft-audit` | 纹理审计 | ✅ 零独有提交,**可删** |
+| `claude/bournewise-handoff-priorities-19xcmh` | 仅一条 RELEASES 记录 | 待合或丢弃 |
+| `codex-creem-integration` | codex 工作分支 | 基线陈旧(见 §1.5)。只剩 `chooseUiAccent()` 值得取,取完可归档 |
+| `codex` | 07-28 遗留 | **死分支,而且有害** —— 它就是 §2.5 B.1 那个 ref 前缀坑本身 |
+| 其余 7 条 `claude/session-*` 等 | 6–7 周前的历史会话 | **死分支** |
 
 ---
 
@@ -155,12 +155,58 @@ cat ARCHITECTURE.md CLAUDE.md              # 已裁决的事不要重裁
 | `functions/**` | 是 | 计费与提示词,错了要花钱 |
 | 单个页面的内容文案 | 否 | 可并行 |
 
+**按领域的主责**(来自 `claude/repo-hygiene-audit`,08-16。那次审计统计了 8-10 到 8-15 的
+72 个提交:**十个 HTML 各被改了 40+ 次,纹理系统 5 天里被推翻 6 轮**
+「纸纹 → 强化 → 关闭 → 宝相花 → 莲芡 → 退役 → 再修」。
+**原因不是谁做错了,是没人知道哪块归谁。**):
+
+| 区域 | 主责 | 其他会话动之前 |
+|---|---|---|
+| `tokens/*.css` · `assets/textures/` · `assets/palettes/` · `assets/backgrounds/` | 视觉会话 | 先在 PR 里说明 |
+| `prompt-*.js` · `liuyao-ai.js` · `eval/` | 解读会话 | 先在 PR 里说明 |
+| `functions/` · `schema.sql` · 计费 | 后端会话 | 先在 PR 里说明 |
+| `*.html` 的结构与文案 | 谁开工谁认领,**PR 标题写明动了哪几页** | — |
+
+**同一个视觉决定(纹理、配色、字体)只能有一个来源。** 拿不准就问 owner,不要各改各的 ——
+互相覆盖的代价远高于等一次确认。
+
+### B.1 · ⚠️ 分支名不能是另一条分支的前缀
+
+git 的 ref 是文件系统路径,同一个名字**不能既是文件又是目录**。仓库里存在分支 `codex` 时,
+`codex/creem-integration` 永远创建不了:
+
+```
+fatal: cannot lock ref 'refs/heads/codex/creem-integration':
+       'refs/heads/codex' exists; cannot create 'refs/heads/codex/creem-integration'
+```
+
+**8-10 到 8-15 那几天"云端和本地不同步"的全部原因就是这个**:codex 本地一直用
+`codex/creem-integration`,推不上去,于是远端改叫 `codex-creem-integration` ——
+本地和远端从此指向两条不同的分支,`git pull` 拉回来的不是自己刚推的东西。
+
+- 用 `claude/xxx` / `codex/xxx` 这种带斜杠的命名时,**不得同时存在裸的 `claude` / `codex` 分支**。
+  ⚠️ 仓库里**现在仍有一条裸 `codex` 分支**(07-28,落后 77 个提交),它就是那个坑本身。
+- push 被拒时先看错误是不是 `cannot lock ref`。**是的话去删掉冲突的父级分支,不要改名绕过** ——
+  改名会制造两条同名不同物的分支,比原问题更难查。
+
 ### C · 提交前
 
 ```bash
-git fetch origin main && git merge origin/main    # 再合一次
-for t in tests/*.mjs; do node "$t" || echo "FAIL $t"; done   # 必须 17/17
+git fetch origin main
+git rebase origin/main        # 分支还没推过 → rebase
+git merge  origin/main        # 分支已推过 / 已开 PR → merge
+for t in tests/*.mjs; do node "$t" || echo "FAIL $t"; done   # 必须全绿
 ```
+
+**rebase 还是 merge,看这条分支有没有被别人看见过:**
+- **没推过、没开 PR** → `rebase`,历史干净,不留无意义的合并点。
+- **已推过或已开 PR** → `merge`。rebase 会改写已发布的提交,必须 force-push,
+  而 PR 上的评审、行号、CI 记录会全部错位。这时"干净的历史"是拿别人的上下文换来的。
+
+⚠️ **`claude/repo-hygiene-audit` 那条只写了「用 rebase」,照做会砸掉已开的 PR。**
+真正要避免的不是 merge 这个动作,是它下面那件事:**同一条分支活五天、往里灌四次 `main`,
+同一批冲突被重解四次**(8-14 一天出现 5 个 merge commit,两个标题就在处理冲突后果)。
+**解法是分支不过夜,不是换命令。**
 
 构建标签全站 + `version.json` bump 到同一个新值(`tests/build-tag.mjs` 守着)。
 
@@ -293,7 +339,11 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 
 ## 5 · 待办(按优先级)
 
-1. ⭐ **把 `AUDIT-20260816.md` 合进 `main`。**
+1. ✅ **审计文档已进 `main`(08-21)。** `AUDIT-20260816.md` 随 PR #61 上线;
+   `claude/repo-hygiene-audit` 的分支卫生结论已并入本文 §2.5 B / B.1 / C;
+   `claude/texture-and-craft-audit` 零独有提交,可归档。**两条分支现在都可以删。**
+   原文如下,留作为什么要这么做的记录:
+   ⭐ **把 `AUDIT-20260816.md` 合进 `main`。**
    §2② 那次返工的**唯一根因**是这份文档只在一条分支上。
    **裁决理由必须和被裁决的代码住在一起**,否则下一个 agent 会再做一次同样的事。
    `claude/repo-hygiene-audit` 和 `claude/texture-and-craft-audit` 同理 —— 两份审计都没进 main。
@@ -305,8 +355,14 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 4. **清理 9 条死分支**(落后 77 个提交、6–7 周未动)。
 5. **CLAUDE.md §2 架构图过期**:它把 `styles.css` 和 `prompt-engine.js` 列在仓库根目录,
    两个都已不在那里(前者不存在,后者在 `functions/_lib/`)。
-6. **21 个元素被 3–4 个样式表同时上色**(login `.card`、settings `.panel` 被四个)。
-   这是每一次"改了没效果"的根源。
+6. **样式表归属:已量化并钉住,退役待做。**(08-21 更新,原记"21 个元素",实测是 **35 个**)
+   `luxury-glass.css` 才是玻璃路由的实际所有者(127 胜 / refinement 61 胜),
+   而 CLAUDE.md 说玻璃定义在 refinement —— **文档指错了家,所以改了没效果**。
+   它 495 个「选择器×属性」里 **372 个(75%)从不获胜**,但**不能机械删除**:
+   测量看不到交互后才存在的浮层与 `:hover/:focus/:active`。
+   `tests/style-ownership.mjs` 已上:两张遗留表只许变小,路由的样式表集合不许再加,
+   色块路由不许沾这三张表。**下一步是逐状态截图核对后分批退役**,
+   目标是 `legal.css` 那个形状:一条路由一张表,20 胜 0 负。
 7. 约 47 处裸 hex 待清(`refinement.css` / `poster-pages.css` / `luxury-glass.css`)。
 
 ---

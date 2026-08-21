@@ -6,6 +6,55 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## 20260821j — Readable at last: contrast, frame rate, and the opening colour
+
+- Production target: `main` via pull request
+- Verified mirror: `production` after public deployment
+- Working branch: `claude/final-saas-promotion-7nxvjo`
+
+### Visibility
+- `3194920` — rendered contrast, measured from the text's own Range rather than
+  its element box, then fixed at the rule that actually owns each colour:
+
+  | | before | after |
+  |---|---|---|
+  | `.hero-copy small` | 2.69:1 | 5.04:1 |
+  | `.nav .ghost` | 3.11:1 | 5.10:1 |
+  | `.eyebrow` | 3.14:1 | 5.77:1 |
+  | `.plan .desc` | 4.23:1 | 6.35:1 |
+  | the four primary buttons | **2.31:1** | **4.52:1** |
+
+  `.eyebrow` measured 4.85:1 nominally and 3.14:1 rendered — WCAG's ratio
+  assumes a solid stroke, and at 10px with .13em tracking only ~18% of the
+  glyph box carries full-strength colour. Weight, not colour, was the lever.
+
+  `--soft-peach-accent` reunified with `colors.css`'s `--terracotta`:
+  luxury-glass had been holding a lighter `#DE795D`, so the documented value
+  never rendered on a glass route.
+
+### Performance
+- `7641d63` — ridges hold still, clouds drift. 21 → 55 fps on the app route.
+  The cost is binary rather than proportional: any drifting ridge invalidates
+  every `backdrop-filter` region above it, so two moving planes cost the same
+  as ten. Clouds are small and clipped, and cost nothing measurable.
+  Removed the 10-plane/6-cloud declarations that the profile block below them
+  had been overriding unconditionally — the file declared sixteen animations
+  while running five.
+
+### Palette
+- `7641d63` — the per-visitor shuffle now opens inside `自定义` or `蓝靛段`.
+  Both halves are shuffled, so a visitor lands on the strongest colour without
+  landing where the last visitor did. 14/14 fresh sessions opened in those
+  segments, split 11/3 (their size ratio), across 11 distinct groups.
+
+### Verification
+- 19/19 contract tests, including the new `private-files` and
+  `style-ownership` guards
+- ten pages load clean, no JavaScript errors, no missing assets
+- build tag `20260821j` across every asset reference and `version.json`
+- contrast re-measured across multiple palette seeds, not a single group
+
+
 ## 20260821e — Two material routes, one type voice, first reading free
 
 - Production target: `main` via pull request #61
