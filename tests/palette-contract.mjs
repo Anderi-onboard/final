@@ -88,6 +88,17 @@ assert.ok(Number.isFinite(ceiling), "RIDGE_MAX_SATURATION must be a named consta
 assert.ok(!/Math\.min\(s, \.?\d/.test(background),
   "onScreenSaturation must clamp with RIDGE_MAX_SATURATION, not a second copy of the number");
 
+/* Fidelity mode paints the cards unchanged, so the gate must measure the card
+   and not a clamp nobody applies. Mirroring the flag here is the whole point:
+   when the two disagree, the opening is chosen on a scale the screen never
+   uses — which is exactly the bug that made raising the ceiling look like a
+   no-op. */
+const fidelity = /var PALETTE_FIDELITY = true/.test(background);
+assert.match(background, /PALETTE_FIDELITY \? s : Math\.min\(s, RIDGE_MAX_SATURATION\)/,
+  "onScreenSaturation must follow PALETTE_FIDELITY, or the gate scores groups the screen never shows");
+assert.match(background, /return PALETTE_FIDELITY \? hex : mutedHex\(/,
+  "toned() must be the single place fidelity is decided");
+
 const onScreen = (group) => {
   let total = 0;
   for (const hex of group.rows) {
@@ -96,7 +107,7 @@ const onScreen = (group) => {
     const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2;
     let s = 0;
     if (max !== min) s = l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
-    total += Math.min(s, ceiling);
+    total += fidelity ? s : Math.min(s, ceiling);
   }
   return total / group.rows.length;
 };
