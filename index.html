@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260821m">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260821m">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260821m">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260821m">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260821m">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260821m">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260821m">
-<script src="./ds-base.js?v=20260821m"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260821n">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260821n">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260821n">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260821n">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260821n">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260821n">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260821n">
+<script src="./ds-base.js?v=20260821n"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -787,7 +787,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821m">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260821n">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -913,13 +913,13 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260821m"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260821n"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260821m"></script>
-<script src="./liuyao-ai.js?v=20260821m"></script>
+<script src="./liuyao-engine.js?v=20260821n"></script>
+<script src="./liuyao-ai.js?v=20260821n"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -932,7 +932,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260821m";
+      s.src = "./casting-figure.js?v=20260821n";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -945,10 +945,10 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260821m"></script>
-<script src="./prompt-checks.js?v=20260821m"></script>
-<script src="./prompt-router.js?v=20260821m"></script>
-<script src="./account.js?v=20260821m"></script>
+<script src="./copy.js?v=20260821n"></script>
+<script src="./prompt-checks.js?v=20260821n"></script>
+<script src="./prompt-router.js?v=20260821n"></script>
+<script src="./account.js?v=20260821n"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It used to
    be a second hand-maintained build literal, and it drifted: it sat two releases
@@ -960,7 +960,7 @@ window.BWCasting = (function () {
    for a tag that is only being described. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260821m"></script>
+<script src="./chat-app.js?v=20260821n"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -1086,6 +1086,6 @@ window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").spl
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260821m" defer></script>
+<script src="./assets/weave.js?v=20260821n" defer></script>
 </body>
 </html>

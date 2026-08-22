@@ -54,8 +54,18 @@ assert.match(
    replaced. */
 assert.match(background, /var OPENING_SEGMENTS = \["自定义", "蓝靛段"\]/,
   "the cycle must open inside 自定义 or 蓝靛段");
-assert.match(background, /shuffle\(head\)\.concat\(shuffle\(tail\)\)/,
-  "both the opening segments and the remainder must be shuffled, not just the tail");
+assert.match(background, /shuffle\(pref\); shuffle\(rest\);/,
+  "both pools must be shuffled, not just one");
+/* The preferred groups must be SPREAD, not stacked at the front. Concatenating
+   the two pools ran all 33 in the first eight minutes and none in the
+   remaining twenty, so anyone arriving later — or reloading a tab whose clock
+   was already running — saw none of them. */
+assert.ok(!/shuffle\(pref\)\.concat\(shuffle\(rest\)\)/.test(background),
+  "preferred groups must be distributed through the cycle, not concatenated ahead of it");
+assert.match(background, /acc \+= pref\.length/,
+  "the schedule must interleave the two pools evenly (Bresenham over pref/rest)");
+assert.match(background, /if \(s === 0\) takePref = true/,
+  "slot 0 must still open on a preferred group");
 for (const seg of ["自定义", "蓝靛段"]) {
   assert.ok(groups.some((group) => group.seg === seg),
     `OPENING_SEGMENTS names ${seg} but the catalogue has no such segment`);

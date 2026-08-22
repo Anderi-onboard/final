@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260821m", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260821m";
+    ? new URL("../palettes/color-groups.json?v=20260821n", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260821n";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -397,24 +397,47 @@
       return list;
     }
 
-    /* Two shuffled halves, not one — the opening pool plays first, then
-       everything else, and both are shuffled.
-
-       This is a bias on WHICH GROUP OPENS, not a return to sorted order. The
-       segment sort this replaced put all 34 自定义 together at the front:
-       eight and a half unbroken minutes of one segment, and the same opening
-       group for every first-time visitor. The head is shuffled too, so a
-       visitor opens on colour without opening where the last visitor did. */
-    var head = [], tail = [];
+    var pref = [], rest = [];
     for (var k = 0; k < sorted.length; k++) {
       var inSeg = OPENING_SEGMENTS.indexOf(sorted[k].seg) >= 0;
-      (inSeg && onScreenSaturation(sorted[k]) >= OPENING_MIN_SATURATION ? head : tail)
+      (inSeg && onScreenSaturation(sorted[k]) >= OPENING_MIN_SATURATION ? pref : rest)
         .push(sorted[k]);
     }
     /* If the catalogue ever loses those segment names, fall back to one plain
-       shuffle rather than opening on an empty list. */
-    if (!head.length) return shuffle(sorted);
-    return shuffle(head).concat(shuffle(tail));
+       shuffle rather than building around an empty pool. */
+    if (!pref.length || !rest.length) return shuffle(sorted);
+    shuffle(pref); shuffle(rest);
+
+    /* ── The preferred groups OPEN the cycle and then recur through it ──────
+       Not two halves. Concatenating them ran all 33 preferred groups first —
+       eight minutes of curated colour, and then they never came back for the
+       remaining twenty. Anyone who did not arrive in the first eight minutes,
+       or who reloaded an already-running tab, saw none of them at all. That is
+       the whole reason this looked unchanged after two attempts.
+
+       "More likely" has to mean more likely throughout, so they are spread
+       evenly instead: Bresenham over the two pools, which places a preferred
+       group roughly every 3.5 slots for the whole 28 minutes. Slot 0 is forced
+       preferred so the opening bias still holds.
+
+       Still a permutation — every group plays exactly once per cycle. Making
+       them genuinely more frequent than that would mean repeating some groups
+       within a cycle, which is a different and worse thing: the catalogue would
+       stop being a catalogue. */
+    var out = [], pi = 0, ri = 0, total = pref.length + rest.length, acc = 0;
+    for (var s = 0; s < total; s++) {
+      var takePref;
+      if (s === 0) takePref = true;                       /* open on colour */
+      else if (pi >= pref.length) takePref = false;
+      else if (ri >= rest.length) takePref = true;
+      else {
+        acc += pref.length;
+        takePref = acc >= total;
+        if (takePref) acc -= total;
+      }
+      out.push(takePref ? pref[pi++] : rest[ri++]);
+    }
+    return out;
   }
 
   function queuePaletteLayer(delay, fn, immediate) {
