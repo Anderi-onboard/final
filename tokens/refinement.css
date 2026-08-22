@@ -738,6 +738,12 @@ html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is
    materials, one page. Screenshotting over the live range is what made it
    obvious; a fullPage capture paints the fixed backdrop only once at the
    top and hides it. */
+/* .section is NOT in this list, deliberately. On settings each <section> wraps
+   exactly one .panel at the same x and the same width, so listing both painted
+   one card twice: two 66% white planes stacked, compositing to 88% over the
+   panel and 66% along the header strip that only has one. That tone step is
+   the "box inside a box" — there is only ever one box, drawn twice.
+   The section stays a transparent grouping element; the panel is the surface. */
 body[data-page="pricing"] :is(.plan, .topup, .rate-card, .estimator, .pack, .term, .ledgerstrip),
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {

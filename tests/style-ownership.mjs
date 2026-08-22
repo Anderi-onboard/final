@@ -41,7 +41,12 @@ const importants = (s) => (s.match(/!important/g) || []).length;
    raise them. A raise means the legacy layer grew, which is the one direction
    that is not allowed. */
 const BASELINE = {
-  'tokens/luxury-glass.css':  { lines: 602, importants: 112 },
+  /* 602/112 -> 516/92 on 2026-08-22: the shared misted material, its heavier
+     second plane, the hover weight, and nine page-scoped duplicates were
+     retired after a before/after capture across seventeen states on the five
+     routes that load this file showed no change to any background, shadow,
+     backdrop-filter, border, radius or colour. */
+  'tokens/luxury-glass.css':  { lines: 517, importants: 92 },
   'tokens/content-pages.css': { lines: 536, importants: 40 }
 };
 
