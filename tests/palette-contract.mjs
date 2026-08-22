@@ -71,6 +71,32 @@ for (const seg of ["自定义", "蓝靛段"]) {
     `OPENING_SEGMENTS names ${seg} but the catalogue has no such segment`);
 }
 
+/* The saturation gate must not silently lock the owner's own groups out of the
+   opening. At 0.23 it kept 15 of the 34 custom groups from ever opening — 44%
+   of the segment — which is a decision about their curated data, not a tuning
+   knob. Assert the requirement (every custom group can open) rather than the
+   number, so the threshold can still be raised deliberately for the other
+   segments without quietly re-excluding these. */
+const gate = Number((background.match(/var OPENING_MIN_SATURATION = ([\d.]+)/) || [])[1]);
+assert.ok(Number.isFinite(gate), "OPENING_MIN_SATURATION must be a number");
+const onScreen = (group) => {
+  let total = 0;
+  for (const hex of group.rows) {
+    const n = parseInt(hex.slice(1), 16);
+    const r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2;
+    let s = 0;
+    if (max !== min) s = l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
+    total += Math.min(s, 0.26);          /* the same ceiling applyPalette uses */
+  }
+  return total / group.rows.length;
+};
+const custom = groups.filter((group) => group.seg === "自定义");
+const locked = custom.filter((group) => onScreen(group) < gate);
+assert.deepEqual(locked.map((group) => group.id), [],
+  `OPENING_MIN_SATURATION=${gate} locks ${locked.length}/${custom.length} custom groups out of the`
+  + ` opening: ${locked.map((group) => group.id).join(" ")}`);
+
 /* Fisher–Yates over a copy is a permutation: assert the shuffle cannot drop or
    duplicate a group, since a silent drop would simply retire a palette. */
 const shuffleSrc = background.match(/function buildPaletteSchedule[\s\S]*?\n  \}\n/)?.[0] ?? "";
