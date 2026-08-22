@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822d", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822d";
+    ? new URL("../palettes/color-groups.json?v=20260822e", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822e";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -385,13 +385,26 @@
      ⚠️ RIDGE_MAX_SATURATION must be the only definition. It used to be typed
      twice — here and inside onScreenSaturation — so raising one silently left
      the opening gate measuring on the old scale. */
+  /* ⭐ FIDELITY MODE (owner's call, 2026-08-22): the curated cards reach the
+     screen unchanged. mutedHex is bypassed entirely rather than opened up,
+     because an HSL round-trip re-quantises every channel — "no clamp" and
+     "untouched" are not the same value, and the requirement is the card.
+
+     The ceilings below are what the toning WOULD use if fidelity is turned
+     off again. They are kept, not deleted, so going back is one flag.
+
+     ⚠️ Known cost, accepted deliberately: the 12px note above the fold uses
+     --dim directly over the sky with no scrim, so on the darker cards it now
+     falls under 4.5:1. That text needs a backing plate or full ink — the sky
+     should not be flattened to serve one line of chrome. */
+  var PALETTE_FIDELITY = true;
   var RIDGE_MAX_SATURATION = .42;
-  /* .24 is not a taste pick: it is the highest sky ceiling at which all 114
-     groups still clear 4.5:1 for --dim, which the 12px note above the fold
-     uses. At .26 one group drops to 4.48. Raise this only with that number
-     re-measured. */
   var SKY_MAX_SATURATION = .24;
   var WATER_MAX_SATURATION = .34;
+
+  function toned(hex, maxLightness, maxSaturation, minLightness) {
+    return PALETTE_FIDELITY ? hex : mutedHex(hex, maxLightness, maxSaturation, minLightness);
+  }
 
   /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
      value that reaches the screen, not the one on the card. Cheap: 114 groups
@@ -404,7 +417,7 @@
       var r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
       var max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, s = 0;
       if (max !== min) s = l > .5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
-      total += Math.min(s, RIDGE_MAX_SATURATION);   /* the ceiling applyPalette uses */
+      total += PALETTE_FIDELITY ? s : Math.min(s, RIDGE_MAX_SATURATION);  /* what applyPalette will actually paint */
     }
     return total / group.rows.length;
   }
@@ -477,12 +490,12 @@
     /* The catalogue can contain very pale lilacs and candy-bright accents.
        Keep their hue relationships, but force every live UI colour into the
        same low-glare editorial range before exposing it as a CSS token. */
-    var tonedRows = group.rows.map(function (hex) { return mutedHex(hex, .60, RIDGE_MAX_SATURATION); });
+    var tonedRows = group.rows.map(function (hex) { return toned(hex, .60, RIDGE_MAX_SATURATION); });
     var backgrounds = group.backgrounds || {};
     /* Keep the sky distinctly lighter than the water and ridges without
        introducing a bright white field or another visual treatment. */
-    var tonedCloud = mutedHex(backgrounds.sky || group.cloud, .82, SKY_MAX_SATURATION, .76);
-    var tonedWater = mutedHex(backgrounds.water || group.rows[4], .64, WATER_MAX_SATURATION, .42);
+    var tonedCloud = toned(backgrounds.sky || group.cloud, .82, SKY_MAX_SATURATION, .76);
+    var tonedWater = toned(backgrounds.water || group.rows[4], .64, WATER_MAX_SATURATION, .42);
     var gemIndex = Array.isArray(group.gems) && group.gems.length
       ? Math.max(0, Math.min(9, group.gems[0] - 1))
       : 5;
