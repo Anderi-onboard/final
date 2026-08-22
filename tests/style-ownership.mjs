@@ -15,14 +15,17 @@
  * !important declarations. Editing the documented home and seeing nothing
  * change is not a mystery — it is this.
  *
- * Of luxury-glass.css's 495 selector x property declarations, 123 win
- * somewhere and 372 (75%) never win on any page at either viewport.
+ * ⭐ Retired in two rounds on 2026-08-22, taking luxury-glass.css from 602/112
+ * to 394/47. Round one removed the shared misted material after a rule-level
+ * A/B inside a single page load, re-run under every medium the sheet declares;
+ * round two removed 29 rules scoped to about/guide/legal, which do not load
+ * this sheet at all. Both were confirmed by a before/after computed-style
+ * capture across seventeen states, against a measured noise floor.
  *
- * ⚠️ That does NOT make the 372 safe to delete mechanically. The measurement
- * only sees elements with a box: .method-menu, .carry-menu, .toast, .modal and
- * .account-menu do not exist until something is clicked, and no probe here
- * covers :hover, :focus or :active. Retiring them needs a screenshot-verified
- * pass, state by state, not a script.
+ * ⚠️ Do NOT retire by deleting whatever "never wins" in a statistic. The
+ * rule-level probe called login's .tab.on dead; the capture caught it winning,
+ * and deleting it dropped the active tab to 76% white with no shadow. The
+ * visible before/after difference decides, not the probe.
  *
  * What this test does is stop the hole getting deeper: the two legacy sheets
  * are being retired, so they may only get smaller, and the glass routes may
@@ -41,12 +44,12 @@ const importants = (s) => (s.match(/!important/g) || []).length;
    raise them. A raise means the legacy layer grew, which is the one direction
    that is not allowed. */
 const BASELINE = {
-  /* 602/112 -> 516/92 on 2026-08-22: the shared misted material, its heavier
-     second plane, the hover weight, and nine page-scoped duplicates were
-     retired after a before/after capture across seventeen states on the five
-     routes that load this file showed no change to any background, shadow,
-     backdrop-filter, border, radius or colour. */
-  'tokens/luxury-glass.css':  { lines: 517, importants: 92 },
+  /* 602/112 -> 517/92 -> 394/47 on 2026-08-22. First the shared misted
+     material, its heavier second plane, the hover weight and nine page-scoped
+     duplicates; then 29 rules scoped to about/guide/legal, which do not load
+     this sheet at all, so none of them could ever match. Both rounds verified
+     by before/after capture across seventeen states. */
+  'tokens/luxury-glass.css':  { lines: 394, importants: 47 },
   'tokens/content-pages.css': { lines: 536, importants: 40 }
 };
 
@@ -67,7 +70,12 @@ assert.deepEqual(grew, [],
    ended up with three or more owners. */
 const EXPECTED = {
   'index.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','luxury-glass'],
-  'pricing.html':  ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','poster-pages','luxury-glass'],
+  /* poster-pages.css is gone from here (2026-08-22). Pricing was the only
+     route still loading it, and of its 121 rules exactly one could match on
+     pricing — the rest are scoped to about/guide/legal, which load
+     blocks/method/legal.css instead. That one rule now lives in
+     refinement.css; removing the link changed nothing at 1440 or 390. */
+  'pricing.html':  ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','luxury-glass'],
   'settings.html': ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','luxury-glass'],
   'login.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','luxury-glass'],
   '404.html':      ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','luxury-glass'],

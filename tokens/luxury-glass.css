@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260822a");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260822a");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260822a");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260822a");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260822b");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260822b");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260822b");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260822b");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
 }
@@ -41,11 +41,9 @@ html[data-skin="paper"] body > :not(.mtn-bg):not(.lq-texture-stage):not(script):
 }
 
 /* Text pages use two real image layers so each full-screen section can
-   crossfade to a different member of the same connected-coin family. */
-html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
-  content: none;
-}
-
+   crossfade to a different member of the same connected-coin family. The
+   layers are built by poster-pages.js and styled here; the block routes'
+   own look lives in blocks/method/legal.css. */
 .lq-texture-stage {
   position: fixed;
   inset: 0;
@@ -90,12 +88,7 @@ html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-pa
   object-fit: contain;
   opacity: .66;
 }
-body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
-  .why-hero,.why-panel,.guide-stage,.legal-poster-intro,.clause
-) > :not(.lq-accent) {
-  position: relative;
-  z-index: 1;
-}
+
 .lq-accent--about-hero { top: 28%; right: 5.5%; width: clamp(86px, 9vw, 132px); }
 .lq-accent--about-panel { right: 7%; bottom: 8%; width: clamp(58px, 7vw, 94px); opacity: .52; }
 .lq-accent--guide { top: 11%; right: 5%; width: clamp(88px, 10vw, 148px); }
@@ -132,53 +125,12 @@ body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)
 /* The usage spread is gone from pricing.html: hiding its plate left a 260px
    empty panel, which is the "strange box" it always read as. Nothing here
    replaces it — the sentence it carried now sits with the rates. */
-
-/* Long-form pages become one continuous editorial field. Their text is not
-   trapped in glass cards; only navigation and true controls use material. */
-body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) {
-  color: var(--ink) !important;
-  background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 34%, #e8e2d7 66%) !important;
-}
-html[data-skin="paper"] body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close),
-html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro,.clause,.legal-foot),
-html[data-skin="paper"] body[data-page="guide"] :is(.guide-stage,.lesson,.example,.lesson-card,.rate) {
-  color: var(--ink) !important;
-  border: 0 !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
-}
-body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel)::before,
-body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel)::after,
-body[data-page="legal"] :is(.legal-poster-intro,.clause)::before,
-body[data-page="legal"] :is(.legal-poster-intro,.clause)::after,
-body[data-page="guide"] .guide-stage::before {
-  content: none !important;
-}
 body[data-page="pricing"] :is(.hero,.plans,.rates,.packs)::before,
 body[data-page="pricing"] :is(.plans,.packs)::after,
 body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
   .why-card,.method,.progress,.guide-stage,.lesson-card,.example,.rate,.toc,.pull,.headline,.clause
 )::after {
   content: none !important;
-}
-body[data-page="about"] :is(.why-card,.method,.boundary > div),
-body[data-page="guide"] :is(.lesson-card,.rate,.example),
-body[data-page="legal"] :is(.toc,.pull,.headline) {
-  border: 0 !important;
-  border-radius:0!important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-body[data-page="guide"] {
-  --guide-ink: var(--ink);
-  background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 34%, #e8e2d7 66%) !important;
-}
-body[data-page="guide"] .progress,
-body[data-page="guide"] .controls {
-  background-color: var(--lux-glass) !important;
 }
 
 @media (max-width: 760px) {
@@ -189,9 +141,6 @@ body[data-page="guide"] .controls {
   html[data-skin="paper"] body[data-page="app"]::after {
     background-size: 21px 21px;
     opacity: .095;
-  }
-  html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"])::after {
-    content: none;
   }
   .lq-texture-layer[data-pattern="0"] { --lq-size: 23px; --lq-opacity: .14; }
   .lq-texture-layer[data-pattern="1"] { --lq-size: 22px; --lq-opacity: .28; }
@@ -371,57 +320,6 @@ html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
 /* Text pages: one flat colour per major editorial field. There are no
    gradients and no glass behind body copy; measure and alignment are kept
    deliberately consistent from section to section. */
-html[data-skin="paper"] body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) {
-  background-color: var(--soft-peach-cream) !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="about"] .why-hero,
-html[data-skin="paper"] body[data-page="legal"] .legal-poster-intro {
-  background-color: var(--soft-peach-cream) !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="about"] .editorial-spread,
-html[data-skin="paper"] body[data-page="about"] .close,
-html[data-skin="paper"] body[data-page="legal"] .legal-foot {
-  background-color: var(--soft-peach-accent) !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="about"] .editorial-spread--reflection,
-html[data-skin="paper"] body[data-page="about"] .why-panel:nth-of-type(4),
-html[data-skin="paper"] body[data-page="legal"] .clause:nth-of-type(3n) {
-  background-color: var(--soft-peach-paper) !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="about"] .why-panel,
-html[data-skin="paper"] body[data-page="legal"] .clause {
-  background-color: var(--soft-peach) !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="about"] .why-panel:nth-of-type(3),
-html[data-skin="paper"] body[data-page="legal"] .clause:nth-of-type(even) {
-  background-color: #E8A276 !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="about"] :is(.why-hero-title,.hero-copy,.panel-head),
-html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro>*,.clause>*) {
-  min-width: 0;
-}
-html[data-skin="paper"] body[data-page="about"] :is(.panel-head p,.why-card p,.method p,.boundary p),
-html[data-skin="paper"] body[data-page="legal"] .clause :is(p,li) {
-  max-width: 58ch;
-}
-
-html[data-skin="paper"] body[data-page="guide"] {
-  --guide-field: var(--soft-peach) !important;
-  --guide-ink: var(--soft-peach-ink) !important;
-  background-color: var(--guide-field) !important;
-}
-html[data-skin="paper"] body[data-page="guide"][data-poster-step="1"] { --guide-field: var(--soft-peach-paper) !important; }
-html[data-skin="paper"] body[data-page="guide"][data-poster-step="2"] { --guide-field: #E8A276 !important; }
-html[data-skin="paper"] body[data-page="guide"][data-poster-step="3"] { --guide-field: var(--soft-peach-accent) !important; }
-html[data-skin="paper"] body[data-page="guide"][data-poster-step="4"] { --guide-field: var(--soft-peach-cream) !important; }
-html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: min(78%, 840px); }
-html[data-skin="paper"] body[data-page="guide"] .lesson .lead { max-width: 50ch; }
 
 /* Utility pages: form fields are opaque enough to stay legible. The card and
    panel grounds that used to be set here are owned by refinement.css. */
@@ -465,12 +363,8 @@ html[data-skin="paper"] body[data-page="settings"] > .toast {
 }
 
 @media (max-width: 760px) {
-  html[data-skin="paper"] body[data-page="about"] :is(.why-hero,.editorial-spread,.why-panel,.close),
-  html[data-skin="paper"] body[data-page="legal"] :is(.legal-poster-intro,.clause,.legal-foot) {
-    padding-left: 22px !important;
-    padding-right: 22px !important;
-  }
-  html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: 100%; }
+  
+  
 }
 
 @media (prefers-reduced-transparency: reduce) {
@@ -490,27 +384,10 @@ html[data-skin="paper"] body[data-page="settings"] > .toast {
    the body text, so the eye separates pattern from copy line by line instead
    of reading. Cut it on the three text routes: still legible as material at
    arm's length, no longer competing at reading distance. */
-body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) .lq-texture-layer.is-current {
-  opacity: calc(var(--lq-opacity, .2) * .40);
-}
 
 /* Secondary actions -------------------------------------------------------
    "Back" was drawn as a bare underline in the inherited colour at the page's
    own opacity, which on the darker poster steps left it near-invisible — a
    navigation control you have to hunt for. Give it the same glass body as
    every other control so it is quiet by weight rather than by disappearing. */
-html[data-skin="paper"] body[data-page="guide"] :is(.back, .next) {
-  min-height: 40px;
-  padding: 0 16px !important;
-  border: var(--ui-hairline) solid var(--ui-line) !important;
-  border-radius: var(--ui-radius-small) !important;
-  background: var(--ui-glass) !important;
-  -webkit-backdrop-filter: var(--ui-glass-filter);
-  backdrop-filter: var(--ui-glass-filter);
-  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
-  color: var(--soft-peach-ink) !important;
-}
-html[data-skin="paper"] body[data-page="guide"] .next {
-  background: var(--soft-peach-accent) !important;
-  border-color: transparent !important;
-}
+

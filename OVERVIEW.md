@@ -225,7 +225,7 @@ BioRhyme(可变字重 200–800,单文件)/ Spinnaker / Pacifico,全部自托管
 
 - **21 个元素被 3–4 个样式表同时上色**(login `.card`、settings `.panel` 被四个)——
   这是每一次「改了没效果」的根源。
-- 约 **47 处裸 hex** 待清(`refinement.css` / `poster-pages.css` / `luxury-glass.css`)。
+- 约 **9 处**真正裸写的颜色声明待清(`luxury-glass.css` 7 / `refinement.css` 2)。原来记的 47 处里,大部分是 `var(--token, #hex)` 兜底值和令牌定义 —— 都是合法写法;`poster-pages.css` 整份退役后又去掉一批。
 - **CLAUDE.md §2 架构图过期**:把 `styles.css` 和 `prompt-engine.js` 列在仓库根目录,
   前者不存在,后者在 `functions/_lib/`。
 - `liuyao-chart.js` 是死代码(没有任何调用),文件保留但 script 标签已移除。
