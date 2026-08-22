@@ -189,14 +189,17 @@ body[data-page="app"] .reading-body .rw-s0,
 body[data-page="app"] .reading-body .rw-s4 { filter: none !important; }
 body[data-page="about"] .page-fx { display: none; }
 
-/* Keep the animated range as quiet linework instead of a soft multicolour
-   wash. It remains recognisably BourneWise but no longer competes with type. */
 html[data-skin="paper"] body .mtn-sky {
   animation: none !important;
   background: var(--bw-palette-cloud) !important;
   transition: background-color 1.5s var(--ease-in-out);
 }
-html[data-skin="paper"] body .mtn-bg .fill { opacity: .18 !important; }
+/* Fill OPACITY is not set here any more. It was — at .18 !important — which
+   outspecifies the engine's own injected sheet, so the ridges painted at 18%
+   of the curated colour no matter what mountain-range.js said. The palettes
+   looked washed out because 85% of every card was being blended away here,
+   not because the cards lacked colour. Same trap as the contour widths above,
+   same fix: one definition, living with the geometry. */
 /* Written for the cloud group, which is the other clipped node in the range.
    Excluding the moire group matters: its bands are also clipped <use>, and at
    .13 !important the texture is decided here by a rule that was never about it. */
