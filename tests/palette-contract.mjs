@@ -79,6 +79,15 @@ for (const seg of ["自定义", "蓝靛段"]) {
    segments without quietly re-excluding these. */
 const gate = Number((background.match(/var OPENING_MIN_SATURATION = ([\d.]+)/) || [])[1]);
 assert.ok(Number.isFinite(gate), "OPENING_MIN_SATURATION must be a number");
+
+/* The ceiling must have ONE definition. It used to be typed twice — in
+   applyPalette and again inside onScreenSaturation — so raising one left the
+   gate measuring on the old scale and the change looked like it did nothing. */
+const ceiling = Number((background.match(/var RIDGE_MAX_SATURATION = ([\d.]+)/) || [])[1]);
+assert.ok(Number.isFinite(ceiling), "RIDGE_MAX_SATURATION must be a named constant");
+assert.ok(!/Math\.min\(s, \.?\d/.test(background),
+  "onScreenSaturation must clamp with RIDGE_MAX_SATURATION, not a second copy of the number");
+
 const onScreen = (group) => {
   let total = 0;
   for (const hex of group.rows) {
@@ -87,15 +96,21 @@ const onScreen = (group) => {
     const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2;
     let s = 0;
     if (max !== min) s = l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
-    total += Math.min(s, 0.26);          /* the same ceiling applyPalette uses */
+    total += Math.min(s, ceiling);
   }
   return total / group.rows.length;
 };
+
+/* The gate may keep out groups that are colourless on their own card, but it
+   must never quietly grow into the owner's curated segment again — it once
+   held 15 of 34 out. These three have card saturation under a third of the
+   ceiling; anything beyond them has to be a deliberate, named decision. */
 const custom = groups.filter((group) => group.seg === "自定义");
-const locked = custom.filter((group) => onScreen(group) < gate);
-assert.deepEqual(locked.map((group) => group.id), [],
-  `OPENING_MIN_SATURATION=${gate} locks ${locked.length}/${custom.length} custom groups out of the`
-  + ` opening: ${locked.map((group) => group.id).join(" ")}`);
+const locked = custom.filter((group) => onScreen(group) < gate).map((group) => group.id).sort();
+assert.deepEqual(locked, ["193", "194", "195"],
+  `OPENING_MIN_SATURATION=${gate} now locks ${locked.length}/${custom.length} custom groups out of`
+  + ` the opening (${locked.join(" ") || "none"}). Expected only 193 194 195 — the colourless cards.`
+  + ` If this is intended, change the expectation here and say why.`);
 
 /* Fisher–Yates over a copy is a permutation: assert the shuffle cannot drop or
    duplicate a group, since a silent drop would simply retire a palette. */
