@@ -1,18 +1,12 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260821n");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260821n");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260821n");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260821n");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260822a");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260822a");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260822a");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260822a");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
-  --lux-glass-strong: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 70%, transparent);
-  --lux-glass-hover: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 76%, transparent);
-  --lux-glass-edge: color-mix(in srgb, var(--bw-palette-on-cloud, var(--ink)) 13%, transparent);
-  --lux-glass-shadow: color-mix(in srgb, var(--bw-palette-on-cloud, var(--ink)) 14%, transparent);
-  --lux-glass-blur: 20px;
-  --lux-glass-blur-heavy: 28px;
 }
 
 html[data-skin="paper"] body {
@@ -108,40 +102,11 @@ body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
 .lq-accent--legal-intro { top: 16%; left: 52%; right: auto; width: clamp(82px, 8vw, 124px); }
 .lq-accent--legal-clause { right: 7%; bottom: 9%; width: clamp(54px, 6vw, 82px); opacity: .5; }
 
-/* Shared misted material. It has no visible border; separation comes from
-   blur, a restrained inset highlight, and a soft ambient shadow. */
-:where(
-  .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,
-  .pagehead,.top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,
-  .estimator,.pack,.term,.billing-mail-note,.toast,.progress,.controls,
-  .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
-) {
-  border: 0 !important;
-  background-color: var(--lux-glass) !important;
-  background-image: none !important;
-  -webkit-backdrop-filter: blur(var(--lux-glass-blur)) saturate(116%);
-  backdrop-filter: blur(var(--lux-glass-blur)) saturate(116%);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 40%, transparent),
-    0 14px 42px -28px var(--lux-glass-shadow) !important;
-}
-
-:where(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
-  background-color: var(--lux-glass-strong) !important;
-  -webkit-backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
-  backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
-}
-
-/* A glass surface should remain still; only its material weight changes. */
-@media (hover:hover) and (pointer:fine) {
-  :where(.plan,.rate-card,.pack,.term,.lesson-card,.method,.why-card,.clause):hover {
-    transform: none !important;
-    background-color: var(--lux-glass-hover) !important;
-    box-shadow:
-      inset 0 1px 0 color-mix(in srgb, white 52%, transparent),
-      0 18px 48px -30px var(--lux-glass-shadow) !important;
-  }
-}
+/* The shared misted material that used to sit here — the :where() glass plane,
+   its heavier second plane, and the hover weight — is gone. Measured state by
+   state across five routes and every media it declares, not one of its
+   properties won on any element: refinement.css owns the glass now. What is
+   left in this file is only what still decides something. */
 
 :where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step) {
   transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 90ms ease-out !important;
@@ -152,12 +117,6 @@ body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
 
 /* App chrome and answer surfaces. The moving landscape remains behind the
    glass rather than being baked into the controls. */
-body[data-page="app"] .sidebar {
-  background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 76%, transparent) !important;
-}
-body[data-page="app"] :is(.composer,.method-menu,.carry-menu) {
-  background-color: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 62%, transparent) !important;
-}
 body[data-page="app"] :is(.msg-user,.reading) {
   border: 0 !important;
   background-color: var(--lux-glass-quiet) !important;
@@ -170,15 +129,9 @@ body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)
   border: 0 !important;
 }
 
-/* Pricing is texture-led. Remove the landscape and the raster editorial
-   image; keep its copy as a transparent glass note over the monogram field. */
 /* The usage spread is gone from pricing.html: hiding its plate left a 260px
    empty panel, which is the "strange box" it always read as. Nothing here
    replaces it — the sentence it carried now sits with the rates. */
-body[data-page="pricing"] :is(.plan,.rate-card,.estimator,.pack,.term,.ledgerstrip,.billing-toggle,.billing-mail-note) {
-  border: 0 !important;
-  background-color: var(--lux-glass) !important;
-}
 
 /* Long-form pages become one continuous editorial field. Their text is not
    trapped in glass cards; only navigation and true controls use material. */
@@ -228,24 +181,6 @@ body[data-page="guide"] .controls {
   background-color: var(--lux-glass) !important;
 }
 
-/* Login/settings/utility routes use one strong material plane over the same
-   small monogram field. */
-/* .section is NOT in this list, deliberately. On settings each <section> wraps
-   exactly one .panel at the same x and the same width, so listing both painted
-   one card twice: two 66% white planes stacked, compositing to 88% over the
-   panel and 66% along the header strip that only has one. That tone step is
-   the "box inside a box" — there is only ever one box, drawn twice.
-   The section stays a transparent grouping element; the panel is the surface. */
-body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.not-found,.nf-card) {
-  border: 0 !important;
-  background-color: var(--lux-glass-strong) !important;
-  -webkit-backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
-  backdrop-filter: blur(var(--lux-glass-blur-heavy)) saturate(118%);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 42%, transparent),
-    0 28px 70px -46px var(--lux-glass-shadow) !important;
-}
-
 @media (max-width: 760px) {
   html[data-skin="paper"] body::after {
     background-size: 25px 25px;
@@ -268,9 +203,6 @@ body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(
   .lq-accent--legal-intro { top: 13%; left: auto; right: 14px; width: 66px; }
   .lq-accent--about-panel,
   .lq-accent--legal-clause { right: 16px; bottom: 7%; width: 54px; opacity: .4; }
-  :where(.sidebar,.pagehead,.top,.card,.section .panel) {
-    --lux-glass-blur-heavy: 22px;
-  }
 }
 
 @media (prefers-reduced-transparency: reduce) {
@@ -330,14 +262,8 @@ html[data-skin="paper"] {
   --soft-peach-glass: var(--ui-glass);
   --soft-peach-glass-soft: var(--ui-glass-soft);
   --soft-peach-glass-strong: var(--ui-glass-strong);
-  --soft-peach-glass-hover: rgb(var(--ui-glass-tint) / .78);
-  --soft-peach-shadow: color-mix(in srgb, var(--soft-peach-ink) 18%, transparent);
   --lux-glass: var(--soft-peach-glass);
   --lux-glass-quiet: var(--soft-peach-glass-soft);
-  --lux-glass-strong: var(--soft-peach-glass-strong);
-  --lux-glass-hover: var(--soft-peach-glass-hover);
-  --lux-glass-edge: var(--soft-peach-line);
-  --lux-glass-shadow: var(--soft-peach-shadow);
 }
 
 html[data-skin="paper"] body {
@@ -378,11 +304,6 @@ html[data-skin="paper"] body :is(
 html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
   background-color: var(--soft-peach-glass-strong) !important;
 }
-@media (hover:hover) and (pointer:fine) {
-  html[data-skin="paper"] body :is(.plan,.rate-card,.pack,.term,.lesson-card,.method,.why-card):hover {
-    background-color: var(--soft-peach-glass-hover) !important;
-  }
-}
 
 /* App: retain the established sidebar/composer layout, freeze only its UI
    material. Reading content remains quieter than the controls. */
@@ -411,13 +332,6 @@ html[data-skin="paper"] body[data-page="app"] :is(.msg-user,.reading) {
 html[data-skin="paper"] body[data-page="app"] .msg-user {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, transparent) !important;
   color: #251A17 !important;
-}
-html[data-skin="paper"] body[data-page="app"] :is(.send,.exchange) {
-  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
-}
-html[data-skin="paper"] body[data-page="app"] :is(.stria,.chip,.rd-action,.rd-prompt) {
-  color: var(--soft-peach-ink) !important;
 }
 
 /* Pricing keeps the living landscape. Its plans are fixed peach glass, so
@@ -509,11 +423,8 @@ html[data-skin="paper"] body[data-page="guide"][data-poster-step="4"] { --guide-
 html[data-skin="paper"] body[data-page="guide"] :is(.lesson,.controls) { width: min(78%, 840px); }
 html[data-skin="paper"] body[data-page="guide"] .lesson .lead { max-width: 50ch; }
 
-/* Utility pages use the previous single-carrier composition over the fixed
-   Soft Peach material. Form fields are opaque enough to stay legible. */
-html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"],[data-page="not-found"]) :is(.card,.panel,.not-found,.nf-card) {
-  background-color: var(--soft-peach-glass-strong) !important;
-}
+/* Utility pages: form fields are opaque enough to stay legible. The card and
+   panel grounds that used to be set here are owned by refinement.css. */
 /* .field is deliberately NOT in this list. It is the wrapper holding the
    label and the input, so giving it a control's border and ground drew a
    box around the label with a second box for the input inside it. Only
@@ -535,6 +446,10 @@ html[data-skin="paper"] body:is([data-page="login"],[data-page="settings"]) :is(
    two translucencies composited to a different tone and drew a seam
    across the card — and with !important it silently undid the fix made
    in login.html. One carrier, one material. */
+/* Kept, and measured: the rule-level probe called this dead, and the
+   before/after capture caught it winning. Removing it dropped the active tab
+   to 76% white with no shadow — a control reading as glass. A probe's verdict
+   is worth what the probe is worth; the visible diff decides. */
 html[data-skin="paper"] body[data-page="login"] .tab.on {
   background-color: #FFFFFF !important;
   box-shadow: var(--ui-solid-shadow) !important;
