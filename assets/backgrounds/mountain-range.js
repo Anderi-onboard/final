@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822b", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822b";
+    ? new URL("../palettes/color-groups.json?v=20260822c", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822c";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -360,11 +360,18 @@
      all. The catalogue's segment names describe where a group came from, not
      what it looks like.
 
-     So the pool is filtered by the thing that was actually wanted: colour the
-     eye receives. 33 of 114 groups qualify (14 indigo, 19 custom), about
-     eight minutes of opening. */
+     So the pool was filtered by the thing that was actually wanted: colour the
+     eye receives.
+
+     ⚠️ At 0.23 that filter kept 15 of the owner's 34 custom groups out of the
+     opening entirely — 44% of the segment could never open, including every
+     quiet one. The curated groups are the owner's data, and excluding nearly
+     half of them from the moment a visitor arrives is not a tuning decision to
+     make on their behalf. The gate is open at 0; the constant stays so the
+     threshold can be raised again deliberately, with the cost known. Pool is
+     now 49 of 114 (34 custom, 15 indigo). */
   var OPENING_SEGMENTS = ["自定义", "蓝靛段"];
-  var OPENING_MIN_SATURATION = 0.23;
+  var OPENING_MIN_SATURATION = 0;
 
   /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
      value that reaches the screen, not the one on the card. Cheap: 114 groups
