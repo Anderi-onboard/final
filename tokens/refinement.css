@@ -738,6 +738,17 @@ html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is
    materials, one page. Screenshotting over the live range is what made it
    obvious; a fullPage capture paints the fixed backdrop only once at the
    top and hides it. */
+/* Inherited from poster-pages.css, which pricing was the only route still
+   loading. Of its 121 rules exactly one could ever match there — this one; the
+   other 120 are scoped to about/guide/legal, which load blocks/method/legal.css
+   instead, and its ::before/::after companions are already killed by the
+   content:none in luxury-glass.css. One rule does not earn a stylesheet. */
+body[data-page="pricing"] :is(.hero, .plans, .rates, .packs) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
 /* .section is NOT in this list, deliberately. On settings each <section> wraps
    exactly one .panel at the same x and the same width, so listing both painted
    one card twice: two 66% white planes stacked, compositing to 88% over the

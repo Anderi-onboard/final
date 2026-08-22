@@ -363,7 +363,7 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
    `tests/style-ownership.mjs` 已上:两张遗留表只许变小,路由的样式表集合不许再加,
    色块路由不许沾这三张表。**下一步是逐状态截图核对后分批退役**,
    目标是 `legal.css` 那个形状:一条路由一张表,20 胜 0 负。
-7. 约 47 处裸 hex 待清(`refinement.css` / `poster-pages.css` / `luxury-glass.css`)。
+7. 约 **9 处**真正裸写的颜色声明待清(`luxury-glass.css` 7 / `refinement.css` 2)。原来记的 47 处里,大部分是 `var(--token, #hex)` 兜底值和令牌定义 —— 都是合法写法;`poster-pages.css` 整份退役后又去掉一批。
 
 ---
 
