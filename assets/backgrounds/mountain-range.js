@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822c", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822c";
+    ? new URL("../palettes/color-groups.json?v=20260822d", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822d";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -371,7 +371,27 @@
      threshold can be raised again deliberately, with the cost known. Pool is
      now 49 of 114 (34 custom, 15 indigo). */
   var OPENING_SEGMENTS = ["自定义", "蓝靛段"];
-  var OPENING_MIN_SATURATION = 0;
+  /* Reset onto the new scale. At .22 it gates out only 195, 194 and 193 —
+     cards whose own saturation is under a third of the ceiling, so they are
+     colourless by content, not by clamping. The other 31 custom groups all
+     open. Set to 0 to let even those three open. */
+  var OPENING_MIN_SATURATION = .22;
+
+  /* How much of a card's colour is allowed to reach the screen. These were
+     .26 / .14 / .22, which threw away 60% of the catalogue's saturation: the
+     cards average .599, the screen showed .242, and NO group anywhere could
+     exceed .26 no matter how saturated its card. The landscape was grey by
+     construction, not by palette.
+     ⚠️ RIDGE_MAX_SATURATION must be the only definition. It used to be typed
+     twice — here and inside onScreenSaturation — so raising one silently left
+     the opening gate measuring on the old scale. */
+  var RIDGE_MAX_SATURATION = .42;
+  /* .24 is not a taste pick: it is the highest sky ceiling at which all 114
+     groups still clear 4.5:1 for --dim, which the 12px note above the fold
+     uses. At .26 one group drops to 4.48. Raise this only with that number
+     re-measured. */
+  var SKY_MAX_SATURATION = .24;
+  var WATER_MAX_SATURATION = .34;
 
   /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
      value that reaches the screen, not the one on the card. Cheap: 114 groups
@@ -384,7 +404,7 @@
       var r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
       var max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, s = 0;
       if (max !== min) s = l > .5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
-      total += Math.min(s, .26);            /* the same ceiling applyPalette uses */
+      total += Math.min(s, RIDGE_MAX_SATURATION);   /* the ceiling applyPalette uses */
     }
     return total / group.rows.length;
   }
@@ -457,12 +477,12 @@
     /* The catalogue can contain very pale lilacs and candy-bright accents.
        Keep their hue relationships, but force every live UI colour into the
        same low-glare editorial range before exposing it as a CSS token. */
-    var tonedRows = group.rows.map(function (hex) { return mutedHex(hex, .60, .26); });
+    var tonedRows = group.rows.map(function (hex) { return mutedHex(hex, .60, RIDGE_MAX_SATURATION); });
     var backgrounds = group.backgrounds || {};
     /* Keep the sky distinctly lighter than the water and ridges without
        introducing a bright white field or another visual treatment. */
-    var tonedCloud = mutedHex(backgrounds.sky || group.cloud, .82, .14, .76);
-    var tonedWater = mutedHex(backgrounds.water || group.rows[4], .64, .22, .42);
+    var tonedCloud = mutedHex(backgrounds.sky || group.cloud, .82, SKY_MAX_SATURATION, .76);
+    var tonedWater = mutedHex(backgrounds.water || group.rows[4], .64, WATER_MAX_SATURATION, .42);
     var gemIndex = Array.isArray(group.gems) && group.gems.length
       ? Math.max(0, Math.min(9, group.gems[0] - 1))
       : 5;
