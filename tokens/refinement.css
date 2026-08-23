@@ -458,7 +458,10 @@ body[data-page="app"] .composer-help { color: var(--dim); }
 /* The footer sits lowest, over the darkest ridge, where even the scrim leaves
    --dim at 3.57:1 against 11px text. It is a row of links, so full ink is the
    honest weight for it anyway. */
-body[data-page="app"] :is(.site-foot, .site-foot a) { color: var(--ink); }
+/* The footer sits straight on the landscape, so it takes the palette-derived
+   ink rather than a fixed one. Without this it stayed a single brown on all
+   114 groups and dropped to 3.7:1 on the darker cards. */
+body[data-page="app"] :is(.site-foot, .site-foot a) { color: var(--bw-ink-on-sky, var(--ink)); }
 
 /* The same fix for the two short glass pages. Their footers sit at y~850 in a
    900px viewport, which is squarely on the range's darkest lower ridges, and
