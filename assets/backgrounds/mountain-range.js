@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822g", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822g";
+    ? new URL("../palettes/color-groups.json?v=20260822h", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822h";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -13,8 +13,12 @@
   var paletteLayerTimers = [];
 
 
-  /* Off by default; ?ridges=1 (or ?ridges=0 to force off) overrides per visit. */
-  var ridgeDrift = false;
+  /* ⭐ ON by default (owner's call, 2026-08-22). The fps numbers arguing
+     against it all came from a software rasteriser in CI; on real hardware —
+     including the owner's phone — the range drifts without stutter, and a
+     measurement taken on a machine nobody uses does not get to decide how the
+     site looks. ?ridges=0 forces it off if a device does struggle. */
+  var ridgeDrift = true;
   try {
     var q = new URLSearchParams(location.search).get('ridges');
     if (q !== null) ridgeDrift = q !== '0' && q !== 'false';
@@ -80,7 +84,7 @@
        selector loses the tie and the bands inherit the plane's opacity instead
        of their own. The element name buys the one point that settles it. */
     + '.mtn-bg .moire use{fill:none;stroke-width:1.7;stroke-linecap:round;vector-effect:non-scaling-stroke}'
-    + '.mtn-bg g.moire{opacity:.42;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
+    + '.mtn-bg g.moire{opacity:.17;transition:opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .moire.l4 use{stroke:color-mix(in srgb,var(--bw-palette-4,#756F68) 30%,transparent)}'
     + '.mtn-bg .moire.l5 use{stroke:color-mix(in srgb,var(--bw-palette-5,#756F68) 30%,transparent)}'
     + '.mtn-bg .moire.l6 use{stroke:color-mix(in srgb,var(--bw-palette-6,#756F68) 32%,transparent)}'
@@ -89,8 +93,8 @@
        would also halve every moiré band — line-art is the resting state, so
        that would silently decide the shipping strength. Opt out and set it. */
     + '.mtn-bg.line-art .moire use{opacity:1}'
-    + '.mtn-bg.line-art g.moire{opacity:.34}'
-    + '@media (prefers-reduced-motion:reduce){.mtn-bg g.moire{opacity:.3}}'
+    + '.mtn-bg.line-art g.moire{opacity:.13}'
+    + '@media (prefers-reduced-motion:reduce){.mtn-bg g.moire{opacity:.12}}'
     /* ENTRANCE FLOOD — on page arrival the range pours up into place. init()
        holds line-art off for a beat so the coloured ridges surge in, then adds
        line-art so the colour recedes and leaves the line-drawing: background
@@ -198,11 +202,17 @@
      the ridge's own waveform. Keep the tilt under ~1°: past that the bands
      separate and you can count them, which is the moment it stops being
      texture and starts being stripes. */
+  /* ⚠️ These counts were tuned when the fills painted at .18. Once the fill
+     opacity was returned to the engine's .72, the same bands stopped reading
+     as texture and became countable stripes — the exact failure the note above
+     describes, arrived at from the other direction: not by tilting too far,
+     but by the ground underneath getting four times stronger.
+     Halved and spread; the moiré is a beat against the ridge, not a hatch. */
   var MOIRE = {
-    4: { n: 20, gap: 3.4, tilt: .30 },
-    5: { n: 24, gap: 3.0, tilt: .26 },
-    6: { n: 24, gap: 2.8, tilt: .34 },
-    7: { n: 18, gap: 3.2, tilt: .22 }
+    4: { n: 10, gap: 6.2, tilt: .30 },
+    5: { n: 12, gap: 5.6, tilt: .26 },
+    6: { n: 12, gap: 5.2, tilt: .34 },
+    7: { n: 9, gap: 6.0, tilt: .22 }
   };
   var CLOUDS = [
     { t: "translate(180,12) scale(1.6)", o: .55, d: "0s" },
