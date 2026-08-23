@@ -4,14 +4,21 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822f", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822f";
+    ? new URL("../palettes/color-groups.json?v=20260822g", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822g";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
   var paletteTimer = 0;
   var paletteLayerTimers = [];
 
+
+  /* Off by default; ?ridges=1 (or ?ridges=0 to force off) overrides per visit. */
+  var ridgeDrift = false;
+  try {
+    var q = new URLSearchParams(location.search).get('ridges');
+    if (q !== null) ridgeDrift = q !== '0' && q !== 'false';
+  } catch (e) {}
 
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
@@ -122,7 +129,24 @@
        unconditionally, so the site has been running 3 ridges + 2 clouds while
        appearing to declare sixteen animations. Removed rather than left to
        mislead the next reader. */
-    + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
+    /* ⭐ RIDGE DRIFT is a switch, not a verdict. Owner wants the range moving;
+       every measurement saying it costs 40fps was taken on a software
+       rasteriser (SwiftShader), which is pessimistic for a real GPU in a way
+       I cannot correct for from here. So it ships off, and `?ridges=1` turns
+       it on in the live page — judged on the machine that has to run it,
+       without a deploy.
+       What was tried and did NOT recover the cost, so nobody repeats it:
+       will-change:transform, dropping non-scaling-stroke, removing clip-path,
+       cutting to two planes, transforming the <svg> element instead of inner
+       <g>, and pre-rasterising to a bitmap. All 14–22fps against 61 at rest.
+       The cost is the re-raster of a large, detailed SVG per frame; it is not
+       the number of planes and not the backdrop-filters (disabling every
+       blurred panel recovered only 17 -> 27). */
+    + (ridgeDrift
+        ? '.mtn-bg .flow-2{animation:mtn-flow-l 260s linear infinite;will-change:transform}'
+        + '.mtn-bg .flow-4{animation:mtn-flow-r 300s linear infinite;will-change:transform}'
+        + '.mtn-bg .flow-6{animation:mtn-flow-l 340s linear -40s infinite;will-change:transform}'
+        : '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}')
     + '.mtn-bg [class^="cloud-"]{animation:none}'
     + '.mtn-bg .cloud-1{animation:mtn-cloud-r 220s linear infinite;will-change:transform}'
     + '.mtn-bg .cloud-2{animation:mtn-cloud-l 210s linear infinite;will-change:transform}'
@@ -255,6 +279,70 @@
   function readableOn(hex) {
     var l = luminance(hex);
     return (1.05 / (l + .05)) >= ((l + .05) / .05) ? "#ECE6DC" : "#141413";
+  }
+
+  function toHsl(hex) {
+    var n = parseInt(hex.slice(1), 16);
+    var r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+    var l = (max + min) / 2, s = d ? d / (1 - Math.abs(2 * l - 1)) : 0, h = 0;
+    if (d) {
+      if (max === r) h = ((g - b) / d) % 6;
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+      h = (h * 60 + 360) % 360;
+    }
+    return { h: h, s: s, l: l };
+  }
+
+  function hslToHex(h, s, l) {
+    var c = (1 - Math.abs(2 * l - 1)) * s;
+    var x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    var m = l - c / 2, rr = 0, gg = 0, bb = 0;
+    if (h < 60) { rr = c; gg = x; }
+    else if (h < 120) { rr = x; gg = c; }
+    else if (h < 180) { gg = c; bb = x; }
+    else if (h < 240) { gg = x; bb = c; }
+    else if (h < 300) { rr = x; bb = c; }
+    else { rr = c; bb = x; }
+    return '#' + [rr, gg, bb].map(function (ch) {
+      return Math.round((ch + m) * 255).toString(16).padStart(2, '0');
+    }).join('').toUpperCase();
+  }
+
+  function contrast(a, b) {
+    var x = luminance(a), y = luminance(b);
+    return (Math.max(x, y) + .05) / (Math.min(x, y) + .05);
+  }
+
+  /* Text that floats directly on the landscape, coloured BY the landscape.
+     It carries the group's hue so it belongs to the picture, but the tint is
+     deliberately shallow — INK_TINT_MAX_SATURATION keeps it off the neon end,
+     which is the "no extreme colours" rule. Near-black and near-white are the
+     exception: when no tinted candidate can clear the ratio, they are the
+     honest answer rather than a tint that cannot be read.
+     ⚠️ Ratio first, hue second. A tinted colour that misses the ratio is not a
+     softer choice, it is unreadable text. */
+  var INK_TINT_MAX_SATURATION = .34;
+  var INK_DARK_LIGHTNESS = .17;
+  var INK_LIGHT_LIGHTNESS = .93;
+
+  function inkOn(bgHex, minRatio) {
+    var hsl = toHsl(bgHex);
+    var s = Math.min(hsl.s, INK_TINT_MAX_SATURATION);
+    var candidates = [
+      hslToHex(hsl.h, s, INK_DARK_LIGHTNESS),
+      hslToHex(hsl.h, s * .8, INK_LIGHT_LIGHTNESS),
+      "#141413",
+      "#FFFFFF"
+    ];
+    var best = candidates[2], bestRatio = 0;
+    for (var i = 0; i < candidates.length; i++) {
+      var ratio = contrast(candidates[i], bgHex);
+      if (ratio >= minRatio) return candidates[i];   /* first that clears wins */
+      if (ratio > bestRatio) { bestRatio = ratio; best = candidates[i]; }
+    }
+    return best;
   }
 
   function mutedHex(hex, maxLightness, maxSaturation, minLightness) {
@@ -509,6 +597,12 @@
        while neighbouring planes start 400ms apart. */
     queuePaletteLayer(0, function () {
       root.style.setProperty("--bw-palette-cloud", tonedCloud);
+      /* Text sitting straight on the landscape, tinted by the landscape.
+         Two roles because they carry different weights: --bw-ink-on-sky is for
+         reading sizes and holds 4.5:1, --bw-ink-on-sky-strong is for the
+         display type, which is large enough for 3:1 but reads better dark. */
+      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 4.5));
+      root.style.setProperty("--bw-ink-on-sky-strong", inkOn(tonedCloud, 7));
       document.querySelectorAll(".mtn-bg [clip-path] > use").forEach(function (node) {
         node.style.fill = tonedCloud;
       });
