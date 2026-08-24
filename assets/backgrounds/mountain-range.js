@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822m", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822m";
+    ? new URL("../palettes/color-groups.json?v=20260822n", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822n";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -278,6 +278,19 @@
 
   var CLOUD = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30 C 116 32 116 44 100 42 C 96 50 76 48 70 40 C 64 50 40 50 34 40 C 22 44 6 42 18 30 Z";
   var CLOUDC = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30";
+  /* y is the original spacing. trim is how much of each end is left undrawn,
+     in percent of the arc: none at the top where the copy follows the outline,
+     more further down where it would otherwise push out through the sides. */
+  /* Asymmetric on purpose. The arc's first segment (M 18 30 C 8 30 5 18 18 14)
+     doubles back on itself before it climbs, so the stroke overlaps and reads
+     as a dark hook hanging off the left — that, not the clip, is what was ugly
+     at that end. It is cut away. The right end merely descends, so it needs
+     only enough taken off to keep clear of the silhouette. */
+  var CLOUD_ROWS = [
+    { y: 7, head: 19, tail: 3 },
+    { y: 15.5, head: 26, tail: 10 },
+    { y: 22, head: 35, tail: 18 }
+  ];
   var WATER = "M -2000 476 C -1660 442 -1320 510 -980 478 C -640 446 -300 514 40 480 C 380 446 720 508 1060 476 C 1400 444 1740 510 2080 478 C 2420 446 2760 514 3100 480 C 3440 448 3740 502 4000 476 L 4000 526 C 3700 548 3400 498 3060 530 C 2720 562 2380 500 2040 532 C 1700 564 1360 502 1020 530 C 680 558 340 504 0 532 C -340 560 -680 500 -1020 530 C -1360 560 -1700 502 -2000 526 Z";
 
   /* Close each rounded ridge to the viewport floor; only the organic top edge
@@ -383,13 +396,24 @@
     var clouds = '';
     CLOUDS.forEach(function (c, idx) {
       var cc = '';
-      /* The original three translated copies, restored. Two later attempts made
-         it worse and are recorded so they are not tried again: thinning the
-         stroke and respacing them (6/15/24 at 2.6) read as scratchy, and
-         nesting them by scaling toward the cloud centre turned the layered edge
-         into concentric rings. The stroke ends being clipped by the silhouette
-         is part of how this reads as a drawn cloud rather than a diagram. */
-      [7, 15.5, 22].forEach(function (y) { cc += '<use href="#mxy-cloud-c" y="' + y + '"/>'; });
+      /* The original three translated copies — the layered edge is right, and two
+         attempts at replacing it were worse: thinning and respacing (6/15/24 at
+         2.6) read as scratchy, nesting by scaling toward the centre turned the
+         layers into concentric rings.
+
+         What WAS wrong is how they ended. Each copy is the same arc pushed down,
+         so the lower ones run past the cloud's rounded sides and the silhouette
+         clip cut them off square — a clip can only cut, it cannot end a stroke.
+         So the copies are trimmed instead: pathLength normalises each to 100
+         units and the dash draws only the middle, more of it taken off the
+         deeper the copy sits, since that is where the arc overshoots most. The
+         curve is untouched; the parts that were being amputated are simply not
+         drawn, and round caps finish the ends properly. */
+      CLOUD_ROWS.forEach(function (r) {
+        cc += '<use href="#mxy-cloud-c" y="' + r.y + '" pathLength="100"'
+          + ' stroke-dasharray="' + (100 - r.head - r.tail) + ' 200"'
+          + ' stroke-dashoffset="' + (-r.head) + '"/>';
+      });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
         + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
