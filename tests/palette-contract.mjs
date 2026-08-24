@@ -132,7 +132,16 @@ assert.match(background, /for \(var i = list\.length - 1; i > 0; i--\)/, "shuffl
 assert.match(background, /class=\"fill l/, "palette ridge fills must be rendered");
 assert.match(background, /class=\"mtn-water\"/, "palette water role must be rendered");
 assert.match(background, /transition:fill 1\.5s/, "palette fills must interpolate for 1.5s");
-assert.match(background, /\(index \+ 1\) \* 400/, "ridge colours must remain staggered by 400ms");
+/* The cascade must exist and must stay short. 400ms spread twelve 1.5s fill
+   transitions over six seconds, so the range repainted continuously for six
+   seconds out of every fifteen: 12 long tasks, 1422ms, felt as a stutter on
+   every palette change. 120ms measured 1 task and 71ms. Collapsing it to zero
+   is worse again (7 tasks, 542ms) because every plane then repaints in one
+   frame — so assert a real, small gap rather than a specific number. */
+const stagger = Number((background.match(/queuePaletteLayer\(\(index \+ 1\) \* (\d+)/) || [])[1]);
+assert.ok(Number.isFinite(stagger) && stagger > 0 && stagger <= 200,
+  `ridge colours must cascade, and the cascade must fit inside the transition:`
+  + ` expected a stagger in (0, 200]ms, got ${stagger}`);
 assert.match(background, /paletteDwellMs = 15000/, "groups must dwell for 15 seconds");
 
 for (let index = 1; index <= 10; index += 1) {

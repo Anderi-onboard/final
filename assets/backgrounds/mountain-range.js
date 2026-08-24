@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822i", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822i";
+    ? new URL("../palettes/color-groups.json?v=20260822j", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822j";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -58,9 +58,17 @@
     /* Anthropic-art line language: warm near-black, rounded brush ends and a
        deliberately uneven cadence of weights rather than technical hairlines. */
     + '.mtn-bg .contour use,.mtn-bg .cloud-contour use{fill:none;stroke:rgba(20,20,19,.28);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
-    + '.mtn-bg .contour use:nth-child(3n+1){stroke-width:3.2;opacity:.72}'
-    + '.mtn-bg .contour use:nth-child(3n+2){stroke-width:4.9;opacity:.5}'
-    + '.mtn-bg .contour use:nth-child(3n){stroke-width:3.9;opacity:.62}'
+    /* ⚠️ No stroke-width here. It used to be three fixed numbers (3.2/4.9/3.9)
+       applied to every plane, while the contour pitch runs from 19 units at the
+       horizon down to 7 in the foreground. So the ink-to-pitch ratio climbed
+       from .26 at the back to .70 at the front, and round-capped strokes that
+       wide in a gap that narrow merge into lumps wherever two lines converge.
+       Width is now a fraction of each layer's own pitch, set inline where the
+       geometry is generated — the same rule marks.js already states for the
+       pattern fields. Only the opacity cadence stays here. */
+    + '.mtn-bg .contour use:nth-child(3n+1){opacity:.72}'
+    + '.mtn-bg .contour use:nth-child(3n+2){opacity:.5}'
+    + '.mtn-bg .contour use:nth-child(3n){opacity:.62}'
     + '.mtn-bg .fill{animation:none;opacity:.9;transition:fill 1.5s cubic-bezier(.77,0,.175,1),opacity 1s cubic-bezier(.16,1,.3,1)}'
     + '.mtn-bg .fill.l1{fill:var(--bw-palette-1,#D7D0C4)}.mtn-bg .fill.l2{fill:var(--bw-palette-2,#D7D0C4)}'
     + '.mtn-bg .fill.l3{fill:var(--bw-palette-3,#CEC4B5)}.mtn-bg .fill.l4{fill:var(--bw-palette-4,#CEC4B5)}'
@@ -83,7 +91,12 @@
     + '.mtn-bg .contour.l8 use{stroke:color-mix(in srgb,var(--bw-palette-8,#756F68) 48%,transparent)}'
     + '.mtn-bg .contour.l9 use{stroke:color-mix(in srgb,var(--bw-palette-9,#756F68) 50%,transparent)}'
     + '.mtn-bg .contour.l10 use{stroke:color-mix(in srgb,var(--bw-palette-10,#756F68) 50%,transparent)}'
-    + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent)}'
+    + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent);'
+    /* The clouds are drawn at 0.7x to 1.6x. With non-scaling-stroke the line
+       stayed 4 screen px at every size, so on the small clouds it approached
+       the gap between contour copies and they fused. Letting the stroke scale
+       with the cloud keeps ink and pitch in the same ratio at all six sizes. */
+    + 'vector-effect:none;stroke-width:2.6}'
     /* MOIRÉ — the only page texture. It is not a tile laid over the site: each
        band is the ridge's own contour path re-used at a fractional rotation,
        clipped to that ridge's silhouette. So it drifts with the layer it
@@ -209,6 +222,13 @@
      Deterministic on purpose, exactly as the casting figure's brush is: random
      per render would reshuffle on every navigation and read as a fault. */
   var LINE_DRIFT = [0, -3.4, 2.2, -1.1, 4.0];
+  /* Everything above is a SHAPE; these three turn it into a size. Tying them to
+     the pitch is what keeps the ink-to-ground ratio constant from the horizon
+     to the foreground, so no plane can crowd itself into lumps. Thickening the
+     drawing means raising INK_OF_PITCH, not typing a bigger pixel number. */
+  var INK_OF_PITCH = [.30, .40, .34];
+  var DRIFT_OF_PITCH = .30;
+  var WOBBLE_OF_PITCH = .17;
 
   /* Which planes carry the moiré, and how. `n` bands at `gap` units apart,
      each turned by a fraction of a degree — the tilt is what beats against
@@ -252,10 +272,17 @@
     LAYERS.forEach(function (L, idx) {
       var i = idx + 1, contour = '';
       for (var k = 1; k <= L.n; k++) {
-        var offset = k * L.step + LINE_WOBBLE[(k + i) % LINE_WOBBLE.length];
-        var drift = LINE_DRIFT[(k * 2 + i) % LINE_DRIFT.length] * (1 + i * .18);
+        /* Both wobbles are a FRACTION OF THIS LAYER'S PITCH, not a fixed number.
+           The x drift used to be scaled by layer index instead, which ran it to
+           1.6x the pitch in the foreground — far enough that neighbouring
+           contours crossed on any sloped part of the ridge, and thick round
+           strokes at a crossing read as a swelling rather than as two lines. */
+        var wob = LINE_WOBBLE[(k + i) % LINE_WOBBLE.length] / 2.8 * L.step * WOBBLE_OF_PITCH;
+        var offset = k * L.step + wob;
+        var drift = LINE_DRIFT[(k * 2 + i) % LINE_DRIFT.length] / 4 * L.step * DRIFT_OF_PITCH;
+        var w = Math.max(2.5, L.step * INK_OF_PITCH[k % INK_OF_PITCH.length]);
         contour += '<use href="#mw' + i + 'c" x="' + drift.toFixed(2)
-          + '" y="' + offset.toFixed(2) + '"/>';
+          + '" y="' + offset.toFixed(2) + '" style="stroke-width:' + w.toFixed(2) + '"/>';
       }
       var moire = '';
       if (MOIRE[i]) {
@@ -276,7 +303,7 @@
     var clouds = '';
     CLOUDS.forEach(function (c, idx) {
       var cc = '';
-      [7, 15.5, 22].forEach(function (y) { cc += '<use href="#mxy-cloud-c" y="' + y + '"/>'; });
+      [6, 15, 24].forEach(function (y) { cc += '<use href="#mxy-cloud-c" y="' + y + '"/>'; });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
         + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
@@ -617,7 +644,16 @@
     root.dataset.bwPaletteSegment = group.seg || "";
     root.style.removeProperty("--bw-palette-haze");
     /* Sky, ten ridges, then water: every plane interpolates for 1.5 seconds,
-       while neighbouring planes start 400ms apart. */
+       while neighbouring planes start 120ms apart.
+       ⭐ That gap was 400ms, which put the twelve 1.5s `fill` transitions across
+       a six-second window — six seconds of continuous full-SVG repaint every
+       fifteen, and the stutter felt on every palette change regardless of what
+       else was switched off. Measured over two changes: 12 long tasks totalling
+       1422ms at 400ms, 1 totalling 71ms at 120ms.
+       ⚠️ Not zero. Collapsing the stagger makes all twelve planes repaint in
+       the same frame — one huge task instead of many small ones, measured at 7
+       tasks and 542ms. The cascade is what spreads the work; it just has to be
+       short enough that the transitions overlap instead of queueing. */
     queuePaletteLayer(0, function () {
       root.style.setProperty("--bw-palette-cloud", tonedCloud);
       /* Text sitting straight on the landscape, tinted by the landscape.
@@ -632,7 +668,7 @@
     }, immediate);
 
     tonedRows.forEach(function (hex, index) {
-      queuePaletteLayer((index + 1) * 400, function () {
+      queuePaletteLayer((index + 1) * 120, function () {
         root.style.setProperty("--bw-palette-" + (index + 1), hex);
         root.style.setProperty("--bw-palette-on-" + (index + 1), readableOn(hex));
         document.querySelectorAll(".mtn-bg").forEach(function (el) {
