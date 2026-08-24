@@ -145,5 +145,24 @@ for (const [where, fn] of [['castFail', 'function castFail(err)'], ['follow-up f
     `${where} still removes the preview unconditionally`);
 }
 
+
+/* ── a cut reading enters history, and stays there ──────────────────────────
+   Keeping the node on screen is not enough: it lasts until the next render.
+   One interrupted cast was erased in three places, each independently —
+   castFail dropped the DOM node, nothing wrote the text to state, and on the
+   next page load the hydrate merge deleted the conversation outright because
+   it required a FINISHED reading to keep a local-only one. The reader paid for
+   that text, watched it arrive, and the product that carries history into the
+   next conversation threw it away. */
+const account = read('account.js');
+const castFailBody = chat.slice(chat.indexOf('function castFail(err)'), chat.indexOf('function castFail(err)') + 2600);
+assert.ok(/c\.msgs\.push\(\{ role: "oracle"[^}]*incomplete: true/.test(castFailBody),
+  'castFail does not commit the partial to the conversation — it survives the render and nothing else');
+assert.ok(/A\.syncCasting\(c\)/.test(castFailBody),
+  'the partial is kept locally but never synced, so it dies with the browser');
+assert.ok(!/role === "oracle" && String\(m\.text \|\| ""\)\.trim\(\)/.test(account),
+  'the hydrate merge still requires a finished reading to keep a local casting, '
+  + 'which deletes an interrupted one on the next page load');
+
 console.log('stream recovery OK — partial readings survive a cut stream, '
   + 'a dead stream still errors, nothing undelivered is billed, and no copy promises a refund');

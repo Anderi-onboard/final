@@ -1701,6 +1701,21 @@
       } else if (streamPreview && streamPreview.parentNode) {
         streamPreview.parentNode.removeChild(streamPreview);
       }
+      /* And commit it, which is the half that actually matters. Keeping the node
+         only survives until the next render; a reading the reader paid for has
+         to enter the history like any other, or it is gone on reload — and this
+         product carries history into the next conversation, so losing it costs
+         more than the text.
+
+         It is marked incomplete so the interface can offer to continue it, and
+         so nothing downstream mistakes a cut reading for a whole one. */
+      var partial = streamedAny && streamPreview ? String(streamPreview.textContent || "").trim() : "";
+      if (partial) {
+        c.msgs.push({ role: "oracle", text: partial, incomplete: true, spec: spec, board: castBoard });
+        save();
+        A.syncCasting(c);
+        renderList();
+      }
       live.classList.remove("casting-live");
       var p = document.createElement("p");
       p.className = "reading-error";

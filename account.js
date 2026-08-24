@@ -134,19 +134,25 @@
           // before hydrate flipped serverOn true, a dropped request) lives only
           // in the local mirror — replacing s.convs wholesale would silently
           // erase it. So: take every server casting, then re-attach any local
-          // conversation the server has never heard of that actually holds a
-          // finished reading, and push those back up so they stick next time.
+          // conversation the server has never heard of that holds anything at
+          // all, and push those back up so they stick next time.
           var serverConvs = d.castings.map(function (c) {
             var p = c.payload || {};
             return { id: c.id, title: c.title, msgs: p.msgs || [], method: c.method, _synced: true };
           });
           var serverIds = {};
           serverConvs.forEach(function (c) { serverIds[c.id] = true; });
+          /* Keep anything with content, not just anything with a FINISHED
+             reading. Requiring an oracle message meant a cast that broke
+             mid-stream was deleted here on the next page load — the reader had
+             paid for it, watched it write, and then the merge quietly removed
+             the record because the reading never completed. That was the third
+             place one interrupted cast got erased, after the failure handler
+             dropped the text and nothing wrote it to state. A casting that was
+             charged for belongs in history whether or not it finished. */
           var localOnly = (s.convs || []).filter(function (c) {
             if (!c || serverIds[c.id]) return false;
-            return (c.msgs || []).some(function (m) {
-              return m && m.role === "oracle" && String(m.text || "").trim();
-            });
+            return (c.msgs || []).length > 0;
           });
           s.convs = serverConvs.concat(localOnly);
           // Persist the recovered ones so a later reload finds them server-side.
