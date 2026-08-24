@@ -196,5 +196,47 @@ assert.equal(afterRelease.claimed, true,
   'a claim that was released must be claimable again — otherwise a failed request '
   + 'costs the reader their free reading permanently');
 
+// ── the copy must not promise units ────────────────────────────────────────
+//
+// This drifted twice. The welcome went 500 -> 1,500 -> one reading, and each
+// time the interface kept quoting the previous grant: pricing.html advertised
+// "1,500 welcome units" and the settings page said "500 welcome units" while
+// PLAN_GRANT.free was already 0. A visitor was told a balance they would never
+// receive, on the two screens where they decide whether to pay. Nothing failed —
+// the figure is only ever printed, never read back — so only someone comparing
+// files would catch it.
+//
+// Any unit figure attached to the free welcome is wrong by construction while
+// PLAN_GRANT.free is 0. Three things that look similar are legitimate and must
+// keep passing: the price ratio ("1,500 units per $1"), a paid plan's monthly
+// allowance ("28,500 units monthly"), and cost estimates ("about 440 units").
+assert.equal(PLAN_GRANT.free, 0,
+  'this guard assumes the free tier grants no units — if that changed, the copy '
+  + 'rule below has to change with it');
+
+/* Comments are not shown to anyone, and they legitimately discuss the old
+   grant — account.js explains that the welcome used to be 1,500 units and is
+   now one reading. Scanning them flagged that history as a live promise. Strip
+   comments and markup first; what is left is what a reader can actually see.
+   `//` is only treated as a comment at the start of a line, so URLs survive. */
+const stripMarkup = (text) => text
+  .replace(/\/\*[\s\S]*?\*\//g, ' ')
+  .replace(/^\s*\/\/.*$/gm, ' ')
+  .replace(/<!--[\s\S]*?-->/g, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&[a-z]+;|&#\d+;/gi, ' ').replace(/\s+/g, ' ');
+
+// A number next to "units" only matters when the surrounding words frame it as
+// something given away. "units per $1" is a price, not a gift.
+const PROMISES_UNITS = /(?:\b\d[\d,]*\s*(?:free|welcome)\s+units)|(?:(?:starts with|on us|welcome|claim)[^.\n]{0,40}?\b\d[\d,]*\s*units)|(?:\b\d[\d,]*\s*units[^.\n]{0,20}?(?:on us|welcome|free))/gi;
+
+for (const file of ['pricing.html', 'account.js', 'copy.js', 'index.html', 'settings.html', 'login.html']) {
+  const hits = (stripMarkup(readFileSync(`${ROOT}/${file}`, 'utf8')).match(PROMISES_UNITS) || [])
+    .filter((hit) => !/units per|per \$1/i.test(hit));
+  assert.deepEqual(hits, [],
+    `${file} advertises a unit figure as the free welcome, but PLAN_GRANT.free is `
+    + '0 — a new account receives no units at all, only one complete reading');
+}
+
 console.log('free reading OK — one per signup, claimable once under a race, '
   + 'never consumed by a follow-up, visible to the interface, and safe before its migration');

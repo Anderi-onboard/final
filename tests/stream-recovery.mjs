@@ -84,12 +84,19 @@ assert.ok(/throw readErr/.test(streamFn),
 const REFUND_CLAIMS = ['back where they were', 'nothing was charged', 'units refunded'];
 const MID_STREAM_COPY = [
   ['copy.js castFailed', (copy.match(/castFailed:.*/) || [''])[0]],
-  ['copy.js answerFailed', (copy.match(/answerFailed:.*/) || [''])[0]],
-  // chat-app.js writes the apostrophe as a ’ escape, copy.js as the glyph.
-  ...(chat.match(/msg = "The (?:reading|answer) didn(?:’|\\u2019)t make it through[^"]*"/g) || []).map(
-    (s, i) => [`chat-app.js fallback ${i + 1}`, s])
+  ['copy.js answerFailed', (copy.match(/answerFailed:.*/) || [''])[0]]
 ];
-assert.equal(MID_STREAM_COPY.length, 4, 'expected four pieces of mid-stream failure copy');
+/* There were four: these two, plus a hardcoded duplicate of each in
+   chat-app.js. The duplicates were what actually rendered — copy.js's pair had
+   no caller and had drifted to different wording, so the deck recorded one
+   sentence and the screen showed another. chat-app.js now reads copy.js like
+   every other string, which is the arrangement this file's header assumes.
+
+   Two, not four, is therefore the passing state. If this count rises, a second
+   owner has appeared again. */
+assert.equal(MID_STREAM_COPY.length, 2, 'mid-stream failure copy must live only in copy.js');
+assert.ok(!/msg = "The (?:reading|answer) didn/.test(chat),
+  'chat-app.js is hardcoding failure copy again instead of reading copy.js');
 for (const [where, text] of MID_STREAM_COPY) {
   assert.ok(text, `${where}: copy not found — the check below would pass vacuously`);
   for (const claim of REFUND_CLAIMS) {

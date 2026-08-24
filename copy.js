@@ -158,7 +158,9 @@
 
     /* ── account and session ────────────────────────────────────────────── */
     account: {
-      signInToCast: "Sign in to cast — a new account starts with 1,500 units on us.",
+      /* PLAN_GRANT.free is 0 and SIGNUP_FREE_READINGS is 1: a new account gets a
+         reading, never units. This promised a balance that never arrives. */
+      signInToCast: "Sign in to cast \u2014 your first reading is on us.",
       signedOut: "Signed out — your history and balance remain secure.",
       readingDeleted: "Reading deleted."
     },
@@ -172,14 +174,29 @@
       sessionExpired: "Your session has expired — sign in again to cast. Nothing was charged.",
       serverShort: "Not enough units on the server — add units and try again. Nothing was charged.",
       timedOut: "The reading timed out — please try again. Nothing was charged.",
-      castFailed: "The reading didn’t make it through. Metered usage settles on what the model actually produced, so check the balance above rather than assuming a refund. Try again in a moment.",
+      /* Rewritten against three faults it had. It said "the model", which is
+         our word, not the reader's — this file opens by ruling that out. It
+         said "Metered usage settles on what the model actually produced",
+         which is the billing pipeline described to someone who only has a
+         balance. And it ordered an audit ("check the balance above rather than
+         assuming a refund") at the moment the reader lost something, raising a
+         refund only to take it away. The fact is simpler and closes the
+         question instead of opening one: the number they can already see is
+         correct. */
+      castFailed: "The reading stopped partway \u2014 you're charged for the words that arrived, so the balance above is already final. Try again.",
+      /* 429. The old code had no branch for this at all, so a reader who cast
+         too fast was told to go check their units. */
+      tooFast: "Too many readings in a short time \u2014 wait a few minutes and cast again. Nothing was charged.",
+      /* 400. Also had no branch: a malformed request rendered as a billing
+         question too. */
+      badRequest: "That question didn\u2019t come through \u2014 try casting again. Nothing was charged.",
       /* The model provider refused before generating anything. The generic
          failure line below tells the reader to check their balance rather than
          assume a refund — true when a reading died mid-flight, and alarming
          nonsense when nothing was ever produced. This one says what happened. */
       upstreamDown: "The reading service is unavailable right now — nothing was generated and nothing was charged. Your free reading is still yours. Please try again shortly.",
       answerTimedOut: "The answer timed out — try again. Nothing was charged.",
-      answerFailed: "The answer didn’t make it through. Metered usage settles on what the model actually produced, so check the balance above rather than assuming a refund. Try again in a moment."
+      answerFailed: "The answer stopped partway \u2014 you're charged for the words that arrived, so the balance above is already final. Ask again."
     }
   };
 

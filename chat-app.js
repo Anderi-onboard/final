@@ -1642,6 +1642,36 @@
       var ci = $("composerInput"); if (ci) ci.focus();
     }
 
+  /* Every status /api/claude can answer with, mapped to something the reader
+     can act on. It used to handle 401/402/503 and call everything else a
+     billing question — but the proxy also answers 400 (malformed request),
+     429 (rate limit) and 500 (prompt assembly or generation failed), and all
+     three rendered "check the balance rather than assuming a refund". A reader
+     who hit the rate limit was told to go audit their units.
+
+     Worse, nothing was logged: chat-app.js had zero console calls, so the
+     status was discarded at the moment it was needed. A failed cast left no
+     trace anywhere the owner could read. */
+  function failureCopy(status, timedOut, kind) {
+    var follow = kind === "answer";
+    if (status === 401) return C.errors.sessionExpired;
+    if (status === 402) { pulseLedger(); return C.errors.serverShort; }
+    if (status === 429) return C.errors.tooFast;
+    if (status === 503) return C.errors.upstreamDown;
+    if (timedOut) return follow ? C.errors.answerTimedOut : C.errors.timedOut;
+    if (status === 400) return C.errors.badRequest;
+    return follow ? C.errors.answerFailed : C.errors.castFailed;
+  }
+
+  /* One line, so a failure that reaches a reader also reaches whoever has to
+     explain it. Console only — no endpoint, no payload, nothing leaves the
+     browser. */
+  function logFailure(kind, status, err) {
+    if (!window.console || !console.warn) return;
+    console.warn("[BourneWise] " + kind + " failed",
+      { status: status || "(none)", message: (err && err.message) || String(err || ""), build: window.BW_BUILD });
+  }
+
     /* A failed cast refunds the optimistic local deduction (the server already
        refunded its own atomic one) and says plainly what happened, in the
        question's language, instead of dressing a failure up as a reading. */
@@ -1651,12 +1681,8 @@
       var status = e && e.status;
       // nothing was deducted up front, so there is nothing to give back
       S.units = A.state().units;
-      var msg;
-      if (status === 401) msg = C.errors.sessionExpired;
-      else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
-      else if (status === 503) msg = C.errors.upstreamDown;
-      else if (err.__timeout) msg = C.errors.timedOut;
-      else msg = "The reading didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
+      logFailure("cast", status, e);
+      var msg = failureCopy(status, err.__timeout, "cast");
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
       if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
@@ -1723,11 +1749,8 @@
       var status = e && e.status;
       S.units = A.state().units;
       var msg;
-      if (status === 401) msg = C.errors.sessionExpired;
-      else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
-      else if (status === 503) msg = C.errors.upstreamDown;
-      else if (err.__timeout) msg = C.errors.answerTimedOut;
-      else msg = "The answer didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
+      logFailure("follow-up", status, e);
+      msg = failureCopy(status, err.__timeout, "answer");
       tw.cancel();
       if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
       live.classList.remove("casting-live");
