@@ -124,5 +124,26 @@ assert.ok(!/complete_after_retry/.test(router),
 assert.ok(!/system: result\.system/.test(router),
   'prompt-router.js posts result.system again — /api/claude answers that with a 400');
 
+
+/* ── the failure renderer must not delete what already arrived ──────────────
+   The guards above stop the STREAM READER from discarding a partial. They said
+   nothing about what happens one step later, and castFail() removed the preview
+   node unconditionally — so a reading that broke after the stream (in QC, in the
+   fact checks, anywhere in the promise chain) vanished from the screen even
+   though every token of it had been delivered and billed. Reported from
+   production: the reader watched it write, then watched it disappear and be
+   replaced by a line about their balance.
+
+   Delivered text is the reader's. Only an empty preview may be removed. */
+for (const [where, fn] of [['castFail', 'function castFail(err)'], ['follow-up fail', 'function fail(err)']]) {
+  const start = chat.indexOf(fn);
+  assert.ok(start > 0, `${where} not found`);
+  const body = chat.slice(start, start + 1800);
+  assert.ok(/if \(streamedAny\) \{/.test(body),
+    `${where} does not branch on streamedAny — it discards a partial the reader paid for`);
+  assert.ok(!/^\s*if \(streamPreview(?: && streamPreview\.parentNode)?\.?[^)]*\)\s*streamPreview\.parentNode\.removeChild/m.test(body),
+    `${where} still removes the preview unconditionally`);
+}
+
 console.log('stream recovery OK — partial readings survive a cut stream, '
   + 'a dead stream still errors, nothing undelivered is billed, and no copy promises a refund');

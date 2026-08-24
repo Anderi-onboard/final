@@ -1652,8 +1652,12 @@
      Worse, nothing was logged: chat-app.js had zero console calls, so the
      status was discarded at the moment it was needed. A failed cast left no
      trace anywhere the owner could read. */
-  function failureCopy(status, timedOut, kind) {
+  function failureCopy(status, timedOut, kind, gotText) {
     var follow = kind === "answer";
+    /* The generic line says "you're charged for the words that arrived" — true
+       only when some did. With an empty screen it is both confusing and wrong:
+       a stream that delivered nothing is not billed. */
+    if (!gotText && !status && !timedOut) return follow ? C.errors.answerNothing : C.errors.castNothing;
     if (status === 401) return C.errors.sessionExpired;
     if (status === 402) { pulseLedger(); return C.errors.serverShort; }
     if (status === 429) return C.errors.tooFast;
@@ -1682,10 +1686,21 @@
       // nothing was deducted up front, so there is nothing to give back
       S.units = A.state().units;
       logFailure("cast", status, e);
-      var msg = failureCopy(status, err.__timeout, "cast");
+      var msg = failureCopy(status, err.__timeout, "cast", streamedAny);
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
-      if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
+      /* Text that arrived was delivered and billed — pumpAndSettle charges for
+         the tokens that produced it whether or not the socket survived. Deleting
+         it here took back something the reader had already paid for and already
+         read, which is the exact failure stream-recovery.mjs was written to stop;
+         it guards the stream reader, and this line undid its work one step later.
+         Keep the partial and mark it cut. Only clear the node when nothing came. */
+      if (streamedAny) {
+        streamPreview.classList.remove("reading-streaming");
+        streamPreview.classList.add("reading-cut");
+      } else if (streamPreview && streamPreview.parentNode) {
+        streamPreview.parentNode.removeChild(streamPreview);
+      }
       live.classList.remove("casting-live");
       var p = document.createElement("p");
       p.className = "reading-error";
@@ -1750,9 +1765,20 @@
       S.units = A.state().units;
       var msg;
       logFailure("follow-up", status, e);
-      msg = failureCopy(status, err.__timeout, "answer");
+      msg = failureCopy(status, err.__timeout, "answer", streamedAny);
       tw.cancel();
-      if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
+      /* Text that arrived was delivered and billed — pumpAndSettle charges for
+         the tokens that produced it whether or not the socket survived. Deleting
+         it here took back something the reader had already paid for and already
+         read, which is the exact failure stream-recovery.mjs was written to stop;
+         it guards the stream reader, and this line undid its work one step later.
+         Keep the partial and mark it cut. Only clear the node when nothing came. */
+      if (streamedAny) {
+        streamPreview.classList.remove("reading-streaming");
+        streamPreview.classList.add("reading-cut");
+      } else if (streamPreview.parentNode) {
+        streamPreview.parentNode.removeChild(streamPreview);
+      }
       live.classList.remove("casting-live");
       var p = document.createElement("p");
       p.className = "reading-error";

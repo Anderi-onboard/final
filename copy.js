@@ -184,6 +184,12 @@
          question instead of opening one: the number they can already see is
          correct. */
       castFailed: "The reading stopped partway \u2014 you're charged for the words that arrived, so the balance above is already final. Try again.",
+      /* When the stream delivered nothing there is no partial above the error,
+         and the generic line ("you're charged for the words that arrived") is
+         both confusing and false — an undelivered reading is not billed, which
+         pumpAndSettle enforces and stream-recovery.mjs asserts. */
+      castNothing: "The reading never started \u2014 nothing was charged. Try again.",
+      answerNothing: "The answer never started \u2014 nothing was charged. Ask again.",
       /* 429. The old code had no branch for this at all, so a reader who cast
          too fast was told to go check their units. */
       tooFast: "Too many readings in a short time \u2014 wait a few minutes and cast again. Nothing was charged.",

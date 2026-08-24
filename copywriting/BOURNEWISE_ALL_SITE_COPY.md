@@ -2139,6 +2139,14 @@ The reading timed out — please try again. Nothing was charged.
 <!-- source: copy.js | kind: runtime text -->
 The reading stopped partway — you're charged for the words that arrived, so the balance above is already final. Try again.
 
+@@ s11.copy.js.errors.castNothing
+<!-- source: copy.js | kind: runtime text -->
+The reading never started — nothing was charged. Try again.
+
+@@ s11.copy.js.errors.answerNothing
+<!-- source: copy.js | kind: runtime text -->
+The answer never started — nothing was charged. Ask again.
+
 @@ s11.copy.js.errors.tooFast
 <!-- source: copy.js | kind: runtime text -->
 Too many readings in a short time — wait a few minutes and cast again. Nothing was charged.
