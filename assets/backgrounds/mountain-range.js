@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822k", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822k";
+    ? new URL("../palettes/color-groups.json?v=20260822m", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822m";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -91,12 +91,7 @@
     + '.mtn-bg .contour.l8 use{stroke:color-mix(in srgb,var(--bw-palette-8,#756F68) 48%,transparent)}'
     + '.mtn-bg .contour.l9 use{stroke:color-mix(in srgb,var(--bw-palette-9,#756F68) 50%,transparent)}'
     + '.mtn-bg .contour.l10 use{stroke:color-mix(in srgb,var(--bw-palette-10,#756F68) 50%,transparent)}'
-    + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent);'
-    /* The clouds are drawn at 0.7x to 1.6x. With non-scaling-stroke the line
-       stayed 4 screen px at every size, so on the small clouds it approached
-       the gap between contour copies and they fused. Letting the stroke scale
-       with the cloud keeps ink and pitch in the same ratio at all six sizes. */
-    + 'vector-effect:none;stroke-width:2.6}'
+    + '.mtn-bg .cloud-contour use{stroke:color-mix(in srgb,var(--bw-palette-gem,#756F68) 52%,transparent)}'
     /* MOIRÉ — the only page texture. It is not a tile laid over the site: each
        band is the ridge's own contour path re-used at a fractional rotation,
        clipped to that ridge's silhouette. So it drifts with the layer it
@@ -226,24 +221,38 @@
     /* One period of alternating crests and troughs, generated once and then
        tiled three times. Both ends sit on the baseline so the repeats join
        without a seam. */
+    /* Irregularity comes from three places at once, because varying only one
+       still reads as a rhythm: WHERE a feature sits, HOW FAR it swings, and
+       WHICH WAY. Strict up-down-up alternation was the giveaway — a real
+       skyline runs two crests together, then drops a long way once.
+       All of it is seeded, so a visitor's range is fixed for the session. */
     var pts = [];
+    var gaps = [], gapTotal = 0;
+    for (var k = 0; k < n; k++) { var w = .45 + rand() * 1.55; gaps.push(w); gapTotal += w; }
+    var run = rand() < .5 ? 1 : -1, sameRun = 0, x = 0;
     for (var k = 0; k < n; k++) {
-      var t = (k + 1) / (n + 1);
-      var sway = (rand() - .5) * (period / (n + 1)) * .5;
+      x += gaps[k] / gapTotal * period * (n / (n + 1));
+      /* Keep the same direction sometimes — but never more than twice, or the
+         profile wanders off the baseline and the plane stops reading as a
+         horizon. */
+      if (sameRun >= 2 || rand() < .62) { run = -run; sameRun = 0; } else sameRun++;
+      var reach = .25 + rand() * rand() * 1.5;      /* squared: mostly small, occasionally a big one */
       pts.push({
-        x: Math.round(t * period + sway),
-        y: Math.round(P.base + (k % 2 ? 1 : -1) * half * (.55 + rand() * .45))
+        x: Math.round(x),
+        y: Math.round(P.base + run * half * Math.min(1.15, reach))
       });
     }
     /* ⚠️ Build each repeat with an explicit x offset. Tiling by string-replacing
        the numbers looks tempting and is wrong: a path has x and y in the same
        stream, so a regex over "every number" shifts the heights too and the
        range walks off the canvas. */
+    var flats = [];
+    for (var f = 0; f <= pts.length; f++) flats.push(rand());
     function period_at(dx) {
       var out = '', prevX = 0, prevY = P.base;
       for (var k2 = 0; k2 < pts.length; k2++) {
         var p2 = pts[k2];
-        var flat = Math.round(prevX + (p2.x - prevX) * .34);
+        var flat = Math.round(prevX + (p2.x - prevX) * (.18 + flats[k2] * .34));
         var c1 = Math.round(flat + (p2.x - flat) * .45);
         var c2 = Math.round(flat + (p2.x - flat) * .62);
         out += ' L ' + (flat + dx) + ' ' + prevY
@@ -269,14 +278,6 @@
 
   var CLOUD = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30 C 116 32 116 44 100 42 C 96 50 76 48 70 40 C 64 50 40 50 34 40 C 22 44 6 42 18 30 Z";
   var CLOUDC = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30";
-  /* Three echoes of the cloud's own top edge, each smaller and dropped a
-     little, so they read as the same hand going round again rather than as a
-     shape stamped three times. */
-  var CLOUD_CONTOURS = [
-    { s: .94, dy: 5 },
-    { s: .74, dy: 11 },
-    { s: .54, dy: 16 }
-  ];
   var WATER = "M -2000 476 C -1660 442 -1320 510 -980 478 C -640 446 -300 514 40 480 C 380 446 720 508 1060 476 C 1400 444 1740 510 2080 478 C 2420 446 2760 514 3100 480 C 3440 448 3740 502 4000 476 L 4000 526 C 3700 548 3400 498 3060 530 C 2720 562 2380 500 2040 532 C 1700 564 1360 502 1020 530 C 680 558 340 504 0 532 C -340 560 -680 500 -1020 530 C -1360 560 -1700 502 -2000 526 Z";
 
   /* Close each rounded ridge to the viewport floor; only the organic top edge
@@ -382,18 +383,13 @@
     var clouds = '';
     CLOUDS.forEach(function (c, idx) {
       var cc = '';
-      /* Nested, not stacked. The copies used to be the same arc translated
-         straight down, so their ends ran past the cloud's rounded sides and the
-         silhouette clip cut them off — that is the blunt stub at each end, and
-         the little hooks where the path's own start and finish got sliced. A
-         clip can only cut squarely; it cannot end a stroke well.
-         Scaling each copy toward the cloud's centre (60.5, 27) keeps every arc
-         inside the shape by construction, so nothing is clipped and each line
-         ends where it was drawn to end. */
-      CLOUD_CONTOURS.forEach(function (c) {
-        cc += '<use href="#mxy-cloud-c" transform="translate(60.5 27) scale('
-          + c.s + ') translate(-60.5 -27) translate(0 ' + c.dy + ')"/>';
-      });
+      /* The original three translated copies, restored. Two later attempts made
+         it worse and are recorded so they are not tried again: thinning the
+         stroke and respacing them (6/15/24 at 2.6) read as scratchy, and
+         nesting them by scaling toward the cloud centre turned the layered edge
+         into concentric rings. The stroke ends being clipped by the silhouette
+         is part of how this reads as a drawn cloud rather than a diagram. */
+      [7, 15.5, 22].forEach(function (y) { cc += '<use href="#mxy-cloud-c" y="' + y + '"/>'; });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
         + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
