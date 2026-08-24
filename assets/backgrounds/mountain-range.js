@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822h", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822h";
+    ? new URL("../palettes/color-groups.json?v=20260822i", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822i";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -19,9 +19,22 @@
      measurement taken on a machine nobody uses does not get to decide how the
      site looks. ?ridges=0 forces it off if a device does struggle. */
   var ridgeDrift = true;
+  /* ⚠️ `?glass=flat` trades every backdrop-filter for an opaque panel.
+     It exists because the one measurement that matters cannot be taken in CI:
+     this repo already knows that a single drifting plane invalidates every
+     blurred region above it, but a software rasteriser cannot show the
+     difference — blur is CPU-bound there either way, so disabling it moved
+     nothing. On real hardware a layer translate is nearly free while
+     re-blurring a large backdrop every frame is not, which is the shape that
+     fits "smooth on a phone, unusable on a big desktop window".
+     So the experiment ships to the machine that has the problem. */
+  var flatGlass = false;
   try {
-    var q = new URLSearchParams(location.search).get('ridges');
+    var params = new URLSearchParams(location.search);
+    var q = params.get('ridges');
     if (q !== null) ridgeDrift = q !== '0' && q !== 'false';
+    var g = params.get('glass');
+    if (g !== null) flatGlass = g === 'flat' || g === '0';
   } catch (e) {}
 
   var CSS = ''
@@ -678,6 +691,15 @@
   }
 
   function init() {
+    if (flatGlass && !document.getElementById('mtn-flat-glass')) {
+      var fg = document.createElement('style');
+      fg.id = 'mtn-flat-glass';
+      fg.textContent = '*{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}'
+        + 'html[data-skin="paper"] body :is(.sidebar,.composer,.method-menu,.carry-menu,.pagehead,'
+        + '.top,.card,.panel,.plan,.rate-card,.pack,.term,.ledgerstrip,.account-menu,.popover,'
+        + '.modal,.dialog,.sheet,.toast){background-color:rgb(255 255 255 / .92)!important}';
+      document.head.appendChild(fg);
+    }
     if (!document.getElementById('mtn-bg-css')) {
       var st = document.createElement('style');
       st.id = 'mtn-bg-css';
