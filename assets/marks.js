@@ -312,6 +312,226 @@
     return '<svg viewBox="' + vb + '" ' + (attrs || "") + ' xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' + body + '</svg>';
   }
 
+
+  /* ── PHENOMENA ──────────────────────────────────────────────────────────
+     Thirty things that behave like the cloud does: drawn with the same
+     single-weight round-capped line, built from arcs and sampled curves, no
+     fill, deterministic, taking colour through currentColor.
+
+     Two rules carried over from the range, because both were learned the hard
+     way there. ⚠️ Ink is a fraction of the motif's own pitch, never a fixed
+     number — a stroke that is right at one spacing fuses into lumps at
+     another. ⚠️ A stroke ends where it was drawn to end: nothing here relies
+     on a clip to finish a line, because a clip can only cut squarely. Where a
+     line should stop short, it is drawn short.
+
+     Every function returns path data for one motif drawn in a 100x100 box
+     centred on the origin, so they compose and scale alike. */
+  var PH = {};
+  function arcAt(cx, cy, r, a0, a1) {
+    var x0 = cx + r * Math.cos(a0), y0 = cy + r * Math.sin(a0);
+    var x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1);
+    var large = Math.abs(a1 - a0) > Math.PI ? 1 : 0;
+    var sweep = a1 > a0 ? 1 : 0;
+    return "M" + R(x0) + " " + R(y0) + " A" + R(r) + " " + R(r) + " 0 " + large + " " + sweep + " " + R(x1) + " " + R(y1) + " ";
+  }
+  /* Nested arcs sharing a centre — the cloud's own construction, generalised.
+     `trim` pulls both ends in, which is how an arc finishes cleanly instead of
+     running into whatever is beside it. */
+  function arcNest(cx, cy, r0, step, n, a0, a1, trim) {
+    var d = "";
+    for (var i = 0; i < n; i++) {
+      var t = (trim || 0) * i;
+      d += arcAt(cx, cy, r0 + i * step, a0 + t, a1 - t);
+    }
+    return d;
+  }
+  function strand(x, y0, y1, amp, period, phase) {
+    var d = "M" + R(x + amp * Math.sin(phase || 0)) + " " + R(y0), y = y0, k = 0;
+    while (y < y1) {
+      var ny = Math.min(y1, y + period / 2);
+      var dir = (k % 2) ? -1 : 1;
+      d += "Q" + R(x + dir * amp * 2) + " " + R((y + ny) / 2) + " " + R(x + amp * Math.sin(phase + (k + 1) * Math.PI)) + " " + R(ny) + " ";
+      y = ny; k++;
+    }
+    return d;
+  }
+
+  /* 1 日 — a disc that is never closed, with the light coming off it in the
+     same layered arcs the cloud uses rather than as spokes. */
+  PH.sun = function (o) { o = o || {}; var r = o.r || 20, n = o.rays || 12, d = arcNest(0, 0, r, 0, 1, -2.9, 2.9, 0), i;
+    for (i = 0; i < n; i++) { var a = i * 2 * Math.PI / n + .2, i0 = r * 1.32, i1 = r * (1.55 + (i % 3) * .16);
+      d += "M" + R(i0 * Math.cos(a)) + " " + R(i0 * Math.sin(a)) + " L" + R(i1 * Math.cos(a)) + " " + R(i1 * Math.sin(a)) + " "; }
+    return d; };
+  /* 2 月 — one arc for the limb, one for the terminator; the gap between them
+     is the moon, so nothing is filled. */
+  PH.moon = function (o) { o = o || {}; var r = o.r || 22;
+    return arcAt(0, 0, r, -1.35, 1.35) + arcAt(r * .62, 0, r * .92, -1.15, 1.15); };
+  /* 3 瀑 — strands falling at one pitch, ending in the basin's spread arcs. */
+  PH.waterfall = function (o) { o = o || {}; var w = o.w || 44, n = o.n || 6, top = -34, foot = 16, d = "", i;
+    for (i = 0; i < n; i++) { var x = -w / 2 + i * w / (n - 1);
+      d += strand(x, top + (i % 3) * 4, foot - (i % 2) * 5, 1.6, 26, i * 1.1); }
+    return d + arcNest(0, foot + 6, 10, 7, 3, .25, Math.PI - .25, .06); };
+  /* 4 岚 — mist reads as broken horizontals: each band is an arc that stops
+     before the next begins, which is what keeps it from becoming a rule. */
+  PH.haze = function (o) { o = o || {}; var n = o.n || 5, w = o.w || 54, d = "", i;
+    for (i = 0; i < n; i++) { var y = -18 + i * 9, span = w * (.5 + ((i * 7) % 5) / 9), x0 = -span / 2 + ((i % 2) ? 7 : -7);
+      d += "M" + R(x0) + " " + R(y) + " Q" + R(x0 + span * .5) + " " + R(y - 3.4) + " " + R(x0 + span) + " " + R(y) + " "; }
+    return d; };
+  /* 5 雨 */
+  PH.rain = function (o) { o = o || {}; var n = o.n || 9, d = arcNest(0, -20, 15, 5, 2, .15, Math.PI - .15, .05), i;
+    for (i = 0; i < n; i++) { var x = -26 + i * 6.5, y = -2 + ((i * 5) % 4) * 3;
+      d += "M" + R(x) + " " + R(y) + " L" + R(x - 3) + " " + R(y + 13) + " "; }
+    return d; };
+  /* 6 雪 — six arms, each a short arc so it never reads as a snowflake icon. */
+  /* ⚠️ The arms used to start at 0 and each carried an arc of .3r centred on
+     it, so six of them overlapped in the middle and fused into a disc — the
+     florette's failure, repeated. The arms are held off the centre and the
+     barbs are short straight ticks, which is what a flake reads as anyway. */
+  PH.snow = function (o) { o = o || {}; var r = o.r || 20, hole = r * .22, d = "", i;
+    for (i = 0; i < 6; i++) { var a = i * Math.PI / 3, cx = Math.cos(a), cy = Math.sin(a);
+      d += "M" + R(hole * cx) + " " + R(hole * cy) + " L" + R(r * cx) + " " + R(r * cy) + " ";
+      var bx = r * .66 * cx, by = r * .66 * cy, t = r * .26;
+      d += "M" + R(bx) + " " + R(by) + " L" + R(bx + t * Math.cos(a + 1)) + " " + R(by + t * Math.sin(a + 1)) + " ";
+      d += "M" + R(bx) + " " + R(by) + " L" + R(bx + t * Math.cos(a - 1)) + " " + R(by + t * Math.sin(a - 1)) + " "; }
+    return d; };
+  /* 7 浪 */
+  PH.wave = function (o) { o = o || {}; var n = o.n || 4, d = "", i;
+    for (i = 0; i < n; i++) d += arcNest(0, 8 + i * 7, 26 - i * 4, 0, 1, Math.PI + .3, 2 * Math.PI - .3, 0);
+    return d + arcAt(18, -2, 12, Math.PI * 1.1, Math.PI * 1.95); };
+  /* 8 涡 — a spiral built from quarter arcs of shrinking radius. */
+  PH.whirl = function (o) { o = o || {}; var r = o.r || 26, k = o.decay || .82, d = "", a = 0, i;
+    for (i = 0; i < 9; i++) { d += arcAt(0, 0, r, a, a + Math.PI * .72); a += Math.PI * .72; r *= k; }
+    return d; };
+  /* 9 星 */
+  PH.star = function (o) { o = o || {}; var r = o.r || 20, d = "", i;
+    for (i = 0; i < 4; i++) { var a = i * Math.PI / 4, l = (i % 2) ? r * .52 : r;
+      d += "M" + R(-l * Math.cos(a)) + " " + R(-l * Math.sin(a)) + " L" + R(l * Math.cos(a)) + " " + R(l * Math.sin(a)) + " "; }
+    return d + arcNest(0, 0, r * .3, 0, 1, 0, 6.2, 0); };
+  /* 10 电 */
+  PH.lightning = function (o) { o = o || {}; var d = arcNest(0, -20, 17, 6, 2, .2, Math.PI - .2, .05);
+    return d + "M-4 -4 L-11 9 L-3 9 L-9 24 " + "M12 -2 L6 8 L12 8 L7 18 "; };
+  /* 11 虹 */
+  PH.rainbow = function (o) { o = o || {}; return arcNest(0, 16, 16, 6, 4, .12, Math.PI - .12, .04); };
+  /* 12 露 */
+  PH.dew = function (o) { o = o || {}; var n = o.n || 5, d = "M-30 -6 Q0 -14 30 -6 ", i;
+    for (i = 0; i < n; i++) { var x = -24 + i * 12, y = -2 + ((i * 3) % 3) * 2;
+      d += "M" + R(x) + " " + R(y) + " Q" + R(x + 3.4) + " " + R(y + 7) + " " + R(x) + " " + R(y + 11)
+         + " Q" + R(x - 3.4) + " " + R(y + 7) + " " + R(x) + " " + R(y) + " "; }
+    return d; };
+  /* 13 霜 */
+  PH.frost = function (o) { o = o || {}; var n = o.n || 7, d = "", i;
+    for (i = 0; i < n; i++) { var x = -30 + i * 10, h = 9 + ((i * 5) % 4) * 4;
+      d += "M" + R(x) + " 16 L" + R(x) + " " + R(16 - h) + " M" + R(x - 4) + " " + R(20 - h) + " L" + R(x) + " " + R(16 - h)
+         + " L" + R(x + 4) + " " + R(20 - h) + " "; }
+    return d + "M-34 16 L34 16 "; };
+  /* 14 潮 */
+  PH.tide = function (o) { o = o || {}; var n = o.n || 5, d = "", i;
+    for (i = 0; i < n; i++) d += sineV_h(-34, 34, -12 + i * 7, 3.2 - i * .3, 30 + i * 4);
+    return d; };
+  /* 15 泉 */
+  PH.spring = function (o) { o = o || {}; var d = arcNest(0, 12, 9, 6, 3, .2, Math.PI - .2, .06), i;
+    for (i = 0; i < 3; i++) d += strand(-8 + i * 8, -22 + i * 3, 4, 1.5, 18, i * 1.7);
+    return d; };
+  /* 16 川 */
+  PH.river = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 3; i++) d += strand(-14 + i * 14, -30, 30, 3.6 - i * .5, 34, i * 1.3);
+    return d; };
+  /* 17 泽 */
+  PH.lake = function (o) { o = o || {}; var d = arcNest(0, 0, 14, 6, 3, .2, Math.PI - .2, .05);
+    return d + arcNest(0, 0, 14, 6, 3, Math.PI + .2, 2 * Math.PI - .2, .05); };
+  /* 18 峰 */
+  PH.peak = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 3; i++) { var s = 1 - i * .22, y = 14 + i * 5;
+      d += "M" + R(-30 * s) + " " + R(y) + " Q" + R(-11 * s) + " " + R(y - 34 * s) + " 0 " + R(y - 40 * s)
+         + " Q" + R(13 * s) + " " + R(y - 32 * s) + " " + R(30 * s) + " " + R(y) + " "; }
+    return d; };
+  /* 19 谷 */
+  PH.valley = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 4; i++) { var y = -14 + i * 8;
+      d += "M-32 " + R(y) + " Q-8 " + R(y + 22 - i * 3) + " 0 " + R(y + 24 - i * 3) + " Q9 " + R(y + 21 - i * 3) + " 32 " + R(y) + " "; }
+    return d; };
+  /* 20 崖 */
+  PH.cliff = function (o) { o = o || {}; var d = "M-30 -26 L4 -26 Q14 -26 15 -16 L18 22 ", i;
+    for (i = 0; i < 4; i++) d += "M" + R(-2 + i * 5) + " " + R(-18 + i * 9) + " L" + R(10 + i * 3) + " " + R(-14 + i * 9) + " ";
+    return d + "M-32 22 L30 22 "; };
+  /* 21 石 */
+  /* Three stones sitting together, each an open arc resting on the ground line
+     rather than one closed outline — closed was the only shape in the set that
+     stopped reading as a drawn line. */
+  PH.stone = function (o) { o = o || {}; var d = "M-32 16 L32 16 ", i;
+    var S = [[-16, 13, .95], [4, 16, 1.25], [20, 10, .8]];
+    for (i = 0; i < S.length; i++) { var cx = S[i][0], w = S[i][1], k = S[i][2];
+      d += "M" + R(cx - w) + " 16 Q" + R(cx - w * .85) + " " + R(16 - 17 * k) + " " + R(cx) + " " + R(16 - 19 * k)
+         + " Q" + R(cx + w * .9) + " " + R(16 - 16 * k) + " " + R(cx + w) + " 16 ";
+      d += "M" + R(cx - w * .5) + " " + R(16 - 9 * k) + " Q" + R(cx) + " " + R(16 - 12 * k) + " " + R(cx + w * .55) + " " + R(16 - 8 * k) + " "; }
+    return d; };
+  /* 22 沙 */
+  PH.dune = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 5; i++) { var y = -6 + i * 7, s = 1 - i * .12;
+      d += "M" + R(-34 * s) + " " + R(y) + " Q" + R(-6 * s) + " " + R(y - 17 * s) + " " + R(16 * s) + " " + R(y - 5 * s)
+         + " Q" + R(26 * s) + " " + R(y + 1) + " " + R(34 * s) + " " + R(y) + " "; }
+    return d; };
+  /* 23 松 */
+  PH.pine = function (o) { o = o || {}; var d = "M0 26 L0 -22 ", i;
+    for (i = 0; i < 5; i++) { var y = -18 + i * 9, s = 6 + i * 5;
+      d += "M0 " + R(y) + " Q" + R(-s * .6) + " " + R(y + 2) + " " + R(-s) + " " + R(y + 8)
+         + " M0 " + R(y) + " Q" + R(s * .6) + " " + R(y + 2) + " " + R(s) + " " + R(y + 8) + " "; }
+    return d; };
+  /* 24 竹 */
+  PH.bamboo = function (o) { o = o || {}; var d = "", i, j;
+    for (i = 0; i < 3; i++) { var x = -14 + i * 14, lean = (i - 1) * 2.5;
+      d += "M" + R(x - lean) + " 28 L" + R(x + lean) + " -28 ";
+      for (j = 0; j < 4; j++) { var y = -20 + j * 13;
+        d += "M" + R(x + lean * .5 - 3) + " " + R(y) + " L" + R(x + lean * .5 + 3) + " " + R(y) + " "; } }
+    return d; };
+  /* 25 苇 */
+  PH.reed = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 5; i++) { var x = -22 + i * 11, b = (i % 2 ? 1 : -1) * (5 + i);
+      d += "M" + R(x) + " 28 Q" + R(x + b * .4) + " 2 " + R(x + b) + " -22 "
+         + "M" + R(x + b) + " -22 Q" + R(x + b * 1.5) + " -27 " + R(x + b * 1.1) + " -30 "; }
+    return d; };
+  /* 26 叶 */
+  PH.leaf = function (o) { o = o || {}; var d = "M0 -24 Q18 -8 0 22 Q-18 -8 0 -24 Z M0 -20 L0 18 ", i;
+    for (i = 0; i < 4; i++) { var y = -12 + i * 8;
+      d += "M0 " + R(y) + " Q" + R(7) + " " + R(y + 1) + " " + R(11 - i) + " " + R(y + 6)
+         + " M0 " + R(y) + " Q" + R(-7) + " " + R(y + 1) + " " + R(-11 + i) + " " + R(y + 6) + " "; }
+    return d; };
+  /* 27 根 */
+  /* Roots fork; a fan of equal strokes from one point reads as a broom. Each
+     main runs to a fork, and only then splits. */
+  PH.root = function (o) { o = o || {}; var d = "M0 -28 L0 -6 ", i;
+    var A = [-1.05, -0.5, 0.15, 0.75];
+    for (i = 0; i < A.length; i++) { var a = A[i] + Math.PI / 2, L = 15 + (i % 2) * 6;
+      var fx = Math.cos(a) * L, fy = -6 + Math.sin(a) * L;
+      d += "M0 -6 Q" + R(fx * .45) + " " + R(-6 + (fy + 6) * .7) + " " + R(fx) + " " + R(fy) + " ";
+      d += "M" + R(fx) + " " + R(fy) + " Q" + R(fx * 1.3) + " " + R(fy + 5) + " " + R(fx * 1.45) + " " + R(fy + 11) + " ";
+      d += "M" + R(fx) + " " + R(fy) + " Q" + R(fx * .95) + " " + R(fy + 6) + " " + R(fx * .8) + " " + R(fy + 12) + " "; }
+    return d; };
+  /* 28 烟 */
+  /* ⚠️ strand() walks downward — `while (y < y1)`. Handing it y0 > y1 runs the
+     loop zero times and returns a bare moveto, which draws nothing at all and
+     is exactly what the first pass shipped: an empty cell. Smoke rises, so it
+     is drawn downward and the widening is inverted instead. */
+  PH.smoke = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 3; i++) d += strand(-8 + i * 8, -26, 26, 1.6 + i * 1.6, 20 + i * 7, i * 2.1);
+    return d; };
+  /* 29 风 */
+  PH.wind = function (o) { o = o || {}; var d = "", i;
+    for (i = 0; i < 4; i++) { var y = -15 + i * 10, w = 26 + ((i * 5) % 3) * 8;
+      d += "M" + R(-w) + " " + R(y) + " Q" + R(w * .3) + " " + R(y - 4) + " " + R(w * .78) + " " + R(y)
+         + " Q" + R(w * 1.05) + " " + R(y + 4.5) + " " + R(w * .72) + " " + R(y + 6) + " "; }
+    return d; };
+  /* 30 雷 */
+  PH.thunder = function (o) { o = o || {}; var d = arcNest(0, -14, 15, 6, 3, .18, Math.PI - .18, .05);
+    return d + "M-8 4 L-1 4 L-6 14 L3 14 L-4 28 " + "M11 4 L16 4 L12 13 "; };
+  function sineV_h(x0, x1, y, amp, period) {
+    var d = "M" + R(x0) + " " + R(y), x = x0, k = 0;
+    while (x < x1) { var nx = Math.min(x1, x + period / 2);
+      d += "Q" + R((x + nx) / 2) + " " + R(y + ((k % 2) ? amp : -amp) * 2) + " " + R(nx) + " " + R(y) + " "; x = nx; k++; }
+    return d + " ";
+  }
+
   root.BWMarks = {
     rng: rng, svg: svg, sineV: sineV,
     ridgePath: ridgePath, landscape: landscape,
@@ -319,6 +539,7 @@
     vesica: vesica, vesicaRow: vesicaRow, splitDisc: splitDisc,
     scallop: scallop, waveField: waveField, tally: tally,
     florette: florette, dotRing: dotRing, coin: coin, hexagram: hexagram,
-    brandMark: brandMark, brandField: brandField, yaoField: yaoField
+    brandMark: brandMark, brandField: brandField, yaoField: yaoField,
+    phenomena: PH
   };
 }());

@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822n", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822n";
+    ? new URL("../palettes/color-groups.json?v=20260822p", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822p";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -173,10 +173,19 @@
         + '.mtn-bg .flow-6{animation:mtn-flow-l 340s linear -40s infinite;will-change:transform}'
         : '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}')
     + '.mtn-bg [class^="cloud-"]{animation:none}'
-    + '.mtn-bg .cloud-1{animation:mtn-cloud-r 220s linear infinite;will-change:transform}'
-    + '.mtn-bg .cloud-2{animation:mtn-cloud-l 210s linear infinite;will-change:transform}'
-    + '.mtn-bg .cloud-4{animation:mtn-cloud-l 264s linear -18s infinite;will-change:transform}'
-    + '.mtn-bg .cloud-5{animation:mtn-cloud-r 240s linear -50s infinite;will-change:transform}'
+    /* ⚠️ Cloud speed is set AGAINST the ridge speed, not on its own. While the
+       ridges were frozen, 15px/s read clearly because the landscape behind was
+       a fixed reference. Once the ridges drift at ~8px/s the clouds going the
+       same way separate at only 8px/s from what is behind them, and the eye
+       reads the whole scene as still — the complaint was "the clouds stopped",
+       and they had not, they had lost their contrast.
+       So they run at roughly twice the old rate, and every cloud now moves
+       AGAINST the ridge plane it sits over. Relative speed, not absolute, is
+       what makes a drift visible. */
+    + '.mtn-bg .cloud-1{animation:mtn-cloud-r 104s linear infinite;will-change:transform}'
+    + '.mtn-bg .cloud-2{animation:mtn-cloud-r 128s linear -30s infinite;will-change:transform}'
+    + '.mtn-bg .cloud-4{animation:mtn-cloud-r 92s linear -18s infinite;will-change:transform}'
+    + '.mtn-bg .cloud-5{animation:mtn-cloud-r 116s linear -50s infinite;will-change:transform}'
     + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important;transform:none!important}}';
 
   var W = {
