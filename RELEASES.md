@@ -6,6 +6,45 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## Contracts enforced (no build tag — nothing shipped changed)
+
+- Production target: `main` via pull request
+- No `?v=` bump: this touches CI, the test runner, one new contract and docs.
+  No html/css/js that a browser loads is modified, so the build tag stands
+  still — and the CI check added here enforces exactly that distinction.
+- What shipped:
+  - `.github/workflows/contracts.yml` — the repo had **no CI at all**. All
+    contracts now run on every pull request and every push to `main`, plus a
+    check the suite structurally cannot make: a shipped asset changed while
+    `version.json` stood still. `build-tag.mjs` only verifies the tag is
+    internally consistent; it cannot see "should have moved and did not".
+  - `scripts/run-contracts.mjs` — `npm test` named its test files one at a
+    time and named **3 of 21**. `build-tag`, `prompt-secrecy`,
+    `free-reading-contract` and the rest existed and were never executed.
+    Discovery is now by listing `tests/`, so a new contract is picked up by
+    existing rather than by someone remembering to register it. It refuses to
+    report a pass if it finds implausibly few files.
+  - `tests/font-lock.mjs` — the three-family rule had no guard despite Lora,
+    Fraunces, Inter, Rubik, IBM Plex, Sawarabi and Bree Serif each having
+    shipped and been removed. Gates on `@font-face` count rather than an
+    allow-list of names.
+  - `CLAUDE.md` §7.5 — settled decisions live as tests, not paragraphs; what
+    belongs in a contract and what does not; and the two requirements a new
+    contract must meet.
+  - `copywriting/BOURNEWISE_ALL_SITE_COPY.md` regenerated — it was 81 blocks
+    stale, which the runner now treats as a failure.
+- Held back deliberately, to ship with the interface change they belong to:
+  the `castFail` status mapping, the rewritten failure copy, the
+  `free-reading-contract` copy guard, and the `upstream-error` /
+  `stream-recovery` updates that track them. The copy guard fails against
+  `main` today because `copy.js` `signInToCast` still promises "a new account
+  starts with 1,500 units on us" — a real false claim, and the reason that
+  guard cannot land alone.
+- Verification:
+  - 21/21 contracts pass against `main`'s current interface
+  - `font-lock` verified against 10 planted violations
+  - copy-deck audit 81 stale → 0
+
 ## 20260821l — The interface stops describing its own machinery
 
 - Production target: `main` via pull request

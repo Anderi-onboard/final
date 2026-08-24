@@ -1,0 +1,65 @@
+# The enforcement half of the protocol.
+#
+# CLAUDE.md states the rules and several sessions broke them anyway — a codex
+# session put the billing reserve+cap back, a Claude session re-added 123
+# palette groups the owner had deleted, the free-welcome copy drifted twice,
+# and the build tag has been missed repeatedly. Every one of those was already
+# written down. Prose does not stop an agent that skimmed it.
+#
+# Contracts do, but only if something runs them. Until this file existed,
+# nothing did: no CI, no hooks, and `npm test` named three of seventeen test
+# files. This runs all of them on every pull request and every push to main, so
+# a violation is visible before merge rather than after deploy.
+name: contracts
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A superseded run tells you nothing once a newer commit exists on the branch.
+concurrency:
+  group: contracts-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No install step: the contracts read files and assert on them, with no
+      # dependency beyond node itself. Keep it that way — a test suite that
+      # needs a lockfile to run is a test suite that gets skipped.
+      - name: Run all contracts
+        run: npm test
+
+      # The build tag is checked by build-tag.mjs above, but only for internal
+      # consistency. This catches the other half: a shipped asset changed while
+      # the tag stood still, so users keep the cached old file. It is the most
+      # repeated mistake in this repo's history.
+      - name: Build tag must move when a shipped asset changes
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+          BASE="origin/${{ github.base_ref }}"
+          CHANGED=$(git diff --name-only "$BASE"...HEAD -- '*.html' '*.css' '*.js' | grep -v '^tests/' | grep -v '^scripts/' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "no shipped asset changed — build tag may stand still"
+            exit 0
+          fi
+          echo "shipped assets changed:"; echo "$CHANGED" | sed 's/^/  /'
+          OLD=$(git show "$BASE:version.json" | tr -d ' \n' | sed 's/.*"v":"\([^"]*\)".*/\1/')
+          NEW=$(tr -d ' \n' < version.json | sed 's/.*"v":"\([^"]*\)".*/\1/')
+          if [ "$OLD" = "$NEW" ]; then
+            echo "::error::version.json is still $OLD but shipped assets changed. Run node scripts/bump-build.mjs — without it users keep the cached old files, which is why 'I changed it and nothing happened' keeps recurring."
+            exit 1
+          fi
+          echo "build tag $OLD -> $NEW"
