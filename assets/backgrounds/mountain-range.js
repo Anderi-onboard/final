@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260822j", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260822j";
+    ? new URL("../palettes/color-groups.json?v=20260822k", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260822k";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -196,8 +196,87 @@
     9: "M -2000 568 L -1780 566 C -1662 566 -1618 556 -1500 556 C -1366 556 -1314 561 -1180 561 L -800 561 C -674 561 -626 560 -500 560 C -391 560 -349 565 -240 565 L 0 566 L 220 566 C 338 566 382 556 500 556 C 634 556 686 561 820 561 L 1200 561 C 1326 561 1374 560 1500 560 C 1609 560 1651 565 1760 565 L 2000 566 L 2220 566 C 2338 566 2382 556 2500 556 C 2634 556 2686 561 2820 561 L 3200 561 C 3326 561 3374 560 3500 560 C 3609 560 3651 565 3760 565 L 4000 566",
     10: "M -2000 588 L -1760 588 C -1609 588 -1551 582 -1400 582 C -1266 582 -1214 587 -1080 587 L -700 587 C -574 587 -526 584 -400 584 C -240 584 -180 586 -20 586 L 0 586 L 240 588 C 391 588 449 582 600 582 C 734 582 786 587 920 587 L 1300 587 C 1426 587 1474 584 1600 584 C 1760 584 1820 586 1980 586 L 2000 586 L 2240 588 C 2391 588 2449 582 2600 582 C 2734 582 2786 587 2920 587 L 3300 587 C 3426 587 3474 584 3600 584 C 3760 584 3820 586 3980 586 L 4000 586"
   };
+  /* ── RIDGE SHAPE VARIANTS ──────────────────────────────────────────────
+     W above is the hand-drawn set and stays variant 0. The others are grown
+     from the same measurements — baseline, amplitude and feature count taken
+     off those very paths — so a variant has the SAME number of path commands
+     and costs the same to raster. Only the crest positions and heights differ.
+
+     One variant per session, chosen from the same seed the palette uses, so a
+     visitor's landscape is consistent across navigation and the next visitor
+     gets a different one. Deterministic for the same reason the brush and the
+     palette order are: a shape that reshuffles mid-visit reads as a fault. */
+  var RIDGE_PROFILE = {
+    1:  { base: 170, amp: 51,  n: 5 },
+    2:  { base: 217, amp: 34,  n: 5 },
+    3:  { base: 241, amp: 72,  n: 6 },
+    4:  { base: 328, amp: 92,  n: 3 },
+    5:  { base: 393, amp: 106, n: 5 },
+    6:  { base: 415, amp: 170, n: 3 },
+    7:  { base: 509, amp: 30,  n: 3 },
+    8:  { base: 526, amp: 35,  n: 5 },
+    9:  { base: 562, amp: 12,  n: 3 },
+    10: { base: 585, amp: 6,   n: 3 }
+  };
+  var RIDGE_VARIANTS = 4;
+
+  function ridgePath(i, rand) {
+    var P = RIDGE_PROFILE[i];
+    var period = 2000, n = P.n, half = P.amp / 2;
+    /* One period of alternating crests and troughs, generated once and then
+       tiled three times. Both ends sit on the baseline so the repeats join
+       without a seam. */
+    var pts = [];
+    for (var k = 0; k < n; k++) {
+      var t = (k + 1) / (n + 1);
+      var sway = (rand() - .5) * (period / (n + 1)) * .5;
+      pts.push({
+        x: Math.round(t * period + sway),
+        y: Math.round(P.base + (k % 2 ? 1 : -1) * half * (.55 + rand() * .45))
+      });
+    }
+    /* ⚠️ Build each repeat with an explicit x offset. Tiling by string-replacing
+       the numbers looks tempting and is wrong: a path has x and y in the same
+       stream, so a regex over "every number" shifts the heights too and the
+       range walks off the canvas. */
+    function period_at(dx) {
+      var out = '', prevX = 0, prevY = P.base;
+      for (var k2 = 0; k2 < pts.length; k2++) {
+        var p2 = pts[k2];
+        var flat = Math.round(prevX + (p2.x - prevX) * .34);
+        var c1 = Math.round(flat + (p2.x - flat) * .45);
+        var c2 = Math.round(flat + (p2.x - flat) * .62);
+        out += ' L ' + (flat + dx) + ' ' + prevY
+          + ' C ' + (c1 + dx) + ' ' + prevY
+          + ' ' + (c2 + dx) + ' ' + p2.y
+          + ' ' + (p2.x + dx) + ' ' + p2.y;
+        prevX = p2.x; prevY = p2.y;
+      }
+      return out + ' L ' + (period + dx) + ' ' + P.base;
+    }
+    var d = 'M -2000 ' + P.base;
+    for (var r = 0; r < 3; r++) d += period_at(r * period - 2000);
+    return d;
+  }
+
+  /* Replace W with the chosen variant. Variant 0 keeps the drawn paths. */
+  function pickRidgeVariant(seed) {
+    var v = seed % RIDGE_VARIANTS;
+    if (!v) return;
+    var rand = mulberry32(seed ^ 0x9E3779B9);
+    for (var i = 1; i <= 10; i++) W[i] = ridgePath(i, rand);
+  }
+
   var CLOUD = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30 C 116 32 116 44 100 42 C 96 50 76 48 70 40 C 64 50 40 50 34 40 C 22 44 6 42 18 30 Z";
   var CLOUDC = "M 18 30 C 8 30 5 18 18 14 C 20 4 40 4 46 14 C 52 4 72 4 78 14 C 90 8 110 18 105 30";
+  /* Three echoes of the cloud's own top edge, each smaller and dropped a
+     little, so they read as the same hand going round again rather than as a
+     shape stamped three times. */
+  var CLOUD_CONTOURS = [
+    { s: .94, dy: 5 },
+    { s: .74, dy: 11 },
+    { s: .54, dy: 16 }
+  ];
   var WATER = "M -2000 476 C -1660 442 -1320 510 -980 478 C -640 446 -300 514 40 480 C 380 446 720 508 1060 476 C 1400 444 1740 510 2080 478 C 2420 446 2760 514 3100 480 C 3440 448 3740 502 4000 476 L 4000 526 C 3700 548 3400 498 3060 530 C 2720 562 2380 500 2040 532 C 1700 564 1360 502 1020 530 C 680 558 340 504 0 532 C -340 560 -680 500 -1020 530 C -1360 560 -1700 502 -2000 526 Z";
 
   /* Close each rounded ridge to the viewport floor; only the organic top edge
@@ -303,7 +382,18 @@
     var clouds = '';
     CLOUDS.forEach(function (c, idx) {
       var cc = '';
-      [6, 15, 24].forEach(function (y) { cc += '<use href="#mxy-cloud-c" y="' + y + '"/>'; });
+      /* Nested, not stacked. The copies used to be the same arc translated
+         straight down, so their ends ran past the cloud's rounded sides and the
+         silhouette clip cut them off — that is the blunt stub at each end, and
+         the little hooks where the path's own start and finish got sliced. A
+         clip can only cut squarely; it cannot end a stroke well.
+         Scaling each copy toward the cloud's centre (60.5, 27) keeps every arc
+         inside the shape by construction, so nothing is clipped and each line
+         ends where it was drawn to end. */
+      CLOUD_CONTOURS.forEach(function (c) {
+        cc += '<use href="#mxy-cloud-c" transform="translate(60.5 27) scale('
+          + c.s + ') translate(-60.5 -27) translate(0 ' + c.dy + ')"/>';
+      });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
         + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
@@ -777,6 +867,10 @@
       clockStart = Date.now();
       paletteSeed = (Math.random() * 4294967296) >>> 0 || 1;
     }
+    /* Shape is chosen once, from the same seed as the palette order, BEFORE
+       anything is built — every .mtn-bg on the page must get the same range. */
+    pickRidgeVariant(paletteSeed);
+
     var sharedPhase = -(((Date.now() - clockStart) % cycleMs) / 1000);
     document.querySelectorAll('.mtn-bg').forEach(function (el) {
       /* One session-wide clock keeps the palette continuous across documents.
