@@ -314,59 +314,93 @@
 
 
   /* ── PHENOMENA ──────────────────────────────────────────────────────────
-     Thirty things from the same weather as the range, drawn with the same
-     brush as the 爻. Fourth pass, and the first three are worth keeping
-     because each failed in its own direction:
+     Thirty things drawn in the range's own hand. Fifth pass. Each of the four
+     before it failed in its own direction and every one is worth keeping:
 
-       v1  clean line art — even spacing, straight rays. An icon set.
-       v2  hand() repeated one curve three to six times. Denser, and now all
-           thirty came out of one scheme built from copies of one part.
-       v3  every stroke drew its own numbers from a seeded stream. That fixed
-           the copying and broke something else: 太细,太没有规则 — hairlines
-           with no beat to them. **写意 is not randomness.** A hand has a
-           rhythm; noise does not. Per-stroke random draws are the one thing
-           that cannot produce one.
+       v1  clean line art, even spacing, straight rays. An icon set.
+       v2  hand() repeated one curve three to six times: denser, and now all
+           thirty were one scheme built from copies of one part.
+       v3  every stroke drew its own numbers from a stream. The copying went
+           and the hand went with it — 太细,太没有规则. 写意 is not randomness.
+       v4  ribbons on co-prime cycles. Right idea, wrong grammar: I built the
+           marks by GROWING branches off trunks, and let the weight run from
+           1.9 to 7.4 across 56 different widths. Measured, not guessed: seven
+           motifs had thirty places where one stroke sprouted from another.
 
-     So variation here is CYCLIC and deterministic, which is the law already
-     written twice in this codebase: the 爻 steps its bow on `index mod 3`, and
-     the range runs LINE_WOBBLE (7) against LINE_DRIFT (5) so the pair does not
-     come round for 35. Three co-prime cycles carry every stroke — weight on 3,
-     bow on 5, reach on 7 — so no two strokes in a mark share a combination
-     (105 before it repeats) while each channel keeps a beat the eye can
-     follow. Order without repetition. That is the whole answer to 没有规则.
+     ⭐ The house grammar is not assembly, it is PLACEMENT. Look at what the
+     range actually does: rounded lines of ONE weight, side by side, never
+     touching, never sprouting, turning so slowly that no bend ever reads as a
+     corner. A form is given by how a family of such lines is laid down —
+     nested, stacked, fanned — not by joining parts into a picture. Everything
+     below is built that way, which is why it finally looks like the site.
 
-     And every stroke is INK, not a line: a ribbon whose two long edges each
-     undulate once, the far edge at 0.78 of the near edge's amplitude so the
-     two are never mirrors, amplitude 12–17% of the ribbon's own width on the
-     3-cycle, both ends genuinely round. That is barPath() lifted off the
-     horizontal — see §笔触 — and it is why nothing below has a corner.
+     Three rules, and all three are enforced by construction rather than by
+     care, because care is what failed four times:
 
-     ⚠️ Geometry lives in PLAN as centrelines plus widths; PH renders it. The
-     checker reads the centrelines, because once these are ribbons an outline
-     cannot tell a branch joining a trunk from a stroke crossing one.
+       W      one width for all 183 strokes. No per-stroke variation at all;
+              the 爻's edge undulation stays (12–17% of W on the 3-cycle) so
+              the ink is alive, but the ink is one weight.
+       RMIN   nothing turns tighter than 15 units in a ±34 field — about four
+              and a half times the width. bw() derives its own bow cap from
+              this, so a bow tight enough to read as a corner cannot be
+              expressed; arcs are floored at the same radius.
+       CLEAR  no two strokes come within W + 1.5 of each other ANYWHERE,
+              ends included. There are no joins, no forks and no branches, so
+              there is nothing for a sharp meeting to happen at.
 
-     tests/marks-form.mjs holds: no crossings, no mirror or rotation, no
-     stamped parts, no bend tighter than a stroke's own width, and no two
-     strokes closer than their two half-widths — ink that touches is a blot. */
+     Variation stays cyclic — weight is gone as a channel, so it is bow on 5
+     against reach on 7, co-prime, the range's own LINE_WOBBLE/LINE_DRIFT law.
+     Deterministic: a mark draws identically on every visit.
+
+     ⚠️ Geometry lives in PLAN as centrelines; PH renders. The checker reads
+     centrelines, because a ribbon's outline cannot tell placement from growth. */
 
   var TAU = Math.PI * 2, PI = Math.PI;
 
-  /* Weight · bow · reach. Co-prime, so the combination does not come round
-     inside any mark; each on its own is a beat. */
-  var W_CYC = [1, 0.82, 1.16];
+  var W = 3.3;        /* the one width */
+  var RMIN = 15;      /* the gentlest turn the hand allows */
+  /* Bow on five against reach on seven, co-prime: the pair does not come round
+     for thirty-five, so no two strokes in a mark share a combination while each
+     channel keeps a beat. Read through wrapping accessors — a cycle indexed
+     past its own length is not a cycle, and 岚's sixth band silently became
+     NaN the one time I indexed the array directly. */
   var B_CYC = [1, -0.58, 0.76, -1.12, 0.42];
   var R_CYC = [1, 0.84, 1.18, 0.9, 1.28, 0.76, 1.08];
+  function Bc(i) { return B_CYC[((i % 5) + 5) % 5]; }
+  function Rc(i) { return R_CYC[((i % 7) + 7) % 7]; }
 
   function pt(p) { return R(p[0]) + " " + R(p[1]); }
 
-  /* Catmull–Rom as cubics. A centreline given as points is carried THROUGH
-     them, which is how a summit or a bend arrives without a corner — the
-     third pass met two straights at the apex and got exactly the 棱角 this
-     rules out. */
+  /* ⚠️ The end condition matters. Duplicating the first and last point (the
+     usual shortcut) shortens the tangent there to a sixth of the span, which
+     bends the curve hard in its first and last tenth — the checker read r8 on
+     arcs whose true radius was 15, and it was right: that is what was being
+     drawn. Reflecting a virtual point instead gives the ends the same tangent
+     length as the middle, so a curve enters and leaves as gently as it runs. */
+  /* The virtual point beyond each end continues the curve's OWN turn rather
+     than its straight line. Reflecting the position instead aims the end
+     tangent along the chord, which is half a step off the true tangent, and
+     the curve then bends hard in its first and last tenth to recover: the
+     checker read r8 on arcs whose radius was 15, and it was reading what was
+     actually drawn. For a circular arc this returns the previous point on the
+     circle exactly, so the arc simply continues. */
+  function extend(p0, p1, p2) {
+    var v1x = p1[0] - p0[0], v1y = p1[1] - p0[1];
+    var a1 = Math.atan2(v1y, v1x), a2 = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
+    var d = a2 - a1;
+    while (d > PI) d -= TAU;
+    while (d < -PI) d += TAU;
+    var a0 = a1 - d, L = Math.sqrt(v1x * v1x + v1y * v1y);
+    return [p0[0] - Math.cos(a0) * L, p0[1] - Math.sin(a0) * L];
+  }
+
   function crSegs(p) {
-    var segs = [], i;
-    for (i = 0; i < p.length - 1; i++) {
-      var a = p[i === 0 ? 0 : i - 1], b = p[i], c = p[i + 1], e = p[i + 2] || c;
+    var segs = [], n = p.length, i;
+    for (i = 0; i < n - 1; i++) {
+      var a = i === 0 ? (n > 2 ? extend(p[0], p[1], p[2]) : [2 * p[0][0] - p[1][0], 2 * p[0][1] - p[1][1]]) : p[i - 1];
+      var b = p[i], c = p[i + 1];
+      var e = i + 2 < n ? p[i + 2]
+        : (n > 2 ? extend(p[n - 1], p[n - 2], p[n - 3]) : [2 * p[n - 1][0] - p[n - 2][0], 2 * p[n - 1][1] - p[n - 2][1]]);
       segs.push([b,
         [b[0] + (c[0] - a[0]) / 6, b[1] + (c[1] - a[1]) / 6],
         [c[0] - (e[0] - b[0]) / 6, c[1] - (e[1] - b[1]) / 6],
@@ -375,18 +409,26 @@
     return segs;
   }
 
-  /* One brush stroke. `k` steps the 3-cycle; the two edges take different
-     amplitudes AND different phase, so the ribbon is never symmetric about its
-     own centreline. Ends are half-round in the geometry rather than left to
-     stroke-linecap: at these widths a 4% stroke rounds nothing. */
-  function brush(pts, w, k) {
+  /* One stroke of ink. The two long edges each undulate ONCE, the far edge at
+     0.78 of the near edge's amplitude and on a different phase so the ribbon is
+     never symmetric about its own centreline — barPath() lifted off the
+     horizontal. Both undulations are zeroed at the two ends, which is what
+     lets the caps be true half-rounds: v4 left them offset there and the cap
+     cubic came to a beak, which is where the 尖锐部 came from. */
+  function brush(pts, k) {
     var segs = crSegs(pts), m = segs.length, i, j;
-    var a = w * (0.121 + (Math.abs(k || 0) % 3) * 0.0233), b = a * 0.78, half = w / 2;
-    var dN = [], dF = [];
+    var a = W * (0.121 + (Math.abs(k || 0) % 3) * 0.0233), b = a * 0.78;
+    var ph = Math.sin(2.4), dN = [], dF = [];
+    /* ⚠️ Zeroing the far edge at both ends (which is what lets the caps be
+       clean half-rounds) also biases its mean inward by b·sin(phase), so every
+       ribbon painted about 15% thin — measured, not noticed: the plan carries
+       no width, so nothing else in the test could have seen it. Carry that
+       back into the half-width and the mean lands on W. */
+    var half = (W + b * ph) / 2;
     for (i = 0; i <= m; i++) {
       var t = m ? i / m : 0;
       dN.push(half + a * Math.sin(TAU * t));
-      dF.push(half + b * Math.sin(TAU * t + 2.4));
+      dF.push(half + b * (Math.sin(TAU * t + 2.4) - ph));
     }
     function nrm(s, end) {
       var p0 = end ? s[2] : s[0], p1 = end ? s[3] : s[1];
@@ -401,495 +443,465 @@
       near.push([off(s[0], n0, dN[i]), off(s[1], n0, dN[i]), off(s[2], n1, dN[i + 1]), off(s[3], n1, dN[i + 1])]);
       far.push([off(s[0], n0, -dF[i]), off(s[1], n0, -dF[i]), off(s[2], n1, -dF[i + 1]), off(s[3], n1, -dF[i + 1])]);
     }
-    /* the two caps, each a half-round pushed out along the stroke's own axis */
-    var t0 = nrm(segs[0], 0), t1 = nrm(segs[m - 1], 1);
-    var u0 = [t0[1], -t0[0]], u1 = [-t1[1], t1[0]], cap = w * 0.67;
+    /* a true half-round, two quarter-circle cubics, centred on the centreline's
+       own endpoint — not a single cubic stretched between two offset edges */
+    var K = half * 0.5523;
+    function capAt(P, n, u) {
+      var A = off(P, n, half), Bp = off(P, n, -half), Tp = off(P, u, half);
+      return " C" + pt(off(A, u, K)) + " " + pt(off(Tp, n, K)) + " " + pt(Tp)
+        + " C" + pt(off(Tp, n, -K)) + " " + pt(off(Bp, u, K)) + " " + pt(Bp);
+    }
+    var n0 = nrm(segs[0], 0), n1 = nrm(segs[m - 1], 1);
+    var head = segs[0][0], tail = segs[m - 1][3];
 
-    var d = "M" + pt(near[0][0]);
+    var d = "M" + pt(off(head, n0, half));
     for (i = 0; i < m; i++) d += " C" + pt(near[i][1]) + " " + pt(near[i][2]) + " " + pt(near[i][3]);
-    d += " C" + pt(off(near[m - 1][3], u1, cap)) + " " + pt(off(far[m - 1][3], u1, cap)) + " " + pt(far[m - 1][3]);
+    /* ⚠️ The outward direction at each end, not the inward one. Both caps were
+       bulging BACK into the ribbon — it cost a sixth of the ink and cut a notch
+       at every end, which is the second place the 尖锐部 were coming from. The
+       bounding box gave it away: 18.5 tall for a stroke that should have
+       measured 21.3 with its two half-rounds on. */
+    d += capAt(tail, n1, [n1[1], -n1[0]]);
     for (j = m - 1; j >= 0; j--) d += " C" + pt(far[j][2]) + " " + pt(far[j][1]) + " " + pt(far[j][0]);
-    return d + " C" + pt(off(far[0][0], u0, cap)) + " " + pt(off(near[0][0], u0, cap)) + " " + pt(near[0][0]) + " Z ";
+    return d + capAt(head, [-n0[0], -n0[1]], [-n0[1], n0[0]]) + " Z ";
   }
 
-  /* An arc that swells at its middle — round, never circular, and without a
-     random number anywhere. `swell` is the rule that replaces the wobble. */
-  function arcPts(cx, cy, rad, a0, a1, n, swell, squash) {
-    var out = [], i, q = squash == null ? 1 : squash;
-    for (i = 0; i <= n; i++) {
-      var t = i / n, ang = a0 + (a1 - a0) * t, rr = rad * (1 + (swell || 0) * Math.sin(PI * t));
-      out.push([cx + rr * Math.cos(ang), cy + rr * q * Math.sin(ang)]);
-    }
-    return out;
-  }
-
-  /* Two points and a belly, carried on a sine through five stations rather
-     than bent at a middle one. Three points put every degree of the turn at
-     the apex, and a bend tighter than the stroke is wide is exactly the 棱角
-     the brief rules out — the checker caught it on nine marks at once. The bow
-     is a stated quantity, never an accident. */
-  function bowPts(x0, y0, x1, y1, bow, n) {
+  /* A gently bowed run — the workhorse, and the only way a bend is expressed.
+     The belly is shrunk until what will be DRAWN turns no tighter than RMIN,
+     measured on the curve rather than estimated from the sine: the closed form
+     L²/(π²b) is right for a sine and the stations are carried by Catmull–Rom,
+     which is close but not equal, and "close" showed up as r13.7 where the
+     formula promised 15. Four passes of promising to be careful about corners
+     is what this replaces — a turn sharp enough to read as one cannot now be
+     written at all. */
+  function bw(x0, y0, x1, y1, frac) {
     var dx = x1 - x0, dy = y1 - y0, L = Math.sqrt(dx * dx + dy * dy) || 1;
-    var nx = -dy / L, ny = dx / L, out = [], i;
-    n = n || 4;
+    var nx = -dy / L, ny = dx / L, bow = frac * L, guard = 0;
+    function build(b) {
+      var out = [], i;
+      for (i = 0; i <= 6; i++) {
+        var t = i / 6, s = Math.sin(PI * t) * b;
+        out.push([x0 + dx * t + nx * s, y0 + dy * t + ny * s]);
+      }
+      return out;
+    }
+    while (guard++ < 60 && minRadius(build(bow)) < RMIN) bow *= 0.92;
+    return build(bow);
+  }
+
+  /* The radius a set of stations will actually be drawn at, measured on the
+     curve crSegs will lay down rather than estimated from a formula. */
+  function minRadius(p) {
+    var segs = crSegs(p), worst = Infinity, i, j, prev = null, prev2 = null;
+    for (i = 0; i < segs.length; i++) {
+      for (j = 1; j <= 12; j++) {
+        var t = j / 12, u = 1 - t, sg = segs[i];
+        var q = [u * u * u * sg[0][0] + 3 * u * u * t * sg[1][0] + 3 * u * t * t * sg[2][0] + t * t * t * sg[3][0],
+                 u * u * u * sg[0][1] + 3 * u * u * t * sg[1][1] + 3 * u * t * t * sg[2][1] + t * t * t * sg[3][1]];
+        if (prev2) {
+          var A = Math.sqrt(Math.pow(prev[0] - prev2[0], 2) + Math.pow(prev[1] - prev2[1], 2));
+          var B = Math.sqrt(Math.pow(q[0] - prev[0], 2) + Math.pow(q[1] - prev[1], 2));
+          var C = Math.sqrt(Math.pow(q[0] - prev2[0], 2) + Math.pow(q[1] - prev2[1], 2));
+          var ar = Math.abs((prev[0] - prev2[0]) * (q[1] - prev2[1]) - (q[0] - prev2[0]) * (prev[1] - prev2[1])) / 2;
+          if (ar > 1e-9) worst = Math.min(worst, A * B * C / (4 * ar));
+        }
+        prev2 = prev; prev = q;
+      }
+    }
+    return worst;
+  }
+
+  /* Same run with its crest moved off the middle, which is how a dune ridge
+     differs from a swell. ⚠️ The skew piles the turn onto one side, so bw()'s
+     flat cap does not hold here — 谷 and 沙 came out at r10 under a formula
+     that promised 15. So it MEASURES: shrink the belly until what will be drawn
+     is gentle enough. An estimate that is right for the symmetric case and
+     quietly wrong for the skewed one is the shape of every bug in this file. */
+  function swell(x0, y0, x1, y1, frac, at) {
+    var dx = x1 - x0, dy = y1 - y0, L = Math.sqrt(dx * dx + dy * dy) || 1;
+    var nx = -dy / L, ny = dx / L, k = Math.log(0.5) / Math.log(at);
+    var bow = frac * L, guard = 0;
+    function build(b) {
+      var out = [], j;
+      for (j = 0; j <= 8; j++) {
+        var t = j / 8, s = Math.sin(PI * Math.pow(t, k)) * b;
+        out.push([x0 + dx * t + nx * s, y0 + dy * t + ny * s]);
+      }
+      return out;
+    }
+    while (guard++ < 60 && minRadius(build(bow)) < RMIN) bow *= 0.92;
+    return build(bow);
+  }
+
+  /* A circular arc, floored at RMIN so it can never be a tight ring, sampled
+     as points rather than written as an `A` command: a true arc drawn in one
+     stroke is the one curve a hand cannot make. */
+  function arc(cx, cy, rad, a0, a1, n) {
+    var out = [], i, r0 = Math.max(RMIN + 1.5, rad);   /* the floor with the CR approximation's margin on it */
+    n = Math.max(n, Math.ceil(Math.abs(a1 - a0) / 0.3));
     for (i = 0; i <= n; i++) {
-      var t = i / n, s = Math.sin(PI * t) * bow;
-      out.push([x0 + dx * t + nx * s, y0 + dy * t + ny * s]);
+      var t = i / n, ang = a0 + (a1 - a0) * t;
+      out.push([cx + r0 * Math.cos(ang), cy + r0 * Math.sin(ang)]);
     }
     return out;
   }
 
-  /* A belly stated as a fraction of the run, capped at 8%: a sine bow of
-     fraction f turns at radius L/(pi^2 * f), so 8% keeps every stroke's radius
-     above 1.2 of its own length and no bow can ever be tighter than the ink is
-     wide. An absolute bow cannot promise that — on 星's shortest arms the same
-     number that read as a gentle belly on a long stroke folded a short one. */
-  function bw(x0, y0, x1, y1, frac, n) {
-    var L = Math.sqrt((x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0));
-    return bowPts(x0, y0, x1, y1, Math.max(-0.08, Math.min(0.08, frac)) * L, n);
-  }
-
-  /* A ray leaving a hub. The hole is the larger of a share of the radius and a
-     multiple of the ink, so arms on a small flake open far enough apart not to
-     merge — what converges at a centre fuses into a disc, which is the
-     florette's lesson and was 雪's smallest flake. */
-  function ray(cx, cy, ang, r0, reach, frac, w) {
-    var hole = Math.max(r0, (w || 0) * 1.4), tip = hole + reach;
-    return bw(cx + Math.cos(ang) * hole, cy + Math.sin(ang) * hole,
-      cx + Math.cos(ang) * tip, cy + Math.sin(ang) * tip, frac);
-  }
-
-  function S(p, w, k) { return { p: p, w: w, k: k }; }
+  function fam(n, f) { var out = [], i; for (i = 0; i < n; i++) out.push(f(i)); return out; }
 
   var PLAN = {};
 
-  /* 1 日 — a broken body, and light that leans rather than radiating. The
-     opening in the ring is at the lower left and every answer is on the other
-     flank, which is what keeps a sun off the compass rose. */
+  /* ⭐ Every family below staggers its members' EXTENT, not just their
+     position. Four rows of the same run at four heights is a mirror and a
+     stamp at the same time — the checker reported both on 潮, 川, 浪 and 月 the
+     moment they were laid out that way. Different reaches break both at once,
+     which is why the length lists are written out rather than derived. */
+
+  /* 1 日 — four broken rings, each opening somewhere else. Light read as
+     nested contour rather than as spokes. */
   PLAN.sun = function () {
-    return [
-      S(arcPts(0, 0, 17.5, -2.35, 2.55, 8, 0.07), 5, 0),
-      S(arcPts(0.5, -0.5, 24, -0.98, 0.16, 4, 0.05), 3.6, 1),
-      S(arcPts(1, -1, 29.5, -0.54, 0.76, 4, 0.05), 2.8, 2),
-      S(arcPts(-2, 1, 31, 2.34, 3.36, 4, 0.06), 4, 1)
-    ];
+    return fam(4, function (i) {
+      var a0 = -2.55 + Bc(i) * 0.3;
+      return arc(0, 0, 16 + i * 5.5, a0, a0 + 4.3 * Rc(i), 9);
+    });
   };
 
-  /* 2 月 — the shadow runs the length of the disc as one gesture and stops
-     inside it. Meeting the rim at the horns makes a point, and a point is the
-     ⑦ the brief rules out; a crescent that keeps its shadow inside stays round
-     everywhere. The outer answers sit on one flank only. */
+  /* 2 月 — the same nesting with the centre off to one side: four C's opening
+     the same way, each cut at a different angle top and bottom so the crescent
+     is not its own mirror. */
   PLAN.moon = function () {
-    return [
-      S(arcPts(0, 0, 19.5, -1.5, 1.55, 8, 0.05), 5, 0),
-      S(bowPts(5.5, -16.5, 4.5, 17, -8), 3.8, 1),
-      S(arcPts(0.5, 0, 26, -1, 0.42, 4, 0.05), 3.2, 2),
-      S(arcPts(1, -1, 31, -0.62, 0.86, 5, 0.04), 2.6, 0)
-    ];
+    return fam(4, function (i) {
+      return arc(3, 0, 16 + i * 5.6, -2.3 + i * 0.18, 1.35 + i * 0.22, 8);
+    });
   };
 
-  /* 3 瀑 — four falls of graded reach; none of them arrives, which is what
-     puts the drop out of sight. The basin is two shallows seen flat. */
+  /* 3 瀑 — five falls of graded reach, two long shallows well below them.
+     Nothing arrives, which is what puts the drop out of sight. */
   PLAN.waterfall = function () {
-    var x = [-15, -7, 1, 9], top = [-32, -29, -33, -27], bot = [4, 10, 6, 1], i, out = [];
-    for (i = 0; i < 4; i++) {
-      out.push(S(bowPts(x[i], top[i], x[i] + B_CYC[i] * 2.4, bot[i], B_CYC[i] * 2.6, 4 + i),
-        4.4 * W_CYC[i % 3], i));
-    }
-    out.push(S(arcPts(-3, 15, 12, 0.3, PI - 0.42, 4, 0.09, 0.62), 3.4, 1));
-    out.push(S(arcPts(-1, 17, 19.5, 0.24, PI - 0.22, 5, 0.06, 0.55), 2.8, 2));
+    var top = [-33, -27, -31, -24, -29], bot = [12, 0, 7, -6, 4];
+    var out = fam(5, function (i) {
+      var x = -16 + i * 8;
+      return bw(x, top[i], x + Bc(i) * 2, bot[i], Bc(i) * 0.04);
+    });
+    out.push(bw(-24, 19, 18, 20, 0.11));
+    out.push(bw(-11, 30, 29, 29, 0.07));
     return out;
   };
 
-  /* 4 岚 — mountain vapour. Bands that begin and end where they begin and end:
-     reach on the 7-cycle, belly on the 5-cycle, so the stack opens and closes
-     down its height without any two bands ever agreeing. */
+  /* 4 岚 — mountain vapour: bands that begin and end where they begin and end. */
   PLAN.haze = function () {
-    var x0 = [-30, -22, -31, -18, -26], x1 = [6, 20, -2, 26, 14], i, out = [];
-    for (i = 0; i < 5; i++) {
-      out.push(S(bowPts(x0[i], -22 + i * 10, x1[i], -22 + i * 10 + B_CYC[i] * 1.6, B_CYC[i] * 2.4, 4 + (i % 3)),
-        4.6 * W_CYC[i % 3], i));
-    }
-    return out;
+    var len = [52, 30, 44, 22, 60, 36];
+    return fam(6, function (i) {
+      var x0 = -31 + Bc(i) * 4, y = -22 + i * 8.8;
+      return bw(x0, y, x0 + len[i], y + Bc(i) * 1.4, Bc(i) * 0.03);
+    });
   };
 
-  /* 5 雨 — one shallow sky well off centre, and rain of unequal length raked
-     one way. Identical ticks under a symmetric cloud is the pictogram. */
+  /* 5 雨 — one long sag of sky, and rain of unequal reach raked one way. */
   PLAN.rain = function () {
-    var out = [S(arcPts(-5, -24, 21, 0.42, PI - 0.72, 5, 0.06, 0.6), 4.6, 0)], i;
-    var y0 = [0, -3, 1, -2, 2, -1], len = [22, 15, 26, 18, 24, 13];
-    for (i = 0; i < 6; i++) {
-      out.push(S(bowPts(-26 + i * 8, y0[i], -31 + i * 8, y0[i] + len[i], B_CYC[i % 5] * 1.4, 3 + (i % 3)),
-        3.9 * W_CYC[i % 3], i));
-    }
-    return out;
+    var len = [30, 14, 24, 36, 18, 28, 21];
+    var out = [bw(-30, -29, 28, -27, 0.07)];
+    return out.concat(fam(7, function (i) {
+      var x = -28 + i * 8.8, y = -12 + Bc(i) * 2;
+      return bw(x, y, x - 4, y + len[i], Bc(i) * 0.04);
+    }));
   };
 
-  /* 6 雪 — a drift, not a crystal. Five flakes at five sizes, three arms each
-     on bearings off the 7-cycle, around a hole so the arms never meet: what
-     converges at a centre fuses into a disc, which is the florette's lesson.
-     Six-fold anything is ruled out twice, by ③ and by ⑥. */
+  /* 6 雪 — a drift, not a crystal: two banks and nine falls on one bearing.
+     Six-fold anything is out twice over, by ③ and by ⑥. */
   PLAN.snow = function () {
-    var F = [[-19, -18, 10, 0.3], [9, -25, 7.5, 2.1], [20, -5, 10.5, 4.4], [-7, 3, 8.5, 1.2], [-26, 8, 6, 3.3]];
-    var out = [], i, j;
-    for (i = 0; i < F.length; i++) {
-      var cx = F[i][0], cy = F[i][1], rad = F[i][2], a = F[i][3];
-      for (j = 0; j < 3; j++) {
-        var w = Math.max(1.9, rad * 0.36 * W_CYC[j]);
-        out.push(S(ray(cx, cy, a, rad * 0.3, rad * 0.86, B_CYC[(i + j) % 5] * 0.06, w), w, i + j));
-        a += 1.78 + R_CYC[(i * 3 + j) % 7] * 0.45;
-      }
-    }
-    out.push(S(bw(-32, 22, 33, 19, 0.05), 4.6, 1));
-    out.push(S(bw(-22, 33, 30, 31, -0.03), 3.2, 2));
-    return out;
+    var out = [bw(-30, 17, 30, 15, 0.11), bw(-26, 27, 28, 26, 0.07)];
+    var P = [[-26, -30], [-9, -32], [8, -29], [24, -31], [-22, -18],
+             [-4, -20], [14, -16], [28, -19], [-14, -6]];
+    var len = [12, 8, 14, 9, 11, 13, 7, 10, 12];
+    return out.concat(fam(9, function (i) {
+      return bw(P[i][0], P[i][1], P[i][0] - len[i] * 0.42, P[i][1] + len[i] * 0.91, Bc(i) * 0.05);
+    }));
   };
 
-  /* 7 浪 — three shallows under a crest that belongs to another swell
-     entirely, smaller and away to the right. A wave answered by its mirror is
-     a decal. */
+  /* 7 浪 — five swells stacked, each shallower and each crossing the frame on
+     its own two points. */
   PLAN.wave = function () {
-    return [
-      S(arcPts(-3, 15, 26, PI + 0.3, TAU - 0.2, 6, 0.05), 5, 0),
-      S(arcPts(-2, 17, 19.5, PI + 0.5, TAU - 0.48, 5, 0.07), 3.6, 1),
-      S(arcPts(-1, 19, 13, PI + 0.78, TAU - 0.92, 4, 0.1), 2.8, 2),
-      S(arcPts(25, -9, 8, PI * 1.1, PI * 1.9, 4, 0.09), 3.2, 1),
-      S(bowPts(-31, 24, 30, 26, -4), 3.6, 0)
-    ];
+    var x0 = [-29, -33, -31, -32, -30], x1 = [33, 29, 32, 30, 33];
+    return fam(5, function (i) {
+      return bw(x0[i], -6 + i * 9.5, x1[i], -3 + i * 9.5, -(0.31 - i * 0.062));
+    });
   };
 
-  /* 8 涡 — one stroke inward, never lifting. The turn is even and the shrink
-     is not, so no two revolutions sit the same distance apart, and the squash
-     keeps it off the compass. */
+  /* 8 涡 — one stroke inward, never lifting, shrinking slowly enough that the
+     coils stay a clearance apart and the curve never turns under RMIN. */
   PLAN.whirl = function () {
-    var pts = [], a = 0.4, rad = 28, i;
-    for (i = 0; i < 21; i++) {
-      pts.push([Math.cos(a) * rad, Math.sin(a) * rad * 0.9]);
-      a += 0.6;
-      rad *= 0.942 - R_CYC[i % 7] * 0.006;
+    var pts = [], i;
+    for (i = 0; i <= 24; i++) {
+      var a = 0.4 + i * 0.52, rad = 33 - i * 0.56;
+      pts.push([Math.cos(a) * rad, Math.sin(a) * rad]);
     }
-    return [S(pts, 4, 0)];
+    return [pts];
   };
 
-  /* 9 星 — four lights at four sizes, not one five-pointed star. Bearings come
-     off the 7-cycle so no cluster repeats another's angles, and none of them
-     is drawn thin enough to become a hairline. */
+  /* 9 星 — six rays off a hole wide enough that they never meet, answered by
+     two smaller lights out where no ray points. */
   PLAN.star = function () {
-    var out = [], j;
-    var a = 0.55, reach = [23, 10, 17, 8, 20, 12];
-    for (j = 0; j < 6; j++) {
-      var w = 4.8 * W_CYC[j % 3];
-      out.push(S(ray(-3, -1, a, 6, reach[j], B_CYC[j % 5] * 0.05, w), w, j));
-      a += 0.86 + R_CYC[(j * 3) % 7] * 0.2;
-    }
-    var P = [[24, 21, 0.44], [-25, 20, 0.36]];
-    for (var i = 0; i < 2; i++) {
-      var b = 1.4 + i * 2.2;
-      for (j = 0; j < 3; j++) {
-        var ws = Math.max(2, 4.8 * P[i][2] * W_CYC[j]);
-        out.push(S(ray(P[i][0], P[i][1], b, 2.4, 13 * P[i][2] * R_CYC[(i + j) % 7], B_CYC[(i + j) % 5] * 0.05, ws), ws, i + j));
-        b += 1.85 + R_CYC[(i * 2 + j) % 7] * 0.4;
+    var ang = [], a = 0.55, i;
+    for (i = 0; i < 6; i++) { ang.push(a); a += 0.88 + Rc(i * 3) * 0.22; }
+    var out = fam(6, function (j) {
+      var r2 = 22 + Rc(j) * 9;
+      return bw(Math.cos(ang[j]) * 7, Math.sin(ang[j]) * 7,
+        Math.cos(ang[j]) * r2, Math.sin(ang[j]) * r2, Bc(j) * 0.03);
+    });
+    [0, 1].forEach(function (j) {
+      var mid = (ang[j] + ang[j + 1]) / 2, cx = Math.cos(mid) * 26, cy = Math.sin(mid) * 26;
+      var b = 0.4 + j * 1.7, i;
+      for (i = 0; i < 3; i++) {
+        out.push(bw(cx + Math.cos(b) * 3, cy + Math.sin(b) * 3,
+          cx + Math.cos(b) * 8.4, cy + Math.sin(b) * 8.4, 0.03));
+        b += 1.9 + Rc(i + j * 2) * 0.3;
       }
-    }
+    });
     return out;
   };
 
-  /* 10 电 — one fall that turns and never comes back, plus two spurs that
-     leave it. A bolt folded into a flat Z is both the icon and the 棱角; here
-     the excursions are long enough that the turn radius never drops under the
-     stroke's own width. */
+  /* 10 电 — four falls leaning one way at wildly unequal reach, tight together
+     under one edge of sky. The folded Z is both the icon and the 棱角; a strike
+     read as a rake of light is neither. */
   PLAN.lightning = function () {
-    return [
-      S([[9, -33], [1, -22], [-4, -10], [2, 2], [9, 14], [3, 25], [-3, 33]], 4.4, 0),
-      S(bw(2, 2, -18, 11, 0.06), 3.2, 1),
-      S(bw(9, 14, 27, 20, -0.055), 2.8, 2),
-      S(bw(-4, -10, -21, -16, 0.05), 2.4, 1)
-    ];
+    var len = [46, 18, 32, 12];
+    var out = fam(4, function (i) {
+      var x = -13 + i * 9, y = -14 + Bc(i) * 3;
+      return bw(x, y, x - 5, y + len[i], Bc(i) * 0.035);
+    });
+    out.push(bw(-26, -30, 24, -28, 0.08));
+    return out;
   };
 
-  /* 11 虹 — bands share a centre so they cannot cross, and share nothing else:
-     four spans, four weights, four gaps, none of them equal. */
+  /* 11 虹 — four bands on one centre, so they cannot cross, sharing nothing
+     else: four spans, four openings, four gaps. */
   PLAN.rainbow = function () {
-    var rad = [12, 17.5, 23.5, 30], sp = [[0.3, 2.7], [0.08, 3.02], [0.46, 2.3], [0.16, 2.84]];
-    var out = [], i;
-    for (i = 0; i < 4; i++) {
-      out.push(S(arcPts(-1 + i * 0.5, 21, rad[i], PI + sp[i][0], PI + sp[i][1], 4 + (i % 3), 0.045),
-        4.8 * W_CYC[i % 3], i));
-    }
-    return out;
+    return fam(4, function (i) {
+      var a0 = PI + 0.2 + Bc(i) * 0.14;
+      return arc(0, 26, 16 + i * 5.8, a0, a0 + 2.6 * Rc(i), 8);
+    });
   };
 
-  /* 12 露 — a drop is one loaded stroke, not an outline. Four of them, no two
-     the same length or the same weight, hanging off one long edge. */
+  /* 12 露 — one long edge and six drops of unequal length beneath it. */
   PLAN.dew = function () {
-    var x = [-20, -6, 8, 22], top = [8, 12, 6, 11], len = [15, 10, 18, 12];
-    var out = [S(bowPts(-32, -14, 32, -6, 6), 4.6, 0)], i;
-    for (i = 0; i < 4; i++) {
-      out.push(S(bowPts(x[i], top[i], x[i] + B_CYC[i] * 1.2, top[i] + len[i], B_CYC[i] * 0.8),
-        6.4 * W_CYC[i % 3], i));
-    }
-    return out;
+    var len = [17, 9, 20, 12, 15, 8, 18];
+    var out = [bw(-31, -15, 31, -9, 0.08)];
+    return out.concat(fam(7, function (i) {
+      var x = -27 + i * 9, t = 3 + Bc(i) * 3;
+      return bw(x, t, x + Bc(i) * 1.5, t + len[i], Bc(i) * 0.03);
+    }));
   };
 
-  /* 13 霜 — frost climbs a stem and feathers to one side only. Everything
-     leaves into the open sector above, so nothing crosses and nothing meets. */
+  /* 13 霜 — a fan of spikes off one base, none of them touching it and none
+     touching each other. Frost as placement, not as a branching crystal. */
   PLAN.frost = function () {
-    var stem = [[-30, 23], [-19, 15], [-8, 6], [4, -4], [16, -14], [27, -22]];
-    var out = [S(stem, 4.6, 0)], i;
-    var at = [[-24, 19], [-13.5, 10.5], [-2, 1], [10, -9], [21.5, -18]];
-    var ang = [-2.02, -2.28, -1.92, -2.34, -1.86], len = [16, 10, 18, 9, 13];
-    for (i = 0; i < 5; i++) {
-      out.push(S(bowPts(at[i][0], at[i][1],
-        at[i][0] + Math.cos(ang[i]) * len[i], at[i][1] + Math.sin(ang[i]) * len[i],
-        B_CYC[i] * 1.2), 3.4 * W_CYC[i % 3], i));
-    }
-    return out;
+    var len = [22, 11, 18, 25, 13, 20, 15];
+    var out = [bw(-31, 25, 31, 22, 0.07)];
+    return out.concat(fam(7, function (i) {
+      var x = -27 + i * 9;
+      return bw(x, 17, x + 2 + Bc(i), 17 - len[i], Bc(i) * 0.035);
+    }));
   };
 
-  /* 14 潮 — long water read by its rhythm. Each swell crosses the frame at its
-     own two points and rests on its own number of stations, which is what
-     stops four swells being one swell drawn four times. */
+  /* 14 潮 — long water, five swells all leaning the same way at an even pitch.
+     Where 岚 staggers its bellies, 潮 keeps time and staggers its reach. */
   PLAN.tide = function () {
-    return [
-      S([[-32, -19], [-8, -21], [16, -18], [30, -20]], 4.8, 0),
-      S([[-24, -6], [-10, -9], [4, -5], [16, -9], [26, -5]], 3.4, 1),
-      S([[-33, 7], [-6, 4], [20, 9], [33, 6]], 4.2, 2),
-      S([[-16, 21], [12, 17], [31, 22]], 2.8, 0)
-    ];
+    var x0 = [-32, -25, -31, -18, -28], x1 = [22, 32, 15, 31, 29], tilt = [2, -3, 1, -2, 3];
+    return fam(5, function (i) {
+      var y = -20 + i * 10;
+      return bw(x0[i], y, x1[i], y + tilt[i], 0.024 + i * 0.016);
+    });
   };
 
-  /* 15 泉 — a spring throws highest at the middle, and the ripples it lands in
-     are nested but not concentric: the centres drift and the spans do not
-     match. Seen flat, so the basin stays inside the frame. */
+  /* 15 泉 — four jets opening upward and two shallows widening below. */
   PLAN.spring = function () {
-    return [
-      S([[-8, 10], [-11, -6], [-13, -21]], 3.2, 0),
-      S([[-3, 11], [-4, -9], [-3, -27]], 4.6, 1),
-      S([[2, 11], [4, -4], [7, -19]], 3.6, 2),
-      S([[7, 10], [11, -2], [14, -13]], 2.8, 0),
-      S(arcPts(0, 15, 11, 0.34, PI - 0.5, 4, 0.11, 0.7), 3.4, 1),
-      S(arcPts(0, 16.5, 20, 0.26, PI - 0.32, 5, 0.08, 0.52), 2.8, 2),
-      S(arcPts(1, 19, 30, 0.3, PI - 0.2, 5, 0.06, 0.44), 2.4, 0)
-    ];
-  };
-
-  /* 16 川 — two banks and three currents. Five strokes on one structure would
-     be one stroke five times, so each takes a different number of stations and
-     crosses the frame on its own phase. */
-  PLAN.river = function () {
-    return [
-      S([[-33, -28], [-29, 2], [-32, 33]], 4.4, 0),
-      S([[-19, -31], [-14, -13], [-20, 5], [-13, 20], [-18, 33]], 3.8, 1),
-      S([[-4, -30], [3, -2], [-3, 33]], 3.2, 2),
-      S([[13, -32], [18, -15], [12, 3], [17, 31]], 3.6, 0),
-      S([[27, -31], [33, -1], [28, 17], [33, 33]], 4.2, 1)
-    ];
-  };
-
-  /* 17 泽 — a shore drawn as eight soundings at eight bearings and eight
-     reaches, left open on one side. Reaches that alternate long-short make the
-     outline two-fold symmetric — the checker caught that — so they run in no
-     order at all. The opening is what makes it water seen from above. */
-  PLAN.lake = function () {
-    var A = [3.45, 3.95, 4.75, 5.35, 0.15, 1.05, 1.55, 2.4], pts = [], i;
-    for (i = 0; i < A.length; i++) {
-      var rd = 27 + (R_CYC[(i * 3) % 7] - 1) * 12;
-      pts.push([Math.cos(A[i]) * rd, Math.sin(A[i]) * rd * 0.82]);
-    }
-    return [S(pts, 4.8, 0), S(bw(-13, -5, 9, -8, 0.055), 3.4, 1), S(bw(-9, 7, 14, 4, -0.05), 2.8, 2)];
-  };
-
-  /* 18 峰 — three ranges, each ONE stroke carried over its summit. Two flanks
-     meeting at the top is the 棱角, and it is what the third pass drew; enough
-     stations across the crown and the turn never tightens past the stroke's
-     own width. Every summit sits somewhere else along its span. */
-  PLAN.peak = function () {
-    return [
-      S([[-33, 7], [-22, -3], [-13, -13], [-4, -22], [5, -26], [15, -19], [24, -7], [32, 8]], 5, 0),
-      S([[-33, 22], [-19, 15], [-8, 5], [1, -5], [11, -1], [21, 8], [32, 22]], 3.6, 1),
-      S([[-32, 34], [-16, 28], [-2, 19], [10, 15], [22, 22], [33, 34]], 2.8, 2)
-    ];
-  };
-
-  /* 19 谷 — the same idea read the other way up, which is what ⑤ allows:
-     shared structure, no shared measurement. Three floors, three station
-     counts, and each one walks right as it deepens. */
-  PLAN.valley = function () {
-    return [
-      S([[-34, -30], [-21, -18], [-8, -7], [3, -2], [15, -10], [26, -20], [34, -28]], 4.8, 0),
-      S([[-34, -10], [-18, -2], [-2, 6], [12, 13], [23, 10], [34, 2]], 3.4, 1),
-      S([[-34, 8], [-25, 16], [-14, 24], [-2, 30], [12, 28], [24, 22], [34, 15]], 2.6, 2)
-    ];
-  };
-
-  /* 20 崖 — strata to the left, the face to the right, and the two never meet.
-     That gap is the cliff. */
-  PLAN.cliff = function () {
-    var end = [-8, -14, -5, -11], out = [], i;
-    for (i = 0; i < 4; i++) {
-      out.push(S(bw(-33, -24 + i * 11, end[i], -22 + i * 11, B_CYC[i] * 0.05, 3 + (i % 3)),
-        4.2 * W_CYC[i % 3], i));
-    }
-    out.push(S([[4, -30], [8, -12], [3, 6], [10, 26]], 4.4, 1));
-    out.push(S([[14, -25], [17, -2], [21, 31]], 3.6, 2));
-    out.push(S([[23, -31], [26, -9], [31, 12], [28, 31]], 4.8, 0));
+    var len = [26, 18, 30, 21];
+    var out = fam(4, function (i) {
+      var x = -9 + i * 6;
+      return bw(x, 6, x + (i - 1.5) * 4, 6 - len[i], Bc(i) * 0.04);
+    });
+    out.push(bw(-20, 16, 18, 17, 0.12));
+    out.push(bw(-29, 25, 27, 24, 0.085));
     return out;
   };
 
-  /* 21 石 — three stones, each carried over on its own number of soundings.
-     None is an ellipse and none is another one scaled. */
+  /* 16 川 — four currents down the frame at an uneven pitch, bellies
+     alternating so the water reads as moving rather than as four rules. */
+  PLAN.river = function () {
+    var x = [-20, -7, 5, 19], top = [-33, -28, -32, -26], bot = [29, 33, 26, 32];
+    return fam(4, function (i) {
+      return bw(x[i] + Bc(i) * 3, top[i], x[i] - Bc(i) * 3, bot[i], Bc(i) * 0.045);
+    });
+  };
+
+  /* 17 泽 — two shores on one centre, open on the same side and cut to
+     different spans, with two soundings inside them. */
+  PLAN.lake = function () {
+    var out = fam(2, function (i) {
+      return arc(0, 0, 24 + i * 7, 0.35 + i * 0.55, 0.35 + i * 0.55 + 4.6 - i * 0.55, 14);
+    });
+    out.push(bw(-13, -4, 9, -7, 0.08));
+    out.push(bw(-9, 8, 14, 5, -0.07));
+    return out;
+  };
+
+  /* 18 峰 — four ranges nested, each shallower and each crowned further along
+     its span than the one in front. This is the range's own drawing. */
+  PLAN.peak = function () {
+    return fam(4, function (i) {
+      return swell(-32, 8 + i * 7, 32, 6 + i * 7, -(0.3 - i * 0.045), 0.4 + i * 0.07);
+    });
+  };
+
+  /* 19 谷 — the same read the other way up, which is what ⑤ allows: shared
+     structure, no shared measurement. */
+  PLAN.valley = function () {
+    var x0 = [-24, -28, -31, -33], x1 = [22, 27, 31, 33];
+    return fam(4, function (i) {
+      return swell(x0[i], -26 + i * 10, x1[i], -28 + i * 10, 0.32 - i * 0.05, 0.38 + i * 0.06);
+    });
+  };
+
+  /* 20 崖 — strata to the left, the face to the right, and a wide gap between
+     them. That gap is the cliff. */
+  PLAN.cliff = function () {
+    var end = [-8, -15, -4, -12];
+    var out = fam(4, function (i) {
+      return bw(-32, -22 + i * 10, end[i], -20 + i * 10, Bc(i) * 0.045);
+    });
+    return out.concat(fam(3, function (i) {
+      var x = 7 + i * 10;
+      return bw(x, -30 + i * 3, x + 4 + Bc(i) * 2, 28 - i * 4, Bc(i) * 0.04);
+    }));
+  };
+
+  /* 21 石 — low swells, not domes. At this gentleness a small tall stone is
+     not expressible, and that is the constraint doing its job: what comes out
+     is a boulder half-buried, which is what a stone in a landscape is. */
   PLAN.stone = function () {
     return [
-      S(bw(-33, 25, 33, 22, 0.06), 4.4, 0),
-      S([[-33, 17], [-29, 10], [-23, 6], [-17, 7], [-13, 12], [-11, 18]], 4, 1),
-      S([[-8, 19], [-4, 10], [2, 4], [9, 4], [15, 10], [18, 19]], 5, 2),
-      S([[19, 17], [24, 12], [30, 11], [34, 14]], 3.2, 0)
+      bw(-33, 27, 33, 25, 0.045),
+      bw(-33, 17, -7, 19, -0.12),
+      bw(-27, 6, -7, 8, -0.16),
+      bw(2, 20, 30, 18, -0.1),
+      bw(9, 9, 25, 10, -0.17),
+      bw(-4, -3, 18, -1, -0.09)
     ];
   };
 
-  /* 22 沙 — each ridge carries one crest and the crest walks along the span
-     from row to row. Stacked identical humps are a fabric swatch. */
+  /* 22 沙 — four ridges, each with its crest at a different place along the
+     span. Stacked identical humps are a fabric swatch. */
   PLAN.dune = function () {
-    return [
-      S([[-34, -15], [-24, -19], [-13, -21], [-1, -17], [14, -20], [26, -17], [34, -14]], 4.8, 0),
-      S([[-34, -2], [-20, -7], [-6, -3], [8, -8], [22, -4], [34, -1]], 3.2, 1),
-      S([[-34, 13], [-19, 6], [0, 12], [18, 5], [34, 11]], 4, 2),
-      S([[-34, 27], [-8, 20], [12, 26], [34, 21]], 2.6, 0)
-    ];
+    return fam(4, function (i) {
+      return swell(-32, -14 + i * 11, 32, -16 + i * 11, -(0.1 + i * 0.02), 0.28 + i * 0.16);
+    });
   };
 
-  /* 23 松 — boughs alternate sides until they don't. One break in the
-     alternation is what stops a tree reading as a fir pictogram; each leaves
-     the trunk at its own angle, its own reach, its own rise. */
+  /* 23 松 — a trunk and six boughs that do not touch it. In this grammar a
+     bough is PLACED beside the trunk, not grown out of it, and the tree reads
+     the same while the mark stays a family of separate lines. */
   PLAN.pine = function () {
-    var trunk = [[3, 31], [1, 10], [-1, -10], [-3, -27]];
-    var out = [S(trunk, 5, 0)], i;
-    var y = [22, 14, 6, -2, -10, -18], side = [1, -1, 1, -1, -1, 1];
-    var reach = [21, 18, 17, 14, 12, 9], rise = [7, 6, 6, 5, 4, 4];
-    for (i = 0; i < 6; i++) {
-      var tx = 3 - 6 * (31 - y[i]) / 58;
-      out.push(S(bw(tx, y[i], tx + side[i] * reach[i], y[i] - rise[i], side[i] * B_CYC[i % 5] * 0.07),
-        3.9 * W_CYC[i % 3], i));
-    }
-    return out;
+    var out = [bw(2, 32, -2, -28, 0.04)];
+    var side = [1, -1, 1, -1, -1, 1], reach = [21, 19, 17, 14, 11, 8];
+    return out.concat(fam(6, function (i) {
+      var y = 21 - i * 7.4, tx = 2 - 4 * (32 - y) / 60, s = side[i];
+      return bw(tx + s * 7.5, y, tx + s * (7.5 + reach[i]), y - 5, s * Bc(i) * 0.05);
+    }));
   };
 
-  /* 24 竹 — the node is a GAP, not a bar across the cane. A crossbar breaks ①
-     on every cane; leaving the internodes apart says the same thing in this
-     hand. The spur beside each gap takes its own side. */
+  /* 24 竹 — the node is a GAP. A bar across the cane would be a crossing on
+     every cane; leaving the internodes apart says the same thing in this hand. */
   PLAN.bamboo = function () {
-    var C = [[-19, 32, -14, -29, 4, 4.8], [0, 31, 4, -31, 5, 4.2], [17, 33, 24, -25, 3, 3.4]];
+    var C = [[-18, 32, -14, -28, [0.28, 0.63], -1, 0.55],
+             [2, 31, 5, -30, [0.24, 0.55], 1, 0.3],
+             [20, 33, 24, -24, [0.44], -1, 0.6]];
     var out = [], i, j;
     for (i = 0; i < C.length; i++) {
-      var x0 = C[i][0], y0 = C[i][1], x1 = C[i][2], y1 = C[i][3], n = C[i][4], w = C[i][5];
-      for (j = 0; j < n; j++) {
-        var a = j / n + (j ? 0.04 : 0), b = (j + 1) / n - (j === n - 1 ? 0 : 0.04);
-        out.push(S(bw(x0 + (x1 - x0) * a, y0 + (y1 - y0) * a, x0 + (x1 - x0) * b, y0 + (y1 - y0) * b,
-          B_CYC[(i * 2 + j) % 5] * 0.05, 3 + ((i + j) % 3)), w * W_CYC[j % 3], i + j));
-        if (j < n - 1) {
-          var nx = x0 + (x1 - x0) * ((j + 1) / n), ny = y0 + (y1 - y0) * ((j + 1) / n);
-          var sd = (i + j) % 2 ? 1 : -1;
-          out.push(S(bw(nx + sd * 4.5, ny + 0.6, nx + sd * 11, ny - 3.4, sd * 0.06), 2.4, j));
-        }
+      var x0 = C[i][0], y0 = C[i][1], x1 = C[i][2], y1 = C[i][3];
+      var marks = [0].concat(C[i][4], [1]);
+      for (j = 0; j + 1 < marks.length; j++) {
+        var a = marks[j] + (j ? 0.05 : 0), b = marks[j + 1] - (j + 2 === marks.length ? 0 : 0.05);
+        out.push(bw(x0 + (x1 - x0) * a, y0 + (y1 - y0) * a,
+          x0 + (x1 - x0) * b, y0 + (y1 - y0) * b, Bc(i * 3 + j) * 0.05));
       }
+      var sd = C[i][5], f = C[i][6];
+      var my = y0 + (y1 - y0) * f, mx = x0 + (x1 - x0) * f;
+      out.push(bw(mx + sd * 7.5, my + 2, mx + sd * 12, my - 4, sd * 0.05));
     }
     return out;
   };
 
-  /* 25 苇 — the lean shortens rank by rank, so the stalks fan without ever
-     converging. Each head CONTINUES the stalk rather than forking off it: two
-     strokes leaving one tip at forty degrees is a barb, and a barb is a 棱角.
-     The second stroke leaves further down, where it reads as a leaf. */
+  /* 25 苇 — the lean shortens rank by rank, so the bed fans without ever
+     converging. */
   PLAN.reed = function () {
-    var x = [-25, -10, 6, 21], top = [-16, -25, -6, -21], lean = [9, 7, 5, 4], w = [4.2, 3.6, 4.6, 3];
-    var out = [], i;
-    for (i = 0; i < 4; i++) {
-      var tx = x[i] + lean[i];
-      out.push(S(bw(x[i], 31, tx, top[i], B_CYC[i] * 0.055, 5), w[i], i));
-      out.push(S(bw(tx, top[i], tx + 3 + R_CYC[i * 2] * 4, top[i] - 4 - R_CYC[i + 2] * 5, B_CYC[i + 1] * 0.07),
-        2.8 * W_CYC[i % 3], i + 1));
-    }
-    return out;
+    var top = [-8, -24, -13, -30, -18];
+    return fam(5, function (i) {
+      var x = -24 + i * 12;
+      return bw(x, 30, x + 9 - i * 1.6, top[i], Bc(i) * 0.045);
+    });
   };
 
-  /* 26 叶 — two flanks with different bellies, so the blade is a leaf and not
-     a lens. Veins stand clear of the edge and are counted out of a rhythm,
-     never paired. */
+  /* 26 叶 — two flanks that approach and stop short, and three soundings
+     between them. Two strokes meeting at a tip make a point. */
   PLAN.leaf = function () {
     return [
-      S([[1, -24], [9, -14], [13, -2], [11, 13], [4, 22]], 4.4, 0),
-      S([[-2, -24], [-8, -13], [-11, -1], [-8, 13], [1, 22]], 3.4, 1),
-      S([[0, -18], [2, 0], [3, 17]], 2.8, 2),
-      S(bw(2, -11, 8, -4, 0.09), 2.2, 0),
-      S(bw(2.4, 2, 9, 7, 0.05), 2.4, 1),
-      S(bw(3, 12, 6.5, 17, 0.1), 1.9, 2),
-      S(bw(1.4, -4, -5, 2, -0.07), 2.1, 0)
+      bw(-2, -30, 0, 28, 0.22),
+      bw(3, -27, 5, 31, -0.3),
+      bw(-4, -13, 5, -15, 0.06),
+      bw(-8, 1, 13, -2, 0.04),
+      bw(-2, 15, 8, 12, 0.08)
     ];
   };
 
-  /* 27 根 — four roots off one crown at bearings that do not divide evenly,
-     each splitting once and each split opening gently. Nothing rejoins: a root
-     system that closes a loop is a diagram of one. */
+  /* 27 根 — a taproot and five laterals that leave from beside it at five
+     bearings. Nothing rejoins and nothing sprouts; a root system that closes a
+     loop is a diagram of one. */
   PLAN.root = function () {
-    var trunk = [[-1, -31], [0, -22], [1, -13], [2, -4], [1, 6]];
-    var out = [S(trunk, 4.8, 0)], i;
-    var from = [[1, -13], [1.6, -6], [0.6, -18], [1.6, 2]];
-    var ang = [2.62, 2.05, 0.9, 0.42], len = [22, 27, 24, 19], w = [3.8, 4.2, 3.2, 2.8];
-    for (i = 0; i < 4; i++) {
-      var fx = from[i][0] + Math.cos(ang[i]) * len[i], fy = from[i][1] + Math.sin(ang[i]) * len[i];
-      out.push(S(bw(from[i][0], from[i][1], fx, fy, B_CYC[i] * 0.06, 5), w[i], i));
-      var b = ang[i] + (i % 2 ? 0.3 : -0.28), L = 12 - (i % 3) * 1.6;
-      out.push(S(bw(fx, fy, fx + Math.cos(b) * L, fy + Math.sin(b) * L, B_CYC[(i + 2) % 5] * 0.05),
-        2.5 * W_CYC[i % 3], i + 1));
-    }
-    return out;
+    var out = [bw(-1, -32, 1, -8, 0.04)];
+    var from = [[-7, -23], [-8, -13], [-7, -2], [9, -19], [10, 5]];
+    var ang = [2.62, 2.24, 1.9, 0.62, 0.15], len = [21, 27, 24, 29, 22];
+    return out.concat(fam(5, function (i) {
+      return bw(from[i][0], from[i][1],
+        from[i][0] + Math.cos(ang[i]) * len[i], from[i][1] + Math.sin(ang[i]) * len[i], Bc(i) * 0.04);
+    }));
   };
 
-  /* 28 烟 — three columns that lean apart as they rise, each loosening as it
-     goes: the sway is a function of height, so the bottom is a thread and the
-     top is a wander. */
+  /* 28 烟 — three columns leaning apart as they rise, bellies alternating. */
   PLAN.smoke = function () {
-    return [
-      S([[-10, 29], [-14, 14], [-9, -2], [-16, -18], [-11, -31]], 3.6, 0),
-      S([[-1, 30], [3, 17], [-2, 2], [4, -12], [-1, -24], [2, -32]], 4.6, 1),
-      S([[11, 28], [16, 10], [10, -8], [15, -30]], 3, 2)
-    ];
+    var top = [[-17, -30], [2, -33], [16, -27]];
+    return fam(3, function (i) {
+      return bw(-8 + i * 8, 30, top[i][0], top[i][1], Bc(i) * 0.05);
+    });
   };
 
-  /* 29 风 — streaks of unequal reach, and only two of them curl at the end.
-     A row of identical hooks is the weather glyph; the ones without a hook are
-     what make the ones with it read as motion. */
+  /* 29 风 — four gusts of very unequal reach at an uneven pitch. */
   PLAN.wind = function () {
-    return [
-      S([[-33, -21], [-14, -24], [2, -21], [14, -25], [23, -32]], 4.6, 0),
-      S([[-22, -8], [-4, -12], [12, -8], [25, -10]], 3.2, 1),
-      S([[-33, 6], [-11, 2], [8, 7], [21, 2], [30, -6]], 4, 2),
-      S([[-17, 21], [4, 16], [30, 22]], 2.8, 0)
-    ];
+    var len = [56, 30, 46, 24], x0 = [-32, -24, -30, -18];
+    return fam(4, function (i) {
+      var y = -20 + i * 13;
+      return bw(x0[i], y, x0[i] + len[i], y + Bc(i) * 2, 0.05);
+    });
   };
 
-  /* 30 雷 — the mass is the subject and the bolt is the aside, which is the
-     whole difference from 电. The underside is left open so the strokes inside
-     it read as weight, not as a face. */
+  /* 30 雷 — the mass is the subject and the strike is the aside, which is the
+     whole difference from 电. */
   PLAN.thunder = function () {
-    var A = [3.3, 3.85, 4.5, 5.2, 5.9, 6.45], pts = [], i;
-    for (i = 0; i < A.length; i++) {
-      var rd = 27 + (R_CYC[(i * 3) % 7] - 1) * 10;
-      pts.push([2 + Math.cos(A[i]) * rd, -13 + Math.sin(A[i]) * rd * 0.66]);
-    }
-    return [
-      S(pts, 5, 0),
-      S(bw(-12, -15, 4, -18, 0.05), 3.6, 1),
-      S(bw(9, -12, 21, -15, -0.045), 3, 2),
-      S([[1, -4], [-5, 7], [3, 19], [-2, 31]], 3.6, 0)
-    ];
+    var len = [24, 14, 19];
+    var out = fam(3, function (i) {
+      var a0 = PI + 0.35 + Bc(i) * 0.14;
+      return arc(0, -6, 17 + i * 6, a0, a0 + 2.35 * Rc(i), 8);
+    });
+    return out.concat(fam(3, function (i) {
+      var x = -12 + i * 12;
+      return bw(x, 6, x - 5, 6 + len[i], Bc(i) * 0.035);
+    }));
   };
 
   var PH = {};
   Object.keys(PLAN).forEach(function (name) {
     PH[name] = function () {
       var strokes = PLAN[name](), d = "", i;
-      for (i = 0; i < strokes.length; i++) d += brush(strokes[i].p, strokes[i].w, strokes[i].k);
+      for (i = 0; i < strokes.length; i++) d += brush(strokes[i], i);
       return d;
     };
   });
