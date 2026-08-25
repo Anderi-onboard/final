@@ -93,5 +93,22 @@ const seen = [...code.matchAll(/\b([A-Z][A-Z0-9_]{2,})\b/g)].length;
 assert.ok(seen >= 10,
   `only ${seen} constant references parsed — the scrubber ate the code, so this sweep is hollow`);
 
+
+/* ── a checker must not be able to destroy the reading it checks ───────────
+   Declaring the constants fixed one instance. The shape was the real fault:
+   these run after the text has streamed and after pumpAndSettle has billed
+   for it, and their verdicts are telemetry — prompt-router says so itself,
+   "surfaced as telemetry, never acted on". A bare call let any throw inside a
+   checker take the whole reading down through routedReading's catch. */
+const router = readFileSync(`${ROOT}/prompt-router.js`, 'utf8');
+assert.match(router, /function safeCheck\(/,
+  'prompt-router has no guard around the post-generation checks');
+for (const call of ['checkBoardFacts', 'checkReadability']) {
+  assert.ok(new RegExp(`safeCheck\\("${call}"`).test(router),
+    `${call} is called without safeCheck — a fault in it kills a paid reading`);
+  assert.ok(!new RegExp(`var \\w+ = PC\\.${call} \\?`).test(router),
+    `${call} still has a bare call path that can throw into routedReading's catch`);
+}
+
 console.log(`browser checks resolve OK — ${samples.length} readings walked every guard without a `
   + `ReferenceError, and all ${declared.size} names resolve locally`);

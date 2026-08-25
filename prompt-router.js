@@ -135,6 +135,30 @@
     ].join("\n");
   }
 
+  /* A post-generation check must never be able to destroy the reading it is
+     checking. These run AFTER the text has streamed to the reader and AFTER
+     pumpAndSettle has billed for it, and their verdicts are telemetry — the
+     comment further down says so in as many words: a miss is "surfaced as
+     telemetry, never acted on". A bare call broke that: prompt-checks.js
+     referenced thirteen constants it never declared, so checkReadability()
+     threw ReferenceError on every reading, the throw fell into routedReading's
+     catch, and a finished, paid-for reading was replaced by a note about the
+     reader's balance.
+
+     Declaring the constants fixed that instance. This fixes the shape: any
+     future fault in a checker degrades its own verdict and nothing else. */
+  function safeCheck(label, fn) {
+    if (typeof fn !== "function") return { ok: true, issues: [] };
+    try {
+      var out = fn();
+      return (out && typeof out.ok === "boolean") ? out
+        : { ok: true, issues: [label + " returned no verdict"] };
+    } catch (e) {
+      if (window.console && console.warn) console.warn("[BourneWise] " + label + " threw", e);
+      return { ok: true, issues: [label + " threw: " + ((e && e.message) || e)] };
+    }
+  }
+
   function makeStreamComplete(meta) {
     meta = meta || {};
     return function (input, onDelta) {
@@ -356,14 +380,14 @@
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
         // — catches the AI citing a line number or moving-line count that
         // doesn't match the real board, before the LLM QC pass runs.
-        var factCheck = PC.checkBoardFacts ? PC.checkBoardFacts(reading, board) : { ok: true, issues: [] };
+        var factCheck = safeCheck("checkBoardFacts", PC.checkBoardFacts && function () { return PC.checkBoardFacts(reading, board); });
         // ...and the same kind of check on the other axis: did the reading name
         // a yongshen, and did it decline on a ground that is actually real?
         // Three prompt rules already forbade declining a readable question and
         // all three missed it, so this one runs in code where it cannot be
         // reasoned around. Merged into factCheck so a catch rides the retry
         // that already exists rather than adding a second round-trip.
-        var readCheck = PC.checkReadability ? PC.checkReadability(reading) : { ok: true, issues: [] };
+        var readCheck = safeCheck("checkReadability", PC.checkReadability && function () { return PC.checkReadability(reading); });
 
         // Step 4: QC pass (if enabled). Follow-ups skip QC: they're metered,
         // conversational, and stream to the user anyway (QC would only be
