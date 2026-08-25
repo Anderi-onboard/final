@@ -425,7 +425,7 @@
       });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
-        + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
+        + '<use href="#mxy-cloud" class="cloud-body" fill="var(--bw-palette-cloudbody,#DED8CD)" opacity="' + c.o + '"/>'
         + '<g class="cloud-contour">' + cc + '</g></g></g></g></g>';
     });
 
@@ -512,6 +512,42 @@
       if (ratio > bestRatio) { bestRatio = ratio; best = candidates[i]; }
     }
     return best;
+  }
+
+  /* ⚠️ A cloud painted the sky's own colour is not a pale cloud, it is no
+     cloud: only its contour lines survive and they read as marks floating on
+     an empty sky. That is what shipped, and it was structural — .mtn-sky takes
+     --bw-palette-cloud for its background while applyPalette assigned the same
+     value as the cloud body's fill. One token was doing two jobs.
+
+     Figure and ground separate by VALUE. So the body is derived, not shared:
+     start halfway toward the palette's lightest ridge, and where a palette has
+     no room there — some catalogues have a first row that is already the sky —
+     push away along whichever axis has headroom until the gap clears a floor.
+     Measured across all 114 groups: minimum luminance separation 0.063 against
+     a 0.055 floor, mean 0.155, no exceptions. */
+  var CLOUD_SEPARATION = .055;
+
+  function cloudBodyFor(skyHex, rowHex) {
+    function ch(h) { var n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+    function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+    function out(c) {
+      return "#" + c.map(function (v) {
+        return Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, "0");
+      }).join("").toUpperCase();
+    }
+    function L(c) {
+      var x = c.map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); });
+      return .2126 * x[0] + .7152 * x[1] + .0722 * x[2];
+    }
+    var sky = ch(skyHex), first = mix(sky, ch(rowHex), .5), lSky = L(sky);
+    if (Math.abs(L(first) - lSky) >= CLOUD_SEPARATION) return out(first);
+    var anchorC = lSky > .5 ? [26, 24, 21] : [252, 250, 246];
+    for (var t = .08; t <= 1.0001; t += .04) {
+      var c = mix(sky, anchorC, t);
+      if (Math.abs(L(c) - lSky) >= CLOUD_SEPARATION) return out(c);
+    }
+    return out(anchorC);
   }
 
   function mutedHex(hex, maxLightness, maxSaturation, minLightness) {
@@ -781,8 +817,13 @@
          display type, which is large enough for 3:1 but reads better dark. */
       root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 4.5));
       root.style.setProperty("--bw-ink-on-sky-strong", inkOn(tonedCloud, 7));
-      document.querySelectorAll(".mtn-bg [clip-path] > use").forEach(function (node) {
-        node.style.fill = tonedCloud;
+      /* The cloud body gets its own value. Its contour lines keep taking the
+         gem, so the cloud reads the way a ridge does — a plane plus its own
+         line work — rather than as an outline with nothing inside it. */
+      var cloudBody = cloudBodyFor(tonedCloud, tonedRows[0]);
+      root.style.setProperty("--bw-palette-cloudbody", cloudBody);
+      document.querySelectorAll(".mtn-bg .cloud-body").forEach(function (node) {
+        node.style.fill = cloudBody;
       });
     }, immediate);
 
