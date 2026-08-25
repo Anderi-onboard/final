@@ -13,14 +13,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260825c">
-<script src="./ds-base.js?v=20260825c"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260825d">
+<script src="./ds-base.js?v=20260825d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -33,21 +33,21 @@
 
   .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.58;}
 
-  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:760px;margin:0 auto;width:100%}
-  .brand{display:flex;align-items:center;gap:9px}
+  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:760px;margin:0 auto;width:100%}
+  .brand{display:flex;align-items:center;gap:8px}
   .mark{width:26px;height:21px;color:var(--ink)}
   .brand b{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
   .pagehead .ghost{font-size:13px;color:var(--dim);transition:color .15s;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
 
-  .legal{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:30px 40px 80px}
+  .legal{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:32px 40px 80px}
   .legal .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:16px}
   .legal .eyebrow b{color:var(--terracotta);font-weight:400}
   .legal h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(34px,4.6vw,56px);line-height:.98;letter-spacing:-.03em}
-  .meta{margin-top:14px;font-size:13px;color:var(--ghost);letter-spacing:.03em}
-  .lede{font-family:var(--serif);font-style:normal;font-size:18px;line-height:1.55;color:var(--dim);margin-top:22px;text-wrap:pretty}
+  .meta{margin-top:12px;font-size:13px;color:var(--ghost);letter-spacing:.03em}
+  .lede{font-family:var(--serif);font-style:normal;font-size:18px;line-height:1.55;color:var(--dim);margin-top:24px;text-wrap:pretty}
 
-  .toc{margin-top:26px;padding:16px 20px;columns:2;column-gap:26px;position:relative}
+  .toc{margin-top:24px;padding:16px 16px;columns:2;column-gap:24px;position:relative}
   .toc::before{content:none}
   .toc > *{position:relative;z-index:1}
   
@@ -55,30 +55,30 @@
   .toc a:hover{color:var(--terracotta)}
   .toc a .n{color:var(--terracotta);font-size:11px;margin-right:8px}
 
-  .clause{margin-top:34px;scroll-margin-top:20px}
-  .clause h2{display:flex;align-items:baseline;gap:11px;font-size:12px;letter-spacing:.09em;color:var(--ink)}
+  .clause{margin-top:32px;scroll-margin-top:20px}
+  .clause h2{display:flex;align-items:baseline;gap:12px;font-size:12px;letter-spacing:.09em;color:var(--ink)}
   .clause h2 .n{font-family:var(--serif);font-size:13px;color:var(--terracotta);letter-spacing:0}
   .clause p,.clause li{font-family:var(--serif);font-size:15px;line-height:1.72;color:var(--ink);margin-top:12px;text-wrap:pretty}
-  .clause ul{margin:6px 0 0;padding-left:20px}
-  .clause li{margin-top:7px}
+  .clause ul{margin:4px 0 0;padding-left:16px}
+  .clause li{margin-top:8px}
   .clause li::marker{color:var(--terracotta)}
   .clause + .clause{border-top:1px solid var(--line-soft);padding-top:8px}
 
-  .pull{margin-top:18px;padding:16px 20px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 var(--ui-radius-small) var(--ui-radius-small) 0;font-family:var(--serif);font-style:normal;font-size:16.5px;color:var(--ink)}
+  .pull{margin-top:16px;padding:16px 16px;border-left:2px solid var(--terracotta);background:transparent;border-radius:0 var(--ui-radius-small) var(--ui-radius-small) 0;font-family:var(--serif);font-style:normal;font-size:16.5px;color:var(--ink)}
 
-  .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
-  .legal-foot .links{display:flex;gap:18px;flex-wrap:wrap}
+  .legal-foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between}
+  .legal-foot .links{display:flex;gap:16px;flex-wrap:wrap}
   .legal-foot a{font-size:13px;color:var(--dim);transition:color .15s}
   .legal-foot a:hover{color:var(--terracotta)}
   .legal-foot a.on{color:var(--ink);font-weight:500}
   .legal-foot .est{font-size:12px;letter-spacing:var(--tracking-label);color:var(--ghost)}
 
-  @media (max-width:600px){.pagehead{padding:16px 18px}.legal{padding:24px 20px 60px}.toc{columns:1}.toc::before{inset:-12px}}
+  @media (max-width:600px){.pagehead{padding:16px 16px}.legal{padding:24px 16px 64px}.toc{columns:1}.toc::before{inset:-12px}}
   @media (prefers-reduced-motion: reduce){.toc::before{animation:none}}
 
 </style>
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/legal.css?v=20260825c">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/legal.css?v=20260825d">
 </head>
 <body class="blocks-route" data-motion data-page="legal">
 
@@ -175,10 +175,10 @@
   </div>
 </main>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260825c"></script>
-<script src="./ds-motion.js?v=20260825c"></script>
-<script src="./assets/marks.js?v=20260825c"></script>
-<script src="./assets/blocks.js?v=20260825c"></script>
-<script src="./assets/weave.js?v=20260825c" defer></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260825d"></script>
+<script src="./ds-motion.js?v=20260825d"></script>
+<script src="./assets/marks.js?v=20260825d"></script>
+<script src="./assets/blocks.js?v=20260825d"></script>
+<script src="./assets/weave.js?v=20260825d" defer></script>
 </body>
 </html>

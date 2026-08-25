@@ -13,14 +13,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260825c">
-<script src="./ds-base.js?v=20260825c"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260825d">
+<script src="./ds-base.js?v=20260825d"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -32,15 +32,15 @@
 
   .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;}
 
-  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1000px;margin:0 auto;width:100%}
-  .brand{display:flex;align-items:center;gap:9px}
+  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1000px;margin:0 auto;width:100%}
+  .brand{display:flex;align-items:center;gap:8px}
   .mark{width:27px;height:22px;color:var(--ink)}
   .brand b{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
   .pagehead .ghost{font-size:13px;color:var(--dim);transition:color .15s;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
 
-  .wrap{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 24px 60px}
-  .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:22px}
+  .wrap{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 24px 64px}
+  .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:24px}
   .eyebrow b{color:var(--terracotta);font-weight:400}
 
   /* a broken figure — a hexagram with a missing line */
@@ -48,26 +48,26 @@
   .brokenfig rect{fill:var(--ink)}
   .brokenfig .gone{fill:none;stroke:var(--ghost);stroke-width:1.4;stroke-dasharray:5 5}
 
-  h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(56px,10vw,128px);line-height:.9;letter-spacing:-.04em;margin-top:14px}
+  h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(56px,10vw,128px);line-height:.9;letter-spacing:-.04em;margin-top:12px}
   .said{font-family:var(--serif);font-style:normal;font-size:clamp(20px,3vw,28px);line-height:1.25;color:var(--ink);margin-top:16px}
-  .body{font-size:15px;color:var(--dim);margin-top:20px;max-width:42ch}
+  .body{font-size:15px;color:var(--dim);margin-top:16px;max-width:42ch}
 
   .flourish{display:block;margin:24px auto 4px}
   .flourish path{stroke:var(--ink);fill:none;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:240;animation:flow 2.2s .3s ease-out forwards;opacity:.5}
   .flourish path+path{animation-delay:.7s;opacity:.28}
   @keyframes flow{to{stroke-dashoffset:0}}
 
-  .actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-  .primary{font-size:13px;font-weight:500;color:var(--paper);background:var(--ink);padding:11px 20px;border-radius:var(--ui-radius-small);transition:transform .15s,background .15s}
+  .actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .primary{font-size:13px;font-weight:500;color:var(--paper);background:var(--ink);padding:12px 16px;border-radius:var(--ui-radius-small);transition:transform .15s,background .15s}
   .primary:hover{background:color-mix(in srgb,var(--ink) 90%,white);transform:translateY(-1px)}
-  .ghostbtn{font-size:13px;font-weight:500;color:var(--terracotta);padding:11px 20px;border-radius:var(--ui-radius-small);border:1px solid var(--line);transition:border-color .15s}
+  .ghostbtn{font-size:13px;font-weight:500;color:var(--terracotta);padding:12px 16px;border-radius:var(--ui-radius-small);border:1px solid var(--line);transition:border-color .15s}
   .ghostbtn:hover{border-color:var(--terracotta)}
 
-  footer{position:relative;z-index:2;text-align:center;padding:18px;font-size:12px;letter-spacing:var(--tracking-label);color:var(--ghost)}
+  footer{position:relative;z-index:2;text-align:center;padding:16px;font-size:12px;letter-spacing:var(--tracking-label);color:var(--ghost)}
   @media (prefers-reduced-motion:reduce){.flourish path{animation:none;stroke-dashoffset:0;opacity:.5}body{animation:none;background-color:var(--paper)}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260825c">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260825c">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260825d">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260825d">
 </head>
 <body data-page="not-found">
 
@@ -110,7 +110,7 @@
 
   <footer>BourneWise &middot; fixed hexagram input &middot; model-written interpretation</footer>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260825c"></script>
-<script src="./assets/weave.js?v=20260825c" defer></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260825d"></script>
+<script src="./assets/weave.js?v=20260825d" defer></script>
 </body>
 </html>

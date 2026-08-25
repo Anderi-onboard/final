@@ -299,7 +299,7 @@ body:not([data-page="app"]) .pagehead,
 body[data-page="pricing"] .pagehead {
   width: min(1180px, calc(100% - 48px));
   margin: 14px auto 0;
-  padding: 10px 12px 10px 16px;
+  padding: 8px 12px 8px 16px;
   border: var(--ui-hairline) solid var(--ui-line);
   border-radius: var(--ui-radius);
   background: var(--ui-glass);
@@ -320,7 +320,7 @@ body[data-page="pricing"] .pagehead .ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 14px;
+  padding: 0 12px;
   line-height: 1;
   border-radius: var(--ui-radius-pill);
 }
@@ -348,12 +348,12 @@ body[data-page="pricing"] .pagehead .ghost:hover { background: var(--ui-glass-wa
 
 /* App shell --------------------------------------------------------------- */
 body[data-page="app"] .sidebar {
-  padding: 16px 14px 14px;
+  padding: 16px 12px 12px;
   background: color-mix(in srgb, var(--paper-raised) 62%, transparent);
   border-right-color: var(--ui-line);
   box-shadow: inset -1px 0 0 rgba(226,218,205,.28);
 }
-body[data-page="app"] .side-top { padding-inline: 6px; }
+body[data-page="app"] .side-top { padding-inline: 4px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
   min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
@@ -370,7 +370,7 @@ body[data-page="app"] .casting-row { border-radius: var(--ui-radius-small); }
 body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
-  margin: 14px 2px 0; padding: 15px; border: var(--ui-hairline) solid var(--ui-line) !important;
+  margin: 12px 2px 0; padding: 16px; border: var(--ui-hairline) solid var(--ui-line) !important;
   border-radius: var(--ui-radius); background: var(--ui-glass-warm);
 }
 body[data-page="app"] .ledger::before { display: none; }
@@ -386,7 +386,7 @@ body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mas
 
 body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
 body[data-page="app"] #heroEmpty { padding-bottom: clamp(30px, 5vh, 54px); }
-body[data-page="app"] .greeting { max-width: 790px; min-height: 4.25em; gap: 20px; }
+body[data-page="app"] .greeting { max-width: 790px; min-height: 4.25em; gap: 16px; }
 body[data-page="app"] .greeting h1 {
   max-width: 700px; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500;
   min-height: 4.08em; line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
@@ -429,7 +429,7 @@ body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
 /* isolation, not just position: the scrim below is z-index:-1, and without a
    stacking context here that -1 escapes the zone entirely and paints beneath
    the fixed range instead of over it. */
-body[data-page="app"] .composer-zone { padding-bottom: 28px; z-index: 1; isolation: isolate; }
+body[data-page="app"] .composer-zone { padding-bottom: 24px; z-index: 1; isolation: isolate; }
 
 /* The composer's two caption lines — the keyboard hint and the support footer —
    float on the range with no material behind them. That is the one text
@@ -488,7 +488,7 @@ html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) fo
     rgb(var(--ui-glass-tint) / .90));
 }
 body[data-page="app"] .composer {
-  max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
+  max-width: 720px; min-height: 64px; padding: 8px 8px 8px 12px; gap: 8px;
   border: var(--ui-hairline) solid var(--ui-line); border-radius: var(--ui-radius);
   background: var(--ui-glass-strong); box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
   transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease, background-color var(--dur-base) ease;
@@ -499,16 +499,16 @@ body[data-page="app"] .composer:focus-within {
   box-shadow: var(--ui-shadow-raised), 0 0 0 3px color-mix(in srgb, var(--terracotta) 16%, transparent);
 }
 body[data-page="app"] .stria {
-  min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
+  min-height: 42px; padding: 8px 12px; background: var(--ui-glass-warm);
   border: var(--ui-hairline) solid var(--ui-line); color: var(--ink);
   transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
 body[data-page="app"] .composer textarea { font-size: 15px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:background-color 140ms ease,opacity 140ms ease; }
-body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
+body[data-page="app"] .chips { margin-top: 16px; gap: 8px; }
 body[data-page="app"] .chip {
-  padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass-soft);
+  padding: 8px 12px; border-color: var(--ui-line); background: var(--ui-glass-soft);
   box-shadow: inset 0 1px 0 rgba(226,218,205,.3);
   backdrop-filter: blur(10px) saturate(112%);
   -webkit-backdrop-filter: blur(10px) saturate(112%);
@@ -801,7 +801,7 @@ body[data-page="legal"] .clause p,
 body[data-page="legal"] .clause li { line-height: 1.72; }
 
 @media (max-width: 880px) {
-  body[data-page="app"] .topbar { padding-inline: 18px; }
+  body[data-page="app"] .topbar { padding-inline: 16px; }
   body[data-page="app"] .sidebar {
     background: var(--ui-glass-strong);
     box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
@@ -810,20 +810,20 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   }
   body[data-page="app"] .composer { max-width: 680px; }
   body:not([data-page="app"]) .pagehead,
-  body[data-page="pricing"] .pagehead { width: calc(100% - 24px); margin-top: 10px; }
+  body[data-page="pricing"] .pagehead { width: calc(100% - 24px); margin-top: 8px; }
 }
 
 @media (max-width: 560px) {
   :root { --ui-glass-filter: blur(8px) saturate(110%); --ui-glass-filter-strong: blur(11px) saturate(114%); }
-  body[data-page="app"] .topbar { padding-top: max(14px, env(safe-area-inset-top)); }
-  body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
+  body[data-page="app"] .topbar { padding-top: max(12px, env(safe-area-inset-top)); }
+  body[data-page="app"] .greeting { flex-direction: column; gap: 12px; }
   body[data-page="app"] .greeting h1 { min-height: 5.25em; font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
-  body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
-  body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 7px; }
-  body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
+  body[data-page="app"] #heroEmpty { padding-bottom: 24px; }
+  body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 8px; }
+  body[data-page="app"] .stria { min-height: 40px; padding-inline: 12px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
   body[data-page="app"] .composer-help { display: none; }
-  body[data-page="app"]:not(.is-empty) .composer-zone { padding-bottom: max(14px, env(safe-area-inset-bottom)); }
+  body[data-page="app"]:not(.is-empty) .composer-zone { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
   body[data-page="app"] :is(.send,.stria,.rd-action,.rd-prompt,.side-open-btn):active { transform: scale(.97); }
   body[data-page="app"] .site-foot { line-height: 1.7; }
   body:not([data-page="app"]) .pagehead,
@@ -896,7 +896,7 @@ html[data-skin="paper"] body[data-page="app"] .guide-coach {
 }
 
 html[data-skin="paper"] body[data-page="app"] #howItWorksLink {
-  padding-inline: 13px;
+  padding-inline: 12px;
   min-height: 34px;
   display: inline-flex;
   align-items: center;
@@ -951,7 +951,7 @@ body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type {
   position: relative;
-  padding-top: 18px;
+  padding-top: 16px;
 }
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type::before {
   content: "";
@@ -1053,7 +1053,7 @@ html[data-skin="paper"] body[data-page="pricing"] .billing-toggle {
   max-width: 100%;
   min-height: 44px;
   margin-inline: auto;
-  padding: 0 6px 0 18px;
+  padding: 0 4px 0 16px;
   border-radius: var(--ui-radius-pill) !important;
 }
 
@@ -1178,15 +1178,15 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-mute::before { content: none; }
 
 .reading-body .xr-panel {
-  margin: 10px 0 18px;
-  padding: 12px 14px 13px;
+  margin: 8px 0 16px;
+  padding: 12px 12px 12px;
   border-left: 2px solid color-mix(in srgb, var(--terracotta) 42%, transparent);
   background: color-mix(in srgb, var(--bw-palette-1) 42%, transparent);
   border-radius: 0 var(--ui-radius-small, 12px) var(--ui-radius-small, 12px) 0;
   animation: xr-in var(--dur-fast, 120ms) var(--ease-out, ease) both;
 }
 .reading-body .xr-lead {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
@@ -1199,8 +1199,8 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-cats {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 9px;
+  gap: 4px;
+  margin: 0 0 8px;
 }
 .reading-body .xr-cat {
   font-family: var(--font-sans);
@@ -1210,8 +1210,8 @@ html[data-skin="paper"] body :is(
   color: var(--dim);
   background: color-mix(in srgb, var(--bw-palette-1) 66%, transparent);
   border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
-  border-radius: 999px;
-  padding: 7px 11px;
+  border-radius: var(--ui-radius-pill);
+  padding: 8px 12px;
   cursor: pointer;
   /* 44px touch target without a 44px-tall chip: the box stays visually small
      and the hit area is expanded underneath it. */
@@ -1233,7 +1233,7 @@ html[data-skin="paper"] body :is(
   display: inline-block;
   width: 4px;
   height: 4px;
-  margin-left: 6px;
+  margin-left: 4px;
   vertical-align: middle;
   border-radius: 50%;
   background: var(--terracotta);
@@ -1258,13 +1258,13 @@ html[data-skin="paper"] body :is(
   padding: 0;
   list-style: none;
   columns: 2;
-  column-gap: 22px;
+  column-gap: 24px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.72;
   color: var(--dim);
 }
-.reading-body .xr-list li { break-inside: avoid; padding-left: 9px; position: relative; }
+.reading-body .xr-list li { break-inside: avoid; padding-left: 8px; position: relative; }
 .reading-body .xr-list li::before {
   content: "";
   position: absolute;
@@ -1294,12 +1294,12 @@ html[data-skin="paper"] body :is(
    still has to read as an appendix to the prose rather than a rival ending, so
    it sits behind a rule, in the label face, at label size. */
 .reading-body .xr-chain {
-  margin: 34px 0 0;
+  margin: 32px 0 0;
   padding-top: 16px;
   border-top: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
 }
 .reading-body .xr-chain-lead {
-  margin: 0 0 11px;
+  margin: 0 0 12px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
@@ -1309,18 +1309,18 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-edges {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 10px;
-  margin: 0 0 9px;
+  gap: 4px 8px;
+  margin: 0 0 8px;
 }
 .reading-body .xr-edge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1;
-  padding: 6px 10px;
-  border-radius: 999px;
+  padding: 4px 8px;
+  border-radius: var(--ui-radius-pill);
   border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
   background: color-mix(in srgb, var(--bw-palette-1) 52%, transparent);
   color: var(--dim);
@@ -1330,8 +1330,8 @@ html[data-skin="paper"] body :is(
   font-style: normal;
   font-size: 10px;
   letter-spacing: .04em;
-  padding: 2px 6px;
-  border-radius: 999px;
+  padding: 2px 4px;
+  border-radius: var(--ui-radius-pill);
 }
 /* 生 feeds, 克 restrains — the one place a colour carries meaning rather than
    decoration, so the two are told apart by hue and never by hue alone: the
@@ -1341,8 +1341,8 @@ html[data-skin="paper"] body :is(
 
 .reading-body .xr-act {
   display: flex;
-  gap: 10px;
-  padding: 5px 0;
+  gap: 8px;
+  padding: 4px 0;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.62;
