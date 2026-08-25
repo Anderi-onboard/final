@@ -158,6 +158,30 @@
             throw err;
           });
         }
+        /* Not every answer is a stream. The crisis route returns the helpline
+           text as JSON 200 — no model call, no charge — and a JSON body is both
+           `ok` and non-null, so it fell straight through to the SSE reader
+           below. That reader finds no `data:` records, resolves with "", and
+           "" becomes "empty reading from pipeline" upstream, which renders as
+           the generic mid-stream failure. Measured against production: someone
+           asking 我不想活了 was shown a note about their balance instead of the
+           numbers. Read the content type before assuming a stream. */
+        var ctype = String(r.headers.get("content-type") || "");
+        if (ctype.indexOf("application/json") === 0) {
+          return r.json().then(function (d) {
+            var direct = d && (d.text || d.reading || "");
+            if (!direct) {
+              var e = new Error("empty non-stream response");
+              e.status = r.status; e.code = d && d.route;
+              throw e;
+            }
+            // Hand it to the caller the same way streamed text arrives, so the
+            // reading renders through one path instead of two.
+            if (onDelta) onDelta(direct, direct);
+            return direct;
+          });
+        }
+
         var reader = r.body.getReader();
         var decoder = new TextDecoder();
         var buf = "";
