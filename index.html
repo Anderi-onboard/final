@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260825f">
-<script src="./ds-base.js?v=20260825f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260826a">
+<script src="./ds-base.js?v=20260826a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -183,6 +183,39 @@
   .topbar h1{font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .units-chip{flex:none;font-size:12px;letter-spacing:.08em;color:var(--dim);background:var(--chip);border-radius:var(--ui-radius-pill);padding:4px 12px;font-variant-numeric:tabular-nums}
 
+  /* Phone-only bar furniture. Both are display:none here and switched on in the
+     ≤700px block — on desktop the sidebar already carries the wordmark and the
+     account row, and a second copy of each in the bar would be duplication, not
+     redundancy. */
+  .topbar-brand{display:none;align-items:center;gap:8px;flex:none;color:var(--ink);text-decoration:none}
+  .topbar-brand .mark{width:22px;height:18px;flex:none;stroke:var(--terracotta)}
+  .topbar-brand .brand-word{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;
+    color:var(--bw-ink-on-sky,var(--ink));-webkit-text-stroke:.6px var(--bw-ink-on-sky,var(--ink));
+    transform:translateY(-1px);white-space:nowrap}
+  /* The chip grows to the touch floor itself rather than wearing a bolted-on
+     hit area: a 44px ::after on a 36px chip can only be reached by overlapping
+     its neighbours, and a stolen tap is worse than a small target. The bar's
+     vertical padding drops by the same 8px it gains, so the bar — and the hero
+     band measured against it — keeps its height exactly. */
+  /* Glass is recognised by its edge, not by its tint: the highlight-and-shadow
+     pair plus the hairline. Note --ui-hairline is a WIDTH, not a colour —
+     `1px solid var(--ui-hairline)` expands to `solid 1px` and the whole
+     declaration is dropped, which is how this chip first shipped with no edge
+     at all and read as text floating on the sky. */
+  .topbar-acct{display:none;align-items:center;gap:8px;flex:none;min-height:var(--ctl);
+    padding:0 12px 0 8px;border-radius:var(--ui-radius-pill);
+    background:var(--ui-glass-warm);-webkit-backdrop-filter:blur(22px) saturate(128%);backdrop-filter:blur(22px) saturate(128%);
+    border:var(--ui-hairline) solid var(--ui-line);box-shadow:var(--ui-glass-edge);
+    color:var(--ink);text-decoration:none;
+    font-size:13px;font-weight:600;font-family:var(--sans);transition:background 140ms}
+  /* --paper on --terracotta measures 3.71:1 — under AA. --on-accent is plain
+     white on the same fill and measures 4.82:1; at 11px the two are
+     indistinguishable except in the one way that matters. */
+  .topbar-acct .ta-avatar{width:26px;height:26px;flex:none;display:grid;place-items:center;
+    border-radius:var(--ui-radius-pill);background:var(--terracotta);color:var(--on-accent);
+    font-size:11px;font-weight:700;letter-spacing:.02em}
+  .topbar-acct .ta-label{white-space:nowrap;font-variant-numeric:tabular-nums}
+
   /* vertical-only: overflow-x locked (a bleeding board must never create a
      horizontal scroll), and in chat mode the top/bottom edges dissolve into
      the page instead of hard-clipping mid-line */
@@ -255,8 +288,8 @@
     cursor:pointer;transition:background 140ms var(--ease-out),border-color 140ms var(--ease-out)}
   .rd-axis b{font-weight:400}
   .rd-axis:hover{background:color-mix(in srgb,var(--ink) 6%,transparent);
-    border-color:color-mix(in srgb,var(--terracotta,#A95D39) 55%,transparent)}
-  .rd-axis:focus-visible{outline:2px solid var(--terracotta,#A95D39);outline-offset:2px}
+    border-color:color-mix(in srgb,var(--terracotta) 55%,transparent)}
+  .rd-axis:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
   @media (max-width:640px){.rd-axis{font-size:12px;padding:4px 12px}}
   .rd-prompt{position:relative;min-width:0;min-height:92px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:12px 32px 12px 12px;
     border:1px solid var(--line);border-radius:var(--ui-radius-small);background:color-mix(in oklab,var(--paper) 68%,transparent);color:var(--ink);
@@ -590,6 +623,20 @@
     body.is-empty .thread{padding:0 16px 16px}
     body.is-empty .composer-zone{padding:0 16px 24px}
     body.is-empty .thread-inner{max-width:100%}
+    /* ── the bar takes over from the drawer: hamburger · wordmark · account ──
+       This belongs on the SAME breakpoint that turns the sidebar into a drawer,
+       not on the phone one. Between 701 and 880 the sidebar is already
+       off-canvas, so the brand and the account row are just as invisible there
+       — putting these at ≤700 would have left an 180px band with a lone
+       hamburger and no way to reach either. Both live in the bar that already
+       exists, so neither costs a pixel of height: the chip grows to the 44px
+       touch floor and the bar gives back the same 8px in padding. */
+    .topbar{align-items:center;padding-top:8px;padding-bottom:8px}
+    .topbar-brand{display:flex}
+    .topbar-acct{display:flex}
+    /* The balance reads out inside the account chip; the bare chip beside it
+       would be the same number twice. */
+    .units-chip{display:none}
   }
   @media (max-width:700px){
     /* the long Claude note crowds the phone topbar; the menu button + title +
@@ -666,6 +713,8 @@
   body:not(.is-empty) .disclaimer{display:none}
   body:not(.is-empty) .site-foot{margin-top:24px}
   .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 16px;font-size:11px;font-weight:600;letter-spacing:.06em;line-height:2;word-spacing:.16em;color:var(--bw-ink-on-sky,var(--bw-palette-9,var(--ink)));font-family:"Spinnaker"}
+  .site-foot{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 8px;word-spacing:normal}
+  .site-foot .sf-dot{opacity:.55}
   .site-foot a{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb,currentColor 42%,transparent)}
   .site-foot a:hover{color:var(--bw-palette-gem,var(--terracotta))}
   body.is-empty .site-foot{position:fixed;left:0;right:0;bottom:10px;z-index:3}
@@ -692,6 +741,10 @@
     body:not(.is-empty) .guide-coach{display:none!important}
     .top-right{gap:12px;flex-wrap:nowrap}
     body[data-page="app"] .top-right .ghost{display:none!important}
+    /* On a phone the wordmark owns this slot: two names in one 390px bar is one
+       too many, and the thread title is already the drawer's job. Above 700 the
+       bar is wide enough to carry both. */
+    .topbar h1{display:none}
     .mobile-side-nav{display:grid;gap:2px;margin:8px 0 2px}
     body.side-open .guide-coach{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
     .topbar .ghost{white-space:nowrap}
@@ -707,6 +760,10 @@
        back in normal flow so it simply sits under the input. Must come after
        the .site-foot{position:fixed} rule above to win on source order. */
     body.is-empty .site-foot{position:static;margin-top:12px}
+    /* Six links and five dots do not fit one phone line, and a dot is the worst
+       thing to land at the end of a wrapped one. Drop them; the gap separates. */
+    .site-foot .sf-dot{display:none}
+    .site-foot{gap:2px 12px}
     body.is-empty .composer-zone{left:0;bottom:34px;padding:0 16px 16px}
     /* Inside a conversation the phone bottom was carrying the composer, a
        two-line disclaimer AND a six-link site footer stacked on top of each
@@ -732,7 +789,14 @@
   @media (max-width:360px){.why-long{display:none}.why-short{display:inline}}
   .greeting{position:relative;display:block;width:100%}
   .greeting .bw-hero-mark{position:absolute;left:0;top:50%;transform:translateY(-50%)}
-  .greeting h1{width:100%;text-align:center;font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink);min-height:1.15em;transition:opacity 360ms var(--ease-out),transform .52s var(--ease-cinematic),letter-spacing .52s var(--ease-cinematic);will-change:opacity,transform}
+  /* The landing headline is the one piece of type with nothing behind it but
+     the sky, and on the darker groups (184's sky is #977966) --ink measured
+     1.23:1 against it. --bw-ink-on-sky is the engine's own ink for exactly
+     this: it is recomputed per group to clear 4.5:1 against that group's
+     cloud, so the headline follows the range instead of staying one brown
+     across all 114. A scrim was the other option and was not taken — this is
+     the page's centrepiece and it should keep sitting straight on the sky. */
+  .greeting h1{width:100%;text-align:center;font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--bw-ink-on-sky,var(--ink));min-height:1.15em;transition:opacity 360ms var(--ease-out),transform .52s var(--ease-cinematic),letter-spacing .52s var(--ease-cinematic);will-change:opacity,transform}
   @media (max-width:700px){
     .greeting{display:flex;align-items:center;justify-content:center;gap:12px}
     .greeting .bw-hero-mark{position:static;transform:none;width:38px!important;height:31px!important}
@@ -787,7 +851,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260826a">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -857,8 +921,22 @@
     <button class="side-open-btn pressable" id="sideOpenBtn" aria-label="Open menu" title="Menu">
       <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h12M2 8h12M2 12h12"></path></svg>
     </button>
+    <!-- Phone-only identity and account. The desktop carries both in the
+         sidebar; on a phone that sidebar is an off-canvas drawer, so the bar
+         held a lone hamburger and nothing else — no brand anywhere on the
+         screen, and no way to reach the balance or sign-in without first
+         guessing what the hamburger hides. Both sit in the bar that already
+         exists, so neither costs a pixel of vertical space. -->
+    <a class="topbar-brand" href="./index.html" aria-label="BourneWise — home">
+      <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+      <b class="brand-word">BourneWise</b>
+    </a>
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New casting</h1>
     <div class="top-right">
+      <a class="topbar-acct pressable" id="topAcct" href="./login.html">
+        <span class="ta-avatar" aria-hidden="true">G</span>
+        <span class="ta-label">Sign in</span>
+      </a>
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
       <span class="claude-note" title="How answers are generated">
         <img class="claude-mark" src="./assets/claude-mark.png" alt="" width="20" height="20" decoding="async" aria-hidden="true">
@@ -907,19 +985,23 @@
     <div class="composer-help" aria-hidden="true"><span>Enter to submit &middot; Shift+Enter for a new line</span><span>Follow-ups reuse the current hexagram</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
     <p class="disclaimer" id="methodNote">Stria 64 &middot; about 440 units typical &middot; charged for what it uses</p>
-    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans &amp; units</a></p>
+    <!-- The separators are their own elements so a wrap can never strand one at
+         the end of a line, which is what the plain text version did on a phone
+         ("… The method ·" then a new line). On narrow screens they are dropped
+         entirely and the gap does the separating. -->
+    <p class="site-foot"><span class="sf-item">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a></span><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./guide.html">The method</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./terms.html">Terms</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./privacy.html">Privacy</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./refund.html">Refunds</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./pricing.html">Plans &amp; units</a></p>
   </footer>
 </main>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260825f"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260826a"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260825f"></script>
-<script src="./liuyao-ai.js?v=20260825f"></script>
+<script src="./liuyao-engine.js?v=20260826a"></script>
+<script src="./liuyao-ai.js?v=20260826a"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -932,7 +1014,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260825f";
+      s.src = "./casting-figure.js?v=20260826a";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -945,10 +1027,10 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260825f"></script>
-<script src="./prompt-checks.js?v=20260825f"></script>
-<script src="./prompt-router.js?v=20260825f"></script>
-<script src="./account.js?v=20260825f"></script>
+<script src="./copy.js?v=20260826a"></script>
+<script src="./prompt-checks.js?v=20260826a"></script>
+<script src="./prompt-router.js?v=20260826a"></script>
+<script src="./account.js?v=20260826a"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It used to
    be a second hand-maintained build literal, and it drifted: it sat two releases
@@ -960,7 +1042,7 @@ window.BWCasting = (function () {
    for a tag that is only being described. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260825f"></script>
+<script src="./chat-app.js?v=20260826a"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -1086,6 +1168,6 @@ window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").spl
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260825f" defer></script>
+<script src="./assets/weave.js?v=20260826a" defer></script>
 </body>
 </html>

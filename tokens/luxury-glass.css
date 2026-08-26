@@ -123,9 +123,9 @@ body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)
 }
 
 /* The usage spread is gone from pricing.html: hiding its plate left a 260px
-   empty panel, which is the "strange box" it always read as. Nothing here
-   replaces it — the sentence it carried now sits with the rates. */
-body[data-page="pricing"] :is(.hero,.plans,.rates,.packs)::before,
+   empty panel, the "strange box" it always read as; the rates carry its
+   sentence now. .hero left this list 2026-08-26: it also killed the scrim. */
+body[data-page="pricing"] :is(.plans,.rates,.packs)::before,
 body[data-page="pricing"] :is(.plans,.packs)::after,
 body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
   .why-card,.method,.progress,.guide-stage,.lesson-card,.example,.rate,.toc,.pull,.headline,.clause
@@ -295,7 +295,7 @@ html[data-skin="paper"] body[data-page="pricing"] :is(
 ) {
   color: var(--soft-peach-ink) !important;
   border: 0 !important;
-  background-color: var(--soft-peach-glass) !important;
+  background-color: var(--soft-peach-glass-strong) !important;  /* the copy that actually paints these cards */
   background-image: none !important;
 }
 /* The featured plan used `inset 0 3px 0 <accent>` — a hard, unblurred 3px slab
@@ -314,7 +314,7 @@ html[data-skin="paper"] body[data-page="pricing"] :is(.plan.featured,.plan.feat)
 }
 html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
+  color: var(--on-accent) !important;   /* --paper on this fill is 4.51:1; white 5.86:1 */
 }
 
 /* Text pages: one flat colour per major editorial field. There are no
@@ -354,7 +354,7 @@ html[data-skin="paper"] body[data-page="login"] .tab.on {
 }
 html[data-skin="paper"] body[data-page="login"] :is(.prov.submit) {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
+  color: var(--on-accent) !important;   /* --paper on this fill is 4.51:1; white 5.86:1 */
 }
 html[data-skin="paper"] body[data-page="settings"] > .toast {
   position: fixed !important;

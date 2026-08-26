@@ -68,15 +68,40 @@
   var C = window.BWCopy;   // every reader-facing sentence lives in copy.js
 
   /* ── render: ledger + account ── */
+
+  /* The phone bar's account chip. It is the only account affordance on a phone
+     screen, so it has to be the one thing that matters at each state: a guest
+     has nothing to read out and one thing to do, and a member is here to see
+     the balance and top it up. Both halves are painted from the same state the
+     sidebar reads, so the two can never disagree. */
+  function paintTopAcct() {
+    var el = $("topAcct"); if (!el) return;
+    var a = S.account, signed = a.signedIn;
+    el.querySelector(".ta-avatar").textContent = signed ? (a.avatar || "EV") : "G";
+    el.querySelector(".ta-label").textContent = signed
+      ? S.units.toLocaleString("en-US")
+      : "Sign in";
+    el.setAttribute("href", signed ? "./pricing.html" : "./login.html");
+    el.setAttribute("aria-label", signed
+      ? S.units.toLocaleString("en-US") + " units available — get more"
+      : "Sign in");
+  }
+
   function renderUnits() {
     var u = S.units.toLocaleString("en-US");
     $("unitsSide").textContent = u;
     $("unitsTop").textContent = u + " units";
-    // the meter measures against this account's real allowance, not a fixed 4,500.
-    // The clamp also covers a negative balance — a reading that outran the
+    paintTopAcct();
+    // The meter measures against this account's own monthly grant. The `|| 1500`
+    // that used to sit here was the old free allowance surviving as a fallback:
+    // PLANS.free.grant is 0, so `0 || 1500` fired on every free account and the
+    // bar measured them against a number the product stopped having. A plan with
+    // no monthly grant has no scale to be a fraction of, so it gets no fill —
+    // the free tier carries a reading, not a balance to fill up.
+    // The clamp also covers a negative balance: a reading that outran the
     // balance still finished, so the bar bottoms out rather than inverting.
-    var allowance = ((A.PLANS && A.PLANS[S.account.plan] || {}).grant) || 1500;
-    var pct = Math.max(4, Math.min(100, Math.round(S.units / allowance * 100)));
+    var grant = ((A.PLANS && A.PLANS[S.account.plan] || {}).grant) || 0;
+    var pct = grant > 0 ? Math.max(4, Math.min(100, Math.round(S.units / grant * 100))) : 0;
     var bar = $("unitsBar"); if (bar) bar.style.width = pct + "%";
     var planEl = $("ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
     var cap = $("unitsCap"); if (cap) cap.textContent = S.account.plan === "free" ? C.ledger.capFree : C.ledger.capPaid;
@@ -91,6 +116,7 @@
     menu.querySelector(".who b").textContent = a.name;
     menu.querySelector(".who span").textContent = a.signedIn ? a.email : "Sign in to sync your balance and readings";
     $("miPlans").querySelector("b").textContent = a.signedIn ? A.planName(a.plan) : "Plans";
+    paintTopAcct();
     syncCoachMarks();
   }
 

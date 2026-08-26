@@ -13,14 +13,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260825f">
-<script src="./ds-base.js?v=20260825f"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260826a">
+<script src="./ds-base.js?v=20260826a"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -112,8 +112,8 @@
   }
   @media (prefers-reduced-motion: reduce){body{animation:none;background-color:var(--paper)}.panel::before{animation:none}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260825f">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260826a">
 </head>
 <body data-page="settings">
 
@@ -140,11 +140,16 @@
           <div class="rr"><span class="plan-badge" id="planBadge">—</span></div>
         </div>
         <div class="row">
-          <div class="rl"><b>Available balance</b><span>Nothing is held while an answer is generated. When it finishes, the charge is the model usage it actually measured — no reservation and no ceiling.</span></div>
+          <!-- copy.js's own rule: a reader has a balance and asks questions;
+               they do not have reservations, settlements or metering. This line
+               said "no reservation and no ceiling" and "the model usage it
+               actually measured" — three of the four banned words in one
+               sentence, describing the billing code rather than what happens. -->
+          <div class="rl"><b>Available balance</b><span>Nothing is set aside when a reading starts, and nothing stops it early. You pay for the answer once it is written, for the length it turned out to be.</span></div>
           <div class="rr" style="display:flex;gap:10px;align-items:center"><b style="font-family:var(--serif);font-size:20px" id="unitsBig">—</b><a class="btn terracotta" href="./pricing.html">Get units</a></div>
         </div>
         <div class="row">
-          <div class="rl"><b>Plans and metering</b><span>Choose monthly or annual included units, add one-time units, and review the usage rates.</span></div>
+          <div class="rl"><b>Plans and top-ups</b><span>Units every month, or a handful whenever you want them. Both land in the same balance.</span></div>
           <div class="rr"><a class="btn ink" href="./pricing.html">View plans</a></div>
         </div>
         <div class="row" id="subRow" hidden>
@@ -186,9 +191,9 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260825f"></script>
-<script src="./account.js?v=20260825f"></script>
-<script src="./sidebar.js?v=20260825f"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260826a"></script>
+<script src="./account.js?v=20260826a"></script>
+<script src="./sidebar.js?v=20260826a"></script>
 <script>
 (function () {
   "use strict";
@@ -321,6 +326,6 @@
   if (A.hydrate) A.hydrate(function () { render(); refreshSubRow(); });
 })();
 </script>
-<script src="./assets/weave.js?v=20260825f" defer></script>
+<script src="./assets/weave.js?v=20260826a" defer></script>
 </body>
 </html>

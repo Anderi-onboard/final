@@ -290,9 +290,14 @@ html[data-skin="paper"] body .pack:nth-child(2n),
 html[data-skin="paper"] body .cost:nth-child(2n) {
   border-radius: var(--ui-radius);
 }
-html[data-skin="paper"] body :is(.band .cta, .plan.feat .choose, .btn.terracotta) {
-  color: var(--ink) !important;
-}
+/* Deleted 2026-08-26. Of its three selectors, two matched nothing on the whole
+   site — there is no .band anywhere, and pricing's featured plan is
+   .plan.featured, not .plan.feat — so the only element it reached was
+   .btn.terracotta, where it was wrong: the rule further down fills that button
+   with clay stepped toward ink, and this put --ink back on top of it. Dark on
+   dark, measured 2.28:1 for settings' "Get units". It also outspecified the
+   correct colour despite sitting 1,000 lines earlier, because :is() takes the
+   specificity of its heaviest argument and .plan.feat .choose is (0,3,0). */
 
 /* Shared page chrome ------------------------------------------------------ */
 body:not([data-page="app"]) .pagehead,
@@ -721,22 +726,37 @@ html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is
      .pack, .term and .ledgerstrip all take the one neutral glass now, so
      the page stops rendering three white cards above a field of khaki. */
 ) {
-  background-color: color-mix(in srgb, var(--bw-palette-1) 52%, rgba(42,32,22,.18)) !important;
+  /* ⭐ Retired 2026-08-26 — the third instance of this exact bug in this exact
+     file, and the note below had already named it. It mixed --bw-palette-1 into
+     every carrier at 52%, which is the palette-in-glass pattern the glass rules
+     ban outright ("暖意必须从背后透上来, 不是掺进面板"). The note said it "currently
+     loses to luxury-glass.css"; CDP's matched-rule list says otherwise — it is
+     later in the cascade AND outspecifies that rule, so it won on every page
+     that is not app or legal.
+     What it cost: on a dark group --bw-palette-1 resolves to rgb(73,53,42), so
+     settings, login, pricing and 404 rendered dark-brown carriers and kept
+     drawing --ink text on them. Measured across 20 groups × 3 viewports, 88 of
+     198 text elements failed WCAG AA at their worst group; 81 of those 88 were
+     on the four pages this rule reaches, and index — which it does not reach —
+     had 7. Adjusting opacity could never have fixed it, because the colour was
+     inside the panel.
+     Same lesson as the stroke-width and the fill-opacity overrides a few
+     hundred lines up: when a change "has no effect", measure what actually
+     won before reaching for a bigger number. */
+  background-color: var(--ui-glass-strong) !important;
   background-image: none !important;
-  border: var(--ui-hairline) solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
-  box-shadow: 0 12px 32px rgba(42,32,22,.075) !important;
-  backdrop-filter: blur(13px) saturate(116%) !important;
-  -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
+  border: var(--ui-hairline) solid var(--ui-line) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
+  backdrop-filter: var(--ui-glass-filter) !important;
+  -webkit-backdrop-filter: var(--ui-glass-filter) !important;
 }
 /* The alternating carrier tint is gone. It mixed --bw-palette-2 into every
    second card, which is the palette-in-glass pattern the glass rules ban —
    and because :nth-child pushed it to (0,4,2) it outspecified the neutral
    glass and won, so a row of four packs read as two different materials.
    Rhythm across a row is the job of content, not of a tint on the even
-   ones. NOTE: the block above still tints every carrier with
-   --bw-palette-1 at 52% and blurs at 13px rather than the frosted filter;
-   it currently loses to luxury-glass.css on the pages that load it, but it
-   is the same violation and should be retired the same way. */
+   ones. The block above carried the same violation and has now been retired
+   the same way — see the note inside it. */
 /* Every carrier on pricing takes the SAME material. .plan was on the neutral
    glass while .rate-card, .estimator, .pack and .term were still on the
    legacy palette-tinted block (--bw-palette-1 52% over a dark mix), so the
@@ -761,10 +781,19 @@ body[data-page="pricing"] :is(.hero, .plans, .rates, .packs) {
    panel and 66% along the header strip that only has one. That tone step is
    the "box inside a box" — there is only ever one box, drawn twice.
    The section stays a transparent grouping element; the panel is the surface. */
+/* --ui-glass-strong, not --ui-glass. These are the reading surfaces: dense
+   13px type, several paragraphs deep, and they are the only carriers a visitor
+   actually stops on. The four glass opacities were set while the range was
+   still being desaturated on its way to the screen; PALETTE_FIDELITY put the
+   cards on the screen at full strength afterwards, and .60 white over the
+   darkest groups composites to a mid-tone that drags every small label on it
+   under AA. Measured on pricing: "Both reading methods" 3.90:1, the grant
+   figure 3.21:1. The app's own chrome keeps .60 — it carries short labels over
+   a deliberately open canvas, and it is the one page that was already clean. */
 body[data-page="pricing"] :is(.plan, .topup, .rate-card, .estimator, .pack, .term, .ledgerstrip),
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
-  background: var(--ui-glass); border-color: var(--ui-line);
+  background: var(--ui-glass-strong); border-color: var(--ui-line);
   box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
   -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
@@ -1371,7 +1400,10 @@ html[data-skin="paper"] body :is(
   .cta, .exchange, .send, .next, .prov.submit, .btn.terracotta, .choose.featured
 ) {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;
+  /* --paper on this fill is 4.51:1 — it passes on paper and then drifts under
+     as the fill composites over a dark ridge. --on-accent is 5.86:1 on the same
+     fill and holds the margin. */
+  color: var(--on-accent) !important;
 }
 
 /* ── CONTROLS: one ladder, and a hit area that cannot half-wire ────────────
@@ -1459,3 +1491,129 @@ input[type="checkbox"]::after, input[type="radio"]::after {
 }
 
 .side-toggle, .side-open-btn { min-height: var(--ctl-compact); }
+
+/* ── Text with nothing behind it but the landscape ──────────────────────────
+   Three places already carry a bespoke version of this fix (the composer zone,
+   and the login / 404 footers), each written when that particular line was
+   caught failing. These are the rest of them, found the same way and given one
+   shared treatment instead of a fourth copy.
+
+   Measured across 20 groups × 3 viewports, compositing the actual pixels behind
+   each text box: pricing's hero copy reached 1.22:1, settings' section labels
+   1.00:1, 404's body 1.82:1. A glass panel would have fixed it, but these are
+   deliberately unpanelled — the point of them is open space.
+
+   Both halves are needed, which is the note the earlier fixes left behind:
+   full ink alone still rides whatever ridge happens to be underneath, and a
+   scrim alone leaves --dim short on the darkest groups. The scrim is an ellipse
+   fading to nothing rather than a band, so it reads as haze over the range
+   instead of an invisible box someone forgot to draw a border on.
+   ⚠️ No negative bottom inset — login and 404 are exactly one viewport tall and
+   a scrim hanging below the text adds that much scroll to a page that fit. */
+html[data-skin="paper"] body:is([data-page="pricing"], [data-page="settings"], [data-page="not-found"])
+  :is(.hero, .section > .head, .pagetitle, .subtitle, .wrap > h1, .wrap > .said, .wrap > .body, .wrap > .eyebrow),
+html[data-skin="paper"] body[data-page="app"] .site-foot {
+  position: relative;
+  isolation: isolate;
+}
+html[data-skin="paper"] body:is([data-page="pricing"], [data-page="settings"], [data-page="not-found"])
+  :is(.hero, .section > .head, .pagetitle, .subtitle, .wrap > h1, .wrap > .said, .wrap > .body, .wrap > .eyebrow)::before,
+html[data-skin="paper"] body[data-page="app"] .site-foot::before {
+  content: "";
+  position: absolute;
+  /* ⚠️ No bleed on either axis. Bleeding -28px sideways put 4px of horizontal
+     scroll on 404 at 390px — the same trap as the negative bottom inset noted
+     above, on the other axis — and bleeding -14px vertically was simply clipped
+     by pricing's .hero, which gave the fade a hard edge where it was supposed
+     to disappear. Oversizing the gradient does the whole job and costs no
+     layout: it fades to nothing well inside the box. */
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Reaches 0 at the very edge rather than at 80%: the first version faded out
+     inside the block, so the last line of a tall one (pricing's <small>) sat
+     back on bare ridge and still measured 2.58:1. */
+  background: radial-gradient(155% 195% at 50% 50%,
+    rgb(var(--ui-glass-tint) / .92) 0%,
+    rgb(var(--ui-glass-tint) / .86) 62%,
+    rgb(var(--ui-glass-tint) / 0) 100%);
+}
+/* …and the ink goes to full strength on the same elements. --dim and --faint
+   are panel greys; on bare landscape they are the two levels that fail. */
+html[data-skin="paper"] body[data-page="pricing"] :is(.hero-copy, .hero-copy small, .eyebrow),
+html[data-skin="paper"] body[data-page="settings"] :is(.section > .head, .subtitle),
+html[data-skin="paper"] body[data-page="not-found"] :is(.wrap > .said, .wrap > .body) {
+  color: var(--ink);
+}
+/* The app's bar and footer float straight on the sky with no carrier of their
+   own. --bw-ink-on-sky is the engine's own contrast-checked ink for exactly
+   this, and it moves with the group instead of staying one brown across 114. */
+html[data-skin="paper"] body[data-page="app"] .topbar .ghost {
+  color: var(--bw-ink-on-sky, var(--ink));
+}
+
+/* ── Palette-derived ink ────────────────────────────────────────────────────
+   --bw-palette-gem is an arbitrary swatch out of the group (gems[0]), so using
+   it directly as a text colour means the text is whatever lightness that group
+   happened to hold. Measured: the 42px price on pricing hit 1.01:1 on group
+   052, and "Save 2 months" at 10px hit 1.13:1.
+
+   The brief was that the colour should follow the palette without going to
+   extremes, so this keeps the hue and the chroma — the page still changes
+   colour with the range, which is the whole point — and pins only the
+   lightness into a band that clears AA over the neutral glass. Nothing is
+   hard-coded per group; one expression covers all 114.
+
+   The plain value is the fallback for anything without relative colour syntax:
+   no worse than what shipped, and the @supports block does the work everywhere
+   it is understood. */
+html { --gem-ink: var(--bw-palette-gem); }
+@supports (color: oklch(from red l c h)) {
+  /* .40, not .46: at .46 the price still measured 3.21:1 on the darker groups,
+     because the card it sits on is glass over the range rather than paper.
+     .34 after a second pass: .40 still left the grant figure at 3.20:1. */
+  html { --gem-ink: oklch(from var(--bw-palette-gem) min(l, .34) c h); }
+}
+
+/* Clay used as type takes the stepped ink, not the fill colour. These are the
+   places measured under AA against their own composited backdrop: settings'
+   section rails and its sign-in link, pricing's savings chip and identity line,
+   and 404's secondary action. The fills elsewhere are untouched. */
+html[data-skin="paper"] body[data-page="settings"] :is(.head b, .head .idx, .signedout-note a),
+html[data-skin="paper"] body[data-page="pricing"] :is(.save, .identity, .plan-tag),
+html[data-skin="paper"] body[data-page="not-found"] .ghostbtn {
+  color: var(--terracotta-ink);
+}
+/* …and the secondary action on 404 gets the heavier glass. At .60 white the
+   panel composites down over the range's darkest ridges, which is where its
+   label measured 2.42:1; the button sits low on a page that never scrolls. */
+html[data-skin="paper"] body[data-page="not-found"] .ghostbtn {
+  background-color: var(--ui-glass-strong) !important;
+}
+
+/* ── the landing headline ───────────────────────────────────────────────────
+   The one piece of type on the site with nothing behind it but the range
+   itself. Palette-aware ink got it most of the way, but --bw-ink-on-sky is
+   computed against the group's cloud and the headline sits across the ridges
+   too, so on the darkest groups it still measured 1.35:1 — the headline was
+   effectively not there.
+
+   This is deliberately much softer than the scrims on the other pages: a wide
+   ellipse at .58 that never reaches an edge. On the light groups — most of the
+   114 — it is white haze on a near-white sky and cannot be seen. On the dark
+   ones it is the difference between a headline and a smudge. Static, like
+   everything else here: no pulse, nothing that redraws under the glass. */
+html[data-skin="paper"] body[data-page="app"].is-empty .greeting {
+  isolation: isolate;
+}
+html[data-skin="paper"] body[data-page="app"].is-empty .greeting::before {
+  content: "";
+  position: absolute;
+  inset: -6% 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(88% 88% at 50% 50%,
+    rgb(var(--ui-glass-tint) / .58) 0%,
+    rgb(var(--ui-glass-tint) / .40) 52%,
+    rgb(var(--ui-glass-tint) / 0) 100%);
+}
