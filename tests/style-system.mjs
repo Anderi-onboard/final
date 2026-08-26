@@ -170,33 +170,59 @@ assert.equal(names(relRule.sel), names(afterRule.sel.replace(/::after/g, '')),
   + '  hit area — which is exactly how .send ended up a 40px Cast button.');
 
 /* ── ratchets ────────────────────────────────────────────────────────────
-   These have not been collapsed yet. The numbers are today's census; they may
-   fall and may not rise. Lower each one when you collapse it, the way the
-   luxury-glass baseline came down. */
+   These three were collapsed onto ladders derived from what index — the
+   reference — actually leans on, and moved only by amounts nobody can see.
+   The numbers below are what is left; they may fall and may not rise.
+
+   ⚠️ Counted by VALUE, not by spelling. `.14s` and `140ms` are one duration,
+   and `0` and `0 !important` are one tracking; an earlier count treated them
+   as four and made the collapse look half as effective as it was. */
+const norm = {
+  track: (v) => {
+    const t = v.replace(/\s*!important/, '').trim();
+    return t === '0em' || t === '0px' ? '0' : t;
+  },
+  ms: (v) => {
+    const m = v.match(/([\d.]+)(ms|s)/);
+    return m ? String(m[2] === 's' ? parseFloat(m[1]) * 1000 : parseFloat(m[1])) : v;
+  }
+};
+
 const RATCHET = {
-  /* 36 distinct declarations, of which 19 are positive label tracking. Nobody
-     can tell 0.44px from 0.48px any more than 12px from 12.5px. */
-  'letter-spacing declarations': {
-    now: collect(/letter-spacing\s*:\s*([^;}]+)/g).map((r) => r.v),
-    max: 36
+  /* tokens/typography.css names four tracking steps; the ladder fills in
+     around them on an even .02em step. Nothing moved more than .015em, which
+     on 13px text is a fifth of a pixel per character. */
+  'letter-spacing': {
+    now: collect(/letter-spacing\s*:\s*([^;}]+)/g).map((r) => norm.track(r.v)),
+    max: 15
   },
-  /* tokens/motion.css declares --dur-fast/base/slow/reveal/lede. The census
-     found 26 distinct durations in use, so most of them bypass the tokens.
-     ⚠️ CLAUDE.md §4 says "120 / 240 / 480ms" — the code has never said that.
-     Per this file's own preamble, the code wins and the doc has been fixed. */
+  /* ⚠️ Only `transition` is collapsed. `animation` is not a UI transition —
+     motion.css says so in its own header — and a pass that swept it in was
+     rewriting stagger delays and the streaming caret's blink. That pass was
+     reverted rather than kept.
+
+     tokens/motion.css gained --dur-slower: 520ms, because the census found
+     eighteen uses clustered at 500–600ms with no token between 360 and 760.
+     Adding a step the code demonstrably needs is system design; adding one to
+     humour a single page is drift. Fallbacks were dropped too: five places
+     wrote var(--dur-fast, 120ms) against a token that is 140ms — a fallback
+     that can never fire and disagrees with what it falls back to. */
   'transition durations': {
-    now: collect(/transition[^:]*:\s*([^;}]+)/g)
-      .flatMap((r) => r.v.match(/[\d.]+m?s/g) || []),
-    max: 26
+    now: collect(/transition(?:-duration)?[^:;{}]*:\s*([^;}]+)/g)
+      .flatMap((r) => (r.v.replace(/var\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').match(/[\d.]+m?s/g) || []))
+      .map(norm.ms),
+    max: 10
   },
-  /* CLAUDE.md pins the ladder at 10·11·12·13·15 (+20·30) for Spinnaker,
-     13·15·16.5·18 for BioRhyme, 13·18 for Pacifico. 8, 16, 21, 22, 24, 25, 27
-     and 42 are outside it. */
+  /* ⚠️ CLAUDE.md forbids crossing between the three faces' ladders, and the
+     off-ladder sizes were nearly all on BioRhyme — snapping 22 to 20 would
+     have moved a serif title onto a Spinnaker step. The real finding is that
+     BioRhyme had no step between 18 and the hero clamps, so seven places
+     invented one each: 21 22 22 22 24 25 27. --serif-title is now that step. */
   'literal font sizes': {
     now: collect(/font-size\s*:\s*([^;}]+)/g)
       .filter((r) => !/var\(|clamp|cqw|%|em/.test(r.v))
       .flatMap((r) => r.v.match(/[\d.]+px/g) || []),
-    max: 16
+    max: 11
   }
 };
 

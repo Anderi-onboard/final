@@ -394,7 +394,7 @@ body[data-page="not-found"] .ghostbtn{box-shadow:none;transition:border-color va
   margin-bottom:12px;
   font-size:10px;
   font-weight:600;
-  letter-spacing:.15em;
+  letter-spacing:.14em;
   color:var(--cp-accent);
 }
 .editorial-spread figcaption b{
@@ -403,7 +403,7 @@ body[data-page="not-found"] .ghostbtn{box-shadow:none;transition:border-color va
   font-size:clamp(24px,3vw,38px);
   font-weight:700;
   line-height:1.08;
-  letter-spacing:-.035em;
+  letter-spacing:-.03em;
 }
 .editorial-spread figcaption p{margin-top:12px;font-size:13px;line-height:1.65;color:var(--dim)}
 body[data-page="about"] .editorial-spread--reflection{direction:rtl}
@@ -457,7 +457,7 @@ body[data-page="pricing"] .editorial-spread{margin-top:32px;margin-bottom:32px}
   body[data-page="settings"] .panel{border-radius:var(--ui-radius)}
   body[data-page="guide"] .guide-stage{padding:32px 16px}
   .editorial-spread{margin:54px auto 70px}
-  .editorial-spread figcaption b{font-size:27px}
+  .editorial-spread figcaption b{font-size:30px}
   .editorial-eyelet{top:10px;left:10px;width:15px;height:15px;border-width:2px}
   .lesson-overview{grid-template-columns:1fr;gap:12px}
   .lesson-overview figcaption{padding:0 4px}

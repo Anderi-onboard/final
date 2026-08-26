@@ -13,14 +13,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260825e">
-<script src="./ds-base.js?v=20260825e"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260825f">
+<script src="./ds-base.js?v=20260825f"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -55,7 +55,7 @@
   .row .rl span{font-size:13px;color:var(--faint)}
   .row .rr{flex:none}
 
-  .field{width:230px;max-width:46vw;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:8px 12px;font-size:15px;transition:border-color .15s,box-shadow .15s}
+  .field{width:230px;max-width:46vw;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:8px 12px;font-size:15px;transition:border-color 140ms,box-shadow 140ms}
   .field:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.14)}
 
   .id-row{display:flex;align-items:center;gap:12px;padding:16px 16px}
@@ -66,7 +66,7 @@
   .prov-tag{font-size:11px;letter-spacing:.06em;color:var(--dim);background:var(--chip);border-radius:var(--ui-radius-pill);padding:4px 12px;text-transform:capitalize}
 
   .plan-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;color:var(--paper);background:var(--pine);border-radius:var(--ui-radius-pill);padding:4px 12px}
-  .btn{font-size:13px;font-weight:500;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:8px 16px;transition:border-color .15s,background .15s}
+  .btn{font-size:13px;font-weight:500;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:8px 16px;transition:border-color 140ms,background 140ms}
   .btn:hover{border-color:var(--ink)}
   .btn.ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .btn.ink:hover{background:color-mix(in srgb,var(--ink) 90%,white)}
@@ -78,14 +78,14 @@
 
   /* method radio */
   .methods{display:flex;flex-direction:column;gap:0}
-  .mrow{display:flex;align-items:flex-start;gap:12px;padding:16px 16px;cursor:pointer;transition:background .15s}
+  .mrow{display:flex;align-items:flex-start;gap:12px;padding:16px 16px;cursor:pointer;transition:background 140ms}
   .mrow + .mrow{border-top:1px solid var(--line-soft)}
   .mrow:hover{background:var(--paper-dim)}
-  .mrow .radio{flex:none;width:18px;height:18px;border-radius:50%;border:var(--ui-hairline) solid var(--line);margin-top:2px;transition:border-color .15s,box-shadow .15s,background .15s}
+  .mrow .radio{flex:none;width:18px;height:18px;border-radius:50%;border:var(--ui-hairline) solid var(--line);margin-top:2px;transition:border-color 140ms,box-shadow 140ms,background 140ms}
   .mrow.sel .radio{border-color:var(--terracotta);box-shadow:inset 0 0 0 4px var(--terracotta);background:var(--paper-raised)}
   .mrow .mmain{flex:1}
   .mrow .mmain b{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
-  .mrow .mmain .lock{font-size:10px;letter-spacing:.09em;color:var(--pine);border:1px solid var(--pine);border-radius:var(--ui-radius-small);padding:1px 4px}
+  .mrow .mmain .lock{font-size:10px;letter-spacing:.08em;color:var(--pine);border:1px solid var(--pine);border-radius:var(--ui-radius-small);padding:1px 4px}
   .mrow .mmain p{font-size:13px;color:var(--dim);margin-top:3px;text-wrap:pretty}
   .mrow .mcost{flex:none;font-family:var(--serif);font-size:15px;color:var(--dim);font-variant-numeric:tabular-nums}
   .mrow.locked{opacity:.66}
@@ -94,7 +94,7 @@
   .signedout-note{padding:16px 16px;font-size:13px;color:var(--dim)}
   .signedout-note a{color:var(--terracotta);border-bottom:1px solid var(--terracotta)}
 
-  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:8px 16px;border-radius:var(--ui-radius-pill);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:8px 16px;border-radius:var(--ui-radius-pill);opacity:0;pointer-events:none;transition:opacity 190ms,transform 190ms;z-index:60}
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:880px){body .sidebar{display:none}.shell{padding:32px 16px 70px}.field{width:180px}}
@@ -112,8 +112,8 @@
   }
   @media (prefers-reduced-motion: reduce){body{animation:none;background-color:var(--paper)}.panel::before{animation:none}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260825e">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260825e">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260825f">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260825f">
 </head>
 <body data-page="settings">
 
@@ -186,9 +186,9 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260825e"></script>
-<script src="./account.js?v=20260825e"></script>
-<script src="./sidebar.js?v=20260825e"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260825f"></script>
+<script src="./account.js?v=20260825f"></script>
+<script src="./sidebar.js?v=20260825f"></script>
 <script>
 (function () {
   "use strict";
@@ -321,6 +321,6 @@
   if (A.hydrate) A.hydrate(function () { render(); refreshSubRow(); });
 })();
 </script>
-<script src="./assets/weave.js?v=20260825e" defer></script>
+<script src="./assets/weave.js?v=20260825f" defer></script>
 </body>
 </html>

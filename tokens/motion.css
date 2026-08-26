@@ -10,6 +10,10 @@
   --dur-fast: 140ms;   /* press, hover tint */
   --dur-base: 190ms;   /* menus, reveals */
   --dur-slow: 360ms;   /* panels, page-level */
+  /* ⚠️ 普查补的一档:全站 18 处时长落在 500–600ms,而令牌在 360 和 760 之间是空的,
+     于是每个调用点各自敲了一个数(.45 / .5 / .52 / .55 / .6 / .68)。
+     补一档是系统设计;为了迁就某一页改一个数才是漂移。 */
+  --dur-slower: 520ms; /* long settles — drawers, page-scale chrome */
 
   /* Editorial reveal curves — the long, weighted easings that give a
      smooth-scrolled page its "settling into place" feel. --ease-cinematic is

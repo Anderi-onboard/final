@@ -231,10 +231,10 @@ html[data-skin="paper"] body .mtn-bg [clip-path] > use {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html[data-skin="paper"] { transition-duration: .2s; }
+  html[data-skin="paper"] { transition-duration: 190ms; }
   html[data-skin="paper"] body .mtn-sky,
   html[data-skin="paper"] body .mtn-bg .fill,
-  html[data-skin="paper"] body .mtn-bg [clip-path] > use { transition-duration: .2s; }
+  html[data-skin="paper"] body .mtn-bg [clip-path] > use { transition-duration: 190ms; }
 }
 
 /* Shared glass carriers --------------------------------------------------- */
@@ -545,7 +545,7 @@ body[data-page="app"] .msg-user {
   border-color: color-mix(in srgb, var(--bw-palette-9) 78%, var(--paper-dim)) !important;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--bw-palette-9) 18%, transparent);
 }
-body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em; }
+body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.01em; }
 body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
@@ -1152,8 +1152,8 @@ html[data-skin="paper"] body :is(
   cursor: pointer;
   position: relative;
   border-bottom: 1px dotted color-mix(in srgb, var(--ink) 38%, transparent);
-  transition: border-color var(--dur-fast, 120ms) var(--ease-out, ease),
-              color var(--dur-fast, 120ms) var(--ease-out, ease);
+  transition: border-color var(--dur-fast) var(--ease-out, ease),
+              color var(--dur-fast) var(--ease-out, ease);
 }
 /* A comfortable tap target without disturbing the line box it sits in. */
 .reading-body .xr::before {
@@ -1183,14 +1183,14 @@ html[data-skin="paper"] body :is(
   border-left: 2px solid color-mix(in srgb, var(--terracotta) 42%, transparent);
   background: color-mix(in srgb, var(--bw-palette-1) 42%, transparent);
   border-radius: 0 var(--ui-radius-small, 12px) var(--ui-radius-small, 12px) 0;
-  animation: xr-in var(--dur-fast, 120ms) var(--ease-out, ease) both;
+  animation: xr-in var(--dur-fast) var(--ease-out, ease) both;
 }
 .reading-body .xr-lead {
   margin: 0 0 8px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: .01em;
+  letter-spacing: 0;
   color: var(--dim);
 }
 .reading-body .xr-panel[lang="zh"] .xr-lead { line-height: 1.65; }
@@ -1206,7 +1206,7 @@ html[data-skin="paper"] body :is(
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1;
-  letter-spacing: .01em;
+  letter-spacing: 0;
   color: var(--dim);
   background: color-mix(in srgb, var(--bw-palette-1) 66%, transparent);
   border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
@@ -1217,8 +1217,8 @@ html[data-skin="paper"] body :is(
      and the hit area is expanded underneath it. */
   position: relative;
   min-height: var(--ctl-chip);
-  transition: color var(--dur-fast, 120ms) var(--ease-out, ease),
-              border-color var(--dur-fast, 120ms) var(--ease-out, ease);
+  transition: color var(--dur-fast) var(--ease-out, ease),
+              border-color var(--dur-fast) var(--ease-out, ease);
 }
 .reading-body .xr-cat::before { content: ""; position: absolute; inset: -7px -2px; }
 /* The branch this reading actually took. The row is a map; without this it is a
@@ -1303,7 +1303,7 @@ html[data-skin="paper"] body :is(
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: .012em;
+  letter-spacing: .02em;
   color: var(--dim);
 }
 .reading-body .xr-edges {

@@ -62,7 +62,7 @@ body[data-page="legal"] .legal-poster-intro > :is(.eyebrow, h1, .meta) { grid-co
 body[data-page="legal"] .legal-poster-intro h1 {
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(36px, 5.4vw, 72px); line-height: .98;
-  letter-spacing: -.032em;
+  letter-spacing: -.03em;
 }
 body[data-page="legal"] .legal-poster-intro .meta { font-size: 13px; color: var(--dim); }
 body[data-page="legal"] .legal-poster-intro .lede {
@@ -102,7 +102,7 @@ body[data-page="legal"] .clause:nth-of-type(even) { background: var(--bk-bone); 
 body[data-page="legal"] .clause h2 {
   grid-column: 1; grid-row: 1;
   display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
-  font-family: var(--sans); font-size: 12px; letter-spacing: .09em;
+  font-family: var(--sans); font-size: 12px; letter-spacing: .08em;
   margin: 0; padding-top: 3px; text-wrap: balance;
 }
 body[data-page="legal"] .clause h2 .n {
