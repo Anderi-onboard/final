@@ -51,12 +51,12 @@ body:not([data-page="app"]) :where(.pagehead,.top){
   -webkit-backdrop-filter:blur(10px) saturate(108%);
   backdrop-filter:blur(10px) saturate(108%);
 }
-body:not([data-page="app"]) :where(.brand,.wordmark){min-height:40px}
+body:not([data-page="app"]) :where(.brand,.wordmark){min-height:var(--ctl)}
 /* Wordmark typography is owned by refinement.css. Do not restate it here:
    doing so previously erased the shared .45px optical stroke and -1px
    baseline correction on every standalone page. */
 body:not([data-page="app"]) :where(.pagehead .ghost,.top .exit,.nav .ghost){
-  min-height:40px;
+  min-height:var(--ctl);
   display:inline-flex;
   align-items:center;
   padding:0 12px;
@@ -65,7 +65,7 @@ body:not([data-page="app"]) :where(.pagehead .ghost,.top .exit,.nav .ghost){
   transition:color var(--cp-fast),border-color var(--cp-fast),background-color var(--cp-fast);
 }
 body:not([data-page="app"]) :where(.pagehead .cta,.top .cta){
-  min-height:42px;
+  min-height:var(--ctl);
   display:inline-flex;
   align-items:center;
   padding:0 16px;
@@ -202,7 +202,7 @@ body[data-page="guide"] .guide-stage{padding:clamp(30px,5vw,64px);background:var
 body[data-page="guide"] .lesson{animation:none!important}
 body[data-page="guide"] :where(.lesson-card,.example,.rate){box-shadow:none;background:color-mix(in srgb,var(--paper-raised) 80%,transparent)}
 body[data-page="guide"] :where(.back,.next){
-  min-height:44px;
+  min-height:var(--ctl);
   border:1px solid var(--cp-line);
   border-radius:var(--cp-radius-sm);
   transition:background-color var(--cp-fast),border-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out);
@@ -220,11 +220,11 @@ body[data-page="login"] .card-foot{padding:12px 32px 24px}
 body[data-page="login"] .tabs{box-shadow:none;background:color-mix(in srgb,var(--cp-accent) 6%,var(--paper-raised));padding:4px}
 body[data-page="login"] .tab{transition:color var(--cp-fast),background-color var(--cp-fast),box-shadow var(--cp-fast)}
 body[data-page="login"] .tab.on{border:1px solid var(--cp-line);box-shadow:none;background:var(--cp-carrier-strong)}
-body[data-page="login"] .prov{min-height:48px;box-shadow:none;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast),opacity var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+body[data-page="login"] .prov{min-height:var(--ctl);box-shadow:none;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast),opacity var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
 body[data-page="login"] .prov:hover{transform:none}
 body[data-page="login"] .prov .arr{transition:color var(--cp-fast)}
 body[data-page="login"] .prov:hover .arr{transform:none}
-body[data-page="login"] .field input{min-height:48px;box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="login"] .field input{min-height:var(--ctl);box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
 body[data-page="login"] .field input:focus{border-color:var(--cp-line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--cp-accent) 14%,transparent)}
 body[data-page="login"][data-mode="register"] .reveal-row{animation:cp-field-in var(--cp-base) var(--cp-ease-out) both}
 
@@ -247,7 +247,7 @@ body[data-page="pricing"] .plan.featured{
 }
 body[data-page="pricing"] :where(.rate-card,.pack,.term){box-shadow:none}
 body[data-page="pricing"] .rate-number{border-top-color:var(--cp-line)}
-body[data-page="pricing"] .field :where(input,select){min-height:48px;box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="pricing"] .field :where(input,select){min-height:var(--ctl);box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
 body[data-page="pricing"] .field :where(input,select):focus{outline:none;border-color:var(--cp-line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--cp-accent) 14%,transparent)}
 body[data-page="pricing"] .choose{
   border:1px solid var(--cp-line-strong);
@@ -265,9 +265,9 @@ body[data-page="settings"] .subtitle{max-width:48ch}
 body[data-page="settings"] .section{margin-top:48px}
 body[data-page="settings"] .panel{background:var(--cp-carrier-strong);box-shadow:var(--cp-shadow)}
 body[data-page="settings"] :where(.row + .row,.mrow + .mrow){border-top-color:var(--cp-line)}
-body[data-page="settings"] .field{min-height:44px;background:var(--cp-carrier-strong);box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
+body[data-page="settings"] .field{min-height:var(--ctl);background:var(--cp-carrier-strong);box-shadow:none;transition:border-color var(--cp-fast),box-shadow var(--cp-fast)}
 body[data-page="settings"] .field:focus{border-color:var(--cp-line-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--cp-accent) 14%,transparent)}
-body[data-page="settings"] .btn{min-height:40px;box-shadow:none!important;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
+body[data-page="settings"] .btn{min-height:var(--ctl);box-shadow:none!important;transition:border-color var(--cp-fast),background-color var(--cp-fast),color var(--cp-fast),transform var(--cp-fast) var(--cp-ease-out)}
 body[data-page="settings"] .mrow{transition:background-color var(--cp-fast)}
 body[data-page="settings"] .danger{border-color:color-mix(in srgb,var(--terracotta) 38%,transparent)}
 
@@ -320,7 +320,7 @@ html[data-skin="paper"] body[data-page="legal"] .toc{
   -webkit-backdrop-filter:none!important;
   backdrop-filter:none!important;
 }
-body[data-page="legal"] .toc a{min-height:34px;display:flex;align-items:center;border-bottom:1px solid color-mix(in srgb,var(--cp-line) 70%,transparent);transition:color var(--cp-fast),border-color var(--cp-fast)}
+body[data-page="legal"] .toc a{min-height:var(--ctl-compact);display:flex;align-items:center;border-bottom:1px solid color-mix(in srgb,var(--cp-line) 70%,transparent);transition:color var(--cp-fast),border-color var(--cp-fast)}
 body[data-page="legal"] .toc a{color:color-mix(in srgb,var(--cp-ink) 82%,var(--cp-archive))}
 body[data-page="legal"] .toc a .n{color:color-mix(in srgb,var(--terracotta) 72%,var(--cp-ink))}
 body[data-page="legal"] .clause{max-width:72ch;margin-top:40px;scroll-margin-top:26px}
@@ -474,7 +474,7 @@ body[data-page="pricing"] .editorial-spread{margin-top:32px;margin-bottom:32px}
 @keyframes cp-fade{from{opacity:.35}to{opacity:1}}
 
 /* Legal index rows --------------------------------------------------------
-   .toc a was `min-height:34px; align-items:center`, so an entry that wraps to
+   .toc a was `min-height:var(--ctl-compact); align-items:center`, so an entry that wraps to
    two lines grows its row and its neighbour floats to the row's midpoint —
    landing on neither of the wrapped entry's baselines. One wrapped entry out
    of ten is enough to make the whole block read as misaligned, which is what

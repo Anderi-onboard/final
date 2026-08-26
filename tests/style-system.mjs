@@ -121,6 +121,54 @@ for (const { f, css } of ALL) {
   }
 }
 
+/* ── controls ────────────────────────────────────────────────────────────
+   The ladder is 28 / 36 / 44 / 52, on the same 4px grid as the spacing scale,
+   and 44 is the DEFAULT rather than the ceiling because 44 is the touch
+   minimum. A height in that band must come from the token, for the same reason
+   radius does: a literal is how the set grows back. Outside the band the
+   number is a container, not a control, and keeps its value. */
+const CTL_BAND = [28, 56];
+const ctlLiterals = [];
+for (const { f, css } of ALL) {
+  for (const m of css.matchAll(/min-height:\s*(\d+)px/g)) {
+    const v = +m[1];
+    if (v >= CTL_BAND[0] && v <= CTL_BAND[1]) ctlLiterals.push(`${f}: min-height:${v}px`);
+  }
+}
+assert.deepEqual(ctlLiterals, [],
+  'a control height must come from --ctl-chip / --ctl-compact / --ctl / --ctl-prominent:\n  '
+  + ctlLiterals.join('\n  '));
+
+/* ⭐ The regression guard for the bug this pass was opened by. The touch rule
+   is two blocks — one giving controls `position: relative`, one giving them
+   the `::after` that carries the hit area — and the version in motion.css
+   named NINE selectors in the first and only FOUR in the second. Five controls
+   carried the positioning and no hit area at all, under a comment saying they
+   were handled; one of them was .send, the Cast button. A touch census found
+   68 elements across 39 kinds still under 44px.
+
+   Nothing about that is visible by reading either block on its own, so the
+   test reads both and asserts they name the same controls. */
+const refinement = read('tokens/refinement.css');
+const MARK = 'Controls that cannot grow without pushing something else out of place';
+const at = refinement.indexOf(MARK);
+assert.ok(at > 0, 'the touch-target section in refinement.css has moved or lost its comment');
+const section = refinement.slice(at, at + 2600);
+/* the two rules that follow the comment, in order: the positioning one, then
+   the one carrying the ::after */
+const rules = [...section.matchAll(/\n([^{}]*?)\{([^}]*)\}/g)]
+  .map((m) => ({ sel: m[1], body: m[2] }));
+const relRule = rules.find((r) => /position:\s*relative/.test(r.body));
+const afterRule = rules.find((r) => /content:\s*""/.test(r.body) && /position:\s*absolute/.test(r.body));
+assert.ok(relRule && afterRule, 'could not find both halves of the touch-target rule');
+const names = (sel) => [...new Set([...sel.matchAll(/[.#[][\w[\]="'-]+/g)].map((m) => m[0].replace(/::after$/, '')))].sort().join(' ');
+assert.equal(names(relRule.sel), names(afterRule.sel.replace(/::after/g, '')),
+  'the two halves of the touch-target rule name different controls.\n'
+  + `  position:relative → ${names(relRule.sel)}\n`
+  + `  ::after          → ${names(afterRule.sel.replace(/::after/g, ''))}\n`
+  + '  A control in the first list and not the second gets the positioning and no\n'
+  + '  hit area — which is exactly how .send ended up a 40px Cast button.');
+
 /* ── ratchets ────────────────────────────────────────────────────────────
    These have not been collapsed yet. The numbers are today's census; they may
    fall and may not rise. Lower each one when you collapse it, the way the

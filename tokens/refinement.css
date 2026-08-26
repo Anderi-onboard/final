@@ -316,7 +316,7 @@ body[data-page="pricing"] .brand b {
 }
 body:not([data-page="app"]) .pagehead .ghost,
 body[data-page="pricing"] .pagehead .ghost {
-  min-height: 38px;
+  min-height: var(--ctl);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -326,7 +326,7 @@ body[data-page="pricing"] .pagehead .ghost {
 }
 body:not([data-page="app"]) .pagehead .cta,
 body[data-page="pricing"] .pagehead .cta {
-  min-height: 44px;
+  min-height: var(--ctl);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -335,7 +335,7 @@ body[data-page="pricing"] .pagehead .cta {
   white-space: nowrap;
 }
 body[data-page="about"] .slab-nav .cta {
-  min-height: 36px;
+  min-height: var(--ctl-compact);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -356,7 +356,7 @@ body[data-page="app"] .sidebar {
 body[data-page="app"] .side-top { padding-inline: 4px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
-  min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
+  min-height: var(--ctl-compact); display: inline-flex; align-items: center; padding: 0 12px;
   border-radius: var(--ui-radius-pill); font-size: 13px; font-weight: 500 !important;
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
@@ -367,7 +367,7 @@ body[data-page="app"] .side-toggle,
 body[data-page="app"] .new-cast,
 body[data-page="app"] .castings .casting,
 body[data-page="app"] .casting-row { border-radius: var(--ui-radius-small); }
-body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
+body[data-page="app"] .new-cast { min-height: var(--ctl); padding: 8px; color: var(--ink); }
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
   margin: 12px 2px 0; padding: 16px; border: var(--ui-hairline) solid var(--ui-line) !important;
@@ -377,11 +377,11 @@ body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
 body[data-page="app"] .ledger-meter { height: 4px; }
 body[data-page="app"] .exchange {
-  min-height: 38px; border-radius: var(--ui-radius-small); box-shadow: 0 6px 18px rgba(31,29,26,.13);
+  min-height: var(--ctl); border-radius: var(--ui-radius-small); box-shadow: 0 6px 18px rgba(31,29,26,.13);
   background: var(--ink); color: var(--paper-raised);
 }
 body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: 0 8px 22px rgba(181,80,44,.18); transform: none; }
-body[data-page="app"] .side-foot { min-height: 48px; border-radius: var(--ui-radius-small); }
+body[data-page="app"] .side-foot { min-height: var(--ctl); border-radius: var(--ui-radius-small); }
 body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mask-image: none; -webkit-mask-image: none; }
 
 body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
@@ -499,7 +499,7 @@ body[data-page="app"] .composer:focus-within {
   box-shadow: var(--ui-shadow-raised), 0 0 0 3px color-mix(in srgb, var(--terracotta) 16%, transparent);
 }
 body[data-page="app"] .stria {
-  min-height: 42px; padding: 8px 12px; background: var(--ui-glass-warm);
+  min-height: var(--ctl); padding: 8px 12px; background: var(--ui-glass-warm);
   border: var(--ui-hairline) solid var(--ui-line); color: var(--ink);
   transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
@@ -776,7 +776,7 @@ body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-sha
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
-body[data-page="settings"] .btn { min-height: 44px; border-radius: var(--ui-radius-small); box-shadow: none; }
+body[data-page="settings"] .btn { min-height: var(--ctl); border-radius: var(--ui-radius-small); box-shadow: none; }
 body[data-page="pricing"] .choose:hover,
 body[data-page="pricing"] .cta:hover,
 body[data-page="login"] .submit:hover,
@@ -820,7 +820,7 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   body[data-page="app"] .greeting h1 { min-height: 5.25em; font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
   body[data-page="app"] #heroEmpty { padding-bottom: 24px; }
   body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 8px; }
-  body[data-page="app"] .stria { min-height: 40px; padding-inline: 12px; }
+  body[data-page="app"] .stria { min-height: var(--ctl); padding-inline: 12px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
   body[data-page="app"] .composer-help { display: none; }
   body[data-page="app"]:not(.is-empty) .composer-zone { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
@@ -897,7 +897,7 @@ html[data-skin="paper"] body[data-page="app"] .guide-coach {
 
 html[data-skin="paper"] body[data-page="app"] #howItWorksLink {
   padding-inline: 12px;
-  min-height: 34px;
+  min-height: var(--ctl-compact);
   display: inline-flex;
   align-items: center;
 }
@@ -1051,7 +1051,7 @@ html[data-skin="paper"] body .plan-tag {
 html[data-skin="paper"] body[data-page="pricing"] .billing-toggle {
   width: max-content;
   max-width: 100%;
-  min-height: 44px;
+  min-height: var(--ctl);
   margin-inline: auto;
   padding: 0 4px 0 16px;
   border-radius: var(--ui-radius-pill) !important;
@@ -1216,7 +1216,7 @@ html[data-skin="paper"] body :is(
   /* 44px touch target without a 44px-tall chip: the box stays visually small
      and the hit area is expanded underneath it. */
   position: relative;
-  min-height: 30px;
+  min-height: var(--ctl-chip);
   transition: color var(--dur-fast, 120ms) var(--ease-out, ease),
               border-color var(--dur-fast, 120ms) var(--ease-out, ease);
 }
@@ -1373,3 +1373,89 @@ html[data-skin="paper"] body :is(
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
   color: var(--paper) !important;
 }
+
+/* ── CONTROLS: one ladder, and a hit area that cannot half-wire ────────────
+   Every route loads this sheet, which is why the rule lives here rather than
+   in motion.css, where it used to sit as a motion concern that it is not.
+
+   ⚠️ The version it replaces named nine selectors for `position:relative` and
+   only FOUR of them for the `::after`, so five controls carried the
+   positioning and no hit area at all — .send (the Cast button), .side-toggle,
+   .side-open-btn, .brand-btn and .method-menu .mm-row. A touch census found
+   68 elements across 39 kinds still under 44px on a coarse pointer while the
+   comment above the rule claimed they were handled. ONE list now feeds both
+   halves: the two rules below share $CONTROLS by construction, so the failure
+   that produced that gap cannot recur by someone editing one and not the
+   other.
+
+   A link inside a run of prose is deliberately NOT here. WCAG 2.2's Target
+   Size carries an inline exception for exactly this reason: you cannot give a
+   word in a sentence a 44px box without wrecking the sentence. Everything
+   named below is a standalone control. */
+
+/* ⭐ Raise the ELEMENT wherever it sits in normal flow; keep the bolted-on hit
+   area only for controls that genuinely cannot grow.
+
+   The first attempt gave every small control a 44px ::after and measured zero
+   targets under 44 — and then an overlap check found fifteen pairs of hit
+   areas intersecting and one tap on index landing on the wrong link. That is
+   the worse bug: a short target makes you tap twice, a stolen one takes you
+   somewhere you did not ask for. Overlap is only possible when a 44px hit area
+   is bolted onto an 18px element in a 19px-pitch row. If the element itself is
+   44 tall, normal flow guarantees the boxes cannot intersect.
+
+   So: the ladder does the work, and the ::after is reserved for controls that
+   are overlaid or wedged into tight chrome, where growing them would move
+   something else — an icon button, a checkbox, the password toggle inside its
+   own field. */
+
+/* Buttons take the ladder everywhere: 44 is the design height for an action,
+   not a concession to fingers, and it is the same on a desktop. */
+.btn, a.ghost, a.brand, a.brand-home, a.new-cast, a.exchange,
+button.new-cast, button.exchange, button.stria, button.send, button.tab,
+.bk-go, .bk-brand {
+  min-height: var(--ctl);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Rows of text links grow only where a finger is doing the pointing. ⚠️ Left
+   unconditional, this added 99px to the legal contents list on a desktop —
+   thirteen entries in a dense multi-column nav, each pushed to 44 for a
+   pointer that is already accurate to a pixel. That is a design regression
+   bought with no accessibility gain: WCAG 2.2 AA asks 24px on a fine pointer
+   and these clear it. The coarse gate is what the rule this replaces got
+   RIGHT; its failure was being half-wired, not being conditional. */
+@media (pointer: coarse) {
+  nav a, footer a, .legal-foot .links a, .ledgerstrip a {
+    min-height: var(--ctl);
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Controls that cannot grow without pushing something else out of place. The
+   two rules below share one selector list by construction — the version this
+   replaces named nine selectors for position:relative and only four of them
+   for the ::after, so .send (the Cast button), .side-toggle, .side-open-btn,
+   .brand-btn and .method-menu .mm-row carried the positioning and no hit area
+   at all, under a comment claiming they were handled. */
+.cx, .casting-del, .side-toggle, .side-open-btn, .modal-x, .wiz-exit,
+.brand-btn, .pass-toggle, .send, .method-menu .mm-row,
+input[type="checkbox"], input[type="radio"] {
+  position: relative;
+}
+.cx::after, .casting-del::after, .side-toggle::after, .side-open-btn::after,
+.modal-x::after, .wiz-exit::after, .brand-btn::after, .pass-toggle::after,
+.send::after, .method-menu .mm-row::after,
+input[type="checkbox"]::after, input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  min-width: var(--ctl);
+  min-height: var(--ctl);
+}
+
+.side-toggle, .side-open-btn { min-height: var(--ctl-compact); }
