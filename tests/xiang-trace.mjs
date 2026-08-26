@@ -373,4 +373,21 @@ assert.match(chainSrc, /固定的关系/, 'and the lead says outright that the r
 const nCat = Object.values(cat.symbols).reduce((n, v) => n + v.cats.length, 0);
 const nItem = Object.values(cat.symbols).reduce((n, v) => n + v.cats.reduce((m, c) => m + c.items.zh.length, 0), 0);
 const nAct = Object.values(cat.symbols).reduce((n, v) => n + v.acts.zh.length, 0);
+
+/* ── the catalogue's arrival must repaint ──────────────────────────────────
+   xrCatalogue() was called at boot and its promise discarded, so whether a
+   reading got its annotations was a race. A fresh cast takes a minute and the
+   fetch has long landed; reopening a SAVED conversation paints immediately and
+   usually wins. When it won, xrSeen was never filled — and xrChain() and
+   xrMaybe() both return "" without it — so the reading lost its 取象 legend and
+   the pointer at its foot, silently, for the rest of the session. Nothing
+   errored. The sections were simply absent, which is why it survived. */
+assert.match(chat, /xrCatalogue\(\)\.then\(/,
+  'xrCatalogue() is fired and its promise dropped — a saved conversation that paints '
+  + 'before the catalogue lands keeps no annotations at all');
+const boot = chat.slice(chat.indexOf('xrCatalogue().then('), chat.indexOf('xrCatalogue().then(') + 500);
+assert.match(boot, /renderThread\(/,
+  'the catalogue lands and nothing repaints, so the annotations stay missing until '
+  + 'some other interaction happens to redraw');
+
 console.log(`xiang-trace: ok — ${syms.length} symbols · ${nCat} 象 · ${nItem} things · ${nAct} 动词象意`);

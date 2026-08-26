@@ -754,7 +754,24 @@
         + word + '</button>';
     });
   }
-  xrCatalogue();
+  /* Fire it at boot, and repaint once it lands.
+     The bare call discarded the promise, so whether a reading got its
+     annotations came down to a race: on a fresh cast the reading takes a
+     minute and the catalogue is long since loaded, but reopening a SAVED
+     conversation paints immediately and usually wins. When it did, xrSeen was
+     never filled, and xrChain() and xrMaybe() — both of which return "" without
+     it — left the reading with no 取象 legend and no pointer at its foot, for
+     the rest of the session. Nothing errored; the sections simply were not
+     there, which is why it survived.
+
+     Repaint only if a reading is already on screen, and only for the one that
+     is: mdReading() is idempotent, so this costs a paint and changes nothing
+     else. */
+  xrCatalogue().then(function (cat) {
+    if (!cat) return;
+    if (!document.querySelector(".reading-body")) return;
+    try { renderThread({ animateLast: false }); } catch (e) { /* first paint not up yet */ }
+  });
 
   function mdInline(s) {
     // marks first (they own the braces), then the parse path over what is left,
