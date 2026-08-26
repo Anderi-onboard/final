@@ -34,7 +34,7 @@
 | `claude/repo-hygiene-audit` | 分支卫生审计 | ✅ 结论已并入 §2.5 B / B.1 / C,**可删** |
 | `claude/texture-and-craft-audit` | 纹理审计 | ✅ 零独有提交,**可删** |
 | `claude/bournewise-handoff-priorities-19xcmh` | 仅一条 RELEASES 记录 | 待合或丢弃 |
-| `codex-creem-integration` | codex 工作分支 | 基线陈旧(见 §1.5)。只剩 `chooseUiAccent()` 值得取,取完可归档 |
+| `codex-creem-integration` | codex 工作分支 | 基线陈旧(见 §1.5)。⚠️ 08-24 核对:`chooseUiAccent()` **在这条分支里并不存在**,这条待办从写下起就是空的。分支仍有 26 个文件的独有内容,归档前得先看那些 |
 | `codex` | 07-28 遗留 | **死分支,而且有害** —— 它就是 §2.5 B.1 那个 ref 前缀坑本身 |
 | 其余 7 条 `claude/session-*` 等 | 6–7 周前的历史会话 | **死分支** |
 
@@ -350,7 +350,10 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 2. **`production` 落后 main 37 个提交**,停在 08-15。作为回滚锚点它现在指向的是一个很旧的版本。
 3. **决定 `codex-creem-integration` 怎么处理。** 它只有 1 个独有提交,里面有两样值得留的:
    - ✅ `artifacts/palette-recovery-*.json` —— **08-21 已取回**(见 §3),溯源已核对
-   - ⬜ `chooseUiAccent()` —— 用实测对比度挑 UI 强调色,比写死 `gems[0]` 好,**尚未取**
+   - ❌ `chooseUiAccent()` —— **这个函数不存在。** 08-24 在 `codex-creem-integration` 和 `codex`
+     两条分支里都 grep 过,零命中;main 里也没有。这条待办挂了几天,指向的是一个从未被写出来的东西。
+     ⚠️ 教训和别处一样:**待办里写别的分支有什么,要先去那条分支上确认。** 转述会变成事实。
+     真要这个能力,是重新写一个,不是"取过来"
    其余(`document-pages.css`、id 放宽)按 §2 已裁掉。**取完第二样即可归档该分支。**
 4. **清理 9 条死分支**(落后 77 个提交、6–7 周未动)。
 5. **CLAUDE.md §2 架构图过期**:它把 `styles.css` 和 `prompt-engine.js` 列在仓库根目录,
