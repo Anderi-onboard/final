@@ -84,12 +84,19 @@ assert.ok(/throw readErr/.test(streamFn),
 const REFUND_CLAIMS = ['back where they were', 'nothing was charged', 'units refunded'];
 const MID_STREAM_COPY = [
   ['copy.js castFailed', (copy.match(/castFailed:.*/) || [''])[0]],
-  ['copy.js answerFailed', (copy.match(/answerFailed:.*/) || [''])[0]],
-  // chat-app.js writes the apostrophe as a ’ escape, copy.js as the glyph.
-  ...(chat.match(/msg = "The (?:reading|answer) didn(?:’|\\u2019)t make it through[^"]*"/g) || []).map(
-    (s, i) => [`chat-app.js fallback ${i + 1}`, s])
+  ['copy.js answerFailed', (copy.match(/answerFailed:.*/) || [''])[0]]
 ];
-assert.equal(MID_STREAM_COPY.length, 4, 'expected four pieces of mid-stream failure copy');
+/* There were four: these two, plus a hardcoded duplicate of each in
+   chat-app.js. The duplicates were what actually rendered — copy.js's pair had
+   no caller and had drifted to different wording, so the deck recorded one
+   sentence and the screen showed another. chat-app.js now reads copy.js like
+   every other string, which is the arrangement this file's header assumes.
+
+   Two, not four, is therefore the passing state. If this count rises, a second
+   owner has appeared again. */
+assert.equal(MID_STREAM_COPY.length, 2, 'mid-stream failure copy must live only in copy.js');
+assert.ok(!/msg = "The (?:reading|answer) didn/.test(chat),
+  'chat-app.js is hardcoding failure copy again instead of reading copy.js');
 for (const [where, text] of MID_STREAM_COPY) {
   assert.ok(text, `${where}: copy not found — the check below would pass vacuously`);
   for (const claim of REFUND_CLAIMS) {
@@ -116,6 +123,46 @@ assert.ok(!/complete_after_retry/.test(router),
   'the unreachable non-streamed QC retry is back, and it posts a system prompt the proxy rejects');
 assert.ok(!/system: result\.system/.test(router),
   'prompt-router.js posts result.system again — /api/claude answers that with a 400');
+
+
+/* ── the failure renderer must not delete what already arrived ──────────────
+   The guards above stop the STREAM READER from discarding a partial. They said
+   nothing about what happens one step later, and castFail() removed the preview
+   node unconditionally — so a reading that broke after the stream (in QC, in the
+   fact checks, anywhere in the promise chain) vanished from the screen even
+   though every token of it had been delivered and billed. Reported from
+   production: the reader watched it write, then watched it disappear and be
+   replaced by a line about their balance.
+
+   Delivered text is the reader's. Only an empty preview may be removed. */
+for (const [where, fn] of [['castFail', 'function castFail(err)'], ['follow-up fail', 'function fail(err)']]) {
+  const start = chat.indexOf(fn);
+  assert.ok(start > 0, `${where} not found`);
+  const body = chat.slice(start, start + 1800);
+  assert.ok(/if \(streamedAny\) \{/.test(body),
+    `${where} does not branch on streamedAny — it discards a partial the reader paid for`);
+  assert.ok(!/^\s*if \(streamPreview(?: && streamPreview\.parentNode)?\.?[^)]*\)\s*streamPreview\.parentNode\.removeChild/m.test(body),
+    `${where} still removes the preview unconditionally`);
+}
+
+
+/* ── a cut reading enters history, and stays there ──────────────────────────
+   Keeping the node on screen is not enough: it lasts until the next render.
+   One interrupted cast was erased in three places, each independently —
+   castFail dropped the DOM node, nothing wrote the text to state, and on the
+   next page load the hydrate merge deleted the conversation outright because
+   it required a FINISHED reading to keep a local-only one. The reader paid for
+   that text, watched it arrive, and the product that carries history into the
+   next conversation threw it away. */
+const account = read('account.js');
+const castFailBody = chat.slice(chat.indexOf('function castFail(err)'), chat.indexOf('function castFail(err)') + 2600);
+assert.ok(/c\.msgs\.push\(\{ role: "oracle"[^}]*incomplete: true/.test(castFailBody),
+  'castFail does not commit the partial to the conversation — it survives the render and nothing else');
+assert.ok(/A\.syncCasting\(c\)/.test(castFailBody),
+  'the partial is kept locally but never synced, so it dies with the browser');
+assert.ok(!/role === "oracle" && String\(m\.text \|\| ""\)\.trim\(\)/.test(account),
+  'the hydrate merge still requires a finished reading to keep a local casting, '
+  + 'which deletes an interrupted one on the next page load');
 
 console.log('stream recovery OK — partial readings survive a cut stream, '
   + 'a dead stream still errors, nothing undelivered is billed, and no copy promises a refund');

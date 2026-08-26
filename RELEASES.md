@@ -6,6 +6,44 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## 20260824a — Failure copy says what failed; contracts re-enforced
+
+- Production target: `main` via pull request
+- Verified mirror: `production` — **not updated**, still at `a4c4ec8` (20260815i)
+- Diagnosis behind it: a live cast failed showing "The reading didn't make it
+  through… check the balance above rather than assuming a refund." That is the
+  catch-all branch of `castFail`, which handled only 401/402/503/timeout. The
+  proxy also answers **400, 429 and 500**, so all three rendered a billing
+  question. `chat-app.js` had **zero console calls**, so the status was
+  discarded — the failure left no trace anywhere.
+- What shipped:
+  - `failureCopy()` — one status→copy mapping, used by both the cast and
+    follow-up renderers. New branches for 429 (`tooFast`) and 400
+    (`badRequest`). 500 deliberately keeps the mid-stream copy: a server-side
+    failure may still have delivered tokens.
+  - `logFailure()` — one `console.warn` with status, message and build.
+  - `castFailed` / `answerFailed` rewritten and de-duplicated. They lived in
+    `copy.js` **and** hardcoded in `chat-app.js` with different wording; the
+    hardcoded pair was what rendered, so the deck recorded a sentence the site
+    never showed. `chat-app.js` now reads `copy.js` like every other string.
+  - `copy.js` `signInToCast` still promised "1,500 units on us" after the
+    welcome became one reading. Fixed.
+  - Restored from `refs/pull/60/head`: `.github/workflows/contracts.yml`,
+    `scripts/run-contracts.mjs`, `tests/font-lock.mjs`, the full `npm test`.
+    Another session had force-pushed the branch to main's history, discarding
+    them; `npm test` was back to 3 of 21.
+- Verification:
+  - 21/21 contracts pass
+  - `upstream-error` rewritten around the shared mapper and verified against 4
+    planted regressions (drop the 429 branch, drop 400, revert 503 to the
+    catch-all, re-hardcode the follow-up copy) — each turns it red
+  - `stream-recovery` mid-stream copy count 4 → 2, asserting single ownership
+  - `font-lock` widened for `.bk-brand` (the blocks-route wordmark)
+  - copy-deck audit 81 stale → 0
+  - build tag `20260822j → 20260824a`, 155 tags across 16 files
+  - production API confirmed healthy during diagnosis: same question, 200 OK,
+    87 events, 2,349 chars, 65s
+
 ## 20260821l — The interface stops describing its own machinery
 
 - Production target: `main` via pull request

@@ -639,6 +639,59 @@
       + rows + "</section>";
   }
 
+
+  /* ── the pointer at the foot of a reading ─────────────────────────────────
+     A reading names one referent per load-bearing line and moves on, which is
+     right — it has to commit. But the symbol did not stop meaning the rest.
+     兄弟 read as the rival is still, on the same board, whoever takes a cut and
+     whatever is wedged in between; the reading picked the branch that fit, and
+     a reader who knows their own situation may know a different one fits
+     better.
+
+     So this says the quiet part once, at the end, where it cannot interrupt:
+     what else each symbol it used could have been. Hover gives the short form,
+     click opens the whole library for that symbol. It is deliberately the last
+     thing on the page — offered, not argued. */
+  function xrMaybe(text) {
+    if (!XR_CAT || !XR_CAT.symbols || !xrSeen) return "";
+    var zh = isZh(text), lower = String(text || "").toLowerCase();
+    var order = ["父母", "兄弟", "子孙", "妻财", "官鬼"];
+    var rows = [];
+
+    order.forEach(function (key) {
+      if (!xrSeen[key]) return;
+      var entry = XR_CAT.symbols[key];
+      if (!entry || !entry.cats) return;
+      /* Only branches the reading did NOT already spend. Offering back the one
+         it just used would read as a system that had not been listening. */
+      var unused = entry.cats.filter(function (c) {
+        var items = (c.items && c.items[zh ? "zh" : "en"]) || [];
+        return !items.some(function (it) { return it && lower.indexOf(String(it).toLowerCase()) >= 0; });
+      });
+      if (!unused.length) return;
+      var lead = unused.slice(0, 3).map(function (c) {
+        var items = (c.items && c.items[zh ? "zh" : "en"]) || [];
+        return items[0] || (zh ? c.zh : c.en);
+      });
+      rows.push('<button type="button" class="xr-maybe" data-sym="' + esc(key) + '"'
+        + ' aria-expanded="false"'
+        + ' title="' + esc(zh
+            ? key + " 在这一卦里还可能是:" + lead.join("、") + " —— 点开看全部"
+            : (entry.en || key) + " could also be: " + lead.join(", ") + " — open for all") + '">'
+        + '<span class="xr-maybe-sym">' + esc(zh ? key : (entry.en || key)) + '</span>'
+        + '<span class="xr-maybe-hint">' + esc(zh ? "可能还是 " : "may still be ")
+        + esc(lead.join(zh ? "、" : ", ")) + '</span></button>');
+    });
+
+    if (!rows.length) return "";
+    return '<section class="xr-maybe-bar" lang="' + (zh ? "zh" : "en") + '">'
+      + '<p class="xr-maybe-lead">' + esc(zh
+          ? "上面每一处都只挑了一个说法。同一个符号在这一盘上还指着别的东西 —— 你更清楚自己的处境,点开看看是不是别的那支更贴。"
+          : "Each line above committed to one reading. The same symbols still point at other things — "
+            + "you know your own situation better; open one and see if another branch fits.") + "</p>"
+      + '<div class="xr-maybe-chips">' + rows.join("") + "</div></section>";
+  }
+
   /* Walk the rendered HTML, touching only the text between tags, and never the
      inside of a mark that already became a button. */
   function xrAuto(html) {
@@ -760,7 +813,7 @@
       // Cheap to carry, and it is the reading's own index of itself.
       // reading → the closing 串联 → the disclaimer, which stays last
       return '<div class="reading-body" data-xiang="' + xrHits().join(",") + '">'
-        + (prose || '<p class="rd-para"></p>') + xrChain(msg.text) +
+        + (prose || '<p class="rd-para"></p>') + xrChain(msg.text) + xrMaybe(msg.text) +
         readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
 
@@ -1642,6 +1695,40 @@
       var ci = $("composerInput"); if (ci) ci.focus();
     }
 
+  /* Every status /api/claude can answer with, mapped to something the reader
+     can act on. It used to handle 401/402/503 and call everything else a
+     billing question — but the proxy also answers 400 (malformed request),
+     429 (rate limit) and 500 (prompt assembly or generation failed), and all
+     three rendered "check the balance rather than assuming a refund". A reader
+     who hit the rate limit was told to go audit their units.
+
+     Worse, nothing was logged: chat-app.js had zero console calls, so the
+     status was discarded at the moment it was needed. A failed cast left no
+     trace anywhere the owner could read. */
+  function failureCopy(status, timedOut, kind, gotText) {
+    var follow = kind === "answer";
+    /* The generic line says "you're charged for the words that arrived" — true
+       only when some did. With an empty screen it is both confusing and wrong:
+       a stream that delivered nothing is not billed. */
+    if (!gotText && !status && !timedOut) return follow ? C.errors.answerNothing : C.errors.castNothing;
+    if (status === 401) return C.errors.sessionExpired;
+    if (status === 402) { pulseLedger(); return C.errors.serverShort; }
+    if (status === 429) return C.errors.tooFast;
+    if (status === 503) return C.errors.upstreamDown;
+    if (timedOut) return follow ? C.errors.answerTimedOut : C.errors.timedOut;
+    if (status === 400) return C.errors.badRequest;
+    return follow ? C.errors.answerFailed : C.errors.castFailed;
+  }
+
+  /* One line, so a failure that reaches a reader also reaches whoever has to
+     explain it. Console only — no endpoint, no payload, nothing leaves the
+     browser. */
+  function logFailure(kind, status, err) {
+    if (!window.console || !console.warn) return;
+    console.warn("[BourneWise] " + kind + " failed",
+      { status: status || "(none)", message: (err && err.message) || String(err || ""), build: window.BW_BUILD });
+  }
+
     /* A failed cast refunds the optimistic local deduction (the server already
        refunded its own atomic one) and says plainly what happened, in the
        question's language, instead of dressing a failure up as a reading. */
@@ -1651,15 +1738,37 @@
       var status = e && e.status;
       // nothing was deducted up front, so there is nothing to give back
       S.units = A.state().units;
-      var msg;
-      if (status === 401) msg = C.errors.sessionExpired;
-      else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
-      else if (status === 503) msg = C.errors.upstreamDown;
-      else if (err.__timeout) msg = C.errors.timedOut;
-      else msg = "The reading didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
+      logFailure("cast", status, e);
+      var msg = failureCopy(status, err.__timeout, "cast", streamedAny);
       if (spacer && spacer.parentNode) spacer.parentNode.removeChild(spacer);
       tw.cancel();
-      if (streamPreview && streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
+      /* Text that arrived was delivered and billed — pumpAndSettle charges for
+         the tokens that produced it whether or not the socket survived. Deleting
+         it here took back something the reader had already paid for and already
+         read, which is the exact failure stream-recovery.mjs was written to stop;
+         it guards the stream reader, and this line undid its work one step later.
+         Keep the partial and mark it cut. Only clear the node when nothing came. */
+      if (streamedAny) {
+        streamPreview.classList.remove("reading-streaming");
+        streamPreview.classList.add("reading-cut");
+      } else if (streamPreview && streamPreview.parentNode) {
+        streamPreview.parentNode.removeChild(streamPreview);
+      }
+      /* And commit it, which is the half that actually matters. Keeping the node
+         only survives until the next render; a reading the reader paid for has
+         to enter the history like any other, or it is gone on reload — and this
+         product carries history into the next conversation, so losing it costs
+         more than the text.
+
+         It is marked incomplete so the interface can offer to continue it, and
+         so nothing downstream mistakes a cut reading for a whole one. */
+      var partial = streamedAny && streamPreview ? String(streamPreview.textContent || "").trim() : "";
+      if (partial) {
+        c.msgs.push({ role: "oracle", text: partial, incomplete: true, spec: spec, board: castBoard });
+        save();
+        A.syncCasting(c);
+        renderList();
+      }
       live.classList.remove("casting-live");
       var p = document.createElement("p");
       p.className = "reading-error";
@@ -1723,13 +1832,21 @@
       var status = e && e.status;
       S.units = A.state().units;
       var msg;
-      if (status === 401) msg = C.errors.sessionExpired;
-      else if (status === 402) { msg = C.errors.serverShort; pulseLedger(); }
-      else if (status === 503) msg = C.errors.upstreamDown;
-      else if (err.__timeout) msg = C.errors.answerTimedOut;
-      else msg = "The answer didn\u2019t make it through. Anything the model had already written is billed for what it used, so check the balance above rather than assuming a refund. Try again in a moment.";
+      logFailure("follow-up", status, e);
+      msg = failureCopy(status, err.__timeout, "answer", streamedAny);
       tw.cancel();
-      if (streamPreview.parentNode) streamPreview.parentNode.removeChild(streamPreview);
+      /* Text that arrived was delivered and billed — pumpAndSettle charges for
+         the tokens that produced it whether or not the socket survived. Deleting
+         it here took back something the reader had already paid for and already
+         read, which is the exact failure stream-recovery.mjs was written to stop;
+         it guards the stream reader, and this line undid its work one step later.
+         Keep the partial and mark it cut. Only clear the node when nothing came. */
+      if (streamedAny) {
+        streamPreview.classList.remove("reading-streaming");
+        streamPreview.classList.add("reading-cut");
+      } else if (streamPreview.parentNode) {
+        streamPreview.parentNode.removeChild(streamPreview);
+      }
       live.classList.remove("casting-live");
       var p = document.createElement("p");
       p.className = "reading-error";
@@ -1837,6 +1954,49 @@
      lines below it, and a reading is a wall of text with nowhere to overlap
      into. The word is repeated as the panel's first line, so the connection is
      visible without a pointer. */
+  /* The foot-of-page pointer opens the whole library for one symbol — every
+     branch and everything in it, not the three the chip had room for. Separate
+     from the in-prose panel above: that one answers "why this word", this one
+     answers "what else could this have been". */
+  document.addEventListener("click", function (e) {
+    var chip = e.target && e.target.closest && e.target.closest("button.xr-maybe");
+    if (!chip) return;
+    e.preventDefault();
+    var bar = chip.closest(".xr-maybe-bar");
+    var open = chip.getAttribute("aria-expanded") === "true";
+    // One open at a time: five libraries at once is a wall, not a choice.
+    if (bar) Array.prototype.forEach.call(bar.querySelectorAll("button.xr-maybe"), function (other) {
+      other.setAttribute("aria-expanded", "false");
+      if (other.__lib && other.__lib.parentNode) other.__lib.parentNode.removeChild(other.__lib);
+      other.__lib = null;
+    });
+    if (open) return;
+
+    var key = chip.getAttribute("data-sym");
+    var entry = XR_CAT && XR_CAT.symbols && XR_CAT.symbols[key];
+    if (!entry) return;
+    var zh = (bar && bar.getAttribute("lang")) !== "en";
+    var lib = document.createElement("div");
+    lib.className = "xr-lib";
+    lib.setAttribute("lang", zh ? "zh" : "en");
+    lib.innerHTML = '<p class="xr-lib-lead">'
+      + esc(zh ? key + " —— 它在万物类象里指的全部" : (entry.en || key) + " — everything it points at")
+      + "</p>"
+      + (entry.cats || []).map(function (c) {
+        var items = (c.items && c.items[zh ? "zh" : "en"]) || [];
+        if (!items.length) return "";
+        return '<div class="xr-lib-row"><b>' + esc(zh ? c.zh : c.en) + "</b><span>"
+          + esc(items.join(zh ? "、" : " · ")) + "</span></div>";
+      }).join("")
+      + (entry.acts && (entry.acts[zh ? "zh" : "en"] || []).length
+          ? '<div class="xr-lib-row xr-lib-acts"><b>' + esc(zh ? "它做的事" : "what it does")
+            + "</b><span>" + esc((entry.acts[zh ? "zh" : "en"] || []).join(zh ? "、" : " · ")) + "</span></div>"
+          : "");
+    chip.setAttribute("aria-expanded", "true");
+    chip.__lib = lib;
+    if (bar) bar.appendChild(lib);
+  });
+
   document.addEventListener("click", function (e) {
     var btn = e.target && e.target.closest && e.target.closest("button.xr");
     if (!btn) return;
