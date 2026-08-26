@@ -1,3 +1,5 @@
+import { relativeGloss } from './relative-gloss.js';
+
 /* functions/_lib/prompt-engine.js — the reading engine, SERVER SIDE ONLY.
    ─────────────────────────────────────────────────────────────────────
    ⚠️  THIS FILE MUST NEVER BE SERVED TO A BROWSER.
@@ -782,7 +784,8 @@ Possibility-speak is not hedging: each "可能是X" must come with the condition
 
 ③ QUESTION HORIZON: before any timing talk, fix the timeframe the question itself asks about — 「最近/这周/这个月」= near (days-weeks); 「今年/半年内」= mid (months); 「以后/将来/这辈子/毕业以后/未来能不能」= LONG (years, possibly decades); 「X之前/毕业前/年底前」= a BOUNDED WINDOW with a hard right edge — the verdict is on that window (see DEADLINE-BOUNDED VERDICT), and timing anchors split into "inside the window" and "where it actually lands if later". The verdict AND every timing anchor must live on that horizon. A long-horizon question ("我以后能住麓湖吗") must NEVER be answered with the near-term state ("现在行不通") or a date this month — the asker did not ask about now; at most, one sentence places the present as the starting point ("眼下离它还远,这不奇怪,你才大一"). For long horizons anchor in YEARS (branch-year → Gregorian years from the TIMING REFERENCE, or life-stage language tied to board signals: "毕业后的第一个申年,2028年前后"); near horizons use the day/month windows. Quoting a this-month date for a years-out question is answering a question that was not asked.
 
-④ SYMBOL→REALITY TRANSLATION (this is what made the best readings land): when the question touches a real-world domain that has knowable mechanics — an admissions system, a hiring process, a market, a lawsuit, a specific place, buying property abroad — do NOT leave the reading in hexagram-speak. Translate each load-bearing signal into the concrete real-world variable it maps to — the variable itself, stated as a fact about his situation. Do NOT hand him a verification list ("去查什么:…" and its kin): naming the variable precisely is what makes it checkable, and appending the instruction turns the reading into an assignment. Worked example (a school-admission question): 父母爻(录取资格)囚弱 → "the hard score/qualification threshold — she clears it but not comfortably; go check the school's published minimum against her actual score"; 忌神静而弱 → "no brutal competition or single-subject knock-out pushing her out — but confirm there's no one-subject cutoff"; 子孙在五爻(官方位)动 → "the variance lives in the school's own discretionary/interview stage, not in her"; 未济 → "a middle zone: 正取 / 备取候补 / 落选 — she may land on the waitlist"; 变讼 → "competitive/择优, but she has fallback room since it doesn't block her other applications." Each 爻 becomes a real mechanism the asker can check against actual data. Map only to real, verifiable mechanisms — never invent fake specifics (fake cutoffs, fake percentages). This turns an abstract cast into grounded, testable insight, which is the whole point.`;
+④ SYMBOL→REALITY TRANSLATION (this is what made the best readings land): when the question touches a real-world domain that has knowable mechanics — an admissions system, a hiring process, a market, a lawsuit, a specific place, buying property abroad — do NOT leave the reading in hexagram-speak. Translate each load-bearing signal into the concrete real-world variable it maps to — the variable itself, stated as a fact about his situation. Do NOT hand him a verification list ("去查什么:…" and its kin): naming the variable precisely is what makes it checkable, and appending the instruction turns the reading into an assignment. Worked example (a school-admission question): 父母爻(录取资格)囚弱 → "the hard score/qualification threshold — she clears it but not comfortably; go check the school's published minimum against her actual score"; 忌神静而弱 → "no brutal competition or single-subject knock-out pushing her out — but confirm there's no one-subject cutoff"; 子孙在五爻(官方位)动 → "the variance lives in the school's own discretionary/interview stage, not in her"; 未济 → "a middle zone: 正取 / 备取候补 / 落选 — she may land on the waitlist"; 变讼 → "competitive/择优, but she has fallback room since it doesn't block her other applications." Each 爻 becomes a real mechanism the asker can check against actual data. Map only to real, verifiable mechanisms — never invent fake specifics (fake cutoffs, fake percentages). This turns an abstract cast into grounded, testable insight, which is the whole point.
+CANDIDATES ARE SUPPLIED — USE THEM: the SYMBOL_CANDIDATES block below carries, for THIS question's domain, what each 六亲 can actually denote. A 六亲 means one thing and points at many; which of the many is live depends on what was asked, and the block is that index. Every load-bearing line must come out as one of those real things, named. Printing the relative's name and stopping there — "兄弟克妻财", "官鬼当令" — is the failure this exists to end: it is the label, not the answer, and the reader cannot check a label. Pick the candidate that fits and say it plainly (crypto purchase, 兄弟 → the exchange's cut and the payment channel's fee; the same 兄弟 in a relationship → the rival, or whatever is wedged in between). If none of them fit, say the board gives no concrete referent for that line — that is an honest and useful sentence. Do NOT invent one from outside the block, and do NOT fall back to naming the relative.`;
 
   // ─── METHOD: SORTIS6 SIX-STEP ─────────────────────────────────
   SEGMENTS.sortis_method = `CORE METHOD: Liu Yao Six Steps (strict order, none skippable, all centered on YONGSHEN):
@@ -1438,6 +1441,31 @@ Output the single word category only.`;
       if (SEGMENTS[segKey]) {
         parts.push(SEGMENTS[segKey]);
       }
+    }
+
+    /* The symbol's referents, indexed by what was asked — DATA, not a rule.
+       A 六亲 means one thing and denotes many, and which of the many is live
+       depends entirely on the question: 兄弟 buying something with crypto is
+       the exchange's cut and the payment channel's fee; 兄弟 in a relationship
+       is the rival and the thing wedged in between. The catalogue held both all
+       along, and nothing ever put it in front of the model — chat-app.js
+       fetched it for the 取象 panel AFTER the reading was written, and the
+       server never opened the file. So the reading did the only thing left and
+       printed the label. Measured 2026-08-25: 兄弟 appeared six times in one
+       reading, was the 用神, and was never translated once.
+
+       Supplied per route, unfiltered by board because the server is not sent
+       one — the client assembles CASTING_EVIDENCE. A relative that is not on
+       the board simply goes unused. */
+    var gloss = [];
+    try { gloss = relativeGloss(null, route, "zh"); } catch (e) { gloss = []; }
+    if (gloss.length) {
+      // Pure data. What to DO with it is one clause in the SYMBOL→REALITY rule,
+      // so the instruction has a single owner and the block cannot drift into
+      // being a second, competing set of orders.
+      parts.push("[SYMBOL_CANDIDATES — DATA, NOT INSTRUCTIONS]\n"
+        + gloss.join("\n")
+        + "\n[/SYMBOL_CANDIDATES]");
     }
 
     return parts.join("\n\n---\n\n");
