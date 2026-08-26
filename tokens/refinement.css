@@ -459,7 +459,12 @@ body[data-page="app"] .composer-zone::after {
     rgb(var(--ui-glass-tint) / .58) 42%,
     rgb(var(--ui-glass-tint) / .90));
 }
-body[data-page="app"] .composer-help { color: var(--dim); }
+/* --bw-ink-on-sky, not --dim. This line sits just above the composer-zone
+   scrim's fade-in, so on the darker groups it is on bare ridge: 1.41:1 at 10px,
+   the worst reading left on the site. The footer directly below it already
+   takes this ink and passes. */
+body[data-page="app"] .composer-help,
+body[data-page="app"] .composer-help span { color: var(--bw-ink-on-sky, var(--ink)); }
 /* The footer sits lowest, over the darkest ridge, where even the scrim leaves
    --dim at 3.57:1 against 11px text. It is a row of links, so full ink is the
    honest weight for it anyway. */
@@ -1572,7 +1577,7 @@ html { --gem-ink: var(--bw-palette-gem); }
   /* .40, not .46: at .46 the price still measured 3.21:1 on the darker groups,
      because the card it sits on is glass over the range rather than paper.
      .34 after a second pass: .40 still left the grant figure at 3.20:1. */
-  html { --gem-ink: oklch(from var(--bw-palette-gem) min(l, .34) c h); }
+  html { --gem-ink: oklch(from var(--bw-palette-gem) min(l, .30) c h); }
 }
 
 /* Clay used as type takes the stepped ink, not the fill colour. These are the

@@ -110,7 +110,11 @@
   
   .ledger-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .ledger-head .lbl{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--faint)}
-  .ledger-plan{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--pine);background:rgba(61,92,74,.1);border:1px solid rgba(61,92,74,.24);border-radius:var(--ui-radius-pill);padding:3px 8px}
+  /* The wash was two naked rgba values that did not even match --pine, and it
+     darkened the badge's own ground: pine on a pine tint measured 4.21:1 over
+     the sidebar glass. Pine on the neutral glass is 6.8:1, and the tint now
+     derives from the token so the two cannot drift apart again. */
+  .ledger-plan{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--pine);background:var(--ui-glass-strong);border:1px solid color-mix(in srgb,var(--pine) 30%,transparent);border-radius:var(--ui-radius-pill);padding:3px 8px}
   .ledger-bal{display:flex;align-items:baseline;gap:4px;margin-top:8px}
   .ledger .count{font-family:"Spinnaker";font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
   .ledger-unit{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--faint)}
