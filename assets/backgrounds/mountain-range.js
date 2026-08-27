@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260826a", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260826a";
+    ? new URL("../palettes/color-groups.json?v=20260826b", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260826b";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -815,7 +815,13 @@
          Two roles because they carry different weights: --bw-ink-on-sky is for
          reading sizes and holds 4.5:1, --bw-ink-on-sky-strong is for the
          display type, which is large enough for 3:1 but reads better dark. */
-      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 4.5));
+      /* 5.2, not 4.5. This ink is solved against the cloud colour, but the text
+         that uses it lands on whatever ridge happens to be under it — measured
+         across 20 groups, five separate pieces of chrome on index all came in at
+         exactly 4.46:1, i.e. the solver hit its target and the target was the
+         line itself. The extra 0.7 is the margin between the cloud it is solved
+         against and the ridge it actually sits on. */
+      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 5.2));
       root.style.setProperty("--bw-ink-on-sky-strong", inkOn(tonedCloud, 7));
       /* The cloud body gets its own value. Its contour lines keep taking the
          gem, so the cloud reads the way a ridge does — a plane plus its own

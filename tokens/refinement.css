@@ -34,7 +34,20 @@
      behind survives, saturation pulled back toward neutral because scattering
      desaturates, and a fine grain in the surface itself. */
   --ui-glass: rgb(var(--ui-glass-tint) / .60);
-  --ui-glass-strong: rgb(var(--ui-glass-tint) / .76);
+  /* ⭐ Frosted, not painted (owner's call, 2026-08-26). At .76 the carriers were
+     opaque enough that the range simply stopped behind them and they read as
+     three white boards. Frost is the opposite instruction: keep the colour,
+     lose the detail. So the white comes down and the work moves into the
+     backdrop filter — a heavier blur plus a brightness lift, which raises the
+     luminance of what is behind without covering it.
+     .66 is where three legible grey levels still fit. Below it the ladder
+     stops fitting: at .58 --faint reaches only 3.89:1 against the deepest
+     ridge even after being deepened a notch, and no amount of brightness buys
+     that back — past a point it cannot replace what opacity was providing
+     (.50 measures 3.39:1, .42 measures 3.28:1). At .66 the range shows through
+     at 34% instead of the old 24%, and --dim/--faint measure 5.88:1 and
+     4.66:1 on the worst composite. */
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .66);
   --ui-glass-soft: rgb(var(--ui-glass-tint) / .44);
   --ui-glass-warm: rgb(var(--ui-glass-tint) / .68);
   /* Specular top edge + hairline bottom: the two cues that separate "glass"
@@ -88,7 +101,7 @@
      rather than Apple's 180%: at 180% the warm palettes bloom and the cast
      comes straight back through the backdrop instead of through the tint. */
   --ui-glass-filter: blur(44px) saturate(112%) brightness(1.05);
-  --ui-glass-filter-strong: blur(56px) saturate(114%) brightness(1.06);
+  --ui-glass-filter-strong: blur(66px) saturate(118%) brightness(1.20);
   /* The grain is the part that actually reads as "frosted". feTurbulence at a
      high base frequency is per-pixel noise, so it stays fine at any DPI and
      costs one inlined SVG rather than a texture file. */
@@ -444,21 +457,48 @@ body[data-page="app"] .composer-zone { padding-bottom: 24px; z-index: 1; isolati
    scrim as every other carrier (never a palette tint — see the glass rules),
    fading upward so it reads as the chrome lifting off the landscape rather
    than as a box, and their ink goes up one step to --dim. */
-body[data-page="app"] .composer-zone::after {
+/* ⭐ The 152px scrim is gone (owner, 2026-08-26: it was covering too much).
+   It never earned its keep anyway — measured across nine groups, the白 .90
+   version it replaced still bottomed out at 2.34:1, because a wash over the
+   range's darkest water is still a mid-tone and the footer sits right on it.
+   What it reliably did was delete the bottom 150px of the mountains.
+   The fog now belongs to the text instead of to the page: each of the two
+   bottom lines carries its own frosted strip, sized to itself. */
+body[data-page="app"] :is(.composer-help, .site-foot) {
+  position: relative;
+  isolation: isolate;
+}
+body[data-page="app"] :is(.composer-help, .site-foot)::before {
   content: "";
   position: absolute;
-  /* Pulled past the zone's own bottom edge: .site-foot renders below it — the
-     zone is position:fixed and the footer overflows — so a scrim stopping at
-     the box left the support line on bare ridge at 1.24:1. */
-  inset: auto 0 -34px;
-  height: 152px;
+  inset: -4px -12px;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(to bottom,
-    rgb(var(--ui-glass-tint) / 0),
-    rgb(var(--ui-glass-tint) / .58) 42%,
-    rgb(var(--ui-glass-tint) / .90));
+  -webkit-backdrop-filter: blur(14px) saturate(104%) brightness(1.5);
+  backdrop-filter: blur(14px) saturate(104%) brightness(1.5);
+  background: rgb(var(--ui-glass-tint) / .42);
+  /* Masked to nothing at its own edges, so it reads as haze over the range
+     rather than as a chip someone dropped there. A pill radius was the first
+     try and it gave the two lines a hard outline — a shape, which is what a
+     scrim must never be.
+     ⚠️ An ellipse was the second try and it was wrong for a different reason:
+     these are single rows of links, and an ellipse is at zero by the time it
+     reaches the ends of one — the last item in the footer measured 1.84:1
+     sitting just outside it. A row of text wants a BAND that fades at its two
+     ends, not an ellipse that fades everywhere. Two gradients intersected:
+     across, it stays solid until the last few percent; down, it fades on both
+     edges so there is still no line anywhere. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 24%, #000 76%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 24%, #000 76%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
+/* The footer is capped at 600px, which on the landing page forces six links
+   onto two lines and leaves "Plans & units" alone on the second. It has the
+   width; let it use it. */
+body[data-page="app"].is-empty .site-foot { max-width: 860px; }
 /* --bw-ink-on-sky, not --dim. This line sits just above the composer-zone
    scrim's fade-in, so on the darker groups it is on bare ridge: 1.41:1 at 10px,
    the worst reading left on the site. The footer directly below it already
@@ -1538,9 +1578,15 @@ html[data-skin="paper"] body[data-page="app"] .site-foot::before {
   /* Reaches 0 at the very edge rather than at 80%: the first version faded out
      inside the block, so the last line of a tall one (pricing's <small>) sat
      back on bare ridge and still measured 2.58:1. */
-  background: radial-gradient(155% 195% at 50% 50%,
-    rgb(var(--ui-glass-tint) / .92) 0%,
-    rgb(var(--ui-glass-tint) / .86) 62%,
+  /* An ellipse INSCRIBED in the box — 50%/52% radii, so it is at zero by every
+     edge. Oversizing it (155%/195%) meant the fade was still at ~.4 where the
+     box stopped, and the "haze" rendered as a hard-edged white slab across
+     pricing's hero: the exact box-with-no-border it was written to avoid. The
+     text these sit behind is centred and narrower than its box, so an inscribed
+     ellipse covers the words and nothing else. */
+  background: radial-gradient(50% 52% at 50% 50%,
+    rgb(var(--ui-glass-tint) / .94) 0%,
+    rgb(var(--ui-glass-tint) / .82) 44%,
     rgb(var(--ui-glass-tint) / 0) 100%);
 }
 /* …and the ink goes to full strength on the same elements. --dim and --faint
@@ -1573,11 +1619,20 @@ html[data-skin="paper"] body[data-page="app"] .topbar .ghost {
    no worse than what shipped, and the @supports block does the work everywhere
    it is understood. */
 html { --gem-ink: var(--bw-palette-gem); }
+html { --gem-ink-quiet: var(--bw-palette-gem); }
 @supports (color: oklch(from red l c h)) {
+  /* The same idea one step deeper, for type small enough that WCAG asks 4.5
+     rather than 3. The owner picked .38 looking at a 42px price, where the
+     margin is enormous; at 13px the same value measured 2.79:1 on one group.
+     This is the size distinction the standard already makes, not a second
+     opinion about the colour. */
+  html { --gem-ink-quiet: oklch(from var(--bw-palette-gem) min(l, .26) c h); }
   /* .40, not .46: at .46 the price still measured 3.21:1 on the darker groups,
      because the card it sits on is glass over the range rather than paper.
-     .34 after a second pass: .40 still left the grant figure at 3.20:1. */
-  html { --gem-ink: oklch(from var(--bw-palette-gem) min(l, .30) c h); }
+     Owner picked .38 off the rendered comparison: the margin at .30 was so
+     wide (15.7:1 where 4.5 is asked) that it was buying nothing and costing
+     the colour — at .38 the figure still measures 14.7:1 on the same group. */
+  html { --gem-ink: oklch(from var(--bw-palette-gem) min(l, .38) c h); }
 }
 
 /* Clay used as type takes the stepped ink, not the fill colour. These are the
@@ -1617,8 +1672,45 @@ html[data-skin="paper"] body[data-page="app"].is-empty .greeting::before {
   inset: -6% 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(88% 88% at 50% 50%,
+  background: radial-gradient(50% 54% at 50% 50%,
     rgb(var(--ui-glass-tint) / .58) 0%,
     rgb(var(--ui-glass-tint) / .40) 52%,
     rgb(var(--ui-glass-tint) / 0) 100%);
+}
+
+/* ── Scroll boundaries: text goes out of focus, it does not get cut ─────────
+   Owner's note: every place where a text box scrolls should have a light blur
+   at the seam. There were two different problems hiding under that.
+
+   The app's top bar had no background and no backdrop filter at all, so a
+   conversation scrolling upward simply overlapped the navigation — two layers
+   of type in the same place. It gets a frosted band that fades out downward,
+   the same material as the bar below the composer.
+   Scoped to a live conversation: the landing state has nothing scrolling under
+   it, and a band across the top of the opening screen would read as chrome the
+   page does not need. That also keeps the extra backdrop-filter away from the
+   one view where the drifting clouds sit closest to it. */
+body[data-page="app"]:not(.is-empty) .topbar { position: relative; }
+body[data-page="app"]:not(.is-empty) .topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -18px;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(14px) saturate(106%) brightness(1.10);
+  backdrop-filter: blur(14px) saturate(106%) brightness(1.10);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+}
+
+/* The inner scrollers are small boxes inside chrome that is already frosted,
+   so what they need is the seam itself softened rather than another filter
+   layer: their content dissolves at the edge instead of ending on a cut line.
+   Kept to 14px — enough to read as a soft edge, small enough that the first
+   line of an unscrolled list is not visibly dimmed. */
+body[data-page="app"] :is(.castings, .carry-menu .cm-list, .composer textarea) {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
+    #000 calc(100% - 14px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
+    #000 calc(100% - 14px), transparent 100%);
 }

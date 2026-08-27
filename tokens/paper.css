@@ -22,8 +22,14 @@
      so --ghost now resolves to --faint rather than staying available as a
      shade to reach for. Hierarchy below --dim is carried by size, weight and
      tracking, which these roles already have. */
-  --dim: #4C4B46;
-  --faint: #5C5A54;
+  /* Deepened one notch 2026-08-26, when the carriers became frosted. The panel
+     the two of them sit on is now 34% landscape rather than 24%, so on the
+     darkest groups they composited to 3.77:1 and 2.97:1 — the same failure the
+     grey ladder was collapsed for once already. Both keep their hue and their
+     spacing from each other (ink→dim 1.62, dim→faint 1.26, both above the
+     ~1.25 a reader can see); everything just moves darker together. */
+  --dim: #3B3A36;
+  --faint: #4A4944;
   --ghost: var(--faint);
   --terracotta: #A85E46;    /* clay — the only action accent */
   --on-accent: #FFFFFF;     /* text on a clay fill: --paper measures 3.71:1 there, white 4.82:1 */
