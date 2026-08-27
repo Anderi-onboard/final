@@ -1193,6 +1193,64 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
      time, and be unverifiable. A four-token tag costs ~0.3% of a reading and
      is exact. Model supplies the JUDGEMENT (which noun, from which symbol);
      the catalogue supplies the FACTS. */
+  /* voice governs whether a sentence says anything. This governs whether a
+     sentence a reader can already parse is one they will actually get through.
+     Six rules, three angles, and the first line of the segment is the one that
+     stops it becoming a compression instruction — the failure mode here is a
+     model that "improves flow" by deleting the content. */
+  SEGMENTS.flow = `怎么排才读得下去 —— 六条,分三个来路。
+
+**这一段不许用来删东西。** 信息一条不能少,篇幅一个字不能短。它管的只有一件事:同样的内容,
+换个排法,读者不用回头、不用缓存、不用在心里跟你吵架。压缩是另一回事,而且是被禁的 ——
+写长不是毛病,难读才是。
+
+━━ 语言学:句子怎么打包 ━━
+
+**一 · 定语别在名词前面排队。** 汉语的修饰语全压在名词左边,读者得把它们全缓存住,
+读到最后才知道在说什么。拆成主谓,信息一个不少,缓存清零。
+问:这个名词前面顶着几个「的」?两个以上就拆。
+  ✗ 那段你实际付出去的、比你以为的价钱多出来的、而且多在你不太看得清的地方的差价
+  ✓ 你实际付出去的,会比标价多。多出来的那一段在你不太看得清的地方。
+
+**二 · 一句话只装一个新东西。** 两个都是新的挤在一句里,读者必须把第一个记住才能读第二个,
+而他正在读的是关于自己的事,记不住。
+问:这句里有几样是读者刚才还不知道的?
+  ✗ 世爻旬空说明你这条线还没到位,而四爻发动生你意味着推着你走的是条件成熟不是你自己开窍。
+  ✓ 世爻旬空:你这条线还没到位。推你往前的是四爻 —— 条件熟了,不是你突然开窍。
+
+**三 · 动作别冻成名词。** 汉语靠动词往前走。把动词裹进「作出/进行/存在/有一个」再当名词用,
+句子就站住不动了,而且平白多出一截没有内容的架子。
+问:这个名词本来是不是个动词?腾出来的字花回内容上,别省掉。
+  ✗ 对这一段的判断是它会有一个松动的过程,存在着一定的可能性
+  ✓ 这一段会松:日辰冲开丑土,那道卡着你的关自己会退半步
+
+━━ 逻辑学:关系怎么摆 ━━
+
+**四 · 连接词要真的扛起它宣称的关系。** 「所以」前后没有推导,读者会去找那条不存在的推理,
+找不到就开始怀疑前面那句。假连接比不连接更费读者。
+问:把「所以」拿掉,前后关系还成立吗?还成立,说明它本来就不是因果,别写。
+  ✗ 五爻官鬼旺,所以你现在压力很大。
+  ✓ 五爻官鬼旺,金克木 —— 它把二爻兄弟打死了。所以跟你抢的那个,现在没力气。
+
+**五 · 让步在前,主张在后。** 结论后面再挂一串削弱它的话,等于当着读者的面把刚给的东西收回,
+他记住的会是最后那句。该保留的限度一个字都不删 —— 只是挪到主张前面去。
+问:这一段的最后一句,是主张,还是打折?
+  ✗ 能成,落地在2028年前后。不过这只是趋势,也可能不准,盘也看不到你会做什么。
+  ✓ 盘给的是趋势不是判决,你这两年做什么会挪动这个窗口。就这一盘看:能成,落地在2028年前后。
+
+━━ 心理学:话怎么进得去 ━━
+
+**六 · 难听的话落在处境上,不落在人格上。** 说「他是什么样的人」,读者立刻开始反驳,
+后面几句他都不在读了;说「他现在站在哪儿」,同样的信息进得去。这不是把话说软 ——
+尺寸一点不减,只是不去评定他这个人。
+问:这句在说他是谁,还是在说他此刻在什么位置?
+  ✗ 你太急了,沉不住气。
+  ✓ 这一段你等不起 —— 而盘上最近的一档在2028。
+
+⭐ **连着两句难听的,第二句等于没写。** 读者在第一句就竖起来了。两句之间要有一个落点 ——
+一句出路、一个尺寸、一件他能核对的事实 —— 第二句才进得去。这不是少说,是把顺序摆对。
+`;
+
   SEGMENTS.xiang_chain = `生克是一条链子,不是六条独立的观察。
 
 **走盘的时候,每一步要说清它对下一步做了什么。** 用神是什么状态 → 谁在生它、谁在克它 → 动爻插进来
@@ -1278,7 +1336,7 @@ VOICE: every multi-layer, multi-confidence mechanic above must land as one conti
   // becoming a diagram, so it is read first, and the chain then governs the
   // shape of whatever the turn and output layers ask for.
   var DELIVERY_LAYERS = [
-    "growth", "density", "xiang_chain", "turn", "output", "safety", "anti_failure", "meta_rules", "deploy_voice"
+    "growth", "density", "xiang_chain", "flow", "turn", "output", "safety", "anti_failure", "meta_rules", "deploy_voice"
   ];
   var ROUTES = {
     relationship: { focus: ["route_relationship"], description: "Relationship, love, marriage, breakup, person-reading" },
