@@ -33,23 +33,26 @@
      alone just looks like blurrier clear glass: a much wider blur so no edge
      behind survives, saturation pulled back toward neutral because scattering
      desaturates, and a fine grain in the surface itself. */
-  --ui-glass: rgb(var(--ui-glass-tint) / .60);
+  --ui-glass: rgb(var(--ui-glass-tint) / .34);
   /* ⭐ Frosted, not painted (owner's call, 2026-08-26). At .76 the carriers were
      opaque enough that the range simply stopped behind them and they read as
      three white boards. Frost is the opposite instruction: keep the colour,
      lose the detail. So the white comes down and the work moves into the
      backdrop filter — a heavier blur plus a brightness lift, which raises the
      luminance of what is behind without covering it.
-     .66 is where three legible grey levels still fit. Below it the ladder
-     stops fitting: at .58 --faint reaches only 3.89:1 against the deepest
-     ridge even after being deepened a notch, and no amount of brightness buys
-     that back — past a point it cannot replace what opacity was providing
-     (.50 measures 3.39:1, .42 measures 3.28:1). At .66 the range shows through
-     at 34% instead of the old 24%, and --dim/--faint measure 5.88:1 and
-     4.66:1 on the worst composite. */
-  --ui-glass-strong: rgb(var(--ui-glass-tint) / .66);
-  --ui-glass-soft: rgb(var(--ui-glass-tint) / .44);
-  --ui-glass-warm: rgb(var(--ui-glass-tint) / .68);
+     ⭐ 2026-08-26, second pass — owner asked for it clear, not merely frosted:
+     "晶莹透亮". So the white drops much further and the character comes from a
+     shorter, sharper blur with real saturation and brightness behind it, which
+     is what reads as glass rather than as tracing paper. The range now shows
+     through at ~58% where it was 24% two passes ago.
+     ⚠️ This is a chosen trade and it is a real one: the earlier note here
+     recorded that .50 measures 3.39:1 and .42 measures 3.28:1 on the darkest
+     group. Those numbers still hold. Small type on these carriers no longer
+     clears AA on the darker half of the palette; the decision was made looking
+     at the rendering, with the measurement in hand. */
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .42);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .22);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .44);
   /* Specular top edge + hairline bottom: the two cues that separate "glass"
      from "a translucent rectangle". Applied as an inset shadow so it rides
      the radius without a pseudo-element. */
@@ -100,8 +103,8 @@
   /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
      rather than Apple's 180%: at 180% the warm palettes bloom and the cast
      comes straight back through the backdrop instead of through the tint. */
-  --ui-glass-filter: blur(44px) saturate(112%) brightness(1.05);
-  --ui-glass-filter-strong: blur(66px) saturate(118%) brightness(1.20);
+  --ui-glass-filter: blur(30px) saturate(136%) brightness(1.26);
+  --ui-glass-filter-strong: blur(38px) saturate(140%) brightness(1.32);
   /* The grain is the part that actually reads as "frosted". feTurbulence at a
      high base frequency is per-pixel noise, so it stays fine at any DPI and
      costs one inlined SVG rather than a texture file. */
@@ -474,9 +477,10 @@ body[data-page="app"] :is(.composer-help, .site-foot)::before {
   inset: -4px -12px;
   z-index: -1;
   pointer-events: none;
-  -webkit-backdrop-filter: blur(14px) saturate(104%) brightness(1.5);
-  backdrop-filter: blur(14px) saturate(104%) brightness(1.5);
-  background: rgb(var(--ui-glass-tint) / .42);
+  /* No white in it at all — pure filter. The blur takes the ridge detail away
+     and the brightness lifts what is left; nothing is painted over. */
+  -webkit-backdrop-filter: blur(16px) saturate(104%) brightness(1.62);
+  backdrop-filter: blur(16px) saturate(104%) brightness(1.62);
   /* Masked to nothing at its own edges, so it reads as haze over the range
      rather than as a chip someone dropped there. A pill radius was the first
      try and it gave the two lines a hard outline — a shape, which is what a
@@ -523,20 +527,7 @@ html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) fo
   color: var(--ink);
 }
 html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer a { color: var(--ink); }
-html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer::before {
-  content: "";
-  position: absolute;
-  /* No negative bottom inset: these pages are exactly one viewport tall, so
-     a scrim hanging 40px below the footer added 40px of scroll and put a
-     scrollbar on a page that used to fit. It only has to reach the text. */
-  inset: -20px 0 0;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(to bottom,
-    rgb(var(--ui-glass-tint) / 0),
-    rgb(var(--ui-glass-tint) / .62) 40%,
-    rgb(var(--ui-glass-tint) / .90));
-}
+
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 8px 8px 8px 12px; gap: 8px;
   border: var(--ui-hairline) solid var(--ui-line); border-radius: var(--ui-radius);
@@ -1196,10 +1187,17 @@ html[data-skin="paper"] body :is(
   .panel, .account-menu, .acct-menu, .popover, .modal, .dialog, .sheet,
   .ledger, .side-foot, .signin-coach, .guide-coach
 ) {
-  background-image: var(--ui-frost-grain) !important;
-  background-size: 140px 140px;
-  background-repeat: repeat;
-  background-blend-mode: overlay;
+  /* Two layers, and they are different kinds of thing. The turbulence grain is
+     the material's own surface — what makes glass read as frosted rather than
+     as tinted film — and stays. Over it drifts a field built from the thirty
+     phenomena, at an opacity where it registers as something etched into the
+     glass rather than as a picture behind the text. Before this the motifs
+     appeared nowhere on the glass routes at all. */
+  background-image: var(--ui-frost-grain),
+    url("../assets/textures/ph-drift.svg") !important;
+  background-size: 140px 140px, 420px 420px;
+  background-repeat: repeat, repeat;
+  background-blend-mode: overlay, soft-light;
 }
 
 /* ── 取象溯源 ────────────────────────────────────────────────────────────────
@@ -1537,68 +1535,20 @@ input[type="checkbox"]::after, input[type="radio"]::after {
 
 .side-toggle, .side-open-btn { min-height: var(--ctl-compact); }
 
-/* ── Text with nothing behind it but the landscape ──────────────────────────
-   Three places already carry a bespoke version of this fix (the composer zone,
-   and the login / 404 footers), each written when that particular line was
-   caught failing. These are the rest of them, found the same way and given one
-   shared treatment instead of a fourth copy.
+/* ── Text with nothing behind it but the landscape ─────────────────────────
+   ⭐ The white scrims are gone (owner, 2026-08-26, looking at what they
+   actually rendered as: three white smears lying across the settings page).
+   They were the honest fix for the measurement and the wrong thing to look at,
+   which is the more important of the two facts.
 
-   Measured across 20 groups × 3 viewports, compositing the actual pixels behind
-   each text box: pricing's hero copy reached 1.22:1, settings' section labels
-   1.00:1, 404's body 1.82:1. A glass panel would have fixed it, but these are
-   deliberately unpanelled — the point of them is open space.
+   What is left in their place carries no white at all: the ink itself follows
+   the group, and the glow around it is the ink's own colour pushed outward, so
+   the halo is always the opposite luminance to whatever the letters are —
+   which is the one thing a fixed white wash could never be.
 
-   Both halves are needed, which is the note the earlier fixes left behind:
-   full ink alone still rides whatever ridge happens to be underneath, and a
-   scrim alone leaves --dim short on the darkest groups. The scrim is an ellipse
-   fading to nothing rather than a band, so it reads as haze over the range
-   instead of an invisible box someone forgot to draw a border on.
-   ⚠️ No negative bottom inset — login and 404 are exactly one viewport tall and
-   a scrim hanging below the text adds that much scroll to a page that fit. */
-html[data-skin="paper"] body:is([data-page="pricing"], [data-page="settings"], [data-page="not-found"])
-  :is(.hero, .section > .head, .pagetitle, .subtitle, .wrap > h1, .wrap > .said, .wrap > .body, .wrap > .eyebrow),
-html[data-skin="paper"] body[data-page="app"] .site-foot {
-  position: relative;
-  isolation: isolate;
-}
-html[data-skin="paper"] body:is([data-page="pricing"], [data-page="settings"], [data-page="not-found"])
-  :is(.hero, .section > .head, .pagetitle, .subtitle, .wrap > h1, .wrap > .said, .wrap > .body, .wrap > .eyebrow)::before,
-html[data-skin="paper"] body[data-page="app"] .site-foot::before {
-  content: "";
-  position: absolute;
-  /* ⚠️ No bleed on either axis. Bleeding -28px sideways put 4px of horizontal
-     scroll on 404 at 390px — the same trap as the negative bottom inset noted
-     above, on the other axis — and bleeding -14px vertically was simply clipped
-     by pricing's .hero, which gave the fade a hard edge where it was supposed
-     to disappear. Oversizing the gradient does the whole job and costs no
-     layout: it fades to nothing well inside the box. */
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  /* Reaches 0 at the very edge rather than at 80%: the first version faded out
-     inside the block, so the last line of a tall one (pricing's <small>) sat
-     back on bare ridge and still measured 2.58:1. */
-  /* An ellipse INSCRIBED in the box — 50%/52% radii, so it is at zero by every
-     edge. Oversizing it (155%/195%) meant the fade was still at ~.4 where the
-     box stopped, and the "haze" rendered as a hard-edged white slab across
-     pricing's hero: the exact box-with-no-border it was written to avoid. The
-     text these sit behind is centred and narrower than its box, so an inscribed
-     ellipse covers the words and nothing else. */
-  background: radial-gradient(50% 52% at 50% 50%,
-    rgb(var(--ui-glass-tint) / .94) 0%,
-    rgb(var(--ui-glass-tint) / .82) 44%,
-    rgb(var(--ui-glass-tint) / 0) 100%);
-}
-/* …and the ink goes to full strength on the same elements. --dim and --faint
-   are panel greys; on bare landscape they are the two levels that fail. */
-html[data-skin="paper"] body[data-page="pricing"] :is(.hero-copy, .hero-copy small, .eyebrow),
-html[data-skin="paper"] body[data-page="settings"] :is(.section > .head, .subtitle),
-html[data-skin="paper"] body[data-page="not-found"] :is(.wrap > .said, .wrap > .body) {
-  color: var(--ink);
-}
-/* The app's bar and footer float straight on the sky with no carrier of their
-   own. --bw-ink-on-sky is the engine's own contrast-checked ink for exactly
-   this, and it moves with the group instead of staying one brown across 114. */
+   ⚠️ This costs contrast on the darkest groups and that is a chosen trade, not
+   an oversight. Do not reintroduce a white plate here without measuring what it
+   looks like as well as what it measures. */
 html[data-skin="paper"] body[data-page="app"] .topbar .ghost {
   color: var(--bw-ink-on-sky, var(--ink));
 }
@@ -1651,32 +1601,9 @@ html[data-skin="paper"] body[data-page="not-found"] .ghostbtn {
   background-color: var(--ui-glass-strong) !important;
 }
 
-/* ── the landing headline ───────────────────────────────────────────────────
-   The one piece of type on the site with nothing behind it but the range
-   itself. Palette-aware ink got it most of the way, but --bw-ink-on-sky is
-   computed against the group's cloud and the headline sits across the ridges
-   too, so on the darkest groups it still measured 1.35:1 — the headline was
-   effectively not there.
-
-   This is deliberately much softer than the scrims on the other pages: a wide
-   ellipse at .58 that never reaches an edge. On the light groups — most of the
-   114 — it is white haze on a near-white sky and cannot be seen. On the dark
-   ones it is the difference between a headline and a smudge. Static, like
-   everything else here: no pulse, nothing that redraws under the glass. */
-html[data-skin="paper"] body[data-page="app"].is-empty .greeting {
-  isolation: isolate;
-}
-html[data-skin="paper"] body[data-page="app"].is-empty .greeting::before {
-  content: "";
-  position: absolute;
-  inset: -6% 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(50% 54% at 50% 50%,
-    rgb(var(--ui-glass-tint) / .58) 0%,
-    rgb(var(--ui-glass-tint) / .40) 52%,
-    rgb(var(--ui-glass-tint) / 0) 100%);
-}
+/* The landing headline carries no plate either — same reason, and this is the
+   page's centrepiece, so it least of all should sit on a white smear. Its ink
+   follows the group; see index.html. */
 
 /* ── Scroll boundaries: text goes out of focus, it does not get cut ─────────
    Owner's note: every place where a text box scrolls should have a light blur
@@ -1713,4 +1640,30 @@ body[data-page="app"] :is(.castings, .carry-menu .cm-list, .composer textarea) {
     #000 calc(100% - 14px), transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
     #000 calc(100% - 14px), transparent 100%);
+}
+
+/* ── No square boxes on the glass routes ───────────────────────────────────
+   A census of computed border-radius across the eight glass routes at two
+   viewports turned up 27 kinds of box still sitting on sharp corners, native
+   form controls among them — pricing's Annually checkbox was an 18px square in
+   a page where everything else is rounded.
+
+   Two things are deliberately not in this list. Full-bleed page furniture (the
+   sidebar, the drawer scrim, the legal route's flush bands) has no outside to
+   round: its corners are the screen's. And rows inside a panel are dividers,
+   not boxes — they carry one hairline on one side, and rounding each of them
+   splits a single panel into a stack of little cards. */
+html[data-skin="paper"] body:not([data-page="about"]):not([data-page="guide"]) :is(
+  .rate-number, .billing-mail-note, .card-hero, .ledger, .side-foot,
+  .signedout-note, .methods, .estimate, .id-row
+) {
+  border-radius: var(--ui-radius);
+}
+/* Native controls do not inherit the page's shape, so they have to be told. */
+html[data-skin="paper"] body :is(textarea, select, input[type="text"], input[type="email"],
+  input[type="password"], input[type="number"], input[type="search"]) {
+  border-radius: var(--ui-radius-small);
+}
+html[data-skin="paper"] body :is(input[type="checkbox"]) {
+  border-radius: var(--ui-radius-chip);
 }

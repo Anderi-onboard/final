@@ -122,8 +122,8 @@ body[data-page="legal"] .toc::after{
   height:220px;
   right:-62px;
   top:-74px;
-  background:url("../assets/textures/ink-orbits.svg") center/contain no-repeat;
-  opacity:.055;
+  /* Phenomena as a stencil; colour comes from CSS — see CLAUDE.md. */
+  mask:url("../assets/textures/ph-orbits.svg") center/contain no-repeat;background:currentColor;opacity:.075;
   transform:rotate(-8deg);
 }
 body[data-page="about"] .why-panel:nth-of-type(even)::after,
@@ -132,7 +132,7 @@ body[data-page="settings"] .section:nth-of-type(even) .panel::after{
   left:-74px;
   top:auto;
   bottom:-86px;
-  background-image:url("../assets/textures/ink-currents.svg");
+  mask-image:url("../assets/textures/ph-currents.svg");
   transform:rotate(6deg);
 }
 
@@ -340,8 +340,8 @@ body[data-page="not-found"] .wrap::before{
   width:min(520px,82vw);
   aspect-ratio:1.7;
   z-index:-1;
-  background:url("../assets/textures/ink-knot.svg") center/contain no-repeat;
-  opacity:.045;
+  mask:url("../assets/textures/ph-knot.svg") center/contain no-repeat;background:currentColor;
+  opacity:.065;
 }
 body[data-page="not-found"] .brokenfig{animation:cp-figure-in var(--cp-enter) var(--cp-ease-out) both}
 body[data-page="not-found"] .flourish path{animation-duration:1.25s;animation-timing-function:var(--cp-ease-in-out)}

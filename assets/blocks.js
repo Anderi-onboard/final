@@ -89,6 +89,54 @@
     brand: function () { return M.brandMark({ size: 512 }); }
   };
 
+  /* ── the thirty phenomena, as fields ────────────────────────────────────
+     assets/marks.js has carried thirty motifs since they were drawn and
+     nothing on the site drew a single one of them. They are the site's own
+     vocabulary — one weight of rounded ribbon, placed rather than grown — so
+     they are the right thing for a texture field, and better than the four
+     abstract fills that were standing in for them.
+
+     Placement follows the same law as everything else here: deterministic and
+     cyclic, never random. Rows stagger, and the offset and scale step through
+     co-prime cycles of 3 and 5 so no two neighbouring instances share a pair
+     and the field has a beat without repeating for fifteen. A random jitter
+     would reshuffle on every navigation and read as a fault. */
+  var PH_OFF = [0, 1, -0.6];
+  var PH_SCL = [1, 0.86, 1.12, 0.94, 1.06];
+  function phenomenonField(name, w, h) {
+    var d = M.phenomena[name]();
+    /* Pitch follows the cell so density stays constant at any size, which is
+       the rule the other fields already keep. The motifs are drawn at roughly
+       ±16 units, so the scale is the pitch over their span. */
+    var pitch = Math.max(46, Math.min(w / 5, 104));
+    var base = pitch / 46;
+    var cols = Math.ceil(w / pitch) + 1, rows = Math.ceil(h / pitch) + 1;
+    var out = "", r, c, i, x, y, sc;
+    for (r = 0; r < rows; r++) {
+      for (c = 0; c < cols; c++) {
+        i = r * cols + c;
+        x = c * pitch + (r % 2 ? pitch * .5 : 0) + PH_OFF[i % 3] * pitch * .07;
+        y = r * pitch + PH_OFF[(i + 1) % 3] * pitch * .06;
+        sc = base * PH_SCL[i % 5];
+        out += '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1)
+          + ') scale(' + sc.toFixed(3) + ')"><path d="' + d + '"/></g>';
+      }
+    }
+    return { raw: '<g fill="currentColor" opacity=".82">' + out + '</g>' };
+  }
+
+
+  /* Every phenomenon is available as a field and as a single centred mark, so
+     the markup keeps declaring intent by name and nothing here has to be
+     duplicated per motif. */
+  Object.keys(M.phenomena).forEach(function (name) {
+    PATTERN[name] = function (w, h) { return phenomenonField(name, w, h); };
+    MARK[name] = function () {
+      return '<g fill="currentColor" transform="translate(60 60) scale(3.1)"><path d="'
+        + M.phenomena[name]() + '"/></g>';
+    };
+  });
+
   function render(el) {
     var w = Math.max(1, Math.round(el.clientWidth)), h = Math.max(1, Math.round(el.clientHeight));
     var pat = el.getAttribute("data-pattern"),
