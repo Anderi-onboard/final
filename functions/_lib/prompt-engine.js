@@ -821,7 +821,7 @@ KEEP IT LIGHT: Stria 64 is the fast baseline read. Stay on these five moves and 
 - Answer CURRENT_REQUEST directly in the first paragraph. Do not replay the full original reading or restart the method.
 - Use ORIGINAL_QUESTION and prior messages only to preserve meaning. Deepen the exact line, condition, timing window, trade-off, or real-world referent the user asks about.
 - State clearly when the existing cast cannot resolve the requested detail. Never fill that gap with invented certainty.
-- LENGTH FOLLOWS THE QUESTION, NOT THE SLOT. A follow-up runs anywhere from 300 to 6000 characters: a small question gets a short answer, a large one gets a full one, and "it is a follow-up" is not by itself a reason to give less. Never ration information or warmth to keep an answer in its place — short is short because the question was small.`;
+- LENGTH FOLLOWS THE QUESTION, NOT THE SLOT. No floor and no ceiling: a small question gets a short answer, a large one gets a full one, and "it is a follow-up" is not by itself a reason to give less. Never ration information or warmth to keep an answer in its place — short is short because the question was small.`;
 
   SEGMENTS.output_followup = `OUTPUT SHAPE — FOLLOW-UP:
 1. Direct answer: answer CURRENT_REQUEST in the first 1-3 sentences.
@@ -966,13 +966,16 @@ boxes at the end. A picture goes next to the mechanic that produced it. A trait 
 line showing it is being read. If a reader could reconstruct a template from your output, you
 wrote a form and failed.
 
-LENGTH: an opening reading starts at 3500 characters; a follow-up runs anywhere from 300 to 6000.
-The floor is real and the ceiling is not. Never pad to reach a number — but there is no upper limit
-to respect either, and nothing above is ever cut to stay near one.
-An opening reading that comes in under 3500 is a SIGNAL, not a valid short answer: something on that
-list got skipped. Before shipping a short one, look for which — most often it is the walk (every
-load-bearing signal read out and translated), the scene, or the timing laid across its scales. Find
-the missing one and write it; do not stretch the ones already there.
+LENGTH IS SET BY THE BOARD, NOT BY A NUMBER. No floor, no ceiling — neither for an opening reading
+nor for a follow-up. Never pad to reach a number, and never cut to stay near one.
+THE TEST IS 「饱满」, AND IT IS THE LIST ABOVE, NOT A COUNT. Is every load-bearing signal read out
+and translated? Is the scene there? Is the timing laid across its scales? Is the 取象 chain there,
+and the confidence carried by the grammar rather than printed? When all of that is on the page, the
+reading is full — at whatever length that took. A board that genuinely carries little gets a full
+reading that happens to be brief, and that is a correct answer, not a short-changed one. Padding it
+out to look substantial is the failure, and the reader can always tell.
+A short reading is a fault only when something on the list is MISSING — check the list, never the
+character count. Find the missing one and write it; do not stretch the ones already there.
 Going long is not a fault. A reader who came for a reading of their own casting wants MORE of it,
 not less, and a reading that runs to five or six thousand because the board genuinely carried that
 much is doing the job. Trimming a live thread to hit a tidier number costs the reader something real and saves
@@ -1033,8 +1036,8 @@ breath; one image the reader can see, two steps deep, and a short read on the pe
 question is about one; what is solid versus what is interpretive; and one specific thing they
 could tell you that would sharpen it, with what it would settle.
 
-LENGTH: about 1500-2500 characters for an opening reading, and as much or as little as a follow-up
-question needs. Tighter than Sortis 6 because it looks at less, never because it cares less. Never
+LENGTH: no floor and no ceiling here either — as much as this board carries and no more. A Stria
+read comes out tighter than Sortis 6 because it looks at less, never because it cares less. Never
 thin for model tier, never padded to fill a range.`;
 
   // ─── QUESTION-TYPE SPECIFIC ────────────────────────────────────

@@ -207,16 +207,45 @@ assert.match(seg, /不是要你另起一段/, 'the chain must be the walk itself
    that should not have existed. The segment may say marks are unrelated to
    length; it may not set a number.
 
-   The ceiling itself is gone, by the owner's ruling on 08-19: a reader came for
-   a reading of their own casting and wants more of it, so a floor protects them
-   and a ceiling only takes from them. */
+   THE CEILING WENT ON 08-19 AND THE FLOOR WENT ON 08-27, both by the owner's
+   ruling. The reasoning that removed the ceiling cut the other way too. A count
+   cannot tell a thin board from a skipped section, so on a board that genuinely
+   had little to say a floor buys exactly one thing — padding — and padding is
+   the one thing a reader can always feel. 「这一卦就没什么好说的,不少于饱满的
+   字数即可」: the test is completeness, and completeness is the output list.
+
+   Single ownership survives unchanged, and it is the part that has actually
+   broken before. */
 assert.match(seg, /标记跟篇幅是两条线/, 'the segment must decouple marks from length');
 assert.doesNotMatch(seg, /3000/, 'and must not restate the length rule — output_sortis owns it');
 const outS = PromptEngine.SEGMENTS.output_sortis;
-assert.match(outS, /starts at 3500 characters/, 'the floor lives in output_sortis');
-assert.match(outS, /The floor is real and the ceiling is not/, 'and there is no upper bound');
+assert.match(outS, /LENGTH IS SET BY THE BOARD, NOT BY A NUMBER/,
+  'output_sortis no longer says who decides length — the rule has to live somewhere and this is where');
+assert.match(outS, /No floor, no ceiling/, 'both bounds are gone and the segment has to say so outright');
 assert.match(outS, /Going long is not a fault/, 'said plainly, so it is not read as a grudging allowance');
-assert.doesNotMatch(outS, /runs 3000-4000/, 'the old two-sided range is gone');
+assert.match(outS, /饱满/,
+  'the completeness test is unnamed, so "no number" reads as "any length will do" — the point is not '
+  + 'that length stopped mattering, it is that the output list decides it');
+
+/* ── no character count may come back, in any segment, in any wording ──────
+   This is the assertion that bites. A floor is the obvious thing to re-add the
+   first time a reading comes out short, and it has been re-added before by copy
+   that was only trying to help. A second owner is how the readings swung last
+   time — under the floor twice, then well over. */
+const COUNT = /\b\d{3,5}\s*(?:characters|chars|字)\b/g;
+const bounds = outS.match(COUNT) || [];
+assert.deepEqual(bounds, [],
+  `output_sortis states a length in characters again (${bounds.join(', ')}). Numbers cannot `
+  + 'distinguish "the board carried little" from "a section was skipped"; the output list can.');
+for (const k of ['output_stria', 'output_followup', 'turn_followup', 'density']) {
+  const b = String(PromptEngine.SEGMENTS[k] || '').match(COUNT) || [];
+  assert.deepEqual(b, [],
+    `${k} sets a length in characters (${b.join(', ')}) — output_sortis owns length, and every time `
+    + 'a second segment has restated it the readings have swung');
+}
+// Anti-vacuity: the pattern has to be able to see a bound at all.
+assert.equal(('an opening reading starts at 3500 characters'.match(COUNT) || []).length, 1,
+  'the length-bound pattern no longer matches the wording it was written to catch, so the sweep above is hollow');
 assert.match(seg, /8 到 20 处/, 'the mark count is this segment\'s own number, so it stays here');
 
 /* ── 9. the parse path ──────────────────────────────────────────────────────
