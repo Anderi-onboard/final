@@ -95,6 +95,37 @@ assert.deepEqual(shrunk, [],
   + 'thing this segment must not teach. Rearrange the sentence instead of shortening it.');
 
 
+/* ── a ✓ has to survive being read on its own ──────────────────────────────
+   voice already sets this bar and calls it the acceptance line: 判词单拿出来、
+   不看上文也要能看懂. flow shipped violating it in every single example —
+   「这一段会松」「这条线还没到位」「最近的一档」「能成」. Those are not
+   sentences, they are slots waiting for a reading to fill them, and the owner
+   read one and asked the only question available: 等不起是啥意思,我在等啥.
+
+   It is the worse half of the same mistake, because examples are what a model
+   imitates. A segment that says "be concrete" and then demonstrates six
+   placeholders teaches the placeholders. voice's own examples never do this —
+   它们指的是学生、审批那一关、张罗你们俩这些事的人.
+
+   Mechanically: the bar itself is not checkable (whether a stranger can parse
+   a sentence is not a regex). The placeholders that actually shipped are. This
+   is a pin, not a detector — it holds the ones that failed, and review holds
+   the rest. Scanned over the ✓ lines only: a ✗ is allowed to be bad, that is
+   what it is for, and the opening paragraph quotes these very strings as
+   counter-examples. */
+assert.match(flow, /单拿出来、不看上文,也得看得懂/,
+  'flow no longer states the acceptance line it shares with voice, so nothing inside the '
+  + 'segment stops its examples drifting back to placeholders');
+
+const PLACEHOLDER = ['这一段', '这条线', '那一段', '这一块'];
+const floating = pairs.flatMap(([, , after], i) =>
+  PLACEHOLDER.filter((p) => after.includes(p)).map((p) => `rule ${i + 1}: ${p}`));
+assert.deepEqual(floating, [],
+  'a ✓ example is built on a placeholder whose referent only exists in a real reading. '
+  + 'Cut it out and hand it to someone who has not read the paragraph above it — if they cannot '
+  + 'tell what it is about, the model learns to write exactly that.');
+
+
 /* ── a ✓ must be the same claim as its ✗, not a different one ──────────────
    The length check above catches a rewrite that CUTS. It does not catch one
    that SWAPS, and swapping is the subtler failure. The sixth rule shipped with
