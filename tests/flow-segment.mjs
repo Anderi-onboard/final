@@ -94,6 +94,50 @@ assert.deepEqual(shrunk, [],
   'a ✓ rewrite is much shorter than its ✗ — the examples teach cutting, which is the one '
   + 'thing this segment must not teach. Rearrange the sentence instead of shortening it.');
 
+
+/* ── a ✓ must be the same claim as its ✗, not a different one ──────────────
+   The length check above catches a rewrite that CUTS. It does not catch one
+   that SWAPS, and swapping is the subtler failure. The sixth rule shipped with
+
+     ✗ 你太急了,沉不住气。
+     ✓ 这一段你等不起 —— 而盘上最近的一档在2028。
+
+   which reads as a fix and is not one: the first says the man is moving early,
+   the second says a deadline is bearing down on him. The cause moved off him
+   and onto the situation, so the "rewrite" answers a different question — and
+   if the board really shows him rushing, it now says something false. Length
+   was preserved; the assertion was not. The rule broke itself with its own
+   example.
+
+   ⚠️ DO NOT rebuild this as a lexical-overlap check. That was tried and it
+   cannot work here. Share of content characters an ✓ keeps from its ✗
+   (particles stripped), over the six shipped pairs and the bad one:
+
+       rule 1  84%   rule 2  56%   rule 4  78%   rule 5  79%
+       rule 3  23%   rule 6 (correct)  0/4      rule 6 (the bad pair)  0/4
+
+   No threshold separates the last two, and that is not bad luck. Rule 6 says
+   to trade a one-place predicate (急(你)) for a two-place relation
+   (快于(你, 盘的节奏)) — replacing the predicate word IS the instruction, so a
+   correct rewrite of that rule is guaranteed to score zero. An overlap check
+   red-flags the one rule it was written to guard, and the next agent weakens
+   it until it passes. That is how a contract becomes a formality.
+
+   Same claim is not mechanically checkable. What is checkable: the rule
+   carries the warning in prose, and the pair that already failed stays out. */
+const persona = flow.match(/\*\*六 · [\s\S]*?(?=\n\n|$)/);
+assert.ok(persona, 'the sixth rule no longer parses — this pin points at nothing');
+assert.match(persona[0], /换的是挂法,不是断言/,
+  'the 人格/处境 rule stopped saying the assertion is unchanged. Without that line it reads as '
+  + '"move the blame onto the environment", which is a different claim, not a rewrite');
+assert.match(persona[0], /那是换了个结论,不是改写/,
+  'the rule no longer names the failure it sits one step away from');
+
+assert.ok(!flow.includes('这一段你等不起'),
+  'the sixth rule is back to the example that shipped and was wrong. It turns a claim about the '
+  + 'reader moving early into a claim about an external deadline: same length, different '
+  + 'assertion. Re-hang the predicate, do not move the cause.');
+
 // ── and it has to reach the reading ───────────────────────────────────────
 assert.ok(PromptEngine.SEGMENTS.voice, 'voice is gone — flow was meant to sit above it, not replace it');
 assert.ok(flow.length < PromptEngine.SEGMENTS.voice.length / 3,
