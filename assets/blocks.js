@@ -126,6 +126,46 @@
   }
 
 
+  /* ── arranged by density, not by tiling ─────────────────────────────────
+     The reference field is a dither: the marks cluster, thin out, and go solid
+     in a couple of places. That gradient is the whole reason it reads as an
+     image rather than as wallpaper, and it is the rule the method cards
+     borrow — an even pitch with a little jitter is exactly what it is not.
+
+     The field is three sines at co-prime periods summed together. Continuous,
+     so the density has a direction instead of being a per-cell coin flip; and
+     deterministic, so a block draws the same way on every visit — the same
+     law the strokes and the palette order already follow. A cell draws when
+     the field clears a threshold, and its SCALE follows how far it cleared
+     by, which is what softens the edge of a cluster instead of ending it on a
+     line. */
+  function ditherField(name, w, h, opt) {
+    opt = opt || {};
+    var d = M.phenomena[name] && M.phenomena[name]();
+    if (!d) return "";
+    var pitch = opt.pitch || Math.max(20, Math.min(w / 8, 44));
+    var cols = Math.max(1, Math.ceil(w / pitch)), rows = Math.max(1, Math.ceil(h / pitch));
+    var ax = opt.ax || 0.9, ay = opt.ay || 1.3, phase = opt.phase || 0;
+    var cut = opt.cut == null ? 0.46 : opt.cut;
+    var out = "", r, c, u, v, f, k, sc;
+    for (r = 0; r < rows; r++) {
+      for (c = 0; c < cols; c++) {
+        u = (c + 0.5) / cols; v = (r + 0.5) / rows;
+        f = 0.5
+          + 0.42 * Math.sin(6.2831853 * (u * ax + 0.13 + phase))
+          + 0.31 * Math.sin(6.2831853 * (v * ay - 0.21 + phase))
+          + 0.19 * Math.sin(6.2831853 * (u * 2.6 + v * 1.7));
+        f /= 1.46;
+        if (f < cut) continue;
+        k = Math.min(1, (f - cut) / 0.42);
+        sc = (pitch / 46) * (0.42 + 0.78 * k);
+        out += '<g transform="translate(' + ((c + 0.5) * pitch).toFixed(1) + ' '
+          + ((r + 0.5) * pitch).toFixed(1) + ') scale(' + sc.toFixed(3) + ')"><path d="' + d + '"/></g>';
+      }
+    }
+    return '<g fill="currentColor">' + out + '</g>';
+  }
+
   /* Every phenomenon is available as a field and as a single centred mark, so
      the markup keeps declaring intent by name and nothing here has to be
      duplicated per motif. */
@@ -190,7 +230,7 @@
      re-run this when a step becomes visible. */
   function all() { cells.forEach(function (c) { if (c.clientWidth > 0) render(c); }); }
   all();
-  window.BWBlocks = { render: all };
+  window.BWBlocks = { render: all, dither: ditherField, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */
