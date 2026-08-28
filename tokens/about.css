@@ -116,7 +116,9 @@ body[data-page="about"] .bk-head .bk-go {
 .ab-art {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
   color: var(--ab-art, #FFFFFF);
-  opacity: .5;
+  /* .5 measured fine for contrast and still read as crowded — the caption sat
+     in the thick of a cluster. Contrast was never the problem; density was. */
+  opacity: .38;
 }
 .ab-art svg { width: 100%; height: 100%; display: block; }
 /* One accent per card, and only one — the reference puts a single orange note
@@ -140,10 +142,20 @@ body[data-page="about"] .bk-head .bk-go {
 .ab-note {
   margin: 0;
   font-family: var(--serif); font-size: 2.5cqw; line-height: 1.5;
-  max-width: 22ch; opacity: .9;
+  /* ⚠️ In cqw, not ch. At 22ch this measured 198px on BOTH a 474px card and a
+     316px one — 42% of the card at one width and 63% at the other — so the
+     right-hand column the accents rely on existed at 1440 and not at 768.
+     A width stated in the card's own unit is a column that is always there. */
+  max-width: 58cqw; opacity: .9;
 }
-.ab-mark { width: 12cqw; height: auto; display: block; opacity: .92; }
-.ab-mark path { stroke: currentColor; }
+/* ⚠️ Square, not `height:auto`. The mark is painted into the span by blocks.js
+   from the element's own box, so a span with no intrinsic height measures zero
+   and nothing draws. And each card names a DIFFERENT phenomenon — the first
+   version pasted one wave glyph into all four, which is the exact repetition
+   this page's arrangement exists to avoid. The mark also differs from the
+   card's own field, so a card is never one motif twice. */
+.ab-mark { width: 12cqw; aspect-ratio: 1; display: block; opacity: .92; }
+.ab-mark svg { width: 100%; height: 100%; display: block; }
 
 /* ── the arrangements ───────────────────────────────────────────────────
    Four cards, four different triples of corner. Written out one card at a
@@ -169,11 +181,25 @@ body[data-page="about"] .bk-head .bk-go {
 .ab-card[data-plan="d"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
 .ab-card[data-plan="d"] .ab-name { grid-area: name; justify-self: start; }
 
-/* accent placement, one per card and never twice in the same corner */
-.ab-card[data-plan="a"] .ab-accent { left: 46%; top: 48%; }
-.ab-card[data-plan="b"] .ab-accent { right: 22%; top: 38%; }
-.ab-card[data-plan="c"] .ab-accent { left: 14%; bottom: 20%; }
-.ab-card[data-plan="d"] .ab-accent { right: 18%; bottom: 30%; }
+/* Accent placement, one per card and never twice in the same corner.
+   ⚠️ Each one goes in the quadrant that card's arrangement leaves empty. The
+   first pass put card a's at 46%/48%, straight through the end of its caption
+   — the accent is the one loud thing on the card, so it lands on text before
+   anything else does. Read the arrangement above, then place it where the
+   arrangement is not.
+
+   ⚠️ And it has to be a quadrant the arrangement leaves EMPTY, not just a gap
+   that happens to look clear at one width. The second pass placed three of
+   them in gaps beside the caption; measured across 1440 / 768 / 390 they
+   grazed it at every width, because the caption's height in lines does not
+   scale with the card the way its width does. The note is always in the
+   centre band and always left-aligned, so the free quadrant is a property of
+   the arrangement — read it off the areas above, and the placement holds at
+   any width. */
+.ab-card[data-plan="a"] .ab-accent { right: 16%; top: 14%; }   /* name TL, note CL, mark BR → top-right  */
+.ab-card[data-plan="b"] .ab-accent { left: 12%; top: 12%; }    /* mark TR, note CL, name BR → top-left   */
+.ab-card[data-plan="c"] .ab-accent { left: 12%; bottom: 14%; } /* note TL, name CR, mark BR → bottom-left*/
+.ab-card[data-plan="d"] .ab-accent { right: 18%; top: 46%; }   /* everything left → the whole right edge  */
 
 /* ── the closing line ───────────────────────────────────────────────────── */
 .ab-end {
