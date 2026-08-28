@@ -1,18 +1,19 @@
-<!-- BourneWise — Why BourneWise. Block-composition route: this page is built
-     from flat unequal rectangles and generated pattern fields, not from cards
-     floating on the landscape. See tokens/blocks.css for why the two routes
-     use different materials. -->
+<!-- BourneWise — About us. Four cards, one idea each, on a deep ground.
+     The composition follows a reference whose real rule is not the cards but
+     the two things around them: the columns run half a card out of step so the
+     set never reads as a grid, and title / caption / mark take a different
+     corner on every card so four cards in one colour read as four things.
+     See tokens/about.css, which this route owns alone. -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why BourneWise</title>
-<meta name="description" content="Why BourneWise separates the generated hexagram from the model-written interpretation.">
-<!-- Paint guard, runs before any stylesheet: --paper is not defined yet here,
-     so this one value must stay a literal. It has to equal --paper in
-     tokens/paper.css; if that changes, change this too. -->
-<style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
+<title>About us — BourneWise</title>
+<meta name="description" content="What BourneWise is, and the four things it holds itself to.">
+<!-- Paint guard, runs before any stylesheet. This route's ground is its own
+     colour, not the site paper, so the guard matches --ab-ground instead. -->
+<style>html{overflow-x:clip}html,body{background:#1C3324}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./tokens/fonts.css?v=20260826d">
@@ -23,6 +24,7 @@
 <link rel="stylesheet" href="./tokens/motion.css?v=20260826d">
 <link rel="stylesheet" href="./tokens/refinement.css?v=20260826d">
 <link rel="stylesheet" href="./tokens/blocks.css?v=20260826d">
+<link rel="stylesheet" href="./tokens/about.css?v=20260826d">
 </head>
 <body class="blocks-route" data-page="about">
 
@@ -35,110 +37,71 @@
   </nav>
 </header>
 
-<main class="bk-main">
+<section class="ab-lede">
+  <p class="ab-eyebrow">About us</p>
+  <h1 data-weave>We built the part that cannot be talked out of its answer.</h1>
+  <p class="ab-say">A reading here has two halves that never touch. Six lines fall, and they
+  are fixed. Then Claude explains the figure that fell — the one you actually got, in the
+  situation you actually described. Everything below is what follows from keeping those two
+  apart.</p>
+</section>
 
-  <!-- Composition A — .37 / .35 / .28 columns, .34 / .66 rows.
-       Title anchored to the foot of the left field; a banded middle; a
-       full-height rail at the right edge. -->
-  <section class="bk bk--a">
-    <div class="bk-cell bk-cell--title" data-at="left-tall" data-fill="brick">
-      <p class="bk-eyebrow">Why BourneWise</p>
-      <h1 data-weave>The cast and the answer are separate systems.</h1>
-    </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="olive" data-pattern="leaf"></div>
-    <div class="bk-cell bk-cell--body" data-at="mid-bottom" data-fill="bone">
-      <p class="bk-lead">BourneWise generates the hexagram first. Claude Opus 5 explains the result it
-      receives. The model writes the interpretation; it does not choose the figure.</p>
-      <p class="bk-note">This separation keeps the source of the reading visible and gives every answer
-      a fixed input you can inspect.</p>
-    </div>
-    <div class="bk-cell" data-at="right-tall" data-fill="clay" data-mark="hexagram"></div>
-  </section>
+<main class="ab-set">
 
-  <!-- Composition B — one band over one field, .37 / .63. -->
-  <section class="bk bk--b">
-    <div class="bk-cell" data-at="band-top" data-fill="dusty" data-pattern="rain"></div>
-    <div class="bk-cell bk-cell--title" data-at="band-bottom" data-fill="bone">
-      <p class="bk-eyebrow">Field note 01</p>
-      <h2 data-weave>The figure exists before the prose.</h2>
-      <p class="bk-note">Question, cast, and interpretation remain visible as three separate stages.</p>
-    </div>
-  </section>
+  <div class="ab-col">
+    <!-- a · name top-left, note centre-left, mark bottom-right -->
+    <article class="ab-card" data-plan="a" data-ph="root"
+      style="--ab-fill:#2F5638; --ab-ink:#F2EFE4; --ab-art:#8FB489">
+      <div class="ab-art"></div>
+      <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"></circle></svg>
+      <h2 class="ab-name">Separation</h2>
+      <p class="ab-note">The figure is settled before a single word is written about it. Nothing you wrote can nudge it.</p>
+      <svg class="ab-mark" viewBox="0 0 512 416" aria-hidden="true"><g transform="translate(240,1380)" fill="none" stroke-width="40" stroke-linecap="round"><path d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+    </article>
 
-  <!-- Composition C — .42 / .37 / .21 columns, .53 / .47 rows. -->
-  <section class="bk bk--c">
-    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="olive">
-      <p class="bk-eyebrow">01 — Sequence</p>
-      <h2 data-weave>The sequence is fixed before inference begins.</h2>
-    </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="teal" data-land="4"></div>
-    <div class="bk-cell" data-at="right-tall" data-fill="brick" data-pattern="yao"></div>
-    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="bone">
-      <!-- These three said "the engine generates", "computed independently of
-           the language model", "passed as evidence" — the architecture diagram
-           written out as sentences. The point they were making is the one the
-           whole product rests on, so it is worth saying in the reader's words:
-           the figure is settled before anything is written about it. -->
-      <li><span class="bk-eyebrow">First</span><b>Your question sets the subject.</b>
-        <p>Who is involved, what you are deciding, and by when. That is what the figure has to answer.</p></li>
-      <li><span class="bk-eyebrow">Then</span><b>Six lines fall, and they are fixed.</b>
-        <p>The hexagram, the lines that move, and what they turn into are settled before a single word is written. Nothing you wrote can nudge them.</p></li>
-      <li><span class="bk-eyebrow">Finally</span><b>Claude reads what fell.</b>
-        <p>It explains the figure you actually got, in the situation you actually described. It never gets to pick a kinder one.</p></li>
-    </ol>
-  </section>
+    <!-- d · mark top-left, note centre-left, name bottom-left -->
+    <article class="ab-card" data-plan="d" data-ph="tide"
+      style="--ab-fill:#24452C; --ab-ink:#EFEADD; --ab-art:#7FA57C">
+      <div class="ab-art"></div>
+      <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="20" height="6" rx="3" fill="currentColor"></rect></svg>
+      <svg class="ab-mark" viewBox="0 0 512 416" aria-hidden="true"><g transform="translate(240,1380)" fill="none" stroke-width="40" stroke-linecap="round"><path d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+      <h2 class="ab-name">Restraint</h2>
+      <p class="ab-note">A view, not a verdict. It tells you what to go and check; it will not decide it for you.</p>
+    </article>
+  </div>
 
-  <!-- Composition D — .54 / .19 / .27 columns, .48 / .52 rows. -->
-  <section class="bk bk--d">
-    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="teal">
-      <p class="bk-eyebrow">02 — Depth</p>
-      <h2 data-weave>Choose the amount of structure your question needs.</h2>
-    </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="clay" data-pattern="coin"></div>
-    <div class="bk-cell" data-at="right-tall" data-fill="ochre" data-mark="star"></div>
-    <div class="bk-cell bk-cell--body" data-at="wide-bottom" data-fill="bone">
-      <p class="bk-eyebrow">Stria 64 · about 440 units — Sortis 6 · about 780 units</p>
-      <p class="bk-lead">Stria reads the primary hexagram against the current situation. Sortis adds
-      moving lines, the transformed hexagram, and line-by-line change analysis.</p>
-      <p class="bk-note">Both methods use the same casting sequence. They differ in how much of the
-      resulting structure is interpreted.</p>
-    </div>
-  </section>
+  <div class="ab-col">
+    <!-- b · mark top-right, note centre-left, name bottom-right -->
+    <article class="ab-card" data-plan="b" data-ph="stone"
+      style="--ab-fill:#356A45; --ab-ink:#F4F1E7; --ab-art:#9CC095">
+      <div class="ab-art"></div>
+      <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 L15 9 L23 12 L15 15 L12 23 L9 15 L1 12 L9 9 Z" fill="currentColor"></path></svg>
+      <svg class="ab-mark" viewBox="0 0 512 416" aria-hidden="true"><g transform="translate(240,1380)" fill="none" stroke-width="40" stroke-linecap="round"><path d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+      <p class="ab-note">Every answer carries the figure it was written from, so you can read the source of it and not only the conclusion.</p>
+      <h2 class="ab-name">Evidence</h2>
+    </article>
 
-  <!-- Composition C again, mirrored in content: the repeat is the system. -->
-  <section class="bk bk--c">
-    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="brick">
-      <p class="bk-eyebrow">03 — Limits</p>
-      <h2 data-weave>A reading supports reflection. It does not replace judgment.</h2>
-    </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="ochre" data-pattern="brand"></div>
-    <div class="bk-cell" data-at="right-tall" data-fill="olive" data-mark="star"></div>
-    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="cream">
-      <li><span class="bk-eyebrow">Fixed input</span><b>The figure cannot be redrawn.</b>
-        <p>The model cannot replace or override the generated hexagram.</p></li>
-      <li><span class="bk-eyebrow">Explicit limits</span><b>Signal and extension stay apart.</b>
-        <p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></li>
-      <li><span class="bk-eyebrow">Reflection</span><b>Return after the decision.</b>
-        <p>Compare what changed, what held, and what you would decide differently next time.</p></li>
-    </ol>
-  </section>
-
-  <!-- Composition B closes it, type over field this time — the B2 proportion,
-       because a heading and a call to action need more than a band's height. -->
-  <section class="bk bk--b2">
-    <div class="bk-cell bk-cell--title" data-at="band-top" data-fill="bone">
-      <p class="bk-eyebrow">Field note 02</p>
-      <h2 data-weave>Return after the decision.</h2>
-      <a class="bk-go bk-go--big" href="./guide.html">See the full process one step at a time →</a>
-    </div>
-    <div class="bk-cell" data-at="band-bottom" data-fill="olive" data-land="7"></div>
-  </section>
+    <!-- c · note top-left, name centre-right, mark bottom-right -->
+    <article class="ab-card" data-plan="c" data-ph="reed"
+      style="--ab-fill:#1F3D2A; --ab-ink:#EDE8DB; --ab-art:#79A17A">
+      <div class="ab-art"></div>
+      <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 C8 4, 16 4, 21 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path></svg>
+      <p class="ab-note">You choose how much structure the question needs — one figure, or one figure and what it turns into.</p>
+      <h2 class="ab-name">Depth</h2>
+      <svg class="ab-mark" viewBox="0 0 512 416" aria-hidden="true"><g transform="translate(240,1380)" fill="none" stroke-width="40" stroke-linecap="round"><path d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+    </article>
+  </div>
 
 </main>
 
+<section class="ab-end">
+  <p data-weave>Your first reading is on us — whole, not a sample.</p>
+  <a class="bk-go" href="./index.html">Start a casting →</a>
+</section>
+
 <footer class="bk-foot">
   <span>BourneWise</span>
-  <a href="./index.html">Start a casting</a>
+  <a href="./guide.html">The method</a>
   <a href="./pricing.html">Plans &amp; units</a>
   <a href="./terms.html">Terms</a>
   <a href="./privacy.html">Privacy</a>
@@ -146,6 +109,7 @@
 
 <script src="./assets/marks.js?v=20260826d"></script>
 <script src="./assets/blocks.js?v=20260826d"></script>
+<script src="./assets/about.js?v=20260826d"></script>
 <script src="./assets/weave.js?v=20260826d" defer></script>
 </body>
 </html>

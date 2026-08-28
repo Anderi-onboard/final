@@ -1,0 +1,208 @@
+/* The About route ------------------------------------------------------------
+   Four cards, one idea each, on a deep ground. Taken off the reference and
+   written as fractions of the card so the composition survives every width:
+
+       card             444 / 447   ≈ 1 : 1.007   (square, near enough)
+       radius            24 / 444   = 5.4%
+       inset             26 / 444   = 5.9%
+       title             40 / 444   = 9.0%
+       caption           11 / 444   = 2.5%
+       gap in a column   57 / 444   = 12.8%
+       gap between cols  54 / 444   = 12.2%
+       COLUMN STAGGER   215 / 447   = 48% of a card's height
+
+   ⭐ The stagger is the thing. Two columns offset by half a card is what stops
+   the reference reading as a grid — the eye travels down one column and picks
+   the other up mid-card rather than scanning rows. A 2×2 grid of the same four
+   cards is a table.
+
+   ⭐⭐ And the heterogeneity is SYSTEMATIC, not casual. Title, caption and mark
+   each take a different corner on every card, and no two cards use the same
+   triple. That is what makes four cards in one colour read as four things
+   instead of as one thing repeated. The arrangements are declared per card
+   below rather than being left to chance, for the same reason the strokes
+   cycle instead of using random: a layout that shuffles is a fault, and a
+   layout that repeats is a table.
+
+   ⚠️ This route owns this file alone — the model is legal.css, which the
+   ownership census scored at 20 wins and 0 losses precisely because one route
+   had one sheet. Do not add these rules to blocks.css, which guide.html also
+   loads. */
+
+/* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
+   body` in refinement.css outspecifies a bare body selector, which is exactly
+   how the block route's ground "was declared for weeks and never painted" —
+   the same trap, in the same place. Measure specificity before assuming a
+   declaration lands. */
+html[data-skin="paper"] body[data-page="about"],
+body[data-page="about"] {
+  margin: 0;
+  background: var(--ab-ground);
+  color: var(--ab-on-ground);
+  --ab-ground: #1C3324;
+  --ab-on-ground: #E8E3D6;
+  --ab-radius: 5.4%;
+}
+
+/* ── header and footer sit on the ground, not on a card ─────────────────── */
+body[data-page="about"] .bk-head,
+body[data-page="about"] .bk-foot {
+  background: none;
+  color: var(--ab-on-ground);
+  border: 0;
+}
+body[data-page="about"] .bk-head a,
+body[data-page="about"] .bk-foot a { color: inherit; }
+body[data-page="about"] .bk-head .bk-go {
+  background: var(--terracotta);
+  color: var(--on-accent);
+  border-radius: var(--ui-radius-small);
+}
+
+/* ── the lede, above the cards ──────────────────────────────────────────── */
+.ab-lede {
+  max-width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 8px;
+}
+.ab-lede p.ab-eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--sans); font-size: 11px; letter-spacing: .14em;
+  opacity: .68;
+}
+.ab-lede h1 {
+  margin: 0;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -.02em;
+  max-width: 18ch; text-wrap: balance;
+}
+.ab-lede .ab-say {
+  margin: 24px 0 0;
+  font-family: var(--sans); font-size: 15px; line-height: 1.6;
+  max-width: 46ch; opacity: .82;
+}
+
+/* ── the two staggered columns ──────────────────────────────────────────── */
+.ab-set {
+  max-width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12.2%;
+  align-items: start;
+}
+/* The offset. Applied to the second column only, so the two run half a card
+   out of step with each other all the way down. */
+.ab-set > .ab-col:nth-child(2) { margin-top: 48%; }
+.ab-col { display: grid; gap: 12.8%; }
+
+/* ── a card ─────────────────────────────────────────────────────────────── */
+.ab-card {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 1 / 1.007;
+  border-radius: var(--ab-radius);
+  overflow: hidden;
+  background: var(--ab-fill, #2F5638);
+  color: var(--ab-ink, #F2EFE4);
+  display: grid;
+  /* Three bands. Which band a piece lands in is what the per-card arrangement
+     below chooses; the bands themselves never move. */
+  grid-template-rows: auto 1fr auto;
+  padding: 5.9%;
+  box-sizing: border-box;
+}
+.ab-art {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  color: var(--ab-art, #FFFFFF);
+  opacity: .5;
+}
+.ab-art svg { width: 100%; height: 100%; display: block; }
+/* One accent per card, and only one — the reference puts a single orange note
+   in an otherwise single-hue field and that restraint is the whole effect. */
+.ab-accent {
+  position: absolute; z-index: 1; pointer-events: none;
+  color: var(--terracotta);
+  width: 14%; opacity: .95;
+}
+/* ⚠️ NOT `.ab-card > *`. That is (0,1,1) against .ab-art's (0,1,0), so it
+   turned the art layer from absolute back to relative and the field never
+   appeared at all — an empty div sitting in the grid flow instead. */
+.ab-card > :is(.ab-name, .ab-note, .ab-mark) { position: relative; z-index: 2; }
+
+.ab-name {
+  margin: 0;
+  font-family: var(--sans); font-weight: 700;
+  font-size: 9cqw; line-height: 1.02; letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.ab-note {
+  margin: 0;
+  font-family: var(--serif); font-size: 2.5cqw; line-height: 1.5;
+  max-width: 22ch; opacity: .9;
+}
+.ab-mark { width: 12cqw; height: auto; display: block; opacity: .92; }
+.ab-mark path { stroke: currentColor; }
+
+/* ── the arrangements ───────────────────────────────────────────────────
+   Four cards, four different triples of corner. Written out one card at a
+   time on purpose: this is composition, and a loop that generated it would
+   only be able to produce the table this exists to avoid. */
+.ab-card[data-plan="a"] { grid-template-areas: "name" "note" "mark"; }
+.ab-card[data-plan="a"] .ab-name { grid-area: name; justify-self: start; }
+.ab-card[data-plan="a"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
+.ab-card[data-plan="a"] .ab-mark { grid-area: mark; justify-self: end; }
+
+.ab-card[data-plan="b"] { grid-template-areas: "mark" "note" "name"; }
+.ab-card[data-plan="b"] .ab-mark { grid-area: mark; justify-self: end; }
+.ab-card[data-plan="b"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
+.ab-card[data-plan="b"] .ab-name { grid-area: name; justify-self: end; text-align: right; }
+
+.ab-card[data-plan="c"] { grid-template-areas: "note" "name" "mark"; }
+.ab-card[data-plan="c"] .ab-note { grid-area: note; justify-self: start; }
+.ab-card[data-plan="c"] .ab-name { grid-area: name; align-self: center; justify-self: end; text-align: right; }
+.ab-card[data-plan="c"] .ab-mark { grid-area: mark; justify-self: end; }
+
+.ab-card[data-plan="d"] { grid-template-areas: "mark" "note" "name"; }
+.ab-card[data-plan="d"] .ab-mark { grid-area: mark; justify-self: start; }
+.ab-card[data-plan="d"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
+.ab-card[data-plan="d"] .ab-name { grid-area: name; justify-self: start; }
+
+/* accent placement, one per card and never twice in the same corner */
+.ab-card[data-plan="a"] .ab-accent { left: 46%; top: 48%; }
+.ab-card[data-plan="b"] .ab-accent { right: 22%; top: 38%; }
+.ab-card[data-plan="c"] .ab-accent { left: 14%; bottom: 20%; }
+.ab-card[data-plan="d"] .ab-accent { right: 18%; bottom: 30%; }
+
+/* ── the closing line ───────────────────────────────────────────────────── */
+.ab-end {
+  max-width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 72px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 16px 32px;
+}
+.ab-end p {
+  margin: 0; font-family: var(--serif);
+  font-size: clamp(20px, 2.6vw, 30px); line-height: 1.24; max-width: 24ch;
+}
+.ab-end .bk-go {
+  background: var(--terracotta); color: var(--on-accent);
+  border-radius: var(--ui-radius-small); padding: 12px 24px;
+  text-decoration: none; font-family: var(--sans); font-size: 13px;
+  min-height: var(--ctl);
+  display: inline-flex; align-items: center;
+}
+
+/* ── one column ─────────────────────────────────────────────────────────
+   The stagger is a two-column idea. On one column it would only push the
+   whole set down by half a card, so it comes off and the cards simply
+   follow each other — the arrangements still differ, which is where the
+   variety was coming from anyway. */
+@media (max-width: 760px) {
+  .ab-set { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0 48px; }
+  .ab-set > .ab-col:nth-child(2) { margin-top: 0; }
+  .ab-col { gap: 16px; }
+  .ab-lede { padding: 32px 0 4px; }
+  .ab-end { padding-bottom: 48px; }
+}
