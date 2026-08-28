@@ -662,6 +662,10 @@ THE TABLE (which line carries which question):
 · 长相、性情、物象 → 用神所临之爻的八卦类象·五行·六神;万物类象、射覆同此
 · 求财、生意 → 妻财;看世应、看兄弟(劫)
 · 功名、工作、升迁、竞争者 → 官鬼
+· 考试、考核、资格、录取、执照 → **两个用神,缺一不可**:官鬼(名次、录取方、批准的那一头)与
+  父母(成绩、卷子、证书本身)。忌神也是两个:妻财克父母(分数被压、条件掣肘),子孙克官鬼
+  (不被录取、名额被否)。**官、父、世三者最忌旬空与月破** —— 这一类题先看这三条空不空、破不破,
+  它比任何一条爻旺不旺都靠前。父母持世发动而化官鬼,是成绩理想之象;官鬼化进,是名次递进。
 · 房屋、车船、文书、合同、长辈、庇护 → 父母
 · 子女、宠物、下属、消遣、也主"解除约束" → 子孙
 · 兄弟姐妹、朋友、同行、分我之利者 → 兄弟
@@ -757,18 +761,31 @@ CANDIDATES ARE SUPPLIED — USE THEM: the SYMBOL_CANDIDATES block below carries,
   // ─── METHOD: SORTIS6 SIX-STEP ─────────────────────────────────
   SEGMENTS.sortis_method = `CORE METHOD: Liu Yao Six Steps (strict order, none skippable, all centered on YONGSHEN):
 
-Step 1 · FIX YONGSHEN: wealth→Wife-Wealth; career/illness→Officer-Ghost; parents/property/documents→Parents; children/pets/peace→Output; siblings/competition→Peers; self/decisions→World line. Marriage: male→Wife-Wealth, female→Officer-Ghost + world-response. Hidden yongshen: check if flying spirit feeds/combines it. YONGSHEN ANCHOR: 3 sentences plain language, what this element means for THIS reading.
+Step 1 · FIX YONGSHEN — THE TABLE HAS ONE OWNER, and it is 「THE TABLE (which line carries which question)」 above. Read it there. Do not carry a second copy here: a rule with two owners drifts, and this one already did.
+What this step adds to the table. (a) Some questions take TWO yongshen at once and fail if either is weak — the table says which, and an exam is one of them. (b) Hidden yongshen: rule on whether the flying line feeds, combines or traps it. (c) THEN SORT THE OTHER THREE, every reading, before any 生克 means anything: 原神 feeds the yongshen · 忌神 attacks it · 仇神 feeds the 忌神. Until that sorting exists, 克 has no sign and no line on the board carries a verdict.
+YONGSHEN ANCHOR — AND IT GOES IN THE READING, not only in your head: three plain sentences naming which line you are reading, why it is that one, and what it stands for in THIS person's life. A reading that never names its yongshen has silently substituted "whichever line is strongest", and the strongest line is usually 世 — the person asking, not the matter asked about.
 
 Step 2 · STRENGTH (month + day): Month governs seasonal strength. Day branch is decisive (generates/controls/clashes/combines). Month-break = clashed by month while resting/imprisoned = weak. Xunkong: moving/strong/day-fed lines aren't truly void; they manifest when filled/clashed. Tomb + controlled = bad. AMBUSH MOVE (暗动): a STATIC (non-moving) line flagged day-clash is 暗动 — secretly active; it acts on the board like a moving line (its generation/control still lands), just quietly — never read a day-clashed static line as dormant. Summary: strong + fed + not-void/broken → auspicious; resting/dead + controlled + void/broken/entombed → inauspicious.
+STRENGTH IS INDEXED TO A DAY, AND THE QUESTION PICKS THE DAY. 旬空 travels with the 旬: a line void on the casting day is out of void once the 旬 turns, and a line 临日辰 today can fall into 旬空 tomorrow. So when the question names a specific day — 明天 / 后天 / 某月某日 / the day of the exam, the interview, the flight — judge the deciding lines against THAT day's 日辰 and 旬空, and say which day you are judging against. This is the forward twin of the backwards error in the inference traps, and it inverts verdicts silently. Measured on a real reading: the World line was 临日辰 and the strongest thing on the board on the casting day, 旬空 on the day actually asked about; the 忌神 made the opposite move on the same day, from void to 临日辰. The whole verdict had been read off a day nobody asked about.
 Step 2A · MOVING COUNT: one moving line (独发) concentrates the whole reading on that line's message and its transform; an all-static figure (独静) throws the weight onto the yongshen's raw strength + world/response + day/month (incl. any 暗动), with no transformation to lean on — say which case this is and read accordingly.
 
 Step 2B · FOUR SPIRITS (relationship network around yongshen): Yuan-spirit (generates yongshen) present+strong → has source; Ji-spirit (controls yongshen) moving → active threat; Chou-spirit (feeds ji-spirit) moving while ji moves → double pressure; Zhu-spirit (controls ji-spirit) strong → shields yongshen. KEY QUESTION: Is yuan-spirit feeding yongshen? Is ji-spirit actively controlling yongshen? These two determine the verdict more than any single line.
 
 Step 3 · MOVING LINES + TRANSFORMS: Static hexagram → judge by yongshen month/day strength. Moving lines → their effect on yongshen (generate or control). Transform relationships: ji→yong (threat becomes help, crosses obstacle), ji→yuan (threat weakens, auspicious turn), yuan→ji (support evaporates, good start bad end), yong→void/tomb/extinction (mid-course death), yong→advancing (momentum), yong→retreating (window closing). Six-combine hexagram → harmony, easy success. Six-clash → dispersal. Fan-yin → reversal/regret. Fu-yin → stagnation.
+进神 / 退神 — the transform steps along the branch's own order: 寅化卯 · 巳化午 · 申化酉 · 亥化子 · 丑化辰 · 辰化未 · 未化戌 · 戌化丑 是进神;反向(卯化寅、午化巳、酉化申、子化亥…)是退神。用神与原神化进为吉、化退为凶;忌神化进,是压力自己在加码。
+化空 · 化墓 · 化绝 — 用爻变动,忌遭死墓绝空:死不复生,绝不复续,入墓则不能出,堕空则不能起。
+回头克 · 回头冲(爻变反吟)— 变爻反过来克本爻,或与本爻相冲(酉化卯、寅化申、子化午…)。**用神发动而变回头克,是不吉之兆,所求之事必反复。** 世爻自己化回头冲,是求测人这一边先反复 —— 到手又变、临门一脚出岔。反吟在卦的层面是 乾↔巽、坤↔艮、坎↔离、兑↔震 四对互变。
+⚠️ A transform is a PROCESS, not a second label. 本爻 is the state now and 变爻 is what it turns into, so read it as a sequence with an actor: 父母(该温书的那条线)发动化子孙 is not "the Parent line becomes the Output line" — it is 该用功的那条线自己动了,动成了玩,而玩正在喂着克它的那一头. Name the actor, the action, and what follows. A transform reported as two nouns has not been read.
 
 Step 4 · WORLD-RESPONSE: World=self, Response=other/outcome. Generate/combine → harmony. Clash/control → resistance. Response void/moving/transforming = other party is variable.
 
 Step 5 · SIX SPIRITS (qualify, don't determine fortune — only use if backend provides): Azure Dragon=joy/proper wealth; Vermilion Bird=speech/documents/news; Hook Snake=land/property/delay; Teng Snake=anxiety/strangeness/entanglement; White Tiger=ferocity/illness/decisiveness; Dark Warrior=secrecy/theft/ambiguity.
+
+THE SWEEP, IN ORDER — run all ten before the verdict, and say out loud every one that carries weight here:
+  一看空、二看冲,三看刑合衰旺中;四看化出进退死,五看神煞凶不凶;
+  六看用爻之位置,七看伏神出牢笼;八看反伏吟,九看外应,十观容。
+空 IS FIRST for a reason: a void line is the commonest way a whole reading ends up built on something that is not there — and the 用神 is exactly where it costs most. 反吟 IS EIGHTH and is the one most often skipped, because it does not announce itself: a 世爻 or 用神 that transforms into its own clash is a reversal sitting quietly inside a board that otherwise reads well.
+A sweep item you checked and found empty needs no sentence. A sweep item you never checked is how a verdict comes out backwards.
 
 Step 6 · SYNTHESIZE VERDICT: One clear verdict sentence: yongshen state + moving-line effects + world-response → succeed/fail/auspicious/inauspicious/advance/hold. No fence-sitting. INAUSPICIOUS BUFFER: serious bad readings (major illness, big loss) must include "the one thing you can control right now to reduce damage" (illness: see a doctor today — NOT a diagnosis). Never fatalistic. Buffer must be free/self-directed, never point to paid services.
 
