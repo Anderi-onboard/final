@@ -5,6 +5,19 @@
 (function () {
   "use strict";
   var M = window.BWMarks;
+
+  /* ── module state ─────────────────────────────────────────────────────────
+     ⚠️ Declared HERE, above the render pass, and not beside the functions that
+     use them. The render runs while this file is still executing, so a `var`
+     initialised further down is hoisted-but-undefined when the first field asks
+     for it. Three separate values have been caught by that in this file — a
+     name cache, a radius cache, and the deal cursor, the last of which silently
+     dealt every mark as deck[NaN] and emptied both fields on the method page.
+     Guarding each one lazily was treating the symptom; they live at the top
+     now. */
+  var PH_R = {};       /* motif name → drawn radius, measured once            */
+  var DEAL = 0;        /* one cursor across every field on the page (see below) */
+
   if (!M) return;
 
   var PATTERN = {
@@ -193,7 +206,8 @@
          of a fifth of the cell only about thirteen marks fit, so ten of the
          thirty never appeared. */
       body = blendField(w, h, { seed: 20260829 + parseInt(scat, 10) * 4093,
-                                deal: (parseInt(scat, 10) - 1) * 15 });
+                                lead: el.getAttribute("data-lead") || null,
+                                leadAt: parseInt(scat, 10) === 1 ? 0.34 : 0.62 });
     } else if (pat && PATTERN[pat]) {
       var p = PATTERN[pat](w, h);
       /* Three shapes a pattern can take: filled markup, a stroked path, or raw
@@ -308,14 +322,7 @@
      overlap is not discouraged here, it is impossible: a candidate is rejected
      unless the gap between its own drawn radius and its neighbour's is clear.
      Nothing is ever laid over anything else. */
-  /* ⚠️ Both caches initialise on first use, not at their declaration line.
-     The render pass runs while this file is still executing, so anything
-     assigned below the call site is hoisted-but-undefined when the first field
-     asks for it. This is the second cache in this file to be caught by it —
-     declare the variable, fill it in the function. */
-  var PH_R = null;
   function motifRadius(name) {
-    if (!PH_R) PH_R = {};
     if (PH_R[name] != null) return PH_R[name];
     var d = M.phenomena[name] && M.phenomena[name]();
     var r = 20;
@@ -333,10 +340,16 @@
   }
 
   var PH_NAMES = null;
+  /* ⭐ One cursor for the whole page, not an offset per field. Fields do not
+     know how many marks the previous one managed to place, so any fixed offset
+     is a guess: 15 made two fields overlap by a slot and lost a motif, 17
+     skipped one and lost three. A shared cursor deals the catalogue out exactly
+     once before anything repeats, whatever each field ends up fitting.
+     ⚠️ DEAL is declared at the top of the file, not here — a second `var DEAL =
+     0` at this point would re-zero the cursor after the first render pass. */
 
   function scatterField(w, h, opt) {
     opt = opt || {};
-    if (!PH_NAMES) PH_NAMES = Object.keys(M.phenomena);
     var rand = M.rng(opt.seed || 20260829);
     var pitch = opt.pitch || Math.max(20, Math.min(w, h) / 11);
     var rSame = pitch * (opt.same || 3.4);      /* a motif vs itself   */
@@ -365,28 +378,43 @@
     lane = h / lanes;
 
     var placed = [], tries = 0, cap = target * 60;
+
+    /* ⭐ A block of material needs a subject. An even field has no centre and
+       the eye has nowhere to land — it reads as wallpaper however well spaced
+       it is. One motif is drawn large and at full weight, the rest sit back.
+       ⚠️ It is placed FIRST, at its own scale, so every later candidate is
+       tested against its real radius. Enlarging a mark after placement would
+       reopen the overlap the clearance test exists to prevent. */
+    if (opt.lead) {
+      var leadScale = baseScale * (opt.leadScale || 2.3);
+      var lr = motifRadius(opt.lead) * leadScale;
+      placed.push({
+        x: w * (opt.leadAt || 0.38), y: h * 0.5,
+        name: opt.lead, k: 1, drawn: lr, sc: leadScale, lead: true, band: 0
+      });
+    }
     /* Cycle the class rather than drawing it at random: every motif is dealt
        before any is dealt twice, which is how all thirty actually get used
        instead of the common ones crowding out the rest. The offset walks by a
        number coprime with the count so successive passes do not repeat the
        same order. */
-    /* ⚠️ One deck for the whole site, shuffled from a CONSTANT seed, with each
-       field starting at a different place in it. Shuffling per field looked
-       tidier and quietly cost coverage: two sparse fields drawing independently
-       overlap, so the method page dealt only 17 of the 30. Dealing consecutive
-       slots of a shared order means two fields of twenty cover the catalogue
-       between them. Positions still come from the field's own seed, so nothing
+    /* ⚠️ One deck for the whole site, shuffled from a CONSTANT seed, and dealt
+       through a cursor shared by every field on the page. Shuffling per field
+       looked tidier and quietly cost coverage — two sparse fields drawing
+       independently overlap, and the method page dealt only 17 of the 30.
+       Per-field offsets were no better, because a field cannot know how many
+       marks the one before it actually fitted: 15 overlapped by a slot, 17
+       skipped one. Positions still come from each field's own seed, so nothing
        reads as repeated. */
-    var deck = PH_NAMES.slice();
+    var deck = Object.keys(M.phenomena);
     var dealer = M.rng(20260829);
     for (var s = deck.length - 1; s > 0; s--) {
       var j = Math.floor(dealer() * (s + 1)), t = deck[s]; deck[s] = deck[j]; deck[j] = t;
     }
-    var ci = opt.deal || 0;
 
     while (placed.length < target && tries < cap) {
       tries++;
-      var name = deck[ci % deck.length];
+      var name = deck[DEAL % deck.length];
       var x = rand() * w;
       var y = (Math.floor(rand() * lanes) + 0.5 + (rand() - 0.5) * 0.44) * lane;
       var ok = true;
@@ -415,8 +443,9 @@
          visible hole in the shape of the text box, which reads as a mistake;
          the ground is supposed to pass under the figure, only with less
          detail. `near` floors rather than rejects. */
-      placed.push({ x: x, y: y, name: name, k: near, drawn: drawn, band: placed.length % bands });
-      ci++;
+      placed.push({ x: x, y: y, name: name, k: near, drawn: drawn,
+                    sc: baseScale, band: placed.length % bands });
+      DEAL++;
     }
 
     /* Grouped into a few drift bands rather than animated one mark at a time:
@@ -433,11 +462,14 @@
          and every mark sits on the same plane. No rotation anywhere either:
          the catalogue already mixes upright and lying motifs, and tilting them
          on top of that is what turns a field into a jumble. */
-      /* one plane: size no longer varies with the falloff at all, or a mark
-         near type would be smaller than the clearance it was placed with */
-      var sc = baseScale;
+      /* one plane: size does not vary with the falloff, or a mark near type
+         would be smaller than the clearance it was placed with. The lead is the
+         one deliberate exception, and it is placed FIRST at its own size so the
+         clearance test sees it correctly. */
+      var sc = p.sc;
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
-        + ') scale(' + sc.toFixed(4) + ')" opacity="' + (0.30 + 0.70 * p.k).toFixed(3)
+        + ') scale(' + sc.toFixed(4) + ')" opacity="'
+        + (p.lead ? 1 : (0.26 + 0.58 * p.k)).toFixed(3)
         + '"><path d="' + d + '"/></g>';
     });
     var svg = "";
@@ -478,10 +510,6 @@
       slot.innerHTML = M.svg(
         blendField(w, h, {
           seed: 20260829 + i * 6317,
-          /* deal from a different point of the shared deck, same reason as the
-             decorative cells: fields drawing from the same offset overlap and
-             the catalogue never gets dealt out */
-          deal: i * 7,
           /* ⚠️ Capped. A backdrop host can be the whole page column, and a
              pitch derived from its short side then draws marks several times
              the size of the ones on the cards. */
@@ -511,8 +539,10 @@
     opt = opt || {};
     return scatterField(w, h, {
       seed: opt.seed || 20260829,
-      deal: opt.deal || 0,
-      pitch: opt.pitch || Math.max(34, Math.min(w, h) / 5.9),
+      lead: opt.lead || null,
+      leadAt: opt.leadAt,
+      leadScale: opt.leadScale,
+      pitch: opt.pitch || Math.max(32, Math.min(w, h) / 6.4),
       same: opt.same || 3.2,
       any: opt.any || 1.15,
       avoid: opt.avoid || [],
