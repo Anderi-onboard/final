@@ -175,30 +175,29 @@ body[data-page="about"] .bk-head .bk-go {
      below chooses; the bands themselves never move. */
   grid-template-rows: auto 1fr auto;
   padding: 5.9%;
+  gap: 4%;
   box-sizing: border-box;
 }
-.ab-art {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  color: var(--ab-art, #FFFFFF);
-  /* .5 measured fine for contrast and still read as crowded — the caption sat
-     in the thick of a cluster. Contrast was never the problem; density was. */
-  opacity: .38;
+/* the artwork, in the flow between the two text bands */
+.ab-figure { grid-row: 2; align-self: center; width: 100%; min-height: 0;
+  color: var(--ab-art, #8FB489); }
+.ab-figure svg { width: 100%; height: 100%; display: block; overflow: visible; }
+/* The figure drifts as one piece — the arrangement is the point, so the marks
+   do not move relative to each other. Same coprime periods as the block route's
+   fields (37 · 53 · 71s), transform only, off under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .ab-figure[data-fig="1"] svg { animation: ab-fig-a 37s ease-in-out infinite alternate; }
+  .ab-figure[data-fig="2"] svg { animation: ab-fig-b 53s ease-in-out infinite alternate; }
+  .ab-figure[data-fig="3"] svg { animation: ab-fig-c 71s ease-in-out infinite alternate; }
+  .ab-figure[data-fig="4"] svg { animation: ab-fig-a 53s ease-in-out infinite alternate; }
 }
-.ab-art svg { width: 100%; height: 100%; display: block; }
-/* One accent per card, and only one — the reference puts a single orange note
-   in an otherwise single-hue field and that restraint is the whole effect. */
-/* The accent rotates with the rest, and floors its chroma rather than capping
-   it: it is the one loud note on an otherwise single-hue card, so a near-grey
-   colourway is the case where it most needs to stay a note. */
-.ab-accent {
-  position: absolute; z-index: 1; pointer-events: none;
-  color: var(--ab-accent-c, var(--terracotta));
-  width: 14%; opacity: .95;
-}
+@keyframes ab-fig-a { from { transform: translate(0, 0); } to { transform: translate(1.4%, -2.2%); } }
+@keyframes ab-fig-b { from { transform: translate(0, 0); } to { transform: translate(-1.8%, 1.6%); } }
+@keyframes ab-fig-c { from { transform: translate(0, 0); } to { transform: translate(1.1%, 2.4%); } }
 /* ⚠️ NOT `.ab-card > *`. That is (0,1,1) against .ab-art's (0,1,0), so it
    turned the art layer from absolute back to relative and the field never
    appeared at all — an empty div sitting in the grid flow instead. */
-.ab-card > :is(.ab-name, .ab-note, .ab-mark) { position: relative; z-index: 2; }
+
 
 .ab-name {
   margin: 0;
@@ -215,58 +214,33 @@ body[data-page="about"] .bk-head .bk-go {
      A width stated in the card's own unit is a column that is always there. */
   max-width: 58cqw; opacity: .9;
 }
-/* ⚠️ Square, not `height:auto`. The mark is painted into the span by blocks.js
-   from the element's own box, so a span with no intrinsic height measures zero
-   and nothing draws. And each card names a DIFFERENT phenomenon — the first
-   version pasted one wave glyph into all four, which is the exact repetition
-   this page's arrangement exists to avoid. The mark also differs from the
-   card's own field, so a card is never one motif twice. */
-.ab-mark { width: 12cqw; aspect-ratio: 1; display: block; opacity: .92; }
-.ab-mark svg { width: 100%; height: 100%; display: block; }
 
 /* ── the arrangements ───────────────────────────────────────────────────
-   Four cards, four different triples of corner. Written out one card at a
-   time on purpose: this is composition, and a loop that generated it would
-   only be able to produce the table this exists to avoid. */
-.ab-card[data-plan="a"] { grid-template-areas: "name" "note" "mark"; }
-.ab-card[data-plan="a"] .ab-name { grid-area: name; justify-self: start; }
-.ab-card[data-plan="a"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
-.ab-card[data-plan="a"] .ab-mark { grid-area: mark; justify-self: end; }
+   ⭐ ONE LAYER, and this is what that finally means. The art used to be a
+   field behind the type, and a field behind type is a second layer no matter
+   how quiet it is — the panel floats and the texture runs on underneath it.
+   Here the artwork is a BLOCK IN THE FLOW: headline, then the figure, then the
+   caption, all in the same plane, the way the reference sets a drawing between
+   its heading and its body copy. Nothing is behind anything.
 
-.ab-card[data-plan="b"] { grid-template-areas: "mark" "note" "name"; }
-.ab-card[data-plan="b"] .ab-mark { grid-area: mark; justify-self: end; }
-.ab-card[data-plan="b"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
-.ab-card[data-plan="b"] .ab-name { grid-area: name; justify-self: end; text-align: right; }
+   The middle band is 1fr, so the figure takes whatever the two text bands
+   leave — roughly a third of the card, which is the reference's proportion.
 
-.ab-card[data-plan="c"] { grid-template-areas: "note" "name" "mark"; }
-.ab-card[data-plan="c"] .ab-note { grid-area: note; justify-self: start; }
-.ab-card[data-plan="c"] .ab-name { grid-area: name; align-self: center; justify-self: end; text-align: right; }
-.ab-card[data-plan="c"] .ab-mark { grid-area: mark; justify-self: end; }
+   Four cards, four arrangements, still no two alike: which of name and note
+   takes the top band, and which edge each sits against. That is what makes
+   four cards in one colour read as four things. Written out one at a time on
+   purpose — a loop could only produce the table this exists to avoid. */
+.ab-card[data-plan="a"] .ab-name { grid-row: 1; justify-self: start; }
+.ab-card[data-plan="a"] .ab-note { grid-row: 3; justify-self: start; }
 
-.ab-card[data-plan="d"] { grid-template-areas: "mark" "note" "name"; }
-.ab-card[data-plan="d"] .ab-mark { grid-area: mark; justify-self: start; }
-.ab-card[data-plan="d"] .ab-note { grid-area: note; align-self: center; justify-self: start; }
-.ab-card[data-plan="d"] .ab-name { grid-area: name; justify-self: start; }
+.ab-card[data-plan="b"] .ab-note { grid-row: 1; justify-self: start; }
+.ab-card[data-plan="b"] .ab-name { grid-row: 3; justify-self: end; text-align: right; }
 
-/* Accent placement, one per card and never twice in the same corner.
-   ⚠️ Each one goes in the quadrant that card's arrangement leaves empty. The
-   first pass put card a's at 46%/48%, straight through the end of its caption
-   — the accent is the one loud thing on the card, so it lands on text before
-   anything else does. Read the arrangement above, then place it where the
-   arrangement is not.
+.ab-card[data-plan="c"] .ab-name { grid-row: 1; justify-self: end; text-align: right; }
+.ab-card[data-plan="c"] .ab-note { grid-row: 3; justify-self: start; }
 
-   ⚠️ And it has to be a quadrant the arrangement leaves EMPTY, not just a gap
-   that happens to look clear at one width. The second pass placed three of
-   them in gaps beside the caption; measured across 1440 / 768 / 390 they
-   grazed it at every width, because the caption's height in lines does not
-   scale with the card the way its width does. The note is always in the
-   centre band and always left-aligned, so the free quadrant is a property of
-   the arrangement — read it off the areas above, and the placement holds at
-   any width. */
-.ab-card[data-plan="a"] .ab-accent { right: 16%; top: 14%; }   /* name TL, note CL, mark BR → top-right  */
-.ab-card[data-plan="b"] .ab-accent { left: 12%; top: 12%; }    /* mark TR, note CL, name BR → top-left   */
-.ab-card[data-plan="c"] .ab-accent { left: 12%; bottom: 14%; } /* note TL, name CR, mark BR → bottom-left*/
-.ab-card[data-plan="d"] .ab-accent { right: 18%; top: 46%; }   /* everything left → the whole right edge  */
+.ab-card[data-plan="d"] .ab-note { grid-row: 1; justify-self: end; text-align: right; }
+.ab-card[data-plan="d"] .ab-name { grid-row: 3; justify-self: start; }   /* everything left → the whole right edge  */
 
 /* ── the closing line ───────────────────────────────────────────────────── */
 .ab-end {
