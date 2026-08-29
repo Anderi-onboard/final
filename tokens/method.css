@@ -167,7 +167,12 @@ body[data-page="guide"] .mt-meta {
   font-size: max(9px, 2.46cqw);
   letter-spacing: .12em;
   line-height: 1.5;
-  opacity: .74;
+  /* ⚠️ Was .74. Under a rotating palette that folded the label toward its own
+     carrier until it measured 3.88:1 on group 089 — and the site's own rule is
+     that a tier you cannot read is not a tier, it is lost text. The hierarchy
+     here is already carried by size and by .12em of tracking; the fade was
+     only ever the third signal, so it gives way rather than the words. */
+  opacity: .88;
 }
 body[data-page="guide"] .mt-card p:not(.mt-meta), body[data-page="guide"] .mt-card li, body[data-page="guide"] .mt-card dd {
   font-size: max(12px, 3.24cqw);
@@ -337,7 +342,7 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
 body[data-page="guide"] .mt-hint {
   margin: 0; display: flex; align-items: center; gap: 1.8cqw;
   font-family: var(--sans);
-  font-size: max(11px, 3.1cqw); letter-spacing: .06em; opacity: .78;
+  font-size: max(11px, 3.1cqw); letter-spacing: .06em; opacity: .92;
   transition: opacity 140ms var(--ease-out);
 }
 body[data-page="guide"] .mt-hint i {

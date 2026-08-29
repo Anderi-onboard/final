@@ -42,7 +42,66 @@ body[data-page="about"] {
   --ab-ground: #1C3324;
   --ab-on-ground: #E8E3D6;
   --ab-radius: 5.4%;
+  /* Four card tones, deep to deeper. Fallbacks first — this is the page as it
+     shipped, and it is what a failed palette fetch still gets. */
+  --ab-fill-1: #2F5638; --ab-ink-1: #F2EFE4; --ab-art-1: #8FB489;
+  --ab-fill-2: #24452C; --ab-ink-2: #EFEADD; --ab-art-2: #7FA57C;
+  --ab-fill-3: #356A45; --ab-ink-3: #F4F1E7; --ab-art-3: #9CC095;
+  --ab-fill-4: #1F3D2A; --ab-ink-4: #EDE8DB; --ab-art-4: #79A17A;
 }
+
+/* This route rotates with the colour groups too, on the same clock as the
+   range — but unlike the method page it stays one hue per group, because that
+   is what this composition is arguing (see the ⭐ below). Lightness is clamped
+   for the reason given at length in blocks.css: the step index is not a
+   brightness, and a card that drifts pale takes its own pale type with it.
+
+   ⚠️ The four cards must stay separable from each other AND from the ground,
+   which with a single hue is entirely a matter of lightness. The bands do not
+   overlap: ground .12–.18, then .20–.26, .23–.29, .28–.35, .33–.41. One band
+   for all four would give four identical cards in every group. */
+/* ⚠️ The selector must carry html[data-skin="paper"] as well. @supports adds
+   no specificity of its own, so a bare body[data-page="about"] here weighs
+   (0,2,0) against the fallback block's (0,3,0) above and loses — the page
+   rendered the same green in all 114 groups while every measurement passed,
+   because the fallbacks are a valid design. Third time this file has been
+   caught by a missing html[data-skin] qualifier. */
+@supports (color: oklch(from red l c h)) {
+  html[data-skin="paper"] body[data-page="about"],
+  body[data-page="about"] {
+    /* ⭐ One source for all five surfaces, and only the lightness differs.
+       The first version took each card from a different step, which rotates
+       just as well and quietly destroys the page's argument: sourcing four
+       different steps gave four different HUES, and once colour separates the
+       cards the stagger and the corner triples are no longer doing the work
+       they exist to do. Four cards in one colour reading as four things is the
+       whole claim; keep them one colour and let the arrangement earn it. */
+    --ab-ground:    oklch(from var(--bw-palette-5, #1C3324) clamp(.12, l, .18) min(c, .06) h);
+    --ab-on-ground: oklch(from var(--bw-palette-5, #E8E3D6) clamp(.93, l, .97) min(c, .04) h);
+
+    --ab-fill-1: oklch(from var(--bw-palette-5, #2F5638) clamp(.28, l, .35) min(c, .09) h);
+    --ab-fill-2: oklch(from var(--bw-palette-5, #24452C) clamp(.23, l, .29) min(c, .09) h);
+    --ab-fill-3: oklch(from var(--bw-palette-5, #356A45) clamp(.33, l, .41) min(c, .09) h);
+    --ab-fill-4: oklch(from var(--bw-palette-5, #1F3D2A) clamp(.20, l, .26) min(c, .09) h);
+
+    /* Type and field take the card's own hue, so each card stays one colour
+       family rather than a tinted panel with neutral text dropped on it. */
+    --ab-ink-1: oklch(from var(--ab-fill-1) clamp(.94, l, .97) min(c, .03) h);
+    --ab-ink-2: oklch(from var(--ab-fill-2) clamp(.94, l, .97) min(c, .03) h);
+    --ab-ink-3: oklch(from var(--ab-fill-3) clamp(.94, l, .97) min(c, .03) h);
+    --ab-ink-4: oklch(from var(--ab-fill-4) clamp(.94, l, .97) min(c, .03) h);
+    --ab-art-1: oklch(from var(--ab-fill-1) clamp(.66, l, .74) min(c, .08) h);
+    --ab-art-2: oklch(from var(--ab-fill-2) clamp(.64, l, .72) min(c, .08) h);
+    --ab-art-3: oklch(from var(--ab-fill-3) clamp(.68, l, .76) min(c, .08) h);
+    --ab-art-4: oklch(from var(--ab-fill-4) clamp(.62, l, .70) min(c, .08) h);
+    --ab-accent-c: oklch(from var(--bw-palette-gem, #C9663F) clamp(.56, l, .66) max(c, .13) h);
+  }
+}
+
+.ab-card[data-tone="1"] { --ab-fill: var(--ab-fill-1); --ab-ink: var(--ab-ink-1); --ab-art: var(--ab-art-1); }
+.ab-card[data-tone="2"] { --ab-fill: var(--ab-fill-2); --ab-ink: var(--ab-ink-2); --ab-art: var(--ab-art-2); }
+.ab-card[data-tone="3"] { --ab-fill: var(--ab-fill-3); --ab-ink: var(--ab-ink-3); --ab-art: var(--ab-art-3); }
+.ab-card[data-tone="4"] { --ab-fill: var(--ab-fill-4); --ab-ink: var(--ab-ink-4); --ab-art: var(--ab-art-4); }
 
 /* ── header and footer sit on the ground, not on a card ─────────────────── */
 body[data-page="about"] .bk-head,
@@ -54,7 +113,7 @@ body[data-page="about"] .bk-foot {
 body[data-page="about"] .bk-head a,
 body[data-page="about"] .bk-foot a { color: inherit; }
 body[data-page="about"] .bk-head .bk-go {
-  background: var(--terracotta);
+  background: var(--bk-clay);
   color: var(--on-accent);
   border-radius: var(--ui-radius-small);
 }
@@ -123,9 +182,12 @@ body[data-page="about"] .bk-head .bk-go {
 .ab-art svg { width: 100%; height: 100%; display: block; }
 /* One accent per card, and only one — the reference puts a single orange note
    in an otherwise single-hue field and that restraint is the whole effect. */
+/* The accent rotates with the rest, and floors its chroma rather than capping
+   it: it is the one loud note on an otherwise single-hue card, so a near-grey
+   colourway is the case where it most needs to stay a note. */
 .ab-accent {
   position: absolute; z-index: 1; pointer-events: none;
-  color: var(--terracotta);
+  color: var(--ab-accent-c, var(--terracotta));
   width: 14%; opacity: .95;
 }
 /* ⚠️ NOT `.ab-card > *`. That is (0,1,1) against .ab-art's (0,1,0), so it
@@ -213,7 +275,7 @@ body[data-page="about"] .bk-head .bk-go {
   font-size: clamp(20px, 2.6vw, 30px); line-height: 1.24; max-width: 24ch;
 }
 .ab-end .bk-go {
-  background: var(--terracotta); color: var(--on-accent);
+  background: var(--bk-clay); color: var(--on-accent);
   border-radius: var(--ui-radius-small); padding: 12px 24px;
   text-decoration: none; font-family: var(--sans); font-size: 13px;
   min-height: var(--ctl);

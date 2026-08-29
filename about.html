@@ -16,15 +16,15 @@
 <style>html{overflow-x:clip}html,body{background:#1C3324}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/about.css?v=20260828a">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/about.css?v=20260828b">
 </head>
 <body class="blocks-route" data-page="about">
 
@@ -50,8 +50,7 @@
 
   <div class="ab-col">
     <!-- a · name top-left, note centre-left, mark bottom-right -->
-    <article class="ab-card" data-plan="a" data-ph="root"
-      style="--ab-fill:#2F5638; --ab-ink:#F2EFE4; --ab-art:#8FB489">
+    <article class="ab-card" data-plan="a" data-ph="root" data-tone="1">
       <div class="ab-art"></div>
       <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"></circle></svg>
       <h2 class="ab-name">Separation</h2>
@@ -60,8 +59,7 @@
     </article>
 
     <!-- d · mark top-left, note centre-left, name bottom-left -->
-    <article class="ab-card" data-plan="d" data-ph="tide"
-      style="--ab-fill:#24452C; --ab-ink:#EFEADD; --ab-art:#7FA57C">
+    <article class="ab-card" data-plan="d" data-ph="tide" data-tone="2">
       <div class="ab-art"></div>
       <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="20" height="6" rx="3" fill="currentColor"></rect></svg>
       <span class="ab-mark" data-ph="stone" aria-hidden="true"></span>
@@ -72,8 +70,7 @@
 
   <div class="ab-col">
     <!-- b · mark top-right, note centre-left, name bottom-right -->
-    <article class="ab-card" data-plan="b" data-ph="stone"
-      style="--ab-fill:#356A45; --ab-ink:#F4F1E7; --ab-art:#9CC095">
+    <article class="ab-card" data-plan="b" data-ph="stone" data-tone="3">
       <div class="ab-art"></div>
       <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 L15 9 L23 12 L15 15 L12 23 L9 15 L1 12 L9 9 Z" fill="currentColor"></path></svg>
       <span class="ab-mark" data-ph="frost" aria-hidden="true"></span>
@@ -82,8 +79,7 @@
     </article>
 
     <!-- c · note top-left, name centre-right, mark bottom-right -->
-    <article class="ab-card" data-plan="c" data-ph="reed"
-      style="--ab-fill:#1F3D2A; --ab-ink:#EDE8DB; --ab-art:#79A17A">
+    <article class="ab-card" data-plan="c" data-ph="reed" data-tone="4">
       <div class="ab-art"></div>
       <svg class="ab-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 C8 4, 16 4, 21 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path></svg>
       <p class="ab-note">You choose how much structure the question needs — one figure, or one figure and what it turns into.</p>
@@ -107,9 +103,15 @@
   <a href="./privacy.html">Privacy</a>
 </footer>
 
-<script src="./assets/marks.js?v=20260828a"></script>
-<script src="./assets/blocks.js?v=20260828a"></script>
-<script src="./assets/about.js?v=20260828a"></script>
-<script src="./assets/weave.js?v=20260828a" defer></script>
+<!-- Palette only. There is no .mtn-bg on this route, so the engine's build
+     loop matches nothing and not one ridge is drawn; what runs is the
+     schedule, which publishes --bw-palette-* on <html> off the session
+     clock. That is what makes the colour continuous when you arrive here
+     from a glass route: same seed, same clock, same group. -->
+<script src="./assets/backgrounds/mountain-range.js?v=20260828b"></script>
+<script src="./assets/marks.js?v=20260828b"></script>
+<script src="./assets/blocks.js?v=20260828b"></script>
+<script src="./assets/about.js?v=20260828b"></script>
+<script src="./assets/weave.js?v=20260828b" defer></script>
 </body>
 </html>

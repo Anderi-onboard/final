@@ -230,6 +230,27 @@
      re-run this when a step becomes visible. */
   function all() { cells.forEach(function (c) { if (c.clientWidth > 0) render(c); }); }
   all();
+
+  /* ── the group crossfade gate ─────────────────────────────────────────────
+     The block routes recolour with the palette, and the transition that makes
+     that a crossfade must NOT run on the first application: the stylesheet's
+     fallback colours paint first, so an ungated transition fades the page from
+     the fallback into the group on every single load — a visible wash of the
+     wrong colour before the right one, once per navigation. The class goes on
+     after the first group has landed, so load is instant and every change
+     after it is a crossfade. */
+  (function () {
+    var root = document.documentElement;
+    function arm() {
+      window.removeEventListener("bw:palettechange", arm);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { root.classList.add("bw-cross"); });
+      });
+    }
+    if (root.dataset.bwPalette) arm();
+    else window.addEventListener("bw:palettechange", arm);
+  }());
+
   window.BWBlocks = { render: all, dither: ditherField, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being

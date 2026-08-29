@@ -16,15 +16,15 @@
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260828a">
-<link rel="stylesheet" href="./tokens/method.css?v=20260828a">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260828b">
+<link rel="stylesheet" href="./tokens/method.css?v=20260828b">
 </head>
 <body class="blocks-route" data-page="guide">
 
@@ -200,9 +200,15 @@
   <a href="./privacy.html">Privacy</a>
 </footer>
 
-<script src="./assets/marks.js?v=20260828a"></script>
-<script src="./assets/blocks.js?v=20260828a"></script>
-<script src="./assets/method.js?v=20260828a"></script>
-<script src="./assets/weave.js?v=20260828a" defer></script>
+<!-- Palette only. There is no .mtn-bg on this route, so the engine's build
+     loop matches nothing and not one ridge is drawn; what runs is the
+     schedule, which publishes --bw-palette-* on <html> off the session
+     clock. That is what makes the colour continuous when you arrive here
+     from a glass route: same seed, same clock, same group. -->
+<script src="./assets/backgrounds/mountain-range.js?v=20260828b"></script>
+<script src="./assets/marks.js?v=20260828b"></script>
+<script src="./assets/blocks.js?v=20260828b"></script>
+<script src="./assets/method.js?v=20260828b"></script>
+<script src="./assets/weave.js?v=20260828b" defer></script>
 </body>
 </html>

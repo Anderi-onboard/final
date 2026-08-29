@@ -19,6 +19,27 @@
 body.blocks-route, body.blocks-route *, body.blocks-route *::before,
 body.blocks-route *::after { box-sizing: border-box; }
 
+/* The block palette rotates with the colour groups ---------------------------
+   These two routes now carry the same 114 colourways as the range, on the same
+   session clock, so walking from a glass route to this one keeps the colour you
+   arrived in. The values below are the fallback: exactly what shipped before,
+   so a browser without relative colour — or a visitor whose palette fetch
+   failed — gets today's page rather than a broken one.
+
+   ⭐ Hue and chroma come from the group. Lightness does NOT.
+   The index is not a brightness: measured across all 114 groups, step 1 runs
+   from L .35 to L .99 and step 10 from .00 to .84, so "step 1 is the pale
+   ground" is true on average and false in a couple of dozen groups — the exact
+   shape of a bug that appears in one colourway and nowhere else. Clamping
+   lightness per role makes the composition's light/dark structure invariant by
+   construction, which is the only reason 114 colourways can share one layout.
+
+   ⭐ And the hues are drawn from steps 3–7, not from the ends. Chroma by step,
+   median across the catalogue: the middle sits at .074–.088 with 6–8 groups
+   near-grey, while step 1, step 10 and the sky are near-grey in 77, 42 and 90
+   groups. Sourcing a hue from the pale end would have produced a grey site for
+   two thirds of the catalogue. Three groups are near-grey at every step; those
+   render neutral, which is fidelity to the card, not a fault. */
 body.blocks-route {
   --bk-ink:    #1A1714;
   --bk-bone:   #E8DDD8;
@@ -35,6 +56,64 @@ body.blocks-route {
   color: var(--bk-ink);
   font-family: var(--sans);
 }
+
+/* The rotating layer. Every band keeps the group's own lightness where the
+   group already sits inside it, so the page still reads as this colourway and
+   not as a hue filter over a fixed design.
+
+   ⚠️ The dark fills carry light type and the pale fills carry dark type, and
+   that pairing is what the bands exist to protect: between roughly Y .183 and
+   Y .204 neither near-white nor near-black clears 4.5:1, so a fill allowed to
+   drift into the middle has no readable ink at all. No band below reaches it
+   from either side. */
+@supports (color: oklch(from red l c h)) {
+  body.blocks-route {
+    /* pale ground and pale fills — dark type sits on these */
+    --bk-bone:  oklch(from var(--bw-palette-4, #E8DDD8) clamp(.93, l, .97) min(c, .04) h);
+    --bk-cream: oklch(from var(--bw-palette-3, #EFE6E0) clamp(.95, l, .98) min(c, .035) h);
+    --bk-dusty: oklch(from var(--bw-palette-6, #C9A99E) clamp(.80, l, .87) min(c, .07) h);
+    --bk-ochre: oklch(from var(--bw-palette-4, #C79A55) clamp(.78, l, .86) min(c, .09) h);
+
+    /* deep fills — pale type sits on these */
+    --bk-olive: oklch(from var(--bw-palette-5, #5A6B45) clamp(.38, l, .46) min(c, .08) h);
+    --bk-teal:  oklch(from var(--bw-palette-6, #3E6B70) clamp(.36, l, .44) min(c, .08) h);
+    --bk-brick: oklch(from var(--bw-palette-7, #8C3B24) clamp(.30, l, .38) min(c, .10) h);
+
+    /* The clickable one. Chroma is floored so the call to action is the most
+       saturated thing on the page in every group — the one place a near-grey
+       colourway would cost the reader something real — but it is capped too.
+       ⚠️ An uncapped floor is not safe: OKLCH lightness is not luminance, and a
+       saturated yellow at L .50 carries far more of it than a grey at L .50.
+       Group 185 put white on this at 1.71:1 with the cap missing. */
+    --bk-clay:  oklch(from var(--bw-palette-5, #B5573A) clamp(.40, l, .47) clamp(.09, c, .15) h);
+
+    /* type on the pale ground */
+    --bk-ink:   oklch(from var(--bw-palette-7, #1A1714) clamp(.18, l, .28) min(c, .05) h);
+  }
+}
+/* The change of group is a crossfade, on the sky's own curve and duration so
+   that arriving from a glass route the two routes read as one event rather
+   than as two pages that happen to recolour.
+
+   ⚠️ This is a transition, not a per-frame animation — the performance red
+   line bans animating background-color frame by frame, and hold-then-crossfade
+   is precisely the sanctioned alternative. It is also cheap here specifically
+   because this route has no backdrop-filter anywhere: there is no blurred
+   region to invalidate, which is the cost that makes the same move expensive
+   on the glass routes. */
+@media (prefers-reduced-motion: no-preference) {
+  html.bw-cross body.blocks-route :is(.bk-head, .bk-foot, .bk-cell, .bk-go, .mt-card, .ab-card),
+  html.bw-cross[data-skin="paper"] body.blocks-route {
+    transition: background-color 1.5s cubic-bezier(.77, 0, .175, 1),
+                color 1.5s cubic-bezier(.77, 0, .175, 1);
+  }
+  html.bw-cross body.blocks-route :is(svg, .bk-mark, .ab-art, .ab-accent, .ab-mark) {
+    transition: color 1.5s cubic-bezier(.77, 0, .175, 1),
+                fill 1.5s cubic-bezier(.77, 0, .175, 1),
+                stroke 1.5s cubic-bezier(.77, 0, .175, 1);
+  }
+}
+
 /* The ground between blocks is paper, not ink. This needs the [data-skin]
    qualifier to land at all: refinement.css sets `html[data-skin="paper"] body`,
    which outspecifies a plain `body.blocks-route` no matter how late it loads —
@@ -85,7 +164,16 @@ body.blocks-route .bk-brand { display: flex; align-items: center; gap: 9px; text
 body.blocks-route .bk-brand b { font-family: var(--font-brand); font-weight: 400; font-size: 18px; }
 body.blocks-route .bk-mark { display: block; width: 22px; height: 22px; color: var(--bk-clay); }
 body.blocks-route .bk-nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
-body.blocks-route :is(.bk-nav a, .bk-foot a) { color: inherit; text-decoration: none; font-size: 13px; }
+/* ⚠️ :not(.bk-go) is load-bearing, and it is a specificity fix, not a style
+   choice. `:is(.bk-nav a, .bk-foot a)` weighs (0,3,1) against `.bk-go`'s
+   (0,3,0), so the call to action was inheriting the header's dark ink onto its
+   own dark fill and had been failing AA since it was written — 3.71:1 with the
+   old fixed clay, and 1.57:1 on the darkest groups once the fill started
+   rotating. The rotation did not cause this; it made it visible. */
+body.blocks-route :is(.bk-nav a:not(.bk-go), .bk-foot a:not(.bk-go)) {
+  color: inherit; text-decoration: none; font-size: 13px;
+}
+body.blocks-route :is(.bk-nav, .bk-foot) a.bk-go { text-decoration: none; font-size: 13px; }
 /* font-family is explicit because a <button> does NOT inherit it — the UA
    sheet sets its own font, so every .bk-go on these routes was rendering in
    Arial, which is a straight violation of the three-font rule and the one
