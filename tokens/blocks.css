@@ -114,17 +114,23 @@ body.blocks-route {
   }
 }
 
-/* ── the grain hook ─────────────────────────────────────────────────────────
-   Waiting on the greyscale map. It goes in as a MASK over a palette-coloured
-   layer, never as a background-image: a bitmap laid on directly carries its
-   own fixed colour and would be the one thing on these routes that does not
-   follow the 114 groups — the exact clash this repo already recorded for SVG
-   inside CSS url(). As a stencil the grain takes --bk-ink and rotates for free.
-   Unset, this whole layer paints nothing, so it costs nothing until the file
-   lands: set --bk-grain to url(...) to switch it on. */
+/* ── the grain ──────────────────────────────────────────────────────────────
+   In as a MASK over a layer painted currentColor, never as a background-image:
+   a bitmap laid on directly carries its own fixed colour and would be the one
+   thing on these routes not following the 114 groups — the exact clash this
+   repo already recorded for SVG inside CSS url(). As a stencil it takes the
+   card's own ink and rotates for free.
+
+   ⚠️ Placeholder art. This is a procedural stand-in matched by eye to the
+   sample; swapping in the real map is a one-line change to --bk-grain.
+
    ⚠️ Gated on a class, not on whether the variable is set. `mask-image: none`
    means "show everything", so an ungated layer with no map paints a flat wash
    of ink over every card — the failure mode is a ruined page, not a no-op. */
+body.blocks-route {
+  --bk-grain: url("../assets/textures/paper-grain.svg");
+  --bk-grain-size: 320px;
+}
 body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card) { position: relative; }
 body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card)::after {
   content: "";
@@ -138,6 +144,19 @@ body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card)::after {
   mask-size: var(--bk-grain-size, 320px);
   mask-repeat: repeat;
 }
+
+/* The backdrop field sits under everything the card holds. z-index 0 with the
+   card's own content left in normal flow puts it behind, which is the whole
+   point: this is ground. */
+body.blocks-route :has(> .bk-art) { position: relative; }
+body.blocks-route .bk-art {
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
+  color: inherit;
+}
+body.blocks-route .bk-art svg { width: 100%; height: 100%; display: block; }
+/* and the content rides above it */
+body.blocks-route :is(.mt-card, .bk-cell, .ab-set, .ab-lede) > :not(.bk-art) { position: relative; z-index: 1; }
 
 /* ── the phenomena drift ────────────────────────────────────────────────────
    The field moves, but only as three composited layers — never as hundreds of

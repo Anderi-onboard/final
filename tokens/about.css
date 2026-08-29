@@ -152,8 +152,13 @@ body[data-page="about"] .bk-head .bk-go {
   align-items: start;
 }
 /* The offset. Applied to the second column only, so the two run half a card
-   out of step with each other all the way down. */
-.ab-set > .ab-col:nth-child(2) { margin-top: 48%; }
+   out of step with each other all the way down.
+   ⚠️ `.ab-col + .ab-col`, never `:nth-child(2)`. nth-child counts ALL
+   children, so the moment a backdrop layer was inserted as the first child the
+   stagger jumped to the first column and the composition inverted. A selector
+   that counts siblings of any type is a selector that breaks when anything is
+   added to the box. */
+.ab-set > .ab-col + .ab-col { margin-top: 48%; }
 .ab-col { display: grid; gap: 12.8%; }
 
 /* ── a card ─────────────────────────────────────────────────────────────── */
@@ -289,7 +294,7 @@ body[data-page="about"] .bk-head .bk-go {
    variety was coming from anyway. */
 @media (max-width: 760px) {
   .ab-set { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0 48px; }
-  .ab-set > .ab-col:nth-child(2) { margin-top: 0; }
+  .ab-set > .ab-col + .ab-col { margin-top: 0; }
   .ab-col { gap: 16px; }
   .ab-lede { padding: 32px 0 4px; }
   .ab-end { padding-bottom: 48px; }

@@ -191,9 +191,9 @@
          a different seed so it is a different field. */
       /* Dense enough that the whole catalogue actually gets dealt: at a pitch
          of a fifth of the cell only about thirteen marks fit, so ten of the
-         thirty never appeared. A ninth puts roughly forty in each. */
+         thirty never appeared. */
       body = scatterField(w, h, { seed: 20260829 + parseInt(scat, 10) * 4093,
-                                  pitch: Math.max(22, Math.min(w, h) / 9) }).markup;
+                                  pitch: Math.max(18, Math.min(w, h) / 13) }).markup;
     } else if (pat && PATTERN[pat]) {
       var p = PATTERN[pat](w, h);
       /* Three shapes a pattern can take: filled markup, a stroked path, or raw
@@ -302,13 +302,24 @@
     opt = opt || {};
     if (!PH_NAMES) PH_NAMES = Object.keys(M.phenomena);
     var rand = M.rng(opt.seed || 20260829);
-    var pitch = opt.pitch || Math.max(26, Math.min(w, h) / 6);
-    var rSame = pitch * (opt.same || 2.6);      /* a motif vs itself   */
-    var rAny  = pitch * (opt.any  || 0.78);     /* a motif vs any other */
+    var pitch = opt.pitch || Math.max(20, Math.min(w, h) / 11);
+    var rSame = pitch * (opt.same || 3.4);      /* a motif vs itself   */
+    var rAny  = pitch * (opt.any  || 0.60);     /* a motif vs any other */
     var avoid = opt.avoid || [];                /* text boxes, page coords */
-    var soft  = opt.soft == null ? pitch * 1.5 : opt.soft;
+    var soft  = opt.soft == null ? pitch * 1.4 : opt.soft;
     var bands = opt.bands || 3;
-    var target = opt.count || Math.round((w * h) / (pitch * pitch) * 0.5);
+    var target = opt.count || Math.round((w * h) / (pitch * pitch) * 0.62);
+
+    /* ⭐ Rows, not free scatter. Pure blue noise has no rhythm — it reads as
+       confetti, which is the "too unstructured" half of the note. The wave
+       field that was pointed at as the good example is stacked: courses of
+       marks running across, which is what gives it order. So y is quantised to
+       a course with a small jitter (±22% of the spacing) while x stays free
+       and conflict-checked. Courses give the stacking; the free x and the
+       conflict matrix keep it off a grid. */
+    var lane = pitch * 1.06;
+    var lanes = Math.max(1, Math.round(h / lane));
+    lane = h / lanes;
 
     var placed = [], tries = 0, cap = target * 60;
     /* Cycle the class rather than drawing it at random: every motif is dealt
@@ -324,7 +335,9 @@
     while (placed.length < target && tries < cap) {
       tries++;
       var name = deck[ci % deck.length];
-      var x = rand() * w, y = rand() * h, ok = true;
+      var x = rand() * w;
+      var y = (Math.floor(rand() * lanes) + 0.5 + (rand() - 0.5) * 0.44) * lane;
+      var ok = true;
       for (var i = 0; i < placed.length; i++) {
         var p = placed[i];
         var dx = p.x - x, dy = p.y - y, d2 = dx * dx + dy * dy;
@@ -357,9 +370,14 @@
     placed.forEach(function (p) {
       var d = M.phenomena[p.name] && M.phenomena[p.name]();
       if (!d) return;
-      /* scale carries the falloff too, so the ground thins toward the figure
-         instead of stopping at a hard edge */
-      var sc = (pitch / 150) * (0.52 + 0.78 * p.k);
+      /* ⭐ Size is very nearly constant; only weight varies. Marks at mixed
+         sizes read as marks at mixed DISTANCES — that is the "too
+         three-dimensional" half of the note, and it is size that causes it,
+         not density. So the figure-ground falloff is carried by opacity alone
+         and every mark sits on the same plane. No rotation anywhere either:
+         the catalogue already mixes upright and lying motifs, and tilting them
+         on top of that is what turns a field into a jumble. */
+      var sc = (pitch / 150) * (0.92 + 0.16 * p.k);
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="' + (0.30 + 0.70 * p.k).toFixed(3)
         + '"><path d="' + d + '"/></g>';
@@ -372,10 +390,59 @@
              used: placed.reduce(function (m, p) { m[p.name] = 1; return m; }, {}) };
   }
 
-  window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField, svg: M.svg };
+
+  /* ── a field behind a carrier that already has content ────────────────────
+     [data-scatter] replaces a cell's contents; this puts a field BEHIND one
+     that already has some. The text boxes are measured at runtime and handed
+     to the placement as avoid regions, so the ground thins toward the type
+     wherever the type happens to be — which on these cards is a different
+     corner every time. */
+  function backdrops() {
+    [].slice.call(document.querySelectorAll("[data-scatter-bg]")).forEach(function (host, i) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 40 || h < 40) return;
+      var slot = host.querySelector(":scope > .bk-art");
+      if (!slot) {
+        slot = document.createElement("div");
+        slot.className = "bk-art";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+      var base = host.getBoundingClientRect();
+      var avoid = [];
+      [].slice.call(host.querySelectorAll("h1,h2,h3,p,li,button,textarea,input,select,label,a,.mt-hint,.mt-meta"))
+        .forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width < 2 || r.height < 2) return;
+          avoid.push({ x: r.left - base.left, y: r.top - base.top, w: r.width, h: r.height });
+        });
+      var strength = parseFloat(host.getAttribute("data-scatter-bg")) || 1;
+      slot.innerHTML = M.svg(
+        scatterField(w, h, {
+          seed: 20260829 + i * 6317,
+          /* ⚠️ Capped. A backdrop host can be the whole page column, and a
+             pitch derived from its short side then draws marks several times
+             the size of the ones on the cards — the ground would be louder
+             than the thing it is behind. */
+          pitch: Math.max(18, Math.min(44, Math.min(w, h) / 11)),
+          avoid: avoid
+        }).markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+      slot.style.opacity = strength;
+    });
+  }
+
+  window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField,
+                      backdrops: backdrops, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */
   var t = 0;
-  addEventListener("resize", function () { clearTimeout(t); t = setTimeout(all, 140); });
+  addEventListener("resize", function () {
+    clearTimeout(t);
+    t = setTimeout(function () { all(); backdrops(); }, 140);
+  });
+  /* After layout, not during it: the avoid boxes are measured from the live
+     text, so this has to run once the cards have their real size. */
+  if (document.readyState === "complete") backdrops();
+  else addEventListener("load", backdrops);
 }());

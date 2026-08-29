@@ -74,7 +74,7 @@
         /* one seed per card, so each card is a different field and every card
            is the same field on every visit */
         seed: 20260829 + i * 7919,
-        pitch: Math.max(24, w / 7),
+        pitch: Math.max(19, w / 11),
         avoid: avoid
       });
       slot.innerHTML = B.svg(field.markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
