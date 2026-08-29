@@ -1,13 +1,10 @@
 /* The About route's card art.
-   Each card carries a scatter of ALL thirty phenomena, arranged as multi-class
-   blue noise so that every motif is spread evenly and no motif recurs near
-   itself — the difference between a picture and wallpaper. Drawn once a card
-   has a box to measure, and redrawn on resize so the density stays constant
-   rather than the marks stretching. */
+   The corner marks only. The cards themselves are text panels and carry grain,
+   not marks; the phenomena live in the ground between them. */
 (function () {
   "use strict";
   var B = window.BWBlocks;
-  if (!B || !B.scatter) return;
+  if (!B) return;
 
   var cards = [].slice.call(document.querySelectorAll(".ab-card[data-ph]"));
   if (!cards.length) return;
@@ -50,39 +47,11 @@
     probe.remove();
   }());
 
-  function paint() {
-    cards.forEach(function (card, i) {
-      var slot = card.querySelector(".ab-art");
-      if (!slot) return;
-      var w = Math.round(slot.clientWidth), h = Math.round(slot.clientHeight);
-      if (w < 8 || h < 8) return;
+  /* ⚠️ The cards carry NO field. They are text panels, and text panels get
+     grain — one material each. Marks belong in the ground between the panels,
+     where they separate one field of colour from the next instead of sitting
+     under the words like a printed cloth. An earlier pass put a fine scatter on
+     every card and the whole page read as calico. The ground field is declared
+     on .ab-set in the markup and painted by blocks.js. */
 
-      /* Figure-ground: hand the field the boxes the type actually occupies, in
-         the field's own coordinates, so the ground thins as it approaches the
-         figure instead of either stopping at it or running straight through
-         it. Measured rather than assumed — the arrangements put the title,
-         caption and mark in a different corner on every card, so no fixed
-         exclusion zone could be right for all four. */
-      var base = slot.getBoundingClientRect();
-      var avoid = [].map.call(card.querySelectorAll(".ab-name, .ab-note, .ab-mark"),
-        function (el) {
-          var r = el.getBoundingClientRect();
-          return { x: r.left - base.left, y: r.top - base.top, w: r.width, h: r.height };
-        });
-
-      var field = B.scatter(w, h, {
-        /* one seed per card, so each card is a different field and every card
-           is the same field on every visit */
-        seed: 20260829 + i * 7919,
-        pitch: Math.max(19, w / 11),
-        avoid: avoid
-      });
-      slot.innerHTML = B.svg(field.markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
-      card.dataset.phCount = field.count;
-    });
-  }
-
-  paint();
-  var t;
-  addEventListener("resize", function () { clearTimeout(t); t = setTimeout(paint, 160); });
 }());

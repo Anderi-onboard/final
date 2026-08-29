@@ -192,8 +192,8 @@
       /* Dense enough that the whole catalogue actually gets dealt: at a pitch
          of a fifth of the cell only about thirteen marks fit, so ten of the
          thirty never appeared. */
-      body = scatterField(w, h, { seed: 20260829 + parseInt(scat, 10) * 4093,
-                                  pitch: Math.max(18, Math.min(w, h) / 13) }).markup;
+      body = blendField(w, h, { seed: 20260829 + parseInt(scat, 10) * 4093,
+                                deal: (parseInt(scat, 10) - 1) * 15 });
     } else if (pat && PATTERN[pat]) {
       var p = PATTERN[pat](w, h);
       /* Three shapes a pattern can take: filled markup, a stroked path, or raw
@@ -327,10 +327,19 @@
        instead of the common ones crowding out the rest. The offset walks by a
        number coprime with the count so successive passes do not repeat the
        same order. */
-    var deck = PH_NAMES.slice(), ci = 0;
-    for (var s = deck.length - 1; s > 0; s--) {      /* one deterministic shuffle */
-      var j = Math.floor(rand() * (s + 1)), t = deck[s]; deck[s] = deck[j]; deck[j] = t;
+    /* ⚠️ One deck for the whole site, shuffled from a CONSTANT seed, with each
+       field starting at a different place in it. Shuffling per field looked
+       tidier and quietly cost coverage: two sparse fields drawing independently
+       overlap, so the method page dealt only 17 of the 30. Dealing consecutive
+       slots of a shared order means two fields of twenty cover the catalogue
+       between them. Positions still come from the field's own seed, so nothing
+       reads as repeated. */
+    var deck = PH_NAMES.slice();
+    var dealer = M.rng(20260829);
+    for (var s = deck.length - 1; s > 0; s--) {
+      var j = Math.floor(dealer() * (s + 1)), t = deck[s]; deck[s] = deck[j]; deck[j] = t;
     }
+    var ci = opt.deal || 0;
 
     while (placed.length < target && tries < cap) {
       tries++;
@@ -377,7 +386,7 @@
          and every mark sits on the same plane. No rotation anywhere either:
          the catalogue already mixes upright and lying motifs, and tilting them
          on top of that is what turns a field into a jumble. */
-      var sc = (pitch / 150) * (0.92 + 0.16 * p.k);
+      var sc = (pitch / 150) * (0.92 + 0.16 * p.k) * (opt.scale || 1);
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="' + (0.30 + 0.70 * p.k).toFixed(3)
         + '"><path d="' + d + '"/></g>';
@@ -418,21 +427,64 @@
         });
       var strength = parseFloat(host.getAttribute("data-scatter-bg")) || 1;
       slot.innerHTML = M.svg(
-        scatterField(w, h, {
+        blendField(w, h, {
           seed: 20260829 + i * 6317,
           /* ⚠️ Capped. A backdrop host can be the whole page column, and a
              pitch derived from its short side then draws marks several times
-             the size of the ones on the cards — the ground would be louder
-             than the thing it is behind. */
-          pitch: Math.max(18, Math.min(44, Math.min(w, h) / 11)),
+             the size of the ones on the cards. */
+          pitch: Math.max(56, Math.min(120, Math.min(w, h) / 4.2)),
+          layers: 6, lineOpacity: 0.34,
           avoid: avoid
-        }).markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+        }), "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
       slot.style.opacity = strength;
     });
   }
 
+
+  /* ── the layered texture block ────────────────────────────────────────────
+     Two textures in one carrier, which is the fusion the references each show
+     half of: a contour field — the same construction as the range's own lines,
+     so it is recognisably this site's hand — with a sparse pass of phenomena
+     over it.
+
+     ⭐ SPARSE and LARGE, and that is the whole correction. Small marks at even
+     spacing across a whole surface stop reading as objects and start reading as
+     a printed calico — a repeat pattern, not a picture. Object-hood needs room
+     and size: few enough that you look at each one, big enough to recognise.
+     The blue-noise conflict matrix still decides WHICH motif goes WHERE, but the
+     count comes down and the scale goes up.
+
+     ⚠️ And a texture like this belongs BETWEEN the panels, not on them. Under
+     type it is a printed cloth behind the words; between panels it is what
+     separates one field of colour from the next. Text panels get grain
+     instead — one material each. */
+  function blendField(w, h, opt) {
+    opt = opt || {};
+    var seed = opt.seed || 20260829;
+    /* the contour layer, drawn like the range: lines only, no fill */
+    var lines = M.landscape(seed, w, h, { layers: opt.layers || 5, fill: 0 });
+    var ph = scatterField(w, h, {
+      seed: seed + 977,
+      deal: opt.deal || 0,
+      /* a third of the density of the old field, and each mark about twice the
+         size — the two moves that take it from calico back to objects */
+      /* Sized so the two decorative cells between them deal all thirty: at a
+         quarter of the cell only about thirteen fit each, twenty-six in total,
+         and nine motifs never appeared. Still objects rather than calico —
+         each mark is roughly twice the old scale. */
+      pitch: opt.pitch || Math.max(38, Math.min(w, h) / 5.4),
+      count: opt.count || null,
+      same: 3.2,
+      any: 1.15,
+      avoid: opt.avoid || [],
+      scale: 2.05,
+      bands: opt.bands || 3
+    }).markup;
+    return '<g class="bk-contour" opacity="' + (opt.lineOpacity || 0.5) + '">' + lines + '</g>' + ph;
+  }
+
   window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField,
-                      backdrops: backdrops, svg: M.svg };
+                      blend: blendField, backdrops: backdrops, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */

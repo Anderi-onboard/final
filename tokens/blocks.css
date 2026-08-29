@@ -137,7 +137,10 @@ body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card)::after {
   position: absolute; inset: 0; z-index: 1;
   pointer-events: none;
   background: currentColor;
-  opacity: var(--bk-grain-strength, .06);
+  /* ⚠️ .06 was invisible — it measured as "applied" and rendered as nothing.
+     This is the material every text panel now carries on its own (the marks
+     went to the blocks between panels), so it has to actually be there. */
+  opacity: var(--bk-grain-strength, .17);
   -webkit-mask-image: var(--bk-grain);
   mask-image: var(--bk-grain);
   -webkit-mask-size: var(--bk-grain-size, 320px);
@@ -155,6 +158,8 @@ body.blocks-route .bk-art {
   color: inherit;
 }
 body.blocks-route .bk-art svg { width: 100%; height: 100%; display: block; }
+/* the contour half of a layered block: lines only, and quieter than the marks */
+body.blocks-route .bk-contour :is(path, use) { fill: none; stroke: currentColor; }
 /* and the content rides above it */
 body.blocks-route :is(.mt-card, .bk-cell, .ab-set, .ab-lede) > :not(.bk-art) { position: relative; z-index: 1; }
 
