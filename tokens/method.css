@@ -356,7 +356,7 @@ body[data-page="guide"] .mt-hint i {
 .mt-card--flip:focus-visible .mt-hint { opacity: 1; }
 /* Opened, the marker fills — the card says which of its steps you have been
    into without a separate progress widget anywhere on the page. */
-.mt-card--flip[aria-expanded="true"] .mt-hint i {
+.mt-card--flip.is-seen .mt-hint i {
   background: currentColor; color: var(--bk-ink);
 }
 

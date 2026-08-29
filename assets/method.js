@@ -140,6 +140,11 @@
     var faces = [].slice.call(card.querySelectorAll(".mt-face"));
     if (faces.length < 2) return;
     var hint = card.querySelector(".mt-hint");
+    /* ⚠️ The label, not the whole hint. Writing textContent on .mt-hint wiped
+       out the <i> marker inside it — so the marker vanished on the first flip
+       and the "which steps have you been into" signal, which this page uses
+       INSTEAD of a progress widget, died the moment anyone used the page. */
+    var label = hint && hint.querySelector("span");
     var i = 0, busy = false;
 
     function turn() {
@@ -152,12 +157,16 @@
         faces[next].classList.add("is-on");
         i = next;
         card.setAttribute("aria-expanded", i === 1 ? "true" : "false");
-        if (hint) hint.textContent = i === 1 ? "Tap to go back" : hint.dataset.rest || hint.textContent;
+        /* Seen is permanent. Keying the filled marker to aria-expanded meant it
+           filled while the card was open and emptied again the moment it shut,
+           which is the opposite of a record of where you have been. */
+        if (i === 1) card.classList.add("is-seen");
+        if (label) label.textContent = i === 1 ? "Tap to go back" : (label.dataset.rest || label.textContent);
       }, 90);
       setTimeout(function () { card.classList.remove("is-flashing"); busy = false; }, 300);
     }
 
-    if (hint) hint.dataset.rest = hint.textContent;
+    if (label) label.dataset.rest = label.textContent;
     card.addEventListener("click", function (e) {
       if (e.target.closest("input, textarea, button, select, a, label")) return;
       turn();

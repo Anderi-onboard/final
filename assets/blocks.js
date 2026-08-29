@@ -179,12 +179,22 @@
 
   function render(el) {
     var w = Math.max(1, Math.round(el.clientWidth)), h = Math.max(1, Math.round(el.clientHeight));
+    var scat = el.getAttribute("data-scatter");
     var pat = el.getAttribute("data-pattern"),
         land = el.getAttribute("data-land"),
         mk = el.getAttribute("data-mark");
     var body = "", vb = "0 0 " + w + " " + h, extra = 'preserveAspectRatio="none"';
 
-    if (pat && PATTERN[pat]) {
+    if (scat != null) {
+      /* A carrier that is nothing but ground gets the whole catalogue rather
+         than one motif repeated — the same placement law as the about cards,
+         a different seed so it is a different field. */
+      /* Dense enough that the whole catalogue actually gets dealt: at a pitch
+         of a fifth of the cell only about thirteen marks fit, so ten of the
+         thirty never appeared. A ninth puts roughly forty in each. */
+      body = scatterField(w, h, { seed: 20260829 + parseInt(scat, 10) * 4093,
+                                  pitch: Math.max(22, Math.min(w, h) / 9) }).markup;
+    } else if (pat && PATTERN[pat]) {
       var p = PATTERN[pat](w, h);
       /* Three shapes a pattern can take: filled markup, a stroked path, or raw
          markup that carries its own paint (the logomark is stroked, the yao
@@ -223,7 +233,7 @@
      not only the block ones, so it cannot live in a block-route file. */
 
 
-  var cells = [].slice.call(document.querySelectorAll("[data-pattern],[data-land],[data-mark]"));
+  var cells = [].slice.call(document.querySelectorAll("[data-pattern],[data-land],[data-mark],[data-scatter]"));
   /* Skip anything with no box yet. On the method route the fields live inside
      steps that are display:none until shown, so measuring them at load gives
      zero and draws nothing — which is why those bands came up empty. Callers
@@ -251,7 +261,118 @@
     else window.addEventListener("bw:palettechange", arm);
   }());
 
-  window.BWBlocks = { render: all, dither: ditherField, svg: M.svg };
+
+  /* ── all thirty, scattered ────────────────────────────────────────────────
+     The arrangement is multi-class blue noise (Wei, SIGGRAPH 2010). The
+     problem it names is exactly this one: N classes of object where each class
+     on its own AND the union of all of them have to read as evenly spread with
+     no visible structure. Thirty motifs dropped by plain random gives clumps
+     and holes; thirty motifs on a grid gives a table. Blue noise is the third
+     thing — no two samples closer than a radius, which is what "evenly spread
+     without structure" means formally.
+
+     ⭐ The whole method is in the conflict matrix, and for us it collapses to
+     two numbers:
+        within a class  R_SAME — large. A motif must never recur near itself.
+        across classes  R_ANY  — small. Different motifs may sit close.
+     That single asymmetry is what makes the field dense and still legible as
+     thirty different things: locally you always see neighbours that differ,
+     and you have to travel to meet the same motif twice. It is also the
+     construction-level answer to the repeat fault this repo has hit before —
+     "structural repetition cannot be fixed by jittering parameters", so it is
+     ruled out by the placement law instead of watched for.
+
+     ⭐ Figure-ground (Gestalt): type is the figure, this is the ground, and a
+     ground is separated from its figure by carrying LESS DETAIL — not by
+     getting out of the way. So marks are allowed to cross a text box, but
+     their scale and their weight fall off as they approach one. Overlap
+     without interference, which is what was asked for, and it is also what the
+     legibility literature prescribes: reduce the ground's detail where the
+     figure sits.
+
+     Deterministic, like every other generated thing here: one seed per field,
+     so a field is identical on every visit. A field that reshuffles on
+     navigation reads as a rendering fault, not as a decision. */
+  /* ⚠️ Resolved on first use, not at this line. The render pass runs while
+     this file is still executing, so a module-level assignment down here is
+     still undefined when the first field asks for it. */
+  var PH_NAMES = null;
+
+  function scatterField(w, h, opt) {
+    opt = opt || {};
+    if (!PH_NAMES) PH_NAMES = Object.keys(M.phenomena);
+    var rand = M.rng(opt.seed || 20260829);
+    var pitch = opt.pitch || Math.max(26, Math.min(w, h) / 6);
+    var rSame = pitch * (opt.same || 2.6);      /* a motif vs itself   */
+    var rAny  = pitch * (opt.any  || 0.78);     /* a motif vs any other */
+    var avoid = opt.avoid || [];                /* text boxes, page coords */
+    var soft  = opt.soft == null ? pitch * 1.5 : opt.soft;
+    var bands = opt.bands || 3;
+    var target = opt.count || Math.round((w * h) / (pitch * pitch) * 0.5);
+
+    var placed = [], tries = 0, cap = target * 60;
+    /* Cycle the class rather than drawing it at random: every motif is dealt
+       before any is dealt twice, which is how all thirty actually get used
+       instead of the common ones crowding out the rest. The offset walks by a
+       number coprime with the count so successive passes do not repeat the
+       same order. */
+    var deck = PH_NAMES.slice(), ci = 0;
+    for (var s = deck.length - 1; s > 0; s--) {      /* one deterministic shuffle */
+      var j = Math.floor(rand() * (s + 1)), t = deck[s]; deck[s] = deck[j]; deck[j] = t;
+    }
+
+    while (placed.length < target && tries < cap) {
+      tries++;
+      var name = deck[ci % deck.length];
+      var x = rand() * w, y = rand() * h, ok = true;
+      for (var i = 0; i < placed.length; i++) {
+        var p = placed[i];
+        var dx = p.x - x, dy = p.y - y, d2 = dx * dx + dy * dy;
+        var r = (p.name === name) ? rSame : rAny;
+        if (d2 < r * r) { ok = false; break; }
+      }
+      if (!ok) continue;
+      /* figure-ground falloff: 0 inside a text box, 1 well clear of one */
+      var near = 1;
+      for (var a = 0; a < avoid.length; a++) {
+        var b = avoid[a];
+        var ox = Math.max(b.x - x, 0, x - (b.x + b.w));
+        var oy = Math.max(b.y - y, 0, y - (b.y + b.h));
+        var dist = Math.hypot(ox, oy);
+        near = Math.min(near, Math.min(1, dist / soft));
+      }
+      /* Marks are allowed to cross type — the art layer sits behind it — they
+         just arrive there quiet and small. Excluding them outright leaves a
+         visible hole in the shape of the text box, which reads as a mistake;
+         the ground is supposed to pass under the figure, only with less
+         detail. `near` floors rather than rejects. */
+      placed.push({ x: x, y: y, name: name, k: near, band: placed.length % bands });
+      ci++;
+    }
+
+    /* Grouped into a few drift bands rather than animated one mark at a time:
+       a handful of composited layers instead of hundreds. */
+    var out = [], g;
+    for (g = 0; g < bands; g++) out[g] = "";
+    placed.forEach(function (p) {
+      var d = M.phenomena[p.name] && M.phenomena[p.name]();
+      if (!d) return;
+      /* scale carries the falloff too, so the ground thins toward the figure
+         instead of stopping at a hard edge */
+      var sc = (pitch / 150) * (0.52 + 0.78 * p.k);
+      out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
+        + ') scale(' + sc.toFixed(4) + ')" opacity="' + (0.30 + 0.70 * p.k).toFixed(3)
+        + '"><path d="' + d + '"/></g>';
+    });
+    var svg = "";
+    for (g = 0; g < bands; g++) {
+      svg += '<g class="ph-drift ph-drift-' + g + '" fill="currentColor">' + out[g] + '</g>';
+    }
+    return { markup: svg, count: placed.length,
+             used: placed.reduce(function (m, p) { m[p.name] = 1; return m; }, {}) };
+  }
+
+  window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */

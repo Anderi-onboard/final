@@ -114,6 +114,56 @@ body.blocks-route {
   }
 }
 
+/* ── the grain hook ─────────────────────────────────────────────────────────
+   Waiting on the greyscale map. It goes in as a MASK over a palette-coloured
+   layer, never as a background-image: a bitmap laid on directly carries its
+   own fixed colour and would be the one thing on these routes that does not
+   follow the 114 groups — the exact clash this repo already recorded for SVG
+   inside CSS url(). As a stencil the grain takes --bk-ink and rotates for free.
+   Unset, this whole layer paints nothing, so it costs nothing until the file
+   lands: set --bk-grain to url(...) to switch it on. */
+   ⚠️ Gated on a class, not on whether the variable is set. `mask-image: none`
+   means "show everything", so an ungated layer with no map paints a flat wash
+   of ink over every card — the failure mode is a ruined page, not a no-op. */
+body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card) { position: relative; }
+body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card)::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
+  background: currentColor;
+  opacity: var(--bk-grain-strength, .06);
+  -webkit-mask-image: var(--bk-grain);
+  mask-image: var(--bk-grain);
+  -webkit-mask-size: var(--bk-grain-size, 320px);
+  mask-size: var(--bk-grain-size, 320px);
+  mask-repeat: repeat;
+}
+
+/* ── the phenomena drift ────────────────────────────────────────────────────
+   The field moves, but only as three composited layers — never as hundreds of
+   individually animated marks, which is the difference between a couple of GPU
+   layers and a per-frame repaint of the whole field. Transform only: the
+   performance rule here bans animating background-color, filter and
+   backdrop-filter per frame, and transform/opacity are the sanctioned pair.
+
+   The three periods are coprime multiples of a base (37 · 53 · 71 seconds), so
+   the layers do not come back into alignment for well over an hour and the
+   field never visibly repeats. Same law as the strokes and the contours: an
+   ordered cycle rather than randomness, because randomness is the one thing
+   that cannot produce a rhythm.
+
+   ⚠️ Slow on purpose — a few pixels of travel per second. Anything you can
+   watch move competes with the type, and this is ground, not figure. */
+@media (prefers-reduced-motion: no-preference) {
+  body.blocks-route .ph-drift { will-change: transform; }
+  body.blocks-route .ph-drift-0 { animation: ph-drift-a 37s ease-in-out infinite alternate; }
+  body.blocks-route .ph-drift-1 { animation: ph-drift-b 53s ease-in-out infinite alternate; }
+  body.blocks-route .ph-drift-2 { animation: ph-drift-c 71s ease-in-out infinite alternate; }
+}
+@keyframes ph-drift-a { from { transform: translate(0, 0); }      to { transform: translate(1.6%, -1.1%); } }
+@keyframes ph-drift-b { from { transform: translate(0, 0); }      to { transform: translate(-1.3%, 1.5%); } }
+@keyframes ph-drift-c { from { transform: translate(0, 0); }      to { transform: translate(0.9%, 1.9%); } }
+
 /* The ground between blocks is paper, not ink. This needs the [data-skin]
    qualifier to land at all: refinement.css sets `html[data-skin="paper"] body`,
    which outspecifies a plain `body.blocks-route` no matter how late it loads —
