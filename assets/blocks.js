@@ -296,6 +296,42 @@
   /* ⚠️ Resolved on first use, not at this line. The render pass runs while
      this file is still executing, so a module-level assignment down here is
      still undefined when the first field asks for it. */
+
+  /* ── how big a motif actually is ──────────────────────────────────────────
+     Measured from the path's own coordinates, cached per motif. The thirty
+     have very different native extents, so a single spacing number cannot keep
+     them apart: a wide one and a narrow one at the same centre distance are
+     not equally clear of each other.
+
+     ⭐ This is what makes the field read as ONE layer. Marks that cross each
+     other read as two things stacked no matter how the placement is tuned, so
+     overlap is not discouraged here, it is impossible: a candidate is rejected
+     unless the gap between its own drawn radius and its neighbour's is clear.
+     Nothing is ever laid over anything else. */
+  /* ⚠️ Both caches initialise on first use, not at their declaration line.
+     The render pass runs while this file is still executing, so anything
+     assigned below the call site is hoisted-but-undefined when the first field
+     asks for it. This is the second cache in this file to be caught by it —
+     declare the variable, fill it in the function. */
+  var PH_R = null;
+  function motifRadius(name) {
+    if (!PH_R) PH_R = {};
+    if (PH_R[name] != null) return PH_R[name];
+    var d = M.phenomena[name] && M.phenomena[name]();
+    var r = 20;
+    if (d) {
+      var nums = d.match(/-?\d*\.?\d+(?:e-?\d+)?/g) || [];
+      var m = 0;
+      for (var i = 0; i < nums.length; i++) {
+        var v = Math.abs(parseFloat(nums[i]));
+        if (v > m && v < 1e4) m = v;
+      }
+      if (m > 0) r = m;
+    }
+    PH_R[name] = r;
+    return r;
+  }
+
   var PH_NAMES = null;
 
   function scatterField(w, h, opt) {
@@ -317,6 +353,13 @@
        a course with a small jitter (±22% of the spacing) while x stays free
        and conflict-checked. Courses give the stacking; the free x and the
        conflict matrix keep it off a grid. */
+    var baseScale = (pitch / 150) * (opt.scale || 1);
+    /* ⚠️ 1.14 left one grazing pair in 223. The radius here is a bounding
+       CIRCLE taken from the path's coordinates, but what reads as overlap is
+       the bounding box, and two elongated marks can clear the circles while
+       their boxes cross. The margin covers the difference. */
+    var gap = opt.gap || 1.32;
+
     var lane = pitch * 1.06;
     var lanes = Math.max(1, Math.round(h / lane));
     lane = h / lanes;
@@ -347,10 +390,14 @@
       var x = rand() * w;
       var y = (Math.floor(rand() * lanes) + 0.5 + (rand() - 0.5) * 0.44) * lane;
       var ok = true;
+      var drawn = motifRadius(name) * baseScale;
       for (var i = 0; i < placed.length; i++) {
         var p = placed[i];
         var dx = p.x - x, dy = p.y - y, d2 = dx * dx + dy * dy;
-        var r = (p.name === name) ? rSame : rAny;
+        /* two clearances, and the larger wins: the two marks must not touch,
+           AND a motif must stay well away from another copy of itself */
+        var touch = (drawn + p.drawn) * gap;
+        var r = (p.name === name) ? Math.max(rSame, touch) : Math.max(rAny, touch);
         if (d2 < r * r) { ok = false; break; }
       }
       if (!ok) continue;
@@ -368,7 +415,7 @@
          visible hole in the shape of the text box, which reads as a mistake;
          the ground is supposed to pass under the figure, only with less
          detail. `near` floors rather than rejects. */
-      placed.push({ x: x, y: y, name: name, k: near, band: placed.length % bands });
+      placed.push({ x: x, y: y, name: name, k: near, drawn: drawn, band: placed.length % bands });
       ci++;
     }
 
@@ -386,7 +433,9 @@
          and every mark sits on the same plane. No rotation anywhere either:
          the catalogue already mixes upright and lying motifs, and tilting them
          on top of that is what turns a field into a jumble. */
-      var sc = (pitch / 150) * (0.92 + 0.16 * p.k) * (opt.scale || 1);
+      /* one plane: size no longer varies with the falloff at all, or a mark
+         near type would be smaller than the clearance it was placed with */
+      var sc = baseScale;
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="' + (0.30 + 0.70 * p.k).toFixed(3)
         + '"><path d="' + d + '"/></g>';
@@ -429,11 +478,14 @@
       slot.innerHTML = M.svg(
         blendField(w, h, {
           seed: 20260829 + i * 6317,
+          /* deal from a different point of the shared deck, same reason as the
+             decorative cells: fields drawing from the same offset overlap and
+             the catalogue never gets dealt out */
+          deal: i * 7,
           /* ⚠️ Capped. A backdrop host can be the whole page column, and a
              pitch derived from its short side then draws marks several times
              the size of the ones on the cards. */
-          pitch: Math.max(56, Math.min(120, Math.min(w, h) / 4.2)),
-          layers: 6, lineOpacity: 0.34,
+          pitch: Math.max(56, Math.min(130, Math.min(w, h) / 4.6)),
           avoid: avoid
         }), "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
       slot.style.opacity = strength;
@@ -441,46 +493,32 @@
   }
 
 
-  /* ── the layered texture block ────────────────────────────────────────────
-     Two textures in one carrier, which is the fusion the references each show
-     half of: a contour field — the same construction as the range's own lines,
-     so it is recognisably this site's hand — with a sparse pass of phenomena
-     over it.
+  /* ── a texture block ──────────────────────────────────────────────────────
+     One layer. Nothing under it, nothing over it.
 
-     ⭐ SPARSE and LARGE, and that is the whole correction. Small marks at even
-     spacing across a whole surface stop reading as objects and start reading as
-     a printed calico — a repeat pattern, not a picture. Object-hood needs room
-     and size: few enough that you look at each one, big enough to recognise.
-     The blue-noise conflict matrix still decides WHICH motif goes WHERE, but the
-     count comes down and the scale goes up.
+     ⚠️ This used to draw a contour field and then lay phenomena on top of it,
+     and that was the fault: two textures in one carrier read as two textures in
+     one carrier, however quiet the lower one is. A carrier gets contour lines
+     OR marks, never both. The pages already have contour cells of their own —
+     those stay exactly as they are, and they are one layer too.
 
-     ⚠️ And a texture like this belongs BETWEEN the panels, not on them. Under
-     type it is a printed cloth behind the words; between panels it is what
-     separates one field of colour from the next. Text panels get grain
-     instead — one material each. */
+     ⭐ Sparse and large, which is the other half. Small marks at even spacing
+     across a surface stop reading as objects and start reading as printed
+     cloth; that comes from size and density, not from the placement law. Few
+     enough to look at one at a time, big enough to recognise, and — since the
+     clearance test above uses each motif's real drawn radius — never touching. */
   function blendField(w, h, opt) {
     opt = opt || {};
-    var seed = opt.seed || 20260829;
-    /* the contour layer, drawn like the range: lines only, no fill */
-    var lines = M.landscape(seed, w, h, { layers: opt.layers || 5, fill: 0 });
-    var ph = scatterField(w, h, {
-      seed: seed + 977,
+    return scatterField(w, h, {
+      seed: opt.seed || 20260829,
       deal: opt.deal || 0,
-      /* a third of the density of the old field, and each mark about twice the
-         size — the two moves that take it from calico back to objects */
-      /* Sized so the two decorative cells between them deal all thirty: at a
-         quarter of the cell only about thirteen fit each, twenty-six in total,
-         and nine motifs never appeared. Still objects rather than calico —
-         each mark is roughly twice the old scale. */
-      pitch: opt.pitch || Math.max(38, Math.min(w, h) / 5.4),
-      count: opt.count || null,
-      same: 3.2,
-      any: 1.15,
+      pitch: opt.pitch || Math.max(34, Math.min(w, h) / 5.9),
+      same: opt.same || 3.2,
+      any: opt.any || 1.15,
       avoid: opt.avoid || [],
-      scale: 2.05,
+      scale: opt.scale || 2.05,
       bands: opt.bands || 3
     }).markup;
-    return '<g class="bk-contour" opacity="' + (opt.lineOpacity || 0.5) + '">' + lines + '</g>' + ph;
   }
 
   window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField,

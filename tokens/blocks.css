@@ -158,8 +158,6 @@ body.blocks-route .bk-art {
   color: inherit;
 }
 body.blocks-route .bk-art svg { width: 100%; height: 100%; display: block; }
-/* the contour half of a layered block: lines only, and quieter than the marks */
-body.blocks-route .bk-contour :is(path, use) { fill: none; stroke: currentColor; }
 /* and the content rides above it */
 body.blocks-route :is(.mt-card, .bk-cell, .ab-set, .ab-lede) > :not(.bk-art) { position: relative; z-index: 1; }
 

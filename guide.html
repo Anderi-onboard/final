@@ -16,15 +16,15 @@
 <style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260829c">
-<link rel="stylesheet" href="./tokens/method.css?v=20260829c">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260829d">
+<link rel="stylesheet" href="./tokens/method.css?v=20260829d">
 </head>
 <body class="blocks-route has-grain" data-page="guide">
 
@@ -40,7 +40,7 @@
 <main class="mt-grid">
 
   <!-- ── row 1 · what this is ─────────────────────────────────────────── -->
-  <section class="mt-card" data-fill="brick" data-cell="rail">
+  <section class="mt-card" data-fill="brick" data-cell="rail" data-scatter-bg=".34">
     <div class="mt-stack">
       <span>Question</span><span>Depth</span><span>Casting</span>
       <span>Reading</span><span>Charge</span><span>Follow-up</span>
@@ -53,7 +53,7 @@
     <p class="mt-meta">Five steps, from the sentence you write to the units you spend</p>
   </section>
 
-  <section class="mt-card" data-fill="bone" data-cell="what">
+  <section class="mt-card" data-fill="bone" data-cell="what" data-scatter-bg=".34">
     <p class="mt-meta">What this page is</p>
     <div class="mt-fill"></div>
     <!-- The one sentence that makes the page operable. It used to describe what
@@ -72,7 +72,7 @@
   <!-- Each step is one card: the name and the thing it explains together.
        Split across two cards they left a colour void under every heading and
        took six rows to say five things. -->
-  <section class="mt-card mt-card--step mt-card--flip" data-fill="olive" tabindex="0" role="button" aria-expanded="false" data-cell="s1">
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="olive" tabindex="0" role="button" aria-expanded="false" data-cell="s1" data-scatter-bg=".34">
     <p class="mt-meta">Step 01 · Frame it</p>
     <div class="mt-faces">
       <div class="mt-face is-on" data-face="name">
@@ -92,7 +92,7 @@
     <p class="mt-hint"><i aria-hidden="true"></i><span>Tap to write one</span></p>
   </section>
 
-  <section class="mt-card mt-card--step mt-card--flip" data-fill="teal" tabindex="0" role="button" aria-expanded="false" data-cell="s2">
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="teal" tabindex="0" role="button" aria-expanded="false" data-cell="s2" data-scatter-bg=".34">
     <p class="mt-meta">Step 02 · Choose the depth</p>
     <div class="mt-faces">
       <div class="mt-face is-on" data-face="name">
@@ -118,7 +118,7 @@
   </section>
 
   <!-- ── row 3 · casting, reading ─────────────────────────────────────── -->
-  <section class="mt-card mt-card--step mt-card--flip" data-fill="brick" tabindex="0" role="button" aria-expanded="false" data-cell="s3">
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="brick" tabindex="0" role="button" aria-expanded="false" data-cell="s3" data-scatter-bg=".34">
     <p class="mt-meta">Step 03 · Let it complete</p>
     <div class="mt-faces">
       <div class="mt-face is-on" data-face="name">
@@ -136,7 +136,7 @@
     <p class="mt-hint"><i aria-hidden="true"></i><span>Tap to toss the coins</span></p>
   </section>
 
-  <section class="mt-card mt-card--step mt-card--flip" data-fill="dusty" tabindex="0" role="button" aria-expanded="false" data-cell="s4">
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="dusty" tabindex="0" role="button" aria-expanded="false" data-cell="s4" data-scatter-bg=".34">
     <p class="mt-meta">Step 04 · Read and continue</p>
     <div class="mt-faces">
       <div class="mt-face is-on" data-face="name">
@@ -158,7 +158,7 @@
   </section>
 
   <!-- ── row 4 · the charge, and the way in ───────────────────────────── -->
-  <section class="mt-card mt-card--step mt-card--flip" data-fill="ochre" tabindex="0" role="button" aria-expanded="false" data-cell="s5">
+  <section class="mt-card mt-card--step mt-card--flip" data-fill="ochre" tabindex="0" role="button" aria-expanded="false" data-cell="s5" data-scatter-bg=".34">
     <p class="mt-meta">Step 05 · What it costs</p>
     <div class="mt-faces">
       <div class="mt-face is-on" data-face="name">
@@ -205,10 +205,10 @@
      schedule, which publishes --bw-palette-* on <html> off the session
      clock. That is what makes the colour continuous when you arrive here
      from a glass route: same seed, same clock, same group. -->
-<script src="./assets/backgrounds/mountain-range.js?v=20260829c"></script>
-<script src="./assets/marks.js?v=20260829c"></script>
-<script src="./assets/blocks.js?v=20260829c"></script>
-<script src="./assets/method.js?v=20260829c"></script>
-<script src="./assets/weave.js?v=20260829c" defer></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260829d"></script>
+<script src="./assets/marks.js?v=20260829d"></script>
+<script src="./assets/blocks.js?v=20260829d"></script>
+<script src="./assets/method.js?v=20260829d"></script>
+<script src="./assets/weave.js?v=20260829d" defer></script>
 </body>
 </html>
