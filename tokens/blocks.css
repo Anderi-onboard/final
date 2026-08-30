@@ -102,12 +102,12 @@ body.blocks-route {
    region to invalidate, which is the cost that makes the same move expensive
    on the glass routes. */
 @media (prefers-reduced-motion: no-preference) {
-  html.bw-cross body.blocks-route :is(.bk-head, .bk-foot, .bk-cell, .bk-go, .mt-card, .ab-card),
+  html.bw-cross body.blocks-route :is(.bk-head, .bk-foot, .bk-cell, .bk-go, .mt-card, .ab-block),
   html.bw-cross[data-skin="paper"] body.blocks-route {
     transition: background-color 1.5s cubic-bezier(.77, 0, .175, 1),
                 color 1.5s cubic-bezier(.77, 0, .175, 1);
   }
-  html.bw-cross body.blocks-route :is(svg, .bk-mark, .ab-art, .ab-accent, .ab-mark) {
+  html.bw-cross body.blocks-route :is(svg, .bk-mark) {
     transition: color 1.5s cubic-bezier(.77, 0, .175, 1),
                 fill 1.5s cubic-bezier(.77, 0, .175, 1),
                 stroke 1.5s cubic-bezier(.77, 0, .175, 1);
@@ -131,10 +131,16 @@ body.blocks-route {
   --bk-grain: url("../assets/textures/paper-grain.svg");
   --bk-grain-size: 320px;
 }
-body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card) { position: relative; }
-body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-card)::after {
+body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-block) { position: relative; }
+/* ⚠️ z-index 0, and the content is lifted to 1 below. At z-index 1 this film
+   painted OVER the type: it is currentColor, so it tints the ground toward the
+   ink while leaving the ink alone, and the composited contrast on the about
+   route collapsed to 1.35:1 while the analytic sweep — which compares declared
+   ink to declared fill and never sees this layer — stayed green. That gap
+   between the two checks is exactly what the composited one is for. */
+body.blocks-route.has-grain :is(.bk-cell, .mt-card, .ab-block)::after {
   content: "";
-  position: absolute; inset: 0; z-index: 1;
+  position: absolute; inset: 0; z-index: 0;
   pointer-events: none;
   background: currentColor;
   /* ⚠️ .06 was invisible — it measured as "applied" and rendered as nothing.
@@ -159,32 +165,72 @@ body.blocks-route .bk-art {
 }
 body.blocks-route .bk-art svg { width: 100%; height: 100%; display: block; }
 /* and the content rides above it */
-body.blocks-route :is(.mt-card, .bk-cell, .ab-set, .ab-lede) > :not(.bk-art) { position: relative; z-index: 1; }
+body.blocks-route :is(.mt-card, .bk-cell, .ab-block) > :not(.bk-art) { position: relative; z-index: 1; }
 
-/* ── the phenomena drift ────────────────────────────────────────────────────
-   The field moves, but only as three composited layers — never as hundreds of
-   individually animated marks, which is the difference between a couple of GPU
-   layers and a per-frame repaint of the whole field. Transform only: the
-   performance rule here bans animating background-color, filter and
-   backdrop-filter per frame, and transform/opacity are the sanctioned pair.
+/* ── the phenomena move the way the things move ──────────────────────────
+   ⭐⭐ Each motif animates according to what it IS, not according to a single
+   field-wide drift. Reeds and bamboo sway from the base because wind moves
+   them there; rain and snow fall; rivers and tides run sideways; smoke rises;
+   the sun and moon turn very slowly. And the ground does not move at all —
+   peak, valley, cliff, stone, dune, root, frost hold still, which is the half
+   that makes the rest read as weather rather than as a screensaver. A field
+   where everything moves at one rate is a moving pattern; a field where the
+   mountains are still and the reeds sway is a place.
 
-   The three periods are coprime multiples of a base (37 · 53 · 71 seconds), so
-   the layers do not come back into alignment for well over an hour and the
-   field never visibly repeats. Same law as the strokes and the contours: an
-   ordered cycle rather than randomness, because randomness is the one thing
-   that cannot produce a rhythm.
+   ⚠️ Transform only, and amplitudes stay small — under a few per cent of the
+   mark's own size. The placement guarantees a gap of (r1+r2)×1.32 between any
+   two marks, and motion has to stay well inside that margin or the "no two
+   marks touch" rule stops being true the moment the page is left running.
 
-   ⚠️ Slow on purpose — a few pixels of travel per second. Anything you can
-   watch move competes with the type, and this is ground, not figure. */
+   ⚠️ Animated on an inner <g>, not on the placed one. The outer group carries
+   the placement transform; animating it would fight the layout instead of
+   moving the drawing inside it.
+
+   Periods are coprime across the groups so the field never falls into step. */
 @media (prefers-reduced-motion: no-preference) {
-  body.blocks-route .ph-drift { will-change: transform; }
-  body.blocks-route .ph-drift-0 { animation: ph-drift-a 37s ease-in-out infinite alternate; }
-  body.blocks-route .ph-drift-1 { animation: ph-drift-b 53s ease-in-out infinite alternate; }
-  body.blocks-route .ph-drift-2 { animation: ph-drift-c 71s ease-in-out infinite alternate; }
+  body.blocks-route .ph-m { transform-box: fill-box; transform-origin: 50% 50%; }
+
+  /* wind in growing things — pivots at the base, because that is where they
+     are attached to the ground */
+  body.blocks-route :is([data-ph="pine"], [data-ph="bamboo"], [data-ph="reed"],
+    [data-ph="leaf"], [data-ph="wind"], [data-ph="haze"]) .ph-m {
+    transform-origin: 50% 100%;
+    animation: ph-sway 11s ease-in-out infinite alternate;
+  }
+  /* water, running */
+  body.blocks-route :is([data-ph="river"], [data-ph="spring"], [data-ph="tide"],
+    [data-ph="wave"], [data-ph="lake"]) .ph-m {
+    animation: ph-flow 13s ease-in-out infinite alternate;
+  }
+  body.blocks-route [data-ph="whirl"] .ph-m { animation: ph-turn 29s linear infinite; }
+  body.blocks-route [data-ph="waterfall"] .ph-m { animation: ph-pour 7s ease-in-out infinite alternate; }
+  /* things that come down */
+  body.blocks-route :is([data-ph="rain"], [data-ph="snow"], [data-ph="dew"]) .ph-m {
+    animation: ph-fall 9s ease-in-out infinite alternate;
+  }
+  /* and things that go up */
+  body.blocks-route [data-ph="smoke"] .ph-m { animation: ph-rise 17s ease-in-out infinite alternate; }
+  /* the slow sky */
+  body.blocks-route :is([data-ph="sun"], [data-ph="moon"], [data-ph="star"],
+    [data-ph="rainbow"]) .ph-m {
+    animation: ph-wheel 43s ease-in-out infinite alternate;
+  }
+  /* ⚠️ lightning and thunder are deliberately NOT flickering. A flash is the
+     one thing on a quiet ground that would pull the eye off the words, and
+     this is ground. They drift with the sky instead. */
+  body.blocks-route :is([data-ph="lightning"], [data-ph="thunder"]) .ph-m {
+    animation: ph-wheel 37s ease-in-out infinite alternate;
+  }
+  /* peak · valley · cliff · stone · dune · root · frost: nothing. The land
+     stays where it is, and that is the point. */
 }
-@keyframes ph-drift-a { from { transform: translate(0, 0); }      to { transform: translate(1.6%, -1.1%); } }
-@keyframes ph-drift-b { from { transform: translate(0, 0); }      to { transform: translate(-1.3%, 1.5%); } }
-@keyframes ph-drift-c { from { transform: translate(0, 0); }      to { transform: translate(0.9%, 1.9%); } }
+@keyframes ph-sway  { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
+@keyframes ph-flow  { from { transform: translateX(-3%); } to { transform: translateX(3%); } }
+@keyframes ph-turn  { from { transform: rotate(0deg); }    to { transform: rotate(360deg); } }
+@keyframes ph-pour  { from { transform: translateY(-2.5%) scaleY(.985); } to { transform: translateY(2.5%) scaleY(1.015); } }
+@keyframes ph-fall  { from { transform: translateY(-3%); }  to { transform: translateY(3%); } }
+@keyframes ph-rise  { from { transform: translateY(3%) scaleY(.98); } to { transform: translateY(-3%) scaleY(1.02); } }
+@keyframes ph-wheel { from { transform: rotate(-1.4deg) scale(.99); } to { transform: rotate(1.4deg) scale(1.01); } }
 
 /* The ground between blocks is paper, not ink. This needs the [data-skin]
    qualifier to land at all: refinement.css sets `html[data-skin="paper"] body`,

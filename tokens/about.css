@@ -98,7 +98,7 @@ body[data-page="about"] .bk-go {
 .ab-display {
   margin: 0 0 0 -.03em;
   font-family: var(--serif); font-weight: 400;
-  font-size: 8.6cqw; line-height: 1.0; letter-spacing: -.03em;
+  font-size: 13cqw; line-height: 1.0; letter-spacing: -.03em;
   text-wrap: balance;
 }
 .ab-note {
@@ -108,41 +108,41 @@ body[data-page="about"] .bk-go {
 }
 
 /* the full-width blocks: half the fraction, same optical size */
-.ab-block--lede .ab-display { font-size: 4.4cqw; }
-.ab-block--lede .ab-note    { font-size: max(13px, 1.25cqw); max-width: 58ch; }
-.ab-block--lede .ab-meta    { font-size: max(10px, 1.05cqw); }
-.ab-block--head .ab-display { font-size: 3.4cqw; }
-.ab-block--head .ab-meta    { font-size: max(10px, 1.05cqw); }
-.ab-block--cta .ab-display  { font-size: 4.2cqw; }
+.ab-block--lede .ab-display { font-size: 9.4cqw; }
+.ab-block--lede .ab-note    { font-size: max(13px, 1.6cqw); max-width: 58ch; }
+.ab-block--lede .ab-meta    { font-size: max(10px, 1.4cqw); }
+.ab-block--head .ab-display { font-size: 11.5cqw; }
+.ab-block--cta .ab-display  { font-size: 9cqw; }
 .ab-block--cta { gap: clamp(20px, 2.4vw, 36px); }
 
-/* ── the arrangement, wide screens only ─────────────────────────────────
-   ⭐ Left, right, left, right going down, and no two blocks the same height.
-   The row spans are what makes it heterogeneous: a set of equal blocks in two
-   columns is a table however the colours are dealt.
+/* ── the arrangement: the square is the unit ────────────────────────────
+   ⭐ Three columns, and a cell is a SQUARE unless it is doing something that
+   needs more room, in which case it is two squares wide. That is the method
+   page's discipline and it is the thing the last pass lost: blocks sized by
+   row-span come out as arbitrary rectangles, and once the proportion is
+   arbitrary the position of the type inside it cannot be considered either.
+   With a fixed unit, "label at the top, display line low, caption under it"
+   means the same thing in every block.
 
-   ⚠️ Named areas, not auto-placement. Auto-placement would reflow the reading
-   order the moment a block changed height, which is precisely the fault the
-   method page was rebuilt to remove: correctness by construction, not by
-   care. */
+   ⭐ And nothing else is added. No frames, no ornaments, no floating marks —
+   the block is a colour, a proportion and its type. Every decorative element
+   that has been tried on this page so far has been the superfluous one.
+
+   ⚠️ Named areas, not auto-placement, so the reading order cannot be reflowed
+   by a block changing height — the fault the method page was rebuilt to
+   remove. DOM order is reading order; these only rearrange it on wide
+   screens. */
 @media (min-width: 900px) {
   .ab-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-areas:
-      "lede lede"
-      "kind kind"
-      "sepa evid"
-      "sepa evid"
-      "sepa tex1"
-      "rest tex1"
-      "rest deep"
-      "rest deep"
-      "gets gets"
-      "whol word"
-      "whol word"
-      "tex2 pays"
-      "tex2 pays"
-      "cta  cta";
-    grid-auto-rows: minmax(84px, auto);
+      "lede lede kind"
+      "sepa sepa evid"
+      "tex1 rest rest"
+      "deep deep gets"
+      "whol word word"
+      "tex2 pays pays"
+      "cta  cta  cta";
   }
   .ab-block[data-cell="lede"] { grid-area: lede; }
   .ab-block[data-cell="kind"] { grid-area: kind; }
@@ -158,8 +158,20 @@ body[data-page="about"] .bk-go {
   .ab-block[data-cell="pays"] { grid-area: pays; }
   .ab-block[data-cell="cta"]  { grid-area: cta; }
 
-  .ab-block--lede { padding: clamp(40px, 4.4vw, 72px); }
-  .ab-block--cta  { padding: clamp(32px, 3.6vw, 56px); }
+  /* the unit, and the ones that break it */
+  .ab-block { aspect-ratio: 1 / 1; }
+  .ab-block:is([data-cell="lede"], [data-cell="sepa"], [data-cell="rest"],
+    [data-cell="deep"], [data-cell="word"], [data-cell="pays"]) { aspect-ratio: 2 / 1; }
+  .ab-block[data-cell="cta"] { aspect-ratio: 3 / 1; }
+
+  /* ⚠️ A cell spanning two columns has twice the container width, so the same
+     cqw paints at twice the size. Halved fractions, not a different design. */
+  .ab-block:is([data-cell="sepa"], [data-cell="rest"], [data-cell="deep"],
+    [data-cell="word"], [data-cell="pays"]) .ab-display { font-size: 7.6cqw; }
+  .ab-block:is([data-cell="sepa"], [data-cell="rest"], [data-cell="deep"],
+    [data-cell="word"], [data-cell="pays"]) :is(.ab-meta, .ab-note) { font-size: max(12px, 1.5cqw); }
+  .ab-block--lede .ab-display { font-size: 5.4cqw; }
+  .ab-block--cta .ab-display  { font-size: 4.3cqw; }
 }
 
 /* ── one column ─────────────────────────────────────────────────────────
@@ -169,6 +181,7 @@ body[data-page="about"] .bk-go {
    own a third of the scroll. */
 @media (max-width: 899px) {
   .ab-grid { grid-template-columns: minmax(0, 1fr); }
+  .ab-block { aspect-ratio: auto; min-height: 46vw; }
   .ab-block--art { display: none; }
   .ab-block { min-height: 0; }
   .ab-figure { min-height: 96px; }

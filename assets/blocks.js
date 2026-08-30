@@ -371,7 +371,12 @@
        CIRCLE taken from the path's coordinates, but what reads as overlap is
        the bounding box, and two elongated marks can clear the circles while
        their boxes cross. The margin covers the difference. */
-    var gap = opt.gap || 1.32;
+    /* ⚠️ 1.44, not 1.32. The marks move now, and a rotation grows an elongated
+       mark's axis-aligned box by roughly its length times sin(angle) — so a
+       clearance that holds at rest can be eaten mid-cycle. Measured across the
+       animation cycle, 1.32 let one pair graze at 2.6s. The margin has to cover
+       the motion, not just the resting position. */
+    var gap = opt.gap || 1.44;
 
     var lane = pitch * 1.06;
     var lanes = Math.max(1, Math.round(h / lane));
@@ -470,7 +475,7 @@
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="'
         + (p.lead ? 1 : (0.26 + 0.58 * p.k)).toFixed(3)
-        + '"><path d="' + d + '"/></g>';
+        + '"><g class="ph-m"><path d="' + d + '"/></g></g>';
     });
     var svg = "";
     for (g = 0; g < bands; g++) {
@@ -546,7 +551,7 @@
          has a small short side, so min(w,h) drives the pitch down and the marks
          come out small and dense — the calico again, arrived at through the
          block's proportions rather than through the setting. */
-      pitch: opt.pitch || Math.max(34, Math.sqrt(w * h) / 5.6),
+      pitch: opt.pitch || Math.max(30, Math.sqrt(w * h) / 7.4),
       same: opt.same || 3.2,
       any: opt.any || 1.15,
       avoid: opt.avoid || [],
