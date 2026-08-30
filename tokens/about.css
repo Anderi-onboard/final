@@ -156,15 +156,25 @@ body.blocks-route .ab-block[data-horizon] > svg {
 
 @supports (color: oklch(from red l c h)) {
   [data-horizon] {
-    --hz-1: oklch(from var(--bw-palette-3, #E8DDD8) clamp(.88, l, .95) clamp(.02, c, .06) h);
-    --hz-2: oklch(from var(--bw-palette-4, #E3C39A) clamp(.79, l, .86) clamp(.04, c, .10) h);
-    --hz-3: oklch(from var(--bw-palette-5, #C79A55) clamp(.70, l, .77) clamp(.05, c, .12) h);
-    --hz-4: oklch(from var(--bw-palette-7, #B5573A) clamp(.60, l, .68) clamp(.06, c, .13) h);
-    --hz-l1: oklch(from var(--bw-palette-6, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
-    --hz-l2: oklch(from var(--bw-palette-7, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
-    --hz-l3: oklch(from var(--bw-palette-8, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
-    --hz-l4: oklch(from var(--bw-palette-9, #48352A) clamp(.29, l, .34) clamp(.03, c, .09) h);
-    --hz-l5: oklch(from var(--bw-palette-10, #33251D) clamp(.22, l, .27) clamp(.02, c, .08) h);
+    /* ⚠️ The bands alternate the group's two hues, they do not walk the step
+       ladder. Stepping 3→4→5→7 gave four stripes of ONE dusk: adjacent steps
+       are the same hue at different lightnesses (3↔4 measures 6° across the
+       catalogue), so the sky was a fade with hard edges rather than a 彩霞.
+       Alternating A / B / A / B down a descending lightness ladder is what a
+       real sunset does — the same two colours trading places as the light goes.
+
+       ⚠️ The range keeps a single hue (A) through all five layers. A mountain
+       range reads as depth precisely because it is one colour receding; giving
+       each ridge its own hue would turn a landscape into a chart. */
+    --hz-1: oklch(from var(--bw-hue-a, #E8DDD8) clamp(.88, l, .95) clamp(.03, c, .08) h);
+    --hz-2: oklch(from var(--bw-hue-b, #E3C39A) clamp(.79, l, .86) clamp(.05, c, .13) h);
+    --hz-3: oklch(from var(--bw-hue-a, #C79A55) clamp(.70, l, .77) clamp(.06, c, .15) h);
+    --hz-4: oklch(from var(--bw-hue-b, #B5573A) clamp(.60, l, .68) clamp(.07, c, .16) h);
+    --hz-l1: oklch(from var(--bw-hue-a, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
+    --hz-l2: oklch(from var(--bw-hue-a, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
+    --hz-l3: oklch(from var(--bw-hue-a, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
+    --hz-l4: oklch(from var(--bw-hue-a, #48352A) clamp(.29, l, .34) clamp(.03, c, .09) h);
+    --hz-l5: oklch(from var(--bw-hue-a, #33251D) clamp(.22, l, .27) clamp(.02, c, .08) h);
   }
 }
 

@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260830g", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260830g";
+    ? new URL("../palettes/color-groups.json?v=20260830h", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260830h";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -699,6 +699,74 @@
     return PALETTE_FIDELITY ? hex : mutedHex(hex, maxLightness, maxSaturation, minLightness);
   }
 
+  /* ── the group's two hues ─────────────────────────────────────────────────
+     ⭐⭐ THE STEP INDEX IS NOT A HUE, any more than it is a brightness. This
+     file already says the second thing; the first cost the block routes their
+     colour for weeks. Every consumer picked its colours at fixed indices —
+     one role off step 4, another off step 6 — and measured across the
+     catalogue, a FIXED set of indices lands on one hue in most groups: the
+     median smallest gap inside a fixed trio is 5°, and 104 of 114 groups put
+     it under 15°. The page then reads as a single colour with the lightness
+     turned up and down, which is exactly what it looked like.
+
+     ⭐ The colour is there; it is just not at a fixed address. Measured over
+     the catalogue, the median card spans 172° of hue. So the two hues have to
+     be CHOSEN PER GROUP: take the most saturated step, then the step furthest
+     from it in hue. That pick has a median separation of 160° and falls under
+     15° in only 2 of 114 groups.
+
+     ⚠️ Two, not four. A greedy pick of four hues has a median separation of
+     7° and three of them are under 15° in 87 groups — the catalogue does not
+     contain four hues per card, and naming four plates would have been four
+     names for the same colour. Three is marginal (median 29°, 33 groups under
+     15°). Two is what the data supports, so two is what gets published.
+
+     ⚠️ Sky and water are candidates alongside the ridge steps, but they do not
+     rescue a monochrome card: adding them to the pool leaves the four-hue
+     median at 7°. They are in the pool because they are sometimes the most
+     saturated thing on the card, not because they add a hue family.
+
+     ⚠️ Near-grey steps are excluded, because hue is meaningless below a chroma
+     floor — an almost-grey's hue is rounding noise and would be picked as
+     "furthest" every time. A card with fewer than two chromatic colours
+     publishes the same hue twice and renders in one colour, which is fidelity
+     to that card, not a fault. */
+  var HUE_MIN_CHROMA = .045;
+
+  function oklchOf(hex) {
+    var n = parseInt(String(hex).replace("#", ""), 16);
+    var f = [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255].map(function (c) {
+      return c <= .04045 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4);
+    });
+    var l = Math.cbrt(.4122214708 * f[0] + .5363325363 * f[1] + .0514459929 * f[2]),
+        m = Math.cbrt(.2119034982 * f[0] + .6806995451 * f[1] + .1073969566 * f[2]),
+        s = Math.cbrt(.0883024619 * f[0] + .2817188376 * f[1] + .6299787005 * f[2]);
+    var A = 1.9779984951 * l - 2.4285922050 * m + .4505937099 * s,
+        B = .0259040371 * l + .7827717662 * m - .8086757660 * s;
+    return { hex: hex, c: Math.hypot(A, B), h: (Math.atan2(B, A) * 180 / Math.PI + 360) % 360 };
+  }
+
+  function hueGap(a, b) {
+    var d = Math.abs(a - b) % 360;
+    return d > 180 ? 360 - d : d;
+  }
+
+  function publishHues(root, rows, sky, water) {
+    var pool = rows.concat([sky, water]).filter(Boolean).map(oklchOf)
+      .filter(function (v) { return v.c >= HUE_MIN_CHROMA; });
+    if (!pool.length) {
+      root.style.removeProperty("--bw-hue-a");
+      root.style.removeProperty("--bw-hue-b");
+      return;
+    }
+    var a = pool.reduce(function (x, y) { return y.c > x.c ? y : x; });
+    var b = pool.reduce(function (x, y) {
+      return hueGap(y.h, a.h) > hueGap(x.h, a.h) ? y : x;
+    }, a);
+    root.style.setProperty("--bw-hue-a", a.hex);
+    root.style.setProperty("--bw-hue-b", b.hex);
+  }
+
   /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
      value that reaches the screen, not the one on the card. Cheap: 114 groups
      x 10 colours, once per session. */
@@ -798,6 +866,7 @@
     root.dataset.bwPaletteName = group.name || "";
     root.dataset.bwPaletteSegment = group.seg || "";
     root.style.removeProperty("--bw-palette-haze");
+    publishHues(root, tonedRows, tonedCloud, tonedWater);
     /* Sky, ten ridges, then water: every plane interpolates for 1.5 seconds,
        while neighbouring planes start 120ms apart.
        ⭐ That gap was 400ms, which put the twelve 1.5s `fill` transitions across

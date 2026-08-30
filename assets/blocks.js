@@ -448,10 +448,25 @@
          Three concentric zones is the whole difference between a motif and a
          doodle, and it is where the colour layering lives.
 
-         Every nth mark swaps its ink for the route's loud colour — the pattern
-         plate behind that is two inks with one red detail per repeat. */
+         ⭐⭐ FOUR plates, not one. Every mark's two rings are printed in two of
+         them, and every nth mark has its ink pulled onto a plate as well, so a
+         field is a four-colour press rather than a key plus one spot. The
+         groups have the colour for it: measured over the catalogue, steps that
+         are FAR APART carry genuinely different hues (3↔6 is 128°, 4↔7 116°),
+         while adjacent steps are the same hue wearing different lightnesses
+         (3↔4 is 6°, 6↔7 is 6°). CSS names which steps; this only says which
+         plate each mark is on.
+
+         ⚠️ The cycle is deterministic and its length is coprime with the
+         lattice's 3-phase offsets — 4 against 3 means twelve marks before a
+         plate lands on the same phase again, so the colour never falls into
+         vertical stripes. Per-instance random would re-deal on every
+         navigation, which reads as a rendering fault; this is the same rule as
+         the brush's `index mod 3` and the contour drift. */
       var accent = opt.accentEvery && (idx % opt.accentEvery === opt.accentEvery - 1);
-      out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
+      var plate = idx % 4;
+      out[p.band] += '<g data-ph="' + p.name + '" data-plate="' + plate
+        + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="'
         + (p.lead ? 1 : (0.42 + 0.5 * p.k)).toFixed(3) + '"'
         + '><g class="ph-m">'

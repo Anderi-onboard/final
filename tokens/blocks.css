@@ -68,24 +68,48 @@ body.blocks-route {
    from either side. */
 @supports (color: oklch(from red l c h)) {
   body.blocks-route {
+    /* ⭐⭐ The fills that carry colour take the group's TWO HUES, not two step
+       numbers. Every one of them used to name an index — bone and ochre both
+       off step 4, dusty and teal both off 6, olive and clay both off 5 — and a
+       fixed index is not a fixed hue: measured across the catalogue, a fixed
+       trio of steps has a median smallest hue gap of 5° and is under 15° in 104
+       of 114 groups. That is why three deep blocks came out the same brown. The
+       cards span a median 172° of hue; the two ends of that span are chosen per
+       group by publishHues() and arrive here as --bw-hue-a / --bw-hue-b.
+
+       ⚠️ Lightness is still clamped per role and still comes from nowhere but
+       these clamps. Two hues x four lightness bands is what gives the page its
+       range — the hue says which family a block belongs to, the band says where
+       it sits in the composition, and neither is allowed to decide the other.
+
+       ⚠️ bone and cream keep their step sources. They are capped at .035–.04
+       chroma, so they are near-neutral by construction and a hue would be spent
+       on something that cannot show it. */
+
     /* pale ground and pale fills — dark type sits on these */
     --bk-bone:  oklch(from var(--bw-palette-4, #E8DDD8) clamp(.93, l, .97) min(c, .04) h);
     --bk-cream: oklch(from var(--bw-palette-3, #EFE6E0) clamp(.95, l, .98) min(c, .035) h);
-    --bk-dusty: oklch(from var(--bw-palette-6, #C9A99E) clamp(.80, l, .87) min(c, .07) h);
-    --bk-ochre: oklch(from var(--bw-palette-4, #C79A55) clamp(.78, l, .86) min(c, .09) h);
+    --bk-dusty: oklch(from var(--bw-hue-a, #C9A99E) clamp(.80, l, .87) clamp(.03, c, .08) h);
+    --bk-ochre: oklch(from var(--bw-hue-b, #C79A55) clamp(.78, l, .86) clamp(.04, c, .11) h);
 
-    /* deep fills — pale type sits on these */
-    --bk-olive: oklch(from var(--bw-palette-5, #5A6B45) clamp(.38, l, .46) min(c, .08) h);
-    --bk-teal:  oklch(from var(--bw-palette-6, #3E6B70) clamp(.36, l, .44) min(c, .08) h);
-    --bk-brick: oklch(from var(--bw-palette-7, #8C3B24) clamp(.30, l, .38) min(c, .10) h);
+    /* deep fills — pale type sits on these. Two hues, three bands, so no two
+       are the same colour: olive and brick share hue A at .42 and .34, teal
+       takes hue B. */
+    --bk-olive: oklch(from var(--bw-hue-a, #5A6B45) clamp(.40, l, .46) clamp(.03, c, .09) h);
+    --bk-teal:  oklch(from var(--bw-hue-b, #3E6B70) clamp(.36, l, .44) clamp(.03, c, .10) h);
+    --bk-brick: oklch(from var(--bw-hue-a, #8C3B24) clamp(.28, l, .34) clamp(.04, c, .11) h);
 
     /* The clickable one. Chroma is floored so the call to action is the most
        saturated thing on the page in every group — the one place a near-grey
        colourway would cost the reader something real — but it is capped too.
        ⚠️ An uncapped floor is not safe: OKLCH lightness is not luminance, and a
        saturated yellow at L .50 carries far more of it than a grey at L .50.
-       Group 185 put white on this at 1.71:1 with the cap missing. */
-    --bk-clay:  oklch(from var(--bw-palette-5, #B5573A) clamp(.40, l, .47) clamp(.09, c, .15) h);
+       Group 185 put white on this at 1.71:1 with the cap missing.
+       ⚠️ Hue B, not hue A: olive and brick already carry hue A, and a call to
+       action the same colour as the block behind it is not a call to action.
+       Its chroma floor is what separates it from teal, which shares its hue and
+       overlaps its band — the button is the saturated one, the fill is not. */
+    --bk-clay:  oklch(from var(--bw-hue-b, #B5573A) clamp(.40, l, .47) clamp(.09, c, .15) h);
 
     /* type on the pale ground */
     --bk-ink:   oklch(from var(--bw-palette-7, #1A1714) clamp(.18, l, .28) min(c, .05) h);
@@ -192,25 +216,59 @@ body.blocks-route :is(.mt-card, .bk-cell, .ab-block) > :not(.bk-art) { position:
    having: a ring the same hue as its ink is a blur around the mark, not a
    colour behind it.
 
-   So the hue comes from the accent roles and the lightness is pinned to a band
-   on the INK'S SIDE of the fill. Two cases, and the fill roles already know
-   which they are because they already declare their own ink:
+   So the hue comes from elsewhere in the group and the lightness is pinned to
+   a band on the INK'S SIDE of the fill. Two cases, and the fill roles already
+   know which they are because they already declare their own ink:
      dark blocks  — fill .30–.47, ink .95–.98 → rings at .62 and .80
-     light blocks — fill .78–.98, ink .18–.28 → rings at .62 and .44
-   Every band clears both its fill and its ink by at least .15 in L, in all 114
+     light blocks — fill .78–.98, ink .18–.28 → rings at .62 and .48
+   Every band clears both its fill and its ink by at least .14 in L, in all 114
    groups, because the fills are themselves clamped. That is why this can be
-   two numbers rather than a per-group judgement. */
+   two numbers rather than a per-group judgement.
+
+   ── two plates, picked per group ─────────────────────────────────────────
+   ⭐⭐ The rings print from the group's TWO HUES, and the engine chooses which
+   colours those are per group rather than this sheet naming step numbers.
+   Naming steps is what made the page monochrome: measured over the catalogue,
+   a fixed trio of steps has a median smallest hue gap of 5° and lands under
+   15° in 104 of 114 groups. Adjacent steps are one hue at two lightnesses —
+   3↔4 measures 6°, 6↔7 6°. The cards are not short of colour (the median card
+   spans 172°); the colour is simply not at a fixed address, so it has to be
+   chosen. See publishHues() in mountain-range.js.
+
+   ⚠️ TWO, not four. A greedy four-hue pick has a median separation of 7° and
+   is under 15° in 87 of 114 groups; three is marginal at 29°. Two measures
+   160° and fails in 2 groups. Four plates would have been four names for one
+   colour — the same mistake as fixed steps, wearing more paint.
+
+   ⚠️ Each mark still shows THREE colours, because the two hues are printed at
+   different lightnesses and the ink is a third value. Variety across a field
+   comes from swapping which hue is outer — that is real alternation, where a
+   fourth invented plate would only have been noise. */
 body.blocks-route {
-  --ph-back: var(--bk-clay);
-  --ph-mid:  var(--bk-ochre);
+  --ph-h0: var(--bw-hue-a, var(--bk-clay));
+  --ph-h1: var(--bw-hue-b, var(--bk-ochre));
   --ph-l1: .62; --ph-l2: .80;
 }
 body.blocks-route :is([data-fill="bone"], [data-fill="cream"],
                       [data-fill="ochre"], [data-fill="dusty"]) { --ph-l1: .62; --ph-l2: .48; }
+
+/* Even plates print hue A outside, odd ones hue B — so neighbouring marks in
+   the lattice are each other's negative and a field reads as a two-colour
+   press rather than as one repeated chord. */
+body.blocks-route [data-plate="0"],
+body.blocks-route [data-plate="2"] { --ph-hb: var(--ph-h0); --ph-hm: var(--ph-h1); }
+body.blocks-route [data-plate="1"],
+body.blocks-route [data-plate="3"] { --ph-hb: var(--ph-h1); --ph-hm: var(--ph-h0); }
+body.blocks-route { --ph-back: var(--ph-h0); --ph-mid: var(--ph-h1); }
+body.blocks-route [data-plate] { --ph-back: var(--ph-hb); --ph-mid: var(--ph-hm); }
 @supports (color: oklch(from red l c h)) {
-  body.blocks-route [data-fill] {
-    --ph-back: oklch(from var(--bk-clay)  var(--ph-l1) clamp(.06, c, .15) h);
-    --ph-mid:  oklch(from var(--bk-ochre) var(--ph-l2) clamp(.06, c, .15) h);
+  /* ⚠️ Chroma floored as well as capped. A floor alone is unsafe — OKLCH
+     lightness is not luminance — but a cap alone lets a near-grey group print
+     both plates as the same grey, which is the failure this section exists to
+     prevent. */
+  body.blocks-route [data-plate] {
+    --ph-back: oklch(from var(--ph-hb) var(--ph-l1) clamp(.07, c, .19) h);
+    --ph-mid:  oklch(from var(--ph-hm) var(--ph-l2) clamp(.07, c, .19) h);
   }
 }
 body.blocks-route .ph-back {
@@ -227,14 +285,22 @@ body.blocks-route .ph-ink { fill: currentColor; }
    the reference pattern sheets are made on, where one figure in a run is
    pulled in the accent and the rest in the key.
 
-   ⚠️ Clay pulled a third of the way towards the ink, not clay flat and not a
-   rotated hue. Flat clay is the ground itself on a clay block. A hue rotated
-   off currentColor is worse: it is a different arbitrary colour on every group
-   — on a blue block it came out cyan, which reads as a highlighter slip rather
-   than as a second plate. A press has ONE accent; this keeps it, and the pull
-   towards the ink is what guarantees it never lands on the fill. */
+   ⚠️ It prints on the mark's OWN plate, at a lightness one notch past the inner
+   ring towards the ink — not clay flat, and not a hue rotated off currentColor.
+   Flat clay is the ground itself on a clay block; a rotated hue is a different
+   arbitrary colour in every group and came out cyan on a blue one, which reads
+   as a highlighter slip rather than as a plate. Pinning the lightness is what
+   keeps it off the fill, exactly as it does for the rings. */
+body.blocks-route { --ph-l3: .89; }
+body.blocks-route :is([data-fill="bone"], [data-fill="cream"],
+                      [data-fill="ochre"], [data-fill="dusty"]) { --ph-l3: .37; }
 body.blocks-route .ph-ink.is-accent {
-  fill: color-mix(in oklab, var(--bk-clay) 66%, currentColor);
+  fill: color-mix(in oklab, var(--ph-hb, var(--bk-clay)) 66%, currentColor);
+}
+@supports (color: oklch(from red l c h)) {
+  body.blocks-route [data-plate] .ph-ink.is-accent {
+    fill: oklch(from var(--ph-hb) var(--ph-l3) c h);
+  }
 }
 
 /* ── the phenomena move the way the things move ──────────────────────────
