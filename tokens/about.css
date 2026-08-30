@@ -64,15 +64,39 @@ body[data-page="about"] .bk-go {
   gap: var(--bk-gap);
   align-content: start;
 }
+/* ⭐ The block is a grid, and the colony takes whatever the type does not.
+   A 2:1 block is one square of words and one square of marks, so the TYPE's
+   territory is square even though the block is not — which is how a rectangle
+   is made to keep the square unit rather than abandon it. On a square block
+   the leftover is the band between the label and the display line, and the
+   colony fills that.
+
+   ⚠️ The colony is a sibling in the grid, never an overlay. A cluster
+   positioned on top of the block would be the second layer all over again;
+   here the marks and the words are in the same plane, side by side, which is
+   also why the colony can be dense without touching anything. */
 .ab-block {
   position: relative;
   padding: clamp(20px, 2.6vw, 40px);
-  display: flex;
-  flex-direction: column;
+  display: grid;
   min-width: 0;
   gap: clamp(12px, 1.6vw, 24px);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "meta" "say";
 }
-.ab-block--art { padding: 0; }
+.ab-meta { grid-area: meta; }
+.ab-say  { grid-area: say; }
+.ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
+.ab-colony svg { width: 100%; height: 100%; display: block; }
+
+/* square blocks: the colony is the band between the label and the line */
+.ab-block[data-colony="m"] {
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: "meta" "colony" "say";
+}
+.ab-block[data-colony="m"] .ab-say { margin-top: 0; }
+.ab-block--art { padding: 0; grid-template-areas: none; }
 
 /* ── type: the method page's system ──────────────────────────────────────
    ⭐ A small letterspaced label at the top, then a big woven serif line sitting
@@ -94,7 +118,7 @@ body[data-page="about"] .bk-go {
   letter-spacing: .12em;
   opacity: .88;
 }
-.ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); }
+.ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); align-content: end; }
 .ab-display {
   margin: 0 0 0 -.03em;
   font-family: var(--serif); font-weight: 400;
@@ -114,6 +138,8 @@ body[data-page="about"] .bk-go {
 .ab-block--head .ab-display { font-size: 11.5cqw; }
 .ab-block--cta .ab-display  { font-size: 9cqw; }
 .ab-block--cta { gap: clamp(20px, 2.4vw, 36px); }
+.ab-block--cta { grid-template-areas: "say" "cta"; grid-template-rows: 1fr auto; }
+.ab-block--cta .bk-go { grid-area: cta; justify-self: start; }
 
 /* ── the arrangement: the square is the unit ────────────────────────────
    ⭐ Three columns, and a cell is a SQUARE unless it is doing something that
@@ -158,6 +184,22 @@ body[data-page="about"] .bk-go {
   .ab-block[data-cell="pays"] { grid-area: pays; }
   .ab-block[data-cell="cta"]  { grid-area: cta; }
 
+  /* ⭐ Two squares: the words in one, the colony in the other. The side
+     alternates down the page so the zig-zag survives. */
+  .ab-block[data-colony="r"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "meta colony" "say colony";
+  }
+  .ab-block--cta[data-colony="r"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "say colony" "cta colony";
+  }
+  .ab-block[data-colony="l"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "colony meta" "colony say";
+  }
+
   /* the unit, and the ones that break it */
   .ab-block { aspect-ratio: 1 / 1; }
   .ab-block:is([data-cell="lede"], [data-cell="sepa"], [data-cell="rest"],
@@ -181,6 +223,10 @@ body[data-page="about"] .bk-go {
    own a third of the scroll. */
 @media (max-width: 899px) {
   .ab-grid { grid-template-columns: minmax(0, 1fr); }
+  /* ⚠️ Explicitly out, not merely unplaced. A grid item whose named area does
+     not exist is auto-placed into an implicit row rather than ignored, so it
+     would add an empty band to every block on a phone. */
+  .ab-colony { display: none; }
   .ab-block { aspect-ratio: auto; min-height: 46vw; }
   .ab-block--art { display: none; }
   .ab-block { min-height: 0; }

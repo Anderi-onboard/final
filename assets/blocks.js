@@ -459,6 +459,26 @@
      to the placement as avoid regions, so the ground thins toward the type
      wherever the type happens to be — which on these cards is a different
      corner every time. */
+  /* ── colonies ─────────────────────────────────────────────────────────────
+     A patch of the lattice filling the part of a text block the type does not
+     use. Same generator, same order, same clearance — it is the field, cropped
+     to a region, not a different kind of thing. */
+  function colonies() {
+    [].slice.call(document.querySelectorAll(".ab-colony")).forEach(function (host, i) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 40 || h < 40) { host.innerHTML = ""; return; }
+      var field = scatterField(w, h, {
+        seed: 20260830 + i * 5209,
+        /* denser than a whole texture block, because a colony is small and a
+           handful of marks in it would read as three stray dots rather than as
+           a patch of ground */
+        pitch: Math.max(26, Math.sqrt(w * h) / 5.2),
+        fill: 0.56
+      });
+      host.innerHTML = M.svg(field.markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
   function backdrops() {
     [].slice.call(document.querySelectorAll("[data-scatter-bg]")).forEach(function (host, i) {
       var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
@@ -528,17 +548,19 @@
   }
 
   window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField,
-                      blend: blendField, backdrops: backdrops, svg: M.svg };
+                      blend: blendField, backdrops: backdrops,
+                      colonies: colonies, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */
   var t = 0;
   addEventListener("resize", function () {
     clearTimeout(t);
-    t = setTimeout(function () { all(); backdrops(); }, 140);
+    t = setTimeout(function () { all(); backdrops(); colonies(); }, 140);
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  if (document.readyState === "complete") backdrops();
-  else addEventListener("load", backdrops);
+  function afterLayout() { backdrops(); colonies(); }
+  if (document.readyState === "complete") afterLayout();
+  else addEventListener("load", afterLayout);
 }());
