@@ -25,66 +25,27 @@
 /* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
    body` in refinement.css outspecifies a bare body selector, which is exactly
    how the block route's ground "was declared for weeks and never painted". */
+/* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
+   body` in refinement.css outspecifies a bare body selector, which is exactly
+   how the block route's ground "was declared for weeks and never painted". */
 html[data-skin="paper"] body[data-page="about"],
-body[data-page="about"] {
-  margin: 0;
-  background: var(--ab-seam);
-  color: var(--ab-ink-2);
-  --ab-seam: #12200F;
-  /* Six tones of one hue. Fallbacks first: this is the page a browser without
-     relative colour, or a visitor whose palette fetch failed, still gets. */
-  --ab-fill-1: #1F3D2A; --ab-ink-1: #EDE8DB;
-  --ab-fill-2: #2F5638; --ab-ink-2: #F2EFE4;
-  --ab-fill-3: #24452C; --ab-ink-3: #EFEADD;
-  --ab-fill-4: #E7E3D4; --ab-ink-4: #1B2C1E;
-  --ab-fill-5: #C9CDB4; --ab-ink-5: #1B2C1E;
-  --ab-fill-6: #356A45; --ab-ink-6: #F4F1E7;
-}
+body[data-page="about"] { margin: 0; background: var(--bk-ink); color: var(--bk-ink); }
 
-/* Rotates with the colour groups, on the same clock as the range, and stays
-   ONE hue per group — four blocks in one colour reading as four things is what
-   this page is arguing, and colour doing that job would leave the arrangement
-   with nothing to do. Lightness is clamped per tone for the reason set out at
-   length in blocks.css: the step index is not a brightness.
-
-   ⚠️ Two of the six are pale and carry dark type; four are deep and carry pale
-   type. No band reaches the middle, where neither near-white nor near-black
-   clears 4.5:1.
-   ⚠️ The selector must carry html[data-skin="paper"] here too. @supports adds
-   no specificity of its own, and a bare body[data-page="about"] loses to the
-   fallback block above — that once rendered all 114 groups the same green
-   while every measurement passed. */
-@supports (color: oklch(from red l c h)) {
-  html[data-skin="paper"] body[data-page="about"],
-  body[data-page="about"] {
-    --ab-seam:   oklch(from var(--bw-palette-5, #12200F) clamp(.10, l, .16) min(c, .05) h);
-    --ab-fill-1: oklch(from var(--bw-palette-5, #1F3D2A) clamp(.20, l, .26) min(c, .09) h);
-    --ab-fill-2: oklch(from var(--bw-palette-5, #2F5638) clamp(.28, l, .35) min(c, .09) h);
-    --ab-fill-3: oklch(from var(--bw-palette-5, #24452C) clamp(.24, l, .30) min(c, .09) h);
-    --ab-fill-4: oklch(from var(--bw-palette-5, #E7E3D4) clamp(.90, l, .95) min(c, .05) h);
-    --ab-fill-5: oklch(from var(--bw-palette-5, #C9CDB4) clamp(.82, l, .88) min(c, .07) h);
-    --ab-fill-6: oklch(from var(--bw-palette-5, #356A45) clamp(.33, l, .40) min(c, .09) h);
-
-    --ab-ink-1: oklch(from var(--ab-fill-1) clamp(.94, l, .97) min(c, .03) h);
-    --ab-ink-2: oklch(from var(--ab-fill-2) clamp(.94, l, .97) min(c, .03) h);
-    --ab-ink-3: oklch(from var(--ab-fill-3) clamp(.94, l, .97) min(c, .03) h);
-    --ab-ink-4: oklch(from var(--ab-fill-4) clamp(.16, l, .24) min(c, .05) h);
-    --ab-ink-5: oklch(from var(--ab-fill-5) clamp(.16, l, .24) min(c, .05) h);
-    --ab-ink-6: oklch(from var(--ab-fill-6) clamp(.94, l, .97) min(c, .03) h);
-  }
-}
-
-.ab-block[data-tone="1"] { --ab-fill: var(--ab-fill-1); --ab-ink: var(--ab-ink-1); }
-.ab-block[data-tone="2"] { --ab-fill: var(--ab-fill-2); --ab-ink: var(--ab-ink-2); }
-.ab-block[data-tone="3"] { --ab-fill: var(--ab-fill-3); --ab-ink: var(--ab-ink-3); }
-.ab-block[data-tone="4"] { --ab-fill: var(--ab-fill-4); --ab-ink: var(--ab-ink-4); }
-.ab-block[data-tone="5"] { --ab-fill: var(--ab-fill-5); --ab-ink: var(--ab-ink-5); }
-.ab-block[data-tone="6"] { --ab-fill: var(--ab-fill-6); --ab-ink: var(--ab-ink-6); }
+/* ⭐ Colour comes from the route's shared roles — the same [data-fill] tokens
+   the method page uses, rotating with the 114 groups. The six-tones-of-one-hue
+   scheme this page had was arguing for a version of the page that no longer
+   exists (four cards where the arrangement had to do all the separating);
+   with thirteen blocks and two headed sections it only made the page quieter
+   than its own reference. */
 
 /* ── header and footer: flush bars like the rest of the route ───────────── */
+/* ⚠️ These referenced --ab-fill-4 / --ab-ink-4, which went away with the
+   six-tone scheme. An undefined custom property makes the whole declaration
+   invalid, so the bar kept a colour it was never given and its links vanished
+   into it. Use the route's own tokens, like every other block. */
 body[data-page="about"] :is(.bk-head, .bk-foot) {
-  background: var(--ab-fill-4);
-  color: var(--ab-ink-4);
+  background: var(--bk-cream);
+  color: var(--bk-ink);
   border: 0;
 }
 body[data-page="about"] .bk-head { margin-bottom: var(--bk-gap); }
@@ -105,77 +66,55 @@ body[data-page="about"] .bk-go {
 }
 .ab-block {
   position: relative;
-  background: var(--ab-fill);
-  color: var(--ab-ink);
   padding: clamp(20px, 2.6vw, 40px);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
-  /* Three bands. The middle one is the figure — the artwork is a block in the
-     flow between the headline and the caption, never a field behind them. */
-  grid-template-rows: auto 1fr auto;
   gap: clamp(12px, 1.6vw, 24px);
 }
 .ab-block--art { padding: 0; }
 
-/* ── type ───────────────────────────────────────────────────────────────── */
-.ab-eyebrow {
+/* ── type: the method page's system ──────────────────────────────────────
+   ⭐ A small letterspaced label at the top, then a big woven serif line sitting
+   LOW in the block, with the caption beneath it. That is what the reference
+   does, and it is what fills a block: the old layout put an 18px bold name at
+   the top and a 13px caption at the bottom, which is why the blocks read as
+   empty however much colour they carried. Type at display size IS the content.
+
+   ⚠️ Sized in cqw, so the line scales with the block rather than with the
+   viewport — and the full-width blocks get their own smaller fractions,
+   because a block spanning two columns has twice the cqw and the same number
+   would paint it at twice the size. */
+.ab-block { container-type: inline-size; }
+
+.ab-meta {
   margin: 0;
-  font-family: var(--sans); font-size: 11px; letter-spacing: .14em;
+  font-family: var(--mono, var(--sans));
+  font-size: max(10px, 2.1cqw);
+  letter-spacing: .12em;
+  opacity: .88;
 }
-.ab-block--lede h1 {
-  margin: 0;
+.ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); }
+.ab-display {
+  margin: 0 0 0 -.03em;
   font-family: var(--serif); font-weight: 400;
-  font-size: clamp(30px, 3.9vw, 52px); line-height: 1.06; letter-spacing: -.02em;
-  max-width: 20ch; text-wrap: balance;
-}
-.ab-block--lede .ab-say {
-  margin: 0;
-  font-family: var(--sans); font-size: 15px; line-height: 1.6; max-width: 52ch;
-}
-.ab-block--head h2 {
-  margin: 0;
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(23px, 2.6vw, 36px); line-height: 1.1; letter-spacing: -.02em;
-  text-wrap: balance;
-}
-.ab-block--cta h2 {
-  margin: 0;
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(26px, 3.2vw, 44px); line-height: 1.08; letter-spacing: -.02em;
-  text-wrap: balance;
-}
-.ab-name {
-  margin: 0;
-  font-family: var(--sans); font-weight: 700;
-  font-size: clamp(18px, 1.9vw, 27px); line-height: 1.06; letter-spacing: -.02em;
+  font-size: 8.6cqw; line-height: 1.0; letter-spacing: -.03em;
   text-wrap: balance;
 }
 .ab-note {
   margin: 0;
-  font-family: var(--serif); font-size: 13px; line-height: 1.5; max-width: 40ch;
+  font-family: var(--sans); font-size: max(12px, 2.4cqw); line-height: 1.5;
+  max-width: 46ch; opacity: .92;
 }
 
-/* the figure, in the flow */
-/* ⚠️ Capped. The middle band is 1fr, so without a ceiling a tall block pulls
-   the figure and its caption to opposite ends and leaves a hole between them. */
-.ab-figure { grid-row: 2; align-self: center; width: 100%; min-height: 0;
-  max-height: clamp(96px, 13vw, 190px); }
-.ab-figure svg { width: 100%; height: 100%; display: block; overflow: visible; }
-/* The figure drifts as one piece — the arrangement is the point, so the marks
-   never move relative to each other. Coprime periods, transform only. */
-@media (prefers-reduced-motion: no-preference) {
-  .ab-figure[data-fig="1"] svg, .ab-figure[data-fig="5"] svg { animation: ab-fig-a 37s ease-in-out infinite alternate; }
-  .ab-figure[data-fig="2"] svg, .ab-figure[data-fig="6"] svg { animation: ab-fig-b 53s ease-in-out infinite alternate; }
-  .ab-figure[data-fig="3"] svg, .ab-figure[data-fig="7"] svg { animation: ab-fig-c 71s ease-in-out infinite alternate; }
-  .ab-figure[data-fig="4"] svg { animation: ab-fig-a 53s ease-in-out infinite alternate; }
-}
-@keyframes ab-fig-a { from { transform: translate(0, 0); } to { transform: translate(1.4%, -2.2%); } }
-@keyframes ab-fig-b { from { transform: translate(0, 0); } to { transform: translate(-1.8%, 1.6%); } }
-@keyframes ab-fig-c { from { transform: translate(0, 0); } to { transform: translate(1.1%, 2.4%); } }
-
-/* the lede and the bands do not carry a figure, so their middle row collapses */
-.ab-block--lede, .ab-block--head, .ab-block--cta { grid-template-rows: auto; align-content: center; }
-.ab-block--cta { justify-items: start; }
+/* the full-width blocks: half the fraction, same optical size */
+.ab-block--lede .ab-display { font-size: 4.4cqw; }
+.ab-block--lede .ab-note    { font-size: max(13px, 1.25cqw); max-width: 58ch; }
+.ab-block--lede .ab-meta    { font-size: max(10px, 1.05cqw); }
+.ab-block--head .ab-display { font-size: 3.4cqw; }
+.ab-block--head .ab-meta    { font-size: max(10px, 1.05cqw); }
+.ab-block--cta .ab-display  { font-size: 4.2cqw; }
+.ab-block--cta { gap: clamp(20px, 2.4vw, 36px); }
 
 /* ── the arrangement, wide screens only ─────────────────────────────────
    ⭐ Left, right, left, right going down, and no two blocks the same height.
