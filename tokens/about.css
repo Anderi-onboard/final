@@ -89,6 +89,29 @@ body[data-page="about"] .bk-go {
 .ab-say  { grid-area: say; }
 .ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
 .ab-colony svg { width: 100%; height: 100%; display: block; }
+/* ── the skyline ────────────────────────────────────────────────────────
+   ⭐ Its own sky, not the block's. The reference is a hard dark ridge against
+   a banded, saturated sky, and a 10-step colour ramp is exactly the thing to
+   build that from — three stops off the group's own card. The ridges then take
+   a deep step, so the silhouette cuts against the light instead of dissolving
+   into it.
+
+   ⚠️ The first version inherited currentColor, which on a dark block is the
+   PALE ink — so the mountains came out cream on brown, the photograph
+   negative of the thing being copied. A silhouette has to name its own colour;
+   it cannot borrow the one meant for type. */
+[data-horizon] { align-self: stretch; position: relative; overflow: hidden;
+  color: var(--bk-ink); background: var(--bk-bone); }
+[data-horizon] svg { width: 100%; height: 100%; display: block; }
+.ab-block--art[data-horizon] { padding: 0; }
+@supports (color: oklch(from red l c h)) {
+  [data-horizon] {
+    background-image: linear-gradient(180deg,
+      oklch(from var(--bw-palette-3, #E8DDD8) clamp(.86, l, .94) max(c, .05) h) 0%,
+      oklch(from var(--bw-palette-5, #C79A55) clamp(.74, l, .84) max(c, .09) h) 46%,
+      oklch(from var(--bw-palette-7, #B5573A) clamp(.62, l, .74) max(c, .11) h) 100%);
+  }
+}
 
 /* square blocks: the colony is the band between the label and the line */
 .ab-block[data-colony="m"] {
@@ -116,7 +139,10 @@ body[data-page="about"] .bk-go {
   font-family: var(--mono, var(--sans));
   font-size: max(10px, 2.1cqw);
   letter-spacing: .12em;
-  opacity: .88;
+  /* .88 folded the label toward its own carrier just enough to matter once the
+     fill became a gradient. The hierarchy is carried by size and .12em of
+     tracking; the fade is the third signal and it is the one that gives way. */
+  opacity: .94;
 }
 .ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); align-content: end; }
 .ab-display {

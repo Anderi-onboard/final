@@ -78,6 +78,17 @@
          round as every pattern field. The old values (7–14% fill, ink on
          cream) put the range at the bottom of the tonal range on the lightest
          block on the page — technically an image, visually a smudge. */
+      /* ⭐ Two readings of the same range. The plate mode keeps the masses very
+         light and lets the contour lines carry it — that is the duotone the
+         pattern cells want. The silhouette mode does the opposite: masses
+         nearly solid and increasing toward the front, no contours at all, so
+         the nearest ridge cuts hard against the sky. A landscape at 11% fill
+         is line work; a place needs something standing in front of the light. */
+      if (opts.silhouette) {
+        out += '<path d="' + top + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="currentColor" opacity="'
+          + (0.24 + t * 0.64).toFixed(3) + '"/>';
+        continue;
+      }
       out += '<path d="' + top + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="currentColor" opacity="'
         + ((0.11 + t * 0.10) * fo).toFixed(3) + '"/>';
       out += '<path d="' + top + '" fill="none" stroke="currentColor" stroke-width="'

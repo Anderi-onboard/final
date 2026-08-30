@@ -434,16 +434,22 @@
 
     var out = [], g;
     for (g = 0; g < bands; g++) out[g] = "";
-    placed.forEach(function (p) {
+    placed.forEach(function (p, idx) {
       var d = M.phenomena[p.name] && M.phenomena[p.name]();
       if (!d) return;
       /* sized to its cell, so nothing can reach a neighbour: the lattice is
          the clearance */
       var sc = (p.cell * (opt.fill || 0.62)) / (motifRadius(p.name) * 2);
+      /* ⭐ Every nth mark is painted in the route's loud colour. The pattern
+         plate that suggested it is two inks with a single red detail inside
+         each repeat — one second colour, used sparingly, is what stops a field
+         of one ink reading as wallpaper. */
+      var accent = opt.accentEvery && (idx % opt.accentEvery === opt.accentEvery - 1);
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="'
-        + (p.lead ? 1 : (0.34 + 0.56 * p.k)).toFixed(3)
-        + '"><g class="ph-m"><path d="' + d + '"/></g></g>';
+        + (p.lead ? 1 : (0.34 + 0.56 * p.k)).toFixed(3) + '"'
+        + (accent ? ' fill="var(--bk-clay)"' : '')
+        + '><g class="ph-m"><path d="' + d + '"/></g></g>';
     });
     var svg = "";
     for (g = 0; g < bands; g++) {
@@ -469,6 +475,7 @@
       if (w < 40 || h < 40) { host.innerHTML = ""; return; }
       var field = scatterField(w, h, {
         seed: 20260830 + i * 5209,
+        accentEvery: 7,
         /* denser than a whole texture block, because a colony is small and a
            handful of marks in it would read as three stray dots rather than as
            a patch of ground */
@@ -476,6 +483,25 @@
         fill: 0.56
       });
       host.innerHTML = M.svg(field.markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
+  /* ── a horizon ────────────────────────────────────────────────────────────
+     ⭐ A block should be a place, not a swatch: the reference that made this
+     obvious is a hard mountain silhouette against a graded sky. The sky is the
+     block's own gradient; this is what stands in front of it. Drawn from
+     landscape(), the same construction as the range on the glass routes, so
+     the country is recognisably the same one.
+
+     ⚠️ A horizon and a colony are alternatives, never both — one carrier, one
+     figure. A block with marks AND a skyline is two pictures in one box. */
+  function horizons() {
+    [].slice.call(document.querySelectorAll("[data-horizon]")).forEach(function (host, i) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 40 || h < 40) { host.innerHTML = ""; return; }
+      var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
+      host.innerHTML = M.svg(M.landscape(seed, w, h, { layers: 5, silhouette: true }),
+        "0 0 " + w + " " + h, 'preserveAspectRatio="xMidYMax slice"');
     });
   }
 
@@ -549,18 +575,18 @@
 
   window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField,
                       blend: blendField, backdrops: backdrops,
-                      colonies: colonies, svg: M.svg };
+                      colonies: colonies, horizons: horizons, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */
   var t = 0;
   addEventListener("resize", function () {
     clearTimeout(t);
-    t = setTimeout(function () { all(); backdrops(); colonies(); }, 140);
+    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); }, 140);
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  function afterLayout() { backdrops(); colonies(); }
+  function afterLayout() { backdrops(); colonies(); horizons(); }
   if (document.readyState === "complete") afterLayout();
   else addEventListener("load", afterLayout);
 }());

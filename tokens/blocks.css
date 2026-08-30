@@ -363,14 +363,42 @@ body.blocks-route [data-at="wide-bottom"]{ grid-column: 1 / 3;  grid-row: 2; }
 body.blocks-route .bk-cell { padding: var(--bk-pad); min-width: 0; position: relative; overflow: hidden; }
 body.blocks-route .bk-cell:is([data-pattern], [data-land], [data-mark]) { padding: 0; }
 
-body.blocks-route [data-fill="bone"]  { background: var(--bk-bone); }
-body.blocks-route [data-fill="cream"] { background: var(--bk-cream); }
-body.blocks-route [data-fill="clay"]  { background: var(--bk-clay);  color: var(--bk-cream); }
-body.blocks-route [data-fill="brick"] { background: var(--bk-brick); color: var(--bk-cream); }
-body.blocks-route [data-fill="olive"] { background: var(--bk-olive); color: var(--bk-cream); }
-body.blocks-route [data-fill="teal"]  { background: var(--bk-teal);  color: var(--bk-cream); }
-body.blocks-route [data-fill="ochre"] { background: var(--bk-ochre); }
-body.blocks-route [data-fill="dusty"] { background: var(--bk-dusty); }
+/* Each role also publishes its own colour as --bk-fill, so anything downstream
+   can derive from the fill this block actually got rather than re-deciding it. */
+body.blocks-route [data-fill="bone"]  { --bk-fill: var(--bk-bone);  background: var(--bk-fill); }
+body.blocks-route [data-fill="cream"] { --bk-fill: var(--bk-cream); background: var(--bk-fill); }
+body.blocks-route [data-fill="clay"]  { --bk-fill: var(--bk-clay);  background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="brick"] { --bk-fill: var(--bk-brick); background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="olive"] { --bk-fill: var(--bk-olive); background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="teal"]  { --bk-fill: var(--bk-teal);  background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="ochre"] { --bk-fill: var(--bk-ochre); background: var(--bk-fill); }
+body.blocks-route [data-fill="dusty"] { --bk-fill: var(--bk-dusty); background: var(--bk-fill); }
+
+/* ── a block has a sky, not just a colour ────────────────────────────────
+   ⭐ Every block is graded rather than flat: lighter at the top, deeper at the
+   foot, the way a sky is. A flat rectangle of colour with marks on it is a
+   swatch; a graded one is a place for something to stand in front of. This is
+   the ground, not a texture — the "one texture per carrier" rule is about
+   patterns laid over a fill, and a fill that varies is still one fill.
+
+   ⚠️ Both stops are derived from the fill the block already got and moved by a
+   small fixed amount in OKLCH lightness, so the whole ramp stays inside the
+   band that guarantees its ink is readable. A gradient invented independently
+   of the token would walk straight out of that band in some of the 114 groups.
+
+   ⚠️ The lift at the top is small and the fall at the foot does most of the
+   work, because the LABEL sits at the top. On a dark block a lightened top is
+   a lighter ground under pale ink — group 195 measured 4.16:1 with the ramp
+   centred. The sky still reads; it just does its brightening where nothing is
+   being read. */
+@supports (color: oklch(from red l c h)) {
+  body.blocks-route [data-fill] {
+    background-image: linear-gradient(180deg,
+      oklch(from var(--bk-fill) calc(l + .028) c h) 0%,
+      var(--bk-fill) 44%,
+      oklch(from var(--bk-fill) calc(l - .062) c h) 100%);
+  }
+}
 
 /* The title sits at the foot of its block, not the head — in every reference
    slide the type is anchored to the bottom-left of the field it lives in. */
