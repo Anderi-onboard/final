@@ -350,131 +350,99 @@
 
   function scatterField(w, h, opt) {
     opt = opt || {};
-    var rand = M.rng(opt.seed || 20260829);
-    var pitch = opt.pitch || Math.max(20, Math.min(w, h) / 11);
-    var rSame = pitch * (opt.same || 3.4);      /* a motif vs itself   */
-    var rAny  = pitch * (opt.any  || 0.60);     /* a motif vs any other */
-    var avoid = opt.avoid || [];                /* text boxes, page coords */
-    var soft  = opt.soft == null ? pitch * 1.4 : opt.soft;
-    var bands = opt.bands || 3;
-    var target = opt.count || Math.round((w * h) / (pitch * pitch) * 0.62);
-
-    /* ⭐ Rows, not free scatter. Pure blue noise has no rhythm — it reads as
-       confetti, which is the "too unstructured" half of the note. The wave
-       field that was pointed at as the good example is stacked: courses of
-       marks running across, which is what gives it order. So y is quantised to
-       a course with a small jitter (±22% of the spacing) while x stays free
-       and conflict-checked. Courses give the stacking; the free x and the
-       conflict matrix keep it off a grid. */
-    var baseScale = (pitch / 150) * (opt.scale || 1);
-    /* ⚠️ 1.14 left one grazing pair in 223. The radius here is a bounding
-       CIRCLE taken from the path's coordinates, but what reads as overlap is
-       the bounding box, and two elongated marks can clear the circles while
-       their boxes cross. The margin covers the difference. */
-    /* ⚠️ 1.44, not 1.32. The marks move now, and a rotation grows an elongated
-       mark's axis-aligned box by roughly its length times sin(angle) — so a
-       clearance that holds at rest can be eaten mid-cycle. Measured across the
-       animation cycle, 1.32 let one pair graze at 2.6s. The margin has to cover
-       the motion, not just the resting position. */
-    var gap = opt.gap || 1.44;
-
-    var lane = pitch * 1.06;
-    var lanes = Math.max(1, Math.round(h / lane));
-    lane = h / lanes;
-
-    var placed = [], tries = 0, cap = target * 60;
-
-    /* ⭐ A block of material needs a subject. An even field has no centre and
-       the eye has nowhere to land — it reads as wallpaper however well spaced
-       it is. One motif is drawn large and at full weight, the rest sit back.
-       ⚠️ It is placed FIRST, at its own scale, so every later candidate is
-       tested against its real radius. Enlarging a mark after placement would
-       reopen the overlap the clearance test exists to prevent. */
-    if (opt.lead) {
-      var leadScale = baseScale * (opt.leadScale || 2.3);
-      var lr = motifRadius(opt.lead) * leadScale;
-      placed.push({
-        x: w * (opt.leadAt || 0.38), y: h * 0.5,
-        name: opt.lead, k: 1, drawn: lr, sc: leadScale, lead: true, band: 0
-      });
-    }
-    /* Cycle the class rather than drawing it at random: every motif is dealt
-       before any is dealt twice, which is how all thirty actually get used
-       instead of the common ones crowding out the rest. The offset walks by a
-       number coprime with the count so successive passes do not repeat the
-       same order. */
-    /* ⚠️ One deck for the whole site, shuffled from a CONSTANT seed, and dealt
-       through a cursor shared by every field on the page. Shuffling per field
-       looked tidier and quietly cost coverage — two sparse fields drawing
-       independently overlap, and the method page dealt only 17 of the 30.
-       Per-field offsets were no better, because a field cannot know how many
-       marks the one before it actually fitted: 15 overlapped by a slot, 17
-       skipped one. Positions still come from each field's own seed, so nothing
-       reads as repeated. */
     var deck = Object.keys(M.phenomena);
     var dealer = M.rng(20260829);
-    for (var s = deck.length - 1; s > 0; s--) {
-      var j = Math.floor(dealer() * (s + 1)), t = deck[s]; deck[s] = deck[j]; deck[j] = t;
+    for (var s0 = deck.length - 1; s0 > 0; s0--) {
+      var j0 = Math.floor(dealer() * (s0 + 1)), t0 = deck[s0]; deck[s0] = deck[j0]; deck[j0] = t0;
     }
 
-    while (placed.length < target && tries < cap) {
-      tries++;
-      var name = deck[DEAL % deck.length];
-      var x = rand() * w;
-      var y = (Math.floor(rand() * lanes) + 0.5 + (rand() - 0.5) * 0.44) * lane;
-      var ok = true;
-      var drawn = motifRadius(name) * baseScale;
-      for (var i = 0; i < placed.length; i++) {
-        var p = placed[i];
-        var dx = p.x - x, dy = p.y - y, d2 = dx * dx + dy * dy;
-        /* two clearances, and the larger wins: the two marks must not touch,
-           AND a motif must stay well away from another copy of itself */
-        var touch = (drawn + p.drawn) * gap;
-        var r = (p.name === name) ? Math.max(rSame, touch) : Math.max(rAny, touch);
-        if (d2 < r * r) { ok = false; break; }
+    /* ── courses, not a scatter ───────────────────────────────────────────
+       ⭐⭐ Positions are REGULAR. Blue-noise placement spreads evenly and reads
+       as disorder anyway, because every mark sits at an arbitrary point; adding
+       lanes and a subject helped the rhythm but not that. The stacked wave
+       field that keeps being pointed at as the good one is regular — courses
+       running across, even spacing along each, offset row to row. That is what
+       makes it read as a made thing rather than as spillage.
+
+       ⭐ The variety comes from the MOTIFS, not from the coordinates. Thirty
+       different things on a regular lattice is not a table; the same thing
+       thirty times on a regular lattice is. The lattice supplies the order and
+       the catalogue supplies the difference — each does one job.
+
+       ⚠️ Offsets run on a 3-cycle rather than alternating. Brickwork on a
+       half-offset shows a hard vertical seam every other course; three phases
+       take nine rows to repeat, which is more than any block here is tall.
+       Same reasoning as the strokes and the contours: an ordered cycle, never
+       randomness, because randomness is the one thing that cannot make a
+       rhythm. */
+    var pitch = opt.pitch || Math.max(30, Math.sqrt(w * h) / 7.4);
+    var cols = Math.max(2, Math.round(w / pitch));
+    var rows = Math.max(2, Math.round(h / pitch));
+    var cw = w / cols, ch = h / rows;
+    var OFFSETS = [0, 1 / 3, 2 / 3];
+    var avoid = opt.avoid || [];
+    var soft = opt.soft == null ? pitch * 1.4 : pitch * 1.4;
+    var bands = opt.bands || 3;
+
+    /* the subject takes a 2x2 of the lattice, so it can be drawn large without
+       ever reaching its neighbours — the clearance stays a property of the
+       grid rather than something to re-check */
+    var leadR = opt.lead ? Math.floor(rows * 0.45) : -1;
+    var leadC = opt.lead ? Math.floor(cols * (opt.leadAt || 0.34)) : -1;
+    function isLead(r, c) { return r >= leadR && r <= leadR + 1 && c >= leadC && c <= leadC + 1; }
+
+    var placed = [], r, c, i;
+    for (r = 0; r < rows; r++) {
+      for (c = 0; c < cols; c++) {
+        if (leadR >= 0 && isLead(r, c)) {
+          if (r === leadR && c === leadC) {
+            placed.push({ x: (c + 1) * cw, y: (r + 1) * ch, name: opt.lead,
+                          k: 1, cell: Math.min(cw, ch) * 2, lead: true, band: 0 });
+          }
+          continue;
+        }
+        var x = (c + 0.5 + OFFSETS[r % 3]) * cw;
+        if (x > w - cw * 0.2) continue;          /* the row's overhang */
+        var y = (r + 0.5) * ch;
+
+        /* figure-ground: the ground thins toward the type, it does not stop */
+        var near = 1;
+        for (i = 0; i < avoid.length; i++) {
+          var b = avoid[i];
+          var ox = Math.max(b.x - x, 0, x - (b.x + b.w));
+          var oy = Math.max(b.y - y, 0, y - (b.y + b.h));
+          near = Math.min(near, Math.min(1, Math.hypot(ox, oy) / soft));
+        }
+
+        /* next motif that is not already in this cell's neighbourhood — the
+           one thing kept from the blue-noise rule, and the only one that
+           mattered: a motif must not turn up next to itself */
+        var name = null;
+        for (i = 0; i < deck.length; i++) {
+          var cand = deck[DEAL % deck.length];
+          var clash = placed.some(function (p) {
+            return p.name === cand && Math.abs(p.x - x) < cw * 2.5 && Math.abs(p.y - y) < ch * 2.5;
+          });
+          DEAL++;
+          if (!clash) { name = cand; break; }
+        }
+        if (!name) continue;
+        placed.push({ x: x, y: y, name: name, k: near,
+                      cell: Math.min(cw, ch), band: placed.length % bands });
       }
-      if (!ok) continue;
-      /* figure-ground falloff: 0 inside a text box, 1 well clear of one */
-      var near = 1;
-      for (var a = 0; a < avoid.length; a++) {
-        var b = avoid[a];
-        var ox = Math.max(b.x - x, 0, x - (b.x + b.w));
-        var oy = Math.max(b.y - y, 0, y - (b.y + b.h));
-        var dist = Math.hypot(ox, oy);
-        near = Math.min(near, Math.min(1, dist / soft));
-      }
-      /* Marks are allowed to cross type — the art layer sits behind it — they
-         just arrive there quiet and small. Excluding them outright leaves a
-         visible hole in the shape of the text box, which reads as a mistake;
-         the ground is supposed to pass under the figure, only with less
-         detail. `near` floors rather than rejects. */
-      placed.push({ x: x, y: y, name: name, k: near, drawn: drawn,
-                    sc: baseScale, band: placed.length % bands });
-      DEAL++;
     }
 
-    /* Grouped into a few drift bands rather than animated one mark at a time:
-       a handful of composited layers instead of hundreds. */
     var out = [], g;
     for (g = 0; g < bands; g++) out[g] = "";
     placed.forEach(function (p) {
       var d = M.phenomena[p.name] && M.phenomena[p.name]();
       if (!d) return;
-      /* ⭐ Size is very nearly constant; only weight varies. Marks at mixed
-         sizes read as marks at mixed DISTANCES — that is the "too
-         three-dimensional" half of the note, and it is size that causes it,
-         not density. So the figure-ground falloff is carried by opacity alone
-         and every mark sits on the same plane. No rotation anywhere either:
-         the catalogue already mixes upright and lying motifs, and tilting them
-         on top of that is what turns a field into a jumble. */
-      /* one plane: size does not vary with the falloff, or a mark near type
-         would be smaller than the clearance it was placed with. The lead is the
-         one deliberate exception, and it is placed FIRST at its own size so the
-         clearance test sees it correctly. */
-      var sc = p.sc;
+      /* sized to its cell, so nothing can reach a neighbour: the lattice is
+         the clearance */
+      var sc = (p.cell * (opt.fill || 0.62)) / (motifRadius(p.name) * 2);
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="'
-        + (p.lead ? 1 : (0.26 + 0.58 * p.k)).toFixed(3)
+        + (p.lead ? 1 : (0.34 + 0.56 * p.k)).toFixed(3)
         + '"><g class="ph-m"><path d="' + d + '"/></g></g>';
     });
     var svg = "";
@@ -484,7 +452,6 @@
     return { markup: svg, count: placed.length,
              used: placed.reduce(function (m, p) { m[p.name] = 1; return m; }, {}) };
   }
-
 
   /* ── a field behind a carrier that already has content ────────────────────
      [data-scatter] replaces a cell's contents; this puts a field BEHIND one
