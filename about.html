@@ -1,8 +1,14 @@
-<!-- BourneWise — About us. Four cards, one idea each, on a deep ground.
-     The composition follows a reference whose real rule is not the cards but
-     the two things around them: the columns run half a card out of step so the
-     set never reads as a grid, and title / caption / mark take a different
-     corner on every card so four cards in one colour read as four things.
+<!-- BourneWise — About us.
+     Flush colour blocks, square corners, 3px paper seams — the block route's
+     own material. The rounded floating cards this page used to have were never
+     part of that system; §3 of CLAUDE.md says this route is "flush, right
+     angles throughout, depth from adjacency", and a card with a 5.4% radius
+     sitting on a visible ground is the glass route's material on the wrong
+     page. Blocks that tile the width also settle the "background is too empty"
+     note by construction: there is no ground left showing.
+
+     DOM order is reading order. The named grid areas below only rearrange the
+     blocks on wide screens; under 900px the order you read is the order here.
      See tokens/about.css, which this route owns alone. -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
@@ -10,21 +16,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About us — BourneWise</title>
-<meta name="description" content="What BourneWise is, and the four things it holds itself to.">
-<!-- Paint guard, runs before any stylesheet. This route's ground is its own
-     colour, not the site paper, so the guard matches --ab-ground instead. -->
+<meta name="description" content="What BourneWise is, what a reading is made of, and what you get.">
+<!-- Paint guard, runs before any stylesheet. -->
 <style>html{overflow-x:clip}html,body{background:#1C3324}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260829f">
-<link rel="stylesheet" href="./tokens/about.css?v=20260829f">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260830a">
+<link rel="stylesheet" href="./tokens/about.css?v=20260830a">
 </head>
 <body class="blocks-route has-grain" data-page="about">
 
@@ -37,55 +42,91 @@
   </nav>
 </header>
 
-<section class="ab-lede">
-  <p class="ab-eyebrow">About us</p>
-  <h1 data-weave>We built the part that cannot be talked out of its answer.</h1>
-  <p class="ab-say">A reading here has two halves that never touch. Six lines fall, and they
-  are fixed. Then Claude explains the figure that fell — the one you actually got, in the
-  situation you actually described. Everything below is what follows from keeping those two
-  apart.</p>
-</section>
+<main class="ab-grid">
 
-<main class="ab-set">
+  <!-- the opening statement, full width -->
+  <section class="ab-block ab-block--lede" data-cell="lede" data-tone="4">
+    <p class="ab-eyebrow">About us</p>
+    <h1 data-weave>We built the part that cannot be talked out of its answer.</h1>
+    <p class="ab-say">A reading here has two halves that never touch. Six lines fall, and they are
+    fixed. Then Claude explains the figure that fell — the one you actually got, in the situation
+    you actually described. Everything below is what follows from keeping those two apart.</p>
+  </section>
 
-  <div class="ab-col">
-    <!-- a · name top-left · figure · note bottom-left -->
-    <article class="ab-card" data-plan="a" data-tone="1">
-      <h2 class="ab-name">Separation</h2>
-      <div class="ab-figure" data-fig="1" data-centre="cliff" aria-hidden="true"></div>
-      <p class="ab-note">The figure is settled before a single word is written about it. Nothing you wrote can nudge it.</p>
-    </article>
+  <!-- ── section heading ─────────────────────────────────────────────── -->
+  <section class="ab-block ab-block--head" data-cell="kind" data-tone="1">
+    <p class="ab-eyebrow">One</p>
+    <h2 data-weave>What a reading is made of</h2>
+  </section>
 
-    <!-- d · note top-right · figure · name bottom-left -->
-    <article class="ab-card" data-plan="d" data-tone="2">
-      <h2 class="ab-name">Restraint</h2>
-      <div class="ab-figure" data-fig="2" data-centre="tide" aria-hidden="true"></div>
-      <p class="ab-note">A view, not a verdict. It tells you what to go and check; it will not decide it for you.</p>
-    </article>
-  </div>
+  <article class="ab-block" data-cell="sepa" data-tone="2">
+    <h3 class="ab-name">Separation</h3>
+    <div class="ab-figure" data-fig="1" data-centre="cliff" aria-hidden="true"></div>
+    <p class="ab-note">Six lines fall before a single word is written about them. Nothing you
+    typed moves them, and nothing written afterwards can move them back.</p>
+  </article>
 
-  <div class="ab-col">
-    <!-- b · note top-left · figure · name bottom-right -->
-    <article class="ab-card" data-plan="b" data-tone="3">
-      <h2 class="ab-name">Evidence</h2>
-      <div class="ab-figure" data-fig="3" data-centre="stone" aria-hidden="true"></div>
-      <p class="ab-note">Every answer carries the figure it was written from, so you can read the source of it and not only the conclusion.</p>
-    </article>
+  <article class="ab-block" data-cell="evid" data-tone="5">
+    <h3 class="ab-name">Evidence</h3>
+    <div class="ab-figure" data-fig="2" data-centre="stone" aria-hidden="true"></div>
+    <p class="ab-note">Every answer carries the figure it was written from, so you can read the
+    source of it and not only the conclusion.</p>
+  </article>
 
-    <!-- c · name top-right · figure · note bottom-left -->
-    <article class="ab-card" data-plan="c" data-tone="4">
-      <h2 class="ab-name">Depth</h2>
-      <div class="ab-figure" data-fig="4" data-centre="valley" aria-hidden="true"></div>
-      <p class="ab-note">You choose how much structure the question needs — one figure, or one figure and what it turns into.</p>
-    </article>
-  </div>
+  <section class="ab-block ab-block--art" data-cell="tex1" data-tone="3"
+           data-scatter="4" data-lead="wave" aria-hidden="true"></section>
+
+  <article class="ab-block" data-cell="rest" data-tone="6">
+    <h3 class="ab-name">Restraint</h3>
+    <div class="ab-figure" data-fig="3" data-centre="tide" aria-hidden="true"></div>
+    <p class="ab-note">A view, not a verdict. It tells you what to go and check; it will not
+    decide it for you.</p>
+  </article>
+
+  <article class="ab-block" data-cell="deep" data-tone="1">
+    <h3 class="ab-name">Depth</h3>
+    <div class="ab-figure" data-fig="4" data-centre="valley" aria-hidden="true"></div>
+    <p class="ab-note">You choose how much structure the question needs — one figure, or one
+    figure and what it turns into.</p>
+  </article>
+
+  <!-- ── section heading ─────────────────────────────────────────────── -->
+  <section class="ab-block ab-block--head" data-cell="gets" data-tone="5">
+    <p class="ab-eyebrow">Two</p>
+    <h2 data-weave>What you actually get</h2>
+  </section>
+
+  <article class="ab-block" data-cell="whol" data-tone="2">
+    <h3 class="ab-name">A whole reading</h3>
+    <div class="ab-figure" data-fig="5" data-centre="spring" aria-hidden="true"></div>
+    <p class="ab-note">Your first one is on us, and it is a whole reading rather than a sample of
+    one. It starts, and it finishes.</p>
+  </article>
+
+  <article class="ab-block" data-cell="word" data-tone="4">
+    <h3 class="ab-name">Your own words</h3>
+    <div class="ab-figure" data-fig="6" data-centre="river" aria-hidden="true"></div>
+    <p class="ab-note">Ask in whatever language you think in. The answer comes back in the one you
+    asked in.</p>
+  </article>
+
+  <section class="ab-block ab-block--art" data-cell="tex2" data-tone="6"
+           data-scatter="5" data-lead="peak" aria-hidden="true"></section>
+
+  <article class="ab-block" data-cell="pays" data-tone="3">
+    <h3 class="ab-name">You pay for what ran</h3>
+    <div class="ab-figure" data-fig="7" data-centre="coin" aria-hidden="true"></div>
+    <p class="ab-note">No plan to keep up and nothing held back in advance. A balance, and
+    questions you spend it on. A reading that has started always finishes.</p>
+  </article>
+
+  <!-- the close, full width -->
+  <section class="ab-block ab-block--cta" data-cell="cta" data-tone="1">
+    <h2 data-weave>Ask it something that matters.</h2>
+    <a class="bk-go bk-go--big" href="./index.html">Start a casting →</a>
+  </section>
 
 </main>
-
-<section class="ab-end">
-  <p data-weave>Your first reading is on us — whole, not a sample.</p>
-  <a class="bk-go" href="./index.html">Start a casting →</a>
-</section>
 
 <footer class="bk-foot">
   <span>BourneWise</span>
@@ -100,10 +141,10 @@
      schedule, which publishes --bw-palette-* on <html> off the session
      clock. That is what makes the colour continuous when you arrive here
      from a glass route: same seed, same clock, same group. -->
-<script src="./assets/backgrounds/mountain-range.js?v=20260829f"></script>
-<script src="./assets/marks.js?v=20260829f"></script>
-<script src="./assets/blocks.js?v=20260829f"></script>
-<script src="./assets/about.js?v=20260829f"></script>
-<script src="./assets/weave.js?v=20260829f" defer></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260830a"></script>
+<script src="./assets/marks.js?v=20260830a"></script>
+<script src="./assets/blocks.js?v=20260830a"></script>
+<script src="./assets/about.js?v=20260830a"></script>
+<script src="./assets/weave.js?v=20260830a" defer></script>
 </body>
 </html>

@@ -542,7 +542,11 @@
       lead: opt.lead || null,
       leadAt: opt.leadAt,
       leadScale: opt.leadScale,
-      pitch: opt.pitch || Math.max(32, Math.min(w, h) / 6.4),
+      /* ⚠️ From the geometric mean, not the short side. A wide, shallow block
+         has a small short side, so min(w,h) drives the pitch down and the marks
+         come out small and dense — the calico again, arrived at through the
+         block's proportions rather than through the setting. */
+      pitch: opt.pitch || Math.max(34, Math.sqrt(w * h) / 5.6),
       same: opt.same || 3.2,
       any: opt.any || 1.15,
       avoid: opt.avoid || [],

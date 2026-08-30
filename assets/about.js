@@ -63,7 +63,7 @@
       var n = parseInt(host.getAttribute("data-fig"), 10) || 1;
       var centre = host.getAttribute("data-centre");
       var rand = M.rng(20260829 + n * 7919);
-      var supporting = 7, W = 100, H = 40, pad = 3, gap = 2.4;
+      var supporting = 5, W = 100, H = 34, pad = 3, gap = 2.4;
 
       /* ⭐ The panel's figure has a CENTRE, and it is chosen for what the panel
          says rather than for how it looks: cliff for the reading that is
@@ -73,10 +73,10 @@
          land. One motif carries the idea, drawn large; the rest fall away from
          it and read as its company.
 
-         ⚠️ Placed at index 3 of 8, not dead centre. Exact symmetry would make
+         ⚠️ Placed at index 2 of 6, not dead centre. Exact symmetry would make
          the arrangement read as a diagram, and this file already bans symmetry
          in the motifs themselves for the same reason. */
-      var order = [], k, at = 3;
+      var order = [], k, at = 2;
       for (k = 0; k < supporting + 1; k++) {
         order.push(k === at ? centre
           : names[((n - 1) * supporting + (k < at ? k : k - 1)) % names.length]);

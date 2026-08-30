@@ -1,275 +1,236 @@
 /* The About route ------------------------------------------------------------
-   Four cards, one idea each, on a deep ground. Taken off the reference and
-   written as fractions of the card so the composition survives every width:
+   Flush colour blocks on a 3px paper seam, square corners, tiling the width.
 
-       card             444 / 447   ≈ 1 : 1.007   (square, near enough)
-       radius            24 / 444   = 5.4%
-       inset             26 / 444   = 5.9%
-       title             40 / 444   = 9.0%
-       caption           11 / 444   = 2.5%
-       gap in a column   57 / 444   = 12.8%
-       gap between cols  54 / 444   = 12.2%
-       COLUMN STAGGER   215 / 447   = 48% of a card's height
+   ⭐ The rounded floating card is gone, and that is a correction rather than a
+   restyle. §3 of the working rules gives this route its material — flush,
+   right angles throughout, opaque, depth from adjacency — and the old cards
+   were the glass route's material (floating, 5.4% radius, a visible ground
+   behind them) on a page that has no landscape to refract. A box on this route
+   is either a flat colour field or it is nothing.
 
-   ⭐ The stagger is the thing. Two columns offset by half a card is what stops
-   the reference reading as a grid — the eye travels down one column and picks
-   the other up mid-card rather than scanning rows. A 2×2 grid of the same four
-   cards is a table.
+   ⭐ It also settles "the background is too empty" by construction. Blocks
+   that tile the full width leave no ground showing, so there is no empty
+   background left to fill; the seams between them are the only ground, and
+   they are 3px of paper.
 
-   ⭐⭐ And the heterogeneity is SYSTEMATIC, not casual. Title, caption and mark
-   each take a different corner on every card, and no two cards use the same
-   triple. That is what makes four cards in one colour read as four things
-   instead of as one thing repeated. The arrangements are declared per card
-   below rather than being left to chance, for the same reason the strokes
-   cycle instead of using random: a layout that shuffles is a fault, and a
-   layout that repeats is a table.
+   ⭐ The reading runs down the page in a zig-zag: a heading band across the
+   width, then blocks alternating left and right beneath it, with no two the
+   same height. The named areas below do the arranging on wide screens only —
+   DOM order is reading order, which is the lesson the method page paid for.
 
    ⚠️ This route owns this file alone — the model is legal.css, which the
-   ownership census scored at 20 wins and 0 losses precisely because one route
-   had one sheet. Do not add these rules to blocks.css, which guide.html also
-   loads. */
+   ownership census scored 20 wins and 0 losses precisely because one route had
+   one sheet. Do not put these rules in blocks.css, which guide.html loads. */
 
 /* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
    body` in refinement.css outspecifies a bare body selector, which is exactly
-   how the block route's ground "was declared for weeks and never painted" —
-   the same trap, in the same place. Measure specificity before assuming a
-   declaration lands. */
+   how the block route's ground "was declared for weeks and never painted". */
 html[data-skin="paper"] body[data-page="about"],
 body[data-page="about"] {
   margin: 0;
-  background: var(--ab-ground);
-  color: var(--ab-on-ground);
-  --ab-ground: #1C3324;
-  --ab-on-ground: #E8E3D6;
-  --ab-radius: 5.4%;
-  /* Four card tones, deep to deeper. Fallbacks first — this is the page as it
-     shipped, and it is what a failed palette fetch still gets. */
-  --ab-fill-1: #2F5638; --ab-ink-1: #F2EFE4; --ab-art-1: #8FB489;
-  --ab-fill-2: #24452C; --ab-ink-2: #EFEADD; --ab-art-2: #7FA57C;
-  --ab-fill-3: #356A45; --ab-ink-3: #F4F1E7; --ab-art-3: #9CC095;
-  --ab-fill-4: #1F3D2A; --ab-ink-4: #EDE8DB; --ab-art-4: #79A17A;
+  background: var(--ab-seam);
+  color: var(--ab-ink-2);
+  --ab-seam: #12200F;
+  /* Six tones of one hue. Fallbacks first: this is the page a browser without
+     relative colour, or a visitor whose palette fetch failed, still gets. */
+  --ab-fill-1: #1F3D2A; --ab-ink-1: #EDE8DB;
+  --ab-fill-2: #2F5638; --ab-ink-2: #F2EFE4;
+  --ab-fill-3: #24452C; --ab-ink-3: #EFEADD;
+  --ab-fill-4: #E7E3D4; --ab-ink-4: #1B2C1E;
+  --ab-fill-5: #C9CDB4; --ab-ink-5: #1B2C1E;
+  --ab-fill-6: #356A45; --ab-ink-6: #F4F1E7;
 }
 
-/* This route rotates with the colour groups too, on the same clock as the
-   range — but unlike the method page it stays one hue per group, because that
-   is what this composition is arguing (see the ⭐ below). Lightness is clamped
-   for the reason given at length in blocks.css: the step index is not a
-   brightness, and a card that drifts pale takes its own pale type with it.
+/* Rotates with the colour groups, on the same clock as the range, and stays
+   ONE hue per group — four blocks in one colour reading as four things is what
+   this page is arguing, and colour doing that job would leave the arrangement
+   with nothing to do. Lightness is clamped per tone for the reason set out at
+   length in blocks.css: the step index is not a brightness.
 
-   ⚠️ The four cards must stay separable from each other AND from the ground,
-   which with a single hue is entirely a matter of lightness. The bands do not
-   overlap: ground .12–.18, then .20–.26, .23–.29, .28–.35, .33–.41. One band
-   for all four would give four identical cards in every group. */
-/* ⚠️ The selector must carry html[data-skin="paper"] as well. @supports adds
-   no specificity of its own, so a bare body[data-page="about"] here weighs
-   (0,2,0) against the fallback block's (0,3,0) above and loses — the page
-   rendered the same green in all 114 groups while every measurement passed,
-   because the fallbacks are a valid design. Third time this file has been
-   caught by a missing html[data-skin] qualifier. */
+   ⚠️ Two of the six are pale and carry dark type; four are deep and carry pale
+   type. No band reaches the middle, where neither near-white nor near-black
+   clears 4.5:1.
+   ⚠️ The selector must carry html[data-skin="paper"] here too. @supports adds
+   no specificity of its own, and a bare body[data-page="about"] loses to the
+   fallback block above — that once rendered all 114 groups the same green
+   while every measurement passed. */
 @supports (color: oklch(from red l c h)) {
   html[data-skin="paper"] body[data-page="about"],
   body[data-page="about"] {
-    /* ⭐ One source for all five surfaces, and only the lightness differs.
-       The first version took each card from a different step, which rotates
-       just as well and quietly destroys the page's argument: sourcing four
-       different steps gave four different HUES, and once colour separates the
-       cards the stagger and the corner triples are no longer doing the work
-       they exist to do. Four cards in one colour reading as four things is the
-       whole claim; keep them one colour and let the arrangement earn it. */
-    --ab-ground:    oklch(from var(--bw-palette-5, #1C3324) clamp(.12, l, .18) min(c, .06) h);
-    --ab-on-ground: oklch(from var(--bw-palette-5, #E8E3D6) clamp(.93, l, .97) min(c, .04) h);
+    --ab-seam:   oklch(from var(--bw-palette-5, #12200F) clamp(.10, l, .16) min(c, .05) h);
+    --ab-fill-1: oklch(from var(--bw-palette-5, #1F3D2A) clamp(.20, l, .26) min(c, .09) h);
+    --ab-fill-2: oklch(from var(--bw-palette-5, #2F5638) clamp(.28, l, .35) min(c, .09) h);
+    --ab-fill-3: oklch(from var(--bw-palette-5, #24452C) clamp(.24, l, .30) min(c, .09) h);
+    --ab-fill-4: oklch(from var(--bw-palette-5, #E7E3D4) clamp(.90, l, .95) min(c, .05) h);
+    --ab-fill-5: oklch(from var(--bw-palette-5, #C9CDB4) clamp(.82, l, .88) min(c, .07) h);
+    --ab-fill-6: oklch(from var(--bw-palette-5, #356A45) clamp(.33, l, .40) min(c, .09) h);
 
-    --ab-fill-1: oklch(from var(--bw-palette-5, #2F5638) clamp(.28, l, .35) min(c, .09) h);
-    --ab-fill-2: oklch(from var(--bw-palette-5, #24452C) clamp(.23, l, .29) min(c, .09) h);
-    --ab-fill-3: oklch(from var(--bw-palette-5, #356A45) clamp(.33, l, .41) min(c, .09) h);
-    --ab-fill-4: oklch(from var(--bw-palette-5, #1F3D2A) clamp(.20, l, .26) min(c, .09) h);
-
-    /* Type and field take the card's own hue, so each card stays one colour
-       family rather than a tinted panel with neutral text dropped on it. */
     --ab-ink-1: oklch(from var(--ab-fill-1) clamp(.94, l, .97) min(c, .03) h);
     --ab-ink-2: oklch(from var(--ab-fill-2) clamp(.94, l, .97) min(c, .03) h);
     --ab-ink-3: oklch(from var(--ab-fill-3) clamp(.94, l, .97) min(c, .03) h);
-    --ab-ink-4: oklch(from var(--ab-fill-4) clamp(.94, l, .97) min(c, .03) h);
-    --ab-art-1: oklch(from var(--ab-fill-1) clamp(.66, l, .74) min(c, .08) h);
-    --ab-art-2: oklch(from var(--ab-fill-2) clamp(.64, l, .72) min(c, .08) h);
-    --ab-art-3: oklch(from var(--ab-fill-3) clamp(.68, l, .76) min(c, .08) h);
-    --ab-art-4: oklch(from var(--ab-fill-4) clamp(.62, l, .70) min(c, .08) h);
-    --ab-accent-c: oklch(from var(--bw-palette-gem, #C9663F) clamp(.56, l, .66) max(c, .13) h);
+    --ab-ink-4: oklch(from var(--ab-fill-4) clamp(.16, l, .24) min(c, .05) h);
+    --ab-ink-5: oklch(from var(--ab-fill-5) clamp(.16, l, .24) min(c, .05) h);
+    --ab-ink-6: oklch(from var(--ab-fill-6) clamp(.94, l, .97) min(c, .03) h);
   }
 }
 
-.ab-card[data-tone="1"] { --ab-fill: var(--ab-fill-1); --ab-ink: var(--ab-ink-1); --ab-art: var(--ab-art-1); }
-.ab-card[data-tone="2"] { --ab-fill: var(--ab-fill-2); --ab-ink: var(--ab-ink-2); --ab-art: var(--ab-art-2); }
-.ab-card[data-tone="3"] { --ab-fill: var(--ab-fill-3); --ab-ink: var(--ab-ink-3); --ab-art: var(--ab-art-3); }
-.ab-card[data-tone="4"] { --ab-fill: var(--ab-fill-4); --ab-ink: var(--ab-ink-4); --ab-art: var(--ab-art-4); }
+.ab-block[data-tone="1"] { --ab-fill: var(--ab-fill-1); --ab-ink: var(--ab-ink-1); }
+.ab-block[data-tone="2"] { --ab-fill: var(--ab-fill-2); --ab-ink: var(--ab-ink-2); }
+.ab-block[data-tone="3"] { --ab-fill: var(--ab-fill-3); --ab-ink: var(--ab-ink-3); }
+.ab-block[data-tone="4"] { --ab-fill: var(--ab-fill-4); --ab-ink: var(--ab-ink-4); }
+.ab-block[data-tone="5"] { --ab-fill: var(--ab-fill-5); --ab-ink: var(--ab-ink-5); }
+.ab-block[data-tone="6"] { --ab-fill: var(--ab-fill-6); --ab-ink: var(--ab-ink-6); }
 
-/* ── header and footer sit on the ground, not on a card ─────────────────── */
-body[data-page="about"] .bk-head,
-body[data-page="about"] .bk-foot {
-  background: none;
-  color: var(--ab-on-ground);
+/* ── header and footer: flush bars like the rest of the route ───────────── */
+body[data-page="about"] :is(.bk-head, .bk-foot) {
+  background: var(--ab-fill-4);
+  color: var(--ab-ink-4);
   border: 0;
 }
-body[data-page="about"] .bk-head a,
-body[data-page="about"] .bk-foot a { color: inherit; }
-body[data-page="about"] .bk-head .bk-go {
+body[data-page="about"] .bk-head { margin-bottom: var(--bk-gap); }
+body[data-page="about"] .bk-foot { margin-top: var(--bk-gap); }
+body[data-page="about"] :is(.bk-head, .bk-foot) a:not(.bk-go) { color: inherit; }
+body[data-page="about"] .bk-go {
   background: var(--bk-clay);
   color: var(--on-accent);
-  border-radius: var(--ui-radius-small);
+  border-radius: 0;
 }
 
-/* ── the lede, above the cards ──────────────────────────────────────────── */
-.ab-lede {
-  max-width: min(1080px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 48px 0 8px;
-}
-.ab-lede p.ab-eyebrow {
-  margin: 0 0 16px;
-  font-family: var(--sans); font-size: 11px; letter-spacing: .14em;
-  opacity: .68;
-}
-.ab-lede h1 {
-  margin: 0;
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(30px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -.02em;
-  max-width: 18ch; text-wrap: balance;
-}
-.ab-lede .ab-say {
-  margin: 24px 0 0;
-  font-family: var(--sans); font-size: 15px; line-height: 1.6;
-  max-width: 46ch; opacity: .82;
-}
-
-/* ── the two staggered columns ──────────────────────────────────────────── */
-.ab-set {
-  max-width: min(1080px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 40px 0 64px;
+/* ── the mosaic ─────────────────────────────────────────────────────────── */
+.ab-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12.2%;
-  align-items: start;
+  gap: var(--bk-gap);
+  align-content: start;
 }
-/* The offset. Applied to the second column only, so the two run half a card
-   out of step with each other all the way down.
-   ⚠️ `.ab-col + .ab-col`, never `:nth-child(2)`. nth-child counts ALL
-   children, so the moment a backdrop layer was inserted as the first child the
-   stagger jumped to the first column and the composition inverted. A selector
-   that counts siblings of any type is a selector that breaks when anything is
-   added to the box. */
-.ab-set > .ab-col + .ab-col { margin-top: 48%; }
-.ab-col { display: grid; gap: 12.8%; }
-
-/* ── a card ─────────────────────────────────────────────────────────────── */
-.ab-card {
-  container-type: inline-size;
+.ab-block {
   position: relative;
-  aspect-ratio: 1 / 1.007;
-  border-radius: var(--ab-radius);
-  overflow: hidden;
-  background: var(--ab-fill, #2F5638);
-  color: var(--ab-ink, #F2EFE4);
+  background: var(--ab-fill);
+  color: var(--ab-ink);
+  padding: clamp(20px, 2.6vw, 40px);
   display: grid;
-  /* Three bands. Which band a piece lands in is what the per-card arrangement
-     below chooses; the bands themselves never move. */
+  min-width: 0;
+  /* Three bands. The middle one is the figure — the artwork is a block in the
+     flow between the headline and the caption, never a field behind them. */
   grid-template-rows: auto 1fr auto;
-  padding: 5.9%;
-  gap: 4%;
-  box-sizing: border-box;
+  gap: clamp(12px, 1.6vw, 24px);
 }
-/* the artwork, in the flow between the two text bands */
+.ab-block--art { padding: 0; }
+
+/* ── type ───────────────────────────────────────────────────────────────── */
+.ab-eyebrow {
+  margin: 0;
+  font-family: var(--sans); font-size: 11px; letter-spacing: .14em;
+}
+.ab-block--lede h1 {
+  margin: 0;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(30px, 3.9vw, 52px); line-height: 1.06; letter-spacing: -.02em;
+  max-width: 20ch; text-wrap: balance;
+}
+.ab-block--lede .ab-say {
+  margin: 0;
+  font-family: var(--sans); font-size: 15px; line-height: 1.6; max-width: 52ch;
+}
+.ab-block--head h2 {
+  margin: 0;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(23px, 2.6vw, 36px); line-height: 1.1; letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.ab-block--cta h2 {
+  margin: 0;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 44px); line-height: 1.08; letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.ab-name {
+  margin: 0;
+  font-family: var(--sans); font-weight: 700;
+  font-size: clamp(18px, 1.9vw, 27px); line-height: 1.06; letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.ab-note {
+  margin: 0;
+  font-family: var(--serif); font-size: 13px; line-height: 1.5; max-width: 40ch;
+}
+
+/* the figure, in the flow */
+/* ⚠️ Capped. The middle band is 1fr, so without a ceiling a tall block pulls
+   the figure and its caption to opposite ends and leaves a hole between them. */
 .ab-figure { grid-row: 2; align-self: center; width: 100%; min-height: 0;
-  color: var(--ab-art, #8FB489); }
+  max-height: clamp(96px, 13vw, 190px); }
 .ab-figure svg { width: 100%; height: 100%; display: block; overflow: visible; }
 /* The figure drifts as one piece — the arrangement is the point, so the marks
-   do not move relative to each other. Same coprime periods as the block route's
-   fields (37 · 53 · 71s), transform only, off under reduced motion. */
+   never move relative to each other. Coprime periods, transform only. */
 @media (prefers-reduced-motion: no-preference) {
-  .ab-figure[data-fig="1"] svg { animation: ab-fig-a 37s ease-in-out infinite alternate; }
-  .ab-figure[data-fig="2"] svg { animation: ab-fig-b 53s ease-in-out infinite alternate; }
-  .ab-figure[data-fig="3"] svg { animation: ab-fig-c 71s ease-in-out infinite alternate; }
+  .ab-figure[data-fig="1"] svg, .ab-figure[data-fig="5"] svg { animation: ab-fig-a 37s ease-in-out infinite alternate; }
+  .ab-figure[data-fig="2"] svg, .ab-figure[data-fig="6"] svg { animation: ab-fig-b 53s ease-in-out infinite alternate; }
+  .ab-figure[data-fig="3"] svg, .ab-figure[data-fig="7"] svg { animation: ab-fig-c 71s ease-in-out infinite alternate; }
   .ab-figure[data-fig="4"] svg { animation: ab-fig-a 53s ease-in-out infinite alternate; }
 }
 @keyframes ab-fig-a { from { transform: translate(0, 0); } to { transform: translate(1.4%, -2.2%); } }
 @keyframes ab-fig-b { from { transform: translate(0, 0); } to { transform: translate(-1.8%, 1.6%); } }
 @keyframes ab-fig-c { from { transform: translate(0, 0); } to { transform: translate(1.1%, 2.4%); } }
-/* ⚠️ NOT `.ab-card > *`. That is (0,1,1) against .ab-art's (0,1,0), so it
-   turned the art layer from absolute back to relative and the field never
-   appeared at all — an empty div sitting in the grid flow instead. */
 
+/* the lede and the bands do not carry a figure, so their middle row collapses */
+.ab-block--lede, .ab-block--head, .ab-block--cta { grid-template-rows: auto; align-content: center; }
+.ab-block--cta { justify-items: start; }
 
-.ab-name {
-  margin: 0;
-  font-family: var(--sans); font-weight: 700;
-  font-size: 9cqw; line-height: 1.02; letter-spacing: -.02em;
-  text-wrap: balance;
-}
-.ab-note {
-  margin: 0;
-  font-family: var(--serif); font-size: 2.5cqw; line-height: 1.5;
-  /* ⚠️ In cqw, not ch. At 22ch this measured 198px on BOTH a 474px card and a
-     316px one — 42% of the card at one width and 63% at the other — so the
-     right-hand column the accents rely on existed at 1440 and not at 768.
-     A width stated in the card's own unit is a column that is always there. */
-  max-width: 58cqw; opacity: .9;
-}
+/* ── the arrangement, wide screens only ─────────────────────────────────
+   ⭐ Left, right, left, right going down, and no two blocks the same height.
+   The row spans are what makes it heterogeneous: a set of equal blocks in two
+   columns is a table however the colours are dealt.
 
-/* ── the arrangements ───────────────────────────────────────────────────
-   ⭐ ONE LAYER, and this is what that finally means. The art used to be a
-   field behind the type, and a field behind type is a second layer no matter
-   how quiet it is — the panel floats and the texture runs on underneath it.
-   Here the artwork is a BLOCK IN THE FLOW: headline, then the figure, then the
-   caption, all in the same plane, the way the reference sets a drawing between
-   its heading and its body copy. Nothing is behind anything.
+   ⚠️ Named areas, not auto-placement. Auto-placement would reflow the reading
+   order the moment a block changed height, which is precisely the fault the
+   method page was rebuilt to remove: correctness by construction, not by
+   care. */
+@media (min-width: 900px) {
+  .ab-grid {
+    grid-template-areas:
+      "lede lede"
+      "kind kind"
+      "sepa evid"
+      "sepa evid"
+      "sepa tex1"
+      "rest tex1"
+      "rest deep"
+      "rest deep"
+      "gets gets"
+      "whol word"
+      "whol word"
+      "tex2 pays"
+      "tex2 pays"
+      "cta  cta";
+    grid-auto-rows: minmax(84px, auto);
+  }
+  .ab-block[data-cell="lede"] { grid-area: lede; }
+  .ab-block[data-cell="kind"] { grid-area: kind; }
+  .ab-block[data-cell="sepa"] { grid-area: sepa; }
+  .ab-block[data-cell="evid"] { grid-area: evid; }
+  .ab-block[data-cell="tex1"] { grid-area: tex1; }
+  .ab-block[data-cell="rest"] { grid-area: rest; }
+  .ab-block[data-cell="deep"] { grid-area: deep; }
+  .ab-block[data-cell="gets"] { grid-area: gets; }
+  .ab-block[data-cell="whol"] { grid-area: whol; }
+  .ab-block[data-cell="word"] { grid-area: word; }
+  .ab-block[data-cell="tex2"] { grid-area: tex2; }
+  .ab-block[data-cell="pays"] { grid-area: pays; }
+  .ab-block[data-cell="cta"]  { grid-area: cta; }
 
-   The middle band is 1fr, so the figure takes whatever the two text bands
-   leave — roughly a third of the card, which is the reference's proportion.
-
-   Four cards, four arrangements, still no two alike: which of name and note
-   takes the top band, and which edge each sits against. That is what makes
-   four cards in one colour read as four things. Written out one at a time on
-   purpose — a loop could only produce the table this exists to avoid. */
-.ab-card[data-plan="a"] .ab-name { grid-row: 1; justify-self: start; }
-.ab-card[data-plan="a"] .ab-note { grid-row: 3; justify-self: start; }
-
-.ab-card[data-plan="b"] .ab-note { grid-row: 1; justify-self: start; }
-.ab-card[data-plan="b"] .ab-name { grid-row: 3; justify-self: end; text-align: right; }
-
-.ab-card[data-plan="c"] .ab-name { grid-row: 1; justify-self: end; text-align: right; }
-.ab-card[data-plan="c"] .ab-note { grid-row: 3; justify-self: start; }
-
-.ab-card[data-plan="d"] .ab-note { grid-row: 1; justify-self: end; text-align: right; }
-.ab-card[data-plan="d"] .ab-name { grid-row: 3; justify-self: start; }   /* everything left → the whole right edge  */
-
-/* ── the closing line ───────────────────────────────────────────────────── */
-.ab-end {
-  max-width: min(1080px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 0 0 72px;
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 16px 32px;
-}
-.ab-end p {
-  margin: 0; font-family: var(--serif);
-  font-size: clamp(20px, 2.6vw, 30px); line-height: 1.24; max-width: 24ch;
-}
-.ab-end .bk-go {
-  background: var(--bk-clay); color: var(--on-accent);
-  border-radius: var(--ui-radius-small); padding: 12px 24px;
-  text-decoration: none; font-family: var(--sans); font-size: 13px;
-  min-height: var(--ctl);
-  display: inline-flex; align-items: center;
+  .ab-block--lede { padding: clamp(40px, 4.4vw, 72px); }
+  .ab-block--cta  { padding: clamp(32px, 3.6vw, 56px); }
 }
 
 /* ── one column ─────────────────────────────────────────────────────────
-   The stagger is a two-column idea. On one column it would only push the
-   whole set down by half a card, so it comes off and the cards simply
-   follow each other — the arrangements still differ, which is where the
-   variety was coming from anyway. */
-@media (max-width: 760px) {
-  .ab-set { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0 48px; }
-  .ab-set > .ab-col + .ab-col { margin-top: 0; }
-  .ab-col { gap: 16px; }
-  .ab-lede { padding: 32px 0 4px; }
-  .ab-end { padding-bottom: 48px; }
+   No areas, no arranging: the DOM order is the rendered order, so the page
+   reads exactly as it is written. The purely decorative blocks come out —
+   without the composition they are only wallpaper, and on a phone they would
+   own a third of the scroll. */
+@media (max-width: 899px) {
+  .ab-grid { grid-template-columns: minmax(0, 1fr); }
+  .ab-block--art { display: none; }
+  .ab-block { min-height: 0; }
+  .ab-figure { min-height: 96px; }
 }
