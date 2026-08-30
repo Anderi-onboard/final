@@ -145,5 +145,25 @@ assert.match(String(S.sortis_method), /一看空、二看冲/,
 assert.ok(!/wealth→Wife-Wealth/.test(String(S.sortis_method)),
   'Step 1 is carrying a second copy of the table again');
 
+/* ── four rules from 增删卜易 that the failed reading needed ───────────────
+   The owner supplied the book's own breakdown, and it named a fourth error in
+   that reading which nothing here had caught: it used a 变爻 from the fourth
+   line to feed the World line, and leaned on it («有一条线正在往你身上补劲»).
+   变爻 act only on the line that produced them. The rule was absent from the
+   prompt entirely, so there was nothing to violate. */
+assert.match(String(S.sortis_method), /A 变爻 ACTS ONLY ON ITS OWN 动爻/,
+  'the transform-scope rule is gone. Without it any 变爻 can be borrowed to support any line, '
+  + 'which is how a reading manufactures support that is not on the board');
+assert.match(String(S.sortis_method), /破而有救/,
+  '月破 is back to one grade. 破而有救 (moving and generated — repairable, acts at 实破 or on a 合 day) '
+  + 'and 到底之破 (static, 休囚, nothing generating it — simply gone) fail in opposite directions, and '
+  + 'the shared cause is skipping the grade');
+assert.match(String(S.meta_rules), /A STAGED PROCESS IS NOT ONE MATTER/,
+  'the staged-process rule is gone — 县试/府试/道试, 科目一/二/三, 初试/复试 each take their own casting, '
+  + 'and the failed reading closed by pronouncing on 科目二 off a board taken for 科目一');
+assert.match(String(S.inference_traps), /THE INDEX IS NOT ONLY THE QUESTION TYPE/,
+  'the indexical rule no longer says the index can be a parameter inside the question. 近病逢空即愈 vs '
+  + '久病逢空必危 is the same signal inverting on a parameter the route cannot see');
+
 console.log(`board facts OK — ${CLEAN.length} correct readings stay silent, ${PLANTED.length} error `
   + `classes fire, the shipped reading reports ${shipped.issues.length}, 用神 table has one owner`);
