@@ -439,17 +439,26 @@
       if (!d) return;
       /* sized to its cell, so nothing can reach a neighbour: the lattice is
          the clearance */
-      var sc = (p.cell * (opt.fill || 0.62)) / (motifRadius(p.name) * 2);
-      /* ⭐ Every nth mark is painted in the route's loud colour. The pattern
-         plate that suggested it is two inks with a single red detail inside
-         each repeat — one second colour, used sparingly, is what stops a field
-         of one ink reading as wallpaper. */
+      var sc = (p.cell * (opt.fill || 0.52)) / (motifRadius(p.name) * 2);
+      /* ⭐⭐ A mark is not a bare stroke on a flat field — it has a BACKGROUND
+         of its own: two haloes hugging its own silhouette, in two other
+         colours, then the ink on top. Dilating the same path with a thick
+         round-joined stroke is what produces a backing that follows the shape
+         exactly, the way a cut-paper flower stacks one colour inside another.
+         Three concentric zones is the whole difference between a motif and a
+         doodle, and it is where the colour layering lives.
+
+         Every nth mark swaps its ink for the route's loud colour — the pattern
+         plate behind that is two inks with one red detail per repeat. */
       var accent = opt.accentEvery && (idx % opt.accentEvery === opt.accentEvery - 1);
       out[p.band] += '<g data-ph="' + p.name + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
         + ') scale(' + sc.toFixed(4) + ')" opacity="'
-        + (p.lead ? 1 : (0.34 + 0.56 * p.k)).toFixed(3) + '"'
-        + (accent ? ' fill="var(--bk-clay)"' : '')
-        + '><g class="ph-m"><path d="' + d + '"/></g></g>';
+        + (p.lead ? 1 : (0.42 + 0.5 * p.k)).toFixed(3) + '"'
+        + '><g class="ph-m">'
+        + '<path class="ph-back" d="' + d + '"/>'
+        + '<path class="ph-mid" d="' + d + '"/>'
+        + '<path class="ph-ink' + (accent ? ' is-accent' : '') + '" d="' + d + '"/>'
+        + '</g></g>';
     });
     var svg = "";
     for (g = 0; g < bands; g++) {
@@ -480,7 +489,7 @@
            handful of marks in it would read as three stray dots rather than as
            a patch of ground */
         pitch: Math.max(26, Math.sqrt(w * h) / 5.2),
-        fill: 0.56
+        fill: 0.48
       });
       host.innerHTML = M.svg(field.markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
     });
@@ -488,20 +497,46 @@
 
   /* ── a horizon ────────────────────────────────────────────────────────────
      ⭐ A block should be a place, not a swatch: the reference that made this
-     obvious is a hard mountain silhouette against a graded sky. The sky is the
-     block's own gradient; this is what stands in front of it. Drawn from
-     landscape(), the same construction as the range on the glass routes, so
-     the country is recognisably the same one.
+     obvious is a hard mountain silhouette standing against a lit sky. The sky
+     is drawn HERE, as four flat bands with hard edges — a screenprinted sunset,
+     not a blend.
+
+     ⭐⭐ Bands, not a gradient. "不要渐变" — colour layering means one colour
+     stopping and the next beginning, which is the same thing the 3px paper seam
+     does between two blocks; a ramp is the glass route's device, depth from
+     light, on a page with no mountains behind it to catch any.
+
+     ⚠️ The bands are rects with CSS classes, not fill="" attributes: a
+     presentation attribute cannot resolve var(), so a fill written there is a
+     colour frozen out of the 114-group rotation — this file has already paid
+     for that once with SVG in CSS url().
+
+     ⚠️ No two band heights are equal, and the break nearest the middle does
+     not land on it — §3's composition rule, which applies to a sky as much as
+     to a grid.
 
      ⚠️ A horizon and a colony are alternatives, never both — one carrier, one
      figure. A block with marks AND a skyline is two pictures in one box. */
+  /* ⚠️ The breaks live in the upper half, because the range covers the lower
+     one. Spaced evenly down the whole box, bands 3 and 4 were drawn entirely
+     behind the mountains and the sky was two colours pretending to be four.
+     The last band still runs to the foot so nothing shows through a gap. */
+  var SKY_BANDS = [0, 0.16, 0.30, 0.47, 1];
+
   function horizons() {
     [].slice.call(document.querySelectorAll("[data-horizon]")).forEach(function (host, i) {
       var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
       if (w < 40 || h < 40) { host.innerHTML = ""; return; }
       var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
-      host.innerHTML = M.svg(M.landscape(seed, w, h, { layers: 5, silhouette: true }),
-        "0 0 " + w + " " + h, 'preserveAspectRatio="xMidYMax slice"');
+      var sky = "";
+      for (var b = 0; b < SKY_BANDS.length - 1; b++) {
+        var y = SKY_BANDS[b] * h;
+        sky += '<rect class="hz-band hz-b' + (b + 1) + '" x="0" y="' + y.toFixed(1)
+          + '" width="' + w + '" height="' + ((SKY_BANDS[b + 1] - SKY_BANDS[b]) * h).toFixed(1) + '"/>';
+      }
+      host.innerHTML = M.svg(sky + M.landscape(seed, w, h,
+          { layers: 5, silhouette: true, base0: .56, baseSpan: .30, amp: .26, ampNear: .13 }),
+        "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
     });
   }
 

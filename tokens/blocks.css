@@ -167,6 +167,76 @@ body.blocks-route .bk-art svg { width: 100%; height: 100%; display: block; }
 /* and the content rides above it */
 body.blocks-route :is(.mt-card, .bk-cell, .ab-block) > :not(.bk-art) { position: relative; z-index: 1; }
 
+/* ── a mark has its own background ────────────────────────────────────────
+   ⭐⭐ This is what "a block should have a background" turned out to mean: not
+   a graded box, but a BACKING BEHIND THE MARK. The same path is drawn three
+   times — a wide round-joined stroke, a narrower one, then the ink — so each
+   copy dilates the silhouette a little further and the mark sits in two rings
+   of its own shape. That is the cut-paper flower: one colour inside another
+   inside another, every edge following the same outline.
+
+   ⚠️ Dilating by STROKING the same path, not by scaling it. A scaled copy
+   grows away from its centre, so a long motif's backing drifts off one end;
+   a stroke grows perpendicular to the outline everywhere, which is the only
+   thing that reads as a backing rather than as a second, larger mark.
+
+   The three colours come from the group like everything else, so a mark
+   rotates with the page. Stroke widths are in the path's own units — the
+   motifs are drawn at roughly ±34, so 9 and 4 give a visible ring without
+   swallowing the drawing.
+
+   ⚠️⚠️ The rings take clay's and ochre's HUE but not their lightness. Used
+   flat, the outer ring was clay on a clay block and the inner one ochre on an
+   ochre block — the backing vanished on exactly the blocks it was meant to sit
+   on. Mixing towards currentColor instead fixed that and lost the thing worth
+   having: a ring the same hue as its ink is a blur around the mark, not a
+   colour behind it.
+
+   So the hue comes from the accent roles and the lightness is pinned to a band
+   on the INK'S SIDE of the fill. Two cases, and the fill roles already know
+   which they are because they already declare their own ink:
+     dark blocks  — fill .30–.47, ink .95–.98 → rings at .62 and .80
+     light blocks — fill .78–.98, ink .18–.28 → rings at .62 and .44
+   Every band clears both its fill and its ink by at least .15 in L, in all 114
+   groups, because the fills are themselves clamped. That is why this can be
+   two numbers rather than a per-group judgement. */
+body.blocks-route {
+  --ph-back: var(--bk-clay);
+  --ph-mid:  var(--bk-ochre);
+  --ph-l1: .62; --ph-l2: .80;
+}
+body.blocks-route :is([data-fill="bone"], [data-fill="cream"],
+                      [data-fill="ochre"], [data-fill="dusty"]) { --ph-l1: .62; --ph-l2: .48; }
+@supports (color: oklch(from red l c h)) {
+  body.blocks-route [data-fill] {
+    --ph-back: oklch(from var(--bk-clay)  var(--ph-l1) clamp(.06, c, .15) h);
+    --ph-mid:  oklch(from var(--bk-ochre) var(--ph-l2) clamp(.06, c, .15) h);
+  }
+}
+body.blocks-route .ph-back {
+  fill: var(--ph-back); stroke: var(--ph-back);
+  stroke-width: 9; stroke-linejoin: round; stroke-linecap: round;
+}
+body.blocks-route .ph-mid {
+  fill: var(--ph-mid); stroke: var(--ph-mid);
+  stroke-width: 4; stroke-linejoin: round; stroke-linecap: round;
+}
+body.blocks-route .ph-ink { fill: currentColor; }
+
+/* ⭐ Every seventh mark is printed in the second colour — the two-plate press
+   the reference pattern sheets are made on, where one figure in a run is
+   pulled in the accent and the rest in the key.
+
+   ⚠️ Clay pulled a third of the way towards the ink, not clay flat and not a
+   rotated hue. Flat clay is the ground itself on a clay block. A hue rotated
+   off currentColor is worse: it is a different arbitrary colour on every group
+   — on a blue block it came out cyan, which reads as a highlighter slip rather
+   than as a second plate. A press has ONE accent; this keeps it, and the pull
+   towards the ink is what guarantees it never lands on the fill. */
+body.blocks-route .ph-ink.is-accent {
+  fill: color-mix(in oklab, var(--bk-clay) 66%, currentColor);
+}
+
 /* ── the phenomena move the way the things move ──────────────────────────
    ⭐⭐ Each motif animates according to what it IS, not according to a single
    field-wide drift. Reeds and bamboo sway from the base because wind moves
@@ -374,31 +444,154 @@ body.blocks-route [data-fill="teal"]  { --bk-fill: var(--bk-teal);  background: 
 body.blocks-route [data-fill="ochre"] { --bk-fill: var(--bk-ochre); background: var(--bk-fill); }
 body.blocks-route [data-fill="dusty"] { --bk-fill: var(--bk-dusty); background: var(--bk-fill); }
 
-/* ── a block has a sky, not just a colour ────────────────────────────────
-   ⭐ Every block is graded rather than flat: lighter at the top, deeper at the
-   foot, the way a sky is. A flat rectangle of colour with marks on it is a
-   swatch; a graded one is a place for something to stand in front of. This is
-   the ground, not a texture — the "one texture per carrier" rule is about
-   patterns laid over a fill, and a fill that varies is still one fill.
+/* ⚠️ No gradient on the fill. A graded rectangle was the wrong reading of
+   "a block needs a background": the background belongs to the MARK, not to the
+   box. A fill is one flat colour, as this route's material rule has said all
+   along. */
 
-   ⚠️ Both stops are derived from the fill the block already got and moved by a
-   small fixed amount in OKLCH lightness, so the whole ramp stays inside the
-   band that guarantees its ink is readable. A gradient invented independently
-   of the token would walk straight out of that band in some of the 114 groups.
+body.blocks-route .mtn-bg,
+body.blocks-route .mtn-sky,
+body.blocks-route .lq-texture-stage { display: none !important; }
 
-   ⚠️ The lift at the top is small and the fall at the foot does most of the
-   work, because the LABEL sits at the top. On a dark block a lightened top is
-   a lighter ground under pale ink — group 195 measured 4.16:1 with the ramp
-   centred. The sky still reads; it just does its brightening where nothing is
-   being read. */
-@supports (color: oklch(from red l c h)) {
-  body.blocks-route [data-fill] {
-    background-image: linear-gradient(180deg,
-      oklch(from var(--bk-fill) calc(l + .028) c h) 0%,
-      var(--bk-fill) 44%,
-      oklch(from var(--bk-fill) calc(l - .062) c h) 100%);
-  }
+body.blocks-route :is(h1, h2, .bk-lead) {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.012em;
+  text-wrap: balance;
+  margin: 0;
 }
+/* Two type sizes, far apart, and nothing in between — the reference sets a
+   large display and a small functional label and simply omits the middle. */
+body.blocks-route h1 { font-size: clamp(30px, 3.5vw, 52px); line-height: 1.06; }
+body.blocks-route h2 { font-size: clamp(23px, 2.4vw, 34px); line-height: 1.14; }
+body.blocks-route .bk-lead { font-size: clamp(17px, 1.5vw, 22px); line-height: 1.42; }
+body.blocks-route .bk-eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--mono, var(--sans));
+  font-size: 10px;
+  letter-spacing: .13em;
+  opacity: .72;
+}
+body.blocks-route :is(p, li) { font-size: 13px; line-height: 1.55; margin: 0; }
+body.blocks-route .bk-note { margin-top: 10px; opacity: .82; max-width: 44ch; }
+
+/* ── header / footer: flush bars, not floating chrome ───────────────────── */
+body.blocks-route .bk-head,
+body.blocks-route .bk-foot {
+  display: flex; align-items: center; gap: 22px;
+  padding: 16px var(--bk-pad);
+  background: var(--bk-cream);
+}
+body.blocks-route .bk-head { margin-bottom: var(--bk-gap); }
+body.blocks-route .bk-foot { margin-top: var(--bk-gap); font-size: 12px; }
+body.blocks-route .bk-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
+body.blocks-route .bk-brand b { font-family: var(--font-brand); font-weight: 400; font-size: 18px; }
+body.blocks-route .bk-mark { display: block; width: 22px; height: 22px; color: var(--bk-clay); }
+body.blocks-route .bk-nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+/* ⚠️ :not(.bk-go) is load-bearing, and it is a specificity fix, not a style
+   choice. `:is(.bk-nav a, .bk-foot a)` weighs (0,3,1) against `.bk-go`'s
+   (0,3,0), so the call to action was inheriting the header's dark ink onto its
+   own dark fill and had been failing AA since it was written — 3.71:1 with the
+   old fixed clay, and 1.57:1 on the darkest groups once the fill started
+   rotating. The rotation did not cause this; it made it visible. */
+body.blocks-route :is(.bk-nav a:not(.bk-go), .bk-foot a:not(.bk-go)) {
+  color: inherit; text-decoration: none; font-size: 13px;
+}
+body.blocks-route :is(.bk-nav, .bk-foot) a.bk-go { text-decoration: none; font-size: 13px; }
+/* font-family is explicit because a <button> does NOT inherit it — the UA
+   sheet sets its own font, so every .bk-go on these routes was rendering in
+   Arial, which is a straight violation of the three-font rule and the one
+   thing on the page not wearing the brand. */
+body.blocks-route .bk-go {
+  font-family: var(--sans);
+  background: var(--bk-clay); color: var(--bk-cream);
+  padding: 9px 15px; font-size: 13px;
+}
+/* align-self, not display:inline-block — the title cells are flex columns, so
+   a block child stretches to the full column width and the button reads as a
+   bar across the composition rather than as a button. */
+body.blocks-route .bk-go--big { align-self: flex-start; margin-top: 20px; padding: 12px 18px; }
+
+/* ── the compositions ───────────────────────────────────────────────────────
+   NOT a twelve-column grid. That was the structural mistake: twelfths can only
+   land on .083, .167, .25, .333 … and the reference divides at .37, .53, .72,
+   .79 — not one of its edges falls on a twelfth. A column system cannot
+   express those ratios, so every attempt to tune spans produced something that
+   read as a web layout rather than as the composition.
+
+   Each composition is instead a fixed-aspect frame with explicit fractional
+   tracks, measured off the reference:
+
+     A  .37 / .35 / .28      title left, banded middle, full-height right
+     B  1        rows .37/.63    one band over one field
+     C  .42 / .37 / .21     title, plate, full-height right column
+     D  .54 / .19 / .27     title, narrow pattern, full-height right column
+
+   Three rules hold across all of them and are why they read as one system:
+   the rightmost column always runs the full height to the edge; no two tracks
+   in a composition are equal; and the horizontal division, where there is one,
+   sits near the middle but never on it. */
+body.blocks-route .bk-main { display: flex; flex-direction: column; gap: var(--bk-gap); }
+body.blocks-route .bk {
+  display: grid;
+  gap: var(--bk-gap);
+  /* The frame is a fixed aspect, as the reference's slides are. Below the
+     breakpoint it releases, because a 16:9 frame on a phone is a letterbox. */
+  aspect-ratio: 16 / 7.4;
+  min-height: 420px;
+}
+body.blocks-route .bk--a { grid-template-columns: .37fr .35fr .28fr; grid-template-rows: .34fr .66fr; }
+/* B is a band pair, not a slide. Holding it to 16:7.4 stretches two bands to
+   the height of a three-column composition and puts the empty back. */
+body.blocks-route .bk--b { grid-template-columns: 1fr; grid-template-rows: .34fr .66fr;
+  aspect-ratio: 16 / 3.4; min-height: 260px; }
+/* B carrying the type in its FIRST row is a different frame, not the same one
+   flipped: a .34 row is sized for a pattern band, and putting a heading plus a
+   call to action in it overflows into overflow:hidden, which clips the
+   headline in half. The proportion follows what the row has to hold. */
+body.blocks-route .bk--b2 { grid-template-columns: 1fr; grid-template-rows: .56fr .44fr;
+  aspect-ratio: 16 / 4.2; min-height: 330px; }
+body.blocks-route .bk--c { grid-template-columns: .42fr .37fr .21fr; grid-template-rows: .58fr .42fr; }
+body.blocks-route .bk--d { grid-template-columns: .54fr .19fr .27fr; grid-template-rows: .48fr .52fr; }
+
+/* Placement is declared per cell rather than by span counts, because the
+   shapes are specific: an L, a band, a full-height rail. */
+body.blocks-route [data-at="left-tall"]  { grid-column: 1; grid-row: 1 / -1; }
+body.blocks-route [data-at="left-top"]   { grid-column: 1; grid-row: 1; }
+body.blocks-route [data-at="mid-top"]    { grid-column: 2; grid-row: 1; }
+body.blocks-route [data-at="mid-tall"]   { grid-column: 2; grid-row: 1 / -1; }
+body.blocks-route [data-at="mid-bottom"] { grid-column: 2; grid-row: 2; }
+body.blocks-route [data-at="right-tall"] { grid-column: 3; grid-row: 1 / -1; }
+body.blocks-route [data-at="band-top"]   { grid-column: 1 / -1; grid-row: 1; }
+body.blocks-route [data-at="band-bottom"]{ grid-column: 1 / -1; grid-row: 2; }
+body.blocks-route [data-at="wide-bottom"]{ grid-column: 1 / 3;  grid-row: 2; }
+
+body.blocks-route .bk-cell { padding: var(--bk-pad); min-width: 0; position: relative; overflow: hidden; }
+body.blocks-route .bk-cell:is([data-pattern], [data-land], [data-mark]) { padding: 0; }
+
+/* Each role also publishes its own colour as --bk-fill, so anything downstream
+   can derive from the fill this block actually got rather than re-deciding it. */
+body.blocks-route [data-fill="bone"]  { --bk-fill: var(--bk-bone);  background: var(--bk-fill); }
+body.blocks-route [data-fill="cream"] { --bk-fill: var(--bk-cream); background: var(--bk-fill); }
+body.blocks-route [data-fill="clay"]  { --bk-fill: var(--bk-clay);  background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="brick"] { --bk-fill: var(--bk-brick); background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="olive"] { --bk-fill: var(--bk-olive); background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="teal"]  { --bk-fill: var(--bk-teal);  background: var(--bk-fill); color: var(--bk-cream); }
+body.blocks-route [data-fill="ochre"] { --bk-fill: var(--bk-ochre); background: var(--bk-fill); }
+body.blocks-route [data-fill="dusty"] { --bk-fill: var(--bk-dusty); background: var(--bk-fill); }
+
+/* ── a fill is one flat colour ───────────────────────────────────────────
+   ⚠️ There was a graded sky on every block here. It was the wrong reading of
+   "each block needs a background": a background belongs to the MARK — a
+   backing that follows its own silhouette, colours layered outward from it, an
+   outline — not a ramp poured into the box. See --ph-back / --ph-mid above,
+   which is where that instruction actually landed.
+
+   A flat fill is also what this route's material rule has said all along:
+   depth comes from ADJACENCY, two colours meeting at a 3px paper seam. A ramp
+   inside a block is depth from light, which is the glass route's device on a
+   page with no mountains behind it to catch any. Colour layering here is
+   hard-stopped bands, never a blend. */
 
 /* The title sits at the foot of its block, not the head — in every reference
    slide the type is anchored to the bottom-left of the field it lives in. */

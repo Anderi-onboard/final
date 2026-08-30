@@ -67,13 +67,21 @@
        almost the whole cell and the ground colour stops showing — the plate
        goes pale and loses the duotone. Thinning the masses there leaves the
        contours, which are what carries the band at that height anyway. */
+    /* `base0`/`baseSpan` say where the horizon sits in the box. The default is
+       the one every existing caller was drawn against; a silhouette wants the
+       range pushed down so the sky it stands against has somewhere to be. */
     var layers = opts.layers || 4, fo = opts.fill == null ? 1 : opts.fill,
+        base0 = opts.base0 == null ? .40 : opts.base0,
+        baseSpan = opts.baseSpan == null ? .30 : opts.baseSpan,
+        ampFar = opts.amp == null ? .34 : opts.amp,
+        ampNear = opts.ampNear == null ? .18 : opts.ampNear,
         out = "", uid = "lsc" + seed;
     out += '<clipPath id="' + uid + '"><rect width="' + w + '" height="' + h + '"/></clipPath>';
     out += '<g clip-path="url(#' + uid + ')">';
     for (var i = 0; i < layers; i++) {
       var t = i / (layers - 1 || 1);
-      var top = ridgePath(seed + i * 977, w, h, { steps: 5 + i, amp: .34 - t * .16, base: .40 + t * .30 });
+      var top = ridgePath(seed + i * 977, w, h,
+        { steps: 5 + i, amp: ampFar - t * (ampFar - ampNear), base: base0 + t * baseSpan });
       /* Read as a duotone plate: light ink on a coloured ground, the same way
          round as every pattern field. The old values (7–14% fill, ink on
          cream) put the range at the bottom of the tonal range on the lightest
@@ -85,8 +93,14 @@
          the nearest ridge cuts hard against the sky. A landscape at 11% fill
          is line work; a place needs something standing in front of the light. */
       if (opts.silhouette) {
-        out += '<path d="' + top + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="currentColor" opacity="'
-          + (0.24 + t * 0.64).toFixed(3) + '"/>';
+        /* ⚠️ Opaque, and each ridge its own tone — not one colour at rising
+           opacity. A translucent range lets whatever is behind it read THROUGH
+           the mountains, so a hard-edged sky band cuts a horizontal line across
+           a ridge and the picture reads as a mistake rather than as a place.
+           Layered flat colour is also what the references do: cut paper, one
+           tone stopping where the next begins. */
+        out += '<path class="hz-land hz-l' + (i + 1) + '" d="' + top + ' L' + w + ' ' + h + ' L0 ' + h
+          + ' Z" fill="currentColor" opacity="' + (0.24 + t * 0.64).toFixed(3) + '"/>';
         continue;
       }
       out += '<path d="' + top + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="currentColor" opacity="'

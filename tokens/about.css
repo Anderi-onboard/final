@@ -101,15 +101,70 @@ body[data-page="about"] .bk-go {
    negative of the thing being copied. A silhouette has to name its own colour;
    it cannot borrow the one meant for type. */
 [data-horizon] { align-self: stretch; position: relative; overflow: hidden;
-  color: var(--bk-ink); background: var(--bk-bone); }
-[data-horizon] svg { width: 100%; height: 100%; display: block; }
+  color: var(--bk-ink); background: var(--bk-bone);
+  --hz-1: #E8DDD8; --hz-2: #E3C39A; --hz-3: #C79A55; --hz-4: #B5573A;
+  --hz-l1: #8A6A55; --hz-l2: #755743; --hz-l3: #5E4636; --hz-l4: #48352A; --hz-l5: #33251D; }
+/* ⚠️ The picture came up 23px short of the foot, and a pale strip of the
+   block's own background showed under the range — which reads as a rendering
+   fault, not as a margin. Two causes, both fixed here:
+
+   ① The horizon block is a grid with `grid-template-rows: auto 1fr` and a
+   gap. Its only child landed in the auto row and the gap — 1.6vw, exactly the
+   23px — was reserved below it. An art block has one child and no rows to
+   speak of, so it is a block box.
+   ② `body.blocks-route :is(…, .ab-block) > :not(.bk-art)` is (0,3,1) and
+   outranks a bare `[data-horizon] svg` (0,1,1), so `position:absolute` was
+   silently discarded — the same specificity trap this repo has now logged four
+   times. The rule below matches that weight instead of hoping to win. */
+body.blocks-route .ab-block--art[data-horizon] { display: block; gap: 0; }
+body.blocks-route .ab-block [data-horizon] > svg,
+body.blocks-route .ab-block[data-horizon] > svg {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0;
+}
 .ab-block--art[data-horizon] { padding: 0; }
+
+/* ⭐ Four flat bands, hard edges, no blend. The sky is layered colour — one
+   band stopping and the next starting — which is the same move the 3px paper
+   seam makes between two blocks. A ramp would be depth from light, and this
+   route has no mountains behind it to catch any.
+
+   ⚠️ These are the fills for rects blocks.js draws, so they have to be CSS
+   properties on a class; a fill="" attribute cannot resolve var() and would
+   freeze the sky out of the 114-group rotation.
+
+   ⚠️ Each band's lightness is clamped into its own slice of a descending
+   ladder and the slices do not overlap, so the top is always the light end and
+   the foot always the deep one whatever the group hands over — the step index
+   is not a brightness, and 114 groups disagree about which end is which. */
+.hz-b1 { fill: var(--hz-1); }
+.hz-b2 { fill: var(--hz-2); }
+.hz-b3 { fill: var(--hz-3); }
+.hz-b4 { fill: var(--hz-4); }
+
+/* ⭐ The land is layered flat colour too, not one ink at rising opacity. A
+   translucent range shows the sky THROUGH the mountains, so a hard band edge
+   draws a horizontal line across a ridge — which reads as a bug, not a place.
+   Five opaque tones, every one deeper than the deepest sky band, so the near
+   ridge always cuts hard against the light. A CSS rule outranks the presentation
+   attributes landscape() writes, so no !important is needed to take them over. */
+.hz-land { opacity: 1; }
+.hz-l1 { fill: var(--hz-l1); }
+.hz-l2 { fill: var(--hz-l2); }
+.hz-l3 { fill: var(--hz-l3); }
+.hz-l4 { fill: var(--hz-l4); }
+.hz-l5 { fill: var(--hz-l5); }
+
 @supports (color: oklch(from red l c h)) {
   [data-horizon] {
-    background-image: linear-gradient(180deg,
-      oklch(from var(--bw-palette-3, #E8DDD8) clamp(.86, l, .94) max(c, .05) h) 0%,
-      oklch(from var(--bw-palette-5, #C79A55) clamp(.74, l, .84) max(c, .09) h) 46%,
-      oklch(from var(--bw-palette-7, #B5573A) clamp(.62, l, .74) max(c, .11) h) 100%);
+    --hz-1: oklch(from var(--bw-palette-3, #E8DDD8) clamp(.88, l, .95) clamp(.02, c, .06) h);
+    --hz-2: oklch(from var(--bw-palette-4, #E3C39A) clamp(.79, l, .86) clamp(.04, c, .10) h);
+    --hz-3: oklch(from var(--bw-palette-5, #C79A55) clamp(.70, l, .77) clamp(.05, c, .12) h);
+    --hz-4: oklch(from var(--bw-palette-7, #B5573A) clamp(.60, l, .68) clamp(.06, c, .13) h);
+    --hz-l1: oklch(from var(--bw-palette-6, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
+    --hz-l2: oklch(from var(--bw-palette-7, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
+    --hz-l3: oklch(from var(--bw-palette-8, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
+    --hz-l4: oklch(from var(--bw-palette-9, #48352A) clamp(.29, l, .34) clamp(.03, c, .09) h);
+    --hz-l5: oklch(from var(--bw-palette-10, #33251D) clamp(.22, l, .27) clamp(.02, c, .08) h);
   }
 }
 
