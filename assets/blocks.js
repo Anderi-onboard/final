@@ -666,8 +666,62 @@
       }
     }
 
+    /* ── the clouds, which are what actually moves ────────────────────────
+       ⭐⭐ The range on the home page holds STILL and the clouds carry the
+       motion, and that is not a stylistic choice — it was measured: three
+       drifting ridge planes ran at 21fps against 55fps with the ridges stopped
+       and four clouds drifting. A ridge is a path across the whole canvas, so
+       moving one invalidates everything composited over it; a cloud is small
+       and clipped. The same split applies here, so these skylines get the same
+       treatment: ridges nailed down, clouds crossing.
+
+       ⭐ Same cloud, not a lookalike. BWRange publishes the home page's own
+       path, so a cloud on this route is that cloud — body plus its three
+       contour rows, a plane with its own line work, exactly as a ridge is.
+
+       ⚠️ Transform only, and nothing else on the card animates: the red line
+       bans per-frame background-color, filter and backdrop-filter. It is cheap
+       here for the reason the palette crossfade is cheap here — this route has
+       no backdrop-filter anywhere, so there is no blurred region to invalidate.
+
+       ⚠️ Periods are co-prime-ish and each cloud has its own negative delay, so
+       the three never line up into a single passing bar. Same discipline as the
+       drift bands on the mark fields. */
+    var R = window.BWRange;
+    var sky = "";
+    if (R && R.cloudBody) {
+      var CL = [
+        { x: .14, y: .13, s: 1.00, o: .94, dur: 104, delay: 0 },
+        { x: .52, y: .06, s: 0.72, o: .80, dur: 128, delay: -37 },
+        { x: .78, y: .18, s: 1.24, o: .88, dur: 92,  delay: -61 }
+      ];
+      /* ⚠️ Sized off the block's WIDTH, not off min(w,h) with a loose factor.
+         The first version put a cloud 696px across on a 480px block — at that
+         size the silhouette and its three contour rows stop reading as a cloud
+         and read as another bank of banded hills. On the home page a cloud is
+         about a fifth of the canvas; the path is ~116 units wide, so that
+         fraction is what sets the scale here too. */
+      var base = (w * 0.19) / 116;
+      for (var q = 0; q < CL.length; q++) {
+        var c = CL[q], cs = base * c.s;
+        var rows = "";
+        for (var rw = 0; rw < R.cloudRows.length; rw++) {
+          rows += '<path class="hz-cloud-c" d="' + R.cloudContour + '" transform="translate(0 '
+            + R.cloudRows[rw].y + ')"/>';
+        }
+        sky += '<g class="hz-cloud hz-cloud-' + (q + 1) + '" opacity="' + c.o + '"'
+          + ' style="animation-duration:' + c.dur + 's;animation-delay:' + c.delay + 's">'
+          + '<g transform="translate(' + (c.x * w).toFixed(1) + ' ' + (c.y * h).toFixed(1)
+          + ') scale(' + cs.toFixed(3) + ')">'
+          + '<path class="hz-cloud-b" d="' + R.cloudBody + '"/>' + rows
+          + '</g></g>';
+      }
+    }
+
     host.innerHTML = M.svg(
-      '<rect class="hz-sky" x="0" y="0" width="' + w + '" height="' + h + '"/>' + stars + orb
+      /* ⚠️ Stars go BEHIND the clouds. Drawn after them a star sits on top of a
+         cloud, which is the one thing a night sky cannot do. */
+      '<rect class="hz-sky" x="0" y="0" width="' + w + '" height="' + h + '"/>' + stars + sky + orb
         + M.landscape(seed, w, h,
             { layers: 5, silhouette: true, base0: .56, baseSpan: .30, amp: .26, ampNear: .13 }),
       "0 0 " + w + " " + h, 'preserveAspectRatio="none"');

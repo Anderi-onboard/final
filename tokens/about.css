@@ -102,9 +102,11 @@ body[data-page="about"] .bk-go {
 [data-horizon] { align-self: stretch; position: relative; overflow: hidden;
   color: var(--bk-ink); background: var(--bk-bone);
   --hz-sky: #E8DDD8; --hz-orb: #C79A55; --hz-glow: #DCBB93;
+  --hz-cloud: #F6F0EA; --hz-cloud-line: #C9B7A6;
   --hz-l1: #8A6A55; --hz-l2: #755743; --hz-l3: #5E4636; --hz-l4: #48352A; --hz-l5: #33251D; }
 [data-horizon][data-phase="night"] {
   --hz-sky: #1F2733; --hz-orb: #E4DCC6; --hz-glow: #9AA6BC;
+  --hz-cloud: #38414F; --hz-cloud-line: #4E5869;
   --hz-l1: #47505E; --hz-l2: #3B4351; --hz-l3: #2F3743; --hz-l4: #242B36; --hz-l5: #1A202A; }
 /* ⚠️ The picture came up 23px short of the foot, and a pale strip of the
    block's own background showed under the range — which reads as a rendering
@@ -141,6 +143,37 @@ body.blocks-route .ab-block[data-horizon] > svg {
    already make. Both sets keep their lightness clamped, so neither can drift
    into the band where nothing is readable. */
 .hz-sky  { fill: var(--hz-sky); }
+
+/* ── the clouds cross; the range holds still ──────────────────────────────
+   ⭐⭐ This is the home page's own split, and it was measured there rather than
+   chosen: three drifting ridge planes ran at 21fps against 55 with the ridges
+   stopped and the clouds carrying the motion. A ridge spans the whole canvas,
+   so moving one invalidates everything composited above it; a cloud is small.
+   These skylines follow the same rule for the same reason.
+
+   ⚠️ Transform only. Nothing here animates a colour, a filter or a backdrop —
+   that is the performance red line, and the palette still changes by
+   hold-then-crossfade every fifteen seconds exactly as the range does.
+
+   ⚠️ The three periods do not divide into each other and each cloud carries its
+   own negative delay, so they never line up into one passing bar — the same
+   discipline as the drift bands under the mark fields. */
+.hz-cloud-b { fill: var(--hz-cloud); }
+.hz-cloud-c { fill: none; stroke: var(--hz-cloud-line); stroke-width: 2.4;
+  stroke-linecap: round; stroke-linejoin: round; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hz-cloud {
+    animation-name: hz-drift;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+}
+@keyframes hz-drift {
+  from { transform: translate3d(-42%, 0, 0); }
+  to   { transform: translate3d(142%, 0, 0); }
+}
 .hz-body { fill: var(--hz-orb); }
 .hz-halo { fill: var(--hz-glow); stroke: var(--hz-glow);
   stroke-width: 20; stroke-linejoin: round; stroke-linecap: round; }
@@ -166,11 +199,19 @@ body.blocks-route .ab-block[data-horizon] > svg {
        ridge its own hue would turn a landscape into a chart. The sky takes the
        OTHER hue, so the silhouette cuts against the light by colour as well as
        by tone — which is the whole job of a horizon. */
-    --hz-sky: oklch(from var(--bw-hue-b, #E8DDD8) clamp(.84, l, .92) clamp(.04, c, .12) h);
+    /* ⚠️ Dropped from .84–.92. A cloud clamped to .95–.99 had only three to
+       seven hundredths of lightness between it and its own sky, so the clouds
+       were ghosts — visible in the DOM and not on the page. The sky gives way,
+       because the sky is the thing with nothing to say. */
+    --hz-sky: oklch(from var(--bw-hue-b, #E8DDD8) clamp(.78, l, .86) clamp(.04, c, .12) h);
     --hz-orb: oklch(from var(--bw-hue-a, #C79A55) clamp(.62, l, .70) clamp(.09, c, .19) h);
     /* the light around the body, pinned between it and its sky so it can never
        vanish into either — the same two-band construction the mark rings use */
     --hz-glow: oklch(from var(--bw-hue-a, #DCBB93) clamp(.74, l, .80) clamp(.06, c, .15) h);
+    /* a cloud is lighter than its sky by day and darker by night — it is lit
+       from the same body the block already draws, so it cannot read as a hole */
+    --hz-cloud: oklch(from var(--bw-hue-b, #F6F0EA) clamp(.95, l, .99) clamp(.005, c, .03) h);
+    --hz-cloud-line: oklch(from var(--bw-hue-b, #C9B7A6) clamp(.80, l, .86) clamp(.02, c, .07) h);
     --hz-l1: oklch(from var(--bw-hue-a, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
     --hz-l2: oklch(from var(--bw-hue-a, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
     --hz-l3: oklch(from var(--bw-hue-a, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
@@ -189,6 +230,8 @@ body.blocks-route .ab-block[data-horizon] > svg {
        mountain behind it. The body is the brightest thing at night, its light
        the second — both clear of every ridge. */
     --hz-glow: oklch(from var(--bw-hue-a, #9AA6BC) clamp(.62, l, .68) clamp(.03, c, .10) h);
+    --hz-cloud: oklch(from var(--bw-hue-b, #38414F) clamp(.33, l, .39) clamp(.02, c, .07) h);
+    --hz-cloud-line: oklch(from var(--bw-hue-b, #4E5869) clamp(.43, l, .49) clamp(.02, c, .08) h);
     --hz-l1: oklch(from var(--bw-hue-a, #47505E) clamp(.44, l, .49) clamp(.03, c, .08) h);
     --hz-l2: oklch(from var(--bw-hue-a, #3B4351) clamp(.39, l, .43) clamp(.03, c, .08) h);
     --hz-l3: oklch(from var(--bw-hue-a, #2F3743) clamp(.34, l, .38) clamp(.02, c, .07) h);

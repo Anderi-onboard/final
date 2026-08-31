@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260831b", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260831b";
+    ? new URL("../palettes/color-groups.json?v=20260831c", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260831c";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -1062,6 +1062,19 @@
     });
     startPaletteSystem(clockStart, reduce, paletteSeed);
   }
+
+  /* ⭐ The cloud is published so the block routes can draw THE SAME ONE. Those
+     pages switch the range off and build their own skylines, and a hand-made
+     lookalike there would be the one cloud on the site that is not this cloud —
+     the same argument that put the catalogue's own sun and moon in the horizon
+     blocks rather than a plain disc. Body plus its three contour rows, which is
+     what makes a cloud read the way a ridge does: a plane and its own line
+     work, not an outline with nothing inside it. */
+  window.BWRange = {
+    cloudBody: CLOUD,
+    cloudContour: CLOUDC,
+    cloudRows: CLOUD_ROWS
+  };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
