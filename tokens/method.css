@@ -363,6 +363,14 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
      aspect here and takes the height its content needs. */
   .mt-card { aspect-ratio: auto; min-height: 62vw; }
   .mt-card:is([data-pattern], [data-land]) { min-height: 30vw; }
+  /* 9px of tracked label, and on one column it is the only chrome the card has.
+     At three columns 9px reads as a caption inside a mosaic; at one column
+     there is no mosaic left for it to be a caption of — §3 says the composition
+     is not laid out below 900px — so the label is simply small text, and this
+     site's own rule is that a tier you cannot read is lost text, not a tier.
+     Raised here only: the cqw ladder the composition is measured in is
+     untouched. */
+  body[data-page="guide"] .mt-meta { font-size: 11px; }
 }
 
 /* ── woven weight, and a light in the type ─────────────────────────────────

@@ -668,7 +668,10 @@
   }
 
   function colonies() {
-    [].slice.call(document.querySelectorAll(".ab-colony")).forEach(function (host, i) {
+    /* ⚠️ Not the ones that are horizons. The call-to-action's picture carries
+       both .ab-colony (for its grid area) and data-horizon (for what it draws),
+       so this pass was claiming it too. */
+    [].slice.call(document.querySelectorAll(".ab-colony:not([data-horizon])")).forEach(function (host, i) {
       var W = Math.round(host.clientWidth), H = Math.round(host.clientHeight);
       if (W < 40 || H < 40) { host.innerHTML = ""; return; }
       var box = COLONY_BOX[i % COLONY_BOX.length];
@@ -734,7 +737,11 @@
 
   function horizonScene(host, i, slot) {
     var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
-    if (w < 40 || h < 40) { host.innerHTML = ""; return; }
+    /* ⚠️ Return without clearing. Blanking on a small measurement meant a
+       block that had not been laid out yet lost its picture permanently — the
+       phone's call to action came up empty because this ran before its
+       min-height applied. */
+    if (w < 40 || h < 40) return;
     var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
 
     /* the two blocks are opposite halves of the day */

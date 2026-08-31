@@ -478,137 +478,6 @@ body.blocks-route .ph-ink.is-accent {
 html[data-skin="paper"] body.blocks-route { background: var(--bk-bone); }
 /* The range and every glass carrier are switched off here rather than
    overridden piecemeal — this route does not use that material at all. */
-body.blocks-route .mtn-bg,
-body.blocks-route .mtn-sky,
-body.blocks-route .lq-texture-stage { display: none !important; }
-
-body.blocks-route :is(h1, h2, .bk-lead) {
-  font-family: var(--serif);
-  font-weight: 400;
-  letter-spacing: -.012em;
-  text-wrap: balance;
-  margin: 0;
-}
-/* Two type sizes, far apart, and nothing in between — the reference sets a
-   large display and a small functional label and simply omits the middle. */
-body.blocks-route h1 { font-size: clamp(30px, 3.5vw, 52px); line-height: 1.06; }
-body.blocks-route h2 { font-size: clamp(23px, 2.4vw, 34px); line-height: 1.14; }
-body.blocks-route .bk-lead { font-size: clamp(17px, 1.5vw, 22px); line-height: 1.42; }
-body.blocks-route .bk-eyebrow {
-  margin: 0 0 10px;
-  font-family: var(--mono, var(--sans));
-  font-size: 10px;
-  letter-spacing: .13em;
-  opacity: .72;
-}
-body.blocks-route :is(p, li) { font-size: 13px; line-height: 1.55; margin: 0; }
-body.blocks-route .bk-note { margin-top: 10px; opacity: .82; max-width: 44ch; }
-
-/* ── header / footer: flush bars, not floating chrome ───────────────────── */
-body.blocks-route .bk-head,
-body.blocks-route .bk-foot {
-  display: flex; align-items: center; gap: 22px;
-  padding: 16px var(--bk-pad);
-  background: var(--bk-cream);
-}
-body.blocks-route .bk-head { margin-bottom: var(--bk-gap); }
-body.blocks-route .bk-foot { margin-top: var(--bk-gap); font-size: 12px; }
-body.blocks-route .bk-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
-body.blocks-route .bk-brand b { font-family: var(--font-brand); font-weight: 400; font-size: 18px; }
-body.blocks-route .bk-mark { display: block; width: 22px; height: 22px; color: var(--bk-clay); }
-body.blocks-route .bk-nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
-/* ⚠️ :not(.bk-go) is load-bearing, and it is a specificity fix, not a style
-   choice. `:is(.bk-nav a, .bk-foot a)` weighs (0,3,1) against `.bk-go`'s
-   (0,3,0), so the call to action was inheriting the header's dark ink onto its
-   own dark fill and had been failing AA since it was written — 3.71:1 with the
-   old fixed clay, and 1.57:1 on the darkest groups once the fill started
-   rotating. The rotation did not cause this; it made it visible. */
-body.blocks-route :is(.bk-nav a:not(.bk-go), .bk-foot a:not(.bk-go)) {
-  color: inherit; text-decoration: none; font-size: 13px;
-}
-body.blocks-route :is(.bk-nav, .bk-foot) a.bk-go { text-decoration: none; font-size: 13px; }
-/* font-family is explicit because a <button> does NOT inherit it — the UA
-   sheet sets its own font, so every .bk-go on these routes was rendering in
-   Arial, which is a straight violation of the three-font rule and the one
-   thing on the page not wearing the brand. */
-body.blocks-route .bk-go {
-  font-family: var(--sans);
-  background: var(--bk-clay); color: var(--bk-cream);
-  padding: 9px 15px; font-size: 13px;
-}
-/* align-self, not display:inline-block — the title cells are flex columns, so
-   a block child stretches to the full column width and the button reads as a
-   bar across the composition rather than as a button. */
-body.blocks-route .bk-go--big { align-self: flex-start; margin-top: 20px; padding: 12px 18px; }
-
-/* ── the compositions ───────────────────────────────────────────────────────
-   NOT a twelve-column grid. That was the structural mistake: twelfths can only
-   land on .083, .167, .25, .333 … and the reference divides at .37, .53, .72,
-   .79 — not one of its edges falls on a twelfth. A column system cannot
-   express those ratios, so every attempt to tune spans produced something that
-   read as a web layout rather than as the composition.
-
-   Each composition is instead a fixed-aspect frame with explicit fractional
-   tracks, measured off the reference:
-
-     A  .37 / .35 / .28      title left, banded middle, full-height right
-     B  1        rows .37/.63    one band over one field
-     C  .42 / .37 / .21     title, plate, full-height right column
-     D  .54 / .19 / .27     title, narrow pattern, full-height right column
-
-   Three rules hold across all of them and are why they read as one system:
-   the rightmost column always runs the full height to the edge; no two tracks
-   in a composition are equal; and the horizontal division, where there is one,
-   sits near the middle but never on it. */
-body.blocks-route .bk-main { display: flex; flex-direction: column; gap: var(--bk-gap); }
-body.blocks-route .bk {
-  display: grid;
-  gap: var(--bk-gap);
-  /* The frame is a fixed aspect, as the reference's slides are. Below the
-     breakpoint it releases, because a 16:9 frame on a phone is a letterbox. */
-  aspect-ratio: 16 / 7.4;
-  min-height: 420px;
-}
-body.blocks-route .bk--a { grid-template-columns: .37fr .35fr .28fr; grid-template-rows: .34fr .66fr; }
-/* B is a band pair, not a slide. Holding it to 16:7.4 stretches two bands to
-   the height of a three-column composition and puts the empty back. */
-body.blocks-route .bk--b { grid-template-columns: 1fr; grid-template-rows: .34fr .66fr;
-  aspect-ratio: 16 / 3.4; min-height: 260px; }
-/* B carrying the type in its FIRST row is a different frame, not the same one
-   flipped: a .34 row is sized for a pattern band, and putting a heading plus a
-   call to action in it overflows into overflow:hidden, which clips the
-   headline in half. The proportion follows what the row has to hold. */
-body.blocks-route .bk--b2 { grid-template-columns: 1fr; grid-template-rows: .56fr .44fr;
-  aspect-ratio: 16 / 4.2; min-height: 330px; }
-body.blocks-route .bk--c { grid-template-columns: .42fr .37fr .21fr; grid-template-rows: .58fr .42fr; }
-body.blocks-route .bk--d { grid-template-columns: .54fr .19fr .27fr; grid-template-rows: .48fr .52fr; }
-
-/* Placement is declared per cell rather than by span counts, because the
-   shapes are specific: an L, a band, a full-height rail. */
-body.blocks-route [data-at="left-tall"]  { grid-column: 1; grid-row: 1 / -1; }
-body.blocks-route [data-at="left-top"]   { grid-column: 1; grid-row: 1; }
-body.blocks-route [data-at="mid-top"]    { grid-column: 2; grid-row: 1; }
-body.blocks-route [data-at="mid-tall"]   { grid-column: 2; grid-row: 1 / -1; }
-body.blocks-route [data-at="mid-bottom"] { grid-column: 2; grid-row: 2; }
-body.blocks-route [data-at="right-tall"] { grid-column: 3; grid-row: 1 / -1; }
-body.blocks-route [data-at="band-top"]   { grid-column: 1 / -1; grid-row: 1; }
-body.blocks-route [data-at="band-bottom"]{ grid-column: 1 / -1; grid-row: 2; }
-body.blocks-route [data-at="wide-bottom"]{ grid-column: 1 / 3;  grid-row: 2; }
-
-body.blocks-route .bk-cell { padding: var(--bk-pad); min-width: 0; position: relative; overflow: hidden; }
-body.blocks-route .bk-cell:is([data-pattern], [data-land], [data-mark]) { padding: 0; }
-
-/* Each role also publishes its own colour as --bk-fill, so anything downstream
-   can derive from the fill this block actually got rather than re-deciding it. */
-body.blocks-route [data-fill="bone"]  { --bk-fill: var(--bk-bone);  background: var(--bk-fill); }
-body.blocks-route [data-fill="cream"] { --bk-fill: var(--bk-cream); background: var(--bk-fill); }
-body.blocks-route [data-fill="clay"]  { --bk-fill: var(--bk-clay);  background: var(--bk-fill); color: var(--bk-cream); }
-body.blocks-route [data-fill="brick"] { --bk-fill: var(--bk-brick); background: var(--bk-fill); color: var(--bk-cream); }
-body.blocks-route [data-fill="olive"] { --bk-fill: var(--bk-olive); background: var(--bk-fill); color: var(--bk-cream); }
-body.blocks-route [data-fill="teal"]  { --bk-fill: var(--bk-teal);  background: var(--bk-fill); color: var(--bk-cream); }
-body.blocks-route [data-fill="ochre"] { --bk-fill: var(--bk-ochre); background: var(--bk-fill); }
-body.blocks-route [data-fill="dusty"] { --bk-fill: var(--bk-dusty); background: var(--bk-fill); }
-
 /* ⚠️ No gradient on the fill. A graded rectangle was the wrong reading of
    "a block needs a background": the background belongs to the MARK, not to the
    box. A fill is one flat colour, as this route's material rule has said all
@@ -789,7 +658,33 @@ body.blocks-route .bk-cell[data-mark] svg { width: 100%; height: auto; }
   body.blocks-route .bk-cell:is([data-pattern]) { min-height: 92px; }
   body.blocks-route .bk-cell:is([data-land]) { min-height: 170px; }
   body.blocks-route .bk-cell--steps { grid-template-columns: 1fr; }
-  body.blocks-route .bk-nav { gap: 12px; }
+  /* ⚠️ nowrap on the LINKS. The row itself was already nowrap, but each link's
+     own text wrapped inside a 47px box, so a one-line bar rendered 80px tall
+     with every label broken over two lines. */
+  body.blocks-route .bk-nav { gap: 10px; }
+  body.blocks-route .bk-nav a { white-space: nowrap; font-size: 12px; }
+  body.blocks-route .bk-nav a.bk-go { padding: 8px 12px; }
+}
+
+/* ⚠️⚠️ The bar wraps rather than overflowing. Wordmark 127 + three links 294 +
+   gaps and padding is 479px of content asked to sit in 390 — so the header set
+   the document's scroll width and BOTH block routes carried a 71px band of bare
+   paper down the whole right-hand edge of every screen. That gutter, not the
+   blocks, was what read as broken on a phone.
+
+   Nothing is dropped and nothing is shrunk further: the links are the only way
+   across the site from the top of a 3000px page, and 11px nav text to save a
+   row is a worse trade than a second row on a bar that does not stick. The
+   threshold is where it actually stops fitting (~500px), not where the mosaic
+   unstacks — a 700px tablet has room for one row and keeps it. */
+@media (max-width: 520px) {
+  body.blocks-route .bk-head { flex-wrap: wrap; row-gap: 12px; }
+  body.blocks-route .bk-head .bk-nav { margin-left: 0; width: 100%; }
+  /* The footer has the same row and the same problem in miniature: it fits, so
+     it never overflowed, but each label broke inside its own box — "Plans &
+     units" over two lines beside "Terms" on one. Wrap the row, never the word. */
+  body.blocks-route .bk-foot { gap: 14px; row-gap: 10px; flex-wrap: wrap; }
+  body.blocks-route .bk-foot a { white-space: nowrap; }
 }
 
 /* Same reason, for every other native control on these routes. */

@@ -412,9 +412,31 @@ body.blocks-route .ab-block[data-horizon] > svg {
   /* ⚠️ Explicitly out, not merely unplaced. A grid item whose named area does
      not exist is auto-placed into an implicit row rather than ignored, so it
      would add an empty band to every block on a phone. */
-  .ab-colony { display: none; }
-  .ab-block { aspect-ratio: auto; min-height: 46vw; }
-  .ab-block--art { display: none; }
-  .ab-block { min-height: 0; }
+  /* ⚠️⚠️ The pictures STAY on a phone. They were hidden here when they were
+     decoration — the note said a composition that has lost its arrangement is
+     just wallpaper, and it was right about the mark fields. But the horizons
+     are scenes now, and the reference this page is drawn from is itself a
+     vertical stack of painted bands: on a phone the pictures ARE the page.
+     Hiding them left eleven flat colour slabs in a column.
+
+     They run as short bands rather than squares, so they punctuate the reading
+     instead of eating a third of its length — which was the real complaint
+     behind hiding them. */
+  .ab-block { aspect-ratio: auto; min-height: 0; }
+  .ab-block--art { display: block; aspect-ratio: 16 / 7; min-height: 0; }
+  /* ⚠️ `grid-area: auto`, not merely `display: block`. The wide layout names a
+     `colony` area; at one column that name no longer exists, so the item was
+     auto-placed into an IMPLICIT column and measured 0 wide — the picture was
+     drawn into a zero-width box, which is why the call to action came up blank
+     while its height read a healthy 179px. Height alone is not proof a box was
+     laid out. */
+  .ab-colony { display: block; grid-area: auto; min-height: 40vw; }
+  .ab-block--cta .ab-colony { min-height: 46vw; }
   .ab-figure { min-height: 96px; }
+  /* Same as the method page's label: at one column there is no mosaic for a
+     10px caption to be a caption of. */
+  /* ⚠️ Specificity, again: `.ab-block--lede .ab-meta` is (0,2,0) and a bare
+     `.ab-meta` here is (0,1,0), so the opening block kept its 10px while every
+     other label moved. Match the weight rather than expect to win. */
+  .ab-block .ab-meta { font-size: 11px; }
 }
