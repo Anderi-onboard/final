@@ -143,7 +143,15 @@ body[data-page="guide"] :is(.mt-card--half, .mt-card--step) .mt-display {
    with a third of the card empty beneath it — while the display type it
    replaces sits at the foot. The two faces have to occupy the same place or the
    swap is a jump. */
-.mt-card--step :is(.mt-work, .mt-cast) { flex: 1 1 auto; justify-content: flex-end; }
+/* ⚠️⚠️ Anchored to the foot by an AUTO MARGIN, not by `justify-content:
+   flex-end`. Flex-end overflows past the START edge, so a face with more
+   content than height opens already scrolled to its bottom — the moment the
+   slider grew from a fake 8px to a real 44px, step 05 opened showing only its
+   own answer, with the control that produces the answer scrolled off the top.
+   An auto margin anchors identically when there is room and collapses to 0
+   when there is not, so a tight face starts where you read from. */
+.mt-card--step :is(.mt-work, .mt-cast) { flex: 1 1 auto; justify-content: flex-start; }
+.mt-card--step :is(.mt-work, .mt-cast) > :first-child { margin-block-start: auto; }
 /* Deliberate crop. The word is read as texture first and as language second,
    and running it past the edge is what forces that order. */
 /* ⚠️ The horizontal crop is REMOVED from the display type. It was manufactured
@@ -338,9 +346,53 @@ body[data-page="guide"] .mt-meter label {
   font-family: var(--mono, var(--sans));
   font-size: max(9px, calc(2.46 * var(--mt-u))); letter-spacing: .12em; opacity: .88;
 }
+/* ⚠️ `appearance: none`, and it is the only reason any of this lands. A native
+   range has a fixed intrinsic height and IGNORES `height` outright while
+   appearance is auto — a declared 44px computed back as 16px with the rule
+   sitting in the matched list, looking applied. This repo has the same note for
+   the native checkbox and border-radius; it is one fact about native controls,
+   not two.
+
+   16px is a line, not something you can put a thumb on, and this control is the
+   whole point of step 05. It is drawn here rather than left native: square
+   corners are this route's material rule, and a native thumb is a lozenge. */
 body[data-page="guide"] .mt-meter input[type="range"] {
+  -webkit-appearance: none; appearance: none;
   width: 100%; max-width: calc(52 * var(--mt-u)); display: block;
-  accent-color: var(--bk-clay); background: transparent;
+  height: var(--ctl); background: transparent; margin: 0;
+  /* ⚠️ `color: inherit`. Form controls do not inherit colour, so the thumb's
+     `currentColor` was resolving to the UA grey rather than to the card's own
+     ink — the one element on the card not wearing the palette. */
+  color: inherit;
+  /* ⚠️ `flex: none`, or the height is only a suggestion. `.mt-work` is a column
+     flex container, so `height` is the item's base size and the default
+     shrink factor takes it back when the face is tight — a declared 44px
+     computed as 7.8px, and even an inline `height: 44px !important` computed
+     as 7.8px, which is what finally named the cause. Nothing was overriding
+     the declaration; flex was allowed to shrink the result. */
+  flex: none;
+}
+body[data-page="guide"] .mt-meter input[type="range"]::-webkit-slider-runnable-track {
+  height: calc(1.7 * var(--mt-u)); min-height: 6px; background: var(--mt-field); border: 0;
+}
+body[data-page="guide"] .mt-meter input[type="range"]::-moz-range-track {
+  height: calc(1.7 * var(--mt-u)); min-height: 6px; background: var(--mt-field); border: 0;
+}
+/* The thumb is a block of the card's own ink — the one place on this route
+   where a control says "here" by weight rather than by glow. */
+body[data-page="guide"] .mt-meter input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; border: 0; border-radius: 0;
+  width: calc(5 * var(--mt-u)); min-width: 16px;
+  height: calc(7.4 * var(--mt-u)); min-height: 24px;
+  background: currentColor;
+  /* centre the thumb on the track: half the thumb, less half the track */
+  margin-top: calc((max(6px, 1.7 * var(--mt-u)) - max(24px, 7.4 * var(--mt-u))) / 2);
+}
+body[data-page="guide"] .mt-meter input[type="range"]::-moz-range-thumb {
+  border: 0; border-radius: 0;
+  width: calc(5 * var(--mt-u)); min-width: 16px;
+  height: calc(7.4 * var(--mt-u)); min-height: 24px;
+  background: currentColor;
 }
 .mt-figure { margin: calc(3.35 * var(--mt-u)) 0 0; display: flex; align-items: baseline; gap: calc(2.8 * var(--mt-u)); }
 body[data-page="guide"] .mt-figure b { font-family: var(--serif); font-weight: 400; font-size: calc(14.53 * var(--mt-u)); line-height: 1; }
@@ -362,6 +414,12 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
   /* A full-width square is most of a phone screen. The card releases its
      aspect here and takes the height its content needs. */
   .mt-card { aspect-ratio: auto; min-height: 62vw; }
+  /* ⚠️ The interactive cards get room for what is inside them. At 62vw four of
+     the five widgets overflowed their face by ~100–126px — including step 03's
+     "Toss the coins", which is the whole card — and the face's own scroll then
+     competes with the page's under the same finger. A nested scroll region on a
+     phone is a worse answer than a taller card. */
+  .mt-card--flip { min-height: 96vw; }
   .mt-card:is([data-pattern], [data-land]) { min-height: 30vw; }
   /* 9px of tracked label, and on one column it is the only chrome the card has.
      At three columns 9px reads as a caption inside a mosaic; at one column
@@ -371,6 +429,14 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
      Raised here only: the cqw ladder the composition is measured in is
      untouched. */
   body[data-page="guide"] .mt-meta { font-size: 11px; }
+  /* ⭐ Raise the UNIT, not a list of sizes. Seven parts inside the widgets
+     bottom out at 9px on a phone — the card's cqw is ~3.5px there — and the
+     obvious fix is a rule naming each one. That is the shape of the mistake
+     this page has already paid for twice: a second list of sizes that has to
+     be kept in step, and is not. The work face gets a larger unit and every
+     part of the widget scales together. It already scrolls inside itself, so
+     the extra height cannot clip anything. */
+  body[data-page="guide"] .mt-face[data-face="work"] { --mt-u: max(4.6px, 1cqw); }
 }
 
 /* ── woven weight, and a light in the type ─────────────────────────────────
