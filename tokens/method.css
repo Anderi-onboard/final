@@ -399,12 +399,18 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
    in, the faces took 190ms and the wash ran 260ms, so for most of the move you
    were looking at two faces and a veil at once. The wash now peaks where the
    faces cross and everything is finished together. */
+/* ⚠️ The NAME face centres; the work face still sits at the foot. Anchoring
+   the name to the bottom left every step card reading as a 300px field of flat
+   colour with a caption on its floor — five of those in a column is the "I
+   don't know what to look at" on this page. Centred, each card reads as one
+   thing. The widget keeps the foot, because a control wants a base. */
 .mt-face {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; justify-content: flex-end;
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity 160ms var(--ease-out), visibility 0s linear 160ms;
 }
+.mt-face[data-face="name"] { justify-content: center; }
 .mt-face.is-on {
   opacity: 1; visibility: visible; pointer-events: auto;
   transition: opacity 160ms var(--ease-out), visibility 0s linear 0s;

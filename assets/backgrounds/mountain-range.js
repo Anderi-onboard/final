@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260831d", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260831d";
+    ? new URL("../palettes/color-groups.json?v=20260831e", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260831e";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -413,7 +413,13 @@
       }
       ridges += '<g class="flow-' + i + '"><use href="#mw' + i + '" class="fill l' + i + '"/>'
         + moire + '<g class="contour l' + i + '">' + contour + '</g></g>';
-      if (i === 6) ridges += '<path class="mtn-water" d="' + WATER + '"/>';
+      /* ⚠️ The water plane is GONE. Its top edge is a wave of about 34 units
+         over 340-unit spans — so shallow that at render scale it drew a nearly
+         straight horizontal line, and in a cool hue against the warm ridges.
+         Next to ten arc-edged ridges that one flat slab read as a band laid
+         over the picture rather than as part of it. The palette still publishes
+         --bw-palette-water (the block routes use it as a hue candidate); it
+         simply is not painted here any more. */
     });
 
     var clouds = '';

@@ -130,7 +130,14 @@ assert.match(shuffleSrc, /groups\.slice\(\)/, "shuffle must copy, never reorder 
 assert.match(background, /for \(var i = list\.length - 1; i > 0; i--\)/, "shuffle must be a full Fisher–Yates pass");
 
 assert.match(background, /class=\"fill l/, "palette ridge fills must be rendered");
-assert.match(background, /class=\"mtn-water\"/, "palette water role must be rendered");
+/* ⚠️ The water PLANE is no longer painted — its top edge was a wave so shallow
+   it drew a straight horizontal slab in a cool hue across ten arc-edged ridges,
+   and it read as a band laid over the picture. What this contract protects is
+   that the water COLOUR is still published: the block routes take it as a hue
+   candidate, so dropping the token would quietly narrow their palette. */
+assert.match(background, /--bw-palette-water/, "palette water role must still be published");
+assert.doesNotMatch(background, /class="mtn-water"/,
+  "the water plane is deliberately not painted — it was the one straight-edged layer");
 assert.match(background, /transition:fill 1\.5s/, "palette fills must interpolate for 1.5s");
 /* The cascade must exist and must stay short. 400ms spread twelve 1.5s fill
    transitions over six seconds, so the range repainted continuously for six

@@ -82,9 +82,23 @@ body[data-page="about"] .bk-go {
   min-width: 0;
   gap: clamp(12px, 1.6vw, 24px);
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas: "meta" "say";
+  /* ⚠️ The label stays at the top and the words sit in the middle of whatever
+     height the row hands over. Bottom-anchoring them was right while a colony
+     filled the band above; with type alone it put every headline against the
+     floor under a column of empty colour. */
+  align-content: start;
 }
+.ab-block:not(.ab-block--art):not(.ab-block--cta) .ab-say { align-self: center; }
+.ab-block:not(.ab-block--art):not(.ab-block--cta) { grid-template-rows: auto 1fr; }
+/* ⭐⭐ ONE unit, and the span halves it. A block spanning two of three columns
+   has twice the container width, so a fixed cqw fraction paints at twice the
+   size — which is why eleven display lines all landed between 46 and 67px and
+   the page had no primary. It was patched with a SECOND list of halved
+   fractions per cell, the half-wired pattern this repo has paid for before;
+   one variable means a new block cannot miss the rule. */
+body[data-page="about"] .ab-block { --ab-u: 1cqw; }
 .ab-meta { grid-area: meta; }
 .ab-say  { grid-area: say; }
 .ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
@@ -264,7 +278,7 @@ body.blocks-route .ab-block[data-horizon] > svg {
 .ab-meta {
   margin: 0;
   font-family: var(--mono, var(--sans));
-  font-size: max(10px, 2.1cqw);
+  font-size: max(10px, calc(2.1 * var(--ab-u)));
   letter-spacing: .12em;
   /* .88 folded the label toward its own carrier just enough to matter once the
      fill became a gradient. The hierarchy is carried by size and .12em of
@@ -272,24 +286,30 @@ body.blocks-route .ab-block[data-horizon] > svg {
   opacity: .94;
 }
 .ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); align-content: end; }
+.ab-block:not(.ab-block--lede):not(.ab-block--head):not(.ab-block--cta) .ab-display { font-size: calc(7.6 * var(--ab-u)); }
 .ab-display {
   margin: 0 0 0 -.03em;
   font-family: var(--serif); font-weight: 400;
-  font-size: 13cqw; line-height: 1.0; letter-spacing: -.03em;
+  font-size: calc(13 * var(--ab-u)); line-height: 1.0; letter-spacing: -.03em;
   text-wrap: balance;
 }
 .ab-note {
   margin: 0;
-  font-family: var(--sans); font-size: max(12px, 2.4cqw); line-height: 1.5;
+  font-family: var(--sans); font-size: max(12px, calc(2.4 * var(--ab-u))); line-height: 1.5;
   max-width: 46ch; opacity: .92;
 }
 
 /* the full-width blocks: half the fraction, same optical size */
-.ab-block--lede .ab-display { font-size: 9.4cqw; }
-.ab-block--lede .ab-note    { font-size: max(13px, 1.6cqw); max-width: 58ch; }
-.ab-block--lede .ab-meta    { font-size: max(10px, 1.4cqw); }
-.ab-block--head .ab-display { font-size: 11.5cqw; }
-.ab-block--cta .ab-display  { font-size: 9cqw; }
+/* ⭐ ONE primary. Eleven display lines all landing between 46 and 67px is not
+   a hierarchy — it is one size repeated, and a page with one size has no
+   entrance. The opening statement is the page's subject and is set clearly
+   larger; the section heads sit under it; the content blocks step down again,
+   so scanning the page tells you what it is about before you read a word. */
+.ab-block--lede .ab-display { font-size: calc(15 * var(--ab-u)); }
+.ab-block--lede .ab-note    { font-size: max(13px, calc(2.4 * var(--ab-u))); max-width: 58ch; }
+.ab-block--lede .ab-meta    { font-size: max(10px, calc(2.1 * var(--ab-u))); }
+.ab-block--head .ab-display { font-size: calc(10.5 * var(--ab-u)); }
+.ab-block--cta .ab-display  { font-size: calc(11 * var(--ab-u)); }
 .ab-block--cta { gap: clamp(20px, 2.4vw, 36px); }
 .ab-block--cta { grid-template-areas: "say" "cta"; grid-template-rows: 1fr auto; }
 .ab-block--cta .bk-go { grid-area: cta; justify-self: start; }
@@ -354,19 +374,27 @@ body.blocks-route .ab-block[data-horizon] > svg {
   }
 
   /* the unit, and the ones that break it */
-  .ab-block { aspect-ratio: 1 / 1; }
+  /* ⚠️ Only the ART blocks keep a fixed shape. A square was right while every
+     block carried a colony filling the band above its type; with the text
+     blocks down to type alone a forced square is 480px of block holding 150px
+     of words, and the void above each headline is what "I don't know what to
+     look at" is looking at. Text blocks hug their content; the picture blocks
+     keep their frame, because a picture needs one. */
+  /* ⚠️ 4:3, not square. A square picture block sets its whole grid row, so the
+     text block beside it inherits that height and shows 60% empty ground above
+     its type — the void is not in the text block, it is being handed to it. */
+  .ab-block--art { aspect-ratio: 4 / 3; }
+  .ab-block:not(.ab-block--art) { min-height: 0; }
   .ab-block:is([data-cell="lede"], [data-cell="sepa"], [data-cell="rest"],
-    [data-cell="deep"], [data-cell="word"], [data-cell="pays"]) { aspect-ratio: 2 / 1; }
-  .ab-block[data-cell="cta"] { aspect-ratio: 3 / 1; }
+    [data-cell="deep"], [data-cell="word"], [data-cell="pays"]) { aspect-ratio: auto; }
+  .ab-block[data-cell="cta"] { aspect-ratio: auto; }
+  .ab-block--art[data-cell="tex1"] { aspect-ratio: 4 / 3; }
 
-  /* ⚠️ A cell spanning two columns has twice the container width, so the same
-     cqw paints at twice the size. Halved fractions, not a different design. */
-  .ab-block:is([data-cell="sepa"], [data-cell="rest"], [data-cell="deep"],
-    [data-cell="word"], [data-cell="pays"]) .ab-display { font-size: 7.6cqw; }
-  .ab-block:is([data-cell="sepa"], [data-cell="rest"], [data-cell="deep"],
-    [data-cell="word"], [data-cell="pays"]) :is(.ab-meta, .ab-note) { font-size: max(12px, 1.5cqw); }
-  .ab-block--lede .ab-display { font-size: 5.4cqw; }
-  .ab-block--cta .ab-display  { font-size: 4.3cqw; }
+  /* ⚠️ The span halves the unit — one declaration, not a per-cell list. */
+  body[data-page="about"] .ab-block:is([data-cell="lede"], [data-cell="sepa"],
+    [data-cell="rest"], [data-cell="deep"], [data-cell="word"],
+    [data-cell="pays"]) { --ab-u: .5cqw; }
+  body[data-page="about"] .ab-block[data-cell="cta"] { --ab-u: .34cqw; }
 }
 
 /* ── one column ─────────────────────────────────────────────────────────
