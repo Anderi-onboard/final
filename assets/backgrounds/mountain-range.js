@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260830h", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260830h";
+    ? new URL("../palettes/color-groups.json?v=20260831a", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260831a";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -926,7 +926,8 @@
     }, immediate);
 
     window.dispatchEvent(new CustomEvent("bw:palettechange", {
-      detail: { id: group.id, name: group.name, segment: group.seg }
+      detail: { id: group.id, name: group.name, segment: group.seg,
+                slot: +(document.documentElement.dataset.bwPaletteSlot || 0) }
     }));
   }
 
@@ -946,6 +947,16 @@
         function update() {
           var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
           var index = ((slot * paletteStep) % schedule.length + schedule.length) % schedule.length;
+          /* ⭐ The slot number is published so consumers can key something to
+             the turn of the clock rather than to the group's identity. The
+             block routes hang day and night off it: two horizon blocks, one lit
+             and one dark, trading places every time the colour changes. Parity
+             of the group's index would tie the sky to WHICH card is up, so a
+             visitor arriving mid-schedule could see the same half of the day
+             for a long run; the slot always alternates. The raw count is
+             published rather than its parity, so a consumer can also walk
+             something ACROSS successive turns — the sun's place in its arc. */
+          document.documentElement.dataset.bwPaletteSlot = String(slot);
           applyPalette(schedule[index], firstApply || reduce);
           firstApply = false;
           if (!reduce) {

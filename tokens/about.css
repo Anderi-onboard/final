@@ -90,11 +90,10 @@ body[data-page="about"] .bk-go {
 .ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
 .ab-colony svg { width: 100%; height: 100%; display: block; }
 /* ── the skyline ────────────────────────────────────────────────────────
-   ⭐ Its own sky, not the block's. The reference is a hard dark ridge against
-   a banded, saturated sky, and a 10-step colour ramp is exactly the thing to
-   build that from — three stops off the group's own card. The ridges then take
-   a deep step, so the silhouette cuts against the light instead of dissolving
-   into it.
+   ⭐ Its own sky, and a time of day. One flat field with one body in it — the
+   sun going east to west, then the moon — rather than the bands this had
+   before. Bands of colour behind a mountain are a swatch card; a sky is worth
+   drawing because it says when it is.
 
    ⚠️ The first version inherited currentColor, which on a dark block is the
    PALE ink — so the mountains came out cream on brown, the photograph
@@ -102,8 +101,11 @@ body[data-page="about"] .bk-go {
    it cannot borrow the one meant for type. */
 [data-horizon] { align-self: stretch; position: relative; overflow: hidden;
   color: var(--bk-ink); background: var(--bk-bone);
-  --hz-1: #E8DDD8; --hz-2: #E3C39A; --hz-3: #C79A55; --hz-4: #B5573A;
+  --hz-sky: #E8DDD8; --hz-orb: #C79A55; --hz-glow: #DCBB93;
   --hz-l1: #8A6A55; --hz-l2: #755743; --hz-l3: #5E4636; --hz-l4: #48352A; --hz-l5: #33251D; }
+[data-horizon][data-phase="night"] {
+  --hz-sky: #1F2733; --hz-orb: #E4DCC6; --hz-glow: #9AA6BC;
+  --hz-l1: #47505E; --hz-l2: #3B4351; --hz-l3: #2F3743; --hz-l4: #242B36; --hz-l5: #1A202A; }
 /* ⚠️ The picture came up 23px short of the foot, and a pale strip of the
    block's own background showed under the range — which reads as a rendering
    fault, not as a margin. Two causes, both fixed here:
@@ -123,23 +125,26 @@ body.blocks-route .ab-block[data-horizon] > svg {
 }
 .ab-block--art[data-horizon] { padding: 0; }
 
-/* ⭐ Four flat bands, hard edges, no blend. The sky is layered colour — one
-   band stopping and the next starting — which is the same move the 3px paper
-   seam makes between two blocks. A ramp would be depth from light, and this
-   route has no mountains behind it to catch any.
-
-   ⚠️ These are the fills for rects blocks.js draws, so they have to be CSS
+/* ⚠️ These are the fills for shapes blocks.js draws, so they have to be CSS
    properties on a class; a fill="" attribute cannot resolve var() and would
-   freeze the sky out of the 114-group rotation.
+   freeze the scene out of the 114-group rotation. */
+/* ── one sky, one body, and a time of day ────────────────────────────────
+   ⭐⭐ The four bands are gone. A banded sky is a swatch card standing behind a
+   mountain; what a sky gives a page is a TIME — the sun rises east, sets west,
+   the moon takes over, and the light changes with it. The two horizon blocks
+   are opposite halves of one day and trade places on every turn of the palette
+   clock, so the pair is always a day and a night.
 
-   ⚠️ Each band's lightness is clamped into its own slice of a descending
-   ladder and the slices do not overlap, so the top is always the light end and
-   the foot always the deep one whatever the group hands over — the step index
-   is not a brightness, and 114 groups disagree about which end is which. */
-.hz-b1 { fill: var(--hz-1); }
-.hz-b2 { fill: var(--hz-2); }
-.hz-b3 { fill: var(--hz-3); }
-.hz-b4 { fill: var(--hz-4); }
+   ⚠️ Day and night are separate tokens on the same roles, not one palette dimmed.
+   A night sky is not a day sky at lower opacity: the ground goes deep and the
+   ink goes pale, which is the same inversion the deep and pale block fills
+   already make. Both sets keep their lightness clamped, so neither can drift
+   into the band where nothing is readable. */
+.hz-sky  { fill: var(--hz-sky); }
+.hz-body { fill: var(--hz-orb); }
+.hz-halo { fill: var(--hz-glow); stroke: var(--hz-glow);
+  stroke-width: 20; stroke-linejoin: round; stroke-linecap: round; }
+.hz-star { fill: var(--hz-orb); opacity: .72; }
 
 /* ⭐ The land is layered flat colour too, not one ink at rising opacity. A
    translucent range shows the sky THROUGH the mountains, so a hard band edge
@@ -156,25 +161,39 @@ body.blocks-route .ab-block[data-horizon] > svg {
 
 @supports (color: oklch(from red l c h)) {
   [data-horizon] {
-    /* ⚠️ The bands alternate the group's two hues, they do not walk the step
-       ladder. Stepping 3→4→5→7 gave four stripes of ONE dusk: adjacent steps
-       are the same hue at different lightnesses (3↔4 measures 6° across the
-       catalogue), so the sky was a fade with hard edges rather than a 彩霞.
-       Alternating A / B / A / B down a descending lightness ladder is what a
-       real sunset does — the same two colours trading places as the light goes.
-
-       ⚠️ The range keeps a single hue (A) through all five layers. A mountain
-       range reads as depth precisely because it is one colour receding; giving
-       each ridge its own hue would turn a landscape into a chart. */
-    --hz-1: oklch(from var(--bw-hue-a, #E8DDD8) clamp(.88, l, .95) clamp(.03, c, .08) h);
-    --hz-2: oklch(from var(--bw-hue-b, #E3C39A) clamp(.79, l, .86) clamp(.05, c, .13) h);
-    --hz-3: oklch(from var(--bw-hue-a, #C79A55) clamp(.70, l, .77) clamp(.06, c, .15) h);
-    --hz-4: oklch(from var(--bw-hue-b, #B5573A) clamp(.60, l, .68) clamp(.07, c, .16) h);
+    /* ⚠️ The range keeps a single hue through all five layers. A mountain range
+       reads as depth precisely because it is one colour receding; giving each
+       ridge its own hue would turn a landscape into a chart. The sky takes the
+       OTHER hue, so the silhouette cuts against the light by colour as well as
+       by tone — which is the whole job of a horizon. */
+    --hz-sky: oklch(from var(--bw-hue-b, #E8DDD8) clamp(.84, l, .92) clamp(.04, c, .12) h);
+    --hz-orb: oklch(from var(--bw-hue-a, #C79A55) clamp(.62, l, .70) clamp(.09, c, .19) h);
+    /* the light around the body, pinned between it and its sky so it can never
+       vanish into either — the same two-band construction the mark rings use */
+    --hz-glow: oklch(from var(--bw-hue-a, #DCBB93) clamp(.74, l, .80) clamp(.06, c, .15) h);
     --hz-l1: oklch(from var(--bw-hue-a, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
     --hz-l2: oklch(from var(--bw-hue-a, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
     --hz-l3: oklch(from var(--bw-hue-a, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
     --hz-l4: oklch(from var(--bw-hue-a, #48352A) clamp(.29, l, .34) clamp(.03, c, .09) h);
     --hz-l5: oklch(from var(--bw-hue-a, #33251D) clamp(.22, l, .27) clamp(.02, c, .08) h);
+  }
+
+  /* ⚠️ Night inverts the roles rather than dimming them: the ground goes deep,
+     the body and the stars go pale, and the range sits between the two so it
+     still separates from its sky. Same two hues, opposite ends of each band. */
+  [data-horizon][data-phase="night"] {
+    --hz-sky: oklch(from var(--bw-hue-b, #1F2733) clamp(.20, l, .27) clamp(.03, c, .09) h);
+    --hz-orb: oklch(from var(--bw-hue-a, #E4DCC6) clamp(.86, l, .93) clamp(.04, c, .12) h);
+    /* ⚠️ ABOVE the range, not between range and sky. At .48–.56 the moon's
+       halo sat inside the ridge band (.24–.49) and the moon dissolved into the
+       mountain behind it. The body is the brightest thing at night, its light
+       the second — both clear of every ridge. */
+    --hz-glow: oklch(from var(--bw-hue-a, #9AA6BC) clamp(.62, l, .68) clamp(.03, c, .10) h);
+    --hz-l1: oklch(from var(--bw-hue-a, #47505E) clamp(.44, l, .49) clamp(.03, c, .08) h);
+    --hz-l2: oklch(from var(--bw-hue-a, #3B4351) clamp(.39, l, .43) clamp(.03, c, .08) h);
+    --hz-l3: oklch(from var(--bw-hue-a, #2F3743) clamp(.34, l, .38) clamp(.02, c, .07) h);
+    --hz-l4: oklch(from var(--bw-hue-a, #242B36) clamp(.29, l, .33) clamp(.02, c, .07) h);
+    --hz-l5: oklch(from var(--bw-hue-a, #1A202A) clamp(.24, l, .28) clamp(.02, c, .06) h);
   }
 }
 

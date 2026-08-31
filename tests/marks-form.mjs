@@ -1,4 +1,4 @@
-/* The thirty phenomena, checked against the form brief rather than my eye.
+/* The phenomena, checked against the form brief rather than my eye.
  * The brief, in the owner's words, plus the two lines added after the third
  * pass came back 太细 and 太没有规则:
  *
@@ -285,7 +285,11 @@ function paintedWidths(d, lens) {
 
 /* ── run ─────────────────────────────────────────────────────────────── */
 const names = Object.keys(PLAN);
-assert.equal(names.length, 30, `expected thirty phenomena, got ${names.length}`);
+/* ⚠️ A floor, not a fixed count. The catalogue is meant to grow — pinning it to
+   an exact number turns "we added a motif" into a test failure, which teaches
+   people to edit the test rather than to read it. What must not happen is the
+   set silently SHRINKING, so the assertion is a minimum. */
+assert.ok(names.length >= 42, `expected at least forty-two phenomena, got ${names.length}`);
 assert.deepEqual(Object.keys(PH).sort(), names.slice().sort(), 'every plan must render and every render must have a plan');
 
 const fail = [];
@@ -333,6 +337,6 @@ assert.deepEqual(fail, [],
   + (fail.length > 40 ? `\n  …and ${fail.length - 40} more` : '')
   + '\n  Redraw the offending strokes; do not loosen the thresholds to pass.');
 
-console.log(`marks form OK — 30 phenomena, ${strokes} strokes, all ${W} wide,`
+console.log(`marks form OK — ${names.length} phenomena, ${strokes} strokes, all ${W} wide,`
   + ` nothing turning under r${RMIN}, nothing within ${CLEAR.toFixed(1)};`
   + ` ${(ink / 30).toFixed(0)} units² of ink each`);

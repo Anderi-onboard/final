@@ -347,6 +347,10 @@
      once before anything repeats, whatever each field ends up fitting.
      ⚠️ DEAL is declared at the top of the file, not here — a second `var DEAL =
      0` at this point would re-zero the cursor after the first render pass. */
+  function nextMotif() {
+    var deck = Object.keys(M.phenomena);
+    return deck[DEAL++ % deck.length];
+  }
 
   function scatterField(w, h, opt) {
     opt = opt || {};
@@ -390,6 +394,28 @@
     var leadR = opt.lead ? Math.floor(rows * 0.45) : -1;
     var leadC = opt.lead ? Math.floor(cols * (opt.leadAt || 0.34)) : -1;
     function isLead(r, c) { return r >= leadR && r <= leadR + 1 && c >= leadC && c <= leadC + 1; }
+    function idxOf(r, c) { return r * cols + c; }
+
+    /* ── the centre, and the branches off it ─────────────────────────────────
+       ⭐⭐ A field of equal marks is a border, not a composition — there is no
+       place for the eye to land. So each field has ONE subject on a 2x2 of the
+       lattice, the ring of cells touching it are branches at an intermediate
+       size, and everything beyond is the field.
+
+       ⚠️ Three sizes, and they are decided by POSITION, not by a cycle. This
+       file's own rule is that marks are near enough one size, because marks of
+       different sizes read as marks at different DISTANCES and the field goes
+       three-dimensional. That rule is about size varying arbitrarily across a
+       field; a subject with its branches around it is a local hierarchy, which
+       reads as composition instead. Size scattered = depth; size organised
+       around a centre = a centre. */
+    var TIER_BRANCH = 1.34, TIER_FIELD = 1;
+    function tierOf(r, c) {
+      if (leadR < 0) return TIER_FIELD;
+      var dr = Math.max(leadR - r, 0, r - (leadR + 1));
+      var dc = Math.max(leadC - c, 0, c - (leadC + 1));
+      return (dr <= 1 && dc <= 1) ? TIER_BRANCH : TIER_FIELD;
+    }
 
     var placed = [], r, c, i;
     for (r = 0; r < rows; r++) {
@@ -397,13 +423,24 @@
         if (leadR >= 0 && isLead(r, c)) {
           if (r === leadR && c === leadC) {
             placed.push({ x: (c + 1) * cw, y: (r + 1) * ch, name: opt.lead,
-                          k: 1, cell: Math.min(cw, ch) * 2, lead: true, band: 0 });
+                          k: 1, cell: Math.min(cw, ch) * 2, lead: true, band: 0, tier: 1 });
           }
           continue;
         }
-        var x = (c + 0.5 + OFFSETS[r % 3]) * cw;
+        /* ⚠️ A small, CYCLIC offset off the lattice point — the courses stay
+           legible as courses, but the field stops reading as ruled paper. The
+           two periods are coprime (5 against 7, and both against the 3-phase
+           row offset), so 105 cells pass before a cell repeats its own
+           displacement: ordered, and never a visible second grid. Random
+           jitter would re-deal on every navigation and read as a fault, the
+           same reason the brush steps its wobble by index and does not roll
+           for it. The amplitude is a fraction of the clearance the lattice
+           already guarantees, so nothing can be jittered into a neighbour. */
+        var jx = ((idxOf(r, c) % 5) - 2) / 2 * cw * 0.11;
+        var jy = ((idxOf(r, c) % 7) - 3) / 3 * ch * 0.10;
+        var x = (c + 0.5 + OFFSETS[r % 3]) * cw + jx;
         if (x > w - cw * 0.2) continue;          /* the row's overhang */
-        var y = (r + 0.5) * ch;
+        var y = (r + 0.5) * ch + jy;
 
         /* figure-ground: the ground thins toward the type, it does not stop */
         var near = 1;
@@ -427,7 +464,7 @@
           if (!clash) { name = cand; break; }
         }
         if (!name) continue;
-        placed.push({ x: x, y: y, name: name, k: near,
+        placed.push({ x: x, y: y, name: name, k: near, tier: tierOf(r, c),
                       cell: Math.min(cw, ch), band: placed.length % bands });
       }
     }
@@ -439,7 +476,7 @@
       if (!d) return;
       /* sized to its cell, so nothing can reach a neighbour: the lattice is
          the clearance */
-      var sc = (p.cell * (opt.fill || 0.52)) / (motifRadius(p.name) * 2);
+      var sc = (p.cell * (opt.fill || 0.52) * (p.tier || 1)) / (motifRadius(p.name) * 2);
       /* ⭐⭐ A mark is not a bare stroke on a flat field — it has a BACKGROUND
          of its own: two haloes hugging its own silhouette, in two other
          colours, then the ink on top. Dilating the same path with a thick
@@ -493,67 +530,159 @@
      A patch of the lattice filling the part of a text block the type does not
      use. Same generator, same order, same clearance — it is the field, cropped
      to a region, not a different kind of thing. */
+  /* ⭐ The patch is a RECTANGLE, and a slightly different one on every block.
+     A colony that exactly fills its cell squares the block off — which was the
+     point when the job was to make a 2:1 block read as a square — but thirteen
+     blocks each squared off the same way is a table again. Insetting the patch
+     by a small, per-block, asymmetric amount turns each into its own rectangle,
+     offset inside its cell. The insets are a cyclic table, not a roll: the
+     patch must be the same shape on every visit.
+
+     ⚠️ Insets on ONE axis at a time plus a small nudge on the other. Inset both
+     equally and the patch is a smaller square in the middle of the cell — the
+     shape has not changed, only the scale, and the eye reads it as the same
+     thing again. */
+  var COLONY_BOX = [
+    [.00, .00, 1.00, .86],  [.06, .00, .94, 1.00], [.00, .09, 1.00, .91],
+    [.00, .00, .88, 1.00],  [.04, .05, .96, .89],  [.00, .04, .93, .96]
+  ];
+
   function colonies() {
     [].slice.call(document.querySelectorAll(".ab-colony")).forEach(function (host, i) {
-      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
-      if (w < 40 || h < 40) { host.innerHTML = ""; return; }
+      var W = Math.round(host.clientWidth), H = Math.round(host.clientHeight);
+      if (W < 40 || H < 40) { host.innerHTML = ""; return; }
+      var box = COLONY_BOX[i % COLONY_BOX.length];
+      var ox = Math.round(box[0] * W), oy = Math.round(box[1] * H);
+      var w = Math.max(30, Math.round((box[2] - box[0]) * W));
+      var h = Math.max(30, Math.round((box[3] - box[1]) * H));
       var field = scatterField(w, h, {
         seed: 20260830 + i * 5209,
         accentEvery: 7,
+        /* ⭐ A colony has a subject like any other field. Without one it is a
+           patch of even marks — a border, with nowhere for the eye to land,
+           which is what "there is no centre" was pointing at. The motif is the
+           block's own declared centre where it has one, so the choice stays a
+           decision rather than whatever the deal turned up. */
+        lead: host.getAttribute("data-centre") || nextMotif(),
+        leadAt: [.30, .58, .38, .66][i % 4],
         /* denser than a whole texture block, because a colony is small and a
            handful of marks in it would read as three stray dots rather than as
            a patch of ground */
         pitch: Math.max(26, Math.sqrt(w * h) / 5.2),
         fill: 0.48
       });
-      host.innerHTML = M.svg(field.markup, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+      host.innerHTML = M.svg('<g transform="translate(' + ox + ' ' + oy + ')">' + field.markup + '</g>',
+        "0 0 " + W + " " + H, 'preserveAspectRatio="none"');
     });
   }
 
-  /* ── a horizon ────────────────────────────────────────────────────────────
-     ⭐ A block should be a place, not a swatch: the reference that made this
-     obvious is a hard mountain silhouette standing against a lit sky. The sky
-     is drawn HERE, as four flat bands with hard edges — a screenprinted sunset,
-     not a blend.
+  /* ── a horizon: day and night ─────────────────────────────────────────────
+     ⭐⭐ Not stripes. The banded sky was a sunset drawn as four flat bars, and
+     four bars of colour is a swatch card standing behind a mountain. What a sky
+     actually gives a page is a TIME OF DAY: the sun comes up in the east, goes
+     down in the west, the moon takes its place, and the light changes with it.
+     So the sky is one flat field with one body in it, and the two horizon
+     blocks are opposite halves of the same day — one lit, one dark — trading
+     places every time the colour group turns.
 
-     ⭐⭐ Bands, not a gradient. "不要渐变" — colour layering means one colour
-     stopping and the next beginning, which is the same thing the 3px paper seam
-     does between two blocks; a ramp is the glass route's device, depth from
-     light, on a page with no mountains behind it to catch any.
+     ⭐ The body walks its arc across successive turns, not within one. The
+     engine publishes the raw slot count, so the sun is a little further west
+     each time the palette changes and the whole thing reads as one day passing
+     rather than as two pictures being swapped. Nothing animates per frame: this
+     is the same hold-then-change the range itself uses.
 
-     ⚠️ The bands are rects with CSS classes, not fill="" attributes: a
-     presentation attribute cannot resolve var(), so a fill written there is a
-     colour frozen out of the 114-group rotation — this file has already paid
-     for that once with SVG in CSS url().
+     ⚠️ Day/night comes from the SLOT, not from the group's index. Keying it to
+     which card is up would let a visitor arriving mid-schedule sit in the same
+     half of the day for a long run; the slot always alternates.
 
-     ⚠️ No two band heights are equal, and the break nearest the middle does
-     not land on it — §3's composition rule, which applies to a sky as much as
-     to a grid.
+     ⚠️ Sun and moon are the catalogue's own motifs, not new circles. Every
+     other drawn thing on these routes is in the range's hand, and a plain
+     geometric disc here would be the one element that is not.
+
+     ⚠️ Every painted piece carries a CSS class and takes its colour from a
+     token — no fill="" attributes. A presentation attribute cannot resolve
+     var(), so a colour written there is frozen out of the 114-group rotation.
 
      ⚠️ A horizon and a colony are alternatives, never both — one carrier, one
      figure. A block with marks AND a skyline is two pictures in one box. */
-  /* ⚠️ The breaks live in the upper half, because the range covers the lower
-     one. Spaced evenly down the whole box, bands 3 and 4 were drawn entirely
-     behind the mountains and the sky was two colours pretending to be four.
-     The last band still runs to the foot so nothing shows through a gap. */
-  var SKY_BANDS = [0, 0.16, 0.30, 0.47, 1];
+  var ARC_STOPS = 7;   /* turns to cross the sky; coprime with the 2-slot day */
+
+  function horizonScene(host, i, slot) {
+    var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+    if (w < 40 || h < 40) { host.innerHTML = ""; return; }
+    var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
+
+    /* the two blocks are opposite halves of the day */
+    var night = ((slot + i) % 2) === 1;
+    host.setAttribute("data-phase", night ? "night" : "day");
+
+    /* east to west, along a shallow arc whose peak is off-centre so the body is
+       never dead centre over the ridge — §3's rule that the division nearest
+       the middle must not land on it.
+
+       ⚠️ The arc stays ABOVE the ridge line. The range's highest peak sits at
+       base0 - amp = .30 of the block, and the first version ran the arc down to
+       .46 — so at either end of the day the body was drawn behind a mountain
+       and the block looked like it had lost its sun. It also has to keep its own
+       radius clear of the left and right edges, or it is clipped at dawn. */
+    var t = (Math.floor(slot / 2) % ARC_STOPS) / (ARC_STOPS - 1);
+    var rr = Math.min(w, h) * (night ? 0.13 : 0.155);
+    var margin = rr * 1.5;
+    var cx = margin + (w - margin * 2) * t;
+    var cy = (0.24 - 0.14 * Math.sin(Math.PI * t)) * h;
+
+    var name = night ? "moon" : "sun";
+    var body = M.phenomena[name] && M.phenomena[name]();
+    var orb = "";
+    if (body) {
+      /* ⭐ The body gets the same backing as every other mark on these routes —
+         a wide round-joined stroke of the same path behind it. A sun drawn as a
+         bare ribbon at this size reads as a scribble on an empty sky; with its
+         own halo it reads as a body with light around it, which is what the
+         reference sheets do and what this route already does everywhere else. */
+      var sc = rr / motifRadius(name);
+      orb = '<g class="hz-orb" transform="translate(' + cx.toFixed(1) + ' ' + cy.toFixed(1)
+        + ') scale(' + sc.toFixed(4) + ')">'
+        + '<path class="hz-halo" d="' + body + '"/>'
+        + '<path class="hz-body" d="' + body + '"/></g>';
+    }
+
+    /* A handful of stars, only at night, on the same lattice discipline as
+       everything else: fixed positions from a small table, never a roll. */
+    var stars = "";
+    if (night) {
+      /* ⚠️ Plain discs, and deliberately so. Everything drawn on these routes is
+         in the range's hand and a perfect circle is the one shape the motif
+         rules ban — but that rule is about MOTIFS, things meant to be
+         recognised as a drawing. A star at 1.2% of the block is a point of
+         light, not a drawing of anything, and a hand-wobbled one at that size
+         is just a dirty pixel. */
+      var ST = [[.14, .13], [.31, .26], [.52, .10], [.68, .22], [.83, .12], [.92, .30], [.22, .35]];
+      for (var s2 = 0; s2 < ST.length; s2++) {
+        var sx = ST[s2][0] * w, sy = ST[s2][1] * h, sr = Math.min(w, h) * .012;
+        if (Math.hypot(sx - cx, sy - cy) < rr * 2.2) continue;   /* not inside the moon */
+        stars += '<circle class="hz-star" cx="' + sx.toFixed(1) + '" cy="' + sy.toFixed(1)
+          + '" r="' + sr.toFixed(2) + '"/>';
+      }
+    }
+
+    host.innerHTML = M.svg(
+      '<rect class="hz-sky" x="0" y="0" width="' + w + '" height="' + h + '"/>' + stars + orb
+        + M.landscape(seed, w, h,
+            { layers: 5, silhouette: true, base0: .56, baseSpan: .30, amp: .26, ampNear: .13 }),
+      "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+  }
 
   function horizons() {
+    var slot = parseInt(document.documentElement.dataset.bwPaletteSlot, 10) || 0;
     [].slice.call(document.querySelectorAll("[data-horizon]")).forEach(function (host, i) {
-      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
-      if (w < 40 || h < 40) { host.innerHTML = ""; return; }
-      var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
-      var sky = "";
-      for (var b = 0; b < SKY_BANDS.length - 1; b++) {
-        var y = SKY_BANDS[b] * h;
-        sky += '<rect class="hz-band hz-b' + (b + 1) + '" x="0" y="' + y.toFixed(1)
-          + '" width="' + w + '" height="' + ((SKY_BANDS[b + 1] - SKY_BANDS[b]) * h).toFixed(1) + '"/>';
-      }
-      host.innerHTML = M.svg(sky + M.landscape(seed, w, h,
-          { layers: 5, silhouette: true, base0: .56, baseSpan: .30, amp: .26, ampNear: .13 }),
-        "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+      horizonScene(host, i, slot);
     });
   }
+
+  /* Redraw on every turn of the palette clock — that is what makes it a day
+     rather than a still. Only the two horizon blocks are touched. */
+  window.addEventListener("bw:palettechange", function () { horizons(); });
 
   function backdrops() {
     [].slice.call(document.querySelectorAll("[data-scatter-bg]")).forEach(function (host, i) {

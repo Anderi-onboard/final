@@ -131,7 +131,12 @@ body.blocks-route {
     transition: background-color 1.5s cubic-bezier(.77, 0, .175, 1),
                 color 1.5s cubic-bezier(.77, 0, .175, 1);
   }
-  html.bw-cross body.blocks-route :is(svg, .bk-mark) {
+  /* ⚠️ `svg *`, not just `svg`. Every mark path sets its own `fill` and
+     `stroke` from a token, so a transition declared on the <svg> element does
+     not reach them — the rings snapped to the new group while the blocks around
+     them crossfaded. Painted children are the things that change colour here,
+     so they are the things that have to carry the transition. */
+  html.bw-cross body.blocks-route :is(svg, svg *, .bk-mark) {
     transition: color 1.5s cubic-bezier(.77, 0, .175, 1),
                 fill 1.5s cubic-bezier(.77, 0, .175, 1),
                 stroke 1.5s cubic-bezier(.77, 0, .175, 1);
@@ -271,13 +276,19 @@ body.blocks-route [data-plate] { --ph-back: var(--ph-hb); --ph-mid: var(--ph-hm)
     --ph-mid:  oklch(from var(--ph-hm) var(--ph-l2) clamp(.07, c, .19) h);
   }
 }
+/* ⚠️ 15 and 7, up from 9 and 4. The motifs are drawn at roughly ±34 units, so
+   a 9-unit backing is a hairline once the mark is scaled into a lattice cell —
+   the layering was there in a crop and gone on the page. The placement already
+   allows for the drawn radius including its stroke, so a thicker ring costs
+   clearance, not correctness: the lattice is re-measured under motion after any
+   change here. */
 body.blocks-route .ph-back {
   fill: var(--ph-back); stroke: var(--ph-back);
-  stroke-width: 9; stroke-linejoin: round; stroke-linecap: round;
+  stroke-width: 15; stroke-linejoin: round; stroke-linecap: round;
 }
 body.blocks-route .ph-mid {
   fill: var(--ph-mid); stroke: var(--ph-mid);
-  stroke-width: 4; stroke-linejoin: round; stroke-linecap: round;
+  stroke-width: 7; stroke-linejoin: round; stroke-linecap: round;
 }
 body.blocks-route .ph-ink { fill: currentColor; }
 
