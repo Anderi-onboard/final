@@ -145,14 +145,32 @@
        and the "which steps have you been into" signal, which this page uses
        INSTEAD of a progress widget, died the moment anyone used the page. */
     var label = hint && hint.querySelector("span");
-    var i = 0, busy = false;
+    var i = 0;
+
+    /* ⚠️⚠️ A 300ms lock DROPPED the second click. Tap twice in the time it
+       takes to blink and the card did nothing at all — no state change, no
+       feedback — which is the single biggest reason the page felt unresponsive.
+       Nothing here needs guarding: the turn is one class swap, and a second
+       click while the wash is running should simply turn the card back.
+
+       ⚠️ The wash is restarted rather than left to finish. Adding a class that
+       is already present does not replay a CSS animation, so a fast second tap
+       used to swap the faces under a wash that had already peaked. Removing it,
+       forcing a reflow and adding it again is the one reliable restart.
+
+       ⚠️ The face swap is 88ms in, which is where the 220ms wash peaks — the
+       faces cross under the densest part of it and everything lands together.
+       Before, the swap was at 90ms, the faces took 190ms and the wash 260ms, so
+       most of the move was two faces and a veil at once. */
+    var swapTimer = 0;
 
     function turn() {
-      if (busy) return;
-      busy = true;
       var next = (i + 1) % faces.length;
+      card.classList.remove("is-flashing");
+      void card.offsetWidth;
       card.classList.add("is-flashing");
-      setTimeout(function () {
+      clearTimeout(swapTimer);
+      swapTimer = setTimeout(function () {
         faces[i].classList.remove("is-on");
         faces[next].classList.add("is-on");
         i = next;
@@ -162,8 +180,13 @@
            which is the opposite of a record of where you have been. */
         if (i === 1) card.classList.add("is-seen");
         if (label) label.textContent = i === 1 ? "Tap to go back" : (label.dataset.rest || label.textContent);
-      }, 90);
-      setTimeout(function () { card.classList.remove("is-flashing"); busy = false; }, 300);
+        /* ⚠️ NO auto-focus into the widget. It looks like a courtesy — you
+           opened "write one", so put the caret in the box — and it costs the
+           card its keyboard toggle: the handler is gated on `e.target === card`,
+           so once focus is inside the textarea, Enter and Space no longer close
+           it and a keyboard user is stuck in an open card. A convenience nobody
+           asked for is not worth a behaviour that is documented and tested. */
+      }, 88);
     }
 
     if (label) label.dataset.rest = label.textContent;

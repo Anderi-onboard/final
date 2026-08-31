@@ -705,6 +705,19 @@ body.blocks-route .bk-cell[data-mark] svg { width: 100%; height: auto; }
 }
 
 /* Same reason, for every other native control on these routes. */
+/* ⚠️⚠️ RIGHT ANGLES, and it has to be said at this weight to be said at all.
+   §3 gives this route square corners as a MATERIAL rule, but refinement.css
+   carries `html[data-skin="paper"] body :is(textarea, select, input[type=...])`
+   at (0,2,3) — `:is()` takes its heaviest argument — and a route-level
+   `body.blocks-route textarea` is (0,1,1). So every field on the method page
+   was quietly wearing the glass route's 10px radius.
+
+   This is the FIFTH time this repo has lost to `html[data-skin="paper"]`.
+   The lesson each previous time was the same and is worth stating once more:
+   match the weight, do not hope to win. */
+html[data-skin="paper"] body.blocks-route :is(button, input, select, textarea) {
+  border-radius: 0;
+}
 body.blocks-route :is(button, input, select, textarea) { font-family: inherit; }
 
 /* ── woven weight and the light in the type ────────────────────────────────
