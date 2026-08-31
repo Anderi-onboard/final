@@ -568,7 +568,12 @@
         /* denser than a whole texture block, because a colony is small and a
            handful of marks in it would read as three stray dots rather than as
            a patch of ground */
-        pitch: Math.max(26, Math.sqrt(w * h) / 5.2),
+        /* ⚠️ 5.2 -> 4.4. Every motif now animates, and About was carrying 265
+           marks: measured 40fps against 61 with the marks held still. The cost
+           is per-mark re-raster, so the lever is how many marks there are, not
+           which ones move — freezing some would have left visibly dead patches,
+           which is the thing being fixed. Fewer, and all of them alive. */
+        pitch: Math.max(26, Math.sqrt(w * h) / 4.4),
         fill: 0.48
       });
       host.innerHTML = M.svg('<g transform="translate(' + ox + ' ' + oy + ')">' + field.markup + '</g>',

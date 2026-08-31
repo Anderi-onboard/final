@@ -68,11 +68,19 @@
      sheet rather than frost. The hard rim is replaced by a diffuse inward
      glow: bright at the top where light falls, fading over ~14px, with only
      a trace of a rim left to keep the panel from dissolving entirely. */
+  /* ⚠️⚠️ NO WHITE. This was four stacked white insets, the strongest a 50%
+     white glow 10px down from the top edge — the pale band along the composer
+     and every panel. White is asked about here for the third time: the white
+     underlays were retired in August, and this is the last of it.
+
+     What replaces it is not nothing, because a panel with no edge dissolves
+     into the range behind it. It is the SAME edge drawn in ink instead of in
+     light: a hairline rim and a whisper of inner shade, which defines the panel
+     without putting a colour on the page that no palette group contains. */
   --ui-glass-edge:
-    inset 0 0 0 1px rgb(255 255 255 / .26),
-    inset 0 10px 16px -10px rgb(255 255 255 / .50),
-    inset 0 -12px 18px -14px rgb(255 255 255 / .16),
-    inset 0 0 22px 2px rgb(255 255 255 / .14);
+    inset 0 0 0 1px rgb(28 26 23 / .10),
+    inset 0 1px 0 0 rgb(28 26 23 / .06),
+    inset 0 -10px 14px -14px rgb(28 26 23 / .10);
   /* Softened with the rim. At 12% this drew a visible dark outline around
      every frosted panel — the one hard edge on a material whose whole point
      is that it has none. */

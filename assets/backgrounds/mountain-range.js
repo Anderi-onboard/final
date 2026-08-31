@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260831c", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260831c";
+    ? new URL("../palettes/color-groups.json?v=20260831d", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260831d";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -18,7 +18,14 @@
      including the owner's phone — the range drifts without stutter, and a
      measurement taken on a machine nobody uses does not get to decide how the
      site looks. ?ridges=0 forces it off if a device does struggle. */
-  var ridgeDrift = true;
+  /* ⚠️⚠️ OFF. This shipped `true` while the comment on the profile block below
+     said it ships off — and this file's own measurement, taken on the app route
+     with the chrome over it, is 3 drifting ridge planes = 21fps against 55fps
+     with the ridges still. A ridge path spans the whole 4000px canvas, so the
+     moment one moves the entire detailed SVG re-rasters every frame. That is
+     the lag, and the fix was already written down here. `?ridges=1` still turns
+     it on for anyone who wants to judge it on their own machine. */
+  var ridgeDrift = false;
   /* ⚠️ `?glass=flat` trades every backdrop-filter for an opaque panel.
      It exists because the one measurement that matters cannot be taken in CI:
      this repo already knows that a single drifting plane invalidates every
@@ -186,6 +193,13 @@
     + '.mtn-bg .cloud-2{animation:mtn-cloud-r 128s linear -30s infinite;will-change:transform}'
     + '.mtn-bg .cloud-4{animation:mtn-cloud-r 92s linear -18s infinite;will-change:transform}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 116s linear -50s infinite;will-change:transform}'
+    /* ⚠️ 3 and 6 were left out and sat nailed to the sky. A cloud that does not
+       move is the one thing in this picture that reads as broken — the ridges
+       are still ON PURPOSE and read as ground, but a static cloud reads as a
+       dropped frame. Six drifting clouds measured free (54fps against 55), so
+       there was never a cost reason to leave two behind. */
+    + '.mtn-bg .cloud-3{animation:mtn-cloud-l 136s linear -64s infinite;will-change:transform}'
+    + '.mtn-bg .cloud-6{animation:mtn-cloud-l 148s linear -22s infinite;will-change:transform}'
     + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important;transform:none!important}}';
 
   var W = {

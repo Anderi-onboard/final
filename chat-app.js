@@ -1386,10 +1386,20 @@
   function sizeComposer() {
     var ci = $("composerInput");
     if (!ci || ci.tagName !== "TEXTAREA") return;
+    /* ⚠️ Grows in WHOLE LINES, and starts at one. It used to carry
+       min-height:var(--ctl) — the 44px touch target — so an empty field was
+       already a line and a half tall and the first Shift+Enter barely changed
+       it. The 44px belongs to the composer bar, which is the control; the field
+       inside it is text. Rounding to a line means Shift+Enter adds exactly one
+       line, which is what it says it does. */
     ci.style.height = "auto";
-    var contentHeight = ci.scrollHeight;
-    ci.style.height = Math.min(contentHeight, 120) + "px";
-    ci.style.overflowY = contentHeight > 120 ? "auto" : "hidden";
+    var line = parseFloat(getComputedStyle(ci).lineHeight) || 22;
+    var pad = ci.offsetHeight - ci.clientHeight
+            + parseFloat(getComputedStyle(ci).paddingTop || 0)
+            + parseFloat(getComputedStyle(ci).paddingBottom || 0);
+    var lines = Math.max(1, Math.min(4, Math.round((ci.scrollHeight - pad) / line)));
+    ci.style.height = (lines * line + pad) + "px";
+    ci.style.overflowY = (ci.scrollHeight - pad) / line > 4 ? "auto" : "hidden";
   }
   $("composerInput").addEventListener("input", function () { saveDraft(); sizeComposer(); });
 

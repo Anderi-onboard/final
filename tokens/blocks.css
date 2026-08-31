@@ -368,9 +368,49 @@ body.blocks-route .ph-ink.is-accent {
   body.blocks-route :is([data-ph="lightning"], [data-ph="thunder"]) .ph-m {
     animation: ph-wheel 37s ease-in-out infinite alternate;
   }
-  /* peak · valley · cliff · stone · dune · root · frost: nothing. The land
-     stays where it is, and that is the point. */
+  /* ── and the ground, which also moves now ───────────────────────────────
+     ⭐ Owner: every motif gets motion. What that replaces is a rule saying the
+     land holds still, whose reasoning was that a field where EVERYTHING moves
+     at one rate is a moving pattern rather than a place. That reasoning is kept
+     by giving the ground its own motion instead of the reeds' — a settle and a
+     breath, an order of magnitude slower and smaller than anything above, so
+     the field still has fast things and slow things in it.
+
+     ⚠️ Every one of the twelve motifs added in the last pass had NO rule at
+     all and was simply frozen — glow, fog, ice, moss, vine, fern, grain,
+     sprout, brook, pool, isle, slope. That is what "the marks aren't moving"
+     was pointing at: not that they were too subtle, that most of the sheet was
+     not animated. */
+
+  /* light and vapour — the slowest drift on the page */
+  body.blocks-route :is([data-ph="glow"], [data-ph="fog"]) .ph-m {
+    animation: ph-breathe 31s ease-in-out infinite alternate;
+  }
+  /* things that grow, from the base like everything else that does */
+  body.blocks-route :is([data-ph="fern"], [data-ph="grain"], [data-ph="sprout"],
+    [data-ph="vine"], [data-ph="moss"]) .ph-m {
+    transform-origin: 50% 100%;
+    animation: ph-sway 14s ease-in-out infinite alternate;
+  }
+  /* water again — a brook runs, a pool turns over slowly */
+  body.blocks-route [data-ph="brook"] .ph-m { animation: ph-flow 10s ease-in-out infinite alternate; }
+  body.blocks-route [data-ph="pool"] .ph-m  { animation: ph-turn 53s linear infinite; }
+  /* ice and the shore: they shift, they do not travel */
+  body.blocks-route :is([data-ph="ice"], [data-ph="isle"], [data-ph="slope"]) .ph-m {
+    animation: ph-settle 37s ease-in-out infinite alternate;
+  }
+  /* ⚠️ The land keeps the SMALLEST motion on the page, not none. peak, valley,
+     cliff, stone, dune, root and frost breathe by a fraction of a per cent over
+     three quarters of a minute — present, and never the thing you look at. */
+  body.blocks-route :is([data-ph="peak"], [data-ph="valley"], [data-ph="cliff"],
+    [data-ph="stone"], [data-ph="dune"], [data-ph="root"], [data-ph="frost"]) .ph-m {
+    animation: ph-settle 47s ease-in-out infinite alternate;
+  }
 }
+@keyframes ph-settle  { from { transform: translateY(-.7%) rotate(-.35deg); }
+                        to   { transform: translateY(.7%) rotate(.35deg); } }
+@keyframes ph-breathe { from { transform: translate3d(-1.4%, .5%, 0); }
+                        to   { transform: translate3d(1.4%, -.5%, 0); } }
 @keyframes ph-sway  { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
 @keyframes ph-flow  { from { transform: translateX(-3%); } to { transform: translateX(3%); } }
 @keyframes ph-turn  { from { transform: rotate(0deg); }    to { transform: rotate(360deg); } }
