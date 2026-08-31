@@ -6,6 +6,93 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## 20260831c — The block routes become a place: two hues, a day, and weather
+
+- Production target: `main` via pull request
+- Verified mirror: `production` after public deployment
+- Working branch: `claude/final-saas-promotion-7nxvjo`
+- Build tag: `20260831c` (14 files + `version.json`, checked by `tests/build-tag.mjs`)
+- Preview: `claude-final-saas-promotion.bournewise.pages.dev`
+
+This release is almost entirely the two block routes — `about.html` and
+`guide.html`. About was rebuilt from rounded floating cards onto the route's own
+flush-square material; the method page's card interaction was repaired; and the
+palette work underneath both turned out to rest on a false premise.
+
+### Colour: a step index is not a hue
+- `7af7e70` — every block role named a palette step, and a fixed step is not a
+  fixed hue. Measured over the whole catalogue: adjacent steps differ by ~6° of
+  hue (3↔4 is 6°, 6↔7 is 6°), and **any fixed trio of steps has a median
+  smallest hue gap of 5°, under 15° in 104 of 114 groups** — which is why three
+  deep blocks came out the same brown. The cards are not short of colour: the
+  median card spans **172°**. `publishHues()` now picks per group — the most
+  saturated entry, then the one furthest from it in hue — and publishes
+  `--bw-hue-a/b`. That pair measures **161° median, under 15° in 3 groups**.
+  Two, not four: a greedy four-hue pick measures 7° median and fails in 87
+  groups. Page hue span across the six colour-carrying fills: **min 62°, median
+  161°, 0 groups under 20°.**
+
+### The marks get a background of their own
+- `b4131af` — "每个板块要有背景" had been read as a gradient on each block and
+  was wrong. Fills are flat again (**0 gradient backgrounds page-wide**); the
+  background belongs to the mark — the same path drawn three times, each outer
+  copy a wide round-joined stroke, so each mark sits in two rings of its own
+  outline. Rings take clay's and ochre's hue but not their lightness, pinned to
+  a band on the ink's side of the fill.
+- `3b426cd`, `be85aaf` — ring strokes 9/4 → 15/7, and the crossfade selector is
+  `svg *`: each path sets its own fill, so a transition on the `<svg>` never
+  reached them and marks snapped while their blocks faded.
+
+### A day, a night, and weather
+- `be85aaf` — the banded sky is gone. One flat field, one body, and the two
+  horizon blocks are opposite halves of one day, trading places on every turn of
+  the palette clock; the body walks east to west across successive turns off the
+  engine's raw slot count. Sun and moon are the catalogue's own motifs.
+- `3b426cd` — clouds drift while the ridges hold still, which is the home page's
+  split and was measured there: **3 drifting ridge planes = 21fps against 55fps
+  with ridges stopped**. It is the same cloud — `mountain-range.js` publishes
+  its path as `window.BWRange`. Transform only; both routes still **60fps**.
+
+### The catalogue grows, and the fields get a centre
+- `be85aaf` — 30 → **42 motifs**, added as structures the set did not have
+  rather than new names for bands it already had. Same grammar with no
+  exemptions; `tests/marks-form.mjs` rejected four passes (out of field, 1.14%
+  self-similarity, crossing centrelines, too little ink, a turn at r15) and each
+  was a real drawing error.
+- `be85aaf` — every field now has one subject on a 2×2 of the lattice with a
+  ring of branches around it, and the lattice carries a small cyclic
+  displacement so it stops reading as ruled paper.
+
+### The method page's card interaction
+- `417f718` — four faults, all structural. The two-wide halving rule had been
+  applied to `.mt-display` and nothing else, so widgets on wide cards drew at
+  double — step 05's cost figure at **124.6px**, pushed off its own panel. The
+  doubling now lives in one variable (`--mt-u`). Controls wore the glass route's
+  translucency and are flat opaque fields with hard edges. The outgoing face was
+  not fading at all (`visibility` was not in the transition list) — a hard cut
+  followed by a fade-in, the actual stutter — and a 300ms lock silently dropped
+  the second click.
+- `417f718` — **the sweep was not testing any of it**: a shut card's work face is
+  `visibility:hidden`, so `blocksweep.mjs` had been measuring the page as loaded
+  and never saw a widget. It opens the five cards first now, and immediately
+  found 5 element classes below AA, worst **2.51:1**.
+
+### Verification
+- `tests/` — **21/21**.
+- `blocksweep.mjs` (analytic, ink against carrier) — **clear across 114 groups ×
+  2 routes**, with the method page's step cards opened.
+- `blockpix.mjs` (composited pixels, glyph-run sampling, full-page) — **clear,
+  8 groups × 2 routes**.
+- `overlapmoving.mjs` — **0 overlapping mark pairs** sampled across the
+  animation cycle.
+- one-layer check — no carrier holds both contour art and marks.
+- deck coverage — **42/42 motifs dealt** on About.
+- `fps.mjs` (after warm-up) — **60fps both routes**.
+- interaction — click, typing inside a card, and the keyboard toggle all intact;
+  day/night confirmed to swap and the celestial body to walk west over six
+  turns; cloud position sampled moving; `prefers-reduced-motion` reports
+  `animationName: none`.
+
 ## 20260824a — Failure copy says what failed; contracts re-enforced
 
 - Production target: `main` via pull request

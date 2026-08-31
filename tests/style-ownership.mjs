@@ -80,7 +80,11 @@ const EXPECTED = {
   'login.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','luxury-glass'],
   '404.html':      ['fonts','colors','typography','spacing','paper','motion','refinement','content-pages','luxury-glass'],
   /* The block routes are the target state: no legacy sheets at all. */
-  'about.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','blocks'],
+  /* about.css joins 2026-08-26: the route was rebuilt as a card set with its
+     own composition rules, and it owns them alone — the model is legal.css,
+     which this census scored at 20 wins and 0 losses precisely because one
+     route had one sheet. */
+  'about.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','blocks','about'],
   'guide.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','blocks','method'],
   'terms.html':    ['fonts','colors','typography','spacing','paper','motion','refinement','blocks','legal'],
   'privacy.html':  ['fonts','colors','typography','spacing','paper','motion','refinement','blocks','legal'],

@@ -1,0 +1,387 @@
+/* The About route ------------------------------------------------------------
+   Flush colour blocks on a 3px paper seam, square corners, tiling the width.
+
+   ⭐ The rounded floating card is gone, and that is a correction rather than a
+   restyle. §3 of the working rules gives this route its material — flush,
+   right angles throughout, opaque, depth from adjacency — and the old cards
+   were the glass route's material (floating, 5.4% radius, a visible ground
+   behind them) on a page that has no landscape to refract. A box on this route
+   is either a flat colour field or it is nothing.
+
+   ⭐ It also settles "the background is too empty" by construction. Blocks
+   that tile the full width leave no ground showing, so there is no empty
+   background left to fill; the seams between them are the only ground, and
+   they are 3px of paper.
+
+   ⭐ The reading runs down the page in a zig-zag: a heading band across the
+   width, then blocks alternating left and right beneath it, with no two the
+   same height. The named areas below do the arranging on wide screens only —
+   DOM order is reading order, which is the lesson the method page paid for.
+
+   ⚠️ This route owns this file alone — the model is legal.css, which the
+   ownership census scored 20 wins and 0 losses precisely because one route had
+   one sheet. Do not put these rules in blocks.css, which guide.html loads. */
+
+/* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
+   body` in refinement.css outspecifies a bare body selector, which is exactly
+   how the block route's ground "was declared for weeks and never painted". */
+/* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
+   body` in refinement.css outspecifies a bare body selector, which is exactly
+   how the block route's ground "was declared for weeks and never painted". */
+html[data-skin="paper"] body[data-page="about"],
+body[data-page="about"] { margin: 0; background: var(--bk-ink); color: var(--bk-ink); }
+
+/* ⭐ Colour comes from the route's shared roles — the same [data-fill] tokens
+   the method page uses, rotating with the 114 groups. The six-tones-of-one-hue
+   scheme this page had was arguing for a version of the page that no longer
+   exists (four cards where the arrangement had to do all the separating);
+   with thirteen blocks and two headed sections it only made the page quieter
+   than its own reference. */
+
+/* ── header and footer: flush bars like the rest of the route ───────────── */
+/* ⚠️ These referenced --ab-fill-4 / --ab-ink-4, which went away with the
+   six-tone scheme. An undefined custom property makes the whole declaration
+   invalid, so the bar kept a colour it was never given and its links vanished
+   into it. Use the route's own tokens, like every other block. */
+body[data-page="about"] :is(.bk-head, .bk-foot) {
+  background: var(--bk-cream);
+  color: var(--bk-ink);
+  border: 0;
+}
+body[data-page="about"] .bk-head { margin-bottom: var(--bk-gap); }
+body[data-page="about"] .bk-foot { margin-top: var(--bk-gap); }
+body[data-page="about"] :is(.bk-head, .bk-foot) a:not(.bk-go) { color: inherit; }
+body[data-page="about"] .bk-go {
+  background: var(--bk-clay);
+  color: var(--on-accent);
+  border-radius: 0;
+}
+
+/* ── the mosaic ─────────────────────────────────────────────────────────── */
+.ab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bk-gap);
+  align-content: start;
+}
+/* ⭐ The block is a grid, and the colony takes whatever the type does not.
+   A 2:1 block is one square of words and one square of marks, so the TYPE's
+   territory is square even though the block is not — which is how a rectangle
+   is made to keep the square unit rather than abandon it. On a square block
+   the leftover is the band between the label and the display line, and the
+   colony fills that.
+
+   ⚠️ The colony is a sibling in the grid, never an overlay. A cluster
+   positioned on top of the block would be the second layer all over again;
+   here the marks and the words are in the same plane, side by side, which is
+   also why the colony can be dense without touching anything. */
+.ab-block {
+  position: relative;
+  padding: clamp(20px, 2.6vw, 40px);
+  display: grid;
+  min-width: 0;
+  gap: clamp(12px, 1.6vw, 24px);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "meta" "say";
+}
+.ab-meta { grid-area: meta; }
+.ab-say  { grid-area: say; }
+.ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
+.ab-colony svg { width: 100%; height: 100%; display: block; }
+/* ── the skyline ────────────────────────────────────────────────────────
+   ⭐ Its own sky, and a time of day. One flat field with one body in it — the
+   sun going east to west, then the moon — rather than the bands this had
+   before. Bands of colour behind a mountain are a swatch card; a sky is worth
+   drawing because it says when it is.
+
+   ⚠️ The first version inherited currentColor, which on a dark block is the
+   PALE ink — so the mountains came out cream on brown, the photograph
+   negative of the thing being copied. A silhouette has to name its own colour;
+   it cannot borrow the one meant for type. */
+[data-horizon] { align-self: stretch; position: relative; overflow: hidden;
+  color: var(--bk-ink); background: var(--bk-bone);
+  --hz-sky: #E8DDD8; --hz-orb: #C79A55; --hz-glow: #DCBB93;
+  --hz-cloud: #F6F0EA; --hz-cloud-line: #C9B7A6;
+  --hz-l1: #8A6A55; --hz-l2: #755743; --hz-l3: #5E4636; --hz-l4: #48352A; --hz-l5: #33251D; }
+[data-horizon][data-phase="night"] {
+  --hz-sky: #1F2733; --hz-orb: #E4DCC6; --hz-glow: #9AA6BC;
+  --hz-cloud: #38414F; --hz-cloud-line: #4E5869;
+  --hz-l1: #47505E; --hz-l2: #3B4351; --hz-l3: #2F3743; --hz-l4: #242B36; --hz-l5: #1A202A; }
+/* ⚠️ The picture came up 23px short of the foot, and a pale strip of the
+   block's own background showed under the range — which reads as a rendering
+   fault, not as a margin. Two causes, both fixed here:
+
+   ① The horizon block is a grid with `grid-template-rows: auto 1fr` and a
+   gap. Its only child landed in the auto row and the gap — 1.6vw, exactly the
+   23px — was reserved below it. An art block has one child and no rows to
+   speak of, so it is a block box.
+   ② `body.blocks-route :is(…, .ab-block) > :not(.bk-art)` is (0,3,1) and
+   outranks a bare `[data-horizon] svg` (0,1,1), so `position:absolute` was
+   silently discarded — the same specificity trap this repo has now logged four
+   times. The rule below matches that weight instead of hoping to win. */
+body.blocks-route .ab-block--art[data-horizon] { display: block; gap: 0; }
+body.blocks-route .ab-block [data-horizon] > svg,
+body.blocks-route .ab-block[data-horizon] > svg {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0;
+}
+.ab-block--art[data-horizon] { padding: 0; }
+
+/* ⚠️ These are the fills for shapes blocks.js draws, so they have to be CSS
+   properties on a class; a fill="" attribute cannot resolve var() and would
+   freeze the scene out of the 114-group rotation. */
+/* ── one sky, one body, and a time of day ────────────────────────────────
+   ⭐⭐ The four bands are gone. A banded sky is a swatch card standing behind a
+   mountain; what a sky gives a page is a TIME — the sun rises east, sets west,
+   the moon takes over, and the light changes with it. The two horizon blocks
+   are opposite halves of one day and trade places on every turn of the palette
+   clock, so the pair is always a day and a night.
+
+   ⚠️ Day and night are separate tokens on the same roles, not one palette dimmed.
+   A night sky is not a day sky at lower opacity: the ground goes deep and the
+   ink goes pale, which is the same inversion the deep and pale block fills
+   already make. Both sets keep their lightness clamped, so neither can drift
+   into the band where nothing is readable. */
+.hz-sky  { fill: var(--hz-sky); }
+
+/* ── the clouds cross; the range holds still ──────────────────────────────
+   ⭐⭐ This is the home page's own split, and it was measured there rather than
+   chosen: three drifting ridge planes ran at 21fps against 55 with the ridges
+   stopped and the clouds carrying the motion. A ridge spans the whole canvas,
+   so moving one invalidates everything composited above it; a cloud is small.
+   These skylines follow the same rule for the same reason.
+
+   ⚠️ Transform only. Nothing here animates a colour, a filter or a backdrop —
+   that is the performance red line, and the palette still changes by
+   hold-then-crossfade every fifteen seconds exactly as the range does.
+
+   ⚠️ The three periods do not divide into each other and each cloud carries its
+   own negative delay, so they never line up into one passing bar — the same
+   discipline as the drift bands under the mark fields. */
+.hz-cloud-b { fill: var(--hz-cloud); }
+.hz-cloud-c { fill: none; stroke: var(--hz-cloud-line); stroke-width: 2.4;
+  stroke-linecap: round; stroke-linejoin: round; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hz-cloud {
+    animation-name: hz-drift;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+}
+@keyframes hz-drift {
+  from { transform: translate3d(-42%, 0, 0); }
+  to   { transform: translate3d(142%, 0, 0); }
+}
+.hz-body { fill: var(--hz-orb); }
+.hz-halo { fill: var(--hz-glow); stroke: var(--hz-glow);
+  stroke-width: 20; stroke-linejoin: round; stroke-linecap: round; }
+.hz-star { fill: var(--hz-orb); opacity: .72; }
+
+/* ⭐ The land is layered flat colour too, not one ink at rising opacity. A
+   translucent range shows the sky THROUGH the mountains, so a hard band edge
+   draws a horizontal line across a ridge — which reads as a bug, not a place.
+   Five opaque tones, every one deeper than the deepest sky band, so the near
+   ridge always cuts hard against the light. A CSS rule outranks the presentation
+   attributes landscape() writes, so no !important is needed to take them over. */
+.hz-land { opacity: 1; }
+.hz-l1 { fill: var(--hz-l1); }
+.hz-l2 { fill: var(--hz-l2); }
+.hz-l3 { fill: var(--hz-l3); }
+.hz-l4 { fill: var(--hz-l4); }
+.hz-l5 { fill: var(--hz-l5); }
+
+@supports (color: oklch(from red l c h)) {
+  [data-horizon] {
+    /* ⚠️ The range keeps a single hue through all five layers. A mountain range
+       reads as depth precisely because it is one colour receding; giving each
+       ridge its own hue would turn a landscape into a chart. The sky takes the
+       OTHER hue, so the silhouette cuts against the light by colour as well as
+       by tone — which is the whole job of a horizon. */
+    /* ⚠️ Dropped from .84–.92. A cloud clamped to .95–.99 had only three to
+       seven hundredths of lightness between it and its own sky, so the clouds
+       were ghosts — visible in the DOM and not on the page. The sky gives way,
+       because the sky is the thing with nothing to say. */
+    --hz-sky: oklch(from var(--bw-hue-b, #E8DDD8) clamp(.78, l, .86) clamp(.04, c, .12) h);
+    --hz-orb: oklch(from var(--bw-hue-a, #C79A55) clamp(.62, l, .70) clamp(.09, c, .19) h);
+    /* the light around the body, pinned between it and its sky so it can never
+       vanish into either — the same two-band construction the mark rings use */
+    --hz-glow: oklch(from var(--bw-hue-a, #DCBB93) clamp(.74, l, .80) clamp(.06, c, .15) h);
+    /* a cloud is lighter than its sky by day and darker by night — it is lit
+       from the same body the block already draws, so it cannot read as a hole */
+    --hz-cloud: oklch(from var(--bw-hue-b, #F6F0EA) clamp(.95, l, .99) clamp(.005, c, .03) h);
+    --hz-cloud-line: oklch(from var(--bw-hue-b, #C9B7A6) clamp(.80, l, .86) clamp(.02, c, .07) h);
+    --hz-l1: oklch(from var(--bw-hue-a, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
+    --hz-l2: oklch(from var(--bw-hue-a, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
+    --hz-l3: oklch(from var(--bw-hue-a, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
+    --hz-l4: oklch(from var(--bw-hue-a, #48352A) clamp(.29, l, .34) clamp(.03, c, .09) h);
+    --hz-l5: oklch(from var(--bw-hue-a, #33251D) clamp(.22, l, .27) clamp(.02, c, .08) h);
+  }
+
+  /* ⚠️ Night inverts the roles rather than dimming them: the ground goes deep,
+     the body and the stars go pale, and the range sits between the two so it
+     still separates from its sky. Same two hues, opposite ends of each band. */
+  [data-horizon][data-phase="night"] {
+    --hz-sky: oklch(from var(--bw-hue-b, #1F2733) clamp(.20, l, .27) clamp(.03, c, .09) h);
+    --hz-orb: oklch(from var(--bw-hue-a, #E4DCC6) clamp(.86, l, .93) clamp(.04, c, .12) h);
+    /* ⚠️ ABOVE the range, not between range and sky. At .48–.56 the moon's
+       halo sat inside the ridge band (.24–.49) and the moon dissolved into the
+       mountain behind it. The body is the brightest thing at night, its light
+       the second — both clear of every ridge. */
+    --hz-glow: oklch(from var(--bw-hue-a, #9AA6BC) clamp(.62, l, .68) clamp(.03, c, .10) h);
+    --hz-cloud: oklch(from var(--bw-hue-b, #38414F) clamp(.33, l, .39) clamp(.02, c, .07) h);
+    --hz-cloud-line: oklch(from var(--bw-hue-b, #4E5869) clamp(.43, l, .49) clamp(.02, c, .08) h);
+    --hz-l1: oklch(from var(--bw-hue-a, #47505E) clamp(.44, l, .49) clamp(.03, c, .08) h);
+    --hz-l2: oklch(from var(--bw-hue-a, #3B4351) clamp(.39, l, .43) clamp(.03, c, .08) h);
+    --hz-l3: oklch(from var(--bw-hue-a, #2F3743) clamp(.34, l, .38) clamp(.02, c, .07) h);
+    --hz-l4: oklch(from var(--bw-hue-a, #242B36) clamp(.29, l, .33) clamp(.02, c, .07) h);
+    --hz-l5: oklch(from var(--bw-hue-a, #1A202A) clamp(.24, l, .28) clamp(.02, c, .06) h);
+  }
+}
+
+/* square blocks: the colony is the band between the label and the line */
+.ab-block[data-colony="m"] {
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: "meta" "colony" "say";
+}
+.ab-block[data-colony="m"] .ab-say { margin-top: 0; }
+.ab-block--art { padding: 0; grid-template-areas: none; }
+
+/* ── type: the method page's system ──────────────────────────────────────
+   ⭐ A small letterspaced label at the top, then a big woven serif line sitting
+   LOW in the block, with the caption beneath it. That is what the reference
+   does, and it is what fills a block: the old layout put an 18px bold name at
+   the top and a 13px caption at the bottom, which is why the blocks read as
+   empty however much colour they carried. Type at display size IS the content.
+
+   ⚠️ Sized in cqw, so the line scales with the block rather than with the
+   viewport — and the full-width blocks get their own smaller fractions,
+   because a block spanning two columns has twice the cqw and the same number
+   would paint it at twice the size. */
+.ab-block { container-type: inline-size; }
+
+.ab-meta {
+  margin: 0;
+  font-family: var(--mono, var(--sans));
+  font-size: max(10px, 2.1cqw);
+  letter-spacing: .12em;
+  /* .88 folded the label toward its own carrier just enough to matter once the
+     fill became a gradient. The hierarchy is carried by size and .12em of
+     tracking; the fade is the third signal and it is the one that gives way. */
+  opacity: .94;
+}
+.ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); align-content: end; }
+.ab-display {
+  margin: 0 0 0 -.03em;
+  font-family: var(--serif); font-weight: 400;
+  font-size: 13cqw; line-height: 1.0; letter-spacing: -.03em;
+  text-wrap: balance;
+}
+.ab-note {
+  margin: 0;
+  font-family: var(--sans); font-size: max(12px, 2.4cqw); line-height: 1.5;
+  max-width: 46ch; opacity: .92;
+}
+
+/* the full-width blocks: half the fraction, same optical size */
+.ab-block--lede .ab-display { font-size: 9.4cqw; }
+.ab-block--lede .ab-note    { font-size: max(13px, 1.6cqw); max-width: 58ch; }
+.ab-block--lede .ab-meta    { font-size: max(10px, 1.4cqw); }
+.ab-block--head .ab-display { font-size: 11.5cqw; }
+.ab-block--cta .ab-display  { font-size: 9cqw; }
+.ab-block--cta { gap: clamp(20px, 2.4vw, 36px); }
+.ab-block--cta { grid-template-areas: "say" "cta"; grid-template-rows: 1fr auto; }
+.ab-block--cta .bk-go { grid-area: cta; justify-self: start; }
+
+/* ── the arrangement: the square is the unit ────────────────────────────
+   ⭐ Three columns, and a cell is a SQUARE unless it is doing something that
+   needs more room, in which case it is two squares wide. That is the method
+   page's discipline and it is the thing the last pass lost: blocks sized by
+   row-span come out as arbitrary rectangles, and once the proportion is
+   arbitrary the position of the type inside it cannot be considered either.
+   With a fixed unit, "label at the top, display line low, caption under it"
+   means the same thing in every block.
+
+   ⭐ And nothing else is added. No frames, no ornaments, no floating marks —
+   the block is a colour, a proportion and its type. Every decorative element
+   that has been tried on this page so far has been the superfluous one.
+
+   ⚠️ Named areas, not auto-placement, so the reading order cannot be reflowed
+   by a block changing height — the fault the method page was rebuilt to
+   remove. DOM order is reading order; these only rearrange it on wide
+   screens. */
+@media (min-width: 900px) {
+  .ab-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "lede lede kind"
+      "sepa sepa evid"
+      "tex1 rest rest"
+      "deep deep gets"
+      "whol word word"
+      "tex2 pays pays"
+      "cta  cta  cta";
+  }
+  .ab-block[data-cell="lede"] { grid-area: lede; }
+  .ab-block[data-cell="kind"] { grid-area: kind; }
+  .ab-block[data-cell="sepa"] { grid-area: sepa; }
+  .ab-block[data-cell="evid"] { grid-area: evid; }
+  .ab-block[data-cell="tex1"] { grid-area: tex1; }
+  .ab-block[data-cell="rest"] { grid-area: rest; }
+  .ab-block[data-cell="deep"] { grid-area: deep; }
+  .ab-block[data-cell="gets"] { grid-area: gets; }
+  .ab-block[data-cell="whol"] { grid-area: whol; }
+  .ab-block[data-cell="word"] { grid-area: word; }
+  .ab-block[data-cell="tex2"] { grid-area: tex2; }
+  .ab-block[data-cell="pays"] { grid-area: pays; }
+  .ab-block[data-cell="cta"]  { grid-area: cta; }
+
+  /* ⭐ Two squares: the words in one, the colony in the other. The side
+     alternates down the page so the zig-zag survives. */
+  .ab-block[data-colony="r"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "meta colony" "say colony";
+  }
+  .ab-block--cta[data-colony="r"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "say colony" "cta colony";
+  }
+  .ab-block[data-colony="l"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "colony meta" "colony say";
+  }
+
+  /* the unit, and the ones that break it */
+  .ab-block { aspect-ratio: 1 / 1; }
+  .ab-block:is([data-cell="lede"], [data-cell="sepa"], [data-cell="rest"],
+    [data-cell="deep"], [data-cell="word"], [data-cell="pays"]) { aspect-ratio: 2 / 1; }
+  .ab-block[data-cell="cta"] { aspect-ratio: 3 / 1; }
+
+  /* ⚠️ A cell spanning two columns has twice the container width, so the same
+     cqw paints at twice the size. Halved fractions, not a different design. */
+  .ab-block:is([data-cell="sepa"], [data-cell="rest"], [data-cell="deep"],
+    [data-cell="word"], [data-cell="pays"]) .ab-display { font-size: 7.6cqw; }
+  .ab-block:is([data-cell="sepa"], [data-cell="rest"], [data-cell="deep"],
+    [data-cell="word"], [data-cell="pays"]) :is(.ab-meta, .ab-note) { font-size: max(12px, 1.5cqw); }
+  .ab-block--lede .ab-display { font-size: 5.4cqw; }
+  .ab-block--cta .ab-display  { font-size: 4.3cqw; }
+}
+
+/* ── one column ─────────────────────────────────────────────────────────
+   No areas, no arranging: the DOM order is the rendered order, so the page
+   reads exactly as it is written. The purely decorative blocks come out —
+   without the composition they are only wallpaper, and on a phone they would
+   own a third of the scroll. */
+@media (max-width: 899px) {
+  .ab-grid { grid-template-columns: minmax(0, 1fr); }
+  /* ⚠️ Explicitly out, not merely unplaced. A grid item whose named area does
+     not exist is auto-placed into an implicit row rather than ignored, so it
+     would add an empty band to every block on a phone. */
+  .ab-colony { display: none; }
+  .ab-block { aspect-ratio: auto; min-height: 46vw; }
+  .ab-block--art { display: none; }
+  .ab-block { min-height: 0; }
+  .ab-figure { min-height: 96px; }
+}

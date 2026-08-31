@@ -13,14 +13,14 @@
      already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260826a">
-<script src="./ds-base.js?v=20260826a"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260831c">
+<script src="./ds-base.js?v=20260831c"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -35,14 +35,14 @@
   .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;}
 
   /* minimal page header — logo + back link */
-  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;max-width:1100px;margin:0 auto;width:100%}
-  .brand{display:flex;align-items:center;gap:9px}
+  .pagehead{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1100px;margin:0 auto;width:100%}
+  .brand{display:flex;align-items:center;gap:8px}
   .mark{width:27px;height:22px;color:var(--ink)}
   .brand b{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px)}
   /* gap, not the literal space in the markup: .ghost is laid out as flex by
      the shared chrome rules, and a whitespace-only text node between flex
      items is discarded — which is why the arrow was welded to the word. */
-  .pagehead .ghost{display:inline-flex;align-items:center;gap:.42em;font-size:13px;color:var(--dim);transition:color .15s;white-space:nowrap}
+  .pagehead .ghost{display:inline-flex;align-items:center;gap:.42em;font-size:13px;color:var(--dim);transition:color 140ms;white-space:nowrap}
   .pagehead .ghost:hover{color:var(--ink)}
   .back-short{display:none}
 
@@ -59,20 +59,20 @@
      to a different tone than the body below and drew a horizontal seam
      across the card. One carrier, one material; the rule underneath is the
      divider. */
-  .card-hero{color:var(--ink);padding:24px 28px 16px;position:relative;overflow:hidden;border-bottom:1px solid var(--ui-line)}
+  .card-hero{color:var(--ink);padding:24px 24px 16px;position:relative;overflow:hidden;border-bottom:1px solid var(--ui-line)}
   .card-hero .lbl{color:var(--faint)}
-  .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(32px,3.1vw,42px);line-height:.98;letter-spacing:-.03em;margin-top:9px;color:var(--ink)}
-  .card-hero p{font-family:var(--serif);font-size:15px;color:var(--dim);margin-top:9px;max-width:30ch;text-wrap:pretty}
+  .card-hero h1{font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(32px,3.1vw,42px);line-height:.98;letter-spacing:-.03em;margin-top:8px;color:var(--ink)}
+  .card-hero p{font-family:var(--serif);font-size:15px;color:var(--dim);margin-top:8px;max-width:30ch;text-wrap:pretty}
   /* The seal was stroked with a literal colour in a presentation attribute,
      which cannot take var(). Route it through currentColor so it follows the
      palette gem like every other decorative mark on the site. */
   .card-hero .seal{position:absolute;right:-14px;bottom:-20px;opacity:.32;color:var(--bw-palette-gem,var(--terracotta))}
 
-  .card-body{padding:24px 28px 12px;display:flex;flex-direction:column;gap:10px}
-  .prov{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:12px 15px;font-size:15px;font-weight:500;background-color:var(--paper);transition:border-color .15s,transform .12s,background-color .15s,opacity .15s}
+  .card-body{padding:24px 24px 12px;display:flex;flex-direction:column;gap:8px}
+  .prov{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:12px 16px;font-size:15px;font-weight:500;background-color:var(--paper);transition:border-color 140ms,transform 140ms,background-color 140ms,opacity 140ms}
   .prov:hover{border-color:var(--ink);transform:translateY(-1px)}
   .prov .ic{flex:none;width:22px;height:22px;display:grid;place-items:center}
-  .prov .arr{margin-left:auto;color:var(--ghost);transition:transform .15s,color .15s}
+  .prov .arr{margin-left:auto;color:var(--ghost);transition:transform 140ms,color 140ms}
   .prov:hover .arr{transform:translateX(3px);color:var(--ink)}
   .prov.apple{background-color:var(--ink);color:var(--paper);border-color:var(--ink)}
   .prov.apple:hover{background-color:color-mix(in srgb,var(--ink) 88%,black)}
@@ -83,19 +83,19 @@
 
   /* sign-in / create-account tabs */
   .tabs{display:flex;gap:2px;background:var(--paper-dim);border-radius:var(--ui-radius-small);padding:3px;margin-bottom:4px}
-  .tab{flex:1;padding:8px 10px;border-radius:var(--ui-radius-small);font-size:13px;font-weight:600;color:var(--dim);transition:background .15s,color .15s}
+  .tab{flex:1;padding:8px 8px;border-radius:var(--ui-radius-small);font-size:13px;font-weight:600;color:var(--dim);transition:background 140ms,color 140ms}
   .tab.on{background:var(--paper);color:var(--ink);box-shadow:0 1px 3px rgba(31,29,26,.08)}
 
   /* email/password form */
-  #authForm{display:flex;flex-direction:column;gap:9px}
-  .field{display:flex;flex-direction:column;gap:5px}
+  #authForm{display:flex;flex-direction:column;gap:8px}
+  .field{display:flex;flex-direction:column;gap:4px}
   .field .flbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
-  .field input{width:100%;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:11px 14px;font:inherit;font-size:15px;color:var(--ink);background-color:var(--paper);transition:border-color .15s}
+  .field input{width:100%;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:12px 12px;font:inherit;font-size:15px;color:var(--ink);background-color:var(--paper);transition:border-color 140ms}
   .field input::placeholder{color:var(--ghost)}
   .field input:focus{outline:none;border-color:var(--ink)}
   .pass-wrap{position:relative}
   .pass-wrap input{padding-right:68px}
-  .pass-toggle{position:absolute;right:4px;top:50%;transform:translateY(-50%);min-width:52px;min-height:38px;border-radius:var(--ui-radius-small);color:var(--dim);font-size:12px;font-weight:600;letter-spacing:.02em;transition:background .15s,color .15s}
+  .pass-toggle{position:absolute;right:4px;top:50%;transform:translateY(-50%);min-width:52px;min-height:var(--ctl-compact);border-radius:var(--ui-radius-small);color:var(--dim);font-size:12px;font-weight:600;letter-spacing:.02em;transition:background 140ms,color 140ms}
   .pass-toggle:hover,.pass-toggle:focus-visible{background:var(--paper-dim);color:var(--ink);outline:none}
   .prov.submit{background-color:var(--ink);color:var(--paper);border-color:var(--ink);justify-content:center;font-weight:600;margin-top:2px}
   .prov.submit:hover{background-color:color-mix(in srgb,var(--ink) 88%,black)}
@@ -106,29 +106,29 @@
   .reveal-row{display:none}
   body[data-mode="register"] .reveal-row{display:flex}
 
-  .divider{display:flex;align-items:center;gap:12px;margin:6px 2px;color:var(--ghost);font-size:11px;letter-spacing:.08em}
+  .divider{display:flex;align-items:center;gap:12px;margin:4px 2px;color:var(--ghost);font-size:11px;letter-spacing:.08em}
   .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line-soft)}
-  .oauth-providers{display:flex;flex-direction:column;gap:10px}
+  .oauth-providers{display:flex;flex-direction:column;gap:8px}
   .oauth-providers svg{filter:saturate(.58) brightness(.82) contrast(.95)}
 
-  .card-foot{padding:14px 28px 22px;text-align:center}
+  .card-foot{padding:12px 24px 24px;text-align:center}
   .card-foot p{font-size:12px;color:var(--ghost);line-height:1.6}
-  .card-foot a{color:var(--dim);border-bottom:1px solid var(--line);transition:color .15s,border-color .15s}
+  .card-foot a{color:var(--dim);border-bottom:1px solid var(--line);transition:color 140ms,border-color 140ms}
   .card-foot a:hover{color:var(--terracotta);border-color:var(--terracotta)}
 
-  footer{position:relative;z-index:2;text-align:center;padding:18px;font-size:12px;letter-spacing:var(--tracking-label);color:var(--ghost)}
+  footer{position:relative;z-index:2;text-align:center;padding:16px;font-size:12px;letter-spacing:var(--tracking-label);color:var(--ghost)}
 
   @media (max-width:520px){
     .pagehead{padding:calc(14px + env(safe-area-inset-top)) 18px 14px}
     .card-hero h1{font-size:30px}
     .wrap{padding:12px 16px 24px;align-items:flex-start}
-    footer{padding-bottom:max(18px,env(safe-area-inset-bottom))}
+    footer{padding-bottom:max(16px,env(safe-area-inset-bottom))}
   }
   @media (max-width:360px){.back-long{display:none}.back-short{display:inline}}
   @media (prefers-reduced-motion: reduce){.card{animation:none}}
 </style>
-<link rel="stylesheet" href="./tokens/content-pages.css?v=20260826a">
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260826a">
+<link rel="stylesheet" href="./tokens/content-pages.css?v=20260831c">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260831c">
 </head>
 <body data-page="login">
 
@@ -216,10 +216,10 @@
   </div>
 </main>
 
-<footer>BourneWise &middot; fixed hexagram input &middot; Claude Opus 5 interpretation</footer>
+<footer>BourneWise &middot; the figure is cast before a word is written about it</footer>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260826a"></script>
-<script src="./account.js?v=20260826a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260831c"></script>
+<script src="./account.js?v=20260831c"></script>
 <script>
 (function () {
   "use strict";
@@ -322,6 +322,6 @@
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260826a" defer></script>
+<script src="./assets/weave.js?v=20260831c" defer></script>
 </body>
 </html>

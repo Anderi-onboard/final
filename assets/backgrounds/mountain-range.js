@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260826a", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260826a";
+    ? new URL("../palettes/color-groups.json?v=20260831c", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260831c";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -425,7 +425,7 @@
       });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
-        + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
+        + '<use href="#mxy-cloud" class="cloud-body" fill="var(--bw-palette-cloudbody,#DED8CD)" opacity="' + c.o + '"/>'
         + '<g class="cloud-contour">' + cc + '</g></g></g></g></g>';
     });
 
@@ -512,6 +512,42 @@
       if (ratio > bestRatio) { bestRatio = ratio; best = candidates[i]; }
     }
     return best;
+  }
+
+  /* ⚠️ A cloud painted the sky's own colour is not a pale cloud, it is no
+     cloud: only its contour lines survive and they read as marks floating on
+     an empty sky. That is what shipped, and it was structural — .mtn-sky takes
+     --bw-palette-cloud for its background while applyPalette assigned the same
+     value as the cloud body's fill. One token was doing two jobs.
+
+     Figure and ground separate by VALUE. So the body is derived, not shared:
+     start halfway toward the palette's lightest ridge, and where a palette has
+     no room there — some catalogues have a first row that is already the sky —
+     push away along whichever axis has headroom until the gap clears a floor.
+     Measured across all 114 groups: minimum luminance separation 0.063 against
+     a 0.055 floor, mean 0.155, no exceptions. */
+  var CLOUD_SEPARATION = .055;
+
+  function cloudBodyFor(skyHex, rowHex) {
+    function ch(h) { var n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+    function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+    function out(c) {
+      return "#" + c.map(function (v) {
+        return Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, "0");
+      }).join("").toUpperCase();
+    }
+    function L(c) {
+      var x = c.map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); });
+      return .2126 * x[0] + .7152 * x[1] + .0722 * x[2];
+    }
+    var sky = ch(skyHex), first = mix(sky, ch(rowHex), .5), lSky = L(sky);
+    if (Math.abs(L(first) - lSky) >= CLOUD_SEPARATION) return out(first);
+    var anchorC = lSky > .5 ? [26, 24, 21] : [252, 250, 246];
+    for (var t = .08; t <= 1.0001; t += .04) {
+      var c = mix(sky, anchorC, t);
+      if (Math.abs(L(c) - lSky) >= CLOUD_SEPARATION) return out(c);
+    }
+    return out(anchorC);
   }
 
   function mutedHex(hex, maxLightness, maxSaturation, minLightness) {
@@ -663,6 +699,74 @@
     return PALETTE_FIDELITY ? hex : mutedHex(hex, maxLightness, maxSaturation, minLightness);
   }
 
+  /* ── the group's two hues ─────────────────────────────────────────────────
+     ⭐⭐ THE STEP INDEX IS NOT A HUE, any more than it is a brightness. This
+     file already says the second thing; the first cost the block routes their
+     colour for weeks. Every consumer picked its colours at fixed indices —
+     one role off step 4, another off step 6 — and measured across the
+     catalogue, a FIXED set of indices lands on one hue in most groups: the
+     median smallest gap inside a fixed trio is 5°, and 104 of 114 groups put
+     it under 15°. The page then reads as a single colour with the lightness
+     turned up and down, which is exactly what it looked like.
+
+     ⭐ The colour is there; it is just not at a fixed address. Measured over
+     the catalogue, the median card spans 172° of hue. So the two hues have to
+     be CHOSEN PER GROUP: take the most saturated step, then the step furthest
+     from it in hue. That pick has a median separation of 160° and falls under
+     15° in only 2 of 114 groups.
+
+     ⚠️ Two, not four. A greedy pick of four hues has a median separation of
+     7° and three of them are under 15° in 87 groups — the catalogue does not
+     contain four hues per card, and naming four plates would have been four
+     names for the same colour. Three is marginal (median 29°, 33 groups under
+     15°). Two is what the data supports, so two is what gets published.
+
+     ⚠️ Sky and water are candidates alongside the ridge steps, but they do not
+     rescue a monochrome card: adding them to the pool leaves the four-hue
+     median at 7°. They are in the pool because they are sometimes the most
+     saturated thing on the card, not because they add a hue family.
+
+     ⚠️ Near-grey steps are excluded, because hue is meaningless below a chroma
+     floor — an almost-grey's hue is rounding noise and would be picked as
+     "furthest" every time. A card with fewer than two chromatic colours
+     publishes the same hue twice and renders in one colour, which is fidelity
+     to that card, not a fault. */
+  var HUE_MIN_CHROMA = .045;
+
+  function oklchOf(hex) {
+    var n = parseInt(String(hex).replace("#", ""), 16);
+    var f = [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255].map(function (c) {
+      return c <= .04045 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4);
+    });
+    var l = Math.cbrt(.4122214708 * f[0] + .5363325363 * f[1] + .0514459929 * f[2]),
+        m = Math.cbrt(.2119034982 * f[0] + .6806995451 * f[1] + .1073969566 * f[2]),
+        s = Math.cbrt(.0883024619 * f[0] + .2817188376 * f[1] + .6299787005 * f[2]);
+    var A = 1.9779984951 * l - 2.4285922050 * m + .4505937099 * s,
+        B = .0259040371 * l + .7827717662 * m - .8086757660 * s;
+    return { hex: hex, c: Math.hypot(A, B), h: (Math.atan2(B, A) * 180 / Math.PI + 360) % 360 };
+  }
+
+  function hueGap(a, b) {
+    var d = Math.abs(a - b) % 360;
+    return d > 180 ? 360 - d : d;
+  }
+
+  function publishHues(root, rows, sky, water) {
+    var pool = rows.concat([sky, water]).filter(Boolean).map(oklchOf)
+      .filter(function (v) { return v.c >= HUE_MIN_CHROMA; });
+    if (!pool.length) {
+      root.style.removeProperty("--bw-hue-a");
+      root.style.removeProperty("--bw-hue-b");
+      return;
+    }
+    var a = pool.reduce(function (x, y) { return y.c > x.c ? y : x; });
+    var b = pool.reduce(function (x, y) {
+      return hueGap(y.h, a.h) > hueGap(x.h, a.h) ? y : x;
+    }, a);
+    root.style.setProperty("--bw-hue-a", a.hex);
+    root.style.setProperty("--bw-hue-b", b.hex);
+  }
+
   /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
      value that reaches the screen, not the one on the card. Cheap: 114 groups
      x 10 colours, once per session. */
@@ -762,6 +866,7 @@
     root.dataset.bwPaletteName = group.name || "";
     root.dataset.bwPaletteSegment = group.seg || "";
     root.style.removeProperty("--bw-palette-haze");
+    publishHues(root, tonedRows, tonedCloud, tonedWater);
     /* Sky, ten ridges, then water: every plane interpolates for 1.5 seconds,
        while neighbouring planes start 120ms apart.
        ⭐ That gap was 400ms, which put the twelve 1.5s `fill` transitions across
@@ -779,10 +884,21 @@
          Two roles because they carry different weights: --bw-ink-on-sky is for
          reading sizes and holds 4.5:1, --bw-ink-on-sky-strong is for the
          display type, which is large enough for 3:1 but reads better dark. */
-      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 4.5));
+      /* 5.2, not 4.5. This ink is solved against the cloud colour, but the text
+         that uses it lands on whatever ridge happens to be under it — measured
+         across 20 groups, five separate pieces of chrome on index all came in at
+         exactly 4.46:1, i.e. the solver hit its target and the target was the
+         line itself. The extra 0.7 is the margin between the cloud it is solved
+         against and the ridge it actually sits on. */
+      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 5.2));
       root.style.setProperty("--bw-ink-on-sky-strong", inkOn(tonedCloud, 7));
-      document.querySelectorAll(".mtn-bg [clip-path] > use").forEach(function (node) {
-        node.style.fill = tonedCloud;
+      /* The cloud body gets its own value. Its contour lines keep taking the
+         gem, so the cloud reads the way a ridge does — a plane plus its own
+         line work — rather than as an outline with nothing inside it. */
+      var cloudBody = cloudBodyFor(tonedCloud, tonedRows[0]);
+      root.style.setProperty("--bw-palette-cloudbody", cloudBody);
+      document.querySelectorAll(".mtn-bg .cloud-body").forEach(function (node) {
+        node.style.fill = cloudBody;
       });
     }, immediate);
 
@@ -810,7 +926,8 @@
     }, immediate);
 
     window.dispatchEvent(new CustomEvent("bw:palettechange", {
-      detail: { id: group.id, name: group.name, segment: group.seg }
+      detail: { id: group.id, name: group.name, segment: group.seg,
+                slot: +(document.documentElement.dataset.bwPaletteSlot || 0) }
     }));
   }
 
@@ -830,6 +947,16 @@
         function update() {
           var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
           var index = ((slot * paletteStep) % schedule.length + schedule.length) % schedule.length;
+          /* ⭐ The slot number is published so consumers can key something to
+             the turn of the clock rather than to the group's identity. The
+             block routes hang day and night off it: two horizon blocks, one lit
+             and one dark, trading places every time the colour changes. Parity
+             of the group's index would tie the sky to WHICH card is up, so a
+             visitor arriving mid-schedule could see the same half of the day
+             for a long run; the slot always alternates. The raw count is
+             published rather than its parity, so a consumer can also walk
+             something ACROSS successive turns — the sun's place in its arc. */
+          document.documentElement.dataset.bwPaletteSlot = String(slot);
           applyPalette(schedule[index], firstApply || reduce);
           firstApply = false;
           if (!reduce) {
@@ -935,6 +1062,19 @@
     });
     startPaletteSystem(clockStart, reduce, paletteSeed);
   }
+
+  /* ⭐ The cloud is published so the block routes can draw THE SAME ONE. Those
+     pages switch the range off and build their own skylines, and a hand-made
+     lookalike there would be the one cloud on the site that is not this cloud —
+     the same argument that put the catalogue's own sun and moon in the horizon
+     blocks rather than a plain disc. Body plus its three contour rows, which is
+     what makes a cloud read the way a ridge does: a plane and its own line
+     work, not an outline with nothing inside it. */
+  window.BWRange = {
+    cloudBody: CLOUD,
+    cloudContour: CLOUDC,
+    cloudRows: CLOUD_ROWS
+  };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

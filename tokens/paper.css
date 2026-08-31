@@ -22,10 +22,25 @@
      so --ghost now resolves to --faint rather than staying available as a
      shade to reach for. Hierarchy below --dim is carried by size, weight and
      tracking, which these roles already have. */
-  --dim: #4C4B46;
-  --faint: #5C5A54;
+  /* Deepened one notch 2026-08-26, when the carriers became frosted. The panel
+     the two of them sit on is now 34% landscape rather than 24%, so on the
+     darkest groups they composited to 3.77:1 and 2.97:1 — the same failure the
+     grey ladder was collapsed for once already. Both keep their hue and their
+     spacing from each other (ink→dim 1.62, dim→faint 1.26, both above the
+     ~1.25 a reader can see); everything just moves darker together. */
+  --dim: #3B3A36;
+  --faint: #4A4944;
   --ghost: var(--faint);
   --terracotta: #A85E46;    /* clay — the only action accent */
+  --on-accent: #FFFFFF;     /* text on a clay fill: --paper measures 3.71:1 there, white 4.82:1 */
+  /* Clay as TEXT, which is a different job from clay as a fill. --terracotta on
+     --paper is 3.71:1 — under AA for the site's only action colour, on the
+     site's own canvas. The fill stays exactly as it is, because that is the
+     colour anyone actually reads as the brand; this steps the same hue toward
+     ink only where it is being used as 11–13px type, where the shift is
+     invisible and the margin is not: 4.66:1 on paper, 6.07:1 on white glass.
+     Written as a mix so it follows if the accent ever moves. */
+  --terracotta-ink: color-mix(in srgb, var(--terracotta) 84%, var(--ink));
   --danger: #A54B3C;        /* form errors only. Deliberately not --terracotta:
                                terracotta means "you can click this", and an error
                                message is not an action. They are close on purpose

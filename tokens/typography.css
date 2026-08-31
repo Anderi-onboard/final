@@ -39,6 +39,13 @@
   --tracking-label: .06em;
   --tracking-meta: .08em;
   --tracking-wide: .12em;
+
+  /* ⚠️ 第二个缺口:BioRhyme 的梯级是 13·15·16.5·18,再往上直接跳到 hero 的
+     clamp()。中间那一档从来没有过,于是七个地方各自发明了一个数 ——
+     21 / 22 / 22 / 22 / 24 / 25 / 27。22 出现最多,而且沿着 13→15→16.5→18
+     那条约 1.1 的比例往上走正好落在这儿。
+     ⚠️ 不许把它吸到 20:20 是 Spinnaker 的档,三套字体各有各的梯,不许互串。 */
+  --serif-title: 22px;
 }
 
 /* ── Woven weight ─────────────────────────────────────────────────────────
@@ -78,12 +85,18 @@
    that the counters fill in and it stops reading as light and starts reading
    as fog — the same limit the method page found. Static: nothing pulses. */
 :root {
+  /* Turned up 2026-08-26 (owner). Both keep their shape — a tight edge under
+     .06em and an outer bloom under .34em, past which the counters silt up and
+     it stops being light and starts being fog — and gain roughly half again in
+     strength. --glow-on-paper matters more than it used to: the white plates
+     behind on-landscape type are gone, so the halo the glyph throws in its own
+     colour is now the only thing separating it from the ridge behind it. */
   --glow-on-color:
-    0 0 .04em rgb(255 255 255 / .34),
-    0 0 .22em rgb(255 255 255 / .22);
+    0 0 .05em rgb(255 255 255 / .52),
+    0 0 .30em rgb(255 255 255 / .34);
   --glow-on-paper:
-    0 0 .05em color-mix(in srgb, currentColor 24%, transparent),
-    0 0 .30em color-mix(in srgb, currentColor 15%, transparent);
+    0 0 .06em color-mix(in srgb, currentColor 38%, transparent),
+    0 0 .34em color-mix(in srgb, currentColor 24%, transparent);
 }
 
 /* Glass routes: woven headings and the display numerals. The numerals are the

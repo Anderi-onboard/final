@@ -5,6 +5,19 @@
 (function () {
   "use strict";
   var M = window.BWMarks;
+
+  /* ── module state ─────────────────────────────────────────────────────────
+     ⚠️ Declared HERE, above the render pass, and not beside the functions that
+     use them. The render runs while this file is still executing, so a `var`
+     initialised further down is hoisted-but-undefined when the first field asks
+     for it. Three separate values have been caught by that in this file — a
+     name cache, a radius cache, and the deal cursor, the last of which silently
+     dealt every mark as deck[NaN] and emptied both fields on the method page.
+     Guarding each one lazily was treating the symptom; they live at the top
+     now. */
+  var PH_R = {};       /* motif name → drawn radius, measured once            */
+  var DEAL = 0;        /* one cursor across every field on the page (see below) */
+
   if (!M) return;
 
   var PATTERN = {
@@ -89,14 +102,113 @@
     brand: function () { return M.brandMark({ size: 512 }); }
   };
 
+  /* ── the thirty phenomena, as fields ────────────────────────────────────
+     assets/marks.js has carried thirty motifs since they were drawn and
+     nothing on the site drew a single one of them. They are the site's own
+     vocabulary — one weight of rounded ribbon, placed rather than grown — so
+     they are the right thing for a texture field, and better than the four
+     abstract fills that were standing in for them.
+
+     Placement follows the same law as everything else here: deterministic and
+     cyclic, never random. Rows stagger, and the offset and scale step through
+     co-prime cycles of 3 and 5 so no two neighbouring instances share a pair
+     and the field has a beat without repeating for fifteen. A random jitter
+     would reshuffle on every navigation and read as a fault. */
+  var PH_OFF = [0, 1, -0.6];
+  var PH_SCL = [1, 0.86, 1.12, 0.94, 1.06];
+  function phenomenonField(name, w, h) {
+    var d = M.phenomena[name]();
+    /* Pitch follows the cell so density stays constant at any size, which is
+       the rule the other fields already keep. The motifs are drawn at roughly
+       ±16 units, so the scale is the pitch over their span. */
+    var pitch = Math.max(46, Math.min(w / 5, 104));
+    var base = pitch / 46;
+    var cols = Math.ceil(w / pitch) + 1, rows = Math.ceil(h / pitch) + 1;
+    var out = "", r, c, i, x, y, sc;
+    for (r = 0; r < rows; r++) {
+      for (c = 0; c < cols; c++) {
+        i = r * cols + c;
+        x = c * pitch + (r % 2 ? pitch * .5 : 0) + PH_OFF[i % 3] * pitch * .07;
+        y = r * pitch + PH_OFF[(i + 1) % 3] * pitch * .06;
+        sc = base * PH_SCL[i % 5];
+        out += '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1)
+          + ') scale(' + sc.toFixed(3) + ')"><path d="' + d + '"/></g>';
+      }
+    }
+    return { raw: '<g fill="currentColor" opacity=".82">' + out + '</g>' };
+  }
+
+
+  /* ── arranged by density, not by tiling ─────────────────────────────────
+     The reference field is a dither: the marks cluster, thin out, and go solid
+     in a couple of places. That gradient is the whole reason it reads as an
+     image rather than as wallpaper, and it is the rule the method cards
+     borrow — an even pitch with a little jitter is exactly what it is not.
+
+     The field is three sines at co-prime periods summed together. Continuous,
+     so the density has a direction instead of being a per-cell coin flip; and
+     deterministic, so a block draws the same way on every visit — the same
+     law the strokes and the palette order already follow. A cell draws when
+     the field clears a threshold, and its SCALE follows how far it cleared
+     by, which is what softens the edge of a cluster instead of ending it on a
+     line. */
+  function ditherField(name, w, h, opt) {
+    opt = opt || {};
+    var d = M.phenomena[name] && M.phenomena[name]();
+    if (!d) return "";
+    var pitch = opt.pitch || Math.max(20, Math.min(w / 8, 44));
+    var cols = Math.max(1, Math.ceil(w / pitch)), rows = Math.max(1, Math.ceil(h / pitch));
+    var ax = opt.ax || 0.9, ay = opt.ay || 1.3, phase = opt.phase || 0;
+    var cut = opt.cut == null ? 0.46 : opt.cut;
+    var out = "", r, c, u, v, f, k, sc;
+    for (r = 0; r < rows; r++) {
+      for (c = 0; c < cols; c++) {
+        u = (c + 0.5) / cols; v = (r + 0.5) / rows;
+        f = 0.5
+          + 0.42 * Math.sin(6.2831853 * (u * ax + 0.13 + phase))
+          + 0.31 * Math.sin(6.2831853 * (v * ay - 0.21 + phase))
+          + 0.19 * Math.sin(6.2831853 * (u * 2.6 + v * 1.7));
+        f /= 1.46;
+        if (f < cut) continue;
+        k = Math.min(1, (f - cut) / 0.42);
+        sc = (pitch / 46) * (0.42 + 0.78 * k);
+        out += '<g transform="translate(' + ((c + 0.5) * pitch).toFixed(1) + ' '
+          + ((r + 0.5) * pitch).toFixed(1) + ') scale(' + sc.toFixed(3) + ')"><path d="' + d + '"/></g>';
+      }
+    }
+    return '<g fill="currentColor">' + out + '</g>';
+  }
+
+  /* Every phenomenon is available as a field and as a single centred mark, so
+     the markup keeps declaring intent by name and nothing here has to be
+     duplicated per motif. */
+  Object.keys(M.phenomena).forEach(function (name) {
+    PATTERN[name] = function (w, h) { return phenomenonField(name, w, h); };
+    MARK[name] = function () {
+      return '<g fill="currentColor" transform="translate(60 60) scale(3.1)"><path d="'
+        + M.phenomena[name]() + '"/></g>';
+    };
+  });
+
   function render(el) {
     var w = Math.max(1, Math.round(el.clientWidth)), h = Math.max(1, Math.round(el.clientHeight));
+    var scat = el.getAttribute("data-scatter");
     var pat = el.getAttribute("data-pattern"),
         land = el.getAttribute("data-land"),
         mk = el.getAttribute("data-mark");
     var body = "", vb = "0 0 " + w + " " + h, extra = 'preserveAspectRatio="none"';
 
-    if (pat && PATTERN[pat]) {
+    if (scat != null) {
+      /* A carrier that is nothing but ground gets the whole catalogue rather
+         than one motif repeated — the same placement law as the about cards,
+         a different seed so it is a different field. */
+      /* Dense enough that the whole catalogue actually gets dealt: at a pitch
+         of a fifth of the cell only about thirteen marks fit, so ten of the
+         thirty never appeared. */
+      body = blendField(w, h, { seed: 20260829 + parseInt(scat, 10) * 4093,
+                                lead: el.getAttribute("data-lead") || null,
+                                leadAt: parseInt(scat, 10) === 1 ? 0.34 : 0.62 });
+    } else if (pat && PATTERN[pat]) {
       var p = PATTERN[pat](w, h);
       /* Three shapes a pattern can take: filled markup, a stroked path, or raw
          markup that carries its own paint (the logomark is stroked, the yao
@@ -135,17 +247,579 @@
      not only the block ones, so it cannot live in a block-route file. */
 
 
-  var cells = [].slice.call(document.querySelectorAll("[data-pattern],[data-land],[data-mark]"));
+  var cells = [].slice.call(document.querySelectorAll("[data-pattern],[data-land],[data-mark],[data-scatter]"));
   /* Skip anything with no box yet. On the method route the fields live inside
      steps that are display:none until shown, so measuring them at load gives
      zero and draws nothing — which is why those bands came up empty. Callers
      re-run this when a step becomes visible. */
   function all() { cells.forEach(function (c) { if (c.clientWidth > 0) render(c); }); }
   all();
-  window.BWBlocks = { render: all };
+
+  /* ── the group crossfade gate ─────────────────────────────────────────────
+     The block routes recolour with the palette, and the transition that makes
+     that a crossfade must NOT run on the first application: the stylesheet's
+     fallback colours paint first, so an ungated transition fades the page from
+     the fallback into the group on every single load — a visible wash of the
+     wrong colour before the right one, once per navigation. The class goes on
+     after the first group has landed, so load is instant and every change
+     after it is a crossfade. */
+  (function () {
+    var root = document.documentElement;
+    function arm() {
+      window.removeEventListener("bw:palettechange", arm);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { root.classList.add("bw-cross"); });
+      });
+    }
+    if (root.dataset.bwPalette) arm();
+    else window.addEventListener("bw:palettechange", arm);
+  }());
+
+
+  /* ── all thirty, scattered ────────────────────────────────────────────────
+     The arrangement is multi-class blue noise (Wei, SIGGRAPH 2010). The
+     problem it names is exactly this one: N classes of object where each class
+     on its own AND the union of all of them have to read as evenly spread with
+     no visible structure. Thirty motifs dropped by plain random gives clumps
+     and holes; thirty motifs on a grid gives a table. Blue noise is the third
+     thing — no two samples closer than a radius, which is what "evenly spread
+     without structure" means formally.
+
+     ⭐ The whole method is in the conflict matrix, and for us it collapses to
+     two numbers:
+        within a class  R_SAME — large. A motif must never recur near itself.
+        across classes  R_ANY  — small. Different motifs may sit close.
+     That single asymmetry is what makes the field dense and still legible as
+     thirty different things: locally you always see neighbours that differ,
+     and you have to travel to meet the same motif twice. It is also the
+     construction-level answer to the repeat fault this repo has hit before —
+     "structural repetition cannot be fixed by jittering parameters", so it is
+     ruled out by the placement law instead of watched for.
+
+     ⭐ Figure-ground (Gestalt): type is the figure, this is the ground, and a
+     ground is separated from its figure by carrying LESS DETAIL — not by
+     getting out of the way. So marks are allowed to cross a text box, but
+     their scale and their weight fall off as they approach one. Overlap
+     without interference, which is what was asked for, and it is also what the
+     legibility literature prescribes: reduce the ground's detail where the
+     figure sits.
+
+     Deterministic, like every other generated thing here: one seed per field,
+     so a field is identical on every visit. A field that reshuffles on
+     navigation reads as a rendering fault, not as a decision. */
+  /* ⚠️ Resolved on first use, not at this line. The render pass runs while
+     this file is still executing, so a module-level assignment down here is
+     still undefined when the first field asks for it. */
+
+  /* ── how big a motif actually is ──────────────────────────────────────────
+     Measured from the path's own coordinates, cached per motif. The thirty
+     have very different native extents, so a single spacing number cannot keep
+     them apart: a wide one and a narrow one at the same centre distance are
+     not equally clear of each other.
+
+     ⭐ This is what makes the field read as ONE layer. Marks that cross each
+     other read as two things stacked no matter how the placement is tuned, so
+     overlap is not discouraged here, it is impossible: a candidate is rejected
+     unless the gap between its own drawn radius and its neighbour's is clear.
+     Nothing is ever laid over anything else. */
+  function motifRadius(name) {
+    if (PH_R[name] != null) return PH_R[name];
+    var d = M.phenomena[name] && M.phenomena[name]();
+    var r = 20;
+    if (d) {
+      var nums = d.match(/-?\d*\.?\d+(?:e-?\d+)?/g) || [];
+      var m = 0;
+      for (var i = 0; i < nums.length; i++) {
+        var v = Math.abs(parseFloat(nums[i]));
+        if (v > m && v < 1e4) m = v;
+      }
+      if (m > 0) r = m;
+    }
+    PH_R[name] = r;
+    return r;
+  }
+
+  var PH_NAMES = null;
+  /* ⭐ One cursor for the whole page, not an offset per field. Fields do not
+     know how many marks the previous one managed to place, so any fixed offset
+     is a guess: 15 made two fields overlap by a slot and lost a motif, 17
+     skipped one and lost three. A shared cursor deals the catalogue out exactly
+     once before anything repeats, whatever each field ends up fitting.
+     ⚠️ DEAL is declared at the top of the file, not here — a second `var DEAL =
+     0` at this point would re-zero the cursor after the first render pass. */
+  function nextMotif() {
+    var deck = Object.keys(M.phenomena);
+    return deck[DEAL++ % deck.length];
+  }
+
+  function scatterField(w, h, opt) {
+    opt = opt || {};
+    var deck = Object.keys(M.phenomena);
+    var dealer = M.rng(20260829);
+    for (var s0 = deck.length - 1; s0 > 0; s0--) {
+      var j0 = Math.floor(dealer() * (s0 + 1)), t0 = deck[s0]; deck[s0] = deck[j0]; deck[j0] = t0;
+    }
+
+    /* ── courses, not a scatter ───────────────────────────────────────────
+       ⭐⭐ Positions are REGULAR. Blue-noise placement spreads evenly and reads
+       as disorder anyway, because every mark sits at an arbitrary point; adding
+       lanes and a subject helped the rhythm but not that. The stacked wave
+       field that keeps being pointed at as the good one is regular — courses
+       running across, even spacing along each, offset row to row. That is what
+       makes it read as a made thing rather than as spillage.
+
+       ⭐ The variety comes from the MOTIFS, not from the coordinates. Thirty
+       different things on a regular lattice is not a table; the same thing
+       thirty times on a regular lattice is. The lattice supplies the order and
+       the catalogue supplies the difference — each does one job.
+
+       ⚠️ Offsets run on a 3-cycle rather than alternating. Brickwork on a
+       half-offset shows a hard vertical seam every other course; three phases
+       take nine rows to repeat, which is more than any block here is tall.
+       Same reasoning as the strokes and the contours: an ordered cycle, never
+       randomness, because randomness is the one thing that cannot make a
+       rhythm. */
+    var pitch = opt.pitch || Math.max(30, Math.sqrt(w * h) / 7.4);
+    var cols = Math.max(2, Math.round(w / pitch));
+    var rows = Math.max(2, Math.round(h / pitch));
+    var cw = w / cols, ch = h / rows;
+    var OFFSETS = [0, 1 / 3, 2 / 3];
+    var avoid = opt.avoid || [];
+    var soft = opt.soft == null ? pitch * 1.4 : pitch * 1.4;
+    var bands = opt.bands || 3;
+
+    /* the subject takes a 2x2 of the lattice, so it can be drawn large without
+       ever reaching its neighbours — the clearance stays a property of the
+       grid rather than something to re-check */
+    var leadR = opt.lead ? Math.floor(rows * 0.45) : -1;
+    var leadC = opt.lead ? Math.floor(cols * (opt.leadAt || 0.34)) : -1;
+    function isLead(r, c) { return r >= leadR && r <= leadR + 1 && c >= leadC && c <= leadC + 1; }
+    function idxOf(r, c) { return r * cols + c; }
+
+    /* ── the centre, and the branches off it ─────────────────────────────────
+       ⭐⭐ A field of equal marks is a border, not a composition — there is no
+       place for the eye to land. So each field has ONE subject on a 2x2 of the
+       lattice, the ring of cells touching it are branches at an intermediate
+       size, and everything beyond is the field.
+
+       ⚠️ Three sizes, and they are decided by POSITION, not by a cycle. This
+       file's own rule is that marks are near enough one size, because marks of
+       different sizes read as marks at different DISTANCES and the field goes
+       three-dimensional. That rule is about size varying arbitrarily across a
+       field; a subject with its branches around it is a local hierarchy, which
+       reads as composition instead. Size scattered = depth; size organised
+       around a centre = a centre. */
+    var TIER_BRANCH = 1.34, TIER_FIELD = 1;
+    function tierOf(r, c) {
+      if (leadR < 0) return TIER_FIELD;
+      var dr = Math.max(leadR - r, 0, r - (leadR + 1));
+      var dc = Math.max(leadC - c, 0, c - (leadC + 1));
+      return (dr <= 1 && dc <= 1) ? TIER_BRANCH : TIER_FIELD;
+    }
+
+    var placed = [], r, c, i;
+    for (r = 0; r < rows; r++) {
+      for (c = 0; c < cols; c++) {
+        if (leadR >= 0 && isLead(r, c)) {
+          if (r === leadR && c === leadC) {
+            placed.push({ x: (c + 1) * cw, y: (r + 1) * ch, name: opt.lead,
+                          k: 1, cell: Math.min(cw, ch) * 2, lead: true, band: 0, tier: 1 });
+          }
+          continue;
+        }
+        /* ⚠️ A small, CYCLIC offset off the lattice point — the courses stay
+           legible as courses, but the field stops reading as ruled paper. The
+           two periods are coprime (5 against 7, and both against the 3-phase
+           row offset), so 105 cells pass before a cell repeats its own
+           displacement: ordered, and never a visible second grid. Random
+           jitter would re-deal on every navigation and read as a fault, the
+           same reason the brush steps its wobble by index and does not roll
+           for it. The amplitude is a fraction of the clearance the lattice
+           already guarantees, so nothing can be jittered into a neighbour. */
+        var jx = ((idxOf(r, c) % 5) - 2) / 2 * cw * 0.11;
+        var jy = ((idxOf(r, c) % 7) - 3) / 3 * ch * 0.10;
+        var x = (c + 0.5 + OFFSETS[r % 3]) * cw + jx;
+        if (x > w - cw * 0.2) continue;          /* the row's overhang */
+        var y = (r + 0.5) * ch + jy;
+
+        /* figure-ground: the ground thins toward the type, it does not stop */
+        var near = 1;
+        for (i = 0; i < avoid.length; i++) {
+          var b = avoid[i];
+          var ox = Math.max(b.x - x, 0, x - (b.x + b.w));
+          var oy = Math.max(b.y - y, 0, y - (b.y + b.h));
+          near = Math.min(near, Math.min(1, Math.hypot(ox, oy) / soft));
+        }
+
+        /* next motif that is not already in this cell's neighbourhood — the
+           one thing kept from the blue-noise rule, and the only one that
+           mattered: a motif must not turn up next to itself */
+        var name = null;
+        for (i = 0; i < deck.length; i++) {
+          var cand = deck[DEAL % deck.length];
+          var clash = placed.some(function (p) {
+            return p.name === cand && Math.abs(p.x - x) < cw * 2.5 && Math.abs(p.y - y) < ch * 2.5;
+          });
+          DEAL++;
+          if (!clash) { name = cand; break; }
+        }
+        if (!name) continue;
+        placed.push({ x: x, y: y, name: name, k: near, tier: tierOf(r, c),
+                      cell: Math.min(cw, ch), band: placed.length % bands });
+      }
+    }
+
+    var out = [], g;
+    for (g = 0; g < bands; g++) out[g] = "";
+    placed.forEach(function (p, idx) {
+      var d = M.phenomena[p.name] && M.phenomena[p.name]();
+      if (!d) return;
+      /* sized to its cell, so nothing can reach a neighbour: the lattice is
+         the clearance */
+      var sc = (p.cell * (opt.fill || 0.52) * (p.tier || 1)) / (motifRadius(p.name) * 2);
+      /* ⭐⭐ A mark is not a bare stroke on a flat field — it has a BACKGROUND
+         of its own: two haloes hugging its own silhouette, in two other
+         colours, then the ink on top. Dilating the same path with a thick
+         round-joined stroke is what produces a backing that follows the shape
+         exactly, the way a cut-paper flower stacks one colour inside another.
+         Three concentric zones is the whole difference between a motif and a
+         doodle, and it is where the colour layering lives.
+
+         ⭐⭐ FOUR plates, not one. Every mark's two rings are printed in two of
+         them, and every nth mark has its ink pulled onto a plate as well, so a
+         field is a four-colour press rather than a key plus one spot. The
+         groups have the colour for it: measured over the catalogue, steps that
+         are FAR APART carry genuinely different hues (3↔6 is 128°, 4↔7 116°),
+         while adjacent steps are the same hue wearing different lightnesses
+         (3↔4 is 6°, 6↔7 is 6°). CSS names which steps; this only says which
+         plate each mark is on.
+
+         ⚠️ The cycle is deterministic and its length is coprime with the
+         lattice's 3-phase offsets — 4 against 3 means twelve marks before a
+         plate lands on the same phase again, so the colour never falls into
+         vertical stripes. Per-instance random would re-deal on every
+         navigation, which reads as a rendering fault; this is the same rule as
+         the brush's `index mod 3` and the contour drift. */
+      var accent = opt.accentEvery && (idx % opt.accentEvery === opt.accentEvery - 1);
+      var plate = idx % 4;
+      out[p.band] += '<g data-ph="' + p.name + '" data-plate="' + plate
+        + '" transform="translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1)
+        + ') scale(' + sc.toFixed(4) + ')" opacity="'
+        + (p.lead ? 1 : (0.42 + 0.5 * p.k)).toFixed(3) + '"'
+        + '><g class="ph-m">'
+        + '<path class="ph-back" d="' + d + '"/>'
+        + '<path class="ph-mid" d="' + d + '"/>'
+        + '<path class="ph-ink' + (accent ? ' is-accent' : '') + '" d="' + d + '"/>'
+        + '</g></g>';
+    });
+    var svg = "";
+    for (g = 0; g < bands; g++) {
+      svg += '<g class="ph-drift ph-drift-' + g + '" fill="currentColor">' + out[g] + '</g>';
+    }
+    return { markup: svg, count: placed.length,
+             used: placed.reduce(function (m, p) { m[p.name] = 1; return m; }, {}) };
+  }
+
+  /* ── a field behind a carrier that already has content ────────────────────
+     [data-scatter] replaces a cell's contents; this puts a field BEHIND one
+     that already has some. The text boxes are measured at runtime and handed
+     to the placement as avoid regions, so the ground thins toward the type
+     wherever the type happens to be — which on these cards is a different
+     corner every time. */
+  /* ── colonies ─────────────────────────────────────────────────────────────
+     A patch of the lattice filling the part of a text block the type does not
+     use. Same generator, same order, same clearance — it is the field, cropped
+     to a region, not a different kind of thing. */
+  /* ⭐ The patch is a RECTANGLE, and a slightly different one on every block.
+     A colony that exactly fills its cell squares the block off — which was the
+     point when the job was to make a 2:1 block read as a square — but thirteen
+     blocks each squared off the same way is a table again. Insetting the patch
+     by a small, per-block, asymmetric amount turns each into its own rectangle,
+     offset inside its cell. The insets are a cyclic table, not a roll: the
+     patch must be the same shape on every visit.
+
+     ⚠️ Insets on ONE axis at a time plus a small nudge on the other. Inset both
+     equally and the patch is a smaller square in the middle of the cell — the
+     shape has not changed, only the scale, and the eye reads it as the same
+     thing again. */
+  var COLONY_BOX = [
+    [.00, .00, 1.00, .86],  [.06, .00, .94, 1.00], [.00, .09, 1.00, .91],
+    [.00, .00, .88, 1.00],  [.04, .05, .96, .89],  [.00, .04, .93, .96]
+  ];
+
+  function colonies() {
+    [].slice.call(document.querySelectorAll(".ab-colony")).forEach(function (host, i) {
+      var W = Math.round(host.clientWidth), H = Math.round(host.clientHeight);
+      if (W < 40 || H < 40) { host.innerHTML = ""; return; }
+      var box = COLONY_BOX[i % COLONY_BOX.length];
+      var ox = Math.round(box[0] * W), oy = Math.round(box[1] * H);
+      var w = Math.max(30, Math.round((box[2] - box[0]) * W));
+      var h = Math.max(30, Math.round((box[3] - box[1]) * H));
+      var field = scatterField(w, h, {
+        seed: 20260830 + i * 5209,
+        accentEvery: 7,
+        /* ⭐ A colony has a subject like any other field. Without one it is a
+           patch of even marks — a border, with nowhere for the eye to land,
+           which is what "there is no centre" was pointing at. The motif is the
+           block's own declared centre where it has one, so the choice stays a
+           decision rather than whatever the deal turned up. */
+        lead: host.getAttribute("data-centre") || nextMotif(),
+        leadAt: [.30, .58, .38, .66][i % 4],
+        /* denser than a whole texture block, because a colony is small and a
+           handful of marks in it would read as three stray dots rather than as
+           a patch of ground */
+        pitch: Math.max(26, Math.sqrt(w * h) / 5.2),
+        fill: 0.48
+      });
+      host.innerHTML = M.svg('<g transform="translate(' + ox + ' ' + oy + ')">' + field.markup + '</g>',
+        "0 0 " + W + " " + H, 'preserveAspectRatio="none"');
+    });
+  }
+
+  /* ── a horizon: day and night ─────────────────────────────────────────────
+     ⭐⭐ Not stripes. The banded sky was a sunset drawn as four flat bars, and
+     four bars of colour is a swatch card standing behind a mountain. What a sky
+     actually gives a page is a TIME OF DAY: the sun comes up in the east, goes
+     down in the west, the moon takes its place, and the light changes with it.
+     So the sky is one flat field with one body in it, and the two horizon
+     blocks are opposite halves of the same day — one lit, one dark — trading
+     places every time the colour group turns.
+
+     ⭐ The body walks its arc across successive turns, not within one. The
+     engine publishes the raw slot count, so the sun is a little further west
+     each time the palette changes and the whole thing reads as one day passing
+     rather than as two pictures being swapped. Nothing animates per frame: this
+     is the same hold-then-change the range itself uses.
+
+     ⚠️ Day/night comes from the SLOT, not from the group's index. Keying it to
+     which card is up would let a visitor arriving mid-schedule sit in the same
+     half of the day for a long run; the slot always alternates.
+
+     ⚠️ Sun and moon are the catalogue's own motifs, not new circles. Every
+     other drawn thing on these routes is in the range's hand, and a plain
+     geometric disc here would be the one element that is not.
+
+     ⚠️ Every painted piece carries a CSS class and takes its colour from a
+     token — no fill="" attributes. A presentation attribute cannot resolve
+     var(), so a colour written there is frozen out of the 114-group rotation.
+
+     ⚠️ A horizon and a colony are alternatives, never both — one carrier, one
+     figure. A block with marks AND a skyline is two pictures in one box. */
+  var ARC_STOPS = 7;   /* turns to cross the sky; coprime with the 2-slot day */
+
+  function horizonScene(host, i, slot) {
+    var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+    if (w < 40 || h < 40) { host.innerHTML = ""; return; }
+    var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
+
+    /* the two blocks are opposite halves of the day */
+    var night = ((slot + i) % 2) === 1;
+    host.setAttribute("data-phase", night ? "night" : "day");
+
+    /* east to west, along a shallow arc whose peak is off-centre so the body is
+       never dead centre over the ridge — §3's rule that the division nearest
+       the middle must not land on it.
+
+       ⚠️ The arc stays ABOVE the ridge line. The range's highest peak sits at
+       base0 - amp = .30 of the block, and the first version ran the arc down to
+       .46 — so at either end of the day the body was drawn behind a mountain
+       and the block looked like it had lost its sun. It also has to keep its own
+       radius clear of the left and right edges, or it is clipped at dawn. */
+    var t = (Math.floor(slot / 2) % ARC_STOPS) / (ARC_STOPS - 1);
+    var rr = Math.min(w, h) * (night ? 0.13 : 0.155);
+    var margin = rr * 1.5;
+    var cx = margin + (w - margin * 2) * t;
+    var cy = (0.24 - 0.14 * Math.sin(Math.PI * t)) * h;
+
+    var name = night ? "moon" : "sun";
+    var body = M.phenomena[name] && M.phenomena[name]();
+    var orb = "";
+    if (body) {
+      /* ⭐ The body gets the same backing as every other mark on these routes —
+         a wide round-joined stroke of the same path behind it. A sun drawn as a
+         bare ribbon at this size reads as a scribble on an empty sky; with its
+         own halo it reads as a body with light around it, which is what the
+         reference sheets do and what this route already does everywhere else. */
+      var sc = rr / motifRadius(name);
+      orb = '<g class="hz-orb" transform="translate(' + cx.toFixed(1) + ' ' + cy.toFixed(1)
+        + ') scale(' + sc.toFixed(4) + ')">'
+        + '<path class="hz-halo" d="' + body + '"/>'
+        + '<path class="hz-body" d="' + body + '"/></g>';
+    }
+
+    /* A handful of stars, only at night, on the same lattice discipline as
+       everything else: fixed positions from a small table, never a roll. */
+    var stars = "";
+    if (night) {
+      /* ⚠️ Plain discs, and deliberately so. Everything drawn on these routes is
+         in the range's hand and a perfect circle is the one shape the motif
+         rules ban — but that rule is about MOTIFS, things meant to be
+         recognised as a drawing. A star at 1.2% of the block is a point of
+         light, not a drawing of anything, and a hand-wobbled one at that size
+         is just a dirty pixel. */
+      var ST = [[.14, .13], [.31, .26], [.52, .10], [.68, .22], [.83, .12], [.92, .30], [.22, .35]];
+      for (var s2 = 0; s2 < ST.length; s2++) {
+        var sx = ST[s2][0] * w, sy = ST[s2][1] * h, sr = Math.min(w, h) * .012;
+        if (Math.hypot(sx - cx, sy - cy) < rr * 2.2) continue;   /* not inside the moon */
+        stars += '<circle class="hz-star" cx="' + sx.toFixed(1) + '" cy="' + sy.toFixed(1)
+          + '" r="' + sr.toFixed(2) + '"/>';
+      }
+    }
+
+    /* ── the clouds, which are what actually moves ────────────────────────
+       ⭐⭐ The range on the home page holds STILL and the clouds carry the
+       motion, and that is not a stylistic choice — it was measured: three
+       drifting ridge planes ran at 21fps against 55fps with the ridges stopped
+       and four clouds drifting. A ridge is a path across the whole canvas, so
+       moving one invalidates everything composited over it; a cloud is small
+       and clipped. The same split applies here, so these skylines get the same
+       treatment: ridges nailed down, clouds crossing.
+
+       ⭐ Same cloud, not a lookalike. BWRange publishes the home page's own
+       path, so a cloud on this route is that cloud — body plus its three
+       contour rows, a plane with its own line work, exactly as a ridge is.
+
+       ⚠️ Transform only, and nothing else on the card animates: the red line
+       bans per-frame background-color, filter and backdrop-filter. It is cheap
+       here for the reason the palette crossfade is cheap here — this route has
+       no backdrop-filter anywhere, so there is no blurred region to invalidate.
+
+       ⚠️ Periods are co-prime-ish and each cloud has its own negative delay, so
+       the three never line up into a single passing bar. Same discipline as the
+       drift bands on the mark fields. */
+    var R = window.BWRange;
+    var sky = "";
+    if (R && R.cloudBody) {
+      var CL = [
+        { x: .14, y: .13, s: 1.00, o: .94, dur: 104, delay: 0 },
+        { x: .52, y: .06, s: 0.72, o: .80, dur: 128, delay: -37 },
+        { x: .78, y: .18, s: 1.24, o: .88, dur: 92,  delay: -61 }
+      ];
+      /* ⚠️ Sized off the block's WIDTH, not off min(w,h) with a loose factor.
+         The first version put a cloud 696px across on a 480px block — at that
+         size the silhouette and its three contour rows stop reading as a cloud
+         and read as another bank of banded hills. On the home page a cloud is
+         about a fifth of the canvas; the path is ~116 units wide, so that
+         fraction is what sets the scale here too. */
+      var base = (w * 0.19) / 116;
+      for (var q = 0; q < CL.length; q++) {
+        var c = CL[q], cs = base * c.s;
+        var rows = "";
+        for (var rw = 0; rw < R.cloudRows.length; rw++) {
+          rows += '<path class="hz-cloud-c" d="' + R.cloudContour + '" transform="translate(0 '
+            + R.cloudRows[rw].y + ')"/>';
+        }
+        sky += '<g class="hz-cloud hz-cloud-' + (q + 1) + '" opacity="' + c.o + '"'
+          + ' style="animation-duration:' + c.dur + 's;animation-delay:' + c.delay + 's">'
+          + '<g transform="translate(' + (c.x * w).toFixed(1) + ' ' + (c.y * h).toFixed(1)
+          + ') scale(' + cs.toFixed(3) + ')">'
+          + '<path class="hz-cloud-b" d="' + R.cloudBody + '"/>' + rows
+          + '</g></g>';
+      }
+    }
+
+    host.innerHTML = M.svg(
+      /* ⚠️ Stars go BEHIND the clouds. Drawn after them a star sits on top of a
+         cloud, which is the one thing a night sky cannot do. */
+      '<rect class="hz-sky" x="0" y="0" width="' + w + '" height="' + h + '"/>' + stars + sky + orb
+        + M.landscape(seed, w, h,
+            { layers: 5, silhouette: true, base0: .56, baseSpan: .30, amp: .26, ampNear: .13 }),
+      "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+  }
+
+  function horizons() {
+    var slot = parseInt(document.documentElement.dataset.bwPaletteSlot, 10) || 0;
+    [].slice.call(document.querySelectorAll("[data-horizon]")).forEach(function (host, i) {
+      horizonScene(host, i, slot);
+    });
+  }
+
+  /* Redraw on every turn of the palette clock — that is what makes it a day
+     rather than a still. Only the two horizon blocks are touched. */
+  window.addEventListener("bw:palettechange", function () { horizons(); });
+
+  function backdrops() {
+    [].slice.call(document.querySelectorAll("[data-scatter-bg]")).forEach(function (host, i) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 40 || h < 40) return;
+      var slot = host.querySelector(":scope > .bk-art");
+      if (!slot) {
+        slot = document.createElement("div");
+        slot.className = "bk-art";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+      var base = host.getBoundingClientRect();
+      var avoid = [];
+      [].slice.call(host.querySelectorAll("h1,h2,h3,p,li,button,textarea,input,select,label,a,.mt-hint,.mt-meta"))
+        .forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.width < 2 || r.height < 2) return;
+          avoid.push({ x: r.left - base.left, y: r.top - base.top, w: r.width, h: r.height });
+        });
+      var strength = parseFloat(host.getAttribute("data-scatter-bg")) || 1;
+      slot.innerHTML = M.svg(
+        blendField(w, h, {
+          seed: 20260829 + i * 6317,
+          /* ⚠️ Capped. A backdrop host can be the whole page column, and a
+             pitch derived from its short side then draws marks several times
+             the size of the ones on the cards. */
+          pitch: Math.max(56, Math.min(130, Math.min(w, h) / 4.6)),
+          avoid: avoid
+        }), "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+      slot.style.opacity = strength;
+    });
+  }
+
+
+  /* ── a texture block ──────────────────────────────────────────────────────
+     One layer. Nothing under it, nothing over it.
+
+     ⚠️ This used to draw a contour field and then lay phenomena on top of it,
+     and that was the fault: two textures in one carrier read as two textures in
+     one carrier, however quiet the lower one is. A carrier gets contour lines
+     OR marks, never both. The pages already have contour cells of their own —
+     those stay exactly as they are, and they are one layer too.
+
+     ⭐ Sparse and large, which is the other half. Small marks at even spacing
+     across a surface stop reading as objects and start reading as printed
+     cloth; that comes from size and density, not from the placement law. Few
+     enough to look at one at a time, big enough to recognise, and — since the
+     clearance test above uses each motif's real drawn radius — never touching. */
+  function blendField(w, h, opt) {
+    opt = opt || {};
+    return scatterField(w, h, {
+      seed: opt.seed || 20260829,
+      lead: opt.lead || null,
+      leadAt: opt.leadAt,
+      leadScale: opt.leadScale,
+      /* ⚠️ From the geometric mean, not the short side. A wide, shallow block
+         has a small short side, so min(w,h) drives the pitch down and the marks
+         come out small and dense — the calico again, arrived at through the
+         block's proportions rather than through the setting. */
+      pitch: opt.pitch || Math.max(30, Math.sqrt(w * h) / 7.4),
+      same: opt.same || 3.2,
+      any: opt.any || 1.15,
+      avoid: opt.avoid || [],
+      scale: opt.scale || 2.05,
+      bands: opt.bands || 3
+    }).markup;
+  }
+
+  window.BWBlocks = { render: all, dither: ditherField, scatter: scatterField,
+                      blend: blendField, backdrops: backdrops,
+                      colonies: colonies, horizons: horizons, svg: M.svg };
 
   /* Re-render on resize so the pattern keeps its density rather than being
      stretched — a scaled vesica row is a different motif from a denser one. */
   var t = 0;
-  addEventListener("resize", function () { clearTimeout(t); t = setTimeout(all, 140); });
+  addEventListener("resize", function () {
+    clearTimeout(t);
+    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); }, 140);
+  });
+  /* After layout, not during it: the avoid boxes are measured from the live
+     text, so this has to run once the cards have their real size. */
+  function afterLayout() { backdrops(); colonies(); horizons(); }
+  if (document.readyState === "complete") afterLayout();
+  else addEventListener("load", afterLayout);
 }());
