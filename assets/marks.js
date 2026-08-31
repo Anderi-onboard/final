@@ -99,7 +99,11 @@
            a ridge and the picture reads as a mistake rather than as a place.
            Layered flat colour is also what the references do: cut paper, one
            tone stopping where the next begins. */
-        out += '<path class="hz-land hz-l' + (i + 1) + '" d="' + top + ' L' + w + ' ' + h + ' L0 ' + h
+        /* `scene` is the same masses under a different set of class names, so a
+           quiet painted ground and a picture-contrast skyline can be toned
+           independently by the sheets that own them. */
+        var cls = opts.scene ? 'sc-land sc-l' : 'hz-land hz-l';
+        out += '<path class="' + cls + (i + 1) + '" d="' + top + ' L' + w + ' ' + h + ' L0 ' + h
           + ' Z" fill="currentColor" opacity="' + (0.24 + t * 0.64).toFixed(3) + '"/>';
         continue;
       }

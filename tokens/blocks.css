@@ -196,6 +196,54 @@ body.blocks-route .bk-art svg { width: 100%; height: 100%; display: block; }
 /* and the content rides above it */
 body.blocks-route :is(.mt-card, .bk-cell, .ab-block) > :not(.bk-art) { position: relative; z-index: 1; }
 
+/* ── a painted ground behind the type ─────────────────────────────────────
+   ⭐ Four masses of the range, toned a few hundredths of lightness off the
+   card's own fill. That closeness is the whole point: the reference bands are
+   pictures the words lie ON, not pictures the words compete with, and the same
+   landscape at picture contrast here would be the wallpaper this route has
+   twice been rescued from.
+
+   ⚠️ The step is towards the card's INK, so it works the same way round on a
+   deep card and a pale one — the direction is per fill role, exactly as the
+   mark rings and the method page's control fields are. */
+body.blocks-route [data-scene] { position: relative; overflow: hidden; --sc-dir: 1; }
+body.blocks-route [data-scene]:is([data-fill="bone"], [data-fill="cream"],
+  [data-fill="ochre"], [data-fill="dusty"]) { --sc-dir: -1; }
+.bk-scene { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bk-scene svg { width: 100%; height: 100%; display: block; }
+.sc-land { opacity: 1; }
+.sc-l1 { fill: var(--sc-1); }
+.sc-l2 { fill: var(--sc-2); }
+.sc-l3 { fill: var(--sc-3); }
+.sc-l4 { fill: var(--sc-4); }
+body.blocks-route [data-scene] {
+  --sc-1: var(--bk-fill); --sc-2: var(--bk-fill);
+  --sc-3: var(--bk-fill); --sc-4: var(--bk-fill);
+}
+@supports (color: oklch(from red l c h)) {
+  body.blocks-route [data-scene] {
+    /* ⚠️ The deepest mass was .115 off the fill, and the composited sweep found
+       a 14px label at 3.51:1 on group 001 — the ground under that word was no
+       longer the fill the analytic sweep had checked, which is exactly the gap
+       the pixel sweep exists to close. Pulled in so the worst step can never
+       move the ground far enough to matter. */
+    /* ⚠️⚠️ The ramp runs the OTHER WAY: the far mass at the top is the strongest
+       and the near one at the foot is nearest the fill. Built the obvious way
+       round — deepest at the front — the darkest band piles up along the bottom
+       edge, which is exactly where the card's hint sits, and the composited
+       sweep found it at 3.51:1. Shrinking every step only moved it to 4.19.
+       The variation belongs where nothing is read: the top of the card carries
+       only display type, which is large enough to clear AA at 3:1, while the
+       foot stays close to the colour the labels were measured against. This is
+       the same lesson the block gradient taught — brighten where no one is
+       reading. */
+    --sc-1: oklch(from var(--bk-fill) calc(l + var(--sc-dir) * .075) c h);
+    --sc-2: oklch(from var(--bk-fill) calc(l + var(--sc-dir) * .054) c h);
+    --sc-3: oklch(from var(--bk-fill) calc(l + var(--sc-dir) * .032) c h);
+    --sc-4: oklch(from var(--bk-fill) calc(l + var(--sc-dir) * .014) c h);
+  }
+}
+
 /* ── a mark has its own background ────────────────────────────────────────
    ⭐⭐ This is what "a block should have a background" turned out to mean: not
    a graded box, but a BACKING BEHIND THE MARK. The same path is drawn three

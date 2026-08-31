@@ -577,6 +577,47 @@
     { at: .92, s: 0.85, o: .26 }
   ];
 
+  /* ── a painted ground ─────────────────────────────────────────────────────
+     ⭐⭐ The reference sheets do not put type on a flat panel — the whole band
+     IS a picture, softly painted, and the words lie on it. Five cards on the
+     method page carried no art whatsoever, including all three of the big
+     959x480 step cards, so they were a flat colour field with one line in the
+     middle. That is the emptiness.
+
+     ⭐ This is the range's own landscape, drawn very quietly: four masses, no
+     contour lines, in tones a few hundredths of lightness from the card's own
+     fill. Loud enough to be a place, quiet enough that it never competes with
+     the sentence in front of it — which is what "blends in naturally" means. A
+     picture at picture contrast here would be the wallpaper problem again.
+
+     ⚠️ Still. The ridges do not drift, for the reason measured on the home page
+     and on the skylines: a ridge spans its whole canvas, so moving one
+     re-rasters everything above it. A step card wants to be calm anyway.
+
+     ⚠️ One carrier, one texture. Only cards with no other art get a scene —
+     the rule this route has held since the contour/mark split. */
+  function scenes() {
+    [].slice.call(document.querySelectorAll("[data-scene]")).forEach(function (host, i) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 60 || h < 60) return;
+      var slot = host.querySelector(":scope > .bk-scene");
+      if (!slot) {
+        slot = document.createElement("div");
+        /* ⚠️ .bk-art too — `… > :not(.bk-art)` at (0,3,1) forces
+           position:relative on anything else, which turns an art layer into a
+           grid item. Already paid for once with the spill layer. */
+        slot.className = "bk-art bk-scene";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+      var seed = 20260831 + (parseInt(host.getAttribute("data-scene"), 10) || 1) * 6421;
+      slot.innerHTML = M.svg(
+        M.landscape(seed, w, h, { layers: 4, silhouette: true, scene: true,
+                                  base0: .58, baseSpan: .26, amp: .22, ampNear: .11 }),
+        "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
   function spills() {
     [].slice.call(document.querySelectorAll("[data-spill]")).forEach(function (host, i) {
       var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
@@ -899,11 +940,11 @@
   var t = 0;
   addEventListener("resize", function () {
     clearTimeout(t);
-    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); spills(); }, 140);
+    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); spills(); scenes(); }, 140);
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  function afterLayout() { backdrops(); colonies(); horizons(); spills(); }
+  function afterLayout() { backdrops(); colonies(); horizons(); spills(); scenes(); }
   if (document.readyState === "complete") afterLayout();
   else addEventListener("load", afterLayout);
 }());
