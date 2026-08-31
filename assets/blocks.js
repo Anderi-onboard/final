@@ -547,6 +547,85 @@
     [.00, .00, .88, 1.00],  [.04, .05, .96, .89],  [.00, .04, .93, .96]
   ];
 
+  /* ── the artwork crosses the seam ─────────────────────────────────────────
+     ⭐⭐ In the reference sheets the picture is not in a box beside the words —
+     the cat's tail runs THROUGH the text column and the wash behind the
+     sentence comes off the same brush as the fruit. Text and image share one
+     field. Here they were strictly separate tiles, which is the opposite read,
+     and filling the text blocks with marks instead was the wallpaper that made
+     the page unreadable.
+
+     ⭐ So a text block that TOUCHES a picture block gets a few marks hugging
+     that shared edge, deliberately cropped by it, so they read as continuing
+     out of the neighbour rather than as decoration of their own. Three marks,
+     large, and nowhere near the type — the point is a seam that leaks, not a
+     field that fills.
+
+     ⚠️ Large and few, never small and many. Small marks spread over a block is
+     the calico this page has already been rescued from twice; the reference's
+     interaction works because ONE big shape crosses the join. */
+  /* ⚠️ Spaced so they cannot touch. The first version put three marks at .06 /
+     .42 / .78 of the height at up to 1.34 scale — the checker found 11
+     overlapping pairs, because a spill was being placed by eye while every
+     other mark on this route gets its clearance from the lattice by
+     construction. Widest radius here is .22 x min(w,h) / 2 x 1.25, and the
+     closest centres are .42 of the height apart, so the gap holds on any block
+     this route produces. */
+  var SPILL = [
+    { at: .08, s: 1.00, o: .30 },
+    { at: .50, s: 1.25, o: .22 },
+    { at: .92, s: 0.85, o: .26 }
+  ];
+
+  function spills() {
+    [].slice.call(document.querySelectorAll("[data-spill]")).forEach(function (host, i) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 120 || h < 120) return;
+      var side = host.getAttribute("data-spill");           /* which edge it shares */
+      var slot = host.querySelector(":scope > .bk-spill");
+      if (!slot) {
+        slot = document.createElement("div");
+        /* ⚠️ .bk-art as well as .bk-spill. `body.blocks-route :is(…, .ab-block) >
+           :not(.bk-art)` is (0,3,1) and forces position:relative on anything
+           that is not .bk-art — so a differently-named absolute layer becomes a
+           grid ITEM and adds a row. It grew the page by 635px. This route
+           already has a name for "the art layer that is not in the flow"; use
+           it rather than inventing a second one the rules do not know. */
+        slot.className = "bk-art bk-spill";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+      /* ⚠️⚠️ A CURSOR walking the edge by measured radii, not three fractions of
+         the height. Placing by eye put 11 overlapping pairs on the page, and
+         nudging the fractions still left 4 — the lesson this route already
+         wrote down for the in-flow figures: even fractions are not even
+         clearances, because the motifs have very different aspect ratios. Each
+         mark advances the cursor by its own radius plus the gap plus the next
+         one's radius, so not overlapping is arithmetic rather than a check. */
+      var unit = Math.min(w, h) * 0.22, out = "";
+      var gap = unit * 0.30, cursor = h * 0.06;
+      for (var k = 0; k < SPILL.length; k++) {
+        var c = SPILL[k], name = nextMotif();
+        var d = M.phenomena[name] && M.phenomena[name]();
+        if (!d) continue;
+        var sc = (unit * c.s) / (motifRadius(name) * 2);
+        var rad = motifRadius(name) * sc;              /* the radius as drawn */
+        if (cursor + rad > h) break;                    /* no room left: stop */
+        /* sat ON the edge, so the block's own overflow does the cropping */
+        var x = side === "left" ? 0 : w;
+        var y = cursor + rad;
+        cursor = y + rad + gap;
+        out += '<g data-ph="' + name + '" data-plate="' + (k % 2) + '" opacity="' + c.o + '"'
+          + ' transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1)
+          + ') scale(' + sc.toFixed(4) + ')"><g class="ph-m">'
+          + '<path class="ph-back" d="' + d + '"/>'
+          + '<path class="ph-mid" d="' + d + '"/>'
+          + '<path class="ph-ink" d="' + d + '"/></g></g>';
+      }
+      slot.innerHTML = M.svg(out, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
   function colonies() {
     [].slice.call(document.querySelectorAll(".ab-colony")).forEach(function (host, i) {
       var W = Math.round(host.clientWidth), H = Math.round(host.clientHeight);
@@ -820,11 +899,11 @@
   var t = 0;
   addEventListener("resize", function () {
     clearTimeout(t);
-    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); }, 140);
+    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); spills(); }, 140);
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  function afterLayout() { backdrops(); colonies(); horizons(); }
+  function afterLayout() { backdrops(); colonies(); horizons(); spills(); }
   if (document.readyState === "complete") afterLayout();
   else addEventListener("load", afterLayout);
 }());

@@ -91,12 +91,40 @@
      strength. --glow-on-paper matters more than it used to: the white plates
      behind on-landscape type are gone, so the halo the glyph throws in its own
      colour is now the only thing separating it from the ridge behind it. */
+  /* ⚠️⚠️ NOT WHITE any more. A white halo behind coloured type is a white edge
+     drawn around every letter — and white is the one colour on the block routes
+     that does not rotate with the 114 groups, on pages whose whole material
+     rule is flat palette colour. What separates the type instead is the
+     group's OPPOSING hue: the engine already picks two hues per card that
+     measure 161° apart, and a block filled from one of them gets its glow from
+     the other. Legibility from colour contrast rather than from a rim of
+     light. Fallback stays neutral so a browser without relative colour, or a
+     card with only one hue, loses the effect rather than the text. */
   --glow-on-color:
-    0 0 .05em rgb(255 255 255 / .52),
-    0 0 .30em rgb(255 255 255 / .34);
+    0 0 .05em rgb(255 255 255 / .30),
+    0 0 .30em rgb(255 255 255 / .18);
   --glow-on-paper:
     0 0 .06em color-mix(in srgb, currentColor 38%, transparent),
     0 0 .34em color-mix(in srgb, currentColor 24%, transparent);
+}
+
+/* The opposing hue, per block. A block that takes hue A glows in B and vice
+   versa, so the halo is always the colour furthest from the ground it sits on.
+   Lightness is pinned away from the fill's band — the glow has to read against
+   the block, not melt into it. */
+@supports (color: oklch(from red l c h)) {
+  body.blocks-route :is([data-fill="dusty"], [data-fill="olive"], [data-fill="brick"]) {
+    --glow-hue: var(--bw-hue-b, #C79A55);
+  }
+  body.blocks-route :is([data-fill="ochre"], [data-fill="teal"], [data-fill="clay"],
+                        [data-fill="bone"], [data-fill="cream"]) {
+    --glow-hue: var(--bw-hue-a, #5A6B45);
+  }
+  body.blocks-route [data-fill] {
+    --glow-on-color:
+      0 0 .05em oklch(from var(--glow-hue) .62 clamp(.10, c, .21) h),
+      0 0 .26em oklch(from var(--glow-hue) .54 clamp(.09, c, .19) h);
+  }
 }
 
 /* Glass routes: woven headings and the display numerals. The numerals are the
