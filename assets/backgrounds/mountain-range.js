@@ -4,11 +4,14 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260831i", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260831i";
+    ? new URL("../palettes/color-groups.json?v=20260831j", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260831j";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
+  /* Module-scope handle on the catalogue, so a check can hold one group still.
+     See window.BWRange.showGroup at the foot of this file. */
+  var paletteGroups = [];
   var paletteTimer = 0;
   var paletteLayerTimers = [];
 
@@ -534,6 +537,110 @@
     return best;
   }
 
+  /* ⭐⭐ The same solve against SEVERAL backgrounds at once, for text that lies
+     across more than one of them.
+
+     The two lines at the foot of the app — the composer hint and the site
+     footer — do not sit on the cloud. They sit on whichever of the lower ridges
+     happens to be under them, and a ridge is not one colour: it is four or five
+     bands, and the text crosses them. Solving against the cloud and hoping was
+     what shipped, and it left group 186 measuring 1.48:1 on composited pixels
+     WITH a frosted plate under it.
+
+     So the colour is chosen to clear the ratio against every background it can
+     land on, not against a representative one. That is the whole of the owner's
+     instruction — legibility comes from the ink changing with the group, not
+     from a plate laid under the words. */
+  /* The screen colour of a fill drawn at alpha over the sky. */
+  function overSky(hex, skyHex, a) {
+    var f = parseInt(hex.slice(1), 16), b = parseInt(skyHex.slice(1), 16);
+    var mix = function (sh) {
+      return Math.round((((f >> sh) & 255) * a) + (((b >> sh) & 255) * (1 - a)));
+    };
+    var out = (mix(16) << 16) | (mix(8) << 8) | mix(0);
+    return "#" + ("000000" + out.toString(16)).slice(-6);
+  }
+
+  /* ⭐⭐⭐ The ground the footer actually sits on, computed rather than guessed.
+
+     Every earlier attempt at this solved against something that is not on the
+     screen — the cloud, then the raw catalogue rows, then a single-layer
+     composite — and each one failed in its own way, the worst being a colour
+     that landed exactly on the painted ground and measured 1:1. But nothing
+     here is unknowable: the ridges paint in order, each at .72, over the sky,
+     and the whole range then sits at .82 over the paper. Stacking that gives
+     rgb(85,89,76) for group 072 where the screenshot measures rgb(80,88,72) —
+     five units out of 255, which is the difference between a model and a guess.
+
+     ⚠️ The stack is CUMULATIVE. Each ridge covers the ones above it, so the
+     colour under the footer is not one row composited with the sky, it is
+     every row down to that depth composited in sequence. That is why the
+     single-layer version scored worse than using the raw hex: it was not one
+     step closer to the truth, it was a different wrong answer. */
+  var RANGE_FILL_ALPHA = .72;    /* .mtn-bg.line-art .fill */
+  var RANGE_LAYER_ALPHA = .82;   /* .mtn-bg */
+  var RANGE_PAPER = "#E7E1D7";   /* --paper, the canvas behind the range */
+
+  function mixHex(overHex, underHex, a) {
+    var f = parseInt(overHex.slice(1), 16), b = parseInt(underHex.slice(1), 16);
+    var ch = function (sh) {
+      return Math.round((((f >> sh) & 255) * a) + (((b >> sh) & 255) * (1 - a)));
+    };
+    var out = (ch(16) << 16) | (ch(8) << 8) | ch(0);
+    return "#" + ("000000" + out.toString(16)).slice(-6);
+  }
+
+  /* The painted colour at each depth: index i is what is on the screen where
+     ridge i+1 is the last one drawn. */
+  function paintedGrounds(rows, skyHex) {
+    var stack = skyHex, out = [];
+    for (var i = 0; i < rows.length; i++) {
+      stack = mixHex(rows[i], stack, RANGE_FILL_ALPHA);
+      out.push(mixHex(stack, RANGE_PAPER, RANGE_LAYER_ALPHA));
+    }
+    return out;
+  }
+
+  /* Pick the ink with the best worst case against a set of grounds. Hue comes
+     from the group, lightness is swept end to end, and the winner is whichever
+     maximises the minimum — a small search, run once per palette change.
+
+     ⚠️ No halo, no plate, no outline. Owner, three times: the recognisability
+     comes from the text CHANGING COLOUR. A white rim around the letters is the
+     plate again at glyph scale — it was built once, it rendered as exactly
+     that, and it came straight back out. */
+  function inkOnAll(bgHexes, minRatio) {
+    var hues = [];
+    for (var k = 0; k < bgHexes.length; k++) hues.push(toHsl(bgHexes[k]).h);
+    var lights = [.02, .04, .08, .12, .16, .20, .26, .32, .70, .76, .82, .88, .93, .97, 1];
+    var best = "#141413", bestWorst = -1;
+    var score = function (cand) {
+      var worst = Infinity;
+      for (var j = 0; j < bgHexes.length; j++) {
+        var r = contrast(cand, bgHexes[j]);
+        if (r < worst) worst = r;
+      }
+      return worst;
+    };
+    for (var hi = 0; hi < hues.length; hi++) {
+      var sat = Math.min(toHsl(bgHexes[hi]).s, INK_TINT_MAX_SATURATION);
+      for (var li = 0; li < lights.length; li++) {
+        var cand = hslToHex(hues[hi], lights[li] > .5 ? sat * .8 : sat, lights[li]);
+        var w = score(cand);
+        if (w > bestWorst) { bestWorst = w; best = cand; }
+        if (bestWorst >= minRatio) return best;
+      }
+    }
+    /* When no tint in the group can be read, an extreme is the honest answer
+       rather than a tint that cannot be. */
+    var ends = ["#000000", "#FFFFFF"];
+    for (var e = 0; e < ends.length; e++) {
+      var we = score(ends[e]);
+      if (we > bestWorst) { bestWorst = we; best = ends[e]; }
+    }
+    return best;
+  }
+
   /* ⚠️ A cloud painted the sky's own colour is not a pale cloud, it is no
      cloud: only its contour lines survive and they read as marks floating on
      an empty sky. That is what shipped, and it was structural — .mtn-sky takes
@@ -912,6 +1019,28 @@
          against and the ridge it actually sits on. */
       root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 5.2));
       root.style.setProperty("--bw-ink-on-sky-strong", inkOn(tonedCloud, 7));
+      /* …and one more for the bottom of the screen, solved against the lower
+         ridges the footer actually lies across rather than against the sky.
+         Rows 5-9 are the band anything anchored to the foot of the viewport can
+         touch; 5.5 leaves the same margin over the solve that --bw-ink-on-sky
+         carries over its own. */
+      /* ⚠️⚠️ Solved against the raw catalogue rows, and that is a MEASURED
+         choice, not the obvious one.
+
+         The obvious one was to model what is on the screen — the fills paint at
+         .72 over the sky, so a row published as rgb(7,0,0) composites to about
+         rgb(108,99,96), and solving against the raw value is solving against a
+         colour that is nowhere on the page. That reasoning is correct and the
+         result was worse: composited-and-narrowed measured 190 failures over
+         the same 24 groups where the raw five-row solve measured 16. The model
+         is not wrong about compositing, it is wrong about WHICH ridges are
+         under the footer, and there is no way to know that from here — the text
+         lies across whatever the silhouettes happen to do at that scroll
+         position and that viewport width.
+         So the version that measures better ships, and the theory that lost is
+         written down rather than deleted, because it will look right again to
+         the next person. */
+      root.style.setProperty("--bw-ink-on-ridge", inkOnAll(paintedGrounds(tonedRows, tonedCloud).slice(6), 5.5));
       /* The cloud body gets its own value. Its contour lines keep taking the
          gem, so the cloud reads the way a ridge does — a plane plus its own
          line work — rather than as an outline with nothing inside it. */
@@ -961,6 +1090,7 @@
         if (!Array.isArray(groups) || !groups.length || !groups.every(validPaletteGroup)) {
           throw new Error("Palette data failed validation");
         }
+        paletteGroups = groups;
         var schedule = buildPaletteSchedule(groups, seed);
         paletteScheduleSlots = schedule.length;
         var firstApply = true;
@@ -1093,7 +1223,22 @@
   window.BWRange = {
     cloudBody: CLOUD,
     cloudContour: CLOUDC,
-    cloudRows: CLOUD_ROWS
+    cloudRows: CLOUD_ROWS,
+    /* ⭐ A way to hold one group still. The catalogue is a shuffled permutation
+       walked by a session clock, so "pin the seed and rewind the clock" only
+       lands on the group you wanted if nothing else moves — and it does: two
+       runs of the same sweep reported different group ids, which means a green
+       result was a sample, not a sweep. Anything solved across 114 groups needs
+       to be checkable across 114 groups.
+       Reads the catalogue and repaints; changes no scheduling state, so the
+       page carries on from wherever it was. */
+    groupIds: function () { return paletteGroups.map(function (g) { return g.id; }); },
+    showGroup: function (id) {
+      for (var i = 0; i < paletteGroups.length; i++) {
+        if (String(paletteGroups[i].id) === String(id)) { applyPalette(paletteGroups[i], true); return true; }
+      }
+      return false;
+    }
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

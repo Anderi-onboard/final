@@ -464,49 +464,29 @@ body[data-page="app"] .composer-zone { padding-bottom: 24px; z-index: 1; isolati
    float on the range with no material behind them. That is the one text
    context tools/palette-contrast.html never covered: it measures text on glass
    panels, and these sit on the ridges themselves, where a mid-grey crest and
-   --faint are close enough to be unreadable. They get the same neutral-white
-   scrim as every other carrier (never a palette tint — see the glass rules),
-   fading upward so it reads as the chrome lifting off the landscape rather
-   than as a box, and their ink goes up one step to --dim. */
-/* ⭐ The 152px scrim is gone (owner, 2026-08-26: it was covering too much).
-   It never earned its keep anyway — measured across nine groups, the白 .90
-   version it replaced still bottomed out at 2.34:1, because a wash over the
-   range's darkest water is still a mid-tone and the footer sits right on it.
-   What it reliably did was delete the bottom 150px of the mountains.
-   The fog now belongs to the text instead of to the page: each of the two
-   bottom lines carries its own frosted strip, sized to itself. */
-body[data-page="app"] :is(.composer-help, .site-foot) {
-  position: relative;
-  isolation: isolate;
-}
-body[data-page="app"] :is(.composer-help, .site-foot)::before {
-  content: "";
-  position: absolute;
-  inset: -4px -12px;
-  z-index: -1;
-  pointer-events: none;
-  /* No white in it at all — pure filter. The blur takes the ridge detail away
-     and the brightness lifts what is left; nothing is painted over. */
-  -webkit-backdrop-filter: blur(16px) saturate(104%) brightness(1.62);
-  backdrop-filter: blur(16px) saturate(104%) brightness(1.62);
-  /* Masked to nothing at its own edges, so it reads as haze over the range
-     rather than as a chip someone dropped there. A pill radius was the first
-     try and it gave the two lines a hard outline — a shape, which is what a
-     scrim must never be.
-     ⚠️ An ellipse was the second try and it was wrong for a different reason:
-     these are single rows of links, and an ellipse is at zero by the time it
-     reaches the ends of one — the last item in the footer measured 1.84:1
-     sitting just outside it. A row of text wants a BAND that fades at its two
-     ends, not an ellipse that fades everywhere. Two gradients intersected:
-     across, it stays solid until the last few percent; down, it fades on both
-     edges so there is still no line anywhere. */
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 24%, #000 76%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 24%, #000 76%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
+   --faint are close enough to be unreadable. Every wash that has been tried
+   here is recorded below, and every one of them was removed again. */
+/* ⭐⭐⭐ THE FROSTED STRIPS ARE GONE. Owner, for the third time: no white plate
+   under text — legibility comes from the ink changing colour with the group.
+
+   They were not white by declaration ("pure filter", said the note that stood
+   here), but `brightness(1.62)` over a pale sky IS white, and on a phone it
+   rendered as a 215px blur covering the composer, its send button and its
+   model chip. Two separate faults, and the second is the one that settles it:
+
+   - It escaped its own element. `.site-foot` lost its `position: relative`
+     somewhere in the cascade, so the strip took `.composer-zone` as its
+     containing block and computed 414x215 instead of the 382x47 it was drawn
+     for. A scrim whose size depends on winning a specificity contest is not a
+     scrim, it is a leak.
+   - It did not work. Measured on composited pixels across six groups and two
+     viewports, the footer still bottomed out at 1.48:1 on group 186 WITH the
+     plate under it. It covered half the phone screen and bought nothing.
+
+   What replaces it is one line of colour: --bw-ink-on-ridge, solved in
+   mountain-range.js against every lower ridge the text can land on rather than
+   against the sky it does not touch. */
+
 /* The footer is capped at 600px, which on the landing page forces six links
    onto two lines and leaves "Plans & units" alone on the second. It has the
    width; let it use it. */
@@ -516,25 +496,43 @@ body[data-page="app"].is-empty .site-foot { max-width: 860px; }
    the worst reading left on the site. The footer directly below it already
    takes this ink and passes. */
 body[data-page="app"] .composer-help,
-body[data-page="app"] .composer-help span { color: var(--bw-ink-on-sky, var(--ink)); }
+body[data-page="app"] .composer-help span {
+  color: var(--bw-ink-on-ridge, var(--bw-ink-on-sky, var(--ink)));
+}
 /* The footer sits lowest, over the darkest ridge, where even the scrim leaves
    --dim at 3.57:1 against 11px text. It is a row of links, so full ink is the
    honest weight for it anyway. */
 /* The footer sits straight on the landscape, so it takes the palette-derived
    ink rather than a fixed one. Without this it stayed a single brown on all
    114 groups and dropped to 3.7:1 on the darker cards. */
-body[data-page="app"] :is(.site-foot, .site-foot a) { color: var(--bw-ink-on-sky, var(--ink)); }
+body[data-page="app"] :is(.site-foot, .site-foot a) {
+  color: var(--bw-ink-on-ridge, var(--bw-ink-on-sky, var(--ink)));
+}
+
+/* ⚠️⚠️ NO HALO, and this was built and removed inside one sitting. Three
+   concentric blurs of the opposite luminance left 75 of 1824 readings under AA
+   (worst 2.24:1), so it was strengthened into a real eight-offset outline —
+   which measured clean and rendered as DARK TEXT WITH A WHITE RIM. That is the
+   plate again at glyph scale, and it is the exact thing asked about three
+   times. Measuring well is not the test; looking right is also the test, and
+   this repo has written that down before.
+
+   So the ink carries it alone, and inkOnAll searches the group for the colour
+   with the best worst case rather than falling back to near-black. What that
+   cannot buy is stated plainly rather than papered over. */
 
 /* The same fix for the two short glass pages. Their footers sit at y~850 in a
    900px viewport, which is squarely on the range's darkest lower ridges, and
    --faint at 11.5px measured 1.2:1 against them. Scoped to these two because
    they are the pages whose footer always lands over the ridges: a long page
    scrolls its footer onto paper, these never do. */
-html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer {
+html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) :is(footer, footer a) {
   position: relative;
-  color: var(--ink);
+  /* Same answer as the app's own footer: the ink follows the group. A fixed
+     --ink was the previous compromise and it is a single brown across 114
+     groups, which is exactly the case the ridge solve exists for. */
+  color: var(--bw-ink-on-ridge, var(--ink));
 }
-html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer a { color: var(--ink); }
 
 body[data-page="app"] .composer {
   max-width: 720px; min-height: 64px; padding: 8px 8px 8px 12px; gap: 8px;
