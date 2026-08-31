@@ -40,6 +40,69 @@
     decision:  "self",     travel:"self",  general:"self", outlook:"self"
   };
 
+  /* ═══════════ 1b. subjectKey — 问题 → 用神 (deterministic) ═══════════
+
+     WHY THIS EXISTS. CATEGORY_YONGSHEN is a lookup keyed by a category string,
+     and chat-app.js passed the literal "general" for every reading — so
+     CATEGORY_YONGSHEN["general"] = "self" resolved, every time, to 世爻. Every
+     reading this product has produced read the World line as its 用神, whatever
+     was asked, and 原神/忌神/仇神 were derived from that anchor. The reading is
+     then told 「用神 = 世爻」 as an authoritative fact and does what it is told.
+     Measured on a live reading 2026-08-27: 「我明天考科目一能过吗」 came out
+     anchored on 世, never named a 用神, and read 父母 — the exam's own line —
+     as background. It said 「能过」. The asker did not pass.
+
+     Twenty-five of CATEGORY_YONGSHEN's twenty-eight keys were unreachable,
+     including exam:"parent", which is the correct answer for that question.
+
+     WHAT THIS IS. 增删卜易's own 用神 table, executable: the subject of the
+     question picks the line, not the route. Routes choose which prose loads;
+     they are a different taxonomy and a coarser one (nine entries against the
+     book's dozens), and using one for the other is what produced the silent
+     fallback.
+
+     Some 事类 take TWO 用神 and fail if either is weak — 考试 is the one that
+     bit us: 官鬼 is the placement, 父母 is the paper, and 子孙 is 剥官之神. The
+     role network is derived from `key`; `second` and `note` ride along so the
+     reading sees the other half.
+
+     The fallback is still 世爻 — that is correct for 自占 — but it is now
+     REPORTED (`matched:false`) instead of silent. A default that cannot be
+     told apart from a decision is how this went unnoticed for the life of the
+     product. */
+  var SUBJECT_RULES = [
+    { key:"parent",  second:"officer", why:"考试:官鬼为名次录取,父母为成绩卷子;子孙为剥官之神",
+      re:/考试|考试|应试|科目[一二三四]|科一|科二|科三|科四|笔试|面试|复试|初试|统考|高考|中考|考研|考公|考编|考证|驾照|科举|功名|录取|上岸|过不过|能不能过|exam|test|admission|entrance/i },
+    { key:"officer", second:null, why:"功名工作升迁:官鬼为职位、上头、竞争的那一头",
+      re:/工作|求职|职位|升迁|升职|offer|跳槽|辞职|离职|裸辞|调岗|官司|诉讼|打官司|案子|仕途|career|promotion|lawsuit|resign|job/i },
+    { key:"wealth",  second:null, why:"求财生意:妻财为财本",
+      re:/求财|赚钱|挣钱|生意|买卖|投资|股票|收入|工资|财运|开店|囤货|放债|借钱|business|money|invest|profit/i },
+    { key:"officer", second:null, why:"疾病:官鬼为忧神,子孙为解忧之神(近病久病断法相反)",
+      re:/病|生病|疾病|得了|治疗|手术|住院|大夫|医生|吃药|illness|sick|disease|surgery/i },
+    { key:"wealth",  second:null, why:"男占婚恋:妻财为对方",
+      re:/我女朋友|我老婆|我妻子|追女|娶|女方/i },
+    { key:"officer", second:null, why:"女占婚恋:官鬼为对方",
+      re:/我男朋友|我老公|我丈夫|嫁|男方|他会不会|他是不是/i },
+    { key:"output",  second:null, why:"子女、宠物、解厄:子孙",
+      re:/孩子|小孩|儿子|女儿|怀孕|怀上|备孕|生育|胎|宠物|猫|狗|children|pregnan|baby/i },
+    { key:"parent",  second:null, why:"房屋车船文书合同长辈:父母",
+      re:/房|买房|租房|房产|搬家|买车|合同|签约|文书|证书|执照|学业|上学|留学|父母|长辈|house|contract|document|lease/i },
+    { key:"peer",    second:null, why:"同行、合伙、竞争、分我之利者:兄弟",
+      re:/合伙|合作|同事|同行|竞争|对手|分成|拆伙|partner|competitor/i }
+  ];
+
+  /* Returns { key, second, why, matched }. `matched:false` means nothing in the
+     wording named a subject, so 世爻 stands in — a real answer for 自占, and a
+     flag everywhere else. */
+  function subjectKey(question){
+    var q = String(question || "");
+    for (var i=0;i<SUBJECT_RULES.length;i++){
+      var r = SUBJECT_RULES[i];
+      if (r.re.test(q)) return { key:r.key, second:r.second, why:r.why, matched:true };
+    }
+    return { key:"self", second:null, why:"问题没有点出别的主体,按自占取世爻", matched:false };
+  }
+
   /* ═══════════ 2. deriveRoles — 原神/忌神/仇神 by fixed rule ═══════════ */
   // generating order Wood0 Fire1 Earth2 Metal3 Water4
   function elementOfRelative(selfEl, key){
@@ -346,7 +409,7 @@
     ].filter(Boolean).join("\n");
   }
 
-  function buildMessages(board, roles, question, category, gender, lang){
+  function buildMessages(board, roles, question, category, gender, lang, subject){
     var schema = [
       "Return ONLY valid minified JSON, no prose, with EXACTLY these keys:",
       '{',
@@ -376,7 +439,14 @@
     var user = [
       "QUESTION: "+question,
       "CATEGORY: "+(category||"general")+(gender?(" · asker gender: "+gender):""),
-      "Default 用神 prior for this category: "+(CATEGORY_YONGSHEN[category]||"self")+" (override if the wording calls for another).",
+      (subject && subject.matched
+        ? ("用神 · CHOSEN FROM THE QUESTION: " + (YONGSHEN_INFO[subject.key] ? YONGSHEN_INFO[subject.key].cn : subject.key)
+           + (subject.second ? (" + " + (YONGSHEN_INFO[subject.second] ? YONGSHEN_INFO[subject.second].cn : subject.second)
+              + " — BOTH are 用神 here; if either one is weak the matter fails") : "")
+           + "  (" + (subject.why || "") + ")"
+           + "  · Say which line you are reading and why, in the reading itself.")
+        : ("用神 · NOT NAMED BY THE QUESTION — falling back to 世爻 (自占). "
+           + "This is a DEFAULT, not a finding: if the wording does point at a subject, read that line instead and say so.")),
       "",
       "BOARD (authoritative facts):",
       JSON.stringify(distill(board, roles)),
@@ -399,10 +469,13 @@
 
   function interpret(opts){
     opts = opts || {};
-    var board = opts.board, question = opts.question||"", category = opts.category||"general";
+    var board = opts.board, question = opts.question||"";
+    // The subject is read off the question unless a caller names a category.
+    var subject = subjectKey(question);
+    var category = opts.category || subject.key;
     var gender = opts.gender||"", lang = opts.lang||"en";
     // provisional 用神 from category, so the board can paint roles immediately
-    var priorKey = CATEGORY_YONGSHEN[category] || "self";
+    var priorKey = (opts.category && CATEGORY_YONGSHEN[opts.category]) || subject.key || "self";
     var roles = deriveRoles(board, priorKey);
 
     var hasClaude = (typeof window!=="undefined" && window.claude && typeof window.claude.complete==="function");
@@ -410,7 +483,7 @@
       return Promise.resolve(mockReading(board, roles, question, category, lang));
     }
 
-    var built = buildMessages(board, roles, question, category, gender, lang);
+    var built = buildMessages(board, roles, question, category, gender, lang, subject);
     if (opts.systemPrompt) built.system = opts.systemPrompt;
 
     return window.claude.complete({ product:"sortis", system:built.system, messages:built.messages })
@@ -469,6 +542,8 @@
 
   window.BWLiuYaoAI = {
     deriveRoles: deriveRoles,
+    subjectKey: subjectKey,
+    SUBJECT_RULES: SUBJECT_RULES,
     interpret: interpret,
     buildMessages: buildMessages,   // exposed so the user can inspect/replace the prompt
     CATEGORY_YONGSHEN: CATEGORY_YONGSHEN,
