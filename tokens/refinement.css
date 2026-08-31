@@ -1667,3 +1667,105 @@ html[data-skin="paper"] body :is(textarea, select, input[type="text"], input[typ
 html[data-skin="paper"] body :is(input[type="checkbox"]) {
   border-radius: var(--ui-radius-chip);
 }
+
+/* ── the pointer at the very foot of a reading ──────────────────────────────
+   A reading commits to one referent per line and should. The symbol did not
+   stop meaning the rest, though: 兄弟 read as the rival is, on the same board,
+   still whoever takes a cut. This offers the branches the reading did not
+   spend — and offering is the whole design constraint. It sits after the
+   chain, quieter than the chain, in the label face at label size, so it reads
+   as a footnote to the reading rather than a second opinion arguing with it.
+
+   Hover carries the short form through `title`; the click opens the full
+   library. Neither animates: the reading has landed, and the rule everywhere
+   else here is that nothing keeps moving after it does. */
+/* ⚠️ Spacing here is on the 4px ladder, snapped from 22/14/10/7/6/11/13/9/5.
+   tests/style-system.mjs holds the site to that scale — nobody can tell 9px
+   from 8px, and the site read 45 distinct spacing values before it was
+   collected. Every move was 3px or less. */
+.reading-body .xr-maybe-bar {
+  margin: 24px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+}
+.reading-body .xr-maybe-lead {
+  margin: 0 0 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--faint);
+}
+.reading-body .xr-maybe-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reading-body .xr-maybe {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: var(--ctl-compact);
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+  border-radius: var(--ui-radius-chip);
+  background: color-mix(in srgb, var(--paper-raised) 58%, transparent);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--dim);
+  text-align: left;
+  cursor: pointer;
+  /* ⚠️ --dur-base, not .16s. The site collapsed 26 transition durations onto a
+     six-step ladder and tests/style-system.mjs ratchets it; a new literal is a
+     new value on a page rather than a value in the system. 160 → 190ms. */
+  transition: border-color var(--dur-base) var(--ease-out),
+              background var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease-out);
+}
+.reading-body .xr-maybe:hover,
+.reading-body .xr-maybe:focus-visible {
+  border-color: color-mix(in srgb, var(--ink) 24%, transparent);
+  background: color-mix(in srgb, var(--paper-raised) 88%, transparent);
+  color: var(--ink);
+}
+.reading-body .xr-maybe[aria-expanded="true"] {
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+.reading-body .xr-maybe-sym { font-weight: 600; color: var(--ink); }
+.reading-body .xr-maybe-hint { color: var(--faint); }
+.reading-body .xr-maybe:hover .xr-maybe-hint,
+.reading-body .xr-maybe[aria-expanded="true"] .xr-maybe-hint { color: var(--dim); }
+
+.reading-body .xr-lib {
+  margin: 12px 0 0;
+  padding: 12px 16px;
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  border-radius: var(--ui-radius-small);
+  background: color-mix(in srgb, var(--paper-raised) 72%, transparent);
+}
+.reading-body .xr-lib-lead {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--dim);
+}
+.reading-body .xr-lib-row {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.55;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
+}
+.reading-body .xr-lib-row b {
+  flex: 0 0 5.5em;
+  font-weight: 600;
+  color: var(--ink);
+}
+.reading-body .xr-lib[lang="en"] .xr-lib-row b { flex-basis: 9em; }
+.reading-body .xr-lib-row span { color: var(--dim); }
+.reading-body .xr-lib-acts b,
+.reading-body .xr-lib-acts span { color: var(--faint); }

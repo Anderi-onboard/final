@@ -82,11 +82,30 @@ const line = copy.slice(copy.indexOf('upstreamDown:')).split('\n')[0];
 assert.match(line, /nothing was charged/i, 'the 503 line states plainly that nothing was charged');
 assert.match(line, /free reading is still yours/i, 'and that the free reading survived');
 
-// Both failure renderers branch on 503 before falling through to the generic
-// "check the balance" copy, which is the wrong thing to say here.
-assert.equal((chat.match(/status === 503\) msg = C\.errors\.upstreamDown/g) || []).length, 2,
-  'both castFail() and fail() must handle 503 — otherwise the reader is told to check a balance '
-  + 'that was never touched');
+/* 503 must not fall through to the generic "the balance above is already
+   final" copy, which is the wrong thing to say when nothing was generated.
+   This used to count two identical branches, one per renderer. They are now one
+   shared mapper — which is the stronger arrangement, because a status can no
+   longer be handled in the cast path and forgotten in the follow-up path. Check
+   the mapper, and check that both renderers actually go through it. */
+assert.match(chat, /function failureCopy\(/,
+  'the status→copy mapping must live in one place, not be duplicated per renderer');
+const mapper = chat.slice(chat.indexOf('function failureCopy('));
+assert.match(mapper.slice(0, 900), /status === 503\) return C\.errors\.upstreamDown/,
+  '503 must map to upstreamDown, not to the generic mid-stream copy');
+// Count call sites, not the definition — `function failureCopy(status,` matches too.
+assert.equal((chat.match(/msg = failureCopy\(status,/g) || []).length, 2,
+  'both castFail() and the follow-up renderer must resolve their copy through failureCopy');
+
+/* Every status the proxy can answer with needs a branch. 400, 429 and 500 had
+   none: all three rendered the mid-stream billing line, so a reader who hit the
+   rate limit was told to go audit their units. 500 has no branch of its own by
+   design — a generation that failed server-side may still have delivered
+   tokens, so the mid-stream copy is the honest default there. */
+for (const status of ['401', '402', '429', '503', '400']) {
+  assert.match(mapper.slice(0, 900), new RegExp(`status === ${status}\\)`),
+    `failureCopy has no branch for ${status}, so it renders the mid-stream billing copy`);
+}
 
 // ── 5. the free reading is given back when the provider refuses ────────────
 const streamBranch = claude.slice(claude.indexOf('if (!upstream.ok || !upstream.body)'));
