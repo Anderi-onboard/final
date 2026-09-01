@@ -334,7 +334,13 @@
           var subject = (AI.subjectKey ? AI.subjectKey(question) : { key: "self", matched: false });
           var priorKey = (opts.category && AI.CATEGORY_YONGSHEN && AI.CATEGORY_YONGSHEN[opts.category])
             || subject.key || "self";
-          var roles = board._roles || (AI.deriveRoles ? AI.deriveRoles(board, priorKey) : {});
+          /* `board._roles ||` used to sit in front of this call. Nothing in the
+             repo ever writes that property — but it is a read that would
+             silently override the assignment above with roles derived from
+             some other anchor, and defeating a fix by preferring a stale cache
+             is the exact shape of the defect this line was written to repair.
+             A cache with no writer is not an optimisation, it is a trapdoor. */
+          var roles = AI.deriveRoles ? AI.deriveRoles(board, priorKey) : {};
           var built = AI.buildMessages(board, roles, question, opts.category || subject.key, opts.gender, effectiveLang, subject);
           boardData = built.messages[0].content;
           // buildMessages() appends a "Return ONLY valid minified JSON …" output

@@ -180,8 +180,35 @@
 
   /* ═══════════ 3. AI prompt assembly ═══════════
      compact, de-noised board the model actually needs to read. */
-  function distill(board, roles){
+  function distill(board, roles, secondKey){
     var perLine = (roles && roles.perLine) || {};
+    /* ── THE SECOND 用神 HAS TO BE MARKED IN THE DATA, NOT ONLY ANNOUNCED ──
+       Some 事类 take two. 增删卜易 on 功名: 官鬼 is the placement, 父母 is the
+       paper, and either one failing fails the matter. buildMessages says so in
+       the header — 「BOTH are 用神 here」 — and then deriveRoles, which knows
+       exactly one anchor, labelled the second one from the first one's lattice.
+
+       Measured on 我明天考科目一能过吗 (anchor 父母水, second 官鬼金):
+         header:  用神 · 父母 + 官鬼 — BOTH are 用神 here
+         line 3:  "relative":"Pressure (官鬼)", "role":"Support"
+
+       That is not an omission, it is a contradiction, and prose loses to data:
+       the role field is concrete and per-line, the header is one sentence far
+       above it. So the reading takes 官鬼 as background support for 父母 —
+       which is what the failed reading did.
+
+       Marked as a flag rather than by rewriting `role`: the 原/忌/仇/泄 lattice
+       is only coherent from ONE anchor, and a second anchor's lattice would
+       contradict the first at every line. What is true from both anchors at
+       once is just this — this line is also a subject, and this line attacks
+       the other subject. Those two facts, and no synthesis. */
+    var secondEl = null, secondJiEl = null;
+    if (secondKey && secondKey !== roles.yongshenKey && board.ben && board.ben.palace) {
+      secondEl = (secondKey === "self")
+        ? board.lines[board.ben.worldLi].element.gi
+        : elementOfRelative(board.ben.palace.element.gi, secondKey);
+      secondJiEl = (secondEl + 3) % 5;   // 克 second 用神
+    }
     var L = board.lines.map(function(l){
       var r = perLine[l.idx] || { roleEn: "" };
       /* ORDER MATTERS. Every flag here describes THIS line, except the ones
@@ -196,6 +223,11 @@
          reader to infer it from word order. */
       var flags = [];
       if (l.marker) flags.push(l.marker==="self"?"World":"Response");
+      // Identity before condition: what this line IS, then what is happening to it.
+      if (secondEl !== null) {
+        if (l.element.gi === secondEl) flags.push("ALSO-用神(second-subject)");
+        else if (l.element.gi === secondJiEl) flags.push("attacks-second-用神");
+      }
       if (l.void) flags.push("void");
       if (l.dayClash) flags.push("day-clash");
       /* "day-bind" sat next to "month-break" and got read as its twin: two live
@@ -268,6 +300,16 @@
         (fh.length ? "; " + fh.join(", ") : "; no direct fly/hidden feed or control") +
         " — must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too";
     }
+    /* Stated where the anchor is stated, so the two 用神 are never a paragraph
+       apart. The roles below (原/忌/仇/泄) are all measured from the FIRST one;
+       saying so stops the second being read as having no lattice because it
+       has none of its own here. */
+    if (secondEl !== null) {
+      yongStr += "   +   " + secondKey + " — " + ["Wood","Fire","Earth","Metal","Water"][secondEl]
+        + "  (BOTH are 用神. Either one failing fails the matter. Lines carrying it are flagged "
+        + "ALSO-用神(second-subject); lines that control it are flagged attacks-second-用神. "
+        + "The role field below is measured from the FIRST 用神 only.)";
+    }
     /* ── 伏神 roster ────────────────────────────────────────────────────────
        Every 六亲 missing from the six lines lies hidden under a flying line,
        and the block above reports that ONLY when the missing one happens to be
@@ -292,7 +334,19 @@
     var elRole = function (gi) {
       var e = roles.elements || {};
       var k = gi===e.yong?"yong":gi===e.yuan?"yuan":gi===e.ji?"ji":gi===e.chou?"chou":"drain";
-      return (roles.info && roles.info[k]) ? roles.info[k].en + " — " + roles.info[k].desc : k;
+      var out = (roles.info && roles.info[k]) ? roles.info[k].en + " — " + roles.info[k].desc : k;
+      /* Same defect as the per-line role, one level down and worse, because a
+         hidden spirit gets ONE label and no branch data to argue with it. On
+         the exam board 子孙火 came out as "Spoiler — feeds the adversary",
+         which is true from 父母水 and buries what 增删卜易 says plainly and
+         what the assignment itself carries: 子孙为剥官之神. Fire controls
+         Metal; 官鬼 is the other 用神; the one hidden spirit on the board is
+         the thing that takes the placement away. */
+      if (secondEl !== null) {
+        if (gi === secondEl) out += "  ·  ALSO the second 用神";
+        else if (gi === secondJiEl) out += "  ·  controls the second 用神 (its 忌神)";
+      }
+      return out;
     };
     var hiddenAll = (board.hidden || []).map(function (h) {
       var fly = board.lines[h.position];
@@ -463,7 +517,7 @@
            + "This is a DEFAULT, not a finding: if the wording does point at a subject, read that line instead and say so.")),
       "",
       "BOARD (authoritative facts):",
-      JSON.stringify(distill(board, roles)),
+      JSON.stringify(distill(board, roles, subject && subject.second)),
       "",
       timingReference(board),
       "",

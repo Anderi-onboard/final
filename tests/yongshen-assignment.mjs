@@ -140,5 +140,73 @@ const worldAnchored = AI.deriveRoles(board, 'self');
 assert.notEqual(worldAnchored.elements.yong, el.yong,
   'anchoring on 世 and anchoring on the question now give the same 用神 — the fix is inert');
 
-console.log(`yongshen assignment OK — ${CASES.length} questions resolve from wording, the exam takes two, `
-  + 'the default reports itself, and the assignment reaches the board block');
+/* ── the SECOND 用神 has to be marked in the data, not only announced ───────
+   Announcing it and then labelling it from the first anchor's lattice is worse
+   than not announcing it, because the two disagree and the per-line field
+   wins: it is concrete, it sits on the line, and the header is one sentence
+   far above it.
+
+   Measured on the exam board before this was fixed:
+     header   用神 · 父母 + 官鬼 — BOTH are 用神 here
+     line 3   "relative":"Pressure (官鬼)", "role":"Support"
+   The reading duly took 官鬼 as background support for 父母.
+
+   Only two things are true from both anchors at once, so only those are
+   marked: this line is also a subject, and this line controls the other
+   subject. No second lattice — 原/忌/仇/泄 are coherent from one anchor only,
+   and a second set would contradict the first on every line. */
+function payloadFor(lines, changeIdx, question) {
+  const b = sandbox.BWLiuYao.computeBoard({ lines, changeIdx });
+  const s = AI.subjectKey(question);
+  const m = AI.buildMessages(b, AI.deriveRoles(b, s.key), question, s.key, null, 'zh', s);
+  return JSON.parse(m.messages[0].content.match(/BOARD \(authoritative facts\):\n(.+)/)[1]);
+}
+
+const examPayload = payloadFor(
+  [{ yang: false }, { yang: true }, { yang: true }, { yang: false }, { yang: false }, { yang: true }],
+  [1, 2, 3], '我明天考科目一能过吗');
+
+const officerLines = examPayload.lines.filter((l) => l.relative.includes('官鬼'));
+assert.ok(officerLines.length, 'the exam fixture no longer carries 官鬼 — this check points at nothing');
+for (const l of officerLines) {
+  assert.match(String(l.flags), /ALSO-用神/,
+    `line ${l.line} is 官鬼 — the second 用神 on an exam — and arrives flagged only as `
+    + `"${l.role}". The header says BOTH are 用神 and the data says otherwise; the data wins.`);
+}
+assert.match(String(examPayload.yongshen), /officer/,
+  'the yongshen field names only the first subject, so the second exists in one sentence of prose '
+  + 'and nowhere in the board');
+assert.match(String(examPayload.yongshen), /FIRST 用神 only/,
+  'the payload does not say the role column is measured from the first anchor — without that, the '
+  + '"Support" on the second 用神 reads as a contradiction rather than as a different measurement');
+
+/* 子孙 is 剥官之神 — the thing that takes the placement away — and on this
+   board it is the only hidden spirit. From the 父母 anchor alone it comes out
+   as "Spoiler — feeds the adversary", which is true and buries the point. */
+assert.match(String(examPayload.hidden), /second 用神/,
+  'the hidden spirit is labelled from the first anchor only. On the exam board that is 子孙, whose '
+  + 'whole significance here (子孙为剥官之神) is a fact about the SECOND 用神.');
+
+/* 坤为地, 动爻 2 — 官鬼 on line 3, and 子孙 on the void World line, which is
+   the per-line half of the same fact. The exam fixture above never reaches it
+   (its second 用神 is Metal and no line is Fire), so without this board the
+   attacks-second-用神 branch is guarded by nothing. */
+const kun = payloadFor(new Array(6).fill(0).map(() => ({ yang: false })), [1], '我明天考科目一能过吗');
+const marked = kun.lines.filter((l) => /ALSO-用神/.test(String(l.flags)));
+const attacking = kun.lines.filter((l) => /attacks-second-用神/.test(String(l.flags)));
+assert.equal(marked.length, 1, `坤为地: ${marked.length} lines flagged as the second 用神, expected 1 (官鬼 on line 3)`);
+assert.equal(attacking.length, 1,
+  `坤为地: ${attacking.length} lines flagged as attacking the second 用神, expected 1 (子孙 on line 6). `
+  + 'If this is 0 the per-line branch is dead and only the hidden-spirit path is covered.');
+assert.match(String(attacking[0].relative), /子孙/, 'the line marked as attacking the second 用神 is not 子孙');
+
+/* And it must stay off boards with one 用神, or every reading gains a second
+   subject it was never given. */
+const single = payloadFor(
+  [{ yang: false }, { yang: true }, { yang: true }, { yang: false }, { yang: false }, { yang: true }],
+  [1, 2, 3], '这单生意能赚钱吗');
+assert.ok(!single.lines.some((l) => /用神\(second|attacks-second/.test(String(l.flags))),
+  '一个用神的问题也标出了第二用神 — the marks fire on questions that have only one subject');
+
+console.log(`yongshen assignment OK — ${CASES.length} questions resolve from wording, the exam takes two `
+  + 'and both are marked in the board data, the default reports itself, and the assignment reaches the block');
