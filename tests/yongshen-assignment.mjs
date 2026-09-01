@@ -159,7 +159,9 @@ function payloadFor(lines, changeIdx, question) {
   const b = sandbox.BWLiuYao.computeBoard({ lines, changeIdx });
   const s = AI.subjectKey(question);
   const m = AI.buildMessages(b, AI.deriveRoles(b, s.key), question, s.key, null, 'zh', s);
-  return JSON.parse(m.messages[0].content.match(/BOARD \(authoritative facts\):\n(.+)/)[1]);
+  const txt = m.messages[0].content;
+  const HEAD = 'BOARD (authoritative facts):\n';
+  return JSON.parse(txt.slice(txt.indexOf(HEAD) + HEAD.length, txt.indexOf('\n\nTIMING')));
 }
 
 const examPayload = payloadFor(

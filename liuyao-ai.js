@@ -256,7 +256,9 @@
       if (l.fanyin) flags.push("reversal");
       if (l.fuyin) flags.push("locked");
       if (l.moving) {
-        flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+" "+l.transform.relative.cn+")"):""));
+        // Glyph here too — 回头克/回头冲/化空 are all branch-pair facts, and the
+        // pair only reads as a pair when both halves are written the same way.
+        flags.push("MOVING→"+(l.transform?(l.transform.branch.cn+" "+l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+" "+l.transform.relative.cn+")"):""));
         if (l.transform) {
           // said explicitly, because "void" after a transform is ambiguous
           flags.push(l.transform.backToVoid ? "transform-is-void" : "transform-not-void");
@@ -278,7 +280,15 @@
       return {
         line: l.idx+1,
         relative: l.relative.en+" ("+l.relative.cn+")",
-        najia: l.element.en+" "+l.branch.animal,
+        /* The glyph goes with it, for the reason the 六亲 comment below gives
+           and this field made worse: a field CALLED 纳甲 that shipped as
+           "Metal Rooster" is a gloss of 辛酉, and a Chinese reading has to make
+           the trip back before it can write 官鬼酉金. Every branch relation in
+           the method — 冲, 合, 三合, 墓, 破 — is stated over glyphs, so every
+           one of them was being computed on the far side of a translation. The
+           failed reading wrote 酉冲寅; 酉 clashes 卯. Ship the glyph and there
+           is no trip to make. */
+        najia: l.stem.cn+l.branch.cn+" ("+l.element.en+" "+l.branch.animal+")",
         spirit: l.spirit.en,
         strength: l.wangShuai.en,
         role: r.roleEn,
@@ -401,9 +411,36 @@
       date: board.meta.date + (board.meta.dateAuthoritative?"":" (approx)"),
       sanhe: sanhe,
       guashen: guashen,
-      dayBranch: board.meta.dayPillar.branch.animal+" ("+board.meta.dayPillar.el.en+")",
-      monthElement: board.meta.monthBranch.el.en,
-      voidBranches: board.meta.xunkong.map(function(b){return b.animal;}).join(", "),
+      /* ⚠️ THE MONTH SHIPPED AS AN ELEMENT, NOT A BRANCH — the single worst
+         omission on this payload, because 月建 is the first of 增删卜易's
+         四处生克源头 and the book names it by branch on every page.
+         "monthElement":"Metal" leaves TWO candidates, 申 and 酉, and the model
+         has to pick. Measured on the reading that produced 「能过」: the month
+         was 申, the reading said 酉月, and everything downstream inherited it —
+         月破 is defined as the branch that clashes 月建, so a wrong 月建 moves
+         月破 from 寅 to 卯 and disagrees with the flags on the lines.
+         It was never a hallucination. It was a fact we withheld and a guess we
+         then treated as one. Both clocks now ship as pillars, with the glyph,
+         because a Chinese reading has to reach the glyph anyway and the trip
+         back from an English gloss is where things get lost. */
+      month: board.meta.monthBranch.cn+" ("+board.meta.monthBranch.el.en+" "
+        +["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"][board.meta.monthBranch.bi]
+        +") — 月建",
+      day: board.meta.dayPillar.stem.cn+board.meta.dayPillar.branch.cn+" ("
+        +board.meta.dayPillar.branch.animal+", "+board.meta.dayPillar.el.en+") — 日辰",
+      voidBranches: board.meta.xunkong.map(function(b){return b.cn+" "+b.animal;}).join(", ")+" (旬空 for the CASTING day)",
+      /* Stated, not counted. 增删卜易 turns on how many lines are moving —
+         独发 reads one way, 乱动 another — and the failed reading counted two
+         where the board had three. Counting six objects out of a minified JSON
+         blob is a thing models get wrong; it is also a thing we already know
+         and can simply say. Same principle as the clock relations: put the
+         derived fact in the data instead of making the model derive it. */
+      moving: (function(){
+        var mv = board.lines.filter(function(l){return l.moving;}).map(function(l){return l.idx+1;});
+        var n = ["none","ONE","TWO","THREE","FOUR","FIVE","SIX"][mv.length];
+        return mv.length ? ("lines "+mv.join(", ")+" — "+n+" moving line"+(mv.length>1?"s":"")
+          +(mv.length===1?" (独发)":"")) : "no moving lines (静卦)";
+      })(),
       /* Trigram, palace and series ship with their glyphs, for the same reason
          the 六亲 do: the English is a gloss, and a Chinese reading that has to
          translate one back can translate it wrong. "Wind Palace" came out as
@@ -416,6 +453,20 @@
       hidden: hiddenStr,
       lines: L
     };
+  }
+
+  /* Scalars on one line each, then the six lines one row each. Deliberately not
+     JSON.stringify(x, null, 2): full pretty-printing explodes every line object
+     into eight rows and buries the board in punctuation. What is wanted is one
+     row per thing the reader counts. */
+  function stringifyBoard(d){
+    var head = [], rows = [];
+    for (var k in d) {
+      if (!d.hasOwnProperty(k) || k === "lines") continue;
+      head.push('  ' + JSON.stringify(k) + ': ' + JSON.stringify(d[k]));
+    }
+    for (var i = 0; i < d.lines.length; i++) rows.push('    ' + JSON.stringify(d.lines[i]));
+    return '{\n' + head.join(',\n') + ',\n  "lines": [\n' + rows.join(',\n') + '\n  ]\n}';
   }
 
   // The user drops THEIR divination prompt into USER_PROMPT below. The protocol
@@ -517,7 +568,16 @@
            + "This is a DEFAULT, not a finding: if the wording does point at a subject, read that line instead and say so.")),
       "",
       "BOARD (authoritative facts):",
-      JSON.stringify(distill(board, roles, subject && subject.second)),
+      /* ONE LINE PER LINE. The six line objects used to arrive inside a single
+         unbroken ~1,800-character minified string, which is the layout that
+         makes a board hard to read for the same reason it is hard for a person:
+         there are no rows to count, and every fact about line 4 sits in the
+         middle of a paragraph-length token run. The failed reading counted two
+         moving lines where the board had three.
+         Still valid JSON — only whitespace changes, and the payload's own
+         `moving` field now states the count outright, so this is the second of
+         two independent fixes for one error. */
+      stringifyBoard(distill(board, roles, subject && subject.second)),
       "",
       timingReference(board),
       "",
