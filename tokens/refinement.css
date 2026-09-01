@@ -228,28 +228,28 @@ html[data-skin="paper"] body .mtn-sky {
    Excluding the moire group matters: its bands are also clipped <use>, and at
    .13 !important the texture is decided here by a rule that was never about it. */
 html[data-skin="paper"] body .mtn-bg [clip-path]:not(.moire) > use { opacity: .13 !important; }
-/* ⚠️⚠️⚠️ Contour COLOUR is not set here any more either, and this is the FOURTH
-   time this file has decided something about the range with an !important that
-   the engine was already deciding correctly — after stroke-width, after fill
-   opacity, after the panel tint. The line that stood here was
+/* ⚠️⚠️⚠️ REVERTED, and the reasoning that removed it was wrong in a way worth
+   keeping on the page.
 
-     stroke: color-mix(in srgb, #141413 30%, transparent) !important;
+   This near-black !important was read as a fourth instance of the pattern this
+   file has three real instances of — refinement.css overriding the range with a
+   hard-coded value where the engine already had a palette-aware one. The engine
+   does inject ten tinted rules
+   (`.contour.l1 use { stroke: color-mix(…var(--bw-palette-1) 42%…) }`), so it
+   looked like the same mistake, and the note above it even stated the ownership
+   backwards. All true, and the conclusion was still wrong.
 
-   a hard-coded near-black beating the ten palette-tinted rules the engine
-   injects (`.contour.l1 use { stroke: color-mix(…var(--bw-palette-1) 42%…) }`),
-   so on every glass route every contour was drawn in ink regardless of the
-   group. The note directly above it said "colour and joins belong here" — that
-   was the mistake, stated confidently, in the same comment that correctly
-   explained why the WIDTH could not live here.
+   ⭐ A contour tinted with its OWN ridge's colour at 42% alpha, drawn on top of
+   that same ridge, is invisible. Removing this ink took the entire line drawing
+   off the landscape and left flat colour bands — the home page stopped being a
+   drawing and became a gradient. The tinted rules had never been visible, so
+   they had never been looked at; "the engine was already deciding it correctly"
+   was an assumption, not an observation.
 
-   On login it was not subtle: the card sits directly over the far ridge, so the
-   heading read as black scribbles across the words. That is what "the login
-   page is broken" was.
-
-   Joins and the non-scaling stroke stay — they are geometry-independent and
-   they do not fight the palette. */
+   The ink is the drawing. It is meant to be near-black and it is meant to win. */
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
+  stroke: color-mix(in srgb, #141413 30%, transparent) !important;
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
