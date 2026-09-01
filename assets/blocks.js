@@ -695,6 +695,93 @@
     });
   }
 
+  /* ⭐⭐⭐ A GROVE: one motif, stood up many times.
+
+     "It would be better to see a bamboo grove — open your thinking." The
+     catalogue already answers this and the page was not using the answer: this
+     route's own rule is that variety comes from the MOTIF and order comes from
+     the placement, and thirty different marks scattered in a corner is a sample
+     book. Thirty of the SAME mark, stood in a row at different heights, is a
+     bamboo grove — a thing, not an assortment.
+
+     So a grove is one motif repeated along a baseline: stems leaning by a
+     degree or two either side, heights walking a cycle so no two neighbours
+     match, and the tallest deliberately off centre. It is cropped by the
+     block's own edge like every other art layer here, which is what makes it a
+     stand carrying on past the corner rather than a picture of some plants.
+
+     ⚠️ Deterministic, like everything else drawn on these routes: heights and
+     leans come from short coprime cycles, never from a roll. A grove that
+     re-arranges itself on every navigation reads as a rendering fault.
+
+     ⚠️ It goes in a CORNER and it is allowed to coexist with an edge spill —
+     hence its own attribute. A block can be a shape carrying on into its
+     neighbour AND have a stand of bamboo in its top corner; those are two
+     different statements and one attribute cannot hold both. */
+  var GROVE_H = [1.00, 0.58, 0.86, 0.45, 0.94, 0.63, 0.78, 0.50, 0.90];   /* 9 */
+  var GROVE_LEAN = [-1.8, 0.9, 2.1, -0.7, 1.4, -2.2, 0.4];                /* 7 */
+
+  function groves() {
+    [].slice.call(document.querySelectorAll("[data-grove]")).forEach(function (host) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 160 || h < 120) return;
+      var name = host.getAttribute("data-grove");
+      var d = M.phenomena[name] && M.phenomena[name]();
+      if (!d) return;
+      var slot = host.querySelector(":scope > .bk-grove");
+      if (!slot) {
+        slot = document.createElement("div");
+        /* .bk-art for the same reason the spill layer carries it: the route's
+           own rule forces position:relative on anything that is not .bk-art,
+           which would make this a grid item and add a row. */
+        slot.className = "bk-art bk-grove";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+      /* the stand fills the top-right corner: as tall as a third of the block,
+         as wide as it needs for its stems */
+      /* ⭐⭐ A STALK IS THE MOTIF STACKED, not the motif enlarged.
+
+         The catalogue's bamboo is one culm with its nodes, and a culm has a
+         fixed proportion — scaling it up to grove height also makes it grove
+         WIDTH, so a row of them reads as a line of chunky blobs rather than as
+         a stand. Bamboo is tall because it is segmented: joint above joint. So
+         a stalk here is the same culm repeated end to end, two to four times,
+         which is the route's own principle applied one level down — the variety
+         is in how many, not in a second drawing. */
+      var seg = motifRadius(name) * 2;
+      var unit = (h * 0.30) / seg;              /* one segment, about a third */
+      var stems = Math.max(5, Math.round((w * 0.40) / (seg * unit * 1.28)));
+      var step = (w * 0.40) / stems;
+      var out = "";
+      for (var k = 0; k < stems; k++) {
+        var hh = GROVE_H[k % GROVE_H.length];
+        var sc = unit * (0.72 + hh * 0.34);
+        var joints = 2 + (k % 3);                /* 2, 3 or 4 segments tall */
+        var x = w - (w * 0.03) - k * step;
+        var lean = GROVE_LEAN[k % GROVE_LEAN.length];
+        var col = '';
+        for (var j = 0; j < joints; j++) {
+          /* each joint sits directly under the last, overlapping a little so
+             the stalk reads as continuous rather than as a stack of tokens */
+          col += '<g transform="translate(0 ' + (j * seg * 0.86).toFixed(1) + ')">'
+            + '<path class="ph-back" d="' + d + '"/>'
+            + '<path class="ph-mid" d="' + d + '"/>'
+            + '<path class="ph-ink" d="' + d + '"/></g>';
+        }
+        /* the stalk starts above the top edge and is cropped by it, so it
+           carries on out of the block the way every other art layer here does */
+        var y = -seg * sc * (0.30 + hh * 0.34);
+        out += '<g data-ph="' + name + '" data-plate="' + (k % 2) + '"'
+          + ' opacity="' + (0.44 - (k % 3) * 0.06).toFixed(2) + '"'
+          + ' transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1)
+          + ') rotate(' + lean + ') scale(' + sc.toFixed(4) + ')">'
+          + '<g class="ph-m">' + col + '</g></g>';
+      }
+      slot.innerHTML = M.svg(out, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
   function colonies() {
     /* ⚠️ Not the ones that are horizons. The call-to-action's picture carries
        both .ab-colony (for its grid area) and data-horizon (for what it draws),
@@ -900,11 +987,11 @@
   var t = 0;
   addEventListener("resize", function () {
     clearTimeout(t);
-    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); spills(); scenes(); }, 140);
+    t = setTimeout(function () { all(); backdrops(); colonies(); horizons(); spills(); groves(); scenes(); }, 140);
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  function afterLayout() { backdrops(); colonies(); horizons(); spills(); scenes(); }
+  function afterLayout() { backdrops(); colonies(); horizons(); spills(); groves(); scenes(); }
   if (document.readyState === "complete") afterLayout();
   else addEventListener("load", afterLayout);
 }());

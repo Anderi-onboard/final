@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901f", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901f";
+    ? new URL("../palettes/color-groups.json?v=20260901g", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901g";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a
@@ -61,8 +61,8 @@
        travel. The overhang is extra area to rasterise on every step, so a
        generous margin is paid for once a second — 700px of it measured 47fps
        against 56 at 340px. */
-    + '.mtn-bg>svg{display:block;width:calc(100% + 340px);height:100%;margin-left:-170px}'
-    + '@keyframes mtn-range{from{transform:translate3d(-150px,0,0)}to{transform:translate3d(150px,0,0)}}'
+    + '.mtn-bg>svg{display:block;width:calc(100% + 700px);height:100%;margin-left:-350px}'
+    + '@keyframes mtn-range{from{transform:translate3d(-320px,0,0)}to{transform:translate3d(320px,0,0)}}'
     /* The sky and ten ridges receive colours from the extensible external
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
@@ -256,7 +256,9 @@
        One drift for the whole range rather than one per plane — parallax is
        what the per-plane version bought and it measured 24fps. */
     + (ridgeDrift
-        ? '.mtn-bg>svg{animation:mtn-range 150s linear infinite alternate;will-change:transform}'
+        ? '.mtn-raster{position:absolute;top:0;left:0;pointer-events:none;'
+          + 'animation:mtn-range 34s linear infinite alternate;will-change:transform}'
+        + '.mtn-bg.is-rastered .mtn-ridges{visibility:hidden}'
         : '')
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'
@@ -530,7 +532,8 @@
     });
 
     return '<svg viewBox="0 0 ' + vbw + ' 600" preserveAspectRatio="' + par + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rounded contour landscape">'
-      + '<title>Moving contour landscape and clouds</title>' + defs + ridges + clouds + '</svg>';
+      + '<title>Moving contour landscape and clouds</title>' + defs
+      + '<g class="mtn-ridges">' + ridges + '</g>' + clouds + '</svg>';
   }
 
   function srgbChannel(v) {
@@ -1172,10 +1175,95 @@
       });
     }, immediate);
 
+    /* the picture carries the group's colours, so it is remade when they change */
+    if (ridgeDrift) setTimeout(rasteriseRange, 60);
     window.dispatchEvent(new CustomEvent("bw:palettechange", {
       detail: { id: group.id, name: group.name, segment: group.seg,
                 slot: +(document.documentElement.dataset.bwPaletteSlot || 0) }
     }));
+  }
+
+  /* ⭐⭐⭐ THE RIDGES ARE MOVED AS A PICTURE, NOT AS A DRAWING.
+
+     Smooth drift on the live SVG is smooth in the animation and lumpy on the
+     screen: measured frame times came out 16ms x145 against 24ms x111, an
+     alternating 60/40 pattern that reads exactly as "it moves frame by frame".
+     52fps with 90 of 261 frames over 20ms.
+
+     The cost is re-rasterising a full-viewport SVG every frame, and it is not
+     the detail — deleting 90% of the drawing changed nothing. So the drawing is
+     rasterised ONCE into an <img> and the image is what moves; the compositor
+     then has a texture to translate instead of a picture to redraw.
+
+       as shipped (live SVG)     52fps   90 of 261 frames over 20ms
+       rasterised <img>          59fps    3 of 295
+       range hidden entirely     60fps    2 of 302
+
+     It is as cheap as having no landscape at all.
+
+     ⚠️ The CLOUDS stay live. They are the one thing here that has always moved
+     and they are small enough to be free; baking them into the image would
+     freeze them. So the clone drops them, the live SVG keeps them, and only the
+     ridges are hidden behind the picture.
+
+     ⚠️ Every paint property has to be inlined on the clone. A standalone SVG in
+     an <img> cannot see the document's stylesheet or its custom properties, so
+     `fill: var(--bw-palette-3)` would resolve to nothing — the picture would
+     come out blank or black. Reading computed style and writing it back is what
+     makes the copy self-contained.
+
+     ⚠️ Re-rastered on every palette change, because the colours are baked in.
+     That is one 14ms job every 45 seconds, against 60 a second saved. */
+  var rasterToken = 0;
+
+  function rasteriseRange() {
+    if (!ridgeDrift) return;
+    var token = ++rasterToken;
+    document.querySelectorAll(".mtn-bg").forEach(function (bg) {
+      var svg = bg.querySelector("svg");
+      if (!svg) return;
+      var box = svg.getBoundingClientRect();
+      if (box.width < 8 || box.height < 8) return;
+      var clone = svg.cloneNode(true);
+      /* clouds are live in the original; they must not be in the picture */
+      clone.querySelectorAll('[class^="cloud-"]').forEach(function (n) { n.remove(); });
+      var src = svg.querySelectorAll("*"), dst = clone.querySelectorAll("*");
+      var PAINT = ["fill", "stroke", "strokeWidth", "opacity", "strokeLinecap",
+                   "strokeLinejoin", "vectorEffect", "display", "visibility"];
+      for (var i = 0; i < src.length && i < dst.length; i++) {
+        var cs = getComputedStyle(src[i]), st = "";
+        for (var k = 0; k < PAINT.length; k++) {
+          st += PAINT[k].replace(/[A-Z]/g, function (m) { return "-" + m.toLowerCase(); })
+             + ":" + cs[PAINT[k]] + ";";
+        }
+        dst[i].setAttribute("style", st);
+      }
+      /* the hidden ridge group must be visible IN THE PICTURE */
+      var g = clone.querySelector(".mtn-ridges");
+      if (g) g.setAttribute("style", "visibility:visible");
+      clone.setAttribute("width", Math.round(box.width));
+      clone.setAttribute("height", Math.round(box.height));
+      var img = new Image();
+      img.decoding = "async";
+      img.setAttribute("aria-hidden", "true");
+      img.onload = function () {
+        if (token !== rasterToken) return;          /* a newer group won */
+        var old = bg.querySelector(":scope > .mtn-raster");
+        img.className = "mtn-raster";
+        img.style.width = Math.round(box.width) + "px";
+        img.style.height = Math.round(box.height) + "px";
+        bg.insertBefore(img, bg.firstChild);
+        if (old) old.remove();
+        bg.classList.add("is-rastered");
+      };
+      /* ⚠️ On failure the live drawing simply stays visible. A landscape that
+         does not drift is a great deal better than no landscape. */
+      img.onerror = function () { bg.classList.remove("is-rastered"); };
+      try {
+        img.src = "data:image/svg+xml;charset=utf-8,"
+          + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+      } catch (e) { bg.classList.remove("is-rastered"); }
+    });
   }
 
   function startPaletteSystem(clockStart, reduce, seed) {

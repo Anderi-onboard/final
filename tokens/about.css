@@ -103,9 +103,10 @@ body[data-page="about"] .ab-block { --ab-u: 1cqw; }
 .ab-say  { grid-area: say; }
 /* the spill layer sits behind the words, clipped by the block's own edge —
    that clipping is the effect: a shape that carries on into the neighbour */
-.bk-spill { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bk-spill, .bk-grove { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bk-grove svg { width: 100%; height: 100%; display: block; }
 .bk-spill svg { width: 100%; height: 100%; display: block; }
-.ab-block[data-spill] { overflow: hidden; }
+.ab-block:is([data-spill], [data-grove]) { overflow: hidden; }
 .ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
 .ab-colony svg { width: 100%; height: 100%; display: block; }
 
