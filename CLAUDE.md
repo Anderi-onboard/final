@@ -2076,14 +2076,26 @@ CI 还额外查一件 `build-tag.mjs` 查不到的事:**shipped 资产改了而�
 **不该进**:审美判断、还在讨论中的方向、只发生过一次且没人反对的选择。
 把这些锁进测试会让下一个 agent 无法改进,而它们本来就该能改。
 
-### 现有契约(21 条,`npm test` 全跑)
+### 现有契约:`ls tests/*.mjs`,不在这里抄一份
 
-`billing-contract` `board-distill` `build-tag` `followup-axes` `font-lock`
-`free-reading-contract` `language-purity` `palette-contract` `prompt-coverage`
-`prompt-secrecy` `rates-contract` `request-contract` `session-contract`
-`private-files` `stream-recovery` `style-ownership` `texture-contract` `token-cap`
-`upstream-error` `xiang-trace`
-\+ 文案册审计。
+⚠️ **这里原来抄着一份名单,写着「21 条」、实际列了 20 个、而目录里有 29 个** ——
+**九条契约存在、在跑、而这份文件说它们不存在。** 上一段刚说完「靠目录扫描,不靠登记」,
+下一段就手抄了一份登记表。
+
+本文件已经为「两张名单」付过两次学费(方法页的减半规则、触控热区),第三次记在这里:
+**名单只有一份,就是 `tests/` 目录**;`npm test` 结束时打印 `all N contracts pass`,
+那个 N 就是当前条数。要看有哪些,`ls tests/*.mjs`。
+\+ 文案册审计(`copywriting/audit-copy-deck.mjs`,不在 `tests/` 里,由 runner 单独跑)。
+
+名字不解释自己的那几条,记在这里:
+- `board-payload` —— 引擎算出来的每一条时钟关系都必须到达模型。四处生克源头的头两处
+  (月/日的生与克)曾被 `distill()` 静默丢掉,第 5 爻发出去时 flags 是空字符串。
+  同时钉着:月和日按**干支**发(只发元素时模型得在申/酉之间猜,那一卦就猜错了)、
+  纳甲带字形(冲合墓破全是字形关系)、动爻数直接写出来、六爻一爻一行。
+- `yongshen-assignment` —— 用神从**问题**取,不从写死的 category 取;默认必须自报是默认;
+  考试这类取**两个**用神时,第二个要在每一爻的数据上标出来,不能只在头部宣布一句。
+- `board-facts` —— 解读复述的盘面事实要和盘对得上(动爻数、月建日辰、冲)。
+- `flow-segment` —— flow 段不许被读成「压缩指令」,六条规则、每条一个能推广的问句。
 
 ⚠️ **仍然没有守卫的硬规则**(§3 里写着但没测试):`--pine` 不得用于 CTA、
 `--prussian` 每页最多一个 hero、mono/label 不得全大写、组件不写裸 hex。
