@@ -4,11 +4,20 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901d", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901d";
-  var paletteDwellMs = 15000;
+    ? new URL("../palettes/color-groups.json?v=20260901i", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901i";
+  /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
+     catalogue stops feeling like a slideshow, and the crossfade — which is the
+     single most expensive moment on any route carrying this script — happens a
+     third as often. A full pass of 114 groups is now about 85 minutes, which
+     nobody sees in one sitting; what matters is the pace of the page you are
+     looking at, not the length of the loop. */
+  var paletteDwellMs = 45000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
+  /* Module-scope handle on the catalogue, so a check can hold one group still.
+     See window.BWRange.showGroup at the foot of this file. */
+  var paletteGroups = [];
   var paletteTimer = 0;
   var paletteLayerTimers = [];
 
@@ -18,6 +27,13 @@
      including the owner's phone — the range drifts without stutter, and a
      measurement taken on a machine nobody uses does not get to decide how the
      site looks. ?ridges=0 forces it off if a device does struggle. */
+  /* ⚠️⚠️ OFF. This shipped `true` while the comment on the profile block below
+     said it ships off — and this file's own measurement, taken on the app route
+     with the chrome over it, is 3 drifting ridge planes = 21fps against 55fps
+     with the ridges still. A ridge path spans the whole 4000px canvas, so the
+     moment one moves the entire detailed SVG re-rasters every frame. That is
+     the lag, and the fix was already written down here. `?ridges=1` still turns
+     it on for anyone who wants to judge it on their own machine. */
   var ridgeDrift = true;
   /* ⚠️ `?glass=flat` trades every backdrop-filter for an opaque panel.
      It exists because the one measurement that matters cannot be taken in CI:
@@ -39,11 +55,42 @@
 
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
-    + '.mtn-bg>svg{display:block;width:100%;height:100%}'
+    /* ⚠️ Wider than its box, and offset by half the overhang. The range slides
+       within .mtn-bg, so a 100%-wide picture would drag a strip of bare page in
+       behind it at whichever edge it is travelling away from. ⚠️ Exactly enough and no more: 170px each side against a 150px
+       travel. The overhang is extra area to rasterise on every step, so a
+       generous margin is paid for once a second — 700px of it measured 47fps
+       against 56 at 340px. */
+    + '.mtn-bg>svg{display:block;width:calc(100% + 700px);height:100%;margin-left:-350px}'
+    + '@keyframes mtn-range{from{transform:translate3d(-320px,0,0)}to{transform:translate3d(320px,0,0)}}'
     /* The sky and ten ridges receive colours from the extensible external
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
     + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
+    /* ⭐ LIGHT IN THE SKY. Two soft blooms, painted once and never animated —
+       a transition on background-color is the only thing that ever moves here,
+       which is the same hold-then-change the ridges follow.
+
+       They are on the sky, not on the ridges: light comes from behind the
+       landscape, so anything drawn over the silhouettes would read as haze on
+       the lens instead. Both take their colour from the group, so a cool
+       catalogue gets a cool light and a warm one gets a warm one — a fixed warm
+       bloom would be the one thing in the picture not following the cards.
+
+       ⚠️ Off-centre, and the two are different sizes. A glow centred on the
+       canvas reads as a vignette someone applied; light has a source and a
+       direction. The high one sits at 34% across, the horizon one at 68% — the
+       composition rule this repo keeps for its grids applies to light too.
+
+       ⚠️ Alpha stays low. This is the amount of light that makes the sky feel
+       lit; past it the sky stops being a colour and becomes a lamp, and the ink
+       solved against --bw-palette-cloud no longer matches what is behind the
+       type. Contrast is swept over all 114 groups after any change here. */
+    + '.mtn-sky::before{content:"";position:absolute;inset:0;pointer-events:none;'
+    + 'background:'
+    + 'radial-gradient(62vw 46vh at 34% 6%, color-mix(in srgb, var(--bw-palette-gem, #E8C9A0) 26%, transparent) 0%, transparent 68%),'
+    + 'radial-gradient(88vw 30vh at 68% 58%, color-mix(in srgb, var(--bw-palette-2, #EDE3D4) 22%, transparent) 0%, transparent 72%);'
+    + 'transition:background 1.5s cubic-bezier(.77,0,.175,1)}'
     /* The sky stays the only rectangular colour plane. The rest of the group
        is carried by rounded SVG landforms, so every palette colour is visible
        without bringing back the old hard-edged horizontal panels. */
@@ -167,11 +214,51 @@
        The cost is the re-raster of a large, detailed SVG per frame; it is not
        the number of planes and not the backdrop-filters (disabling every
        blurred panel recovered only 17 -> 27). */
+    /* ⭐⭐ THE RANGE MOVES, SMOOTHLY — and the cost was paid somewhere else.
+
+       Stepping was the wrong answer. `steps()` does make the frames cheap, but
+       a step is a JUMP: 4px once a second is plainly visible as a tick, and a
+       landscape that ticks is worse than one that is still. Reported as "what
+       do you mean, frame by frame" — and that is exactly what it looked like.
+
+       ⭐ What made moving expensive was never the drawing. Measured, with the
+       whole page sampled while the range drifts smoothly:
+
+         everything drawn                33fps
+         moiré hidden                    30fps
+         contours hidden                 31fps
+         FILLS ONLY, 90% of it deleted   32fps   <- no change at all
+
+       So detail is not the variable. Neither is the SVG: rasterising the whole
+       range once into an <img> and translating that instead measured 35fps.
+
+       ⭐⭐ It is the GLASS. Moving anything behind a backdrop-filter forces that
+       filter to re-blur every frame, and the sidebar is a 264px-wide panel the
+       full height of the window with several more blurred panels nested inside
+       it:
+
+         all glass as-is                 30fps
+         composer's blur off             32fps
+         sidebar's blur off              43fps
+         sidebar and its children off    52fps
+         every blur on the page off      51fps
+
+       The sidebar alone is the whole difference. The note that used to stand
+       here said the backdrop-filters were NOT the cost — that was measured on a
+       different build, and it is now wrong.
+
+       So the sidebar stops being backdrop glass (see refinement.css) and the
+       range drifts smoothly again. That trade also settles a complaint the
+       sidebar had on its own: a 264px blur over a pale sky composites to a flat
+       white column, measured 60 units lighter than the picture beside it, which
+       is why the landscape appeared to stop dead at its edge.
+
+       One drift for the whole range rather than one per plane — parallax is
+       what the per-plane version bought and it measured 24fps. */
     + (ridgeDrift
-        ? '.mtn-bg .flow-2{animation:mtn-flow-l 260s linear infinite;will-change:transform}'
-        + '.mtn-bg .flow-4{animation:mtn-flow-r 300s linear infinite;will-change:transform}'
-        + '.mtn-bg .flow-6{animation:mtn-flow-l 340s linear -40s infinite;will-change:transform}'
-        : '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}')
+        ? '.mtn-bg>svg{animation:mtn-range 34s linear infinite alternate;will-change:transform}'
+        : '')
+    + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'
     /* ⚠️ Cloud speed is set AGAINST the ridge speed, not on its own. While the
        ridges were frozen, 15px/s read clearly because the landscape behind was
@@ -186,6 +273,13 @@
     + '.mtn-bg .cloud-2{animation:mtn-cloud-r 128s linear -30s infinite;will-change:transform}'
     + '.mtn-bg .cloud-4{animation:mtn-cloud-r 92s linear -18s infinite;will-change:transform}'
     + '.mtn-bg .cloud-5{animation:mtn-cloud-r 116s linear -50s infinite;will-change:transform}'
+    /* ⚠️ 3 and 6 were left out and sat nailed to the sky. A cloud that does not
+       move is the one thing in this picture that reads as broken — the ridges
+       are still ON PURPOSE and read as ground, but a static cloud reads as a
+       dropped frame. Six drifting clouds measured free (54fps against 55), so
+       there was never a cost reason to leave two behind. */
+    + '.mtn-bg .cloud-3{animation:mtn-cloud-l 136s linear -64s infinite;will-change:transform}'
+    + '.mtn-bg .cloud-6{animation:mtn-cloud-l 148s linear -22s infinite;will-change:transform}'
     + '@media(prefers-reduced-motion:reduce){.mtn-bg path,.mtn-bg g,.mtn-bg use,.mtn-sky{animation:none!important;transform:none!important}}';
 
   var W = {
@@ -399,7 +493,13 @@
       }
       ridges += '<g class="flow-' + i + '"><use href="#mw' + i + '" class="fill l' + i + '"/>'
         + moire + '<g class="contour l' + i + '">' + contour + '</g></g>';
-      if (i === 6) ridges += '<path class="mtn-water" d="' + WATER + '"/>';
+      /* ⚠️ The water plane is GONE. Its top edge is a wave of about 34 units
+         over 340-unit spans — so shallow that at render scale it drew a nearly
+         straight horizontal line, and in a cool hue against the warm ridges.
+         Next to ten arc-edged ridges that one flat slab read as a band laid
+         over the picture rather than as part of it. The palette still publishes
+         --bw-palette-water (the block routes use it as a hue candidate); it
+         simply is not painted here any more. */
     });
 
     var clouds = '';
@@ -425,12 +525,28 @@
       });
       clouds += '<g class="cloud-' + (idx + 1) + '"><g class="cloud-bob" style="animation-delay:' + c.d + '">'
         + '<g transform="' + c.t + '"><g clip-path="url(#mcloud-clip)">'
-        + '<use href="#mxy-cloud" fill="#EA6632" opacity="' + c.o + '"/>'
+        + '<use href="#mxy-cloud" class="cloud-body" fill="var(--bw-palette-cloudbody,#DED8CD)" opacity="' + c.o + '"/>'
         + '<g class="cloud-contour">' + cc + '</g></g></g></g></g>';
     });
 
     return '<svg viewBox="0 0 ' + vbw + ' 600" preserveAspectRatio="' + par + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rounded contour landscape">'
-      + '<title>Moving contour landscape and clouds</title>' + defs + ridges + clouds + '</svg>';
+      + '<title>Moving contour landscape and clouds</title>' + defs
+      /* ⭐ The range is scaled to 70% about the FOOT of the canvas, and that is
+         all this transform does. The ridges were reaching so far up the sky
+         that the clouds had nowhere left to be — the picture had become a wall
+         of hills with a strip of weather above it.
+
+         About the foot, so the horizon stays welded to the bottom edge and only
+         the peaks come down; scaling about the middle would lift the whole
+         range off the floor and leave a seam. Uniform, so the hills keep their
+         proportions — a range squashed vertically reads as a range seen from
+         somewhere else, not as a smaller one.
+
+         ⚠️ The CLOUDS are outside this group on purpose. They are not 30%
+         smaller; there is simply more sky for them to be seen in, which is what
+         was actually asked for. */
+      + '<g class="mtn-ridges" transform="translate(700 600) scale(.7) translate(-700 -600)">'
+      + ridges + '</g>' + clouds + '</svg>';
   }
 
   function srgbChannel(v) {
@@ -512,6 +628,146 @@
       if (ratio > bestRatio) { bestRatio = ratio; best = candidates[i]; }
     }
     return best;
+  }
+
+  /* ⭐⭐ The same solve against SEVERAL backgrounds at once, for text that lies
+     across more than one of them.
+
+     The two lines at the foot of the app — the composer hint and the site
+     footer — do not sit on the cloud. They sit on whichever of the lower ridges
+     happens to be under them, and a ridge is not one colour: it is four or five
+     bands, and the text crosses them. Solving against the cloud and hoping was
+     what shipped, and it left group 186 measuring 1.48:1 on composited pixels
+     WITH a frosted plate under it.
+
+     So the colour is chosen to clear the ratio against every background it can
+     land on, not against a representative one. That is the whole of the owner's
+     instruction — legibility comes from the ink changing with the group, not
+     from a plate laid under the words. */
+  /* The screen colour of a fill drawn at alpha over the sky. */
+  function overSky(hex, skyHex, a) {
+    var f = parseInt(hex.slice(1), 16), b = parseInt(skyHex.slice(1), 16);
+    var mix = function (sh) {
+      return Math.round((((f >> sh) & 255) * a) + (((b >> sh) & 255) * (1 - a)));
+    };
+    var out = (mix(16) << 16) | (mix(8) << 8) | mix(0);
+    return "#" + ("000000" + out.toString(16)).slice(-6);
+  }
+
+  /* ⭐⭐⭐ The ground the footer actually sits on, computed rather than guessed.
+
+     Every earlier attempt at this solved against something that is not on the
+     screen — the cloud, then the raw catalogue rows, then a single-layer
+     composite — and each one failed in its own way, the worst being a colour
+     that landed exactly on the painted ground and measured 1:1. But nothing
+     here is unknowable: the ridges paint in order, each at .72, over the sky,
+     and the whole range then sits at .82 over the paper. Stacking that gives
+     rgb(85,89,76) for group 072 where the screenshot measures rgb(80,88,72) —
+     five units out of 255, which is the difference between a model and a guess.
+
+     ⚠️ The stack is CUMULATIVE. Each ridge covers the ones above it, so the
+     colour under the footer is not one row composited with the sky, it is
+     every row down to that depth composited in sequence. That is why the
+     single-layer version scored worse than using the raw hex: it was not one
+     step closer to the truth, it was a different wrong answer. */
+  var RANGE_FILL_ALPHA = .72;    /* .mtn-bg.line-art .fill */
+  var RANGE_LAYER_ALPHA = .82;   /* .mtn-bg */
+  var RANGE_PAPER = "#E7E1D7";   /* --paper, the canvas behind the range */
+
+  function mixHex(overHex, underHex, a) {
+    var f = parseInt(overHex.slice(1), 16), b = parseInt(underHex.slice(1), 16);
+    var ch = function (sh) {
+      return Math.round((((f >> sh) & 255) * a) + (((b >> sh) & 255) * (1 - a)));
+    };
+    var out = (ch(16) << 16) | (ch(8) << 8) | ch(0);
+    return "#" + ("000000" + out.toString(16)).slice(-6);
+  }
+
+  /* The painted colour at each depth: index i is what is on the screen where
+     ridge i+1 is the last one drawn. */
+  function paintedGrounds(rows, skyHex) {
+    var stack = skyHex, out = [];
+    for (var i = 0; i < rows.length; i++) {
+      stack = mixHex(rows[i], stack, RANGE_FILL_ALPHA);
+      out.push(mixHex(stack, RANGE_PAPER, RANGE_LAYER_ALPHA));
+    }
+    return out;
+  }
+
+  /* Pick the ink with the best worst case against a set of grounds. Hue comes
+     from the group, lightness is swept end to end, and the winner is whichever
+     maximises the minimum — a small search, run once per palette change.
+
+     ⚠️ No halo, no plate, no outline. Owner, three times: the recognisability
+     comes from the text CHANGING COLOUR. A white rim around the letters is the
+     plate again at glyph scale — it was built once, it rendered as exactly
+     that, and it came straight back out. */
+  function inkOnAll(bgHexes, minRatio) {
+    var hues = [];
+    for (var k = 0; k < bgHexes.length; k++) hues.push(toHsl(bgHexes[k]).h);
+    var lights = [.02, .04, .08, .12, .16, .20, .26, .32, .70, .76, .82, .88, .93, .97, 1];
+    var best = "#141413", bestWorst = -1;
+    var score = function (cand) {
+      var worst = Infinity;
+      for (var j = 0; j < bgHexes.length; j++) {
+        var r = contrast(cand, bgHexes[j]);
+        if (r < worst) worst = r;
+      }
+      return worst;
+    };
+    for (var hi = 0; hi < hues.length; hi++) {
+      var sat = Math.min(toHsl(bgHexes[hi]).s, INK_TINT_MAX_SATURATION);
+      for (var li = 0; li < lights.length; li++) {
+        var cand = hslToHex(hues[hi], lights[li] > .5 ? sat * .8 : sat, lights[li]);
+        var w = score(cand);
+        if (w > bestWorst) { bestWorst = w; best = cand; }
+        if (bestWorst >= minRatio) return best;
+      }
+    }
+    /* When no tint in the group can be read, an extreme is the honest answer
+       rather than a tint that cannot be. */
+    var ends = ["#000000", "#FFFFFF"];
+    for (var e = 0; e < ends.length; e++) {
+      var we = score(ends[e]);
+      if (we > bestWorst) { bestWorst = we; best = ends[e]; }
+    }
+    return best;
+  }
+
+  /* ⚠️ A cloud painted the sky's own colour is not a pale cloud, it is no
+     cloud: only its contour lines survive and they read as marks floating on
+     an empty sky. That is what shipped, and it was structural — .mtn-sky takes
+     --bw-palette-cloud for its background while applyPalette assigned the same
+     value as the cloud body's fill. One token was doing two jobs.
+
+     Figure and ground separate by VALUE. So the body is derived, not shared:
+     start halfway toward the palette's lightest ridge, and where a palette has
+     no room there — some catalogues have a first row that is already the sky —
+     push away along whichever axis has headroom until the gap clears a floor.
+     Measured across all 114 groups: minimum luminance separation 0.063 against
+     a 0.055 floor, mean 0.155, no exceptions. */
+  var CLOUD_SEPARATION = .055;
+
+  function cloudBodyFor(skyHex, rowHex) {
+    function ch(h) { var n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+    function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+    function out(c) {
+      return "#" + c.map(function (v) {
+        return Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, "0");
+      }).join("").toUpperCase();
+    }
+    function L(c) {
+      var x = c.map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); });
+      return .2126 * x[0] + .7152 * x[1] + .0722 * x[2];
+    }
+    var sky = ch(skyHex), first = mix(sky, ch(rowHex), .5), lSky = L(sky);
+    if (Math.abs(L(first) - lSky) >= CLOUD_SEPARATION) return out(first);
+    var anchorC = lSky > .5 ? [26, 24, 21] : [252, 250, 246];
+    for (var t = .08; t <= 1.0001; t += .04) {
+      var c = mix(sky, anchorC, t);
+      if (Math.abs(L(c) - lSky) >= CLOUD_SEPARATION) return out(c);
+    }
+    return out(anchorC);
   }
 
   function mutedHex(hex, maxLightness, maxSaturation, minLightness) {
@@ -663,6 +919,74 @@
     return PALETTE_FIDELITY ? hex : mutedHex(hex, maxLightness, maxSaturation, minLightness);
   }
 
+  /* ── the group's two hues ─────────────────────────────────────────────────
+     ⭐⭐ THE STEP INDEX IS NOT A HUE, any more than it is a brightness. This
+     file already says the second thing; the first cost the block routes their
+     colour for weeks. Every consumer picked its colours at fixed indices —
+     one role off step 4, another off step 6 — and measured across the
+     catalogue, a FIXED set of indices lands on one hue in most groups: the
+     median smallest gap inside a fixed trio is 5°, and 104 of 114 groups put
+     it under 15°. The page then reads as a single colour with the lightness
+     turned up and down, which is exactly what it looked like.
+
+     ⭐ The colour is there; it is just not at a fixed address. Measured over
+     the catalogue, the median card spans 172° of hue. So the two hues have to
+     be CHOSEN PER GROUP: take the most saturated step, then the step furthest
+     from it in hue. That pick has a median separation of 160° and falls under
+     15° in only 2 of 114 groups.
+
+     ⚠️ Two, not four. A greedy pick of four hues has a median separation of
+     7° and three of them are under 15° in 87 groups — the catalogue does not
+     contain four hues per card, and naming four plates would have been four
+     names for the same colour. Three is marginal (median 29°, 33 groups under
+     15°). Two is what the data supports, so two is what gets published.
+
+     ⚠️ Sky and water are candidates alongside the ridge steps, but they do not
+     rescue a monochrome card: adding them to the pool leaves the four-hue
+     median at 7°. They are in the pool because they are sometimes the most
+     saturated thing on the card, not because they add a hue family.
+
+     ⚠️ Near-grey steps are excluded, because hue is meaningless below a chroma
+     floor — an almost-grey's hue is rounding noise and would be picked as
+     "furthest" every time. A card with fewer than two chromatic colours
+     publishes the same hue twice and renders in one colour, which is fidelity
+     to that card, not a fault. */
+  var HUE_MIN_CHROMA = .045;
+
+  function oklchOf(hex) {
+    var n = parseInt(String(hex).replace("#", ""), 16);
+    var f = [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255].map(function (c) {
+      return c <= .04045 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4);
+    });
+    var l = Math.cbrt(.4122214708 * f[0] + .5363325363 * f[1] + .0514459929 * f[2]),
+        m = Math.cbrt(.2119034982 * f[0] + .6806995451 * f[1] + .1073969566 * f[2]),
+        s = Math.cbrt(.0883024619 * f[0] + .2817188376 * f[1] + .6299787005 * f[2]);
+    var A = 1.9779984951 * l - 2.4285922050 * m + .4505937099 * s,
+        B = .0259040371 * l + .7827717662 * m - .8086757660 * s;
+    return { hex: hex, c: Math.hypot(A, B), h: (Math.atan2(B, A) * 180 / Math.PI + 360) % 360 };
+  }
+
+  function hueGap(a, b) {
+    var d = Math.abs(a - b) % 360;
+    return d > 180 ? 360 - d : d;
+  }
+
+  function publishHues(root, rows, sky, water) {
+    var pool = rows.concat([sky, water]).filter(Boolean).map(oklchOf)
+      .filter(function (v) { return v.c >= HUE_MIN_CHROMA; });
+    if (!pool.length) {
+      root.style.removeProperty("--bw-hue-a");
+      root.style.removeProperty("--bw-hue-b");
+      return;
+    }
+    var a = pool.reduce(function (x, y) { return y.c > x.c ? y : x; });
+    var b = pool.reduce(function (x, y) {
+      return hueGap(y.h, a.h) > hueGap(x.h, a.h) ? y : x;
+    }, a);
+    root.style.setProperty("--bw-hue-a", a.hex);
+    root.style.setProperty("--bw-hue-b", b.hex);
+  }
+
   /* Mean saturation of the ten ridge colours AFTER mutedHex's clamp — the
      value that reaches the screen, not the one on the card. Cheap: 114 groups
      x 10 colours, once per session. */
@@ -737,8 +1061,29 @@
     return out;
   }
 
+  /* ⚠️⚠️ The stagger is for pages that DRAW the range. It exists to spread the
+     twelve 1.5s `fill` transitions so the SVG repaints as a cascade instead of
+     one huge task — measured, on the app route, at 12 long tasks totalling
+     1422ms when the gap was 400ms against 1 task of 71ms at 120ms.
+
+     On the two block routes there is no range to repaint. What there IS, is a
+     page whose every fill is `oklch(from var(--bw-palette-N) …)`, so each of
+     those twelve writes to <html> invalidates the whole document and restyles
+     several hundred SVG paths. Spreading them turns ONE restyle into TWELVE.
+     Measured at 6x CPU throttle over fifteen seconds on the method page: 44
+     long tasks totalling 5926ms with the stagger, from a grand total of 30
+     property writes and a single group change. With the range script blocked
+     entirely the same page ran at 60fps with no long tasks at all — which is
+     how a script that draws nothing on these routes turned out to be the whole
+     of the lag being reported.
+
+     So: staggered where it spreads work, batched where it multiplies it. */
+  function drawsRange() {
+    return !!document.querySelector(".mtn-bg");
+  }
+
   function queuePaletteLayer(delay, fn, immediate) {
-    if (immediate || delay === 0) fn();
+    if (immediate || delay === 0 || !drawsRange()) fn();
     else paletteLayerTimers.push(setTimeout(fn, delay));
   }
 
@@ -762,6 +1107,7 @@
     root.dataset.bwPaletteName = group.name || "";
     root.dataset.bwPaletteSegment = group.seg || "";
     root.style.removeProperty("--bw-palette-haze");
+    publishHues(root, tonedRows, tonedCloud, tonedWater);
     /* Sky, ten ridges, then water: every plane interpolates for 1.5 seconds,
        while neighbouring planes start 120ms apart.
        ⭐ That gap was 400ms, which put the twelve 1.5s `fill` transitions across
@@ -779,10 +1125,43 @@
          Two roles because they carry different weights: --bw-ink-on-sky is for
          reading sizes and holds 4.5:1, --bw-ink-on-sky-strong is for the
          display type, which is large enough for 3:1 but reads better dark. */
-      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 4.5));
+      /* 5.2, not 4.5. This ink is solved against the cloud colour, but the text
+         that uses it lands on whatever ridge happens to be under it — measured
+         across 20 groups, five separate pieces of chrome on index all came in at
+         exactly 4.46:1, i.e. the solver hit its target and the target was the
+         line itself. The extra 0.7 is the margin between the cloud it is solved
+         against and the ridge it actually sits on. */
+      root.style.setProperty("--bw-ink-on-sky", inkOn(tonedCloud, 5.2));
       root.style.setProperty("--bw-ink-on-sky-strong", inkOn(tonedCloud, 7));
-      document.querySelectorAll(".mtn-bg [clip-path] > use").forEach(function (node) {
-        node.style.fill = tonedCloud;
+      /* …and one more for the bottom of the screen, solved against the lower
+         ridges the footer actually lies across rather than against the sky.
+         Rows 5-9 are the band anything anchored to the foot of the viewport can
+         touch; 5.5 leaves the same margin over the solve that --bw-ink-on-sky
+         carries over its own. */
+      /* ⚠️⚠️ Solved against the raw catalogue rows, and that is a MEASURED
+         choice, not the obvious one.
+
+         The obvious one was to model what is on the screen — the fills paint at
+         .72 over the sky, so a row published as rgb(7,0,0) composites to about
+         rgb(108,99,96), and solving against the raw value is solving against a
+         colour that is nowhere on the page. That reasoning is correct and the
+         result was worse: composited-and-narrowed measured 190 failures over
+         the same 24 groups where the raw five-row solve measured 16. The model
+         is not wrong about compositing, it is wrong about WHICH ridges are
+         under the footer, and there is no way to know that from here — the text
+         lies across whatever the silhouettes happen to do at that scroll
+         position and that viewport width.
+         So the version that measures better ships, and the theory that lost is
+         written down rather than deleted, because it will look right again to
+         the next person. */
+      root.style.setProperty("--bw-ink-on-ridge", inkOnAll(paintedGrounds(tonedRows, tonedCloud).slice(6), 5.5));
+      /* The cloud body gets its own value. Its contour lines keep taking the
+         gem, so the cloud reads the way a ridge does — a plane plus its own
+         line work — rather than as an outline with nothing inside it. */
+      var cloudBody = cloudBodyFor(tonedCloud, tonedRows[0]);
+      root.style.setProperty("--bw-palette-cloudbody", cloudBody);
+      document.querySelectorAll(".mtn-bg .cloud-body").forEach(function (node) {
+        node.style.fill = cloudBody;
       });
     }, immediate);
 
@@ -810,9 +1189,35 @@
     }, immediate);
 
     window.dispatchEvent(new CustomEvent("bw:palettechange", {
-      detail: { id: group.id, name: group.name, segment: group.seg }
+      detail: { id: group.id, name: group.name, segment: group.seg,
+                slot: +(document.documentElement.dataset.bwPaletteSlot || 0) }
     }));
   }
+
+  /* ⚠️⚠️ TRIED AND WITHDRAWN: rasterising the ridges into an <img> and moving
+     the picture instead of the drawing.
+
+     The performance case is real and measured — 59fps with 3 of 295 frames over
+     20ms, against 52fps with 90 of 261 for the live SVG, which is as cheap as
+     having no landscape at all. But the copy has to be self-contained, and
+     making it so is where it fell over twice:
+
+     ① `getComputedStyle` on a <g> answers with the INITIAL value for anything
+        the group does not set, so `fill` comes back rgb(0,0,0). Writing that
+        onto groups painted the whole landscape as a black slab.
+     ② Fixed that, and the picture was still wrong: the bake runs 60ms after
+        applyPalette, which is 60ms into a 1.5s fill transition, so it captured
+        the ridges mid-fade — measured .48 opacity where the sheet says .72.
+
+     Both are fixable. Neither was fixed under a page that has to look right
+     now, and a landscape that renders wrong is worse than one that drifts at
+     52fps. The drift is smooth and the speed is what stopped it reading as
+     steps; the pacing is the part still owed.
+
+     If this is picked up again: bake AFTER the transition settles (1.6s+),
+     re-bake on every group change, keep the clouds out of the clone, and
+     compare the baked picture against the live one pixel by pixel before
+     trusting it. */
 
   function startPaletteSystem(clockStart, reduce, seed) {
     fetch(paletteUrl, { cache: "force-cache" })
@@ -824,12 +1229,23 @@
         if (!Array.isArray(groups) || !groups.length || !groups.every(validPaletteGroup)) {
           throw new Error("Palette data failed validation");
         }
+        paletteGroups = groups;
         var schedule = buildPaletteSchedule(groups, seed);
         paletteScheduleSlots = schedule.length;
         var firstApply = true;
         function update() {
           var slot = Math.floor((Date.now() - clockStart) / paletteDwellMs);
           var index = ((slot * paletteStep) % schedule.length + schedule.length) % schedule.length;
+          /* ⭐ The slot number is published so consumers can key something to
+             the turn of the clock rather than to the group's identity. The
+             block routes hang day and night off it: two horizon blocks, one lit
+             and one dark, trading places every time the colour changes. Parity
+             of the group's index would tie the sky to WHICH card is up, so a
+             visitor arriving mid-schedule could see the same half of the day
+             for a long run; the slot always alternates. The raw count is
+             published rather than its parity, so a consumer can also walk
+             something ACROSS successive turns — the sun's place in its arc. */
+          document.documentElement.dataset.bwPaletteSlot = String(slot);
           applyPalette(schedule[index], firstApply || reduce);
           firstApply = false;
           if (!reduce) {
@@ -935,6 +1351,34 @@
     });
     startPaletteSystem(clockStart, reduce, paletteSeed);
   }
+
+  /* ⭐ The cloud is published so the block routes can draw THE SAME ONE. Those
+     pages switch the range off and build their own skylines, and a hand-made
+     lookalike there would be the one cloud on the site that is not this cloud —
+     the same argument that put the catalogue's own sun and moon in the horizon
+     blocks rather than a plain disc. Body plus its three contour rows, which is
+     what makes a cloud read the way a ridge does: a plane and its own line
+     work, not an outline with nothing inside it. */
+  window.BWRange = {
+    cloudBody: CLOUD,
+    cloudContour: CLOUDC,
+    cloudRows: CLOUD_ROWS,
+    /* ⭐ A way to hold one group still. The catalogue is a shuffled permutation
+       walked by a session clock, so "pin the seed and rewind the clock" only
+       lands on the group you wanted if nothing else moves — and it does: two
+       runs of the same sweep reported different group ids, which means a green
+       result was a sample, not a sweep. Anything solved across 114 groups needs
+       to be checkable across 114 groups.
+       Reads the catalogue and repaints; changes no scheduling state, so the
+       page carries on from wherever it was. */
+    groupIds: function () { return paletteGroups.map(function (g) { return g.id; }); },
+    showGroup: function (id) {
+      for (var i = 0; i < paletteGroups.length; i++) {
+        if (String(paletteGroups[i].id) === String(id)) { applyPalette(paletteGroups[i], true); return true; }
+      }
+      return false;
+    }
+  };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

@@ -38,8 +38,12 @@
     ledger: {
       label: "Available units",
       unit: "units",
-      capFree: "Welcome and top-up units",
-      capPaid: "Plan units + top-ups",
+      /* "Welcome and top-up units" and "Plan units + top-ups" were both written
+         from the ledger's point of view — they name the two buckets the code
+         keeps. A reader is not holding buckets: on the free plan they are
+         holding a reading, and on a paid one they are watching a number. */
+      capFree: "Your first reading is on us",
+      capPaid: "Your monthly units, plus any top-ups",
       action: "Get units"
     },
 

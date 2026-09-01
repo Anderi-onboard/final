@@ -14,6 +14,16 @@
   --space-7: 40px;
   --space-8: 64px;
 
+  /* control heights — the ladder, on the same 4px grid as the spacing above.
+     44 is the DEFAULT rather than the maximum, because 44 is the touch minimum
+     (Apple HIG; WCAG 2.5.5). A control painted smaller than this does not get
+     to be small quietly — it has to earn it with a hit area, which is what the
+     touch-target block in refinement.css gives it. */
+  --ctl-chip: 28px;       /* inline metadata, tags */
+  --ctl-compact: 36px;    /* secondary control in dense chrome */
+  --ctl: 44px;            /* the default */
+  --ctl-prominent: 52px;  /* primary action */
+
   /* radii — only two legal values */
   --radius-blade: 0;      /* every structural slab, card, bubble, plan */
   --radius-pill: 999px;   /* composer, chips, the friendly layer */

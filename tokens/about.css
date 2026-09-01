@@ -1,0 +1,293 @@
+/* The About route ------------------------------------------------------------
+   Flush colour blocks on a 3px paper seam, square corners, tiling the width.
+
+   ⭐ The rounded floating card is gone, and that is a correction rather than a
+   restyle. §3 of the working rules gives this route its material — flush,
+   right angles throughout, opaque, depth from adjacency — and the old cards
+   were the glass route's material (floating, 5.4% radius, a visible ground
+   behind them) on a page that has no landscape to refract. A box on this route
+   is either a flat colour field or it is nothing.
+
+   ⭐ It also settles "the background is too empty" by construction. Blocks
+   that tile the full width leave no ground showing, so there is no empty
+   background left to fill; the seams between them are the only ground, and
+   they are 3px of paper.
+
+   ⭐ The reading runs down the page in a zig-zag: a heading band across the
+   width, then blocks alternating left and right beneath it, with no two the
+   same height. The named areas below do the arranging on wide screens only —
+   DOM order is reading order, which is the lesson the method page paid for.
+
+   ⚠️ This route owns this file alone — the model is legal.css, which the
+   ownership census scored 20 wins and 0 losses precisely because one route had
+   one sheet. Do not put these rules in blocks.css, which guide.html loads. */
+
+/* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
+   body` in refinement.css outspecifies a bare body selector, which is exactly
+   how the block route's ground "was declared for weeks and never painted". */
+/* ⚠️ Written as html[data-skin="paper"] body[...] on purpose. `html[data-skin]
+   body` in refinement.css outspecifies a bare body selector, which is exactly
+   how the block route's ground "was declared for weeks and never painted". */
+html[data-skin="paper"] body[data-page="about"],
+body[data-page="about"] { margin: 0; background: var(--bk-ink); color: var(--bk-ink); }
+
+/* ⭐ Colour comes from the route's shared roles — the same [data-fill] tokens
+   the method page uses, rotating with the 114 groups. The six-tones-of-one-hue
+   scheme this page had was arguing for a version of the page that no longer
+   exists (four cards where the arrangement had to do all the separating);
+   with thirteen blocks and two headed sections it only made the page quieter
+   than its own reference. */
+
+/* ── header and footer: flush bars like the rest of the route ───────────── */
+/* ⚠️ These referenced --ab-fill-4 / --ab-ink-4, which went away with the
+   six-tone scheme. An undefined custom property makes the whole declaration
+   invalid, so the bar kept a colour it was never given and its links vanished
+   into it. Use the route's own tokens, like every other block. */
+body[data-page="about"] :is(.bk-head, .bk-foot) {
+  background: var(--bk-cream);
+  color: var(--bk-ink);
+  border: 0;
+}
+body[data-page="about"] .bk-head { margin-bottom: var(--bk-gap); }
+body[data-page="about"] .bk-foot { margin-top: var(--bk-gap); }
+body[data-page="about"] :is(.bk-head, .bk-foot) a:not(.bk-go) { color: inherit; }
+body[data-page="about"] .bk-go {
+  background: var(--bk-clay);
+  color: var(--on-accent);
+  border-radius: 0;
+}
+
+/* ── the mosaic ─────────────────────────────────────────────────────────── */
+.ab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bk-gap);
+  align-content: start;
+}
+/* ⭐ The block is a grid, and the colony takes whatever the type does not.
+   A 2:1 block is one square of words and one square of marks, so the TYPE's
+   territory is square even though the block is not — which is how a rectangle
+   is made to keep the square unit rather than abandon it. On a square block
+   the leftover is the band between the label and the display line, and the
+   colony fills that.
+
+   ⚠️ The colony is a sibling in the grid, never an overlay. A cluster
+   positioned on top of the block would be the second layer all over again;
+   here the marks and the words are in the same plane, side by side, which is
+   also why the colony can be dense without touching anything. */
+.ab-block {
+  position: relative;
+  padding: clamp(20px, 2.6vw, 40px);
+  display: grid;
+  min-width: 0;
+  gap: clamp(12px, 1.6vw, 24px);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "meta" "say";
+  /* ⚠️ The label stays at the top and the words sit in the middle of whatever
+     height the row hands over. Bottom-anchoring them was right while a colony
+     filled the band above; with type alone it put every headline against the
+     floor under a column of empty colour. */
+  align-content: start;
+}
+.ab-block:not(.ab-block--art):not(.ab-block--cta) .ab-say { align-self: center; }
+.ab-block:not(.ab-block--art):not(.ab-block--cta) { grid-template-rows: auto 1fr; }
+/* ⭐⭐ ONE unit, and the span halves it. A block spanning two of three columns
+   has twice the container width, so a fixed cqw fraction paints at twice the
+   size — which is why eleven display lines all landed between 46 and 67px and
+   the page had no primary. It was patched with a SECOND list of halved
+   fractions per cell, the half-wired pattern this repo has paid for before;
+   one variable means a new block cannot miss the rule. */
+body[data-page="about"] .ab-block { --ab-u: 1cqw; }
+.ab-meta { grid-area: meta; }
+.ab-say  { grid-area: say; }
+/* the spill layer sits behind the words, clipped by the block's own edge —
+   that clipping is the effect: a shape that carries on into the neighbour */
+.bk-spill, .bk-grove { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bk-grove svg { width: 100%; height: 100%; display: block; }
+.bk-spill svg { width: 100%; height: 100%; display: block; }
+.ab-block:is([data-spill], [data-grove]) { overflow: hidden; }
+.ab-colony { grid-area: colony; min-width: 0; min-height: 0; align-self: stretch; }
+.ab-colony svg { width: 100%; height: 100%; display: block; }
+
+/* square blocks: the colony is the band between the label and the line */
+.ab-block[data-colony="m"] {
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: "meta" "colony" "say";
+}
+.ab-block[data-colony="m"] .ab-say { margin-top: 0; }
+.ab-block--art { padding: 0; grid-template-areas: none; }
+
+/* ── type: the method page's system ──────────────────────────────────────
+   ⭐ A small letterspaced label at the top, then a big woven serif line sitting
+   LOW in the block, with the caption beneath it. That is what the reference
+   does, and it is what fills a block: the old layout put an 18px bold name at
+   the top and a 13px caption at the bottom, which is why the blocks read as
+   empty however much colour they carried. Type at display size IS the content.
+
+   ⚠️ Sized in cqw, so the line scales with the block rather than with the
+   viewport — and the full-width blocks get their own smaller fractions,
+   because a block spanning two columns has twice the cqw and the same number
+   would paint it at twice the size. */
+.ab-block { container-type: inline-size; }
+
+.ab-meta {
+  margin: 0;
+  font-family: var(--mono, var(--sans));
+  font-size: max(10px, calc(2.1 * var(--ab-u)));
+  letter-spacing: .12em;
+  /* .88 folded the label toward its own carrier just enough to matter once the
+     fill became a gradient. The hierarchy is carried by size and .12em of
+     tracking; the fade is the third signal and it is the one that gives way. */
+  opacity: .94;
+}
+.ab-say { margin-top: auto; display: grid; gap: clamp(10px, 1.4vw, 18px); align-content: end; }
+.ab-block:not(.ab-block--lede):not(.ab-block--head):not(.ab-block--cta) .ab-display { font-size: calc(7.6 * var(--ab-u)); }
+.ab-display {
+  margin: 0 0 0 -.03em;
+  font-family: var(--serif); font-weight: 400;
+  font-size: calc(13 * var(--ab-u)); line-height: 1.0; letter-spacing: -.03em;
+  text-wrap: balance;
+}
+.ab-note {
+  margin: 0;
+  font-family: var(--sans); font-size: max(12px, calc(2.4 * var(--ab-u))); line-height: 1.5;
+  max-width: 46ch; opacity: .92;
+}
+
+/* the full-width blocks: half the fraction, same optical size */
+/* ⭐ ONE primary. Eleven display lines all landing between 46 and 67px is not
+   a hierarchy — it is one size repeated, and a page with one size has no
+   entrance. The opening statement is the page's subject and is set clearly
+   larger; the section heads sit under it; the content blocks step down again,
+   so scanning the page tells you what it is about before you read a word. */
+.ab-block--lede .ab-display { font-size: calc(15 * var(--ab-u)); }
+.ab-block--lede .ab-note    { font-size: max(13px, calc(2.4 * var(--ab-u))); max-width: 58ch; }
+.ab-block--lede .ab-meta    { font-size: max(10px, calc(2.1 * var(--ab-u))); }
+.ab-block--head .ab-display { font-size: calc(10.5 * var(--ab-u)); }
+.ab-block--cta .ab-display  { font-size: calc(11 * var(--ab-u)); }
+.ab-block--cta { gap: clamp(20px, 2.4vw, 36px); }
+.ab-block--cta { grid-template-areas: "say" "cta"; grid-template-rows: 1fr auto; }
+.ab-block--cta .bk-go { grid-area: cta; justify-self: start; }
+
+/* ── the arrangement: the square is the unit ────────────────────────────
+   ⭐ Three columns, and a cell is a SQUARE unless it is doing something that
+   needs more room, in which case it is two squares wide. That is the method
+   page's discipline and it is the thing the last pass lost: blocks sized by
+   row-span come out as arbitrary rectangles, and once the proportion is
+   arbitrary the position of the type inside it cannot be considered either.
+   With a fixed unit, "label at the top, display line low, caption under it"
+   means the same thing in every block.
+
+   ⭐ And nothing else is added. No frames, no ornaments, no floating marks —
+   the block is a colour, a proportion and its type. Every decorative element
+   that has been tried on this page so far has been the superfluous one.
+
+   ⚠️ Named areas, not auto-placement, so the reading order cannot be reflowed
+   by a block changing height — the fault the method page was rebuilt to
+   remove. DOM order is reading order; these only rearrange it on wide
+   screens. */
+@media (min-width: 900px) {
+  .ab-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "lede lede kind"
+      "sepa sepa evid"
+      "tex1 rest rest"
+      "deep deep gets"
+      "whol word word"
+      "tex2 pays pays"
+      "cta  cta  cta";
+  }
+  .ab-block[data-cell="lede"] { grid-area: lede; }
+  .ab-block[data-cell="kind"] { grid-area: kind; }
+  .ab-block[data-cell="sepa"] { grid-area: sepa; }
+  .ab-block[data-cell="evid"] { grid-area: evid; }
+  .ab-block[data-cell="tex1"] { grid-area: tex1; }
+  .ab-block[data-cell="rest"] { grid-area: rest; }
+  .ab-block[data-cell="deep"] { grid-area: deep; }
+  .ab-block[data-cell="gets"] { grid-area: gets; }
+  .ab-block[data-cell="whol"] { grid-area: whol; }
+  .ab-block[data-cell="word"] { grid-area: word; }
+  .ab-block[data-cell="tex2"] { grid-area: tex2; }
+  .ab-block[data-cell="pays"] { grid-area: pays; }
+  .ab-block[data-cell="cta"]  { grid-area: cta; }
+
+  /* ⭐ Two squares: the words in one, the colony in the other. The side
+     alternates down the page so the zig-zag survives. */
+  .ab-block[data-colony="r"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "meta colony" "say colony";
+  }
+  .ab-block--cta[data-colony="r"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "say colony" "cta colony";
+  }
+  .ab-block[data-colony="l"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "colony meta" "colony say";
+  }
+
+  /* the unit, and the ones that break it */
+  /* ⚠️ Only the ART blocks keep a fixed shape. A square was right while every
+     block carried a colony filling the band above its type; with the text
+     blocks down to type alone a forced square is 480px of block holding 150px
+     of words, and the void above each headline is what "I don't know what to
+     look at" is looking at. Text blocks hug their content; the picture blocks
+     keep their frame, because a picture needs one. */
+  /* ⚠️ 4:3, not square. A square picture block sets its whole grid row, so the
+     text block beside it inherits that height and shows 60% empty ground above
+     its type — the void is not in the text block, it is being handed to it. */
+  .ab-block--art { aspect-ratio: 4 / 3; }
+  .ab-block:not(.ab-block--art) { min-height: 0; }
+  .ab-block:is([data-cell="lede"], [data-cell="sepa"], [data-cell="rest"],
+    [data-cell="deep"], [data-cell="word"], [data-cell="pays"]) { aspect-ratio: auto; }
+  .ab-block[data-cell="cta"] { aspect-ratio: auto; }
+  .ab-block--art[data-cell="tex1"] { aspect-ratio: 4 / 3; }
+
+  /* ⚠️ The span halves the unit — one declaration, not a per-cell list. */
+  body[data-page="about"] .ab-block:is([data-cell="lede"], [data-cell="sepa"],
+    [data-cell="rest"], [data-cell="deep"], [data-cell="word"],
+    [data-cell="pays"]) { --ab-u: .5cqw; }
+  body[data-page="about"] .ab-block[data-cell="cta"] { --ab-u: .34cqw; }
+}
+
+/* ── one column ─────────────────────────────────────────────────────────
+   No areas, no arranging: the DOM order is the rendered order, so the page
+   reads exactly as it is written. The purely decorative blocks come out —
+   without the composition they are only wallpaper, and on a phone they would
+   own a third of the scroll. */
+@media (max-width: 899px) {
+  .ab-grid { grid-template-columns: minmax(0, 1fr); }
+  /* ⚠️ Explicitly out, not merely unplaced. A grid item whose named area does
+     not exist is auto-placed into an implicit row rather than ignored, so it
+     would add an empty band to every block on a phone. */
+  /* ⚠️⚠️ The pictures STAY on a phone. They were hidden here when they were
+     decoration — the note said a composition that has lost its arrangement is
+     just wallpaper, and it was right about the mark fields. But the horizons
+     are scenes now, and the reference this page is drawn from is itself a
+     vertical stack of painted bands: on a phone the pictures ARE the page.
+     Hiding them left eleven flat colour slabs in a column.
+
+     They run as short bands rather than squares, so they punctuate the reading
+     instead of eating a third of its length — which was the real complaint
+     behind hiding them. */
+  .ab-block { aspect-ratio: auto; min-height: 0; }
+  .ab-block--art { display: block; aspect-ratio: 16 / 7; min-height: 0; }
+  /* ⚠️ `grid-area: auto`, not merely `display: block`. The wide layout names a
+     `colony` area; at one column that name no longer exists, so the item was
+     auto-placed into an IMPLICIT column and measured 0 wide — the picture was
+     drawn into a zero-width box, which is why the call to action came up blank
+     while its height read a healthy 179px. Height alone is not proof a box was
+     laid out. */
+  .ab-colony { display: block; grid-area: auto; min-height: 40vw; }
+  .ab-block--cta .ab-colony { min-height: 46vw; }
+  .ab-figure { min-height: 96px; }
+  /* Same as the method page's label: at one column there is no mosaic for a
+     10px caption to be a caption of. */
+  /* ⚠️ Specificity, again: `.ab-block--lede .ab-meta` is (0,2,0) and a bare
+     `.ab-meta` here is (0,1,0), so the opening block kept its 10px while every
+     other label moved. Match the weight rather than expect to win. */
+  .ab-block .ab-meta { font-size: 11px; }
+}

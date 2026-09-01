@@ -10,6 +10,10 @@
   --dur-fast: 140ms;   /* press, hover tint */
   --dur-base: 190ms;   /* menus, reveals */
   --dur-slow: 360ms;   /* panels, page-level */
+  /* ⚠️ 普查补的一档:全站 18 处时长落在 500–600ms,而令牌在 360 和 760 之间是空的,
+     于是每个调用点各自敲了一个数(.45 / .5 / .52 / .55 / .6 / .68)。
+     补一档是系统设计;为了迁就某一页改一个数才是漂移。 */
+  --dur-slower: 520ms; /* long settles — drawers, page-scale chrome */
 
   /* Editorial reveal curves — the long, weighted easings that give a
      smooth-scrolled page its "settling into place" feel. --ease-cinematic is
@@ -80,17 +84,9 @@
   .scroll-rail{display:none}
 }
 
-/* Touch-target hardening — on coarse pointers (phones/tablets), small icon
-   controls get an invisible 44×44 minimum hit area via a centered ::after,
-   without changing their painted size. Applied to the known-small controls
-   across the app so taps land reliably (WCAG 2.5.5). */
-@media (pointer:coarse){
-  .cx, .casting-del, .side-toggle, .side-open-btn, .modal-x,
-  .wiz-exit, .method-menu .mm-row, .send, .brand-btn{
-    position:relative;
-  }
-  .cx::after, .casting-del::after, .modal-x::after, .wiz-exit::after{
-    content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    min-width:44px;min-height:44px;width:100%;height:100%;
-  }
-}
+/* Touch-target hardening used to live here. It has moved to
+   tokens/refinement.css — every one of the ten routes loads that sheet,
+   motion.css is not the owner of chrome geometry, and the rule needed
+   rewriting: it named nine selectors for position:relative and only four of
+   them for the ::after, so five controls carried the positioning and no hit
+   area at all. One of them was .send, the Cast button. */

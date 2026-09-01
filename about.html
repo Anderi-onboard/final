@@ -1,30 +1,37 @@
-<!-- BourneWise — Why BourneWise. Block-composition route: this page is built
-     from flat unequal rectangles and generated pattern fields, not from cards
-     floating on the landscape. See tokens/blocks.css for why the two routes
-     use different materials. -->
+<!-- BourneWise — About us.
+     Flush colour blocks, square corners, 3px paper seams — the block route's
+     own material. The rounded floating cards this page used to have were never
+     part of that system; §3 of CLAUDE.md says this route is "flush, right
+     angles throughout, depth from adjacency", and a card with a 5.4% radius
+     sitting on a visible ground is the glass route's material on the wrong
+     page. Blocks that tile the width also settle the "background is too empty"
+     note by construction: there is no ground left showing.
+
+     DOM order is reading order. The named grid areas below only rearrange the
+     blocks on wide screens; under 900px the order you read is the order here.
+     See tokens/about.css, which this route owns alone. -->
 <!DOCTYPE html>
 <html lang="en" data-skin="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why BourneWise</title>
-<meta name="description" content="Why BourneWise separates the generated hexagram from the model-written interpretation.">
-<!-- Paint guard, runs before any stylesheet: --paper is not defined yet here,
-     so this one value must stay a literal. It has to equal --paper in
-     tokens/paper.css; if that changes, change this too. -->
-<style>html{overflow-x:clip}html,body{background:#E7E1D7}</style>
+<title>About us — BourneWise</title>
+<meta name="description" content="What BourneWise is, what a reading is made of, and what you get.">
+<!-- Paint guard, runs before any stylesheet. -->
+<style>html{overflow-x:clip}html,body{background:#1C3324}</style>
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/blocks.css?v=20260901d">
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/blocks.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/about.css?v=20260901i">
 </head>
-<body class="blocks-route" data-page="about">
+<body class="blocks-route has-grain" data-page="about">
 
 <header class="bk-head">
   <a class="bk-brand" href="./index.html"><span class="bk-mark" data-mark="ring"></span><b>BourneWise</b></a>
@@ -35,112 +42,120 @@
   </nav>
 </header>
 
-<main class="bk-main">
+<main class="ab-grid">
 
-  <!-- Composition A — .37 / .35 / .28 columns, .34 / .66 rows.
-       Title anchored to the foot of the left field; a banded middle; a
-       full-height rail at the right edge. -->
-  <section class="bk bk--a">
-    <div class="bk-cell bk-cell--title" data-at="left-tall" data-fill="brick">
-      <p class="bk-eyebrow">Why BourneWise</p>
-      <h1 data-weave>The cast and the answer are separate systems.</h1>
-    </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="olive" data-pattern="vesica"></div>
-    <div class="bk-cell bk-cell--body" data-at="mid-bottom" data-fill="bone">
-      <p class="bk-lead">BourneWise generates the hexagram first. Claude Opus 5 explains the result it
-      receives. The model writes the interpretation; it does not choose the figure.</p>
-      <p class="bk-note">This separation keeps the source of the reading visible and gives every answer
-      a fixed input you can inspect.</p>
-    </div>
-    <div class="bk-cell" data-at="right-tall" data-fill="clay" data-mark="hexagram"></div>
-  </section>
-
-  <!-- Composition B — one band over one field, .37 / .63. -->
-  <section class="bk bk--b">
-    <div class="bk-cell" data-at="band-top" data-fill="dusty" data-pattern="tally"></div>
-    <div class="bk-cell bk-cell--title" data-at="band-bottom" data-fill="bone">
-      <p class="bk-eyebrow">Field note 01</p>
-      <h2 data-weave>The figure exists before the prose.</h2>
-      <p class="bk-note">Question, cast, and interpretation remain visible as three separate stages.</p>
+  <!-- the opening statement, full width -->
+  <section class="ab-block ab-block--lede" data-scene="1" data-cell="lede" data-fill="cream">
+    <p class="ab-meta">About us</p>
+    <div class="ab-say">
+      <h1 class="ab-display" data-weave>We built the part that cannot be talked out of its answer.</h1>
+      <p class="ab-note">A reading here has two halves that never touch. Six lines fall, and they are
+      fixed. Then Claude explains the figure that fell — the one you actually got, in the situation
+      you actually described.</p>
     </div>
   </section>
 
-  <!-- Composition C — .42 / .37 / .21 columns, .53 / .47 rows. -->
-  <section class="bk bk--c">
-    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="olive">
-      <p class="bk-eyebrow">01 — Sequence</p>
-      <h2 data-weave>The sequence is fixed before inference begins.</h2>
-    </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="teal" data-land="4"></div>
-    <div class="bk-cell" data-at="right-tall" data-fill="brick" data-pattern="yao"></div>
-    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="bone">
-      <li><span class="bk-eyebrow">First</span><b>Your question sets the subject.</b>
-        <p>The decision, people involved, constraints, and timeframe define what the figure must address.</p></li>
-      <li><span class="bk-eyebrow">Then</span><b>The engine generates six lines.</b>
-        <p>The primary hexagram, moving lines, and transformed figure are computed independently of the language model.</p></li>
-      <li><span class="bk-eyebrow">Finally</span><b>Claude writes from fixed data.</b>
-        <p>The question and computed figure are passed to Claude Opus 5 as evidence for the explanation.</p></li>
-    </ol>
+  <section class="ab-block ab-block--head" data-scene="2" data-cell="kind" data-fill="clay">
+    <p class="ab-meta">One</p>
+    <div class="ab-say"><h2 class="ab-display" data-weave>What a reading is made of</h2></div>
   </section>
 
-  <!-- Composition D — .54 / .19 / .27 columns, .48 / .52 rows. -->
-  <section class="bk bk--d">
-    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="teal">
-      <p class="bk-eyebrow">02 — Depth</p>
-      <h2 data-weave>Choose the amount of structure your question needs.</h2>
+  <article class="ab-block" data-scene="3" data-cell="sepa" data-fill="olive">
+    <p class="ab-meta">Separation</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>The figure lands before a word does.</h3>
+      <p class="ab-note">Six lines fall, and nothing you typed moves them — nor does anything written about them afterwards.</p>
     </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="clay" data-pattern="coin"></div>
-    <div class="bk-cell" data-at="right-tall" data-fill="ochre" data-mark="florette"></div>
-    <div class="bk-cell bk-cell--body" data-at="wide-bottom" data-fill="bone">
-      <p class="bk-eyebrow">Stria 64 · about 440 units — Sortis 6 · about 780 units</p>
-      <p class="bk-lead">Stria reads the primary hexagram against the current situation. Sortis adds
-      moving lines, the transformed hexagram, and line-by-line change analysis.</p>
-      <p class="bk-note">Both methods use the same casting sequence. They differ in how much of the
-      resulting structure is interpreted.</p>
+  </article>
+
+  <article class="ab-block" data-scene="4" data-cell="evid" data-fill="bone">
+    <p class="ab-meta">Evidence</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>Every answer shows its source.</h3>
+      <p class="ab-note">The figure it was written from comes with it, so you can read where the reading came from and not only where it arrived.</p>
     </div>
+  </article>
+
+  <section class="ab-block ab-block--art" data-cell="tex1" data-fill="dusty"
+           data-scatter="4" data-lead="wave" aria-hidden="true"></section>
+
+
+  <article class="ab-block" data-spill="left" data-grove="bamboo" data-cell="rest" data-fill="brick">
+    <p class="ab-meta">Restraint</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>A view, not a verdict.</h3>
+      <p class="ab-note">It tells you what to go and check. It will not decide it for you, and it does not pretend to.</p>
+    </div>
+  </article>
+
+  <article class="ab-block" data-scene="5" data-cell="deep" data-fill="teal">
+    <p class="ab-meta">Depth</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>One figure, or one and what it becomes.</h3>
+      <p class="ab-note">You choose how much structure the question needs before you ask it.</p>
+    </div>
+  </article>
+
+
+  <section class="ab-block ab-block--head" data-scene="6" data-cell="gets" data-fill="teal">
+    <p class="ab-meta">Two</p>
+    <div class="ab-say"><h2 class="ab-display" data-weave>What you actually get</h2></div>
   </section>
 
-  <!-- Composition C again, mirrored in content: the repeat is the system. -->
-  <section class="bk bk--c">
-    <div class="bk-cell bk-cell--title" data-at="left-top" data-fill="brick">
-      <p class="bk-eyebrow">03 — Limits</p>
-      <h2 data-weave>A reading supports reflection. It does not replace judgment.</h2>
+  <article class="ab-block" data-spill="right" data-grove="pine" data-cell="whol" data-fill="ochre">
+    <p class="ab-meta">Your first</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>A whole reading, not a taste of one.</h3>
+      <p class="ab-note">It is on us, it starts, and it finishes. Nothing is held back to make a point.</p>
     </div>
-    <div class="bk-cell" data-at="mid-top" data-fill="ochre" data-pattern="brand"></div>
-    <div class="bk-cell" data-at="right-tall" data-fill="olive" data-mark="florette"></div>
-    <ol class="bk-cell bk-cell--steps" data-at="wide-bottom" data-fill="cream">
-      <li><span class="bk-eyebrow">Fixed input</span><b>The figure cannot be redrawn.</b>
-        <p>The model cannot replace or override the generated hexagram.</p></li>
-      <li><span class="bk-eyebrow">Explicit limits</span><b>Signal and extension stay apart.</b>
-        <p>The answer should separate concrete signals from imaginative extension and uncertainty.</p></li>
-      <li><span class="bk-eyebrow">Reflection</span><b>Return after the decision.</b>
-        <p>Compare what changed, what held, and what you would decide differently next time.</p></li>
-    </ol>
-  </section>
+  </article>
 
-  <!-- Composition B closes it, type over field this time — the B2 proportion,
-       because a heading and a call to action need more than a band's height. -->
-  <section class="bk bk--b2">
-    <div class="bk-cell bk-cell--title" data-at="band-top" data-fill="bone">
-      <p class="bk-eyebrow">Field note 02</p>
-      <h2 data-weave>Return after the decision.</h2>
-      <a class="bk-go bk-go--big" href="./guide.html">See the full process one step at a time →</a>
+  <article class="ab-block" data-scene="7" data-grove="reed" data-cell="word" data-fill="cream">
+    <p class="ab-meta">Language</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>Ask in the words you think in.</h3>
+      <p class="ab-note">The answer comes back in the language you asked in, whichever that is.</p>
     </div>
-    <div class="bk-cell" data-at="band-bottom" data-fill="olive" data-land="7"></div>
+  </article>
+
+  <section class="ab-block ab-block--art" data-cell="tex2"
+           data-horizon="2" aria-hidden="true"></section>
+
+
+  <article class="ab-block" data-spill="left" data-grove="reed" data-cell="pays" data-fill="dusty">
+    <p class="ab-meta">Balance</p>
+    <div class="ab-say">
+      <h3 class="ab-display" data-weave>You pay for what ran.</h3>
+      <p class="ab-note">No plan to keep up and nothing reserved in advance. A balance, and questions you spend it on.</p>
+    </div>
+  </article>
+
+
+  <section class="ab-block ab-block--cta" data-cell="cta" data-fill="brick" data-colony="r">
+    <div class="ab-say"><h2 class="ab-display" data-weave>Ask it something that matters.</h2></div>
+    <a class="bk-go bk-go--big" href="./index.html">Start a casting →</a>
+    <div class="ab-colony" data-centre="valley" aria-hidden="true"></div>
   </section>
 
 </main>
 
 <footer class="bk-foot">
   <span>BourneWise</span>
-  <a href="./index.html">Start a casting</a>
+  <a href="./guide.html">The method</a>
   <a href="./pricing.html">Plans &amp; units</a>
   <a href="./terms.html">Terms</a>
   <a href="./privacy.html">Privacy</a>
 </footer>
 
-<script src="./assets/marks.js?v=20260901d"></script>
-<script src="./assets/blocks.js?v=20260901d"></script>
-<script src="./assets/weave.js?v=20260901d" defer></script>
+<!-- Palette only. There is no .mtn-bg on this route, so the engine's build
+     loop matches nothing and not one ridge is drawn; what runs is the
+     schedule, which publishes --bw-palette-* on <html> off the session
+     clock. That is what makes the colour continuous when you arrive here
+     from a glass route: same seed, same clock, same group. -->
+<script src="./assets/backgrounds/mountain-range.js?v=20260901i"></script>
+<script src="./assets/marks.js?v=20260901i"></script>
+<script src="./assets/blocks.js?v=20260901i"></script>
+<script src="./assets/about.js?v=20260901i"></script>
+<script src="./assets/weave.js?v=20260901i" defer></script>
 </body>
 </html>

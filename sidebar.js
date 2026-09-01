@@ -177,11 +177,21 @@
     A.paintSidebar({ foot: ".side-foot", menuWho: "#acctMenu .who", units: "#unitsSide" });
     var badge = aside.querySelector("#miPlanBadge");
     if (badge) badge.textContent = A.planName(S.account.plan).toUpperCase();
-    var grant = (A.PLANS[S.account.plan] && A.PLANS[S.account.plan].grant) || 3000;
-    var pct = Math.max(4, Math.min(100, Math.round(S.units / grant * 100)));
+    /* The fourth copy of the same fallback. chat-app.js had `|| 1500` and this
+       had `|| 3000`; PLANS.free.grant is 0, so both fired on every free account
+       and printed a monthly allowance the product does not have — this one read
+       "Free · 3,000 / mo" on the settings page. A plan with no monthly grant has
+       no scale to be a fraction of, and its caption comes off the copy deck
+       rather than being assembled from a number here. */
+    var grant = (A.PLANS[S.account.plan] && A.PLANS[S.account.plan].grant) || 0;
+    var pct = grant > 0 ? Math.max(4, Math.min(100, Math.round(S.units / grant * 100))) : 0;
     var bar = aside.querySelector("#unitsBar"); if (bar) bar.style.width = pct + "%";
     var planEl = aside.querySelector("#ledgerPlan"); if (planEl) planEl.textContent = A.planName(S.account.plan);
-    var cap = aside.querySelector("#unitsCap"); if (cap) cap.textContent = A.planName(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo";
+    var C = window.BWCopy;
+    var cap = aside.querySelector("#unitsCap");
+    if (cap) cap.textContent = grant > 0
+      ? A.planName(S.account.plan) + " \u00b7 " + grant.toLocaleString("en-US") + " / mo"
+      : (C && C.ledger ? C.ledger.capFree : "Your first reading is on us");
   }
   paintLedger();
   // pull server state on shared pages too, then repaint

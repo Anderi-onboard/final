@@ -16,252 +16,260 @@ screen-reader name).
 Runtime strings live in `copy.js` and appear in their own section at the end;
 they are functions of live numbers, so they are shown as templates.
 
-**459 blocks** across 10 pages, plus the runtime copy module.
+**458 blocks** across 10 pages, plus the runtime copy module.
 
 ---
 
 ## 1. index.html
 
-*The app — sidebar, casting workbench, composer* — 60 blocks
+*The app — sidebar, casting workbench, composer* — 62 blocks
 
 @@ s01.index.html.001
 <!-- source: index.html:7 | kind: title -->
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.002
-<!-- source: index.html:799 | kind: aria-label -->
+<!-- source: index.html:867 | kind: aria-label -->
 New casting
 
 @@ s01.index.html.003
-<!-- source: index.html:800 | kind: aria-label -->
+<!-- source: index.html:868 | kind: aria-label -->
 BourneWise logomark
 
 @@ s01.index.html.004
-<!-- source: index.html:803 | kind: aria-label -->
+<!-- source: index.html:871 | kind: aria-label -->
 Collapse sidebar
 
 @@ s01.index.html.005
-<!-- source: index.html:813 | kind: aria-label -->
+<!-- source: index.html:881 | kind: aria-label -->
 Site navigation
 
 @@ s01.index.html.006
-<!-- source: index.html:819 | kind: aria-label -->
+<!-- source: index.html:887 | kind: aria-label -->
 Reading history
 
 @@ s01.index.html.007
-<!-- source: index.html:837 | kind: aria-label -->
+<!-- source: index.html:905 | kind: aria-label -->
 Sign in and your first reading is on us
 
 @@ s01.index.html.008
-<!-- source: index.html:838 | kind: aria-label -->
+<!-- source: index.html:906 | kind: aria-label -->
 Dismiss
 
 @@ s01.index.html.009
-<!-- source: index.html:857 | kind: aria-label -->
+<!-- source: index.html:925 | kind: aria-label -->
 Open menu
 
 @@ s01.index.html.010
-<!-- source: index.html:873 | kind: aria-label -->
-Open the five-minute walk-through
+<!-- source: index.html:934 | kind: aria-label -->
+BourneWise — home
 
 @@ s01.index.html.011
-<!-- source: index.html:897 | kind: aria-label -->
-Earlier castings to carry
+<!-- source: index.html:955 | kind: aria-label -->
+Open the five-minute walk-through
 
 @@ s01.index.html.012
-<!-- source: index.html:901 | kind: aria-label -->
-Casting question
+<!-- source: index.html:979 | kind: aria-label -->
+Earlier castings to carry
 
 @@ s01.index.html.013
-<!-- source: index.html:902 | kind: aria-label -->
-Cast
+<!-- source: index.html:983 | kind: aria-label -->
+Casting question
 
 @@ s01.index.html.014
-<!-- source: index.html:908 | kind: aria-label -->
-Casting method
+<!-- source: index.html:984 | kind: aria-label -->
+Cast
 
 @@ s01.index.html.015
-<!-- source: index.html:901 | kind: placeholder -->
-Describe the situation, then ask one clear question…
+<!-- source: index.html:990 | kind: aria-label -->
+Casting method
 
 @@ s01.index.html.016
-<!-- source: index.html:803 | kind: title -->
-Collapse sidebar
+<!-- source: index.html:983 | kind: placeholder -->
+Describe the situation, then ask one clear question…
 
 @@ s01.index.html.017
-<!-- source: index.html:857 | kind: title -->
-Menu
+<!-- source: index.html:871 | kind: title -->
+Collapse sidebar
 
 @@ s01.index.html.018
-<!-- source: index.html:863 | kind: title -->
-How answers are generated
+<!-- source: index.html:925 | kind: title -->
+Menu
 
 @@ s01.index.html.019
-<!-- source: index.html:900 | kind: title -->
-Change casting method
+<!-- source: index.html:945 | kind: title -->
+How answers are generated
 
 @@ s01.index.html.020
+<!-- source: index.html:982 | kind: title -->
+Change casting method
+
+@@ s01.index.html.021
 <!-- source: index.html:7 | kind: text -->
 BourneWise — Hexagram-based decision analysis
 
-@@ s01.index.html.021
-<!-- source: index.html:801 | kind: text -->
+@@ s01.index.html.022
+<!-- source: index.html:869 | kind: text -->
 BourneWise
 
-@@ s01.index.html.022
-<!-- source: index.html:810 | kind: text -->
+@@ s01.index.html.023
+<!-- source: index.html:878 | kind: text -->
 New casting
 
-@@ s01.index.html.023
-<!-- source: index.html:814 | kind: text -->
+@@ s01.index.html.024
+<!-- source: index.html:882 | kind: text -->
 The method
 
-@@ s01.index.html.024
-<!-- source: index.html:815 | kind: text -->
-Why BourneWise
-
 @@ s01.index.html.025
-<!-- source: index.html:816 | kind: text -->
-Plans & units
+<!-- source: index.html:883 | kind: text -->
+About us
 
 @@ s01.index.html.026
-<!-- source: index.html:820 | kind: text -->
-Reading history
+<!-- source: index.html:884 | kind: text -->
+Plans & units
 
 @@ s01.index.html.027
-<!-- source: index.html:825 | kind: text -->
-Available units
+<!-- source: index.html:888 | kind: text -->
+Reading history
 
 @@ s01.index.html.028
-<!-- source: index.html:826 | kind: text -->
-Usage
+<!-- source: index.html:893 | kind: text -->
+Available units
 
 @@ s01.index.html.029
-<!-- source: index.html:829 | kind: text -->
-—
+<!-- source: index.html:894 | kind: text -->
+Usage
 
 @@ s01.index.html.030
-<!-- source: index.html:830 | kind: text -->
-units
+<!-- source: index.html:897 | kind: text -->
+—
 
 @@ s01.index.html.031
-<!-- source: index.html:833 | kind: text -->
-Prepaid balance · no expiry
+<!-- source: index.html:898 | kind: text -->
+units
 
 @@ s01.index.html.032
-<!-- source: index.html:834 | kind: text -->
-Get units
+<!-- source: index.html:901 | kind: text -->
+Prepaid balance · no expiry
 
 @@ s01.index.html.033
-<!-- source: index.html:834 | kind: text -->
-→
+<!-- source: index.html:902 | kind: text -->
+Get units
 
 @@ s01.index.html.034
-<!-- source: index.html:838 | kind: text -->
-×
+<!-- source: index.html:902 | kind: text -->
+→
 
 @@ s01.index.html.035
-<!-- source: index.html:839 | kind: text -->
-First reading?
+<!-- source: index.html:906 | kind: text -->
+×
 
 @@ s01.index.html.036
-<!-- source: index.html:839 | kind: text -->
-Sign in and
+<!-- source: index.html:907 | kind: text -->
+First reading?
 
 @@ s01.index.html.037
-<!-- source: index.html:839 | kind: text -->
-the first one is on us
+<!-- source: index.html:907 | kind: text -->
+Sign in and
 
 @@ s01.index.html.038
-<!-- source: index.html:839 | kind: text -->
-— whole, not a sample.
+<!-- source: index.html:907 | kind: text -->
+the first one is on us
 
 @@ s01.index.html.039
-<!-- source: index.html:844 | kind: text -->
-Guest
+<!-- source: index.html:907 | kind: text -->
+— whole, not a sample.
 
 @@ s01.index.html.040
-<!-- source: index.html:844 | kind: text -->
-Not signed in
+<!-- source: index.html:912 | kind: text -->
+Guest
 
 @@ s01.index.html.041
-<!-- source: index.html:848 | kind: text -->
-Sign in to sync your balance and readings
+<!-- source: index.html:912 | kind: text -->
+Not signed in
 
 @@ s01.index.html.042
-<!-- source: index.html:849 | kind: text -->
-Plans
+<!-- source: index.html:916 | kind: text -->
+Sign in to sync your balance and readings
 
 @@ s01.index.html.043
-<!-- source: index.html:850 | kind: text -->
-Settings
+<!-- source: index.html:917 | kind: text -->
+Plans
 
 @@ s01.index.html.044
-<!-- source: index.html:851 | kind: text -->
-Sign out
+<!-- source: index.html:918 | kind: text -->
+Settings
 
 @@ s01.index.html.045
-<!-- source: index.html:862 | kind: text -->
-— units
+<!-- source: index.html:919 | kind: text -->
+Sign out
 
 @@ s01.index.html.046
-<!-- source: index.html:865 | kind: text -->
-We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.
+<!-- source: index.html:942 | kind: text -->
+Sign in
 
 @@ s01.index.html.047
-<!-- source: index.html:868 | kind: text -->
-Why
+<!-- source: index.html:944 | kind: text -->
+— units
 
 @@ s01.index.html.048
-<!-- source: index.html:875 | kind: text -->
-How does this work?
+<!-- source: index.html:947 | kind: text -->
+We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.
 
 @@ s01.index.html.049
-<!-- source: index.html:875 | kind: text -->
-See how casting, interpretation, and billing fit together.
+<!-- source: index.html:950 | kind: text -->
+About
 
 @@ s01.index.html.050
-<!-- source: index.html:888 | kind: text -->
-The figure is settled before a word is written about it.
+<!-- source: index.html:957 | kind: text -->
+How does this work?
 
 @@ s01.index.html.051
-<!-- source: index.html:900 | kind: text -->
-Stria 64
+<!-- source: index.html:957 | kind: text -->
+See how casting, interpretation, and billing fit together.
 
 @@ s01.index.html.052
-<!-- source: index.html:907 | kind: text -->
-Enter to submit · Shift+Enter for a new line
+<!-- source: index.html:970 | kind: text -->
+The figure is settled before a word is written about it.
 
 @@ s01.index.html.053
-<!-- source: index.html:907 | kind: text -->
-Follow-ups reuse the current hexagram
+<!-- source: index.html:982 | kind: text -->
+Stria 64
 
 @@ s01.index.html.054
-<!-- source: index.html:909 | kind: text -->
-Stria 64 · about 440 units typical · charged for what it uses
+<!-- source: index.html:989 | kind: text -->
+Enter to submit · Shift+Enter for a new line
 
 @@ s01.index.html.055
-<!-- source: index.html:910 | kind: text -->
-Support:
+<!-- source: index.html:989 | kind: text -->
+Follow-ups reuse the current hexagram
 
 @@ s01.index.html.056
-<!-- source: index.html:910 | kind: text -->
-hello@bournewise.com
+<!-- source: index.html:991 | kind: text -->
+Stria 64 · about 440 units typical · charged for what it uses
 
 @@ s01.index.html.057
-<!-- source: index.html:910 | kind: text -->
-·
+<!-- source: index.html:996 | kind: text -->
+Support:
 
 @@ s01.index.html.058
-<!-- source: index.html:910 | kind: text -->
-Terms
+<!-- source: index.html:996 | kind: text -->
+hello@bournewise.com
 
 @@ s01.index.html.059
-<!-- source: index.html:910 | kind: text -->
-Privacy
+<!-- source: index.html:996 | kind: text -->
+·
 
 @@ s01.index.html.060
-<!-- source: index.html:910 | kind: text -->
+<!-- source: index.html:996 | kind: text -->
+Terms
+
+@@ s01.index.html.061
+<!-- source: index.html:996 | kind: text -->
+Privacy
+
+@@ s01.index.html.062
+<!-- source: index.html:996 | kind: text -->
 Refunds
 
 ---
@@ -279,31 +287,31 @@ Plans & units — BourneWise
 Monthly and annual BourneWise plans with included units, plus one-time top-ups. You are charged for the words an answer used, after it is written.
 
 @@ s02.pricing.html.003
-<!-- source: pricing.html:53 | kind: aria-label -->
+<!-- source: pricing.html:59 | kind: aria-label -->
 BourneWise home
 
 @@ s02.pricing.html.004
-<!-- source: pricing.html:65 | kind: aria-label -->
+<!-- source: pricing.html:71 | kind: aria-label -->
 Billing cycle
 
 @@ s02.pricing.html.005
-<!-- source: pricing.html:70 | kind: aria-label -->
+<!-- source: pricing.html:76 | kind: aria-label -->
 Subscription plans
 
 @@ s02.pricing.html.006
-<!-- source: pricing.html:96 | kind: aria-label -->
+<!-- source: pricing.html:102 | kind: aria-label -->
 Usage rates
 
 @@ s02.pricing.html.007
-<!-- source: pricing.html:101 | kind: aria-label -->
+<!-- source: pricing.html:107 | kind: aria-label -->
 Usage estimator
 
 @@ s02.pricing.html.008
-<!-- source: pricing.html:108 | kind: aria-label -->
+<!-- source: pricing.html:114 | kind: aria-label -->
 Unit packs
 
 @@ s02.pricing.html.009
-<!-- source: pricing.html:115 | kind: aria-label -->
+<!-- source: pricing.html:121 | kind: aria-label -->
 Billing rules
 
 @@ s02.pricing.html.010
@@ -311,290 +319,290 @@ Billing rules
 Plans & units — BourneWise
 
 @@ s02.pricing.html.011
-<!-- source: pricing.html:55 | kind: text -->
+<!-- source: pricing.html:61 | kind: text -->
 BourneWise
 
 @@ s02.pricing.html.012
-<!-- source: pricing.html:57 | kind: text -->
+<!-- source: pricing.html:63 | kind: text -->
 The method
 
 @@ s02.pricing.html.013
-<!-- source: pricing.html:57 | kind: text -->
-Why BourneWise
+<!-- source: pricing.html:63 | kind: text -->
+About us
 
 @@ s02.pricing.html.014
-<!-- source: pricing.html:57 | kind: text -->
+<!-- source: pricing.html:63 | kind: text -->
 Start a casting
 
 @@ s02.pricing.html.015
-<!-- source: pricing.html:61 | kind: text -->
+<!-- source: pricing.html:67 | kind: text -->
 Plans & units
 
 @@ s02.pricing.html.016
-<!-- source: pricing.html:61 | kind: text -->
+<!-- source: pricing.html:67 | kind: text -->
 Nothing is held back, and nothing is cut off.
 
 @@ s02.pricing.html.017
-<!-- source: pricing.html:61 | kind: text -->
+<!-- source: pricing.html:67 | kind: text -->
 Units arrive monthly, or a handful at a time, into the one balance. An answer is charged after it is written, for the words it actually used.
 
 @@ s02.pricing.html.018
-<!-- source: pricing.html:61 | kind: text -->
+<!-- source: pricing.html:67 | kind: text -->
 Nothing is set aside while an answer is being written, and no ceiling stops it early. A reading that has begun is finished and paid for, even if that empties the balance.
 
 @@ s02.pricing.html.019
-<!-- source: pricing.html:63 | kind: text -->
+<!-- source: pricing.html:69 | kind: text -->
 Not signed in
 
 @@ s02.pricing.html.020
-<!-- source: pricing.html:63 | kind: text -->
+<!-- source: pricing.html:69 | kind: text -->
 Available units
 
 @@ s02.pricing.html.021
-<!-- source: pricing.html:63 | kind: text -->
+<!-- source: pricing.html:69 | kind: text -->
 Sign in
 
 @@ s02.pricing.html.022
-<!-- source: pricing.html:66 | kind: text -->
+<!-- source: pricing.html:72 | kind: text -->
 Monthly
 
 @@ s02.pricing.html.023
-<!-- source: pricing.html:67 | kind: text -->
+<!-- source: pricing.html:73 | kind: text -->
 Annually
 
 @@ s02.pricing.html.024
-<!-- source: pricing.html:68 | kind: text -->
+<!-- source: pricing.html:74 | kind: text -->
 Save 2 months
 
 @@ s02.pricing.html.025
-<!-- source: pricing.html:72 | kind: text -->
+<!-- source: pricing.html:78 | kind: text -->
 Free
 
 @@ s02.pricing.html.026
-<!-- source: pricing.html:72 | kind: text -->
+<!-- source: pricing.html:78 | kind: text -->
 Create an account and explore the service before paying.
 
 @@ s02.pricing.html.027
-<!-- source: pricing.html:73 | kind: text -->
+<!-- source: pricing.html:79 | kind: text -->
 once
 
 @@ s02.pricing.html.028
-<!-- source: pricing.html:73 | kind: text -->
+<!-- source: pricing.html:79 | kind: text -->
 Your
 
 @@ s02.pricing.html.029
-<!-- source: pricing.html:73 | kind: text -->
+<!-- source: pricing.html:79 | kind: text -->
 first reading
 
 @@ s02.pricing.html.030
-<!-- source: pricing.html:73 | kind: text -->
+<!-- source: pricing.html:79 | kind: text -->
 is free
 
 @@ s02.pricing.html.031
-<!-- source: pricing.html:74 | kind: text -->
+<!-- source: pricing.html:80 | kind: text -->
 No recurring charge
 
 @@ s02.pricing.html.032
-<!-- source: pricing.html:74 | kind: text -->
+<!-- source: pricing.html:80 | kind: text -->
 A whole reading, not a sample
 
 @@ s02.pricing.html.033
-<!-- source: pricing.html:74 | kind: text -->
+<!-- source: pricing.html:80 | kind: text -->
 Both reading methods
 
 @@ s02.pricing.html.034
-<!-- source: pricing.html:75 | kind: text -->
+<!-- source: pricing.html:81 | kind: text -->
 Create account
 
 @@ s02.pricing.html.035
-<!-- source: pricing.html:78 | kind: text -->
+<!-- source: pricing.html:84 | kind: text -->
 Most useful
 
 @@ s02.pricing.html.036
-<!-- source: pricing.html:78 | kind: text -->
+<!-- source: pricing.html:84 | kind: text -->
 Pro
 
 @@ s02.pricing.html.037
-<!-- source: pricing.html:78 | kind: text -->
+<!-- source: pricing.html:84 | kind: text -->
 For regular readings and focused follow-up threads.
 
 @@ s02.pricing.html.038
-<!-- source: pricing.html:79 | kind: text -->
+<!-- source: pricing.html:85 | kind: text -->
 / month
 
 @@ s02.pricing.html.039
-<!-- source: pricing.html:79 | kind: text -->
+<!-- source: pricing.html:85 | kind: text -->
 units
 
 @@ s02.pricing.html.040
-<!-- source: pricing.html:79 | kind: text -->
+<!-- source: pricing.html:85 | kind: text -->
 monthly
 
 @@ s02.pricing.html.041
-<!-- source: pricing.html:80 | kind: text -->
+<!-- source: pricing.html:86 | kind: text -->
 Both Stria and Sortis
 
 @@ s02.pricing.html.042
-<!-- source: pricing.html:80 | kind: text -->
+<!-- source: pricing.html:86 | kind: text -->
 Usage settles automatically
 
 @@ s02.pricing.html.043
-<!-- source: pricing.html:80 | kind: text -->
+<!-- source: pricing.html:86 | kind: text -->
 Top up without changing plans
 
 @@ s02.pricing.html.044
-<!-- source: pricing.html:81 | kind: text -->
+<!-- source: pricing.html:87 | kind: text -->
 Choose Pro
 
 @@ s02.pricing.html.045
-<!-- source: pricing.html:84 | kind: text -->
+<!-- source: pricing.html:90 | kind: text -->
 Premium
 
 @@ s02.pricing.html.046
-<!-- source: pricing.html:84 | kind: text -->
+<!-- source: pricing.html:90 | kind: text -->
 For frequent Sortis readings and longer ongoing work.
 
 @@ s02.pricing.html.047
-<!-- source: pricing.html:86 | kind: text -->
+<!-- source: pricing.html:92 | kind: text -->
 More units each month
 
 @@ s02.pricing.html.048
-<!-- source: pricing.html:87 | kind: text -->
+<!-- source: pricing.html:93 | kind: text -->
 Choose Premium
 
 @@ s02.pricing.html.049
-<!-- source: pricing.html:95 | kind: text -->
+<!-- source: pricing.html:101 | kind: text -->
 Rates
 
 @@ s02.pricing.html.050
-<!-- source: pricing.html:95 | kind: text -->
+<!-- source: pricing.html:101 | kind: text -->
 The arithmetic, in the open
 
 @@ s02.pricing.html.051
-<!-- source: pricing.html:95 | kind: text -->
+<!-- source: pricing.html:101 | kind: text -->
 Input covers your question, conversation context, and computed figure. Output is the written answer. These rates already include the service margin. Nothing is held before an answer runs: the charge is computed once it finishes, from the tokens it actually reported.
 
 @@ s02.pricing.html.052
-<!-- source: pricing.html:97 | kind: text -->
+<!-- source: pricing.html:103 | kind: text -->
 Stria 64
 
 @@ s02.pricing.html.053
-<!-- source: pricing.html:97 | kind: text -->
+<!-- source: pricing.html:103 | kind: text -->
 per 1,000 input tokens
 
 @@ s02.pricing.html.054
-<!-- source: pricing.html:97 | kind: text -->
+<!-- source: pricing.html:103 | kind: text -->
 per 1,000 output tokens
 
 @@ s02.pricing.html.055
-<!-- source: pricing.html:97 | kind: text -->
+<!-- source: pricing.html:103 | kind: text -->
 Charged on the tokens the reading actually uses — a shorter reading costs less, always.
 
 @@ s02.pricing.html.056
-<!-- source: pricing.html:98 | kind: text -->
+<!-- source: pricing.html:104 | kind: text -->
 Sortis 6
 
 @@ s02.pricing.html.057
-<!-- source: pricing.html:102 | kind: text -->
+<!-- source: pricing.html:108 | kind: text -->
 Reading method
 
 @@ s02.pricing.html.058
-<!-- source: pricing.html:103 | kind: text -->
+<!-- source: pricing.html:109 | kind: text -->
 Expected output tokens
 
 @@ s02.pricing.html.059
-<!-- source: pricing.html:104 | kind: text -->
+<!-- source: pricing.html:110 | kind: text -->
 estimated units for this reading
 
 @@ s02.pricing.html.060
-<!-- source: pricing.html:107 | kind: text -->
+<!-- source: pricing.html:113 | kind: text -->
 One-time units
 
 @@ s02.pricing.html.061
-<!-- source: pricing.html:107 | kind: text -->
+<!-- source: pricing.html:113 | kind: text -->
 Add units without changing anything else.
 
 @@ s02.pricing.html.062
-<!-- source: pricing.html:107 | kind: text -->
+<!-- source: pricing.html:113 | kind: text -->
 One-time unit purchases do not renew automatically and stay in the same balance as plan units.
 
 @@ s02.pricing.html.063
-<!-- source: pricing.html:109 | kind: text -->
+<!-- source: pricing.html:115 | kind: text -->
 7,500 units
 
 @@ s02.pricing.html.064
-<!-- source: pricing.html:109 | kind: text -->
+<!-- source: pricing.html:115 | kind: text -->
 1,500 units per $1 — same as a plan
 
 @@ s02.pricing.html.065
-<!-- source: pricing.html:110 | kind: text -->
+<!-- source: pricing.html:116 | kind: text -->
 15,000 units
 
 @@ s02.pricing.html.066
-<!-- source: pricing.html:111 | kind: text -->
+<!-- source: pricing.html:117 | kind: text -->
 30,000 units
 
 @@ s02.pricing.html.067
-<!-- source: pricing.html:112 | kind: text -->
+<!-- source: pricing.html:118 | kind: text -->
 75,000 units
 
 @@ s02.pricing.html.068
-<!-- source: pricing.html:116 | kind: text -->
+<!-- source: pricing.html:122 | kind: text -->
 Two ways to add units
 
 @@ s02.pricing.html.069
-<!-- source: pricing.html:116 | kind: text -->
+<!-- source: pricing.html:122 | kind: text -->
 Use a recurring plan for predictable volume or buy a one-time pack whenever you need it.
 
 @@ s02.pricing.html.070
-<!-- source: pricing.html:117 | kind: text -->
+<!-- source: pricing.html:123 | kind: text -->
 Charged for what you use
 
 @@ s02.pricing.html.071
-<!-- source: pricing.html:117 | kind: text -->
+<!-- source: pricing.html:123 | kind: text -->
 No units are held in advance and nothing is capped. A reading is billed the tokens it used, and one already underway finishes even if the balance runs out.
 
 @@ s02.pricing.html.072
-<!-- source: pricing.html:118 | kind: text -->
+<!-- source: pricing.html:124 | kind: text -->
 One shared balance
 
 @@ s02.pricing.html.073
-<!-- source: pricing.html:118 | kind: text -->
+<!-- source: pricing.html:124 | kind: text -->
 Plan units and top-ups fund both Stria and Sortis whenever the account has enough balance.
 
 @@ s02.pricing.html.074
-<!-- source: pricing.html:121 | kind: text -->
+<!-- source: pricing.html:127 | kind: text -->
 Receipts are sent automatically.
 
 @@ s02.pricing.html.075
-<!-- source: pricing.html:121 | kind: text -->
+<!-- source: pricing.html:127 | kind: text -->
 After every successful payment, Creem emails the receipt and a secure link for invoices, payment methods, and subscription management.
 
 @@ s02.pricing.html.076
-<!-- source: pricing.html:123 | kind: text -->
+<!-- source: pricing.html:129 | kind: text -->
 Terms
 
 @@ s02.pricing.html.077
-<!-- source: pricing.html:123 | kind: text -->
+<!-- source: pricing.html:129 | kind: text -->
 Privacy
 
 @@ s02.pricing.html.078
-<!-- source: pricing.html:123 | kind: text -->
+<!-- source: pricing.html:129 | kind: text -->
 Refunds
 
 @@ s02.pricing.html.079
-<!-- source: pricing.html:123 | kind: text -->
+<!-- source: pricing.html:129 | kind: text -->
 hello@bournewise.com
 
 @@ s02.pricing.html.080
-<!-- source: pricing.html:123 | kind: text -->
+<!-- source: pricing.html:129 | kind: text -->
 BourneWise · subscriptions, top-ups, and metered usage
 
 ---
 
 ## 3. guide.html
 
-*The method, walked through* — 59 blocks
+*The method, walked through* — 61 blocks
 
 @@ s03.guide.html.001
 <!-- source: guide.html:11 | kind: title -->
@@ -605,11 +613,11 @@ The method
 How a BourneWise reading is produced, one step at a time.
 
 @@ s03.guide.html.003
-<!-- source: guide.html:99 | kind: aria-label -->
+<!-- source: guide.html:103 | kind: aria-label -->
 Method
 
 @@ s03.guide.html.004
-<!-- source: guide.html:77 | kind: placeholder -->
+<!-- source: guide.html:83 | kind: placeholder -->
 I have two offers. One pays more; the other gives me control over my time. Which matters more over the next year?
 
 @@ s03.guide.html.005
@@ -622,7 +630,7 @@ BourneWise
 
 @@ s03.guide.html.007
 <!-- source: guide.html:34 | kind: text -->
-Why BourneWise
+About us
 
 @@ s03.guide.html.008
 <!-- source: guide.html:35 | kind: text -->
@@ -665,353 +673,341 @@ Five steps, from the sentence you write to the units you spend
 What this page is
 
 @@ s03.guide.html.018
-<!-- source: guide.html:59 | kind: text -->
-Every part of a reading is shown here as the thing itself rather than as a description of it. Write a question and watch the checks run. Toss the coins. Move the length and watch the charge follow.
+<!-- source: guide.html:64 | kind: text -->
+Tap any step to try it.
 
 @@ s03.guide.html.019
-<!-- source: guide.html:62 | kind: text -->
-Nothing on this page is cast or charged
+<!-- source: guide.html:64 | kind: text -->
+Each one opens in place and holds the real thing — the checks, the coins, the meter.
 
 @@ s03.guide.html.020
-<!-- source: guide.html:70 | kind: text -->
-Step 01 · Frame it
+<!-- source: guide.html:66 | kind: text -->
+Every part of a reading is shown here as the thing itself rather than as a description of it.
 
 @@ s03.guide.html.021
-<!-- source: guide.html:73 | kind: text -->
-One clear subject.
+<!-- source: guide.html:68 | kind: text -->
+Nothing on this page is cast or charged
 
 @@ s03.guide.html.022
-<!-- source: guide.html:79 | kind: text -->
-Enough context to work from
+<!-- source: guide.html:76 | kind: text -->
+Step 01 · Frame it
 
 @@ s03.guide.html.023
-<!-- source: guide.html:80 | kind: text -->
-One subject, not several
+<!-- source: guide.html:79 | kind: text -->
+One clear subject.
 
 @@ s03.guide.html.024
-<!-- source: guide.html:81 | kind: text -->
-A timeframe to aim at
+<!-- source: guide.html:85 | kind: text -->
+Enough context to work from
 
 @@ s03.guide.html.025
 <!-- source: guide.html:86 | kind: text -->
-Write one and watch the checks
+One subject, not several
 
 @@ s03.guide.html.026
-<!-- source: guide.html:92 | kind: text -->
-Step 02 · Choose the depth
+<!-- source: guide.html:87 | kind: text -->
+A timeframe to aim at
 
 @@ s03.guide.html.027
-<!-- source: guide.html:95 | kind: text -->
-Structure, or change.
+<!-- source: guide.html:92 | kind: text -->
+Tap to write one
 
 @@ s03.guide.html.028
-<!-- source: guide.html:101 | kind: text -->
-Stria 64
+<!-- source: guide.html:96 | kind: text -->
+Step 02 · Choose the depth
 
 @@ s03.guide.html.029
-<!-- source: guide.html:101 | kind: text -->
-~440 units
+<!-- source: guide.html:99 | kind: text -->
+Structure, or change.
 
 @@ s03.guide.html.030
-<!-- source: guide.html:102 | kind: text -->
-Primary hexagram analysis.
+<!-- source: guide.html:105 | kind: text -->
+Stria 64
 
 @@ s03.guide.html.031
 <!-- source: guide.html:105 | kind: text -->
-Sortis 6
+~440 units
 
 @@ s03.guide.html.032
-<!-- source: guide.html:105 | kind: text -->
-~780 units
+<!-- source: guide.html:106 | kind: text -->
+Primary hexagram analysis.
 
 @@ s03.guide.html.033
-<!-- source: guide.html:106 | kind: text -->
-Moving lines and transformed figure included.
+<!-- source: guide.html:109 | kind: text -->
+Sortis 6
 
 @@ s03.guide.html.034
-<!-- source: guide.html:113 | kind: text -->
-Switch it and the figures redraw
+<!-- source: guide.html:109 | kind: text -->
+~780 units
 
 @@ s03.guide.html.035
-<!-- source: guide.html:118 | kind: text -->
-Step 03 · Let it complete
+<!-- source: guide.html:110 | kind: text -->
+Moving lines and transformed figure included.
 
 @@ s03.guide.html.036
-<!-- source: guide.html:121 | kind: text -->
-The figure comes first.
+<!-- source: guide.html:117 | kind: text -->
+Tap to switch it
 
 @@ s03.guide.html.037
-<!-- source: guide.html:127 | kind: text -->
-Toss the coins
+<!-- source: guide.html:122 | kind: text -->
+Step 03 · Let it complete
 
 @@ s03.guide.html.038
-<!-- source: guide.html:128 | kind: text -->
-Three coins a line. Two of eight outcomes move.
+<!-- source: guide.html:125 | kind: text -->
+The figure comes first.
 
 @@ s03.guide.html.039
-<!-- source: guide.html:132 | kind: text -->
-Toss a real set of coins
+<!-- source: guide.html:131 | kind: text -->
+Toss the coins
 
 @@ s03.guide.html.040
-<!-- source: guide.html:138 | kind: text -->
-Step 04 · Read and continue
+<!-- source: guide.html:132 | kind: text -->
+Three coins a line. Two of eight outcomes move.
 
 @@ s03.guide.html.041
-<!-- source: guide.html:141 | kind: text -->
-A view, not a verdict.
+<!-- source: guide.html:136 | kind: text -->
+Tap to toss the coins
 
 @@ s03.guide.html.042
-<!-- source: guide.html:146 | kind: text -->
-Follow the evidence
+<!-- source: guide.html:140 | kind: text -->
+Step 04 · Read and continue
 
 @@ s03.guide.html.043
-<!-- source: guide.html:146 | kind: text -->
-Look for the lines and relationships behind the conclusion, and compare them with what you already know.
+<!-- source: guide.html:143 | kind: text -->
+A view, not a verdict.
 
 @@ s03.guide.html.044
 <!-- source: guide.html:148 | kind: text -->
-Keep follow-ups attached
+Follow the evidence
 
 @@ s03.guide.html.045
 <!-- source: guide.html:148 | kind: text -->
-A follow-up reuses the current hexagram. A new subject needs a new casting.
+Look for the lines and relationships behind the conclusion, and compare them with what you already know.
 
 @@ s03.guide.html.046
-<!-- source: guide.html:151 | kind: text -->
-A supportive reading is not a guarantee; an adverse one is not a command
+<!-- source: guide.html:150 | kind: text -->
+Keep follow-ups attached
 
 @@ s03.guide.html.047
-<!-- source: guide.html:155 | kind: text -->
-What to look for
+<!-- source: guide.html:150 | kind: text -->
+A follow-up reuses the current hexagram. A new subject needs a new casting.
 
 @@ s03.guide.html.048
-<!-- source: guide.html:160 | kind: text -->
-Step 05 · What it costs
+<!-- source: guide.html:153 | kind: text -->
+A supportive reading is not a guarantee; an adverse one is not a command
 
 @@ s03.guide.html.049
-<!-- source: guide.html:163 | kind: text -->
-You pay for what ran.
+<!-- source: guide.html:157 | kind: text -->
+Tap to see what to look for
 
 @@ s03.guide.html.050
-<!-- source: guide.html:167 | kind: text -->
-Units per 1,000 tokens — input 19.5 · output 97.5
+<!-- source: guide.html:162 | kind: text -->
+Step 05 · What it costs
 
 @@ s03.guide.html.051
-<!-- source: guide.html:168 | kind: text -->
-Answer length
+<!-- source: guide.html:165 | kind: text -->
+You pay for what ran.
 
 @@ s03.guide.html.052
-<!-- source: guide.html:170 | kind: text -->
-units · about 1,800 words
+<!-- source: guide.html:169 | kind: text -->
+Units per 1,000 tokens — input 19.5 · output 97.5
 
 @@ s03.guide.html.053
-<!-- source: guide.html:171 | kind: text -->
-Nothing is held in advance, and a reading underway always finishes
+<!-- source: guide.html:170 | kind: text -->
+Answer length
 
 @@ s03.guide.html.054
-<!-- source: guide.html:175 | kind: text -->
-Move the length, watch the charge
+<!-- source: guide.html:172 | kind: text -->
+units · about 1,800 words
 
 @@ s03.guide.html.055
+<!-- source: guide.html:173 | kind: text -->
+Nothing is held in advance, and a reading underway always finishes
+
+@@ s03.guide.html.056
+<!-- source: guide.html:177 | kind: text -->
+Tap to move the length
+
+@@ s03.guide.html.057
 <!-- source: guide.html:181 | kind: text -->
 Ready
 
-@@ s03.guide.html.056
+@@ s03.guide.html.058
 <!-- source: guide.html:183 | kind: text -->
 Cast one
 
-@@ s03.guide.html.057
+@@ s03.guide.html.059
 <!-- source: guide.html:184 | kind: text -->
 Start a casting →
 
-@@ s03.guide.html.058
-<!-- source: guide.html:193 | kind: text -->
+@@ s03.guide.html.060
+<!-- source: guide.html:199 | kind: text -->
 Terms
 
-@@ s03.guide.html.059
-<!-- source: guide.html:194 | kind: text -->
+@@ s03.guide.html.061
+<!-- source: guide.html:200 | kind: text -->
 Privacy
 
 ---
 
 ## 4. about.html
 
-*What BourneWise is* — 44 blocks
+*What BourneWise is* — 39 blocks
 
 @@ s04.about.html.001
-<!-- source: about.html:10 | kind: title -->
-Why BourneWise
+<!-- source: about.html:18 | kind: title -->
+About us — BourneWise
 
 @@ s04.about.html.002
-<!-- source: about.html:11 | kind: meta description -->
-Why BourneWise separates the generated hexagram from the model-written interpretation.
+<!-- source: about.html:19 | kind: meta description -->
+What BourneWise is, what a reading is made of, and what you get.
 
 @@ s04.about.html.003
-<!-- source: about.html:10 | kind: text -->
-Why BourneWise
+<!-- source: about.html:18 | kind: text -->
+About us — BourneWise
 
 @@ s04.about.html.004
-<!-- source: about.html:30 | kind: text -->
+<!-- source: about.html:37 | kind: text -->
 BourneWise
 
 @@ s04.about.html.005
-<!-- source: about.html:32 | kind: text -->
+<!-- source: about.html:39 | kind: text -->
 The method
 
 @@ s04.about.html.006
-<!-- source: about.html:33 | kind: text -->
+<!-- source: about.html:40 | kind: text -->
 Plans & units
 
 @@ s04.about.html.007
-<!-- source: about.html:34 | kind: text -->
+<!-- source: about.html:41 | kind: text -->
 Start a casting
 
 @@ s04.about.html.008
-<!-- source: about.html:46 | kind: text -->
-The cast and the answer are separate systems.
+<!-- source: about.html:49 | kind: text -->
+About us
 
 @@ s04.about.html.009
-<!-- source: about.html:50 | kind: text -->
-BourneWise generates the hexagram first. Claude Opus 5 explains the result it receives. The model writes the interpretation; it does not choose the figure.
+<!-- source: about.html:51 | kind: text -->
+We built the part that cannot be talked out of its answer.
 
 @@ s04.about.html.010
 <!-- source: about.html:52 | kind: text -->
-This separation keeps the source of the reading visible and gives every answer a fixed input you can inspect.
+A reading here has two halves that never touch. Six lines fall, and they are fixed. Then Claude explains the figure that fell — the one you actually got, in the situation you actually described.
 
 @@ s04.about.html.011
-<!-- source: about.html:62 | kind: text -->
-Field note 01
+<!-- source: about.html:60 | kind: text -->
+One
 
 @@ s04.about.html.012
-<!-- source: about.html:63 | kind: text -->
-The figure exists before the prose.
+<!-- source: about.html:61 | kind: text -->
+What a reading is made of
 
 @@ s04.about.html.013
-<!-- source: about.html:64 | kind: text -->
-Question, cast, and interpretation remain visible as three separate stages.
+<!-- source: about.html:66 | kind: text -->
+Separation
 
 @@ s04.about.html.014
-<!-- source: about.html:71 | kind: text -->
-01 — Sequence
+<!-- source: about.html:68 | kind: text -->
+The figure lands before a word does.
 
 @@ s04.about.html.015
-<!-- source: about.html:72 | kind: text -->
-The sequence is fixed before inference begins.
+<!-- source: about.html:69 | kind: text -->
+Six lines fall, and nothing you typed moves them — nor does anything written about them afterwards.
 
 @@ s04.about.html.016
-<!-- source: about.html:77 | kind: text -->
-First
+<!-- source: about.html:75 | kind: text -->
+Evidence
 
 @@ s04.about.html.017
 <!-- source: about.html:77 | kind: text -->
-Your question sets the subject.
+Every answer shows its source.
 
 @@ s04.about.html.018
 <!-- source: about.html:78 | kind: text -->
-The decision, people involved, constraints, and timeframe define what the figure must address.
+The figure it was written from comes with it, so you can read where the reading came from and not only where it arrived.
 
 @@ s04.about.html.019
-<!-- source: about.html:79 | kind: text -->
-Then
+<!-- source: about.html:88 | kind: text -->
+Restraint
 
 @@ s04.about.html.020
-<!-- source: about.html:79 | kind: text -->
-The engine generates six lines.
+<!-- source: about.html:90 | kind: text -->
+A view, not a verdict.
 
 @@ s04.about.html.021
-<!-- source: about.html:80 | kind: text -->
-The primary hexagram, moving lines, and transformed figure are computed independently of the language model.
+<!-- source: about.html:91 | kind: text -->
+It tells you what to go and check. It will not decide it for you, and it does not pretend to.
 
 @@ s04.about.html.022
-<!-- source: about.html:81 | kind: text -->
-Finally
+<!-- source: about.html:97 | kind: text -->
+Depth
 
 @@ s04.about.html.023
-<!-- source: about.html:81 | kind: text -->
-Claude writes from fixed data.
+<!-- source: about.html:99 | kind: text -->
+One figure, or one and what it becomes.
 
 @@ s04.about.html.024
-<!-- source: about.html:82 | kind: text -->
-The question and computed figure are passed to Claude Opus 5 as evidence for the explanation.
+<!-- source: about.html:100 | kind: text -->
+You choose how much structure the question needs before you ask it.
 
 @@ s04.about.html.025
-<!-- source: about.html:89 | kind: text -->
-02 — Depth
+<!-- source: about.html:107 | kind: text -->
+Two
 
 @@ s04.about.html.026
-<!-- source: about.html:90 | kind: text -->
-Choose the amount of structure your question needs.
+<!-- source: about.html:108 | kind: text -->
+What you actually get
 
 @@ s04.about.html.027
-<!-- source: about.html:95 | kind: text -->
-Stria 64 · about 440 units — Sortis 6 · about 780 units
+<!-- source: about.html:113 | kind: text -->
+Your first
 
 @@ s04.about.html.028
-<!-- source: about.html:96 | kind: text -->
-Stria reads the primary hexagram against the current situation. Sortis adds moving lines, the transformed hexagram, and line-by-line change analysis.
+<!-- source: about.html:115 | kind: text -->
+A whole reading, not a taste of one.
 
 @@ s04.about.html.029
-<!-- source: about.html:98 | kind: text -->
-Both methods use the same casting sequence. They differ in how much of the resulting structure is interpreted.
+<!-- source: about.html:116 | kind: text -->
+It is on us, it starts, and it finishes. Nothing is held back to make a point.
 
 @@ s04.about.html.030
-<!-- source: about.html:106 | kind: text -->
-03 — Limits
+<!-- source: about.html:122 | kind: text -->
+Language
 
 @@ s04.about.html.031
-<!-- source: about.html:107 | kind: text -->
-A reading supports reflection. It does not replace judgment.
+<!-- source: about.html:124 | kind: text -->
+Ask in the words you think in.
 
 @@ s04.about.html.032
-<!-- source: about.html:112 | kind: text -->
-Fixed input
+<!-- source: about.html:125 | kind: text -->
+The answer comes back in the language you asked in, whichever that is.
 
 @@ s04.about.html.033
-<!-- source: about.html:112 | kind: text -->
-The figure cannot be redrawn.
+<!-- source: about.html:135 | kind: text -->
+Balance
 
 @@ s04.about.html.034
-<!-- source: about.html:113 | kind: text -->
-The model cannot replace or override the generated hexagram.
+<!-- source: about.html:137 | kind: text -->
+You pay for what ran.
 
 @@ s04.about.html.035
-<!-- source: about.html:114 | kind: text -->
-Explicit limits
+<!-- source: about.html:138 | kind: text -->
+No plan to keep up and nothing reserved in advance. A balance, and questions you spend it on.
 
 @@ s04.about.html.036
-<!-- source: about.html:114 | kind: text -->
-Signal and extension stay apart.
+<!-- source: about.html:145 | kind: text -->
+Ask it something that matters.
 
 @@ s04.about.html.037
-<!-- source: about.html:115 | kind: text -->
-The answer should separate concrete signals from imaginative extension and uncertainty.
+<!-- source: about.html:146 | kind: text -->
+Start a casting →
 
 @@ s04.about.html.038
-<!-- source: about.html:116 | kind: text -->
-Reflection
-
-@@ s04.about.html.039
-<!-- source: about.html:116 | kind: text -->
-Return after the decision.
-
-@@ s04.about.html.040
-<!-- source: about.html:117 | kind: text -->
-Compare what changed, what held, and what you would decide differently next time.
-
-@@ s04.about.html.041
-<!-- source: about.html:125 | kind: text -->
-Field note 02
-
-@@ s04.about.html.042
-<!-- source: about.html:127 | kind: text -->
-See the full process one step at a time →
-
-@@ s04.about.html.043
-<!-- source: about.html:138 | kind: text -->
+<!-- source: about.html:156 | kind: text -->
 Terms
 
-@@ s04.about.html.044
-<!-- source: about.html:139 | kind: text -->
+@@ s04.about.html.039
+<!-- source: about.html:157 | kind: text -->
 Privacy
 
 ---
@@ -1138,7 +1134,7 @@ Your questions and saved readings follow the data controls in your account.
 
 @@ s05.login.html.030
 <!-- source: login.html:219 | kind: text -->
-BourneWise · fixed hexagram input · Claude Opus 5 interpretation
+BourneWise · the figure is cast before a word is written about it
 
 ---
 
@@ -1175,71 +1171,71 @@ Plan & balance
 Current plan
 
 @@ s06.settings.html.008
-<!-- source: settings.html:143 | kind: text -->
+<!-- source: settings.html:148 | kind: text -->
 Available balance
 
 @@ s06.settings.html.009
-<!-- source: settings.html:143 | kind: text -->
-Nothing is held while an answer is generated. When it finishes, the charge is the model usage it actually measured — no reservation and no ceiling.
+<!-- source: settings.html:148 | kind: text -->
+Nothing is set aside when a reading starts, and nothing stops it early. You pay for the answer once it is written, for the length it turned out to be.
 
 @@ s06.settings.html.010
-<!-- source: settings.html:144 | kind: text -->
+<!-- source: settings.html:149 | kind: text -->
 Get units
 
 @@ s06.settings.html.011
-<!-- source: settings.html:147 | kind: text -->
-Plans and metering
+<!-- source: settings.html:152 | kind: text -->
+Plans and top-ups
 
 @@ s06.settings.html.012
-<!-- source: settings.html:147 | kind: text -->
-Choose monthly or annual included units, add one-time units, and review the usage rates.
+<!-- source: settings.html:152 | kind: text -->
+Units every month, or a handful whenever you want them. Both land in the same balance.
 
 @@ s06.settings.html.013
-<!-- source: settings.html:148 | kind: text -->
+<!-- source: settings.html:153 | kind: text -->
 View plans
 
 @@ s06.settings.html.014
-<!-- source: settings.html:151 | kind: text -->
+<!-- source: settings.html:156 | kind: text -->
 Receipts & billing
 
 @@ s06.settings.html.015
-<!-- source: settings.html:151 | kind: text -->
+<!-- source: settings.html:156 | kind: text -->
 Open your secure Creem portal for receipts, invoices, payment methods, and subscription controls.
 
 @@ s06.settings.html.016
-<!-- source: settings.html:154 | kind: text -->
+<!-- source: settings.html:159 | kind: text -->
 Cancel subscription
 
 @@ s06.settings.html.017
-<!-- source: settings.html:162 | kind: text -->
+<!-- source: settings.html:167 | kind: text -->
 Casting defaults
 
 @@ s06.settings.html.018
-<!-- source: settings.html:168 | kind: text -->
+<!-- source: settings.html:173 | kind: text -->
 Privacy & data
 
 @@ s06.settings.html.019
-<!-- source: settings.html:171 | kind: text -->
+<!-- source: settings.html:176 | kind: text -->
 Reading history
 
 @@ s06.settings.html.020
-<!-- source: settings.html:172 | kind: text -->
+<!-- source: settings.html:177 | kind: text -->
 Delete reading history
 
 @@ s06.settings.html.021
-<!-- source: settings.html:175 | kind: text -->
+<!-- source: settings.html:180 | kind: text -->
 Encrypted at rest
 
 @@ s06.settings.html.022
-<!-- source: settings.html:175 | kind: text -->
+<!-- source: settings.html:180 | kind: text -->
 Readings are never sold or used to train. Delete them whenever you choose.
 
 @@ s06.settings.html.023
-<!-- source: settings.html:176 | kind: text -->
+<!-- source: settings.html:181 | kind: text -->
 Always on
 
 @@ s06.settings.html.024
-<!-- source: settings.html:179 | kind: text -->
+<!-- source: settings.html:184 | kind: text -->
 This session
 
 ---
@@ -1896,11 +1892,11 @@ Page not found
 
 @@ s10.404.html.007
 <!-- source: 404.html:97 | kind: text -->
-The requested route does not exist.
+This page is not here.
 
 @@ s10.404.html.008
 <!-- source: 404.html:98 | kind: text -->
-Check the URL or return to the reading workspace. No units were charged.
+Check the address, or go back and ask your question. Nothing was charged.
 
 @@ s10.404.html.009
 <!-- source: 404.html:106 | kind: text -->
@@ -1912,7 +1908,7 @@ See the method
 
 @@ s10.404.html.011
 <!-- source: 404.html:111 | kind: text -->
-BourneWise · fixed hexagram input · model-written interpretation
+BourneWise · the figure is cast before a word is written about it
 
 ---
 
@@ -1933,11 +1929,11 @@ units
 
 @@ s11.copy.js.ledger.capFree
 <!-- source: copy.js | kind: runtime text -->
-Welcome and top-up units
+Your first reading is on us
 
 @@ s11.copy.js.ledger.capPaid
 <!-- source: copy.js | kind: runtime text -->
-Plan units + top-ups
+Your monthly units, plus any top-ups
 
 @@ s11.copy.js.ledger.action
 <!-- source: copy.js | kind: runtime text -->

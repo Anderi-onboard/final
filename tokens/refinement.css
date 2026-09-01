@@ -33,10 +33,26 @@
      alone just looks like blurrier clear glass: a much wider blur so no edge
      behind survives, saturation pulled back toward neutral because scattering
      desaturates, and a fine grain in the surface itself. */
-  --ui-glass: rgb(var(--ui-glass-tint) / .60);
-  --ui-glass-strong: rgb(var(--ui-glass-tint) / .76);
-  --ui-glass-soft: rgb(var(--ui-glass-tint) / .44);
-  --ui-glass-warm: rgb(var(--ui-glass-tint) / .68);
+  --ui-glass: rgb(var(--ui-glass-tint) / .34);
+  /* ⭐ Frosted, not painted (owner's call, 2026-08-26). At .76 the carriers were
+     opaque enough that the range simply stopped behind them and they read as
+     three white boards. Frost is the opposite instruction: keep the colour,
+     lose the detail. So the white comes down and the work moves into the
+     backdrop filter — a heavier blur plus a brightness lift, which raises the
+     luminance of what is behind without covering it.
+     ⭐ 2026-08-26, second pass — owner asked for it clear, not merely frosted:
+     "晶莹透亮". So the white drops much further and the character comes from a
+     shorter, sharper blur with real saturation and brightness behind it, which
+     is what reads as glass rather than as tracing paper. The range now shows
+     through at ~58% where it was 24% two passes ago.
+     ⚠️ This is a chosen trade and it is a real one: the earlier note here
+     recorded that .50 measures 3.39:1 and .42 measures 3.28:1 on the darkest
+     group. Those numbers still hold. Small type on these carriers no longer
+     clears AA on the darker half of the palette; the decision was made looking
+     at the rendering, with the measurement in hand. */
+  --ui-glass-strong: rgb(var(--ui-glass-tint) / .42);
+  --ui-glass-soft: rgb(var(--ui-glass-tint) / .22);
+  --ui-glass-warm: rgb(var(--ui-glass-tint) / .44);
   /* Specular top edge + hairline bottom: the two cues that separate "glass"
      from "a translucent rectangle". Applied as an inset shadow so it rides
      the radius without a pseudo-element. */
@@ -52,11 +68,19 @@
      sheet rather than frost. The hard rim is replaced by a diffuse inward
      glow: bright at the top where light falls, fading over ~14px, with only
      a trace of a rim left to keep the panel from dissolving entirely. */
+  /* ⚠️⚠️ NO WHITE. This was four stacked white insets, the strongest a 50%
+     white glow 10px down from the top edge — the pale band along the composer
+     and every panel. White is asked about here for the third time: the white
+     underlays were retired in August, and this is the last of it.
+
+     What replaces it is not nothing, because a panel with no edge dissolves
+     into the range behind it. It is the SAME edge drawn in ink instead of in
+     light: a hairline rim and a whisper of inner shade, which defines the panel
+     without putting a colour on the page that no palette group contains. */
   --ui-glass-edge:
-    inset 0 0 0 1px rgb(255 255 255 / .26),
-    inset 0 10px 16px -10px rgb(255 255 255 / .50),
-    inset 0 -12px 18px -14px rgb(255 255 255 / .16),
-    inset 0 0 22px 2px rgb(255 255 255 / .14);
+    inset 0 0 0 1px rgb(28 26 23 / .10),
+    inset 0 1px 0 0 rgb(28 26 23 / .06),
+    inset 0 -10px 14px -14px rgb(28 26 23 / .10);
   /* Softened with the rim. At 12% this drew a visible dark outline around
      every frosted panel — the one hard edge on a material whose whole point
      is that it has none. */
@@ -87,8 +111,8 @@
   /* Blur in the 22–26px band the owner specified. Saturation stays at 128%
      rather than Apple's 180%: at 180% the warm palettes bloom and the cast
      comes straight back through the backdrop instead of through the tint. */
-  --ui-glass-filter: blur(44px) saturate(112%) brightness(1.05);
-  --ui-glass-filter-strong: blur(56px) saturate(114%) brightness(1.06);
+  --ui-glass-filter: blur(30px) saturate(136%) brightness(1.26);
+  --ui-glass-filter-strong: blur(38px) saturate(140%) brightness(1.32);
   /* The grain is the part that actually reads as "frosted". feTurbulence at a
      high base frequency is per-pixel noise, so it stays fine at any DPI and
      costs one inlined SVG rather than a texture file. */
@@ -204,15 +228,28 @@ html[data-skin="paper"] body .mtn-sky {
    Excluding the moire group matters: its bands are also clipped <use>, and at
    .13 !important the texture is decided here by a rule that was never about it. */
 html[data-skin="paper"] body .mtn-bg [clip-path]:not(.moire) > use { opacity: .13 !important; }
+/* ⚠️⚠️⚠️ REVERTED, and the reasoning that removed it was wrong in a way worth
+   keeping on the page.
+
+   This near-black !important was read as a fourth instance of the pattern this
+   file has three real instances of — refinement.css overriding the range with a
+   hard-coded value where the engine already had a palette-aware one. The engine
+   does inject ten tinted rules
+   (`.contour.l1 use { stroke: color-mix(…var(--bw-palette-1) 42%…) }`), so it
+   looked like the same mistake, and the note above it even stated the ownership
+   backwards. All true, and the conclusion was still wrong.
+
+   ⭐ A contour tinted with its OWN ridge's colour at 42% alpha, drawn on top of
+   that same ridge, is invisible. Removing this ink took the entire line drawing
+   off the landscape and left flat colour bands — the home page stopped being a
+   drawing and became a gradient. The tinted rules had never been visible, so
+   they had never been looked at; "the engine was already deciding it correctly"
+   was an assumption, not an observation.
+
+   The ink is the drawing. It is meant to be near-black and it is meant to win. */
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
   stroke: color-mix(in srgb, #141413 30%, transparent) !important;
-  /* No stroke-width here. This rule covers BOTH contour groups, so setting a
-     width flattened all three ridge variants to one number — and with
-     !important it beat the engine's own sheet outright. The range's
-     contours were a uniform 2.05px no matter what mountain-range.js said,
-     which is why two rounds of thickening it changed nothing. Colour and
-     joins belong here; the weights belong with the geometry. */
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
@@ -231,10 +268,10 @@ html[data-skin="paper"] body .mtn-bg [clip-path] > use {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html[data-skin="paper"] { transition-duration: .2s; }
+  html[data-skin="paper"] { transition-duration: 190ms; }
   html[data-skin="paper"] body .mtn-sky,
   html[data-skin="paper"] body .mtn-bg .fill,
-  html[data-skin="paper"] body .mtn-bg [clip-path] > use { transition-duration: .2s; }
+  html[data-skin="paper"] body .mtn-bg [clip-path] > use { transition-duration: 190ms; }
 }
 
 /* Shared glass carriers --------------------------------------------------- */
@@ -290,16 +327,21 @@ html[data-skin="paper"] body .pack:nth-child(2n),
 html[data-skin="paper"] body .cost:nth-child(2n) {
   border-radius: var(--ui-radius);
 }
-html[data-skin="paper"] body :is(.band .cta, .plan.feat .choose, .btn.terracotta) {
-  color: var(--ink) !important;
-}
+/* Deleted 2026-08-26. Of its three selectors, two matched nothing on the whole
+   site — there is no .band anywhere, and pricing's featured plan is
+   .plan.featured, not .plan.feat — so the only element it reached was
+   .btn.terracotta, where it was wrong: the rule further down fills that button
+   with clay stepped toward ink, and this put --ink back on top of it. Dark on
+   dark, measured 2.28:1 for settings' "Get units". It also outspecified the
+   correct colour despite sitting 1,000 lines earlier, because :is() takes the
+   specificity of its heaviest argument and .plan.feat .choose is (0,3,0). */
 
 /* Shared page chrome ------------------------------------------------------ */
 body:not([data-page="app"]) .pagehead,
 body[data-page="pricing"] .pagehead {
   width: min(1180px, calc(100% - 48px));
   margin: 14px auto 0;
-  padding: 10px 12px 10px 16px;
+  padding: 8px 12px 8px 16px;
   border: var(--ui-hairline) solid var(--ui-line);
   border-radius: var(--ui-radius);
   background: var(--ui-glass);
@@ -316,17 +358,17 @@ body[data-page="pricing"] .brand b {
 }
 body:not([data-page="app"]) .pagehead .ghost,
 body[data-page="pricing"] .pagehead .ghost {
-  min-height: 38px;
+  min-height: var(--ctl);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 14px;
+  padding: 0 12px;
   line-height: 1;
   border-radius: var(--ui-radius-pill);
 }
 body:not([data-page="app"]) .pagehead .cta,
 body[data-page="pricing"] .pagehead .cta {
-  min-height: 44px;
+  min-height: var(--ctl);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -335,7 +377,7 @@ body[data-page="pricing"] .pagehead .cta {
   white-space: nowrap;
 }
 body[data-page="about"] .slab-nav .cta {
-  min-height: 36px;
+  min-height: var(--ctl-compact);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -348,15 +390,15 @@ body[data-page="pricing"] .pagehead .ghost:hover { background: var(--ui-glass-wa
 
 /* App shell --------------------------------------------------------------- */
 body[data-page="app"] .sidebar {
-  padding: 16px 14px 14px;
+  padding: 16px 12px 12px;
   background: color-mix(in srgb, var(--paper-raised) 62%, transparent);
   border-right-color: var(--ui-line);
   box-shadow: inset -1px 0 0 rgba(226,218,205,.28);
 }
-body[data-page="app"] .side-top { padding-inline: 6px; }
+body[data-page="app"] .side-top { padding-inline: 4px; }
 body[data-page="app"] .topbar { min-height: 66px; padding: 16px 32px 12px; align-items: center; }
 body[data-page="app"] .topbar .ghost {
-  min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px;
+  min-height: var(--ctl-compact); display: inline-flex; align-items: center; padding: 0 12px;
   border-radius: var(--ui-radius-pill); font-size: 13px; font-weight: 500 !important;
 }
 body[data-page="app"] .topbar .ghost:hover { background: var(--ui-glass-warm); }
@@ -367,26 +409,26 @@ body[data-page="app"] .side-toggle,
 body[data-page="app"] .new-cast,
 body[data-page="app"] .castings .casting,
 body[data-page="app"] .casting-row { border-radius: var(--ui-radius-small); }
-body[data-page="app"] .new-cast { min-height: 40px; padding: 8px; color: var(--ink); }
+body[data-page="app"] .new-cast { min-height: var(--ctl); padding: 8px; color: var(--ink); }
 body[data-page="app"] .new-cast .ic { width: 26px; height: 26px; }
 body[data-page="app"] .ledger {
-  margin: 14px 2px 0; padding: 15px; border: var(--ui-hairline) solid var(--ui-line) !important;
+  margin: 12px 2px 0; padding: 16px; border: var(--ui-hairline) solid var(--ui-line) !important;
   border-radius: var(--ui-radius); background: var(--ui-glass-warm);
 }
 body[data-page="app"] .ledger::before { display: none; }
 body[data-page="app"] .ledger:hover { transform: none; border-color: var(--ui-line-strong) !important; }
 body[data-page="app"] .ledger-meter { height: 4px; }
 body[data-page="app"] .exchange {
-  min-height: 38px; border-radius: var(--ui-radius-small); box-shadow: 0 6px 18px rgba(31,29,26,.13);
+  min-height: var(--ctl); border-radius: var(--ui-radius-small); box-shadow: 0 6px 18px rgba(31,29,26,.13);
   background: var(--ink); color: var(--paper-raised);
 }
 body[data-page="app"] .exchange:hover { background: var(--terracotta); box-shadow: 0 8px 22px rgba(181,80,44,.18); transform: none; }
-body[data-page="app"] .side-foot { min-height: 48px; border-radius: var(--ui-radius-small); }
+body[data-page="app"] .side-foot { min-height: var(--ctl); border-radius: var(--ui-radius-small); }
 body[data-page="app"] .side-foot::before { inset: 0; border-radius: inherit; mask-image: none; -webkit-mask-image: none; }
 
 body[data-page="app"].is-empty .thread { padding-bottom: 8px; }
 body[data-page="app"] #heroEmpty { padding-bottom: clamp(30px, 5vh, 54px); }
-body[data-page="app"] .greeting { max-width: 790px; min-height: 4.25em; gap: 20px; }
+body[data-page="app"] .greeting { max-width: 790px; min-height: 4.25em; gap: 16px; }
 body[data-page="app"] .greeting h1 {
   max-width: 700px; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500;
   min-height: 4.08em; line-height: 1.02; letter-spacing: -.045em; text-wrap: balance;
@@ -429,66 +471,84 @@ body[data-page="app"] .bw-hero-mark { --terracotta: var(--bw-palette-gem); }
 /* isolation, not just position: the scrim below is z-index:-1, and without a
    stacking context here that -1 escapes the zone entirely and paints beneath
    the fixed range instead of over it. */
-body[data-page="app"] .composer-zone { padding-bottom: 28px; z-index: 1; isolation: isolate; }
+body[data-page="app"] .composer-zone { padding-bottom: 24px; z-index: 1; isolation: isolate; }
 
 /* The composer's two caption lines — the keyboard hint and the support footer —
    float on the range with no material behind them. That is the one text
    context tools/palette-contrast.html never covered: it measures text on glass
    panels, and these sit on the ridges themselves, where a mid-grey crest and
-   --faint are close enough to be unreadable. They get the same neutral-white
-   scrim as every other carrier (never a palette tint — see the glass rules),
-   fading upward so it reads as the chrome lifting off the landscape rather
-   than as a box, and their ink goes up one step to --dim. */
-body[data-page="app"] .composer-zone::after {
-  content: "";
-  position: absolute;
-  /* Pulled past the zone's own bottom edge: .site-foot renders below it — the
-     zone is position:fixed and the footer overflows — so a scrim stopping at
-     the box left the support line on bare ridge at 1.24:1. */
-  inset: auto 0 -34px;
-  height: 152px;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(to bottom,
-    rgb(var(--ui-glass-tint) / 0),
-    rgb(var(--ui-glass-tint) / .58) 42%,
-    rgb(var(--ui-glass-tint) / .90));
+   --faint are close enough to be unreadable. Every wash that has been tried
+   here is recorded below, and every one of them was removed again. */
+/* ⭐⭐⭐ THE FROSTED STRIPS ARE GONE. Owner, for the third time: no white plate
+   under text — legibility comes from the ink changing colour with the group.
+
+   They were not white by declaration ("pure filter", said the note that stood
+   here), but `brightness(1.62)` over a pale sky IS white, and on a phone it
+   rendered as a 215px blur covering the composer, its send button and its
+   model chip. Two separate faults, and the second is the one that settles it:
+
+   - It escaped its own element. `.site-foot` lost its `position: relative`
+     somewhere in the cascade, so the strip took `.composer-zone` as its
+     containing block and computed 414x215 instead of the 382x47 it was drawn
+     for. A scrim whose size depends on winning a specificity contest is not a
+     scrim, it is a leak.
+   - It did not work. Measured on composited pixels across six groups and two
+     viewports, the footer still bottomed out at 1.48:1 on group 186 WITH the
+     plate under it. It covered half the phone screen and bought nothing.
+
+   What replaces it is one line of colour: --bw-ink-on-ridge, solved in
+   mountain-range.js against every lower ridge the text can land on rather than
+   against the sky it does not touch. */
+
+/* The footer is capped at 600px, which on the landing page forces six links
+   onto two lines and leaves "Plans & units" alone on the second. It has the
+   width; let it use it. */
+body[data-page="app"].is-empty .site-foot { max-width: 860px; }
+/* --bw-ink-on-sky, not --dim. This line sits just above the composer-zone
+   scrim's fade-in, so on the darker groups it is on bare ridge: 1.41:1 at 10px,
+   the worst reading left on the site. The footer directly below it already
+   takes this ink and passes. */
+body[data-page="app"] .composer-help,
+body[data-page="app"] .composer-help span {
+  color: var(--bw-ink-on-ridge, var(--bw-ink-on-sky, var(--ink)));
 }
-body[data-page="app"] .composer-help { color: var(--dim); }
 /* The footer sits lowest, over the darkest ridge, where even the scrim leaves
    --dim at 3.57:1 against 11px text. It is a row of links, so full ink is the
    honest weight for it anyway. */
 /* The footer sits straight on the landscape, so it takes the palette-derived
    ink rather than a fixed one. Without this it stayed a single brown on all
    114 groups and dropped to 3.7:1 on the darker cards. */
-body[data-page="app"] :is(.site-foot, .site-foot a) { color: var(--bw-ink-on-sky, var(--ink)); }
+body[data-page="app"] :is(.site-foot, .site-foot a) {
+  color: var(--bw-ink-on-ridge, var(--bw-ink-on-sky, var(--ink)));
+}
+
+/* ⚠️⚠️ NO HALO, and this was built and removed inside one sitting. Three
+   concentric blurs of the opposite luminance left 75 of 1824 readings under AA
+   (worst 2.24:1), so it was strengthened into a real eight-offset outline —
+   which measured clean and rendered as DARK TEXT WITH A WHITE RIM. That is the
+   plate again at glyph scale, and it is the exact thing asked about three
+   times. Measuring well is not the test; looking right is also the test, and
+   this repo has written that down before.
+
+   So the ink carries it alone, and inkOnAll searches the group for the colour
+   with the best worst case rather than falling back to near-black. What that
+   cannot buy is stated plainly rather than papered over. */
 
 /* The same fix for the two short glass pages. Their footers sit at y~850 in a
    900px viewport, which is squarely on the range's darkest lower ridges, and
    --faint at 11.5px measured 1.2:1 against them. Scoped to these two because
    they are the pages whose footer always lands over the ridges: a long page
    scrolls its footer onto paper, these never do. */
-html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer {
+html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) :is(footer, footer a) {
   position: relative;
-  color: var(--ink);
+  /* Same answer as the app's own footer: the ink follows the group. A fixed
+     --ink was the previous compromise and it is a single brown across 114
+     groups, which is exactly the case the ridge solve exists for. */
+  color: var(--bw-ink-on-ridge, var(--ink));
 }
-html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer a { color: var(--ink); }
-html[data-skin="paper"] body:is([data-page="login"], [data-page="not-found"]) footer::before {
-  content: "";
-  position: absolute;
-  /* No negative bottom inset: these pages are exactly one viewport tall, so
-     a scrim hanging 40px below the footer added 40px of scroll and put a
-     scrollbar on a page that used to fit. It only has to reach the text. */
-  inset: -20px 0 0;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(to bottom,
-    rgb(var(--ui-glass-tint) / 0),
-    rgb(var(--ui-glass-tint) / .62) 40%,
-    rgb(var(--ui-glass-tint) / .90));
-}
+
 body[data-page="app"] .composer {
-  max-width: 720px; min-height: 64px; padding: 9px 10px 9px 12px; gap: 10px;
+  max-width: 720px; min-height: 64px; padding: 8px 8px 8px 12px; gap: 8px;
   border: var(--ui-hairline) solid var(--ui-line); border-radius: var(--ui-radius);
   background: var(--ui-glass-strong); box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
   transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease, background-color var(--dur-base) ease;
@@ -499,16 +559,16 @@ body[data-page="app"] .composer:focus-within {
   box-shadow: var(--ui-shadow-raised), 0 0 0 3px color-mix(in srgb, var(--terracotta) 16%, transparent);
 }
 body[data-page="app"] .stria {
-  min-height: 42px; padding: 8px 14px; background: var(--ui-glass-warm);
+  min-height: var(--ctl); padding: 8px 12px; background: var(--ui-glass-warm);
   border: var(--ui-hairline) solid var(--ui-line); color: var(--ink);
   transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) ease, border-color var(--dur-base) ease;
 }
 body[data-page="app"] .stria:hover { background: color-mix(in srgb, var(--cactus) 60%, transparent); }
 body[data-page="app"] .composer textarea { font-size: 15px; letter-spacing: -.01em; }
 body[data-page="app"] .send { width: 44px; height: 44px; background: var(--ink); transition:background-color 140ms ease,opacity 140ms ease; }
-body[data-page="app"] .chips { margin-top: 18px; gap: 7px; }
+body[data-page="app"] .chips { margin-top: 16px; gap: 8px; }
 body[data-page="app"] .chip {
-  padding: 8px 14px; border-color: var(--ui-line); background: var(--ui-glass-soft);
+  padding: 8px 12px; border-color: var(--ui-line); background: var(--ui-glass-soft);
   box-shadow: inset 0 1px 0 rgba(226,218,205,.3);
   backdrop-filter: blur(10px) saturate(112%);
   -webkit-backdrop-filter: blur(10px) saturate(112%);
@@ -545,7 +605,7 @@ body[data-page="app"] .msg-user {
   border-color: color-mix(in srgb, var(--bw-palette-9) 78%, var(--paper-dim)) !important;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--bw-palette-9) 18%, transparent);
 }
-body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.008em; }
+body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.01em; }
 body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
@@ -721,22 +781,37 @@ html[data-skin="paper"] body:not([data-page="app"]):not([data-page="legal"]) :is
      .pack, .term and .ledgerstrip all take the one neutral glass now, so
      the page stops rendering three white cards above a field of khaki. */
 ) {
-  background-color: color-mix(in srgb, var(--bw-palette-1) 52%, rgba(42,32,22,.18)) !important;
+  /* ⭐ Retired 2026-08-26 — the third instance of this exact bug in this exact
+     file, and the note below had already named it. It mixed --bw-palette-1 into
+     every carrier at 52%, which is the palette-in-glass pattern the glass rules
+     ban outright ("暖意必须从背后透上来, 不是掺进面板"). The note said it "currently
+     loses to luxury-glass.css"; CDP's matched-rule list says otherwise — it is
+     later in the cascade AND outspecifies that rule, so it won on every page
+     that is not app or legal.
+     What it cost: on a dark group --bw-palette-1 resolves to rgb(73,53,42), so
+     settings, login, pricing and 404 rendered dark-brown carriers and kept
+     drawing --ink text on them. Measured across 20 groups × 3 viewports, 88 of
+     198 text elements failed WCAG AA at their worst group; 81 of those 88 were
+     on the four pages this rule reaches, and index — which it does not reach —
+     had 7. Adjusting opacity could never have fixed it, because the colour was
+     inside the panel.
+     Same lesson as the stroke-width and the fill-opacity overrides a few
+     hundred lines up: when a change "has no effect", measure what actually
+     won before reaching for a bigger number. */
+  background-color: var(--ui-glass-strong) !important;
   background-image: none !important;
-  border: var(--ui-hairline) solid color-mix(in srgb, var(--paper-dim) 68%, var(--bw-palette-6) 20%) !important;
-  box-shadow: 0 12px 32px rgba(42,32,22,.075) !important;
-  backdrop-filter: blur(13px) saturate(116%) !important;
-  -webkit-backdrop-filter: blur(13px) saturate(116%) !important;
+  border: var(--ui-hairline) solid var(--ui-line) !important;
+  box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
+  backdrop-filter: var(--ui-glass-filter) !important;
+  -webkit-backdrop-filter: var(--ui-glass-filter) !important;
 }
 /* The alternating carrier tint is gone. It mixed --bw-palette-2 into every
    second card, which is the palette-in-glass pattern the glass rules ban —
    and because :nth-child pushed it to (0,4,2) it outspecified the neutral
    glass and won, so a row of four packs read as two different materials.
    Rhythm across a row is the job of content, not of a tint on the even
-   ones. NOTE: the block above still tints every carrier with
-   --bw-palette-1 at 52% and blurs at 13px rather than the frosted filter;
-   it currently loses to luxury-glass.css on the pages that load it, but it
-   is the same violation and should be retired the same way. */
+   ones. The block above carried the same violation and has now been retired
+   the same way — see the note inside it. */
 /* Every carrier on pricing takes the SAME material. .plan was on the neutral
    glass while .rate-card, .estimator, .pack and .term were still on the
    legacy palette-tinted block (--bw-palette-1 52% over a dark mix), so the
@@ -761,10 +836,19 @@ body[data-page="pricing"] :is(.hero, .plans, .rates, .packs) {
    panel and 66% along the header strip that only has one. That tone step is
    the "box inside a box" — there is only ever one box, drawn twice.
    The section stays a transparent grouping element; the panel is the surface. */
+/* --ui-glass-strong, not --ui-glass. These are the reading surfaces: dense
+   13px type, several paragraphs deep, and they are the only carriers a visitor
+   actually stops on. The four glass opacities were set while the range was
+   still being desaturated on its way to the screen; PALETTE_FIDELITY put the
+   cards on the screen at full strength afterwards, and .60 white over the
+   darkest groups composites to a mid-tone that drags every small label on it
+   under AA. Measured on pricing: "Both reading methods" 3.90:1, the grant
+   figure 3.21:1. The app's own chrome keeps .60 — it carries short labels over
+   a deliberately open canvas, and it is the one page that was already clean. */
 body[data-page="pricing"] :is(.plan, .topup, .rate-card, .estimator, .pack, .term, .ledgerstrip),
 body[data-page="settings"] .panel,
 body[data-page="login"] .card {
-  background: var(--ui-glass); border-color: var(--ui-line);
+  background: var(--ui-glass-strong); border-color: var(--ui-line);
   box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised); backdrop-filter: var(--ui-glass-filter-strong);
   -webkit-backdrop-filter: var(--ui-glass-filter-strong);
 }
@@ -776,7 +860,7 @@ body[data-page="pricing"] .plan.feat { background: var(--ui-glass-warm); box-sha
 body[data-page="pricing"] .choose,
 body[data-page="pricing"] .cta,
 body[data-page="login"] .submit,
-body[data-page="settings"] .btn { min-height: 44px; border-radius: var(--ui-radius-small); box-shadow: none; }
+body[data-page="settings"] .btn { min-height: var(--ctl); border-radius: var(--ui-radius-small); box-shadow: none; }
 body[data-page="pricing"] .choose:hover,
 body[data-page="pricing"] .cta:hover,
 body[data-page="login"] .submit:hover,
@@ -801,7 +885,7 @@ body[data-page="legal"] .clause p,
 body[data-page="legal"] .clause li { line-height: 1.72; }
 
 @media (max-width: 880px) {
-  body[data-page="app"] .topbar { padding-inline: 18px; }
+  body[data-page="app"] .topbar { padding-inline: 16px; }
   body[data-page="app"] .sidebar {
     background: var(--ui-glass-strong);
     box-shadow: var(--ui-glass-edge), var(--ui-shadow-raised);
@@ -810,20 +894,20 @@ body[data-page="legal"] .clause li { line-height: 1.72; }
   }
   body[data-page="app"] .composer { max-width: 680px; }
   body:not([data-page="app"]) .pagehead,
-  body[data-page="pricing"] .pagehead { width: calc(100% - 24px); margin-top: 10px; }
+  body[data-page="pricing"] .pagehead { width: calc(100% - 24px); margin-top: 8px; }
 }
 
 @media (max-width: 560px) {
   :root { --ui-glass-filter: blur(8px) saturate(110%); --ui-glass-filter-strong: blur(11px) saturate(114%); }
-  body[data-page="app"] .topbar { padding-top: max(14px, env(safe-area-inset-top)); }
-  body[data-page="app"] .greeting { flex-direction: column; gap: 14px; }
+  body[data-page="app"] .topbar { padding-top: max(12px, env(safe-area-inset-top)); }
+  body[data-page="app"] .greeting { flex-direction: column; gap: 12px; }
   body[data-page="app"] .greeting h1 { min-height: 5.25em; font-size: clamp(34px, 11vw, 48px); line-height: 1.04; }
-  body[data-page="app"] #heroEmpty { padding-bottom: 28px; }
-  body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 7px; }
-  body[data-page="app"] .stria { min-height: 40px; padding-inline: 11px; }
+  body[data-page="app"] #heroEmpty { padding-bottom: 24px; }
+  body[data-page="app"] .composer { min-height: 58px; border-radius: var(--ui-radius); padding: 8px; }
+  body[data-page="app"] .stria { min-height: var(--ctl); padding-inline: 12px; }
   body[data-page="app"] .send { width: 40px; height: 40px; }
   body[data-page="app"] .composer-help { display: none; }
-  body[data-page="app"]:not(.is-empty) .composer-zone { padding-bottom: max(14px, env(safe-area-inset-bottom)); }
+  body[data-page="app"]:not(.is-empty) .composer-zone { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
   body[data-page="app"] :is(.send,.stria,.rd-action,.rd-prompt,.side-open-btn):active { transform: scale(.97); }
   body[data-page="app"] .site-foot { line-height: 1.7; }
   body:not([data-page="app"]) .pagehead,
@@ -896,8 +980,8 @@ html[data-skin="paper"] body[data-page="app"] .guide-coach {
 }
 
 html[data-skin="paper"] body[data-page="app"] #howItWorksLink {
-  padding-inline: 13px;
-  min-height: 34px;
+  padding-inline: 12px;
+  min-height: var(--ctl-compact);
   display: inline-flex;
   align-items: center;
 }
@@ -951,7 +1035,7 @@ body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none; }
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type {
   position: relative;
-  padding-top: 18px;
+  padding-top: 16px;
 }
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type::before {
   content: "";
@@ -1051,9 +1135,9 @@ html[data-skin="paper"] body .plan-tag {
 html[data-skin="paper"] body[data-page="pricing"] .billing-toggle {
   width: max-content;
   max-width: 100%;
-  min-height: 44px;
+  min-height: var(--ctl);
   margin-inline: auto;
-  padding: 0 6px 0 18px;
+  padding: 0 4px 0 16px;
   border-radius: var(--ui-radius-pill) !important;
 }
 
@@ -1122,6 +1206,27 @@ html[data-skin="paper"] body :is(
   .panel, .account-menu, .acct-menu, .popover, .modal, .dialog, .sheet,
   .ledger, .side-foot, .signin-coach, .guide-coach
 ) {
+  /* ⚠️⚠️ ONE layer, and the second one is gone. The turbulence grain is the
+     material's own surface — what makes glass read as frosted rather than as
+     tinted film — and it stays. Over it there used to drift a field built from
+     the phenomena, meant to register as something etched into the glass.
+
+     It was `ph-drift.svg` as a BACKGROUND-IMAGE, and that file paints
+     `fill="#000"` at `scale(2.261)`. This repo's own rule is that a phenomenon
+     goes on a carrier as a MASK, never as a background-image, precisely so the
+     colour comes from CSS and follows the group — the note is in CLAUDE.md and
+     content-pages.css already does it that way. A background-image carries its
+     own baked ink, and `soft-light` over near-clear glass does not tame solid
+     black: on login the card sits over the far ridge and the heading was
+     crossed out by black bars.
+
+     It also broke the other half of the rule it was written under, three lines
+     up in content-pages.css: ONE mark per carrier, never a repeated wallpaper.
+     A 420px tile is a wallpaper.
+
+     The motifs are still on these routes — content-pages.css puts a single
+     masked, palette-coloured one on each major carrier. What is deleted here is
+     the tiling, not the phenomena. */
   background-image: var(--ui-frost-grain) !important;
   background-size: 140px 140px;
   background-repeat: repeat;
@@ -1152,8 +1257,8 @@ html[data-skin="paper"] body :is(
   cursor: pointer;
   position: relative;
   border-bottom: 1px dotted color-mix(in srgb, var(--ink) 38%, transparent);
-  transition: border-color var(--dur-fast, 120ms) var(--ease-out, ease),
-              color var(--dur-fast, 120ms) var(--ease-out, ease);
+  transition: border-color var(--dur-fast) var(--ease-out, ease),
+              color var(--dur-fast) var(--ease-out, ease);
 }
 /* A comfortable tap target without disturbing the line box it sits in. */
 .reading-body .xr::before {
@@ -1178,19 +1283,19 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-mute::before { content: none; }
 
 .reading-body .xr-panel {
-  margin: 10px 0 18px;
-  padding: 12px 14px 13px;
+  margin: 8px 0 16px;
+  padding: 12px 12px 12px;
   border-left: 2px solid color-mix(in srgb, var(--terracotta) 42%, transparent);
   background: color-mix(in srgb, var(--bw-palette-1) 42%, transparent);
   border-radius: 0 var(--ui-radius-small, 12px) var(--ui-radius-small, 12px) 0;
-  animation: xr-in var(--dur-fast, 120ms) var(--ease-out, ease) both;
+  animation: xr-in var(--dur-fast) var(--ease-out, ease) both;
 }
 .reading-body .xr-lead {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: .01em;
+  letter-spacing: 0;
   color: var(--dim);
 }
 .reading-body .xr-panel[lang="zh"] .xr-lead { line-height: 1.65; }
@@ -1199,26 +1304,26 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-cats {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 9px;
+  gap: 4px;
+  margin: 0 0 8px;
 }
 .reading-body .xr-cat {
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1;
-  letter-spacing: .01em;
+  letter-spacing: 0;
   color: var(--dim);
   background: color-mix(in srgb, var(--bw-palette-1) 66%, transparent);
   border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
-  border-radius: 999px;
-  padding: 7px 11px;
+  border-radius: var(--ui-radius-pill);
+  padding: 8px 12px;
   cursor: pointer;
   /* 44px touch target without a 44px-tall chip: the box stays visually small
      and the hit area is expanded underneath it. */
   position: relative;
-  min-height: 30px;
-  transition: color var(--dur-fast, 120ms) var(--ease-out, ease),
-              border-color var(--dur-fast, 120ms) var(--ease-out, ease);
+  min-height: var(--ctl-chip);
+  transition: color var(--dur-fast) var(--ease-out, ease),
+              border-color var(--dur-fast) var(--ease-out, ease);
 }
 .reading-body .xr-cat::before { content: ""; position: absolute; inset: -7px -2px; }
 /* The branch this reading actually took. The row is a map; without this it is a
@@ -1233,7 +1338,7 @@ html[data-skin="paper"] body :is(
   display: inline-block;
   width: 4px;
   height: 4px;
-  margin-left: 6px;
+  margin-left: 4px;
   vertical-align: middle;
   border-radius: 50%;
   background: var(--terracotta);
@@ -1258,13 +1363,13 @@ html[data-skin="paper"] body :is(
   padding: 0;
   list-style: none;
   columns: 2;
-  column-gap: 22px;
+  column-gap: 24px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.72;
   color: var(--dim);
 }
-.reading-body .xr-list li { break-inside: avoid; padding-left: 9px; position: relative; }
+.reading-body .xr-list li { break-inside: avoid; padding-left: 8px; position: relative; }
 .reading-body .xr-list li::before {
   content: "";
   position: absolute;
@@ -1294,33 +1399,33 @@ html[data-skin="paper"] body :is(
    still has to read as an appendix to the prose rather than a rival ending, so
    it sits behind a rule, in the label face, at label size. */
 .reading-body .xr-chain {
-  margin: 34px 0 0;
+  margin: 32px 0 0;
   padding-top: 16px;
   border-top: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
 }
 .reading-body .xr-chain-lead {
-  margin: 0 0 11px;
+  margin: 0 0 12px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: .012em;
+  letter-spacing: .02em;
   color: var(--dim);
 }
 .reading-body .xr-edges {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 10px;
-  margin: 0 0 9px;
+  gap: 4px 8px;
+  margin: 0 0 8px;
 }
 .reading-body .xr-edge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1;
-  padding: 6px 10px;
-  border-radius: 999px;
+  padding: 4px 8px;
+  border-radius: var(--ui-radius-pill);
   border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
   background: color-mix(in srgb, var(--bw-palette-1) 52%, transparent);
   color: var(--dim);
@@ -1330,8 +1435,8 @@ html[data-skin="paper"] body :is(
   font-style: normal;
   font-size: 10px;
   letter-spacing: .04em;
-  padding: 2px 6px;
-  border-radius: 999px;
+  padding: 2px 4px;
+  border-radius: var(--ui-radius-pill);
 }
 /* 生 feeds, 克 restrains — the one place a colour carries meaning rather than
    decoration, so the two are told apart by hue and never by hue alone: the
@@ -1341,8 +1446,8 @@ html[data-skin="paper"] body :is(
 
 .reading-body .xr-act {
   display: flex;
-  gap: 10px;
-  padding: 5px 0;
+  gap: 8px;
+  padding: 4px 0;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.62;
@@ -1371,7 +1476,290 @@ html[data-skin="paper"] body :is(
   .cta, .exchange, .send, .next, .prov.submit, .btn.terracotta, .choose.featured
 ) {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;
+  /* --paper on this fill is 4.51:1 — it passes on paper and then drifts under
+     as the fill composites over a dark ridge. --on-accent is 5.86:1 on the same
+     fill and holds the margin. */
+  color: var(--on-accent) !important;
+}
+
+/* ── CONTROLS: one ladder, and a hit area that cannot half-wire ────────────
+   Every route loads this sheet, which is why the rule lives here rather than
+   in motion.css, where it used to sit as a motion concern that it is not.
+
+   ⚠️ The version it replaces named nine selectors for `position:relative` and
+   only FOUR of them for the `::after`, so five controls carried the
+   positioning and no hit area at all — .send (the Cast button), .side-toggle,
+   .side-open-btn, .brand-btn and .method-menu .mm-row. A touch census found
+   68 elements across 39 kinds still under 44px on a coarse pointer while the
+   comment above the rule claimed they were handled. ONE list now feeds both
+   halves: the two rules below share $CONTROLS by construction, so the failure
+   that produced that gap cannot recur by someone editing one and not the
+   other.
+
+   A link inside a run of prose is deliberately NOT here. WCAG 2.2's Target
+   Size carries an inline exception for exactly this reason: you cannot give a
+   word in a sentence a 44px box without wrecking the sentence. Everything
+   named below is a standalone control. */
+
+/* ⭐ Raise the ELEMENT wherever it sits in normal flow; keep the bolted-on hit
+   area only for controls that genuinely cannot grow.
+
+   The first attempt gave every small control a 44px ::after and measured zero
+   targets under 44 — and then an overlap check found fifteen pairs of hit
+   areas intersecting and one tap on index landing on the wrong link. That is
+   the worse bug: a short target makes you tap twice, a stolen one takes you
+   somewhere you did not ask for. Overlap is only possible when a 44px hit area
+   is bolted onto an 18px element in a 19px-pitch row. If the element itself is
+   44 tall, normal flow guarantees the boxes cannot intersect.
+
+   So: the ladder does the work, and the ::after is reserved for controls that
+   are overlaid or wedged into tight chrome, where growing them would move
+   something else — an icon button, a checkbox, the password toggle inside its
+   own field. */
+
+/* Buttons take the ladder everywhere: 44 is the design height for an action,
+   not a concession to fingers, and it is the same on a desktop. */
+.btn, a.ghost, a.brand, a.brand-home, a.new-cast, a.exchange,
+button.new-cast, button.exchange, button.stria, button.send, button.tab,
+.bk-go, .bk-brand {
+  min-height: var(--ctl);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Rows of text links grow only where a finger is doing the pointing. ⚠️ Left
+   unconditional, this added 99px to the legal contents list on a desktop —
+   thirteen entries in a dense multi-column nav, each pushed to 44 for a
+   pointer that is already accurate to a pixel. That is a design regression
+   bought with no accessibility gain: WCAG 2.2 AA asks 24px on a fine pointer
+   and these clear it. The coarse gate is what the rule this replaces got
+   RIGHT; its failure was being half-wired, not being conditional. */
+@media (pointer: coarse) {
+  nav a, footer a, .legal-foot .links a, .ledgerstrip a {
+    min-height: var(--ctl);
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Controls that cannot grow without pushing something else out of place. The
+   two rules below share one selector list by construction — the version this
+   replaces named nine selectors for position:relative and only four of them
+   for the ::after, so .send (the Cast button), .side-toggle, .side-open-btn,
+   .brand-btn and .method-menu .mm-row carried the positioning and no hit area
+   at all, under a comment claiming they were handled. */
+.cx, .casting-del, .side-toggle, .side-open-btn, .modal-x, .wiz-exit,
+.brand-btn, .pass-toggle, .send, .method-menu .mm-row,
+input[type="checkbox"], input[type="radio"] {
+  position: relative;
+}
+.cx::after, .casting-del::after, .side-toggle::after, .side-open-btn::after,
+.modal-x::after, .wiz-exit::after, .brand-btn::after, .pass-toggle::after,
+.send::after, .method-menu .mm-row::after,
+input[type="checkbox"]::after, input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  min-width: var(--ctl);
+  min-height: var(--ctl);
+}
+
+.side-toggle, .side-open-btn { min-height: var(--ctl-compact); }
+
+/* ── The sidebar is a flat panel, not backdrop glass ───────────────────────
+   ⚠️⚠️ This is the price of a moving landscape, and it was measured before it
+   was paid. Moving anything behind a backdrop-filter makes that filter re-blur
+   on every frame, and this panel is 264px wide by the full height of the window
+   with more blurred panels nested inside it. With the range drifting:
+
+     all glass as-is                30fps
+     composer's blur off            32fps
+     sidebar's blur off             43fps
+     sidebar and its children off   52fps
+     every blur on the page off     51fps
+
+   The sidebar is the whole difference; everything else together is noise.
+
+   ⭐ It also fixes something the sidebar was doing on its own. A .42 white
+   panel over a blurred pale sky composites to a flat white column — measured 60
+   units lighter than the range immediately beside it, all the way down — so the
+   landscape appeared to stop dead at its edge. A flat translucent panel keeps
+   more of what is behind it than a blurred one did.
+
+   ⚠️ Scoped to the sidebar and its children only. Every other carrier on these
+   routes is still glass; this one is full-height page furniture, which is the
+   same reason it is already exempt from the route's corner rule. */
+/* ⚠️ !important, and it is aligning weight rather than hoping to win.
+   luxury-glass.css carries `html[data-skin="paper"] body[data-page="app"]
+   .sidebar` and a sibling rule listing .signin-coach, both at the same
+   specificity as anything writable here and both later in the cascade. This
+   file has lost that contest four times already; matching the weight is the
+   documented way out. */
+html[data-skin="paper"] body[data-page="app"] :is(.sidebar, .sidebar *) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+/* ⚠️ The white goes UP when the blur comes off, and that is not a reversal.
+   A blur averages the backdrop into a flat field; without one the panel sits on
+   whatever the ridges are doing, so the same .42 that read as calm through a
+   blur leaves 10px labels on live contour lines. Measured on group 186 at .42:
+   "Your first reading is on us" 3.56:1, "Available units" 3.85:1 — against
+   about 6.9:1 when it was blurred.
+
+   .72 is where the labels clear AA again while the landscape still reads
+   through the panel, which is the whole point of taking the blur off.
+
+   ⚠️ !important for the same reason as the rule above: luxury-glass.css sets
+   this property from a later sheet at equal specificity. */
+html[data-skin="paper"] body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, #FFFFFF 72%, transparent) !important;
+}
+/* ⭐ …and the small labels go to full ink. The panel is translucent over a live
+   landscape now rather than over a blurred flat field, so the ground under a
+   10px label is whatever the ridges are doing there — and --faint was chosen
+   against a backdrop that no longer exists. Raising the white far enough to
+   rescue them would rebuild the white column this change exists to remove; the
+   ink is the half that can move without costing the picture. Same reasoning as
+   the footer and the composer hint, which already take a solved ink for exactly
+   this reason. */
+html[data-skin="paper"] body[data-page="app"] .sidebar
+  :is(.lbl, .ledger-cap, .ledger-unit, .ledger-plan, .who i) {
+  color: var(--ink) !important;
+}
+
+/* ── Text with nothing behind it but the landscape ─────────────────────────
+   ⭐ The white scrims are gone (owner, 2026-08-26, looking at what they
+   actually rendered as: three white smears lying across the settings page).
+   They were the honest fix for the measurement and the wrong thing to look at,
+   which is the more important of the two facts.
+
+   What is left in their place carries no white at all: the ink itself follows
+   the group, and the glow around it is the ink's own colour pushed outward, so
+   the halo is always the opposite luminance to whatever the letters are —
+   which is the one thing a fixed white wash could never be.
+
+   ⚠️ This costs contrast on the darkest groups and that is a chosen trade, not
+   an oversight. Do not reintroduce a white plate here without measuring what it
+   looks like as well as what it measures. */
+html[data-skin="paper"] body[data-page="app"] .topbar .ghost {
+  color: var(--bw-ink-on-sky, var(--ink));
+}
+
+/* ── Palette-derived ink ────────────────────────────────────────────────────
+   --bw-palette-gem is an arbitrary swatch out of the group (gems[0]), so using
+   it directly as a text colour means the text is whatever lightness that group
+   happened to hold. Measured: the 42px price on pricing hit 1.01:1 on group
+   052, and "Save 2 months" at 10px hit 1.13:1.
+
+   The brief was that the colour should follow the palette without going to
+   extremes, so this keeps the hue and the chroma — the page still changes
+   colour with the range, which is the whole point — and pins only the
+   lightness into a band that clears AA over the neutral glass. Nothing is
+   hard-coded per group; one expression covers all 114.
+
+   The plain value is the fallback for anything without relative colour syntax:
+   no worse than what shipped, and the @supports block does the work everywhere
+   it is understood. */
+html { --gem-ink: var(--bw-palette-gem); }
+html { --gem-ink-quiet: var(--bw-palette-gem); }
+@supports (color: oklch(from red l c h)) {
+  /* The same idea one step deeper, for type small enough that WCAG asks 4.5
+     rather than 3. The owner picked .38 looking at a 42px price, where the
+     margin is enormous; at 13px the same value measured 2.79:1 on one group.
+     This is the size distinction the standard already makes, not a second
+     opinion about the colour. */
+  html { --gem-ink-quiet: oklch(from var(--bw-palette-gem) min(l, .26) c h); }
+  /* .40, not .46: at .46 the price still measured 3.21:1 on the darker groups,
+     because the card it sits on is glass over the range rather than paper.
+     Owner picked .38 off the rendered comparison: the margin at .30 was so
+     wide (15.7:1 where 4.5 is asked) that it was buying nothing and costing
+     the colour — at .38 the figure still measures 14.7:1 on the same group. */
+  html { --gem-ink: oklch(from var(--bw-palette-gem) min(l, .38) c h); }
+}
+
+/* Clay used as type takes the stepped ink, not the fill colour. These are the
+   places measured under AA against their own composited backdrop: settings'
+   section rails and its sign-in link, pricing's savings chip and identity line,
+   and 404's secondary action. The fills elsewhere are untouched. */
+html[data-skin="paper"] body[data-page="settings"] :is(.head b, .head .idx, .signedout-note a),
+html[data-skin="paper"] body[data-page="pricing"] :is(.save, .identity, .plan-tag),
+html[data-skin="paper"] body[data-page="not-found"] .ghostbtn {
+  color: var(--terracotta-ink);
+}
+/* …and the secondary action on 404 gets the heavier glass. At .60 white the
+   panel composites down over the range's darkest ridges, which is where its
+   label measured 2.42:1; the button sits low on a page that never scrolls. */
+html[data-skin="paper"] body[data-page="not-found"] .ghostbtn {
+  background-color: var(--ui-glass-strong) !important;
+}
+
+/* The landing headline carries no plate either — same reason, and this is the
+   page's centrepiece, so it least of all should sit on a white smear. Its ink
+   follows the group; see index.html. */
+
+/* ── Scroll boundaries: text goes out of focus, it does not get cut ─────────
+   Owner's note: every place where a text box scrolls should have a light blur
+   at the seam. There were two different problems hiding under that.
+
+   The app's top bar had no background and no backdrop filter at all, so a
+   conversation scrolling upward simply overlapped the navigation — two layers
+   of type in the same place. It gets a frosted band that fades out downward,
+   the same material as the bar below the composer.
+   Scoped to a live conversation: the landing state has nothing scrolling under
+   it, and a band across the top of the opening screen would read as chrome the
+   page does not need. That also keeps the extra backdrop-filter away from the
+   one view where the drifting clouds sit closest to it. */
+body[data-page="app"]:not(.is-empty) .topbar { position: relative; }
+body[data-page="app"]:not(.is-empty) .topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -18px;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(14px) saturate(106%) brightness(1.10);
+  backdrop-filter: blur(14px) saturate(106%) brightness(1.10);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+}
+
+/* The inner scrollers are small boxes inside chrome that is already frosted,
+   so what they need is the seam itself softened rather than another filter
+   layer: their content dissolves at the edge instead of ending on a cut line.
+   Kept to 14px — enough to read as a soft edge, small enough that the first
+   line of an unscrolled list is not visibly dimmed. */
+body[data-page="app"] :is(.castings, .carry-menu .cm-list, .composer textarea) {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
+    #000 calc(100% - 14px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
+    #000 calc(100% - 14px), transparent 100%);
+}
+
+/* ── No square boxes on the glass routes ───────────────────────────────────
+   A census of computed border-radius across the eight glass routes at two
+   viewports turned up 27 kinds of box still sitting on sharp corners, native
+   form controls among them — pricing's Annually checkbox was an 18px square in
+   a page where everything else is rounded.
+
+   Two things are deliberately not in this list. Full-bleed page furniture (the
+   sidebar, the drawer scrim, the legal route's flush bands) has no outside to
+   round: its corners are the screen's. And rows inside a panel are dividers,
+   not boxes — they carry one hairline on one side, and rounding each of them
+   splits a single panel into a stack of little cards. */
+html[data-skin="paper"] body:not([data-page="about"]):not([data-page="guide"]) :is(
+  .rate-number, .billing-mail-note, .card-hero, .ledger, .side-foot,
+  .signedout-note, .methods, .estimate, .id-row
+) {
+  border-radius: var(--ui-radius);
+}
+/* Native controls do not inherit the page's shape, so they have to be told. */
+html[data-skin="paper"] body :is(textarea, select, input[type="text"], input[type="email"],
+  input[type="password"], input[type="number"], input[type="search"]) {
+  border-radius: var(--ui-radius-small);
+}
+html[data-skin="paper"] body :is(input[type="checkbox"]) {
+  border-radius: var(--ui-radius-chip);
 }
 
 /* ── the pointer at the very foot of a reading ──────────────────────────────
@@ -1385,13 +1773,17 @@ html[data-skin="paper"] body :is(
    Hover carries the short form through `title`; the click opens the full
    library. Neither animates: the reading has landed, and the rule everywhere
    else here is that nothing keeps moving after it does. */
+/* ⚠️ Spacing here is on the 4px ladder, snapped from 22/14/10/7/6/11/13/9/5.
+   tests/style-system.mjs holds the site to that scale — nobody can tell 9px
+   from 8px, and the site read 45 distinct spacing values before it was
+   collected. Every move was 3px or less. */
 .reading-body .xr-maybe-bar {
-  margin: 22px 0 0;
-  padding-top: 14px;
+  margin: 24px 0 0;
+  padding-top: 16px;
   border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
 }
 .reading-body .xr-maybe-lead {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.5;
@@ -1400,14 +1792,14 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-maybe-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px;
 }
 .reading-body .xr-maybe {
   display: inline-flex;
   align-items: baseline;
-  gap: 7px;
-  min-height: 32px;
-  padding: 6px 11px;
+  gap: 8px;
+  min-height: var(--ctl-compact);
+  padding: 8px 12px;
   border: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
   border-radius: var(--ui-radius-chip);
   background: color-mix(in srgb, var(--paper-raised) 58%, transparent);
@@ -1417,7 +1809,12 @@ html[data-skin="paper"] body :is(
   color: var(--dim);
   text-align: left;
   cursor: pointer;
-  transition: border-color .16s var(--ease-out), background .16s var(--ease-out), color .16s var(--ease-out);
+  /* ⚠️ --dur-base, not .16s. The site collapsed 26 transition durations onto a
+     six-step ladder and tests/style-system.mjs ratchets it; a new literal is a
+     new value on a page rather than a value in the system. 160 → 190ms. */
+  transition: border-color var(--dur-base) var(--ease-out),
+              background var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease-out);
 }
 .reading-body .xr-maybe:hover,
 .reading-body .xr-maybe:focus-visible {
@@ -1437,13 +1834,13 @@ html[data-skin="paper"] body :is(
 
 .reading-body .xr-lib {
   margin: 12px 0 0;
-  padding: 13px 14px;
+  padding: 12px 16px;
   border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
   border-radius: var(--ui-radius-small);
   background: color-mix(in srgb, var(--paper-raised) 72%, transparent);
 }
 .reading-body .xr-lib-lead {
-  margin: 0 0 9px;
+  margin: 0 0 8px;
   font-family: var(--font-sans);
   font-size: 12px;
   color: var(--dim);
@@ -1451,7 +1848,7 @@ html[data-skin="paper"] body :is(
 .reading-body .xr-lib-row {
   display: flex;
   gap: 12px;
-  padding: 5px 0;
+  padding: 4px 0;
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 1.55;

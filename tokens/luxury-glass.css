@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260901d");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260901d");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260901d");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260901d");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260825f");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260825f");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260825f");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260825f");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
 }
@@ -64,7 +64,7 @@ html[data-skin="paper"] body > :not(.mtn-bg):not(.lq-texture-stage):not(script):
   mix-blend-mode: multiply;
   opacity: 0;
   transform: none;
-  transition: opacity 680ms var(--ease-out);
+  transition: opacity 760ms var(--ease-out);
   will-change: opacity;
 }
 .lq-texture-layer.is-current {
@@ -102,7 +102,7 @@ html[data-skin="paper"] body > :not(.mtn-bg):not(.lq-texture-stage):not(script):
    left in this file is only what still decides something. */
 
 :where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step) {
-  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 90ms ease-out !important;
+  transition: background-color 190ms ease, color 190ms ease, box-shadow 190ms ease, transform 90ms ease-out !important;
 }
 :where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step):active {
   transform: scale(.985) !important;
@@ -123,9 +123,9 @@ body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)
 }
 
 /* The usage spread is gone from pricing.html: hiding its plate left a 260px
-   empty panel, which is the "strange box" it always read as. Nothing here
-   replaces it — the sentence it carried now sits with the rates. */
-body[data-page="pricing"] :is(.hero,.plans,.rates,.packs)::before,
+   empty panel, the "strange box" it always read as; the rates carry its
+   sentence now. .hero left this list 2026-08-26: it also killed the scrim. */
+body[data-page="pricing"] :is(.plans,.rates,.packs)::before,
 body[data-page="pricing"] :is(.plans,.packs)::after,
 body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
   .why-card,.method,.progress,.guide-stage,.lesson-card,.example,.rate,.toc,.pull,.headline,.clause
@@ -175,9 +175,9 @@ body:is([data-page="about"],[data-page="guide"],[data-page="legal"]) :is(
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lq-texture-layer { transition: opacity 160ms linear; transform: none; }
+  .lq-texture-layer { transition: opacity 140ms linear; transform: none; }
   :where(button,.btn,.cta,.choose,.exchange,.send,.next,.back,.tab,.progress-step) {
-    transition: color 160ms ease, background-color 160ms ease !important;
+    transition: color 140ms ease, background-color 140ms ease !important;
     transform: none !important;
   }
 }
@@ -295,7 +295,7 @@ html[data-skin="paper"] body[data-page="pricing"] :is(
 ) {
   color: var(--soft-peach-ink) !important;
   border: 0 !important;
-  background-color: var(--soft-peach-glass) !important;
+  background-color: var(--soft-peach-glass-strong) !important;  /* the copy that actually paints these cards */
   background-image: none !important;
 }
 /* The featured plan used `inset 0 3px 0 <accent>` — a hard, unblurred 3px slab
@@ -314,7 +314,7 @@ html[data-skin="paper"] body[data-page="pricing"] :is(.plan.featured,.plan.feat)
 }
 html[data-skin="paper"] body[data-page="pricing"] :is(.choose,.cta) {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
+  color: var(--on-accent) !important;   /* --paper on this fill is 4.51:1; white 5.86:1 */
 }
 
 /* Text pages: one flat colour per major editorial field. There are no
@@ -354,7 +354,7 @@ html[data-skin="paper"] body[data-page="login"] .tab.on {
 }
 html[data-skin="paper"] body[data-page="login"] :is(.prov.submit) {
   background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, var(--soft-peach-ink)) !important;
-  color: var(--paper) !important;   /* ink on accent measured 3.04:1; see refinement.css */
+  color: var(--on-accent) !important;   /* --paper on this fill is 4.51:1; white 5.86:1 */
 }
 html[data-skin="paper"] body[data-page="settings"] > .toast {
   position: fixed !important;

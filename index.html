@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260901d">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260901d">
-<script src="./ds-base.js?v=20260901d"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260901i">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260901i">
+<script src="./ds-base.js?v=20260901i"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -33,61 +33,61 @@
   .lbl{font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint)}
 
   /* ── animated mountain range — full-bleed backdrop; meet shows the whole artwork so its own transparent sky blends into the page (no hard seam) ── */
-  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;transition:opacity .6s ease}
+  .mtn-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.82;transition:opacity 520ms ease}
   /* In a reading, let the answer remain the visual foreground. */
   body:not(.is-empty) .mtn-bg{opacity:.42}
 
   /* ── sidebar — seamless chrome, matched to the landing: no divider, texture & mountains run through ── */
-  .sidebar{position:relative;z-index:5;width:264px;flex-shrink:0;display:flex;flex-direction:column;padding:14px 12px 12px;background:transparent;
+  .sidebar{position:relative;z-index:5;width:264px;flex-shrink:0;display:flex;flex-direction:column;padding:12px 12px 12px;background:transparent;
     transition:width .28s cubic-bezier(.4,0,.2,1);overflow:hidden;white-space:nowrap}
-  body.rail .sidebar{width:60px;padding-left:9px;padding-right:9px}
-  .side-top{display:flex;align-items:center;gap:8px;padding:2px 8px 0;min-height:36px}
+  body.rail .sidebar{width:60px;padding-left:8px;padding-right:8px}
+  .side-top{display:flex;align-items:center;gap:8px;padding:2px 8px 0;min-height:var(--ctl-compact)}
   .mark{flex:none;width:26px;height:21px;color:var(--ink)}
-  .brand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:2px 4px 2px 0;border-radius:var(--ui-radius-small);transition:opacity .15s;text-align:left}
+  .brand-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:2px 4px 2px 0;border-radius:var(--ui-radius-small);transition:opacity 140ms;text-align:left}
   .brand-btn:hover{opacity:.72}
   /* (the old body background-color "bgDrift" crossfade was removed: re-sampling
      it every frame behind the glass panels was the occasional frame-flash. The
      mountains still animate via GPU transform, so the page keeps its motion.) */
   .brand-word{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;-webkit-text-stroke:.6px var(--ink);transform:translateY(-1px);
-    white-space:nowrap;transition:width .18s,opacity .18s}
-  .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:var(--ui-radius-small);color:var(--faint);transition:background .15s,color .15s}
+    white-space:nowrap;transition:width 190ms,opacity 190ms}
+  .side-toggle{margin-left:auto;width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:var(--ui-radius-small);color:var(--faint);transition:background 140ms,color 140ms}
   .side-toggle:hover{background:var(--paper-dim);color:var(--ink)}
   /* mobile drawer opener — lives in the topbar, hidden on desktop, shown ≤880px */
-  .side-open-btn{display:none;width:34px;height:34px;flex:none;place-items:center;border-radius:var(--ui-radius-small);color:var(--ink);transition:background .15s;margin-right:4px}
+  .side-open-btn{display:none;width:34px;height:34px;flex:none;place-items:center;border-radius:var(--ui-radius-small);color:var(--ink);transition:background 140ms;margin-right:4px}
   .side-open-btn:hover{background:var(--paper-dim)}
-  body.rail .side-top{flex-direction:column;align-items:center;gap:10px;padding-bottom:4px}
+  body.rail .side-top{flex-direction:column;align-items:center;gap:8px;padding-bottom:4px}
   body.rail .brand-btn{gap:0;padding:0;justify-content:center;width:100%}
   body.rail .brand-word{width:0;overflow:hidden;opacity:0}
-  .fade{transition:opacity .18s,width .18s}
+  .fade{transition:opacity 190ms,width 190ms}
   body.rail .fade{opacity:0;pointer-events:none}
 
-  .new-cast{margin-top:16px;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:var(--ui-radius-small);font-size:15px;color:var(--terracotta);font-weight:500;transition:background .15s;text-align:left}
+  .new-cast{margin-top:16px;display:flex;align-items:center;gap:8px;padding:8px 8px;border-radius:var(--ui-radius-small);font-size:15px;color:var(--terracotta);font-weight:500;transition:background 140ms;text-align:left}
   .new-cast:hover{background:var(--paper-dim)}
   .new-cast .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center}
-  body.rail .new-cast{justify-content:center;padding:7px 0;gap:0}
+  body.rail .new-cast{justify-content:center;padding:8px 0;gap:0}
   body.rail .new-cast .fade{width:0;overflow:hidden}
   .mobile-side-nav{display:none}
-  .mobile-side-nav a{display:flex;align-items:center;min-height:38px;padding:7px 8px;border-radius:var(--ui-radius-small);color:var(--dim);font-family:var(--sans);font-size:13px;font-weight:700;text-decoration:none;transition:background-color .15s,color .15s}
+  .mobile-side-nav a{display:flex;align-items:center;min-height:var(--ctl);padding:8px 8px;border-radius:var(--ui-radius-small);color:var(--dim);font-family:var(--sans);font-size:13px;font-weight:700;text-decoration:none;transition:background-color 140ms,color 140ms}
   .mobile-side-nav a:hover,.mobile-side-nav a:focus-visible{background:var(--paper-dim);color:var(--ink)}
 
-  .castings{margin-top:22px;flex:1;min-height:0;display:flex;flex-direction:column;gap:1px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
+  .castings{margin-top:24px;flex:1;min-height:0;display:flex;flex-direction:column;gap:1px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
   .castings::-webkit-scrollbar{width:5px}
   .castings::-webkit-scrollbar-track{background:transparent}
   .castings::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:var(--ui-radius-pill)}
   .castings::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}
   .castings::-webkit-scrollbar-button{display:none;height:0;width:0}
-  .castings .lbl{flex:none;padding:0 8px 7px;font-family:"Spinnaker";font-weight:900}
-  .castings .casting{flex:none;display:block;width:100%;min-width:0;text-align:left;font-size:13px;color:var(--dim);padding:7px 8px;border-radius:var(--ui-radius-small);overflow:hidden;transition:background .15s,color .15s}
+  .castings .lbl{flex:none;padding:0 8px 8px;font-family:"Spinnaker";font-weight:900}
+  .castings .casting{flex:none;display:block;width:100%;min-width:0;text-align:left;font-size:13px;color:var(--dim);padding:8px 8px;border-radius:var(--ui-radius-small);overflow:hidden;transition:background 140ms,color 140ms}
   .casting-title{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .casting-meta{display:block;margin-top:2px;font-size:10px;line-height:1.2;letter-spacing:.06em;color:var(--ghost)}
   .castings .casting:hover{background:var(--paper-dim);color:var(--ink)}
   .castings .casting.active{background:var(--paper-dim);color:var(--ink);font-weight:500}
-  .casting-row{display:flex;align-items:center;border-radius:var(--ui-radius-small);transition:background .15s}
+  .casting-row{display:flex;align-items:center;border-radius:var(--ui-radius-small);transition:background 140ms}
   .casting-row:hover{background:var(--paper-dim)}
   .casting-row .casting{flex:1;min-width:0}
   .casting-row .casting:hover{background:none}
   .casting-del{flex:none;width:22px;height:22px;display:grid;place-items:center;border-radius:var(--ui-radius-small);font-size:15px;color:var(--ghost);
-    opacity:0;pointer-events:none;transition:color .15s,background .15s,opacity .15s}
+    opacity:0;pointer-events:none;transition:color 140ms,background 140ms,opacity 140ms}
   .casting-row:hover .casting-del{opacity:1;pointer-events:auto}
   .casting-del:hover{color:var(--terracotta);background:rgba(181,80,44,.1)}
 
@@ -99,33 +99,37 @@
      z-index:-1 is required — an absolutely-positioned z-index:auto pseudo
      otherwise paints ABOVE static in-flow content per CSS stacking order,
      which blurred the real text instead of sitting behind it. */
-  .ledger{position:relative;margin-top:14px;flex:none;padding:13px 14px 14px}
+  .ledger{position:relative;margin-top:12px;flex:none;padding:12px 12px 12px}
   .ledger::before{content:none}
   /* belt-and-suspenders: force real content above the fog explicitly
      rather than relying solely on z-index:-1 stacking order, which some
      browsers/compositors handle inconsistently with backdrop-filter */
   .ledger > *{position:relative;z-index:1}
-  .ledger{transition:transform .22s cubic-bezier(.4,0,.2,1)}
+  .ledger{transition:transform 190ms cubic-bezier(.4,0,.2,1)}
   .ledger:hover{transform:translateY(-2px)}
   
   .ledger-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
-  .ledger-head .lbl{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.13em;color:var(--faint)}
-  .ledger-plan{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.11em;color:var(--pine);background:rgba(61,92,74,.1);border:1px solid rgba(61,92,74,.24);border-radius:var(--ui-radius-pill);padding:3px 9px}
-  .ledger-bal{display:flex;align-items:baseline;gap:6px;margin-top:10px}
+  .ledger-head .lbl{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--faint)}
+  /* The wash was two naked rgba values that did not even match --pine, and it
+     darkened the badge's own ground: pine on a pine tint measured 4.21:1 over
+     the sidebar glass. Pine on the neutral glass is 6.8:1, and the tint now
+     derives from the token so the two cannot drift apart again. */
+  .ledger-plan{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--pine);background:var(--ui-glass-strong);border:1px solid color-mix(in srgb,var(--pine) 30%,transparent);border-radius:var(--ui-radius-pill);padding:3px 8px}
+  .ledger-bal{display:flex;align-items:baseline;gap:4px;margin-top:8px}
   .ledger .count{font-family:"Spinnaker";font-weight:600;font-size:30px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
   .ledger-unit{font-family:"Spinnaker";font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--faint)}
   .ledger-meter{margin-top:12px;height:6px;border-radius:var(--ui-radius-pill);background:rgba(42,32,22,.12);overflow:hidden}
-  .ledger-meter span{display:block;height:100%;width:0;border-radius:var(--ui-radius-pill);background:var(--terracotta);transition:width .55s cubic-bezier(.4,0,.2,1)}
-  .ledger-cap{margin-top:7px;font-family:"Spinnaker";font-size:10px;letter-spacing:.03em;color:var(--ghost)}
-  .exchange{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;border:none;background:var(--terracotta);color:var(--paper);border-radius:var(--ui-radius-small);padding:9px;font-family:"Spinnaker";font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(181,80,44,.25);transition:transform .15s,background .15s,box-shadow .15s}
+  .ledger-meter span{display:block;height:100%;width:0;border-radius:var(--ui-radius-pill);background:var(--terracotta);transition:width 520ms cubic-bezier(.4,0,.2,1)}
+  .ledger-cap{margin-top:8px;font-family:"Spinnaker";font-size:10px;letter-spacing:.02em;color:var(--ghost)}
+  .exchange{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:none;background:var(--terracotta);color:var(--paper);border-radius:var(--ui-radius-small);padding:8px;font-family:"Spinnaker";font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(181,80,44,.25);transition:transform 140ms,background 140ms,box-shadow 140ms}
   .exchange:hover{transform:translateY(-1px);background:color-mix(in srgb,var(--terracotta) 88%,black);box-shadow:0 6px 16px rgba(181,80,44,.32)}
-  .exchange .ex-arr{transition:transform .15s}
+  .exchange .ex-arr{transition:transform 140ms}
   .exchange:hover .ex-arr{transform:translateX(2px)}
   body.rail .ledger{display:none}
 
   /* account footer — flat row, matched to the landing; fog bleeds outward
      via ::before, same technique as .ledger above */
-  .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;padding:9px 10px;cursor:pointer;text-align:left;width:100%}
+  .side-foot{position:relative;margin-top:12px;display:flex;align-items:center;gap:8px;padding:8px 8px;cursor:pointer;text-align:left;width:100%}
   .side-foot::before{content:none}
   .side-foot:hover::before{background:transparent}
   .side-foot > *{position:relative;z-index:1}
@@ -143,15 +147,15 @@
      Guest / sign-in row. Nudges first-time visitors to sign in — the first
      reading is free, whole rather than a sample. Shown only to signed-out
      guests; dismissable, and remembered. ── */
-  .signin-coach{position:relative;margin:16px 5px 2px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
+  .signin-coach{position:relative;margin:16px 4px 2px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
     white-space:normal;
     border:1px solid var(--line);border-radius:var(--ui-radius);box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
-    padding:10px 24px 11px 12px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) both}
+    padding:8px 24px 12px 12px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) both}
   .signin-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
   .signin-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
   .signin-coach .ct b{color:var(--ink);font-weight:700}
   .signin-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
-    font-size:15px;line-height:1;color:var(--ghost);border-radius:var(--ui-radius-small);transition:background .15s,color .15s}
+    font-size:15px;line-height:1;color:var(--ghost);border-radius:var(--ui-radius-small);transition:background 140ms,color 140ms}
   .signin-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
   /* the arrow — ink outline triangle behind, white fill on top — pointing down
      at the Guest footer directly below it */
@@ -161,7 +165,7 @@
   body.rail .signin-coach{display:none}
   .acct-menu{position:absolute;left:6px;bottom:56px;width:230px;
     background:var(--paper-raised);
-    border:none;border-radius:var(--ui-radius-small);padding:6px;
+    border:none;border-radius:var(--ui-radius-small);padding:4px;
     box-shadow:none;
     display:flex;flex-direction:column;z-index:30;
     opacity:0;transform:translateY(5px) scale(.985);transform-origin:24px 100%;visibility:hidden;pointer-events:none;
@@ -170,29 +174,62 @@
     transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out)}
   body.rail .sidebar{overflow:visible}
   body.rail .acct-menu{left:68px;bottom:4px}
-  .acct-menu .who{padding:11px 12px 13px;border-bottom:1px solid rgba(42,32,22,.1);margin-bottom:4px}
+  .acct-menu .who{padding:12px 12px 12px;border-bottom:1px solid rgba(42,32,22,.1);margin-bottom:4px}
   .acct-menu .who b{font-size:15px;font-weight:400;font-family:"BioRhyme",var(--serif);display:block;color:var(--ink);line-height:1.3}
-  .acct-menu .who span{font-size:10px;color:var(--ghost);font-family:"Spinnaker";letter-spacing:.01em;margin-top:3px;display:block}
-  .mi{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:var(--ui-radius-small);font-size:13px;color:var(--dim);text-align:left;transition:background .15s,color .15s}
+  .acct-menu .who span{font-size:10px;color:var(--ghost);font-family:"Spinnaker";letter-spacing:0;margin-top:3px;display:block}
+  .mi{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--ui-radius-small);font-size:13px;color:var(--dim);text-align:left;transition:background 140ms,color 140ms}
   .mi:hover{background:rgba(42,32,22,.07);color:var(--ink)}
-  .mi.plan b{margin-left:auto;font-size:10px;font-weight:500;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--pine);border:1px solid rgba(61,92,74,.36);border-radius:var(--ui-radius-small);padding:2px 7px;font-family:"Spinnaker"}
+  .mi.plan b{margin-left:auto;font-size:10px;font-weight:500;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--pine);border:1px solid rgba(61,92,74,.36);border-radius:var(--ui-radius-small);padding:2px 8px;font-family:"Spinnaker"}
 
   /* ── main — rides above the mountain backdrop ── */
   .main{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-width:0;font-family:"BioRhyme",var(--serif)}
-  .topbar{display:flex;align-items:baseline;gap:14px;padding:18px 56px 14px}
+  .topbar{display:flex;align-items:baseline;gap:12px;padding:16px 48px 12px}
   .topbar h1{font-family:"BioRhyme",var(--serif);font-style:normal;font-weight:400;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .units-chip{flex:none;font-size:12px;letter-spacing:.07em;color:var(--dim);background:var(--chip);border-radius:var(--ui-radius-pill);padding:6px 13px;font-variant-numeric:tabular-nums}
+  .units-chip{flex:none;font-size:12px;letter-spacing:.08em;color:var(--dim);background:var(--chip);border-radius:var(--ui-radius-pill);padding:4px 12px;font-variant-numeric:tabular-nums}
+
+  /* Phone-only bar furniture. Both are display:none here and switched on in the
+     ≤700px block — on desktop the sidebar already carries the wordmark and the
+     account row, and a second copy of each in the bar would be duplication, not
+     redundancy. */
+  .topbar-brand{display:none;align-items:center;gap:8px;flex:none;color:var(--ink);text-decoration:none}
+  .topbar-brand .mark{width:22px;height:18px;flex:none;stroke:var(--terracotta)}
+  .topbar-brand .brand-word{font-family:var(--font-brand,cursive);font-weight:100;font-size:18px;
+    color:var(--bw-ink-on-sky,var(--ink));-webkit-text-stroke:.6px var(--bw-ink-on-sky,var(--ink));
+    transform:translateY(-1px);white-space:nowrap}
+  /* The chip grows to the touch floor itself rather than wearing a bolted-on
+     hit area: a 44px ::after on a 36px chip can only be reached by overlapping
+     its neighbours, and a stolen tap is worse than a small target. The bar's
+     vertical padding drops by the same 8px it gains, so the bar — and the hero
+     band measured against it — keeps its height exactly. */
+  /* Glass is recognised by its edge, not by its tint: the highlight-and-shadow
+     pair plus the hairline. Note --ui-hairline is a WIDTH, not a colour —
+     `1px solid var(--ui-hairline)` expands to `solid 1px` and the whole
+     declaration is dropped, which is how this chip first shipped with no edge
+     at all and read as text floating on the sky. */
+  .topbar-acct{display:none;align-items:center;gap:8px;flex:none;min-height:var(--ctl);
+    padding:0 12px 0 8px;border-radius:var(--ui-radius-pill);
+    background:var(--ui-glass-warm);-webkit-backdrop-filter:blur(22px) saturate(128%);backdrop-filter:blur(22px) saturate(128%);
+    border:var(--ui-hairline) solid var(--ui-line);box-shadow:var(--ui-glass-edge);
+    color:var(--ink);text-decoration:none;
+    font-size:13px;font-weight:600;font-family:var(--sans);transition:background 140ms}
+  /* --paper on --terracotta measures 3.71:1 — under AA. --on-accent is plain
+     white on the same fill and measures 4.82:1; at 11px the two are
+     indistinguishable except in the one way that matters. */
+  .topbar-acct .ta-avatar{width:26px;height:26px;flex:none;display:grid;place-items:center;
+    border-radius:var(--ui-radius-pill);background:var(--terracotta);color:var(--on-accent);
+    font-size:11px;font-weight:700;letter-spacing:.02em}
+  .topbar-acct .ta-label{white-space:nowrap;font-variant-numeric:tabular-nums}
 
   /* vertical-only: overflow-x locked (a bleeding board must never create a
      horizontal scroll), and in chat mode the top/bottom edges dissolve into
      the page instead of hard-clipping mid-line */
-  .thread{flex:1;overflow-y:auto;overflow-x:hidden;padding:30px 56px;transition:background .5s ease,box-shadow .5s ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
+  .thread{flex:1;overflow-y:auto;overflow-x:hidden;padding:32px 48px;transition:background 520ms ease,box-shadow 520ms ease;scrollbar-width:thin;scrollbar-color:rgba(42,32,22,.22) transparent}
   .thread::-webkit-scrollbar{width:5px}
   .thread::-webkit-scrollbar-track{background:transparent}
   .thread::-webkit-scrollbar-thumb{background:rgba(42,32,22,.18);border-radius:var(--ui-radius-pill)}
   .thread::-webkit-scrollbar-thumb:hover{background:rgba(42,32,22,.32)}
   .thread::-webkit-scrollbar-button{display:none;height:0;width:0}
-  .thread-inner{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:34px}
+  .thread-inner{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
   /* ── chat typography — Claude-style hierarchy ──
      Reading prose: Lora, a refined transitional serif (generous, calligraphic).
      Display titles: BioRhyme. Small-caps labels: Spinnaker. Human turn: clean sans.
@@ -212,53 +249,53 @@
   
 
   /* empty state — poster voice over the mountains; flex-centered so it can never overlap */
-  .empty{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0;padding:30px 0}
-  .empty .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:18px;white-space:nowrap}
+  .empty{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0;padding:32px 0}
+  .empty .eyebrow{display:flex;align-items:baseline;gap:8px;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--faint);margin-bottom:16px;white-space:nowrap}
   .empty .eyebrow b{color:var(--terracotta);font-weight:400}
   .empty h2{color:var(--bw-ink-on-sky-strong,var(--ink));font-family:"BioRhyme",var(--serif,serif);font-weight:900;font-size:clamp(36px,4.6vw,58px);line-height:.96;letter-spacing:-.03em}
   .empty .flourish{display:block;margin:20px auto 0}
   .empty .flourish path{stroke-dasharray:240;stroke-dashoffset:240;animation:flow 2.4s .3s ease-out forwards;opacity:.5}
   .empty .flourish path+path{animation-delay:.7s;opacity:.28}
   @keyframes flow{to{stroke-dashoffset:0}}
-  .empty p{margin-top:18px;font-size:15px;color:var(--dim);max-width:320px}
+  .empty p{margin-top:16px;font-size:15px;color:var(--dim);max-width:320px}
 
-  .msg-user{align-self:flex-end;max-width:68%;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:15px;line-height:1.55;letter-spacing:-.003em;padding:11px 17px;border-radius:var(--ui-radius) var(--ui-radius) var(--ui-radius-small) var(--ui-radius);box-shadow:0 2px 10px rgba(31,29,26,.1)}
+  .msg-user{align-self:flex-end;max-width:68%;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:15px;line-height:1.55;letter-spacing:0;padding:12px 16px;border-radius:var(--ui-radius) var(--ui-radius) var(--ui-radius-small) var(--ui-radius);box-shadow:0 2px 10px rgba(31,29,26,.1)}
   .reading{max-width:none}
   .reading .lbl b{color:var(--terracotta);font-weight:400}
-  .reading-body{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:20px;text-wrap:pretty;color:var(--ink)}
+  .reading-body{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;margin-top:16px;text-wrap:pretty;color:var(--ink)}
   /* response actions — compact, discoverable controls beneath a finished answer */
-  .rd-actions{margin-top:20px;display:flex;gap:10px;animation:rdActionsIn var(--dur-slow) var(--ease-out) both}
+  .rd-actions{margin-top:16px;display:flex;gap:8px;animation:rdActionsIn var(--dur-slow) var(--ease-out) both}
   @keyframes rdActionsIn{from{opacity:0}to{opacity:1}}
-  .rd-action{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13px;color:var(--dim);
-    border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:6px 12px;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+  .rd-action{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;color:var(--dim);
+    border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:4px 12px;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
   .rd-action:hover{background:var(--paper-dim);color:var(--ink);border-color:var(--ink)}
   .rd-copy.done{color:var(--terracotta);border-color:var(--terracotta)}
   .rd-action svg{opacity:.8}
   /* post-reading depth bridge — uses the existing paper/glass language and
      turns a finished answer into an editable, deliberate next inquiry */
-  .rd-depth{margin-top:32px;padding:20px;border:1px solid color-mix(in oklab,var(--line) 76%,transparent);border-radius:var(--ui-radius);
+  .rd-depth{margin-top:32px;padding:16px;border:1px solid color-mix(in oklab,var(--line) 76%,transparent);border-radius:var(--ui-radius);
     background:color-mix(in oklab,var(--paper) 78%,transparent);box-shadow:0 12px 38px rgba(31,29,26,.055);
     backdrop-filter:blur(16px) saturate(1.06);-webkit-backdrop-filter:blur(16px) saturate(1.06)}
   .rd-depth-copy{max-width:640px}
-  .rd-depth-kicker{display:block;margin-bottom:7px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--terracotta)}
-  .rd-depth h4{font-family:"BioRhyme",var(--serif),serif;font-size:20px;line-height:1.25;letter-spacing:-.015em}
-  .rd-depth-copy p{margin-top:6px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--dim)}
-  .rd-prompts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:17px}
+  .rd-depth-kicker{display:block;margin-bottom:8px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--terracotta)}
+  .rd-depth h4{font-family:"BioRhyme",var(--serif),serif;font-size:20px;line-height:1.25;letter-spacing:-.01em}
+  .rd-depth-copy p{margin-top:4px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--dim)}
+  .rd-prompts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
   /* The axes: a different read of the same board, not more of the same reading.
      Deliberately lighter than the prompt cards below them — they are a row of
      doors, not a wall of questions, and a reader who wants none of them should
      be able to see that in one glance. */
-  .rd-axes{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 13px}
-  .rd-axis{padding:7px 14px;min-height:36px;border-radius:var(--ui-radius-small,999px);
+  .rd-axes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+  .rd-axis{padding:8px 12px;min-height:var(--ctl-compact);border-radius:var(--ui-radius-small,999px);
     border:1px solid color-mix(in srgb,var(--ink) 17%,transparent);background:transparent;
     color:var(--ink);font-family:var(--font-sans);font-size:13px;letter-spacing:var(--tracking-label);
-    cursor:pointer;transition:background .12s var(--ease-out),border-color .12s var(--ease-out)}
+    cursor:pointer;transition:background 140ms var(--ease-out),border-color 140ms var(--ease-out)}
   .rd-axis b{font-weight:400}
   .rd-axis:hover{background:color-mix(in srgb,var(--ink) 6%,transparent);
-    border-color:color-mix(in srgb,var(--terracotta,#A95D39) 55%,transparent)}
-  .rd-axis:focus-visible{outline:2px solid var(--terracotta,#A95D39);outline-offset:2px}
-  @media (max-width:640px){.rd-axis{font-size:12px;padding:6px 12px}}
-  .rd-prompt{position:relative;min-width:0;min-height:92px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:13px 36px 13px 13px;
+    border-color:color-mix(in srgb,var(--terracotta) 55%,transparent)}
+  .rd-axis:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
+  @media (max-width:640px){.rd-axis{font-size:12px;padding:4px 12px}}
+  .rd-prompt{position:relative;min-width:0;min-height:92px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:12px 32px 12px 12px;
     border:1px solid var(--line);border-radius:var(--ui-radius-small);background:color-mix(in oklab,var(--paper) 68%,transparent);color:var(--ink);
     transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
   .rd-prompt span{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--faint)}
@@ -269,7 +306,7 @@
   .rd-prompt:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
   .rd-depth-note{margin:12px 1px 0;font-family:var(--sans);font-size:11px;line-height:1.45;color:var(--faint)}
   /* the caution under a finished reading: set apart from the prose so it reads as a notice, not as a softening of the verdict */
-  .rd-footnote{margin:30px 0 0;padding-top:14px;border-top:1px solid color-mix(in srgb,var(--ink) 11%,transparent);font-family:var(--sans);font-size:13px;line-height:1.62;letter-spacing:.005em;color:var(--dim);text-wrap:pretty}
+  .rd-footnote{margin:32px 0 0;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--ink) 11%,transparent);font-family:var(--sans);font-size:13px;line-height:1.62;letter-spacing:0;color:var(--dim);text-wrap:pretty}
   .rd-footnote[lang="zh"]{line-height:1.75}
   .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:var(--ui-hairline) solid var(--terracotta)}
   .reading-body .gild.alt{color:var(--pine);border-bottom-color:var(--pine)}
@@ -280,43 +317,43 @@
   .reading-body .bw-rw{display:inline-block}
   .reading-body .bw-rw.on{opacity:1;filter:none;transform:none;clip-path:none}
   /* 1 · blur-reveal */
-  .reading-body .rw-s0{opacity:0;transform:translateY(.2em);transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reading-body .rw-s0{opacity:0;transform:translateY(.2em);transition:opacity 520ms ease,transform 520ms cubic-bezier(.2,.7,.2,1)}
   /* 2 · fade-rise */
-  .reading-body .rw-s1{opacity:0;transform:translateY(.55em);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reading-body .rw-s1{opacity:0;transform:translateY(.55em);transition:opacity 520ms ease,transform 520ms cubic-bezier(.2,.7,.2,1)}
   /* 3 · mask-wipe (left→right) */
-  .reading-body .rw-s2{opacity:.35;clip-path:inset(0 100% 0 0);transition:clip-path .5s cubic-bezier(.4,.55,.2,1),opacity .45s ease}
+  .reading-body .rw-s2{opacity:.35;clip-path:inset(0 100% 0 0);transition:clip-path 520ms cubic-bezier(.4,.55,.2,1),opacity 520ms ease}
   /* 4 · caret-type (grows from the left like typing) */
-  .reading-body .rw-s3{opacity:0;transform:scaleX(.2);transform-origin:left center;transition:transform .42s steps(9),opacity .22s ease}
+  .reading-body .rw-s3{opacity:0;transform:scaleX(.2);transform-origin:left center;transition:transform 360ms steps(9),opacity 190ms ease}
   /* 5 · ink-bleed (settles in from slightly larger + blurred) */
-  .reading-body .rw-s4{opacity:0;transform:scale(1.08);transition:opacity .5s ease,transform .6s ease}
+  .reading-body .rw-s4{opacity:0;transform:scale(1.08);transition:opacity 520ms ease,transform 520ms ease}
   .reading-body.bw-streamed .bw-rw{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;transition:none;will-change:auto}
   /* eyebrow · title · badge — a clear written-answer hierarchy */
-  .reading-body .rd-eyebrow{font-family:var(--sans);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:11px;letter-spacing:.16em;color:var(--faint);margin:0 0 11px}
+  .reading-body .rd-eyebrow{font-family:var(--sans);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:11px;letter-spacing:.16em;color:var(--faint);margin:0 0 12px}
   .reading-body .rd-method{color:var(--terracotta);font-weight:700}
   .reading-body .rd-fig{color:var(--dim);letter-spacing:.1em}
   .reading-body .rd-fig i{font-style:normal;color:var(--faint)}
-  .reading-body .rd-head{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:0 0 18px}
+  .reading-body .rd-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 16px}
   .reading-body .rd-title{font-family:BioRhyme, var(--serif), serif;font-size:22px;line-height:1.25;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:0}
-  .reading-body .rd-badge{font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:var(--ui-radius-pill);border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+  .reading-body .rd-badge{font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:var(--ui-radius-pill);border:1px solid var(--line);color:var(--dim);white-space:nowrap}
   .reading-body .rd-badge.favorable{color:var(--terracotta);border-color:var(--terracotta)}
   .reading-body .rd-badge.unfavorable{color:var(--prussian);border-color:var(--prussian)}
   /* live network text as the main reading streams in, before the full
      structured reading-body replaces it (see chat-app.js onStreamDelta) */
-  .reading-stream-preview{font-family:BioRhyme, var(--serif), serif;font-size:18px;line-height:1.7;color:var(--ink);margin:6px 0 0;max-width:64ch;white-space:pre-wrap}
-  .recast-note{font-family:var(--sans);font-size:12px;letter-spacing:.02em;color:var(--dim);border-left:2px solid var(--line);padding:4px 0 4px 12px;margin:4px 0 -14px;max-width:56ch}
-  .reading-error{font-family:var(--serif);font-style:normal;font-size:15px;line-height:1.6;color:var(--dim);border-left:2px solid var(--terracotta);padding:3px 0 3px 14px;margin:12px 0 4px;max-width:58ch}
+  .reading-stream-preview{font-family:BioRhyme, var(--serif), serif;font-size:18px;line-height:1.7;color:var(--ink);margin:4px 0 0;max-width:64ch;white-space:pre-wrap}
+  .recast-note{font-family:var(--sans);font-size:12px;letter-spacing:.02em;color:var(--dim);border-left:2px solid var(--line);padding:4px 0 4px 12px;margin:4px 0 -12px;max-width:56ch}
+  .reading-error{font-family:var(--serif);font-style:normal;font-size:15px;line-height:1.6;color:var(--dim);border-left:2px solid var(--terracotta);padding:3px 0 3px 12px;margin:12px 0 4px;max-width:58ch}
   .reading-stream-preview:empty{display:none}
   /* lede + supporting paragraph */
   .reading-body .rd-lede{font-family:"BioRhyme",var(--serif),serif;font-size:20px;line-height:1.62;font-weight:500;color:var(--ink);margin:0 0 16px;max-width:38ch}
   .reading-body .rd-para{font-family:"BioRhyme",var(--serif),serif;font-size:18px;line-height:1.78;color:var(--ink);margin:0 0 16px;max-width:64ch}
   /* supporting sections rise in after the prose streams */
-  .reading-body .rd-sec{margin-top:26px;max-width:64ch;transition:opacity .55s ease,transform .6s cubic-bezier(.22,.7,.28,1)}
+  .reading-body .rd-sec{margin-top:24px;max-width:64ch;transition:opacity 520ms ease,transform 520ms cubic-bezier(.22,.7,.28,1)}
   .reading-body .rd-sec.rd-pending{opacity:0;transform:translateY(10px)}
   .reading-body .rd-sec.rd-in{opacity:1;transform:none}
-  .reading-body .rd-h{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--faint);margin:0 0 11px;display:flex;align-items:center;gap:9px}
+  .reading-body .rd-h{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--faint);margin:0 0 12px;display:flex;align-items:center;gap:8px}
   .reading-body .rd-h::before{content:"";width:16px;height:2px;background:var(--terracotta);border-radius:var(--ui-radius-small);flex:none}
   .reading-body .rd-keys{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-  .reading-body .rd-keys li{display:flex;gap:14px;align-items:baseline;font-size:13px;line-height:1.45;padding:8px 0;border-top:1px solid var(--line-soft)}
+  .reading-body .rd-keys li{display:flex;gap:12px;align-items:baseline;font-size:13px;line-height:1.45;padding:8px 0;border-top:1px solid var(--line-soft)}
   .reading-body .rd-keys li:first-child{border-top:0}
   .reading-body .rd-kl-n{flex:none;font-weight:700;color:var(--terracotta);min-width:58px;letter-spacing:.02em}
   .reading-body .rd-kl-note{color:var(--dim)}
@@ -331,11 +368,11 @@
   /* Claude-scale type: 15px body / 1.8 CJK line-height, and the column is
      CENTERED in the thread (it used to sit flush-left inside the 740px column
      while the composer centered — the visible mismatch). */
-  .reading-body{font-family:var(--read);font-size:15px;line-height:1.8;letter-spacing:.01em;margin:16px auto 0;max-width:648px}
-  .reading-body .rd-title{font-family:var(--read);font-size:18px;line-height:1.3;font-weight:600;letter-spacing:-.006em}
+  .reading-body{font-family:var(--read);font-size:15px;line-height:1.8;letter-spacing:0;margin:16px auto 0;max-width:648px}
+  .reading-body .rd-title{font-family:var(--read);font-size:18px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
   /* one uniform measure for the whole column (lede + body align, like Claude) */
-  .reading-body .rd-lede{font-family:var(--read);font-size:15px;line-height:1.75;font-weight:600;letter-spacing:0;margin:0 0 15px;max-width:none}
-  .reading-body .rd-para{font-family:var(--read);font-size:15px;line-height:1.8;margin:0 0 15px;max-width:none}
+  .reading-body .rd-lede{font-family:var(--read);font-size:15px;line-height:1.75;font-weight:600;letter-spacing:0;margin:0 0 16px;max-width:none}
+  .reading-body .rd-para{font-family:var(--read);font-size:15px;line-height:1.8;margin:0 0 16px;max-width:none}
   .reading-body .rd-sec{margin-top:24px;max-width:none}
   /* live streaming: a quiet ink caret marks the writing edge */
   .reading-streaming > *:last-child::after{content:"";display:inline-block;width:2px;height:.92em;margin-left:3px;vertical-align:-.1em;background:var(--terracotta);border-radius:var(--ui-radius-small);animation:bwCaret 1.1s steps(2,jump-none) infinite}
@@ -346,11 +383,11 @@
   .reading-insight .turning{font-family:var(--read)}
   /* markdown blocks inside a reading (headings / rules / lists / bold) rendered
      by mdReading() — clean book-serif, Claude-style */
-  .reading-body .rd-h2{font-family:var(--read);font-size:16.5px;line-height:1.4;font-weight:700;letter-spacing:-.004em;color:var(--ink);margin:22px 0 8px}
-  .reading-body .rd-h3{font-family:var(--read);font-size:15px;line-height:1.45;font-weight:700;color:var(--ink);margin:18px 0 6px}
-  .reading-body .rd-hr{border:0;border-top:1px solid var(--line-soft);margin:20px 0}
-  .reading-body .rd-list{margin:0 0 15px;padding-left:20px}
-  .reading-body .rd-list li{font-family:var(--read);font-size:15px;line-height:1.75;margin:5px 0;padding-left:2px}
+  .reading-body .rd-h2{font-family:var(--read);font-size:16.5px;line-height:1.4;font-weight:700;letter-spacing:0;color:var(--ink);margin:24px 0 8px}
+  .reading-body .rd-h3{font-family:var(--read);font-size:15px;line-height:1.45;font-weight:700;color:var(--ink);margin:16px 0 4px}
+  .reading-body .rd-hr{border:0;border-top:1px solid var(--line-soft);margin:16px 0}
+  .reading-body .rd-list{margin:0 0 16px;padding-left:16px}
+  .reading-body .rd-list li{font-family:var(--read);font-size:15px;line-height:1.75;margin:4px 0;padding-left:2px}
   .reading-body .rd-list li::marker{color:var(--terracotta)}
   .reading-body strong{font-weight:700;color:var(--ink)}
   .reading-body em{font-style:normal;font-weight:700}
@@ -358,18 +395,18 @@
   @media (prefers-reduced-motion:reduce){.reading-body .bw-rw{opacity:1;filter:none;transform:none;clip-path:none}.reading-body .rd-sec.rd-pending{opacity:1;transform:none}}
 
   /* ── embedded line-by-line analysis: figure floated into the prose ── */
-  .reading-insight{opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .6s cubic-bezier(.22,.7,.28,1);margin-top:18px}
+  .reading-insight{opacity:0;transform:translateY(10px);transition:opacity 520ms ease,transform 520ms cubic-bezier(.22,.7,.28,1);margin-top:16px}
   .reading-insight.in{opacity:1;transform:none}
-  .reading-insight p{margin:0 0 14px;font-size:16.5px;line-height:1.72}
+  .reading-insight p{margin:0 0 12px;font-size:16.5px;line-height:1.72}
   .reading-insight .ix-intro{color:var(--dim)}
-  .fig-float{float:right;width:288px;max-width:75%;margin:2px 0 14px 28px;padding:0}
+  .fig-float{float:right;width:288px;max-width:75%;margin:2px 0 12px 24px;padding:0}
   /* the looping board raster is confined to its own compositor layer so its
      per-frame SVG repaints don't force the streaming text around it to repaint */
   .reading-fig .bw-af{will-change:transform}
   /* the annotated casting figure is the reading's "representation" — generous
      vertical air above and below so the board breathes instead of butting
      against the question bubble and the prose */
-  .reading-fig{max-width:100%;margin:22px 0 30px}
+  .reading-fig{max-width:100%;margin:24px 0 32px}
   .reading-fig .bw-af-fig{max-width:452px}
   /* Sortis full board: with a transformed hexagram, two figures sit side by side so
      the wrapper bleeds past the text column to give both room. With only the primary
@@ -390,16 +427,16 @@
   .reading .bw-cast,.reading .bw-figs{max-width:75%}
   .fig-float .bw-zg-svg{width:100%;height:auto;display:block}
   .fig-float .cap{margin:12px 0 0;font-family:var(--sans);font-size:10px;letter-spacing:.1em;
-    color:var(--faint);border-top:1px solid var(--line-soft);padding-top:10px;line-height:1.4}
+    color:var(--faint);border-top:1px solid var(--line-soft);padding-top:8px;line-height:1.4}
   @media(max-width:600px){.fig-float{float:none;width:auto;margin:0 0 16px}}
-  .reading-insight .el{display:inline-flex;align-items:center;gap:6px;font-weight:600;white-space:nowrap;margin-right:.18em;vertical-align:middle}
+  .reading-insight .el{display:inline-flex;align-items:center;gap:4px;font-weight:600;white-space:nowrap;margin-right:.18em;vertical-align:middle}
   .reading-insight .el i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
-  .reading-insight .mk{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.05em;padding:2px 7px;border-radius:var(--ui-radius-small);white-space:nowrap;vertical-align:middle;position:relative;top:-1px}
+  .reading-insight .mk{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.06em;padding:2px 8px;border-radius:var(--ui-radius-small);white-space:nowrap;vertical-align:middle;position:relative;top:-1px}
   .reading-insight .mk.self{background:var(--terracotta);color:var(--paper)}
   .reading-insight .mk.resp{background:var(--prussian);color:var(--prussian-on)}
   .reading-insight .mk.move{border:var(--ui-hairline) solid var(--terracotta);color:var(--terracotta)}
-  .reading-insight .turning{border-left:2px solid var(--terracotta);padding:2px 0 2px 18px;margin:2px 0 16px;color:var(--ink);font-family:BioRhyme, var(--serif)}
-  .reading-insight .legend-inline{clear:both;display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:6px;padding-top:15px;
+  .reading-insight .turning{border-left:2px solid var(--terracotta);padding:2px 0 2px 16px;margin:2px 0 16px;color:var(--ink);font-family:BioRhyme, var(--serif)}
+  .reading-insight .legend-inline{clear:both;display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:4px;padding-top:16px;
     border-top:1px solid var(--line-soft);font-family:var(--sans);font-size:11px;letter-spacing:.02em;color:var(--faint)}
   .reading-insight .legend-inline span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
   .reading-insight .legend-inline i{flex:none;width:14px;height:0;border-top:2px solid var(--line);display:inline-block}
@@ -410,24 +447,24 @@
   .reading-insight .legend-inline i.d-ctrl{border-top:2px solid var(--prussian)}
 
   /* ── section headers + scannable line list (Claude-style hierarchy) ── */
-  .reading-insight .ix-h{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--faint);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .reading-insight .ix-h{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--faint);margin:24px 0 12px;display:flex;align-items:center;gap:8px}
   .reading-insight .ix-h::before{content:"";width:16px;height:2px;background:var(--terracotta);border-radius:var(--ui-radius-small);flex:none}
   .reading-insight .ix-sec:first-child .ix-h{margin-top:4px}
-  .reading-insight .ix-intro{color:var(--dim);font-family:var(--sans);font-size:15px;line-height:1.6;margin:0 0 14px;max-width:48ch}
+  .reading-insight .ix-intro{color:var(--dim);font-family:var(--sans);font-size:15px;line-height:1.6;margin:0 0 12px;max-width:48ch}
   .reading-insight .ix-lines{list-style:none;margin:0;padding:0}
-  .reading-insight .ix-line{display:flex;align-items:baseline;gap:12px;padding:9px 2px;border-top:1px solid var(--line-soft);font-family:var(--sans);font-size:13px;line-height:1.4}
+  .reading-insight .ix-line{display:flex;align-items:baseline;gap:12px;padding:8px 2px;border-top:1px solid var(--line-soft);font-family:var(--sans);font-size:13px;line-height:1.4}
   .reading-insight .ix-line:first-child{border-top:0}
-  .reading-insight .ix-line-pos{flex:none;width:52px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+  .reading-insight .ix-line-pos{flex:none;width:52px;font-weight:700;color:var(--ink);letter-spacing:0}
   .reading-insight .ix-line .el{flex:none;width:76px;font-size:13px;margin-right:0}
   .reading-insight .ix-line-meta{flex:1;min-width:0;color:var(--dim)}
   .reading-insight .ix-line-meta b{color:var(--ink);font-weight:600}
-  .reading-insight .ix-line-mk{flex:none;display:flex;gap:6px;margin-left:auto}
+  .reading-insight .ix-line-mk{flex:none;display:flex;gap:4px;margin-left:auto}
   .reading-insight .ix-line.is-self .ix-line-pos{color:var(--terracotta)}
-  @media(max-width:540px){.reading-insight .ix-line{flex-wrap:wrap;gap:7px 10px}.reading-insight .ix-line-mk{margin-left:0}}
+  @media(max-width:540px){.reading-insight .ix-line{flex-wrap:wrap;gap:8px 8px}.reading-insight .ix-line-mk{margin-left:0}}
 
   /* ── the second figure (Sortis-only — drawn when lines are in motion) ── */
-  .reading-insight .ix-transform{clear:both;margin-top:4px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--prussian);border-radius:var(--ui-radius-small);background:transparent}
-  .reading-insight .ix-t-head{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+  .reading-insight .ix-transform{clear:both;margin-top:4px;padding:12px 16px;border:1px solid var(--line);border-left:3px solid var(--prussian);border-radius:var(--ui-radius-small);background:transparent}
+  .reading-insight .ix-t-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
   .reading-insight .ix-t-k{font-family:var(--sans);font-size:11px;letter-spacing:.12em;color:var(--faint)}
   .reading-insight .ix-t-arrow{color:var(--prussian);font-size:15px}
   .reading-insight .ix-t-name{font-family:var(--serif);font-size:18px;color:var(--prussian);font-weight:600}
@@ -439,8 +476,8 @@
   }
   @keyframes bwIxSec{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-  .drops{display:flex;align-items:flex-end;gap:9px;margin-top:11px;padding-left:2px}
-  .casting-load{display:flex;align-items:center;gap:13px;margin-top:11px}
+  .drops{display:flex;align-items:flex-end;gap:8px;margin-top:12px;padding-left:2px}
+  .casting-load{display:flex;align-items:center;gap:12px;margin-top:12px}
   .casting-load img{display:block;border-radius:var(--ui-radius-small);border:1px solid var(--line);background:var(--chip);box-shadow:0 1px 4px rgba(31,29,26,.08)}
   .casting-load .drops{margin-top:0}
   .drop{width:7px;height:7px;background:var(--ink);border-radius:54% 46% 50% 50%;animation:drip 2.2s ease-out infinite;animation-fill-mode:backwards}
@@ -448,31 +485,31 @@
   .drop:nth-child(3){animation-delay:.6s}
   @keyframes drip{0%{transform:translateY(-9px) scale(.3);opacity:0}25%{transform:translateY(0) scale(1);opacity:1}70%{opacity:1}92%{opacity:0}100%{opacity:0}}
 
-  .composer-zone{padding:14px 56px 24px;position:relative}
-  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:11px;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--ui-radius-pill);padding:11px 11px 11px 19px;box-shadow:none;transition:border-color .18s,box-shadow .18s}
+  .composer-zone{padding:12px 48px 24px;position:relative}
+  .composer{max-width:740px;margin:0 auto;display:flex;align-items:center;gap:12px;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--ui-radius-pill);padding:12px 12px 12px 16px;box-shadow:none;transition:border-color 190ms,box-shadow 190ms}
   .composer:focus-within{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,80,44,.16)}
-  .stria{font-size:13px;letter-spacing:.05em;color:var(--dim);background:var(--chip);border-radius:var(--ui-radius-pill);padding:10px 15px;flex-shrink:0;font-family:var(--font-brand);transition:background .15s}
+  .stria{font-size:13px;letter-spacing:.06em;color:var(--dim);background:var(--chip);border-radius:var(--ui-radius-pill);padding:8px 16px;flex-shrink:0;font-family:var(--font-brand);transition:background 140ms}
   .stria:hover{background:var(--paper-dim)}
   /* CJK falls through BioRhyme (latin-only) to a proper Chinese serif, at a
      size/tracking tuned for hanzi instead of the latin default */
-  .composer textarea{flex:1;align-self:center;resize:none;overflow-y:auto;min-height:42px;max-height:120px;background:none;border:none;outline:none;font-family:"BioRhyme","Noto Serif SC","Songti SC","Source Han Serif SC",var(--serif),serif;font-size:15px;line-height:1.5;letter-spacing:.01em;color:var(--ink);min-width:0;padding:9px 0}
+  .composer textarea{flex:1;align-self:center;resize:none;overflow-y:hidden;min-height:calc(1.5em + 16px);max-height:calc(4.5em + 16px);background:none;border:none;outline:none;font-family:"BioRhyme","Noto Serif SC","Songti SC","Source Han Serif SC",var(--serif),serif;font-size:15px;line-height:1.5;letter-spacing:0;color:var(--ink);min-width:0;padding:8px 0}
   .composer textarea::placeholder{color:var(--faint)}
-  .send{width:46px;height:46px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center;flex-shrink:0;transition:background-color .14s ease,opacity .14s ease}
+  .send{width:46px;height:46px;border-radius:50%;background:var(--terracotta);color:var(--paper);display:grid;place-items:center;align-items:center;justify-content:center;flex-shrink:0;align-self:flex-end;transition:background-color .14s ease,opacity .14s ease}
   .send:disabled{animation:sendBreath 1.7s var(--ease-in-out) infinite}
   @keyframes sendBreath{0%,100%{opacity:1}50%{opacity:.45}}
   .send[disabled]{opacity:.4;cursor:default;transform:none}
   /* Carrying an earlier conversation in. The picker is the method menu — same
      component, same glass, only anchored higher — so this adds a capability
      without adding a second popover language to the app. */
-  .carry-zone{position:relative;display:flex;justify-content:center;margin-bottom:10px}
+  .carry-zone{position:relative;display:flex;justify-content:center;margin-bottom:8px}
   .carry-bar{display:flex;justify-content:center;min-height:0}
   .carry-bar:empty{display:none}
-  .carry-open{display:inline-flex;align-items:center;gap:7px;min-height:30px;padding:5px 11px;border-radius:var(--ui-radius-pill);background:transparent;font-family:var(--sans);font-size:12px;color:var(--bw-ink-on-sky,var(--faint));transition:color .16s,background .16s}
+  .carry-open{display:inline-flex;align-items:center;gap:8px;min-height:var(--ctl-chip);padding:4px 12px;border-radius:var(--ui-radius-pill);background:transparent;font-family:var(--sans);font-size:12px;color:var(--bw-ink-on-sky,var(--faint));transition:color 140ms,background 140ms}
   .carry-open:hover{color:var(--ink);background:var(--paper-dim)}
   .carry-open svg{opacity:.75}
-  .carry-chip{display:inline-flex;align-items:center;gap:9px;max-width:min(560px,100%);padding:5px 6px 5px 12px;border:1px solid var(--line);border-radius:var(--ui-radius-pill);background:var(--paper-raised);font-family:var(--sans);font-size:12px;color:var(--dim)}
+  .carry-chip{display:inline-flex;align-items:center;gap:8px;max-width:min(560px,100%);padding:4px 4px 4px 12px;border:1px solid var(--line);border-radius:var(--ui-radius-pill);background:var(--paper-raised);font-family:var(--sans);font-size:12px;color:var(--dim)}
   .carry-chip b{font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .carry-drop{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--faint);transition:color .16s,background .16s}
+  .carry-drop{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--faint);transition:color 140ms,background 140ms}
   .carry-drop:hover{color:var(--terracotta);background:var(--paper-dim)}
   .method-menu.carry-menu{bottom:calc(100% + 10px);width:340px;max-width:min(340px,calc(100vw - 40px))}
   /* The list scrolls instead of growing. It used to be capped at eight castings
@@ -488,45 +525,45 @@
   /* A scroll area with no visible edge reads as a list that simply stops. The
      fade says there is more below without adding a control. */
   .carry-menu .cm-scroll{position:relative}
-  .carry-menu .cm-scroll::after{content:"";position:absolute;left:0;right:8px;bottom:0;height:22px;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--paper-raised));opacity:0;transition:opacity .18s var(--ease-out)}
+  .carry-menu .cm-scroll::after{content:"";position:absolute;left:0;right:8px;bottom:0;height:22px;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--paper-raised));opacity:0;transition:opacity 190ms var(--ease-out)}
   .carry-menu .cm-scroll[data-more="1"]::after{opacity:1}
-  .cm-row{display:flex;flex-direction:column;gap:3px;text-align:left;padding:10px;border-radius:var(--ui-radius-small);background:transparent;transition:background .15s}
+  .cm-row{display:flex;flex-direction:column;gap:3px;text-align:left;padding:8px;border-radius:var(--ui-radius-small);background:transparent;transition:background 140ms}
   .cm-row:hover{background:var(--paper-dim)}
   .cm-title{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .cm-meta{font-family:var(--sans);font-size:10px;letter-spacing:.03em;color:var(--faint)}
-  .cm-note{padding:2px 10px 8px;font-family:var(--sans);font-size:10px;line-height:1.5;color:var(--faint)}
-  .cm-empty{padding:12px 10px;font-family:var(--sans);font-size:12px;color:var(--faint)}
-  .disclaimer{text-align:center;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
+  .cm-meta{font-family:var(--sans);font-size:10px;letter-spacing:.02em;color:var(--faint)}
+  .cm-note{padding:2px 8px 8px;font-family:var(--sans);font-size:10px;line-height:1.5;color:var(--faint)}
+  .cm-empty{padding:12px 8px;font-family:var(--sans);font-size:12px;color:var(--faint)}
+  .disclaimer{text-align:center;margin-top:8px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);font-family:"Spinnaker";font-weight:700}
   .composer-help{max-width:700px;margin:8px auto 0;display:flex;justify-content:space-between;gap:16px;font-family:var(--sans);font-size:10px;line-height:1.4;color:var(--faint);letter-spacing:.02em}
   .composer-help span:last-child{text-align:right}
 
   /* ── method picker popover — the two castings, made distinct ── */
-  .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:7px;box-shadow:none;display:flex;flex-direction:column;gap:2px;z-index:40;
+  .method-menu{position:absolute;left:50%;bottom:78px;width:380px;max-width:calc(100% - 88px);background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:8px;box-shadow:none;display:flex;flex-direction:column;gap:2px;z-index:40;
     opacity:0;transform:translate(-50%,5px) scale(.985);transform-origin:50% 100%;visibility:hidden;pointer-events:none;
     transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out),visibility 0s linear var(--dur-base)}
   .method-menu.open{opacity:1;transform:translate(-50%,0);visibility:visible;pointer-events:auto;
     transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-base) var(--ease-out)}
-  .mm-head{padding:8px 9px 6px}
-  .mm-row{display:flex;align-items:flex-start;gap:11px;text-align:left;padding:11px 10px;border-radius:var(--ui-radius-small);transition:background .15s}
+  .mm-head{padding:8px 8px 4px}
+  .mm-row{display:flex;align-items:flex-start;gap:12px;text-align:left;padding:12px 8px;border-radius:var(--ui-radius-small);transition:background 140ms}
   .mm-row:hover{background:var(--paper-dim)}
-  .mm-dot{flex:none;width:12px;height:12px;border-radius:50%;border:var(--ui-hairline) solid var(--line);margin-top:3px;transition:border-color .15s,background .15s}
+  .mm-dot{flex:none;width:12px;height:12px;border-radius:50%;border:var(--ui-hairline) solid var(--line);margin-top:3px;transition:border-color 140ms,background 140ms}
   .mm-row.active .mm-dot{border-color:var(--terracotta);background:var(--terracotta);box-shadow:inset 0 0 0 2.5px var(--paper-raised)}
   .mm-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
   .mm-name{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
-  .mm-lock{font-style:normal;font-size:10px;letter-spacing:.09em;color:var(--pine);border:1px solid var(--pine);border-radius:var(--ui-radius-small);padding:1px 5px}
+  .mm-lock{font-style:normal;font-size:10px;letter-spacing:.08em;color:var(--pine);border:1px solid var(--pine);border-radius:var(--ui-radius-small);padding:1px 4px}
   .mm-tag{font-size:11px;letter-spacing:.04em;color:var(--faint)}
   .mm-blurb{font-size:12px;color:var(--dim);line-height:1.45;margin-top:3px;text-wrap:pretty}
   .mm-cost{flex:none;font-family:"BioRhyme",var(--serif);font-size:18px;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;line-height:1}
-  .mm-cost small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.07em;color:var(--ghost);margin-top:3px}
+  .mm-cost small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.08em;color:var(--ghost);margin-top:3px}
   .mm-row.locked{opacity:.7}
   .mm-row.locked .mm-cost{color:var(--faint)}
 
   /* ── reading: cast figure glyph + permalink ── */
-  .reading-fig{margin-bottom:14px}
-  .casting-live{min-height:44px}
+  .reading-fig{margin-bottom:12px}
+  .casting-live{min-height:var(--ctl)}
   /* Sortis casting chart sits in place of the cast figure (the hero of the reading);
      the verdict prose streams below it, chart-free */
-  .reading-chart{margin-bottom:18px}
+  .reading-chart{margin-bottom:16px}
   .reading-chart + .reading-body .reading-lede{padding-top:2px}
 
   /* ── plans modal (paywall) ── */
@@ -535,30 +572,30 @@
   .overlay.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity var(--dur-base) var(--ease-out)}
   .modal{width:min(720px,100%);background:var(--paper);border:1px solid var(--line);border-radius:var(--ui-radius-small);overflow:hidden;box-shadow:0 24px 60px rgba(31,29,26,.25);opacity:0;transform:scale(.97);transform-origin:center;transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
   .overlay.open .modal{opacity:1;transform:none}
-  .modal-hero{background:var(--ink);background-image:none;color:var(--paper);padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between}
-  .modal-hero h2{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;color:var(--paper);margin-top:3px}
+  .modal-hero{background:var(--ink);background-image:none;color:var(--paper);padding:24px 24px;display:flex;align-items:flex-start;justify-content:space-between}
+  .modal-hero h2{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.15;color:var(--paper);margin-top:3px}
   .modal-hero .lbl{color:var(--ghost)}
-  .modal-x{color:var(--paper);font-size:18px;line-height:1;padding:2px 6px;border-radius:var(--ui-radius-small);transition:background .15s}
+  .modal-x{color:var(--paper);font-size:18px;line-height:1;padding:2px 4px;border-radius:var(--ui-radius-small);transition:background 140ms}
   .modal-x:hover{background:transparent}
-  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px 26px 8px;align-items:stretch}
-  .plan{border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:18px 16px 16px;background:transparent;display:flex;flex-direction:column;gap:7px;position:relative}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px 24px 8px;align-items:stretch}
+  .plan{border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:16px 16px 16px;background:transparent;display:flex;flex-direction:column;gap:8px;position:relative}
   .plan.feat{border-color:var(--terracotta);box-shadow:0 12px 32px rgba(181,80,44,.12)}
   .plan .ptag{position:absolute;top:-10px;left:16px;font-family:var(--sans);font-size:10px;letter-spacing:.1em;color:var(--paper);background:var(--terracotta);border-radius:var(--ui-radius-small);padding:3px 8px}
   .plan h3{font-family:var(--serif);font-size:15px;font-weight:600}
   .plan .price{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1}
-  .plan .price small{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ghost);letter-spacing:.05em}
+  .plan .price small{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ghost);letter-spacing:.06em}
   .plan .grant{font-size:12px;color:var(--terracotta)}
   .plan .grant b{font-family:var(--serif);font-variant-numeric:tabular-nums}
-  .plan ul{list-style:none;font-size:12px;color:var(--dim);display:flex;flex-direction:column;gap:5px;margin:8px 0 12px}
-  .plan li{display:flex;gap:7px;line-height:1.4}
+  .plan ul{list-style:none;font-size:12px;color:var(--dim);display:flex;flex-direction:column;gap:4px;margin:8px 0 12px}
+  .plan li{display:flex;gap:8px;line-height:1.4}
   .plan li::before{content:"\00B7";color:var(--terracotta);font-weight:700}
-  .plan button{margin-top:auto;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:9px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;transition:border-color .15s,background .15s,color .15s}
+  .plan button{margin-top:auto;border:1px solid var(--line);border-radius:var(--ui-radius-small);padding:8px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;transition:border-color 140ms,background 140ms,color 140ms}
   .plan button:hover{border-color:var(--ink)}
   .plan.feat button{background:var(--terracotta);border-color:var(--terracotta);color:var(--paper)}
   .plan.feat button:hover{background:color-mix(in srgb,var(--terracotta) 88%,black)}
-  .modal .fine{text-align:center;padding:12px 26px 20px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);text-wrap:pretty}
+  .modal .fine{text-align:center;padding:12px 24px 16px;font-size:11px;letter-spacing:var(--tracking-label);color:var(--ghost);text-wrap:pretty}
 
-  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:9px 18px;border-radius:var(--ui-radius-pill);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:var(--paper);font-size:13px;padding:8px 16px;border-radius:var(--ui-radius-pill);opacity:0;pointer-events:none;transition:opacity 190ms,transform 190ms;z-index:60}
   .toast.on{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:880px){
@@ -566,7 +603,7 @@
        account chip, unit balance, history and "New casting" stay reachable on
        phones and at high zoom. Opened by the topbar button, dismissed by the
        scrim. */
-    .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:40;width:min(300px,86vw);padding:14px 12px 12px;
+    .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:40;width:min(300px,86vw);padding:12px 12px 12px;
       background:var(--paper);border-right:1px solid var(--line-soft);box-shadow:0 0 48px rgba(31,29,26,.18);
       transform:translateX(-104%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
     body[data-page="app"] .sidebar{position:fixed!important;z-index:40!important}
@@ -584,12 +621,26 @@
     body[data-page="app"] .side-scrim{position:fixed!important;inset:0!important;z-index:39!important}
     body.side-open .side-scrim{opacity:1;pointer-events:auto}
     .side-open-btn{display:grid}
-    .topbar,.thread,.composer-zone{padding-left:18px;padding-right:18px}
+    .topbar,.thread,.composer-zone{padding-left:16px;padding-right:16px}
     .reading-body{font-size:16.5px}
     .plans{grid-template-columns:1fr}
-    body.is-empty .thread{padding:0 18px 16px}
-    body.is-empty .composer-zone{padding:0 18px 24px}
+    body.is-empty .thread{padding:0 16px 16px}
+    body.is-empty .composer-zone{padding:0 16px 24px}
     body.is-empty .thread-inner{max-width:100%}
+    /* ── the bar takes over from the drawer: hamburger · wordmark · account ──
+       This belongs on the SAME breakpoint that turns the sidebar into a drawer,
+       not on the phone one. Between 701 and 880 the sidebar is already
+       off-canvas, so the brand and the account row are just as invisible there
+       — putting these at ≤700 would have left an 180px band with a lone
+       hamburger and no way to reach either. Both live in the bar that already
+       exists, so neither costs a pixel of height: the chip grows to the 44px
+       touch floor and the bar gives back the same 8px in padding. */
+    .topbar{align-items:center;padding-top:8px;padding-bottom:8px}
+    .topbar-brand{display:flex}
+    .topbar-acct{display:flex}
+    /* The balance reads out inside the account chip; the bare chip beside it
+       would be the same number twice. */
+    .units-chip{display:none}
   }
   @media (max-width:700px){
     /* the long Claude note crowds the phone topbar; the menu button + title +
@@ -597,8 +648,8 @@
     .claude-note{display:none}
   }
   @media (max-width:560px){
-    .topbar{padding:14px 18px 12px}
-    .top-right{gap:13px}
+    .topbar{padding:12px 16px 12px}
+    .top-right{gap:12px}
     /* On a phone the thread title only ever renders as a bare ellipsis once the
        nav and balance have taken their room — and it is already redundant with
        the opening question in the thread and the sidebar's reading list. Drop
@@ -606,19 +657,19 @@
        nowhere else on this screen). */
     body:not(.is-empty) .topbar h1{display:none}
     .greeting h1{font-size:clamp(26px,8vw,42px)}
-    .composer-zone{padding-bottom:18px}
-    .composer{display:grid;grid-template-columns:auto 1fr auto;align-items:center;row-gap:5px;padding:11px 10px 9px 13px;border-radius:var(--ui-radius)}
-    .composer textarea{grid-column:1/-1;grid-row:1;font-size:15px;min-height:62px;max-height:132px;padding:7px 3px;overflow-y:auto}
-    .stria{grid-column:1;grid-row:2;padding:8px 11px;font-size:12px}
+    .composer-zone{padding-bottom:16px}
+    .composer{display:grid;grid-template-columns:auto 1fr auto;align-items:center;row-gap:4px;padding:12px 8px 8px 12px;border-radius:var(--ui-radius)}
+    .composer textarea{grid-column:1/-1;grid-row:1;font-size:15px;min-height:62px;max-height:132px;padding:8px 3px;overflow-y:auto}
+    .stria{grid-column:1;grid-row:2;padding:8px 12px;font-size:12px}
     .send{grid-column:3;grid-row:2;width:42px;height:42px}
     .composer-help{display:none}
     .method-menu{bottom:126px;max-width:calc(100% - 36px)}
     .disclaimer{font-size:10px}
-    .rd-depth{margin-top:26px;padding:16px;border-radius:var(--ui-radius)}
+    .rd-depth{margin-top:24px;padding:16px;border-radius:var(--ui-radius)}
     .rd-prompts{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .rd-prompt{min-height:74px;padding:11px 36px 11px 12px}
-    .modal-hero{padding:18px 18px}
-    .plans{padding:16px 18px 6px}
+    .rd-prompt{min-height:74px;padding:12px 32px 12px 12px}
+    .modal-hero{padding:16px 16px}
+    .plans{padding:16px 16px 4px}
   }
 
   /* shortfall pulse — when a cast costs more than the balance, the ledger
@@ -635,10 +686,10 @@
     .side-foot::before{animation:none}
   }
   /* ── landing empty-state: marketing poster, shown when no conversation ── */
-  .top-right{margin-left:auto;display:flex;align-items:center;gap:18px}
-  .topbar .ghost{font-size:13px;color:var(--dim);transition:color .15s}
+  .top-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+  .topbar .ghost{font-size:13px;color:var(--dim);transition:color 140ms}
   .topbar .ghost:hover{color:var(--ink)}
-  .claude-note{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--bw-ink-on-sky,var(--dim));max-width:400px;line-height:1.25;text-align:left}
+  .claude-note{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--bw-ink-on-sky,var(--dim));max-width:400px;line-height:1.25;text-align:left}
     /* No perpetual pulse. "落定即静止" is the site's own rule, and a 3s scale
      loop on a 20px mark buys nothing but a permanently dirty compositor
      region next to the blurred top bar. */
@@ -652,9 +703,9 @@
   body:not(.is-empty) .claude-note .cn-text{display:none}
   body.is-empty .topbar{border-bottom:none}
   body.is-empty .topbar h1,body.is-empty .topbar .units-chip{display:none}
-  body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 56px 20px}
+  body.is-empty .thread{flex:1;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 48px 16px}
   body.is-empty .thread-inner{max-width:680px;margin:0;width:100%;display:flex;flex-direction:column;align-items:center}
-  body.is-empty .composer-zone{position:fixed;left:var(--sbw);right:0;bottom:34px;z-index:3;padding:0 56px 28px;display:flex;flex-direction:column;align-items:center;transition:left .28s cubic-bezier(.4,0,.2,1)}
+  body.is-empty .composer-zone{position:fixed;left:var(--sbw);right:0;bottom:34px;z-index:3;padding:0 48px 24px;display:flex;flex-direction:column;align-items:center;transition:left .28s cubic-bezier(.4,0,.2,1)}
   body.is-empty .composer{margin:0;max-width:680px;width:100%}
   body.is-empty .disclaimer{display:none}
   /* Reading page: the composer sits under a hexagram and a long piece of prose,
@@ -664,8 +715,10 @@
      a landing page and keeps the full set. */
   body:not(.is-empty) .composer-help,
   body:not(.is-empty) .disclaimer{display:none}
-  body:not(.is-empty) .site-foot{margin-top:26px}
-  .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 18px;font-size:11px;font-weight:600;letter-spacing:.05em;line-height:2;word-spacing:.16em;color:var(--bw-ink-on-sky,var(--bw-palette-9,var(--ink)));font-family:"Spinnaker"}
+  body:not(.is-empty) .site-foot{margin-top:24px}
+  .site-foot{text-align:center;margin:8px auto 0;max-width:600px;padding:0 16px;font-size:11px;font-weight:600;letter-spacing:.06em;line-height:2;word-spacing:.16em;color:var(--bw-ink-on-sky,var(--bw-palette-9,var(--ink)));font-family:"Spinnaker"}
+  .site-foot{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 8px;word-spacing:normal}
+  .site-foot .sf-dot{opacity:.55}
   .site-foot a{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb,currentColor 42%,transparent)}
   .site-foot a:hover{color:var(--bw-palette-gem,var(--terracotta))}
   body.is-empty .site-foot{position:fixed;left:0;right:0;bottom:10px;z-index:3}
@@ -690,8 +743,12 @@
   @media (max-width:700px){
     .claude-note{display:none}
     body:not(.is-empty) .guide-coach{display:none!important}
-    .top-right{gap:14px;flex-wrap:nowrap}
+    .top-right{gap:12px;flex-wrap:nowrap}
     body[data-page="app"] .top-right .ghost{display:none!important}
+    /* On a phone the wordmark owns this slot: two names in one 390px bar is one
+       too many, and the thread title is already the drawer's job. Above 700 the
+       bar is wide enough to carry both. */
+    .topbar h1{display:none}
     .mobile-side-nav{display:grid;gap:2px;margin:8px 0 2px}
     body.side-open .guide-coach{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
     .topbar .ghost{white-space:nowrap}
@@ -707,14 +764,18 @@
        back in normal flow so it simply sits under the input. Must come after
        the .site-foot{position:fixed} rule above to win on source order. */
     body.is-empty .site-foot{position:static;margin-top:12px}
-    body.is-empty .composer-zone{left:0;bottom:34px;padding:0 18px 16px}
+    /* Six links and five dots do not fit one phone line, and a dot is the worst
+       thing to land at the end of a wrapped one. Drop them; the gap separates. */
+    .site-foot .sf-dot{display:none}
+    .site-foot{gap:2px 12px}
+    body.is-empty .composer-zone{left:0;bottom:34px;padding:0 16px 16px}
     /* Inside a conversation the phone bottom was carrying the composer, a
        two-line disclaimer AND a six-link site footer stacked on top of each
        other — they read as one crowded block pressed against the input. The
        footer is landing-page navigation; keep it for the empty state and let a
        live thread end on the composer and its one-line note. */
     body:not(.is-empty) .site-foot{display:none}
-    .disclaimer{margin-top:9px}
+    .disclaimer{margin-top:8px}
     /* Keep the mobile headline centred independently of the animated mark.
        Equal side padding makes the text's horizontal centre the canvas centre. */
     /* Narrow screens carry a shorter topbar and a composer that sits closer to
@@ -732,7 +793,14 @@
   @media (max-width:360px){.why-long{display:none}.why-short{display:inline}}
   .greeting{position:relative;display:block;width:100%}
   .greeting .bw-hero-mark{position:absolute;left:0;top:50%;transform:translateY(-50%)}
-  .greeting h1{width:100%;text-align:center;font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--ink);min-height:1.15em;transition:opacity .38s var(--ease-out),transform .52s var(--ease-cinematic),letter-spacing .52s var(--ease-cinematic);will-change:opacity,transform}
+  /* The landing headline is the one piece of type with nothing behind it but
+     the sky, and on the darker groups (184's sky is #977966) --ink measured
+     1.23:1 against it. --bw-ink-on-sky is the engine's own ink for exactly
+     this: it is recomputed per group to clear 4.5:1 against that group's
+     cloud, so the headline follows the range instead of staying one brown
+     across all 114. A scrim was the other option and was not taken — this is
+     the page's centrepiece and it should keep sitting straight on the sky. */
+  .greeting h1{width:100%;text-align:center;font-family:"BioRhyme",var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.1;color:var(--bw-ink-on-sky,var(--ink));min-height:1.15em;transition:opacity 360ms var(--ease-out),transform .52s var(--ease-cinematic),letter-spacing .52s var(--ease-cinematic);will-change:opacity,transform}
   @media (max-width:700px){
     .greeting{display:flex;align-items:center;justify-content:center;gap:12px}
     .greeting .bw-hero-mark{position:static;transform:none;width:38px!important;height:31px!important}
@@ -742,36 +810,36 @@
      geometric centre of the empty canvas. The mark is decorative and therefore
      never participates in the centring calculation. */
   body.is-empty #heroEmpty .greeting{display:grid;place-items:center}
-  body.is-empty #heroEmpty .greeting h1{width:100%;padding:0 56px;text-align:center}
+  body.is-empty #heroEmpty .greeting h1{width:100%;padding:0 48px;text-align:center}
   @media (max-width:700px){
     body.is-empty #heroEmpty .greeting .bw-hero-mark{position:absolute;left:50%;top:auto;bottom:calc(100% + 15px);transform:translateX(-50%);width:38px!important;height:31px!important}
-    body.is-empty #heroEmpty .greeting h1{width:100%;padding:0 18px;text-align:center}
+    body.is-empty #heroEmpty .greeting h1{width:100%;padding:0 16px;text-align:center}
   }
-  .greeting h1.is-changing{opacity:0;transform:translateY(-9px) scale(.992);letter-spacing:-.055em}
+  .greeting h1.is-changing{opacity:0;transform:translateY(-9px) scale(.992);letter-spacing:-.045em}
   /* ── guide coach-mark — same comic voice as the sign-in coach: a floating
      white callout pinned under the topbar's "The method" link, arrow poking
      UP at it. First-time nudge to the walk-through; dismissable, remembered,
      and it retires itself once the guide has been visited. ── */
   .guide-coach{position:fixed;top:64px;right:120px;z-index:40;max-width:240px;background:var(--paper-raised);color:var(--ink);text-align:left;cursor:pointer;
     border:1px solid var(--line);border-radius:var(--ui-radius);box-shadow:0 10px 30px rgba(42,32,22,.15),0 2px 6px rgba(42,32,22,.07);
-    padding:10px 26px 11px 13px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) .8s both}
+    padding:8px 24px 12px 12px;animation:coachPop .55s cubic-bezier(.16,1,.3,1) .8s both}
   .guide-coach:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(42,32,22,.2),0 3px 8px rgba(42,32,22,.1)}
   .guide-coach .ct{font-family:"Spinnaker";font-size:12px;line-height:1.45;color:var(--dim)}
   .guide-coach .ct b{color:var(--ink);font-weight:700}
   .guide-coach .cx{position:absolute;top:3px;right:5px;width:18px;height:18px;display:grid;place-items:center;
-    font-size:15px;line-height:1;color:var(--ghost);border-radius:var(--ui-radius-small);transition:background .15s,color .15s}
+    font-size:15px;line-height:1;color:var(--ghost);border-radius:var(--ui-radius-small);transition:background 140ms,color 140ms}
   .guide-coach .cx:hover{background:rgba(42,32,22,.08);color:var(--ink)}
   .guide-coach::before{content:"";position:absolute;right:34px;top:-12px;width:22px;height:12px;background:var(--line);clip-path:polygon(0 100%,100% 100%,70% 0)}
   .guide-coach::after{content:"";position:absolute;right:36px;top:-8px;width:17px;height:9px;background:transparent;clip-path:polygon(0 100%,100% 100%,70% 0)}
   @media (max-width:760px){.guide-coach{right:14px;top:60px}}
   .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:680px;width:100%;margin-top:16px}
-  .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:var(--ui-radius-pill);padding:8px 17px;transition:background .15s,border-color .15s,color .15s;white-space:nowrap;font-family:var(--sans)}
+  .chip{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:var(--ui-radius-pill);padding:8px 16px;transition:background 140ms,border-color 140ms,color 140ms;white-space:nowrap;font-family:var(--sans)}
   .chip:hover{background:rgba(42,32,22,.06);border-color:var(--ink);color:var(--ink)}
   body:not(.is-empty) .chips,body:not(.is-empty) .stream{display:none}
-  .stream{margin-top:22px;max-width:480px;width:100%;text-align:center}
-  .stream-tag{display:flex;align-items:center;justify-content:center;gap:9px;font-family:"Spinnaker";font-size:11px;letter-spacing:.2em;color:var(--dim);transition:opacity .4s}
-  .stream-tag b{color:var(--terracotta);font-weight:400;font-size:8px}
-  .stream-text{min-height:72px;margin-top:10px;font-family:"BioRhyme",var(--serif);font-size:18px;line-height:1.68;color:var(--dim);transition:opacity .45s;text-wrap:pretty}
+  .stream{margin-top:24px;max-width:480px;width:100%;text-align:center}
+  .stream-tag{display:flex;align-items:center;justify-content:center;gap:8px;font-family:"Spinnaker";font-size:11px;letter-spacing:.2em;color:var(--dim);transition:opacity 360ms}
+  .stream-tag b{color:var(--terracotta);font-weight:400;font-size:10px}
+  .stream-text{min-height:72px;margin-top:8px;font-family:"BioRhyme",var(--serif);font-size:18px;line-height:1.68;color:var(--dim);transition:opacity 520ms;text-wrap:pretty}
   .stream.out .stream-text,.stream.out .stream-tag{opacity:0}
   .tok{display:inline-block;animation:tokDrop .5s both cubic-bezier(.2,.7,.3,1)}
   @keyframes tokDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
@@ -787,7 +855,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260901d">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260901i">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -812,7 +880,7 @@
 
   <nav class="mobile-side-nav fade" aria-label="Site navigation">
     <a href="./guide.html">The method</a>
-    <a href="./about.html">Why BourneWise</a>
+    <a href="./about.html">About us</a>
     <a href="./pricing.html">Plans &amp; units</a>
   </nav>
 
@@ -857,15 +925,29 @@
     <button class="side-open-btn pressable" id="sideOpenBtn" aria-label="Open menu" title="Menu">
       <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h12M2 8h12M2 12h12"></path></svg>
     </button>
+    <!-- Phone-only identity and account. The desktop carries both in the
+         sidebar; on a phone that sidebar is an off-canvas drawer, so the bar
+         held a lone hamburger and nothing else — no brand anywhere on the
+         screen, and no way to reach the balance or sign-in without first
+         guessing what the hamburger hides. Both sit in the bar that already
+         exists, so neither costs a pixel of vertical space. -->
+    <a class="topbar-brand" href="./index.html" aria-label="BourneWise — home">
+      <svg class="mark" viewBox="0 0 512 416" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g transform="translate(240,1380)"><path style="stroke-width:40px" d="M-40.96-1327.31c30.72-20.48,61.44,20.48,92.16,0,30.72-20.48,71.68,20.48,102.4,0"></path><path style="stroke-width:40px" d="M-122.88-1245.39c51.2,30.72,102.4-30.72,143.36,0,40.96,30.72,102.4-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-215.04-1163.47c81.92-61.44,163.84,40.96,235.52,0,71.68-40.96,153.6,51.2,235.52,0"></path><path style="stroke-width:40px" d="M-143.36-1081.55c51.2,30.72,112.64-20.48,163.84,0,51.2,20.48,112.64-30.72,153.6,0"></path><path style="stroke-width:40px" d="M-102.4-1009.87c30.72-10.24,61.44,20.48,92.16,0s71.68,10.24,102.4,0"></path></g></svg>
+      <b class="brand-word">BourneWise</b>
+    </a>
     <h1 id="convTitle" style="padding: 0px 10px 0px 0px; font-family: var(--sans); font-weight: 600">New casting</h1>
     <div class="top-right">
+      <a class="topbar-acct pressable" id="topAcct" href="./login.html">
+        <span class="ta-avatar" aria-hidden="true">G</span>
+        <span class="ta-label">Sign in</span>
+      </a>
       <span class="units-chip" id="unitsTop" style="font-weight: 600; font-family: var(--sans)">&mdash; units</span>
       <span class="claude-note" title="How answers are generated">
         <img class="claude-mark" src="./assets/claude-mark.png" alt="" width="20" height="20" decoding="async" aria-hidden="true">
             <span class="cn-text" style="font-family: var(--sans)">We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.</span>
       </span>
       <a class="ghost" href="./guide.html" id="howItWorksLink" style="font-weight: 700; font-family: var(--sans)">The method</a>
-      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)"><span class="why-long">Why BourneWise</span><span class="why-short">Why</span></a>
+      <a class="ghost" href="./about.html" style="font-weight: 700; font-family: var(--sans)"><span class="why-long">About us</span><span class="why-short">About</span></a>
       <a class="ghost" href="./pricing.html" style="font-weight: 700; font-family: var(--sans)"><span class="plans-long">Plans &amp; units</span><span class="plans-short">Plans</span></a>
     </div>
   </header>
@@ -907,19 +989,23 @@
     <div class="composer-help" aria-hidden="true"><span>Enter to submit &middot; Shift+Enter for a new line</span><span>Follow-ups reuse the current hexagram</span></div>
     <div class="method-menu" id="methodMenu" role="menu" aria-label="Casting method"></div>
     <p class="disclaimer" id="methodNote">Stria 64 &middot; about 440 units typical &middot; charged for what it uses</p>
-    <p class="site-foot">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a> &middot; <a href="./guide.html">The method</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./privacy.html">Privacy</a> &middot; <a href="./refund.html">Refunds</a> &middot; <a href="./pricing.html">Plans &amp; units</a></p>
+    <!-- The separators are their own elements so a wrap can never strand one at
+         the end of a line, which is what the plain text version did on a phone
+         ("… The method ·" then a new line). On narrow screens they are dropped
+         entirely and the gap does the separating. -->
+    <p class="site-foot"><span class="sf-item">Support: <a href="mailto:hello@bournewise.com">hello@bournewise.com</a></span><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./guide.html">The method</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./terms.html">Terms</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./privacy.html">Privacy</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./refund.html">Refunds</a><span class="sf-dot" aria-hidden="true">&middot;</span><a class="sf-item" href="./pricing.html">Plans &amp; units</a></p>
   </footer>
 </main>
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260901d"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260901i"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260901d"></script>
-<script src="./liuyao-ai.js?v=20260901d"></script>
+<script src="./liuyao-engine.js?v=20260901i"></script>
+<script src="./liuyao-ai.js?v=20260901i"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -932,7 +1018,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260901d";
+      s.src = "./casting-figure.js?v=20260901i";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -945,10 +1031,10 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260901d"></script>
-<script src="./prompt-checks.js?v=20260901d"></script>
-<script src="./prompt-router.js?v=20260901d"></script>
-<script src="./account.js?v=20260901d"></script>
+<script src="./copy.js?v=20260901i"></script>
+<script src="./prompt-checks.js?v=20260901i"></script>
+<script src="./prompt-router.js?v=20260901i"></script>
+<script src="./account.js?v=20260901i"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It used to
    be a second hand-maintained build literal, and it drifted: it sat two releases
@@ -960,7 +1046,7 @@ window.BWCasting = (function () {
    for a tag that is only being described. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260901d"></script>
+<script src="./chat-app.js?v=20260901i"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -1086,6 +1172,6 @@ window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").spl
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260901d" defer></script>
+<script src="./assets/weave.js?v=20260901i" defer></script>
 </body>
 </html>

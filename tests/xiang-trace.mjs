@@ -184,7 +184,13 @@ const figure = read('casting-figure.js');
 assert.doesNotMatch(figure, /\bxr\b|lei-xiang/, 'the casting figure stays out of this entirely');
 
 // ── 7. house style ─────────────────────────────────────────────────────────
-const block = css.slice(css.indexOf('/* ── 取象溯源'));
+/* Bound the slice to the section it names. It used to run to the end of the
+   file, so every rule appended to refinement.css afterwards was judged as if it
+   were part of this component — the naked-hex check first fired on a `#000`
+   inside a mask-image, which is an alpha stencil and not a colour at all. */
+const xrStart = css.indexOf('/* ── 取象溯源');
+const xrNext = css.indexOf('/* ── ', xrStart + 12);
+const block = css.slice(xrStart, xrNext === -1 ? undefined : xrNext);
 assert.doesNotMatch(block, /#[0-9a-fA-F]{3,8}\b/, 'components reference semantic aliases, never bare hex');
 assert.match(block, /prefers-reduced-motion/, 'the reveal must respect reduced motion');
 assert.match(block, /columns:/, 'the list reads as a field, not a column to walk down');
