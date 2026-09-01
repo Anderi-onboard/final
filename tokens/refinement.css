@@ -228,15 +228,28 @@ html[data-skin="paper"] body .mtn-sky {
    Excluding the moire group matters: its bands are also clipped <use>, and at
    .13 !important the texture is decided here by a rule that was never about it. */
 html[data-skin="paper"] body .mtn-bg [clip-path]:not(.moire) > use { opacity: .13 !important; }
+/* ⚠️⚠️⚠️ Contour COLOUR is not set here any more either, and this is the FOURTH
+   time this file has decided something about the range with an !important that
+   the engine was already deciding correctly — after stroke-width, after fill
+   opacity, after the panel tint. The line that stood here was
+
+     stroke: color-mix(in srgb, #141413 30%, transparent) !important;
+
+   a hard-coded near-black beating the ten palette-tinted rules the engine
+   injects (`.contour.l1 use { stroke: color-mix(…var(--bw-palette-1) 42%…) }`),
+   so on every glass route every contour was drawn in ink regardless of the
+   group. The note directly above it said "colour and joins belong here" — that
+   was the mistake, stated confidently, in the same comment that correctly
+   explained why the WIDTH could not live here.
+
+   On login it was not subtle: the card sits directly over the far ridge, so the
+   heading read as black scribbles across the words. That is what "the login
+   page is broken" was.
+
+   Joins and the non-scaling stroke stay — they are geometry-independent and
+   they do not fight the palette. */
 html[data-skin="paper"] body .mtn-bg .contour use,
 html[data-skin="paper"] body .mtn-bg .cloud-contour use {
-  stroke: color-mix(in srgb, #141413 30%, transparent) !important;
-  /* No stroke-width here. This rule covers BOTH contour groups, so setting a
-     width flattened all three ridge variants to one number — and with
-     !important it beat the engine's own sheet outright. The range's
-     contours were a uniform 2.05px no matter what mountain-range.js said,
-     which is why two rounds of thickening it changed nothing. Colour and
-     joins belong here; the weights belong with the geometry. */
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
@@ -1193,17 +1206,31 @@ html[data-skin="paper"] body :is(
   .panel, .account-menu, .acct-menu, .popover, .modal, .dialog, .sheet,
   .ledger, .side-foot, .signin-coach, .guide-coach
 ) {
-  /* Two layers, and they are different kinds of thing. The turbulence grain is
-     the material's own surface — what makes glass read as frosted rather than
-     as tinted film — and stays. Over it drifts a field built from the thirty
-     phenomena, at an opacity where it registers as something etched into the
-     glass rather than as a picture behind the text. Before this the motifs
-     appeared nowhere on the glass routes at all. */
-  background-image: var(--ui-frost-grain),
-    url("../assets/textures/ph-drift.svg") !important;
-  background-size: 140px 140px, 420px 420px;
-  background-repeat: repeat, repeat;
-  background-blend-mode: overlay, soft-light;
+  /* ⚠️⚠️ ONE layer, and the second one is gone. The turbulence grain is the
+     material's own surface — what makes glass read as frosted rather than as
+     tinted film — and it stays. Over it there used to drift a field built from
+     the phenomena, meant to register as something etched into the glass.
+
+     It was `ph-drift.svg` as a BACKGROUND-IMAGE, and that file paints
+     `fill="#000"` at `scale(2.261)`. This repo's own rule is that a phenomenon
+     goes on a carrier as a MASK, never as a background-image, precisely so the
+     colour comes from CSS and follows the group — the note is in CLAUDE.md and
+     content-pages.css already does it that way. A background-image carries its
+     own baked ink, and `soft-light` over near-clear glass does not tame solid
+     black: on login the card sits over the far ridge and the heading was
+     crossed out by black bars.
+
+     It also broke the other half of the rule it was written under, three lines
+     up in content-pages.css: ONE mark per carrier, never a repeated wallpaper.
+     A 420px tile is a wallpaper.
+
+     The motifs are still on these routes — content-pages.css puts a single
+     masked, palette-coloured one on each major carrier. What is deleted here is
+     the tiling, not the phenomena. */
+  background-image: var(--ui-frost-grain) !important;
+  background-size: 140px 140px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
 }
 
 /* ── 取象溯源 ────────────────────────────────────────────────────────────────
