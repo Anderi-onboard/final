@@ -394,10 +394,14 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 
 ⚠️ 我们走 OpenRouter 不是 Anthropic 原生 API,参数级差异可能被上游吸收;**模型行为层面照样成立**。
 
-6. ⭐ **`voice` 段里有一条 don't-reason 规则,删掉。** Opus 5 关掉 thinking 有两个故障模式
-   (工具调用写进可见正文、`<thinking>` 标签漏进回复),而官方明写
-   「delete any don't-think/don't-reason rule (it makes tag leakage worse)」。
-   我们同时做了这两件加剧泄漏的事。**这条现在就能做,零风险。**
+6. ~~`voice` 段里有一条 don't-reason 规则~~ —— **查错了,不存在**(2026-09-01 更正)。
+   第一次的探针正则匹配到的是一句普通散文(「Cushioning implies you do not think he can
+   take it」),不是规则。重查全 36 段,零命中。
+   ⚠️ 记在这里当教训:**正则命中散文然后被当成发现上报** —— 和 `font-lock` 第一版、
+   `free-reading` 误报历史注释、`yongshen-assignment` 扫到自己的注释,是同一类错误,
+   这已经是这个仓库里的第四次。**扫描类结论必须看命中的原文,不能只看命中数。**
+   官方那条警告(关 thinking 会漏 `<thinking>` 标签,而 don't-think 规则会加剧)仍然成立,
+   只是我们没有那个加剧因素。
 7. **thinking 由 disabled 改成 adaptive + `output_config.effort: medium`。**
    `claude.js:209` 那段注释里的测量是真的(thinking 吃掉 9–11k 预算、截断、账单翻倍),
    但关掉是被劝阻的解法;推荐解法是保持 adaptive 而降 effort。要回路才能量。

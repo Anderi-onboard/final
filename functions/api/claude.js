@@ -219,9 +219,19 @@ export async function onRequestPost(context) {
     if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
       payload.reasoning = { enabled: false };
     }
-    // optional sampling temperature (Anthropic models: 0..1). Used to give a
-    // recast a genuinely fresher draw — the client sends temperature ≈ 1.
-    if (body.temperature != null && Number.isFinite(Number(body.temperature))) {
+    /* SAMPLING IS GONE ON THE OPUS 5 FAMILY. temperature / top_p / top_k were
+       removed on Fable 5, Opus 5, Opus 4.8, 4.7 and Sonnet 5 — the native API
+       returns 400 for them. This path used to send temperature ≈ 1 so that
+       「再起一卦」 drew a fresher wording; on those models the parameter is at
+       best dropped by the proxy and at worst rejects the request, so the lever
+       has not done anything for some time.
+       A recast is still genuinely fresh: it re-tosses the coins, so the BOARD
+       is new. Only the prose-level jitter is gone, and effort is the knob that
+       replaced it. Older models still accept sampling, so it is passed through
+       for them rather than removed outright. */
+    const SAMPLING_REMOVED = /(fable-5|opus-5|opus-4-8|opus-4-7|sonnet-5)/;
+    if (body.temperature != null && Number.isFinite(Number(body.temperature))
+        && !SAMPLING_REMOVED.test(model)) {
       payload.temperature = Math.max(0, Math.min(1, Number(body.temperature)));
     }
     const openrouterHeaders = {
