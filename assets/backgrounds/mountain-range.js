@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901i", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901i";
+    ? new URL("../palettes/color-groups.json?v=20260901j", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901j";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a
@@ -254,16 +254,26 @@
        is why the landscape appeared to stop dead at its edge.
 
        One drift for the whole range rather than one per plane — parallax is
-       what the per-plane version bought and it measured 24fps. */
+       what the per-plane version bought and it measured 24fps.
+
+       ⭐ 34s -> 62s, i.e. ~19px/s -> ~10px/s, because the owner said slower was
+       fine and a landscape has no reason to hurry. The number that has to be
+       watched here is NOT the duration, it is the PIXEL RATE: an unpromoted
+       layer rounds its transform to whole pixels, so at 2px/s a boundary comes
+       round every half second and smooth motion is indistinguishable from
+       steps(). At 10px/s one lands every ~95ms, which is below the threshold
+       where the eye can pick out the individual jumps. Do not take this
+       further down without re-checking that arithmetic — the floor is set by
+       quantisation, not by taste. */
     + (ridgeDrift
-        ? '.mtn-bg>svg{animation:mtn-range 34s linear infinite alternate;will-change:transform}'
+        ? '.mtn-bg>svg{animation:mtn-range 62s linear infinite alternate;will-change:transform}'
         : '')
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'
     /* ⚠️ Cloud speed is set AGAINST the ridge speed, not on its own. While the
        ridges were frozen, 15px/s read clearly because the landscape behind was
-       a fixed reference. Once the ridges drift at ~8px/s the clouds going the
-       same way separate at only 8px/s from what is behind them, and the eye
+       a fixed reference. Once the ridges drift at ~10px/s the clouds going the
+       same way separate at only a few px/s from what is behind them, and the eye
        reads the whole scene as still — the complaint was "the clouds stopped",
        and they had not, they had lost their contrast.
        So they run at roughly twice the old rate, and every cloud now moves
@@ -443,13 +453,19 @@
     6: { n: 12, gap: 5.2, tilt: .34 },
     7: { n: 9, gap: 6.0, tilt: .22 }
   };
+  /* ⚠️ Every cloud sits lower than it did — the whole band drops by about 60
+     units. With the range shortened there is open sky in the middle of the
+     canvas and the clouds were all pressed against the top of it, which reads
+     as a strip of weather stuck to the ceiling rather than as sky. They stay
+     spread across their own band rather than being moved to one line: a row of
+     clouds at one height is a border. */
   var CLOUDS = [
-    { t: "translate(180,12) scale(1.6)", o: .55, d: "0s" },
-    { t: "translate(470,50) scale(1.0)", o: .78, d: "-2.8s" },
-    { t: "translate(720,24) scale(1.25)", o: .88, d: "-5.4s" },
-    { t: "translate(330,84) scale(0.8)", o: .70, d: "-1.6s" },
-    { t: "translate(620,108) scale(0.92)", o: .66, d: "-4.0s" },
-    { t: "translate(860,68) scale(0.7)", o: .82, d: "-6.8s" }
+    { t: "translate(180,74) scale(1.6)", o: .55, d: "0s" },
+    { t: "translate(470,116) scale(1.0)", o: .78, d: "-2.8s" },
+    { t: "translate(720,88) scale(1.25)", o: .88, d: "-5.4s" },
+    { t: "translate(330,150) scale(0.8)", o: .70, d: "-1.6s" },
+    { t: "translate(620,172) scale(0.92)", o: .66, d: "-4.0s" },
+    { t: "translate(860,132) scale(0.7)", o: .82, d: "-6.8s" }
   ];
 
   function build(opts) {
@@ -531,10 +547,20 @@
 
     return '<svg viewBox="0 0 ' + vbw + ' 600" preserveAspectRatio="' + par + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rounded contour landscape">'
       + '<title>Moving contour landscape and clouds</title>' + defs
-      /* ⭐ The range is scaled to 70% about the FOOT of the canvas, and that is
-         all this transform does. The ridges were reaching so far up the sky
-         that the clouds had nowhere left to be — the picture had become a wall
-         of hills with a strip of weather above it.
+      /* ⭐ The range is scaled about the FOOT of the canvas: .72 across, .88 up.
+
+         Two things at once, and they are not the same thing. The HEIGHT went to
+         88% because 70% left the hills too low; the RELIEF comes from the other
+         number — squeezing the width while keeping the height makes each hill
+         steeper without touching a single path. A range drawn with more
+         undulation and one drawn narrower are the same picture, and only one of
+         them needs the wave table rewritten.
+
+         ⚠️ This is a deliberate non-uniform scale and it is the opposite of the
+         one this file warns about. COMPRESSING vertically flattens a range and
+         reads as a different viewpoint; stretching the ratio the other way is
+         exactly what "more relief" means. The contour strokes are
+         non-scaling-stroke, so the line weight does not stretch with it.
 
          About the foot, so the horizon stays welded to the bottom edge and only
          the peaks come down; scaling about the middle would lift the whole
@@ -545,7 +571,7 @@
          ⚠️ The CLOUDS are outside this group on purpose. They are not 30%
          smaller; there is simply more sky for them to be seen in, which is what
          was actually asked for. */
-      + '<g class="mtn-ridges" transform="translate(700 600) scale(.7) translate(-700 -600)">'
+      + '<g class="mtn-ridges" transform="translate(700 600) scale(.72 .88) translate(-700 -600)">'
       + ridges + '</g>' + clouds + '</svg>';
   }
 
