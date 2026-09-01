@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901e", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901e";
+    ? new URL("../palettes/color-groups.json?v=20260901f", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901f";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a
@@ -214,40 +214,49 @@
        The cost is the re-raster of a large, detailed SVG per frame; it is not
        the number of planes and not the backdrop-filters (disabling every
        blurred panel recovered only 17 -> 27). */
-    /* ⭐⭐ THE RANGE MOVES AGAIN, and it moves in STEPS.
+    /* ⭐⭐ THE RANGE MOVES, SMOOTHLY — and the cost was paid somewhere else.
 
-       Everything above about the cost is still true: a smooth drift re-rasters
-       the whole SVG every frame, and it does not matter how it is expressed.
-       Re-measured with the whole page sampled, still against moving:
+       Stepping was the wrong answer. `steps()` does make the frames cheap, but
+       a step is a JUMP: 4px once a second is plainly visible as a tick, and a
+       landscape that ticks is worse than one that is still. Reported as "what
+       do you mean, frame by frame" — and that is exactly what it looked like.
 
-         still                        60fps   p95 16.8ms
-         smooth drift, per layer      24fps   p95 68.5ms
-         smooth drift, whole svg      31fps   p95 40.2ms
-         smooth drift, promoted div   33fps   p95 38.1ms   <- the untried one
-         STEPPED, 1px per second      56fps   p95 34.4ms
+       ⭐ What made moving expensive was never the drawing. Measured, with the
+       whole page sampled while the range drifts smoothly:
 
-       A promoted wrapper was the one option the earlier round had not tried and
-       it does not help: Chromium re-rasters the SVG on every transform change
-       whether or not the layer is promoted. So the lever is not HOW it moves,
-       it is HOW OFTEN — with `steps()` the transform only takes a new value at
-       each step, and between steps there is nothing to raster.
+         everything drawn                33fps
+         moiré hidden                    30fps
+         contours hidden                 31fps
+         FILLS ONLY, 90% of it deleted   32fps   <- no change at all
 
-       ⭐ One drift for the whole range, not one per plane, which is the shape
-       the owner asked for: work out the base and let the rest follow. Parallax
-       is what the per-plane version bought and it is the thing that cost 24fps;
-       a single slow slide of the whole picture is what a still landscape needs
-       to stop reading as a printed backdrop.
+       So detail is not the variable. Neither is the SVG: rasterising the whole
+       range once into an <img> and translating that instead measured 35fps.
 
-       ⚠️ 4px per second, and the STEP SIZE is the free variable. 1px/s shipped
-       first and the answer was "we still have not got it moving" — correct,
-       nobody watches a landscape for the minute it takes to cross a word. The
-       cost is per step, not per pixel: one raster a second either way. So the
-       rate went up 4x by making each step 4px, with the step count and
-       therefore the frame cost unchanged.
-       `alternate` so it breathes back and forth rather than running away from
-       its own margin. */
+       ⭐⭐ It is the GLASS. Moving anything behind a backdrop-filter forces that
+       filter to re-blur every frame, and the sidebar is a 264px-wide panel the
+       full height of the window with several more blurred panels nested inside
+       it:
+
+         all glass as-is                 30fps
+         composer's blur off             32fps
+         sidebar's blur off              43fps
+         sidebar and its children off    52fps
+         every blur on the page off      51fps
+
+       The sidebar alone is the whole difference. The note that used to stand
+       here said the backdrop-filters were NOT the cost — that was measured on a
+       different build, and it is now wrong.
+
+       So the sidebar stops being backdrop glass (see refinement.css) and the
+       range drifts smoothly again. That trade also settles a complaint the
+       sidebar had on its own: a 264px blur over a pale sky composites to a flat
+       white column, measured 60 units lighter than the picture beside it, which
+       is why the landscape appeared to stop dead at its edge.
+
+       One drift for the whole range rather than one per plane — parallax is
+       what the per-plane version bought and it measured 24fps. */
     + (ridgeDrift
-        ? '.mtn-bg>svg{animation:mtn-range 75s steps(75,end) infinite alternate}'
+        ? '.mtn-bg>svg{animation:mtn-range 150s linear infinite alternate;will-change:transform}'
         : '')
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'

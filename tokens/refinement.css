@@ -1568,6 +1568,67 @@ input[type="checkbox"]::after, input[type="radio"]::after {
 
 .side-toggle, .side-open-btn { min-height: var(--ctl-compact); }
 
+/* ── The sidebar is a flat panel, not backdrop glass ───────────────────────
+   ⚠️⚠️ This is the price of a moving landscape, and it was measured before it
+   was paid. Moving anything behind a backdrop-filter makes that filter re-blur
+   on every frame, and this panel is 264px wide by the full height of the window
+   with more blurred panels nested inside it. With the range drifting:
+
+     all glass as-is                30fps
+     composer's blur off            32fps
+     sidebar's blur off             43fps
+     sidebar and its children off   52fps
+     every blur on the page off     51fps
+
+   The sidebar is the whole difference; everything else together is noise.
+
+   ⭐ It also fixes something the sidebar was doing on its own. A .42 white
+   panel over a blurred pale sky composites to a flat white column — measured 60
+   units lighter than the range immediately beside it, all the way down — so the
+   landscape appeared to stop dead at its edge. A flat translucent panel keeps
+   more of what is behind it than a blurred one did.
+
+   ⚠️ Scoped to the sidebar and its children only. Every other carrier on these
+   routes is still glass; this one is full-height page furniture, which is the
+   same reason it is already exempt from the route's corner rule. */
+/* ⚠️ !important, and it is aligning weight rather than hoping to win.
+   luxury-glass.css carries `html[data-skin="paper"] body[data-page="app"]
+   .sidebar` and a sibling rule listing .signin-coach, both at the same
+   specificity as anything writable here and both later in the cascade. This
+   file has lost that contest four times already; matching the weight is the
+   documented way out. */
+html[data-skin="paper"] body[data-page="app"] :is(.sidebar, .sidebar *) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+/* ⚠️ The white goes UP when the blur comes off, and that is not a reversal.
+   A blur averages the backdrop into a flat field; without one the panel sits on
+   whatever the ridges are doing, so the same .42 that read as calm through a
+   blur leaves 10px labels on live contour lines. Measured on group 186 at .42:
+   "Your first reading is on us" 3.56:1, "Available units" 3.85:1 — against
+   about 6.9:1 when it was blurred.
+
+   .72 is where the labels clear AA again while the landscape still reads
+   through the panel, which is the whole point of taking the blur off.
+
+   ⚠️ !important for the same reason as the rule above: luxury-glass.css sets
+   this property from a later sheet at equal specificity. */
+html[data-skin="paper"] body[data-page="app"] .sidebar {
+  background-color: color-mix(in srgb, #FFFFFF 72%, transparent) !important;
+}
+/* ⭐ …and the small labels go to full ink. The panel is translucent over a live
+   landscape now rather than over a blurred flat field, so the ground under a
+   10px label is whatever the ridges are doing there — and --faint was chosen
+   against a backdrop that no longer exists. Raising the white far enough to
+   rescue them would rebuild the white column this change exists to remove; the
+   ink is the half that can move without costing the picture. Same reasoning as
+   the footer and the composer hint, which already take a solved ink for exactly
+   this reason. */
+html[data-skin="paper"] body[data-page="app"] .sidebar
+  :is(.lbl, .ledger-cap, .ledger-unit, .ledger-plan, .who i) {
+  color: var(--ink) !important;
+}
+
 /* ── Text with nothing behind it but the landscape ─────────────────────────
    ⭐ The white scrims are gone (owner, 2026-08-26, looking at what they
    actually rendered as: three white smears lying across the settings page).

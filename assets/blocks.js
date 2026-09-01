@@ -576,6 +576,16 @@
     { at: .50, s: 1.25, o: .22 },
     { at: .92, s: 0.85, o: .26 }
   ];
+  /* ⭐ The corner run is LONGER and a touch stronger than an edge run. An edge
+     spill is a shape carrying on into the neighbour, so three marks read as the
+     part of it you can see; a corner is a decorated corner, and three small
+     faint marks there read as leftovers rather than as an intention. Seven,
+     with the weight rising as it walks back out of the corner. */
+  var CORNER = [
+    { s: 1.00, o: .34 }, { s: 1.22, o: .28 }, { s: 0.88, o: .32 },
+    { s: 1.10, o: .26 }, { s: 0.94, o: .30 }, { s: 1.18, o: .22 },
+    { s: 0.86, o: .26 }
+  ];
 
   /* ── a painted ground ─────────────────────────────────────────────────────
      ⭐⭐ The reference sheets do not put type on a flat panel — the whole band
@@ -643,19 +653,37 @@
          clearances, because the motifs have very different aspect ratios. Each
          mark advances the cursor by its own radius plus the gap plus the next
          one's radius, so not overlapping is arithmetic rather than a check. */
-      var unit = Math.min(w, h) * 0.22, out = "";
-      var gap = unit * 0.30, cursor = h * 0.06;
-      for (var k = 0; k < SPILL.length; k++) {
-        var c = SPILL[k], name = nextMotif();
+      /* ⭐ A corner is a THIRD edge, walked the same way. The owner asked for the
+         top-right decorated the way the left edge already is, and the answer is
+         not a new placement law — it is the same cursor started at the corner
+         and walked inward along the top. Two edges meeting is what makes a
+         corner read as a corner; one row of marks along the top would just be a
+         second border. */
+      var corner = side === "top-right" || side === "top-left";
+      var unit = Math.min(w, h) * (corner ? 0.17 : 0.22), out = "";
+      var gap = unit * 0.30, cursor = corner ? w * 0.04 : h * 0.06;
+      var span = corner ? w : h;
+      var table = corner ? CORNER : SPILL;
+      for (var k = 0; k < table.length; k++) {
+        var c = table[k], name = nextMotif();
         var d = M.phenomena[name] && M.phenomena[name]();
         if (!d) continue;
         var sc = (unit * c.s) / (motifRadius(name) * 2);
         var rad = motifRadius(name) * sc;              /* the radius as drawn */
-        if (cursor + rad > h) break;                    /* no room left: stop */
+        if (cursor + rad > span * (corner ? 0.62 : 1)) break;   /* no room: stop */
         /* sat ON the edge, so the block's own overflow does the cropping */
-        var x = side === "left" ? 0 : w;
-        var y = cursor + rad;
-        cursor = y + rad + gap;
+        var x, y;
+        if (corner) {
+          /* walk in from the corner along the top; the marks straddle the edge
+             so the block's own overflow crops them, same as the side spills */
+          var along = cursor + rad;
+          x = side === "top-right" ? w - along : along;
+          y = k % 2 ? rad * 0.10 : rad * 0.52;
+        } else {
+          x = side === "left" ? 0 : w;
+          y = cursor + rad;
+        }
+        cursor = (corner ? along : y) + rad + gap;
         out += '<g data-ph="' + name + '" data-plate="' + (k % 2) + '" opacity="' + c.o + '"'
           + ' transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1)
           + ') scale(' + sc.toFixed(4) + ')"><g class="ph-m">'
