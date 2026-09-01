@@ -749,33 +749,49 @@
          a stalk here is the same culm repeated end to end, two to four times,
          which is the route's own principle applied one level down — the variety
          is in how many, not in a second drawing. */
+      /* ⚠️⚠️ THE ORDER IS IN THE ROW, THE VARIETY IS IN THE STALK — and the
+         first version had it exactly backwards. Every stalk was the same joint
+         stamped N times (too regular), while the row wandered because each
+         stalk had its own scale and lean (not regular enough). Read together
+         that is the worst of both: repetitive up close, untidy from across the
+         room.
+
+         So: one width for every stalk and an even step between them, which is
+         the row a planted stand actually has — and inside a stalk, each joint
+         is nudged and turned by its own small amount, because a bamboo's
+         segments are not identical either. Same rule as the ink itself: one
+         weight, varied by hand. */
       var seg = motifRadius(name) * 2;
-      var unit = (h * 0.30) / seg;              /* one segment, about a third */
-      var stems = Math.max(5, Math.round((w * 0.40) / (seg * unit * 1.28)));
-      var step = (w * 0.40) / stems;
+      var unit = (h * 0.28) / seg;              /* ONE width for every stalk */
+      var step = seg * unit * 1.42;             /* an even planting distance */
+      var stems = Math.max(4, Math.floor((w * 0.42) / step));
       var out = "";
       for (var k = 0; k < stems; k++) {
-        var hh = GROVE_H[k % GROVE_H.length];
-        var sc = unit * (0.72 + hh * 0.34);
-        var joints = 2 + (k % 3);                /* 2, 3 or 4 segments tall */
-        var x = w - (w * 0.03) - k * step;
-        var lean = GROVE_LEAN[k % GROVE_LEAN.length];
+        var joints = 2 + (k % 4);                       /* 2–5 segments tall */
+        var x = w - (w * 0.035) - k * step;
         var col = '';
         for (var j = 0; j < joints; j++) {
-          /* each joint sits directly under the last, overlapping a little so
-             the stalk reads as continuous rather than as a stack of tokens */
-          col += '<g transform="translate(0 ' + (j * seg * 0.86).toFixed(1) + ')">'
+          /* per-joint variation, from coprime cycles so a stalk never reads as
+             a repeated stamp and never re-arranges itself between visits */
+          var jx = GROVE_LEAN[(k + j) % GROVE_LEAN.length] * 0.16;
+          var jr = GROVE_LEAN[(k * 2 + j) % GROVE_LEAN.length] * 0.55;
+          var jh = 0.93 + GROVE_H[(k + j * 2) % GROVE_H.length] * 0.12;
+          col += '<g transform="translate(' + jx.toFixed(2) + ' '
+            + (j * seg * 0.84).toFixed(1) + ') rotate(' + jr.toFixed(2) + ')'
+            + ' scale(1 ' + jh.toFixed(3) + ')">'
             + '<path class="ph-back" d="' + d + '"/>'
             + '<path class="ph-mid" d="' + d + '"/>'
             + '<path class="ph-ink" d="' + d + '"/></g>';
         }
-        /* the stalk starts above the top edge and is cropped by it, so it
-           carries on out of the block the way every other art layer here does */
-        var y = -seg * sc * (0.30 + hh * 0.34);
+        /* every stalk starts on the same line above the top edge, so the row is
+           level and the crop is a clean one — the raggedness is in how far each
+           one comes DOWN, which is what a stand of different ages looks like */
+        var y = -seg * unit * 0.52;
         out += '<g data-ph="' + name + '" data-plate="' + (k % 2) + '"'
-          + ' opacity="' + (0.44 - (k % 3) * 0.06).toFixed(2) + '"'
+          + ' opacity="' + (0.42 - (k % 3) * 0.05).toFixed(2) + '"'
           + ' transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1)
-          + ') rotate(' + lean + ') scale(' + sc.toFixed(4) + ')">'
+          + ') rotate(' + (GROVE_LEAN[k % GROVE_LEAN.length] * 0.5).toFixed(2)
+          + ') scale(' + unit.toFixed(4) + ')">'
           + '<g class="ph-m">' + col + '</g></g>';
       }
       slot.innerHTML = M.svg(out, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
