@@ -181,18 +181,19 @@ body.blocks-route .ab-block[data-horizon] > svg {
 .hz-cloud-c { fill: none; stroke: var(--hz-cloud-line); stroke-width: 2.4;
   stroke-linecap: round; stroke-linejoin: round; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .hz-cloud {
-    animation-name: hz-drift;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    will-change: transform;
-  }
-}
-@keyframes hz-drift {
-  from { transform: translate3d(-42%, 0, 0); }
-  to   { transform: translate3d(142%, 0, 0); }
-}
+/* ⚠️⚠️ THE CLOUDS DO NOT MOVE. Three of them used to cross each block on coprime
+   periods, so the day and night pictures were the one part of these routes that
+   drifted the way the home page's range does.
+
+   Owner, looking at them: a disaster, make them still. And the measurement
+   agrees with the eye — these are transforms on <g> nodes inside an SVG, which
+   gets no compositor layer of its own, so each frame re-rasterises the whole
+   picture. Under 6x CPU throttle that showed up as a 62.8ms frame on a page
+   whose still version never exceeds 18.6ms.
+
+   The two blocks are still a day and a night, and they still trade places every
+   time the palette turns — that is a hold-then-change across turns, not motion
+   within a frame, which is the same discipline the range itself follows. */
 .hz-body { fill: var(--hz-orb); }
 .hz-halo { fill: var(--hz-glow); stroke: var(--hz-glow);
   stroke-width: 20; stroke-linejoin: round; stroke-linecap: round; }

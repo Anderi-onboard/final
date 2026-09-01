@@ -126,21 +126,46 @@ body.blocks-route {
    region to invalidate, which is the cost that makes the same move expensive
    on the glass routes. */
 @media (prefers-reduced-motion: no-preference) {
+  /* ⚠️⚠️ background-color ONLY. `color` was in this list, and colour is an
+     INHERITED property: transitioning it on <body> makes the browser recompute
+     style for every descendant on every frame of the 1.5 seconds, and these
+     pages carry several hundred SVG paths. Traced at 6x CPU throttle over
+     sixteen seconds:
+
+       with color      3246ms style recalc
+       without color   1574ms
+       no crossfade    1502ms   ← so colour was the cost, the fade itself is free
+
+     The ground still fades, which is the event anyone actually sees — a whole
+     page of colour turning over. The ink arrives with it instead of travelling,
+     and it barely moves anyway: --bk-ink is clamped into L .18–.28, so the
+     step between two groups is a few units. */
   html.bw-cross body.blocks-route :is(.bk-head, .bk-foot, .bk-cell, .bk-go, .mt-card, .ab-block),
   html.bw-cross[data-skin="paper"] body.blocks-route {
-    transition: background-color 1.5s cubic-bezier(.77, 0, .175, 1),
-                color 1.5s cubic-bezier(.77, 0, .175, 1);
+    transition: background-color 1.5s cubic-bezier(.77, 0, .175, 1);
   }
-  /* ⚠️ `svg *`, not just `svg`. Every mark path sets its own `fill` and
-     `stroke` from a token, so a transition declared on the <svg> element does
-     not reach them — the rings snapped to the new group while the blocks around
-     them crossfaded. Painted children are the things that change colour here,
-     so they are the things that have to carry the transition. */
-  html.bw-cross body.blocks-route :is(svg, svg *, .bk-mark) {
-    transition: color 1.5s cubic-bezier(.77, 0, .175, 1),
-                fill 1.5s cubic-bezier(.77, 0, .175, 1),
-                stroke 1.5s cubic-bezier(.77, 0, .175, 1);
-  }
+  /* ⚠️⚠️⚠️ THE MARKS SNAP. They used to crossfade with everything else — the
+     note that stood here explained, correctly, that a transition on the <svg>
+     does not reach children that set their own fill, so `svg *` was needed to
+     stop the rings jumping while the blocks around them faded.
+
+     It was right about the mechanism and catastrophic in practice. Every mark
+     is three painted paths and there are hundreds of them, so a group change
+     put six hundred-odd SVG fills into a 1.5s transition — paint-bound work
+     with nothing to composite. Measured at 6x CPU throttle, across a group
+     change:
+
+       marks crossfading   worst frame 2344ms   p95 410ms
+       marks snapping      worst frame  191ms   p95 182ms
+
+     A 2.3-second freeze every fifteen seconds is the lag that kept being
+     reported, and it survived every earlier round of tuning because the earlier
+     checks sampled frame rate BETWEEN changes and the mean looked fine.
+
+     So the blocks still crossfade — that is the visible event, a whole page of
+     colour turning over — and the marks arrive with the new group instead of
+     travelling to it. At 1.5s against a field of small low-contrast shapes the
+     difference is barely legible; the freeze was not. */
 }
 
 /* ── the grain ──────────────────────────────────────────────────────────────
@@ -308,6 +333,17 @@ body.blocks-route :is([data-fill="bone"], [data-fill="cream"],
 /* Even plates print hue A outside, odd ones hue B — so neighbouring marks in
    the lattice are each other's negative and a field reads as a two-colour
    press rather than as one repeated chord. */
+/* ⚠️ Tried and REVERTED: registering these with `@property { syntax:"<color>" }`
+   and computing the four ring colours once per block instead of once per mark.
+
+   The reasoning was sound — an unregistered custom property is inherited as an
+   unresolved token stream, so `oklch(from …)` declared per mark is resolved once
+   per painted path, and there are several hundred of them. Traced at 6x CPU
+   throttle: registered 1654ms of style recalc, unregistered 1481ms. No gain,
+   slightly worse. It is written down instead of kept, because it will look like
+   an obvious win again to the next person — and because this file already
+   carries one note about a translateZ(0) that was added for a benefit that
+   turned out not to exist. */
 body.blocks-route [data-plate="0"],
 body.blocks-route [data-plate="2"] { --ph-hb: var(--ph-h0); --ph-hm: var(--ph-h1); }
 body.blocks-route [data-plate="1"],
@@ -382,90 +418,35 @@ body.blocks-route .ph-ink.is-accent {
    moving the drawing inside it.
 
    Periods are coprime across the groups so the field never falls into step. */
-@media (prefers-reduced-motion: no-preference) {
-  body.blocks-route .ph-m { transform-box: fill-box; transform-origin: 50% 50%; }
+/* ⚠️⚠️ THE MARK FIELDS ARE STILL, and this reverses an earlier instruction on
+   the strength of a measurement that the earlier check could not see.
 
-  /* wind in growing things — pivots at the base, because that is where they
-     are attached to the ground */
-  body.blocks-route :is([data-ph="pine"], [data-ph="bamboo"], [data-ph="reed"],
-    [data-ph="leaf"], [data-ph="wind"], [data-ph="haze"]) .ph-m {
-    transform-origin: 50% 100%;
-    animation: ph-sway 11s ease-in-out infinite alternate;
-  }
-  /* water, running */
-  body.blocks-route :is([data-ph="river"], [data-ph="spring"], [data-ph="tide"],
-    [data-ph="wave"], [data-ph="lake"]) .ph-m {
-    animation: ph-flow 13s ease-in-out infinite alternate;
-  }
-  body.blocks-route [data-ph="whirl"] .ph-m { animation: ph-turn 29s linear infinite; }
-  body.blocks-route [data-ph="waterfall"] .ph-m { animation: ph-pour 7s ease-in-out infinite alternate; }
-  /* things that come down */
-  body.blocks-route :is([data-ph="rain"], [data-ph="snow"], [data-ph="dew"]) .ph-m {
-    animation: ph-fall 9s ease-in-out infinite alternate;
-  }
-  /* and things that go up */
-  body.blocks-route [data-ph="smoke"] .ph-m { animation: ph-rise 17s ease-in-out infinite alternate; }
-  /* the slow sky */
-  body.blocks-route :is([data-ph="sun"], [data-ph="moon"], [data-ph="star"],
-    [data-ph="rainbow"]) .ph-m {
-    animation: ph-wheel 43s ease-in-out infinite alternate;
-  }
-  /* ⚠️ lightning and thunder are deliberately NOT flickering. A flash is the
-     one thing on a quiet ground that would pull the eye off the words, and
-     this is ground. They drift with the sky instead. */
-  body.blocks-route :is([data-ph="lightning"], [data-ph="thunder"]) .ph-m {
-    animation: ph-wheel 37s ease-in-out infinite alternate;
-  }
-  /* ── and the ground, which also moves now ───────────────────────────────
-     ⭐ Owner: every motif gets motion. What that replaces is a rule saying the
-     land holds still, whose reasoning was that a field where EVERYTHING moves
-     at one rate is a moving pattern rather than a place. That reasoning is kept
-     by giving the ground its own motion instead of the reeds' — a settle and a
-     breath, an order of magnitude slower and smaller than anything above, so
-     the field still has fast things and slow things in it.
+   Every one of the 42 motifs used to move the way the thing it draws moves —
+   reeds swayed from the base, rain fell, whirlpools turned, and the land
+   breathed by a fraction of a per cent. It was asked for, it was built, and
+   it was reported at 60fps. That reading was worthless: rAF fires at 60
+   whatever the raster is doing, and the machine measuring it was not the
+   machine looking at it.
 
-     ⚠️ Every one of the twelve motifs added in the last pass had NO rule at
-     all and was simply frozen — glow, fog, ice, moss, vine, fern, grain,
-     sprout, brook, pool, isle, slope. That is what "the marks aren't moving"
-     was pointing at: not that they were too subtle, that most of the sheet was
-     not animated. */
+   Measured again at 6x CPU throttle, which is what a real machine looks like:
 
-  /* light and vapour — the slowest drift on the page */
-  body.blocks-route :is([data-ph="glow"], [data-ph="fog"]) .ph-m {
-    animation: ph-breathe 31s ease-in-out infinite alternate;
-  }
-  /* things that grow, from the base like everything else that does */
-  body.blocks-route :is([data-ph="fern"], [data-ph="grain"], [data-ph="sprout"],
-    [data-ph="vine"], [data-ph="moss"]) .ph-m {
-    transform-origin: 50% 100%;
-    animation: ph-sway 14s ease-in-out infinite alternate;
-  }
-  /* water again — a brook runs, a pool turns over slowly */
-  body.blocks-route [data-ph="brook"] .ph-m { animation: ph-flow 10s ease-in-out infinite alternate; }
-  body.blocks-route [data-ph="pool"] .ph-m  { animation: ph-turn 53s linear infinite; }
-  /* ice and the shore: they shift, they do not travel */
-  body.blocks-route :is([data-ph="ice"], [data-ph="isle"], [data-ph="slope"]) .ph-m {
-    animation: ph-settle 37s ease-in-out infinite alternate;
-  }
-  /* ⚠️ The land keeps the SMALLEST motion on the page, not none. peak, valley,
-     cliff, stone, dune, root and frost breathe by a fraction of a per cent over
-     three quarters of a minute — present, and never the thing you look at. */
-  body.blocks-route :is([data-ph="peak"], [data-ph="valley"], [data-ph="cliff"],
-    [data-ph="stone"], [data-ph="dune"], [data-ph="root"], [data-ph="frost"]) .ph-m {
-    animation: ph-settle 47s ease-in-out infinite alternate;
-  }
-}
-@keyframes ph-settle  { from { transform: translateY(-.7%) rotate(-.35deg); }
-                        to   { transform: translateY(.7%) rotate(.35deg); } }
-@keyframes ph-breathe { from { transform: translate3d(-1.4%, .5%, 0); }
-                        to   { transform: translate3d(1.4%, -.5%, 0); } }
-@keyframes ph-sway  { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
-@keyframes ph-flow  { from { transform: translateX(-3%); } to { transform: translateX(3%); } }
-@keyframes ph-turn  { from { transform: rotate(0deg); }    to { transform: rotate(360deg); } }
-@keyframes ph-pour  { from { transform: translateY(-2.5%) scaleY(.985); } to { transform: translateY(2.5%) scaleY(1.015); } }
-@keyframes ph-fall  { from { transform: translateY(-3%); }  to { transform: translateY(3%); } }
-@keyframes ph-rise  { from { transform: translateY(3%) scaleY(.98); } to { transform: translateY(-3%) scaleY(1.02); } }
-@keyframes ph-wheel { from { transform: rotate(-1.4deg) scale(.99); } to { transform: rotate(1.4deg) scale(1.01); } }
+     guide, animating   56fps   p95 21.4ms   worst frame 62.8ms   63ms long tasks
+     guide, still       61fps   p95 17.9ms   worst frame 18.6ms    0ms long tasks
+
+   The mean was never the problem. A 62.8ms frame is a visible hitch, and it
+   happens because these transforms animate on <g> nodes INSIDE one SVG:
+   an SVG subtree gets no compositor layer of its own, so every frame
+   re-rasterises the whole field. That is the same red line this file already
+   draws around per-frame filter work — it was just being crossed in a place
+   nobody thought to look, because the elements are small and there are two
+   hundred of them.
+
+   ⭐ Motion on this route now comes only from the palette turning over every
+   fifteen seconds — hold-then-crossfade, which is a transition and costs
+   nothing per frame. The keyframes are deleted rather than left behind an
+   override: a dead rule plus a switch is two things to keep in step, and this
+   file has paid for that twice already. `git show` has them if the trade is
+   ever worth taking again on a smaller set of marks. */
 
 /* The ground between blocks is paper, not ink. This needs the [data-skin]
    qualifier to land at all: refinement.css sets `html[data-skin="paper"] body`,

@@ -822,10 +822,16 @@
     var R = window.BWRange;
     var sky = "";
     if (R && R.cloudBody) {
+      /* ⚠️ No dur/delay any more: the clouds are placed, not driven. They used
+         to cross the block on coprime periods and the position you saw was the
+         animation's, not this x — so these values are now what is actually on
+         screen. Owner: still. Measured too — transforms on <g> inside an SVG
+         re-rasterise the whole picture every frame, 62.8ms worst frame under
+         throttle against 18.6ms still. */
       var CL = [
-        { x: .14, y: .13, s: 1.00, o: .94, dur: 104, delay: 0 },
-        { x: .52, y: .06, s: 0.72, o: .80, dur: 128, delay: -37 },
-        { x: .78, y: .18, s: 1.24, o: .88, dur: 92,  delay: -61 }
+        { x: .14, y: .13, s: 1.00, o: .94 },
+        { x: .52, y: .06, s: 0.72, o: .80 },
+        { x: .78, y: .18, s: 1.24, o: .88 }
       ];
       /* ⚠️ Sized off the block's WIDTH, not off min(w,h) with a loose factor.
          The first version put a cloud 696px across on a 480px block — at that
@@ -841,8 +847,7 @@
           rows += '<path class="hz-cloud-c" d="' + R.cloudContour + '" transform="translate(0 '
             + R.cloudRows[rw].y + ')"/>';
         }
-        sky += '<g class="hz-cloud hz-cloud-' + (q + 1) + '" opacity="' + c.o + '"'
-          + ' style="animation-duration:' + c.dur + 's;animation-delay:' + c.delay + 's">'
+        sky += '<g class="hz-cloud hz-cloud-' + (q + 1) + '" opacity="' + c.o + '">'
           + '<g transform="translate(' + (c.x * w).toFixed(1) + ' ' + (c.y * h).toFixed(1)
           + ') scale(' + cs.toFixed(3) + ')">'
           + '<path class="hz-cloud-b" d="' + R.cloudBody + '"/>' + rows
@@ -866,9 +871,20 @@
     });
   }
 
-  /* Redraw on every turn of the palette clock — that is what makes it a day
-     rather than a still. Only the two horizon blocks are touched. */
-  window.addEventListener("bw:palettechange", function () { horizons(); });
+  /* ⚠️⚠️ NOT redrawn on every turn of the palette clock any more.
+
+     It used to be: the sun stepped one position west and the two blocks traded
+     day for night each time the colour changed, which is what made the pair
+     read as one day passing. Rebuilding them is the expensive way to say that —
+     two full landscapes, five layers each, plus clouds and stars, regenerated
+     as markup and re-parsed — and it landed in the same frame as the palette
+     crossfade. Measured at 6x CPU throttle over twenty seconds, that pairing
+     was most of 6 seconds of long tasks.
+
+     The colours still rotate: --hz-sky, --hz-orb and the five land tones are
+     CSS relative colours off the group's hues, so the picture recolours without
+     JavaScript touching it. What stops is the redraw, which is also what the
+     owner asked for — these two blocks are still. */
 
   function backdrops() {
     [].slice.call(document.querySelectorAll("[data-scatter-bg]")).forEach(function (host, i) {

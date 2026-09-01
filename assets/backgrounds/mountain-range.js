@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901a", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901a";
+    ? new URL("../palettes/color-groups.json?v=20260901b", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901b";
   var paletteDwellMs = 15000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
@@ -968,8 +968,29 @@
     return out;
   }
 
+  /* ⚠️⚠️ The stagger is for pages that DRAW the range. It exists to spread the
+     twelve 1.5s `fill` transitions so the SVG repaints as a cascade instead of
+     one huge task — measured, on the app route, at 12 long tasks totalling
+     1422ms when the gap was 400ms against 1 task of 71ms at 120ms.
+
+     On the two block routes there is no range to repaint. What there IS, is a
+     page whose every fill is `oklch(from var(--bw-palette-N) …)`, so each of
+     those twelve writes to <html> invalidates the whole document and restyles
+     several hundred SVG paths. Spreading them turns ONE restyle into TWELVE.
+     Measured at 6x CPU throttle over fifteen seconds on the method page: 44
+     long tasks totalling 5926ms with the stagger, from a grand total of 30
+     property writes and a single group change. With the range script blocked
+     entirely the same page ran at 60fps with no long tasks at all — which is
+     how a script that draws nothing on these routes turned out to be the whole
+     of the lag being reported.
+
+     So: staggered where it spreads work, batched where it multiplies it. */
+  function drawsRange() {
+    return !!document.querySelector(".mtn-bg");
+  }
+
   function queuePaletteLayer(delay, fn, immediate) {
-    if (immediate || delay === 0) fn();
+    if (immediate || delay === 0 || !drawsRange()) fn();
     else paletteLayerTimers.push(setTimeout(fn, delay));
   }
 
