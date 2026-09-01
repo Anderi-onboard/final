@@ -93,6 +93,10 @@ body[data-page="guide"] { margin: 0; }
    composition left to serve, and they were a third of the page's length on a
    phone. The steps stay; the wallpaper goes. */
 @media (max-width: 900px) {
+    /* ⚠️ [data-horizon] is NOT in this list. The pattern cards are decoration
+     with no composition left to serve at one column; the skyline is a picture,
+     and on a phone the pictures are what stop the page being a column of
+     coloured slabs — the same call the About route already makes. */
   .mt-card:is([data-pattern], [data-land]) { display: none; }
 }
 
@@ -107,8 +111,8 @@ body[data-page="guide"] { margin: 0; }
   min-width: 0;
 }
 /* Fields go edge to edge. A pattern with an inset is a picture of a pattern. */
-.mt-card:is([data-pattern], [data-land]) { padding: 0; color: var(--bk-cream); }
-.mt-card:is([data-pattern], [data-land]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mt-card:is([data-pattern], [data-land], [data-horizon]) { padding: 0; color: var(--bk-cream); }
+.mt-card:is([data-pattern], [data-land], [data-horizon]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* ── the two type sizes, and nothing between them ─────────────────────────
    The reference sets a display and a functional label and simply omits the
@@ -421,6 +425,7 @@ body[data-page="guide"] .mt-defs dt { font-family: var(--serif); font-size: max(
      phone is a worse answer than a taller card. */
   .mt-card--flip { min-height: 96vw; }
   .mt-card:is([data-pattern], [data-land]) { min-height: 30vw; }
+  .mt-card[data-horizon] { min-height: 44vw; }
   /* 9px of tracked label, and on one column it is the only chrome the card has.
      At three columns 9px reads as a caption inside a mosaic; at one column
      there is no mosaic left for it to be a caption of — §3 says the composition

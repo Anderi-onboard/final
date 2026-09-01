@@ -744,121 +744,30 @@
     if (w < 40 || h < 40) return;
     var seed = 20260830 + (parseInt(host.getAttribute("data-horizon"), 10) || 1) * 8171;
 
-    /* the two blocks are opposite halves of the day */
-    var night = ((slot + i) % 2) === 1;
-    host.setAttribute("data-phase", night ? "night" : "day");
+    /* ⭐⭐⭐ ALWAYS NIGHT, and nothing in the sky.
 
-    /* east to west, along a shallow arc whose peak is off-centre so the body is
-       never dead centre over the ridge — §3's rule that the division nearest
-       the middle must not land on it.
+       This used to be half of a day: two blocks, one lit and one dark, trading
+       places every time the palette turned, each carrying a sun or a moon on an
+       arc, three clouds and a scatter of stars. Owner, looking at both: still
+       terrible — except the night one, which is worth keeping. So night is what
+       is left, and every prop comes out.
 
-       ⚠️ The arc stays ABOVE the ridge line. The range's highest peak sits at
-       base0 - amp = .30 of the block, and the first version ran the arc down to
-       .46 — so at either end of the day the body was drawn behind a mountain
-       and the block looked like it had lost its sun. It also has to keep its own
-       radius clear of the left and right edges, or it is clipped at dawn. */
-    var t = (Math.floor(slot / 2) % ARC_STOPS) / (ARC_STOPS - 1);
-    var rr = Math.min(w, h) * (night ? 0.13 : 0.155);
-    var margin = rr * 1.5;
-    var cx = margin + (w - margin * 2) * t;
-    var cy = (0.24 - 0.14 * Math.sin(Math.PI * t)) * h;
+       ⭐ What made the night half work is exactly what the props were competing
+       with: a deep flat sky with layered silhouettes stepping back into it. One
+       idea, held. The daylight version had the same geometry over a pale sky,
+       which put the ridges within a few shades of each other and left the sun as
+       the only thing to look at — an ornament holding up a composition instead
+       of sitting in one.
 
-    var name = night ? "moon" : "sun";
-    var body = M.phenomena[name] && M.phenomena[name]();
-    var orb = "";
-    if (body) {
-      /* ⭐ The body gets the same backing as every other mark on these routes —
-         a wide round-joined stroke of the same path behind it. A sun drawn as a
-         bare ribbon at this size reads as a scribble on an empty sky; with its
-         own halo it reads as a body with light around it, which is what the
-         reference sheets do and what this route already does everywhere else. */
-      var sc = rr / motifRadius(name);
-      orb = '<g class="hz-orb" transform="translate(' + cx.toFixed(1) + ' ' + cy.toFixed(1)
-        + ') scale(' + sc.toFixed(4) + ')">'
-        + '<path class="hz-halo" d="' + body + '"/>'
-        + '<path class="hz-body" d="' + body + '"/></g>';
-    }
+       ⚠️ The props were not bad drawings. The sun and moon were the catalogue's
+       own motifs wearing their own colour rings, and the clouds were the home
+       page's actual cloud path. They came out because five things in a 16:7
+       band is four things too many, not because any one of them was wrong. */
+    host.setAttribute("data-phase", "night");
 
-    /* A handful of stars, only at night, on the same lattice discipline as
-       everything else: fixed positions from a small table, never a roll. */
-    var stars = "";
-    if (night) {
-      /* ⚠️ Plain discs, and deliberately so. Everything drawn on these routes is
-         in the range's hand and a perfect circle is the one shape the motif
-         rules ban — but that rule is about MOTIFS, things meant to be
-         recognised as a drawing. A star at 1.2% of the block is a point of
-         light, not a drawing of anything, and a hand-wobbled one at that size
-         is just a dirty pixel. */
-      var ST = [[.14, .13], [.31, .26], [.52, .10], [.68, .22], [.83, .12], [.92, .30], [.22, .35]];
-      for (var s2 = 0; s2 < ST.length; s2++) {
-        var sx = ST[s2][0] * w, sy = ST[s2][1] * h, sr = Math.min(w, h) * .012;
-        if (Math.hypot(sx - cx, sy - cy) < rr * 2.2) continue;   /* not inside the moon */
-        stars += '<circle class="hz-star" cx="' + sx.toFixed(1) + '" cy="' + sy.toFixed(1)
-          + '" r="' + sr.toFixed(2) + '"/>';
-      }
-    }
-
-    /* ── the clouds, which are what actually moves ────────────────────────
-       ⭐⭐ The range on the home page holds STILL and the clouds carry the
-       motion, and that is not a stylistic choice — it was measured: three
-       drifting ridge planes ran at 21fps against 55fps with the ridges stopped
-       and four clouds drifting. A ridge is a path across the whole canvas, so
-       moving one invalidates everything composited over it; a cloud is small
-       and clipped. The same split applies here, so these skylines get the same
-       treatment: ridges nailed down, clouds crossing.
-
-       ⭐ Same cloud, not a lookalike. BWRange publishes the home page's own
-       path, so a cloud on this route is that cloud — body plus its three
-       contour rows, a plane with its own line work, exactly as a ridge is.
-
-       ⚠️ Transform only, and nothing else on the card animates: the red line
-       bans per-frame background-color, filter and backdrop-filter. It is cheap
-       here for the reason the palette crossfade is cheap here — this route has
-       no backdrop-filter anywhere, so there is no blurred region to invalidate.
-
-       ⚠️ Periods are co-prime-ish and each cloud has its own negative delay, so
-       the three never line up into a single passing bar. Same discipline as the
-       drift bands on the mark fields. */
-    var R = window.BWRange;
-    var sky = "";
-    if (R && R.cloudBody) {
-      /* ⚠️ No dur/delay any more: the clouds are placed, not driven. They used
-         to cross the block on coprime periods and the position you saw was the
-         animation's, not this x — so these values are now what is actually on
-         screen. Owner: still. Measured too — transforms on <g> inside an SVG
-         re-rasterise the whole picture every frame, 62.8ms worst frame under
-         throttle against 18.6ms still. */
-      var CL = [
-        { x: .14, y: .13, s: 1.00, o: .94 },
-        { x: .52, y: .06, s: 0.72, o: .80 },
-        { x: .78, y: .18, s: 1.24, o: .88 }
-      ];
-      /* ⚠️ Sized off the block's WIDTH, not off min(w,h) with a loose factor.
-         The first version put a cloud 696px across on a 480px block — at that
-         size the silhouette and its three contour rows stop reading as a cloud
-         and read as another bank of banded hills. On the home page a cloud is
-         about a fifth of the canvas; the path is ~116 units wide, so that
-         fraction is what sets the scale here too. */
-      var base = (w * 0.19) / 116;
-      for (var q = 0; q < CL.length; q++) {
-        var c = CL[q], cs = base * c.s;
-        var rows = "";
-        for (var rw = 0; rw < R.cloudRows.length; rw++) {
-          rows += '<path class="hz-cloud-c" d="' + R.cloudContour + '" transform="translate(0 '
-            + R.cloudRows[rw].y + ')"/>';
-        }
-        sky += '<g class="hz-cloud hz-cloud-' + (q + 1) + '" opacity="' + c.o + '">'
-          + '<g transform="translate(' + (c.x * w).toFixed(1) + ' ' + (c.y * h).toFixed(1)
-          + ') scale(' + cs.toFixed(3) + ')">'
-          + '<path class="hz-cloud-b" d="' + R.cloudBody + '"/>' + rows
-          + '</g></g>';
-      }
-    }
-
+    /* The whole picture: one flat sky and five silhouettes. */
     host.innerHTML = M.svg(
-      /* ⚠️ Stars go BEHIND the clouds. Drawn after them a star sits on top of a
-         cloud, which is the one thing a night sky cannot do. */
-      '<rect class="hz-sky" x="0" y="0" width="' + w + '" height="' + h + '"/>' + stars + sky + orb
+      '<rect class="hz-sky" x="0" y="0" width="' + w + '" height="' + h + '"/>'
         + M.landscape(seed, w, h,
             { layers: 5, silhouette: true, base0: .56, baseSpan: .30, amp: .26, ampNear: .13 }),
       "0 0 " + w + " " + h, 'preserveAspectRatio="none"');

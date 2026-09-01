@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901d", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901d";
+    ? new URL("../palettes/color-groups.json?v=20260901e", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901e";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a
@@ -57,10 +57,12 @@
     + '.mtn-bg{overflow:hidden;contain:strict}'
     /* ⚠️ Wider than its box, and offset by half the overhang. The range slides
        within .mtn-bg, so a 100%-wide picture would drag a strip of bare page in
-       behind it at whichever edge it is travelling away from. 200px of margin
-       covers a 150px travel with room to spare. */
-    + '.mtn-bg>svg{display:block;width:calc(100% + 400px);height:100%;margin-left:-200px}'
-    + '@keyframes mtn-range{from{transform:translate3d(-75px,0,0)}to{transform:translate3d(75px,0,0)}}'
+       behind it at whichever edge it is travelling away from. ⚠️ Exactly enough and no more: 170px each side against a 150px
+       travel. The overhang is extra area to rasterise on every step, so a
+       generous margin is paid for once a second — 700px of it measured 47fps
+       against 56 at 340px. */
+    + '.mtn-bg>svg{display:block;width:calc(100% + 340px);height:100%;margin-left:-170px}'
+    + '@keyframes mtn-range{from{transform:translate3d(-150px,0,0)}to{transform:translate3d(150px,0,0)}}'
     /* The sky and ten ridges receive colours from the extensible external
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
@@ -236,12 +238,16 @@
        a single slow slide of the whole picture is what a still landscape needs
        to stop reading as a printed backdrop.
 
-       1px per second. Slow enough that no step is visible as a step, fast
-       enough to have moved a noticeable distance by the time a reading is
-       written. `alternate` so it breathes back and forth rather than running
-       away from its own margin. */
+       ⚠️ 4px per second, and the STEP SIZE is the free variable. 1px/s shipped
+       first and the answer was "we still have not got it moving" — correct,
+       nobody watches a landscape for the minute it takes to cross a word. The
+       cost is per step, not per pixel: one raster a second either way. So the
+       rate went up 4x by making each step 4px, with the step count and
+       therefore the frame cost unchanged.
+       `alternate` so it breathes back and forth rather than running away from
+       its own margin. */
     + (ridgeDrift
-        ? '.mtn-bg>svg{animation:mtn-range 150s steps(150,end) infinite alternate}'
+        ? '.mtn-bg>svg{animation:mtn-range 75s steps(75,end) infinite alternate}'
         : '')
     + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'

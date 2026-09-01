@@ -115,35 +115,29 @@ body.blocks-route {
     --bk-ink:   oklch(from var(--bw-palette-7, #1A1714) clamp(.18, l, .28) min(c, .05) h);
   }
 }
-/* The change of group is a crossfade, on the sky's own curve and duration so
-   that arriving from a glass route the two routes read as one event rather
-   than as two pages that happen to recolour.
-
-   ⚠️ This is a transition, not a per-frame animation — the performance red
-   line bans animating background-color frame by frame, and hold-then-crossfade
-   is precisely the sanctioned alternative. It is also cheap here specifically
-   because this route has no backdrop-filter anywhere: there is no blurred
-   region to invalidate, which is the cost that makes the same move expensive
-   on the glass routes. */
+/* The change of group is instantaneous on these routes. It used to crossfade,
+   matching the sky's curve and duration so that arriving from a glass route the
+   two read as one event; the two notes below are what happened to that idea and
+   why neither half of it survived. The `html.bw-cross` class the script still
+   adds now gates nothing — it is left in place because it costs nothing and it
+   is the hook to reach for if a cheap fade is ever found. */
 @media (prefers-reduced-motion: no-preference) {
-  /* ⚠️⚠️ background-color ONLY. `color` was in this list, and colour is an
-     INHERITED property: transitioning it on <body> makes the browser recompute
-     style for every descendant on every frame of the 1.5 seconds, and these
-     pages carry several hundred SVG paths. Traced at 6x CPU throttle over
-     sixteen seconds:
+  /* ⚠️⚠️⚠️ NO CROSSFADE. The group arrives all at once.
 
-       with color      3246ms style recalc
-       without color   1574ms
-       no crossfade    1502ms   ← so colour was the cost, the fade itself is free
+     This faded background-color over 1.5s while the marks — which cannot be
+     faded without a 2.3-second freeze, measured — changed instantly. That is
+     two visible events for one thing happening: the drawing snaps, then the
+     page catches up over a second and a half. Reported as "the colour
+     sometimes refreshes twice", and it is exactly that.
 
-     The ground still fades, which is the event anyone actually sees — a whole
-     page of colour turning over. The ink arrives with it instead of travelling,
-     and it barely moves anyway: --bk-ink is clamped into L .18–.28, so the
-     step between two groups is a few units. */
-  html.bw-cross body.blocks-route :is(.bk-head, .bk-foot, .bk-cell, .bk-go, .mt-card, .ab-block),
-  html.bw-cross[data-skin="paper"] body.blocks-route {
-    transition: background-color 1.5s cubic-bezier(.77, 0, .175, 1);
-  }
+     Given the marks have to snap, the only way to make it ONE event is for
+     everything to snap. It costs nothing (the fade measured 1574ms of style
+     recalc against 1502ms with no transition at all) and at a 45-second dwell a
+     single blink is rarer and quieter than a blink followed by a fade.
+
+     ⚠️ Do not put the fade back for the blocks alone. The seam it creates is
+     not a small imperfection — it is the whole of what a group change looks
+     like on these routes. */
   /* ⚠️⚠️⚠️ THE MARKS SNAP. They used to crossfade with everything else — the
      note that stood here explained, correctly, that a transition on the <svg>
      does not reach children that set their own fill, so `svg *` was needed to
@@ -594,6 +588,169 @@ body.blocks-route [data-fill="olive"] { --bk-fill: var(--bk-olive); background: 
 body.blocks-route [data-fill="teal"]  { --bk-fill: var(--bk-teal);  background: var(--bk-fill); color: var(--bk-cream); }
 body.blocks-route [data-fill="ochre"] { --bk-fill: var(--bk-ochre); background: var(--bk-fill); }
 body.blocks-route [data-fill="dusty"] { --bk-fill: var(--bk-dusty); background: var(--bk-fill); }
+
+/* ── the night skyline ─────────────────────────────────────────────────────
+   ⚠️ MOVED HERE from about.css, because it is no longer one route's picture.
+   about.css owns the About route alone — that single-owner rule is why it beat
+   the ownership census — so a component both text routes draw belongs in the
+   sheet both of them load. Leaving it in about.css and adding a copy for guide
+   would be the two-lists mistake this file has paid for twice.
+
+   Everything about the DAY half is kept below rather than deleted: it is a live
+   fallback for a browser without relative colour, and the note about why the
+   night half is the one that survived is worth more than the eight lines it
+   costs. */
+/* ── the skyline ────────────────────────────────────────────────────────
+   ⭐ Its own sky, and a time of day. One flat field with one body in it — the
+   sun going east to west, then the moon — rather than the bands this had
+   before. Bands of colour behind a mountain are a swatch card; a sky is worth
+   drawing because it says when it is.
+
+   ⚠️ The first version inherited currentColor, which on a dark block is the
+   PALE ink — so the mountains came out cream on brown, the photograph
+   negative of the thing being copied. A silhouette has to name its own colour;
+   it cannot borrow the one meant for type. */
+[data-horizon] { align-self: stretch; position: relative; overflow: hidden;
+  color: var(--bk-ink); background: var(--bk-bone);
+  --hz-sky: #E8DDD8; --hz-orb: #C79A55; --hz-glow: #DCBB93;
+  --hz-cloud: #F6F0EA; --hz-cloud-line: #C9B7A6;
+  --hz-l1: #8A6A55; --hz-l2: #755743; --hz-l3: #5E4636; --hz-l4: #48352A; --hz-l5: #33251D; }
+[data-horizon][data-phase="night"] {
+  --hz-sky: #1F2733; --hz-orb: #E4DCC6; --hz-glow: #9AA6BC;
+  --hz-cloud: #38414F; --hz-cloud-line: #4E5869;
+  --hz-l1: #47505E; --hz-l2: #3B4351; --hz-l3: #2F3743; --hz-l4: #242B36; --hz-l5: #1A202A; }
+/* ⚠️ The picture came up 23px short of the foot, and a pale strip of the
+   block's own background showed under the range — which reads as a rendering
+   fault, not as a margin. Two causes, both fixed here:
+
+   ① The horizon block is a grid with `grid-template-rows: auto 1fr` and a
+   gap. Its only child landed in the auto row and the gap — 1.6vw, exactly the
+   23px — was reserved below it. An art block has one child and no rows to
+   speak of, so it is a block box.
+   ② `body.blocks-route :is(…, .ab-block) > :not(.bk-art)` is (0,3,1) and
+   outranks a bare `[data-horizon] svg` (0,1,1), so `position:absolute` was
+   silently discarded — the same specificity trap this repo has now logged four
+   times. The rule below matches that weight instead of hoping to win. */
+body.blocks-route .ab-block--art[data-horizon] { display: block; gap: 0; }
+body.blocks-route .ab-block [data-horizon] > svg,
+body.blocks-route .ab-block[data-horizon] > svg {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0;
+}
+.ab-block--art[data-horizon] { padding: 0; }
+
+/* ⚠️ These are the fills for shapes blocks.js draws, so they have to be CSS
+   properties on a class; a fill="" attribute cannot resolve var() and would
+   freeze the scene out of the 114-group rotation. */
+/* ── one sky, one body, and a time of day ────────────────────────────────
+   ⭐⭐ The four bands are gone. A banded sky is a swatch card standing behind a
+   mountain; what a sky gives a page is a TIME — the sun rises east, sets west,
+   the moon takes over, and the light changes with it. The two horizon blocks
+   are opposite halves of one day and trade places on every turn of the palette
+   clock, so the pair is always a day and a night.
+
+   ⚠️ Day and night are separate tokens on the same roles, not one palette dimmed.
+   A night sky is not a day sky at lower opacity: the ground goes deep and the
+   ink goes pale, which is the same inversion the deep and pale block fills
+   already make. Both sets keep their lightness clamped, so neither can drift
+   into the band where nothing is readable. */
+.hz-sky  { fill: var(--hz-sky); }
+
+/* ── the clouds cross; the range holds still ──────────────────────────────
+   ⭐⭐ This is the home page's own split, and it was measured there rather than
+   chosen: three drifting ridge planes ran at 21fps against 55 with the ridges
+   stopped and the clouds carrying the motion. A ridge spans the whole canvas,
+   so moving one invalidates everything composited above it; a cloud is small.
+   These skylines follow the same rule for the same reason.
+
+   ⚠️ Transform only. Nothing here animates a colour, a filter or a backdrop —
+   that is the performance red line, and the palette still changes by
+   hold-then-crossfade every fifteen seconds exactly as the range does.
+
+   ⚠️ The three periods do not divide into each other and each cloud carries its
+   own negative delay, so they never line up into one passing bar — the same
+   discipline as the drift bands under the mark fields. */
+.hz-cloud-b { fill: var(--hz-cloud); }
+.hz-cloud-c { fill: none; stroke: var(--hz-cloud-line); stroke-width: 2.4;
+  stroke-linecap: round; stroke-linejoin: round; }
+
+/* ⚠️⚠️ THE CLOUDS DO NOT MOVE. Three of them used to cross each block on coprime
+   periods, so the day and night pictures were the one part of these routes that
+   drifted the way the home page's range does.
+
+   Owner, looking at them: a disaster, make them still. And the measurement
+   agrees with the eye — these are transforms on <g> nodes inside an SVG, which
+   gets no compositor layer of its own, so each frame re-rasterises the whole
+   picture. Under 6x CPU throttle that showed up as a 62.8ms frame on a page
+   whose still version never exceeds 18.6ms.
+
+   The two blocks are still a day and a night, and they still trade places every
+   time the palette turns — that is a hold-then-change across turns, not motion
+   within a frame, which is the same discipline the range itself follows. */
+.hz-body { fill: var(--hz-orb); }
+.hz-halo { fill: var(--hz-glow); stroke: var(--hz-glow);
+  stroke-width: 20; stroke-linejoin: round; stroke-linecap: round; }
+.hz-star { fill: var(--hz-orb); opacity: .72; }
+
+/* ⭐ The land is layered flat colour too, not one ink at rising opacity. A
+   translucent range shows the sky THROUGH the mountains, so a hard band edge
+   draws a horizontal line across a ridge — which reads as a bug, not a place.
+   Five opaque tones, every one deeper than the deepest sky band, so the near
+   ridge always cuts hard against the light. A CSS rule outranks the presentation
+   attributes landscape() writes, so no !important is needed to take them over. */
+.hz-land { opacity: 1; }
+.hz-l1 { fill: var(--hz-l1); }
+.hz-l2 { fill: var(--hz-l2); }
+.hz-l3 { fill: var(--hz-l3); }
+.hz-l4 { fill: var(--hz-l4); }
+.hz-l5 { fill: var(--hz-l5); }
+
+@supports (color: oklch(from red l c h)) {
+  [data-horizon] {
+    /* ⚠️ The range keeps a single hue through all five layers. A mountain range
+       reads as depth precisely because it is one colour receding; giving each
+       ridge its own hue would turn a landscape into a chart. The sky takes the
+       OTHER hue, so the silhouette cuts against the light by colour as well as
+       by tone — which is the whole job of a horizon. */
+    /* ⚠️ Dropped from .84–.92. A cloud clamped to .95–.99 had only three to
+       seven hundredths of lightness between it and its own sky, so the clouds
+       were ghosts — visible in the DOM and not on the page. The sky gives way,
+       because the sky is the thing with nothing to say. */
+    --hz-sky: oklch(from var(--bw-hue-b, #E8DDD8) clamp(.78, l, .86) clamp(.04, c, .12) h);
+    --hz-orb: oklch(from var(--bw-hue-a, #C79A55) clamp(.62, l, .70) clamp(.09, c, .19) h);
+    /* the light around the body, pinned between it and its sky so it can never
+       vanish into either — the same two-band construction the mark rings use */
+    --hz-glow: oklch(from var(--bw-hue-a, #DCBB93) clamp(.74, l, .80) clamp(.06, c, .15) h);
+    /* a cloud is lighter than its sky by day and darker by night — it is lit
+       from the same body the block already draws, so it cannot read as a hole */
+    --hz-cloud: oklch(from var(--bw-hue-b, #F6F0EA) clamp(.95, l, .99) clamp(.005, c, .03) h);
+    --hz-cloud-line: oklch(from var(--bw-hue-b, #C9B7A6) clamp(.80, l, .86) clamp(.02, c, .07) h);
+    --hz-l1: oklch(from var(--bw-hue-a, #8A6A55) clamp(.50, l, .55) clamp(.04, c, .11) h);
+    --hz-l2: oklch(from var(--bw-hue-a, #755743) clamp(.43, l, .48) clamp(.04, c, .11) h);
+    --hz-l3: oklch(from var(--bw-hue-a, #5E4636) clamp(.36, l, .41) clamp(.03, c, .10) h);
+    --hz-l4: oklch(from var(--bw-hue-a, #48352A) clamp(.29, l, .34) clamp(.03, c, .09) h);
+    --hz-l5: oklch(from var(--bw-hue-a, #33251D) clamp(.22, l, .27) clamp(.02, c, .08) h);
+  }
+
+  /* ⚠️ Night inverts the roles rather than dimming them: the ground goes deep,
+     the body and the stars go pale, and the range sits between the two so it
+     still separates from its sky. Same two hues, opposite ends of each band. */
+  [data-horizon][data-phase="night"] {
+    --hz-sky: oklch(from var(--bw-hue-b, #1F2733) clamp(.20, l, .27) clamp(.03, c, .09) h);
+    --hz-orb: oklch(from var(--bw-hue-a, #E4DCC6) clamp(.86, l, .93) clamp(.04, c, .12) h);
+    /* ⚠️ ABOVE the range, not between range and sky. At .48–.56 the moon's
+       halo sat inside the ridge band (.24–.49) and the moon dissolved into the
+       mountain behind it. The body is the brightest thing at night, its light
+       the second — both clear of every ridge. */
+    --hz-glow: oklch(from var(--bw-hue-a, #9AA6BC) clamp(.62, l, .68) clamp(.03, c, .10) h);
+    --hz-cloud: oklch(from var(--bw-hue-b, #38414F) clamp(.33, l, .39) clamp(.02, c, .07) h);
+    --hz-cloud-line: oklch(from var(--bw-hue-b, #4E5869) clamp(.43, l, .49) clamp(.02, c, .08) h);
+    --hz-l1: oklch(from var(--bw-hue-a, #47505E) clamp(.44, l, .49) clamp(.03, c, .08) h);
+    --hz-l2: oklch(from var(--bw-hue-a, #3B4351) clamp(.39, l, .43) clamp(.03, c, .08) h);
+    --hz-l3: oklch(from var(--bw-hue-a, #2F3743) clamp(.34, l, .38) clamp(.02, c, .07) h);
+    --hz-l4: oklch(from var(--bw-hue-a, #242B36) clamp(.29, l, .33) clamp(.02, c, .07) h);
+    --hz-l5: oklch(from var(--bw-hue-a, #1A202A) clamp(.24, l, .28) clamp(.02, c, .06) h);
+  }
+}
 
 /* ── a fill is one flat colour ───────────────────────────────────────────
    ⚠️ There was a graded sky on every block here. It was the wrong reading of
