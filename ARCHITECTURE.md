@@ -376,6 +376,29 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 在 `chat-app.js` 写死的 `category:"general"` —— 用神恒为世爻,与所问何事无关(已修,见
 `tests/yongshen-assignment.mjs`)。以下是这轮查出来、尚未做的事。
 
+### A0 · 已做完:那一卦的四处错,四处都在序列化层
+
+⭐ **值得单独记一笔:四个缺陷没有一个在提示词里。** 提示词写着的规则都对,
+模型也照做了 —— 它照做的是**一份缺东西、且自相矛盾的盘**。
+所谓「重写提示词」在这四处上一个字都帮不上忙。
+
+| 症状 | 真正原因 | 修在哪 |
+|---|---|---|
+| 用神恒为世爻 | `category:"general"` 写死 → `CATEGORY_YONGSHEN` 恒为 `self` | `subjectKey()` 从问题取用神 |
+| 旺衰要靠地支名猜 | `distill()` 丢掉 `month/dayGenerates/Controls`(四处生克源头的头两处),六爻有四爻掉了时钟关系,第 5 爻 flags 是**空字符串** | 四个 `flags.push` + `tests/board-payload.mjs` |
+| 官鬼被当背景 | 头部宣布「父母 + 官鬼 BOTH are 用神」,数据里 `role:"Support"` —— **不是漏,是打架,而散文打不过数据** | 第二用神在每一爻上标出来 |
+| 「酉月」(实为申月)、「酉冲寅」(酉冲卯)、「两爻动」(实为三爻) | `monthElement:"Metal"` 只给元素不给地支(申/酉二选一);`najia:"Metal Rooster"` 不给字形,而冲合墓破全是字形关系;六爻挤在一条 1,800 字的字符串里没有行可数 | 月/日按干支发、纳甲带字形、动爻数直接写出来、一爻一行 |
+
+**共同形状:引擎算得出、序列化丢掉、模型只好推,而推错了没有任何东西会报。**
+这条比任何一处修复都重要 —— 下一次「解读不准」,先把 payload 按模型收到的样子打印出来读一遍,
+再去动提示词。
+
+⚠️ **提示词重复度量过了,没有可砍的**(2026-09-01)。916 条规则单位跨段两两比,
+Jaccard ≥ .42 的只有 7 对,其中 4 对是 `role_sortis ↔ role_stria` —— 二者互斥,同一份提示词里
+永远只出现一个,不占任何成本。真正重复的只有 3 处,每处一行。
+`flow` 和 `xiang_chain` 都**显式声明篇幅归 `output_sortis` 管**,那是让权不是重复。
+**结论:95k 字符是真内容,靠去重压不下来。** 要短只能砍内容,那是另一个决定。
+
 ### A · 只有 owner 能做(挡着后面全部)
 
 1. ⭐ **预览环境配 `OPENROUTER_API_KEY`**。D1 绑定与 `SESSION_SECRET` 已配好,
@@ -405,9 +428,12 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 7. **thinking 由 disabled 改成 adaptive + `output_config.effort: medium`。**
    `claude.js:209` 那段注释里的测量是真的(thinking 吃掉 9–11k 预算、截断、账单翻倍),
    但关掉是被劝阻的解法;推荐解法是保持 adaptive 而降 effort。要回路才能量。
-8. **`temperature` 在 Opus 5 上已移除**(原生 API 返回 400)。而「再起一卦」正发 `temperature≈1`
-   (`chat-app.js:1280` → `claude.js:225`),CLAUDE.md §6 也写着「temperature 拉满」。
-   **那个杠杆不存在了** —— 重摇的新鲜感实际只来自新的硬币投掷。代码和 §6 都要改。
+8. ✅ **`temperature` 在 Opus 5 上已移除**(原生 API 返回 400)—— **已做**。
+   `claude.js` 对 Fable 5 / Opus 5 / 4.8 / 4.7 / Sonnet 5 不再发送该参数,老模型仍透传;
+   CLAUDE.md §6 的「temperature 拉满」已改正。
+   ⚠️ 它经 OpenRouter **大概是被静默丢弃**,所以已经空转了一段时间没人发现 ——
+   「参数发出去了」和「参数起作用了」是两回事,这条对 9/10/11 同样适用。
+   重摇的新鲜感实际来自新的硬币投掷(盘是新的),不来自采样温度。
 9. **`output_config.effort`** 我们完全没用,默认 `high`。缓存之后的第一位成本杠杆。
 10. **Mid-conversation system messages**(Opus 5 支持,无 beta):追问把
     `{role:"system"}` 追加进 `messages[]`,而不是重发整份系统提示词(现在 85,453 字符)。
