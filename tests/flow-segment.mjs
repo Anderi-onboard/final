@@ -169,6 +169,24 @@ assert.ok(!flow.includes('这一段你等不起'),
   + 'reader moving early into a claim about an external deadline: same length, different '
   + 'assertion. Re-hang the predicate, do not move the cause.');
 
+/* ── two closers deploy_voice did not ban ──────────────────────────────────
+   Taken from the claudish-to-english spec (github.com/programasweights/claudish),
+   which is a checklist of exactly these habits. Five items on it; three were
+   already covered — contrastive framing (voice, flow, xiang_chain), restating in
+   new vocabulary (voice, verdict_first, deploy_voice), process narration
+   (voice ⑥). Two were not, and both showed up in a live reading: every section
+   closed on a quotable line, and several opened by announcing their own
+   importance.
+
+   They belong in deploy_voice rather than here: flow governs how a sentence is
+   arranged, and these are about what a passage does at its edges. */
+assert.match(PromptEngine.SEGMENTS.deploy_voice, /NO APHORISTIC CLOSERS/,
+  'the ban on closing lines whose job is to sound final is gone. One per section is the tell '
+  + 'that passages were assembled rather than argued');
+assert.match(PromptEngine.SEGMENTS.deploy_voice, /NO STAGED EMPHASIS/,
+  'the ban on announcing that what follows matters is gone — 「先说一句要紧的」 ranks your own '
+  + 'sentences for the reader, which is the process narration voice ⑥ already bars');
+
 // ── and it has to reach the reading ───────────────────────────────────────
 assert.ok(PromptEngine.SEGMENTS.voice, 'voice is gone — flow was meant to sit above it, not replace it');
 assert.ok(flow.length < PromptEngine.SEGMENTS.voice.length / 3,
