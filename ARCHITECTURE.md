@@ -370,6 +370,74 @@ claude/* 或 codex-*  ──PR──▶  main  ──自动部署──▶  生�
 
 ---
 
+## 5.5 · 解读管道待办(2026-09-01,一次会话累积)
+
+起因是一卦断错:「我明天考科目一能过吗」判「能过」,实际未过。查下来根因不在提示词,
+在 `chat-app.js` 写死的 `category:"general"` —— 用神恒为世爻,与所问何事无关(已修,见
+`tests/yongshen-assignment.mjs`)。以下是这轮查出来、尚未做的事。
+
+### A · 只有 owner 能做(挡着后面全部)
+
+1. ⭐ **预览环境配 `OPENROUTER_API_KEY`**。D1 绑定与 `SESSION_SECRET` 已配好,
+   `register` 返回 200,`/api/claude` 仍 503。
+   `npx wrangler pages secret put OPENROUTER_API_KEY --project-name bournewise --env preview`
+   **在此之前,所有提示词改动只在离线层面验证过** —— 没有任何东西能证明它们让解读变好。
+2. **吊销那个贴进对话的 Cloudflare API token**(`cfat_Wb1q…`)。
+3. **预览的 D1 目前指着生产库** `2f7b49f1-…`。任何分支的预览部署都能注册账号、花钱、写真实账本。
+   要隔开:`wrangler d1 create bournewise-preview` + `d1 execute --remote --file=./schema.sql`,
+   把新 id 给下一个会话改绑定。(这轮验证已往生产库写了若干 `cfg*@example.com` 测试账号。)
+4. **裁决:卦身与六神留不留。** 《增删卜易》主张整个剔除(只保留贵人/禄神/驿马/天喜四种星煞,
+   且必须附和用神旺相);我们现在是降权保留。删掉会明显改变解读质感。
+5. **PR #82 未合。** CI 全绿,无冲突。
+
+### B · Opus 5 专属,来自 `claude-api` 技能(2026-09-01 核对)
+
+⚠️ 我们走 OpenRouter 不是 Anthropic 原生 API,参数级差异可能被上游吸收;**模型行为层面照样成立**。
+
+6. ⭐ **`voice` 段里有一条 don't-reason 规则,删掉。** Opus 5 关掉 thinking 有两个故障模式
+   (工具调用写进可见正文、`<thinking>` 标签漏进回复),而官方明写
+   「delete any don't-think/don't-reason rule (it makes tag leakage worse)」。
+   我们同时做了这两件加剧泄漏的事。**这条现在就能做,零风险。**
+7. **thinking 由 disabled 改成 adaptive + `output_config.effort: medium`。**
+   `claude.js:209` 那段注释里的测量是真的(thinking 吃掉 9–11k 预算、截断、账单翻倍),
+   但关掉是被劝阻的解法;推荐解法是保持 adaptive 而降 effort。要回路才能量。
+8. **`temperature` 在 Opus 5 上已移除**(原生 API 返回 400)。而「再起一卦」正发 `temperature≈1`
+   (`chat-app.js:1280` → `claude.js:225`),CLAUDE.md §6 也写着「temperature 拉满」。
+   **那个杠杆不存在了** —— 重摇的新鲜感实际只来自新的硬币投掷。代码和 §6 都要改。
+9. **`output_config.effort`** 我们完全没用,默认 `high`。缓存之后的第一位成本杠杆。
+10. **Mid-conversation system messages**(Opus 5 支持,无 beta):追问把
+    `{role:"system"}` 追加进 `messages[]`,而不是重发整份系统提示词(现在 85,453 字符)。
+    保住缓存前缀,且是防注入的操作者通道。
+11. **Fast mode**(仅 Opus 5/4.8,$10/$50,输出 2.5×)。一卦现在要 79 秒。
+12. **上下文是 1M 不是 200k。** 31.7k 只占 3% —— 成本论点成立,"上下文压力"论点不成立。
+
+### C · 缓存(占首卦成本 56%、追问 73%)
+
+13. `prompt-engine.js:53` 声称「each segment is static → prompt caching applies」,
+    **全仓库没有一处 `cache_control`**。渲染顺序 `tools → system → messages`,最多 4 个断点,
+    最小可缓存前缀 512–4096 token(我们远超)。用 `usage.cache_read_input_tokens` 验证。
+14. **选 TTL 之前先量 D1 里的追问间隔分布。** 5 分钟档一次会话降 33%,
+    1 小时档在只追问一次时**净亏**。
+
+### D · 评估(所有后续路线的共同前置)
+
+15. ⭐ **卦例评估集。** `eval/cases.json` 只测路由分类,解读质量一个字不测。
+    《增删卜易》体例记结果,是天然的标注数据。打标规范 v2 在 scratchpad,
+    分工是:廉价模型只照抄,引擎补齐在场信号,**权重由「在场集 − 引用集 + 明确降权」算出来**,
+    不由模型总结(v1 让模型判断,产出是机械总结)。
+16. **噪声底线**:同一副盘同一版本跑两遍差多少。不知道这个数,任何前后对比都读不了。
+17. **判词方向核对**(Turpin 风险)。让模型写出用神指派,不保证判词由它决定 ——
+    CoT 会系统性误报真实推理。需要外部核对:判词极性 vs 用神状态,不一致就报。
+18. 有了 15/16 才谈得上 DSPy(它唯一的前置条件就是指标)。
+
+### E · 前端遗留
+
+19. `xrMaybe()` 三处:chip 取每个 facet 第一项读起来像随机词表;排序用类象库顺序而非路由顺序
+    (感情问题会冒出「竞品」);`{子水|子}` 这类循环标记仍在,`xiang-trace` 抓不到。
+20. `production` 镜像落后 main 很多。
+
+---
+
 ## 6 · 给下一个 agent 的四条
 
 1. **开工前先 `git fetch origin main` 看别人做了什么。** 这次两个 114 组色卡、
