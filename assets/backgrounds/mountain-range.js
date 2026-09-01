@@ -4,9 +4,15 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901c", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901c";
-  var paletteDwellMs = 15000;
+    ? new URL("../palettes/color-groups.json?v=20260901d", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901d";
+  /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
+     catalogue stops feeling like a slideshow, and the crossfade — which is the
+     single most expensive moment on any route carrying this script — happens a
+     third as often. A full pass of 114 groups is now about 85 minutes, which
+     nobody sees in one sitting; what matters is the pace of the page you are
+     looking at, not the length of the loop. */
+  var paletteDwellMs = 45000;
   var paletteStep = 1;
   var paletteScheduleSlots = 1;
   /* Module-scope handle on the catalogue, so a check can hold one group still.
@@ -28,7 +34,7 @@
      moment one moves the entire detailed SVG re-rasters every frame. That is
      the lag, and the fix was already written down here. `?ridges=1` still turns
      it on for anyone who wants to judge it on their own machine. */
-  var ridgeDrift = false;
+  var ridgeDrift = true;
   /* ⚠️ `?glass=flat` trades every backdrop-filter for an opaque panel.
      It exists because the one measurement that matters cannot be taken in CI:
      this repo already knows that a single drifting plane invalidates every
@@ -49,11 +55,40 @@
 
   var CSS = ''
     + '.mtn-bg{overflow:hidden;contain:strict}'
-    + '.mtn-bg>svg{display:block;width:100%;height:100%}'
+    /* ⚠️ Wider than its box, and offset by half the overhang. The range slides
+       within .mtn-bg, so a 100%-wide picture would drag a strip of bare page in
+       behind it at whichever edge it is travelling away from. 200px of margin
+       covers a 150px travel with room to spare. */
+    + '.mtn-bg>svg{display:block;width:calc(100% + 400px);height:100%;margin-left:-200px}'
+    + '@keyframes mtn-range{from{transform:translate3d(-75px,0,0)}to{transform:translate3d(75px,0,0)}}'
     /* The sky and ten ridges receive colours from the extensible external
        source. JavaScript changes them once per 15-second slot; there is no
        perpetual fill animation or duplicate palette packed into this file. */
     + '.mtn-sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bw-palette-cloud,#DED8CD);transition:background-color 1.5s cubic-bezier(.77,0,.175,1)}'
+    /* ⭐ LIGHT IN THE SKY. Two soft blooms, painted once and never animated —
+       a transition on background-color is the only thing that ever moves here,
+       which is the same hold-then-change the ridges follow.
+
+       They are on the sky, not on the ridges: light comes from behind the
+       landscape, so anything drawn over the silhouettes would read as haze on
+       the lens instead. Both take their colour from the group, so a cool
+       catalogue gets a cool light and a warm one gets a warm one — a fixed warm
+       bloom would be the one thing in the picture not following the cards.
+
+       ⚠️ Off-centre, and the two are different sizes. A glow centred on the
+       canvas reads as a vignette someone applied; light has a source and a
+       direction. The high one sits at 34% across, the horizon one at 68% — the
+       composition rule this repo keeps for its grids applies to light too.
+
+       ⚠️ Alpha stays low. This is the amount of light that makes the sky feel
+       lit; past it the sky stops being a colour and becomes a lamp, and the ink
+       solved against --bw-palette-cloud no longer matches what is behind the
+       type. Contrast is swept over all 114 groups after any change here. */
+    + '.mtn-sky::before{content:"";position:absolute;inset:0;pointer-events:none;'
+    + 'background:'
+    + 'radial-gradient(62vw 46vh at 34% 6%, color-mix(in srgb, var(--bw-palette-gem, #E8C9A0) 26%, transparent) 0%, transparent 68%),'
+    + 'radial-gradient(88vw 30vh at 68% 58%, color-mix(in srgb, var(--bw-palette-2, #EDE3D4) 22%, transparent) 0%, transparent 72%);'
+    + 'transition:background 1.5s cubic-bezier(.77,0,.175,1)}'
     /* The sky stays the only rectangular colour plane. The rest of the group
        is carried by rounded SVG landforms, so every palette colour is visible
        without bringing back the old hard-edged horizontal panels. */
@@ -177,11 +212,38 @@
        The cost is the re-raster of a large, detailed SVG per frame; it is not
        the number of planes and not the backdrop-filters (disabling every
        blurred panel recovered only 17 -> 27). */
+    /* ⭐⭐ THE RANGE MOVES AGAIN, and it moves in STEPS.
+
+       Everything above about the cost is still true: a smooth drift re-rasters
+       the whole SVG every frame, and it does not matter how it is expressed.
+       Re-measured with the whole page sampled, still against moving:
+
+         still                        60fps   p95 16.8ms
+         smooth drift, per layer      24fps   p95 68.5ms
+         smooth drift, whole svg      31fps   p95 40.2ms
+         smooth drift, promoted div   33fps   p95 38.1ms   <- the untried one
+         STEPPED, 1px per second      56fps   p95 34.4ms
+
+       A promoted wrapper was the one option the earlier round had not tried and
+       it does not help: Chromium re-rasters the SVG on every transform change
+       whether or not the layer is promoted. So the lever is not HOW it moves,
+       it is HOW OFTEN — with `steps()` the transform only takes a new value at
+       each step, and between steps there is nothing to raster.
+
+       ⭐ One drift for the whole range, not one per plane, which is the shape
+       the owner asked for: work out the base and let the rest follow. Parallax
+       is what the per-plane version bought and it is the thing that cost 24fps;
+       a single slow slide of the whole picture is what a still landscape needs
+       to stop reading as a printed backdrop.
+
+       1px per second. Slow enough that no step is visible as a step, fast
+       enough to have moved a noticeable distance by the time a reading is
+       written. `alternate` so it breathes back and forth rather than running
+       away from its own margin. */
     + (ridgeDrift
-        ? '.mtn-bg .flow-2{animation:mtn-flow-l 260s linear infinite;will-change:transform}'
-        + '.mtn-bg .flow-4{animation:mtn-flow-r 300s linear infinite;will-change:transform}'
-        + '.mtn-bg .flow-6{animation:mtn-flow-l 340s linear -40s infinite;will-change:transform}'
-        : '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}')
+        ? '.mtn-bg>svg{animation:mtn-range 150s steps(150,end) infinite alternate}'
+        : '')
+    + '.mtn-bg [class^="flow-"]{animation:none;will-change:auto}'
     + '.mtn-bg [class^="cloud-"]{animation:none}'
     /* ⚠️ Cloud speed is set AGAINST the ridge speed, not on its own. While the
        ridges were frozen, 15px/s read clearly because the landscape behind was

@@ -149,7 +149,19 @@ const stagger = Number((background.match(/queuePaletteLayer\(\(index \+ 1\) \* (
 assert.ok(Number.isFinite(stagger) && stagger > 0 && stagger <= 200,
   `ridge colours must cascade, and the cascade must fit inside the transition:`
   + ` expected a stagger in (0, 200]ms, got ${stagger}`);
-assert.match(background, /paletteDwellMs = 15000/, "groups must dwell for 15 seconds");
+/* ⚠️ A RANGE, not the number. This asserted `= 15000` exactly, so raising the
+   dwell — which the owner asked for, and which makes the expensive moment three
+   times rarer — failed the suite and taught the next person to edit the test
+   rather than read it. The same fix the motif-count assertion already got.
+
+   What actually has to hold: a group is held long enough that the 1.5s
+   crossfade is a small part of what you see (so the page is a landscape, not a
+   slideshow), and short enough that a visit shows more than one card. */
+const dwell = Number((background.match(/paletteDwellMs = (\d+)/) || [])[1]);
+assert.ok(Number.isFinite(dwell) && dwell >= 10000 && dwell <= 120000,
+  `a group must be held for between 10s and 2min, got ${dwell}ms`);
+assert.ok(dwell >= 10 * 1500,
+  `the 1.5s crossfade must be a small part of the dwell, got ${dwell}ms`);
 
 for (let index = 1; index <= 10; index += 1) {
   assert.ok(background.includes(`--bw-palette-${index}`), `missing ridge token ${index}`);
