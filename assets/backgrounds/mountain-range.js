@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901h", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901h";
+    ? new URL("../palettes/color-groups.json?v=20260901i", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901i";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a
@@ -531,7 +531,22 @@
 
     return '<svg viewBox="0 0 ' + vbw + ' 600" preserveAspectRatio="' + par + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rounded contour landscape">'
       + '<title>Moving contour landscape and clouds</title>' + defs
-      + '<g class="mtn-ridges">' + ridges + '</g>' + clouds + '</svg>';
+      /* ⭐ The range is scaled to 70% about the FOOT of the canvas, and that is
+         all this transform does. The ridges were reaching so far up the sky
+         that the clouds had nowhere left to be — the picture had become a wall
+         of hills with a strip of weather above it.
+
+         About the foot, so the horizon stays welded to the bottom edge and only
+         the peaks come down; scaling about the middle would lift the whole
+         range off the floor and leave a seam. Uniform, so the hills keep their
+         proportions — a range squashed vertically reads as a range seen from
+         somewhere else, not as a smaller one.
+
+         ⚠️ The CLOUDS are outside this group on purpose. They are not 30%
+         smaller; there is simply more sky for them to be seen in, which is what
+         was actually asked for. */
+      + '<g class="mtn-ridges" transform="translate(700 600) scale(.7) translate(-700 -600)">'
+      + ridges + '</g>' + clouds + '</svg>';
   }
 
   function srgbChannel(v) {
