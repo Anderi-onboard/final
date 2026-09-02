@@ -97,6 +97,8 @@ body[data-page="guide"] { margin: 0; }
      with no composition left to serve at one column; the skyline is a picture,
      and on a phone the pictures are what stop the page being a column of
      coloured slabs — the same call the About route already makes. */
+  /* ⚠️ [data-canopy] is not in this list either, for the same reason as
+     [data-horizon]: it is a picture, not a pattern. */
   .mt-card:is([data-pattern], [data-land]) { display: none; }
 }
 
@@ -111,8 +113,8 @@ body[data-page="guide"] { margin: 0; }
   min-width: 0;
 }
 /* Fields go edge to edge. A pattern with an inset is a picture of a pattern. */
-.mt-card:is([data-pattern], [data-land], [data-horizon]) { padding: 0; color: var(--bk-cream); }
-.mt-card:is([data-pattern], [data-land], [data-horizon]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mt-card:is([data-pattern], [data-land], [data-horizon], [data-canopy]) { padding: 0; color: var(--bk-cream); }
+.mt-card:is([data-pattern], [data-land], [data-horizon], [data-canopy]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* ── the two type sizes, and nothing between them ─────────────────────────
    The reference sets a display and a functional label and simply omits the
