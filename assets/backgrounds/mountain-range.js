@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901j", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901j";
+    ? new URL("../palettes/color-groups.json?v=20260901k", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901k";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a
@@ -453,19 +453,27 @@
     6: { n: 12, gap: 5.2, tilt: .34 },
     7: { n: 9, gap: 6.0, tilt: .22 }
   };
-  /* ⚠️ Every cloud sits lower than it did — the whole band drops by about 60
-     units. With the range shortened there is open sky in the middle of the
-     canvas and the clouds were all pressed against the top of it, which reads
-     as a strip of weather stuck to the ceiling rather than as sky. They stay
-     spread across their own band rather than being moved to one line: a row of
-     clouds at one height is a border. */
+  /* ⚠️ Every cloud sits lower than it did — the band has come down twice now,
+     about 60 units and then about 44 more. With the range shortened there is
+     open sky in the middle of the canvas and the clouds were all pressed
+     against the top of it, which reads as a strip of weather stuck to the
+     ceiling rather than as sky. They stay spread across their own band rather
+     than being moved to one line: a row of clouds at one height is a border.
+
+     ⭐ Where the floor is: the far ridge tops out at y≈158 of the 600-unit
+     canvas, so the band now straddles that line rather than sitting entirely
+     above it. That is the point — clouds passing IN FRONT of the furthest
+     ridges is what puts them in the same picture as the range. Clouds paint
+     after the ridge group, so the overlap is a front-to-back relationship and
+     not a collision. The nearer ridges (l4 and down, from y≈278) stay clear;
+     a cloud in front of the FOREGROUND would be the one that reads wrong. */
   var CLOUDS = [
-    { t: "translate(180,74) scale(1.6)", o: .55, d: "0s" },
-    { t: "translate(470,116) scale(1.0)", o: .78, d: "-2.8s" },
-    { t: "translate(720,88) scale(1.25)", o: .88, d: "-5.4s" },
-    { t: "translate(330,150) scale(0.8)", o: .70, d: "-1.6s" },
-    { t: "translate(620,172) scale(0.92)", o: .66, d: "-4.0s" },
-    { t: "translate(860,132) scale(0.7)", o: .82, d: "-6.8s" }
+    { t: "translate(180,118) scale(1.6)", o: .55, d: "0s" },
+    { t: "translate(470,160) scale(1.0)", o: .78, d: "-2.8s" },
+    { t: "translate(720,132) scale(1.25)", o: .88, d: "-5.4s" },
+    { t: "translate(330,194) scale(0.8)", o: .70, d: "-1.6s" },
+    { t: "translate(620,216) scale(0.92)", o: .66, d: "-4.0s" },
+    { t: "translate(860,176) scale(0.7)", o: .82, d: "-6.8s" }
   ];
 
   function build(opts) {
