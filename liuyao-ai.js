@@ -180,7 +180,11 @@
 
   /* ═══════════ 3. AI prompt assembly ═══════════
      compact, de-noised board the model actually needs to read. */
-  function distill(board, roles, secondKey){
+  /* 收的是整个 subject,不是 secondKey。裁决梯要的是 subject 本身,而只传
+     一个 key 进来、再在函数里引用一个不存在的 `subject`,会被下面的 try/catch
+     吞成一条静默的 error 字段 —— 静默降级正是这一轮一直在拆的那个形状。 */
+  function distill(board, roles, subject){
+    var secondKey = subject && subject.second;
     var perLine = (roles && roles.perLine) || {};
     /* ── THE SECOND 用神 HAS TO BE MARKED IN THE DATA, NOT ONLY ANNOUNCED ──
        Some 事类 take two. 增删卜易 on 功名: 官鬼 is the placement, 父母 is the
@@ -451,6 +455,20 @@
       worldElement: board.lines[board.ben.worldLi].element.en,
       yongshen: yongStr,
       hidden: hiddenStr,
+      /* ── 断卦裁决梯,算好了送过去 ──────────────────────────────────────
+         《增删卜易》那五步是一套带优先级的判定序,而它每一步的输入引擎都
+         已经算出来了。让模型每一卦重推一遍,只会在某一卦上漏掉其中一条 ——
+         断错的那副盘就是这样:第 2 爻父母亥水化巳火,水绝于巳,是「化绝」,
+         §3 写死的大凶败局;解读提到了这个变爻,把它读成仇神关系,漏了。
+         现在它是盘上的一条事实,不是模型的一次推导。
+         ⚠️ 前三步是否决项,第四步只给计数、第五步只给应期候选 —— 称重和
+         措辞仍然归模型,这个字段不许被读成"结论已经替你下好了"。 */
+      verdict: (function(){
+        var V = (typeof window!=="undefined" && window.BWVerdict) || null;
+        if (!V) return null;          // 没加载就没有,不静默降级成一个假结论
+        try { return V.judge(board, roles, subject || null); }
+        catch(e){ return { error: "裁决梯未能运行:" + (e && e.message) }; }
+      })(),
       lines: L
     };
   }
@@ -577,7 +595,7 @@
          Still valid JSON — only whitespace changes, and the payload's own
          `moving` field now states the count outright, so this is the second of
          two independent fixes for one error. */
-      stringifyBoard(distill(board, roles, subject && subject.second)),
+      stringifyBoard(distill(board, roles, subject)),
       "",
       timingReference(board),
       "",
