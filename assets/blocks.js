@@ -940,6 +940,117 @@
     });
   }
 
+  /* ── the single mass ─────────────────────────────────────────────────
+     The other study from the same three references (tools/mark-fields.html).
+     Two things only: one irregular mass cropped by three edges, and a flat sky.
+     All the information is on the contour, and the contour's language is
+     repeated one size down INSIDE — as the dabs themselves, not as a second
+     layer drawn over them.
+
+     It shares the canopy's colour roles on purpose; see the note in blocks.css. */
+  function masses() {
+    [].slice.call(document.querySelectorAll("[data-mass]")).forEach(function (host) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 80 || h < 80) return;
+      var name = host.getAttribute("data-mass") || "leaf";
+      var d = M.phenomena[name] && M.phenomena[name]();
+      if (!d) return;
+      var slot = host.querySelector(":scope > .bk-mass");
+      if (!slot) {
+        slot = document.createElement("div");
+        slot.className = "bk-art bk-mass";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+
+      var out = '<rect class="cp-sky" width="' + w + '" height="' + h + '"/>';
+      /* one small soft form in the empty half, off-centre and low in contrast —
+         without it that half is dead, and the reference puts exactly one thing
+         there */
+      var hz = M.phenomena.haze && M.phenomena.haze();
+      if (hz) {
+        var hzS = (Math.min(w, h) * 0.19) / (motifRadius("haze") * 2);
+        out += '<g opacity=".8" transform="translate(' + (w * 0.13).toFixed(1) + ' '
+          + (h * 0.38).toFixed(1) + ') scale(' + hzS.toFixed(4) + ')">'
+          + '<path class="cp-1" d="' + hz + '" stroke-width="'
+          + (motifRadius("haze") * 2 * 0.10).toFixed(2) + '"/></g>';
+      }
+
+      /* The silhouette: lobes on a radius, sampled and closed. Cropped top,
+         right and bottom, so what is on the page is a FRAGMENT — the picture is
+         of part of a tree, which is why it reads as being close. */
+      var cx = w * 0.78, cy = h * 0.50, R = Math.max(w, h) * 0.46, pts = [], i;
+      for (i = 0; i <= 200; i++) {
+        var a = (i / 200) * Math.PI * 2;
+        var rr = R * (1 + 0.085 * Math.cos(a * 6 + 0.6) + 0.055 * Math.cos(a * 11 - 1.2)
+                        + 0.035 * Math.cos(a * 17 + 2.4) + 0.10 * Math.cos(a * 3 + 0.2));
+        pts.push([cx + Math.cos(a) * rr * 1.02, cy + Math.sin(a) * rr * 1.15]);
+      }
+      var outline = "M" + pts.map(function (q) { return q[0].toFixed(1) + " " + q[1].toFixed(1); }).join("L") + "Z";
+      var cid = "bkmass" + Math.round(w) + "x" + Math.round(h);
+      out += '<clipPath id="' + cid + '"><path d="' + outline + '"/></clipPath>';
+      out += '<g clip-path="url(#' + cid + ')">';
+      /* ⚠️ The ground under the dabs is the DARKEST value, and the dabs use the
+         five above it. With the ground at cp-5 the rim dabs came out cp-6 —
+         one step apart — so the outer third of the mass had texture in the DOM
+         and none on the page: a flat dark crescent inside its own silhouette.
+         Every dab has to be lighter than what it sits on, or the shading has
+         nothing to shade. */
+      out += '<path class="cp-6" d="' + outline + '"/>';
+
+      /* ⭐ The dark is organised into CLUMPS, each lit on top and dark
+         underneath. Two wave fields were tried in the study and both failed in a
+         way worth keeping: diagonal sines shaded the mass in stripes running
+         across the lobes (camouflage), and the silhouette's own harmonics plus a
+         radial ripple gave concentric rings (a tiger). What the reference has is
+         a handful of rounded masses, so that is what this is — written out, no
+         two the same size, the same reason this route writes its tracks out
+         instead of looping them.
+         ⚠️ And the dabs do NOT radiate. Turning each one to face away from the
+         centre produced a rosette, which reads instantly as generated; the
+         reference's dabs all lean roughly one way. */
+      var CL = [[.62,.32,.19],[.80,.24,.15],[.92,.38,.17],[.71,.51,.21],
+                [.90,.60,.16],[.63,.67,.18],[.81,.77,.20],[.96,.82,.14]];
+      var step = Math.max(11, Math.min(26, Math.min(w, h) / 17));
+      var dab = step * 1.35;
+      var dScale = dab / (motifRadius(name) * 2);
+      var dGrow = (motifRadius(name) * 2 * 0.14).toFixed(2);
+      var k = 0, rowN = 0;
+      for (var yy = cy - R * 1.4; yy < cy + R * 1.4; yy += step, rowN++) {
+        for (var xx = cx - R * 1.3; xx < cx + R * 1.3; xx += step) {
+          var px = xx + (rowN % 2) * (step * 0.5) + (k % 3) * (step * 0.11);
+          var py = yy + (k % 5) * (step * 0.09);
+          var ndx = (px - cx) / R, ndy = (py - cy) / (R * 1.15);
+          var dist = Math.sqrt(ndx * ndx + ndy * ndy);
+          /* ⚠️ 1.4, not 1.24. The cull is measured against R while the lobed
+             outline reaches about 1.27R, so a tighter number leaves the rim of
+             the mass as bare fill — a flat dark crescent inside its own
+             silhouette, which reads as an unfinished paint job rather than as
+             shadow. The clip path is what decides the edge; this only has to be
+             generous enough to reach it. */
+          if (dist > 1.4) { k++; continue; }
+          var lit = 0;
+          for (var ci = 0; ci < CL.length; ci++) {
+            var q = CL[ci], qx = q[0] * w, qy = q[1] * h, qr = q[2] * Math.max(w, h);
+            var dq = Math.sqrt(Math.pow((px - qx) / qr, 2) + Math.pow((py - qy) / (qr * 0.86), 2));
+            if (dq < 1) lit = Math.max(lit, 1 - dq * 0.55 - (py - qy) / qr * 0.30);
+          }
+          lit = Math.max(0, Math.min(1, lit));
+          /* light from the upper left, as in the reference */
+          var side = (-ndx - ndy) * 0.5;
+          var band = Math.max(1, Math.min(5, Math.round(5 - lit * 3.4 - side * 0.8 + dist * 0.6)));
+          var ang = -11 + ((k % 7) - 3) * 8 + (dist > 0.84 ? (Math.atan2(ndy, ndx) * 180 / Math.PI + 90) * 0.20 : 0);
+          out += '<g transform="translate(' + px.toFixed(1) + ' ' + py.toFixed(1)
+            + ') rotate(' + ang.toFixed(1) + ') scale(' + dScale.toFixed(4) + ')">'
+            + '<path class="cp-crown cp-' + band + '" d="' + d + '" stroke-width="' + dGrow + '"/></g>';
+          k++;
+        }
+      }
+      out += '</g>';
+      slot.innerHTML = M.svg(out, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
   function colonies() {
     /* ⚠️ Not the ones that are horizons. The call-to-action's picture carries
        both .ab-colony (for its grid area) and data-horizon (for what it draws),
@@ -1149,7 +1260,7 @@
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  function afterLayout() { backdrops(); colonies(); horizons(); canopies(); spills(); groves(); scenes(); }
+  function afterLayout() { backdrops(); colonies(); horizons(); canopies(); masses(); spills(); groves(); scenes(); }
   if (document.readyState === "complete") afterLayout();
   else addEventListener("load", afterLayout);
 }());

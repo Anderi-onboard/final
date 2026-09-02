@@ -86,6 +86,95 @@ const CORS = corsFor(null);
 // can be billed to anyone.
 const API_DISABLED = false;
 
+// ── OFFLINE MODE ─────────────────────────────────────────────────────────
+// The owner asked for the API to be taken down and for every trigger to return
+// one standard answer that exercises every element the reading UI can render.
+// This is that: no OpenRouter call is made, nothing is spent, and nothing is
+// billed.
+//
+// DEFAULT IS OFFLINE. It is turned back on with an environment variable —
+// LIVE_MODEL=on in the Pages settings — rather than a code change, so spend
+// resumes deliberately and without a deploy. That direction is the safe one: a
+// missing variable costs nothing, whereas defaulting to live and forgetting to
+// set it is a bill.
+//
+// ⚠️ NOT the same switch as API_DISABLED above. That one 503s and the reader
+// sees an error; this one answers, so the whole front end can be walked through
+// — casting, streaming, marks, follow-ups, copy — with the meter at zero.
+//
+// ⚠️ THREE THINGS THIS MUST NOT DO, and each is load-bearing:
+//   1. It must not charge. A canned reply is not a reading, and billing units
+//      for one is the settlement outcome this file already says cannot be
+//      defended. The billing gate is skipped outright — no charge, no free
+//      reading consumed, nothing to refund later.
+//   2. It must not swallow the crisis hard-stop. That gate is code, not the
+//      model (CRISIS_PATTERNS in the engine), so it still runs and still
+//      returns resources instead of a reading.
+//   3. It must not pretend to be a real reading. The fixture says what it is in
+//      its first line. Handing someone a fabricated divination presented as
+//      genuine is not a demo, and the line is one string to delete if this is
+//      ever wanted for a silent walkthrough.
+function offlineMode(env) {
+  return String((env && env.LIVE_MODEL) || '').toLowerCase() !== 'on';
+}
+
+// The standard answer. Every construct the reading renderer understands appears
+// here at least once, because the point of it is to light up the page:
+//   #  → .rd-title      ##  → .rd-h2        ### → .rd-h3
+//   -  → .rd-list       --- → .rd-hr        text → .rd-para
+//   **bold** → <strong>   *italic* → <em>   |gild| → .gild / .gild.alt
+//   {word|符号} → the 象 buttons, and with all five relatives present the
+//   closing 串联 chain and the unspent-branch panel both render too.
+// The app adds the footnote, the follow-up panel and the actions on its own.
+const DEMO_READING = [
+  '# The reading engine is offline',
+  '',
+  'This is a **sample reading**, served without a model call, so nothing has been',
+  'charged and no units have moved. Everything below is here to show what a finished',
+  'reading looks like on the page.',
+  '',
+  '## What the figure is doing',
+  '',
+  'The line that carries this question is the one you would expect: what you are',
+  'asking about sits with {the work itself|妻财}, and the thing pressing on it is',
+  '{the approval step|官鬼} rather than anything you have or have not done. That',
+  'distinction is the whole answer, and it is worth being *specific* about — you',
+  'are not short of ability, you are waiting on a gate.',
+  '',
+  '### What holds it up',
+  '',
+  '{The people around it|兄弟} take a share before you see any of it, which is why',
+  'the return feels thinner than the effort. Meanwhile the ground you stand on —',
+  '{what you were taught to do|父母} — is steady and will not move on its own. It is',
+  'the floor, not the thing that changes.',
+  '',
+  '- The timing is set by **the approval**, not by your pace.',
+  '- The share taken by others is fixed for now — plan around it rather than against it.',
+  '- {What you make of it|子孙} is the part that answers to you, and it is the part to spend on.',
+  '',
+  'So the shape of it is |one gate to clear| and |one thing worth building| while you wait.',
+  '',
+  '---',
+  '',
+  '## What to go and check',
+  '',
+  'Find out who signs, and by when. That is a fact you can obtain this week, and it turns',
+  'the whole question from a guess into a date. If the answer is that nobody has been asked',
+  'yet, then the delay is not the gate — it is the asking, and that is yours to move.'
+].join('\n');
+
+// The follow-up utility returns `Label | question` lines; the panel keeps its
+// static set if this fails, so the shape matters more than the wording.
+const DEMO_FOLLOWUP = [
+  'Gate | Who actually signs this off, and by when?',
+  'Share | What is being taken before it reaches me, and is that fixed?',
+  'Floor | What here is steady enough to plan on?',
+  'Build | What is worth making while the approval is pending?',
+  'Signal | What would tell me the gate has opened?',
+  'Move | What is the smallest responsible next step this week?'
+].join('\n');
+
+
 // Canonical model ids the proxy is willing to call — OpenRouter slugs
 // (vendor-prefixed). Old Anthropic-native ids are kept as aliases so any
 // caller still sending them resolves to the right OpenRouter model.
@@ -141,8 +230,11 @@ export async function onRequestPost(context) {
   let chargeTo = null;  // { userId, reason } — who to bill once the reading is written
   let freeClaim = null; // { userId, reason } — a signup entitlement already spent
                         // on this request, to be returned if nothing is delivered
+  const offline = offlineMode(env);
   try {
-    if (!env.OPENROUTER_API_KEY) {
+    // ⚠️ Only the live path needs a key. Requiring one offline would 503 exactly
+    // the deployment that has deliberately removed it.
+    if (!offline && !env.OPENROUTER_API_KEY) {
       return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
     }
     const body = await request.json().catch(() => ({}));
@@ -158,7 +250,11 @@ export async function onRequestPost(context) {
     let unitsRemaining = null;
     const db = env.DB;
 
-    if (db) {
+    // ⚠️ Offline spends nothing, so it bills nothing: the gate is skipped whole
+    // rather than run and then refunded. A charge that is taken and given back
+    // still shows in the ledger, and a ledger entry for a reading that was never
+    // generated is worse than no entry at all.
+    if (db && !offline) {
       const gate = await guardRequest({ request, env, db, product, mode });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.charge) chargeTo = gate.charge;
@@ -180,7 +276,11 @@ export async function onRequestPost(context) {
     }
     let built;
     try {
-      built = await buildSystem({ body, env, product, mode, messages });
+      // ⚠️ Offline passes no completion function. routeQuestion answers
+      // "general" when it has none, which keeps the whole assembly local — the
+      // router is the one place a reading would otherwise reach the network
+      // before the fixture could be returned.
+      built = await buildSystem({ body, env, product, mode, messages, offline });
     } catch (e) {
       console.error('prompt assembly failed', e);
       return json({ error: 'prompt assembly failed' }, 500);
@@ -192,6 +292,32 @@ export async function onRequestPost(context) {
     if (built.route === 'crisis') {
       chargeTo = null;
       return json({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }, 200);
+    }
+
+    /* ── the offline answer ───────────────────────────────────────────────
+       Placed AFTER the crisis gate on purpose. Crisis is decided in code and
+       returns resources rather than a reading; handing that person a sample
+       reading because the model happens to be switched off would be the worst
+       failure this file can have. Everything above still ran — the client
+       cannot supply its own system prompt here either. */
+    if (offline) {
+      const role = String(body.role || '').toLowerCase();
+      if (role === 'followup' || role === 'followup_suggest') {
+        return json({ text: DEMO_FOLLOWUP, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'intent') {
+        // FOLLOWUP keeps an existing casting; the demo never needs a fresh board
+        // to show the follow-up path working.
+        return json({ text: 'FOLLOWUP', model: 'offline', offline: true }, 200);
+      }
+      if (role === 'router') {
+        return json({ text: 'general', model: 'offline', offline: true }, 200);
+      }
+      if (role === 'qc') {
+        return json({ text: 'PASS', model: 'offline', offline: true }, 200);
+      }
+      if (body.stream === true) return demoStream(DEMO_READING, unitsRemaining);
+      return json({ text: DEMO_READING, model: 'offline', offline: true }, 200);
     }
     const systemPrompt = built.system;
     // A role that builds its own user turn replaces the client's placeholder.
@@ -434,6 +560,54 @@ async function pumpAndSettle(o) {
   try { await writer.close(); } catch (e) {}
 }
 
+/* The offline stream. Same wire format as the live pump — `content_block_delta`
+   records terminated by a `bw_meta` event — because the client should not be
+   able to tell the difference at the transport layer; that is what makes this a
+   test of the real path rather than of a second one written for the demo.
+
+   ⚠️ It is paced. Delivering the whole fixture in one record technically works
+   and tests nothing: the typewriter, the streaming preview, the auto-scroll and
+   the settle animation all only exist while text is arriving. The delay is a
+   few milliseconds a chunk, enough to be a stream and short enough that nobody
+   waits the ninety seconds a real reading takes.
+
+   ⚠️ charged: 0 and no unitsRemaining unless the caller already had one. The
+   meta event is what the client reconciles its balance from, so an invented
+   number here would show a reader a balance that never moved as though it had. */
+async function demoStream(text, unitsRemaining) {
+  const { readable, writable } = new TransformStream();
+  const writer = writable.getWriter();
+  const encoder = new TextEncoder();
+  (async () => {
+    try {
+      const words = String(text).split(/(\s+)/);
+      let buf = '';
+      for (let i = 0; i < words.length; i++) {
+        buf += words[i];
+        if (buf.length < 18 && i < words.length - 1) continue;
+        await writer.write(encoder.encode('data: ' + JSON.stringify({
+          type: 'content_block_delta', delta: { type: 'text_delta', text: buf }
+        }) + '\n\n'));
+        buf = '';
+        await new Promise((r) => setTimeout(r, 12));
+      }
+      if (buf) {
+        await writer.write(encoder.encode('data: ' + JSON.stringify({
+          type: 'content_block_delta', delta: { type: 'text_delta', text: buf }
+        }) + '\n\n'));
+      }
+      const meta = { model: 'offline', charged: 0, offline: true };
+      if (unitsRemaining != null) meta.unitsRemaining = unitsRemaining;
+      await writer.write(encoder.encode('event: bw_meta\ndata: ' + JSON.stringify(meta) + '\n\n'));
+    } catch (e) { /* client went away: nothing was spent, nothing to settle */ }
+    try { await writer.close(); } catch (e) {}
+  })();
+  return new Response(readable, {
+    status: 200,
+    headers: { ...CORS, 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
+  });
+}
+
 // Bill the reading for exactly what it used. There is no cap to clip against
 // and no hold to settle — `owed` is the charge. It may take the balance below
 // zero; see chargeUnits() for why that is the correct outcome rather than a
@@ -457,7 +631,7 @@ async function chargeUsage(db, chargeTo, model, usage, fallback) {
 //                                     this itself during `reading`, so a client
 //                                     asking for it directly gets the same
 //                                     server-built prompt and nothing more
-async function buildSystem({ body, env, product, mode, messages }) {
+async function buildSystem({ body, env, product, mode, messages, offline }) {
   const role = String(body.role || '').toLowerCase();
   const str = (v, max) => String(v == null ? '' : v).slice(0, max);
 
@@ -510,7 +684,10 @@ async function buildSystem({ body, env, product, mode, messages }) {
   // posts messages still gets correctly routed.
   const lastUser = [...messages].reverse().find((m) => m && m.role === 'user');
   const question = str(body.question || (lastUser && lastUser.content) || '', 4000);
-  return PromptEngine.buildSystemPrompt(question, product, utility, { mode });
+  // ⚠️ Offline hands routeQuestion nothing rather than a stub that fetches: it
+  // answers "general" when it has no completion function, so the assembly stays
+  // entirely local and the fixture is reached without a single outbound call.
+  return PromptEngine.buildSystemPrompt(question, product, offline ? null : utility, { mode });
 }
 
 // Returned verbatim when the gate trips. Kept here rather than in the engine so
@@ -617,6 +794,7 @@ export async function onRequestGet({ env }) {
     ok: true,
     service: 'bournewise-claude-proxy',
     keyConfigured: !!env.OPENROUTER_API_KEY,
+    offline: offlineMode(env),
     billingEnforced: !!env.DB,
     models: {
       stria: env.STRIA_MODEL || 'anthropic/claude-opus-5',
