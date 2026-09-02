@@ -118,20 +118,30 @@ function offlineMode(env) {
   return String((env && env.LIVE_MODEL) || '').toLowerCase() !== 'on';
 }
 
-// The standard answer. Every construct the reading renderer understands appears
-// here at least once, because the point of it is to light up the page:
+// The standard answer. Two of them: the reading follows the language of the
+// question, exactly as a real one does, so both typefaces can be seen.
+//
+// ⚠️ It reads as an ordinary reading. An earlier version opened by announcing
+// that the engine was offline; the owner asked for the preset to preview the
+// real thing instead (2026-09-02), so the notice is gone from the PROSE. The
+// machine-readable marker stays and is the honest signal: `offline: true` on
+// the status endpoint, on every JSON reply, and in the bw_meta event that ends
+// the stream. Anyone reading the wire can tell; the page shows the design.
+//
+// Every construct the reading renderer understands appears at least once,
+// because the point of it is to light up the page:
 //   #  → .rd-title      ##  → .rd-h2        ### → .rd-h3
 //   -  → .rd-list       --- → .rd-hr        text → .rd-para
 //   **bold** → <strong>   *italic* → <em>   |gild| → .gild / .gild.alt
 //   {word|符号} → the 象 buttons, and with all five relatives present the
 //   closing 串联 chain and the unspent-branch panel both render too.
 // The app adds the footnote, the follow-up panel and the actions on its own.
-const DEMO_READING = [
-  '# The reading engine is offline',
+const DEMO_READING_EN = [
+  '# One gate, and the work behind it',
   '',
-  'This is a **sample reading**, served without a model call, so nothing has been',
-  'charged and no units have moved. Everything below is here to show what a finished',
-  'reading looks like on the page.',
+  'The short answer is **wait, but not idly**. What you are asking about is ready;',
+  'what it is waiting on is not yours to hurry, and the weeks in between are worth',
+  'more than they look.',
   '',
   '## What the figure is doing',
   '',
@@ -158,9 +168,49 @@ const DEMO_READING = [
   '',
   '## What to go and check',
   '',
-  'Find out who signs, and by when. That is a fact you can obtain this week, and it turns',
-  'the whole question from a guess into a date. If the answer is that nobody has been asked',
-  'yet, then the delay is not the gate — it is the asking, and that is yours to move.'
+  'Find out who signs, and by when. That is a fact you can obtain this week, and it',
+  'turns the whole question from a guess into a date. If the answer is that nobody has',
+  'been asked yet, then the delay is not the gate — it is the asking, and that is yours',
+  'to move.'
+].join('\n');
+
+// ⚠️ The Chinese one is not a translation exercise, it is the type specimen:
+// it deliberately mixes full-width marks (，。、：「」——) with ASCII ones and a
+// Latin word, because that mixture is precisely what goes wrong when the Latin
+// face leads the stack. Set correctly, every mark in this text comes from the
+// Song face and the paragraph reads as one typeface.
+const DEMO_READING_ZH = [
+  '# 一道关口，和关口后面的活',
+  '',
+  '先说结论：**等，但不是干等着**。你问的这件事本身已经齐了；卡着它的那一步不在你手里，',
+  '而中间这几周，比看上去值钱。',
+  '',
+  '## 盘面在说什么',
+  '',
+  '承这件事的爻不出所料：你问的东西落在{这份活计|妻财}上，压着它的是{审批那一关|官鬼}，',
+  '而不是你做没做到位。这个分别就是全部答案，值得说得*具体*一点——你不是能力不够，',
+  '你是在等一道门。',
+  '',
+  '### 拖住它的是什么',
+  '',
+  '{周围那些人|兄弟}在你看见之前先分走了一份，所以回报显得比付出薄。而你脚下站着的——',
+  '{你被教出来的那套本事|父母}——很稳，也不会自己动。它是地板，不是会变的那样东西。',
+  '',
+  '- 时间由**审批**定，不由你的节奏定。',
+  '- 被分走的那一份眼下是定数：绕着它安排，别跟它较劲。',
+  '- {你能做出来的东西|子孙}才是听你的那一半，也是该往里花力气的那一半。',
+  '',
+  '所以这件事的形状是：|过一道关口| 和 |做一件值得做的事|，一边等一边做。',
+  '',
+  '---',
+  '',
+  '## 去查什么',
+  '',
+  '去问清楚：谁签字，签到哪一天。这是你这周就能拿到的事实，它把整个问题从「猜」变成一个日期。',
+  '如果答案是根本还没人去问，那么拖住你的就不是那道门——是「问」这个动作。',
+  '',
+  '（这一段是给排版看的：全角的，。、：；「」——和半角的 , . : ; " " 混在一句里，',
+  '再夹一个 deadline 2026-09-30，如果字体接对了，它们的粗细、基线和字宽是同一套。）'
 ].join('\n');
 
 // The follow-up utility returns `Label | question` lines; the panel keeps its
@@ -172,6 +222,15 @@ const DEMO_FOLLOWUP = [
   'Build | What is worth making while the approval is pending?',
   'Signal | What would tell me the gate has opened?',
   'Move | What is the smallest responsible next step this week?'
+].join('\n');
+
+const DEMO_FOLLOWUP_ZH = [
+  '关口 | 到底谁签字，签到哪一天？',
+  '分走 | 在到我手上之前被分走了什么，这是定数吗？',
+  '地板 | 这里哪一样稳到可以拿来安排？',
+  '要做 | 等审批的这段时间，做什么最值？',
+  '信号 | 什么迹象出现，说明门开了？',
+  '下一步 | 这周最小、也最负责的一步是什么？'
 ].join('\n');
 
 
@@ -302,8 +361,16 @@ export async function onRequestPost(context) {
        cannot supply its own system prompt here either. */
     if (offline) {
       const role = String(body.role || '').toLowerCase();
+      /* ⚠️ The preset follows the language of the question, because a real
+         reading does (detectLanguage drives it, and buildSystemPrompt hands the
+         result back as built.lang). A fixture that always answered in English
+         would be the one part of the demo that behaves unlike the product — and
+         it is also the only way to see the Chinese face set. */
+      const zh = built.lang === 'zh' ||
+        /[\u4e00-\u9fff]/.test(String(body.question || body.reading || '') +
+          messages.map((m) => (m && m.content) || '').join(' '));
       if (role === 'followup' || role === 'followup_suggest') {
-        return json({ text: DEMO_FOLLOWUP, model: 'offline', offline: true }, 200);
+        return json({ text: zh ? DEMO_FOLLOWUP_ZH : DEMO_FOLLOWUP, model: 'offline', offline: true }, 200);
       }
       if (role === 'intent') {
         // FOLLOWUP keeps an existing casting; the demo never needs a fresh board
@@ -316,8 +383,9 @@ export async function onRequestPost(context) {
       if (role === 'qc') {
         return json({ text: 'PASS', model: 'offline', offline: true }, 200);
       }
-      if (body.stream === true) return demoStream(DEMO_READING, unitsRemaining);
-      return json({ text: DEMO_READING, model: 'offline', offline: true }, 200);
+      const preset = zh ? DEMO_READING_ZH : DEMO_READING_EN;
+      if (body.stream === true) return demoStream(preset, unitsRemaining);
+      return json({ text: preset, model: 'offline', offline: true }, 200);
     }
     const systemPrompt = built.system;
     // A role that builds its own user turn replaces the client's placeholder.

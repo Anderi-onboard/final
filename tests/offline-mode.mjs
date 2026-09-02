@@ -91,8 +91,12 @@ assert.match(engine, /if \(!claudeComplete\) return Promise\.resolve\("general"\
    contain a trigger for each. The expectations are derived from chat-app.js so
    that a new construct there shows up here as a failure rather than as a
    quietly untested branch. */
-const fixture = api.slice(api.indexOf('const DEMO_READING = ['), api.indexOf("].join('\\n');", api.indexOf('const DEMO_READING = [')));
-assert.ok(fixture.length > 500, 'the fixture was found and is not a stub');
+const grab = (name) => api.slice(api.indexOf('const ' + name + ' = ['),
+  api.indexOf("].join('\\n');", api.indexOf('const ' + name + ' = [')));
+const fixture = grab('DEMO_READING_EN');
+const fixtureZh = grab('DEMO_READING_ZH');
+assert.ok(fixture.length > 500, 'the English preset was found and is not a stub');
+assert.ok(fixtureZh.length > 400, 'the Chinese preset was found and is not a stub');
 
 const renders = [
   ['rd-title', /^\s*'# /m, 'a level-1 heading'],
@@ -115,20 +119,44 @@ for (const [cls, pattern, what] of renders) {
    tests the button and leaves both panels dark. */
 const RELATIVES = ['父母', '兄弟', '子孙', '妻财', '官鬼'];
 for (const rel of RELATIVES) {
-  assert.ok(
-    new RegExp('\\{[^{}|]{1,40}\\|' + rel + '\\}').test(fixture),
-    `the fixture marks ${rel} — all five are needed for the 串联 chain and the unspent-branch panel`
-  );
+  for (const [name, text] of [['English', fixture], ['Chinese', fixtureZh]]) {
+    assert.ok(
+      new RegExp('\\{[^{}|]{1,40}\\|' + rel + '\\}').test(text),
+      `the ${name} preset marks ${rel} — all five are needed for the 串联 chain ` +
+      'and the unspent-branch panel, and BOTH presets have to carry them or the ' +
+      'Chinese preview is missing half the page'
+    );
+  }
 }
 assert.match(chat, /var ring = \["父母", "兄弟", "子孙", "妻财", "官鬼"\]/,
   'the chain still walks these five, so the fixture list above is still the right one');
 
-/* ── 6 · it says what it is ──────────────────────────────────────────────
-   A fabricated divination presented as genuine is not a demo. One line, first
-   thing, easy to delete deliberately — but not by accident. */
-assert.match(fixture, /offline/i, 'the fixture says the engine is offline');
-assert.match(fixture, /sample reading/i, 'and that this is a sample');
-assert.match(fixture, /nothing has been[\s\S]{0,80}charged/i, 'and that nothing was charged');
+/* ── 6 · the marker is machine-readable, not prose ───────────────────────
+   The preset used to open by announcing that the engine was offline. The owner
+   asked for it to preview the real thing instead (2026-09-02), so the notice is
+   gone from the TEXT — but not from the wire. Every reply, the stream's closing
+   event and the status endpoint all still carry `offline: true`, which is what
+   makes this a switched-off API rather than a disguised one. Losing that is the
+   change that would need arguing for, so it is pinned here. */
+assert.match(api, /offline: offlineMode\(env\)/, 'the status endpoint reports it');
+assert.match(api, /model: 'offline', offline: true/, 'every JSON reply carries the marker');
+assert.match(api, /const meta = \{ model: 'offline', charged: 0, offline: true \}/,
+  'and so does the event that closes the stream');
+
+/* ── 6b · the preset follows the question's language ─────────────────────
+   A real reading does; a fixture that always answered in English would be the
+   one part of the demo that behaves unlike the product, and it is also the only
+   way to see the Chinese face set. */
+assert.match(api, /built\.lang === 'zh'/, 'the language comes from the same detector a reading uses');
+assert.match(api, /zh \? DEMO_READING_ZH : DEMO_READING_EN/, 'and picks the matching preset');
+assert.match(api, /zh \? DEMO_FOLLOWUP_ZH : DEMO_FOLLOWUP/, 'the follow-ups follow it too');
+
+/* The Chinese preset is a type specimen as well as a reading: it has to carry
+   full-width marks, ASCII marks and a Latin run in the same text, because that
+   mixture is exactly what goes wrong when the Latin face leads the stack. */
+assert.match(fixtureZh, /[，。、：；「」]/u, 'the Chinese preset uses full-width punctuation');
+assert.match(fixtureZh, /[,.:;]/, 'and carries ASCII marks for the comparison');
+assert.match(fixtureZh, /[A-Za-z]{4,}/, 'and a Latin run, which the Song face must also set');
 
 /* ── 7 · the utility roles answer in their own shapes ────────────────────
    Each is parsed differently by the client; a fixture that returned prose to

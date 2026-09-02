@@ -838,7 +838,14 @@
       // 数字集 — which symbols this reading actually touched, by catalogue id.
       // Cheap to carry, and it is the reading's own index of itself.
       // reading → the closing 串联 → the disclaimer, which stays last
-      return '<div class="reading-body" data-xiang="' + xrHits().join(",") + '">'
+      /* ⚠️ lang is stamped from the reading's own text, and it is what switches
+         the type: index.html redefines --read on .reading-body:lang(zh) so the
+         Song face leads and the ASCII punctuation inside a Chinese paragraph
+         comes from the same face as the characters. Without this attribute a
+         Chinese reading is set in a Latin face with the CJK falling through to
+         whatever the system picks — two typefaces in one sentence. */
+      return '<div class="reading-body" lang="' + (isZh(msg.text) ? 'zh' : 'en') +
+        '" data-xiang="' + xrHits().join(",") + '">'
         + (prose || '<p class="rd-para"></p>') + xrChain(msg.text) + xrMaybe(msg.text) +
         readingFootnote(msg.text) + '</div>' + readingDepth(msg) + readingActions();
     }
@@ -851,7 +858,7 @@
     }).join("");
     var keysSec = keys ? '<div class="rd-sec"><h4 class="rd-h">What decides it</h4><ul class="rd-keys">' + keys + '</ul></div>' : "";
     var timeSec = r.timing ? '<div class="rd-sec"><h4 class="rd-h">Timing</h4><p class="rd-timing">' + esc(r.timing) + '</p></div>' : "";
-    return '<div class="reading-body">' +
+    return '<div class="reading-body" lang="' + (isZh(r.reading) ? 'zh' : 'en') + '">' +
       '<div class="rd-head"><h3 class="rd-title">' + esc(title) + '</h3>' + badge + '</div>' +
       mdReading(r.reading) + keysSec + timeSec + readingFootnote(r.reading) + '</div>' +
       readingDepth(msg) + readingActions();
