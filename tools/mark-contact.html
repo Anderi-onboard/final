@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Mark contact sheet</title>
+<!-- All forty-two phenomena at one size, in the three-plate rendering the block
+     routes use. Held behind a 404 with the rest of /tools/*. Use it to PICK a
+     motif with your eyes instead of guessing from its name — that is what it
+     was made for, and it is why `rainbow` turned out to be the only gull in the
+     catalogue and `peak` turned out to be a poor tree crown. -->
+<style>
+body{margin:0;background:#E7E1D7;font:11px system-ui}
+.g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.c{background:#F2EDE7;padding:6px;text-align:center;color:#3a362f}
+svg{display:block;width:100%;height:auto}
+.ph-back{fill:none;stroke:#c8b9a4;stroke-width:15;stroke-linejoin:round;stroke-linecap:round}
+.ph-mid{fill:none;stroke:#8a7f6d;stroke-width:7;stroke-linejoin:round;stroke-linecap:round}
+.ph-ink{fill:#2b2823}
+</style></head><body>
+<div class="g" id="g"></div>
+<script src="../assets/marks.js"></script>
+<script>
+var M=window.BWMarks,names=Object.keys(M.phenomena),h='';
+names.forEach(function(n,i){
+  var d=M.phenomena[n]();
+  h+='<div class="c">'+M.svg('<path class="ph-back" d="'+d+'"/><path class="ph-mid" d="'+d+'"/><path class="ph-ink" d="'+d+'"/>','-40 -40 80 80')+'<div>'+i+' '+n+'</div></div>';
+});
+document.getElementById('g').innerHTML=h;
+</script></body></html>
