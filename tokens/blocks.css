@@ -752,6 +752,89 @@ body.blocks-route .ab-block[data-horizon] > svg {
   }
 }
 
+/* ── the canopy: one motif, several hundred times, and a rare opposite ────
+   From the three reference paintings (tools/mark-fields.html has the study).
+   The whole picture is ONE crown drawn over and over, shingled so each row
+   laps the row behind, plus pale trunks at about one mark in forty-one. It is
+   an all-over field: no subject, no centre, and one large-scale event — the
+   treeline, off-centre, with flat sky above it.
+
+   ⭐⭐ The marks are drawn as MASSES, not as lines. The phenomena are line
+   drawings and these references are mass paintings; a line motif repeated into
+   a dense field turns to lace (the first study read as fish scales). A very
+   wide round stroke in the mark's OWN fill colour floods the gaps between its
+   ribbons, so it lands as a solid whose outline is still the motif — which is
+   this route's colour-ring trick (grow by stroke, never by scale) turned to a
+   different end. That is why every crown class sets `stroke` as well as `fill`.
+
+   ⭐ ONE HUE, MANY VALUES. All three references are a single hue family across
+   a wide value range with a couple of warm marks per hundred. Adjacent palette
+   steps differ by about 6° of hue but a lot of lightness, and distant steps are
+   different hues — a first pass that took crowns from steps 3–8 gave a field of
+   blue and brown scales, which is the one thing none of the references does.
+   So every crown is hue-a and only the lightness moves, exactly as the About
+   route separates its cards.
+
+   ⚠️ These are CSS properties on classes because blocks.js draws the shapes: a
+   fill="" attribute cannot resolve var() and would freeze the field out of the
+   114-group rotation. Same reason the horizon bands are classes. */
+[data-canopy] { position: relative; overflow: hidden;
+  color: var(--bk-ink); background: var(--cp-sky);
+  --cp-sky: #E9E7DA; --cp-far: #C8CBB4;
+  --cp-1: #8E9970; --cp-2: #7C8A62; --cp-3: #6B7B55;
+  --cp-4: #5B6B49; --cp-5: #4B5B3D; --cp-6: #3C4B32;
+  --cp-warm: #B39A5E; --cp-trunk: #F4F1E4; }
+
+.cp-sky   { fill: var(--cp-sky); }
+.cp-far   { fill: var(--cp-far); }
+.cp-1 { fill: var(--cp-1); stroke: var(--cp-1); }
+.cp-2 { fill: var(--cp-2); stroke: var(--cp-2); }
+.cp-3 { fill: var(--cp-3); stroke: var(--cp-3); }
+.cp-4 { fill: var(--cp-4); stroke: var(--cp-4); }
+.cp-5 { fill: var(--cp-5); stroke: var(--cp-5); }
+.cp-6 { fill: var(--cp-6); stroke: var(--cp-6); }
+.cp-warm  { fill: var(--cp-warm); stroke: var(--cp-warm); }
+/* ⚠️ The trunk is the one element drawn as a LINE, and it is filled, not
+   stroked. These paths are the closed OUTLINE of a brush stroke, so fill gives
+   the mark and stroke gives a hollow double line around it — three passes of
+   chain-link trunks in the study looked like a scaling fault and were not. */
+.cp-trunk { fill: var(--cp-trunk); stroke: none; }
+.cp-crown { stroke-linejoin: round; stroke-linecap: round; }
+
+/* ⚠️ Matched to the weight of `body.blocks-route :is(…, .ab-block) > :not(.bk-art)`
+   (0,3,1), which forces position:relative and would silently discard the
+   absolute positioning — the specificity trap this file has logged five times.
+   Align the weight; do not hope to win. */
+body.blocks-route .ab-block--art[data-canopy] { display: block; gap: 0; padding: 0; }
+body.blocks-route .ab-block [data-canopy] > svg,
+body.blocks-route .ab-block[data-canopy] > svg {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0;
+}
+
+@supports (color: oklch(from red l c h)) {
+  [data-canopy] {
+    /* the sky takes the OTHER hue, so the treeline cuts against it by colour as
+       well as by tone — the same job the horizon's sky does */
+    --cp-sky: oklch(from var(--bw-hue-b, #E9E7DA) clamp(.90, l, .95) clamp(.015, c, .05) h);
+    --cp-far: oklch(from var(--bw-hue-a, #C8CBB4) clamp(.78, l, .84) clamp(.02, c, .06) h);
+    --cp-1: oklch(from var(--bw-hue-a, #8E9970) clamp(.60, l, .65) clamp(.04, c, .10) h);
+    --cp-2: oklch(from var(--bw-hue-a, #7C8A62) clamp(.54, l, .59) clamp(.04, c, .11) h);
+    --cp-3: oklch(from var(--bw-hue-a, #6B7B55) clamp(.48, l, .53) clamp(.04, c, .11) h);
+    --cp-4: oklch(from var(--bw-hue-a, #5B6B49) clamp(.42, l, .47) clamp(.04, c, .11) h);
+    --cp-5: oklch(from var(--bw-hue-a, #4B5B3D) clamp(.36, l, .41) clamp(.03, c, .10) h);
+    --cp-6: oklch(from var(--bw-hue-a, #3C4B32) clamp(.30, l, .35) clamp(.03, c, .09) h);
+    /* ⚠️ The accent's chroma is CAPPED. hue-b is by construction the furthest
+       hue on the card, so at full chroma the odd crown lands as a magenta flag
+       in a brown wood — measured in the study. In the reference the odd crowns
+       are neighbours, ochre among green: a tint, not a complement. */
+    --cp-warm: oklch(from var(--bw-hue-b, #B39A5E) clamp(.56, l, .63) clamp(.05, c, .085) h);
+    /* near-white but carrying the group's hue: a fixed white would be the one
+       thing in the picture that does not rotate */
+    --cp-trunk: oklch(from var(--bw-hue-a, #F4F1E4) clamp(.94, l, .98) clamp(.008, c, .03) h);
+  }
+}
+
+
 /* ── a fill is one flat colour ───────────────────────────────────────────
    ⚠️ There was a graded sky on every block here. It was the wrong reading of
    "each block needs a background": a background belongs to the MARK — a

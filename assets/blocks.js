@@ -798,6 +798,148 @@
     });
   }
 
+  /* ── the canopy field ────────────────────────────────────────────────
+     One crown, several hundred times, shingled up a slope, with pale trunks
+     scattered through it and one flat diagonal of sky. The study that produced
+     it is in tools/mark-fields.html; the colour roles are in blocks.css.
+
+     ⭐ The marks are drawn as MASSES: a wide round stroke in the mark's own
+     fill colour (the .cp-N classes set both) floods the gaps between its own
+     ribbons, so a line motif lands as a solid whose contour is still the motif.
+     Grow by stroke, never by scale — the same reason the mark rings do.
+
+     ⚠️ One carrier, one texture. The crowns and the trunks are one picture, not
+     a field with a second field laid over it; nothing else gets added here. */
+  function canopies() {
+    [].slice.call(document.querySelectorAll("[data-canopy]")).forEach(function (host) {
+      var w = Math.round(host.clientWidth), h = Math.round(host.clientHeight);
+      if (w < 80 || h < 80) return;
+      var name = host.getAttribute("data-canopy") || "leaf";
+      var d = M.phenomena[name] && M.phenomena[name]();
+      if (!d) return;
+      var slot = host.querySelector(":scope > .bk-canopy");
+      if (!slot) {
+        slot = document.createElement("div");
+        /* .bk-art for the reason the spill and grove layers carry it: the
+           route's own rule forces position:relative on anything that is not
+           .bk-art, which would make this a grid item and add a row. */
+        slot.className = "bk-art bk-canopy";
+        slot.setAttribute("aria-hidden", "true");
+        host.insertBefore(slot, host.firstChild);
+      }
+
+      /* ⚠️ The pitch is tied to the BLOCK, and the crown to the pitch. A fixed
+         crown size makes a wide block a lawn and a small card three bushes; and
+         the count has to stay bounded because every crown is a path — these
+         routes have already paid once for a picture that was cheap to describe
+         and expensive to paint. */
+      var pitch = Math.max(16, Math.min(46, w / 30));
+      var rowH = pitch * 0.55;
+      var crown = pitch * 1.68;
+      var ridge = function (x) {
+        return h * (0.13 + 0.15 * (x / w)) + Math.sin(x / w * 4.1 + 0.7) * h * 0.035;
+      };
+
+      var out = '<rect class="cp-sky" width="' + w + '" height="' + h + '"/>';
+      /* the far hill past the treeline: the same drawing, three values flatter */
+      out += '<path class="cp-far" d="M' + (w * 0.55).toFixed(1) + ' ' + ridge(w * 0.55).toFixed(1)
+        + ' C ' + (w * 0.70).toFixed(1) + ' ' + (ridge(w * 0.70) - h * 0.07).toFixed(1)
+        + ', ' + (w * 0.85).toFixed(1) + ' ' + (ridge(w * 0.85) - h * 0.045).toFixed(1)
+        + ', ' + w + ' ' + (ridge(w) - h * 0.08).toFixed(1)
+        + ' L ' + w + ' ' + h + ' L' + (w * 0.55).toFixed(1) + ' ' + h + 'Z"/>';
+
+      /* Shingled lattice: rows lap up the slope and each row is offset by a
+         THIRD of the pitch. A half-pitch stagger puts a hard vertical seam back
+         every other row; three phases take nine rows to come round, which is
+         taller than any of these blocks. Same rule as the mark lattice. */
+      var crowns = [], i, j;
+      for (i = Math.ceil(h / rowH) + 3; i >= -1; i--) {
+        var y = h + rowH * 2 - i * rowH;
+        var phase = (i % 3) * (pitch / 3) + (i % 5) * (pitch * 0.08);
+        /* a small lift on a coprime cycle, so the rows do not read as courses
+           of roof tile — the shingle wants a hand in it, not a ruler */
+        var lift = ((i % 7) - 3) * (rowH * 0.09);
+        for (j = -1; j * pitch + phase < w + pitch; j++) {
+          var x = j * pitch + phase;
+          if (y + lift < ridge(x) - crown * 0.18) continue;
+          crowns.push({ x: x, y: y + lift + ((j % 5) - 2) * (rowH * 0.07), r: i, c: j,
+            t: Math.max(0, Math.min(1, (y - ridge(x)) / Math.max(1, h - ridge(x)))),
+            i: crowns.length });
+        }
+      }
+      var scale = crown / (motifRadius(name) * 2);
+      /* ⚠️⚠️ The grow is a FRACTION OF THE MOTIF, not a number. It is expressed
+         in motif units, so a fixed 11 is 16% of a mark placed by the study's
+         s/68 convention and 27% of one placed by radius — the first render here
+         came out as a wall of fat blobs for exactly that reason, at the right
+         nominal size. Tie it to the motif's own extent and the two conventions
+         agree. */
+      var grow = (motifRadius(name) * 2 * 0.16).toFixed(2);
+      crowns.forEach(function (c) {
+        var k = c.i;
+        /* ⚠️ Size barely moves. Marks of different sizes read as different
+           DISTANCES, and this is one plane seen from across a valley; the
+           recession is carried by value alone. The file already says this about
+           the mark fields — it is the same sentence one picture along. */
+        var s = crown * (1 + (k % 4) * 0.055 + c.t * 0.14);
+        /* ⚠️⚠️ Depth picks the band, the cycle only nudges it. The first version
+           added the two and took a modulo, and the wrap threw away the whole
+           point: a crown at the skyline could land on the darkest value and one
+           at the foot on the lightest, so the field came out a flat mid-brown
+           with no recession at all — the same six values, and no picture.
+           Recession is the ramp; the cycle is ±1 around it. */
+        var band = Math.max(1, Math.min(6,
+          Math.round(1 + c.t * 4.2 + ((k % 3) - 1) * 0.9)));
+        var cls = ((k % 29) === 11) ? "cp-warm" : ("cp-" + band);
+        out += '<g transform="translate(' + c.x.toFixed(1) + ' ' + c.y.toFixed(1)
+          + ') rotate(' + (((k % 7) - 3) * 2.2).toFixed(1) + ') scale('
+          + (s / crown * scale).toFixed(4) + ')">'
+          + '<path class="cp-crown ' + cls + '" d="' + d + '" stroke-width="' + grow + '"/></g>';
+      });
+
+      /* ⚠️⚠️ The trunk rule has to be NON-LINEAR in (row, column), and the same
+         diagonal turned up three times before it was. Counting through the
+         crown list (i%25, (i*7)%23, (i*11)%59) laid them on a diagonal, because
+         the crowns are pushed row by row and any stride through that order is
+         itself a diagonal walk. Moving to the lattice — (5c + 3r) % 41 — looked
+         like the fix and was not: the zero set of ANY expression linear in r and
+         c is a line, and once the modulus grew past the row length it collapsed
+         to one trunk every few rows marching sideways. A single straight rank of
+         trees, arrived at three different ways.
+
+         An integer hash was tried next and it clumps: the low bits of
+         (73c ^ 151r) * 2654435761 stay correlated, so the trunks came out in
+         patches with bare stretches between them.
+
+         What works is what the rest of this route already uses — the trunks get
+         their OWN coarse lattice, every seventh row and every eighth column,
+         with the column shifted three along on each of those rows. The shift
+         takes eight trunk-rows to come round, far taller than any of these
+         blocks, so there is no rank to see; and it
+         is structural rather than pseudo-random, which is the difference
+         between a stand of trees and a spatter.
+         ⚠️ Count the CULMS, not the marks: `bamboo` is three uprights, so one
+         mark in forty-one puts three times that many verticals on the page. At
+         one in seventeen the hillside was a picket fence — and the rate has to
+         fall when the pitch does, because a finer pitch means more crowns in
+         the same block and a fixed fraction of them is more trunks. */
+      var tr = M.phenomena.bamboo && M.phenomena.bamboo();
+      var trScale = tr ? (pitch * 4.6) / (motifRadius("bamboo") * 2) : 0;
+      if (tr) crowns.forEach(function (c) {
+        if (c.r % 7 !== 0) return;
+        if (((c.c + Math.floor(c.r / 7) * 3) % 8) !== 0) return;
+        out += '<g opacity="' + (0.6 + 0.4 * c.t).toFixed(2)
+          + '" transform="translate(' + (c.x + pitch * 0.1).toFixed(1) + ' '
+          + (c.y - pitch * 1.5).toFixed(1) + ') rotate('
+          + (((c.i % 3) - 1) * 1.2).toFixed(1) + ') scale('
+          + (trScale * (0.86 + (c.i % 4) * 0.09)).toFixed(4) + ')">'
+          + '<path class="cp-trunk" d="' + tr + '"/></g>';
+      });
+
+      slot.innerHTML = M.svg(out, "0 0 " + w + " " + h, 'preserveAspectRatio="none"');
+    });
+  }
+
   function colonies() {
     /* ⚠️ Not the ones that are horizons. The call-to-action's picture carries
        both .ab-colony (for its grid area) and data-horizon (for what it draws),
@@ -1007,7 +1149,7 @@
   });
   /* After layout, not during it: the avoid boxes are measured from the live
      text, so this has to run once the cards have their real size. */
-  function afterLayout() { backdrops(); colonies(); horizons(); spills(); groves(); scenes(); }
+  function afterLayout() { backdrops(); colonies(); horizons(); canopies(); spills(); groves(); scenes(); }
   if (document.readyState === "complete") afterLayout();
   else addEventListener("load", afterLayout);
 }());

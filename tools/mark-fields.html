@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark fields — three reference compositions built from the phenomena</title>
+<!--
+  EXTERNAL EXPERIMENT. Not linked from the site, and /tools/* is held behind a
+  404 by functions/_middleware.js. Nothing here is loaded by any route.
+
+  The question it answers: can the existing 42 phenomena carry the structure of
+  the three reference paintings, or do the motifs have to change shape?
+
+  Everything is drawn from assets/marks.js as it stands — no new motif, no
+  edited motif. What changes is only PLACEMENT, SCALE, COUNT and COLOUR, which
+  is the claim being tested: that the catalogue is already a vocabulary and the
+  compositions are grammar.
+
+  Colour comes from the live palette (mountain-range.js publishes --bw-palette-*
+  and --bw-hue-a/b), so every panel is under the same 114-group rotation the
+  block routes are. A composition that only works in one colourway is not a
+  composition, it is a colourway.
+-->
+<link rel="stylesheet" href="../tokens/fonts.css">
+<style>
+  :root { color-scheme: light; }
+  html { background: #E7E1D7; }
+  body {
+    margin: 0; padding: 32px 24px 64px;
+    font-family: "Spinnaker", system-ui, sans-serif;
+    color: #2b2823; background: #E7E1D7;
+  }
+  h1 { font-family: "BioRhyme", Georgia, serif; font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  .lede { font-size: 13px; max-width: 62ch; margin: 0 0 32px; letter-spacing: .01em; }
+  .panel { margin: 0 0 48px; }
+  .cap { font-size: 11px; letter-spacing: .12em; margin: 0 0 8px; }
+  .cap b { font-weight: 400; }
+  .note { font-size: 12px; max-width: 74ch; margin: 10px 0 0; }
+  .note em { font-style: normal; font-weight: 700; }
+  svg { display: block; width: 100%; height: auto; }
+  .stage { position: relative; overflow: hidden; }
+
+  /* ⭐⭐ THE ONE FINDING, and it applies to all three panels.
+
+     The phenomena are LINE drawings. All three references are MASS paintings —
+     there is almost no visible line in any of them; every element is a filled
+     area carrying an internal texture. Drawn as lines into a dense field, the
+     motifs stop being things and become a lace: the first pass of panel A read
+     as fish scales, panel C as paisley wallpaper.
+
+     So the mark is used as a BODY here, not as a line: the same path is given
+     a very wide round stroke in its own fill colour, which floods the gaps
+     between its ribbons and leaves a solid shape whose CONTOUR IS STILL THE
+     MOTIF'S. Then the same path again, thin, in a second tone — that is the
+     internal texture, and it is what the paintings do inside each crown.
+
+     This is not a new technique in this repo. It is the colour-ring trick from
+     the block routes (grow by STROKE, never by scale, because a scaled copy
+     grows away from its own centre and slides off a long motif) turned to a
+     different end: one very wide stroke instead of two rings.
+
+     The three-plate .ph-back/.ph-mid rings are deliberately NOT used on this
+     page. They exist to separate a sparse mark from its ground; in a field
+     where marks touch, they draw a halo around every one and the field turns
+     to lace again. */
+  .mf-body { stroke-linejoin: round; stroke-linecap: round; }
+  .mf-tex  { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+  .mf-line { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+</style>
+</head>
+<body>
+
+<h1>Mark fields</h1>
+<p class="lede">Three reference compositions rebuilt from the forty-two phenomena in
+<code>assets/marks.js</code>. No motif was added or redrawn — only placement, scale, count and
+colour. Colour is on the live 114-group rotation, so what you see is one colourway of many.</p>
+
+<section class="panel">
+  <div class="cap"><b>A ·</b> all-over field — one motif, hundreds of times, and a rare opposite</div>
+  <div class="stage" id="a"></div>
+  <p class="note">Crowns are <em>peak</em> shingled up the slope; the pale verticals are <em>bamboo</em>
+  at roughly one to every twenty-five crowns. One diagonal, off-centre, is the only large-scale
+  event; everything above it is flat sky. Recession is chroma and value compression, not less drawing.</p>
+</section>
+
+<section class="panel">
+  <div class="cap"><b>B ·</b> triptych — one window repeated, ABA</div>
+  <div class="stage" id="b"></div>
+  <p class="note">Outer plates: <em>pine</em> massed above, <em>tide</em> laid flat below, split at 42%.
+  The birds are <em>wave</em> at 1% of the area and the highest value in the picture. The middle plate
+  is the same scene at a different scale of attention — <em>glow</em> turned into shafts, <em>star</em>
+  for the flare — and it is only legible because the two literal plates flank it.</p>
+</section>
+
+<section class="panel">
+  <div class="cap"><b>C ·</b> figure and ground — one mass, cropped, against a flat sky</div>
+  <div class="stage" id="c"></div>
+  <p class="note">The mass is <em>leaf</em> at one scale, thousands of them, each turned to face out of
+  the canopy; the shadow scallops are <em>valley</em> at four times that scale, so the inside repeats
+  the silhouette's own language. Sky is one flat value with a single <em>haze</em> low and to the left.</p>
+</section>
+
+<script src="../assets/marks.js"></script>
+<script src="../assets/backgrounds/mountain-range.js"></script>
+<script>
+(function () {
+  var M = window.BWMarks, PH = M.phenomena;
+
+  /* Motifs are drawn in a roughly ±34 field, so a mark meant to occupy `s`
+     units on the page is scaled by s/68. */
+  var UNIT = 68;
+  var CACHE = {};
+  function d(name) { return CACHE[name] || (CACHE[name] = PH[name]()); }
+
+  /* ⭐ ONE HUE, MANY VALUES — the second finding, and it came from the
+     paintings rather than from the code. All three references are built on a
+     single hue family carrying a wide value range, with one or two warm marks
+     per hundred. The palette's ten steps are NOT that: adjacent steps differ
+     by only about 6° of hue but by a lot of lightness, and distant steps are
+     different hues altogether. The first pass took its crowns from steps 3–8
+     and got a field of blue and brown scales — every mark a different colour,
+     which is the one thing none of the references does.
+     So colour here comes from ONE hue with the lightness imposed, exactly as
+     the About route does it (a group there uses a single hue and separates its
+     four cards by value alone). */
+  function tone(l, c, which) {
+    return 'oklch(from var(--bw-hue-' + (which || 'a') + ', var(--bw-palette-5, #6a7358)) ' +
+           l + ' ' + c + ' h)';
+  }
+  function step(n, l, c) {
+    return 'oklch(from var(--bw-palette-' + n + ', #6a7358) ' + l + ' ' + c + ' h)';
+  }
+
+  function at(x, y, s, rot) {
+    return 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')' +
+      (rot ? ' rotate(' + rot.toFixed(1) + ')' : '') +
+      ' scale(' + (s / UNIT).toFixed(4) + ')';
+  }
+
+  /* ⚠️ THIRD FINDING: "mass" is not one setting. How much stroke a motif needs
+     before it closes into a solid depends on the gap between its OWN ribbons,
+     and that varies widely across the forty-two. The pass before this used a
+     single grow of 26 everywhere: `leaf` and `peak` came out right, `star` and
+     `wave` came out as mushrooms, and the triptych turned into a plate of
+     dumplings. Grow belongs to the motif, not to the page — so it is passed at
+     every call here and the numbers below were set by eye, one motif at a time. */
+  function body(name, x, y, s, rot, fill, grow, tex, texW, op) {
+    var p = d(name);
+    var g = '<g transform="' + at(x, y, s, rot) + '"' +
+      (op !== undefined ? ' opacity="' + op + '"' : '') + '>';
+    g += '<path class="mf-body" d="' + p + '" fill="' + fill + '" stroke="' + fill +
+         '" stroke-width="' + grow + '"/>';
+    if (tex) g += '<path class="mf-tex" d="' + p + '" stroke="' + tex +
+         '" stroke-width="' + (texW || 3) + '"/>';
+    return g + '</g>';
+  }
+
+  /* ⚠️⚠️ FOURTH FINDING, and it is the one that wasted the most passes.
+     THESE PATHS ARE RIBBONS, NOT CENTRELINES. `PLAN` holds a centreline for
+     every stroke and `brush()` turns each into a CLOSED OUTLINE of the ink —
+     the stroke as drawn. So `fill` gives you the mark; `stroke` gives you a
+     line drawn AROUND the mark, which is a hollow double line. Every attempt
+     above to "draw it thin" came back as chain-links and hollow ribs, and it
+     looked like a scaling problem for three passes running.
+       thin()  = fill it. That is the mark at its own weight, and in a field of
+                 masses a single-weight mark is the rarest thing there is.
+       soft()  = fill it and grow it wide at low opacity — for the one element
+                 with no edge at all, the light. */
+  function thin(name, x, y, s, rot, fill, op) {
+    return '<g transform="' + at(x, y, s, rot) + '"' +
+      (op !== undefined ? ' opacity="' + op + '"' : '') + '>' +
+      '<path d="' + d(name) + '" fill="' + fill + '"/></g>';
+  }
+  function soft(name, x, y, s, rot, fill, grow, op) {
+    return body(name, x, y, s, rot, fill, grow, null, 0, op);
+  }
+
+  function frame(id, w, h, inner) {
+    document.getElementById(id).innerHTML =
+      '<svg viewBox="0 0 ' + w + ' ' + h + '" xmlns="http://www.w3.org/2000/svg">' + inner + '</svg>';
+  }
+
+  /* ── A · the all-over field ───────────────────────────────────────────
+     No subject and no centre: one crown drawn several hundred times, shingled
+     so each row laps the one behind. It would be a green carpet were it not
+     for the pale trunks — a rare element with the opposite orientation, the
+     opposite value, and the opposite construction: in a field of masses they
+     are the only lines. Take them away and there is no picture left. */
+  function panelA() {
+    var W = 1400, H = 900, out = '';
+    var ridge = function (x) {
+      return H * (0.12 + 0.17 * (x / W)) + Math.sin(x / W * 4.1 + .7) * 26;
+    };
+
+    out += '<rect width="' + W + '" height="' + H + '" fill="' + tone('.955', '.022') + '"/>';
+    /* the far hill past the treeline: the same drawing, three values flatter */
+    out += '<path d="M' + (W * .55) + ' ' + ridge(W * .55) +
+      ' C ' + (W * .70) + ' ' + (ridge(W * .70) - 62) + ', ' + (W * .85) + ' ' +
+      (ridge(W * .85) - 40) + ', ' + W + ' ' + (ridge(W) - 74) +
+      ' L ' + W + ' ' + H + ' L' + (W * .55) + ' ' + H + 'Z" fill="' + tone('.855', '.05') + '"/>';
+
+    /* Shingled lattice: rows lap up the slope, each offset by a THIRD of the
+       pitch. A half-pitch stagger puts a hard vertical seam back every other
+       row; three phases take nine rows to come round, taller than the field. */
+    var pitch = 48, rowH = 26, i, j, crowns = [];
+    for (i = Math.ceil(H / rowH) + 3; i >= -1; i--) {
+      var y = H + 50 - i * rowH;
+      var phase = (i % 3) * (pitch / 3) + (i % 5) * 4;
+      for (j = -1; j * pitch + phase < W + pitch; j++) {
+        var x = j * pitch + phase;
+        if (y < ridge(x) - 14) continue;
+        crowns.push({ x: x, y: y, r: i, c: j,
+          t: Math.max(0, Math.min(1, (y - ridge(x)) / (H - ridge(x)))), i: crowns.length });
+      }
+    }
+    crowns.forEach(function (c) {
+      var k = c.i;
+      /* Size barely moves. Marks of different sizes read as different
+         DISTANCES, and this is one plane seen from across the valley;
+         recession is carried by value and chroma alone. */
+      var s = 74 + (k % 4) * 5 + c.t * 14;
+      var lv = .30 + (k % 6) * .052 + (1 - c.t) * .27;
+      var ch = (.045 + c.t * .055).toFixed(3);
+      /* one warm crown in twenty-nine — prime against the row phase, so they
+         can never line up into a stripe */
+      var warm = (k % 29) === 11;
+      /* ⚠️ The accent's chroma is capped. hue-b is by construction the FURTHEST
+         hue on the card, so at full chroma the odd crown lands as a magenta flag
+         in a brown wood. In the reference the odd crowns are neighbours — ochre
+         among green — so what is wanted is a tint, not a complement. */
+      var fill = warm ? tone((lv + .05).toFixed(3), '.075', 'b') : tone(lv.toFixed(3), ch);
+      /* ⚠️ No internal texture line. Drawing the motif back over itself put a
+         legible little glyph inside every crown and the field read as printed
+         fabric. In the reference the texture inside a crown is a value shift,
+         not a drawing — so the variety here is carried by the six-value cycle
+         and by the overlap of the crowns themselves. */
+      out += body('leaf', c.x, c.y, s, ((k % 7) - 3) * 2.2, fill, 11, null, 0);
+    });
+
+    /* ⚠️ The trunks are placed on the LATTICE, not by counting crowns. Every
+       index-modulo rule tried here (i%25, (i*7)%23, (i*11)%59) laid them along
+       a diagonal, because the crowns are pushed row by row and any stride
+       through that order is itself a diagonal walk. Taking the row and column
+       and stepping 5 across and 3 up gives even coverage instead, and 41 is
+       prime against both, so they never fall into a rank.
+       ⚠️ Count the CULMS, not the marks: `bamboo` is three uprights, so one
+       mark in forty-one crowns puts about three times that many verticals on
+       the page. At 1-in-17 the hillside was a picket fence.
+       Near-white but carrying the group's hue; a fixed white would be the one
+       thing on the page that does not rotate. */
+    var pale = tone('.965', '.02');
+    crowns.forEach(function (c) {
+      if (((c.c * 5 + c.r * 3) % 41) !== 0) return;
+      var h = 150 + (c.i % 4) * 40;
+      out += thin('bamboo', c.x + 5, c.y - h * .30, h, ((c.i % 3) - 1) * 1.2, pale,
+        (0.62 + 0.38 * c.t).toFixed(2));
+    });
+
+    frame('a', W, H, out);
+  }
+
+  /* ── B · the triptych ─────────────────────────────────────────────────
+     The structure is in the FRAME: three equal windows, equal gaps, a wide
+     paper margin, and the paper is the lightest value in the set rather than a
+     backing. Outer plates are the same view; the middle one is only light, and
+     it is legible because it is flanked — alone it would be a green rectangle. */
+  function panelB() {
+    var W = 1000, PW = 800, PT = 250, gap = 40, pad = 90;
+    var H = pad * 2 + PT * 3 + gap * 2, out = '';
+    out += '<rect width="' + W + '" height="' + H + '" fill="' + tone('.96', '.014') + '"/>';
+
+    function plate(y, kind) {
+      var id = 'cp' + y;
+      var g = '<g transform="translate(' + pad + ' ' + y + ')">' +
+        '<clipPath id="' + id + '"><rect width="' + PW + '" height="' + PT + '"/></clipPath>' +
+        '<g clip-path="url(#' + id + ')">';
+      var hz = PT * 0.42;   /* never the middle */
+      var white = tone('.98', '.012');
+
+      if (kind === 'light') {
+        /* ⚠️ The darkest ground of the three plates. Light needs something to
+           be light AGAINST — at .58 the shafts were only a few steps above the
+           ground and the plate read as empty paper. In the reference this is
+           the deepest plate in the set except for the light itself. */
+        g += '<rect width="' + PW + '" height="' + PT + '" fill="' + tone('.44', '.10') + '"/>';
+        /* Few, wide and SOFT. The first pass massed them and got dumplings;
+           the pass before that ran nine hard shafts and got stripes. Light is
+           the one thing in this set with no edge, so it is drawn as a line
+           with a very wide stroke and low opacity. */
+        /* ⚠️ Narrow, and spaced so the ground survives between them. A 520-unit
+           mark grown by 34 covers most of the plate; five of those at up to .9
+           opacity WERE the plate, which is why darkening the ground underneath
+           changed nothing at all — the ground was not visible to darken. */
+        for (var i = 0; i < 4; i++) {
+          g += soft('glow', 96 + i * 210, PT * .46, 300, -57,
+            tone((.95 - i * .012).toFixed(2), '.04'), 14, (0.50 + i * 0.12).toFixed(2));
+        }
+        for (i = 0; i < 3; i++) {
+          g += thin('star', 170 + i * 72, 98 + i * 52, 58 + i * 12, 0, white,
+            (0.62 + i * 0.13).toFixed(2));
+        }
+      } else {
+        g += '<rect width="' + PW + '" height="' + hz + '" fill="' + tone('.60', '.075') + '"/>';
+        g += '<rect y="' + hz + '" width="' + PW + '" height="' + (PT - hz) +
+          '" fill="' + tone('.87', '.035') + '"/>';
+        /* The bank: `pine` massed and cut clean by the horizon. The top half is
+           all vertical marks and the bottom half all horizontal ones — the
+           picture divides by TEXTURE, which is how it stays nearly monochrome
+           and still reads. */
+        /* ⚠️ Smaller and denser than the pass before. At 78 units with a grow
+           of 13 the pines merged into one brown slab with a scalloped hem — the
+           bank had a silhouette but no interior. The mark has to be small
+           enough relative to its own grow for the gaps between marks to survive. */
+        var k = 0, row, j;
+        for (row = 0; row < 9; row++) {
+          for (j = -1; j < 29; j++) {
+            var px = j * 30 + (row % 3) * 10;
+            var py = hz - 2 - row * 15;
+            g += body('pine', px, py, 56 + (k % 3) * 6, ((k % 5) - 2) * 3,
+              tone((.24 + row * .034 + (k % 4) * .035).toFixed(3), '.08'), 9, null, 0);
+            k++;
+          }
+        }
+        /* water: `tide` as thin lines, few and pale. The calm half has to stay
+           the quiet one — a massed water would weigh as much as the bank. */
+        for (j = 0; j < 7; j++) {
+          g += thin('tide', 90 + (j % 4) * 200, hz + 26 + j * 20, 190, 0,
+            tone((.74 - j * .018).toFixed(3), '.045'), (0.34 - j * 0.035).toFixed(2));
+        }
+        /* the whole subject, at about one per cent of the area, and the only
+           near-white in the picture */
+        /* ⚠️ THERE IS NO BIRD IN THE CATALOGUE, and `wave` is not one — filled
+           at this size it reads as a scallop shell. The nearest thing to a gull
+           is a single shallow arc, which `rainbow` already is; two of them at
+           28 units, tipped apart, is the whole bird. Worth recording as a gap
+           rather than papering over: the forty-two are landscape, not fauna. */
+        var birds = kind === 'near'
+          ? [[470, 84, 30, -12], [452, 86, 30, 14], [430, 112, 22, -8],
+             [446, 114, 22, 10], [508, 122, 18, 6]]
+          : [[452, 80, 36, -14], [432, 82, 36, 12], [418, 112, 24, 8]];
+        birds.forEach(function (b, n) {
+          g += thin('rainbow', b[0], b[1], b[2], b[3], white, (0.96 - n * 0.06).toFixed(2));
+        });
+        if (kind === 'near') {
+          g += body('sprout', 470, hz + 34, 40, 0, white, 9, null, 0);
+          g += thin('tide', 470, hz + 58, 150, 0, white, '.5');
+        } else {
+          g += body('leaf', 452, hz + 26, 34, 0, white, 10, null, 0);
+        }
+      }
+      return g + '</g></g>';
+    }
+
+    out += plate(pad, 'far') + plate(pad + PT + gap, 'light') + plate(pad + (PT + gap) * 2, 'near');
+    frame('b', W, H, out);
+  }
+
+  /* ── C · figure and ground ────────────────────────────────────────────
+     Two things only: one irregular mass cropped by three edges, and a flat
+     sky. All the information is on the contour, and the contour's language is
+     repeated one size down inside — as the dabs themselves, not as a separate
+     layer drawn over them. */
+  function panelC() {
+    var W = 1000, H = 780, out = '';
+    out += '<rect width="' + W + '" height="' + H + '" fill="' + step(2, '.88', '.05') + '"/>';
+    /* one small soft form in the empty half, off-centre and low in contrast */
+    out += soft('haze', 180, 356, 170, 0, tone('.965', '.012'), 10, '.9');
+
+    var cx = 780, cy = 400, R = 356, pts = [], i;
+    for (i = 0; i <= 240; i++) {
+      var a = (i / 240) * Math.PI * 2;
+      var rr = R * (1 + .085 * Math.cos(a * 6 + .6) + .055 * Math.cos(a * 11 - 1.2)
+                      + .035 * Math.cos(a * 17 + 2.4) + .10 * Math.cos(a * 3 + .2));
+      pts.push([cx + Math.cos(a) * rr * 1.02, cy + Math.sin(a) * rr * 1.15]);
+    }
+    var outline = 'M' + pts.map(function (p) { return p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join('L') + 'Z';
+
+    out += '<clipPath id="canopy"><path d="' + outline + '"/></clipPath>';
+    out += '<g clip-path="url(#canopy)">';
+    out += '<path d="' + outline + '" fill="' + tone('.50', '.10') + '"/>';
+
+    /* ⭐ The shadow is made OF THE DABS, not drawn over them. The pass before
+       this laid six big scallops on top and they read as branches lying across
+       the canopy; in the painting the dark is simply where the dabs are darker.
+       So a scalloped field decides each dab's value — same motif, same size,
+       same spacing, one number different. That is also this repo's own rule
+       about a carrier holding one texture and not two.
+
+       ⚠️ And the dabs do NOT radiate. Turning each one to face away from the
+       centre produced a rosette, which reads instantly as generated; the
+       painting's dabs all lean roughly one way. Orientation varies on a short
+       cycle around a single bearing, with only a slight outward bias at the
+       rim where the silhouette is being described. */
+    /* nine clumps, no two the same size, written out rather than generated */
+    var CLUMP = [[640, 250, 150], [790, 190, 118], [910, 300, 132], [700, 400, 165],
+                 [900, 470, 124], [620, 520, 140], [800, 600, 155], [950, 640, 110],
+                 [560, 380, 96]];
+    var k = 0, rowN = 0;
+    for (var yy = cy - R * 1.4; yy < cy + R * 1.4; yy += 19, rowN++) {
+      for (var xx = cx - R * 1.3; xx < cx + R * 1.3; xx += 19) {
+        var px = xx + (rowN % 2) * 9.5 + (k % 3) * 5, py = yy + (k % 5) * 3.4;
+        var ndx = (px - cx) / R, ndy = (py - cy) / (R * 1.15);
+        var dist = Math.hypot(ndx, ndy);
+        if (dist > 1.25) { k++; continue; }
+        /* ⭐ The dark is organised into CLUMPS, not into a wave field. Two
+           wave fields were tried and both failed in a way worth keeping:
+           diagonal sines shaded the canopy in stripes running across the lobes
+           (camouflage), and taking the silhouette's own harmonics plus a radial
+           ripple gave concentric rings (a tiger). What the reference has is a
+           handful of rounded masses, each LIT ON TOP AND DARK UNDERNEATH — so
+           the field here is distance to the nearest clump centre, and the
+           lighting is a straight top-left bias inside it. Clump centres are a
+           written list: nine of them, no two the same size, which is the same
+           reason the block routes write their tracks out instead of looping. */
+        var lit = 0, ci;
+        for (ci = 0; ci < CLUMP.length; ci++) {
+          var q = CLUMP[ci];
+          var dq = Math.hypot((px - q[0]) / q[2], (py - q[1]) / (q[2] * .86));
+          if (dq < 1) { lit = Math.max(lit, 1 - dq * .55 - (py - q[1]) / q[2] * .30); }
+        }
+        lit = Math.max(0, Math.min(1, lit));
+        /* light from the upper left, as in the reference */
+        var side = (-ndx - ndy) * .5;
+        var lv = .38 + lit * .30 + side * .06 - dist * .06;
+        /* ⚠️ Rows are staggered and the lean is shallow. At -22° on a square
+           lattice the dabs linked up into diagonal chains — a plaid, which is
+           the lattice showing through the marks. */
+        var ang = -11 + ((k % 7) - 3) * 8 + (dist > .84 ? (Math.atan2(ndy, ndx) * 180 / Math.PI + 90) * .20 : 0);
+        out += body('leaf', px, py, 25, ang, tone(lv.toFixed(3), '.12'), 7, null, 0,
+          (0.86 + (k % 3) * 0.05).toFixed(2));
+        k++;
+      }
+    }
+    out += '</g>';
+    /* the sliver of a second tree in the corner: the space continues */
+    out += body('pine', 984, 26, 200, 0, tone('.34', '.085'), 14, null, 0, '.9');
+
+    frame('c', W, H, out);
+  }
+
+  function draw() { panelA(); panelB(); panelC(); }
+  draw();
+  window.BWFields = { draw: draw };
+}());
+</script>
+</body>
+</html>
