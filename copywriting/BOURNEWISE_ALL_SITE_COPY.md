@@ -16,7 +16,7 @@ screen-reader name).
 Runtime strings live in `copy.js` and appear in their own section at the end;
 they are functions of live numbers, so they are shown as templates.
 
-**458 blocks** across 10 pages, plus the runtime copy module.
+**1042 blocks** — 458 in the markup of 10 pages, 584 in the pages' inline scripts, the browser modules, the server's error text and the 万物类象 panel, plus the runtime copy module.
 
 ---
 
@@ -895,119 +895,119 @@ We built the part that cannot be talked out of its answer.
 A reading here has two halves that never touch. Six lines fall, and they are fixed. Then Claude explains the figure that fell — the one you actually got, in the situation you actually described.
 
 @@ s04.about.html.011
-<!-- source: about.html:60 | kind: text -->
+<!-- source: about.html:59 | kind: text -->
 One
 
 @@ s04.about.html.012
-<!-- source: about.html:61 | kind: text -->
+<!-- source: about.html:60 | kind: text -->
 What a reading is made of
 
 @@ s04.about.html.013
-<!-- source: about.html:66 | kind: text -->
+<!-- source: about.html:64 | kind: text -->
 Separation
 
 @@ s04.about.html.014
-<!-- source: about.html:68 | kind: text -->
+<!-- source: about.html:66 | kind: text -->
 The figure lands before a word does.
 
 @@ s04.about.html.015
-<!-- source: about.html:69 | kind: text -->
+<!-- source: about.html:67 | kind: text -->
 Six lines fall, and nothing you typed moves them — nor does anything written about them afterwards.
 
 @@ s04.about.html.016
-<!-- source: about.html:75 | kind: text -->
+<!-- source: about.html:72 | kind: text -->
 Evidence
 
 @@ s04.about.html.017
-<!-- source: about.html:77 | kind: text -->
+<!-- source: about.html:74 | kind: text -->
 Every answer shows its source.
 
 @@ s04.about.html.018
-<!-- source: about.html:78 | kind: text -->
+<!-- source: about.html:75 | kind: text -->
 The figure it was written from comes with it, so you can read where the reading came from and not only where it arrived.
 
 @@ s04.about.html.019
-<!-- source: about.html:88 | kind: text -->
+<!-- source: about.html:84 | kind: text -->
 Restraint
 
 @@ s04.about.html.020
-<!-- source: about.html:90 | kind: text -->
+<!-- source: about.html:86 | kind: text -->
 A view, not a verdict.
 
 @@ s04.about.html.021
-<!-- source: about.html:91 | kind: text -->
+<!-- source: about.html:87 | kind: text -->
 It tells you what to go and check. It will not decide it for you, and it does not pretend to.
 
 @@ s04.about.html.022
-<!-- source: about.html:97 | kind: text -->
+<!-- source: about.html:92 | kind: text -->
 Depth
 
 @@ s04.about.html.023
-<!-- source: about.html:99 | kind: text -->
+<!-- source: about.html:94 | kind: text -->
 One figure, or one and what it becomes.
 
 @@ s04.about.html.024
-<!-- source: about.html:100 | kind: text -->
+<!-- source: about.html:95 | kind: text -->
 You choose how much structure the question needs before you ask it.
 
 @@ s04.about.html.025
-<!-- source: about.html:107 | kind: text -->
+<!-- source: about.html:101 | kind: text -->
 Two
 
 @@ s04.about.html.026
-<!-- source: about.html:108 | kind: text -->
+<!-- source: about.html:102 | kind: text -->
 What you actually get
 
 @@ s04.about.html.027
-<!-- source: about.html:113 | kind: text -->
+<!-- source: about.html:106 | kind: text -->
 Your first
 
 @@ s04.about.html.028
-<!-- source: about.html:115 | kind: text -->
+<!-- source: about.html:108 | kind: text -->
 A whole reading, not a taste of one.
 
 @@ s04.about.html.029
-<!-- source: about.html:116 | kind: text -->
+<!-- source: about.html:109 | kind: text -->
 It is on us, it starts, and it finishes. Nothing is held back to make a point.
 
 @@ s04.about.html.030
-<!-- source: about.html:122 | kind: text -->
+<!-- source: about.html:114 | kind: text -->
 Language
 
 @@ s04.about.html.031
-<!-- source: about.html:124 | kind: text -->
+<!-- source: about.html:116 | kind: text -->
 Ask in the words you think in.
 
 @@ s04.about.html.032
-<!-- source: about.html:125 | kind: text -->
+<!-- source: about.html:117 | kind: text -->
 The answer comes back in the language you asked in, whichever that is.
 
 @@ s04.about.html.033
-<!-- source: about.html:135 | kind: text -->
+<!-- source: about.html:126 | kind: text -->
 Balance
 
 @@ s04.about.html.034
-<!-- source: about.html:137 | kind: text -->
+<!-- source: about.html:128 | kind: text -->
 You pay for what ran.
 
 @@ s04.about.html.035
-<!-- source: about.html:138 | kind: text -->
+<!-- source: about.html:129 | kind: text -->
 No plan to keep up and nothing reserved in advance. A balance, and questions you spend it on.
 
 @@ s04.about.html.036
-<!-- source: about.html:145 | kind: text -->
+<!-- source: about.html:135 | kind: text -->
 Ask it something that matters.
 
 @@ s04.about.html.037
-<!-- source: about.html:146 | kind: text -->
+<!-- source: about.html:136 | kind: text -->
 Start a casting →
 
 @@ s04.about.html.038
-<!-- source: about.html:156 | kind: text -->
+<!-- source: about.html:146 | kind: text -->
 Terms
 
 @@ s04.about.html.039
-<!-- source: about.html:157 | kind: text -->
+<!-- source: about.html:147 | kind: text -->
 Privacy
 
 ---
@@ -1021,23 +1021,23 @@ Privacy
 Sign in — BourneWise
 
 @@ s05.login.html.002
-<!-- source: login.html:138 | kind: aria-label -->
+<!-- source: login.html:142 | kind: aria-label -->
 BourneWise home
 
 @@ s05.login.html.003
-<!-- source: login.html:176 | kind: aria-label -->
+<!-- source: login.html:180 | kind: aria-label -->
 Show password
 
 @@ s05.login.html.004
-<!-- source: login.html:166 | kind: placeholder -->
+<!-- source: login.html:170 | kind: placeholder -->
 How the reading addresses you
 
 @@ s05.login.html.005
-<!-- source: login.html:170 | kind: placeholder -->
+<!-- source: login.html:174 | kind: placeholder -->
 you@example.com
 
 @@ s05.login.html.006
-<!-- source: login.html:175 | kind: placeholder -->
+<!-- source: login.html:179 | kind: placeholder -->
 At least 8 characters
 
 @@ s05.login.html.007
@@ -1045,95 +1045,95 @@ At least 8 characters
 Sign in — BourneWise
 
 @@ s05.login.html.008
-<!-- source: login.html:140 | kind: text -->
+<!-- source: login.html:144 | kind: text -->
 BourneWise
 
 @@ s05.login.html.009
-<!-- source: login.html:142 | kind: text -->
+<!-- source: login.html:146 | kind: text -->
 &larr;
 
 @@ s05.login.html.010
-<!-- source: login.html:142 | kind: text -->
+<!-- source: login.html:146 | kind: text -->
 Back to BourneWise
 
 @@ s05.login.html.011
-<!-- source: login.html:142 | kind: text -->
+<!-- source: login.html:146 | kind: text -->
 Back
 
 @@ s05.login.html.012
-<!-- source: login.html:148 | kind: text -->
+<!-- source: login.html:152 | kind: text -->
 ◆  Account
 
 @@ s05.login.html.013
-<!-- source: login.html:149 | kind: text -->
+<!-- source: login.html:153 | kind: text -->
 Sync your balance and reading history.
 
 @@ s05.login.html.014
-<!-- source: login.html:150 | kind: text -->
+<!-- source: login.html:154 | kind: text -->
 Sign in to use the same unit balance, plan, and saved readings across devices.
 
 @@ s05.login.html.015
-<!-- source: login.html:159 | kind: text -->
+<!-- source: login.html:163 | kind: text -->
 Sign in
 
 @@ s05.login.html.016
-<!-- source: login.html:160 | kind: text -->
+<!-- source: login.html:164 | kind: text -->
 Create account
 
 @@ s05.login.html.017
-<!-- source: login.html:165 | kind: text -->
+<!-- source: login.html:169 | kind: text -->
 Name
 
 @@ s05.login.html.018
-<!-- source: login.html:169 | kind: text -->
+<!-- source: login.html:173 | kind: text -->
 Email
 
 @@ s05.login.html.019
-<!-- source: login.html:173 | kind: text -->
+<!-- source: login.html:177 | kind: text -->
 Password
 
 @@ s05.login.html.020
-<!-- source: login.html:176 | kind: text -->
+<!-- source: login.html:180 | kind: text -->
 Show
 
 @@ s05.login.html.021
-<!-- source: login.html:186 | kind: text -->
+<!-- source: login.html:190 | kind: text -->
 or continue with
 
 @@ s05.login.html.022
-<!-- source: login.html:193 | kind: text -->
+<!-- source: login.html:197 | kind: text -->
 Google
 
 @@ s05.login.html.023
-<!-- source: login.html:200 | kind: text -->
+<!-- source: login.html:204 | kind: text -->
 Reddit
 
 @@ s05.login.html.024
-<!-- source: login.html:207 | kind: text -->
+<!-- source: login.html:211 | kind: text -->
 Discord
 
 @@ s05.login.html.025
-<!-- source: login.html:214 | kind: text -->
+<!-- source: login.html:218 | kind: text -->
 By continuing, you agree to our
 
 @@ s05.login.html.026
-<!-- source: login.html:214 | kind: text -->
+<!-- source: login.html:218 | kind: text -->
 Terms
 
 @@ s05.login.html.027
-<!-- source: login.html:214 | kind: text -->
+<!-- source: login.html:218 | kind: text -->
 and
 
 @@ s05.login.html.028
-<!-- source: login.html:214 | kind: text -->
+<!-- source: login.html:218 | kind: text -->
 Privacy Policy
 
 @@ s05.login.html.029
-<!-- source: login.html:214 | kind: text -->
+<!-- source: login.html:218 | kind: text -->
 Your questions and saved readings follow the data controls in your account.
 
 @@ s05.login.html.030
-<!-- source: login.html:219 | kind: text -->
+<!-- source: login.html:223 | kind: text -->
 BourneWise · the figure is cast before a word is written about it
 
 ---
@@ -2163,3 +2163,2949 @@ The answer timed out — try again. Nothing was charged.
 <!-- source: copy.js | kind: runtime text -->
 The answer stopped partway — you're charged for the words that arrived, so the balance above is already final. Ask again.
 
+
+---
+
+## 12. Inline scripts in the pages
+
+*The page extractor blanks every `<script>` body, which is right for the code*
+*and wrong for the strings in it — these are the toasts, errors and empty*
+*states the pages raise themselves.*
+
+### index.html — 12 blocks
+
+@@ s12.inline.001
+<!-- source: index.html:1075 | kind: string -->
+You bring the question. The coins bring the shape.
+
+@@ s12.inline.002
+<!-- source: index.html:1076 | kind: string -->
+Six lines fall, and not one of them was chosen to please you.
+
+@@ s12.inline.003
+<!-- source: index.html:1077 | kind: string -->
+The figure is settled before a word is written about it.
+
+@@ s12.inline.004
+<!-- source: index.html:1078 | kind: string -->
+The reading explains the board. It never picks it.
+
+@@ s12.inline.005
+<!-- source: index.html:1079 | kind: string -->
+Something fixed to argue with, on a day you cannot decide.
+
+@@ s12.inline.006
+<!-- source: index.html:1080 | kind: string -->
+Every answer shows the board it came from.
+
+@@ s12.inline.007
+<!-- source: index.html:1086 | kind: string -->
+(prefers-reduced-motion: reduce)
+
+@@ s12.inline.008
+<!-- source: index.html:1154 | kind: string -->
+Should I accept the offer if it delays the work I care about?
+
+@@ s12.inline.009
+<!-- source: index.html:1155 | kind: string -->
+What am I missing before I commit to this partnership?
+
+@@ s12.inline.010
+<!-- source: index.html:1156 | kind: string -->
+Which constraint matters most in this decision?
+
+@@ s12.inline.011
+<!-- source: index.html:1157 | kind: string -->
+Is this the right moment to leave, or should I wait?
+
+@@ s12.inline.012
+<!-- source: index.html:1158 | kind: string -->
+What changed, and what should I do next?
+
+### pricing.html — 11 blocks
+
+@@ s12.inline.013
+<!-- source: pricing.html:141 | kind: string -->
+Not signed in
+
+@@ s12.inline.014
+<!-- source: pricing.html:141 | kind: string -->
+Start a casting
+
+@@ s12.inline.015
+<!-- source: pricing.html:141 | kind: string -->
+Sign in
+
+@@ s12.inline.016
+<!-- source: pricing.html:141 | kind: string -->
+Current plan
+
+@@ s12.inline.017
+<!-- source: pricing.html:151 | kind: string -->
+A typical reading works out to about
+
+@@ s12.inline.018
+<!-- source: pricing.html:151 | kind: string -->
+units, and a follow-up about
+
+@@ s12.inline.019
+<!-- source: pricing.html:164 | kind: string -->
+estimate with the
+
+@@ s12.inline.020
+<!-- source: pricing.html:164 | kind: string -->
+-token prompt this method sends
+
+@@ s12.inline.021
+<!-- source: pricing.html:167 | kind: string -->
+Sign in before opening checkout.
+
+@@ s12.inline.022
+<!-- source: pricing.html:167 | kind: string -->
+Payments are not available yet. Nothing was charged.
+
+@@ s12.inline.023
+<!-- source: pricing.html:167 | kind: string -->
+Checkout could not open. Nothing was charged.
+
+### login.html — 6 blocks
+
+@@ s12.inline.024
+<!-- source: login.html:248 | kind: string -->
+Sign in
+
+@@ s12.inline.025
+<!-- source: login.html:260 | kind: string -->
+Show password
+
+@@ s12.inline.026
+<!-- source: login.html:260 | kind: string -->
+Hide password
+
+@@ s12.inline.027
+<!-- source: login.html:290 | kind: string -->
+Enter a valid email address.
+
+@@ s12.inline.028
+<!-- source: login.html:291 | kind: string -->
+Password must be at least 8 characters.
+
+@@ s12.inline.029
+<!-- source: login.html:295 | kind: string -->
+Something went wrong. Please try again.
+
+### settings.html — 27 blocks
+
+@@ s12.inline.030
+<!-- source: settings.html:223 | kind: markup text -->
+Display name
+
+@@ s12.inline.031
+<!-- source: settings.html:223 | kind: markup text -->
+The name on your readings.
+
+@@ s12.inline.032
+<!-- source: settings.html:225 | kind: markup text -->
+Receipts and account notices are sent here.
+
+@@ s12.inline.033
+<!-- source: settings.html:227 | kind: markup text -->
+Save changes
+
+@@ s12.inline.034
+<!-- source: settings.html:227 | kind: markup text -->
+Saved to your account and synced across devices.
+
+@@ s12.inline.035
+<!-- source: settings.html:234 | kind: string -->
+Identity updated.
+
+@@ s12.inline.036
+<!-- source: settings.html:237 | kind: markup text -->
+You\u2019re using BourneWise as a guest on this device.
+
+@@ s12.inline.037
+<!-- source: settings.html:237 | kind: markup text -->
+Sign in
+
+@@ s12.inline.038
+<!-- source: settings.html:237 | kind: markup text -->
+to sync your balance and reading history.
+
+@@ s12.inline.039
+<!-- source: settings.html:257 | kind: string -->
+is now your default casting.
+
+@@ s12.inline.040
+<!-- source: settings.html:265 | kind: string -->
+reading stored on this device.
+
+@@ s12.inline.041
+<!-- source: settings.html:265 | kind: string -->
+readings stored on this device.
+
+@@ s12.inline.042
+<!-- source: settings.html:266 | kind: string -->
+No readings stored yet.
+
+@@ s12.inline.043
+<!-- source: settings.html:270 | kind: string -->
+Signed in as
+
+@@ s12.inline.044
+<!-- source: settings.html:271 | kind: markup text -->
+Sign out
+
+@@ s12.inline.045
+<!-- source: settings.html:273 | kind: string -->
+Signed out. Local balance and history remain on this device.
+
+@@ s12.inline.046
+<!-- source: settings.html:276 | kind: string -->
+Using BourneWise as a guest.
+
+@@ s12.inline.047
+<!-- source: settings.html:283 | kind: string -->
+There is no reading history to delete.
+
+@@ s12.inline.048
+<!-- source: settings.html:286 | kind: string -->
+Reading history deleted from this device.
+
+@@ s12.inline.049
+<!-- source: settings.html:299 | kind: string -->
+Cancellation scheduled. Receipts and invoices remain available in the Creem portal, and the plan stays active through the current period.
+
+@@ s12.inline.050
+<!-- source: settings.html:302 | kind: string -->
+Creem emails every receipt. Open the portal for invoices, payment methods, renewal details, or cancellation.
+
+@@ s12.inline.051
+<!-- source: settings.html:310 | kind: string -->
+Billing portal is unavailable right now.
+
+@@ s12.inline.052
+<!-- source: settings.html:311 | kind: string -->
+Network request failed. Try again.
+
+@@ s12.inline.053
+<!-- source: settings.html:315 | kind: string -->
+Cancel your subscription? Your plan stays active through the current billing period, and existing units remain available.
+
+@@ s12.inline.054
+<!-- source: settings.html:319 | kind: string -->
+Cancellation scheduled.
+
+@@ s12.inline.055
+<!-- source: settings.html:319 | kind: string -->
+Cancellation failed.
+
+@@ s12.inline.056
+<!-- source: settings.html:326 | kind: string -->
+Payment received. Creem has emailed your receipt; your units are syncing now.
+
+
+---
+
+## 13. chat-app.js
+
+*聊天 UI — 投卦流程、toast、报错、空状态、解读外壳* — 124 blocks
+
+@@ s13.chat-app.js.001
+<!-- source: chat-app.js:17 | kind: string -->
+The Well
+
+@@ s13.chat-app.js.002
+<!-- source: chat-app.js:17 | kind: string -->
+The Crossing
+
+@@ s13.chat-app.js.003
+<!-- source: chat-app.js:83 | kind: string -->
+Sign in
+
+@@ s13.chat-app.js.004
+<!-- source: chat-app.js:86 | kind: string -->
+units available — get more
+
+@@ s13.chat-app.js.005
+<!-- source: chat-app.js:114 | kind: string -->
+Sign in to start a reading
+
+@@ s13.chat-app.js.006
+<!-- source: chat-app.js:117 | kind: string -->
+Sign in to sync your balance and readings
+
+@@ s13.chat-app.js.007
+<!-- source: chat-app.js:161 | kind: string -->
+They asked:
+
+@@ s13.chat-app.js.008
+<!-- source: chat-app.js:162 | kind: string -->
+The reading said:
+
+@@ s13.chat-app.js.009
+<!-- source: chat-app.js:185 | kind: string -->
+" aria-label="
+
+@@ s13.chat-app.js.010
+<!-- source: chat-app.js:238 | kind: string -->
+Untitled casting
+
+@@ s13.chat-app.js.011
+<!-- source: chat-app.js:272 | kind: markup text -->
+Choose an analysis depth
+
+@@ s13.chat-app.js.012
+<!-- source: chat-app.js:294 | kind: markup text -->
+Reading history
+
+@@ s13.chat-app.js.013
+<!-- source: chat-app.js:338 | kind: string -->
+growing, pushing outward
+
+@@ s13.chat-app.js.014
+<!-- source: chat-app.js:338 | kind: string -->
+bright, quick to show itself
+
+@@ s13.chat-app.js.015
+<!-- source: chat-app.js:339 | kind: string -->
+steady, slow to move
+
+@@ s13.chat-app.js.016
+<!-- source: chat-app.js:340 | kind: string -->
+deep, finding the low road
+
+@@ s13.chat-app.js.017
+<!-- source: chat-app.js:344 | kind: string -->
+an equal on your own footing \u2014 allies and rivals working the same ground you are
+
+@@ s13.chat-app.js.018
+<!-- source: chat-app.js:346 | kind: string -->
+what answers to you \u2014 resources and gains you can take in hand
+
+@@ s13.chat-app.js.019
+<!-- source: chat-app.js:351 | kind: string -->
+feeds your position
+
+@@ s13.chat-app.js.020
+<!-- source: chat-app.js:352 | kind: string -->
+an equal beside you
+
+@@ s13.chat-app.js.021
+<!-- source: chat-app.js:353 | kind: string -->
+what you put out
+
+@@ s13.chat-app.js.022
+<!-- source: chat-app.js:354 | kind: string -->
+what answers to you
+
+@@ s13.chat-app.js.023
+<!-- source: chat-app.js:355 | kind: string -->
+what bears down on you
+
+@@ s13.chat-app.js.024
+<!-- source: chat-app.js:373 | kind: string -->
+line</b> turns
+
+@@ s13.chat-app.js.025
+<!-- source: chat-app.js:376 | kind: string -->
+Two lines are in motion \u2014
+
+@@ s13.chat-app.js.026
+<!-- source: chat-app.js:379 | kind: markup text -->
+It is turning into
+
+@@ s13.chat-app.js.027
+<!-- source: chat-app.js:381 | kind: markup text -->
+crosses into
+
+@@ s13.chat-app.js.028
+<!-- source: chat-app.js:382 | kind: string -->
+</b> \u2014 not where you stand now, but where this is heading.</p>
+
+@@ s13.chat-app.js.029
+<!-- source: chat-app.js:389 | kind: markup text -->
+Self \u2014 where you stand
+
+@@ s13.chat-app.js.030
+<!-- source: chat-app.js:390 | kind: markup text -->
+Response \u2014 the other side
+
+@@ s13.chat-app.js.031
+<!-- source: chat-app.js:393 | kind: markup text -->
+Moving line \u2014 what is turning
+
+@@ s13.chat-app.js.032
+<!-- source: chat-app.js:394 | kind: markup text -->
+feeds \u00b7 generating
+
+@@ s13.chat-app.js.033
+<!-- source: chat-app.js:395 | kind: markup text -->
+checks \u00b7 controlling
+
+@@ s13.chat-app.js.034
+<!-- source: chat-app.js:410 | kind: string -->
+class="bw-zg-svg settled"
+
+@@ s13.chat-app.js.035
+<!-- source: chat-app.js:412 | kind: string -->
+Coloured by element · the arrow shows how the turning line acts on you
+
+@@ s13.chat-app.js.036
+<!-- source: chat-app.js:413 | kind: string -->
+Coloured by element · the figure as it stands
+
+@@ s13.chat-app.js.037
+<!-- source: chat-app.js:418 | kind: markup text -->
+Reading the figure
+
+@@ s13.chat-app.js.038
+<!-- source: chat-app.js:440 | kind: markup text -->
+What’s turning
+
+@@ s13.chat-app.js.039
+<!-- source: chat-app.js:444 | kind: markup text -->
+Where it’s heading
+
+@@ s13.chat-app.js.040
+<!-- source: chat-app.js:499 | kind: string -->
++ (window.BW_BUILD ||
+
+@@ s13.chat-app.js.041
+<!-- source: chat-app.js:559 | kind: string -->
++ esc(hit.key) +
+
+@@ s13.chat-app.js.042
+<!-- source: chat-app.js:636 | kind: string -->
++ cls +
+
+@@ s13.chat-app.js.043
+<!-- source: chat-app.js:637 | kind: string -->
++ esc(nm(n)) +
+
+@@ s13.chat-app.js.044
+<!-- source: chat-app.js:655 | kind: string -->
++ esc(list.join(zh ?
+
+@@ s13.chat-app.js.045
+<!-- source: chat-app.js:658 | kind: string -->
++ (zh ? "zh" : "en") +
+
+@@ s13.chat-app.js.046
+<!-- source: chat-app.js:659 | kind: string -->
+>' + esc(zh ?
+
+@@ s13.chat-app.js.047
+<!-- source: chat-app.js:663 | kind: string -->
+>' + sheng +
+
+@@ s13.chat-app.js.048
+<!-- source: chat-app.js:664 | kind: string -->
+>' + ke +
+
+@@ s13.chat-app.js.049
+<!-- source: chat-app.js:702 | kind: string -->
++ esc(key) +
+
+@@ s13.chat-app.js.050
+<!-- source: chat-app.js:702 | kind: string -->
+' + ' aria-expanded=
+
+@@ s13.chat-app.js.051
+<!-- source: chat-app.js:703 | kind: string -->
+' + ' title=
+
+@@ s13.chat-app.js.052
+<!-- source: chat-app.js:704 | kind: string -->
++ esc(zh ? key + " 在这一卦里还可能是:" + lead.join("、") + " —— 点开看全部" : (entry.en || key) + " could also be: " + lead.join(", ") + " — open for all") +
+
+@@ s13.chat-app.js.053
+<!-- source: chat-app.js:707 | kind: markup text -->
+' + esc(zh ? key : (entry.en || key)) + '
+
+@@ s13.chat-app.js.054
+<!-- source: chat-app.js:718 | kind: string -->
+>' + rows.join(
+
+@@ s13.chat-app.js.055
+<!-- source: chat-app.js:779 | kind: string -->
++ esc(sym) +
+
+@@ s13.chat-app.js.056
+<!-- source: chat-app.js:810 | kind: string -->
++ (n % 2 === 0 ? " alt" : "") +
+
+@@ s13.chat-app.js.057
+<!-- source: chat-app.js:820 | kind: string -->
+>' + mdInline(para.join(
+
+@@ s13.chat-app.js.058
+<!-- source: chat-app.js:830 | kind: string -->
+: (lvl === 2 ?
+
+@@ s13.chat-app.js.059
+<!-- source: chat-app.js:831 | kind: string -->
+>' + mdInline(hm[2]) +
+
+@@ s13.chat-app.js.060
+<!-- source: chat-app.js:835 | kind: string -->
++ mdInline(lm[1]) +
+
+@@ s13.chat-app.js.061
+<!-- source: chat-app.js:858 | kind: string -->
++ xrHits().join(",") +
+
+@@ s13.chat-app.js.062
+<!-- source: chat-app.js:858 | kind: markup text -->
+' + (prose || '
+
+@@ s13.chat-app.js.063
+<!-- source: chat-app.js:859 | kind: markup text -->
+') + xrChain(msg.text) + xrMaybe(msg.text) + readingFootnote(msg.text) + '
+
+@@ s13.chat-app.js.064
+<!-- source: chat-app.js:864 | kind: string -->
++ r.verdict +
+
+@@ s13.chat-app.js.065
+<!-- source: chat-app.js:864 | kind: string -->
+>' + (V_LABEL[r.verdict] ||
+
+@@ s13.chat-app.js.066
+<!-- source: chat-app.js:867 | kind: markup text -->
+Line ' + k.line + '
+
+@@ s13.chat-app.js.067
+<!-- source: chat-app.js:867 | kind: string -->
+>' + esc(k.note ||
+
+@@ s13.chat-app.js.068
+<!-- source: chat-app.js:869 | kind: markup text -->
+What decides it
+
+@@ s13.chat-app.js.069
+<!-- source: chat-app.js:869 | kind: string -->
+>' + keys + '</ul></div>' :
+
+@@ s13.chat-app.js.070
+<!-- source: chat-app.js:870 | kind: string -->
+>' + esc(r.timing) + '</p></div>' :
+
+@@ s13.chat-app.js.071
+<!-- source: chat-app.js:887 | kind: string -->
++ (zh ?
+
+@@ s13.chat-app.js.072
+<!-- source: chat-app.js:912 | kind: string -->
+|| msg.method ===
+
+@@ s13.chat-app.js.073
+<!-- source: chat-app.js:984 | kind: string -->
++ (zhPanel ?
+
+@@ s13.chat-app.js.074
+<!-- source: chat-app.js:984 | kind: string -->
++ esc(L.aria(methodLabel)) +
+
+@@ s13.chat-app.js.075
+<!-- source: chat-app.js:985 | kind: markup text -->
+' + esc(L.kicker(methodLabel)) + '
+
+@@ s13.chat-app.js.076
+<!-- source: chat-app.js:985 | kind: markup text -->
+' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '
+
+@@ s13.chat-app.js.077
+<!-- source: chat-app.js:985 | kind: markup text -->
+' + esc(L.hint) + '
+
+@@ s13.chat-app.js.078
+<!-- source: chat-app.js:985 | kind: markup text -->
+' + (axes.length && !continued ? '
+
+@@ s13.chat-app.js.079
+<!-- source: chat-app.js:989 | kind: string -->
++ esc(a.q) +
+
+@@ s13.chat-app.js.080
+<!-- source: chat-app.js:989 | kind: string -->
++ esc(a.key) +
+
+@@ s13.chat-app.js.081
+<!-- source: chat-app.js:989 | kind: markup text -->
+' + esc(a.label) + '
+
+@@ s13.chat-app.js.082
+<!-- source: chat-app.js:993 | kind: string -->
++ esc(p[1]) +
+
+@@ s13.chat-app.js.083
+<!-- source: chat-app.js:993 | kind: markup text -->
+' + esc(p[0]) + '
+
+@@ s13.chat-app.js.084
+<!-- source: chat-app.js:993 | kind: markup text -->
+' + esc(p[1]) + '
+
+@@ s13.chat-app.js.085
+<!-- source: chat-app.js:998 | kind: markup text -->
+' + esc(L.note(A.followCost(sortis ? 'sortis' : 'stria'))) + '
+
+@@ s13.chat-app.js.086
+<!-- source: chat-app.js:1010 | kind: markup text -->
+Follow up
+
+@@ s13.chat-app.js.087
+<!-- source: chat-app.js:1013 | kind: markup text -->
+New casting
+
+@@ s13.chat-app.js.088
+<!-- source: chat-app.js:1033 | kind: markup text -->
+  New reading
+
+@@ s13.chat-app.js.089
+<!-- source: chat-app.js:1037 | kind: string -->
+></path>' +
+
+@@ s13.chat-app.js.090
+<!-- source: chat-app.js:1047 | kind: string -->
++ (opts.animateLast && i === c.msgs.length - 1 ?
+
+@@ s13.chat-app.js.091
+<!-- source: chat-app.js:1095 | kind: string -->
+". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump.
+
+@@ s13.chat-app.js.092
+<!-- source: chat-app.js:1096 | kind: string -->
+Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis.
+
+@@ s13.chat-app.js.093
+<!-- source: chat-app.js:1097 | kind: string -->
+Reply in English with the judgment only.
+
+@@ s13.chat-app.js.094
+<!-- source: chat-app.js:1140 | kind: string -->
+». Background only: it tells you what they have already asked and been told, so you
+
+@@ s13.chat-app.js.095
+<!-- source: chat-app.js:1141 | kind: string -->
+do not make them repeat it. Do NOT re-read that earlier hexagram or treat its casting
+
+@@ s13.chat-app.js.096
+<!-- source: chat-app.js:1142 | kind: string -->
+as evidence for this question — this question has its own casting.]
+
+@@ s13.chat-app.js.097
+<!-- source: chat-app.js:1145 | kind: string -->
+Understood — I have their earlier conversation as background and will read only the
+
+@@ s13.chat-app.js.098
+<!-- source: chat-app.js:1146 | kind: string -->
+casting in front of me.
+
+@@ s13.chat-app.js.099
+<!-- source: chat-app.js:1151 | kind: string -->
+OWN question on its OWN hexagram. Use them so you do not repeat yourself and so you know
+
+@@ s13.chat-app.js.100
+<!-- source: chat-app.js:1152 | kind: string -->
+what has already been asked. Do NOT carry their conclusions into this reading, do NOT
+
+@@ s13.chat-app.js.101
+<!-- source: chat-app.js:1153 | kind: string -->
+count agreement with them as confirmation, and above all do NOT reuse a 生克/合冲/比和
+
+@@ s13.chat-app.js.102
+<!-- source: chat-app.js:1154 | kind: string -->
+reading made there: those relations were mapped to human meaning for a DIFFERENT question,
+
+@@ s13.chat-app.js.103
+<!-- source: chat-app.js:1155 | kind: string -->
+and the same relation means something else here. This question has its own casting — read
+
+@@ s13.chat-app.js.104
+<!-- source: chat-app.js:1156 | kind: string -->
+that one.]
+
+@@ s13.chat-app.js.105
+<!-- source: chat-app.js:1158 | kind: string -->
+Understood — earlier castings are background. I will read only the hexagram in front of me
+
+@@ s13.chat-app.js.106
+<!-- source: chat-app.js:1159 | kind: string -->
+and will not treat their findings as evidence.
+
+@@ s13.chat-app.js.107
+<!-- source: chat-app.js:1209 | kind: string -->
+Route this message.
+
+@@ s13.chat-app.js.108
+<!-- source: chat-app.js:1701 | kind: string -->
+oracle call failed
+
+@@ s13.chat-app.js.109
+<!-- source: chat-app.js:2040 | kind: string -->
+—— 它在万物类象里指的全部
+
+@@ s13.chat-app.js.110
+<!-- source: chat-app.js:2040 | kind: string -->
+— everything it points at
+
+@@ s13.chat-app.js.111
+<!-- source: chat-app.js:2049 | kind: string -->
+它做的事
+
+@@ s13.chat-app.js.112
+<!-- source: chat-app.js:2049 | kind: string -->
+what it does
+
+@@ s13.chat-app.js.113
+<!-- source: chat-app.js:2119 | kind: string -->
+」是
+
+@@ s13.chat-app.js.114
+<!-- source: chat-app.js:2119 | kind: string -->
+走的
+
+@@ s13.chat-app.js.115
+<!-- source: chat-app.js:2119 | kind: string -->
+这一支。同一路还有别的分支,点开看它们具体是些什么:
+
+@@ s13.chat-app.js.116
+<!-- source: chat-app.js:2120 | kind: string -->
+” is
+
+@@ s13.chat-app.js.117
+<!-- source: chat-app.js:2120 | kind: string -->
+taken as
+
+@@ s13.chat-app.js.118
+<!-- source: chat-app.js:2123 | kind: string -->
+」这里读的是
+
+@@ s13.chat-app.js.119
+<!-- source: chat-app.js:2123 | kind: string -->
+。这一路分这几支 —— 点开看它具体是些什么:
+
+@@ s13.chat-app.js.120
+<!-- source: chat-app.js:2124 | kind: string -->
+read one way. It runs in these branches — open one to see what it actually is:
+
+@@ s13.chat-app.js.121
+<!-- source: chat-app.js:2127 | kind: string -->
+" data-i="
+
+@@ s13.chat-app.js.122
+<!-- source: chat-app.js:2127 | kind: string -->
+" aria-expanded="false">
+
+@@ s13.chat-app.js.123
+<!-- source: chat-app.js:2293 | kind: string -->
+Ask what this casting means for your situation…
+
+@@ s13.chat-app.js.124
+<!-- source: chat-app.js:2305 | kind: string -->
+Ask what this casting means for your situation\u2026
+
+
+---
+
+## 14. account.js
+
+*余额、套餐名、账本条目* — 17 blocks
+
+@@ s14.account.js.001
+<!-- source: account.js:53 | kind: string -->
+Stria 64
+
+@@ s14.account.js.002
+<!-- source: account.js:53 | kind: string -->
+Present structure
+
+@@ s14.account.js.003
+<!-- source: account.js:54 | kind: string -->
+Primary hexagram
+
+@@ s14.account.js.004
+<!-- source: account.js:55 | kind: string -->
+Interprets the primary hexagram against your question.
+
+@@ s14.account.js.005
+<!-- source: account.js:59 | kind: string -->
+Sortis 6
+
+@@ s14.account.js.006
+<!-- source: account.js:59 | kind: string -->
+Change analysis
+
+@@ s14.account.js.007
+<!-- source: account.js:60 | kind: string -->
+Primary + transformed hexagrams
+
+@@ s14.account.js.008
+<!-- source: account.js:61 | kind: string -->
+Adds moving lines and the transformed hexagram to the analysis.
+
+@@ s14.account.js.009
+<!-- source: account.js:315 | kind: string -->
+accounts backend not configured
+
+@@ s14.account.js.010
+<!-- source: account.js:316 | kind: string -->
+request failed (
+
+@@ s14.account.js.011
+<!-- source: account.js:319 | kind: string -->
+network error —
+
+@@ s14.account.js.012
+<!-- source: account.js:341 | kind: string -->
+units each month
+
+@@ s14.account.js.013
+<!-- source: account.js:347 | kind: string -->
+Your first reading is free
+
+@@ s14.account.js.014
+<!-- source: account.js:347 | kind: string -->
+free readings
+
+@@ s14.account.js.015
+<!-- source: account.js:348 | kind: string -->
+· subscriptions and one-time top-ups available
+
+@@ s14.account.js.016
+<!-- source: account.js:363 | kind: string -->
+Not signed in
+
+@@ s14.account.js.017
+<!-- source: account.js:370 | kind: string -->
+Sign in to sync your balance and readings
+
+
+---
+
+## 15. sidebar.js
+
+*会话列表、余额片、账户行* — 18 blocks
+
+@@ s15.sidebar.js.001
+<!-- source: sidebar.js:81 | kind: string -->
+transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1),visibility 0s linear .16s}
+
+@@ s15.sidebar.js.002
+<!-- source: sidebar.js:83 | kind: string -->
+transition:opacity .16s ease,transform .18s cubic-bezier(.4,0,.2,1)}
+
+@@ s15.sidebar.js.003
+<!-- source: sidebar.js:99 | kind: aria-label -->
+BourneWise logomark
+
+@@ s15.sidebar.js.004
+<!-- source: sidebar.js:106 | kind: aria-label -->
+BourneWise home
+
+@@ s15.sidebar.js.005
+<!-- source: sidebar.js:109 | kind: aria-label -->
+Collapse sidebar
+
+@@ s15.sidebar.js.006
+<!-- source: sidebar.js:109 | kind: title -->
+Collapse sidebar
+
+@@ s15.sidebar.js.007
+<!-- source: sidebar.js:113 | kind: markup text -->
+New casting
+
+@@ s15.sidebar.js.008
+<!-- source: sidebar.js:115 | kind: markup text -->
+Reading history
+
+@@ s15.sidebar.js.009
+<!-- source: sidebar.js:115 | kind: aria-label -->
+Reading history
+
+@@ s15.sidebar.js.010
+<!-- source: sidebar.js:117 | kind: markup text -->
+Available units
+
+@@ s15.sidebar.js.011
+<!-- source: sidebar.js:120 | kind: markup text -->
+of monthly balance
+
+@@ s15.sidebar.js.012
+<!-- source: sidebar.js:121 | kind: markup text -->
+Get units
+
+@@ s15.sidebar.js.013
+<!-- source: sidebar.js:125 | kind: markup text -->
+Not signed in
+
+@@ s15.sidebar.js.014
+<!-- source: sidebar.js:129 | kind: markup text -->
+Sign in to sync your balance and readings
+
+@@ s15.sidebar.js.015
+<!-- source: sidebar.js:130 | kind: markup text -->
+Plan & units
+
+@@ s15.sidebar.js.016
+<!-- source: sidebar.js:132 | kind: markup text -->
+Sign out
+
+@@ s15.sidebar.js.017
+<!-- source: sidebar.js:169 | kind: string -->
+No readings yet. Your first casting will appear here.
+
+@@ s15.sidebar.js.018
+<!-- source: sidebar.js:194 | kind: string -->
+Your first reading is on us
+
+
+---
+
+## 16. ds-base.js
+
+*共享 chrome* — 2 blocks
+
+@@ s16.ds-base.js.001
+<!-- source: ds-base.js:102 | kind: string -->
+claude proxy
+
+@@ s16.ds-base.js.002
+<!-- source: ds-base.js:118 | kind: string -->
+claude proxy: bad response
+
+
+---
+
+## 17. casting-figure.js
+
+*排卦图 — 六十四卦名与爻的注解* — 131 blocks
+
+@@ s17.casting-figure.js.001
+<!-- source: casting-figure.js:17 | kind: string -->
+The Creative
+
+@@ s17.casting-figure.js.002
+<!-- source: casting-figure.js:17 | kind: string -->
+The Receptive
+
+@@ s17.casting-figure.js.003
+<!-- source: casting-figure.js:18 | kind: string -->
+Difficulty at the Beginning
+
+@@ s17.casting-figure.js.004
+<!-- source: casting-figure.js:18 | kind: string -->
+Youthful Folly
+
+@@ s17.casting-figure.js.005
+<!-- source: casting-figure.js:20 | kind: string -->
+The Army
+
+@@ s17.casting-figure.js.006
+<!-- source: casting-figure.js:20 | kind: string -->
+Holding Together
+
+@@ s17.casting-figure.js.007
+<!-- source: casting-figure.js:21 | kind: string -->
+Small Taming
+
+@@ s17.casting-figure.js.008
+<!-- source: casting-figure.js:23 | kind: string -->
+Great Possession
+
+@@ s17.casting-figure.js.009
+<!-- source: casting-figure.js:25 | kind: string -->
+Work on the Decayed
+
+@@ s17.casting-figure.js.010
+<!-- source: casting-figure.js:27 | kind: string -->
+Biting Through
+
+@@ s17.casting-figure.js.011
+<!-- source: casting-figure.js:28 | kind: string -->
+Splitting Apart
+
+@@ s17.casting-figure.js.012
+<!-- source: casting-figure.js:29 | kind: string -->
+Great Taming
+
+@@ s17.casting-figure.js.013
+<!-- source: casting-figure.js:30 | kind: string -->
+Great Exceeding
+
+@@ s17.casting-figure.js.014
+<!-- source: casting-figure.js:31 | kind: string -->
+The Abysmal
+
+@@ s17.casting-figure.js.015
+<!-- source: casting-figure.js:31 | kind: string -->
+The Clinging
+
+@@ s17.casting-figure.js.016
+<!-- source: casting-figure.js:33 | kind: string -->
+Great Power
+
+@@ s17.casting-figure.js.017
+<!-- source: casting-figure.js:34 | kind: string -->
+Darkening of the Light
+
+@@ s17.casting-figure.js.018
+<!-- source: casting-figure.js:35 | kind: string -->
+The Family
+
+@@ s17.casting-figure.js.019
+<!-- source: casting-figure.js:38 | kind: string -->
+Coming to Meet
+
+@@ s17.casting-figure.js.020
+<!-- source: casting-figure.js:39 | kind: string -->
+Gathering Together
+
+@@ s17.casting-figure.js.021
+<!-- source: casting-figure.js:39 | kind: string -->
+Pushing Upward
+
+@@ s17.casting-figure.js.022
+<!-- source: casting-figure.js:40 | kind: string -->
+The Well
+
+@@ s17.casting-figure.js.023
+<!-- source: casting-figure.js:41 | kind: string -->
+The Cauldron
+
+@@ s17.casting-figure.js.024
+<!-- source: casting-figure.js:42 | kind: string -->
+The Arousing
+
+@@ s17.casting-figure.js.025
+<!-- source: casting-figure.js:42 | kind: string -->
+Keeping Still
+
+@@ s17.casting-figure.js.026
+<!-- source: casting-figure.js:43 | kind: string -->
+The Marrying Maiden
+
+@@ s17.casting-figure.js.027
+<!-- source: casting-figure.js:44 | kind: string -->
+The Wanderer
+
+@@ s17.casting-figure.js.028
+<!-- source: casting-figure.js:45 | kind: string -->
+The Gentle
+
+@@ s17.casting-figure.js.029
+<!-- source: casting-figure.js:45 | kind: string -->
+The Joyous
+
+@@ s17.casting-figure.js.030
+<!-- source: casting-figure.js:47 | kind: string -->
+Inner Truth
+
+@@ s17.casting-figure.js.031
+<!-- source: casting-figure.js:47 | kind: string -->
+Small Exceeding
+
+@@ s17.casting-figure.js.032
+<!-- source: casting-figure.js:48 | kind: string -->
+After Completion
+
+@@ s17.casting-figure.js.033
+<!-- source: casting-figure.js:48 | kind: string -->
+Before Completion
+
+@@ s17.casting-figure.js.034
+<!-- source: casting-figure.js:56 | kind: string -->
+yielding, receptive
+
+@@ s17.casting-figure.js.035
+<!-- source: casting-figure.js:57 | kind: string -->
+arousing, sudden movement
+
+@@ s17.casting-figure.js.036
+<!-- source: casting-figure.js:58 | kind: string -->
+depth, the unavoidable
+
+@@ s17.casting-figure.js.037
+<!-- source: casting-figure.js:59 | kind: string -->
+openness, quiet joy
+
+@@ s17.casting-figure.js.038
+<!-- source: casting-figure.js:60 | kind: string -->
+stillness, the immovable
+
+@@ s17.casting-figure.js.039
+<!-- source: casting-figure.js:61 | kind: string -->
+clarity, what clings and shows
+
+@@ s17.casting-figure.js.040
+<!-- source: casting-figure.js:62 | kind: string -->
+gentle, persistent pressure
+
+@@ s17.casting-figure.js.041
+<!-- source: casting-figure.js:63 | kind: string -->
+force, pure initiative
+
+@@ s17.casting-figure.js.042
+<!-- source: casting-figure.js:212 | kind: string -->
+" cy="
+
+@@ s17.casting-figure.js.043
+<!-- source: casting-figure.js:213 | kind: string -->
+" r="2.7" fill="none" stroke="
+
+@@ s17.casting-figure.js.044
+<!-- source: casting-figure.js:213 | kind: string -->
+" stroke-width="1.4"></circle>
+
+@@ s17.casting-figure.js.045
+<!-- source: casting-figure.js:216 | kind: string -->
+" height="
+
+@@ s17.casting-figure.js.046
+<!-- source: casting-figure.js:217 | kind: string -->
+" viewBox="0 0
+
+@@ s17.casting-figure.js.047
+<!-- source: casting-figure.js:217 | kind: string -->
+" fill="
+
+@@ s17.casting-figure.js.048
+<!-- source: casting-figure.js:217 | kind: string -->
+" aria-hidden="true">
+
+@@ s17.casting-figure.js.049
+<!-- source: casting-figure.js:256 | kind: string -->
+Sortis 6
+
+@@ s17.casting-figure.js.050
+<!-- source: casting-figure.js:256 | kind: string -->
+Stria 64
+
+@@ s17.casting-figure.js.051
+<!-- source: casting-figure.js:268 | kind: string -->
+stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+@@ s17.casting-figure.js.052
+<!-- source: casting-figure.js:294 | kind: string -->
+" repeatCount="indefinite" values="
+
+@@ s17.casting-figure.js.053
+<!-- source: casting-figure.js:299 | kind: string -->
+aria-hidden="true" focusable="false">
+
+@@ s17.casting-figure.js.054
+<!-- source: casting-figure.js:373 | kind: string -->
+line ·
+
+@@ s17.casting-figure.js.055
+<!-- source: casting-figure.js:373 | kind: string -->
+· moving
+
+@@ s17.casting-figure.js.056
+<!-- source: casting-figure.js:428 | kind: string -->
+" fill="currentColor" stroke="currentColor"
+
+@@ s17.casting-figure.js.057
+<!-- source: casting-figure.js:429 | kind: string -->
+stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round"></path>
+
+@@ s17.casting-figure.js.058
+<!-- source: casting-figure.js:474 | kind: string -->
+(prefers-reduced-motion: reduce)
+
+@@ s17.casting-figure.js.059
+<!-- source: casting-figure.js:532 | kind: string -->
+mapping the present
+
+@@ s17.casting-figure.js.060
+<!-- source: casting-figure.js:532 | kind: string -->
+locating the change
+
+@@ s17.casting-figure.js.061
+<!-- source: casting-figure.js:533 | kind: string -->
+forming the inner trigram
+
+@@ s17.casting-figure.js.062
+<!-- source: casting-figure.js:533 | kind: string -->
+forming the outer trigram
+
+@@ s17.casting-figure.js.063
+<!-- source: casting-figure.js:537 | kind: string -->
+of 6: resolving coin faces
+
+@@ s17.casting-figure.js.064
+<!-- source: casting-figure.js:550 | kind: string -->
+old yang
+
+@@ s17.casting-figure.js.065
+<!-- source: casting-figure.js:550 | kind: string -->
+old yin
+
+@@ s17.casting-figure.js.066
+<!-- source: casting-figure.js:550 | kind: string -->
+young yang
+
+@@ s17.casting-figure.js.067
+<!-- source: casting-figure.js:550 | kind: string -->
+young yin
+
+@@ s17.casting-figure.js.068
+<!-- source: casting-figure.js:551 | kind: string -->
+of 6:
+
+@@ s17.casting-figure.js.069
+<!-- source: casting-figure.js:582 | kind: string -->
+Setting the trigrams\u2026
+
+@@ s17.casting-figure.js.070
+<!-- source: casting-figure.js:588 | kind: string -->
+Mapping the change\u2026
+
+@@ s17.casting-figure.js.071
+<!-- source: casting-figure.js:588 | kind: string -->
+Reading the structure\u2026
+
+@@ s17.casting-figure.js.072
+<!-- source: casting-figure.js:595 | kind: string -->
+Opening the reading\u2026
+
+@@ s17.casting-figure.js.073
+<!-- source: casting-figure.js:652 | kind: string -->
+" text-anchor="middle">
+
+@@ s17.casting-figure.js.074
+<!-- source: casting-figure.js:717 | kind: string -->
+transition:fill .46s var(--ease-out,cubic-bezier(.23,1,.32,1))}
+
+@@ s17.casting-figure.js.075
+<!-- source: casting-figure.js:734 | kind: string -->
+@keyframes bwLineFloat{
+
+@@ s17.casting-figure.js.076
+<!-- source: casting-figure.js:985 | kind: string -->
+The moving line feeds your position \u2014 the shift underway is pouring strength into where you stand. Lean into it; momentum is on your side.
+
+@@ s17.casting-figure.js.077
+<!-- source: casting-figure.js:986 | kind: string -->
+Your position feeds the moving line \u2014 you are the one powering this shift. Nothing moves on its own here, and it keeps costing you to drive it.
+
+@@ s17.casting-figure.js.078
+<!-- source: casting-figure.js:987 | kind: string -->
+The moving line checks your position \u2014 the shift underway bears straight down on where you stand. Shore up your footing before you commit.
+
+@@ s17.casting-figure.js.079
+<!-- source: casting-figure.js:988 | kind: string -->
+Your position checks the moving line \u2014 you hold the brake on this shift. It waits on your decision, not the other way round.
+
+@@ s17.casting-figure.js.080
+<!-- source: casting-figure.js:989 | kind: string -->
+The moving line shares your element \u2014 this shift is an extension of your own position, not an outside force. Read it as your own momentum.
+
+@@ s17.casting-figure.js.081
+<!-- source: casting-figure.js:992 | kind: string -->
+The other side of the figure feeds your position \u2014 circumstances are quietly working in your favour. Receive what's offered before you spend.
+
+@@ s17.casting-figure.js.082
+<!-- source: casting-figure.js:994 | kind: string -->
+The other side checks your position \u2014 outside pressure is set against where you stand. Hold the line; forcing it uphill only spends you.
+
+@@ s17.casting-figure.js.083
+<!-- source: casting-figure.js:995 | kind: string -->
+Your position checks the other side \u2014 the leverage here is yours. Move deliberately and the rest gives way.
+
+@@ s17.casting-figure.js.084
+<!-- source: casting-figure.js:996 | kind: string -->
+Both sides of the figure share your element \u2014 the matter is evenly matched and self-reinforcing. The tie breaks only by your move.
+
+@@ s17.casting-figure.js.085
+<!-- source: casting-figure.js:1005 | kind: string -->
+First (bottom)
+
+@@ s17.casting-figure.js.086
+<!-- source: casting-figure.js:1005 | kind: string -->
+Sixth (top)
+
+@@ s17.casting-figure.js.087
+<!-- source: casting-figure.js:1049 | kind: string -->
+" width="
+
+@@ s17.casting-figure.js.088
+<!-- source: casting-figure.js:1049 | kind: string -->
+" height="8" rx="2.5" fill="
+
+@@ s17.casting-figure.js.089
+<!-- source: casting-figure.js:1056 | kind: string -->
+" r="4.6" fill="var(--paper-raised)" stroke="var(--terracotta)" stroke-width="1.6"></circle>
+
+@@ s17.casting-figure.js.090
+<!-- source: casting-figure.js:1057 | kind: string -->
+" class="bw-zg-el" fill="
+
+@@ s17.casting-figure.js.091
+<!-- source: casting-figure.js:1060 | kind: string -->
+" class="bw-zg-mk
+
+@@ s17.casting-figure.js.092
+<!-- source: casting-figure.js:1076 | kind: string -->
+" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+
+@@ s17.casting-figure.js.093
+<!-- source: casting-figure.js:1077 | kind: string -->
+" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></marker>
+
+@@ s17.casting-figure.js.094
+<!-- source: casting-figure.js:1078 | kind: string -->
+" class="bw-zg-arrow" stroke="
+
+@@ s17.casting-figure.js.095
+<!-- source: casting-figure.js:1078 | kind: string -->
+" marker-end="url(#
+
+@@ s17.casting-figure.js.096
+<!-- source: casting-figure.js:1079 | kind: string -->
+" class="bw-zg-flow
+
+@@ s17.casting-figure.js.097
+<!-- source: casting-figure.js:1079 | kind: string -->
+" stroke="
+
+@@ s17.casting-figure.js.098
+<!-- source: casting-figure.js:1079 | kind: string -->
+" style="--bw-zg-i:
+
+@@ s17.casting-figure.js.099
+<!-- source: casting-figure.js:1084 | kind: string -->
+The moving line falls on your own position \u2014 the change here is yours to make, not one happening to you.
+
+@@ s17.casting-figure.js.100
+<!-- source: casting-figure.js:1086 | kind: string -->
+" class="bw-zg-svg" aria-hidden="true">
+
+@@ s17.casting-figure.js.101
+<!-- source: casting-figure.js:1097 | kind: markup text -->
+Self \u2014 where you stand
+
+@@ s17.casting-figure.js.102
+<!-- source: casting-figure.js:1098 | kind: markup text -->
+Response \u2014 the other side
+
+@@ s17.casting-figure.js.103
+<!-- source: casting-figure.js:1099 | kind: markup text -->
+Moving line \u2014 what is turning
+
+@@ s17.casting-figure.js.104
+<!-- source: casting-figure.js:1100 | kind: markup text -->
+feeds · generating
+
+@@ s17.casting-figure.js.105
+<!-- source: casting-figure.js:1101 | kind: markup text -->
+checks · controlling
+
+@@ s17.casting-figure.js.106
+<!-- source: casting-figure.js:1129 | kind: string -->
+" fill="none" stroke="
+
+@@ s17.casting-figure.js.107
+<!-- source: casting-figure.js:1129 | kind: string -->
+" stroke-width="8.6" stroke-linecap="round" stroke-linejoin="round">
+
+@@ s17.casting-figure.js.108
+<!-- source: casting-figure.js:1133 | kind: string -->
+s" repeatCount="indefinite"
+
+@@ s17.casting-figure.js.109
+<!-- source: casting-figure.js:1135 | kind: string -->
+calcMode="spline" keyTimes="
+
+@@ s17.casting-figure.js.110
+<!-- source: casting-figure.js:1135 | kind: string -->
+" keySplines="
+
+@@ s17.casting-figure.js.111
+<!-- source: casting-figure.js:1135 | kind: string -->
+" values="
+
+@@ s17.casting-figure.js.112
+<!-- source: casting-figure.js:1184 | kind: string -->
+" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round"></path>
+
+@@ s17.casting-figure.js.113
+<!-- source: casting-figure.js:1202 | kind: string -->
+" r="4.2" fill="var(--paper-raised)" stroke="var(--terracotta)" stroke-width="1.5"></circle>
+
+@@ s17.casting-figure.js.114
+<!-- source: casting-figure.js:1203 | kind: string -->
+" style="--wd:
+
+@@ s17.casting-figure.js.115
+<!-- source: casting-figure.js:1206 | kind: string -->
+" text-anchor="end" dominant-baseline="middle">
+
+@@ s17.casting-figure.js.116
+<!-- source: casting-figure.js:1210 | kind: string -->
+" text-anchor="start" dominant-baseline="middle">
+
+@@ s17.casting-figure.js.117
+<!-- source: casting-figure.js:1220 | kind: string -->
+color-mix(in oklab,
+
+@@ s17.casting-figure.js.118
+<!-- source: casting-figure.js:1220 | kind: string -->
+42%, var(--dim))
+
+@@ s17.casting-figure.js.119
+<!-- source: casting-figure.js:1225 | kind: string -->
+" viewBox="0 0 12 12" refX="7.6" refY="6" markerWidth="
+
+@@ s17.casting-figure.js.120
+<!-- source: casting-figure.js:1225 | kind: string -->
+" markerHeight="
+
+@@ s17.casting-figure.js.121
+<!-- source: casting-figure.js:1245 | kind: string -->
+" y="220" text-anchor="middle">
+
+@@ s17.casting-figure.js.122
+<!-- source: casting-figure.js:1271 | kind: string -->
+three casting coins
+
+@@ s17.casting-figure.js.123
+<!-- source: casting-figure.js:1281 | kind: string -->
+" fill="var(--ink)"></path></svg>
+
+@@ s17.casting-figure.js.124
+<!-- source: casting-figure.js:1338 | kind: string -->
+" r="5" fill="none" stroke="var(--terracotta)" stroke-width="1.7" stroke-linecap="round"></circle></g>
+
+@@ s17.casting-figure.js.125
+<!-- source: casting-figure.js:1341 | kind: string -->
+" fill="none" stroke="var(--terracotta)" stroke-width="1.7" stroke-linecap="round"></path>
+
+@@ s17.casting-figure.js.126
+<!-- source: casting-figure.js:1342 | kind: string -->
+" fill="none" stroke="var(--terracotta)" stroke-width="1.7" stroke-linecap="round"></path></g>
+
+@@ s17.casting-figure.js.127
+<!-- source: casting-figure.js:1351 | kind: string -->
+class="bw-af-branch bw-aft-
+
+@@ s17.casting-figure.js.128
+<!-- source: casting-figure.js:1351 | kind: string -->
+" style="--d:
+
+@@ s17.casting-figure.js.129
+<!-- source: casting-figure.js:1409 | kind: string -->
+" style="--len:
+
+@@ s17.casting-figure.js.130
+<!-- source: casting-figure.js:1434 | kind: string -->
+" y="222" text-anchor="middle">
+
+@@ s17.casting-figure.js.131
+<!-- source: casting-figure.js:1450 | kind: markup text -->
+\u2002Reading the lines \u2014 element by element
+
+
+---
+
+## 18. liuyao-engine.js
+
+*盘面词汇 — 六亲 / 地支 / 五行 / 卦名 / 旺衰,直接画在盘上* — 65 blocks
+
+@@ s18.liuyao-engine.js.001
+<!-- source: liuyao-engine.js:32 | kind: string -->
+父母
+
+@@ s18.liuyao-engine.js.002
+<!-- source: liuyao-engine.js:32 | kind: string -->
+feeds you
+
+@@ s18.liuyao-engine.js.003
+<!-- source: liuyao-engine.js:33 | kind: string -->
+兄弟
+
+@@ s18.liuyao-engine.js.004
+<!-- source: liuyao-engine.js:33 | kind: string -->
+your element
+
+@@ s18.liuyao-engine.js.005
+<!-- source: liuyao-engine.js:34 | kind: string -->
+子孙
+
+@@ s18.liuyao-engine.js.006
+<!-- source: liuyao-engine.js:34 | kind: string -->
+you feed
+
+@@ s18.liuyao-engine.js.007
+<!-- source: liuyao-engine.js:35 | kind: string -->
+妻财
+
+@@ s18.liuyao-engine.js.008
+<!-- source: liuyao-engine.js:35 | kind: string -->
+you control
+
+@@ s18.liuyao-engine.js.009
+<!-- source: liuyao-engine.js:36 | kind: string -->
+官鬼
+
+@@ s18.liuyao-engine.js.010
+<!-- source: liuyao-engine.js:36 | kind: string -->
+controls you
+
+@@ s18.liuyao-engine.js.011
+<!-- source: liuyao-engine.js:41 | kind: string -->
+青龙
+
+@@ s18.liuyao-engine.js.012
+<!-- source: liuyao-engine.js:41 | kind: string -->
+Azure Dragon
+
+@@ s18.liuyao-engine.js.013
+<!-- source: liuyao-engine.js:42 | kind: string -->
+朱雀
+
+@@ s18.liuyao-engine.js.014
+<!-- source: liuyao-engine.js:42 | kind: string -->
+Vermilion Bird
+
+@@ s18.liuyao-engine.js.015
+<!-- source: liuyao-engine.js:43 | kind: string -->
+勾陈
+
+@@ s18.liuyao-engine.js.016
+<!-- source: liuyao-engine.js:43 | kind: string -->
+Hook Earth
+
+@@ s18.liuyao-engine.js.017
+<!-- source: liuyao-engine.js:44 | kind: string -->
+螣蛇
+
+@@ s18.liuyao-engine.js.018
+<!-- source: liuyao-engine.js:44 | kind: string -->
+Coiling Snake
+
+@@ s18.liuyao-engine.js.019
+<!-- source: liuyao-engine.js:45 | kind: string -->
+白虎
+
+@@ s18.liuyao-engine.js.020
+<!-- source: liuyao-engine.js:45 | kind: string -->
+White Tiger
+
+@@ s18.liuyao-engine.js.021
+<!-- source: liuyao-engine.js:46 | kind: string -->
+玄武
+
+@@ s18.liuyao-engine.js.022
+<!-- source: liuyao-engine.js:46 | kind: string -->
+Dark Tortoise
+
+@@ s18.liuyao-engine.js.023
+<!-- source: liuyao-engine.js:53 | kind: string -->
+坤宫
+
+@@ s18.liuyao-engine.js.024
+<!-- source: liuyao-engine.js:53 | kind: string -->
+Earth Palace
+
+@@ s18.liuyao-engine.js.025
+<!-- source: liuyao-engine.js:54 | kind: string -->
+震宫
+
+@@ s18.liuyao-engine.js.026
+<!-- source: liuyao-engine.js:54 | kind: string -->
+Thunder Palace
+
+@@ s18.liuyao-engine.js.027
+<!-- source: liuyao-engine.js:55 | kind: string -->
+坎宫
+
+@@ s18.liuyao-engine.js.028
+<!-- source: liuyao-engine.js:55 | kind: string -->
+Water Palace
+
+@@ s18.liuyao-engine.js.029
+<!-- source: liuyao-engine.js:56 | kind: string -->
+兑宫
+
+@@ s18.liuyao-engine.js.030
+<!-- source: liuyao-engine.js:56 | kind: string -->
+Lake Palace
+
+@@ s18.liuyao-engine.js.031
+<!-- source: liuyao-engine.js:57 | kind: string -->
+艮宫
+
+@@ s18.liuyao-engine.js.032
+<!-- source: liuyao-engine.js:57 | kind: string -->
+Mountain Palace
+
+@@ s18.liuyao-engine.js.033
+<!-- source: liuyao-engine.js:58 | kind: string -->
+离宫
+
+@@ s18.liuyao-engine.js.034
+<!-- source: liuyao-engine.js:58 | kind: string -->
+Fire Palace
+
+@@ s18.liuyao-engine.js.035
+<!-- source: liuyao-engine.js:59 | kind: string -->
+巽宫
+
+@@ s18.liuyao-engine.js.036
+<!-- source: liuyao-engine.js:59 | kind: string -->
+Wind Palace
+
+@@ s18.liuyao-engine.js.037
+<!-- source: liuyao-engine.js:60 | kind: string -->
+乾宫
+
+@@ s18.liuyao-engine.js.038
+<!-- source: liuyao-engine.js:60 | kind: string -->
+Heaven Palace
+
+@@ s18.liuyao-engine.js.039
+<!-- source: liuyao-engine.js:92 | kind: string -->
+Wandering Soul
+
+@@ s18.liuyao-engine.js.040
+<!-- source: liuyao-engine.js:92 | kind: string -->
+Returning Soul
+
+@@ s18.liuyao-engine.js.041
+<!-- source: liuyao-engine.js:93 | kind: string -->
+本宫
+
+@@ s18.liuyao-engine.js.042
+<!-- source: liuyao-engine.js:93 | kind: string -->
+一世
+
+@@ s18.liuyao-engine.js.043
+<!-- source: liuyao-engine.js:93 | kind: string -->
+二世
+
+@@ s18.liuyao-engine.js.044
+<!-- source: liuyao-engine.js:93 | kind: string -->
+三世
+
+@@ s18.liuyao-engine.js.045
+<!-- source: liuyao-engine.js:93 | kind: string -->
+四世
+
+@@ s18.liuyao-engine.js.046
+<!-- source: liuyao-engine.js:93 | kind: string -->
+五世
+
+@@ s18.liuyao-engine.js.047
+<!-- source: liuyao-engine.js:93 | kind: string -->
+游魂
+
+@@ s18.liuyao-engine.js.048
+<!-- source: liuyao-engine.js:93 | kind: string -->
+归魂
+
+@@ s18.liuyao-engine.js.049
+<!-- source: liuyao-engine.js:244 | kind: string -->
+computeBoard: line
+
+@@ s18.liuyao-engine.js.050
+<!-- source: liuyao-engine.js:244 | kind: string -->
+must be a boolean, 0/1, or {yang} — got
+
+@@ s18.liuyao-engine.js.051
+<!-- source: liuyao-engine.js:265 | kind: string -->
+进神
+
+@@ s18.liuyao-engine.js.052
+<!-- source: liuyao-engine.js:266 | kind: string -->
+退神
+
+@@ s18.liuyao-engine.js.053
+<!-- source: liuyao-engine.js:285 | kind: string -->
+computeBoard: need 6 lines
+
+@@ s18.liuyao-engine.js.054
+<!-- source: liuyao-engine.js:547 | kind: string -->
+乾 branches
+
+@@ s18.liuyao-engine.js.055
+<!-- source: liuyao-engine.js:548 | kind: string -->
+乾 palace
+
+@@ s18.liuyao-engine.js.056
+<!-- source: liuyao-engine.js:549 | kind: string -->
+乾 world idx
+
+@@ s18.liuyao-engine.js.057
+<!-- source: liuyao-engine.js:550 | kind: string -->
+乾 relatives
+
+@@ s18.liuyao-engine.js.058
+<!-- source: liuyao-engine.js:553 | kind: string -->
+坤 branches
+
+@@ s18.liuyao-engine.js.059
+<!-- source: liuyao-engine.js:554 | kind: string -->
+坤 world idx
+
+@@ s18.liuyao-engine.js.060
+<!-- source: liuyao-engine.js:556 | kind: string -->
+坎 branches
+
+@@ s18.liuyao-engine.js.061
+<!-- source: liuyao-engine.js:557 | kind: string -->
+坎 palace
+
+@@ s18.liuyao-engine.js.062
+<!-- source: liuyao-engine.js:558 | kind: string -->
+六神 甲日
+
+@@ s18.liuyao-engine.js.063
+<!-- source: liuyao-engine.js:561 | kind: string -->
+六神 庚日
+
+@@ s18.liuyao-engine.js.064
+<!-- source: liuyao-engine.js:563 | kind: string -->
+旬空 甲子旬
+
+@@ s18.liuyao-engine.js.065
+<!-- source: liuyao-engine.js:565 | kind: string -->
+旬空 甲戌旬
+
+
+---
+
+## 19. liuyao-ai.js
+
+*用神名称,以及模型没答上来时顶上去的占位解读* — 75 blocks
+
+@@ s19.liuyao-ai.js.001
+<!-- source: liuyao-ai.js:24 | kind: string -->
+父母
+
+@@ s19.liuyao-ai.js.002
+<!-- source: liuyao-ai.js:24 | kind: string -->
+elders, home, property, documents, vehicles, study, contracts, news
+
+@@ s19.liuyao-ai.js.003
+<!-- source: liuyao-ai.js:25 | kind: string -->
+兄弟
+
+@@ s19.liuyao-ai.js.004
+<!-- source: liuyao-ai.js:25 | kind: string -->
+siblings, friends, peers, rivals, partners, shared cost
+
+@@ s19.liuyao-ai.js.005
+<!-- source: liuyao-ai.js:26 | kind: string -->
+子孙
+
+@@ s19.liuyao-ai.js.006
+<!-- source: liuyao-ai.js:26 | kind: string -->
+children, juniors, pets, the cure/remedy, ease, joy, what relieves pressure
+
+@@ s19.liuyao-ai.js.007
+<!-- source: liuyao-ai.js:27 | kind: string -->
+妻财
+
+@@ s19.liuyao-ai.js.008
+<!-- source: liuyao-ai.js:27 | kind: string -->
+money, income, assets, a man's wife/lover, what you acquire
+
+@@ s19.liuyao-ai.js.009
+<!-- source: liuyao-ai.js:28 | kind: string -->
+官鬼
+
+@@ s19.liuyao-ai.js.010
+<!-- source: liuyao-ai.js:28 | kind: string -->
+career/post, authority, a woman's husband/lover, illness, threat, lawsuit
+
+@@ s19.liuyao-ai.js.011
+<!-- source: liuyao-ai.js:29 | kind: string -->
+世爻
+
+@@ s19.liuyao-ai.js.012
+<!-- source: liuyao-ai.js:29 | kind: string -->
+you, your own standing — for decisions, travel, general outlook
+
+@@ s19.liuyao-ai.js.013
+<!-- source: liuyao-ai.js:74 | kind: string -->
+考试:官鬼为名次录取,父母为成绩卷子;子孙为剥官之神
+
+@@ s19.liuyao-ai.js.014
+<!-- source: liuyao-ai.js:76 | kind: string -->
+功名工作升迁:官鬼为职位、上头、竞争的那一头
+
+@@ s19.liuyao-ai.js.015
+<!-- source: liuyao-ai.js:78 | kind: string -->
+求财生意:妻财为财本
+
+@@ s19.liuyao-ai.js.016
+<!-- source: liuyao-ai.js:80 | kind: string -->
+疾病:官鬼为忧神,子孙为解忧之神(近病久病断法相反)
+
+@@ s19.liuyao-ai.js.017
+<!-- source: liuyao-ai.js:82 | kind: string -->
+男占婚恋:妻财为对方
+
+@@ s19.liuyao-ai.js.018
+<!-- source: liuyao-ai.js:84 | kind: string -->
+女占婚恋:官鬼为对方
+
+@@ s19.liuyao-ai.js.019
+<!-- source: liuyao-ai.js:86 | kind: string -->
+子女、宠物、解厄:子孙
+
+@@ s19.liuyao-ai.js.020
+<!-- source: liuyao-ai.js:88 | kind: string -->
+房屋车船文书合同长辈:父母
+
+@@ s19.liuyao-ai.js.021
+<!-- source: liuyao-ai.js:90 | kind: string -->
+同行、合伙、竞争、分我之利者:兄弟
+
+@@ s19.liuyao-ai.js.022
+<!-- source: liuyao-ai.js:103 | kind: string -->
+问题没有点出别的主体,按自占取世爻
+
+@@ s19.liuyao-ai.js.023
+<!-- source: liuyao-ai.js:142 | kind: string -->
+用神
+
+@@ s19.liuyao-ai.js.024
+<!-- source: liuyao-ai.js:142 | kind: string -->
+the matter itself
+
+@@ s19.liuyao-ai.js.025
+<!-- source: liuyao-ai.js:143 | kind: string -->
+原神
+
+@@ s19.liuyao-ai.js.026
+<!-- source: liuyao-ai.js:143 | kind: string -->
+feeds the subject
+
+@@ s19.liuyao-ai.js.027
+<!-- source: liuyao-ai.js:144 | kind: string -->
+忌神
+
+@@ s19.liuyao-ai.js.028
+<!-- source: liuyao-ai.js:144 | kind: string -->
+attacks the subject
+
+@@ s19.liuyao-ai.js.029
+<!-- source: liuyao-ai.js:145 | kind: string -->
+仇神
+
+@@ s19.liuyao-ai.js.030
+<!-- source: liuyao-ai.js:145 | kind: string -->
+feeds the adversary
+
+@@ s19.liuyao-ai.js.031
+<!-- source: liuyao-ai.js:146 | kind: string -->
+泄神
+
+@@ s19.liuyao-ai.js.032
+<!-- source: liuyao-ai.js:146 | kind: string -->
+saps the subject
+
+@@ s19.liuyao-ai.js.033
+<!-- source: liuyao-ai.js:147 | kind: string -->
+比和
+
+@@ s19.liuyao-ai.js.034
+<!-- source: liuyao-ai.js:147 | kind: string -->
+reinforces the subject
+
+@@ s19.liuyao-ai.js.035
+<!-- source: liuyao-ai.js:232 | kind: string -->
+ALSO-用神(second-subject)
+
+@@ s19.liuyao-ai.js.036
+<!-- source: liuyao-ai.js:233 | kind: string -->
+attacks-second-用神
+
+@@ s19.liuyao-ai.js.037
+<!-- source: liuyao-ai.js:308 | kind: string -->
+flying line feeds it (helps it surface)
+
+@@ s19.liuyao-ai.js.038
+<!-- source: liuyao-ai.js:309 | kind: string -->
+it controls the flying line (can surface)
+
+@@ s19.liuyao-ai.js.039
+<!-- source: liuyao-ai.js:310 | kind: string -->
+flying line controls it (suppressed)
+
+@@ s19.liuyao-ai.js.040
+<!-- source: liuyao-ai.js:311 | kind: string -->
+— HIDDEN under line
+
+@@ s19.liuyao-ai.js.041
+<!-- source: liuyao-ai.js:315 | kind: string -->
+— must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too
+
+@@ s19.liuyao-ai.js.042
+<!-- source: liuyao-ai.js:323 | kind: string -->
+(BOTH are 用神. Either one failing fails the matter. Lines carrying it are flagged
+
+@@ s19.liuyao-ai.js.043
+<!-- source: liuyao-ai.js:324 | kind: string -->
+ALSO-用神(second-subject); lines that control it are flagged attacks-second-用神.
+
+@@ s19.liuyao-ai.js.044
+<!-- source: liuyao-ai.js:325 | kind: string -->
+The role field below is measured from the FIRST 用神 only.)
+
+@@ s19.liuyao-ai.js.045
+<!-- source: liuyao-ai.js:360 | kind: string -->
+· ALSO the second 用神
+
+@@ s19.liuyao-ai.js.046
+<!-- source: liuyao-ai.js:361 | kind: string -->
+· controls the second 用神 (its 忌神)
+
+@@ s19.liuyao-ai.js.047
+<!-- source: liuyao-ai.js:371 | kind: string -->
+flying line is VOID — a void flying line lets the hidden one surface
+
+@@ s19.liuyao-ai.js.048
+<!-- source: liuyao-ai.js:372 | kind: string -->
+flying line is MOVING
+
+@@ s19.liuyao-ai.js.049
+<!-- source: liuyao-ai.js:378 | kind: string -->
+the flying line transforms into
+
+@@ s19.liuyao-ai.js.050
+<!-- source: liuyao-ai.js:380 | kind: string -->
+is itself bringing it out
+
+@@ s19.liuyao-ai.js.051
+<!-- source: liuyao-ai.js:383 | kind: string -->
+hidden under line
+
+@@ s19.liuyao-ai.js.052
+<!-- source: liuyao-ai.js:387 | kind: string -->
+— rule on can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day
+
+@@ s19.liuyao-ai.js.053
+<!-- source: liuyao-ai.js:391 | kind: string -->
+none — all six relatives appear among the lines
+
+@@ s19.liuyao-ai.js.054
+<!-- source: liuyao-ai.js:395 | kind: string -->
+bloc on lines
+
+@@ s19.liuyao-ai.js.055
+<!-- source: liuyao-ai.js:410 | kind: string -->
+— on line
+
+@@ s19.liuyao-ai.js.056
+<!-- source: liuyao-ai.js:410 | kind: string -->
+(卦身上卦: it annotates that line; if that is the yongshen, say so)
+
+@@ s19.liuyao-ai.js.057
+<!-- source: liuyao-ai.js:411 | kind: string -->
+— not among the six line branches (卦身不上卦). Structural, and true of half the 64 hexagrams: it licenses no conclusion about the matter or the asker. Do not mention it.
+
+@@ s19.liuyao-ai.js.058
+<!-- source: liuyao-ai.js:435 | kind: string -->
+(旬空 for the CASTING day)
+
+@@ s19.liuyao-ai.js.059
+<!-- source: liuyao-ai.js:445 | kind: string -->
+moving line
+
+@@ s19.liuyao-ai.js.060
+<!-- source: liuyao-ai.js:446 | kind: string -->
+(独发)
+
+@@ s19.liuyao-ai.js.061
+<!-- source: liuyao-ai.js:446 | kind: string -->
+no moving lines (静卦)
+
+@@ s19.liuyao-ai.js.062
+<!-- source: liuyao-ai.js:453 | kind: string -->
+· Clashing
+
+@@ s19.liuyao-ai.js.063
+<!-- source: liuyao-ai.js:453 | kind: string -->
+· Combining
+
+@@ s19.liuyao-ai.js.064
+<!-- source: liuyao-ai.js:454 | kind: string -->
+none (still figure)
+
+@@ s19.liuyao-ai.js.065
+<!-- source: liuyao-ai.js:470 | kind: string -->
+裁决梯未能运行:
+
+@@ s19.liuyao-ai.js.066
+<!-- source: liuyao-ai.js:554 | kind: string -->
+<=20 words, why this 用神 fits the question
+
+@@ s19.liuyao-ai.js.067
+<!-- source: liuyao-ai.js:556 | kind: string -->
+<=16 words
+
+@@ s19.liuyao-ai.js.068
+<!-- source: liuyao-ai.js:558 | kind: string -->
+<=18 words 应期 WITH Gregorian anchors from TIMING REFERENCE at the scale the question asks (near → day/month dates; 以后/long-horizon → branch YEARS, e.g. next Yin year 2034); or empty
+
+@@ s19.liuyao-ai.js.069
+<!-- source: liuyao-ai.js:559 | kind: string -->
+2-4 sentence answer in '+(lang===
+
+@@ s19.liuyao-ai.js.070
+<!-- source: liuyao-ai.js:580 | kind: string -->
++ (YONGSHEN_INFO[subject.key] ? YONGSHEN_INFO[subject.key].cn : subject.key) + (subject.second ? (
+
+@@ s19.liuyao-ai.js.071
+<!-- source: liuyao-ai.js:581 | kind: string -->
++ (YONGSHEN_INFO[subject.second] ? YONGSHEN_INFO[subject.second].cn : subject.second) +
+
+@@ s19.liuyao-ai.js.072
+<!-- source: liuyao-ai.js:583 | kind: string -->
++ (subject.why ||
+
+@@ s19.liuyao-ai.js.073
+<!-- source: liuyao-ai.js:627 | kind: string -->
+&& window.claude && typeof window.claude.complete===
+
+@@ s19.liuyao-ai.js.074
+<!-- source: liuyao-ai.js:675 | kind: string -->
+: (score<=1 ?
+
+@@ s19.liuyao-ai.js.075
+<!-- source: liuyao-ai.js:676 | kind: string -->
+: strength===
+
+
+---
+
+## 20. assets/method.js
+
+*方法页的翻卡部件* — 5 blocks
+
+@@ s20.assets/method.js.001
+<!-- source: assets/method.js:18 | kind: string -->
+preserveAspectRatio="xMidYMid meet"
+
+@@ s20.assets/method.js.002
+<!-- source: assets/method.js:102 | kind: string -->
+of 6</dd>
+
+@@ s20.assets/method.js.003
+<!-- source: assets/method.js:121 | kind: string -->
+units · about
+
+@@ s20.assets/method.js.004
+<!-- source: assets/method.js:182 | kind: string -->
+Tap to go back
+
+@@ s20.assets/method.js.005
+<!-- source: assets/method.js:194 | kind: string -->
+input, textarea, button, select, a, label
+
+
+---
+
+## 21. Server responses
+
+*服务端返回、前端原样渲染的报错 —— 只在出事时才看得到的文案* — 53 blocks
+
+@@ s21.Server_responses.001
+<!-- source: functions/api/claude.js:139 | kind: error response -->
+AI API temporarily disabled
+
+@@ s21.Server_responses.002
+<!-- source: functions/api/claude.js:146 | kind: error response -->
+OPENROUTER_API_KEY not configured
+
+@@ s21.Server_responses.003
+<!-- source: functions/api/claude.js:150 | kind: error response -->
+no messages
+
+@@ s21.Server_responses.004
+<!-- source: functions/api/claude.js:177 | kind: error response -->
+system prompts are assembled server-side and may not be supplied by the client
+
+@@ s21.Server_responses.005
+<!-- source: functions/api/claude.js:186 | kind: error response -->
+prompt assembly failed
+
+@@ s21.Server_responses.006
+<!-- source: functions/api/claude.js:308 | kind: error response -->
+a reading must be requested with stream:true — the non-streaming path cannot outlast generation
+
+@@ s21.Server_responses.007
+<!-- source: functions/api/claude.js:348 | kind: error response -->
+reading failed
+
+@@ s21.Server_responses.008
+<!-- source: functions/api/claude.js:550 | kind: error response -->
+sign in required for generation
+
+@@ s21.Server_responses.009
+<!-- source: functions/api/claude.js:573 | kind: reason response -->
+free-reading:
+
+@@ s21.Server_responses.010
+<!-- source: functions/api/claude.js:590 | kind: error response -->
+insufficient units
+
+@@ s21.Server_responses.011
+<!-- source: functions/api/claude.js:610 | kind: error response -->
+rate limit exceeded, try again later
+
+@@ s21.Server_responses.012
+<!-- source: functions/api/claude.js:697 | kind: error response -->
+the reading service is unavailable
+
+@@ s21.Server_responses.013
+<!-- source: functions/api/checkout.js:52 | kind: error response -->
+payments not configured
+
+@@ s21.Server_responses.014
+<!-- source: functions/api/checkout.js:54 | kind: error response -->
+accounts backend not configured
+
+@@ s21.Server_responses.015
+<!-- source: functions/api/checkout.js:58 | kind: error response -->
+sign in required
+
+@@ s21.Server_responses.016
+<!-- source: functions/api/checkout.js:62 | kind: error response -->
+no sku
+
+@@ s21.Server_responses.017
+<!-- source: functions/api/checkout.js:64 | kind: error response -->
+unknown sku
+
+@@ s21.Server_responses.018
+<!-- source: functions/api/checkout.js:85 | kind: error response -->
+checkout failed
+
+@@ s21.Server_responses.019
+<!-- source: functions/api/auth/[[path]].js:142 | kind: error response -->
+sessions are not configured on this deployment
+
+@@ s21.Server_responses.020
+<!-- source: functions/api/auth/[[path]].js:158 | kind: error response -->
+accounts backend not configured
+
+@@ s21.Server_responses.021
+<!-- source: functions/api/auth/[[path]].js:163 | kind: error response -->
+too many sign-ups from this address — try again later
+
+@@ s21.Server_responses.022
+<!-- source: functions/api/auth/[[path]].js:168 | kind: error response -->
+a valid email is required
+
+@@ s21.Server_responses.023
+<!-- source: functions/api/auth/[[path]].js:169 | kind: error response -->
+password must be at least 8 characters
+
+@@ s21.Server_responses.024
+<!-- source: functions/api/auth/[[path]].js:171 | kind: error response -->
+that email is already registered — sign in instead
+
+@@ s21.Server_responses.025
+<!-- source: functions/api/auth/[[path]].js:180 | kind: error response -->
+too many sign-in attempts — try again later
+
+@@ s21.Server_responses.026
+<!-- source: functions/api/auth/[[path]].js:185 | kind: error response -->
+email and password are required
+
+@@ s21.Server_responses.027
+<!-- source: functions/api/auth/[[path]].js:188 | kind: error response -->
+wrong email or password
+
+@@ s21.Server_responses.028
+<!-- source: functions/api/auth/[[path]].js:198 | kind: error response -->
+apple sign-in not configured
+
+@@ s21.Server_responses.029
+<!-- source: functions/api/auth/[[path]].js:200 | kind: error response -->
+unknown provider
+
+@@ s21.Server_responses.030
+<!-- source: functions/api/auth/[[path]].js:225 | kind: error response -->
+no code
+
+@@ s21.Server_responses.031
+<!-- source: functions/api/auth/[[path]].js:234 | kind: error response -->
+sign-in link expired or came from somewhere else — start again
+
+@@ s21.Server_responses.032
+<!-- source: functions/api/auth/[[path]].js:246 | kind: error response -->
+token exchange failed
+
+@@ s21.Server_responses.033
+<!-- source: functions/api/auth/[[path]].js:248 | kind: error response -->
+no access token
+
+@@ s21.Server_responses.034
+<!-- source: functions/api/auth/[[path]].js:252 | kind: error response -->
+profile fetch failed
+
+@@ s21.Server_responses.035
+<!-- source: functions/api/auth/[[path]].js:265 | kind: error response -->
+no email from
+
+@@ s21.Server_responses.036
+<!-- source: functions/api/auth/[[path]].js:276 | kind: error response -->
+not found
+
+@@ s21.Server_responses.037
+<!-- source: functions/api/account/[[path]].js:44 | kind: error response -->
+accounts backend not configured
+
+@@ s21.Server_responses.038
+<!-- source: functions/api/account/[[path]].js:63 | kind: error response -->
+not signed in
+
+@@ s21.Server_responses.039
+<!-- source: functions/api/account/[[path]].js:71 | kind: error response -->
+id required
+
+@@ s21.Server_responses.040
+<!-- source: functions/api/account/[[path]].js:78 | kind: error response -->
+not found
+
+@@ s21.Server_responses.041
+<!-- source: functions/api/billing/[[path]].js:57 | kind: error response -->
+accounts backend not configured
+
+@@ s21.Server_responses.042
+<!-- source: functions/api/billing/[[path]].js:64 | kind: error response -->
+sign in required
+
+@@ s21.Server_responses.043
+<!-- source: functions/api/billing/[[path]].js:72 | kind: error response -->
+payments not configured
+
+@@ s21.Server_responses.044
+<!-- source: functions/api/billing/[[path]].js:74 | kind: error response -->
+no active subscription
+
+@@ s21.Server_responses.045
+<!-- source: functions/api/billing/[[path]].js:82 | kind: error response -->
+cancel failed
+
+@@ s21.Server_responses.046
+<!-- source: functions/api/billing/[[path]].js:86 | kind: message response -->
+Subscription set to cancel — your plan stays active until the period ends, and your units are yours to keep.
+
+@@ s21.Server_responses.047
+<!-- source: functions/api/billing/[[path]].js:92 | kind: error response -->
+no billing profile yet
+
+@@ s21.Server_responses.048
+<!-- source: functions/api/billing/[[path]].js:100 | kind: error response -->
+portal unavailable
+
+@@ s21.Server_responses.049
+<!-- source: functions/api/billing/[[path]].js:104 | kind: error response -->
+not found
+
+@@ s21.Server_responses.050
+<!-- source: functions/api/billing/[[path]].js:109 | kind: error response -->
+webhook not configured
+
+@@ s21.Server_responses.051
+<!-- source: functions/api/billing/[[path]].js:113 | kind: error response -->
+bad signature
+
+@@ s21.Server_responses.052
+<!-- source: functions/api/billing/[[path]].js:116 | kind: error response -->
+bad payload
+
+@@ s21.Server_responses.053
+<!-- source: functions/api/billing/[[path]].js:146 | kind: error response -->
+fulfilment failed, will retry
+
+
+---
+
+## 22. 万物类象 — the 取象 panel
+
+*`assets/xiangshu/lei-xiang.json`, fetched by chat-app and rendered when a*
+*reading names a symbol. 38 symbols. A card appears only if that reading*
+*happens to mention its symbol — written copy that no page shows on its own.*
+
+@@ s22.xiang.001
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+父母 — Resource
+**文书** / paperwork
+  · 合同、证书、执照、资质、批文、备案、协议、保单、录取通知、判决书、发票、账本、说明书、文档
+  · a contract · a certificate · a licence · a qualification · an approval · a filing · an agreement · an insurance policy · an offer letter · a court ruling · invoices, books · manuals, documentation
+**房产** / property
+  · 房子、土地、办公室、店面、仓库、租约、装修、地基、围墙
+  · a house · land · an office · a shopfront · a warehouse · a lease · fitting-out work · foundations, walls
+**长辈** / elders
+  · 父母、老师、师父、上级、主管、出资人、监护人、前辈、引路人
+  · parents · a teacher · a mentor · a boss or supervisor · whoever put up the money · a guardian · someone further along than you
+**车船** / what carries you
+  · 车、船、飞机、通勤的路、行李、行装、搬运的工具
+  · a car · a boat · a plane · the commute itself · luggage, kit · whatever moves things for you
+**平台** / the thing you sit on
+  · 平台规则、上级单位、主管机关、渠道方的条款、你挂靠的那套体系、服务器、基础设施
+  · platform rules · the parent organisation · a regulator · a channel's terms · the system you operate under · servers, infrastructure
+**学业** / study and word-of-mouth
+  · 学历、课程、培训、考试、论文、消息、通知、口碑、名声传出去的那部分
+  · a degree · courses, training · an examination · a thesis · news, an announcement · word getting around about you
+**操劳** / the toil
+  · 亲手做的活、跑腿、办手续、加班、照顾人、反复返工的那一摊
+  · work done by hand · errands, paperwork queues · overtime · caring for someone · the part you keep redoing
+**遮盖** / what covers you
+  · 衣服、伞、屋顶、围墙、保险、挡风的那层东西
+  · clothing · an umbrella · a roof · a wall · insurance · whatever keeps the weather off
+**根基** / the footing
+  · 地基、本钱、家底、学过的东西、撑住你的那一层
+  · foundations · starting capital · what the family has · what you were taught · the layer holding you up
+**动词象意** · 托着、护着、供着、教着、压着、操持、反复地办、背在身上 / holds it up · shelters it · provides for it · teaches it · presses down on it · keeps it running · files it again · carries it
+
+@@ s22.xiang.002
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+兄弟 — Peer
+**同辈** / peers
+  · 兄弟姐妹、同学、同事、同龄的朋友、同门
+  · siblings · classmates · colleagues · friends your own age · people from the same training
+**同行** / rivals
+  · 竞品、同赛道的人、抢同一批客户的、模仿你的人、比价的对手
+  · a competing product · others in the same lane · whoever wants the same customers · imitators · whoever you get priced against
+**分利的** / whoever splits it
+  · 合伙人、股东、中介、代理、抽成的渠道、分销商、要分红的人
+  · a partner · a shareholder · a broker or agent · a channel taking a cut · a distributor · anyone owed a share
+**耗费** / what eats it
+  · 成本、手续费、平台抽成、房租、人工、被浪费掉的时间、被分走的精力
+  · costs · fees and platform cuts · rent · wages · time wasted · attention pulled away
+**争夺** / contention
+  · 争执、吵架、议价、抢单、口舌是非、僵持不下的那件事
+  · an argument · haggling · fighting for the same deal · gossip and friction · the thing that has stalled in a standoff
+**阻隔** / what stands in the way
+  · 门、墙、中间那道关、挡在中间的人、难跨的那一步
+  · a door, a wall · the gate in the middle · whoever stands between · the step that is hard to get over
+**邻里** / those alongside
+  · 邻居、同乡、同一栋楼的人、常打交道的外人
+  · neighbours · people from home · whoever shares the building · the outsiders you deal with daily
+**风声** / what blows through
+  · 风、传言、一阵一阵的热度、来去不定的东西
+  · wind · rumour · a fad that comes in waves · what arrives and leaves
+**动词象意** · 分走、争、抢、挡、耗、比、拉扯、替你担一点 / takes a share · contends · grabs · blocks · drains · measures against · pulls back and forth · carries a little for you
+
+@@ s22.xiang.003
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+子孙 — Output
+**出品** / what you make
+  · 产品、作品、服务、课程、内容、一门手艺做出来的东西
+  · a product · a piece of work · a service · a course · content · whatever the craft turns out
+**晚辈** / juniors
+  · 子女、学生、徒弟、下属、带的新人
+  · children · students · apprentices · subordinates · the newcomer you are training
+**解厄** / what relieves it
+  · 医药、治疗、休息、保险、化解的办法、那个能替你挡一下的东西
+  · medicine · treatment · rest · insurance · the way out of it · whatever takes the hit for you
+**财源** / where money comes from
+  · 复购的客户、持续的收入、被动收入、口碑带来的单、能自己转起来的那部分
+  · repeat customers · recurring income · income that arrives without you · work that arrives by reputation · the part that runs itself
+**技术** / craft
+  · 手艺、方法、诀窍、工具、专利、积累下来的能力
+  · a skill · a method, a knack · tools · a patent · capability you have built up
+**欢喜** / ease
+  · 快乐、放松、玩、休闲、宠物、让你不紧绷的那件事
+  · gladness · letting go · play, leisure · a pet · whatever loosens you
+**信仰** / what you lean on
+  · 僧道、信念、修行、让你安心的那套说法
+  · clergy · conviction · practice · the account of things that settles you
+**六畜** / the animals
+  · 牲口、宠物、养的东西
+  · livestock · a pet · whatever you keep and feed
+**动词象意** · 生出、化解、泄掉、松开、护住、替你挡、让它转起来 / produces · dissolves · drains off · loosens · guards · takes the hit for you · gets it turning
+
+@@ s22.xiang.004
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+妻财 — Wealth
+**钱** / money
+  · 现金、收入、利润、工资、分红、回款、存款
+  · cash · income · profit · salary · a dividend · money coming back in · savings
+**货** / goods
+  · 商品、库存、原料、设备、要卖的东西
+  · merchandise · stock · materials · equipment · whatever is for sale
+**产业** / holdings
+  · 店、公司股份、投资、收租的东西、账户
+  · a shop · a stake in a company · investments · whatever pays you rent · an account
+**女方** / the woman (for a man)
+  · 妻子、女友、相亲对象、前任
+  · a wife · a girlfriend · someone being introduced · an ex
+**人手** / the hands
+  · 员工、帮工、外包、替你做事的人
+  · employees · helpers · contractors · whoever does it for you
+**器物** / things
+  · 器皿、家什、仓库、日用的东西、被你占着的那些物件
+  · utensils and furnishings · storage · daily objects · the things you keep
+**食禄** / what feeds you
+  · 饭食、酒、日常开销、养活你的那份
+  · food · drink · daily spending · the part that keeps you fed
+**凭据** / proof of it
+  · 账、流水、合约上的数、看得见的凭证
+  · the accounts · the ledger · the number on the contract · evidence you can point to
+**动词象意** · 进来、被收下、被占住、被花掉、被分掉、养着、换出去 / comes in · is taken · is tied up · is spent · is split · feeds · is traded away
+
+@@ s22.xiang.005
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+官鬼 — Pressure
+**职务** / the post
+  · 工作、职位、职称、编制、头衔、那个位子
+  · a job · a position · a rank · a permanent post · a title · the seat itself
+**上头** / authority
+  · 上司、甲方、监管、审批那一关、评审、评委、执法的人
+  · a boss · the client who decides · a regulator · the approval step · a review panel · whoever enforces
+**男方** / the man (for a woman)
+  · 丈夫、男友、追求者、前任
+  · a husband · a boyfriend · someone pursuing her · an ex
+**病** / illness
+  · 病症、旧疾、伤、查出来的问题
+  · a complaint · something long-standing · an injury · what a check turned up
+**讼** / disputes
+  · 官司、纠纷、投诉、索赔、被追责的事
+  · a lawsuit · a dispute · a complaint · a claim · being held to account
+**压** / what presses
+  · 竞争压力、责任、期限、风险、不敢想的那件事、躲不过去的那一关
+  · competitive pressure · responsibility · a deadline · risk · the thing you avoid thinking about · the step you cannot go around
+**意外** / what comes at you
+  · 盗窃、失窃、丢东西、突发的事、被算计
+  · theft · losing something · something sudden · being played
+**功名** / standing
+  · 名分、资历、评级、被承认的那一层
+  · a title · seniority · a rating · the recognition itself
+**心魔** / what haunts
+  · 鬼神、梦魇、放不下的事、半夜想起来的那件
+  · spirits · a nightmare · what will not be put down · the thing that wakes you
+**天灾** / what falls on you
+  · 雷电、风雨、停电、断网、轮不到你决定的坏事
+  · thunder · storms · an outage · the bad thing you did not choose
+**动词象意** · 克、管、审、罚、逼、缠住、盯着、顶在前头 / restrains · governs · reviews · penalises · forces · entangles · watches · stands in front
+
+@@ s22.xiang.006
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+世爻 — World line
+**你** / you
+  · 你自己、你的身体、精神、你的名分、位置、你能做主的范围
+  · yourself · your body and spirits · your standing · what is yours to decide
+**你这一头** / your side
+  · 你的立场、你的打算、你手上的资源、你出的那一份
+  · your position · what you intend · what you have to work with · what you are putting in
+**处境** / where you stand
+  · 眼下的局面、你被什么托着、被什么压着、进退的余地
+  · how things stand now · what holds you up and what bears down · how much room you have
+**你的力气** / what you have to spend
+  · 时间、精神、本钱、还能撑多久
+  · time · attention · capital · how long you can hold
+**动词象意** · 动、守、撑、让步、下决心、抽身 / moves · holds · bears it · gives ground · decides · pulls out
+
+@@ s22.xiang.007
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+应爻 — Response line
+**对方** / the other party
+  · 他/她、客户、甲方、合作方、谈判桌对面的人
+  · him or her · a customer · the client · a partner · whoever is across the table
+**外面** / the outside
+  · 市场、行情、舆论、大环境、轮不到你决定的那部分
+  · the market · conditions · what people are saying · the wider environment · the part that is not yours to decide
+**远处** / what is far off
+  · 外地、远方的人、还没到跟前的事
+  · another place · someone far away · what has not arrived yet
+**对面的态度** / how they are toward you
+  · 接不接、给不给回应、是不是真心、拖着还是痛快
+  · whether they take it · whether they answer · whether they mean it · whether they drag or move
+**动词象意** · 回应、不回应、接住、推回来、观望 / answers · stays silent · takes it · pushes it back · waits and watches
+
+@@ s22.xiang.008
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+子 — Rat
+**水** / water
+  · 江河、沟渠、井、雨、下水道、饮品
+  · rivers · channels · a well · rain · drains · drink
+**时位** / time and place
+  · 夜半 23–1 点、冬月、正北
+  · 23:00–01:00 · the eleventh month · due north
+**身** / the body
+  · 耳、肾、泌尿、血液
+  · ears · kidneys · the urinary tract · blood
+**性** / the character
+  · 机灵、隐秘、流动不定、繁衍
+  · quick-witted · secretive · never still · multiplying
+**动词象意** · 流动、渗、悄悄地来、繁衍 / flows · seeps · comes quietly · multiplies
+
+@@ s22.xiang.009
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+丑 — Ox
+**土** / earth
+  · 田、坟、桥、矿、泥
+  · fields · a grave · a bridge · a mine · mud
+**时位** / time and place
+  · 1–3 点、腊月、东北偏北
+  · 01:00–03:00 · the twelfth month · north-northeast
+**身** / the body
+  · 脾、腹、肌肉
+  · spleen · belly · muscle
+**性** / the character
+  · 慢、扛得住、牵拖不清、攒着不放
+  · slow · able to bear it · tangled · holding on
+**动词象意** · 拖、扛、藏在库里、慢慢磨 / drags · shoulders it · keeps it in store · grinds slowly
+
+@@ s22.xiang.010
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+寅 — Tiger
+**木** / wood
+  · 山林、大树、木材、柱子
+  · forest · a great tree · timber · a pillar
+**时位** / time and place
+  · 3–5 点、正月、东北偏东
+  · 03:00–05:00 · the first month · east-northeast
+**身** / the body
+  · 胆、手足、筋
+  · gallbladder · hands and feet · sinews
+**性** / the character
+  · 起头、冲、刚、要动
+  · setting out · charging · hard · wanting to move
+**动词象意** · 起头、冲出去、顶上 / sets out · charges · takes it on
+
+@@ s22.xiang.011
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+卯 — Rabbit
+**木** / wood
+  · 草木、花、门窗、舟车、纸
+  · grass and plants · flowers · doors and windows · boats and carts · paper
+**时位** / time and place
+  · 5–7 点、二月、正东
+  · 05:00–07:00 · the second month · due east
+**身** / the body
+  · 肝、指、毛发
+  · liver · fingers · hair
+**性** / the character
+  · 柔、繁茂、街市热闹、来回穿梭
+  · pliant · luxuriant · the busy street · going back and forth
+**动词象意** · 长开、穿来穿去、攀附 / spreads · goes back and forth · climbs on
+
+@@ s22.xiang.012
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+辰 — Dragon
+**土** / earth
+  · 水库、池塘、土坝、湿地
+  · a reservoir · a pond · an embankment · wetland
+**时位** / time and place
+  · 7–9 点、三月、东南偏东
+  · 07:00–09:00 · the third month · east-southeast
+**身** / the body
+  · 皮肤、肩、背
+  · skin · shoulders · the back
+**性** / the character
+  · 变化、争斗、藏着东西、翻脸快
+  · change · struggle · holding something back · turning suddenly
+**动词象意** · 翻、蓄住、变脸 / turns over · holds it back · changes face
+
+@@ s22.xiang.013
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+巳 — Snake
+**火** / fire
+  · 炉灶、电、光、窑、化工
+  · a stove · electricity · light · a kiln · chemicals
+**时位** / time and place
+  · 9–11 点、四月、东南偏南
+  · 09:00–11:00 · the fourth month · south-southeast
+**身** / the body
+  · 小肠、面、咽喉
+  · the small intestine · the face · the throat
+**性** / the character
+  · 文采、弯弯绕、缠、看着静其实动
+  · eloquence · roundabout · coiling · still on the surface, moving underneath
+**动词象意** · 绕、缠、忽明忽暗 / winds around · coils · flickers
+
+@@ s22.xiang.014
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+午 — Horse
+**火** / fire
+  · 烈日、火烛、炉、热闹的市面
+  · the noon sun · flame · a furnace · a crowded market
+**时位** / time and place
+  · 11–13 点、五月、正南
+  · 11:00–13:00 · the fifth month · due south
+**身** / the body
+  · 心、目、血
+  · the heart · eyes · blood
+**性** / the character
+  · 急、亮、张扬、来得快去得快
+  · urgent · bright · showy · quick to come and go
+**动词象意** · 旺起来、张扬、来得快去得快 / blazes up · makes a show · comes and goes fast
+
+@@ s22.xiang.015
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+未 — Goat
+**土** / earth
+  · 田园、庭院、木库、酒食
+  · farmland · a courtyard · the Wood store · food and drink
+**时位** / time and place
+  · 13–15 点、六月、西南偏南
+  · 13:00–15:00 · the sixth month · south-southwest
+**身** / the body
+  · 脾胃、脊、口
+  · stomach and spleen · the spine · the mouth
+**性** / the character
+  · 温吞、念旧、犹豫、和气
+  · mild · attached to the past · hesitant · easy-going
+**动词象意** · 和稀泥、念旧、慢半拍 / smooths it over · clings to the past · is half a beat late
+
+@@ s22.xiang.016
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+申 — Monkey
+**金** / metal
+  · 金属、机械、刀具、车、道路
+  · metal · machinery · cutting tools · vehicles · roads
+**时位** / time and place
+  · 15–17 点、七月、西南偏西
+  · 15:00–17:00 · the seventh month · west-southwest
+**身** / the body
+  · 筋骨、肺、大肠
+  · sinew and bone · lungs · the large intestine
+**性** / the character
+  · 机敏、奔走、变动、坐不住
+  · sharp · on the move · changeable · unable to sit still
+**动词象意** · 动身、奔走、换来换去 / sets off · runs about · keeps swapping
+
+@@ s22.xiang.017
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+酉 — Rooster
+**金** / metal
+  · 刀刃、金银首饰、酒、门、精细的器物
+  · a blade · silver and jewellery · wine · a gate · fine objects
+**时位** / time and place
+  · 17–19 点、八月、正西
+  · 17:00–19:00 · the eighth month · due west
+**身** / the body
+  · 肺、口、皮毛
+  · lungs · the mouth · skin and hair
+**性** / the character
+  · 讲究、口舌、准时、挑剔
+  · particular · talkative · punctual · fussy
+**动词象意** · 挑剔、切割、说出来 / picks at it · cuts it apart · says it aloud
+
+@@ s22.xiang.018
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+戌 — Dog
+**土** / earth
+  · 山冈、围墙、火库、印章
+  · high ground · a wall · the Fire store · a seal
+**时位** / time and place
+  · 19–21 点、九月、西北偏西
+  · 19:00–21:00 · the ninth month · west-northwest
+**身** / the body
+  · 腿、踝、命门
+  · legs · ankles · the lower back
+**性** / the character
+  · 忠、守、看门、认死理
+  · loyal · guarding · keeping watch · stubborn about principle
+**动词象意** · 守住、看门、认死理 / guards it · keeps watch · holds to the principle
+
+@@ s22.xiang.019
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+亥 — Pig
+**水** / water
+  · 江湖、大海、楼阁、厕所、酒
+  · rivers and lakes · the sea · upper rooms · the privy · liquor
+**时位** / time and place
+  · 21–23 点、十月、西北偏北
+  · 21:00–23:00 · the tenth month · north-northwest
+**身** / the body
+  · 头、肾、膀胱
+  · the head · kidneys · the bladder
+**性** / the character
+  · 厚道、能藏、孕育、不争
+  · generous · able to keep things · gestating · not contending
+**动词象意** · 藏、孕、不争 / stores · gestates · does not contend
+
+@@ s22.xiang.020
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+木 — Wood
+**物** / things
+  · 树、纸、布、家具、书
+  · trees · paper · cloth · furniture · books
+**身** / the body
+  · 肝胆、筋、眼
+  · liver and gallbladder · sinews · the eyes
+**性** / the character
+  · 生长、伸展、仁、直
+  · growth · reaching out · kindness · straightness
+**位** / east and green
+  · 东方、青绿、春
+  · east · green · spring
+**动词象意** · 生长、伸出去、顶开、抽条 / grows · reaches out · pushes through · shoots up
+
+@@ s22.xiang.021
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+火 — Fire
+**物** / things
+  · 灯、电、炉、文书、美的东西
+  · lamps · electricity · a stove · documents · beautiful things
+**身** / the body
+  · 心、血、目
+  · the heart · blood · eyes
+**性** / the character
+  · 向上、明亮、礼、急
+  · rising · brightness · courtesy · haste
+**位** / south and red
+  · 南方、赤红、夏
+  · south · red · summer
+**动词象意** · 烧起来、照亮、急起来、很快烧完 / flares · lights it · turns urgent · burns out fast
+
+@@ s22.xiang.022
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+土 — Earth
+**物** / things
+  · 田地、房产、砖石、陶器、仓
+  · land · property · brick and stone · pottery · a granary
+**身** / the body
+  · 脾胃、肌肉、腹
+  · stomach and spleen · muscle · the belly
+**性** / the character
+  · 承载、稳、信、慢
+  · carrying · steadiness · trustworthiness · slowness
+**位** / centre and yellow
+  · 中央、黄、四季末
+  · the centre · yellow · the close of each season
+**动词象意** · 承住、埋起来、拖住、积起来 / carries it · buries it · drags on it · accumulates
+
+@@ s22.xiang.023
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+金 — Metal
+**物** / things
+  · 刀、钱、机械、首饰、规矩
+  · a blade · coin · machinery · jewellery · rules
+**身** / the body
+  · 肺、皮毛、大肠
+  · lungs · skin and hair · the large intestine
+**性** / the character
+  · 收敛、锋利、义、肃
+  · gathering in · sharpness · duty · severity
+**位** / west and white
+  · 西方、白、秋
+  · west · white · autumn
+**动词象意** · 收住、切开、定规矩、肃清 / gathers in · cuts · sets the rule · clears out
+
+@@ s22.xiang.024
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+水 — Water
+**物** / things
+  · 江河、酒、油、流动的钱、网络
+  · rivers · liquor · oil · money in motion · networks
+**身** / the body
+  · 肾、耳、血
+  · kidneys · ears · blood
+**性** / the character
+  · 润下、流动、智、隐
+  · flowing down · movement · wits · concealment
+**位** / north and black
+  · 北方、黑、冬
+  · north · black · winter
+**动词象意** · 流走、渗进去、泡软、藏起来 / flows away · seeps in · softens it · conceals
+
+@@ s22.xiang.025
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+青龙 — Azure Dragon
+**事** / what it brings
+  · 喜事、婚嫁、正财、升迁、宴饮
+  · good news · a marriage · honest income · promotion · a feast
+**人** / the person
+  · 和善、体面、有酒色之好
+  · kindly · presentable · fond of wine and pleasure
+**动词象意** · 成全、热闹起来、顺水推舟 / brings it off · livens it up · goes with the current
+
+@@ s22.xiang.026
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+朱雀 — Vermilion Bird
+**事** / what it brings
+  · 口舌、文书、消息、宣传、官非
+  · argument · documents · news · publicity · litigation
+**人** / the person
+  · 能说、急、爱表达
+  · articulate · quick · given to speaking out
+**动词象意** · 说出去、传开、吵起来 / speaks it · spreads it · starts the row
+
+@@ s22.xiang.027
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+勾陈 — Hook Earth
+**事** / what it brings
+  · 田土房产、迟滞、旧事翻出、牵连
+  · land and property · delay · old business resurfacing · entanglement
+**人** / the person
+  · 厚重、固执、不灵活
+  · solid · stubborn · inflexible
+**动词象意** · 拖住、牵连进来、翻旧账 / holds it back · drags others in · reopens old accounts
+
+@@ s22.xiang.028
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+螣蛇 — Coiling Snake
+**事** / what it brings
+  · 虚惊、反复、怪事、梦、缠住不放
+  · a fright that comes to nothing · going round again · something odd · dreams · being held and not let go
+**人** / the person
+  · 多疑、心思绕、不安
+  · suspicious · convoluted · unsettled
+**动词象意** · 缠住、反复、虚惊一场 / entangles · goes round again · frightens and comes to nothing
+
+@@ s22.xiang.029
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+白虎 — White Tiger
+**事** / what it brings
+  · 伤病、血光、丧事、刚断、道路之事
+  · injury · blood · mourning · a hard decision · something on the road
+**人** / the person
+  · 刚猛、不留情面、军警一类
+  · forceful · blunt · the uniformed sort
+**动词象意** · 伤、断、硬来 / wounds · cuts it off · forces it
+
+@@ s22.xiang.030
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+玄武 — Dark Tortoise
+**事** / what it brings
+  · 暗昧、私情、盗窃、暗中的损失、看不清
+  · obscurity · an affair · theft · quiet losses · not seeing clearly
+**人** / the person
+  · 心思深、会藏、不明说
+  · deep · able to conceal · never quite saying it
+**动词象意** · 瞒、偷、暗中挪走 / conceals · steals · moves it quietly
+
+@@ s22.xiang.031
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+乾 — Heaven
+**象** / the image
+  · 天、君、父、金玉、圆的东西
+  · heaven · the ruler · the father · gold and jade · round things
+**人事** / in human terms
+  · 当家的、决策者、刚健的人、出资方
+  · whoever heads it · the decider · someone vigorous · the one funding it
+**身** / the body
+  · 首、骨、肺
+  · the head · bones · lungs
+**动词象意** · 决断、主事、顶到底 / decides · takes charge · sees it through
+
+@@ s22.xiang.032
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+兑 — Lake
+**象** / the image
+  · 泽、口、缺口、刀、少女
+  · a marsh · the mouth · a gap · a blade · the youngest daughter
+**人事** / in human terms
+  · 能说会道、谈判、娱乐、有毁损的事
+  · a persuasive talker · negotiation · entertainment · something chipped or broken
+**身** / the body
+  · 口舌、肺、齿
+  · mouth and tongue · lungs · teeth
+**动词象意** · 说服、缺一块、取悦 / persuades · chips a piece off · pleases
+
+@@ s22.xiang.033
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+离 — Fire
+**象** / the image
+  · 火、日、文书、华丽的东西、中虚的东西
+  · fire · the sun · documents · showy things · things hollow at the centre
+**人事** / in human terms
+  · 文化、名声、美、眼见为实的事
+  · culture · reputation · beauty · what is seen
+**身** / the body
+  · 目、心、血
+  · eyes · the heart · blood
+**动词象意** · 照出来、附上去、显摆 / shows it · attaches to · displays
+
+@@ s22.xiang.034
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+震 — Thunder
+**象** / the image
+  · 雷、大路、长男、青色、竹木
+  · thunder · the main road · the eldest son · green · bamboo and wood
+**人事** / in human terms
+  · 起头、震动、急切、出发
+  · starting · a shock · urgency · setting off
+**身** / the body
+  · 足、肝、声音
+  · feet · the liver · the voice
+**动词象意** · 动、惊、起来 / moves · startles · rises
+
+@@ s22.xiang.035
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+巽 — Wind
+**象** / the image
+  · 风、绳、长女、草木、气
+  · wind · cord · the eldest daughter · plants · breath
+**人事** / in human terms
+  · 渗透、传开、反复不定、做买卖
+  · seeping in · spreading · wavering · trade
+**身** / the body
+  · 股、气、头发
+  · thighs · breath · hair
+**动词象意** · 渗进去、来回摇摆、传开 / seeps in · sways · spreads
+
+@@ s22.xiang.036
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+坎 — Water
+**象** / the image
+  · 水、险、陷坑、中男、隐伏的东西
+  · water · danger · a pit · the middle son · what lies hidden
+**人事** / in human terms
+  · 劳苦、风险、暗中的事、智取
+  · hard labour · risk · what happens out of sight · winning by wits
+**身** / the body
+  · 耳、肾、血
+  · ears · kidneys · blood
+**动词象意** · 陷、流、冒险 / falls in · flows · takes the risk
+
+@@ s22.xiang.037
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+艮 — Mountain
+**象** / the image
+  · 山、门阙、少男、石、路的尽头
+  · a mountain · a gateway · the youngest son · stone · where the road ends
+**人事** / in human terms
+  · 停下、守着、阻挡、不动
+  · stopping · holding · blocking · not moving
+**身** / the body
+  · 手、背、鼻
+  · hands · the back · the nose
+**动词象意** · 停、挡、守着不动 / stops · blocks · holds still
+
+@@ s22.xiang.038
+<!-- source: assets/xiangshu/lei-xiang.json | kind: 类象 card -->
+坤 — Earth
+**象** / the image
+  · 地、母、众多、方正的东西、布
+  · earth · the mother · multitude · square things · cloth
+**人事** / in human terms
+  · 顺从、承载、群众、积累
+  · yielding · carrying · the many · accumulation
+**身** / the body
+  · 腹、脾、肉
+  · the belly · the spleen · flesh
+**动词象意** · 承受、容纳、积攒 / bears it · holds it all · gathers
+
+
+---
+
+## Appendix · Deliberately NOT in this deck
+
+每一条都写了理由,因为下一个人的第一反应会是「漏了」。
+
+- **`functions/_lib/prompt-engine.js`** — 提示词栈。**商业机密,而且读者从来看不到它** —— `_middleware.js` 让它保持 404,`tests/prompt-secrecy.mjs` 钉着这条。它是「模型读的字」,归 BOURNEWISE_PROMPT_DECK。
+- **`functions/_lib/relative-gloss.js`** — 喂系统提示词里的 SYMBOL_CANDIDATES 块。只到模型,不到页面 —— 读者在取象面板看到的是 `lei-xiang.json`,那一份在下面。
+- **`liuyao-verdict.js`** — 《增删卜易》断卦裁决梯。它的每一条 `why` 都写进盘面 payload 给模型读,页面上一个字都不出现。
+- **`prompt-checks.js`** — 解读写完之后的核对。源码注释写明「surfaced as telemetry, never acted on」—— 它的判词进日志,不进页面。
+- **`functions/_lib/db.js · session.js · password.js`** — SQL 与会话内部,没有面向读者的字。
+- **`assets/marks.js · blocks.js · about.js · weave.js`** — 几何与排布,画的是形状不是字。
+- **`palette-guide.html · palette-overview.html`** — 色板工具,`_redirects` 挡在 `/tools/*` 的 404 后面。
+
+**判据只有一条:读者的屏幕上会不会出现这些字。**
+发给模型的字是另一本册子(`BOURNEWISE_PROMPT_DECK.md`),两者不许混 ——
+提示词栈是商业机密,而且它在公网上必须是 404。
