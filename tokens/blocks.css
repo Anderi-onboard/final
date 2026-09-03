@@ -778,7 +778,14 @@ body.blocks-route .ab-block[data-horizon] > svg {
    ⚠️ These are CSS properties on classes because blocks.js draws the shapes: a
    fill="" attribute cannot resolve var() and would freeze the field out of the
    114-group rotation. Same reason the horizon bands are classes. */
-[data-canopy] { position: relative; overflow: hidden;
+/* ⚠️ [data-mass] shares this token block rather than declaring a second one.
+   It is the other study from the same three references — one cropped mass
+   against a flat sky instead of an all-over field — and it wants exactly the
+   same roles: a sky, six values of one hue, a capped warm accent. A parallel
+   list of --ms-* tokens would be the second name for one thing that this repo
+   has paid for three times (the halved cqw rule, the touch targets, the mark
+   fields), and the two pictures would drift apart on the next edit. */
+:is([data-canopy], [data-mass]) { position: relative; overflow: hidden;
   color: var(--bk-ink); background: var(--cp-sky);
   --cp-sky: #E9E7DA; --cp-far: #C8CBB4;
   --cp-1: #8E9970; --cp-2: #7C8A62; --cp-3: #6B7B55;
@@ -805,14 +812,14 @@ body.blocks-route .ab-block[data-horizon] > svg {
    (0,3,1), which forces position:relative and would silently discard the
    absolute positioning — the specificity trap this file has logged five times.
    Align the weight; do not hope to win. */
-body.blocks-route .ab-block--art[data-canopy] { display: block; gap: 0; padding: 0; }
-body.blocks-route .ab-block [data-canopy] > svg,
-body.blocks-route .ab-block[data-canopy] > svg {
+body.blocks-route .ab-block--art:is([data-canopy], [data-mass]) { display: block; gap: 0; padding: 0; }
+body.blocks-route .ab-block :is([data-canopy], [data-mass]) > svg,
+body.blocks-route .ab-block:is([data-canopy], [data-mass]) > svg {
   position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0;
 }
 
 @supports (color: oklch(from red l c h)) {
-  [data-canopy] {
+  :is([data-canopy], [data-mass]) {
     /* the sky takes the OTHER hue, so the treeline cuts against it by colour as
        well as by tone — the same job the horizon's sky does */
     --cp-sky: oklch(from var(--bw-hue-b, #E9E7DA) clamp(.90, l, .95) clamp(.015, c, .05) h);

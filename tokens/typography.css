@@ -9,6 +9,42 @@
   --font-sans: "Spinnaker", system-ui, -apple-system, sans-serif;
   --font-mono: "Spinnaker", ui-monospace, monospace;
   --font-brand: 'Pacifico', cursive;
+  /* ⭐ THE CHINESE FACE. Owner, 2026-09-02: 中文用华文中宋.
+     None of the three locked families has a single CJK glyph, so Chinese has
+     always been set by whatever the operating system reached for — the reading
+     is the product, and it was being typeset by accident. This names the face.
+
+     ⚠️ It is NOT a fourth webfont and does not touch the lock: nothing is
+     downloaded, there is no @font-face, and assets/fonts still holds exactly
+     three files. tests/font-lock.mjs gates @font-face declarations rather than
+     family names for this reason — a system fallback the three families
+     genuinely need is not a fourth family.
+
+     ⚠️ The Latin faces are listed AFTER it, not before, and that is what
+     settles the punctuation. A Chinese sentence carries ASCII marks as well as
+     full-width ones; if the Latin face leads, the comma in "2026, 秋" comes
+     from Spinnaker and the 。from the Song face, and the two do not sit on the
+     same baseline or the same weight. Whichever face leads supplies EVERY
+     codepoint it has, so leading with the Song face is what makes one Chinese
+     paragraph read as one typeface.
+
+     ⚠️⚠️ AND THE LIST HAS TO BE LONG, because the generic at the end is where
+     the split comes back. Measured with CSS.getPlatformFontsForNode on a box
+     with none of the named faces installed: the first version of this stack
+     ended `… "Source Han Serif SC", serif`, and one Chinese paragraph rendered
+     as `Liberation Serif: 1 glyph` + `WenQuanYi Zen Hei: 54`. The generic
+     resolved to a Latin face, which HAS the ASCII marks and therefore claimed
+     them, while the characters fell past it to the system's last-resort CJK
+     font. Two families, one sentence — exactly the fault this token exists to
+     remove, arriving through the fallback rather than through the lead.
+     So the real families are listed until it is unlikely any machine reaches
+     the generic: the Song faces first, then Noto/Source Han, then the sans CJK
+     faces that Windows, Android and Linux actually ship. A sans CJK is a
+     compromise; a split paragraph is a defect. */
+  --font-zh: "STZhongsong", "华文中宋", "STSong", "SimSun", "宋体", "Songti SC",
+             "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC",
+             "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei",
+             "Noto Sans CJK SC", serif;
 
   /* scale */
   --text-poster: clamp(40px, 6vw, 76px); /* hero/poster display */

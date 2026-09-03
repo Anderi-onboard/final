@@ -135,3 +135,48 @@ assert.deepEqual(brandUse, [],
 
 console.log(`font lock OK — 3 self-hosted families across ${files.length} files, `
   + 'no banned family, no remote host, Pacifico confined to wordmark + chip');
+
+// ── the reading is set in a site face, and Chinese in one named face ───────
+//
+// Owner, 2026-09-02: body text uses the sans the site already wears, and
+// Chinese uses 华文中宋. Both are the silent kind of rule — get them wrong and
+// the page still renders, in whatever the browser reached for.
+//
+// This is what was actually there: the reading — the product itself — was set
+// in `ui-serif, Georgia, "Iowan Old Style", …`, a generic system serif, while
+// every other page on the site was in one of the three locked families. It had
+// been that way long enough that nobody noticed the one page that matters was
+// typeset by accident.
+const typography = cssText(join(ROOT, 'tokens/typography.css'));
+const app = cssText(join(ROOT, 'index.html'));
+
+assert.match(typography, /--font-zh:\s*"STZhongsong",\s*"华文中宋"/,
+  'the Chinese face is named, and named FIRST in its own token');
+
+// ⚠️ THE PUNCTUATION RULE. Whichever family leads a stack supplies every
+// codepoint it has, ASCII marks included. So a Chinese paragraph set with the
+// Latin face first takes its comma from Spinnaker and its 。from the Song face
+// — two weights, two baselines, one sentence. Leading with the Song face is
+// what makes the paragraph read as a single typeface, and it is the whole
+// mechanism behind "标点符号也要统一成相应字体样式".
+assert.match(app, /\.reading-body:lang\(zh\)\s*\{\s*--read:\s*var\(--font-zh\)/,
+  'a Chinese reading leads with the Song face, so its ASCII punctuation and Latin ' +
+  'runs come from the same family as its characters');
+assert.match(app, /--read:"Spinnaker",var\(--font-zh\)/,
+  'and everything else leads with Spinnaker, with the Song face behind it for CJK');
+assert.doesNotMatch(app, /--read:ui-serif/,
+  'the reading is never handed back to the browser default serif');
+
+// The switch is an attribute the app has to write, or the :lang() rule matches
+// nothing and the whole mechanism is inert while looking correct in the file.
+const chatjs = cssText(join(ROOT, 'chat-app.js'));
+// ⚠️ BOTH render paths, counted rather than matched. verdictHTML has two: the
+// prose reading (the real one) and the structured/legacy branch. A bare match
+// passes as long as EITHER carries the attribute — checked by removing the one
+// that matters, and the assertion stayed green because the other one answered
+// for it. A rule that is half-connected is the failure this repo keeps paying
+// for; counting is what tells the two apart.
+const stamps = (chatjs.match(/class="reading-body" lang="' \+ \(isZh\(/g) || []).length;
+assert.equal(stamps, 2,
+  'both reading render paths stamp lang from their own text — the prose path and ' +
+  'the structured one; found ' + stamps);

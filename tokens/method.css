@@ -113,8 +113,8 @@ body[data-page="guide"] { margin: 0; }
   min-width: 0;
 }
 /* Fields go edge to edge. A pattern with an inset is a picture of a pattern. */
-.mt-card:is([data-pattern], [data-land], [data-horizon], [data-canopy]) { padding: 0; color: var(--bk-cream); }
-.mt-card:is([data-pattern], [data-land], [data-horizon], [data-canopy]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mt-card:is([data-pattern], [data-land], [data-horizon], [data-canopy], [data-mass]) { padding: 0; color: var(--bk-cream); }
+.mt-card:is([data-pattern], [data-land], [data-horizon], [data-canopy], [data-mass]) svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* ── the two type sizes, and nothing between them ─────────────────────────
    The reference sets a display and a functional label and simply omits the
