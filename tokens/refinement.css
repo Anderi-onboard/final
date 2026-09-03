@@ -1455,9 +1455,41 @@ html[data-skin="paper"] body :is(
 }
 .reading-body .xr-act b { flex: 0 0 3.6em; font-weight: 600; color: var(--ink); }
 .reading-body .xr-chain[lang="en"] .xr-act b { flex-basis: 7em; }
+/* ⚠️⚠️ Chain rows: the pill has to be allowed to WRAP INSIDE ITSELF. Each edge
+   is one inline-flex holding the whole run — "restrains · Resource → Output →
+   Pressure → Peer → Wealth" — and a row of flex items does not wrap, so at
+   390px that pill measured 426px inside a 326px column with overflow visible.
+   It was not scrollable and it did not widen the document; the last word was
+   simply cut off at the screen edge with no way to reach it. This file already
+   says a crop only works when the reader can put the word back, and here they
+   cannot. */
+.reading-body .xr-edge { flex-wrap: wrap; max-width: 100%; min-width: 0; }
+
 @media (max-width: 520px) {
   .reading-body .xr-act { flex-direction: column; gap: 1px; }
-  .reading-body .xr-act b { flex: none; }
+  /* ⚠️⚠️ (0,3,1), to match `.reading-body .xr-chain[lang="en"] .xr-act b` above.
+     A MEDIA QUERY ADDS NO SPECIFICITY, so the previous `.reading-body .xr-act b`
+     at (0,2,1) lost to it and `flex-basis: 7em` survived into the column
+     layout — where the basis is the MAIN AXIS, i.e. the height. Measured at
+     390px: every label was 326x84 for one 19px line, five of them, about 350px
+     of blank page between a relative's name and its verbs. It only showed in
+     English, because only the English rule carries the [lang] qualifier.
+     Seventh time this repo has been caught by the same trap: align the weight,
+     do not hope to win. */
+  .reading-body .xr-chain[lang] .xr-act b { flex: none; flex-basis: auto; }
+}
+
+/* ── the reading's own controls reach the touch floor ──────────────────────
+   Measured at 390px with a coarse pointer: the follow-up axes came to 36px and
+   the Copy / Follow up / New casting row to 30px, against the 44px floor this
+   file sets everywhere else. Both have room to grow, so they grow — the rule
+   already written down here is that the element gets bigger rather than
+   wearing a 44px ::after, because a hot zone that overlaps its neighbours
+   steals clicks, and stealing a click is worse than a small target. */
+@media (pointer: coarse) {
+  .reading-body ~ .rd-depth .rd-axis,
+  .rd-depth .rd-axis { min-height: var(--ctl); }
+  .rd-actions .rd-action { min-height: var(--ctl); }
 }
 
 /* Solid action buttons ----------------------------------------------------
