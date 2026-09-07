@@ -202,6 +202,34 @@
     if (HARM[w.branch.bi] === r.branch.bi)    wr.push('世应相害');
     if (isXing(w.branch.bi, r.branch.bi))     wr.push('世应相刑');
 
+    /* ── 局对每一爻做什么 ─────────────────────────────────────────
+       局是一个整体,它以自己的五行去生克别的爻 —— 这和局里某一爻单独生克
+       不是一回事。速断「三合官局/父局生世爻」要的正是这一格:局作为一个
+       单位对世爻的生克。没有它,单爻的生克再全也拼不出这一条。 */
+    function actsOn(el, lines) {
+      var out = [];
+      for (var k = 0; k < 6; k++) {
+        if (lines.indexOf(k + 1) >= 0) continue;   // 局内的爻不算局对它自己
+        var g = L[k].element.gi, kind = null;
+        if (gen(el, g)) kind = '生';
+        else if (ctl(el, g)) kind = '克';
+        else if (gen(g, el)) kind = '被生';
+        else if (ctl(g, el)) kind = '被克';
+        if (!kind) continue;
+        out.push({ line: k + 1, kind: kind, desc: desc(k),
+                   世爻: k === board.ben.worldLi, 应爻: k === board.ben.respLi });
+      }
+      return out;
+    }
+
+    /* 引擎的 sanhe 没有这一格,在这里补上再往下传 —— 原样保留它已有的字段。 */
+    var sanhe = (board.sanhe || []).map(function (s) {
+      var el = s.element && s.element.gi;
+      return Object.assign({}, s, {
+        对爻: (el === undefined || el === null) ? [] : actsOn(el, s.lines || [])
+      });
+    });
+
     /* ── 三会局(引擎已有三合,这里补三会)────────────────────────── */
     var sanhui = [];
     HUI.forEach(function (h) {
@@ -211,10 +239,12 @@
       hit.forEach(function (l) { brs[l.branch.bi] = 1; });
       var n = Object.keys(brs).length;
       if (n < 2) return;
+      var hLines = hit.map(function (l) { return l.idx + 1; });
       sanhui.push({
         type: n === 3 ? 'full' : 'half',
         element: EL[h.el],
-        lines: hit.map(function (l) { return l.idx + 1; }),
+        对爻: actsOn(h.el, hLines),
+        lines: hLines,
         missing: n === 3 ? null : h.br.filter(function (b) { return !brs[b]; }).map(function (b) { return BR[b]; }),
         hasMoving: hit.some(function (l) { return l.moving; })
       });
@@ -270,7 +300,7 @@
       transforms: transforms,
       clock: clock,
       worldResp: { world: board.ben.worldLi + 1, resp: board.ben.respLi + 1, rels: wr },
-      sanhe: board.sanhe || [],
+      sanhe: sanhe,
       sanhui: sanhui,
       shape: shape,
       multi: multi,
