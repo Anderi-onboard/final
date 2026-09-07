@@ -1666,8 +1666,18 @@ html[data-skin="paper"] body[data-page="app"] :is(.sidebar, .sidebar *) {
    .72 is where the labels clear AA again while the landscape still reads
    through the panel, which is the whole point of taking the blur off.
 
-   ⚠️ !important for the same reason as the rule above: luxury-glass.css sets
-   this property from a later sheet at equal specificity. */
+   ⚠️⚠️ AND THE SPECIFICITY WAS NOT EQUAL — this note used to say it was, and
+   answered with !important, which is why the .72 below never rendered. Measured
+   2026-09-02: the panel was still .42. luxury-glass carried
+   `html[data-skin="paper"] body :is(.sidebar, .pagehead, …, .section .panel, …)`,
+   and **`:is()` takes the specificity of its most specific ARGUMENT** — that
+   list contains `.section .panel`, so the whole selector is (0,3,2) and beats
+   this rule's (0,3,1). Two !important declarations are decided by specificity
+   first and only then by order, so the later-sheet reasoning was wrong twice
+   over. `.sidebar` has been removed from those lists instead.
+   ⭐ The lesson to carry: when counting a selector's weight, look INSIDE every
+   :is() / :where() / :not() — one two-class argument buried in a long list
+   silently outranks a rule that looks more specific than it. */
 html[data-skin="paper"] body[data-page="app"] .sidebar {
   background-color: color-mix(in srgb, #FFFFFF 72%, transparent) !important;
 }
@@ -2154,4 +2164,27 @@ body[data-page="app"] .reading:not(.casting-live) > .rd-actions {
   body[data-page="app"] .reading:not(.casting-live) > .reading-fig span {
     display: none !important;
   }
+}
+
+/* ── the selected reading is a LIGHTER card, not a darker one ────────────
+   Owner, 2026-09-02: 「这种深色box不能要 换个浅点的颜色」.
+   Measured, the selected history item was --paper-dim (#D4CEC3) — an OPAQUE
+   tan chip sitting on a translucent white sidebar, so the one thing marked as
+   "where you are" was the darkest object in the panel and read as a hole
+   punched in it.
+   Selection here should read as a card lifted toward the light, which is the
+   same direction the rest of this route uses: lighter and more opaque than its
+   panel, never darker. The ink stays full strength, so the item is still
+   plainly the current one without weighing anything down. */
+/* ⚠️ These sit ON the sidebar, so they are read against .72 white and not
+   against the landscape. .72 for the selected item would have made it exactly
+   its own panel — invisible. It has to clear the panel it is in. */
+html[data-skin="paper"] body[data-page="app"] .castings .casting:hover,
+html[data-skin="paper"] body[data-page="app"] .casting-row:hover {
+  background: color-mix(in srgb, #FFFFFF 55%, transparent);
+}
+html[data-skin="paper"] body[data-page="app"] .castings .casting.active {
+  background: color-mix(in srgb, #FFFFFF 92%, transparent);
+  color: var(--ink);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 7%, transparent);
 }

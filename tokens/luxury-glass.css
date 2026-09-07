@@ -235,8 +235,7 @@ html[data-skin="paper"] body {
 
 /* Stable glass carriers. The repeated texture remains visible underneath,
    but the carrier colour itself never changes with the environment. */
-html[data-skin="paper"] body :is(
-  .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,
+html[data-skin="paper"] body :is(.composer,.method-menu,.carry-menu,.coach,.coach-card,
   .pagehead,.top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,
   .estimator,.pack,.term,.billing-mail-note,.toast,.progress,.controls,
   .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
@@ -253,17 +252,21 @@ html[data-skin="paper"] body :is(
   backdrop-filter: var(--ui-glass-filter);
   box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
 }
-html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
-  background-color: var(--soft-peach-glass-strong) !important;
+html[data-skin="paper"] body :is(.sidebar,.pa.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheetound-color: var(--soft-peach-glass-strong) !important;
 }
 
 /* App: retain the established sidebar/composer layout, freeze only its UI
    material. Reading content remains quieter than the controls. */
-html[data-skin="paper"] body[data-page="app"] .sidebar {
-  background-color: var(--ui-glass-strong) !important;
-  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
-  backdrop-filter: var(--ui-glass-filter-strong);
-}
+/* ⚠️⚠️ RETIRED 2026-09-02. This rule was silently beating refinement.css, and
+   the comment there had already spotted the danger and drawn the wrong
+   conclusion: it says "luxury-glass.css sets this property from a later sheet
+   at equal specificity" and answers with !important — but BOTH were !important
+   and both were (0,3,1), so between two equal-weight !important declarations
+   the LATER SHEET wins, and this one is later. The documented .72 sidebar had
+   therefore never rendered; measured, the panel was still .42, which is the
+   value refinement's own note says is too low for its labels once the blur came
+   off. The backdrop-filter here was dead too, removed with the blur.
+   Deleted rather than out-weighed: these two legacy sheets only shrink. */
 /* The composer and the menus that spawn from it are the most-looked-at glass
    on the site, so they carry the heavier blur and sit a step more opaque than
    the panels behind them. */
@@ -367,12 +370,11 @@ html[data-skin="paper"] body[data-page="settings"] > .toast {
 
 @media (prefers-reduced-transparency: reduce) {
   html[data-skin="paper"] body :is(
-    .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
+    .sidebar,.compos.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
     .top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,.estimator,.pack,
     .term,.billing-mail-note,.toast,.progress,.controls,.section .panel,
     .account-menu,.popover,.modal,.dialog,.sheet
-  ) {
-    background-color: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
+  lor: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
   }
 }
 
