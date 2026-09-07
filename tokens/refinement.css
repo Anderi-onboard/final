@@ -2188,3 +2188,89 @@ html[data-skin="paper"] body[data-page="app"] .castings .casting.active {
   color: var(--ink);
   box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 7%, transparent);
 }
+
+/* ── where it should be text, it is only text ────────────────────────────
+   Owner, 2026-09-02: 「该是文本的地方就只要文本」.
+   Audited the finished reading for anything carrying a fill, a border or a
+   radius, and everything below came back wearing one: the 生克 runs as pills,
+   the unspent branches as chips, the follow-up axes as outlined buttons, the
+   actions as rounded buttons. None of them is a surface — they are all words.
+
+   ⭐ What survives is the hairline BETWEEN sections. A rule separates; a box
+   contains. Taking the containers off does not mean taking the structure off,
+   and the page still has to say where one part stops.
+
+   ⚠️ The affordances stay, they just stop being upholstery: colour where colour
+   carries meaning (生 feeds / 克 restrains is the one place on this site where
+   hue is information), an underline that arrives on hover, and the arrow the
+   follow-ups already had. And the 44px touch floor set earlier is untouched —
+   it was min-height, not a border, so the target stays big while the box goes. */
+
+/* the 生克 runs: a line of words, with the relation named in its own colour */
+body[data-page="app"] .reading-body .xr-edge {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin-right: 16px;
+}
+body[data-page="app"] .reading-body .xr-edge i {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin-right: 8px;
+}
+body[data-page="app"] .reading-body .xr-edges { gap: 8px 0; }
+
+/* the branches this reading did not spend */
+body[data-page="app"] .reading-body .xr-maybe {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 4px 0;
+  text-align: left;
+}
+body[data-page="app"] .reading-body .xr-maybe:hover b,
+body[data-page="app"] .reading-body .xr-maybe:focus-visible b {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body[data-page="app"] .reading-body .xr-maybe-chips {
+  display: block;
+}
+/* ⚠️ One per line. Without the chip they are still inline-flex, so two short
+   ones share a line and butt straight into each other — measured, "…children,
+   medicine" ran into "Wealth" with no separator at all. The box had been doing
+   the separating; once it goes, the line break has to. */
+body[data-page="app"] .reading-body .xr-maybe {
+  display: block;
+  width: 100%;
+}
+
+/* the follow-up axes and the actions */
+body[data-page="app"] .rd-depth .rd-axis,
+body[data-page="app"] .rd-actions .rd-action,
+body[data-page="app"] .rd-depth .rd-prompt {
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+body[data-page="app"] .rd-depth .rd-axis {
+  padding: 0 24px 0 0;
+  color: var(--terracotta);
+}
+body[data-page="app"] .rd-depth .rd-axis:hover,
+body[data-page="app"] .rd-depth .rd-axis:focus-visible,
+body[data-page="app"] .rd-actions .rd-action:hover,
+body[data-page="app"] .rd-actions .rd-action:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body[data-page="app"] .rd-actions .rd-action { padding: 0 24px 0 0; }
+body[data-page="app"] .rd-depth .rd-prompt:hover { background: none !important; }
+
+/* the figure's key box goes with its labels */
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig .bw-af-legend {
+  display: none !important;
+}
