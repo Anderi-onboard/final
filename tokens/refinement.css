@@ -601,8 +601,10 @@ body[data-page="app"] .thread-inner { max-width: 720px; }
 /* ⚠️ The bubble's fill is gone (2026-09-02). The question is set as the
    piece's masthead at the end of this file; a filled pill made the input the
    loudest thing on a page whose whole point is the answer. */
-body[data-page="app"] .reading-body { line-height: 1.72; letter-spacing: -.01em; }
-body[data-page="app"] .reading-body p { margin-bottom: 1.05em; }
+/* ⚠️ Leading and paragraph air are set once, in the transcript block at the
+   foot of this file. They used to be declared here as well (1.72 and 1.05em)
+   and there as 1.82 — three numbers for two properties, in one stylesheet. */
+body[data-page="app"] .reading-body { letter-spacing: -.01em; }
 body[data-page="app"] .rd-actions { flex-wrap: wrap; }
 body[data-page="app"] .rd-action {
   background: var(--ui-glass-soft); border-color: var(--ui-line);
@@ -1025,80 +1027,24 @@ html[data-skin="paper"] body .acct-menu { position: absolute; }
    visible while it is being made, then clears out instead of becoming a large
    screenshot above a narrow answer column. */
 body[data-page="app"] .thread-inner { max-width: 920px; }
-body[data-page="app"] .reading-body { max-width: 760px; font-size: 15px; line-height: 1.82; }
+body[data-page="app"] .reading-body { max-width: var(--rd-col, 760px); font-size: 15px; line-height: 1.7; }
 body[data-page="app"] .reading-body .rd-para,
 body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
-/* ⭐ THE FIGURE COMES BACK, in the margin. It used to be hidden the moment the
-   casting settled, and the note explaining that objected to it "becoming a
-   large screenshot above a narrow answer column" — which is a fair objection to
-   a big board on top, and not an objection to the picture existing. It is the
-   one image that belongs to this particular reading, and with no plate allowed
-   the right third of the page was simply empty. Small, quiet, and beside the
-   text rather than above it: it anchors the composition and it is the only
-   thing on the page that is about THIS casting rather than about readings in
-   general.
-   ⚠️ Only where there is a margin to put it in. Below 1180px it stays hidden,
-   because there the objection the old rule raised would be true again. */
-/* ⚠️⚠️ THE FIGURE SURVIVES THE CASTING AT EVERY WIDTH. It used to be hidden the
-   moment the animation settled — at every width — and the margin version added
-   in the redesign only brought it back above 1180px, so on a laptop at 1100 and
-   on every phone the one image that belongs to THIS casting still vanished the
-   instant it was made. Owner asked where it had gone, and the honest answer was
-   that below 1180 it was still gone.
+/* ⭐⭐ THE FIGURE IS SHOWN THE WAY IT WAS ALWAYS SHOWN. Owner, 2026-09-07:
+   「按照原来的显示方法」. Three versions of this rule have now existed: hidden
+   the instant the casting settled; then a 208px mark in the right margin; then
+   that mark plus a 148px copy in the flow below 1180. The last two were mine,
+   and both answered the wrong question — they treated the board as decoration
+   to be placed, when it is the reading's own illustration and already has a
+   display: the one it wears while it is being cast, declared in index.html
+   (`.reading-fig`, `.is-full`, the optical centring BWFigure applies per cast).
 
-   Two placements, one rule: in the margin where there is a margin, and in the
-   flow where there is not. Small either way — the objection the original rule
-   raised was to "a large screenshot above a narrow answer column", and a 140px
-   figure under the masthead is neither large nor in the way. */
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig {
-  display: block;
-  width: 148px;
-  margin: 0 0 24px;
-  opacity: .8;
-}
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig .bw-af-fig {
-  max-width: 100%;
-}
+   ⭐ So this file now declares NOTHING about the figure. Not a width, not a
+   position, not a list of labels to strip. The settled board is the live board.
+   That is the whole rule, and it is why there is no second set of numbers here
+   to drift out of step with the first — the mistake this repo has paid for
+   repeatedly is the second list, and the miniature was one. */
 
-/* ⚠️⚠️ The stripping is NOT inside the desktop query, and it was. Every one of
-   these rules used to live in `@media (min-width: 1180px)` alongside the margin
-   placement, so the moment the figure was allowed to render below 1180 it came
-   back wearing the whole apparatus — coin strip, method line, status line, the
-   six relatives, the elements, the trigram names. Measured, the coin SVG was
-   still drawing at 66x29 inside a 148px figure. Placement is width-dependent;
-   what the figure IS is not. */
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig :is(
-  text, tspan, .bw-af-bar, .bw-coins, .bw-cast-method, .bw-cast-status, figcaption
-) { display: none !important; }
-/* ⭐ …except the hexagram's own name. Stripping every label turned the figure
-   into an anonymous stack of bars — it said "a casting happened" and not WHICH
-   one. The name is the single piece of text that identifies this board, and it
-   is the reason anyone looks at the figure at all. */
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig text.bw-af-name {
-  display: block !important;
-}
-/* the Self / Response key is bare <span>s with no class and no fixed depth, so
-   it is matched by element rather than by path — every span in this figure is a
-   label, and a fourth guess at its container is not worth making */
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig span {
-  display: none !important;
-}
-@media (min-width: 1180px) {
-  body[data-page="app"] .reading:not(.casting-live) { position: relative; }
-  body[data-page="app"] .reading:not(.casting-live) > .reading-fig {
-    display: block;
-    position: absolute;
-    top: 4px;
-    right: -36px;
-    width: 208px;
-    margin: 0;
-    opacity: .8;
-    pointer-events: none;
-  }
-  body[data-page="app"] .reading:not(.casting-live) > .reading-fig .bw-af-fig {
-    max-width: 100%;
-  }
-}
 body[data-page="app"] .reading:not(.casting-live) > .reading-body:first-of-type {
   position: relative;
   padding-top: 16px;
@@ -1972,140 +1918,136 @@ html[data-skin="paper"] body :is(input[type="checkbox"]) {
 .reading-body .xr-lib-acts b,
 .reading-body .xr-lib-acts span { color: var(--faint); }
 
-/* ═══ THE READING, REDESIGNED ═══════════════════════════════════════════
-   Owner, 2026-09-02: 「这一页文字和外观重新设计,背景处先不加遮挡,先不考虑阅读因素」
-   — redesign the page's text and look, put NOTHING over the background, and
-   leave the reading-comfort questions aside for this pass.
+/* ═══ THE READING, SET LIKE A TRANSCRIPT ════════════════════════════════
+   Owner, 2026-09-07:「按照原来的显示方法 同时排版参照 Claude Code 自身的页面
+   不要加毫无意义的留白」— show the board the way it was always shown, model the
+   typesetting on Claude Code's own page, and stop adding whitespace that means
+   nothing.
 
-   What was wrong, as appearance rather than as reading:
+   This replaces the rail-and-column redesign of 2026-09-02. That version put a
+   216px channel down the left of the prose to hang section labels in, ran the
+   title at 46px, and left the right third of the canvas empty on purpose. Two
+   of those three are whitespace with no content in it.
 
-   ① It was a chat log, not a reading. A terracotta pill top-right held the
-      QUESTION, and it was the loudest object on the page — the input shouting
-      over the answer.
-   ② No jump in scale anywhere. Title 18, section 16.5, body 15: three sizes
-      inside three pixels, so on a 1440 canvas the whole thing read as one grey
-      texture. This site's own rule elsewhere is「只有两级字号,中间什么都没有 ——
-      那个空档就是效果本身」, and the one page that is the product had no gap at all.
-   ③ The column sat adrift. Not centred, not anchored: ~230px of unused
-      landscape at the right and no relationship between the type and the
-      picture behind it.
+   ⭐⭐ ONE LEFT EDGE. On the referenced page the question, the answer, its
+   headings, its lists and its actions all start at the same x. The previous
+   version had three edges — the rail at 0, the prose at 216, the follow-up
+   panel back at 0 — and an asymmetric composition is only asymmetric if
+   something lives in the gap. Everything here shares one box, and the box is
+   declared once as `--rd-col`: the reading, the question, the follow-up panel
+   and the action row all read it, so there is no second measurement to keep in
+   step with the first.
 
-   The redesign is a masthead, a rail and a column:
-   — the question becomes the piece's title, set large and flush left, with a
-     hairline and a metadata line under it. It is no longer a bubble.
-   — section headings HANG in a left rail, so the prose column is unbroken and
-     the structure reads as an index running down the side.
-   — the right third is deliberately left to the landscape. With no scrim
-     allowed, the way to honour the background is to give it room rather than
-     to cover it, and an asymmetric column is what creates that room.
-   — everything is ink: colour, scale and weight. No plate, no frost, no panel.
+   ⭐⭐ HIERARCHY FROM WEIGHT, NOT FROM SCALE. That is the actual lesson of the
+   referenced page: its headings are barely larger than its body text, and they
+   are unmistakable anyway because they are bold and they sit tight above what
+   they introduce. So the reading is back on the ladder this system already
+   owns — 18 title / 16.5 section / 15 body — and the 46px display line and the
+   20px lede are gone. The earlier note here argued that 18/16.5/15 "read as one
+   grey texture"; what actually made it grey was the leading and the gaps, not
+   the sizes, and those are what this pass tightens.
 
-   ⚠️ NOT --bw-ink-on-ridge. That token is solved against the compressed ridge
-   band at the FOOT of the viewport, and it flips polarity by group: on a dark
-   ridge it returns a pale ink. The reading sits mostly on sky, so the first
-   pass of this redesign used it and the whole page rendered in near-white on
-   pale blue — the text was there and could not be seen. The token is right
-   where it was already used and wrong here; this is plain --ink. */
+   ⭐ AIR IS ONE LINE, NOT FOUR. Every gap below is a step on the 4px ladder and
+   most of them halved: 40px before a section became 24, 1.05em between
+   paragraphs became 12px, leading 1.82 became 1.7. Nothing is cramped and
+   nothing is padded out to look considered. */
 
-@media (min-width: 1180px) {
-  /* rail + column. The right margin is not empty space, it is where the
-     picture is allowed to be seen. */
-  body[data-page="app"] .thread-inner { max-width: 1080px; }
-  body[data-page="app"] .reading:not(.casting-live) > .reading-body {
-    max-width: 792px;      /* 216 rail + 576 column */
-    padding-left: 216px;
-  }
-  /* ⚠️ The display line is allowed to run wider than the prose. When the two
-     were the same width the page had one edge down the right of everything and
-     read as a single block; letting the title overhang gives the composition a
-     second edge, which is the whole difference between a column of text and a
-     page. */
-  body[data-page="app"] .reading-body .rd-title { width: 700px; max-width: none; }
+body[data-page="app"] .thread-inner { --rd-col: 760px; }
 
-  /* ⚠️ HUNG HEADINGS WITHOUT A GRID, and the reason matters. Placing the label
-     in a grid rail puts it on its own ROW — the paragraph that follows lands
-     underneath it, not beside it, which is the opposite of hanging. A zero-height
-     block stays in the flow (so it keeps its vertical position relative to the
-     text it introduces) while taking no vertical space, and the transform moves
-     it into the rail. The section's air comes from margin-top, which still
-     applies at height 0. */
-  body[data-page="app"] .reading-body .rd-h2 {
-    height: 0;
-    width: 176px;
-    margin: 40px 0 0;
-    transform: translateX(-216px);
-    text-align: right;
-    font-family: var(--font-sans);
-    font-size: 12px;
-    line-height: 1.35;
-    font-weight: 400;
-    letter-spacing: .1em;
-    color: var(--dim);
-    overflow: visible;
-  }
-  /* the first section label has no paragraph above it to be pushed off */
-  body[data-page="app"] .reading-body .rd-title + .rd-h2,
-  body[data-page="app"] .reading-body > .rd-h2:first-child { margin-top: 4px; }
+/* the shared box, one declaration for the block children of `.reading` */
+body[data-page="app"] .reading > :is(.reading-body, .rd-depth, .rd-actions) {
+  max-width: var(--rd-col);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ⚠️ …and a different one for the question, because it is a FLEX child of the
+   thread and auto side margins do not mean the same thing there. On a flex
+   item, auto cross-axis margins switch off `align-self: stretch` and size the
+   item to its content: measured, the line came out 359px wide and centred, so
+   it was the one part of the reading not sharing the left edge — while the
+   declaration in the file looked identical to the one that worked. Width plus
+   `align-self` is what centres a flex item at a fixed measure. */
+body[data-page="app"] .msg-user {
+  align-self: center;
+  width: 100%;
+  max-width: var(--rd-col);
 }
 
-/* ── the scale jump ─────────────────────────────────────────────────────
-   Display, lede, body. Three registers that cannot be mistaken for each other,
-   which is the thing the old 18/16.5/15 could not do. */
+/* ── the ladder ─────────────────────────────────────────────────────────
+   18 / 16.5 / 15, all of them sizes the system already declares. No new step
+   is introduced, which is also what keeps `tests/style-system.mjs` green — it
+   ratchets the number of distinct literal sizes, and a "nice" 22 or 24 here
+   would take it up by one for nothing. */
 body[data-page="app"] .reading-body .rd-title {
   font-family: var(--font-serif);
-  font-size: clamp(30px, 3.3vw, 46px);
-  line-height: 1.04;
-  font-weight: 600;
-  letter-spacing: -.02em;
-  margin: 0 0 24px;
-  max-width: 15ch;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin: 0 0 12px;
+  max-width: none;
   color: var(--ink);
 }
-/* the lede: the paragraph that opens the piece, and only that one */
-body[data-page="app"] .reading-body .rd-title + .rd-para {
-  font-size: 20px;
-  line-height: 1.62;
-  margin-bottom: 24px;
-  color: var(--ink);
-}
-/* ⚠️ 15 and 16.5, not 16. The ladder for reading sizes in this system is
-   15 / 16.5 / 18, and `tests/style-system.mjs` ratchets the number of distinct
-   literal sizes — a new 16px took it from 11 to 12 and turned the suite red,
-   which is the ratchet doing exactly its job. The hierarchy did not need a new
-   size anyway: display, 20 lede, 16.5 subhead, 15 body is four registers out
-   of sizes the system already owns. */
 body[data-page="app"] .reading-body .rd-para,
+body[data-page="app"] .reading-body p,
 body[data-page="app"] .reading-body .rd-list li {
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--ink);
 }
-body[data-page="app"] .reading-body .rd-h3 {
+body[data-page="app"] .reading-body .rd-para,
+body[data-page="app"] .reading-body p { margin: 0 0 12px; }
+body[data-page="app"] .reading-body .rd-list { margin: 0 0 12px; }
+
+/* the section heading sits directly above its paragraph and is told apart by
+   weight — it is not hung in a margin and it does not need a size of its own */
+body[data-page="app"] .reading-body .rd-h2 {
   font-family: var(--font-sans);
   font-size: 16.5px;
+  line-height: 1.35;
   font-weight: 700;
   letter-spacing: 0;
   margin: 24px 0 8px;
+  color: var(--ink);
+  height: auto;
+  width: auto;
+  transform: none;
+  text-align: left;
+}
+body[data-page="app"] .reading-body .rd-title + .rd-h2,
+body[data-page="app"] .reading-body > .rd-h2:first-child { margin-top: 0; }
+/* ⚠️ h3 is the same 15px as the body, so tracking has to carry the difference
+   that size is not carrying. Spinnaker is a single weight, so its bold is
+   synthesised — visible, but not enough on its own at the same size. */
+body[data-page="app"] .reading-body .rd-h3 {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin: 16px 0 4px;
   color: var(--ink);
 }
 /* the rule between movements: hairline, full column, no box */
 body[data-page="app"] .reading-body .rd-hr {
   border: 0;
-  border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
-  margin: 32px 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  margin: 24px 0;
 }
 
-/* ── the question is the masthead, not a bubble ─────────────────────────
+/* ── the question is a transcript line, not a bubble ────────────────────
    ⚠️ Aligned to (0,2,0) to beat index.html's `.msg-user` at (0,1,0), which
-   carries the fill, the radius and the shadow. */
+   carries the fill, the radius and the shadow.
+   ⭐ The label that names it is a KICKER above the line, not a floating word in
+   a 216px channel. Same information, no channel — and unlike the rail version
+   it exists at every width instead of only above 1180px. */
 body[data-page="app"] .msg-user {
-  align-self: stretch;
-  max-width: 52ch;
   background: none;
   box-shadow: none;
   border-radius: 0;
   padding: 0 0 8px;
-  margin: 0 0 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
   border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   font-family: var(--font-sans);
   font-size: 15px;
@@ -2114,93 +2056,42 @@ body[data-page="app"] .msg-user {
   letter-spacing: 0;
   color: var(--dim);
 }
-/* ⚠️ The question is a KICKER, not a second headline. At 22px serif it read as
-   a stray sentence floating above the piece and competed with the display line
-   underneath it — two headlines, neither winning. It is the reader's own words,
-   so it keeps its place at the top and its own rule; what it gives up is scale.
-   The label that names it hangs in the rail, which is what makes it read as
-   part of the masthead rather than as leftover chat. */
-@media (min-width: 1180px) {
-  body[data-page="app"] .msg-user { position: relative; }
-  body[data-page="app"] .msg-user::before {
-    content: "You asked";
-    position: absolute;
-    left: -216px;
-    top: 2px;
-    width: 176px;
-    text-align: right;
-    font-size: 12px;
-    line-height: 1.35;
-    letter-spacing: .1em;
-    color: var(--faint);
-  }
-}
-@media (min-width: 1180px) {
-  body[data-page="app"] .msg-user { margin-left: 216px; }
+body[data-page="app"] .msg-user::before {
+  content: "You asked";
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: .1em;
+  color: var(--faint);
 }
 
-/* ── everything below the prose joins the same column ───────────────────
-   ⚠️ The page had THREE left edges: the rail at 0, the prose at 216, and the
-   follow-up panel and actions back at 0 across the full width. Three edges on
-   one page is not an asymmetric composition, it is an unresolved one.
-
-   ⚠️ And the follow-up panel was the biggest plate left on the page — a filled,
-   bordered, rounded box sitting on the landscape, which is the thing this pass
-   was told to remove. It keeps its three-column grid; what it loses is the box.
-   A hairline does the work the border was doing, and the ground stays visible
-   through it. */
-/* ⚠️ The SAME BOX as the prose, not the same margin. .reading-body centres
-   itself with `margin: 16px auto`, so a plain margin-left on its siblings put
-   them 128px to its left and the page had two column edges again — which is
-   the fault this section was added to remove. Mirror the box: same max-width,
-   same auto centring, same rail padding. */
-@media (min-width: 1180px) {
-  body[data-page="app"] .reading:not(.casting-live) > :is(.rd-depth, .rd-actions) {
-    max-width: 792px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 216px;
-  }
-}
-body[data-page="app"] .reading:not(.casting-live) > .rd-depth {
+/* ── everything below the prose is in the same column ───────────────────
+   ⚠️ The follow-up panel was the biggest plate left on the page — a filled,
+   bordered, rounded box sitting on the landscape. It keeps its three-column
+   grid; what it loses is the box. A hairline does the work the border was
+   doing, and the ground stays visible through it. */
+body[data-page="app"] .reading > .rd-depth {
   background: none;
   border: 0;
   border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   border-radius: 0;
-  padding: 24px 0 0;
-  margin-top: 40px;
+  padding: 16px 0 0;
+  margin-top: 24px;
   box-shadow: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
-body[data-page="app"] .reading:not(.casting-live) > .rd-actions {
-  margin-top: 24px;
-  padding-top: 16px;
+body[data-page="app"] .reading > .rd-actions {
+  margin-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
 }
-
-/* ── the figure in the margin is a MARK, not a diagram ──────────────────
-   ⚠️ Brought back at 208px it carried every annotation it wears at full size —
-   trigram names, the six relatives, the elements, the self/response dots — and
-   at that scale they are not readable and not meant to be: they read as dirt on
-   a small picture. What belongs in a margin is the shape of the casting. The
-   lines stay; the labels go. */
-/* ⚠️ Hide the TEXT NODES, not a list of class names. The first attempt named
-   eight classes off the top of my head (.bw-af-rel, .bw-af-el, .bw-af-tri …)
-   and not one of them exists — the annotations are plain <text> inside the SVG
-   plus the coin strip and the status line. Every label survived, and the rule
-   looked correct in the file. Read the DOM; do not guess the selector. */
-@media (min-width: 1180px) {
-  /* ⚠️ Three wrong attempts at this, all of which looked right in the file:
-     ① eight invented class names, none of which exist;
-     ② `text`, which caught the SVG labels and left the HTML legend;
-     ③ `font-size: 0` on the figure, which does nothing at all here — those
-        nodes carry their OWN font-size, so there is no inheritance to zero.
-     The list below came from walking the rendered figure and printing every
-     node that owns a text child. It is the DOM's list, not mine. */
-  /* placement only — the label stripping is outside this query, see below */
-}
-
+/* ⚠️ The follow-up panel's own heading was 20px and the reading's title is now
+   18 — so the invitation to ask ANOTHER question was set larger than the answer
+   it sits under. Scale inversions like this are what a display line at 46px was
+   hiding; drop it onto the same ladder and the order is right again. */
+body[data-page="app"] .rd-depth h4 { font-size: 16.5px; }
 /* ── the selected reading is a LIGHTER card, not a darker one ────────────
    Owner, 2026-09-02: 「这种深色box不能要 换个浅点的颜色」.
    Measured, the selected history item was --paper-dim (#D4CEC3) — an OPAQUE
@@ -2273,6 +2164,24 @@ body[data-page="app"] .reading-body .xr-maybe:focus-visible b {
 body[data-page="app"] .reading-body .xr-maybe-chips {
   display: block;
 }
+/* ⚠️ KNOWN, MEASURED, AND NOT FIXABLE FROM HERE: a multi-word 象 mark cannot
+   break across lines. `.xr` is a <button>, and Blink blockifies buttons — a
+   `display: inline` on one COMPUTES BACK to `inline-block`. Verified through
+   CDP: the declaration matches, nothing overrides it, and getComputedStyle
+   still answers `inline-block`. So a five-word mark like "what you were taught
+   to do" is one atomic object; on a 326px column it is pushed onto a line of
+   its own and the line above ends early. Fixing it means changing the element
+   in `chat-app.js` from a <button> to a span with its own key handling, which
+   is a different change from this one. Written down rather than left as a rule
+   that does nothing — this file does not keep declarations that never paint. */
+
+/* ⚠️ The chip was `inline-flex` with a `gap`, and `display: block` took the gap
+   with it — the name and the hint fused into "Pressuremay still be a job".
+   The same failure as the two-per-line collision below and found the same way,
+   by looking at the rendered page rather than at the rule: when a box goes, so
+   does everything the box's layout mode was doing, and a word space is one of
+   those things. */
+body[data-page="app"] .reading-body .xr-maybe-sym { margin-right: 4px; }
 /* ⚠️ One per line. Without the chip they are still inline-flex, so two short
    ones share a line and butt straight into each other — measured, "…children,
    medicine" ran into "Wealth" with no separator at all. The box had been doing
@@ -2305,7 +2214,6 @@ body[data-page="app"] .rd-actions .rd-action:focus-visible {
 body[data-page="app"] .rd-actions .rd-action { padding: 0 24px 0 0; }
 body[data-page="app"] .rd-depth .rd-prompt:hover { background: none !important; }
 
-/* the figure's key box goes with its labels */
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig .bw-af-legend {
-  display: none !important;
-}
+/* ⚠️ The figure's key box is NOT stripped either. It went with the labels when
+   the board was a 208px mark; at full size the key is the thing that makes the
+   board readable, and hiding it was only ever a consequence of shrinking it. */
