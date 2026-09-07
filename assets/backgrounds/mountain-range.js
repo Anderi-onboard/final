@@ -4,8 +4,8 @@
 
   var scriptSrc = document.currentScript && document.currentScript.src;
   var paletteUrl = scriptSrc
-    ? new URL("../palettes/color-groups.json?v=20260901s", scriptSrc).href
-    : "./assets/palettes/color-groups.json?v=20260901s";
+    ? new URL("../palettes/color-groups.json?v=20260901t", scriptSrc).href
+    : "./assets/palettes/color-groups.json?v=20260901t";
   /* ⭐ 45s, up from 15. Owner asked for a longer turn, and it pays twice: the
      catalogue stops feeling like a slideshow, and the crossfade — which is the
      single most expensive moment on any route carrying this script — happens a

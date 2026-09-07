@@ -1039,7 +1039,50 @@ body[data-page="app"] .reading-body .rd-list li { font-size: 15px; }
    general.
    ⚠️ Only where there is a margin to put it in. Below 1180px it stays hidden,
    because there the objection the old rule raised would be true again. */
-body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none; }
+/* ⚠️⚠️ THE FIGURE SURVIVES THE CASTING AT EVERY WIDTH. It used to be hidden the
+   moment the animation settled — at every width — and the margin version added
+   in the redesign only brought it back above 1180px, so on a laptop at 1100 and
+   on every phone the one image that belongs to THIS casting still vanished the
+   instant it was made. Owner asked where it had gone, and the honest answer was
+   that below 1180 it was still gone.
+
+   Two placements, one rule: in the margin where there is a margin, and in the
+   flow where there is not. Small either way — the objection the original rule
+   raised was to "a large screenshot above a narrow answer column", and a 140px
+   figure under the masthead is neither large nor in the way. */
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig {
+  display: block;
+  width: 148px;
+  margin: 0 0 24px;
+  opacity: .8;
+}
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig .bw-af-fig {
+  max-width: 100%;
+}
+
+/* ⚠️⚠️ The stripping is NOT inside the desktop query, and it was. Every one of
+   these rules used to live in `@media (min-width: 1180px)` alongside the margin
+   placement, so the moment the figure was allowed to render below 1180 it came
+   back wearing the whole apparatus — coin strip, method line, status line, the
+   six relatives, the elements, the trigram names. Measured, the coin SVG was
+   still drawing at 66x29 inside a 148px figure. Placement is width-dependent;
+   what the figure IS is not. */
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig :is(
+  text, tspan, .bw-af-bar, .bw-coins, .bw-cast-method, .bw-cast-status, figcaption
+) { display: none !important; }
+/* ⭐ …except the hexagram's own name. Stripping every label turned the figure
+   into an anonymous stack of bars — it said "a casting happened" and not WHICH
+   one. The name is the single piece of text that identifies this board, and it
+   is the reason anyone looks at the figure at all. */
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig text.bw-af-name {
+  display: block !important;
+}
+/* the Self / Response key is bare <span>s with no class and no fixed depth, so
+   it is matched by element rather than by path — every span in this figure is a
+   label, and a fourth guess at its container is not worth making */
+body[data-page="app"] .reading:not(.casting-live) > .reading-fig span {
+  display: none !important;
+}
 @media (min-width: 1180px) {
   body[data-page="app"] .reading:not(.casting-live) { position: relative; }
   body[data-page="app"] .reading:not(.casting-live) > .reading-fig {
@@ -1049,7 +1092,7 @@ body[data-page="app"] .reading:not(.casting-live) > .reading-fig { display: none
     right: -36px;
     width: 208px;
     margin: 0;
-    opacity: .5;
+    opacity: .8;
     pointer-events: none;
   }
   body[data-page="app"] .reading:not(.casting-live) > .reading-fig .bw-af-fig {
@@ -2155,15 +2198,7 @@ body[data-page="app"] .reading:not(.casting-live) > .rd-actions {
         nodes carry their OWN font-size, so there is no inheritance to zero.
      The list below came from walking the rendered figure and printing every
      node that owns a text child. It is the DOM's list, not mine. */
-  body[data-page="app"] .reading:not(.casting-live) > .reading-fig :is(
-    text, tspan, .bw-af-bar, .bw-coins, .bw-cast-method, .bw-cast-status, figcaption
-  ) { display: none !important; }
-  /* the Self / Response key is bare <span>s with no class and no fixed depth,
-     so it is matched by element rather than by path — every span in this figure
-     is a label, and a fourth guess at its container is not worth making */
-  body[data-page="app"] .reading:not(.casting-live) > .reading-fig span {
-    display: none !important;
-  }
+  /* placement only — the label stripping is outside this query, see below */
 }
 
 /* ── the selected reading is a LIGHTER card, not a darker one ────────────
