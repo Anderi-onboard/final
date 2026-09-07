@@ -108,15 +108,18 @@ html[data-skin="paper"] body > :not(.mtn-bg):not(.lq-texture-stage):not(script):
   transform: scale(.985) !important;
 }
 
-/* App chrome and answer surfaces. The moving landscape remains behind the
-   glass rather than being baked into the controls. */
-body[data-page="app"] :is(.msg-user,.reading) {
-  border: 0 !important;
-  background-color: var(--lux-glass-quiet) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(112%);
-  backdrop-filter: blur(14px) saturate(112%);
-  box-shadow: inset 0 1px 0 color-mix(in srgb, white 28%, transparent) !important;
-}
+/* ⚠️ RETIRED 2026-09-02 — the answer surface is no longer a pane.
+   Owner: 「背景处先不加遮挡」. This rule put a glass fill, a 14px backdrop-filter
+   and an inset white highlight on .reading and .msg-user, so the reading sat on
+   a plate over the landscape; measured, `article.reading` was painting
+   rgba(255,255,255,.22) with a white inset shadow. It is also the expensive
+   kind of occlusion: a backdrop-filter over a range that moves has to re-blur
+   every frame, which this repo has already measured as the single largest cost
+   on this route.
+   The reading's look now lives in refinement.css under "THE READING,
+   REDESIGNED". Deleted rather than overridden — the standing protocol for these
+   two legacy sheets is that they only shrink. */
+body[data-page="app"] :is(.msg-user,.reading) { border: 0 !important; }
 body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)::before,
 body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)::after {
   border: 0 !important;
@@ -274,14 +277,9 @@ html[data-skin="paper"] body[data-page="app"] :is(.composer,.method-menu,.carry-
 /* Reading surfaces stay quieter than the controls and take no blur: long-form
    text over a refracted backdrop is harder to read, and the reading pane is
    the one place on the site where legibility outranks material. */
-html[data-skin="paper"] body[data-page="app"] :is(.msg-user,.reading) {
-  color: var(--soft-peach-ink) !important;
-  background-color: var(--ui-glass-soft) !important;
-}
-html[data-skin="paper"] body[data-page="app"] .msg-user {
-  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, transparent) !important;
-  color: #251A17 !important;
-}
+/* ⚠️ RETIRED 2026-09-02 with the rule above, and for the same reason. The
+   second of these was what kept the question in a terracotta pill — the loudest
+   object on the page, and it held the INPUT rather than the answer. */
 
 /* Pricing keeps the living landscape. Its plans are fixed peach glass, so
    the texture and line-art can be read through the material without tinting
