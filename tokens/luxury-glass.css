@@ -1,10 +1,10 @@
 /* BourneWise connected-coin texture + misted glass system. */
 
 html[data-skin="paper"] {
-  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260903a");
-  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260903a");
-  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260903a");
-  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260903a");
+  --lq-dense: url("../assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260908b");
+  --lq-outline: url("../assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260908b");
+  --lq-spaced: url("../assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260908b");
+  --lq-diagonal: url("../assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260908b");
   --lux-glass: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 54%, transparent);
   --lux-glass-quiet: color-mix(in srgb, var(--bw-palette-cloud, var(--paper)) 38%, transparent);
 }
@@ -108,15 +108,18 @@ html[data-skin="paper"] body > :not(.mtn-bg):not(.lq-texture-stage):not(script):
   transform: scale(.985) !important;
 }
 
-/* App chrome and answer surfaces. The moving landscape remains behind the
-   glass rather than being baked into the controls. */
-body[data-page="app"] :is(.msg-user,.reading) {
-  border: 0 !important;
-  background-color: var(--lux-glass-quiet) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(112%);
-  backdrop-filter: blur(14px) saturate(112%);
-  box-shadow: inset 0 1px 0 color-mix(in srgb, white 28%, transparent) !important;
-}
+/* ⚠️ RETIRED 2026-09-02 — the answer surface is no longer a pane.
+   Owner: 「背景处先不加遮挡」. This rule put a glass fill, a 14px backdrop-filter
+   and an inset white highlight on .reading and .msg-user, so the reading sat on
+   a plate over the landscape; measured, `article.reading` was painting
+   rgba(255,255,255,.22) with a white inset shadow. It is also the expensive
+   kind of occlusion: a backdrop-filter over a range that moves has to re-blur
+   every frame, which this repo has already measured as the single largest cost
+   on this route.
+   The reading's look now lives in refinement.css under "THE READING,
+   REDESIGNED". Deleted rather than overridden — the standing protocol for these
+   two legacy sheets is that they only shrink. */
+body[data-page="app"] :is(.msg-user,.reading) { border: 0 !important; }
 body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)::before,
 body[data-page="app"] :is(.composer,.reading,.msg-user,.method-menu,.carry-menu)::after {
   border: 0 !important;
@@ -232,8 +235,7 @@ html[data-skin="paper"] body {
 
 /* Stable glass carriers. The repeated texture remains visible underneath,
    but the carrier colour itself never changes with the environment. */
-html[data-skin="paper"] body :is(
-  .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,
+html[data-skin="paper"] body :is(.composer,.method-menu,.carry-menu,.coach,.coach-card,
   .pagehead,.top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,
   .estimator,.pack,.term,.billing-mail-note,.toast,.progress,.controls,
   .section .panel,.account-menu,.popover,.modal,.dialog,.sheet
@@ -250,17 +252,21 @@ html[data-skin="paper"] body :is(
   backdrop-filter: var(--ui-glass-filter);
   box-shadow: var(--ui-glass-edge), var(--ui-shadow) !important;
 }
-html[data-skin="paper"] body :is(.sidebar,.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheet) {
-  background-color: var(--soft-peach-glass-strong) !important;
+html[data-skin="paper"] body :is(.sidebar,.pa.pagehead,.top,.card,.section .panel,.modal,.dialog,.sheetound-color: var(--soft-peach-glass-strong) !important;
 }
 
 /* App: retain the established sidebar/composer layout, freeze only its UI
    material. Reading content remains quieter than the controls. */
-html[data-skin="paper"] body[data-page="app"] .sidebar {
-  background-color: var(--ui-glass-strong) !important;
-  -webkit-backdrop-filter: var(--ui-glass-filter-strong);
-  backdrop-filter: var(--ui-glass-filter-strong);
-}
+/* ⚠️⚠️ RETIRED 2026-09-02. This rule was silently beating refinement.css, and
+   the comment there had already spotted the danger and drawn the wrong
+   conclusion: it says "luxury-glass.css sets this property from a later sheet
+   at equal specificity" and answers with !important — but BOTH were !important
+   and both were (0,3,1), so between two equal-weight !important declarations
+   the LATER SHEET wins, and this one is later. The documented .72 sidebar had
+   therefore never rendered; measured, the panel was still .42, which is the
+   value refinement's own note says is too low for its labels once the blur came
+   off. The backdrop-filter here was dead too, removed with the blur.
+   Deleted rather than out-weighed: these two legacy sheets only shrink. */
 /* The composer and the menus that spawn from it are the most-looked-at glass
    on the site, so they carry the heavier blur and sit a step more opaque than
    the panels behind them. */
@@ -274,14 +280,9 @@ html[data-skin="paper"] body[data-page="app"] :is(.composer,.method-menu,.carry-
 /* Reading surfaces stay quieter than the controls and take no blur: long-form
    text over a refracted backdrop is harder to read, and the reading pane is
    the one place on the site where legibility outranks material. */
-html[data-skin="paper"] body[data-page="app"] :is(.msg-user,.reading) {
-  color: var(--soft-peach-ink) !important;
-  background-color: var(--ui-glass-soft) !important;
-}
-html[data-skin="paper"] body[data-page="app"] .msg-user {
-  background-color: color-mix(in srgb, var(--soft-peach-accent) 82%, transparent) !important;
-  color: #251A17 !important;
-}
+/* ⚠️ RETIRED 2026-09-02 with the rule above, and for the same reason. The
+   second of these was what kept the question in a terracotta pill — the loudest
+   object on the page, and it held the INPUT rather than the answer. */
 
 /* Pricing keeps the living landscape. Its plans are fixed peach glass, so
    the texture and line-art can be read through the material without tinting
@@ -369,12 +370,11 @@ html[data-skin="paper"] body[data-page="settings"] > .toast {
 
 @media (prefers-reduced-transparency: reduce) {
   html[data-skin="paper"] body :is(
-    .sidebar,.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
+    .sidebar,.compos.composer,.method-menu,.carry-menu,.coach,.coach-card,.pagehead,
     .top,.card,.ledgerstrip,.billing-toggle,.plan,.rate-card,.estimator,.pack,
     .term,.billing-mail-note,.toast,.progress,.controls,.section .panel,
     .account-menu,.popover,.modal,.dialog,.sheet
-  ) {
-    background-color: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
+  lor: color-mix(in srgb, var(--soft-peach) 94%, transparent) !important;
   }
 }
 

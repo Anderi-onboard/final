@@ -10,14 +10,14 @@
      first paint already wears them — no fallback flash, no swap -->
 <link rel="preload" href="./assets/fonts/BioRhyme.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Spinnaker-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./tokens/fonts.css?v=20260908a">
-<link rel="stylesheet" href="./tokens/colors.css?v=20260908a">
-<link rel="stylesheet" href="./tokens/typography.css?v=20260908a">
-<link rel="stylesheet" href="./tokens/spacing.css?v=20260908a">
-<link rel="stylesheet" href="./tokens/paper.css?v=20260908a">
-<link rel="stylesheet" href="./tokens/motion.css?v=20260908a">
-<link rel="stylesheet" href="./tokens/refinement.css?v=20260908a">
-<script src="./ds-base.js?v=20260908a"></script>
+<link rel="stylesheet" href="./tokens/fonts.css?v=20260908b">
+<link rel="stylesheet" href="./tokens/colors.css?v=20260908b">
+<link rel="stylesheet" href="./tokens/typography.css?v=20260908b">
+<link rel="stylesheet" href="./tokens/spacing.css?v=20260908b">
+<link rel="stylesheet" href="./tokens/paper.css?v=20260908b">
+<link rel="stylesheet" href="./tokens/motion.css?v=20260908b">
+<link rel="stylesheet" href="./tokens/refinement.css?v=20260908b">
+<script src="./ds-base.js?v=20260908b"></script>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   em,i{font-style:normal}
@@ -308,7 +308,13 @@
   /* the caution under a finished reading: set apart from the prose so it reads as a notice, not as a softening of the verdict */
   .rd-footnote{margin:32px 0 0;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--ink) 11%,transparent);font-family:var(--sans);font-size:13px;line-height:1.62;letter-spacing:0;color:var(--dim);text-wrap:pretty}
   .rd-footnote[lang="zh"]{line-height:1.75}
-  .reading-body .gild{font-style:normal;color:var(--terracotta);border-bottom:var(--ui-hairline) solid var(--terracotta)}
+  /* ⚠️ No underline here, and none is declared any more. The typography
+     contract in refinement.css says this site never uses italics or underlines
+     for emphasis and zeroes this border with !important, so the rule that used
+     to sit here declared a line that has never been painted — a file saying the
+     opposite of the page. |gild| is carried by colour alone, which is what the
+     contract wants and what actually renders. */
+  .reading-body .gild{font-style:normal;color:var(--terracotta)}
   .reading-body .gild.alt{color:var(--pine);border-bottom-color:var(--pine)}
   /* word stream — five reveal styles rotate word-by-word, slowly taking turns.
      will-change is applied by chat-app.js as a ROLLING WINDOW (next ~8 words only,
@@ -871,7 +877,7 @@
   }
   @keyframes coachFade{from{opacity:0}to{opacity:1}}
 </style>
-<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260908a">
+<link rel="stylesheet" href="./tokens/luxury-glass.css?v=20260908b">
 </head>
 <body class="is-empty" data-page="app">
 
@@ -1015,21 +1021,21 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="./assets/backgrounds/mountain-range.js?v=20260908a"></script>
+<script src="./assets/backgrounds/mountain-range.js?v=20260908b"></script>
 <!-- liuyao-chart.js is not loaded here on purpose. It publishes
      window.BWLiuYaoChart and injects a stylesheet at load, and nothing in the
      site calls it — 20KB and a <head> mutation on every visit for an API with
      no consumer. The file is kept; re-add the tag when something uses it. -->
-<script src="./liuyao-engine.js?v=20260908a"></script>
+<script src="./liuyao-engine.js?v=20260908b"></script>
 <!-- 断卦裁决梯。必须在 liuyao-ai.js 之前:distill() 调用时读 window.BWVerdict,
      没有它就把 verdict 字段发成 null —— 那是可见的缺席,不是一个假结论,但
      盘上就少了《增删卜易》那五步的判定。 -->
-<script src="./liuyao-verdict.js?v=20260908a"></script>
+<script src="./liuyao-verdict.js?v=20260908b"></script>
 <!-- 盘上一切可测的关系(爻爻生克、合冲刑害、日月岁时、世应、局、相生链)。
      和裁决梯同一条理由,必须在 liuyao-ai.js 之前:distill() 读 window.BWRelations,
      读不到就整段静默消失 —— 而消失的那一段正是模型自己推会推错的那些。 -->
-<script src="./liuyao-relations.js?v=20260908a"></script>
-<script src="./liuyao-ai.js?v=20260908a"></script>
+<script src="./liuyao-relations.js?v=20260908b"></script>
+<script src="./liuyao-ai.js?v=20260908b"></script>
 <script>
 /* casting-figure.js is 85KB of casting animation, and the empty state — the
    page every visitor lands on — never casts. Take it off the critical path.
@@ -1042,7 +1048,7 @@ window.BWCasting = (function () {
   function load() {
     return pending || (pending = new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = "./casting-figure.js?v=20260908a";
+      s.src = "./casting-figure.js?v=20260908b";
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     }));
@@ -1055,10 +1061,10 @@ window.BWCasting = (function () {
   return { load: load };
 })();
 </script>
-<script src="./copy.js?v=20260908a"></script>
-<script src="./prompt-checks.js?v=20260908a"></script>
-<script src="./prompt-router.js?v=20260908a"></script>
-<script src="./account.js?v=20260908a"></script>
+<script src="./copy.js?v=20260908b"></script>
+<script src="./prompt-checks.js?v=20260908b"></script>
+<script src="./prompt-router.js?v=20260908b"></script>
+<script src="./account.js?v=20260908b"></script>
 <script>
 /* chat-app compares this against version.json to detect a stale tab. It used to
    be a second hand-maintained build literal, and it drifted: it sat two releases
@@ -1070,7 +1076,7 @@ window.BWCasting = (function () {
    for a tag that is only being described. */
 window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").split("?v=")[1]||"";
 </script>
-<script src="./chat-app.js?v=20260908a"></script>
+<script src="./chat-app.js?v=20260908b"></script>
 <script>
 (function(){
   var el=document.getElementById('greetLine');
@@ -1196,6 +1202,6 @@ window.BW_BUILD=((document.querySelector('script[src*="?v="]')||{}).src||"").spl
   }
 })();
 </script>
-<script src="./assets/weave.js?v=20260908a" defer></script>
+<script src="./assets/weave.js?v=20260908b" defer></script>
 </body>
 </html>
