@@ -41,8 +41,15 @@ const V = sandbox.BWVerdict;
 assert.equal(typeof V?.judge, 'function', 'BWVerdict.judge is gone — the ladder is not being executed at all');
 
 const EXAM = '我明天考科目一能过吗';
+/* ⚠️ monthBranch 必须和 dayGanzhi 一样钉住。
+   第一版只钉了日辰,月建放着跟真实日期走 —— 这副盘 8 月写的时候在申月,
+   官鬼寅木申月冲、是月破,「临日建者不破」那条断言成立;跨进酉月之后
+   寅不再被冲,断言落空,而**代码一个字没改**。
+   一个跟着日历变绿变红的检查,测的是今天几号,不是代码。
+   8 = 申,和当时写这副盘时的月建一致。 */
+const FIXED_MONTH = 8;   // 申月
 function judge(lines, changeIdx, dayGanzhi, question = EXAM) {
-  const board = sandbox.BWLiuYao.computeBoard({ lines, changeIdx, dayGanzhi });
+  const board = sandbox.BWLiuYao.computeBoard({ lines, changeIdx, dayGanzhi, monthBranch: FIXED_MONTH });
   const subject = AI.subjectKey(question);
   const roles = AI.deriveRoles(board, subject.key);
   return { board, verdict: V.judge(board, roles, subject) };

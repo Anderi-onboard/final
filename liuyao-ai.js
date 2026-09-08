@@ -183,6 +183,60 @@
   /* 收的是整个 subject,不是 secondKey。裁决梯要的是 subject 本身,而只传
      一个 key 进来、再在函数里引用一个不存在的 `subject`,会被下面的 try/catch
      吞成一条静默的 error 字段 —— 静默降级正是这一轮一直在拆的那个形状。 */
+  /* 神煞的汉字名。引擎按英文 key 算,解读用汉字读 —— 这张表只做这一件事。 */
+  var SHENSHA_CN = {
+    postHorse:"驿马", peachBlossom:"桃花", lu:"禄", noble:"贵人",
+    yangRen:"羊刃", generalStar:"将星", canopy:"华盖", robbery:"劫煞",
+    ghost:"亡神", disaster:"灾煞", heavenDoctor:"天医", monthVirtue:"月德"
+  };
+
+  /* ── 关系:盘上算得出的每一条,序列化成行 ────────────────────────────
+     `liuyao-relations.js` 把爻爻生克、爻爻合冲刑害、日月岁时对爻、世应、
+     三合三会、局对爻、相生链全算出来了,而在此之前一条都没进过发给模型的包。
+
+     那副考研的盘上「巳申既合又刑」「世爻被官鬼害」「世应相刑」—— 三条都
+     算得出,三条都没发。模型看不见的关系,它只能自己推,而自己推就是那副
+     断错的盘的死法。
+
+     ⚠️ 只报事实,不报吉凶。「第5爻合第1爻」是事实,「所以名额被绊住」是断法。
+     ⚠️ 静爻不作用于动爻(增删卜易 §4)只**标注**不筛掉 —— 认不认归下游。 */
+  function relationLines(board){
+    var R = (typeof window!=="undefined" && window.BWRelations) || null;
+    if (!R) return null;
+    var r;
+    try { r = R.compute(board); } catch(e){ return { error:"关系模块未能运行:"+(e&&e.message) }; }
+    var out = {};
+    out["爻→爻 生克"] = r.pairs.map(function(p){
+      return p.from+" "+p.kinds.join("/")+" "+p.to + (p.acts?"":" (静爻,不作用)");
+    });
+    out["爻—爻 合冲刑害"] = r.mutual.map(function(m){
+      return m.a+" "+m.kinds.join("/")+" "+m.b + (m.acts?(" (第"+m.mover+"爻在动)"):" (两头皆静)");
+    });
+    out["日月岁时对爻"] = r.clock.map(function(c){
+      return c.line+": "+c.rels.map(function(x){ return x.with+x.kind; }).join(" ");
+    });
+    out["世应"] = r.worldResp.world+"世 "+r.worldResp.resp+"应 — "+(r.worldResp.rels.join("·")||"无直接关系");
+    out["局"] = [].concat(
+      r.sanhe.map(function(s){
+        return "三合"+s.type+" "+(s.element&&s.element.cn||"")+"局 爻["+s.lines+"]"
+          + (s.missing?(" 缺"+s.missing.cn):"")
+          + ((s.对爻||[]).length ? ("  局→"+s.对爻.map(function(x){return x.line+x.kind+(x.世爻?"(世)":"");}).join(" ")) : "");
+      }),
+      r.sanhui.map(function(s){
+        return "三会"+s.type+" "+s.element+"局 爻["+s.lines+"]"
+          + (s.missing?(" 缺"+s.missing.join("")):"")
+          + ((s.对爻||[]).length ? ("  局→"+s.对爻.map(function(x){return x.line+x.kind+(x.世爻?"(世)":"");}).join(" ")) : "");
+      }));
+    out["相生链"] = r.chains.map(function(c){ return c.desc; });
+    out["卦级"] = Object.keys(r.shape).filter(function(k){
+      return r.shape[k]!==null && r.shape[k]!==false;
+    }).map(function(k){ return k+"="+r.shape[k]; }).join(" ");
+    out["用神多现"] = Object.keys(r.multi).map(function(k){ return k+"["+r.multi[k]+"]"; }).join(" ") || "—";
+    // 空的类别整个删掉 —— 一行 "[]" 只是噪音
+    for (var k in out) if (out.hasOwnProperty(k) && (!out[k] || !out[k].length)) delete out[k];
+    return out;
+  }
+
   function distill(board, roles, subject){
     var secondKey = subject && subject.second;
     var perLine = (roles && roles.perLine) || {};
@@ -293,7 +347,18 @@
            failed reading wrote 酉冲寅; 酉 clashes 卯. Ship the glyph and there
            is no trip to make. */
         najia: l.stem.cn+l.branch.cn+" ("+l.element.en+" "+l.branch.animal+")",
-        spirit: l.spirit.en,
+        /* 六神带上汉字。理由和 najia、六亲那两处一样:白虎、螣蛇、勾陈在中文
+           解读里就是这三个字,发英文名等于让模型再翻一趟,而每一趟翻译都是
+           一次可能落错的地方。这一处之前只发 "White Tiger"。 */
+        spirit: l.spirit.cn+" ("+l.spirit.en+")",
+        /* ── 神煞:引擎每盘都在算,一条都没发过 ─────────────────────────
+           `l.shensha` 早就挂在每一爻上,distill() 从来没读它。这一段是
+           「验现事」唯一的原料 —— 驿马要动、桃花有人、华盖独、天医病,
+           全是当事人一看就知道对不对的东西,而模型一条都看不到。
+           发汉字,理由同 spirit。 */
+        shensha: (l.shensha && l.shensha.length)
+          ? l.shensha.map(function(s){ return (SHENSHA_CN[s.key]||s.label)+" ("+s.label+")"; }).join(" ")
+          : "—",
         strength: l.wangShuai.en,
         role: r.roleEn,
         flags: flags.join(" ") || "—"
@@ -466,9 +531,36 @@
       verdict: (function(){
         var V = (typeof window!=="undefined" && window.BWVerdict) || null;
         if (!V) return null;          // 没加载就没有,不静默降级成一个假结论
-        try { return V.judge(board, roles, subject || null); }
+        var v;
+        try { v = V.judge(board, roles, subject || null); }
         catch(e){ return { error: "裁决梯未能运行:" + (e && e.message) }; }
+        /* ── states 减肥 ──────────────────────────────────────────────────
+           梯子的 states 每爻 25 个字段,里面 element/branch 是**数字编码**
+           (element:4 是水,branch:11 是亥),而同一副盘在下面 lines 里已经
+           写成了「第2爻 父母亥水」。同一个事实两种编码,谁也不知道哪份算数
+           —— 补集律的毛病。实测这一块占整包 30%(858 tok)。
+           这里只删掉与 lines 重复的那几格,判定用的布尔一个不动。 */
+        if (v && v.states) {
+          var DROP = { element:1, branch:1, rank:1, idx:1 };
+          v = Object.assign({}, v, { states: v.states.map(function(s){
+            var t = {};
+            for (var k in s) {
+              if (!s.hasOwnProperty(k) || DROP[k]) continue;
+              // transform 里同样有 element/branch 的数字编码,同样和 lines 重复
+              if (k === "transform" && s[k]) {
+                var tt = {};
+                for (var k2 in s[k]) if (s[k].hasOwnProperty(k2) && !DROP[k2]) tt[k2] = s[k][k2];
+                t[k] = tt;
+              } else t[k] = s[k];
+            }
+            return t;
+          })});
+        }
+        return v;
       })(),
+      /* 关系放在 verdict 之后、lines 之前:梯子说的是「判到哪一步」,关系说的
+         是「盘上还有什么」,而 lines 是每一爻自己的样子。三块各答一个问题。 */
+      relations: relationLines(board),
       lines: L
     };
   }
