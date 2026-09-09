@@ -50,7 +50,13 @@ assert.equal(roles.yongHidden, null, 'fixture invariant: the 用神 is on the bo
 
 const text = AI.buildMessages(board, roles, '我这个项目以后的发展，能做大吗？', 'wealth', undefined, 'zh')
   .messages[0].content;
-const distilled = JSON.parse(text.slice(text.indexOf('{"date"'), text.indexOf('\n\nTIMING')));
+/* Delimiter-bounded, not shape-bounded. This used to slice from `{"date"`,
+   which assumed the payload was minified — so laying the six lines out one row
+   each (so they can be counted) broke a test that was not about layout. Cut
+   between the two labels the payload actually guarantees. */
+const HEAD = 'BOARD (authoritative facts):\n';
+const boardText = text.slice(text.indexOf(HEAD) + HEAD.length, text.indexOf('\n\nTIMING'));
+const distilled = JSON.parse(boardText);
 
 // ── 1. the transform is last, and its void state is not left to inference ──
 const moving = distilled.lines.filter((l) => /MOVING/.test(l.flags));

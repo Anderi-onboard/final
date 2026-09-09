@@ -40,6 +40,69 @@
     decision:  "self",     travel:"self",  general:"self", outlook:"self"
   };
 
+  /* ═══════════ 1b. subjectKey — 问题 → 用神 (deterministic) ═══════════
+
+     WHY THIS EXISTS. CATEGORY_YONGSHEN is a lookup keyed by a category string,
+     and chat-app.js passed the literal "general" for every reading — so
+     CATEGORY_YONGSHEN["general"] = "self" resolved, every time, to 世爻. Every
+     reading this product has produced read the World line as its 用神, whatever
+     was asked, and 原神/忌神/仇神 were derived from that anchor. The reading is
+     then told 「用神 = 世爻」 as an authoritative fact and does what it is told.
+     Measured on a live reading 2026-08-27: 「我明天考科目一能过吗」 came out
+     anchored on 世, never named a 用神, and read 父母 — the exam's own line —
+     as background. It said 「能过」. The asker did not pass.
+
+     Twenty-five of CATEGORY_YONGSHEN's twenty-eight keys were unreachable,
+     including exam:"parent", which is the correct answer for that question.
+
+     WHAT THIS IS. 增删卜易's own 用神 table, executable: the subject of the
+     question picks the line, not the route. Routes choose which prose loads;
+     they are a different taxonomy and a coarser one (nine entries against the
+     book's dozens), and using one for the other is what produced the silent
+     fallback.
+
+     Some 事类 take TWO 用神 and fail if either is weak — 考试 is the one that
+     bit us: 官鬼 is the placement, 父母 is the paper, and 子孙 is 剥官之神. The
+     role network is derived from `key`; `second` and `note` ride along so the
+     reading sees the other half.
+
+     The fallback is still 世爻 — that is correct for 自占 — but it is now
+     REPORTED (`matched:false`) instead of silent. A default that cannot be
+     told apart from a decision is how this went unnoticed for the life of the
+     product. */
+  var SUBJECT_RULES = [
+    { key:"parent",  second:"officer", why:"考试:官鬼为名次录取,父母为成绩卷子;子孙为剥官之神",
+      re:/考试|考试|应试|科目[一二三四]|科一|科二|科三|科四|笔试|面试|复试|初试|统考|高考|中考|考研|考公|考编|考证|驾照|科举|功名|录取|上岸|过不过|能不能过|exam|test|admission|entrance/i },
+    { key:"officer", second:null, why:"功名工作升迁:官鬼为职位、上头、竞争的那一头",
+      re:/工作|求职|职位|升迁|升职|offer|跳槽|辞职|离职|裸辞|调岗|官司|诉讼|打官司|案子|仕途|career|promotion|lawsuit|resign|job/i },
+    { key:"wealth",  second:null, why:"求财生意:妻财为财本",
+      re:/求财|赚钱|挣钱|生意|买卖|投资|股票|收入|工资|财运|开店|囤货|放债|借钱|business|money|invest|profit/i },
+    { key:"officer", second:null, why:"疾病:官鬼为忧神,子孙为解忧之神(近病久病断法相反)",
+      re:/病|生病|疾病|得了|治疗|手术|住院|大夫|医生|吃药|illness|sick|disease|surgery/i },
+    { key:"wealth",  second:null, why:"男占婚恋:妻财为对方",
+      re:/我女朋友|我老婆|我妻子|追女|娶|女方/i },
+    { key:"officer", second:null, why:"女占婚恋:官鬼为对方",
+      re:/我男朋友|我老公|我丈夫|嫁|男方|他会不会|他是不是/i },
+    { key:"output",  second:null, why:"子女、宠物、解厄:子孙",
+      re:/孩子|小孩|儿子|女儿|怀孕|怀上|备孕|生育|胎|宠物|猫|狗|children|pregnan|baby/i },
+    { key:"parent",  second:null, why:"房屋车船文书合同长辈:父母",
+      re:/房|买房|租房|房产|搬家|买车|合同|签约|文书|证书|执照|学业|上学|留学|父母|长辈|house|contract|document|lease/i },
+    { key:"peer",    second:null, why:"同行、合伙、竞争、分我之利者:兄弟",
+      re:/合伙|合作|同事|同行|竞争|对手|分成|拆伙|partner|competitor/i }
+  ];
+
+  /* Returns { key, second, why, matched }. `matched:false` means nothing in the
+     wording named a subject, so 世爻 stands in — a real answer for 自占, and a
+     flag everywhere else. */
+  function subjectKey(question){
+    var q = String(question || "");
+    for (var i=0;i<SUBJECT_RULES.length;i++){
+      var r = SUBJECT_RULES[i];
+      if (r.re.test(q)) return { key:r.key, second:r.second, why:r.why, matched:true };
+    }
+    return { key:"self", second:null, why:"问题没有点出别的主体,按自占取世爻", matched:false };
+  }
+
   /* ═══════════ 2. deriveRoles — 原神/忌神/仇神 by fixed rule ═══════════ */
   // generating order Wood0 Fire1 Earth2 Metal3 Water4
   function elementOfRelative(selfEl, key){
@@ -117,8 +180,168 @@
 
   /* ═══════════ 3. AI prompt assembly ═══════════
      compact, de-noised board the model actually needs to read. */
-  function distill(board, roles){
+  /* 收的是整个 subject,不是 secondKey。裁决梯要的是 subject 本身,而只传
+     一个 key 进来、再在函数里引用一个不存在的 `subject`,会被下面的 try/catch
+     吞成一条静默的 error 字段 —— 静默降级正是这一轮一直在拆的那个形状。 */
+  /* 神煞的汉字名。引擎按英文 key 算,解读用汉字读 —— 这张表只做这一件事。 */
+  var SHENSHA_CN = {
+    postHorse:"驿马", peachBlossom:"桃花", lu:"禄", noble:"贵人",
+    yangRen:"羊刃", generalStar:"将星", canopy:"华盖", robbery:"劫煞",
+    ghost:"亡神", disaster:"灾煞", heavenDoctor:"天医", monthVirtue:"月德"
+  };
+
+  /* ── 关系:按到用神的距离排,一行一条,带箭头 ──────────────────────
+     `liuyao-relations.js` 把爻爻生克、爻爻合冲刑害、日月岁时对爻、世应、
+     三合三会、局对爻、相生链全算出来了,而在此之前一条都没进过发给模型的包。
+
+     那副考研的盘上「巳申既合又刑」「世爻被官鬼害」「世应相刑」—— 三条都
+     算得出,三条都没发。模型看不见的关系,它只能自己推,而自己推就是那副
+     断错的盘的死法。
+
+     ⭐⭐ 改法的依据不是手感,是三篇量过的东西:
+
+     ① 之前是七个按「关系类型」分的数组,13 条爻爻生克平铺在一起,**其中 9 条
+        自己标着「静爻,不作用」** —— 我们把明确不成立的关系,标好了标签送进去。
+        GSM-IC(Shi et al., ICML 2023, arXiv 2302.00093)量的正是这个构造:
+        在模型**本来做得对**的题上掺入无关信息,准确率大幅下降。不该自己造它。
+     ② GSM-DC(Yang et al., EMNLP 2025, arXiv 2505.18761):干扰同时伤**推理
+        路径的选择**和算术准确度 —— 不是算错,是走错路。
+     ③ Lost in the Middle(Liu et al., TACL 2024, arXiv 2307.03172):中段最
+        容易被漏掉。所以承重的放开头,可丢的压到末尾。
+
+     顺序因此是**到用神的距离**:用神自己 → 作用于用神的 → 用神作用出去的 →
+     穿过用神的相生链 → 其余成立的 → 不作用的(压成一行,放最后)。
+
+     ⚠️ 不作用的**不删,只压**。静爻不生克动爻是《增删卜易》§4 说的,不是我们
+        判的;而暗动已经在 `acts` 里算过,所以剩下的确实是惰的。删掉就不可复查,
+        压成一行既不占版面也没丢东西。
+     ⚠️ 只报事实,不报吉凶。「第5爻合第1爻」是事实,「所以名额被绊住」是断法。 */
+  function relationLines(board, roles, subject){
+    var R = (typeof window!=="undefined" && window.BWRelations) || null;
+    if (!R) return null;
+    var r;
+    try { r = R.compute(board); } catch(e){ return { error:"关系模块未能运行:"+(e&&e.message) }; }
+
+    /* 用神爻号(1-based)。第二用神一并算进来 —— 考试这类取两个,只按第一个
+       排序会把「官鬼受克」排到末尾,而它恰好是这类事体的否决条。 */
+    var yong = ((roles && roles.yongLines) || []).map(function(i){ return i+1; });
+    if (subject && subject.second && board.ben && board.ben.palace) {
+      var sEl = (subject.second === "self")
+        ? board.lines[board.ben.worldLi].element.gi
+        : elementOfRelative(board.ben.palace.element.gi, subject.second);
+      board.lines.forEach(function(l){
+        if (l.element.gi === sEl && yong.indexOf(l.idx+1) < 0) yong.push(l.idx+1);
+      });
+    }
+    var isYong = function(n){ return yong.indexOf(n) >= 0; };
+    var desc = {};
+    r.pairs.forEach(function(p){ desc[p.from] = p.fromDesc; desc[p.to] = p.toDesc; });
+    var nameOf = function(n){
+      return "第"+n+"爻 "+(desc[n] || "") + (isYong(n) ? "〔用神〕" : "");
+    };
+
+    var out = {};
+    out["用神"] = yong.length
+      ? yong.map(function(n){ return nameOf(n); }).join(" · ")
+      : "未定";
+
+    /* 作用于用神的 —— 一行一条,箭头指向用神。只收成立的。 */
+    /* ⚠️ 两头都是用神的那一条要单独一块,而且排最前。
+       第一版按「谁是用神」二选一分流,于是 `isYong(from) && isYong(to)` 落进了
+       「其余」—— 实测那副盘上被扔下去的正是「官鬼戌 生 父母申」,也就是速断胜局
+       第 3 条「官生父、父生世」。取两个用神的事体里,**用神之间那一笔是最承重的**,
+       因为它就是这类事体成不成的机制本身。 */
+    var between = [], inbound = [], outbound = [], rest = [], inert = [];
+    r.pairs.forEach(function(p){
+      var row = nameOf(p.from) + " ─" + p.kinds.join("/") + "→ " + nameOf(p.to);
+      if (!p.acts) { inert.push(p.from+" "+p.kinds.join("/")+" "+p.to); return; }
+      if (isYong(p.from) && isYong(p.to)) between.push(row);
+      else if (isYong(p.to)) inbound.push(row);
+      else if (isYong(p.from)) outbound.push(row);
+      else rest.push(row);
+    });
+    /* 时钟对用神单独提出来:月建日辰是《增删卜易》四处生克源头的头两处,
+       混在六爻一张表里读,和它在方法里的分量对不上。 */
+    r.clock.forEach(function(c){
+      var row = nameOf(c.line) + " ← " + c.rels.map(function(x){ return x.with+x.kind; }).join(" · ");
+      (isYong(c.line) ? inbound : rest).push(row);
+    });
+    r.mutual.forEach(function(m){
+      var row = nameOf(m.a) + " ─" + m.kinds.join("/") + "─ " + nameOf(m.b);
+      if (!m.acts) { inert.push(m.a+" "+m.kinds.join("/")+" "+m.b); return; }
+      if (isYong(m.a) && isYong(m.b)) between.push(row);
+      else (isYong(m.a) || isYong(m.b) ? inbound : rest).push(row);
+    });
+
+    if (between.length)  out["用神之间"] = between;
+    if (inbound.length)  out["→ 用神(作用于它的)"] = inbound;
+    if (outbound.length) out["用神 →(它作用出去的)"] = outbound;
+
+    /* 相生链:穿过用神的排在前面,那是「接续相生」这条胜局判据要的东西。 */
+    var thru = [], other = [];
+    r.chains.forEach(function(c){
+      var hit = c.path.some(function(n){ return isYong(n); });
+      (hit ? thru : other).push(c.desc);
+    });
+    if (thru.length)  out["主链(穿过用神)"] = thru;
+    if (other.length) out["其余相生链"] = other;
+
+    if (rest.length) out["其余成立的关系"] = rest;
+    /* 压成一行,放最后 —— 不删是为了可复查,不摊开是因为它们不参与判断。 */
+    if (inert.length) out["不作用(静爻对静爻,《增删卜易》§4)"] =
+      inert.length + " 条:" + inert.join(" | ");
+
+    out["世应"] = r.worldResp.world+"世 "+r.worldResp.resp+"应 — "+(r.worldResp.rels.join("·")||"无直接关系");
+    out["局"] = [].concat(
+      r.sanhe.map(function(s){
+        return "三合"+s.type+" "+(s.element&&s.element.cn||"")+"局 爻["+s.lines+"]"
+          + (s.missing?(" 缺"+s.missing.cn):"")
+          + ((s.对爻||[]).length ? ("  局→"+s.对爻.map(function(x){return x.line+x.kind+(x.世爻?"(世)":"");}).join(" ")) : "");
+      }),
+      r.sanhui.map(function(s){
+        return "三会"+s.type+" "+s.element+"局 爻["+s.lines+"]"
+          + (s.missing?(" 缺"+s.missing.join("")):"")
+          + ((s.对爻||[]).length ? ("  局→"+s.对爻.map(function(x){return x.line+x.kind+(x.世爻?"(世)":"");}).join(" ")) : "");
+      }));
+    out["卦级"] = Object.keys(r.shape).filter(function(k){
+      return r.shape[k]!==null && r.shape[k]!==false;
+    }).map(function(k){ return k+"="+r.shape[k]; }).join(" ");
+    out["用神多现"] = Object.keys(r.multi).map(function(k){ return k+"["+r.multi[k]+"]"; }).join(" ") || "—";
+    // 空的类别整个删掉 —— 一行 "[]" 只是噪音
+    for (var k in out) if (out.hasOwnProperty(k) && (!out[k] || !out[k].length)) delete out[k];
+    return out;
+  }
+
+  function distill(board, roles, subject){
+    var secondKey = subject && subject.second;
     var perLine = (roles && roles.perLine) || {};
+    /* ── THE SECOND 用神 HAS TO BE MARKED IN THE DATA, NOT ONLY ANNOUNCED ──
+       Some 事类 take two. 增删卜易 on 功名: 官鬼 is the placement, 父母 is the
+       paper, and either one failing fails the matter. buildMessages says so in
+       the header — 「BOTH are 用神 here」 — and then deriveRoles, which knows
+       exactly one anchor, labelled the second one from the first one's lattice.
+
+       Measured on 我明天考科目一能过吗 (anchor 父母水, second 官鬼金):
+         header:  用神 · 父母 + 官鬼 — BOTH are 用神 here
+         line 3:  "relative":"Pressure (官鬼)", "role":"Support"
+
+       That is not an omission, it is a contradiction, and prose loses to data:
+       the role field is concrete and per-line, the header is one sentence far
+       above it. So the reading takes 官鬼 as background support for 父母 —
+       which is what the failed reading did.
+
+       Marked as a flag rather than by rewriting `role`: the 原/忌/仇/泄 lattice
+       is only coherent from ONE anchor, and a second anchor's lattice would
+       contradict the first at every line. What is true from both anchors at
+       once is just this — this line is also a subject, and this line attacks
+       the other subject. Those two facts, and no synthesis. */
+    var secondEl = null, secondJiEl = null;
+    if (secondKey && secondKey !== roles.yongshenKey && board.ben && board.ben.palace) {
+      secondEl = (secondKey === "self")
+        ? board.lines[board.ben.worldLi].element.gi
+        : elementOfRelative(board.ben.palace.element.gi, secondKey);
+      secondJiEl = (secondEl + 3) % 5;   // 克 second 用神
+    }
     var L = board.lines.map(function(l){
       var r = perLine[l.idx] || { roleEn: "" };
       /* ORDER MATTERS. Every flag here describes THIS line, except the ones
@@ -133,6 +356,11 @@
          reader to infer it from word order. */
       var flags = [];
       if (l.marker) flags.push(l.marker==="self"?"World":"Response");
+      // Identity before condition: what this line IS, then what is happening to it.
+      if (secondEl !== null) {
+        if (l.element.gi === secondEl) flags.push("ALSO-用神(second-subject)");
+        else if (l.element.gi === secondJiEl) flags.push("attacks-second-用神");
+      }
       if (l.void) flags.push("void");
       if (l.dayClash) flags.push("day-clash");
       /* "day-bind" sat next to "month-break" and got read as its twin: two live
@@ -144,10 +372,26 @@
       if (l.dayCombine) flags.push("day-combine(held-not-broken)");
       if (l.monthClash) flags.push("month-break");
       if (l.dayTomb) flags.push("enters-day-tomb");
+      /* THE TWO CLOCKS GENERATE AND CONTROL, and that was not being sent.
+         月建 and 日辰 are the first two of 增删卜易's 四处生克源头 — the book
+         judges every 旺衰 verdict from them — and the engine computes all four
+         booleans per line. distill() carried the clash and the combine and
+         dropped the generate/control silently. Measured on the 2026-08-27
+         board: the fifth line's flags came out as the EMPTY STRING while the
+         engine had it generated by the month, and four of six lines lost a
+         clock relation. The reading then had to infer 旺衰 from the branch
+         names, which is the identification-error class this whole layer exists
+         to remove. */
+      if (l.monthGenerates) flags.push("month-feeds");
+      if (l.monthControls) flags.push("month-controls");
+      if (l.dayGenerates) flags.push("day-feeds");
+      if (l.dayControls) flags.push("day-controls");
       if (l.fanyin) flags.push("reversal");
       if (l.fuyin) flags.push("locked");
       if (l.moving) {
-        flags.push("MOVING→"+(l.transform?(l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+" "+l.transform.relative.cn+")"):""));
+        // Glyph here too — 回头克/回头冲/化空 are all branch-pair facts, and the
+        // pair only reads as a pair when both halves are written the same way.
+        flags.push("MOVING→"+(l.transform?(l.transform.branch.cn+" "+l.transform.element.en+" "+l.transform.branch.animal+" ("+l.transform.relative.en+" "+l.transform.relative.cn+")"):""));
         if (l.transform) {
           // said explicitly, because "void" after a transform is ambiguous
           flags.push(l.transform.backToVoid ? "transform-is-void" : "transform-not-void");
@@ -169,8 +413,27 @@
       return {
         line: l.idx+1,
         relative: l.relative.en+" ("+l.relative.cn+")",
-        najia: l.element.en+" "+l.branch.animal,
-        spirit: l.spirit.en,
+        /* The glyph goes with it, for the reason the 六亲 comment below gives
+           and this field made worse: a field CALLED 纳甲 that shipped as
+           "Metal Rooster" is a gloss of 辛酉, and a Chinese reading has to make
+           the trip back before it can write 官鬼酉金. Every branch relation in
+           the method — 冲, 合, 三合, 墓, 破 — is stated over glyphs, so every
+           one of them was being computed on the far side of a translation. The
+           failed reading wrote 酉冲寅; 酉 clashes 卯. Ship the glyph and there
+           is no trip to make. */
+        najia: l.stem.cn+l.branch.cn+" ("+l.element.en+" "+l.branch.animal+")",
+        /* 六神带上汉字。理由和 najia、六亲那两处一样:白虎、螣蛇、勾陈在中文
+           解读里就是这三个字,发英文名等于让模型再翻一趟,而每一趟翻译都是
+           一次可能落错的地方。这一处之前只发 "White Tiger"。 */
+        spirit: l.spirit.cn+" ("+l.spirit.en+")",
+        /* ── 神煞:引擎每盘都在算,一条都没发过 ─────────────────────────
+           `l.shensha` 早就挂在每一爻上,distill() 从来没读它。这一段是
+           「验现事」唯一的原料 —— 驿马要动、桃花有人、华盖独、天医病,
+           全是当事人一看就知道对不对的东西,而模型一条都看不到。
+           发汉字,理由同 spirit。 */
+        shensha: (l.shensha && l.shensha.length)
+          ? l.shensha.map(function(s){ return (SHENSHA_CN[s.key]||s.label)+" ("+s.label+")"; }).join(" ")
+          : "—",
         strength: l.wangShuai.en,
         role: r.roleEn,
         flags: flags.join(" ") || "—"
@@ -190,6 +453,16 @@
         "; flying line: " + yh.flyingRelative.en + " " + yh.flyingBranch.el.en + " " + yh.flyingBranch.animal +
         (fh.length ? "; " + fh.join(", ") : "; no direct fly/hidden feed or control") +
         " — must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too";
+    }
+    /* Stated where the anchor is stated, so the two 用神 are never a paragraph
+       apart. The roles below (原/忌/仇/泄) are all measured from the FIRST one;
+       saying so stops the second being read as having no lattice because it
+       has none of its own here. */
+    if (secondEl !== null) {
+      yongStr += "   +   " + secondKey + " — " + ["Wood","Fire","Earth","Metal","Water"][secondEl]
+        + "  (BOTH are 用神. Either one failing fails the matter. Lines carrying it are flagged "
+        + "ALSO-用神(second-subject); lines that control it are flagged attacks-second-用神. "
+        + "The role field below is measured from the FIRST 用神 only.)";
     }
     /* ── 伏神 roster ────────────────────────────────────────────────────────
        Every 六亲 missing from the six lines lies hidden under a flying line,
@@ -215,7 +488,19 @@
     var elRole = function (gi) {
       var e = roles.elements || {};
       var k = gi===e.yong?"yong":gi===e.yuan?"yuan":gi===e.ji?"ji":gi===e.chou?"chou":"drain";
-      return (roles.info && roles.info[k]) ? roles.info[k].en + " — " + roles.info[k].desc : k;
+      var out = (roles.info && roles.info[k]) ? roles.info[k].en + " — " + roles.info[k].desc : k;
+      /* Same defect as the per-line role, one level down and worse, because a
+         hidden spirit gets ONE label and no branch data to argue with it. On
+         the exam board 子孙火 came out as "Spoiler — feeds the adversary",
+         which is true from 父母水 and buries what 增删卜易 says plainly and
+         what the assignment itself carries: 子孙为剥官之神. Fire controls
+         Metal; 官鬼 is the other 用神; the one hidden spirit on the board is
+         the thing that takes the placement away. */
+      if (secondEl !== null) {
+        if (gi === secondEl) out += "  ·  ALSO the second 用神";
+        else if (gi === secondJiEl) out += "  ·  controls the second 用神 (its 忌神)";
+      }
+      return out;
     };
     var hiddenAll = (board.hidden || []).map(function (h) {
       var fly = board.lines[h.position];
@@ -270,9 +555,36 @@
       date: board.meta.date + (board.meta.dateAuthoritative?"":" (approx)"),
       sanhe: sanhe,
       guashen: guashen,
-      dayBranch: board.meta.dayPillar.branch.animal+" ("+board.meta.dayPillar.el.en+")",
-      monthElement: board.meta.monthBranch.el.en,
-      voidBranches: board.meta.xunkong.map(function(b){return b.animal;}).join(", "),
+      /* ⚠️ THE MONTH SHIPPED AS AN ELEMENT, NOT A BRANCH — the single worst
+         omission on this payload, because 月建 is the first of 增删卜易's
+         四处生克源头 and the book names it by branch on every page.
+         "monthElement":"Metal" leaves TWO candidates, 申 and 酉, and the model
+         has to pick. Measured on the reading that produced 「能过」: the month
+         was 申, the reading said 酉月, and everything downstream inherited it —
+         月破 is defined as the branch that clashes 月建, so a wrong 月建 moves
+         月破 from 寅 to 卯 and disagrees with the flags on the lines.
+         It was never a hallucination. It was a fact we withheld and a guess we
+         then treated as one. Both clocks now ship as pillars, with the glyph,
+         because a Chinese reading has to reach the glyph anyway and the trip
+         back from an English gloss is where things get lost. */
+      month: board.meta.monthBranch.cn+" ("+board.meta.monthBranch.el.en+" "
+        +["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"][board.meta.monthBranch.bi]
+        +") — 月建",
+      day: board.meta.dayPillar.stem.cn+board.meta.dayPillar.branch.cn+" ("
+        +board.meta.dayPillar.branch.animal+", "+board.meta.dayPillar.el.en+") — 日辰",
+      voidBranches: board.meta.xunkong.map(function(b){return b.cn+" "+b.animal;}).join(", ")+" (旬空 for the CASTING day)",
+      /* Stated, not counted. 增删卜易 turns on how many lines are moving —
+         独发 reads one way, 乱动 another — and the failed reading counted two
+         where the board had three. Counting six objects out of a minified JSON
+         blob is a thing models get wrong; it is also a thing we already know
+         and can simply say. Same principle as the clock relations: put the
+         derived fact in the data instead of making the model derive it. */
+      moving: (function(){
+        var mv = board.lines.filter(function(l){return l.moving;}).map(function(l){return l.idx+1;});
+        var n = ["none","ONE","TWO","THREE","FOUR","FIVE","SIX"][mv.length];
+        return mv.length ? ("lines "+mv.join(", ")+" — "+n+" moving line"+(mv.length>1?"s":"")
+          +(mv.length===1?" (独发)":"")) : "no moving lines (静卦)";
+      })(),
       /* Trigram, palace and series ship with their glyphs, for the same reason
          the 六亲 do: the English is a gloss, and a Chinese reading that has to
          translate one back can translate it wrong. "Wind Palace" came out as
@@ -283,8 +595,63 @@
       worldElement: board.lines[board.ben.worldLi].element.en,
       yongshen: yongStr,
       hidden: hiddenStr,
+      /* ── 断卦裁决梯,算好了送过去 ──────────────────────────────────────
+         《增删卜易》那五步是一套带优先级的判定序,而它每一步的输入引擎都
+         已经算出来了。让模型每一卦重推一遍,只会在某一卦上漏掉其中一条 ——
+         断错的那副盘就是这样:第 2 爻父母亥水化巳火,水绝于巳,是「化绝」,
+         §3 写死的大凶败局;解读提到了这个变爻,把它读成仇神关系,漏了。
+         现在它是盘上的一条事实,不是模型的一次推导。
+         ⚠️ 前三步是否决项,第四步只给计数、第五步只给应期候选 —— 称重和
+         措辞仍然归模型,这个字段不许被读成"结论已经替你下好了"。 */
+      verdict: (function(){
+        var V = (typeof window!=="undefined" && window.BWVerdict) || null;
+        if (!V) return null;          // 没加载就没有,不静默降级成一个假结论
+        var v;
+        try { v = V.judge(board, roles, subject || null); }
+        catch(e){ return { error: "裁决梯未能运行:" + (e && e.message) }; }
+        /* ── states 减肥 ──────────────────────────────────────────────────
+           梯子的 states 每爻 25 个字段,里面 element/branch 是**数字编码**
+           (element:4 是水,branch:11 是亥),而同一副盘在下面 lines 里已经
+           写成了「第2爻 父母亥水」。同一个事实两种编码,谁也不知道哪份算数
+           —— 补集律的毛病。实测这一块占整包 30%(858 tok)。
+           这里只删掉与 lines 重复的那几格,判定用的布尔一个不动。 */
+        if (v && v.states) {
+          var DROP = { element:1, branch:1, rank:1, idx:1 };
+          v = Object.assign({}, v, { states: v.states.map(function(s){
+            var t = {};
+            for (var k in s) {
+              if (!s.hasOwnProperty(k) || DROP[k]) continue;
+              // transform 里同样有 element/branch 的数字编码,同样和 lines 重复
+              if (k === "transform" && s[k]) {
+                var tt = {};
+                for (var k2 in s[k]) if (s[k].hasOwnProperty(k2) && !DROP[k2]) tt[k2] = s[k][k2];
+                t[k] = tt;
+              } else t[k] = s[k];
+            }
+            return t;
+          })});
+        }
+        return v;
+      })(),
+      /* 关系放在 verdict 之后、lines 之前:梯子说的是「判到哪一步」,关系说的
+         是「盘上还有什么」,而 lines 是每一爻自己的样子。三块各答一个问题。 */
+      relations: relationLines(board, roles, subject),
       lines: L
     };
+  }
+
+  /* Scalars on one line each, then the six lines one row each. Deliberately not
+     JSON.stringify(x, null, 2): full pretty-printing explodes every line object
+     into eight rows and buries the board in punctuation. What is wanted is one
+     row per thing the reader counts. */
+  function stringifyBoard(d){
+    var head = [], rows = [];
+    for (var k in d) {
+      if (!d.hasOwnProperty(k) || k === "lines") continue;
+      head.push('  ' + JSON.stringify(k) + ': ' + JSON.stringify(d[k]));
+    }
+    for (var i = 0; i < d.lines.length; i++) rows.push('    ' + JSON.stringify(d.lines[i]));
+    return '{\n' + head.join(',\n') + ',\n  "lines": [\n' + rows.join(',\n') + '\n  ]\n}';
   }
 
   // The user drops THEIR divination prompt into USER_PROMPT below. The protocol
@@ -346,7 +713,7 @@
     ].filter(Boolean).join("\n");
   }
 
-  function buildMessages(board, roles, question, category, gender, lang){
+  function buildMessages(board, roles, question, category, gender, lang, subject){
     var schema = [
       "Return ONLY valid minified JSON, no prose, with EXACTLY these keys:",
       '{',
@@ -376,10 +743,26 @@
     var user = [
       "QUESTION: "+question,
       "CATEGORY: "+(category||"general")+(gender?(" · asker gender: "+gender):""),
-      "Default 用神 prior for this category: "+(CATEGORY_YONGSHEN[category]||"self")+" (override if the wording calls for another).",
+      (subject && subject.matched
+        ? ("用神 · CHOSEN FROM THE QUESTION: " + (YONGSHEN_INFO[subject.key] ? YONGSHEN_INFO[subject.key].cn : subject.key)
+           + (subject.second ? (" + " + (YONGSHEN_INFO[subject.second] ? YONGSHEN_INFO[subject.second].cn : subject.second)
+              + " — BOTH are 用神 here; if either one is weak the matter fails") : "")
+           + "  (" + (subject.why || "") + ")"
+           + "  · Say which line you are reading and why, in the reading itself.")
+        : ("用神 · NOT NAMED BY THE QUESTION — falling back to 世爻 (自占). "
+           + "This is a DEFAULT, not a finding: if the wording does point at a subject, read that line instead and say so.")),
       "",
       "BOARD (authoritative facts):",
-      JSON.stringify(distill(board, roles)),
+      /* ONE LINE PER LINE. The six line objects used to arrive inside a single
+         unbroken ~1,800-character minified string, which is the layout that
+         makes a board hard to read for the same reason it is hard for a person:
+         there are no rows to count, and every fact about line 4 sits in the
+         middle of a paragraph-length token run. The failed reading counted two
+         moving lines where the board had three.
+         Still valid JSON — only whitespace changes, and the payload's own
+         `moving` field now states the count outright, so this is the second of
+         two independent fixes for one error. */
+      stringifyBoard(distill(board, roles, subject)),
       "",
       timingReference(board),
       "",
@@ -399,10 +782,13 @@
 
   function interpret(opts){
     opts = opts || {};
-    var board = opts.board, question = opts.question||"", category = opts.category||"general";
+    var board = opts.board, question = opts.question||"";
+    // The subject is read off the question unless a caller names a category.
+    var subject = subjectKey(question);
+    var category = opts.category || subject.key;
     var gender = opts.gender||"", lang = opts.lang||"en";
     // provisional 用神 from category, so the board can paint roles immediately
-    var priorKey = CATEGORY_YONGSHEN[category] || "self";
+    var priorKey = (opts.category && CATEGORY_YONGSHEN[opts.category]) || subject.key || "self";
     var roles = deriveRoles(board, priorKey);
 
     var hasClaude = (typeof window!=="undefined" && window.claude && typeof window.claude.complete==="function");
@@ -410,7 +796,7 @@
       return Promise.resolve(mockReading(board, roles, question, category, lang));
     }
 
-    var built = buildMessages(board, roles, question, category, gender, lang);
+    var built = buildMessages(board, roles, question, category, gender, lang, subject);
     if (opts.systemPrompt) built.system = opts.systemPrompt;
 
     return window.claude.complete({ product:"sortis", system:built.system, messages:built.messages })
@@ -469,6 +855,8 @@
 
   window.BWLiuYaoAI = {
     deriveRoles: deriveRoles,
+    subjectKey: subjectKey,
+    SUBJECT_RULES: SUBJECT_RULES,
     interpret: interpret,
     buildMessages: buildMessages,   // exposed so the user can inspect/replace the prompt
     CATEGORY_YONGSHEN: CATEGORY_YONGSHEN,

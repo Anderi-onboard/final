@@ -179,14 +179,17 @@ const REST_OF_STACK = [
   ['answer what was asked, not something adjacent', 'Answering something ADJACENT'],
   ['headings must earn their place', 'If a heading could sit above any other reading'],
   ['no seams — nothing parked in labelled boxes', 'NO SEAMS'],
-  // The ceiling was removed by the owner on 08-19 — a reader came for a reading
-  // of their own casting and wants more of it, so a floor protects them and a
-  // ceiling only takes from them. The two halves of the old rule live on: never
-  // pad up to a number, never cut down to one.
+  // The ceiling went on 08-19 and the floor on 08-27, both by the owner. What
+  // survives from the old rule is its two halves — never pad up to a number,
+  // never cut down to one — with the number itself gone from both ends. The
+  // completeness test replaced it: a thin board earns a short reading, and the
+  // fault is a MISSING section, not a low count. tests/xiang-trace.mjs holds
+  // the other side, that no segment may state a length in characters again.
   ['length: never pad', 'Never pad to reach a number'],
-  ['length: no ceiling, nothing trimmed to approach one', 'The floor is real and the ceiling is not'],
+  ['length: neither bound survives', 'No floor, no ceiling'],
   ['length: going long is not a fault', 'Going long is not a fault'],
-  ['length: a short opening reading is a signal', 'is a SIGNAL, not a valid short answer'],
+  ['length: the test is the output list, not a count', 'THE TEST IS 「饱满」'],
+  ['length: short is a fault only when a section is missing', 'only when something on the list is MISSING'],
   ['the board laid out once, early, from real data', 'the way a diviner sets the table'],
   ['every load-bearing signal walked', 'A mechanic with no picture is half'],
   ['at least one moment the reader can see', 'a season, a room, a light'],

@@ -780,7 +780,24 @@
         + word + '</button>';
     });
   }
-  xrCatalogue();
+  /* Fire it at boot, and repaint once it lands.
+     The bare call discarded the promise, so whether a reading got its
+     annotations came down to a race: on a fresh cast the reading takes a
+     minute and the catalogue is long since loaded, but reopening a SAVED
+     conversation paints immediately and usually wins. When it did, xrSeen was
+     never filled, and xrChain() and xrMaybe() — both of which return "" without
+     it — left the reading with no 取象 legend and no pointer at its foot, for
+     the rest of the session. Nothing errored; the sections simply were not
+     there, which is why it survived.
+
+     Repaint only if a reading is already on screen, and only for the one that
+     is: mdReading() is idempotent, so this costs a paint and changes nothing
+     else. */
+  xrCatalogue().then(function (cat) {
+    if (!cat) return;
+    if (!document.querySelector(".reading-body")) return;
+    try { renderThread({ animateLast: false }); } catch (e) { /* first paint not up yet */ }
+  });
 
   function mdInline(s) {
     // marks first (they own the braces), then the parse path over what is left,
@@ -1286,7 +1303,9 @@
       product: product,
       board: board,
       method: methodId,
-      category: "general",
+      // category is deliberately UNSET: the 用神 is chosen from the question by
+      // BWLiuYaoAI.subjectKey. This used to say category:"general", which made
+      // every reading read the World line as its 用神 whatever was asked.
       // no lang override — BWPromptRouter detects it from the question text
       history: history || [],
       onDelta: wrappedDelta,
@@ -1337,7 +1356,9 @@
     var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 90000); });
     var run;
     try {
-      run = BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: lang });
+      // No category: the 用神 comes from the question (BWLiuYaoAI.subjectKey).
+      // This said category:"general" — which resolved to 世爻 on every reading.
+      run = BWLiuYaoAI.interpret({ board: board, question: question, lang: lang });
     } catch (e) { run = Promise.resolve(null); }
     return Promise.race([run, guard]).then(function (reading) {
       if (reading && reading.__timeout) return reading;
