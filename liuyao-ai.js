@@ -190,7 +190,7 @@
     ghost:"亡神", disaster:"灾煞", heavenDoctor:"天医", monthVirtue:"月德"
   };
 
-  /* ── 关系:盘上算得出的每一条,序列化成行 ────────────────────────────
+  /* ── 关系:按到用神的距离排,一行一条,带箭头 ──────────────────────
      `liuyao-relations.js` 把爻爻生克、爻爻合冲刑害、日月岁时对爻、世应、
      三合三会、局对爻、相生链全算出来了,而在此之前一条都没进过发给模型的包。
 
@@ -198,23 +198,99 @@
      算得出,三条都没发。模型看不见的关系,它只能自己推,而自己推就是那副
      断错的盘的死法。
 
-     ⚠️ 只报事实,不报吉凶。「第5爻合第1爻」是事实,「所以名额被绊住」是断法。
-     ⚠️ 静爻不作用于动爻(增删卜易 §4)只**标注**不筛掉 —— 认不认归下游。 */
-  function relationLines(board){
+     ⭐⭐ 改法的依据不是手感,是三篇量过的东西:
+
+     ① 之前是七个按「关系类型」分的数组,13 条爻爻生克平铺在一起,**其中 9 条
+        自己标着「静爻,不作用」** —— 我们把明确不成立的关系,标好了标签送进去。
+        GSM-IC(Shi et al., ICML 2023, arXiv 2302.00093)量的正是这个构造:
+        在模型**本来做得对**的题上掺入无关信息,准确率大幅下降。不该自己造它。
+     ② GSM-DC(Yang et al., EMNLP 2025, arXiv 2505.18761):干扰同时伤**推理
+        路径的选择**和算术准确度 —— 不是算错,是走错路。
+     ③ Lost in the Middle(Liu et al., TACL 2024, arXiv 2307.03172):中段最
+        容易被漏掉。所以承重的放开头,可丢的压到末尾。
+
+     顺序因此是**到用神的距离**:用神自己 → 作用于用神的 → 用神作用出去的 →
+     穿过用神的相生链 → 其余成立的 → 不作用的(压成一行,放最后)。
+
+     ⚠️ 不作用的**不删,只压**。静爻不生克动爻是《增删卜易》§4 说的,不是我们
+        判的;而暗动已经在 `acts` 里算过,所以剩下的确实是惰的。删掉就不可复查,
+        压成一行既不占版面也没丢东西。
+     ⚠️ 只报事实,不报吉凶。「第5爻合第1爻」是事实,「所以名额被绊住」是断法。 */
+  function relationLines(board, roles, subject){
     var R = (typeof window!=="undefined" && window.BWRelations) || null;
     if (!R) return null;
     var r;
     try { r = R.compute(board); } catch(e){ return { error:"关系模块未能运行:"+(e&&e.message) }; }
+
+    /* 用神爻号(1-based)。第二用神一并算进来 —— 考试这类取两个,只按第一个
+       排序会把「官鬼受克」排到末尾,而它恰好是这类事体的否决条。 */
+    var yong = ((roles && roles.yongLines) || []).map(function(i){ return i+1; });
+    if (subject && subject.second && board.ben && board.ben.palace) {
+      var sEl = (subject.second === "self")
+        ? board.lines[board.ben.worldLi].element.gi
+        : elementOfRelative(board.ben.palace.element.gi, subject.second);
+      board.lines.forEach(function(l){
+        if (l.element.gi === sEl && yong.indexOf(l.idx+1) < 0) yong.push(l.idx+1);
+      });
+    }
+    var isYong = function(n){ return yong.indexOf(n) >= 0; };
+    var desc = {};
+    r.pairs.forEach(function(p){ desc[p.from] = p.fromDesc; desc[p.to] = p.toDesc; });
+    var nameOf = function(n){
+      return "第"+n+"爻 "+(desc[n] || "") + (isYong(n) ? "〔用神〕" : "");
+    };
+
     var out = {};
-    out["爻→爻 生克"] = r.pairs.map(function(p){
-      return p.from+" "+p.kinds.join("/")+" "+p.to + (p.acts?"":" (静爻,不作用)");
+    out["用神"] = yong.length
+      ? yong.map(function(n){ return nameOf(n); }).join(" · ")
+      : "未定";
+
+    /* 作用于用神的 —— 一行一条,箭头指向用神。只收成立的。 */
+    /* ⚠️ 两头都是用神的那一条要单独一块,而且排最前。
+       第一版按「谁是用神」二选一分流,于是 `isYong(from) && isYong(to)` 落进了
+       「其余」—— 实测那副盘上被扔下去的正是「官鬼戌 生 父母申」,也就是速断胜局
+       第 3 条「官生父、父生世」。取两个用神的事体里,**用神之间那一笔是最承重的**,
+       因为它就是这类事体成不成的机制本身。 */
+    var between = [], inbound = [], outbound = [], rest = [], inert = [];
+    r.pairs.forEach(function(p){
+      var row = nameOf(p.from) + " ─" + p.kinds.join("/") + "→ " + nameOf(p.to);
+      if (!p.acts) { inert.push(p.from+" "+p.kinds.join("/")+" "+p.to); return; }
+      if (isYong(p.from) && isYong(p.to)) between.push(row);
+      else if (isYong(p.to)) inbound.push(row);
+      else if (isYong(p.from)) outbound.push(row);
+      else rest.push(row);
     });
-    out["爻—爻 合冲刑害"] = r.mutual.map(function(m){
-      return m.a+" "+m.kinds.join("/")+" "+m.b + (m.acts?(" (第"+m.mover+"爻在动)"):" (两头皆静)");
+    /* 时钟对用神单独提出来:月建日辰是《增删卜易》四处生克源头的头两处,
+       混在六爻一张表里读,和它在方法里的分量对不上。 */
+    r.clock.forEach(function(c){
+      var row = nameOf(c.line) + " ← " + c.rels.map(function(x){ return x.with+x.kind; }).join(" · ");
+      (isYong(c.line) ? inbound : rest).push(row);
     });
-    out["日月岁时对爻"] = r.clock.map(function(c){
-      return c.line+": "+c.rels.map(function(x){ return x.with+x.kind; }).join(" ");
+    r.mutual.forEach(function(m){
+      var row = nameOf(m.a) + " ─" + m.kinds.join("/") + "─ " + nameOf(m.b);
+      if (!m.acts) { inert.push(m.a+" "+m.kinds.join("/")+" "+m.b); return; }
+      if (isYong(m.a) && isYong(m.b)) between.push(row);
+      else (isYong(m.a) || isYong(m.b) ? inbound : rest).push(row);
     });
+
+    if (between.length)  out["用神之间"] = between;
+    if (inbound.length)  out["→ 用神(作用于它的)"] = inbound;
+    if (outbound.length) out["用神 →(它作用出去的)"] = outbound;
+
+    /* 相生链:穿过用神的排在前面,那是「接续相生」这条胜局判据要的东西。 */
+    var thru = [], other = [];
+    r.chains.forEach(function(c){
+      var hit = c.path.some(function(n){ return isYong(n); });
+      (hit ? thru : other).push(c.desc);
+    });
+    if (thru.length)  out["主链(穿过用神)"] = thru;
+    if (other.length) out["其余相生链"] = other;
+
+    if (rest.length) out["其余成立的关系"] = rest;
+    /* 压成一行,放最后 —— 不删是为了可复查,不摊开是因为它们不参与判断。 */
+    if (inert.length) out["不作用(静爻对静爻,《增删卜易》§4)"] =
+      inert.length + " 条:" + inert.join(" | ");
+
     out["世应"] = r.worldResp.world+"世 "+r.worldResp.resp+"应 — "+(r.worldResp.rels.join("·")||"无直接关系");
     out["局"] = [].concat(
       r.sanhe.map(function(s){
@@ -227,7 +303,6 @@
           + (s.missing?(" 缺"+s.missing.join("")):"")
           + ((s.对爻||[]).length ? ("  局→"+s.对爻.map(function(x){return x.line+x.kind+(x.世爻?"(世)":"");}).join(" ")) : "");
       }));
-    out["相生链"] = r.chains.map(function(c){ return c.desc; });
     out["卦级"] = Object.keys(r.shape).filter(function(k){
       return r.shape[k]!==null && r.shape[k]!==false;
     }).map(function(k){ return k+"="+r.shape[k]; }).join(" ");
@@ -560,7 +635,7 @@
       })(),
       /* 关系放在 verdict 之后、lines 之前:梯子说的是「判到哪一步」,关系说的
          是「盘上还有什么」,而 lines 是每一爻自己的样子。三块各答一个问题。 */
-      relations: relationLines(board),
+      relations: relationLines(board, roles, subject),
       lines: L
     };
   }
