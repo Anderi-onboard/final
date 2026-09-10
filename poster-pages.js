@@ -4,10 +4,10 @@
   var body = document.body;
   var page = body && body.dataset.page;
   var patternSources = [
-    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260901u",
-    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260901u",
-    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260901u",
-    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260901u"
+    "./assets/textures/lianqian/lianqian-dense-clay-tile.webp?v=20260910a",
+    "./assets/textures/lianqian/lianqian-outline-silver-tile.webp?v=20260910a",
+    "./assets/textures/lianqian/lianqian-spaced-medallion-tile.webp?v=20260910a",
+    "./assets/textures/lianqian/lianqian-diagonal-clay-tile.webp?v=20260910a"
   ];
   /* The accent marks used to be 112x112 webp crops. At that size they were
      already below one device pixel per source pixel on any 2x screen, so they

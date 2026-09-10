@@ -45,7 +45,13 @@ const BLOCKED = [
   /^\/palette-overview\.html$/i,
   /^\/baoxianghua-compositions\.html$/i,
   /^\/(tests|scripts|tools|eval|artifacts|copywriting|qa)(\/|$)/i,
-  /^\/\.(git|env|dev\.vars)/i
+  /^\/\.(git|env|dev\.vars)/i,
+  /* Agent skills installed into the repo (.claude/skills/**). They are tooling
+     for the people working on this site, not part of it, and one of them ships
+     ~2 MB of reverse-engineering scripts. Dot-directories are not supposed to
+     reach the deployed tree at all — this is the belt to that braces, on the
+     same reasoning as the .git entry above. */
+  /^\/\.claude(\/|$)/i
 ];
 
 export async function onRequest(context) {

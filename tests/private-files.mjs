@@ -39,7 +39,8 @@ const PRIVATE = [
   '/tests/palette-contract.mjs', '/tests/prompt-secrecy.mjs', '/scripts/dump-prompt.mjs',
   '/tools/palette-atlas.html', '/tools/palette-contrast.html',
   '/artifacts/palette-cache-history.json', '/eval/run-eval.js',
-  '/copywriting/BOURNEWISE_VOICE_DECK.md', '/qa/palette-editor-tool.png'
+  '/copywriting/BOURNEWISE_VOICE_DECK.md', '/qa/palette-editor-tool.png',
+  '/.claude/skills/website-rebuild/SKILL.md', '/.claude/settings.json'
 ];
 
 const leaked = [];

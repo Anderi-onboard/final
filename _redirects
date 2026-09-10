@@ -48,3 +48,8 @@
 
 # Retired visual experiments must not remain publicly reachable.
 /baoxianghua-compositions.html   /404.html   404
+
+# Agent skills installed into the repo (.claude/skills/**) are tooling for the
+# people working on this site, not part of it. As with everything above, the
+# middleware is what actually denies this — kept here so the two agree.
+/.claude/*   /404.html   404
