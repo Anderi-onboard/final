@@ -22,3 +22,8 @@ artifacts/full-prompt.html
 # public deck. Regenerate locally with the generate-*.mjs scripts beside them.
 copywriting/BOURNEWISE_PROMPT_DECK.md
 copywriting/BOURNEWISE_VOICE_DECK.md
+
+# build-exe.mjs staging copy — created and removed per build; only survives a
+# crashed build, and a stale copy would let the next build succeed against
+# sources that have since changed.
+tools/pxa/.web/

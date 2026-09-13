@@ -21,6 +21,32 @@
    索引位图**不可能**犯这个错,因为它根本不携带颜色。
 2. **它对尺寸是开放的。** 格是单位不是像素,所以同一个资产在 48px 和 1400px 上都清晰。
 
+## 打包成一个可执行文件
+
+```bash
+node tools/pxa/build-exe.mjs            # windows + linux + mac,输出到 dist/
+node tools/pxa/build-exe.mjs windows    # 只要一个
+```
+
+Bun 交叉编译,所以在 Linux 上就能出 Windows `.exe`。**bun 只是打包依赖** ——
+`tools/pxa` 里的一切在普通 node 上照跑。每个约 95MB(Bun 运行时的体积)。
+
+`pxa.exe` 四种用法,对应人实际会怎么用一个打包好的工具:
+
+| | 发生什么 |
+|---|---|
+| 双击 | 起本地工作台,开浏览器 |
+| **拖一段视频上去** | 同上,而且片子已经在页面里加载了 |
+| **拖一个文件夹上去** | 编码里面的 PNG 帧,`.pxa.json` 写在文件夹旁边 |
+| `pxa encode …` | 普通命令行,和 node 版逐字节同样的输出 |
+
+⭐ **工作台就是这个 exe 不需要 ffmpeg 的原因。** 浏览器里已经有一个视频解码器;
+再塞一个进来要多 ~70MB 和一个授权问题,而这个工具真正干的活是几百行算术。
+所以 exe 只负责把文件递过去,解码交给这台机器上已经有的那个引擎。
+
+⚠️ 服务只绑 `127.0.0.1`,只发嵌在二进制里的那几个文件,**别的路径一律 404**
+(实测 `/CLAUDE.md`、`/etc/passwd` 都是 404)。什么都不上传。
+
 ## 用
 
 ```bash
@@ -75,8 +101,10 @@ node tools/pxa/cli.mjs preview art.pxa.json -o check --scale 8
   现在靠"只看最强的 3% 边 + 覆盖率平方"压掉:块边多而弱,真色阶少而强。
 - **没有格子的素材,`--cells` 是正确模式不是兜底。** 见 `prompts.md` §0。
 - **信箱边/裁切过的片子**:粗搜假设网格铺满画面。有黑边先裁掉,或直接 `--cells`。
-- **真实视频往返没在这台机器上验过** —— 环境里的 ffmpeg 是 Playwright 的裁剪版,
-  读不了 PNG。证据是合成损伤(振铃 + 8×8 块带 + 逐帧色漂 + 噪声)两轮,含 17× 噪声那轮。
+- **真实视频往返已验**:在 Chromium 里把 ground truth 用 MediaRecorder 录成真 VP8 webm
+  (DCT 量化 + 4:2:0 色度二次采样),再整段喂回这条链 —— **格子精确检出 40×24**、格线分数 94/121、
+  七个真实颜色全中、**23,040 格里 372 个错(98.39%)**。残差主要是录制流和名义 12fps 重采样之间的
+  相位错开,不是量化误差。合成损伤那两轮(含 17× 噪声)仍在契约里跑。
 
 ## 性能
 
@@ -88,10 +116,27 @@ node tools/pxa/cli.mjs preview art.pxa.json -o check --scale 8
 canvas 不在名单上 —— 可是压在 `backdrop-filter` 底下的 canvas 是同一笔开销。
 **色块路由(整条没有任何 `backdrop-filter`)比玻璃路由便宜得多**,要放先放那儿。
 
+## 打包版才会出现的三个 bug(都是真跑二进制才撞见的)
+
+⭐⭐ **三个都在 node 下完美、在 exe 里坏掉**,所以"跑一下编译出来的东西"不是形式:
+
+1. **cli.mjs 的"是否被直接运行"判断在 bundle 里误判为真。** 打包器重写了 `import.meta.url`,
+   它和可执行文件自身路径**比较相等**,于是 import 它就等于执行一条命令 ——
+   打印 usage 然后退出,**拖文件夹那条路在打包版里是死的**。现在用文件名钉死。
+2. **`spawn` 打不开浏览器时是通过异步 `error` 事件报错,`try/catch` 接不到**,
+   而无人监听的 `error` 事件是未捕获异常 —— 没有 `xdg-open` 的机器上,服务打印完 URL 就死了。
+   Windows 上不会发生(`cmd` 一定在),所以这个崩溃**正好住在没人会去看的地方**。
+3. **MediaRecorder 录出来的 webm 容器里没有时长**,`video.duration` 是 `Infinity`,
+   于是帧数是 `Infinity`、页面永远转圈**而且不报错**。浏览器录屏基本都是这种。
+
+⚠️ `tests/pxa-package.mjs` 钉着"两张名单必须一致":工作台 HTML 引用的资源 vs. exe 嵌进去的资源。
+加一个忘一个的话,**从仓库起服务一切正常、exe 里是一张白页** —— 只在没人本地跑的那个产物里坏掉。
+
 ## 验
 
 ```bash
-node tests/pxa-format.mjs          # 格式 + 管线,19 条断言,npm test 会自动跑
+node tests/pxa-format.mjs          # 格式 + 管线,21 条断言,npm test 会自动跑
+node tests/pxa-package.mjs         # 打包的两张名单,19 条断言
 CHROME=... node tools/pxa/verify-player.mjs a.pxa.json b.pxa.json   # 播放器,要浏览器
 ```
 

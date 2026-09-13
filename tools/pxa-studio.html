@@ -95,10 +95,35 @@ async function framesFromVideo(file, fps) {
   v.muted = true; v.playsInline = true; v.preload = 'auto';
   v.src = URL.createObjectURL(file);
   await new Promise((ok, no) => { v.onloadedmetadata = ok; v.onerror = () => no(new Error('this file did not decode as video')); });
+
+  /* ⚠️ A MediaRecorder webm has NO DURATION in its container, so v.duration is
+     Infinity until you seek past the end and let the browser work it out. That
+     covers most screen recordings and anything captured in a browser — and
+     without this the frame count is Infinity and the page hangs forever with
+     no error, which is how this was found: a real clip, not a folder of PNGs. */
+  if (!isFinite(v.duration)) {
+    await new Promise((ok) => {
+      const give = setTimeout(ok, 4000);
+      v.ondurationchange = () => {
+        if (!isFinite(v.duration)) return;
+        clearTimeout(give); v.ondurationchange = null; ok();
+      };
+      v.currentTime = 1e101;
+    });
+    v.currentTime = 0;
+  }
+  if (!isFinite(v.duration) || v.duration <= 0) {
+    throw new Error('this clip does not report a duration — re-wrap it (ffmpeg -i in.webm -c copy out.webm) and try again');
+  }
   const c = document.createElement('canvas');
   c.width = v.videoWidth; c.height = v.videoHeight;
   const ctx = c.getContext('2d', { willReadFrequently: true });
   const n = Math.max(1, Math.floor(v.duration * fps));
+  /* A cap, because every frame is a seek plus a full-frame readback and the
+     encode holds them all. 1200 frames is 100 seconds at 12fps — far past
+     anything this format is for, and an explicit refusal beats a tab that
+     stops responding. */
+  if (n > 1200) throw new Error(`${v.duration.toFixed(1)}s at ${fps}fps is ${n} frames. Trim the clip, or lower the frame rate.`);
   const out = [];
   for (let i = 0; i < n; i++) {
     v.currentTime = Math.min(v.duration - 1e-3, (i + 0.5) / fps);
@@ -269,6 +294,22 @@ $('rot').addEventListener('click', () => {
   window.dispatchEvent(new CustomEvent('bw:palettechange', { detail: { manual: true } }));
 });
 $('rot').click();
+
+/* When the packaged app is handed a file (dropped onto pxa.exe), it serves that
+   file and opens this page with ?src= pointing at it. Fetching it back as a File
+   means the drop path and the double-click path converge on the SAME code —
+   there is no second ingest route to keep in step. */
+const auto = new URLSearchParams(location.search).get('src');
+if (auto) {
+  status('loading ' + (new URLSearchParams(location.search).get('name') || auto) + '…');
+  fetch(auto).then((r) => {
+    if (!r.ok) throw new Error(`${auto} → ${r.status}`);
+    return r.blob();
+  }).then((blob) => {
+    const name = new URLSearchParams(location.search).get('name') || 'input';
+    take([new File([blob], name, { type: blob.type })]);
+  }).catch((e) => status('could not load the handed-over file: ' + e.message));
+}
 </script>
 </body>
 </html>

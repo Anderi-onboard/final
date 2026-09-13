@@ -20,12 +20,43 @@
  */
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { readPNG, writePNG } from './png.mjs';
 import { detectGrid, sampleCells, buildPalette, assignFrames, hex, rgbToOklab } from './ingest.mjs';
 import { encode, decode, stats, cssVarFor } from '../../assets/pxa-codec.mjs';
 
-const argv = process.argv.slice(2);
-const cmd = argv[0];
+export const USAGE = `pxa — build and inspect colour-cell animations.
+
+  pxa encode  <frames-dir> -o out.pxa.json [options]
+  pxa inspect <file.pxa.json>
+  pxa preview <file.pxa.json> -o <dir> [--scale 8]
+
+encode options
+  -o, --out <file>   where to write (required)
+  --cells WxH        set the grid by hand instead of detecting it
+  --colors N         palette size (default 16)
+  --fps N            declared frame rate (default 12)
+  --every N          keep every Nth frame
+  --map ramp|keep    "ramp" maps the palette onto --bw-palette-1..10 so the
+                     animation rotates with the site's colour groups (max 10)
+  --alpha            treat near-transparent cells as transparent
+  --hysteresis F     0..1, how much closer a new colour must be to switch (.3)
+  --no-vote          disable the three-frame outlier vote
+
+\`preview\` writes the decoded frames back out as PNGs. That is the only honest
+way to sign off an encode: the numbers in \`inspect\` will happily look healthy
+for a grid that was detected one cell off. Look at the pictures.
+
+Getting frames out of a clip (ffmpeg is a prerequisite for video on the command
+line; the studio decodes video in the browser and needs nothing):
+
+  ffmpeg -i clip.mp4 -vf fps=12 frames/%04d.png
+
+H3 renders at 24fps, so 12 and 8 and 6 are exact decimations of it — pick one
+of those and no frame is ever resampled from two source frames.`;
+
+let argv = process.argv.slice(2);
+let cmd = argv[0];
 const flag = (name, dflt) => {
   // Accept both `-o out` and `--out out`; a tool whose own usage line does not
   // parse is a bad first impression for every later claim it makes.
@@ -238,11 +269,30 @@ function cmdPreview() {
 }
 
 void rgbToOklab;
-if (cmd === 'encode') cmdEncode();
-else if (cmd === 'inspect') cmdInspect();
-else if (cmd === 'preview') cmdPreview();
-else {
-  const doc = readFileSync(new URL(import.meta.url), 'utf8');
-  console.error(doc.slice(doc.indexOf('/**') + 3, doc.indexOf('*/')).replace(/^ \* ?/gm, '').trim());
-  process.exit(1);
+
+/** Returns true when the command was recognised. Exported so the packaged app
+ *  (tools/pxa/app.mjs) dispatches through the SAME code as the CLI — a second
+ *  copy of the argument handling is a second list to keep in step. */
+export function main(args) {
+  argv = args;
+  cmd = argv[0];
+  if (cmd === 'encode') { cmdEncode(); return true; }
+  if (cmd === 'inspect') { cmdInspect(); return true; }
+  if (cmd === 'preview') { cmdPreview(); return true; }
+  return false;
+}
+
+/* Run only when invoked directly, so `import` does not execute a command.
+   ⚠️ The url comparison alone is not enough. Inside a compiled single-file
+   binary the bundler rewrites import.meta.url, and it compared EQUAL to the
+   executable's own path — so importing this module from app.mjs ran a command
+   at import time, printed the usage text and exited before the app had
+   dispatched anything. The folder-drop path was dead in the packaged build and
+   perfectly fine under node, which is the only reason it was caught: the
+   binary was actually run. The basename check is what pins it to this file. */
+const invokedDirectly = process.argv[1]
+  && /[\\/]cli\.mjs$/.test(process.argv[1])
+  && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (invokedDirectly) {
+  if (!main(process.argv.slice(2))) { console.error(USAGE); process.exit(1); }
 }
