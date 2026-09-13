@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PXA studio — video in, colour-cell animation out</title>
+<!--
+  INTERNAL TOOL. /tools/* is held behind a 404 by functions/_middleware.js;
+  nothing here is loaded by any route.
+
+  It does the whole pipeline in the browser, which means ffmpeg is OPTIONAL:
+  a <video> element decodes the clip, a canvas hands over the pixels, and the
+  same tools/pxa/ingest.mjs the CLI uses does the rest. One implementation,
+  two front ends — a second copy of the grid detector living in a web page is
+  exactly the "second list to keep in step" this repo keeps paying for.
+
+  The preview row is the point of the format, not decoration: the same asset is
+  rendered at five sizes at once. If a change breaks integer scaling it shows
+  up here as uneven cells in one panel, and nowhere else.
+-->
+<link rel="stylesheet" href="../tokens/fonts.css">
+<style>
+  :root { color-scheme: light; }
+  html, body { background: #E7E1D7; }
+  body { margin: 0; padding: 32px 24px 64px; font-family: "Spinnaker", system-ui, sans-serif; color: #2b2823; }
+  h1 { font-family: "BioRhyme", Georgia, serif; font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  h2 { font-family: "BioRhyme", Georgia, serif; font-size: 15px; font-weight: 600; margin: 32px 0 8px; }
+  .lede { font-size: 13px; max-width: 66ch; margin: 0 0 24px; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; margin: 0 0 16px; }
+  label { font-size: 11px; letter-spacing: .12em; display: block; margin: 0 0 4px; }
+  input, select, button { font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid #b7ae9f;
+    background: #F2EDE7; color: inherit; border-radius: 0; min-height: 34px; }
+  button { cursor: pointer; }
+  button:disabled { opacity: .45; cursor: default; }
+  input[type=number] { width: 78px; }
+  .drop { border: 2px dashed #b7ae9f; padding: 24px; text-align: center; font-size: 13px; margin: 0 0 16px; }
+  .drop.hot { border-color: #C9663F; background: #efe7dd; }
+  .sizes { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .cell { }
+  .cell .box { background: #ded6c9; outline: 1px solid #b7ae9f; display: flex; }
+  .cell .cap { font-size: 10px; letter-spacing: .12em; margin: 6px 0 0; }
+  pre { font-size: 11px; line-height: 1.55; background: #F2EDE7; border: 1px solid #d6cec1;
+    padding: 12px; overflow: auto; max-height: 320px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 0; }
+  .sw { width: 26px; height: 26px; outline: 1px solid rgba(0,0,0,.2); font-size: 8px; }
+  .warn { color: #8a3a1c; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>PXA studio</h1>
+<p class="lede">Drop a clip or a set of PNG frames. The grid is detected, one palette is built for the
+whole clip, and the result is written as palette indices — so the asset recolours with the 114 groups
+instead of being the one thing on the page that does not. Nothing is uploaded; it all runs here.</p>
+
+<div class="drop" id="drop">Drop a video (.mp4/.webm) or PNG frames here — or <input type="file" id="file" multiple accept="video/*,image/png"></div>
+
+<div class="row">
+  <div><label for="fps">Frames per second</label><input type="number" id="fps" value="12" min="1" max="30"></div>
+  <div><label for="colors">Colours</label><input type="number" id="colors" value="16" min="2" max="64"></div>
+  <div><label for="cells">Grid (blank = detect)</label><input type="text" id="cells" placeholder="64x48" size="8"></div>
+  <div><label for="map">Palette</label><select id="map"><option value="keep">literal hex</option><option value="ramp">rotate with @1..@10</option></select></div>
+  <div><label for="vote">Temporal vote</label><select id="vote"><option value="1">on (adjacency-gated)</option><option value="0">off</option></select></div>
+  <div><button id="go" disabled>Encode</button></div>
+  <div><button id="save" disabled>Download .pxa.json</button></div>
+  <div><button id="rot">Rotate palette</button></div>
+</div>
+
+<div id="status" class="lede"></div>
+
+<h2>The same asset at five sizes</h2>
+<div class="sizes" id="sizes"></div>
+
+<h2>Palette</h2>
+<div class="swatches" id="sw"></div>
+
+<h2>Report</h2>
+<pre id="report">(nothing encoded yet)</pre>
+
+<script type="module">
+import { encode, decode, stats, cssVarFor } from '../assets/pxa-codec.mjs';
+import { detectGrid, sampleCells, buildPalette, assignFrames, hex } from './pxa/ingest.mjs';
+import BWPixel from '../assets/pxa.js';
+
+const $ = (id) => document.getElementById(id);
+const status = (s) => { $('status').textContent = s; };
+let current = null, clips = [];
+
+/* ── input ───────────────────────────────────────────────────────────────
+   A <video> plus a canvas is a complete frame extractor, so the browser path
+   needs no ffmpeg at all. Seeking (rather than playing and grabbing) is what
+   makes the frame times exact: a played clip hands you whatever frame the
+   compositor had, which is not the same thing as "every 1/12 of a second". */
+async function framesFromVideo(file, fps) {
+  const v = document.createElement('video');
+  v.muted = true; v.playsInline = true; v.preload = 'auto';
+  v.src = URL.createObjectURL(file);
+  await new Promise((ok, no) => { v.onloadedmetadata = ok; v.onerror = () => no(new Error('this file did not decode as video')); });
+  const c = document.createElement('canvas');
+  c.width = v.videoWidth; c.height = v.videoHeight;
+  const ctx = c.getContext('2d', { willReadFrequently: true });
+  const n = Math.max(1, Math.floor(v.duration * fps));
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    v.currentTime = Math.min(v.duration - 1e-3, (i + 0.5) / fps);
+    await new Promise((ok) => { v.onseeked = ok; });
+    ctx.drawImage(v, 0, 0);
+    out.push(ctx.getImageData(0, 0, c.width, c.height));
+    if (i % 4 === 0) status(`decoding frame ${i + 1} of ${n}…`);
+  }
+  URL.revokeObjectURL(v.src);
+  return out;
+}
+
+async function framesFromImages(files) {
+  const sorted = [...files].sort((a, b) => a.name.localeCompare(b.name, 'en', { numeric: true }));
+  const out = [];
+  for (const f of sorted) {
+    const bmp = await createImageBitmap(f);
+    const c = document.createElement('canvas');
+    c.width = bmp.width; c.height = bmp.height;
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(bmp, 0, 0);
+    out.push(ctx.getImageData(0, 0, bmp.width, bmp.height));
+    bmp.close();
+  }
+  return out;
+}
+
+let pending = null;
+async function take(files) {
+  const list = [...files];
+  if (!list.length) return;
+  const video = list.find((f) => /^video\//.test(f.type) || /\.(mp4|webm|mov|m4v)$/i.test(f.name));
+  status('reading…');
+  try {
+    pending = video ? { kind: 'video', file: video } : { kind: 'images', files: list.filter((f) => /image\//.test(f.type)) };
+    if (pending.kind === 'images' && !pending.files.length) throw new Error('no video and no images in that drop');
+    status(video ? `video ready: ${video.name}` : `${pending.files.length} images ready`);
+    $('go').disabled = false;
+  } catch (e) { status(String(e.message || e)); }
+}
+
+$('file').addEventListener('change', (e) => take(e.target.files));
+const drop = $('drop');
+drop.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('hot'); });
+drop.addEventListener('dragleave', () => drop.classList.remove('hot'));
+drop.addEventListener('drop', (e) => { e.preventDefault(); drop.classList.remove('hot'); take(e.dataTransfer.files); });
+
+/* ── encode ───────────────────────────────────────────────────────────── */
+
+$('go').addEventListener('click', async () => {
+  $('go').disabled = true;
+  try {
+    const fps = +$('fps').value, colors = +$('colors').value;
+    const imgs = pending.kind === 'video' ? await framesFromVideo(pending.file, fps) : await framesFromImages(pending.files);
+    if (!imgs.length) throw new Error('no frames');
+    status(`detecting the grid across ${Math.min(8, imgs.length)} frames…`);
+    await new Promise((r) => setTimeout(r, 0));
+
+    let grid, note = '';
+    const forced = /^(\d+)\s*x\s*(\d+)$/.exec($('cells').value.trim());
+    if (forced) {
+      grid = { cols: +forced[1], rows: +forced[2], px: imgs[0].width / +forced[1], py: imgs[0].height / +forced[2], ox: 0, oy: 0 };
+      note = 'grid forced by hand';
+    } else {
+      const g = detectGrid(imgs);
+      grid = g;
+      note = `lattice score ${g.scoreX.toFixed(2)} / ${g.scoreY.toFixed(2)}`
+        + (g.repaired ? ` · square-cell repair: ${g.repaired}` : '')
+        + (g.scoreX < 1.25 || g.scoreY < 1.25 ? ' · WEAK — set the grid by hand if the preview looks wrong' : '');
+    }
+
+    status('sampling cells…');
+    await new Promise((r) => setTimeout(r, 0));
+    const sampled = imgs.map((im) => sampleCells(im, grid));
+
+    const counts = new Map();
+    for (const f of sampled) for (let i = 0; i < f.cells.length; i += 4) {
+      const k = (Math.round(f.cells[i] / 4) << 12) | (Math.round(f.cells[i + 1] / 4) << 6) | Math.round(f.cells[i + 2] / 4);
+      const e = counts.get(k);
+      if (e) { e[0] += f.cells[i]; e[1] += f.cells[i + 1]; e[2] += f.cells[i + 2]; e[3]++; }
+      else counts.set(k, [f.cells[i], f.cells[i + 1], f.cells[i + 2], 1]);
+    }
+    const samples = [...counts.values()].map((e) => [e[0] / e[3], e[1] / e[3], e[2] / e[3], e[3]]);
+    const pal = buildPalette(samples, Math.min(colors, samples.length));
+    const grids = assignFrames(sampled, pal, { vote: $('vote').value === '1' });
+
+    let entries = pal.map(hex);
+    if ($('map').value === 'ramp') {
+      if (entries.length > 10) throw new Error(`the ridge ramp has 10 slots and this encode has ${entries.length} colours — drop Colours to 10`);
+      entries = entries.map((_, i) => `@${i + 1}`);
+    }
+
+    const doc = encode(grids, { w: grid.cols, h: grid.rows, fps, palette: entries });
+    decode(doc); // never hand out an asset that will not read back
+    current = doc;
+    $('save').disabled = false;
+
+    const s = stats(doc);
+    const json = JSON.stringify(doc);
+    $('report').textContent =
+      `grid        ${doc.w} x ${doc.h} cells   pitch ${grid.px.toFixed(2)} x ${grid.py.toFixed(2)} px\n` +
+      `detection   ${note}\n` +
+      `frames      ${s.frames} @ ${fps}fps = ${(s.frames / fps).toFixed(2)}s   ${s.keyframes} key / ${s.frames - s.keyframes} delta\n` +
+      `palette     ${doc.palette.length} entries from ${samples.length} distinct cell colours\n` +
+      `size        ${(json.length / 1024).toFixed(1)}KB of JSON — ${s.coded}B coded vs ${s.raw}B raw indices (${(100 * s.ratio).toFixed(0)}%)\n` +
+      `gzip-ish    JSON of this shape typically halves again over the wire\n`;
+
+    renderSwatches(doc);
+    mount(doc);
+    status('done — check every size below before you ship it. The numbers will look healthy for a grid detected one cell off.');
+  } catch (e) {
+    status('failed: ' + (e.message || e));
+    $('report').textContent = String(e.stack || e);
+  }
+  $('go').disabled = false;
+});
+
+$('save').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(current) + '\n'], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'clip.pxa.json'; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+
+/* ── preview ─────────────────────────────────────────────────────────── */
+
+const SIZES = [[32, 'thumb 32'], [64, 'chip 64'], [128, 'card 128'], [280, 'panel 280'], [520, 'hero 520']];
+
+function mount(doc) {
+  clips.forEach((c) => c.destroy());
+  clips = [];
+  const host = $('sizes');
+  host.textContent = '';
+  const ar = doc.h / doc.w;
+  for (const [px, label] of SIZES) {
+    const cell = document.createElement('div'); cell.className = 'cell';
+    const box = document.createElement('div'); box.className = 'box';
+    box.style.width = px + 'px'; box.style.height = Math.round(px * ar) + 'px';
+    const cap = document.createElement('p'); cap.className = 'cap'; cap.textContent = label;
+    cell.append(box, cap); host.append(cell);
+    clips.push(BWPixel.mount(box, doc, { fit: 'integer' }));
+  }
+}
+
+function renderSwatches(doc) {
+  const host = $('sw'); host.textContent = '';
+  doc.palette.forEach((e, i) => {
+    const d = document.createElement('div'); d.className = 'sw';
+    const v = cssVarFor(e);
+    d.style.background = e === '-' ? 'transparent' : v ? `var(${v})` : e;
+    d.title = `${i}: ${e}${v ? ` → var(${v})` : ''}`;
+    if (e === '-') d.textContent = '·';
+    host.append(d);
+  });
+}
+
+/* Rotate the ridge ramp by hand so "@N" assets can be checked without waiting
+   45 seconds for the engine to change group. Proving the recolour is the whole
+   reason the format stores indices. */
+let rot = 0;
+$('rot').addEventListener('click', () => {
+  rot += 47;
+  const r = document.documentElement;
+  for (let i = 1; i <= 10; i++) {
+    const l = 0.96 - (i - 1) * 0.085;
+    r.style.setProperty(`--bw-palette-${i}`, `oklch(${l.toFixed(3)} 0.09 ${(rot + i * 4) % 360})`);
+  }
+  window.dispatchEvent(new CustomEvent('bw:palettechange', { detail: { manual: true } }));
+});
+$('rot').click();
+</script>
+</body>
+</html>
