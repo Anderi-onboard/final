@@ -47,6 +47,7 @@
 
 import { sessionFromRequest } from '../_lib/session.js';
 import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk, consumeFreeReading, releaseFreeReading } from '../_lib/db.js';
+import { buildNode } from '../_lib/nodes/fill.js';
 import { PromptEngine } from '../_lib/prompt-engine.js';
 
 // Same-origin only. The old '*' let any page on the internet POST here; the
@@ -215,6 +216,32 @@ const DEMO_READING_ZH = [
 
 // The follow-up utility returns `Label | question` lines; the panel keeps its
 // static set if this fails, so the shape matters more than the wording.
+/* 四节点的离线样例。⚠️ 每一个都答**自己那一站的格式**,不是散文 ——
+   下游解析不到就会退回静态兜底,而那看起来像正常工作。
+   `tests/offline-mode.mjs` 钉着这条。 */
+const DEMO_M1 = [
+  'lang=Chinese',
+  'db=婚恋',
+  'ask=我和她还有没有可能,能不能并肩做事',
+  'hurt=0',
+  'flags=多个人'
+].join('\n');
+
+const DEMO_M2 = [
+  'lib=CLASS-RELATIONSHIP 凭=在一起',
+  'lib=TECH-RELATION-FLOW 凭=COMBINES',
+  'lib=TECH-VOID-BREAK 凭=XUN_EMPTY'
+].join('\n');
+
+const DEMO_M3 = [
+  '程=第3爻动而化绝,裁决梯第3步命中',
+  '法=JM-FLOW-001 生优先翻译为提供资源、机会、名分',
+  '实=他说「还」有可能,前面发生过什么由他给,盘上读不出来',
+  '推=这股劲还在,只是流向不在两人之间',
+  '',
+  '撑=1,2  驳=—  救=—  缺=盘上没有能定时间的爻,他也没问'
+].join('\n');
+
 const DEMO_FOLLOWUP = [
   'Gate | Who actually signs this off, and by when?',
   'Share | What is being taken before it reaches me, and is that fixed?',
@@ -382,6 +409,22 @@ export async function onRequestPost(context) {
       }
       if (role === 'qc') {
         return json({ text: 'PASS', model: 'offline', offline: true }, 200);
+      }
+      /* ⚠️ 四个节点各答自己的格式,不是散文。CLAUDE.md §5 记过这条:
+         全都回散文的话,下游会退回静态兜底**而且看起来像正常工作**。 */
+      if (role === 'm1') {
+        return json({ text: DEMO_M1, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'm2') {
+        return json({ text: DEMO_M2, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'm3') {
+        return json({ text: DEMO_M3, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'm4') {
+        const preset4 = zh ? DEMO_READING_ZH : DEMO_READING_EN;
+        if (body.stream === true) return demoStream(preset4, unitsRemaining);
+        return json({ text: preset4, model: 'offline', offline: true }, 200);
       }
       const preset = zh ? DEMO_READING_ZH : DEMO_READING_EN;
       if (body.stream === true) return demoStream(preset, unitsRemaining);
@@ -755,6 +798,14 @@ async function buildSystem({ body, env, product, mode, messages, offline }) {
   }
   if (role === 'qc') return { system: PromptEngine.QC_SYSTEM };
   if (role === 'router') return { system: PromptEngine.ROUTER_SYSTEM };
+
+  /* 四节点管线。M1 读问题;M2 拿盘面 feature 路由到库;M3 在开放的库里按卡把盘
+     变成这一卦的事;M4 说话。每一站的槽由 fill.js 填 —— 断法原文只在服务端,
+     浏览器拿不到,这条界线和 prompt-engine.js 08-14 搬进 _lib 是同一条。 */
+  if (role === 'm1' || role === 'm2' || role === 'm3' || role === 'm4') {
+    const built = buildNode(role, body);
+    if (built) return built;
+  }
 
   // Default: a reading. Route it from the question and assemble the stack.
   // The question is taken from `body.question` when the client sends it, and

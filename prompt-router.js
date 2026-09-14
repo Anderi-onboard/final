@@ -43,8 +43,14 @@
      and missing degrades silently (an intent call with no question still gets a
      well-formed prompt, just an empty one). `system` is deliberately absent:
      /api/claude rejects a client-supplied one outright. */
+  /* ⚠️ `board` / `features` / `ladder` / `relations` / `m1` / `m2` / `m3` 是四节点
+     管线要的。在此之前盘**只作为 JSON 文本混在 user 消息里**到服务端,于是服务端
+     手里没有结构化的盘 —— 断法匹配没地方跑:不能在浏览器跑(断法就是产品),
+     服务端又拿不到盘。加这几个字段是接线的第一步。
+     发出去的 `features` 只是状态名(XUN_EMPTY 这种),不是断法,所以这条界线没挪。 */
   var INTENT_FIELDS = ["question", "mode", "reading", "methodLabel",
-                       "lastQuestion", "lastReading", "max_tokens"];
+                       "lastQuestion", "lastReading", "max_tokens",
+                       "board", "features", "ladder", "relations", "m1", "m2", "m3"];
   function carryIntent(payload, input) {
     if (!input || typeof input !== "object") return payload;
     for (var i = 0; i < INTENT_FIELDS.length; i++) {
