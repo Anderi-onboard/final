@@ -223,7 +223,12 @@ export function detectAxis(img, axis, { maxCells = 256, minCells = 2, pitchHint 
  * → { cols, rows, cells: Float64Array(cols*rows*4) as r,g,b,a }
  * Core inset dodges the ringing that compression leaves on every cell edge.
  */
-export function sampleCells(img, grid, { inset = 0.28 } = {}) {
+export function sampleCells(img, grid, { inset = 0.28, shift = null } = {}) {
+  /* `shift` is a per-cell-row [dx, dy] in pixels, from tools/pxa/motion.mjs.
+     It moves the SAMPLING WINDOW, not the image — the content then lands on the
+     lattice instead of straddling it, and successive frames differ by a whole
+     number of cells by construction. See motion.mjs for why that is the whole
+     algorithm. */
   const { width: w, height: h, data } = img;
   const { cols, rows, px, py, ox, oy } = grid;
   const cells = new Float64Array(cols * rows * 4);
@@ -231,7 +236,8 @@ export function sampleCells(img, grid, { inset = 0.28 } = {}) {
   for (let cy = 0; cy < rows; cy++) {
     for (let cx = 0; cx < cols; cx++) {
       const x0 = oy === undefined ? 0 : 0; // (kept explicit below)
-      const sx = ox + cx * px, sy = oy + cy * py;
+      const sx = ox + cx * px + (shift ? shift[cy * 2] : 0);
+      const sy = oy + cy * py + (shift ? shift[cy * 2 + 1] : 0);
       let ax0 = Math.floor(sx + px * inset), ax1 = Math.ceil(sx + px * (1 - inset));
       let ay0 = Math.floor(sy + py * inset), ay1 = Math.ceil(sy + py * (1 - inset));
       if (ax1 <= ax0) { ax0 = Math.floor(sx + px / 2); ax1 = ax0 + 1; }

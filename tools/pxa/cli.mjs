@@ -23,6 +23,7 @@ import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { readPNG, writePNG } from './png.mjs';
 import { detectGrid, sampleCells, buildPalette, assignFrames, hex, rgbToOklab } from './ingest.mjs';
+import { estimateBands, snapShifts, describe } from './motion.mjs';
 import { encode, decode, stats, cssVarFor } from '../../assets/pxa-codec.mjs';
 
 export const USAGE = `pxa — build and inspect colour-cell animations.
@@ -42,6 +43,13 @@ encode options
   --alpha            treat near-transparent cells as transparent
   --hysteresis F     0..1, how much closer a new colour must be to switch (.3)
   --no-vote          disable the three-frame outlier vote
+  --snap [all|rows]  force whole-cell motion on drifting bands. Without it,
+                     content that drifts sub-cell makes edge cells alternate
+                     between two palette entries every frame. The drift estimate
+                     is always printed; "--snap 12-23" applies it to those cell
+                     rows only, because a still band with a small moving object
+                     inside it is not a translating band.
+  --bands N          how many independently-moving horizontal bands (default 6)
 
 \`preview\` writes the decoded frames back out as PNGs. That is the only honest
 way to sign off an encode: the numbers in \`inspect\` will happily look healthy
@@ -138,12 +146,61 @@ function cmdEncode() {
     }
   }
 
-  const sampled = [];
+  const images = [];
   for (const p of paths) {
     const img = readPNG(readFileSync(p));
     if (img.width !== first.width || img.height !== first.height) die(`${p} is ${img.width}x${img.height}, first frame is ${first.width}x${first.height}`);
-    sampled.push(sampleCells(img, grid));
+    images.push(img);
   }
+
+  /* Pixel-grid motion. Without it a surface drifting a third of a cell per
+     frame makes every edge cell alternate between two palette entries — which
+     reads as a video behind a mesh, not as pixel art. With it the content is
+     resampled onto the lattice and the frame-to-frame change is a whole number
+     of cells. */
+  /* ⭐ OFF by default, and reported anyway.
+     The algorithm is right for what it is — whole-band translation — and it
+     cannot reliably tell when it applies. Its failure mode is a small object
+     moving inside a still band: a three-cell sun stepping across a sky is real,
+     rhythmic motion, and snapping the whole sky to it damages everything else
+     in that band. Three rounds of gates (sharpness, explanation gain, rhythm)
+     each cut the false positives and none of them closed it.
+     So this follows the same rule as the grid itself: DO NOT DETECT WHAT YOU
+     CAN BE TOLD. The estimate is always printed, because you cannot decide
+     without it; applying it is your call, per band. */
+  let shifts = null;
+  const snapArg = flag('snap', null);
+  if (images.length > 1) {
+    const bands = estimateBands(images, grid, { bands: num('bands', 6) });
+    process.stderr.write(`pxa: whole-band drift, estimated over ${num('bands', 6)} bands\n${describe(bands, grid)}\n`);
+
+    if (snapArg) {
+      let pick = null;
+      if (snapArg !== true && String(snapArg) !== 'all') {
+        pick = new Set();
+        for (const part of String(snapArg).split(',')) {
+          const m = /^(\d+)(?:-(\d+))?$/.exec(part.trim());
+          if (!m) die(`--snap takes "all" or cell-row ranges like 12-23, got ${part}`);
+          for (let r = +m[1]; r <= (m[2] === undefined ? +m[1] : +m[2]); r++) pick.add(r);
+        }
+      }
+      for (const frame of bands) {
+        for (const b of frame) {
+          const inside = !pick || [...Array(b.r1 - b.r0)].some((_, k) => pick.has(b.r0 + k));
+          if (!inside) { b.dx = 0; b.dy = 0; b.confident = false; }
+        }
+      }
+      shifts = snapShifts(bands, grid);
+      process.stderr.write(`pxa: motion snapped to whole cells${pick ? ` on rows ${snapArg}` : ''} — `
+        + `content is resampled onto the lattice, so frames differ by a whole number of cells\n`);
+    } else if (bands[bands.length - 1].some((b) => Math.abs(b.dx / grid.px) > 0.75)) {
+      process.stderr.write('pxa: a band drifts more than a cell over this clip. Without --snap it will move '
+        + 'SUB-CELL, and edge cells will alternate between two palette entries every frame — a video behind a '
+        + 'mesh rather than pixel art. Pass --snap (or --snap <rows>) to force whole-cell motion.\n');
+    }
+  }
+
+  const sampled = images.map((img, t) => sampleCells(img, grid, { shift: shifts ? shifts[t] : null }));
 
   // One palette for the whole clip. Weight each distinct cell colour by how
   // often it occurs so a large flat sky does not get the same say as a

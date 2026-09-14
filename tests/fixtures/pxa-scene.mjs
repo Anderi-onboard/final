@@ -85,3 +85,30 @@ export function damagedFrame(g, seed, strength, F) {
 
 
 export const truthOf = (F) => Array.from({ length: N }, (_, t) => truthFrame(t, F.W, F.H));
+
+/* ── sub-cell drift ──────────────────────────────────────────────────────
+   The scene translating by a FRACTIONAL number of cells per frame, rendered
+   with smooth edges. This is what a video model hands you, and it is the case
+   a hard grid and a locked palette both fail to fix: the content is between
+   cells, so every edge cell alternates between two palette entries as the edge
+   sweeps across it. Hard-edged rendering does NOT reproduce it — the first
+   version of this fixture used nearest-neighbour and measured zero flicker,
+   which made the defect look solved when it had not been provoked. */
+export function driftFrame(art, t, F, driftCellsPerFrame) {
+  const { W, H, OW, OH } = F;
+  const px = OW / W, py = OH / H;
+  const d = driftCellsPerFrame * t;
+  const data = new Uint8Array(OW * OH * 4);
+  const at = (a, b) => PAL[art[Math.min(H - 1, Math.max(0, b)) * W + ((a % W) + W) % W]];
+  for (let Y = 0; Y < OH; Y++) for (let X = 0; X < OW; X++) {
+    const fx = X / px - d - 0.5, fy = Y / py - 0.5;
+    const x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0;
+    const c00 = at(x0, y0), c10 = at(x0 + 1, y0), c01 = at(x0, y0 + 1), c11 = at(x0 + 1, y0 + 1);
+    const p = (Y * OW + X) * 4;
+    for (let k = 0; k < 3; k++) {
+      data[p + k] = (c00[k] * (1 - tx) + c10[k] * tx) * (1 - ty) + (c01[k] * (1 - tx) + c11[k] * tx) * ty;
+    }
+    data[p + 3] = 255;
+  }
+  return { width: OW, height: OH, data };
+}
