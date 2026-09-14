@@ -95,7 +95,7 @@ export function canvasLines(grid, w, h, rgb, zoom) {
 
 /* ── state ───────────────────────────────────────────────────────────────── */
 
-export function openDoc(doc, name) {
+export function openDoc(doc, name, path = null) {
   const a = decode(doc);
   const churn = [0];
   for (let t = 1; t < a.frames.length; t++) {
@@ -104,15 +104,55 @@ export function openDoc(doc, name) {
     churn.push(n);
   }
   return {
-    name, doc, a, churn,
+    name, doc, a, churn, path,
     rgb: paletteRGB(a.palette),
     // zoom 0 means "fit": grow to the largest whole multiple the window holds.
     // A viewer that opens at 1× on a big terminal is showing a postage stamp
     // and making the reader do arithmetic to find the zoom key.
     frame: 0, playing: true, zoom: 0, acc: 0,
     bytes: JSON.stringify(doc).length,
-    message: ''
+    message: '',
+    /* ── editing ──────────────────────────────────────────────────────────
+       ⭐ The three edits worth having here are the three a person can only
+       judge by LOOKING: is that colour right, does the loop start in the right
+       place, does it end in the right place. Anything that needs precision —
+       moving a cell, redrawing a shape — belongs in an image editor, and
+       pretending otherwise would produce a bad one of those.
+       `sel` is the selected palette slot (-1 = none), `typing` is a hex being
+       entered, `in`/`out` are the trim points, `undo` holds whole palettes
+       because a palette is tiny and a partial undo is worse than none. */
+    sel: -1, typing: null, in: 0, out: a.frames.length - 1,
+    undo: [], dirty: false, saved: null, confirmQuit: false
   };
+}
+
+/** A palette entry as it should appear on screen. */
+function entryLabel(e) { return e === '-' ? 'transparent' : e; }
+
+/** Snapshot for undo. Cheap: a palette and two integers. */
+function mark(st) {
+  st.undo.push({ palette: st.a.palette.slice(), in: st.in, out: st.out });
+  if (st.undo.length > 64) st.undo.shift();
+  st.dirty = true;
+}
+
+/** Rebuild the derived colour table after a palette edit. */
+function repalette(st) { st.rgb = paletteRGB(st.a.palette); }
+
+/** Rotating slots, in the order `r` cycles them. */
+const ROTATING = ['@1', '@2', '@3', '@4', '@5', '@6', '@7', '@8', '@9', '@10',
+  '@sky', '@water', '@gem', '@cloudbody', '@ink-sky', '@ink-ridge'];
+
+/**
+ * Apply the edits and hand back a document ready to write.
+ * ⚠️ Trim is applied by RE-ENCODING the kept frames, not by slicing the string
+ * array. Frame `in` is almost always a delta frame, and a delta with no
+ * keyframe in front of it decodes to nothing — the codec is right to throw, and
+ * a "save" that writes a file which will not open is the worst kind of save.
+ */
+export function editedDoc(st) {
+  const kept = st.a.frames.slice(st.in, st.out + 1);
+  return encode(kept, { w: st.a.w, h: st.a.h, fps: st.a.fps, palette: st.a.palette });
 }
 
 /** Keys are a pure transition so they can be driven from a test. Returns
@@ -130,24 +170,88 @@ export function openDoc(doc, name) {
  * number because the way out is the last thing to go.
  */
 export const KEYS = [
-  { keys: [' '], hint: 'space', label: 'play / pause', drop: 2 },
-  { keys: ['left', 'right'], hint: '←→', label: 'step one frame', drop: 3 },
-  { keys: ['+', '=', '-', '_'], hint: '+−', label: 'zoom in / out', drop: 4 },
-  { keys: ['f'], hint: 'f', label: 'fit to the window', drop: 5 },
+  { keys: [' '], hint: 'space', short: 'play', label: 'play / pause', drop: 2 },
+  { keys: ['left', 'right'], hint: '←→', short: 'frame', label: 'step one frame', drop: 3 },
+  { keys: ['+', '=', '-', '_'], hint: '+−', short: 'zoom', label: 'zoom in / out', drop: 4 },
+  { keys: ['f'], hint: 'f', short: 'fit', label: 'fit to the window', drop: 5 },
   { keys: ['home'], hint: null, label: 'back to frame 1', drop: 99 },
-  { keys: ['q', '\x03', '\x1b'], hint: 'q', label: 'quit (also Esc, Ctrl-C)', drop: 1 }
+  { keys: ['p'], hint: 'p', short: 'slot', label: 'pick the next palette slot', drop: 6 },
+  { keys: ['c'], hint: null, label: 'type a hex colour for the picked slot', drop: 99 },
+  { keys: ['r'], hint: null, label: 'cycle the picked slot through the rotating vars', drop: 99 },
+  { keys: ['['], hint: '[]', short: 'trim', label: 'trim the loop to start / end here', drop: 7 },
+  { keys: [']'], hint: null, label: 'trim the loop to end here', drop: 99 },
+  { keys: ['\\'], hint: null, label: 'clear the trim', drop: 99 },
+  { keys: ['u'], hint: null, label: 'undo the last edit', drop: 99 },
+  { keys: ['w'], hint: 'w', short: 'write', label: 'write the edits back to the file', drop: 8 },
+  { keys: ['q', '\x03', '\x1b'], hint: 'q', short: 'quit', label: 'quit (also Esc, Ctrl-C)', drop: 1 }
 ];
 
 /** The key table as `pxa help tui` prints it. */
+/** Printable name for a key the footer has no short hint for. */
+const KEY_NAME = { ' ': 'space', '\r': 'enter', '\x1b': 'esc', '\x03': 'ctrl-c', left: '←', right: '→' };
 export function keyHelp() {
-  const w = Math.max(...KEYS.map((k) => (k.hint || k.keys[0]).length));
-  return KEYS.map((k) => `  ${(k.hint || 'home').padEnd(w + 3)}${k.label}`).join('\n');
+  const shown = KEYS.map((k) => k.hint || KEY_NAME[k.keys[0]] || k.keys[0]);
+  const w = Math.max(...shown.map((x) => x.length));
+  return KEYS.map((k, i) => `  ${shown[i].padEnd(w + 3)}${k.label}`).join('\n');
 }
 
 export function handleKey(st, key) {
   const n = st.a.frames.length;
+
+  /* ⭐ Typing a colour swallows every key until Enter or Escape. A modal state
+     that does not visibly own the keyboard is how someone types "c00" and
+     finds they have stepped a frame and quit. The status line says so while
+     this is on. */
+  if (st.typing !== null) {
+    if (key === '\r' || key === '\n') {
+      const hex = st.typing.replace(/^#/, '');
+      if (/^[0-9a-f]{6}$/i.test(hex) || /^[0-9a-f]{3}$/i.test(hex)) {
+        const full = hex.length === 3 ? hex.split('').map((c) => c + c).join('') : hex;
+        mark(st);
+        st.a.palette[st.sel] = `#${full.toLowerCase()}`;
+        repalette(st);
+        st.message = `slot ${st.sel} → #${full.toLowerCase()}`;
+      } else if (st.typing === '' || st.typing === '-') {
+        mark(st);
+        st.a.palette[st.sel] = '-';
+        repalette(st);
+        st.message = `slot ${st.sel} → transparent`;
+      } else {
+        // ⚠️ Say what was wrong with it. "invalid" makes the reader guess
+        // whether the problem was the #, the length, or the letters.
+        st.message = `"${st.typing}" is not a colour — 6 hex digits (e7c86a), 3 (ec6), or empty for transparent`;
+      }
+      st.typing = null;
+      return true;
+    }
+    if (key === '\x1b') { st.typing = null; st.message = 'cancelled'; return true; }
+    if (key === '\x7f' || key === '\b') { st.typing = st.typing.slice(0, -1); return true; }
+    if (key === '\x03') return false;
+    if (/^[0-9a-fA-F#-]$/.test(key) && st.typing.length < 7) st.typing += key;
+    return true;
+  }
+
+  // Anything other than a second q means they carried on, so the warning is
+  // spent. Leaving it armed would turn a later, deliberate q into a silent one.
+  if (key !== 'q' && st.confirmQuit) { st.confirmQuit = false; st.message = ''; }
+
   switch (key) {
-    case 'q': case '\x03': case '\x1b': return false;
+    // Escape steps back out of a selection before it quits — a key that means
+    // two things must do the reversible one first.
+    case '\x1b': if (st.sel >= 0) { st.sel = -1; st.message = ''; return true; } return false;
+    /* ⚠️ Unsaved edits are not thrown away in silence. One more q does it, so
+       nobody is trapped — but the only warning a person gets about losing work
+       must come BEFORE they lose it, not in the shape of a file that turns out
+       to be unchanged. Ctrl-C is exempt: that key means "stop now" everywhere
+       else and re-teaching it here would be its own surprise. */
+    case 'q':
+      if (st.dirty && !st.confirmQuit) {
+        st.confirmQuit = true;
+        st.message = 'unsaved edits — w to write them, q again to discard';
+        return true;
+      }
+      return false;
+    case '\x03': return false;
     case ' ': st.playing = !st.playing; st.message = st.playing ? '' : 'paused'; break;
     case 'right': st.playing = false; st.frame = (st.frame + 1) % n; break;
     case 'left': st.playing = false; st.frame = (st.frame - 1 + n) % n; break;
@@ -157,7 +261,74 @@ export function handleKey(st, key) {
     case '+': case '=': st.zoom = Math.min(12, (st.shown || 1) + 1); break;
     case '-': case '_': st.zoom = Math.max(1, (st.shown || 1) - 1); break;
     case 'f': st.zoom = 0; st.message = 'fit'; break;
+
+    case 'p':
+      st.sel = (st.sel + 1) % st.a.palette.length;
+      st.message = `slot ${st.sel}: ${entryLabel(st.a.palette[st.sel])}`;
+      break;
+    case 'c':
+      if (st.sel < 0) { st.message = 'pick a slot first — press p'; break; }
+      st.typing = '';
+      break;
+    case 'r': {
+      if (st.sel < 0) { st.message = 'pick a slot first — press p'; break; }
+      const cur = ROTATING.indexOf(st.a.palette[st.sel]);
+      mark(st);
+      st.a.palette[st.sel] = ROTATING[(cur + 1) % ROTATING.length];
+      repalette(st);
+      st.message = `slot ${st.sel} → ${st.a.palette[st.sel]} (follows the page's colour group)`;
+      break;
+    }
+    case '[':
+      mark(st);
+      st.in = st.frame;
+      if (st.out < st.in) st.out = n - 1;
+      st.message = `loop starts at frame ${st.in + 1}`;
+      break;
+    case ']':
+      mark(st);
+      st.out = st.frame;
+      if (st.in > st.out) st.in = 0;
+      st.message = `loop ends at frame ${st.out + 1}`;
+      break;
+    case '\\':
+      mark(st); st.in = 0; st.out = n - 1; st.message = 'trim cleared';
+      break;
+    case 'u': {
+      const u = st.undo.pop();
+      if (!u) { st.message = 'nothing to undo'; break; }
+      st.a.palette = u.palette; st.in = u.in; st.out = u.out;
+      repalette(st);
+      st.dirty = st.undo.length > 0;
+      st.message = 'undone';
+      break;
+    }
+    case 'w': {
+      if (!st.dirty) { st.message = 'nothing changed'; break; }
+      try {
+        st.saved = editedDoc(st);
+        writeFileSync(st.path, JSON.stringify(st.saved));
+        st.bytes = JSON.stringify(st.saved).length;
+        /* The undo stack is NOT cleared. Saving is not a decision to keep the
+           edit forever — someone writes it, looks at the result, and wants the
+           previous colour back. `dirty` is what tracks unsaved changes. */
+        st.dirty = false;
+        st.doc = st.saved;
+        st.message = `written to ${st.name} — ${st.a.frames.length === st.out - st.in + 1 ? '' : ''}`
+          + `${st.out - st.in + 1} frames, ${st.a.palette.length} colours`;
+      } catch (e) {
+        // A failed write must not look like a successful one.
+        st.message = `could not write: ${e.message}`;
+      }
+      break;
+    }
     default: break;
+  }
+  // Stepping outside the trimmed range is confusing while trimming, so the
+  // player wraps within it.
+  if (st.playing || key === 'left' || key === 'right') {
+    if (st.frame > st.out) st.frame = st.in;
+    if (st.frame < st.in) st.frame = st.out;
   }
   return true;
 }
@@ -198,16 +369,27 @@ export function render(st, cols, rows) {
      down here and the canvas overruns it: the picture eats the key hints and
      the screen scrolls on every redraw. Now the only number is `foot.length`,
      which cannot be wrong. */
-  const frameLabel = `${DIM}frame${RESET}    ${pad(`${st.frame + 1}/${a.frames.length}`, 8)}`;
+  const trimmed = st.in > 0 || st.out < a.frames.length - 1;
+  const frameLabel = `${DIM}frame${RESET}    ${pad(`${st.frame + 1}/${a.frames.length}`, 8)}`
+    + (trimmed ? `${ACCENT}loop ${st.in + 1}-${st.out + 1}${RESET}  ` : '');
   const max = Math.max(1, ...st.churn);
+  /* ⭐ The sparkline is where the trim has to be visible: frames outside it are
+     drawn as a low rule rather than their real height, so the kept range reads
+     as a shape and not as two numbers somewhere else on the screen. */
   const spark = st.churn.map((c, i) => {
-    const ch = SPARK[Math.min(7, Math.round((c / max) * 7))];
-    return i === st.frame ? `${ACCENT}${ch}${RESET}` : `${DIM}${ch}${RESET}`;
+    const inRange = i >= st.in && i <= st.out;
+    const ch = inRange ? SPARK[Math.min(7, Math.round((c / max) * 7))] : '\u2581';
+    if (i === st.frame) return `${ACCENT}${ch}${RESET}`;
+    return inRange ? `${DIM}${ch}${RESET}` : `${DIM}\x1b[2m${ch}${RESET}`;
   }).join('');
 
   let sw = '';
   st.rgb.forEach((c, i) => {
-    sw += c ? `${fg(c)}██${RESET}` : `${DIM}··${RESET}`;
+    /* ⚠️ The selection is drawn with BRACKETS, not with a background colour.
+       Marking the picked swatch by tinting it changes the one thing the reader
+       is looking at to judge the colour. */
+    const body = c ? `${fg(c)}██${RESET}` : `${DIM}··${RESET}`;
+    sw += i === st.sel ? `${ACCENT}[${RESET}${body}${ACCENT}]${RESET}` : ` ${body} `;
     if (i < st.rgb.length - 1) sw += ' ';
   });
   const rotating = a.palette.filter((e) => cssVarFor(e)).length;
@@ -219,10 +401,20 @@ export function render(st, cols, rows) {
      disappear. Quit is priority 1 and survives to the last column; the rest go
      in reverse order of how badly they are needed. */
   /* Built from KEYS so the footer cannot drift from what the keys actually do.
-     Only the ones with a hint appear; `home` works without taking a slot. */
-  const SHORT = { 'play / pause': st.playing ? 'pause' : 'play', 'step one frame': 'frame',
-    'zoom in / out': 'zoom', 'fit to the window': 'fit', 'quit (also Esc, Ctrl-C)': 'quit' };
-  const allKeys = KEYS.filter((k) => k.hint).map((k) => [k.hint, SHORT[k.label] || k.label, k.drop]);
+     Only the ones with a hint appear; the rest work without taking a slot.
+     ⚠️ The short form is a FIELD, not a lookup keyed on the long label. It was
+     a lookup, and adding keys whose labels were not in it silently put whole
+     sentences in the footer — which pushed the line past the width and made the
+     "written to <file>" confirmation the thing that got dropped. */
+  const allKeys = KEYS.filter((k) => k.hint).map((k) => [
+    k.hint,
+    k.keys[0] === ' ' && st.playing ? 'pause' : (k.short || k.label),
+    /* ⭐ `w` is the FIRST hint to go when nothing has been edited and nearly the
+       last once something has. A fixed order had it dropping before "fit" at
+       ordinary widths, so the one key that keeps your work was the one key not
+       on screen at the moment you had work to keep. */
+    k.keys[0] === 'w' ? (st.dirty ? 1.5 : 8) : k.drop
+  ]);
   const sep = `${DIM}  ·  ${RESET}`;
   const hintLine = (ks) => ks.map(([k, v]) => `${k} ${DIM}${v}${RESET}`).join(sep);
   let keys = allKeys.slice();
@@ -249,11 +441,27 @@ export function render(st, cols, rows) {
        guard be dropped while the thing it guarded stayed, and the two smeared
        back together at exactly the sizes where space was tightest. */
     ['', 3.5],
-    [`${DIM}palette${RESET}  ${sw}${rotating ? `${DIM}   ${rotating} rotating${RESET}` : ''}`, 4],
+    [`${DIM}palette${RESET}  ${sw}`
+      + (st.sel >= 0 ? `${ACCENT}   ${st.sel} ${entryLabel(a.palette[st.sel])}${RESET}`
+        : (rotating ? `${DIM}   ${rotating} rotating${RESET}` : '')), 4],
     [`${DIM}coded${RESET}    ${DIM}${s.coded} B of ${s.raw} · ${s.frames - s.keyframes} delta`, 5],
     ['', 7],
-    [hintLine(keys) + (st.message && visibleWidth(hintLine(keys)) + 5 + st.message.length <= cols
-      ? `${DIM}     ${st.message}${RESET}` : ''), 1]
+    /* ⚠️ While a colour is being typed the hints are REPLACED, not decorated.
+       A modal state that leaves the normal hints on screen is how someone
+       types "c00" and wonders why the frame stepped: the keys really do mean
+       something else now, so the screen has to say only that. */
+    [st.typing !== null
+      ? `${ACCENT}colour${RESET} #${st.typing}${ACCENT}▁${RESET}   ${DIM}enter to set · esc to cancel · `
+        + `empty for transparent${RESET}`
+      /* ⚠️ When both do not fit, the MESSAGE wins and the hints go. The hints
+         are always true and always available; the message is the only report
+         of something that just happened — and the first casualty of the old
+         rule was "written to <file>", the confirmation for the one action that
+         touches the disk. A save with no confirmation is how you find out by
+         reopening the file. */
+      : (st.message && visibleWidth(hintLine(keys)) + 5 + visibleWidth(st.message) > cols)
+        ? clipVisible(`${ACCENT}${st.message}${RESET}`, cols)
+        : hintLine(keys) + (st.message ? `${DIM}     ${st.message}${RESET}` : ''), 1]
   ];
   // Shed rows until the chrome alone fits, worst-priority first. The canvas may
   // end up with nothing; a viewer with no picture and working keys is usable,
@@ -282,7 +490,7 @@ export function render(st, cols, rows) {
   const coded = foot.findIndex((f) => f[1] === 5);
   if (coded >= 0) {
     foot[coded][0] = `${DIM}coded${RESET}    ${DIM}${s.coded} B of ${s.raw} · ${s.frames - s.keyframes} delta`
-      + ` · zoom ${zoom}×${st.zoom === 0 ? ' fit' : ''}`
+      + `${trimmed ? ` · ${st.out - st.in + 1} kept` : ''} · zoom ${zoom}×${st.zoom === 0 ? ' fit' : ''}`
       /* ⚠️ Say when the picture is CROPPED. At 1× a 320-cell-wide clip in an
          80-column window shows a quarter of itself, and the word "fit" beside
          it reads as "this is all of it, sized to the window". The whole claim
@@ -361,7 +569,10 @@ export function run(st) {
   const period = 1000 / st.a.fps;
   const timer = setInterval(() => {
     if (!st.playing || st.a.frames.length < 2) return;
-    st.frame = (st.frame + 1) % st.a.frames.length;
+    // ⚠️ Wrap inside the trim, not around the whole clip: a trim you cannot see
+    // play is a number, not an edit, and the only way to judge a loop point is
+    // to watch it come round.
+    st.frame = st.frame >= st.out ? st.in : st.frame + 1;
     draw();
   }, period);
   draw();
@@ -373,7 +584,8 @@ export function cmdTui(target) {
   /* One reader for every command — see doc.mjs. This used to have its own,
      with its own wording for the same four failures. */
   const doc = readDoc(target, 'tui');
-  run(openDoc(doc, basename(resolve(target))));
+  const path = resolve(target);
+  run(openDoc(doc, basename(path), path));
 }
 
 void writeFileSync; void readdirSync; void join; void encode;

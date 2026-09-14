@@ -217,12 +217,20 @@ const freshState = () => {
   render(st, 80, 24);
   return st;
 };
+/* ⚠️ EVERY piece of state a key can touch, not the three the viewer had before
+   editing existed. A snapshot that watches only frame/zoom/playing declares
+   every palette and trim key dead — which is the same failure this check was
+   written to catch, pointed at itself. */
+const snap = (st) => JSON.stringify({
+  f: st.frame, z: st.zoom, p: st.playing, sel: st.sel, typing: st.typing,
+  in: st.in, out: st.out, pal: st.a.palette, msg: st.message
+});
 for (const k of KEYS) {
   for (const key of k.keys) {
     const st = freshState();
-    const before = JSON.stringify({ f: st.frame, z: st.zoom, p: st.playing });
+    const before = snap(st);
     const cont = handleKey(st, key);
-    const after = JSON.stringify({ f: st.frame, z: st.zoom, p: st.playing });
+    const after = snap(st);
     ok(cont === false || before !== after,
       `the key ${JSON.stringify(key)} is documented as "${k.label}" but pressing it changes nothing. `
       + `A key list that documents keys the handler does not accept is worse than no list: it sends `
@@ -255,9 +263,9 @@ for (const c of cased) {
    check above would pass for any string at all. */
 {
   const st = freshState();
-  const before = JSON.stringify({ f: st.frame, z: st.zoom, p: st.playing });
+  const before = snap(st);
   const cont = handleKey(st, 'Z');
-  ok(cont !== false && before === JSON.stringify({ f: st.frame, z: st.zoom, p: st.playing }),
+  ok(cont !== false && before === snap(st),
     'an undocumented key changes state, so the "does this key do anything" check cannot fail');
 }
 const st2 = freshState();
