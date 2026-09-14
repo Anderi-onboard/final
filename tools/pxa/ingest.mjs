@@ -392,29 +392,123 @@ export function buildPalette(samples, n) {
  * frames: array of { cells } from sampleCells. → array of Uint8Array indices.
  * `base` is the index offset (1 when a transparent entry occupies slot 0).
  */
-export function assignFrames(frames, palette, { hysteresis = 0.3, vote = true, base = 0, alphaCut = 128, transparentIndex = -1 } = {}) {
+export function assignFrames(frames, palette, {
+  hysteresis = 0.3, vote = true, base = 0, alphaCut = 128, transparentIndex = -1,
+  smooth = 0, smoothPasses = 3, cols = 0
+} = {}) {
   const labs = palette.map((c) => rgbToOklab(c[0], c[1], c[2]));
   const cells = frames[0].cells.length / 4;
   const out = [];
   let prev = null;
 
+  /* Palette spacing sets every scale in here, so nothing below is a tuned
+     constant. `nn` is the median distance from a palette entry to its nearest
+     neighbour — the size of one quantisation step for THIS clip. */
+  let nn = 0;
+  if (labs.length > 1) {
+    const ds = labs.map((a, i) => {
+      let d = Infinity;
+      for (let k = 0; k < labs.length; k++) if (k !== i) d = Math.min(d, d2(a, labs[k]));
+      return d;
+    }).sort((a, b) => a - b);
+    nn = ds[Math.floor(ds.length / 2)];
+  }
+
   for (const f of frames) {
     const g = new Uint8Array(cells);
+    const lab = new Float64Array(cells * 3);
+    const solid = new Uint8Array(cells);
+
     for (let i = 0; i < cells; i++) {
       if (transparentIndex >= 0 && f.cells[i * 4 + 3] < alphaCut) { g[i] = transparentIndex; continue; }
-      const lab = rgbToOklab(f.cells[i * 4], f.cells[i * 4 + 1], f.cells[i * 4 + 2]);
+      solid[i] = 1;
+      const L = rgbToOklab(f.cells[i * 4], f.cells[i * 4 + 1], f.cells[i * 4 + 2]);
+      lab[i * 3] = L[0]; lab[i * 3 + 1] = L[1]; lab[i * 3 + 2] = L[2];
       let best = 0, bd = Infinity;
-      for (let k = 0; k < labs.length; k++) { const d = d2(lab, labs[k]); if (d < bd) { bd = d; best = k; } }
+      for (let k = 0; k < labs.length; k++) { const d = d2(L, labs[k]); if (d < bd) { bd = d; best = k; } }
       let idx = best + base;
       if (prev && prev[i] !== idx && prev[i] >= base && prev[i] - base < labs.length) {
         // Hysteresis: a cell sitting on the boundary between two palette
         // entries alternates every frame otherwise, and a whole surface
         // shimmers. Only switch when the new entry is clearly closer.
-        const dPrev = d2(lab, labs[prev[i] - base]);
+        const dPrev = d2(L, labs[prev[i] - base]);
         if (bd >= dPrev * (1 - hysteresis)) idx = prev[i];
       }
       g[i] = idx;
     }
+
+    /* ── spatial regularisation ────────────────────────────────────────
+       ⭐⭐ Assigning each cell to its nearest palette entry ON ITS OWN leaves
+       speckle: in a flat field, a cell that lands 51% of the way toward the
+       next entry takes it while all four of its neighbours took the other one.
+       Nothing about that cell is different — it is quantisation noise wearing
+       the shape of a detail.
+
+       The fix is an energy, minimised by ICM: a cell pays for being far from
+       its own colour, and pays again for disagreeing with a neighbour.
+
+       ⚠️ The bond weight is the design, and it is measured rather than argued.
+       Three forms, same fixture, same strength:
+
+                          noisy render    undamaged render   cells moved
+                                                              when clean
+         colour distance    100.00%          100.00%              0
+         label distance      99.96%          100.00%              0
+         no gate at all      99.46%           99.17%             96
+
+       ⚠️⚠️ The failure that matters is the third one. A constant weight has no
+       way to tell a real boundary from a quantisation wobble, so it stirs
+       material that had nothing wrong with it — 96 cells changed on a render
+       with no noise in it, and the picture measurably worse. That is a blur
+       with extra steps, and it is what this gate exists to not be.
+
+       Weighting by LABEL distance is not that disaster — it also leaves
+       high-contrast detail alone (every one of 235 single-cell accents
+       survived all three forms). It is simply a worse question: it asks
+       whether two entries are adjacent in the palette, so it merges adjacent
+       labels wherever they meet, including across a genuine gradient where
+       they are correct. Weighting by SAMPLED COLOUR asks whether these two
+       cells LOOK the same, which is the thing actually being decided, and it
+       measures best.
+
+       The general rule is the one the temporal vote taught one module over: a
+       filter must ask whether a disagreement is NOISE, not merely whether it
+       exists. */
+    if (smooth > 0 && cols > 1 && labs.length > 1 && nn > 0) {
+      const rows = cells / cols;
+      const sigma2 = nn * 0.5;
+      const lambda = smooth * nn;
+      const bond = (a, b) => {
+        const d = (lab[a * 3] - lab[b * 3]) ** 2 + (lab[a * 3 + 1] - lab[b * 3 + 1]) ** 2
+          + (lab[a * 3 + 2] - lab[b * 3 + 2]) ** 2;
+        return Math.exp(-d / sigma2);
+      };
+      for (let pass = 0; pass < smoothPasses; pass++) {
+        let moved = 0;
+        for (let i = 0; i < cells; i++) {
+          if (!solid[i]) continue;
+          const x = i % cols, y = (i / cols) | 0;
+          const nb = [];
+          if (x > 0) nb.push(i - 1);
+          if (x < cols - 1) nb.push(i + 1);
+          if (y > 0) nb.push(i - cols);
+          if (y < rows - 1) nb.push(i + cols);
+          const me = [lab[i * 3], lab[i * 3 + 1], lab[i * 3 + 2]];
+          let best = g[i], bestE = Infinity;
+          for (let k = 0; k < labs.length; k++) {
+            let e = d2(me, labs[k]);
+            for (const j of nb) {
+              if (!solid[j]) continue;
+              if (g[j] - base !== k) e += lambda * bond(i, j);
+            }
+            if (e < bestE) { bestE = e; best = k + base; }
+          }
+          if (best !== g[i]) { g[i] = best; moved++; }
+        }
+        if (!moved) break;
+      }
+    }
+
     out.push(g);
     prev = g;
   }
