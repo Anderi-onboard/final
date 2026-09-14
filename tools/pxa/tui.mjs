@@ -18,7 +18,8 @@
  *   pxa tui <file.pxa.json>     play and inspect an encoded animation
  *   pxa tui <frames-dir>        encode with live parameters, write when happy
  */
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
+import { writeFileSync, readdirSync } from 'node:fs';
+import { readDoc } from './doc.mjs';
 import { join, basename, resolve } from 'node:path';
 import { decode, encode, stats, cssVarFor } from '../../assets/pxa-codec.mjs';
 
@@ -116,6 +117,33 @@ export function openDoc(doc, name) {
 
 /** Keys are a pure transition so they can be driven from a test. Returns
  *  false when the key means "quit". */
+/**
+ * ⭐ THE key table. The hint line at the bottom of the screen, `pxa help tui`,
+ * and handleKey all have to agree, and they did not: the help documented four
+ * keys that were never implemented (`.` `,` `g` `p`) and omitted one that was
+ * (`home`), because it was written from memory in a different file. A key list
+ * is exactly the kind of second list this repo keeps paying for.
+ *
+ * `keys` are what handleKey must accept; `hint` is the short label for the
+ * footer (null = not shown, it still works); `drop` is how readily the footer
+ * gives that hint up when the terminal is narrow — `q quit` has the lowest
+ * number because the way out is the last thing to go.
+ */
+export const KEYS = [
+  { keys: [' '], hint: 'space', label: 'play / pause', drop: 2 },
+  { keys: ['left', 'right'], hint: '←→', label: 'step one frame', drop: 3 },
+  { keys: ['+', '=', '-', '_'], hint: '+−', label: 'zoom in / out', drop: 4 },
+  { keys: ['f'], hint: 'f', label: 'fit to the window', drop: 5 },
+  { keys: ['home'], hint: null, label: 'back to frame 1', drop: 99 },
+  { keys: ['q', '\x03', '\x1b'], hint: 'q', label: 'quit (also Esc, Ctrl-C)', drop: 1 }
+];
+
+/** The key table as `pxa help tui` prints it. */
+export function keyHelp() {
+  const w = Math.max(...KEYS.map((k) => (k.hint || k.keys[0]).length));
+  return KEYS.map((k) => `  ${(k.hint || 'home').padEnd(w + 3)}${k.label}`).join('\n');
+}
+
 export function handleKey(st, key) {
   const n = st.a.frames.length;
   switch (key) {
@@ -190,13 +218,11 @@ export function render(st, cols, rows) {
      one key a reader needs when nothing else is working was the FIRST thing to
      disappear. Quit is priority 1 and survives to the last column; the rest go
      in reverse order of how badly they are needed. */
-  const allKeys = [
-    ['space', st.playing ? 'pause' : 'play', 2],
-    ['←→', 'frame', 3],
-    ['+−', 'zoom', 4],
-    ['f', 'fit', 5],
-    ['q', 'quit', 1]
-  ];
+  /* Built from KEYS so the footer cannot drift from what the keys actually do.
+     Only the ones with a hint appear; `home` works without taking a slot. */
+  const SHORT = { 'play / pause': st.playing ? 'pause' : 'play', 'step one frame': 'frame',
+    'zoom in / out': 'zoom', 'fit to the window': 'fit', 'quit (also Esc, Ctrl-C)': 'quit' };
+  const allKeys = KEYS.filter((k) => k.hint).map((k) => [k.hint, SHORT[k.label] || k.label, k.drop]);
   const sep = `${DIM}  ·  ${RESET}`;
   const hintLine = (ks) => ks.map(([k, v]) => `${k} ${DIM}${v}${RESET}`).join(sep);
   let keys = allKeys.slice();
@@ -330,20 +356,10 @@ export function run(st) {
 /* ── entry ───────────────────────────────────────────────────────────────── */
 
 export function cmdTui(target) {
-  const path = resolve(target);
-  let stat;
-  try { stat = statSync(path); }
-  catch { console.error(`pxa: ${target} does not exist`); process.exit(1); }
-
-  if (stat.isDirectory()) {
-    console.error('pxa: live encoding in the terminal is not built yet — encode first, then open the result:\n'
-      + `  pxa encode ${target} -o out.pxa.json\n  pxa tui out.pxa.json`);
-    process.exit(1);
-  }
-  let doc;
-  try { doc = JSON.parse(readFileSync(path, 'utf8')); }
-  catch (e) { console.error(`pxa: ${target} is not readable JSON — ${e.message}`); process.exit(1); }
-  run(openDoc(doc, basename(path)));
+  /* One reader for every command — see doc.mjs. This used to have its own,
+     with its own wording for the same four failures. */
+  const doc = readDoc(target, 'tui');
+  run(openDoc(doc, basename(resolve(target))));
 }
 
 void writeFileSync; void readdirSync; void join; void encode;

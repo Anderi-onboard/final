@@ -19,10 +19,12 @@
  * only the second can prove the painted pixels equal the declared colours.
  */
 import { chromium } from 'playwright-core';
-import { readFileSync } from 'node:fs';
+import { readDoc } from './doc.mjs';
 
-const doc = JSON.parse(readFileSync(process.argv[2], 'utf8'));
-const lit = JSON.parse(readFileSync(process.argv[3], 'utf8'));
+/* Same reader as the CLI — a filename typed at this tool fails the same four
+   ways it fails at `pxa inspect`, so it should say the same four things. */
+const doc = readDoc(process.argv[2], 'inspect');
+const lit = readDoc(process.argv[3], 'inspect');
 const browser = await chromium.launch({ executablePath: process.env.CHROME, args: ['--no-sandbox'] });
 const out = [];
 const say = (ok, msg) => { out.push((ok ? 'PASS  ' : 'FAIL  ') + msg); };

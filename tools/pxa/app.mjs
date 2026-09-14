@@ -27,7 +27,7 @@ import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
 import { statSync, readFileSync } from 'node:fs';
 import { resolve, basename, extname } from 'node:path';
-import { main as runCommand, USAGE } from './cli.mjs';
+import { main as runCommand, USAGE, COMMANDS, nearest } from './cli.mjs';
 
 import studioHtml from '../pxa-studio.html' with { type: 'text' };
 import fontsCss from '../../tokens/fonts.css' with { type: 'text' };
@@ -165,11 +165,18 @@ if (first === 'studio' || args.length === 0) {
   const target = args[1] ? resolve(args[1]) : null;
   serve(target ? { path: target, name: basename(target), type: MIME[extname(target).toLowerCase()] || 'application/octet-stream' } : null);
 } else if (first === '--help' || first === '-h' || first === 'help') {
-  console.log(USAGE);
-  console.log('\n  pxa studio [file]   open the browser studio, optionally with a clip loaded');
-  console.log('  pxa                 same as `pxa studio`');
-  console.log('\nOr drop a video or a folder of PNG frames straight onto the executable.');
-  hold();
+  /* ⚠️ `help <topic>` has to reach the same per-command text the CLI prints, or
+     the packaged build quietly answers a different question than the one the
+     docs describe. Only the bare form gets the studio lines appended, because
+     only the bare form is the "what is this" screen. */
+  if (args[1]) { runCommand(args); hold(); }
+  else {
+    console.log(USAGE);
+    console.log('\n  pxa studio [file]   open the browser studio, optionally with a clip loaded');
+    console.log('  pxa                 same as `pxa studio`');
+    console.log('\nOr drop a video or a folder of PNG frames straight onto the executable.');
+    hold();
+  }
 } else if (runCommand(args)) {
   // An explicit subcommand: ran to completion, say nothing more.
 } else {
@@ -181,7 +188,9 @@ if (first === 'studio' || args.length === 0) {
   try { stat = statSync(target); } catch { /* not a path either */ }
 
   if (!stat) {
-    console.error(`pxa: "${first}" is not a command and not a file or folder.\n`);
+    const near = nearest(first, COMMANDS);
+    console.error(`pxa: "${first}" is not a command and not a file or folder.`
+      + (near ? ` Did you mean "${near}"?` : '') + '\n');
     console.error(USAGE);
     hold();
   } else if (stat.isDirectory()) {

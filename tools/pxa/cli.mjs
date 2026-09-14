@@ -24,12 +24,36 @@ import { pathToFileURL } from 'node:url';
 import { readPNG, writePNG } from './png.mjs';
 import { detectGrid, sampleCells, buildPalette, assignFrames, hex, rgbToOklab } from './ingest.mjs';
 import { estimateBands, snapShifts, describe } from './motion.mjs';
-import { cmdTui } from './tui.mjs';
+import { cmdTui, keyHelp } from './tui.mjs';
 import { encodeGIF, EXACT_RATES } from './gif.mjs';
 import { composeSheet } from './sheet.mjs';
+import { readDoc } from './doc.mjs';
 import { encode, decode, stats, cssVarFor } from '../../assets/pxa-codec.mjs';
 
+/* ⭐ Two levels, because they answer different questions. Running `pxa` with
+   nothing is someone asking "what is this"; printing fifty lines of option
+   prose at them buries the six commands that are the answer. `pxa help
+   <command>` is someone asking "how do I do this one thing", and that is where
+   the detail belongs. The long text is not shortened, only moved. */
 export const USAGE = `pxa — build and inspect colour-cell animations.
+
+  pxa encode  <frames-dir> -o out.pxa.json   PNG frames → .pxa
+  pxa inspect <file.pxa.json>                grid, palette, size
+  pxa tui     <file.pxa.json>                play it in this terminal
+  pxa preview <file.pxa.json> -o <dir>       decode back to PNGs
+  pxa gif     <file.pxa.json> -o out.gif     → animated GIF
+  pxa sheet   <file.pxa.json> -o sheet.png   → spritesheet
+
+  pxa help <command>    what that one does, and every option it takes
+  pxa help              all of it at once
+
+A first run, start to finish:
+
+  ffmpeg -i clip.mp4 -vf fps=12 frames/%04d.png
+  pxa encode frames -o art.pxa.json
+  pxa tui art.pxa.json          ← look at it before trusting the numbers`;
+
+export const USAGE_FULL = `pxa — build and inspect colour-cell animations.
 
   pxa encode  <frames-dir> -o out.pxa.json [options]
   pxa inspect <file.pxa.json>
@@ -84,6 +108,103 @@ line; the studio decodes video in the browser and needs nothing):
 H3 renders at 24fps, so 12 and 8 and 6 are exact decimations of it — pick one
 of those and no frame is ever resampled from two source frames.`;
 
+/* One entry per command. `pxa help gif` is a question about GIFs, so the answer
+   is what GIF can and cannot carry — not a list of flags with no reasons. */
+export const HELP = {
+  encode: `pxa encode <frames-dir> -o out.pxa.json [options]
+
+Reads the PNGs in a directory in numeric order, finds the colour-cell lattice,
+builds a palette and writes a .pxa.
+
+  -o, --out <file>   where to write (required)
+  --cells WxH        set the grid by hand instead of detecting it
+  --colors N         palette size (default 16)
+  --fps N            declared frame rate (default 12)
+  --every N          keep every Nth frame
+  --map ramp|keep    "ramp" maps the palette onto --bw-palette-1..10 so the
+                     animation rotates with the site's colour groups (max 10)
+  --alpha            treat near-transparent cells as transparent
+  --hysteresis F     0..1, how much closer a new colour must be to switch (.3)
+  --smooth F         0..1, spatial regularisation (default 0.6; 0 disables)
+  --no-vote          disable the three-frame outlier vote
+  --snap [all|rows]  force whole-cell motion on drifting bands
+  --bands N          independently-moving horizontal bands (default 6)
+
+--smooth in one paragraph: a cell pays for being far from its own colour AND
+for disagreeing with a neighbour, but the bond weight follows how similar the
+two cells LOOK — so a real colour edge feels no pressure and only flat-field
+speckle merges. Measured: zero cells moved on clean material at an exact
+palette; 99.83% to 100% on a noisy render, and a quarter off the file.
+
+--snap in one paragraph: content that drifts by less than a cell makes edge
+cells alternate between two palette entries every frame. The drift estimate is
+always printed whether or not you ask for the snap. "--snap 12-23" applies it
+to those cell rows only, because a still band with a small moving object in it
+is not a translating band.
+
+⭐ After encoding, LOOK at it — \`pxa tui\` or \`pxa preview\`. The numbers in
+\`inspect\` stay healthy for a grid detected one cell off: it round-trips its
+own mistake perfectly.`,
+
+  inspect: `pxa inspect <file.pxa.json>
+
+Prints the grid, the lattice score, the frame and palette counts and the size.
+
+⚠️ A healthy-looking inspect does NOT mean the encode is right. A grid detected
+one cell off scores well and round-trips its own error. Use \`tui\` or
+\`preview\` to sign anything off.`,
+
+  tui: `pxa tui <file.pxa.json>
+
+Plays it here, in this terminal. A pixel grid and a terminal grid are the same
+object, so one character cell carries two pixels with the upper half block —
+nothing is scaled and nothing is approximated. The fastest way to answer "did
+this encode right".
+
+${keyHelp()}`,
+
+  preview: `pxa preview <file.pxa.json> -o <dir> [--scale 8]
+
+Decodes every frame back to a PNG. This is the honest sign-off: the numbers in
+\`inspect\` will look fine for a grid that was found one cell off, because it
+round-trips its own mistake. Look at the pictures.`,
+
+  gif: `pxa gif <file.pxa.json> -o out.gif [--scale 6] [--fps N]
+
+A .pxa and a GIF hold the same thing — one colour table and frames of indices
+— so this is a transfer, not a re-encode. Nothing is quantised, and only the
+part of each frame that changed is written.
+
+⚠️ GIF measures delay in hundredths of a second, so only rates dividing 100 fit:
+50, 25, 20, 10, 5, 4, 2, 1. Twelve does not (100/12 = 8.33) and the file plays
+at 12.5 — pxa says so rather than rounding in silence. Above 50fps it refuses,
+because browsers treat a delay under 2 centiseconds as 10 and turn a 60fps clip
+into a 10fps one.`,
+
+  sheet: `pxa sheet <file.pxa.json> -o sheet.png [--scale 4] [--cols N]
+
+One PNG, frames left to right then top to bottom. Every cell is exactly
+w*scale by h*scale and a short last row is padded with transparency rather
+than shortened, so frame N is always at a known offset — which is the only
+reason to want a sheet. Scaling is whole-pixel replication, never interpolation.`
+};
+
+/** "encoed" → "encode". Only for things close enough that a typo is likely. */
+export function nearest(word, options) {
+  const dist = (a, b) => {
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+    for (let j = 0; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+    return d[a.length][b.length];
+  };
+  let best = null, bestD = Infinity;
+  for (const o of options) { const v = dist(word, o); if (v < bestD) { bestD = v; best = o; } }
+  return bestD <= Math.max(2, Math.floor(word.length / 3)) ? best : null;
+}
+
+
 let argv = process.argv.slice(2);
 let cmd = argv[0];
 const flag = (name, dflt) => {
@@ -99,6 +220,8 @@ const has = (name) => argv.includes(`--${name}`);
 const num = (name, dflt) => { const v = flag(name, null); return v === null || v === true ? dflt : Number(v); };
 
 function die(msg) { console.error(`pxa: ${msg}`); process.exit(1); }
+
+
 
 function framePaths(dir) {
   if (!statSync(dir, { throwIfNoEntry: false })?.isDirectory()) die(`${dir} is not a directory of PNG frames`);
@@ -289,7 +412,7 @@ function cmdEncode() {
 /* ── inspect ────────────────────────────────────────────────────────────── */
 
 function cmdInspect() {
-  const doc = JSON.parse(readFileSync(argv[1], 'utf8'));
+  const doc = readDoc(argv[1], cmd);
   const d = decode(doc);
   const s = stats(doc);
   console.log(`${argv[1]}`);
@@ -336,8 +459,7 @@ function exportRGB(palette, what) {
 function cmdGif() {
   const out = flag('o', flag('out', null));
   if (!argv[1] || !out || out === true) die('usage: gif <file.pxa.json> -o out.gif [--scale 6] [--fps N]');
-  const doc = JSON.parse(readFileSync(argv[1], 'utf8'));
-  const d = decode(doc);
+  const d = decode(readDoc(argv[1], cmd));
   const scale = Math.max(1, num('scale', 6));
   const fps = num('fps', d.fps);
   const rgb = exportRGB(d.palette, 'GIF');
@@ -363,8 +485,7 @@ function cmdGif() {
 function cmdSheet() {
   const out = flag('o', flag('out', null));
   if (!argv[1] || !out || out === true) die('usage: sheet <file.pxa.json> -o sheet.png [--scale 4] [--cols N]');
-  const doc = JSON.parse(readFileSync(argv[1], 'utf8'));
-  const d = decode(doc);
+  const d = decode(readDoc(argv[1], cmd));
   const scale = Math.max(1, num('scale', 4));
   const rgb = exportRGB(d.palette, 'sheet');
   /* Layout lives in sheet.mjs so the contract can check it without running the
@@ -379,7 +500,7 @@ function cmdSheet() {
 /* ── preview ────────────────────────────────────────────────────────────── */
 
 function cmdPreview() {
-  const doc = JSON.parse(readFileSync(argv[1], 'utf8'));
+  const doc = readDoc(argv[1], cmd);
   const out = flag('o', flag('out', null));
   if (!out || out === true) die('usage: preview <file.pxa.json> -o <dir> [--scale 8]');
   const scale = Math.max(1, num('scale', 8));
@@ -418,9 +539,27 @@ void rgbToOklab;
 /** Returns true when the command was recognised. Exported so the packaged app
  *  (tools/pxa/app.mjs) dispatches through the SAME code as the CLI — a second
  *  copy of the argument handling is a second list to keep in step. */
+export const COMMANDS = ['encode', 'inspect', 'preview', 'tui', 'gif', 'sheet'];
+
 export function main(args) {
   argv = args;
   cmd = argv[0];
+
+  /* `--help` after a command means "tell me about THIS", which is the question
+     someone who already picked a command is asking. */
+  if (cmd && HELP[cmd] && (argv.includes('--help') || argv.includes('-h'))) {
+    console.log(HELP[cmd]); return true;
+  }
+  if (cmd === 'help' || cmd === '--help' || cmd === '-h') {
+    const topic = argv[1];
+    if (!topic) { console.log(USAGE_FULL); return true; }
+    if (HELP[topic]) { console.log(HELP[topic]); return true; }
+    const near = nearest(topic, COMMANDS);
+    console.error(`pxa: no command called "${topic}"${near ? ` — did you mean "${near}"?` : ''}\n`);
+    console.error(USAGE);
+    process.exit(1);
+  }
+
   if (cmd === 'encode') { cmdEncode(); return true; }
   if (cmd === 'inspect') { cmdInspect(); return true; }
   if (cmd === 'preview') { cmdPreview(); return true; }
@@ -442,5 +581,16 @@ const invokedDirectly = process.argv[1]
   && /[\\/]cli\.mjs$/.test(process.argv[1])
   && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (invokedDirectly) {
-  if (!main(process.argv.slice(2))) { console.error(USAGE); process.exit(1); }
+  if (!main(process.argv.slice(2))) {
+    /* ⚠️ An unknown command used to print exactly what no arguments printed, so
+       someone who typed `encoed` got the same wall of text as someone browsing
+       and had to spot their own typo in it. Say what was wrong first. */
+    const given = process.argv[2];
+    if (given) {
+      const near = nearest(given, COMMANDS);
+      console.error(`pxa: no command called "${given}"${near ? ` — did you mean "${near}"?` : ''}\n`);
+    }
+    console.error(USAGE);
+    process.exit(1);
+  }
 }
