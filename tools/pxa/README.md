@@ -162,6 +162,38 @@ node tools/pxa/cli.mjs preview art.pxa.json -o check --scale 8
 
 `--map ramp` 把调色板接到 `@1..@10` 上。**必须 ≤10 色**,超了 CLI 拒绝而不是悄悄合并两个颜色。
 
+## 导出:GIF 与雪碧图
+
+```bash
+node tools/pxa/cli.mjs gif   art.pxa.json -o art.gif  --scale 6 --fps 10
+node tools/pxa/cli.mjs sheet art.pxa.json -o art.png  --scale 4 --cols 8
+```
+
+⭐ **.pxa 和 GIF 装的是同一种东西** —— 一张全局色表 + 一串索引。把**视频**转成 GIF 是有损的,
+因为得先量化到 256 色;把 **.pxa** 转成 GIF 是**搬运**:索引原样过去,调色板变成色表。
+增量信息也没扔 —— GIF 每帧自带矩形,所以第一帧之后只发**变了的那块**。
+实测一个 24×16、只有一个记号在动的片子,增量矩形最小到 **6 px**。
+
+⚠️ **帧率:GIF 的延迟单位是百分之一秒,所以只有整除 100 的帧率装得下** ——
+50 · 25 · 20 · 10 · 5 · 4 · 2 · 1。**12 不在里面**(100/12 = 8.33),`pxa gif` 会**说出来**:
+文件实际跑 12.5fps。每个默默四舍五入的写入器,交付的都是一个快 4% 的动画,然后让观众怪浏览器。
+**50fps 以上直接拒绝** —— 低于 2 厘秒的延迟被浏览器广泛地当成 10 厘秒,一个 60fps 的片子会变成 10fps。
+
+⚠️⚠️ **disposal 1 收不回已经画上去的颜色。** 播放器遇到透明索引是**跳过**而不是写入,
+所以一个格子这一帧有色、下一帧透明,**它会永远留着旧颜色** —— 第一帧之后开的每个洞都不会出现,
+而片子照样播、照样像个动画。所以**要开洞的那一帧,它的前一帧用 disposal 2**(清回背景),
+两帧都整幅发。这需要一帧的前瞻,所以是提前算好的;**透明度不变化的片子(常见情形)一点都不付这笔钱**,
+增量矩形照旧。
+
+雪碧图:帧**从左到右、再从上到下**,每格正好 `w*scale × h*scale`,**最后一行不足就用透明补满,
+不是缩短** —— 一张最后一行高度不同的表没法用算术索引,而算术索引是要雪碧图的唯一理由。
+两者的缩放都是**整像素复制**,不是插值。
+
+**验证过两遍,而且第二遍抓到了第一遍抓不到的东西**:`tests/pxa-export.mjs` 自带一个 GIF 解码器
+(所以 `npm test` 不需要浏览器);`tools/pxa/verify-gif.mjs` 再拿 **Chromium 的** `ImageDecoder` 对一遍。
+⭐ **两个都要,因为我自己的解码器和我自己的编码器会在同一个误解上达成一致** —— 它们确实达成过:
+两边都用了编码器那条码宽增长规则,于是**这一对往返完美,而文件是坏的**。
+
 ## 格式
 
 ```json
@@ -227,7 +259,10 @@ canvas 不在名单上 —— 可是压在 `backdrop-filter` 底下的 canvas �
 ```bash
 node tests/pxa-format.mjs          # 格式 + 管线,21 条断言,npm test 会自动跑
 node tests/pxa-package.mjs         # 打包的两张名单,19 条断言
+node tests/pxa-export.mjs          # GIF + 雪碧图,33 条断言,自带解码器
+node tests/pxa-tui.mjs             # 终端布局,241 条断言,8 种尺寸
 CHROME=... node tools/pxa/verify-player.mjs a.pxa.json b.pxa.json   # 播放器,要浏览器
+node tools/pxa/verify-gif.mjs      # GIF 对 Chromium 的解码器,要浏览器
 ```
 
 ⭐ **契约里每一条都验证过"植入违规会变红"**,而且重植前先确认基线是绿的 ——

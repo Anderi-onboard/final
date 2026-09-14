@@ -25,6 +25,8 @@ import { readPNG, writePNG } from './png.mjs';
 import { detectGrid, sampleCells, buildPalette, assignFrames, hex, rgbToOklab } from './ingest.mjs';
 import { estimateBands, snapShifts, describe } from './motion.mjs';
 import { cmdTui } from './tui.mjs';
+import { encodeGIF, EXACT_RATES } from './gif.mjs';
+import { composeSheet } from './sheet.mjs';
 import { encode, decode, stats, cssVarFor } from '../../assets/pxa-codec.mjs';
 
 export const USAGE = `pxa — build and inspect colour-cell animations.
@@ -33,6 +35,8 @@ export const USAGE = `pxa — build and inspect colour-cell animations.
   pxa inspect <file.pxa.json>
   pxa preview <file.pxa.json> -o <dir> [--scale 8]
   pxa tui     <file.pxa.json>
+  pxa gif     <file.pxa.json> -o out.gif [--scale 6] [--fps N]
+  pxa sheet   <file.pxa.json> -o sheet.png [--scale 4] [--cols N]
 
 encode options
   -o, --out <file>   where to write (required)
@@ -306,6 +310,72 @@ function cmdInspect() {
   console.log(`  motion    ${(100 * churn / (s.cells * Math.max(1, d.frames.length - 1))).toFixed(1)}% of cells change per frame`);
 }
 
+/* ── export ─────────────────────────────────────────────────────────────── */
+
+/** Palette entries → RGB, null for transparent. Shared by both exporters so
+ *  they cannot disagree about what a rotating slot looks like outside a page. */
+function exportRGB(palette, what) {
+  let warned = false;
+  return palette.map((e) => {
+    if (e === '-') return null;
+    if (e[0] === '@') {
+      if (!warned) {
+        warned = true;
+        process.stderr.write(`pxa: this asset uses rotating palette slots, which have no colour outside a `
+          + `page that publishes them. The ${what} bakes them as mid-grey — re-encode without --map ramp `
+          + `if you want real colours in a file.\n`);
+      }
+      return [96, 100, 112];
+    }
+    const h = e.slice(1);
+    return h.length === 3 ? h.split('').map((c) => parseInt(c + c, 16))
+      : [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+  });
+}
+
+function cmdGif() {
+  const out = flag('o', flag('out', null));
+  if (!argv[1] || !out || out === true) die('usage: gif <file.pxa.json> -o out.gif [--scale 6] [--fps N]');
+  const doc = JSON.parse(readFileSync(argv[1], 'utf8'));
+  const d = decode(doc);
+  const scale = Math.max(1, num('scale', 6));
+  const fps = num('fps', d.fps);
+  const rgb = exportRGB(d.palette, 'GIF');
+
+  let g;
+  try { g = encodeGIF(d.frames, d.w, d.h, rgb, fps, { scale }); }
+  catch (e) { die(e.message); }
+
+  writeFileSync(out, g.buffer);
+  process.stderr.write(`pxa: wrote ${out} — ${d.w * scale}x${d.h * scale}, ${d.frames.length} frames, `
+    + `${(g.buffer.length / 1024).toFixed(1)} KB\n`);
+  if (!g.exact) {
+    /* ⚠️ Said out loud rather than rounded in silence. GIF delay is in
+       centiseconds, so a rate that does not divide 100 cannot be carried, and
+       every writer that stays quiet about it ships an animation running a few
+       percent off and lets the viewer blame their browser. */
+    process.stderr.write(`pxa: NOTE ${fps}fps is not expressible in GIF — delay is whole centiseconds, so this `
+      + `file plays at ${g.fps.toFixed(2)}fps (${g.delayCs}cs per frame). Rates GIF carries exactly: `
+      + `${EXACT_RATES.join(', ')}.\n`);
+  }
+}
+
+function cmdSheet() {
+  const out = flag('o', flag('out', null));
+  if (!argv[1] || !out || out === true) die('usage: sheet <file.pxa.json> -o sheet.png [--scale 4] [--cols N]');
+  const doc = JSON.parse(readFileSync(argv[1], 'utf8'));
+  const d = decode(doc);
+  const scale = Math.max(1, num('scale', 4));
+  const rgb = exportRGB(d.palette, 'sheet');
+  /* Layout lives in sheet.mjs so the contract can check it without running the
+     CLI — a second copy here is a second thing to keep in step. */
+  const s = composeSheet(d.frames, d.w, d.h, rgb, { scale, cols: num('cols', 0) });
+
+  writeFileSync(out, writePNG(s.W, s.H, s.px));
+  process.stderr.write(`pxa: wrote ${out} — ${s.cols}x${s.rows} frames of ${s.cellW}x${s.cellH}, `
+    + `${s.W}x${s.H} total, ${(statSync(out).size / 1024).toFixed(1)} KB\n`);
+}
+
 /* ── preview ────────────────────────────────────────────────────────────── */
 
 function cmdPreview() {
@@ -355,6 +425,8 @@ export function main(args) {
   if (cmd === 'inspect') { cmdInspect(); return true; }
   if (cmd === 'preview') { cmdPreview(); return true; }
   if (cmd === 'tui') { cmdTui(argv[1]); return true; }
+  if (cmd === 'gif') { cmdGif(); return true; }
+  if (cmd === 'sheet') { cmdSheet(); return true; }
   return false;
 }
 

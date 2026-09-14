@@ -48,7 +48,7 @@ const doc = encode(grids, { w: W, h: H, fps: 10, palette: ['-', '#2b3a55', '#5f8
 
 /* ── layout ─────────────────────────────────────────────────────────────── */
 
-for (const [cols, rows] of [[80, 24], [40, 20], [200, 60], [24, 12], [120, 40]]) {
+for (const [cols, rows] of [[80, 24], [40, 20], [200, 60], [24, 12], [120, 40], [80, 12], [60, 9], [100, 7]]) {
   const st = openDoc(doc, 'fixture.pxa.json');
   const out = render(st, cols, rows);
   const lines = out.split('\n');
@@ -73,6 +73,29 @@ for (const [cols, rows] of [[80, 24], [40, 20], [200, 60], [24, 12], [120, 40]])
       `a line carries a severed escape sequence at ${cols}x${rows}. The terminal then holds the last colour `
       + `it understood and everything after this line is painted in it.`);
   }
+
+  /* ⚠️⚠️ The footer must survive every size. The canvas is the only thing that
+     grows, so if its row budget is a hand-written constant rather than the
+     measured height of what is drawn below it, the picture quietly eats the key
+     hints and the whole screen scrolls on each redraw. Asserting the LAST line
+     is the hints line catches that at every size, including the ones where the
+     canvas would rather have the room. */
+  const plain = lines.map((l) => l.replace(/\x1b\[[0-9;]*[mK]/g, ''));
+  ok(plain[plain.length - 1].includes('quit'),
+    `at ${cols}x${rows} the last line is ${JSON.stringify(plain[plain.length - 1].slice(0, 40))}, not the key `
+    + `hints. The canvas row budget must be derived from the footer's measured height — a constant reserve `
+    + `drifts the moment a line is added below the picture.`);
+  ok(plain.some((l) => l.startsWith('frame')) && plain.some((l) => l.startsWith('palette')),
+    `at ${cols}x${rows} the frame or palette row was dropped`);
+
+  /* ⚠️ The sparkline's bars sit on the bottom of their cells and the palette
+     swatches fill theirs; on adjacent rows the two read as one smeared band.
+     They must not be neighbours. */
+  const fi = plain.findIndex((l) => l.startsWith('frame'));
+  const pi = plain.findIndex((l) => l.startsWith('palette'));
+  ok(pi - fi >= 2,
+    `at ${cols}x${rows} the frame strip and the palette swatches are on adjacent rows (${fi} and ${pi}). `
+    + `Low sparkline bars and full-height swatches touch across that boundary and read as one band.`);
 
   /* ⚠️ And the opposite failure, which "nothing is too wide" cannot see: a
      clipper that counts BYTES instead of visible characters makes every

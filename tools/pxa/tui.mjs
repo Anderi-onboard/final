@@ -154,57 +154,108 @@ export function fitZoom(w, h, cols, maxRows) {
  */
 export function render(st, cols, rows) {
   const { a } = st;
-  const L = [];
   const clip = (s) => (visibleWidth(s) <= cols ? s : clipVisible(s, cols));
 
-  // header
+  // ── header ──────────────────────────────────────────────────────────────
   const left = `${ACCENT}pxa${RESET}  ${BOLD}${st.name}${RESET}`;
   const right = `${DIM}${a.w}×${a.h} · ${a.frames.length} frames · ${a.fps}fps · ${(st.bytes / 1024).toFixed(1)} KB${RESET}`;
   const gap = cols - visibleWidth(left) - visibleWidth(right);
-  L.push(clip(gap > 1 ? left + ' '.repeat(gap) + right : left));
-  L.push('');
+  const head = [gap > 1 ? left + ' '.repeat(gap) + right : left, ''];
 
-  // canvas, zoomed to fit what is left after the chrome below it
-  const chrome = 7;
-  const maxRows = Math.max(2, rows - L.length - chrome);
-  const fit = fitZoom(a.w, a.h, cols, maxRows);
-  let zoom = st.zoom === 0 ? fit : st.zoom;
-  while (zoom > 1 && (a.w * zoom > cols || Math.ceil(a.h * zoom / 2) > maxRows)) zoom--;
-  st.shown = zoom;
-  const art = canvasLines(a.frames[st.frame], a.w, a.h, st.rgb, zoom);
-  for (const line of art.slice(0, maxRows)) L.push(clip(line));
-
-  L.push('');
-
-  // frame strip: per-frame churn, current frame marked
+  /* ── footer ───────────────────────────────────────────────────────────────
+     ⚠️⚠️ Built BEFORE the canvas, and its length measured rather than assumed.
+     This used to reserve a hand-written `chrome = 7` rows, which had to match
+     the number of lines actually pushed below the picture — a second list to
+     keep in step, and it was already off by one. Add a line of air anywhere
+     down here and the canvas overruns it: the picture eats the key hints and
+     the screen scrolls on every redraw. Now the only number is `foot.length`,
+     which cannot be wrong. */
+  const frameLabel = `${DIM}frame${RESET}    ${pad(`${st.frame + 1}/${a.frames.length}`, 8)}`;
+  const max = Math.max(1, ...st.churn);
   const spark = st.churn.map((c, i) => {
-    const max = Math.max(1, ...st.churn);
     const ch = SPARK[Math.min(7, Math.round((c / max) * 7))];
     return i === st.frame ? `${ACCENT}${ch}${RESET}` : `${DIM}${ch}${RESET}`;
   }).join('');
-  L.push(clip(`${DIM}frame${RESET}   ${pad(`${st.frame + 1}/${a.frames.length}`, 7)}${spark}`));
 
-  // palette
   let sw = '';
   st.rgb.forEach((c, i) => {
     sw += c ? `${fg(c)}██${RESET}` : `${DIM}··${RESET}`;
     if (i < st.rgb.length - 1) sw += ' ';
   });
   const rotating = a.palette.filter((e) => cssVarFor(e)).length;
-  const note = rotating ? `${DIM} ${rotating} rotating${RESET}` : '';
-  L.push(clip(`${DIM}palette${RESET} ${pad('', 1)}${sw}${note}`));
-
-  // per-frame cost
   const s = stats(st.doc);
-  L.push(clip(`${DIM}coded${RESET}   ${DIM}${s.coded}B vs ${s.raw}B raw · ${s.frames - s.keyframes} delta frames`
-    + ` · zoom ${zoom}×${st.zoom === 0 ? ' fit' : ''}${RESET}`));
 
-  L.push('');
-  const keys = [['space', st.playing ? 'pause' : 'play'], ['←→', 'frame'], ['+−', 'zoom'], ['f', 'fit'], ['q', 'quit']];
-  L.push(clip(keys.map(([k, v]) => `${k} ${DIM}${v}${RESET}`).join(`${DIM}  ·  ${RESET}`)
-    + (st.message ? `${DIM}     ${st.message}${RESET}` : '')));
+  /* ⚠️⚠️ Hints are dropped by priority, never clipped. A narrow terminal used to
+     truncate this line from the right, and `q quit` sits on the right — so the
+     one key a reader needs when nothing else is working was the FIRST thing to
+     disappear. Quit is priority 1 and survives to the last column; the rest go
+     in reverse order of how badly they are needed. */
+  const allKeys = [
+    ['space', st.playing ? 'pause' : 'play', 2],
+    ['←→', 'frame', 3],
+    ['+−', 'zoom', 4],
+    ['f', 'fit', 5],
+    ['q', 'quit', 1]
+  ];
+  const sep = `${DIM}  ·  ${RESET}`;
+  const hintLine = (ks) => ks.map(([k, v]) => `${k} ${DIM}${v}${RESET}`).join(sep);
+  let keys = allKeys.slice();
+  while (keys.length > 1 && visibleWidth(hintLine(keys)) > cols) {
+    let worst = 0;
+    for (let i = 1; i < keys.length; i++) if (keys[i][2] > keys[worst][2]) worst = i;
+    keys.splice(worst, 1);
+  }
 
-  return L.map((l) => l + '\x1b[K').join('\n');
+  /* Each row carries how readily it can be given up. When the window is too
+     short for everything, the CANVAS shrinks first and then these go in
+     priority order — never the other way round. Truncating the list from the
+     end (which is what slicing the assembled screen does) drops the footer,
+     and the footer is where the reader is told how to get out. */
+  const foot = [
+    ['', 9],
+    [frameLabel + spark, 3],
+    /* ⚠️ A blank line here is load-bearing, not spacing for its own sake. The
+       sparkline's low bars sit on the bottom of their cells and the palette
+       swatches fill theirs, so on adjacent rows the two read as one smeared
+       band — the marks touch and the eye cannot tell which row it is reading. */
+    /* ⚠️ 3.5, not 8. This blank is what keeps the sparkline off the swatches,
+       so it must outlive the row it protects — giving it a high number let the
+       guard be dropped while the thing it guarded stayed, and the two smeared
+       back together at exactly the sizes where space was tightest. */
+    ['', 3.5],
+    [`${DIM}palette${RESET}  ${sw}${rotating ? `${DIM}   ${rotating} rotating${RESET}` : ''}`, 4],
+    [`${DIM}coded${RESET}    ${DIM}${s.coded} B of ${s.raw} · ${s.frames - s.keyframes} delta`, 5],
+    ['', 7],
+    [hintLine(keys) + (st.message && visibleWidth(hintLine(keys)) + 5 + st.message.length <= cols
+      ? `${DIM}     ${st.message}${RESET}` : ''), 1]
+  ];
+  // Shed rows until the chrome alone fits, worst-priority first. The canvas may
+  // end up with nothing; a viewer with no picture and working keys is usable,
+  // one with a picture and no way out is not.
+  while (foot.length > 1 && head.length + foot.length > rows) {
+    let worst = 0;
+    for (let i = 1; i < foot.length; i++) if (foot[i][1] > foot[worst][1]) worst = i;
+    foot.splice(worst, 1);
+  }
+
+  // ── canvas, sized by what is actually left ──────────────────────────────
+  const maxRows = Math.max(0, rows - head.length - foot.length);
+  const fit = fitZoom(a.w, a.h, cols, maxRows);
+  let zoom = st.zoom === 0 ? fit : st.zoom;
+  while (zoom > 1 && (a.w * zoom > cols || Math.ceil(a.h * zoom / 2) > maxRows)) zoom--;
+  st.shown = zoom;
+  const art = canvasLines(a.frames[st.frame], a.w, a.h, st.rgb, zoom).slice(0, maxRows);
+
+  /* The zoom is only known after the canvas is sized, so the coded row's copy
+     of it is written now rather than left one redraw behind. */
+  const coded = foot.findIndex((f) => f[1] === 5);
+  if (coded >= 0) {
+    foot[coded][0] = `${DIM}coded${RESET}    ${DIM}${s.coded} B of ${s.raw} · ${s.frames - s.keyframes} delta`
+      + ` · zoom ${zoom}×${st.zoom === 0 ? ' fit' : ''}${RESET}`;
+  }
+
+  return [...head, ...art, ...foot.map((f) => f[0])]
+    .map((l) => clip(l) + '\x1b[K').join('\n');
 }
 
 /** Clip to a visible-character budget without cutting an escape sequence. */
