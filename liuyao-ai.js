@@ -91,16 +91,68 @@
       re:/合伙|合作|同事|同行|竞争|对手|分成|拆伙|partner|competitor/i }
   ];
 
-  /* Returns { key, second, why, matched }. `matched:false` means nothing in the
-     wording named a subject, so 世爻 stands in — a real answer for 自占, and a
-     flag everywhere else. */
-  function subjectKey(question){
+  /* ── M1 答了就听 M1 的(2026-09-14) ──────────────────────────────────
+     上面那张表是**领域分类器**,而分类正是 M1 那一站存在的全部理由。留着两套
+     分类器,它们迟早分歧,而分歧的那一次没人会看见 —— 因为这个函数的默认值是
+     世爻,**一个读不出来的默认和一个判定长得一模一样**,那正是上面这段注释
+     记的那次事故(「我明天考科目一能过吗」读成自占,说了「能过」)。
+
+     实测这条正则的缺口:「我和她还有可能吗」—— 婚恋那两条要
+     `我女朋友|我老婆|我妻子|追女|娶|女方`,「她」一个字都不在名单上,
+     于是 matched:false、退回世爻。**它诚实地报了,但用神仍然是错的。**
+     加一个「她」进正则只是把名单补长一格,下一个词照样漏 —— 名单不是答案。
+
+     所以:**`db` 来了就查表,没来才读措辞。** 措辞那条留着不是备份,是
+     M1 还没跑时(浏览器先摆盘、模型后说话)唯一能用的东西。
+     每条都报 `source`,因为上一次就是默认没报出来才活了那么久。 */
+  var DB_SUBJECT = {
+    "考试": { key:"parent",  second:"officer", why:"考试:父母为卷子成绩,官鬼为名次录取;子孙为剥官之神" },
+    "工作": { key:"officer", second:null,      why:"功名工作升迁:官鬼为职位、上头、竞争的那一头" },
+    "官司": { key:"officer", second:null,      why:"官司诉讼:官鬼为官方、对造、判决" },
+    "疾病": { key:"officer", second:null,      why:"疾病:官鬼为忧神,子孙为解忧之神(近病久病断法相反)" },
+    "求财": { key:"wealth",  second:null,      why:"求财生意:妻财为财本" },
+    "失物": { key:"wealth",  second:null,      why:"失物:妻财为失去的那件东西" },
+    "出行": { key:"self",    second:null,      why:"出行:世爻为行人自己" }
+    /* 婚恋不在表里 —— 取哪一边要先知道对方是谁,见 mateSide()。
+       「其他」也不在:它的意思就是 M1 没能定领域,那就该往下走读措辞。 */
+  };
+
+  /* 婚恋取的是**对方**那一爻:男占取妻财,女占取官鬼。`db=婚恋` 说不出这一条,
+     它只答领域。有性别就用性别;没有就读问题里指对方的那个字 ——
+     **读一个代词不是分类**,和上面那件事不是同一件。两样都没有时照旧
+     matched:false,并且把缺的是什么写出来,而不是替他挑一边。 */
+  function mateSide(q, gender){
+    var g = String(gender || "").toLowerCase();
+    if (/^(m|male|man|男)/.test(g))
+      return { key:"wealth",  second:null, why:"男占婚恋:妻财为对方", matched:true, source:"m1+性别" };
+    if (/^(f|female|woman|女)/.test(g))
+      return { key:"officer", second:null, why:"女占婚恋:官鬼为对方", matched:true, source:"m1+性别" };
+    /* 她先测 —— 「他」在中文里常作通指,「她」不会。 */
+    if (/她|女方|女朋友|老婆|妻子|媳妇|girlfriend|wife|\bher\b/i.test(q))
+      return { key:"wealth",  second:null, why:"婚恋,问的是她:妻财为对方", matched:true, source:"m1+称呼" };
+    if (/他|男方|男朋友|老公|丈夫|boyfriend|husband|\bhim\b|\bhis\b/i.test(q))
+      return { key:"officer", second:null, why:"婚恋,问的是他:官鬼为对方", matched:true, source:"m1+称呼" };
+    return { key:"self", second:null, matched:false, source:"m1",
+             why:"问的是婚恋,但没说对方是谁、也没有性别 —— 用神取不定,按自占取世爻" };
+  }
+
+  /* Returns { key, second, why, matched, source }. `matched:false` means nothing
+     named a subject, so 世爻 stands in — a real answer for 自占, and a flag
+     everywhere else. `hint` is M1's structured output: { db, gender }. */
+  function subjectKey(question, hint){
     var q = String(question || "");
+    var db = hint && hint.db ? String(hint.db).trim() : "";
+    if (db === "婚恋") return mateSide(q, hint && hint.gender);
+    if (DB_SUBJECT[db]) {
+      var d = DB_SUBJECT[db];
+      return { key:d.key, second:d.second, why:d.why, matched:true, source:"m1" };
+    }
     for (var i=0;i<SUBJECT_RULES.length;i++){
       var r = SUBJECT_RULES[i];
-      if (r.re.test(q)) return { key:r.key, second:r.second, why:r.why, matched:true };
+      if (r.re.test(q)) return { key:r.key, second:r.second, why:r.why, matched:true, source:"措辞" };
     }
-    return { key:"self", second:null, why:"问题没有点出别的主体,按自占取世爻", matched:false };
+    return { key:"self", second:null, matched:false, source:"默认",
+             why:"问题没有点出别的主体,按自占取世爻" };
   }
 
   /* ═══════════ 2. deriveRoles — 原神/忌神/仇神 by fixed rule ═══════════ */
@@ -857,6 +909,10 @@
     deriveRoles: deriveRoles,
     subjectKey: subjectKey,
     SUBJECT_RULES: SUBJECT_RULES,
+    DB_SUBJECT: DB_SUBJECT,
+    /* 关系行本来只在 distill() 内部用。四节点管线要把它单独发给 M3/M4
+       (M3 拿它当「盘上的关系」那一层),所以导出来 —— 一处计算,两处读。 */
+    relationLines: relationLines,
     interpret: interpret,
     buildMessages: buildMessages,   // exposed so the user can inspect/replace the prompt
     CATEGORY_YONGSHEN: CATEGORY_YONGSHEN,

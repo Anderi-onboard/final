@@ -287,7 +287,23 @@ const ALLOWED = {
 // `model` cannot raise it. Before this, `body.model` was honoured FIRST, which
 // meant an unauthenticated caller could ask for Opus on the free path and spend
 // the budget 120 times an hour per IP at the top rate.
-const UTILITY_ROLES = new Set(['router', 'qc', 'utility', 'intent', 'followup', 'followup_suggest']);
+/* ⚠️ **m1/m2/m3 在这里,而且这是一个计费判断,不是模型偏好。** 2026-09-14。
+   四节点管线把一次解读拆成四次调用,而 `guardRequest` 是按 `product` 分流的 ——
+   四次都带 `product:"sortis"`,于是**第一次调用(M1,一次 349 tok 的分类)
+   就把新用户那唯一一次免费解读花掉了**,后面三次各自去撞余额,而新用户余额是 0。
+   结果:新注册的人一卦都起不了。
+
+   这和 codex 那次加 reserve+cap 是**同一个后果**(CLAUDE.md §5 记着),
+   只是成因换了一个:那次是入场先要一整笔,这次是入场被收了四次门票。
+   **一次解读就是一次解读,不管它在里面调了几个模型。**
+
+   所以三个中间站按 utility 走:要 session、按 IP 限流、不动 ledger、不碰免费额度。
+   只有 M4 是那次解读。它们同时因此落在 UTILITY_MODEL 上 —— 那正是拆站要的东西
+   (拿 Opus 去做「把问题分到九个领域之一」,正是拆站要省掉的那笔钱)。
+   ⚠️ M3 做的是映射(读卡 → 词条),不是写作;它够不够用是**量出来**的事,
+   不是在这里拍的 —— 要抬就抬 UTILITY_MODEL,或者把 m3 单独摘出这个集合。 */
+const UTILITY_ROLES = new Set(['router', 'qc', 'utility', 'intent', 'followup', 'followup_suggest',
+                               'm1', 'm2', 'm3']);
 
 function isUtilityRole(body) {
   return UTILITY_ROLES.has(String(body.role || '').toLowerCase());
@@ -328,6 +344,9 @@ export async function onRequestPost(context) {
     if (!messages.length) return json({ error: 'no messages' }, 400);
 
     const product = String(body.product || '').toLowerCase();
+    /* 计费分流要用它,所以在这儿取一次 —— 下面离线分支里那个同名常量是这一个的
+       影子,留着不动是为了少动无关的行,两者读的是同一个字段。 */
+    const gateRole = String(body.role || '').toLowerCase();
     // mode "followup" = a question ON the existing casting (no new hexagram).
     // It changes only what the charge is labelled in the ledger — both modes
     // are billed the same way, from the tokens they actually use.
@@ -341,7 +360,7 @@ export async function onRequestPost(context) {
     // still shows in the ledger, and a ledger entry for a reading that was never
     // generated is worse than no entry at all.
     if (db && !offline) {
-      const gate = await guardRequest({ request, env, db, product, mode });
+      const gate = await guardRequest({ request, env, db, product, mode, role: gateRole });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.charge) chargeTo = gate.charge;
       if (gate.freeClaim) freeClaim = gate.freeClaim;
@@ -836,10 +855,16 @@ const CRISIS_TEXT = [
 // Auth + billing + rate-limit gate. Returns one of:
 //   { error: { status, body } }   — reject, never call OpenRouter
 //   { charge, unitsRemaining }    — cleared to run; bill it after it is written
-async function guardRequest({ request, env, db, product, mode }) {
+async function guardRequest({ request, env, db, product, mode, role }) {
   const session = await sessionFromRequest(request, env);
   const user = session ? await getUser(db, session.uid) : null;
   const reason = (mode === 'followup' ? 'follow:' : 'cast:') + product;
+
+  /* ⚠️ **角色说了算,不是 product。** 在这之前分流只看 `product`,而 product 是
+     客户端字段 —— 于是任何带上 `product:"sortis"` 的 utility 调用都会去花一次
+     免费解读。四节点管线让这件事从「理论上脆」变成「一定会发生」:四次调用
+     都带 product,第一次就把新用户的免费解读花掉。见 UTILITY_ROLES 上面那段。 */
+  if (UTILITY_ROLES.has(String(role || '').toLowerCase())) product = '';
 
   // Every generation settles against a real prepaid ledger.
   if ((product === 'sortis' || product === 'stria') && !user) {

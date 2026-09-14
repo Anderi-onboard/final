@@ -280,6 +280,59 @@
   }
 
   // ─── Main pipeline ────────────────────────────────────────────
+  /* ── 四节点管线 ─────────────────────────────────────────────────────────
+     在这之前是**一次调用**:一个模型同时做分类、取用神、检索、推理、写作。
+     现在拆成四站,理由写在 functions/_lib/nodes/prompts.js 的头注里 ——
+     一句话是「专模专事」,而「写句子」本身就是一件事,只归 M4。
+
+       M1  读问题     → lang / db / ask / hurt / flags
+       ↓   db 定用神(见 BWLiuYaoAI.subjectKey),用神定 roles,roles 定 features
+       M2  选库       → lib=…(两级 RAG 的第一级)
+       M3  取证       → 程/法/实/推 四层材料(第二级只在 M2 开的库里排)
+       M4  说话       → 解读本身,流式
+
+     ⚠️ **一站失败不静默。** 失败的那一站返回空串,它的槽在服务端填成
+        「(上一站没交材料)」——M4 因此说的是缺了东西,而不是假装有。
+        本仓库最贵的失败一直是同一个形状:降级了,却看起来在正常工作。 */
+  function runNode(role, product, input, notes) {
+    return makeComplete({ role: role, product: product })(input).then(function (t) {
+      return String(t || "").trim();
+    }, function (e) {
+      var why = (e && e.message) || String(e);
+      notes.push(role + " 失败:" + why);
+      if (window.console) console.warn("[prompt-router] node " + role + " failed:", why);
+      return "";
+    });
+  }
+
+  /* M1 的 `db=` 那一行。宽松解析:小模型偶尔多个空格、换个冒号,
+     为此整站退回正则猜领域不值得。服务端 fill.js 的 parseM1 是同一条规则。 */
+  function m1Db(text) {
+    var m = String(text || "").match(/^\s*db\s*[=:]\s*(.+)$/mi);
+    return m ? m[1].trim() : "";
+  }
+
+  /* `relationLines()` 返回的是「类别 → 若干行」的表(它本来是给 distill() 压进
+     board JSON 的)。M3/M4 要的是能读的文本,所以在这里摊平 ——
+     ⚠️ 摊的是**这个表的形状**,不是重算关系。关系只有一个算的地方。 */
+  function formatRelations(rel) {
+    if (!rel || typeof rel !== "object") return "";
+    if (rel.error) return String(rel.error);
+    var out = [];
+    for (var k in rel) {
+      if (!rel.hasOwnProperty(k)) continue;
+      var v = rel[k];
+      if (v == null || (Array.isArray(v) && !v.length) || v === "") continue;
+      if (Array.isArray(v)) {
+        out.push(k + ":");
+        v.forEach(function (x) { out.push("  " + (typeof x === "string" ? x : JSON.stringify(x))); });
+      } else {
+        out.push(k + ":" + (typeof v === "string" ? v : JSON.stringify(v)));
+      }
+    }
+    return out.join("\n");
+  }
+
   function interpretWithRouter(opts) {
     opts = opts || {};
     var question = opts.question || "";
@@ -322,12 +375,33 @@
         };
       }
 
+      /* ── 第一站 M1 ──────────────────────────────────────────────────────
+         M1 必须跑在摆角色之前,因为**用神由它的 `db=` 决定**。
+         在这之前用神是一条正则从问题里猜领域猜出来的 —— 而猜领域正是 M1 存在的
+         全部理由,留两套分类器只会分歧,且分歧的那一次没人看得见:
+         `subjectKey` 的默认是世爻,**一个读不出来的默认和一个判定长得一样**。
+         实测缺口:「我和她还有可能吗」—— 婚恋那两条要「我女朋友|我老婆|…」,
+         「她」一个字都不在名单上,于是退回世爻,而整篇解读照样写得出来。
+
+         跑不起来就退回原来的单次调用(stria、追问、以及任何一个模块没加载的
+         情况)——那条路今天仍然是对的,它只是没有证据这一层。 */
+      var useNodes = product === "sortis" && !!board && !mode &&
+        !!window.BWFeatures && !!window.BWVerdict &&
+        !!(window.BWLiuYaoAI && window.BWLiuYaoAI.relationLines);
+      var notes = [];
+      var m1Call = useNodes
+        ? runNode("m1", product,
+            { question: question, messages: [{ role: "user", content: question }] }, notes)
+        : Promise.resolve("");
+
+      return m1Call.then(function (m1Text) {
       // Step 3: Main reading. Derive the 用神/role map the board prompt needs
       // (deriveRoles produces roles.perLine — without it distill() throws and
       // the whole Sortis pipeline silently falls back to legacy).
       var boardData = "";
       var effectiveLang = lang || result.lang || "en";
       var AI = window.BWLiuYaoAI;
+      var node = { features: [], ladder: "", relations: "", m2: "", m3: "" };
       if (board && AI && AI.buildMessages) {
         try {
           /* THE SUBJECT COMES FROM THE QUESTION, not from a category string.
@@ -337,7 +411,11 @@
              was anchored on 世爻 regardless of what was asked. See
              BWLiuYaoAI.subjectKey for the measurement. opts.category is still
              honoured when a caller sets one explicitly. */
-          var subject = (AI.subjectKey ? AI.subjectKey(question) : { key: "self", matched: false });
+          /* M1 答了领域就听 M1 的;它没跑(或没答出来)才读措辞 —— 见
+             BWLiuYaoAI.subjectKey 里那段。`source` 报的就是这一次走了哪条。 */
+          var subject = (AI.subjectKey
+            ? AI.subjectKey(question, { db: m1Db(m1Text), gender: opts.gender })
+            : { key: "self", matched: false, source: "默认" });
           var priorKey = (opts.category && AI.CATEGORY_YONGSHEN && AI.CATEGORY_YONGSHEN[opts.category])
             || subject.key || "self";
           /* `board._roles ||` used to sit in front of this call. Nothing in the
@@ -359,7 +437,20 @@
           // QUESTION / CATEGORY / BOARD-facts portion that precedes the schema.
           var schemaAt = boardData.indexOf("Return ONLY valid minified JSON");
           if (schemaAt > 0) boardData = boardData.slice(0, schemaAt).trim();
+
+          /* 三样程序算出来的东西,喂给 M2/M3/M4。都是**这一盘的事实**,不是断法 ——
+             断法在服务端,浏览器一个字都拿不到。这条界线和 prompt-engine.js
+             08-14 搬进 _lib 是同一条。 */
+          if (useNodes) {
+            var F = window.BWFeatures.of(board, roles, subject);
+            node.features = (F && F.features || [])
+              .concat(window.BWFeatures.fromM1Flags(
+                (String(m1Text).match(/^\s*flags\s*[=:].*$/mi) || [""])[0]));
+            node.ladder = window.BWVerdict.format(window.BWVerdict.judge(board, roles, subject));
+            node.relations = formatRelations(AI.relationLines(board, roles, subject));
+          }
         } catch (e) {
+          if (useNodes) notes.push("盘面材料未算出:" + (e && e.message));
           if (window.console) console.warn("[prompt-router] board prompt build failed, using question only:", e && e.message);
         }
       }
@@ -391,11 +482,46 @@
           "This browser can't receive a streamed reading, and a reading is too long to arrive any other way."
         ));
       }
-      var mainCall = makeStreamComplete({
-        product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature
-      // No max_tokens: a reading's output budget is the server's to set, and a
-      // magic number here was driving the model from the least trustworthy place.
-      })({ question: question, messages: messages }, opts.onDelta);
+
+      /* ── 第二、三站:M2 选库 → M3 取证 ──────────────────────────────────
+         两级 RAG 的两级就是这两站。⚠️ **顺序是承重的**:M3 只能看到 M2 开的
+         那几个库的卡(收窄在服务端 fill.js 那一行),所以 M2 的答案必须先到。
+         并行发两个请求会让 M3 对着全部 29 张卡排序 —— 它不报错,只是把
+         「两级」退回成「一级」。 */
+      var nodePayload = function (extra) {
+        var p = {
+          question: question, features: node.features,
+          ladder: node.ladder, relations: node.relations, m1: m1Text,
+          messages: [{ role: "user", content: question }]
+        };
+        for (var k in extra) if (extra.hasOwnProperty(k)) p[k] = extra[k];
+        return p;
+      };
+      var evidence = !useNodes ? Promise.resolve(null)
+        : runNode("m2", product, nodePayload({}), notes).then(function (m2Text) {
+            node.m2 = m2Text;
+            return runNode("m3", product, nodePayload({ m2: m2Text }), notes);
+          }).then(function (m3Text) {
+            node.m3 = m3Text;
+            /* ⚠️ 失败的那一站在材料里留一句,不留空。M4 因此说的是缺了东西,
+               而不是拿着一个看不出来的半截管线假装完整。 */
+            if (notes.length) node.m3 = (node.m3 ? node.m3 + "\n\n" : "") + "⚠️ " + notes.join(";");
+            return m3Text;
+          });
+
+      var mainCall = evidence.then(function () {
+        /* ── 第四站 M4 ────────────────────────────────────────────────────
+           四节点跑起来时它就是解读本身(`role:"m4"`),材料从 M3 来;
+           没跑起来时退回原来那条单次调用,服务端照旧从问题装配整套提示词。 */
+        var meta = { product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature };
+        if (useNodes) meta.role = "m4";
+        var input = useNodes
+          ? nodePayload({ m3: node.m3, messages: messages })
+          : { question: question, messages: messages };
+        // No max_tokens: a reading's output budget is the server's to set, and a
+        // magic number here was driving the model from the least trustworthy place.
+        return makeStreamComplete(meta)(input, opts.onDelta);
+      });
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
@@ -478,6 +604,7 @@
           };
         });
       });
+      }); // ← M1 的 then:四节点的第一站跑完才摆角色(用神由它的 db= 决定)
     });
   }
 

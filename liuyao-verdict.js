@@ -342,7 +342,32 @@
     return out;
   }
 
-  var api = { judge: judge, stateOf: stateOf, reversalHexagram: reversalHexagram, EL_CN: EL_CN };
+  /* 梯子 → 一段能发给模型的文本。
+     ⚠️ 住在这里而不是在调用方,因为**梯子怎么读出来是梯子自己的事** ——
+     写在 prompt-router 里就成了第二份要跟着 steps 改的名单,而本仓库为
+     「两张名单」已经付过三次学费。
+
+     只发**开了的那几步**加定案点:五步全发的话,四条「没开」会和一条开了的
+     长得一样重,而模型分不出「查过了没事」和「查出了事」——
+     它是一条**顺序梯**,没开的那几步的全部意思就是「轮到下一步」。 */
+  function format(v) {
+    if (!v) return "";
+    var out = ["裁决:" + (v.verdict || "未定")];
+    [v.primary, v.second].forEach(function (L) {
+      if (!L) return;
+      out.push("");
+      out.push("【" + L.subject + "】" + (L.decisive ? "定案在第 " + L.decidedAt + " 步 · " + L.tone : "前三步无否决项"));
+      L.steps.forEach(function (s) {
+        if (!s.fired) return;
+        out.push("  第" + s.step + "步 " + s.rule + (s.tone ? "(" + s.tone + ")" : "") + ":" + (s.why || ""));
+      });
+      if (L.note) out.push("  " + L.note);
+    });
+    if (v.hiddenYong) out.push("", "伏神:" + v.hiddenYong.why);
+    return out.join("\n");
+  }
+
+  var api = { judge: judge, format: format, stateOf: stateOf, reversalHexagram: reversalHexagram, EL_CN: EL_CN };
   if (typeof window !== "undefined") window.BWVerdict = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();

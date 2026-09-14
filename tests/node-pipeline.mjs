@@ -13,9 +13,14 @@
       检索也能让上面四条全绿。
 */
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { buildNode, parseM1 } from "../functions/_lib/nodes/fill.js";
 import { RAG } from "../functions/_lib/doctrine/rag/data.js";
 import { selectLibraries, selectCards } from "../functions/_lib/doctrine/rag/retrieve.js";
+import { M4 } from "../functions/_lib/nodes/prompts.js";
+
+const ROOT = new URL("..", import.meta.url).pathname;
+const read = (p) => readFileSync(ROOT + p, "utf8");
 
 /* ── 防空转:数据层不许悄悄变空 ─────────────────────────────────────── */
 assert.ok(RAG.libs.length >= 11, `选库只剩 ${RAG.libs.length} 个 —— 数据层缩水了`);
@@ -99,4 +104,42 @@ const examCards = selectCards({
 assert.ok(examCards.length === 3, `考试库该开 3 张类型卡,开到 ${examCards.length} 张`);
 assert.ok(examCards.every((c) => c.doctrineId), "考试卡必须带 doctrineId —— 用神由程序按它取,模型不得自己定");
 
-console.log(`ok   node-pipeline — ${RAG.libs.length} 库 / ${RAG.cards.length} 卡,四站槽全填,两级收窄成立`);
+/* ── ⑤ 一次解读只收一次门票 ───────────────────────────────────────────────
+   四节点把一次解读拆成四次调用。`guardRequest` 是按 `product` 分流的,而四次
+   都带 `product:"sortis"` —— 不拦的话 **M1(一次分类调用)就把新用户那唯一一次
+   免费解读花掉了**,后面三站各自去撞余额,而新用户余额是 0:新注册的人一卦
+   都起不了。和 codex 那次加 reserve+cap 是同一个后果,成因换了一个。
+   CLAUDE.md §5:「改这里前先问 owner」。 */
+const claude = read("functions/api/claude.js");
+const utilSet = claude.match(/const UTILITY_ROLES = new Set\(\[([\s\S]*?)\]\)/);
+assert.ok(utilSet, "UTILITY_ROLES 找不到了 —— 这条契约扫的是它,改了名字就要改这里");
+for (const r of ["m1", "m2", "m3"]) {
+  assert.ok(new RegExp(`['"]${r}['"]`).test(utilSet[1]),
+    `${r} 不在 UTILITY_ROLES 里 —— 它会走 sortis 那条闸,`
+    + "第一次调用就花掉新用户的免费解读,而新用户余额是 0:一卦都起不了");
+}
+assert.ok(!/['"]m4['"]/.test(utilSet[1]),
+  "m4 进了 UTILITY_ROLES —— 它**就是**那次解读,不收它的钱等于整个产品免费");
+assert.ok(/UTILITY_ROLES\.has\(String\(role/.test(claude),
+  "guardRequest 不再按 role 分流了 —— 只看 product 的话,任何带 product 的 utility "
+  + "调用都会去花一次免费解读");
+assert.ok(/guardRequest\(\{[^}]*role:/.test(claude),
+  "调用 guardRequest 时没把 role 传进去 —— 里面那条按 role 的分流就永远读到 undefined");
+
+/* ── ⑥ M4 必须带着取象标记的格式 ─────────────────────────────────────────
+   ⚠️ 这条钉的是**页面**,不是提示词。`chat-app.js` 画象按钮、串联、追问面板,
+   全靠解读正文里的 `{词|符号}`;老栈里教这个的是 prompt-engine 的 xiang_chain,
+   新栈里只有 M4。M4 第一版 269 tok,读起来很干净 —— 而页面上每一个可点的东西
+   都会黑掉,解读照样 stream。**降级了却看起来在正常工作**,本仓库最贵的那种。
+   下次再给 M4 减肥,红的是这里,不是页面。 */
+const m4 = buildNode("m4", body).system;
+assert.ok(/\{实际的词\|符号\}/.test(m4), "M4 里没有取象标记的格式 —— 页面上的象按钮会全黑");
+assert.ok(/左边永远不许是术语/.test(m4), "M4 丢了「左边不许是术语」—— 这是这个标记唯一会出错的地方");
+assert.ok(/\{\{mark\}\}/.test(M4), "M4 模板里没有 {{mark}} 槽 —— 格式那段接不进去");
+/* 前端认哪几种符号,提示词就得允许哪几种。少一类,那一类标出来点不开。 */
+for (const sym of ["父母", "妻财", "官鬼", "世爻", "应爻"]) {
+  assert.ok(m4.includes(sym), `M4 的可用符号里没有「${sym}」—— 模型不会标它,前端也就画不出来`);
+}
+
+console.log(`ok   node-pipeline — ${RAG.libs.length} 库 / ${RAG.cards.length} 卡,四站槽全填,`
+  + "两级收窄成立,一次解读只收一次门票,M4 带着取象标记");

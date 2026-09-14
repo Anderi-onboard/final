@@ -10,7 +10,7 @@
    ⚠️ 第二条:**M1 的提示词里不出现任何 feature id**。M1 写中文 flags,
       翻成 id 在 `liuyao-features.js` 里做,一处。id 是程序侧的地址。
 */
-import { M1, M2, M3, M4 } from "./prompts.js";
+import { M1, M2, M3, M4, MARK } from "./prompts.js";
 import { retrieve, selectCards, librariesForModel, cardsForModel } from "../doctrine/rag/retrieve.js";
 
 const s = (v, max) => String(v == null ? "" : v).slice(0, max || 4000);
@@ -88,6 +88,7 @@ export function buildNode(node, body) {
         .replace("{{ladder}}", s(body.ladder, 6000) || "(裁决梯未运行)")
         .replace("{{evidence}}", s(body.m3, 8000) || "(上一站没交材料)")
         .replace("{{relations}}", s(body.relations, 6000) || "(关系未算)")
+        .replace("{{mark}}", MARK)
         .replace("{{voice}}", VOICE),
       userOverride: "讲给他听。"
     };
