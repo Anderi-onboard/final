@@ -270,14 +270,28 @@ export function render(st, cols, rows) {
   let zoom = st.zoom === 0 ? fit : st.zoom;
   while (zoom > 1 && (a.w * zoom > cols || Math.ceil(a.h * zoom / 2) > maxRows)) zoom--;
   st.shown = zoom;
-  const art = canvasLines(a.frames[st.frame], a.w, a.h, st.rgb, zoom).slice(0, maxRows);
+  const artAll = canvasLines(a.frames[st.frame], a.w, a.h, st.rgb, zoom);
+  const art = artAll.slice(0, maxRows);
+  // How much of the picture is actually on screen, in CELLS of the source.
+  const visCols = Math.min(a.w, Math.floor(cols / zoom));
+  const visRows = Math.min(a.h, art.length * 2 / zoom | 0);
+  const shownCells = visCols * visRows, totalCells = a.w * a.h;
 
   /* The zoom is only known after the canvas is sized, so the coded row's copy
      of it is written now rather than left one redraw behind. */
   const coded = foot.findIndex((f) => f[1] === 5);
   if (coded >= 0) {
     foot[coded][0] = `${DIM}coded${RESET}    ${DIM}${s.coded} B of ${s.raw} · ${s.frames - s.keyframes} delta`
-      + ` · zoom ${zoom}×${st.zoom === 0 ? ' fit' : ''}${RESET}`;
+      + ` · zoom ${zoom}×${st.zoom === 0 ? ' fit' : ''}`
+      /* ⚠️ Say when the picture is CROPPED. At 1× a 320-cell-wide clip in an
+         80-column window shows a quarter of itself, and the word "fit" beside
+         it reads as "this is all of it, sized to the window". The whole claim
+         of this screen is that you can answer "did this encode right" by
+         looking — a screen that shows a corner without saying so is worse than
+         one that shows nothing, because the reader believes it. */
+      + (shownCells < totalCells
+        ? `${RESET}${ACCENT}  showing ${visCols}×${visRows} of ${a.w}×${a.h}${RESET}`
+        : RESET);
   }
 
   return [...head, ...art, ...foot.map((f) => f[0])]

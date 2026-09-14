@@ -175,6 +175,31 @@ ok(/if \(!out\.isTTY\)/.test(src),
   'the runner does not check for a TTY. Piped into a file or a pipeline it would sit in an input loop '
   + 'forever with nobody able to see or end it.');
 
+/* ── cropping is stated, not implied ────────────────────────────────────── */
+
+/* ⚠️ A 320-cell-wide clip in an 80-column window shows a quarter of itself, and
+   the status line said "zoom 1× fit" — which reads as "all of it, sized to the
+   window". The entire claim of this screen is that you can answer "did this
+   encode right" by looking at it; showing a corner without saying so is worse
+   than showing nothing, because the reader believes it. */
+{
+  const big = openDoc(encode(Array.from({ length: 3 }, () => {
+    const g = new Uint8Array(320 * 200); for (let i = 0; i < g.length; i++) g[i] = 1 + (i % 3); return g;
+  }), { w: 320, h: 200, fps: 12, palette: ['-', '#101520', '#3d6b52', '#e7c86a'] }), 'big.pxa.json');
+  const plainOf = (o) => o.split('\n').map((l) => l.replace(/\x1b\[[0-9;]*m/g, '').replace(/\x1b\[K/g, ''));
+  const cropped = plainOf(render(big, 80, 24)).find((l) => l.startsWith('coded')) || '';
+  ok(/showing\s+\d+×\d+\s+of\s+320×200/.test(cropped),
+    `a picture too large for the window does not say it is cropped. Status line: ${JSON.stringify(cropped)}`);
+
+  const small = openDoc(encode(Array.from({ length: 3 }, () => {
+    const g = new Uint8Array(12 * 8); for (let i = 0; i < g.length; i++) g[i] = 1 + (i % 3); return g;
+  }), { w: 12, h: 8, fps: 12, palette: ['-', '#101520', '#3d6b52', '#e7c86a'] }), 'small.pxa.json');
+  const whole = plainOf(render(small, 80, 24)).find((l) => l.startsWith('coded')) || '';
+  ok(!/showing/.test(whole),
+    `a picture that fits claims to be cropped, which would teach the reader to ignore the warning. `
+    + `Status line: ${JSON.stringify(whole)}`);
+}
+
 assert.ok(checks >= 24, `only ${checks} assertions ran — this contract is not exercising the interface`);
 console.log(`pxa tui OK — ${checks} assertions; ${W}x${H}x${N} laid out at 5 terminal sizes, `
   + `zoom fits in whole multiples, terminal restored on exit and on three signals`);
