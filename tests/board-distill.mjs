@@ -39,7 +39,10 @@ sandbox.window.window = sandbox.window;
 vm.createContext(sandbox);
 vm.runInContext(readFileSync(resolve(ROOT, 'liuyao-ai.js'), 'utf8'), sandbox, { filename: 'liuyao-ai.js' });
 const AI = sandbox.window.BWLiuYaoAI;
-assert.ok(AI && AI.deriveRoles && AI.buildMessages, 'BWLiuYaoAI must expose deriveRoles and buildMessages');
+/* ⚠️ 2026-09-14:`buildMessages` 作废封存(它把老提示词、JSON schema 和盘面
+   文本捆在一起),留下的是 `boardText` —— 只回答「盘上有什么」。
+   这个契约本来就只关心盘面那一块,所以改的是取法,不是断言。 */
+assert.ok(AI && AI.deriveRoles && AI.boardText, 'BWLiuYaoAI must expose deriveRoles and boardText');
 
 const board = JSON.parse(readFileSync(resolve(ROOT, 'tests/fixtures/board-yi-to-yi.json'), 'utf8'));
 
@@ -48,8 +51,7 @@ const board = JSON.parse(readFileSync(resolve(ROOT, 'tests/fixtures/board-yi-to-
 const roles = AI.deriveRoles(board, 'wealth');
 assert.equal(roles.yongHidden, null, 'fixture invariant: the 用神 is on the board, not hidden');
 
-const text = AI.buildMessages(board, roles, '我这个项目以后的发展，能做大吗？', 'wealth', undefined, 'zh')
-  .messages[0].content;
+const text = AI.boardText(board, roles, { key: 'wealth', matched: true });
 /* Delimiter-bounded, not shape-bounded. This used to slice from `{"date"`,
    which assumed the payload was minified — so laying the six lines out one row
    each (so they can be counted) broke a test that was not about layout. Cut
@@ -145,11 +147,13 @@ for (const l of bound) {
     `line ${l.line}: the token must say a bind holds rather than breaks`);
 }
 
-// ── 5. the promise the system prompt makes is kept ─────────────────────────
-const sys = AI.buildMessages(board, roles, 'q', 'wealth', undefined, 'en').system;
-if (/hidden spirits/.test(sys)) {
+/* ── 5. 伏神既然算得出来,就必须发出去 ─────────────────────────────────────
+   原来这一条是「system 提示词里说了有伏神,那就得真的给」—— 那句话住在老的
+   `buildMessages` 里,跟着老链路一起作废了。断言本身没变味:**盘上算得出
+   伏神的时候,payload 不许把它吞掉**,因为下游(M3 的卡、裁决梯的出伏)读它。 */
+if (roles.yongHidden) {
   assert.ok(distilled.hidden,
-    'the system prompt tells the model hidden spirits are among the given facts — so they must be given');
+    '这一盘的用神伏而不现,而 payload 里没有 hidden —— 下游断出伏就没有依据');
 }
 
 /* ── 6. palace, series and trigrams carry their glyphs ─────────────────────

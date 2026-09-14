@@ -16,7 +16,7 @@ screen-reader name).
 Runtime strings live in `copy.js` and appear in their own section at the end;
 they are functions of live numbers, so they are shown as templates.
 
-**1042 blocks** — 458 in the markup of 10 pages, 584 in the pages' inline scripts, the browser modules, the server's error text and the 万物类象 panel, plus the runtime copy module.
+**1084 blocks** — 458 in the markup of 10 pages, 626 in the pages' inline scripts, the browser modules, the server's error text and the 万物类象 panel, plus the runtime copy module.
 
 ---
 
@@ -29,79 +29,79 @@ they are functions of live numbers, so they are shown as templates.
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.002
-<!-- source: index.html:867 | kind: aria-label -->
+<!-- source: index.html:889 | kind: aria-label -->
 New casting
 
 @@ s01.index.html.003
-<!-- source: index.html:868 | kind: aria-label -->
+<!-- source: index.html:890 | kind: aria-label -->
 BourneWise logomark
 
 @@ s01.index.html.004
-<!-- source: index.html:871 | kind: aria-label -->
+<!-- source: index.html:893 | kind: aria-label -->
 Collapse sidebar
 
 @@ s01.index.html.005
-<!-- source: index.html:881 | kind: aria-label -->
+<!-- source: index.html:903 | kind: aria-label -->
 Site navigation
 
 @@ s01.index.html.006
-<!-- source: index.html:887 | kind: aria-label -->
+<!-- source: index.html:909 | kind: aria-label -->
 Reading history
 
 @@ s01.index.html.007
-<!-- source: index.html:905 | kind: aria-label -->
+<!-- source: index.html:927 | kind: aria-label -->
 Sign in and your first reading is on us
 
 @@ s01.index.html.008
-<!-- source: index.html:906 | kind: aria-label -->
+<!-- source: index.html:928 | kind: aria-label -->
 Dismiss
 
 @@ s01.index.html.009
-<!-- source: index.html:925 | kind: aria-label -->
+<!-- source: index.html:947 | kind: aria-label -->
 Open menu
 
 @@ s01.index.html.010
-<!-- source: index.html:934 | kind: aria-label -->
+<!-- source: index.html:956 | kind: aria-label -->
 BourneWise — home
 
 @@ s01.index.html.011
-<!-- source: index.html:955 | kind: aria-label -->
+<!-- source: index.html:977 | kind: aria-label -->
 Open the five-minute walk-through
 
 @@ s01.index.html.012
-<!-- source: index.html:979 | kind: aria-label -->
+<!-- source: index.html:1001 | kind: aria-label -->
 Earlier castings to carry
 
 @@ s01.index.html.013
-<!-- source: index.html:983 | kind: aria-label -->
+<!-- source: index.html:1005 | kind: aria-label -->
 Casting question
 
 @@ s01.index.html.014
-<!-- source: index.html:984 | kind: aria-label -->
+<!-- source: index.html:1006 | kind: aria-label -->
 Cast
 
 @@ s01.index.html.015
-<!-- source: index.html:990 | kind: aria-label -->
+<!-- source: index.html:1012 | kind: aria-label -->
 Casting method
 
 @@ s01.index.html.016
-<!-- source: index.html:983 | kind: placeholder -->
+<!-- source: index.html:1005 | kind: placeholder -->
 Describe the situation, then ask one clear question…
 
 @@ s01.index.html.017
-<!-- source: index.html:871 | kind: title -->
+<!-- source: index.html:893 | kind: title -->
 Collapse sidebar
 
 @@ s01.index.html.018
-<!-- source: index.html:925 | kind: title -->
+<!-- source: index.html:947 | kind: title -->
 Menu
 
 @@ s01.index.html.019
-<!-- source: index.html:945 | kind: title -->
+<!-- source: index.html:967 | kind: title -->
 How answers are generated
 
 @@ s01.index.html.020
-<!-- source: index.html:982 | kind: title -->
+<!-- source: index.html:1004 | kind: title -->
 Change casting method
 
 @@ s01.index.html.021
@@ -109,167 +109,167 @@ Change casting method
 BourneWise — Hexagram-based decision analysis
 
 @@ s01.index.html.022
-<!-- source: index.html:869 | kind: text -->
+<!-- source: index.html:891 | kind: text -->
 BourneWise
 
 @@ s01.index.html.023
-<!-- source: index.html:878 | kind: text -->
+<!-- source: index.html:900 | kind: text -->
 New casting
 
 @@ s01.index.html.024
-<!-- source: index.html:882 | kind: text -->
+<!-- source: index.html:904 | kind: text -->
 The method
 
 @@ s01.index.html.025
-<!-- source: index.html:883 | kind: text -->
+<!-- source: index.html:905 | kind: text -->
 About us
 
 @@ s01.index.html.026
-<!-- source: index.html:884 | kind: text -->
+<!-- source: index.html:906 | kind: text -->
 Plans & units
 
 @@ s01.index.html.027
-<!-- source: index.html:888 | kind: text -->
+<!-- source: index.html:910 | kind: text -->
 Reading history
 
 @@ s01.index.html.028
-<!-- source: index.html:893 | kind: text -->
+<!-- source: index.html:915 | kind: text -->
 Available units
 
 @@ s01.index.html.029
-<!-- source: index.html:894 | kind: text -->
+<!-- source: index.html:916 | kind: text -->
 Usage
 
 @@ s01.index.html.030
-<!-- source: index.html:897 | kind: text -->
+<!-- source: index.html:919 | kind: text -->
 —
 
 @@ s01.index.html.031
-<!-- source: index.html:898 | kind: text -->
+<!-- source: index.html:920 | kind: text -->
 units
 
 @@ s01.index.html.032
-<!-- source: index.html:901 | kind: text -->
+<!-- source: index.html:923 | kind: text -->
 Prepaid balance · no expiry
 
 @@ s01.index.html.033
-<!-- source: index.html:902 | kind: text -->
+<!-- source: index.html:924 | kind: text -->
 Get units
 
 @@ s01.index.html.034
-<!-- source: index.html:902 | kind: text -->
+<!-- source: index.html:924 | kind: text -->
 →
 
 @@ s01.index.html.035
-<!-- source: index.html:906 | kind: text -->
+<!-- source: index.html:928 | kind: text -->
 ×
 
 @@ s01.index.html.036
-<!-- source: index.html:907 | kind: text -->
+<!-- source: index.html:929 | kind: text -->
 First reading?
 
 @@ s01.index.html.037
-<!-- source: index.html:907 | kind: text -->
+<!-- source: index.html:929 | kind: text -->
 Sign in and
 
 @@ s01.index.html.038
-<!-- source: index.html:907 | kind: text -->
+<!-- source: index.html:929 | kind: text -->
 the first one is on us
 
 @@ s01.index.html.039
-<!-- source: index.html:907 | kind: text -->
+<!-- source: index.html:929 | kind: text -->
 — whole, not a sample.
 
 @@ s01.index.html.040
-<!-- source: index.html:912 | kind: text -->
+<!-- source: index.html:934 | kind: text -->
 Guest
 
 @@ s01.index.html.041
-<!-- source: index.html:912 | kind: text -->
+<!-- source: index.html:934 | kind: text -->
 Not signed in
 
 @@ s01.index.html.042
-<!-- source: index.html:916 | kind: text -->
+<!-- source: index.html:938 | kind: text -->
 Sign in to sync your balance and readings
 
 @@ s01.index.html.043
-<!-- source: index.html:917 | kind: text -->
+<!-- source: index.html:939 | kind: text -->
 Plans
 
 @@ s01.index.html.044
-<!-- source: index.html:918 | kind: text -->
+<!-- source: index.html:940 | kind: text -->
 Settings
 
 @@ s01.index.html.045
-<!-- source: index.html:919 | kind: text -->
+<!-- source: index.html:941 | kind: text -->
 Sign out
 
 @@ s01.index.html.046
-<!-- source: index.html:942 | kind: text -->
+<!-- source: index.html:964 | kind: text -->
 Sign in
 
 @@ s01.index.html.047
-<!-- source: index.html:944 | kind: text -->
+<!-- source: index.html:966 | kind: text -->
 — units
 
 @@ s01.index.html.048
-<!-- source: index.html:947 | kind: text -->
+<!-- source: index.html:969 | kind: text -->
 We use Claude Opus 5 to generate all answers. Casting fixes the hexagram first.
 
 @@ s01.index.html.049
-<!-- source: index.html:950 | kind: text -->
+<!-- source: index.html:972 | kind: text -->
 About
 
 @@ s01.index.html.050
-<!-- source: index.html:957 | kind: text -->
+<!-- source: index.html:979 | kind: text -->
 How does this work?
 
 @@ s01.index.html.051
-<!-- source: index.html:957 | kind: text -->
+<!-- source: index.html:979 | kind: text -->
 See how casting, interpretation, and billing fit together.
 
 @@ s01.index.html.052
-<!-- source: index.html:970 | kind: text -->
+<!-- source: index.html:992 | kind: text -->
 The figure is settled before a word is written about it.
 
 @@ s01.index.html.053
-<!-- source: index.html:982 | kind: text -->
+<!-- source: index.html:1004 | kind: text -->
 Stria 64
 
 @@ s01.index.html.054
-<!-- source: index.html:989 | kind: text -->
+<!-- source: index.html:1011 | kind: text -->
 Enter to submit · Shift+Enter for a new line
 
 @@ s01.index.html.055
-<!-- source: index.html:989 | kind: text -->
+<!-- source: index.html:1011 | kind: text -->
 Follow-ups reuse the current hexagram
 
 @@ s01.index.html.056
-<!-- source: index.html:991 | kind: text -->
+<!-- source: index.html:1013 | kind: text -->
 Stria 64 · about 440 units typical · charged for what it uses
 
 @@ s01.index.html.057
-<!-- source: index.html:996 | kind: text -->
+<!-- source: index.html:1018 | kind: text -->
 Support:
 
 @@ s01.index.html.058
-<!-- source: index.html:996 | kind: text -->
+<!-- source: index.html:1018 | kind: text -->
 hello@bournewise.com
 
 @@ s01.index.html.059
-<!-- source: index.html:996 | kind: text -->
+<!-- source: index.html:1018 | kind: text -->
 ·
 
 @@ s01.index.html.060
-<!-- source: index.html:996 | kind: text -->
+<!-- source: index.html:1018 | kind: text -->
 Terms
 
 @@ s01.index.html.061
-<!-- source: index.html:996 | kind: text -->
+<!-- source: index.html:1018 | kind: text -->
 Privacy
 
 @@ s01.index.html.062
-<!-- source: index.html:996 | kind: text -->
+<!-- source: index.html:1018 | kind: text -->
 Refunds
 
 ---
@@ -2175,51 +2175,51 @@ The answer stopped partway — you're charged for the words that arrived, so the
 ### index.html — 12 blocks
 
 @@ s12.inline.001
-<!-- source: index.html:1075 | kind: string -->
+<!-- source: index.html:1104 | kind: string -->
 You bring the question. The coins bring the shape.
 
 @@ s12.inline.002
-<!-- source: index.html:1076 | kind: string -->
+<!-- source: index.html:1105 | kind: string -->
 Six lines fall, and not one of them was chosen to please you.
 
 @@ s12.inline.003
-<!-- source: index.html:1077 | kind: string -->
+<!-- source: index.html:1106 | kind: string -->
 The figure is settled before a word is written about it.
 
 @@ s12.inline.004
-<!-- source: index.html:1078 | kind: string -->
+<!-- source: index.html:1107 | kind: string -->
 The reading explains the board. It never picks it.
 
 @@ s12.inline.005
-<!-- source: index.html:1079 | kind: string -->
+<!-- source: index.html:1108 | kind: string -->
 Something fixed to argue with, on a day you cannot decide.
 
 @@ s12.inline.006
-<!-- source: index.html:1080 | kind: string -->
+<!-- source: index.html:1109 | kind: string -->
 Every answer shows the board it came from.
 
 @@ s12.inline.007
-<!-- source: index.html:1086 | kind: string -->
+<!-- source: index.html:1115 | kind: string -->
 (prefers-reduced-motion: reduce)
 
 @@ s12.inline.008
-<!-- source: index.html:1154 | kind: string -->
+<!-- source: index.html:1183 | kind: string -->
 Should I accept the offer if it delays the work I care about?
 
 @@ s12.inline.009
-<!-- source: index.html:1155 | kind: string -->
+<!-- source: index.html:1184 | kind: string -->
 What am I missing before I commit to this partnership?
 
 @@ s12.inline.010
-<!-- source: index.html:1156 | kind: string -->
+<!-- source: index.html:1185 | kind: string -->
 Which constraint matters most in this decision?
 
 @@ s12.inline.011
-<!-- source: index.html:1157 | kind: string -->
+<!-- source: index.html:1186 | kind: string -->
 Is this the right moment to leave, or should I wait?
 
 @@ s12.inline.012
-<!-- source: index.html:1158 | kind: string -->
+<!-- source: index.html:1187 | kind: string -->
 What changed, and what should I do next?
 
 ### pricing.html — 11 blocks
@@ -2409,7 +2409,7 @@ Payment received. Creem has emailed your receipt; your units are syncing now.
 
 ## 13. chat-app.js
 
-*聊天 UI — 投卦流程、toast、报错、空状态、解读外壳* — 124 blocks
+*聊天 UI — 投卦流程、toast、报错、空状态、解读外壳* — 116 blocks
 
 @@ s13.chat-app.js.001
 <!-- source: chat-app.js:17 | kind: string -->
@@ -2652,260 +2652,228 @@ Where it’s heading
 + mdInline(lm[1]) +
 
 @@ s13.chat-app.js.061
-<!-- source: chat-app.js:858 | kind: string -->
-+ xrHits().join(",") +
+<!-- source: chat-app.js:864 | kind: string -->
++ (isZh(msg.text) ?
 
 @@ s13.chat-app.js.062
-<!-- source: chat-app.js:858 | kind: markup text -->
-' + (prose || '
+<!-- source: chat-app.js:865 | kind: string -->
++ xrHits().join(",") +
 
 @@ s13.chat-app.js.063
-<!-- source: chat-app.js:859 | kind: markup text -->
-') + xrChain(msg.text) + xrMaybe(msg.text) + readingFootnote(msg.text) + '
+<!-- source: chat-app.js:865 | kind: markup text -->
+' + (prose || '
 
 @@ s13.chat-app.js.064
-<!-- source: chat-app.js:864 | kind: string -->
-+ r.verdict +
+<!-- source: chat-app.js:866 | kind: markup text -->
+') + xrChain(msg.text) + xrMaybe(msg.text) + readingFootnote(msg.text) + '
 
 @@ s13.chat-app.js.065
-<!-- source: chat-app.js:864 | kind: string -->
->' + (V_LABEL[r.verdict] ||
+<!-- source: chat-app.js:871 | kind: string -->
++ r.verdict +
 
 @@ s13.chat-app.js.066
-<!-- source: chat-app.js:867 | kind: markup text -->
-Line ' + k.line + '
+<!-- source: chat-app.js:871 | kind: string -->
+>' + (V_LABEL[r.verdict] ||
 
 @@ s13.chat-app.js.067
-<!-- source: chat-app.js:867 | kind: string -->
->' + esc(k.note ||
+<!-- source: chat-app.js:874 | kind: markup text -->
+Line ' + k.line + '
 
 @@ s13.chat-app.js.068
-<!-- source: chat-app.js:869 | kind: markup text -->
-What decides it
+<!-- source: chat-app.js:874 | kind: string -->
+>' + esc(k.note ||
 
 @@ s13.chat-app.js.069
-<!-- source: chat-app.js:869 | kind: string -->
->' + keys + '</ul></div>' :
+<!-- source: chat-app.js:876 | kind: markup text -->
+What decides it
 
 @@ s13.chat-app.js.070
-<!-- source: chat-app.js:870 | kind: string -->
->' + esc(r.timing) + '</p></div>' :
+<!-- source: chat-app.js:876 | kind: string -->
+>' + keys + '</ul></div>' :
 
 @@ s13.chat-app.js.071
-<!-- source: chat-app.js:887 | kind: string -->
-+ (zh ?
+<!-- source: chat-app.js:877 | kind: string -->
+>' + esc(r.timing) + '</p></div>' :
 
 @@ s13.chat-app.js.072
-<!-- source: chat-app.js:912 | kind: string -->
-|| msg.method ===
+<!-- source: chat-app.js:878 | kind: string -->
++ (isZh(r.reading) ?
 
 @@ s13.chat-app.js.073
-<!-- source: chat-app.js:984 | kind: string -->
-+ (zhPanel ?
+<!-- source: chat-app.js:894 | kind: string -->
++ (zh ?
 
 @@ s13.chat-app.js.074
-<!-- source: chat-app.js:984 | kind: string -->
-+ esc(L.aria(methodLabel)) +
+<!-- source: chat-app.js:919 | kind: string -->
+|| msg.method ===
 
 @@ s13.chat-app.js.075
-<!-- source: chat-app.js:985 | kind: markup text -->
-' + esc(L.kicker(methodLabel)) + '
+<!-- source: chat-app.js:991 | kind: string -->
++ (zhPanel ?
 
 @@ s13.chat-app.js.076
-<!-- source: chat-app.js:985 | kind: markup text -->
-' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '
+<!-- source: chat-app.js:991 | kind: string -->
++ esc(L.aria(methodLabel)) +
 
 @@ s13.chat-app.js.077
-<!-- source: chat-app.js:985 | kind: markup text -->
-' + esc(L.hint) + '
+<!-- source: chat-app.js:992 | kind: markup text -->
+' + esc(L.kicker(methodLabel)) + '
 
 @@ s13.chat-app.js.078
-<!-- source: chat-app.js:985 | kind: markup text -->
-' + (axes.length && !continued ? '
+<!-- source: chat-app.js:992 | kind: markup text -->
+' + esc(continued ? L.headContinued : (sortis ? L.headSortis : L.headStria)) + '
 
 @@ s13.chat-app.js.079
-<!-- source: chat-app.js:989 | kind: string -->
-+ esc(a.q) +
+<!-- source: chat-app.js:992 | kind: markup text -->
+' + esc(L.hint) + '
 
 @@ s13.chat-app.js.080
-<!-- source: chat-app.js:989 | kind: string -->
-+ esc(a.key) +
+<!-- source: chat-app.js:992 | kind: markup text -->
+' + (axes.length && !continued ? '
 
 @@ s13.chat-app.js.081
-<!-- source: chat-app.js:989 | kind: markup text -->
-' + esc(a.label) + '
+<!-- source: chat-app.js:996 | kind: string -->
++ esc(a.q) +
 
 @@ s13.chat-app.js.082
-<!-- source: chat-app.js:993 | kind: string -->
-+ esc(p[1]) +
+<!-- source: chat-app.js:996 | kind: string -->
++ esc(a.key) +
 
 @@ s13.chat-app.js.083
-<!-- source: chat-app.js:993 | kind: markup text -->
-' + esc(p[0]) + '
+<!-- source: chat-app.js:996 | kind: markup text -->
+' + esc(a.label) + '
 
 @@ s13.chat-app.js.084
-<!-- source: chat-app.js:993 | kind: markup text -->
-' + esc(p[1]) + '
+<!-- source: chat-app.js:1000 | kind: string -->
++ esc(p[1]) +
 
 @@ s13.chat-app.js.085
-<!-- source: chat-app.js:998 | kind: markup text -->
-' + esc(L.note(A.followCost(sortis ? 'sortis' : 'stria'))) + '
+<!-- source: chat-app.js:1000 | kind: markup text -->
+' + esc(p[0]) + '
 
 @@ s13.chat-app.js.086
-<!-- source: chat-app.js:1010 | kind: markup text -->
-Follow up
+<!-- source: chat-app.js:1000 | kind: markup text -->
+' + esc(p[1]) + '
 
 @@ s13.chat-app.js.087
-<!-- source: chat-app.js:1013 | kind: markup text -->
-New casting
+<!-- source: chat-app.js:1005 | kind: markup text -->
+' + esc(L.note(A.followCost(sortis ? 'sortis' : 'stria'))) + '
 
 @@ s13.chat-app.js.088
-<!-- source: chat-app.js:1033 | kind: markup text -->
-  New reading
+<!-- source: chat-app.js:1017 | kind: markup text -->
+Follow up
 
 @@ s13.chat-app.js.089
-<!-- source: chat-app.js:1037 | kind: string -->
-></path>' +
+<!-- source: chat-app.js:1020 | kind: markup text -->
+New casting
 
 @@ s13.chat-app.js.090
-<!-- source: chat-app.js:1047 | kind: string -->
-+ (opts.animateLast && i === c.msgs.length - 1 ?
+<!-- source: chat-app.js:1040 | kind: markup text -->
+  New reading
 
 @@ s13.chat-app.js.091
-<!-- source: chat-app.js:1095 | kind: string -->
-". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump.
+<!-- source: chat-app.js:1044 | kind: string -->
+></path>' +
 
 @@ s13.chat-app.js.092
-<!-- source: chat-app.js:1096 | kind: string -->
-Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis.
+<!-- source: chat-app.js:1054 | kind: string -->
++ (opts.animateLast && i === c.msgs.length - 1 ?
 
 @@ s13.chat-app.js.093
-<!-- source: chat-app.js:1097 | kind: string -->
-Reply in English with the judgment only.
+<!-- source: chat-app.js:1126 | kind: string -->
++ conv.carried.title +
 
 @@ s13.chat-app.js.094
-<!-- source: chat-app.js:1140 | kind: string -->
-». Background only: it tells you what they have already asked and been told, so you
+<!-- source: chat-app.js:1158 | kind: string -->
++ (sp && sp.name ?
 
 @@ s13.chat-app.js.095
-<!-- source: chat-app.js:1141 | kind: string -->
-do not make them repeat it. Do NOT re-read that earlier hexagram or treat its casting
+<!-- source: chat-app.js:1158 | kind: string -->
++ sp.name + (sp.transformedName ?
 
 @@ s13.chat-app.js.096
-<!-- source: chat-app.js:1142 | kind: string -->
-as evidence for this question — this question has its own casting.]
+<!-- source: chat-app.js:1159 | kind: string -->
++ sp.transformedName :
 
 @@ s13.chat-app.js.097
-<!-- source: chat-app.js:1145 | kind: string -->
-Understood — I have their earlier conversation as background and will read only the
+<!-- source: chat-app.js:1297 | kind: string -->
+→ metered billing, no recast temperature: (typeof temperature ===
 
 @@ s13.chat-app.js.098
-<!-- source: chat-app.js:1146 | kind: string -->
-casting in front of me.
+<!-- source: chat-app.js:1364 | kind: string -->
++ (c ? c.id :
 
 @@ s13.chat-app.js.099
-<!-- source: chat-app.js:1151 | kind: string -->
-OWN question on its OWN hexagram. Use them so you do not repeat yourself and so you know
+<!-- source: chat-app.js:1597 | kind: string -->
++ (sortisBoard ?
 
 @@ s13.chat-app.js.100
-<!-- source: chat-app.js:1152 | kind: string -->
-what has already been asked. Do NOT carry their conclusions into this reading, do NOT
+<!-- source: chat-app.js:1756 | kind: string -->
++ kind +
 
 @@ s13.chat-app.js.101
-<!-- source: chat-app.js:1153 | kind: string -->
-count agreement with them as confirmation, and above all do NOT reuse a 生克/合冲/比和
+<!-- source: chat-app.js:2010 | kind: string -->
+>' + esc(zh ? key +
 
 @@ s13.chat-app.js.102
-<!-- source: chat-app.js:1154 | kind: string -->
-reading made there: those relations were mapped to human meaning for a DIFFERENT question,
+<!-- source: chat-app.js:2011 | kind: string -->
+: (entry.en || key) +
 
 @@ s13.chat-app.js.103
-<!-- source: chat-app.js:1155 | kind: string -->
-and the same relation means something else here. This question has its own casting — read
+<!-- source: chat-app.js:2016 | kind: string -->
++ esc(items.join(zh ?
 
 @@ s13.chat-app.js.104
-<!-- source: chat-app.js:1156 | kind: string -->
-that one.]
+<!-- source: chat-app.js:2021 | kind: string -->
++ esc((entry.acts[zh ?
 
 @@ s13.chat-app.js.105
-<!-- source: chat-app.js:1158 | kind: string -->
-Understood — earlier castings are background. I will read only the hexagram in front of me
+<!-- source: chat-app.js:2090 | kind: string -->
++ word +
 
 @@ s13.chat-app.js.106
-<!-- source: chat-app.js:1159 | kind: string -->
-and will not treat their findings as evidence.
+<!-- source: chat-app.js:2090 | kind: string -->
++ name +
 
 @@ s13.chat-app.js.107
-<!-- source: chat-app.js:1209 | kind: string -->
-Route this message.
+<!-- source: chat-app.js:2090 | kind: string -->
++ cats[here].zh +
 
 @@ s13.chat-app.js.108
-<!-- source: chat-app.js:1701 | kind: string -->
-oracle call failed
+<!-- source: chat-app.js:2091 | kind: string -->
++ cats[here].en +
 
 @@ s13.chat-app.js.109
-<!-- source: chat-app.js:2040 | kind: string -->
-—— 它在万物类象里指的全部
+<!-- source: chat-app.js:2097 | kind: string -->
++ (i === here ? " is-here" : "") +
 
 @@ s13.chat-app.js.110
-<!-- source: chat-app.js:2040 | kind: string -->
-— everything it points at
+<!-- source: chat-app.js:2098 | kind: string -->
+>' + esc(zh ? c.zh : c.en) +
 
 @@ s13.chat-app.js.111
-<!-- source: chat-app.js:2049 | kind: string -->
-它做的事
+<!-- source: chat-app.js:2101 | kind: string -->
+>' + esc(lead) +
 
 @@ s13.chat-app.js.112
-<!-- source: chat-app.js:2049 | kind: string -->
-what it does
+<!-- source: chat-app.js:2102 | kind: string -->
+>' + chips +
 
 @@ s13.chat-app.js.113
-<!-- source: chat-app.js:2119 | kind: string -->
-」是
+<!-- source: chat-app.js:2108 | kind: string -->
++ here +
 
 @@ s13.chat-app.js.114
-<!-- source: chat-app.js:2119 | kind: string -->
-走的
+<!-- source: chat-app.js:2110 | kind: string -->
++ esc(t) +
 
 @@ s13.chat-app.js.115
-<!-- source: chat-app.js:2119 | kind: string -->
-这一支。同一路还有别的分支,点开看它们具体是些什么:
+<!-- source: chat-app.js:2195 | kind: string -->
+|| e.key ===
 
 @@ s13.chat-app.js.116
-<!-- source: chat-app.js:2120 | kind: string -->
-” is
-
-@@ s13.chat-app.js.117
-<!-- source: chat-app.js:2120 | kind: string -->
-taken as
-
-@@ s13.chat-app.js.118
-<!-- source: chat-app.js:2123 | kind: string -->
-」这里读的是
-
-@@ s13.chat-app.js.119
-<!-- source: chat-app.js:2123 | kind: string -->
-。这一路分这几支 —— 点开看它具体是些什么:
-
-@@ s13.chat-app.js.120
-<!-- source: chat-app.js:2124 | kind: string -->
-read one way. It runs in these branches — open one to see what it actually is:
-
-@@ s13.chat-app.js.121
-<!-- source: chat-app.js:2127 | kind: string -->
-" data-i="
-
-@@ s13.chat-app.js.122
-<!-- source: chat-app.js:2127 | kind: string -->
-" aria-expanded="false">
-
-@@ s13.chat-app.js.123
-<!-- source: chat-app.js:2293 | kind: string -->
-Ask what this casting means for your situation…
-
-@@ s13.chat-app.js.124
-<!-- source: chat-app.js:2305 | kind: string -->
-Ask what this casting means for your situation\u2026
+<!-- source: chat-app.js:2329 | kind: string -->
++ Math.min(1, th.scrollTop / max).toFixed(4) +
 
 
 ---
@@ -3879,307 +3847,503 @@ computeBoard: need 6 lines
 
 ## 19. liuyao-ai.js
 
-*用神名称,以及模型没答上来时顶上去的占位解读* — 75 blocks
+*用神名称,以及模型没答上来时顶上去的占位解读* — 124 blocks
 
 @@ s19.liuyao-ai.js.001
-<!-- source: liuyao-ai.js:24 | kind: string -->
+<!-- source: liuyao-ai.js:30 | kind: string -->
 父母
 
 @@ s19.liuyao-ai.js.002
-<!-- source: liuyao-ai.js:24 | kind: string -->
+<!-- source: liuyao-ai.js:30 | kind: string -->
 elders, home, property, documents, vehicles, study, contracts, news
 
 @@ s19.liuyao-ai.js.003
-<!-- source: liuyao-ai.js:25 | kind: string -->
+<!-- source: liuyao-ai.js:31 | kind: string -->
 兄弟
 
 @@ s19.liuyao-ai.js.004
-<!-- source: liuyao-ai.js:25 | kind: string -->
+<!-- source: liuyao-ai.js:31 | kind: string -->
 siblings, friends, peers, rivals, partners, shared cost
 
 @@ s19.liuyao-ai.js.005
-<!-- source: liuyao-ai.js:26 | kind: string -->
+<!-- source: liuyao-ai.js:32 | kind: string -->
 子孙
 
 @@ s19.liuyao-ai.js.006
-<!-- source: liuyao-ai.js:26 | kind: string -->
+<!-- source: liuyao-ai.js:32 | kind: string -->
 children, juniors, pets, the cure/remedy, ease, joy, what relieves pressure
 
 @@ s19.liuyao-ai.js.007
-<!-- source: liuyao-ai.js:27 | kind: string -->
+<!-- source: liuyao-ai.js:33 | kind: string -->
 妻财
 
 @@ s19.liuyao-ai.js.008
-<!-- source: liuyao-ai.js:27 | kind: string -->
+<!-- source: liuyao-ai.js:33 | kind: string -->
 money, income, assets, a man's wife/lover, what you acquire
 
 @@ s19.liuyao-ai.js.009
-<!-- source: liuyao-ai.js:28 | kind: string -->
+<!-- source: liuyao-ai.js:34 | kind: string -->
 官鬼
 
 @@ s19.liuyao-ai.js.010
-<!-- source: liuyao-ai.js:28 | kind: string -->
+<!-- source: liuyao-ai.js:34 | kind: string -->
 career/post, authority, a woman's husband/lover, illness, threat, lawsuit
 
 @@ s19.liuyao-ai.js.011
-<!-- source: liuyao-ai.js:29 | kind: string -->
+<!-- source: liuyao-ai.js:35 | kind: string -->
 世爻
 
 @@ s19.liuyao-ai.js.012
-<!-- source: liuyao-ai.js:29 | kind: string -->
+<!-- source: liuyao-ai.js:35 | kind: string -->
 you, your own standing — for decisions, travel, general outlook
 
 @@ s19.liuyao-ai.js.013
-<!-- source: liuyao-ai.js:74 | kind: string -->
+<!-- source: liuyao-ai.js:80 | kind: string -->
 考试:官鬼为名次录取,父母为成绩卷子;子孙为剥官之神
 
 @@ s19.liuyao-ai.js.014
-<!-- source: liuyao-ai.js:76 | kind: string -->
+<!-- source: liuyao-ai.js:82 | kind: string -->
 功名工作升迁:官鬼为职位、上头、竞争的那一头
 
 @@ s19.liuyao-ai.js.015
-<!-- source: liuyao-ai.js:78 | kind: string -->
+<!-- source: liuyao-ai.js:84 | kind: string -->
 求财生意:妻财为财本
 
 @@ s19.liuyao-ai.js.016
-<!-- source: liuyao-ai.js:80 | kind: string -->
+<!-- source: liuyao-ai.js:86 | kind: string -->
 疾病:官鬼为忧神,子孙为解忧之神(近病久病断法相反)
 
 @@ s19.liuyao-ai.js.017
-<!-- source: liuyao-ai.js:82 | kind: string -->
+<!-- source: liuyao-ai.js:88 | kind: string -->
 男占婚恋:妻财为对方
 
 @@ s19.liuyao-ai.js.018
-<!-- source: liuyao-ai.js:84 | kind: string -->
+<!-- source: liuyao-ai.js:90 | kind: string -->
 女占婚恋:官鬼为对方
 
 @@ s19.liuyao-ai.js.019
-<!-- source: liuyao-ai.js:86 | kind: string -->
+<!-- source: liuyao-ai.js:92 | kind: string -->
 子女、宠物、解厄:子孙
 
 @@ s19.liuyao-ai.js.020
-<!-- source: liuyao-ai.js:88 | kind: string -->
+<!-- source: liuyao-ai.js:94 | kind: string -->
 房屋车船文书合同长辈:父母
 
 @@ s19.liuyao-ai.js.021
-<!-- source: liuyao-ai.js:90 | kind: string -->
+<!-- source: liuyao-ai.js:96 | kind: string -->
 同行、合伙、竞争、分我之利者:兄弟
 
 @@ s19.liuyao-ai.js.022
-<!-- source: liuyao-ai.js:103 | kind: string -->
-问题没有点出别的主体,按自占取世爻
+<!-- source: liuyao-ai.js:115 | kind: string -->
+考试
 
 @@ s19.liuyao-ai.js.023
-<!-- source: liuyao-ai.js:142 | kind: string -->
-用神
+<!-- source: liuyao-ai.js:115 | kind: string -->
+考试:父母为卷子成绩,官鬼为名次录取;子孙为剥官之神
 
 @@ s19.liuyao-ai.js.024
-<!-- source: liuyao-ai.js:142 | kind: string -->
-the matter itself
+<!-- source: liuyao-ai.js:116 | kind: string -->
+工作
 
 @@ s19.liuyao-ai.js.025
-<!-- source: liuyao-ai.js:143 | kind: string -->
-原神
+<!-- source: liuyao-ai.js:117 | kind: string -->
+官司
 
 @@ s19.liuyao-ai.js.026
-<!-- source: liuyao-ai.js:143 | kind: string -->
-feeds the subject
+<!-- source: liuyao-ai.js:117 | kind: string -->
+官司诉讼:官鬼为官方、对造、判决
 
 @@ s19.liuyao-ai.js.027
-<!-- source: liuyao-ai.js:144 | kind: string -->
-忌神
+<!-- source: liuyao-ai.js:118 | kind: string -->
+疾病
 
 @@ s19.liuyao-ai.js.028
-<!-- source: liuyao-ai.js:144 | kind: string -->
-attacks the subject
+<!-- source: liuyao-ai.js:119 | kind: string -->
+求财
 
 @@ s19.liuyao-ai.js.029
-<!-- source: liuyao-ai.js:145 | kind: string -->
-仇神
+<!-- source: liuyao-ai.js:120 | kind: string -->
+失物
 
 @@ s19.liuyao-ai.js.030
-<!-- source: liuyao-ai.js:145 | kind: string -->
-feeds the adversary
+<!-- source: liuyao-ai.js:120 | kind: string -->
+失物:妻财为失去的那件东西
 
 @@ s19.liuyao-ai.js.031
-<!-- source: liuyao-ai.js:146 | kind: string -->
-泄神
+<!-- source: liuyao-ai.js:121 | kind: string -->
+出行
 
 @@ s19.liuyao-ai.js.032
-<!-- source: liuyao-ai.js:146 | kind: string -->
-saps the subject
+<!-- source: liuyao-ai.js:121 | kind: string -->
+出行:世爻为行人自己
 
 @@ s19.liuyao-ai.js.033
-<!-- source: liuyao-ai.js:147 | kind: string -->
-比和
+<!-- source: liuyao-ai.js:133 | kind: string -->
+m1+性别
 
 @@ s19.liuyao-ai.js.034
-<!-- source: liuyao-ai.js:147 | kind: string -->
-reinforces the subject
+<!-- source: liuyao-ai.js:138 | kind: string -->
+婚恋,问的是她:妻财为对方
 
 @@ s19.liuyao-ai.js.035
-<!-- source: liuyao-ai.js:232 | kind: string -->
-ALSO-用神(second-subject)
+<!-- source: liuyao-ai.js:138 | kind: string -->
+m1+称呼
 
 @@ s19.liuyao-ai.js.036
-<!-- source: liuyao-ai.js:233 | kind: string -->
-attacks-second-用神
+<!-- source: liuyao-ai.js:140 | kind: string -->
+婚恋,问的是他:官鬼为对方
 
 @@ s19.liuyao-ai.js.037
-<!-- source: liuyao-ai.js:308 | kind: string -->
-flying line feeds it (helps it surface)
+<!-- source: liuyao-ai.js:142 | kind: string -->
+问的是婚恋,但没说对方是谁、也没有性别 —— 用神取不定,按自占取世爻
 
 @@ s19.liuyao-ai.js.038
-<!-- source: liuyao-ai.js:309 | kind: string -->
-it controls the flying line (can surface)
+<!-- source: liuyao-ai.js:151 | kind: string -->
+婚恋
 
 @@ s19.liuyao-ai.js.039
-<!-- source: liuyao-ai.js:310 | kind: string -->
-flying line controls it (suppressed)
+<!-- source: liuyao-ai.js:158 | kind: string -->
+措辞
 
 @@ s19.liuyao-ai.js.040
-<!-- source: liuyao-ai.js:311 | kind: string -->
-— HIDDEN under line
+<!-- source: liuyao-ai.js:160 | kind: string -->
+默认
 
 @@ s19.liuyao-ai.js.041
-<!-- source: liuyao-ai.js:315 | kind: string -->
-— must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too
+<!-- source: liuyao-ai.js:161 | kind: string -->
+问题没有点出别的主体,按自占取世爻
 
 @@ s19.liuyao-ai.js.042
-<!-- source: liuyao-ai.js:323 | kind: string -->
-(BOTH are 用神. Either one failing fails the matter. Lines carrying it are flagged
+<!-- source: liuyao-ai.js:200 | kind: string -->
+用神
 
 @@ s19.liuyao-ai.js.043
-<!-- source: liuyao-ai.js:324 | kind: string -->
-ALSO-用神(second-subject); lines that control it are flagged attacks-second-用神.
+<!-- source: liuyao-ai.js:200 | kind: string -->
+the matter itself
 
 @@ s19.liuyao-ai.js.044
-<!-- source: liuyao-ai.js:325 | kind: string -->
-The role field below is measured from the FIRST 用神 only.)
+<!-- source: liuyao-ai.js:201 | kind: string -->
+原神
 
 @@ s19.liuyao-ai.js.045
-<!-- source: liuyao-ai.js:360 | kind: string -->
-· ALSO the second 用神
+<!-- source: liuyao-ai.js:201 | kind: string -->
+feeds the subject
 
 @@ s19.liuyao-ai.js.046
-<!-- source: liuyao-ai.js:361 | kind: string -->
-· controls the second 用神 (its 忌神)
+<!-- source: liuyao-ai.js:202 | kind: string -->
+忌神
 
 @@ s19.liuyao-ai.js.047
-<!-- source: liuyao-ai.js:371 | kind: string -->
-flying line is VOID — a void flying line lets the hidden one surface
+<!-- source: liuyao-ai.js:202 | kind: string -->
+attacks the subject
 
 @@ s19.liuyao-ai.js.048
-<!-- source: liuyao-ai.js:372 | kind: string -->
-flying line is MOVING
+<!-- source: liuyao-ai.js:203 | kind: string -->
+仇神
 
 @@ s19.liuyao-ai.js.049
-<!-- source: liuyao-ai.js:378 | kind: string -->
-the flying line transforms into
+<!-- source: liuyao-ai.js:203 | kind: string -->
+feeds the adversary
 
 @@ s19.liuyao-ai.js.050
-<!-- source: liuyao-ai.js:380 | kind: string -->
-is itself bringing it out
+<!-- source: liuyao-ai.js:204 | kind: string -->
+泄神
 
 @@ s19.liuyao-ai.js.051
-<!-- source: liuyao-ai.js:383 | kind: string -->
-hidden under line
+<!-- source: liuyao-ai.js:204 | kind: string -->
+saps the subject
 
 @@ s19.liuyao-ai.js.052
-<!-- source: liuyao-ai.js:387 | kind: string -->
-— rule on can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day
+<!-- source: liuyao-ai.js:205 | kind: string -->
+比和
 
 @@ s19.liuyao-ai.js.053
-<!-- source: liuyao-ai.js:391 | kind: string -->
-none — all six relatives appear among the lines
+<!-- source: liuyao-ai.js:205 | kind: string -->
+reinforces the subject
 
 @@ s19.liuyao-ai.js.054
-<!-- source: liuyao-ai.js:395 | kind: string -->
-bloc on lines
+<!-- source: liuyao-ai.js:246 | kind: string -->
+驿马
 
 @@ s19.liuyao-ai.js.055
-<!-- source: liuyao-ai.js:410 | kind: string -->
-— on line
+<!-- source: liuyao-ai.js:246 | kind: string -->
+桃花
 
 @@ s19.liuyao-ai.js.056
-<!-- source: liuyao-ai.js:410 | kind: string -->
-(卦身上卦: it annotates that line; if that is the yongshen, say so)
+<!-- source: liuyao-ai.js:246 | kind: string -->
+贵人
 
 @@ s19.liuyao-ai.js.057
-<!-- source: liuyao-ai.js:411 | kind: string -->
-— not among the six line branches (卦身不上卦). Structural, and true of half the 64 hexagrams: it licenses no conclusion about the matter or the asker. Do not mention it.
+<!-- source: liuyao-ai.js:247 | kind: string -->
+羊刃
 
 @@ s19.liuyao-ai.js.058
-<!-- source: liuyao-ai.js:435 | kind: string -->
-(旬空 for the CASTING day)
+<!-- source: liuyao-ai.js:247 | kind: string -->
+将星
 
 @@ s19.liuyao-ai.js.059
-<!-- source: liuyao-ai.js:445 | kind: string -->
-moving line
+<!-- source: liuyao-ai.js:247 | kind: string -->
+华盖
 
 @@ s19.liuyao-ai.js.060
-<!-- source: liuyao-ai.js:446 | kind: string -->
-(独发)
+<!-- source: liuyao-ai.js:247 | kind: string -->
+劫煞
 
 @@ s19.liuyao-ai.js.061
-<!-- source: liuyao-ai.js:446 | kind: string -->
-no moving lines (静卦)
+<!-- source: liuyao-ai.js:248 | kind: string -->
+亡神
 
 @@ s19.liuyao-ai.js.062
-<!-- source: liuyao-ai.js:453 | kind: string -->
-· Clashing
+<!-- source: liuyao-ai.js:248 | kind: string -->
+灾煞
 
 @@ s19.liuyao-ai.js.063
-<!-- source: liuyao-ai.js:453 | kind: string -->
-· Combining
+<!-- source: liuyao-ai.js:248 | kind: string -->
+天医
 
 @@ s19.liuyao-ai.js.064
-<!-- source: liuyao-ai.js:454 | kind: string -->
-none (still figure)
+<!-- source: liuyao-ai.js:248 | kind: string -->
+月德
 
 @@ s19.liuyao-ai.js.065
-<!-- source: liuyao-ai.js:470 | kind: string -->
-裁决梯未能运行:
+<!-- source: liuyao-ai.js:281 | kind: string -->
+关系模块未能运行:
 
 @@ s19.liuyao-ai.js.066
-<!-- source: liuyao-ai.js:554 | kind: string -->
-<=20 words, why this 用神 fits the question
+<!-- source: liuyao-ai.js:298 | kind: string -->
+〔用神〕
 
 @@ s19.liuyao-ai.js.067
-<!-- source: liuyao-ai.js:556 | kind: string -->
-<=16 words
+<!-- source: liuyao-ai.js:304 | kind: string -->
+未定
 
 @@ s19.liuyao-ai.js.068
-<!-- source: liuyao-ai.js:558 | kind: string -->
-<=18 words 应期 WITH Gregorian anchors from TIMING REFERENCE at the scale the question asks (near → day/month dates; 以后/long-horizon → branch YEARS, e.g. next Yin year 2034); or empty
+<!-- source: liuyao-ai.js:334 | kind: string -->
+用神之间
 
 @@ s19.liuyao-ai.js.069
-<!-- source: liuyao-ai.js:559 | kind: string -->
-2-4 sentence answer in '+(lang===
+<!-- source: liuyao-ai.js:335 | kind: string -->
+→ 用神(作用于它的)
 
 @@ s19.liuyao-ai.js.070
-<!-- source: liuyao-ai.js:580 | kind: string -->
-+ (YONGSHEN_INFO[subject.key] ? YONGSHEN_INFO[subject.key].cn : subject.key) + (subject.second ? (
+<!-- source: liuyao-ai.js:336 | kind: string -->
+用神 →(它作用出去的)
 
 @@ s19.liuyao-ai.js.071
-<!-- source: liuyao-ai.js:581 | kind: string -->
-+ (YONGSHEN_INFO[subject.second] ? YONGSHEN_INFO[subject.second].cn : subject.second) +
+<!-- source: liuyao-ai.js:344 | kind: string -->
+主链(穿过用神)
 
 @@ s19.liuyao-ai.js.072
-<!-- source: liuyao-ai.js:583 | kind: string -->
-+ (subject.why ||
+<!-- source: liuyao-ai.js:345 | kind: string -->
+其余相生链
 
 @@ s19.liuyao-ai.js.073
-<!-- source: liuyao-ai.js:627 | kind: string -->
-&& window.claude && typeof window.claude.complete===
+<!-- source: liuyao-ai.js:347 | kind: string -->
+其余成立的关系
 
 @@ s19.liuyao-ai.js.074
-<!-- source: liuyao-ai.js:675 | kind: string -->
-: (score<=1 ?
+<!-- source: liuyao-ai.js:349 | kind: string -->
+不作用(静爻对静爻,《增删卜易》§4)
 
 @@ s19.liuyao-ai.js.075
-<!-- source: liuyao-ai.js:676 | kind: string -->
-: strength===
+<!-- source: liuyao-ai.js:350 | kind: string -->
+条:
+
+@@ s19.liuyao-ai.js.076
+<!-- source: liuyao-ai.js:352 | kind: string -->
+世应
+
+@@ s19.liuyao-ai.js.077
+<!-- source: liuyao-ai.js:352 | kind: string -->
+应 —
+
+@@ s19.liuyao-ai.js.078
+<!-- source: liuyao-ai.js:352 | kind: string -->
+无直接关系
+
+@@ s19.liuyao-ai.js.079
+<!-- source: liuyao-ai.js:355 | kind: string -->
+三合
+
+@@ s19.liuyao-ai.js.080
+<!-- source: liuyao-ai.js:355 | kind: string -->
+局 爻[
+
+@@ s19.liuyao-ai.js.081
+<!-- source: liuyao-ai.js:357 | kind: string -->
+局→
+
+@@ s19.liuyao-ai.js.082
+<!-- source: liuyao-ai.js:357 | kind: string -->
+(世)
+
+@@ s19.liuyao-ai.js.083
+<!-- source: liuyao-ai.js:360 | kind: string -->
+三会
+
+@@ s19.liuyao-ai.js.084
+<!-- source: liuyao-ai.js:364 | kind: string -->
+卦级
+
+@@ s19.liuyao-ai.js.085
+<!-- source: liuyao-ai.js:367 | kind: string -->
+用神多现
+
+@@ s19.liuyao-ai.js.086
+<!-- source: liuyao-ai.js:419 | kind: string -->
+ALSO-用神(second-subject)
+
+@@ s19.liuyao-ai.js.087
+<!-- source: liuyao-ai.js:420 | kind: string -->
+attacks-second-用神
+
+@@ s19.liuyao-ai.js.088
+<!-- source: liuyao-ai.js:506 | kind: string -->
+flying line feeds it (helps it surface)
+
+@@ s19.liuyao-ai.js.089
+<!-- source: liuyao-ai.js:507 | kind: string -->
+it controls the flying line (can surface)
+
+@@ s19.liuyao-ai.js.090
+<!-- source: liuyao-ai.js:508 | kind: string -->
+flying line controls it (suppressed)
+
+@@ s19.liuyao-ai.js.091
+<!-- source: liuyao-ai.js:509 | kind: string -->
+— HIDDEN under line
+
+@@ s19.liuyao-ai.js.092
+<!-- source: liuyao-ai.js:513 | kind: string -->
+— must resolve can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day too
+
+@@ s19.liuyao-ai.js.093
+<!-- source: liuyao-ai.js:521 | kind: string -->
+(BOTH are 用神. Either one failing fails the matter. Lines carrying it are flagged
+
+@@ s19.liuyao-ai.js.094
+<!-- source: liuyao-ai.js:522 | kind: string -->
+ALSO-用神(second-subject); lines that control it are flagged attacks-second-用神.
+
+@@ s19.liuyao-ai.js.095
+<!-- source: liuyao-ai.js:523 | kind: string -->
+The role field below is measured from the FIRST 用神 only.)
+
+@@ s19.liuyao-ai.js.096
+<!-- source: liuyao-ai.js:535 | kind: string -->
+· 来源
+
+@@ s19.liuyao-ai.js.097
+<!-- source: liuyao-ai.js:538 | kind: string -->
+措辞若确实指向某个主体,读那一爻并说出来。]
+
+@@ s19.liuyao-ai.js.098
+<!-- source: liuyao-ai.js:573 | kind: string -->
+· ALSO the second 用神
+
+@@ s19.liuyao-ai.js.099
+<!-- source: liuyao-ai.js:574 | kind: string -->
+· controls the second 用神 (its 忌神)
+
+@@ s19.liuyao-ai.js.100
+<!-- source: liuyao-ai.js:584 | kind: string -->
+flying line is VOID — a void flying line lets the hidden one surface
+
+@@ s19.liuyao-ai.js.101
+<!-- source: liuyao-ai.js:585 | kind: string -->
+flying line is MOVING
+
+@@ s19.liuyao-ai.js.102
+<!-- source: liuyao-ai.js:591 | kind: string -->
+the flying line transforms into
+
+@@ s19.liuyao-ai.js.103
+<!-- source: liuyao-ai.js:593 | kind: string -->
+is itself bringing it out
+
+@@ s19.liuyao-ai.js.104
+<!-- source: liuyao-ai.js:596 | kind: string -->
+hidden under line
+
+@@ s19.liuyao-ai.js.105
+<!-- source: liuyao-ai.js:600 | kind: string -->
+— rule on can-surface(出伏) vs stays-trapped(伏而不出), weighing month/day
+
+@@ s19.liuyao-ai.js.106
+<!-- source: liuyao-ai.js:604 | kind: string -->
+none — all six relatives appear among the lines
+
+@@ s19.liuyao-ai.js.107
+<!-- source: liuyao-ai.js:608 | kind: string -->
+bloc on lines
+
+@@ s19.liuyao-ai.js.108
+<!-- source: liuyao-ai.js:623 | kind: string -->
+— on line
+
+@@ s19.liuyao-ai.js.109
+<!-- source: liuyao-ai.js:623 | kind: string -->
+(卦身上卦: it annotates that line; if that is the yongshen, say so)
+
+@@ s19.liuyao-ai.js.110
+<!-- source: liuyao-ai.js:624 | kind: string -->
+— not among the six line branches (卦身不上卦). Structural, and true of half the 64 hexagrams: it licenses no conclusion about the matter or the asker. Do not mention it.
+
+@@ s19.liuyao-ai.js.111
+<!-- source: liuyao-ai.js:648 | kind: string -->
+(旬空 for the CASTING day)
+
+@@ s19.liuyao-ai.js.112
+<!-- source: liuyao-ai.js:658 | kind: string -->
+moving line
+
+@@ s19.liuyao-ai.js.113
+<!-- source: liuyao-ai.js:659 | kind: string -->
+(独发)
+
+@@ s19.liuyao-ai.js.114
+<!-- source: liuyao-ai.js:659 | kind: string -->
+no moving lines (静卦)
+
+@@ s19.liuyao-ai.js.115
+<!-- source: liuyao-ai.js:666 | kind: string -->
+· Clashing
+
+@@ s19.liuyao-ai.js.116
+<!-- source: liuyao-ai.js:666 | kind: string -->
+· Combining
+
+@@ s19.liuyao-ai.js.117
+<!-- source: liuyao-ai.js:667 | kind: string -->
+none (still figure)
+
+@@ s19.liuyao-ai.js.118
+<!-- source: liuyao-ai.js:684 | kind: string -->
+裁决梯未能运行:
+
+@@ s19.liuyao-ai.js.119
+<!-- source: liuyao-ai.js:781 | kind: string -->
+TIMING REFERENCE (Gregorian, computed from the casting date
+
+@@ s19.liuyao-ai.js.120
+<!-- source: liuyao-ai.js:781 | kind: string -->
+— quote these, never recalculate):
+
+@@ s19.liuyao-ai.js.121
+<!-- source: liuyao-ai.js:782 | kind: string -->
+Branch-month windows (solar, next from casting):
+
+@@ s19.liuyao-ai.js.122
+<!-- source: liuyao-ai.js:783 | kind: string -->
+Branch DAYS repeat every 12 days; next occurrences:
+
+@@ s19.liuyao-ai.js.123
+<!-- source: liuyao-ai.js:784 | kind: string -->
+Branch YEARS (next two occurrences; year boundary at Lichun, ~Feb 4):
+
+@@ s19.liuyao-ai.js.124
+<!-- source: liuyao-ai.js:802 | kind: string -->
+BOARD (authoritative facts):
 
 
 ---
@@ -4213,217 +4377,221 @@ input, textarea, button, select, a, label
 
 ## 21. Server responses
 
-*服务端返回、前端原样渲染的报错 —— 只在出事时才看得到的文案* — 53 blocks
+*服务端返回、前端原样渲染的报错 —— 只在出事时才看得到的文案* — 54 blocks
 
 @@ s21.Server_responses.001
-<!-- source: functions/api/claude.js:139 | kind: error response -->
+<!-- source: functions/api/claude.js:330 | kind: error response -->
 AI API temporarily disabled
 
 @@ s21.Server_responses.002
-<!-- source: functions/api/claude.js:146 | kind: error response -->
+<!-- source: functions/api/claude.js:340 | kind: error response -->
 OPENROUTER_API_KEY not configured
 
 @@ s21.Server_responses.003
-<!-- source: functions/api/claude.js:150 | kind: error response -->
+<!-- source: functions/api/claude.js:344 | kind: error response -->
 no messages
 
 @@ s21.Server_responses.004
-<!-- source: functions/api/claude.js:177 | kind: error response -->
+<!-- source: functions/api/claude.js:378 | kind: error response -->
 system prompts are assembled server-side and may not be supplied by the client
 
 @@ s21.Server_responses.005
-<!-- source: functions/api/claude.js:186 | kind: error response -->
+<!-- source: functions/api/claude.js:391 | kind: error response -->
 prompt assembly failed
 
 @@ s21.Server_responses.006
-<!-- source: functions/api/claude.js:308 | kind: error response -->
+<!-- source: functions/api/claude.js:581 | kind: error response -->
 a reading must be requested with stream:true — the non-streaming path cannot outlast generation
 
 @@ s21.Server_responses.007
-<!-- source: functions/api/claude.js:348 | kind: error response -->
+<!-- source: functions/api/claude.js:621 | kind: error response -->
 reading failed
 
 @@ s21.Server_responses.008
-<!-- source: functions/api/claude.js:550 | kind: error response -->
-sign in required for generation
+<!-- source: functions/api/claude.js:873 | kind: error response -->
+reading requires a node role (m1|m2|m3|m4)
 
 @@ s21.Server_responses.009
-<!-- source: functions/api/claude.js:573 | kind: reason response -->
-free-reading:
+<!-- source: functions/api/claude.js:909 | kind: error response -->
+sign in required for generation
 
 @@ s21.Server_responses.010
-<!-- source: functions/api/claude.js:590 | kind: error response -->
-insufficient units
+<!-- source: functions/api/claude.js:932 | kind: reason response -->
+free-reading:
 
 @@ s21.Server_responses.011
-<!-- source: functions/api/claude.js:610 | kind: error response -->
-rate limit exceeded, try again later
+<!-- source: functions/api/claude.js:949 | kind: error response -->
+insufficient units
 
 @@ s21.Server_responses.012
-<!-- source: functions/api/claude.js:697 | kind: error response -->
-the reading service is unavailable
+<!-- source: functions/api/claude.js:969 | kind: error response -->
+rate limit exceeded, try again later
 
 @@ s21.Server_responses.013
+<!-- source: functions/api/claude.js:1057 | kind: error response -->
+the reading service is unavailable
+
+@@ s21.Server_responses.014
 <!-- source: functions/api/checkout.js:52 | kind: error response -->
 payments not configured
 
-@@ s21.Server_responses.014
+@@ s21.Server_responses.015
 <!-- source: functions/api/checkout.js:54 | kind: error response -->
 accounts backend not configured
 
-@@ s21.Server_responses.015
+@@ s21.Server_responses.016
 <!-- source: functions/api/checkout.js:58 | kind: error response -->
 sign in required
 
-@@ s21.Server_responses.016
+@@ s21.Server_responses.017
 <!-- source: functions/api/checkout.js:62 | kind: error response -->
 no sku
 
-@@ s21.Server_responses.017
+@@ s21.Server_responses.018
 <!-- source: functions/api/checkout.js:64 | kind: error response -->
 unknown sku
 
-@@ s21.Server_responses.018
+@@ s21.Server_responses.019
 <!-- source: functions/api/checkout.js:85 | kind: error response -->
 checkout failed
 
-@@ s21.Server_responses.019
+@@ s21.Server_responses.020
 <!-- source: functions/api/auth/[[path]].js:142 | kind: error response -->
 sessions are not configured on this deployment
 
-@@ s21.Server_responses.020
+@@ s21.Server_responses.021
 <!-- source: functions/api/auth/[[path]].js:158 | kind: error response -->
 accounts backend not configured
 
-@@ s21.Server_responses.021
+@@ s21.Server_responses.022
 <!-- source: functions/api/auth/[[path]].js:163 | kind: error response -->
 too many sign-ups from this address — try again later
 
-@@ s21.Server_responses.022
+@@ s21.Server_responses.023
 <!-- source: functions/api/auth/[[path]].js:168 | kind: error response -->
 a valid email is required
 
-@@ s21.Server_responses.023
+@@ s21.Server_responses.024
 <!-- source: functions/api/auth/[[path]].js:169 | kind: error response -->
 password must be at least 8 characters
 
-@@ s21.Server_responses.024
+@@ s21.Server_responses.025
 <!-- source: functions/api/auth/[[path]].js:171 | kind: error response -->
 that email is already registered — sign in instead
 
-@@ s21.Server_responses.025
+@@ s21.Server_responses.026
 <!-- source: functions/api/auth/[[path]].js:180 | kind: error response -->
 too many sign-in attempts — try again later
 
-@@ s21.Server_responses.026
+@@ s21.Server_responses.027
 <!-- source: functions/api/auth/[[path]].js:185 | kind: error response -->
 email and password are required
 
-@@ s21.Server_responses.027
+@@ s21.Server_responses.028
 <!-- source: functions/api/auth/[[path]].js:188 | kind: error response -->
 wrong email or password
 
-@@ s21.Server_responses.028
+@@ s21.Server_responses.029
 <!-- source: functions/api/auth/[[path]].js:198 | kind: error response -->
 apple sign-in not configured
 
-@@ s21.Server_responses.029
+@@ s21.Server_responses.030
 <!-- source: functions/api/auth/[[path]].js:200 | kind: error response -->
 unknown provider
 
-@@ s21.Server_responses.030
+@@ s21.Server_responses.031
 <!-- source: functions/api/auth/[[path]].js:225 | kind: error response -->
 no code
 
-@@ s21.Server_responses.031
+@@ s21.Server_responses.032
 <!-- source: functions/api/auth/[[path]].js:234 | kind: error response -->
 sign-in link expired or came from somewhere else — start again
 
-@@ s21.Server_responses.032
+@@ s21.Server_responses.033
 <!-- source: functions/api/auth/[[path]].js:246 | kind: error response -->
 token exchange failed
 
-@@ s21.Server_responses.033
+@@ s21.Server_responses.034
 <!-- source: functions/api/auth/[[path]].js:248 | kind: error response -->
 no access token
 
-@@ s21.Server_responses.034
+@@ s21.Server_responses.035
 <!-- source: functions/api/auth/[[path]].js:252 | kind: error response -->
 profile fetch failed
 
-@@ s21.Server_responses.035
+@@ s21.Server_responses.036
 <!-- source: functions/api/auth/[[path]].js:265 | kind: error response -->
 no email from
 
-@@ s21.Server_responses.036
+@@ s21.Server_responses.037
 <!-- source: functions/api/auth/[[path]].js:276 | kind: error response -->
 not found
 
-@@ s21.Server_responses.037
+@@ s21.Server_responses.038
 <!-- source: functions/api/account/[[path]].js:44 | kind: error response -->
 accounts backend not configured
 
-@@ s21.Server_responses.038
+@@ s21.Server_responses.039
 <!-- source: functions/api/account/[[path]].js:63 | kind: error response -->
 not signed in
 
-@@ s21.Server_responses.039
+@@ s21.Server_responses.040
 <!-- source: functions/api/account/[[path]].js:71 | kind: error response -->
 id required
 
-@@ s21.Server_responses.040
+@@ s21.Server_responses.041
 <!-- source: functions/api/account/[[path]].js:78 | kind: error response -->
 not found
 
-@@ s21.Server_responses.041
+@@ s21.Server_responses.042
 <!-- source: functions/api/billing/[[path]].js:57 | kind: error response -->
 accounts backend not configured
 
-@@ s21.Server_responses.042
+@@ s21.Server_responses.043
 <!-- source: functions/api/billing/[[path]].js:64 | kind: error response -->
 sign in required
 
-@@ s21.Server_responses.043
+@@ s21.Server_responses.044
 <!-- source: functions/api/billing/[[path]].js:72 | kind: error response -->
 payments not configured
 
-@@ s21.Server_responses.044
+@@ s21.Server_responses.045
 <!-- source: functions/api/billing/[[path]].js:74 | kind: error response -->
 no active subscription
 
-@@ s21.Server_responses.045
+@@ s21.Server_responses.046
 <!-- source: functions/api/billing/[[path]].js:82 | kind: error response -->
 cancel failed
 
-@@ s21.Server_responses.046
+@@ s21.Server_responses.047
 <!-- source: functions/api/billing/[[path]].js:86 | kind: message response -->
 Subscription set to cancel — your plan stays active until the period ends, and your units are yours to keep.
 
-@@ s21.Server_responses.047
+@@ s21.Server_responses.048
 <!-- source: functions/api/billing/[[path]].js:92 | kind: error response -->
 no billing profile yet
 
-@@ s21.Server_responses.048
+@@ s21.Server_responses.049
 <!-- source: functions/api/billing/[[path]].js:100 | kind: error response -->
 portal unavailable
 
-@@ s21.Server_responses.049
+@@ s21.Server_responses.050
 <!-- source: functions/api/billing/[[path]].js:104 | kind: error response -->
 not found
 
-@@ s21.Server_responses.050
+@@ s21.Server_responses.051
 <!-- source: functions/api/billing/[[path]].js:109 | kind: error response -->
 webhook not configured
 
-@@ s21.Server_responses.051
+@@ s21.Server_responses.052
 <!-- source: functions/api/billing/[[path]].js:113 | kind: error response -->
 bad signature
 
-@@ s21.Server_responses.052
+@@ s21.Server_responses.053
 <!-- source: functions/api/billing/[[path]].js:116 | kind: error response -->
 bad payload
 
-@@ s21.Server_responses.053
+@@ s21.Server_responses.054
 <!-- source: functions/api/billing/[[path]].js:146 | kind: error response -->
 fulfilment failed, will retry
 

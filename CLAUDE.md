@@ -31,10 +31,17 @@ assets/palettes/color-groups-180.json  180 组存档(改之前,只读)
 assets/marks.js  几何母题生成 → assets/blocks.js 填充色块路由
 assets/weave.js  织字重(全站)
 casting-figure.js   排卦图与排卦动画(BWFigure,延迟加载)
-liuyao-engine.js    六爻排盘(纯函数)  liuyao-ai.js  prompt-router.js  prompt-checks.js
+liuyao-engine.js    六爻排盘(纯函数)
+liuyao-relations.js 盘上一切成立的关系   liuyao-verdict.js  断卦裁决梯
+liuyao-features.js  盘面状态 → RAG 检索键(唯一的映射表)
+liuyao-ai.js        取用神 / 推角色 / 盘→文本(**不叫模型**)
+prompt-router.js    四节点管线的编排(M1→M2→M3→M4)  prompt-checks.js
 chat-app.js  聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js  copy.js
 functions/_middleware.js   拦住内部文件(_redirects 做不到,见 ARCHITECTURE §3D)
-functions/_lib/     prompt-engine.js(解读语气,服务端)db.js session.js password.js
+functions/_lib/     prompt-engine.js(QC/路由/追问的提示词,服务端)db.js session.js password.js
+functions/_lib/nodes/       prompts.js(M1–M4)fill.js(填槽 + VOICE)
+functions/_lib/doctrine/    rag/(11 库 29 卡)rag-features.json  INDEX.md
+                            pack-20260914/(46 条判据 + 象义 + 金标例,见它的 README)
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
 ```
@@ -2142,6 +2149,53 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
 ---
 
 ## 5 · 后端与模型
+
+### ⭐⭐⭐ 解读走四节点,老链路已作废封存(2026-09-14,owner 定)
+
+owner:「为啥不把之前的老旧链路给下了封存 你觉得我是想跑那条链路吗 …… 别再用以前的东西了」。
+
+**一次解读 = 四次调用**,每一站只做一件事:
+
+| | 做什么 | 模型 | 拿到什么 |
+|---|---|---|---|
+| **M1** | 读问题 → `lang / db / ask / hurt / flags` | utility | 只有问题 |
+| **M2** | 选库(两级 RAG 的第一级) | utility | features + ask + 11 个库的条件 |
+| **M3** | 取证:把盘变成这一卦的事,出**词条** | utility | **只有 M2 开的那几个库的卡** + 盘 + 裁决梯 + 关系 |
+| **M4** | 说话:解读本身,流式 | sortis | M3 的四层材料 + 取象标记格式 + VOICE |
+
+- **用神由 M1 的 `db=` 定**(`BWLiuYaoAI.subjectKey(q, {db, gender})`),不再由正则猜领域 ——
+  猜领域正是 M1 存在的全部理由,留两套分类器只会分歧,而**分歧的那一次没人看得见**
+  (默认是世爻,一个读不出来的默认和一个判定长得一样)。
+- **收窄必须先于取前 N。** 第一版全局取前 6 再按 M2 的库过滤 → 交集只剩 1 张卡,
+  **而且不报错**。`tests/node-pipeline.mjs` 钉着。
+- **盘只发给 M3,不发给 M4。** 两站都发就是两个真相源,谁赢由模型当时的心情定。
+
+⭐⭐ **被封存的是四个入口,不是 owner 的提示词。** `prompt-engine.js` 一个字没删,
+QC / ROUTER / INTENT / FOLLOWUP 仍然用它 —— 那几样是工具。作废的是**装配一篇解读**这条路径:
+
+| 删掉的 | 它当时的说法 | 它实际是什么 |
+|---|---|---|
+| `claude.js` 的 default 分支 | 「Default: a reading」 | 34,074 tok 的段落栈,一次调用干完五件事 |
+| `BWLiuYaoAI.interpret()` | 「legacy only covers the freak case」 | 浏览器自己叫模型、解析 JSON、失败回占位断语 |
+| `askOracle()` | 同上 | 三句话行内提示词、**不带盘** |
+| `buildExperienceEnvelope()` | 包一层 TURN_CONTEXT | 把「这一站要什么」变成「全给它」 |
+
+⚠️ **兜底不是无害的。** 合起来它们是一整条能悄悄跑起来的老产品,而读的人付了钱、
+**页面上分不出来这一篇是哪一条路写的**。所以不是「优先走新的」,是**老的不存在**:
+少任何一块就当场抛,不换一条路。`tests/legacy-retired.mjs` 钉着这四个入口。
+
+⚠️⚠️ **删一条路径时要数清楚它顺手扛着什么。** 这一次差点跟着一起消失的有两样,
+而且消失之后**payload 看上去完全正常**:
+① **危机硬停**原来挂在老路由上 —— 现在跑在四节点分支里,且在 `buildNode` **之前**
+(一个说自己想死的人,不该先被路由到「婚恋库」);顺带修掉一件老账:
+闸跑在危机分支之前,所以**那条求助信息一直在花掉他唯一一次免费解读**,现在退回。
+② **用神的出处**(「这是**默认**不是判定」)原来挂在老 header 上 —— 现在跟着
+`distill()` 的 `yongshen` 字段一起发。
+
+⚠️ **m1/m2/m3 在 `UTILITY_ROLES` 里,这是计费判断不是模型偏好。** 闸原来按 `product` 分流,
+四次调用都带 `product:"sortis"` —— **M1 就把新用户的免费解读花掉了**,后三站撞余额,
+而新用户余额是 0:一卦都起不了。和 codex 那次加 reserve+cap 是同一个后果。
+**一次解读就是一次解读,不管它在里面调了几个模型。**
 
 - 浏览器只声明**意图**(`product`/`role`),模型由服务端选,key 永不下发。
 - 环境变量(Pages → Settings → Environment variables):

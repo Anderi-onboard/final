@@ -119,9 +119,13 @@ const board = sandbox.BWLiuYao.computeBoard({
   changeIdx: [1, 2, 3]
 });
 const roles = AI.deriveRoles(board, exam.key);
-const built = AI.buildMessages(board, roles, '我明天考科目一能过吗', exam.key, null, 'zh', exam);
+const built = { messages: [{ content: AI.boardText(board, roles, exam) }] };
 const text = built.messages[0].content;
-assert.match(text, /CHOSEN FROM THE QUESTION/,
+/* ⚠️ 这一条 2026-09-14 换了地址,没换意思。原来它查的是 `buildMessages()` 写的
+   那段 header(「CHOSEN FROM THE QUESTION」);header 跟着老链路作废了,而
+   **用神字段本身照样算得出来** —— payload 会看上去完全正常。
+   这正是这个文件开头那段事故的形状。现在出处跟着 yongshen 一起发。 */
+assert.match(text, /由问题定/,
   'the board block no longer says where the 用神 came from');
 assert.match(text, /父母/, 'the board block does not name the chosen 用神');
 assert.match(text, /BOTH are 用神/, 'the second 用神 is not carried into the block');
@@ -135,6 +139,13 @@ assert.equal(el.yong, 4, '用神 element is not 水 — the assignment moved');
 assert.equal(el.yuan, 3, '原神 should be 金 (金生水)');
 assert.equal(el.ji, 2, '忌神 should be 土 (土克水)');
 assert.equal(el.chou, 1, '仇神 should be 火 (火生土) — the element the 用神 transforms into on this board');
+
+/* 反过来也要报:没点出主体时,payload 必须自己说「这是默认不是判定」。
+   一个读不出来的默认和一个判定长得一模一样 —— 这是本仓库最贵的那个形状。 */
+const defaulted = AI.boardText(board, AI.deriveRoles(board, 'self'),
+  AI.subjectKey('随便看看'));
+assert.match(defaulted, /默认\*\*不是判定|这是\*\*默认\*\*不是判定/,
+  '问题没点出主体时,payload 没有说这是默认 —— 那它和一个真判定分不出来');
 
 const worldAnchored = AI.deriveRoles(board, 'self');
 assert.notEqual(worldAnchored.elements.yong, el.yong,
@@ -158,7 +169,7 @@ assert.notEqual(worldAnchored.elements.yong, el.yong,
 function payloadFor(lines, changeIdx, question) {
   const b = sandbox.BWLiuYao.computeBoard({ lines, changeIdx });
   const s = AI.subjectKey(question);
-  const m = AI.buildMessages(b, AI.deriveRoles(b, s.key), question, s.key, null, 'zh', s);
+  const m = { messages: [{ content: AI.boardText(b, AI.deriveRoles(b, s.key), s) }] };
   const txt = m.messages[0].content;
   const HEAD = 'BOARD (authoritative facts):\n';
   return JSON.parse(txt.slice(txt.indexOf(HEAD) + HEAD.length, txt.indexOf('\n\nTIMING')));

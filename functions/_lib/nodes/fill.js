@@ -71,6 +71,10 @@ export function buildNode(node, body) {
     return {
       system: M3
         .replace("{{cards}}", cardsForModel(open))
+        /* ⚠️ 盘只发给 M3,不发给 M4。M4 拿的是 M3 的 `程=` 那一层 ——
+           两站都发就是**两个真相源**,而谁赢由模型当时的心情决定。
+           CLAUDE.md §7.5 那条「两张名单」已经付过三次学费。 */
+        .replace("{{board}}", s(body.board, 12000) || "(盘未算出)")
         .replace("{{ladder}}", s(body.ladder, 6000) || "(裁决梯未运行)")
         .replace("{{relations}}", s(body.relations, 6000) || "(关系未算)")
         .replace("{{ask}}", m1.ask || question),

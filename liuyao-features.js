@@ -53,22 +53,53 @@
   /* 是判断不是事实,不该当检索键 —— 记在这儿,不发。 */
   var NOT_A_FACT = ["MULTIPLE_PLAUSIBLE_INTERPRETATIONS"];
 
-  /* ── 每爻状态 → feature。读的是 liuyao-relations.js 的 state 那几个中文字段。 */
+  /* ── 每爻状态 → feature。读的是 liuyao-relations.js 的 state 那几个中文字段。
+     ⭐⭐ **2026-09-14 补齐:引擎一直在算,这张表没往外发。** 对着补全包的
+     `feature_alias_map`(34 条)核了一遍,34 条里有 21 条在这里没有落点 ——
+     而**其中绝大多数 `liuyao-relations.js` 早就算出来了**(真空/假空/真破/假破/
+     暗动/化空/化绝/回头冲/回头合 全在 state 和 transforms[].kinds 里)。
+     也就是说:46 条判据引用的检索键有三分之二找不到地方落,**不是因为引擎读不出来,
+     是因为这张映射表短了一截**。一张没同步的映射表不会报错,它只是让下游永远
+     检索不到那一类卡 —— 而下游照样有卡可读。
+
+     ⚠️ **真/假要分开发,不能只发「旬空」。** 判据的走向是相反的:真空是
+     「这条线死了」,假空是「它还在,只是现在不出面」。合成一个 id,
+     就是把两条相反的断法路由到同一批卡上。 */
   var STATE_MAP = [
     { field: "旬空",     id: "XUN_EMPTY" },
+    { field: "真空",     id: "TRUE_VOID" },
+    { field: "假空",     id: "FALSE_VOID" },
     { field: "月破",     id: "MONTH_BREAK" },
+    { field: "真破",     id: "TRUE_BREAK" },
+    { field: "假破",     id: "FALSE_BREAK" },
     { field: "日破",     id: "DAY_BREAK" },
+    { field: "暗动",     id: "HIDDEN_MOVEMENT" },
+    /* ⚠️ 入墓仍然发一个笼统的 ENTER_TOMB,**但三种墓各自也发自己的 id**。
+       断法上它们不一样(日墓待冲、月墓待出月、动墓随动爻),只发笼统那个
+       等于把三条应期规则压成一条 —— 而 SOP-5 恰恰按这个分尺度。 */
     { field: "日墓",     id: "ENTER_TOMB" },
+    { field: "日墓",     id: "DAY_TOMB" },
     { field: "月墓",     id: "ENTER_TOMB" },
+    { field: "月墓",     id: "MONTH_TOMB" },
     { field: "动化入墓", id: "ENTER_TOMB" },
+    { field: "动化入墓", id: "TRANSFORM_TOMB" },
+    { field: "动化空",   id: "TRANSFORM_EMPTY" },
     { field: "发动",     id: "MOVING_LINE" }
   ];
 
-  /* ── 变爻 kinds → feature。读 relations.transforms[].kinds。 */
+  /* ── 变爻 kinds → feature。读 relations.transforms[].kinds。
+     ⚠️ **「化绝」不再映射成 AT_ABSOLUTE。** 那是两件事:AT_ABSOLUTE 是
+     「这一爻临绝地」,TRANSFORM_ABSOLUTE 是「它动了,动成了自己的绝」——
+     后者是《增删卜易》§3 写死的大凶败局,前者不是。混成一个 id,
+     那条败局就检索不到自己的卡,而页面上什么都看不出来。 */
   var TRANSFORM_MAP = {
     "回头生": "RETURN_GENERATION",
     "回头克": "RETURN_CONTROL",
-    "化绝":   "AT_ABSOLUTE",
+    "回头冲": "RETURN_CLASH",
+    "回头合": "RETURN_COMBINATION",
+    "化绝":   "TRANSFORM_ABSOLUTE",
+    "化空":   "TRANSFORM_EMPTY",
+    "化入墓": "TRANSFORM_TOMB",
     "化进神": "ADVANCE_SPIRIT",
     "化退神": "RETREAT_SPIRIT"
   };

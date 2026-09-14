@@ -396,7 +396,24 @@ export async function onRequestPost(context) {
     // model call, no charge — the resources are returned directly.
     if (built.route === 'crisis') {
       chargeTo = null;
+      /* ⚠️ 免费解读也要还回去。闸跑在这条分支**之前**(它要先知道是谁),
+         所以走到这里时第一次的免费额度已经被领走了 —— 不还的话,
+         **一个说自己想死的人,那一条求助信息花掉了他唯一一次免费解读**。
+         CLAUDE.md §5 早写过「为一段没有模型写过的文字计费」是不可辩护的结算;
+         这是同一条,而且更难看。 */
+      if (freeClaim && db) {
+        try { await releaseFreeReading(db, freeClaim.userId, freeClaim.reason); } catch (e) {}
+        freeClaim = null;
+      }
       return json({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }, 200);
+    }
+    /* 老链路退役之后,一个没带 node role 的解读请求到这儿。**放它过去等于
+       把它悄悄接回老装配** —— 而那条路已经不存在了,所以它必须自己说话。
+       ⚠️ 位置在危机分支**之后**:模型关着、路由退役,都不是把一个处在危机里的
+       人挡在资源前面的理由。CLAUDE.md §5 为离线模式写过同一条,顺序就是全部性质。 */
+    if (built.error) {
+      chargeTo = null;
+      return json(built.error.body, built.error.status);
     }
 
     /* ── the offline answer ───────────────────────────────────────────────
@@ -822,20 +839,41 @@ async function buildSystem({ body, env, product, mode, messages, offline }) {
      变成这一卦的事;M4 说话。每一站的槽由 fill.js 填 —— 断法原文只在服务端,
      浏览器拿不到,这条界线和 prompt-engine.js 08-14 搬进 _lib 是同一条。 */
   if (role === 'm1' || role === 'm2' || role === 'm3' || role === 'm4') {
+    /* ⚠️⚠️ **危机硬停要在这里跑,不能跟着老链路一起退役。**
+       它原来挂在 `buildSystemPrompt()` 的路由上,而那条路由 2026-09-14 作废了 ——
+       **删掉一条路径的时候,要数清楚它顺手扛着什么。** 这道闸是代码不是模型
+       (`PromptEngine.gate` 读 CRISIS_PATTERNS),所以照跑,而且跑在
+       `buildNode` 之前:一个说自己想死的人,不该先被路由到「婚恋库」。
+       CLAUDE.md §5 为离线模式写过同一条:顺序就是全部性质。
+
+       ⚠️ 四站都查,不只查 M1。少查一站,就等于那一站是绕过闸的入口。 */
+    const lastU = [...messages].reverse().find((m) => m && m.role === 'user');
+    const q = str(body.question || (lastU && lastU.content) || '', 4000);
+    if (PromptEngine.gate(q) === 'crisis') return { route: 'crisis' };
     const built = buildNode(role, body);
     if (built) return built;
   }
 
-  // Default: a reading. Route it from the question and assemble the stack.
-  // The question is taken from `body.question` when the client sends it, and
-  // otherwise recovered from the last user message, so a client that only ever
-  // posts messages still gets correctly routed.
-  const lastUser = [...messages].reverse().find((m) => m && m.role === 'user');
-  const question = str(body.question || (lastUser && lastUser.content) || '', 4000);
-  // ⚠️ Offline hands routeQuestion nothing rather than a stub that fetches: it
-  // answers "general" when it has no completion function, so the assembly stays
-  // entirely local and the fixture is reached without a single outbound call.
-  return PromptEngine.buildSystemPrompt(question, product, offline ? null : utility, { mode });
+  /* ⚠️⚠️ **没有 default 了。老的那条装配已作废封存(2026-09-14,owner 定)。**
+     这里原来是:
+         return PromptEngine.buildSystemPrompt(question, product, …)
+     —— 从问题选路由、把 95k 字符的段落栈装配成一个 system,一次调用干完
+     分类、取用神、检索、推理、写作五件事。**它就是老链路。**
+
+     它不能留成兜底,理由不是审美:一个没带 `role` 的请求会**静默**落到它上面,
+     于是线上同时跑着两套完全不同的东西,而**页面上分不出来是哪一套写的**。
+     本仓库为「降级了却像在正常工作」付过的钱,这一节自己就记着好几笔。
+
+     `PromptEngine` 本身**没有删**:QC / ROUTER / INTENT / FOLLOWUP 仍然在用它,
+     那几样不是老链路,是工具。作废的是**装配解读**这一条路径。
+     owner 的提示词原文一个字都没动,它还在 `functions/_lib/prompt-engine.js` 里。 */
+  return { error: {
+    status: 400,
+    body: {
+      error: 'reading requires a node role (m1|m2|m3|m4)',
+      code: 'LEGACY_PIPELINE_RETIRED'
+    }
+  } };
 }
 
 // Returned verbatim when the gate trips. Kept here rather than in the engine so

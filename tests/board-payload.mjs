@@ -58,10 +58,9 @@ const QUESTION = '我明天考科目一能过吗';
 function fixture(dayGanzhi) {
   const b = sandbox.BWLiuYao.computeBoard({ lines: LINES, changeIdx: [1, 2, 3], dayGanzhi });
   const subj = AI.subjectKey(QUESTION);
-  const msg = AI.buildMessages(b, AI.deriveRoles(b, subj.key), QUESTION, subj.key, null, 'zh', subj);
-  // Delimiter-bounded: `(.+)` assumed the payload was one line, which stopped
-  // being true when the six lines were laid out one row each.
-  const txt = msg.messages[0].content;
+  /* ⚠️ 2026-09-14:`buildMessages` 作废封存,盘面文本改由 `boardText` 出。
+     这个契约量的一直是 payload,不是提示词 —— 换的是取法。 */
+  const txt = AI.boardText(b, AI.deriveRoles(b, subj.key), subj);
   const HEAD = 'BOARD (authoritative facts):\n';
   const p = JSON.parse(txt.slice(txt.indexOf(HEAD) + HEAD.length, txt.indexOf('\n\nTIMING')));
   assert.ok(Array.isArray(p.lines) && p.lines.length === 6,
@@ -192,9 +191,8 @@ for (const { board: b, payload: p } of FIXTURES) {
    string: no rows to count, and every fact about line 4 buried mid-run. This
    is the second of two independent fixes for the counting error, and it is the
    one that also helps every other per-line fact. Whitespace only — still JSON. */
-const rendered = AI.buildMessages(
-  FIXTURES[0].board, AI.deriveRoles(FIXTURES[0].board, 'self'), QUESTION, 'self', null, 'zh',
-  { key: 'self', matched: false }).messages[0].content;
+const rendered = AI.boardText(
+  FIXTURES[0].board, AI.deriveRoles(FIXTURES[0].board, 'self'), { key: 'self', matched: false });
 const HEAD2 = 'BOARD (authoritative facts):\n';
 const blockLines = rendered.slice(rendered.indexOf(HEAD2) + HEAD2.length, rendered.indexOf('\n\nTIMING')).split('\n');
 const rows = blockLines.filter((l) => /^\s+\{"line":/.test(l));

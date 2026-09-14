@@ -9,11 +9,17 @@
    derived here (deriveRoles) — the AI never computes those.
 
    ┌─ CONTRACT ──────────────────────────────────────────────────────────┐
-   │ BWLiuYaoAI.deriveRoles(board, yongshenKey) → roleMap  (deterministic) │
-   │ BWLiuYaoAI.interpret({board, question, category, gender?, lang?})     │
-   │     → Promise<Reading>   (calls window.claude.complete, mock fallback) │
+   │ BWLiuYaoAI.subjectKey(question, {db, gender}) → 用神(M1 的 db 说了算) │
+   │ BWLiuYaoAI.deriveRoles(board, yongshenKey)    → roleMap (deterministic)│
+   │ BWLiuYaoAI.relationLines(board, roles, subject) → 盘上一切成立的关系   │
+   │ BWLiuYaoAI.boardText(board, roles, subject)   → 盘的文本(M3 读它)    │
    └──────────────────────────────────────────────────────────────────────┘
-   See LIUYAO-AI-PROTOCOL.md for the exact JSON the AI must return. */
+
+   ⚠️ **这个文件不再自己叫模型(2026-09-14,owner 定)。**
+   `interpret()`(调 Claude、解析 JSON、失败回 mockReading)整条是老链路,
+   已作废封存;解读由四节点管线 M1→M2→M3→M4 产出,见
+   `functions/_lib/nodes/`。这里只剩确定性的那几件:取用神、推角色、
+   算关系、把盘写成文本。**它们不是老链路,它们是引擎的输出。** */
 (function () {
   "use strict";
 
@@ -516,6 +522,21 @@
         + "ALSO-用神(second-subject); lines that control it are flagged attacks-second-用神. "
         + "The role field below is measured from the FIRST 用神 only.)";
     }
+    /* ⚠️⚠️ **它是怎么定下来的,必须跟着它一起发。**
+       这句话原来住在 `buildMessages()` 写的那段 header 里
+       (「CHOSEN FROM THE QUESTION」/「NOT NAMED — this is a DEFAULT, not a finding」),
+       2026-09-14 老链路作废时,header 跟着没了 —— 而**这个字段本身照样算得出来,
+       于是 payload 看上去完全正常**:世爻,一个干干净净的判定。
+       这正是这个文件开头那段事故的形状(默认和判定长得一样),差点靠删一条
+       路径重新犯一遍。**删一条路径时要数清楚它顺手扛着什么。**
+       现在它跟着 yongshen 走,谁读这个 payload 都躲不开。 */
+    if (subject) {
+      yongStr += subject.matched
+        ? "  [由问题定:" + (subject.why || "") + (subject.source ? " · 来源 " + subject.source : "") + "]"
+        : "  [⚠️ 问题没有点出主体,这是**默认**不是判定:按自占取世爻。"
+          + (subject.why ? " " + subject.why : "")
+          + " 措辞若确实指向某个主体,读那一爻并说出来。]";
+    }
     /* ── 伏神 roster ────────────────────────────────────────────────────────
        Every 六亲 missing from the six lines lies hidden under a flying line,
        and the block above reports that ONLY when the missing one happens to be
@@ -706,9 +727,9 @@
     return '{\n' + head.join(',\n') + ',\n  "lines": [\n' + rows.join(',\n') + '\n  ]\n}';
   }
 
-  // The user drops THEIR divination prompt into USER_PROMPT below. The protocol
-  // appends the board + a strict JSON-output contract so parsing never breaks.
-  var USER_PROMPT = ""; // ← user's master prompt goes here (or pass opts.systemPrompt)
+  /* ⚠️ `USER_PROMPT` / `setUserPrompt()` 跟着老链路一起删了(2026-09-14)。
+     它是「把你自己的 master prompt 塞进来」那条口子,而提示词现在在服务端、
+     一个字都不下发 —— 一个浏览器里的提示词插槽和那条界线是矛盾的。 */
 
   /* ── TIMING REFERENCE — deterministic Gregorian translation of branch time ──
      A Western reader cannot use "the Yin month" alone, and branch cycles
@@ -765,145 +786,26 @@
     ].filter(Boolean).join("\n");
   }
 
-  function buildMessages(board, roles, question, category, gender, lang, subject){
-    var schema = [
-      "Return ONLY valid minified JSON, no prose, with EXACTLY these keys:",
-      '{',
-      '"yongshenKey": one of parent|peer|output|wealth|officer|self,',
-      '"yongshenReason": "<=20 words, why this 用神 fits the question",',
-      '"strength": "strong"|"weak"|"mixed",',
-      '"keyLines": [{"line":1-6,"note":"<=16 words"}],  // the 2-3 lines that decide it',
-      '"verdict": "favorable"|"unfavorable"|"mixed"|"unclear",',
-      '"timing": "<=18 words 应期 WITH Gregorian anchors from TIMING REFERENCE at the scale the question asks (near → day/month dates; 以后/long-horizon → branch YEARS, e.g. next Yin year 2034); or empty",',
-      '"reading": "2-4 sentence answer in '+(lang==="zh"?"Chinese":"English")+', plain, second-person, no jargon dump"',
-      '}',
-      '',
-      (lang==="zh" ? "All values in Chinese." : "Use ONLY English — do NOT put any Chinese characters anywhere in the JSON (no 用神, no branch/element glyphs; use the English names given in the board).")
-    ].join("\n");
+  /* ═══════════ 4. boardText — 盘 → 模型读得懂的一块文本 ═══════════════════
+     ⭐⭐ **这是 `buildMessages()` 剩下来的那一半,而且是有价值的那一半。**
+     老的 `buildMessages` 把三样东西捆在一起:一段老的 system 提示词、一份
+     「只回 JSON」的 schema、和这块盘面文本。前两样跟着老链路一起作废了
+     (2026-09-14,owner:「不要老的架构 要全新的那个 老的作废封存」),
+     而盘面文本**不是老链路**,它是引擎的输出 —— PR #82 那一轮修的
+     干支、纳甲字形、动爻数、一爻一行,全在这里面。
+     所以拆开:捆着的那两样删掉,这一块留下,四节点的 M3 直接读它。
 
-    var sys = (USER_PROMPT || [
-      "You are the BourneWise diviner. You read a fully-computed Liu Yao (六爻) board.",
-      "The board's facts (najia, six-relatives, world/response, six-spirits, void, strength,",
-      "moving-line transforms, hidden spirits) are ALREADY CORRECT — never recompute them.",
-      "Your job: (1) pick the 用神 (subject line) that matches the QUESTION; (2) judge whether",
-      "the subject is supported or attacked using strength + the moving lines + day/month;",
-      "(3) give a clear, grounded answer. Favor the moving line, the day branch, and the month",
-      "as the decisive forces. A void/broken/tomb-bound subject is weak; a thriving subject fed",
-      "by its 原神 or by a moving line is strong."
-    ].join(" "));
-
-    var user = [
-      "QUESTION: "+question,
-      "CATEGORY: "+(category||"general")+(gender?(" · asker gender: "+gender):""),
-      (subject && subject.matched
-        ? ("用神 · CHOSEN FROM THE QUESTION: " + (YONGSHEN_INFO[subject.key] ? YONGSHEN_INFO[subject.key].cn : subject.key)
-           + (subject.second ? (" + " + (YONGSHEN_INFO[subject.second] ? YONGSHEN_INFO[subject.second].cn : subject.second)
-              + " — BOTH are 用神 here; if either one is weak the matter fails") : "")
-           + "  (" + (subject.why || "") + ")"
-           + "  · Say which line you are reading and why, in the reading itself.")
-        : ("用神 · NOT NAMED BY THE QUESTION — falling back to 世爻 (自占). "
-           + "This is a DEFAULT, not a finding: if the wording does point at a subject, read that line instead and say so.")),
-      "",
+     ⚠️ 别再往这个函数里加「怎么读」的话。它只回答**盘上有什么**;
+     怎么读是 M3 的卡和 M4 的嘴。捆在一起正是上一版的毛病。 */
+  function boardText(board, roles, subject){
+    return [
       "BOARD (authoritative facts):",
-      /* ONE LINE PER LINE. The six line objects used to arrive inside a single
-         unbroken ~1,800-character minified string, which is the layout that
-         makes a board hard to read for the same reason it is hard for a person:
-         there are no rows to count, and every fact about line 4 sits in the
-         middle of a paragraph-length token run. The failed reading counted two
-         moving lines where the board had three.
-         Still valid JSON — only whitespace changes, and the payload's own
-         `moving` field now states the count outright, so this is the second of
-         two independent fixes for one error. */
       stringifyBoard(distill(board, roles, subject)),
       "",
-      timingReference(board),
-      "",
-      schema
+      timingReference(board)
     ].join("\n");
-
-    return { system:sys, messages:[{role:"user", content:user}] };
   }
 
-  /* ═══════════ 4. interpret — call Claude, parse, fallback to mock ═══════════ */
-  function parseJSON(text){
-    if (!text) return null;
-    var m = text.match(/\{[\s\S]*\}/);
-    if (!m) return null;
-    try { return JSON.parse(m[0]); } catch(e){ return null; }
-  }
-
-  function interpret(opts){
-    opts = opts || {};
-    var board = opts.board, question = opts.question||"";
-    // The subject is read off the question unless a caller names a category.
-    var subject = subjectKey(question);
-    var category = opts.category || subject.key;
-    var gender = opts.gender||"", lang = opts.lang||"en";
-    // provisional 用神 from category, so the board can paint roles immediately
-    var priorKey = (opts.category && CATEGORY_YONGSHEN[opts.category]) || subject.key || "self";
-    var roles = deriveRoles(board, priorKey);
-
-    var hasClaude = (typeof window!=="undefined" && window.claude && typeof window.claude.complete==="function");
-    if (!hasClaude || opts.mock){
-      return Promise.resolve(mockReading(board, roles, question, category, lang));
-    }
-
-    var built = buildMessages(board, roles, question, category, gender, lang, subject);
-    if (opts.systemPrompt) built.system = opts.systemPrompt;
-
-    return window.claude.complete({ product:"sortis", system:built.system, messages:built.messages })
-      .then(function(text){
-        var out = parseJSON(text);
-        if (!out || !out.yongshenKey) return mockReading(board, roles, question, category, lang);
-        // re-derive roles from the AI's actual 用神 choice (still deterministic)
-        var finalRoles = deriveRoles(board, out.yongshenKey);
-        return packReading(board, finalRoles, out, false);
-      })
-      .catch(function(){ return mockReading(board, roles, question, category, lang); });
-  }
-
-  function packReading(board, roles, ai, isMock){
-    return {
-      source: isMock ? "mock" : "ai",
-      yongshenKey: roles.yongshenKey,
-      yongshenInfo: YONGSHEN_INFO[roles.yongshenKey],
-      roles: roles,                       // role overlay for the board renderer
-      yongshenReason: ai.yongshenReason||"",
-      strength: ai.strength||"mixed",
-      keyLines: ai.keyLines||[],
-      verdict: ai.verdict||"unclear",
-      timing: ai.timing||"",
-      reading: ai.reading||""
-    };
-  }
-
-  /* deterministic fallback so the experience works with no AI wired ─────────── */
-  function mockReading(board, roles, question, category, lang){
-    var yongLines = roles.yongLines.length ? roles.yongLines
-                  : (roles.yongHidden ? [roles.yongHidden.position] : [roles.worldLi]);
-    // crude strength read of the (first) 用神 line
-    var li = yongLines[0];
-    var L = board.lines[li];
-    var rank = L.wangShuai.rank;
-    var hits = 0;
-    if (L.void) hits--; if (L.monthClash) hits--; if (L.dayClash) hits--;
-    if (L.dayGenerates) hits++; if (L.monthGenerates) hits++;
-    if (L.dayControls) hits--; if (L.monthControls) hits--;
-    if (roles.yongHidden) hits--;
-    var score = rank + hits;
-    var strength = score>=4 ? "strong" : (score<=1 ? "weak" : "mixed");
-    var verdict = strength==="strong" ? "favorable" : strength==="weak" ? "unfavorable" : "mixed";
-    var yi = YONGSHEN_INFO[roles.yongshenKey];
-    var reading = (lang==="zh")
-      ? ("用神取"+yi.cn+"，"+(roles.yongHidden?"伏而不现，":"")+"当前"+L.wangShuai.cn+"，整体"+(verdict==="favorable"?"得力可成":verdict==="unfavorable"?"无力难成":"喜忌交杂、需待时")+"。（占位断语 — 接入 AI 后由模型生成）")
-      : ("Subject taken as "+yi.en+" ("+yi.cn+")"+(roles.yongHidden?", hidden beneath its flying line":"")+", currently "+L.wangShuai.en.toLowerCase()+". Overall "+(verdict==="favorable"?"supported — it can come through":verdict==="unfavorable"?"under pressure — forcing it spends you":"mixed — it turns on timing")+". (Placeholder verdict — the AI writes the real reading.)");
-    return packReading(board, roles, {
-      yongshenReason: (lang==="zh"?"按问题类别取用":"by question category"),
-      strength: strength, verdict: verdict,
-      keyLines: yongLines.map(function(x){return {line:x+1, note:(lang==="zh"?"用神爻":"subject line")};}),
-      timing: "", reading: reading
-    }, true);
-  }
 
   window.BWLiuYaoAI = {
     deriveRoles: deriveRoles,
@@ -913,10 +815,10 @@
     /* 关系行本来只在 distill() 内部用。四节点管线要把它单独发给 M3/M4
        (M3 拿它当「盘上的关系」那一层),所以导出来 —— 一处计算,两处读。 */
     relationLines: relationLines,
-    interpret: interpret,
-    buildMessages: buildMessages,   // exposed so the user can inspect/replace the prompt
+    /* 盘 → 一块文本。M3 读它。⚠️ 老的 `buildMessages` / `interpret` /
+       `mockReading` 已作废封存 —— 见 boardText 上面那段。 */
+    boardText: boardText,
     CATEGORY_YONGSHEN: CATEGORY_YONGSHEN,
-    YONGSHEN_INFO: YONGSHEN_INFO,
-    setUserPrompt: function(p){ USER_PROMPT = p||""; }
+    YONGSHEN_INFO: YONGSHEN_INFO
   };
 })();

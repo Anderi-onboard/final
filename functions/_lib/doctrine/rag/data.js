@@ -143,10 +143,18 @@ export const RAG = {
    "purpose": "解释空、破、墓、绝的有效性、现实含义、救应与应期",
    "features": [
     "XUN_EMPTY",
+    "TRUE_VOID",
+    "FALSE_VOID",
     "MONTH_BREAK",
+    "TRUE_BREAK",
+    "FALSE_BREAK",
     "DAY_BREAK",
     "ENTER_TOMB",
-    "AT_ABSOLUTE"
+    "DAY_TOMB",
+    "MONTH_TOMB",
+    "TRANSFORM_TOMB",
+    "TRANSFORM_EMPTY",
+    "TRANSFORM_ABSOLUTE"
    ],
    "domains": [],
    "intents": [],
