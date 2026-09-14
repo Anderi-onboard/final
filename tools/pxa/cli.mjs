@@ -24,6 +24,7 @@ import { pathToFileURL } from 'node:url';
 import { readPNG, writePNG } from './png.mjs';
 import { detectGrid, sampleCells, buildPalette, assignFrames, hex, rgbToOklab } from './ingest.mjs';
 import { estimateBands, snapShifts, describe } from './motion.mjs';
+import { cmdTui } from './tui.mjs';
 import { encode, decode, stats, cssVarFor } from '../../assets/pxa-codec.mjs';
 
 export const USAGE = `pxa — build and inspect colour-cell animations.
@@ -31,6 +32,7 @@ export const USAGE = `pxa — build and inspect colour-cell animations.
   pxa encode  <frames-dir> -o out.pxa.json [options]
   pxa inspect <file.pxa.json>
   pxa preview <file.pxa.json> -o <dir> [--scale 8]
+  pxa tui     <file.pxa.json>
 
 encode options
   -o, --out <file>   where to write (required)
@@ -61,6 +63,10 @@ encode options
                      rows only, because a still band with a small moving object
                      inside it is not a translating band.
   --bands N          how many independently-moving horizontal bands (default 6)
+
+\`tui\` plays it in the terminal — a pixel grid and a terminal grid are the same
+object, so one cell carries two pixels with the upper half block and nothing is
+scaled or approximated. It is the fastest way to answer "did this encode right".
 
 \`preview\` writes the decoded frames back out as PNGs. That is the only honest
 way to sign off an encode: the numbers in \`inspect\` will happily look healthy
@@ -348,6 +354,7 @@ export function main(args) {
   if (cmd === 'encode') { cmdEncode(); return true; }
   if (cmd === 'inspect') { cmdInspect(); return true; }
   if (cmd === 'preview') { cmdPreview(); return true; }
+  if (cmd === 'tui') { cmdTui(argv[1]); return true; }
   return false;
 }
 
