@@ -1,40 +1,37 @@
-# Copy to .dev.vars for local `wrangler pages dev`. NEVER commit the real key.
-# In production these go in Cloudflare Pages → Settings → Environment variables.
+# 本地跑整站 —— 复制成 `.dev.vars`(它在 .gitignore 里,不会提交)
+#
+# ⭐ 和线上唯一的差别就是下面这两行:端点和模型名。
+#    计费闸、危机闸、免费额度、流式 SSE、D1、前端 —— 全部走线上那条路,代码一行不改。
 
-# Required — your OpenRouter API key (the proxy calls Claude models through
-# OpenRouter, not Anthropic directly).
-OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# ── ① 上游端点 ──────────────────────────────────────────────────────────────
+# 不设 = 线上(OpenRouter)。设了 = 本地。
+#   Ollama       ollama serve                    → http://localhost:11434/v1
+#   LM Studio    开 Local Server                 → http://localhost:1234/v1
+#   llama.cpp    llama-server -m x.gguf          → http://localhost:8080/v1
+#   vLLM         vllm serve …                    → http://localhost:8000/v1
+#
+# ⚠️ wrangler 跑在 workerd 里,`localhost` 指的是它自己。
+#    macOS/Windows 的 Docker 环境用 host.docker.internal;裸机上 localhost 就行。
+MODEL_BASE_URL=http://localhost:11434/v1
+MODEL_API_KEY=local
 
-# Optional model overrides (defaults shown, as OpenRouter model slugs). The
-# proxy routes by product/role:
-#   stria  → Opus 5          sortis → Opus 5        router/qc → Haiku 4.5
-# STRIA_MODEL=anthropic/claude-opus-5
-# SORTIS_MODEL=anthropic/claude-opus-5
-# UTILITY_MODEL=anthropic/claude-haiku-4.5
+# ── ② 模型名 ────────────────────────────────────────────────────────────────
+# 线上是 anthropic/claude-opus-5 那套;本地填你 `ollama list` 里的名字。
+# 分站配:M1/M2/M3 走 UTILITY_MODEL(小的够用),M4 走 SORTIS_MODEL。
+SORTIS_MODEL=qwen2.5:32b
+STRIA_MODEL=qwen2.5:32b
+UTILITY_MODEL=qwen2.5:7b
 
-# Optional cap on response length (clamped 256–8192).
-# CLAUDE_MAX_TOKENS=1024
+# ── ③ 把模型开回来 ──────────────────────────────────────────────────────────
+# 不设这个就是离线模式(返回罐头解读、不计费)—— 那是线上的默认,不是 bug。
+LIVE_MODEL=on
 
-# ── Accounts ──────────────────────────────────────────────────────────────
-# Secret used to sign session cookies. Use a long random string in production.
-SESSION_SECRET=change-me-to-a-long-random-string
+# ── ④ 会话 ──────────────────────────────────────────────────────────────────
+# 没有它谁都登录不了,于是也没人能起卦(计费闸要一个账号)。
+# 本地随便一串就行;线上是 Pages 里的密钥。
+SESSION_SECRET=local-dev-only-not-a-secret
 
-# Google OAuth (optional). Without these, the app still has real persisted
-# accounts via email/dev sign-in; "Continue with Google" just stays inactive.
-# Authorized redirect URI in Google Cloud console:
-#   https://YOUR-DOMAIN/api/auth/google/callback
-# GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
-# GOOGLE_CLIENT_SECRET=xxxx
-
-# ── Creem payments (leave unset to keep the demo fallback) ──────────────────
-# Key prefix picks the API base automatically (creem_test_ → test-api.creem.io)
-CREEM_API_KEY=creem_test_xxxxxxxxxxxxxxxx
-CREEM_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxx
-CREEM_PRODUCT_PROMONTHLY=prod_xxxxxxxx
-CREEM_PRODUCT_PROANNUAL=prod_xxxxxxxx
-CREEM_PRODUCT_PREMIUMMONTHLY=prod_xxxxxxxx
-CREEM_PRODUCT_PREMIUMANNUAL=prod_xxxxxxxx
-CREEM_PRODUCT_PACK7500=prod_xxxxxxxx
-CREEM_PRODUCT_PACK15000=prod_xxxxxxxx
-CREEM_PRODUCT_PACK30000=prod_xxxxxxxx
-CREEM_PRODUCT_PACK75000=prod_xxxxxxxx
+# ── 可选 ────────────────────────────────────────────────────────────────────
+# CLAUDE_MAX_TOKENS=12000
+# CLAUDE_THINKING=on          # 只对 OpenRouter 有意义,本地端点会忽略
+# OPENROUTER_API_KEY=sk-or-…  # 想在本地打线上模型时才填(会花钱)

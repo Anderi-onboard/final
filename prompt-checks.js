@@ -42,6 +42,87 @@
         }
       }
 
+      /* ── the same count, in Chinese ────────────────────────────────────────
+         The English pattern above is the only board-fact check that existed,
+         and it never ran: readings follow the asker's language, so a Chinese
+         reading writes 「动爻两条」 and the regex never matched. Measured on a
+         live reading 2026-08-27 — it listed two moving lines against a board
+         carrying three, and the one it dropped was the World line its whole
+         verdict then rested on. */
+      var cnNum = { 一: 1, 二: 2, 两: 2, 俩: 2, 三: 3, 四: 4, 五: 5, 六: 6 };
+      var cnCountRe = /动爻\s*(?:是\s*)?([一二两俩三四五六\d])\s*[条个爻]|([一二两俩三四五六\d])\s*[条个]\s*动爻/g;
+      var ccm;
+      while ((ccm = cnCountRe.exec(text))) {
+        var rawCn = ccm[1] || ccm[2];
+        var claimedCn = cnNum[rawCn] != null ? cnNum[rawCn] : parseInt(rawCn, 10);
+        if (claimedCn !== movingCount) {
+          issues.push("说动爻 " + claimedCn + " 条,盘上实际是 " + movingCount + " 条");
+        }
+      }
+
+      /* ── the month and the day, as the reading restates them ───────────────
+         There was no check here at all, so a restated pillar was free text. The
+         same reading wrote 「酉月酉日」 against a 申月癸酉日 board and built half
+         its verdict on the month it had invented. The day was right; the month
+         was not, and nothing could tell them apart. */
+      var meta = board.meta || {};
+      var monthCn = meta.monthBranch && meta.monthBranch.cn;
+      var dayCn = meta.dayPillar && meta.dayPillar.branch && meta.dayPillar.branch.cn;
+      var BR = "子丑寅卯辰巳午未申酉戌亥";
+      function pillarClaims(re, actual, label) {
+        if (!actual) return;
+        var seen = {}, pm;
+        while ((pm = re.exec(text))) {
+          var br = pm[1];
+          if (br === actual || seen[br]) continue;
+          seen[br] = 1;
+          issues.push("说「" + br + label + "」,盘上是「" + actual + label + "」");
+        }
+      }
+      // 日辰月建 puts a 辰 immediately before 月; without the lookbehind every
+      // reading that names its own pillars reports a phantom 辰月.
+      pillarClaims(new RegExp("(?<![日时年])([" + BR + "])月(?![卦破])", "g"), monthCn, "月");
+      pillarClaims(new RegExp("(?<![时年])([" + BR + "])日(?![辰])", "g"), dayCn, "日");
+
+      /* ── a clash names a real pair or it names nothing ─────────────────────
+         六冲 is a fixed table: 子午 丑未 寅申 卯酉 辰戌 巳亥. The reading asserted
+         「被月建酉金正面对冲」 of a 寅 line — 酉 clashes 卯, 申 clashes 寅. The
+         conclusion (月破) happened to be right under the real month, so a wrong
+         mechanism rode out on a right answer, which is the version of this
+         error nobody catches by reading. */
+      var CLASH = { 子: "午", 午: "子", 丑: "未", 未: "丑", 寅: "申", 申: "寅",
+                    卯: "酉", 酉: "卯", 辰: "戌", 戌: "辰", 巳: "亥", 亥: "巳" };
+      // Readings name lines by their animal — 木虎, 金鸡, 水猪 — far more often
+      // than by the branch, so a branch-only pattern watches the wrong words.
+      var ANIMAL = { 鼠: "子", 牛: "丑", 虎: "寅", 兔: "卯", 龙: "辰", 蛇: "巳",
+                     马: "午", 羊: "未", 猴: "申", 鸡: "酉", 狗: "戌", 猪: "亥" };
+      var TOKEN = BR + Object.keys(ANIMAL).join("");
+      var toBranch = function (c) { return ANIMAL[c] || c; };
+      /* Scan by CLAUSE, not by an A…冲…B template. Chinese puts both branches
+         before the verb at least as often as around it — 「应爻寅木被月建申金
+         正面对冲」 — so a template that assumes the order sees neither. Take
+         every clause that mentions a clash, collect its branches, and rule only
+         when exactly two distinct ones are present: with one there is nothing
+         to check, and with three or more the sentence is summarising, not
+         asserting a pair. */
+      var tokenRe = new RegExp("[" + TOKEN + "]", "g");
+      var flagged = {};
+      String(text).split(/[。！？!?；;\n]+/).forEach(function (clause) {
+        if (!/冲/.test(clause)) return;
+        var found = [], seenTok = {};
+        var t;
+        while ((t = tokenRe.exec(clause))) {
+          var b = toBranch(t[0]);
+          if (!seenTok[b]) { seenTok[b] = t[0]; found.push(b); }
+        }
+        tokenRe.lastIndex = 0;
+        if (found.length !== 2) return;
+        var a = found[0], z = found[1], key = a + z;
+        if (flagged[key] || flagged[z + a] || CLASH[a] === z) return;
+        flagged[key] = 1;
+        issues.push("说「" + seenTok[a] + "」冲「" + seenTok[z] + "」,而 " + a + " 冲的是 " + CLASH[a]);
+      });
+
       return { ok: issues.length === 0, issues: issues };
     }
 

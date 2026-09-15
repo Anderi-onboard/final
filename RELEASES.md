@@ -6,6 +6,96 @@ pull-request branches as previews and deploys `main` to the public site. The
 release merges keep their parents, and it must never be squashed, rebased, or
 force-pushed.
 
+## 20260914a — 断卦从提示词搬进代码,盘面事实开始能路由到断法库
+
+- Production target: `main` via pull request #82
+- Verified mirror: `production` after public deployment
+- Working branch: `claude/bournewise-handoff-priorities-19xcmh`
+- Build tag: `20260914a`(16 个文件 + `version.json`,`tests/build-tag.mjs` 钉着)
+- Preview: `claude-bournewise-handoff-pr.bournewise.pages.dev`
+- 契约:**33 条全过**(新增 6 条:`board-payload` `board-facts` `flow-segment`
+  `yongshen-assignment` `verdict-ladder` `feature-vocab`)
+
+起因是一副断错的盘。有人问「我明天考科目一能过吗」,解读答「能过」,答得很硬,
+还专门写了一段说三条理由互相独立。他没过。
+
+查完之后每一条缺陷都在**序列化层**,一条都不在提示词里。规则是对的,模型也照做了 ——
+它照着一副**缺事实、而且自相矛盾**的盘做的。这一版就是按这个分的组。
+
+### 一 · 盘发出去的时候少了东西
+
+- `bada0fb` — 月建按**五行**发,`"monthElement":"Metal"` 留下申和酉两种可能。
+  月是申,解读说酉月,而它半个判断建立在「月建日辰全都是金」上。月破的定义是冲月建,
+  所以月建错一格,月破就从寅挪到卯,和爻上已经算对的标记**无声地打架**。
+- `85691d9` — 四处生克源头的头两处(月/日的**生**与**克**)被 `distill()` 静默丢掉。
+  六爻里四爻丢了时钟关系,第 5 爻发出去时 flags 是**空字符串** —— 读起来是「这条爻没有性质」。
+- `7e42b92` `5331be7` — 引擎**从来没算过爻与爻之间的关系**。《增删卜易》速断十二条里
+  六条因此算不出来。新增 `liuyao-relations.js`:爻爻生克、合冲刑害、日月岁时、世应、
+  三合三会、局对爻、相生链、真假空破、暗动/日破。速断十二条从 5/12 变成 12/12 可计算。
+- `7350d90` — 关系不再按「类型」平铺,改成**按到用神的距离排,一行一条,带箭头**。
+  依据是量过的三篇:GSM-IC(arXiv 2302.00093)、GSM-DC(2505.18761)、
+  Lost in the Middle(2307.03172)。13 条爻爻生克里曾有 9 条自己标着「静爻,不作用」——
+  把明确不成立的关系标好标签送进模型,正是 GSM-IC 量的那个构造。
+
+### 二 · 用神是一个写死的字符串
+
+- `7e4c794` — `chat-app.js` 传 `category:"general"`,于是**每一篇解读读的都是世爻**,
+  不管问的是什么。`CATEGORY_YONGSHEN` 二十八个 key 有二十五个够不到,包括 `exam:"parent"`——
+  对的答案在代码里,一次都没被选中过。现在从问题的措辞取,并**报出它是匹配还是兜底**:
+  一个和决定长得一模一样的默认值,就是这件事活了这么久的原因。
+- `bbef4db` — 有些事类取两个用神。考试是官鬼(名额)加父母(卷子),任一为凶则事不成。
+  提示词头部说了「BOTH are 用神」,而 `deriveRoles` 只认一个锚,把第二个用第一个的格子
+  标成了「Support」。**那不是遗漏,是矛盾,而数据赢过散文。**
+
+### 三 · 断法执行在提示词里,不在代码里
+
+- `61a072f` — 《增删卜易》五级裁决梯落成 `liuyao-verdict.js`:卦变回头克 → 用神/世爻
+  有根 → 动化凶 → 生克力量对比 → 假空假破应期。前三步命中即定案,第四步只出计数。
+  ⭐ 那副断错的盘差别就在这:老的让模型自己推「亥水化巳火是什么」,它推成了仇神关系;
+  现在直接给它「第 3 步命中:化绝」—— 查表查出来的,不需要判断。
+- `3025afa` `99a26ba` — 断法库开张。条目**只有三格**:`id` / `原文` / `机器值`。
+  判据是:模型拿着原文能自己得出的,不写。第一版每条十二格,九格是手写模型本来就会做的事。
+- `a2f133e` `ce7ed39` — 断法分区表(`functions/_lib/doctrine/INDEX.md`),111 条规则对着
+  代码点名:**约 118 条,实现 20 条(17%)**。两个大洞是 SOP-3(这一笔生克算不算数)和
+  SOP-5(什么时候应验),48 条实现 6 条。并写清 `<序>` 是编号不是顺序 —— 三种求值方式
+  (顺序 / 或 / 查表)互斥,走错一种给出的是**看起来完全正常的错答案**。
+
+### 四 · 盘面事实开始能路由到断法库
+
+- `cfe3e97` — 新增 `liuyao-features.js`:把引擎算出来的状态翻译成那批两级 RAG 的检索键。
+  清点 35 个 feature —— **29 个引擎已经算了只差换名字,5 个是 M1 的活,1 个是判断不是
+  事实,真缺 0 个**。映射**只在这一处**;配 `tests/feature-vocab.mjs`,因为卡里引用了一个
+  永远不会被发出的 id,那张卡就是**不可达的,而不可达不报错**。四种植入的违规逐一验过会红。
+- 三件明知故犯,写在文件里没有悄悄处理:`SIX_RELATIVE`/`SIX_SPIRIT`/`LINE_POSITION`/
+  `HEXAGRAM_IMAGE` 对任何盘都成立,所以 TECH-SYMBOLIC 每卦都被选中 —— 那是 RAG 那侧的
+  键设计问题,**照实发,不替别人的键悄悄加阈值**;`TARGET_*` 只对用神爻发;
+  `MULTIPLE_PLAUSIBLE_INTERPRETATIONS` 不发,拿判断当检索键等于让路由去猜结论。
+
+### 五 · 解读自己的规矩
+
+- `d573da1` — 篇幅下限撤掉。上限 08-19 撤的,理由是同一条的两头:**一个数字分不出
+  「这盘本来就没什么好说的」和「漏写了一段」**,在前一种情况下它买到的只有注水。
+- `316c6aa` — `inference_traps` 13,400 → 11,525,21 条规则一条没少,按它们所属的三种
+  失败形式重组,每种带自己的检查 —— 于是没被人列举过的陷阱也被它的**形式**接住。
+- `95a86b3` `2ec539f` `6d8cc48` — 新增 `SEGMENTS.flow`。两处修正留在历史里:第六条曾经
+  用一对 ✗/✓ **换掉了论点**而不是重排它;六个 ✓ 例子全建在占位词上(这一段/这条线/能成),
+  过不了 `voice` 自己的验收线 —— 判词单拿出来、不看上文也要能看懂。
+- `79c2ec4` — `checkBoardFacts` 之前唯一的规则是一条英文正则,而解读跟着提问人的语言走,
+  所以它**一次都没匹配过**。现在按小句扫冲的说法:中文把两个地支放在动词前面的次数,
+  至少和放在两边一样多。
+- `fc05fef` — `temperature` / `top_p` / `top_k` 在 Opus 5 系上已移除,原生 API 返回 400。
+  我们经 OpenRouter 大概是被静默丢弃 —— **这个杠杆已经空转了一段时间,没人发现。**
+
+### 六 · 没做,而且是知道没做的
+
+- **`main` 上还没有这条链路。** `liuyao-relations.js` / `liuyao-verdict.js` /
+  `liuyao-features.js` 都只在这个分支上 —— 线上真实用户起的那一卦里,它们不存在。
+- **端到端的前后对比没有。** Cloudflare 预览环境没有 `OPENROUTER_API_KEY`,
+  `/api/claude` 在那儿返回 503。这一版的每一处都只在离线验过:
+  **没有任何东西证明解读变好了,只证明了它读的那副盘现在是对的、是全的。**
+- **四个节点没接线。** `functions/_lib/nodes/prompts.js` 被 0 个文件引用。
+- **SOP-3 / SOP-5 那 46 条判据还没打标。** 提示词写好了(`artifacts/打标-*.md`),没跑。
+
 ## 20260831c — The block routes become a place: two hues, a day, and weather
 
 - Production target: `main` via pull request

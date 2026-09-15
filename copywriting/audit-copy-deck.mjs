@@ -40,6 +40,19 @@ for (const b of blocks) {
   if (src === null) { missingFile++; continue; }
   if (b.source.startsWith('copy.js') || b.kind === 'template') { skipped++; continue; }
   if (!b.text || b.text.length < 4) { skipped++; continue; }
+  /* A 类象 card is COMPOSED from many JSON fields, so it never appears in the
+     file as one run of text — the substring test below would call all 38 of
+     them stale. Check them the stronger way instead: every token in the card
+     must be present in the source. That catches a dropped noun, which a
+     substring test on a composed block cannot do at all. */
+  if (/card$/.test(b.kind)) {
+    const hay = norm(src);
+    const toks = b.text.split(/[\s、·—/*\n:：,()]+/).map(t => t.trim()).filter(t => t.length >= 2);
+    const gone = toks.filter(t => !hay.includes(norm(t)));
+    if (gone.length) stale.push({ ...b, text: `${gone.length}/${toks.length} tokens absent: ${gone.slice(0, 6).join(' / ')}` });
+    else ok++;
+    continue;
+  }
   // placeholders can't be matched literally
   const probe = norm(b.text).split(/\{\{[a-z]+\}\}/i)[0].trim();
   if (probe.length < 8) { skipped++; continue; }

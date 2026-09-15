@@ -1,0 +1,246 @@
+{
+  "what": "补全包 20260914 的 feature 别名表,project_feature 由代码方对照当前提交填。",
+  "rule": "⚠️ 填不上的一律留 null。包里自己写着「当前包没有伪造 project_feature」—— 填一个不存在的检索键,那条判据永远命中不了,而且不报错。",
+  "filled_against": "liuyao-features.js · BWFeatures.vocabulary() + fromM1",
+  "filled_on": "2026-09-14",
+  "rows": [
+    {
+      "current_name": "旬空",
+      "canonical_feature": "XUN_EMPTY",
+      "project_feature": "XUN_EMPTY",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "真空",
+      "canonical_feature": "TRUE_VOID",
+      "project_feature": "TRUE_VOID",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "假空",
+      "canonical_feature": "FALSE_VOID",
+      "project_feature": "FALSE_VOID",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "月破",
+      "canonical_feature": "MONTH_BREAK",
+      "project_feature": "MONTH_BREAK",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "真破",
+      "canonical_feature": "TRUE_BREAK",
+      "project_feature": "TRUE_BREAK",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "假破",
+      "canonical_feature": "FALSE_BREAK",
+      "project_feature": "FALSE_BREAK",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "日破",
+      "canonical_feature": "DAY_BREAK",
+      "project_feature": "DAY_BREAK",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "暗动",
+      "canonical_feature": "HIDDEN_MOVEMENT",
+      "project_feature": "HIDDEN_MOVEMENT",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "发动",
+      "canonical_feature": "MOVING_LINE",
+      "project_feature": "MOVING_LINE",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "变爻",
+      "canonical_feature": "TRANSFORMING_LINE",
+      "project_feature": "TRANSFORMING_LINE",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "回头生",
+      "canonical_feature": "RETURN_GENERATION",
+      "project_feature": "RETURN_GENERATION",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "回头克",
+      "canonical_feature": "RETURN_CONTROL",
+      "project_feature": "RETURN_CONTROL",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "回头冲",
+      "canonical_feature": "RETURN_CLASH",
+      "project_feature": "RETURN_CLASH",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "回头合",
+      "canonical_feature": "RETURN_COMBINATION",
+      "project_feature": "RETURN_COMBINATION",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "化进神",
+      "canonical_feature": "ADVANCE_SPIRIT",
+      "project_feature": "ADVANCE_SPIRIT",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "化退神",
+      "canonical_feature": "RETREAT_SPIRIT",
+      "project_feature": "RETREAT_SPIRIT",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "化空",
+      "canonical_feature": "TRANSFORM_EMPTY",
+      "project_feature": "TRANSFORM_EMPTY",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "化绝",
+      "canonical_feature": "TRANSFORM_ABSOLUTE",
+      "project_feature": "TRANSFORM_ABSOLUTE",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "化墓",
+      "canonical_feature": "TRANSFORM_TOMB",
+      "project_feature": "TRANSFORM_TOMB",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "日墓",
+      "canonical_feature": "DAY_TOMB",
+      "project_feature": "DAY_TOMB",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "月墓",
+      "canonical_feature": "MONTH_TOMB",
+      "project_feature": "MONTH_TOMB",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "动墓",
+      "canonical_feature": "MOVING_TOMB",
+      "project_feature": null,
+      "action": "blocked",
+      "note": "引擎目前算不出这个事实,填名字就是伪造一个不存在的检索键"
+    },
+    {
+      "current_name": "冲墓",
+      "canonical_feature": "OPEN_TOMB_BY_CLASH",
+      "project_feature": null,
+      "action": "blocked",
+      "note": "引擎目前算不出这个事实,填名字就是伪造一个不存在的检索键"
+    },
+    {
+      "current_name": "绝",
+      "canonical_feature": "AT_ABSOLUTE",
+      "project_feature": null,
+      "action": "blocked",
+      "note": "引擎目前算不出这个事实,填名字就是伪造一个不存在的检索键"
+    },
+    {
+      "current_name": "旺相",
+      "canonical_feature": "STRONG",
+      "project_feature": "TARGET_STRONG",
+      "action": "bound_renamed",
+      "note": "仓库里这个事实只对用神发(名字带 TARGET),对任意一爻发等于恒为真"
+    },
+    {
+      "current_name": "休囚死",
+      "canonical_feature": "WEAK",
+      "project_feature": "TARGET_WEAK",
+      "action": "bound_renamed",
+      "note": "仓库里这个事实只对用神发(名字带 TARGET),对任意一爻发等于恒为真"
+    },
+    {
+      "current_name": "生",
+      "canonical_feature": "GENERATES",
+      "project_feature": "GENERATES",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "克",
+      "canonical_feature": "CONTROLS",
+      "project_feature": "CONTROLS",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "合",
+      "canonical_feature": "COMBINES",
+      "project_feature": "COMBINES",
+      "action": "bound",
+      "note": null
+    },
+    {
+      "current_name": "多人主体",
+      "canonical_feature": "MULTI_ACTOR",
+      "project_feature": "MULTI_ACTOR",
+      "action": "bound_from_m1",
+      "note": "不是盘上的事实,由 M1 从问题里读出来 —— liuyao-features.js 的 fromM1Flags 翻译"
+    },
+    {
+      "current_name": "代占/第三方",
+      "canonical_feature": "THIRD_PARTY_DIVINATION",
+      "project_feature": "THIRD_PARTY_DIVINATION",
+      "action": "bound_from_m1",
+      "note": "不是盘上的事实,由 M1 从问题里读出来 —— liuyao-features.js 的 fromM1Flags 翻译"
+    },
+    {
+      "current_name": "特指对象",
+      "canonical_feature": "SPECIFIC_TARGET",
+      "project_feature": "SPECIFIC_TARGET",
+      "action": "bound_from_m1",
+      "note": "不是盘上的事实,由 M1 从问题里读出来 —— liuyao-features.js 的 fromM1Flags 翻译"
+    },
+    {
+      "current_name": "一卦多问",
+      "canonical_feature": "MULTI_QUESTION",
+      "project_feature": "MULTI_QUESTION",
+      "action": "bound_from_m1",
+      "note": "不是盘上的事实,由 M1 从问题里读出来 —— liuyao-features.js 的 fromM1Flags 翻译"
+    },
+    {
+      "current_name": "询问时间",
+      "canonical_feature": "DATE_TRIGGER",
+      "project_feature": "DATE_TRIGGER",
+      "action": "bound_from_m1",
+      "note": "不是盘上的事实,由 M1 从问题里读出来 —— liuyao-features.js 的 fromM1Flags 翻译"
+    }
+  ]
+}
