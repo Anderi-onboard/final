@@ -18,18 +18,31 @@ const s = (v, max) => String(v == null ? "" : v).slice(0, max || 4000);
 /* M1 那四到五行 → 结构。解析宽松:小模型偶尔多一个空格、少一个等号,
    为此整站退回兜底不值得 —— 拿不到的那一项留空,由下游决定它缺不缺得起。 */
 export function parseM1(text) {
-  const out = { lang: "", db: "", ask: "", hurt: "0", more: "", flags: "" };
+  const out = { lang: "", db: "", ask: "", hurt: "0", more: "", flags: "", facts: "" };
   for (const line of String(text || "").split(/\r?\n/)) {
-    const m = line.match(/^\s*(lang|db|ask|hurt|more|flags)\s*[=:]\s*(.*)$/i);
+    const m = line.match(/^\s*(lang|db|ask|hurt|more|flags|facts)\s*[=:]\s*(.*)$/i);
     if (m) out[m[1].toLowerCase()] = m[2].trim();
   }
   return out;
 }
 
+/* 他自己说的既成事实。空或「无」都算没有。
+   ⚠️ 这是 CLAUDE.md §6 那条「记两本账」的第二本:**盘只给形状,存在与身份
+   永远来自提问的人**。之前这本账根本没有槽,于是「她是医学生」这种话进不了管线,
+   下游看到「用神化父母」只能在「学业 / 文书 / 名分」里猜一个 ——
+   **而猜出来的那个,读起来和读出来的一模一样**。 */
+function factsOf(m1) {
+  const f = String(m1.facts || "").trim();
+  return !f || f === "无" || f === "none" ? "" : f;
+}
+
 /* M1 的领域和意图就是 M3 检索 CLASS 卡的钥匙 —— 见 retrieve.js 头注 ①。
    拿原问题去撞,中文短语的 use_when 永远命中不了。 */
 function intentOf(m1) {
-  return [m1.db, m1.ask, m1.more, m1.flags].filter(Boolean).join(" ");
+  /* facts 也进检索词:「她是医学生」会把「学业」这一支的卡拉上来,而光靠
+     「我和她还有可能吗」拉不上来。⚠️ 它只影响**开哪几张卡**,不影响断法 ——
+     指认那一步仍然归 M3 的五步,事实不许新增候选。 */
+  return [m1.db, m1.ask, m1.more, m1.flags, m1.facts].filter(Boolean).join(" ");
 }
 
 export function buildNode(node, body) {
@@ -77,7 +90,11 @@ export function buildNode(node, body) {
         .replace("{{board}}", s(body.board, 12000) || "(盘未算出)")
         .replace("{{ladder}}", s(body.ladder, 6000) || "(裁决梯未运行)")
         .replace("{{relations}}", s(body.relations, 6000) || "(关系未算)")
-        .replace("{{ask}}", m1.ask || question),
+        .replace("{{ask}}", m1.ask || question)
+        /* ⚠️ 没有事实时必须写「他没说」,不能留空。留空的话模型会把这一格
+           当成「随便填」——而上面那五步的第 ③ 步正是靠这一格决定指不指认。
+           **一个空格子和一句「他没说」在提示词里长得一样,在推理里完全相反。** */
+        .replace("{{facts}}", factsOf(m1) || "(他没说 —— 按第⑤步办,不许替他填)"),
       userOverride: "取证。",
       meta: { cards: open.map((c) => ({ id: c.id, score: c.score, why: c.why })) }
     };

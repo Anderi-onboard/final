@@ -141,5 +141,40 @@ for (const sym of ["父母", "妻财", "官鬼", "世爻", "应爻"]) {
   assert.ok(m4.includes(sym), `M4 的可用符号里没有「${sym}」—— 模型不会标它,前端也就画不出来`);
 }
 
+/* ── ⑦ 他自己说的既成事实要走完全程 ─────────────────────────────────────
+   ⚠️ CLAUDE.md §6 写着「分清盘给的和问题给的,**记两本账**」—— 而第二本账
+   **一直没有槽**。后果不是报错:M3 看到「用神化父母」,只能在「学业 / 文书 /
+   名分」里挑一个,**挑出来的那个读起来和读出来的一模一样**。
+   2026-09-15 实测就是这样:「她是医学生」进不了管线,于是学业被判给了官鬼。 */
+const M1_WITH_FACTS = "lang=Chinese\ndb=婚恋\nask=我和她还有没有可能\nhurt=0\n"
+  + "flags=指定对象\nfacts=她是大学生;学医;现在在忙学业";
+assert.equal(parseM1(M1_WITH_FACTS).facts, "她是大学生;学医;现在在忙学业",
+  "parseM1 不再解析 facts —— 第二本账在入口就丢了");
+const withFacts = buildNode("m3", { ...body, m1: M1_WITH_FACTS, m2: "lib=CLASS-RELATIONSHIP" });
+assert.match(withFacts.system, /她是大学生;学医/,
+  "M1 抄下来的既成事实没到 M3 —— 那一格是「实=」那一层唯一的来源");
+/* 没有事实时**必须写「他没说」,不能留空**:一个空格子和一句「他没说」
+   在提示词里长得一样,在推理里完全相反(填不填由第⑤步决定)。 */
+const noFacts = buildNode("m3", { ...body, m2: "lib=CLASS-RELATIONSHIP" });
+/* ⚠️ 断言要钉**那一格**,不是钉「他没说」这三个字 —— M3 的提示词正文里
+   第⑤步自己就写着「而他没说过」,所以裸的 /他没说/ 会匹配到提示词本身,
+   **把槽填空也照样绿**。植入检查当场抓到了这条,是我的断言指错了地方。 */
+assert.match(noFacts.system, /他自己说的既成事实:\(他没说/,
+  "没有既成事实时 M3 的那一格是空的 —— 模型会把它当成「随便填」");
+/* 指认的五步必须在,而且「不许新增候选」那半句是承重的那半句。 */
+assert.match(withFacts.system, /只能在盘上已有的六亲里选,不能新增/,
+  "M3 少了六亲指认那条规矩 —— 事实一旦能新增候选,它就能按到任何一爻上");
+/* 同一个陷阱:提示词里举例写着「链=断在 法3」,所以裸的 /链=/ 匹配得到。
+   钉的必须是**格式那一行**。 */
+assert.match(withFacts.system, /链=<程N> → <法N> → <推N>/,
+  "M3 不再要求交出一条带行号的链 —— 那就只剩结论,没有可追的推理");
+
+/* ── ⑧ 调试台调的必须是上线那份 ───────────────────────────────────────── */
+const lab = read("tools/lab/run.mjs");
+assert.match(lab, /from "\.\.\/\.\.\/functions\/_lib\/nodes\/fill\.js"/,
+  "调试台不再 import 真的 buildNode —— 抄一份的话,你调的是调试台不是产品");
+assert.ok(!/export const M[1-4]\s*=/.test(lab) && !/你只做一件事/.test(lab),
+  "调试台里出现了提示词正文 —— 它只许从 functions/_lib/nodes/ 取");
+
 console.log(`ok   node-pipeline — ${RAG.libs.length} 库 / ${RAG.cards.length} 卡,四站槽全填,`
-  + "两级收窄成立,一次解读只收一次门票,M4 带着取象标记");
+  + "两级收窄成立,一次解读只收一次门票,M4 带着取象标记,既成事实走完全程");
