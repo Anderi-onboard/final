@@ -2197,8 +2197,38 @@ QC / ROUTER / INTENT / FOLLOWUP 仍然用它 —— 那几样是工具。作废�
 而新用户余额是 0:一卦都起不了。和 codex 那次加 reserve+cap 是同一个后果。
 **一次解读就是一次解读,不管它在里面调了几个模型。**
 
+### 本地方案:整站在本地跑,只换端点(2026-09-15,owner 定)
+
+owner:「整套断卦流程的本地方案,接本地 API,**和线上除了 API 和环境没有不同**」。
+
+`npm run local` 起的是 **`wrangler pages dev`** —— 真的 Pages Functions,不是替身:
+浏览器 → `/api/claude` → 计费闸 → 危机闸 → `buildNode` → 上游 → SSE → 前端。
+**差别只有 `.dev.vars` 里两样:`MODEL_BASE_URL` 和模型名。代码一行不改。**
+用法见 `tools/lab/README.md`;`tools/lab/fake-model.mjs` 是不下模型先验接线的假端点。
+
+⭐ 支撑「没有不同」的是三条可查的性质,`tests/local-parity.mjs` 钉着:
+- **上游端点只有一处定义**(`upstreamUrl(env)`)。以前抄了三遍(流式/非流式/utility),
+  改一个漏两个是必然的 —— 而**漏掉的那一处会照样跑通**,它只是跑去了另一个端点。
+  本地方案里那意味着:三站走本地、一站偷偷走线上并且花钱。
+- **OpenRouter 的扩展字段按端点门控**(`applyVendorExtras`)。Ollama 忽略未知字段,
+  llama.cpp 和 vLLM 会 **400** —— 一个本地端点因为两个它没听过的字段拒收整个请求,
+  而报出来的是「模型调用失败」。假端点也拒收,否则这条门控**永远测不到**。
+- **每一道闸按 role 判,不按 product 判。** product 是客户端字段。
+
+⚠️⚠️ **本地第一次跑起来,第一个请求就撞出一个真 bug:`STREAM_REQUIRED` 也是按
+`product` 判的。** M1/M2/M3 都带 `product:"sortis"`(客户端 `makeComplete({role, product})`
+就是这么发的),而它们是短的、非流式的 —— **于是四节点的第一站被 400 挡回来,
+整条管线在线上一次都跑不起来**。而这件事在没有 key 的机器上看不出来:谁也没真发过一个请求。
+**这就是本地方案买到的东西**,也是 CLAUDE.md §7 那条「验证要用证据」的字面意思。
+
+实测本地一跑:M1/M2/M3 走 UTILITY_MODEL、不动账本;M4 走 SORTIS_MODEL、SSE、
+`charged 15 / unitsRemaining 4985`;「我不想活了」危机硬停、不调模型不计费;
+第二次起卦 `TOPUP_REQUIRED`(第一次把免费解读花掉了)。
+
 - 浏览器只声明**意图**(`product`/`role`),模型由服务端选,key 永不下发。
 - 环境变量(Pages → Settings → Environment variables):
+  **`MODEL_BASE_URL`**(可选,不设 = OpenRouter;设了就指向本地端点)
+  **`MODEL_API_KEY`**(可选,本地端点用的占位 key)
   `OPENROUTER_API_KEY` `SESSION_SECRET` `CREEM_API_KEY` `CREEM_WEBHOOK_SECRET`
   `CREEM_PRODUCT_PROMONTHLY` `CREEM_PRODUCT_PROANNUAL`
   `CREEM_PRODUCT_PREMIUMMONTHLY` `CREEM_PRODUCT_PREMIUMANNUAL`

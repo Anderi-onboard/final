@@ -6,10 +6,11 @@
     "test": "node scripts/run-contracts.mjs",
     "dev": "npx serve . -l 3000 --no-clipboard",
     "start": "npx serve . -l 3000 --no-clipboard",
-    "dev:fn": "npx wrangler pages dev . --port 3000",
-    "deploy": "npx wrangler pages deploy ."
+    "dev:fn": "wrangler pages dev . --port 8788",
+    "deploy": "npx wrangler pages deploy .",
+    "local": "node scripts/local.mjs"
   },
   "devDependencies": {
-    "wrangler": "^3.90.0"
+    "wrangler": "^3.114.17"
   }
 }

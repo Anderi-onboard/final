@@ -119,6 +119,56 @@ function offlineMode(env) {
   return String((env && env.LIVE_MODEL) || '').toLowerCase() !== 'on';
 }
 
+/* ── 上游端点:一处定义(2026-09-15,owner:「接本地 API,和线上除了 API 和环境
+   没有不同」)────────────────────────────────────────────────────────────────
+   这个 URL 以前在三个地方各写了一遍(流式、非流式、utility)。改一个漏两个是
+   必然的,而漏掉的那一处**会照样跑通** —— 它只是跑去了另一个端点。
+
+   ⭐ 本地方案的全部做法就是换这两个变量,**代码一行不动**:
+       MODEL_BASE_URL=http://host.docker.internal:11434/v1   (Ollama / LM Studio / llama.cpp / vLLM)
+       SORTIS_MODEL=qwen2.5:32b   UTILITY_MODEL=qwen2.5:7b   LIVE_MODEL=on
+   所以计费闸、危机闸、免费额度、流式、SSE、D1、前端 —— 全部走的是线上那条路。 */
+const OPENROUTER = 'https://openrouter.ai/api/v1';
+
+function upstreamBase(env) {
+  return String((env && env.MODEL_BASE_URL) || OPENROUTER).replace(/\/+$/, '');
+}
+function isOpenRouter(env) {
+  return upstreamBase(env).startsWith(OPENROUTER);
+}
+function upstreamUrl(env) {
+  return upstreamBase(env) + '/chat/completions';
+}
+/* 本地服务通常不校验 key,但 `authorization` 缺失会让一部分实现 401 ——
+   所以给一个占位符,而不是把这个头整个省掉。 */
+function upstreamHeaders(env) {
+  const h = {
+    'content-type': 'application/json',
+    authorization: 'Bearer ' + (env.MODEL_API_KEY || env.OPENROUTER_API_KEY || 'local')
+  };
+  /* 这两个头是 OpenRouter 的排行榜署名。发给别人家的服务器没有意义,
+     而有些实现会对未知头很挑剔。 */
+  if (isOpenRouter(env)) {
+    h['http-referer'] = 'https://bournewise.com';
+    h['x-title'] = 'BourneWise';
+  }
+  return h;
+}
+/* ⚠️ **`reasoning` 和 `usage:{include:true}` 是 OpenRouter 的扩展字段。**
+   Ollama 忽略未知字段,而 llama.cpp 和 vLLM 会 400 —— 一个本地端点因为
+   两个它没听过的字段而拒绝整个请求,报出来的却是「模型调用失败」。
+   所以按端点门控,不是无条件发。 */
+function applyVendorExtras(payload, env, { stream }) {
+  if (!isOpenRouter(env)) return payload;
+  /* Extended thinking OFF unless explicitly asked for —— 见下面那段实测。 */
+  if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
+    payload.reasoning = { enabled: false };
+  }
+  /* 让最后一个 chunk 带上真实的 token 计数,结算才用得上实数而不是估值。 */
+  if (stream) payload.usage = { include: true };
+  return payload;
+}
+
 // The standard answer. Two of them: the reading follows the language of the
 // question, exactly as a real one does, so both typefaces can be seen.
 //
@@ -336,8 +386,11 @@ export async function onRequestPost(context) {
   try {
     // ⚠️ Only the live path needs a key. Requiring one offline would 503 exactly
     // the deployment that has deliberately removed it.
-    if (!offline && !env.OPENROUTER_API_KEY) {
-      return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
+    /* ⚠️ 本地端点不需要 key(Ollama / llama.cpp 都不校验),所以
+       「设了 MODEL_BASE_URL」本身就算配置好了。不放这一条的话,
+       本地方案会在第一个请求上 503,而 503 的文案说的是一个根本用不上的变量。 */
+    if (!offline && !env.OPENROUTER_API_KEY && !env.MODEL_BASE_URL) {
+      return json({ error: 'no model endpoint configured — set OPENROUTER_API_KEY, or MODEL_BASE_URL for a local one' }, 503);
     }
     const body = await request.json().catch(() => ({}));
     const messages = Array.isArray(body.messages) ? body.messages : [];
@@ -489,9 +542,8 @@ export async function onRequestPost(context) {
     // at 4067-4889 chars for $0.196-0.217. So it was truncating every reading
     // AND doubling the bill. Note that finish_reason "length" arrives looking
     // like an ordinary completion, which is why this stayed invisible.
-    if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
-      payload.reasoning = { enabled: false };
-    }
+    /* ⚠️ `reasoning` 现在由 applyVendorExtras 按端点加 —— 本地端点会因为
+       这个没听过的字段 400,而报出来的是「模型调用失败」。见文件上方那段。 */
     /* SAMPLING IS GONE ON THE OPUS 5 FAMILY. temperature / top_p / top_k were
        removed on Fable 5, Opus 5, Opus 4.8, 4.7 and Sonnet 5 — the native API
        returns 400 for them. This path used to send temperature ≈ 1 so that
@@ -507,12 +559,7 @@ export async function onRequestPost(context) {
         && !SAMPLING_REMOVED.test(model)) {
       payload.temperature = Math.max(0, Math.min(1, Number(body.temperature)));
     }
-    const openrouterHeaders = {
-      'content-type': 'application/json',
-      authorization: 'Bearer ' + env.OPENROUTER_API_KEY,
-      'http-referer': 'https://bournewise.com',
-      'x-title': 'BourneWise'
-    };
+    const upstreamHead = upstreamHeaders(env);
 
     // Streaming path: only the main reading call asks for this (router/qc
     // stay non-streaming — they're single short completions, nothing to
@@ -521,12 +568,10 @@ export async function onRequestPost(context) {
     // shape differs from here on.
     if (body.stream === true) {
       payload.stream = true;
-      // OpenRouter extension: ship prompt/completion token counts in the final
-      // stream chunk so settlement uses REAL usage, not an estimate.
-      payload.usage = { include: true };
-      const upstream = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      applyVendorExtras(payload, env, { stream: true });
+      const upstream = await fetch(upstreamUrl(env), {
         method: 'POST',
-        headers: openrouterHeaders,
+        headers: upstreamHead,
         body: JSON.stringify(payload)
       });
 
@@ -574,8 +619,16 @@ export async function onRequestPost(context) {
        zero bytes, and the reader still charged 1090 units because settlement
        runs regardless. Streaming is not an optimisation here, it is what keeps
        the request alive, so a reading is never generated without it. Utility
-       roles are short and stay non-streaming. */
-    if ((product === 'sortis' || product === 'stria') && body.stream !== true) {
+       roles are short and stay non-streaming.
+
+       ⚠️⚠️ **这一条也要按 role 判,不能只看 product ——(2026-09-15,本地跑起来
+       第一个请求就撞上了)。** M1/M2/M3 都带 `product:"sortis"`(客户端
+       `makeComplete({role, product})` 就是这么发的),而它们是**短的、非流式的**。
+       只看 product 的话,**四节点的第一站就被 400 挡回来,整条管线在线上一次都跑不起来** ——
+       而这件事在这台机器上看不出来:没有 key,谁也没真发过一个请求。
+       和计费闸那次是同一个形状:**product 是客户端字段,不能由它决定这个请求是什么。**
+       CLAUDE.md §5 记着那次。 */
+    if (!isUtilityRole(body) && (product === 'sortis' || product === 'stria') && body.stream !== true) {
       chargeTo = null;
       return json({
         error: 'a reading must be requested with stream:true — the non-streaming path cannot outlast generation',
@@ -583,9 +636,10 @@ export async function onRequestPost(context) {
       }, 400);
     }
 
-    const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    applyVendorExtras(payload, env, { stream: false });
+    const resp = await fetch(upstreamUrl(env), {
       method: 'POST',
-      headers: openrouterHeaders,
+      headers: upstreamHead,
       body: JSON.stringify(payload)
     });
 
@@ -795,20 +849,14 @@ async function buildSystem({ body, env, product, mode, messages, offline }) {
   // A completion function the engine can call for its own routing sub-request.
   // Utility model, small budget, never billed to the reader.
   const utility = async ({ system, messages: msgs, max_tokens }) => {
-    const r = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const r = await fetch(upstreamUrl(env), {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: 'Bearer ' + env.OPENROUTER_API_KEY,
-        'http-referer': 'https://bournewise.com',
-        'x-title': 'BourneWise'
-      },
-      body: JSON.stringify({
+      headers: upstreamHeaders(env),
+      body: JSON.stringify(applyVendorExtras({
         model: env.UTILITY_MODEL || 'anthropic/claude-haiku-4.5',
         max_tokens: Math.max(1, Math.min(64, Number(max_tokens) || 16)),
-        reasoning: { enabled: false },
         messages: system ? [{ role: 'system', content: system }, ...msgs] : msgs
-      })
+      }, env, { stream: false }))
     });
     if (!r.ok) throw new Error('router upstream ' + r.status);
     const d = await r.json();
@@ -985,7 +1033,8 @@ export async function onRequestGet({ env }) {
   return json({
     ok: true,
     service: 'bournewise-claude-proxy',
-    keyConfigured: !!env.OPENROUTER_API_KEY,
+    keyConfigured: !!(env.OPENROUTER_API_KEY || env.MODEL_BASE_URL),
+    upstream: upstreamBase(env),
     offline: offlineMode(env),
     billingEnforced: !!env.DB,
     models: {

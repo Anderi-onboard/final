@@ -4380,55 +4380,55 @@ input, textarea, button, select, a, label
 *服务端返回、前端原样渲染的报错 —— 只在出事时才看得到的文案* — 54 blocks
 
 @@ s21.Server_responses.001
-<!-- source: functions/api/claude.js:330 | kind: error response -->
+<!-- source: functions/api/claude.js:380 | kind: error response -->
 AI API temporarily disabled
 
 @@ s21.Server_responses.002
-<!-- source: functions/api/claude.js:340 | kind: error response -->
-OPENROUTER_API_KEY not configured
+<!-- source: functions/api/claude.js:393 | kind: error response -->
+no model endpoint configured — set OPENROUTER_API_KEY, or MODEL_BASE_URL for a local one
 
 @@ s21.Server_responses.003
-<!-- source: functions/api/claude.js:344 | kind: error response -->
+<!-- source: functions/api/claude.js:397 | kind: error response -->
 no messages
 
 @@ s21.Server_responses.004
-<!-- source: functions/api/claude.js:378 | kind: error response -->
+<!-- source: functions/api/claude.js:431 | kind: error response -->
 system prompts are assembled server-side and may not be supplied by the client
 
 @@ s21.Server_responses.005
-<!-- source: functions/api/claude.js:391 | kind: error response -->
+<!-- source: functions/api/claude.js:444 | kind: error response -->
 prompt assembly failed
 
 @@ s21.Server_responses.006
-<!-- source: functions/api/claude.js:581 | kind: error response -->
+<!-- source: functions/api/claude.js:634 | kind: error response -->
 a reading must be requested with stream:true — the non-streaming path cannot outlast generation
 
 @@ s21.Server_responses.007
-<!-- source: functions/api/claude.js:621 | kind: error response -->
+<!-- source: functions/api/claude.js:675 | kind: error response -->
 reading failed
 
 @@ s21.Server_responses.008
-<!-- source: functions/api/claude.js:873 | kind: error response -->
+<!-- source: functions/api/claude.js:921 | kind: error response -->
 reading requires a node role (m1|m2|m3|m4)
 
 @@ s21.Server_responses.009
-<!-- source: functions/api/claude.js:909 | kind: error response -->
+<!-- source: functions/api/claude.js:957 | kind: error response -->
 sign in required for generation
 
 @@ s21.Server_responses.010
-<!-- source: functions/api/claude.js:932 | kind: reason response -->
+<!-- source: functions/api/claude.js:980 | kind: reason response -->
 free-reading:
 
 @@ s21.Server_responses.011
-<!-- source: functions/api/claude.js:949 | kind: error response -->
+<!-- source: functions/api/claude.js:997 | kind: error response -->
 insufficient units
 
 @@ s21.Server_responses.012
-<!-- source: functions/api/claude.js:969 | kind: error response -->
+<!-- source: functions/api/claude.js:1017 | kind: error response -->
 rate limit exceeded, try again later
 
 @@ s21.Server_responses.013
-<!-- source: functions/api/claude.js:1057 | kind: error response -->
+<!-- source: functions/api/claude.js:1106 | kind: error response -->
 the reading service is unavailable
 
 @@ s21.Server_responses.014
