@@ -21,8 +21,18 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from comfy.nodes import NODE_CLASS_MAPPINGS  # noqa: E402
 
-OUT = Path(__file__).resolve().parent / "workflows" / "bournewise-4node.json"
+OUT_DIR = Path(__file__).resolve().parent / "workflows"
 WIDGET_TYPES = ("STRING", "INT", "FLOAT", "BOOLEAN")
+
+# 变体 = 同一张图,只改控件默认值。图的**结构**只有一份 —— 第二张手摆的图
+# 就是第二张要同步的名单。
+VARIANTS = {
+    # 跑:接上本地模型,四站真跑。
+    "bournewise-4node.json": {},
+    # 只看提示词:一个模型都不用下,打开就能读每一站的 system 全文。
+    # 改提示词时先开这张,看槽填对没有。
+    "bournewise-4node-dry.json": {"dry": True},
+}
 
 
 def spec(key):
@@ -89,7 +99,8 @@ WIRES = [
 ]
 
 
-def build():
+def build(overrides=None):
+    overrides = overrides or {}
     nodes, by_label, problems = [], {}, []
     for i, (label, key, pos) in enumerate(PLACED):
         if key not in NODE_CLASS_MAPPINGS:
@@ -111,8 +122,15 @@ def build():
             "outputs": [{"name": n, "type": t, "links": [], "slot_index": k}
                         for k, (n, t) in enumerate(outs)],
             "properties": {"Node name for S&R": key},
-            "widgets_values": [v for _, v in widgets],
+            # 变体只改控件**默认值**,不改结构。名字对不上时报错,不静默忽略 ——
+            # 一个拼错的变体键会让「dry 那张图」变成和「跑」那张一模一样,
+            # 而它打开时看着完全正常,只是会去调模型。
+            "widgets_values": [overrides.get(n, v) for n, v in widgets],
         })
+        for k in overrides:
+            if k not in [n for n, _ in widgets] and not any(
+                    k in [n for n, _ in spec(kk)[1]] for kk in NODE_CLASS_MAPPINGS):
+                problems.append("变体里的控件名「%s」在任何节点上都不存在" % k)
 
     links = []
     for lid, ((fl, fo), (tl, ti)) in enumerate(WIRES, start=1):
@@ -155,22 +173,24 @@ def build():
 
 
 if __name__ == "__main__":
-    wf, problems = build()
-    if problems:
-        print("✗ 图和节点定义对不上:")
-        for p in problems:
-            print("   " + p)
-        sys.exit(1)
     check = "--check" in sys.argv
-    body = json.dumps(wf, ensure_ascii=False, indent=2) + "\n"
-    if check:
-        cur = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
-        if cur != body:
-            print("✗ %s 和节点定义不同步 —— 重新生成:python3 tools/comfy/build_workflow.py" % OUT.name)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for name, overrides in VARIANTS.items():
+        wf, problems = build(overrides)
+        if problems:
+            print("✗ %s 和节点定义对不上:" % name)
+            for p in problems:
+                print("   " + p)
             sys.exit(1)
-        print("ok   %s 和节点定义同步(%d 个节点 / %d 条线)" % (OUT.name, len(wf["nodes"]), len(wf["links"])))
-    else:
-        OUT.parent.mkdir(parents=True, exist_ok=True)
-        OUT.write_text(body, encoding="utf-8")
-        print("写了 %s —— %d 个节点 / %d 条线,每条线两头类型都对上了"
-              % (OUT.relative_to(Path(__file__).resolve().parents[2]), len(wf["nodes"]), len(wf["links"])))
+        out = OUT_DIR / name
+        body = json.dumps(wf, ensure_ascii=False, indent=2) + "\n"
+        if check:
+            cur = out.read_text(encoding="utf-8") if out.exists() else ""
+            if cur != body:
+                print("✗ %s 和节点定义不同步 —— 重新生成:python3 tools/comfy/build_workflow.py" % name)
+                sys.exit(1)
+            print("ok   %s 同步(%d 节点 / %d 线)" % (name, len(wf["nodes"]), len(wf["links"])))
+        else:
+            out.write_text(body, encoding="utf-8")
+            print("写了 workflows/%s —— %d 节点 / %d 线,每条线两头类型都对上了"
+                  % (name, len(wf["nodes"]), len(wf["links"])))

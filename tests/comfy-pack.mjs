@@ -19,7 +19,10 @@
       会以全绿的样子失效,而那正是 `font-lock.mjs` 第一版栽过的坑。
 */
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
 import path from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -120,5 +123,46 @@ assert.ok(/parts\.append\(b if b is not None else src\)/.test(nodesPy),
   "按站切提示词的那一步不再回落到整份文件 —— 切不出来时就该**多**重跑几站,"
   + "少重跑一站等于拿旧答案骗自己");
 
+/* ── ⑤ 那个能下载的包,得能在没有仓库的地方自己跑起来 ─────────────────────
+   ⭐ 这一格不扫源码,它**把包铺到系统临时目录里,然后在那儿真跑一次**。
+      理由是这个包唯一承重的性质就是「自带全部依赖」,而那件事看源码看不出来:
+      少带一个文件时,`pack.mjs` 一声不吭,`nodes.py` 一声不吭,
+      **只有用户那台机器会炸**。临时目录在仓库外面,相对 import 够不到仓库,
+      所以跑通了就是真的跑通了。 */
+const { stage } = await import("../tools/comfy/pack.mjs");
+const tmp = mkdtempSync(path.join(tmpdir(), "bw-pack-"));
+try {
+  const { root, files: packed } = stage(tmp);
+  assert.ok(!root.startsWith(ROOT.replace(/\/$/, "")),
+    `包铺在了仓库里面(${root})—— 那它够得着仓库,这一格证明不了任何事`);
+  assert.ok(packed.length >= 18, `包里只有 ${packed.length} 个文件 —— 闭包算漏了`);
+  for (const must of ["functions/_lib/nodes/prompts.js", "functions/_lib/doctrine/rag/data.js",
+                      "liuyao-engine.js", "liuyao-ai.js", "tools/lab/board.mjs"]) {
+    assert.ok(packed.includes(must), `包里没有 ${must} —— 它会在用户那台机器上才炸`);
+  }
+  /* MANIFEST 的哈希必须真的对得上源文件。对不上的话「可以查」就是一句空话。 */
+  const man = JSON.parse(readFileSync(path.join(root, "MANIFEST.json"), "utf8"));
+  assert.equal(Object.keys(man.files).length, packed.length, "MANIFEST 记的文件数和实际打进去的对不上");
+  for (const f of packed) {
+    const want = createHash("sha256").update(readFileSync(path.join(ROOT, f))).digest("hex");
+    assert.equal(man.files[f], want, `MANIFEST 里 ${f} 的哈希和仓库里的对不上`);
+    assert.equal(createHash("sha256").update(readFileSync(path.join(root, "repo", f))).digest("hex"), want,
+      `包里的 ${f} 和仓库里的不是同一份 —— 打包时改写过它,那它就会开始漂`);
+  }
+  /* 真跑一次:盘那一半不需要模型,所以这一格不碰网络。 */
+  const r = spawnSync(process.execPath,
+    [path.join(root, "repo/tools/comfy/bridge.mjs"), "board"],
+    { input: JSON.stringify({ seed: 1, db: "婚恋", gender: "m" }), encoding: "utf8" });
+  assert.equal(r.status, 0,
+    "包在仓库外面跑不起来 —— 它不是自带依赖的:\n" + String(r.stderr).trim().slice(-800));
+  const out = JSON.parse(r.stdout);
+  assert.ok(Array.isArray(out.features) && out.features.length >= 10,
+    `包跑出来只有 ${out.features?.length} 个 feature —— 引擎没装全`);
+  assert.ok(out.boardText && out.ladder && out.relations, "包跑出来的盘缺了 boardText/ladder/relations");
+} finally {
+  rmSync(tmp, { recursive: true, force: true });
+}
+
 console.log(`ok   comfy-pack — 桥接真文件,${files.length} 个文件里 0 处提示词正文,`
-  + `图 ${wf.nodes.length} 节点 / ${wf.links.length} 线全部对得上,改一站只重跑一站`);
+  + `图 ${wf.nodes.length} 节点 / ${wf.links.length} 线全部对得上,改一站只重跑一站,`
+  + "包在仓库外能自己跑起来且字节一致");

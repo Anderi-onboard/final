@@ -22,3 +22,7 @@ artifacts/full-prompt.html
 # public deck. Regenerate locally with the generate-*.mjs scripts beside them.
 copywriting/BOURNEWISE_PROMPT_DECK.md
 copywriting/BOURNEWISE_VOICE_DECK.md
+
+# Python 字节码(build_workflow.py 被 import 时会生成)
+__pycache__/
+*.pyc
