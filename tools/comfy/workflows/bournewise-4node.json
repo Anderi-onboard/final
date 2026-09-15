@@ -1,0 +1,701 @@
+{
+  "last_node_id": 10,
+  "last_link_id": 21,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "BWEndpoint",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        400,
+        162
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "links": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "端点上有什么",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWEndpoint"
+      },
+      "widgets_values": [
+        "http://localhost:11434/v1",
+        "local",
+        600
+      ]
+    },
+    {
+      "id": 2,
+      "type": "BWAsk",
+      "pos": [
+        40,
+        360
+      ],
+      "size": [
+        400,
+        162
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "links": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "M1 收到的原文",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWAsk"
+      },
+      "widgets_values": [
+        "我和她还有可能吗 会在一起并肩作战吗",
+        "",
+        "自动(跟 M1)"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "BWM1",
+      "pos": [
+        450,
+        40
+      ],
+      "size": [
+        400,
+        298
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 1
+        },
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "M1",
+          "type": "BW_M1",
+          "links": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "原文",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWM1"
+      },
+      "widgets_values": [
+        "qwen2.5:7b",
+        0.0,
+        512,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 4,
+      "type": "BWCast",
+      "pos": [
+        900,
+        40
+      ],
+      "size": [
+        400,
+        230
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 6
+        },
+        {
+          "name": "M1",
+          "type": "BW_M1",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "盘",
+          "type": "BW_BOARD",
+          "links": [
+            14,
+            15,
+            16
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "盘面",
+          "type": "STRING",
+          "links": [
+            17
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWCast"
+      },
+      "widgets_values": [
+        1,
+        "fixed",
+        ""
+      ]
+    },
+    {
+      "id": 5,
+      "type": "BWShow",
+      "pos": [
+        900,
+        470
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 6,
+      "type": "BWM2",
+      "pos": [
+        1340,
+        40
+      ],
+      "size": [
+        400,
+        366
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 2
+        },
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 7
+        },
+        {
+          "name": "盘",
+          "type": "BW_BOARD",
+          "link": 14
+        },
+        {
+          "name": "M1",
+          "type": "BW_M1",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "M2",
+          "type": "BW_M2",
+          "links": [
+            18
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "原文",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWM2"
+      },
+      "widgets_values": [
+        "qwen2.5:7b",
+        0.0,
+        512,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "BWM3",
+      "pos": [
+        1340,
+        430
+      ],
+      "size": [
+        400,
+        400
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 3
+        },
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 8
+        },
+        {
+          "name": "盘",
+          "type": "BW_BOARD",
+          "link": 15
+        },
+        {
+          "name": "M1",
+          "type": "BW_M1",
+          "link": 12
+        },
+        {
+          "name": "M2",
+          "type": "BW_M2",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "M3",
+          "type": "BW_M3",
+          "links": [
+            19
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "原文",
+          "type": "STRING",
+          "links": [
+            20
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWM3"
+      },
+      "widgets_values": [
+        "qwen2.5:7b",
+        0.0,
+        1536,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "type": "BWShow",
+      "pos": [
+        1800,
+        430
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "BWM4",
+      "pos": [
+        1340,
+        900
+      ],
+      "size": [
+        400,
+        400
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 4
+        },
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 9
+        },
+        {
+          "name": "盘",
+          "type": "BW_BOARD",
+          "link": 16
+        },
+        {
+          "name": "M1",
+          "type": "BW_M1",
+          "link": 13
+        },
+        {
+          "name": "M3",
+          "type": "BW_M3",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "解读",
+          "type": "STRING",
+          "links": [
+            21
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWM4"
+      },
+      "widgets_values": [
+        "qwen2.5:32b",
+        0.0,
+        8192,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 10,
+      "type": "BWShow",
+      "pos": [
+        1800,
+        900
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "BW_CONN"
+    ],
+    [
+      2,
+      1,
+      0,
+      6,
+      0,
+      "BW_CONN"
+    ],
+    [
+      3,
+      1,
+      0,
+      7,
+      0,
+      "BW_CONN"
+    ],
+    [
+      4,
+      1,
+      0,
+      9,
+      0,
+      "BW_CONN"
+    ],
+    [
+      5,
+      2,
+      0,
+      3,
+      1,
+      "BW_ASK"
+    ],
+    [
+      6,
+      2,
+      0,
+      4,
+      0,
+      "BW_ASK"
+    ],
+    [
+      7,
+      2,
+      0,
+      6,
+      1,
+      "BW_ASK"
+    ],
+    [
+      8,
+      2,
+      0,
+      7,
+      1,
+      "BW_ASK"
+    ],
+    [
+      9,
+      2,
+      0,
+      9,
+      1,
+      "BW_ASK"
+    ],
+    [
+      10,
+      3,
+      0,
+      4,
+      1,
+      "BW_M1"
+    ],
+    [
+      11,
+      3,
+      0,
+      6,
+      3,
+      "BW_M1"
+    ],
+    [
+      12,
+      3,
+      0,
+      7,
+      3,
+      "BW_M1"
+    ],
+    [
+      13,
+      3,
+      0,
+      9,
+      3,
+      "BW_M1"
+    ],
+    [
+      14,
+      4,
+      0,
+      6,
+      2,
+      "BW_BOARD"
+    ],
+    [
+      15,
+      4,
+      0,
+      7,
+      2,
+      "BW_BOARD"
+    ],
+    [
+      16,
+      4,
+      0,
+      9,
+      2,
+      "BW_BOARD"
+    ],
+    [
+      17,
+      4,
+      1,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      18,
+      6,
+      0,
+      7,
+      4,
+      "BW_M2"
+    ],
+    [
+      19,
+      7,
+      0,
+      9,
+      4,
+      "BW_M3"
+    ],
+    [
+      20,
+      7,
+      1,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      21,
+      9,
+      0,
+      10,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "bournewise": "由 tools/comfy/build_workflow.py 从节点定义生成,不要手改"
+  },
+  "version": 0.4
+}

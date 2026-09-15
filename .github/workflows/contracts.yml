@@ -63,3 +63,13 @@ jobs:
             exit 1
           fi
           echo "build tag $OLD -> $NEW"
+
+      # The ComfyUI workflow JSON is generated from the node definitions, not
+      # written by hand — a hand-written one is a second list that goes stale
+      # the moment a socket is renamed or a widget is inserted, and it fails
+      # with "widget value mismatch", which names neither file. comfy-pack.mjs
+      # checks the JSON's internal structure; only this can tell whether
+      # nodes.py moved without the JSON being regenerated. Python 3 is already
+      # on the runner, so this still needs no install step.
+      - name: ComfyUI workflow must match the node definitions
+        run: python3 tools/comfy/build_workflow.py --check
