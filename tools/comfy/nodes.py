@@ -391,6 +391,90 @@ class BWM4(_Station):
 
 
 # ── 看 ──────────────────────────────────────────────────────────────────────
+class BWTables:
+    """四张 CSV 表 —— 判据引擎唯一的输入。**这一步没有模型。**
+
+    ⭐ 为什么是四张不是一张:**爻是点,互动是边,行数不一样。**
+       六爻恒 6 行;而爻与爻之间的关系是 C(6,2) 量级、还带方向和「成不成立」。
+       把边塞进 6 行的点表里,丢掉的正好是判据要读的那两样。
+    """
+
+    TABLES = ["全部", "lines 爻", "edges 边", "clock 钟", "board 盘"]
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "盘": ("BW_BOARD",),
+            "看哪张": (cls.TABLES, {
+                "tooltip": "lines=一爻一行(恒 6 行);edges=一条爻爻关系;"
+                           "clock=一爻对日月岁时的一条关系;board=整副盘(恒 1 行)。"}),
+        }}
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("表",)
+    FUNCTION = "go"
+    CATEGORY = CATEGORY
+    DESCRIPTION = ("把盘摊成四张 CSV。判据靠**查地址**取用 —— 角色定行、格定列,"
+                   "不是搜相似。「忌神旺相」读的就是 lines 表 角色=忌神 那一行的 旺衰 格。")
+
+    def go(self, 盘, 看哪张):
+        csv = 盘.get("csv") or {}
+        key = 看哪张.split(" ")[0]
+        if key != "全部":
+            return (csv.get(key, "(没有这张表)"),)
+        out = []
+        for name in ("lines", "edges", "clock", "board"):
+            body = csv.get(name, "")
+            rows = max(0, len(body.strip().split("\n")) - 1)
+            out.append("─── %s(%d 行)───\n%s" % (name, rows, body))
+        return ("\n".join(out),)
+
+
+class BWCriteria:
+    """《增删卜易》36 条判据,拿四张表判。**这一步没有模型。**
+
+    ⭐⭐⭐ **它不下结论。** 输出是「这几条成立,各自读的是哪一格」,不是「忌神能克」。
+       实测 200 副盘里有 60 副,「能克」和「不能克」**同时成立** —— 书上那几条
+       是有先后的,而那个先后没有写在 46 条里的任何一个字段。
+       真在这里输出一个总的真假,30% 的盘上那是掷硬币,而且掷完看不出来是掷的。
+    """
+
+    VIEW = ["只看成立的", "成立 + 判不了的", "全部 36 条"]
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "盘": ("BW_BOARD",),
+            "看什么": (cls.VIEW, {
+                "tooltip": "「判不了的」不是「不成立」:长生十二宫不在仓库、"
+                           "「化散」原文没给判法、「近事」来自问题不来自盘。"
+                           "把它们当成不成立,会拿到一个看起来完全正常的相反结论。"}),
+        }}
+
+    RETURN_TYPES = ("STRING", "STRING")
+    RETURN_NAMES = ("判据", "注")
+    FUNCTION = "go"
+    CATEGORY = CATEGORY
+    DESCRIPTION = ("逐爻判,不是整盘判 —— 输出说的是「第 5 爻是进神」,"
+                   "不是「这盘有进神」。⚠️ 这一步的结果目前**没有进 M3 的提示词**:"
+                   "M3 要多一个 {{criteria}} 槽才吃得到,那是动产品本身。")
+
+    def go(self, 盘, 看什么):
+        cs = 盘.get("criteria") or []
+        on = [c for c in cs if c["成立"] is True]
+        na = [c for c in cs if c["成立"] is None]
+        off = [c for c in cs if c["成立"] is False]
+        note = "36 条:成立 %d · 不成立 %d · 判不了 %d" % (len(on), len(off), len(na))
+        if 看什么 == "只看成立的":
+            body = 盘.get("criteriaText", "").split("【判不了的")[0].rstrip()
+        elif 看什么 == "成立 + 判不了的":
+            body = 盘.get("criteriaText", "")
+        else:
+            body = 盘.get("criteriaText", "") + "\n\n【不成立的 %d 条】\n" % len(off) + "\n".join(
+                "· %s  %s" % (c["id"], c["原文"]) for c in off)
+        return (body, note)
+
+
 class BWShow:
     @classmethod
     def INPUT_TYPES(cls):
@@ -415,6 +499,8 @@ NODE_CLASS_MAPPINGS = {
     "BWM2": BWM2,
     "BWM3": BWM3,
     "BWM4": BWM4,
+    "BWTables": BWTables,
+    "BWCriteria": BWCriteria,
     "BWShow": BWShow,
 }
 
@@ -426,5 +512,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "BWM2": "BW M2 选库",
     "BWM3": "BW M3 取证",
     "BWM4": "BW M4 解读",
+    "BWTables": "BW 四张表(无模型)",
+    "BWCriteria": "BW 判据(无模型)",
     "BWShow": "BW 看",
 }

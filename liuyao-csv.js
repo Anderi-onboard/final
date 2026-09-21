@@ -75,7 +75,9 @@
                     '月破', '真破', '假破', '日破', '暗动',
                     '日墓', '月墓', '动墓', '动化入墓', '入墓', '破墓',
                     '动化空', '月制动爻', '月制变爻', '临绝'];
-  var LINE_TRANS = ['化出', '化出关系'];
+  /* `化出旺衰` 是变爻自己的旺衰,不是本爻的。进神退神那五条判据读的就是
+     「动爻变爻**各自**旺衰」—— 只有一个旺衰的表判不了它们。 */
+  var LINE_TRANS = ['化出', '化出旺衰', '化出关系'];
 
   function lineTable(board, rel, roles) {
     var header = LINE_ID.concat(LINE_STATE, LINE_TRANS);
@@ -95,6 +97,7 @@
       r['角色'] = perLine[i] && perLine[i].roleCn ? perLine[i].roleCn : '?';
       LINE_STATE.forEach(function (k) { r[k] = k === '旺衰' ? s[k] : tri(s[k]); });
       r['化出'] = t ? t.to : '';
+      r['化出旺衰'] = t ? (t['旺衰'] || '?') : '';
       r['化出关系'] = t ? (t.kinds.join('/') || '') : '';
       return r;
     });

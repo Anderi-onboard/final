@@ -22,6 +22,7 @@ import { buildNode } from "../../functions/_lib/nodes/fill.js";
 import { M1, M2, M3, M4 } from "../../functions/_lib/nodes/prompts.js";
 import { material, tok } from "../lab/board.mjs";
 import { Local } from "../lab/client.mjs";
+import { format as criteriaText } from "../../functions/_lib/doctrine/criteria.js";
 
 const TEMPLATE = { m1: M1, m2: M2, m3: M3, m4: M4 };
 
@@ -61,6 +62,11 @@ const CMD = {
       ladder: m.ladder,
       relations: m.relations,
       boardText: m.boardText,
+      /* 四张表和判据。⭐ **判据是拿 `csv` 判的,不是拿盘判的** ——
+         求值器除了这四张表什么都看不见,这是「表够不够用」唯一能证明的形式。 */
+      csv: m.csv,
+      criteria: m.criteria,
+      criteriaText: criteriaText(m.criteria),
       verdict,
       summary: [
         `投掷 ${m.spec.raw.join(" ")}   动爻 ${m.spec.changeIdx.map((i) => i + 1).join(",") || "无"}`,

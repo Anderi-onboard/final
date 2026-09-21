@@ -12,6 +12,8 @@ import fs from "node:fs";
 import vm from "node:vm";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { judge } from "../../functions/_lib/doctrine/criteria.js";
+import { loadCriteria } from "../../functions/_lib/doctrine/criteria-rules.mjs";
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -70,6 +72,7 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
   const roles = AI.deriveRoles(board, subject.key);
   const F = win.BWFeatures.of(board, roles, subject);
   const rel = win.BWRelations.compute(board);
+  const csv = win.BWCsv.tables(board, rel, roles, subject);
   return {
     spec: s,
     board,
@@ -79,7 +82,10 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
     /* 四张 CSV 表。判据引擎吃的是这个,不是 features ——
        features 是有损投影(6 爻 × 20 格 → 一串扁平的 id),
        而判据要的是「第 3 爻的月破 = 是」,那个爻号在 id 里没有。 */
-    csv: win.BWCsv.tables(board, rel, roles, subject),
+    csv,
+    /* 判据求值。⚠️ **它只拿到 `csv`,拿不到 `board`/`rel`** —— 四张表够不够用,
+       只有在求值器除了它什么都看不见的时候才证明得了。 */
+    criteria: judge(loadCriteria(), csv),
     features: F.features || [],
     featureWhy: F.why || {},
     ladder: win.BWVerdict.format(win.BWVerdict.judge(board, roles, subject)),

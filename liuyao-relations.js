@@ -235,11 +235,18 @@
       if (t.backToTomb) k.push('化入墓');
       if (t.backToVoid) k.push('化空');
       if (t.branch.bi === l.deadBranch.bi) k.push('化绝');
+      /* 「化破」= 变爻月破。原文《增删卜易》元神忌神衰旺章:「元神休囚动而
+         化绝、化克、化破、化散」—— 前两个一直在算,化破缺的只是变爻的 monthClash。
+         ⚠️ **「化散」没有补,而且是故意的**:原文只把它和另外三个并列,
+         没给判法,补全包的 `依赖事实` 也只写「化散」两个字。
+         从记忆里给它一个定义,就是把我对断法的转述当成断法。 */
+      if (t.monthClash) k.push('化破');
       if (t.relative.key === 'officer' && l.relative.key !== 'officer') k.push('化鬼');
       transforms.push({
         line: l.idx + 1,
         from: l.relative.cn + l.branch.cn + l.element.cn,
         to: t.relative.cn + t.branch.cn + t.element.cn,
+        旺衰: t.wangShuai ? t.wangShuai.cn : null,
         kinds: k
       });
     });

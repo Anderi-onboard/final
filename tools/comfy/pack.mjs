@@ -85,7 +85,13 @@ const EXTRA = [
   "tools/lab/README.md",
   ...fs.readdirSync(path.join(ROOT, "tools/comfy/workflows"))
     .filter((f) => f.endsWith(".json"))
-    .map((f) => "tools/comfy/workflows/" + f)
+    .map((f) => "tools/comfy/workflows/" + f),
+  /* ⚠️ 补全包那 46 条是 `criteria-rules.mjs` 用 **fs** 读的,不是 import 的 ——
+     **闭包看不见它们**。判据引擎少了规则不会报语法错,它会老老实实算出
+     「0 条判据成立」,而那读起来像「这副盘没什么可说的」。
+     按目录扫,不手抄名单:往那个目录里加一份材料,这里自动跟上。 */
+  ...fs.readdirSync(path.join(ROOT, "functions/_lib/doctrine/pack-20260914"))
+    .map((f) => "functions/_lib/doctrine/pack-20260914/" + f)
 ];
 
 /* ── 最外面那个 shim —— 包里唯一不是从仓库复制来的文件 ────────────────────
@@ -180,6 +186,28 @@ const INSTALL = `# BourneWise 四节点 · ComfyUI(自带依赖)
 
 拖进画布即可。
 
+## 左下角那一列:盘 → 四张表 → 判据(**一个模型都不用**)
+
+这一列全是代码,连端点都不用连。想看懂这套东西在干什么,从它开始看:
+
+| 节点 | 它给你什么 |
+|---|---|
+| **BW 起卦** | 投掷、排盘、取用神、裁决梯 |
+| **BW 四张表** | 把盘摊成 CSV。⭐ **爻是点,互动是边,行数不一样** —— 六爻恒 6 行,而爻与爻之间的关系是 C(6,2) 量级、还带方向和「成不成立」。塞进 6 行的点表里,丢掉的正好是判据要读的那两样。 |
+| **BW 判据** | 《增删卜易》36 条,逐条判。输出是「第 5 爻是进神,凭它的 旺衰=旺 和 化出旺衰=旺」。 |
+
+⭐⭐⭐ **判据节点不下结论。** 它报「这几条成立,各自读的是哪一格」,不报
+「忌神能克」。实测 200 副盘里有 **60 副**「能克」和「不能克」同时成立 ——
+书上那几条是有先后的,而那个先后没有写在那 46 条的任何一个字段里。
+真在这里输出一个总的真假,30% 的盘上那是掷硬币,而且掷完看不出来是掷的。
+轻重交给 M4,依据由这一步给全。
+
+⚠️ 判据**只拿四张表判,拿不到盘**。伸手去读关系引擎能少写几行,代价是从此
+没人知道那张表缺什么 —— 而「表够不够用」正是做这张表的全部理由。
+
+⚠️ 这一步的结果目前**没有进 M3 的提示词**:M3 要多一个 \`{{criteria}}\` 槽才吃得到,
+那是动产品本身,还没做。
+
 ## 先不下模型,验一遍接线
 
     node repo/tools/lab/fake-model.mjs
@@ -211,6 +239,8 @@ M4 要写一整篇,给它大的。
     repo/liuyao-*.js                      排盘 / 关系 / 裁决梯 / feature / 取用神
     repo/functions/_lib/nodes/            四站的提示词和填槽(产品用的就是这两个文件)
     repo/functions/_lib/doctrine/rag/     11 个库 / 29 张断法卡
+    repo/functions/_lib/doctrine/criteria.js       判据求值(只看 CSV,不下结论)
+    repo/functions/_lib/doctrine/pack-20260914/    《增删卜易》46 条,逐条带印刷页码
     repo/tools/comfy/                     节点本体 + 两张图
     repo/tools/lab/                       假端点、单站调试台
 

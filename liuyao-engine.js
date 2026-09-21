@@ -364,6 +364,13 @@
           jinTui: jinTui(b0,b1),
           backToTomb: (EL_TOMB[g0]===b1),
           backToVoid: (b1===kong[0]||b1===kong[1]),
+          /* ⭐ 变爻自己的旺衰和月破。**本爻有的这两样,变爻一直没有** ——
+             《增删卜易》进神退神章第二十九那四条(以及退神那四条)读的正是
+             「动爻变爻**各自**旺衰」和「动爻变爻有一而空破」,少了它们那五条
+             判据一条都判不了。两个都是纯机械量:`wangShuai(五行, 月建)` 和
+             「支冲月建」,和本爻用的是同一个函数、同一个月建,不是新断法。 */
+          wangShuai: wangShuai(g1, monthEl),
+          monthClash: brClash(b1, monthBr),
           clashBen: brClash(b0,b1), combineBen: brCombine(b0,b1),
           feedsBen: generates(g1,g0), controlsBen: controls(g1,g0)
         };
