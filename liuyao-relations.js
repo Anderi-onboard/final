@@ -221,7 +221,17 @@
       if (t.controlsBen) k.push('回头克');
       if (t.clashBen) k.push('回头冲');
       if (t.combineBen) k.push('回头合');
-      if (t.jinTui) k.push(t.jinTui);
+      /* ⚠️⚠️ **`kinds` 是一串字符串,这一条曾经 push 的是对象。**
+         引擎的 `jinTui()` 返回 `{dir,cn:"进神",en:"Advancing"}`(`liuyao-ai.js`
+         读它的 `.en`,那边是对的、不要动)。直接塞进来之后:
+         ① `liuyao-features.js` 的 `TRANSFORM_MAP[k]` 查的是 `"[object Object]"`,
+            于是 **`ADVANCE_SPIRIT` / `RETREAT_SPIRIT` 一次都没发出去过** ——
+            而这两个是补全包里绑上了的那几个 feature 之一,36 条判据引用它们 14 次;
+         ② CSV 的 `化出关系` 那一格渲染成 `[object Object]`(实测 30/400 副盘)。
+         **两处都不报错**:少一个 feature 只是那条判据不亮,而它照样有结论可出。
+         `TRANSFORM_MAP` 的键是「化进神/化退神」,所以要带「化」—— 裸的 `.cn`
+         是「进神」,一样查不到,只是错得没那么显眼。 */
+      if (t.jinTui) k.push('化' + t.jinTui.cn);
       if (t.backToTomb) k.push('化入墓');
       if (t.backToVoid) k.push('化空');
       if (t.branch.bi === l.deadBranch.bi) k.push('化绝');

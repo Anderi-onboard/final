@@ -161,6 +161,55 @@ for (const b of boards.slice(0, 20)) {
   }
 }
 
+/* ── ⑥ 没有任何一格是把对象 `String()` 出来的 ─────────────────────────
+   上面每一条断言查的都是**形状**:列数、行数、`?` 落在哪、逗号有没有转义。
+   `[object Object]` 一样不带逗号、不是 `?`、列也在 —— **全部形状检查一路绿着过去**,
+   而那一格的内容是坏的。实测它在 30/400 副盘上出现过(`liuyao-relations.js`
+   往 `transforms[].kinds` 里 push 了引擎的 `jinTui` 对象而不是字符串)。
+   ⚠️ 这是本仓库那条「样式已应用 ≠ 画出来了」的数据侧版本:
+      **表的结构对,不等于表里的值是字。** */
+let scanned = 0;
+for (const b of boards) {
+  for (const [name, csv] of Object.entries(b.csv)) {
+    scanned++;
+    assert.ok(csv.indexOf("[object ") < 0,
+      `${name} 表里有一格是把对象 String() 出来的(\`[object …]\`)。\n`
+      + "  → 某个 kind/值是对象而不是字符串。读它的一方(判据、features 的 map)\n"
+      + "    拿到的是 `[object Object]`,查不到任何东西 —— 而且不报错。");
+  }
+}
+assert.ok(scanned >= N * 4, `只扫了 ${scanned} 张表 —— 这条在空转`);
+
+/* ── ⑦ CSV 和 features 不许对同一件事各说各话 ─────────────────────────
+   `化出关系` 那一格和 `ADVANCE_SPIRIT`/`RETREAT_SPIRIT` 说的是同一件事,
+   来源也是同一个 `transforms[].kinds`。它们分头坏掉过:kinds 里塞的是对象时,
+   CSV 写出 `[object Object]`、而 `liuyao-features.js` 的 `TRANSFORM_MAP[k]`
+   查 `"[object Object]"` 得到 undefined —— **两个 feature 一次都没发出去过**,
+   补全包里 36 条判据引用它们 14 次,一次都命中不了。
+   ⭐ 钉「两边必须一致」,而不是「至少亮一次」:前者能指出是哪一副盘不一致,
+      后者在只剩一条路能亮时照样绿。 */
+const TRANS_FEATURE = { "化进神": "ADVANCE_SPIRIT", "化退神": "RETREAT_SPIRIT" };
+const seen = { "化进神": 0, "化退神": 0 };
+for (const b of boards) {
+  const { header, body } = parse(b.csv.lines);
+  const ri = header.indexOf("化出关系");
+  for (const line of body) {
+    for (const kind of (line.split(",")[ri] || "").split("/")) {
+      const id = TRANS_FEATURE[kind];
+      if (!id) continue;
+      seen[kind]++;
+      assert.ok(b.features.includes(id),
+        `CSV 的 化出关系 写着「${kind}」,而 features 里没有 ${id}。\n`
+        + "  → 同一个事实,两个出口只走通了一个。判据读 features 的那一半永远不亮,\n"
+        + "    而 CSV 看起来完全正常。");
+    }
+  }
+}
+for (const [kind, n] of Object.entries(seen)) {
+  assert.ok(n > 0, `${N} 副盘里一次「${kind}」都没有 —— 上面那条断言在空转`);
+}
+
 console.log(`ok   board-csv — 四张表 × ${N} 副盘,列名和 relations 同源,`
   + `\`?\` 只在临绝/卦名(算不出来)出现,${NEW_CELLS.length} 个新格全部亮过,`
-  + `合被冲开 ${heOpen}/${heTotal}`);
+  + `合被冲开 ${heOpen}/${heTotal},无 [object] 泄漏,`
+  + `化进神 ${seen["化进神"]} / 化退神 ${seen["化退神"]} 两边一致`);
