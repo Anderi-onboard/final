@@ -209,7 +209,34 @@ for (const [kind, n] of Object.entries(seen)) {
   assert.ok(n > 0, `${N} 副盘里一次「${kind}」都没有 —— 上面那条断言在空转`);
 }
 
+/* ── ⑧ 角色列:判据的行选择器 ────────────────────────────────────────
+   补全包 36 条判据的原子是**角色 × 格**的乘积(`ORIGIN_STRONG` =「元神那一行的
+   旺衰格」),68 个原子里 58 个是这个形状。少了这一列,**每条判据都选不中行** ——
+   而表的形状完全正常,上面七条断言一条都不会响。
+   ⭐ 钉「和 roles.yongLines 一致」而不是「这一列非空」:非空只要求填了东西,
+      一致才要求填对。用神选错行,整篇解读读的是另一爻,页面上看不出任何异常。
+   ⚠️ 这一列**不在 `?` 白名单里**,所以 ③ 已经替它挡住了「没人给 roles」那一种。 */
+const ROLE_CN = new Set(["用神", "原神", "忌神", "仇神", "泄神", "比和"]);
+let roleCells = 0;
+for (const b of boards) {
+  const { header, body } = parse(b.csv.lines);
+  const ci = header.indexOf("角色");
+  assert.ok(ci >= 0, "lines 表没有 角色 列 —— 判据没有行选择器,一条都选不中");
+  const yongRows = [];
+  body.forEach((line, i) => {
+    const v = line.split(",")[ci];
+    roleCells++;
+    assert.ok(ROLE_CN.has(v),
+      `第 ${i + 1} 爻的角色是「${v}」,不在五行对用神的那几种关系里`);
+    if (v === "用神") yongRows.push(i);
+  });
+  assert.deepEqual(yongRows, Array.from(b.roles.yongLines),
+    "CSV 标的用神行和 deriveRoles().yongLines 对不上 —— "
+    + "判据会照着这一列去读旺衰/发动,读的却是另一爻");
+}
+assert.ok(roleCells === N * 6, `角色格只有 ${roleCells} 个,应为 ${N * 6} —— 这条在空转`);
+
 console.log(`ok   board-csv — 四张表 × ${N} 副盘,列名和 relations 同源,`
   + `\`?\` 只在临绝/卦名(算不出来)出现,${NEW_CELLS.length} 个新格全部亮过,`
-  + `合被冲开 ${heOpen}/${heTotal},无 [object] 泄漏,`
+  + `合被冲开 ${heOpen}/${heTotal},无 [object] 泄漏,角色列与 yongLines 一致,`
   + `化进神 ${seen["化进神"]} / 化退神 ${seen["化退神"]} 两边一致`);

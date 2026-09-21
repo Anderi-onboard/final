@@ -59,17 +59,29 @@
   /* ── 表一 · 爻 ────────────────────────────────────────────────────────
      列 = 身份(6) + state 的每一格。**state 有什么这里就有什么** ——
      手抄一份列名,下次 relations 加一格就会静默漏掉。 */
-  var LINE_ID = ['爻', '干支', '五行', '六亲', '六神', '世应'];
+  /* ⭐⭐ **`角色` 是判据的行选择器,没有它整张表选不中任何一行。**
+     补全包 36 条判据里的原子是**角色 × 格**的乘积:`ORIGIN_STRONG` 就是
+     「元神那一行的 `旺衰` 格」,`TABOO_IN_DAY_TOMB` 就是「忌神那一行的 `日墓` 格」。
+     68 个原子里 58 个是这个形状 —— **它们不是 58 个缺失的事实,是缺一列。**
+     角色本来就算出来了(`BWLiuYaoAI.deriveRoles().perLine[i].roleCn`),
+     只是没发到这张表上。⚠️ 这正是本仓库那条「算出来了 ≠ 发得出去」:
+     少这一列不报错,只是每条判据都选不中行,而 CSV 看起来完全正常。
+
+     ⚠️ **引擎叫「原神」,书和补全包叫「元神」—— 同一个东西。**
+        写出来是因为下一个人按补全包的字去 grep `元神` 会在这张表里一无所获,
+        然后以为这一列没做。两个名字都活着,不许只认一个。 */
+  var LINE_ID = ['爻', '干支', '五行', '六亲', '六神', '世应', '角色'];
   var LINE_STATE = ['发动', '旺衰', '旬空', '真空', '假空', '冲空则实',
                     '月破', '真破', '假破', '日破', '暗动',
                     '日墓', '月墓', '动墓', '动化入墓', '入墓', '破墓',
                     '动化空', '月制动爻', '月制变爻', '临绝'];
   var LINE_TRANS = ['化出', '化出关系'];
 
-  function lineTable(board, rel) {
+  function lineTable(board, rel, roles) {
     var header = LINE_ID.concat(LINE_STATE, LINE_TRANS);
     var byLine = {};
     (rel.transforms || []).forEach(function (t) { byLine[t.line] = t; });
+    var perLine = (roles && roles.perLine) || [];
     var rows = board.lines.map(function (l, i) {
       var s = rel.state[i], t = byLine[i + 1], r = {};
       r['爻'] = i + 1;
@@ -78,6 +90,9 @@
       r['六亲'] = l.relative.cn;
       r['六神'] = l.spirit ? l.spirit.cn : '';
       r['世应'] = s['世爻'] ? '世' : (s['应爻'] ? '应' : '');
+      /* 没有 roles 的调用方拿到 `?` —— 「这次没人给」,不是「这一爻没有角色」。
+         每一爻都有角色(五行对用神的五种关系),所以空着是错的。 */
+      r['角色'] = perLine[i] && perLine[i].roleCn ? perLine[i].roleCn : '?';
       LINE_STATE.forEach(function (k) { r[k] = k === '旺衰' ? s[k] : tri(s[k]); });
       r['化出'] = t ? t.to : '';
       r['化出关系'] = t ? (t.kinds.join('/') || '') : '';
@@ -183,7 +198,7 @@
      这里一个生克都不判,只是把已经算好的摊平。 */
   function tables(board, rel, roles, subject) {
     return {
-      lines: lineTable(board, rel),
+      lines: lineTable(board, rel, roles),
       edges: edgeTable(rel),
       clock: clockTable(rel),
       board: boardTable(board, rel, roles, subject)
