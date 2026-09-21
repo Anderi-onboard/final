@@ -84,7 +84,35 @@
     { field: "动化入墓", id: "ENTER_TOMB" },
     { field: "动化入墓", id: "TRANSFORM_TOMB" },
     { field: "动化空",   id: "TRANSFORM_EMPTY" },
-    { field: "发动",     id: "MOVING_LINE" }
+    { field: "发动",     id: "MOVING_LINE" },
+    /* ── 2026-09-21 补:下面这几样 relations 一直在算,而这张表发不出去。
+       ⚠️ 「算出来了」和「发得出去」是两件事,而且第二件失败时**不报错** ——
+          下游只是永远检索不到那一类卡,照样有卡可读。这是本仓库反复付钱的形状,
+          补全包 README 已经为另一批记过一次,这是没补完的那一半。 */
+    { field: "冲空则实", id: "CLASH_OPENS_VOID" },      // SOP-2.7 日辰冲起旬空
+    { field: "动墓",     id: "ENTER_TOMB" },
+    { field: "动墓",     id: "MOVING_TOMB" },            // 补全包标 blocked 的三条之一
+    { field: "破墓",     id: "TOMB_BROKEN" },            // SOP-3.三墓.破墓
+    { field: "月制动爻", id: "MONTH_CURBS_MOVER" },      // SOP-2.4 月建制服动爻
+    { field: "月制变爻", id: "MONTH_CURBS_TRANSFORM" }   // SOP-2.4 月建制服变爻
+  ];
+
+  /* ── 卦级 → feature。relations.shape 的 13 项里,这 9 项以前一个都没发出去。
+     它们不是「检索键」而已 —— 新架构里 features 就是给模型看的那张表,
+     发不出去 = 模型根本不知道这是一副六合卦。 */
+  var SHAPE_MAP = [
+    { field: "独发",     id: "SOLO_MOVER" },
+    { field: "独静",     id: "SOLO_STATIC" },
+    { field: "尽静",     id: "ALL_STATIC" },
+    { field: "六爻乱动", id: "CHAOTIC_MOVEMENT" },
+    { field: "六冲卦",   id: "SIX_CLASH_HEXAGRAM" },
+    { field: "六合卦",   id: "SIX_COMBINE_HEXAGRAM" },
+    { field: "变卦六冲", id: "TRANSFORMED_SIX_CLASH" },
+    { field: "变卦六合", id: "TRANSFORMED_SIX_COMBINE" },
+    { field: "归魂",     id: "RETURNING_SOUL" },
+    { field: "游魂",     id: "WANDERING_SOUL" },
+    { field: "反吟",     id: "REVERSED_CHANT" },
+    { field: "伏吟",     id: "REPEATED_CHANT" }
   ];
 
   /* ── 变爻 kinds → feature。读 relations.transforms[].kinds。
@@ -107,7 +135,22 @@
   /* ── 爻爻关系 → feature。只收 acts 为真的 ——
      静爻不生克动爻(《增删卜易》§4),不成立的关系不该把库路由开。 */
   var PAIR_MAP   = { "生": "GENERATES", "克": "CONTROLS" };
-  var MUTUAL_MAP = { "冲": "CLASHES",   "合": "COMBINES" };
+  var MUTUAL_MAP = { "冲": "CLASHES",   "合": "COMBINES", "刑": "PUNISHES", "害": "HARMS" };
+
+  /* ⚠️ **合被冲开要发自己的 id,不能只发 COMBINES。** 400 副盘实测:
+     382 个合里 153 个(40%)实际已经被日辰/月建/动爻冲开了。只发 COMBINES,
+     那 40% 路由到的是「合住」那一批卡 —— **结论正好相反,而页面上看不出来**。 */
+  var COMBINE_OPENED = "COMBINATION_BROKEN";
+
+  /* 世应之间。以前一条都不发 —— 而「世应相合」「应生世」是断关系类问题时
+     第一个要看的东西。 */
+  var WORLD_RESP_MAP = {
+    "世生应": "WORLD_GENERATES_RESP", "世克应": "WORLD_CONTROLS_RESP",
+    "应生世": "RESP_GENERATES_WORLD", "应克世": "RESP_CONTROLS_WORLD",
+    "世应比和": "WORLD_RESP_PEER",    "世应相冲": "WORLD_RESP_CLASH",
+    "世应相合": "WORLD_RESP_COMBINE", "世应相害": "WORLD_RESP_HARM",
+    "世应相刑": "WORLD_RESP_PUNISH"
+  };
 
   /* ── 时钟对**用神**的作用。这四个 feature 名字里带 TARGET,
      所以只看用神那几爻 —— 对任意一爻发,等于这四个也恒为真。 */
@@ -169,7 +212,49 @@
       m.kinds.forEach(function (k) {
         if (MUTUAL_MAP[k]) add(MUTUAL_MAP[k], m.a + k + m.b);
       });
+      if (m.kinds.indexOf("合") >= 0 && m.冲开) {
+        add(COMBINE_OPENED, m.a + "合" + m.b + " 被" + [].concat(m.冲开).join("/") + "冲开");
+      }
     });
+
+    /* 卦级 —— 以前 13 项一项都没发。 */
+    if (r.shape) {
+      SHAPE_MAP.forEach(function (s) {
+        if (r.shape[s.field]) {
+          add(s.id, typeof r.shape[s.field] === "number"
+            ? "第" + r.shape[s.field] + "爻" : s.field);
+        }
+      });
+    }
+
+    /* 世应。冲开和上面同一条理由:相合而被冲开,和相合是相反的两件事。 */
+    if (r.worldResp) {
+      (r.worldResp.rels || []).forEach(function (x) {
+        if (WORLD_RESP_MAP[x]) add(WORLD_RESP_MAP[x], "世" + r.worldResp.world + "应" + r.worldResp.resp + " " + x);
+      });
+      if (r.worldResp.冲开) {
+        add(COMBINE_OPENED, "世应相合 被" + [].concat(r.worldResp.冲开).join("/") + "冲开");
+      }
+    }
+
+    /* 飞神与伏神。伏神能不能出伏,全看这两格 —— 以前只发一个「有伏神」。 */
+    (r.hidden || []).forEach(function (h) {
+      if (h.flyGeneratesHidden) add("FLYING_FEEDS_HIDDEN", "第" + (h.position + 1) + "爻 飞神生伏神");
+      if (h.flyControlsHidden) add("FLYING_CURBS_HIDDEN", "第" + (h.position + 1) + "爻 飞神克伏神");
+    });
+
+    /* 太岁。clock 一直在算它,而这张表从来没往外发过。 */
+    r.clock.forEach(function (c) {
+      c.rels.forEach(function (x) {
+        if (String(x.with).indexOf("太岁") !== 0) return;
+        if (x.kind === "受生" || x.kind === "临" || x.kind === "比和") add("YEAR_SUPPORT", "第" + c.line + "爻 " + x.with + x.kind);
+        if (x.kind === "受克") add("YEAR_CONTROLS", "第" + c.line + "爻 " + x.with + x.kind);
+        if (x.kind === "冲")   add("YEAR_CLASH", "第" + c.line + "爻 " + x.with + x.kind);
+      });
+    });
+
+    if ((r.sanhe && r.sanhe.length)) add("THREE_HARMONY_CHAIN", "三合" + r.sanhe.length + "个");
+    if ((r.sanhui && r.sanhui.length)) add("THREE_MEETING_CHAIN", "三会" + r.sanhui.length + "个");
 
     r.clock.forEach(function (c) {
       if (!isYong(c.line)) return;
@@ -182,9 +267,6 @@
       });
     });
 
-    if ((r.sanhe && r.sanhe.length) || (r.sanhui && r.sanhui.length)) {
-      add("THREE_HARMONY_CHAIN", "局" + ((r.sanhe || []).length + (r.sanhui || []).length) + "个");
-    }
     /* 相生链长度 ≥3 才算「多步相生」—— 两爻的生已经在 GENERATES 里了。 */
     if (r.chains && r.chains.length) add("MULTI_STEP_GENERATION", r.chains.length + " 条链");
 
@@ -199,7 +281,10 @@
     };
   }
 
-  /* 契约要拿的:这个文件**有能力**发出的全部 id(不是这一卦发了哪些)。 */
+  /* 契约要拿的:这个文件**有能力**发出的全部 id(不是这一卦发了哪些)。
+     ⚠️ 这张表必须和上面每一张映射表同步 —— 它就是 `tests/feature-vocab.mjs`
+        用来查「有没有孤儿」的那一份。漏登记一个,那个 id 发得出去却不在词表里,
+        而孤儿检查会以全绿的样子放过它。 */
   function vocabulary() {
     var v = {};
     ALWAYS.forEach(function (x) { v[x] = 1; });
@@ -208,8 +293,13 @@
     Object.keys(PAIR_MAP).forEach(function (k) { v[PAIR_MAP[k]] = 1; });
     Object.keys(MUTUAL_MAP).forEach(function (k) { v[MUTUAL_MAP[k]] = 1; });
     CLOCK_TARGET.forEach(function (t) { v[t.id] = 1; });
+    SHAPE_MAP.forEach(function (s) { v[s.id] = 1; });
+    Object.keys(WORLD_RESP_MAP).forEach(function (k) { v[WORLD_RESP_MAP[k]] = 1; });
+    v[COMBINE_OPENED] = 1;
     ["TARGET_STRONG", "TARGET_WEAK", "TRANSFORMING_LINE", "THREE_HARMONY_CHAIN",
-     "MULTI_STEP_GENERATION", "HIDDEN_SPIRIT", "CHANGED_HEXAGRAM"]
+     "THREE_MEETING_CHAIN", "MULTI_STEP_GENERATION", "HIDDEN_SPIRIT", "CHANGED_HEXAGRAM",
+     "FLYING_FEEDS_HIDDEN", "FLYING_CURBS_HIDDEN",
+     "YEAR_SUPPORT", "YEAR_CONTROLS", "YEAR_CLASH"]
       .forEach(function (x) { v[x] = 1; });
     return Object.keys(v).sort();
   }

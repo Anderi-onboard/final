@@ -34,7 +34,7 @@ export function engine() {
   vm.createContext(win);
   win.globalThis = win;
   for (const f of ["liuyao-engine.js", "liuyao-verdict.js", "liuyao-relations.js",
-                   "liuyao-features.js", "liuyao-ai.js"]) {
+                   "liuyao-features.js", "liuyao-csv.js", "liuyao-ai.js"]) {
     vm.runInContext(fs.readFileSync(path.join(ROOT, f), "utf8"), win, { filename: f });
   }
   cached = win;
@@ -69,11 +69,17 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
   const subject = AI.subjectKey("", { db, gender });
   const roles = AI.deriveRoles(board, subject.key);
   const F = win.BWFeatures.of(board, roles, subject);
+  const rel = win.BWRelations.compute(board);
   return {
     spec: s,
     board,
     subject,
     roles,
+    relations: rel,
+    /* 四张 CSV 表。判据引擎吃的是这个,不是 features ——
+       features 是有损投影(6 爻 × 20 格 → 一串扁平的 id),
+       而判据要的是「第 3 爻的月破 = 是」,那个爻号在 id 里没有。 */
+    csv: win.BWCsv.tables(board, rel, roles, subject),
     features: F.features || [],
     featureWhy: F.why || {},
     ladder: win.BWVerdict.format(win.BWVerdict.judge(board, roles, subject)),

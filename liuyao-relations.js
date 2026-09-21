@@ -85,25 +85,73 @@
     var hourEl = hourBr === null ? null : BR_EL[hourBr];
 
     /* ── 每爻的状态判定(真假之别,下游要用) ───────────────────────── */
+    /* 谁能冲这个地支:日辰、月建、或任何一个能作用的爻(动/暗动)。
+       ⚠️ 「冲开」「破墓」「冲空」三条判据问的都是这一件事,所以只写一次 ——
+          三份各写一遍是本仓库付过四次学费的那张「第二名单」。 */
+    var clashedBy = function (bi, selfIdx) {
+      var by = [];
+      if (CLASH(bi, dayBr)) by.push('日辰' + BR[dayBr]);
+      if (CLASH(bi, monBr)) by.push('月建' + BR[monBr]);
+      for (var q = 0; q < 6; q++) {
+        if (q === selfIdx) continue;
+        if (!(L[q].moving || (L[q].dayClash && !L[q].moving))) continue;  // 动爻或可能暗动的
+        if (CLASH(bi, L[q].branch.bi)) by.push('第' + (q + 1) + '爻' + L[q].branch.cn);
+      }
+      return by;
+    };
+
     var state = L.map(function (l) {
       var strong = l.wangShuai.rank >= 3;
       var fed = l.dayGenerates || l.monthGenerates;
       // 暗动:日冲静爻而爻不衰。日破:日冲静爻而爻衰。两者靠旺衰分,不是同一件事。
       var anDong = !l.moving && l.dayClash && (strong || fed);
       var riPo   = !l.moving && l.dayClash && !(strong || fed);
+
+      /* 动墓(SOP-3.三墓.动墓):入**动爻**之墓 —— 某个动爻的地支正是这一爻的墓支。
+         和日墓、月墓、化墓是四件不同的事,应期尺度也不同(动墓随那个动爻走)。 */
+      var tombBi = l.tombBranch ? l.tombBranch.bi : null;
+      var dongMu = null;
+      if (tombBi !== null) {
+        dongMu = false;
+        for (var z = 0; z < 6; z++) {
+          if (z === l.idx || !L[z].moving) continue;
+          if (L[z].branch.bi === tombBi) { dongMu = '第' + (z + 1) + '爻' + L[z].branch.cn; break; }
+        }
+      }
+      var inTomb = l.dayTomb || l.monthTomb || !!dongMu || !!(l.transform && l.transform.backToTomb);
+      /* 破墓(SOP-3.三墓.破墓):「墓神被日月动爻冲破,亦非真也。墓破即如破网,容易而出矣。」
+         只有真的入了墓才谈得上破墓 —— 没入墓时这一格是 false,不是「不知道」。 */
+      var poMu = inTomb && tombBi !== null ? clashedBy(tombBi, l.idx) : [];
+
       return {
         line: l.idx + 1,
         旬空: l.void,
         真空: l.void && !l.moving && !strong && !fed,
         假空: l.void && (l.moving || strong || fed),
+        // 冲空则实(SOP-2.7):日辰冲起旬空之爻。和「日破」不是一件事 —— 那条问的是衰旺。
+        冲空则实: l.void && l.dayClash,
         月破: l.monthClash,
         真破: l.monthClash && !l.moving && !strong && !fed && l.branch.bi !== dayBr,
         假破: l.monthClash && (l.moving || strong || fed || l.branch.bi === dayBr),
         暗动: anDong,
         日破: riPo,
         日墓: l.dayTomb, 月墓: l.monthTomb,
+        动墓: dongMu,
         动化入墓: !!(l.transform && l.transform.backToTomb),
+        入墓: inTomb,
+        破墓: poMu.length ? poMu : false,
         动化空: !!(l.transform && l.transform.backToVoid),
+        /* 月建制服动爻与变爻(SOP-2.4)。clock 里已有「受克 月建」,但它不分
+           动静、也够不着变爻 —— 而这条判据要的恰恰是那两样。 */
+        月制动爻: l.moving && l.monthControls,
+        月制变爻: !!(l.transform && l.transform.element
+                     && ctl(monEl, l.transform.element.gi)),
+        /* ⚠️ 临绝(爻在日辰上处于绝地)算不出来:它要长生十二宫,而这个仓库里
+           没有那张表。**保持 null(不知道),不许当成 false** —— 补全包把
+           AT_ABSOLUTE 标成 blocked 就是这一条。空格当否,「忌神衰而又绝」
+           永远不会亮,而拿到的是一个看起来完全正常的相反结论。
+           要接就先把长生十二宫作为**数据**补进来,不是在这里猜一个。 */
+        临绝: null,
         // 随鬼入墓:世爻与官鬼同支或世爻入日月墓且卦中官鬼发动。事实两半都报,
         // 合起来算不算「随鬼入墓」由断法定。
         世爻: l.idx === board.ben.worldLi,
@@ -149,7 +197,15 @@
         if (HARM[bm] === bn)    k2.push('害');
         if (isXing(bm, bn))     k2.push('刑');
         if (!k2.length) continue;
+        /* 合处逢冲(SOP-2.8):这个合被日辰/月建/动爻冲开了没有。
+           ⚠️ **合住和合被冲开是两个相反的结论**,而在此之前只算了前一半 ——
+              拿着「世应相合」去写,而那个合其实早被日辰冲开了,
+              页面上看不出任何异常。 */
+        var open = k2.indexOf('合') >= 0
+          ? clashedBy(bm, m).concat(clashedBy(bn, n))
+          : [];
         mutual.push({ a: m + 1, b: n + 1, aDesc: desc(m), bDesc: desc(n), kinds: k2,
+                      冲开: open.length ? open : false,
                       // 有一头能动,这条关系就在场;两头皆静则只是并列
                       acts: canAct(m) || canAct(n),
                       mover: canAct(m) ? m + 1 : (canAct(n) ? n + 1 : null) });
@@ -252,18 +308,22 @@
 
     /* ── 卦级 ─────────────────────────────────────────────────────── */
     var movingN = board.moving.length;
+    /* ⚠️ 这几格用 `false` 不用 `null`。下游把 `null` 读成「引擎算不出来」,
+       而「这卦不是独发」是一个**算得出来的否**。两种意思撞在同一个值上,
+       三态就白分了 —— CSV 那一层曾经把「不是独发」写成 `?`。 */
     var shape = {
       动爻数: movingN,
-      独发: movingN === 1 ? board.moving[0] + 1 : null,
+      独发: movingN === 1 ? board.moving[0] + 1 : false,
       独静: movingN === 5 ? (function () {
         for (var k = 0; k < 6; k++) if (board.moving.indexOf(k) < 0) return k + 1;
-        return null;
-      })() : null,
+        return false;
+      })() : false,
       尽静: movingN === 0,
       六爻乱动: movingN >= 4,
       六冲卦: board.ben.clash, 六合卦: board.ben.combine,
-      变卦六冲: board.bian ? board.bian.clash : null,
-      变卦六合: board.bian ? board.bian.combine : null,
+      // 没有变卦时不是「不知道」,是「没有变卦,所以谈不上变卦六冲」。
+      变卦六冲: board.bian ? board.bian.clash : false,
+      变卦六合: board.bian ? board.bian.combine : false,
       归魂: /归魂/.test(board.ben.series.cn), 游魂: /游魂/.test(board.ben.series.cn),
       反吟: L.some(function (l) { return l.fanyin; }),
       伏吟: L.some(function (l) { return l.fuyin; })
@@ -299,7 +359,15 @@
       mutual: mutual,
       transforms: transforms,
       clock: clock,
-      worldResp: { world: board.ben.worldLi + 1, resp: board.ben.respLi + 1, rels: wr },
+      worldResp: { world: board.ben.worldLi + 1, resp: board.ben.respLi + 1, rels: wr,
+                   /* 世应相合也会被冲开 —— 同一条 SOP-2.8,同一个函数。 */
+                   冲开: wr.indexOf('世应相合') >= 0
+                     ? (function () {
+                         var o = clashedBy(w.branch.bi, board.ben.worldLi)
+                           .concat(clashedBy(r.branch.bi, board.ben.respLi));
+                         return o.length ? o : false;
+                       })()
+                     : false },
       sanhe: sanhe,
       sanhui: sanhui,
       shape: shape,
