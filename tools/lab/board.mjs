@@ -78,7 +78,11 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
     board,
     subject,
     roles,
-    relations: rel,
+    /* ⚠️ 这里原来也叫 `relations`,和下面那个**同名**,被后者整个覆盖 ——
+       对象字面量里重复的键,后写的赢,而且一声不响。
+       读 `material()` 的人看见 `relations: rel` 会以为拿得到关系引擎的对象,
+       实际拿到的是一段格式化文本,取 `.state[0]` 直接抛。改名 `rel`。 */
+    rel,
     /* 四张 CSV 表。判据引擎吃的是这个,不是 features ——
        features 是有损投影(6 爻 × 20 格 → 一串扁平的 id),
        而判据要的是「第 3 爻的月破 = 是」,那个爻号在 id 里没有。 */
