@@ -84,18 +84,19 @@ var TRANS_KIND = {
    和一个算不出来的原子,在求值器里长得一模一样,而它们该被区别对待:
    前者是漏了,后者是仓库里没有那份数据。 */
 var BLOCKED = {
-  AT_ABSOLUTE:              '临绝要长生十二宫,这个仓库里没有那张表',
-  ORIGIN_AT_DAY_GROWTH:     '同上',
-  ORIGIN_AT_DAY_PROSPERITY: '同上',
-  TABOO_AT_DAY_GROWTH:      '同上',
-  TABOO_AT_DAY_PROSPERITY:  '同上',
-  TARGET_WEAK_OR_ABSOLUTE:  '含临绝',
-  TARGET_OVERSTRONG:        '「太旺」:旺衰值域是 休囚旺死相,没有这一档',
-  TRANSFORM_SCATTER:        '「化散」:原文只与化绝化克化破并列,没给判法,包里也没有',
-  NEAR_TERM:                '「近事」不是盘的属性,是问题的属性 —— 要 M1 给',
+  AT_ABSOLUTE:              { 名: '临绝', 因: '需长生十二宫，本仓库无此表' },
+  ORIGIN_AT_DAY_GROWTH:     { 名: '元神临日辰长生', 因: '需长生十二宫，本仓库无此表' },
+  ORIGIN_AT_DAY_PROSPERITY: { 名: '元神临日辰帝旺', 因: '需长生十二宫，本仓库无此表' },
+  TABOO_AT_DAY_GROWTH:      { 名: '忌神临日辰长生', 因: '需长生十二宫，本仓库无此表' },
+  TABOO_AT_DAY_PROSPERITY:  { 名: '忌神临日辰帝旺', 因: '需长生十二宫，本仓库无此表' },
+  TARGET_WEAK_OR_ABSOLUTE:  { 名: '用神衰或绝', 因: '含临绝，需长生十二宫' },
+  TARGET_OVERSTRONG:        { 名: '太旺', 因: '旺衰仅休囚旺死相五档，无此级' },
+  TRANSFORM_SCATTER:        { 名: '化散', 因: '原文与化绝化克化破并列，未给判法' },
+  NEAR_TERM:                { 名: '近事', 因: '属问题，不属卦盘，须由 M1 提供' },
   TARGET_FOLLOWS_GHOST_INTO_DAY_TOMB:
-    '「随鬼入墓」包里没给判法。⚠️ 而且原文写的是「世爻」,原子名却是 TARGET(用神),两者常非同一爻',
-  TARGET_FOLLOWS_GHOST_INTO_MOVING_TOMB: '同上'
+    { 名: '随鬼入日墓', 因: '原文未给判法。另：原文作世爻，本条作用神，二者常非同爻' },
+  TARGET_FOLLOWS_GHOST_INTO_MOVING_TOMB:
+    { 名: '随鬼入动墓', 因: '原文未给判法。另：原文作世爻，本条作用神，二者常非同爻' }
 };
 
 /* ── 求值器 ────────────────────────────────────────────────────────── */
@@ -351,7 +352,8 @@ export function judge(rules, tables) {
       成立: 成立,                             // true / false / null(算不出来)
       爻: 爻,
       缺: 成立 === null ? missing.map(function (a) {
-        return { 原子: a, 为什么: BLOCKED[a] || '求值器没有这个原子的条目' };
+        var b = BLOCKED[a] || { 名: a, 因: '求值器无此原子条目' };
+        return { 原子: a, 名: b.名, 为什么: b.因 };
       }) : [],
       引用: 引用
     };
@@ -366,29 +368,40 @@ export function format(verdicts) {
   var on = verdicts.filter(function (v) { return v.成立 === true; });
   var na = verdicts.filter(function (v) { return v.成立 === null; });
   var out = [];
-  out.push('【成立的判据 ' + on.length + ' 条】以下每条都指得出是盘上哪一格。');
-  out.push('⚠️ 这里不下结论。同一个主体上「能」和「不能」可以同时成立 ——');
-  out.push('   书上那几条有先后,而那个先后没有写在任何一条里。轻重由你判。');
+  out.push('成立 ' + on.length + ' 条。它们并列，此处不分轻重：');
+  out.push('同一主体上，能与不能可以同时成立。原书有先后，该先后未记入任何一条。');
   on.forEach(function (v) {
     out.push('');
-    out.push('· ' + v.id + '  [' + v.主体 + '·' + v.判 + ']'
-      + (v.爻.length ? '  第' + v.爻.join('、') + '爻' : ''));
-    out.push('  原文:' + v.原文);
-    var seen = {};
-    v.引用.filter(function (c) {
-      var k = c.表 + c.行 + c.列 + c.值;
-      if (seen[k]) return false; seen[k] = 1; return true;
-    }).forEach(function (c) {
-      out.push('  凭:' + c.表 + ' 第' + c.行 + '爻 ' + c.列 + '=' + c.值);
+    out.push(v.主体 + v.判 + (v.爻.length ? '，第' + v.爻.join('、') + '爻' : ''));
+    out.push('  ' + v.原文);
+    /* 依据按爻归拢。⚠️ 一爻一行,不是一格一行 —— 同一爻的三格分三行写,
+       读的人要自己把它们拼回去,而拼回去是这段文字本来就该做完的事。 */
+    var byLine = {}, order = [];
+    v.引用.forEach(function (c) {
+      var k = c.表 === 'lines' ? '第' + c.行 + '爻' : '';
+      if (!byLine[k]) { byLine[k] = []; order.push(k); }
+      var s = c.表 === 'lines' ? c.列 + c.值 : c.值;
+      if (byLine[k].indexOf(s) < 0) byLine[k].push(s);
     });
+    order.forEach(function (k) {
+      out.push('  依据 ' + (k ? k + ' ' : '') + byLine[k].join('，'));
+    });
+    out.push('  ' + v.id);
   });
   if (na.length) {
     out.push('');
-    out.push('【判不了的 ' + na.length + ' 条】不是「不成立」,是这副盘上算不出来:');
+    out.push('判不了 ' + na.length + ' 条。缺的是数据，不是结论；判不了不等于不成立。');
     na.forEach(function (v) {
-      out.push('· ' + v.id + ' —— 缺 ' + v.缺.map(function (x) {
-        return x.原子 + '(' + x.为什么 + ')';
-      }).join('、'));
+      /* 同一条里两个原子常共用一个原因(长生和帝旺都要长生十二宫)。
+         按原因归拢,不然同一句话印两遍。 */
+      var byWhy = {}, order = [];
+      v.缺.forEach(function (x) {
+        if (!byWhy[x.为什么]) { byWhy[x.为什么] = []; order.push(x.为什么); }
+        if (byWhy[x.为什么].indexOf(x.名) < 0) byWhy[x.为什么].push(x.名);
+      });
+      out.push('  ' + v.id + '  缺' + order.map(function (w) {
+        return byWhy[w].join('、') + '：' + w;
+      }).join('；'));
     });
   }
   return out.join('\n');
