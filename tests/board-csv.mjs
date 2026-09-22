@@ -236,6 +236,39 @@ for (const b of boards) {
 }
 assert.ok(roleCells === N * 6, `角色格只有 ${roleCells} 个,应为 ${N * 6} —— 这条在空转`);
 
+/* ── ⑨ 发给模型的那份和 CSV 不许对入墓各说各话 ─────────────────────────
+   `liuyao-verdict.js` 的 `states` 是 `boardText` 的来源,也就是**真正发给 M3 的
+   那一份**。它的 `tomb` 曾经写的是 `dayTomb || monthTomb` —— 动墓整个不在里面。
+   于是同一副盘同一爻,CSV 说入墓,模型收到「没入墓」:1200 格里 142 格相反,
+   涉及 84/200 副盘。SOP-3 元神不能生五「元神入三墓」在 CSV 上成立,
+   而模型据此写出来的那一段读起来完全正常。
+
+   ⭐ 根因是同一件事算了两遍(relations 一遍、verdict 一遍、而 verdict 那遍
+      少算一种墓)。现在动墓只在 `liuyao-engine.js` 算一次,两边都读它。
+      这条断言钉的是**两个出口必须一致**,不是某一边的写法。 */
+{
+  let cells = 0, disagree = [];
+  for (const b of boards) {
+    const { header, body } = parse(b.csv.lines);
+    const ci = header.indexOf("入墓");
+    for (const m of b.boardText.matchAll(/\{"label":"第(\d)爻[^}]*"tomb":(true|false)[^}]*\}/g)) {
+      const row = body.map((l) => l.split(",")).find((r) => Number(r[0]) === Number(m[1]));
+      if (!row) continue;
+      cells++;
+      if ((row[ci] === "是") !== (m[2] === "true")) disagree.push(`第${m[1]}爻`);
+    }
+  }
+  assert.ok(cells >= N * 6, `只比了 ${cells} 格 —— 正则没匹配上,这条在空转`);
+  assert.deepEqual(disagree, [],
+    `CSV 说入墓、而发给模型的 boardText 说没入墓(或反过来):${disagree.length} 格。\n`
+    + "  → 三种墓不是一个东西(日墓等冲、月墓等出月、动墓跟着那个动爻走)。\n"
+    + "    合成一个标记时漏掉一种,模型收到的就是相反的事实,而它写出来的那段读着完全正常。");
+  /* 三种墓要分开发,不能只发一个合起来的 tomb —— 应期按这个分尺度。 */
+  assert.ok(/"dayTomb":/.test(boards[0].boardText) && /"monthTomb":/.test(boards[0].boardText)
+    && /"movingTomb":/.test(boards[0].boardText),
+    "boardText 只发了合起来的 tomb,没有分开的日墓/月墓/动墓 —— 应期按这三种分尺度,合起来就算不出来");
+}
+
 console.log(`ok   board-csv — 四张表 × ${N} 副盘,列名和 relations 同源,`
   + `\`?\` 只在临绝/卦名(算不出来)出现,${NEW_CELLS.length} 个新格全部亮过,`
   + `合被冲开 ${heOpen}/${heTotal},无 [object] 泄漏,角色列与 yongLines 一致,`

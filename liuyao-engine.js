@@ -379,6 +379,26 @@
       markYin(L, nj, bianNj, [3,4,5]);
     }
 
+    /* 动墓:这一爻的墓库支,正好是某个动爻的支。它和日墓、月墓、化墓是四件
+       不同的事,应期尺度也不同 —— 动墓跟着那个动爻走。
+
+       ⚠️⚠️ **算在引擎里,不算在 relations 里,因为 verdict 也要读它。**
+       两边各算一遍就是这个仓库付过四次学费的那张「第二名单」,而这一次它
+       已经发生过:`liuyao-verdict.js` 的 `tomb` 写的是 `dayTomb || monthTomb`,
+       动墓整个不在里面。于是同一爻,CSV 说入墓,发给模型的 boardText 说没入墓
+       —— 实测 200 副盘 1200 格里 **142 格相反**,涉及 84 副盘。
+       模型据此写出来的那一段读起来完全正常。 */
+    L.forEach(function(l){
+      l.movingTomb = null;
+      var tb = l.tombBranch ? l.tombBranch.bi : null;
+      if (tb === null) return;
+      l.movingTomb = false;
+      for (var z = 0; z < 6; z++){
+        if (z === l.idx || !L[z].moving) continue;
+        if (L[z].branch.bi === tb){ l.movingTomb = "第" + (z+1) + "爻" + L[z].branch.cn; break; }
+      }
+    });
+
     // per-line 神煞 tags (branch-based stars land on whichever line carries that branch)
     var ssMap = {};
     function tagSS(bi, key, label){ if(bi==null) return; (ssMap[bi]=ssMap[bi]||[]).push({key:key,label:label}); }

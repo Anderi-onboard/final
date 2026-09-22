@@ -261,9 +261,58 @@ class _Station:
         # ⭐ 这一行就是「改一站只重跑一站」:按站取提示词哈希,所以改 M4 不牵动 M1。
         return _prompt_hash(cls.STATION)
 
+    @staticmethod
+    def _feed(station, r):
+        """这一站到底把什么喂给了模型,以及检索拉了什么。
+
+        一站的 system 是一大块文字。`dry` 能把它整个打出来,但看不出哪一段是
+        哪个槽来的 —— 于是一句错的断语没法追回它的来源。这里按槽拆开:
+        先是一张表(谁多大),再是每个槽的全文。
+        """
+        out = ["%s 的 system 共 %d tok" % (station.upper(), r.get("sysTok", 0))]
+        meta = r.get("meta") or {}
+        libs = meta.get("libraries") or []
+        cards = meta.get("cards") or []
+        if libs or cards:
+            out.append("")
+            out.append("拉取")
+            if libs:
+                out.append("  排到的库  " + " ".join(
+                    "%s(%.1f)" % (x["id"], x.get("score", 0)) for x in libs))
+            if cards:
+                out.append("  开的卡    " + " ".join(
+                    "%s(%.1f)" % (x["id"], x.get("score", 0)) for x in cards))
+        fill = r.get("fill")
+        if fill is None:
+            out.append("")
+            out.append("槽的对照表拼不回原文,不显示 —— 模板和填好的 system 对不上。")
+            out.append("一份错位的对照表会把人指向错的那一段,所以整个作废,不猜。")
+            return "\n".join(out)
+        if not fill:
+            out.append("")
+            out.append("这一站没有槽:它只看 user 那一条。")
+            return "\n".join(out)
+        out.append("")
+        out.append("槽             tok   头一句")
+        for f in fill:
+            head = (f["text"] or "").strip().split("\n")[0][:44] or "(空)"
+            mark = " ~" if f.get("ambiguous") else "  "
+            out.append("  %-13s %5d %s %s" % ("{{%s}}" % f["slot"], f["tok"], mark, head))
+        if any(f.get("ambiguous") for f in fill):
+            out.append("")
+            out.append("带 ~ 的那几个槽,边界靠字符串定不下来:它和下一段之间的分隔"
+                       "在正文里不止出现一次,")
+            out.append("所以这里按最早的那处切。内容大体是对的,但别拿它去数边界上那几个字。")
+        out.append("")
+        for f in fill:
+            out.append("─── {{%s}}  %d tok ───" % (f["slot"], f["tok"]))
+            out.append(f["text"] if f["text"].strip() else "(空)")
+            out.append("")
+        return "\n".join(out)
+
     def _run(self, body, 端点, model, temperature, max_tokens, dry, pin=""):
         if pin and pin.strip():
-            return pin.strip(), "钉住(没调模型)"
+            return pin.strip(), "钉住(没调模型)", "钉住:这一站没有建提示词,所以没有喂料可看。"
         r = _bridge("station", {
             "station": self.STATION, "body": body, "dry": bool(dry),
             "conn": 端点, "model": model.strip(),
@@ -277,15 +326,16 @@ class _Station:
             note.append("排到的库:" + " ".join(x["id"] for x in meta["libraries"]))
         if meta.get("cards"):
             note.append("开的卡:" + " ".join(x["id"] for x in meta["cards"]))
+        feed = self._feed(self.STATION, r)
         if r.get("dry"):
-            return "", "\n".join(note) + "\n\n─── system ───\n" + r["system"]
+            return "", "\n".join(note) + "\n\n─── system ───\n" + r["system"], feed
         note.append("%dms" % r.get("ms", 0))
         u = r.get("usage") or {}
         if u:
             note.append("in %s / out %s" % (u.get("prompt_tokens"), u.get("completion_tokens")))
         if r.get("finish") and r["finish"] != "stop":
             note.append("⚠️ finish=%s(被截断了,调大 max_tokens)" % r["finish"])
-        return r["text"], " · ".join(note[:1] + note[2:]) + "\n" + note[1]
+        return r["text"], " · ".join(note[:1] + note[2:]) + "\n" + note[1], feed
 
 
 def _common(问题, 盘, M1):
@@ -302,8 +352,8 @@ def _common(问题, 盘, M1):
 
 class BWM1(_Station):
     STATION = "m1"
-    RETURN_TYPES = ("BW_M1", "STRING", "STRING")
-    RETURN_NAMES = ("M1", "原文", "注")
+    RETURN_TYPES = ("BW_M1", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("M1", "原文", "注", "喂料")
     DESCRIPTION = ("读问题 → lang / db / ask / hurt / flags / facts。"
                    "它的 db= 定用神,所以它必须跑在起卦前面。")
 
@@ -314,7 +364,7 @@ class BWM1(_Station):
                 "optional": dict(_PIN)}
 
     def go(self, 端点, 问题, model, temperature, max_tokens, dry, pin=""):
-        text, note = self._run({"question": 问题["ask"]}, 端点, model, temperature, max_tokens, dry, pin)
+        text, note, feed = self._run({"question": 问题["ask"]}, 端点, model, temperature, max_tokens, dry, pin)
         parsed = {}
         for line in text.splitlines():
             if "=" in line:
@@ -325,13 +375,13 @@ class BWM1(_Station):
         miss = [k for k in ("lang", "db", "ask", "hurt", "flags", "facts") if k not in parsed]
         if miss and text:
             note += "\n⚠️ 少了这几行:" + " ".join(miss)
-        return ({"text": text, "parsed": parsed}, text, note)
+        return ({"text": text, "parsed": parsed}, text, note, feed)
 
 
 class BWM2(_Station):
     STATION = "m2"
-    RETURN_TYPES = ("BW_M2", "STRING", "STRING")
-    RETURN_NAMES = ("M2", "原文", "注")
+    RETURN_TYPES = ("BW_M2", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("M2", "原文", "注", "喂料")
     DESCRIPTION = "选库 —— 两级 RAG 的第一级。它挑了哪几个库,M3 就只看得见那几个库的卡。"
 
     @classmethod
@@ -342,14 +392,14 @@ class BWM2(_Station):
                 "optional": dict(_PIN)}
 
     def go(self, 端点, 问题, 盘, M1, model, temperature, max_tokens, dry, pin=""):
-        text, note = self._run(_common(问题, 盘, M1), 端点, model, temperature, max_tokens, dry, pin)
-        return ({"text": text}, text, note)
+        text, note, feed = self._run(_common(问题, 盘, M1), 端点, model, temperature, max_tokens, dry, pin)
+        return ({"text": text}, text, note, feed)
 
 
 class BWM3(_Station):
     STATION = "m3"
-    RETURN_TYPES = ("BW_M3", "STRING", "STRING")
-    RETURN_NAMES = ("M3", "原文", "注")
+    RETURN_TYPES = ("BW_M3", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("M3", "原文", "注", "喂料")
     DESCRIPTION = ("取证:把盘变成这一卦的事,出词条。"
                    "⚠️ 它只看得见 M2 开的那几个库的卡 —— M2 少选一个库,"
                    "M3 就再也看不到那个库的卡,而它照样交得出材料。")
@@ -363,14 +413,14 @@ class BWM3(_Station):
 
     def go(self, 端点, 问题, 盘, M1, M2, model, temperature, max_tokens, dry, pin=""):
         body = dict(_common(问题, 盘, M1), m2=M2["text"])
-        text, note = self._run(body, 端点, model, temperature, max_tokens, dry, pin)
-        return ({"text": text}, text, note)
+        text, note, feed = self._run(body, 端点, model, temperature, max_tokens, dry, pin)
+        return ({"text": text}, text, note, feed)
 
 
 class BWM4(_Station):
     STATION = "m4"
-    RETURN_TYPES = ("STRING", "STRING")
-    RETURN_NAMES = ("解读", "注")
+    RETURN_TYPES = ("STRING", "STRING", "STRING")
+    RETURN_NAMES = ("解读", "注", "喂料")
     DESCRIPTION = ("说话 —— 解读本身。"
                    "它拿的是 M3 的材料,**不是盘**:两站都发盘就是两个真相源,"
                    "而谁赢由模型当时的心情定。看「注」里那行「槽:」—— 里面没有 board。")
@@ -386,8 +436,8 @@ class BWM4(_Station):
         # 盘整个塞进 body,由 `buildNode` 决定哪些进得了 M4 的提示词。
         # ⭐ 在这里挑一遍就是把那条规矩抄成第二份 —— 它只该写在 fill.js 一处。
         body = dict(_common(问题, 盘, M1), m3=M3["text"])
-        text, note = self._run(body, 端点, model, temperature, max_tokens, dry, pin)
-        return (text, note)
+        text, note, feed = self._run(body, 端点, model, temperature, max_tokens, dry, pin)
+        return (text, note, feed)
 
 
 # ── 看 ──────────────────────────────────────────────────────────────────────

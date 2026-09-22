@@ -101,7 +101,13 @@
       rooted: rooted, rootless: rootless,
       "void": !!l.void, trueVoid: trueVoid, falseVoid: falseVoid,
       monthBreak: !!l.monthClash, deadBreak: deadBreak, falseBreak: falseBreak, breakRescue: breakRescue,
-      tomb: !!l.dayTomb || !!l.monthTomb,
+      /* ⚠️ 这里原来是 `!!l.dayTomb || !!l.monthTomb` —— **动墓不在里面**,
+         而 `states` 正是发给模型的那一份。同一爻,CSV 说入墓,模型收到「没入墓」:
+         实测 200 副盘 1200 格里 142 格相反。三种墓分开发,因为它们本来就是
+         三件事,应期尺度也不同(日墓等冲、月墓等出月、动墓跟着那个动爻走)。 */
+      dayTomb: !!l.dayTomb, monthTomb: !!l.monthTomb, movingTomb: l.movingTomb || false,
+      tomb: !!l.dayTomb || !!l.monthTomb || !!l.movingTomb
+        || !!(l.transform && l.transform.backToTomb),
       season: season
     };
 

@@ -110,14 +110,10 @@
       /* 动墓(SOP-3.三墓.动墓):入**动爻**之墓 —— 某个动爻的地支正是这一爻的墓支。
          和日墓、月墓、化墓是四件不同的事,应期尺度也不同(动墓随那个动爻走)。 */
       var tombBi = l.tombBranch ? l.tombBranch.bi : null;
-      var dongMu = null;
-      if (tombBi !== null) {
-        dongMu = false;
-        for (var z = 0; z < 6; z++) {
-          if (z === l.idx || !L[z].moving) continue;
-          if (L[z].branch.bi === tombBi) { dongMu = '第' + (z + 1) + '爻' + L[z].branch.cn; break; }
-        }
-      }
+      /* 动墓由引擎算(`liuyao-engine.js` 的 `l.movingTomb`),这里只读。
+         原来这一段在这里自己算了一遍,而 `liuyao-verdict.js` 那边压根没算 ——
+         三个地方对同一件事有三种说法,其中一种是错的,而且它正是发给模型的那种。 */
+      var dongMu = l.movingTomb === undefined ? null : l.movingTomb;
       var inTomb = l.dayTomb || l.monthTomb || !!dongMu || !!(l.transform && l.transform.backToTomb);
       /* 破墓(SOP-3.三墓.破墓):「墓神被日月动爻冲破,亦非真也。墓破即如破网,容易而出矣。」
          只有真的入了墓才谈得上破墓 —— 没入墓时这一格是 false,不是「不知道」。 */

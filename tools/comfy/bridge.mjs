@@ -37,6 +37,58 @@ function slotsOf(station) {
   return [...new Set(t.match(/\{\{[a-z]+\}\}/g) || [])].map((x) => x.slice(2, -2));
 }
 
+/* 每个槽**填进去的到底是什么**。
+   做法:把模板按 `{{槽}}` 切开,切出来的字面段在填好的 system 里原样存在,
+   所以两段字面之间的那一块就是那个槽的内容。
+
+   ⭐ 为什么要这个:一站的 system 是一大块文字,`dry` 能把它整个打出来,
+      但看不出「board 这个槽塞进去的是 3054 tok 的 JSON,而里面 tomb 是 false」。
+      不知道哪段字是哪个槽来的,就没法把一个错误的断语追回到它的来源。
+
+   ⚠️⚠️ **有些槽的边界靠字符串定不下来,而「拼回去一样」证明不了它定下来了。**
+      模板 `头{{a}}中间{{b}}尾` 对上 `头中间X中间Y尾`:`a="" b="X中间Y"` 和
+      `a="中间X" b="Y"` **两种切法都能原样拼回去**,只有一种是真的。
+      第一版只做了拼回去那一关,于是两种都过,它挑了一种给出去。
+
+      这在真模板上确实发生:M2 的 `{{ask}}` 和 `{{libraries}}` 之间只隔一个
+      `\n\n`,而它在填好的正文里出现 **14 次**。
+
+      做法不是整个作废(那会把 M2 的对照表全扔掉,而其中大部分是对的),
+      是**逐槽标出它的边界唯不唯一**:分隔的那段字面在剩下的正文里只出现一次,
+      这个槽就是定死的;出现多次就标 `ambiguous`,由显示的那一方说出来。
+      **该给的照给,说不准的说出来** —— 不声不响地挑一种才是那个坏结果。 */
+function slotFill(template, filled) {
+  const parts = String(template).split(/(\{\{[a-z]+\}\})/);
+  const isSlot = (p) => /^\{\{[a-z]+\}\}$/.test(p);
+  const out = [];
+  let pos = 0;
+  for (let i = 0; i < parts.length; i++) {
+    const p = parts[i];
+    if (isSlot(p)) {
+      const next = parts[i + 1];
+      let end, ambiguous = false;
+      if (next === undefined || next === "") {
+        end = filled.length;
+      } else {
+        end = filled.indexOf(next, pos);
+        if (end < 0) return null;
+        /* 分隔的那段字面在这个槽之后还出现吗?出现就说明边界不是唯一的。 */
+        ambiguous = filled.indexOf(next, end + 1) >= 0;
+      }
+      out.push({ slot: p.slice(2, -2), text: filled.slice(pos, end), ambiguous: ambiguous });
+      pos = end;
+    } else {
+      if (!filled.startsWith(p, pos)) return null;
+      pos += p.length;
+    }
+  }
+  if (pos !== filled.length) return null;
+  /* 拼回去仍然要比一次 —— 它挡不住歧义,但挡得住真错位。 */
+  let back = "", k = 0;
+  for (const p of parts) back += isSlot(p) ? out[k++].text : p;
+  return back === filled ? out : null;
+}
+
 async function readStdin() {
   let s = "";
   for await (const c of process.stdin) s += c;
@@ -88,12 +140,17 @@ const CMD = {
     if (!built) return { error: `buildNode('${station}') 回了 null —— 站名只能是 m1/m2/m3/m4` };
 
     const left = [...new Set(built.system.match(/\{\{[a-z]+\}\}/g) || [])];
+    const fill = slotFill(TEMPLATE[station] || "", built.system);
     const out = {
       system: built.system,
       user: built.userOverride || String(req.body?.question || ""),
       sysTok: tok(built.system),
       slots: slotsOf(station),
       left: left.map((x) => x.slice(2, -2)),
+      /* 每个槽填了什么、多大。对不齐时是 null —— 节点那边据此说「对不齐」,
+         不拿一份可能错位的对照表糊弄过去。 */
+      fill: fill && fill.map((f) => ({ slot: f.slot, tok: tok(f.text),
+                                        ambiguous: f.ambiguous, text: f.text })),
       meta: built.meta || null
     };
     if (req.dry) return { ...out, text: "", dry: true };

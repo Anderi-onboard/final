@@ -55,8 +55,8 @@ const AI = sandbox.BWLiuYaoAI;
 const LINES = [{ yang: false }, { yang: true }, { yang: true }, { yang: false }, { yang: false }, { yang: true }];
 const QUESTION = '我明天考科目一能过吗';
 
-function fixture(dayGanzhi) {
-  const b = sandbox.BWLiuYao.computeBoard({ lines: LINES, changeIdx: [1, 2, 3], dayGanzhi });
+function fixture(dayGanzhi, monthBranch) {
+  const b = sandbox.BWLiuYao.computeBoard({ lines: LINES, changeIdx: [1, 2, 3], dayGanzhi, monthBranch });
   const subj = AI.subjectKey(QUESTION);
   /* ⚠️ 2026-09-14:`buildMessages` 作废封存,盘面文本改由 `boardText` 出。
      这个契约量的一直是 payload,不是提示词 —— 换的是取法。 */
@@ -68,9 +68,22 @@ function fixture(dayGanzhi) {
   return { board: b, payload: p };
 }
 
+/* ⚠️⚠️ **覆盖不许跟着日历走。** 这三条原来是 `fixture(undefined)`(今天)
+   加 `fixture(0)`(甲子日),注释写着今天那条覆盖 dayControls —— 那是**写它那天**
+   的事实。2026-09-22 的日柱不再产生 dayControls,于是这条契约在**没有人改过
+   任何代码**的情况下变红,报的是「没有样例盘覆盖 dayControls」。
+   一条看日子红的契约会被下一个人当噪声删掉,而它守的是真东西
+   (四处生克源头的头两处,《增删卜易》每一个旺衰判断都读它们)。
+
+   `computeBoard` 收 `dayGanzhi` 和 `monthBranch`,两个都钉住,覆盖就不再是
+   抽签。乙丑日 + 丑月实测四项全覆盖:dayGenerates 第3爻、dayControls 第2/5爻、
+   monthGenerates 第3爻、monthControls 第2/5爻。
+   ⚠️ 今天那条**留着**:它走的是不钉日期的那条路径(`dateAuthoritative: false`),
+      而线上跑的就是那一条。它只是不再负责覆盖。 */
 const FIXTURES = [
-  fixture(undefined),   // today's date: monthGenerates / monthControls / dayControls / void / fanyin
-  fixture(0)            // 甲子日: the only one of the four that reaches dayGenerates
+  fixture(undefined),   // 今天:走不钉日期那条路径,线上跑的就是它
+  fixture(0),           // 甲子日
+  fixture(1, 1)         // 乙丑日 + 丑月:四项全覆盖,不看日历
 ];
 const { board, payload } = FIXTURES[0];
 
