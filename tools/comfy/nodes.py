@@ -525,6 +525,45 @@ class BWCriteria:
         return (body, note)
 
 
+class BWTiming:
+    """《增删卜易》十条应期,拿盘算出候选的日子。**这一步没有模型。**
+
+    ⭐⭐ 应期由用神状态触发,不由问题触发。旬空的爻就有旬空的应期,
+       与他问的是什么无关。前四步那套按事体类型路由的逻辑照搬过来,一条都不会命中。
+
+    ⭐ 它只产候选,不改吉凶。第四步已经定了凶,这一步只说它什么时候凶。
+    """
+
+    VIEW = ["成立的 + 算不出来的", "只看成立的"]
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "盘": ("BW_BOARD",),
+            "看什么": (cls.VIEW, {
+                "tooltip": "十条里两条今天算不出来:太旺(旺衰没有这一级)、"
+                           "长生帝旺(要长生十二宫,本仓库没有那张表)。"
+                           "把它们当成不应,一个衰绝的用神就永远等不到它的生旺之日。"}),
+        }}
+
+    RETURN_TYPES = ("STRING", "STRING")
+    RETURN_NAMES = ("应期", "注")
+    FUNCTION = "go"
+    CATEGORY = CATEGORY
+    DESCRIPTION = "第六步。输出是候选的地支和尺度,连同它凭的是哪一爻的哪个状态。"
+
+    def go(self, 盘, 看什么):
+        rows = 盘.get("timing") or []
+        on = [r for r in rows if r["成立"] is True]
+        na = [r for r in rows if r["成立"] is None]
+        note = "10 条:成立 %d · 不成立 %d · 算不出来 %d" % (
+            len(on), len(rows) - len(on) - len(na), len(na))
+        body = 盘.get("timingText", "")
+        if 看什么 == "只看成立的":
+            body = body.split("算不出来 ")[0].rstrip()
+        return (body, note)
+
+
 class BWShow:
     @classmethod
     def INPUT_TYPES(cls):
@@ -551,6 +590,7 @@ NODE_CLASS_MAPPINGS = {
     "BWM4": BWM4,
     "BWTables": BWTables,
     "BWCriteria": BWCriteria,
+    "BWTiming": BWTiming,
     "BWShow": BWShow,
 }
 
@@ -564,5 +604,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "BWM4": "BW M4 解读",
     "BWTables": "BW 四张表(无模型)",
     "BWCriteria": "BW 判据(无模型)",
+    "BWTiming": "BW 应期(无模型)",
     "BWShow": "BW 看",
 }

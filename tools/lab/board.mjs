@@ -13,7 +13,8 @@ import vm from "node:vm";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { judge } from "../../functions/_lib/doctrine/criteria.js";
-import { loadCriteria } from "../../functions/_lib/doctrine/criteria-rules.mjs";
+import { timing } from "../../functions/_lib/doctrine/timing.js";
+import { loadCriteria, loadTiming } from "../../functions/_lib/doctrine/criteria-rules.mjs";
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -90,6 +91,10 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
     /* 判据求值。⚠️ **它只拿到 `csv`,拿不到 `board`/`rel`** —— 四张表够不够用,
        只有在求值器除了它什么都看不见的时候才证明得了。 */
     criteria: judge(loadCriteria(), csv),
+    /* 应期。⚠️ 它拿的是**盘**,不是四张表 —— 判据算的是「某一格等于什么」,
+       应期算的是地支之间的关系(本支的冲是哪个支),那不是一个格。
+       硬塞进文本表再解析回来,只多一层能出错的解析。 */
+    timing: timing(loadTiming(), board, roles, win.BWLiuYao.BRANCH),
     features: F.features || [],
     featureWhy: F.why || {},
     ladder: win.BWVerdict.format(win.BWVerdict.judge(board, roles, subject)),

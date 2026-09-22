@@ -23,6 +23,7 @@ import { M1, M2, M3, M4 } from "../../functions/_lib/nodes/prompts.js";
 import { material, tok } from "../lab/board.mjs";
 import { Local } from "../lab/client.mjs";
 import { format as criteriaText } from "../../functions/_lib/doctrine/criteria.js";
+import { format as timingText } from "../../functions/_lib/doctrine/timing.js";
 
 const TEMPLATE = { m1: M1, m2: M2, m3: M3, m4: M4 };
 
@@ -119,6 +120,8 @@ const CMD = {
       csv: m.csv,
       criteria: m.criteria,
       criteriaText: criteriaText(m.criteria),
+      timing: m.timing,
+      timingText: timingText(m.timing),
       verdict,
       summary: [
         `投掷 ${m.spec.raw.join(" ")}   动爻 ${m.spec.changeIdx.map((i) => i + 1).join(",") || "无"}`,

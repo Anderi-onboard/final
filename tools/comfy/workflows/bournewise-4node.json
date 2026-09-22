@@ -1,6 +1,6 @@
 {
-  "last_node_id": 15,
-  "last_link_id": 26,
+  "last_node_id": 17,
+  "last_link_id": 28,
   "nodes": [
     {
       "id": 1,
@@ -192,7 +192,8 @@
             15,
             16,
             18,
-            20
+            20,
+            22
           ],
           "slot_index": 0
         },
@@ -400,6 +401,84 @@
     },
     {
       "id": 10,
+      "type": "BWTiming",
+      "pos": [
+        40,
+        1420
+      ],
+      "size": [
+        400,
+        128
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "盘",
+          "type": "BW_BOARD",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "应期",
+          "type": "STRING",
+          "links": [
+            23
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWTiming"
+      },
+      "widgets_values": [
+        "成立的 + 算不出来的"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "BWShow",
+      "pos": [
+        450,
+        1420
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
       "type": "BWM2",
       "pos": [
         1340,
@@ -410,7 +489,7 @@
         366
       ],
       "flags": {},
-      "order": 9,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -439,7 +518,7 @@
           "name": "M2",
           "type": "BW_M2",
           "links": [
-            22
+            24
           ],
           "slot_index": 0
         },
@@ -474,7 +553,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 13,
       "type": "BWM3",
       "pos": [
         1340,
@@ -485,7 +564,7 @@
         400
       ],
       "flags": {},
-      "order": 10,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -511,7 +590,7 @@
         {
           "name": "M2",
           "type": "BW_M2",
-          "link": 22
+          "link": 24
         }
       ],
       "outputs": [
@@ -519,7 +598,7 @@
           "name": "M3",
           "type": "BW_M3",
           "links": [
-            23
+            25
           ],
           "slot_index": 0
         },
@@ -527,7 +606,7 @@
           "name": "原文",
           "type": "STRING",
           "links": [
-            24
+            26
           ],
           "slot_index": 1
         },
@@ -541,7 +620,7 @@
           "name": "喂料",
           "type": "STRING",
           "links": [
-            25
+            27
           ],
           "slot_index": 3
         }
@@ -558,7 +637,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 14,
       "type": "BWShow",
       "pos": [
         1800,
@@ -569,13 +648,13 @@
         94
       ],
       "flags": {},
-      "order": 11,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
           "name": "文字",
           "type": "STRING",
-          "link": 24
+          "link": 26
         }
       ],
       "outputs": [
@@ -592,7 +671,7 @@
       "widgets_values": []
     },
     {
-      "id": 13,
+      "id": 15,
       "type": "BWShow",
       "pos": [
         1800,
@@ -603,13 +682,13 @@
         94
       ],
       "flags": {},
-      "order": 12,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
           "name": "文字",
           "type": "STRING",
-          "link": 25
+          "link": 27
         }
       ],
       "outputs": [
@@ -626,7 +705,7 @@
       "widgets_values": []
     },
     {
-      "id": 14,
+      "id": 16,
       "type": "BWM4",
       "pos": [
         1340,
@@ -637,7 +716,7 @@
         400
       ],
       "flags": {},
-      "order": 13,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -663,7 +742,7 @@
         {
           "name": "M3",
           "type": "BW_M3",
-          "link": 23
+          "link": 25
         }
       ],
       "outputs": [
@@ -671,7 +750,7 @@
           "name": "解读",
           "type": "STRING",
           "links": [
-            26
+            28
           ],
           "slot_index": 0
         },
@@ -700,7 +779,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 17,
       "type": "BWShow",
       "pos": [
         1800,
@@ -711,13 +790,13 @@
         94
       ],
       "flags": {},
-      "order": 14,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
           "name": "文字",
           "type": "STRING",
-          "link": 26
+          "link": 28
         }
       ],
       "outputs": [
@@ -747,7 +826,7 @@
       2,
       1,
       0,
-      10,
+      12,
       0,
       "BW_CONN"
     ],
@@ -755,7 +834,7 @@
       3,
       1,
       0,
-      11,
+      13,
       0,
       "BW_CONN"
     ],
@@ -763,7 +842,7 @@
       4,
       1,
       0,
-      14,
+      16,
       0,
       "BW_CONN"
     ],
@@ -787,7 +866,7 @@
       7,
       2,
       0,
-      10,
+      12,
       1,
       "BW_ASK"
     ],
@@ -795,7 +874,7 @@
       8,
       2,
       0,
-      11,
+      13,
       1,
       "BW_ASK"
     ],
@@ -803,7 +882,7 @@
       9,
       2,
       0,
-      14,
+      16,
       1,
       "BW_ASK"
     ],
@@ -819,7 +898,7 @@
       11,
       3,
       0,
-      10,
+      12,
       3,
       "BW_M1"
     ],
@@ -827,7 +906,7 @@
       12,
       3,
       0,
-      11,
+      13,
       3,
       "BW_M1"
     ],
@@ -835,7 +914,7 @@
       13,
       3,
       0,
-      14,
+      16,
       3,
       "BW_M1"
     ],
@@ -843,7 +922,7 @@
       14,
       4,
       0,
-      10,
+      12,
       2,
       "BW_BOARD"
     ],
@@ -851,7 +930,7 @@
       15,
       4,
       0,
-      11,
+      13,
       2,
       "BW_BOARD"
     ],
@@ -859,7 +938,7 @@
       16,
       4,
       0,
-      14,
+      16,
       2,
       "BW_BOARD"
     ],
@@ -905,41 +984,57 @@
     ],
     [
       22,
+      4,
+      0,
+      10,
+      0,
+      "BW_BOARD"
+    ],
+    [
+      23,
       10,
       0,
       11,
+      0,
+      "STRING"
+    ],
+    [
+      24,
+      12,
+      0,
+      13,
       4,
       "BW_M2"
     ],
     [
-      23,
-      11,
+      25,
+      13,
       0,
-      14,
+      16,
       4,
       "BW_M3"
     ],
     [
-      24,
-      11,
-      1,
-      12,
-      0,
-      "STRING"
-    ],
-    [
-      25,
-      11,
-      3,
-      13,
-      0,
-      "STRING"
-    ],
-    [
       26,
+      13,
+      1,
       14,
       0,
+      "STRING"
+    ],
+    [
+      27,
+      13,
+      3,
       15,
+      0,
+      "STRING"
+    ],
+    [
+      28,
+      16,
+      0,
+      17,
       0,
       "STRING"
     ]

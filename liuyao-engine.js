@@ -596,6 +596,20 @@
   window.BWLiuYao = {
     computeBoard: computeBoard, _selfTest: _selfTest,
     EL_EN:EL_EN, EL_CN:EL_CN, EL_COLOR:EL_COLOR,
-    REL:REL, SPIRIT:SPIRIT, BR_CN:BR_CN, STEM_CN:STEM_CN
+    REL:REL, SPIRIT:SPIRIT, BR_CN:BR_CN, STEM_CN:STEM_CN,
+    /* 地支之间那几张查表。应期引擎(`functions/_lib/doctrine/timing.js`)要它们:
+       「静而逢值逢冲」算的就是本支和它的冲支,「入三墓俱喜冲开」算的是墓库的冲支。
+
+       ⚠️ 导出而不是在那边再写一份。六冲六合和五行墓库是常数表,抄一份不会报错、
+          两份都跑得通,而它们一旦分叉,分叉的那次没有任何东西看得出来 ——
+          这个仓库为「两张要同步的名单」付过五次学费,最近一次就是动墓
+          (relations 算了、verdict 算了一半),142/1200 格发给模型的是相反的事实。 */
+    BRANCH: {
+      CN: BR_CN,
+      EL: BR_EL,                                   // 支 → 五行下标
+      clash: function (bi) { return (bi + 6) % 12; },
+      combine: function (bi) { return BR_COMBINE[bi]; },
+      tombOf: function (gi) { return EL_TOMB[gi]; } // 五行 → 它的墓库支
+    }
   };
 })();
