@@ -54,7 +54,7 @@ export function buildNode(node, body) {
     return { system: M1, userOverride: question };
   }
 
-  const hit = retrieve({ question, intent: intentOf(m1), features, limit: 6 });
+  const hit = retrieve({ question, intent: intentOf(m1), db: m1.db || "", features, limit: 6 });
 
   if (node === "m2") {
     return {
@@ -79,7 +79,7 @@ export function buildNode(node, body) {
        两级收窄的意思就是**第二级只在第一级开的那几个库里排序**,
        不是在全体里排完再过滤。而且它不报错 —— M3 照样有卡可读,只是少了五张。 */
     const open = selectCards({
-      question, intent: intentOf(m1), features, libraries: libs, limit: 6
+      question, intent: intentOf(m1), db: m1.db || "", features, libraries: libs, limit: 6
     });
     return {
       system: M3

@@ -25,6 +25,32 @@
 */
 import { RAG } from "./data.js";
 
+/* ── M1 的 `db` 枚举 → 库自己的 `domains` 词 ─────────────────────────────
+   ⚠️⚠️ **这不是 `domains` 的拷贝,是两套词表之间的对照。**
+      `domains`(感情/婚姻/恋爱/经营/财运)是那批原始 RAG 自己的说法,
+      `data.js` 的头注写着它是逐字抽出来、一个字没改写的;
+      `db`(婚恋/求财/考试…)是 `prompts.js:31` 里 M1 的枚举,是我们定的。
+      两边的词本来就对不上,而这份对照在今天的仓库里**哪儿都没有**。
+
+   ⚠️ 没有这个对照会怎样(实测):选库是**子串包含**,于是九个 db 取值里
+      **只有「考试」**字面命中它的库。`db=婚恋` 打不开感情库、`db=求财` 打不开
+      生意库 —— 真实问题只能救回一部分,8 个案例里 3 个一个 CLASS 库都没开。
+      M1 花了一次模型调用算出来的分类,到这里没能可靠地用上。
+
+   ⚠️ **没有库的那几个也要写出来,写成空数组。** 漏写和「本来就还没有这个库」
+      在代码里长得一模一样,而契约要分得出这两种 —— 前者是 bug,后者是待办。 */
+export const DB_DOMAINS = {
+  考试: ["考试"],
+  婚恋: ["感情", "婚姻"],
+  求财: ["经营", "财运"],
+  疾病: [],     // 还没有这个事体库
+  工作: [],
+  官司: [],
+  失物: [],
+  出行: [],
+  其他: []      // 兜底,本来就不该锁定任何事体库
+};
+
 /* 归一化:只留字母数字和汉字。和 python 版 `normalize()` 同一条规则。 */
 function norm(s) {
   return String(s == null ? "" : s).replace(/[^0-9a-zA-Z㐀-鿿]+/g, "").toLowerCase();
@@ -60,22 +86,43 @@ function cardText(c) {
 }
 
 /* ── ① 选库 ───────────────────────────────────────────────────────────── */
-export function selectLibraries({ question = "", intent = "", features = [], limit = 6 } = {}) {
+export function selectLibraries({ question = "", intent = "", db = "", features = [], limit = 6 } = {}) {
   const have = new Set((features || []).map((f) => String(f).toUpperCase()));
   const text = norm(question + " " + intent);
+  /* `db` 是按键取的,不是子串撞的。查不到就是空集合 —— 不回落到模糊匹配,
+     那样一个拼错的 db 会看起来像「这卦没有事体库」。 */
+  const wantDomain = new Set(DB_DOMAINS[String(db).trim()] || []);
   const rows = RAG.libs.map((l) => {
     let score = similarity(question + " " + intent, libText(l)) * 10;
     const why = [];
+    /* ⭐ **必开(hard)和加分(soft)是两件事。**
+       《增删卜易》那句「知道动变及卦之六冲…再看何为旬空、月破…即知决断祸福」
+       说的是:盘上出现了空破动变,对应的理法就该调,这里没有「挑一挑」的余地。
+       事体库同理 —— 问的是什么,由 M1 的 db 锁定,不该再判一次。
+       所以这两类命中把库标成**必开**,它们不受 `limit` 削。
+       剩下的相似度只负责在软的那一截里排序。 */
+    let hard = false;
     for (const f of l.features || []) {
-      if (have.has(String(f).toUpperCase())) { score += 4; why.push("feature:" + f); }
+      if (have.has(String(f).toUpperCase())) { hard = true; score += 4; why.push("feature:" + f); }
     }
+    for (const w of l.domains || []) {
+      if (wantDomain.has(w)) { hard = true; score += 4; why.push("db:" + db + "→" + w); }
+    }
+    /* 意图词仍按文本撞:「什么时候」「应期」这类是他打的字,不是枚举。 */
     for (const w of [...(l.domains || []), ...(l.intents || [])]) {
       if (norm(w) && text.includes(norm(w))) { score += 4; why.push("text:" + w); }
     }
-    return { id: l.id, name: l.name, children: l.children || [], score: +score.toFixed(4), why };
+    return { id: l.id, name: l.name, children: l.children || [],
+             score: +score.toFixed(4), hard: hard, why: [...new Set(why)] };
   });
   rows.sort((a, b) => (b.score - a.score) || a.id.localeCompare(b.id));
-  return rows.filter((r) => r.score > 0).slice(0, limit);
+  /* ⚠️ **必开的不进 limit。** 实测:11 个库里最多 6 个得分 > 0,而 limit 正好是 6 ——
+     今天不削,是因为它恰好卡在天花板上。db 路由一修,CLASS 库开始得分,
+     第 7 个就出来了,那时候 limit 会开始削掉盘面**确实成立**的理法库,
+     而少了一个库,M3 再也看不到那个库的卡,照样交得出材料。 */
+  const hard = rows.filter((r) => r.hard);
+  const soft = rows.filter((r) => !r.hard && r.score > 0);
+  return hard.concat(soft).slice(0, Math.max(limit, hard.length));
 }
 
 /* ── ② 选卡 —— 只在选中的库的子卡里 ──────────────────────────────────── */
