@@ -84,6 +84,14 @@ function slotFill(template, filled) {
     }
   }
   if (pos !== filled.length) return null;
+  /* ⚠️⚠️ **歧义要往后传一格。** 一个槽的**尾**边界不确定,下一个槽的**头**
+     边界就是同一条线,它的内容跟着不可靠 —— 实测 M4:`{{mark}}` 被切成 33 字
+     (真值 637),标了记号;而多出来那 600 字全落进了 `{{voice}}`,
+     `{{voice}}` 的尾边界是唯一的,于是它**没有记号**,读的人会信它。
+     这正是这个仓库反复付钱的那种「规则只接了一半」。 */
+  for (let i = 0; i < out.length - 1; i++) {
+    if (out[i].ambiguous) out[i + 1].ambiguous = true;
+  }
   /* 拼回去仍然要比一次 —— 它挡不住歧义,但挡得住真错位。 */
   let back = "", k = 0;
   for (const p of parts) back += isSlot(p) ? out[k++].text : p;
