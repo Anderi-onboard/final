@@ -99,7 +99,7 @@ const EXTRA = [
       `comfy`,而 ComfyUI 自己的顶层包也叫 `comfy` —— 插到 sys.path 最前面
       会把整个 ComfyUI 的 `comfy` 模块盖掉。按文件路径加载就没有这个问题。 */
 const SHIM = `# -*- coding: utf-8 -*-
-"""BourneWise 四节点 · ComfyUI —— 自带依赖的包。
+"""BourneWise · ComfyUI —— 自带依赖的包(四站 + 解谜管线)。
 
 把这个文件夹整个放进 ComfyUI/custom_nodes/,重启 ComfyUI,就有节点了。
 除了 node ≥18 要在 PATH 上(盘和提示词在 JS 那边),没有别的依赖。
@@ -158,7 +158,7 @@ export function stage(dest) {
   return { root, files };
 }
 
-const INSTALL = `# BourneWise 四节点 · ComfyUI(自带依赖)
+const INSTALL = `# BourneWise · ComfyUI(自带依赖)
 
 **放进去就能用,不需要 git,不需要这个仓库。**
 
@@ -168,7 +168,7 @@ const INSTALL = `# BourneWise 四节点 · ComfyUI(自带依赖)
 
     ComfyUI/custom_nodes/bournewise-comfy/     ← 就是解开后的这个文件夹
 
-重启 ComfyUI。节点在 \`BourneWise\` 分类下,一共八个。
+重启 ComfyUI。节点在 \`BourneWise\` 和 \`BourneWise/解谜\` 两个分类下。
 
 **唯一的外部要求:\`node\` ≥ 18 在 PATH 上。** 盘(排盘、用神、裁决梯)和提示词
 都在 JS 那边,所以这套节点要 node 来跑它们。ComfyUI 看不见 node 的话,
@@ -177,12 +177,23 @@ const INSTALL = `# BourneWise 四节点 · ComfyUI(自带依赖)
 **没有任何 Python 依赖**,也**没有任何 npm 依赖** —— 包里没有 node_modules,
 因为它一个第三方库都不用。
 
-## 两张图(\`repo/tools/comfy/workflows/\`)
+## 四张图(\`repo/tools/comfy/workflows/\`)
 
 | | |
 |---|---|
-| \`bournewise-4node.json\` | 四站真跑。要一个本地模型端点。 |
+| \`bournewise-puzzle.json\` | **解谜管线**:读问题 → 程序出题 → 每条线索一个模型(一条一条跑)→ 验现事 → 解谜。 |
+| \`bournewise-puzzle-dry.json\` | 解谜管线,**一个模型都不用下**:M1 钉住一段示范答案,后面每一站只建提示词。 |
+| \`bournewise-4node.json\` | 四站(线上那条)真跑。要一个本地模型端点。 |
 | \`bournewise-4node-dry.json\` | **一个模型都不用下** —— 每一站只建提示词、不调模型,把 system 全文打在「注」里。想先看看这套东西在对模型说什么,开这张。 |
+
+## Unsloth + Qwen3.8
+
+    unsloth run --model unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_XL -p 8888 --disable-tools \\
+      --chat-template-kwargs '{"reasoning_effort":"none"}'
+
+「BW 端点」填 \`http://127.0.0.1:8888/v1\` 和 Unsloth 在 Settings → API 里给的
+\`sk-unsloth-…\`,**模型名全部留空**(留空 = 用端点上列出的第一个)。
+Windows PowerShell 里那段 JSON 要写成 \`"{\\"reasoning_effort\\":\\"none\\"}"\`。
 
 拖进画布即可。
 
@@ -212,9 +223,9 @@ const INSTALL = `# BourneWise 四节点 · ComfyUI(自带依赖)
 
     node repo/tools/lab/fake-model.mjs
 
-它在 :11434 起一个假端点,每一站答那一站的格式。**接线坏没坏和模型好不好是
-两件事** —— 真模型要下几十个 G,而整条路用它几秒就能走一遍。
-「BW 端点」填 \`http://localhost:11434/v1\`,模型名填 \`fake-small\` / \`fake-big\`。
+它在 :11434 起一个假端点,每一站答那一站的格式(四站和解谜都认)。**接线坏没坏和
+模型好不好是两件事** —— 真模型要下几十个 G,而整条路用它几秒就能走一遍。
+「BW 端点」填 \`http://localhost:11434/v1\`,模型名留空。
 
 ## 换成真模型
 
@@ -222,6 +233,7 @@ const INSTALL = `# BourneWise 四节点 · ComfyUI(自带依赖)
 
 | | 命令 | 端点 |
 |---|---|---|
+| Unsloth | \`unsloth run --model … -p 8888\` | \`http://127.0.0.1:8888/v1\` |
 | Ollama | \`ollama serve\` | \`http://localhost:11434/v1\` |
 | LM Studio | 开 Local Server | \`http://localhost:1234/v1\` |
 | llama.cpp | \`llama-server -m x.gguf\` | \`http://localhost:8080/v1\` |

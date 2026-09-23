@@ -17,6 +17,19 @@
      board    {seed, db, gender}                    → 盘面那一半(没有模型)
      station  {station, body, dry, conn, model, …}  → 建提示词,然后(除非 dry)调模型
      models   {conn}                                → 端点上有哪些模型
+
+   解谜管线(实验中,见 functions/_lib/puzzle/):
+     pz_m1     {question, pin?, dry, conn, model, …}        → M1 读问题(拆几问、db、kind、事实归属)
+     pz_build  {seed, gender, date, m1, question}           → 程序出题(没有模型):线索、验现事、题面
+     pz_clue   {clue, q, pin?, dry, conn, model, …}         → 一条线索一个模型,只写一句
+     pz_verify {item, words, pin?, dry, conn, model, …}     → 一处验现事一个模型,只做对照
+     pz_solve  {question, lang, hurt, puzzles, answers, verify, pin?, dry, conn, model, …} → 解谜
+   ⭐ 并联的那两步(线索、验现事)**一条一次调用**:画布那边按顺序一条一条调,
+      本地一张卡同时只跑得动一个 —— 并发发过去也只是在服务端排队,还更容易超时。
+
+   模型名留空 = 用端点列出的第一个(Unsloth / llama-server 一次只挂一个模型,名字不用抄)。
+   `conn.reasoning` 给了就发 `chat_template_kwargs: {reasoning_effort}`(Qwen3.8 的思考开关);
+   不给一个字段都不多发 —— 有的本地端点对不认识的字段回 400。
 */
 import { buildNode } from "../../functions/_lib/nodes/fill.js";
 import { M1, M2, M3, M4 } from "../../functions/_lib/nodes/prompts.js";
@@ -24,6 +37,10 @@ import { material, tok } from "../lab/board.mjs";
 import { Local } from "../lab/client.mjs";
 import { format as criteriaText } from "../../functions/_lib/doctrine/criteria.js";
 import { format as timingText } from "../../functions/_lib/doctrine/timing.js";
+import { puzzlesFor, sopSteps } from "../lab/puzzle.mjs";
+import { readClueAnswer, readVerifyAnswer, puzzleText } from "../../functions/_lib/puzzle/program.js";
+import { fillM1, fillClue, fillVerify, fillSolve, parseM1P } from "../../functions/_lib/puzzle/prompts.js";
+import { loadSymbols } from "../../functions/_lib/doctrine/criteria-rules.mjs";
 
 const TEMPLATE = { m1: M1, m2: M2, m3: M3, m4: M4 };
 
@@ -98,6 +115,37 @@ function slotFill(template, filled) {
   return back === filled ? out : null;
 }
 
+/* 一次模型调用。三个节点类型共用:四站、解谜、线索、验现事 —— 端点、模型名、思考开关只在这里解释一次。 */
+async function callModel(req, system, user) {
+  const conn = req.conn || {};
+  const client = new Local({
+    base: conn.base || "http://127.0.0.1:8888/v1",
+    key: conn.key || "local",
+    timeout: Number(conn.timeout) || 600000
+  });
+  let model = String(req.model || "").trim();
+  if (!model) {
+    const ms = await client.models();
+    if (!ms.length) throw new Error("model 留空,而端点上一个模型都没列出来 —— 模型加载好了吗?");
+    model = ms[0];
+  }
+  const extra = conn.reasoning ? { chat_template_kwargs: { reasoning_effort: String(conn.reasoning) } } : null;
+  const r = await client.chat({
+    model, system, user,
+    temperature: Number(req.temperature) || 0,
+    max_tokens: Number(req.max_tokens) || 1024,
+    extra
+  });
+  return { text: r.text, ms: r.ms, usage: r.usage, finish: r.finish, model };
+}
+
+/* 解谜那几步共用:钉住 / 只建提示词 / 真调,三选一。 */
+async function runOrPin(req, system, user) {
+  if (req.pin && String(req.pin).trim()) return { system, text: String(req.pin).trim(), pinned: true };
+  if (req.dry) return { system, text: "", dry: true };
+  return { system, ...(await callModel(req, system, user)) };
+}
+
 async function readStdin() {
   let s = "";
   for await (const c of process.stdin) s += c;
@@ -167,21 +215,78 @@ const CMD = {
     };
     if (req.dry) return { ...out, text: "", dry: true };
 
-    const conn = req.conn || {};
-    const client = new Local({
-      base: conn.base || "http://localhost:11434/v1",
-      key: conn.key || "local",
-      timeout: Number(conn.timeout) || 600000
+    const r = await callModel(req, built.system, out.user);
+    return { ...out, text: r.text, ms: r.ms, usage: r.usage, finish: r.finish, model: r.model };
+  },
+
+  /* ── 解谜管线 ─────────────────────────────────────────────────────────── */
+  async pz_m1(req) {
+    const system = fillM1(loadSymbols());
+    const r = await runOrPin(req, system, String(req.question || ""));
+    return { ...r, sysTok: tok(system), parsed: parseM1P(r.text) };
+  },
+
+  /* 程序出题。⚠️ 没有模型 —— 盘、判据、裁决梯、线索、验现事全是代码。 */
+  pz_build(req) {
+    const m1 = String(req.m1 || "");
+    if (!parseM1P(m1).questions.length) {
+      return { error: "M1 的输出里没有 q1= 那一行 —— 出不了题。先看「BW 解谜 M1」的原文。" };
+    }
+    const date = req.date ? new Date(String(req.date)) : null;
+    if (date && isNaN(date.getTime())) return { error: `date「${req.date}」不是日期 —— 留空就是今天` };
+    const { parsed, puzzles } = puzzlesFor({
+      seed: req.seed === "random" ? "random" : Number(req.seed) || 1,
+      gender: String(req.gender || ""),
+      date, m1
     });
-    if (!req.model) return { error: "这一站没填模型名 —— 节点上的 model 是空的" };
-    const r = await client.chat({
-      model: String(req.model),
-      system: built.system,
-      user: out.user,
-      temperature: Number(req.temperature) || 0,
-      max_tokens: Number(req.max_tokens) || 1024
-    });
-    return { ...out, text: r.text, ms: r.ms, usage: r.usage, finish: r.finish };
+    const words = String(req.question || "");
+    const flow = [];
+    const spec = puzzles[0].m.spec;
+    flow.push("投掷 " + spec.raw.join(" ") + ";动爻 " + (spec.changeIdx.map((i) => i + 1).join("、") || "无")
+      + ";" + puzzles[0].p.摆桌子.本卦 + " 变 " + puzzles[0].p.摆桌子.变卦);
+    for (const { m, p } of puzzles) {
+      flow.push("");
+      flow.push("第" + p.问.n + "问:" + p.问.ask + "(" + p.问.db + "," + p.问.kind + ")");
+      sopSteps(m, p).forEach((x) => flow.push(x));
+      if (p.打架.length) {
+        flow.push("  打架  " + p.打架.map((f) => f.主体 + "第" + f.爻 + "爻 " + f.判.join("/")
+          + " → " + (f.胜 ? "取" + f.胜 : "打平")).join(";"));
+      }
+      flow.push("  线索  " + p.线索.length + " 条:");
+      p.线索.forEach((c) => flow.push("    [" + c.编号 + "] " + c.类 + "·" + c.判 + " —— "
+        + (c.指向 ? c.指向.向 : "不标") + (c.候选 ? "(未指认,要写候选)" : "")));
+      if ((p.验现事 || []).length) {
+        flow.push("  验现事 " + p.验现事.length + " 处:");
+        p.验现事.forEach((c) => flow.push("    [" + c.编号 + "] " + c.盘上));
+      }
+    }
+    return {
+      parsed,
+      puzzles: puzzles.map(({ p }) => p),
+      clues: puzzles.flatMap(({ p }) => p.线索.map((c) => ({ 编号: c.编号, clue: c, q: p.问 }))),
+      checks: puzzles.flatMap(({ p }) => (p.验现事 || []).map((c) => ({ 编号: c.编号, item: c }))),
+      words,
+      flow: flow.join("\n")
+    };
+  },
+
+  async pz_clue(req) {
+    const system = fillClue(req.clue, req.q);
+    const r = await runOrPin(req, system, "写。");
+    return { ...r, parsed: r.dry ? null : readClueAnswer(req.clue, r.text) };
+  },
+
+  async pz_verify(req) {
+    const system = fillVerify(req.item, req.words);
+    const r = await runOrPin(req, system, "对照。");
+    return { ...r, parsed: r.dry ? null : readVerifyAnswer(req.item, r.text, req.words) };
+  },
+
+  async pz_solve(req) {
+    const text = (req.puzzles || []).map((p) => puzzleText(p, req.answers || {}, req.verify || {})).join("\n\n");
+    const system = fillSolve({ question: String(req.question || ""), lang: req.lang, hurt: req.hurt, puzzlesText: text });
+    const r = await runOrPin(req, system, "写给他。");
+    return { ...r, material: text, sysTok: tok(system) };
   },
 
   async models(req) {
@@ -193,7 +298,7 @@ const CMD = {
 
 const cmd = process.argv[2];
 if (!CMD[cmd]) {
-  process.stdout.write(JSON.stringify({ error: `没有这个命令:${cmd}(只有 board / station / models)` }));
+  process.stdout.write(JSON.stringify({ error: `没有这个命令:${cmd}(有:${Object.keys(CMD).join(" / ")})` }));
   process.exit(1);
 }
 try {

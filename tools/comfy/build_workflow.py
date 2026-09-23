@@ -26,12 +26,28 @@ WIDGET_TYPES = ("STRING", "INT", "FLOAT", "BOOLEAN")
 
 # 变体 = 同一张图,只改控件默认值。图的**结构**只有一份 —— 第二张手摆的图
 # 就是第二张要同步的名单。
+# 覆盖值的键:「控件名」改所有节点上的那个控件;「@节点标签」只改那一个节点。
+SAMPLE_ASK = "我和她还有可能复合吗?今年能换到更好的工作吗?我最近在投简历"
+SAMPLE_M1 = "\n".join([
+    "lang=Chinese",
+    "q1=我和她还有可能复合吗 | db=婚恋 | kind=能不能",
+    "q2=今年能换到更好的工作吗 | db=工作 | kind=什么时候",
+    "hurt=0",
+    "flags=无",
+    "facts=我最近在投简历[父母|q2]",
+])
 VARIANTS = {
     # 跑:接上本地模型,四站真跑。
-    "bournewise-4node.json": {},
+    "bournewise-4node.json": ("4node", {}),
     # 只看提示词:一个模型都不用下,打开就能读每一站的 system 全文。
     # 改提示词时先开这张,看槽填对没有。
-    "bournewise-4node-dry.json": {"dry": True},
+    "bournewise-4node-dry.json": ("4node", {"dry": True}),
+    # 解谜管线:程序出题 → 每条线索一个模型(一条一条跑)→ 验现事 → 解谜。
+    "bournewise-puzzle.json": ("puzzle", {"@问题": {"question": SAMPLE_ASK}}),
+    # 解谜管线只看提示词:M1 钉住一段示范答案,后面每一站只建提示词 —— 一个模型都不用下,
+    # 出题那一步(纯代码)照样真跑,所以题面、每条线索的提示词、解谜拿到的材料全看得见。
+    "bournewise-puzzle-dry.json": ("puzzle", {"dry": True, "@问题": {"question": SAMPLE_ASK},
+                                              "@M1": {"pin": SAMPLE_M1}}),
 }
 
 
@@ -58,7 +74,14 @@ def spec(key):
     return links, widgets, outs
 
 
-# ── 图 ──────────────────────────────────────────────────────────────────────
+def required_links(key):
+    """必填的连线插口。optional 的可以不接(起卦的 M1、解谜的验现事)。"""
+    d = NODE_CLASS_MAPPINGS[key].INPUT_TYPES()
+    return {n for n, decl in (d.get("required") or {}).items()
+            if not isinstance(decl[0], list) and decl[0] not in WIDGET_TYPES}
+
+
+# ── 图一:四站 ──────────────────────────────────────────────────────────────
 PLACED = [
     ("端点", "BWEndpoint", (40, 40)),
     ("问题", "BWAsk", (40, 360)),
@@ -118,9 +141,58 @@ WIRES = [
 ]
 
 
-def build(overrides=None):
-    overrides = overrides or {}
+# ── 图二:解谜 ──────────────────────────────────────────────────────────────
+# 从左到右就是管线:读问题 → 出题(无模型)→ 线索(逐条)→ 验现事(逐条)→ 解谜。
+# 每一步下面挂一个「看」,把它交出去的东西原样显示。
+PUZZLE_PLACED = [
+    ("端点", "BWEndpoint", (40, 40)),
+    ("问题", "BWAsk", (40, 380)),
+    ("M1", "BWPuzzleM1", (480, 40)),
+    ("看M1", "BWShow", (480, 460)),
+    ("出题", "BWPuzzleBuild", (920, 40)),
+    ("看题面", "BWShow", (920, 360)),
+    ("线索", "BWPuzzleClues", (1360, 40)),
+    ("看线索", "BWShow", (1360, 460)),
+    ("验现事", "BWPuzzleVerify", (1800, 40)),
+    ("看验现事", "BWShow", (1800, 460)),
+    ("解谜", "BWPuzzleSolve", (2240, 40)),
+    ("解读", "BWShow", (2240, 520)),
+    ("看材料", "BWShow", (2680, 40)),
+]
+
+PUZZLE_WIRES = [
+    (("端点", "端点"), ("M1", "端点")),
+    (("端点", "端点"), ("线索", "端点")),
+    (("端点", "端点"), ("验现事", "端点")),
+    (("端点", "端点"), ("解谜", "端点")),
+    (("问题", "问题"), ("M1", "问题")),
+    (("问题", "问题"), ("出题", "问题")),
+    (("M1", "M1"), ("出题", "M1")),
+    (("M1", "原文"), ("看M1", "文字")),
+    (("出题", "题"), ("线索", "题")),
+    (("出题", "题"), ("验现事", "题")),
+    (("出题", "题"), ("解谜", "题")),
+    (("出题", "题面"), ("看题面", "文字")),
+    (("线索", "线索答案"), ("解谜", "线索答案")),
+    (("线索", "原文"), ("看线索", "文字")),
+    (("验现事", "验现事"), ("解谜", "验现事")),
+    (("验现事", "原文"), ("看验现事", "文字")),
+    (("解谜", "解读"), ("解读", "文字")),
+    (("解谜", "材料"), ("看材料", "文字")),
+]
+
+GRAPHS = {"4node": (PLACED, WIRES), "puzzle": (PUZZLE_PLACED, PUZZLE_WIRES)}
+
+
+def build(graph="4node", overrides=None):
+    PLACED, WIRES = GRAPHS[graph]
+    overrides = dict(overrides or {})
+    by_node = {k[1:]: v for k, v in overrides.items() if k.startswith("@")}
+    overrides = {k: v for k, v in overrides.items() if not k.startswith("@")}
     nodes, by_label, problems = [], {}, []
+    for lab in by_node:
+        if lab not in [x[0] for x in PLACED]:
+            problems.append("变体里的「@%s」在这张图上没有这个节点" % lab)
     for i, (label, key, pos) in enumerate(PLACED):
         if key not in NODE_CLASS_MAPPINGS:
             problems.append("没有这个节点类型:%s" % key)
@@ -144,8 +216,11 @@ def build(overrides=None):
             # 变体只改控件**默认值**,不改结构。名字对不上时报错,不静默忽略 ——
             # 一个拼错的变体键会让「dry 那张图」变成和「跑」那张一模一样,
             # 而它打开时看着完全正常,只是会去调模型。
-            "widgets_values": [overrides.get(n, v) for n, v in widgets],
+            "widgets_values": [by_node.get(label, {}).get(n, overrides.get(n, v)) for n, v in widgets],
         })
+        for k in by_node.get(label, {}):
+            if k not in [n for n, _ in widgets]:
+                problems.append("变体里给「%s」的控件「%s」,这个节点上没有" % (label, k))
         for k in overrides:
             if k not in [n for n, _ in widgets] and not any(
                     k in [n for n, _ in spec(kk)[1]] for kk in NODE_CLASS_MAPPINGS):
@@ -173,13 +248,14 @@ def build(overrides=None):
         nodes[b["id"] - 1]["inputs"][tidx]["link"] = lid
 
     # 每个必填插口都得接上 —— 一张少接一条线的图,打开时报的是「缺输入」,
-    # 而人会先怀疑节点坏了。
+    # 而人会先怀疑节点坏了。必填与否从 INPUT_TYPES 读,不在这里写名单。
     for label, key, _ in PLACED:
         n = by_label.get(label)
         if not n:
             continue
+        need = required_links(key)
         for slot in nodes[n["id"] - 1]["inputs"]:
-            if slot["link"] is None and slot["name"] != "M1":   # 起卦的 M1 是 optional
+            if slot["link"] is None and slot["name"] in need:
                 problems.append("%s 的输入「%s」没接线" % (label, slot["name"]))
 
     wf = {
@@ -194,8 +270,8 @@ def build(overrides=None):
 if __name__ == "__main__":
     check = "--check" in sys.argv
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    for name, overrides in VARIANTS.items():
-        wf, problems = build(overrides)
+    for name, (graph, overrides) in VARIANTS.items():
+        wf, problems = build(graph, overrides)
         if problems:
             print("✗ %s 和节点定义对不上:" % name)
             for p in problems:

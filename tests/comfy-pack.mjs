@@ -47,15 +47,17 @@ assert.ok(/subprocess\.run\(\s*\[\s*_node_bin\(\)\s*,\s*str\(BRIDGE\)/.test(node
   "nodes.py 不再经 bridge.mjs 调 node —— Python 一旦自己算盘或自己拼提示词,就是第二份产品");
 
 /* ── ② 提示词一个字都不许落在 tools/comfy/ ─────────────────────────────── */
-const prompts = read("functions/_lib/nodes/prompts.js");
-/* 探针 = 每个 `export const X = \`` 之后的头一行。从 prompts.js 身上取,
-   所以提示词改了探针跟着改 —— 写死几句话的话,改一次提示词这条就变成空话。 */
+/* 探针 = 每个 `export const X = \`` 之后的头一行。从提示词文件身上取,
+   所以提示词改了探针跟着改 —— 写死几句话的话,改一次提示词这条就变成空话。
+   两份:四站(nodes/prompts.js)和解谜(puzzle/prompts.js)。 */
 const probes = [];
-for (const m of prompts.matchAll(/export const ([A-Z0-9_]+)\s*=\s*`([^\n]{12,})/g)) {
-  probes.push([m[1], m[2].trim()]);
+for (const file of ["functions/_lib/nodes/prompts.js", "functions/_lib/puzzle/prompts.js"]) {
+  for (const m of read(file).matchAll(/export const ([A-Z0-9_]+)\s*=\s*`([^\n]{12,})/g)) {
+    probes.push([m[1], m[2].trim()]);
+  }
 }
-assert.ok(probes.length >= 5,
-  `只从 prompts.js 取到 ${probes.length} 个探针(应 ≥5:M1–M4 + MARK)—— 正则失配了,这一格在空转`);
+assert.ok(probes.length >= 9,
+  `只取到 ${probes.length} 个探针(应 ≥9:M1–M4 + MARK + 解谜那四段)—— 正则失配了,这一格在空转`);
 
 const files = [];
 (function walk(dir) {
@@ -77,35 +79,47 @@ for (const f of files) {
   }
 }
 
-/* ── ③ 那张图和节点定义对得上 ───────────────────────────────────────────── */
-const wf = JSON.parse(read("tools/comfy/workflows/bournewise-4node.json"));
+/* ── ③ 每一张图都和节点定义对得上 ─────────────────────────────────────── */
 const declared = new Set(
   [...nodesPy.matchAll(/^\s{4}"(\w+)":\s*\w+,$/gm)].map((m) => m[1])
 );
-assert.ok(declared.size >= 8,
-  `从 nodes.py 只解析到 ${declared.size} 个节点类型(应 ≥8)—— 正则失配了,这一格在空转`);
-assert.ok(wf.nodes.length >= 8 && wf.links.length >= 15,
-  `图只有 ${wf.nodes.length} 个节点 / ${wf.links.length} 条线 —— 它缩水了`);
-
-const byId = new Map(wf.nodes.map((n) => [n.id, n]));
-for (const n of wf.nodes) {
-  assert.ok(declared.has(n.type),
-    `图里用了 nodes.py 没有的节点类型「${n.type}」—— 打开时是「节点缺失」,而原因在另一个文件里`);
+assert.ok(declared.size >= 13,
+  `从 nodes.py 只解析到 ${declared.size} 个节点类型(应 ≥13)—— 正则失配了,这一格在空转`);
+const WORKFLOWS = readdirSync(path.join(ROOT, "tools/comfy/workflows")).filter((f) => f.endsWith(".json"));
+assert.ok(WORKFLOWS.length >= 4, `workflows/ 里只有 ${WORKFLOWS.length} 张图(应 ≥4:四站、四站 dry、解谜、解谜 dry)`);
+/* 每条管线的每一站都得在它那张图上 —— 少一站的图仍然打得开、仍然出得来一篇东西。 */
+const MUST = {
+  "bournewise-4node": ["BWM1", "BWM2", "BWM3", "BWM4", "BWCast"],
+  "bournewise-puzzle": ["BWPuzzleM1", "BWPuzzleBuild", "BWPuzzleClues", "BWPuzzleVerify", "BWPuzzleSolve"]
+};
+let wf = null;
+for (const name of WORKFLOWS) {
+  const w = JSON.parse(read("tools/comfy/workflows/" + name));
+  if (name === "bournewise-4node.json") wf = w;
+  assert.ok(w.nodes.length >= 8 && w.links.length >= 15,
+    `${name} 只有 ${w.nodes.length} 个节点 / ${w.links.length} 条线 —— 它缩水了`);
+  const byId = new Map(w.nodes.map((n) => [n.id, n]));
+  for (const n of w.nodes) {
+    assert.ok(declared.has(n.type),
+      `${name} 用了 nodes.py 没有的节点类型「${n.type}」—— 打开时是「节点缺失」,而原因在另一个文件里`);
+  }
+  for (const [lid, from, fromSlot, to, toSlot, type] of w.links) {
+    const a = byId.get(from), b = byId.get(to);
+    assert.ok(a && b, `${name} 第 ${lid} 条线指向不存在的节点(${from} → ${to})`);
+    const out = a.outputs[fromSlot], inp = b.inputs[toSlot];
+    assert.ok(out && inp, `${name} 第 ${lid} 条线接在不存在的插口上(${a.type}[${fromSlot}] → ${b.type}[${toSlot}])`);
+    assert.equal(out.type, type, `${name} 第 ${lid} 条线的类型 ${type} 和 ${a.type}.${out.name}(${out.type})对不上`);
+    assert.equal(inp.type, type, `${name} 第 ${lid} 条线的类型 ${type} 和 ${b.type}.${inp.name}(${inp.type})对不上`);
+    assert.ok((out.links || []).includes(lid), `${name}:${a.type}.${out.name} 没记住第 ${lid} 条线`);
+    assert.equal(inp.link, lid, `${name}:${b.type}.${inp.name} 没记住第 ${lid} 条线`);
+  }
+  const family = Object.keys(MUST).find((k) => name.startsWith(k));
+  assert.ok(family, `${name} 不属于任何一条管线 —— 新加的图要在这里登记它必须有哪几站`);
+  for (const t of MUST[family]) {
+    assert.ok(w.nodes.some((n) => n.type === t), `${name} 上没有 ${t} —— 少一站的管线照样跑得出东西`);
+  }
 }
-for (const [lid, from, fromSlot, to, toSlot, type] of wf.links) {
-  const a = byId.get(from), b = byId.get(to);
-  assert.ok(a && b, `第 ${lid} 条线指向不存在的节点(${from} → ${to})`);
-  const out = a.outputs[fromSlot], inp = b.inputs[toSlot];
-  assert.ok(out && inp, `第 ${lid} 条线接在不存在的插口上(${a.type}[${fromSlot}] → ${b.type}[${toSlot}])`);
-  assert.equal(out.type, type, `第 ${lid} 条线的类型 ${type} 和 ${a.type}.${out.name}(${out.type})对不上`);
-  assert.equal(inp.type, type, `第 ${lid} 条线的类型 ${type} 和 ${b.type}.${inp.name}(${inp.type})对不上`);
-  assert.ok((out.links || []).includes(lid), `${a.type}.${out.name} 没记住第 ${lid} 条线`);
-  assert.equal(inp.link, lid, `${b.type}.${inp.name} 没记住第 ${lid} 条线`);
-}
-/* 四站都得在图上 —— 少一站的图仍然打得开、仍然出得来一篇东西。 */
-for (const t of ["BWM1", "BWM2", "BWM3", "BWM4", "BWCast"]) {
-  assert.ok(wf.nodes.some((n) => n.type === t), `图上没有 ${t} —— 少一站的管线照样跑得出东西`);
-}
+assert.ok(wf, "四站那张图不见了");
 
 /* ── ④ 「改一站只重跑一站」不许退化成「全站都不重跑」 ───────────────────── */
 /* IS_CHANGED 没了的话,改完提示词 Comfy 会**拿缓存里的旧答案给你看** ——
@@ -159,10 +173,19 @@ try {
   assert.ok(Array.isArray(out.features) && out.features.length >= 10,
     `包跑出来只有 ${out.features?.length} 个 feature —— 引擎没装全`);
   assert.ok(out.boardText && out.ladder && out.relations, "包跑出来的盘缺了 boardText/ladder/relations");
+  /* 解谜那一条的出题(纯代码)在包里也要能跑 —— 它 fs 读补全包,闭包看不见那几份 */
+  const pz = spawnSync(process.execPath,
+    [path.join(root, "repo/tools/comfy/bridge.mjs"), "pz_build"],
+    { input: JSON.stringify({ seed: 1, gender: "m", date: "2026-09-23T12:00:00Z", question: "我和她还有可能复合吗",
+                              m1: "lang=Chinese\nq1=我和她还有可能复合吗 | db=婚恋 | kind=能不能\nhurt=0\nflags=无\nfacts=无" }),
+      encoding: "utf8" });
+  assert.equal(pz.status, 0, "包里的解谜出题跑不起来:\n" + String(pz.stderr).trim().slice(-800));
+  const pzo = JSON.parse(pz.stdout);
+  assert.ok(pzo.clues && pzo.clues.length >= 2, `包里出题只出了 ${pzo.clues && pzo.clues.length} 条线索 —— 判据或补全包没装全`);
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }
 
 console.log(`ok   comfy-pack — 桥接真文件,${files.length} 个文件里 0 处提示词正文,`
-  + `图 ${wf.nodes.length} 节点 / ${wf.links.length} 线全部对得上,改一站只重跑一站,`
+  + `${WORKFLOWS.length} 张图每条线都对得上,改一站只重跑一站,`
   + "包在仓库外能自己跑起来且字节一致");

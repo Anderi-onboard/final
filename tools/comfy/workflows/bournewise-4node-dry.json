@@ -11,7 +11,7 @@
       ],
       "size": [
         400,
-        162
+        196
       ],
       "flags": {},
       "order": 0,
@@ -40,9 +40,10 @@
         "Node name for S&R": "BWEndpoint"
       },
       "widgets_values": [
-        "http://localhost:11434/v1",
+        "http://127.0.0.1:8888/v1",
         "local",
-        600
+        600,
+        "不发(按启动参数)"
       ]
     },
     {
@@ -150,7 +151,7 @@
         "Node name for S&R": "BWM1"
       },
       "widgets_values": [
-        "qwen2.5:7b",
+        "",
         0.0,
         512,
         true,
@@ -545,7 +546,7 @@
         "Node name for S&R": "BWM2"
       },
       "widgets_values": [
-        "qwen2.5:7b",
+        "",
         0.0,
         512,
         true,
@@ -629,7 +630,7 @@
         "Node name for S&R": "BWM3"
       },
       "widgets_values": [
-        "qwen2.5:7b",
+        "",
         0.0,
         1536,
         true,
@@ -771,7 +772,7 @@
         "Node name for S&R": "BWM4"
       },
       "widgets_values": [
-        "qwen2.5:32b",
+        "",
         0.0,
         8192,
         true,

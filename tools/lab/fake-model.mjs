@@ -20,6 +20,12 @@ const MODELS = ["fake-small", "fake-big"];
    而答错格式在下游是静默的。 */
 function stationOf(system) {
   const s = String(system || "");
+  /* 解谜管线的四种。⚠️ 排在四站前面:解谜那一段带着四站的取象标记和 VOICE,
+     按四站的句子先认,它会被认成 M4、答一篇四站格式的东西,而那在下游是静默的。 */
+  if (s.includes("你在解一道谜")) return "pz_solve";
+  if (s.includes("你只做一件事:对照")) return "pz_verify";
+  if (s.includes("你只写一句话:下面这条判据")) return "pz_clue";
+  if (s.includes("你只读问题,不解读")) return "pz_m1";
   if (s.includes("输出严格四行")) return "m1";
   if (s.includes("选出该开的库")) return "m2";
   if (s.includes("把盘变成这一卦的事")) return "m3";
@@ -62,8 +68,35 @@ const ANSWER = {
     "*这是对一次投掷的一种读法,不是一份判决。*"
   ].join("\n"),
   qc: "PASS",
-  other: "ok"
+  other: "ok",
+  pz_m1: [
+    "lang=Chinese",
+    "q1=我和她还有可能复合吗 | db=婚恋 | kind=能不能",
+    "hurt=0",
+    "flags=无",
+    "facts=无"
+  ].join("\n"),
+  pz_verify: "对照=他没说\n他的原话=无",
+  pz_solve: [
+    "还有,但不在现在这一段里。",
+    "",
+    "{她那一头现在的劲|妻财}还在,只是眼下没往你这边走。",
+    "",
+    "---",
+    "",
+    "*这是对一次投掷的一种读法,不是一份判决。*"
+  ].join("\n")
 };
+
+/* 线索那一站要按题答:还没指认的那一方,候选得从提示词自己给的名单里挑 ——
+   随手写两个词会被程序当场拦下(候选不在名单上),那测的就不是接线了。 */
+function clueAnswer(system) {
+  const line = "这一卦里=这一条说的是那一方眼下使不上劲。";
+  const m = String(system).match(/名单:([^\n]+)/);
+  if (!m) return line;
+  const items = m[1].split(/[;;]/).flatMap((x) => (x.split("·")[1] || "").split("、")).map((x) => x.trim()).filter(Boolean);
+  return items.length ? line + "\n候选=" + items.slice(0, 2).join("|") : line;
+}
 
 function chunks(text) {
   /* 一次发完技术上能跑,但**什么都没测到** —— 打字机、流式预览、自动滚动、
@@ -108,11 +141,13 @@ http.createServer((req, res) => {
 
     const system = (body.messages || []).find((m) => m.role === "system")?.content || "";
     const station = stationOf(system);
-    const text = ANSWER[station] ?? ANSWER.other;
+    const text = station === "pz_clue" ? clueAnswer(system) : (ANSWER[station] ?? ANSWER.other);
     const usage = { prompt_tokens: Math.round(JSON.stringify(body.messages || "").length / 3),
                     completion_tokens: Math.round(text.length / 3) };
     console.log(`  ${new Date().toISOString().slice(11, 19)}  ${station.padEnd(5)} ${body.model || "?"}`
-      + `${body.stream ? " (stream)" : ""}  → ${text.length} 字符`);
+      + `${body.stream ? " (stream)" : ""}`
+      + `${body.chat_template_kwargs ? " ctk=" + JSON.stringify(body.chat_template_kwargs) : ""}`
+      + `  → ${text.length} 字符`);
 
     if (!body.stream) {
       res.writeHead(200, { ...cors, "content-type": "application/json" });

@@ -12,6 +12,7 @@
 
    这个文件全是代码,不调模型。它交出来的东西:
      线索     每条成立的判据、裁决梯走过的每一步、卦形、(问了时间时)每条应期,各一条
+     验现事   盘上说「现在」的那几处(三合、三会成局),单独并联一个模型拿他的原话对照
      指向     能从判据和角色直接读出方向的,标上;读不出的不标
      打架     同一爻上能与不能同时成立的,摆在一起;程序能裁的已经裁了(`criteria.resolve`)
      谁是谁   每一方在他生活里是什么,只定一次,所有线索和解谜拿同一本
@@ -241,7 +242,7 @@ function criterionClues({ criteria, rules, L, dict }) {
   return out;
 }
 
-function ladderClues({ ladderObj, dict, elements, L }) {
+function ladderClues({ ladderObj, dict, L }) {
   const out = [];
   const layers = [ladderObj && ladderObj.primary, ladderObj && ladderObj.second].filter(Boolean);
   layers.forEach((layer, li) => {
@@ -261,19 +262,18 @@ function ladderClues({ ladderObj, dict, elements, L }) {
     });
   });
   (ladderObj && ladderObj.shape || []).forEach((sh) => {
-    /* ⚠️ 三合、三会成局,程序原来一律判吉(「事体久远坚牢」)。可局是**哪一行**的局,
-       决定它帮的是谁:合的是忌神的五行,坚牢的是伤它的那一方。
-       仓库里没有这一条的原文,程序不替它定方向 —— 只把「合的是哪一方的五行」交出去。 */
-    const el = (sh.tag.match(/^三[合会](.)局/) || [])[1];
-    const role = el ? roleOfElement(el, elements) : null;
+    /* ⚠️ 三合、三会成局**不在这里** —— 它们进「验现事」(见 presentChecks)。
+       程序原来一律判吉(「事体久远坚牢」),可局是哪一方的五行决定它帮谁,
+       仓库里又没有这一条的原文;owner 定的做法是不拿它断吉凶,拿它去对他现在的处境。 */
+    if (/^三[合会]/.test(sh.tag)) return;
     out.push({
       类: "卦形",
       id: "卦形." + sh.tag,
       书上: sh.why + "(裁决梯模块里的判语,仓库里没有原文页码)",
-      盘上: role ? sh.tag + ":" + el + "在这一问里是" + roleText(role) + "的五行" : sh.tag,
-      谁: role ? whoLabel(dict, role, []) : "整副卦",
+      盘上: sh.tag,
+      谁: "整副卦",
       候选: null,
-      指向: el ? null : toneDirection(sh.tone),
+      指向: toneDirection(sh.tone),
       爻: [],
       判: sh.tag
     });
@@ -290,6 +290,60 @@ function ladderClues({ ladderObj, dict, elements, L }) {
     });
   }
   return out;
+}
+
+/* ── 验现事(owner 2026-09-23 定)────────────────────────────────────────
+   盘上有几处说的是「**现在**」的局面,而不是结局。三合、三会成局就是:几个地支拧成一股,
+   而那一股是哪一方的五行,程序算得出来;它在吉凶上帮谁,仓库里没有原文。
+   所以它不当线索断吉凶,单独并联一个模型,拿他自己的话对一遍 —— 对上了,
+   解读里提一句,那是这一卦**可以被他当场核对**的地方。
+
+   ⭐⭐ 严谨的关键是它**得能输**:永远「对上」的验现事就是算命先生的开场白。
+      所以模型只能答三样(对上 / 对不上 / 他没说),而说「对上」「对不上」必须把他的原话
+      **原样抄出来** —— 抄不出来,`readVerifyAnswer` 按他没说算。
+   ⚠️ 只收程序算得出结构的信号。月破、旬空这些「现在」的信号,等数据库里有它们象义的原文再加 ——
+      没有原文就让模型自己说它像什么,正是 owner 说的「单纯用知识储备」。 */
+function presentChecks({ ladderObj, elements, dict }) {
+  const out = [];
+  (ladderObj && ladderObj.shape || []).forEach((sh) => {
+    const m = sh.tag.match(/^(三[合会])(.)局/);
+    if (!m) return;
+    const role = roleOfElement(m[2], elements);
+    const e = role ? dict.roles.find((x) => x.角色 === role) : null;
+    out.push({
+      类: "验现事",
+      id: "验现事." + sh.tag,
+      信号: sh.tag,
+      盘上: m[1] + "成" + m[2] + "局:几个地支拧成了一股" + m[2]
+        + (role ? ";" + m[2] + "在这一问里是" + roleText(role) + "的五行" : ";这一股不是这一问里任何一方的五行"),
+      谁: role ? whoLabel(dict, role, []) : "整副卦",
+      候选: e && e.候选 ? e.候选 : null
+    });
+  });
+  return out;
+}
+
+/* 验现事模型交回来的东西。格式:
+     对照=<对上|对不上|他没说>
+     他的原话=<原样抄他说的那一句;他没说写 无>
+   `words` 是他打的原文。⭐ 说「对上」「对不上」却抄不出一句真在他原文里的话,一律按他没说算 ——
+   一个模型编出来的「你说过……」,比什么都不说更伤这一篇。 */
+export function readVerifyAnswer(item, text, words) {
+  const s = String(text || "");
+  const k = ((s.match(/对照\s*[=:：]\s*(对上|对不上|他没说)/) || [])[1] || "");
+  const quote = ((s.match(/他的原话\s*[=:：]\s*(.+)/) || [])[1] || "").trim().replace(/^[「“"]|[」”"]$/g, "");
+  const problems = [];
+  if (!k) {
+    problems.push("没有写「对照=对上/对不上/他没说」,按他没说算");
+    return { 对照: "他没说", 原话: "", problems };
+  }
+  if (k === "他没说") return { 对照: k, 原话: "", problems };
+  const norm = (x) => String(x || "").replace(/[\s,，。.!！?？、;；:：]/g, "");
+  if (!quote || quote === "无" || !norm(words).includes(norm(quote))) {
+    problems.push("说「" + k + "」,抄的却不是他原话里的句子(" + (quote || "空") + ")—— 按他没说算");
+    return { 对照: "他没说", 原话: "", problems };
+  }
+  return { 对照: k, 原话: quote, problems };
 }
 
 function timingClues({ timing, dict }) {
@@ -329,9 +383,11 @@ export function buildPuzzle({ q, facts = [], flags = "", board, rules = [], symb
     : null;
 
   let clues = criterionClues({ criteria: board.criteria, rules, L, dict })
-    .concat(ladderClues({ ladderObj: board.ladderObj, dict, elements: board.roles && board.roles.elements, L }));
+    .concat(ladderClues({ ladderObj: board.ladderObj, dict, L }));
   if (q.kind === "什么时候") clues = clues.concat(timingClues({ timing: board.timing, dict }));
   clues.forEach((c, i) => { c.编号 = "q" + q.n + "." + (i + 1); });
+  const present = presentChecks({ ladderObj: board.ladderObj, elements: board.roles && board.roles.elements, dict });
+  present.forEach((c, i) => { c.编号 = "q" + q.n + ".验" + (i + 1); });
 
   const byUse = L.filter((r) => r.角色 === "用神");
   const details = byUse.map((r) => ({
@@ -347,6 +403,7 @@ export function buildPuzzle({ q, facts = [], flags = "", board, rules = [], symb
     摆桌子: table({ L, B, names }),
     定死的: fixed,
     线索: clues,
+    验现事: present,
     打架: (board.fights || []).map((f) => ({ ...f })),
     谁是谁: dict,
     现实依据: groundFacts({ L, B, facts, dict }),
@@ -388,8 +445,9 @@ export function readClueAnswer(clue, text) {
   return { 句: line.trim(), 候选: cand, problems };
 }
 
-/* 解谜的人要的材料,按问题排好、带编号。纯文本,不带任何程序内部的名字。 */
-export function puzzleText(p, answers) {
+/* 解谜的人要的材料,按问题排好、带编号。纯文本,不带任何程序内部的名字。
+   `verify` 是验现事模型交回来、经 `readVerifyAnswer` 核过的结果,按编号。 */
+export function puzzleText(p, answers, verify) {
   const out = [];
   const q = p.问;
   out.push("【第" + q.n + "问】" + q.ask + "(" + (q.db || "其他") + "," + (q.kind || "能不能") + ")");
@@ -407,6 +465,16 @@ export function puzzleText(p, answers) {
       + ";依据:" + c.判 + "," + c.盘上);
     if (a && a.候选 && a.候选.length) out.push("       候选:" + a.候选.join("、"));
   });
+  if ((p.验现事 || []).length) {
+    out.push("验现事(盘上说的是「现在」的局面,已经有人拿他的原话对照过):");
+    p.验现事.forEach((c) => {
+      const v = verify && verify[c.编号];
+      out.push("  [" + c.编号 + "] " + c.盘上 + ";说的是:" + c.谁
+        + " —— " + (!v ? "(这一条没对照)"
+          : v.对照 === "他没说" ? "他没说"
+          : v.对照 + ",他的原话:「" + v.原话 + "」"));
+    });
+  }
   if (p.打架.length) {
     out.push("打架(同一爻上能与不能同时成立):");
     p.打架.forEach((f) => {

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""BourneWise 四节点 —— ComfyUI 节点。
+"""BourneWise —— ComfyUI 节点:四站(线上那条)+ 解谜管线(实验中)。
 
 ────────────────────────────────────────────────────────────────────────────
 这个文件里**没有提示词,也没有盘**。它只是画布:插口、控件、连线、显示。
@@ -22,8 +22,10 @@
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
+import time
 from pathlib import Path
 
 CATEGORY = "BourneWise"
@@ -54,6 +56,8 @@ def _bridge(cmd, payload):
             "找不到仓库:%s 不存在。\n"
             "这套节点要软链进 ComfyUI,不要复制:\n"
             "  ln -s /你的路径/final/tools/comfy ~/ComfyUI/custom_nodes/bournewise\n"
+            "  (Windows:New-Item -ItemType Junction -Path <ComfyUI>\\custom_nodes\\bournewise "
+            "-Target <仓库>\\tools\\comfy)\n"
             "已经复制过来了的话,给 ComfyUI 设 BOURNEWISE_ROOT=/你的路径/final" % _FILL
         )
     p = subprocess.run(
@@ -124,18 +128,27 @@ def _prompt_hash(station):
 
 
 # ── 端点 ────────────────────────────────────────────────────────────────────
+_REASONING = ["不发(按启动参数)", "none", "low", "medium", "xhigh"]
+
+
 class BWEndpoint:
-    """本地模型端点。Ollama / LM Studio / llama.cpp / vLLM 都讲这一套。"""
+    """本地模型端点。Unsloth / llama.cpp / Ollama / LM Studio / vLLM 都讲这一套。"""
 
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {
-            "base_url": ("STRING", {"default": "http://localhost:11434/v1",
-                                    "tooltip": "ollama serve → :11434/v1 · LM Studio → :1234/v1 "
-                                               "· llama-server → :8080/v1 · vLLM → :8000/v1"}),
-            "api_key": ("STRING", {"default": "local"}),
+            "base_url": ("STRING", {"default": "http://127.0.0.1:8888/v1",
+                                    "tooltip": "unsloth run … -p 8888 → :8888/v1 · llama-server → :8080/v1 "
+                                               "· ollama serve → :11434/v1 · LM Studio → :1234/v1 · vLLM → :8000/v1"}),
+            "api_key": ("STRING", {"default": "local",
+                                   "tooltip": "Unsloth 要它自己的 key:在 Unsloth 的 Settings → API 里生成的 "
+                                              "sk-unsloth-…(只显示一次)。llama-server / Ollama 随便填。"}),
             "timeout_s": ("INT", {"default": 600, "min": 10, "max": 7200,
                                   "tooltip": "本地大模型第一次加载权重很慢,别设太小"}),
+            "思考": (_REASONING, {
+                "tooltip": "Qwen3.8 的思考开关(chat_template_kwargs.reasoning_effort)。"
+                           "「不发」= 一个字段都不多发,按 unsloth run 启动时的 --chat-template-kwargs;"
+                           "端点对这个字段回 400 时就选「不发」。思考写在 <think> 里的会被剥掉,不会进下游。"}),
         }}
 
     RETURN_TYPES = ("BW_CONN", "STRING")
@@ -148,8 +161,9 @@ class BWEndpoint:
     def IS_CHANGED(cls, **kw):
         return float("nan")   # 每次都问一遍端点通不通 —— 一次 /models,几毫秒
 
-    def go(self, base_url, api_key, timeout_s):
-        conn = {"base": base_url.strip(), "key": api_key.strip(), "timeout": int(timeout_s) * 1000}
+    def go(self, base_url, api_key, timeout_s, 思考=_REASONING[0]):
+        conn = {"base": base_url.strip(), "key": api_key.strip(), "timeout": int(timeout_s) * 1000,
+                "reasoning": "" if 思考 == _REASONING[0] else 思考}
         # ⚠️ 端点挂了**不抛** —— 抛在这里整张图都不跑,而你想看的恰恰是「它为什么挂」。
         #    真正要模型的那几站会自己抛,报的是自己那一站的错。
         try:
@@ -234,8 +248,9 @@ class BWCast:
 def _widgets(default_model, default_max):
     return {
         "model": ("STRING", {"default": default_model,
-                             "tooltip": "端点上的模型名(看「端点上有什么」那一格)。"
-                                        "分站配模型就是拆四站的理由。"}),
+                             "tooltip": "端点上的模型名(看「端点上有什么」那一格)。留空 = 用端点列出的第一个 —— "
+                                        "Unsloth / llama-server 一次只挂一个模型,留空就行。"
+                                        "分站配模型就是拆站的理由。"}),
         "temperature": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 2.0, "step": 0.05,
                                   "tooltip": "调提示词时必须是 0,否则你在调噪声。"}),
         "max_tokens": ("INT", {"default": default_max, "min": 64, "max": 32768}),
@@ -329,7 +344,7 @@ class _Station:
         feed = self._feed(self.STATION, r)
         if r.get("dry"):
             return "", "\n".join(note) + "\n\n─── system ───\n" + r["system"], feed
-        note.append("%dms" % r.get("ms", 0))
+        note.append("%s · %dms" % (r.get("model") or "?", r.get("ms", 0)))
         u = r.get("usage") or {}
         if u:
             note.append("in %s / out %s" % (u.get("prompt_tokens"), u.get("completion_tokens")))
@@ -360,7 +375,7 @@ class BWM1(_Station):
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": dict({"端点": ("BW_CONN",), "问题": ("BW_ASK",)},
-                                 **_widgets("qwen2.5:7b", 512)),
+                                 **_widgets("", 512)),
                 "optional": dict(_PIN)}
 
     def go(self, 端点, 问题, model, temperature, max_tokens, dry, pin=""):
@@ -388,7 +403,7 @@ class BWM2(_Station):
     def INPUT_TYPES(cls):
         return {"required": dict({"端点": ("BW_CONN",), "问题": ("BW_ASK",),
                                   "盘": ("BW_BOARD",), "M1": ("BW_M1",)},
-                                 **_widgets("qwen2.5:7b", 512)),
+                                 **_widgets("", 512)),
                 "optional": dict(_PIN)}
 
     def go(self, 端点, 问题, 盘, M1, model, temperature, max_tokens, dry, pin=""):
@@ -408,7 +423,7 @@ class BWM3(_Station):
     def INPUT_TYPES(cls):
         return {"required": dict({"端点": ("BW_CONN",), "问题": ("BW_ASK",),
                                   "盘": ("BW_BOARD",), "M1": ("BW_M1",), "M2": ("BW_M2",)},
-                                 **_widgets("qwen2.5:7b", 1536)),
+                                 **_widgets("", 1536)),
                 "optional": dict(_PIN)}
 
     def go(self, 端点, 问题, 盘, M1, M2, model, temperature, max_tokens, dry, pin=""):
@@ -429,7 +444,7 @@ class BWM4(_Station):
     def INPUT_TYPES(cls):
         return {"required": dict({"端点": ("BW_CONN",), "问题": ("BW_ASK",),
                                   "盘": ("BW_BOARD",), "M1": ("BW_M1",), "M3": ("BW_M3",)},
-                                 **_widgets("qwen2.5:32b", 8192)),
+                                 **_widgets("", 8192)),
                 "optional": dict(_PIN)}
 
     def go(self, 端点, 问题, 盘, M1, M3, model, temperature, max_tokens, dry, pin=""):
@@ -438,6 +453,293 @@ class BWM4(_Station):
         body = dict(_common(问题, 盘, M1), m3=M3["text"])
         text, note, feed = self._run(body, 端点, model, temperature, max_tokens, dry, pin)
         return (text, note, feed)
+
+
+# ── 解谜管线(实验中)──────────────────────────────────────────────────────
+# 线上仍是上面四站。这一条是 owner 定的新架构:程序出题,每条判据一个模型写一句,
+# 盘上说「现在」的那几处另一个模型拿他的原话对照,最后一个模型解谜。
+# 提示词在 functions/_lib/puzzle/prompts.js,出题在 functions/_lib/puzzle/program.js ——
+# 这里一样一个字都不写。
+_PZ_PROMPTS = ROOT / "functions" / "_lib" / "puzzle" / "prompts.js"
+_PZ_PROGRAM = ROOT / "functions" / "_lib" / "puzzle" / "program.js"
+_PACK = ROOT / "functions" / "_lib" / "doctrine" / "pack-20260914"
+
+_PZ_BLOCKS = {"pz_m1": ["M1P"], "pz_clue": ["CLUE", "CLUE_CAND"],
+              "pz_verify": ["VERIFY", "VERIFY_CAND"], "pz_solve": ["SOLVE"]}
+
+
+def _puzzle_hash(station):
+    """这一站的提示词 + 读它答案的规矩。改哪一段,只有那一站和它下游重跑。"""
+    src = _read(_PZ_PROMPTS)
+    parts = []
+    for name in _PZ_BLOCKS.get(station, []):
+        b = _block(src, name)
+        parts.append(b if b is not None else src)
+    parts.append(_read(_PZ_PROGRAM))          # readClueAnswer / readVerifyAnswer / puzzleText
+    if station == "pz_m1":                   # {{liuqin}} 从补全包的六亲表填
+        parts.append(_read(_PACK / "six-relations-spirits-11.json"))
+    if station == "pz_solve":                # 取象标记和 VOICE 用的是四站那一份
+        nsrc = _read(_PROMPTS)
+        mark = _block(nsrc, "MARK")
+        parts.append(mark if mark is not None else nsrc)
+        parts.append(_read(_FILL))
+    return hashlib.sha256("\0".join(parts).encode("utf-8")).hexdigest()
+
+
+def _code_hash():
+    """出题那一步只由代码和数据决定:引擎、判据、应期、补全包、出题程序。
+    ⚠️ 书在建库 —— 往补全包里加一条判据,这一步必须重跑,不能拿缓存里的旧题给你。"""
+    files = sorted(ROOT.glob("liuyao-*.js")) + [
+        _PZ_PROGRAM, ROOT / "tools" / "lab" / "board.mjs", ROOT / "tools" / "lab" / "puzzle.mjs",
+        ROOT / "functions" / "_lib" / "doctrine" / "criteria.js",
+        ROOT / "functions" / "_lib" / "doctrine" / "timing.js",
+        _RAG / "data.js",
+    ] + (sorted(_PACK.iterdir()) if _PACK.exists() else [])
+    h = hashlib.sha256()
+    for f in files:
+        h.update(str(f.name).encode("utf-8"))
+        h.update(_read(f).encode("utf-8"))
+    return h.hexdigest()
+
+
+def _sections(text):
+    """钉住用的格式:[q1.1] 起一段,下面几行就是那一条的答案。"""
+    out, cur = {}, None
+    for line in (text or "").splitlines():
+        m = re.match(r"^\s*\[(q\d+\.(?:验)?\d+)\]\s*$", line)
+        if m:
+            cur = m.group(1)
+            out[cur] = ""
+            continue
+        if cur:
+            out[cur] += line + "\n"
+    return {k: v.strip() for k, v in out.items()}
+
+
+def _progress(total):
+    # ⚠️ 用到时才 import:build_workflow.py 把 tools/ 放进 sys.path,那时的 `comfy` 是这个目录,
+    #    不是 ComfyUI 的 —— 在模块顶上 import 会让生成图那一步直接炸。
+    try:
+        import comfy.utils  # noqa: WPS433
+        return comfy.utils.ProgressBar(total)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _call_note(r):
+    if r.get("pinned"):
+        return "钉住(没调模型)"
+    if r.get("dry"):
+        return "dry(没调模型)"
+    note = "%s · %dms" % (r.get("model") or "?", r.get("ms", 0))
+    u = r.get("usage") or {}
+    if u:
+        note += " · in %s / out %s" % (u.get("prompt_tokens"), u.get("completion_tokens"))
+    if r.get("finish") and r["finish"] != "stop":
+        note += " · ⚠️ finish=%s(被截断了:调大 max_tokens,或者把「思考」调低)" % r["finish"]
+    return note
+
+
+class BWPuzzleM1:
+    """解谜 M1:读问题。拆成几问、每问的领域和类型,他说的事实各属哪个六亲、属于哪一问。"""
+
+    STATION = "pz_m1"
+    FUNCTION = "go"
+    CATEGORY = CATEGORY + "/解谜"
+    RETURN_TYPES = ("BW_P1", "STRING", "STRING")
+    RETURN_NAMES = ("M1", "原文", "注")
+    DESCRIPTION = "一卦多问要拆:问了几件就写几行 q1= q2=。事实后面的 |q2 让它只落到那一问。"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": dict({"端点": ("BW_CONN",), "问题": ("BW_ASK",)}, **_widgets("", 512)),
+                "optional": dict(_PIN)}
+
+    @classmethod
+    def IS_CHANGED(cls, **kw):
+        return _puzzle_hash(cls.STATION)
+
+    def go(self, 端点, 问题, model, temperature, max_tokens, dry, pin=""):
+        r = _bridge("pz_m1", {"question": 问题["ask"], "pin": pin or "", "dry": bool(dry), "conn": 端点,
+                              "model": model.strip(), "temperature": float(temperature),
+                              "max_tokens": int(max_tokens)})
+        parsed = r.get("parsed") or {}
+        qs = parsed.get("questions") or []
+        note = ["system %d tok · %s" % (r.get("sysTok", 0), _call_note(r)),
+                "拆成 %d 问:%s" % (len(qs), " / ".join("%s(%s,%s)" % (q["ask"], q["db"], q["kind"]) for q in qs) or "(没有)")]
+        facts = parsed.get("facts") or []
+        if facts:
+            note.append("事实:" + ";".join("%s[%s%s]" % (f["text"], f["tag"], "|q%s" % f["q"] if f.get("q") else "")
+                                              for f in facts))
+        if not qs and not r.get("dry"):
+            note.append("⚠️ 没有 q1= 那一行 —— 下一步出不了题")
+        if r.get("dry"):
+            note.append("\n─── system ───\n" + r.get("system", ""))
+        return ({"text": r.get("text", ""), "parsed": parsed}, r.get("text", ""), "\n".join(note))
+
+
+class BWPuzzleBuild:
+    """程序出题。**没有模型。** 起卦、排盘、判据、裁决梯、应期、线索、验现事,全是代码。"""
+
+    FUNCTION = "go"
+    CATEGORY = CATEGORY + "/解谜"
+    RETURN_TYPES = ("BW_PUZ", "STRING")
+    RETURN_NAMES = ("题", "题面")
+    DESCRIPTION = ("每一问出一道题:成立的判据、裁决梯开了的每一步、卦形、(问了时间时)应期,各一条线索;"
+                   "三合/三会成局进验现事。输出的题面就是 SOP 那几步程序各做了什么。")
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "问题": ("BW_ASK",),
+            "M1": ("BW_P1",),
+            "seed": ("INT", {"default": 1, "min": 0, "max": 0xFFFFFFFF, "control_after_generate": True,
+                             "tooltip": "同一个种子 = 同一副盘。调提示词时必须钉住。"}),
+            "date": ("STRING", {"default": "",
+                                "tooltip": "起卦的时刻。留空 = 现在(真起卦就是这样);"
+                                           "填 2026-09-23T12:00:00Z 这样的时刻可以钉住月建日辰。"}),
+        }}
+
+    @classmethod
+    def IS_CHANGED(cls, **kw):
+        # 留空日期就是「今天」—— 过了零点月建日辰会变,缓存里昨天的题不能当今天的给你。
+        today = "" if (kw.get("date") or "").strip() else time.strftime("%Y-%m-%d")
+        return _code_hash() + today
+
+    def go(self, 问题, M1, seed, date):
+        r = _bridge("pz_build", {"seed": int(seed), "gender": 问题.get("gender") or "",
+                                 "date": (date or "").strip(), "m1": M1.get("text", ""),
+                                 "question": 问题["ask"]})
+        return (r, r.get("flow", ""))
+
+
+class _PuzzleLoop:
+    """线索和验现事共用:**一条一条跑**。本地一张卡同时只跑得动一个模型。"""
+
+    FUNCTION = "go"
+    CATEGORY = CATEGORY + "/解谜"
+    STATION = ""
+    ITEMS = ""
+
+    @classmethod
+    def IS_CHANGED(cls, **kw):
+        return _puzzle_hash(cls.STATION)
+
+    def _loop(self, 端点, 题, model, temperature, max_tokens, dry, pin, payload):
+        items = 题.get(self.ITEMS) or []
+        pinned = _sections(pin)
+        bar = _progress(len(items))
+        got, lines, probs = {}, [], []
+        for it in items:
+            key = it["编号"]
+            req = dict(payload(it), pin=pinned.get(key, ""), dry=bool(dry), conn=端点,
+                       model=model.strip(), temperature=float(temperature), max_tokens=int(max_tokens))
+            r = _bridge(self.STATION, req)
+            if r.get("dry"):
+                lines.append("─── [%s] system ───\n%s\n" % (key, r.get("system", "")))
+            else:
+                got[key] = r.get("parsed") or {}
+                lines.append(self._show(key, it, got[key], r))
+                probs += ["[%s] %s" % (key, x) for x in (got[key].get("problems") or [])]
+            if bar is not None:
+                bar.update(1)
+        note = "%d 条,一条一条跑完" % len(items)
+        if pinned:
+            note += " · 钉住 %d 条" % len([k for k in pinned if any(k == it["编号"] for it in items)])
+        if probs:
+            note += "\n⚠️ " + "\n⚠️ ".join(probs)
+        return got, "\n".join(lines) if lines else "(这一卦没有)", note
+
+
+class BWPuzzleClues(_PuzzleLoop):
+    """每条线索一个模型,只写一句:这条判据在他这件事里是什么。**一条一条跑。**"""
+
+    STATION = "pz_clue"
+    ITEMS = "clues"
+    RETURN_TYPES = ("BW_ANS", "STRING", "STRING")
+    RETURN_NAMES = ("线索答案", "原文", "注")
+    DESCRIPTION = ("每条线索只看得到自己那一条。方向照程序标的写;还没指认的那一方写候选,"
+                   "候选只许出自补全包的名单(程序逐个核)。")
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": dict({"端点": ("BW_CONN",), "题": ("BW_PUZ",)}, **_widgets("", 256)),
+                "optional": {"pin": ("STRING", {"multiline": True, "default": "",
+                                                "tooltip": "钉住某几条:[q1.3] 起一段,下面写那一条的答案。"
+                                                           "没钉的照常调模型。"})}}
+
+    def _show(self, key, it, a, r):
+        s = "[%s] %s" % (key, a.get("句") or "(没交)")
+        if a.get("候选"):
+            s += "  候选:" + "、".join(a["候选"])
+        return s + "   ← " + _call_note(r)
+
+    def go(self, 端点, 题, model, temperature, max_tokens, dry, pin=""):
+        return self._loop(端点, 题, model, temperature, max_tokens, dry, pin,
+                          lambda it: {"clue": it["clue"], "q": it["q"]})
+
+
+class BWPuzzleVerify(_PuzzleLoop):
+    """验现事:盘上说「现在」的那一处(三合、三会成局),他自己的话里有没有。**一条一条跑。**"""
+
+    STATION = "pz_verify"
+    ITEMS = "checks"
+    RETURN_TYPES = ("BW_VER", "STRING", "STRING")
+    RETURN_NAMES = ("验现事", "原文", "注")
+    DESCRIPTION = ("只答三样:对上 / 对不上 / 他没说。说「对上」必须把他的原话原样抄出来 —— "
+                   "程序拿他打的字逐字核,抄不出来的按他没说算。永远对上的验现事就是开场白。")
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": dict({"端点": ("BW_CONN",), "题": ("BW_PUZ",)}, **_widgets("", 256)),
+                "optional": {"pin": ("STRING", {"multiline": True, "default": "",
+                                                "tooltip": "钉住:[q1.验1] 起一段,下面写 对照=… 和 他的原话=…"})}}
+
+    def _show(self, key, it, a, r):
+        s = "[%s] %s → %s" % (key, it["item"].get("信号", ""), a.get("对照") or "?")
+        if a.get("原话"):
+            s += "「%s」" % a["原话"]
+        return s + "   ← " + _call_note(r)
+
+    def go(self, 端点, 题, model, temperature, max_tokens, dry, pin=""):
+        words = 题.get("words", "")
+        return self._loop(端点, 题, model, temperature, max_tokens, dry, pin,
+                          lambda it: {"item": it["item"], "words": words})
+
+
+class BWPuzzleSolve:
+    """解谜:拼起来、补细节、斟酌文字、用他的语言写出来。"""
+
+    STATION = "pz_solve"
+    FUNCTION = "go"
+    CATEGORY = CATEGORY + "/解谜"
+    RETURN_TYPES = ("STRING", "STRING", "STRING")
+    RETURN_NAMES = ("解读", "注", "材料")
+    DESCRIPTION = ("拿到的是每一问的题:线索(每条已经有人翻成了他生活里的话)、验现事、打架、谁是谁、"
+                   "他说的事实、细节素材。定死的不许翻。「材料」就是它看到的全部。")
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": dict({"端点": ("BW_CONN",), "题": ("BW_PUZ",), "线索答案": ("BW_ANS",)},
+                                 **_widgets("", 8192)),
+                "optional": dict({"验现事": ("BW_VER", {"tooltip": "不接就是这一卦不做验现事,解读里也不提"})},
+                                 **_PIN)}
+
+    @classmethod
+    def IS_CHANGED(cls, **kw):
+        return _puzzle_hash(cls.STATION)
+
+    def go(self, 端点, 题, 线索答案, model, temperature, max_tokens, dry, 验现事=None, pin=""):
+        parsed = 题.get("parsed") or {}
+        r = _bridge("pz_solve", {"question": 题.get("words", ""), "lang": parsed.get("lang") or "Chinese",
+                                 "hurt": parsed.get("hurt") or "0", "puzzles": 题.get("puzzles") or [],
+                                 "answers": 线索答案 or {}, "verify": 验现事 or {},
+                                 "pin": pin or "", "dry": bool(dry), "conn": 端点, "model": model.strip(),
+                                 "temperature": float(temperature), "max_tokens": int(max_tokens)})
+        note = "system %d tok · %s" % (r.get("sysTok", 0), _call_note(r))
+        if r.get("dry"):
+            note += "\n\n─── system ───\n" + r.get("system", "")
+        return (r.get("text", ""), note, r.get("material", ""))
 
 
 # ── 看 ──────────────────────────────────────────────────────────────────────
@@ -592,6 +894,11 @@ NODE_CLASS_MAPPINGS = {
     "BWCriteria": BWCriteria,
     "BWTiming": BWTiming,
     "BWShow": BWShow,
+    "BWPuzzleM1": BWPuzzleM1,
+    "BWPuzzleBuild": BWPuzzleBuild,
+    "BWPuzzleClues": BWPuzzleClues,
+    "BWPuzzleVerify": BWPuzzleVerify,
+    "BWPuzzleSolve": BWPuzzleSolve,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -606,4 +913,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "BWCriteria": "BW 判据(无模型)",
     "BWTiming": "BW 应期(无模型)",
     "BWShow": "BW 看",
+    "BWPuzzleM1": "BW 解谜 M1 读问题",
+    "BWPuzzleBuild": "BW 解谜 出题(无模型)",
+    "BWPuzzleClues": "BW 解谜 线索(逐条跑)",
+    "BWPuzzleVerify": "BW 解谜 验现事(逐条跑)",
+    "BWPuzzleSolve": "BW 解谜 解谜",
 }

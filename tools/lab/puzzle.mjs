@@ -14,10 +14,14 @@
         [q1.1]
         这一卦里=<一句>
         候选=<A>|<B>        (只有「还没指认」的那一方才写)
+        [q1.验1]            (验现事,只有盘上有三合/三会局时才有)
+        对照=<对上|对不上|他没说>
+        他的原话=<原样抄>
 
    ② 接模型真跑:
         … --base http://localhost:11434/v1 --small qwen2.5:7b --big qwen2.5:32b
-      M1 和线索用 --small,解谜用 --big。线索是**同时发**的(Promise.all)。
+      M1、线索、验现事用 --small,解谜用 --big。线索和验现事默认**同时发**(Promise.all);
+      本地一张卡跑不动并发时加 --serial,一条一条跑 —— ComfyUI 那边就是这么跑的。
 
    --out 给了就把每一段全文写成文件:m1.txt、clues/q1.1.txt …、solve.txt、flow.txt。
 */
@@ -28,8 +32,8 @@ import { Local } from "./client.mjs";
 import { loadCriteria, loadSymbols } from "../../functions/_lib/doctrine/criteria-rules.mjs";
 import { RAG } from "../../functions/_lib/doctrine/rag/data.js";
 import { DB_DOMAINS } from "../../functions/_lib/doctrine/rag/retrieve.js";
-import { buildPuzzle, readClueAnswer, puzzleText } from "../../functions/_lib/puzzle/program.js";
-import { fillM1, fillClue, fillSolve, parseM1P } from "../../functions/_lib/puzzle/prompts.js";
+import { buildPuzzle, readClueAnswer, readVerifyAnswer, puzzleText } from "../../functions/_lib/puzzle/program.js";
+import { fillM1, fillClue, fillVerify, fillSolve, parseM1P } from "../../functions/_lib/puzzle/prompts.js";
 
 function args(argv) {
   const a = {};
@@ -73,7 +77,7 @@ export function puzzlesFor({ seed, gender, date, m1 }) {
   return { parsed, puzzles, symbols };
 }
 
-function sopSteps(m, p) {
+export function sopSteps(m, p) {
   const t = p.摆桌子;
   const L = m.csv.lines.trim().split("\n").map((r) => r.split(","));
   const H = L[0];
@@ -103,7 +107,7 @@ function readAnswers(file) {
   if (!file) return out;
   let cur = null;
   for (const raw of fs.readFileSync(file, "utf8").split(/\r?\n/)) {
-    const m = raw.match(/^\s*\[(q\d+\.\d+)\]\s*$/);
+    const m = raw.match(/^\s*\[(q\d+\.(?:验)?\d+)\]\s*$/);
     if (m) { cur = m[1]; out[cur] = ""; continue; }
     if (cur) out[cur] += raw + "\n";
   }
@@ -155,7 +159,10 @@ async function main() {
         + (f.胜 ? "取" + f.胜 : "打平")).join(";"));
     }
     say("  现实  " + (p.现实依据.map((f) => "「" + f.事实 + "」→ " + f.落点).join(";") || "他没说事实"));
-    say("  线索  " + p.线索.length + " 条 → " + p.线索.length + " 个模型同时跑");
+    say("  线索  " + p.线索.length + " 条 → " + p.线索.length + " 个模型" + (a.serial ? "一条一条跑" : "同时跑"));
+    if ((p.验现事 || []).length) {
+      say("  验现事 " + p.验现事.map((c) => "[" + c.编号 + "] " + c.盘上).join(";"));
+    }
     p.线索.forEach((c) => {
       say("    [" + c.编号 + "] " + c.类 + "·" + c.判 + " —— " + (c.指向 ? c.指向.向 : "不标")
         + (c.候选 ? "(未指认,要写候选)" : ""));
@@ -163,19 +170,28 @@ async function main() {
     });
   }
 
-  /* ── 线索(并联)── */
+  /* ── 线索和验现事(并联;--serial 时一条一条跑)── */
   let answers = {};
+  const verify = {};
   const raw = readAnswers(a.answers);
   const all = puzzles.flatMap(({ p }) => p.线索.map((c) => ({ c, q: p.问 })));
+  const checks = puzzles.flatMap(({ p }) => (p.验现事 || []).map((c) => ({ c, q: p.问 })));
+  checks.forEach(({ c }) => write("clues/" + c.编号 + ".txt", fillVerify(c, question)));
   if (client && !a.answers) {
-    const got = await Promise.all(all.map(({ c, q }) =>
+    const jobs = all.map(({ c, q }) => () =>
       client.chat({ model: String(a.small), system: fillClue(c, q), user: "写。", temperature: 0, max_tokens: 200 })
-        .then((r) => [c.编号, r.text]).catch((e) => [c.编号, ""])));
+        .then((r) => [c.编号, r.text]).catch(() => [c.编号, ""]))
+      .concat(checks.map(({ c }) => () =>
+        client.chat({ model: String(a.small), system: fillVerify(c, question), user: "对照。", temperature: 0, max_tokens: 200 })
+          .then((r) => [c.编号, r.text]).catch(() => [c.编号, ""])));
+    let got = [];
+    if (a.serial) { for (const j of jobs) got.push(await j()); }
+    else got = await Promise.all(jobs.map((j) => j()));
     got.forEach(([id, text]) => { raw[id] = text; });
   }
   if (Object.keys(raw).length) {
     say("");
-    say("【线索 · 模型 × " + all.length + ",同时跑】每个只看得到自己那一条");
+    say("【线索 · 模型 × " + all.length + "," + (a.serial ? "一条一条跑" : "同时跑") + "】每个只看得到自己那一条");
     for (const { c } of all) {
       const r = readClueAnswer(c, raw[c.编号]);
       answers[c.编号] = r;
@@ -184,8 +200,19 @@ async function main() {
     }
   }
 
+  if (checks.length && Object.keys(raw).length) {
+    say("");
+    say("【验现事 · 模型 × " + checks.length + "】只做对照:盘上说「现在」的那一处,他的原话里有没有");
+    for (const { c } of checks) {
+      const r = readVerifyAnswer(c, raw[c.编号], question);
+      verify[c.编号] = r;
+      say("  [" + c.编号 + "] " + c.信号 + " → " + r.对照 + (r.原话 ? "「" + r.原话 + "」" : "")
+        + (r.problems.length ? "  问题:" + r.problems.join(";") : ""));
+    }
+  }
+
   /* ── 解谜 ── */
-  const text = puzzles.map(({ p }) => puzzleText(p, answers)).join("\n\n");
+  const text = puzzles.map(({ p }) => puzzleText(p, answers, verify)).join("\n\n");
   const solve = fillSolve({ question, lang: parsed.lang, hurt: parsed.hurt, puzzlesText: text });
   write("solve.txt", solve);
   say("");
