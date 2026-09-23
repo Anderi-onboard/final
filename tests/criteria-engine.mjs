@@ -20,10 +20,19 @@
    ⑤ **算不出来被当成不成立。** 九条判据今天判不了(长生十二宫不在仓库、
       「化散」没给判法、「近事」来自问题不是盘)。把它们读成「不成立」,
       「忌神衰而又绝」永远不亮,而拿到的是一个看起来完全正常的相反结论。
+
+   ⑥ **判据说的那一爻根本不是那回事。** 进神.1、.2 的表达式漏了「化进神」,
+      于是申化申、戌化戌(原地没动)也判成进神:400 副盘 292 次成立,真是化进神的 12 次。
+      逐爻判拦不住这个 —— 它保证「说的是哪一爻」,不保证「那一爻真是那回事」。
+
+   ⑦ **三墓绑错了爻。** 原文「只验世爻入墓有三」,包里写成了用神。
+
+   ⑧ **能与不能打架时,程序按包里的规矩先裁。** 裁是单独的 `resolve()`,
+      `judge()` 仍然两边照报(上面 ② 钉着);裁法写在 pack README「三」第 2 条。
 */
 import assert from "node:assert/strict";
-import { material } from "../tools/lab/board.mjs";
-import { judge, format } from "../functions/_lib/doctrine/criteria.js";
+import { material, spreadDate } from "../tools/lab/board.mjs";
+import { judge, format, resolve } from "../functions/_lib/doctrine/criteria.js";
 import { loadCriteria, loadTiming } from "../functions/_lib/doctrine/criteria-rules.mjs";
 
 const N = 200;
@@ -36,7 +45,8 @@ assert.ok(loadTiming().every((r) => !r.机器值.规则表达式),
   "应期那 10 条不该有 规则表达式");
 
 const boards = [];
-for (let s = 1; s <= N; s++) boards.push(material({ seed: s, db: "婚恋", gender: "m" }));
+/* 一天一副:不钉日期,两百副盘全是今天,覆盖跟着日历走(见 board.mjs 的 spreadDate)。 */
+for (let s = 1; s <= N; s++) boards.push(material({ seed: s, db: "婚恋", gender: "m", date: spreadDate(s) }));
 
 /* ── ① 三态,而且「算不出来」必须带原因 ─────────────────────────────── */
 let on = 0, off = 0, na = 0;
@@ -77,14 +87,15 @@ assert.ok(bothSides < N,
 
 /* ── ③ 逐爻判:同一爻上不许出现互斥的两条 ───────────────────────────── */
 /* 进神.1「动旺相而化旺相」和 进神.2「动休囚而化休囚」说的是同一爻的两种相反状态。
-   逐爻判时它们在同一爻上不可能同时成立;按「任一」判就会。 */
+   逐爻判时它们在同一爻上不可能同时成立;按「任一」判就会。
+   ⚠️ 进神补上「化进神」之后,两条同时成立在真盘上很少见(真的化进神本来就少),
+      靠抽样撞不够次数。所以下面**造一副**:两个化进神的动爻,一旺一休,
+      另加一个旺而化旺、却没有化进神的动爻。 */
 const EXCLUSIVE = [["SOP-3.进神.1", "SOP-3.进神.2"], ["SOP-3.退神.2", "SOP-3.退神.3"]];
-let checked = 0;
 for (const b of boards) {
   for (const [x, y] of EXCLUSIVE) {
     const a = b.criteria.find((v) => v.id === x), c = b.criteria.find((v) => v.id === y);
     if (a.成立 !== true || c.成立 !== true) continue;
-    checked++;
     const shared = a.爻.filter((n) => c.爻.includes(n));
     assert.deepEqual(shared, [],
       `${x} 和 ${y} 在第 ${shared.join("、")} 爻上同时成立 —— 它们是同一爻的相反状态。\n`
@@ -98,7 +109,134 @@ for (const b of boards) {
       `${v.id} 成立却没有爻号 —— 「这盘有进神」和「第5爻是进神」不是同一句话`);
   }
 }
-assert.ok(checked >= 10, `互斥对只撞上 ${checked} 次 —— 这条在空转`);
+
+/* 改 lines 表里某几爻的几格。只动给出的格,其余原样。 */
+function patch(tables, edits) {
+  const rows = tables.lines.split("\n");
+  const h = rows[0].split(",");
+  const out = rows.map((r, i) => {
+    if (i === 0 || !r) return r;
+    const c = r.split(",");
+    const e = edits[Number(c[0])];
+    if (e) for (const k of Object.keys(e)) {
+      const ci = h.indexOf(k);
+      assert.ok(ci >= 0, `造盘时写了一个不存在的列「${k}」`);
+      c[ci] = e[k];
+    }
+    return c.join(",");
+  }).join("\n");
+  return { ...tables, lines: out };
+}
+const pick = (vs, id) => vs.find((v) => v.id === id);
+{
+  const base = boards[0].csv;
+  const moving = (wang, huaWang, kind) =>
+    ({ 发动: "是", 旺衰: wang, 化出: "妻财子水", 化出旺衰: huaWang, 化出关系: kind });
+  const vs = judge(rules, patch(base, {
+    2: moving("旺", "旺", "化进神"),
+    3: moving("休", "休", "化进神"),
+    4: moving("旺", "旺", "")          // 旺而化旺,但没有化进神 —— 伏吟、化同支都是这样
+  }));
+  assert.deepEqual(pick(vs, "SOP-3.进神.1").爻, [2],
+    `进神.1 应只在第 2 爻成立,实际 ${pick(vs, "SOP-3.进神.1").爻.join("、")}。\n`
+    + "  → 第 4 爻旺而化旺却不是化进神。表达式没要求「化进神」时,它也会被判成进神");
+  assert.deepEqual(pick(vs, "SOP-3.进神.2").爻, [3], "进神.2 应只在第 3 爻成立");
+}
+
+/* ── ⑥ 进神、退神:判出来的那一爻必须真是化进神 / 化退神 ─────────────── */
+let jinTui = 0;
+for (const b of boards) {
+  const L = b.csv.lines.trim().split("\n").map((r) => r.split(","));
+  const kindCol = L[0].indexOf("化出关系");
+  for (const v of b.criteria) {
+    if (v.成立 !== true) continue;
+    const want = v.id.includes("进神") ? "化进神" : (v.id.includes("退神") ? "化退神" : null);
+    if (!want) continue;
+    for (const n of v.爻) {
+      jinTui++;
+      assert.ok(String(L[n][kindCol]).includes(want),
+        `${v.id} 说第 ${n} 爻成立,而那一爻的化出关系是「${L[n][kindCol]}」,不是${want}。\n`
+        + "  → 表达式漏了" + want + "这个条件。原来进神.1、.2 就是这样:"
+        + "400 副盘 292 次成立,真是化进神的 12 次");
+    }
+  }
+}
+/* 表达式本身:进神八条都要带自己的那个条件。真盘上化进神少,抽样可能一次都撞不上,
+   所以数据这一关单独钉。 */
+for (const r of rules) {
+  const e = r.机器值.规则表达式;
+  if (r.id.includes("进神")) assert.ok(/\bADVANCE_SPIRIT\b/.test(e), `${r.id} 的表达式没有要求化进神:${e}`);
+  if (r.id.includes("退神")) assert.ok(/\bRETREAT_SPIRIT\b/.test(e), `${r.id} 的表达式没有要求化退神:${e}`);
+}
+
+/* ── ⑦ 三墓绑世爻 ───────────────────────────────────────────────────── */
+{
+  const tomb = rules.filter((r) => r.id.startsWith("SOP-3.三墓."));
+  assert.equal(tomb.length, 5, `三墓应有 5 条,读到 ${tomb.length}`);
+  for (const r of tomb) {
+    assert.equal(r.机器值.主体, "世爻",
+      `${r.id} 的主体是「${r.机器值.主体}」。原文是「只验世爻入墓有三」,整章说的都是世爻`);
+    assert.ok(!/\bTARGET_/.test(r.机器值.规则表达式), `${r.id} 的表达式还在读用神:${r.机器值.规则表达式}`);
+  }
+  for (const b of boards) {
+    const L = b.csv.lines.trim().split("\n").map((r) => r.split(","));
+    const sy = L[0].indexOf("世应");
+    for (const v of b.criteria.filter((x) => x.id.startsWith("SOP-3.三墓.") && x.成立 === true)) {
+      for (const n of v.爻) assert.equal(L[n][sy], "世", `${v.id} 判在第 ${n} 爻,那一爻不是世爻`);
+    }
+  }
+  /* 造一副:世爻静、另一爻动而化墓 —— 化墓不许成立;再让世爻动而化墓 —— 必须成立。 */
+  const base = boards[0].csv;
+  const L = base.lines.trim().split("\n").map((r) => r.split(","));
+  const sy = L[0].indexOf("世应");
+  const shi = L.slice(1).find((r) => r[sy] === "世");
+  const other = L.slice(1).find((r) => r[sy] !== "世");
+  const a = judge(rules, patch(base, {
+    [shi[0]]: { 发动: "否", 动化入墓: "否" },
+    [other[0]]: { 发动: "是", 动化入墓: "是" }
+  }));
+  assert.equal(pick(a, "SOP-3.三墓.化墓").成立, false,
+    "世爻没动,别的爻动而化墓,「只验世爻入墓」的化墓却成立了 —— 主体没有绑到世爻上");
+  const c = judge(rules, patch(base, { [shi[0]]: { 发动: "是", 动化入墓: "是" } }));
+  assert.deepEqual(pick(c, "SOP-3.三墓.化墓").爻, [Number(shi[0])], "世爻动而化墓,化墓应当在世爻上成立");
+  /* 破墓是**自己的**墓被冲破。别的爻破墓、世爻根本没入墓,不许算世爻出墓。
+     原来读的是整张表,主体一爻没入墓也照样成立。 */
+  const d = judge(rules, patch(base, {
+    [shi[0]]: { 入墓: "否", 破墓: "否" },
+    [other[0]]: { 入墓: "是", 破墓: "日辰冲" }
+  }));
+  assert.equal(pick(d, "SOP-3.三墓.破墓").成立, false,
+    "别的爻破墓,世爻没入墓,三墓.破墓却成立了 —— 它在读整张表,不是读世爻自己的墓");
+}
+
+/* ── ⑧ 能与不能打架:取条件更具体的一条,并记冲突 ───────────────────── */
+{
+  /* seed 1、2026-09-23 那一副(日辰庚子、月建酉):忌神第 3 爻卯木,
+     能克.1 靠一个条件(日辰子生它),不能克.1(休囚且不动)、.2(不动且月破)各两个。取不能克。
+     ⚠️ 日期钉死:这是回复里拿来举例的那一副,换一天就是另一副盘。 */
+  const one = material({ seed: 1, db: "婚恋", gender: "m", date: new Date("2026-09-23T12:00:00Z") });
+  const vs = one.criteria.map((v) => ({ ...v }));
+  const fights = resolve(vs);
+  const f = fights.find((x) => x.主体 === "忌神" && x.爻 === 3);
+  assert.ok(f, "seed 1 忌神第 3 爻能克、不能克同时成立,resolve 却没记这一处冲突");
+  assert.equal(f.胜, "不能克", `忌神第 3 爻应取不能克(2 个条件对 1 个),实际取「${f.胜}」`);
+  assert.deepEqual(f.败者, ["SOP-3.忌神.能克.1"]);
+  assert.ok(pick(vs, "SOP-3.忌神.能克.1").成立 === true && pick(vs, "SOP-3.忌神.能克.1").被裁,
+    "输掉的那条不许删:它要带着「被裁」留在材料里 —— 记冲突,冲突本身也是材料");
+  /* 调两次不许记两遍 */
+  resolve(vs);
+  assert.equal(pick(vs, "SOP-3.忌神.能克.1").被裁.length, 1, "resolve 调两次,被裁记了两遍");
+  /* 打平就不裁。抽样里要找得到一处打平,否则「一样多就交给解谜」这条没测到。 */
+  let ties = 0, decided = 0;
+  for (const b of boards) {
+    for (const x of resolve(b.criteria.map((v) => ({ ...v })))) {
+      if (x.胜) decided++;
+      else { ties++; assert.deepEqual(x.败者, [], "打平却有败者"); }
+    }
+  }
+  assert.ok(decided > 20 && ties > 0,
+    `裁了 ${decided} 处、打平 ${ties} 处 —— 两种都要撞得上,这条才不是空转`);
+}
 
 /* ── ④ 引用必须指向真实存在、而且值对得上的格 ───────────────────────── */
 const parse = (csv) => {
@@ -106,7 +244,7 @@ const parse = (csv) => {
   return { header: rows[0], body: rows.slice(1) };
 };
 let cited = 0;
-for (const b of boards.slice(0, 40)) {
+for (const b of boards.slice(0, 80)) {   // 40 副在进神修好后只剩 361 条引用,不够 400 的防空转线
   const L = parse(b.csv.lines);
   for (const v of b.criteria) {
     if (v.成立 !== true) continue;
@@ -181,5 +319,5 @@ assert.ok(cited > 400, `只查了 ${cited} 条引用 —— 这条在空转`);
 }
 
 console.log(`ok   criteria-engine — ${N} 副盘 × 36 条:成立 ${on} · 不成立 ${off} · `
-  + `判不了 ${na}(${naIds.size} 条缺原子),正反同时成立 ${bothSides}/${N}(这是设计),`
-  + `逐爻互斥 ${checked} 次全对,${cited} 条引用格格对得上`);
+  + `判不了 ${na}(${naIds.size} 条缺原子),正反同时成立 ${bothSides}/${N}(judge 照报,resolve 另裁),`
+  + `进退神 ${jinTui} 爻次全是真化进退,三墓只绑世爻,${cited} 条引用格格对得上`);

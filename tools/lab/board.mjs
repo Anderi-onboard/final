@@ -12,7 +12,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { judge } from "../../functions/_lib/doctrine/criteria.js";
+import { judge, resolve } from "../../functions/_lib/doctrine/criteria.js";
 import { timing } from "../../functions/_lib/doctrine/timing.js";
 import { loadCriteria, loadTiming } from "../../functions/_lib/doctrine/criteria-rules.mjs";
 
@@ -44,6 +44,15 @@ export function engine() {
   return win;
 }
 
+/* 扫盘用的日期:第 s 副盘落在基准日之后第 s 天(正午 UTC,避开跨日)。
+   ⚠️⚠️ **不给日期,两百副盘全是同一天** —— 日辰、旬空、月建全一样,
+      于是「冲空则实」这类只在某些日子才可能的格,在有的日子里一副盘都亮不了,
+      契约就跟着日历红一天绿一天(2026-09-23 board-csv 就是这么红的)。
+      一天一副,两百副盘走过三轮多六十甲子,覆盖不再看今天是哪天。 */
+export function spreadDate(seed) {
+  return new Date(Date.UTC(2026, 0, 1, 12) + (Number(seed) || 0) * 86400000);
+}
+
 /* 三枚硬币摇六次。6 老阴 · 7 少阳 · 8 少阴 · 9 老阳 —— 6 和 9 是动爻。 */
 export function toss(seed) {
   const rnd = seed === "random" ? Math.random : mulberry32(Number(seed) || 1);
@@ -59,11 +68,13 @@ export function toss(seed) {
 /* 一次投掷 → 四节点要的全部材料。
    ⚠️ 这里**不调模型**。用神那一步需要 M1 的 `db`,所以它是入参:
       调试台先跑 M1 拿到 db,再回来调这个函数。顺序就是管线的顺序。 */
-export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
+export function material({ seed = 1, db = "", gender = "", spec = null, date = null } = {}) {
   const win = engine();
   const s = spec || toss(seed);
   const board = win.BWLiuYao.computeBoard({
     lines: s.lines, changeIdx: s.changeIdx, method: "sortis",
+    /* 不给就是今天 —— 真起卦就是这样。扫很多副盘的契约要给,见 `spreadDate`。 */
+    ...(date ? { date } : {}),
     /* 卦名由 casting-figure.js 的 BWFigure 供给,引擎自己不起名
        (`input.name || null`)。调试台不画图,所以按上下卦自己查一下。 */
     name: null, transformedName: null
@@ -74,6 +85,10 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
   const F = win.BWFeatures.of(board, roles, subject);
   const rel = win.BWRelations.compute(board);
   const csv = win.BWCsv.tables(board, rel, roles, subject);
+  const criteria = judge(loadCriteria(), csv);
+  /* 能与不能同一爻上打架时,按补全包的规矩取条件更具体的一条。
+     只加标记不删条目 —— `criteria` 里输掉的那条带着 `被裁` 留着。 */
+  const fights = resolve(criteria);
   return {
     spec: s,
     board,
@@ -90,7 +105,8 @@ export function material({ seed = 1, db = "", gender = "", spec = null } = {}) {
     csv,
     /* 判据求值。⚠️ **它只拿到 `csv`,拿不到 `board`/`rel`** —— 四张表够不够用,
        只有在求值器除了它什么都看不见的时候才证明得了。 */
-    criteria: judge(loadCriteria(), csv),
+    criteria,
+    fights,
     /* 应期。⚠️ 它拿的是**盘**,不是四张表 —— 判据算的是「某一格等于什么」,
        应期算的是地支之间的关系(本支的冲是哪个支),那不是一个格。
        硬塞进文本表再解析回来,只多一层能出错的解析。 */

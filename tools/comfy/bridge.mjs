@@ -127,7 +127,8 @@ const CMD = {
          求值器除了这四张表什么都看不见,这是「表够不够用」唯一能证明的形式。 */
       csv: m.csv,
       criteria: m.criteria,
-      criteriaText: criteriaText(m.criteria),
+      fights: m.fights,
+      criteriaText: criteriaText(m.criteria, m.fights),
       timing: m.timing,
       timingText: timingText(m.timing),
       verdict,

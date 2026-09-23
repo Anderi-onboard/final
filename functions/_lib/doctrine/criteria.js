@@ -11,8 +11,12 @@
 
    一副盘上忌神休囚又不动,同时日辰生它 —— 两条都成立。书上这两条是有先后的
    (得了日生就不算休囚不动),**而那个先后在 46 条里没有任何一个字段记着**。
-   所以真要在这里输出一个总的真假,30% 的盘上那是掷硬币,
-   而且**掷完看不出来是掷的**。裁决交给模型,依据由这里给全。
+   所以 `judge()` 仍然两边照报,不输出总的真假。
+
+   ⭐ 但补全包给了**裁法**:同一关系命中能与不能时,取条件更具体者并记冲突
+   (pack README「三」第 2 条)。那一步是单独的 `resolve()`,只加标记不删条目 ——
+   `judge()` 报事实,`resolve()` 按包里的规矩裁,两件事分开,各自能被单独质疑。
+   2026-09-23 之前这里写的是「裁决交给模型」,那是没读到包里这一行。
 
    ⭐⭐ **只许看 CSV,不许碰 relations。** 四张表够不够用,只有在求值器
    除了它什么都看不见的时候才证明得了。伸手去拿 `rel.state[i]` 能少写几行,
@@ -33,6 +37,12 @@
    说的是「第 5 爻是进神.1」而不是「这盘有进神.1」。
    ⭐ 这同时把量词那个没写的字段消掉了:逐爻判,就没有「任一还是全部」可选。
       引用别的角色时仍是「任一」(「有没有一个忌神在动」),那本来就是任一。
+
+   ⚠️⚠️ **上面那个例子本身是错的,而逐爻那一关没拦住它。** 第 5 爻申化申、第 6 爻
+   戌化戌,原地没动,根本不是进神 —— 进神.1、.2 的表达式漏了「化进神」这个条件
+   (依赖事实里明明写着),只比动变旺衰。400 副盘实测:292 次成立,
+   那一爻真是化进神的 12 次。2026-09-23 在包里补上了(见 pack README)。
+   **逐爻判保证了「说的是哪一爻」,保证不了「那一爻真是那回事」** —— 后者要看表达式本身。
 */
 
 /* ── CSV → 行对象 ──────────────────────────────────────────────────── */
@@ -55,8 +65,12 @@ var STRONG = { '旺': 1, '相': 1 };
 var WEAK = { '休': 1, '囚': 1, '死': 1 };
 
 /* 角色前缀 → CSV 的 `角色` 列。`MOVING_LINE`/`TRANSFORMED_LINE` 不是角色,
-   是按状态选行,所以在下面单独处理。 */
-var ROLE = { ORIGIN: '原神', TABOO: '忌神', TARGET: '用神', ENEMY: '仇神' };
+   是按状态选行,所以在下面单独处理。
+   ⚠️ `WORLD` 不是角色,读的是 `世应` 列。三墓那五条原文说的是「只验世爻入墓有三」,
+      包里原来写成用神,2026-09-23 按原文改回世爻(见 pack README「落地后改过的」)。 */
+var ROLE = { ORIGIN: '原神', TABOO: '忌神', TARGET: '用神', ENEMY: '仇神', WORLD: '世' };
+/* `机器值.主体` → 上表里的行选择器。 */
+var SUBJECT_ROWS = { '元神': '原神', '忌神': '忌神', '用神': '用神', '世爻': '世' };
 
 /* 后缀 → 一格。`col` 是 CSV 的列名(和 `liuyao-csv.js` 同名,不另起),
    `ok` 判那一格的值。 */
@@ -93,10 +107,10 @@ var BLOCKED = {
   TARGET_OVERSTRONG:        { 名: '太旺', 因: '旺衰仅休囚旺死相五档，无此级' },
   TRANSFORM_SCATTER:        { 名: '化散', 因: '原文与化绝化克化破并列，未给判法' },
   NEAR_TERM:                { 名: '近事', 因: '属问题，不属卦盘，须由 M1 提供' },
-  TARGET_FOLLOWS_GHOST_INTO_DAY_TOMB:
-    { 名: '随鬼入日墓', 因: '原文未给判法。另：原文作世爻，本条作用神，二者常非同爻' },
-  TARGET_FOLLOWS_GHOST_INTO_MOVING_TOMB:
-    { 名: '随鬼入动墓', 因: '原文未给判法。另：原文作世爻，本条作用神，二者常非同爻' }
+  WORLD_FOLLOWS_GHOST_INTO_DAY_TOMB:
+    { 名: '世爻随鬼入日墓', 因: '原文未给「随鬼」的判法' },
+  WORLD_FOLLOWS_GHOST_INTO_MOVING_TOMB:
+    { 名: '世爻随鬼入动墓', 因: '原文未给「随鬼」的判法' }
 };
 
 /* ── 求值器 ────────────────────────────────────────────────────────── */
@@ -104,8 +118,9 @@ var BLOCKED = {
    引用别的角色时仍然看那个角色的全部行 —— 「有没有一个忌神在动」本来就是任一。 */
 function makeAtom(tables, cite, self, subject) {
   var L = parse(tables.lines), E = parse(tables.edges), C = parse(tables.clock);
-  var SUBJ_CN = { '元神': '原神', '忌神': '忌神', '用神': '用神' }[subject] || null;
+  var SUBJ_CN = SUBJECT_ROWS[subject] || null;
   var all = function (cn) {
+    if (cn === '世') return L.filter(function (r) { return r['世应'] === '世'; });
     return L.filter(function (r) { return r['角色'] === cn; });
   };
   var rowsOf = function (cn) {
@@ -259,9 +274,11 @@ function makeAtom(tables, cite, self, subject) {
         });
         return e2;
       }
+      /* 破墓是**这一爻自己的**墓被冲破。原来读的是整张表(任一爻破墓就算),
+         于是三墓.破墓 在主体一爻都没入墓时照样成立。绑了主体就只看主体那一爻。 */
       case 'TOMB_OPENED_BY_CLASH':
       case 'TOMB_CLASHED_OR_BROKEN_BY_DAY_MONTH_OR_MOVING_LINE':
-        return anyRow(name, L, '破墓', function (v) { return v !== '否' && v !== ''; });
+        return anyRow(name, self ? [self] : L, '破墓', function (v) { return v !== '否' && v !== ''; });
       default: break;
     }
 
@@ -284,36 +301,45 @@ function makeAtom(tables, cite, self, subject) {
 function candidates(tables, subject) {
   var L = parse(tables.lines);
   if (subject === '动爻') return L.filter(function (r) { return r['发动'] === '是'; });
-  var cn = { '元神': '原神', '忌神': '忌神', '用神': '用神' }[subject];
+  if (subject === '世爻') return L.filter(function (r) { return r['世应'] === '世'; });
+  var cn = SUBJECT_ROWS[subject];
   if (cn) return L.filter(function (r) { return r['角色'] === cn; });
-  return [null];        // 没有主体的(三墓那几条)整盘判一次
+  return [null];        // 没有主体的,整盘判一次
 }
 
 /* 表达式:AND / OR / XOR / 括号。没有 NOT —— 36 条里一个都没有。
-   MISS 会向上传染:一个原子算不出来,整条判据就是「算不出来」,不是「不成立」。 */
+   MISS 会向上传染:一个原子算不出来,整条判据就是「算不出来」,不是「不成立」。
+
+   ⭐ 同时算出**条件数**:成立的那条路上,最具体的一组用了几个条件。
+      AND 相加,OR 取成立的那几支里最大的,XOR 取成立的那一支。
+      补全包的规矩是「同一关系命中能与不能时,取条件更具体者并记冲突」
+      (pack README「三」第 2 条),`resolve()` 就拿这个数去比。 */
 function run(expr, atom, subject) {
   var toks = String(expr).replace(/([()])/g, ' $1 ').split(/\s+/).filter(Boolean);
   var i = 0, missing = [];
   function primary() {
     if (toks[i] === '(') { i++; var v = walk(); i++; return v; }
     var name = toks[i++], v2 = atom(name, subject);
-    if (v2 === MISS && missing.indexOf(name) < 0) missing.push(name);
-    return v2;
+    if (v2 === MISS) {
+      if (missing.indexOf(name) < 0) missing.push(name);
+      return { v: MISS, n: 0 };
+    }
+    return { v: !!v2, n: v2 ? 1 : 0 };
   }
   function walk() {
     var acc = primary();
     while (i < toks.length && toks[i] !== ')') {
-      var op = toks[i++], rhs = primary();
-      if (acc === MISS || rhs === MISS) acc = MISS;
-      else if (op === 'AND') acc = acc && rhs;
-      else if (op === 'OR') acc = acc || rhs;
-      else if (op === 'XOR') acc = acc !== rhs;
-      else acc = MISS;
+      var op = toks[i++], rhs = primary(), a = acc, b = rhs;
+      if (a.v === MISS || b.v === MISS) acc = { v: MISS, n: 0 };
+      else if (op === 'AND') acc = { v: a.v && b.v, n: a.v && b.v ? a.n + b.n : 0 };
+      else if (op === 'OR') acc = { v: a.v || b.v, n: Math.max(a.v ? a.n : 0, b.v ? b.n : 0) };
+      else if (op === 'XOR') acc = { v: a.v !== b.v, n: a.v !== b.v ? (a.v ? a.n : b.n) : 0 };
+      else acc = { v: MISS, n: 0 };
     }
     return acc;
   }
   var out = walk();
-  return { value: out === MISS ? null : out, missing: missing };
+  return { value: out.v === MISS ? null : out.v, conditions: out.v === true ? out.n : 0, missing: missing };
 }
 
 /* ── 对外 ──────────────────────────────────────────────────────────── */
@@ -324,7 +350,7 @@ export function judge(rules, tables) {
   return rules.map(function (r) {
     var m = r.机器值 || {};
     var cands = candidates(tables, m.主体);
-    var 爻 = [], 引用 = [], missing = [], fired = false, anyMiss = false;
+    var 爻 = [], 引用 = [], missing = [], fired = false, anyMiss = false, 条件数 = {};
     cands.forEach(function (self) {
       var cells = [];
       var atom = makeAtom(tables, function (c) { cells.push(c); }, self, m.主体);
@@ -336,6 +362,7 @@ export function judge(rules, tables) {
       }
       if (!res.value) return;
       fired = true;
+      条件数[self ? Number(self['爻']) : 0] = res.conditions;
       if (self) 爻.push(Number(self['爻']));
       /* 只留成立的那一爻读过的格。不成立的爻读过什么,不是证据。 */
       cells.forEach(function (c) { 引用.push(c); });
@@ -355,21 +382,74 @@ export function judge(rules, tables) {
         var b = BLOCKED[a] || { 名: a, 因: '求值器无此原子条目' };
         return { 原子: a, 名: b.名, 为什么: b.因 };
       }) : [],
-      引用: 引用
+      引用: 引用,
+      条件数: 条件数                          // 爻 → 成立那条路上用了几个条件
     };
   });
+}
+
+/* ── 能与不能同时成立时,程序先裁 ─────────────────────────────────────
+   补全包的规矩(pack README「三」第 2 条、SOP 文件第三步末尾):
+   **同一关系命中「能」与「不能」时,取条件更具体者,并记冲突。**
+
+   「同一关系」按**同一主体、同一爻**算 —— 判据是逐爻判的,第 2 爻的能生和
+   第 4 爻的不能生不是一回事。「更具体」按条件数比(见 `run()`)。
+   一样多就不裁,原样交给解谜的人,并写明是打平。
+
+   ⚠️ 这是「更具体」的**一种读法**,不是书上的原话。书只说取更具体的,
+      没说怎么数。换读法只改这一个函数。
+
+   输出只加标记、不删条目:输掉的那条仍在,带着 `被裁` —— 「记冲突」的意思
+   就是冲突本身也是材料。 */
+export function resolve(verdicts) {
+  var on = verdicts.filter(function (v) { return v.成立 === true; });
+  /* 调两次不许记两遍。 */
+  on.forEach(function (v) { delete v.被裁; });
+  var fights = [];
+  var seen = {};
+  on.forEach(function (v) {
+    if (!/^能/.test(v.判)) return;
+    var pos = v.判, neg = '不' + v.判;
+    v.爻.forEach(function (n) {
+      var key = v.主体 + '|' + pos + '|' + n;
+      if (seen[key]) return;
+      seen[key] = true;
+      var yes = on.filter(function (x) { return x.主体 === v.主体 && x.判 === pos && x.爻.indexOf(n) >= 0; });
+      var no = on.filter(function (x) { return x.主体 === v.主体 && x.判 === neg && x.爻.indexOf(n) >= 0; });
+      if (!no.length) return;
+      var best = function (list) {
+        return Math.max.apply(null, list.map(function (x) { return x.条件数[n] || 0; }));
+      };
+      var a = best(yes), b = best(no);
+      var win = a > b ? yes : (b > a ? no : null);
+      var lose = a > b ? no : (b > a ? yes : null);
+      fights.push({
+        主体: v.主体, 爻: n, 判: [pos, neg],
+        胜: win ? (win === yes ? pos : neg) : null,
+        胜者: win ? win.map(function (x) { return x.id; }) : [],
+        败者: lose ? lose.map(function (x) { return x.id; }) : [],
+        条件数: yes.concat(no).reduce(function (o, x) { o[x.id] = x.条件数[n] || 0; return o; }, {})
+      });
+      if (lose) lose.forEach(function (x) {
+        (x.被裁 = x.被裁 || []).push({ 爻: n, 输给: win.map(function (w) { return w.id; }) });
+      });
+    });
+  });
+  return fights;
 }
 
 /* 给模型看的文本。**只列成立的,和算不出来的** ——
    「不成立」有 20 多条,全列进去是拿噪声换全面。
    ⚠️ 算不出来的必须列,而且要说为什么:一条沉默的判据和一条不成立的判据,
       在模型眼里长得一模一样,而它们该被区别对待。 */
-export function format(verdicts) {
+export function format(verdicts, fights) {
   var on = verdicts.filter(function (v) { return v.成立 === true; });
   var na = verdicts.filter(function (v) { return v.成立 === null; });
   var out = [];
   out.push('成立 ' + on.length + ' 条。它们并列，此处不分轻重：');
-  out.push('同一主体上，能与不能可以同时成立。原书有先后，该先后未记入任何一条。');
+  out.push(fights && fights.length
+    ? '其中同一爻上能与不能同时成立 ' + fights.length + ' 处，按补全包的规矩取条件更具体的一条，见文末。'
+    : '同一主体上，能与不能可以同时成立。');
   on.forEach(function (v) {
     out.push('');
     out.push(v.主体 + v.判 + (v.爻.length ? '，第' + v.爻.join('、') + '爻' : ''));
@@ -402,6 +482,21 @@ export function format(verdicts) {
       out.push('  ' + v.id + '  缺' + order.map(function (w) {
         return byWhy[w].join('、') + '：' + w;
       }).join('；'));
+    });
+  }
+  if (fights && fights.length) {
+    out.push('');
+    out.push('能与不能同时成立 ' + fights.length + ' 处：');
+    fights.forEach(function (f) {
+      var n = function (side) {
+        var ids = Object.keys(f.条件数).filter(function (id) {
+          return verdicts.some(function (v) { return v.id === id && v.判 === side; });
+        });
+        return Math.max.apply(null, ids.map(function (id) { return f.条件数[id]; }));
+      };
+      out.push('  ' + f.主体 + ' 第' + f.爻 + '爻：' + f.判[0] + ' ' + n(f.判[0]) + ' 个条件，'
+        + f.判[1] + ' ' + n(f.判[1]) + ' 个条件，'
+        + (f.胜 ? '取' + f.胜 : '打平，不裁'));
     });
   }
   return out.join('\n');

@@ -22,11 +22,12 @@
    ⚠️ 防空转:每一格都有下限断言,扫的盘数也写死下限。
 */
 import assert from "node:assert/strict";
-import { material, engine } from "../tools/lab/board.mjs";
+import { material, engine, spreadDate } from "../tools/lab/board.mjs";
 
 const N = 200;                       // 扫多少副盘
 const boards = [];
-for (let s = 1; s <= N; s++) boards.push(material({ seed: s, db: "婚恋", gender: "m" }));
+/* 一天一副:不钉日期,两百副盘全是今天,覆盖跟着日历走(见 board.mjs 的 spreadDate)。 */
+for (let s = 1; s <= N; s++) boards.push(material({ seed: s, db: "婚恋", gender: "m", date: spreadDate(s) }));
 assert.equal(boards.length, N, "盘没排出来,下面全是空转");
 
 const win = engine();
