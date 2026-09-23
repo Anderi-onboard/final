@@ -32,3 +32,18 @@ export function loadCriteria() {
 export function loadTiming() {
   return jsonl("sop5-10.jsonl");
 }
+
+/* SOP-6 象义:六亲、六神、爻位,各带类目和书页出处。
+   ⭐ 一个象对应好几种现实时,候选**只许从这里取** —— 模型从记忆里掏出来的
+      「白虎主破损」和包里的「白虎:伤灾、血光……破坏」长得一样,
+      而只有后者翻得回书页。 */
+export function loadSymbols() {
+  const rs = JSON.parse(fs.readFileSync(path.join(DIR, "six-relations-spirits-11.json"), "utf8"));
+  const ls = JSON.parse(fs.readFileSync(path.join(DIR, "linepos-shensha-18.json"), "utf8"));
+  const pick = (o, kind) => Object.fromEntries(Object.entries(o).filter(([, v]) => v.kind === kind));
+  return {
+    liuqin: pick(rs, "six_relation"),
+    spirits: pick(rs, "six_spirit"),
+    linepos: pick(ls, "linepos")
+  };
+}

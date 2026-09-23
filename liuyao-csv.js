@@ -167,9 +167,12 @@
     /* 用神写六亲的中文名,不写内部 key —— `wealth` 是程序侧的地址,
        而这张表是给读的人和模型看的。 */
     var yongLines = ((roles && roles.yongLines) || []);
+    /* ⚠️ 用神不上卦时原来写的是 `subject.key`(officer 之类)—— 正是上面这句说不许的。
+       伏着的用神写它伏着的那个六亲;自占写世爻;都不是就是不知道。 */
     r['用神'] = yongLines.length && board.lines[yongLines[0]]
       ? board.lines[yongLines[0]].relative.cn
-      : (subject && subject.key ? subject.key : '?');
+      : (roles && roles.yongHidden && roles.yongHidden.relative ? roles.yongHidden.relative.cn
+        : (subject && subject.key === 'self' ? '世爻' : '?'));
     r['用神爻'] = yongLines.map(function (i) { return i + 1; }).join('/');
     /* ⚠️ 「这是默认还是判定」必须跟着走。一个读不出来的默认和一个判定长得一模一样。 */
     r['用神出处'] = subject ? (subject.matched ? (subject.source || '判定') : '默认') : '?';

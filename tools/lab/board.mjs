@@ -89,6 +89,7 @@ export function material({ seed = 1, db = "", gender = "", spec = null, date = n
   /* 能与不能同一爻上打架时,按补全包的规矩取条件更具体的一条。
      只加标记不删条目 —— `criteria` 里输掉的那条带着 `被裁` 留着。 */
   const fights = resolve(criteria);
+  const ladder = win.BWVerdict.judge(board, roles, subject);
   return {
     spec: s,
     board,
@@ -113,7 +114,10 @@ export function material({ seed = 1, db = "", gender = "", spec = null, date = n
     timing: timing(loadTiming(), board, roles, win.BWLiuYao.BRANCH),
     features: F.features || [],
     featureWhy: F.why || {},
-    ladder: win.BWVerdict.format(win.BWVerdict.judge(board, roles, subject)),
+    /* 裁决梯:对象和文本各给一份,文本就是对象 format 出来的,不是另算的。
+       线索要按「步」拆,拆不了文本。 */
+    ladderObj: ladder,
+    ladder: win.BWVerdict.format(ladder),
     relations: formatRelations(AI.relationLines(board, roles, subject)),
     boardText: AI.boardText(board, roles, subject)
   };

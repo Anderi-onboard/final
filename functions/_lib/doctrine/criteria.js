@@ -423,8 +423,10 @@ export function resolve(verdicts) {
       var a = best(yes), b = best(no);
       var win = a > b ? yes : (b > a ? no : null);
       var lose = a > b ? no : (b > a ? yes : null);
+      var sides = {}; sides[pos] = a; sides[neg] = b;
       fights.push({
         主体: v.主体, 爻: n, 判: [pos, neg],
+        条件: sides,                     // 两边各自最具体的那条用了几个条件
         胜: win ? (win === yes ? pos : neg) : null,
         胜者: win ? win.map(function (x) { return x.id; }) : [],
         败者: lose ? lose.map(function (x) { return x.id; }) : [],
@@ -436,6 +438,29 @@ export function resolve(verdicts) {
     });
   });
   return fights;
+}
+
+/* 一条判据读过的格,按爻归拢成几行字:「第3爻 发动否，旬空否，月破是」「日辰子受生」。
+   `only` 给了就只留跟这几爻有关的 —— 一条判据在第 2、4 爻都成立时,
+   只讲第 2 爻的那一处不该带上第 4 爻的格。
+   ⚠️ 一爻一行,不是一格一行 —— 同一爻的三格分三行写,读的人要自己把它们拼回去,
+   而拼回去是这段文字本来就该做完的事。`format()` 和线索用的是同一个函数,
+   不许各写一份(本仓库为「两张名单」付过的学费见 CLAUDE.md §7.5)。 */
+export function basis(v, only) {
+  var keep = function (c) {
+    if (!only) return true;
+    if (c.表 === 'edges') return only.some(function (n) { return String(c.值).indexOf('第' + n + '爻') >= 0; });
+    return only.indexOf(c.行) >= 0;
+  };
+  var byLine = {}, order = [];
+  v.引用.forEach(function (c) {
+    if (!keep(c)) return;
+    var k = c.表 === 'lines' ? '第' + c.行 + '爻' : '';
+    if (!byLine[k]) { byLine[k] = []; order.push(k); }
+    var s = c.表 === 'lines' ? c.列 + c.值 : c.值;
+    if (byLine[k].indexOf(s) < 0) byLine[k].push(s);
+  });
+  return order.map(function (k) { return (k ? k + ' ' : '') + byLine[k].join('，'); });
 }
 
 /* 给模型看的文本。**只列成立的,和算不出来的** ——
@@ -454,18 +479,7 @@ export function format(verdicts, fights) {
     out.push('');
     out.push(v.主体 + v.判 + (v.爻.length ? '，第' + v.爻.join('、') + '爻' : ''));
     out.push('  ' + v.原文);
-    /* 依据按爻归拢。⚠️ 一爻一行,不是一格一行 —— 同一爻的三格分三行写,
-       读的人要自己把它们拼回去,而拼回去是这段文字本来就该做完的事。 */
-    var byLine = {}, order = [];
-    v.引用.forEach(function (c) {
-      var k = c.表 === 'lines' ? '第' + c.行 + '爻' : '';
-      if (!byLine[k]) { byLine[k] = []; order.push(k); }
-      var s = c.表 === 'lines' ? c.列 + c.值 : c.值;
-      if (byLine[k].indexOf(s) < 0) byLine[k].push(s);
-    });
-    order.forEach(function (k) {
-      out.push('  依据 ' + (k ? k + ' ' : '') + byLine[k].join('，'));
-    });
+    basis(v).forEach(function (s) { out.push('  依据 ' + s); });
     out.push('  ' + v.id);
   });
   if (na.length) {
@@ -488,14 +502,8 @@ export function format(verdicts, fights) {
     out.push('');
     out.push('能与不能同时成立 ' + fights.length + ' 处：');
     fights.forEach(function (f) {
-      var n = function (side) {
-        var ids = Object.keys(f.条件数).filter(function (id) {
-          return verdicts.some(function (v) { return v.id === id && v.判 === side; });
-        });
-        return Math.max.apply(null, ids.map(function (id) { return f.条件数[id]; }));
-      };
-      out.push('  ' + f.主体 + ' 第' + f.爻 + '爻：' + f.判[0] + ' ' + n(f.判[0]) + ' 个条件，'
-        + f.判[1] + ' ' + n(f.判[1]) + ' 个条件，'
+      out.push('  ' + f.主体 + ' 第' + f.爻 + '爻：' + f.判[0] + ' ' + f.条件[f.判[0]] + ' 个条件，'
+        + f.判[1] + ' ' + f.条件[f.判[1]] + ' 个条件，'
         + (f.胜 ? '取' + f.胜 : '打平，不裁'));
     });
   }
