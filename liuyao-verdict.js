@@ -29,6 +29,7 @@
   var BR_CN = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
   function generates(a, b) { return (a + 1) % 5 === b; }   // a 生 b
   function controls(a, b) { return (a + 2) % 5 === b; }    // a 克 b
+  function clashes(a, b) { return (a + 6) % 12 === b; }    // 地支六冲
 
   /* 春土 · 夏金 · 秋木 · 冬火 —— 真空的四种。季节按月建地支取:
      春 寅卯辰 · 夏 巳午未 · 秋 申酉戌 · 冬 亥子丑。 */
@@ -111,6 +112,17 @@
       season: season
     };
 
+    /* 墓神被冲破:化出来的那个墓库支,被日辰、月建或别的动爻冲着。
+       原文(pack-20260914 SOP-3.三墓.破墓,《增删卜易》随鬼入墓章):
+       「墓神被日月动爻冲破,亦非真也。墓破即如破网,容易而出矣。」
+       书中例 012(蛊之损,未月戊辰日)世爻酉化丑是真化墓,但丑被未月冲破,书断「可赦」。 */
+    var tombBroken = false;
+    if (t && t.backToTomb) {
+      var tb = t.branch.bi;
+      tombBroken = clashes(tb, dayBi) || clashes(tb, monthBi)
+        || board.lines.some(function (o) { return o.moving && o.idx !== l.idx && clashes(o.branch.bi, tb); });
+    }
+
     /* §3 的败局项与 §2 的成局项,都只在动爻上成立 —— 它们说的全是「化」。 */
     if (t) {
       s.transform = {
@@ -118,9 +130,14 @@
         backControls: !!t.controlsBen,                       // 回头克
         backFeeds: !!t.feedsBen,                             // 回头生
         backClashes: !!t.clashBen,                           // 回头冲
-        toGhost: (t.relative.key === "officer"),             // 化鬼
+        /* 化鬼 = 化出官鬼。⚠️ 这一爻**本身就是官鬼**时,化出来的官鬼是同一个五行 ——
+           那是化进神、化退神或伏吟,不是化鬼。书中例 001(占乡试,官鬼申化酉)、
+           009(占升迁,官鬼申化酉),书上都叫「官鬼化进神」、都断吉;
+           这里原来照样判成「化鬼」、在第三步定了凶。 */
+        toGhost: (t.relative.key === "officer" && l.relative.key !== "officer"),
         toDead: (l.deadBranch && t.branch.bi === l.deadBranch.bi), // 化绝
         toTomb: !!t.backToTomb,                              // 化墓
+        tombBroken: tombBroken,                              // 化墓而墓被冲破
         toVoid: !!t.backToVoid,                              // 化空
         advance: !!(t.jinTui && /进/.test(t.jinTui.cn || "")),
         retreat: !!(t.jinTui && /退/.test(t.jinTui.cn || ""))
@@ -130,24 +147,28 @@
   }
 
   /* ── §4 第一步:卦变回头克(绝卦)──────────────────────────────────────
-     书上的例子全是八纯卦(巽木变乾金、离火变坎水、震木变兑金),说的是整卦
-     变出来的五行回头克本卦。落到一般的卦上,读的是内外卦各自的五行。
-     ⚠️ 这是全模块唯一一处我在把例子推广成规则,所以它把命中的是哪一宫、
-     哪两个五行都报出来,让人能推翻它。命中即定凶,而且不看用神。 */
+     书上的例子全是八纯卦变八纯卦(巽木变乾金、离火变坎水、震木变兑金),说的是
+     整卦变出来的五行回头克本卦。**只在这一种卦上判。**
+
+     ⚠️⚠️ 这里原来把例子推广到了一般的卦上,读内外卦各自的五行 —— 当时这段注释
+        就写着「这是全模块唯一一处我在把例子推广成规则,让人能推翻它」。
+        推翻它的是书自己:包里 12 个书中例,推广后的这一步打中 6 个
+        (恒之大过、噬嗑之比、屯之节、解之困、艮之小过、蛊之损),
+        **书上 6 个全断吉**(中试、婚成、可行、升迁、成名、可赦),而它「不看用神,直断凶」。
+        一条命中即定案、又不看用神的规则,推广错了就是整盘断反,所以收回到书上见过的那一种。
+        `tests/gold-replay.mjs` 钉着:12 个书中例上它一次都不许开。 */
   function reversalHexagram(board) {
     if (!board.bian) return { fired: false, why: "静卦,无变卦" };
-    var hits = [];
-    [["下卦", board.ben.lower, board.bian.lower], ["上卦", board.ben.upper, board.bian.upper]]
-      .forEach(function (p) {
-        var a = p[1].element.gi, b = p[2].element.gi;
-        if (controls(b, a)) {
-          hits.push(p[0] + " " + p[1].cn + EL_CN[a] + " 变 " + p[2].cn + EL_CN[b]
-            + " —— " + EL_CN[b] + "克" + EL_CN[a]);
-        }
-      });
-    return hits.length
-      ? { fired: true, why: "卦变回头克(绝卦):" + hits.join(";") + "。不看用神,直断凶。", hits: hits }
-      : { fired: false, why: "内外卦变出之五行均不克本卦" };
+    var b = board.ben, v = board.bian;
+    if (b.lower.tb !== b.upper.tb || v.lower.tb !== v.upper.tb) {
+      return { fired: false, why: "不是八纯卦变八纯卦 —— 书上的例子只有这一种,别的卦不推广" };
+    }
+    var a0 = b.lower.element.gi, b0 = v.lower.element.gi;
+    return controls(b0, a0)
+      ? { fired: true, why: "卦变回头克(绝卦):八纯卦 " + b.lower.cn + EL_CN[a0] + " 变 "
+          + v.lower.cn + EL_CN[b0] + " —— " + EL_CN[b0] + "克" + EL_CN[a0]
+          + "。不看用神,直断凶。", hits: [b.lower.cn + EL_CN[a0] + "变" + v.lower.cn + EL_CN[b0]] }
+      : { fired: false, why: "八纯卦变出之五行不克本卦" };
   }
 
   /* ── §2 的两条接续判据 ────────────────────────────────────────────────
@@ -244,22 +265,34 @@
         lines: rootlessOnes.map(function (s) { return s.idx + 1; }) });
       if (rootlessOnes.length) decided = decided || { at: 2, tone: "凶", why: "用神/世爻无根" };
 
-      var bad = [];
+      var bad = [], spared = [];
       subjects.forEach(function (s) {
         if (!s.transform) return;
         var f = [];
         if (s.transform.backControls) f.push("化回头克");
         if (s.transform.toGhost) f.push("化鬼");
         if (s.transform.toDead) f.push("化绝");
-        if (s.transform.toTomb) f.push("化墓");
+        /* 化墓有两种情形不算败:
+           ① 墓被日月动爻冲破 —— 原文「墓神被日月动爻冲破,亦非真也」(见 stateOf)。
+           ② 同一个化同时是化进神。引擎的墓库表土随火(土墓在戌),于是未化戌既是
+              化进神又是化墓;而书中例 002、006、010 三卦都是未化戌,书上三次都只叫它
+              「化进神」、三次都断吉。按书,这一个化读进神。
+              ⚠️ 土的墓在戌还是在辰,要长生十二宫的原文才定得了(包里还没有),
+                 这里不动那张表,只让书上断过的这一种不再判反。 */
+        if (s.transform.toTomb) {
+          if (s.transform.tombBroken) spared.push(s.label + " 化墓而墓被日月动爻冲破,非真墓");
+          else if (s.transform.advance) spared.push(s.label + " 化墓亦化进神,书上读进神");
+          else f.push("化墓");
+        }
         if (s.transform.retreat) f.push("化退神");
         if (f.length) bad.push({ idx: s.idx, label: s.label, flags: f });
       });
       steps.push({ step: 3, rule: "用神/世爻动化凶", fired: bad.length > 0,
         tone: bad.length ? "凶" : null,
-        why: bad.length
+        why: (bad.length
           ? bad.map(function (b) { return b.label + " " + b.flags.join("、"); }).join(";")
-          : "用神/世爻未动化回头克、鬼、绝、墓、退。",
+          : "用神/世爻未动化回头克、鬼、绝、墓、退。")
+          + (spared.length ? "(不算:" + spared.join(";") + ")" : ""),
         lines: bad.map(function (b) { return b.idx + 1; }) });
       if (bad.length) decided = decided || { at: 3, tone: "凶", why: "用神/世爻动化凶" };
 

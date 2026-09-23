@@ -101,10 +101,15 @@ assert.ok(evaluated >= 10,
   `两个用神一共只评估了 ${evaluated} 步 —— 梯子在空转,而空转的测试比没有测试更坏`);
 
 /* ── ③ 「未定」不许长得像「判定」 ──────────────────────────────────────
-   地天泰 → 地泽临,戊寅日:前三步一个否决项都不命中。这时候模块必须说
-   「未定」,不许自己凑一个吉凶出来 —— 称重归模型。 */
+   地天泰 → 地风升,戊寅日:前三步一个否决项都不命中。这时候模块必须说
+   「未定」,不许自己凑一个吉凶出来 —— 称重归模型。
+   ⚠️ 这副盘原来是泰 → 临(第 3 爻动,辰化丑)。辰化丑是退神 —— 书中例 003
+      「官辰化丑」书上就叫「化退神」—— 而第 3 爻是世爻,世爻化退神在第三步是否决项。
+      引擎原来不认土的进退神,所以那副盘看起来是「未定」;补上以后它按书是凶。
+      换成第 1 爻动:动的不是用神也不是世爻,前三步照样一个都不命中,
+      后面几条要的东西(用神伏藏、官鬼寅木申月破而临日建)一样都没变。 */
 const open = judge([{ yang: true }, { yang: true }, { yang: true },
-                    { yang: false }, { yang: false }, { yang: false }], [2], 14);
+                    { yang: false }, { yang: false }, { yang: false }], [0], 14);
 assert.equal(open.board.meta.dayPillar.stem.cn + open.board.meta.dayPillar.branch.cn, '戊寅',
   'fixture invariant: 这副盘钉在戊寅日');
 assert.equal(open.verdict.primary.decidedAt, null,
