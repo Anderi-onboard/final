@@ -207,7 +207,9 @@ def build(graph="4node", overrides=None):
             "outtypes": dict(outs),
         }
         nodes.append({
-            "id": nid, "type": key, "pos": list(pos), "size": [400, 60 + 34 * (len(links) + len(widgets))],
+            # 标题就是图上的标签:五个「BW 看」长一个样的话,说明书里的「看题面」在画布上找不到。
+            "id": nid, "type": key, "title": label,
+            "pos": list(pos), "size": [400, 60 + 34 * (len(links) + len(widgets))],
             "flags": {}, "order": i, "mode": 0,
             "inputs": [{"name": n, "type": t, "link": None} for n, t in links],
             "outputs": [{"name": n, "type": t, "links": [], "slot_index": k}

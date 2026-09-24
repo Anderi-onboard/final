@@ -3,6 +3,13 @@
    ────────────────────────────────────────────────────────────────────────
      node tools/comfy/pack.mjs               → dist/bournewise-comfy-<tag>.zip
      node tools/comfy/pack.mjs --stage <dir> → 只铺开,不压缩(契约用这个)
+     node tools/comfy/pack.mjs --node <node-vX-win-x64/node.exe> --node-sums <SHASUMS256.txt>
+                                             → dist/bournewise-comfy-<tag>-win-x64.zip,**自带 node**,
+                                               解开放进 custom_nodes 就能用,不用另装任何东西
+
+   ⚠️ 自带的 node 是官方发行版原样放进来的,**打包时逐字节对 nodejs.org 的 SHASUMS256.txt**
+      (那份清单里本来就有 `win-x64/node.exe` 这一行)。对不上就不打 —— 一个来路说不清的 exe
+      塞进别人的 ComfyUI,比让他自己去装 node 糟得多。
 
    ⚠️ **一个包就是一份复制品,而这套东西全部的架构前提是「不要复制」。**
       所以这里定了三条,让它是**构建产物**而不是分叉:
@@ -102,7 +109,7 @@ const SHIM = `# -*- coding: utf-8 -*-
 """BourneWise · ComfyUI —— 自带依赖的包(四站 + 解谜管线)。
 
 把这个文件夹整个放进 ComfyUI/custom_nodes/,重启 ComfyUI,就有节点了。
-除了 node ≥18 要在 PATH 上(盘和提示词在 JS 那边),没有别的依赖。
+盘和提示词在 JS 那边,要 node ≥18:win-x64 那一版自带(node/node.exe),别的版本要 node 在 PATH 上。
 
 ⚠️ 这里按**文件路径**加载 repo/tools/comfy/nodes.py,而不是把 repo/tools
    插进 sys.path:那个目录叫 comfy,而 ComfyUI 自己的顶层包也叫 comfy,
@@ -121,7 +128,7 @@ __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
 `;
 
 /* ── 铺 ──────────────────────────────────────────────────────────────────── */
-export function stage(dest) {
+export function stage(dest, opts = {}) {
   const files = [...new Set([...closure(), ...EXTRA])].sort();
   const root = path.join(dest, "bournewise-comfy");
   fs.rmSync(root, { recursive: true, force: true });
@@ -135,6 +142,41 @@ export function stage(dest) {
     /* ① 逐个复核字节一致 —— 「复制过去了」和「复制对了」是两件事。 */
     if (sha(fs.readFileSync(out)) !== sha(buf)) throw new Error(`${f} 复制后对不上`);
     manifest[f] = sha(buf);
+  }
+
+  /* ComfyUI 会去 custom_nodes/<包>/example_workflows/ 里找模板(菜单里「浏览模板」那一栏)。
+     四张图在 repo/ 里本来就有;顶层再放一份,是给不认识目录结构的人 —— 打开 ComfyUI 就看得见。
+     它们是**打包时从同一份复制出来的**,MANIFEST 的 copies 记着每一份对应哪个源文件。 */
+  const copies = {};
+  fs.mkdirSync(path.join(root, "example_workflows"), { recursive: true });
+  for (const f of files.filter((x) => /^tools\/comfy\/workflows\/.+\.json$/.test(x))) {
+    const to = "example_workflows/" + path.basename(f);
+    fs.copyFileSync(path.join(ROOT, f), path.join(root, to));
+    copies[to] = f;
+  }
+  if (!Object.keys(copies).length) throw new Error("一张图都没复制到 example_workflows —— 闭包里没有 workflows/*.json");
+
+  /* 自带 node:nodes.py 在打包的目录结构里先找 bournewise-comfy/node/,再找 PATH。 */
+  let bundledNode = null;
+  if (opts.node) {
+    const src = path.resolve(opts.node);
+    const buf = fs.readFileSync(src);
+    const name = /\.exe$/i.test(src) ? "node.exe" : "node";
+    let verified = "没有给校验和清单,未核";
+    if (opts.nodeSums) {
+      const want = fs.readFileSync(path.resolve(opts.nodeSums), "utf8").split("\n")
+        .map((l) => l.trim().split(/\s+/)).find(([, f]) => f === "win-x64/node.exe");
+      if (!want) throw new Error("校验和清单里没有 win-x64/node.exe 这一行 —— 给的是不是 nodejs.org 那份 SHASUMS256.txt?");
+      if (want[0] !== sha(buf)) throw new Error(`node.exe 的 sha256 和官方清单对不上(清单 ${want[0]},文件 ${sha(buf)})—— 不打`);
+      verified = "和 nodejs.org 的 SHASUMS256.txt 逐字节对上";
+    }
+    const out = path.join(root, "node", name);
+    fs.mkdirSync(path.dirname(out), { recursive: true });
+    fs.writeFileSync(out, buf, { mode: 0o755 });
+    const lic = path.join(path.dirname(src), "LICENSE");
+    if (fs.existsSync(lic)) fs.copyFileSync(lic, path.join(root, "node", "LICENSE"));
+    bundledNode = { file: "node/" + name, sha256: sha(buf),
+                    version: (src.match(/node-(v\d+\.\d+\.\d+)/) || [])[1] || "unknown", verified };
   }
 
   fs.writeFileSync(path.join(root, "__init__.py"), SHIM);
@@ -151,51 +193,75 @@ export function stage(dest) {
     builtAt: new Date().toISOString(),
     sourceCommit: commit,
     note: "repo/ 底下每一个文件都和仓库里的字节完全一致(sha256 见 files)。"
-      + "包外只有 __init__.py、README.md 和这个文件是新写的。",
-    files: manifest
+      + "包外只有 __init__.py、README.md 和这个文件是新写的;example_workflows/ 是 repo/ 里那几张图的副本,"
+      + "node/ 是官方 Node.js 原样放进来的(见 bundledNode)。",
+    files: manifest,
+    copies,
+    bundledNode
   }, null, 2) + "\n");
 
-  return { root, files };
+  return { root, files, bundledNode };
 }
 
 const INSTALL = `# BourneWise · ComfyUI(自带依赖)
 
-**放进去就能用,不需要 git,不需要这个仓库。**
+**放进去就能用,不需要 git,不需要这个仓库。** 文件名带 \`win-x64\` 的那一版连 node 都自带了,
+Windows 上什么都不用另装。
 
-## 装
+## Windows:三步装好
 
-把 \`bournewise-comfy\` 这整个文件夹放进 ComfyUI 的 \`custom_nodes/\`:
+1. 把压缩包解开,得到一个叫 \`bournewise-comfy\` 的文件夹。
+2. 把这个文件夹**整个**放进 ComfyUI 的 \`custom_nodes\` 文件夹:
+   - 便携版:\`ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\\`
+   - 桌面版:\`文档\\ComfyUI\\custom_nodes\\\`
 
-    ComfyUI/custom_nodes/bournewise-comfy/     ← 就是解开后的这个文件夹
+   放好之后,这个文件应该在 \`custom_nodes\\bournewise-comfy\\__init__.py\`。
+   解压工具常会多套一层同名文件夹(\`bournewise-comfy\\bournewise-comfy\\…\`),那样 ComfyUI 认不到。
+3. 重启 ComfyUI。节点在 \`BourneWise\` 和 \`BourneWise/解谜\` 两个分类下。
 
-重启 ComfyUI。节点在 \`BourneWise\` 和 \`BourneWise/解谜\` 两个分类下。
+## 先确认装好了(不用模型)
 
-**唯一的外部要求:\`node\` ≥ 18 在 PATH 上。** 盘(排盘、用神、裁决梯)和提示词
-都在 JS 那边,所以这套节点要 node 来跑它们。ComfyUI 看不见 node 的话,
-给 ComfyUI 设一个环境变量 \`BW_NODE_BIN=/绝对路径/node\`。
+在 ComfyUI 的菜单里打开「工作流 → 浏览模板」,找 bournewise 那几张;
+或者把 \`example_workflows\\bournewise-puzzle-dry.json\` 直接拖进画布。点运行。
+
+「看题面」那一格出现「投掷 … 动爻 …」和一条一条的线索,就是装好了。
+这张图的 M1 用的是一段示范答案,后面每一站只把提示词打出来,不调模型。
+
+## 接上 Unsloth 的 Qwen3.8
+
+1. 在 Unsloth 里加载 Qwen3.8,打开它的 API(Settings → API),生成一个 key。
+   key 长这样:\`sk-unsloth-…\`,只显示一次,先复制下来。
+2. 打开 \`bournewise-puzzle.json\`。在「端点」那个节点里:
+   - \`base_url\` 填 Unsloth 显示的服务地址,后面加 \`/v1\`,比如 \`http://127.0.0.1:8888/v1\`;
+   - \`api_key\` 填那个 key。
+3. 「问题」那个节点里写问题,点运行。**模型名那几格全部留空**,留空就用 Unsloth 挂着的那一个。
+
+「端点上有什么」那一格列出了模型名,就是连上了;写着「连不上」,多半是地址或端口不对。
+线索和验现事是一条一条调模型的,进度条走一格就是一条。
+
+「端点」节点的「思考」一栏是 Qwen3.8 的思考开关(none / low / medium / xhigh)。
+选「不发」就按 Unsloth 自己的设定。模型写在 \`<think>\` 里的思考不会进下游。
+
+用命令行起模型的话:
+
+    unsloth run --model unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_XL -p 8888 --disable-tools
+
+## 不是 win-x64 那一版
+
+那一版不带 node,要先装 Node.js 18 以上(nodejs.org 下载 LTS 安装包,一路下一步)。
+装了但 ComfyUI 看不见的话,给 ComfyUI 设一个环境变量 \`BW_NODE_BIN=node 的完整路径\`。
 
 **没有任何 Python 依赖**,也**没有任何 npm 依赖** —— 包里没有 node_modules,
 因为它一个第三方库都不用。
 
-## 四张图(\`repo/tools/comfy/workflows/\`)
+## 四张图(\`example_workflows/\`)
 
 | | |
 |---|---|
 | \`bournewise-puzzle.json\` | **解谜管线**:读问题 → 程序出题 → 每条线索一个模型(一条一条跑)→ 验现事 → 解谜。 |
 | \`bournewise-puzzle-dry.json\` | 解谜管线,**一个模型都不用下**:M1 钉住一段示范答案,后面每一站只建提示词。 |
 | \`bournewise-4node.json\` | 四站(线上那条)真跑。要一个本地模型端点。 |
-| \`bournewise-4node-dry.json\` | **一个模型都不用下** —— 每一站只建提示词、不调模型,把 system 全文打在「注」里。想先看看这套东西在对模型说什么,开这张。 |
-
-## Unsloth + Qwen3.8
-
-    unsloth run --model unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_XL -p 8888 --disable-tools \\
-      --chat-template-kwargs '{"reasoning_effort":"none"}'
-
-「BW 端点」填 \`http://127.0.0.1:8888/v1\` 和 Unsloth 在 Settings → API 里给的
-\`sk-unsloth-…\`,**模型名全部留空**(留空 = 用端点上列出的第一个)。
-Windows PowerShell 里那段 JSON 要写成 \`"{\\"reasoning_effort\\":\\"none\\"}"\`。
-
-拖进画布即可。
+| \`bournewise-4node-dry.json\` | **一个模型都不用下** —— 每一站只建提示词、不调模型,把 system 全文打在「注」里。 |
 
 ## 左下角那一列:盘 → 四张表 → 判据
 
@@ -223,9 +289,10 @@ Windows PowerShell 里那段 JSON 要写成 \`"{\\"reasoning_effort\\":\\"none\\
 
     node repo/tools/lab/fake-model.mjs
 
+(带 node 的那一版在 Windows 上写 \`node\\node.exe repo\\tools\\lab\\fake-model.mjs\`。)
 它在 :11434 起一个假端点,每一站答那一站的格式(四站和解谜都认)。**接线坏没坏和
 模型好不好是两件事** —— 真模型要下几十个 G,而整条路用它几秒就能走一遍。
-「BW 端点」填 \`http://localhost:11434/v1\`,模型名留空。
+「端点」填 \`http://localhost:11434/v1\`,模型名留空。
 
 ## 换成真模型
 
@@ -253,11 +320,13 @@ M4 要写一整篇,给它大的。
     repo/functions/_lib/doctrine/rag/     11 个库 / 29 张断法卡
     repo/functions/_lib/doctrine/criteria.js       判据求值(只看 CSV,不下结论)
     repo/functions/_lib/doctrine/pack-20260914/    《增删卜易》46 条,逐条带印刷页码
-    repo/tools/comfy/                     节点本体 + 两张图
+    repo/functions/_lib/puzzle/           解谜管线:出题程序和它的提示词
+    repo/tools/comfy/                     节点本体 + 四张图
     repo/tools/lab/                       假端点、单站调试台
+    example_workflows/                    那四张图的副本,给 ComfyUI 的「浏览模板」用
+    node/                                 (win-x64 那一版)官方 Node.js,打包时对过官方校验和
 
-包外只有三个文件是新写的:\`__init__.py\`(5 行,加载上面那个 nodes.py)、
-这份说明(\`README.md\`)、\`MANIFEST.json\`。
+包外新写的只有 \`__init__.py\`(加载上面那个 nodes.py)、这份说明(\`README.md\`)、\`MANIFEST.json\`。
 
 ## 怎么调
 
@@ -271,16 +340,19 @@ M4 要写一整篇,给它大的。
 
 /* ── 跑 ──────────────────────────────────────────────────────────────────── */
 if (import.meta.url === "file://" + process.argv[1]) {
+  const arg = (k) => { const j = process.argv.indexOf(k); return j >= 0 ? process.argv[j + 1] : null; };
   const i = process.argv.indexOf("--stage");
   const dest = i >= 0 ? path.resolve(process.argv[i + 1]) : path.join(ROOT, "dist");
   fs.mkdirSync(dest, { recursive: true });
-  const { root, files } = stage(dest);
+  const { root, files, bundledNode } = stage(dest, { node: arg("--node"), nodeSums: arg("--node-sums") });
   console.log(`铺开 ${path.relative(ROOT, root) || root} —— ${files.length} 个文件,全部字节一致`);
+  if (bundledNode) console.log(`自带 node ${bundledNode.version}:${bundledNode.verified}`);
 
   if (i < 0) {
     let tag = "dev";
     try { tag = JSON.parse(read("version.json")).v; } catch { /* 没有就叫 dev */ }
-    const zip = path.join(dest, `bournewise-comfy-${tag}.zip`);
+    const suffix = bundledNode && bundledNode.file.endsWith(".exe") ? "-win-x64" : "";
+    const zip = path.join(dest, `bournewise-comfy-${tag}${suffix}.zip`);
     fs.rmSync(zip, { force: true });
     execFileSync("zip", ["-rq", zip, "bournewise-comfy"], { cwd: dest });
     const kb = Math.round(fs.statSync(zip).size / 1024);

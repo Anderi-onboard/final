@@ -2222,6 +2222,9 @@ M1(读问题)→ 程序出题 → 每条线索一个模型(并联,各写一句)�
   模型名留空 = 用端点列出的第一个(Unsloth / llama-server 一次只挂一个);
   Qwen3.8 的思考写在 `<think>` 里的一律剥掉,思考开关是 `chat_template_kwargs.reasoning_effort`,
   **不选就一个字段都不多发**。契约 `tests/comfy-puzzle.mjs` 拿真的 Python 节点接假端点跑一遍。
+- **Windows 打包版自带 node**(owner:「有打包版吗 这边实在不会下」):`pack.mjs --node … --node-sums …`
+  把官方 `node.exe` 放进 `bournewise-comfy/node/`,**打包时逐字节对 nodejs.org 的 SHASUMS256.txt**,
+  对不上就不打;`nodes.py` 只在打包的目录结构里(`MANIFEST.json` 在)认这个 node,并排在 PATH 前面。
 - 待定:「对照看看」那句留不留(§6 说不叫他去对照)、六亲名单用补全包还是 M3 提示词那份。
 
 ### 书中例回放:数据库的验收线(2026-09-23)

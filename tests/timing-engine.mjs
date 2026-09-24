@@ -20,7 +20,7 @@
 */
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";   // ⑥ 还用它读 timing.js 查副作用
-import { material, engine } from "../tools/lab/board.mjs";
+import { material, engine, spreadDate } from "../tools/lab/board.mjs";
 import { timing, format, _internal } from "../functions/_lib/doctrine/timing.js";
 import { loadTiming } from "../functions/_lib/doctrine/criteria-rules.mjs";
 
@@ -31,21 +31,39 @@ assert.equal(rules.length, 10, `SOP-5 应该是 10 条,读到 ${rules.length}`);
 assert.ok(rules.every((r) => r.机器值 && r.机器值.触发表达式 && r.机器值.应),
   "有规则没有 触发表达式 或 应 —— SOP-3 的判据混进来了?那些是另一种形状");
 
+/* ⚠️ 日期要给。不给就是「今天」—— 四百副盘全落在同一天,日辰、旬空、月建都一样,
+   单独钉住的那几副(seed 7 / 424 / 1)也跟着日历变:09-24 这条契约红过一次,代码一个字没改。
+   和 board-csv 同一条:扫描的盘一天一副(`spreadDate`),单独钉的那几副钉在一个固定日子上。 */
+const DAY = new Date("2026-09-23T12:00:00Z");
 const boards = [];
-for (let s = 1; s <= N; s++) boards.push(material({ seed: s, db: "婚恋", gender: "m" }));
+for (let s = 1; s <= N; s++) boards.push(material({ seed: s, db: "婚恋", gender: "m", date: spreadDate(s) }));
 
 /* ── ① 触发读的是用神的状态,不是问题 ─────────────────────────────────
-   同一副盘,换一个完全不同的问题和领域,触发的那几条必须一模一样。
+   同一副盘,用神相同、问题和领域完全不同,触发的那几条必须一模一样;
+   换了用神,触发的每一条都必须落在新用神的爻上。
    ⭐ 这条是整个第五步的定性:它一旦跟着问题变,就说明有人把前四步那套
-      按事体路由的逻辑接了过来。 */
+      按事体路由的逻辑接了过来。
+   ⚠️ 这里原来拿「婚恋·男」和「疾病·女」比 —— 两问的用神根本不是同一爻(妻财 vs 官鬼),
+      触发得一样只是那几天碰巧两爻都静。09-24 那天妻财那一爻入了墓,这条就红了。
+      比较的两边必须只差「问题」这一样东西,否则红绿是日历定的。 */
 {
-  const a = material({ seed: 7, db: "婚恋", gender: "m" });
-  const b = material({ seed: 7, db: "疾病", gender: "f" });
-  const key = (m) => m.timing.filter((r) => r.成立 === true).map((r) => r.id).sort().join(" ");
-  assert.equal(key(a), key(b),
-    "换了问题和领域,触发的应期条目跟着变了。\n"
-    + "  → 应期由用神状态触发,不由问题触发。跟着问题变,说明触发条件接错了地方。");
-  assert.ok(key(a).length > 0, "seed 7 一条都没触发 —— 这条对比在空转");
+  const same = [["婚恋", "m"], ["求财", ""], ["失物", ""]]
+    .map(([db, gender]) => material({ seed: 7, db, gender, date: DAY }));
+  assert.ok(same.every((m) => m.subject.key === "wealth"), "fixture: 这三问的用神都该是妻财");
+  const key = (m) => m.timing.filter((r) => r.成立 === true).map((r) => r.id + "@" + r.爻.join(",")).sort().join(" ");
+  for (const m of same.slice(1)) {
+    assert.equal(key(m), key(same[0]),
+      "用神相同、只换了问题和领域,触发的应期条目跟着变了。\n"
+      + "  → 应期由用神状态触发,不由问题触发。跟着问题变,说明触发条件接错了地方。");
+  }
+  assert.ok(key(same[0]).length > 0, "seed 7 一条都没触发 —— 这条对比在空转");
+  for (const m of [...same, material({ seed: 7, db: "疾病", gender: "f", date: DAY })]) {
+    const yong = new Set((m.roles.yongLines || []).map((i) => i + 1));
+    for (const r of m.timing.filter((x) => x.成立 === true)) {
+      assert.ok(r.爻.every((n) => yong.has(n)),
+        `${r.id} 落在第 ${r.爻.join("、")} 爻,而这一问的用神在第 ${[...yong].join("、")} 爻 —— 应期读的不是用神`);
+    }
+  }
 }
 
 /* ── ② 三态:成立 / 不成立 / 算不出来 ───────────────────────────────── */
@@ -85,7 +103,7 @@ for (const k of ["1", "2", "5", "6", "7", "8", "10"]) {
     `5.${k} 在 ${N} 副盘里一次都没触发 —— 加了一条而它永远不动,等于没加`);
 }
 {
-  const m = material({ seed: 424, db: "婚恋", gender: "m" });
+  const m = material({ seed: 424, db: "婚恋", gender: "m", date: DAY });
   const r = m.timing.find((x) => x.id === "SOP-5.9");
   assert.equal(r.成立, true,
     "5.9(化进神)在 seed 424 上不再触发。那一副的用神正好化进神,"
@@ -148,7 +166,7 @@ for (const k of ["1", "2", "5", "6", "7", "8", "10"]) {
       `应期的输出多了或少了字段:${Object.keys(r).join(" ")}\n`
       + "  → 多出来的那个要是承载吉凶,这一步就在改第四步已经定下的结论了");
   }
-  const m = material({ seed: 1, db: "婚恋", gender: "m" });
+  const m = material({ seed: 1, db: "婚恋", gender: "m", date: DAY });
   assert.ok(!m.board.lines.some((l) => "combinedBy" in l),
     "应期往引擎的 line 上挂了字段。那个 board 是要返回出去的,"
     + "下一个读盘的人不知道这个字段从哪来、是不是每次都在");

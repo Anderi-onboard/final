@@ -5,6 +5,7 @@
     {
       "id": 1,
       "type": "BWEndpoint",
+      "title": "端点",
       "pos": [
         40,
         40
@@ -49,6 +50,7 @@
     {
       "id": 2,
       "type": "BWAsk",
+      "title": "问题",
       "pos": [
         40,
         380
@@ -90,6 +92,7 @@
     {
       "id": 3,
       "type": "BWPuzzleM1",
+      "title": "M1",
       "pos": [
         480,
         40
@@ -151,6 +154,7 @@
     {
       "id": 4,
       "type": "BWShow",
+      "title": "看M1",
       "pos": [
         480,
         460
@@ -185,6 +189,7 @@
     {
       "id": 5,
       "type": "BWPuzzleBuild",
+      "title": "出题",
       "pos": [
         920,
         40
@@ -240,6 +245,7 @@
     {
       "id": 6,
       "type": "BWShow",
+      "title": "看题面",
       "pos": [
         920,
         360
@@ -274,6 +280,7 @@
     {
       "id": 7,
       "type": "BWPuzzleClues",
+      "title": "线索",
       "pos": [
         1360,
         40
@@ -335,6 +342,7 @@
     {
       "id": 8,
       "type": "BWShow",
+      "title": "看线索",
       "pos": [
         1360,
         460
@@ -369,6 +377,7 @@
     {
       "id": 9,
       "type": "BWPuzzleVerify",
+      "title": "验现事",
       "pos": [
         1800,
         40
@@ -430,6 +439,7 @@
     {
       "id": 10,
       "type": "BWShow",
+      "title": "看验现事",
       "pos": [
         1800,
         460
@@ -464,6 +474,7 @@
     {
       "id": 11,
       "type": "BWPuzzleSolve",
+      "title": "解谜",
       "pos": [
         2240,
         40
@@ -535,6 +546,7 @@
     {
       "id": 12,
       "type": "BWShow",
+      "title": "解读",
       "pos": [
         2240,
         520
@@ -569,6 +581,7 @@
     {
       "id": 13,
       "type": "BWShow",
+      "title": "看材料",
       "pos": [
         2680,
         40

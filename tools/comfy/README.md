@@ -85,8 +85,15 @@ Unsloth 一次只挂一个。
 ## 装法一:打一个自带依赖的包(不需要这个仓库)
 
 ```bash
-npm run pack      # → dist/bournewise-comfy-<构建标签>.zip,约 116KB
+npm run pack      # → dist/bournewise-comfy-<构建标签>.zip,约 170KB,要 node 在 PATH 上
+
+# Windows 一次下完的那一版:把官方 node.exe 放进包里,解开就能用
+node tools/comfy/pack.mjs --node node-v24.21.0-win-x64/node.exe --node-sums SHASUMS256.txt
+                  # → dist/bournewise-comfy-<构建标签>-win-x64.zip,约 34MB
 ```
+
+⚠️ `--node-sums` 给的是 nodejs.org 那份 `SHASUMS256.txt`(里面本来就有 `win-x64/node.exe` 一行),
+打包时逐字节对,对不上就不打。包的顶层还有一个 `example_workflows/`,ComfyUI 的「浏览模板」会列出它。
 
 解开,把 `bournewise-comfy` 整个文件夹放进 `ComfyUI/custom_nodes/`,完事。
 包里带着引擎、提示词、RAG、两张图和假端点 —— **没有 npm 依赖,没有 Python 依赖**,

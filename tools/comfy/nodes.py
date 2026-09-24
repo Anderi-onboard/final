@@ -40,12 +40,27 @@ _FILL = ROOT / "functions" / "_lib" / "nodes" / "fill.js"
 _RAG = ROOT / "functions" / "_lib" / "doctrine" / "rag"
 
 
+def _bundled_node():
+    """打包版自带的 node(`pack.mjs --node`):解开就能用,不用另装。
+
+    ⚠️ 只在打包的目录结构里认它 —— `bournewise-comfy/MANIFEST.json` 在,才去看它旁边的 `node/`。
+       仓库里开发时同一个相对位置是仓库的上一级目录,那里有什么不归这套节点管。
+    """
+    pkg = Path(__file__).resolve().parents[3]
+    if not (pkg / "MANIFEST.json").exists():
+        return None
+    exe = pkg / "node" / ("node.exe" if os.name == "nt" else "node")
+    return str(exe) if exe.exists() else None
+
+
 def _node_bin():
-    n = os.environ.get("BW_NODE_BIN") or shutil.which("node")
+    # 自带的排在 PATH 前面:PATH 上可能是一个老版本(<18),而自带的那个是打包时核过校验和的。
+    n = os.environ.get("BW_NODE_BIN") or _bundled_node() or shutil.which("node")
     if not n:
         raise RuntimeError(
             "PATH 上没有 node。盘和提示词都在 JS 那边,所以这套节点要 node ≥18。\n"
-            "装了但 ComfyUI 看不见的话,给 ComfyUI 设一个 BW_NODE_BIN=/绝对路径/node"
+            "要么用带 node 的打包版(bournewise-comfy-…-win-x64.zip,解开就能用),\n"
+            "要么装 node;装了但 ComfyUI 看不见的话,给 ComfyUI 设一个 BW_NODE_BIN=/绝对路径/node"
         )
     return n
 

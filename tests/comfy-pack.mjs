@@ -19,7 +19,7 @@
       会以全绿的样子失效,而那正是 `font-lock.mjs` 第一版栽过的坑。
 */
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync, statSync, mkdtempSync, rmSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
@@ -182,10 +182,55 @@ try {
   assert.equal(pz.status, 0, "包里的解谜出题跑不起来:\n" + String(pz.stderr).trim().slice(-800));
   const pzo = JSON.parse(pz.stdout);
   assert.ok(pzo.clues && pzo.clues.length >= 2, `包里出题只出了 ${pzo.clues && pzo.clues.length} 条线索 —— 判据或补全包没装全`);
+  /* 「浏览模板」用的那几张图:顶层 example_workflows/ 里的每一份都要和仓库里的那张字节一致 */
+  const copies = man.copies || {};
+  assert.ok(Object.keys(copies).length >= 4, `example_workflows 只有 ${Object.keys(copies).length} 张图(应 ≥4)`);
+  for (const [to, from] of Object.entries(copies)) {
+    assert.equal(createHash("sha256").update(readFileSync(path.join(root, to))).digest("hex"),
+      createHash("sha256").update(readFileSync(path.join(ROOT, from))).digest("hex"),
+      `${to} 和 ${from} 不是同一份 —— 用户从模板里打开的图就不是仓库里那张`);
+  }
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }
 
+/* ── ⑥ 自带 node 的那一版:解开就能用,而且用的就是包里那个 node ──────────────
+   Windows 上的用户多半没装 node,也不会装(owner:「这边实在不会下」)。所以 win-x64 那一版
+   把官方 node.exe 放进 bournewise-comfy/node/,nodes.py 在打包的目录结构里先找它。
+   这里拿一个转发给当前 node 的小脚本冒充那个二进制(几十字节,不用把 100MB 拷来拷去),
+   然后**在包里真跑一次**:nodes.py 挑中的必须是包里那个,而且经它跑得通。 */
+const tmp2 = mkdtempSync(path.join(tmpdir(), "bw-pack-node-"));
+try {
+  const fakeNode = path.join(tmp2, "node");
+  writeFileSync(fakeNode, `#!/bin/sh\nexec "${process.execPath}" "$@"\n`, { mode: 0o755 });
+  /* 校验和对不上就不打 —— 一个来路说不清的 exe 不许进别人的 ComfyUI */
+  const badSums = path.join(tmp2, "SHASUMS256.txt");
+  writeFileSync(badSums, "0".repeat(64) + "  win-x64/node.exe\n");
+  assert.throws(() => stage(path.join(tmp2, "bad"), { node: fakeNode, nodeSums: badSums }), /对不上/,
+    "node 的校验和对不上,包照样打出来了");
+
+  const { root: r2, bundledNode } = stage(path.join(tmp2, "ok"), { node: fakeNode });
+  assert.ok(bundledNode && bundledNode.file === "node/node", "自带的 node 没进包,或者 MANIFEST 没记");
+  const man2 = JSON.parse(readFileSync(path.join(r2, "MANIFEST.json"), "utf8"));
+  assert.equal(man2.bundledNode.sha256, createHash("sha256").update(readFileSync(path.join(r2, "node/node"))).digest("hex"),
+    "MANIFEST 记的 node 哈希和包里的文件对不上");
+  const env = { ...process.env };
+  delete env.BW_NODE_BIN; delete env.BOURNEWISE_ROOT;
+  const py = spawnSync("python3", ["-c", `
+import json, importlib.util as u
+s = u.spec_from_file_location("bwn", ${JSON.stringify(path.join(r2, "repo/tools/comfy/nodes.py"))})
+N = u.module_from_spec(s); s.loader.exec_module(N)
+b = N._bridge("board", {"seed": 1, "db": "婚恋", "gender": "m"})
+print(json.dumps({"bin": N._node_bin(), "features": len(b["features"])}))
+`], { encoding: "utf8", env });
+  assert.equal(py.status, 0, "包里的 nodes.py 经自带的 node 跑不起来:\n" + (py.stderr || "").trim().slice(-800));
+  const got = JSON.parse(py.stdout.trim().split("\n").pop());
+  assert.equal(got.bin, path.join(r2, "node", "node"), `nodes.py 挑的 node 是 ${got.bin},不是包里自带的那个`);
+  assert.ok(got.features >= 10, "经自带的 node 跑出来的盘不完整");
+} finally {
+  rmSync(tmp2, { recursive: true, force: true });
+}
+
 console.log(`ok   comfy-pack — 桥接真文件,${files.length} 个文件里 0 处提示词正文,`
   + `${WORKFLOWS.length} 张图每条线都对得上,改一站只重跑一站,`
-  + "包在仓库外能自己跑起来且字节一致");
+  + "包在仓库外能自己跑起来且字节一致,自带 node 的那一版用的就是包里那个 node");
