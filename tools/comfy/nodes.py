@@ -47,10 +47,36 @@ def _bundled_node():
        仓库里开发时同一个相对位置是仓库的上一级目录,那里有什么不归这套节点管。
     """
     pkg = Path(__file__).resolve().parents[3]
-    if not (pkg / "MANIFEST.json").exists():
+    man = pkg / "MANIFEST.json"
+    if not man.exists():
         return None
     exe = pkg / "node" / ("node.exe" if os.name == "nt" else "node")
-    return str(exe) if exe.exists() else None
+    if exe.exists():
+        return str(exe)
+    packed = exe.with_name(exe.name + ".xz")
+    return _unpack_node(packed, exe, man) if packed.exists() else None
+
+
+def _unpack_node(packed, exe, man):
+    """第一次用时把自带的 node 从 .xz 解开(Python 自带 lzma,不用装任何东西)。
+
+    ⚠️ 解出来的每个字节都要对 MANIFEST 里记的 sha256 —— 那就是打包时对过的官方清单上的那一行。
+       对不上(压缩包下载时坏了)就不用它:一个坏掉的 node.exe 报出来的错,和它没有任何关系。
+    """
+    import lzma
+    want = ((json.loads(_read(man) or "{}").get("bundledNode")) or {}).get("sha256")
+    part = exe.with_name(exe.name + ".part")
+    h = hashlib.sha256()
+    with lzma.open(str(packed)) as src, open(str(part), "wb") as dst:
+        for chunk in iter(lambda: src.read(1 << 20), b""):
+            h.update(chunk)
+            dst.write(chunk)
+    if want and h.hexdigest() != want:
+        part.unlink()
+        raise RuntimeError("自带的 node 解开后和打包时记的校验和对不上 —— 压缩包可能下载坏了,重新下载一次。")
+    os.chmod(str(part), 0o755)
+    os.replace(str(part), str(exe))
+    return str(exe)
 
 
 def _node_bin():

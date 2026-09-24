@@ -19,7 +19,7 @@
       会以全绿的样子失效,而那正是 `font-lock.mjs` 第一版栽过的坑。
 */
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync, statSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, mkdtempSync, rmSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
@@ -210,10 +210,11 @@ try {
     "node 的校验和对不上,包照样打出来了");
 
   const { root: r2, bundledNode } = stage(path.join(tmp2, "ok"), { node: fakeNode });
-  assert.ok(bundledNode && bundledNode.file === "node/node", "自带的 node 没进包,或者 MANIFEST 没记");
+  assert.ok(bundledNode && bundledNode.file === "node/node.xz", "自带的 node 没以 .xz 进包,或者 MANIFEST 没记");
+  assert.ok(!existsSync(path.join(r2, "node/node")), "包里已经有解开的 node —— 那就不是压缩过的那一版");
   const man2 = JSON.parse(readFileSync(path.join(r2, "MANIFEST.json"), "utf8"));
-  assert.equal(man2.bundledNode.sha256, createHash("sha256").update(readFileSync(path.join(r2, "node/node"))).digest("hex"),
-    "MANIFEST 记的 node 哈希和包里的文件对不上");
+  assert.equal(man2.bundledNode.sha256, createHash("sha256").update(readFileSync(fakeNode)).digest("hex"),
+    "MANIFEST 记的是解开之后那个 node 的哈希,和原件对不上");
   const env = { ...process.env };
   delete env.BW_NODE_BIN; delete env.BOURNEWISE_ROOT;
   const py = spawnSync("python3", ["-c", `
@@ -227,6 +228,20 @@ print(json.dumps({"bin": N._node_bin(), "features": len(b["features"])}))
   const got = JSON.parse(py.stdout.trim().split("\n").pop());
   assert.equal(got.bin, path.join(r2, "node", "node"), `nodes.py 挑的 node 是 ${got.bin},不是包里自带的那个`);
   assert.ok(got.features >= 10, "经自带的 node 跑出来的盘不完整");
+  assert.equal(createHash("sha256").update(readFileSync(path.join(r2, "node/node"))).digest("hex"), man2.bundledNode.sha256,
+    "第一次用时解开的 node 和原件不是同一份");
+  /* 解开之后被篡改(或者压缩包下载坏了):解开前的校验必须拦下 —— 删掉解开的那份,换一个坏的 .xz 再来 */
+  rmSync(path.join(r2, "node/node"));
+  writeFileSync(path.join(r2, "node/node.xz"), spawnSync("xz", ["-c"], { input: "#!/bin/sh\nexit 0\n" }).stdout);
+  const bad = spawnSync("python3", ["-c", `
+import importlib.util as u
+s = u.spec_from_file_location("bwn", ${JSON.stringify(path.join(r2, "repo/tools/comfy/nodes.py"))})
+N = u.module_from_spec(s); s.loader.exec_module(N)
+N._bundled_node()
+`], { encoding: "utf8", env });
+  assert.notEqual(bad.status, 0, "一个校验和对不上的 node 被解开并用上了");
+  assert.ok(/对不上/.test(bad.stderr), "校验和不对时报的不是校验和的事:\n" + bad.stderr.slice(-400));
+  assert.ok(!existsSync(path.join(r2, "node/node")), "校验和不对的 node 还是被留在了包里");
 } finally {
   rmSync(tmp2, { recursive: true, force: true });
 }

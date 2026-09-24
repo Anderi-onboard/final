@@ -170,12 +170,16 @@ export function stage(dest, opts = {}) {
       if (want[0] !== sha(buf)) throw new Error(`node.exe 的 sha256 和官方清单对不上(清单 ${want[0]},文件 ${sha(buf)})—— 不打`);
       verified = "和 nodejs.org 的 SHASUMS256.txt 逐字节对上";
     }
-    const out = path.join(root, "node", name);
+    /* ⚠️ 存成 .xz,第一次用时 nodes.py 用 Python 自带的 lzma 解开。
+       node.exe 有 93MB,zip 只压得到 33MB,而发给 owner 的那条路一个文件上限 30MB;
+       xz 压到 22MB。解开后的每个字节对这里记的 sha256(就是官方清单上那一行)。 */
+    const out = path.join(root, "node", name + ".xz");
     fs.mkdirSync(path.dirname(out), { recursive: true });
-    fs.writeFileSync(out, buf, { mode: 0o755 });
+    fs.writeFileSync(out, execFileSync("xz", ["-q", "-9e", "-T0", "-c", src], { maxBuffer: 1 << 30 }));
     const lic = path.join(path.dirname(src), "LICENSE");
     if (fs.existsSync(lic)) fs.copyFileSync(lic, path.join(root, "node", "LICENSE"));
-    bundledNode = { file: "node/" + name, sha256: sha(buf),
+    bundledNode = { file: "node/" + name + ".xz", unpacksTo: "node/" + name, sha256: sha(buf),
+                    xzSha256: sha(fs.readFileSync(out)),
                     version: (src.match(/node-(v\d+\.\d+\.\d+)/) || [])[1] || "unknown", verified };
   }
 
@@ -206,7 +210,7 @@ export function stage(dest, opts = {}) {
 const INSTALL = `# BourneWise · ComfyUI(自带依赖)
 
 **放进去就能用,不需要 git,不需要这个仓库。** 文件名带 \`win-x64\` 的那一版连 node 都自带了,
-Windows 上什么都不用另装。
+Windows 上什么都不用另装。第一次运行时它会先把自带的 node 解开(几秒钟),以后就不用了。
 
 ## Windows:三步装好
 
@@ -324,7 +328,7 @@ M4 要写一整篇,给它大的。
     repo/tools/comfy/                     节点本体 + 四张图
     repo/tools/lab/                       假端点、单站调试台
     example_workflows/                    那四张图的副本,给 ComfyUI 的「浏览模板」用
-    node/                                 (win-x64 那一版)官方 Node.js,打包时对过官方校验和
+    node/                                 (win-x64 那一版)官方 Node.js,xz 压缩,第一次用时解开并逐字节对校验和
 
 包外新写的只有 \`__init__.py\`(加载上面那个 nodes.py)、这份说明(\`README.md\`)、\`MANIFEST.json\`。
 
@@ -351,7 +355,7 @@ if (import.meta.url === "file://" + process.argv[1]) {
   if (i < 0) {
     let tag = "dev";
     try { tag = JSON.parse(read("version.json")).v; } catch { /* 没有就叫 dev */ }
-    const suffix = bundledNode && bundledNode.file.endsWith(".exe") ? "-win-x64" : "";
+    const suffix = bundledNode && /\.exe(\.xz)?$/.test(bundledNode.file) ? "-win-x64" : "";
     const zip = path.join(dest, `bournewise-comfy-${tag}${suffix}.zip`);
     fs.rmSync(zip, { force: true });
     execFileSync("zip", ["-rq", zip, "bournewise-comfy"], { cwd: dest });
