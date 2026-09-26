@@ -42,6 +42,7 @@ functions/_lib/     prompt-engine.js(QC/路由/追问的提示词,服务端)db.j
 functions/_lib/nodes/       prompts.js(M1–M4)fill.js(填槽 + VOICE)
 functions/_lib/doctrine/    rag/(11 库 29 卡)rag-features.json  INDEX.md
                             pack-20260914/(46 条判据 + 象义 + 金标例,见它的 README)
+                            books/(五门古籍全文 61 本,网上转录本、未校勘,见它的 README)
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
 ```
