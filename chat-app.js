@@ -780,7 +780,24 @@
         + word + '</button>';
     });
   }
-  xrCatalogue();
+  /* Fire it at boot, and repaint once it lands.
+     The bare call discarded the promise, so whether a reading got its
+     annotations came down to a race: on a fresh cast the reading takes a
+     minute and the catalogue is long since loaded, but reopening a SAVED
+     conversation paints immediately and usually wins. When it did, xrSeen was
+     never filled, and xrChain() and xrMaybe() — both of which return "" without
+     it — left the reading with no 取象 legend and no pointer at its foot, for
+     the rest of the session. Nothing errored; the sections simply were not
+     there, which is why it survived.
+
+     Repaint only if a reading is already on screen, and only for the one that
+     is: mdReading() is idempotent, so this costs a paint and changes nothing
+     else. */
+  xrCatalogue().then(function (cat) {
+    if (!cat) return;
+    if (!document.querySelector(".reading-body")) return;
+    try { renderThread({ animateLast: false }); } catch (e) { /* first paint not up yet */ }
+  });
 
   function mdInline(s) {
     // marks first (they own the braces), then the parse path over what is left,
@@ -1068,31 +1085,11 @@
     toast._t = setTimeout(function () { toastEl.classList.remove("on"); }, 2600);
   }
 
-  /* ── oracle text ──
-     Minimal real reading used only when the routed pipeline module isn't
-     loaded. The old canned-quote fallback is gone: a paid cast must produce a
-     real reading or fail loudly (send() refunds + explains). Returns null on
-     failure so the caller can surface it. */
-  function askOracle(question, m) {
-    if (!(window.claude && typeof window.claude.complete === "function")) {
-      return Promise.resolve(null);
-    }
-    var guard = new Promise(function (res) { setTimeout(function () { res(null); }, 30000); });
-    var deep = m.id === "sortis"
-      ? " This is a Sortis 6 deep casting: the figure has moving lines crossing into a second figure, so weigh how the situation is changing, not just where it stands."
-      : "";
-    var prompt = "You are BourneWise, a blunt I-Ching-style oracle. Question: \"" + question +
-      "\". Reply with ONE honest judgment, 1-3 sentences, plain modern language, no hedging, no mysticism dump." +
-      deep + " Wrap exactly ONE key word or short phrase in pipes like |this| for emphasis." +
-      " Reply in English with the judgment only.";
-    var run = window.claude.complete({
-      product: m.id === "sortis" ? "sortis" : "stria",
-      messages: [{ role: "user", content: prompt }]
-    }).then(function (r) {
-      var s = String(r || "").trim(); return s || null;
-    }).catch(function () { return null; });
-    return Promise.race([run, guard]);
-  }
+  /* ⚠️ `askOracle()` 已作废封存(2026-09-14,owner:「老的作废封存」)。
+     它是一条**不带盘的老链路**:三句话的行内提示词、直接 `window.claude.complete`、
+     跳过四节点、跳过 RAG、跳过裁决梯。留着它的理由是「routed pipeline 模块没加载时」——
+     而那正是最该报错的情况:**读的人付了钱,拿到的是一篇没有盘的散文,
+     而页面上看不出来换了一条路。** 现在管线起不来就是起不来。 */
 
   /* Prior turns as { role, content } pairs, oldest first, so a follow-up
      ("what did line 2 mean?") actually has something to refer back to —
@@ -1265,7 +1262,12 @@
      relevant rule subset (~2000-3000 tokens) instead of the full 15k+ monolith,
      improving rule adherence without increasing token cost. */
   function routedReading(question, spec, board, methodId, history, onDelta, mode, temperature, rootQuestion) {
-    if (!window.BWPromptRouter) return null; // router module missing → caller's own fallback
+    /* ⚠️ 原来这里 `return null`,意思是「让调用方走它自己的兜底」—— 而那些兜底
+       现在一条都不存在了(老链路作废封存,2026-09-14)。**返回 null 会让调用方
+       拿着一个假值往下走**,那是静默失败;起不来就说起不来。 */
+    if (!window.BWPromptRouter) {
+      return Promise.resolve({ __error: { message: "解读管线没加载起来(prompt-router.js)" } });
+    }
     var product = methodId === "stria" ? "stria" : "sortis";
     // STALL watchdog, not a flat deadline. The pipeline (route → stream → QC)
     // legitimately runs well past 45s for a deep Opus reading, so we DON'T cap
@@ -1286,7 +1288,9 @@
       product: product,
       board: board,
       method: methodId,
-      category: "general",
+      // category is deliberately UNSET: the 用神 is chosen from the question by
+      // BWLiuYaoAI.subjectKey. This used to say category:"general", which made
+      // every reading read the World line as its 用神 whatever was asked.
       // no lang override — BWPromptRouter detects it from the question text
       history: history || [],
       onDelta: wrappedDelta,
@@ -1318,32 +1322,15 @@
         })
       : null;
 
-    // Routed pipeline (modular prompts + QC) is the real path; legacy only
-    // covers the freak case where prompt-router.js failed to load. Errors flow
-    // through to send()'s failure handler — no mock rescue.
-    var routed = routedReading(question, spec, board, "sortis", history, onDelta, null, temperature);
-    if (routed) return routed;
-    return sortisLegacy(question, spec, board);
-  }
-
-  function sortisLegacy(question, spec, board) {
-    // No mock fallback: mock output is placeholder prose, and showing it for a
-    // paid cast (while units drained) is worse than an honest failure.
-    if (!board || !window.BWLiuYaoAI) {
-      return Promise.resolve({ __error: { message: "casting engine unavailable" } });
-    }
-    var lang = "en";
-    function pack(reading) { return { text: (reading && reading.reading) || "", board: board, reading: reading }; }
-    var guard = new Promise(function (res) { setTimeout(function () { res({ __timeout: true }); }, 90000); });
-    var run;
-    try {
-      run = BWLiuYaoAI.interpret({ board: board, question: question, category: "general", lang: lang });
-    } catch (e) { run = Promise.resolve(null); }
-    return Promise.race([run, guard]).then(function (reading) {
-      if (reading && reading.__timeout) return reading;
-      if (reading) return pack(reading);
-      return { __error: { message: "reading call failed" } };
-    }).catch(function (err) { return { __error: err || { message: "reading call failed" } }; });
+    /* ⚠️⚠️ **`sortisLegacy` 已作废封存(2026-09-14,owner 定)。**
+       它原来的说法是「legacy only covers the freak case where prompt-router.js
+       failed to load」—— 听起来是一条无害的兜底,实际上它是**老链路的一个活入口**:
+       `BWLiuYaoAI.interpret()` 会自己叫模型、拿老提示词、解析 JSON,失败还回
+       mockReading 的占位断语。也就是说 prompt-router 没加载成功时,用户付了钱、
+       拿到的是另一套完全不同的东西,而**页面上看不出来换了一条路**。
+       本文件已经为「降级了却像在正常工作」付过太多次钱。
+       现在:管线起不来就是起不来,错误照实往上抛,由 send() 的失败处理退费。 */
+    return routedReading(question, spec, board, "sortis", history, onDelta, null, temperature);
   }
 
   /* ── stale-tab guard ──
@@ -1676,17 +1663,15 @@
       // stored message so the thread keeps Stria's light figure (full board is
       // Sortis-only). Failures propagate to the failure handler; askOracle only
       // covers the freak case of the router module not loading.
-      var striaRouted = routedReading(castQ, spec, castBoard, "stria", history, onStreamDelta, null, castTemp);
-      if (striaRouted) {
-        answerP = striaRouted.then(function (result) {
+      /* ⚠️ `askOracle()` 那条兜底删了(2026-09-14):它是**另一条老链路** ——
+         不带盘、不走四节点、服务端从问题装配整套提示词。留着它的理由一直是
+         「router 模块没加载的怪情况」,而那恰恰是最该报错的情况:
+         **读的人付了钱,拿到的是一篇没有盘的散文,而页面上看不出来。** */
+      answerP = routedReading(castQ, spec, castBoard, "stria", history, onStreamDelta, null, castTemp)
+        .then(function (result) {
           if (result && result.text) { result.board = null; }
           return result;
         });
-      } else {
-        answerP = askOracle(castQ, m).then(function (t) {
-          return t ? { text: t, board: null, reading: null } : { __error: { message: "oracle call failed" } };
-        });
-      }
     }
 
     function finish(ans) {

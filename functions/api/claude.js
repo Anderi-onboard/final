@@ -47,6 +47,7 @@
 
 import { sessionFromRequest } from '../_lib/session.js';
 import { getUser, chargeUnits, bumpRateLimit, unitsForUsage, countCjk, consumeFreeReading, releaseFreeReading } from '../_lib/db.js';
+import { buildNode } from '../_lib/nodes/fill.js';
 import { PromptEngine } from '../_lib/prompt-engine.js';
 
 // Same-origin only. The old '*' let any page on the internet POST here; the
@@ -116,6 +117,56 @@ const API_DISABLED = false;
 //      ever wanted for a silent walkthrough.
 function offlineMode(env) {
   return String((env && env.LIVE_MODEL) || '').toLowerCase() !== 'on';
+}
+
+/* ── 上游端点:一处定义(2026-09-15,owner:「接本地 API,和线上除了 API 和环境
+   没有不同」)────────────────────────────────────────────────────────────────
+   这个 URL 以前在三个地方各写了一遍(流式、非流式、utility)。改一个漏两个是
+   必然的,而漏掉的那一处**会照样跑通** —— 它只是跑去了另一个端点。
+
+   ⭐ 本地方案的全部做法就是换这两个变量,**代码一行不动**:
+       MODEL_BASE_URL=http://host.docker.internal:11434/v1   (Ollama / LM Studio / llama.cpp / vLLM)
+       SORTIS_MODEL=qwen2.5:32b   UTILITY_MODEL=qwen2.5:7b   LIVE_MODEL=on
+   所以计费闸、危机闸、免费额度、流式、SSE、D1、前端 —— 全部走的是线上那条路。 */
+const OPENROUTER = 'https://openrouter.ai/api/v1';
+
+function upstreamBase(env) {
+  return String((env && env.MODEL_BASE_URL) || OPENROUTER).replace(/\/+$/, '');
+}
+function isOpenRouter(env) {
+  return upstreamBase(env).startsWith(OPENROUTER);
+}
+function upstreamUrl(env) {
+  return upstreamBase(env) + '/chat/completions';
+}
+/* 本地服务通常不校验 key,但 `authorization` 缺失会让一部分实现 401 ——
+   所以给一个占位符,而不是把这个头整个省掉。 */
+function upstreamHeaders(env) {
+  const h = {
+    'content-type': 'application/json',
+    authorization: 'Bearer ' + (env.MODEL_API_KEY || env.OPENROUTER_API_KEY || 'local')
+  };
+  /* 这两个头是 OpenRouter 的排行榜署名。发给别人家的服务器没有意义,
+     而有些实现会对未知头很挑剔。 */
+  if (isOpenRouter(env)) {
+    h['http-referer'] = 'https://bournewise.com';
+    h['x-title'] = 'BourneWise';
+  }
+  return h;
+}
+/* ⚠️ **`reasoning` 和 `usage:{include:true}` 是 OpenRouter 的扩展字段。**
+   Ollama 忽略未知字段,而 llama.cpp 和 vLLM 会 400 —— 一个本地端点因为
+   两个它没听过的字段而拒绝整个请求,报出来的却是「模型调用失败」。
+   所以按端点门控,不是无条件发。 */
+function applyVendorExtras(payload, env, { stream }) {
+  if (!isOpenRouter(env)) return payload;
+  /* Extended thinking OFF unless explicitly asked for —— 见下面那段实测。 */
+  if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
+    payload.reasoning = { enabled: false };
+  }
+  /* 让最后一个 chunk 带上真实的 token 计数,结算才用得上实数而不是估值。 */
+  if (stream) payload.usage = { include: true };
+  return payload;
 }
 
 // The standard answer. Two of them: the reading follows the language of the
@@ -215,6 +266,32 @@ const DEMO_READING_ZH = [
 
 // The follow-up utility returns `Label | question` lines; the panel keeps its
 // static set if this fails, so the shape matters more than the wording.
+/* 四节点的离线样例。⚠️ 每一个都答**自己那一站的格式**,不是散文 ——
+   下游解析不到就会退回静态兜底,而那看起来像正常工作。
+   `tests/offline-mode.mjs` 钉着这条。 */
+const DEMO_M1 = [
+  'lang=Chinese',
+  'db=婚恋',
+  'ask=我和她还有没有可能,能不能并肩做事',
+  'hurt=0',
+  'flags=多个人'
+].join('\n');
+
+const DEMO_M2 = [
+  'lib=CLASS-RELATIONSHIP 凭=在一起',
+  'lib=TECH-RELATION-FLOW 凭=COMBINES',
+  'lib=TECH-VOID-BREAK 凭=XUN_EMPTY'
+].join('\n');
+
+const DEMO_M3 = [
+  '程=第3爻动而化绝,裁决梯第3步命中',
+  '法=JM-FLOW-001 生优先翻译为提供资源、机会、名分',
+  '实=他说「还」有可能,前面发生过什么由他给,盘上读不出来',
+  '推=这股劲还在,只是流向不在两人之间',
+  '',
+  '撑=1,2  驳=—  救=—  缺=盘上没有能定时间的爻,他也没问'
+].join('\n');
+
 const DEMO_FOLLOWUP = [
   'Gate | Who actually signs this off, and by when?',
   'Share | What is being taken before it reaches me, and is that fixed?',
@@ -260,7 +337,23 @@ const ALLOWED = {
 // `model` cannot raise it. Before this, `body.model` was honoured FIRST, which
 // meant an unauthenticated caller could ask for Opus on the free path and spend
 // the budget 120 times an hour per IP at the top rate.
-const UTILITY_ROLES = new Set(['router', 'qc', 'utility', 'intent', 'followup', 'followup_suggest']);
+/* ⚠️ **m1/m2/m3 在这里,而且这是一个计费判断,不是模型偏好。** 2026-09-14。
+   四节点管线把一次解读拆成四次调用,而 `guardRequest` 是按 `product` 分流的 ——
+   四次都带 `product:"sortis"`,于是**第一次调用(M1,一次 349 tok 的分类)
+   就把新用户那唯一一次免费解读花掉了**,后面三次各自去撞余额,而新用户余额是 0。
+   结果:新注册的人一卦都起不了。
+
+   这和 codex 那次加 reserve+cap 是**同一个后果**(CLAUDE.md §5 记着),
+   只是成因换了一个:那次是入场先要一整笔,这次是入场被收了四次门票。
+   **一次解读就是一次解读,不管它在里面调了几个模型。**
+
+   所以三个中间站按 utility 走:要 session、按 IP 限流、不动 ledger、不碰免费额度。
+   只有 M4 是那次解读。它们同时因此落在 UTILITY_MODEL 上 —— 那正是拆站要的东西
+   (拿 Opus 去做「把问题分到九个领域之一」,正是拆站要省掉的那笔钱)。
+   ⚠️ M3 做的是映射(读卡 → 词条),不是写作;它够不够用是**量出来**的事,
+   不是在这里拍的 —— 要抬就抬 UTILITY_MODEL,或者把 m3 单独摘出这个集合。 */
+const UTILITY_ROLES = new Set(['router', 'qc', 'utility', 'intent', 'followup', 'followup_suggest',
+                               'm1', 'm2', 'm3']);
 
 function isUtilityRole(body) {
   return UTILITY_ROLES.has(String(body.role || '').toLowerCase());
@@ -293,14 +386,20 @@ export async function onRequestPost(context) {
   try {
     // ⚠️ Only the live path needs a key. Requiring one offline would 503 exactly
     // the deployment that has deliberately removed it.
-    if (!offline && !env.OPENROUTER_API_KEY) {
-      return json({ error: 'OPENROUTER_API_KEY not configured' }, 503);
+    /* ⚠️ 本地端点不需要 key(Ollama / llama.cpp 都不校验),所以
+       「设了 MODEL_BASE_URL」本身就算配置好了。不放这一条的话,
+       本地方案会在第一个请求上 503,而 503 的文案说的是一个根本用不上的变量。 */
+    if (!offline && !env.OPENROUTER_API_KEY && !env.MODEL_BASE_URL) {
+      return json({ error: 'no model endpoint configured — set OPENROUTER_API_KEY, or MODEL_BASE_URL for a local one' }, 503);
     }
     const body = await request.json().catch(() => ({}));
     const messages = Array.isArray(body.messages) ? body.messages : [];
     if (!messages.length) return json({ error: 'no messages' }, 400);
 
     const product = String(body.product || '').toLowerCase();
+    /* 计费分流要用它,所以在这儿取一次 —— 下面离线分支里那个同名常量是这一个的
+       影子,留着不动是为了少动无关的行,两者读的是同一个字段。 */
+    const gateRole = String(body.role || '').toLowerCase();
     // mode "followup" = a question ON the existing casting (no new hexagram).
     // It changes only what the charge is labelled in the ledger — both modes
     // are billed the same way, from the tokens they actually use.
@@ -314,7 +413,7 @@ export async function onRequestPost(context) {
     // still shows in the ledger, and a ledger entry for a reading that was never
     // generated is worse than no entry at all.
     if (db && !offline) {
-      const gate = await guardRequest({ request, env, db, product, mode });
+      const gate = await guardRequest({ request, env, db, product, mode, role: gateRole });
       if (gate.error) return json(gate.error.body, gate.error.status);
       if (gate.charge) chargeTo = gate.charge;
       if (gate.freeClaim) freeClaim = gate.freeClaim;
@@ -350,7 +449,24 @@ export async function onRequestPost(context) {
     // model call, no charge — the resources are returned directly.
     if (built.route === 'crisis') {
       chargeTo = null;
+      /* ⚠️ 免费解读也要还回去。闸跑在这条分支**之前**(它要先知道是谁),
+         所以走到这里时第一次的免费额度已经被领走了 —— 不还的话,
+         **一个说自己想死的人,那一条求助信息花掉了他唯一一次免费解读**。
+         CLAUDE.md §5 早写过「为一段没有模型写过的文字计费」是不可辩护的结算;
+         这是同一条,而且更难看。 */
+      if (freeClaim && db) {
+        try { await releaseFreeReading(db, freeClaim.userId, freeClaim.reason); } catch (e) {}
+        freeClaim = null;
+      }
       return json({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }, 200);
+    }
+    /* 老链路退役之后,一个没带 node role 的解读请求到这儿。**放它过去等于
+       把它悄悄接回老装配** —— 而那条路已经不存在了,所以它必须自己说话。
+       ⚠️ 位置在危机分支**之后**:模型关着、路由退役,都不是把一个处在危机里的
+       人挡在资源前面的理由。CLAUDE.md §5 为离线模式写过同一条,顺序就是全部性质。 */
+    if (built.error) {
+      chargeTo = null;
+      return json(built.error.body, built.error.status);
     }
 
     /* ── the offline answer ───────────────────────────────────────────────
@@ -383,6 +499,22 @@ export async function onRequestPost(context) {
       if (role === 'qc') {
         return json({ text: 'PASS', model: 'offline', offline: true }, 200);
       }
+      /* ⚠️ 四个节点各答自己的格式,不是散文。CLAUDE.md §5 记过这条:
+         全都回散文的话,下游会退回静态兜底**而且看起来像正常工作**。 */
+      if (role === 'm1') {
+        return json({ text: DEMO_M1, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'm2') {
+        return json({ text: DEMO_M2, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'm3') {
+        return json({ text: DEMO_M3, model: 'offline', offline: true }, 200);
+      }
+      if (role === 'm4') {
+        const preset4 = zh ? DEMO_READING_ZH : DEMO_READING_EN;
+        if (body.stream === true) return demoStream(preset4, unitsRemaining);
+        return json({ text: preset4, model: 'offline', offline: true }, 200);
+      }
       const preset = zh ? DEMO_READING_ZH : DEMO_READING_EN;
       if (body.stream === true) return demoStream(preset, unitsRemaining);
       return json({ text: preset, model: 'offline', offline: true }, 200);
@@ -410,20 +542,24 @@ export async function onRequestPost(context) {
     // at 4067-4889 chars for $0.196-0.217. So it was truncating every reading
     // AND doubling the bill. Note that finish_reason "length" arrives looking
     // like an ordinary completion, which is why this stayed invisible.
-    if (String(env.CLAUDE_THINKING || '').toLowerCase() !== 'on') {
-      payload.reasoning = { enabled: false };
-    }
-    // optional sampling temperature (Anthropic models: 0..1). Used to give a
-    // recast a genuinely fresher draw — the client sends temperature ≈ 1.
-    if (body.temperature != null && Number.isFinite(Number(body.temperature))) {
+    /* ⚠️ `reasoning` 现在由 applyVendorExtras 按端点加 —— 本地端点会因为
+       这个没听过的字段 400,而报出来的是「模型调用失败」。见文件上方那段。 */
+    /* SAMPLING IS GONE ON THE OPUS 5 FAMILY. temperature / top_p / top_k were
+       removed on Fable 5, Opus 5, Opus 4.8, 4.7 and Sonnet 5 — the native API
+       returns 400 for them. This path used to send temperature ≈ 1 so that
+       「再起一卦」 drew a fresher wording; on those models the parameter is at
+       best dropped by the proxy and at worst rejects the request, so the lever
+       has not done anything for some time.
+       A recast is still genuinely fresh: it re-tosses the coins, so the BOARD
+       is new. Only the prose-level jitter is gone, and effort is the knob that
+       replaced it. Older models still accept sampling, so it is passed through
+       for them rather than removed outright. */
+    const SAMPLING_REMOVED = /(fable-5|opus-5|opus-4-8|opus-4-7|sonnet-5)/;
+    if (body.temperature != null && Number.isFinite(Number(body.temperature))
+        && !SAMPLING_REMOVED.test(model)) {
       payload.temperature = Math.max(0, Math.min(1, Number(body.temperature)));
     }
-    const openrouterHeaders = {
-      'content-type': 'application/json',
-      authorization: 'Bearer ' + env.OPENROUTER_API_KEY,
-      'http-referer': 'https://bournewise.com',
-      'x-title': 'BourneWise'
-    };
+    const upstreamHead = upstreamHeaders(env);
 
     // Streaming path: only the main reading call asks for this (router/qc
     // stay non-streaming — they're single short completions, nothing to
@@ -432,12 +568,10 @@ export async function onRequestPost(context) {
     // shape differs from here on.
     if (body.stream === true) {
       payload.stream = true;
-      // OpenRouter extension: ship prompt/completion token counts in the final
-      // stream chunk so settlement uses REAL usage, not an estimate.
-      payload.usage = { include: true };
-      const upstream = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      applyVendorExtras(payload, env, { stream: true });
+      const upstream = await fetch(upstreamUrl(env), {
         method: 'POST',
-        headers: openrouterHeaders,
+        headers: upstreamHead,
         body: JSON.stringify(payload)
       });
 
@@ -485,8 +619,16 @@ export async function onRequestPost(context) {
        zero bytes, and the reader still charged 1090 units because settlement
        runs regardless. Streaming is not an optimisation here, it is what keeps
        the request alive, so a reading is never generated without it. Utility
-       roles are short and stay non-streaming. */
-    if ((product === 'sortis' || product === 'stria') && body.stream !== true) {
+       roles are short and stay non-streaming.
+
+       ⚠️⚠️ **这一条也要按 role 判,不能只看 product ——(2026-09-15,本地跑起来
+       第一个请求就撞上了)。** M1/M2/M3 都带 `product:"sortis"`(客户端
+       `makeComplete({role, product})` 就是这么发的),而它们是**短的、非流式的**。
+       只看 product 的话,**四节点的第一站就被 400 挡回来,整条管线在线上一次都跑不起来** ——
+       而这件事在这台机器上看不出来:没有 key,谁也没真发过一个请求。
+       和计费闸那次是同一个形状:**product 是客户端字段,不能由它决定这个请求是什么。**
+       CLAUDE.md §5 记着那次。 */
+    if (!isUtilityRole(body) && (product === 'sortis' || product === 'stria') && body.stream !== true) {
       chargeTo = null;
       return json({
         error: 'a reading must be requested with stream:true — the non-streaming path cannot outlast generation',
@@ -494,9 +636,10 @@ export async function onRequestPost(context) {
       }, 400);
     }
 
-    const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    applyVendorExtras(payload, env, { stream: false });
+    const resp = await fetch(upstreamUrl(env), {
       method: 'POST',
-      headers: openrouterHeaders,
+      headers: upstreamHead,
       body: JSON.stringify(payload)
     });
 
@@ -706,20 +849,14 @@ async function buildSystem({ body, env, product, mode, messages, offline }) {
   // A completion function the engine can call for its own routing sub-request.
   // Utility model, small budget, never billed to the reader.
   const utility = async ({ system, messages: msgs, max_tokens }) => {
-    const r = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const r = await fetch(upstreamUrl(env), {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: 'Bearer ' + env.OPENROUTER_API_KEY,
-        'http-referer': 'https://bournewise.com',
-        'x-title': 'BourneWise'
-      },
-      body: JSON.stringify({
+      headers: upstreamHeaders(env),
+      body: JSON.stringify(applyVendorExtras({
         model: env.UTILITY_MODEL || 'anthropic/claude-haiku-4.5',
         max_tokens: Math.max(1, Math.min(64, Number(max_tokens) || 16)),
-        reasoning: { enabled: false },
         messages: system ? [{ role: 'system', content: system }, ...msgs] : msgs
-      })
+      }, env, { stream: false }))
     });
     if (!r.ok) throw new Error('router upstream ' + r.status);
     const d = await r.json();
@@ -746,16 +883,45 @@ async function buildSystem({ body, env, product, mode, messages, offline }) {
   if (role === 'qc') return { system: PromptEngine.QC_SYSTEM };
   if (role === 'router') return { system: PromptEngine.ROUTER_SYSTEM };
 
-  // Default: a reading. Route it from the question and assemble the stack.
-  // The question is taken from `body.question` when the client sends it, and
-  // otherwise recovered from the last user message, so a client that only ever
-  // posts messages still gets correctly routed.
-  const lastUser = [...messages].reverse().find((m) => m && m.role === 'user');
-  const question = str(body.question || (lastUser && lastUser.content) || '', 4000);
-  // ⚠️ Offline hands routeQuestion nothing rather than a stub that fetches: it
-  // answers "general" when it has no completion function, so the assembly stays
-  // entirely local and the fixture is reached without a single outbound call.
-  return PromptEngine.buildSystemPrompt(question, product, offline ? null : utility, { mode });
+  /* 四节点管线。M1 读问题;M2 拿盘面 feature 路由到库;M3 在开放的库里按卡把盘
+     变成这一卦的事;M4 说话。每一站的槽由 fill.js 填 —— 断法原文只在服务端,
+     浏览器拿不到,这条界线和 prompt-engine.js 08-14 搬进 _lib 是同一条。 */
+  if (role === 'm1' || role === 'm2' || role === 'm3' || role === 'm4') {
+    /* ⚠️⚠️ **危机硬停要在这里跑,不能跟着老链路一起退役。**
+       它原来挂在 `buildSystemPrompt()` 的路由上,而那条路由 2026-09-14 作废了 ——
+       **删掉一条路径的时候,要数清楚它顺手扛着什么。** 这道闸是代码不是模型
+       (`PromptEngine.gate` 读 CRISIS_PATTERNS),所以照跑,而且跑在
+       `buildNode` 之前:一个说自己想死的人,不该先被路由到「婚恋库」。
+       CLAUDE.md §5 为离线模式写过同一条:顺序就是全部性质。
+
+       ⚠️ 四站都查,不只查 M1。少查一站,就等于那一站是绕过闸的入口。 */
+    const lastU = [...messages].reverse().find((m) => m && m.role === 'user');
+    const q = str(body.question || (lastU && lastU.content) || '', 4000);
+    if (PromptEngine.gate(q) === 'crisis') return { route: 'crisis' };
+    const built = buildNode(role, body);
+    if (built) return built;
+  }
+
+  /* ⚠️⚠️ **没有 default 了。老的那条装配已作废封存(2026-09-14,owner 定)。**
+     这里原来是:
+         return PromptEngine.buildSystemPrompt(question, product, …)
+     —— 从问题选路由、把 95k 字符的段落栈装配成一个 system,一次调用干完
+     分类、取用神、检索、推理、写作五件事。**它就是老链路。**
+
+     它不能留成兜底,理由不是审美:一个没带 `role` 的请求会**静默**落到它上面,
+     于是线上同时跑着两套完全不同的东西,而**页面上分不出来是哪一套写的**。
+     本仓库为「降级了却像在正常工作」付过的钱,这一节自己就记着好几笔。
+
+     `PromptEngine` 本身**没有删**:QC / ROUTER / INTENT / FOLLOWUP 仍然在用它,
+     那几样不是老链路,是工具。作废的是**装配解读**这一条路径。
+     owner 的提示词原文一个字都没动,它还在 `functions/_lib/prompt-engine.js` 里。 */
+  return { error: {
+    status: 400,
+    body: {
+      error: 'reading requires a node role (m1|m2|m3|m4)',
+      code: 'LEGACY_PIPELINE_RETIRED'
+    }
+  } };
 }
 
 // Returned verbatim when the gate trips. Kept here rather than in the engine so
@@ -775,10 +941,16 @@ const CRISIS_TEXT = [
 // Auth + billing + rate-limit gate. Returns one of:
 //   { error: { status, body } }   — reject, never call OpenRouter
 //   { charge, unitsRemaining }    — cleared to run; bill it after it is written
-async function guardRequest({ request, env, db, product, mode }) {
+async function guardRequest({ request, env, db, product, mode, role }) {
   const session = await sessionFromRequest(request, env);
   const user = session ? await getUser(db, session.uid) : null;
   const reason = (mode === 'followup' ? 'follow:' : 'cast:') + product;
+
+  /* ⚠️ **角色说了算,不是 product。** 在这之前分流只看 `product`,而 product 是
+     客户端字段 —— 于是任何带上 `product:"sortis"` 的 utility 调用都会去花一次
+     免费解读。四节点管线让这件事从「理论上脆」变成「一定会发生」:四次调用
+     都带 product,第一次就把新用户的免费解读花掉。见 UTILITY_ROLES 上面那段。 */
+  if (UTILITY_ROLES.has(String(role || '').toLowerCase())) product = '';
 
   // Every generation settles against a real prepaid ledger.
   if ((product === 'sortis' || product === 'stria') && !user) {
@@ -861,7 +1033,8 @@ export async function onRequestGet({ env }) {
   return json({
     ok: true,
     service: 'bournewise-claude-proxy',
-    keyConfigured: !!env.OPENROUTER_API_KEY,
+    keyConfigured: !!(env.OPENROUTER_API_KEY || env.MODEL_BASE_URL),
+    upstream: upstreamBase(env),
     offline: offlineMode(env),
     billingEnforced: !!env.DB,
     models: {

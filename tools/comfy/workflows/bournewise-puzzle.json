@@ -1,0 +1,769 @@
+{
+  "last_node_id": 13,
+  "last_link_id": 18,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "BWEndpoint",
+      "title": "端点",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        400,
+        196
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "links": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "端点上有什么",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWEndpoint"
+      },
+      "widgets_values": [
+        "http://127.0.0.1:8888/v1",
+        "local",
+        600,
+        "不发(按启动参数)"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "BWAsk",
+      "title": "问题",
+      "pos": [
+        40,
+        380
+      ],
+      "size": [
+        400,
+        162
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "links": [
+            5,
+            6
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "M1 收到的原文",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWAsk"
+      },
+      "widgets_values": [
+        "我和她还有可能复合吗?今年能换到更好的工作吗?我最近在投简历",
+        "",
+        "自动(跟 M1)"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "BWPuzzleM1",
+      "title": "M1",
+      "pos": [
+        480,
+        40
+      ],
+      "size": [
+        400,
+        298
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 1
+        },
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "M1",
+          "type": "BW_P1",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "原文",
+          "type": "STRING",
+          "links": [
+            8
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWPuzzleM1"
+      },
+      "widgets_values": [
+        "",
+        0.0,
+        512,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 4,
+      "type": "BWShow",
+      "title": "看M1",
+      "pos": [
+        480,
+        460
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "BWPuzzleBuild",
+      "title": "出题",
+      "pos": [
+        920,
+        40
+      ],
+      "size": [
+        400,
+        230
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "问题",
+          "type": "BW_ASK",
+          "link": 6
+        },
+        {
+          "name": "M1",
+          "type": "BW_P1",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "题",
+          "type": "BW_PUZ",
+          "links": [
+            9,
+            10,
+            11
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "题面",
+          "type": "STRING",
+          "links": [
+            12
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWPuzzleBuild"
+      },
+      "widgets_values": [
+        1,
+        "fixed",
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "BWShow",
+      "title": "看题面",
+      "pos": [
+        920,
+        360
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 7,
+      "type": "BWPuzzleClues",
+      "title": "线索",
+      "pos": [
+        1360,
+        40
+      ],
+      "size": [
+        400,
+        298
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 2
+        },
+        {
+          "name": "题",
+          "type": "BW_PUZ",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "线索答案",
+          "type": "BW_ANS",
+          "links": [
+            13
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "原文",
+          "type": "STRING",
+          "links": [
+            14
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWPuzzleClues"
+      },
+      "widgets_values": [
+        "",
+        0.0,
+        256,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "type": "BWShow",
+      "title": "看线索",
+      "pos": [
+        1360,
+        460
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "BWPuzzleVerify",
+      "title": "验现事",
+      "pos": [
+        1800,
+        40
+      ],
+      "size": [
+        400,
+        298
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 3
+        },
+        {
+          "name": "题",
+          "type": "BW_PUZ",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "验现事",
+          "type": "BW_VER",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "原文",
+          "type": "STRING",
+          "links": [
+            16
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWPuzzleVerify"
+      },
+      "widgets_values": [
+        "",
+        0.0,
+        256,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 10,
+      "type": "BWShow",
+      "title": "看验现事",
+      "pos": [
+        1800,
+        460
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 11,
+      "type": "BWPuzzleSolve",
+      "title": "解谜",
+      "pos": [
+        2240,
+        40
+      ],
+      "size": [
+        400,
+        366
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "端点",
+          "type": "BW_CONN",
+          "link": 4
+        },
+        {
+          "name": "题",
+          "type": "BW_PUZ",
+          "link": 11
+        },
+        {
+          "name": "线索答案",
+          "type": "BW_ANS",
+          "link": 13
+        },
+        {
+          "name": "验现事",
+          "type": "BW_VER",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "解读",
+          "type": "STRING",
+          "links": [
+            17
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "注",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "材料",
+          "type": "STRING",
+          "links": [
+            18
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWPuzzleSolve"
+      },
+      "widgets_values": [
+        "",
+        0.0,
+        8192,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 12,
+      "type": "BWShow",
+      "title": "解读",
+      "pos": [
+        2240,
+        520
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 13,
+      "type": "BWShow",
+      "title": "看材料",
+      "pos": [
+        2680,
+        40
+      ],
+      "size": [
+        400,
+        94
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "文字",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BWShow"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "BW_CONN"
+    ],
+    [
+      2,
+      1,
+      0,
+      7,
+      0,
+      "BW_CONN"
+    ],
+    [
+      3,
+      1,
+      0,
+      9,
+      0,
+      "BW_CONN"
+    ],
+    [
+      4,
+      1,
+      0,
+      11,
+      0,
+      "BW_CONN"
+    ],
+    [
+      5,
+      2,
+      0,
+      3,
+      1,
+      "BW_ASK"
+    ],
+    [
+      6,
+      2,
+      0,
+      5,
+      0,
+      "BW_ASK"
+    ],
+    [
+      7,
+      3,
+      0,
+      5,
+      1,
+      "BW_P1"
+    ],
+    [
+      8,
+      3,
+      1,
+      4,
+      0,
+      "STRING"
+    ],
+    [
+      9,
+      5,
+      0,
+      7,
+      1,
+      "BW_PUZ"
+    ],
+    [
+      10,
+      5,
+      0,
+      9,
+      1,
+      "BW_PUZ"
+    ],
+    [
+      11,
+      5,
+      0,
+      11,
+      1,
+      "BW_PUZ"
+    ],
+    [
+      12,
+      5,
+      1,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      13,
+      7,
+      0,
+      11,
+      2,
+      "BW_ANS"
+    ],
+    [
+      14,
+      7,
+      1,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      15,
+      9,
+      0,
+      11,
+      3,
+      "BW_VER"
+    ],
+    [
+      16,
+      9,
+      1,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      17,
+      11,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      18,
+      11,
+      2,
+      13,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "bournewise": "由 tools/comfy/build_workflow.py 从节点定义生成,不要手改"
+  },
+  "version": 0.4
+}

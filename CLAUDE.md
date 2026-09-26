@@ -31,10 +31,18 @@ assets/palettes/color-groups-180.json  180 组存档(改之前,只读)
 assets/marks.js  几何母题生成 → assets/blocks.js 填充色块路由
 assets/weave.js  织字重(全站)
 casting-figure.js   排卦图与排卦动画(BWFigure,延迟加载)
-liuyao-engine.js    六爻排盘(纯函数)  liuyao-ai.js  prompt-router.js  prompt-checks.js
+liuyao-engine.js    六爻排盘(纯函数)
+liuyao-relations.js 盘上一切成立的关系   liuyao-verdict.js  断卦裁决梯
+liuyao-features.js  盘面状态 → RAG 检索键(唯一的映射表)
+liuyao-ai.js        取用神 / 推角色 / 盘→文本(**不叫模型**)
+prompt-router.js    四节点管线的编排(M1→M2→M3→M4)  prompt-checks.js
 chat-app.js  聊天 UI 与投卦流程   account.js  sidebar.js  ds-base.js  ds-motion.js  copy.js
 functions/_middleware.js   拦住内部文件(_redirects 做不到,见 ARCHITECTURE §3D)
-functions/_lib/     prompt-engine.js(解读语气,服务端)db.js session.js password.js
+functions/_lib/     prompt-engine.js(QC/路由/追问的提示词,服务端)db.js session.js password.js
+functions/_lib/nodes/       prompts.js(M1–M4)fill.js(填槽 + VOICE)
+functions/_lib/doctrine/    rag/(11 库 29 卡)rag-features.json  INDEX.md
+                            pack-20260914/(46 条判据 + 象义 + 金标例,见它的 README)
+                            books/(五门古籍全文 64 本;六爻七本是 owner 合集还原校对的,其余是网上转录本,见它的 README;书单.md 是五门权威书目)
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
 ```
@@ -2143,8 +2151,136 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
 
 ## 5 · 后端与模型
 
+### ⭐⭐⭐ 解读走四节点,老链路已作废封存(2026-09-14,owner 定)
+
+owner:「为啥不把之前的老旧链路给下了封存 你觉得我是想跑那条链路吗 …… 别再用以前的东西了」。
+
+**一次解读 = 四次调用**,每一站只做一件事:
+
+| | 做什么 | 模型 | 拿到什么 |
+|---|---|---|---|
+| **M1** | 读问题 → `lang / db / ask / hurt / flags` | utility | 只有问题 |
+| **M2** | 选库(两级 RAG 的第一级) | utility | features + ask + 11 个库的条件 |
+| **M3** | 取证:把盘变成这一卦的事,出**词条** | utility | **只有 M2 开的那几个库的卡** + 盘 + 裁决梯 + 关系 |
+| **M4** | 说话:解读本身,流式 | sortis | M3 的四层材料 + 取象标记格式 + VOICE |
+
+- **用神由 M1 的 `db=` 定**(`BWLiuYaoAI.subjectKey(q, {db, gender})`),不再由正则猜领域 ——
+  猜领域正是 M1 存在的全部理由,留两套分类器只会分歧,而**分歧的那一次没人看得见**
+  (默认是世爻,一个读不出来的默认和一个判定长得一样)。
+- **收窄必须先于取前 N。** 第一版全局取前 6 再按 M2 的库过滤 → 交集只剩 1 张卡,
+  **而且不报错**。`tests/node-pipeline.mjs` 钉着。
+- **盘只发给 M3,不发给 M4。** 两站都发就是两个真相源,谁赢由模型当时的心情定。
+
+⭐⭐ **被封存的是四个入口,不是 owner 的提示词。** `prompt-engine.js` 一个字没删,
+QC / ROUTER / INTENT / FOLLOWUP 仍然用它 —— 那几样是工具。作废的是**装配一篇解读**这条路径:
+
+| 删掉的 | 它当时的说法 | 它实际是什么 |
+|---|---|---|
+| `claude.js` 的 default 分支 | 「Default: a reading」 | 34,074 tok 的段落栈,一次调用干完五件事 |
+| `BWLiuYaoAI.interpret()` | 「legacy only covers the freak case」 | 浏览器自己叫模型、解析 JSON、失败回占位断语 |
+| `askOracle()` | 同上 | 三句话行内提示词、**不带盘** |
+| `buildExperienceEnvelope()` | 包一层 TURN_CONTEXT | 把「这一站要什么」变成「全给它」 |
+
+⚠️ **兜底不是无害的。** 合起来它们是一整条能悄悄跑起来的老产品,而读的人付了钱、
+**页面上分不出来这一篇是哪一条路写的**。所以不是「优先走新的」,是**老的不存在**:
+少任何一块就当场抛,不换一条路。`tests/legacy-retired.mjs` 钉着这四个入口。
+
+⚠️⚠️ **删一条路径时要数清楚它顺手扛着什么。** 这一次差点跟着一起消失的有两样,
+而且消失之后**payload 看上去完全正常**:
+① **危机硬停**原来挂在老路由上 —— 现在跑在四节点分支里,且在 `buildNode` **之前**
+(一个说自己想死的人,不该先被路由到「婚恋库」);顺带修掉一件老账:
+闸跑在危机分支之前,所以**那条求助信息一直在花掉他唯一一次免费解读**,现在退回。
+② **用神的出处**(「这是**默认**不是判定」)原来挂在老 header 上 —— 现在跟着
+`distill()` 的 `yongshen` 字段一起发。
+
+⚠️ **m1/m2/m3 在 `UTILITY_ROLES` 里,这是计费判断不是模型偏好。** 闸原来按 `product` 分流,
+四次调用都带 `product:"sortis"` —— **M1 就把新用户的免费解读花掉了**,后三站撞余额,
+而新用户余额是 0:一卦都起不了。和 codex 那次加 reserve+cap 是同一个后果。
+**一次解读就是一次解读,不管它在里面调了几个模型。**
+
+### 解谜管线:每条判据一个模型,最后一个模型解谜(2026-09-23,owner 定,**实验中,未上线**)
+
+线上仍是上面的 M1→M4。这条在 `tools/lab/puzzle.mjs` 上跑,owner 一句一句改定了再接。
+程序在 `functions/_lib/puzzle/`,契约 `tests/puzzle-pipeline.mjs`。
+
+```
+M1(读问题)→ 程序出题 → 每条线索一个模型(并联,各写一句)→ 解谜(拼、补细节、斟酌文字、输出)
+```
+
+- **线索**:每条成立的判据、裁决梯走过的每一步、卦形、问了时间时的每条应期,各一条。
+  在「能与不能」里整条输掉的不单独成线索,但留在「打架」里。
+- **一卦多问要拆**:每问各取用神、各出一道题,所有线索放进同一批并联;M1 给事实标 `|q几`,
+  事实只落到它那一问(「我在投简历」落进感情那一问,会变成「帮着伤她的那一方」)。
+- **一象多义写「可能是……也可能是……」**,候选只从补全包象义表取,程序核模型写的在不在名单上。
+- **能与不能打架,程序先裁**:补全包的规矩「取条件更具体者并记冲突」,「更具体」按条件数读(一种读法,待 owner 定)。
+- **三合、三会局不当线索断吉凶,进「验现事」(owner 09-23 定)**:局合的是哪一方的五行程序算得出,
+  它帮谁仓库里没有原文。所以单独并联一个模型,拿他自己的原话对照,只答 对上 / 对不上 / 他没说,
+  解读里只提最强的那一条。⭐ **它得能输**:说「对上」必须原样抄出他的话,程序逐字核,
+  抄不出按他没说算 —— 永远对上的验现事就是算命先生的开场白。
+  月破、旬空这些「现在」的信号,等库里有它们象义的原文再加。
+- **ComfyUI 上两条管线都有**(`tools/comfy/`,`workflows/bournewise-puzzle*.json`):
+  线索和验现事在画布上**一条一条跑**(本地一张卡同时只跑得动一个模型),每条仍是一次独立调用;
+  模型名留空 = 用端点列出的第一个(Unsloth / llama-server 一次只挂一个);
+  Qwen3.8 的思考写在 `<think>` 里的一律剥掉,思考开关是 `chat_template_kwargs.reasoning_effort`,
+  **不选就一个字段都不多发**。契约 `tests/comfy-puzzle.mjs` 拿真的 Python 节点接假端点跑一遍。
+- **Windows 打包版自带 node**(owner:「有打包版吗 这边实在不会下」):`pack.mjs --node … --node-sums …`
+  把官方 `node.exe` 放进 `bournewise-comfy/node/`,**打包时逐字节对 nodejs.org 的 SHASUMS256.txt**,
+  对不上就不打;`nodes.py` 只在打包的目录结构里(`MANIFEST.json` 在)认这个 node,并排在 PATH 前面。
+- 待定:「对照看看」那句留不留(§6 说不叫他去对照)、六亲名单用补全包还是 M3 提示词那份。
+
+### 书中例回放:数据库的验收线(2026-09-23)
+
+owner:「完成一个数据库(按照古籍来)……比你单纯用知识储备来得更清晰和正宗」。书的全文还在建库,
+库的格式和检查写在 `functions/_lib/doctrine/BOOK-DB.md`。
+
+⭐⭐ **凡是从摘要推出来的规则,书自己的例子一跑就露馅。** 补全包里 12 个书中例,拿书上的月日和卦
+把盘重建出来跑现在的程序(`tests/gold-replay.mjs`):书上判吉的十卦,裁决梯判凶八卦;
+书上引的判据 27 条只认出 11 条。三处原因,每一处都有书上的例子指向同一边,所以改了:
+- **引擎不认土的进退神**(丑→辰→未→戌→丑)。7 个书中例正是土的进退神,owner 自己的
+  `prompt-engine.js` 也写着「丑化辰 · 辰化未 · 未化戌 · 戌化丑 是进神」。
+- **第一步「卦变回头克,直断凶」是我把八纯卦的例子推广到了所有卦上**,推广后打中 6 卦、6 卦书上全断吉。
+  收回到书上见过的那一种:八纯卦变八纯卦。
+- **第三步把用神官鬼化官鬼当成「化鬼」、把墓被冲破的化墓当成败局**。前者本来就是化进神(001、009);
+  后者原文「墓神被日月动爻冲破,亦非真也」(012)。未化戌既是化进神又是(土随火的)化墓,
+  书中例三次都只读进神、都断吉,按书读进神。
+修完:认出 18/27、相反 1 卦(008,兄弟化退神而问的是「兄何日归来」—— 那是象义,不是裁决梯的事)。
+**两个数只许越来越好。** 剩下对不上的几卦列在 BOOK-DB.md,**没有原文之前一律不改**。
+
+另一道检查 `tests/doctrine-triad.mjs`:原文、依赖事实、规则表达式三方对账。09-23 手修的 7 条里
+它能机器抓出 5 条,新录的每一条都会走一遍。
+
+### 本地方案:整站在本地跑,只换端点(2026-09-15,owner 定)
+
+owner:「整套断卦流程的本地方案,接本地 API,**和线上除了 API 和环境没有不同**」。
+
+`npm run local` 起的是 **`wrangler pages dev`** —— 真的 Pages Functions,不是替身:
+浏览器 → `/api/claude` → 计费闸 → 危机闸 → `buildNode` → 上游 → SSE → 前端。
+**差别只有 `.dev.vars` 里两样:`MODEL_BASE_URL` 和模型名。代码一行不改。**
+用法见 `tools/lab/README.md`;`tools/lab/fake-model.mjs` 是不下模型先验接线的假端点。
+
+⭐ 支撑「没有不同」的是三条可查的性质,`tests/local-parity.mjs` 钉着:
+- **上游端点只有一处定义**(`upstreamUrl(env)`)。以前抄了三遍(流式/非流式/utility),
+  改一个漏两个是必然的 —— 而**漏掉的那一处会照样跑通**,它只是跑去了另一个端点。
+  本地方案里那意味着:三站走本地、一站偷偷走线上并且花钱。
+- **OpenRouter 的扩展字段按端点门控**(`applyVendorExtras`)。Ollama 忽略未知字段,
+  llama.cpp 和 vLLM 会 **400** —— 一个本地端点因为两个它没听过的字段拒收整个请求,
+  而报出来的是「模型调用失败」。假端点也拒收,否则这条门控**永远测不到**。
+- **每一道闸按 role 判,不按 product 判。** product 是客户端字段。
+
+⚠️⚠️ **本地第一次跑起来,第一个请求就撞出一个真 bug:`STREAM_REQUIRED` 也是按
+`product` 判的。** M1/M2/M3 都带 `product:"sortis"`(客户端 `makeComplete({role, product})`
+就是这么发的),而它们是短的、非流式的 —— **于是四节点的第一站被 400 挡回来,
+整条管线在线上一次都跑不起来**。而这件事在没有 key 的机器上看不出来:谁也没真发过一个请求。
+**这就是本地方案买到的东西**,也是 CLAUDE.md §7 那条「验证要用证据」的字面意思。
+
+实测本地一跑:M1/M2/M3 走 UTILITY_MODEL、不动账本;M4 走 SORTIS_MODEL、SSE、
+`charged 15 / unitsRemaining 4985`;「我不想活了」危机硬停、不调模型不计费;
+第二次起卦 `TOPUP_REQUIRED`(第一次把免费解读花掉了)。
+
 - 浏览器只声明**意图**(`product`/`role`),模型由服务端选,key 永不下发。
 - 环境变量(Pages → Settings → Environment variables):
+  **`MODEL_BASE_URL`**(可选,不设 = OpenRouter;设了就指向本地端点)
+  **`MODEL_API_KEY`**(可选,本地端点用的占位 key)
   `OPENROUTER_API_KEY` `SESSION_SECRET` `CREEM_API_KEY` `CREEM_WEBHOOK_SECRET`
   `CREEM_PRODUCT_PROMONTHLY` `CREEM_PRODUCT_PROANNUAL`
   `CREEM_PRODUCT_PREMIUMMONTHLY` `CREEM_PRODUCT_PREMIUMANNUAL`
@@ -2308,11 +2444,19 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
 - **先点用神,再动笔**。每篇必须说清读的是哪个用神、为什么是它。
   **不许拿"这个读不出来"当回避手段** —— 方法上读不读得出(有没有用神)和该不该答(优先级阶梯)
   是两根独立的轴,用前者去做后者的活,等于既拒绝了用户又谎报了这门方法。
-- 篇幅:**只有下限,没有上限**。主解读 Sortis 3500 字起、Stria 1500 字起;按键追问 300–6000 字,
-  按问题大小走,**不设刻板字数法则**。短是因为问题小,不是因为给得少 —— 信息量和温度永远不许缩水。
-  ⚠️ 上限是 owner 08-19 明确撤掉的:**写长了不是毛病** —— 用户来看的就是自己那一卦的解读,
-  巴不得多读一些;盘上真有那么多东西、写到四五千字,那是把活干完了。为了凑一个整齐的数字
-  砍掉正在说的那段,读的人实实在在少拿了东西,而什么也没省下。**盘读完就停,不是数字到了就停。**
+- 篇幅:**没有下限,也没有上限。一个数字都不许写。** 判据是**「饱满」**,而饱满是
+  `output_sortis` 那张清单,不是字数:承重的信号是不是条条读出来并翻译了、场景在不在、
+  应期有没有按几个尺度铺开、取象链在不在、把握是不是靠语法承载而不是印成清单。
+  清单齐了就是饱满 —— **写到多长算多长**。短是因为问题小或者盘上就那么些东西,不是因为给得少;
+  **信息量和温度永远不许缩水**。短只有在**清单缺了一项**时才是毛病,查清单,不要查字数。
+  ⚠️ **上限 owner 08-19 撤掉,下限 owner 08-27 撤掉,理由是同一条,只是两头。**
+  写长了不是毛病:用户来看的就是自己那一卦,巴不得多读一些;盘上真有那么多东西、写到四五千字,
+  那是把活干完了。而下限的问题是**数字分不出"这盘本来就没什么好说的"和"漏写了一段"** ——
+  在前一种情况下它买到的只有注水,而注水读的人一定尝得出来。
+  **盘读完就停,不是数字到了才停,也不是数字到了就停。**
+  ⚠️ 篇幅只有一个主人:`output_sortis`。别的段复述过一次,解读当场就开始摇摆(两次低于下限、
+  然后大幅超出)。`tests/xiang-trace.mjs` 现在挡着两件事:output_sortis 必须说清由盘定长,
+  以及**任何段都不许再出现「N 字/N characters」**。
 - **问什么答什么**:问应期就算应期(并按时辰→日→月→年整条列出),问长相就走取象·万物类象·射覆,
   问能不能就给决断。没问时间的人不要塞应期给他。
 - **比喻的言外之意也是断言**。用一个象之前先问:它顺带说了什么?「光走了这么久,它自己会回来」
@@ -2326,7 +2470,12 @@ Sortis 爻的手绘感不是"加噪声",是五条具体的规则。**新画的�
   (「盘上没有能定这件事的爻」),而不是说自己选择不说什么。
 - **不许打印固定编号的段落乐章**。标题要有、而且最好有,但必须从它下面那几段的内容里长出来;
   能安在别篇解读上的标题一律删掉。场景、取象、老话、把握照旧要有,但落在该落的地方,不许摆盒子。
-- 「再起一卦」= 必须真的新卦(temperature 拉满),不得近似复读;且要承接上文主题。
+- 「再起一卦」= 必须真的**新卦**,不得近似复读;且要承接上文主题。
+  ⚠️ ~~temperature 拉满~~ **在 Opus 5 系上这个杠杆已经不存在**(2026-09-01 核对):
+  temperature / top_p / top_k 在 Fable 5、Opus 5、4.8、4.7、Sonnet 5 上已移除,原生 API 返回 400。
+  我们经 OpenRouter,大概是被静默丢弃 —— **所以它已经空转了一段时间,没人发现。**
+  重摇真正的新鲜感来自**重新投掷的硬币**(盘是新的),不来自采样温度。
+  `claude.js` 现在对这些模型不再发送该参数,老模型仍透传。
 - 解读**跟随用户语言**(`detectLanguage`),界面仍是英文。每篇末尾由程序(不是模型)渲染免责提醒。
 
 ---
@@ -2419,14 +2568,26 @@ CI 还额外查一件 `build-tag.mjs` 查不到的事:**shipped 资产改了而�
 **不该进**:审美判断、还在讨论中的方向、只发生过一次且没人反对的选择。
 把这些锁进测试会让下一个 agent 无法改进,而它们本来就该能改。
 
-### 现有契约(21 条,`npm test` 全跑)
+### 现有契约:`ls tests/*.mjs`,不在这里抄一份
 
-`billing-contract` `board-distill` `build-tag` `followup-axes` `font-lock`
-`free-reading-contract` `language-purity` `palette-contract` `prompt-coverage`
-`prompt-secrecy` `rates-contract` `request-contract` `session-contract`
-`private-files` `stream-recovery` `style-ownership` `texture-contract` `token-cap`
-`upstream-error` `xiang-trace`
-\+ 文案册审计。
+⚠️ **这里原来抄着一份名单,写着「21 条」、实际列了 20 个、而目录里有 29 个** ——
+**九条契约存在、在跑、而这份文件说它们不存在。** 上一段刚说完「靠目录扫描,不靠登记」,
+下一段就手抄了一份登记表。
+
+本文件已经为「两张名单」付过两次学费(方法页的减半规则、触控热区),第三次记在这里:
+**名单只有一份,就是 `tests/` 目录**;`npm test` 结束时打印 `all N contracts pass`,
+那个 N 就是当前条数。要看有哪些,`ls tests/*.mjs`。
+\+ 文案册审计(`copywriting/audit-copy-deck.mjs`,不在 `tests/` 里,由 runner 单独跑)。
+
+名字不解释自己的那几条,记在这里:
+- `board-payload` —— 引擎算出来的每一条时钟关系都必须到达模型。四处生克源头的头两处
+  (月/日的生与克)曾被 `distill()` 静默丢掉,第 5 爻发出去时 flags 是空字符串。
+  同时钉着:月和日按**干支**发(只发元素时模型得在申/酉之间猜,那一卦就猜错了)、
+  纳甲带字形(冲合墓破全是字形关系)、动爻数直接写出来、六爻一爻一行。
+- `yongshen-assignment` —— 用神从**问题**取,不从写死的 category 取;默认必须自报是默认;
+  考试这类取**两个**用神时,第二个要在每一爻的数据上标出来,不能只在头部宣布一句。
+- `board-facts` —— 解读复述的盘面事实要和盘对得上(动爻数、月建日辰、冲)。
+- `flow-segment` —— flow 段不许被读成「压缩指令」,六条规则、每条一个能推广的问句。
 
 ⚠️ **仍然没有守卫的硬规则**(§3 里写着但没测试):`--pine` 不得用于 CTA、
 `--prussian` 每页最多一个 hero、mono/label 不得全大写、组件不写裸 hex。
