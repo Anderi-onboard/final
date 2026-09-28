@@ -39,7 +39,13 @@ const PRIVATE = [
   '/tests/palette-contract.mjs', '/tests/prompt-secrecy.mjs', '/scripts/dump-prompt.mjs',
   '/tools/palette-atlas.html', '/tools/palette-contrast.html',
   '/artifacts/palette-cache-history.json', '/eval/run-eval.js',
-  '/copywriting/BOURNEWISE_VOICE_DECK.md', '/qa/palette-editor-tool.png'
+  '/copywriting/BOURNEWISE_VOICE_DECK.md', '/qa/palette-editor-tool.png',
+  /* Agent skills. The whole `.claude/` tree is deployed with the site, and
+     measured on the preview deployment 2026-09-28 the Chinese writing skill
+     answered 200 with its full text. It is working material for the agents on
+     this repo, the same category as CLAUDE.md. */
+  '/.claude/skills/claudish-to-chinese/SKILL.md', '/.claude/skills/book-to-skill/SKILL.md',
+  '/.claude/skills/book-to-skill/scripts/extract.py'
 ];
 
 const leaked = [];
