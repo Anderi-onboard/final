@@ -45,7 +45,8 @@ const PRIVATE = [
      answered 200 with its full text. It is working material for the agents on
      this repo, the same category as CLAUDE.md. */
   '/.claude/skills/claudish-to-chinese/SKILL.md', '/.claude/skills/book-to-skill/SKILL.md',
-  '/.claude/skills/book-to-skill/scripts/extract.py'
+  '/.claude/skills/book-to-skill/scripts/extract.py',
+  '/.claude/skills/obsidian-markdown/SKILL.md', '/.claude/skills/obsidian-bases/SKILL.md'
 ];
 
 const leaked = [];

@@ -1,0 +1,38 @@
+{
+  "_说明": "术数、问题域、主题三张表。id 里的代号从这里取;主题的 key 写进每条规则的 topic。五门共用同一套主题,所以同一个主题下能把几门放在一起看(联合)。",
+  "shushu": [
+    { "key": "六爻", "code": "LY", "en": "Liu Yao (six-line coin divination)" },
+    { "key": "梅花易数", "code": "MH", "en": "Meihua Yishu (plum-blossom numerology)" },
+    { "key": "大六壬", "code": "LR", "en": "Da Liu Ren" },
+    { "key": "奇门遁甲", "code": "QM", "en": "Qimen Dunjia" },
+    { "key": "紫微斗数", "code": "ZW", "en": "Zi Wei Dou Shu (purple-star astrology)" }
+  ],
+  "domains": [
+    {
+      "key": "求财", "code": "WEALTH", "en": "Wealth and business",
+      "topics": [
+        { "key": "总则", "en": "Principles: what stands for money" },
+        { "key": "有无", "en": "Is there money, and how much" },
+        { "key": "难易", "en": "Easy or hard to get; who holds it" },
+        { "key": "动变", "en": "Moving lines and what they turn into" },
+        { "key": "应期", "en": "Timing: when the money or the price comes" },
+        { "key": "买卖", "en": "Buying, stockpiling and selling goods" },
+        { "key": "开店", "en": "Opening a shop, partnership, brokers" },
+        { "key": "借贷", "en": "Borrowing, lending, debts, savings societies" },
+        { "key": "公门九流", "en": "Official money, patrons, earning by a trade or skill" },
+        { "key": "博戏", "en": "Gambling and contests" },
+        { "key": "畜养渔猎", "en": "Livestock, fishing, hunting, mining" },
+        { "key": "风险", "en": "Risks: theft, disputes, losses, a bad year" },
+        { "key": "心术", "en": "The asker's intent" }
+      ]
+    },
+    { "key": "婚姻", "code": "MARRY", "en": "Marriage and relationships", "topics": [] },
+    { "key": "疾病", "code": "ILL", "en": "Illness", "topics": [] },
+    { "key": "事业", "code": "CAREER", "en": "Career and office", "topics": [] },
+    { "key": "考试", "code": "EXAM", "en": "Examinations", "topics": [] },
+    { "key": "出行", "code": "TRAVEL", "en": "Travel", "topics": [] },
+    { "key": "失物", "code": "LOST", "en": "Lost things", "topics": [] },
+    { "key": "官非", "code": "LAWSUIT", "en": "Lawsuits and disputes", "topics": [] },
+    { "key": "应期", "code": "TIMING", "en": "Timing", "topics": [] }
+  ]
+}

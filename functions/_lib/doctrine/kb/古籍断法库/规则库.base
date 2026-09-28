@@ -1,0 +1,78 @@
+# 规则库:所有规则的表格视图。每条规则是一篇笔记,下面的列都是笔记的属性。
+filters:
+  and:
+    - file.inFolder("规则")
+properties:
+  id:
+    displayName: "id"
+  title:
+    displayName: "标题"
+  shushu:
+    displayName: "术数"
+  domain:
+    displayName: "问题域"
+  topic:
+    displayName: "主题"
+  work:
+    displayName: "出处"
+  books:
+    displayName: "引了哪几本"
+  dispute:
+    displayName: "打架"
+  rule:
+    displayName: "规则(整理)"
+  rule_en:
+    displayName: "Rule"
+views:
+  - type: table
+    name: "全部"
+    groupBy:
+      property: domain
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - topic
+      - rule
+      - work
+      - dispute
+  - type: table
+    name: "求财"
+    filters:
+      and:
+        - 'domain == "求财"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
+    name: "六爻"
+    filters:
+      and:
+        - 'shushu == "六爻"'
+    groupBy:
+      property: domain
+      direction: ASC
+    order:
+      - id
+      - topic
+      - rule
+      - work
+      - books
+  - type: table
+    name: "打架"
+    filters:
+      and:
+        - 'dispute == true'
+    order:
+      - id
+      - shushu
+      - domain
+      - topic
+      - rule
+      - work

@@ -1,0 +1,361 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "黄金策",
+  "chapter": "求财",
+  "chapter_en": "Seeking wealth",
+  "ranges": { "卜筮大全": [7759, 7907], "卜筮正宗": [2653, 2738], "增删卜易": [11080, 11257] },
+  "units": [
+    {
+      "id": "LY.WEALTH.HJC.29",
+      "topic": "公门九流",
+      "title": "九流术士，偏宜鬼动生身",
+      "rule": {
+        "yi": "空手求财（百工九流）以官鬼为主顾：无官鬼最不利；官鬼出现发动、生合世爻则如意，化财更有大利；官鬼刑克世爻或化兄主是非；应爻空更不吉。但仍须财爻旺相、兄弟不动，才有实利。",
+        "en": "Earning without capital (craftsmen and the trades) takes the Pressure line as the client: no Pressure is the worst; Pressure appearing, moving and generating or combining with the Self line goes as wished, and turning into Wealth brings a large profit; Pressure punishing or controlling the Self line, or turning into Peer, means trouble; a void Other line is worse still. Yet there is real profit only if Wealth is also thriving and Peer still."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["九流术士，", "偏宜鬼动生身；"],
+          "yi": ["靠手艺、方术吃饭的人，", "偏偏宜官鬼发动来生世身；"],
+          "en": ["For those who live by a trade or an art,", "a moving Pressure line that generates the Self line is exactly what is wanted;"] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["百工九流求财，以鬼爻为主顾，无鬼最不利。", "出现发动，生合世爻，必然称意。", "更化财爻，决得大利。", "须忌刑克世爻，或化兄，皆主惹是招非，不能遂意。", "应空尤不吉。", "大抵空手求财，虽要官爻，然须财爻旺相，兄弟不动，方主有财。", "否则空好看，终无财利。"],
+          "yi": ["百工九流求财，以官鬼为主顾（出钱的客人），没有官鬼最不利。", "官鬼出现、发动，生合世爻，一定如意。", "再化出财爻，一定得大利。", "要忌它刑克世爻，或化出兄弟，都主招惹是非，不能如意。", "应爻落空更不吉。", "总之空手求财，虽然要官鬼，但还必须财爻旺相、兄弟不动，才有财。", "否则只是好看，终究没有财利。"],
+          "en": ["Craftsmen and people of the trades seek money with the Pressure line as their client; no Pressure line is the worst.", "If it appears, moves and generates or combines with the Self line, it will go as wished.", "If it also turns into a Wealth line, a large profit is certain.", "Beware of it punishing or controlling the Self line, or turning into Peer: both mean trouble and disappointment.", "A void Other line is worse still.", "In short, earning without capital needs the Pressure line, but it also needs a thriving Wealth line and a still Peer before there is money.", "Otherwise it only looks good, and in the end there is no profit."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["九流求财，以鬼爻为主顾，", "出现发动，生合世爻，必然称意，忌刑克世爻。"],
+          "yi": ["九流求财，以官鬼为主顾，", "官鬼出现发动，生合世爻，一定如意；忌它刑克世爻。"],
+          "en": ["The trades seek money with the Pressure line as their client;", "if it appears, moves and generates or combines with the Self line, it will go as wished; beware of it punishing or controlling the Self line."] }
+      ],
+      "see": ["LY.WEALTH.HJC.28"]
+    },
+    {
+      "id": "LY.WEALTH.HJC.30",
+      "topic": "畜养渔猎",
+      "title": "六畜血财，尤喜福兴持世",
+      "rule": {
+        "yi": "占六畜（贩卖或饲养）以子孙为主：子孙旺相不空、持世临身则吉；父母发动有伤损；化出土鬼防瘟死；子孙旺而财空，畜好无利。",
+        "en": "For livestock, bought and sold or raised, Output is the main line: Output thriving, not void, on the Self or Body line is good; a moving Resource line means losses; turning into an Earth Pressure line, beware of plague; Output strong but Wealth void, the animals do well but there is no profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["六畜血财，", "尤喜福兴持世。"],
+          "yi": ["牲畜这类活物的财，", "尤其喜欢子孙兴旺并持世。"],
+          "en": ["For livestock and other living goods,", "an Output line flourishing on the Self line is especially welcome."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["凡占贩卖牲口，蓄养六畜，皆要子孙旺相不空，则吉。持世临身尤好。", "父母发动，则有伤损。", "化出土鬼，须防瘟死。", "福旺财空。六畜虽好而无利。"],
+          "yi": ["凡是占贩卖牲口、饲养六畜，都要子孙旺相不空才吉；持世、临卦身更好。", "父母发动，就有伤损。", "（子孙）化出属土的官鬼，要防瘟疫死亡。", "子孙旺而财空：六畜虽然好，却没有利。"],
+          "en": ["Whether dealing in animals or raising livestock, Output must be thriving and not void; then it is good, and better still on the Self or Body line.", "A moving Resource line means losses.", "If it turns into an Earth Pressure line, beware of the animals dying of plague.", "Output strong but Wealth void: the animals do well but there is no profit."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["凡卜贩卖牲口、畜养六畜，皆要子孙旺相，持世临身则吉；", "父母发动则有损伤；化出土鬼须防瘟死；", "福旺财空，六畜虽好而无利。"],
+          "yi": ["凡是卜贩卖牲口、饲养六畜，都要子孙旺相，持世、临卦身就吉；", "父母发动就有损伤；化出土鬼，要防瘟死；", "子孙旺而财空，六畜虽好却没有利。"],
+          "en": ["In dealing in or raising livestock, Output must be thriving; on the Self or Body line it is good;", "a moving Resource line means losses; turning into an Earth Pressure line, beware of plague;", "Output strong but Wealth void: the animals do well but there is no profit."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.31",
+      "topic": "借贷",
+      "title": "世应同人，放债必然连本失",
+      "rule": {
+        "yi": "放债：世、应都是兄弟（同人），讨不回来；财爻再绝，连本俱失；世应落空亦然。应爻生合世爻、妻财有气、子孙发动则吉；间爻兄鬼发动防经手人抽分；卦无财而官鬼化出财，要打官司才讨得回。",
+        "en": "Lending: Peer on both the Self and Other lines means the money cannot be recovered; with Wealth extinguished as well, the principal is lost; the same if Self and Other are void. Good if the Other line generates or combines with the Self line, Wealth has force and Output moves. A moving Peer or Pressure on the between lines: the middleman skims a share. No Wealth, but Pressure turning into it: recoverable only through a lawsuit."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["世应同人，", "放债必然连本失；"],
+          "yi": ["世、应都是兄弟，", "放债一定连本钱都丢掉；"],
+          "en": ["If the Self and Other lines are both Peer,", "lending money means losing even the principal;"] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["凡放私债，最忌世应值兄弟，必无讨处。", "财爻更绝，连本俱失。世应值空，亦然。", "须得应爻生合世爻，妻财有气，子孙发动则吉。", "间临兄鬼动，恐放头抽分财利。", "卦中无财，而官爻变出者，必讼于官府而后可取。"],
+          "yi": ["凡是放私人债，最忌世、应都是兄弟，一定讨不回来。", "财爻再临绝，连本钱都丢；世应落空也一样。", "要应爻生合世爻、妻财有气、子孙发动才吉。", "间爻是兄弟或官鬼而发动，怕中间经手的人抽成分利。", "卦里没有财，而官鬼变出财来，一定要到官府打官司才能讨回。"],
+          "en": ["In private lending the thing most feared is Peer on both the Self and Other lines: there will be no one to collect from.", "If the Wealth line is also extinguished, the principal is lost too; the same if Self and Other are void.", "It is good only if the Other line generates or combines with the Self line, Wealth has force, and Output moves.", "If the between lines carry a moving Peer or Pressure, the middleman may skim off a share of the interest.", "If there is no Wealth in the hexagram and a Pressure line turns into it, the money can be recovered only through a lawsuit."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["凡放私债，最忌世应值兄弟，必无讨处；", "财爻更绝，连本俱无，世应值空亦然。"],
+          "yi": ["凡是放私人债，最忌世、应都是兄弟，一定讨不回来；", "财爻再临绝，连本都没了；世应落空也一样。"],
+          "en": ["In private lending the thing most feared is Peer on both Self and Other: nowhere to collect from;", "if the Wealth line is also extinguished, the principal is gone too; the same if Self and Other are void."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.32",
+      "topic": "开店",
+      "title": "日月相合，开行定主有人投",
+      "rule": {
+        "yi": "开行（牙行、铺面）：世应不空，财福齐全，官鬼有气，父兄衰静，为上吉；再得月建、日辰、动爻生合世爻，客人远近来投。卦无财而世爻只得生合：门口热闹、无实利（鬼旺财空同）；动出兄官多是非；世应空，开不成。",
+        "en": "Opening a brokerage or shop: Self and Other not void, Wealth and Output both present, Pressure with force, Resource and Peer weak and still is first-class; if the Month, the Day and moving lines also generate or combine with the Self line, clients come from near and far. With no Wealth, support for the Self line is only a busy doorway without profit (the same for strong Pressure and void Wealth); Peer or Pressure moving means quarrels; Self and Other void, it will not open."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["日月相合，", "开行定主有人投。"],
+          "yi": ["日辰、月建来合世爻，", "开牙行一定有客人来投。"],
+          "en": ["When the Day and Month combine with the Self line,", "a brokerage that opens will surely draw clients."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["开行牙人占财，世应要不空，财福要全备，官鬼要有气，父兄要衰静，斯为上吉卦。", "更得月建日辰动爻生合世爻，则近悦远来，人皆投我，财利必顺。", "卦若无财，而世得月日动爻生合者，不过门头闹热，无实利。", "鬼旺财空，亦然。", "动出兄官，常有是非口舌，或有恶人搅扰。", "世应空，开不成。"],
+          "yi": ["开牙行的经纪人占财，世、应要不空，妻财、子孙要齐全，官鬼要有气，父母、兄弟要衰弱安静，这是上吉卦。", "再有月建、日辰、动爻来生合世爻，就近者喜欢、远者来投，人人都来找我，财利一定顺。", "卦里如果没有财，只是世爻得到月、日、动爻生合，不过是门口热闹，没有实利。", "官鬼旺而财空，也一样。", "动出兄弟、官鬼，常有是非口舌，或有恶人来捣乱。", "世应落空，开不成。"],
+          "en": ["When a broker opening a brokerage asks about money: Self and Other not void, Wealth and Output both present, Pressure with force, Resource and Peer weak and still; that is a first-class hexagram.", "If the Month, the Day and moving lines also generate or combine with the Self line, near and far will come gladly and everyone will bring business to me; the profit will flow.", "If there is no Wealth, and the Self line merely gets support from Month, Day and moving lines, it is only a busy doorway with no real profit.", "Pressure strong and Wealth void: the same.", "Peer or Pressure moving means constant quarrels, or bad characters making trouble.", "Self and Other void: it will not open."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["开行人占财，世应要不空，财福要全备，官鬼要有气，父兄要衰静，斯为上吉。", "更得月建、日辰、动爻生合世爻，则近悦远来，财利必顺。", "动出官兄常有是非口舌，应空主开不成。"],
+          "yi": ["开行的人占财，世、应要不空，财福齐全，官鬼有气，父兄衰静，这是上吉。", "再有月建、日辰、动爻生合世爻，近者喜欢、远者来投，财利一定顺。", "动出官鬼、兄弟，常有是非口舌；应爻落空，开不成。"],
+          "en": ["When one opening a brokerage asks about money: Self and Other not void, Wealth and Output both present, Pressure with force, Resource and Peer weak and still; that is first-class.", "If the Month, the Day and moving lines also generate or combine with the Self line, near and far come gladly and the profit flows.", "Pressure or Peer moving means constant quarrels; a void Other line means it will not open."] }
+      ],
+      "see": ["LY.WEALTH.HJC.27"]
+    },
+    {
+      "id": "LY.WEALTH.HJC.33",
+      "topic": "借贷",
+      "title": "应落空亡，索借者失望",
+      "rule": {
+        "yi": "向人讨要、借贷：应爻空（见不到人、不实）或动（对方变卦）都不宜；应爻生合世爻则对方慷慨。代表所借之物的爻也要不空：衣服书籍看父母，六畜酒器看子孙，财物（食物）看妻财。",
+        "en": "Asking for something or borrowing it: the Other line should be neither void (you will not find them, nothing is real) nor moving (they change their mind); if it generates or combines with the Self line they give generously. The line for the thing itself must also not be void: Resource for clothes and books, Output for livestock and wine vessels, Wealth for money, goods and food."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["应落空亡，", "索借者失望。"],
+          "yi": ["应爻落空亡，", "去讨要、去借的人要失望。"],
+          "en": ["If the Other line is void,", "whoever goes to ask or borrow will be disappointed."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["求索假借，不宜应空，应动。", "动则更变，空则不遇。", "生合世爻，慨然不吝。", "必得物爻不空为妙。", "如衣服经史看父爻，六畜酒器看福爻，其余财物看财爻。", "又如花果看木爻，砖瓦看土爻类，亦是。"],
+          "yi": ["向人讨要、借东西，不宜应爻落空，也不宜应爻发动。", "动就会变卦，空就见不到人。", "应爻生合世爻，对方慷慨不吝啬。", "还要代表那样东西的爻不空才好。", "比如衣服、书籍看父母，六畜、酒器看子孙，其余财物看妻财。", "又比如花果看木爻，砖瓦看土爻，诸如此类，也可以。"],
+          "en": ["In asking for something or borrowing it, the Other line should be neither void nor moving.", "Moving, the other party changes their mind; void, you will not find them.", "If it generates or combines with the Self line, they give generously.", "It is best if the line for the thing itself is not void.", "For clothes and books, look at the Resource line; for livestock and wine vessels, the Output line; for other goods and money, the Wealth line.", "Flowers and fruit can also be read from the Wood line, bricks and tiles from the Earth line, and so on."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["求索假借不宜应空，空则不实，", "必得物爻不空，缓图庶可有望。", "如衣服经史看父母，六畜酒器看福爻，其余财物食物皆看财爻。"],
+          "yi": ["讨要、借东西不宜应爻空，空就不实在；", "一定要代表那样东西的爻不空，慢慢图谋才有指望。", "比如衣服、书籍看父母，六畜、酒器看子孙，其余财物、食物都看妻财。"],
+          "en": ["In asking or borrowing, the Other line should not be void; void, nothing is real;", "the line for the thing itself must not be void; then, pursued patiently, there is some hope.", "Clothes and books by Resource, livestock and wine vessels by Output, other goods and food by the Wealth line."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.34",
+      "topic": "博戏",
+      "title": "世遭刑克，赌博者必输",
+      "rule": {
+        "yi": "赌博：世旺应衰、世动应静为好；世克应我胜，应克世他胜。兄鬼动来刑克世爻、世临兄弟或世空：不胜；世应静空：赌不成；世坐官鬼：防合谋骗局；间爻动出兄鬼：争斗；内外无财：难胜；世应空动：赊账赌；兄鬼化财先败后胜，财化兄鬼先胜后败；卦身临兄：终是输兆。",
+        "en": "Gambling: best with the Self line strong and the Other weak, the Self moving and the Other still; Self controlling Other, I win; Other controlling Self, they win. Peer or Pressure moving to punish or control the Self line, Peer on the Self line, or a void Self line: no win; Self and Other still and void: no game; Pressure on the Self line: beware of a conspiracy; Peer or Pressure moving on the between lines: a fight; no Wealth in either trigram: hard to win; Self and Other void yet moving: gambling on credit; Peer or Pressure turning into Wealth, lose then win; Wealth turning into Peer or Pressure, win then lose; Peer on the Body line: a losing sign whatever you do."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["世遭刑克，", "赌博者必输。"],
+          "yi": ["世爻受刑克，", "赌博一定输。"],
+          "en": ["If the Self line is punished or controlled,", "the gambler is sure to lose."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["凡占赌博，要世旺应衰，世动应静。", "世克应我胜，应克世他胜。", "兄鬼动来刑克世爻，或临兄弟，或临自空，皆主不胜。", "世应静空，赌博不成。", "世坐官爻，防他合谋骗我。", "间爻动出兄弟官鬼，多主争斗。", "内外俱无财，亦不能胜。", "更遇世应空动，必是赌赊。", "兄鬼化财，先败后胜；财化兄鬼，先胜后败。", "坐方宜财福之地，世变财福，更宜易换赌色。", "大怕卦身临兄弟，任换赌色，终是输兆。"],
+          "yi": ["凡是占赌博，要世爻旺、应爻衰，世爻动、应爻静。", "世克应我赢，应克世对方赢。", "兄弟、官鬼动来刑克世爻，或世爻临兄弟，或世爻自己落空，都主不赢。", "世应安静而落空，赌局开不成。", "世爻坐官鬼，防对方合伙骗我。", "间爻动出兄弟、官鬼，多半有争斗。", "内外卦都没有财，也赢不了。", "再遇世应空而发动，一定是赊账的赌。", "兄弟、官鬼化财，先输后赢；财化兄弟、官鬼，先赢后输。", "坐的方位宜在财、福所临之方；世爻变出财、福，更宜换换赌具。", "最怕卦身临兄弟，怎么换赌具都是输的兆头。"],
+          "en": ["In any gambling question, the Self line should be strong and the Other weak, the Self moving and the Other still.", "Self controlling Other: I win; Other controlling Self: they win.", "Peer or Pressure moving to punish or control the Self line, or the Self line carrying Peer, or the Self line void: all mean no win.", "Self and Other still and void: the game does not happen.", "Pressure on the Self line: beware of the others conspiring to cheat me.", "Peer or Pressure moving on the between lines: most likely a fight.", "No Wealth in either trigram: no win either.", "If Self and Other are void yet moving, it is gambling on credit.", "Peer or Pressure turning into Wealth: lose first, win later; Wealth turning into Peer or Pressure: win first, lose later.", "Sit facing the direction of Wealth or Output; if the Self line turns into Wealth or Output, it is a good time to change the dice or the game.", "Worst of all is the Body line carrying Peer: whatever you change, it is a losing sign."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["凡占赌博，要世旺应衰，世克应我胜，应克世他胜。", "兄鬼动来刑克世爻，或临兄弟，或世爻空，皆主不胜。", "世应静空赌博不成；世坐官爻防他合谋骗我；", "间爻动出官鬼兄弟，多致争斗。"],
+          "yi": ["凡占赌博，要世旺应衰；世克应我赢，应克世对方赢。", "兄弟、官鬼动来刑克世爻，或世临兄弟，或世爻空，都主不赢。", "世应静而空，赌不成；世爻坐官鬼，防对方合谋骗我；", "间爻动出官鬼、兄弟，多半引起争斗。"],
+          "en": ["In gambling, the Self line should be strong and the Other weak; Self controlling Other, I win; Other controlling Self, they win.", "Peer or Pressure moving to punish or control the Self line, the Self line on Peer, or the Self line void: no win.", "Self and Other still and void: no game; Pressure on the Self line: beware of a conspiracy to cheat me;", "Pressure or Peer moving on the between lines: it usually ends in a fight."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.35",
+      "topic": "风险",
+      "title": "鬼克身爻，商贩者必遭盗贼",
+      "rule": {
+        "yi": "外出贩货：世应生合、官鬼空伏、动爻日辰不伤世爻则平安，财旺福兴大吉。兄鬼发动又玄武发动，遇劫窃；再克世，大祸；世空可避；官鬼动在第五爻（路），途中小心。王洪绪：官临玄武动来克世，必遭盗贼。",
+        "en": "Travelling to trade: Self and Other generating or combining, Pressure void or hidden, and no moving line or Day harming the Self line means safety; with Wealth strong and Output flourishing, very good. Peer and Pressure moving with the Dark Tortoise moving: robbers or thieves; if they also control the Self line, disaster; a void Self line may escape; Pressure moving on the fifth line (the road): take care on the way. Wang Hongxu: Pressure on the Dark Tortoise moving to control the Self line means certain robbery."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["鬼克身爻，", "商贩者必遭盗贼；"],
+          "yi": ["官鬼克世身，", "做买卖的人一定遭盗贼；"],
+          "en": ["If Pressure controls the Self line,", "the trader is sure to meet thieves;"] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["贩卖经商，要世应生合，鬼爻空伏，动爻日辰不伤乎我，则安然无事。", "更得财旺福兴，大吉之兆。", "遇兄鬼发动，玄武交重，必遇劫窃之人。", "更克世爻，决有大祸。", "世若空亡，庶可回避。", "鬼动五爻，途中仔细。"],
+          "yi": ["贩运经商，要世应相生相合，官鬼空或伏，动爻、日辰不伤世爻，就平安无事。", "再加上财旺福兴，是大吉之兆。", "遇到兄弟、官鬼发动，玄武又发动，一定遇到抢劫偷窃的人。", "再来克世爻，一定有大祸。", "世爻如果落空，大概能躲过。", "官鬼在第五爻发动，路上要小心。"],
+          "en": ["For a travelling trader: Self and Other generating or combining, the Pressure line void or hidden, and no moving line or Day harming me; then all is safe.", "With Wealth strong and Output flourishing as well, it is a very good sign.", "If Peer and Pressure move and the Dark Tortoise line moves too, you will meet robbers or thieves.", "If they also control the Self line, a great disaster is certain.", "If the Self line is void, you may escape it.", "Pressure moving on the fifth line: be careful on the road."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["买卖经商，若遇官临玄武动来克世，必遭盗贼之祸。"],
+          "yi": ["做买卖经商，如果官鬼临玄武、动来克世，一定遭盗贼之祸。"],
+          "en": ["In trade, if Pressure on the Dark Tortoise moves to control the Self line, robbery is certain."] }
+      ],
+      "see": ["LY.WEALTH.HJC.39"]
+    },
+    {
+      "id": "LY.WEALTH.HJC.36",
+      "topic": "买卖",
+      "title": "间兴害世，置货者当虑牙人",
+      "rule": {
+        "yi": "买货：应爻生合世爻易成，刑克世爻难买。代表货物的爻（六畜看子孙、五谷看妻财、布帛看父母）太过货多、不及货少、空伏无货。兄鬼发动防骗；兄鬼在间爻是牙人虚诈、口舌；间爻伤克世爻防牙人谋财；出门买货而应爻空，多不顺。",
+        "en": "Buying goods: the Other line generating or combining with the Self line makes it easy; punishing or controlling it makes it hard. The line for the goods (Output for livestock, Wealth for grain, Resource for cloth) in excess means plenty, falling short means few, void or hidden means none. Peer and Pressure moving: beware of swindlers; on the between lines, a false broker or quarrels; a between line harming or controlling the Self line: the broker is after your goods; travelling to buy with the Other line void, it mostly goes badly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["间兴害世，", "置货者当虑牙人。"],
+          "yi": ["间爻发动来害世爻，", "买货的人要提防经纪人。"],
+          "en": ["If a between line moves and harms the Self line,", "a buyer of goods should beware of the broker."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["买货者，应要生合世爻，必然易成。刑克世，必难置买。", "物爻太过，其货必多；物爻不及，其货必少；物爻空伏，其货必无。", "物爻者，六畜看子孙，五谷看财爻，丝绵布帛看父母类。", "最怕兄鬼交重，须防光棍诓骗。", "在间爻，则是牙人虚诈不实，或有口舌争竞。", "伤克世爻，当虑牙人谋劫财物。", "出路买货，应空多不顺利。"],
+          "yi": ["买货的，要应爻生合世爻，一定容易成交；应爻刑克世爻，一定难买到。", "代表货物的那一爻太旺太多，货一定多；不及，货一定少；空或伏，一定没有货。", "货物那一爻：六畜看子孙，五谷看财爻，丝绵布匹看父母，诸如此类。", "最怕兄弟、官鬼发动，要防骗子诓骗。", "（兄鬼）在间爻上，就是经纪人虚假不实，或有口舌争执。", "来伤克世爻，要提防经纪人图谋侵吞财物。", "出门去买货，应爻落空，多半不顺利。"],
+          "en": ["For a buyer, the Other line should generate or combine with the Self line; then the deal is easy. If it punishes or controls the Self line, it will be hard to buy.", "If the line for the goods is in excess, there will be plenty of goods; if it falls short, few; if it is void or hidden, none.", "The line for the goods: Output for livestock, the Wealth line for grain, Resource for silk, cotton and cloth, and so on.", "The worst is Peer and Pressure moving: beware of swindlers.", "On the between lines, it is the broker being false and dishonest, or quarrels and disputes.", "If they harm or control the Self line, beware of the broker plotting to seize the goods.", "If you travel to buy and the Other line is void, it will mostly go badly."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["买货要应爻生合世位，必然易成，刑克世必难置。", "物爻太过货多，物爻不及货少，空伏货无。", "物爻者，六畜看子，五谷看财爻类。", "最怕兄鬼交重，须防光棍谎骗。", "间爻伤克世爻，当虑牙人谋劫财物。", "出路买货应空，多不顺利。"],
+          "yi": ["买货要应爻生合世爻，一定容易成交；刑克世爻，一定难买。", "货物那一爻太过货多，不及货少，空伏没货。", "货物那一爻：六畜看子孙，五谷看财爻，诸如此类。", "最怕兄弟、官鬼发动，要防骗子。", "间爻伤克世爻，要提防经纪人图谋财物。", "出门买货而应爻空，多半不顺。"],
+          "en": ["To buy goods, the Other line should generate or combine with the Self line: easy; punishing or controlling it: hard to buy.", "The goods line in excess, plenty; falling short, few; void or hidden, none.", "The goods line: Output for livestock, the Wealth line for grain, and so on.", "The worst is Peer and Pressure moving: beware of swindlers.", "A between line harming or controlling the Self line: beware of the broker plotting to take the goods.", "Travelling to buy with the Other line void: mostly it goes badly."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.37",
+      "topic": "买卖",
+      "title": "停榻者，喜财安而鬼静",
+      "rule": {
+        "yi": "囤货：财爻不宜动、不宜空，不宜被动爻日辰克劫；财坐胎、养、长生，日后得利。兄官交变或同动防盗；兄弟独发多耗折；水爻父母（王洪绪：父化官鬼）刑克世爻，货被雨水淹腐；财化死墓空绝，日后价贱。",
+        "en": "Holding goods in store: Wealth should neither move nor be void, nor be attacked by moving lines or the Day; Wealth at the Embryo, Nurture or Birth stage means profit later. Peer and Pressure turning into each other or moving together: beware of theft; Peer moving alone: waste and loss; a Water Resource line (Wang Hongxu: Resource turning into Pressure) punishing or controlling the Self line: the goods are spoiled by rain; Wealth turning into death, tomb, void or extinction: the price will fall."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["停榻者，", "喜财安而鬼静；"],
+          "yi": ["囤货存放的人，", "喜欢财爻安静、官鬼也安静；"],
+          "en": ["For goods held in store,", "it is best that Wealth rests and Pressure is still;"] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["积货不宜财动，亦不宜空亡，又不宜动爻日辰克劫。", "更得坐于胎养长生爻上，后必得利。", "若遇兄官交变，或俱发动，须防窃盗。", "兄弟独发，则多耗折。", "水爻父母刑克世爻，主被雨水淹腐。", "财化死墓空绝，后必价贱。"],
+          "yi": ["囤积货物不宜财爻发动，也不宜财爻落空，又不宜被动爻、日辰克劫。", "再加上财爻坐在胎、养、长生的位置，日后一定得利。", "如果兄弟、官鬼相互变化，或都发动，要防盗窃。", "只有兄弟发动，多耗损折本。", "属水的父母爻刑克世爻，主货被雨水淹坏。", "财化入死、墓、空、绝，日后一定价贱。"],
+          "en": ["Stored goods do not want the Wealth line moving, nor void, nor attacked by moving lines or the Day.", "If the Wealth line sits at the Embryo, Nurture or Birth stage, profit will come later.", "If Peer and Pressure turn into each other or both move, beware of theft.", "Peer moving alone: much waste and loss.", "A Water Resource line punishing or controlling the Self line: the goods will be spoiled by rain or flood.", "Wealth turning into death, tomb, void or extinction: the price will fall later."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["积货不宜财动，动恐有变；亦不宜空，空恐有更。", "官鬼若动，兴灾作祸莫测；", "如父母化官鬼刑克世爻，货被雨水污腐。", "故脱货者宜六爻安静，唯子孙喜动。"],
+          "yi": ["囤货不宜财动，动了怕有变故；也不宜空，空了怕有更改。", "官鬼若发动，会兴起难以预料的灾祸；", "如果父母化官鬼来刑克世爻，货被雨水弄脏腐坏。", "所以脱货的人宜六爻安静，只喜子孙发动。"],
+          "en": ["Stored goods do not want Wealth moving, for fear of a change; nor void, for fear of an upset.", "If Pressure moves, it brings unforeseeable trouble;", "if Resource turns into Pressure and punishes or controls the Self line, the goods will be soiled and rot in the rain.", "So for goods to be disposed of, all six lines should be still; only Output is welcome to move."] }
+      ],
+      "note": {
+        "yi": "王洪绪本经文作「停脱者」，注末又说「故脱货者宜六爻安静」，和下一句经文「脱货者宜财动而身兴」正相反；旧注本作「停榻者」（囤货）。按上下文，这一条讲的是囤货，王本的「脱」字疑有讹误。原文照录。",
+        "en": "Wang Hongxu's edition reads 'holding and disposing' in the base text, and his note ends 'so for goods to be disposed of, all six lines should be still', which contradicts the very next line ('for goods to be sold off, Wealth should move'). The old-commentary edition reads 'goods held in store'. From the context this rule is about stockpiling, and 'dispose' in Wang's edition is probably a corruption. We quote it as it stands."
+      }
+    },
+    {
+      "id": "LY.WEALTH.HJC.38",
+      "topic": "买卖",
+      "title": "脱货者，宜财动而身兴",
+      "rule": {
+        "yi": "卖货：财动易脱、世动易卖；应空无买主，世空自己卖不成；动变日辰来生合，有人争买；遇刑冲多阻；财在内卦动（生世）本地卖，在外卦动外地卖（财持世而子孙在外卦动，也宜外卖）；动而遇合将成不成，动而逢空欲卖不卖；卦无官鬼难成交。",
+        "en": "Selling goods: a moving Wealth means they go easily, a moving Self line that they sell easily; a void Other line, no buyer; a void Self line, you fail to sell; moving and changed lines and the Day generating or combining, buyers compete; punishment or clash, obstacles; Wealth moving in the inner trigram (generating the Self line), sell locally; in the outer, sell elsewhere (also when Wealth is on the Self line and Output moves in the outer trigram); moving but combined, almost closed yet not; moving but void, wanting to sell yet not; no Pressure in the hexagram, hard to close."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["脱货者，", "宜财动而身兴。"],
+          "yi": ["要卖出货物的人，", "宜财爻发动、世身也动。"],
+          "en": ["For goods to be sold off,", "Wealth should move and the Self line should stir."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["脱货财动，则主易脱。", "应空，无人置买；世空，自卖不成；", "动变日辰，俱来生合，有人争买。", "若遇刑冲，则主多破阻难成。", "财在内动，宜在本处卖；在外动，宜向他处脱之。", "动而遇合，将成不成；动而逢空，欲卖不卖。", "卦无官鬼，亦是难成之象。"],
+          "yi": ["卖货时财爻发动，主容易卖掉。", "应爻空，没人来买；世爻空，自己卖不成；", "动爻、变爻、日辰都来生合，有人争着买。", "如果遇刑冲，主多阻碍，难以成交。", "财在内卦发动，宜在本地卖；在外卦发动，宜到外地卖。", "财动而遇合，快成交却成不了；动而逢空，想卖又卖不掉。", "卦里没有官鬼，也是难以成交之象。"],
+          "en": ["When selling off goods, a moving Wealth line means they sell easily.", "Other void: no buyer; Self void: you fail to sell;", "moving and changed lines and the Day all generating or combining: buyers compete.", "If met by punishment or clash, many obstacles; hard to close.", "Wealth moving in the inner trigram: sell locally; in the outer: sell elsewhere.", "Moving but combined: almost closed, yet not; moving but void: wanting to sell, yet not selling.", "No Pressure in the hexagram is also a sign that it will be hard to close."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["财动则主易脱，世动主易卖也。", "如财在外生世，宜往他处卖；如在内动生世，就本地脱之可也。", "倘财爻持世，有子孙爻在外动，亦宜往他处脱，学者宜通变。"],
+          "yi": ["财动主容易脱手，世动主容易卖出。", "如果财在外卦生世爻，宜到外地去卖；如果在内卦动来生世，就在本地卖掉。", "如果财爻持世，有子孙在外卦发动，也宜到外地卖，学的人要会变通。"],
+          "en": ["A moving Wealth means the goods go easily; a moving Self line means they sell easily.", "If Wealth in the outer trigram generates the Self line, sell elsewhere; if it moves in the inner trigram and generates the Self line, sell locally.", "If the Wealth line is on the Self line and an Output line moves in the outer trigram, also sell elsewhere; students should judge flexibly."] }
+      ],
+      "see": ["LY.WEALTH.HJC.37"]
+    },
+    {
+      "id": "LY.WEALTH.HJC.39",
+      "topic": "风险",
+      "title": "路上有官，休出外",
+      "rule": {
+        "yi": "第五爻为道路：临官鬼发动，途中多惊险，不宜出外求财，灾祸看所临六神（白虎风波、玄武盗贼）；道路爻空亡也不宜出外；临财、福则吉。",
+        "en": "The fifth line is the road: Pressure on it and moving means many dangers on the way, so do not go abroad for money; the kind of trouble shows in its spirit (White Tiger, storms; Dark Tortoise, thieves); a void road line is also against travel; Wealth or Output on it is good."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["路上有官，", "休出外；"],
+          "yi": ["道路爻上有官鬼，", "不要出门；"],
+          "en": ["If Pressure sits on the road,", "do not go out;"] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["五爻为路。临官发动，途中必多惊险，出外求财大宜避之。", "要知有何灾咎，以所临六神断。如白虎为风波，玄武为盗贼类。", "路爻空亡，亦不宜出外。惟临财福则吉。"],
+          "yi": ["第五爻是道路。道路爻临官鬼发动，途中一定多惊险，出门求财最好避开。", "要知道有什么灾祸，看它所临的六神：比如白虎是风浪，玄武是盗贼，诸如此类。", "道路爻落空亡，也不宜出门。只有临财、福才吉。"],
+          "en": ["The fifth line is the road. If it carries Pressure and moves, there will be many dangers on the way; seeking money abroad should be avoided.", "To know what trouble, look at the spirit it carries: the White Tiger means storms, the Dark Tortoise thieves, and so on.", "A void road line is also against going out. Only Wealth or Output on it is good."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["五爻为道路，临官发动，途中必多惊险，不宜出外。", "要知有何灾咎，以所临六神断，如白虎为风波，玄武为盗贼之类。"],
+          "yi": ["第五爻是道路，临官鬼发动，途中一定多惊险，不宜出门。", "要知道有什么灾祸，看所临六神：比如白虎是风浪，玄武是盗贼。"],
+          "en": ["The fifth line is the road; with Pressure on it moving there will be many dangers on the way; do not go out.", "To know what trouble, look at its spirit: the White Tiger means storms, the Dark Tortoise thieves, and so on."] }
+      ],
+      "see": ["LY.WEALTH.HJC.35"]
+    },
+    {
+      "id": "LY.WEALTH.HJC.40",
+      "topic": "风险",
+      "title": "宅中有鬼，勿居家",
+      "rule": {
+        "yi": "第二爻为宅：在家求财而官鬼在宅爻发动，必不利，按官鬼五行断灾（火鬼火灾、水鬼盗贼）；子孙持世发动可解，否则宜迁店铺（王洪绪）；宅爻空亡，只宜在外开铺。",
+        "en": "The second line is the house: seeking money at home with Pressure moving on the house line goes badly; judge the trouble by its element (Fire, fire; Water, thieves). Output on the Self line and moving resolves it, otherwise move the shop (Wang Hongxu); a void house line means trade only from a shop outside."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["宅中有鬼，", "勿居家。"],
+          "yi": ["宅爻上有官鬼，", "不要在家（求财）。"],
+          "en": ["If Pressure sits in the house,", "do not stay at home."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["二爻为宅。在家求财，鬼动此爻，必然不利。", "以所临五行断。如火鬼忌火烛，水鬼忌盗贼类。", "得子孙持世发动，庶几无害。", "宅爻空亡，只宜出铺。"],
+          "yi": ["第二爻是宅。在家求财，官鬼在这一爻发动，一定不利。", "看官鬼属什么五行来断：比如火鬼防火灾，水鬼防盗贼，诸如此类。", "如果子孙持世发动，大概没有害处。", "宅爻落空亡，只宜到外面开铺。"],
+          "en": ["The second line is the house. For money sought at home, Pressure moving on this line is sure to go badly.", "Judge by its element: a Fire Pressure warns of fire, a Water Pressure of thieves, and so on.", "If Output is on the Self line and moving, there may be no harm.", "If the house line is void, it is only good to trade from a shop outside."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["二爻为住宅，在家求财，鬼动此爻必然不利，", "以所临五行断，火鬼忌火烛类。", "得子孙持世发动，庶几无害，如无子孙发动，宜迁店铺可解。"],
+          "yi": ["第二爻是住宅，在家求财，官鬼在这一爻发动一定不利，", "看它的五行来断，比如火鬼防火灾。", "子孙持世发动，大概无害；如果没有子孙发动，把店铺迁走可以化解。"],
+          "en": ["The second line is the dwelling; for money sought at home, Pressure moving on it is sure to go badly;", "judge by its element: a Fire Pressure warns of fire, and so on.", "Output on the Self line and moving: probably no harm; without a moving Output, moving the shop elsewhere will resolve it."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.41",
+      "topic": "有无",
+      "title": "内外无财伏又空，必然乏本",
+      "rule": {
+        "yi": "六爻（内外卦）无财，本宫财爻又伏在空亡之地：缺本钱，勉强经营也无利；若动爻化出财来，有小利。野鹤说屡试屡验。",
+        "en": "No Wealth among the six lines, and the home palace's Wealth line hidden in a void place: no capital, and forcing a venture brings no profit; if a moving line turns into Wealth, a small profit. Yehe says this has proved true again and again."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["内外无财伏又空，", "必然乏本；"],
+          "yi": ["内外卦都没有财，伏着的财又落空，", "一定缺本钱；"],
+          "en": ["No Wealth in either trigram, and the hidden Wealth void as well:", "there is surely no capital;"] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["六爻无财，本宫财爻又伏空地，其人虽欲经营，必无资本。", "勉强为之，亦无利息。", "若得动爻化出，主有小小财利。"],
+          "yi": ["六爻没有财，本宫的财爻又伏在空亡之地，这个人即使想经营，也一定没有本钱。", "勉强去做，也没有利。", "如果有动爻化出财来，主有小小的财利。"],
+          "en": ["No Wealth among the six lines, and the Wealth line of the home palace hidden in a void place: though the person wants to trade, there is no capital.", "Forcing it brings no profit.", "If a moving line turns into Wealth, there is a small profit."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["动变必无财，又伏空地，其人虽欲经营，必然乏本。"],
+          "yi": ["动爻、变爻都没有财，财又伏在空亡之地，这个人即使想经营，一定缺本钱。"],
+          "en": ["No Wealth among moving or changed lines, and it lies hidden in a void place: though the person wants to trade, there is surely no capital."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [11296, 11310],
+          "zh": ["内外无财，伏而又空，必然乏本，屡试屡验。"],
+          "yi": ["内外卦都没有财，伏着又落空，一定缺本钱，屡试屡验。"],
+          "en": ["No Wealth inside or out, and hidden and void as well: surely no capital; proved again and again."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.HJC.42",
+      "topic": "有无",
+      "title": "父兄有气财还绝，莫若安贫",
+      "rule": {
+        "yi": "父母、兄弟有气（或发动刑冲克害）而财爻弱、临绝：利少，恐怕折本，不如不做。",
+        "en": "Resource and Peer strong (or moving to punish, clash, control or harm) while Wealth is weak or extinguished: little profit and a risk to the capital; better not to go ahead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["父兄有气财还绝，", "莫若安贫。"],
+          "yi": ["父母、兄弟有气，财爻却临绝，", "不如安于贫困。"],
+          "en": ["Resource and Peer strong while Wealth is extinguished:", "better to accept being poor."] },
+        { "by": "旧注", "book": "卜筮大全",
+          "zh": ["父兄二爻，占财大忌。", "有发动刑冲克害，利必不多。", "财爻更弱，恐防折本。", "故不若安贫守分之为高也。"],
+          "yi": ["父母、兄弟两爻，是占财的大忌。", "它们发动刑冲克害，利一定不多。", "财爻再弱，恐怕要折本。", "所以不如安贫守分为好。"],
+          "en": ["Resource and Peer are the two great enemies in a money question.", "If they move to punish, clash, control or harm, the profit will be small.", "If the Wealth line is weak as well, beware of losing the capital.", "So it is wiser to accept being poor and keep to one's lot."] },
+        { "by": "王洪绪", "book": "卜筮正宗",
+          "zh": ["父兄二爻有气恐防折本，故不若安贫守份为高也。"],
+          "yi": ["父母、兄弟两爻有气，怕要折本，所以不如安贫守分为好。"],
+          "en": ["With Resource and Peer strong, beware of losing the capital; it is wiser to accept being poor and keep to one's lot."] }
+      ],
+      "see": ["LY.WEALTH.HJC.06"]
+    },
+    {
+      "id": "LY.WEALTH.HJC.43",
+      "topic": "总则",
+      "title": "生计多端，占法不一",
+      "rule": {
+        "yi": "《黄金策》求财章的结语：谋生的门路多，占法要随所问之事变；以诚敬之心求卦。",
+        "en": "The closing words of the Golden Strategy's chapter on wealth: there are many ways to make a living, and the reading must fit the particular matter; ask with sincerity and reverence."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["生计多端，占法不一。", "但宜诚敬以祈求，自可预知其得失。"],
+          "yi": ["谋生的门路很多，占法也不一样。", "只要诚心恭敬地去求卦，自然能预先知道得失。"],
+          "en": ["There are many ways to make a living and many ways to read them.", "Ask with sincerity and reverence, and you can know in advance what you will gain or lose."] }
+      ]
+    }
+  ]
+}
