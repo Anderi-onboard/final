@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 婚姻(124 条)→ `chapters/六爻/婚姻/索引.md`
+## 六爻 · 婚姻(157 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: the Subject, the Self and Other, yin and yang | 21 |
-| 成否 | Will it succeed: easy or hard to bring about | 20 |
+| 总则 | Principles: the Subject, the Self and Other, yin and yang | 23 |
+| 成否 | Will it succeed: easy or hard to bring about | 22 |
 | 动变 | Moving lines and what they turn into | 4 |
-| 媒妁 | Go-betweens and the between lines | 16 |
-| 对方 | The other party: character, looks, family, age | 16 |
-| 聘嫁 | Betrothal gifts, dowry, and the two families | 4 |
-| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 12 |
-| 外遇 | Infidelity and improper relations | 2 |
-| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 8 |
-| 应期 | Timing: when the match is made or the wedding held | 1 |
-| 风险 | Risks: obstruction, broken promises, bad omens | 9 |
-| 子嗣 | Children in the marriage | 9 |
-| 家人 | Parents and in-laws: whether the match harms them | 2 |
+| 媒妁 | Go-betweens and the between lines | 18 |
+| 对方 | The other party: character, looks, family, age | 25 |
+| 聘嫁 | Betrothal gifts, dowry, and the two families | 6 |
+| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 17 |
+| 外遇 | Infidelity and improper relations | 3 |
+| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 12 |
+| 应期 | Timing: when the match is made or the wedding held | 2 |
+| 风险 | Risks: obstruction, broken promises, bad omens | 11 |
+| 子嗣 | Children in the marriage | 10 |
+| 家人 | Parents and in-laws: whether the match harms them | 4 |
 
 ## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
 
@@ -41,7 +41,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(24 条)
+## 打架 · Where the classics disagree(25 条)
 
 - **LY.MARRY.HJC.14 鬼克飞爻，果信绿窗之难嫁；官合财位，方知绮席之易婚：女占男，鬼刑克世、应克世皆不成；官生合世或合财、应生合世则易成**(`chapters/六爻/婚姻/成否.md`):王洪绪引的经文与《卜筮全书》不同：他写作「鬼克世爻」「用合身位」，全书作「鬼克飞爻」「官合财位」；王洪绪的注按用神（谁占看谁）讲，旧注按女占男讲。
   Wang Hongxu's text of the verse differs from the Bushi Quanshu's: he writes 'Pressure controlling the Self line' and 'the Subject combining with the Body place', where the Quanshu has 'the flying line' and 'the Wealth place'; his note speaks by the Subject (whoever is the object of the question), and the old commentary by a woman divining about a man.
@@ -53,6 +53,8 @@ What is in the library and where; entries where the classics disagree are listed
   Whom Wealth and Pressure stand for in this chapter: the old commentary throughout speaks by 'Pressure the husband, Wealth the wife' (see HJC.11, HJC.24); Wang Hongxu says at the chapter's end that this is what applies when a man divines about a bride or a woman about a bridegroom, and that divinations made on another's behalf or by an elder brother for a younger must be judged by the Subject and not all alike; Juezi (Zengshan Buyi) also says that the man's family divining about the woman takes Wealth as the Subject and the woman's family divining about the man takes Pressure, the same whether parents or relatives divine on their behalf.
 - **LY.MARRY.YL.15 前冲后合初离别复聚欢情，前合后冲始谐和终遭变易：未配之前得冲中化合决不相谐；成亲之后先冲后合初生离后复就；卦占六合被月辰冲开或化六冲，始欢悦后不和**(`chapters/六爻/婚姻/成否.md`):还没成亲时得到冲变合：这里说「决不相谐」；《增删卜易》（觉子）说「六冲变六合者尤吉，求婚者目下不允，久必成之」（见 LY.MARRY.ZS.13）——两家在这一种卦上判得相反。成亲以后先冲后合、起初生离后来重聚，两家看法一致。
   For a clash turning into a combination obtained before the wedding this text says 'it surely will not be harmonious', while the Zengshan Buyi (Juezi) says 'a Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time' (see LY.MARRY.ZS.13): the two books judge this kind of hexagram in opposite ways. For a couple already wed, first a clash and then a combination, parting at first and reunion after, the two agree.
+- **LY.MARRY.YY.14 卦六合者成、六冲者不成；前卦合变冲成后复退、冲化合退后复成；六冲或世应动被日辰合住欲退不得；世应财鬼冲克而日辰动爻生合不成而得人赞成、生合而日辰动爻冲克成而被破；虽生合而临死墓绝胎被刑冲克害，在世鬼则男家不允、在应财则女家不允**(`chapters/六爻/婚姻/成否.md`):「冲变合」：这里说「前卦冲而化合，退后复成」（先退后成）；《易林补遗》说未配之前得冲中化合「决不相谐」（LY.MARRY.YL.15），《增删卜易》说「六冲变六合者尤吉，求婚者目下不允，久必成之」（LY.MARRY.ZS.13）。《易隐》和《增删卜易》一致：不是不成，是先退后成。
+  For a clash changing into a combination this text says 'withdrawn, then made again'; the Yilin Buyi says that before the match is made it 'surely will not be harmonious' (LY.MARRY.YL.15), and the Zengshan Buyi that 'a Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time' (LY.MARRY.ZS.13). The Yi Yin agrees with the Zengshan Buyi: not that it fails, but that it is withdrawn first and made afterwards.
 - **LY.MARRY.ZS.04 男卜女姻财要旺，女占男配鬼宜兴：代占以应爻为对方家，自占以应爻为女身；财为重，应为附和**(`chapters/六爻/婚姻/总则.md`):「应为百岁之妻」这句在《黄金策》「身命」章（占一生的那一章）的注里，不在它的婚姻章里。野鹤驳的是把它拿来占婚：重应而不重财是错的。夫妇章的正文替《黄金策》解释了为什么那样定（身命章一个卦要断六亲，财爻另有用处），也说占妻以财为重、应次之。两边都承认要兼看财爻，争的是谁为主。
   The line 'the Other line is the wife of a hundred years' stands in the commentary of the Huangjin Ce's chapter on one's person and fate, not in its marriage chapter. Yehe attacks using it for marriage: stressing the Other line and not Wealth is wrong. The main text of the Zengshan Buyi's chapter on husband and wife explains why the Huangjin Ce fixed it that way (the person-and-fate chapter judges the six kin from a single hexagram, so Wealth had other work to do) and also says that in divining a wife Wealth carries the weight and the Other line comes second. Both sides agree that Wealth should be looked at as well; what they dispute is which comes first.
 - **LY.MARRY.ZS.15 财化财未必两度婚，鬼化鬼难相守百年：男家占女财爻重叠旺相生合世多贤妻美妾，财化财或双娶、婢妾同来、妆奁丰；女家占男财化财生世聘礼丰厚，鬼化鬼必夫亡或反复灾非**(`chapters/六爻/婚姻/动变.md`):《黄金策》：财爻叠叠，重作新人（再娶，见 LY.MARRY.HJC.24）。野鹤说不一定是两次婚姻：他屡次试过，财爻重叠、财化财多是贤妻美妾、双娶、婢妾同来或妆奁丰厚；只有兄弟爻动、或日月冲克财爻的时候，再办喜事才免不了。

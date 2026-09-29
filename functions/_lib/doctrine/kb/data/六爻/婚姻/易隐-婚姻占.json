@@ -1,0 +1,410 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "易隐",
+  "chapter": "婚姻占",
+  "chapter_en": "Divining marriage",
+  "ranges": {"易隐": [2406, 2440]},
+  "units": [
+    {
+      "id": "LY.MARRY.YY.01",
+      "topic": "总则",
+      "chapter": "婚姻占",
+      "chapter_en": "Divining marriage",
+      "title": "婚姻是人道之始，占之不可不慎：先占门第、德行、性情容貌、子嗣，再占入门吉凶、聘奁厚薄，然后占成否；无媒不成，媒也要占",
+      "rule": {
+        "yi": "婚姻是做人的头一件大事，占它不能不慎重。求婚总是男方先开口，所以挑妻子的这一占尤其要慎重。占的次序：先占门第、德行、性情容貌、有没有子嗣，再占入门以后的吉凶、聘礼和嫁妆的厚薄，然后才占成不成；没有媒人就得不到，所以媒人（月老）也要占。鬼谷的分爻法把爻对到：祖宗、父母、外氏、婿、妇、媒妁、自身。",
+        "en": "Marriage is the first business of human life, and its divination must not be undertaken carelessly. It is always the man's side that seeks first, so the divination for choosing a wife calls for still more care. The order of divining: first her family standing, virtue, nature and looks, and whether there will be children; then the good or ill of her entering the house and the richness of the betrothal gifts and dowry; only then whether the marriage will be made. Without a go-between it cannot be had, so the go-between (the Old Man under the Moon) must be divined too. Guiguzi's division of the lines assigns them to: ancestors, parents, the mother's family, the son-in-law, the wife, the go-between and oneself."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2408, 2408],
+          "zh": ["游南子曰，婚姻人道之始事，是不可不慎其占也。", "然婚姻之求，必先于男，故择妇之占，尤当慎之。", "占其门第，占其德行，占其性情容貌，及子嗣之有无。", "入门之吉凶，聘奁之厚薄，而后占其婚姻之成否也。", "然而匪媒不得，则月老亦不可以不占也。"],
+          "yi": ["游南子说：婚姻是人道的开头一件事，所以占它不能不谨慎。", "但求婚总是男方先开口，所以挑选妻子这一占，更要慎重。", "要占她的门第，占她的德行，占她的性情容貌，以及有没有子嗣。", "再占入门以后的吉凶、聘礼和嫁妆的厚薄，然后才占婚姻成不成。", "但是没有媒人就得不到，所以月老（媒人）也不能不占。"],
+          "en": ["Master Younan says: marriage is the first business of human life, so its divination must not be undertaken carelessly.", "But it is always the man's side that seeks first, so the divination for choosing a wife calls for still more care.", "Divine her family standing, her virtue, her nature and looks, and whether there will be children.", "Then divine the good or ill of her entering the house and the richness of the betrothal gifts and dowry, and only then divine whether the marriage will be made.", "But without a go-between it cannot be had, so the Old Man under the Moon, the go-between, must also be divined."] },
+        { "by": "经", "book": "易隐", "range": [2410, 2412], "literal": ["父母"],
+          "zh": ["鬼谷分爻祖宗父母外氏婿妇媒妁自身"],
+          "yi": ["鬼谷分爻：祖宗、父母、外氏、婿、妇、媒妁、自身。"],
+          "en": ["Guiguzi's division of the lines: ancestors, parents, the mother's family, the son-in-law, the wife, the go-between, oneself."] }
+      ],
+      "note": {
+        "yi": "「鬼谷分爻」下面只列了七个名目（祖宗、父母、外氏、婿、妇、媒妁、自身），没有说各对哪一爻，七个名目也多于六个爻；译文照录名单，没有替它排位。",
+        "en": "Under 'Guiguzi's division of the lines' the text lists only seven names, without saying which line each belongs to, and seven names outnumber the six lines; the list is translated as it stands without assigning positions."
+      },
+      "see": ["LY.MARRY.YY.02", "LY.MARRY.YY.03", "LY.MARRY.YY.04", "LY.MARRY.YY.11", "LY.MARRY.YY.13", "LY.MARRY.YY.18"]
+    },
+    {
+      "id": "LY.MARRY.YY.02",
+      "topic": "对方",
+      "chapter": "婚姻占",
+      "chapter_en": "Divining marriage",
+      "title": "门第：内卦世爻旺男家富，外卦应爻旺女家富；应临贵马德合不空破克伤者贵；应财衰而外卦旺富止虚名，应财旺而外卦衰家窘而女有德色",
+      "rule": {
+        "yi": "内卦的世爻旺，男方家里富；外卦的应爻旺，女方家里富。应爻带贵人、驿马、德神和合，又不空、不破、不受克伤的，显贵；月建旺、日辰衰的，近几年在走下坡。应爻、财爻衰而外卦旺，富只是虚名；应爻、财爻旺而外卦衰，家里窘迫，但女儿有德有容色。富贵贫贱另见身命占，德行性情容貌另见妻妾一类，这里不重复。",
+        "en": "With the Self line in the inner trigram strong, the man's family is rich; with the Other line in the outer trigram strong, the woman's family is rich. If the Other line carries the Nobleman, the Post Horse, Virtue and a combination, and is not Void, broken, controlled or harmed, the family is eminent; strong in the Month but weak in the Day, it has declined in recent years. With the Other and Wealth lines weak but the outer trigram strong, the wealth is only a name; with the Other and Wealth lines strong but the outer trigram weak, the family is straitened but the daughter has virtue and beauty. Wealth, rank, poverty and lowliness are treated in the divination of one's person and fate, and virtue, nature and looks in the section on wives and concubines, so they are not repeated here."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2416, 2416],
+          "zh": ["内卦世爻旺，男家富。", "外卦应爻旺，女家富。", "应临贵马德合，不空破克伤者贵。", "逢月旺日衰者，近年退也。", "应爻财爻衰，而外卦旺，富止虚名。", "应爻财爻旺，而外卦衰，家窘而女有德色也。", "凡富贵贫贱，俱见身命占。", "德行性情容貌，俱见妻妾类中，故不复赘。"],
+          "yi": ["内卦世爻旺，男方家里富。", "外卦应爻旺，女方家里富。", "应爻带贵人、驿马、德神，又相合，不空、不破、不受克伤的，显贵。", "逢月建旺、日辰衰的，近几年在走下坡。", "应爻、财爻衰，而外卦旺，富只是虚名。", "应爻、财爻旺，而外卦衰，家里窘迫但女儿有德行、有容色。", "凡是富贵贫贱，都见身命占。", "德行、性情、容貌，都见妻妾一类的章节里，所以这里不再重复。"],
+          "en": ["With the Self line in the inner trigram strong, the man's family is rich.", "With the Other line in the outer trigram strong, the woman's family is rich.", "With the Other line carrying the Nobleman, the Post Horse and Virtue, and in combination, and not Void, broken, controlled or harmed, the family is eminent.", "If it is strong in the Month but weak in the Day, the family has declined in recent years.", "With the Other and Wealth lines weak but the outer trigram strong, the wealth is only a name.", "With the Other and Wealth lines strong but the outer trigram weak, the family is straitened but the daughter has virtue and beauty.", "Wealth, rank, poverty and lowliness are all found in the divination of one's person and fate.", "Virtue, nature and looks are all found in the section on wives and concubines, so they are not repeated here."] }
+      ],
+      "see": ["LY.MARRY.HJC.37", "LY.MARRY.YL.07", "LY.MARRY.YY.21"]
+    },
+    {
+      "id": "LY.MARRY.YY.03",
+      "topic": "子嗣",
+      "chapter": "婚姻占",
+      "chapter_en": "Divining marriage",
+      "title": "子息：卦无子孙、子孙空绝破、财带孤寡天狗杀动、卦纯阳纯阴俱主无子；子孙胎爻两备有子；子化鬼头胎难招（水一火二木三金四土五）；子之多少以一水二火三木四金五土推",
+      "rule": {
+        "yi": "没有子孙爻，或子孙爻逢空、绝、破，或财爻带孤寡、天狗煞而动，或卦是纯阳、纯阴，都主不生育、没有儿子。子孙爻和胎爻两样齐备的，有儿子；子孙变鬼，或胎爻临在父母爻上，有儿子也难留住；有胎爻没有子孙爻，怀了孕养不成；有子孙爻没有胎爻，是庶出或过继来的。子孙在阳爻多男，在阴爻多女。水的子孙变鬼，头胎难留；火的，二胎；木的，三胎；金的，四胎；土的，五胎。孩子的多少，按一水、二火、三木、四金、五土的数推：旺相加倍，休囚照数，囚死减半。",
+        "en": "With no Output line, or the Output line meeting Void, extinction or break, or the Wealth line carrying the Solitary and Widowhood stars and the Heavenly Hound star and moving, or a hexagram of pure yang or pure yin: all mean no childbearing and no son. Where both the Output line and the Womb line are present there is a son; if Output changes into Pressure, or the Womb line is on the Resource line, there is a son but he is hard to keep; with a Womb line but no Output line there is conception but no child is raised; with an Output line but no Womb line the son is a concubine's child or adopted. Output on a yang line means mostly boys, on a yin line mostly girls. A Water Output line changing into Pressure: the first child is hard to keep; Fire, the second; Wood, the third; Metal, the fourth; Earth, the fifth. The number of children is reckoned by one for Water, two for Fire, three for Wood, four for Metal, five for Earth: doubled if strong, as it stands if resting, halved if trapped or dead."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2420, 2420],
+          "zh": ["卦无子孙，与子孙逢空绝破，财爻带孤寡，天狗杀动，或卦值纯阳纯阴者，俱主不生育而无子也。", "子孙胎爻两备者，有子。", "子化鬼，与胎爻临父者，有子难招。", "有胎无子者，孕而不育。", "有子无胎者，庶出暝蛉。", "子值阳多男，值阴多女。", "水子化鬼，头胎难招。", "火子化鬼，二胎难招。", "木子化鬼，三胎难招。", "金子化鬼，四胎难招。", "土子化鬼，五胎难招。", "子之多少，以一水二火三木四金五土推之。", "旺相加倍，休如数，囚死减半。"],
+          "yi": ["卦里没有子孙爻，或者子孙爻逢空、绝、破，财爻带孤辰寡宿、天狗煞而动，或者卦是纯阳、纯阴，都主不生育、没有儿子。", "子孙爻和胎爻两样齐备的，有儿子。", "子孙变成鬼爻，或者胎爻临在父母爻上的，有儿子也难以留住。", "有胎爻没有子孙爻的，怀了孕却养不成。", "有子孙爻没有胎爻的，是庶出或过继来的孩子。", "子孙爻在阳爻上多男，在阴爻上多女。", "水的子孙爻变成鬼爻，头胎难留。", "火的子孙爻变成鬼爻，二胎难留。", "木的子孙爻变成鬼爻，三胎难留。", "金的子孙爻变成鬼爻，四胎难留。", "土的子孙爻变成鬼爻，五胎难留。", "孩子的多少，按一水、二火、三木、四金、五土的数来推。", "旺相加倍，休囚照数，囚死减半。"],
+          "en": ["If the hexagram has no Output line, or the Output line meets Void, extinction or break, or the Wealth line carries the Solitary and Widowhood stars and the Heavenly Hound star and moves, or the hexagram is pure yang or pure yin, all mean no childbearing and no son.", "Where both the Output line and the Womb line are present, there is a son.", "Output changing into Pressure, or the Womb line on the Resource line: there is a son, but he is hard to keep.", "With a Womb line but no Output line, there is conception but no child is raised.", "With an Output line but no Womb line, the son is a concubine's child or adopted.", "The Output line on a yang line means mostly boys, on a yin line mostly girls.", "A Water Output line changing into Pressure: the first child is hard to keep.", "A Fire Output line changing into Pressure: the second child is hard to keep.", "A Wood Output line changing into Pressure: the third child is hard to keep.", "A Metal Output line changing into Pressure: the fourth child is hard to keep.", "An Earth Output line changing into Pressure: the fifth child is hard to keep.", "The number of children is reckoned by one for Water, two for Fire, three for Wood, four for Metal, five for Earth.", "If strong, double it; if resting, take the number as it stands; if trapped or dead, halve it."] }
+      ],
+      "note": {
+        "yi": "「庶出暝蛉」的「暝蛉」是「螟蛉」（过继的孩子）的写法；「有子难招」的「招」译作「留住」是取上下文。",
+        "en": "'Ming ling' in 'a concubine's child or adopted' is a variant writing of 'mingling', an adopted child; 'hard to secure' is rendered 'hard to keep' from the context."
+      },
+      "see": ["LY.MARRY.HJC.10", "LY.MARRY.HJC.16", "LY.MARRY.YL.09", "LY.MARRY.YL.24"]
+    },
+    {
+      "id": "LY.MARRY.YY.04",
+      "topic": "夫妻",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "入门：财空绝伤妻、鬼空绝伤夫；财遇刑刃劫杀妻灾、鬼遇则夫厄；财化鬼破妻带病、官化鬼破夫带疾；财动公姑不协，父动卑幼不睦，兄动妻灾，子动夫灾，鬼动妯娌姑嫂不和",
+      "rule": {
+        "yi": "入门以后的吉凶：财爻空、绝，伤妻子；鬼爻空、绝，伤丈夫。财爻遇刑、刃、劫杀，妻子有灾；鬼爻遇刑、刃、劫杀，丈夫有厄。财爻变鬼或破，妻子带病；官爻变鬼或破，丈夫带病。财爻动，公婆不和；父母爻动，晚辈幼辈不睦；兄弟爻动妻子有灾，子孙爻动丈夫有灾；鬼爻动，妯娌姑嫂不和（丑未相冲也是这样）。",
+        "en": "The good or ill after she enters the house: Wealth Void or extinguished harms the wife; Pressure Void or extinguished harms the husband. Wealth meeting the punishment, blade and robbery stars brings the wife calamity; Pressure meeting them brings the husband distress. Wealth changing into Pressure or a break: the wife carries an illness; Pressure changing into Pressure or a break: the husband carries an illness. When Wealth moves the parents-in-law are at odds; when Resource moves the juniors do not get along; when a Peer line moves the wife has calamity, when Output moves the husband has calamity; when Pressure moves the sisters-in-law are at odds (a Chou-Wei clash is the same)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424],
+          "zh": ["财空绝者伤妻，鬼空绝者伤夫。", "财遇刑刃劫杀者妻灾，鬼遇刑刃劫杀者夫厄。", "财化鬼破者，妻带病。", "官化鬼破者，夫带疾。", "财动，则公姑不协。", "父动则卑幼不睦。", "兄动妻灾，子动夫灾。", "鬼动则妯娌姑嫂不和。", "(丑未相冲亦然)。"],
+          "yi": ["财爻空、绝的伤妻子，鬼爻空、绝的伤丈夫。", "财爻遇刑、羊刃、劫杀的，妻子有灾；鬼爻遇刑、羊刃、劫杀的，丈夫有厄。", "财爻变成鬼爻或破的，妻子带病。", "官爻变成鬼爻或破的，丈夫带病。", "财爻动，公婆不和。", "父母爻动，晚辈幼辈不和睦。", "兄弟爻动妻子有灾，子孙爻动丈夫有灾。", "鬼爻动，妯娌、姑嫂不和。", "（丑未相冲也是这样）。"],
+          "en": ["Wealth Void or extinguished harms the wife; Pressure Void or extinguished harms the husband.", "Wealth meeting the punishment, the Goat Blade and the Robbery star brings the wife calamity; Pressure meeting them brings the husband distress.", "Wealth changing into Pressure or a break: the wife carries an illness.", "Pressure changing into Pressure or a break: the husband carries an illness.", "When Wealth moves, the parents-in-law are at odds.", "When Resource moves, the juniors do not get along.", "When a Peer line moves the wife has calamity; when Output moves the husband has calamity.", "When Pressure moves, the sisters-in-law are at odds.", "(A Chou-Wei clash is the same.)"] }
+      ],
+      "see": ["LY.MARRY.HJC.03", "LY.MARRY.HJC.20", "LY.MARRY.ZS.25"]
+    },
+    {
+      "id": "LY.MARRY.YY.05",
+      "topic": "夫妻",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "子（福）带龙喜德贵持世动妻夺夫权；子持世旺静妻嫌夫、旺动夫遭伤；财持世旺动克公姑；兄持世旺静夫嫌妻、旺动妻遭伤；两鬼旺相而财被刑冲克害必生离改嫁；世应财鬼带刑刃鳏寡杀动夫妻不久",
+      "rule": {
+        "yi": "子孙爻带青龙、喜神、德神、贵人，持世而动，妻子夺丈夫的权；子孙持世，旺而静，妻子必定嫌丈夫；旺而动，丈夫必定遭伤。财爻持世，旺而动，克公婆；兄弟爻持世，旺而静，丈夫嫌妻子；旺而动，妻子遭伤。两个鬼爻旺相，而月建、日辰和动爻刑冲克害财爻的，一定生离改嫁。世应财鬼带刑、刃、鳏寡煞而动，夫妻不长久。",
+        "en": "The Output line carrying the Azure Dragon, the Joy star, Virtue and the Nobleman, holding the Self line and moving: the wife seizes the husband's authority; Output on the Self line, strong and still: the wife surely dislikes her husband; strong and moving: the husband is surely harmed. The Wealth line on the Self line, strong and moving, harms the parents-in-law; a Peer line on the Self line, strong and still: the husband dislikes his wife; strong and moving: the wife is harmed. Two Pressure lines, strong, while the Month, Day and moving lines punish, clash, control or harm the Wealth line: surely parting alive and remarriage. The Self, Other, Wealth and Pressure lines carrying the punishment, blade and Widower-Widow stars and moving: the couple will not last."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424],
+          "zh": ["子带龙喜德贵持世动，妻夺夫权。", "子世旺静，妻必嫌夫。", "子世旺动，夫必遭伤。", "财世旺动者克公姑，兄世旺静者，夫嫌妻。", "兄世旺动者，妻遭伤也。", "两鬼旺相，而月日与动爻刑冲克害财爻者，必生离改嫁也。", "世应财鬼带刑刃鳏寡杀动，夫妻不久。"],
+          "yi": ["子孙爻带青龙、喜神、德神、贵人，持世而动，妻子夺丈夫的权。", "子孙爻持世，旺而静，妻子必定嫌丈夫。", "子孙爻持世，旺而动，丈夫必定遭伤。", "财爻持世，旺而动的，克公婆；兄弟爻持世，旺而静的，丈夫嫌妻子。", "兄弟爻持世，旺而动的，妻子遭伤。", "两个鬼爻旺相，而月建、日辰和动爻刑冲克害财爻的，一定生离改嫁。", "世应财鬼带刑、羊刃、鳏寡煞而动，夫妻不长久。"],
+          "en": ["The Output line carrying the Azure Dragon, the Joy star, Virtue and the Nobleman, holding the Self line and moving: the wife seizes the husband's authority.", "The Output line on the Self line, strong and still: the wife surely dislikes her husband.", "The Output line on the Self line, strong and moving: the husband is surely harmed.", "The Wealth line on the Self line, strong and moving, harms the parents-in-law; a Peer line on the Self line, strong and still: the husband dislikes his wife.", "A Peer line on the Self line, strong and moving: the wife is harmed.", "Two Pressure lines, strong, while the Month, Day and moving lines punish, clash, control or harm the Wealth line: surely parting alive and remarriage.", "The Self, Other, Wealth and Pressure lines carrying the punishment, blade and Widower-Widow stars and moving: the couple will not last."] }
+      ],
+      "see": ["LY.MARRY.ZS.10", "LY.MARRY.ZS.11", "LY.MARRY.HJC.19"]
+    },
+    {
+      "id": "LY.MARRY.YY.06",
+      "topic": "夫妻",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "世应生合而财官空绝半世夫妻；合而又生偕老，冲而又克生离；前卦冲变合初乖后睦，合化冲先睦后睽；生合而被日辰动爻冲克因入门不睦；冲克而日辰动爻类合局得人劝复和；阳鬼阴财一卦旺静亲上成亲",
+      "rule": {
+        "yi": "世应相生相合，但财爻、官爻空、绝，只做半辈子夫妻。合中又有生的，白头偕老；冲中又有克的，生离。本卦冲而变卦合，起初不合、后来和睦；本卦合而变冲，先和睦、后乖离。世应财鬼相生相合，但被日辰、动爻冲克，因入了门反而不和睦；世应财鬼冲克，而日辰和动爻合成局面的，得人劝解又和好。阳的鬼爻、阴的财爻，其中一个卦旺而静的，一定是亲上加亲，举案齐眉、白头偕老。",
+        "en": "The Self and Other lines generating and combining, but Wealth and Pressure Void or extinguished: husband and wife for half a lifetime. A combination with a generation as well: they grow old together; a clash with a control as well: parting alive. A hexagram of clash changing into combination: at odds at first, in harmony later; a hexagram of combination changing into a clash: harmony first, estrangement later. The Self, Other, Wealth and Pressure lines generating and combining but clashed and controlled by the Day and moving lines: discord arises because of her entering the house; the same lines clashing and controlling, but the Day and moving lines forming something like a combination frame: with someone's mediation they are reconciled. A yang Pressure line and a yin Wealth line, with one trigram strong and still: surely a match within the family, with mutual respect to the end of their days."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424],
+          "zh": ["世应生合，而财官空绝，半世夫妻。", "合而又生者，偕老。", "冲而又克者，生离。", "前卦冲而变合，初乖后睦。", "前卦合而化冲，先睦后睽。", "世应财鬼生合，而被日辰动爻冲克，因入门而不睦。", "世应财鬼冲克，而日辰与动爻类合局者，得人劝而复和。", "阳鬼阴财其一卦旺静者，必亲上成亲，齐眉借老也。"],
+          "yi": ["世应相生相合，但财爻、官爻空、绝，只做半辈子夫妻。", "合中又有生的，白头偕老。", "冲中又有克的，生离。", "本卦冲而变卦合，起初不合、后来和睦。", "本卦合而变冲，先和睦、后乖离。", "世应财鬼相生相合，但被日辰、动爻冲克，因入了门反而不和睦。", "世应财鬼冲克，而日辰和动爻合成局面的，得到人劝解又和好。", "阳的鬼爻、阴的财爻，其中一个卦旺而静的，一定是亲上加亲，举案齐眉、白头偕老。"],
+          "en": ["The Self and Other lines generating and combining, but Wealth and Pressure Void or extinguished: husband and wife for half a lifetime.", "A combination with a generation as well: they grow old together.", "A clash with a control as well: parting alive.", "A hexagram of clash changing into combination: at odds at first, in harmony later.", "A hexagram of combination changing into a clash: harmony first, estrangement later.", "The Self, Other, Wealth and Pressure lines generating and combining but clashed and controlled by the Day and moving lines: discord arises because of her entering the house.", "The Self, Other, Wealth and Pressure lines clashing and controlling, but the Day and moving lines forming something like a combination frame: with someone's mediation they are reconciled.", "A yang Pressure line and a yin Wealth line, with one trigram strong and still: surely a match within the family, with mutual respect to the end of their days."] }
+      ],
+      "note": {
+        "yi": "最后一句的「借老」是「偕老」的转录之误；引用原字，译文按「偕老」译。「类合局」的意思原文没有解释，译作「合成局面一类的」。",
+        "en": "'Jie lao' in the last sentence is a transcription slip for 'xie lao' (grow old together); the character is quoted as it stands and translated accordingly. 'Lei he ju' is not explained and is rendered as 'forming something like a combination frame'."
+      },
+      "see": ["LY.MARRY.HJC.04", "LY.MARRY.ZS.13", "LY.MARRY.YL.15"]
+    },
+    {
+      "id": "LY.MARRY.YY.07",
+      "topic": "家人",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "动爻冲克父则尊长不全，冲克财则分离耗财帛奴婢无力，冲克子则无子，冲克兄则姑嫂妯娌兄弟不睦，冲克鬼则不利丈夫",
+      "rule": {
+        "yi": "动爻冲克父母爻，尊长不齐全；冲克财爻，分离、耗财物，奴婢不得力；冲克子孙爻，没有子，有也不多；冲克兄弟爻，姑嫂、妯娌、兄弟不和睦；冲克鬼爻，不利于丈夫。",
+        "en": "A moving line clashing with and controlling the Resource line: the elders are not all present; Wealth: separation, loss of money and servants of no help; Output: no son, or not many if there are any; a Peer line: the sisters-in-law and brothers are at odds; Pressure: bad for the husband."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424], "literal": ["父母"],
+          "zh": ["动爻冲克父，尊长不全也。", "动爻冲克财，主分离耗财帛，奴婢无力也。", "动爻冲克子，主无子，有亦不多也。", "动爻冲克兄，姑嫂妯娌兄弟不睦也。", "动爻冲克鬼，不利丈夫也。"],
+          "yi": ["动爻冲克父母爻，尊长不齐全。", "动爻冲克财爻，主分离、耗财物，奴婢不得力。", "动爻冲克子孙爻，主没有子，有也不多。", "动爻冲克兄弟爻，姑嫂、妯娌、兄弟不和睦。", "动爻冲克鬼爻，不利于丈夫。"],
+          "en": ["A moving line clashing with and controlling the Resource line: the elders are not all present.", "A moving line clashing with and controlling Wealth: separation, loss of money, and servants who are of no help.", "A moving line clashing with and controlling Output: no son, or not many if there are any.", "A moving line clashing with and controlling a Peer line: the sisters-in-law and the brothers (Peer) are at odds.", "A moving line clashing with and controlling Pressure: bad for the husband."] }
+      ],
+      "see": ["LY.MARRY.YY.04", "LY.MARRY.HJC.03"]
+    },
+    {
+      "id": "LY.MARRY.YY.08",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "鬼动化财者女不妨夫必再嫁，财动化鬼者男不妨妻必再婚；卜娶遇两财者停妻再娶，卜嫁逢两鬼者抛夫改嫁；官鬼动者夫朝东暮西",
+      "rule": {
+        "yi": "鬼爻动而变成财爻的，女子不妨害丈夫，但必定再嫁；财爻动而变成鬼爻的，男子不妨害妻子，但必定再婚。占娶妻遇到两个财爻的，停了妻再娶；占出嫁逢到两个鬼爻的，抛开丈夫改嫁。官鬼爻动的，丈夫一定朝东暮西，不定。",
+        "en": "Pressure moving and changing into Wealth: the woman does not harm her husband but will surely marry again; Wealth moving and changing into Pressure: the man does not harm his wife but will surely marry again. Divining a marriage and meeting two Wealth lines: he sets aside his wife and marries again; divining a bride's marriage and meeting two Pressure lines: she leaves her husband and remarries. When Pressure moves, the husband is surely changeable, east in the morning and west at night."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424],
+          "zh": ["鬼动化财者，女不妨夫必再嫁。", "财动化鬼者，男不妨妻必再婚。", "卜娶而遇两财者，停妻再娶。", "卜嫁而逢两鬼者，抛夫改嫁。", "官鬼动者，夫必朝东而暮西也。"],
+          "yi": ["鬼爻动化成财爻的，女子不妨害丈夫，但必定再嫁。", "财爻动化成鬼爻的，男子不妨害妻子，但必定再婚。", "占娶妻而遇到两个财爻的，停了妻再娶。", "占出嫁而逢到两个鬼爻的，抛开丈夫改嫁。", "官鬼爻动的，丈夫一定朝东暮西。"],
+          "en": ["Pressure moving and changing into Wealth: the woman does not harm her husband but will surely marry again.", "Wealth moving and changing into Pressure: the man does not harm his wife but will surely marry again.", "Divining a marriage and meeting two Wealth lines: he sets aside his wife and marries again.", "Divining a bride's marriage and meeting two Pressure lines: she leaves her husband and remarries.", "When Pressure moves, the husband is surely changeable, east in the morning and west at night."] }
+      ],
+      "see": ["LY.MARRY.HJC.24", "LY.MARRY.ZS.15"]
+    },
+    {
+      "id": "LY.MARRY.YY.09",
+      "topic": "总则",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "游魂主离别、八纯主反目；咸恒节泰和谐、睽革解离乖忤；女得坎离再嫁、男得震巽重婚；坤化坎男破体、乾化离女非真；夫阳壮伤妻、妇阴强欺夫；蒙不有其躬、渐夫征不复",
+      "rule": {
+        "yi": "游魂卦主离别，八纯卦主反目。咸、恒、节、泰的和谐，睽、革、解、离的乖违。女子得坎、离的再嫁，男子得震、巽的重婚。坤变坎，男子破体；乾变离，女子不真。丈夫阳气壮盛就伤妻子，妻子阴气强就欺丈夫。蒙卦是「不有其躬」，渐卦是「夫征不复」。",
+        "en": "A Wandering Soul hexagram means separation, and a pure eight-palace hexagram falling out. Xian, Heng, Jie and Tai are harmonious; Kui, Ge, Xie and Li are discordant. A woman who gets Kan or Li marries again; a man who gets Zhen or Xun marries again. Kun changing into Kan: the man's body is broken; Qian changing into Li: the woman is not genuine. A husband with strong yang harms his wife; a wife with strong yin overrides her husband. Meng is 'not to have a body'; Jian is 'the husband goes on the expedition and does not return'."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424],
+          "zh": ["游魂，主离别。", "八纯，主反目。", "咸恒节泰者和谐。", "睽革解离者乖忤。", "女得坎离者再嫁，男得震巽者重婚。", "坤化坎者，男破体。", "乾化离者，女非真。", "夫阳壮而伤妻，妇阴强而欺夫。", "蒙则不有其躬，渐则夫征不复。"],
+          "yi": ["游魂卦，主离别。", "八纯卦，主反目。", "咸、恒、节、泰的和谐。", "睽、革、解、离的乖违。", "女子得坎、离的再嫁，男子得震、巽的重婚。", "坤变坎的，男子破体。", "乾变离的，女子不真。", "丈夫阳气壮盛就伤妻子，妻子阴气强就欺丈夫。", "蒙卦就是「不有其躬」，渐卦就是「夫征不复」。"],
+          "en": ["A Wandering Soul hexagram means separation.", "A pure eight-palace hexagram means falling out.", "Xian, Heng, Jie and Tai are harmonious.", "Kui, Ge, Xie and Li are discordant.", "A woman who gets Kan or Li marries again; a man who gets Zhen or Xun marries again.", "Kun changing into Kan: the man's body is broken.", "Qian changing into Li: the woman is not genuine.", "A husband with strong yang harms his wife; a wife with strong yin overrides her husband.", "Meng is 'not to have a body'; Jian is 'the husband goes on the expedition and does not return'."] }
+      ],
+      "note": {
+        "yi": "这几句是按卦名和八卦断的口诀，和《火珠林》婚姻章的一段几乎逐句相同（见 LY.MARRY.HZL.11、HZL.15、HZL.24），《增删卜易》觉子反对拿卦名断婚（LY.MARRY.ZS.14）。",
+        "en": "These lines judge by hexagram and trigram names and are almost sentence for sentence the same as a passage in the Huozhulin's marriage chapter (see LY.MARRY.HZL.11, HZL.15 and HZL.24); Juezi of the Zengshan Buyi objects to judging marriage by hexagram names (LY.MARRY.ZS.14)."
+      },
+      "see": ["LY.MARRY.HZL.11", "LY.MARRY.HZL.15", "LY.MARRY.HZL.24", "LY.MARRY.ZS.14"]
+    },
+    {
+      "id": "LY.MARRY.YY.10",
+      "topic": "家人",
+      "chapter": "婚姻占·入门",
+      "chapter_en": "Divining marriage: entering the house",
+      "title": "内卦乾坤受伤舅姑不睦、坎艮震受伤丈夫叔伯不睦、巽离兑受伤姑嫂妯娌不睦；外卦乾坤生内舅姑悦、坎艮震生内丈夫叔伯悦、巽离兑生内姑嫂妯娌悦",
+      "rule": {
+        "yi": "内卦的乾、坤受伤，公婆不和睦；坎、艮、震受伤，丈夫和叔伯不和睦；巽、离、兑受伤，姑嫂、妯娌不和睦。外卦的乾、坤来生内卦，公婆喜悦；坎、艮、震生内卦，丈夫和叔伯喜悦；巽、离、兑生内卦，姑嫂、妯娌喜悦。（挑选女婿的占法见身命占。）",
+        "en": "If Qian or Kun in the inner trigram is harmed, the parents-in-law are at odds; if Kan, Gen or Zhen is harmed, the husband and his uncles and brothers are at odds; if Xun, Li or Dui is harmed, the sisters-in-law are at odds. If Qian or Kun in the outer trigram generates the inner, the parents-in-law are pleased; if Kan, Gen or Zhen generates it, the husband and his uncles and brothers are pleased; if Xun, Li or Dui generates it, the sisters-in-law are pleased. (Choosing a son-in-law is found in the divination of one's person and fate.)"
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2424, 2424],
+          "zh": ["内卦乾坤受伤，舅姑不睦。", "坎艮震受伤，丈夫叔伯不睦。", "巽离兑受伤，姑嫂妯娌不睦。", "外卦乾坤生内，舅姑悦也。", "坎艮震生内，丈夫叔伯悦也。", "巽离兑生内，姑嫂妯娌悦也。", "(择婿见身命占)。"],
+          "yi": ["内卦乾、坤受伤，公婆不和睦。", "坎、艮、震受伤，丈夫和叔伯不和睦。", "巽、离、兑受伤，姑嫂、妯娌不和睦。", "外卦乾、坤来生内卦，公婆喜悦。", "外卦坎、艮、震生内卦，丈夫和叔伯喜悦。", "外卦巽、离、兑生内卦，姑嫂、妯娌喜悦。", "（挑选女婿的占法见身命占。）"],
+          "en": ["If Qian or Kun in the inner trigram is harmed, the parents-in-law are at odds.", "If Kan, Gen or Zhen is harmed, the husband and his uncles and brothers are at odds.", "If Xun, Li or Dui is harmed, the sisters-in-law are at odds.", "If Qian or Kun in the outer trigram generates the inner, the parents-in-law are pleased.", "If Kan, Gen or Zhen in the outer trigram generates the inner, the husband and his uncles and brothers are pleased.", "If Xun, Li or Dui in the outer trigram generates the inner, the sisters-in-law are pleased.", "(Choosing a son-in-law is found in the divination of one's person and fate.)"] }
+      ],
+      "see": ["LY.MARRY.YY.07", "LY.MARRY.HJC.03"]
+    },
+    {
+      "id": "LY.MARRY.YY.11",
+      "topic": "聘嫁",
+      "chapter": "婚姻占·聘奁",
+      "chapter_en": "Divining marriage: betrothal gifts and dowry",
+      "title": "聘礼：卦无父者无雁币或无婚书；财旺币厚财衰币薄，无财或财化空绝无币礼；金财聘金厚、木财果核盛、火财缎疋多、水财珠玉鱼酒丰、土财以田产代；未财旺羊肥、亥财旺猪硕",
+      "rule": {
+        "yi": "卦里没有父母爻，没有雁币（聘礼），或者没有婚书。财爻旺聘礼厚，财爻衰聘礼薄；没有财爻，或财爻化成空、绝，就没有聘礼。金的财爻生合应爻，聘金丰厚；木的，果品多；火的，缎匹多；水的，珠玉鱼酒丰盛；土的，用田产代替聘礼。未的财爻旺，羊肥；亥的财爻旺，猪大。",
+        "en": "A hexagram without a Resource line has no goose-and-silk betrothal gift, or no marriage contract. Strong Wealth means rich gifts, weak Wealth slight ones; with no Wealth line, or Wealth changing into Void or extinction, there are no gifts. A Metal Wealth line generating or combining with the Other line: the betrothal money is generous; Wood: fruits and nuts in plenty; Fire: many bolts of satin; Water: pearls, jade, fish and wine in abundance; Earth: land and property take the place of gifts. A strong Wei Wealth line: fat sheep; a strong Hai Wealth line: big pigs."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2428, 2428],
+          "zh": ["卦无父者，无雁币，或无婚书也。", "财旺币厚，财衰币薄。", "无财，及财化空绝，无币礼也。", "金财生合应，聘金厚。", "木财生合应，果核盛。", "火财生合应，缎疋多。", "水财生合应，珠玉鱼酒丰。", "土财生合应，以田产代币。", "未财旺，则羊肥。", "亥财旺，则猪硕。"],
+          "yi": ["卦里没有父母爻的，没有雁币（聘礼），或者没有婚书。", "财爻旺聘礼厚，财爻衰聘礼薄。", "没有财爻，以及财爻化成空、绝，就没有聘礼。", "金的财爻生合应爻，聘金丰厚。", "木的财爻生合应爻，果品干果多。", "火的财爻生合应爻，缎匹多。", "水的财爻生合应爻，珠玉鱼酒丰盛。", "土的财爻生合应爻，用田产代替聘礼。", "未的财爻旺，羊肥。", "亥的财爻旺，猪大。"],
+          "en": ["A hexagram without a Resource line has no goose-and-silk betrothal gift, or no marriage contract.", "Strong Wealth means rich gifts; weak Wealth means slight gifts.", "With no Wealth line, or Wealth changing into Void or extinction, there are no betrothal gifts.", "A Metal Wealth line generating or combining with the Other line: the betrothal money is generous.", "A Wood Wealth line doing so: fruits and nuts in plenty.", "A Fire Wealth line doing so: many bolts of satin.", "A Water Wealth line doing so: pearls, jade, fish and wine in abundance.", "An Earth Wealth line doing so: land and property take the place of gifts.", "A strong Wei Wealth line: the sheep are fat.", "A strong Hai Wealth line: the pigs are big."] }
+      ],
+      "see": ["LY.MARRY.HJC.07", "LY.MARRY.HJC.32", "LY.MARRY.YL.12"]
+    },
+    {
+      "id": "LY.MARRY.YY.12",
+      "topic": "聘嫁",
+      "chapter": "婚姻占·聘奁",
+      "chapter_en": "Divining marriage: betrothal gifts and dowry",
+      "title": "嫁妆：龙财旺相奁具精巧、虎财旺相奁具粗恶、财衰奁薄、无财或化空绝无奁；金财生合世多宝玉五金器、木多木器、火多锦绣绫罗、土多奁产、水多珍珠布帛衣饰；应财伏财有媵婢，应财化子有仆从",
+      "rule": {
+        "yi": "带青龙的财爻旺相，嫁妆器具精巧；带白虎的财爻旺相，嫁妆器具粗劣；财爻衰，嫁妆薄；卦里没有财爻，或财爻化成空、绝，没有嫁妆。金的财爻生合世爻，多宝玉和金属器物；木的，多木器；火的，多锦绣绫罗；土的，多田产；水的，多珍珠、布帛、衣饰。应爻上的财爻（或伏着的财爻），有陪嫁的婢女；应爻上的财爻化成子孙，有仆从。",
+        "en": "The Wealth line with the Azure Dragon, strong: the dowry furnishings are fine and skilful; with the White Tiger, strong: coarse and poor; weak Wealth means a slight dowry; with no Wealth line, or Wealth changing into Void or extinction, there is no dowry. A Metal Wealth line generating or combining with the Self line: many jewels, jade and metal wares; Wood: many wooden articles; Fire: much brocade, embroidery, damask and silk; Earth: much dowry property; Water: many pearls, cloth, silks and clothing. Wealth on the Other line, or a hidden Wealth line: there are accompanying maids; Wealth on the Other line changing into Output: there are attendants."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2428, 2428],
+          "zh": ["龙财旺相，奁具精巧。", "虎财旺相，奁具粗恶。", "财衰则奁薄。", "卦无财，或财化空绝，无奁也。", "金财生合世，多宝玉五金器。", "木财生合世，多木器。", "火财生合世，多锦绣绫罗。", "土财生合世，多奁产。", "水财生合世，多珍珠布帛衣饰。", "应财伏财，有媵婢也。", "应财化子，有仆从也。"],
+          "yi": ["带青龙的财爻旺相，嫁妆器具精巧。", "带白虎的财爻旺相，嫁妆器具粗劣。", "财爻衰，嫁妆就薄。", "卦里没有财爻，或者财爻化成空、绝，没有嫁妆。", "金的财爻生合世爻，多宝玉和金属器物。", "木的财爻生合世爻，多木器。", "火的财爻生合世爻，多锦绣绫罗。", "土的财爻生合世爻，多嫁妆田产。", "水的财爻生合世爻，多珍珠、布帛、衣饰。", "应爻上的财爻、伏着的财爻，有陪嫁的婢女。", "应爻上的财爻化成子孙，有仆从。"],
+          "en": ["The Wealth line with the Azure Dragon, strong: the dowry furnishings are fine and skilful.", "The Wealth line with the White Tiger, strong: the dowry furnishings are coarse and poor.", "Weak Wealth means a slight dowry.", "With no Wealth line, or Wealth changing into Void or extinction, there is no dowry.", "A Metal Wealth line generating or combining with the Self line: many jewels, jade and metal wares.", "A Wood Wealth line doing so: many wooden articles.", "A Fire Wealth line doing so: much brocade, embroidery, damask and silk.", "An Earth Wealth line doing so: much dowry property.", "A Water Wealth line doing so: many pearls, cloth, silks and clothing.", "Wealth on the Other line, or a hidden Wealth line: there are accompanying maids.", "Wealth on the Other line changing into Output: there are attendants."] }
+      ],
+      "note": {
+        "yi": "「应财伏财」四个字语法很省，译文读作「应爻上的财爻、伏着的财爻」两种情形；别的读法也说得通。",
+        "en": "The four characters 'Other-line Wealth, hidden Wealth' are elliptical; they are read as two cases, Wealth on the Other line and a hidden Wealth line; other readings are possible."
+      },
+      "see": ["LY.MARRY.HJC.32", "LY.MARRY.HJC.27", "LY.MARRY.YL.12"]
+    },
+    {
+      "id": "LY.MARRY.YY.13",
+      "topic": "成否",
+      "chapter": "婚姻占·成否",
+      "chapter_en": "Divining marriage: will it be made",
+      "title": "世应财鬼生合比和者成；阴世女家许配、阳应男子求婚；世生应男求女、应生世女求男；世克应强娶；世应父母动合亲家杯酒而成，世应子孙动合割襟而成；官化父男家尊长成合，财化父女家尊长成合；世与财爻生合女家亲人成合，世与鬼爻生合男家亲人成合",
+      "rule": {
+        "yi": "世、应、财、鬼相生、相合、比和的，成。世爻属阴，是女家许配；应爻属阳，是男方求婚。世爻生应爻，是男方求女方；应爻生世爻，是女方求男方。世爻克应爻，是用强力抢娶；世、应、日辰三样全合，是靠别人成事。世应与动的父母爻相合，两家亲家一杯酒就成了；世应与动的子孙爻相合，是两边的男女靠割襟之约成的。官鬼化成父母，男方的尊长促成；财爻化成父母，女方的尊长促成。世爻与财爻相生相合，女方的亲人促成；世爻与鬼爻相生相合，男方的亲人促成。",
+        "en": "Where the Self, Other, Wealth and Pressure lines generate, combine or are in accord, it is made. With the Self line yin, the woman's family gives her in betrothal; with the Other line yang, the man's side is asking for the marriage. The Self line generating the Other: the man seeks the woman; the Other generating the Self: the woman seeks the man. The Self controlling the Other: taking her by force; the Self, Other and Day all combining: the matter is made through others. The Self and Other combining with a moving Resource line: the two in-law families settle it over a cup of wine; with a moving Output line: the boy and girl are betrothed by the lapel-cutting pact. Pressure changing into Resource: the man's elders bring it about; Wealth changing into Resource: the woman's elders bring it about. The Self line generating or combining with Wealth: the woman's relatives bring it about; with Pressure: the man's relatives bring it about."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2432, 2434],
+          "zh": ["世应财鬼生合比和者，成也。", "阴世，女家许配。", "阳应男子求婚。", "世生应，男求女。", "应生世，女求男。", "世克应用强劫娶，世应日辰三全合，因人成事。", "世应父母动合，两亲家杯酒而成。", "世应子孙动合，两男女割襟而成。", "官化父，男家尊长成合。", "财化父，女家尊长成合。", "世与财爻生合，女家亲人成合。", "世与鬼爻生合，男家亲人成合。"],
+          "yi": ["世、应、财、鬼相生、相合、比和的，成。", "世爻属阴，是女家许配。", "应爻属阳，是男方求婚。", "世爻生应爻，是男方求女方。", "应爻生世爻，是女方求男方。", "世爻克应爻，是用强力抢娶；世、应、日辰三样全合，是靠别人成事。", "世应与动的父母爻相合，两家亲家一杯酒就成了。", "世应与动的子孙爻相合，是两边的男女靠割襟之约成的。", "官鬼化成父母，男方的尊长促成。", "财爻化成父母，女方的尊长促成。", "世爻与财爻相生相合，女方的亲人促成。", "世爻与鬼爻相生相合，男方的亲人促成。"],
+          "en": ["Where the Self, Other, Wealth and Pressure lines generate, combine or are in accord, it is made.", "With the Self line yin, the woman's family gives her in betrothal.", "With the Other line yang, the man's side is asking for the marriage.", "The Self line generating the Other: the man seeks the woman.", "The Other line generating the Self: the woman seeks the man.", "The Self controlling the Other: taking her by force; the Self, Other and Day all combining: the matter is made through others.", "The Self and Other combining with a moving Resource line: the two in-law families settle it over a cup of wine.", "The Self and Other combining with a moving Output line: the boy and girl are betrothed by the lapel-cutting pact.", "Pressure changing into Resource: the man's elders bring it about.", "Wealth changing into Resource: the woman's elders bring it about.", "The Self line generating or combining with the Wealth line: the woman's relatives bring it about.", "The Self line generating or combining with the Pressure line: the man's relatives bring it about."] }
+      ],
+      "note": {
+        "yi": "「割襟」是旧时两家为尚未成年的儿女订婚的一种约定（割下各自的一片衣襟为信）；这是按通行说法译，原文没有解释。",
+        "en": "'Lapel-cutting' is an old way for two families to betroth their young children (each cutting a piece of its garment as a token); it is translated by this common understanding, and the original does not explain it."
+      },
+      "see": ["LY.MARRY.HJC.06", "LY.MARRY.HJC.08", "LY.MARRY.HJC.09"]
+    },
+    {
+      "id": "LY.MARRY.YY.14",
+      "topic": "成否",
+      "chapter": "婚姻占·成否",
+      "chapter_en": "Divining marriage: will it be made",
+      "title": "卦六合者成、六冲者不成；前卦合变冲成后复退、冲化合退后复成；六冲或世应动被日辰合住欲退不得；世应财鬼冲克而日辰动爻生合不成而得人赞成、生合而日辰动爻冲克成而被破；虽生合而临死墓绝胎被刑冲克害，在世鬼则男家不允、在应财则女家不允",
+      "rule": {
+        "yi": "卦是六合的成，卦是六冲的不成。本卦合而变冲，成了以后又退；本卦冲而化合，退了以后又成。卦是六冲，或世应动，而被日辰合住的，想退也退不成。世应财鬼互相冲克，逢日辰、动爻来生合的，不成，但得到别人赞助；世应财鬼相生相合，逢日辰、动爻冲克的，成了又被破坏。世应财鬼虽然相生相合，但临着死、墓、绝、胎，被刑冲克害，或者动而化成死、墓、绝、胎而遭刑冲克害的：落在世爻、鬼爻上，男家不答应；落在应爻、财爻上，女家不答应。",
+        "en": "A hexagram of Six-combine is made; a hexagram of Six-clash is not. The original hexagram combining and changing into a clash: made, then withdrawn again; clashing and changing into a combination: withdrawn, then made again. A Six-clash hexagram, or the Self and Other moving, held by a combination with the Day: one wants to withdraw and cannot. The Self, Other, Wealth and Pressure lines clashing and controlling, meeting generation or combination from the Day or a moving line: it is not made, yet someone approves and helps it along; generating and combining, meeting a clash or control from the Day or a moving line: made, then broken up. Though the Self, Other, Wealth and Pressure lines generate and combine, if they sit on the death, tomb, extinction or womb stages and are punished, clashed, controlled or harmed, or move and change into those stages and are so harmed: if it is on the Self line or the Pressure line, the man's family does not agree; if it is on the Other line or the Wealth line, the woman's family does not agree."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2432, 2434],
+          "zh": ["卦六合者成，卦六冲者不成。", "前卦合而变冲，成后复退。", "前卦冲而化合，退后复成。", "卦六冲或世应动，而被日辰合住者，欲退而不得。", "世应财鬼冲克，逢日辰动爻生合者不成，而得人赞成。", "世应财鬼生合，逢日辰动爻冲克者，成而被破。", "世应财鬼虽相生合，或临死墓绝胎，被刑冲克害，或动化死墓绝胎，刑冲克害者，在世爻鬼爻，则男家不允。", "在应爻财爻，主女家不允。"],
+          "yi": ["卦是六合的成，卦是六冲的不成。", "本卦合而变冲，成了以后又退。", "本卦冲而化合，退了以后又成。", "卦是六冲，或者世应动，而被日辰合住的，想退也退不成。", "世应财鬼互相冲克，逢日辰、动爻来生合的，不成，但得到别人赞助。", "世应财鬼相生相合，逢日辰、动爻冲克的，成了又被破坏。", "世应财鬼虽然相生相合，但临着死、墓、绝、胎，被刑冲克害，或者动而化成死、墓、绝、胎而遭刑冲克害的，落在世爻、鬼爻上，就是男家不答应；", "落在应爻、财爻上，主女家不答应。"],
+          "en": ["A hexagram of Six-combine is made; a hexagram of Six-clash is not.", "The original hexagram combining and changing into a clash: made, then withdrawn again.", "The original hexagram clashing and changing into a combination: withdrawn, then made again.", "A Six-clash hexagram, or the Self and Other moving, held by a combination with the Day: one wants to withdraw and cannot.", "The Self, Other, Wealth and Pressure lines clashing and controlling, meeting generation or combination from the Day or a moving line: it is not made, yet someone approves and helps it along.", "The Self, Other, Wealth and Pressure lines generating and combining, meeting a clash or control from the Day or a moving line: made, then broken up.", "Though the Self, Other, Wealth and Pressure lines generate and combine, if they sit on the death, tomb, extinction or womb stages and are punished, clashed, controlled or harmed, or move and change into those stages and are so harmed: if it is on the Self line or the Pressure line, the man's family does not agree;", "if it is on the Other line or the Wealth line, the woman's family does not agree."] }
+      ],
+      "dispute": {
+        "yi": "「冲变合」：这里说「前卦冲而化合，退后复成」（先退后成）；《易林补遗》说未配之前得冲中化合「决不相谐」（LY.MARRY.YL.15），《增删卜易》说「六冲变六合者尤吉，求婚者目下不允，久必成之」（LY.MARRY.ZS.13）。《易隐》和《增删卜易》一致：不是不成，是先退后成。",
+        "en": "For a clash changing into a combination this text says 'withdrawn, then made again'; the Yilin Buyi says that before the match is made it 'surely will not be harmonious' (LY.MARRY.YL.15), and the Zengshan Buyi that 'a Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time' (LY.MARRY.ZS.13). The Yi Yin agrees with the Zengshan Buyi: not that it fails, but that it is withdrawn first and made afterwards."
+      },
+      "see": ["LY.MARRY.HJC.04", "LY.MARRY.ZS.13", "LY.MARRY.YL.15"]
+    },
+    {
+      "id": "LY.MARRY.YY.15",
+      "topic": "风险",
+      "chapter": "婚姻占·成否",
+      "chapter_en": "Divining marriage: will it be made",
+      "title": "父化官男家尊长阻隔、父化财女家尊长阻隔；父空无主婚苟合成；父克世应父母阻；兄冲世应兄弟阻；兄加杀动必争竞；鬼化鬼男家反覆；兄化兄见阻方成；两父齐兴主婚非一；财官动合先奸后娶；二官并动两家求娶；两鬼克应女许二家",
+      "rule": {
+        "yi": "父母爻化成官鬼，男方的尊长阻隔；父母爻化成财爻，女方的尊长阻隔。父母爻空，没有主婚的人，只能苟且成合。父母爻克世应，父母阻挠；兄弟爻冲世应，兄弟阻挠；兄弟爻加煞而动，一定争斗。鬼爻化鬼爻，男家反复不定；兄弟爻化兄弟爻，遇到阻碍才能成。两个父母爻一起发动，主婚的不止一人。财官动而相合，先私通后娶（自刑的应验）。两个官爻一起动，两家来求娶；两个鬼爻克应爻，女方许给了两家。",
+        "en": "Resource changing into Pressure: the man's elders obstruct; Resource changing into Wealth: the woman's elders obstruct. With the Resource line Void there is no one to preside at the wedding, and the union is made irregularly. The Resource line controlling the Self and Other lines: the parents obstruct; a Peer line clashing the Self and Other: the brothers obstruct; a Peer line with a baleful star and moving: quarrels are certain. Pressure changing into Pressure: the man's family goes back and forth; a Peer line changing into a Peer line: made only after meeting obstruction. Two Resource lines moving together: more than one person presides at the wedding. Wealth and Pressure moving and combining: illicit relations first, marriage after (it proves true where there is self-punishment). Two Pressure lines moving together: two families ask for the bride; two Pressure lines controlling the Other line: the woman is promised to two families."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2432, 2434],
+          "zh": ["父化官，男家尊长阻隔。", "父化财，女家尊长阻隔。", "父空无主婚之人，苟合成也。", "父克世应，父母阻。", "兄冲世应，兄弟阻。", "兄加杀动，必争竞。", "鬼化鬼，男家反覆。", "兄化兄，见阻方成。", "两父齐兴，主婚非一。", "财官动合，先奸后娶。", "(自刑者验)。", "二官并动，两家求娶。", "两鬼克应，女许二家。"],
+          "yi": ["父母爻化成官鬼，男方的尊长阻隔。", "父母爻化成财爻，女方的尊长阻隔。", "父母爻空，没有主婚的人，只能苟且成合。", "父母爻克世应，父母阻挠。", "兄弟爻冲世应，兄弟阻挠。", "兄弟爻加煞而动，一定争斗。", "鬼爻化成鬼爻，男家反复不定。", "兄弟爻化成兄弟爻，遇到阻碍才能成。", "两个父母爻一起发动，主婚的不止一个人。", "财爻、官爻动而相合，先私通后娶。", "（自刑的应验。）", "两个官爻一起动，两家来求娶。", "两个鬼爻克应爻，女方许给了两家。"],
+          "en": ["Resource changing into Pressure: the man's elders obstruct.", "Resource changing into Wealth: the woman's elders obstruct.", "With the Resource line Void there is no one to preside at the wedding, and the union is made irregularly.", "The Resource line controlling the Self and Other lines: the parents (Resource) obstruct.", "A Peer line clashing the Self and Other lines: the brothers (Peer) obstruct.", "A Peer line with a baleful star and moving: there will surely be quarrels.", "Pressure changing into Pressure: the man's family goes back and forth.", "A Peer line changing into a Peer line: made only after meeting obstruction.", "Two Resource lines moving together: more than one person presides at the wedding.", "Wealth and Pressure moving and combining: illicit relations first, marriage after.", "(It proves true where there is self-punishment.)", "Two Pressure lines moving together: two families ask for the bride.", "Two Pressure lines controlling the Other line: the woman is promised to two families."] }
+      ],
+      "see": ["LY.MARRY.HJC.30", "LY.MARRY.HJC.13", "LY.MARRY.HJC.29", "LY.MARRY.HJC.11"]
+    },
+    {
+      "id": "LY.MARRY.YY.16",
+      "topic": "风险",
+      "chapter": "婚姻占·成否",
+      "chapter_en": "Divining marriage: will it be made",
+      "title": "卦纯阳纯阴者不成；龙动生世应者成，虎动克世应者不成；蛇动克牵缠不允，雀动克口舌非常，武动克者阴人破，勾动克者小人挠",
+      "rule": {
+        "yi": "卦是纯阳、纯阴的，不成。青龙动而生世应的成，白虎动而克世应的不成；螣蛇动而克，牵缠不答应；朱雀动而克，口舌非常；玄武动而克，女人来破坏；勾陈动而克，小人来阻挠。",
+        "en": "A hexagram of pure yang or pure yin is not made. The Azure Dragon moving and generating the Self and Other lines: made; the White Tiger moving and controlling them: not made. The Coiling Snake moving and controlling: entanglement and no agreement; the Vermilion Bird: extraordinary quarrels; the Dark Tortoise: a woman wrecks it; Hook Earth: petty people obstruct."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2432, 2434],
+          "zh": ["卦值纯阳纯阴者不成。", "龙动生世应者成，虎动克世应者不成。", "蛇动克，牵缠不允。", "雀动克，口舌非常。", "武动克者，阴人破。", "勾动克者，小人挠。"],
+          "yi": ["卦是纯阳或纯阴的，不成。", "青龙动而生世应的成，白虎动而克世应的不成。", "螣蛇动而克，牵缠不答应。", "朱雀动而克，口舌非常。", "玄武动而克的，女人来破坏。", "勾陈动而克的，小人来阻挠。"],
+          "en": ["A hexagram of pure yang or pure yin is not made.", "The Azure Dragon moving and generating the Self and Other lines: made; the White Tiger moving and controlling them: not made.", "The Coiling Snake moving and controlling: entanglement and no agreement.", "The Vermilion Bird moving and controlling: extraordinary quarrels.", "The Dark Tortoise moving and controlling: a woman (a yin person) wrecks it.", "Hook Earth moving and controlling: petty people obstruct."] }
+      ],
+      "see": ["LY.MARRY.HZL.14", "LY.MARRY.HJC.28"]
+    },
+    {
+      "id": "LY.MARRY.YY.17",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻占·成否",
+      "chapter_en": "Divining marriage: will it be made",
+      "title": "世临外卦财爻动、身世命爻合应财，或命爻鬼爻伏墓应财下，俱主入赘；鬼居应财居世，或世鬼属阴应财属阳，非入赘则夫妇相凌",
+      "rule": {
+        "yi": "世爻临在外卦、财爻动，身爻、世爻、命爻去合应爻上的财，或者命爻、鬼爻伏在墓中、藏在应爻财之下的，都主入赘。鬼爻在应爻、财爻在世爻，或者世爻的鬼属阴、应爻的财属阳的，不是入赘，一定夫妻互相欺凌。",
+        "en": "The Self line in the outer trigram with Wealth moving, and the Body, Self or fate line going to combine with the Wealth on the Other line, or the fate or Pressure line hidden in a tomb beneath the Other line's Wealth: all mean marrying into the wife's family. Pressure on the Other line and Wealth on the Self line, or the Self line's Pressure yin and the Other line's Wealth yang: if it is not a marriage into the wife's family, husband and wife will surely bully each other."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2432, 2434],
+          "zh": ["又世临外卦财爻动，身世命爻去合应财或命爻鬼爻伏墓应财之下者，俱主入赘。", "鬼居应财居世，与世鬼属阴，应财属阳者，蜚入赘，必夫妇相凌也。"],
+          "yi": ["又，世爻临在外卦，财爻动，身爻、世爻、命爻去合应爻上的财，或者命爻、鬼爻伏在墓中、藏在应爻财之下的，都主入赘。", "鬼爻在应爻、财爻在世爻，或者世爻的鬼属阴、应爻的财属阳的，不是入赘，一定夫妻互相欺凌。"],
+          "en": ["Again: the Self line in the outer trigram with Wealth moving, and the Body, Self or fate line going to combine with the Wealth on the Other line, or the fate or Pressure line hidden in a tomb beneath the Other line's Wealth: all mean marrying into the wife's family.", "Pressure on the Other line and Wealth on the Self line, or the Self line's Pressure yin and the Other line's Wealth yang: if it is not a marriage into the wife's family, husband and wife will surely bully each other."] }
+      ],
+      "note": {
+        "yi": "第一句读起来很绕（身、世、命三个爻与应财、伏墓的几种关系），译文照字面，没有替它理顺；最后一句的「蜚入赘」，「蜚」是「非」的转录之误，译作「不是入赘」。",
+        "en": "The first sentence is convoluted (several relations of the Body, Self and fate lines to the Other line's Wealth and to a hidden tomb) and is translated literally without straightening it out; 'fei ru zhui' in the last sentence has 'fei' (a kind of insect) for 'fei' (not), and is translated as 'if it is not marrying in'."
+      },
+      "see": ["LY.MARRY.ZS.17", "LY.MARRY.HJC.05", "LY.MARRY.YL.22"]
+    },
+    {
+      "id": "LY.MARRY.YY.18",
+      "topic": "媒妁",
+      "chapter": "婚姻占·媒约",
+      "chapter_en": "Divining marriage: the go-between",
+      "title": "媒约：以间爻为用；世生合间男家之亲、应生合间女家之亲、世应俱生合间两家皆亲；间阳男媒间阴女媒；衰墓老媒生旺少媒；间阴化阳女人先说；间空化空更人为媒；间兄两动二人争媒；蛇武兄动冰人诡诈；朱雀旺空媒多诳语",
+      "rule": {
+        "yi": "以间爻为用神。世爻生合间爻，是男家的亲戚；应爻生合间爻，是女家的亲戚；世应都生合间爻，两家都是亲戚。间爻属阳是男媒人，属阴是女媒人；衰、入墓是老媒人，生旺是年轻的媒人。间爻属阴变阳，是女人先开口；间爻空又化空，换人做媒；间爻和兄弟爻都动，两个人争着做媒。螣蛇、玄武、兄弟爻动，媒人诡诈；朱雀旺相或空，媒人多说谎话。",
+        "en": "Take the between lines as the Subject. The Self line generating or combining with a between line: a relative of the man's family; the Other line doing so: a relative of the woman's family; the Self and Other both doing so: a relative of both. A yang between line is a male go-between, a yin one a female go-between; weak or in a tomb, an old go-between; in birth or strength, a young one. A yin between line changing into yang: a woman speaks first; a between line Void and changing into Void: another person becomes the go-between; the between line and a Peer line both moving: two people compete to be the go-between. The Coiling Snake and Dark Tortoise with a moving Peer line: the go-between is crafty and deceitful; the Vermilion Bird strong or Void: he tells many lies."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2438, 2438],
+          "zh": ["以间爻为用。", "世生合间，男家之亲，应生合间，女家之亲。", "世应俱生合间，两家皆亲。", "间阳男媒，间阴女媒。", "衰墓，老媒。", "生旺少媒。", "间阴化阳，女人先说。", "间空化空，更人为媒。", "间兄两动，二人争媒。", "蛇武兄动，冰人诡诈。", "朱雀旺空，媒多诳语。"],
+          "yi": ["以间爻为用神。", "世爻生合间爻，是男家的亲戚；应爻生合间爻，是女家的亲戚。", "世应都生合间爻，两家都是亲戚。", "间爻属阳是男媒人，间爻属阴是女媒人。", "衰、入墓的，是老媒人。", "生旺的，是年轻的媒人。", "间爻属阴变阳，是女人先开口。", "间爻空又化空，换了人做媒。", "间爻和兄弟爻都动，两个人争着做媒。", "螣蛇、玄武、兄弟爻动，媒人诡诈。", "朱雀旺相或空，媒人多说谎话。"],
+          "en": ["Take the between lines as the Subject.", "The Self line generating or combining with a between line: a relative of the man's family; the Other line doing so: a relative of the woman's family.", "The Self and Other both generating or combining with the between line: a relative of both families.", "A yang between line is a male go-between; a yin between line is a female go-between.", "Weak or in a tomb: an old go-between.", "In birth or strength: a young go-between.", "A yin between line changing into yang: a woman speaks first.", "A between line Void and changing into Void: another person becomes the go-between.", "The between line and a Peer line both moving: two people compete to be the go-between.", "The Coiling Snake and Dark Tortoise with a moving Peer line: the go-between is crafty and deceitful.", "The Vermilion Bird strong or Void: the go-between tells many lies."] }
+      ],
+      "see": ["LY.MARRY.HJC.33", "LY.MARRY.HJC.34", "LY.MARRY.HJC.35", "LY.MARRY.HJC.38", "LY.MARRY.YL.08"]
+    },
+    {
+      "id": "LY.MARRY.YY.19",
+      "topic": "媒妁",
+      "chapter": "婚姻占·媒约",
+      "chapter_en": "Divining marriage: the go-between",
+      "title": "白虎间动媒来损害、龙喜间摇赖其吹嘘、勾陈间动多阻隔；间临贵马仕宦为媒；二间俱空必无月老；间生合世应善调停、间刑冲克害世应心怀欺骗；世应冲克间两家相怨；日辰动爻带虎雀刑冲克害间者群口交谪",
+      "rule": {
+        "yi": "白虎带的间爻动，媒人带来损害；青龙、喜神带的间爻动，靠他撮合；勾陈带的间爻动，必多阻隔。间爻临贵人、驿马，是做官的人做媒。两个间爻都空，一定没有媒人。间爻生合世应，善于调停；间爻刑冲克害世应，心里怀着欺骗。世应冲克间爻，两家互相埋怨。日辰、动爻带白虎、朱雀，刑冲克害间爻的，众口交相指责。",
+        "en": "The White Tiger with a moving between line: the go-between brings harm; the Azure Dragon and Joy star with a moving between line: one depends on his boosting; Hook Earth with a moving between line: many obstructions. The between line on the Nobleman and Post Horse: an official is the go-between. Both between lines Void: there is surely no go-between. The between line generating or combining with the Self and Other lines: skilled at mediating; punishing, clashing, controlling or harming them: he harbors deceit. The Self and Other lines clashing with and controlling the between line: the two families resent each other. The Day or a moving line carrying the White Tiger and Vermilion Bird and punishing, clashing, controlling or harming the between line: everyone blames him in chorus."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2438, 2438],
+          "zh": ["白虎间动，媒来损害。", "龙喜间摇，赖其吹嘘。", "勾陈间动，必多阻隔。", "间临贵马，仕宦为媒。", "二间俱空，必无月老。", "间生合世应，善于调停。", "间刑冲克害世应，心怀欺骗。", "世应冲克间，两家相怨。", "日辰动爻带虎雀刑冲克害间者，群口交谪也。"],
+          "yi": ["白虎带的间爻动，媒人带来损害。", "青龙、喜神带的间爻摇动，靠他吹捧撮合。", "勾陈带的间爻动，必定多阻隔。", "间爻临贵人、驿马，是做官的人做媒。", "两个间爻都空，一定没有媒人。", "间爻生合世应，善于调停。", "间爻刑冲克害世应，心里怀着欺骗。", "世应冲克间爻，两家互相埋怨。", "日辰、动爻带白虎、朱雀，刑冲克害间爻的，众口交相指责。"],
+          "en": ["The White Tiger with a moving between line: the go-between brings harm.", "The Azure Dragon and Joy star with a moving between line: one depends on his boosting.", "Hook Earth with a moving between line: many obstructions.", "The between line on the Nobleman and Post Horse: an official is the go-between.", "Both between lines Void: there is surely no go-between.", "The between line generating or combining with the Self and Other lines: skilled at mediating.", "The between line punishing, clashing, controlling or harming the Self and Other lines: he harbors deceit.", "The Self and Other lines clashing with and controlling the between line: the two families resent each other.", "The Day or a moving line carrying the White Tiger and Vermilion Bird and punishing, clashing, controlling or harming the between line: everyone blames him in chorus."] }
+      ],
+      "see": ["LY.MARRY.HJC.38", "LY.MARRY.HJC.39", "LY.MARRY.HJC.40", "LY.MARRY.HJC.42", "LY.MARRY.HJC.43", "LY.MARRY.HJC.44"]
+    },
+    {
+      "id": "LY.MARRY.YY.20",
+      "topic": "应期",
+      "chapter": "婚姻占·媒约",
+      "chapter_en": "Divining marriage: the go-between",
+      "title": "欲知过聘下定之月，以月卦临直为期；单占媒人贤奸，以应爻为用",
+      "rule": {
+        "yi": "想知道过聘、下定在哪个月，就以「月卦」临值的时候为期。只占媒人是贤是奸，就以应爻为用神。",
+        "en": "To know the month of the betrothal exchange and the fixing of the engagement, take the time when the 'month hexagram' is in charge. To divine alone whether the go-between is worthy or crafty, take the Other line as the Subject."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2438, 2438],
+          "zh": ["欲知过聘下定之月，则以月卦临直为期也。", "又单占媒人贤奸者，则以应爻为用也。"],
+          "yi": ["想知道过聘、下定的月份，就以月卦临值为期。", "又，单独占媒人是贤是奸的，就以应爻为用神。"],
+          "en": ["To know the month of the betrothal exchange and the fixing of the engagement, take the time when the month hexagram is in charge as the date.", "Again, to divine alone whether the go-between is worthy or crafty, take the Other line as the Subject."] }
+      ],
+      "note": {
+        "yi": "「月卦临直为期」里的「月卦」是什么，原文没有解释（可能是按月排的卦或月建），译文照字面，没有替书选一种读法。",
+        "en": "What the 'month hexagram' in 'take the time when the month hexagram is in charge' is, is not explained (perhaps a hexagram assigned to each month, or the Month branch); it is translated literally without choosing a reading for the book."
+      },
+      "see": ["LY.MARRY.YL.01", "LY.MARRY.HJC.31"]
+    }
+  ]
+}
