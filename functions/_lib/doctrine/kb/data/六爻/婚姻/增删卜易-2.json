@@ -1,0 +1,93 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "增删卜易",
+  "chapter": "夫妇章",
+  "chapter_en": "Chapter on husband and wife",
+  "ranges": {"增删卜易": [9422, 9533]},
+  "units": [
+    {
+      "id": "LY.MARRY.ZS.23",
+      "topic": "总则",
+      "chapter": "夫妇章",
+      "chapter_en": "Chapter on husband and wife",
+      "title": "占夫妇要先分清问什么：妻寿、偕老、和睦、刑伤破败；妻、妾、婢一卦只占一人，不可统问",
+      "rule": {
+        "yi": "占夫妻，先要分清楚问的是哪一件：妻子的寿数，夫妻能不能白头偕老，夫妻和睦不和睦，或者妻子有没有刑伤破败。占妻、占妾、占婢女，一卦只占一个人，不可以合在一起问。",
+        "en": "In a divination on husband and wife, first tell apart what is being asked: the wife's lifespan, whether the couple will grow old together, whether they will be in harmony, or whether the wife will suffer injury or ruin. For a wife, a concubine or a maid, one hexagram covers one person only; do not ask about them together."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9424, 9424],
+          "zh": ["夫妇之占，亦须分别，或占妻寿，或占夫妻偕老否？", "或占夫妻和睦否？", "或占妻有刑伤破败否？", "占妻、占妾、占婢，一卦只占一人，不可统问。"],
+          "yi": ["占夫妇，也必须分清楚：或者占妻子的寿数，或者占夫妻能不能白头偕老？", "或者占夫妻和睦不和睦？", "或者占妻子有没有刑伤破败？", "占妻、占妾、占婢女，一卦只占一个人，不可以合起来问。"],
+          "en": ["A divination on husband and wife must also be told apart: whether about the wife's lifespan, or whether husband and wife will grow old together;", "or whether husband and wife will be in harmony;", "or whether the wife will suffer injury or ruin.", "For a wife, a concubine or a maid, one hexagram covers one person only; do not ask about them together."] }
+      ]
+    },
+    {
+      "id": "LY.MARRY.ZS.24",
+      "topic": "夫妻",
+      "chapter": "夫妇章",
+      "chapter_en": "Chapter on husband and wife",
+      "title": "占妻以财爻为重、应爻次之：财旺应破仍吉，应旺财破即凶；《黄金策》专以应为妻是因身命章一卦要断六亲",
+      "rule": {
+        "yi": "占妻子：财爻为重，应爻其次，应爻只是附和。财爻旺相、应爻空破，仍按吉断；应爻旺相、财爻空破，就按凶推；应旺财旺吉上加吉，应破财破凶上加凶。《黄金策》专把应爻当妻，是因为它的身命章一卦要断父子、兄弟、妻财、官鬼各样，财爻不好又用来当妻，又拿什么爻当钱财，不得不用应爻当妻；虽然如此，它也兼看财爻，不是完全没道理。觉子补充：财爻旺、相，或者临日月，或者被日月动爻生扶，以及动而化吉，又和世爻相生相合的，占白头偕老一定白头相守，占和睦一定举案齐眉，占妻子命好不好、进门以后夫家随之兴旺；占妾占婢，指名单问的，也照这样断。",
+        "en": "In divining a wife, the Wealth line carries the weight and the Other line comes second, only following along. If Wealth is strong while the Other line is Void or broken, still judge it auspicious; if the Other line is strong while Wealth is Void or broken, reckon it ill; both strong is good and better, both broken is ill and worse. The Huangjin Ce takes the Other line alone as the wife because its person-and-fate chapter judges father and son, brothers, Wealth and Pressure all from one hexagram, and if Wealth were used again and again for the wife some other line would be needed for money; so it had no choice but to use the Other line for the wife, though it too looks at Wealth, so it is not wholly unreasonable. Juezi adds: where the Wealth line is strong or prospering, or is the Day or Month, or is generated and helped by the Day, Month or a moving line, or moves and changes into good, and generates or combines with the Self line, then in a divination about growing old together they will surely keep company to white hair, about harmony surely treat each other with mutual respect, and about whether the wife's fate is good, her husband's family prospers with her once she enters; for a concubine or maid asked about by name, judge the same way."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9426, 9426],
+          "zh": ["财福生身，可遂唱随之愿；", "应爻合世，堪为附和之神。", "《黄金策》专以应爻为妻者，其何故也？", "盖因其身命章中，父子、弟兄、妻财、官鬼，一卦而兼断之，正恐屡以财为妻者，又以何爻为财帛？", "不得不以应而为妻位，不顾验与不验，竟以应爻为妻。", "虽然以应爻为妻者，也兼看财爻，不是完全无理。", "占妻者，财爻为重，应爻次之。", "财爻旺相，应爻空破，仍以吉断；", "应爻旺相，财爻空破，即以凶推。", "应旺财旺，吉之更吉；", "应破财破，凶而又凶。", "故以应爻为附和也。"],
+          "yi": ["财爻、福德爻生扶自己，能遂夫唱妇随的心愿；", "应爻合世，可以算作附和之神。", "《黄金策》专门把应爻当作妻，这是什么缘故？", "大概因为它的身命章里，父子、兄弟、妻财、官鬼，一卦全都要断，正怕屡次用财爻当妻，又拿哪个爻来当钱财？", "不得不拿应爻来做妻的位置，不管灵验不灵验，就把应爻当作了妻。", "虽然把应爻当作妻，也同时看财爻，并不是完全没有道理。", "占妻的，财爻为重，应爻其次。", "财爻旺相，应爻空、破，仍然按吉来断；", "应爻旺相，财爻空、破，就按凶来推。", "应旺、财旺，吉上加吉；", "应破、财破，凶上加凶。", "所以把应爻当作附和的。"],
+          "en": ["Wealth and Output generating the Self line fulfills the wish of husband leading and wife following;", "the Other line combining with the Self line may be counted as the spirit that follows along.", "Why does the Huangjin Ce take the Other line alone as the wife?", "Probably because in its chapter on one's person and fate, father and son (Resource and Output), brothers (Peer), Wealth and Pressure are all judged from a single hexagram, and it feared that if Wealth were used again and again for the wife, some other line would be needed for money.", "It had no choice but to use the Other line as the wife's place, and, whether it proved true or not, took the Other line as the wife.", "Although it takes the Other line as the wife, it also looks at the Wealth line, so it is not wholly unreasonable.", "In divining a wife, the Wealth line carries the weight and the Other line comes second.", "If Wealth is strong while the Other line is Void or broken, still judge it auspicious;", "if the Other line is strong while Wealth is Void or broken, reckon it ill.", "Other strong and Wealth strong: good and better still;", "Other broken and Wealth broken: ill and worse still.", "That is why the Other line is taken as the follower."] },
+        { "by": "觉子", "book": "增删卜易", "range": [9426, 9426],
+          "zh": ["觉子曰：财爻或旺、或相、或临日月、或日月动爻生扶、及动而化吉，又与世爻相生合者，如占偕老，定然白头相守；", "若占和睦，定然举案齐眉；", "如占妻命之好否，入夫门，夫家随旺。", "占妾占婢，指而问者，亦同此断。"],
+          "yi": ["觉子说：财爻或旺、或相、或临日月、或被日月动爻生扶，以及动而化吉，又和世爻相生相合的，如果占白头偕老，一定白头相守；", "如果占和睦，一定举案齐眉；", "如果占妻子命好不好，进了丈夫家门，夫家就跟着旺。", "占妾、占婢女，指名单独问的，也照这个断。"],
+          "en": ["Juezi says: if the Wealth line is strong, or prospering, or is the Day or Month itself, or is generated and helped by the Day, Month or a moving line, or moves and changes into good, and also generates or combines with the Self line, then in a divination about growing old together they will surely keep company to white hair;", "in a divination about harmony, they will surely treat each other with mutual respect;", "in a divination about whether the wife's fate is good, once she enters her husband's door, his family prospers with her.", "For a concubine or a maid asked about by name, judge the same way."] }
+      ],
+      "dispute": {
+        "yi": "「应为百岁之妻」出自《黄金策》身命章的注（见 LY.MARRY.ZS.04）。这一章的正文替它解释：身命章一个卦要断六亲，财爻另有用处，所以只好用应爻当妻；同时说占妻仍以财为重、应次之。争论只在「谁为主」：《黄金策》重应，增删卜易重财。",
+        "en": "'The Other line is the wife of a hundred years' comes from the commentary in the Huangjin Ce's person-and-fate chapter (see LY.MARRY.ZS.04). The main text here explains it: that chapter judges the six kin from a single hexagram and Wealth had other work, so the Other line had to stand for the wife; it also says that in divining a wife Wealth still carries the weight and the Other line comes second. The dispute is only over which is primary: the Huangjin Ce stresses the Other line, the Zengshan Buyi stresses Wealth."
+      },
+      "see": ["LY.MARRY.ZS.04", "LY.MARRY.ZS.03", "LY.MARRY.HJC.02"]
+    },
+    {
+      "id": "LY.MARRY.ZS.25",
+      "topic": "夫妻",
+      "chapter": "夫妇章",
+      "chapter_en": "Chapter on husband and wife",
+      "title": "财动化凶失履遗簪，兄弟持世鼓盆箕踞：财旺兄衰终反目，克财财退必生离",
+      "rule": {
+        "yi": "财爻动而化成凶象（化鬼、化回头克、化退神、化绝、化墓、化破、化空这一类），不管问什么，都是玉碎珠沉，有丧妻之叹。兄弟爻持世，或者兄弟爻在卦中发动，或者日月临兄弟爻来伤财，或者兄弟爻化成财爻，不管问妻问妾，都不长久。财旺兄衰，最终要反目；克财而财爻退，必定生离。兄弟爻持世而财爻旺的，克不了妻，但夫妻不和，见面如仇人；兄弟爻持世、财爻化成退神的，也是这样，不是反目就是生离。",
+        "en": "When Wealth moves and changes into ill (into Pressure, into a returning control, a Retreating spirit, extinction, tomb, break, Void and the like), whatever is asked, the jade is shattered and the pearl sunk, with the sigh of losing a wife. A Peer line on the Self line, or a moving Peer line in the hexagram, or the Day or Month being a Peer and harming Wealth, or a Peer changing into Wealth: whether one asks about a wife or a concubine, she will not live long. Wealth strong and the Peer weak, in the end the couple fall out; Wealth controlled and retreating surely means parting alive. A Peer line on the Self line with Wealth strong cannot kill the wife, but the couple are at odds and meet like enemies; a Peer line on the Self line with Wealth changing into a Retreating spirit means the same: either falling out or parting alive."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9427, 9428],
+          "zh": ["财动化凶，失履遗簪之叹。", "兄弟持世，鼓盆箕踞之悲。", "财动化凶者，乃化鬼、化回头克、化退神、化绝、化墓、化破、化空之类，不拘何问，玉碎珠沈。", "兄弟持世，或兄爻动于卦中，或日月临兄弟以伤财，或兄化财爻，不拘问妻问妾，皆不长年。", "财旺兄衰，终须反目；", "克财财退，必主生离。", "兄爻持世而财爻旺者，不能克妻，终乘琴瑟，相见如仇；", "兄爻持世，财化退神者，亦同此意，非反目即生离。"],
+          "yi": ["财爻动了化成凶象，有失履遗簪的叹息（失去妻子）。", "兄弟爻持世，有鼓盆箕踞的悲伤（庄子丧妻鼓盆而歌）。", "财动化凶，指的是化成鬼、化成回头克、化成退神、化绝、化墓、化破、化空这一类，不管问什么，都是玉碎珠沉。", "兄弟爻持世，或者兄弟爻在卦中发动，或者日月临兄弟爻来伤财，或者兄弟爻化成财爻，不管问妻问妾，都不长久。", "财旺兄弟衰，最终要反目；", "克财而财爻退，必定生离。", "兄弟爻持世而财爻旺的，克不了妻，终究是琴瑟不调，见面如仇人；", "兄弟爻持世，财爻化成退神的，也是同样的意思，不是反目就是生离。"],
+          "en": ["Wealth moves and changes into ill: the sigh over the lost shoe and the dropped hairpin (the wife lost).", "A Peer line on the Self line: the grief of drumming on a basin and sitting with legs sprawled (Zhuangzi drumming on a basin when his wife died).", "'Wealth moves and changes into ill' means changing into Pressure, into a returning control, into a Retreating spirit, into extinction, tomb, break or Void and the like; whatever is asked, the jade is shattered and the pearl sunk.", "A Peer line on the Self line, or a moving Peer line in the hexagram, or the Day or Month being a Peer and harming Wealth, or a Peer changing into Wealth: whether one asks about a wife or a concubine, she will not live long.", "Wealth strong and the Peer weak: in the end the couple fall out;", "Wealth controlled and retreating surely means parting alive.", "With a Peer line on the Self line and Wealth strong, it cannot kill the wife, but in the end the zither and lute are out of tune and they meet like enemies;", "A Peer line on the Self line with Wealth changing into a Retreating spirit means the same: either falling out or parting alive."] }
+      ],
+      "note": {
+        "yi": "「终乘琴瑟」的「乘」疑是「乖」（不合）之误；原文照录，译文按「乖」译。「失履遗簪」「鼓盆箕踞」都是丧妻的典故。",
+        "en": "In the phrase 'zhong cheng qin se' the word 'cheng' (ride) is probably a slip for 'guai' (at odds); it is kept as written and translated as 'at odds'. 'The lost shoe and dropped hairpin' and 'drumming on a basin and sitting sprawled' are both allusions to the loss of a wife."
+      },
+      "see": ["LY.MARRY.HJC.15", "LY.MARRY.HJC.19"]
+    },
+    {
+      "id": "LY.MARRY.ZS.26",
+      "topic": "夫妻",
+      "chapter": "夫妇章",
+      "chapter_en": "Chapter on husband and wife",
+      "title": "应财受制原配难偕老，动妻旺相续弦可白头；妻财克世不刑则悍，应财生世非内助即外财",
+      "rule": {
+        "yi": "卦中财爻出现几个、要分正室和偏房时，以应爻上的财爻作正妻的位置：被日月、动爻冲克，或者动而化成凶象，就是原配妻子有伤；如果别的爻上的财旺相，或动而化吉，或者别的爻变出来的财旺相来生合世爻，就是续娶的妻子反而能白头到老。财爻不在应爻上，就用本卦的财当正妻，变爻里的财当再娶的。妻财克身，不是刑伤就一定是妒悍的妻；妻财克世而世爻空、破、休囚，或入墓、绝，或动而变凶，或随鬼入墓，只要碰上一条，丈夫就短命早亡；如果是旺财克世而世爻得地，虽然没有刑伤，也一定遇上悍妇。应爻上的财爻生世，不是得到贤内助，就是得到外财；财爻生合世爻也不能只按和美来断，间或有应在得到妻家财力帮助的，不然的话妻子一定善于持家。",
+        "en": "When several Wealth lines appear and one must tell the principal wife from the secondary ones, take the Wealth on the Other line as the principal wife's position: if it is clashed or controlled by the Day, Month or a moving line, or moves and changes into ill, the wife of first marriage is harmed; if the Wealth on another line is strong or moves and changes into good, or a Wealth line changed out from another line is strong and generates or combines with the Self line, the wife of a second marriage, on the contrary, fulfils the wish of growing old together. If the Wealth line is not on the Other line, take the Wealth in the original hexagram as the principal wife and the Wealth in the changed lines as the second marriage. If the wife (Wealth) controls the Self, it is either injury or a jealous and fierce wife; if Wealth controls the Self line while the Self line is Void, broken, resting or trapped, or in tomb or extinction, or moves and changes into ill, or follows Pressure into a tomb, meeting any one of these means the husband dies young; but if a strong Wealth line controls the Self and the Self line holds its ground, there is no injury but he will surely meet a shrew. Wealth on the Other line generating the Self means either a helpful wife at home or wealth from outside; when a Wealth line generates or combines with the Self, do not judge it simply as harmony, for at times it answers as gaining the wife's family's financial help, and otherwise the wife will be good at running the household."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9488, 9490],
+          "zh": ["应财受制，结发断难偕老；", "动妻旺相，续弦堪许白头。", "卦中财爻多现，若分正庶者，自当以应爻临财而作正妻之位也，倘被日月动爻冲克，及动而化凶，乃结发之妻有伤也。", "若得他爻之财旺相，或动而化吉，及他爻变出之财旺相，生合世爻者，乃再娶之妻反遂白头之愿。", "如若财爻不临于应，又以正卦之财为正妻，变爻之财为再娶。", "妻若克身，非刑伤，必然妒悍。", "妻财克世，世若空破休囚，或墓绝，或动而变凶，或随鬼入墓，但逢一者，夫命夭亡。", "若旺财克世，世爻得地者，固无刑伤，必遭悍妇。", "应财生世，非内助，即获外财。", "卦中遇财爻生合世爻，亦不可只以和美断之，间有应在得妻家之财力者，否则内君必善于持家。"],
+          "yi": ["应爻上的财爻受制，原配（结发妻）难以白头到老；", "动的妻财旺相，续娶的（继室）可以许她白头到老。", "卦中财爻出现多个，如果要分正室与偏房，自然应当以应爻上的财爻作正妻的位置，如果被日月、动爻冲克，以及动而化成凶象，就是原配妻子有伤。", "如果得到别的爻上的财旺相，或动而化吉，以及别的爻变出来的财旺相，来生合世爻的，就是再娶的妻子反而遂白头到老的心愿。", "如果财爻不在应爻上，就用本卦的财当正妻，变爻里的财当再娶的。", "妻财如果克身，不是刑伤，就一定妒悍。", "妻财克世，世爻如果空、破、休囚，或者入墓、绝，或者动而变凶，或者随鬼入墓，只要逢上一条，丈夫就短命早亡。", "如果是旺财克世，世爻得地的，固然没有刑伤，但一定遇上悍妇。", "应爻上的财爻生世，不是得贤内助，就是得到外财。", "卦中遇到财爻生合世爻，也不可只按和美来断，间或有应在得到妻家财力帮助的，不然的话，妻子一定善于持家。"],
+          "en": ["If the Wealth on the Other line is held down, the first wife (married with tied hair) can hardly grow old with him;", "if a moving Wealth line is strong, the second wife (the one who takes up the broken string) may be promised white hair together.", "When several Wealth lines appear in the hexagram and one must tell the principal wife from the secondary ones, naturally the Wealth on the Other line is the position of the principal wife; if it is clashed or controlled by the Day, Month or a moving line, or moves and changes into ill, the wife of first marriage is harmed.", "If the Wealth on another line is strong, or moves and changes into good, or a Wealth line changed out from another line is strong and generates or combines with the Self line, then the wife of a second marriage, on the contrary, fulfils the wish of growing old together.", "If the Wealth line is not on the Other line, take the Wealth in the original hexagram as the principal wife and the Wealth in the changed lines as the second marriage.", "If the wife (Wealth) controls the Self, it is either injury or, surely, a jealous and fierce wife.", "If the Wealth line controls the Self line and the Self line is Void, broken, resting or trapped, or in tomb or extinction, or moves and changes into ill, or follows Pressure into a tomb, meeting any one of these means the husband dies young.", "But if a strong Wealth line controls the Self and the Self line holds its ground, there is indeed no injury, but he will surely meet a shrew.", "Wealth on the Other line generating the Self means either a helpful wife at home or wealth from outside.", "When a Wealth line in the hexagram generates or combines with the Self line, do not judge it as simply harmony and happiness: at times it answers as gaining the wife's family's financial help; otherwise the wife will surely be good at running the household."] }
+      ],
+      "see": ["LY.MARRY.HJC.24", "LY.MARRY.HJC.19"]
+    }
+  ]
+}
