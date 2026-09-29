@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 求财(114 条)→ `chapters/六爻/求财/索引.md`
+## 六爻 · 求财(180 条)→ `chapters/六爻/求财/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: what stands for money | 6 |
+| 总则 | Principles: what stands for money | 8 |
 | 有无 | Is there money, and how much | 13 |
 | 难易 | Easy or hard to get; who holds it | 13 |
-| 动变 | Moving lines and what they turn into | 6 |
-| 应期 | Timing: when the money or the price comes | 10 |
+| 动变 | Moving lines and what they turn into | 7 |
+| 应期 | Timing: when the money or the price comes | 13 |
 | 取象 | Reading the images: from whom, what kind, which place | 3 |
-| 买卖 | Buying, stockpiling and selling goods | 14 |
-| 开店 | Opening a shop, partnership, brokers | 14 |
-| 借贷 | Borrowing, lending, debts, savings societies | 9 |
-| 公门九流 | Official money, patrons, earning by a trade or skill | 8 |
-| 博戏 | Gambling and contests | 3 |
-| 畜养渔猎 | Livestock, fishing, hunting, mining | 5 |
-| 风险 | Risks: theft, disputes, losses, a bad year | 8 |
+| 买卖 | Buying, stockpiling and selling goods | 23 |
+| 开店 | Opening a shop, partnership, brokers | 20 |
+| 借贷 | Borrowing, lending, debts, savings societies | 28 |
+| 公门九流 | Official money, patrons, earning by a trade or skill | 14 |
+| 博戏 | Gambling and contests | 8 |
+| 畜养渔猎 | Livestock, fishing, hunting, mining | 10 |
+| 风险 | Risks: theft, disputes, losses, a bad year | 18 |
 | 心术 | The asker's intent | 2 |
 
 ## 打架 · Where the classics disagree(12 条)

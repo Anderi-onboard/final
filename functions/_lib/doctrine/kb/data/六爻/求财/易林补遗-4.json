@@ -1,0 +1,368 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易林补遗",
+  "chapter": "博戏求财章第一百十二",
+  "chapter_en": "Chapter 112 - Gambling for money",
+  "ranges": {"易林补遗": [2043, 2090]},
+  "units": [
+    {
+      "id": "LY.WEALTH.YL.52",
+      "topic": "博戏",
+      "chapter": "博戏求财章第一百十二",
+      "chapter_en": "Chapter 112 - Gambling for money",
+      "title": "博戏：忌兄弟兴旺（被抽头暗耗）；子孙绝、财落空，钱如雪投汤",
+      "rule": {
+        "yi": "赌钱博弈：兄弟兴旺，会被人抽头、暗中耗去，手气不顺、心里不快，钱财该输；子孙和财不空不绝，只是一般；一遇空，即使有万贯钱财，也像雪投进热汤。",
+        "en": "Gambling for money: Peer thriving means being skimmed in the open and drained in secret, luck running against you and an unhappy heart, and the money is lost; with Output and Wealth neither void nor extinct it is only slight; once void, even ten thousand strings of cash is like snow dropped into hot soup."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以财福为主，", "世应为凭。)"],
+          "yi": ["（以财福为主，", "世应为凭。）"],
+          "en": ["(Wealth and Output are the chief;", "the Self and the Other are the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["呼卢博戏忌兄兴，", "子绝财空赌不亨。"],
+          "yi": ["呼卢（掷骰子）赌博，忌兄弟兴旺；", "子孙绝、财落空，赌就不顺。"],
+          "en": ["For dice and gambling, Peer rising is the taboo;", "with Output extinct and Wealth void, the gambling goes badly."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["赌钱博奕之事，若兄弟兴隆，", "必被抽筹窍码，明取暗耗色不顺而心不快，财物当输。", "若子财不空不绝稍稍而已。", "一逢空，纵有万贯囊资，浑如片雪投汤。"],
+          "yi": ["赌钱博弈的事，如果兄弟兴旺，", "一定会被人抽筹、在计数上做手脚，明里被取、暗里被耗，手气不顺、心里不快，钱财该输；", "如果子孙、财不空不绝，也只是稍稍而已。", "一遇空，即使有万贯钱财，也像一片雪投进热汤。"],
+          "en": ["In gambling for money, if Peer thrives,", "you will surely be skimmed of chips and cheated in the counting, taken from in the open and drained in secret, the dice run against you and you are unhappy, and the money is lost;", "if Output and Wealth are neither void nor extinct, it is only slight.", "Once void, even ten thousand strings of cash in the purse is like a snowflake dropped into hot soup."] }
+      ],
+      "note": {
+        "yi": "「抽筹窍码」两词都不常见，这里译作被抽筹码、在计数上做手脚，是照字面取的读法。",
+        "en": "'Chou chou qiao ma' are two rare terms; they are read literally as being skimmed of chips and cheated in the counting."
+      },
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.YY.12", "LY.WEALTH.YL.12"]
+    },
+    {
+      "id": "LY.WEALTH.YL.53",
+      "topic": "博戏",
+      "chapter": "博戏求财章第一百十二",
+      "chapter_en": "Chapter 112 - Gambling for money",
+      "title": "博戏：世克应爻我胜，应伤世我输；旺克休、静受克动难伤；世旺生休应带财子大胜；世应比和胜负无偏",
+      "rule": {
+        "yi": "赌博输赢看世应：世克应爻，我全胜而归；应伤世，我大败，钱袋倒空。克的规矩：旺相能克休囚，休囚不能克旺相；安静的受克，发动的难伤，所以经上说静而休囚的要受克、兴旺的决难伤。世旺生休囚的应，再带财或子孙，大胜；不带，只得几文；应旺生衰弱的世，对方来追随我，没有不吉利的；世应比和相生，彼此谦让，胜负没有偏向。",
+        "en": "Win or lose in gambling by the Self and the Other: the Self controlling the Other line, I win outright and come home content; the Other hurting the Self, I lose badly and my purse is emptied. The rules of control: the strong can control the resting and trapped, and the resting and trapped cannot control the strong; one that is still takes the control and one that moves is hard to hurt, so the classic says that still and resting takes the control and thriving cannot be hurt. A strong Self generating a resting Other and carrying Wealth or Output is a great win, without them only a few coins; a strong Other generating a weak Self, the other side comes to follow me and all is auspicious; Self and Other in harmony and generating each other, both yield and win and loss lean neither way."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["世克应爻我已胜，", "应来伤世被他赢。"],
+          "yi": ["世克应爻，我已经赢了；", "应来伤世，就被他赢。"],
+          "en": ["The Self controlling the Other line, I have already won;", "the Other hurting the Self, he wins."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["世为自己应作他人，倘不伤克，彼我无异。", "克有数端；旺相能克休囚，休囚不能克旺相。", "安静者，受克。", "发动者，难伤。", "故经云：静休当受克，兴旺决难伤。", "世克应爻者，我当全胜必满心积意而返。", "应伤世象者，我必大败，尽囊倒卢而归。", "若旺世而生休应，若带财子亦当大胜。", "不带财子，稍得数文而已。", "旺应而生衰世，则彼来随我，无不吉利。", "世应比和相生，彼此谦让胜负无偏。"],
+          "yi": ["世是自己，应是别人；如果互不伤克，你我没有差别。", "克有几种情形：旺相的能克休囚的，休囚的不能克旺相的。", "安静的，受克；", "发动的，难伤。", "所以经上说：静而休囚的要受克，兴旺的决难伤。", "世克应爻，我该全胜，一定心满意足而回；", "应伤世象，我必大败，倾尽口袋、倒空钱囊而回。", "如果世旺而生扶休囚的应，再带着财或子孙，也是大胜；", "不带财、子孙，只得几文钱而已。", "应旺而生扶衰弱的世，那么对方来追随我，没有不吉利的。", "世应比和相生，彼此谦让，胜负没有偏向。"],
+          "en": ["The Self is oneself and the Other another; if neither hurts or controls the other, he and I are alike.", "Control comes in several kinds: the strong can control the resting and trapped, and the resting and trapped cannot control the strong.", "One that is still takes the control;", "one that moves is hard to hurt.", "So the classic says: 'still and resting takes the control; thriving cannot be hurt.'", "The Self controlling the Other line, I win outright and come home content;", "the Other hurting the image of the Self, I lose badly and return with my purse emptied out.", "If a strong Self generates a resting Other and carries Wealth or Output, it is also a great win;", "without Wealth or Output, only a few coins are gained.", "A strong Other generating a weak Self: the other side comes to follow me, and all is auspicious.", "Self and Other in harmony and generating each other: both yield to each other, and win and loss lean neither way."] }
+      ],
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.YY.12", "LY.WEALTH.ZS.30"]
+    },
+    {
+      "id": "LY.WEALTH.YL.54",
+      "topic": "博戏",
+      "chapter": "博戏求财章第一百十二",
+      "chapter_en": "Chapter 112 - Gambling for money",
+      "title": "博戏：应空无对手，世陷本钱倾",
+      "rule": {
+        "yi": "赌博：应值空绝，赌场里冷冷清清没有对手，遇不到输钱的人；世遇冲、陷，袖子里空空，只剩一双空拳，本钱倾尽。",
+        "en": "Gambling: the Other void or extinct, the gaming table is deserted, there is no opponent and no loser to meet; the Self clashed and sunk, the sleeves are empty, only bare fists remain and the capital is gone."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["应空难遇输钱客，", "世陷还遭资本倾。"],
+          "yi": ["应空，难遇到输钱的客人；", "世陷，还会倾尽本钱。"],
+          "en": ["The Other void, it is hard to meet a loser;", "the Self sunk, the capital is overturned besides."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["若应值空绝，场中寂寞而无对手。", "世当冲陷，袖里空虚惟剩空拳。"],
+          "yi": ["如果应值空绝，赌场里冷冷清清，没有对手；", "世遇冲、陷，袖里空空，只剩一双空拳。"],
+          "en": ["If the Other is void or extinct, the gaming table is deserted and there is no opponent;", "if the Self is clashed and sunk, the sleeves are empty and only bare fists remain."] }
+      ],
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.YY.12"]
+    },
+    {
+      "id": "LY.WEALTH.YL.55",
+      "topic": "博戏",
+      "chapter": "博戏求财章第一百十二",
+      "chapter_en": "Chapter 112 - Gambling for money",
+      "title": "博戏：官鬼静、兄弟衰绝、财爻旺相、子孙兴隆，大赢而归",
+      "rule": {
+        "yi": "赌博大赢：官鬼安静，兄弟衰绝，财爻旺相，子孙兴隆，就能得大利，称心如意，说笑玩乐着回来。",
+        "en": "A big win at gambling: Pressure still, Peer weak and extinct, the Wealth line strong and Output thriving, and you win a great profit, content and pleased, and come home laughing and merry."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["鬼静兄衰财福旺，", "君回定唱凯歌声。"],
+          "yi": ["官鬼安静、兄弟衰弱、财和福神旺，", "你回来时一定唱着凯歌。"],
+          "en": ["Pressure still, Peer weak, Wealth and Output strong,", "you will surely come home singing a song of triumph."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["或遇官鬼安静，兄弟衰绝，财爻旺相，子象兴隆，", "乃获大利，爽心遂意，复游笑乐而归矣。"],
+          "yi": ["或者遇到官鬼安静、兄弟衰绝、财爻旺相、子孙兴隆，", "就能得到大利，称心如意，又说笑玩乐着回来。"],
+          "en": ["Or meet Pressure still, Peer weak and extinct, the Wealth line strong and Output thriving,", "and you win a great profit, content and pleased, and come home laughing and merry."] }
+      ],
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.YY.12"]
+    },
+    {
+      "id": "LY.WEALTH.YL.56",
+      "topic": "畜养渔猎",
+      "chapter": "捕猎畋渔章第一百十三",
+      "chapter_en": "Chapter 113 - Fishing and hunting",
+      "title": "渔猎：财官两备才有收获，缺一或遇空，鱼飞鸟走",
+      "rule": {
+        "yi": "渔翁猎户占，只取财和官为用神：卦里缺一个就不好，要财旺官兴同时出现，才能打到大鱼、擒到大兽；财、鬼两爻有一个落空亡，就像鹅飞上天、鱼跳进深渊，白白张弓设网也捉不住。",
+        "en": "When fishermen and hunters ask, take only Wealth and Pressure as the Subject: if either is missing from the hexagram it is not good; a strong Wealth and a thriving Pressure must both appear, and then the fisherman lands great fish and the hunter seizes big game; if either the Wealth or the Pressure line falls void, the goose flies to the sky and the fish leaps into the deep, and drawing bow and spear is in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以妻财为主，", "世应内外为凭。)"],
+          "yi": ["（以妻财为主，", "世应内外为凭。）"],
+          "en": ["(Wealth is the chief;", "the Self and the Other, inner and outer, are the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["渔猎皆宜财旺相，", "爻中无鬼莫兴张，", "财官两备方能获，", "一象逢空便不昌。"],
+          "yi": ["打鱼打猎都宜财旺相；", "爻里没有官鬼，就不要张罗；", "财和官两样齐备才能有收获；", "有一样遇空，就不兴旺。"],
+          "en": ["For fishing and hunting alike, Wealth should be strong;", "with no Pressure among the lines, do not set out;", "only with Wealth and Pressure both in place is there a catch;", "if either falls void, there will be no success."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["凡渔翁猎户来占，惟取财官为用，", "卦中缺一便不为美，必得财旺官隆并见，", "乃渔得巨鳞猎擒大兽。", "若财鬼二爻一值空亡，则鹅飞戾天鱼跃于渊，空张戈矢而不能御。"],
+          "yi": ["凡是渔翁猎户来占，只取财和官为用神，", "卦里缺一个就不好，一定要财旺官兴同时出现，", "才能打到大鱼、擒到大兽；", "如果财、鬼两爻有一个落空亡，就像鹅飞上天、鱼跳进深渊，白白张弓设网也捉不住。"],
+          "en": ["When fishermen and hunters ask, take only Wealth and Pressure as the Subject;", "if either is missing from the hexagram it is not good; a strong Wealth and a thriving Pressure must both appear,", "and then the fisherman lands great fish and the hunter seizes big game;", "if either the Wealth or the Pressure line falls void, then the goose flies to the sky and the fish leaps into the deep, and drawing bow and spear is in vain: nothing can be held."] }
+      ],
+      "see": ["LY.WEALTH.YY.13", "LY.WEALTH.YY.14", "LY.WEALTH.HJC.30"]
+    },
+    {
+      "id": "LY.WEALTH.YL.57",
+      "topic": "畜养渔猎",
+      "chapter": "捕猎畋渔章第一百十三",
+      "chapter_en": "Chapter 113 - Fishing and hunting",
+      "title": "渔猎：世为人、应为物，内为人、外为物；我克物尽获，物伤我难捕",
+      "rule": {
+        "yi": "渔猎：世代表人、应代表物，内卦代表人、外卦代表物。我克物，打鱼打猎都尽善，大获其利；物伤我，即使有强弓硬弩、密网张戈，也决难捕到。",
+        "en": "Fishing and hunting: the Self stands for the person and the Other for the quarry, the inner for the person and the outer for the quarry. If I control the quarry, fishing and hunting both go perfectly and win great profit; if the quarry hurts me, even with strong bows, crossbows, close nets and spears it is very hard to catch anything."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["世克应爻内克外，", "管教年得利非常，", "外爻克内应伤世，", "枉费心机空自忙。"],
+          "yi": ["世克应爻、内克外，", "管保一年得利非常；", "外卦克内卦、应伤世，", "白费心机，空自忙碌。"],
+          "en": ["The Self controlling the Other line, the inner controlling the outer,", "will bring extraordinary profit over the year;", "the outer controlling the inner and the Other hurting the Self,", "wasted effort and busy for nothing."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["世为人应为物，内为人外为物。", "若我克物，渔猎尽善俱获大利。", "若物伤我，纵有强弓硬弩密网张戈，决难捕捉。"],
+          "yi": ["世代表人、应代表物；内卦代表人，外卦代表物。", "如果我克物，打鱼打猎都尽善，全都大获其利；", "如果物伤我，即使有强弓硬弩、密网张戈，也决难捕到。"],
+          "en": ["The Self stands for the person and the Other for the quarry; the inner stands for the person and the outer for the quarry.", "If I control the quarry, fishing and hunting both go perfectly and both win great profit;", "if the quarry hurts me, then even with strong bows, crossbows, close nets and spears it is very hard to catch anything."] }
+      ],
+      "see": ["LY.WEALTH.YY.13"]
+    },
+    {
+      "id": "LY.WEALTH.YL.58",
+      "topic": "畜养渔猎",
+      "chapter": "捕猎畋渔章第一百十三",
+      "chapter_en": "Chapter 113 - Fishing and hunting",
+      "title": "渔猎：世值旬空月破自无技能；兄弟发动，猎物灵异远遁难捕",
+      "rule": {
+        "yi": "渔猎：世落旬空、月破，是自己没有好本事；兄弟发动，那一定是灵禽异兽、怪鱼智龟一类，终究高飞远逃，难以捕获。",
+        "en": "Fishing and hunting: the Self in Void or Month-break means one has no good skill; Peer moving means a spirit bird, a strange beast, a weird fish or a clever turtle, which in the end flies high and flees far and is hard to take."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["世落旬空兄弟动，", "纵然有物不收藏。"],
+          "yi": ["世落旬空、兄弟发动，", "即使有猎物也收不到。"],
+          "en": ["The Self falls into Void and Peer moves,", "even if there is quarry, none is gathered in."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["若世值旬空月破，乃自无良技奇能，", "或有兄弟发动，定是灵禽异兽怪鳞智介，毕竟高飞远遁而难收捕。"],
+          "yi": ["如果世值旬空、月破，是自己没有好本事、特别的能耐；", "或者有兄弟发动，那一定是灵禽异兽、怪鱼智龟一类，终究高飞远逃，难以捕获。"],
+          "en": ["If the Self meets Void or Month-break, one has no good skill or special ability;", "or if Peer moves, it must be a spirit bird, a strange beast, a weird fish or a clever turtle, which in the end flies high and flees far and is hard to take."] }
+      ],
+      "see": ["LY.WEALTH.YY.13"]
+    },
+    {
+      "id": "LY.WEALTH.YL.59",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：财爻安静、官衰子旺，货放别处无妨；兄兴世破应空有失",
+      "rule": {
+        "yi": "把财货寄放在别人那里：要财爻安静，官鬼不动、子孙旺相最好，货放在他那里无妨；兄弟发动不好；世被冲、应落空亡，财物终究被消耗，这样寄托不好。",
+        "en": "Leaving money and goods at another's house: the Wealth line must be still, best of all with Pressure not moving and Output strong, and there is no harm in storing the goods there; Peer moving is not good; the Self clashed and the Other void, the goods will in the end be consumed and such entrusting is not good."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以妻财为主，", "世应为凭。)"],
+          "yi": ["（以妻财为主，", "世应为凭。）"],
+          "en": ["(Wealth is the chief;", "the Self and the Other are the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["物寄他家宜财静，", "官衰子旺，无妨货藏彼处。", "畏兄兴世破应空有失。"],
+          "yi": ["东西寄放在别人家，宜财安静；", "官衰、子孙旺，货放在他那里也无妨；", "怕的是兄弟兴旺、世破、应空，会有损失。"],
+          "en": ["For goods left in another's house, Wealth should be still;", "with Pressure weak and Output strong, there is no harm in storing the goods there;", "what is feared is Peer rising, the Self broken and the Other void: loss."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["如占寄他家宜财静，官衰子旺，无妨货藏彼处。畏兄兴世破应空有失。", "如占寄顿财货于他家，须要财爻安静，", "官鬼不动子孙旺相为最，兄弟发动不美。", "世爻被冲应落空亡，毕竟消耗财物，伏托岂为美哉？"],
+          "yi": ["（解先把上面的诀重复了一遍：）如果占的是寄放在别人家，宜财静，官衰子旺，货放那里无妨，怕兄兴、世破、应空有损失；", "如果占的是把财货寄存在别人家，要财爻安静，", "官鬼不动、子孙旺相最好，兄弟发动不好；", "世爻被冲、应落空亡，终究要消耗财物，这样寄托哪里好呢？"],
+          "en": ["(The commentary first repeats the verse:) if the question is about leaving goods at another's house, Wealth should be still, Pressure weak and Output strong, and there is no harm in storing the goods there; the fear is Peer rising, the Self broken and the Other void: loss;", "if the question is leaving money and goods at another's house, the Wealth line must be still;", "best of all is Pressure not moving and Output strong; Peer moving is not good;", "the Self line clashed and the Other fallen into void, the goods will in the end be consumed; how could such entrusting be good?"] }
+      ],
+      "see": ["LY.WEALTH.YY.28", "LY.WEALTH.HJC.35"]
+    },
+    {
+      "id": "LY.WEALTH.YL.60",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：应伤衰世，他非善；世随官鬼入墓，我不祥；以财爻为主象，忌空亡，静久无损、动有变",
+      "rule": {
+        "yi": "寄放：世是我、应是对方，世不可空；旺相的应伤克衰弱的世，他一定不是善良之辈；世跟着官鬼入墓，我不吉祥。货物一概以财爻为主象，忌落空亡、没有气；财明现而沉静，就长久没有损失，一兴发就有变动的兆头。",
+        "en": "Leaving goods with someone: the Self is me and the Other is him, and the Self must not be void; a strong Other hurting and controlling a weak Self, he is surely no good sort; the Self following Pressure into the tomb, it is not auspicious for me. Goods are all judged with the Wealth line as the main image, which must not fall void or lack breath; Wealth showing and still, there is no loss for a long time, and once it stirs there is a sign of change."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["应伤衰世他非善，", "世随鬼墓我非祥。"],
+          "yi": ["应旺伤克衰弱的世，他不是好人；", "世跟着官鬼入墓，我不吉祥。"],
+          "en": ["A strong Other hurting a weak Self, he is not a good man;", "the Self following Pressure into the tomb, it is not auspicious for me."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["世为我应为彼，而世不可空，", "若被旺应伤克衰世，他必非是善良之辈。", "或世随官鬼入墓，而财为主象，忌入空亡，", "静无后患之辞，动有变爻之论。", "货物悉以财爻为主，当形象于六爻，切忌空亡无气。", "财明沉静，则久久无损。", "兴发则有变动之机兆也。"],
+          "yi": ["世是我、应是对方，而世不可以落空；", "如果旺相的应伤克衰弱的世，他一定不是善良之辈；", "或者世跟着官鬼入墓，而财是主象，忌讳落入空亡；", "静就没有后患可说，动就有变爻的说法；", "货物一概以财爻为主，要在六爻里看它的形象，切忌空亡、没有气；", "财明现而沉静，就长久没有损失；", "一兴发，就有变动的兆头。"],
+          "en": ["The Self is me and the Other is him, and the Self must not be void;", "if a strong Other hurts and controls a weak Self, he is surely no good sort;", "or the Self follows Pressure into the tomb; and Wealth being the main image, it must not fall into void;", "still, there is no aftertrouble to speak of; moving, there is the matter of the changed line;", "goods are all judged with the Wealth line as the chief, its image to be seen among the six lines; void, extinct or without breath is above all to be avoided;", "Wealth showing and still, there is no loss for a long time;", "once it stirs, there is a sign of change."] }
+      ],
+      "note": {
+        "yi": "这一段的解在原书里跨了三行（中间有换行断开），这里连起来看。",
+        "en": "The commentary here is broken across three lines in the source and is read as one passage."
+      },
+      "see": ["LY.WEALTH.YY.28"]
+    },
+    {
+      "id": "LY.WEALTH.YL.61",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：财爻化绝化空终亏损；化兄化鬼被剥被侵",
+      "rule": {
+        "yi": "寄放：财爻化成绝、化成空，终究亏损；化成兄弟，财被剥削砍伐，化成官鬼，财被侵占谋算，哪能不受伤害。",
+        "en": "Leaving goods: Wealth turning into extinction or void ends in loss; turning into Peer, Wealth is stripped and felled, turning into Pressure, Wealth is encroached upon and schemed against - how could there be no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["化绝化空，终遭亏损。", "化兄化鬼，岂不成伤。"],
+          "yi": ["化成绝、化成空，终究亏损；", "化成兄弟、化成官鬼，哪能不受伤害？"],
+          "en": ["Turning into extinction or void, in the end there is loss;", "turning into Peer or Pressure, how could there not be harm?"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["动者化机括，化者动之变迁，", "如财爻一至于化绝则绝，无可生之理；", "或财爻一至于化空则空，宁有盈实之肘，", "故日终遭亏损。", "兄弟乃克财之神，化兄则财遭剥伐，", "鬼爻为泄气之辈，化鬼则财被侵谋，", "故日岂不侵伤者也。"],
+          "yi": ["动是化的机关，化是动的变迁；", "比如财爻一到化绝就绝了，没有可以再生的道理；", "或者财爻一到化空就空了，哪里还有盈实的余地，", "所以说终究遭到亏损。", "兄弟是克财的神，化成兄弟，财就遭到剥削砍伐；", "官鬼是泄气的东西，化成官鬼，财就被侵占谋算；", "所以说怎么能不受侵害。"],
+          "en": ["Moving is the mechanism of changing, and changing is the transformation of moving;", "when the Wealth line turns into extinction it is extinct and there is no reason for it to be born again;", "or when the Wealth line turns into void it is void, and where is there room to fill it;", "hence 'in the end there is loss.'", "Peer is the spirit that controls Wealth; turning into Peer, Wealth is stripped and felled;", "Pressure drains the breath; turning into Pressure, Wealth is encroached upon and schemed against;", "hence 'how could it not be encroached upon and harmed.'"] }
+      ],
+      "see": ["LY.WEALTH.HJC.18", "LY.WEALTH.TXF.03"]
+    },
+    {
+      "id": "LY.WEALTH.YL.62",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：财化子孙、化财、化生、化旺，吉庆平安",
+      "rule": {
+        "yi": "寄放：财化成子孙、化成财，都吉庆；化生、化旺，永远平安。子孙是福神，是生财的母亲；财爻是主宰，管着安全寄放。",
+        "en": "Leaving goods: Wealth turning into Output or Wealth is all auspicious; turning into Birth or strength, lasting peace. Output is the spirit of fortune, the mother that gives birth to Wealth; the Wealth line is the master in charge of safekeeping."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["化子化财咸吉庆，", "化生化旺永平宁。"],
+          "yi": ["化成子孙、化成财，都吉庆；", "化生、化旺，永远平安。"],
+          "en": ["Turning into Output or Wealth, all is auspicious;", "turning into Birth or strength, peace for ever."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["子孙是福神，生财之母也。", "财爻为主宰，安寄之司也。", "咸皆吉庆，是为至理。", "财化生源，物化旺相，永获平宁，而岂妄焉。"],
+          "yi": ["子孙是福神，是生财的母亲；", "财爻是主宰，是掌管安全寄放的；", "都吉庆，这是最正的道理；", "财化到生的源头，物化到旺相，永远平安，怎么会是虚话呢。"],
+          "en": ["Output is the spirit of fortune, the mother that gives birth to Wealth;", "the Wealth line is the master, the one in charge of safekeeping;", "all is auspicious, and this is the supreme principle;", "Wealth turning to the source of life, the goods turning to strength: lasting peace - how could this be idle talk?"] }
+      ],
+      "see": ["LY.WEALTH.HJC.15", "LY.WEALTH.YY.28"]
+    },
+    {
+      "id": "LY.WEALTH.YL.63",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：财化水，防上漏下湿（亥子、父母动同）",
+      "rule": {
+        "yi": "寄放：财化成水，要防水神玄冥，上面漏、下面潮，以致腐烂；亥子、父母发动也是这样。",
+        "en": "Leaving goods: Wealth turning into Water, guard against the water god Xuanming, leaks above and damp below, and the goods rot; Hai, Zi and Resource moving are the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["化水防上下之玄冥，", "亥子父动皆然。"],
+          "yi": ["化成水，要防上下的玄冥（水神）；", "亥子、父母动，也是这样。"],
+          "en": ["Turning into Water, guard against Xuanming above and below;", "Hai, Zi and Resource moving are the same."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["玄冥，水神也。", "财化水爻，或卦申水火发动，恐遭上漏下湿而致腐烂也。"],
+          "yi": ["玄冥是水神；", "财化成水爻，或者卦里水爻发动（原文「卦申水火发动」有误），恐怕遭上漏下湿而腐烂。"],
+          "en": ["Xuanming is the god of water;", "Wealth turning into a Water line, or a Water line in the hexagram moving (the source's 'hexagram Shen Water Fire moving' is garbled), it is feared the goods suffer leaks above and damp below and rot."] }
+      ],
+      "note": {
+        "yi": "「或卦申水火发动」字有讹，读不通，这里按上下文读成卦里的水爻发动。",
+        "en": "'Or the hexagram's Shen Water Fire moves' is garbled and cannot be read; from the context it is taken as a Water line in the hexagram moving."
+      },
+      "see": ["LY.WEALTH.YY.28", "LY.WEALTH.YY.21"]
+    },
+    {
+      "id": "LY.WEALTH.YL.64",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：财化火，防内外失火（巳午、火性官鬼动同）",
+      "rule": {
+        "yi": "寄放：财化成火，要防火神祝融，里面走火、外面延烧；巳午、火性的官鬼发动也是这样。",
+        "en": "Leaving goods: Wealth turning into Fire, guard against the fire god Zhurong, fire breaking out within and spreading without; Si, Wu and a Fire Pressure moving mean the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["化火防内外之祝融，", "巳午鬼兴同意。"],
+          "yi": ["化成火，要防内外的祝融（火神）；", "巳午、官鬼兴旺，也是同一个意思。"],
+          "en": ["Turning into Fire, guard against Zhurong within and without;", "Si, Wu and a thriving Pressure mean the same."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["祝融，火神也。", "财如化火，或爻中火鬼交重，应虑内失外延焚如之惨。"],
+          "yi": ["祝融是火神；", "财如果化成火，或者爻里火性的官鬼发动，要担心里面走火、外面延烧的惨祸。"],
+          "en": ["Zhurong is the god of fire;", "if Wealth turns into Fire, or a Fire Pressure among the lines moves, beware the disaster of fire breaking out within and spreading without."] }
+      ],
+      "see": ["LY.WEALTH.YY.28", "LY.WEALTH.YY.21"]
+    },
+    {
+      "id": "LY.WEALTH.YL.65",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：遇玄武常忧偷盗，逢朱雀常恐是非",
+      "rule": {
+        "yi": "寄放：遇到玄武，总担心盗贼来偷钱财；碰上朱雀，常怕引出口舌是非。",
+        "en": "Leaving goods: meeting the Dark Tortoise, always fear thieves coming to steal; meeting the Vermilion Bird, often fear quarrels."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["遇玄武，恒忧偷盗。", "逢朱雀，每恐生非。"],
+          "yi": ["遇到玄武，总担心偷盗；", "碰上朱雀，常怕生出是非。"],
+          "en": ["Meeting the Dark Tortoise, always worry about theft;", "meeting the Vermilion Bird, often fear quarrels."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["玄武是贼人，恒者常也，常常忧盗贼侵偷子财。", "朱雀唇吻也，每亦常也，每每恐怕激生口舌。"],
+          "yi": ["玄武是贼人；「恒」就是常，常常担心盗贼来偷钱财。", "朱雀是嘴唇；「每」也是常，常常怕引出口舌。"],
+          "en": ["The Dark Tortoise is the thief; 'always' means often, and you often fear thieves coming to steal your money and goods.", "The Vermilion Bird is the lips; 'every time' also means often, and you often fear provoking quarrels."] }
+      ],
+      "see": ["LY.WEALTH.YY.28", "LY.WEALTH.ZS.14"]
+    },
+    {
+      "id": "LY.WEALTH.YL.66",
+      "topic": "风险",
+      "chapter": "安寄财物章第一百十四",
+      "chapter_en": "Chapter 114 - Leaving goods for safekeeping",
+      "title": "寄放财物：六合、日辰合世应宜寄；六冲、日冲用神不可托",
+      "rule": {
+        "yi": "寄放：六合的爻，或日辰合世、合应，最适合寄存财物，因为彼此心意相投；六冲的爻，或日辰冲用神，不能把财货安放托付给他，以后会有变卦。",
+        "en": "Leaving goods: with Six-Combine lines, or the Day combining with the Self and the Other, it is best to leave money and goods, because the two hearts agree; with Six-Clash lines, or the Day clashing the Subject, goods and money cannot be safely entrusted to him, for later there will be a change."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["六合最宜寄顿，", "六冲岂可安藏。"],
+          "yi": ["六合最宜寄存；", "六冲怎么能安放收藏？"],
+          "en": ["A Six-Combine is best for leaving things;", "how could a Six-Clash keep them safe?"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["六合之爻或日辰合世应，大官寄财顿物因其彼此心口投机。", "六冲之爻，或日冲主用，不得安货藏财为其付托，后有更变也。"],
+          "yi": ["六合的爻，或日辰合世、合应，最适合寄存财物，因为彼此心口相投；", "六冲的爻，或日辰冲主要的用神，不能把货、财安放托付给他，以后会有变卦。"],
+          "en": ["With Six-Combine lines, or the Day combining with the Self and the Other, it is best to leave money and goods, because the two hearts and mouths agree;", "with Six-Clash lines, or the Day clashing the chief Subject, goods and money cannot be safely left and entrusted to him, for later there will be a change."] }
+      ],
+      "note": {
+        "yi": "「大官寄财顿物」的「官」疑是「宜」之误，译作最适合。",
+        "en": "'Greatly official to leave money and goods' has a character that is probably a slip for 'suitable', and is translated as 'best'."
+      },
+      "see": ["LY.WEALTH.YY.28"]
+    }
+  ]
+}
