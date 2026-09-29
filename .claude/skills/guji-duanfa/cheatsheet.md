@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 婚姻(189 条)→ `chapters/六爻/婚姻/索引.md`
+## 六爻 · 婚姻(208 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: the Subject, the Self and Other, yin and yang | 27 |
-| 成否 | Will it succeed: easy or hard to bring about | 27 |
-| 动变 | Moving lines and what they turn into | 6 |
-| 媒妁 | Go-betweens and the between lines | 21 |
-| 对方 | The other party: character, looks, family, age | 32 |
-| 聘嫁 | Betrothal gifts, dowry, and the two families | 7 |
+| 总则 | Principles: the Subject, the Self and Other, yin and yang | 30 |
+| 成否 | Will it succeed: easy or hard to bring about | 31 |
+| 动变 | Moving lines and what they turn into | 7 |
+| 媒妁 | Go-betweens and the between lines | 24 |
+| 对方 | The other party: character, looks, family, age | 35 |
+| 聘嫁 | Betrothal gifts, dowry, and the two families | 8 |
 | 夫妻 | Life together: harmony, who dominates, harm to a spouse | 17 |
-| 外遇 | Infidelity and improper relations | 3 |
-| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 17 |
+| 外遇 | Infidelity and improper relations | 4 |
+| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 18 |
 | 应期 | Timing: when the match is made or the wedding held | 3 |
-| 风险 | Risks: obstruction, broken promises, bad omens | 14 |
+| 风险 | Risks: obstruction, broken promises, bad omens | 15 |
 | 子嗣 | Children in the marriage | 10 |
-| 家人 | Parents and in-laws: whether the match harms them | 5 |
+| 家人 | Parents and in-laws: whether the match harms them | 6 |
 
 ## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
 
@@ -41,7 +41,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(30 条)
+## 打架 · Where the classics disagree(31 条)
 
 - **LY.MARRY.HDY.02 占妻看财宜动，占夫有鬼宜静**(`chapters/六爻/婚姻/总则.md`):占妻看财爻：《海底眼》说宜动；《火珠林》说「占妻看财爻，宜静」（LY.MARRY.HZL.04）；《易林补遗》也说要静。占夫看鬼爻，两家都说宜静。这一处是《海底眼》独异，也可能是转录之误，书里无从核对。
   For divining a wife by the Wealth line, the Haidi Yan says it should move; the Huozhulin says 'for a wife look at the Wealth line, which should be still' (LY.MARRY.HZL.04); the Yilin Buyi also asks for stillness. For a husband by the Pressure line both say it should be still. Here the Haidi Yan stands alone; it may be a transcription slip, and there is nothing in the books to check it against.
@@ -53,6 +53,8 @@ What is in the library and where; entries where the classics disagree are listed
   How to judge thriving and weakness: the old commentary goes by the month and by the day and hour (the seasons); Wang Hongxu says outright that the old method of judging by the four seasons is wrong, and looks instead at what relation and spirit the natal line sits on and whether the Day or a moving line supports it; the two differ directly here.
 - **LY.MARRY.HJC.45 一卦吉凶，细察精微委曲：此章只论男卜女婚、女卜男姻；择婿择媳嫁妹娶嫂，要按用神断，不可一概以官为夫、财为妇**(`chapters/六爻/婚姻/总则.md`):这一章的财官各指谁：旧注一路按「官为夫、财为妇」讲（见 HJC.11、HJC.24）；王洪绪在章末明说这是「男卜女婚、女卜男姻」的意思，别人代占、兄占弟婚之类要按用神断，不可一概；觉子（《增删卜易》）也说男家占女以财为用、女家占男以官为用，不拘父母亲朋代占都同。
   Whom Wealth and Pressure stand for in this chapter: the old commentary throughout speaks by 'Pressure the husband, Wealth the wife' (see HJC.11, HJC.24); Wang Hongxu says at the chapter's end that this is what applies when a man divines about a bride or a woman about a bridegroom, and that divinations made on another's behalf or by an elder brother for a younger must be judged by the Subject and not all alike; Juezi (Zengshan Buyi) also says that the man's family divining about the woman takes Wealth as the Subject and the woman's family divining about the man takes Pressure, the same whether parents or relatives divine on their behalf.
+- **LY.MARRY.TXF.18 咸恒节泰百年似鱼水之相投，睽革解离一见如炭冰之相遇：四吉卦取阴阳得位，有日辰生合吉神发动欢谐到底，用爻落空凶神冲克不可一概断吉；睽乖革变解散离六冲，占婚皆不利**(`chapters/六爻/婚姻/总则.md`):按卦名断婚，《增删卜易》的觉子不同意：他自己占到泰卦却是兄弟持世、财爻月破旬空，让人再占得六冲的坤卦，结论是仍以财、官、世、应断，不要执古说（LY.MARRY.ZS.14）。《易冒》站在这一边（LY.MARRY.YM.03）；《易隐》《火珠林》的口诀也是按卦名（LY.MARRY.YY.09、LY.MARRY.HZL.11）。这一条的注文自己也留了余地：四吉卦要有日辰生合才「鱼水」，用爻落空、凶神冲克就「不可一概断为吉」。
+  Juezi of the Zengshan Buyi does not accept judging a marriage by hexagram names: he himself got Tai with a Peer line on Self and the Wealth line Month-broken and Void, had a second divination cast and got the six-clash hexagram Kun, and concluded that one should keep judging by Wealth, Pressure, Self and Other and not cling to the old sayings (LY.MARRY.ZS.14). The Yi Mao stands on this side of the Tianxuan Fu (LY.MARRY.YM.03), and the rhymes of the Yi Yin and the Huozhulin also go by hexagram names (LY.MARRY.YY.09, LY.MARRY.HZL.11). The note here leaves itself some room: the four lucky hexagrams are 'fish and water' only with the Day generating or combining, and if the Subject line falls Void or fierce spirits clash and control it, 'one cannot judge them all as lucky'.
 - **LY.MARRY.YL.15 前冲后合初离别复聚欢情，前合后冲始谐和终遭变易：未配之前得冲中化合决不相谐；成亲之后先冲后合初生离后复就；卦占六合被月辰冲开或化六冲，始欢悦后不和**(`chapters/六爻/婚姻/成否.md`):还没成亲时得到冲变合：这里说「决不相谐」；《增删卜易》（觉子）说「六冲变六合者尤吉，求婚者目下不允，久必成之」（见 LY.MARRY.ZS.13）——两家在这一种卦上判得相反。成亲以后先冲后合、起初生离后来重聚，两家看法一致。
   For a clash turning into a combination obtained before the wedding this text says 'it surely will not be harmonious', while the Zengshan Buyi (Juezi) says 'a Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time' (see LY.MARRY.ZS.13): the two books judge this kind of hexagram in opposite ways. For a couple already wed, first a clash and then a combination, parting at first and reunion after, the two agree.
 - **LY.MARRY.YM.03 咸恒节泰为吉、睽革解离为凶，惟合冲变冲则不宜；婚姻忌三冲则不索用神之衰旺，用神未胜于卦验**(`chapters/六爻/婚姻/总则.md`):这一条和《增删卜易》直接相反。觉子引了《易冒》这一段（LY.MARRY.ZS.14），自己占了一卦，得泰卦，但兄弟持世、财爻月破旬空，他不敢拿别人的婚姻大事去试，让人再占一卦，得坤卦六冲大凶，才知道泰卦不可信，结论是仍以财、官、世、应来断，有疑再占一卦。《易隐》（LY.MARRY.YY.09）、《火珠林》（LY.MARRY.HZL.11）里有按卦名断婚的口诀，和《易冒》站在同一边。本书文件末尾附的提要也批评这一章「不根五行生克，不究用神衰旺，惟据卦名之美恶而论」。
