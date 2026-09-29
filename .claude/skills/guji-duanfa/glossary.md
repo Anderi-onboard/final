@@ -92,6 +92,7 @@ English follows the names used in the product. When a form listed under "checked
 | 六冲卦 | liùchōng guà | Six-Clash hexagram | 六冲 | 六冲 | 六爻两两相冲的卦,主散、主变。 | A hexagram whose lines clash in pairs: dispersal, change. |
 | 六合卦 | liùhé guà | Six-Combine hexagram |  | 六合卦 | 六爻两两相合的卦,主聚、主成。 | A hexagram whose lines combine in pairs: gathering, completion. |
 | 反吟 | fǎnyín | Reversed Chant |  | 反吟 | 卦或爻变出与自己相冲的,主反复。 | A hexagram or line that turns into its own clash: going back and forth. |
+| 伏吟 | fúyín | Hidden Chant |  | 伏吟 | 卦变之后每一爻的地支还是原来那个(如无妄变大壮,戌仍是戌),主忧郁呻吟、动如不动;比反吟轻,没有冲克。 | A hexagram whose moving lines change into the very same branches they had (for example Wuwang into Dazhuang, where Xu stays Xu): groaning, gloom, movement that gets nowhere. Lighter than Reversed Chant, since there is no clash or control. |
 | 内卦 | nèiguà | inner trigram | 贞、内 | 内卦 | 下三爻。常代表自己、本地、眼前。 | The lower three lines: often oneself, home ground, the near term. |
 | 外卦 | wàiguà | outer trigram | 悔、外 | 外卦 | 上三爻。常代表对方、外地、日后。 | The upper three lines: often the other side, elsewhere, later. |
 | 本宫 | běngōng | home palace |  | 本宫 | 卦所属的八宫之一。伏神从本宫首卦里取。 | The palace (one of eight) the hexagram belongs to; hidden lines are taken from its head hexagram. |

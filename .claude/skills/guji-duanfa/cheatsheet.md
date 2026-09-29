@@ -4,21 +4,21 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 婚姻(274 条)→ `chapters/六爻/婚姻/索引.md`
+## 六爻 · 婚姻(284 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: the Subject, the Self and Other, yin and yang | 35 |
-| 成否 | Will it succeed: easy or hard to bring about | 38 |
-| 动变 | Moving lines and what they turn into | 10 |
-| 媒妁 | Go-betweens and the between lines | 25 |
+| 总则 | Principles: the Subject, the Self and Other, yin and yang | 37 |
+| 成否 | Will it succeed: easy or hard to bring about | 42 |
+| 动变 | Moving lines and what they turn into | 11 |
+| 媒妁 | Go-betweens and the between lines | 26 |
 | 对方 | The other party: character, looks, family, age | 39 |
 | 聘嫁 | Betrothal gifts, dowry, and the two families | 10 |
-| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 22 |
+| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 23 |
 | 外遇 | Infidelity and improper relations | 7 |
 | 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 25 |
 | 应期 | Timing: when the match is made or the wedding held | 5 |
-| 风险 | Risks: obstruction, broken promises, bad omens | 28 |
+| 风险 | Risks: obstruction, broken promises, bad omens | 29 |
 | 子嗣 | Children in the marriage | 13 |
 | 家人 | Parents and in-laws: whether the match harms them | 8 |
 | 取象 | Reading the images: what a spirit, star or asking-purpose says about the match | 9 |
@@ -42,7 +42,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(33 条)
+## 打架 · Where the classics disagree(36 条)
 
 - **LY.MARRY.BSYG.05 推占来情：旺相则婚姻官职、休囚则争财退位；内外卦俱旺相者大则求官、次则嫁娶；卦与世爻同克日则必是六畜及婚姻**(`chapters/六爻/婚姻/取象.md`):同一首歌诀，《断易天机》作「卦与世爻同与日」（LY.MARRY.DYTJ.30），这里作「卦与世爻同克日」，一字之差：「同与日」是和日辰相同，「同克日」是一起克日辰。
   In the same rhyme the Duanyi Tianji reads 'the hexagram and the Self line are the same as the Day' (LY.MARRY.DYTJ.30), and this text 'the hexagram and the Self line both control the Day', a one-character difference: 'the same as the Day' means matching the Day and 'both control the Day' means together controlling it.
@@ -78,6 +78,12 @@ What is in the library and where; entries where the classics disagree are listed
   The Huangjin Ce: with Wealth lines upon Wealth lines, one becomes a bridegroom anew (remarriage; see LY.MARRY.HJC.24). The author says it is not necessarily two marriages: in his many trials, doubled Wealth or Wealth changing into Wealth mostly meant a virtuous wife and fair concubine, two brides, a maid or concubine coming along, or a rich dowry; only when a Peer line moves, or the Day and Month clash and control Wealth, can the repeated wedding not be avoided.
 - **LY.MARRY.ZS.24 占妻以财爻为重、应爻次之：财旺应破仍吉，应旺财破即凶；《黄金策》专以应为妻是因身命章一卦要断六亲**(`chapters/六爻/婚姻/夫妻.md`):「应为百岁之妻」出自《黄金策》身命章的注（见 LY.MARRY.ZS.04）。这一章的正文替它解释：身命章一个卦要断六亲，财爻另有用处，所以只好用应爻当妻；同时说占妻仍以财为重、应次之。争论只在「谁为主」：《黄金策》重应，增删卜易重财。
   'The Other line is the wife of a hundred years' comes from the commentary in the Huangjin Ce's person-and-fate chapter (see LY.MARRY.ZS.04). The main text here explains it: that chapter judges the six kin from a single hexagram and Wealth had other work, so the Other line had to stand for the wife; it also says that in divining a wife Wealth still carries the weight and the Other line comes second. The dispute is only over which is primary: the Huangjin Ce stresses the Other line, the Zengshan Buyi stresses Wealth.
+- **LY.MARRY.ZS.32 反吟有冲有克重于伏吟，两者都要看用神旺衰：伏吟用神旺相则冲开之年月志伸，休囚则不过忧郁；不可一概以反伏为畏途**(`chapters/六爻/婚姻/总则.md`):《易林补遗》把反吟、伏吟一概当成凶：「爻有伏吟不吉」「卦有反吟最凶」，别处还说「伏吟反吟犯者，急须回避」（见该书第 54、332 行）；增删卜易看用神旺衰：反吟重在有冲有克、用神受克，伏吟用神旺相时冲开之年月反而志伸。李我平明确站在野鹤一边。他引的《易林补遗》原文是「术者未开」「星家谁觉」，和这里的「术者未闻」「卜家谁觉」各差一个字。
+  The Yilin Buyi takes Reversed and Hidden Chant as ill without condition: 'a line with a Hidden Chant is not auspicious', 'a hexagram with a Reversed Chant is the worst', and elsewhere 'those who meet Hidden or Reversed Chant must hurry to avoid it' (lines 54 and 332 of that book); the Zengshan Buyi looks at whether the Subject is strong: a Reversed Chant is heavy through clash and control and a controlled Subject, and a Hidden Chant with a strong Subject actually carries out its aims in the year or month it is clashed open. Li Woping sides plainly with the Old Man of Yehe. The Yilin Buyi's own words are 'no practitioner has opened it' and 'which astrologer has noticed', each differing by one character from the 'has heard' and 'which diviner' quoted here.
+- **LY.MARRY.ZS.34 间爻在婚姻里是媒妁：旧注说间爻动则多阻隔，野鹤说动而生合世应反得其力、只忌克世克应，觉子说婚姻以间爻为媒妁，日月冲克可解；书中例：间爻鬼化退神虽阻无力**(`chapters/六爻/婚姻/媒妁.md`):旧注说间爻一动就多阻隔；野鹤明说不可一概这样断，间爻动而生合世应反得其力，只有克世、克应才是阻碍。觉子只说婚姻里间爻就是媒妁，没有说动了是吉是凶，又说日月冲克可以化解阻隔。书中例里间爻官鬼动，答的是鬼化退神，有阻而无力，和野鹤「看它生合还是克」是一路。
+  The old commentary says that when the between lines move there are many obstructions; the Old Man of Yehe says plainly that this is not to be judged across the board: between lines that move to generate or combine with the Self and Other lines help, and only those that control the Self or Other line obstruct. Juezi says only that in marriage the between lines are the go-betweens, without saying whether their moving is lucky or not, and adds that the Day or Month clashing or controlling them resolves the obstruction. In the book's case a moving Pressure between line is answered by 'Pressure turning into Retreating, obstructing but without strength', which is on the same road as the Old Man's 'look at whether it generates and combines or controls'.
+- **LY.MARRY.ZS.35 占身命不可一卦兼断：夫妻偕老要另占一卦；「兄动妻亡」这类一条通断，世上贫寒之士岂都是丧偶之人**(`chapters/六爻/婚姻/总则.md`):野鹤批评的是「诸书」的一卦兼断，其中特别点了《易林补遗》一句「兄动妻亡财耗散」。这句在本库的《易林补遗》里没有原样出现，意思相近的是「兄动，妻灾奴仆患，资财耗散事无成」（该书第 109 行）和「兄动损妻，财无积聚」（第 441 行），应是转述。
+  What the Old Man of Yehe criticizes is judging everything from one hexagram as 'the books' do, and he singles out the Yilin Buyi line 'a moving Peer line, the wife dies and wealth is scattered'. That sentence does not appear word for word in the Yilin Buyi in this library; the close ones are 'Peer moving: trouble for wife and servants, wealth scattered and nothing accomplished' (line 109 of that book) and 'Peer moving harms the wife, wealth does not gather' (line 441), so it is presumably a paraphrase.
 - **LY.WEALTH.DYTJ.04 求财何日得：死财等财生的日月，生财不要拿财合当日期；空亡加退度，说得再多也要迟疑**(`chapters/六爻/求财/应期.md`):《天玄赋》说「财合日辰，方能入手」，合日是入手的条件；这里说生财「财合莫为期」，合日不能当日期。两处不好并成一说：一处讲财与日辰合，一处讲财自己得令时的合日。整理本后面今人注把「财合」读成「入墓」，原文写的是「合」，本库照原文，不改。
   The Tianxuan Fu says that when Wealth combines with the Day the money can be taken in hand, making the combining day a condition; this verse says that for a living Wealth 'Wealth combining' is not to be taken as the date. The two do not merge into one statement. A modern note in the transcription reads 'combining' as 'entering the tomb'; the original says 'combining', and this library follows the original.
 - **LY.WEALTH.DYTJ.12 郭璞论买卖：财爻克世最好，身旺相与财并、无煞不空；贞旺悔囚先赢，悔旺贞休后赢**(`chapters/六爻/求财/买卖.md`):这首歌里的「贞」「悔」，有两种读法。一种是内卦为贞、外卦为悔；一种是本卦为贞、之卦为悔。《易林补遗》两种都记：有动爻时，本卦是贞、之卦是悔；爻都静、没有之卦时，才取内卦为贞、外卦为悔，并且「以贞为始，以悔为终」。歌诀自己没有说是哪一种。「贞旺悔囚初买卖，悔旺贞休后始赢」里的「初」和「后」有先后，和「以贞为始，以悔为终」对得上；但这不是歌诀的明文，本库不裁。

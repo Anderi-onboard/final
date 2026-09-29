@@ -593,6 +593,18 @@
       "def": "A hexagram or line that turns into its own clash: going back and forth."
     },
     {
+      "zh": "伏吟",
+      "py": "fúyín",
+      "en": "Hidden Chant",
+      "group": "卦象",
+      "aliases": [],
+      "check": [
+        "伏吟"
+      ],
+      "yi": "卦变之后每一爻的地支还是原来那个(如无妄变大壮,戌仍是戌),主忧郁呻吟、动如不动;比反吟轻,没有冲克。",
+      "def": "A hexagram whose moving lines change into the very same branches they had (for example Wuwang into Dazhuang, where Xu stays Xu): groaning, gloom, movement that gets nowhere. Lighter than Reversed Chant, since there is no clash or control."
+    },
+    {
       "zh": "内卦",
       "py": "nèiguà",
       "en": "inner trigram",
