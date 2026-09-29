@@ -593,7 +593,19 @@ function renderSkill(units, cfg) {
 
 /* ---- Obsidian 库 ---- */
 
-function noteName(u) { return safeName(`${u.id} ${u.title}`); }
+// 文件名上限 255 字节(Linux/macOS),汉字一个 3 字节:标题长到 85 个字就写不出文件(ENAMETOOLONG)。
+// 名字里 id 在前、保证不重名,标题只是给人看的,超过 200 字节就截断加「…」;笔记里的 # 标题和 aliases 仍是全文。
+const MAX_NOTE_NAME_BYTES = 200;
+function clipBytes(s, max) {
+  if (Buffer.byteLength(s) <= max) return s;
+  let out = '';
+  for (const ch of s) {
+    if (Buffer.byteLength(out + ch + '…') > max) break;
+    out += ch;
+  }
+  return out + '…';
+}
+function noteName(u) { return clipBytes(safeName(`${u.id} ${u.title}`), MAX_NOTE_NAME_BYTES); }
 function notePath(u) { return `规则/${u.shushu}/${u.domain}/${u.topic}/${noteName(u)}`; }
 function link(u) { return `[[${noteName(u)}|${u.id} ${u.title}]]`; }
 
