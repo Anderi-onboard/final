@@ -47,8 +47,8 @@ functions/_lib/doctrine/    rag/(11 库 29 卡)rag-features.json  INDEX.md
                                 人写 kb/data/*.json,`node tools/kb/build.mjs` 生成文本 skill .claude/skills/guji-duanfa/、
                                 Obsidian 库 kb/古籍断法库/、kb/jsonl/rules.jsonl;契约 tests/kb-quotes.mjs;见它的 README)
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
-.claude/skills/     agent skill:claudish-to-chinese(本仓库写的)、book-to-skill、obsidian-markdown、
-                    obsidian-bases(后三个第三方 MIT,来源和版本见各自的 UPSTREAM.md)。
+.claude/skills/     agent skill:claudish-to-chinese、guji-duanfa(古籍断法库生成的,手改会被覆盖)是本仓库写的;
+                    book-to-skill、obsidian-markdown、obsidian-bases 三个第三方 MIT,来源和版本见各自的 UPSTREAM.md。
                     整个 .claude/ 会跟着网站部署,由 _middleware 拦成 404
 schema.sql  wrangler.toml  _headers  _redirects  version.json
 ```

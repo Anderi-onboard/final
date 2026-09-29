@@ -4,27 +4,33 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 求财(217 条)→ `chapters/六爻/求财/索引.md`
+## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: what stands for money | 13 |
-| 有无 | Is there money, and how much | 18 |
-| 难易 | Easy or hard to get; who holds it | 17 |
-| 动变 | Moving lines and what they turn into | 9 |
-| 应期 | Timing: when the money or the price comes | 15 |
-| 取象 | Reading the images: from whom, what kind, which place | 5 |
-| 买卖 | Buying, stockpiling and selling goods | 33 |
-| 开店 | Opening a shop, partnership, brokers | 20 |
-| 借贷 | Borrowing, lending, debts, savings societies | 28 |
-| 公门九流 | Official money, patrons, earning by a trade or skill | 14 |
-| 博戏 | Gambling and contests | 9 |
-| 畜养渔猎 | Livestock, fishing, hunting, mining | 13 |
-| 风险 | Risks: theft, disputes, losses, a bad year | 21 |
-| 心术 | The asker's intent | 2 |
+| 总则 | Principles: what stands for money | 27 |
+| 有无 | Is there money, and how much | 24 |
+| 难易 | Easy or hard to get; who holds it | 23 |
+| 动变 | Moving lines and what they turn into | 15 |
+| 应期 | Timing: when the money or the price comes | 21 |
+| 取象 | Reading the images: from whom, what kind, which place | 17 |
+| 买卖 | Buying, stockpiling and selling goods | 42 |
+| 开店 | Opening a shop, partnership, brokers | 22 |
+| 借贷 | Borrowing, lending, debts, savings societies | 34 |
+| 公门九流 | Official money, patrons, earning by a trade or skill | 15 |
+| 博戏 | Gambling and contests | 14 |
+| 畜养渔猎 | Livestock, fishing, hunting, mining | 35 |
+| 风险 | Risks: theft, disputes, losses, a bad year | 38 |
+| 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(13 条)
+## 打架 · Where the classics disagree(16 条)
 
+- **LY.WEALTH.DYTJ.04 求财何日得：死财等财生的日月，生财不要拿财合当日期；空亡加退度，说得再多也要迟疑**(`chapters/六爻/求财/应期.md`):《天玄赋》说「财合日辰，方能入手」，合日是入手的条件；这里说生财「财合莫为期」，合日不能当日期。两处不好并成一说：一处讲财与日辰合，一处讲财自己得令时的合日。整理本后面今人注把「财合」读成「入墓」，原文写的是「合」，本库照原文，不改。
+  The Tianxuan Fu says that when Wealth combines with the Day the money can be taken in hand, making the combining day a condition; this verse says that for a living Wealth 'Wealth combining' is not to be taken as the date. The two do not merge into one statement. A modern note in the transcription reads 'combining' as 'entering the tomb'; the original says 'combining', and this library follows the original.
+- **LY.WEALTH.DYTJ.12 郭璞论买卖：财爻克世最好，身旺相与财并、无煞不空；贞旺悔囚先赢，悔旺贞休后赢**(`chapters/六爻/求财/买卖.md`):这首歌里的「贞」「悔」，有两种读法。一种是内卦为贞、外卦为悔；一种是本卦为贞、之卦为悔。《易林补遗》两种都记：有动爻时，本卦是贞、之卦是悔；爻都静、没有之卦时，才取内卦为贞、外卦为悔，并且「以贞为始，以悔为终」。歌诀自己没有说是哪一种。「贞旺悔囚初买卖，悔旺贞休后始赢」里的「初」和「后」有先后，和「以贞为始，以悔为终」对得上；但这不是歌诀的明文，本库不裁。
+  'Zhen' and 'Hui' in this verse can be read in two ways: the inner trigram as Zhen and the outer as Hui, or the original hexagram as Zhen and the resulting hexagram as Hui. The Yilin Buyi records both: when there is a moving line, the original hexagram is Zhen and the resulting hexagram is Hui; only when all lines are still and there is no resulting hexagram does it take the inner trigram as Zhen and the outer as Hui, and 'Zhen is the beginning and Hui is the end.' The verse itself does not say which. The words 'first' and 'later' in 'Zhen thriving and Hui imprisoned, the first trades; Hui thriving and Zhen resting, only later a win' have a before and after that fits 'Zhen is the beginning, Hui the end'; but that is not the verse's own statement, and this library does not decide.
+- **LY.WEALTH.HDY.05 财旺相出现，日克之必有；日辰旺相，不克伏财而冲散飞爻，其财必有**(`chapters/六爻/求财/应期.md`):这里说「财旺相出现，日克之必有」；《黄金策》说「日伤妻位，财虽旺，而当日应无」（见 HJC.08）。两句都讲日辰克旺财，结论相反。一种可能是两处说的应期不同（这里似是日克之时财才发，那里是克日当天无财），书里没有明说，本库不裁。
+  This says 'a thriving Wealth that shows, the Day controlling it, surely has money'; the Huangjin Ce says 'the Day harming the Wealth place, though Wealth is thriving, has none on that day' (see HJC.08). Both speak of the Day controlling a thriving Wealth and reach opposite results. The two may be speaking of different dates, but the books do not say so and this library does not decide.
 - **LY.WEALTH.HJC.01 要问吉凶，但看财福**(`chapters/六爻/求财/总则.md`):财、福各指什么，两家注说得相反：旧注说妻财是利润、子孙是财源；王洪绪说妻财是本钱、子孙是利润。野鹤只说子孙是生财的原神。三家都以妻财为用神、子孙为最要紧的帮手。
   The two commentaries gloss the pair oppositely: the old commentary makes Wealth the profit and Output its source; Wang Hongxu makes Wealth the capital and Output the profit. Yehe only says Output is the Support that generates Wealth. All three take Wealth as the Subject and Output as its chief help.
 - **LY.WEALTH.HJC.03 有福无财，兄弟交重偏有望**(`chapters/六爻/求财/有无.md`):「有福无财」怎么读：旧注读作「财不上卦」，只要兄弟发动去生子孙就有望；王洪绪把「有、无」读成「动、伏」，而且认为有望全靠子孙也在动；野鹤也要子孙和兄弟同动，并说财、兄同动主阻隔。
