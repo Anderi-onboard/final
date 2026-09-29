@@ -4,13 +4,13 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 婚姻(271 条)→ `chapters/六爻/婚姻/索引.md`
+## 六爻 · 婚姻(274 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: the Subject, the Self and Other, yin and yang | 34 |
+| 总则 | Principles: the Subject, the Self and Other, yin and yang | 35 |
 | 成否 | Will it succeed: easy or hard to bring about | 38 |
-| 动变 | Moving lines and what they turn into | 9 |
+| 动变 | Moving lines and what they turn into | 10 |
 | 媒妁 | Go-betweens and the between lines | 25 |
 | 对方 | The other party: character, looks, family, age | 39 |
 | 聘嫁 | Betrothal gifts, dowry, and the two families | 10 |
@@ -18,7 +18,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 外遇 | Infidelity and improper relations | 7 |
 | 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 25 |
 | 应期 | Timing: when the match is made or the wedding held | 5 |
-| 风险 | Risks: obstruction, broken promises, bad omens | 27 |
+| 风险 | Risks: obstruction, broken promises, bad omens | 28 |
 | 子嗣 | Children in the marriage | 13 |
 | 家人 | Parents and in-laws: whether the match harms them | 8 |
 | 取象 | Reading the images: what a spirit, star or asking-purpose says about the match | 9 |
@@ -42,10 +42,12 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(32 条)
+## 打架 · Where the classics disagree(33 条)
 
 - **LY.MARRY.BSYG.05 推占来情：旺相则婚姻官职、休囚则争财退位；内外卦俱旺相者大则求官、次则嫁娶；卦与世爻同克日则必是六畜及婚姻**(`chapters/六爻/婚姻/取象.md`):同一首歌诀，《断易天机》作「卦与世爻同与日」（LY.MARRY.DYTJ.30），这里作「卦与世爻同克日」，一字之差：「同与日」是和日辰相同，「同克日」是一起克日辰。
   In the same rhyme the Duanyi Tianji reads 'the hexagram and the Self line are the same as the Day' (LY.MARRY.DYTJ.30), and this text 'the hexagram and the Self line both control the Day', a one-character difference: 'the same as the Day' means matching the Day and 'both control the Day' means together controlling it.
+- **LY.MARRY.BSZZ.01 辟《易林补遗》婚姻嫁娶之谬：用神要按占的人与被占的人是什么关系来取，不能一概以内外卦、世应、财鬼论夫妇**(`chapters/六爻/婚姻/总则.md`):这是王洪绪对《易林补遗》婚姻说法的正面批评（LY.MARRY.YL.05、YL.06、YL.20、YL.21）：《易林补遗》一概按内外卦、世应、财鬼论夫妇，王洪绪要求先分清是谁在占、替谁占，再按这层关系取用神。《增删卜易》也讲代占与自占取用不同（LY.MARRY.ZS.04）。
+  This is Wang Hongxu's direct attack on the Yilin Buyi's teaching on marriage (LY.MARRY.YL.05, YL.06, YL.20 and YL.21): the Yilin Buyi judges husband and wife throughout by the inner and outer trigrams, Self and Other, and Wealth and Pressure, whereas Wang Hongxu requires first telling who is divining and for whom, and choosing the Subject by that relation. The Zengshan Buyi likewise distinguishes taking the Subject for a proxy from taking it for oneself (LY.MARRY.ZS.04).
 - **LY.MARRY.HDY.02 占妻看财宜动，占夫有鬼宜静**(`chapters/六爻/婚姻/总则.md`):占妻看财爻：《海底眼》说宜动；《火珠林》说「占妻看财爻，宜静」（LY.MARRY.HZL.04）；《易林补遗》也说要静。占夫看鬼爻，两家都说宜静。这一处是《海底眼》独异，也可能是转录之误，书里无从核对。
   For divining a wife by the Wealth line, the Haidi Yan says it should move; the Huozhulin says 'for a wife look at the Wealth line, which should be still' (LY.MARRY.HZL.04); the Yilin Buyi also asks for stillness. For a husband by the Pressure line both say it should be still. Here the Haidi Yan stands alone; it may be a transcription slip, and there is nothing in the books to check it against.
 - **LY.MARRY.HJC.14 鬼克飞爻，果信绿窗之难嫁；官合财位，方知绮席之易婚：女占男，鬼刑克世、应克世皆不成；官生合世或合财、应生合世则易成**(`chapters/六爻/婚姻/成否.md`):王洪绪引的经文与《卜筮全书》不同：他写作「鬼克世爻」「用合身位」，全书作「鬼克飞爻」「官合财位」；王洪绪的注按用神（谁占看谁）讲，旧注按女占男讲。
