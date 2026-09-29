@@ -4,7 +4,7 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 求财(103 条)→ `chapters/六爻/求财/索引.md`
+## 六爻 · 求财(114 条)→ `chapters/六爻/求财/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
@@ -14,16 +14,16 @@ What is in the library and where; entries where the classics disagree are listed
 | 动变 | Moving lines and what they turn into | 6 |
 | 应期 | Timing: when the money or the price comes | 10 |
 | 取象 | Reading the images: from whom, what kind, which place | 3 |
-| 买卖 | Buying, stockpiling and selling goods | 11 |
-| 开店 | Opening a shop, partnership, brokers | 8 |
-| 借贷 | Borrowing, lending, debts, savings societies | 8 |
+| 买卖 | Buying, stockpiling and selling goods | 14 |
+| 开店 | Opening a shop, partnership, brokers | 14 |
+| 借贷 | Borrowing, lending, debts, savings societies | 9 |
 | 公门九流 | Official money, patrons, earning by a trade or skill | 8 |
 | 博戏 | Gambling and contests | 3 |
 | 畜养渔猎 | Livestock, fishing, hunting, mining | 5 |
-| 风险 | Risks: theft, disputes, losses, a bad year | 7 |
+| 风险 | Risks: theft, disputes, losses, a bad year | 8 |
 | 心术 | The asker's intent | 2 |
 
-## 打架 · Where the classics disagree(11 条)
+## 打架 · Where the classics disagree(12 条)
 
 - **LY.WEALTH.HJC.01 要问吉凶，但看财福**(`chapters/六爻/求财/总则.md`):财、福各指什么，两家注说得相反：旧注说妻财是利润、子孙是财源；王洪绪说妻财是本钱、子孙是利润。野鹤只说子孙是生财的原神。三家都以妻财为用神、子孙为最要紧的帮手。
   The two commentaries gloss the pair oppositely: the old commentary makes Wealth the profit and Output its source; Wang Hongxu makes Wealth the capital and Output the profit. Yehe only says Output is the Support that generates Wealth. All three take Wealth as the Subject and Output as its chief help.
@@ -47,3 +47,5 @@ What is in the library and where; entries where the classics disagree are listed
   Is Peer really no objection? The classic says so for partnerships; the old commentary and Wang Hongxu allow a still Peer but not a moving one; Yehe quotes the classic but then says Peer on the Self or Other line is unlucky and a moving Peer too, the only exception being a Wealth Day or Month clashing with or controlling the Self line.
 - **LY.WEALTH.YY.03 难易：财旺临身世易，父化财先难后获**(`chapters/六爻/求财/难易.md`):财化财怎么断，三家不同：《易隐》说「化去而难得」；《黄金策》旧注说「反复不定」；《天玄赋》注（《断易天机》本）说「本来是吉」，只是要分本卦、变卦的财孰旺孰衰。
   Wealth turning into Wealth is read three ways: the Yi Yin says it 'changes away and is hard to get'; the Golden Strategy's old commentary says 'back and forth, uncertain'; the Tianxuan Fu commentary (Duanyi Tianji text) says 'normally lucky', judged by which of the two Wealths is stronger.
+- **LY.WEALTH.YY.26 店面货物：父母为店，妻财为货；父旺店大，财旺货流；书纸店以父为用，宝珠古董店以财为用**(`chapters/六爻/求财/开店.md`):书籍纸张店该看谁，同一段里有两个说法：前面说书、纸、巾、帽、衣服店以父母为用神，父母旺才好；郭雍却说开书籍纸货古董店，要财旺、父母被克才吉；当铺则反过来，父母旺、财被克才吉。原文并列，没有分出高下。
+  For a bookshop the same paragraph gives two readings: first, shops of books, paper, scarves, hats and clothes take Resource as the Subject, so Resource should be strong; Guo Yong says a shop of books, paper goods and antiques does well when Wealth is strong and Resource controlled, while a pawnshop is the other way round, Resource strong and Wealth controlled. The source sets them side by side and does not rank them.

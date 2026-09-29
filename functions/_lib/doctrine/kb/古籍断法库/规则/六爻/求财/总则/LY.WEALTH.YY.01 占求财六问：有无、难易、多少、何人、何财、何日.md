@@ -51,3 +51,8 @@ aliases:
 > | 店舍道路车马行李伴侣己身 | 从上爻到初爻依次是：店舍、道路、车马、行李、伴侣、己身。 | from the top line down to the first: the lodging, the road, carts and horses, baggage, companions, oneself. |
 
 ^q2
+
+> [!note] 按
+> 这一表原文只列名目，没写各是哪一爻；从上爻到初爻的读法，依据见 LY.WEALTH.YY.18 的说明（捕鱼占里《管公口诀》写明了初爻船主、二爻伴侣、三爻行李雨具、五爻道路）。
+>
+> *Note:* The source lists the items without naming their lines; the reading from the top line down is supported as explained in the note on LY.WEALTH.YY.18 (the fishing chapter's Guan Gong rhymes name the first line as the boat's master, the second as companions, the third as baggage and rain gear, the fifth as the road).

@@ -246,6 +246,32 @@
       "def": "The Year Lord: the branch of the current year. Used for questions covering a whole year."
     },
     {
+      "zh": "四直",
+      "py": "sìzhí",
+      "en": "four rulers",
+      "group": "时令",
+      "aliases": [],
+      "check": [
+        "四直"
+      ],
+      "yi": "年、月、日、时四个当值的干支。《易隐》讲贵人时列的就是这四个:「四直之贵,年之力大如月,月之力大如日,日之力大如时」。",
+      "def": "The four rulers of the moment: the branches of the Year, Month, Day and Hour.",
+      "needle": "four rulers"
+    },
+    {
+      "zh": "三传",
+      "py": "sānchuán",
+      "en": "three rulers",
+      "group": "时令",
+      "aliases": [],
+      "check": [
+        "三传"
+      ],
+      "yi": "太岁、月建、日辰三个当值的干支。《黄金策》旧注:「三传太岁月建日辰」;《卜筮正宗》:「三传,年月日也」。",
+      "def": "The Year (Tai Sui), the Month and the Day: the three rulers of the moment. Not the three transmissions of Da Liu Ren.",
+      "needle": "three rulers"
+    },
+    {
       "zh": "旺相",
       "py": "wàngxiàng",
       "en": "thriving or strong",

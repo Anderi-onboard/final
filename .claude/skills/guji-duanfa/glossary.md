@@ -38,6 +38,8 @@ English follows the names used in the product. When a form listed under "checked
 | 月建 | yuèjiàn | Month | 月令、提纲、月将 | 月建 | 起卦那个月的地支,定各爻的旺相休囚。 | The branch of the month in which the hexagram is cast; it sets each line's seasonal strength. |
 | 日辰 | rìchén | Day | 日建、日 | 日辰 | 起卦那一天的地支,能生克冲合各爻,也定旬空。 | The branch of the day of casting; it can generate, control, clash with or combine any line, and fixes which branches are void. |
 | 太岁 | tàisuì | Tai Sui | 岁君 | 太岁、岁君 | 当年的地支。占一年的事看它。 | The Year Lord: the branch of the current year. Used for questions covering a whole year. |
+| 四直 | sìzhí | four rulers |  | 四直 | 年、月、日、时四个当值的干支。《易隐》讲贵人时列的就是这四个:「四直之贵,年之力大如月,月之力大如日,日之力大如时」。 | The four rulers of the moment: the branches of the Year, Month, Day and Hour. |
+| 三传 | sānchuán | three rulers |  | 三传 | 太岁、月建、日辰三个当值的干支。《黄金策》旧注:「三传太岁月建日辰」;《卜筮正宗》:「三传,年月日也」。 | The Year (Tai Sui), the Month and the Day: the three rulers of the moment. Not the three transmissions of Da Liu Ren. |
 
 ## 旺衰
 
