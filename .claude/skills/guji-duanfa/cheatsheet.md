@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 婚姻(238 条)→ `chapters/六爻/婚姻/索引.md`
+## 六爻 · 婚姻(260 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
 | 总则 | Principles: the Subject, the Self and Other, yin and yang | 33 |
-| 成否 | Will it succeed: easy or hard to bring about | 37 |
+| 成否 | Will it succeed: easy or hard to bring about | 38 |
 | 动变 | Moving lines and what they turn into | 9 |
 | 媒妁 | Go-betweens and the between lines | 25 |
-| 对方 | The other party: character, looks, family, age | 37 |
-| 聘嫁 | Betrothal gifts, dowry, and the two families | 9 |
-| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 17 |
-| 外遇 | Infidelity and improper relations | 4 |
-| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 18 |
-| 应期 | Timing: when the match is made or the wedding held | 4 |
+| 对方 | The other party: character, looks, family, age | 39 |
+| 聘嫁 | Betrothal gifts, dowry, and the two families | 10 |
+| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 22 |
+| 外遇 | Infidelity and improper relations | 7 |
+| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 25 |
+| 应期 | Timing: when the match is made or the wedding held | 5 |
 | 风险 | Risks: obstruction, broken promises, bad omens | 22 |
 | 子嗣 | Children in the marriage | 12 |
-| 家人 | Parents and in-laws: whether the match harms them | 6 |
+| 家人 | Parents and in-laws: whether the match harms them | 8 |
 | 取象 | Reading the images: what a spirit, star or asking-purpose says about the match | 5 |
 
 ## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`

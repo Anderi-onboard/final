@@ -1,0 +1,642 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "家宅",
+  "chapter_en": "Chapter 19: The household",
+  "ranges": {"卜筮大全": [7990, 8135], "卜筮正宗": [3090, 3170]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.46",
+      "topic": "夫妻",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妻夺夫权，妻有能家之兆：妻命临夫身五爻之上与夫相生相合是内助能家，妻克夫爻则妻凌夫或破夫家",
+      "rule": {
+        "yi": "妻子的命爻临在丈夫身爻的五爻之上，与丈夫相生相合，是得到贤内助、能持家的兆头；如果妻爻克夫爻，是妻子欺凌丈夫，或者败坏夫家。",
+        "en": "If the wife's Life line sits above the husband's Body line on the fifth line and generates and combines with the husband, it is a sign of a helpmate who can run the household; if the wife's line controls the husband's line, the wife overbears her husband or ruins his family."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8030, 8030],
+          "zh": ["妻夺夫权，妻有能家之兆。"],
+          "yi": ["妻子夺了丈夫的权，妻子有能持家的兆头。"],
+          "en": ["The wife takes the husband's authority: the wife shows a sign of being able to run the household."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8031, 8031],
+          "zh": ["妻命临夫身五爻之上，与夫相生相合，得内助能家之兆。", "若妻克夫爻，主妻凌夫，或破夫家也。"],
+          "yi": ["妻子的命爻临在丈夫身爻的五爻之上，与丈夫相生相合，是得到贤内助、能持家的兆头。", "如果妻爻克夫爻，是妻子欺凌丈夫，或者败坏夫家。"],
+          "en": ["If the wife's Life line sits above the husband's Body line on the fifth line and generates and combines with the husband, it is a sign of a helpmate who can run the household.", "If the wife's line controls the husband's line, the wife overbears her husband or ruins his family."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3104, 3104],
+          "zh": ["妻命临夫五爻之上，与夫相生相合，得内助能家之兆；", "若妻克夫爻，主妻凌夫或破夫家也。"],
+          "yi": ["妻子的命爻临在丈夫五爻之上，与丈夫相生相合，是得到贤内助、能持家的兆头；", "如果妻爻克夫爻，是妻子欺凌丈夫，或者败坏夫家。"],
+          "en": ["If the wife's Life line sits above the husband's fifth line and generates and combines with the husband, it is a sign of a helpmate who can run the household;", "if the wife's line controls the husband's line, the wife overbears her husband or ruins his family."] }
+      ],
+      "note": {
+        "yi": "「临夫身五爻之上」的意思书里没有解释，译文照字面写作「sits above the husband's Body line on the fifth line」。卜筮正宗此句作「临夫五爻之上」，少一个「身」字。",
+        "en": "The book does not explain 'sitting above the husband's Body on the fifth line', which is translated literally. The Bushi Zhengzong has 'above the husband's fifth line', without the word for 'Body'."
+      },
+      "see": ["LY.MARRY.ZS.17", "LY.MARRY.HJC.19", "LY.MARRY.TXF.07"]
+    },
+    {
+      "id": "LY.MARRY.HJC.47",
+      "topic": "夫妻",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妻犯夫家之杀，妻破夫家：夫家破耗二杀所临之位被妻身命爻犯之而克夫身命爻，或妻命临月破、兄弟加白虎发动，主破夫家",
+      "rule": {
+        "yi": "妻子犯了夫家的煞，会败坏夫家：夫家的破、耗二煞所临的位置，被妻子的身命爻犯到，并克了丈夫的身命爻；王洪绪说，妻子的命临月破、兄弟带白虎发动，也是破夫家。",
+        "en": "If the wife offends the stars of her husband's house, she ruins the husband's house: where the two stars of ruin and waste of the husband's house sit, if the wife's Body or Life line offends them and controls the husband's Body or Life line, she ruins his house. Wang Hongxu says the same when the wife's Life line falls on a Month-break and a Peer line carrying the White Tiger moves."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8041, 8041],
+          "zh": ["妻犯夫家之杀，妻破夫家；"],
+          "yi": ["妻子犯了夫家的煞，妻子会败坏夫家；"],
+          "en": ["If the wife offends the stars of her husband's house, the wife ruins the husband's house;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8042, 8042],
+          "zh": ["夫家破耗二杀所临之位，妻身命爻犯之，克夫身命爻，主破夫家也。"],
+          "yi": ["夫家的破、耗二煞所临的位置，妻子的身命爻犯到它，又克了丈夫的身命爻，主败坏夫家。"],
+          "en": ["Where the two stars of ruin and waste of the husband's house sit, if the wife's Body or Life line offends them and controls the husband's Body or Life line, it means she ruins the husband's house."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3110, 3110],
+          "zh": ["妻命临月破，兄弟加白虎发动，主破夫家。"],
+          "yi": ["妻子的命临月破，兄弟爻带白虎发动，主败坏夫家。"],
+          "en": ["If the wife's Life line falls on a Month-break and a Peer line with the White Tiger moves, it means she ruins the husband's house."] }
+      ],
+      "see": ["LY.MARRY.YL.16", "LY.MARRY.HZL.23", "LY.MARRY.HJC.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.48",
+      "topic": "夫妻",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "夫临妻禄之爻，夫食妻禄：丈夫的命爻临妻的禄位，生旺有气又遇食神则吃妻禄；遇枭神羊刃、空鬼耗破则吃了也无用",
+      "rule": {
+        "yi": "丈夫的身命爻落在妻子的禄位上（比如妻子甲子年生，禄在寅），生旺有气，又遇食神，丈夫就吃妻子的禄，靠妻子过日子；如果遇到枭神、羊刃，或空、鬼、耗、破等煞，虽然吃妻子的禄也没有用。",
+        "en": "If the husband's Body or Life line sits on the wife's Emolument place (for a wife born in a Jia-Zi year, her Emolument is at Yin), strong and in season and also meeting the Food spirit, the husband eats off the wife's emolument, living on his wife; if it meets the Owl spirit, the Goat Blade, or Void, ghost, waste and ruin stars, then though he eats the wife's emolument it is of no use."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8044, 8044],
+          "zh": ["夫临妻禄之爻，夫食妻禄。"],
+          "yi": ["丈夫落在妻子的禄位上，丈夫吃妻子的禄。"],
+          "en": ["The husband sits on the wife's Emolument place: the husband eats off the wife's emolument."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8045, 8045],
+          "zh": ["禄乃甲禄在寅，食乃甲食丙之类。", "如甲子生，妻禄在寅，夫身命爻临之，遇食神，乃食禄顺。", "食不逢空鬼破耗等杀，更值生旺有气者，主夫食妻禄。", "若逢枭神羊刃，空鬼耗破杀，虽食妻禄，亦无用矣。"],
+          "yi": ["禄是说甲的禄在寅，食是说甲的食神是丙这一类。", "比如甲子年生的妻子，禄在寅，丈夫的身命爻落在那里，遇到食神，就是吃禄顺当。", "食神没有遇到空、鬼、破、耗等煞，又生旺有气的话，主丈夫吃妻子的禄。", "如果遇到枭神、羊刃，或空、鬼、耗、破的煞，虽然吃妻子的禄，也没有用了。"],
+          "en": ["Emolument means Jia's emolument is at Yin; the Food spirit means Jia's food is Bing, and the like.", "For example, for a wife born in a Jia-Zi year, her Emolument is at Yin; if the husband's Body or Life line sits there and meets the Food spirit, eating the emolument goes smoothly.", "If the Food spirit meets no Void, ghost, ruin or waste stars and is also strong and in season, it means the husband eats off the wife's emolument.", "If it meets the Owl spirit or the Goat Blade, or the Void, ghost, waste and ruin stars, then though he eats the wife's emolument it is of no use."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3112, 3112],
+          "zh": ["如妻年甲子生。", "禄在寅，夫命临之生旺有气者，主夫食妻禄；", "若逢羊刃空鬼耗破，虽食妻禄亦无用矣。"],
+          "yi": ["比如妻子是甲子年生。", "禄在寅，丈夫的命落在那里，生旺有气的，主丈夫吃妻子的禄；", "如果遇到羊刃或空、鬼、耗、破，虽然吃妻子的禄也没有用了。"],
+          "en": ["For example, a wife born in a Jia-Zi year.", "Her Emolument is at Yin; if the husband's Life sits there, strong and in season, it means the husband eats off the wife's emolument;", "if it meets the Goat Blade or the Void, ghost, waste and ruin stars, then though he eats the wife's emolument it is of no use."] }
+      ],
+      "note": {
+        "yi": "「禄」「食神」「枭神」是子平命理里的说法，书里没有另外解释；这里是把夫妻的生年干支放进卦里来论。",
+        "en": "'Emolument', the 'Food spirit' and the 'Owl spirit' are terms of the Ziping birth-chart art, which the book does not explain; here the birth stems and branches of husband and wife are set into the hexagram."
+      },
+      "see": ["LY.MARRY.HJC.46", "LY.MARRY.YY.05"]
+    },
+    {
+      "id": "LY.MARRY.HJC.49",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "交重兄弟克妻身，再理丝弦：兄弟爻发动克伤妻的身命，或丈夫的命临兄弟爻发动克妻身命，主妻亡而续弦",
+      "rule": {
+        "yi": "兄弟爻发动，克伤妻子的身命，或者丈夫的命临在兄弟爻上发动、克妻子的身命，主妻子亡故、丈夫续弦。",
+        "en": "When a Peer line moves and injures the wife's Body or Life, or the husband's Life sits on a moving Peer line and controls the wife's Body or Life, it means the wife is lost and the husband takes a second wife."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8047, 8047],
+          "zh": ["交重兄弟克妻身，再理丝弦；"],
+          "yi": ["兄弟爻发动、克了妻子的身，又要重新整理琴弦（续弦）；"],
+          "en": ["A moving Peer line controlling the wife's Body line: the strings are put in order again (he takes a second wife);"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8048, 8048],
+          "zh": ["妻身爻起临兄弟之爻，发动伤身命，或夫临兄弟爻，克妻之身命，主琴弦再续也。"],
+          "yi": ["妻子的身爻起来临在兄弟爻上，发动伤了身命，或者丈夫临在兄弟爻上，克妻子的身命，主琴弦再续。"],
+          "en": ["If the wife's Body line rises onto the Peer line and moves to injure her Body or Life, or the husband sits on the Peer line and controls the wife's Body or Life, it means the strings are joined again."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3114, 3114],
+          "zh": ["兄弟之爻发动克伤妻命，或夫命临兄弟发动，主琴瑟再续也。"],
+          "yi": ["兄弟爻发动克伤妻子的命，或者丈夫的命临在兄弟爻上发动，主琴瑟再续。"],
+          "en": ["If a Peer line moves and controls and injures the wife's Life, or the husband's Life sits on a moving Peer line, it means the lute and zither are joined again."] }
+      ],
+      "note": {
+        "yi": "「再理丝弦」「琴弦再续」是续弦，即丧妻后再娶。",
+        "en": "'Putting the strings in order again' and 'joining the lute strings again' mean taking a second wife after losing the first."
+      },
+      "see": ["LY.MARRY.HJC.24", "LY.MARRY.YY.25", "LY.MARRY.HZL.22"]
+    },
+    {
+      "id": "LY.MARRY.HJC.50",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "应爻就妻相合，外人入舍为夫：应爻飞入宅爻与妻的身命相生相合，主招外人入赘为夫",
+      "rule": {
+        "yi": "应爻飞入宅爻，与妻子的身命相生相合，主招外人入赘为夫。",
+        "en": "If the Other line flies into the house line and generates or combines with the wife's Body or Life, it means an outsider is taken in as husband."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8065, 8065],
+          "zh": ["应爻就妻相合，外人入舍为夫；"],
+          "yi": ["应爻与妻子相合，外人入舍为夫；"],
+          "en": ["The Other line joins the wife in a combination: an outsider enters the household as husband;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8066, 8066],
+          "zh": ["应爻飞入宅，与妻身命相生相合，主招外人入舍为夫。"],
+          "yi": ["应爻飞入宅爻，与妻子的身命相生相合，主招外人入舍为夫。"],
+          "en": ["If the Other line flies into the house line and generates or combines with the wife's Body or Life, it means an outsider is taken in as husband."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3124, 3124],
+          "zh": ["应爻飞入宅，与妻命生合，主招外人入舍为夫。"],
+          "yi": ["应爻飞入宅爻，与妻子的命相生合，主招外人入舍为夫。"],
+          "en": ["If the Other line flies into the house line and generates or combines with the wife's Life, it means an outsider is taken in as husband."] }
+      ],
+      "see": ["LY.MARRY.YY.17", "LY.MARRY.TXF.05", "LY.MARRY.HJC.05"]
+    },
+    {
+      "id": "LY.MARRY.HJC.51",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妻带子临夫位，引子嫁人：妻的命爻带子孙、发动临到夫位并日辰，主妻带着孩子改嫁",
+      "rule": {
+        "yi": "妻子的命爻带着子孙、发动临到丈夫的位置，并且遇到日辰，主妻子带着孩子改嫁。",
+        "en": "If the wife's Life line carries Output, moves and sits on the husband's place, together with the Day, it means the wife brings her child along and marries."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8071, 8071],
+          "zh": ["妻带子临夫位，引子嫁人；"],
+          "yi": ["妻子带着子孙临到丈夫的位置，带着孩子嫁人；"],
+          "en": ["The wife carrying Output and sitting on the husband's place: she brings her child and marries;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8072, 8072],
+          "zh": ["妻命带子孙，动临夫位，并日辰，主妻引子嫁人是也。"],
+          "yi": ["妻子的命爻带子孙，发动临到丈夫的位置，又遇日辰，主妻子带着孩子嫁人。"],
+          "en": ["If the wife's Life line carries Output, moves and sits on the husband's place together with the Day, it means the wife brings her child along and marries."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3128, 3128],
+          "zh": ["妻命带子孙，动临夫位并日辰，主妻引子嫁来是也。"],
+          "yi": ["妻子的命爻带子孙，发动临到丈夫的位置并遇日辰，主妻子带着孩子嫁过来。"],
+          "en": ["If the wife's Life line carries Output, moves and sits on the husband's place together with the Day, it means the wife brings her child along and comes to marry in."] }
+      ],
+      "note": {
+        "yi": "旧注作「引子嫁人」，王洪绪作「引子嫁来」，一个是嫁出去，一个是嫁进来，字面不同。",
+        "en": "The old commentary has 'brings her child and marries' and Wang Hongxu 'brings her child and comes to marry in', one going out and the other coming in; the wording differs."
+      },
+      "see": ["LY.MARRY.HJC.24", "LY.MARRY.ZS.19", "LY.MARRY.HJC.49"]
+    },
+    {
+      "id": "LY.MARRY.HJC.52",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "夫身起合妻爻，将身就妇：丈夫的身爻发动合住妻的爻、或世爻动临妻的命爻，丈夫自己去就妻家",
+      "rule": {
+        "yi": "丈夫的身爻发动、合住妻子的爻（或者世爻动临妻子的命爻），是丈夫自己去就妻家（入赘）。",
+        "en": "If the husband's Body line rises to combine with the wife's line, or the Self line moves onto the wife's Life line, the husband takes himself to the wife's family."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8074, 8074],
+          "zh": ["夫身起合妻爻，将身就妇。"],
+          "yi": ["丈夫的身爻起来合住妻子的爻，带着自己去就妇家。"],
+          "en": ["The husband's Body line rises to combine with the wife's line: he takes himself to the wife."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8075, 8075],
+          "zh": ["夫身爻起临妻命爻，或夫命爻动临妻身爻动，并日辰，为之将身嫁妇也。"],
+          "yi": ["丈夫的身爻起来临到妻子的命爻，或者丈夫的命爻发动临到妻子发动的身爻，又遇日辰，叫做带着自己去嫁给妻子。"],
+          "en": ["If the husband's Body line rises onto the wife's Life line, or the husband's Life line moves onto the wife's moving Body line, together with the Day, this is called taking himself off to be married to the wife."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3130, 3130],
+          "zh": ["世爻动临妻命爻，或自命爻动临合妻合爻，定然将身就妇也。"],
+          "yi": ["世爻发动临到妻子的命爻，或者自己的命爻发动临到合妻的合爻，一定是带着自己去就妇家。"],
+          "en": ["If the Self line moves onto the wife's Life line, or one's own Life line moves onto the line that combines with the wife, it is surely taking oneself to the wife's family."] }
+      ],
+      "see": ["LY.MARRY.HJC.50", "LY.MARRY.YY.17", "LY.MARRY.YL.22"]
+    },
+    {
+      "id": "LY.MARRY.HJC.53",
+      "topic": "应期",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "身爻合处逢妻，娶婚必早：夫身爻合妻命爻则娶妻必早，妻身爻合夫命爻则出嫁必早",
+      "rule": {
+        "yi": "丈夫的身爻起来合妻子的命爻，娶妻一定早；妻子的身爻起来合丈夫的命爻，出嫁一定早。",
+        "en": "If the husband's Body line rises to combine with the wife's Life line, the marriage will surely come early; if the wife's Body line rises to combine with the husband's Life line, she will surely marry early."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8080, 8080],
+          "zh": ["身爻合处逢妻，娶婚必早。"],
+          "yi": ["身爻在相合的地方遇到妻，娶妻一定早。"],
+          "en": ["The Body line meeting the wife where it combines: marriage will surely come early."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8081, 8081],
+          "zh": ["夫身爻起处合妻之命爻，见妻必早。", "妻身爻起合夫之命爻，妇嫁必早。"],
+          "yi": ["丈夫的身爻起处合住妻子的命爻，见到妻子一定早；", "妻子的身爻起来合住丈夫的命爻，出嫁一定早。"],
+          "en": ["If the husband's Body line rises where it combines with the wife's Life line, he will surely meet his wife early;", "if the wife's Body line rises and combines with the husband's Life line, she will surely marry early."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3131, 3131],
+          "zh": ["夫身爻起合妻之命爻，娶妻必早；", "妻身爻起合夫之命爻，妇嫁无迟。"],
+          "yi": ["丈夫的身爻起来合妻子的命爻，娶妻一定早；", "妻子的身爻起来合丈夫的命爻，出嫁不迟。"],
+          "en": ["If the husband's Body line rises to combine with the wife's Life line, the marriage will surely come early;", "if the wife's Body line rises to combine with the husband's Life line, she will not marry late."] }
+      ],
+      "see": ["LY.MARRY.HJC.31", "LY.MARRY.YY.20", "LY.MARRY.YM.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.54",
+      "topic": "成否",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "夫妇合爻见鬼，婚配不明：与丈夫相合的爻、与妻子相合的爻遇到官鬼，婚配不明",
+      "rule": {
+        "yi": "与丈夫相合的爻、与妻子相合的爻，如果见到官鬼，婚配不明；凡是合爻见鬼都是这样。",
+        "en": "If the line that combines with the husband and the line that combines with the wife meet Pressure, the match is unclear; so it is whenever a combining line meets Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8083, 8083],
+          "zh": ["夫妇合爻见鬼，婚配不明；"],
+          "yi": ["与夫妇相合的爻遇到鬼，婚配不明；"],
+          "en": ["Where the lines that combine with husband and wife meet Pressure, the match is unclear;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8084, 8084],
+          "zh": ["夫合之爻，妻合之爻，见鬼，主婚姻不明。", "但有合爻见鬼是也。"],
+          "yi": ["与丈夫相合的爻、与妻子相合的爻，见到鬼，主婚姻不明。", "只要是合爻见鬼就是这样。"],
+          "en": ["If the line that combines with the husband and the line that combines with the wife meet Pressure, the marriage is unclear.", "So it is whenever a combining line meets Pressure."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3133, 3133],
+          "zh": ["夫合之爻、妻合之爻见鬼，主婚配不明，但有合爻见鬼是也。"],
+          "yi": ["与丈夫相合的爻、与妻子相合的爻见鬼，主婚配不明，只要是合爻见鬼就是这样。"],
+          "en": ["If the line that combines with the husband and the line that combines with the wife meet Pressure, the match is unclear, and so it is whenever a combining line meets Pressure."] }
+      ],
+      "note": {
+        "yi": "「婚配不明」书里没有解释，按字面译作 unclear。",
+        "en": "'The match is unclear' is not explained in the book and is translated literally."
+      },
+      "see": ["LY.MARRY.HJC.41", "LY.MARRY.HJC.43", "LY.MARRY.YL.02"]
+    },
+    {
+      "id": "LY.MARRY.HJC.55",
+      "topic": "夫妻",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "夫妻反目，互见刑冲；兄弟无情，互相凌制：夫身爻带日辰动刑妻命、妻身爻带日辰动刑夫命、妻命冲夫身或夫命冲妻身，是夫妻反目",
+      "rule": {
+        "yi": "丈夫的身爻带日辰发动刑妻子的命，是丈夫和妻子不和；妻子的身爻带日辰发动刑丈夫的命，是妻子和丈夫不和；或者妻子的命冲丈夫的身、丈夫的命冲妻子的身，是夫妻反目（比如风天小畜九三爻）。兄长的爻带日辰克弟弟的身命爻，或弟弟的爻克兄长的身命爻，是兄弟不和、互相欺凌。",
+        "en": "If the husband's Body line, with the Day, moves to punish the wife's Life, the husband is not at peace with the wife; if the wife's Body line, with the Day, moves to punish the husband's Life, the wife is not at peace with the husband; or if the wife's Life clashes with the husband's Body, or the husband's Life with the wife's Body, husband and wife turn against each other (the third line of Xiaoxu, Wind over Heaven, is an example). If the elder brother's line with the Day controls the younger brother's Body or Life line, or the younger's controls the elder's, the brothers are at odds and abuse each other."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8089, 8089], "literal": ["兄弟"],
+          "zh": ["夫妻反目，互见刑冲；", "兄弟无情，互相凌制。"],
+          "yi": ["夫妻反目，是互相见到刑冲；", "兄弟无情，是互相欺凌克制。"],
+          "en": ["Husband and wife turn against each other when each sees punishment and clash in the other;", "brothers are without feeling and overbear and control each other."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8090, 8090], "literal": ["兄弟"],
+          "zh": ["夫身爻并日辰动刑妻命，主夫不和妻；", "妻身爻并日辰动刑夫命，主妻不和夫。", "或妻命冲夫身，夫命冲妻身，主夫妻反目。", "如风天小畜九三爻是也。", "兄带日辰克弟身命爻，弟带日辰克兄身命爻，主兄弟不和，互相凌虐。"],
+          "yi": ["丈夫的身爻带日辰发动，刑妻子的命，主丈夫和妻子不和；", "妻子的身爻带日辰发动，刑丈夫的命，主妻子和丈夫不和。", "或者妻子的命冲丈夫的身，丈夫的命冲妻子的身，主夫妻反目。", "比如风天小畜九三爻。", "兄长的爻带日辰克弟弟的身命爻，弟弟的爻带日辰克兄长的身命爻，主兄弟不和，互相欺凌。"],
+          "en": ["If the husband's Body line, with the Day, moves to punish the wife's Life, the husband is not at peace with the wife;", "if the wife's Body line, with the Day, moves to punish the husband's Life, the wife is not at peace with the husband.", "Or if the wife's Life clashes with the husband's Body, or the husband's Life with the wife's Body, husband and wife turn against each other.", "The third line of Xiaoxu, Wind over Heaven, is an example.", "If the elder brother's line with the Day controls the younger brother's Body or Life line, or the younger brother's line with the Day controls the elder's, the brothers are at odds and abuse each other."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3137, 3137], "literal": ["兄弟"],
+          "zh": ["夫身爻并日辰动刑妻命，主人不和妻；", "妻身爻并日辰动刑夫命，主妻不合夫。", "或妻命冲夫身，或夫命冲妻身，主夫妻反目。", "兄带日辰克弟身命爻，或弟带日辰克兄身命爻，主兄弟不和，互相凌虐。"],
+          "yi": ["丈夫的身爻带日辰发动，刑妻子的命，主丈夫和妻子不和；", "妻子的身爻带日辰发动，刑丈夫的命，主妻子和丈夫不合。", "或者妻子的命冲丈夫的身，或者丈夫的命冲妻子的身，主夫妻反目。", "兄长的爻带日辰克弟弟的身命爻，或者弟弟的爻带日辰克兄长的身命爻，主兄弟不和，互相欺凌。"],
+          "en": ["If the husband's Body line, with the Day, moves to punish the wife's Life, the husband is not at peace with the wife;", "if the wife's Body line, with the Day, moves to punish the husband's Life, the wife does not get on with the husband.", "Or if the wife's Life clashes with the husband's Body, or the husband's Life clashes with the wife's Body, husband and wife turn against each other.", "If the elder brother's line with the Day controls the younger brother's Body or Life line, or the younger brother's line with the Day controls the elder's, the brothers are at odds and abuse each other."] }
+      ],
+      "note": {
+        "yi": "这里的「兄」「弟」是家里的兄长和弟弟，不是六亲里的兄弟爻，所以英文写 brother。旧注多一句「风天小畜九三爻」的例子。",
+        "en": "The 'elder brother' and 'younger brother' here are the brothers of the family and not the Peer relation, hence the English 'brother'. The old commentary adds the example of the third line of Xiaoxu."
+      },
+      "see": ["LY.MARRY.HJC.20", "LY.MARRY.ZS.25", "LY.MARRY.YY.22", "LY.MARRY.HZL.23"]
+    },
+    {
+      "id": "LY.MARRY.HJC.56",
+      "topic": "家人",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妻财发动，不堪父值丧门；父母交重，最忌子临死绝：上有父母不堪财爻发动，父母爻值丧门吊客更有克害，父动则克子",
+      "rule": {
+        "yi": "妻财发动，父母爻受不了（特别是父母爻再遇丧门、吊客）；父母爻发动，最怕子孙落在死绝上。上有父母的，受不了财爻发动，会有克害的祸患；父母爻动会克子孙。",
+        "en": "When Wealth moves, the Resource line cannot bear it (especially if the Resource line also meets the Mourning Gate or Funeral Guest stars); when the Resource line moves, most feared is Output on death or extinction. If there are parents above, they cannot bear the Wealth line moving and there will be the trouble of injury and harm; a moving Resource line controls Output."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8095, 8095],
+          "zh": ["妻财发动，不堪父值丧门；", "父母交重，最忌子临死绝。"],
+          "yi": ["妻财发动，父母爻受不了值丧门；", "父母爻交重，最忌子孙落在死绝上。"],
+          "en": ["When Wealth moves, the Resource line cannot bear to meet the Mourning Gate star;", "when the Resource line moves, most feared is Output on death or extinction."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8096, 8096], "literal": ["父母"],
+          "zh": ["上有父母，不堪财爻发动，更兼父母值丧门吊客爻，主有克害之患。"],
+          "yi": ["上有父母的，受不了财爻发动；再加上父母爻遇丧门、吊客爻，主有克害的祸患。"],
+          "en": ["If there are parents above, they cannot bear the Wealth line moving; and if the Resource line also meets the Mourning Gate or Funeral Guest lines, there will be the trouble of injury and harm."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3141, 3141], "literal": ["父母"],
+          "zh": ["上有父母，不堪财爻发动，主有克害之患；", "父动则克子也。"],
+          "yi": ["上有父母的，受不了财爻发动，主有克害的祸患；", "父母爻动就克子孙。"],
+          "en": ["If there are parents above, they cannot bear the Wealth line moving, and there will be the trouble of injury and harm;", "a moving Resource line controls Output."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗把第一句作「不堪父值休囚」（父母爻遇休囚），旧注本作「不堪父值丧门」。「上有父母」是家里真有父母。",
+        "en": "The Bushi Zhengzong reads the first line as 'the Resource line cannot bear meeting rest and confinement', where the old commentary text has 'meeting the Mourning Gate'. 'Parents above' means the diviner's actual parents."
+      },
+      "see": ["LY.MARRY.TXF.10", "LY.MARRY.ZS.18", "LY.MARRY.HJC.20", "LY.MARRY.YY.07"]
+    },
+    {
+      "id": "LY.MARRY.HJC.57",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妻克世身重合应，妻必重婚：妻爻动克夫命并日辰又与应相合，主妻再嫁；带咸池与应爻相合、又带亡劫刑刃克夫身命，主妻与外人谋杀夫主",
+      "rule": {
+        "yi": "妻子的爻发动克丈夫的命，又遇日辰与应爻相合，主妻子再嫁；如果带咸池与应爻相合，再加日辰、动爻带亡神、劫杀、刑、刃等煞，克丈夫的身命爻，主妻子与外人谋杀丈夫。",
+        "en": "If the wife's line moves to control the husband's Life and the Day also combines with the Other line, the wife marries again; if it carries the Xianchi star and combines with the Other line, and the Day and a moving line add the Loss star, Robbery star, punishment or Goat Blade stars and control the husband's Body or Life line, it means the wife plots with an outsider to kill her husband."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8098, 8098],
+          "zh": ["妻克世身重合应，妻必重婚；"],
+          "yi": ["妻子克世爻和身，又重重与应爻相合，妻子必定重婚；"],
+          "en": ["The wife controlling Self and the Body and repeatedly combining with the Other line: the wife will surely marry again;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8099, 8099],
+          "zh": ["妻爻动克夫命，主克夫。", "并日辰又与应相合，主妻再嫁。", "若带咸池与应爻相合，并日辰动爻，带亡劫刑刃等杀，克夫身命爻，主妻与外人谋杀夫主。", "临交爻，主未来之事。"],
+          "yi": ["妻子的爻发动克丈夫的命，主妻子克夫。", "再加日辰又与应爻相合，主妻子再嫁。", "如果带咸池与应爻相合，再加日辰、动爻带亡神、劫杀、刑、刃等煞，克丈夫的身命爻，主妻子与外人谋杀丈夫。", "临在交爻上，主是将来的事。"],
+          "en": ["If the wife's line moves to control the husband's Life, it means she harms her husband.", "If the Day also combines with the Other line, the wife marries again.", "If it carries the Xianchi star and combines with the Other line, and the Day and a moving line carry the Loss star, Robbery star, punishment or Goat Blade stars and control the husband's Body or Life line, it means the wife plots with an outsider to kill her husband.", "If it sits on a moving line, it is a matter still to come."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3143, 3143],
+          "zh": ["财爻动克夫命，或妻命动克夫爻，并日辰又与应相合，主妻再嫁。", "若带咸池与应爻相合，克夫命身爻，主妻与外人谋杀夫主。", "若临父爻，主未来之事。"],
+          "yi": ["财爻发动克丈夫的命，或者妻子的命发动克丈夫的爻，又遇日辰与应爻相合，主妻子再嫁。", "如果带咸池与应爻相合，克丈夫的命和身爻，主妻子与外人谋杀丈夫。", "如果临在父母爻上，主是将来的事。"],
+          "en": ["If the Wealth line moves to control the husband's Life, or the wife's Life moves to control the husband's line, and the Day also combines with the Other line, the wife marries again.", "If it carries the Xianchi star and combines with the Other line and controls the husband's Life and Body lines, it means the wife plots with an outsider to kill her husband.", "If it sits on the Resource line, it is a matter still to come."] }
+      ],
+      "note": {
+        "yi": "旧注末一句「临交爻」，王洪绪作「临父爻」，一字不同；两家都只说「是将来的事」，没有说明为什么。",
+        "en": "The old commentary's last sentence has 'sitting on a moving line' and Wang Hongxu 'sitting on the Resource line', one character different; both say only that it is a matter still to come, without saying why."
+      },
+      "see": ["LY.MARRY.HJC.24", "LY.MARRY.TXF.09", "LY.MARRY.YY.08", "LY.MARRY.TXF.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.58",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "夫刑妻命两逢财，夫当再娶：丈夫刑克妻命或刑克财爻又逢克处两财，丈夫要克两个妻子；日辰合旁爻之财则再娶",
+      "rule": {
+        "yi": "丈夫刑克妻子的命，或者刑克财爻，又遇到克处的两个财，主丈夫克两个妻子；日辰合旁边爻上的财，主再娶；丈夫带日辰、动爻，带劫、刃、刑等煞，伤妻子的命爻，主妻子遭丈夫毒手。",
+        "en": "If the husband punishes and controls the wife's Life, or punishes and controls the Wealth line, and also meets two Wealth lines at the place of control, the husband loses two wives; if the Day combines with a Wealth line on another line, he marries again; if the husband, with the Day and a moving line carrying the Robbery, Blade and punishment stars, injures the wife's Life line, she meets her husband's poisonous hand."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8101, 8101],
+          "zh": ["夫刑妻命两逢财，夫当再娶。"],
+          "yi": ["丈夫刑克妻子的命，又遇到两个财，丈夫应当再娶。"],
+          "en": ["The husband punishing the wife's Life and two Wealth lines appearing: the husband will marry again."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8102, 8102],
+          "zh": ["妻身命临夫家刑杀之爻，更逢克处两财，主夫克两妻。", "并日辰合傍爻之财，主再娶。", "夫并日辰动爻，带劫刃刑等杀，伤妻命爻，主遭夫毒手也。"],
+          "yi": ["妻子的身命临在丈夫家刑杀的爻上，又遇到克处的两个财，主丈夫克两个妻子。", "再加日辰合旁边爻的财，主再娶。", "丈夫带日辰、动爻，带劫、刃、刑等煞，伤妻子的命爻，主遭丈夫毒手。"],
+          "en": ["If the wife's Body or Life sits on a line of the husband's house's punishing stars, and moreover meets two Wealth lines at the place of control, it means the husband loses two wives.", "If the Day also combines with a Wealth line on another line, he marries again.", "If the husband, with the Day and a moving line carrying the Robbery, Blade and punishment stars, injures the wife's Life line, she meets her husband's poisonous hand."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3145, 3145],
+          "zh": ["夫刑克妻命，或刑克财爻，更逢克处两财，主夫克两妻；", "并日辰合旁爻之财主再娶；", "并日辰动爻带刃刑等煞，伤妻命爻，主遭夫毒手也。"],
+          "yi": ["丈夫刑克妻子的命，或者刑克财爻，又遇到克处的两个财，主丈夫克两个妻子；", "日辰合旁边爻的财，主再娶；", "日辰、动爻带刃、刑等煞，伤妻子的命爻，主遭丈夫毒手。"],
+          "en": ["If the husband punishes and controls the wife's Life, or punishes and controls the Wealth line, and also meets two Wealth lines at the place of control, the husband loses two wives;", "if the Day combines with a Wealth line on another line, he marries again;", "if the Day and a moving line carrying the Blade, punishment and similar stars injure the wife's Life line, she meets her husband's poisonous hand."] }
+      ],
+      "see": ["LY.MARRY.HJC.24", "LY.MARRY.HJC.57", "LY.MARRY.YY.25", "LY.MARRY.TXF.09"]
+    },
+    {
+      "id": "LY.MARRY.HJC.59",
+      "topic": "外遇",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妻与应爻相合，外有私通：妻的身命爻与应爻相合又带咸池玄武桃花，主妻有外情；夫带日辰克妻与应爻，主捉到妻子的奸情",
+      "rule": {
+        "yi": "妻子的身命爻与应爻相合，又带咸池、玄武、桃花，主妻子在外有私情；丈夫带日辰克妻子和应爻，主捉到妻子的奸情。妻子带财生应爻，是妻子用钱引诱外人；应爻带财生妻爻，是外人用钱引诱妻子；应爻从外宫来，是远方的人，从内来，是近亲的人。世爻动带鬼隔断，是家里人阻隔；应爻动带鬼隔断，是外人阻隔他们的感情。",
+        "en": "If the wife's Body or Life line combines with the Other line and carries the Xianchi star, the Dark Tortoise and the Peach Blossom star, the wife has a lover outside; if the husband, with the Day, controls the wife and the Other line, he catches his wife in adultery. If the wife carries Wealth and generates the Other line, the wife lures the outsider with money; if the Other line carries Wealth and generates the wife's line, the outsider lures the wife with money; if the Other line comes from an outer palace the man is from far away, if from within, a near relative. If the Self line moves carrying Pressure to cut things off, family members stand in the way; if the Other line moves carrying Pressure to cut things off, outsiders block the affection."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8104, 8104],
+          "zh": ["妻与应爻相合，外有私通；"],
+          "yi": ["妻子与应爻相合，在外有私通；"],
+          "en": ["The wife combining with the Other line: there is secret intimacy outside;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8105, 8105],
+          "zh": ["妻身命爻与应相合咸池玄武桃花，主妻有外情。", "夫并日辰克妻，与应爻，主获妻奸。", "夫并世应在三合之爻，主从良为娼。", "日辰临交爻，主心意未绝。", "妻带财生应爻，妻以财诱外人；", "应带财生妻爻，外人以财诱妻。", "应自外宫来，主远方人；", "应自内来，近亲之人。", "世爻动带鬼隔断，为家人间阻；", "应爻动带鬼隔断，为外人间阻其情。"],
+          "yi": ["妻子的身命爻与应爻相合，又带咸池、玄武、桃花，主妻子有外情。", "丈夫带日辰克妻子和应爻，主捉到妻子的奸情。", "丈夫和世爻、应爻在三合的爻上，主从良的变成娼妓。", "日辰临在交爻上，主心意还没有断。", "妻子带财生应爻，是妻子用钱引诱外人；", "应爻带财生妻子的爻，是外人用钱引诱妻子。", "应爻从外宫来，主是远方的人；", "从内来，是近亲的人。", "世爻发动、带鬼隔断，是家里人阻隔；", "应爻发动、带鬼隔断，是外人阻隔他们的感情。"],
+          "en": ["If the wife's Body or Life line combines with the Other line and carries the Xianchi star, the Dark Tortoise and the Peach Blossom star, the wife has a lover outside.", "If the husband, with the Day, controls the wife and the Other line, he catches his wife in adultery.", "If the husband, Self and Other are on a three-harmony line, it means one who was respectable becomes a prostitute.", "If the Day sits on a moving line, her heart is not yet cut off.", "If the wife carries Wealth and generates the Other line, the wife lures the outsider with money;", "if the Other line carries Wealth and generates the wife's line, the outsider lures the wife with money.", "If the Other line comes from an outer palace, the man is from far away;", "if from within, a near relative.", "If the Self line moves carrying Pressure to cut things off, family members stand in the way;", "if the Other line moves carrying Pressure to cut things off, outsiders block the affection."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3147, 3147],
+          "zh": ["妻命财爻与应相合咸池玄武，主妻有外情；", "夫并日辰克妻与应爻，主获妻奸。"],
+          "yi": ["妻子的命、财爻与应爻相合，又带咸池、玄武，主妻子有外情；", "丈夫带日辰克妻子和应爻，主捉到妻子的奸情。"],
+          "en": ["If the wife's Life and Wealth line combine with the Other line and carry the Xianchi star and the Dark Tortoise, the wife has a lover outside;", "if the husband, with the Day, controls the wife and the Other line, he catches his wife in adultery."] }
+      ],
+      "note": {
+        "yi": "旧注里「夫并世应在三合之爻，主从良为娼」一句文字不通（从良本是娼妓嫁人），译文照字面写，含义不能确定。",
+        "en": "The old commentary's sentence 'the husband and Self and Other on a three-harmony line means going from respectable to prostitute' does not read through, since the term for 'respectable' normally describes a prostitute leaving her trade to marry; it is translated literally and its meaning cannot be settled."
+      },
+      "see": ["LY.MARRY.HJC.11", "LY.MARRY.HJC.21", "LY.MARRY.TXF.15", "LY.MARRY.YY.24"]
+    },
+    {
+      "id": "LY.MARRY.HJC.60",
+      "topic": "外遇",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "男临女子互爻，内多淫欲：男的身爻临女的命爻、女的身爻临男的命爻叫互，尊卑失序主淫乱；夫妻互相合主先奸后娶",
+      "rule": {
+        "yi": "男子的身爻起来临到女子的命爻，或女子的身爻起来临到男子的命爻，叫做互，尊卑失了次序，主有淫乱的事；如果夫妻互相合，主先奸后娶。",
+        "en": "If the man's Body line rises onto the woman's Life line, or the woman's Body line rises onto the man's Life line, this is called mutual: seniority and rank lose their order, and it means lewd conduct; if husband and wife combine with each other, it means adultery first and marriage after."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8107, 8107],
+          "zh": ["男临女子互爻，内多淫欲。"],
+          "yi": ["男子临到女子的互爻上，里面多有淫欲。"],
+          "en": ["A man sitting on the woman's mutual line: there is much lust within."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8108, 8110],
+          "zh": ["男身爻起临女命爻，女身爻起临男命爻，谓互尊卑失序，主有淫乱事。", "若夫妻互相合，主先奸后娶。", "据理而详可也。"],
+          "yi": ["男子的身爻起来临到女子的命爻，女子的身爻起来临到男子的命爻，叫做互，尊卑失了次序，主有淫乱的事。", "如果夫妻互相合，主先奸后娶。", "要依理详细判断才行。"],
+          "en": ["If the man's Body line rises onto the woman's Life line, or the woman's Body line rises onto the man's Life line, this is called mutual: seniority and rank lose their order, and it means lewd conduct.", "If husband and wife combine with each other, it means adultery first and marriage after.", "Judge it by reason and in detail."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3149, 3149],
+          "zh": ["男命爻起合女命爻，女身爻起临男命爻，为互合，尊卑失序，主有淫乱之事。", "若夫妻互相合，主先奸后娶。"],
+          "yi": ["男子的命爻起来合女子的命爻，女子的身爻起来临到男子的命爻，是互合，尊卑失了次序，主有淫乱的事。", "如果夫妻互相合，主先奸后娶。"],
+          "en": ["If the man's Life line rises to combine with the woman's Life line, and the woman's Body line rises onto the man's Life line, this is a mutual combination: seniority and rank lose their order, and it means lewd conduct.", "If husband and wife combine with each other, it means adultery first and marriage after."] }
+      ],
+      "note": {
+        "yi": "「互爻」是男女两边的爻互相临对方的位置，书里只给了这个说法；卜筮正宗把「互爻」写作「互交」。",
+        "en": "A 'mutual line' is one in which the lines of man and woman sit on each other's places, which is all the book says; the Bushi Zhengzong writes the term with a different character."
+      },
+      "see": ["LY.MARRY.HJC.11", "LY.MARRY.TXF.15", "LY.MARRY.HJC.59"]
+    },
+    {
+      "id": "LY.MARRY.HJC.61",
+      "topic": "聘嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "青龙水木临妻位，多获奁财：财临青龙、水木有气、丈夫的命再临其上，得妻财多；命带玄武财爻，则有暗来的妻财",
+      "rule": {
+        "yi": "青龙落在水、木，临妻爻的位置，得到丰厚的嫁妆：财爻临青龙，水木有气，丈夫的命再临在上面，更有气，主得妻财多；命带玄武和财爻，有暗中来的妻财。",
+        "en": "The Azure Dragon on Water or Wood at the wife's place brings a rich dowry: if Wealth sits on the Azure Dragon, Water or Wood is strong, and the husband's Life sits on it and is stronger still, he gains much of the wife's wealth; if the Life carries the Dark Tortoise and a Wealth line, wife's wealth comes to him in secret."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8112, 8112],
+          "zh": ["青龙水木临妻位，多获奁财；"],
+          "yi": ["青龙在水、木上临到妻爻的位置，多得到嫁妆钱财；"],
+          "en": ["The Azure Dragon in Water or Wood on the wife's place: a rich dowry is gained;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8113, 8113],
+          "zh": ["如财临青龙，水木有气，夫命临之，更有气，主得妻财多。", "命带玄武财爻，有暗来妻财。", "如辛丑日下，得恒观卦是。"],
+          "yi": ["如果财临青龙，水木有气，丈夫的命临在上面，更有气，主得妻财多。", "命带玄武和财爻，有暗中来的妻财。", "比如辛丑日，得恒之观卦就是。"],
+          "en": ["If Wealth sits on the Azure Dragon, Water or Wood is strong, and the husband's Life sits on it and is stronger still, he gains much of the wife's wealth.", "If the Life carries the Dark Tortoise and a Wealth line, there is wife's wealth that comes in secret.", "For example, on a Xin-Chou day, getting Heng changing to Guan is such a case."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3151, 3151],
+          "zh": ["如财临水木有气，夫命临之，主得妻财。"],
+          "yi": ["如果财临水木有气，丈夫的命临在上面，主得妻财。"],
+          "en": ["If Wealth sits on Water or Wood and is strong, and the husband's Life sits on it, he gains the wife's wealth."] }
+      ],
+      "see": ["LY.MARRY.TXF.13", "LY.MARRY.HJC.32", "LY.MARRY.YL.12", "LY.MARRY.DYTJ.22"]
+    },
+    {
+      "id": "LY.MARRY.HJC.62",
+      "topic": "外遇",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "玄武桃花犯命中，荒淫酒色：身命带玄武、桃花（咸池），主贪酒色，男则粘红缀绿、女则被人牵惹，男女同论",
+      "rule": {
+        "yi": "身命带玄武、桃花（咸池），主贪图酒色：男子是在花丛里打转，女子是被人牵引招惹；男女一样论。",
+        "en": "If the Body or Life carries the Dark Tortoise and the Peach Blossom star (the Xianchi star), it means greed for wine and women: a man is one who dallies among the reds and greens, a woman one who is drawn in and led on by others; man and woman are judged alike."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8115, 8115],
+          "zh": ["玄武桃花犯命中，荒淫酒色。"],
+          "yi": ["玄武、桃花冲犯命爻，荒淫酒色。"],
+          "en": ["The Dark Tortoise and the Peach Blossom star offending the Life line: dissolute in wine and lust."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8116, 8116],
+          "zh": ["身命带玄武桃花，主贪酒色。", "男则粘红缀绿，女则叶人牵惹。"],
+          "yi": ["身命带玄武、桃花，主贪图酒色。", "男子是粘红缀绿，女子是被人牵引招惹。"],
+          "en": ["If the Body or Life carries the Dark Tortoise and the Peach Blossom star, it means greed for wine and women.", "A man is one who dallies among the reds and greens; a woman is one who is drawn in and led on by others."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3151, 3151],
+          "zh": ["身命带玄武咸池，主贪酒色。", "男女同论。"],
+          "yi": ["身命带玄武、咸池，主贪图酒色。", "男女一样论。"],
+          "en": ["If the Body or Life carries the Dark Tortoise and the Xianchi star, it means greed for wine and women.", "Man and woman are judged alike."] }
+      ],
+      "note": {
+        "yi": "旧注写「桃花」，王洪绪写「咸池」，是同一个神煞的两个名字。「粘红缀绿」「叶人牵惹」是形容男女沾染风月的说法，照字面译。",
+        "en": "The old commentary writes 'Peach Blossom' and Wang Hongxu 'Xianchi', two names for the same star. The phrases about dallying among the reds and greens and being drawn in by others are idioms for getting entangled in romance, translated literally."
+      },
+      "see": ["LY.MARRY.HJC.59", "LY.MARRY.TXF.15", "LY.MARRY.DYTJ.25"]
+    },
+    {
+      "id": "LY.MARRY.HJC.63",
+      "topic": "入赘再嫁",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "世应妻爻三合，当招偏正之夫：世、应、财爻与妻爻三合，又逢两个鬼合妻的身命，主有偏正两个丈夫",
+      "rule": {
+        "yi": "世爻、应爻和财爻与妻子的爻三合，又遇到两个官鬼与妻子的身命相合，主妻子有一正一偏两个丈夫。",
+        "en": "If Self, Other and the Wealth line make a three-harmony with the wife's line, and two Pressure lines also combine with her Body or Life, the wife will have a principal and a secondary husband."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8118, 8118],
+          "zh": ["世应妻爻三合，当招偏正之夫；"],
+          "yi": ["世爻、应爻、妻爻三合，应当招来一正一偏两个丈夫；"],
+          "en": ["Self, Other and the wife's line in a three-harmony: she will take a principal and a secondary husband;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8119, 8119],
+          "zh": ["为世应财爻三合妻爻，更逢两鬼合身命，主有偏正之夫。"],
+          "yi": ["世爻、应爻、财爻与妻爻三合，又遇到两个鬼与妻子的身命相合，主有一正一偏的丈夫。"],
+          "en": ["If Self, Other and the Wealth line make a three-harmony with the wife's line, and two Pressure lines also combine with her Body or Life, she will have a principal and a secondary husband."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3152, 3152],
+          "zh": ["为世应财爻之合，逢两鬼合妻命，主有偏正之夫。"],
+          "yi": ["世爻、应爻、财爻相合，遇到两个鬼与妻子的命相合，主有一正一偏的丈夫。"],
+          "en": ["If Self, Other and the Wealth line combine, and two Pressure lines combine with the wife's Life, she will have a principal and a secondary husband."] }
+      ],
+      "see": ["LY.MARRY.TXF.09", "LY.MARRY.YY.08", "LY.MARRY.HJC.24"]
+    },
+    {
+      "id": "LY.MARRY.HJC.64",
+      "topic": "夫妻",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "财交世应六冲，必是生离之妇：妻的身命爻值鬼爻、与世应及日辰冲破，或重重相冲，必是生离之妇",
+      "rule": {
+        "yi": "财爻和世应形成六冲，一定是要生离的妻子：妻子的身命爻遇鬼爻，与世应和日辰发动而冲破、相合；重重相冲，又和财爻两合；或者妻子的身命爻与世应、动爻相冲，或者与日辰相冲，都主是生离的妻子。",
+        "en": "Wealth, Self and Other in a six-clash mean she is surely a wife who will part from you in life: the wife's Body or Life line meets a Pressure line, and with Self, Other and the Day moving it is broken and combined; clashes upon clashes, with two combinations on the Wealth line; or the wife's Body or Life line clashes with Self and Other or with a moving line, or with the Day, it is a wife who will part in life."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8121, 8121],
+          "zh": ["财交世应六冲，必是生离之妇。"],
+          "yi": ["财爻和世应六冲，一定是生离的妻子。"],
+          "en": ["Wealth, Self and Other in a six-clash: she is surely a wife who will part from you in life."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8122, 8122],
+          "zh": ["妻身命爻值鬼爻，与世应并日辰动破合；", "重重相冲，与财两合；", "或妻身命爻，与世应动爻相冲，或日辰相冲，主是生离之妇也。"],
+          "yi": ["妻子的身命爻遇到鬼爻，和世应、日辰发动破合；", "重重相冲，又和财爻两合；", "或者妻子的身命爻与世应、动爻相冲，或者与日辰相冲，主是生离的妻子。"],
+          "en": ["The wife's Body or Life line meets a Pressure line, and with Self, Other and the Day moving it is broken and combined;", "clashes upon clashes, with two combinations on the Wealth line;", "or the wife's Body or Life line clashes with Self and Other or with a moving line, or with the Day: it is a wife who will part in life."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3154, 3154],
+          "zh": ["妻命值鬼爻，与世应并日辰破合，重重相冲，与财两合，或妻命爻与世应动爻相冲，或日辰相冲，必主生离之妇。"],
+          "yi": ["妻子的命遇到鬼爻，与世应和日辰破合，重重相冲，与财爻两合，或者妻子的命爻与世应、动爻相冲，或者与日辰相冲，必定主是生离的妻子。"],
+          "en": ["If the wife's Life meets a Pressure line and is broken and combined with Self, Other and the Day, clashes upon clashes, with two combinations on the Wealth line, or the wife's Life line clashes with Self and Other or with a moving line, or with the Day, it surely means a wife who will part in life."] }
+      ],
+      "note": {
+        "yi": "旧注比王洪绪多「值鬼爻，与世应并日辰动破合」里的「动」字；两家的意思相同。",
+        "en": "The old commentary has the word 'moving' in 'meets a Pressure line and with Self, Other and the Day moving is broken and combined', which Wang Hongxu lacks; the meaning is the same."
+      },
+      "see": ["LY.MARRY.HJC.04", "LY.MARRY.YM.24", "LY.MARRY.YL.14", "LY.MARRY.HJC.55"]
+    },
+    {
+      "id": "LY.MARRY.HJC.65",
+      "topic": "对方",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "世应为妻爻相隔逢冲，必招外郡之人：世应在日辰旬中隔断妻爻，或妻爻与夫爻相隔并在日辰旬外逢冲，丈夫是外郡的人",
+      "rule": {
+        "yi": "世爻、应爻在日辰旬中把妻爻隔断，或者妻爻与夫爻相隔，又在日辰旬外遇冲，主丈夫是外郡的人；夫爻隔着妻爻，妻爻在游魂卦的世应之外发动，主是外州的人。",
+        "en": "If Self and Other cut off the wife's line within the Day's ten-day period, or the wife's line is separated from the husband's line and meets a clash outside the Day's period, the husband is surely a man from another prefecture; if the husband's line is separated from the wife's and the wife's line moves outside Self and Other in a Wandering Soul hexagram, he is from another province."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8124, 8124],
+          "zh": ["世应为妻爻相隔逢冲，必招外郡之人；"],
+          "yi": ["世应为妻爻所隔，又遇到冲，一定招来外郡的人；"],
+          "en": ["Self and Other separated by the wife's line and meeting a clash: she is sure to take a man from another prefecture;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8125, 8125],
+          "zh": ["世应在日辰旬中隔断妻爻，或与夫爻相隔，在日辰旬外逢冲，主是外郡之人。", "夫隔妻爻，妻动在游魂世应之外，主他州人也。"],
+          "yi": ["世应在日辰旬中隔断妻爻，或者与夫爻相隔，在日辰旬外遇冲，主是外郡的人。", "夫爻隔着妻爻，妻爻发动在游魂卦的世应之外，主是外州的人。"],
+          "en": ["If Self and Other cut off the wife's line within the Day's ten-day period, or are separated from the husband's line and meet a clash outside the Day's period, he is a man from another prefecture.", "If the husband's line is separated by the wife's line and the wife's line moves outside Self and Other in a Wandering Soul hexagram, he is from another province."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3156, 3156],
+          "zh": ["世应在日辰旬中隔断，妻爻与夫爻相隔，在日辰旬外逢冲，主夫是外郡之人。"],
+          "yi": ["世应在日辰旬中隔断，妻爻与夫爻相隔，在日辰旬外遇冲，主丈夫是外郡的人。"],
+          "en": ["If Self and Other cut off within the Day's ten-day period, and the wife's line is separated from the husband's line and meets a clash outside the Day's period, the husband is a man from another prefecture."] }
+      ],
+      "note": {
+        "yi": "「日辰旬中」「日辰旬外」指起卦那一天所在的一旬之内、之外；书里没有再解释。",
+        "en": "'Within the Day's period' and 'outside the Day's period' mean inside or outside the ten-day period in which the casting day falls; the book does not explain further."
+      },
+      "see": ["LY.MARRY.YY.31", "LY.MARRY.HJC.66"]
+    },
+    {
+      "id": "LY.MARRY.HJC.66",
+      "topic": "对方",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "夫妻与福德相逢带合，必近亲邻之女：夫妻的命爻都在本宫，就中合见子孙，主因亲致亲，或旧亲做媒",
+      "rule": {
+        "yi": "夫妻的命爻都在本宫，就中又合见子孙，一定是近亲近邻家的女子：男子与财爻相近，都在本宫或卦中，主婚姻在近处；合见子孙，是亲上加亲，或者旧亲戚做媒。",
+        "en": "When husband and wife with Output meet and combine, she is surely a girl from near kin or near neighbors: if the man's line is near the Wealth line and both are in the home palace or in the hexagram, the marriage is close by; and if Output is also seen in combination, it is a match of kin to kin, or an old relative acts as go-between."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8127, 8127],
+          "zh": ["夫妻与福德相逢带合，必近亲邻之女。"],
+          "yi": ["夫妻和福德相逢又带合，一定是近亲近邻家的女子。"],
+          "en": ["Husband and wife with Output meeting and combining: she is surely a girl from near kin or near neighbors."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8128, 8128],
+          "zh": ["男与财爻相近，俱在本宫，或卦中，主婚姻近处。", "就中合见子孙，主因亲致亲，或故亲为媒。"],
+          "yi": ["男子的爻与财爻相近，都在本宫，或者在卦中，主婚姻在近处。", "其中又合见子孙，主亲上加亲，或者旧亲戚做媒。"],
+          "en": ["If the man's line is near the Wealth line and both are in the home palace or in the hexagram, the marriage is close by.", "If Output is also seen in combination, it means a match of kin to kin, or an old relative acts as go-between."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3158, 3158],
+          "zh": ["夫妻二命爻俱在本宫，就中合见子孙，主因亲致亲。"],
+          "yi": ["夫妻二人的命爻都在本宫，其中又合见子孙，主亲上加亲。"],
+          "en": ["If the Life lines of husband and wife are both in the home palace and Output is also seen in combination, it means a match of kin to kin."] }
+      ],
+      "note": {
+        "yi": "旧注「亲邻」，卜筮正宗写作「亲临」，是同一句话里的一字之差。",
+        "en": "Where the old commentary has 'kin and neighbors', the Bushi Zhengzong has a different second character, a one-character difference in the same line."
+      },
+      "see": ["LY.MARRY.YY.31", "LY.MARRY.HJC.17", "LY.MARRY.HJC.65"]
+    },
+    {
+      "id": "LY.MARRY.HJC.67",
+      "topic": "家人",
+      "chapter": "家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "妇僭姑嫜之爻，家声可见：二爻为儿媳的命爻，与婆婆的命爻相刑相冲则凌上悖逆不孝，相生相合则顺妇道",
+      "rule": {
+        "yi": "第二爻是儿媳妇的命爻，与婆婆的命爻相刑相冲，主儿媳欺凌尊长、悖逆不孝；相生相合，主儿媳顺从妇道、恭敬孝顺。",
+        "en": "The second line is the daughter-in-law's Life line; if it punishes or clashes with the mother-in-law's Life line, the daughter-in-law overrides her elders and is unruly and unfilial; if it generates or combines with it, she follows a wife's way and is respectful and dutiful."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8038, 8038],
+          "zh": ["妇僭姑嫜之爻，家声可见。"],
+          "yi": ["儿媳越过婆婆的爻，家里的名声就可以看到。"],
+          "en": ["The daughter-in-law overstepping the mother-in-law's line: the family's reputation can be seen."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8039, 8039],
+          "zh": ["二为媳妇之命爻。", "临姑之身爻，相刑相冲，主凌尊上，悖逆不孝；", "相生相合，主顺妇道也。"],
+          "yi": ["第二爻是儿媳妇的命爻。", "临到婆婆的身爻上，相刑相冲，主欺凌尊长、悖逆不孝；", "相生相合，主顺从妇道。"],
+          "en": ["The second line is the daughter-in-law's Life line.", "Sitting on the mother-in-law's Body line and punishing or clashing with it, it means overriding her elders and being unruly and unfilial;", "generating and combining, it means following a wife's way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3108, 3108],
+          "zh": ["二为媳妇之爻，与姑之命爻相刑相克，主凌上悖逆不孝；", "相生相合，主能敬孝尽妇道也。"],
+          "yi": ["第二爻是儿媳妇的爻，与婆婆的命爻相刑相克，主欺凌尊长、悖逆不孝；", "相生相合，主能恭敬孝顺、尽儿媳的本分。"],
+          "en": ["The second line is the daughter-in-law's line; if it punishes or controls the mother-in-law's Life line, it means overriding her elders and being unruly and unfilial;", "if they generate and combine, it means she can be respectful and dutiful and do her part as a daughter-in-law."] }
+      ],
+      "note": {
+        "yi": "经文旧注本作「妇僭姑嫜之爻」（僭，越过），卜筮正宗作「妇谐姑嫜之爻」（谐，和顺），一字之差，意思相反的读法都通。注文两家都同时讲了刑克和生合两种情形。",
+        "en": "The old commentary text of the couplet reads 'the daughter-in-law oversteps the mother-in-law's line' and the Bushi Zhengzong 'the daughter-in-law is in harmony with the mother-in-law's line', a one-character difference; both readings make sense, and the notes of both speak of the punishing and controlling case as well as the generating and combining one."
+      },
+      "see": ["LY.MARRY.TXF.10", "LY.MARRY.HJC.20", "LY.MARRY.YY.10"]
+    }
+  ]
+}
