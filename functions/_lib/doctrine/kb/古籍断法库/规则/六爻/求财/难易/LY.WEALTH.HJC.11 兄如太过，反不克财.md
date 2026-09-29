@@ -15,6 +15,7 @@ speakers:
   - "王洪绪注(《卜筮正宗》)"
   - "《增删卜易》正文(未标说话人)"
   - "觉子(李文辉,《增删卜易》)"
+  - "书中卦例"
 dispute: true
 terms:
   - "[[妻财]]"
@@ -97,18 +98,18 @@ aliases:
 
 ^q5
 
-## 觉子(李文辉,《增删卜易》)
+## 书中卦例
 
-> [!quote]+ [[增删卜易]] 第 11102 行 · Juezi (Li Wenhui, Zengshan Buyi)
+> [!quote]+ [[增删卜易]] 第 11102 行 · Case from the book
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
 > | 如：巳月 丙辰日 (旬空：子丑)，占放印子钱，得“未济之归妹” | 例：巳月丙辰日（旬空子、丑），占放高利贷，得未济卦变归妹卦。 | Case: Si month, Bingchen day (void: Zi and Chou); the question was lending money at interest; the hexagram Weiji changing to Guimei. |
 
 ^q6
 
-## 觉子(李文辉,《增删卜易》)
+## 书中卦例
 
-> [!quote]+ [[增删卜易]] 第 11133 行 · Juezi (Li Wenhui, Zengshan Buyi)
+> [!quote]+ [[增删卜易]] 第 11133 行 · Case from the book
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
 > | 断曰：此卦月建世爻，动变之爻，俱是兄弟， | 断语：这一卦月建、世爻、动爻、变爻都是兄弟， | Judgment: in this hexagram the Month, the Self line, and the moving and changed lines are all Peer; |

@@ -4,7 +4,20 @@
   "work": "黄金策",
   "chapter": "求财",
   "chapter_en": "Seeking wealth",
-  "ranges": { "卜筮大全": [7759, 7907], "卜筮正宗": [2653, 2738], "增删卜易": [11080, 11257] },
+  "ranges": {
+    "卜筮大全": [
+      7759,
+      7907
+    ],
+    "卜筮正宗": [
+      2653,
+      2738
+    ],
+    "增删卜易": [
+      11080,
+      11257
+    ]
+  },
   "units": [
     {
       "id": "LY.WEALTH.HJC.01",
@@ -15,22 +28,79 @@
         "en": "For money, the Wealth line is the Subject and Output is its Support, the source of money; judge the outcome from these two lines first."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["居货曰贾，行货曰商，总为资生之计；", "蓍所以筮，龟所以卜，莫非就利之谋。", "要问吉凶，但看财福。"],
-          "yi": ["坐店卖货叫「贾」，贩运货物叫「商」，说到底都是谋生的办法；", "人们用蓍草来筮、用龟甲来卜，问的无非是怎么得利。", "要问求财的吉凶，只看妻财和子孙（福）。"],
-          "en": ["Keeping goods in a shop is called gu, carrying goods to trade is called shang; both are ways of making a living;", "we divine with yarrow stalks and with the tortoise shell, and what we ask is how to profit.", "To know whether it turns out well or badly, look only at Wealth and its source, Output (fu)."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["财为利息，福为财源。", "二者占财用神。"],
-          "yi": ["妻财代表利润，子孙（福）代表财的来源。", "这两爻是占财时要取的用神。"],
-          "en": ["Wealth is the profit; Output (fu) is the source of the money.", "These two are the Subject lines of a money question."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["财为本，福为利，", "二者不可损坏。", "卦中子孙之爻，称曰福神。"],
-          "yi": ["妻财是本钱，子孙是利润，", "两者都不能受损。", "卦里的子孙爻，叫作「福神」。"],
-          "en": ["Wealth is the capital, Output is the profit;", "neither may be damaged.", "The Output line in a hexagram is called the spirit of fortune (fushen)."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["上至国课，下至营谋，无不以财为用，", "公占私卜，皆以财为用神。", "子孙者，乃生助财爻之元神也，"],
-          "yi": ["大到国家赋税，小到个人生意，没有不以财为用的；", "无论为公事还是私事占问，都以妻财为用神。", "子孙是生助财爻的原神。"],
-          "en": ["From the state's taxes down to a private venture, everything turns on money;", "whether the question is public or private, Wealth is the Subject.", "Output is the Support that generates and helps the Wealth line."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "居货曰贾，行货曰商，总为资生之计；",
+            "蓍所以筮，龟所以卜，莫非就利之谋。",
+            "要问吉凶，但看财福。"
+          ],
+          "yi": [
+            "坐店卖货叫「贾」，贩运货物叫「商」，说到底都是谋生的办法；",
+            "人们用蓍草来筮、用龟甲来卜，问的无非是怎么得利。",
+            "要问求财的吉凶，只看妻财和子孙（福）。"
+          ],
+          "en": [
+            "Keeping goods in a shop is called gu, carrying goods to trade is called shang; both are ways of making a living;",
+            "we divine with yarrow stalks and with the tortoise shell, and what we ask is how to profit.",
+            "To know whether it turns out well or badly, look only at Wealth and its source, Output (fu)."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "财为利息，福为财源。",
+            "二者占财用神。"
+          ],
+          "yi": [
+            "妻财代表利润，子孙（福）代表财的来源。",
+            "这两爻是占财时要取的用神。"
+          ],
+          "en": [
+            "Wealth is the profit; Output (fu) is the source of the money.",
+            "These two are the Subject lines of a money question."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "财为本，福为利，",
+            "二者不可损坏。",
+            "卦中子孙之爻，称曰福神。"
+          ],
+          "yi": [
+            "妻财是本钱，子孙是利润，",
+            "两者都不能受损。",
+            "卦里的子孙爻，叫作「福神」。"
+          ],
+          "en": [
+            "Wealth is the capital, Output is the profit;",
+            "neither may be damaged.",
+            "The Output line in a hexagram is called the spirit of fortune (fushen)."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "上至国课，下至营谋，无不以财为用，",
+            "公占私卜，皆以财为用神。",
+            "子孙者，乃生助财爻之元神也，"
+          ],
+          "yi": [
+            "大到国家赋税，小到个人生意，没有不以财为用的；",
+            "无论为公事还是私事占问，都以妻财为用神。",
+            "子孙是生助财爻的原神。"
+          ],
+          "en": [
+            "From the state's taxes down to a private venture, everything turns on money;",
+            "whether the question is public or private, Wealth is the Subject.",
+            "Output is the Support that generates and helps the Wealth line."
+          ]
+        }
       ],
       "dispute": {
         "yi": "财、福各指什么，两家注说得相反：旧注说妻财是利润、子孙是财源；王洪绪说妻财是本钱、子孙是利润。野鹤只说子孙是生财的原神。三家都以妻财为用神、子孙为最要紧的帮手。",
@@ -46,26 +116,92 @@
         "en": "Wealth thriving and Output moving: money comes as wished, public or private. Wealth and Output void, in tomb or extinction (or harmed with no rescue): no business goes as wished. Yehe adds: they should turn into something favourable and generate or combine with the Self line; bad if they turn into something harmful or are clashed and broken by the Day or Month."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["财旺福兴，不问公私皆称意；", "财空福绝，不拘营运总违心。"],
-          "yi": ["妻财旺相、子孙兴旺，不论公事私事都能如意；", "妻财落空、子孙衰绝，不论做什么营生都不如意。"],
-          "en": ["When Wealth is thriving and Output flourishing, things go as wished, public or private;", "when Wealth is void and Output extinguished, whatever the business, it goes against your wishes."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["凡遇财爻旺相，子孙发动，便是吉卦。", "不拘公私，财皆得称意。", "二者若财空爻，或临墓绝，即是凶卦。", "不拘作何买卖，皆违心愿也。"],
-          "yi": ["凡是财爻旺相、子孙发动，就是吉卦。", "不管公事私事，求财都能如意。", "这两爻如果落空，或临墓、绝，就是凶卦。", "不管做什么买卖，都不能如愿。"],
-          "en": ["Whenever the Wealth line is thriving and Output is moving, the hexagram is auspicious.", "Public or private, the money comes as wished.", "If these two are void, or sit in tomb or extinction, the hexagram is inauspicious.", "Whatever the trade, it goes against your wishes."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["财爻旺相，子孙发动，不拘公私之谋，皆能称意；", "或伤克，或临墓绝无救，不拘买卖皆违心所愿。"],
-          "yi": ["财爻旺相、子孙发动，不论为公为私谋划，都能如意；", "如果受伤克，或临墓、绝又没有救，不论什么买卖都不遂心。"],
-          "en": ["With the Wealth line thriving and Output moving, any plan, public or private, goes as wished;", "if they are harmed and controlled, or sit in tomb or extinction with no rescue, every trade goes against your wishes."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["财旺福兴，公私称意；", "财空福绝，上下连心。"],
-          "yi": ["财旺福兴，公事私事都如意；", "财空福绝，上上下下都揪心。"],
-          "en": ["Wealth thriving and Output flourishing: public and private matters go as wished;", "Wealth void and Output extinguished: high and low alike are sick at heart."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["俱宜旺而化吉，又宜生合世爻，公私皆得如意。", "若逢衰墓绝空、刑冲克害、动而变凶、日月冲破者，上下皆连心矣。"],
-          "yi": ["财、福都宜旺相而且化吉，又宜生合世爻，这样公事私事都能如意。", "如果遇到衰、墓、绝、空，受刑冲克害，动而变凶，或被日月冲破，上上下下都要揪心了。"],
-          "en": ["Both should be strong and turn into something favourable, and should generate or combine with the Self line; then public and private matters go as wished.", "If they are weak, entombed, extinguished or void, punished, clashed, controlled or harmed, turn into something harmful when they move, or are clashed and broken by the Day or Month, high and low alike are sick at heart."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "财旺福兴，不问公私皆称意；",
+            "财空福绝，不拘营运总违心。"
+          ],
+          "yi": [
+            "妻财旺相、子孙兴旺，不论公事私事都能如意；",
+            "妻财落空、子孙衰绝，不论做什么营生都不如意。"
+          ],
+          "en": [
+            "When Wealth is thriving and Output flourishing, things go as wished, public or private;",
+            "when Wealth is void and Output extinguished, whatever the business, it goes against your wishes."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "凡遇财爻旺相，子孙发动，便是吉卦。",
+            "不拘公私，财皆得称意。",
+            "二者若财空爻，或临墓绝，即是凶卦。",
+            "不拘作何买卖，皆违心愿也。"
+          ],
+          "yi": [
+            "凡是财爻旺相、子孙发动，就是吉卦。",
+            "不管公事私事，求财都能如意。",
+            "这两爻如果落空，或临墓、绝，就是凶卦。",
+            "不管做什么买卖，都不能如愿。"
+          ],
+          "en": [
+            "Whenever the Wealth line is thriving and Output is moving, the hexagram is auspicious.",
+            "Public or private, the money comes as wished.",
+            "If these two are void, or sit in tomb or extinction, the hexagram is inauspicious.",
+            "Whatever the trade, it goes against your wishes."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "财爻旺相，子孙发动，不拘公私之谋，皆能称意；",
+            "或伤克，或临墓绝无救，不拘买卖皆违心所愿。"
+          ],
+          "yi": [
+            "财爻旺相、子孙发动，不论为公为私谋划，都能如意；",
+            "如果受伤克，或临墓、绝又没有救，不论什么买卖都不遂心。"
+          ],
+          "en": [
+            "With the Wealth line thriving and Output moving, any plan, public or private, goes as wished;",
+            "if they are harmed and controlled, or sit in tomb or extinction with no rescue, every trade goes against your wishes."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "财旺福兴，公私称意；",
+            "财空福绝，上下连心。"
+          ],
+          "yi": [
+            "财旺福兴，公事私事都如意；",
+            "财空福绝，上上下下都揪心。"
+          ],
+          "en": [
+            "Wealth thriving and Output flourishing: public and private matters go as wished;",
+            "Wealth void and Output extinguished: high and low alike are sick at heart."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "俱宜旺而化吉，又宜生合世爻，公私皆得如意。",
+            "若逢衰墓绝空、刑冲克害、动而变凶、日月冲破者，上下皆连心矣。"
+          ],
+          "yi": [
+            "财、福都宜旺相而且化吉，又宜生合世爻，这样公事私事都能如意。",
+            "如果遇到衰、墓、绝、空，受刑冲克害，动而变凶，或被日月冲破，上上下下都要揪心了。"
+          ],
+          "en": [
+            "Both should be strong and turn into something favourable, and should generate or combine with the Self line; then public and private matters go as wished.",
+            "If they are weak, entombed, extinguished or void, punished, clashed, controlled or harmed, turn into something harmful when they move, or are clashed and broken by the Day or Month, high and low alike are sick at heart."
+          ]
+        }
       ],
       "note": {
         "yi": "野鹤把经文「总违心」改成了「上下连心」。两个本子（合集本、殆知阁本）都作「连心」；这里按上下文读作「揪心、忧心」，是整理者的读法。",
@@ -81,22 +217,97 @@
         "en": "With Wealth absent (or still) but Output present, a moving Peer line actually gives hope: Peer feeds Output and Output feeds Wealth, only slowly. Wealth void while Peer moves is called 'hiding in the void': the money comes after the ten-day cycle, on a day that births or empowers Wealth. Wealth neither void nor hidden yet robbed by Peer is the lowest grade. Wang Hongxu and Yehe both require Output to be moving too."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["有福无财，", "兄弟交重偏有望；"],
-          "yi": ["子孙在、妻财不在，", "兄弟发动反而有希望；"],
-          "en": ["With Output present but no Wealth,", "a moving Peer line actually gives hope;"] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["财为用神，而不上卦，必无可望。", "若得兄弟发动，无财可劫，则反生扶福德，财源有气，仍旧有望，但主迟滞耳。", "兄动而财空，谓之避空。", "过旬生旺日，财亦可得。", "财若不空不伏，而遇兄劫，则为下卦。"],
-          "yi": ["妻财是用神，它不在卦上，本来没有指望。", "但如果兄弟发动，卦里没有财可劫，它反而去生扶子孙，财源有了力量，仍然有希望，只是来得慢。", "兄弟动而财爻落空，叫作「避空」（财在空里，兄弟劫不着）。", "过了这一旬，到财爻生旺的日子，财也能得到。", "财爻如果既不空也不伏，却被兄弟劫，就是下等卦。"],
-          "en": ["Wealth is the Subject; if it is absent from the hexagram there should be nothing to hope for.", "But if the Peer line moves and finds no Wealth to rob, it generates and supports Output instead; the source of money gains force and there is still hope, only slow.", "When Peer moves and Wealth is void, this is called 'hiding in the void' (the robber cannot reach it).", "After the ten-day cycle passes, on a day that births or empowers Wealth, the money can still be had.", "If Wealth is neither void nor hidden and yet Peer robs it, the hexagram is of the lowest grade."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["有者言其发动之意，无者言其伏藏之意。", "凡卜求财，卦中子孙爻动而无伤，则财源丰厚固吉。", "如再见兄弟爻发动，生扶子孙，则财愈加根深蒂固，", "故曰“兄弟爻交重偏有望”，皆为子孙亦动也。"],
-          "yi": ["「有」是说它发动，「无」是说它伏藏。", "凡是卜求财，卦里子孙爻发动而不受伤，财源丰厚，本来就吉。", "如果再见到兄弟爻发动，去生扶子孙，财就更加根深蒂固，", "所以说「兄弟交重偏有望」，都是因为子孙也在动。"],
-          "en": ["'Present' here means moving; 'absent' means hidden.", "In any money question, if the Output line moves and is unharmed, the source of money is rich and the outlook is good.", "If a Peer line also moves and feeds Output, the money is rooted all the deeper;", "that is why it says 'a moving Peer line gives hope': it is always because Output is moving too."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["有福无财，兄弟交重偏有望。", "兄弟乃劫财之神，占财之最忌也。", "财兄同动，必主阻隔破耗。", "假设财静及不现者，倘得子孙与兄弟同动，又为可喜，以兄动生子孙也，故曰有望。", "若财爻、动爻、子孙爻俱动于卦中者，更为可喜，", "盖兄动生子、子动生财，其利甚厚，且主财有根源，利能久远也。"],
-          "yi": ["有福无财，兄弟发动反而有望。", "兄弟是劫财之神，是占财最忌的。", "财和兄弟一起动，一定有阻隔、破耗。", "假如财爻安静或不在卦上，而子孙和兄弟一起动，又是可喜的，因为兄弟动去生子孙，所以说有望。", "如果财爻、兄爻（原文作「动爻」）、子孙爻都在卦中发动，更可喜，", "因为兄弟动生子孙、子孙动生财，利益很厚，而且财有根源，利能长久。"],
-          "en": ["With Output present but no Wealth, a moving Peer line gives hope.", "Peer is the robber of wealth, the thing most feared in a money question.", "If Wealth and Peer move together there will be obstruction and loss.", "But if Wealth is still or absent and Output moves together with Peer, that is welcome, because the moving Peer feeds Output; hence 'gives hope'.", "If the Wealth line, the Peer line (the text says 'the moving line') and the Output line all move in the hexagram, better still,", "for Peer feeds Output and Output feeds Wealth: the profit is rich, the money has a root, and the gain lasts."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "有福无财，",
+            "兄弟交重偏有望；"
+          ],
+          "yi": [
+            "子孙在、妻财不在，",
+            "兄弟发动反而有希望；"
+          ],
+          "en": [
+            "With Output present but no Wealth,",
+            "a moving Peer line actually gives hope;"
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "财为用神，而不上卦，必无可望。",
+            "若得兄弟发动，无财可劫，则反生扶福德，财源有气，仍旧有望，但主迟滞耳。",
+            "兄动而财空，谓之避空。",
+            "过旬生旺日，财亦可得。",
+            "财若不空不伏，而遇兄劫，则为下卦。"
+          ],
+          "yi": [
+            "妻财是用神，它不在卦上，本来没有指望。",
+            "但如果兄弟发动，卦里没有财可劫，它反而去生扶子孙，财源有了力量，仍然有希望，只是来得慢。",
+            "兄弟动而财爻落空，叫作「避空」（财在空里，兄弟劫不着）。",
+            "过了这一旬，到财爻生旺的日子，财也能得到。",
+            "财爻如果既不空也不伏，却被兄弟劫，就是下等卦。"
+          ],
+          "en": [
+            "Wealth is the Subject; if it is absent from the hexagram there should be nothing to hope for.",
+            "But if the Peer line moves and finds no Wealth to rob, it generates and supports Output instead; the source of money gains force and there is still hope, only slow.",
+            "When Peer moves and Wealth is void, this is called 'hiding in the void' (the robber cannot reach it).",
+            "After the ten-day cycle passes, on a day that births or empowers Wealth, the money can still be had.",
+            "If Wealth is neither void nor hidden and yet Peer robs it, the hexagram is of the lowest grade."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "有者言其发动之意，无者言其伏藏之意。",
+            "凡卜求财，卦中子孙爻动而无伤，则财源丰厚固吉。",
+            "如再见兄弟爻发动，生扶子孙，则财愈加根深蒂固，",
+            "故曰“兄弟爻交重偏有望”，皆为子孙亦动也。"
+          ],
+          "yi": [
+            "「有」是说它发动，「无」是说它伏藏。",
+            "凡是卜求财，卦里子孙爻发动而不受伤，财源丰厚，本来就吉。",
+            "如果再见到兄弟爻发动，去生扶子孙，财就更加根深蒂固，",
+            "所以说「兄弟交重偏有望」，都是因为子孙也在动。"
+          ],
+          "en": [
+            "'Present' here means moving; 'absent' means hidden.",
+            "In any money question, if the Output line moves and is unharmed, the source of money is rich and the outlook is good.",
+            "If a Peer line also moves and feeds Output, the money is rooted all the deeper;",
+            "that is why it says 'a moving Peer line gives hope': it is always because Output is moving too."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "有福无财，兄弟交重偏有望。",
+            "兄弟乃劫财之神，占财之最忌也。",
+            "财兄同动，必主阻隔破耗。",
+            "假设财静及不现者，倘得子孙与兄弟同动，又为可喜，以兄动生子孙也，故曰有望。",
+            "若财爻、动爻、子孙爻俱动于卦中者，更为可喜，",
+            "盖兄动生子、子动生财，其利甚厚，且主财有根源，利能久远也。"
+          ],
+          "yi": [
+            "有福无财，兄弟发动反而有望。",
+            "兄弟是劫财之神，是占财最忌的。",
+            "财和兄弟一起动，一定有阻隔、破耗。",
+            "假如财爻安静或不在卦上，而子孙和兄弟一起动，又是可喜的，因为兄弟动去生子孙，所以说有望。",
+            "如果财爻、兄爻（原文作「动爻」）、子孙爻都在卦中发动，更可喜，",
+            "因为兄弟动生子孙、子孙动生财，利益很厚，而且财有根源，利能长久。"
+          ],
+          "en": [
+            "With Output present but no Wealth, a moving Peer line gives hope.",
+            "Peer is the robber of wealth, the thing most feared in a money question.",
+            "If Wealth and Peer move together there will be obstruction and loss.",
+            "But if Wealth is still or absent and Output moves together with Peer, that is welcome, because the moving Peer feeds Output; hence 'gives hope'.",
+            "If the Wealth line, the Peer line (the text says 'the moving line') and the Output line all move in the hexagram, better still,",
+            "for Peer feeds Output and Output feeds Wealth: the profit is rich, the money has a root, and the gain lasts."
+          ]
+        }
       ],
       "dispute": {
         "yi": "「有福无财」怎么读：旧注读作「财不上卦」，只要兄弟发动去生子孙就有望；王洪绪把「有、无」读成「动、伏」，而且认为有望全靠子孙也在动；野鹤也要子孙和兄弟同动，并说财、兄同动主阻隔。",
@@ -116,22 +327,79 @@
         "en": "If Wealth is present but Output is not, any Peer line would rob it; a moving Pressure line (or a Pressure Day branch) that holds Peer down still makes the money obtainable, arriving on a day that births or empowers Pressure. If Output is present, a moving Pressure line becomes an obstruction instead. Yehe restates the condition as Peer and Wealth moving together, with a moving Pressure line restraining Peer."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["有财无福，", "官爻发动亦堪求。"],
-          "yi": ["妻财在、子孙不在，", "官鬼发动也还可以求。"],
-          "en": ["With Wealth present but no Output,", "a moving Pressure line still makes it worth pursuing."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["子孙藏伏，财无生气，一遇兄弟，便被劫尽。", "须得卦有官动，或日辰是鬼克制兄爻，则用神无损，亦可求谋。", "卦有子孙而官鬼动，则有阻节，反不易矣。", "此象鬼爻生旺日得财。"],
-          "yi": ["子孙伏藏不现，财就没有生气，一碰上兄弟，就被劫光。", "必须卦里有官鬼发动，或者日辰就是官鬼、克住兄弟，用神才不受损，也可以去求。", "如果卦里有子孙，官鬼再动，反而会有阻滞，不容易了。", "这种卦象，在官鬼生旺的日子得财。"],
-          "en": ["With Output hidden, Wealth has no living source, and the first Peer line it meets robs it bare.", "It needs a moving Pressure line in the hexagram, or a Day branch of the Pressure element holding the Peer line down; then the Subject is unharmed and the venture can be tried.", "If Output is present and Pressure moves, there will be obstruction instead, and it becomes harder.", "In this pattern the money comes on a day that births or empowers the Pressure line."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["子孙藏伏，财无生气，一遇兄弟便被劫夺，", "须得卦中官爻发动，或日辰是鬼克制兄弟，亦可求谋。", "如有子孙，而官鬼动则有阻滞，又不易矣。"],
-          "yi": ["子孙伏藏，财没有生气，一碰上兄弟就被劫走；", "必须卦里官鬼发动，或者日辰是官鬼、克制兄弟，才可以求。", "如果有子孙，官鬼再动就有阻滞，又不容易了。"],
-          "en": ["With Output hidden, Wealth has no living source and the first Peer line robs it;", "it needs a moving Pressure line, or a Pressure Day branch holding the Peer line down, before it can be pursued.", "If Output is present, a moving Pressure line brings obstruction and makes it hard again."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["兄兴财振，官爻发动亦堪求。", "兄财同动，而官鬼亦动者，亦许得财，以官鬼克制兄爻之故耳。"],
-          "yi": ["兄弟和妻财同时发动，官鬼也动，也还可以求。", "兄弟、妻财一起动，官鬼也动，也可以断得财，因为官鬼克住了兄弟。"],
-          "en": ["When Peer and Wealth both stir, a moving Pressure line still makes it worth pursuing.", "If Peer and Wealth move together and Pressure moves too, money may still be granted, because Pressure holds the Peer line down."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "有财无福，",
+            "官爻发动亦堪求。"
+          ],
+          "yi": [
+            "妻财在、子孙不在，",
+            "官鬼发动也还可以求。"
+          ],
+          "en": [
+            "With Wealth present but no Output,",
+            "a moving Pressure line still makes it worth pursuing."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "子孙藏伏，财无生气，一遇兄弟，便被劫尽。",
+            "须得卦有官动，或日辰是鬼克制兄爻，则用神无损，亦可求谋。",
+            "卦有子孙而官鬼动，则有阻节，反不易矣。",
+            "此象鬼爻生旺日得财。"
+          ],
+          "yi": [
+            "子孙伏藏不现，财就没有生气，一碰上兄弟，就被劫光。",
+            "必须卦里有官鬼发动，或者日辰就是官鬼、克住兄弟，用神才不受损，也可以去求。",
+            "如果卦里有子孙，官鬼再动，反而会有阻滞，不容易了。",
+            "这种卦象，在官鬼生旺的日子得财。"
+          ],
+          "en": [
+            "With Output hidden, Wealth has no living source, and the first Peer line it meets robs it bare.",
+            "It needs a moving Pressure line in the hexagram, or a Day branch of the Pressure element holding the Peer line down; then the Subject is unharmed and the venture can be tried.",
+            "If Output is present and Pressure moves, there will be obstruction instead, and it becomes harder.",
+            "In this pattern the money comes on a day that births or empowers the Pressure line."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "子孙藏伏，财无生气，一遇兄弟便被劫夺，",
+            "须得卦中官爻发动，或日辰是鬼克制兄弟，亦可求谋。",
+            "如有子孙，而官鬼动则有阻滞，又不易矣。"
+          ],
+          "yi": [
+            "子孙伏藏，财没有生气，一碰上兄弟就被劫走；",
+            "必须卦里官鬼发动，或者日辰是官鬼、克制兄弟，才可以求。",
+            "如果有子孙，官鬼再动就有阻滞，又不容易了。"
+          ],
+          "en": [
+            "With Output hidden, Wealth has no living source and the first Peer line robs it;",
+            "it needs a moving Pressure line, or a Pressure Day branch holding the Peer line down, before it can be pursued.",
+            "If Output is present, a moving Pressure line brings obstruction and makes it hard again."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "兄兴财振，官爻发动亦堪求。",
+            "兄财同动，而官鬼亦动者，亦许得财，以官鬼克制兄爻之故耳。"
+          ],
+          "yi": [
+            "兄弟和妻财同时发动，官鬼也动，也还可以求。",
+            "兄弟、妻财一起动，官鬼也动，也可以断得财，因为官鬼克住了兄弟。"
+          ],
+          "en": [
+            "When Peer and Wealth both stir, a moving Pressure line still makes it worth pursuing.",
+            "If Peer and Wealth move together and Pressure moves too, money may still be granted, because Pressure holds the Peer line down."
+          ]
+        }
       ],
       "dispute": {
         "yi": "野鹤把经文前半句「有财无福」改成「兄兴财振」：适用的卦从「子孙不现」换成了「兄、财同动」。两种说法的理由一样——官鬼克兄弟、护住财——但管的是不同的卦。",
@@ -147,26 +415,92 @@
         "en": "If neither Wealth nor Output is in the hexagram, or they are there but weak, void, broken, entombed, extinguished, controlled or clashed, there is no hope in pursuing money; better to hold still. Exception (Juezi): the Day or Month is Wealth itself, or the hidden Wealth line is strong."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["财福俱无，", "何异守株而待兔；"],
-          "yi": ["妻财、子孙都没有，", "和守着树桩等兔子撞上来有什么两样；"],
-          "en": ["With neither Wealth nor Output,", "it is no different from waiting by a tree stump for a hare to run into it;"] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["财福二爻，占财主象。", "有财无福，财必有限；有福无财，财必不实；", "财福俱无，焉能有望？", "守株待兔，喻妄想也，空亡亦然。"],
-          "yi": ["妻财、子孙两爻，是占财的主要象。", "有财无子孙，财一定有限；有子孙无财，财一定不实在；", "两样都没有，哪来的指望？", "守株待兔比喻空想；两爻落空亡也一样。"],
-          "en": ["Wealth and Output are the two main signs in a money question.", "Wealth without Output: the money will be limited; Output without Wealth: the money will not be solid;", "with neither, what hope can there be?", "Waiting by the stump for a hare is a figure for wishful thinking; the same holds if both are void."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["有财无福，财必艰难，岂可财福俱无？", "守株待兔，喻妄想也。"],
-          "yi": ["有财无子孙，求财已经艰难，哪能财、福都没有？", "守株待兔，比喻空想。"],
-          "en": ["With Wealth but no Output the money is already hard to get; how could one do with neither?", "Waiting by the stump for a hare is a figure for wishful thinking."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["财福俱无，莫若守株而待兔。", "财与子孙爻俱不现，或现而又值休囚、空破、墓绝，或被克害刑冲，", "须宜株守，图则无益。"],
-          "yi": ["妻财、子孙都没有，不如守着树桩等兔子（安守不动）。", "财爻和子孙爻都不在卦上，或者在卦上却休囚、空亡、月破、入墓、临绝，或者受克、害、刑、冲，", "就该守着不动，去谋求也没有用。"],
-          "en": ["With neither Wealth nor Output, better to sit by the stump and wait for the hare (that is, stay put).", "If neither the Wealth line nor the Output line appears, or they appear but are resting or trapped, void or broken, in tomb or extinction, or are controlled, harmed, punished or clashed,", "one should hold still; pursuing it brings nothing."] },
-        { "by": "觉子", "book": "增删卜易",
-          "zh": ["觉子曰：倘得日月为财，或伏而旺者，亦可求也。"],
-          "yi": ["觉子说：如果日辰或月建就是财，或者财爻伏藏而旺，也还可以求。"],
-          "en": ["Juezi says: if the Day or the Month is itself Wealth, or the Wealth line is hidden but strong, it can still be pursued."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "财福俱无，",
+            "何异守株而待兔；"
+          ],
+          "yi": [
+            "妻财、子孙都没有，",
+            "和守着树桩等兔子撞上来有什么两样；"
+          ],
+          "en": [
+            "With neither Wealth nor Output,",
+            "it is no different from waiting by a tree stump for a hare to run into it;"
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "财福二爻，占财主象。",
+            "有财无福，财必有限；有福无财，财必不实；",
+            "财福俱无，焉能有望？",
+            "守株待兔，喻妄想也，空亡亦然。"
+          ],
+          "yi": [
+            "妻财、子孙两爻，是占财的主要象。",
+            "有财无子孙，财一定有限；有子孙无财，财一定不实在；",
+            "两样都没有，哪来的指望？",
+            "守株待兔比喻空想；两爻落空亡也一样。"
+          ],
+          "en": [
+            "Wealth and Output are the two main signs in a money question.",
+            "Wealth without Output: the money will be limited; Output without Wealth: the money will not be solid;",
+            "with neither, what hope can there be?",
+            "Waiting by the stump for a hare is a figure for wishful thinking; the same holds if both are void."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "有财无福，财必艰难，岂可财福俱无？",
+            "守株待兔，喻妄想也。"
+          ],
+          "yi": [
+            "有财无子孙，求财已经艰难，哪能财、福都没有？",
+            "守株待兔，比喻空想。"
+          ],
+          "en": [
+            "With Wealth but no Output the money is already hard to get; how could one do with neither?",
+            "Waiting by the stump for a hare is a figure for wishful thinking."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "财福俱无，莫若守株而待兔。",
+            "财与子孙爻俱不现，或现而又值休囚、空破、墓绝，或被克害刑冲，",
+            "须宜株守，图则无益。"
+          ],
+          "yi": [
+            "妻财、子孙都没有，不如守着树桩等兔子（安守不动）。",
+            "财爻和子孙爻都不在卦上，或者在卦上却休囚、空亡、月破、入墓、临绝，或者受克、害、刑、冲，",
+            "就该守着不动，去谋求也没有用。"
+          ],
+          "en": [
+            "With neither Wealth nor Output, better to sit by the stump and wait for the hare (that is, stay put).",
+            "If neither the Wealth line nor the Output line appears, or they appear but are resting or trapped, void or broken, in tomb or extinction, or are controlled, harmed, punished or clashed,",
+            "one should hold still; pursuing it brings nothing."
+          ]
+        },
+        {
+          "by": "觉子",
+          "book": "增删卜易",
+          "zh": [
+            "觉子曰：倘得日月为财，或伏而旺者，亦可求也。"
+          ],
+          "yi": [
+            "觉子说：如果日辰或月建就是财，或者财爻伏藏而旺，也还可以求。"
+          ],
+          "en": [
+            "Juezi says: if the Day or the Month is itself Wealth, or the Wealth line is hidden but strong, it can still be pursued."
+          ]
+        }
       ],
       "note": {
         "yi": "野鹤把「何异守株而待兔」改成「莫若守株而待兔」：经文说这是空想，野鹤借同一个典故劝人按兵不动。觉子另补了两种还能求的情形。",
@@ -182,22 +516,76 @@
         "en": "If Resource and Peer both move, Resource cuts off Output (the source of money) and Peer robs Wealth: the money cannot be had. Resource turning into Peer, or Peer into Resource, is judged the same."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["父兄皆动，", "无殊缘木以求鱼。"],
-          "yi": ["父母、兄弟都发动，", "和爬到树上去捉鱼没有两样。"],
-          "en": ["When Resource and Peer both move,", "it is like climbing a tree to catch fish."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["父母为绝源杀，兄弟为劫财神。", "二者发动，财福俱伤。", "用神既损，求之必如缘木求鱼，必不可得。", "父化兄，兄化父，亦然。"],
-          "yi": ["父母是断绝财源的煞，兄弟是劫财的神。", "这两爻发动，妻财和子孙都受伤。", "用神已经受损，去求就像缘木求鱼，一定得不到。", "父母化兄弟、兄弟化父母，也一样。"],
-          "en": ["Resource is the killer of the source; Peer is the robber of wealth.", "When both move, Wealth and Output are both harmed.", "With the Subject damaged, seeking the money is climbing a tree for fish: it cannot be had.", "Resource turning into Peer, or Peer into Resource, is the same."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["父母能克子孙，能生兄弟，", "父兄皆动，犹如缘木求鱼，言必不可得也。"],
-          "yi": ["父母能克子孙，又能生兄弟，", "父母、兄弟都动，就像缘木求鱼，意思是一定得不到。"],
-          "en": ["Resource controls Output and generates Peer;", "so when Resource and Peer both move it is like climbing a tree for fish, meaning the money cannot be had."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["父兄爻动，无殊缘木以求鱼。", "父动克福神，兄动克财爻，此二爻动于卦中，凡图无济。"],
-          "yi": ["父母、兄弟爻发动，和缘木求鱼没有两样。", "父母动克子孙，兄弟动克财爻，这两爻在卦中发动，凡是谋求都没用。"],
-          "en": ["When the Resource and Peer lines move, it is like climbing a tree for fish.", "Resource moving controls Output, Peer moving controls the Wealth line; when these two move in the hexagram, no plan succeeds."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "父兄皆动，",
+            "无殊缘木以求鱼。"
+          ],
+          "yi": [
+            "父母、兄弟都发动，",
+            "和爬到树上去捉鱼没有两样。"
+          ],
+          "en": [
+            "When Resource and Peer both move,",
+            "it is like climbing a tree to catch fish."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "父母为绝源杀，兄弟为劫财神。",
+            "二者发动，财福俱伤。",
+            "用神既损，求之必如缘木求鱼，必不可得。",
+            "父化兄，兄化父，亦然。"
+          ],
+          "yi": [
+            "父母是断绝财源的煞，兄弟是劫财的神。",
+            "这两爻发动，妻财和子孙都受伤。",
+            "用神已经受损，去求就像缘木求鱼，一定得不到。",
+            "父母化兄弟、兄弟化父母，也一样。"
+          ],
+          "en": [
+            "Resource is the killer of the source; Peer is the robber of wealth.",
+            "When both move, Wealth and Output are both harmed.",
+            "With the Subject damaged, seeking the money is climbing a tree for fish: it cannot be had.",
+            "Resource turning into Peer, or Peer into Resource, is the same."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "父母能克子孙，能生兄弟，",
+            "父兄皆动，犹如缘木求鱼，言必不可得也。"
+          ],
+          "yi": [
+            "父母能克子孙，又能生兄弟，",
+            "父母、兄弟都动，就像缘木求鱼，意思是一定得不到。"
+          ],
+          "en": [
+            "Resource controls Output and generates Peer;",
+            "so when Resource and Peer both move it is like climbing a tree for fish, meaning the money cannot be had."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "父兄爻动，无殊缘木以求鱼。",
+            "父动克福神，兄动克财爻，此二爻动于卦中，凡图无济。"
+          ],
+          "yi": [
+            "父母、兄弟爻发动，和缘木求鱼没有两样。",
+            "父母动克子孙，兄弟动克财爻，这两爻在卦中发动，凡是谋求都没用。"
+          ],
+          "en": [
+            "When the Resource and Peer lines move, it is like climbing a tree for fish.",
+            "Resource moving controls Output, Peer moving controls the Wealth line; when these two move in the hexagram, no plan succeeds."
+          ]
+        }
       ]
     },
     {
@@ -209,18 +597,60 @@
         "en": "If the hexagram has no Wealth but the Month is Wealth, money will come within the month, and a Wealth this strong fears no Peer line; better still if Wealth also shows in the hexagram. Wang Hongxu: the Month lifts the hidden Wealth line, and the money arrives on the day that branch comes round."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["月带财神，", "卦虽无，而月中必有；"],
-          "yi": ["月建带着财，", "卦里虽然没有财，这个月里一定会有；"],
-          "en": ["When the Month carries Wealth,", "even if the hexagram has none, it will come within the month;"] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["月建为提纲。", "若带财爻得时有气，纵遇兄弟，衰不敌旺，必主财利厚。", "虽卦中无财，月中必然有。", "得出现尤妙。"],
-          "yi": ["月建是总纲。", "月建若是财爻，当令有力，即使碰上兄弟，弱的敌不过旺的，一定财利丰厚。", "即使卦里没有财，这个月里也一定会有。", "财爻再出现在卦上就更好。"],
-          "en": ["The Month is the master key.", "If the Month carries the Wealth line, in season and full of force, then even against a Peer line the weak cannot beat the strong, and the profit will be rich.", "Even with no Wealth in the hexagram, it will come within the month.", "Better still if Wealth also appears in the hexagram."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["月建为提纲，若带财爻，虽正卦无财，而伏财亦明，", "月建拱扶所伏之神，值日必有得也。"],
-          "yi": ["月建是总纲，月建若是财，即使本卦没有财，伏藏的财也显明了，", "因为月建扶起了伏着的那一爻，到它值日的那天一定能得。"],
-          "en": ["The Month is the master key; if it carries the Wealth line, then even though the main hexagram shows none, the hidden Wealth is brought to light;", "the Month props up the hidden line, and on the day its branch comes round the money will be had."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "月带财神，",
+            "卦虽无，而月中必有；"
+          ],
+          "yi": [
+            "月建带着财，",
+            "卦里虽然没有财，这个月里一定会有；"
+          ],
+          "en": [
+            "When the Month carries Wealth,",
+            "even if the hexagram has none, it will come within the month;"
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "月建为提纲。",
+            "若带财爻得时有气，纵遇兄弟，衰不敌旺，必主财利厚。",
+            "虽卦中无财，月中必然有。",
+            "得出现尤妙。"
+          ],
+          "yi": [
+            "月建是总纲。",
+            "月建若是财爻，当令有力，即使碰上兄弟，弱的敌不过旺的，一定财利丰厚。",
+            "即使卦里没有财，这个月里也一定会有。",
+            "财爻再出现在卦上就更好。"
+          ],
+          "en": [
+            "The Month is the master key.",
+            "If the Month carries the Wealth line, in season and full of force, then even against a Peer line the weak cannot beat the strong, and the profit will be rich.",
+            "Even with no Wealth in the hexagram, it will come within the month.",
+            "Better still if Wealth also appears in the hexagram."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "月建为提纲，若带财爻，虽正卦无财，而伏财亦明，",
+            "月建拱扶所伏之神，值日必有得也。"
+          ],
+          "yi": [
+            "月建是总纲，月建若是财，即使本卦没有财，伏藏的财也显明了，",
+            "因为月建扶起了伏着的那一爻，到它值日的那天一定能得。"
+          ],
+          "en": [
+            "The Month is the master key; if it carries the Wealth line, then even though the main hexagram shows none, the hidden Wealth is brought to light;",
+            "the Month props up the hidden line, and on the day its branch comes round the money will be had."
+          ]
+        }
       ]
     },
     {
@@ -232,18 +662,57 @@
         "en": "A thriving Wealth line that generates, combines with or holds the Self line means certain gain; if the Day controls it, nothing comes that day; it comes after the day has passed."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["日伤妻位，", "财虽旺，而当日应无。"],
-          "yi": ["日辰克伤财爻，", "财即使旺，当天也得不到。"],
-          "en": ["When the Day harms the Wealth line,", "even a thriving Wealth brings nothing that day."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["财爻旺相，生合持世，乃是必得之象。", "若被日辰克制其财，纵现，必然无有。", "须过此日，然后有得。"],
-          "yi": ["财爻旺相，又生合世爻或持世，本是一定能得的象。", "如果日辰克制财爻，财即使出现，也一定拿不到。", "要过了这一天，才会得到。"],
-          "en": ["A thriving Wealth line that generates, combines with or sits on the Self line is a sign of certain gain.", "But if the Day controls it, the money will not come, even though it shows.", "Only after that day passes will it be had."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["财爻旺相生合持世，乃是必得之象，", "若被日神克制，须过此日然后可得。"],
-          "yi": ["财爻旺相、生合世爻或持世，本是必得之象，", "如果被日辰克制，要过了这一天才能得。"],
-          "en": ["A thriving Wealth line that generates or combines with the Self line, or sits on it, is a sign of certain gain;", "if the Day controls it, the money comes only after that day."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "日伤妻位，",
+            "财虽旺，而当日应无。"
+          ],
+          "yi": [
+            "日辰克伤财爻，",
+            "财即使旺，当天也得不到。"
+          ],
+          "en": [
+            "When the Day harms the Wealth line,",
+            "even a thriving Wealth brings nothing that day."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "财爻旺相，生合持世，乃是必得之象。",
+            "若被日辰克制其财，纵现，必然无有。",
+            "须过此日，然后有得。"
+          ],
+          "yi": [
+            "财爻旺相，又生合世爻或持世，本是一定能得的象。",
+            "如果日辰克制财爻，财即使出现，也一定拿不到。",
+            "要过了这一天，才会得到。"
+          ],
+          "en": [
+            "A thriving Wealth line that generates, combines with or sits on the Self line is a sign of certain gain.",
+            "But if the Day controls it, the money will not come, even though it shows.",
+            "Only after that day passes will it be had."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "财爻旺相生合持世，乃是必得之象，",
+            "若被日神克制，须过此日然后可得。"
+          ],
+          "yi": [
+            "财爻旺相、生合世爻或持世，本是必得之象，",
+            "如果被日辰克制，要过了这一天才能得。"
+          ],
+          "en": [
+            "A thriving Wealth line that generates or combines with the Self line, or sits on it, is a sign of certain gain;",
+            "if the Day controls it, the money comes only after that day."
+          ]
+        }
       ]
     },
     {
@@ -255,22 +724,85 @@
         "en": "Too much Wealth (three to five lines, or coinciding with Day and Month, or moving and changed lines all Wealth) is excess and goes back and forth; it needs Wealth's tomb to gather it in: Wealth's tomb line moving or on the Self line (old commentary, Wang Hongxu), or the day Wealth enters its tomb (Yehe). Wealth turning into Wealth also means back and forth."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["多财反复，", "必须墓库以收藏；"],
-          "yi": ["财爻太多就反复不定，", "一定要有墓库把它收起来；"],
-          "en": ["Too much Wealth goes back and forth;", "it needs a tomb (storehouse) to gather it in;"] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["卦中财只一位，有气不空，生合持世皆美。", "若三五重太过，其财反复难求。", "必须卦中有财库爻发动，谓财有库藏，必得厚利。", "财化财，亦主反复不定。"],
-          "yi": ["卦里财爻只有一个，有气、不空，生合世爻或持世，都好。", "如果有三五个，太多了，这财就反复不定，难求。", "一定要卦里有财的墓库爻发动，叫作财有库藏，才会得厚利。", "财化财，也主反复不定。"],
-          "en": ["One Wealth line in the hexagram, with force and not void, generating, combining with or sitting on the Self line, is good in every way.", "Three to five of them is too much: the money goes back and forth and is hard to get.", "It needs Wealth's tomb line moving in the hexagram; that is called Wealth having a storehouse, and the profit will be rich.", "Wealth turning into Wealth also means back-and-forth uncertainty."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["卦中财现三五重为太过，其财反复难求，", "须有财之库爻持世身，谓之财有收藏，必得厚利也。"],
-          "yi": ["卦里财现三五个是太过，这财反复难求，", "要有财的库爻持世或临卦身，叫作财有收藏，才一定得厚利。"],
-          "en": ["Three to five Wealth lines showing is too much; the money goes back and forth and is hard to get;", "it needs Wealth's tomb line to sit on the Self or the Body line; that is called the money being stored, and the profit will be rich."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["多财反覆，必须墓库以收藏。", "卦中财临日月，谓之太旺，", "或动变俱是财爻，日月又作财星，谓之重叠，", "若要求谋遂心，须待财爻入墓。", "且如水作财神，辰日而得，余仿此。"],
-          "yi": ["财太多就反复，一定要等墓库把它收起来。", "卦里财爻临日辰或月建，叫作太旺；", "或者动爻、变爻都是财爻，日月又是财，叫作重叠；", "要想求得如愿，要等到财爻入墓的时候。", "比如财属水，就在辰日得（辰是水的墓），其余照此类推。"],
-          "en": ["Too much Wealth goes back and forth; it must be gathered in by its tomb.", "When the Wealth line in the hexagram coincides with the Day or Month, it is called over-strong;", "or when moving and changed lines are all Wealth lines and the Day and Month are Wealth as well, it is called piled up;", "to get what you seek, wait until the Wealth line enters its tomb.", "For instance, if Wealth is Water, the money comes on a Chen day (Water's tomb); the rest by analogy."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "多财反复，",
+            "必须墓库以收藏；"
+          ],
+          "yi": [
+            "财爻太多就反复不定，",
+            "一定要有墓库把它收起来；"
+          ],
+          "en": [
+            "Too much Wealth goes back and forth;",
+            "it needs a tomb (storehouse) to gather it in;"
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "卦中财只一位，有气不空，生合持世皆美。",
+            "若三五重太过，其财反复难求。",
+            "必须卦中有财库爻发动，谓财有库藏，必得厚利。",
+            "财化财，亦主反复不定。"
+          ],
+          "yi": [
+            "卦里财爻只有一个，有气、不空，生合世爻或持世，都好。",
+            "如果有三五个，太多了，这财就反复不定，难求。",
+            "一定要卦里有财的墓库爻发动，叫作财有库藏，才会得厚利。",
+            "财化财，也主反复不定。"
+          ],
+          "en": [
+            "One Wealth line in the hexagram, with force and not void, generating, combining with or sitting on the Self line, is good in every way.",
+            "Three to five of them is too much: the money goes back and forth and is hard to get.",
+            "It needs Wealth's tomb line moving in the hexagram; that is called Wealth having a storehouse, and the profit will be rich.",
+            "Wealth turning into Wealth also means back-and-forth uncertainty."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "卦中财现三五重为太过，其财反复难求，",
+            "须有财之库爻持世身，谓之财有收藏，必得厚利也。"
+          ],
+          "yi": [
+            "卦里财现三五个是太过，这财反复难求，",
+            "要有财的库爻持世或临卦身，叫作财有收藏，才一定得厚利。"
+          ],
+          "en": [
+            "Three to five Wealth lines showing is too much; the money goes back and forth and is hard to get;",
+            "it needs Wealth's tomb line to sit on the Self or the Body line; that is called the money being stored, and the profit will be rich."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "多财反覆，必须墓库以收藏。",
+            "卦中财临日月，谓之太旺，",
+            "或动变俱是财爻，日月又作财星，谓之重叠，",
+            "若要求谋遂心，须待财爻入墓。",
+            "且如水作财神，辰日而得，余仿此。"
+          ],
+          "yi": [
+            "财太多就反复，一定要等墓库把它收起来。",
+            "卦里财爻临日辰或月建，叫作太旺；",
+            "或者动爻、变爻都是财爻，日月又是财，叫作重叠；",
+            "要想求得如愿，要等到财爻入墓的时候。",
+            "比如财属水，就在辰日得（辰是水的墓），其余照此类推。"
+          ],
+          "en": [
+            "Too much Wealth goes back and forth; it must be gathered in by its tomb.",
+            "When the Wealth line in the hexagram coincides with the Day or Month, it is called over-strong;",
+            "or when moving and changed lines are all Wealth lines and the Day and Month are Wealth as well, it is called piled up;",
+            "to get what you seek, wait until the Wealth line enters its tomb.",
+            "For instance, if Wealth is Water, the money comes on a Chen day (Water's tomb); the rest by analogy."
+          ]
+        }
       ],
       "dispute": {
         "yi": "「墓库收藏」三家读法不同：旧注要卦里有财的墓库爻发动；王洪绪要财的库爻持世或临卦身；野鹤不看卦里有没有库爻，改成应期——等财爻入墓的那一天。",
@@ -286,26 +818,95 @@
         "en": "Pressure keeps Peer in check: without Pressure, Peer takes over and there is fighting over shares; yet a moving Pressure line means obstruction. When Peer moves, a moving Pressure line is welcome to restrain it; when Peer is still, Pressure should not move, since it drains Wealth and brings quarrels (Juezi). If the Pressure line is controlled, clashed apart or combined, its obstruction does no harm."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["无鬼分争，", "又怕交重而阻滞。"],
-          "yi": ["卦里没有官鬼，就会有人分争；", "官鬼发动又怕它带来阻滞。"],
-          "en": ["Without Pressure there will be squabbling over shares;", "yet a moving Pressure line is feared for the obstruction it brings."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["无鬼之卦，兄必专权，财虽有气，亦多虚耗。", "兄更发动，必有争夺买卖，分散财物之患。", "然虽不可无，官又不宜动，动则必有阻隔。", "若有克制，或被冲散，或被合住，虽阻不妨。"],
-          "yi": ["没有官鬼的卦，兄弟一定专权，财即使有气，也多虚耗。", "兄弟再发动，一定有人争夺买卖、分走财物。", "官鬼虽然不能没有，却又不宜发动，动了一定有阻隔。", "如果官鬼被克制，或被冲散、被合住，即使有阻也不要紧。"],
-          "en": ["In a hexagram without Pressure, Peer is sure to take control; even a Wealth with force is largely wasted.", "If Peer also moves, there will be rivals fighting over the trade and splitting up the goods.", "So although Pressure must not be absent, it should not move either; if it moves there will be obstruction.", "If the Pressure line is controlled, clashed apart or held by a combination, the obstruction does no harm."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["无鬼兄必专权，财虽有气亦多虚耗，", "兄更发动，必有争夺分散财物之患；", "官鬼又不宜动，动则必有阻隔。"],
-          "yi": ["没有官鬼，兄弟一定专权，财虽有气也多虚耗；", "兄弟再发动，一定有争夺、分散财物的祸患；", "官鬼又不宜发动，动了一定有阻隔。"],
-          "en": ["Without Pressure, Peer takes control and even a Wealth with force is largely wasted;", "if Peer moves as well there will be fighting over and scattering of the goods;", "yet Pressure should not move either, for then there will be obstruction."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["无鬼分争，又怕交重而阻滞。", "兄弟，乃争夺、阻隔、耗财之神，宜鬼动而制之，以免分争之患。"],
-          "yi": ["没有官鬼就有分争，官鬼发动又怕阻滞。", "兄弟是争夺、阻隔、耗财的神，宜官鬼发动去制它，免得有分争的祸患。"],
-          "en": ["Without Pressure there is squabbling; a moving Pressure line is feared for obstruction.", "Peer is the spirit of contention, obstruction and spending; Pressure should move to hold it down and spare you the quarrel."] },
-        { "by": "觉子", "book": "增删卜易",
-          "zh": ["觉子曰：兄爻发动，喜鬼动以制之，", "倘兄爻安静，又不宜鬼动，鬼动反泄财爻之气也，且有口舌。"],
-          "yi": ["觉子说：兄弟发动，喜欢官鬼发动去制它；", "如果兄弟安静，就不宜官鬼发动，官鬼动反而泄了财爻的气，还有口舌。"],
-          "en": ["Juezi says: when the Peer line moves, a moving Pressure line is welcome to hold it down;", "but if the Peer line is still, Pressure should not move, for then it drains the Wealth line and brings quarrels."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "无鬼分争，",
+            "又怕交重而阻滞。"
+          ],
+          "yi": [
+            "卦里没有官鬼，就会有人分争；",
+            "官鬼发动又怕它带来阻滞。"
+          ],
+          "en": [
+            "Without Pressure there will be squabbling over shares;",
+            "yet a moving Pressure line is feared for the obstruction it brings."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "无鬼之卦，兄必专权，财虽有气，亦多虚耗。",
+            "兄更发动，必有争夺买卖，分散财物之患。",
+            "然虽不可无，官又不宜动，动则必有阻隔。",
+            "若有克制，或被冲散，或被合住，虽阻不妨。"
+          ],
+          "yi": [
+            "没有官鬼的卦，兄弟一定专权，财即使有气，也多虚耗。",
+            "兄弟再发动，一定有人争夺买卖、分走财物。",
+            "官鬼虽然不能没有，却又不宜发动，动了一定有阻隔。",
+            "如果官鬼被克制，或被冲散、被合住，即使有阻也不要紧。"
+          ],
+          "en": [
+            "In a hexagram without Pressure, Peer is sure to take control; even a Wealth with force is largely wasted.",
+            "If Peer also moves, there will be rivals fighting over the trade and splitting up the goods.",
+            "So although Pressure must not be absent, it should not move either; if it moves there will be obstruction.",
+            "If the Pressure line is controlled, clashed apart or held by a combination, the obstruction does no harm."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "无鬼兄必专权，财虽有气亦多虚耗，",
+            "兄更发动，必有争夺分散财物之患；",
+            "官鬼又不宜动，动则必有阻隔。"
+          ],
+          "yi": [
+            "没有官鬼，兄弟一定专权，财虽有气也多虚耗；",
+            "兄弟再发动，一定有争夺、分散财物的祸患；",
+            "官鬼又不宜发动，动了一定有阻隔。"
+          ],
+          "en": [
+            "Without Pressure, Peer takes control and even a Wealth with force is largely wasted;",
+            "if Peer moves as well there will be fighting over and scattering of the goods;",
+            "yet Pressure should not move either, for then there will be obstruction."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "无鬼分争，又怕交重而阻滞。",
+            "兄弟，乃争夺、阻隔、耗财之神，宜鬼动而制之，以免分争之患。"
+          ],
+          "yi": [
+            "没有官鬼就有分争，官鬼发动又怕阻滞。",
+            "兄弟是争夺、阻隔、耗财的神，宜官鬼发动去制它，免得有分争的祸患。"
+          ],
+          "en": [
+            "Without Pressure there is squabbling; a moving Pressure line is feared for obstruction.",
+            "Peer is the spirit of contention, obstruction and spending; Pressure should move to hold it down and spare you the quarrel."
+          ]
+        },
+        {
+          "by": "觉子",
+          "book": "增删卜易",
+          "zh": [
+            "觉子曰：兄爻发动，喜鬼动以制之，",
+            "倘兄爻安静，又不宜鬼动，鬼动反泄财爻之气也，且有口舌。"
+          ],
+          "yi": [
+            "觉子说：兄弟发动，喜欢官鬼发动去制它；",
+            "如果兄弟安静，就不宜官鬼发动，官鬼动反而泄了财爻的气，还有口舌。"
+          ],
+          "en": [
+            "Juezi says: when the Peer line moves, a moving Pressure line is welcome to hold it down;",
+            "but if the Peer line is still, Pressure should not move, for then it drains the Wealth line and brings quarrels."
+          ]
+        }
       ]
     },
     {
@@ -317,34 +918,124 @@
         "en": "A single strong moving Peer line is the worst case. When Peer is in excess (Month, Day, moving and changed lines all Peer) the classic says it does not rob after all: the old commentary says the money comes on a day that births or empowers Wealth; Wang Hongxu says only if Output moves; Juezi disagrees: excessive Peer still robs on the day it enters its tomb or is cut down."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["兄如太过，", "反不克财；"],
-          "yi": ["兄弟如果太多太旺，", "反而不克财；"],
-          "en": ["If Peer is in excess,", "it does not rob Wealth after all;"] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["兄弟乃占财忌杀，若有一位旺动，最为不利。", "若月日动变，俱带兄弟，重叠太过，则不专一，反不克劫。", "至财爻生旺日可得。"],
-          "yi": ["兄弟是占财的忌神，如果有一个旺而发动，最不利。", "如果月建、日辰、动爻、变爻都是兄弟，重叠太过，力量就不专一，反而不去劫财。", "到财爻生旺的日子就能得。"],
-          "en": ["Peer is the adversary in a money question; a single strong moving Peer line is the worst case.", "If the Month, the Day, and the moving and changed lines all carry Peer, the excess scatters its aim and it does not rob after all.", "The money comes on a day that births or empowers the Wealth line."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["兄弟乃占财之忌杀，日月动变俱带兄弟，重叠太过，", "一见子孙发动，反不克财，其利无穷；", "子孙安静多不吉。"],
-          "yi": ["兄弟是占财的忌神，日、月、动爻、变爻都带兄弟，重叠太过，", "只要见到子孙发动，就反而不克财，利益无穷；", "子孙安静，多半不吉。"],
-          "en": ["Peer is the adversary in a money question; when Day, Month, moving and changed lines all carry Peer, in excess,", "then as soon as Output moves, it does not control Wealth after all, and the profit is endless;", "if Output is still, it is mostly unlucky."] },
-        { "by": "增删卜易正文", "book": "增删卜易",
-          "zh": ["兄如太过，反不克财。", "旧注，卦中一位兄动最忌，若兄弟多动者，反不劫财。"],
-          "yi": ["兄弟太过，反而不克财。", "旧注说：卦里一个兄弟发动最忌，如果兄弟多个发动，反而不劫财。"],
-          "en": ["If Peer is in excess, it does not rob Wealth after all.", "The old commentary: one moving Peer line is the thing most feared; if many Peer lines move, they do not rob after all."] },
-        { "by": "觉子", "book": "增删卜易",
-          "zh": ["觉子曰：余以为兄爻多者，待兄爻入墓之日，及损克兄爻之日，必劫其财，", "谓之太旺者，损之斯成。"],
-          "yi": ["觉子说：我认为兄弟多的，到兄弟入墓的那天，以及兄弟受损、受克的那天，一定会劫财，", "这就是「太旺的，要减损它才成事」。"],
-          "en": ["Juezi says: I hold that where Peer lines are many, on the day Peer enters its tomb and on the day it is cut down or controlled, it will certainly rob the money;", "this is what 'the over-strong come into effect when cut down' means."] },
-        { "by": "觉子", "book": "增删卜易",
-          "zh": ["如：巳月 丙辰日 (旬空：子丑)，占放印子钱，得“未济之归妹”"],
-          "yi": ["例：巳月丙辰日（旬空子、丑），占放高利贷，得未济卦变归妹卦。"],
-          "en": ["Case: Si month, Bingchen day (void: Zi and Chou); the question was lending money at interest; the hexagram Weiji changing to Guimei."] },
-        { "by": "觉子", "book": "增删卜易",
-          "zh": ["断曰：此卦月建世爻，动变之爻，俱是兄弟，", "占时顺遂，至九月，兄爻入墓，因奸破耗，", "岂可谓之兄爻太过反不劫其财耶？！"],
-          "yi": ["断语：这一卦月建、世爻、动爻、变爻都是兄弟，", "占的时候顺利，到九月兄弟入墓，因为奸情破财耗损，", "怎么能说兄弟太多反而不劫财呢？！"],
-          "en": ["Judgment: in this hexagram the Month, the Self line, and the moving and changed lines are all Peer;", "at the time of casting things went smoothly, but in the ninth month, when the Peer line entered its tomb, he lost money through an illicit affair;", "how can one say that too much Peer does not rob the money?!"] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "兄如太过，",
+            "反不克财；"
+          ],
+          "yi": [
+            "兄弟如果太多太旺，",
+            "反而不克财；"
+          ],
+          "en": [
+            "If Peer is in excess,",
+            "it does not rob Wealth after all;"
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "兄弟乃占财忌杀，若有一位旺动，最为不利。",
+            "若月日动变，俱带兄弟，重叠太过，则不专一，反不克劫。",
+            "至财爻生旺日可得。"
+          ],
+          "yi": [
+            "兄弟是占财的忌神，如果有一个旺而发动，最不利。",
+            "如果月建、日辰、动爻、变爻都是兄弟，重叠太过，力量就不专一，反而不去劫财。",
+            "到财爻生旺的日子就能得。"
+          ],
+          "en": [
+            "Peer is the adversary in a money question; a single strong moving Peer line is the worst case.",
+            "If the Month, the Day, and the moving and changed lines all carry Peer, the excess scatters its aim and it does not rob after all.",
+            "The money comes on a day that births or empowers the Wealth line."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "兄弟乃占财之忌杀，日月动变俱带兄弟，重叠太过，",
+            "一见子孙发动，反不克财，其利无穷；",
+            "子孙安静多不吉。"
+          ],
+          "yi": [
+            "兄弟是占财的忌神，日、月、动爻、变爻都带兄弟，重叠太过，",
+            "只要见到子孙发动，就反而不克财，利益无穷；",
+            "子孙安静，多半不吉。"
+          ],
+          "en": [
+            "Peer is the adversary in a money question; when Day, Month, moving and changed lines all carry Peer, in excess,",
+            "then as soon as Output moves, it does not control Wealth after all, and the profit is endless;",
+            "if Output is still, it is mostly unlucky."
+          ]
+        },
+        {
+          "by": "增删卜易正文",
+          "book": "增删卜易",
+          "zh": [
+            "兄如太过，反不克财。",
+            "旧注，卦中一位兄动最忌，若兄弟多动者，反不劫财。"
+          ],
+          "yi": [
+            "兄弟太过，反而不克财。",
+            "旧注说：卦里一个兄弟发动最忌，如果兄弟多个发动，反而不劫财。"
+          ],
+          "en": [
+            "If Peer is in excess, it does not rob Wealth after all.",
+            "The old commentary: one moving Peer line is the thing most feared; if many Peer lines move, they do not rob after all."
+          ]
+        },
+        {
+          "by": "觉子",
+          "book": "增删卜易",
+          "zh": [
+            "觉子曰：余以为兄爻多者，待兄爻入墓之日，及损克兄爻之日，必劫其财，",
+            "谓之太旺者，损之斯成。"
+          ],
+          "yi": [
+            "觉子说：我认为兄弟多的，到兄弟入墓的那天，以及兄弟受损、受克的那天，一定会劫财，",
+            "这就是「太旺的，要减损它才成事」。"
+          ],
+          "en": [
+            "Juezi says: I hold that where Peer lines are many, on the day Peer enters its tomb and on the day it is cut down or controlled, it will certainly rob the money;",
+            "this is what 'the over-strong come into effect when cut down' means."
+          ]
+        },
+        {
+          "by": "书中例",
+          "book": "增删卜易",
+          "zh": [
+            "如：巳月 丙辰日 (旬空：子丑)，占放印子钱，得“未济之归妹”"
+          ],
+          "yi": [
+            "例：巳月丙辰日（旬空子、丑），占放高利贷，得未济卦变归妹卦。"
+          ],
+          "en": [
+            "Case: Si month, Bingchen day (void: Zi and Chou); the question was lending money at interest; the hexagram Weiji changing to Guimei."
+          ]
+        },
+        {
+          "by": "书中例",
+          "book": "增删卜易",
+          "zh": [
+            "断曰：此卦月建世爻，动变之爻，俱是兄弟，",
+            "占时顺遂，至九月，兄爻入墓，因奸破耗，",
+            "岂可谓之兄爻太过反不劫其财耶？！"
+          ],
+          "yi": [
+            "断语：这一卦月建、世爻、动爻、变爻都是兄弟，",
+            "占的时候顺利，到九月兄弟入墓，因为奸情破财耗损，",
+            "怎么能说兄弟太多反而不劫财呢？！"
+          ],
+          "en": [
+            "Judgment: in this hexagram the Month, the Self line, and the moving and changed lines are all Peer;",
+            "at the time of casting things went smoothly, but in the ninth month, when the Peer line entered its tomb, he lost money through an illicit affair;",
+            "how can one say that too much Peer does not rob the money?!"
+          ]
+        }
       ],
       "dispute": {
         "yi": "兄弟太过劫不劫财，三家说法不同：旧注说太过反而不劫，到财生旺日可得；王洪绪说要见子孙发动才不劫、利无穷，子孙静则不吉；觉子说太过的兄弟到入墓或受损克之日照样劫财，并举了一个九月兄弟入墓破财的例子。",
@@ -360,26 +1051,110 @@
         "en": "Peer on the Body line or the Self line makes the money hard to get (Wealth or Output on the Body line is good, Resource means toil, Pressure favours official money). Yehe reads only the Self line, and holds that Peer on the Self line still gets the money if the Self line is under a Month-break, void, or turns into its tomb, if the Day or Month is Wealth and clashes with or controls the Self line, or if the Peer on the Self line turns into Wealth."
       },
       "quotes": [
-        { "by": "经", "book": "卜筮大全",
-          "zh": ["身或兄临，", "必难求望。"],
-          "yi": ["卦身如果临兄弟，", "求财一定难有指望。"],
-          "en": ["If the Body line carries Peer,", "the money is hard to hope for."] },
-        { "by": "旧注", "book": "卜筮大全",
-          "zh": ["卦身一爻，占财体统。", "若持兄弟，不拘作何买卖，问何财物，皆无利益。持世亦然。", "惟临财福，方为吉兆。", "临父主劳禄，若占六畜血财，则有损失。", "临官，大利公门求财，余皆险阻不利。"],
-          "yi": ["卦身这一爻，是占财的总体。", "卦身若是兄弟，不管做什么买卖、问什么财物，都没有利。兄弟持世也一样。", "只有临妻财、子孙，才是吉兆。", "临父母主辛劳；若占六畜这类活物之财，会有损失。", "临官鬼，很利于向官府求财，其余都险阻不利。"],
-          "en": ["The Body line is the frame of the whole money question.", "If it carries Peer, whatever the trade and whatever goods are asked about, there is no profit. Peer on the Self line is the same.", "Only Wealth or Output on it is a good sign.", "Resource on it means toil; for livestock and other living goods it means losses.", "Pressure on it greatly favours money sought from official quarters; for anything else it means hazards and obstruction."] },
-        { "by": "王洪绪", "book": "卜筮正宗",
-          "zh": ["卦身一爻，占财体统，若持兄，", "不拘作何买卖，问何财物，皆无利益，兄弟持世亦然。"],
-          "yi": ["卦身这一爻是占财的总体，如果是兄弟，", "不管做什么买卖、问什么财物，都没有利益；兄弟持世也一样。"],
-          "en": ["The Body line is the frame of the money question; if it carries Peer,", "whatever the trade and whatever goods, there is no profit; Peer on the Self line is the same."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["世遇兄临，必难求望。", "古以卦身临兄爻，难于求望。", "余因卦身不验，只以世爻为主，兄爻持世，难遂求谋。", "野鹤曰：全在人之通变。兄弟而持世者，虽则为忌，亦有不当忌者。"],
-          "yi": ["世爻临兄弟，求财一定难有指望。", "古法说卦身临兄弟，难有指望。", "我因为卦身不灵验，只看世爻：兄弟持世，所求难以如愿。", "野鹤说：全看人会不会变通。兄弟持世虽然是忌，也有不该忌的时候。"],
-          "en": ["If the Self line carries Peer, the money is hard to hope for.", "The old rule said: the Body line carrying the Peer line makes the money hard to hope for.", "Because the Body line proved unreliable, I go by the Self line alone: the Peer line on the Self line makes the venture hard to fulfil.", "Yehe says: it all depends on judging flexibly. Peer on the Self line is to be feared, yet there are cases where it should not be."] },
-        { "by": "野鹤", "book": "增删卜易",
-          "zh": ["野鹤曰：余于此书，务必屡试屡验者，方存为法，非如他书，以偶合者即为式也。", "故凡占得兄爻持世，而世值月破、旬空、化墓，", "及日月作财冲世、克世，或世爻兄弟变出财爻，", "皆许得财者，俱屡占得验，始敢告之。", "若世持兄弟，非此类，不得以此例决之也。"],
-          "yi": ["野鹤说：这本书里，一定是屡试屡验的才留作法则，不像别的书，碰巧对上一次就当成定式。", "所以凡是兄弟持世，而世爻逢月破、旬空、化入墓，", "以及日辰月建是财、来冲世克世，或者世爻兄弟变出财爻，", "这些都断能得财，都是屡次占验过，才敢告诉人。", "如果兄弟持世而不属于这几类，不能拿这些例子来断。"],
-          "en": ["Yehe says: in this book I keep as a rule only what has been tested and proved again and again, unlike other books that make a formula out of one lucky hit.", "So whenever the Peer line sits on the Self line but the Self line is under a Month-break, is void, or turns into its tomb,", "or the Day or Month is Wealth and clashes with or controls the Self line, or the Peer on the Self line turns into a Wealth line,", "money may be granted in all these cases; each was proved in repeated readings before I dared to state it.", "If Peer is on the Self line in any other way, these cases must not be used to decide it."] }
+        {
+          "by": "经",
+          "book": "卜筮大全",
+          "zh": [
+            "身或兄临，",
+            "必难求望。"
+          ],
+          "yi": [
+            "卦身如果临兄弟，",
+            "求财一定难有指望。"
+          ],
+          "en": [
+            "If the Body line carries Peer,",
+            "the money is hard to hope for."
+          ]
+        },
+        {
+          "by": "旧注",
+          "book": "卜筮大全",
+          "zh": [
+            "卦身一爻，占财体统。",
+            "若持兄弟，不拘作何买卖，问何财物，皆无利益。持世亦然。",
+            "惟临财福，方为吉兆。",
+            "临父主劳禄，若占六畜血财，则有损失。",
+            "临官，大利公门求财，余皆险阻不利。"
+          ],
+          "yi": [
+            "卦身这一爻，是占财的总体。",
+            "卦身若是兄弟，不管做什么买卖、问什么财物，都没有利。兄弟持世也一样。",
+            "只有临妻财、子孙，才是吉兆。",
+            "临父母主辛劳；若占六畜这类活物之财，会有损失。",
+            "临官鬼，很利于向官府求财，其余都险阻不利。"
+          ],
+          "en": [
+            "The Body line is the frame of the whole money question.",
+            "If it carries Peer, whatever the trade and whatever goods are asked about, there is no profit. Peer on the Self line is the same.",
+            "Only Wealth or Output on it is a good sign.",
+            "Resource on it means toil; for livestock and other living goods it means losses.",
+            "Pressure on it greatly favours money sought from official quarters; for anything else it means hazards and obstruction."
+          ]
+        },
+        {
+          "by": "王洪绪",
+          "book": "卜筮正宗",
+          "zh": [
+            "卦身一爻，占财体统，若持兄，",
+            "不拘作何买卖，问何财物，皆无利益，兄弟持世亦然。"
+          ],
+          "yi": [
+            "卦身这一爻是占财的总体，如果是兄弟，",
+            "不管做什么买卖、问什么财物，都没有利益；兄弟持世也一样。"
+          ],
+          "en": [
+            "The Body line is the frame of the money question; if it carries Peer,",
+            "whatever the trade and whatever goods, there is no profit; Peer on the Self line is the same."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "世遇兄临，必难求望。",
+            "古以卦身临兄爻，难于求望。",
+            "余因卦身不验，只以世爻为主，兄爻持世，难遂求谋。",
+            "野鹤曰：全在人之通变。兄弟而持世者，虽则为忌，亦有不当忌者。"
+          ],
+          "yi": [
+            "世爻临兄弟，求财一定难有指望。",
+            "古法说卦身临兄弟，难有指望。",
+            "我因为卦身不灵验，只看世爻：兄弟持世，所求难以如愿。",
+            "野鹤说：全看人会不会变通。兄弟持世虽然是忌，也有不该忌的时候。"
+          ],
+          "en": [
+            "If the Self line carries Peer, the money is hard to hope for.",
+            "The old rule said: the Body line carrying the Peer line makes the money hard to hope for.",
+            "Because the Body line proved unreliable, I go by the Self line alone: the Peer line on the Self line makes the venture hard to fulfil.",
+            "Yehe says: it all depends on judging flexibly. Peer on the Self line is to be feared, yet there are cases where it should not be."
+          ]
+        },
+        {
+          "by": "野鹤",
+          "book": "增删卜易",
+          "zh": [
+            "野鹤曰：余于此书，务必屡试屡验者，方存为法，非如他书，以偶合者即为式也。",
+            "故凡占得兄爻持世，而世值月破、旬空、化墓，",
+            "及日月作财冲世、克世，或世爻兄弟变出财爻，",
+            "皆许得财者，俱屡占得验，始敢告之。",
+            "若世持兄弟，非此类，不得以此例决之也。"
+          ],
+          "yi": [
+            "野鹤说：这本书里，一定是屡试屡验的才留作法则，不像别的书，碰巧对上一次就当成定式。",
+            "所以凡是兄弟持世，而世爻逢月破、旬空、化入墓，",
+            "以及日辰月建是财、来冲世克世，或者世爻兄弟变出财爻，",
+            "这些都断能得财，都是屡次占验过，才敢告诉人。",
+            "如果兄弟持世而不属于这几类，不能拿这些例子来断。"
+          ],
+          "en": [
+            "Yehe says: in this book I keep as a rule only what has been tested and proved again and again, unlike other books that make a formula out of one lucky hit.",
+            "So whenever the Peer line sits on the Self line but the Self line is under a Month-break, is void, or turns into its tomb,",
+            "or the Day or Month is Wealth and clashes with or controls the Self line, or the Peer on the Self line turns into a Wealth line,",
+            "money may be granted in all these cases; each was proved in repeated readings before I dared to state it.",
+            "If Peer is on the Self line in any other way, these cases must not be used to decide it."
+          ]
+        }
       ],
       "dispute": {
         "yi": "看卦身还是看世爻：旧注、王洪绪看卦身（兄临卦身难求，持世亦然）；野鹤认为卦身不验，只看世爻，并列出兄弟持世仍能得财的几种情形。",

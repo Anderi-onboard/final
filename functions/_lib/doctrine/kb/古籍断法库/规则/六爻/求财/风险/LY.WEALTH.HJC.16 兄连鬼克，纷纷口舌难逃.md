@@ -15,6 +15,7 @@ speakers:
   - "王洪绪注(《卜筮正宗》)"
   - "野鹤老人(《增删卜易》)"
   - "觉子(李文辉,《增删卜易》)"
+  - "书中卦例"
 dispute: true
 terms:
   - "[[兄弟]]"
@@ -103,18 +104,18 @@ aliases:
 
 ^q5
 
-## 野鹤老人(《增删卜易》)
+## 书中卦例
 
-> [!quote]+ [[增删卜易]] 第 11207 行 · The Old Man of Yehe (Zengshan Buyi)
+> [!quote]+ [[增删卜易]] 第 11207 行 · Case from the book
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
 > | 如：酉月丙午日(旬空：寅卯)，占贸易有利否，得“师之坎” | 例：酉月丙午日（旬空寅、卯），占做买卖有没有利，得师卦变坎卦。 | Case: You month, Bingwu day (void: Yin and Mao); the question was whether a trading venture would profit; the hexagram Shi changing to Kan. |
 
 ^q6
 
-## 野鹤老人(《增删卜易》)
+## 书中卦例
 
-> [!quote]+ [[增删卜易]] 第 11252 行 · The Old Man of Yehe (Zengshan Buyi)
+> [!quote]+ [[增删卜易]] 第 11252 行 · Case from the book
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
 > | 午财持世，兄动劫之，幸水化戌土，兄爻被克，不来劫财， | 午火财持世，兄弟动来劫它，幸好亥水化出戌土，兄弟被回头克，不来劫财， | The Wu Fire Wealth sat on the Self line and a moving Peer came to rob it, but luckily the Water turned into Xu Earth, so the Peer line was controlled and did not rob the money; |

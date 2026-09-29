@@ -4,7 +4,11 @@
  * 下面三处全是生成的,手改会被下一次生成覆盖,契约也会报红:
  *   .claude/skills/guji-duanfa/              文本 skill
  *   functions/_lib/doctrine/kb/古籍断法库/     Obsidian 库
- *   functions/_lib/doctrine/kb/dist/          给程序读的 jsonl
+ *   functions/_lib/doctrine/kb/jsonl/         给程序读的 jsonl
+ *
+ * 输出目录不许叫 dist:.gitignore 里有一条 dist/,会把整个目录吞掉。生成物在本机是全的、
+ * 推上去就缺一个文件,「生成物是最新的」在本机绿、在 CI 上才红(2026-09-29 出过)。
+ * tests/kb-quotes.mjs 现在直接问 git:哪些生成物会被 .gitignore 挡住。
  *
  * 核对的规矩只有一条:每段原文去掉空白之后,必须在它标的那本书里原样出现,
  * 而且落在那本书这一章的行号范围里。空白不算,是因为书里一句话常被换行、
@@ -22,7 +26,7 @@ export const DATA = path.join(KB, 'data');
 export const OUT = {
   skill: path.join(ROOT, '.claude/skills/guji-duanfa'),
   vault: path.join(KB, '古籍断法库'),
-  dist: path.join(KB, 'dist')
+  jsonl: path.join(KB, 'jsonl')
 };
 export const SKILL_NAME = 'guji-duanfa';
 
@@ -240,7 +244,12 @@ export function verify(units, cfg) {
       if (u[box].en && CJK.test(u[box].en)) err(u, `${box}.en 里有汉字`);
     }
     if (!Array.isArray(u.quotes) || !u.quotes.length) { err(u, '没有 quotes'); continue; }
-    if (u.quotes[0].by !== '经') err(u, '第一段 quote 应当是这部书的本文(by: 经)');
+    /* 第一段是这条规则的正身:必须出自这部书(文件收了这部书),不能是卦例。
+       多数是本文(by: 经);《增删卜易》有几章通篇是「野鹤曰」「觉子曰」,那就是说话人本人。 */
+    const first = u.quotes[0];
+    if (first.by === '书中例') err(u, '第一段 quote 是卦例,规则的正身应当是论断的原文');
+    const holds = cfg.sources.books[first.book]?.contains || [];
+    if (!holds.includes(u.work)) err(u, `第一段 quote 引自《${first.book}》,可 sources.json 说这个文件不收《${u.work}》`);
 
     u.quotes.forEach((q, qi) => {
       const tag = `quote[${qi}]`;
@@ -756,7 +765,7 @@ function renderVault(units, cfg) {
   return files;
 }
 
-function renderDist(units) {
+function renderJsonl(units) {
   const files = new Map();
   const rows = units.slice().sort(idSort).map((u) => JSON.stringify({
     id: u.id, shushu: u.shushu, domain: u.domain, topic: u.topic, work: u.work, chapter: u.chapter, title: u.title,
@@ -772,7 +781,7 @@ function renderDist(units) {
 }
 
 export function render(units, cfg) {
-  return { skill: renderSkill(units, cfg), vault: renderVault(units, cfg), dist: renderDist(units) };
+  return { skill: renderSkill(units, cfg), vault: renderVault(units, cfg), jsonl: renderJsonl(units) };
 }
 
 /* ------------------------------------------------------------ write/check */
@@ -827,7 +836,7 @@ export function buildAll({ write }) {
   const diffs = {
     skill: sync(OUT.skill, out.skill, { write }),
     vault: sync(OUT.vault, out.vault, { write }),
-    dist: sync(OUT.dist, out.dist, { write })
+    jsonl: sync(OUT.jsonl, out.jsonl, { write })
   };
   return { errors, stats, diffs, units };
 }

@@ -1,0 +1,341 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易隐",
+  "chapter": "求财占",
+  "chapter_en": "Divining for wealth",
+  "ranges": { "易隐": [2848, 2911] },
+  "units": [
+    {
+      "id": "LY.WEALTH.YY.01",
+      "topic": "总则",
+      "title": "占求财六问：有无、难易、多少、何人、何财、何日",
+      "rule": {
+        "yi": "占求财要分六问：有无、难易、多少、得于何人、得何财、何日得；靠人说合的也要占。鬼谷分爻：初爻己身、二爻伴侣、三爻行李、四爻车马、五爻道路、六爻店舍。",
+        "en": "A money question breaks into six: whether there is money, easy or hard, how much, from whom, what kind, and on what day; where it depends on someone putting in a word, ask about that too. Guigu's assignment of the lines: first, oneself; second, companions; third, baggage; fourth, carts and horses; fifth, the road; sixth, the lodging."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐",
+          "zh": ["游南子曰，占求财者，求其求之有无，", "占其得之难易，占其数之多寡，", "与夫得于何人，得为何财，得于何日而已。", "若乃吹嘘成就，全藉乎人，亦不可以不占也。"],
+          "yi": ["游南子说：占求财，要问的是求得到求不到，", "得来容易还是困难，数目多少，", "从谁那里得、得的是什么财、哪一天得，就这些。", "至于靠别人说好话促成的，全凭人力，也不能不占。"],
+          "en": ["Master Younan says: in a money question, ask whether there is anything to get,", "whether it comes easily or hard, how much,", "from whom, what kind of money, and on what day; that is all.", "And where it depends on someone putting in a word for you, it rests entirely on people, so that too must be asked."] },
+        { "by": "经", "book": "易隐",
+          "zh": ["鬼谷分爻", "店舍道路车马行李伴侣己身"],
+          "yi": ["鬼谷分爻（六爻各管一事）：", "从上爻到初爻依次是：店舍、道路、车马、行李、伴侣、己身。"],
+          "en": ["Guigu's assignment of the lines:", "from the top line down to the first: the lodging, the road, carts and horses, baggage, companions, oneself."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.02",
+      "topic": "有无",
+      "title": "有无：得六合者有，六冲者无",
+      "rule": {
+        "yi": "有财：六合卦；外生内、应生世；内外世应比和旺相不空破；卦无财而月日为财生合世；世下伏财得日辰扶起；应动化财生合世；子孙旺而兄动生之；日辰与世应三合财局；应财虽衰而临日辰长生。无财：六冲卦；内克外、世克应；应、财空破；财化鬼、化空破绝；财动去合应、兄或旁爻；卦身克动财。财旺而子孙空绝，得一次难再。",
+        "en": "There is money with: a Six-Combine hexagram; outer generating inner, Other generating Self; inner and outer, Self and Other in harmony, strong, not void or broken; no Wealth in the hexagram but a Wealth Month or Day generating or combining with the Self; hidden Wealth under the Self lifted by the Day; the Other moving into Wealth that generates or combines with the Self; Output strong and fed by a moving Peer; the Day forming a Wealth frame with Self and Other; the Other's weak Wealth at its Birth stage under the Day. No money with: a Six-Clash hexagram; inner controlling outer, Self controlling Other; Other and Wealth void or broken; Wealth turning into Pressure, void, a break or extinction; Wealth moving off to combine with the Other, Peer or another line; the Body controlling a moving Wealth. Wealth strong but Output void or extinguished: once, and not again."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["得六合者有，六冲者无。", "外生内，应生世者有。内克外，世克应者无。", "内外世应比和旺相不空破者有，", "卦本无财，而月日是财，来生合世，", "或世不伏财，得日辰并起，", "或应动化财生合世，", "或子孙旺相，兄动生之者，", "或日辰世应三合财局者，", "或应财衰而临日建长生者，皆有财也。", "应爻与财爻值空破，", "或财动化鬼，化空破绝，", "或财动去合应爻兄爻旁爻，", "或身克动财者，皆无财也。", "财旺子空绝者，一得难再也。"],
+          "yi": ["得六合卦的有财，得六冲卦的没有。", "外卦生内卦、应爻生世爻的有；内卦克外卦、世爻克应爻的没有。", "内外卦、世应比和，旺相而不空不破的，有；", "卦里本来没有财，而月建、日辰是财，来生合世爻，", "或者世爻下伏财（原文作「世不伏财」，「不」疑为「下」），得日辰把它扶起，", "或者应爻发动化出财来生合世爻，", "或者子孙旺相，又有兄弟动来生它，", "或者日辰和世、应三合成财局，", "或者应爻的财虽衰而临日辰的长生，都有财。", "应爻和财爻逢空、破，", "或者财动化官鬼，化空、化破、化绝，", "或者财动去合应爻、兄爻或别的爻，", "或者卦身去克发动的财，都没有财。", "财旺而子孙空、绝的，得一次就难再得。"],
+          "en": ["A Six-Combine hexagram: there is money; a Six-Clash one: there is none.", "The outer trigram generating the inner, or the Other generating the Self: there is money; the inner controlling the outer, or the Self controlling the Other: none.", "Inner and outer, Self and Other, in harmony, strong and neither void nor broken: there is money;", "no Wealth in the hexagram but the Month or Day is Wealth and generates or combines with the Self line;", "or Wealth hidden under the Self line (the text reads 'not hidden'; 'under' is probably meant) and lifted up by the Day;", "or the Other moving into Wealth that generates or combines with the Self line;", "or Output thriving with a moving Peer generating it;", "or the Day, the Self and the Other forming a three-harmony Wealth frame;", "or the Other's Wealth, though weak, at its Birth stage under the Day: in all these there is money.", "The Other line and the Wealth line void or broken;", "or Wealth moving into Pressure, or into the void, a break or extinction;", "or Wealth moving to combine with the Other line, the Peer line or some other line;", "or the Body line controlling a moving Wealth: in all these there is no money.", "Wealth strong but Output void or extinguished: you get it once and not again."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年辛巳月丙戌日，占求财，得随之屯。", "此卦辰财持世，戊日冲之，未财持应，化丑冲之，", "此为四财，自相冲脱，又财绝于月建巳中，", "不可云世应是财求易得，日建世应，比和吉也，后果求之不得。"],
+          "yi": ["庚寅年辛巳月丙戌日，占求财，得随卦变屯卦。", "这一卦辰土财持世，被戌日（原文作「戊日」）冲；未土财持应，又化出丑来冲它；", "这是四个财自相冲散，财又在月建巳中临绝，", "不能说世应都是财就容易得、日辰和世应比和就吉；后来果然没求到。"],
+          "en": ["Gengyin year, Xinsi month, Bingxu day; a money question; the hexagram Sui changing to Zhun.", "Here the Chen Wealth sat on the Self line and was clashed by the Xu day (the text says 'Wu day'); the Wei Wealth sat on the Other line and turned into Chou, which clashes it;", "four Wealth branches clashing one another apart, and Wealth extinguished under the Si Month,", "so one cannot say that with Wealth on Self and Other the money is easy, or that the Day in harmony with them is good; in the event it was not obtained."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年庚辰月壬申日，卜求财，得屯卦安静。", "六爻无财，惟本宫午火财，伏辰宫下，飞来耗财，", "又辰午皆为匿刑，此必不义之财，为小人欺骗而不得也。"],
+          "yi": ["庚寅年庚辰月壬申日，卜求财，得屯卦，六爻安静。", "六爻里没有财，只有本宫的午火财，伏在辰爻下面，飞神来耗泄财；", "辰、午又都是自刑，这一定是不义之财，会被小人欺骗而得不到。"],
+          "en": ["Gengyin year, Gengchen month, Renshen day; a money question; the hexagram Zhun, all lines still.", "No Wealth among the six lines; only the home palace's Wu Fire Wealth, hidden under the Chen line, whose flying line drains the Wealth;", "moreover Chen and Wu are both self-punishing branches: this must be ill-gotten money, and he would be cheated by petty people and not get it."] }
+      ],
+      "note": {
+        "yi": "「或世不伏财」两个本子都这样写，按「得日辰并起」的上下文当是「世下伏财」；卦例里「戊日冲之」按起卦日丙戌当是「戌日」。原文照录。",
+        "en": "Both editions read 'or the Self line not hidden Wealth'; the following 'lifted up by the Day' implies 'Wealth hidden under the Self line'. In the case, 'the Wu day clashes it' should be 'the Xu day' given the casting day Bingxu. We quote the text as it stands."
+      },
+      "see": ["LY.WEALTH.HJC.07"]
+    },
+    {
+      "id": "LY.WEALTH.YY.03",
+      "topic": "难易",
+      "title": "难易：财旺临身世易，父化财先难后获",
+      "rule": {
+        "yi": "易：旺财临世身，或旺动生合克世身，子化财生合世身。鬼化财生合世：从无中得；鬼化子生合身：儿子送财；父化财：先难后得（父旺财衰力多财少，父衰财旺力少财多）；兄化财：费口舌而得；子化子：两处得财。财动又化财：化去难得；财生世又化兄：得而复失或与人分；财合逢冲：成而后变；财旺而被月日动变冲刑克害：求难得薄；财冲破而世得生扶：人安财散；世逢虎鬼大杀或持墓化墓而财旺被合住：财存人亡；世遇虎鬼刃劫克伤而财空绝破：人财两失。",
+        "en": "Easy: a strong Wealth on the Self or Body line, or moving to generate, combine with or control them; Output turning into Wealth that generates or combines with them. Pressure into Wealth generating the Self: money from nothing; Pressure into Output generating the Body: a son brings it; Resource into Wealth: hard first, gain later (Resource strong and Wealth weak, much effort and little money; the reverse, the reverse); Peer into Wealth: gained after much talk; Output into Output: money from two places. Wealth moving into Wealth: it changes away, hard to get; Wealth generating the Self but turning into Peer: gained and lost, or shared; Wealth combined then clashed: settled, then changed; a strong Wealth hit by Month, Day, moving or changed lines: hard to get and little of it; Wealth clashed and broken while the Self is supported: you are safe, the money scatters; the Self with the White Tiger on Pressure or the Great Killing star, or entombed, while a strong Wealth is held by combination: the money survives, the person does not; the Self attacked by Tiger, Pressure, Blade or Robbery while Wealth is void, extinguished or broken: both lost."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["财旺临身世，财旺动生合克身世，与子化财生合身世者，易也。", "鬼化财生合世，从空而得也。", "鬼化子生合身，儿送财来也。", "父化财生合世，先难后获也。", "父旺财衰者，力多财少也。父衰财旺者，力少财多也。", "兄化财生合身，费口舌而得也。", "子化子生合身，两处得财也。", "财动复化财，则化去而难得也。", "财动生合世，复化兄弟者，非得而复失，则与人分析也。", "财合逢冲者，成而后变也。", "财旺动生合世，或被月日动爻变爻冲刑克害者，求难而得薄也。", "财逢冲破而世遇生扶者，身安财散也。", "世逢虎鬼大杀，又或持墓化墓，而财爻生旺，得月日动爻合住者，财存人亡也。", "世遇虎鬼刃劫动来克伤，而财又空绝破者，人财两失也。"],
+          "yi": ["旺财临卦身、世爻，旺财发动来生、合、克身世，以及子孙化财来生合身世，都容易得。", "官鬼化财来生合世爻，是从无中得来的。", "官鬼化子孙来生合卦身，是儿子送财来。", "父母化财来生合世爻，先难后得。", "父母旺而财衰，用力多而财少；父母衰而财旺，用力少而财多。", "兄弟化财来生合卦身，要费口舌才得到。", "子孙化子孙来生合卦身，两处得财。", "财动又化财，就是化走了，难得。", "财动来生合世爻，又化出兄弟，不是得而复失，就是要和别人分。", "财被合而又逢冲，成了之后又变。", "旺财动来生合世爻，却被月、日、动爻、变爻冲刑克害，求得艰难，得的也少。", "财逢冲破而世爻得生扶，人平安而财散失。", "世爻逢白虎官鬼、大杀，或持墓、化墓，而财爻生旺、被月日动爻合住，钱在而人亡。", "世爻遇白虎官鬼、羊刃、劫杀发动来克伤，而财又空、绝、破，人财两失。"],
+          "en": ["A strong Wealth on the Body or Self line, a strong moving Wealth generating, combining with or controlling them, or Output turning into Wealth that generates or combines with them: easy.", "Pressure turning into Wealth that generates or combines with the Self line: money from nothing.", "Pressure turning into Output that generates or combines with the Body line: a son brings the money.", "Resource turning into Wealth that generates or combines with the Self line: hardship first, gain later.", "Resource strong and Wealth weak: much effort, little money; Resource weak and Wealth strong: little effort, much money.", "Peer turning into Wealth that generates or combines with the Body line: gained after much talk.", "Output turning into Output that generates or combines with the Body line: money from two places.", "Wealth moving into Wealth again: it changes away and is hard to get.", "Wealth moving to generate or combine with the Self line but turning into Peer: either gained and lost again, or shared with others.", "Wealth combined and then clashed: settled, then changed.", "A strong moving Wealth that generates or combines with the Self line but is clashed, punished, controlled or harmed by the Month, the Day, or moving or changed lines: hard to get, and little when you do.", "Wealth clashed and broken while the Self line is generated and supported: you are safe but the money scatters.", "The Self line meeting the White Tiger on Pressure or the Great Killing star, or sitting in or turning into its tomb, while the Wealth line is strong and held by the Month, the Day or a moving line: the money survives, the person does not.", "The Self line attacked by a moving White Tiger Pressure, Goat Blade or Robbery star, while Wealth is void, extinguished or broken: both person and money are lost."] }
+      ],
+      "dispute": {
+        "yi": "财化财怎么断，三家不同：《易隐》说「化去而难得」；《黄金策》旧注说「反复不定」；《天玄赋》注（《断易天机》本）说「本来是吉」，只是要分本卦、变卦的财孰旺孰衰。",
+        "en": "Wealth turning into Wealth is read three ways: the Yi Yin says it 'changes away and is hard to get'; the Golden Strategy's old commentary says 'back and forth, uncertain'; the Tianxuan Fu commentary (Duanyi Tianji text) says 'normally lucky', judged by which of the two Wealths is stronger."
+      },
+      "see": ["LY.WEALTH.HJC.09", "LY.WEALTH.TXF.03"]
+    },
+    {
+      "id": "LY.WEALTH.YY.04",
+      "topic": "有无",
+      "title": "多少：取财爻纳甲之数，旺相加倍，囚死减半",
+      "rule": {
+        "yi": "估数目：数大的用财爻纳甲数（甲己子午九、乙庚丑未八、丙辛寅申七、丁壬卯酉六、戊癸辰戌五、巳亥四），把卦中所有的财（两财、伏财、变财、四直之财、卦宫之财）加总，旺相加倍、休照数、囚死减半；数小的用财爻地支五行数（水一、火二、木三、金四、土五）随旺衰增减。",
+        "en": "Estimating the sum: for a large one, use the stem-and-branch numbers of the Wealth line (Jia Ji Zi Wu nine, Yi Geng Chou Wei eight, Bing Xin Yin Shen seven, Ding Ren Mao You six, Wu Gui Chen Xu five, Si Hai four), add up every Wealth in the reading (two Wealth lines, hidden Wealth, changed Wealth, Wealth among the four rulers, the palace's own Wealth), doubling the strong, keeping the resting as they are, halving the trapped and dead; for a small one, use the element number of the Wealth branch (Water one, Fire two, Wood three, Metal four, Earth five), raised or lowered by strength."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["意其多者，取财爻之纳甲，", "以甲己子午九，乙庚丑未八，丙辛寅申七，丁壬卯酉六，戊癸辰戌五，巳亥常加四之数，加减之。", "如卦有二财，世下伏财，变爻是财，四直又是财，卦宫又是财者，并取纳甲积算，", "旺相加倍，休如数，囚死减半，以定其数。", "意其少者，取财爻之支神，以一水二火三木四金五土之数，随旺衰增损之是也。"],
+          "yi": ["估计数目大的，取财爻的纳甲（天干地支）来算，", "按甲己子午为九，乙庚丑未为八，丙辛寅申为七，丁壬卯酉为六，戊癸辰戌为五，巳亥常为四的数来加减。", "如果卦里有两个财，世爻下伏着财，变爻是财，年月日时（四直）又是财，卦宫五行也是财，就把各自的纳甲数加起来算，", "旺相的加倍，休的照数，囚死的减半，来定出数目。", "估计数目小的，取财爻地支的五行，按水一、火二、木三、金四、土五的数，随旺衰增减。"],
+          "en": ["For a large sum, take the stem and branch assigned to the Wealth line,", "and count with Jia, Ji, Zi, Wu as nine; Yi, Geng, Chou, Wei as eight; Bing, Xin, Yin, Shen as seven; Ding, Ren, Mao, You as six; Wu, Gui, Chen, Xu as five; Si and Hai always four.", "If there are two Wealth lines, a Wealth hidden under the Self line, a changed line of Wealth, a Wealth among the four rulers (year, month, day, hour), and a palace whose element is Wealth, add up all their numbers;", "double those that are thriving or strong, keep those that are resting, halve those that are trapped or dead, and so fix the sum.", "For a small sum, take the element of the Wealth line's branch as a number, Water one, Fire two, Wood three, Metal four, Earth five, and raise or lower it by strength."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.05",
+      "topic": "取象",
+      "title": "得于何人：看化财生合世身的六亲，财临何类、属何支、入何宫",
+      "rule": {
+        "yi": "问从谁那里得财：看化出财来生合世身的是哪一类六亲（内卦本宫为本家，外卦本宫为外亲，内卦他宫为邻里，外卦他宫为远方；阳为男、阴为女）；财临哪一类（父尊长、鬼官员牙人兵卒、兄朋友、子僧道医士、财女人）；财属哪个地支（子妇人姬妾、丑贵人尊长……亥小儿牙人盗贼）；财落哪个卦宫（乾君父名宦、坤母后老妇农夫……兑少妇歌妓巫师）。",
+        "en": "From whom the money comes: see which relation turns into Wealth and generates or combines with the Self or Body (the home palace in the inner trigram is one's own family, in the outer the in-laws and maternal side; another palace inside is neighbours, outside is people far away; yang is male, yin female); which relation the Wealth sits on (Resource elders, Pressure officials, brokers and soldiers, Peer friends, Output monks, doctors and constables, Wealth women); which branch it falls on (Zi women and concubines, Chou nobles and elders ... Hai children, brokers and thieves); and which palace it lies in (Qian rulers, fathers and famous officials, Kun mothers, old women and farmers ... Dui young wives, singers and shamans)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "literal": ["兄弟"],
+          "zh": ["内卦本宫六亲，化财生合世者，", "阳官，祖也。阴官，祖妣也。阳父，父也。阴父，母也。", "阳兄，伯叔与兄弟也。阴兄，姆婶与姐妹也。(黄金策降伯叔与兄弟同位)。", "阳子男，阴子女。阳财妻，阴财妾也。", "外卦本宫六亲，化财生合身者。", "阳官，外祖也。阴官，外祖母也。阳父，岳父。阴母，岳母也。", "阳兄，母舅表伯叔表兄弟也。阴兄，舅母母姨表姐妹也。", "阳子，女婿表侄外甥。阴子，表侄女甥女也。", "阳财，表嫂。阴财，表弟妇，洎表兄弟之妾也。", "在内卦他宫者，邻里之财也。在外卦他宫者，远方人之财也。", "临父，尊长也。临鬼，仕宦牙人军卒也。临兄，朋友也。临子，僧道医士捕人也。临财，阴人也。", "财属子，妇人姬妾之财。属丑，贵人尊人之财。属寅，公门贵客道路之财。", "属卯，士夫术士沙门商贾之财。属辰，二千石或鱼盐与恶人之财。属巳，妇人窗灶之财。", "属午，使臣亭长官妃，或神僧骚人墨客之财。属未，贵人老者女亲之财。", "属申，兵卒僧医行人市贾之财。属酉，妇女婢妾阴贵卖酒人之财。", "属戌，朝士善人狱吏役隸仆从之财。属亥，小儿牙人盗贼之财。", "财入乾，君父名宦尊长公门人之财。入坤，母后老妇农夫大腹人之财。", "入震，长男武人商客有声名人之财。入巽，长女命妇秀士山林僧道匠人寡发人之财。", "入坎，中男蛮夷盗贼舟子江湖人之财。入离，中女文士介胄人目疾大腹火性人之财。", "入艮，少男道士地师法术山人之财。入兑，少妇歌妓姬妾伶人译使巫师之财也。"],
+          "yi": ["内卦本宫的六亲化出财来生合世爻的：", "阳爻官鬼是祖父，阴爻官鬼是祖母；阳爻父母是父亲，阴爻父母是母亲；", "阳爻兄弟是伯父、叔父和兄弟，阴爻兄弟是伯母、婶母和姐妹（《黄金策》把伯叔降到和兄弟同一位）；", "阳爻子孙是儿子，阴爻子孙是女儿；阳爻妻财是妻，阴爻妻财是妾。", "外卦本宫的六亲化出财来生合卦身的：", "阳官是外祖父，阴官是外祖母；阳父是岳父，阴父是岳母；", "阳兄是舅舅、表伯叔、表兄弟；阴兄是舅母、姨母、表姐妹；", "阳子是女婿、表侄、外甥；阴子是表侄女、外甥女；", "阳财是表嫂；阴财是表弟媳，以及表兄弟的妾。", "化出的财在内卦而属别宫，是邻居的财；在外卦而属别宫，是远方人的财。", "临父母，是长辈；临官鬼，是官员、经纪人、兵卒；临兄弟，是朋友；临子孙，是僧道、医生、捕快；临妻财，是女人。", "财属子，是妇人、姬妾的财；属丑，是贵人、尊长的财；属寅，是公门贵客、路上的财；", "属卯，是士大夫、术士、僧人、商人的财；属辰，是高官或鱼盐、恶人的财；属巳，是妇人、厨灶的财；", "属午，是使臣、亭长、官妃，或神僧、文人墨客的财；属未，是贵人、老人、女亲戚的财；", "属申，是兵卒、僧人、医生、行人、市场商贩的财；属酉，是妇女、婢妾、女贵人、卖酒人的财；", "属戌，是朝官、善人、狱吏、差役、仆从的财；属亥，是小孩、经纪人、盗贼的财。", "财在乾卦，是君王、父亲、名官、长辈、公门中人的财；在坤卦，是母亲、皇后、老妇、农夫、大肚子的人的财；", "在震卦，是长子、武人、客商、有名声的人的财；在巽卦，是长女、命妇、秀才、山林中人、僧道、工匠、头发稀少的人的财；", "在坎卦，是次子、外族、盗贼、船夫、江湖人的财；在离卦，是次女、文人、军人、有眼疾的人、大肚子的人、火性子的人的财；", "在艮卦，是少男、道士、风水先生、术士、山里人的财；在兑卦，是少妇、歌妓、姬妾、伶人、翻译、巫师的财。"],
+          "en": ["When a relation of the home palace in the inner trigram turns into Wealth and generates or combines with the Self line:", "a yang Pressure line is the grandfather, a yin one the grandmother; a yang Resource line the father, a yin one the mother;", "a yang Peer line is an uncle or a brother, a yin one an aunt by marriage or a sister (the Golden Strategy lowers uncles to the rank of brothers);", "a yang Output line a son, a yin one a daughter; a yang Wealth line the wife, a yin one a concubine.", "When a relation of the home palace in the outer trigram turns into Wealth and generates or combines with the Body line:", "yang Pressure is the maternal grandfather, yin the maternal grandmother; yang Resource the father-in-law, yin the mother-in-law;", "yang Peer a maternal uncle, an uncle or a male cousin on the other side; yin Peer a maternal uncle's wife, a mother's sister or a female cousin;", "yang Output a son-in-law, a cousin's son or a sister's son; yin Output a cousin's daughter or a sister's daughter;", "yang Wealth a cousin's wife; yin Wealth a younger cousin's wife, or a cousin's concubine.", "If the relation sits in the inner trigram but belongs to another palace, the money comes from neighbours; in the outer trigram and another palace, from people far away.", "On Resource, an elder; on Pressure, an official, a broker or a soldier; on Peer, a friend; on Output, a monk, a Taoist, a doctor or a constable; on Wealth, a woman.", "Wealth on Zi: money from women or concubines; on Chou, from nobles or elders; on Yin, from official guests or from the road;", "on Mao, from scholars, diviners, monks or merchants; on Chen, from high officials, from fish and salt, or from bad men; on Si, from women or the kitchen;", "on Wu, from envoys, village heads, court ladies, holy monks or men of letters; on Wei, from nobles, the old or female relatives;", "on Shen, from soldiers, monks, doctors, travellers or market traders; on You, from women, maids, noblewomen or wine-sellers;", "on Xu, from court officials, good men, jailers, runners or servants; on Hai, from children, brokers or thieves.", "Wealth in Qian: from rulers, fathers, famous officials, elders or officials; in Kun: from mothers, queens, old women, farmers or the big-bellied;", "in Zhen: from eldest sons, soldiers, travelling merchants or the famous; in Xun: from eldest daughters, titled ladies, scholars, hill folk, monks and Taoists, craftsmen or the thin-haired;", "in Kan: from middle sons, foreigners, thieves, boatmen or drifters; in Li: from middle daughters, men of letters, soldiers in armour, people with eye trouble, the big-bellied or the hot-tempered;", "in Gen: from youngest sons, Taoists, geomancers, magicians or mountain people; in Dui: from young wives, singing girls, concubines, actors, interpreters or shamans."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.06",
+      "topic": "取象",
+      "title": "得何财：看财入何宫、属何支",
+      "rule": {
+        "yi": "问得什么财：看财爻落在哪个卦宫（乾金玉珠宝骡马、坤田土布帛五谷牛、震竹木茶、巽山林园圃、坎池沼鱼盐酒醋猪、离窗灶炉冶书吏、艮坟石山路、兑姬妾缸瓷羊五金），属哪个地支（子池荡石灰布帛……亥楼台仓库绸绢鱼介猪）。野鹤认为这类以五行定物的说法屡试不验（见 LY.WEALTH.ZS.26）。",
+        "en": "What kind of money: see which palace the Wealth line lies in (Qian gold, jade, jewels, mules and horses; Kun land, cloth, grain, cattle; Zhen bamboo, timber, tea; Xun forests and gardens; Kan ponds, fish and salt, wine and vinegar, pigs; Li stoves, furnaces, clerks' work; Gen graves, stone, mountain paths; Dui concubines, jars, sheep, metals) and which branch it falls on (Zi ponds, lime, cloth ... Hai towers, granaries, silk, fish, pigs). Yehe held such element-based readings of goods unreliable (see LY.WEALTH.ZS.26)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["财入乾，金玉珠宝首饰骡马之财。入坤，田土布帛丝绵五谷牛畜之财。", "入震，竹木茶叶之财。入巽，山林蔬圃花园之财。", "入坎，池沼鱼盐酒醋豕畜之财。入离，窗灶罏冶书吏之财。", "入艮，坟石山径路之财。入兑，姬妾婢女缸瓷羊畜五金之财。", "财属子，池荡石灰布帛大豆酒醋衣饰珠玉也。属丑，田园坟池桥梁珍宝牛畜也。", "属寅，山林树木柴薪棺椁书籍钱帛也。属卯，舟车竹木帅货也。", "属辰，田园坟地麦地文书印信宝货磁器缸坛水物也。", "属巳，赏赐图画磁器砖瓦花叶炉冶管籥弓弩也。", "属午，宫室书籍字画窗灶马畜也。属未，坟地酒坊衣服段疋婚定药材羊畜也。", "属申，田园池荡绢帛大麦金银纸布丧具也。属酉，金珠钗钏炉鼎刀剑小麦五谷也。", "属戌，宅舍坟地矿穴田蚕碓磨印信狱具也。属亥，楼台仓库紬绢酹酢鳞介豕畜也。(出然犀集)。"],
+          "yi": ["财在乾卦，是金玉、珠宝、首饰、骡马之财；在坤卦，是田地、布帛、丝绵、五谷、牛畜之财；", "在震卦，是竹木、茶叶之财；在巽卦，是山林、菜园、花园之财；", "在坎卦，是池塘、鱼盐、酒醋、猪之财；在离卦，是门窗炉灶、冶炼、文书吏员之财；", "在艮卦，是坟地、石头、山路之财；在兑卦，是姬妾婢女、缸瓷、羊、五金之财。", "财属子，是池塘、石灰、布帛、大豆、酒醋、衣饰、珠玉；属丑，是田园、坟池、桥梁、珍宝、牛；", "属寅，是山林树木、柴火、棺椁、书籍、钱帛；属卯，是船车、竹木、帅货（「帅货」字义不详）；", "属辰，是田园、坟地、麦地、文书印信、宝货、瓷器、缸坛、水中之物；", "属巳，是赏赐、图画、瓷器、砖瓦、花叶、炉冶、管乐、弓弩；", "属午，是房屋、书籍字画、窗灶、马；属未，是坟地、酒坊、衣服、绸缎、聘礼、药材、羊；", "属申，是田园池塘、绢帛、大麦、金银、纸布、丧葬用具；属酉，是金珠、钗钏、炉鼎、刀剑、小麦五谷；", "属戌，是住宅、坟地、矿洞、田地蚕桑、碓磨、印信、刑具；属亥，是楼台仓库、绸绢、祭酒、鱼虾贝类、猪（出自《然犀集》）。"],
+          "en": ["Wealth in Qian: gold, jade, jewels, ornaments, mules and horses; in Kun: land, cloth, silk and cotton, grain, cattle;", "in Zhen: bamboo, timber, tea; in Xun: forests, vegetable plots, gardens;", "in Kan: ponds, fish and salt, wine and vinegar, pigs; in Li: windows and stoves, furnaces and smelting, clerks' work;", "in Gen: graves, stone, mountain paths; in Dui: concubines and maids, jars and porcelain, sheep, metals.", "Wealth on Zi: ponds, lime, cloth, soybeans, wine and vinegar, clothes and ornaments, pearls and jade; on Chou: fields, grave-ponds, bridges, treasures, cattle;", "on Yin: forests and trees, firewood, coffins, books, money and silk; on Mao: boats and carts, bamboo and timber, 'shuai goods' (meaning unclear);", "on Chen: fields, graves, wheat land, documents and seals, valuables, porcelain, jars, things from the water;", "on Si: rewards, paintings, porcelain, bricks and tiles, flowers and leaves, furnaces, pipes and flutes, bows and crossbows;", "on Wu: halls and houses, books and calligraphy, windows and stoves, horses; on Wei: graves, wine shops, clothing, satin, betrothal gifts, medicines, sheep;", "on Shen: fields and ponds, silk, barley, gold and silver, paper and cloth, funeral goods; on You: gold and pearls, hairpins and bracelets, tripods, knives and swords, wheat and grain;", "on Xu: houses, graves, mines, fields and silkworms, mills, seals, instruments of the jail; on Hai: towers and granaries, silks, offerings of wine, fish and shellfish, pigs (from the Ranxi Ji)."] }
+      ],
+      "see": ["LY.WEALTH.ZS.26"]
+    },
+    {
+      "id": "LY.WEALTH.YY.07",
+      "topic": "应期",
+      "title": "何日得：旺财六合日，太旺墓日，死绝生旺日，空墓逢冲日",
+      "rule": {
+        "yi": "何日得财：旺相而生合世身的财→六合之日；财多太旺→墓日；死绝→生旺之日；空墓→逢冲之日；子孙旺而卦无财→财值之日。书中五例：伏财靠月建扶起而得；伏财因飞神旬空透出、逢长生而得；财化绝待绝处逢生之日；用神不透待财值之日；伏克飞神「出暴」、次日兄空而得。",
+        "en": "The day the money comes: a strong Wealth generating or combining with the Self or Body, the day that combines with it; too much or over-strong, its tomb day; dead or extinguished, a day of birth or strength; void or entombed, the clashing day; Output strong and no Wealth, the day of Wealth's branch. Five cases in the book: hidden Wealth lifted by the Month; hidden Wealth showing through when its flying line is void, and coming on its Birth day; Wealth turning into extinction, coming on the day it is reborn; a Subject that does not show, coming on the day of its branch; a hidden line controlling its flying line ('breaking out') and coming the next day when Peer is void."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["旺相生合世身之财，六合日得也。", "财多太旺者，墓日得也。", "死绝之财，生旺日得。", "空墓之财，逢冲日得。", "福旺无财者，财值(此处缺一字)日得也。"],
+          "yi": ["旺相而生合世爻卦身的财，在六合之日得。", "财多、太旺的，在墓日得。", "死、绝的财，在生旺之日得。", "空、墓的财，在逢冲之日得。", "子孙旺而卦无财的，在财爻值日（原文这里缺一个字）得。"],
+          "en": ["A strong Wealth that generates or combines with the Self or Body line: on the day that combines with it.", "Too much or over-strong Wealth: on its tomb day.", "Dead or extinguished Wealth: on a day of birth or strength.", "Void or entombed Wealth: on the clashing day.", "Output strong but no Wealth: on the day Wealth's branch comes round (a character is missing in the text)."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["己丑年丙子月丁卯日占求财，得睽之归妹。", "此卦六爻无财，只本宫丙子财，伏未土下受害受克，兼以卯日刑之故，", "必被人阻隔，而不可求，所赖月建并起财爻果至，丙子日得也。"],
+          "yi": ["己丑年丙子月丁卯日占求财，得睽卦变归妹卦。", "这一卦六爻无财，只有本宫的丙子财，伏在未土下，被害、被克，又被卯日刑，", "一定被人阻隔，本来求不到；幸亏月建扶起财爻，果然到手，在丙子日得。"],
+          "en": ["Jichou year, Bingzi month, Dingmao day; a money question; the hexagram Kui changing to Guimei.", "No Wealth among the six lines; only the home palace's Bingzi Wealth, hidden under Wei Earth, harmed and controlled by it, and punished by the Mao day,", "so someone would block it and it could not be sought; but the Month lifted the Wealth line, and it did come, on the Bingzi day."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年己卯月甲申旬丁亥日，卜求财，得谦之小过。", "六爻无财，只本宫卯财，伏午火官鬼下，名为耗鬼，", "岂知午火旬空，透出卯财，况投长生于亥日，", "后至辛卯日，财值巳辰，果得财也。"],
+          "yi": ["庚寅年己卯月、甲申旬的丁亥日，卜求财，得谦卦变小过卦。", "六爻无财，只有本宫的卯木财，伏在午火官鬼下面，叫作「耗鬼」；", "谁知午火逢旬空，卯财透了出来，何况卯木在亥日得长生，", "后来到辛卯日，财爻值日（原文作「财值巳辰」），果然得财。"],
+          "en": ["Gengyin year, Jimao month, Dinghai day in the Jiashen decade; a money question; the hexagram Qian changing to Xiaoguo.", "No Wealth among the six lines; only the home palace's Mao Wealth, hidden under the Wu Fire Pressure line, which is called 'the draining ghost';", "but the Wu Fire was void, letting the Mao Wealth show through, and Mao finds its Birth stage on a Hai day;", "and on the later Xinmao day, when the Wealth branch came round (the text reads 'Wealth on Si and Chen'), the money did come."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年己卯月丁酉日，占求财，得临之中孚。", "亥财动来生合世，只因化绝在巳，虽有酉日，不能生绝水，故当日不得，", "次日戊申，财爻绝处逢生，方入手也。(绝惟贞也，己亥能生)。"],
+          "yi": ["庚寅年己卯月丁酉日，占求财，得临卦变中孚卦。", "亥水财动来生合世爻，只因为化出巳火，是它的绝地，虽有酉日，也生不了临绝的水，所以当天得不到；", "第二天戊申，财爻在绝处逢生（水长生在申），才到手。（原注：「绝惟贞也，己亥能生」，意思不详。）"],
+          "en": ["Gengyin year, Jimao month, Dingyou day; a money question; the hexagram Lin changing to Zhongfu.", "The Hai Water Wealth moved to generate and combine with the Self line, but it turned into Si, its place of extinction; even the You day could not revive the extinguished Water, so nothing came that day;", "the next day, Wushen, the Wealth line met its birth in the midst of extinction (Water is born at Shen), and the money came. (Original note, meaning unclear: 'extinction only in zhen; Jihai can be generated'.)"] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年甲戌月癸亥日，问月内何日得财，遇涣卦安静。", "六爻无财，惟本宫酉财，伏未土下受生，终必得财。", "但嫌用爻不透，直待癸酉日得。", "若问本日何时得财，则于己酉时得也。"],
+          "yi": ["庚寅年甲戌月癸亥日，问这个月哪天得财，得涣卦，六爻安静。", "六爻无财，只有本宫的酉金财，伏在未土下而受它生，终究一定得财。", "只嫌用神不透出来，要等到癸酉日才得。", "如果问某一天什么时辰得财，就在己酉时得。"],
+          "en": ["Gengyin year, Jiaxu month, Guihai day; which day this month will the money come? The hexagram Huan, all lines still.", "No Wealth among the lines; only the home palace's You Metal Wealth, hidden under Wei Earth and generated by it, so the money would surely come in the end.", "But the Subject did not show, so it would wait until the Guiyou day.", "Asked at what hour of a day, it would be the Jiyou hour."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年己丑月甲午旬癸卯日，占求财，得噬嗑安静。", "此卦辰财旬空，未财月破，喜本宫丑财，正值月建，又伏子水下，伏克飞神为出暴。", "又土旺于子，稍嫌卯日克丑，故当日未得，", "次日甲辰，寅卯兄弟又空，内财帮比而得也。"],
+          "yi": ["庚寅年己丑月、甲午旬的癸卯日，占求财，得噬嗑卦，六爻安静。", "这一卦辰财旬空，未财月破；可喜本宫的丑财正值月建，又伏在子水下，伏神克飞神，叫作「出暴」。", "又说土在子上为旺，只稍嫌卯日克丑，所以当天没得；", "第二天甲辰，寅卯兄弟又落空，内卦的财得比和帮扶，就得到了。"],
+          "en": ["Gengyin year, Jichou month, Guimao day in the Jiawu decade; a money question; the hexagram Shihe, all lines still.", "Here the Chen Wealth was void and the Wei Wealth under a Month-break; but the home palace's Chou Wealth was the Month itself and lay hidden under Zi Water, and a hidden line controlling its flying line is called 'breaking out'.", "The text adds that Earth is strong over Zi; only the Mao day controlled Chou a little, so nothing came that day;", "the next day, Jiachen, the Yin and Mao Peer lines were void as well, and with the inner Wealth reinforced, the money came."] }
+      ],
+      "see": ["LY.WEALTH.HJC.25", "LY.WEALTH.TXF.11"]
+    },
+    {
+      "id": "LY.WEALTH.YY.08",
+      "topic": "难易",
+      "title": "仗托吹嘘：看间爻（中保）",
+      "rule": {
+        "yi": "靠人说合（仗托吹嘘）看间爻（中人、保人）：死绝受伤则中保无能；生合世爻善成全，刑克世爻多欺骗；带兄鬼玄武冲伤为奸人阻隔，带贵人生合为贵人做主；应克间，对方起疑；世伤间，我心怀怨；两间兄动，争做中人；朱雀兄弟旁动伤世克间，有人破坏；间爻空，没有中保。",
+        "en": "When it depends on someone putting in a word, read the between lines (go-between and guarantor): dead or hurt, they are useless; generating or combining with the Self, they see it through; punishing or controlling it, they cheat; with Peer, Pressure or the Dark Tortoise clashing, villains block it; with the Noble star generating, a person of rank takes charge; the Other controlling them, the other side grows suspicious; the Self hurting them, you bear a grudge; both between lines Peer and moving, people compete to be the go-between; the Vermilion Bird on a moving Peer elsewhere hurting the Self and controlling the between line, someone spoils it; a void between line, no go-between."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["间爻死绝，被刑害克破者，中保无能，", "生合世者，善成全。刑害克破世者，多欺骗。", "加兄鬼玄武冲伤者，奸宄阻隔也。加贵初生合者，贵人主张也。", "应克间者，彼生疑。世伤间者，我怀怨。", "间两兄动者，争为中。", "雀兄旁动，伤世克间者，有人破。间爻空者，无中保也。"],
+          "yi": ["间爻死绝，或受刑害克破，中间人、保人无能；", "间爻生合世爻，会好好成全；刑害克破世爻，多欺骗。", "间爻带兄弟、官鬼、玄武来冲伤，是奸人阻隔；带贵人（原文作「贵初」）来生合，是贵人做主。", "应爻克间爻，对方起疑心；世爻伤间爻，我心怀怨恨。", "两个间爻都是兄弟而发动，大家争着做中间人。", "朱雀兄弟在旁爻发动，伤世爻、克间爻，有人从中破坏；间爻空，没有中间人和保人。"],
+          "en": ["The between lines dead or extinguished, or punished, harmed, controlled or broken: the go-between and guarantor are useless;", "generating or combining with the Self line, they will see it through; punishing, harming, controlling or breaking it, they will mostly cheat.", "With Peer, Pressure or the Dark Tortoise clashing and hurting, villains block the way; with the Noble star (the text reads gui chu) generating or combining, a person of rank takes charge.", "The Other controlling the between line: the other side grows suspicious; the Self hurting it: I bear a grudge.", "Both between lines Peer and moving: people compete to be the go-between.", "The Vermilion Bird on a Peer line moving elsewhere, hurting the Self and controlling the between line: someone will spoil it; a void between line: no go-between or guarantor."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.09",
+      "topic": "公门九流",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "空手求财：但以官鬼为主",
+      "rule": {
+        "yi": "空手求利（百工九流、到官员任所打秋风）以官鬼为主：官鬼旺动生合身世吉，财爻旺动助鬼生合身世更吉；子孙旺动伤官、兄持世动或兄弟独发、官鬼刑克世身、官财空破死墓绝胎，少利。求财方向：世爻所克之方为财方，世爻生旺之方利，死墓绝胎或受刑克之方凶。",
+        "en": "Earning without capital (craftsmen, the trades, visitors soliciting gifts at an official's post) reads the Pressure line: a strong moving Pressure generating or combining with the Self and Body is good, better still with a strong moving Wealth feeding it; Output strong and moving against Pressure, Peer on the Self line moving or Peer moving alone, Pressure punishing or controlling the Self or Body, Pressure or Wealth void, broken, dead, entombed, extinguished or embryonic: little profit. Direction: the element the Self line controls is the direction of money; where the Self is born or strong is good; where it dies or is hurt is bad."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["凡百工九流之人，与任所抽丰之客，皆空拳求利者，但以官鬼为主。", "官爻旺动生合身世者吉，", "则爻旺动助鬼生合身世者，尤吉也。", "子旺动伤官，或兄持世动，与兄弟独发者，", "或官动刑害克破世身者，", "或官爻，财爻，逢空破死墓绝胎，与化空破死墓绝胎者，少利也。", "问往何方可求，则世爻所克是财方也。", "世爻生旺之方利，死墓绝胎，刑害克破之方凶也。"],
+          "yi": ["凡是百工九流的人，以及到官员任所去打秋风（求馈赠）的客人，都是空手求利的，只以官鬼为主。", "官鬼旺而发动、生合身世，吉；", "财爻（原文作「则爻」）旺而发动去助官鬼、生合身世，更吉。", "子孙旺动伤官鬼，或兄弟持世发动，或只有兄弟发动，", "或官鬼发动刑害克破世爻、卦身，", "或官鬼、财爻逢空、破、死、墓、绝、胎，或化出空破死墓绝胎，利就少。", "问往哪个方向去求，世爻所克的方位就是财方。", "世爻生旺的方位有利；世爻死、墓、绝、胎，或受刑害克破的方位凶。"],
+          "en": ["Craftsmen and people of the trades, and visitors who go to an official's post to solicit gifts, all earn without capital; for them Pressure is the main line.", "A strong moving Pressure line generating or combining with the Body and Self lines is good;", "a strong moving Wealth (the text reads ze, 'then') that feeds Pressure and generates or combines with the Body and Self lines is better still.", "Output strong and moving to hurt Pressure, or Peer on the Self line and moving, or Peer moving alone;", "or Pressure moving to punish, harm, control or break the Self and Body lines;", "or the Pressure and Wealth lines void, broken, dead, entombed, extinguished or embryonic, or turning into these: little profit.", "Which direction to seek in: the direction of the element the Self line controls is the direction of money.", "Directions where the Self line is born or strong are good; those where it dies, is entombed, extinguished or embryonic, or is punished, harmed, controlled or broken, are bad."] }
+      ],
+      "note": {
+        "yi": "「则爻旺动助鬼」的「则」，两个本子都这样写，按文义（助鬼的是财）当是「财」。",
+        "en": "'Ze-line strong and moving, feeding the ghost': both editions read ze; since it is Wealth that feeds Pressure, cai (Wealth) is meant."
+      },
+      "see": ["LY.WEALTH.HJC.29", "LY.WEALTH.TXF.02"]
+    },
+    {
+      "id": "LY.WEALTH.YY.10",
+      "topic": "借贷",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "借贷求财：财持世生合世而不空破绝",
+      "rule": {
+        "yi": "借贷：财持世或生合世而不空破绝，财逢生合之日得；应生合世而兄静财伏，或财伏而兄子同动，财值日得；父空无借据，父化父改契；世应空合，虚约；应受刑伤，求而不遇；应生合世而财空绝，想借无钱；财生合世而应冲克世，借而不情愿；财动生世而日合财，有人把持拖延；应动合世而日冲应，有人说破不成。",
+        "en": "Borrowing: Wealth on or generating or combining with the Self line and not void, broken or extinguished, the money comes on a day that generates or combines with it; the Other generating the Self with Peer still and Wealth hidden, or Wealth hidden with Peer and Output both moving, it comes on Wealth's day; Resource void, no written note; Resource into Resource, the contract rewritten; Self and Other void yet combining, an empty promise; the Other hurt, you will not find him; the Other generating the Self but Wealth void, willing but empty-pursed; Wealth generating the Self but the Other clashing it, lent grudgingly; Wealth moving to the Self but held by the Day, someone delays it; the Other combining with the Self but clashed by the Day, someone talks him out of it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["借贷求财者，但财爻持世生合世，不空破绝者，财生财合之日有也。", "应生合世，而兄静财伏者，或财伏而兄子两动者，皆财值之日有也。", "父空者无券，父化父者改契。", "世应空合者，虚约难凭。", "应被刑伤者，往求不值，", "应生合世，而财空绝，彼欲与而囊空。", "财生合世，而应冲克世，彼虽与而意咈。", "财动生世，而日辰合财者，有人把住而稽迟。", "应动合世，而日辰冲应者，有人说破而不果也。"],
+          "yi": ["借贷求财，只要财爻持世或生合世爻，不空不破不绝，在财爻逢生、逢合之日就有。", "应爻生合世爻而兄弟安静、财伏藏，或者财伏藏而兄弟、子孙都发动，都在财爻值日那天有。", "父母空，没有借据；父母化父母，要改契约。", "世应空而相合，空口约定靠不住。", "应爻受刑伤，去求见不到人；", "应爻生合世爻而财空绝，对方想借却囊中空空。", "财生合世爻而应爻冲克世爻，对方虽然借了，心里不乐意。", "财动来生世，而日辰合住财，有人把持，要拖延。", "应爻动来合世，而日辰冲应爻，有人说坏话，事情不成。"],
+          "en": ["Borrowing: as long as the Wealth line sits on or generates or combines with the Self line and is not void, broken or extinguished, the money comes on a day that generates or combines with it.", "The Other line generating or combining with the Self line while Peer is still and Wealth hidden, or Wealth hidden while Peer and Output both move: the money comes on the day of Wealth's branch.", "Resource void: no written note; Resource turning into Resource: the contract will be rewritten.", "Self and Other void yet combining: an empty promise.", "The Other line punished or hurt: you will not find him when you go;", "the Other generating or combining with the Self while Wealth is void or extinguished: he would lend but his purse is empty.", "Wealth generating or combining with the Self while the Other clashes with or controls it: he lends, but grudgingly.", "Wealth moving to generate the Self while the Day combines with Wealth: someone holds it back, and it is delayed.", "The Other moving to combine with the Self while the Day clashes the Other: someone talks him out of it and nothing comes of it."] }
+      ],
+      "see": ["LY.WEALTH.ZS.27", "LY.WEALTH.HJC.33"]
+    },
+    {
+      "id": "LY.WEALTH.YY.11",
+      "topic": "借贷",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "纠会、摇会求财",
+      "rule": {
+        "yi": "纠会（发起互助会）：财、应生合世易成；财应空破绝或应刑冲克世不成；应空对方推辞，世空自己倦怠，应空合世虚诺；应生合世带退悔杀或化退神，先允后却；带破碎杀，零星交财；应财化财，一人两脚；应兄化财，两人合脚；六合变六冲不成。摇会：财旺动助官生合世得；兄持世动、兄弟独发、无财鬼、世财空破死绝受刑克则失；六合得六冲失；财合世而兄克财，得而复失；财合应而应生世，彼得让我；财生世又生应，谁衰伤谁失；世应俱旺，两人分得。",
+        "en": "Gathering a savings society: Wealth and the Other generating or combining with the Self, it forms; Wealth or the Other void, broken or extinguished, or the Other attacking the Self, it does not; Other void, they refuse; Self void, you tire of it; Other void yet combining, an empty promise; the Other generating the Self but moving with the Regret star or turning Retreating, agreed then withdrawn; with the Breaking star, paid in dribs and drabs; the Other's Wealth turning into Wealth, one person taking two shares; the Other's Peer turning into Wealth, two sharing one; Six-Combine changing into Six-Clash, it does not form. Drawing: a strong moving Wealth feeding Pressure and generating the Self wins; Peer moving on the Self or alone, no Wealth or Pressure, or Self and Wealth void or hurt, loses; Six-Combine wins, Six-Clash loses; Wealth combining with the Self but controlled by Peer, won then lost; Wealth combining with the Other and the Other generating the Self, he wins and hands it to you; Wealth generating both, whichever is weaker loses; both strong, they share."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["纠会求财者，但财爻应爻，生合世者，易成。", "财爻空破死绝，应持空破绝，或动来刑害克冲世者，不成。", "应空者，彼却我。世空者，我意倦。应空合世者，虚诺。", "世空动者，有名而无实，或财难入手。世应俱空者，必不成。", "应生合世，带退悔杀动，或动化退神者，初允而终却也。", "财生合世而带破碎杀动者，零星陆续交财也。", "应爻财化财来生合，一人两脚也。", "应持兄动化财来生合，两人合脚也。", "卦六合成六冲，不成也。", "摇会求财者，财旺动助官生合世者得。", "兄持世动与兄弟独发，或卦无财鬼，或世爻财爻值空破死绝，与受刑害克者，失也。", "六合得，而六冲失也。", "财合世而兄克财，已得而复失也。", "财合应而应生世，彼得而让我也。", "财爻生世复生应者，世衰伤则人得，应衰伤则我得。", "世应俱旺，两人分得也。"],
+          "yi": ["纠集互助会求财，只要财爻、应爻生合世爻，就容易成。", "财爻空破死绝，应爻空破绝，或应爻动来刑害克冲世爻，不成。", "应空，对方推辞我；世空，我自己意兴阑珊；应空而合世，是空口答应。", "世空而动，有名无实，或者财难到手；世应都空，一定不成。", "应生合世，却带退悔杀发动，或动化退神，开始答应、最后推掉。", "财生合世而带破碎杀发动，钱会零零星星陆续交来。", "应爻是财，又化财来生合，是一个人占两份（一人两脚）。", "应爻持兄弟发动化财来生合，是两个人合占一份（两人合脚）。", "卦由六合变成六冲，不成。", "摇会求财，财旺而发动、助官鬼、生合世爻，就能摇到。", "兄弟持世发动或兄弟独发，或卦里没有财、鬼，或世爻、财爻逢空破死绝，或受刑害克，摇不到。", "六合卦得，六冲卦失。", "财合世而兄弟克财，得了又失。", "财合应爻而应爻生世爻，对方摇到而让给我。", "财爻既生世又生应：世爻衰弱受伤就别人得，应爻衰弱受伤就我得。", "世应都旺，两人分得。"],
+          "en": ["Gathering a savings society: if the Wealth and Other lines generate or combine with the Self line, it forms easily.", "The Wealth line void, broken, dead or extinguished, the Other line void, broken or extinguished, or moving to punish, harm, control or clash the Self line: it does not form.", "Other void: they turn me down; Self void: I lose interest; Other void yet combining with the Self: an empty promise.", "Self void and moving: a name without substance, or the money hard to get; both void: it will not form.", "The Other generating or combining with the Self but moving with the Regret star, or turning Retreating: agreed at first, refused in the end.", "Wealth generating or combining with the Self but moving with the Breaking star: the money is handed over in dribs and drabs.", "The Other line on Wealth turning into Wealth and generating or combining: one person taking two shares.", "The Other line on Peer moving into Wealth and generating or combining: two people sharing one share.", "A Six-Combine hexagram changing into a Six-Clash one: it does not form.", "Drawing in a society: Wealth strong and moving, feeding Pressure and generating or combining with the Self line, you win the draw.", "Peer on the Self line and moving, or Peer moving alone, or no Wealth or Pressure in the hexagram, or the Self and Wealth lines void, broken, dead or extinguished, or punished, harmed or controlled: you lose.", "Six-Combine wins, Six-Clash loses.", "Wealth combining with the Self but Peer controlling Wealth: won, then lost again.", "Wealth combining with the Other and the Other generating the Self: he wins and hands it to me.", "The Wealth line generating both Self and Other: if the Self is weak or hurt, the other wins; if the Other is, I win.", "Both strong: the two share it."] }
+      ],
+      "see": ["LY.WEALTH.ZS.31"]
+    },
+    {
+      "id": "LY.WEALTH.YY.12",
+      "topic": "博戏",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "赌博求财：内克外、世克应胜，外克内、应克世输",
+      "rule": {
+        "yi": "赌博：内克外、世克应，或财子旺持世生合世，胜（旺世克衰应小胜，旺应生衰世大胜）；外克内、应克世、财官俱无、世空破墓绝，输；世空动缺庄家，应空无对手；世应比和不分胜负，俱空两无所得；世上子孙化父因骄而败，化兄得助而赢；世居阴卦阴爻宜守，阳爻阳卦宜争先。应爻所临六神与六亲定对方手段：内外两鬼动伤世合局骗，间爻兄动抽头多，应带龙喜生世得人提携，虎刃克世斗殴，玄兄伤世设局偷筹，勾鬼伤世牵连不清，蛇火鬼伤世药骰，雀兄伤世因财争斗，雀兄化鬼伤世有人告发；世持雀鬼化父或雀父化鬼，因赌成讼，加太岁讼经年。",
+        "en": "Gambling: inner controlling outer, Self controlling Other, or a strong Wealth or Output on or generating the Self, a win (strong Self over weak Other a small win, strong Other generating weak Self a big one); outer controlling inner, Other controlling Self, no Wealth or Pressure, or the Self void, broken, entombed or extinguished, a loss; Self void and moving, no banker; Other void, no opponent; in harmony, no winner; both void, nothing gained; Output on the Self turning into Resource, pride loses; into Peer, help wins; the Self yin in a yin trigram, hold back; yang in yang, press on. The Other's spirit and relation show how they play you: two Pressure lines against the Self, a set-up; a moving between Peer, a heavy house cut; the Other with Dragon and Joy generating the Self, someone helps you; Tiger and Blade controlling it, a brawl; Tortoise and Peer, a rigged game or swapped counters; Hook and Pressure, dragged into something murky; Snake and Fire Pressure, loaded dice; Bird and Peer, a fight over money; Bird and Peer turning into Pressure, someone informs; the Self on Bird and Pressure turning into Resource, or Bird and Resource into Pressure, gambling ends in a lawsuit, a year long with the Tai Sui."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["赌博求财者，内克外世克应，或财子旺持生合世者，胜也。", "旺世克衰应者，小胜。旺应生衰世者，大胜也。", "外克内，应克世，或财鬼两无，或世逢空破墓绝者，输也。", "世空动者，缺管头。应空者，无对手。", "世应比和，两无胜负。世应俱空，两无所得。", "世子化父，以骄取败。世子化兄，得助而赢。", "世居阴卦阴爻，宜退守也。世入阳爻阳卦，宜争先也。", "内外两鬼动伤世者，彼此合局来骗也。", "间爻动者，多撞来。间兄动者，抽头多。", "应带龙喜生世，得人提拔。应加虎刃克世，与人斗殴。", "应加玄兄伤世，被人局骗，或轮筹窃马。", "应加勾鬼伤世，主牵连不明白也。。", "应加蛇火鬼伤世，被药骰骗也。", "应加雀兄伤世，因财争斗也。", "应加雀兄动化鬼伤世，同伴出首。旁爻雀兄动化鬼伤世，他人出首。", "世持雀鬼化父，或雀父化鬼者，皆因赌成讼。若加太岁，讼必经年也。"],
+          "yi": ["赌博求财，内卦克外卦、世克应，或财、子孙旺相持世或生合世爻，赢。", "旺的世克衰的应，小赢；旺的应生衰的世，大赢。", "外克内、应克世，或财、官都没有，或世逢空破墓绝，输。", "世空而动，缺少做庄的；应空，没有对手。", "世应比和，不分胜负；世应俱空，双方都得不到什么。", "世上的子孙化父母，因骄傲而败；世上的子孙化兄弟，得人相助而赢。", "世在阴卦阴爻，宜退守；世在阳爻阳卦，宜抢先。", "内外两个官鬼都动来伤世，是对方合伙设局来骗。", "间爻动，多有人闯进来；间爻兄弟动，抽头（抽成）多。", "应爻带青龙、天喜生世，得人提携；应爻带白虎、羊刃克世，和人打架。", "应爻带玄武、兄弟伤世，被人设局骗，或偷换筹码。", "应爻带勾陈官鬼伤世，主被牵连、说不清楚。", "应爻带螣蛇、火鬼伤世，被灌了药的骰子骗。", "应爻带朱雀兄弟伤世，因钱争斗。", "应爻带朱雀兄弟动化官鬼伤世，同伴去告发；旁爻朱雀兄弟动化官鬼伤世，别人去告发。", "世爻持朱雀官鬼化父母，或朱雀父母化官鬼，都是因赌成讼；再加太岁，官司一定拖一整年。"],
+          "en": ["Gambling: the inner trigram controlling the outer and the Self controlling the Other, or strong Wealth or Output on or generating or combining with the Self line: a win.", "A strong Self controlling a weak Other: a small win; a strong Other generating a weak Self: a big win.", "Outer controlling inner, the Other controlling the Self, no Wealth and no Pressure, or the Self void, broken, entombed or extinguished: a loss.", "Self void and moving: no one to run the game; Other void: no opponent.", "Self and Other in harmony: no winner; both void: neither gains.", "Output on the Self line turning into Resource: pride brings defeat; turning into Peer: help brings victory.", "The Self on a yin line in a yin trigram: hold back; on a yang line in a yang trigram: press forward.", "Two Pressure lines, inner and outer, moving to hurt the Self: they are in league to cheat you.", "A between line moving: people barge in; a between Peer moving: a heavy house cut.", "The Other with the Dragon and Joy stars generating the Self: someone gives you a leg up; with the Tiger and the Blade controlling the Self: a fistfight.", "With the Tortoise and Peer hurting the Self: you are set up, or the counters are switched.", "With Hook Earth and Pressure hurting the Self: you are dragged into something murky.", "With the Snake and a Fire Pressure hurting the Self: loaded dice.", "With the Bird and Peer hurting the Self: a fight over money.", "The Other with the Bird and Peer moving into Pressure against the Self: your companion informs on you; another line doing so: an outsider informs.", "The Self on the Bird and Pressure turning into Resource, or the Bird and Resource turning into Pressure: gambling ends in a lawsuit; with the Tai Sui as well, the case drags on a year."] }
+      ],
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.ZS.30"]
+    },
+    {
+      "id": "LY.WEALTH.YY.13",
+      "topic": "畜养渔猎",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "捕鱼求财：内卦世爻为人，外卦应爻为物",
+      "rule": {
+        "yi": "捕鱼：内卦世爻为人、外卦应爻为鱼。内世克外应、财官旺动生合世、鬼化财克世、水财旺持世、官鬼临天罡煞动，多获；外应克内世、财官空无破克、财化鬼或空破绝，无获；世持兄动或兄独发难得，兄动克世同伴欺；世为船、应为人，世应相合顺利得利；日克世、世克财空返，日合世、世合财满载。五行定鱼类（火鳖蟹龟蚌赤鲤、土鳗鳝鳅黄鲿、水鳢江豚、木青鱼、金白鲦白鲢石首）；白浪、风波、覆舟、沐盆浮沉诸杀防风浪翻船落水；管公分爻：初船主、二伴侣、三行李雨具、四网、五道路、六渔所，逢空破不吉。",
+        "en": "Fishing: the inner trigram and Self are the fisherman, the outer and Other the catch. Inner Self over outer Other, strong moving Wealth and Pressure generating the Self, Pressure into Wealth controlling the Self, a strong Water Wealth on the Self, Pressure moving with the Tiangang star: a big catch; the reverse, or Wealth and Pressure void or absent, or Wealth into Pressure, void or extinction: nothing; Peer moving on the Self or alone, little; Peer moving against the Self, companions cheat. The Self is the boat, the Other the crew: combining, all goes well; the Day controlling the Self and the Self controlling Wealth, home empty; the Day combining with the Self and the Self with Wealth, home laden. The element gives the fish (Fire turtles and crabs, Earth eels, Water snakehead and river dolphin, Wood black carp, Metal silver carp and croaker); the White Waves, Storm, Capsize and Floating Basin stars warn of alarms, storms, capsizing and falling in; Master Guan's lines: owner, companions, baggage, net, route, fishing ground, any void or broken bodes ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["捕鱼求财者，内卦世爻为人，外卦应爻为物。", "内世克外应，财鬼旺动生合世，鬼化财克世，", "水财旺持世生合身世鬼临天罡煞动者，多获也。", "外应克内世，财鬼空无破克，财化鬼空破绝，俱无得也。", "世持兄动，与兄弟独发，难得也。兄动克世，同伴欺也。", "又世为船，应为人，船合人，出游顺便。人合船，得利无算。", "日克世，世克财，徒劳空返。日合世，世合财，满载而回也。", "又火财鳖蟹龟蚌赤鲤也。土财鳗鳝鳅及黄鲿也。", "水财(此处之字左边鱼右边匽)鳢江豚也。", "木财青鱼也，金财白鲦白鲢石首也。", "又演禽法，癸亥为鱼，但看何爻旺动来生合世，不犯空破死墓绝胎刑害克者，即知所获，多此类也。", "白浪杀动，有虚惊也。风波杀动，多风浪也。", "覆舟杀动，防覆船也。沐盆浮沉杀动，防失水也。", "管公口诀曰，初爻船主，二爻伴侣，三爻行李雨具，", "四爻网(此处之字上边冂里面八下面古)，五爻道路，六爻渔所，逢空破者不吉也。"],
+          "yi": ["捕鱼求财：内卦和世爻代表人，外卦和应爻代表鱼。", "内卦世爻克外卦应爻，财、官旺动来生合世，官鬼化财来克世，", "水属的财旺而持世、生合身世，官鬼临天罡煞发动，收获多。", "外应克内世，财、官空、无、破、受克，财化官鬼、化空破绝，都一无所获。", "世持兄弟发动，或兄弟独发，难得；兄弟动来克世，被同伴欺负。", "又说世是船、应是人：船合人，出行顺利；人合船，得利无数。", "日辰克世、世克财，白忙一场空手回；日辰合世、世合财，满载而归。", "又：火财是鳖、蟹、龟、蚌、红鲤；土财是鳗、鳝、泥鳅和黄鲿；", "水财是鰋（原文此处注字形：左边鱼右边匽）、鳢、江豚；", "木财是青鱼；金财是白鲦、白鲢、黄鱼（石首）。", "又按演禽法，癸亥是鱼；只看哪一爻旺动来生合世，而不犯空破死墓绝胎刑害克，就知道捕到的多是这一类。", "白浪杀发动，有虚惊；风波杀发动，多风浪；", "覆舟杀发动，防翻船；沐盆浮沉杀发动，防落水。", "管公口诀说：初爻是船主，二爻是同伴，三爻是行李雨具，", "四爻是网（原文此处注字形），五爻是道路，六爻是渔场；哪一爻逢空破，那一样就不吉。"],
+          "en": ["Fishing: the inner trigram and the Self line are the fisherman; the outer trigram and the Other line are the catch.", "Inner Self controlling outer Other, Wealth and Pressure strong and moving to generate or combine with the Self, Pressure turning into Wealth that controls the Self,", "a strong Water Wealth on or generating or combining with the Self and Body lines, or Pressure moving with the Tiangang star: a large catch.", "Outer Other controlling inner Self, Wealth and Pressure void, absent, broken or controlled, Wealth turning into Pressure, void, a break or extinction: nothing caught.", "Peer on the Self line and moving, or Peer moving alone: hard to catch anything; Peer moving to control the Self: your companions cheat you.", "Also, the Self is the boat and the Other the people: boat combining with people, the outing goes smoothly; people combining with boat, endless profit.", "The Day controlling the Self and the Self controlling Wealth: wasted effort, home empty; the Day combining with the Self and the Self with Wealth: home fully laden.", "Also: Fire Wealth is turtles, crabs, tortoises, clams, red carp; Earth Wealth is eels, swamp eels, loaches and yellow catfish;", "Water Wealth is yan catfish (the character is described in a note), snakehead and river dolphin;", "Wood Wealth is black carp; Metal Wealth is white minnows, silver carp and croaker.", "By the method of animal signs, Guihai is fish; see which line moves strongly to generate or combine with the Self without being void, broken, dead, entombed, extinguished, embryonic, punished, harmed or controlled, and the catch is mostly of that kind.", "The White Waves star moving: a false alarm; the Storm star moving: rough water;", "the Capsize star moving: beware of the boat overturning; the Floating Basin star moving: beware of falling in.", "Master Guan's formula: the first line is the boat's owner, the second the companions, the third baggage and rain gear,", "the fourth the net (the character is described in a note), the fifth the route, the sixth the fishing ground; whichever is void or broken bodes ill."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.14",
+      "topic": "畜养渔猎",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "亩猎求财：金财旺动生合世，世临天罡虎杀动者获",
+      "rule": {
+        "yi": "打猎：金财旺动生合世，或世临天罡煞、虎杀发动去克旺财，有获；世临虎杀动而财空破绝，无获；财旺而虎杀不动，鹰犬倦；刑刃虎杀冲伤身世，防野兽伤人。财的地支定猎物（子黄鼠、卯兔、未山羊、申猴、戌獾狗、亥野猪），演禽法以干支定鸟兽；其余内外世应与捕鱼同断。",
+        "en": "Hunting: a strong moving Metal Wealth generating or combining with the Self, or the Self moving with the Tiangang or Tiger star to control a strong Wealth, a kill; the Self moving with the Tiger but Wealth void, broken or extinguished, nothing; Wealth strong but the Tiger still, the hawks and hounds are tired; punishment, Blade or Tiger clashing the Self and Body, beware of wild beasts. The Wealth branch names the game (Zi weasel, Mao hare, Wei wild goat, Shen monkey, Xu badger-dog, Hai boar), the animal-sign method names birds and beasts by stem and branch; the rest is judged as for fishing."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["亩猎求财者，金财旺动生合世，", "世临天罡煞动，与临虎杀动，克旺财者，获也。", "世临虎杀动，而财逢空破绝者，无也。", "月日动来刑者，金财合世者，利也。", "财旺而虎杀不动者，鹰犬倦也。", "刑刃虎杀动来冲伤身世者，防狐狸野物也。", "子财，黄鼠也。卯财，兔也。未财，山羊也。申财，猴也。戌财，獾狗也。亥财，野豕也。", "又演禽法，丁亥为豕，丁酉为鸡，己酉为雉，癸酉为鸦，", "戊午为獐，壬午为鹿，丙寅为虎，壬寅为豹，戊寅为猫。", "凡遇财物动来生合世者，即知得此物也。", "其余内外世应生合克冲，皆与捕鱼同断也。"],
+          "yi": ["打猎求财：金属的财旺动来生合世爻，", "或世爻临天罡煞发动，或临虎杀发动，去克旺财，有收获。", "世临虎杀发动而财空破绝，一无所获。", "月、日、动爻来刑的，金财合世的，有利。", "财旺而虎杀不动，是鹰犬疲倦。", "刑、羊刃、虎杀动来冲伤身世，要防狐狸野兽。", "财属子是黄鼠，属卯是兔，属未是山羊，属申是猴，属戌是獾狗，属亥是野猪。", "又按演禽法：丁亥是猪，丁酉是鸡，己酉是野鸡，癸酉是乌鸦，", "戊午是獐，壬午是鹿，丙寅是虎，壬寅是豹，戊寅是猫。", "凡是遇到哪一类财物动来生合世爻，就知道能得这种东西。", "其余内外、世应的生合克冲，都和捕鱼一样断。"],
+          "en": ["Hunting: a strong Metal Wealth moving to generate or combine with the Self line,", "or the Self line moving with the Tiangang star or the Tiger killing star to control a strong Wealth: a kill.", "The Self moving with the Tiger star but Wealth void, broken or extinguished: nothing.", "The Month, Day or moving lines punishing, or a Metal Wealth combining with the Self: profitable.", "Wealth strong but the Tiger star still: the hawks and hounds are tired.", "Punishment, the Blade or the Tiger star moving to clash and hurt the Self and Body: beware of foxes and wild beasts.", "Wealth on Zi is a weasel; on Mao, a hare; on Wei, a wild goat; on Shen, a monkey; on Xu, a badger-dog; on Hai, a wild boar.", "By the animal-sign method: Dinghai is the pig, Dingyou the chicken, Jiyou the pheasant, Guiyou the crow,", "Wuwu the river deer, Renwu the deer, Bingyin the tiger, Renyin the leopard, Wuyin the cat.", "Whichever of these moves as Wealth to generate or combine with the Self line, that is what you will get.", "Everything else, inner and outer, Self and Other, generation, combination, control and clash, is judged as for fishing."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.15",
+      "topic": "畜养渔猎",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "开矿探珠淘金取藏：但取伏下金财",
+      "rule": {
+        "yi": "开矿、采珠、淘金、挖宝：只看伏下的金财——生合世而得飞神动生为吉；伏财旺相多、休囚少、空绝无；入胎墓难采；逢冲动不止一处。世为己、应为工匠：世生旺持财福吉，空死墓绝胎受刑克凶；应生合世得力，刑克世被欺；应临财子有能，临兄鬼无才而诈，临父母为工头；应带六神看工匠性情（雀多嘴、勾笨拙、虎凶狠、龙灵巧、蛇虚浮、武防偷）。",
+        "en": "Mining, pearl-diving, panning gold or digging treasure: read the hidden Metal Wealth; generating or combining with the Self and fed by its moving flying line is good; thriving means plenty, resting little, void or extinguished none; at the Embryo stage or entombed, hard to extract; clashed into motion, in several places. The Self is you, the Other the workmen: the Self strong on Wealth or Output is good, void or hurt is bad; the Other generating the Self, they work well; attacking it, they cheat; on Wealth or Output, able; on Peer or Pressure, incompetent and crooked; on Resource, the foreman; its spirit gives their temper (Bird talkative, Hook clumsy, Tiger fierce, Dragon deft, Snake flighty, Tortoise light-fingered)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["开矿探珠淘金取藏求财者，但取伏下金财。", "生合世，又得上动生之者吉也。", "伏财旺相者多，休囚者少，空绝者无也。", "财入胎墓，难取采也。财逢冲动，不一处也。", "又世为己，应为所用工匠也。", "世逢生旺持财福者吉。逢空死墓绝胎，被刑害克破者凶。", "应生合世者，得其力。刑害克破世者，被其欺也。", "应持财子，有力而能。应持兄鬼，无才而诈。应临父母，则为众匠之班头也。", "应加雀，多言招讪。勾则拙钝，虎则刚狠，龙则精巧，蛇则虚浮，武防偷取也。"],
+          "yi": ["开矿、采珠、淘金、挖宝求财，只取伏在下面的金属之财。", "伏财生合世爻，又得上面的飞神发动来生它，吉。", "伏财旺相的多，休囚的少，空绝的没有。", "财入胎、墓，难开采；财逢冲而暗动，不止一处。", "又：世是自己，应是雇来的工匠。", "世爻逢生旺、临财福，吉；逢空死墓绝胎、受刑害克破，凶。", "应生合世，得工匠之力；应刑害克破世，被工匠欺骗。", "应临财、子孙，有力又能干；应临兄弟、官鬼，无才又狡诈；应临父母，是众工匠的头目。", "应带朱雀，多嘴招惹闲话；带勾陈，笨拙迟钝；带白虎，刚强凶狠；带青龙，精明灵巧；带螣蛇，虚浮不实；带玄武，要防偷盗。"],
+          "en": ["Mining, pearl-diving, panning for gold or digging for treasure: take the hidden Metal Wealth.", "If it generates or combines with the Self line and the line above it moves to generate it, good.", "A thriving hidden Wealth: plenty; resting or trapped: little; void or extinguished: none.", "Wealth at the Embryo stage or entombed: hard to extract; Wealth clashed into motion: in more than one place.", "Also, the Self is you and the Other the workmen you hire.", "The Self born or strong and on Wealth or Output: good; void, dead, entombed, extinguished or embryonic, or punished, harmed, controlled or broken: bad.", "The Other generating or combining with the Self: the men work well for you; punishing, harming, controlling or breaking it: they cheat you.", "The Other on Wealth or Output: strong and able; on Peer or Pressure: incompetent and crooked; on Resource: the foreman.", "The Other with the Bird: talkative, draws gossip; Hook: clumsy and slow; Tiger: hard and fierce; Dragon: skilled and deft; Snake: flighty; Tortoise: beware of pilfering."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YY.16",
+      "topic": "借贷",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "索债求财：外生内、应生世者还",
+      "rule": {
+        "yi": "讨债：外生内、应生世、内外世应比和，还；外克内、应克冲刑害世，不还；应生合世而无财，想还没钱；应冲伤世而财旺，能还不肯；应持兄鬼动伤世，嘴甜心狠；应持兄动而财空破绝，被骗；应空，穷或逃；应入墓胎，见不到人；财化空破绝，全无；财动助应而鬼伤世，借势耍赖；鬼动化财，告状才还；世持财子旺而兄衰静，本利俱全；应持兄鬼安静不伤世，或持勾陈父母不伤世，只是拖延。",
+        "en": "Collecting a debt: outer generating inner, the Other generating the Self, inner and outer, Self and Other in harmony, repaid; outer controlling inner, the Other attacking the Self, not repaid; the Other generating the Self but no Wealth, willing but unable; the Other hurting the Self with Wealth strong, able but unwilling; the Other on Peer or Pressure moving against the Self, sweet words, bad heart; the Other on a moving Peer with Wealth void, swindled; Other void, too poor or hiding; entombed or embryonic, not to be found; Wealth turning void or extinguished, nothing; Wealth feeding the Other while Pressure hurts the Self, he leans on power to welsh; Pressure into Wealth, repaid only after a lawsuit; a strong Wealth or Output on the Self with Peer weak and still, principal and interest; the Other on a still Peer or Pressure, or on Hook Earth and Resource, not hurting the Self, only delay."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["索债求财者，外甥内，应生世，与内外世应比和者还。", "外克内，应克冲刑害世者，不还。", "应生合世而无财，欲还而力不逮。", "应冲伤世而财旺，能还而心不肯。", "应持兄鬼动伤世，口甜而心歹。", "应持兄动，而财逢空破绝者，被其骗也。", "应空者，非贫乏，则逃躲也。应入墓胎者，人不见也。", "财化空破绝者，全无也。", "财动助应，鬼伤身世者，假虎图赖也。", "鬼动化财者，告状乃还也。", "世持财子旺相，而兄衰静者，子母俱全也。", "应持兄鬼安静不伤世，或持勾父不伤世者，不过迟延而已。"],
+          "yi": ["讨债：外卦生内卦（原文作「外甥内」）、应生世、内外世应比和，能还。", "外克内，应爻克、冲、刑、害世爻，不还。", "应生合世而卦中无财，想还却没能力。", "应冲伤世而财旺，能还却不肯还。", "应持兄弟、官鬼动来伤世，嘴甜心狠。", "应持兄弟发动而财空破绝，被他骗了。", "应空，不是穷得还不起，就是躲起来了；应入墓、胎，见不到人。", "财化空破绝，一点都讨不回。", "财动去生助应爻，官鬼伤世身，是借势耍赖。", "官鬼动化财，要告状才还。", "世持财、子孙旺相，而兄弟衰静，本钱利息都能讨回。", "应持兄弟、官鬼而安静不伤世，或持勾陈父母不伤世，只是拖延罢了。"],
+          "en": ["Collecting a debt: outer generating inner (the text writes the wrong character), the Other generating the Self, inner and outer, Self and Other in harmony: it will be repaid.", "Outer controlling inner, the Other controlling, clashing, punishing or harming the Self: not repaid.", "The Other generating or combining with the Self but no Wealth: willing but unable.", "The Other clashing and hurting the Self with Wealth strong: able but unwilling.", "The Other on Peer or Pressure moving to hurt the Self: sweet words, bad heart.", "The Other on a moving Peer with Wealth void, broken or extinguished: you have been swindled.", "Other void: either too poor or hiding; Other entombed or embryonic: you cannot find him.", "Wealth turning void, broken or extinguished: nothing at all.", "Wealth moving to help the Other while Pressure hurts the Self and Body: he borrows power to welsh on you.", "Pressure moving into Wealth: repaid only after you sue.", "The Self on a thriving Wealth or Output with Peer weak and still: principal and interest both recovered.", "The Other on a still Peer or Pressure that does not hurt the Self, or on Hook Earth and Resource that does not, only means delay."] }
+      ],
+      "note": {
+        "yi": "「外甥内」两个本子都这样写，按前后文（「外克内」）当是「外生内」。",
+        "en": "Both editions write 'outer nephew inner'; by contrast with 'outer controlling inner' it means 'outer generating inner'."
+      },
+      "see": ["LY.WEALTH.ZS.28", "LY.WEALTH.HJC.31"]
+    },
+    {
+      "id": "LY.WEALTH.YY.17",
+      "topic": "取象",
+      "chapter": "空手求财占",
+      "chapter_en": "Earning without capital",
+      "title": "世下伏财者，彼先有物欲抵此债",
+      "rule": {
+        "yi": "讨债时世爻下伏财：对方有东西想拿来抵债；按财所在的卦宫和地支推是什么东西（乾马金银杯镜冠玉、兑羊五金缸坛、离绸缎书画帘屏、震鼓竹茶笋、坎酒醋鱼盐猪、艮狗石瓷瓜叶、坤牛马田土布帛锅；子池荡大豆珠玉……亥猪伞笠笔墨）。",
+        "en": "In collecting a debt, Wealth hidden under the Self line means the debtor has goods to offer instead; tell what they are from the palace and branch of that Wealth (Qian horses, gold and silver, mirrors, jade; Dui sheep, metalware, jars; Li silks, paintings, screens; Zhen drums, bamboo, tea; Kan wine, vinegar, fish, salt, pigs; Gen dogs, stone, porcelain; Kun oxen, land, cloth, pots; Zi ponds, soybeans, jewels ... Hai pigs, umbrellas, brushes and ink)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["蜀市日记曰，凡世下伏财者，彼先有物，欲抵此债。", "以八卦与十二支神，推其何物也。", "如庚寅年辛巳月丙午日，卜得小畜卦。世下伏辛丑土为财，", "巽为长女，为鸡，为竹木器，为花果菜园。", "丑为牛，为坟地，菜圃，随本刊之多少断之知他欲卖何物来偿债也。", "若财在乾则为马，金银杯盘镜冠玉环珠也。财在兑则为羊，少女，五金器缸坛有口物也。", "财在离则为中女，罗段丝绵书画簾屏盘盒赤色中虚之物也。财在震则为长男，鼓竹本茶笋也。", "财在坎则为次男，池荡酒醋鱼盐豕有核物也。财在艮则为少男，狗山石磁器瓜叶土中物也。", "财在坤则为牛牝马田土五谷布帛釜也。", "财属子池荡大荳衣饰珠玉也。财属寅，山林树木棺猫也。财属卯，草木竹舟车盘盒也。", "财属辰，缸瓷碓碾磁器坟地田园也。财属巳，花果书画砖瓦磁器也。财属午，马书画甑衣架也。", "财属未，山(此处之字是寐字下面的左边)羊女衣也。财属申，刀剑五金器大麦碓猿也。", "财属酉，鸡酒小麦金银钗钏五金物也。财属戌，坟地穴坑砖瓦碓磨旧衣狗也。", "财必属亥，猪伞笠笔墨发酱酢盛水物也。(出六三金口诀)"],
+          "yi": ["《蜀市日记》说：凡是世爻下伏着财，对方先有东西，想拿来抵债。", "用八卦和十二地支来推是什么东西。", "比如庚寅年辛巳月丙午日，卜得小畜卦，世爻下伏着辛丑土为财；", "（小畜属巽宫）巽为长女、为鸡、为竹木器、为花果菜园；", "丑为牛、为坟地、为菜圃，按债本的多少来断，就知道他想卖什么东西来还债。", "财在乾是马、金银、杯盘、镜子、冠、玉环、珠；财在兑是羊、少女、五金器、缸坛等有口的东西；", "财在离是中女、绫罗绸缎、丝绵、书画、帘子屏风、盘盒、红色中空之物；财在震是长男、鼓、竹木（原文作「竹本」）、茶、笋；", "财在坎是次子、池塘、酒醋、鱼盐、猪、有核之物；财在艮是少男、狗、山石、瓷器、瓜叶、土里的东西；", "财在坤是牛、母马、田土、五谷、布帛、锅。", "财属子是池塘、大豆、衣饰、珠玉；属寅是山林树木、棺材、猫；属卯是草木竹、船车、盘盒；", "属辰是缸、瓷、碓碾、瓷器、坟地、田园；属巳是花果、书画、砖瓦、瓷器；属午是马、书画、蒸笼、衣架；", "属未是山中之物（原文此处缺字，注字形）、羊、女人衣服；属申是刀剑、五金器、大麦、碓、猿；", "属酉是鸡、酒、小麦、金银、钗钏、五金之物；属戌是坟地、坑穴、砖瓦、碓磨、旧衣、狗；", "属亥是猪、伞、斗笠、笔墨、头发、酱醋、盛水的东西（出自《六三金口诀》）。"],
+          "en": ["The Shushi Diary says: whenever Wealth lies hidden under the Self line, the debtor has goods already and means to settle the debt with them.", "Use the eight trigrams and the twelve branches to tell what the goods are.", "For instance, Gengyin year, Xinsi month, Bingwu day, the hexagram Xiaoxu: under the Self line lay a hidden Xinchou Earth Wealth;", "Xun (Xiaoxu's palace) stands for the eldest daughter, chickens, bamboo and wooden ware, fruit and vegetable gardens;", "Chou stands for oxen, graves and vegetable plots; judge by the size of the debt and you know what he will sell to repay it.", "Wealth in Qian: horses, gold and silver, cups and plates, mirrors, caps, jade rings, pearls; in Dui: sheep, a young girl, metalware, jars and anything with a mouth;", "in Li: a middle daughter, silks and satins, silk floss, paintings and calligraphy, screens and blinds, trays and boxes, red and hollow things; in Zhen: an eldest son, drums, bamboo and wood (the text has a slip), tea, bamboo shoots;", "in Kan: a second son, ponds, wine and vinegar, fish and salt, pigs, things with stones; in Gen: a youngest son, dogs, rocks, porcelain, melons and leaves, things from the earth;", "in Kun: oxen, mares, land, grain, cloth, cooking pots.", "Wealth on Zi: ponds, soybeans, clothes and ornaments, pearls and jade; on Yin: forests, trees, coffins, cats; on Mao: plants and bamboo, boats and carts, trays and boxes;", "on Chen: jars, porcelain, mortars and mills, graves, fields; on Si: flowers and fruit, paintings, bricks and tiles, porcelain; on Wu: horses, paintings, steamers, clothes racks;", "on Wei: things from the hills (a character is missing, with a note on its shape), sheep, women's clothes; on Shen: knives and swords, metalware, barley, pestles, apes;", "on You: chickens, wine, wheat, gold and silver, hairpins and bracelets, metal goods; on Xu: graves, pits, bricks and tiles, mills, old clothes, dogs;", "on Hai: pigs, umbrellas, rain hats, brushes and ink, hair, soy sauce and vinegar, things that hold water (from the Liusan Jinkou Jue)."] }
+      ],
+      "see": ["LY.WEALTH.YY.16"]
+    }
+  ]
+}

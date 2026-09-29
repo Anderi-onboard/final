@@ -45,7 +45,7 @@ functions/_lib/doctrine/    rag/(11 库 29 卡)rag-features.json  INDEX.md
                             books/(五门古籍全文 64 本,其中十本不全;六爻七本是 owner 合集还原校对的,其余是网上转录本,见它的 README;书单.md 是五门的古籍和名家书目)
                             kb/(古籍断法库:按问题域分主题的判断规则,每条原文/译文/英文三栏对齐,原文由程序逐字核对;
                                 人写 kb/data/*.json,`node tools/kb/build.mjs` 生成文本 skill .claude/skills/guji-duanfa/、
-                                Obsidian 库 kb/古籍断法库/、kb/dist/rules.jsonl;契约 tests/kb-quotes.mjs;见它的 README)
+                                Obsidian 库 kb/古籍断法库/、kb/jsonl/rules.jsonl;契约 tests/kb-quotes.mjs;见它的 README)
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 .claude/skills/     agent skill:claudish-to-chinese(本仓库写的)、book-to-skill、obsidian-markdown、
                     obsidian-bases(后三个第三方 MIT,来源和版本见各自的 UPSTREAM.md)。
