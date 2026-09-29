@@ -4,6 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
+## 六爻 · 婚姻(45 条)→ `chapters/六爻/婚姻/索引.md`
+
+| 主题 | Topic | 条数 |
+| --- | --- | --- |
+| 总则 | Principles: the Subject, the Self and Other, yin and yang | 3 |
+| 成否 | Will it succeed: easy or hard to bring about | 6 |
+| 动变 | Moving lines and what they turn into | 3 |
+| 媒妁 | Go-betweens and the between lines | 12 |
+| 对方 | The other party: character, looks, family, age | 5 |
+| 聘嫁 | Betrothal gifts, dowry, and the two families | 2 |
+| 夫妻 | Life together: harmony, who dominates, harm to a spouse | 4 |
+| 外遇 | Infidelity and improper relations | 2 |
+| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 2 |
+| 应期 | Timing: when the match is made or the wedding held | 1 |
+| 风险 | Risks: obstruction, broken promises, bad omens | 3 |
+| 子嗣 | Children in the marriage | 2 |
+
 ## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
 
 | 主题 | Topic | 条数 |
@@ -23,8 +40,16 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(16 条)
+## 打架 · Where the classics disagree(20 条)
 
+- **LY.MARRY.HJC.14 鬼克飞爻，果信绿窗之难嫁；官合财位，方知绮席之易婚：女占男，鬼刑克世、应克世皆不成；官生合世或合财、应生合世则易成**(`chapters/六爻/婚姻/成否.md`):王洪绪引的经文与《卜筮全书》不同：他写作「鬼克世爻」「用合身位」，全书作「鬼克飞爻」「官合财位」；王洪绪的注按用神（谁占看谁）讲，旧注按女占男讲。
+  Wang Hongxu's text of the verse differs from the Bushi Quanshu's: he writes 'Pressure controlling the Self line' and 'the Subject combining with the Body place', where the Quanshu has 'the flying line' and 'the Wealth place'; his note speaks by the Subject (whoever is the object of the question), and the old commentary by a woman divining about a man.
+- **LY.MARRY.HJC.20 妯娌不和，只为官爻发动；翁姑不睦，定因妻位交重：官动克兄弟则妯娌不和，财动克父母则公婆不睦**(`chapters/六爻/婚姻/夫妻.md`):《黄金策》旧注和王洪绪都说「财动克父母」；觉子（《增删卜易》）认为伤父母的是财旺，不必等到动，前人只说动是为了避免被驳；他的办法是先占财官旺不旺，得吉卦后再单占妨不妨克父母。
+  The old commentary and Wang Hongxu both say 'Wealth moving controls Resource'; Juezi (Zengshan Buyi) holds that what harms the parents is Wealth being thriving, with no need to wait for it to move, and that the ancients spoke of moving only to avoid being challenged; his method is to divine first whether Wealth and Pressure are thriving and, having got a good hexagram, to divine separately whether the parents will be harmed.
+- **LY.MARRY.HJC.26 命旺则荣华可拟，时衰则发达难期：本命爻生旺有气则荣华，休囚死绝则无发达；本命爻所临六亲六神各主一种性好**(`chapters/六爻/婚姻/对方.md`):旺衰怎么论：旧注按月令、日时（四季）；王洪绪明说古法按四季论旺衰是错的，改看本命爻临什么六亲六神、有没有日辰动爻生扶；两家在这一条上直接不同。
+  How to judge thriving and weakness: the old commentary goes by the month and by the day and hour (the seasons); Wang Hongxu says outright that the old method of judging by the four seasons is wrong, and looks instead at what relation and spirit the natal line sits on and whether the Day or a moving line supports it; the two differ directly here.
+- **LY.MARRY.HJC.45 一卦吉凶，细察精微委曲：此章只论男卜女婚、女卜男姻；择婿择媳嫁妹娶嫂，要按用神断，不可一概以官为夫、财为妇**(`chapters/六爻/婚姻/总则.md`):这一章的财官各指谁：旧注一路按「官为夫、财为妇」讲（见 HJC.11、HJC.24）；王洪绪在章末明说这是「男卜女婚、女卜男姻」的意思，别人代占、兄占弟婚之类要按用神断，不可一概；觉子（《增删卜易》）也说男家占女以财为用、女家占男以官为用，不拘父母亲朋代占都同。
+  Whom Wealth and Pressure stand for in this chapter: the old commentary throughout speaks by 'Pressure the husband, Wealth the wife' (see HJC.11, HJC.24); Wang Hongxu says at the chapter's end that this is what applies when a man divines about a bride or a woman about a bridegroom, and that divinations made on another's behalf or by an elder brother for a younger must be judged by the Subject and not all alike; Juezi (Zengshan Buyi) also says that the man's family divining about the woman takes Wealth as the Subject and the woman's family divining about the man takes Pressure, the same whether parents or relatives divine on their behalf.
 - **LY.WEALTH.DYTJ.04 求财何日得：死财等财生的日月，生财不要拿财合当日期；空亡加退度，说得再多也要迟疑**(`chapters/六爻/求财/应期.md`):《天玄赋》说「财合日辰，方能入手」，合日是入手的条件；这里说生财「财合莫为期」，合日不能当日期。两处不好并成一说：一处讲财与日辰合，一处讲财自己得令时的合日。整理本后面今人注把「财合」读成「入墓」，原文写的是「合」，本库照原文，不改。
   The Tianxuan Fu says that when Wealth combines with the Day the money can be taken in hand, making the combining day a condition; this verse says that for a living Wealth 'Wealth combining' is not to be taken as the date. The two do not merge into one statement. A modern note in the transcription reads 'combining' as 'entering the tomb'; the original says 'combining', and this library follows the original.
 - **LY.WEALTH.DYTJ.12 郭璞论买卖：财爻克世最好，身旺相与财并、无煞不空；贞旺悔囚先赢，悔旺贞休后赢**(`chapters/六爻/求财/买卖.md`):这首歌里的「贞」「悔」，有两种读法。一种是内卦为贞、外卦为悔；一种是本卦为贞、之卦为悔。《易林补遗》两种都记：有动爻时，本卦是贞、之卦是悔；爻都静、没有之卦时，才取内卦为贞、外卦为悔，并且「以贞为始，以悔为终」。歌诀自己没有说是哪一种。「贞旺悔囚初买卖，悔旺贞休后始赢」里的「初」和「后」有先后，和「以贞为始，以悔为终」对得上；但这不是歌诀的明文，本库不裁。

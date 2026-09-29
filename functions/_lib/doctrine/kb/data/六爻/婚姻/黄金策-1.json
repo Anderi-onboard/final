@@ -1,0 +1,448 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "婚姻",
+  "chapter_en": "Marriage",
+  "ranges": {"卜筮大全": [6301, 6458], "卜筮正宗": [1984, 2079]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.01",
+      "topic": "总则",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "欲谐伉俪，必定阴阳：阳奇阴偶，世阳应阴、鬼阳财阴、内阳外阴，阴阳相得成夫妇之道",
+      "rule": {
+        "yi": "夫妻要和谐，先看阴阳配不配：世属阳、应属阴，鬼（官）属阳、财属阴，内卦属阳、外卦属阴；各得其位，才是夫妇之道，日后有利。男家占，宜世阳应阴；女家占，宜世阴应阳。",
+        "en": "For a couple to be harmonious, first see whether yin and yang match: the Self is yang and the Other yin, Pressure is yang and Wealth yin, the inner trigram is yang and the outer yin; each in its place is the way of husband and wife, and later days will be favourable. When the man's family divines, the Self should be yang and the Other yin; when the woman's family divines, the Self should be yin and the Other yang."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6303, 6306],
+          "zh": ["男女合婚，契于前定；", "朱陈缔结，分在夙成。", "然非月老，焉知夫妇于当时；", "不有宓羲，岂识吉凶于今日！", "欲谐伉俪，必定阴阳。"],
+          "yi": ["男女配成婚姻，是前世就定好的；", "朱陈两家结亲，缘分早就注定。", "但如果不是月下老人，怎么会在当时就知道谁是夫妻；", "没有伏羲，怎么会在今天知道吉凶！", "想要夫妻和谐，必须先定阴阳。"],
+          "en": ["A man and woman joined in marriage: it was fixed beforehand;", "the Zhu and Chen families were bound as in-laws, their lot made long before.", "But without the Old Man under the Moon, how could one know at the time who would be husband and wife;", "and without Fu Xi, how could one know good or ill today!", "To harmonise a couple, first settle yin and yang."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6307, 6307],
+          "zh": ["阳奇阴偶，配合成婚。", "世属阳，应属阴；", "鬼属阳，财属阴；", "内属阳，外属阴。", "阴阳相得，乃成夫妇之道。", "异日必然大利。"],
+          "yi": ["阳是奇数，阴是偶数，配合起来成了婚姻。", "世属阳，应属阴；", "鬼属阳，财属阴；", "内卦属阳，外卦属阴。", "阴阳相得，才成夫妇之道。", "日后必然大利。"],
+          "en": ["Yang is odd and yin is even; matched together they make a marriage.", "The Self belongs to yang and the Other to yin;", "Pressure belongs to yang and Wealth to yin;", "the inner trigram belongs to yang and the outer to yin.", "When yin and yang suit each other, that is the way of husband and wife.", "In the days to come it will surely be greatly favourable."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1986, 1986],
+          "zh": ["阳奇阴偶，配合成婚。", "如男家卜，宜世属阳应属阴，用神阴阳得位；", "女家卜，宜世阴应阳。"],
+          "yi": ["阳是奇数，阴是偶数，配合起来成了婚姻。", "如果男家占，宜于世属阳、应属阴，用神的阴阳各得其位；", "女家占，宜于世阴、应阳。"],
+          "en": ["Yang is odd and yin is even; matched together they make a marriage.", "If the man's family divines, it is fitting that the Self be yang and the Other yin, with the Subject's yin and yang each in its place;", "if the woman's family divines, the Self should be yin and the Other yang."] }
+      ],
+      "note": {
+        "yi": "「朱陈」指朱陈村，旧时两姓世代联姻的说法；「宓羲」即伏羲；「月老」即月下老人。这几句是章首的引语，不是判断。",
+        "en": "'Zhu and Chen' refers to the village of Zhu-Chen, proverbial for two families who intermarried through generations; 'Mi Xi' is Fu Xi; 'Yue Lao' is the Old Man under the Moon. These opening lines are a preface, not a judgement."
+      },
+      "see": ["LY.MARRY.HJC.02"]
+    },
+    {
+      "id": "LY.MARRY.HJC.02",
+      "topic": "夫妻",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "阴阳交错，难期琴瑟之和鸣：世阴应阳、鬼阴财阳、内阴外阳，成婚后夫妻反目",
+      "rule": {
+        "yi": "阴阳交错是指世阴应阳、鬼阴财阳、内阴外阳，这是反象；成婚后，丈夫欺凌妻子、妻子欺侮丈夫，整天吵架，不得和顺；如果变出的财、鬼不空，主象又安静，也还可用。",
+        "en": "Yin and yang crossed means the Self yin and the Other yang, Pressure yin and Wealth yang, the inner trigram yin and the outer yang; this is an inverted image, and after the marriage the husband bullies the wife and the wife slights the husband, quarrelling all day and never in harmony; if the changed Wealth and Pressure are not Void and the principal image is quiet, it can still be used."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6309, 6309],
+          "zh": ["阴阳交错，难期琴瑟之和鸣；"],
+          "yi": ["阴阳交错，难以指望夫妻琴瑟和鸣；"],
+          "en": ["With yin and yang crossed, one can hardly hope for lute and zither to sound in concert;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6310, 6310],
+          "zh": ["阴阳交错者：世阴应阳，鬼阴财阳，内阴外阳是。", "此为反象。", "成婚后，必主夫凌妻，妻欺夫，终朝反目，不得和顺。", "若变出财鬼不空，主象安静，亦可用也。"],
+          "yi": ["阴阳交错，是说世阴应阳，鬼阴财阳，内阴外阳。", "这是反象。", "成婚之后，一定是丈夫欺凌妻子，妻子欺侮丈夫，整天吵架，不得和顺。", "如果变出的财、鬼不空，主象又安静，也可以用。"],
+          "en": ["'Yin and yang crossed' means the Self yin and the Other yang, Pressure yin and Wealth yang, the inner trigram yin and the outer yang.", "This is an inverted image.", "After the marriage the husband will bully the wife and the wife will slight the husband, quarrelling all day and never in harmony.", "If the changed Wealth and Pressure are not Void and the principal image is quiet, it can still be used."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1988, 1988],
+          "zh": ["如男卜女，遇世阴应阳，世阴财阳者，是阴阳交错，后主夫妻欺凌，终朝反目。"],
+          "yi": ["比如男子占女子，遇到世阴应阳、世阴财阳的，就是阴阳交错，以后夫妻互相欺凌，整天吵架。"],
+          "en": ["For instance, when a man divines about a woman and gets the Self yin with the Other yang, or the Self yin with Wealth yang, yin and yang are crossed, and later the couple bully each other and quarrel all day."] }
+      ],
+      "note": {
+        "yi": "「主象」书里没有解释，这里译作「主象」（最主要的那一个象）。",
+        "en": "The book does not gloss 'the principal image'; it is translated as the main image of the hexagram."
+      },
+      "see": ["LY.MARRY.HJC.01"]
+    },
+    {
+      "id": "LY.MARRY.HJC.03",
+      "topic": "动变",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "内外互摇，定见家庭之挠括：婚姻卦宜安静；财动不和公婆，鬼动不和妯娌，父动不和子侄，兄动不和夫妻",
+      "rule": {
+        "yi": "占婚姻，卦宜安静，安静则家庭和睦、没有争斗；如果财动，和公婆不和；鬼动，和妯娌不和；父动，和子侄不和；兄动，夫妻不和；再加月建、日辰，不但不和，还有克制。",
+        "en": "In divining marriage the hexagram should be quiet, and when quiet the household is at peace without strife; if Wealth moves, discord with the parents-in-law; Pressure moving, with the brothers' wives; Resource moving, with the children and nephews; Peer moving, between husband and wife; with the Month or Day added there is not only discord but also control."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6312, 6312],
+          "zh": ["内外互摇，定见家庭之挠括。"],
+          "yi": ["内外互相摇动，一定会看到家庭里的纷扰。"],
+          "en": ["With inner and outer moving upon each other, the household will surely see turmoil."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6313, 6313],
+          "zh": ["占婚，卦宜安静。", "安静家庭雍睦，必无争斗事。", "若财动，则不和翁姑；", "鬼动，则不和妯娌；", "父动，则不和子侄；", "兄动，则不和夫妻。", "动加月建日辰，不唯不和，更有克制。"],
+          "yi": ["占婚姻，卦宜安静。", "安静，家庭就和睦，一定没有争斗的事。", "如果财动，就和公婆不和；", "鬼动，就和妯娌不和；", "父动，就和子侄不和；", "兄动，就夫妻不和。", "动爻再加月建、日辰，不但不和，还有克制。"],
+          "en": ["In divining marriage the hexagram should be quiet.", "If quiet, the household is at peace and there will be no strife.", "If Wealth moves, there is discord with the parents-in-law;", "if Pressure moves, with the brothers' wives;", "if Resource moves, with the children and nephews;", "if Peer moves, between husband and wife.", "If the moving line is reinforced by the Month or Day, there is not only discord but also control."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1990, 1990],
+          "zh": ["占婚姻卦宜安静，安静则家庭雍睦无争。", "若财动则不和公姑，鬼动则不和妯娌，父动则不和子侄，兄动则不和妻妾。", "加月建日辰，不唯不和，更有刑克。"],
+          "yi": ["占婚姻，卦宜安静；安静，家庭就和睦、没有争执。", "如果财动，和公婆不和；鬼动，和妯娌不和；父动，和子侄不和；兄动，和妻妾不和。", "再加月建、日辰，不但不和，还有刑克。"],
+          "en": ["In divining marriage the hexagram should be quiet; when quiet the household is at peace and without quarrel.", "If Wealth moves, discord with the parents-in-law; Pressure moving, with the brothers' wives; Resource moving, with the children and nephews; Peer moving, with the wife and concubines.", "With the Month or Day added, there is not only discord but also punishment and control."] }
+      ],
+      "note": {
+        "yi": "兄动一句，旧注作「不和夫妻」，王洪绪作「不和妻妾」，字面不同。",
+        "en": "On Peer moving, the old commentary reads 'discord between husband and wife' and Wang Hongxu 'discord with wife and concubines'; the wording differs."
+      },
+      "see": ["LY.MARRY.HJC.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.04",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "六合则易而且吉，六冲则难而又凶",
+      "rule": {
+        "yi": "六合卦一阴一阳配合成象，世应相生、财官相合，容易成而且吉；六冲卦不是纯阴就是纯阳，像两个女人同住、两个男人并处，志向合不来，难成，成了也不利。",
+        "en": "A Six-Combine hexagram is one yin matched with one yang, with the Self and Other generating each other and Wealth and Pressure combining, and is easy to bring about and auspicious; a Six-Clash hexagram is pure yin or pure yang, like two women living together or two men side by side whose aims cannot agree, hard to bring about, and unfavourable even if it succeeds."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6315, 6315],
+          "zh": ["六合则易而且吉；"],
+          "yi": ["六合，就容易而且吉；"],
+          "en": ["Six-Combine is easy and auspicious;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6316, 6316],
+          "zh": ["六合卦，一阴一阳，配合成象。", "世应相生，财官相合。", "占者得之，必主易成而又吉。"],
+          "yi": ["六合卦是一阴一阳，配合起来成象。", "世和应相生，财和官相合。", "占卦的人得到它，一定容易成而且吉。"],
+          "en": ["A Six-Combine hexagram is one yin and one yang, matched to form an image.", "The Self and Other generate each other, and Wealth and Pressure combine.", "One who divines and gets it will find it easy to bring about, and auspicious as well."] },
+        { "by": "经", "book": "卜筮大全", "range": [6318, 6318],
+          "zh": ["六冲则难而又凶。"],
+          "yi": ["六冲，就困难而且凶。"],
+          "en": ["Six-Clash is hard and ominous."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6319, 6319],
+          "zh": ["六冲卦，非纯阴则纯阳也。", "其象犹二女同居，两男并处，志必不合。", "占者得之，必主难成，纵成亦不利。"],
+          "yi": ["六冲卦，不是纯阴就是纯阳。", "它的象好比两个女人同住、两个男人并处，志向一定合不来。", "占卦的人得到它，一定难成，就是成了也不利。"],
+          "en": ["A Six-Clash hexagram is either pure yin or pure yang.", "Its image is like two women living together or two men side by side, whose aims cannot agree.", "One who divines and gets it will find it hard to bring about, and even if it succeeds it is not favourable."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1992, 1992],
+          "zh": ["六合之卦，一阴一阳配合成象，世应相生，六爻相合，占主得之，必主成而又吉。", "六冲卦非纯阳则纯阴也，其象尤二女同居，两男并处，志必不合，占者得之，必主难成，纵成亦不利。"],
+          "yi": ["六合的卦，一阴一阳配合成象，世应相生，六爻相合，占的人得到，必然成而且吉。", "六冲卦不是纯阳就是纯阴，象是两个女人同住、两个男人并处，志向一定合不来，占的人得到，必然难成，就是成了也不利。"],
+          "en": ["A Six-Combine hexagram is one yin matched with one yang; the Self and Other generate each other and the six lines combine; one who gets it will succeed, and auspiciously.", "A Six-Clash hexagram is pure yang or pure yin, like two women together or two men side by side, whose aims cannot agree; one who gets it will find it hard to bring about, and even if it succeeds it is not favourable."] }
+      ],
+      "see": ["LY.MARRY.HJC.05", "LY.WEALTH.YL.35"]
+    },
+    {
+      "id": "LY.MARRY.HJC.05",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "阴而阳阳而阴，偏利牵丝之举：世官宜阳反阴、应财宜阴反阳，娶妇多不利，惟入赘吉",
+      "rule": {
+        "yi": "世和官本宜阳却变成阴，应和财本宜阴却变成阳，这样的卦，占娶妻多半不利，只有入赘（男子嫁入女家）才吉。",
+        "en": "When the Self and Pressure, which should be yang, turn out yin, and the Other and Wealth, which should be yin, turn out yang, then in divining the taking of a wife it is mostly unfavourable, and only marrying into the bride's family is auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6321, 6321],
+          "zh": ["阴而阳阳而阴，偏利牵丝之举；"],
+          "yi": ["阴变阳、阳变阴，偏偏利于「牵丝」的事；"],
+          "en": ["Yin turning to yang and yang to yin favour only the 'drawing of the thread';"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6322, 6322],
+          "zh": ["世与官，宜阳反阴；", "应与财，宜阴反阳。", "占娶妇多不利。", "惟入赘则吉。"],
+          "yi": ["世和官，本宜阳，却反成了阴；", "应和财，本宜阴，却反成了阳。", "占娶妻，大多不利。", "只有入赘就吉。"],
+          "en": ["The Self and Pressure should be yang but have become yin;", "the Other and Wealth should be yin but have become yang.", "In divining the taking of a wife it is mostly unfavourable.", "Only marrying into the bride's family is auspicious."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1994, 1994],
+          "zh": ["世与用宜阳反阴，应与财宜阴反阳，占娶妻多为不利，唯入赘最吉。"],
+          "yi": ["世和用神本宜阳却反成阴，应和财本宜阴却反成阳，占娶妻多半不利，只有入赘最吉。"],
+          "en": ["The Self and the Subject should be yang but are yin, and the Other and Wealth should be yin but are yang; in divining the taking of a wife it is mostly unfavourable, and only marrying into the bride's family is best."] }
+      ],
+      "note": {
+        "yi": "「牵丝」字面是牵红线成亲；旧注和王洪绪的解释都落在「惟入赘则吉」上，本库照此。",
+        "en": "'Drawing the thread' literally means drawing the red thread of a match; both the old commentary and Wang Hongxu resolve it into 'only marrying into the bride's family is auspicious', and this library follows that."
+      },
+      "see": ["LY.MARRY.HJC.02", "LY.MARRY.HJC.19"]
+    },
+    {
+      "id": "LY.MARRY.HJC.06",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世合应应合世，终成种玉之缘：世应相合是两愿之象，易成而后吉",
+      "rule": {
+        "yi": "世和应相合、应和世相合，是男女两家都愿意的象，容易成，以后也吉利。",
+        "en": "The Self and Other combining with each other is the image of both families willing; it is easy to bring about and auspicious later as well."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6324, 6324],
+          "zh": ["世合应应合世，终成种玉之缘。"],
+          "yi": ["世和应相合，应和世相合，终究能成种玉般的姻缘。"],
+          "en": ["The Self combines with the Other and the Other with the Self: in the end a match that plants jade is made."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6325, 6325],
+          "zh": ["世为男家，应为女家。", "若得相合，是两愿之象，必主易成，后亦吉利。"],
+          "yi": ["世是男家，应是女家。", "如果得到相合，是两家都愿意的象，一定容易成，以后也吉利。"],
+          "en": ["The Self is the man's family and the Other the woman's.", "If they combine, that is the image of both willing; it will surely be easy to bring about, and auspicious later."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1996, 1996],
+          "zh": ["男家卜，世为男家，应女家，若得相合是两愿之象，必主易成，后亦吉利。"],
+          "yi": ["男家占，世是男家，应是女家，如果得到相合，是两家都愿意的象，一定容易成，以后也吉利。"],
+          "en": ["When the man's family divines, the Self is the man's family and the Other the woman's; if they combine, that is the image of both willing, surely easy to bring about and auspicious later."] }
+      ],
+      "note": {
+        "yi": "「种玉之缘」用杨伯雍种玉得妻的典故，指婚姻。",
+        "en": "'The match that plants jade' alludes to the story of Yang Boyong, who planted jade and won a wife, and stands for a marriage."
+      },
+      "see": ["LY.MARRY.HJC.08"]
+    },
+    {
+      "id": "LY.MARRY.HJC.07",
+      "topic": "聘嫁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "欲求庚帖，不宜应动应空；若论聘仪，不可世临螣蛇、兄弟",
+      "rule": {
+        "yi": "求庚帖（女方的八字帖），要应爻安静不空、又生合世爻，才一定应允；应爻发动、空亡或冲克世爻，都主不答应。论聘礼，世爻见螣蛇、兄弟，主男家吝啬、礼不多；应爻见它们，主女家妆奁淡薄；旺相发动，也是克妻的兆头。",
+        "en": "To obtain the horoscope card (the woman's family's eight-character card), the Other line must be quiet, not Void, and must generate or combine with the Self, and then consent is sure; the Other moving, falling Void, or clashing with or controlling the Self all mean refusal. As to betrothal gifts, the Coiling Snake or Peer on the Self line means the man's family is stingy and the gifts few; on the Other line, the woman's dowry is meagre; thriving and moving, it is also a sign of harm to the wife."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6327, 6327],
+          "zh": ["欲求庚帖，岂宜应动应空；"],
+          "yi": ["想求庚帖，怎么宜应动、应空；"],
+          "en": ["To ask for the horoscope card, how can the Other moving or Void be fitting;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6328, 6328],
+          "zh": ["欲求庚帖，须得应爻安静不空，而又生合世爻者，必然允诺，亦易成。", "若应爻发动，或空亡，或冲克世爻，皆主不允，事亦难成，或去亦不遇。"],
+          "yi": ["想求庚帖，须应爻安静不空，而又生合世爻的，才一定应允，也容易成。", "如果应爻发动，或空亡，或冲克世爻，都主不答应，事情也难成，或者去了也遇不到人。"],
+          "en": ["To obtain the horoscope card, the Other line must be quiet and not Void and must generate or combine with the Self; then consent is sure and it is easy to bring about.", "If the Other line moves, falls Void, or clashes with or controls the Self, in every case consent is refused and the matter is hard to bring about, or one goes and does not even meet the person."] },
+        { "by": "经", "book": "卜筮大全", "range": [6330, 6330],
+          "zh": ["若论聘仪，安可世蛇世弟。"],
+          "yi": ["说到聘礼，怎么可以世上见螣蛇、兄弟。"],
+          "en": ["As for betrothal gifts, how can the Self carry the Coiling Snake or Peer."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6331, 6331],
+          "zh": ["螣蛇兄弟，世爻临之，主男家悭吝，礼必不多；", "应爻临之，主女家妆奁淡薄。", "临旺发动，亦克妻之兆也。"],
+          "yi": ["螣蛇、兄弟，世爻临着，主男家吝啬，礼一定不多；", "应爻临着，主女家的妆奁淡薄。", "临旺相、发动，也是克妻的兆头。"],
+          "en": ["The Coiling Snake or Peer on the Self line means the man's family is stingy and the gifts will not be many;", "on the Other line, the woman's family's dowry is meagre.", "Thriving and moving, it is also a sign of harm to the wife."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1998, 1998],
+          "zh": ["欲求庚帖，须得应爻安静生合世爻者，必然允许；", "若应爻发动，或空或冲，皆主不允。", "世临蛇弟，主男家悭吝，礼必不多；", "应爻临之，主女家妆淡薄。", "如旺动主克妻也。"],
+          "yi": ["想求庚帖，须应爻安静、生合世爻的，才一定应允；", "如果应爻发动，或空，或冲，都主不答应。", "世上见螣蛇、兄弟，主男家吝啬，礼一定不多；", "应爻见它们，主女家妆奁淡薄。", "如果旺相发动，主克妻。"],
+          "en": ["To obtain the horoscope card, the Other line must be quiet and generate or combine with the Self, and then consent is sure;", "if the Other line moves, falls Void or is clashed, in every case consent is refused.", "The Coiling Snake or Peer on the Self means the man's family is stingy and the gifts will not be many;", "on the Other line, the woman's dowry is meagre.", "If thriving and moving, it means harm to the wife."] }
+      ],
+      "note": {
+        "yi": "「庚帖」是写着生辰八字的帖子，订婚时两家互换；「聘仪」是聘礼。",
+        "en": "'Geng tie' is the card bearing the birth-hour characters that the two families exchange at betrothal; 'pin yi' is the betrothal gift."
+      },
+      "see": ["LY.MARRY.HJC.06", "LY.MARRY.HJC.32"]
+    },
+    {
+      "id": "LY.MARRY.HJC.08",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "应生世，悦服成亲；世克应，用强劫娶",
+      "rule": {
+        "yi": "应爻生合世爻，是女家贪图男家，容易成；世刑克应爻，男家不会早来求；世旺应衰，是倚仗富有欺负贫弱、用强抢娶。世上见鬼和螣蛇、财爻旺相、青龙得地，多半是看上了女子的姿色，想设谋娶她；世上见玄武、兄弟，是因为缺钱还债，想谋娶这个女子。",
+        "en": "The Other line generating or combining with the Self means the woman's family covets the man's and it is easy to bring about; the Self punishing or controlling the Other means the man's family would not have come early to ask; the Self thriving and the Other weak is relying on wealth to bully the poor and taking her by force. With the Self carrying Pressure and the Coiling Snake, Wealth thriving and the Azure Dragon well placed, it is probably because the girl is good-looking and someone means to scheme to marry her; with the Self carrying the Dark Tortoise or Peer, it is because the family lacks money to repay a debt and wants to take the girl in."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6333, 6333],
+          "zh": ["应生世，悦服成亲；", "世克应，用强劫娶。"],
+          "yi": ["应生世，(女方)心悦诚服地成亲；", "世克应，(男方)倚强抢娶。"],
+          "en": ["The Other generating the Self: marriage with willing hearts;", "the Self controlling the Other: taking a bride by force."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6334, 6335],
+          "zh": ["应爻生合世爻，主女家贪男家之象，必易成。", "不然，是女家先来求亲也。", "若世刑克应爻，男家必不早来求其女。", "世旺应衰，乃恃富欺贫，用强劫娶也。", "若世临鬼及螣蛇，而财爻得时旺相，青龙得地者；", "必因其女有姿色，而欲设谋以娶之也。", "世临玄武兄弟，必因其家乏财偿债，欲谋纳其女也。", "应动或旺，以旺动断。"],
+          "yi": ["应爻生合世爻，主女家贪图男家，一定容易成。", "不然，就是女家先来求亲。", "如果世刑克应爻，男家一定不会早来求这个女子。", "世旺应衰，是倚仗富有欺负贫弱，用强力抢娶。", "如果世上见鬼和螣蛇，而财爻得时旺相，青龙得地的；", "一定是因为那女子有姿色，而想设计谋娶她。", "世上见玄武、兄弟，一定是因为他家缺钱还债，想谋娶这个女子。", "应爻发动或旺相，就以旺相发动来断。"],
+          "en": ["The Other line generating or combining with the Self means the woman's family covets the man's, and it will surely be easy.", "Otherwise, it is the woman's family who came first to ask for the match.", "If the Self punishes or controls the Other, the man's family surely would not have come early to ask for this girl.", "The Self thriving and the Other weak is relying on wealth to bully the poor, taking her by force.", "If the Self carries Pressure and the Coiling Snake while the Wealth line is thriving in season and the Azure Dragon is well placed;", "it must be because the girl is good-looking and someone wants to scheme to marry her.", "With the Self carrying the Dark Tortoise or Peer, it must be because his family lacks the money to repay a debt and wants to plot to take the girl in.", "If the Other moves or thrives, judge by the thriving, moving line."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2000, 2000],
+          "zh": ["应爻生合世爻，主女家贪求其男，则易成；", "若世爻生合应爻，主男家贪求其女。", "如旺世克衰应，乃恃富欺贫，用强劫娶也。"],
+          "yi": ["应爻生合世爻，主女家贪求那个男子，就容易成；", "如果世爻生合应爻，主男家贪求那个女子。", "如果旺相的世克衰弱的应，是倚仗富有欺贫，用强抢娶。"],
+          "en": ["The Other line generating or combining with the Self means the woman's family covets the man, and it is easy to bring about;", "if the Self line generates or combines with the Other, the man's family covets the woman.", "If a thriving Self controls a weak Other, it is relying on wealth to bully the poor and taking her by force."] }
+      ],
+      "see": ["LY.MARRY.HJC.06", "LY.MARRY.HJC.09"]
+    },
+    {
+      "id": "LY.MARRY.HJC.09",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "如日合而世应比和，因人成事：世生应男求女、应生世女求男；日辰合爻定谁赞成；间爻动合是媒人",
+      "rule": {
+        "yi": "世生应，是男方求女方；应生世，是女方求男方；相合也一样。世应比和，是两家互相成全。想知是谁赞成，看日辰合到哪一爻；间爻发动、与日辰相合，就是媒人。",
+        "en": "The Self generating the Other means the man is seeking the woman; the Other generating the Self means the woman is seeking the man; combining is the same. The Self and Other in harmony means the two families are helping each other. To know who approves, see which line the Day combines with; a between line that moves and combines with the Day is the go-between."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6337, 6337],
+          "zh": ["如日合而世应比和，因人成事；"],
+          "yi": ["如果日辰相合、世应比和，是靠别人促成的事；"],
+          "en": ["If the Day combines and the Self and Other are in harmony, the matter is made through another person;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6338, 6338],
+          "zh": ["凡遇世生应，是男求女；", "应生世，是女求男；", "相合亦然。", "若世应比和，乃是两家相成其事。", "要知何人赞成，以日辰合爻定之。", "间动辰合，则是媒人也。"],
+          "yi": ["凡遇世生应，是男方求女方；", "应生世，是女方求男方；", "相合也是一样。", "如果世应比和，是两家互相成全这件事。", "想知道是谁赞成，用日辰合到哪一爻来定。", "间爻发动、与日辰相合，就是媒人。"],
+          "en": ["When the Self generates the Other, the man is seeking the woman;", "when the Other generates the Self, the woman is seeking the man;", "combining is the same.", "If the Self and Other are in harmony, the two families are helping each other bring it about.", "To know who approves, decide by which line the Day combines with.", "A moving between line that combines with the Day is the go-between."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2002, 2002],
+          "zh": ["世应比合，得日辰合世应者，或间爻动来合世应者，是赖媒人之力也。"],
+          "yi": ["世应比合，又有日辰合世应，或者间爻发动来合世应的，是靠媒人的力量。"],
+          "en": ["With the Self and Other in harmony, and the Day combining with the Self and Other, or a moving between line combining with them, it depends on the go-between's efforts."] }
+      ],
+      "see": ["LY.MARRY.HJC.33", "LY.MARRY.HJC.35"]
+    },
+    {
+      "id": "LY.MARRY.HJC.10",
+      "topic": "子嗣",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "若父动而子孙墓绝，为嗣求婚：父旺动、子孙墓绝，子息少；大人占，是无子而娶",
+      "rule": {
+        "yi": "占婚遇到父爻旺相发动，子孙墓绝，日后子息一定少；如果占的是长辈（大人）的婚姻，有这种象，是因为没有儿子而再娶；父爻持身、持世的也一样。",
+        "en": "In divining marriage, if the Resource line is thriving and moving and Output is in the tomb or cut off, children later will surely be few; if it is an elder's marriage that is divined, this image means he is marrying because he has no son; Resource holding the Body or the Self is the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6340, 6340],
+          "zh": ["若父动而子孙墓绝，为嗣求婚。"],
+          "yi": ["如果父母爻发动而子孙墓绝，是为了子嗣而求婚。"],
+          "en": ["If Resource moves and Output falls into the tomb or is cut off, the marriage is sought for the sake of an heir."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6341, 6341],
+          "zh": ["占婚，遇父旺动，子孙若墓绝，异日子息必少。", "若卜大人婚姻，有此象，乃为无子而娶也。", "父持身世者亦然。"],
+          "yi": ["占婚姻，遇到父爻旺相发动，子孙如果墓绝，日后子息一定少。", "如果占的是长辈的婚姻，有这种象，是因为没有儿子而娶。", "父爻持身、持世的也一样。"],
+          "en": ["In divining marriage, if Resource is thriving and moving and Output is in the tomb or cut off, children later will surely be few.", "If it is an elder's marriage that is divined, this image means he is marrying because he has no son.", "Resource holding the Body or the Self is the same."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2004, 2004],
+          "zh": ["若因无子而娶，遇父旺动或子孙墓绝，主无子息，父持身世者亦然。"],
+          "yi": ["如果是因为没有儿子而娶，遇到父爻旺相发动，或者子孙墓绝，主没有子息；父爻持身、持世的也是这样。"],
+          "en": ["If one marries for lack of a son, meeting Resource thriving and moving, or Output in the tomb, means there will be no offspring; Resource holding the Body or the Self is the same."] }
+      ],
+      "see": ["LY.MARRY.HJC.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.11",
+      "topic": "外遇",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "财官动合，先私而后公：财官两爻动合，先通后娶；临玄武眉目传情未通；财与旁爻合，与他人有情",
+      "rule": {
+        "yi": "以官为丈夫、财为妻子；两爻都动而相合，一定是先私通后成婚；遇冲克，外人已经知道；临玄武，只是眉来眼去、还没有通情意；本人自占，财和世爻动而相合，也是这样；财爻与旁爻相合，是与别人有情；财遇合多、又化出子孙，一定是妓家出身，因为化子孙有从良的象。",
+        "en": "Take Pressure as the husband and Wealth as the wife; if both lines move and combine, they were surely intimate in secret before they married; if a clash or control meets them, outsiders already know; on the Dark Tortoise, it is only glances and looks and feelings have not yet been exchanged; when one divines for oneself, Wealth and the Self line moving and combining is the same; if the Wealth line combines with another line, she has feelings for someone else; Wealth meeting many combinations and turning into Output means she is surely from a brothel, since turning into Output carries the image of leaving that life to marry."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6343, 6343],
+          "zh": ["财官动合，先私而后公；"],
+          "yi": ["财官两爻动而相合，先是私通、后是公开成婚；"],
+          "en": ["Wealth and Pressure moving and combining: first in secret, then openly married;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6344, 6344],
+          "zh": ["凡婚。", "以官为夫，财为妇。", "两爻俱动相合，必是先通后娶。", "若遇冲克，外人已知。", "若临玄武，则眼去眉来，未通情意。", "本人自占，而财与世爻动合者，亦然。", "财爻若与旁爻作合，与他人有情。", "财遇合多，而化出子孙，必是妓家。", "盖化子有从良之象也。"],
+          "yi": ["凡是婚姻，", "以官为丈夫，以财为妻子。", "两爻都动而相合，一定是先私通、后成婚。", "如果遇到冲克，外人已经知道了。", "如果临玄武，只是眉来眼去，还没有通情意。", "本人自己占，而财和世爻动而相合的，也是这样。", "财爻如果与旁边的爻相合，是与别人有情。", "财遇到相合多的，又化出子孙，一定是妓家。", "因为化出子孙有从良的象。"],
+          "en": ["In any marriage,", "take Pressure as the husband and Wealth as the wife.", "If both lines move and combine, they were surely intimate in secret first and married after.", "If a clash or control meets them, outsiders already know.", "If it sits on the Dark Tortoise, it is only glances and looks, and feelings have not yet been exchanged.", "When the person divines for himself and Wealth and the Self line move and combine, it is the same.", "If the Wealth line combines with another line, she has feelings for someone else.", "If Wealth meets many combinations and turns into Output, she is surely from a brothel.", "since turning into Output carries the image of leaving that life to marry."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2006, 2006],
+          "zh": ["夫占以财为妇，世与动合，是必先通而后娶，财与世爻动合亦然。", "财爻动与旁爻合，与他人有情，财遇合多亦然。"],
+          "yi": ["男子占，以财为妻子，世和它动而相合，一定是先私通后娶，财和世爻动而相合也是这样。", "财爻动而与旁边的爻相合，是与别人有情，财遇到相合多的也是这样。"],
+          "en": ["A man divining takes Wealth as the wife; if the Self combines with it by moving, they were intimate in secret before marrying, and the same if Wealth and the Self line combine by moving.", "If the Wealth line moves and combines with another line, she has feelings for someone else, and the same if Wealth meets many combinations."] }
+      ],
+      "note": {
+        "yi": "旧注把「财官」读作男女两方（官为夫，财为妇）；这一条只对男占女、女占男这一类占法成立，用神照占者身份定，见 HJC.45。",
+        "en": "The old commentary reads 'Wealth and Pressure' as the two parties (Pressure the husband, Wealth the wife); this holds only for the ordinary man-divining-woman or woman-divining-man question, and the Subject is fixed by who divines, as HJC.45 says."
+      },
+      "see": ["LY.MARRY.HJC.45"]
+    },
+    {
+      "id": "LY.MARRY.HJC.12",
+      "topic": "动变",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世应化空，始成而终悔：世动生合应、应动生合世皆易成，怕变入空亡；日辰动爻扶助则悔而可成",
+      "rule": {
+        "yi": "世动生合应爻，男家愿成；应动生合世爻，女家愿嫁；都是容易成的象；只怕变入空亡，一定有退悔的意思；如果有日辰、动爻扶助，虽悔也可成。",
+        "en": "The Self moving to generate or combine with the Other means the man's family is willing; the Other moving to generate or combine with the Self means the woman's family is willing to give her; both are images of easy success; only turning into Void is feared, which means a wish to withdraw and regret; if the Day or a moving line supports it, it can still succeed despite regret."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6346, 6346],
+          "zh": ["世应化空，始成而终悔。"],
+          "yi": ["世应变成空亡，开始成了，最终反悔。"],
+          "en": ["The Self and Other turning into Void: it succeeds at first and ends in regret."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6347, 6347],
+          "zh": ["世动，生合应爻，男家愿成其婚；", "应动，生合世爻，妇家愿妻其女；", "皆易成之象。", "但怕变入空亡，必有退悔之意。", "若得日辰动爻扶助，虽悔，亦可成也。"],
+          "yi": ["世动，生合应爻，男家愿意成这门亲事；", "应动，生合世爻，女家愿意把女儿嫁给他；", "都是容易成的象。", "但怕变入空亡，一定有退悔的意思。", "如果有日辰、动爻扶助，即使反悔，也可以成。"],
+          "en": ["If the Self moves and generates or combines with the Other, the man's family is willing to make the match;", "if the Other moves and generates or combines with the Self, the woman's family is willing to give her daughter;", "both are images of easy success.", "But if it turns into Void, there will surely be a wish to withdraw and regret.", "If the Day or a moving line supports it, then even with regret it can still succeed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2008, 2008],
+          "zh": ["世动生合应爻，男家愿成，应动生合世爻，女家愿嫁，皆易成之象，但怕变入空空亡，必有退悔之意也。"],
+          "yi": ["世动生合应爻，男家愿意成；应动生合世爻，女家愿意嫁；都是容易成的象，只怕变入空亡，一定有退悔的意思。"],
+          "en": ["The Self moving to generate or combine with the Other, the man's family is willing; the Other moving to generate or combine with the Self, the woman's family is willing to marry her off; both are images of easy success, only turning into Void is feared, which means a wish to withdraw and regret."] }
+      ],
+      "see": ["LY.MARRY.HJC.06"]
+    },
+    {
+      "id": "LY.MARRY.HJC.13",
+      "topic": "风险",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "六合而动象刑伤，必多破阻；世冲而日辰扶助，当有吹嘘：动爻日辰冲克则有人破阻、生合则有人吹嘘",
+      "rule": {
+        "yi": "世应相生相合本是吉兆，但遇动爻、日辰冲克，两边必有人说坏话，事难成；世应相冲相克本不吉，但遇动爻、日辰生合，两边必有人说好话，也可成；想知道是谁，按五类推，比如父母爻是叔伯尊长一类，外宫、他卦上的是外人。",
+        "en": "The Self and Other generating and combining is by nature an auspicious sign, but if a moving line or the Day clashes or controls it, there will be people on both sides speaking against it and the matter is hard to bring about; the Self and Other clashing or controlling each other is by nature not auspicious, but if a moving line or the Day generates or combines with them, there will be people on both sides speaking well of it and it can succeed; to know who they are, judge by the five kinds: the Resource line is the uncles and elders, and lines in the outer palace or another trigram are outsiders."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6349, 6349],
+          "zh": ["六合而动象刑伤，必多破阻；", "世冲而日辰扶助，当有吹嘘。"],
+          "yi": ["六合而又有动爻刑伤它，一定多有破坏阻隔；", "世冲而有日辰扶助，就会有人吹嘘（说好话）。"],
+          "en": ["A Six-Combine hexagram with a moving line punishing or harming it is sure to meet many breakages and obstacles;", "the Self clashed but supported by the Day will have someone speaking up for it."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6351, 6353],
+          "zh": ["世爻与应生合，本主吉兆；", "若遇动爻日辰冲克，必两边有破说，其事难成。", "世应冲克，本非吉兆；", "若遇动爻日辰生合，两边必有吹嘘，亦可成。", "要知吹嘘破阻之人，依五类推之。", "如父母，为叔伯尊长类。", "外宫他卦，以外人言。"],
+          "yi": ["世爻与应爻相生相合，本来主吉兆；", "如果遇到动爻、日辰冲克，一定两边有人拆台说坏话，这件事难成。", "世应相冲相克，本来不是吉兆；", "如果遇到动爻、日辰生合，两边必有人吹嘘，也可以成。", "想知道吹嘘的人、破阻的人是谁，依五类来推。", "比如父母爻，是叔伯尊长一类。", "外宫、他卦上的，指外人。"],
+          "en": ["The Self line and the Other line generating and combining is by nature an auspicious sign;", "if a moving line or the Day clashes or controls it, there will surely be people on both sides speaking against it, and the matter is hard to bring about.", "The Self and Other clashing or controlling each other is by nature not auspicious;", "if a moving line or the Day generates or combines with them, there will surely be people on both sides speaking well of it, and it can succeed.", "To know who is speaking up or obstructing, judge by the five kinds.", "For example, the Resource line is the uncles, aunts and elders.", "Those on the outer palace or another trigram mean outsiders."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2010, 2010],
+          "zh": ["世应逢生主吉，若遇动爻日辰冲克，两边必有阻隔难成。", "世应冲克本凶，若遇动爻日辰生合两边，必有吹嘘可成。", "要知吹嘘破破阻之人，依五类推之，如父母为伯叔尊长类；", "外宫他卦以外人而言。"],
+          "yi": ["世应逢生主吉，如果遇到动爻、日辰冲克，两边必有阻隔难成。", "世应冲克本来凶，如果遇到动爻、日辰生合两边，必有人吹嘘，可以成。", "想知道吹嘘、破阻的人，依五类来推，比如父母爻是伯叔尊长一类；", "外宫、他卦上的，指外人。"],
+          "en": ["The Self and Other meeting generation is auspicious, but if a moving line or the Day clashes or controls them, there will be obstruction on both sides and it is hard to bring about.", "The Self and Other clashing or controlling each other is by nature ominous, but if a moving line or the Day generates or combines with both sides, there will be people speaking well of it and it can succeed.", "To know who speaks well of it or obstructs it, judge by the five kinds; for example the Resource line is the uncles and elders;", "those on the outer palace or another trigram mean outsiders."] }
+      ],
+      "see": ["LY.MARRY.HJC.08", "LY.MARRY.HJC.41"]
+    },
+    {
+      "id": "LY.MARRY.HJC.14",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "鬼克飞爻，果信绿窗之难嫁；官合财位，方知绮席之易婚：女占男，鬼刑克世、应克世皆不成；官生合世或合财、应生合世则易成",
+      "rule": {
+        "yi": "女方占男方，最不宜鬼爻刑克世爻，也不宜应爻克世，都主不成，男家不愿结婚；如果他有制约、我有扶助、大象又吉，也可成，但他家终究无意；若得官爻生合世爻，或合财爻，或应爻生合世爻，才主容易成。",
+        "en": "When the woman's side divines about the man, the most unfavourable thing is a Pressure line punishing or controlling the Self line, and also the Other line controlling the Self; both mean it will not succeed and the man's family is unwilling; if he is restrained, I am supported and the overall image is auspicious, it can still succeed, though his family in the end has no intention; if Pressure generates or combines with the Self line, or combines with the Wealth line, or the Other generates or combines with the Self, then it is easy to bring about."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6355, 6355],
+          "zh": ["鬼克飞爻，果信绿窗之难嫁；", "官合财位，方知绮席之易婚。"],
+          "yi": ["鬼克飞爻（世爻），果然相信闺中女子难嫁；", "官爻合财位，才知道绮席上的婚事容易成。"],
+          "en": ["Pressure controlling the flying line: one really believes the girl behind the green window is hard to marry off;", "Pressure combining with the Wealth place: only then does one know the match at the fine banquet is easy to make."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6356, 6356],
+          "zh": ["飞爻即世爻。", "大凡女占男，最不宜鬼爻刑克世爻，亦不宜应爻克世，皆主不成。", "盖女占男，以世为女家，应为男家，故也。", "如遇此象，主男家不愿为婚，所以难嫁。", "若他有制，我有扶，而大象又吉，亦可成。", "然其家终是无意于我也。", "若得官生合世爻，或合财爻，或应爻生合世，方主易成。"],
+          "yi": ["飞爻就是世爻。", "大凡女方占男方，最不宜鬼爻刑克世爻，也不宜应爻克世，都主不成。", "因为女方占男方，以世为女家、应为男家的缘故。", "遇到这种象，主男家不愿意结婚，所以难嫁。", "如果他有制约，我有扶助，而大象又吉，也可以成。", "然而他家终究对我们没有意思。", "如果得官爻生合世爻，或者合财爻，或者应爻生合世爻，才主容易成。"],
+          "en": ["The flying line is the Self line.", "In general, when the woman's side divines about the man, what is most unfavourable is a Pressure line punishing or controlling the Self line, and also the Other line controlling the Self, both meaning it will not succeed.", "This is because, in a woman's divining about a man, the Self is the woman's family and the Other the man's.", "When this image appears, the man's family is unwilling to marry, hence she is hard to marry off.", "If he is restrained and I am supported and the overall image is auspicious, it can still succeed.", "But his family in the end has no intention toward me.", "If Pressure generates or combines with the Self line, or combines with the Wealth line, or the Other generates or combines with the Self, then it is easy to bring about."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2012, 2012],
+          "zh": ["如鬼煞克世，不独不愿为婚，更防祸殃。", "如用神用合世位，不但易成，后必恩爱。"],
+          "yi": ["如果鬼煞克世，不但不愿结婚，还要防灾祸。", "如果用神生合世位，不但容易成，以后一定恩爱。"],
+          "en": ["If a baleful Pressure controls the Self, not only is there unwillingness to marry but also calamity is to be guarded against.", "If the Subject generates or combines with the Self place, it is not only easy to bring about but later there will surely be affection."] }
+      ],
+      "dispute": {
+        "yi": "王洪绪引的经文与《卜筮全书》不同：他写作「鬼克世爻」「用合身位」，全书作「鬼克飞爻」「官合财位」；王洪绪的注按用神（谁占看谁）讲，旧注按女占男讲。",
+        "en": "Wang Hongxu's text of the verse differs from the Bushi Quanshu's: he writes 'Pressure controlling the Self line' and 'the Subject combining with the Body place', where the Quanshu has 'the flying line' and 'the Wealth place'; his note speaks by the Subject (whoever is the object of the question), and the old commentary by a woman divining about a man."
+      },
+      "see": ["LY.MARRY.HJC.45", "LY.MARRY.HJC.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.15",
+      "topic": "夫妻",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "财鬼如无刑害，夫妻定主和谐",
+      "rule": {
+        "yi": "财、鬼受刑冲克害，夫妻必然不和睦；没有这种象，才能如鱼得水，到老和谐。",
+        "en": "Wealth and Pressure punished, clashed, controlled or harmed means the couple will surely not be at peace; without this image they are like fish in water and are in harmony into old age."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6358, 6358],
+          "zh": ["财鬼如无刑害，夫妻定主和谐；"],
+          "yi": ["财、鬼如果没有刑害，夫妻一定和谐；"],
+          "en": ["If Wealth and Pressure suffer no punishment or harm, the couple will surely be in harmony;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6359, 6359],
+          "zh": ["财鬼刑冲克害，夫妻必然不睦。", "如无此象，然后如鱼得水，到老和谐。"],
+          "yi": ["财、鬼受刑冲克害，夫妻必然不和睦。", "如果没有这种象，才能如鱼得水，到老和谐。"],
+          "en": ["If Wealth and Pressure suffer punishment, clash, control or harm, the couple will surely not be at peace.", "Without this image they are like fish in water and are in harmony into old age."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2014, 2014],
+          "zh": ["财鬼刑冲克害，夫妻必然不睦，如无此象，到老和谐。"],
+          "yi": ["财、鬼受刑冲克害，夫妻必然不睦；没有这种象，到老和谐。"],
+          "en": ["Wealth and Pressure punished, clashed, controlled or harmed means the couple will surely not be at peace; without this image they are in harmony into old age."] }
+      ],
+      "see": ["LY.MARRY.HJC.02", "LY.MARRY.HJC.19"]
+    }
+  ]
+}
