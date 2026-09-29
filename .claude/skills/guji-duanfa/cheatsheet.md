@@ -4,19 +4,19 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 婚姻(157 条)→ `chapters/六爻/婚姻/索引.md`
+## 六爻 · 婚姻(162 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: the Subject, the Self and Other, yin and yang | 23 |
-| 成否 | Will it succeed: easy or hard to bring about | 22 |
+| 总则 | Principles: the Subject, the Self and Other, yin and yang | 24 |
+| 成否 | Will it succeed: easy or hard to bring about | 23 |
 | 动变 | Moving lines and what they turn into | 4 |
-| 媒妁 | Go-betweens and the between lines | 18 |
-| 对方 | The other party: character, looks, family, age | 25 |
+| 媒妁 | Go-betweens and the between lines | 19 |
+| 对方 | The other party: character, looks, family, age | 26 |
 | 聘嫁 | Betrothal gifts, dowry, and the two families | 6 |
 | 夫妻 | Life together: harmony, who dominates, harm to a spouse | 17 |
 | 外遇 | Infidelity and improper relations | 3 |
-| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 12 |
+| 入赘再嫁 | Marrying into a wife's family, remarriage, concubines and maids | 13 |
 | 应期 | Timing: when the match is made or the wedding held | 2 |
 | 风险 | Risks: obstruction, broken promises, bad omens | 11 |
 | 子嗣 | Children in the marriage | 10 |
@@ -41,8 +41,10 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(25 条)
+## 打架 · Where the classics disagree(26 条)
 
+- **LY.MARRY.HDY.02 占妻看财宜动，占夫有鬼宜静**(`chapters/六爻/婚姻/总则.md`):占妻看财爻：《海底眼》说宜动；《火珠林》说「占妻看财爻，宜静」（LY.MARRY.HZL.04）；《易林补遗》也说要静。占夫看鬼爻，两家都说宜静。这一处是《海底眼》独异，也可能是转录之误，书里无从核对。
+  For divining a wife by the Wealth line, the Haidi Yan says it should move; the Huozhulin says 'for a wife look at the Wealth line, which should be still' (LY.MARRY.HZL.04); the Yilin Buyi also asks for stillness. For a husband by the Pressure line both say it should be still. Here the Haidi Yan stands alone; it may be a transcription slip, and there is nothing in the books to check it against.
 - **LY.MARRY.HJC.14 鬼克飞爻，果信绿窗之难嫁；官合财位，方知绮席之易婚：女占男，鬼刑克世、应克世皆不成；官生合世或合财、应生合世则易成**(`chapters/六爻/婚姻/成否.md`):王洪绪引的经文与《卜筮全书》不同：他写作「鬼克世爻」「用合身位」，全书作「鬼克飞爻」「官合财位」；王洪绪的注按用神（谁占看谁）讲，旧注按女占男讲。
   Wang Hongxu's text of the verse differs from the Bushi Quanshu's: he writes 'Pressure controlling the Self line' and 'the Subject combining with the Body place', where the Quanshu has 'the flying line' and 'the Wealth place'; his note speaks by the Subject (whoever is the object of the question), and the old commentary by a woman divining about a man.
 - **LY.MARRY.HJC.20 妯娌不和，只为官爻发动；翁姑不睦，定因妻位交重：官动克兄弟则妯娌不和，财动克父母则公婆不睦**(`chapters/六爻/婚姻/夫妻.md`):《黄金策》旧注和王洪绪都说「财动克父母」；觉子（《增删卜易》）认为伤父母的是财旺，不必等到动，前人只说动是为了避免被驳；他的办法是先占财官旺不旺，得吉卦后再单占妨不妨克父母。
