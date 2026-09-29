@@ -337,9 +337,12 @@ function quoteLabel(u, q, cfg) {
   const sp = cfg.sources.speakers[q.by] || { zh: q.by, en: q.by };
   const work = cfg.sources.works[u.work] || { en: u.work };
   if (q.by === '经') {
+    /* 某一段引自别的章,就在那一段上单写 chapter / chapter_en,标签才不会指错章 */
+    const ch = q.chapter ?? u.chapter;
+    const chEn = q.chapter_en ?? u.chapter_en;
     return {
-      zh: `《${u.work}·${u.chapter}》原文`,
-      en: `${work.en}${u.chapter_en ? `, "${u.chapter_en}"` : ''}, base text`
+      zh: `《${u.work}·${ch}》原文`,
+      en: `${work.en}${chEn ? `, "${chEn}"` : ''}, base text`
     };
   }
   return { zh: sp.zh, en: sp.en };
