@@ -1,0 +1,162 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "卜筮全书",
+  "chapter": "神煞歌例",
+  "chapter_en": "Rhymes on the spirit stars",
+  "ranges": {"卜筮大全": [9887, 10420]},
+  "units": [
+    {
+      "id": "LY.MARRY.BSQS.01",
+      "topic": "风险",
+      "chapter": "神煞歌例",
+      "chapter_en": "Rhymes on the spirit stars",
+      "title": "咸池杀：占婚大忌，主妇人淫乱；寅午戌在卯、巳酉丑在午、申子辰在酉、亥卯未在子",
+      "rule": {
+        "yi": "咸池杀：占婚姻是大忌，主女子淫乱。歌诀按三合局排：寅午戌的兔从卯位出来，巳酉丑的马向南方跑，申子辰的鸡叫乱了人伦，亥卯未的鼠子当头要忌。",
+        "en": "The Xianchi star: in a marriage divination it is a great taboo and means the woman is licentious. The rhyme goes by the three-harmony frames: for Yin, Wu and Xu the rabbit comes out of Mao; for Si, You and Chou the horse runs south; for Shen, Zi and Chen the rooster crows and disorders human relations; for Hai, Mao and Wei the rat is what must be avoided head-on."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10114, 10114],
+          "zh": ["占婚大忌，", "主妇人淫乱。"],
+          "yi": ["占婚姻，这是大忌，", "主女子淫乱。"],
+          "en": ["In a marriage divination it is a great taboo,", "and it means the woman is licentious."] },
+        { "by": "经", "book": "卜筮大全", "range": [10115, 10115],
+          "zh": ["寅午戌兔从卯里出，", "巳酉丑跃马南方走，", "申子辰鸡叫乱人伦，", "亥卯未鼠子当头忌。"],
+          "yi": ["寅、午、戌的兔子，从卯位出来，", "巳、酉、丑的马，向南方跑，", "申、子、辰的鸡叫，乱了人伦，", "亥、卯、未的鼠子，当头是要忌的。"],
+          "en": ["For Yin, Wu and Xu, the rabbit comes out of Mao;", "for Si, You and Chou, the horse leaps and runs to the south;", "for Shen, Zi and Chen, the rooster crows and disorders human relations;", "for Hai, Mao and Wei, the rat is what is to be avoided head-on."] }
+      ],
+      "note": {
+        "yi": "歌诀里的兔、马、鸡、鼠是生肖，依次对着卯、午、酉、子，就是咸池所在的位置；书里没有把地支写出来，这里是照生肖对应的。",
+        "en": "The rabbit, horse, rooster and rat in the rhyme are zodiac animals standing for Mao, Wu, You and Zi in turn, the places of the Xianchi star; the book does not spell out the branches, and they are given by the zodiac."
+      },
+      "see": ["LY.MARRY.TXF.15", "LY.MARRY.HJC.62", "LY.MARRY.DYTJ.27"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.02",
+      "topic": "风险",
+      "chapter": "神煞歌例",
+      "chapter_en": "Rhymes on the spirit stars",
+      "title": "鳏寡杀：占姻事忌之；春牛不下田、夏龙飞上天、秋羊草枯死、冬犬厌残年",
+      "rule": {
+        "yi": "鳏寡杀：占婚姻的事忌它。歌诀：春天的牛不下田，夏天的龙飞上天，秋天的羊草枯死，冬天的狗厌恶残年。",
+        "en": "The star of widowers and widows: in marriage matters it is to be avoided. The rhyme: in spring the ox does not go down to the field, in summer the dragon flies up to heaven, in autumn the goat's grass withers and dies, in winter the dog is weary of the dying year."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10119, 10119],
+          "zh": ["占姻事忌之。"],
+          "yi": ["占婚姻的事，忌讳它。"],
+          "en": ["In marriage matters it is to be avoided."] },
+        { "by": "经", "book": "卜筮大全", "range": [10120, 10120],
+          "zh": ["春牛不下田，", "夏龙飞上天，", "秋羊草枯死，", "冬犬厌残年。"],
+          "yi": ["春天牛不下田，", "夏天龙飞上天，", "秋天羊的草枯死，", "冬天狗厌恶残年。"],
+          "en": ["In spring the ox does not go down to the field,", "in summer the dragon flies up to heaven,", "in autumn the goat's grass withers and dies,", "in winter the dog is weary of the dying year."] }
+      ],
+      "note": {
+        "yi": "四句里的牛、龙、羊、犬是生肖，依次对着丑、辰、未、戌，分别是春、夏、秋、冬的鳏寡杀所在；书里没有写出地支。同一首歌诀在《断易天机》里也有，那里注明「婚姻遇发动不久」（LY.MARRY.DYTJ.27）。",
+        "en": "The ox, dragon, goat and dog in the four lines are zodiac animals standing for Chou, Chen, Wei and Xu, the places of this star in spring, summer, autumn and winter; the book does not write out the branches. The same rhyme is in the Duanyi Tianji, where it is glossed 'in marriage, if it moves it does not last' (LY.MARRY.DYTJ.27)."
+      },
+      "see": ["LY.MARRY.DYTJ.27", "LY.MARRY.YL.16", "LY.MARRY.HZL.21"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.03",
+      "topic": "子嗣",
+      "chapter": "神煞歌例",
+      "chapter_en": "Rhymes on the spirit stars",
+      "title": "孤辰寡宿：婚姻犯之，主无子；亥子丑忌寅戌、寅卯辰忌巳丑、巳午未忌申辰、申酉戌忌亥未",
+      "rule": {
+        "yi": "孤辰寡宿：婚姻犯了它，主没有子女。歌诀：亥子丑忌寅、戌，寅卯辰找巳、丑，巳午未忌申、辰，申酉戌是亥、未来临。",
+        "en": "The Solitary Star and the Widowhood Star: if a marriage offends them, it means no children. The rhyme: for Hai, Zi and Chou beware Yin and Xu; for Yin, Mao and Chen look to Si and Chou; for Si, Wu and Wei beware Shen and Chen; for Shen, You and Xu, Hai and Wei arrive."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10124, 10124],
+          "zh": ["婚姻犯之，", "主无子。"],
+          "yi": ["婚姻犯了它，", "主没有子女。"],
+          "en": ["If a marriage offends it,", "it means no children."] },
+        { "by": "经", "book": "卜筮大全", "range": [10125, 10125],
+          "zh": ["亥子丑兮忌寅戌，", "寅卯辰兮巳丑寻，", "巳午未兮申辰忌，", "申酉戌兮亥未临。"],
+          "yi": ["亥、子、丑忌寅、戌，", "寅、卯、辰找巳、丑，", "巳、午、未忌申、辰，", "申、酉、戌是亥、未来临。"],
+          "en": ["For Hai, Zi and Chou, beware Yin and Xu;", "for Yin, Mao and Chen, look to Si and Chou;", "for Si, Wu and Wei, beware Shen and Chen;", "for Shen, You and Xu, Hai and Wei arrive."] }
+      ],
+      "note": {
+        "yi": "每一句前一个地支按通行的排法是孤辰、后一个是寡宿（亥子丑年孤辰在寅、寡宿在戌，余类推），书里没有写明。「无子」在这里是没有子女的意思，书里没有区分有儿有女。",
+        "en": "In each line, by the usual layout, the first branch is the Solitary Star and the second the Widowhood Star (for Hai, Zi and Chou years the Solitary Star is at Yin and the Widowhood Star at Xu, and so on); the book does not say so. 'No son' here means no offspring, and the book does not tell sons from daughters."
+      },
+      "see": ["LY.MARRY.YL.16", "LY.MARRY.YL.09", "LY.MARRY.HZL.21"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.04",
+      "topic": "风险",
+      "chapter": "神煞歌例",
+      "chapter_en": "Rhymes on the spirit stars",
+      "title": "暴败杀：婚姻大忌，男克妇、女伤夫；春猪羊犬、夏蛇鼠龙、秋申酉丑、冬虎马兔",
+      "rule": {
+        "yi": "暴败杀：婚姻是大忌，男的克妻，女的伤夫。歌诀：猪、羊、狗在春天的三个月，蛇、鼠、龙在夏天的月份，申、酉、丑到了秋天一定败，虎、马、兔在冬天要防。",
+        "en": "The Violent-Ruin star: in marriage it is a great taboo, the man controlling the wife and the woman harming the husband. The rhyme: the pig, goat and dog in the three months of spring; the snake, rat and dragon in the summer months; Shen, You and Chou meeting autumn are sure to fail; the tiger, horse and rabbit are to be guarded against in winter."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10204, 10204],
+          "zh": ["婚姻大忌，", "男克妇，", "女伤夫。"],
+          "yi": ["婚姻是大忌，", "男的克妻，", "女的伤夫。"],
+          "en": ["For marriage it is a great taboo:", "the man controls the wife,", "the woman harms the husband."] },
+        { "by": "经", "book": "卜筮大全", "range": [10205, 10205],
+          "zh": ["猪羊犬吠春三月，", "蛇鼠龙忧夏月当，", "申酉丑逢秋必败，", "虎马兔兮冬季防。"],
+          "yi": ["猪、羊、狗吠叫的春天三个月，", "蛇、鼠、龙担忧的夏天月份，", "申、酉、丑遇到秋天一定败，", "虎、马、兔在冬季要防。"],
+          "en": ["The pig, goat and dog barking in the three months of spring;", "the snake, rat and dragon worrying in the summer months;", "Shen, You and Chou meeting autumn are sure to fail;", "the tiger, horse and rabbit are to be guarded against in the winter season."] }
+      ],
+      "note": {
+        "yi": "歌诀里的生肖依次对着：春三月亥、未、戌，夏三月巳、子、辰，冬三月寅、午、卯；秋三月直接写了申、酉、丑。书里没有把春夏冬的地支写出来。",
+        "en": "The zodiac animals in the rhyme stand for: in the three spring months Hai, Wei and Xu; in the summer months Si, Zi and Chen; in the winter months Yin, Wu and Mao; for the autumn months the branches Shen, You and Chou are written out. The book does not write out the branches for spring, summer and winter."
+      },
+      "see": ["LY.MARRY.HZL.24", "LY.MARRY.ZS.10", "LY.MARRY.YL.10"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.05",
+      "topic": "风险",
+      "chapter": "神煞歌例",
+      "chapter_en": "Rhymes on the spirit stars",
+      "title": "日喝散：甲己逢寅乙庚申，丙辛戊癸向蛇寻，丁壬亥上婚姻忌，一见公私定不成",
+      "rule": {
+        "yi": "日喝散按日干排：甲日、己日在寅，乙日、庚日在申，丙日、辛日、戊日、癸日在巳，丁日、壬日在亥；丁壬日的亥位，婚姻要忌；一见到它，公事私事都一定不成。",
+        "en": "The Daily Dispersal star goes by the day stem: Jia and Ji days at Yin, Yi and Geng days at Shen, Bing, Xin, Wu and Gui days at Si, Ding and Ren days at Hai; at Hai on Ding and Ren days, marriage is a taboo; once it is seen, public and private matters are sure to fail."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10026, 10026],
+          "zh": ["甲己逢寅乙庚申，", "丙辛戊癸向蛇寻，", "丁壬亥上婚姻忌，", "一见公私定不成。"],
+          "yi": ["甲日、己日逢寅，乙日、庚日逢申，", "丙日、辛日、戊日、癸日向巳位找，", "丁日、壬日在亥位，婚姻要忌，", "一见到它，公事私事一定不成。"],
+          "en": ["Jia and Ji meet Yin, Yi and Geng meet Shen;", "Bing, Xin, Wu and Gui look to the snake, Si;", "Ding and Ren, at Hai, are a taboo for marriage;", "once it is seen, public or private matters surely do not succeed."] }
+      ],
+      "note": {
+        "yi": "「向蛇寻」的蛇是巳。这一条前面另有「喝散神」，按季节排（春巳夏申秋亥冬寅），讲官事，不讲婚姻，本库没有收。",
+        "en": "The snake in 'look to the snake' is Si. Just before it the book has the seasonal 'Dispersal spirit' (spring Si, summer Shen, autumn Hai, winter Yin), which speaks of official matters and not of marriage and is not included here."
+      },
+      "see": ["LY.MARRY.DYTJ.26"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.06",
+      "topic": "风险",
+      "chapter": "神煞歌例",
+      "chapter_en": "Rhymes on the spirit stars",
+      "title": "四刑：寅申巳亥为四刑，所作百事无一成，婚姻官事俱不吉，纵得相生也不宁",
+      "rule": {
+        "yi": "寅、申、巳、亥是四刑：做什么事都没有一件成，婚姻和官事都不吉，即使相生也不安宁（比如寅世、巳应这一类）。",
+        "en": "Yin, Shen, Si and Hai are the four punishments: in doing anything at all nothing is accomplished, marriage and official matters are both unlucky, and even if they generate each other there is no peace (for instance, Self at Yin and Other at Si)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10163, 10163],
+          "zh": ["如寅世巳应之类是也。"],
+          "yi": ["比如寅世、巳应这一类就是。"],
+          "en": ["For instance, Self at Yin and Other at Si, and the like."] },
+        { "by": "经", "book": "卜筮大全", "range": [10165, 10165],
+          "zh": ["寅申巳亥为四刑，", "所作百事无一成；", "婚姻官事俱不吉，", "纵得相生也不宁。"],
+          "yi": ["寅、申、巳、亥是四刑，", "所做的百事没有一件成；", "婚姻和官事都不吉，", "即使得到相生，也不安宁。"],
+          "en": ["Yin, Shen, Si and Hai are the four punishments;", "in what one does, of a hundred things not one is accomplished;", "marriage and official matters are both unlucky;", "even if they generate each other there is no peace."] }
+      ],
+      "note": {
+        "yi": "这条和《断易天机》里的四刑是同一首（LY.MARRY.DYTJ.26），用字略有不同：那里是「凡作百事一无成」，这里是「所作百事无一成」；举例也不同，那里是世寅应申，这里是寅世巳应。",
+        "en": "This is the same verse as the four punishments in the Duanyi Tianji (LY.MARRY.DYTJ.26), with a small difference of wording in the second line and a different example: Self at Yin and Other at Shen there, Self at Yin and Other at Si here."
+      },
+      "see": ["LY.MARRY.DYTJ.26", "LY.MARRY.YM.27"]
+    }
+  ]
+}

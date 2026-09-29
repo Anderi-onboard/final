@@ -72,8 +72,8 @@
     },
     "卜筮元龟": {
       "en": "Bushi Yuangui (The Great Tortoise of Divination)",
-      "author": "《断易天机》引",
-      "author_en": "as quoted in the Duanyi Tianji"
+      "author": "元建安萧吉文撰集,大德十一年(1307);《断易天机》也收",
+      "author_en": "compiled by Xiao Jiwen of Jian'an (Yuan), 1307; also included in the Duanyi Tianji"
     }
   },
   "speakers": {
@@ -151,6 +151,11 @@
       "zh": "李我平(楚江李坦,《增删卜易》的鉴定者)",
       "en": "Li Woping (Li Tan of Chujiang, who appraised the Zengshan Buyi)",
       "note": "《增删卜易》整理本的说明写:「书中保留了楚江李坦我平鉴定与湖南李文辉觉子增删按语原貌。」书里的「李我平曰」是他的评语,和「觉子曰」「野鹤曰」并列。"
+    },
+    "元龟目自注": {
+      "zh": "《大易断例卜筮元龟目》括号里的自注(没标「虎易注」的)",
+      "en": "The Dayi Duanli's own bracketed notes (those not marked as the modern editor's)",
+      "note": "整理本(虎易录入)把小注排成「（注：……）」或「（……）」夹在歌诀后面；标着「虎易注」的是今人加的，本库不引。"
     }
   },
   "books": {
@@ -161,7 +166,8 @@
         "通玄妙论",
         "阐奥歌章",
         "天玄赋",
-        "黄金策"
+        "黄金策",
+        "卜筮全书"
       ]
     },
     "卜筮正宗": {
@@ -239,6 +245,13 @@
       "edition": "殆知阁转录本,元大德丁未(1307)序",
       "contains": [
         "周易尚占"
+      ]
+    },
+    "大易断例卜筮元龟目": {
+      "en": "Dayi Duanli Bushi Yuangui Mu",
+      "edition": "殆知阁转录本(虎易录入);只有卷上,写到「占过去未来章」中断;带「虎易注」的是今人加的,本库不引",
+      "contains": [
+        "卜筮元龟"
       ]
     }
   }
