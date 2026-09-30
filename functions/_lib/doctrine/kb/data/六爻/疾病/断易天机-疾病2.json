@@ -1,0 +1,308 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易天机",
+  "chapter": "占疾病第二十四(卜筮元龟、洞林秘诀、火珠林、海底眼)",
+  "chapter_en": "Section 24, on illness (Bushi Yuangui, Dongling Mijue, Huozhu Lin, Haidi Yan)",
+  "ranges": {"断易天机": [1676, 1740]},
+  "units": [
+    {
+      "id": "LY.ILL.DYTJ.09",
+      "topic": "总则",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占病先看宅衰旺、次看六神吉凶象、更看本属爻有无、诸杀动临身世上",
+      "rule": {
+        "yi": "占病先看宅的衰旺，再看六神吉凶的象，还要看本属爻有没有，以及各种杀有没有动着临在身爻和世爻上。",
+        "en": "In divining illness first look at the strength or weakness of the house, then at the good or ill images of the six spirits, and look further at whether the line of its own kind is there and at the killings moving and sitting on the Body and the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1676, 1676],
+          "zh": ["占病先看宅衰旺（1），", "次看六神吉凶象，", "更看本属爻有无（2），", "诸杀动临身世上。"],
+          "yi": ["占病先看宅的衰旺，", "再看六神吉凶的象，", "还要看本属爻有没有，", "以及各种杀动着、临在身和世上。"],
+          "en": ["In divining illness first look at the strength or weakness of the house,", "then look at the good or ill images of the six spirits,", "and look further at whether the line of its own kind is there,", "and at the killings moving and sitting on the Body and the Self."] }
+      ],
+      "note": {
+        "yi": "这一句是卜筮元龟占疾病的总纲，后面几块（DYTJ.10 起）是它展开的几个方面。「宅」在卜筮大全里说是「内卦第二爻为宅」，这里没有解释；「本属爻」大概是病人所属的那一爻（占父母病就看父母爻），原文没有解释。「（1）」「（2）」是今人加的注号，那两条注不收。",
+        "en": "This line is the general outline of the Bushi Yuangui on divining illness, and the blocks after it (from DYTJ.10) develop several sides of it. The Buyi Daquan says 'the second line of the inner trigram is the house'; here it is not explained. The 'line of its own kind' is probably the line that belongs to the sick person (divining a parent's illness, look at the Resource line), and the original does not explain it. The '(1)' and '(2)' are modern annotation marks and those annotations are not quoted."
+      },
+      "see": ["LY.ILL.DYTJ.10", "LY.ILL.HDY.01", "LY.ILL.TXF.01"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.10",
+      "topic": "症候",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占疾病症候：鬼爻持世身则听人语生嗔、眼慌不能视、狂言乱语；酉鬼伤眼、土鬼肿胀、金鬼伤骨节、木鬼体酸痛；鬼爻入墓兼休囚杀气、本宫白虎入墓凶、子不动难救",
+      "rule": {
+        "yi": "鬼爻持世临身，一听见人说话就生气，眼睛发慌看不见，狂言乱语失了精神，吃喝也难；四墓持世也一样。鬼是酉爻，眼睛遭殃；土鬼肿胀气虚；金鬼持世，伤骨节；木鬼，身体酸痛，头闷心郁结。卦里鬼爻入了墓，又带休囚和杀气，或本宫的白虎入墓，就凶；子孙不动，难救。",
+        "en": "With the Pressure line holding the Self and the Body, at the first sound of a voice he grows angry, his eyes are flurried and cannot see, he raves and loses his wits, and food and drink are hard; the Four Tombs holding the Self are the same. A ghost on the You line: the eyes suffer; an Earth ghost: swelling and deficient qi; a Metal ghost holding the Self injures the bone joints; a Wood ghost: aching in the body, a heavy head and a knotted heart. With the Pressure line entering a tomb in the hexagram, together with resting or trapped and a killing aura, or the White Tiger of the hexagram's own palace entering a tomb, it is ominous; if Output does not move he can hardly be saved."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1677, 1678],
+          "zh": ["占疾病症候云：", "凡是鬼爻持世身，", "一闻人语便生嗔，", "眼目慌忙不能视，", "狂言乱语失精神。", "饮食何能加进啜，", "四墓持世同上说（3），", "酉爻为鬼眼遭殃，", "其字两丁穿目穴。", "土爻肿胀气还虚，", "金爻持世伤骨节，", "木爻为鬼体酸痛，", "脑闷气来心郁结。", "卦象鬼爻入墓里，", "兼带休囚并杀气（4），", "本宫白虎入墓凶，", "子不动兮难救矣。"],
+          "yi": ["占疾病的症候，歌诀说：", "凡是鬼爻持世、临身，", "一听见人说话就生气，", "眼睛发慌，看不见东西，", "狂言乱语，失了精神。", "饮食怎么还能多吃多喝？", "四墓持世，和上面说的一样；", "酉爻是鬼，眼睛遭殃；", "这个字像两个「丁」穿过眼窝。", "土爻，肿胀，气也虚；", "金爻持世，伤骨节；", "木爻是鬼，身体酸痛，", "头脑发闷，气上来，心里郁结。", "卦象里鬼爻入了墓，", "又带着休囚和杀气，", "本宫的白虎入墓，凶；", "子孙不动，就难救了。"],
+          "en": ["On the symptoms of illness it says:", "Whenever the Pressure line holds the Self and the Body,", "at the first sound of a person's voice he grows angry,", "the eyes flurried and unable to see,", "he raves and speaks wildly and loses his wits.", "how could he take more food and drink?", "the Four Tombs holding the Self, the same as said above;", "a ghost on the You line: the eyes suffer;", "the character looks like two 'ding' piercing the eye socket.", "an Earth line: swelling and distension, and the qi deficient;", "a Metal line holding the Self injures the bone joints;", "a Wood line as the ghost: aching in the body,", "the head oppressed, the qi rising, the heart knotted up.", "In the hexagram, the Pressure line enters a tomb,", "together with resting or trapped and a killing aura;", "the White Tiger of the hexagram's own palace entering a tomb is ominous;", "if Output does not move he can hardly be saved."] }
+      ],
+      "note": {
+        "yi": "「四墓」是辰戌丑未四个墓爻。「其字两丁穿目穴」说的是「酉」字的字形（像两个丁字穿透眼窝），用来解释为什么酉鬼伤眼，是拆字的取象。「饮食何能加进啜」是反问，意思是饮食进不去。「休囚」是休、囚两种衰弱的状态，英文按「resting or trapped」译。「本宫白虎」的「本宫」是这一卦所属的宫，白虎是六神里的白虎。文中的「（3）」「（4）」是今人加的注号，那两条注不收。这一块和天玄赋的「五行鬼」症候（LY.ILL.TXF.03）、海底眼的症候（LY.ILL.HDY.05）是同一类，但这里多了一个酉鬼伤眼、四墓持世的说法。",
+        "en": "The 'Four Tombs' are the four tomb lines Chen, Xu, Chou and Wei. 'The character looks like two ding piercing the eye socket' speaks of the shape of the character You (a rooster), which looks like two 'ding' piercing the eye socket, and is used to explain why a You ghost injures the eyes; it is taking the image from the shape of a character. 'How could he take more food and drink' is a rhetorical question and means food and drink will not go down. 'Resting or trapped' translates the two weak states of resting and being trapped. The 'own palace' of 'the White Tiger of the own palace' is the palace the hexagram belongs to, and the White Tiger is the one among the six spirits. The '(3)' and '(4)' in the text are modern annotation marks and those annotations are not quoted. This block is of the same kind as the symptoms by the five phases in the Tianxuan Fu (LY.ILL.TXF.03) and in the Haidi Yan (LY.ILL.HDY.05), but adds a You ghost injuring the eyes and the Four Tombs holding the Self."
+      },
+      "see": ["LY.ILL.TXF.03", "LY.ILL.HDY.05", "LY.ILL.DYTJ.11", "LY.ILL.DYTJ.12", "LY.ILL.DYTJ.13"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.11",
+      "topic": "症候",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占病在何处(爻位)：鬼在初爻两足、二爻双腿、三爻腰背、四爻心腹肚肠、五爻肾脏、六爻头",
+      "rule": {
+        "yi": "鬼在初爻，两足受伤；在二爻，两腿的病不同寻常；在三爻，腰背常发软；在四爻，心、腹和肚肠；在五爻，肾脏，多气胀；在六爻，头上的病是灾殃。",
+        "en": "The ghost on the first line: both feet are injured; on the second: an unusual trouble in both legs; on the third: the waist and back are often limp; on the fourth: the heart, belly and bowels; on the fifth: the kidneys, often with distension of qi; on the sixth: trouble in the head is the calamity."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1679, 1680],
+          "zh": ["占病在何处云：", "鬼在初爻两足伤，", "二爻双腿患非常，", "三爻腰背常轻软，", "四爻心腹及肚肠，", "五爻肾脏多气胀，", "六爻头上患为殃。"],
+          "yi": ["占病在什么部位，歌诀说：", "鬼在初爻，两足受伤；", "二爻，两腿的病不同寻常；", "三爻，腰背常发软；", "四爻，心、腹和肚肠；", "五爻，肾脏，多气胀；", "六爻，头上的病是灾殃。"],
+          "en": ["On where the illness is, it says:", "The ghost on the first line: both feet are injured;", "on the second line: an unusual trouble in both legs;", "on the third: the waist and back are often limp;", "on the fourth: the heart, belly and bowels;", "on the fifth: the kidneys, often with distension of qi;", "on the sixth: trouble in the head is the calamity."] }
+      ],
+      "dispute": {
+        "yi": "哪一爻管身体哪一处，几本书差得很远。这一块是「初两足、二双腿、三腰背、四心腹肚肠、五肾脏、六头」；同一章鬼谷辨爻法的表（LY.ILL.DYTJ.01）是「初足、二腿股、三腰、四脊、五心、六头」；孙膑断疾病歌（LY.ILL.DYTJ.03）和阐奥歌章（LY.ILL.CA.04）是「一五脏、二皮肉、三体骨腰并足、四肺心经、五六头」；易隐引鬼谷分爻（LY.ILL.YY.02）是「初足、二腿股、三肝肾、四脾脏、五心肺、六头脑」。初爻管足、上爻管头，几家一致；中间几爻各说各的，而孙膑歌和阐奥歌章那一说连初爻也不管足。书里没有裁决。",
+        "en": "Which line governs which part of the body is put very differently in several books. This block has 'first the two feet, second both legs, third waist and back, fourth heart, belly and bowels, fifth the kidneys, sixth the head'; Guigu's table in the same chapter (LY.ILL.DYTJ.01) has 'first the feet, second the legs and thighs, third the waist, fourth the spine, fifth the heart, sixth the head'; Sun Bin's song (LY.ILL.DYTJ.03) and the Chan'ao Gezhang (LY.ILL.CA.04) have 'the first the five viscera, the second skin and flesh, the third body, bones, waist and feet, the fourth lungs and heart channel, the fifth and sixth the head'; and the Yi Yin, quoting Guigu's division of the lines (LY.ILL.YY.02), has 'first the feet, second the legs and thighs, third liver and kidneys, fourth the spleen, fifth heart and lungs, sixth the head and brain'. The first line for the feet and the top line for the head are agreed by most of them; the lines between are put differently in each, and the reading of Sun Bin's song and the Chan'ao Gezhang does not even put the feet at the first line. The books do not settle it."
+      },
+      "note": {
+        "yi": "「三爻腰背常轻软」的「轻软」按「发软」译。这一块和同一章鬼谷辨爻法的表（LY.ILL.DYTJ.01）、孙膑断疾病歌（LY.ILL.DYTJ.03）一样，都是把六个爻位配给身体的六个部位，各家的配法见「打架」。",
+        "en": "The 'light and soft' of 'the waist and back are often light and soft' is rendered 'limp'. This block, like Guigu's table in the same chapter (LY.ILL.DYTJ.01) and Sun Bin's song (LY.ILL.DYTJ.03), matches the six line positions to six parts of the body; how the books match them is in the dispute."
+      },
+      "see": ["LY.ILL.DYTJ.01", "LY.ILL.DYTJ.03", "LY.ILL.CA.04", "LY.ILL.YY.02", "LY.ILL.DYTJ.12"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.12",
+      "topic": "症候",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占病在何处(八卦五行)：鬼在乾头坤腹、坎耳离目、兑口艮手、震足巽股；木鬼体疼痛、水土鬼痈肿、金鬼牙骨痛",
+      "rule": {
+        "yi": "鬼在乾是头，在坤病在腹；坎要患耳，离伤目；兑要忧口，艮在手上；震要防足，巽患在股。木爻是鬼，身体疼痛；水、土爻持着，必生痈肿；克象若说是金鬼，以此类推，是牙和骨头痛。",
+        "en": "The ghost in Qian is the head, in Kun the illness is in the belly; Kan must mean the ears, Li injures the eyes; Dui: worry for the mouth; Gen: the hands; Zhen: guard the feet; Xun: trouble in the thighs. A Wood line as the ghost: pain in the body; Water or Earth holding it: there will be abscess and swelling; if the controlling image is a Metal ghost, by analogy it is pain in the teeth and bones."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1680, 1680],
+          "zh": ["鬼在乾头坤患腹，", "坎须患耳离伤目，", "兑口须忧艮手间，", "震足犹防巽患股。", "木爻为鬼体疼痛，", "水土持之必痈肿，", "克象若言是金鬼，", "以类推之牙骨痛。"],
+          "yi": ["鬼在乾是头，在坤病在腹；", "坎要患耳，离伤目；", "兑要忧口，艮在手上；", "震要防足，巽患在股。", "木爻是鬼，身体疼痛；", "水、土爻持着，必生痈肿；", "克象如果说是金鬼，", "以此类推，是牙和骨头痛。"],
+          "en": ["The ghost in Qian is the head, in Kun the illness is in the belly;", "Kan must mean the ears, Li injures the eyes;", "Dui: worry for the mouth; Gen: the hands;", "Zhen: guard the feet; Xun: trouble in the thighs.", "A Wood line as the ghost: pain in the body;", "Water or Earth holding it: there will be abscess and swelling;", "if the controlling image is said to be a Metal ghost,", "by analogy it is pain in the teeth and bones."] }
+      ],
+      "dispute": {
+        "yi": "八卦各管身体哪一处，几处说法不同。这一块是「乾头、坤腹、坎耳、离目、兑口、艮手、震足、巽股」；孙膑断疾病歌（LY.ILL.DYTJ.03）是巽肠、艮手，其余同；阐奥歌章（LY.ILL.CA.02）是巽手、艮鼻，其余同；卜筮正宗痘疹章（LY.ILL.BSZZ.23）是巽股、艮手，同这一块。乾头、坤腹、坎耳、离目、兑口、震足几家一致；巽有股、肠、手三说，艮有手、鼻两说。书里没有裁决。",
+        "en": "Which part of the body each of the eight trigrams governs is put differently in several places. This block has 'Qian the head, Kun the belly, Kan the ears, Li the eyes, Dui the mouth, Gen the hands, Zhen the feet, Xun the thighs'; Sun Bin's song (LY.ILL.DYTJ.03) has Xun the bowels and Gen the hands, the rest the same; the Chan'ao Gezhang (LY.ILL.CA.02) has Xun the hands and Gen the nose, the rest the same; and the smallpox chapter of the Bushi Zhengzong (LY.ILL.BSZZ.23) has Xun the thighs and Gen the hands, as here. Qian the head, Kun the belly, Kan the ears, Li the eyes, Dui the mouth and Zhen the feet are agreed; Xun has three readings (thighs, bowels, hands) and Gen two (hands, nose). The books do not settle it."
+      },
+      "note": {
+        "yi": "前四句按八卦配身体：乾头、坤腹、坎耳、离目、兑口、艮手、震足、巽股。后四句是五行配症候：木鬼疼痛、水土鬼痈肿、金鬼牙骨痛。「克象若言是金鬼」的「克象」不确定所指，按字面译；意思大概是说到金鬼时，照这个类推。五行症候这一半和孙膑断疾病歌（LY.ILL.DYTJ.04）、天玄赋（LY.ILL.TXF.03）是同一类，各家说法大同小异。",
+        "en": "The first four lines match the trigrams to the body: Qian the head, Kun the belly, Kan the ears, Li the eyes, Dui the mouth, Gen the hands, Zhen the feet, Xun the thighs. The last four lines match the five phases to symptoms: a Wood ghost pain, Water and Earth ghosts abscess and swelling, a Metal ghost pain in teeth and bones. What the 'controlling image' of 'if the controlling image is said to be a Metal ghost' points to is not certain and it is rendered literally; it probably means that when a Metal ghost is spoken of, one reasons by analogy. The half on the five phases and symptoms is of the same kind as Sun Bin's song (LY.ILL.DYTJ.04) and the Tianxuan Fu (LY.ILL.TXF.03), and the books are much alike."
+      },
+      "see": ["LY.ILL.DYTJ.03", "LY.ILL.CA.02", "LY.ILL.BSZZ.23", "LY.ILL.DYTJ.04", "LY.ILL.TXF.03", "LY.ILL.DYTJ.11"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.13",
+      "topic": "症候",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占疾病卦例：内戒伤五脏、外戒伤皮肤、骸骨羸瘦、棺椁心惊、血脉疮痍、游魂恍惚、归魂精魄暗扶身",
+      "rule": {
+        "yi": "内戒卦，病伤五脏；外戒卦，病伤皮肤；骸骨卦，羸弱消瘦；棺椁卦，心惊多恐惧；血脉卦，疮痍；游魂卦，恍惚不安宁；归魂卦，精魄暗中扶着身子，气息沉静，懒得说话。",
+        "en": "An Inner Warning hexagram: the illness injures the five viscera; an Outer Warning hexagram: it injures the skin; a Bones hexagram: frail and wasted; a Coffin hexagram: a startled heart and much fear; a Blood Vessels hexagram: sores; a Wandering Soul hexagram: dazed and not at rest; a Returning Soul hexagram: the spirit-souls quietly support the body, the breath is still and the heart too listless to speak."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1681, 1682],
+          "zh": ["占疾病卦例云：", "内戒病云伤五脏，", "外戒伤害病皮肤，", "骸骨困羸消瘦尽，", "棺椁心惊多恐忌。", "血脉疮痍有无虑，", "游魂恍惚不安居，", "归魂精魄暗扶身，", "气息沉静心懒语。"],
+          "yi": ["占疾病的卦例，歌诀说：", "内戒卦，病是伤了五脏；", "外戒卦，伤害的病在皮肤；", "骸骨卦，困顿羸弱，瘦得尽了；", "棺椁卦，心惊，多有恐惧忌讳。", "血脉卦，疮痍；有没有忧虑（意思不明）；", "游魂卦，恍惚，不安宁；", "归魂卦，精魄暗中扶着身子，", "气息沉静，心里懒得说话。"],
+          "en": ["On the types of hexagram in divining illness it says:", "In an Inner Warning hexagram the illness is said to injure the five viscera;", "in an Outer Warning hexagram the harm is illness of the skin;", "in a Bones hexagram: worn and frail, wasted to nothing;", "in a Coffin hexagram: a startled heart and much fear and dread.", "in a Blood Vessels hexagram: sores and wounds; whether there is anything to worry about (the sense is unclear);", "in a Wandering Soul hexagram: dazed, not at rest;", "in a Returning Soul hexagram: the spirit-souls quietly support the body,", "the breath quiet and still and the heart too listless to speak."] }
+      ],
+      "note": {
+        "yi": "内戒、外戒、骸骨、棺椁、血脉、游魂、归魂都是卦的名称：易隐引京房的「十六变卦」，每一宫的十六个变卦里依次有游魂、外戒、内戒、归魂、绝命、血脉、肌肉、骸骨、棺槨、坟墓这些名字（乾宫是晋为游魂、旅为外戒、鼎为内戒、大有为归魂、离为绝命、噬嗑为血脉、颐为肌肉、益为骸骨、无妄为棺槨、同人为坟墓），见 LY.ILL.YY.36。「戒」字按 Warning 译，「棺椁」按 Coffin 译，这是这本库里的译法，原文没有解释。「血疾有无虑」原文作「血脉疮痍有无虑」，「有无虑」意思读不清，按字面译并标出不明。「游魂恍惚」和天玄赋、阐奥歌章说的游魂恍惚是同一个说法（LY.ILL.CA.04、LY.ILL.DYTJ.03）。",
+        "en": "Inner Warning, Outer Warning, Bones, Coffin, Blood Vessels, Wandering Soul and Returning Soul are all names of hexagrams: the Yi Yin, quoting Jing Fang's 'sixteen changed hexagrams', has among the sixteen changed hexagrams of each palace in order the names Wandering Soul, Outer Warning, Inner Warning, Returning Soul, End of Life, Blood Vessels, Flesh, Bones, Coffin and Grave (in the Qian palace Jin is the Wandering Soul, Lü the Outer Warning, Ding the Inner Warning, Dayou the Returning Soul, Li the End of Life, Shihe the Blood Vessels, Yi (Nourishment) the Flesh, Yi (Increase) the Bones, Wuwang the Coffin and Tongren the Grave), see LY.ILL.YY.36. 'Jie' is rendered 'Warning' and 'guan guo' 'Coffin', which is the rendering used in this library, and the original does not explain them. The original line is 'blood vessels, sores and wounds, whether or not there is worry', and 'you wu lü' does not read clearly, so it is rendered literally and marked as unclear. 'The Wandering Soul dazed' is the same saying as in the Chan'ao Gezhang and Sun Bin's song (LY.ILL.CA.04, LY.ILL.DYTJ.03)."
+      },
+      "see": ["LY.ILL.YY.36", "LY.ILL.CA.04", "LY.ILL.DYTJ.03", "LY.ILL.DYTJ.10"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.14",
+      "topic": "病因",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占何处得病：鬼爻在初堂内病、三二在门庭、四五居道路遇风雨；鬼入坎河海疾；丧门临象死丧家；福德象来因酒食；本宫五鬼象喧哗",
+      "rule": {
+        "yi": "鬼爻在初爻，是在堂屋里得的病；在三爻和二爻，是在门庭；在四、五爻，是在道路上，或者遇上风雨，伤身惊心。鬼爻入坎，是河海上得的病；丧门临在象上，是死丧之家；福德的象来到，是因酒食；本宫五鬼的象，是喧哗吵闹。",
+        "en": "The Pressure line on the first line: caught in the hall of the house; on the third and second: at the gate and courtyard; on the fourth and fifth: on the road, or meeting wind and rain it harms the body and startles the heart. The Pressure line entering Kan: illness from rivers and seas; Mourning Gate sitting on the image: a house of death and mourning; when the Output image comes it is through wine and food; the image of the Five Ghosts of the own palace is clamour and uproar."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1683, 1684],
+          "zh": ["占何处得病云：", "鬼爻在初堂内病，", "三爻与二在门庭，", "四五之爻居道路，", "或逢风雨损心惊。", "鬼爻入坎河海疾，", "丧门临象死丧家（5），", "福德象来因酒食，", "本宫五鬼象喧哗。"],
+          "yi": ["占是在什么地方得的病，歌诀说：", "鬼爻在初爻，是在堂屋里得的病；", "在三爻和二爻，是在门庭；", "四、五爻，在道路上，", "或者遇上风雨，伤身惊心。", "鬼爻入坎，是河海上得的病；", "丧门临在象上，是死丧之家；", "福德的象来到，是因酒食；", "本宫五鬼的象，是喧哗吵闹。"],
+          "en": ["On where the illness was caught it says:", "The Pressure line on the first line: caught in the hall of the house;", "on the third and the second: at the gate and courtyard;", "the fourth and fifth lines: on the road,", "or meeting wind and rain it harms and startles the heart.", "the Pressure line entering Kan: illness from rivers and seas;", "Mourning Gate sitting on the image: a house of death and mourning;", "when the Output image comes it is through wine and food;", "the image of the Five Ghosts of the own palace is clamour and uproar."] }
+      ],
+      "note": {
+        "yi": "「初堂内病」按「在堂屋里得的病」译。这一段是说病在哪里染上的，而不是病在身体哪一处（那一段是 LY.ILL.DYTJ.11、DYTJ.12）。「死丧家」承上文「占何处得病」，大概是说在办丧事的人家染上的病，字面是「死丧之家」，这里按字面译，书里没有说明。「福德象来因酒食」的「福德象来」大概是子孙的象出现，字面译。「本宫五鬼象喧哗」的「喧哗」意思不明，字面译作 clamour and uproar，「五鬼」是什么书里没有说。「（5）」是今人加的注号，那条注不收。这一块的「鬼在初爻…」和天玄赋的「六兽临官」（LY.ILL.TXF.09）、易林补遗的「何处得病」（LY.ILL.EL.03、EL.04）是同一类问题，答案各有各的路数。",
+        "en": "'Chu tang nei bing' is rendered 'caught in the hall of the house'. This passage says where the illness was caught, and not which part of the body is ill (that passage is LY.ILL.DYTJ.11 and DYTJ.12). The 'house of death and mourning' follows the heading 'where the illness was caught', and probably says it was caught in a house that is holding a funeral; the literal words are 'a house of death and mourning', and it is rendered literally here, and the book does not explain it. The 'Output image comes' of 'when the Output image comes it is through wine and food' probably means the image of Output appears, and is rendered literally. What 'clamour and uproar' means in 'the image of the Five Ghosts of the own palace' is not clear and is rendered literally, and the book does not say what the 'Five Ghosts' are. The '(5)' is a modern annotation mark and that annotation is not quoted. The 'ghost on the first line...' of this block is of the same kind of question as the Tianxuan Fu's 'the six beasts on the official' (LY.ILL.TXF.09) and the Yilin Buyi's 'where the illness was caught' (LY.ILL.EL.03, EL.04), each with its own way of answering."
+      },
+      "see": ["LY.ILL.DYTJ.11", "LY.ILL.DYTJ.12", "LY.ILL.TXF.09", "LY.ILL.EL.03", "LY.ILL.EL.04"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.15",
+      "topic": "生死",
+      "chapter": "占疾病第二十四·卜筮元龟",
+      "chapter_en": "Section 24, on illness: Bushi Yuangui",
+      "title": "卜筮元龟·占疾病凶卦：丰观需剥节旅贲明夷蛊夬及同人，不问四时及生旺，十死分明",
+      "rule": {
+        "yi": "丰、观、需、剥、节、旅、贲、明夷、蛊、夬，还有同人，不论四季、也不论生旺，「十死」是分明的，不必多说。",
+        "en": "Feng, Guan, Xu, Bo, Jie, Lü, Bi, Mingyi, Gu, Guai and Tongren: regardless of the four seasons or of strength, the 'ten deaths' are plain and there is no need to say more."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1685, 1686],
+          "zh": ["占疾病凶卦云：", "丰观需剥节旅贲，", "明夷蛊夬及同人，", "不问四时及生旺，", "十死分明不须陈。"],
+          "yi": ["占疾病的凶卦，歌诀说：", "丰、观、需、剥、节、旅、贲，", "明夷、蛊、夬，还有同人，", "不论四季，也不论生旺，", "「十死」是分明的，不必多说。"],
+          "en": ["On the ominous hexagrams in divining illness it says:", "Feng, Guan, Xu, Bo, Jie, Lü and Bi,", "Mingyi, Gu, Guai and Tongren:", "regardless of the four seasons or of strength,", "the 'ten deaths' are plain and there is no need to say more."] }
+      ],
+      "dispute": {
+        "yi": "哪几个卦占病最凶，几本书的名单不同。这一块是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人；阐奥歌章第五首（LY.ILL.CA.06）也是这十一个；孙膑断疾病歌（LY.ILL.DYTJ.06）只有明夷、蛊、剥、夬、丰、同六个；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）；火珠林一段（LY.ILL.DYTJ.17）是同人、丰、夬、蛊、剥、明夷。丰、蛊、夬、同人、明夷几乎处处都在，观、需、贲、旅、剥、节、临、大畜则有的有、有的没有。书里没有裁决。",
+        "en": "Which hexagrams are worst in divining illness is listed differently by several books. This block has Feng, Guan, Xu, Bo, Jie, Lü, Bi, Mingyi, Gu, Guai and Tongren; the fifth poem of the Chan'ao Gezhang (LY.ILL.CA.06) has the same eleven; Sun Bin's song (LY.ILL.DYTJ.06) has only the six Mingyi, Gu, Bo, Guai, Feng and Tong; the Tianxuan Fu (LY.ILL.TXF.06) has Mingyi, Guan, Bi, Xu and Lin (the Self and Body entering a tomb) and Daxu, Feng, Tong, Gu and Guai (Wealth and the ghost both rising); the Huozhu Lin passage (LY.ILL.DYTJ.17) has Tongren, Feng, Guai, Gu, Bo and Mingyi. Feng, Gu, Guai, Tongren and Mingyi are almost everywhere, and Guan, Xu, Bi, Lü, Bo, Jie, Lin and Daxu are in some and not in others. The books do not settle it."
+      },
+      "note": {
+        "yi": "名单里有十一个卦（丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人），而说的是「十死」，「十死」按字面译作 ten deaths，可能是「十有九死」一类的说法，书里没有解释。「不问四时及生旺」是说不看季节、也不看这个卦的旺衰，遇上就是凶。这个名单和别处的凶卦名单大同小异，见 LY.ILL.CA.03 的「打架」。",
+        "en": "The list has eleven hexagrams (Feng, Guan, Xu, Bo, Jie, Lü, Bi, Mingyi, Gu, Guai, Tongren) while it speaks of 'ten deaths'; 'ten deaths' is rendered literally and may be a saying like 'nine out of ten die', and the book does not explain it. 'Regardless of the four seasons or of strength' says that neither the season nor the strength or weakness of the hexagram is looked at, and meeting one is ominous. This list is much like the lists of ominous hexagrams elsewhere, see the dispute in LY.ILL.CA.03."
+      },
+      "see": ["LY.ILL.CA.03", "LY.ILL.CA.06", "LY.ILL.DYTJ.06", "LY.ILL.TXF.06", "LY.ILL.DYTJ.17"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.16",
+      "topic": "医药",
+      "chapter": "占疾病第二十四·洞林秘诀",
+      "chapter_en": "Section 24, on illness: Dongling Mijue",
+      "title": "洞林秘诀·占疾病：鬼杀刑克主灾疾、游魂入墓死亡推；占亲人爻要有；鬼爻持世须求鬼、服药进灾殃；卦有子孙鬼不犯便须服药；我克他先呕逆、他克我泻为伤；忌食鬼爻生肖肉、子孙能解",
+      "rule": {
+        "yi": "鬼、杀、刑克，主有灾病；游魂卦、入墓，按死亡推。占亲人，那个爻要有，没有就主倾危。虎刑这一个杀最可怕，其余别的凶恶都可以禳解。鬼爻持世，要向鬼求（祈祷），这时若服药反而增加灾殃；卦里有子孙，鬼不来侵犯，就该服药，得安康。我克他，先呕逆；他克我，泻而成伤。忌吃鬼爻生肖的肉，子孙的能解，就无妨。",
+        "en": "A ghost, a killing, punishment and control mean calamity and illness; a Wandering Soul hexagram or entering a tomb is inferred as death. Divining for a relative, the relative's line must be there, and if it is not it means peril. The killing of Tiger and punishment is the one to fear deeply, and all the other evils can be warded off. With the Pressure line holding the Self one must seek the ghost, and if one then takes medicine it only advances calamity; if the hexagram has Output and the ghost does not offend, then one should take medicine and gain health and peace. If I control him there is retching first; if he controls me purging is the harm. Avoid eating the meat of the animal of the ghost line; that of Output can dissolve it and does no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1708, 1710],
+          "zh": ["洞林秘诀云", "鬼杀刑克主灾疾，", "游魂入墓死亡推，", "若占亲人爻要有，", "若还无有主倾危。", "虎刑一杀深为惧，", "其余别恶尽堪禳，", "鬼爻持世须求鬼，", "若逢服药进灾殃。", "卦有子孙鬼不犯，", "便须服药得安康，", "我若克他先呕逆，", "他还克我泻为伤。", "忌食鬼爻生肖肉，", "子孙能解却无妨（1）。"],
+          "yi": ["洞林秘诀说：", "鬼、杀、刑克，主有灾病；", "游魂卦、入墓，按死亡推；", "如果占的是亲人，那个亲人的爻要有；", "若是没有，主倾危。", "虎刑这一个杀，最可怕；", "其余别的凶恶，都可以禳解。", "鬼爻持世，要向鬼求；", "若这时服药，反而增加灾殃。", "卦里有子孙，鬼不来侵犯，", "就该服药，可得安康。", "我若克他，先呕逆；", "他若克我，泻泄成伤。", "忌吃鬼爻所属生肖的肉，", "子孙的生肖能解，反而无妨。"],
+          "en": ["The Dongling Mijue says:", "A ghost, a killing, punishment and control mean calamity and illness;", "a Wandering Soul hexagram or entering a tomb is inferred as death;", "if one divines for a relative, the relative's line must be there;", "if it is not there it means peril.", "the killing of Tiger and punishment is the one to fear deeply;", "all the other evils can be warded off.", "the Pressure line holding the Self, one must seek the ghost;", "if one then takes medicine it only advances calamity.", "if the hexagram has Output the ghost does not offend,", "then one should take medicine and gain health and peace.", "if I control him, there is retching first;", "if he controls me, purging is the harm.", "Avoid eating the meat of the animal of the Pressure line's branch;", "the animal of Output can dissolve it and does no harm."] }
+      ],
+      "note": {
+        "yi": "「我」「他」这里按世和应读（世克应先呕逆、应克世泻），孙膑断疾病歌的「外克内应克世有药频频泻、内克外世克应多呕吐」是同一对（LY.ILL.DYTJ.04）。「鬼爻持世须求鬼」的「须求鬼」按字面译作「要向鬼求」：上下文是接着说服药会增加灾殃，所以这里大概是说该向鬼神祈求，而不是服药，这是读法，原文没有明说。「虎刑一杀」是白虎加刑的杀，原文没有展开。「（1）」是今人加的注号，那条注不收；忌食生肖肉的做法，火珠林一段（LY.ILL.HZL.04 一带）也有：丑鬼不可食牛肉，未子孙当食羊。",
+        "en": "'I' and 'he' are read here as the Self and the Other (the Self controlling the Other means retching first, the Other controlling the Self purging), the same pair as in Sun Bin's song, 'the outer controlling the inner, the Other controlling the Self: purging again and again; the inner controlling the outer, the Self controlling the Other: mostly vomiting' (LY.ILL.DYTJ.04). The 'xu qiu gui' of 'the Pressure line holding the Self, one must seek the ghost' is rendered literally as 'must seek the ghost': the context goes on to say that taking medicine will add calamity, so it probably says one should pray to the spirits rather than take medicine, which is a reading and the original does not say so plainly. 'The killing of Tiger and punishment' is the killing of the White Tiger with punishment, and the original does not expand on it. The '(1)' is a modern annotation mark and that annotation is not quoted; the practice of avoiding the meat of the branch animal is also in the Huozhu Lin (around LY.ILL.HZL.04): a Chou ghost must not eat beef, and Output at Wei should eat mutton."
+      },
+      "see": ["LY.ILL.DYTJ.04", "LY.ILL.TXF.12", "LY.ILL.TXF.13", "LY.ILL.HZL.04"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.17",
+      "topic": "生死",
+      "chapter": "占疾病第二十四·火珠林",
+      "chapter_en": "Section 24, on illness: Huozhu Lin",
+      "title": "火珠林(断易天机引)·疾病财爻鬼莫连：二爻俱发命危难；同人丰夬蛊剥明夷是死缘；杀世鬼身三入墓人将魂魄入黄泉；药爻在世难医疗；虎动占身病未痊；卦入墓乡并丧命",
+      "rule": {
+        "yi": "占疾病，财爻和鬼不要连在一起，两爻都发动，命有危难；同人、丰、夬成了凶的一对，蛊、剥、明夷是死的缘由。杀、世、鬼、身，三样入了墓，人的魂魄就要入黄泉；药爻在世，还是难医；虎动、占住身，病没有痊愈；卦入墓乡，并且丧命，卧在床席上，病绵绵不断。",
+        "en": "In illness the Wealth line and the ghost must not be linked, and if both move life is in danger; Tongren, Feng and Guai make an ominous set, and Gu, Bo and Mingyi are causes of death. The killing, the Self, the ghost and the Body, three of them entering the tomb, the person's spirit-souls are about to enter the Yellow Springs; the medicine line on the Self, hard to treat; the Tiger moving and taking hold of the Body, the illness is not cured; the hexagram entering the tomb quarter, life is lost, and lying on the bed-mat the illness drags on and on."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1720, 1720],
+          "zh": ["疾病财爻鬼莫连，", "二爻俱发命危难，", "同人丰夬成凶对，", "蛊剥明夷是死缘。", "杀世鬼身三入墓，", "人将魂魄入黄泉，", "药爻在世难医疗，", "虎动占身病未痊。", "卦入墓乡并丧命，", "卧于床席病绵绵。"],
+          "yi": ["占疾病，财爻和鬼不要连在一起；", "两爻都发动，命有危难；", "同人、丰、夬成了凶的一对，", "蛊、剥、明夷是死的缘由。", "杀、世、鬼、身，三样入了墓，", "人的魂魄就要入黄泉；", "药爻在世，难医疗；", "虎动，占住身，病没有痊愈；", "卦入墓乡，并且丧命，", "卧在床席上，病绵绵不断。"],
+          "en": ["In illness the Wealth line and the ghost must not be linked;", "if both move, life is in danger;", "Tongren, Feng and Guai make an ominous set,", "and Gu, Bo and Mingyi are causes of death.", "the killing, the Self, the ghost and the Body, three of them entering the tomb,", "the person's spirit-souls are about to enter the Yellow Springs;", "the medicine line on the Self, hard to treat;", "the Tiger moving and taking hold of the Body, the illness is not cured;", "the hexagram entering the tomb quarter, life is lost,", "and lying on the bed-mat the illness drags on and on."] }
+      ],
+      "note": {
+        "yi": "这一首在断易天机里题作《火珠林》，和火珠林本书的「占疾病」（LY.ILL.HZL.01 起）是不同的文字。「杀世鬼身三入墓」读不确定：是杀、世、鬼、身三样入墓，还是别的断法，原文没有点明，这里按字面译。「药爻在世难医疗」按字面译，上一句已经说入墓，这一句大概是说即使药爻（子孙）持世也难医，是读法，原文没有「即使」二字。这一首的凶卦名单是同人、丰、夬、蛊、剥、明夷，和别处的名单大同小异，见 LY.ILL.CA.03 的「打架」。",
+        "en": "This poem is headed 'Huozhu Lin' in the Duanyi Tianji, and it is a different text from the 'divining illness' of the Huozhu Lin itself (from LY.ILL.HZL.01). 'Sha shi gui shen san ru mu' is not certain: whether it is the killing, the Self, the ghost and the Body, three of them entering the tomb, or some other way of judging, the original does not make plain, and it is rendered literally. 'The medicine line on the Self, hard to treat' is rendered literally; the line before has already said entering the tomb, and this line probably says that even with the medicine line (Output) holding the Self it is hard to treat, which is a reading, and the original has no word for 'even'. The list of ominous hexagrams of this poem is Tongren, Feng, Guai, Gu, Bo and Mingyi, much like the lists elsewhere, see the dispute in LY.ILL.CA.03."
+      },
+      "see": ["LY.ILL.DYTJ.15", "LY.ILL.DYTJ.06", "LY.ILL.CA.03", "LY.ILL.HZL.01"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.18",
+      "topic": "应期",
+      "chapter": "占疾病第二十四·火珠林",
+      "chapter_en": "Section 24, on illness: Huozhu Lin",
+      "title": "火珠林(断易天机引)·占疾病何日愈：爻须旺相子扶身、龙蛇动处当轻利、狼虎过伤是重辰；己身自病何时瘥福德来临愈必真",
+      "rule": {
+        "yi": "占病问哪一天痊愈，爻要旺相，子孙扶身；青龙、螣蛇动的地方，当有轻快顺利；狼、虎过来伤，就是病重的时辰。重象不妨身带困顿，一交上恐怕气就离身；自己身上的病，什么时候好？福德来临的时候，一定真的痊愈。",
+        "en": "To ask on what day an illness is cured: the line must be strong and Output support the Body; where the Azure Dragon and the Coiling Snake move it should be light and smooth, and where the Wolf and the Tiger pass and injure is the heavy time. In a heavy image there is no harm if the body is worn, but on meeting it one must fear the breath leaves the body; for one's own illness, when will it be cured? When Output arrives the cure is certain."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1721, 1722],
+          "zh": ["占疾病何日愈云：", "占病问于何日痊，", "爻须旺相子扶身，", "龙蛇动处当轻利，", "狼虎过伤是重辰。", "重象不妨身带困，", "交当必恐气离身，", "己身自病何时瘥，", "福德来临愈必真。"],
+          "yi": ["占疾病哪一天痊愈，歌诀说：", "占病问什么时候痊愈，", "爻要旺相，子孙扶身；", "青龙、螣蛇动的地方，当有轻快顺利；", "狼、虎过来伤，就是病重的时辰。", "重象不妨身上带着困顿，", "一交上，恐怕气就离开身体；", "自己身上的病，什么时候好？", "福德来临的时候，一定真的痊愈。"],
+          "en": ["On which day an illness will be cured it says:", "In divining illness, to ask on what day it is cured:", "the line must be strong and Output support the Body;", "where the Azure Dragon and the Coiling Snake move it should be light and smooth;", "where the Wolf and the Tiger pass and injure is the heavy time.", "In a heavy image there is no harm if the body is worn,", "but on meeting it one must fear the breath leaves the body;", "for one's own illness, when will it be cured?", "when Output arrives the cure is certain."] }
+      ],
+      "note": {
+        "yi": "「龙蛇」是青龙、螣蛇；「狼虎」的「狼」是什么，书里没有说，字面译作 Wolf，「虎」按白虎读。「重辰」是病重的时候。「重象不妨身带困，交当必恐气离身」两句读不确定，按字面译。「福德来临愈必真」是说子孙（福德）出现的月日就是病愈的日子；子孙管应期的说法，阐奥歌章和别的书也有（LY.ILL.CA.07 一带）。",
+        "en": "The 'dragon and snake' are the Azure Dragon and the Coiling Snake; what the 'wolf' of 'wolf and tiger' is the book does not say, and it is rendered literally as Wolf, with 'tiger' read as the White Tiger. 'Chong chen' is the time when the illness is heavy. The two lines 'in a heavy image there is no harm if the body is worn; on meeting it one must fear the breath leaves the body' are not certain and are rendered literally. 'When Output arrives the cure is certain' says that the month or day on which Output (Fortune-and-Virtue) appears is the day of recovery; Output governing the timing is also said in the Chan'ao Gezhang and other books (around LY.ILL.CA.07)."
+      },
+      "see": ["LY.ILL.CA.07", "LY.ILL.DYTJ.17", "LY.ILL.TXF.07"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.19",
+      "topic": "总则",
+      "chapter": "占疾病第二十四·海底眼",
+      "chapter_en": "Section 24, on illness: Haidi Yan",
+      "title": "海底眼(断易天机本)·凡人问病要知因：安静先寻世下神、次看鬼爻藏伏处、更将爻动察其真；用是病人宜有气、福德医师喜贴身、子孙发动勿服药；六位无财食不纳、兄弟交重气积累、鬼多不一原曾病、用发休囚损病人",
+      "rule": {
+        "yi": "问病要知道病因：卦静的话先找世下伏的神，再看鬼爻藏伏在哪里，再拿发动的爻去察它的真相。用爻是病人，宜有气；福德是医师，喜欢贴着身；子孙发动，不要服药；卦宫旺相，病就迟迟拖延。六位没有财，吃不进东西；兄弟交重，气积在里面；鬼多、不止一个，原来就有病；用爻发动却休囚，损伤病人。",
+        "en": "In asking about illness one must know its cause: with the hexagram still first look for the spirit hidden under the Self, then look at where the ghost line lies hidden, and further examine the truth by the moving lines. The Subject is the sick person and should have qi; Output is the physician and likes to be close to the Body; with Output moving do not take medicine, and with the hexagram's palace strong the illness lingers. With no Wealth in the six places he cannot take food; with Peer crossing heavily the qi piles up; with many ghosts, not just one, there was an illness from before; with the Subject moving while resting or trapped, it harms the sick person."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1731, 1731],
+          "zh": ["凡人问病要知因，", "安静先寻世下神，", "次看鬼爻藏伏处，", "更将爻动察其真。", "用是病人宜有气，", "福德医师喜贴身，", "子孙发动勿服药，", "卦宫旺相病逡巡。", "六位无财食不纳，", "兄弟交重气积累，", "鬼多不一原曾病，", "用发休囚损病人（1）。"],
+          "yi": ["凡是有人问病，要知道病因，", "六爻安静时，先找世爻下面的神，", "再看官鬼藏伏在什么地方，", "再拿发动的爻去察看它的真相。", "用爻是病人，应该有气；", "福德是医师，喜欢贴着身；", "子孙发动，不要服药；", "卦宫旺相，病就迟疑退缩。", "六个位置上没有财，吃不下东西；", "兄弟交重，气积在里面；", "鬼有好几个而不止一个，是原来就有的病；", "用爻发动却休囚，损伤病人。"],
+          "en": ["Whoever asks about an illness must know its cause,", "when the six lines are still, first look for the spirit under the Self,", "next see where the Pressure line lies hidden,", "and further examine the truth by the moving lines.", "the Subject line is the sick person and should have qi;", "Output is the physician and likes to be close to the Body;", "with Output moving, do not take medicine;", "if the hexagram's palace is strong, the illness hesitates and shrinks back.", "with no Wealth in the six positions, food is not taken;", "with Peer crossing heavily, the qi piles up;", "with many ghosts, not just one, the illness was there before;", "with the Subject moving while resting or trapped, it harms the sick person."] }
+      ],
+      "note": {
+        "yi": "这是海底眼的另一个抄本，和海底眼本书里的「疾病」一节（LY.ILL.HDY.03、HDY.04）是同一首，断易天机引的这一份字句不同，有几句海底眼那份没有（福德医师喜贴身、子孙发动勿服药、兄弟交重气积累、用发休囚损病人）。「用发休囚」的「用」是用神，「休囚」译作 resting or trapped。「（1）」是今人加的注号，那条注不收。",
+        "en": "This is another copy of the Haidi Yan and is the same poem as the section on illness in the Haidi Yan itself (LY.ILL.HDY.03, HDY.04), but the copy quoted in the Duanyi Tianji differs in wording, and has several lines that the Haidi Yan copy does not (Output the physician likes to be close to the Body, with Output moving do not take medicine, with Peer crossing heavily the qi piles up, with the Subject moving while resting or trapped it harms the sick person). The 'Subject' of 'Subject moving, resting or trapped' is the Subject line, and 'resting or trapped' is rendered 'resting or trapped'. The '(1)' is a modern annotation mark and that annotation is not quoted."
+      },
+      "see": ["LY.ILL.HDY.03", "LY.ILL.HDY.04", "LY.ILL.DYTJ.20", "LY.ILL.HDY.01"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.20",
+      "topic": "总则",
+      "chapter": "占疾病第二十四·海底眼",
+      "chapter_en": "Section 24, on illness: Haidi Yan",
+      "title": "海底眼(断易天机本)·问病宜先问卜人：父母逢之父母陈、官鬼临之忌旺相、子孙克世药无灵；财为禄命忌飞克、印绶交重病困沉；大忌世官乘月建、又嫌墓发克其身；鬼在内夜重、官在外夜轻、内外有鬼人昏困；代占最怕应持鬼",
+      "rule": {
+        "yi": "问病应先问占卜的人是谁：父母爻现，说的是父母；官鬼临它，忌讳旺相；子孙克世，药不灵。财是禄命，忌被飞爻克；印绶交重，病困顿沉重；最忌世和官乘着月建，又嫌墓爻发动克它的身。鬼在内，夜里重；官在外，夜里轻；内外都有鬼，人昏沉困顿，不然就是旧病再来侵。代占最怕应爻持鬼，官的墓持在身上，命也倾覆。",
+        "en": "In asking about illness first ask who the person divining is: the Resource line appearing means the parents; the Pressure line sitting on it must not be strong; Output controlling the Self means the medicine has no effect. Wealth is the salary and life and must not be attacked by a flying line; with the seal ribbon (Resource) crossing heavily the illness is deep and heavy; it is worst if the Self and the ghost ride the Month, and it also dislikes a tomb line moving to attack the Body. With the ghost inside the night is heavy, with the ghost outside the night is light; with ghosts both inside and outside the person is dazed and worn, or else an old illness comes again to invade. In divining for another the worst is the Other line holding a ghost, and with the tomb of the ghost line holding the Body life too is overturned."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1731, 1731],
+          "zh": ["问病宜先问卜人，", "父母逢之父母陈，", "官鬼临之忌旺相，", "子孙克世药无灵。", "财为禄命忌飞克，", "印绶交重病困沉，", "大忌世官乘月建，", "又嫌墓发克其身。", "鬼在内兮当夜重，", "官在外兮夜心轻，", "内外有鬼人昏困，", "不然旧病再来侵。", "代占最怕应持鬼，", "官墓持身命亦倾。"],
+          "yi": ["问病应先问占卜的人是谁；", "父母爻遇上它，就是父母被陈说出来；", "官鬼临在上面，忌讳旺相；", "子孙克了世，吃药没有灵验。", "财是禄命，忌被飞爻克；", "印绶交重，病困顿沉重；", "最忌世和官乘着月建，", "又嫌墓爻发动来克它的身；", "鬼在内卦，夜里病重；", "官在外（卦），夜里心里轻松；", "内外都有鬼，人昏沉困顿，", "不然就是旧病再来侵扰。", "替别人占，最怕应爻持鬼；", "官的墓持在身上，命也倾覆。"],
+          "en": ["In asking about illness first ask who the person divining is;", "if Resource meets it, it is the parents that are set out;", "the Pressure line sitting on it must not be strong;", "Output controlling the Self, medicine has no effect.", "Wealth is the salary and life and must not be attacked by a flying line;", "with the seal ribbon (Resource) crossing heavily the illness is deep and heavy;", "it is worst if the Self and the ghost ride the Month,", "and it also dislikes a tomb line moving to attack the Body;", "A ghost inside: the illness is heavy at night;", "with the ghost outside, at night the heart is light;", "with ghosts both inside and outside the person is faint and trapped,", "or else an old illness comes again to invade.", "In divining for another, most feared is the Other holding the ghost;", "with the tomb of the ghost line holding the Body life too is overturned."] }
+      ],
+      "note": {
+        "yi": "这是海底眼疾病歌的后半（LY.ILL.HDY.01、HDY.02 的另一份）。「官在外兮夜心轻」的「夜心轻」，海底眼本书里同一句是「鬼在外兮夜必轻」（LY.ILL.HDY.02），这里按原字译作「夜里心里轻松」；是「必」写成「心」，还是本来就这么写，书里没有说明。昼夜轻重的说法，几本书不同，见 LY.ILL.HJC.12 的「打架」。「印绶」是父母（印授）。",
+        "en": "This is the second half of the illness poem of the Haidi Yan (another copy of LY.ILL.HDY.01 and HDY.02). The 'ye xin qing' of 'the ghost outside, at night the heart is light' reads in the Haidi Yan itself 'the ghost outside, at night surely light' (LY.ILL.HDY.02); here it is rendered as written, 'at night the heart is light', and whether 'bi' (surely) was written as 'xin' (heart) or the line was always so, the book does not say. The saying on the heaviness of the illness by day and night differs between several books, see the dispute in LY.ILL.HJC.12. The 'seal ribbon' is Resource."
+      },
+      "see": ["LY.ILL.HDY.01", "LY.ILL.HDY.02", "LY.ILL.DYTJ.19", "LY.ILL.HJC.12"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.21",
+      "topic": "症候",
+      "chapter": "占疾病第二十四·海底眼",
+      "chapter_en": "Section 24, on illness: Haidi Yan",
+      "title": "海底眼(断易天机本)·又占症候：金同木四肢、感寒喘气亏羸；辰戌胃胸呕逆、丑连肚腹吐伤脾；火动三焦渴、血心眼目疮痍；水土发寒因冷得、泄泻虚劳耳肾衰",
+      "rule": {
+        "yi": "金和木，病在四肢，感寒、喘、气亏体弱；辰、戌，胃和胸，呕逆；丑连着肚腹，吐而伤脾；火动，势头到极点，三焦干渴，血、心、眼目有疮痍；水、土发寒，是因受冷得的，泄泻、虚劳，耳和肾衰弱。",
+        "en": "Metal and Wood: the four limbs, catching a chill, quick panting, deficient qi and frailty; Chen and Xu: the stomach and chest, vomiting and retching; Chou links with the belly and abdomen, vomiting injures the spleen; Fire moving: at its extreme, the Triple Burner parched, and blood, heart and eyes have sores; Water and Earth cause chills, caught from cold, diarrhoea, consumption, and weakness of the ears and kidneys."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1732, 1732],
+          "zh": ["又占症候云：", "候病金同木四肢，", "感寒疾喘气亏羸，", "辰戌胃胸生呕逆，", "丑连肚腹吐伤脾。", "火动势极三焦渴，", "血心眼目有疮痍，", "水土发寒因冷得，", "泄泻虚劳耳肾衰（2）。"],
+          "yi": ["又占症候，歌诀说：", "诊病：金和木，病在四肢，", "感寒，喘得急，气亏体弱；", "辰、戌是胃和胸，生出呕吐逆气；", "丑连着肚腹，吐而伤脾；", "火动，势头到极点，三焦干渴，", "血、心、眼目有疮痍；", "水、土发寒，是因受冷得的，", "泄泻、虚劳，耳和肾衰弱。"],
+          "en": ["On symptoms again it says:", "In taking the illness: Metal and Wood mean the four limbs,", "catching a chill, quick panting, deficient qi and frailty;", "Chen and Xu are the stomach and chest, giving rise to vomiting and retching;", "Chou links with the belly and abdomen: vomiting injures the spleen;", "Fire moving, at its extreme, the Triple Burner parched,", "blood, heart and eyes have sores;", "Water and Earth cause chills, caught from cold,", "diarrhoea, consumption, and weakness of the ears and kidneys."] }
+      ],
+      "note": {
+        "yi": "这是海底眼「症候」一段的另一个抄本（LY.ILL.HDY.05 是海底眼本书的一份），字句略有不同：海底眼本书是「肺病金同木四肢，感寒痰喘气亏羸」，这里是「候病金同木四肢，感寒疾喘气亏羸」；又，海底眼本书里「水主发寒因冷得，世泻虚劳耳肾衰」，这里是「水土发寒因冷得，泄泻虚劳耳肾衰」。「（2）」是今人加的注号，那条注不收。",
+        "en": "This is another copy of the passage on symptoms of the Haidi Yan (LY.ILL.HDY.05 is the copy in the Haidi Yan itself), with slight differences in wording: the Haidi Yan itself has 'lung illness: Metal and Wood the four limbs, catching a chill, phlegm and panting, deficient qi and frailty' where this has 'in taking the illness: Metal and Wood the four limbs, catching a chill, quick panting'; and where the Haidi Yan itself has 'Water governs chills caught from cold, the Self: diarrhoea, consumption, weakness of the ears and kidneys', this has 'Water and Earth cause chills caught from cold, diarrhoea, consumption, weakness of the ears and kidneys'. The '(2)' is a modern annotation mark and that annotation is not quoted."
+      },
+      "see": ["LY.ILL.HDY.05", "LY.ILL.DYTJ.12", "LY.ILL.DYTJ.19"]
+    }
+  ]
+}

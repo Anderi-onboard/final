@@ -1,0 +1,372 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "海底眼",
+  "chapter": "疾病、病患、病症、神崇、还赛(及六亲、刑克、生死气三处)",
+  "chapter_en": "Illness, the sick, symptoms, spirit hauntings, redeeming vows (and three passages on the six relations, control and the death-qi)",
+  "ranges": {"海底眼": [829, 890]},
+  "units": [
+    {
+      "id": "LY.ILL.HDY.01",
+      "topic": "总则",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "问灾先问是何人：父母爻现是父母之病、官鬼临之怕旺相、子孙克世药无灵；财为禄命怕飞爻克、父母（印授）交重病困沉、最忌世空遇月破、又嫌墓爻发动损身",
+      "rule": {
+        "yi": "占问灾病，先要问是什么人得病：父母爻出现，说的就是父母的事；官鬼临上去，愁它旺相；子孙克世爻，吃药没有灵验。财是禄命，怕被飞爻克制（原文「忘非克」，含混）；父母（印绶）交重发动，病重而困顿；最忌世爻落空又遇月破，也嫌墓爻发动伤了身体。眉批说：父亲得病要看病（官鬼）；鬼怕旺相；子克世爻，服药不灵；财是禄命，印绶发动命沉，世空、月破、墓绝都凶。",
+        "en": "In asking about an illness or calamity, first ask whose it is: if Resource appears, it is the parents' matter that is set out; if Pressure sits on it, one worries about its being strong; Output controlling the Self line makes medicine ineffective. Wealth is the salary and life and fears being controlled by the flying line (the text reads 'wang fei ke', which is unclear); Resource (the seal ribbon) crossing and moving heavily makes the illness heavy and trapped; most to be avoided is the Self Void together with Month-break, and the tomb line moving to harm the body is also disliked. The marginal comment says: for a father's illness, look at the illness; the ghost fears strength; if Output controls the Self line, taking medicine is ineffective; Wealth is the salary and life, the seal ribbon moving means life sinks, and the Self Void, Month-break, tomb and Extinction are all ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [831, 831],
+          "zh": ["问灾先问是何人，", "父母逢之父母陈，", "官鬼临之愁旺相，", "子孙克世药无灵。"],
+          "yi": ["占问灾病，先问是什么人；", "父母爻遇上它，就是父母被陈说出来；", "官鬼临在它上面，愁的是它旺相；", "子孙克了世，吃药没有灵验。"],
+          "en": ["In asking about a calamity, first ask who the person is;", "if Resource meets it, it is the parents that are set out;", "if Pressure sits on it, one worries about its being strong;", "Output controlling the Self, medicine has no effect."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [831, 831],
+          "zh": ["父病看病，", "鬼怕旺相，", "子克世爻，", "服药不灵。"],
+          "yi": ["父亲得病，要看病；", "鬼怕旺相；", "子克世爻；", "吃药不灵验。"],
+          "en": ["for a father's illness, look at the illness;", "the ghost fears being strong;", "if Output controls the Self line;", "taking medicine is not effective."] },
+        { "by": "经", "book": "海底眼", "range": [833, 833],
+          "zh": ["又曰：", "财为禄命忘非克，", "印授交重病困沉，", "大忌世空来月破，", "又嫌墓发损其身。"],
+          "yi": ["又说道：", "财是禄命，怕被飞爻克制（原文作「忘非克」，含混）；", "印绶交重发动，病重而困顿；", "最忌世爻落空，又逢月破；", "又嫌墓爻发动，伤了身体。"],
+          "en": ["It says again:", "Wealth is the salary and life, and fears being controlled by the flying line (the text reads 'wang fei ke', which is unclear);", "the seal ribbon (Resource) crossing and moving heavily, the illness is heavy and trapped;", "most to be avoided is the Self Void, together with Month-break;", "and the tomb line moving to harm the body is also disliked."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [833, 833],
+          "zh": ["财为禄命，", "印授命沉，", "世空月破，", "墓绝皆凶。"],
+          "yi": ["财是禄命；", "印绶发动，命就沉；", "世空、月破；", "墓、绝都是凶。"],
+          "en": ["Wealth is the salary and life;", "the seal ribbon moving, life sinks;", "the Self Void, Month-break;", "tomb and Extinction are all ominous."] }
+      ],
+      "note": {
+        "yi": "这是海底眼「疾病」一节的头两首歌诀，每首后面带一条眉批。「父母逢之父母陈」的「陈」按字面译作「set out」，大意是这一爻出现就说明占的是这一层亲人；眉批「父病看病」很简，按字面译。「财为禄命忘非克」的「忘非克」不成话：下面散句（LY.ILL.HDY.02）同一句写作「忌飞克之」，所以这里按「怕被飞爻克」译，并把原字标在译文里。「印授」就是印绶，是父母爻的别名，眉批「印授命沉」按字面译作「the seal ribbon moving means life sinks」。「世空」「墓发」「墓绝」照字面译。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "These are the first two verses of the Haidi Yan's section on illness, each followed by a marginal comment. In 'if Resource meets it, the parents are set out' the word 'chen' is rendered literally as 'set out', the sense being that this line's appearing shows which relation the divination is about; the marginal comment 'for a father's illness, look at the illness' is very short and is rendered literally. 'Wang fei ke' in 'Wealth is the salary and life, wang fei ke' does not make sense: the prose sentence below (LY.ILL.HDY.02) writes the same sentence as 'it fears the flying line controlling it', so it is translated here as 'fears being controlled by the flying line', and the original characters are marked in the translation. 'Yin shou' is the seal ribbon, another name for the Resource line, and the marginal comment 'the seal ribbon means life sinks' is rendered literally as 'the seal ribbon moving means life sinks'. 'Self Void', 'the tomb moving' and 'tomb and Extinction' are rendered literally. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.02", "LY.ILL.HDY.11", "LY.ILL.EL.07", "LY.ILL.EL.08", "LY.ILL.HJC.01"]
+    },
+    {
+      "id": "LY.ILL.HDY.02",
+      "topic": "轻重",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "鬼在内外夜重夜轻、内外有鬼旧病再发：鬼在内夜重、鬼在外夜必轻、内外有鬼人昏困要防旧病再来；代占最怕应持鬼、官鬼持身命亦倾；病因怕鬼旺相、子孙不宜克世、财忌飞克、父母交重病沉、大怕世空、又嫌月破、更嫌身世入墓",
+      "rule": {
+        "yi": "鬼在内卦，夜里病重；鬼在外卦，夜里一定较轻；内外都有鬼，人昏沉困顿，要提防旧病再来侵扰。替别人占，最怕应爻持鬼；官鬼持了身，命也会倾倒。眉批说：鬼在内，夜里重；鬼在外，灾厄解除；内外都有鬼，危险；代占时应爻有鬼、又逢官鬼的墓，命一定倾倒。后面的散句又把它重述了一遍：病因怕（鬼）旺相；子孙是药，不宜克世；财是禄命，忌被飞爻克；父母交重病重；最怕世空，又嫌月破，更嫌身世入墓；内外有鬼旧病再发；代占应爻持鬼凶。",
+        "en": "A ghost in the inner trigram makes the illness heavy at night; a ghost in the outer trigram, at night it is surely lighter; with ghosts both inside and outside the person is faint and trapped, and one must beware of the old illness coming again to invade. In divining for another, most to be feared is the Other line holding the ghost; if the Pressure line holds the body, life too topples. The marginal comment says: ghost inside, heavy at night; ghost outside, calamity released; ghosts both inside and outside, dangerous; in divining for another, the Other with the ghost and the official tomb, life surely topples. The prose that follows restates it: for the cause of illness the ghost is feared when strong; Output is the medicine and should not control the Self; Wealth is the salary and life and fears the flying line controlling it; Resource crossing makes the illness heavy; most feared are the Self Void and Month-break, and more disliked still the body and Self entering a tomb; ghosts both inside and outside bring the old illness back; in divining for another, the Other line holding the ghost is ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [835, 835],
+          "zh": ["又曰：", "鬼在内兮当夜重，", "鬼在外兮夜必轻，", "内外有鬼人昏困，", "提防旧病再来侵。", "代占最怕应持鬼，", "官鬼持身命亦倾。"],
+          "yi": ["又说道：", "鬼在内卦，夜里病重；", "鬼在外卦，夜里一定较轻；", "内外都有鬼，人昏沉困顿，", "要提防旧病再来侵扰。", "替别人占，最怕应爻持鬼；", "官鬼持了身，命也倾倒。"],
+          "en": ["It says again:", "A ghost inside: the illness is heavy at night;", "a ghost outside: at night it is surely lighter;", "with ghosts both inside and outside the person is faint and trapped,", "and one must beware of the old illness coming again to invade.", "In divining for another, most feared is the Other holding the ghost;", "the Pressure line holding the body, life too topples."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [835, 835],
+          "zh": ["鬼内夜重，", "鬼外解厄，", "内外鬼险，", "代占应鬼官墓，", "命仆必倾。"],
+          "yi": ["鬼在内，夜里重；", "鬼在外，灾厄解除；", "内外都有鬼，危险；", "代占时应爻有鬼，又逢官鬼的墓，", "命一定倾倒。"],
+          "en": ["ghost inside: heavy at night;", "ghost outside: calamity released;", "ghosts inside and outside: dangerous;", "in divining for another, the Other with the ghost and the official tomb,", "life surely topples."] },
+        { "by": "经", "book": "海底眼", "range": [837, 837],
+          "zh": ["疾病病因，", "怕逢旺相，", "子为药饵，", "不宜克世。", "财为禄命，", "忌飞克之，", "父母交重，", "病体沉重。", "大怕世空，", "又嫌月破，", "更嫌身世入墓内犹重，", "官外尽凶。", "内外有鬼，", "旧病再发，", "代占应持鬼凶。"],
+          "yi": ["疾病的病因，", "（鬼）怕遇上旺相；", "子孙是药饵，", "不应该克世爻。", "财是禄命，", "忌被飞爻克制；", "父母爻交重发动，", "病人的身体沉重。", "最怕世空，", "又嫌弃月破，", "更嫌身世入墓，里面的更重，", "官在外面就全凶。", "内外都有鬼，", "旧病又会发作；", "代占时应爻持鬼是凶。"],
+          "en": ["The cause of illness:", "the ghost fears meeting strength;", "Output is the medicine,", "and should not control the Self.", "Wealth is the salary and life;", "it fears the flying line controlling it;", "if Resource crosses heavily,", "the body of illness is heavy.", "Most feared is the Self Void;", "also disliked is Month-break;", "still more disliked is the body and Self entering a tomb, when what is inside is heavier still;", "with the official outside, all is ominous.", "With ghosts inside and outside,", "an old illness flares again;", "in divining for another, the Other holding the ghost is ominous."] }
+      ],
+      "dispute": {
+        "yi": "病在昼夜哪一头重，几家的依据不同。海底眼（LY.ILL.HDY.02）、黄金策的旧注和王洪绪（LY.ILL.HJC.12）都按官鬼在内卦还是外卦来分：鬼在内卦夜里重，鬼在外卦白天重（海底眼说「夜必轻」），内外都有鬼昼夜都不轻；易隐（LY.ILL.YY.15）则按官鬼的阴阳分：鬼属阴白天轻、夜里重，鬼属阳白天重、夜里轻。两个标准可以给出相反的结论（比如阳爻的鬼在内卦：前一种夜里重，后一种白天重），书里没有裁决。",
+        "en": "Whether an illness is heavier by day or by night: the books use different criteria. The Haidi Yan (LY.ILL.HDY.02), the old commentary of the Huangjin Ce and Wang Hongxu (LY.ILL.HJC.12) all divide by whether the Pressure line is in the inner or the outer trigram: a ghost in the inner trigram is heavy at night, a ghost in the outer trigram heavy by day (the Haidi Yan says 'at night it is surely lighter'), and with ghosts both inside and outside neither day nor night is light; the Yi Yin (LY.ILL.YY.15) divides by the yin or yang of the ghost: a yin ghost is light by day and heavy at night, a yang ghost heavy by day and light at night. The two criteria can give opposite conclusions (for example, a yang ghost in the inner trigram is heavy at night by the first and heavy by day by the second), and the books do not settle it."
+      },
+      "note": {
+        "yi": "下面一段散句（「疾病病因，怕逢旺相……」）是对上面两首歌诀（LY.ILL.HDY.01、这一条）的复述，几乎逐句对应。「怕逢旺相」缺主语，按上下文（眉批「鬼怕旺相」）补作「（鬼）」。「更嫌身世入墓内犹重，官外尽凶」文字含混：「内犹重」按「里面的更重」译，「官外尽凶」按字面译作「官在外面就全凶」，和上一首歌诀眉批的「鬼外解厄」看上去不合，书里没有解释，这里不强作调和。「旧病再发」同黄金策「官藏世下，病起如前」（LY.ILL.HJC.07）是同一件事的另一个说法。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "The prose that follows ('the cause of illness, fear meeting strength ...') restates the two verses above (LY.ILL.HDY.01 and this entry), almost sentence by sentence. 'Fears meeting strength' has no subject, and from the context (the marginal comment 'the ghost fears strength') it is supplied as 'the ghost'. 'Still more disliked is the body and Self entering a tomb, inside heavier still, with the official outside all ominous' is loose: 'inside heavier still' is rendered 'what is inside is heavier still', and 'with the official outside all ominous' is rendered literally; it looks at odds with the marginal comment on the previous verse, 'ghost outside, calamity released', and the book does not explain, so no reconciliation is forced here. 'The old illness flares again' is another way of saying the Huangjin Ce's 'the Pressure line hidden under the Self, the illness rises as before' (LY.ILL.HJC.07). The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.01", "LY.ILL.HDY.03", "LY.ILL.HJC.12", "LY.ILL.HJC.07", "LY.ILL.YY.15"]
+    },
+    {
+      "id": "LY.ILL.HDY.03",
+      "topic": "病因",
+      "chapter": "病患",
+      "chapter_en": "The sick",
+      "title": "病患先须得病因：卦静先寻世下伏神、次看鬼爻藏伏处、再以爻象察真；用是病人宜有气、福德是医师、子孙发动勿服药、卦宫旺相病逡巡、六位无财食不纳、兄弟交重气积深、鬼多不一原曾病、用发休囚损病因",
+      "rule": {
+        "yi": "看病先要弄清病因。六爻安静的时候，先找世爻下面伏着的神；再看官鬼藏伏在什么地方；再用爻象去考察它的真假。用爻是病人，应该有气；福德（子孙）是医师，能保全愈；子孙发动就不必服药（原文作「误」，校作「勿」）；卦宫旺相，病就迟疑退缩；六个位置里没有财，吃不下东西；兄弟交重，气积得深；鬼有好几个而不止一个，是原来就有的病；用爻发动却休囚，受损于病因。眉批把这几句压缩成了词条。",
+        "en": "In an illness, first find its cause. When the six lines are still, first look for the spirit under the Self; next see where the Pressure line lies hidden; and further use the images of the lines to examine its truth. The Subject line is the sick person and should have qi; Output (the fortune spirit) is the doctor and can bring full recovery; when Output moves, do not take medicine (the text has 'error', which the editor corrects to 'do not'); if the hexagram's palace is strong, the illness hesitates and shrinks back; with no Wealth in the six positions, food is not taken; with Peer crossing heavily, qi is accumulated deep; with many ghosts, not just one, the illness was there before; if the Subject moves while resting or trapped, it is harmed by the cause of the illness. The marginal comment compresses these sentences into headings."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [841, 841],
+          "zh": ["病患先须得病因，", "安静先寻世下神，", "次看鬼爻藏伏处，", "更将爻象察其真。"],
+          "yi": ["病患先必须弄清病因：", "六爻安静时，先找世爻下面的神，", "再看官鬼藏伏在什么地方，", "再用爻象去考察它的真假。"],
+          "en": ["In an illness one must first find its cause:", "when the six lines are still, first look for the spirit under the Self,", "next see where the Pressure line lies hidden,", "and further use the images of the lines to examine its truth."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [841, 841],
+          "zh": ["六爻安静，", "世下伏神。"],
+          "yi": ["六爻安静时，", "看世爻下面伏着的神。"],
+          "en": ["When the six lines are still,", "look at the hidden spirit under the Self."] },
+        { "by": "经", "book": "海底眼", "range": [843, 843],
+          "zh": ["又曰：", "用是病人宜有气，", "福德医师可至全，", "子孙发动误(勿之误)服药，", "卦宫旺相病逡巡。", "六位无财食不纳，", "兄弟交重气积深，", "鬼多不一原曾病，", "用发休囚损病因。"],
+          "yi": ["又说道：", "用爻是病人，应该有气；", "福德是医师，能保得全愈；", "子孙发动，不要服药（原文作「误」，校记说是「勿」之误）；", "卦宫旺相，病就迟疑退缩。", "六个位置上没有财，吃不下东西；", "兄弟交重，气积得深；", "鬼有好几个而不止一个，是原来就有的病；", "用爻发动却休囚，受损于病因。"],
+          "en": ["It says again:", "the Subject line is the sick person and should have qi;", "Output (the fortune spirit) is the doctor and can bring full recovery;", "when Output moves, do not take medicine (the text has 'error', which the editor corrects to 'do not');", "if the hexagram's palace is strong, the illness hesitates and shrinks back.", "with no Wealth in the six positions, food is not taken;", "with Peer crossing heavily, qi is accumulated deep;", "with many ghosts, not just one, the illness was there before;", "if the Subject moves while resting or trapped, it is harmed by the cause of the illness."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [843, 843],
+          "zh": ["鬼伏何爻，", "爻察其真，", "用爻有气，", "祸随不吉，", "子动误（勿之误）药，", "卦旺逡巡，", "财无不食，", "兄动气积，", "鬼动不一，", "用率病厄"],
+          "yi": ["鬼伏在哪一爻，", "凭爻来考察它的真假；", "用爻有气，", "祸随之而来，不吉（此处含混）；", "子孙动，不要服药（原文作「误」，校作「勿」）；", "卦旺，病迟疑退缩；", "没有财，不吃东西；", "兄弟动，气积聚；", "鬼动而不止一个；", "用爻带领着病厄。"],
+          "en": ["Where the ghost hides, under which line,", "examine its truth by the line;", "the Subject line has qi;", "misfortune follows it, not auspicious (unclear here);", "Output moving: do not take medicine (the text has 'error', corrected to 'do not');", "the hexagram strong, the illness hesitates;", "no Wealth, no eating;", "Peer moving, qi accumulates;", "the ghost moving, more than one;", "the Subject leads illness and calamity."] }
+      ],
+      "note": {
+        "yi": "「安静先寻世下神」的「世下神」，眉批说是「世下伏神」——世爻下面的伏神，这一条和易林补遗「先看世下伏神」（LY.ILL.EL.03、EL.42）是同一个办法。「子孙发动误（勿之误）服药」：原文夹着整理者的校字，「误」是「勿」的误写，意思是子孙发动时不用吃药；易隐的颗师说「子孙动者误服药」（LY.ILL.YY.26）也是这一句的另一个版本，意思是子孙发动的病不必服药。「卦宫旺相病逡巡」的「逡巡」是徘徊、退缩。「用发休囚损病因」和眉批最后「用率病厄」文字含混，这里按字面译，不作展开；眉批第四句「祸随不吉」也含混。「六位无财食不纳」的「财」是妻财，在病里代表饮食。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "'The spirit under the Self' in 'when still, first look for the spirit under the Self' is said by the marginal comment to be 'the hidden spirit under the Self', the hidden line under the Self line, and this entry uses the same method as the Yilin Buyi's 'first look at the hidden line under the Self' (LY.ILL.EL.03, EL.42). In 'when Output moves, wu (mistaken) medicine' the original carries an editor's correction: the character 'error' is a mistaken writing of 'do not', so that when Output moves no medicine need be taken; the Yi Yin's 'Keshi says: when Output moves, error, take medicine' (LY.ILL.YY.26) is another version of the same sentence, and means that an illness with Output moving needs no medicine. 'Hesitates' in 'the illness hesitates and shrinks back' is to linger and retreat. 'The Subject moving while resting or trapped harms the cause of illness' and the last words of the marginal comment, 'the Subject leads illness and calamity', are loose in wording and are translated literally and not expanded; the marginal comment's fourth clause, 'misfortune follows, not auspicious', is also unclear. The 'Wealth' of 'with no Wealth among the six positions, food is not taken' is the Wealth line, which in illness stands for food and drink. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.02", "LY.ILL.HDY.04", "LY.ILL.EL.03", "LY.ILL.EL.42", "LY.ILL.YY.26", "LY.ILL.YM.29", "LY.ILL.HJC.07"]
+    },
+    {
+      "id": "LY.ILL.HDY.04",
+      "topic": "病因",
+      "chapter": "病患",
+      "chapter_en": "The sick",
+      "title": "鬼伏何爻下以五行六亲分辨：鬼伏父母下得于忧虑、动土、修造，兄弟下失饥伤饱、口舌气，官鬼现惊恐怪异、寺观庙宇，子孙现欲事大过，妻财饮食、买物；土伏土疮肿、火下火手足、金见金大寒热、水下水冷疾、金下金喘咳；阳宫世动主吐、阴宫财动主泻；鬼现在外表、鬼伏在心腹",
+      "rule": {
+        "yi": "鬼伏在哪一爻下面，要用五行来分辨。父母爻：因为忧虑得的，或是动了土，或是到修造的地方得的。兄弟爻：因为饥饱失常，或者因口舌气恼得的。官鬼出现：惊恐怪异，或者是在寺观庙宇里得的。子孙出现：或者因为欲事太过。妻财：饮食上得的，或者买东西得的。五行伏着五行：土伏土，生疮肿胀；火下火，手足的病；金遇金，大寒大热（中间「问乱未下」原文含混）；水下水，冷病；金下金，气喘咳嗽。阳宫里世爻发动主吐，阴宫里财爻发动主泻。鬼出现，病在外表；鬼伏着，病在心腹；病在里面，或是动的爻在下面受病，用爻也一样；鬼在外面，或是动土变成病，用爻也一样。",
+        "en": "Where the ghost hides, under which line, discriminate by the five phases. The Resource line: got from worry, or from moving earth, or got at a place of repair and building. The Peer line: from irregular hunger and overeating, or from quarrels and anger. The Pressure line appearing: fright and strangeness, or got in a temple, abbey or shrine. Output appearing: or from excess in matters of desire. Wealth: got through food and drink, or through buying things. Phase under phase: Earth hidden under Earth, sores and swelling; Fire under Fire, the hands and feet; Metal meeting Metal, great chills and fever (the words 'wen luan wei xia' in the middle are unclear); Water under Water, a cold illness; Metal under Metal, wheezing and coughing. In a yang palace the Self moving governs vomiting, in a yin palace Wealth moving governs diarrhoea. The ghost showing: the illness is on the outside surface; the ghost hidden: the illness is in the heart and belly; the illness inside, or the moving line below where the illness is received, the Subject line likewise; the ghost outside, or a moved earth turning into illness, the Subject line likewise."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [845, 845],
+          "zh": ["鬼伏何爻下，", "以五行分辨论之。"],
+          "yi": ["鬼伏在哪一爻的下面，", "要用五行来分辨论断。"],
+          "en": ["Where the ghost hides, under which line,", "discriminate and discuss it by the five phases."] },
+        { "by": "经", "book": "海底眼", "range": [847, 847],
+          "zh": ["父母以忧虑得，", "或动土，", "或往修造处得。", "兄弟因失饥伤饱，", "或因口舌气得。", "官鬼出现，", "惊恐怪异，", "或因寺观庙宇中得。", "子孙出现，", "或因欲事大过。", "妻财饮食得，", "或买物得。"],
+          "yi": ["父母爻是因为忧虑得的，", "或者是动了土，", "或者是到修造的地方得的。", "兄弟爻是因为饥饱失常，", "或者因口舌气恼得的。", "官鬼出现，", "是惊恐怪异，", "或者是在寺观庙宇里得的。", "子孙出现，", "或者因为欲事太过。", "妻财是饮食上得的，", "或者是买东西得的。"],
+          "en": ["Resource: got from worry,", "or from moving earth,", "or got at a place of repair and building.", "Peer: from irregular hunger and overeating,", "or from quarrels and anger.", "Pressure appearing:", "fright and strangeness,", "or got in a temple, abbey or shrine.", "Output appearing:", "or from excess in matters of desire.", "Wealth: got through food and drink,", "or through buying things."] },
+        { "by": "经", "book": "海底眼", "range": [849, 849],
+          "zh": ["上下伏土，", "疮肿。", "火下火，", "手足。", "金见金，", "问乱未下，", "大寒热。", "水下水，", "冷疾。", "金下金，", "喘咳。"],
+          "yi": ["上下都伏着土，", "生疮肿胀。", "火下面是火，", "手足的病。", "金遇上金，", "问乱未下（此处原文含混），", "大寒大热。", "水下面是水，", "是冷病。", "金下面是金，", "气喘咳嗽。"],
+          "en": ["Earth hidden above and below,", "sores and swelling.", "Fire under Fire,", "the hands and feet.", "Metal meeting Metal,", "'wen luan wei xia' (unclear here),", "great chills and fever.", "Water under Water,", "a cold illness.", "Metal under Metal,", "wheezing and coughing."] },
+        { "by": "经", "book": "海底眼", "range": [851, 851],
+          "zh": ["阳宫世动主吐，", "阴宫财动主泻。"],
+          "yi": ["阳宫里世爻发动，主吐；", "阴宫里财爻发动，主泻。"],
+          "en": ["In a yang palace the Self moving governs vomiting;", "in a yin palace Wealth moving governs diarrhoea."] },
+        { "by": "经", "book": "海底眼", "range": [853, 853],
+          "zh": ["鬼出现，", "外表。", "鬼伏内，", "心腹。", "病在内，", "或动下受病，", "用又同。", "鬼在外，", "或动土变病，", "用爻同。"],
+          "yi": ["鬼出现的时候，", "病在外表；", "鬼伏在里面，", "病在心腹。", "病在里面，", "或者动的爻在下面，是那里受病，", "用爻也一样。", "鬼在外面，", "或者动了土而变成病，", "用爻也一样。"],
+          "en": ["The ghost showing,", "the illness is on the outside surface;", "the ghost hidden within,", "the illness is in the heart and belly.", "The illness inside,", "or the moving line below, where the illness is received,", "the Subject line likewise.", "The ghost outside,", "or a moved earth turning into illness,", "the Subject line likewise."] }
+      ],
+      "note": {
+        "yi": "这一节没有歌诀，是一段直白的条文。它和易隐「病因·六亲」（见 LY.ILL.YY.17 一带）、易林补遗「按六神论病由何得」（LY.ILL.EL.05）一样，是拿病的来由配给六亲：父母是忧虑、动土、修造，兄弟是饮食失节和口舌，官鬼是惊怪、寺观，子孙是欲事，妻财是饮食买物。「上下伏土，疮肿」的「上下」疑是「土下」之误（下面是「火下火」「水下水」「金下金」），按字面译作「Earth hidden above and below」；「金见金，问乱未下，大寒热」的「问乱未下」不成句，这里照抄标出；「金下金」出现了两次（「金见金」和「金下金」），原文没有解释。「阳宫世动主吐，阴宫财动主泻」和黄金策的「财在外卦动主吐、内卦动主泻」（LY.ILL.HJC.80）大体相反的讲法，这里不作比较，只如实译出。「病在内，或动下受病，用又同」几句文字很简，按字面译，不展开。",
+        "en": "This section has no verse and is a plain string of clauses. Like the Yi Yin's 'cause of illness by the six relations' (see LY.ILL.YY.17 and around it) and the Yilin Buyi's 'how the illness was contracted by the six spirits' (LY.ILL.EL.05), it matches the origin of an illness to the six relations: Resource is worry, moving earth and repairs, Peer is irregular eating and quarrels, Pressure is fright and strangeness and temples, Output is matters of desire, and Wealth is food and buying. The 'above and below' in 'above and below hidden Earth, sores and swelling' is probably a slip for 'Earth under' (since what follows is 'Fire under Fire', 'Water under Water' and 'Metal under Metal'), and is rendered literally as 'Earth hidden above and below'; the 'wen luan wei xia' in 'Metal meeting Metal, wen luan wei xia, great chills and fever' is not a sentence and is copied and marked; 'Metal under Metal' appears twice ('Metal meeting Metal' and 'Metal under Metal') and the original does not explain. 'In a yang palace the Self moving governs vomiting, in a yin palace Wealth moving governs diarrhoea' is set out truthfully, and is not compared here with the Huangjin Ce's 'Wealth in the outer trigram moving governs vomiting, in the inner trigram diarrhoea' (LY.ILL.HJC.80), which puts it differently. The few clauses 'the illness inside, or the moving line below receives the illness, the Subject likewise' are very terse and are rendered literally and not expanded. "
+      },
+      "see": ["LY.ILL.HDY.03", "LY.ILL.HDY.05", "LY.ILL.EL.05", "LY.ILL.YY.17", "LY.ILL.YY.11", "LY.ILL.HJC.80"]
+    },
+    {
+      "id": "LY.ILL.HDY.05",
+      "topic": "症候",
+      "chapter": "病症",
+      "chapter_en": "Symptoms",
+      "title": "病症按五行爻位部位断：肺病属金同木主四肢、辰戌胃胸呕逆、丑运肠肚木伤脾；火动热极三焦竭、水主发寒；土动主吐、水动主泻、金动四肢满闷；木足金头土胸腹火手水脾肾；飞为起因伏为受病；世为动爻则内下受病、应为动爻则外上受病、间爻动受阻隔；易镜云长男受病宜纯震不摇、少女染病宜兑不动",
+      "rule": {
+        "yi": "病症要按五行、爻位、身体部位来断：肺病属金，木主四肢；感受寒邪、痰喘、气弱消瘦；辰戌是胃和胸，生出呕吐逆气；丑运转肠肚，木克伤脾。火动热到极点，三焦枯竭，还有血、心、眼目；水主发寒，是受冷得的；世爻泻泄、虚劳、耳肾衰弱。土动主吐，水动主泻，水动发寒，火动发热，金动四肢和胀闷。木主足，金主头，土主胸腹，火主手，水主脾肾。飞爻、伏爻都旺相时，飞爻是起病的原因，伏爻（原文作「代」）是受病的。世爻是动爻，病在里面下面；应爻是动爻，病在外面上面；间爻动，受阻隔。《易镜》说：长男得病，适宜纯震不摇动；少女染病，适宜兑卦不动。",
+        "en": "Symptoms are judged by the five phases, the line positions and the parts of the body: lung illness is Metal, with Wood governing the four limbs; catching cold, phlegm and wheezing, qi weak and emaciated; Chen and Xu are the stomach and chest, giving rise to vomiting and retching; Chou moves the bowels and belly, and Wood wounds the spleen. Fire moving: heat to the extreme, the Triple Burner exhausted, and also blood, heart and eyes; Water governs chills, got through cold; the Self line: diarrhoea, consumptive weakness, decline of ears and kidneys. Earth moving governs vomiting, Water moving governs diarrhoea, Water moving brings chills, Fire moving brings fever, Metal moving the four limbs and fullness and oppression. Wood governs the feet, Metal the head, Earth the chest and belly, Fire the hands, Water the spleen and kidneys. When the flying and hidden lines are both strong, the flying line is the cause that begins the illness and the hidden line (the text has 'substitute') is what receives it. If the Self is the moving line, the illness is received inside, below; if the Other is the moving line, outside, above; if the between line moves, there is obstruction. The Mirror of the Changes says: when the eldest son falls ill, it is fitting that the pure Zhen does not shake; when the youngest daughter is infected, that the Dui hexagram does not move."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [857, 857],
+          "zh": ["肺病金同木四肢，", "感寒痰喘气[]羸，", "辰戌胃胸生呕逆，", "丑运肠肚木伤脾。"],
+          "yi": ["肺病属金，同木管四肢；", "感受寒邪、痰喘，气（此处缺一字）羸弱；", "辰、戌是胃和胸，生出呕吐逆气；", "丑运转肠肚，木克伤脾。"],
+          "en": ["Lung illness is Metal, together with Wood governing the four limbs;", "catching cold, phlegm and wheezing, qi (one character is missing here) emaciated;", "Chen and Xu are the stomach and chest, giving rise to vomiting and retching;", "Chou moves the bowels and belly, and Wood wounds the spleen."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [857, 857],
+          "zh": ["金肺经病，", "木四肢病，", "辰戌胃呕，", "巳肠木脾，", "火动热极，", "水冷发寒。"],
+          "yi": ["金是肺经的病，", "木是四肢的病，", "辰戌是胃呕吐，", "巳是肠，木是脾，", "火动是热到极点，", "水是冷，发寒。"],
+          "en": ["Metal: illness of the lung channel;", "Wood: illness of the four limbs;", "Chen and Xu: the stomach vomits;", "Si: the bowels; Wood: the spleen;", "Fire moving: heat to the extreme;", "Water: cold, chills arise."] },
+        { "by": "经", "book": "海底眼", "range": [859, 859],
+          "zh": ["又曰：", "火动热极三焦竭，", "血心眼目及痦痰，", "水主发寒因冷得，", "世泻虚劳耳肾衰。"],
+          "yi": ["又说道：", "火动是热到极点，三焦枯竭，", "血、心、眼目，以及痦子和痰；", "水主发寒，是因受冷得的；", "世爻泻泄、虚劳、耳和肾衰弱。"],
+          "en": ["It says again:", "Fire moving: heat to the extreme, the Triple Burner exhausted;", "blood, heart, eyes, and rash and phlegm;", "Water governs chills, got through cold;", "the Self: diarrhoea, consumptive weakness, decline of the ears and kidneys."] },
+        { "by": "经", "book": "海底眼", "range": [861, 861],
+          "zh": ["土动主吐，", "水动主泻，", "水动发寒，", "火动发热，", "金动四肢及满闷。", "木主足，", "金主头，", "土主胸腹，", "火主手，", "水主脾肾。"],
+          "yi": ["土动主吐，", "水动主泻，", "水动发寒，", "火动发热，", "金动是四肢和胀闷。", "木主管足，", "金主管头，", "土主胸腹，", "火主管手，", "水主脾肾。"],
+          "en": ["Earth moving governs vomiting;", "Water moving governs diarrhoea;", "Water moving brings chills;", "Fire moving brings fever;", "Metal moving: the four limbs and fullness and oppression.", "Wood governs the feet;", "Metal governs the head;", "Earth governs the chest and belly;", "Fire governs the hands;", "Water governs the spleen and kidneys."] },
+        { "by": "经", "book": "海底眼", "range": [863, 863],
+          "zh": ["飞伏俱旺相，", "飞为起因，", "以代为受病。", "又世为动爻，", "在内下受病。", "应为动爻，", "在外上受病。", "间爻动，", "受阻隔。"],
+          "yi": ["飞爻和伏爻都旺相时，", "飞爻是起病的原因，", "「代」是受病的（疑是「伏」之误）。", "又，世爻是动爻，", "就在里面下面受病；", "应爻是动爻，", "就在外面上面受病；", "间爻发动，", "受到阻隔。"],
+          "en": ["When the flying and hidden lines are both strong,", "the flying line is the cause that begins it,", "and the 'dai' is what receives the illness (probably a slip for 'fu', hidden).", "Again, if the Self is the moving line,", "the illness is received inside, below;", "if the Other is the moving line,", "the illness is received outside, above;", "if the between line moves,", "there is obstruction."] },
+        { "by": "经", "book": "海底眼", "range": [865, 865],
+          "zh": ["易镜云：", "且如长男受病，", "宜纯震之不摇。", "少女染病，", "则兑卦之不动。"],
+          "yi": ["《易镜》这样说：", "比如长男得病，", "适宜纯震卦不摇动；", "少女染病，", "那就适宜兑卦不动。"],
+          "en": ["The Mirror of the Changes says:", "For example, when the eldest son falls ill,", "it is fitting that the pure Zhen does not shake;", "when the youngest daughter is infected,", "then it is fitting that the Dui hexagram does not move."] }
+      ],
+      "note": {
+        "yi": "这一节按五行、爻位、部位断病，和黄金策「五行推病」、易隐「病症以官鬼为凭」（LY.ILL.YY.11、YY.13）是同一个路子，只是这里更简、更碎，而且有几处和它们不一致：「水主脾肾」把脾也归了水；眉批「巳肠木脾」和歌诀「丑运肠肚木伤脾」的地支不同；「世泻虚劳耳肾衰」的「世泻」没有说清是世爻还是「世」上的泄泻。「气[ ]羸」里的方括号是整理本标的缺字，照抄。「痦痰」的「痦」不常见（白痦是一种皮疹），译作「rash」，不确定。「以代为受病」的「代」疑是「伏」之误：飞爻是起病之因、伏爻是受病之处，和「飞为起因」的说法对得上，这里按字面译并标出。「易镜云」是海底眼引的别的书，火珠林也引了这一句（火珠林末尾多一句「大忌申酉持世，木爻独发者，申为丧车，酉为丧服，木为棺椁耳」）；它的意思是病人是哪一卦（长男是震、少女是兑），那一卦就该纯而不动。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "This section judges illness by the five phases, the line positions and the body parts, on the same road as the Huangjin Ce's 'the five phases and illness' and the Yi Yin's 'symptoms by the Pressure line' (LY.ILL.YY.11, YY.13), only terser and more fragmentary, and it disagrees with them in a few places: 'Water governs the spleen and kidneys' also gives the spleen to Water; the marginal comment 'Si the bowels, Wood the spleen' has a different branch from the verse 'Chou moves the bowels and belly, Wood wounds the spleen'; and in 'the Self: diarrhoea, consumptive weakness, decline of ears and kidneys' it is not clear whether it is the Self line or a diarrhoea 'of the Self'. The square brackets in 'qi [ ] emaciated' are the edited text's mark for a missing character, and are copied. The 'wu' of 'wu tan' is uncommon (white 'wu' is a kind of rash) and is rendered 'rash', without certainty. The 'dai' in 'the dai receives the illness' is probably a slip for 'fu' (hidden): the flying line is the cause and the hidden line the place that receives the illness, which matches 'the flying line is the cause', and it is translated literally here and marked. 'The Mirror of the Changes says' is another book quoted by the Haidi Yan, and the Huozhulin quotes the same passage (with one more sentence at its end, 'most feared are Shen or You holding the Self and a Wood line moving alone: Shen is the funeral carriage, You is the mourning dress, Wood is the coffin'); its meaning is that the trigram of the sick person (the eldest son being Zhen, the youngest daughter Dui) should be pure and not moving. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.04", "LY.ILL.HDY.06", "LY.ILL.YY.11", "LY.ILL.YY.13", "LY.ILL.YM.26", "LY.ILL.HJC.16"]
+    },
+    {
+      "id": "LY.ILL.HDY.06",
+      "topic": "神祟",
+      "chapter": "神崇",
+      "chapter_en": "Spirit hauntings",
+      "title": "神崇（上）：八纯鬼庄——艮鬼五郎并离灶、乾天神、坎水神、震巽岳下、坤家祖、兑师巫；伏鬼我随、游魂绝命梦中知、金木横恶、火痨发血、土瘟；乾坎艮震是男儿；坎象临官求落水；庙动家亲；爻动克日分祖先、阴司、儿女、路死",
+      "rule": {
+        "yi": "怎么占出是哪路神作祟：八纯卦里鬼的所在可以去找。艮宫鬼是五郎，离宫是灶，乾宫出天神，坎宫出水神；震巽是岳（东岳）下，坤宫主家里的祖先，兑宫鬼是师巫；鬼动占亲人。伏着的鬼跟着我；游魂、绝命卦在梦中能知；金木是横死的恶鬼，火是痨病、发血，土是瘟病。乾坎艮震是男的；要知道是内外的什么人作祟，庙动是家亲。爻动克日：是祖先；财动克日：是阴司；子动克日：是儿女。",
+        "en": "How is it divined which spirit is haunting? The ghost's seat in the eight pure hexagrams can be sought out. The Gen ghost is the Five Lords, Li is the stove, Qian brings out the heavenly gods, Kan the water gods; Zhen and Xun are below the Peak (the Eastern Peak), Kun governs the household ancestors, the Dui ghost is the teacher and shaman; a ghost moving means divining kin. A hidden ghost follows me; the Wandering Soul and Cut-off Life hexagrams are known in dreams; Metal and Wood are violent and malignant ghosts, Fire is consumption with bleeding, Earth is epidemic. Qian, Kan, Gen and Zhen are male; to know who inside or outside is doing it, a moving temple means family kin. A line moving and controlling the Day: ancestors; Wealth moving and controlling the Day: the netherworld office; Output moving and controlling the Day: the children."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [869, 869],
+          "zh": ["何以卜分神为崇，", "八纯鬼庄可求伸，", "艮鬼五郎并离灶，", "乾出天神坎水神。"],
+          "yi": ["怎么占卜来分辨是哪位神作祟？", "八纯卦里鬼的所在，可以去找它、推出它；", "艮宫的鬼是五郎，连同离宫的灶；", "乾宫出天神，坎宫是水神。"],
+          "en": ["How is it divined which spirit is haunting?", "the ghost's seat in the eight pure hexagrams can be sought out and worked out;", "the Gen ghost is the Five Lords, together with the stove of Li;", "Qian brings out the heavenly gods, Kan the water gods."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [869, 869],
+          "zh": ["艮鬼五郎，", "离鬼井灶，", "乾宫天神，", "坎宫水神。", "震巽岳下，", "坤主家祖，", "兑鬼师巫，", "鬼动占亲。", "伏鬼我随，", "游魂绝光，", "金木横恶，", "火痨土瘟。", "乾坎艮震，", "四鬼是男，", "内外男谋，", "庙动家亲。", "爻动克日，", "祖先财动，", "克日阴司，", "子动克日。"],
+          "yi": ["艮宫鬼是五郎，", "离宫鬼是井灶，", "乾宫是天神，", "坎宫是水神。", "震、巽在岳（东岳）下，", "坤主家里的祖先，", "兑宫鬼是师巫，", "鬼动就占亲人。", "伏着的鬼是我跟着它，", "游魂、绝光（别处作「绝命」），", "金木是横死的恶鬼，", "火是痨病，土是瘟病。", "乾、坎、艮、震，", "四个卦的鬼是男的；", "内外有男人谋算，", "庙动就是家亲。", "爻动克日，", "是祖先；财动，", "克日是阴司；", "子动克日。"],
+          "en": ["Gen ghost: the Five Lords;", "Li ghost: the well and stove;", "Qian palace: heavenly gods;", "Kan palace: water gods.", "Zhen and Xun: below the Peak;", "Kun governs the household ancestors;", "Dui ghost: teacher and shaman;", "the ghost moving, divine kin.", "A hidden ghost follows me;", "the Wandering Soul and Cut-off Light hexagrams (elsewhere 'Cut-off Life'),", "Metal and Wood: violent and malignant ghosts;", "Fire: consumption; Earth: epidemic.", "Qian, Kan, Gen, Zhen,", "the ghosts of these four are male;", "inside and outside, male scheming;", "the temple moving is family kin.", "A line moving and controlling the Day,", "ancestors; Wealth moving,", "controlling the Day is the netherworld office;", "Output moving and controlling the Day."] },
+        { "by": "经", "book": "海底眼", "range": [871, 871],
+          "zh": ["又曰：", "震巽朝奉求岳下，", "坤出家神宅不宁，", "兑有师巫神佛仵，", "鬼爻动卦亦占亲。"],
+          "yi": ["又说道：", "震、巽向东岳朝拜供奉，", "坤出家神，住宅不安宁；", "兑有师巫、神佛、仵（此处含混）；", "鬼爻发动，这一卦也占亲人。"],
+          "en": ["It says again:", "Zhen and Xun: worship and make offerings below the Eastern Peak;", "Kun brings out the household gods, and the house is unquiet;", "Dui has teachers and shamans, gods and Buddhas, and 'wu' (unclear here);", "the Pressure line moving, this hexagram also divines kin."] },
+        { "by": "经", "book": "海底眼", "range": [873, 873],
+          "zh": ["又曰：", "伏下交重主村随，", "游魂绝命梦中知，", "金木二爻为横恶，", "火痨发血土瘟时。"],
+          "yi": ["又说道：", "伏在下面又交重，主村随（此处含混）；", "游魂、绝命，在梦中能知；", "金、木两爻是横死的恶鬼，", "火是痨病发血，土是瘟病之时。"],
+          "en": ["It says again:", "hidden below and crossing heavily governs 'cun sui' (unclear here);", "the Wandering Soul and Cut-off Life hexagrams are known in dreams;", "Metal and Wood lines are violent and malignant ghosts,", "Fire is consumption with bleeding, Earth is the time of epidemic."] },
+        { "by": "经", "book": "海底眼", "range": [875, 875],
+          "zh": ["又曰：", "坎象临官求落水，", "乾坎艮震是男儿，", "要知内外何人作，", "庙动家亲更莫疑。", "（儿女兄动，克日路死，", "官动克日，刑侵日一，", "分其老少。）"],
+          "yi": ["又说道：", "坎象临着官，是求落水的；", "乾、坎、艮、震是男儿；", "要知道内外是什么人作祟，", "庙动是家亲，更不要怀疑。", "（儿女、兄动，克日是路死；", "官动克日，刑侵日一（此处含混），", "分辨它的老少。）"],
+          "en": ["It says again:", "Kan's image sitting on the official: one who fell in the water;", "Qian, Kan, Gen and Zhen are male;", "to know who inside or outside is doing it,", "a moving temple is family kin, and one need not doubt it further.", "(a child or Peer moving and controlling the Day: death on the road;", "the official moving and controlling the Day, punishment invading, 'day one' (unclear here),", "and divide old from young.)"] }
+      ],
+      "note": {
+        "yi": "这一节讲怎么从卦上认作祟的是哪一路神鬼，和黄金策的八宫推鬼神（LY.ILL.HJC.95）、易冒（LY.ILL.YM.57）、易林补遗的「总论八宫值鬼诀」（LY.ILL.EL.44、EL.45）是同一类办法，但海底眼只点了几个宫：艮五郎、离灶（井灶）、乾天神、坎水神、震巽在岳下（东岳）、坤家祖、兑师巫。「五郎」「岳下」按字面译。「游魂绝光」的「绝光」和下面歌诀的「绝命」不同，应是「绝命」的另一种写法，眉批这里照字面译并注明；「主村随」「兑有师巫神佛仵」的「仵」不成句，照抄标出；「内外男谋」按字面译。「爻动克日」指动爻克日辰，这里只写了「日」，按字面译作 the Day。「坎象临官求落水」的「求落水」按字面译作「one who fell in the water」，不确定。「庙动家亲」的「庙」书里没有解释。末一条括号里的小字「（儿女兄动，克日路死，官动克日，刑侵日一，分其老少）」是书里句下的小注，和歌诀排在一起，这里跟着一起收，「刑侵日一」不成句，标出。这里神鬼的名字（五郎、灶、岳下等）是民间叫法，书里没有解释，这里按字面译，不作认定。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "This section is about how to tell from the hexagram which kind of god or ghost is haunting, the same kind of method as the Huangjin Ce's eight palaces (LY.ILL.HJC.95), the Yi Mao (LY.ILL.YM.57) and the Yilin Buyi's 'general discourse on ghosts by the eight palaces' (LY.ILL.EL.44, EL.45), except that the Haidi Yan touches only a few palaces: Gen the Five Lords, Li the stove (well and stove), Qian the heavenly gods, Kan the water gods, Zhen and Xun below the Peak (the Eastern Peak), Kun the household ancestors, and Dui the teacher and shaman. 'Five Lords' and 'below the Peak' are rendered literally. The 'Cut-off Light' of the marginal comment differs from the 'Cut-off Life' of the verses below and is probably another way of writing 'Cut-off Life', and is translated literally here with a remark; 'cun sui' and the 'wu' of 'Dui has teachers and shamans, gods and Buddhas, wu' are not sentences, and are copied and marked; 'inside and outside, male scheming' is rendered literally. 'A line moving and controlling the Day' means a moving line controlling the Day, and only the word 'Day' is written, so it is rendered literally as the Day. 'One who fell in the water' for 'qiu luo shui' is literal and uncertain. The 'temple' of 'the temple moving is family kin' the book does not explain. The small bracketed note in the last verse, '(a child or Peer moving and controlling the Day, death on the road; the official moving and controlling the Day, punishment invading, day one; divide old from young)', is a note under the line in the book and is set together with the verse, and is quoted with it here, and 'punishment invading, day one' is not a sentence and is marked. The names here (the Five Lords, the stove, below the Peak and so on) are folk names that the book does not explain, and are rendered literally without being identified. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.05", "LY.ILL.HDY.07", "LY.ILL.EL.44", "LY.ILL.EL.45", "LY.ILL.HJC.95", "LY.ILL.YM.57", "LY.ILL.YY.28", "LY.ILL.YY.30"]
+    },
+    {
+      "id": "LY.ILL.HDY.07",
+      "topic": "神祟",
+      "chapter": "神崇",
+      "chapter_en": "Spirit hauntings",
+      "title": "神崇（下）：父动克日求祖先、或因修造；财兴克日阴司恼、或因买物；子孙克日儿女作、或奸邪畜类；兄弟克日神无主、路死伤亡；鬼来克我招邪崇、或神明口头牵；易镜云察祸推其鬼处、配六亲、旺相为神休囚为鬼、动爻克世克日亦可取鬼",
+      "rule": {
+        "yi": "父爻发动克日：去求祖先，或者是因为修造不安；财爻兴动克日：是阴司恼了，或者是因为买东西，祸事勾连上来；子孙克日：是儿女作出来的，或者是奸邪、畜类传来的；兄弟克日：神没有主，路上死、伤亡是先来的祸；鬼来克我，招来邪崇，或者是神明的口头愿牵着；再拿日子分出老少，仔细推详，不要乱说。《易镜》说：察看灾祸，就推它的鬼在什么地方，再拿自己的身去配六亲，相克相生，就看见祸的开端；旺相的是神，休囚的是鬼；凡是动爻克世爻、克日的，也可以取它作鬼。",
+        "en": "A Resource line moving and controlling the Day: seek the ancestors, or it is from repairs and building that unrest comes; Wealth rising and controlling the Day: the netherworld office is vexed, or from buying goods misfortune links up; Output controlling the Day: made by children, or handed on by wicked ones or beasts; Peer controlling the Day: a god without a master, and death on the road, injury and death make the misfortune first; a ghost coming to control me invites an evil haunting, or a god's spoken vow draws me; further use the day to divide old from young, consider carefully and do not speak wildly. The Mirror of the Changes says: to examine misfortune, trace where its ghost is, and further match the body with the six relations; by control and generation the beginning of the misfortune appears; strong is a god, resting or trapped is a ghost; any moving line controlling the Self or the Day may also be taken as the ghost."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [877, 877],
+          "zh": ["又曰：", "父动克日求祖先，", "或因修造不安然，", "财兴克日阴司恼，", "或因买物祸勾连。"],
+          "yi": ["又说道：", "父爻发动克日，是求祖先；", "或者是因为修造不安；", "财爻兴动克日，是阴司恼了；", "或者是因为买东西，祸事勾连上来。"],
+          "en": ["It says again:", "Resource moving and controlling the Day: seek the ancestors;", "or it is from repairs and building that unrest comes;", "Wealth rising and controlling the Day: the netherworld office is vexed;", "or from buying goods misfortune links up."] },
+        { "by": "经", "book": "海底眼", "range": [879, 879],
+          "zh": ["又曰：", "子孙克日儿女作，", "或是奸邪畜类传，", "兄弟克日神无主，", "路死伤亡作祸先。"],
+          "yi": ["又说道：", "子孙克日，是儿女作出来的；", "或者是奸邪、畜类传来的；", "兄弟克日，神没有主；", "路上死、伤亡，是先来的祸。"],
+          "en": ["It says again:", "Output controlling the Day: made by children;", "or handed on by wicked ones or beasts;", "Peer controlling the Day: a god without a master;", "death on the road, injury and death, make the misfortune first."] },
+        { "by": "经", "book": "海底眼", "range": [881, 881],
+          "zh": ["又曰：", "鬼来克我招邪崇，", "或是神明口头牵，", "更将日子分老少，", "仔细推详勿乱言。"],
+          "yi": ["又说道：", "鬼来克我，招来邪崇，", "或者是神明的口头愿牵着；", "再拿日子分出老少，", "仔细推详，不要乱说。"],
+          "en": ["It says again:", "A ghost coming to control me invites an evil haunting,", "or a god's spoken vow draws me;", "further use the day to divide old from young,", "consider carefully and do not speak wildly."] },
+        { "by": "经", "book": "海底眼", "range": [883, 883],
+          "zh": ["易镜云：", "察祸推其鬼处，", "还将身配六亲，", "相克相生，", "便见祸之端。", "旺相为神，", "休囚为鬼。", "凡动爻克世克日，", "亦可取鬼。"],
+          "yi": ["《易镜》这样说：", "察看灾祸，推它的鬼在什么地方，", "再拿自己的身去配六亲，", "相克相生，", "就看见祸的开端。", "旺相的是神，", "休囚的是鬼。", "凡是动爻克世爻、克日的，", "也可以取来作鬼。"],
+          "en": ["The Mirror of the Changes says:", "To examine misfortune, trace where its ghost is,", "and further match the body with the six relations;", "by control and generation,", "the beginning of the misfortune appears.", "Strong is a god,", "resting or trapped is a ghost.", "Any moving line controlling the Self or the Day,", "may also be taken as the ghost."] }
+      ],
+      "note": {
+        "yi": "这一节是「神崇」的后半，四首歌诀讲的是「动爻克日」的几种情形：父（祖先、修造）、财（阴司、买物）、子孙（儿女、畜类）、兄弟（神无主、路死）。它的办法是按动爻的六亲去认作祟的是谁——和易林补遗「六亲内外动断是谁的鬼」（LY.ILL.EL.40）、易隐「鬼崇·是谁的鬼」（LY.ILL.YY.30）、黄金策「以卦身推是什么人的鬼」（LY.ILL.HJC.102）是同一类办法，不同的只是这里看的是动爻克的是不是日辰。「日」只写了一个字，按字面译作 the Day（日辰）。「神明口头牵」按「神明许过口愿，牵着我」译；「路死伤亡作祸先」里的「先」按「先来」译。《易镜》一句：「旺相为神，休囚为鬼」同黄金策「旺相为神、休囚为鬼」（LY.ILL.HJC.94）是同一句；「凡动爻克世克日，亦可取鬼」是说鬼不一定是官鬼爻，动爻克世或克日也可以当鬼来取。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "This is the second half of 'spirit hauntings', in which four verses set out the cases of a moving line controlling the Day: Resource (ancestors, repairs and building), Wealth (the netherworld office, buying goods), Output (children, beasts) and Peer (a god without a master, death on the road). Its method is to tell who is haunting from the six relation of the moving line, the same kind of method as the Yilin Buyi's 'whose ghost it is from the six relations moving inside or outside' (LY.ILL.EL.40), the Yi Yin's 'whose ghost it is' (LY.ILL.YY.30) and the Huangjin Ce's 'from the Body, whose ghost it is' (LY.ILL.HJC.102), except that here what is looked at is whether the moving line controls the Day. 'Day' is written only as one character and is rendered literally as the Day. 'A god's spoken vow draws me' is translated as 'a god to whom a spoken vow was made draws me'; 'xian' in 'death on the road, injury and death make the misfortune first' is translated 'first'. The Mirror of the Changes's 'strong is a god, resting or trapped is a ghost' is the same sentence as the Huangjin Ce's 'thriving is a god, resting or trapped is a ghost' (LY.ILL.HJC.94); 'any moving line controlling the Self or the Day may also be taken as the ghost' says that the ghost need not be the Pressure line, and a moving line controlling the Self or the Day can also be taken as the ghost. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.06", "LY.ILL.HDY.08", "LY.ILL.EL.40", "LY.ILL.YY.30", "LY.ILL.HJC.102", "LY.ILL.HJC.94"]
+    },
+    {
+      "id": "LY.ILL.HDY.08",
+      "topic": "神祟",
+      "chapter": "还赛",
+      "chapter_en": "Redeeming vows",
+      "title": "还赛神祗求保佑：大要生身旺子孙；五世游魂还未尽、伤身鬼旺祸难分；福德动吉、以亲爻取",
+      "rule": {
+        "yi": "还愿、酬谢神祇来求保佑，最要紧的是生扶自己、子孙旺相；五世卦、游魂卦里（事）还没有了结，鬼旺伤了身，祸就难分。眉批：五世、游魂没有完尽，鬼旺伤身，祸难分。福德发动是吉，要用（所问）亲人的爻来取。",
+        "en": "In redeeming vows and giving thanks to the gods to ask for protection, what matters most is generating the body and Output being strong; in the fifth-generation and Wandering Soul hexagrams the matter is still not finished, and a strong ghost wounding the body makes the misfortune hard to divide. The marginal comment: in the fifth-generation and Wandering Soul hexagrams it is not yet finished, and a strong ghost wounding the body makes the misfortune hard to divide. Output moving is auspicious, and it is taken from the line of the relative (asked about)."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [887, 887],
+          "zh": ["还赛神祗求保佑，", "大要生身旺子孙，", "五世游魂还未尽，", "伤身鬼旺祸难分。"],
+          "yi": ["还愿酬谢神祇，求保佑，", "大要紧的是生身、子孙旺；", "五世、游魂的卦还没有了结，", "鬼旺伤了身，祸就难分。"],
+          "en": ["In redeeming vows to the gods and asking for protection,", "what matters most is generating the body and Output being strong;", "in the fifth-generation and Wandering Soul hexagrams it is still not finished,", "a strong ghost wounding the body makes the misfortune hard to divide."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [887, 887],
+          "zh": ["五世游魂未尽完，", "鬼旺伤身祸难分。"],
+          "yi": ["五世、游魂没有完尽，", "鬼旺伤身，祸难分。"],
+          "en": ["In the fifth-generation and Wandering Soul hexagrams it is not yet finished,", "a strong ghost wounding the body: the misfortune is hard to divide."] },
+        { "by": "经", "book": "海底眼", "range": [889, 889],
+          "zh": ["福德动吉，", "以亲爻取。"],
+          "yi": ["福德发动是吉，", "要用（所问）亲人的爻来取。"],
+          "en": ["Output moving is auspicious,", "and is taken from the line of the relative (asked about)."] }
+      ],
+      "note": {
+        "yi": "这一节只有一首歌诀和一句话，讲还愿、还赛神明：要紧的是「生身旺子孙」——子孙是福神、能压鬼，和易林补遗「还赛解厄」（LY.ILL.EL.57）「世旺子强官受制」是同一个判据。「大要生身旺子孙」的「生身」按字面译作「generating the body」，主语没有交代（可能是生扶世爻）；「五世游魂还未尽」的「五世」「游魂」是卦的名称（五世卦、游魂卦），书里没有解释为什么这两种卦「未尽」。「以亲爻取」按「用所问的亲人的爻来取」译，书里没有解释。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "This section has one verse and one sentence, about redeeming vows and giving thanks to the gods: what matters is 'generating the body and Output strong' — Output is the fortune spirit and can press down the ghost, the same criterion as the Yilin Buyi's 'redeeming vows and lifting calamity' (LY.ILL.EL.57), 'the Self strong, Output strong, the Pressure line held in check'. In 'generating the body and Output strong' the 'generating the body' is rendered literally, its subject not being given (it may be supporting the Self line); the 'fifth generation' and 'Wandering Soul' are names of hexagrams (the fifth-generation and Wandering Soul hexagrams), and the book does not explain why these two kinds are 'not finished'. 'Take it from the relative's line' is translated as 'take it from the line of the relative asked about', which the book does not explain. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.07", "LY.ILL.EL.57", "LY.ILL.HJC.110"]
+    },
+    {
+      "id": "LY.ILL.HDY.09",
+      "topic": "病因",
+      "chapter": "六亲",
+      "chapter_en": "The six relations",
+      "title": "占官事疾病、六爻安静则看世作父爻：因何而得——用爻伏是我爻、上飞是彼、有动看动变爻、安静看有气爻",
+      "rule": {
+        "yi": "用爻伏着的，那伏着的是我的爻，它上面的飞爻是对方；有动爻就看动爻和变爻，安静的就看有气的爻；如果占官事、疾病，六个爻都安静，就看世爻，把它当作父爻来看，问事情是因为什么得来的。",
+        "en": "If the Subject line is hidden, the hidden one is my line and the flying line above it is the other party; where there is movement look at the moving and changed lines, and where all is still look at the line that has qi; if divining a lawsuit or illness and the six lines are all still, look at the Self and take it as the Resource line, asking from what the matter was obtained."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [372, 372],
+          "zh": ["又曰：", "用爻伏是我爻，", "上飞是彼，", "有动看动变爻，", "安静看有气爻，", "若占官事疾病，", "如六爻安静，", "是看世，", "作父爻，", "因何而得。"],
+          "yi": ["又说道：", "用爻伏着的是我的爻，", "上面的飞爻是对方；", "有动爻就看动爻和变爻，", "安静的就看有气的爻；", "如果占官事、疾病，", "六个爻都安静，", "就看世爻，", "把它当作父爻，", "看是因为什么得来的。"],
+          "en": ["It says again:", "if the Subject line is hidden, the hidden one is my line;", "the flying line above is the other party;", "where there is movement, look at the moving and changed lines;", "where still, look at the line that has qi;", "if divining a lawsuit or an illness,", "and the six lines are all still,", "look at the Self,", "and take it as the Resource line,", "asking from what it was obtained."] }
+      ],
+      "note": {
+        "yi": "这一句在海底眼的「六亲」一节里，是一段讲用爻取法的话的最后一句；前面几句（「六亲者，乃八卦占主也……」）讲的是六亲占法的一般规矩，不专说疾病，这里只收最后这一句里带「疾病」的部分及其前提。「作父爻」的意思是：占官事、疾病，六个爻都不动，没有可看的动爻，就看世爻，把它当作父母爻去问「因什么而得」（父母爻是文书、劳心、忧虑，也是来由）——书里没有更多解释。和易林补遗「卦静取外卦」（LY.ILL.EL.42）、易冒「卦爻俱静求之外卦」（LY.ILL.YM.55）相比，这里看的是世爻，不是外卦，是另一个办法。",
+        "en": "This sentence is the last one of a passage in the Haidi Yan's section on the six relations about how to take the Subject line; the sentences before it ('the six relations are the master of the eight hexagrams in divination ...') set out the general rules of divining by the six relations and are not about illness in particular, so only this last sentence, which mentions illness, and its premise are quoted here. 'Take it as the Resource line' means: in divining a lawsuit or illness, with all six lines still and no moving line to look at, look at the Self line and take it as the Resource line in asking 'from what was it obtained' (the Resource line being documents, worry of the mind, and also the origin) — the book explains no further. Compared with the Yilin Buyi's 'when the hexagram is still, take the outer trigram' (LY.ILL.EL.42) and the Yi Mao's 'with the hexagram and lines all still, seek it in the outer trigram' (LY.ILL.YM.55), what is looked at here is the Self line and not the outer trigram, which is another method. "
+      },
+      "see": ["LY.ILL.HDY.03", "LY.ILL.EL.42", "LY.ILL.YM.55", "LY.ILL.EL.03"]
+    },
+    {
+      "id": "LY.ILL.HDY.10",
+      "topic": "总则",
+      "chapter": "刑克",
+      "chapter_en": "Punishment and control",
+      "title": "用爻被飞神所克：不动者须日辰旺生出、冲出飞神；有动者在克日旺生出亦可取——占妻病例，申日比之坤、五爻动、癸亥伏在戌下，本不好却得日辰生扶，死中得生",
+      "rule": {
+        "yi": "用爻伏着、被上面的飞神克制，如果用爻不动，就要日辰旺，把它生出来或者冲出来，飞神无气的日子是生不出来的；用爻有动的，在克它的那一日旺相、生出它，也可以取。书里的例子：占妻的病，申日得比之坤，五爻发动，癸亥伏在戌的下面，本来不好，却得到日辰能生扶它出来，死中得生。",
+        "en": "If the Subject line is hidden and controlled by the flying line above it, then if it is still it needs the Day to be strong to generate it out or clash it out, and on a day when the flying line has no qi it cannot be generated; if it moves, being strong on the day that controls it and generated out can also be taken. The book's example: divining a wife's illness, on a Shen day the hexagram Bi changing to Kun, the fifth line moves, and Guihai lies hidden under Xu; it was originally not good, but the Day was able to generate and support it out, and life was found in death."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [430, 430],
+          "zh": ["凡用爻为飞神所克，", "不动者须要日辰旺生出冲出飞无气之日不能生，", "有动者在克日旺生出，", "亦可取。"],
+          "yi": ["凡是用爻被飞神克制，", "不动的，必须日辰旺，把它生出来或冲出来；飞神无气的日子，是生不出来的；", "有动的，在克它的日子旺相、生出它，", "也可以取。"],
+          "en": ["When the Subject line is controlled by the flying line,", "if it is still, the Day must be strong to generate it out or clash it out, and on a day when the flying line has no qi it cannot be generated;", "if it moves, being strong on the day that controls it and generated out,", "can also be taken."] },
+        { "by": "书中例", "book": "海底眼", "range": [430, 430],
+          "zh": ["如占妻病，", "申日得比（之）坤，", "五爻动，", "癸亥伏在戌上下动，", "本不好，", "却得日辰能生扶出，", "死中得（生）也。"],
+          "yi": ["比如占妻子的病，", "申日得比（变）坤，", "五爻发动，", "癸亥伏在戌的上下发动，", "本来不好，", "却得日辰能生扶它出来，", "死中得（生）了。"],
+          "en": ["For example, divining a wife's illness,", "on a Shen day the hexagram Bi (changing to) Kun,", "the fifth line moves,", "and Guihai lies hidden under Xu, moving,", "originally not good,", "but the Day was able to generate and support it out,", "and life was found in death."] }
+      ],
+      "note": {
+        "yi": "上一段是规矩（「凡用爻为飞神所克……」），下一段是书里的例。这条规矩不专属疾病，是伏神被飞神克时怎么取——和易林补遗「卦无用象：先察伏神」（LY.ILL.EL.10）的思路相通；书里的例子是占妻病，所以放在疾病里。例里的「（之）」「（生）」是整理本补的字。卦例的拆解：比卦五爻是戊戌土，坤宫的妻财是癸亥水，所以癸亥伏在五爻的戌下——飞神戌土克伏神亥水，「本不好」；申日的金能生水，「日辰能生扶出」；所以「死中得生」。「癸亥伏在戌上下动」的「上下动」文字含混，按「伏在戌下、动」译。「有动者在克日旺生出」也简，按上下文译。",
+        "en": "The first passage is the rule ('when the Subject line is controlled by the flying line ...') and the second is the book's example. The rule does not belong to illness alone and is about how to take a hidden line controlled by the flying line — on a line of thought with the Yilin Buyi's 'when the hexagram has no Subject image: first examine the hidden line' (LY.ILL.EL.10); the book's example is a divining of a wife's illness, and so it is placed under illness. The '(zhi)' and '(sheng)' in the example are characters supplied by the editor. Working the case out: the fifth line of Bi is Wuxu Earth, the Wealth of the Kun palace is Guihai Water, so Guihai lies hidden under the Xu of the fifth line — the flying line Xu Earth controls the hidden line Hai Water, 'originally not good'; Metal on a Shen day can generate Water, 'the Day was able to generate and support it out'; hence 'life was found in death'. 'Moving, above and below Xu' in 'Guihai lying hidden above and below Xu, moving' is loose in wording and is translated as 'lies hidden under Xu, moving'. 'If it moves, being strong on the day that controls it and generated out' is also terse, and is translated from the context. "
+      },
+      "see": ["LY.ILL.EL.10", "LY.ILL.HDY.03"]
+    },
+    {
+      "id": "LY.ILL.HDY.11",
+      "topic": "生死",
+      "chapter": "生气死气日冲月破",
+      "chapter_en": "Life-qi, death-qi, the Day clash and Month-break",
+      "title": "死气发时病讼凶、月破忧者散病者死：死气——占病、官司，动爻旺相克其世身；月破——忧者散、病者死、事不成、财无气，是用爻被月建冲",
+      "rule": {
+        "yi": "死气发动的时候，病和官司凶。死气，是占病、占官司时，动爻旺相，克了世和身。月破：忧愁的事散去，病的人死，事情不成，财没有气，这是用爻被月建冲的缘故。",
+        "en": "When the death-qi issues, illness and lawsuits are ominous. The death-qi: in divining an illness or a lawsuit, a moving line that is strong controls the Self and the body. Month-break: the one worried is dispersed, the sick person dies, the matter is not achieved and wealth has no qi, because the Subject line is clashed by the Month."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [500, 500],
+          "zh": ["生气动者谋往吉，", "死气发时病讼凶，", "日冲飞上伏爻出，", "月破爻冲争争空。"],
+          "yi": ["生气动的，谋事、出行吉；", "死气发动的时候，病和官司凶；", "日冲了飞爻，伏爻就出来；", "月破，爻被冲，争来争去落空。"],
+          "en": ["When the life-qi moves, plans and going out are auspicious;", "when the death-qi issues, illness and lawsuits are ominous;", "the Day clashing the flying line, the hidden line comes out;", "Month-break, the line clashed, contending and contending, it comes to Void."] },
+        { "by": "经", "book": "海底眼", "range": [504, 504],
+          "zh": ["死气者：", "如占病，", "官司，", "动爻旺相克其世身，", "谓之死气。"],
+          "yi": ["死气的说法：", "比如占病，", "占官司，", "动爻旺相，克了世和身，", "叫做死气。"],
+          "en": ["The death-qi:", "for example in divining an illness,", "or a lawsuit,", "a moving line that is strong controls the Self and the body,", "is called the death-qi."] },
+        { "by": "经", "book": "海底眼", "range": [508, 508],
+          "zh": ["月破者：", "忧者散，", "病者死，", "事不成，", "财无气。", "盖用爻被月建之冲也。"],
+          "yi": ["月破的说法：", "忧愁的事散去，", "病的人死，", "事情不成，", "财没有气。", "这是用爻被月建冲的缘故。"],
+          "en": ["Month-break:", "the one worried is dispersed,", "the sick person dies,", "the matter is not achieved,", "wealth has no qi;", "for the Subject line is clashed by the Month."] }
+      ],
+      "note": {
+        "yi": "这一节是「生气死气日冲月破」一段里和病有关的三句：歌诀「死气发时病讼凶」、解说「死气者：如占病，官司，动爻旺相克其世身」、解说「月破者：忧者散，病者死，事不成，财无气」。歌诀的其他三句（生气、日冲、日破）和眉批「日破为日虎神……」不专说病，没有收。「月破者：忧者散」的「忧者散」是「忧愁的事散去」还是「忧愁的人散去」，书里没有解释，这里译作前者；「病者死」是「病人死」，和黄金策、增删卜易的「用逢月破，久病难安」（LY.ILL.ZS.04）一致，不过那里说「月破看用神衰旺」，这里说得更绝对。「其世身」的「身」按字面译作 the body。 括号里「眉批：……」是书眉上的旁注，整理本排在正文里；这里分开收，说话人标为「海底眼眉批」。",
+        "en": "This section quotes the three sentences about illness from the passage 'life-qi, death-qi, the Day clash and Month-break': the verse 'when the death-qi issues, illness and lawsuits are ominous', the explanation 'the death-qi: in divining an illness or lawsuit, a moving line strong controls its Self and body', and the explanation 'Month-break: the one worried is dispersed, the sick person dies, the matter is not achieved, wealth has no qi'. The other three lines of the verse (the life-qi, the Day clash, the Day break) and the marginal comment 'the Day break is the Day-tiger god ...' are not about illness in particular and are not quoted. Whether 'the one worried is dispersed' means 'the worry is dispersed' or 'the worrier is dispersed' the book does not explain, and it is rendered here as the former; 'the sick person dies' agrees with the Zengshan Buyi's 'the Subject meeting Month-break, a long illness is hard to settle' (LY.ILL.ZS.04), except that there 'Month-break depends on the strength of the Subject', and here it is put more absolutely. The 'body' of 'its Self and body' is rendered literally as the body. The bracketed 'marginal comment' is a note from the top margin that the edited text sets in the main text; it is quoted separately here, with the speaker marked as the marginal comment."
+      },
+      "see": ["LY.ILL.HDY.01", "LY.ILL.ZS.04", "LY.ILL.YM.10", "LY.ILL.EL.11", "LY.ILL.EL.17"]
+    }
+  ]
+}

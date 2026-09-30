@@ -1,0 +1,240 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "天玄赋",
+  "chapter": "疾病章(上)",
+  "chapter_en": "Chapter on illness (part 1)",
+  "ranges": {"卜筮大全": [4956, 4998]},
+  "units": [
+    {
+      "id": "LY.ILL.TXF.01",
+      "topic": "总则",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "疾病章总纲：养生非道终有疾病、请祷能占便见死生；杀临父母忧堂上之亲、空及妻财虑闺中之妇；占疾病先看来者何人——子占父母要父母上卦、妻占夫看鬼、夫占妻看财、父占子看子、占兄弟朋友看兄弟、占奴仆看子孙；用爻不上卦或空亡多凶少吉",
+      "rule": {
+        "yi": "国家的治乱，靠的是风俗纪纲；人的寿夭，不在身体强弱。养生不得法，终究会有疾病；请祷能占卜，就能看出死生的决断。凶杀临在父母爻上，要为堂上的双亲担忧；妻财爻落空，要为闺中的妻子担心灾祸。注说：占疾病，先看来占的是什么人：儿子占父母，要父母爻上卦；妻子占丈夫看鬼爻；丈夫占妻子看财爻；父亲占儿子看子孙；占兄弟、占朋友都看兄弟爻；占奴仆也看子孙爻。用爻不上卦或空亡的，多凶少吉；哪一爻空亡、哪一爻受克，吉凶就照这个来断。",
+        "en": "That a state is in order or disorder is nothing but a matter of customs and discipline; whether a person's life is short or long is not argued from frailty or strength. If one does not nourish life in the proper way, in the end there will be illness; if prayers can be divined, life and death can be seen decided. A killing sitting on Resource: worry for the parents in the hall; Void reaching Wealth: fear calamity for the woman in the inner chamber. The commentary says: in divining illness, first look at who the person is who has come to divine: a son divining about his parents needs the Resource line in the hexagram; a wife divining about her husband looks at the ghost, a husband about his wife at Wealth, a father about his son at Output; in divining about a brother or a friend, look at the Peer line; in divining about a servant, also look at Output. If the Subject line is absent from the hexagram or Void, there is mostly ill and little good; whichever line is Void, whichever is controlled, good and ill are judged by this."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4958, 4958],
+          "zh": ["国家治乱，", "莫非风俗纪纲；", "人寿夭长，", "岂论尫羸壮盛。", "养生非道，", "终有疾病存焉；", "请祷能占，", "便见死生决矣。"],
+          "yi": ["国家的治乱，", "无非是风俗纪纲的事；", "人的寿夭长短，", "哪里能凭身体的瘦弱壮盛来论。", "养生不得其道，", "终究会有疾病存在；", "请祷能占卜，", "就能看出死生的决断了。"],
+          "en": ["That a state is in order or disorder,", "is nothing but a matter of customs and discipline;", "that a person's life is short or long,", "how could it be argued from being frail or thin or robust?", "If one does not nourish life in the proper way,", "in the end illness will be there;", "if prayers can be divined,", "life and death can be seen decided."] },
+        { "by": "经", "book": "卜筮大全", "range": [4959, 4959],
+          "zh": ["杀临父母，", "当忧堂上之亲；", "空及妻财，", "灾虑闺中之妇。"],
+          "yi": ["凶杀临在父母爻上，", "应当为堂上的双亲担忧；", "空亡涉及妻财，", "要为闺中的妻子担心灾祸。"],
+          "en": ["A killing sitting on Resource,", "one should worry for the parents in the hall;", "Void reaching Wealth,", "one should fear calamity for the woman in the inner chamber."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4960, 4960],
+          "zh": ["凡占疾病，看来者何人。", "子占父母，要父母上卦。", "妻占夫看鬼，", "夫占妻看财，", "父占子看子，", "占兄弟看兄弟，", "占朋友亦看兄弟，", "占奴仆亦看子孙。", "凡用爻不上卦，", "或空亡者，", "则多凶少吉。", "凡占何爻空亡，", "何爻受克，", "吉凶依此而断之。"],
+          "yi": ["凡是占疾病，看来占的是什么人。", "儿子占父母，要父母爻上卦。", "妻子占丈夫看鬼；", "丈夫占妻子看财；", "父亲占儿子看子孙；", "占兄弟，看兄弟爻；", "占朋友，也看兄弟爻；", "占奴仆，也看子孙。", "凡是用爻不上卦，", "或者空亡的，", "就多凶少吉。", "凡占，哪一爻空亡，", "哪一爻受克，", "吉凶就照这个来断。"],
+          "en": ["In divining illness, look at who the person is who has come to divine.", "A son divining about his parents needs the Resource line in the hexagram.", "a wife divining about her husband looks at the ghost;", "a husband divining about his wife looks at Wealth;", "a father divining about his son looks at Output;", "in divining about a brother, look at the Peer line;", "in divining about a friend, also look at the Peer line;", "in divining about a servant, also look at Output.", "Whenever the Subject line is absent from the hexagram,", "or Void,", "there is mostly ill and little good.", "In every divination, whichever line is Void,", "whichever line is controlled,", "good and ill are judged by this."] }
+      ],
+      "note": {
+        "yi": "这是天玄赋「疾病章」的头三段：两句开场议论（治乱靠风俗纪纲、寿夭不看强弱，养生不得法总会生病），两句杀临父母、空及妻财的提醒，再是「占疾病看来者何人」的用爻表。用爻表和易林补遗「疾病用神」（LY.ILL.EL.09）、黄金策「取用神」一带是同一套：子占父母看父母爻、妻占夫看鬼、夫占妻看财、父占子看子孙、兄弟朋友看兄弟、奴仆看子孙。「尫羸」是瘦弱多病。这一章在卜筮大全里赋文和注文排成同样的行，分不出体例，这里按内容分：对偶的句子是赋，「凡……」「若……」起头的解释是注。断易天机和火珠林里同一章把注放在括号里，可以对照。卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "These are the first three passages of the Tianxuan Fu's chapter on illness: two lines of opening argument (order and disorder depend on customs and discipline, long or short life not on strength; if life is not nourished one will fall ill), two lines warning of a killing on Resource and Void reaching Wealth, and then the table 'in divining illness, look at who has come' for the Subject line. The table is the same set as the Yilin Buyi's 'the Subject line in illness' (LY.ILL.EL.09) and the Huangjin Ce's choosing of the Subject: a son divining about his parents looks at the Resource line, a wife about her husband at the ghost, a husband about his wife at Wealth, a father about his son at Output, a brother or friend at Peer, a servant at Output. 'Wang ying' is frail and often ill. In the Buyi Daquan this chapter sets the verse and the commentary in lines of the same kind, so the two cannot be told apart by form, and here they are divided by content: the paired sentences are the verse, and the explanations beginning 'whenever ...' or 'if ...' are the commentary. The Duanyi Tianji and the Huozhulin put the commentary of the same chapter in brackets, and can be compared. After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.02", "LY.ILL.EL.09", "LY.ILL.HJC.01"]
+    },
+    {
+      "id": "LY.ILL.TXF.02",
+      "topic": "轻重",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "决轻重存亡专察鬼爻、定金木水火可分症候：鬼爻旺日沉重、库日困迍、绝日轻可；鬼化鬼病进退或有变症或旧病发；鬼持世难除根、鬼带杀持世是瘵疾；日辰旺是暴病、月建旺是经月之疾、鬼无气临身是久病；卦无鬼病难安、鬼动伤身症候急；旺鬼不死则易愈、衰鬼不死则难疗",
+      "rule": {
+        "yi": "要断定病的轻重存亡，专门看鬼爻；要定金木水火各是哪个方位，可以分出症候。注说：鬼爻旺的日子病沉重，入库的日子困顿，绝的日子轻可。鬼化鬼，病时进时退，或者有变症，或者旧病再发，或者症候驳杂。鬼持世，病难除根；鬼爻带杀持世，是瘵疾。卦中鬼爻遇日辰旺，是暴病；月建旺，是过了整月的病；鬼爻无气临身的，是久病，很难痊可。卦里没有鬼，病难安；鬼动伤身，症候急。凡占，鬼旺而不死，病容易好；鬼衰而不死，病难治。",
+        "en": "To decide the light or heavy and the life or death, look only at the Pressure line; to fix the quarters of Metal, Wood, Water and Fire, one can distinguish the symptoms. The commentary says: on a day when the Pressure line is strong the illness is heavy, on its store day it is trapped and hard, on its Extinction day it is light and tolerable. The ghost changing into a ghost: the illness advances and retreats, or there is a change of symptoms, or an old illness flares, or the symptoms are mixed. The ghost holding the Self: the illness is hard to root out; the Pressure line carrying a killing and holding the Self is a wasting illness. If the Pressure line in the hexagram is strong on the Day, it is a sudden illness; if strong on the Month, an illness of a full month; a Pressure line without qi sitting on the body is a long illness that can hardly be cured at once. With no ghost in the hexagram the illness is hard to settle; the ghost moving and wounding the body, the symptoms are urgent. In every divination, a strong ghost that does not kill means an easy cure, a weak ghost that does not kill means an illness hard to treat."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4962, 4962],
+          "zh": ["决轻重存亡之兆，", "专察鬼爻；", "定金木水火之乡，", "可分症候。"],
+          "yi": ["要决断轻重存亡的征兆，", "专门察看鬼爻；", "要定金木水火的方位，", "就可以分出症候。"],
+          "en": ["To decide the signs of light and heavy, of life and death,", "look only at the Pressure line;", "to fix the quarters of Metal, Wood, Water and Fire,", "one can distinguish the symptoms."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4963, 4963],
+          "zh": ["鬼爻旺日沉重，", "库日困迍，", "绝日轻可。", "鬼化鬼，", "其病进退，", "或有变症，", "或旧病发，", "或症候驳杂。", "鬼持世，", "病难除根；", "鬼爻带杀持世，", "此乃瘵疾。", "卦中鬼爻日辰旺，", "乃暴病；", "月建旺，", "乃经月之疾；", "鬼爻无气临身者，", "乃久病，", "卒难痊可。", "卦中无鬼病难安。", "鬼动伤身症候急。"],
+          "yi": ["鬼爻旺的日子病沉重，", "入库的日子困顿，", "绝的日子轻可。", "鬼变化成鬼，", "病时进时退，", "或者有变症，", "或者旧病再发，", "或者症候驳杂。", "鬼持了世爻，", "病难除根；", "鬼爻带杀持世，", "这是瘵疾。", "卦中鬼爻在日辰旺的时候，", "这是暴病；", "月建旺相，", "是过了整月的病；", "鬼爻无气而临在身上的，", "这是久病，", "很难一下痊可。", "卦里没有鬼，病难安。", "鬼动伤身，症候急。"],
+          "en": ["On a day when the Pressure line is strong the illness is heavy,", "on its store day it is trapped and hard,", "on its Extinction day it is light and tolerable.", "The ghost changing into a ghost:", "the illness advances and retreats,", "or there is a change of symptoms,", "or an old illness flares,", "or the symptoms are mixed.", "The ghost holding the Self:", "the illness is hard to root out;", "the Pressure line carrying a killing and holding the Self", "is a wasting illness (zhai).", "If the Pressure line in the hexagram is strong on the Day,", "it is a sudden illness;", "if strong on the Month,", "an illness of a full month;", "a Pressure line without qi sitting on the body", "is a long illness,", "that can hardly be cured at once.", "With no ghost in the hexagram the illness is hard to settle.", "The ghost moving and wounding the body, the symptoms are urgent."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4964, 4964],
+          "zh": ["凡占，", "旺鬼不死，", "则易愈；", "衰鬼不死，", "其病难疗。"],
+          "yi": ["凡是占卜，", "鬼旺而不死，", "就容易好；", "鬼衰而不死，", "病难治疗。"],
+          "en": ["In every divination,", "a strong ghost that does not kill", "means an easy cure;", "a weak ghost that does not kill", "means an illness hard to treat."] }
+      ],
+      "note": {
+        "yi": "赋文「专察鬼爻」是本章的总原则：病的轻重存亡看官鬼，症候看鬼的五行。注里分几个层次：①按日辰（鬼旺日重、入库日困、绝日轻）；②按鬼的变化（鬼化鬼是进退或变症，鬼持世难除根，带杀持世是瘵疾）；③按鬼旺在哪一层（日辰旺是暴病、月建旺是经月之病、无气临身是久病）；④卦无鬼病难安、鬼动伤身症候急；⑤旺鬼不死易愈、衰鬼不死难疗。这一段和黄金策的疾病章头几段（LY.ILL.HJC.01 到 HJC.14）是同一路，字句多有相同；卦无鬼「病难安」一处，黄金策旧注也有（见 LY.ILL.HJC.03）。「库日」是鬼爻入墓库的日子。「瘵疾」按拼音带出，是消耗性的病（古人常指肺痨）。「经月之疾」按「过了整月的病」译。「凡占，旺鬼不死则易愈；衰鬼不死其病难疗」的意思是：鬼旺时若没死，病好得快，因为鬼旺却不致命，说明用爻扛得住；鬼衰而没死，病反缠绵——原文没有解释，这里只译字面。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "The verse 'look only at the Pressure line' is this chapter's general principle: whether an illness is light or heavy, whether one lives or dies, is seen from the Pressure line, and the symptoms from the phase of the ghost. The commentary works on several levels: (1) by the day (strong Pressure day heavy, store day trapped, Extinction day light); (2) by what the ghost does (a ghost changing into a ghost is advance and retreat or a change of symptoms, a ghost holding the Self is hard to root out, with a killing and holding the Self it is a wasting illness); (3) by the level at which the ghost is strong (strong on the Day a sudden illness, strong on the Month an illness of a full month, without qi on the body a long illness); (4) with no ghost the illness is hard to settle, the ghost moving and wounding the body the symptoms are urgent; (5) a strong ghost that does not kill heals easily, a weak ghost that does not kill is hard to treat. This passage runs on the same road as the first paragraphs of the Huangjin Ce's chapter on illness (LY.ILL.HJC.01 to HJC.14) and its wording is often the same; 'with no ghost the illness is hard to settle' is also in the Huangjin Ce's old commentary (see LY.ILL.HJC.03). 'Store day' is the day on which the Pressure line enters its tomb or store. 'Zhai illness' is given by its pinyin and is a wasting illness (the ancients often meant consumption by it). 'An illness of a full month' is translated as 'an illness of a full month'. 'A strong ghost that does not kill means an easy cure; a weak ghost that does not kill means an illness hard to treat' means that if a strong ghost has not killed, the cure comes fast, because a ghost strong yet not fatal shows the Subject line can bear it, and if a weak ghost has not killed the illness on the contrary drags on — the original does not explain, and only the literal sense is translated. After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.01", "LY.ILL.TXF.03", "LY.ILL.HJC.01", "LY.ILL.HJC.03", "LY.ILL.HJC.12", "LY.ILL.YY.19"]
+    },
+    {
+      "id": "LY.ILL.TXF.03",
+      "topic": "症候",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "欲定症候须看鬼临之五行：金鬼肺腑病咳嗽气喘或疮疖血光筋骨疼痛；木鬼四肢不利、风气肝胆、左瘫右痪口眼歪斜、头疼发热三焦口渴，加朱雀狂言乱语阳症伤寒；水鬼沉寒痼冷遗精白浊淋沥吐泻呕逆；火鬼寒热往来脾寒疟疾；土鬼脾胃发瘴水肿虚浮瘟疫时气；前卦火鬼后卦水鬼则服冷药过多变阴症",
+      "rule": {
+        "yi": "要定症候，必须看鬼临着的五行。金鬼：肺腑的病，咳嗽气喘，或者疮疖、血光，或者筋骨疼痛。木鬼：四肢不利，风气、肝胆病，左瘫右痪，口眼歪斜，头疼发热，三焦口渴；加朱雀，说胡话、乱语，是阳症伤寒。水鬼：沉寒痼冷，遗精白浊，小便淋沥，吐泻呕逆。火鬼：寒热往来，脾寒疟疾。土鬼：脾胃发瘴，水肿虚浮，瘟疫时气。如果前一卦是火鬼、后一卦是水鬼，前面的症候一定是阳症，服冷药过多，变成了阴症；如果午时以前占，遇到这两个鬼，应当说不要服药；过了头，以后必有变化。这说的是在火旺的月日占卦的情形。",
+        "en": "To fix the symptoms, one must look at the phase the ghost sits on. A Metal ghost: illness of the lungs and viscera, coughing and wheezing, or sores and boils, or bleeding, or aching of the sinews and bones. A Wood ghost: the four limbs not free, wind-qi and illness of the liver and gall, left and right palsy, mouth and eyes awry, headache and fever, thirst in the Triple Burner; with the Vermilion Bird added, wild and confused speech, a yang cold-damage illness. A Water ghost: deep cold and chronic chill, seminal emission and turbid urine, dribbling urination, vomiting, diarrhoea and retching. A Fire ghost: alternate chills and fever, spleen chill and malaria. An Earth ghost: spleen and stomach miasma, water swelling and puffy weakness, epidemic and seasonal qi. If the earlier hexagram is a Fire ghost and the later a Water ghost, the earlier symptoms were surely yang, and taking too much cold medicine has turned them into a yin condition; if the divination is made before noon and these two ghosts are met, one should say do not take medicine; if it is overdone, there will surely be a change afterwards. This speaks of divining in a month or day when Fire is strong."
+      },
+      "quotes": [
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4965, 4965],
+          "zh": ["欲定症候，须看鬼临之五行。", "若金鬼：", "肺腑病，", "咳嗽气，", "或疮疖、血光，", "或筋骨疼痛。", "木鬼：", "四肢不利，", "风气肝胆，", "左瘫右痪，", "口眼歪斜，", "头疼发热，", "三焦口渴；", "加朱雀，", "狂言乱语，", "阳症伤寒。"],
+          "yi": ["要断定症候，必须看鬼临着的五行。", "如果是金鬼：", "肺腑的病，", "咳嗽气喘，", "或者是疮疖、血光，", "或者是筋骨疼痛。", "如果是木鬼：", "四肢不灵便，", "风气、肝胆的病，", "左瘫右痪，", "口眼歪斜，", "头疼发热，", "三焦口渴；", "加了朱雀，", "说胡话、乱语，", "是阳症伤寒。"],
+          "en": ["To fix the symptoms, one must look at the phase the ghost sits on.", "A Metal ghost:", "illness of the lungs and viscera,", "coughing and wheezing,", "or sores and boils, or bleeding,", "or aching of the sinews and bones.", "A Wood ghost:", "the four limbs not free,", "wind-qi and illness of the liver and gall,", "left and right palsy,", "mouth and eyes awry,", "headache and fever,", "thirst in the Triple Burner;", "with the Vermilion Bird added,", "wild and confused speech,", "a yang cold-damage illness."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4967, 4967],
+          "zh": ["水鬼：", "沉寒痼冷，", "遗精白浊，", "小便淋沥，", "吐泻呕逆。", "火鬼：", "寒热往来，", "脾寒疟疾。", "土鬼：", "乃脾胃发瘴，", "水肿虚浮，", "瘟疫时气。"],
+          "yi": ["如果是水鬼：", "沉寒痼冷，", "遗精、白浊，", "小便淋沥，", "吐泻呕逆。", "如果是火鬼：", "寒热往来，", "脾寒疟疾。", "如果是土鬼：", "是脾胃发瘴，", "水肿虚浮，", "瘟疫时气。"],
+          "en": ["A Water ghost:", "deep cold and chronic chill,", "seminal emission and turbid urine,", "dribbling urination,", "vomiting, diarrhoea and retching.", "A Fire ghost:", "alternate chills and fever,", "spleen chill and malaria.", "An Earth ghost:", "spleen and stomach miasma,", "water swelling and puffy weakness,", "epidemic and seasonal qi."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4968, 4968],
+          "zh": ["若前卦火鬼，后卦水鬼，", "必前之症候为阳，", "服冷药过多，", "变为阴症。", "若午前占，", "遇此两鬼，", "当言勿服药；", "过当，", "后必有变化。", "火鬼于火旺月日占是也。"],
+          "yi": ["如果前一卦是火鬼、后一卦是水鬼，", "前面的症候一定是阳症，", "服冷药过多，", "变成了阴症。", "如果午时以前占，", "遇到这两个鬼，", "应当说不要服药；", "过了头，", "以后必定有变化。", "这说的是在火旺的月日占卦的情形。"],
+          "en": ["If the earlier hexagram is a Fire ghost and the later a Water ghost,", "the earlier symptoms were surely yang,", "and taking too much cold medicine", "has turned them into a yin condition.", "If the divination is made before noon,", "and these two ghosts are met,", "one should say do not take medicine;", "if it is overdone,", "there will surely be a change afterwards.", "This speaks of divining in a month or day when Fire is strong."] }
+      ],
+      "note": {
+        "yi": "这一段和黄金策疾病章里的「五行症候」（LY.ILL.HJC.14 到 HJC.20 一带）、易隐「五行鬼各主之症」（LY.ILL.YY.13）是同一份名单，每种五行的具体病名略有不同：天玄赋的金鬼是「肺腑病、咳嗽气、疮疖、血光、筋骨疼痛」，木鬼里有「三焦口渴」和「加朱雀狂言乱语阳症伤寒」，火鬼只有「寒热往来、脾寒疟疾」（易隐的火鬼阴是心目之疾、阳是疮痍疖毒虐热），土鬼是「脾胃发瘴、水肿虚浮、瘟疫时气」。「遗精白浊」「淋沥」「痼冷」「脾寒疟疾」是医病名，照字面译；「三焦」是中医说的上中下三焦，不作解释。「前卦火鬼、后卦水鬼」说的是同一个人先后占了两卦：前面是火鬼阳症，若已服了太多冷药，后一卦水鬼就是变成了阴症。「若午前占，遇此两鬼，当言勿服药」的「午前」是午时以前；末一句说火鬼那一条指的是在火旺的月日占卦。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "This passage is the same list as the 'symptoms by the five phases' in the Huangjin Ce's chapter on illness (LY.ILL.HJC.14 to HJC.20) and the Yi Yin's 'the symptoms each phase of ghost governs' (LY.ILL.YY.13), with the specific illness names differing a little for each phase: in the Tianxuan Fu the Metal ghost is 'illness of the lungs and viscera, coughing and wheezing, sores and boils, bleeding, aching sinews and bones'; the Wood ghost has 'thirst in the Triple Burner' and 'with the Vermilion Bird added, wild and confused speech, a yang cold-damage illness'; the Fire ghost has only 'alternate chills and fever, spleen chill and malaria' (the Yi Yin's Fire ghost is, if yin, illness of the heart and eyes, and if yang, sores, boils and hot malaria); and the Earth ghost is 'spleen and stomach miasma, water swelling and puffy weakness, epidemic and seasonal qi'. 'Seminal emission and turbid urine', 'dribbling urination', 'chronic chill' and 'spleen chill and malaria' are names of illnesses and are translated literally; the 'Triple Burner' is the upper, middle and lower burners of Chinese medicine and is not explained. 'The earlier hexagram a Fire ghost and the later a Water ghost' speaks of one person divining two hexagrams in succession: the earlier is a yang condition with the Fire ghost, and if too much cold medicine has already been taken, the Water ghost of the later hexagram is the change to a yin condition. 'If divined before noon and these two ghosts are met, say do not take medicine': the 'before noon' is before the Wu double-hour; the last sentence says that the Fire ghost's case refers to divining in a month or day when Fire is strong. After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.02", "LY.ILL.TXF.04", "LY.ILL.HJC.14", "LY.ILL.YY.13", "LY.ILL.ZS.22", "LY.ILL.HDY.05"]
+    },
+    {
+      "id": "LY.ILL.TXF.04",
+      "topic": "轻重",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "青龙得位终见安康、白虎伤身必成凶咎：青龙临子孙克世期日痊安、临应克世服药有效、临用爻发动纵凶险不伤、带鬼爻非凶恶发狂之病、三爻动香火为福；苍屏云青龙空亡并福德平日无阴骘、白虎加临主哭丧；白虎交重乃占病大咎——无气犹可旺相大凶、临丧门吊客死符丧车持克用爻决不起、得子孙旺动月解兴隆可回生",
+      "rule": {
+        "yi": "青龙得位，终究见到安康；白虎伤身，必成凶咎。注说：青龙如果临着子孙又克世，到日期就痊愈安康；临在应爻上克世，服药有效；临在用爻上发动，纵有凶险也不受伤；带着鬼爻，也不是凶恶发狂的病；在三爻发动，香火是福。苍屏说：青龙空亡，和福德一起，病人平日没有阴德；遇土动、虎伤身，那一年一定有悲哭；你来占病断存亡，白虎加临主哭丧；临着、克着父爻，就有咎，妻财的位置一定受伤；子孙遇上它，终究不成，兄弟遇上更不昌；再逢官爻持世，自身要恐怕有灾殃。凡遇白虎交重，是占病的大咎，无气还可以，旺相大凶；如果临着丧门、吊客、死符、丧车、又持着或克着用爻，决定是不起的征兆；如果得到子孙旺相发动，月解兴隆，才可以回生。",
+        "en": "With the Azure Dragon in its place one sees peace and health at last; with the White Tiger wounding the body it becomes ill and blame. The commentary says: if the Azure Dragon sits on Output controlling the Self, recovery and peace come on the appointed day; if it sits on the Other line controlling the Self, taking medicine is effective; if it sits on the Subject line and moves, even if there is danger no harm is done; if it carries a Pressure line, it is still not a fierce and frenzied illness; if it moves on the third line, the incense fire is the blessing. Cangping says: the Azure Dragon Void, together with Output, the sick person had no hidden merit in ordinary life; meeting Earth moving, the Tiger wounds the body, and that year there will surely be weeping; you who come to divine an illness to decide life or death, the White Tiger added governs wailing and mourning; sitting on and controlling the Resource line there will be blame, and the Wealth and wife positions will surely be wounded; Output meeting it ends in failure, Peer meeting it is still less prosperous; and if the Pressure line holds the Self, one's own person should fear calamity. When the White Tiger crosses heavily it is the great misfortune of divining illness: without qi it is still tolerable, strong it is greatly ominous; if it sits on Mourning Gate, Guest of Condolence, Death Tally or Funeral Carriage and holds or controls the Subject line, it surely is a sign that he will not rise; if Output is strong and moves and Month Release thrives, there may be a return to life."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4970, 4970],
+          "zh": ["青龙得位，", "终见安康；", "白虎伤身，", "必成凶咎。"],
+          "yi": ["青龙得位，", "终究见到安康；", "白虎伤身，", "必定成为凶咎。"],
+          "en": ["With the Azure Dragon in its place,", "one sees peace and health at last;", "with the White Tiger wounding the body,", "it surely becomes ill and blame."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4971, 4971],
+          "zh": ["青龙若临子孙克世，", "期日痊安。", "或临应克世，", "服药有效。", "若临用爻发动，", "纵有凶险，", "亦不伤也。", "若带鬼爻，", "亦非凶恶发狂之病。", "若在三爻动，", "香火为福。"],
+          "yi": ["青龙如果临着子孙又克世爻，", "到日期就痊愈安康；", "或者临在应爻上克世，", "服药有效；", "如果临着用爻发动，", "纵然有凶险，", "也不受伤；", "如果带着鬼爻，", "也不是凶恶发狂的病；", "如果在三爻发动，", "香火是福。"],
+          "en": ["If the Azure Dragon sits on Output controlling the Self,", "recovery and peace come on the appointed day;", "or if it sits on the Other line controlling the Self,", "taking medicine is effective;", "if it sits on the Subject line and moves,", "even if there is danger,", "no harm is done;", "if it carries a Pressure line,", "it is still not a fierce and frenzied illness;", "if it moves on the third line,", "the incense fire is the blessing."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4972, 4972],
+          "zh": ["苍屏云：", "“青龙空亡并福德，", "病人平日无阴骘。", "逢土动虎伤身，", "管取其年有悲泣。", "君来占病决存亡，", "白虎加临主哭丧。", "临克父爻当有咎，", "并财妻位必遭伤。", "子孙际会终成否，", "兄弟相逢更不昌。", "更值官爻持世上，", "己身须恐有灾殃”。"],
+          "yi": ["苍屏这样说：", "「青龙空亡，和福德一起，", "病人平日没有阴德；", "遇上土动、虎伤身，", "那一年一定有悲哭；", "你来占病断存亡，", "白虎加临主哭丧；", "临着、克着父爻就有咎，", "妻财的位置一定受伤；", "子孙遇上它，终究不成；", "兄弟遇上更不昌盛；", "再逢官爻持世，", "自身要恐怕有灾殃」。"],
+          "en": ["Cangping says:", "'The Azure Dragon Void, together with Output,", "the sick person had no hidden merit in ordinary life;", "meeting Earth moving, the Tiger wounds the body,", "and that year there will surely be weeping;", "you who come to divine an illness to decide life or death,", "the White Tiger added governs wailing and mourning;", "sitting on and controlling the Resource line there will be blame,", "and the Wealth and wife positions will surely be wounded;", "Output meeting it ends in failure;", "Peer meeting it is still less prosperous;", "and if the Pressure line holds the Self,", "one's own person should fear calamity.'"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4973, 4973],
+          "zh": ["凡遇白虎交重，", "乃占病之大咎，", "无气犹可，", "旺相大凶。", "若临丧门、吊客、死符、丧车、持克用爻者，", "决主不起之兆。", "若得子孙旺动，", "月解兴隆，", "庶可回生。"],
+          "yi": ["凡是遇到白虎交重，", "是占病的大咎；", "无气还可以，", "旺相大凶。", "如果临着丧门、吊客、死符、丧车，又持着或克着用爻的，", "决定是不起的征兆。", "如果得到子孙旺相发动，", "月解兴隆，", "才可以回生。"],
+          "en": ["When one meets the White Tiger crossing heavily,", "it is the great misfortune of divining illness;", "without qi it is still tolerable,", "strong it is greatly ominous.", "if it sits on Mourning Gate, Guest of Condolence, Death Tally or Funeral Carriage and holds or controls the Subject line,", "it surely is a sign that he will not rise.", "If Output is strong and moves,", "and Month Release thrives,", "there may be a return to life."] }
+      ],
+      "note": {
+        "yi": "「苍屏」是天玄赋注里引的一位作者（或一部书），原文只写「苍屏云」，这里按字面译作 Cangping，不作认定；它的歌诀用韵，后四句「临克父爻当有咎，并财妻位必遭伤；子孙际会终成否，兄弟相逢更不昌」是说白虎临克父爻（父母）、财爻（妻财）、子孙、兄弟时各自的后果。「阴骘」是暗中积的德。「香火为福」按字面译，意思大概是三爻动时，祭祀香火是福神所在，原文没有说清。「丧门、吊客、死符、丧车」都是凶煞名，见易林补遗「总论星煞值鬼诀」（LY.ILL.EL.48 到 EL.52）、易隐（LY.ILL.YY.05）。这一段的判语和黄金策的青龙、白虎（LY.ILL.HJC.24、HJC.25 一带）一致。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "'Cangping' is an author (or a book) quoted in the commentary on the Tianxuan Fu, of whom the original writes only 'Cangping says', and it is translated literally as Cangping, without identification; his rhyme's last four lines, 'sitting on and controlling the Resource line there will be blame, and the Wealth and wife positions will surely be wounded; Output meeting it ends in failure, Peer meeting it is still less prosperous', give the consequence when the White Tiger sits on and controls the Resource line, the Wealth line, Output and Peer in turn. 'Yin zhi' is merit stored up in secret. 'The incense fire is the blessing' is translated literally, and probably means that when the third line moves, the incense fire of the sacrifices is where the fortune spirit lies, which the original does not make clear. 'Mourning Gate, Guest of Condolence, Death Tally and Funeral Carriage' are names of malign stars, for which see the Yilin Buyi's 'general discourse on ghosts by the stars and killings' (LY.ILL.EL.48 to EL.52) and the Yi Yin (LY.ILL.YY.05). The verdicts of this passage agree with the Huangjin Ce's on the Azure Dragon and the White Tiger (LY.ILL.HJC.24, HJC.25 and around). After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.03", "LY.ILL.TXF.05", "LY.ILL.HJC.24", "LY.ILL.HJC.25", "LY.ILL.YY.05", "LY.ILL.EL.48"]
+    },
+    {
+      "id": "LY.ILL.TXF.05",
+      "topic": "生死",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "月解交重灾渐退、天医发动便回生：卦中得月解天医发动持世或持克用爻者虽重病不死；旺相最吉日下即愈、墓绝稍慢直待旺日方安；若值空亡其病难疗",
+      "rule": {
+        "yi": "月解交重，灾祸渐渐退去；天医发动，当下就回生。注说：月解、天医见后面的吉神章。卦里如果得到它们发动、持世，或者持着、克着用爻，即使重病也不会死；旺相最吉，当天就好；墓绝的稍慢，要等到旺的日子才安；如果落空亡，病就难治。",
+        "en": "Month Release crossing heavily, calamity gradually retreats; Heavenly Doctor moving, one returns to life at once. The commentary says: Month Release and Heavenly Doctor are given in the later chapter on the lucky spirits. If the hexagram has them moving and holding the Self, or holding or controlling the Subject line, then even in a heavy illness the patient does not die; if strong it is most auspicious and the cure comes that very day; if in a tomb or Extinction it is a little slower, and one must wait for a strong day to be at peace; if it meets Void, the illness is hard to treat."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4975, 4975],
+          "zh": ["月解交重灾渐退，", "天医发动便回生。"],
+          "yi": ["月解交重，灾祸渐渐退去；", "天医发动，当下就回生。"],
+          "en": ["Month Release crossing heavily, calamity gradually retreats;", "Heavenly Doctor moving, one returns to life at once."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4976, 4976],
+          "zh": ["月解、天医，", "见后吉神章。"],
+          "yi": ["月解、天医，", "见后面的吉神章。"],
+          "en": ["Month Release and Heavenly Doctor:", "see the later chapter on the lucky spirits."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4977, 4977],
+          "zh": ["卦中若得发动持世，", "或持克用爻者，", "虽重病不死。", "旺相最吉，", "日下即愈；", "墓绝稍慢，", "直待旺日方安。", "若值空亡，", "其病难疗。"],
+          "yi": ["卦里如果得到它们发动持世，", "或者持着、克着用爻的，", "即使重病也不会死；", "旺相最吉，", "当天就好；", "墓绝的稍慢，", "要等到旺的日子才安；", "如果落空亡，", "病就难治。"],
+          "en": ["If the hexagram has them moving and holding the Self,", "or holding or controlling the Subject line,", "then even in a heavy illness the patient does not die;", "if strong it is most auspicious,", "and the cure comes that very day;", "if in a tomb or Extinction it is a little slower,", "and one must wait for a strong day to be at peace;", "if it meets Void,", "the illness is hard to treat."] }
+      ],
+      "note": {
+        "yi": "月解、天医是吉神，天玄赋自己说「见后吉神章」——本库还没有收吉神章。这一条的判语是：月解或天医发动、持世，或持克用爻的，重病也不死；和易隐「生死·愈」（LY.ILL.YY.04）「用爻遇龙福月解天医天喜生合即愈」一致；和易林补遗（LY.ILL.EL.13）里「月解天医同发而用爻已遭伤仍死」的例子不冲突——那是说用爻被伤时，月解天医也救不回。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "Month Release and Heavenly Doctor are lucky spirits, and the Tianxuan Fu itself says 'see the later chapter on the lucky spirits'; this library has not yet quoted that chapter. The verdict of this entry is that with Month Release or Heavenly Doctor moving and holding the Self, or holding or controlling the Subject line, even a heavy illness does not kill, which agrees with the Yi Yin's 'life and death: recovery' (LY.ILL.YY.04), 'the Subject line meeting the Dragon, Fortune, Month Release, Heavenly Doctor or Heavenly Joy and being generated or combined, he recovers at once'; and it does not conflict with the example in the Yilin Buyi (LY.ILL.EL.13) in which 'Month Release and Heavenly Doctor move together but the Subject line is already wounded and he still dies' — that says that when the Subject line is wounded even Month Release and Heavenly Doctor cannot bring it back. After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.04", "LY.ILL.TXF.06", "LY.ILL.YY.04", "LY.ILL.EL.13"]
+    },
+    {
+      "id": "LY.ILL.TXF.06",
+      "topic": "生死",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "入墓卦：明夷观贲需临切忌世身入墓、大畜丰同蛊夬莫逢财鬼俱兴；怕身世随鬼入墓决不瘥（观二爻乙巳鬼身亦在二爻、贲初爻己卯鬼世亦在初爻）；苍屏云八宫化入墓——乾化艮父丧、坤化巽母亡、震化坤长男厄、巽化坤长女当、坎化巽中男厄、离化乾中女卒、艮化巽少男倾、兑化艮少女卒，十人得病九人故；乾化艮子占父谓之应题大凶；财鬼不动未必丧亡、财鬼空亡虽病不死",
+      "rule": {
+        "yi": "明夷、观、贲、需、临，切忌世和身入墓；大畜、丰、同（人）、蛊、夬，不要遇到财和鬼一起兴动。注说：占病怕身、世跟着鬼入墓，一定治不好。比如风地观的二爻乙巳，鬼和身也在二爻，如果入了墓，就是身随鬼入墓；山火贲卦初爻己卯，鬼和世也在初爻，如果入了墓，就是世随鬼入墓；上面两卦举作例子，其余卦照这样仿。苍屏说：乾化入艮，父亲遭丧；坤化入巽，母亲忧亡；震化入坤，长男有厄；巽化入坤，长女当灾；坎化入巽，中男遭厄；离化入乾，中女暴卒；艮化入风（巽），少男倾倒；兑化入山（艮），少女暴卒；这是八宫化来入墓，十个人得病九个亡故。上面说的卦墓，不能单说乾化入艮墓只忧父亲的亡，而要看占病都不吉；假如儿子占父亲，遇到乾化艮，叫做应题，是大凶。大畜等五个卦，占病大忌；财和鬼不动，不一定死；财和鬼空亡，虽病也不死；必须把它的条理理清了，才可以断为全凶。上文所说的财鬼发动，也有吉凶的分别：比如雷火丰卦，鬼动忌占兄弟，财动忌占父母和自己本人；妻子占丈夫，终究没有凶；其余卦仿此。",
+        "en": "Mingyi, Guan, Bi (Adornment), Xu and Lin: most to be avoided is the Self and the Body entering a tomb; Daxu, Feng, Tong(ren), Gu and Guai: do not meet Wealth and the ghost both rising. The commentary says: in divining illness one fears the Body and the Self following the ghost into a tomb, and then there is surely no recovery. For example, in Feng-Di Guan the second line Yisi has the ghost and the Body also on the second line; if it enters a tomb, that is the Body following the ghost into a tomb; in the hexagram Bi (Adornment), Mountain over Fire, the first line Jimao has the ghost and the Self also on the first line, and if it enters a tomb, that is the Self following the ghost into a tomb; these two hexagrams are given as examples and the others follow. Cangping says: Qian changing into Gen, the father is in mourning; Kun changing into Xun, the mother worried to death; Zhen changing into Kun, calamity for the eldest son; Xun changing into Kun, the eldest daughter takes it; Kan changing into Xun, calamity for the middle son; Li changing into Qian, the middle daughter dies suddenly; Gen changing into the wind (Xun), the youngest son topples; Dui changing into the mountain (Gen), the youngest daughter dies suddenly; these are the eight palaces changing into a tomb, and of ten who fall ill nine die. As for the tomb hexagrams above, one may not take Qian changing into the Gen tomb as only a worry for the father's death, but must look at illness in all of them as inauspicious; suppose a son divines about his father and meets Qian changing into Gen: it is called 'answering the topic' and is greatly ominous. The five hexagrams such as Daxu are greatly to be avoided in divining illness; if Wealth and the ghost do not move, death is not certain; if Wealth and the ghost are Void, though ill he will not die; one must grasp its threads before judging it wholly ominous. The Wealth and ghost moving mentioned above also have a division of good and ill: for example in the hexagram Feng, Thunder over Fire, the ghost moving is to be avoided in divining about brothers, Wealth moving in divining about parents and oneself; a wife divining about her husband has in the end no ill; the other hexagrams follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4979, 4979],
+          "zh": ["明夷、观、贲、需、临，", "切忌世身入墓；", "大畜、丰、同、蛊、夬，", "莫逢财鬼俱兴。"],
+          "yi": ["明夷、观、贲、需、临这几个卦，", "切忌世和身入墓；", "大畜、丰、同（人）、蛊、夬，", "不要遇到财和鬼一起兴动。"],
+          "en": ["Mingyi, Guan, Bi (Adornment), Xu and Lin:", "most to be avoided is the Self and the Body entering a tomb;", "Daxu, Feng, Tong(ren), Gu and Guai:", "do not meet Wealth and the ghost both rising."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4980, 4980],
+          "zh": ["凡占病。", "怕身世随鬼入墓，", "决不瘥也。", "如风地观二爻乙巳，", "鬼身亦在二爻，", "设或入墓，", "乃身随鬼入墓也。", "山火贲卦，", "初爻己卯，", "鬼世亦在初爻，", "倘入墓，", "乃世随鬼入墓也。"],
+          "yi": ["凡是占病，", "怕身、世跟着鬼入墓，", "一定治不好。", "比如风地观的二爻乙巳，", "鬼和身也在二爻，", "如果入了墓，", "就是身随鬼入墓。", "山火贲卦，", "初爻己卯，", "鬼和世也在初爻，", "如果入了墓，", "就是世随鬼入墓。"],
+          "en": ["In divining illness,", "one fears the Body and the Self following the ghost into a tomb,", "and then there is surely no recovery.", "For example, in Feng-Di Guan the second line Yisi,", "with the ghost and the Body also on the second line,", "if it enters a tomb,", "that is the Body following the ghost into a tomb.", "In the hexagram Bi (Adornment), Mountain over Fire,", "the first line Jimao,", "with the ghost and the Self also on the first line,", "if it enters a tomb,", "that is the Self following the ghost into a tomb."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4981, 4981],
+          "zh": ["以上两卦，", "举此为例，", "余卦仿此。"],
+          "yi": ["上面两个卦，", "举来作例子，", "其余的卦照这样仿。"],
+          "en": ["These two hexagrams", "are given as examples,", "and the other hexagrams follow this."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4982, 4982],
+          "zh": ["苍屏云：", "“乾化入艮父忧丧，", "坤化入巽母忧亡；", "震化入坤长男厄，", "巽化入坤长女当。", "坎化巽中中男厄，", "离化入乾中女卒；", "艮化风内少男倾，", "兑化山中少女卒。", "此是八宫来入墓，", "十人得病九人故”。"],
+          "yi": ["苍屏这样说：", "「乾化入艮，父亲遭丧；", "坤化入巽，母亲忧亡；", "震化入坤，长男有厄；", "巽化入坤，长女当灾。", "坎化入巽，中男遭厄；", "离化入乾，中女暴卒；", "艮化入风（巽），少男倾倒；", "兑化入山（艮），少女暴卒。", "这是八宫化来入墓，", "十个人得病九个亡故」。"],
+          "en": ["Cangping says:", "'Qian changing into Gen, the father is in mourning;", "Kun changing into Xun, the mother worried to death;", "Zhen changing into Kun, calamity for the eldest son;", "Xun changing into Kun, the eldest daughter takes it.", "Kan changing into Xun, calamity for the middle son;", "Li changing into Qian, the middle daughter dies suddenly;", "Gen changing into the wind (Xun), the youngest son topples;", "Dui changing into the mountain (Gen), the youngest daughter dies suddenly.", "These are the eight palaces changing into a tomb,", "and of ten who fall ill nine die.'"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4983, 4986], "literal": ["兄弟", "父母"],
+          "zh": ["以上所言卦墓，", "不可以乾化入墓艮，", "只忧父亡，", "但看病皆不吉。", "设若子占父，", "遇乾化艮，", "谓之应题，", "乃大凶。", "大畜等五卦，", "占病大忌。", "财鬼不动，", "未必丧亡；", "财鬼空亡，", "虽病不死。", "必须把其条贯，", "方可断曰全凶。", "上文所言财鬼发动，", "亦有吉凶之分。", "且如雷火丰卦：", "鬼动忌占兄弟，", "财动忌占父母及本身；", "妻占夫，", "终无凶。", "余卦仿此。"],
+          "yi": ["上面说的卦墓，", "不能把乾化入艮墓，", "只当作忧父亲的亡故；", "而要看占病都不吉。", "假如儿子占父亲，", "遇到乾化艮，", "叫做应题，", "这是大凶。", "大畜等五个卦，", "占病是大忌；", "财和鬼不动，", "不一定死；", "财和鬼空亡，", "虽然有病也不死；", "必须把它的条理理清了，", "才可以断为全凶。", "上文所说的财鬼发动，", "也有吉凶的分别。", "比如雷火丰卦：", "鬼动忌占兄弟，", "财动忌占父母和自己本人；", "妻子占丈夫，", "终究没有凶；", "其余的卦仿此。"],
+          "en": ["As for the tomb hexagrams above,", "one may not take Qian changing into the Gen tomb", "as only a worry for the father's death;", "but must look at illness in all of them as inauspicious.", "Suppose a son divines about his father", "and meets Qian changing into Gen:", "it is called 'answering the topic',", "and is greatly ominous.", "The five hexagrams such as Daxu", "are greatly to be avoided in divining illness;", "if Wealth and the ghost do not move,", "death is not certain;", "if Wealth and the ghost are Void,", "though ill he will not die;", "one must grasp its threads,", "and only then may one judge it wholly ominous.", "The Wealth and ghost moving mentioned above", "also have a division of good and ill.", "For example in the hexagram Feng, Thunder over Fire:", "the ghost moving is to be avoided in divining about brothers,", "Wealth moving in divining about parents and oneself;", "a wife divining about her husband", "has in the end no ill;", "the other hexagrams follow this."] }
+      ],
+      "note": {
+        "yi": "这一节说的是「入墓卦」：两句赋点出十个卦（明夷、观、贲、需、临是「世身入墓」，大畜、丰、同、蛊、夬是「财鬼俱兴」），注里先举观、贲两例讲什么叫「身随鬼入墓」「世随鬼入墓」，再引苍屏的一首歌诀，讲八宫里各卦化入墓（乾化艮、坤化巽、震化坤、巽化坤、坎化巽、离化乾、艮化风、兑化山）对应家里的哪一位亲人有灾——「艮化风内」「兑化山中」的「风」是巽、「山」是艮。「应题」这里译作「answering the topic」，按字面，意思大概是卦象应了所问的人。「同」按上下文是同人。「条贯」是条理、头绪，「必须把其条贯」是说要把这些条件都对上了才可以断为全凶。这里用的是卦名代表一类：文字里提到的卦（观、贲、丰）是举例，「余卦仿此」。注末原文还有一段「虎易评注」，是今人加的，本库不引。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "This section is about the 'tomb hexagrams': two lines of verse name ten hexagrams (Mingyi, Guan, Bi, Xu and Lin as 'the Self and Body entering a tomb', and Daxu, Feng, Tong, Gu and Guai as 'Wealth and the ghost both rising'); the commentary first gives the examples of Guan and Bi to say what 'the Body following the ghost into a tomb' and 'the Self following the ghost into a tomb' mean, and then quotes a verse of Cangping's on which relative in the family is in calamity when each hexagram of the eight palaces changes into a tomb (Qian into Gen, Kun into Xun, Zhen into Kun, Xun into Kun, Kan into Xun, Li into Qian, Gen into the wind, Dui into the mountain) — the 'wind' of 'Gen changing into the wind' is Xun and the 'mountain' of 'Dui changing into the mountain' is Gen. 'Answering the topic' is translated literally, and probably means that the hexagram answers to the person asked about. 'Tong' is Tongren from the context. 'Tiao guan' is orderliness or thread, and 'one must grasp its threads' says that all these conditions must fit before it may be judged wholly ominous. The hexagram names stand for a kind here: the hexagrams mentioned in the text (Guan, Bi, Feng) are examples, and 'the other hexagrams follow this'. At the end of the commentary the original has a further passage, 'Huyi's commentary', added by a modern hand, which this library does not quote. After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.05", "LY.ILL.TXF.07", "LY.ILL.YY.06", "LY.ILL.EL.17", "LY.ILL.EL.18"]
+    },
+    {
+      "id": "LY.ILL.TXF.07",
+      "topic": "生死",
+      "chapter": "天玄赋·十七、疾病章",
+      "chapter_en": "Tianxuan Fu, chapter 17: illness",
+      "title": "男怕长生兼怕未来之节、女嫌沐浴最嫌过去之辰：男子怕鬼爻长生日得病，卦无子孙青龙天医发动则鬼爻墓绝日死；寅日遇火鬼、巳日遇金鬼、申日水土鬼、亥日木鬼谓之长生鬼；先看鬼爻衰旺再论节气（男怕未来节、近节必重、过节无伤）；女人怕鬼爻沐浴日得病（卯日火鬼、午日金鬼、酉日水土鬼、子日木鬼），过节后必重",
+      "rule": {
+        "yi": "男人怕长生，还怕未来的节气；女人嫌沐浴，最嫌过去的日子。注说：男子怕在鬼爻长生的日子得病，和鬼一起衰旺；卦里没有子孙、青龙、天医发动的，鬼爻墓绝的日子就死。又说：寅日遇火鬼、巳日遇金鬼、申日遇水土鬼、亥日遇木鬼，叫长生鬼；占的人遇上，大凶在后面，沉重才会来。凡决断安危，先按鬼爻的衰旺推断，再按节气来论：男人怕未来的节，临近节令必定加重，过了节就没有伤害；节前不重的，一定没有妨碍；如果是久病，应当以四季节候来论，比如木鬼忌秋天的节气，遇节不重，过节一定安。女人最忌在鬼爻沐浴的日子得病。又说：卯日遇火鬼、午日遇金鬼、酉日遇水土鬼、子日遇木鬼，叫沐浴鬼；遇上难痊愈，到后来反而加重；再看节后必定加重，不加重就没有伤害；女人极怕过后的节。",
+        "en": "A man fears the Birth stage and also fears the coming solar term; a woman dislikes the Bath stage and most dislikes the term that has passed. The commentary says: a man fears falling ill on a day when the Pressure line is at Birth, and it rises and falls with the ghost; if the hexagram has no Output, Azure Dragon or Heavenly Doctor moving, he dies on a day when the Pressure line is in a tomb or at Extinction. It says again: a Fire ghost met on a Yin day, a Metal ghost on a Si day, a Water or Earth ghost on a Shen day, a Wood ghost on a Hai day, is called a Birth ghost; one who meets it will have great ill afterwards, and the heaviness only comes later. To decide danger and safety, first judge by the strength of the Pressure line, and then by the solar term: a man fears the coming term, near the term it is surely heavier, and past the term there is no harm; if it is not heavy before the term, there is surely no obstruction; if it is a long illness, one should reason by the seasonal terms of the four seasons, for example a Wood ghost fears the autumn terms, and if on meeting the term it is not heavy, after the term it will surely be at peace. A woman most fears falling ill on a day when the Pressure line is at Bath. It says again: a Fire ghost met on a Mao day, a Metal ghost on a Wu day, a Water or Earth ghost on a You day, a Wood ghost on a Zi day, is called a Bath ghost; met, it is hard to cure, and it becomes heavier afterwards; look next at the term after, when it is surely heavier, and if it is not heavy there is no harm; a woman greatly fears the term that has passed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4989, 4989],
+          "zh": ["男怕长生，", "兼怕未来之节；", "女嫌沐浴，", "最嫌过去之辰。"],
+          "yi": ["男人怕长生，", "还怕未来的节气；", "女人嫌沐浴，", "最嫌过去的日子。"],
+          "en": ["A man fears the Birth stage,", "and also fears the coming solar term;", "a woman dislikes the Bath stage,", "and most dislikes the term that has passed."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4990, 4990],
+          "zh": ["男子怕鬼爻长生日得病，", "与鬼同衰旺。", "卦无子孙、青龙、天医发动，", "鬼爻墓绝日却死。"],
+          "yi": ["男子怕在鬼爻长生的日子得病，", "和鬼一起衰旺；", "卦里没有子孙、青龙、天医发动的，", "鬼爻墓绝的日子就死。"],
+          "en": ["A man fears falling ill on a day when the Pressure line is at Birth,", "and it rises and falls with the ghost;", "if the hexagram has no Output, Azure Dragon or Heavenly Doctor moving,", "he dies on a day when the Pressure line is in a tomb or at Extinction."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4991, 4991],
+          "zh": ["又云：", "寅日遇火鬼，", "巳日遇金鬼，", "申日水土鬼，", "亥日木鬼，", "谓之长生鬼。", "占者遇之，", "大凶在后，", "沉重方来。"],
+          "yi": ["又说道：", "寅日遇火鬼，", "巳日遇金鬼，", "申日遇水土鬼，", "亥日遇木鬼，", "叫做长生鬼；", "占的人遇上它，", "大凶在后面，", "沉重才会来。"],
+          "en": ["It says again:", "a Fire ghost met on a Yin day,", "a Metal ghost on a Si day,", "a Water or Earth ghost on a Shen day,", "a Wood ghost on a Hai day,", "is called a Birth ghost;", "one who meets it", "will have great ill afterwards,", "and the heaviness only comes later."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4992, 4992],
+          "zh": ["凡决安危，", "先以鬼爻衰旺推断，", "次以节气论之。", "凡男怕未来节，", "近节必重，", "过节无伤；", "节前不重者，", "必无妨。", "若是久病，", "当以四时节候论之。", "且如木鬼忌秋间节气，", "遇节不重，", "过节必安。", "女人最忌鬼爻沐浴日得病。"],
+          "yi": ["凡是决断安危，", "先按鬼爻的衰旺推断，", "再按节气来论。", "男人怕未来的节，", "临近节令必定加重，", "过了节就没有伤害；", "节前不重的，", "一定没有妨碍。", "如果是久病，", "应当以四季的节候来论。", "比如木鬼忌讳秋天的节气，", "遇到节不加重，", "过了节一定安。", "女人最忌在鬼爻沐浴的日子得病。"],
+          "en": ["To decide danger and safety,", "first judge by the strength of the Pressure line,", "and then by the solar term.", "A man fears the coming term;", "near the term it is surely heavier,", "and past the term there is no harm;", "if it is not heavy before the term,", "there is surely no obstruction.", "If it is a long illness,", "one should reason by the seasonal terms of the four seasons;", "for example a Wood ghost fears the autumn terms,", "and if on meeting the term it is not heavy,", "after the term it will surely be at peace.", "A woman most fears falling ill on a day when the Pressure line is at Bath."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4993, 4993],
+          "zh": ["又云：", "卯日遇火鬼，", "午日遇金鬼，", "酉日遇水土鬼，", "子日遇木鬼，", "谓之沐浴鬼。", "遇之难痊，", "至后反加沉重。", "次看节后必重，", "不重无伤。", "女人极怕过后之节。"],
+          "yi": ["又说道：", "卯日遇火鬼，", "午日遇金鬼，", "酉日遇水土鬼，", "子日遇木鬼，", "叫做沐浴鬼；", "遇上难痊愈，", "到后来反而加重。", "再看节后必定加重，", "不加重就没有伤害；", "女人极怕过后的节。"],
+          "en": ["It says again:", "a Fire ghost met on a Mao day,", "a Metal ghost on a Wu day,", "a Water or Earth ghost on a You day,", "a Wood ghost on a Zi day,", "is called a Bath ghost;", "met, it is hard to cure,", "and it becomes heavier afterwards.", "look next at the term after, when it is surely heavier,", "and if it is not heavy there is no harm;", "a woman greatly fears the term that has passed."] }
+      ],
+      "note": {
+        "yi": "这一节讲的是「长生鬼」和「沐浴鬼」：鬼爻长生的日子、沐浴的日子得病，加上节气的前后，判轻重。「长生」是十二长生的第一位（生），「沐浴」是第二位；寅日遇火鬼是火长生在寅，巳日遇金鬼是金长生在巳，申日遇水土鬼是水土长生在申，亥日遇木鬼是木长生在亥——所以叫长生鬼；沐浴鬼：卯日火鬼、午日金鬼、酉日水土鬼、子日木鬼，正是沐浴的位置。「未来之节」是还没到的节气，「过去之辰」是已过的日子/节气，男怕节前、女怕节后：男人在近节时必重、过节无伤；女人在节后必重。「四时节候」是二十四节气。这一段和易隐（LY.ILL.YY.10「男忌官鬼长生日得病，女忌官鬼沐浴日得病」）、黄金策（LY.ILL.HJC.05 一带）是同一说，只是这里多了节气的讲法。男女判轻重的方向是相反的，这是这本书的规定，没有解释。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。",
+        "en": "This section is about the 'Birth ghost' and the 'Bath ghost': falling ill on a day when the Pressure line is at Birth or at Bath, together with what comes before or after the solar term, decides light or heavy. 'Birth' is the first place of the twelve stages of growth, and 'Bath' the second; a Fire ghost on a Yin day is Fire's Birth at Yin, a Metal ghost on a Si day is Metal's Birth at Si, a Water or Earth ghost on a Shen day is Water and Earth's Birth at Shen, and a Wood ghost on a Hai day is Wood's Birth at Hai — hence 'Birth ghost'; the Bath ghost: Fire on Mao, Metal on Wu, Water and Earth on You, Wood on Zi, which are exactly the Bath places. 'The coming term' is the solar term not yet arrived, and 'the term that has passed' is the day or term that has gone by: a man fears before the term and a woman after: for a man near the term it is surely heavy and past the term there is no harm; for a woman after the term it is surely heavy. The 'seasonal terms of the four seasons' are the twenty-four solar terms. This passage says the same as the Yi Yin (LY.ILL.YY.10, 'a man should fear falling ill on the day the Pressure line is born, a woman on the day it is at Bath') and the Huangjin Ce (LY.ILL.HJC.05 and around), only with the added account of the solar terms. That the man's and the woman's directions of judging light and heavy are opposite is this book's rule and is not explained. After this chapter the Buyi Daquan also has 'Huyi's commentary' (added by a modern hand), which this library does not quote."
+      },
+      "see": ["LY.ILL.TXF.06", "LY.ILL.TXF.08", "LY.ILL.YY.10", "LY.ILL.HJC.05"]
+    }
+  ]
+}
