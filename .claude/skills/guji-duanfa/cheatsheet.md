@@ -42,22 +42,23 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 六爻 · 疾病(92 条)→ `chapters/六爻/疾病/索引.md`
+## 六爻 · 疾病(132 条)→ `chapters/六爻/疾病/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: whose illness, which line stands for the patient, strong and weak | 2 |
+| 总则 | Principles: whose illness, which line stands for the patient, strong and weak | 7 |
 | 症候 | Symptoms: which organ or part is ill, by phase, trigram, position and spirit | 20 |
 | 病因 | Cause: how the illness was contracted, and from what | 7 |
-| 轻重 | Light or heavy, new or old, better or worse by day and night | 5 |
-| 生死 | Life or death: will the patient recover, and the signs of danger | 11 |
-| 动变 | Moving lines and what they turn into | 5 |
-| 应期 | Timing: when the illness lifts or worsens, and when death may come | 2 |
-| 医药 | Doctors and medicine: which doctor, which remedy, when to treat | 37 |
-| 神祟 | Spirits and curses: prayer, vows and what to sacrifice | 2 |
-| 风险 | Warnings: what to guard against | 1 |
+| 轻重 | Light or heavy, new or old, better or worse by day and night | 6 |
+| 生死 | Life or death: will the patient recover, and the signs of danger | 21 |
+| 动变 | Moving lines and what they turn into | 7 |
+| 应期 | Timing: when the illness lifts or worsens, and when death may come | 3 |
+| 医药 | Doctors and medicine: which doctor, which remedy, when to treat | 50 |
+| 神祟 | Spirits and curses: prayer, vows and what to sacrifice | 5 |
+| 痘疹 | Smallpox and measles | 4 |
+| 风险 | Warnings: what to guard against | 2 |
 
-## 打架 · Where the classics disagree(67 条)
+## 打架 · Where the classics disagree(79 条)
 
 - **LY.ILL.HJC.15 上冲下下冲上，内外感伤：上下有鬼内外两感；内鬼动冲外鬼先伤后感，外鬼动冲内鬼先感后伤**(`chapters/六爻/疾病/症候.md`):两鬼互冲的结果，旧注和王洪绪相反。旧注说「适感而遂伤也」，刚感受了邪就受了伤；卜筮正宗写「适感而适愈也」，刚感受就好了。书里没有再解释，也没有别家的话可对。
   The two disagree on what follows when two Pressure lines clash each other. The old commentary says 'hardly is the evil felt than harm is done', while the Bushi Zhengzong writes 'hardly is it felt than it is cured'. The book explains no further and there is no other voice to check against.
@@ -103,6 +104,30 @@ What is in the library and where; entries where the classics disagree are listed
   What sort of Output is suited to inducing sweat: the old commentary says Output moving in the Kan trigram, whatever its phase; Wang Hongxu says Output that is Water, or moves in the Kan palace, which adds the case of 'being Water'.
 - **LY.ILL.HJC.84 鬼衰属水莫行针：子孙属金利用刀针，鬼爻属水而用刀针则金生水反助病势；土鬼忌热药、水鬼忌寒药（王洪绪：木鬼忌寒药）、火鬼忌风药、金鬼忌丸药**(`chapters/六爻/疾病/医药.md`):哪一种鬼忌用寒药：旧注是水鬼，王洪绪是木鬼；土鬼忌热药、火鬼忌风药、金鬼忌丸药，两家相同。
   Which Pressure avoids cold medicine: the old commentary says the Water Pressure, Wang Hongxu the Wood Pressure; that an Earth Pressure avoids hot medicine, a Fire Pressure wind medicine and a Metal Pressure pills is the same in both.
+- **LY.ILL.ZS.01 断病生死全凭用神：卦名、卦身世身兼用、本命丧门、蛇虎星煞都不验，只有卦变六冲例外**(`chapters/六爻/疾病/生死.md`):断生死看什么：黄金策的病体章除了用神，还讲卦身、世爻、本命爻（LY.ILL.HJC.35、HJC.41、HJC.53、HJC.54）；野鹤说这些并用是舛错，断生死全凭用神，只有卦变六冲例外。
+  What to look at in judging life and death: besides the Subject the Huangjin Ce's chapter on the patient's condition also speaks of the hexagram Body, the Self line and the natal line (LY.ILL.HJC.35, HJC.41, HJC.53, HJC.54); the Old Man of Yehe says that using them together is error, that life and death rest wholly on the Subject, and that a hexagram changing into Six-Clash is the only exception.
+- **LY.ILL.ZS.05 主空无救不分近久非经验之说：野鹤驳《海底眼》《黄金策》，近病久病要分；觉子验得近病旬空又逢三合六合必成久病而终**(`chapters/六爻/疾病/生死.md`):主象落空要不要紧：黄金策（LY.ILL.HJC.37）和《海底眼》说主象落空就没救，不分近病久病；野鹤说这不是经验之谈，近病落空到冲空、实空的日子就好（LY.ILL.ZS.04）。觉子又补一条：近病落旬空遇三合、六合会拖成久病而死。
+  Whether a Void main image matters: the Huangjin Ce (LY.ILL.HJC.37) and the Haidi Yan say that a Void main image has no rescue, without distinguishing recent from long illness; the Old Man of Yehe says this is not drawn from experience, and that a recent illness that falls into Void heals on the day the Void is clashed or filled (LY.ILL.ZS.04). Juezi adds a point: a recent illness in Void that meets a three-harmony or a six-combine drags into a long illness and ends in death.
+- **LY.ILL.ZS.06 用化鬼、鬼化用慎防不测，忌化用、用化忌最难调治：自占病世爻不宜变鬼或化回头克，占兄弟妻子不宜鬼与其用神互变，又不宜兄变财财化兄父化子子化父；父动化鬼是化生，轻病即愈，久病鬼化父、父化鬼皆主危亡**(`chapters/六爻/疾病/生死.md`):「用化鬼」是不是必死：黄金策旧注读作用爻发动又变出鬼爻、没有解救必死（LY.ILL.HJC.44），王洪绪反对拿「用神变官鬼必死」来断（同条）；野鹤的说法在两者之间：用化鬼是凶兆，轻病（父动化鬼是化生）和近病落旬空的可以愈，久病则鬼化父、父化鬼都主危亡。
+  Whether 'the Subject changing into Pressure' is surely fatal: the old commentary of the Huangjin Ce reads it as the Subject line moving and also changing out a Pressure line, and with no rescue he surely dies (LY.ILL.HJC.44), while Wang Hongxu rejects judging 'the Subject changing into Pressure is surely fatal' (same entry); the Old Man of Yehe stands between the two: the Subject changing into Pressure is an ill omen, but a light illness (Resource moving into Pressure is a changing into generation) and a recent illness whose Subject falls into Void can recover, and in a long illness Pressure changing into Resource or Resource into Pressure always means danger of death.
+- **LY.ILL.ZS.18 断是不是出痘：旧法以官鬼旺者是花痘，野鹤试之不验，只看子孙衰旺，子孙旺者出花无碍；日月世爻克子孙、卦得六冲，花未开而先谢（例：占子发热是痘否，兑为泽，次日再占大过之涣）**(`chapters/六爻/疾病/痘疹.md`):怎样断是不是出痘：旧法（书里没有指名）以官鬼旺相的为花痘；野鹤试了不验，说是揣摩之说，只看子孙衰旺。
+  How to judge whether it is smallpox: the old method (which the book does not name) takes a strong Pressure line as smallpox in flower; the Old Man tried it without result, calls it guesswork, and looks only at whether Output is strong or weak.
+- **LY.ILL.ZS.22 占病先分占吉凶、不靠猜症候：野鹤称《黄金策》占疾病首论（五行脏腑、六神症）是「撞门槌」，无益之论悉删；他的办法是先占吉凶，卦吉许以调理即愈，卦凶命延医，鬼动克用神再占鬼神、家宅、坟茔**(`chapters/六爻/疾病/总则.md`):占病开头该讲什么：黄金策的疾病章开头（LY.ILL.HJC.02 到 HJC.05）拿鬼爻的五行、宫和六神去断症候，并且用同一卦兼断死生；野鹤说这是撞门槌，只是猜发冷发热，对病人没有用，全部删掉，改成先占吉凶、再占治法。
+  What the divination of illness should begin with: the opening of the Huangjin Ce's chapter on illness (LY.ILL.HJC.02 to HJC.05) judges the symptoms from the phase of the Pressure line, the palace and the six spirits, and judges life and death from the same hexagram; the Old Man of Yehe says this is a battering ram, only a guess at chills and fever, of no use to the patient, and deletes it all, replacing it with first divining good or ill fortune and then divining the treatment.
+- **LY.ILL.ZS.23 占鬼神看鬼爻的五行与旺衰：鬼休囚或空破墓绝都不是鬼神作祟；旺相是神、休囚是鬼——金是武神西方神/刀剑亡鬼，木是文神东方神/依草附木之妖或刑杖悬梁之鬼，水是河海北方神/水死之鬼，火是火神南方神雷公电母窖灶神/汤火焚烧之鬼，土是土神中央神山川社稷神/墙倒屋塌土死之鬼**(`chapters/六爻/疾病/神祟.md`):怎样认是哪一路神鬼：黄金策旧注（LY.ILL.HJC.50）按日辰的地支推（子是北斗或北阴，亥是溺死鬼），王洪绪按生合世爻或用爻的那一爻带的六神认；觉子这里按鬼爻自己的五行和旺衰认（旺相是神，休囚是鬼），又说鬼休囚或空破墓绝根本不是鬼神作祟。三家的办法各不相同。
+  How to tell which sort of spirit or ghost it is: the old commentary of the Huangjin Ce (LY.ILL.HJC.50) reasons from the branch of the Day (Zi is the Northern Dipper or the North Yin, Hai a drowned ghost), and Wang Hongxu from the six spirits carried by the line that generates or combines with the Self or Subject line; Juezi here tells by the phase and strength of the Pressure line itself (strong is a god, resting or trapped a ghost), and adds that Pressure that is resting or trapped, Void, broken, in a tomb or extinct is not the harm of ghosts and spirits at all. The three ways all differ.
+- **LY.ILL.ZS.25 祭送不是万灵药：时灾瘟癖照法祭送屡验，疯痨气蛊是自己失调、与鬼神无关；野鹤见滇黔蜀粤病不服药专信鬼神、杀牲救命反害命；李我平驳《易冒》《易林补遗》指定关岳、说不祭降灾是邪神，并说此书疾病章言鬼神是从俗**(`chapters/六爻/疾病/神祟.md`):要不要指定是哪位神：《易冒》以鬼临金为关帝、岳王，《易林补遗》以青龙为关圣（李我平点了这两部书）；李我平说这些说法不通，还说「祭者降福、不祭者降灾」是作威作福的邪神。野鹤对祭送的态度是：时灾瘟癖照法祭送灵验，疯痨气蛊与鬼神无关。
+  Whether to name a particular god: the Yi Mao takes Pressure on Metal as Emperor Guan and King Yue, and the Yilin Buyi takes the Azure Dragon as the Sage Guan (Li Woping names the two books); Li Woping says this does not hold, and that 'blessing to those who sacrifice, calamity to those who do not' would make evil gods who lord it and dispense favour. The Old Man's attitude to sacrifice is that for seasonal calamities and epidemics sacrifice by the method proves true, and that madness, consumption, qi disorder and drum-belly have nothing to do with ghosts and spirits.
+- **LY.ILL.ZS.27 鬼是忧神、子孙是喜悦解忧之神：鬼持世或动，得子孙动而制之，此医可请手到成功；子孙临应爻是明医，因为子孙克去的是忧不是邪魔（例：三十余人泪眼相对，子水兄爻旬空，半夜子时退灾）**(`chapters/六爻/疾病/医药.md`):子孙是什么：黄金策旧注、王洪绪都说子孙是医药（LY.ILL.HJC.32）；野鹤说官鬼不是鬼也不是病，是一家人的忧神，子孙不是药，是解忧的喜悦之神，所以「子孙旺动，不药而愈」。
+  What Output is: the old commentary of the Huangjin Ce and Wang Hongxu both say Output is the medicine (LY.ILL.HJC.32); the Old Man says the Pressure line is neither ghost nor illness but the spirit of worry of the whole household, and that Output is not medicine but the spirit of joy that relieves worry, so that 'with Output strong and moving, one recovers without medicine'.
+- **LY.ILL.ZS.30 子孙制鬼最喜旺相生扶：不受刑冲克害、不逢破墓绝空药必见效；子动化鬼化克药不精、化空实空之日有效、化生化旺化进神更灵；古以子动化子药必杂，野鹤说非也，子动化旺子孙是改换药品即比仙丹**(`chapters/六爻/疾病/医药.md`):「子化子」是好是坏：黄金策旧注（LY.ILL.HJC.65）说子孙重叠、或子孙又变子孙，是医生不精、用药杂；王洪绪读作子孙化进神药有效、化退神与伏吟卦不可服；野鹤直接说「古以子动化子，其药必杂，非也」，变成旺相的子孙是另换药品，好比仙丹。
+  Whether 'Output changing into Output' is good or bad: the old commentary of the Huangjin Ce (LY.ILL.HJC.65) says that Output doubled, or Output changing again into Output, means an unskilled doctor and mixed medicines; Wang Hongxu reads it as Output changing into an Advancing spirit making the medicine effective, and a change into a Retreating spirit or a Hidden Chant hexagram meaning it may not be taken; the Old Man says outright that 'the ancients judged Output moving and changing into Output as a surely mixed medicine, and this is wrong', and that a change into a strong Output means the medicine is changed, as good as an elixir.
+- **LY.ILL.ZS.32 父爻持世妙药难调：自占病父持世药不见功宜静养；兄持世有子孙动可延医，嫌鬼旺鬼兴主误服药；财爻持世勿误食肥甘；旺相遇生扶良医有觅，休囚逢冲克无药可医**(`chapters/六爻/疾病/医药.md`):父母持世怎么办：黄金策旧注（LY.ILL.HJC.63）说父母持世可以许经醮保禳、祈祷之后再服药；野鹤说药不见功，宜静养、远色欲、息气恼。兄弟持世饮食减省见 LY.ILL.HJC.46。
+  What to do when Resource holds the Self line: the old commentary of the Huangjin Ce (LY.ILL.HJC.63) says one may vow scriptures, offerings and protective rites and take medicine after praying; the Old Man says the medicine shows no effect and one should rest quietly, keep from lust and calm anger. For Peer holding the Self line reducing food, see LY.ILL.HJC.46.
+- **LY.ILL.ZS.37 占药能不能服以子孙为用神：医生治危症想用某药、行舟远行无处寻医得一奇方、半夜来不及请医，都要占；子孙持世或发动服之立可解忧；子孙不拘五行，旺或动即喜悦之神，不可因金临子孙用针、火属子孙用炙（例：热极用附子肉桂、人参、牛黄）**(`chapters/六爻/疾病/医药.md`):占药看什么：黄金策旧注、王洪绪讲用药（LY.ILL.HJC.76 起）是看官鬼的五行、子孙的五行来定药；李我平、野鹤说占某味药能不能服，拿子孙当用神，子孙持世或发动服了就见效，不拘五行。同样是儿子占父亲的药，一卦看父爻（人参）、一卦看子孙（牛黄），野鹤说要看哪一个动、哪一个持世，在人通变。
+  What to look at in divining medicine: the old commentary of the Huangjin Ce and Wang Hongxu fix the medicine (from LY.ILL.HJC.76 on) by the phase of the Pressure line and of Output; Li Woping and the Old Man say that in divining whether a given medicine may be taken, Output is the Subject, and if Output holds the Self line or moves it works when taken, whatever its phase. Of two hexagrams of a son divining medicine for his father, one looks at the Resource line (ginseng) and the other at Output (bezoar), and the Old Man says one must see which one moves and which holds the Self line, and adapt.
+- **LY.ILL.ZS.40 子孙不是针灸之药，火鬼忌热水鬼忌寒是拘泥：子孙旺动则不药自愈，前贤以金生子孙用针、火持子孙用炙是错；诸书说火鬼旺宜大寒药、水鬼旺宜大热药，李我平举土用神、妻占夫二例驳之，说胶柱决之坑陷人命**(`chapters/六爻/疾病/医药.md`):用药看什么：黄金策旧注、王洪绪（LY.ILL.HJC.76、HJC.81、HJC.84）按官鬼的五行定寒热（火鬼旺用大寒、水鬼旺用大热），按子孙的五行定针灸（子孙属金用刀针、属火用灸）；李我平、野鹤说这是拘泥：子孙旺动本来就不药而愈，不是针灸之药；火鬼可能是用神的元神，不能拿大寒药去攻；死板照大寒大热去断，是坑人性命。
+  What to look at in fixing the medicine: the old commentary of the Huangjin Ce and Wang Hongxu (LY.ILL.HJC.76, HJC.81, HJC.84) fix cold or hot by the phase of the Pressure line (a strong Fire Pressure very cold, a strong Water Pressure very hot) and needle or moxa by the phase of Output (Metal Output knife and needle, Fire Output moxa); Li Woping and the Old Man call this rigid: Output strong and moving means recovery without medicine and is not the medicine of needle and moxa, a Fire Pressure may be the Support of the Subject and cannot be attacked with very cold medicine, and to judge rigidly by very cold and very hot sinks lives.
 - **LY.MARRY.BSQS.09 六亲持世歌：官鬼持世得官，占婚问病俱凶兆；财爻持世，阴爻为妻妾、阳爻为财**(`chapters/六爻/婚姻/风险.md`):同样是官鬼持世，这首歌说「占婚问病俱凶兆」，《天玄赋》总论提纲说「官鬼不宜持世，求名婚娶两相宜」（LY.MARRY.TXF.24）。两处都是口诀，没有注，书里不裁断。《增删卜易》按男女分：女占男，官星持世、合世、生世且旺相是良缘（LY.MARRY.ZS.11）。
   For the same Pressure line holding Self, this rhyme says 'a divination on marriage or illness is an ill omen', while the opening summary of the Tianxuan Fu says 'Pressure should not hold the Self line, but for seeking office and for marrying both are fitting' (LY.MARRY.TXF.24). Both are bare rhymes and the books do not decide between them. The Zengshan Buyi divides by sex: when a woman divines about a man, a Pressure line that holds, combines with or generates the Self line and is strong makes a good match (LY.MARRY.ZS.11).
 - **LY.MARRY.BSYG.05 推占来情：旺相则婚姻官职、休囚则争财退位；内外卦俱旺相者大则求官、次则嫁娶；卦与世爻同克日则必是六畜及婚姻**(`chapters/六爻/婚姻/取象.md`):同一首歌诀，《断易天机》作「卦与世爻同与日」（LY.MARRY.DYTJ.30），这里作「卦与世爻同克日」，一字之差：「同与日」是和日辰相同，「同克日」是一起克日辰。

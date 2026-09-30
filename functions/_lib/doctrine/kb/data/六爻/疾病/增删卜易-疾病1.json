@@ -1,0 +1,422 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "增删卜易",
+  "chapter": "疾病章",
+  "chapter_en": "Chapter on illness",
+  "ranges": {"增删卜易": [12626, 12857]},
+  "units": [
+    {
+      "id": "LY.ILL.ZS.01",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "断病生死全凭用神：卦名、卦身世身兼用、本命丧门、蛇虎星煞都不验，只有卦变六冲例外",
+      "rule": {
+        "yi": "断病的生死，全凭用神，别的都不验：只看卦名的（得明夷、大过、观、贲、蛊、夬、丰、同人、大畜、需就断必死），说本命临死气丧门、寿衣棺木要早备的，说螣蛇动主死、白虎动主丧的，都不灵。恶煞凶神就算临了身命，只要用神、世爻和身爻旺相，你说他是生是死？不看用神也能断生死的，只有卦变六冲一种。",
+        "en": "Life and death in an illness are judged from the Subject alone, and nothing else proves true: judging from the hexagram name alone (Mingyi, Daguo, Guan, Bi, Gu, Guai, Feng, Tongren, Daxu and Xu being called surely fatal), saying that a natal line on the death spirit or the mourning gate means shroud and coffin must be ready early, saying that a moving Coiling Snake means death and a moving White Tiger mourning: none of these is reliable. When fierce spirits and ill stars already sit on the body and the natal line, yet the Subject and the Self and body lines are strong, who is to say he lives or dies? The one case in which life and death may be judged without looking at the Subject is a hexagram changing into a Six-Clash hexagram."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12628, 12628],
+          "zh": ["野鹤曰：人有七情，致生百病，急于问卜以慰其心，奈何卜筮诸书舛错悖谬，令人反无定见，既取用神，又用卦身、世身，兼用本命，又有不看身命用神，单看卦验，卦得明夷、大过、观、贲、蛊、夬、丰、同人、大畜、需者，断之必死。", "又云：本命临死气丧门，衾棺早备。", "又云：蛇动主死，虎动主丧。", "以星煞六神而断生死，独不思恶煞凶神已临身命，而用神世身倘若旺相者，断之生耶？", "死耶？", "余试多年，或生或死，全凭用神，余皆不验。", "内有不看用神而断生死者，惟卦变六冲而已。"],
+          "yi": ["野鹤说：人有七情，生出百病，急着来问卜是想安慰自己的心，可是卜筮的书舛错悖谬，反而让人没有定见：已经取了用神，又用卦身、世身，还兼用本命；又有不看身命和用神、只看卦名的，得到明夷、大过、观、贲、蛊、夬、丰、同人、大畜、需这几卦，就断定必死。", "又说：本命临在死气、丧门上，寿衣棺木要早点备好。", "又说：螣蛇发动主死亡，白虎发动主丧事。", "拿星煞六神来断生死，偏偏不想想恶煞凶神已经临在身命上，而用神、世爻和身爻要是旺相，断他是生呢？", "还是死呢？", "我试了多年，或生或死，全凭用神，其余的都不灵验。", "其中不看用神也能断生死的，只有卦变六冲这一种。"],
+          "en": ["The Old Man of Yehe says: a person has the seven emotions, which breed a hundred illnesses, and he is in haste to ask by divination to comfort his heart; but the divination books are full of error and absurdity and leave people with no settled view: having taken the Subject, they also use the hexagram Body and the Self and body lines, and add the natal line besides; and some do not look at the body, the natal line or the Subject at all, and look only at the hexagram itself, judging that whoever gets Mingyi, Daguo, Guan, Bi, Gu, Guai, Feng, Tongren, Daxu or Xu will surely die.", "It also says: if the natal line sits on the death spirit or the mourning gate, have the shroud and coffin ready early.", "It also says: a moving Coiling Snake means death, and a moving White Tiger mourning.", "They judge life and death by stars and the six spirits, yet never think: if fierce spirits and ill stars already sit on the body and the natal line while the Subject and the Self and body lines are strong, is he judged to live?", "or to die?", "I have tested it for many years: whether he lives or dies rests wholly on the Subject, and the rest proves unreliable.", "Among them the only case in which life and death are judged without looking at the Subject is a hexagram changing into a Six-Clash hexagram."] }
+      ],
+      "dispute": {
+        "yi": "断生死看什么：黄金策的病体章除了用神，还讲卦身、世爻、本命爻（LY.ILL.HJC.35、HJC.41、HJC.53、HJC.54）；野鹤说这些并用是舛错，断生死全凭用神，只有卦变六冲例外。",
+        "en": "What to look at in judging life and death: besides the Subject the Huangjin Ce's chapter on the patient's condition also speaks of the hexagram Body, the Self line and the natal line (LY.ILL.HJC.35, HJC.41, HJC.53, HJC.54); the Old Man of Yehe says that using them together is error, that life and death rest wholly on the Subject, and that a hexagram changing into Six-Clash is the only exception."
+      },
+      "note": {
+        "yi": "野鹤这一段是对整个占病断法的总批评。他驳的是靠卦名、本命丧门、蛇虎星煞断生死的旧法；黄金策病体章断生死靠的是各爻的生克旺衰，不靠星煞。「衾棺」是入殓用的被和棺材。「明夷、大过、观、贲、蛊、夬、丰、同人、大畜、需」是那些书里断必死的十个卦名。",
+        "en": "This passage is the Old Man's general criticism of the whole way of judging illness. What he rejects is the old practice of judging life and death by the hexagram name, by the natal line on the death spirit or mourning gate, and by the stars and the Snake and Tiger; the Huangjin Ce's chapter on the patient's condition judges by the generation, control and strength of the lines and not by stars. 'Quilt and coffin' is the shroud and coffin for the laying-out. Mingyi, Daguo, Guan, Bi, Gu, Guai, Feng, Tongren, Daxu and Xu are the ten hexagram names that those books judge surely fatal."
+      },
+      "see": ["LY.ILL.HJC.35", "LY.ILL.HJC.41", "LY.ILL.HJC.53", "LY.ILL.HJC.54", "LY.ILL.ZS.02", "LY.ILL.ZS.03"]
+    },
+    {
+      "id": "LY.ILL.ZS.02",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "六冲变冲久病难于调治：久病卦逢六冲、卦变六冲，不论用神衰旺，是不治之症；近病逢之不药而愈；久病逢冲必死，六冲变六冲更甚",
+      "rule": {
+        "yi": "久病遇到卦是六冲、又变六冲，不管用神旺衰，是治不好的病；近病遇到它，不吃药也会好。久病遇冲必死，六冲变六冲更是如此，就算用神临着月建、又有生它的爻，也活不了。",
+        "en": "In a long illness, a hexagram that is Six-Clash and changes into Six-Clash is an incurable illness whatever the strength of the Subject; a recent illness that meets it recovers without medicine. A long illness meeting a clash surely means death, and Six-Clash changing into Six-Clash all the more, so that even if the Subject sits on the Month and a line generates it, the patient cannot live."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12629, 12629],
+          "zh": ["六冲变冲，久病难于调治。", "久病者，卦逢六冲，卦变六冲，不论用神之衰旺，乃不治之症也。", "近病逢之，不药而愈。"],
+          "yi": ["六冲卦变成六冲卦，久病难以调治。", "久病的人，卦遇六冲，又变六冲，不管用神是旺是衰，就是治不好的病。", "近病遇到它，不吃药也会好。"],
+          "en": ["A Six-Clash hexagram changing into Six-Clash: a long illness is hard to treat.", "For one long ill, when the hexagram meets Six-Clash and changes into Six-Clash, whether the Subject is strong or weak, it is an incurable illness.", "A recent illness meeting it recovers without medicine."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [13071, 13071],
+          "zh": ["野鹤曰：存前卦者，使知久病逢冲，用神虽临月建，又有戌土之生，亦不能活也；"],
+          "yi": ["野鹤说：留下前面这一卦，是要让人知道久病遇冲，用神即使临着月建，又有戌土生它，也活不了；"],
+          "en": ["The Old Man of Yehe says: the former hexagram is kept so that one may know that in a long illness meeting a clash, even if the Subject sits on the Month and Xu Earth generates it, the patient cannot live;"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12994, 12994],
+          "zh": ["又如：寅月乙酉日(旬空：午未)，占甥久病，得“坤之乾”"],
+          "yi": ["又如：寅月乙酉日（旬空：午、未），占外甥的久病，得坤卦变乾卦。"],
+          "en": ["Another: in the Yin month, on a Yiyou day (void: Wu and Wei), a divination on a nephew's long illness gave Kun changing into Qian."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13042, 13042],
+          "zh": ["久病逢冲必死，矧六冲变六冲乎？", "三月必危。", "果卒于丑月。", "应三月者，酉子为用神，动而逢合之月也，又是冲去戌土，酉金无以为生也。"],
+          "yi": ["久病遇冲必死，何况是六冲变六冲呢？", "三月一定危险。", "果然死在丑月。", "应验在三月，是因为酉金子孙是用神，动了遇到合的月份；又是冲走了戌土，酉金没有东西生它。"],
+          "en": ["A long illness meeting a clash surely means death, let alone Six-Clash changing into Six-Clash.", "The third month will be dangerous.", "He did die in the Chou month.", "It came true in the third month because the You Metal Output line is the Subject, and the month is one in which it moves and meets a combination; besides, Xu Earth is clashed away, and You Metal has nothing to generate it."] }
+      ],
+      "note": {
+        "yi": "书里没有交代断语里的「三月」和实际死的「丑月」是怎么算的，译文按字面。「酉子」按上下文是坤宫里酉金的子孙爻（坤属土，土生金）。野鹤的注留这一卦，是要说明：久病逢冲，用神就算临月建、又有生它的爻，也活不了；同一条注的后半（趋避之法）对应下面的 LY.ILL.ZS.17。",
+        "en": "The book does not say how the 'third month' of the judgment relates to the 'Chou month' in which he in fact died, and the translation follows the letter. 'You Output' is, from the context, the You Metal Output line in the Kun palace (Kun belongs to Earth and Earth generates Metal). The Old Man's note keeps this hexagram to show that in a long illness meeting a clash, the Subject cannot live even if it sits on the Month and a line generates it; the second half of the same note (the method of avoidance) matches LY.ILL.ZS.17 below."
+      },
+      "see": ["LY.ILL.ZS.03", "LY.ILL.ZS.16", "LY.ILL.ZS.17"]
+    },
+    {
+      "id": "LY.ILL.ZS.03",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "卦变绝克新疾亦主危亡：六冲变六冲近病也危，是因为化回头克（巽木变乾金、艮坤变震巽）；化比和、化克去、化回头生，近病吉久病凶（六冲之故）；此外必看用神",
+      "rule": {
+        "yi": "六冲卦变成六冲卦，新得的病也主危亡，是因为变出了回头克：比如巽木变乾金、艮坤变震巽，都叫回头相克，虽然没有入墓入绝，也主危亡。如果变出比和、变出把克去掉的、或者变出回头生，近病吉、久病凶，这是六冲的缘故。除了这种冲克以外，一定要看用神。",
+        "en": "When a Six-Clash hexagram changes into Six-Clash, even a recent illness means danger of death, because of a returning control: Xun Wood changing into Qian Metal, or Gen or Kun changing into Zhen or Xun, are all called a returning control, and though there is no tomb or extinction, they still mean danger of death. If it changes into peace, into a control that removes the danger, or into a returning generation, a recent illness is lucky and a long one unlucky, because of the Six-Clash. Apart from this clash and control, one must look at the Subject."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12630, 12630],
+          "zh": ["卦变绝克，新疾亦主危亡。", "卦变者，亦是六冲而变六冲，何其近病亦危也？", "乃因化回头克耳。", "如巽木变乾金、艮坤变震巽，皆谓之回头相克，虽非墓绝，亦主危亡；", "若化比和、化克去，及化回头生，近病吉，久病凶，六冲之故也。", "除此冲克之外，必看用神。"],
+          "yi": ["卦变出绝克，新得的病也主危亡。", "所说的卦变，也是六冲卦变六冲卦，为什么近病也危险呢？", "是因为变出了回头克。", "比如巽木变乾金、艮坤变震巽，都叫回头相克，虽然没有入墓入绝，也主危亡；", "如果变出比和、变出把克去掉的、以及变出回头生，近病吉，久病凶，这是六冲的缘故。", "除了这种冲克以外，一定要看用神。"],
+          "en": ["A hexagram changing into a fatal control: even a new illness means danger of death.", "The 'hexagram change' here is also a Six-Clash hexagram changing into Six-Clash; why is even a recent illness in danger?", "It is because of the returning control.", "For example Xun Wood changing into Qian Metal, or Gen and Kun changing into Zhen and Xun, are all called mutual returning control, and though there is no tomb or extinction, they still mean danger of death;", "if it changes into peace, into a control that removes the danger, or into a returning generation, a recent illness is lucky and a long one unlucky, because of the Six-Clash.", "Apart from this clash and control, one must look at the Subject."] }
+      ],
+      "note": {
+        "yi": "「回头相克」是动爻变出来的爻反过来克它自己。「巽木变乾金、艮坤变震巽」是八经卦之间的变化：乾金克巽木，震巽木克艮坤土。「化克去」书里没有解释，大概是变出的爻把克用神的那一爻克掉了。",
+        "en": "A 'returning control' is when the line that a moving line changes into controls that line in return. 'Xun Wood changing into Qian Metal, Gen and Kun into Zhen and Xun' are changes between the eight trigrams: Qian Metal controls Xun Wood, and Zhen and Xun Wood control Gen and Kun Earth. The book does not explain 'changing into a control that removes'; it probably means that the line changed into controls away the line that was controlling the Subject."
+      },
+      "see": ["LY.ILL.HJC.44", "LY.ILL.ZS.02"]
+    },
+    {
+      "id": "LY.ILL.ZS.04",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "用遇旬空近病不忧、用逢月破久病难安：自占病世为用，占父母兄弟以其为用；近病用神旬空或化空，无日月动爻冲克则冲空实空之日即愈，逢冲克病虽重不死；月破看用神衰旺；久病用神空破，旺相也无法医治",
+      "rule": {
+        "yi": "自己占病，世爻是用神；占父母、兄弟的病，拿父母、兄弟做用神。近病：用神落旬空或变空，如果没有日月和动爻来冲克，冲空、实空的日子病就好；如果遇到冲克，病再重也不会死。用神逢月破，要看用神旺衰：旺的，到实破那天或出了这个月就好；衰又受克的，一定危险。久病：用神落旬空或月破的，就算用神旺相，也没法医治。",
+        "en": "In divining one's own illness the Self line is the Subject; in divining a parent or brother, the Resource or Peer line is the Subject. A recent illness whose Subject falls into Void or changes into Void heals on the day the Void is clashed or filled if no Day, Month or moving line clashes or controls it; if it meets clash or control, even a heavy illness does not lead to death. If the Subject meets Month-break, look at whether it is strong or weak: if strong, the patient recovers on the day the break is filled or once the month has passed; if weak and controlled, he is surely in danger. In a long illness, if the Subject falls into Void or Month-break, then even if it is strong nothing can be done to treat it."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12631, 12635],
+          "zh": ["用遇寻空，近病何须忧虑；", "用逢月破，久病难许安宁。", "自占病，世为用；", "占父母兄弟，以父母兄弟为用。", "余皆在用神章内详之。", "近病者，用神动静，而值旬空及化空者，若无日月动爻冲克，许冲空、实空之日即愈；", "倘逢冲克，病虽重而不死。", "若值月破，须看用神之衰旺，旺则愈于实破之日，及出月而愈；", "衰而受克者，必危。", "久病者，用神值旬空月破者，即使用神旺相，亦无法医治之。"],
+          "yi": ["用神遇到旬空，近病何必忧虑；", "用神逢月破，久病难得安宁。", "自己占病，世爻是用神；", "占父母、兄弟的病，拿父母、兄弟做用神。", "其余的都在用神章里详细讲了。", "近病：用神动也好静也好，落了旬空或变出空的，如果没有日月和动爻来冲克，断在冲空、实空的日子就好；", "如果遇到冲克，病再重也不会死。", "如果逢月破，要看用神的旺衰，旺的，到实破那天以及出了这个月就好；", "衰又受克的，一定危险。", "久病的，用神落了旬空、月破，即使用神旺相，也没有办法医治。"],
+          "en": ["The Subject meeting Void: why should a recent illness be feared;", "the Subject meeting Month-break: a long illness can hardly be at peace.", "In divining one's own illness, the Self line is the Subject;", "in divining a parent or a brother, the Resource line or the Peer line is the Subject.", "The rest is set out in detail in the chapter on the Subject.", "For a recent illness, if the Subject, moving or still, falls into Void or changes into Void, and no Day, Month or moving line clashes or controls it, promise recovery on the day the Void is clashed or filled;", "if it meets clash or control, the illness, though heavy, does not lead to death.", "If it meets Month-break, one must see whether the Subject is strong or weak: if strong, he recovers on the day the break is filled, or when the month is out;", "if weak and controlled, he is surely in danger.", "In a long illness, if the Subject meets Void or Month-break, then even if the Subject is strong, nothing can be done to treat it."] }
+      ],
+      "note": {
+        "yi": "「寻空」原文如此，按上下文是「旬空」。「冲空」是用冲把落空的爻冲开；「实空」是落空的那个地支值日，把空填实，「实破」同理。这一条讲的是近病和久病要分开断，是下一条（LY.ILL.ZS.05）驳「主空无救」的根据。",
+        "en": "'Xunkong' is written 'searching for the void' in the original, and from the context it is Void. To 'clash Void' is to clash open a line that has fallen into Void; to 'fill Void' is for the branch of the Void line to rule the day and fill the void, and 'fill a break' is the same. This entry judges recent and long illness separately, and is the ground of the next entry (LY.ILL.ZS.05), which rejects 'a Void main image cannot be saved'."
+      },
+      "see": ["LY.ILL.HJC.37", "LY.ILL.ZS.05"]
+    },
+    {
+      "id": "LY.ILL.ZS.05",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "主空无救不分近久非经验之说：野鹤驳《海底眼》《黄金策》，近病久病要分；觉子验得近病旬空又逢三合六合必成久病而终",
+      "rule": {
+        "yi": "主象落空，不能一概说没救、会死在半路，近病和久病要分开断（近病落空，空一出就好）。觉子补充他验过的：近病落旬空，如果又碰上三合、六合，一定拖成久病最后死掉。",
+        "en": "A Void main image cannot be judged in one breath as beyond rescue and doomed to die on the way: recent and long illness must be told apart (a recent illness that falls into Void heals when the Void is out). Juezi adds what he has verified: a recent illness that falls into Void and also meets a three-harmony or a six-combine surely turns into a long illness and ends in death."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12637, 12637],
+          "zh": ["野鹤曰：《海底眼》、《黄金策》皆云：主空无救，中道而殂，不分近病久病，非经验之说也。"],
+          "yi": ["野鹤说：《海底眼》和《黄金策》都说主象落空就没有救、会死在半路，不分近病久病，这不是经验之谈。"],
+          "en": ["The Old Man of Yehe says: the Haidi Yan and the Huangjin Ce both say that a Void main image cannot be saved and one dies on the way, without distinguishing recent from long illness; this is not a saying drawn from experience."] },
+        { "by": "觉子", "book": "增删卜易", "range": [12637, 12637],
+          "zh": ["觉子曰：予得验者，近病值旬空，若逢三合六合者，必成久病而终。"],
+          "yi": ["觉子说：我验过的是，近病遇到旬空，如果又碰上三合、六合，一定拖成久病而死。"],
+          "en": ["Juezi says: what I have verified is that a recent illness meeting Void, if it also meets a three-harmony or a six-combine, surely turns into a long illness and ends in death."] }
+      ],
+      "dispute": {
+        "yi": "主象落空要不要紧：黄金策（LY.ILL.HJC.37）和《海底眼》说主象落空就没救，不分近病久病；野鹤说这不是经验之谈，近病落空到冲空、实空的日子就好（LY.ILL.ZS.04）。觉子又补一条：近病落旬空遇三合、六合会拖成久病而死。",
+        "en": "Whether a Void main image matters: the Huangjin Ce (LY.ILL.HJC.37) and the Haidi Yan say that a Void main image has no rescue, without distinguishing recent from long illness; the Old Man of Yehe says this is not drawn from experience, and that a recent illness that falls into Void heals on the day the Void is clashed or filled (LY.ILL.ZS.04). Juezi adds a point: a recent illness in Void that meets a three-harmony or a six-combine drags into a long illness and ends in death."
+      },
+      "see": ["LY.ILL.HJC.37", "LY.ILL.ZS.04", "LY.ILL.ZS.16"]
+    },
+    {
+      "id": "LY.ILL.ZS.06",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "用化鬼、鬼化用慎防不测，忌化用、用化忌最难调治：自占病世爻不宜变鬼或化回头克，占兄弟妻子不宜鬼与其用神互变，又不宜兄变财财化兄父化子子化父；父动化鬼是化生，轻病即愈，久病鬼化父、父化鬼皆主危亡",
+      "rule": {
+        "yi": "用神变成官鬼、官鬼变成用神，要慎防不测；忌神变成用神、用神变成忌神，最难调治。自己占病，世爻不宜变鬼，也不宜变出回头克；占兄弟、妻子的病，鬼与兄弟、妻子不宜互变，兄变财、财变兄、父变子、子变父也不宜。鬼是父母的元神，父母爻动、变成鬼，是化生，病轻的马上好；久病的，鬼变父、父变鬼，都主危亡。",
+        "en": "The Subject changing into Pressure or Pressure changing into the Subject calls for great care against the unforeseen; the Adversary changing into the Subject or the Subject into the Adversary is hardest to treat. In one's own illness the Self line should not change into Pressure or into a returning control; in a brother's or a wife's illness Pressure and the Peer or Wealth line should not change into each other, and neither should Peer into Wealth, Wealth into Peer, Resource into Output or Output into Resource. Pressure is the Support of Resource, so Resource moving and changing into Pressure is a changing into generation and a light illness heals at once; in a long illness, Pressure changing into Resource or Resource into Pressure always means danger of death."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12638, 12638],
+          "zh": ["用化鬼、鬼化用，慎防不测；", "忌化用，用化忌，最难调治。", "自占病，不宜世爻变鬼，及化回头克；", "占弟兄、妻子，皆不宜鬼变弟兄、妻子，及弟兄、妻子而变鬼。", "又不宜兄变财、财化兄、父化子、子化父。", "野鹤曰：鬼，乃父母之元神，父动化鬼，乃为化生，轻病者即愈；", "久病者，鬼化父、父化鬼，则皆主危亡。", "或曰：用化鬼即为凶兆，假使又值旬空，近病者何以断之？", "余曰：曾有占验，请试详："],
+          "yi": ["用神变成鬼、鬼变成用神，要慎防不测；", "忌神变成用神、用神变成忌神，最难调治。", "自己占病，世爻不宜变成鬼，也不宜变出回头克；", "占兄弟、妻子的病，都不宜鬼变成兄弟、妻子，也不宜兄弟、妻子变成鬼。", "又不宜兄变财、财变兄、父变子、子变父。", "野鹤说：鬼是父母的元神，父母爻动、变成鬼，是化生，病轻的马上好；", "久病的，鬼变父、父变鬼，都主危亡。", "有人说：用神变鬼就是凶兆，假如又落旬空，近病的怎么断？", "我说：曾经有过验的卦，请你仔细看："],
+          "en": ["The Subject changing into Pressure, or Pressure changing into the Subject: beware of the unforeseen;", "the Adversary changing into the Subject, or the Subject into the Adversary, is hardest to treat.", "In divining one's own illness the Self line should not change into Pressure or into a returning control;", "in divining a brother or a wife and children, Pressure should not change into the Peer line or the Wealth line, nor those lines change into Pressure.", "Nor should Peer change into Wealth, Wealth into Peer, Resource into Output, or Output into Resource.", "The Old Man of Yehe says: Pressure is the Support of Resource, and Resource moving and changing into Pressure is a changing into generation, so a light illness heals at once;", "in a long illness, Pressure changing into Resource or Resource into Pressure always means danger of death.", "Someone says: the Subject changing into Pressure is at once an ill omen; suppose it is also Void, how is a recent illness to be judged?", "I say: there was a divination once verified; please examine it in detail:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12639, 12639],
+          "zh": ["如：申月庚寅日(旬空：午未)，占子近病，得“恒之解”"],
+          "yi": ["比如：申月庚寅日（旬空：午、未），占儿子的近病，得恒卦变解卦。"],
+          "en": ["For example: in the Shen month, on a Gengyin day (void: Wu and Wei), a divination on a son's recent illness gave Heng changing into Xie."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12645, 12645],
+          "zh": ["断曰：鬼变子孙，夭折之兆，幸子孙临旬空，近病即愈，恐其难过午年。", "果在出空之日而愈。", "辰年占卦，至午年痘症而死。"],
+          "yi": ["断语：鬼变成子孙，是夭折的兆头，幸好子孙临旬空，近病马上就好，恐怕他过不了午年。", "果然在出空的那天好了。", "辰年占的卦，到午年出痘症死了。"],
+          "en": ["Judgment: Pressure changing into Output is a sign of dying young; luckily Output sits on Void, so the recent illness heals at once, but I fear he will hardly pass the Wu year.", "He did recover on the day the Void was out.", "The divination was made in a Chen year, and in the Wu year he died of smallpox."] }
+      ],
+      "dispute": {
+        "yi": "「用化鬼」是不是必死：黄金策旧注读作用爻发动又变出鬼爻、没有解救必死（LY.ILL.HJC.44），王洪绪反对拿「用神变官鬼必死」来断（同条）；野鹤的说法在两者之间：用化鬼是凶兆，轻病（父动化鬼是化生）和近病落旬空的可以愈，久病则鬼化父、父化鬼都主危亡。",
+        "en": "Whether 'the Subject changing into Pressure' is surely fatal: the old commentary of the Huangjin Ce reads it as the Subject line moving and also changing out a Pressure line, and with no rescue he surely dies (LY.ILL.HJC.44), while Wang Hongxu rejects judging 'the Subject changing into Pressure is surely fatal' (same entry); the Old Man of Yehe stands between the two: the Subject changing into Pressure is an ill omen, but a light illness (Resource moving into Pressure is a changing into generation) and a recent illness whose Subject falls into Void can recover, and in a long illness Pressure changing into Resource or Resource into Pressure always means danger of death."
+      },
+      "note": {
+        "yi": "书中例里，儿子占病，用神是子孙，「鬼变子孙」就是官鬼变成用神。子孙落旬空，所以近病出空之日就好了；但「用化鬼」这个凶兆没有消失，后来在午年死于痘症。",
+        "en": "In the case, a son's illness is divined, so the Subject is Output, and 'Pressure changing into Output' is Pressure changing into the Subject. Output being in Void, the recent illness healed on the day the Void was out; but the ill omen of 'the Subject changing into Pressure' did not go away, and he later died of smallpox in the Wu year."
+      },
+      "see": ["LY.ILL.HJC.44", "LY.ILL.ZS.03", "LY.ILL.ZS.07"]
+    },
+    {
+      "id": "LY.ILL.ZS.07",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "动墓绝、化墓绝须逢生旺，日月克、动爻克最怕休囚：用神入墓入绝或动而化墓化绝，全看旺衰；日月动爻冲克也看用神旺衰，旺者冲去克神之日愈，衰者生助克神之日危",
+      "rule": {
+        "yi": "用神入墓、入绝，或者动了变入墓、变入绝，全看用神旺衰：旺的不必担心，衰的确实令人担忧。日月、动爻来冲克用神，也要看用神旺衰：旺相的，到冲走克神的那天就好；衰弱的，到生助克神的那天就危险。",
+        "en": "A Subject that enters a tomb or extinction, or moves and changes into tomb or extinction, is judged wholly by whether it is strong or weak: a strong one need not be feared, a weak one is truly a cause for worry. When the Day, Month or a moving line clashes or controls the Subject, one also sees whether the Subject is strong or weak: if strong, it heals on the day the controlling spirit is clashed away; if weak, it is in danger on the day the controlling spirit is generated or helped."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12646, 12646],
+          "zh": ["动墓绝、化墓绝，须逢生旺；", "日月克、动爻克，最怕休囚。", "用神逢墓绝，及动而化墓、化绝，全看旺衰，用神旺者何须虑，用神衰者实堪忧。", "日月动爻冲克者，亦须看用神旺衰，旺相者，冲去克神之日而愈，衰弱者，生助克神之日而危。"],
+          "yi": ["用神动而入墓入绝、或变入墓绝，要遇到生旺才行；", "被日月克、被动爻克，最怕用神休囚。", "用神遇到墓绝，以及动而变入墓、变入绝，全看旺衰：用神旺的何必担心，用神衰的确实令人担忧。", "日月、动爻冲克用神的，也要看用神旺衰：旺相的，到冲走克神的那天就好；衰弱的，到生助克神的那天就危险。"],
+          "en": ["A Subject that moves into a tomb or extinction, or changes into tomb or extinction, must meet birth or strength;", "controlled by the Day or Month or by a moving line, what is most feared is that it be resting or trapped.", "A Subject that meets tomb or extinction, or moves and changes into tomb or extinction, is judged wholly by whether it is strong or weak: a strong Subject has nothing to fear, a weak one is truly a cause for worry.", "When the Day, Month or a moving line clashes or controls it, one must also see whether the Subject is strong or weak: if strong, it heals on the day the controlling spirit is clashed away; if weak, it is in danger on the day the controlling spirit is generated or helped."] }
+      ],
+      "note": {
+        "yi": "这一条讲墓绝不是一见就死，要看用神本身旺不旺。和黄金策病体章的 LY.ILL.HJC.41、HJC.54（世鬼入墓、幽明两墓）相比，野鹤把墓绝的后果全交给旺衰去定。",
+        "en": "This entry says that tomb and extinction do not mean death at first sight but depend on whether the Subject itself is strong. Compared with LY.ILL.HJC.41 and HJC.54 in the Huangjin Ce's chapter on the patient's condition (Pressure on the Self line entering the tomb, the dark and bright tombs), the Old Man of Yehe leaves the outcome of tomb and extinction wholly to strength and weakness."
+      },
+      "see": ["LY.ILL.HJC.41", "LY.ILL.HJC.47", "LY.ILL.ZS.08"]
+    },
+    {
+      "id": "LY.ILL.ZS.08",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "散破无援脱气、忌摇元动仇兴：用神临散、遇破、全无生扶、脱气，四者若无根蒂少吉多凶；忌神动克用神，有元神发动可救，只恐仇神又动则凶危",
+      "rule": {
+        "yi": "用神临在散上、遇到破、完全没有生扶、或者被脱气，这四种情形要是没有根基，少吉多凶。忌神动来克用神，如果有元神发动，就许它有救，只怕仇神又动，就主凶险危急。",
+        "en": "If the Subject sits on dispersal, meets a break, has no generation or support at all, or is drained of qi, and it has no root in any of these four cases, there is little luck and much ill. When the Adversary moves and controls the Subject, if the Support moves, promise rescue; the only fear is that the Enemy spirit moves as well, and then it means danger and misfortune."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12647, 12647],
+          "zh": ["散破无援脱气，忌摇元动仇兴。", "用神临散、遇破，及全无生扶、或脱气，此四者若无根蒂，少吉多凶。", "忌神动克用神，若有元神发动，许之有救，只恐仇神又动，当主凶危，宜于元神章内详之。"],
+          "yi": ["散、破、没有援助、脱气；忌神摇动、元神发动、仇神兴起。", "用神临在散上、遇到破，以及完全没有生扶、或者被脱气，这四种情形要是没有根基，少吉多凶。", "忌神动来克用神，如果有元神发动，就许它有救，只怕仇神又动，就主凶险危急，要在元神章里详看。"],
+          "en": ["Scattered, broken, without help, drained of qi; the Adversary stirs, the Support moves, the Enemy rises.", "If the Subject sits on dispersal, meets a break, has no generation or support at all, or is drained of qi, and it has no root in any of these four cases, there is little luck and much ill.", "When the Adversary moves and controls the Subject, if the Support moves, promise rescue; the only fear is that the Enemy spirit moves as well, and then it means danger and misfortune; see the chapter on the Support for the details."] }
+      ],
+      "note": {
+        "yi": "「散」「破」是爻被日月冲散、冲破；「脱气」是爻的力量被它生出的爻泄走。「仇神」是和元神作对的那一类爻（生忌神、克元神），详见书里的元神章。",
+        "en": "'Dispersed' and 'broken' are a line clashed apart or broken by the Day or Month; 'drained of qi' is a line whose strength is leaked away by the line it generates. The 'Enemy spirit' is the kind of line that works against the Support (it generates the Adversary and controls the Support); see the chapter on the Support in the book."
+      },
+      "see": ["LY.ILL.HJC.37", "LY.ILL.ZS.07"]
+    },
+    {
+      "id": "LY.ILL.ZS.09",
+      "topic": "轻重",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "鬼持世病虽轻而难疗有两说：自占病鬼持世难痊，子孙克鬼目下愈而终不断根，鬼临帝旺长生必久病；代占六亲之病，鬼持世是忧郁之状，子孙发动克去忧郁则平安（觉子：占父母、妻占夫病不宜子孙动）",
+      "rule": {
+        "yi": "官鬼持世，病虽轻也难治，有两种情形。自己占病：官鬼持世，病难痊愈；就算子孙发动、克掉身边的鬼，眼前好了，终究断不了根，不然就又生别的病，叫「病不离身，身不离药」；官鬼持世又临帝旺、长生的，一定得长久的病。替别人占六亲的病：官鬼持世是忧郁的样子，只喜欢子孙发动、克掉这份忧郁，就算用神衰弱也管保平安。觉子补充：这个办法用于占自己和兄弟、儿子、妻子；占父母的病，官鬼是父母的元神；妻子占丈夫的病，鬼是用神，子孙一动反而伤它。",
+        "en": "A Pressure line holding the Self line means that even a light illness is hard to treat, and there are two cases. In divining one's own illness: with Pressure holding the Self line the illness is hard to heal; even if Output moves and controls away the Pressure by one's side, so that he recovers for the present, the root is never cut, or else another illness grows, which is called 'the illness does not leave the body, the body does not leave medicine'; if Pressure holds the Self line and sits on Peak or Birth, he surely gets a long-lasting illness. In divining a relation's illness for another: Pressure holding the Self line is the picture of worry and gloom, and all that is wanted is Output moving to control away this gloom, and then even if the Subject is weak, peace is assured. Juezi adds: this method serves for divining oneself and a brother, son or wife; in divining a parent's illness Pressure is the Support of the Resource line, and when a wife divines her husband's illness Pressure is the Subject, so a moving Output harms it instead."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12648, 12648],
+          "zh": ["鬼持世，病虽轻而难疗。", "此有两说："],
+          "yi": ["官鬼持世，病虽轻也难医治。", "这里有两种说法："],
+          "en": ["A Pressure line holding the Self line: though the illness is light it is hard to treat.", "There are two views here:"] },
+        { "by": "野鹤", "book": "增删卜易", "range": [12649, 12649],
+          "zh": ["①自占病，官鬼持世，其病难痊，虽得子动，克去身边之鬼，目下虽愈，终不断根，不然，复生他病；", "此之谓：病不离身，身不离药。", "若官鬼持世，而临帝旺长生者，必得久远疾病。"],
+          "yi": ["①自己占病，官鬼持世，这病难以痊愈，即使子孙发动、克掉身边的鬼，眼下虽然好了，终究断不了根，不然就又生出别的病；", "这就叫：病离不开身，身离不开药。", "如果官鬼持世，又临在帝旺、长生上，一定得长久的疾病。"],
+          "en": ["1. In divining one's own illness, with Pressure holding the Self line the illness is hard to heal; even if Output moves and controls away the Pressure by one's side, so that he recovers for the present, the root is never cut, or else another illness grows;", "This is what is meant by: the illness does not leave the body, and the body does not leave medicine.", "If Pressure holds the Self line and sits on Peak or Birth, he surely gets a long-lasting illness."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [12651, 12651],
+          "zh": ["②代占六亲之病，若见官鬼持世，乃忧郁之状，惟喜子孙发动，克去我之忧郁，即使用神衰弱，管许平安。"],
+          "yi": ["②替别人占六亲的病，如果见到官鬼持世，那是忧郁的样子，只喜欢子孙发动，克掉我的忧郁，就算用神衰弱，也管保平安。"],
+          "en": ["2. In divining the illness of a relation for another, if Pressure holds the Self line it is the picture of worry and gloom; all that is wanted is Output moving to control away my worry, and then even if the Subject is weak, peace is assured."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12652, 12652],
+          "zh": ["如：申月壬子日(旬空：寅卯)，占子病，得“天山遁”"],
+          "yi": ["比如：申月壬子日（旬空：寅、卯），占儿子的病，得天山遁卦。"],
+          "en": ["For example: in the Shen month, on a Renzi day (void: Yin and Mao), a divination on a son's illness gave Dun (Heaven over Mountain)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12683, 12683],
+          "zh": ["断曰：令郎今日即愈。", "彼问：何以知之？", "余曰：官鬼持世，尔之忧也，今日子日，冲去忧心，管许立愈。", "果愈于本日。"],
+          "yi": ["断语：令郎今天就会好。", "他问：怎么知道的？", "我说：官鬼持世，是你的忧愁，今天是子日，冲走了忧心，保证马上好。", "果然当天就好了。"],
+          "en": ["Judgment: your son will recover today.", "He asked: how do you know?", "I said: Pressure holds the Self line, which is your worry; today is a Zi day, which clashes the worry away, and he is sure to recover at once.", "He did recover that very day."] },
+        { "by": "觉子", "book": "增删卜易", "range": [12685, 12685],
+          "zh": ["觉子曰：占自身及弟兄子妻者，此法为是；", "倘占父母之灾，官鬼为父母之元神；", "妻占夫病，鬼为用神，岂宜子孙动以伤耶？", "不惟不能解忧，反添忧矣。"],
+          "yi": ["觉子说：占自己以及兄弟、儿子、妻子的病，这个办法是对的；", "如果占父母的灾病，官鬼是父母的元神；", "妻子占丈夫的病，鬼是用神，怎么可以子孙动来伤它呢？", "不但不能解忧，反而添了忧愁。"],
+          "en": ["Juezi says: for divining oneself, a brother, a son or a wife, this method is right;", "but if one divines a parent's affliction, Pressure is the Support of the Resource line;", "and if a wife divines her husband's illness, Pressure is the Subject, so how can Output be right to move and harm it?", "It not only cannot relieve the worry, it adds to it."] }
+      ],
+      "note": {
+        "yi": "野鹤先重写黄金策的「世持鬼爻，病纵轻而难疗」，再拆成两种说法：自占和代占。黄金策旧注（LY.ILL.HJC.34）泛说占病怕鬼持世，王洪绪只限自占；野鹤的第一种和王洪绪一致，第二种是他另加的。觉子的补充和 LY.ILL.HJC.32 里王洪绪说的「占父母、丈夫病不宜子孙发动」是一个意思。",
+        "en": "The Old Man first rewrites the Huangjin Ce's line 'Pressure holding the Self line: though light, hard to treat' and then splits it into two views, one for divining oneself and one for divining another. The old commentary of the Huangjin Ce (LY.ILL.HJC.34) says in general that in divining illness Pressure holding the Self line is feared, and Wang Hongxu limits it to divining one's own; the Old Man's first view agrees with Wang Hongxu and the second is his own addition. Juezi's addition says the same as Wang Hongxu's remark in LY.ILL.HJC.32 that in divining a parent's or a husband's illness Output should not move."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.34", "LY.ILL.ZS.10", "LY.ILL.ZS.11"]
+    },
+    {
+      "id": "LY.ILL.ZS.10",
+      "topic": "医药",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "身临福德势虽险而堪医有两说：自占病子孙持世不药而痊，临空破者实空实破之日愈；代占六亲之病不必看用神衰旺即知其安，因子孙是喜悦之神（觉子：占父母病、妻占夫病子孙动反不是喜悦之神）",
+      "rule": {
+        "yi": "身上临着福德，病势虽凶险也可以医治，有两种情形。自己占病：子孙持世，不吃药也会痊愈；临空亡、月破的，到填实空、填实破的那天就好。替别人占六亲的病：不必看用神旺衰，就知道他平安，因为子孙是喜悦的神，只要旺相，如果在卦中发动，也是吉庆。觉子补充：占父母的病，子孙持世又发动，会克掉父母的元神；妻子占丈夫的病，子孙动会伤丈夫，这些情形它都不是喜悦的神，要通变来看。",
+        "en": "With the body sitting on Output-virtue, though the danger looks great the illness can be treated, and there are two cases. Divining one's own illness: with Output holding the Self line, one recovers without medicine; if it sits on Void or Month-break, he recovers on the day the Void or the break is filled. Divining a relation's illness for another: one need not look at whether the Subject is strong or weak to know he will be safe, because Output is the spirit of joy, and so long as it is strong, if it moves in the hexagram it is also a sign of good fortune. Juezi adds: in divining a parent's illness, an Output line that holds the Self line and moves controls away the Support of the Resource line; when a wife divines her husband's illness, a moving Output harms the husband; in these cases it is not the spirit of joy, and one must look at it flexibly."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12686, 12686],
+          "zh": ["身临福德，势虽险而堪医。", "亦有两说："],
+          "yi": ["身上临着福德，病势虽然凶险还是可以医治。", "也有两种说法："],
+          "en": ["The body sitting on Output-virtue: though the danger looks great, it can be treated.", "There are also two views:"] },
+        { "by": "野鹤", "book": "增删卜易", "range": [12687, 12687],
+          "zh": ["①自占病：子孙持世，不药而痊；", "临空破者，实空、实破之日而愈。"],
+          "yi": ["①自己占病：子孙持世，不吃药也会痊愈；", "临空亡、月破的，到填实空、填实破的那天就好。"],
+          "en": ["1. Divining one's own illness: with Output holding the Self line, one recovers without medicine;", "if it sits on Void or Month-break, he recovers on the day the Void or the break is filled."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [12688, 12688],
+          "zh": ["②代占六亲之病：不必看用神之衰旺，即知其安，何也？", "盖子孙乃喜悦之神，只要旺相，若动于卦中者，亦为吉庆。"],
+          "yi": ["②替别人占六亲的病：不必看用神旺衰，就知道他平安，为什么呢？", "因为子孙是喜悦的神，只要旺相，如果在卦中发动，也是吉庆。"],
+          "en": ["2. Divining a relation's illness for another: one need not look at whether the Subject is strong or weak to know he will be safe. Why?", "Because Output is the spirit of joy, and so long as it is strong, if it moves in the hexagram it is also a sign of good fortune."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12689, 12689],
+          "zh": ["如：寅月乙卯日(旬空：子丑)，占妻病，得“屯之节”"],
+          "yi": ["比如：寅月乙卯日（旬空：子、丑），占妻子的病，得屯卦变节卦。"],
+          "en": ["For example: in the Yin month, on a Yimao day (void: Zi and Chou), a divination on a wife's illness gave Zhun changing into Jie."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12720, 12720],
+          "zh": ["断曰：未日即愈。", "彼问：妻财不上卦，何言即愈？", "余曰：子孙化子孙，乃喜悦之神，嫌其太旺，许未日愈者，木墓于未，未日而喜悦也，尊正若不全安，何喜之有？", "果午日退灾，未日大愈。"],
+          "yi": ["断语：未日就会好。", "他问：妻财不上卦，为什么说马上就好？", "我说：子孙变子孙，是喜悦的神，嫌它太旺，断定未日好，是因为木墓在未，到未日就喜悦了；正室夫人要是不能全然平安，哪里还有喜悦？", "果然午日灾退，未日大好了。"],
+          "en": ["Judgment: she will recover on the Wei day.", "He asked: Wealth is not in the hexagram, so why do you say she will recover at once?", "I said: Output changing into Output is the spirit of joy; I object that it is too strong, and I promise recovery on the Wei day because Wood has its tomb in Wei, so on the Wei day there is joy; if your lady were not wholly safe, what joy would there be?", "Indeed the trouble receded on the Wu day and she was well on the Wei day."] },
+        { "by": "觉子", "book": "增删卜易", "range": [12722, 12724],
+          "zh": ["觉子曰：占父母病，子孙持世而动者，克去父母之元神；", "妻占夫病，子动伤夫，皆非喜悦之神也，须宜通变观之。"],
+          "yi": ["觉子说：占父母的病，子孙持世又发动的，会克掉父母的元神；", "妻子占丈夫的病，子孙动会伤丈夫，这些情形它都不是喜悦的神，要通变来看。"],
+          "en": ["Juezi says: in divining a parent's illness, an Output line that holds the Self line and moves controls away the Support of the Resource line;", "in a wife's divining her husband's illness, a moving Output harms the husband; in these cases it is not the spirit of joy, and one must look at it flexibly."] }
+      ],
+      "note": {
+        "yi": "这一条和上一条（LY.ILL.ZS.09）是一对：那里讲鬼持世，这里讲子孙持世，都拆成自占和代占。黄金策的对应句是 LY.ILL.HJC.35；那里把「身」解作用爻或月卦身，野鹤这里讲的是子孙持世，看的是世爻。「填实」是落空的爻等到自己的地支值日，把空填上。",
+        "en": "This entry is a pair with the previous one (LY.ILL.ZS.09): there Pressure holds the Self line, here Output does, and both are split into divining oneself and divining another. The matching line of the Huangjin Ce is LY.ILL.HJC.35, which explains the 'body' as the Subject line or the month's hexagram Body; what the Old Man treats here is Output holding the Self line, and so he looks at the Self line. To 'fill' is for a Void line to wait until its own branch rules the day and fills the void."
+      },
+      "see": ["LY.ILL.HJC.35", "LY.ILL.ZS.09", "LY.ILL.ZS.13"]
+    },
+    {
+      "id": "LY.ILL.ZS.11",
+      "topic": "动变",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "鬼化长生、忌化进神须虑添灾：鬼动病重，长生于日辰或动化长生病势必增；忌神动化进神同此，化退则渐减；觉子：占父母或妻占夫，鬼是元神、用神，其病即愈",
+      "rule": {
+        "yi": "鬼变入长生、忌神变进神，要担心添灾。鬼爻发动，病势一定重，如果在日辰上长生、或动而变入长生，病势一定加重；克用神的是忌神，它动而变进神，也是这个意思；忌神变退，病就渐渐减轻。觉子补充：鬼是父母的元神，占父母的病，这病马上就好；鬼是妻子占丈夫时的用神，占丈夫的病，也主马上就好。",
+        "en": "Pressure changing into Birth, or the Adversary changing into an Advancing spirit: beware of added trouble. When the Pressure line moves the illness is surely heavy; if it is at Birth on the Day, or moves and changes into Birth, the illness surely grows; what controls the Subject is the Adversary, and if it moves and changes into an Advancing spirit the meaning is the same; if the Adversary changes into Retreat, the illness gradually eases. Juezi adds: Pressure is the Support of the Resource line, so in divining a parent the illness heals at once; Pressure is the Subject when a wife divines her husband, and in divining a husband the illness also heals at once."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12725, 12725],
+          "zh": ["鬼化长生忌化进，须虑添灾。", "鬼爻发动，病势必重，若长生于日辰，或动化长生，病势必增。", "克用神者为忌神，若动化进神，亦同此意；", "忌神化退，其病渐减。"],
+          "yi": ["鬼变入长生、忌神变进神，要担心添灾。", "鬼爻发动，病势一定重，如果在日辰上长生、或动而变入长生，病势一定加重。", "克用神的是忌神，如果它动而变进神，也是同样的意思；", "忌神变退，病渐渐减轻。"],
+          "en": ["Pressure changing into Birth, or the Adversary changing into an Advancing spirit: beware of added trouble.", "When the Pressure line moves the illness is surely heavy; if it is at Birth on the Day, or moves and changes into Birth, the illness surely grows.", "What controls the Subject is the Adversary, and if it moves and changes into an Advancing spirit the meaning is the same;", "if the Adversary changes into Retreat, the illness gradually eases."] },
+        { "by": "觉子", "book": "增删卜易", "range": [12727, 12727],
+          "zh": ["觉子曰：鬼乃父母之元神，占父母者，其病即愈；", "鬼乃妇占夫之用神，占夫者亦主即愈。"],
+          "yi": ["觉子说：鬼是父母的元神，占父母的病，这病马上就好；", "鬼是妻子占丈夫时的用神，占丈夫的病，也主马上就好。"],
+          "en": ["Juezi says: Pressure is the Support of the Resource line, so in divining a parent the illness heals at once;", "Pressure is the Subject when a wife divines her husband, and in divining a husband the illness also heals at once."] }
+      ],
+      "note": {
+        "yi": "这一条是黄金策病体章 LY.ILL.HJC.43（鬼化长生日下沉重）的野鹤版：鬼变入长生病加重，他又把忌神动化进神、化退神放在一起说。觉子的补充和 LY.ILL.HJC.32 里王洪绪的限定一样：占父母、占丈夫时，鬼不是凶煞，是元神或用神，所以鬼动反而是好事。",
+        "en": "This entry is the Old Man's version of LY.ILL.HJC.43 in the chapter on the patient's condition (Pressure changing into Birth, heavy these days): Pressure changing into Birth makes the illness heavier, and he adds the Adversary moving into an Advancing spirit or changing into Retreat. Juezi's addition is the same limit as Wang Hongxu's in LY.ILL.HJC.32: in divining a parent or a husband Pressure is not a fierce killer but the Support or the Subject, and so its moving is on the contrary good."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.43", "LY.ILL.ZS.12"]
+    },
+    {
+      "id": "LY.ILL.ZS.12",
+      "topic": "动变",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "福摇化克卦反吟病必反复：自占病及占弟兄病子孙动制服官鬼病即愈；子孙动而化克，愈后还发；卦得反吟亦同",
+      "rule": {
+        "yi": "子孙发动却变出克、或者卦是反吟，病一定反复。自己占病和占兄弟的病，如果子孙发动、制服官鬼，这病马上就好；如果子孙动而变出克，即使病好了，好了以后还会再发，是反复的象；卦是反吟的，也照这个断。",
+        "en": "Output moving but changing into a control, or the hexagram being a Reversed Chant: the illness surely relapses. In divining one's own illness or a brother's, if Output moves and subdues Pressure, the illness heals at once; if Output moves but changes into a control, then even if he recovers, the illness breaks out again afterward, an image of relapse; a hexagram that is a Reversed Chant is judged the same way."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12728, 12728],
+          "zh": ["福摇化克卦反吟，病必反复。", "自占病及占弟兄病，若得子孙动者，制服官鬼，其病即愈。", "倘子孙动而化克，即使病愈，愈后还发，反复之象。", "卦得反吟者，亦同此断。"],
+          "yi": ["子孙发动却变出克、或者卦是反吟，病一定反复。", "自己占病和占兄弟的病，如果子孙发动、制服官鬼，这病马上就好。", "如果子孙动而变出克，即使病好了，好了以后还会再发，是反复的象。", "卦是反吟的，也照这个断。"],
+          "en": ["Output moving but changing into a control, or the hexagram being a Reversed Chant: the illness surely relapses.", "In divining one's own illness or a brother's, if Output moves and subdues Pressure, the illness heals at once.", "If Output moves but changes into a control, then even if he recovers, the illness breaks out again afterward, an image of relapse.", "A hexagram that is a Reversed Chant is judged the same way."] }
+      ],
+      "note": {
+        "yi": "这一条是黄金策病体章 LY.ILL.HJC.45（福化忌爻，病势增加于小愈）的另一说法：黄金策讲的是病人病稍好就不谨慎，野鹤讲的是子孙动而变出克，病好了还会再发，并把反吟卦也算进来。「反吟」是卦或爻变出与自己相冲的，主反复。",
+        "en": "This entry is another way of putting LY.ILL.HJC.45 in the chapter on the patient's condition (Output changing into an Adversary line, the illness worse after a slight improvement): the Huangjin Ce speaks of the patient becoming careless as soon as he is a little better, while the Old Man speaks of Output moving and changing into a control, so that the illness breaks out again after he has recovered, and he also counts the Reversed Chant hexagram. A 'Reversed Chant' is a hexagram or line that changes into a clash with itself, and means going back and forth."
+      },
+      "see": ["LY.ILL.HJC.45", "LY.ILL.ZS.11"]
+    },
+    {
+      "id": "LY.ILL.ZS.13",
+      "topic": "生死",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "用绝逢生危而有救、主衰得助重亦何妨：用爻受克制刑冲但有日月动爻一个生扶，是绝处逢生临危有救；用神不宜太弱，得生扶拱合重病也不至死；觉子：用神也不宜太旺，过犹不及（旺极的老人卦全胜，壬戌日死）",
+      "rule": {
+        "yi": "用爻在绝地遇到生，危险却有救；主象衰弱得到帮助，病重又有什么妨碍。用爻受到克制、刑冲，只要日月、动爻有一个来生扶它，就是绝处逢生，临危有救。用神不宜太弱，太弱就体虚，一时难以痊愈，但只要得到生扶拱合，就算得重病，也不至于死。觉子补充：用神也不宜太旺，易理贵在中庸，过头和不及一样。",
+        "en": "The Subject meeting life in extinction is in danger yet rescued; a weak main image that is helped, however heavy the illness, what does it matter? If the Subject line is controlled, punished or clashed, but the Day, Month or a moving line has one that generates and supports it, this is meeting life in a place of extinction, and in danger it is rescued. The Subject should not be too weak; if too weak the body is frail and cannot quickly heal, but if it gets generation, support, embracing or combining, then even in a heavy illness he does not die. Juezi adds: the Subject should not be too strong either; the principle of the Changes prizes the mean, and going too far is like falling short."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12730, 12730],
+          "zh": ["用绝逢生，危而有救，主衰得助，重亦何妨。", "用爻受克制、刑冲，但得日月动爻有一而生扶者，乃为绝处逢生，临危有救。", "用神不宜太弱，太弱则体虚，卒难痊愈，但得生扶拱合，虽得重病，亦不至死。"],
+          "yi": ["用爻在绝地遇到生，危险却有救；主象衰弱得到帮助，病重又有什么妨碍。", "用爻受到克制、刑冲，只要日月、动爻有一个来生扶它，就是绝处逢生，临危有救。", "用神不宜太弱，太弱就体虚，一时难以痊愈，但只要得到生扶拱合，就算得重病，也不至于死。"],
+          "en": ["The Subject meeting life in extinction is in danger yet rescued; a weak main image that is helped, however heavy the illness, what does it matter?", "If the Subject line is controlled, punished or clashed, but the Day, Month or a moving line has one that generates and supports it, this is meeting life in a place of extinction, and in danger it is rescued.", "The Subject should not be too weak; if too weak the body is frail and cannot quickly heal, but if it gets generation, support, embracing or combining, then even in a heavy illness he does not die."] },
+        { "by": "觉子", "book": "增删卜易", "range": [12730, 12730],
+          "zh": ["觉子曰：用神亦不宜太旺，易理贵乎中庸，过犹不及。"],
+          "yi": ["觉子说：用神也不宜太旺，易理贵在中庸，过头和不及一样。"],
+          "en": ["Juezi says: the Subject should not be too strong either; the principle of the Changes prizes the mean, and going too far is like falling short."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12731, 12731],
+          "zh": ["如：巳月戊午日(旬空：子丑)，自占病，得“未济之睽”"],
+          "yi": ["比如：巳月戊午日（旬空：子、丑），自己占病，得未济卦变睽卦。"],
+          "en": ["For example: in the Si month, on a Wuwu day (void: Zi and Chou), a divination on one's own illness gave Weiji changing into Kui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12774, 12774],
+          "zh": ["此公寿逾八旬，占病得此，或曰：世临日辰，当权得令，又有寅木生之，应不药而愈。", "余曰：过十八壬戌日，则无碍矣。", "已果卒于壬戌日寅时。"],
+          "yi": ["这位老先生年过八十，占病得到这一卦，有人说：世爻临着日辰，当权得令，又有寅木生它，应当不吃药就好。", "我说：过了十八日壬戌日，就没有妨碍了。", "后来果然死在壬戌日寅时。"],
+          "en": ["This gentleman was over eighty, and having got this hexagram in divining his illness, someone said: the Self line sits on the Day, holds power and is in season, and Yin Wood generates it besides, so he should recover without medicine.", "I said: once the eighteenth day, the Renxu day, is past, there will be no harm.", "He in fact died on the Renxu day, at the Yin hour."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12775, 12775],
+          "zh": ["或问：卦旺极，何所见而断其戍日之危也？", "余曰：正为旺极耳，器满则倾，理之常也，衰极之老人而得全胜之卦，如日将坠而见霞，灯将然而放亮，岂能久乎？", "断壬戌日者，旺火而入墓也，今死寅时者，逢三合也。"],
+          "yi": ["有人问：卦旺到了极点，凭什么看出来断他戌日有危险？", "我说：正因为旺到了极点。器皿满了就会倾倒，这是常理；衰弱到极点的老人得到全盛的卦，就像太阳快落时出现晚霞，灯快灭时放出亮光，怎么能长久呢？", "断在壬戌日，是因为旺火入了墓；现在死在寅时，是因为遇到了三合。"],
+          "en": ["Someone asked: the hexagram is at the extreme of strength; what did you see that made you judge danger on the Xu day?", "I said: precisely because it is at the extreme of strength. A vessel that is full tips over, which is the way of things; a very old and failing man who gets a hexagram of complete strength is like the sun about to set showing its glow, or a lamp about to go out flaring up: how can it last?", "I judged the Renxu day because strong Fire enters its tomb; that he died in the Yin hour is because it met a three-harmony."] }
+      ],
+      "note": {
+        "yi": "这一条是黄金策病体章 LY.ILL.HJC.47（用绝逢生）和 LY.ILL.HJC.48（主衰得助）的合并重写，觉子那一句「用神也不宜太旺」对应 LY.ILL.HJC.36（太刚则折）。书中例是自占病的一卦：卦旺到极点，老人反而在壬戌日死了，用来说明旺过头也不好。案语「过十八壬戌日」按字面译。",
+        "en": "This entry is a combined rewriting of LY.ILL.HJC.47 (the Subject meeting life in extinction) and LY.ILL.HJC.48 (a weak main image that is helped) in the chapter on the patient's condition, and Juezi's line 'the Subject should not be too strong either' matches LY.ILL.HJC.36 (too rigid, it snaps). The case is a divination on one's own illness: the hexagram is at the extreme of strength and the old man on the contrary dies on the Renxu day, which shows that strength carried too far is not good either. The phrase 'once the eighteenth, the Renxu day, is past' is translated as it stands."
+      },
+      "see": ["LY.ILL.HJC.36", "LY.ILL.HJC.47", "LY.ILL.HJC.48"]
+    },
+    {
+      "id": "LY.ILL.ZS.14",
+      "topic": "总则",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "用临日月休寻伏：卦无用神而日月作了用神的，不必寻伏神，许之即愈；伏神衰弱、用神不现，当再占（例：占友痔病，应爻为用神被月刑日冲，令亲人再占）",
+      "rule": {
+        "yi": "卦里没有用神，而日、月作了用神的，不必去找伏神，断他马上就好；伏神衰弱的，应当再占一次。凡是用神不出现，都应当再占。",
+        "en": "When the hexagram has no Subject but the Day or Month acts as the Subject, one need not look for the hidden line; promise recovery at once. If the hidden line is weak, one should divine again. Whenever the Subject does not appear, one should divine again."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12776, 12776],
+          "zh": ["用临日月休寻伏。", "卦无用神，得日月作用神者，不必寻伏神，许之即愈。", "伏神衰弱再宜占。", "凡用神不现，当再占之，前卷伏神章已详注矣。"],
+          "yi": ["用神落在日、月上，就不必去找伏神。", "卦里没有用神，而日、月作了用神的，不必去找伏神，断他马上就好。", "伏神衰弱的，应当再占一次。", "凡是用神不出现，应当再占一次，前一卷的伏神章已经详细讲过了。"],
+          "en": ["When the Subject rests on the Day or Month, do not look for a hidden line.", "When the hexagram has no Subject but the Day or Month acts as the Subject, one need not look for the hidden line; promise recovery at once.", "If the hidden line is weak, one should divine again.", "Whenever the Subject does not appear one should divine again, as the chapter on hidden lines in the previous volume has explained in detail."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12777, 12777],
+          "zh": ["如：申月癸亥日(旬空：子丑)，占友痔病，得“火水未济”"],
+          "yi": ["比如：申月癸亥日（旬空：子、丑），占朋友的痔病，得火水未济卦。"],
+          "en": ["For example: in the Shen month, on a Guihai day (void: Zi and Chou), a divination on a friend's piles gave Weiji (Fire over Water)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12796, 12796],
+          "zh": ["应为用神，月刑日冲，已知亥月不利，未敢竟断，令伊亲人再占。", "同日，子占父病，得“泽天夬”"],
+          "yi": ["应爻是用神，被月刑、日冲，已经知道亥月不利，不敢直接断，叫他的亲人再占一次。", "同一天，儿子占父亲的病，得泽天夬卦。"],
+          "en": ["The Other line is the Subject, punished by the Month and clashed by the Day; I already knew that the Hai month would be unfavourable, but did not dare to judge outright and asked his relative to divine again.", "On the same day, a son divining his father's illness got Guai (Lake over Heaven)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12803, 12803],
+          "zh": ["前卦应临巳火，月刑日克，此卦又是巳父伏于寅木之下，破木不生无焰之火，应十月必危。", "果卒于亥月，以亥水冲破无焰之巳火也。"],
+          "yi": ["前一卦应爻临着巳火，被月刑、日克，这一卦又是巳火父母伏在寅木下面，破了的木生不了没有火焰的火，应验在十月，一定危险。", "果然死在亥月，是因为亥水冲破了没有火焰的巳火。"],
+          "en": ["In the former hexagram the Other line sits on Si Fire, punished by the Month and controlled by the Day; in this hexagram Si Resource is hidden under Yin Wood, and broken Wood cannot generate Fire that has no flame, so the tenth month will surely be dangerous.", "He did die in the Hai month, because Hai Water clashed and broke the flameless Si Fire."] }
+      ],
+      "note": {
+        "yi": "这一条讲的是再占：用神不现、只有伏神而且衰弱时，不要硬断，叫问卦的人再占一次。书中例里朋友的痔病，应爻是用神，被月刑日冲，野鹤不敢断，叫亲人再占；第二卦（儿子占父病）的巳火父母又伏在寅木下面，他才断出亥月必危。后面的 LY.ILL.ZS.15 把这种多占的做法专门讲了一遍。疾病章里伏神的另一面见 LY.ILL.HJC.49。",
+        "en": "This entry is about divining again: when the Subject does not appear and there is only a hidden line, and that one is weak, do not press a judgment but have the asker divine again. In the case of the friend's piles the Other line is the Subject, punished by the Month and clashed by the Day, and the Old Man did not dare to judge but had the relative divine again; in the second hexagram (a son divining his father's illness) Si Resource is again hidden under Yin Wood, and only then did he judge that the Hai month would be fatal. The next entry LY.ILL.ZS.15 speaks of this practice of repeated divination on its own. For the other side of hidden lines in the illness chapter see LY.ILL.HJC.49."
+      },
+      "see": ["LY.ILL.HJC.49", "LY.ILL.ZS.15"]
+    }
+  ]
+}
