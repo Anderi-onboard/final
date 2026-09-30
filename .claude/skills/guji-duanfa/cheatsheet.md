@@ -42,25 +42,25 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 六爻 · 疾病(431 条)→ `chapters/六爻/疾病/索引.md`
+## 六爻 · 疾病(459 条)→ `chapters/六爻/疾病/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: whose illness, which line stands for the patient, strong and weak | 29 |
+| 总则 | Principles: whose illness, which line stands for the patient, strong and weak | 32 |
 | 症候 | Symptoms: which organ or part is ill, by phase, trigram, position and spirit | 44 |
 | 病因 | Cause: how the illness was contracted, and from what | 27 |
 | 轻重 | Light or heavy, new or old, better or worse by day and night | 15 |
-| 生死 | Life or death: will the patient recover, and the signs of danger | 49 |
-| 动变 | Moving lines and what they turn into | 9 |
-| 应期 | Timing: when the illness lifts or worsens, and when death may come | 10 |
-| 医药 | Doctors and medicine: which doctor, which remedy, when to treat | 75 |
+| 生死 | Life or death: will the patient recover, and the signs of danger | 57 |
+| 动变 | Moving lines and what they turn into | 11 |
+| 应期 | Timing: when the illness lifts or worsens, and when death may come | 11 |
+| 医药 | Doctors and medicine: which doctor, which remedy, when to treat | 82 |
 | 神祟 | Spirits and curses: prayer, vows and what to sacrifice | 103 |
-| 他人病 | Whose illness: parents, children, husband or wife, brothers, servants | 13 |
+| 他人病 | Whose illness: parents, children, husband or wife, brothers, servants | 14 |
 | 痘疹 | Smallpox and measles | 47 |
-| 取象 | Reading the images: colour, direction and kind of person or spirit | 2 |
-| 风险 | Warnings: what to guard against | 8 |
+| 取象 | Reading the images: colour, direction and kind of person or spirit | 5 |
+| 风险 | Warnings: what to guard against | 11 |
 
-## 打架 · Where the classics disagree(127 条)
+## 打架 · Where the classics disagree(128 条)
 
 - **LY.ILL.BSZZ.02 出花的是谁就按谁取用神：兄弟出花以兄弟爻为用神、父母爻为原神；子侄以子孙爻为用神、父动克子是凶；妻奴婢妾以财爻为用神、兄动克财不宜**(`chapters/六爻/疾病/痘疹.md`):用神取哪一爻：王洪绪按出花的是谁分开取，兄弟取兄弟爻、子侄取子孙爻、妻奴婢妾取财爻，官鬼爻则是痘花本身；增删卜易的野鹤把出花的几件事分开占，问什么时候出花拿鬼爻当用神（LY.ILL.ZS.19），问吉凶大体上全看子孙爻，不管来问的是谁（LY.ILL.ZS.21）。两家取用神的办法不一样，书里没有裁决。
   Which line is the Subject: Wang Hongxu takes it by who has the pox — the Peer line for a brother, the Output line for a child or nephew, the Wealth line for a wife, servant, maid or concubine — and the Pressure line is the pox flowers themselves; the Old Man of Yehe in the Zengshan Buyi divides the matters of the pox into separate divinations, taking the Pressure line as the Subject for when the pox will come out (LY.ILL.ZS.19) and looking, on the whole, only at the Output line for fortune, whoever is asking (LY.ILL.ZS.21). The two differ on how the Subject is taken, and the books do not decide.
@@ -92,6 +92,8 @@ What is in the library and where; entries where the classics disagree are listed
   Which part of the body each of the eight trigrams governs is put differently in several places. This block has 'Qian the head, Kun the belly, Kan the ears, Li the eyes, Dui the mouth, Gen the hands, Zhen the feet, Xun the thighs'; Sun Bin's song (LY.ILL.DYTJ.03) has Xun the bowels and Gen the hands, the rest the same; the Chan'ao Gezhang (LY.ILL.CA.02) has Xun the hands and Gen the nose, the rest the same; and the smallpox chapter of the Bushi Zhengzong (LY.ILL.BSZZ.23) has Xun the thighs and Gen the hands, as here. Qian the head, Kun the belly, Kan the ears, Li the eyes, Dui the mouth and Zhen the feet are agreed; Xun has three readings (thighs, bowels, hands) and Gen two (hands, nose). The books do not settle it.
 - **LY.ILL.DYTJ.15 卜筮元龟·占疾病凶卦：丰观需剥节旅贲明夷蛊夬及同人，不问四时及生旺，十死分明**(`chapters/六爻/疾病/生死.md`):哪几个卦占病最凶，几本书的名单不同。这一块是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人；阐奥歌章第五首（LY.ILL.CA.06）也是这十一个；孙膑断疾病歌（LY.ILL.DYTJ.06）只有明夷、蛊、剥、夬、丰、同六个；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）；火珠林一段（LY.ILL.DYTJ.17）是同人、丰、夬、蛊、剥、明夷。丰、蛊、夬、同人、明夷几乎处处都在，观、需、贲、旅、剥、节、临、大畜则有的有、有的没有。书里没有裁决。
   Which hexagrams are worst in divining illness is listed differently by several books. This block has Feng, Guan, Xu, Bo, Jie, Lü, Bi, Mingyi, Gu, Guai and Tongren; the fifth poem of the Chan'ao Gezhang (LY.ILL.CA.06) has the same eleven; Sun Bin's song (LY.ILL.DYTJ.06) has only the six Mingyi, Gu, Bo, Guai, Feng and Tong; the Tianxuan Fu (LY.ILL.TXF.06) has Mingyi, Guan, Bi, Xu and Lin (the Self and Body entering a tomb) and Daxu, Feng, Tong, Gu and Guai (Wealth and the ghost both rising); the Huozhu Lin passage (LY.ILL.DYTJ.17) has Tongren, Feng, Guai, Gu, Bo and Mingyi. Feng, Gu, Guai, Tongren and Mingyi are almost everywhere, and Guan, Xu, Bi, Lü, Bo, Jie, Lin and Daxu are in some and not in others. The books do not settle it.
+- **LY.ILL.DYTJ.46 卜筮元龟·占医人善恶：欲占医人善恶详无过贞悔可斟量；子爻在土宜丸药、水宜服汤、木青丸药、金火宜灸灼；子爻旺相好医人、无气杀冲还恶；卦无子爻何以遂、旺相相生药无崇、内外不和服药凶、更遇杀冲须早惧**(`chapters/六爻/疾病/医药.md`):用药按谁的五行选，几本书的做法不同。断易天机卜筮元龟这一首按子爻（药）的五行：子爻属土宜丸药、属水宜汤、属木宜青丸药、属金火宜灸灼；洞林秘诀（LY.ILL.DYTJ.47）说「药色五行自斟酌」，注也是按子孙爻的五行取药色；天玄赋注（LY.ILL.TXF.13）、火珠林（LY.ILL.HZL.09）、易隐（LY.ILL.YY.25）按鬼爻的五行：火鬼宜凉剂、水鬼宜温剂或丸药、木鬼宜针、金鬼宜灸、土鬼宜锉散。两个体系都在：一个看药本身（子孙）的五行，一个看病（鬼）的五行，并且结论不同（比如金爻：子爻属金宜灸灼，金鬼也宜灸，一致；水：子爻是水宜服汤，水鬼宜温剂或丸药，不一致）。书里没有裁决。
+  Whose phase to use in choosing medicine is done differently in different books. The Bushi Yuangui song of the Duanyi Tianji takes the phase of the Output line (the medicine): Output on Earth pills, Water a decoction, Wood green pills, Metal and Fire moxibustion and cautery; the Dongling Mijue (LY.ILL.DYTJ.47) says 'the colour of the medicine is for oneself to weigh by the five phases', taking the colour of the medicine also from the phase of the Output line; the commentary on the Tianxuan Fu (LY.ILL.TXF.13), the Huozhu Lin (LY.ILL.HZL.09) and the Yi Yin (LY.ILL.YY.25) take the phase of the ghost line: a Fire ghost a cooling remedy, a Water ghost a warming remedy or pills, a Wood ghost the needle, a Metal ghost moxa, an Earth ghost cut-and-ground powders. Both systems are there: one looks at the phase of the medicine itself (Output), the other at the phase of the illness (the ghost), and their conclusions differ (for Metal, Output on Metal is fit for moxibustion and a Metal ghost is also fit for moxa, which agree; for Water, Output on Water is fit for a decoction and a Water ghost for a warming remedy or pills, which do not agree). The books do not settle it.
 - **LY.ILL.EL.10 卦无用象：先察伏神，再推日月，再查互卦；互中体用二爻亦无用神方言无救；主卦无用象而伏出无伤决难损命；伏出遭刑克但日月互卦有一用爻亦无害**(`chapters/六爻/疾病/总则.md`):卦里没有用神先查什么：易林补遗的次序是先察伏神，再推日月，日月也没有主象、伏神又被刑伤，才查互卦，互卦里也没有用神才说无救；增删卜易说日、月作了用神的，不必去找伏神，断他马上就好，伏神衰弱、用神不现，就再占一次（LY.ILL.ZS.14）；易冒说卦无用神，元神动则不死，忌神动而用神伏反吉，也必须得日月来救（LY.ILL.YM.17）；黄金策讲的是用爻不上卦要等它值日露出来（LY.ILL.HJC.39）。几家的次序不同，书里没有裁决。
   What to look at first when the hexagram has no Subject: the Yilin Buyi's order is the hidden line first, then the Day and Month, and only when the Day and Month lack the chief image and the hidden line is punished, the nuclear trigrams, and only if these too have no Subject is there no rescue; the Zengshan Buyi says that if the Day or Month serves as the Subject there is no need to look for the hidden line, and one may promise recovery at once, and that if the hidden line is weak and the Subject does not appear, one divines again (LY.ILL.ZS.14); the Yi Mao says that when the hexagram has no Subject, if the Support moves he does not die, and if the Adversary moves and the Subject is hidden it is on the contrary auspicious, but rescue by the Day and Month is still required (LY.ILL.YM.17); the Huangjin Ce speaks of waiting for a Subject line absent from the hexagram to come out on its day (LY.ILL.HJC.39). The orders differ among the books, and none gives a ruling.
 - **LY.ILL.EL.11 用爻遇旬空：暴病逢空可救、久病逢空必死；虽空分衰旺——空而旺相久病无妨、空而休囚遇日冲亦不死；立时空又值旬空无不倾亡；不空而月破必伤身**(`chapters/六爻/疾病/生死.md`):用神落空要不要分近病久病：易林补遗分：暴病逢空可救、久病逢空必死，而且空了还要分衰旺——旺相的久病也无妨，休囚的遇日冲也不死；增删卜易的野鹤同样分近久，近病落空到冲空、实空的日子就好，久病用神落旬空月破则旺相也无法治（LY.ILL.ZS.04、ZS.05）；黄金策旧注和《海底眼》说主象落空占病大忌，要有动爻日辰冲克才有救，不分近久（LY.ILL.HJC.37）。易林补遗的「空旺相久病也无妨」和增删卜易的「久病用神空破，旺相也无法医治」在久病旺相的空爻上说法相反。

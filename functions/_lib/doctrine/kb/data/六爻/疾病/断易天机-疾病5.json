@@ -1,0 +1,158 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易天机",
+  "chapter": "占医药第三十五、占居官有疾病否、总断歌(疾病相关各条)",
+  "chapter_en": "Section 35 on doctors and medicine, whether an official in office has illness, the song of general judgments (the entries on illness)",
+  "ranges": {"断易天机": [1160, 2850]},
+  "units": [
+    {
+      "id": "LY.ILL.DYTJ.44",
+      "topic": "医药",
+      "chapter": "占医药第三十五·鬼谷辨爻法",
+      "chapter_en": "Section 35: Guigu's method of telling the lines apart",
+      "title": "鬼谷辨爻法·占医药：初爻针药、二爻酸药、三爻甘药、四爻苦药、五爻辛药、六爻医师",
+      "rule": {
+        "yi": "鬼谷子辨爻法在占医药一章的表：初爻是针药，二爻是酸药，三爻是甘药，四爻是苦药，五爻是辛药，六爻是医师。",
+        "en": "Guigu's table of the lines for the chapter on doctors and medicine: the first line is needle medicine, the second sour medicine, the third sweet medicine, the fourth bitter medicine, the fifth pungent medicine and the sixth the physician."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1166, 1169],
+          "zh": ["鬼谷辨爻法", "初爻二爻三爻四爻五爻六爻", "针药酸药甘药苦药辛药医师"],
+          "yi": ["鬼谷子辨别各爻的办法", "初爻、二爻、三爻、四爻、五爻、六爻", "针药、酸药、甘药、苦药、辛药、医师"],
+          "en": ["Guigu's method of telling the lines apart", "the first, second, third, fourth, fifth and sixth lines", "needle medicine, sour medicine, sweet medicine, bitter medicine, pungent medicine, the physician"] }
+      ],
+      "note": {
+        "yi": "这是占医药一章开头的一张三行的表，原书排成六列：第一行是「鬼谷辨爻法」这个标题，第二行是初爻到六爻，第三行是六个名目。按位置一格对一爻：初爻针药、二爻酸药、三爻甘药、四爻苦药、五爻辛药、六爻医师。「针药」是用针（针灸）的治法，「酸药」「甘药」「苦药」「辛药」是酸、甘、苦、辛四味的药，表里没有咸味；书里没有解释这六格为什么这样配。这张表的性质和占疾病一章开头的鬼谷辨爻法表（LY.ILL.DYTJ.01）一样，是把六个爻位配给这一章要看的东西。",
+        "en": "This is a three-row table at the head of the chapter on doctors and medicine, laid out in the original as six columns: the first row is the heading 'Guigu's method of telling the lines apart', the second the first to sixth lines, and the third six names. Cell by cell by position: the first line needle medicine, the second sour medicine, the third sweet medicine, the fourth bitter medicine, the fifth pungent medicine, the sixth the physician. 'Needle medicine' is treatment with the needle (acupuncture), and 'sour', 'sweet', 'bitter' and 'pungent medicine' are medicines of the four tastes sour, sweet, bitter and pungent, with no salty taste in the table; the book does not explain why the six cells are matched so. This table is of the same kind as the table under Guigu's name at the head of the chapter on illness (LY.ILL.DYTJ.01), matching the six line positions to what the chapter is about."
+      },
+      "see": ["LY.ILL.DYTJ.01", "LY.ILL.DYTJ.45"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.45",
+      "topic": "医药",
+      "chapter": "占医药第三十五·孙真人论医歌",
+      "chapter_en": "Section 35: Master Sun's song on doctors",
+      "title": "孙真人论医歌：夫病欲医须卦静、爻须旺相子扶身；应爻及外为医者、内卦身爻是病人；医能克病人方治、病若克医药不灵；鬼爻持世人难保、吉杀加临获万全",
+      "rule": {
+        "yi": "病人的病要医治，卦要安静，爻要旺相，子孙扶身；应爻和外卦是医生，内卦和身爻是病人；医生克病，病人才能治；病克医生，药不灵；鬼爻持世，人难保；吉杀加临，可获万全。",
+        "en": "When a man's illness is to be treated the hexagram must be still, the lines strong and Output supporting the Body; the Other line and the outer trigram are the doctor, the inner trigram and the Body line are the sick person; if the doctor controls the illness the person can be treated; if the illness controls the doctor the medicine is not effective; the Pressure line holding the Self, the person can hardly be kept; a lucky killing added, complete safety is gained."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1173, 1173],
+          "zh": ["夫病欲医须卦静，", "爻须旺相子扶身，", "应爻及外为医者，", "内卦身爻是病人。", "医能克病人方治，", "病若克医药不灵，", "鬼爻持世人难保，", "吉杀加临获万全。"],
+          "yi": ["病人的病要医，卦要安静，", "爻要旺相，子孙扶身；", "应爻和外卦是医生，", "内卦和身爻是病人。", "医生能克病，病人才能治；", "病如果克医生，药不灵；", "鬼爻持世，人难保；", "吉杀加临，可获万全。"],
+          "en": ["When a man's illness is to be treated the hexagram must be still,", "the line must be strong and Output support the Body;", "the Other line and the outer trigram are the doctor;", "the inner trigram and the Body line are the sick person.", "if the doctor is able to control the illness the person can be treated;", "if the illness controls the doctor the medicine is not effective;", "The Pressure line holding the Self, the person can hardly be kept;", "a lucky killing added, complete safety is gained."] }
+      ],
+      "note": {
+        "yi": "孙真人是唐代的孙思邈。这首医药歌和阐奥歌章医药章的第二首（LY.ILL.CA.09）几乎一样，前四句（夫病欲医须卦静……内卦身爻是病人）和「鬼爻持世人难保」一字不差，只有三处不同：阐奥歌章是「医来克病人方愈」，这里是「医能克病人方治」；阐奥歌章是「吉曜加临大吉大利」，这里是「吉杀加临获万全」；「病若克医药不灵」两处相同。「吉杀」是带吉的神煞（指吉神吉煞），「获万全」是可得万全。原文孙真人这一首后面，断易天机没有再引注（今人有译文，不收）。这一首的医、病分法（应和外卦是医、内卦和世身是病人）和天玄赋（LY.ILL.TXF.12）是同一套。",
+        "en": "Master Sun is Sun Simiao of the Tang. This song on medicine is almost the same as the second poem in the chapter on medicine in the Chan'ao Gezhang (LY.ILL.CA.09): the first four lines ('when a man's illness is to be treated the hexagram must be still ... the inner trigram and the Body line are the sick person') and 'the Pressure line holding the Self, the person can hardly be kept' are word for word the same, and there are only differences in a few lines: the Chan'ao Gezhang has 'if the doctor controls the illness the person is cured' where this has 'if the doctor is able to control the illness the person can be treated', and 'a lucky star added, greatly favourable' where this has 'a lucky killing added, complete safety is gained'; 'if the illness controls the doctor the medicine is not effective' is the same in both. 'A lucky killing' is a spirit or killing that brings luck, and 'complete safety is gained' is that complete safety can be had. After this poem of Master Sun the Duanyi Tianji cites no commentary (modern hands have added a translation, which is not quoted). The division of doctor and illness in this poem (the Other line and the outer trigram are the doctor, the inner trigram and the Self and Body are the sick person) is the same set as the Tianxuan Fu (LY.ILL.TXF.12)."
+      },
+      "see": ["LY.ILL.CA.09", "LY.ILL.TXF.12", "LY.ILL.DYTJ.46"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.46",
+      "topic": "医药",
+      "chapter": "占医药第三十五·卜筮元龟",
+      "chapter_en": "Section 35: Bushi Yuangui",
+      "title": "卜筮元龟·占医人善恶：欲占医人善恶详无过贞悔可斟量；子爻在土宜丸药、水宜服汤、木青丸药、金火宜灸灼；子爻旺相好医人、无气杀冲还恶；卦无子爻何以遂、旺相相生药无崇、内外不和服药凶、更遇杀冲须早惧",
+      "rule": {
+        "yi": "要占医生的好坏，要看得详细，不过是斟酌贞（内卦）和悔（外卦）。子爻在土，宜用丸药；若是水爻，宜服汤；子爻是木，宜青丸药；金、火两爻，宜灸灼。子爻旺相，是好医生；无气、遭杀冲，还是坏的。卦里没有子爻，怎么能遂心？旺相相生，药就没有祟；内外不和，服药凶；再遇到杀、冲，要早早警惕。",
+        "en": "To divine whether a doctor is good or bad, look in detail; it is no more than weighing the inner (zhen) and outer (hui) trigrams. If the Output line is on Earth, pills are fit; if it is Water, a decoction should be taken; if the Output line is Wood, green pills; if Metal or Fire, moxibustion and cautery are fit. If the Output line is strong the doctor is good; if it has no qi or meets a killing or clash he is still a bad one. With no Output line in the hexagram how can it be accomplished? Strong and generating each other, the medicine has no curse; with the inner and outer not in harmony taking medicine is ominous; and if meeting a killing or clash as well, one must be wary early."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1180, 1180],
+          "zh": ["欲占医人善恶详，", "无过贞悔可斟量（1），", "子爻在土宜丸药，", "若是水爻宜服汤。", "子爻是木青丸药，", "金火两爻宜灸灼，", "子爻旺相好医人，", "无气杀冲还恶矣（2）。", "卦无子爻何以遂，", "旺相相生药无崇，", "内外不和服药凶，", "更遇杀冲须早惧（3）。"],
+          "yi": ["要占医生的好坏，要看得详细，", "不过是斟酌贞（内卦）和悔（外卦）；", "子爻在土，宜用丸药；", "若是水爻，宜服汤药。", "子爻是木，宜青色的丸药；", "金、火两种爻，宜用灸灼；", "子爻旺相，是好医生；", "无气、遭杀冲，还是坏的。", "卦里没有子爻，怎么能遂心？", "旺相相生，药就没有祟；", "内外不和，服药凶；", "再遇到杀、冲，要早早警惕。"],
+          "en": ["To divine whether a doctor is good or bad, look in detail,", "it is no more than weighing the inner (zhen) and outer (hui) trigrams;", "if the Output line is on Earth, pills are fit;", "if it is Water, a decoction should be taken.", "if the Output line is Wood, green pills;", "if Metal or Fire, moxibustion and cautery are fit;", "if the Output line is strong the doctor is good;", "if it has no qi or meets a killing or clash he is still a bad one.", "with no Output line in the hexagram how can it be accomplished?", "strong and generating each other, the medicine has no curse;", "with the inner and outer not in harmony taking medicine is ominous;", "and if meeting a killing or clash as well, one must be wary early."] }
+      ],
+      "dispute": {
+        "yi": "用药按谁的五行选，几本书的做法不同。断易天机卜筮元龟这一首按子爻（药）的五行：子爻属土宜丸药、属水宜汤、属木宜青丸药、属金火宜灸灼；洞林秘诀（LY.ILL.DYTJ.47）说「药色五行自斟酌」，注也是按子孙爻的五行取药色；天玄赋注（LY.ILL.TXF.13）、火珠林（LY.ILL.HZL.09）、易隐（LY.ILL.YY.25）按鬼爻的五行：火鬼宜凉剂、水鬼宜温剂或丸药、木鬼宜针、金鬼宜灸、土鬼宜锉散。两个体系都在：一个看药本身（子孙）的五行，一个看病（鬼）的五行，并且结论不同（比如金爻：子爻属金宜灸灼，金鬼也宜灸，一致；水：子爻是水宜服汤，水鬼宜温剂或丸药，不一致）。书里没有裁决。",
+        "en": "Whose phase to use in choosing medicine is done differently in different books. The Bushi Yuangui song of the Duanyi Tianji takes the phase of the Output line (the medicine): Output on Earth pills, Water a decoction, Wood green pills, Metal and Fire moxibustion and cautery; the Dongling Mijue (LY.ILL.DYTJ.47) says 'the colour of the medicine is for oneself to weigh by the five phases', taking the colour of the medicine also from the phase of the Output line; the commentary on the Tianxuan Fu (LY.ILL.TXF.13), the Huozhu Lin (LY.ILL.HZL.09) and the Yi Yin (LY.ILL.YY.25) take the phase of the ghost line: a Fire ghost a cooling remedy, a Water ghost a warming remedy or pills, a Wood ghost the needle, a Metal ghost moxa, an Earth ghost cut-and-ground powders. Both systems are there: one looks at the phase of the medicine itself (Output), the other at the phase of the illness (the ghost), and their conclusions differ (for Metal, Output on Metal is fit for moxibustion and a Metal ghost is also fit for moxa, which agree; for Water, Output on Water is fit for a decoction and a Water ghost for a warming remedy or pills, which do not agree). The books do not settle it."
+      },
+      "note": {
+        "yi": "「贞悔」是内卦（贞）和外卦（悔），内卦是病人、外卦是医药，拿这两个来比。「子爻」是子孙爻，是药；这里按子爻所属的五行选药：子爻属土宜丸药、属水宜汤药、属木宜青色的丸药、属金或火宜灸灼。「药无崇」的「崇」按「祟」译（药里没有作祟的东西），字面译作 curse。「（1）」「（2）」「（3）」是今人加的注号，那几条注不收。这里的用药是按子孙爻的五行选，天玄赋、火珠林和易隐是按鬼爻的五行选（见「打架」）。",
+        "en": "The 'zhen and hui' are the inner trigram (zhen) and the outer trigram (hui); the inner trigram is the sick person and the outer the medicine, and the two are compared. The 'Output line' is the Output line, the medicine; here the medicine is chosen by the phase the Output line belongs to: Output on Earth is fit for pills, on Water for a decoction, on Wood for green pills, on Metal or Fire for moxibustion and cautery. The 'chong' of 'the medicine has no chong' is rendered 'curse' as a miswriting of 'sui' (a curse), that there is nothing in the medicine that brings a curse. The '(1)', '(2)' and '(3)' are modern annotation marks and those annotations are not quoted. The use of medicine here is chosen by the phase of the Output line, and the Tianxuan Fu, the Huozhu Lin and the Yi Yin choose it by the phase of the ghost line (see the dispute)."
+      },
+      "see": ["LY.ILL.DYTJ.47", "LY.ILL.TXF.13", "LY.ILL.HZL.09", "LY.ILL.YY.25", "LY.ILL.DYTJ.45"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.47",
+      "topic": "医药",
+      "chapter": "占医药第三十五·洞林秘诀",
+      "chapter_en": "Section 35: Dongling Mijue",
+      "title": "洞林秘诀·占医药：卦中子孙爻为药、天医相助如扁鹊；应爻是医生、世爻是病人、病不克药总堪医；鬼爻持世不肯食先宜祀神后服药；病伏为鬼不除根",
+      "rule": {
+        "yi": "卦里的子孙爻是药，有天医相助，像扁鹊一样；卦爻若旺相、伏神没有鬼，病得以除根，治好、安乐。要看医生，应爻就是；病人求医药，世爻来当；病不克药，总是可以医治；药的颜色按五行自己斟酌。鬼爻持世，不肯吃东西，或者过不了喉咙就吐，即使吃下去，病更加重，应当先祭祀神灵，后服药。病伏着成了鬼，不能除根，一时暂且收功，得个大概；再加上生克、杀神来推；病人所适宜的，全在医生。",
+        "en": "In the hexagram the Output line is the medicine, and with the Heavenly Physician helping it is like Bian Que; if the lines are strong and the hidden spirit has no ghost, the illness is rooted out, cured, and one is at ease. If one looks at the doctor, it is the Other line; the sick person seeking medicine, the Self line stands for him; if the illness does not control the medicine it can always be treated; the colour of the medicine is for oneself to weigh by the five phases. With the Pressure line holding the Self he will not take food, or it does not pass the throat and is vomited, and even if it is eaten the illness grows worse; one should first sacrifice to the spirits and then take medicine. With the illness hidden and turned into a ghost, it is not rooted out, for a time it gains merit briefly, roughly so; further work it out by generation, control and the killing spirits; what suits the illness is chosen entirely by the doctor."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1192, 1192],
+          "zh": ["卦中子孙爻为药，", "天医相助如扁鹊，", "卦爻若旺伏无鬼，", "疾得除根治安乐。", "若见医生应爻是，", "病求医药世爻作，", "病不克药总堪医，", "药色五行自斟酌（1）。", "鬼爻持世不肯食，", "或不过喉便吐却，", "纵然吃了病尤加，", "先宜祀神后服药。", "病伏为鬼不除根，", "时暂收功得大略（2），", "更加生克杀神推，", "病撰所宜尽医者（3）。"],
+          "yi": ["卦里的子孙爻是药，", "有天医相助，像扁鹊一样；", "卦爻如果旺相、伏神没有鬼，", "病得以除根，治好、安乐。", "如果要看医生，应爻就是；", "病人求医药，世爻来当；", "病不克药，总是可以医治；", "药的颜色按五行自己斟酌。", "鬼爻持世，病人不肯吃东西；", "或者过不了喉咙就吐了；", "即使吃下去，病更加重；", "应当先祭祀神灵，后服药。", "病伏着成了鬼，不能除根；", "一时暂且收功，得个大概；", "再加上生克、杀神来推；", "病人所适宜的，全在医生。"],
+          "en": ["In the hexagram the Output line is the medicine,", "and with the Heavenly Physician helping it is like Bian Que;", "if the lines are strong and the hidden spirit has no ghost,", "the illness is rooted out, cured, and one is at ease.", "If one looks at the doctor, it is the Other line;", "the sick person seeking medicine, the Self line stands for him;", "if the illness does not control the medicine it can always be treated;", "the colour of the medicine is for oneself to weigh by the five phases.", "the Pressure line holding the Self, he will not take food;", "or it does not pass the throat and is vomited;", "even if it is eaten the illness grows worse;", "one should first sacrifice to the spirits and then take medicine.", "with the illness hidden and turned into a ghost, it is not rooted out;", "for a time it gains merit briefly, roughly so;", "further work it out by generation, control and the killing spirits;", "what suits the illness is chosen entirely by the doctor."] }
+      ],
+      "note": {
+        "yi": "这首洞林秘诀在占医药一章里，和占疾病一章里那一段洞林秘诀（LY.ILL.DYTJ.16）是同一部书的两首：那一首讲鬼、杀、刑克主灾疾，这一首讲医和药。「鬼爻持世不肯食……先宜祀神后服药」和那一首「鬼爻持世须求鬼，若逢服药进灾殃」是同一个意思：鬼爻持世，先要向神灵祈求，然后才服药。「病伏为鬼不除根」按「病爻下伏着鬼」读（病的爻下面伏着鬼爻，所以断不了根），字面译。最后一句「病撰所宜尽医者」读不确定，「撰」有选的意思，这里按「病人所适宜的（药），全在医生（去选）」字面译。「扁鹊」是战国时的名医。「（1）（2）（3）」是今人注号，那几条注不收。天医（天医相助如扁鹊）见 LY.ILL.DYTJ.30、DYTJ.34。药色按五行取，见 LY.ILL.DYTJ.46 的「打架」。",
+        "en": "This Dongling Mijue in the chapter on doctors and medicine is a second poem from the same book as the passage of the Dongling Mijue in the chapter on illness (LY.ILL.DYTJ.16): that one speaks of the ghost, the killings, punishment and control bringing calamity and illness, and this one of the doctor and the medicine. 'The Pressure line holding the Self, he will not take food ... one should first sacrifice to the spirits and then take medicine' and the other one's 'the Pressure line holding the Self, one must seek the ghost, and if one then takes medicine it only advances calamity' are the same sense: with the Pressure line holding the Self one must first pray to the spirits, and only then take medicine. 'With the illness hidden and turned into a ghost, it is not rooted out' is read as a ghost line hidden under the line of the illness (so that the root cannot be cut), and is rendered literally. The last line, 'what suits the illness is chosen entirely by the doctor', is not certain, and 'zhuan' has the sense of choosing; it is rendered literally as 'what suits the illness (medicine) is chosen entirely by the doctor'. Bian Que was a famous physician of the Warring States. The '(1)', '(2)' and '(3)' are modern annotation marks and those annotations are not quoted. For the Heavenly Physician (the Heavenly Physician helping) see LY.ILL.DYTJ.30 and DYTJ.34. For the colour of the medicine taken by the five phases see the dispute in LY.ILL.DYTJ.46."
+      },
+      "see": ["LY.ILL.DYTJ.16", "LY.ILL.DYTJ.46", "LY.ILL.DYTJ.30", "LY.ILL.DYTJ.34"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.48",
+      "topic": "生死",
+      "chapter": "占官·占居官有疾病否",
+      "chapter_en": "Divining office: whether an official in office has illness",
+      "title": "占居官有疾病否：卦变为囚死乡居官身病至衰亡、无气带杀终有祸更值空亡必有丧；鬼动若逢休废地此身退位终无位、胎没并之世自微更加刑杀为衰",
+      "rule": {
+        "yi": "占在任的官有没有疾病：凡是卦变到囚、死的地方，在任的官身上有病，以至衰亡；无气又带杀，终究有祸，再遇上空亡，必定有丧。鬼动，若逢到休、废的地方，这个人退位，终究没有官位；胎没并起来，世自己就衰微，再加刑、杀，就是衰败了。",
+        "en": "On whether an official in office has illness: whenever the hexagram changes into a place of trapped or dead, the official in office falls ill, even to decline and death; without qi and bearing a killing, in the end there is calamity, and meeting Void as well there is surely a death. The ghost moving, if it meets a place of resting or ruin, this person leaves office and in the end has no post; with Womb and Submerged joined, the Self itself is faint, and with punishment and killings added it is decline."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2682, 2683],
+          "zh": ["占居官有疾病否云：", "凡卦变为囚死乡，", "居官身病至衰亡，", "无气带杀终有祸，", "更值空亡必有丧。", "鬼动若逢休废地，", "此身退位终无位，", "胎没并之世自微，", "更加刑杀为衰耳。"],
+          "yi": ["占在任的官有没有疾病，歌诀说：", "凡是卦变到囚、死的地方，", "在任的官身上有病，以至衰亡；", "无气又带着杀，终究有祸；", "再遇上空亡，必定有丧。", "鬼动，若逢到休、废的地方，", "这个人退位，终究没有官位；", "胎没并起来，世自己就衰微，", "再加刑、杀，就是衰败。"],
+          "en": ["On whether an official in office has illness it says:", "Whenever the hexagram changes into a place of trapped or dead,", "the official in office falls ill, even to decline and death;", "without qi and bearing a killing, in the end there is calamity,", "and meeting Void as well there is surely a death.", "The ghost moving, if it meets a place of resting or ruin,", "this person leaves office and in the end has no post;", "with Womb and Submerged joined, the Self itself is faint,", "and with punishment and killings added it is decline."] }
+      ],
+      "note": {
+        "yi": "这首在占官一章的「占居官有疾病否」一题下，问的是在任的官会不会生病。「囚死乡」是囚、死两种状态所在的地方（旺相休囚死里的囚和死）；「卦变为囚死乡」是卦（或世爻）变到囚死的地方。「胎没」是什么书里没有说，「胎」和「没」是两个名目，这里字面译作 Womb and Submerged；「并之」是并在一起。这首歌前半是说身病，后半转到「退位无位」的官运上，所以放在一起收。这一首在同一书里出现两次（一次是歌诀，一次是今人译文里重复的标题），译文不收。前半的意思（状态衰败、又带杀、再遇空亡则死）和孙膑歌「卦变墓乡须丧命」（LY.ILL.DYTJ.07）、天玄赋的「入墓卦」（LY.ILL.TXF.06）是同一类。",
+        "en": "This poem is under the heading 'divining whether an official in office has illness' in the chapter on divining office, and asks whether an official in office will fall ill. The 'place of trapped or dead' is the place where the two states of trapped and dead (of strong, helped, resting, trapped, dead) lie; 'the hexagram changing into a place of trapped or dead' is the hexagram (or the Self line) changing into a place of trapped or dead. What 'Womb and Submerged' is the book does not say, and 'tai' and 'mo' are two names, rendered literally as Womb and Submerged; 'bing zhi' is joined together. The first half of the poem speaks of illness of the body, and the second half turns to fortune in office, 'leaves office and has no post', and so they are taken together. This poem appears twice in the same book (once as the verse and once as a repeated heading in a modern translation), and the translation is not quoted. The sense of the first half (a state of decline, bearing a killing, and meeting Void as well means death) is of the same kind as Sun Bin's song, 'if the hexagram changes into the tomb quarter life will surely be lost' (LY.ILL.DYTJ.07), and the Tianxuan Fu's 'hexagrams that enter tombs' (LY.ILL.TXF.06)."
+      },
+      "see": ["LY.ILL.DYTJ.07", "LY.ILL.TXF.06"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.49",
+      "topic": "总则",
+      "chapter": "总断歌",
+      "chapter_en": "The song of general judgments",
+      "title": "总断歌·占病几句：父病嫌大杀；无鬼病难疗；鬼旺主发狂；请看考鬼历、祷谢得安康",
+      "rule": {
+        "yi": "总断歌里说到病的几句：父亲有病，忌讳大杀；没有鬼，病难以治疗；鬼旺，主发狂；请看考察鬼历，祷告酬谢，得到安康。",
+        "en": "The lines of the song of general judgments that speak of illness: for a father's illness the Great Killing is disliked; with no ghost the illness is hard to treat; with the ghost strong it means madness; look up and examine the ghost calendar, pray and give thanks, and health and peace are gained."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2831, 2831],
+          "zh": ["父病嫌大杀。"],
+          "yi": ["父亲有病，忌讳大杀。"],
+          "en": ["for a father's illness, the Great Killing is disliked."] },
+        { "by": "经", "book": "断易天机", "range": [2837, 2837],
+          "zh": ["无鬼病难疗。"],
+          "yi": ["没有鬼，病难以治疗。"],
+          "en": ["with no ghost the illness is hard to treat."] },
+        { "by": "经", "book": "断易天机", "range": [2840, 2840],
+          "zh": ["鬼旺主发狂。"],
+          "yi": ["鬼旺，主发狂。"],
+          "en": ["with the ghost strong it means madness."] },
+        { "by": "经", "book": "断易天机", "range": [2843, 2843],
+          "zh": ["请看考鬼历，", "祷谢得安康。"],
+          "yi": ["请看考察鬼历，", "祷告酬谢，得到安康。"],
+          "en": ["look up and examine the ghost calendar,", "pray and give thanks, and health and peace are gained."] }
+      ],
+      "note": {
+        "yi": "这是断易天机里一首长的「总断歌」中说到病的几句，歌里每句后面的括号是今人加的注释（不收），所以这里每一句单独收一段。「大杀」是大杀（天哭杀一类的凶神，LY.ILL.DYTJ.33）。「鬼旺主发狂」的「发狂」是神志失常，和天玄赋「朱雀鬼：狂言乱语」（LY.ILL.TXF.03）、卜筮元龟「狂言乱语失精神」（LY.ILL.DYTJ.10）是同一类。「考鬼历」读不确定，字面是「察看鬼的历（历书）」，大概是查是哪一路鬼神、在哪一天作祟，再祷谢；「祷谢」是祷告和酬谢（还愿）。「无鬼病难疗」和「卦中无鬼病难医」（LY.ILL.DYTJ.02）是同一条。歌里「空亡母不长」一句不能确定是不是专说病，不收。",
+        "en": "These are the lines that speak of illness in a long 'song of general judgments' in the Duanyi Tianji, and the brackets after each line in the song are notes added by a modern hand (not quoted), so here each line is taken as a passage of its own. The 'Great Killing' is a fierce spirit of the Weeping Killing kind (LY.ILL.DYTJ.33). 'With the ghost strong it means madness' has 'madness' as losing one's mind, of the same kind as the Tianxuan Fu's 'the Vermilion Bird ghost: raving and wild speech' (LY.ILL.TXF.03) and the Bushi Yuangui's 'raving and wild speech, losing the wits' (LY.ILL.DYTJ.10). 'Examining the ghost calendar' is not certain and is literally 'looking at and examining the ghost's calendar', probably checking which ghost or spirit brings the curse and on which day, and then praying and giving thanks; 'praying and giving thanks' is praying and thanking (redeeming a vow). 'With no ghost the illness is hard to treat' is the same entry as 'with no ghost in the hexagram the illness is hard to treat' (LY.ILL.DYTJ.02). The line in the song 'Void, the mother is not long-lived' cannot be taken to be specially about illness and is not taken."
+      },
+      "see": ["LY.ILL.DYTJ.02", "LY.ILL.DYTJ.33", "LY.ILL.DYTJ.24"]
+    }
+  ]
+}
