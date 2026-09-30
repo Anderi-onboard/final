@@ -1,0 +1,826 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "病体",
+  "chapter_en": "The patient's condition",
+  "ranges": {"卜筮大全": [6878, 6971], "卜筮正宗": [2362, 2412]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.32",
+      "topic": "医药",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "先看子孙：能克制官鬼，古人叫解神、又名福德，占病里就是医药；卦中无它则鬼无制伏、服药不效祷神不灵；要生旺有气，日辰动爻生扶则吉、冲坏则凶；占父母丈夫病不宜它发动",
+      "rule": {
+        "yi": "断病先看子孙爻。子孙能克制官鬼这个凶煞，古人叫它解神，又叫福德，占病时它又是医药。卦里没有子孙，鬼就没有东西制伏，吃药没有效果，祷告求神也不灵。子孙要得令有力，不要衰弱、被困、死、绝；日辰、动爻来生它、扶它就吉，来冲它、破坏它就凶。替父母或丈夫占病，子孙不宜发动：动了会伤克夫星，又克伤父母爻的原神。",
+        "en": "In judging illness look first at Output. Output can control and restrain the Pressure killer; the ancients called it the relieving spirit and also Output-virtue, and in divining illness it is also the medicine. If there is no Output in the hexagram, Pressure has nothing to restrain it: medicine has no effect and prayer to the spirits is not answered. Output should be in season and have force, not resting, trapped, dead or extinct; if the Day or a moving line generates and supports it, it is lucky, and if they clash and spoil it, unlucky. In divining the illness of a parent or a husband, Output should not move: moving, it harms and controls the husband star and also harms the Support of the Resource line."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6878, 6878],
+          "zh": ["既明症候，当决安危，再把爻神搜索；", "个中玄妙，重加参考，方穷就里之精微。", "先看子孙，最喜生扶拱合；"],
+          "yi": ["已经弄明白了症候，就要判断安危，再去逐个搜查爻神；", "其中的玄妙，要再三参考，才能穷尽里头的精微。", "先看子孙爻，最喜欢有生、有扶、有拱、有合；"],
+          "en": ["Having understood the symptoms, one must decide danger or safety, and then search out the line-spirits one by one;", "the subtlety in it must be weighed again and again before its inner refinements are exhausted.", "First look at Output: it most wants generating, supporting, embracing and combining;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6879, 6880],
+          "zh": ["子孙能克制官杀，古人谓解神，又名福德，占病又为医药。", "卦中无此，则鬼无制伏。", "主服药不效，祷神不灵。", "所以先宜看此。", "要生旺有气，不要休囚死绝。", "日辰动爻生扶则吉，冲坏则凶。"],
+          "yi": ["子孙能克制官鬼这个凶煞，古人叫它解神，又叫福德，占病时它又是医药。", "卦里没有它，鬼就没有东西制伏。", "主吃药没有效果，祷告求神也不灵。", "所以要先看子孙。", "它要得令有力，不要衰弱、被困、死、绝。", "日辰、动爻来生它、扶它就吉，来冲它、破坏它就凶。"],
+          "en": ["Output can control and restrain the Pressure killer; the ancients called it the relieving spirit and also Output-virtue, and in divining illness it is also the medicine.", "If it is not in the hexagram, Pressure has nothing to restrain it.", "It means medicine has no effect and prayer to the spirits is not answered.", "So one should look at this first.", "It should be in season and have force, and not be resting, trapped, dead or extinct.", "If the Day or a moving line generates and supports it, it is lucky; if they clash and spoil it, unlucky."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2362, 2362],
+          "zh": ["子孙能克制鬼煞，古人谓解神，又名福德。", "占病又为医药，卦中无此财鬼无制，服药无效验，祷神不灵，所以先宜看此。", "推占父母丈夫病不宜子孙发动，动则伤克夫星，又克伤父母之原神也。"],
+          "yi": ["子孙能克制鬼煞，古人叫它解神，又叫福德。", "占病时它又是医药，卦里没有它，财爻和鬼爻就没有东西制约，吃药没有效验，祷告求神也不灵，所以要先看它。", "替父母或丈夫占病，不宜子孙发动：动了会伤克夫星，又会克伤父母爻的原神。"],
+          "en": ["Output can control and restrain the Pressure killer; the ancients called it the relieving spirit and also Output-virtue.", "In divining illness it is also the medicine; if it is not in the hexagram, Wealth and Pressure are unrestrained, medicine has no effect and prayer to the spirits is not answered, and so one should look at it first.", "In divining the illness of a parent (the Resource line) or of a husband, Output should not move: moving, it harms and controls the husband star, and also harms and controls the Support of the Resource line."] }
+      ],
+      "note": {
+        "yi": "「解神」是能解除灾厄的神，子孙克官鬼，所以叫解神；「福德」是子孙的另一个名字。「生扶拱合」是帮用神的四种办法：生是五行相生，扶和拱是同一五行的两个地支互相帮衬（《卜筮正宗》在别处举的例子：亥扶子、子拱亥），合是二合、三合、六合。旧注的「官杀」「鬼杀」，王洪绪写作「鬼煞」，是同一个意思。王洪绪比旧注多说了一条：替父母或丈夫占病，子孙不宜发动。丈夫用官鬼，父母的原神也是官鬼（官鬼生父母），所以子孙一动就克到病人依靠的那一爻；旧注没有这个限定。「财鬼无制」，旧注只说「鬼无制伏」，王洪绪多了一个财。",
+        "en": "The 'relieving spirit' is the spirit that can relieve disaster; Output controls Pressure, hence the name. 'Output-virtue' (fude) is another name for Output. 'Generating, supporting, embracing and combining' are four ways of helping the Subject: generating is the generation of the five phases; supporting and embracing are two branches of the same phase helping each other (the Bushi Zhengzong gives elsewhere the examples Hai supports Zi and Zi embraces Hai); combining is the two-combine, the three-combine and the six-combine. The old commentary's 'guan sha' and 'gui sha' are written 'gui sha' by Wang Hongxu, and mean the same. Wang Hongxu adds one thing to the old commentary: in divining the illness of a parent or a husband, Output should not move. A husband takes Pressure, and the Support of the Resource line is also Pressure (Pressure generates Resource), so a moving Output controls the very line the patient depends on; the old commentary has no such limit. Of 'Wealth and Pressure unrestrained' the old commentary says only 'Pressure has nothing to restrain it', and Wang Hongxu adds Wealth."
+      },
+      "see": ["LY.ILL.HJC.40", "LY.ILL.HJC.42", "LY.ILL.HJC.52", "LY.ILL.HJC.57"]
+    },
+    {
+      "id": "LY.ILL.HJC.33",
+      "topic": "总则",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "次看主象（就是用神）：怕遇克害刑冲；占夫以官为用神、占妻以财为用神；旧注另说自占以世为主、代占以应为主；得生扶必不至死",
+      "rule": {
+        "yi": "再看主象，也就是用神，就是病人：占丈夫用官鬼，占妻子用妻财。旧注还说，自己占以世爻为主象，替别人占以应爻为主象。主象怕遇到刑、冲、克、害，那就是病人被病折磨；被克害的地方如果得到生扶（旧注：得世爻生合、旁边的爻扶持），一定不至于死。",
+        "en": "Next look at the main image, which is the Subject and stands for the patient: in divining a husband take Pressure, in divining a wife take Wealth. The old commentary adds that in a divination for oneself the Self line is the main image, and in a divination for another the Other line is. The main image fears meeting punishment, clash, control or harm, which is the patient being ground down by the illness; but if the place of harm is generated and supported (the old commentary: by the Self line generating or combining with it and the lines beside it supporting it), he will surely not die."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6882, 6882],
+          "zh": ["次观主象，怕逢克害刑冲。"],
+          "yi": ["接着看主象，怕遇到克、害、刑、冲。"],
+          "en": ["Next look at the main image: it fears meeting control, harm, punishment or clash."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6883, 6884],
+          "zh": ["主象即病人。", "如占夫，以官为主；", "占妻，以财为主之类。", "又自占，以世为主；", "代占，以应为主；", "亦是主象。", "刑冲克害，即病人受症候折磨，故怕见之。", "若得世爻生合，旁爻扶持，必不至死。"],
+          "yi": ["主象就是病人。", "比如占丈夫，拿官爻做主象；", "占妻子，拿财爻做主象，这一类。", "另外，自己占，拿世爻做主象；", "替别人占，拿应爻做主象；", "这也是主象。", "刑、冲、克、害，就是病人被症候折磨，所以怕见到它们。", "如果得到世爻来生、来合，旁边的爻来扶持，一定不至于死。"],
+          "en": ["The main image is the patient.", "For example, in divining a husband, the Pressure line is the main image;", "in divining a wife, the Wealth line is the main image, and so on.", "Again, in a divination for oneself, the Self line is the main image;", "in a divination for another, the Other line is the main image;", "these too are the main image.", "Punishment, clash, control and harm mean the patient being ground down by the symptoms, so they are feared.", "If it is generated or combined by the Self line and supported by the lines beside it, he will surely not die."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2364, 2364],
+          "zh": ["主象即用神也，如占夫以官为用神，占妻以财为用神类。", "如遇刑冲克害，即病人受病磨折，故怕见之。", "克害处若得生扶，必不至死。"],
+          "yi": ["主象就是用神，比如占丈夫拿官爻做用神，占妻子拿财爻做用神，这一类。", "如果遇到刑、冲、克、害，就是病人被病磨折，所以怕见到。", "被克害的地方如果得到生扶，一定不至于死。"],
+          "en": ["The main image is the Subject: in divining a husband the Pressure line is the Subject, in divining a wife the Wealth line, and so on.", "If it meets punishment, clash, control or harm, the patient is worn down by the illness, so these are feared.", "If the place that is controlled and harmed is generated and supported, he will surely not die."] }
+      ],
+      "dispute": {
+        "yi": "替别人占病时取哪一爻做主象：旧注在六亲取用（占夫看官、占妻看财）之外，又说「代占以应为主」；王洪绪只讲六亲取用，没有把应爻当主象。",
+        "en": "Which line is the main image in a divination on behalf of another: besides taking the relation (Pressure for a husband, Wealth for a wife) the old commentary also says 'in a divination for another the Other line is the main image'; Wang Hongxu speaks only of taking the relation and does not make the Other line the main image."
+      },
+      "note": {
+        "yi": "「主象」就是「用神」，王洪绪直接说了这一点。前面 LY.ILL.HJC.32 说的子孙，是解神；这里的主象，是病人自己那一爻。",
+        "en": "The 'main image' is the 'Subject', which Wang Hongxu says outright. The Output of LY.ILL.HJC.32 is the relieving spirit; the main image here is the line of the patient himself."
+      },
+      "see": ["LY.ILL.HJC.34", "LY.ILL.HJC.37"]
+    },
+    {
+      "id": "LY.ILL.HJC.34",
+      "topic": "轻重",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "世持鬼爻病纵轻而难疗：鬼持世必难脱体，大象纵轻也不易愈；用爻有气、子孙当权则眼前可医、日后必不断根",
+      "rule": {
+        "yi": "官鬼爻持世，病就是轻，也难医治：一定难以脱身。整个卦象再轻，也不容易痊愈。就算用爻有气、子孙当权，眼前能医好，以后也一定断不了根。",
+        "en": "When a Pressure line holds the Self line, even a light illness is hard to treat: it is surely hard to shake off. However light the whole image, it does not easily heal. Even if the Subject line has force and Output holds power, so that it can be cured for now, the root will surely not be cut later."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6886, 6886],
+          "zh": ["世持鬼爻，病纵轻而难疗；"],
+          "yi": ["鬼爻持世，病就是轻，也难医治；"],
+          "en": ["A Pressure line holding the Self line: even if the illness is light, it is hard to treat;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6887, 6887],
+          "zh": ["占病，怕鬼持世，必难脱体。", "大象纵轻，亦不易愈。", "若用爻有气，子孙当权，目下虽可医愈，日后必不断根也。"],
+          "yi": ["占病最怕鬼持世，一定难以脱身。", "整个卦象就算轻，也不容易痊愈。", "如果用爻有气，子孙当权，眼前虽然能医好，以后一定断不了根。"],
+          "en": ["In divining illness, Pressure holding the Self line is feared: it is surely hard to shake off.", "Even if the whole image is light, it does not easily heal.", "If the Subject line has force and Output holds power, it can be cured for the present, but in the days to come the root will surely not be cut."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2366, 2366],
+          "zh": ["占自病怕鬼持世，必难脱体。"],
+          "yi": ["占自己的病，怕鬼持世，一定难以脱身。"],
+          "en": ["In divining one's own illness, Pressure holding the Self line is feared: it is surely hard to shake off."] }
+      ],
+      "dispute": {
+        "yi": "是「占病」还是「占自病」：旧注说占病怕鬼持世，泛指所有的病；王洪绪限定成占自己的病（自己占自己的病）。",
+        "en": "Whether it is 'illness' or 'one's own illness': the old commentary says that in divining illness Pressure holding the Self line is feared, taking in every illness; Wang Hongxu limits it to divining one's own illness."
+      },
+      "see": ["LY.ILL.HJC.07", "LY.ILL.HJC.26", "LY.ILL.HJC.35"]
+    },
+    {
+      "id": "LY.ILL.HJC.35",
+      "topic": "医药",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "身临福德势虽险而堪医：「身」是一卦之体（旧注说是用爻，王洪绪说是月卦身），子孙临之决然无虞，纵然凶险用药必愈",
+      "rule": {
+        "yi": "一卦的「身」是整个卦的主体：身上坐着子孙（福德），一定没有忧患，病势再凶险也有救，用药医治一定痊愈。",
+        "en": "The 'body' is the substance of the whole hexagram: if Output (Output-virtue) sits on it, there is surely nothing to fear; even if the illness looks dangerous it can be saved, and treated with medicine it will surely be cured."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6889, 6889],
+          "zh": ["身临福德，势虽险而堪医。"],
+          "yi": ["身上坐着福德，病势虽然凶险还是可以医治。"],
+          "en": ["The body sitting on Output-virtue: though the danger looks great, it can be treated."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6890, 6890],
+          "zh": ["用爻为身，乃一卦之体。", "若得子孙临之，决然无虞。", "纵然病势凶险，自可有救，以药治之，必定痊愈。"],
+          "yi": ["用爻就是身，是整个卦的主体。", "如果有子孙坐在它上面，一定没有忧患。", "就算病势凶险，自然有救，用药医治，一定痊愈。"],
+          "en": ["The Subject line is the body, the substance of the whole hexagram.", "If Output sits on it, there is surely nothing to fear.", "Even if the illness looks dangerous, it can be saved, and treated with medicine it will surely be cured."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2368, 2368],
+          "zh": ["月卦身乃一卦之体，子孙临之，决然无虞，纵然病势凶险，用药可以痊愈。"],
+          "yi": ["月卦身是整个卦的主体，子孙坐在它上面，一定没有忧患，就算病势凶险，用药也可以痊愈。"],
+          "en": ["The month's hexagram Body is the substance of the whole hexagram; if Output sits on it there is surely nothing to fear, and even if the illness looks dangerous it can be cured with medicine."] }
+      ],
+      "dispute": {
+        "yi": "「身」指哪一爻：旧注这里说用爻就是身；王洪绪说是月卦身（按月起的卦身）。这一章的旧注在 LY.ILL.HJC.26 里另外讲「卦身持鬼」，把卦身当成另一样东西，所以旧注自己在这个字上也不一致。",
+        "en": "Which line the 'body' is: the old commentary here says the Subject line is the body; Wang Hongxu says it is the month's hexagram Body (the Body set by the month). In LY.ILL.HJC.26 the old commentary of this chapter speaks separately of 'a Pressure line on the hexagram Body' and treats the hexagram Body as something else, so the old commentary is itself not consistent about this word."
+      },
+      "see": ["LY.ILL.HJC.26", "LY.ILL.HJC.42"]
+    },
+    {
+      "id": "LY.ILL.HJC.36",
+      "topic": "轻重",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "用壮有扶切恐太刚则折：占病不喜旺相，人在病中必衰弱，得时有气又遇生扶反是太刚则折，到生旺日必凶；有日辰动爻刑克则不嫌其旺",
+      "rule": {
+        "yi": "别的占都喜欢旺相，只有占病不喜欢：人在病里一定衰弱，平时再强健的人这时也瘦了，哪来的旺？所以用爻得时有气、又遇到日辰、动爻来生扶，是「太刚则折」的兆头，到生旺的日子一定凶；如果有动爻、日辰来刑克它，就不嫌它旺。",
+        "en": "Every other divination likes strength, but divining illness does not: a person in illness is surely weak, and even one who is usually robust grows thin by then, so where is the strength? Hence a Subject line that is in season and has force and also meets generation or support from the Day or a moving line is a sign of 'too rigid, it snaps', and on the day of birth or strength it is surely unlucky; if a moving line or the Day punishes or controls it, its strength is not held against it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6892, 6892],
+          "zh": ["用壮有扶，切恐太刚则折；"],
+          "yi": ["用爻强壮又有生扶，千万怕太刚硬而折断；"],
+          "en": ["A Subject that is strong and supported: above all fear that what is too rigid snaps;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6893, 6894],
+          "zh": ["凡占皆喜旺相，惟占病则不喜。", "盖人在病中，必衰弱；", "纵或素日强健者，至此必瘦，何旺之有？", "故凡得时有气，又遇动爻日辰生扶者，乃太刚则折之兆，至生旺日必凶。", "若动爻日辰刑克，则不嫌其旺相。"],
+          "yi": ["凡是占卦都喜欢旺相，只有占病不喜欢。", "因为人在病里，一定衰弱；", "就算平时强健的人，到这时也一定消瘦，哪里还有什么旺？", "所以凡是得时有气、又遇到动爻、日辰生扶的，是太刚则折的兆头，到生旺的日子一定凶。", "如果动爻、日辰来刑克它，就不嫌它旺相。"],
+          "en": ["In every divination strength is liked, but in divining illness it is not.", "For a person in illness is surely weak;", "even one who is usually robust grows thin by then; where is any strength?", "So whatever is in season and has force and also meets generation or support from a moving line or the Day is a sign of 'too rigid, it snaps', and on the day of birth or strength it is surely unlucky.", "If a moving line or the Day punishes or controls it, its strength is not held against it."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2370, 2370],
+          "zh": ["凡用神临月建，又得日辰生扶拱合，再遇动爻生扶者，乃太刚则折之兆，最怕原神又值月建，必凶；", "若有日辰动爻刑克，则不嫌其旺矣。", "所谓“太过者损之斯成”也。"],
+          "yi": ["凡是用神临在月建上，又得日辰生扶拱合，再遇到动爻生扶的，是太刚则折的兆头，最怕原神又值月建，一定凶；", "如果有日辰、动爻来刑克，就不嫌它旺了。", "这就是所谓「太过的，损掉一些才成」。"],
+          "en": ["Whenever the Subject sits on the Month and also gets generation, support, embracing or combining from the Day, and then meets generation or support from a moving line, it is a sign of 'too rigid, it snaps'; most to be feared is the Support also ruling the Month, which is surely unlucky;", "if the Day or a moving line punishes or controls it, its strength is not held against it.", "This is what is meant by 'what is excessive is made complete by taking from it'."] }
+      ],
+      "dispute": {
+        "yi": "什么样的旺才是「太刚则折」：旧注说凡是得时有气、又遇日辰动爻生扶的都是；王洪绪的条件更窄：用神要临月建，又得日辰生扶拱合，再遇动爻生扶，最怕原神也值月建。",
+        "en": "What sort of strength is 'too rigid, it snaps': the old commentary says whatever is in season and has force and also meets generation or support from the Day or a moving line; Wang Hongxu's condition is narrower: the Subject must sit on the Month, get generation, support, embracing or combining from the Day, and then meet generation or support from a moving line, and most feared is the Support also ruling the Month."
+      },
+      "note": {
+        "yi": "「太刚则折」的意思是：太硬的东西容易折断。王洪绪引的「太过者损之斯成」，是说过头的东西要减掉一些才成。旧注说「至生旺日必凶」，书里没有说「生旺日」指哪些日子，按上下文是用爻长生、帝旺的日子。旧注这一条和 LY.ILL.HJC.48 是一对：这里说太旺要折，那里说太弱体虚。",
+        "en": "'Too rigid, it snaps' means that what is too hard breaks easily. Wang Hongxu's 'what is excessive is made complete by taking from it' says that a thing that has gone too far must be reduced before it is complete. The old commentary says 'on the day of birth or strength it is surely unlucky' and the book does not say which days these are; from the context they are the days on which the Subject line is at Birth or Peak. This entry and LY.ILL.HJC.48 are a pair: here too strong snaps, there too weak and the body frail."
+      },
+      "see": ["LY.ILL.HJC.37", "LY.ILL.HJC.48"]
+    },
+    {
+      "id": "LY.ILL.HJC.37",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "主空无救须防中道而殂：主象落空占病大忌，要有动爻日辰冲克才有救（冲空则实、克空为用）；王洪绪说不独指空，墓绝空破有救者无妨、无救者必死，救指生扶拱合",
+      "rule": {
+        "yi": "主象落空（王洪绪：或入墓、绝、被破），占病是大忌；要有救才行，没救就会死在半路。",
+        "en": "A main image that is Void (Wang Hongxu: or in a tomb, in extinction, or broken) is a great taboo in divining illness; it must have rescue, and without rescue the patient will die on the way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6896, 6896],
+          "zh": ["主空无救，须防中道而殂。"],
+          "yi": ["主象落空又没有救，要提防半路死掉。"],
+          "en": ["A main image that is Void with no rescue: beware of death half way."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6897, 6897],
+          "zh": ["主象若空，占病大忌。", "必得动爻日辰冲克，谓之有救。", "盖冲空则实，克空为用，故也。", "否则必死。"],
+          "yi": ["主象如果落空，占病是大忌。", "一定要有动爻、日辰来冲它、克它，才叫有救。", "因为冲了落空的爻它就实了，克了落空的爻它就有了用。", "不然一定死。"],
+          "en": ["If the main image is Void, it is a great taboo in divining illness.", "It must be clashed or controlled by a moving line or the Day for it to be called rescued.", "For clashing a Void line makes it real, and controlling a Void line puts it to use.", "Otherwise he will surely die."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2372, 2372],
+          "zh": ["非独指空而言也。", "凡主象墓绝空破，有救者无妨，无救者必死。", "救者，生扶拱合也。"],
+          "yi": ["这一句不光是指落空说的。", "凡是主象入墓、入绝、落空、被破，有救的没关系，没有救的一定死。", "所说的救，就是生、扶、拱、合。"],
+          "en": ["This does not speak of Void alone.", "Whenever the main image is in a tomb, in extinction, Void or broken, if there is rescue it does not matter, and if there is none he will surely die.", "By rescue is meant generating, supporting, embracing and combining."] }
+      ],
+      "dispute": {
+        "yi": "怎样才算「有救」：旧注说主象落空，要动爻、日辰来冲它、克它才有救（冲空则实，克空为用），不然必死；王洪绪说不光是落空，入墓、绝、被破也算，救是生、扶、拱、合。一个用冲克把它叫起来，一个用生扶合去帮它。",
+        "en": "What counts as 'rescue': the old commentary says a Void main image is rescued only when a moving line or the Day clashes or controls it (clashing a Void line makes it real, controlling a Void line puts it to use), otherwise he surely dies; Wang Hongxu says the line speaks not of Void alone but of tomb, extinction and being broken as well, and rescue is generating, supporting, embracing and combining. One wakes the line by clash and control, the other helps it by generation, support and combination."
+      },
+      "see": ["LY.ILL.HJC.36", "LY.ILL.HJC.47", "LY.ILL.HJC.41"]
+    },
+    {
+      "id": "LY.ILL.HJC.38",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "禄系妻财、寿属父母：财是食禄、父母是寿命，卦中不可无、宜静不宜动；财空或无财不思饮食，父母动占病大忌（克制福神、官杀肆虐、服药不效、反促天年）；主象遇绝，财父入绝为禄绝、寿绝",
+      "rule": {
+        "yi": "占病，妻财是食禄，父母是寿命，卦里不能没有，宜静不宜动。卦里没有财爻或者财爻落空，是不想吃东西；父母爻动是占病的大忌，因为它克制子孙（福神），官鬼这个凶煞就能肆意逞凶，吃药不见效、祷告不灵，所以说「反促天年」。旧注还说：主象遇到绝，或变到绝地，财爻遇到叫禄绝，父母爻遇到叫寿绝，整个卦象如果凶，这是死的兆头。",
+        "en": "In divining illness, Wealth is the food-emolument and Resource is the span of life; neither may be missing from the hexagram, and both should be still and not moving. If there is no Wealth line or it is Void, he has no wish to eat; a moving Resource line is a great taboo, because it controls Output (the spirit of fortune) and lets the Pressure killer run wild, so medicine has no effect and prayer is not answered, hence 'it shortens the span of life instead'. The old commentary adds: if the main image meets extinction or changes into a place of extinction, then Wealth meeting it is the emolument cut off and Resource meeting it the life span cut off, and if the whole image is bad this is a sign of death."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6899, 6899],
+          "zh": ["禄系妻财，空则不思饮食；", "寿属父母，动则反促天年。"],
+          "yi": ["食禄归妻财管，落空就不想吃东西；", "寿命归父母管，一动反倒缩短寿数。"],
+          "en": ["The emolument belongs to Wealth: if it is Void, he has no wish to eat;", "the life span belongs to Resource: if it moves, it shortens the span of life instead."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6900, 6901],
+          "zh": ["占病，以妻财为食禄，父母为寿命。", "卦中不可无，宜静不宜动。", "若主象遇绝，或化绝地，财遇之为禄绝，父母遇之为寿绝。", "大象若凶，此为死兆。", "卦若无财或落空亡，乃是不思饮食。", "父母爻动，占病大忌。", "以其克制福神，官杀能肆其虐，故也。", "主服药不效，祷神不灵。", "故云反促天年。"],
+          "yi": ["占病时，拿妻财做食禄，拿父母做寿命。", "卦里不能没有，宜静不宜动。", "如果主象遇到绝，或者变到绝地，财爻遇到叫禄绝，父母爻遇到叫寿绝。", "整个卦象如果凶，这就是死的兆头。", "卦里如果没有财爻，或者财爻落了空亡，就是不想吃东西。", "父母爻发动，是占病的大忌。", "因为它克制子孙（福神），官鬼这个凶煞就能肆意逞凶。", "主吃药不见效，祷告求神不灵。", "所以说反而缩短寿数。"],
+          "en": ["In divining illness, Wealth is taken as the food-emolument and Resource as the life span.", "Neither may be missing from the hexagram; they should be still, not moving.", "If the main image meets extinction, or changes into a place of extinction, Wealth meeting it is the emolument cut off, and Resource meeting it is the life span cut off.", "If the whole image is bad, this is a sign of death.", "If the hexagram has no Wealth line, or the Wealth line falls into Void, he has no wish to eat.", "A moving Resource line is a great taboo in divining illness.", "Because it controls and restrains Output (the spirit of fortune), and the Pressure killer can then run wild.", "It means medicine has no effect and prayer to the spirits is not answered.", "Hence it is said that it shortens the span of life instead."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2374, 2374],
+          "zh": ["占病以妻财为食禄，卦若无财或落空亡，乃是不思饮食。", "父母爻动，占病所忌，以其克制福神，官煞能肆其虐故也，主服药无效，故云反促天年。", "占兄弟病反宜动也。"],
+          "yi": ["占病拿妻财做食禄，卦里如果没有财爻或者落了空亡，就是不想吃东西。", "父母爻动，是占病所忌讳的，因为它克制子孙（福神），官鬼这个凶煞就能肆意逞凶，主吃药没有效果，所以说反而缩短寿数。", "占兄弟的病，反而宜于动。"],
+          "en": ["In divining illness Wealth is the food-emolument; if the hexagram has no Wealth line or it falls into Void, he has no wish to eat.", "A moving Resource line is what divining illness taboos, because it controls Output (the spirit of fortune) and the Pressure killer can then run wild; it means medicine has no effect, hence it is said to shorten the span of life instead.", "In divining the illness of a brother (the Peer line), moving is on the contrary right."] }
+      ],
+      "note": {
+        "yi": "「占兄弟病反宜动也」这一句是王洪绪独有的，书里没有说道理。按六亲，父母生兄弟，占兄弟的病时父母爻是原神，它动起来反倒是帮忙，大概是这个缘故。「福神」是子孙爻的另一个叫法，「食禄」是口粮、吃的。旧注比王洪绪多讲了「禄绝」「寿绝」。",
+        "en": "The sentence 'in divining a brother's illness moving is on the contrary right' is Wang Hongxu's alone, and the book gives no reason. By the six relations Resource generates Peer, so in divining a brother's illness the Resource line is the Support, and its moving is on the contrary a help; that is probably the reason. The 'spirit of fortune' is another name for the Output line, and 'food-emolument' is one's ration, what one eats. The old commentary speaks of the 'emolument cut off' and the 'life span cut off', which Wang Hongxu does not."
+      },
+      "see": ["LY.ILL.HJC.21", "LY.ILL.HJC.32", "LY.ILL.HJC.37"]
+    },
+    {
+      "id": "LY.ILL.HJC.39",
+      "topic": "应期",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "主象伏藏则病迁延：用爻不上卦其病难安（旧注：生扶无处着落，病恍惚朦胧不爽快），要等它值日出露、或久病等它值年值月才愈（王洪绪）",
+      "rule": {
+        "yi": "用爻不上卦，这病一定拖着难好：出现在卦里的爻，日辰、动爻才能生它、合它，不上卦，就算有生扶也没有地方落脚，这种病也是恍惚朦胧、不爽快的病。要等用爻值日露出来，或者久病等它值年、值月才好，所以说一定拖延日子和月份。",
+        "en": "A Subject line that is absent from the hexagram means the illness drags on and cannot settle: a line that appears can be generated and combined by the Day and moving lines, but if it is not in the hexagram, where would generation and support land? Such an illness is vague and hazy, one that never feels clear. One must wait until the Subject line rules the day and comes into the open, or in a long illness wait for the year or month that it rules, before it heals; hence it is said to drag on for days and months."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6903, 6903],
+          "zh": ["主象伏藏，定主迁延乎日月；"],
+          "yi": ["主象伏藏不出，一定主拖延日子和月份；"],
+          "en": ["A main image hidden away: it surely means dragging on through days and months;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6904, 6905],
+          "zh": ["用爻不上卦，其病必难安。", "盖凡出现之爻，日辰动爻能生能合；", "若不上卦，虽有生扶，着于何地？", "故其占如此，病亦是恍惚朦胧，不爽快之症。"],
+          "yi": ["用爻不上卦，这病一定难以安稳。", "因为凡是出现在卦里的爻，日辰、动爻能生它、能合它；", "如果不上卦，就算有生扶，落在哪里？", "所以这样占，病也是恍恍惚惚、朦朦胧胧，不爽快的症候。"],
+          "en": ["A Subject line absent from the hexagram: the illness is surely hard to settle.", "For a line that appears in the hexagram can be generated and combined by the Day and moving lines;", "if it is not in the hexagram, then though there is generation and support, where does it land?", "So such a divination gives an illness that is vague and hazy and never feels clear."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2376, 2376],
+          "zh": ["用爻不上卦，纵有提拔扶引者，必待其值日出露，或久病必待其值年值月方愈，故曰定主迁延日月也。"],
+          "yi": ["用爻不上卦，就算有提拔、扶引它的，一定要等它值日的时候露出来，或者久病一定要等它值年、值月才好，所以说一定拖延日子和月份。"],
+          "en": ["A Subject line absent from the hexagram: even if something would raise and lead it out, one must wait for the day it rules, when it comes into the open, or in a long illness wait for the year or month it rules before it heals; hence it is said to drag on for days and months."] }
+      ],
+      "note": {
+        "yi": "两家讲的是同一个卦象的两面：旧注讲这种病是什么样子（恍惚朦胧、不爽快），王洪绪讲它什么时候好（值日、值年、值月）。王洪绪引的经文是「迁延乎岁月」，而他自己的注里说「迁延日月」，和卜筮大全的「迁延乎日月」一致，「岁月」大概是印错了。",
+        "en": "The two speak of two sides of the same image: the old commentary of what sort of illness this is (vague, hazy, never clear), Wang Hongxu of when it heals (on the day, year or month the line rules). The verse as Wang Hongxu quotes it reads 'dragging on through years and months', while his own note says 'dragging on through days and months', in agreement with the Bushi Daquan's 'days and months'; 'years' is probably a printing slip."
+      },
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.07", "LY.ILL.HJC.49"]
+    },
+    {
+      "id": "LY.ILL.HJC.40",
+      "topic": "医药",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "子孙空绝必乏调理之肥甘：子孙是药又是酒肉，落空、临死绝或不上卦则病中无肥甘调理；日辰或应爻带子孙生合世爻用爻则有人馈送食物资养",
+      "rule": {
+        "yi": "子孙爻既是医药，又是酒肉。子孙落空亡、临在死绝上，或者不上卦，病中一定没有肥甘的东西调养，病也缠缠绵绵难好。如果日辰或者应爻带着子孙，来生、合世爻和用爻，一定有人送礼物、送吃的来补养。",
+        "en": "The Output line is both medicine and wine and meat. If Output is Void, sits on death or extinction, or is not in the hexagram, the patient surely lacks rich food to build him up during the illness, and the illness also lingers and is hard to cure. If the Day or the Other line carries Output and generates or combines with the Self and Subject lines, someone will surely send gifts or food to nourish him."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6907, 6907],
+          "zh": ["子孙空绝，必乏调理之肥甘。"],
+          "yi": ["子孙落空、临死绝，病中一定缺少调养的肥甘。"],
+          "en": ["Output Void or on extinction: the patient surely lacks the rich food that builds him up."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6908, 6908],
+          "zh": ["子孙固为医，又为酒肉。", "若在空亡，或临死绝，或不上卦，其病必乏肥甘调理，亦缠绵难愈。", "若日辰应爻上带子孙，生合世爻用爻者，必有馈送礼物资养。"],
+          "yi": ["子孙本来是医生，又是酒肉。", "如果落在空亡，或者临在死绝，或者不上卦，这病一定缺少肥甘的调养，也缠缠绵绵难好。", "如果日辰或者应爻上带着子孙，来生、合世爻和用爻，一定有人送礼物来资助调养。"],
+          "en": ["Output is the doctor, and also wine and meat.", "If it falls in Void, or sits on death or extinction, or is not in the hexagram, the illness surely lacks the building-up of rich food, and lingers and is hard to cure.", "If the Day or the Other line carries Output and generates or combines with the Self and Subject lines, there will surely be gifts sent to help nourish him."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2378, 2378],
+          "zh": ["子孙固为药，又为酒肉，若临死绝，或在空亡，或不上卦，病中必无肥甘调理。", "或日辰或应爻带子孙生合用爻者，必有人馈送食物资养。"],
+          "yi": ["子孙本来是药，又是酒肉，如果临在死绝，或者落在空亡，或者不上卦，病中一定没有肥甘的东西调养。", "或者日辰、或者应爻带着子孙来生、合用爻的，一定有人送吃的来资助调养。"],
+          "en": ["Output is medicine, and also wine and meat; if it sits on death or extinction, or is Void, or is not in the hexagram, the patient surely has no rich food to build him up during the illness.", "If the Day or the Other line carries Output and generates or combines with the Subject line, someone will surely send food to help nourish him."] }
+      ],
+      "note": {
+        "yi": "旧注说子孙是「医」（医生），王洪绪说是「药」。「肥甘」是油腻甘美的好东西，病中拿来补养。旧注多说了一句「亦缠绵难愈」，王洪绪没有。",
+        "en": "The old commentary says Output is 'the doctor' and Wang Hongxu says it is 'the medicine'. 'Rich food' (feigan) is fat and sweet good things, used to build a patient up. The old commentary adds 'and it lingers and is hard to cure', which Wang Hongxu does not."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.55"]
+    },
+    {
+      "id": "LY.ILL.HJC.41",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "世上临鬼不可随官入墓：世持官鬼本非吉兆，遇日辰带墓爻、本命爻随官入墓、世爻用爻化入鬼墓、带鬼动化入墓、持鬼墓发动，皆主大凶",
+      "rule": {
+        "yi": "世爻持着官鬼，本来就不是吉兆；如果再遇到日辰带着墓爻，就叫「随官入墓」；本命爻随官入墓也凶。世爻、用爻变入鬼的墓，以及世爻、命爻带着鬼动、变入墓的，还有用爻、命爻、世爻持着鬼墓发动的，都主大凶。",
+        "en": "A Pressure line holding the Self line is in itself no lucky sign; if it also meets a tomb line carried by the Day, this is called 'following Pressure into the tomb'; a natal line following Pressure into the tomb is also unlucky. The Self or Subject line changing into the tomb of Pressure, the Self or natal line carrying Pressure, moving and changing into a tomb, and the Subject, natal or Self line holding the tomb of Pressure and moving, all mean great misfortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6910, 6910],
+          "zh": ["世上鬼临，不可随官入墓；"],
+          "yi": ["世爻上临着鬼，不可以随着官鬼入墓；"],
+          "en": ["Pressure sitting on the Self line: it must not follow Pressure into the tomb;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6911, 6911],
+          "zh": ["世持官鬼，固非吉兆。", "若遇日辰带墓爻，谓随官入墓；", "本命爻随官入墓，亦凶。", "若世爻用爻，化入鬼墓；", "及世爻命爻带鬼动，化入墓者；", "与用爻命爻世爻，持鬼墓发动者，皆主大凶。"],
+          "yi": ["世爻持着官鬼，本来就不是吉兆。", "如果遇到日辰带着墓爻，叫随官入墓；", "本命爻随着官鬼入墓，也凶。", "如果世爻、用爻变入鬼的墓；", "以及世爻、命爻带着鬼动、变入墓的；", "还有用爻、命爻、世爻持着鬼墓发动的，都主大凶。"],
+          "en": ["A Pressure line holding the Self line is in itself no lucky sign.", "If it meets a tomb line carried by the Day, this is called following Pressure into the tomb;", "a natal line following Pressure into the tomb is also unlucky.", "If the Self or Subject line changes into the tomb of Pressure;", "or the Self or natal line carries Pressure, moves and changes into a tomb;", "and the Subject, natal or Self line that holds the tomb of Pressure and moves: all mean great misfortune."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2380, 2380],
+          "zh": ["凡占自己病，若世上临鬼入墓于日辰，或化入墓库于爻，固非吉兆，世爻持鬼墓发动亦凶。"],
+          "yi": ["凡是占自己的病，如果世爻上临着鬼、在日辰上入墓，或者变入爻上的墓库，本来就不是吉兆，世爻持着鬼墓发动也凶。"],
+          "en": ["In divining one's own illness, if a Pressure line sits on the Self line and enters the tomb at the Day, or changes into the tomb of a line, it is in itself no lucky sign, and the Self line holding the tomb of Pressure and moving is also unlucky."] }
+      ],
+      "note": {
+        "yi": "「命爻」「本命爻」是求占人的本命（出生年的地支）在卦里落的那一爻。「随官入墓」是官鬼入墓时，世爻或命爻跟着它一起入墓。王洪绪只讲占自己的病，旧注没有这个限定，而且列的情形多得多。",
+        "en": "The 'natal line' is the line in the hexagram where the asker's own fate (the branch of his birth year) falls. 'Following Pressure into the tomb' is the Self or natal line entering the tomb together with the Pressure line when it does. Wang Hongxu speaks only of divining one's own illness, which the old commentary does not limit, and the old commentary lists many more cases."
+      },
+      "see": ["LY.ILL.HJC.24", "LY.ILL.HJC.54"]
+    },
+    {
+      "id": "LY.ILL.HJC.42",
+      "topic": "医药",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "身临福德岂宜父动来伤：占病以子孙为解神，身上临着是大吉，父母动来克伤仍为不美（王洪绪：父母有制则无妨）",
+      "rule": {
+        "yi": "占病把子孙当解神，身上临着它是大吉的兆头；如果父母爻发动来克伤它，仍然不好（王洪绪补一句：父母爻自己被制住就没关系）。",
+        "en": "In divining illness Output is the relieving spirit, and its sitting on the body is a very lucky sign; if the Resource line moves to control and harm it, it is still not good (Wang Hongxu adds: if the Resource line is itself restrained, there is no harm)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6913, 6913],
+          "zh": ["身临福德，岂宜父动来伤。"],
+          "yi": ["身上临着福德，怎么能容父母发动来克伤它。"],
+          "en": ["The body sitting on Output-virtue: how could one allow a moving Resource line to come and harm it?"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6914, 6914],
+          "zh": ["占病，以子孙为解神。", "身若临之，大吉之兆。", "如父母动来克伤，仍为不美。"],
+          "yi": ["占病，把子孙当作解神。", "身爻如果临着它，是大吉的兆头。", "如果父母发动来克伤它，仍然不好。"],
+          "en": ["In divining illness, Output is taken as the relieving spirit.", "If the body sits on it, it is a very lucky sign.", "If the Resource line moves to control and harm it, it is still not good."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2382, 2382],
+          "zh": ["占病以子孙为解神，身临之大吉之兆。", "如父母动来克伤，仍为不美，如父母有制无妨。"],
+          "yi": ["占病把子孙当解神，身爻临着它是大吉的兆头。", "如果父母发动来克伤它，仍然不好，如果父母爻自己被制住就没关系。"],
+          "en": ["In divining illness Output is taken as the relieving spirit, and its sitting on the body is a very lucky sign.", "If the Resource line moves to control and harm it, it is still not good; if the Resource line is itself restrained, there is no harm."] }
+      ],
+      "note": {
+        "yi": "「身」指哪一爻，见 LY.ILL.HJC.35。这一条和它是一对：那里讲身临子孙是有救，这里讲父母动来克子孙就把这个好处破掉。王洪绪多了一句「父母有制无妨」。",
+        "en": "For which line the 'body' is, see LY.ILL.HJC.35. This entry is a pair with it: there the body sitting on Output means rescue, and here a moving Resource line that controls Output spoils that advantage. Wang Hongxu adds 'if the Resource line is restrained there is no harm'."
+      },
+      "see": ["LY.ILL.HJC.35", "LY.ILL.HJC.38"]
+    },
+    {
+      "id": "LY.ILL.HJC.43",
+      "topic": "动变",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "鬼化长生日下沉重：鬼动病重，鬼化入长生（或在长生爻上发动）一日重似一日，直过帝旺日才轻减；化衰病则一日轻似一日，福化长生也吉",
+      "rule": {
+        "yi": "鬼爻发动，病势一定重。如果鬼变入长生，就是一天比一天重的象，一直要过了帝旺的日子，才会减轻；鬼在长生的爻上发动，也是这样。如果变入衰、病，就是一天比一天轻，和子孙（福）变入长生一样，都吉。",
+        "en": "When a Pressure line moves, the illness is surely heavy. If Pressure changes into Birth, it is the image of growing heavier each day, and it is only after the day of its Peak has passed that it lightens; a Pressure line moving while on a Birth line is the same. If it changes into Decline or Sickness, it grows lighter each day, and this, like Output changing into Birth, is all lucky."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6916, 6916],
+          "zh": ["鬼化长生，日下正当沉重；"],
+          "yi": ["鬼爻变到长生，眼下正是沉重的时候；"],
+          "en": ["Pressure changing into Birth: at present the illness is at its heaviest;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6917, 6917],
+          "zh": ["鬼爻发动，病势必重。", "若鬼化入长生，乃一日重一日之象，直过帝旺日，然后轻减。", "鬼在长生爻上发动，亦然。", "若化衰病，一日轻一日，与福化长生皆吉。"],
+          "yi": ["鬼爻发动，病势一定重。", "如果鬼变入长生，是一天比一天重的象，一直要过了帝旺的日子，才会减轻。", "鬼在长生的爻上发动，也是这样。", "如果变入衰、病，一天比一天轻，和子孙（福）变入长生一样，都吉。"],
+          "en": ["When a Pressure line moves, the illness is surely heavy.", "If Pressure changes into Birth, it is the image of growing heavier each day, and only after the Peak day has passed does it lighten.", "A Pressure line moving while on a Birth line is the same.", "If it changes into Decline or Sickness, it grows lighter each day; and this, like Output changing into Birth, is all lucky."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2384, 2384],
+          "zh": ["鬼爻发动，病势必重，若鬼化入长生，乃一日重一日之象。"],
+          "yi": ["鬼爻发动，病势一定重，如果鬼变入长生，是一天比一天重的象。"],
+          "en": ["When a Pressure line moves, the illness is surely heavy; if Pressure changes into Birth, it is the image of growing heavier each day."] }
+      ],
+      "note": {
+        "yi": "长生是十二长生的第一位（长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养），帝旺是第五位。鬼变入长生，是鬼在往盛的方向走，病就一天天重下去，一直到它旺到顶才回头。旧注还讲了变入衰、病是一天轻一天的相反情形；王洪绪只收了前半。",
+        "en": "Birth is the first of the twelve life stages (Birth, Bath, Cap, Office, Peak, Decline, Sickness, Death, Tomb, Extinction, Womb, Nurture) and Peak is the fifth. A Pressure line changing into Birth is Pressure moving toward strength, so the illness grows heavier day by day until Pressure reaches its peak and turns back. The old commentary also gives the opposite case, changing into Decline or Sickness, where it grows lighter each day; Wang Hongxu takes only the first half."
+      },
+      "see": ["LY.ILL.HJC.09", "LY.ILL.HJC.44"]
+    },
+    {
+      "id": "LY.ILL.HJC.44",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "用连鬼杀目前必见倾危：旧注是用爻发动又化出鬼爻（病人变鬼），无子孙日辰解救必死；王洪绪说「连」当作「变」，鬼煞是忌神，指用神化回头克，有日月动爻解救则不危，并驳「用神变官鬼必死」",
+      "rule": {
+        "yi": "用神连着鬼煞，眼前一定看到危险：没有子孙、日辰、动爻来解救，危险就在眼前。",
+        "en": "When the Subject is joined to the Pressure killer, danger is surely in view: with no Output, Day or moving line to relieve it, the danger is immediate."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6919, 6919],
+          "zh": ["用连鬼杀，目前必见倾危。"],
+          "yi": ["用神连着鬼煞，眼前一定看见危险。"],
+          "en": ["The Subject joined to the Pressure killer: danger is surely to be seen before one's eyes."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6920, 6920],
+          "zh": ["占病，不宜用爻发动，动则病体不安。", "若又化出鬼爻，谓病人变鬼。", "卦中更无子孙日辰解救，必死无疑之断。"],
+          "yi": ["占病，用爻不宜发动，动了病人的身体就不安稳。", "如果又变出鬼爻，叫病人变成鬼。", "卦里再没有子孙、日辰来解救，就是一定死、没有疑问的断法。"],
+          "en": ["In divining illness the Subject line should not move; if it moves, the patient's body is not at peace.", "If it also changes out a Pressure line, this is called the patient turning into a ghost.", "If in the hexagram there is no Output or Day to rescue him, the judgment is that he will surely die, without doubt."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2386, 2386],
+          "zh": ["“连”字当作“变”字解。", "今术家以用神变出官鬼者，断其病必死，是以词害义矣。", "孰知鬼煞者是忌神也，用连鬼煞，即指用化回头克耳。", "用神变回头克，而无日月动爻解救者，目前立见其危也。"],
+          "yi": ["「连」字应当当作「变」字来解。", "现在的术士把用神变出官鬼的，断成这病必死，这是拿字面害了本意。", "哪里知道鬼煞说的是忌神，用连鬼煞，就是指用神变出回头克罢了。", "用神变出回头克，又没有日月、动爻来解救的，眼前立刻就看到危险。"],
+          "en": ["The character 'lian' (joined) should be read as 'bian' (change).", "Today's practitioners judge that when the Subject changes out a Pressure line the illness is surely fatal; this is letting the words hurt the meaning.", "Who knows that the 'Pressure killer' is the Adversary, and that 'the Subject joined to the Pressure killer' just means the Subject changing into a returning control.", "When the Subject changes into a returning control and there is no Month, Day or moving line to relieve it, the danger is at once before one's eyes."] }
+      ],
+      "dispute": {
+        "yi": "「用连鬼杀」是什么意思：旧注读作用爻发动、又变出官鬼，叫病人变成鬼，没有子孙、日辰解救就一定死；王洪绪说「连」字应当读作「变」，「鬼煞」是忌神、不是官鬼，句子是说用神变出回头克，没有日月、动爻解救，眼前才危险，并且明说术家「用神变官鬼必死」的断法是拿字面害了本意。",
+        "en": "What 'the Subject joined to the Pressure killer' means: the old commentary reads it as the Subject line moving and also changing out a Pressure line, called the patient turning into a ghost, and with no Output or Day to rescue him he surely dies; Wang Hongxu says the character 'lian' should be read as 'change', that the 'Pressure killer' is the Adversary and not the Pressure line, that the line means the Subject changing into a returning control, and only with no Month, Day or moving line to relieve it is the danger before one's eyes; and he says outright that the practitioners' judgment 'the Subject changing into Pressure is surely fatal' lets the words hurt the meaning."
+      },
+      "note": {
+        "yi": "王洪绪这一段和他在本章最后一条（LY.ILL.HJC.57）里的话是一个意思：鬼煞的道理在忌神，不在官鬼。「回头克」是动爻变出来的爻反过来克它自己。",
+        "en": "Wang Hongxu's passage says the same as his words in the last entry of this chapter (LY.ILL.HJC.57): the principle of the 'Pressure killer' lies in the Adversary and not in the Pressure line. A 'returning control' is when the line a moving line changes into controls that line in return."
+      },
+      "see": ["LY.ILL.HJC.45", "LY.ILL.HJC.57"]
+    },
+    {
+      "id": "LY.ILL.HJC.45",
+      "topic": "动变",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "福化忌爻病势增加于小愈：子孙发动制伏官鬼病必减，若化出忌爻反来伤克、或子孙化官爻，必因病稍好不谨慎而复重",
+      "rule": {
+        "yi": "子孙发动制伏官鬼，病一定减轻；如果子孙变出忌爻反过来伤克，或者子孙变成官爻，一定是病稍微好了一点、不谨慎，结果又加重。",
+        "en": "When Output moves and restrains Pressure the illness surely lessens; but if Output changes into an Adversary line that turns back to harm, or Output changes into a Pressure line, it is surely because the illness has slightly eased and the patient is not careful, so that it grows heavy again."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6922, 6922],
+          "zh": ["福化忌爻，病势增加于小愈；"],
+          "yi": ["子孙变成忌爻，病势在稍好之后又增加；"],
+          "en": ["Output changing into an Adversary line: the illness grows worse after a slight improvement;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6923, 6923],
+          "zh": ["子孙发动，制伏官鬼，其病必减。", "若遇化出忌爻，反来伤克用神者，必因病势少愈，不能谨慎，以致复加沉重。", "子孙化官爻，亦然。"],
+          "yi": ["子孙发动，制伏官鬼，这病一定减轻。", "如果变出忌爻，反过来伤克用神，一定是因为病势稍微好了一点，不能谨慎，以致又加重。", "子孙变成官爻，也是这样。"],
+          "en": ["When Output moves and restrains Pressure, the illness surely lessens.", "If it changes out an Adversary line that turns back to harm and control the Subject, it is surely because the illness has eased a little and he cannot be careful, so that it grows heavy again.", "Output changing into a Pressure line is the same."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2388, 2388],
+          "zh": ["子孙发动制伏官鬼，其病必减，若化回头克坏子孙，必因病势小愈不能谨慎，以致复加沉重，子孙化官爻亦然。"],
+          "yi": ["子孙发动制伏官鬼，这病一定减轻，如果变出回头克、坏了子孙，一定是因为病势稍好、不能谨慎，以致又加重，子孙变成官爻也是这样。"],
+          "en": ["When Output moves and restrains Pressure the illness surely lessens; if it changes into a returning control that ruins Output, it is surely because the illness has eased a little and he cannot be careful, so that it grows heavy again, and Output changing into a Pressure line is the same."] }
+      ],
+      "note": {
+        "yi": "变出的忌爻伤到谁，两家写得不同：旧注说反过来伤克用神，王洪绪说是回头克坏了子孙。两家都说这是病人自己一好就不谨慎的缘故。",
+        "en": "The two write differently whom the changed-out Adversary line harms: the old commentary says it turns back to harm and control the Subject, and Wang Hongxu that a returning control ruins Output. Both say the cause is that the patient stops being careful as soon as he is a little better."
+      },
+      "see": ["LY.ILL.HJC.43", "LY.ILL.HJC.44"]
+    },
+    {
+      "id": "LY.ILL.HJC.46",
+      "topic": "症候",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "兄弟持世饮食减省：兄弟持世饮食必减，病也因贪食而得；旧注：兄弟不动又无气、财福旺则不是这样，是气短力弱之症难愈",
+      "rule": {
+        "yi": "兄弟爻持世，饮食一定比平时少，这病也是因为吃得太多得的。旧注补充：如果兄弟不动、又没有气，而卦里财爻、子孙爻旺，就不是这样，那是气短力弱的症候，不容易痊愈。",
+        "en": "When a Peer line holds the Self line the patient surely eats less than usual, and the illness was also got through eating too much. The old commentary adds: if the Peer line does not move and has no force, while Wealth and Output are strong in the hexagram, it is not so; it is then a syndrome of short breath and weak strength, not easily healed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6925, 6925],
+          "zh": ["世挠兄弟，饮食减省于平时。"],
+          "yi": ["兄弟扰着世爻，饮食比平时减少。"],
+          "en": ["A Peer line troubling the Self line: eating is less than at ordinary times."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6926, 6926],
+          "zh": ["兄弟持世，饮食必减。", "其病亦是贪食而得。", "若不动又无气，而卦中财福爻旺者，则不然。", "乃是气短力弱之症，不易痊可。"],
+          "yi": ["兄弟持着世爻，饮食一定减少。", "这病也是因为贪吃得来的。", "如果兄弟不动、又没有气，而卦里财爻、福爻旺的，就不是这样。", "那是气短力弱的症候，不容易痊愈。"],
+          "en": ["A Peer line holding the Self line: eating is surely reduced.", "The illness too was got through gluttony.", "If it does not move and has no force, while the Wealth and Output lines in the hexagram are strong, it is not so.", "It is then a syndrome of short breath and weak strength, not easily healed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2390, 2390],
+          "zh": ["兄弟持世，饮食必减，其病亦因多食而得。"],
+          "yi": ["兄弟持世，饮食一定减少，这病也是因为吃得多得来的。"],
+          "en": ["A Peer line holding the Self line: eating is surely reduced, and the illness too was got through eating too much."] }
+      ],
+      "note": {
+        "yi": "经文写「世挠兄弟」，王洪绪引的经文作「世持兄弟」；两家的注讲的都是兄弟持世。旧注用「贪食」，王洪绪用「多食」，是同一个意思。",
+        "en": "The verse reads 'the Self troubled by a Peer' where Wang Hongxu quotes it as 'the Self holding a Peer'; both commentaries speak of a Peer holding the Self line. The old commentary says 'gluttony' and Wang Hongxu 'eating much', which come to the same thing."
+      },
+      "see": ["LY.ILL.HJC.21", "LY.ILL.HJC.38"]
+    },
+    {
+      "id": "LY.ILL.HJC.47",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "用绝逢生危而有救：用爻不宜在死绝之地（一克则倒），卦中动爻生助叫绝处逢生，凶中回吉，病危而有救",
+      "rule": {
+        "yi": "用爻不宜落在死绝的地方，因为一克它就倒。卦里有动爻来生它、帮它，叫绝处逢生，是凶里转吉的象，病虽危险也有救。",
+        "en": "The Subject line should not be in a place of death or extinction, because one control topples it. If a moving line in the hexagram generates and helps it, this is called meeting life in a place of extinction, an image of turning to luck out of misfortune: the illness is in danger, but there is rescue."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6928, 6928],
+          "zh": ["用绝逢生，危而有救；"],
+          "yi": ["用爻在绝处遇到生，危险却有救；"],
+          "en": ["The Subject meeting life in extinction: in danger, yet with rescue;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6929, 6929],
+          "zh": ["大抵用爻，不宜死绝之地，以其一克则倒，故也。", "卦中动爻生助，谓绝处逢生，凶中回吉之象，病必将危有救。"],
+          "yi": ["大体上用爻不宜落在死绝的地方，因为一克它就倒了。", "卦里有动爻来生它、帮它，叫绝处逢生，是凶里转吉的象，病虽将危也有救。"],
+          "en": ["In general the Subject line should not be in a place of death or extinction, because one control topples it.", "If a moving line in the hexagram generates and helps it, this is called meeting life in a place of extinction, an image of turning to luck out of misfortune: the illness is on the point of danger, but there is rescue."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2392, 2392],
+          "zh": ["凡用爻逢绝，如得卦中动爻相生，谓之绝处逢生，凶中回吉之象，虽危有救。"],
+          "yi": ["凡是用爻遇到绝，如果得到卦里动爻来生它，叫绝处逢生，是凶里转吉的象，虽然危险也有救。"],
+          "en": ["Whenever the Subject line meets extinction, if a moving line in the hexagram generates it, this is called meeting life in a place of extinction, an image of turning to luck out of misfortune: though in danger, there is rescue."] }
+      ],
+      "note": {
+        "yi": "王洪绪这一段的后两句（用神不宜太弱……），在他的下一条里又抄了一遍（LY.ILL.HJC.48），这里只收前一句。",
+        "en": "The last two sentences of this paragraph in Wang Hongxu ('the Subject should not be too weak ...') are copied again in his next entry (LY.ILL.HJC.48), and only the first sentence is taken here."
+      },
+      "see": ["LY.ILL.HJC.23", "LY.ILL.HJC.37", "LY.ILL.HJC.48"]
+    },
+    {
+      "id": "LY.ILL.HJC.48",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "主衰得助重亦何妨：用爻不宜太旺也不宜太弱，弱则体虚力怯难痊；得日辰动爻生合扶助最吉，纵是十分重病亦不至死",
+      "rule": {
+        "yi": "用爻虽然不宜太旺，也不宜太弱。太弱，病人就体虚力怯，一时难以痊愈。如果得到日辰、动爻来生、合、扶助，最吉，就算是十分重的病，也不至于死。",
+        "en": "Though the Subject line should not be too strong, it should not be too weak either. If weak, the patient is frail and timid in strength and cannot quickly be healed. If it gets generation, combination and support from the Day and moving lines it is most lucky: even a most heavy illness will not lead to death."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6931, 6931],
+          "zh": ["主衰得助，重亦何妨。"],
+          "yi": ["主象衰弱得到帮助，病再重又有什么妨碍。"],
+          "en": ["A weak main image that is helped: however heavy the illness, what does it matter?"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6932, 6934],
+          "zh": ["用爻虽不宜太旺，亦不宜太弱。", "弱则病人体虚力怯，卒难痊可。", "若得日辰动爻生合扶助最吉，纵是十分重病，亦不至死。"],
+          "yi": ["用爻虽然不宜太旺，也不宜太弱。", "太弱，病人就体虚力怯，一时难以痊愈。", "如果得到日辰、动爻来生、合、扶助，最吉，就算是十分重的病，也不至于死。"],
+          "en": ["Though the Subject line should not be too strong, it should not be too weak either.", "If weak, the patient is frail and timid in strength, and cannot quickly be healed.", "If it gets generation, combination and support from the Day and moving lines it is most lucky: even a most heavy illness will not lead to death."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2394, 2394],
+          "zh": ["用神不宜太弱，弱则病人体虚力怯难痊，若得日辰动爻生合扶助，最吉，纵有十分重病，亦不致死。"],
+          "yi": ["用神不宜太弱，太弱病人就体虚力怯难痊，如果得到日辰、动爻来生合扶助，最吉，就算有十分重的病，也不致死。"],
+          "en": ["The Subject should not be too weak; if weak the patient is frail and timid in strength and hard to heal; if it gets generation, combination and support from the Day and moving lines it is most lucky, and even a most heavy illness will not lead to death."] }
+      ],
+      "note": {
+        "yi": "旧注这里明说「虽不宜太旺，亦不宜太弱」，和 LY.ILL.HJC.36 的「太刚则折」是一对：两头都不行，要的是有气而不过头。",
+        "en": "The old commentary says outright here 'though it should not be too strong, it should not be too weak', which is a pair with the 'too rigid, it snaps' of LY.ILL.HJC.36: neither extreme will do, and what is wanted is force without excess."
+      },
+      "see": ["LY.ILL.HJC.36", "LY.ILL.HJC.47"]
+    },
+    {
+      "id": "LY.ILL.HJC.49",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "鬼伏空亡早备衣冠防不测：官鬼是恶杀却不可无（得病根由、虚实、安危、鬼神情状都决于它），不上卦要寻伏，伏爻又空则病必不能痊；王洪绪说这两句只指占父母、官府、丈夫的病",
+      "rule": {
+        "yi": "官鬼这一爻虽然是恶煞，也不能没有：得病的原因、症候的虚实、疾病的安危、鬼神的情状，都由它来决定。它不上卦，就要去找它伏在哪里才能推测；如果伏着的爻又落空，这病一定好不了：就算有好医生，也找不到病源；就算有鬼神，也没有可以叩告的门路，是天年命尽。病轻的不在此论。",
+        "en": "The Pressure line is a malign killer, yet it cannot be missing: how the illness was got, whether it is deficient or excess, whether it is safe or dangerous, and the state of ghosts and spirits are all decided by it. If it is not in the hexagram one must look for where it lies hidden in order to reason it out; if the hidden line is also Void, the illness surely cannot be cured: even a good doctor cannot reach its source, even the spirits have no door to be petitioned, and the span of life is used up. A light illness is not counted here."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6936, 6936],
+          "zh": ["鬼伏空亡，早备衣冠防不测；"],
+          "yi": ["鬼爻伏在空亡里，要早些备好衣冠，提防不测；"],
+          "en": ["Pressure hidden in Void: prepare the robes and cap early and guard against the unforeseen;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6937, 6938],
+          "zh": ["官鬼一爻，固是恶杀，然亦不可无。", "盖凡得症因由，症候虚实，疾病安危，鬼神情状，皆决于此。", "若不上卦，即当寻伏，庶可推测。", "若伏爻又空，其病必不能痊。", "纵有良医，亦不能达其病源；", "纵有鬼神，亦无叩告之门，天年命尽。", "若病轻不在此论。"],
+          "yi": ["官鬼这一爻，本来是凶恶的煞，但也不可以没有。", "因为得病的原因、症候的虚实、疾病的安危、鬼神的情状，都由它来决定。", "如果不上卦，就要去找它伏在哪里，这样才可以推测。", "如果伏着的爻又落空，这病一定好不了。", "就算有好医生，也找不到它的病源；", "就算有鬼神，也没有可以叩头祷告的门路，天年命数已经尽了。", "如果病轻，不在这个说法之内。"],
+          "en": ["The Pressure line is a malign killer, yet it cannot be missing.", "For how the illness was got, whether the symptoms are deficient or excess, whether the illness is safe or dangerous, and the state of ghosts and spirits are all decided by it.", "If it is not in the hexagram, one must look for where it is hidden, and only then can one reason it out.", "If the hidden line is also Void, the illness surely cannot be cured.", "Even a good doctor cannot reach its source;", "even if there are spirits, there is no door at which to petition them, and the span of life given by heaven is used up.", "A light illness is not counted in this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2396, 2396],
+          "zh": ["此两句唯言父母、官府、丈夫病，如遇官爻伏而又空者，须防不测。"],
+          "yi": ["这两句只是说父母、官府、丈夫的病，如果遇到官爻伏藏又落空，就要提防不测。"],
+          "en": ["These two lines speak only of the illness of a parent (the Resource line), an official or a husband: if the Pressure line is hidden and also Void, beware of the unforeseen."] }
+      ],
+      "dispute": {
+        "yi": "这两句用在哪些病上：旧注说官鬼是一切病的根由，不能没有，伏而又空则病必不能痊（病轻的除外）；王洪绪说这两句只讲父母、官府、丈夫的病，遇到官爻伏而又空才要提防不测。",
+        "en": "Which illnesses these two lines apply to: the old commentary says the Pressure line is the root of every illness and cannot be missing, and if it is hidden and also Void the illness surely cannot be cured (a light illness excepted); Wang Hongxu says the two lines speak only of the illness of a parent, an official or a husband, and only when the Pressure line is hidden and Void must one beware of the unforeseen."
+      },
+      "note": {
+        "yi": "「衣冠」按上下文是入殓的衣帽，「早备衣冠」是叫人早些准备后事。「伏」是官鬼不在卦里，藏在本宫首卦某一爻的下面（见 LY.ILL.HJC.06、HJC.07）。",
+        "en": "'Robes and cap' (yiguan) is, from the context, the clothes and cap of the burial, and 'prepare them early' tells one to get affairs ready in good time. 'Hidden' means that the Pressure line is not in the hexagram and lies under a line of the head hexagram of the home palace (see LY.ILL.HJC.06 and HJC.07)."
+      },
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.07", "LY.ILL.HJC.39"]
+    },
+    {
+      "id": "LY.ILL.HJC.50",
+      "topic": "神祟",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "日辰带鬼急为祈祷：日辰带鬼生合世爻，看世爻带的是哪一亲就知道该用什么治（父母经箓符醮、子孙用药、兄弟戒怒节食、财静养、官鬼祈祷）；认哪路神鬼，旧注按日辰地支、王洪绪按生合的六神",
+      "rule": {
+        "yi": "日辰带着鬼、来生合世爻，就该祈祷。看世爻带的是哪一亲，就知道该用什么办法治：带父母，要靠经、箓、符、醮来保扶；带子孙，要用药调理；带兄弟，要戒暴怒、节制饮食；带财爻，要好好休养；带官鬼，要祈祷鬼神。要知道该求哪一路神鬼，两家的办法不同，见分歧。",
+        "en": "When the Day carries Pressure and generates or combines with the Self line, one should pray. What the Self line carries shows the cure: Resource, scriptures, registers, talismans and rites; Output, medicine; Peer, curbing temper and moderating food; Wealth, good rest; Pressure, prayer to the ghosts and spirits. Which spirit or ghost to seek is found differently by the two commentaries (see the dispute)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6940, 6940],
+          "zh": ["日辰带鬼，急为祈祷保无虞。"],
+          "yi": ["日辰上带着鬼，赶紧祈祷，保证没有忧患。"],
+          "en": ["The Day carrying Pressure: hurry to pray, and there will be nothing to fear."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6941, 6942],
+          "zh": ["日辰带鬼，生合世爻，世爻看带何等神，便知得何者为治。", "如带父母，必须经箓符醮保扶则愈。", "如带子孙，必须用药调理。", "如带兄弟，必须戒暴怒，节饮食。", "如带财爻，必须好好将息。", "带官鬼，祈祷鬼神。", "世持鬼，亦宜先祷。", "但世鬼是先曾许下，日辰鬼是未曾许下。", "要知求何神鬼，有福力，以日辰推之。", "如子为北斗或北阴；", "亥或溺死鬼，察其为河伯，或划龙船。", "盖亥水中有甲木，故也。", "余仿此。"],
+          "yi": ["日辰带着鬼，来生、合世爻，看世爻带的是哪一类神，就知道该用什么办法治。", "如果带父母，一定要靠经、箓、符、醮来保扶才好。", "如果带子孙，一定要用药调理。", "如果带兄弟，一定要戒暴怒，节制饮食。", "如果带财爻，一定要好好休养。", "带官鬼，就祈祷鬼神。", "世爻持着鬼，也宜先祈祷。", "不过世爻上的鬼是以前许过愿的，日辰上的鬼是没有许过愿的。", "要知道该求哪一路神鬼才有福力，用日辰来推。", "比如子是北斗，或者北阴；", "亥是溺死鬼之类，要察看是河伯，还是划龙船的。", "因为亥水里藏着甲木。", "其余照这个类推。"],
+          "en": ["When the Day carries Pressure and generates or combines with the Self line, look at what sort of spirit the Self line carries, and one knows what is the cure.", "If it carries Resource, it will heal only with scriptures, registers, talismans and jiao offerings to protect and sustain.", "If it carries Output, medicine is needed to regulate it.", "If it carries Peer, he must give up violent anger and moderate his food and drink.", "If it carries Wealth, he must take good rest.", "If it carries Pressure, he should pray to the ghosts and spirits.", "When the Self line itself holds Pressure, one should also pray first.", "But Pressure on the Self line is a vow made before, and Pressure on the Day is a vow not yet made.", "To know which spirit or ghost to beg, so that there is blessing and power, reason it from the Day.", "For example, Zi is the Northern Dipper or the North Yin;", "Hai is a drowned ghost or the like: look into whether it is the River Earl or the rowing of dragon boats.", "For within the Hai Water there is Jia Wood.", "The rest follow this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2398, 2398],
+          "zh": ["如日辰带官鬼生合世爻或用爻者，当为祈祷，看其生合者是何等神。", "如生合青龙父母，是花幡香愿，勾陈则土地城隍，朱雀则香灯口愿，螣蛇则百怪惊神，白虎则伤司五道，玄武则玄帝北阴。", "阳象阳爻是神，阴象阴爻是鬼。", "今陈大略，后有《鬼神章》尽细，阅之照断方是，切不可妄断！"],
+          "yi": ["如果日辰带着官鬼、来生合世爻或者用爻，就该去祈祷，看生合它的是哪一路神。", "如果生合它的是青龙、父母，是花幡香愿；勾陈是土地、城隍；朱雀是香灯口愿；螣蛇是百怪惊神；白虎是伤司、五道；玄武是玄帝、北阴。", "阳的象、阳的爻是神，阴的象、阴的爻是鬼。", "现在只讲个大概，后面有《鬼神章》讲得详尽，读了照着断才对，千万不可乱断！"],
+          "en": ["If the Day carries Pressure and generates or combines with the Self or Subject line, one should pray, and look at what sort of spirit it is that generates or combines with it.", "If what generates or combines with it is the Azure Dragon and Resource, it is a vow of flower banners and incense; Hook Earth means the Earth God and the City God; the Vermilion Bird a vow of incense and lamps spoken aloud; the Coiling Snake the hundred oddities and startled spirits; the White Tiger the Office of Injury and the Five Ways; the Dark Tortoise the Dark Emperor and the North Yin.", "A yang image on a yang line is a god; a yin image on a yin line is a ghost.", "Only the outline is set out now; the later Chapter on Ghosts and Spirits is fully detailed, and one should read it and judge by it; on no account judge at random!"] }
+      ],
+      "dispute": {
+        "yi": "怎样认该求哪一路神鬼：旧注用日辰的地支推（子是北斗或北阴，亥是溺死鬼，要察看是河伯、还是划龙船的），再按世爻带的六亲定治法；王洪绪看生合世爻或用爻的那一爻带的六神（青龙、勾陈、朱雀、螣蛇、白虎、玄武各是一路），并且说阳象阳爻是神、阴象阴爻是鬼。",
+        "en": "How to tell which spirit or ghost to seek: the old commentary reasons from the branch of the Day (Zi is the Northern Dipper or the North Yin, Hai a drowned ghost, to be looked into as the River Earl or dragon-boat rowing) and fixes the cure by the relation the Self line carries; Wang Hongxu looks at the six spirits carried by the line that generates or combines with the Self or Subject line (the Azure Dragon, Hook Earth, Vermilion Bird, Coiling Snake, White Tiger and Dark Tortoise each a different sort), and says that a yang image on a yang line is a god and a yin image on a yin line a ghost."
+      },
+      "note": {
+        "yi": "「箓」是道士画的符箓，「醮」是道士设坛祭神的仪式，「保扶」是保护、扶助。「花幡香愿」「香灯口愿」是向神许过愿、还愿时献的花幡、香灯。「伤司」「五道」是主伤亡、管冥途的神，「玄帝」是玄天上帝，「北阴」是北方的阴神。亥里藏着壬水和甲木，所以旧注说除了河伯（水），还要看有没有划龙船的（木船）。王洪绪说的《鬼神章》是本书后面专讲鬼神的一章。",
+        "en": "A 'lu' is a register or talisman drawn by a Daoist, a 'jiao' a rite in which a Daoist sets up an altar and offers to the spirits, and 'protect and sustain' is to protect and support. 'A vow of flower banners and incense' and 'a vow of incense and lamps spoken aloud' are vows made to a god and the flower banners, incense and lamps offered in fulfilling them. 'The Office of Injury' and 'the Five Ways' are gods over injury and death and the road to the underworld, the 'Dark Emperor' is the Supreme Emperor of the Dark Heaven, and the 'North Yin' is the yin spirit of the north. Hai holds Ren Water and Jia Wood, so the old commentary says that besides the River Earl (Water) one must see whether there is dragon-boat rowing (a wooden boat). The Chapter on Ghosts and Spirits that Wang Hongxu mentions is the chapter later in the book that treats ghosts and spirits alone."
+      },
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.38"]
+    },
+    {
+      "id": "LY.ILL.HJC.51",
+      "topic": "动变",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "动化父来冲克劳役堪忧：动爻变出父母（文书）冲克世爻要少劳碌否则病复重；变财冲克防食复（加玄武防色复）、变子孙冲克被药误、变兄弟冲克恼气即复；日辰带刑冲则不依此断",
+      "rule": {
+        "yi": "卦里的动爻变出父母（文书）来冲克世爻，要自己放宽心、少劳碌，不然病马上复发，反而加重。变出财爻来冲克，要提防饮食引起复发；再加玄武，要提防女色引起复发；变出子孙来冲克，是被药耽误了；变出兄弟来冲克，一生气就复发。以上这些，如果日辰带着刑、冲，就不能照这个断，只能说是因为这个而又加重，因为日辰上就是鬼。",
+        "en": "When a moving line in the hexagram changes out the Resource line (documents) that clashes or controls the Self line, he should keep at ease and toil little, or the illness returns at once and grows heavier. If it changes out Wealth that clashes or controls, beware of a relapse through food; with the Dark Tortoise added, beware of a relapse through lust; if it changes out Output that clashes or controls, he has been misled by medicine; if it changes out Peer that clashes or controls, anger brings the relapse. If in all this the Day carries punishment or clash, one may not judge this way: one can say only that it grows heavier because of this, for the Day is Pressure there."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6944, 6944],
+          "zh": ["动化父来冲克，劳役堪忧；"],
+          "yi": ["动爻变出父母来冲克，劳累奔忙的事让人担忧；"],
+          "en": ["A moving line changing into Resource that clashes or controls: toil and labour are a cause for worry;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6945, 6946],
+          "zh": ["卦中动爻，化出文书冲克世爻，宜自在，少劳碌。", "不然，病即复来，反加沉重。", "若化财来冲克，须防食复；", "更加玄武，宜防色复；", "若化子孙克冲，被药误矣；", "若化兄弟冲克，恼气即复也。", "以上若日辰带刑冲，不可依此断。", "可言因此而复加沉重。", "盖日辰是鬼在也。"],
+          "yi": ["卦里的动爻变出文书（父母）来冲克世爻，要自在些，少劳碌。", "不然，病立刻又来，反而加重。", "如果变出财爻来冲克，要提防吃东西引起复发；", "再加玄武，要提防女色引起复发；", "如果变出子孙来克冲，是被药耽误了；", "如果变出兄弟来冲克，一生气就复发。", "以上这些，如果日辰带着刑、冲，就不能照这个断。", "只能说是因为这个而又加重。", "因为日辰上就是鬼在。"],
+          "en": ["A moving line in the hexagram that changes out documents (Resource) clashing or controlling the Self line: he should keep at ease and toil little.", "Otherwise the illness comes back at once and grows heavier.", "If it changes out Wealth that clashes or controls, beware of a relapse through food;", "with the Dark Tortoise added, beware of a relapse through lust;", "if it changes out Output that controls or clashes, he has been misled by medicine;", "if it changes out Peer that clashes or controls, the illness returns as soon as he is angered.", "In all this, if the Day carries punishment or clash, one may not judge by this.", "One can say only that it grows heavy again because of this.", "For the Pressure is there in the Day."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2400, 2400],
+          "zh": ["卦中父母爻动来冲克用爻，或用爻动变父母不冲克者，宜自减少劳碌，不然病即反复，又加沉重矣。"],
+          "yi": ["卦里父母爻动来冲克用爻，或者用爻发动变成父母而没有冲克的，要自己减少劳碌，不然病马上反复，又加重了。"],
+          "en": ["If in the hexagram the Resource line moves to clash or control the Subject line, or the Subject line moves and changes into Resource without clashing or controlling, he should reduce his toil himself, or the illness relapses at once and grows heavier again."] }
+      ],
+      "note": {
+        "yi": "旧注说父母冲克的是世爻；王洪绪说是用爻，又添了一种「用爻动变父母、没有冲克」，那四个字书里没有再解释，译文按字面。旧注还有财、子孙、兄弟三种变出的情形和玄武的加成，以及日辰带刑冲时怎么改断，王洪绪都没有收。「文书」是父母爻的另一个名字。",
+        "en": "The old commentary says what the Resource line clashes or controls is the Self line; Wang Hongxu says the Subject line, and adds the case 'the Subject line moves and changes into Resource, without clashing or controlling', on which the book says no more and which the translation renders as written. The old commentary also gives the changes into Wealth, Output and Peer, the addition of the Dark Tortoise, and how to judge otherwise when the Day carries punishment or clash, none of which Wang Hongxu takes. 'Documents' is another name for the Resource line."
+      },
+      "see": ["LY.ILL.HJC.21", "LY.ILL.HJC.23"]
+    },
+    {
+      "id": "LY.ILL.HJC.52",
+      "topic": "医药",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "日加福去生扶药医则愈：日辰临子孙、生扶（拱合）用爻，必得药力而愈",
+      "rule": {
+        "yi": "日辰坐在子孙上，来生、扶用爻（王洪绪：或拱、合），病一定靠药力好起来。",
+        "en": "When the Day sits on Output and generates and supports the Subject line (Wang Hongxu: or embraces or combines with it), the patient will surely recover through the power of medicine."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6948, 6948],
+          "zh": ["日加福去生扶，药医则愈。"],
+          "yi": ["日辰加在子孙上，去生扶用爻，用药医治就会痊愈。"],
+          "en": ["The Day placed on Output and going to generate and support the Subject: treated with medicine, it heals."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6949, 6949],
+          "zh": ["日辰临子孙，生扶用爻，必得药力而安也。"],
+          "yi": ["日辰坐在子孙上，来生、扶用爻，一定靠药力平安。"],
+          "en": ["The Day sitting on Output and generating and supporting the Subject line: he surely recovers through the power of medicine."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2402, 2402],
+          "zh": ["日辰临子孙生扶拱合用爻，必得药力而愈。"],
+          "yi": ["日辰坐在子孙上，来生、扶、拱、合用爻，一定靠药力痊愈。"],
+          "en": ["The Day sitting on Output and generating, supporting, embracing or combining with the Subject line: he surely heals through the power of medicine."] }
+      ],
+      "note": {
+        "yi": "「拱」的意思见 LY.ILL.HJC.32 的注。旧注写「生扶」，王洪绪写成「生扶拱合」。",
+        "en": "For what 'embracing' means see the note of LY.ILL.HJC.32. The old commentary writes 'generating and supporting', Wang Hongxu 'generating, supporting, embracing and combining'."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.40"]
+    },
+    {
+      "id": "LY.ILL.HJC.53",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "身上飞伏双官膏肓之疾：卦身持鬼、本宫官鬼又伏世爻或用爻之下、世爻飞伏上下皆官鬼，或鬼夹在用爻卦身前后，叫双官夹身，大象不死也是沉困考终之疾",
+      "rule": {
+        "yi": "卦身上坐着鬼，而本宫的官鬼又伏在世爻下面；或者世爻持着官鬼，而本宫的官鬼伏在用爻下面；或者自己占，遇到世爻的飞爻、伏爻上下都是官鬼：总叫双官夹身，最不利。就算大局不到死，也是沉重缠困、拖到寿终的病。王洪绪补充：身指卦身和用神；鬼夹在身爻或用爻的前后，或者世爻上有鬼、身爻上又有鬼，都叫双官夹用夹身。",
+        "en": "When the hexagram Body holds Pressure while the Pressure of the home palace lies hidden under the Self line; or the Self line holds Pressure while the Pressure of the home palace lies hidden under the Subject line; or in a divination for oneself the Self line, flying and hidden, has Pressure both above and below: all this is called double Pressure clamping the body, and is most unfavorable. Even if the whole image does not show death, it is a heavy, lingering illness that lasts to the end of his days. Wang Hongxu adds: the 'body' means the hexagram Body and the Subject; Pressure lines flanking the body line or the Subject line before and after, or Pressure on the Self line and also on the body line, are all called double Pressure clamping the Subject and the body."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6951, 6951],
+          "zh": ["身上飞伏双官，膏肓之疾；"],
+          "yi": ["身上飞爻、伏爻都是官鬼，是膏肓之疾；"],
+          "en": ["Pressure both flying and hidden at the body: an illness that has reached the gaohuang;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6952, 6952],
+          "zh": ["凡遇卦身持鬼，而本宫官鬼爻又伏世下；", "或世持官鬼，而本宫官伏用爻之下；", "或自占遇世爻飞伏，上下皆值官鬼；", "总谓双官夹身，最为不利。", "若大象不死，亦是沉困之疾，考终之患也。"],
+          "yi": ["凡是遇到卦身持着鬼，而本宫的官鬼爻又伏在世爻下面；", "或者世爻持着官鬼，而本宫的官鬼伏在用爻下面；", "或者自己占，遇到世爻的飞爻、伏爻，上下都是官鬼；", "总叫双官夹身，最不利。", "如果大局不到死，也是沉重缠困的病，是拖到寿终的忧患。"],
+          "en": ["Whenever the hexagram Body holds Pressure while the Pressure line of the home palace also lies hidden beneath the Self line;", "or the Self line holds Pressure while the Pressure of the home palace lies hidden beneath the Subject line;", "or in a divination for oneself, the Self line with its flying and hidden lines has Pressure both above and below;", "All this is called double Pressure clamping the body, and is most unfavorable.", "If the whole image does not show death, it is still a heavy, lingering illness, a trouble that lasts until the end of one's days."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2404, 2404],
+          "zh": ["身者卦身及用神也。", "如身爻上已临官鬼，又他爻动而飞入身上来者，或身之前后夹有官鬼，或用爻前后夹有官鬼，或世上有鬼而身上又有鬼，皆谓之双官夹用夹身，大象不死，亦是沉困考终之疾也。", "即如子病吉凶，得恒卦，三五爻皆是官爻，午火子孙居其四爻，鬼之中是也。", "余仿此。"],
+          "yi": ["身指的是卦身和用神。", "比如身爻上已经临着官鬼，又有别的爻动了飞到身上来的，或者身爻前后夹着官鬼，或者用爻前后夹着官鬼，或者世爻上有鬼而身爻上又有鬼，都叫双官夹用夹身，大局不死，也是沉重缠困、拖到寿终的病。", "比如占儿子的病吉凶，得到恒卦，三爻、五爻都是官爻，午火子孙在第四爻，正在两个鬼的中间，就是这一种。", "其余照这个类推。"],
+          "en": ["The 'body' means the hexagram Body and the Subject.", "If a Pressure line is already on the body line and another line moves and flies onto the body, or Pressure lines flank the body before and after, or Pressure lines flank the Subject line before and after, or the Self line carries Pressure and the body line also carries Pressure, all this is called double Pressure clamping the Subject and clamping the body; even if the whole image does not show death, it is a heavy, lingering illness that lasts to the end of his days.", "For example, in divining the fortune of a son's illness one gets Heng: the third and fifth lines are both Pressure lines and the Wu Fire Output line stands at the fourth line, in the middle of the two Pressures; that is the case.", "The rest follow this."] }
+      ],
+      "dispute": {
+        "yi": "「身」指什么、哪些情形算双官夹身：旧注讲三种（卦身持鬼而官鬼伏世下，世持鬼而官鬼伏用爻下，自占世爻飞伏上下皆鬼）；王洪绪先说「身」是卦身和用神，又把鬼夹在身或用爻前后、世爻和身爻都有鬼也算进来，比旧注宽。",
+        "en": "What the 'body' is and which cases count as double Pressure clamping the body: the old commentary gives three (the hexagram Body holds Pressure while Pressure is hidden under the Self line; the Self line holds Pressure while Pressure is hidden under the Subject line; in a divination for oneself the Self line flying and hidden has Pressure above and below); Wang Hongxu first says the 'body' is the hexagram Body and the Subject, and also counts Pressure flanking the body or the Subject before and after, and Pressure on both the Self line and the body line, which is wider than the old commentary."
+      },
+      "note": {
+        "yi": "王洪绪的例子里，恒卦属震宫（木）：三爻辛酉、五爻庚申是金，金克木，是官鬼；四爻庚午是火，是子孙。子孙夹在两个官鬼中间。这是按纳甲排出来的，书里没有写。「膏肓」是心尖和横膈之间的部位，古人说药力到不了那里；「考终」是活到寿终。",
+        "en": "In Wang Hongxu's example Heng belongs to the Zhen palace (Wood): the third line Xin You and the fifth line Geng Shen are Metal, and Metal controls Wood, so they are Pressure; the fourth line Geng Wu is Fire, which is Output. Output is flanked by two Pressure lines. This is worked out from the Najia assignment and the book does not write it. 'Gaohuang' is the place between the tip of the heart and the diaphragm, which the ancients said medicine cannot reach; 'kaozhong' is to live out one's span to its end."
+      },
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.07", "LY.ILL.HJC.54"]
+    },
+    {
+      "id": "LY.ILL.HJC.54",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "命入幽明两墓泉世之人：身、命、世随鬼入墓，有卦墓、鬼墓、世墓、主墓；动出在卦中的是明墓、变入的是幽墓，不拘幽明皆非吉兆；大象凶又逢墓动、或世爻主象俱入墓者必死，动爻日辰冲破墓爻则无事",
+      "rule": {
+        "yi": "身、命、世随着鬼入墓，墓有卦墓、鬼墓、世墓、主墓几种。凡是动出来在卦里的，人人都看得见，那个墓叫明墓；变进墓里去的，人看不见，那个墓叫幽墓。不管幽的明的，都不是吉兆：大局就算不死，病也危险困顿；如果大局本来就凶，又遇到墓发动，或者世爻和主象都入了墓，一定死。得到动爻、日辰把墓爻冲破，才可能没事。",
+        "en": "The Body, natal and Self lines follow Pressure into a tomb: there are the tomb of the hexagram, the tomb of Pressure, the tomb of the Self and the tomb of the main image. A tomb that moves out in the hexagram, which everyone can see, is a bright tomb; one that a line changes into, which people cannot see, is a dark tomb. Whether dark or bright, neither is a lucky sign: even if the whole image does not show death, the illness is dangerous and hard; if the whole image is already bad and a tomb also moves, or the Self line and the main image both enter a tomb, he will surely die. If a moving line or the Day clashes and breaks the tomb line, there may be no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6954, 6954],
+          "zh": ["命入幽明两墓，泉世之人。"],
+          "yi": ["命入了幽墓和明墓两种墓，是黄泉和人世之间的人。"],
+          "en": ["A life entering both the dark and the bright tombs: a person of the springs and of the world."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6955, 6959],
+          "zh": ["以日时看，身随鬼入墓，命随鬼入墓，世随鬼入墓；", "有卦墓、鬼墓、世墓、主墓。", "凡遇动出卦中者，人皆见之，其墓为明；", "变入墓中者，人所不见，其墓为幽。", "不拘幽明，皆非吉兆。", "大象不死，病亦危困。", "若大象既凶，又逢墓动，或世爻主象俱入墓者，必死。", "得动爻日辰冲破墓爻，庶几无事。"],
+          "yi": ["拿日和时来看，身随着鬼入墓，命随着鬼入墓，世随着鬼入墓；", "墓分四种：卦墓、鬼墓、世墓、主墓。", "凡是动出来在卦里的，人人都看得见，这个墓就是明墓；", "变进墓里去的，人看不见，这个墓就是幽墓。", "不管幽的明的，都不是吉兆。", "大局不到死，病也危险困顿。", "如果大局本来就凶，又遇到墓发动，或者世爻和主象都入了墓，一定死。", "得到动爻、日辰把墓爻冲破，才差不多没事。"],
+          "en": ["Viewing by the day and hour: the Body following Pressure into the tomb, the natal line following Pressure into the tomb, the Self line following Pressure into the tomb;", "There are the tomb of the hexagram, the tomb of Pressure, the tomb of the Self and the tomb of the main image.", "Whatever moves out in the hexagram is seen by everyone, and that tomb is a bright one;", "what changes into the tomb is not seen by people, and that tomb is a dark one.", "Whether dark or bright, none is a lucky sign.", "If the whole image does not show death, the illness is still dangerous and hard.", "If the whole image is already bad and a tomb also moves, or the Self line and the main image both enter a tomb, he will surely die.", "If a moving line or the Day clashes and breaks the tomb line, there may be no harm."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2406, 2406],
+          "zh": ["以卦看有鬼墓，以世看有世墓，以用神看有主墓，凡遇此三墓出现卦中者，人皆见之，其墓为明；", "变入墓中者，人所不见，其墓为幽。", "不拘明幽，病主危困。", "或世爻用爻被官鬼两头夹之，或见有两重鬼墓夹身者，必死。", "得日辰动爻冲破墓爻，庶几无事。"],
+          "yi": ["以卦来看有鬼墓，以世爻来看有世墓，以用神来看有主墓，凡是这三个墓出现在卦里的，人人都看得见，这个墓就是明墓；", "变进墓里去的，人看不见，这个墓就是幽墓。", "不管明的幽的，病主危险困顿。", "或者世爻、用爻被官鬼两头夹着，或者见到两重鬼墓夹住身爻的，一定死。", "得到日辰、动爻把墓爻冲破，才差不多没事。"],
+          "en": ["Looking from the hexagram there is the tomb of Pressure, from the Self line the tomb of the Self, from the Subject the tomb of the main image; where any of these three tombs appears in the hexagram, everyone sees it, and that tomb is a bright one;", "what changes into the tomb is not seen by people, and that tomb is a dark one.", "Whether bright or dark, the illness is dangerous and hard.", "If the Self or Subject line is clamped by Pressure lines on both sides, or two layers of Pressure tombs clamp the body, he will surely die.", "If the Day or a moving line clashes and breaks the tomb line, there may be no harm."] }
+      ],
+      "dispute": {
+        "yi": "墓有几种、什么情形必死：旧注列四种墓（卦墓、鬼墓、世墓、主墓，「以日时看」），必死的条件是大象凶又逢墓动、或世爻主象俱入墓；王洪绪列三种（鬼墓、世墓、主墓，分别从卦、世爻、用神看），必死的条件是世爻用爻被官鬼两头夹着、或有两重鬼墓夹身。",
+        "en": "How many kinds of tomb there are and what makes death certain: the old commentary lists four (the tomb of the hexagram, of Pressure, of the Self and of the main image, 'viewing by the day and hour') and makes death certain when the whole image is bad and a tomb moves, or when the Self line and the main image both enter a tomb; Wang Hongxu lists three (the tombs of Pressure, of the Self and of the main image, seen from the hexagram, the Self line and the Subject) and makes death certain when the Self or Subject line is clamped by Pressure lines on both sides or two layers of Pressure tombs clamp the body."
+      },
+      "note": {
+        "yi": "「明墓」是墓爻自己动出来、摆在卦面上的；「幽墓」是动爻变进墓里去、卦面上看不见的。经文「泉世之人」四个字字面是「泉下和在世的人」，两家的注都没有解释。",
+        "en": "A 'bright tomb' is one whose tomb line has itself moved out and lies on the face of the hexagram; a 'dark tomb' is one that a moving line changes into, which cannot be seen on the face of the hexagram. The four characters 'quan shi zhi ren' of the verse literally mean 'a person of the springs below and of the world', and neither commentary explains them."
+      },
+      "see": ["LY.ILL.HJC.24", "LY.ILL.HJC.41", "LY.ILL.HJC.53"]
+    },
+    {
+      "id": "LY.ILL.HJC.55",
+      "topic": "风险",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "应合而变财伤勿食馈来之物：应爻动来生合世爻是有人问安，带财福必有馈送、兄弟只是清访；若应生合而变出妻财反来刑克，馈送切须戒食否则反受伤害，占长辈尤宜忌",
+      "rule": {
+        "yi": "应爻发动来生、合世爻，是有人来问安：带财爻、子孙的，一定有送东西的；带兄弟的，只是来看望。如果应爻虽然生合，却变出妻财反过来刑克世爻（或者应爻生合世爻而刑克主象），要是有人送东西，千万不要吃，不然反而受伤害。占长辈的病，尤其要忌。",
+        "en": "When the Other line moves to generate or combine with the Self line, someone will come to ask after him: if it carries Wealth or Output, there will surely be gifts; if Peer, only a plain visit. But if the Other line, though generating or combining, changes out Wealth that turns to punish or control the Self line (or the Other line generates and combines with the Self line while punishing or controlling the main image), then any gift sent should on no account be eaten, or it does harm instead; in divining an elder it is even more to be avoided."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6961, 6961],
+          "zh": ["应合而变财伤，勿食馈来之物；"],
+          "yi": ["应爻来合，却变出财爻来伤，不要吃别人送来的东西；"],
+          "en": ["The Other line combines but changes into Wealth that harms: do not eat what is sent as gifts;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6962, 6962],
+          "zh": ["应爻动来生合世爻，当有问安之人。", "带财福，必有馈送；", "兄弟，清访而已。", "若应虽生合，而变出妻财，反来刑世克世；", "或应爻生合世爻，而刑克主象；", "倘有馈送，切宜戒食。", "否则反能伤害。", "若上尊长，尤宜忌之。", "或加应值妻财，为变爻冲克主象者，亦然。"],
+          "yi": ["应爻发动来生、合世爻，该有来问安的人。", "带着财爻、福爻的，一定有送东西的；", "带兄弟的，只是清淡地来看望罢了。", "如果应爻虽然生合，却变出妻财，反过来刑世爻、克世爻；", "或者应爻生合世爻，却去刑克主象；", "要是有人送东西来，千万要忌口不吃。", "不然反而会受到伤害。", "如果占的是长辈，更要忌讳。", "或者应爻上又值着妻财，是变出的爻冲克主象的，也是这样。"],
+          "en": ["When the Other line moves to generate or combine with the Self line, there will be someone who comes to ask after him.", "If it carries Wealth or Output, there will surely be gifts;", "with Peer, it is only a plain visit.", "If the Other line, though generating and combining, changes out Wealth that in turn punishes and controls the Self line;", "or the Other line generates and combines with the Self line but punishes and controls the main image;", "if gifts are sent, one must on no account eat them.", "Otherwise they may do harm instead.", "If the divination is for an elder, it is even more to be avoided.", "Or if the Other line also has Wealth on it, and the changed line clashes with or controls the main image, it is the same."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2408, 2408],
+          "zh": ["应爻动来生合用爻，当有问安之人，带财福必有馈送，兄弟则清访而已。", "若应虽生合，而用爻或变妻财，或被财爻刑冲克害用神者，倘馈送切宜忌食，否则反生伤害。", "若占长辈，尤宜忌之。"],
+          "yi": ["应爻发动来生合用爻，该有来问安的人，带财爻、福爻一定有送东西的，带兄弟就只是来看望。", "如果应爻虽然生合，而用爻变出妻财，或者被财爻刑冲克害用神的，要是有人送东西，千万要忌口不吃，不然反而受到伤害。", "如果占的是长辈，更要忌讳。"],
+          "en": ["When the Other line moves to generate or combine with the Subject line, someone will come to ask after him; carrying Wealth or Output there are surely gifts, and with Peer it is only a plain visit.", "If the Other line, though generating and combining, has the Subject line change into Wealth, or a Wealth line punishes, clashes with, controls or harms the Subject, then any gift sent must on no account be eaten, or it brings harm instead.", "If one is divining an elder, it is even more to be avoided."] }
+      ],
+      "dispute": {
+        "yi": "变出妻财的是哪一爻：旧注是应爻变出妻财、反过来刑克世爻（另有应爻生合世爻却刑克主象的一种）；王洪绪是用爻自己变出妻财，或者有财爻刑冲克害用神。",
+        "en": "Which line changes into Wealth: in the old commentary it is the Other line changing out Wealth that in turn punishes and controls the Self line (with a second case, the Other line generating and combining with the Self line while punishing or controlling the main image); in Wang Hongxu it is the Subject line itself changing into Wealth, or a Wealth line punishing, clashing with, controlling or harming the Subject."
+      },
+      "note": {
+        "yi": "「清访」是清淡的探望，不带东西。这一条防的是有人借「送东西」害人，或者因为妻财克伤了病人依靠的那一爻，吃了送来的东西反倒加重；书里没有把机理讲得更细。",
+        "en": "'A plain visit' is a bare call, bringing nothing. This entry guards against a gift that does harm, or against eating what is sent when Wealth harms the very line the patient depends on, which makes him worse; the book does not spell the mechanism out further."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.40"]
+    },
+    {
+      "id": "LY.ILL.HJC.56",
+      "topic": "生死",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "鬼动而逢日破何妨见险之虞：官爻发动祸已成，得日辰动爻冲散则病虽凶必不至死；忌爻发动遇冲亦吉，不遇冲而被日辰动爻合住或制克，也是见险无虞",
+      "rule": {
+        "yi": "官鬼爻发动，灾祸就成了。如果得到日辰或动爻来冲它，叫冲散，病虽然凶险，一定不至于死。忌爻发动，遇到冲也吉；如果没有遇到冲，但得到日辰或动爻来合住它、或者制克它，也都是遇到危险而没有忧患的象。",
+        "en": "When a Pressure line moves, the misfortune is made. If the Day or a moving line clashes it, this is called scattering it, and though the illness looks bad he will surely not die. A moving Adversary line that meets a clash is also lucky; if it meets no clash but is held by a combination or controlled and restrained by the Day or a moving line, this too is the image of meeting danger without harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6964, 6964],
+          "zh": ["鬼动而逢日破，何妨见险之虞。"],
+          "yi": ["鬼爻发动，遇上日辰冲破，那么见到危险的忧虑也没有妨碍。"],
+          "en": ["Pressure moving but meeting a clash-break from the Day: what does it matter that one fears meeting danger?"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6965, 6966],
+          "zh": ["官爻发动，其祸成矣。", "若得日辰动爻冲之，谓冲散；", "主其病虽见凶，必不至死。", "忌爻发动，遇冲亦吉。", "若不遇冲，而得日辰动爻，或合住，或制克，皆是见险无虞之象。"],
+          "yi": ["官爻发动，灾祸就成了。", "如果得到日辰、动爻来冲它，叫冲散；", "主这病虽然见凶，一定不至于死。", "忌爻发动，遇到冲也吉。", "如果没有遇到冲，但是日辰、动爻来合住它，或者制克它，都是见到危险而没有忧患的象。"],
+          "en": ["When the Pressure line moves, the misfortune is made.", "If the Day or a moving line clashes it, this is called scattering it;", "it means the illness, though it looks bad, will surely not lead to death.", "A moving Adversary line that meets a clash is also lucky.", "If it meets no clash but the Day or a moving line holds it by a combination or controls and restrains it, all this is the image of meeting danger without harm."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2410, 2410],
+          "zh": ["官爻发动，或忌神发动，其祸成矣。", "若得日辰动爻冲之，谓已冲散，主其病虽凶而不死。"],
+          "yi": ["官爻发动，或者忌神发动，灾祸就成了。", "如果得到日辰、动爻来冲它，叫已经冲散了，主这病虽凶却不会死。"],
+          "en": ["When a Pressure line moves, or the Adversary moves, the misfortune is made.", "If the Day or a moving line clashes it, it is said to have been scattered, and the illness, though bad, will not lead to death."] }
+      ],
+      "note": {
+        "yi": "「日破」是被日辰冲破，「见险」是碰到危险。旧注多讲了两条：忌爻动遇冲也吉，没遇冲时被合住或制克也无虞；王洪绪把官爻和忌神并成一句，没有收这两条。",
+        "en": "'Broken by the Day' is clashed and broken by the Day, and 'meeting danger' is running into danger. The old commentary adds two points: a moving Adversary line meeting a clash is also lucky, and if it meets no clash but is held by a combination or controlled there is also no harm; Wang Hongxu puts the Pressure line and the Adversary in one sentence and does not take these two."
+      },
+      "see": ["LY.ILL.HJC.44", "LY.ILL.HJC.57"]
+    },
+    {
+      "id": "LY.ILL.HJC.57",
+      "topic": "应期",
+      "chapter": "病体",
+      "chapter_en": "The patient's condition",
+      "title": "欲决病痊当究福神之动静、要知命尽须详鬼杀之旺衰：旧注按子孙、扶持之爻、所喜之爻、制伏恶杀之爻断痊愈之期，按鬼爻墓绝日或用爻生旺日断死期；王洪绪说不可以词害义，福神指原神、鬼煞指忌神",
+      "rule": {
+        "yi": "要断病能不能好，看福神的动静；要知道命数什么时候尽，看鬼杀的旺衰。福神、鬼杀指哪一爻，两家读法不同（见分歧）。",
+        "en": "To decide whether an illness will heal, study whether the fortune spirit moves or is still; to know when life is used up, examine whether the Pressure killer is strong or weak. Which lines the 'fortune spirit' and the 'Pressure killer' are, the two commentaries read differently (see the dispute)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6968, 6968],
+          "zh": ["欲决病痊，当究福神之动静；", "要知命尽，须详鬼杀之旺衰。"],
+          "yi": ["要判断病能不能痊愈，应当研究福神是动还是静；", "要知道命数是否已尽，必须仔细看鬼杀是旺还是衰。"],
+          "en": ["To decide whether the illness will heal, one should study whether the fortune spirit (Output) moves or is still;", "to know whether life is used up, one must examine whether the Pressure killer is strong or weak."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6969, 6971],
+          "zh": ["此二句，乃言大略。", "此处最宜活泼推断。", "且如子孙得时旺相，更动，就以本爻断其愈；", "无气发动，以生旺日月断。", "若得子孙安静，不得地，赖有扶持为福者，当以扶持之爻断。", "如卦中不赖子孙为福，而用所喜之爻相助，以成其吉者，即以所喜之爻断。", "又如卦爻凶险，遇杀神忌爻动来伤克，得别爻冲散克制，或合住救得，恶爻无事，即当以制伏恶杀之爻断。", "若鬼爻忌爻虽动无气，亦无克制，而用爻旺相不受伤克者，又当以鬼爻墓绝者断。", "若忌爻不动，用爻不伤，而但衰绝无气者，当以用爻生旺之日断死期。", "余仿此。"],
+          "yi": ["这两句只是讲个大概。", "这里最适合灵活地推断。", "比如子孙得时旺相，又发动，就按子孙这一爻本身断痊愈的时间；", "没有气却发动，按它生旺的日月来断。", "如果子孙安静，又不得地，靠着有扶持它的爻做福，就按扶持它的那一爻来断。", "如果卦里不靠子孙做福，而是靠用神所喜的爻来帮助、成就吉的，就按所喜的那一爻来断。", "又比如卦爻凶险，遇到杀神、忌爻动来伤克，得到别的爻冲散、克制，或者合住救下，恶爻没能作恶，就按制伏恶杀的那一爻来断。", "如果鬼爻、忌爻虽然动却没有气，也没有谁克制它，而用爻旺相、不受伤克，就要按鬼爻入墓、入绝的时间来断。", "如果忌爻不动，用爻没有受伤，只是衰绝、没有气，就要按用爻生旺的日子来断死期。", "其余照这个类推。"],
+          "en": ["These two lines only give the outline.", "Here it is best to judge with flexibility.", "For example, if Output is in season and strong and also moves, judge the healing by that line itself;", "if it moves without force, judge by the days and months in which it is born or strong.", "If Output is still and out of place, and depends on a supporting line to bring fortune, judge by the supporting line.", "If the hexagram does not rely on Output for fortune but on a line that the Subject favours to help and bring about the luck, judge by that favoured line.", "Again, if the lines are dangerous and a killer spirit or Adversary line moves to harm and control, but another line clashes it apart, controls it, or holds it by a combination and rescues, so that the evil line does no harm, judge by the line that restrained the evil killer.", "If the Pressure or Adversary line, though moving, has no force and is not restrained by anything, while the Subject line is strong and not harmed or controlled, judge by the time at which the Pressure line comes to its tomb or extinction.", "If the Adversary line does not move and the Subject line is not harmed but is merely weak or extinct and without force, judge the date of death by the days on which the Subject line is born or strong.", "The rest follow this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2412, 2412],
+          "zh": ["读是篇者不可以词害义。", "福神者，其义轻于子孙而重于原神也；", "鬼煞者，其理在于忌神而不在于官鬼也。", "凡占病，如遇原神旺动，即使用神空破伏藏者，其病可愈；", "如遇忌神旺动，即使用神出现不空破者，禄命当尽矣！"],
+          "yi": ["读这一篇的人不可以拿字面害了本意。", "福神这个词，它的分量比子孙轻，而比原神重；", "鬼煞这个词，它的道理在忌神，而不在官鬼。", "凡是占病，如果遇到原神旺相发动，就算用神落空、被破、伏藏，这病也能好；", "如果遇到忌神旺相发动，就算用神出现在卦里、不空不破，禄命也该尽了！"],
+          "en": ["One who reads this piece must not let the words hurt the meaning.", "The 'fortune spirit' is lighter in meaning than Output and heavier than the Support;", "the principle of the 'Pressure killer' lies in the Adversary and not in the Pressure line.", "In divining illness, if the Support is strong and moving, then even if the Subject is Void, broken or hidden, the illness can heal;", "if the Adversary is strong and moving, then even if the Subject appears in the hexagram and is neither Void nor broken, his allotted life is at its end!"] }
+      ],
+      "dispute": {
+        "yi": "「福神」「鬼杀」指哪一爻：旧注按字面，福神是子孙、鬼杀是官鬼和忌爻，并且定出按哪一爻断痊愈的日子、按哪一天断死期；王洪绪说不可以拿字面害了本意，福神比子孙轻、比原神重，鬼煞的道理在忌神、不在官鬼：原神旺动，用神空破伏藏也能好；忌神旺动，用神好好出现也要命尽。",
+        "en": "Which lines the 'fortune spirit' and the 'Pressure killer' are: the old commentary takes them by the letter, the fortune spirit as Output and the Pressure killer as the Pressure line and the Adversary line, and fixes by which line to judge the day of healing and by which day the date of death; Wang Hongxu says one must not let the words hurt the meaning, the fortune spirit being lighter than Output and heavier than the Support and the principle of the Pressure killer lying in the Adversary and not in Pressure: with the Support strong and moving, even a Void, broken or hidden Subject can heal; with the Adversary strong and moving, even a Subject that appears whole is at the end of its life."
+      },
+      "note": {
+        "yi": "王洪绪这一条和他在 LY.ILL.HJC.44 里的话是一个意思：鬼煞的道理在忌神，不在官鬼。旧注最后讲「用爻生旺之日断死期」，和常理不太顺（死期为什么取生旺日），书里没有别的解释，译文按字面。「禄命」是命里注定的禄和寿。这一条讲的是应期，即什么时候好、什么时候不行，和总则、生死两个主题也相通。",
+        "en": "Wang Hongxu's entry says the same as his words in LY.ILL.HJC.44: the principle of the 'Pressure killer' lies in the Adversary and not in the Pressure line. The old commentary's last point, 'judge the date of death by the days on which the Subject line is born or strong', does not sit easily with common sense (why take a day of strength for the date of death), and the book gives no other explanation, so the translation follows the letter. 'Allotted life' is the emolument and span of life fixed by fate. This entry speaks of timing, that is, when the patient recovers and when he fails, and so also touches the general and the life-and-death topics."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.36", "LY.ILL.HJC.39", "LY.ILL.HJC.44"]
+    }
+  ]
+}

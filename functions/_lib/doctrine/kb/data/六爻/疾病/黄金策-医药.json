@@ -1,0 +1,1060 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "医药",
+  "chapter_en": "Doctors and medicine",
+  "ranges": {"卜筮大全": [6980, 7093], "卜筮正宗": [2416, 2483]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.58",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "占医药：子孙是药饵、应爻是医人；应空医不来，应动生合世则医从命，动空化空必他出，克世冲世皆不来；无子孙则药无效、空亦无功",
+      "rule": {
+        "yi": "病了不去求医，能保全性命的很少；药不对症，白白死掉的很多。占医药时，应爻是医生，子孙是药。请医生：应爻落空，医生一定不来；应爻发动来生合世爻，医生一定听请；动了又落空、变出来也是空，一定去了别处；克世、冲世，都是不来。卦里没有子孙，吃药没有效果，子孙落空也没有功效。",
+        "en": "One who falls ill and does not seek a doctor seldom keeps his life whole, and one who takes medicine that does not fit the illness dies in vain more often than not. In divining medicine the Other line is the doctor and Output the medicine. In calling a doctor: if the Other line is Void, the doctor surely will not come; if it moves and generates or combines with the Self line, he surely obeys the call; if it moves, is Void and changes into Void, he has surely gone elsewhere; controlling or clashing the Self line, he will not come. With no Output in the hexagram medicine has no effect, and if Output is Void it does no good either."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6980, 6980],
+          "zh": ["病不求医，全生者寡；", "药不对症，枉死者多。", "欲择善者而从之，须就蓍人而问也。", "应作医人，空则闲亡而不遇；", "子为药饵，伏则扞格以无功。"],
+          "yi": ["病了不去求医，能保全性命的很少；", "药不对症，白白死掉的很多。", "想要挑选好的来听从，就要去找懂蓍草占卜的人来问。", "应爻当作医生，落空就是闲散在外、遇不上；", "子孙当作药，伏藏起来就互相抵触而没有功效。"],
+          "en": ["One who falls ill and does not seek a doctor rarely keeps his life whole;", "medicine that does not fit the illness brings many to a death in vain.", "To choose the good and follow it, one must go to a diviner of the yarrow and ask.", "The Other line is taken as the doctor; if Void, he is idle and away and cannot be met;", "Output is taken as the medicine; if hidden, it clashes and does no good."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6981, 6983],
+          "zh": ["凡占病，以子孙为医药。", "占医药，以应爻为医人，子孙为药饵。", "如卜请医，应空，医人必不来。", "发动生合世，医必从命。", "动空化空，必然他出。", "克世冲世，皆主不来。", "无子孙，服药无效，空亦无功。"],
+          "yi": ["凡是占病，拿子孙当医药。", "占医药时，拿应爻当医生，子孙当药。", "比如卜请医生，应爻落空，医生一定不来。", "应爻发动来生、合世爻，医生一定听请。", "动了又落空、变出来也是空，一定是出去了。", "克世爻、冲世爻，都是不来。", "没有子孙，吃药没有效果，子孙落空也没有功效。"],
+          "en": ["In divining illness, Output is medicine.", "In divining medicine, the Other line is the doctor and Output the medicine.", "For example, in divining the calling of a doctor, if the Other line is Void, the doctor surely will not come.", "If it moves and generates or combines with the Self line, the doctor surely obeys the call.", "If it moves, is Void and changes into Void, he has surely gone out elsewhere.", "Controlling or clashing the Self line, in each case means he will not come.", "With no Output, medicine has no effect, and if Output is Void it does no good either."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2416, 2418],
+          "zh": ["凡卜医药，以子孙爻为药饵，以应爻为医生。", "如子孙受伤或墓绝，或官爻生旺，是药不对症，必不能去病。", "如应爻旬空，医生非它出不来，定用药无效。"],
+          "yi": ["凡是卜医药，拿子孙爻当药，拿应爻当医生。", "如果子孙受伤或者入墓、入绝，或者官爻生旺，就是药不对症，一定不能去病。", "如果应爻落了旬空，医生要么出门了，要么不会来，用他的药一定无效。"],
+          "en": ["In all divining of medicine, the Output line is the medicine and the Other line is the doctor.", "If Output is harmed or in a tomb or extinction, or the Pressure line is born and strong, the medicine does not fit the illness and surely cannot drive it out.", "If the Other line falls into Void, the doctor either has gone elsewhere or will not come, and his medicine surely has no effect."] }
+      ],
+      "note": {
+        "yi": "「蓍人」是用蓍草占卜的人，也就是占卜家。「药饵」是药和药食。「闲亡」是闲散在外、找不到人；王洪绪引经文时写作「瞷亡」，是不同的写法，书里没有解释。王洪绪比旧注多讲了一条：子孙受伤、入墓入绝，或官爻生旺，是药不对症。",
+        "en": "A 'yarrow man' is one who divines with yarrow stalks, that is, a diviner. 'Medicine' (yao'er) is medicine and medicinal food. 'Idle and away' (xianwang) means loitering away and not to be found; where Wang Hongxu quotes the verse he writes it with a different character (jianwang), which the book does not explain. Wang Hongxu adds one thing to the old commentary: Output harmed, or in a tomb or extinction, or the Pressure line born and strong, means the medicine does not fit the illness."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.59", "LY.ILL.HJC.90"]
+    },
+    {
+      "id": "LY.ILL.HJC.59",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "鬼动卦中眼下速难取效：占药要鬼爻安静无气，鬼动病正炽，虽良医妙药也难见效，待鬼爻墓绝日用药才有功，强服则病加重",
+      "rule": {
+        "yi": "占药要官鬼爻安静、没有气才吉。鬼一发动，病正在最厉害的时候，就算有好医生和妙药，一时也很难见效；休囚的还稍可，旺的就更凶。要等鬼爻入墓、入绝的时候用药才有功效；勉强吃药，病一定加重。",
+        "en": "In divining medicine the Pressure line should be still and without force. If it moves, the illness is at its fiercest, and even with a good doctor and wonderful medicine it is hard to gain effect for the moment; if resting or trapped it is a little more bearable, and if strong so much the worse. One must wait until the Pressure line meets its tomb or extinction before medicine has any effect; if he forces himself to take medicine, the illness will surely grow heavier."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6985, 6985],
+          "zh": ["鬼动卦中，眼下速难取效；"],
+          "yi": ["鬼爻在卦里发动，眼下很难取得效果；"],
+          "en": ["Pressure moving in the hexagram: for the present it is hard to gain effect;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6986, 6986],
+          "zh": ["占药，要鬼爻安静，无气为吉。", "若遇发动，其病正炽。", "虽有良医妙药，卒难取效。", "休囚少可，旺则愈凶。", "待鬼爻墓绝，用药方有功。", "或强服药，病必加重。"],
+          "yi": ["占药，要鬼爻安静、没有气才吉。", "如果碰上发动，病正烧得最旺。", "就算有好医生和妙药，一时也很难见效。", "休囚的还稍可，旺的就越凶。", "要等鬼爻入墓、入绝，用药才有功效。", "要是勉强吃药，病一定加重。"],
+          "en": ["In divining medicine, the Pressure line should be still, and lucky if without force.", "If it moves, the illness is at its height.", "Even with a good doctor and wonderful medicine, it is hard to gain effect at once.", "If resting or trapped it is a little more bearable; if strong it is all the worse.", "Wait until the Pressure line meets its tomb or extinction, and then medicine will have effect.", "If he forces himself to take medicine, the illness will surely grow heavier."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2420, 2420],
+          "zh": ["占药要鬼爻安静无气，若发动，虽有妙药时，难以取效，待鬼爻墓绝日用药，方始有效。"],
+          "yi": ["占药要鬼爻安静、没有气，如果发动，就算有妙药，也难以见效，要等鬼爻入墓、入绝的日子用药，才开始有效。"],
+          "en": ["In divining medicine the Pressure line should be still and without force; if it moves, then even with wonderful medicine it is hard to gain effect, and only medicine taken on a day when the Pressure line meets its tomb or extinction begins to work."] }
+      ],
+      "note": {
+        "yi": "旧注说「待鬼爻墓绝」，王洪绪说「待鬼爻墓绝日」，落到具体的日子上。这一条和 LY.ILL.HJC.43（鬼变入长生一日重一日）相通：鬼在走旺的路上，药力压不住。",
+        "en": "The old commentary says 'wait until the Pressure line meets its tomb or extinction' and Wang Hongxu 'a day on which' it does, which brings it down to a particular day. The entry is related to LY.ILL.HJC.43 (Pressure changing into Birth grows heavier each day): while Pressure is on the way to strength, medicine cannot hold it down."
+      },
+      "see": ["LY.ILL.HJC.43", "LY.ILL.HJC.57", "LY.ILL.HJC.58"]
+    },
+    {
+      "id": "LY.ILL.HJC.60",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "空临世上心中强欲求医：世爻空亡病人不会专心求医，无故自空请医不成，勉强为之药亦不效；占服药而世空是药不对症",
+      "rule": {
+        "yi": "世爻落空，病人不会专心去求医；世爻无缘无故落空，请医生决请不成；勉强去做，药也没有效果。占服药时世爻落空，是药不对症。",
+        "en": "When the Self line is Void, the patient will not set his mind on seeking a doctor; if it is Void for no reason, the call will surely not succeed; if he forces it, the medicine also has no effect. In divining the taking of medicine, a Void Self line means that the medicine does not fit the illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6988, 6988],
+          "zh": ["空临世上，心中强欲求医。"],
+          "yi": ["空亡落在世爻上，心里勉强想要求医。"],
+          "en": ["Void on the Self line: in the heart there is only a forced wish to seek a doctor."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6989, 6989],
+          "zh": ["世爻空亡，必不专心求医；", "无故自空，决请不成；", "勉强为之，药亦不效。", "如占服药，而世空者，乃是药不对症也。"],
+          "yi": ["世爻空亡，一定不专心求医；", "无缘无故自己落空，一定请不成；", "勉强去做，药也不见效。", "如果占服药，而世爻落空，就是药不对症。"],
+          "en": ["The Self line Void: he surely does not set his mind on seeking a doctor;", "Void for no reason: the call will surely not succeed;", "if he forces it, the medicine also has no effect.", "In divining the taking of medicine, a Void Self line means the medicine does not fit the illness."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2422, 2422],
+          "zh": ["世爻空亡，必得专心求医，或自不相信他，虽请彼看，亦不用其药石。"],
+          "yi": ["世爻空亡，一定不会专心求医，或者自己不相信那个医生，就算请他来看，也不用他的药。"],
+          "en": ["The Self line Void: he surely will not set his mind on seeking a doctor, or does not trust that doctor himself; even if he invites him to look, he will not use his medicines."] }
+      ],
+      "note": {
+        "yi": "王洪绪原文写「必得专心求医」，和下文「或自不相信他」接不上，大概是旧注「必不专心求医」的笔误；译文按「必不」译。「强欲求医」按字面是「勉强想要求医」。",
+        "en": "Wang Hongxu's text reads 'he must set his mind on seeking a doctor', which does not join up with the following 'or does not trust him himself'; it is probably a slip for the old commentary's 'he surely does not set his mind on seeking a doctor', and the translation follows 'does not'. 'Strongly wants to seek a doctor' (qiang yu qiu yi) is in the letter 'forces himself to want a doctor'."
+      },
+      "see": ["LY.ILL.HJC.58"]
+    },
+    {
+      "id": "LY.ILL.HJC.61",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "官旺福衰药饵轻而病重：官爻无气、子孙旺相则药能胜病有效；子孙休囚、官爻旺相是药轻病重，服之无功",
+      "rule": {
+        "yi": "占药，官爻没有气、子孙旺相，药能胜过病，才有效。如果子孙休囚，官爻反而旺，就是药轻病重，就算吃了，也一定不能奏效。",
+        "en": "In divining medicine, if the Pressure line has no force and Output is strong, the medicine can overcome the illness, and then it is effective. If Output is resting or trapped and the Pressure line is strong instead, the medicine is light and the illness heavy, and even if he takes it, it surely cannot take effect."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6991, 6991],
+          "zh": ["官旺福衰，药饵轻而病重；"],
+          "yi": ["官爻旺、福德衰，药轻而病重；"],
+          "en": ["Pressure strong, Output weak: the medicine is light and the illness heavy;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6992, 6992],
+          "zh": ["占药，官爻无气，子孙旺相，药能胜病，庶有效。", "若子孙休囚，官爻反旺者，乃是药轻病重，虽或服之，必不能奏功也。"],
+          "yi": ["占药，官爻没有气，子孙旺相，药能胜过病，才有效。", "如果子孙休囚，官爻反而旺，就是药轻病重，就算服了，也一定不能奏效。"],
+          "en": ["In divining medicine, if the Pressure line has no force and Output is strong, the medicine can overcome the illness, and then it is effective.", "If Output is resting or trapped and the Pressure line is strong instead, the medicine is light and the illness heavy, and even if he takes it, it surely cannot take effect."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2424, 2424],
+          "zh": ["官爻无气，子孙旺相，药能胜病，服之有效。", "若子孙休囚，官爻旺相者，乃是药轻病重，服之无功。"],
+          "yi": ["官爻没有气，子孙旺相，药能胜过病，服了有效。", "如果子孙休囚，官爻旺相，就是药轻病重，服了没有功效。"],
+          "en": ["If the Pressure line has no force and Output is strong, the medicine can overcome the illness, and taken it is effective.", "If Output is resting or trapped and the Pressure line is strong, the medicine is light and the illness heavy, and taken it does no good."] }
+      ],
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.59"]
+    },
+    {
+      "id": "LY.ILL.HJC.62",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "应衰世旺病家富而医贫：世是病家、应是医家，相合相生非亲即友，相冲相克亲亦不往来；应旺世衰病家贫医必富",
+      "rule": {
+        "yi": "世爻是病人一家，应爻是医生一家。世应相合相生，不是亲戚就是朋友；相冲相克，亲戚也不往来。应旺世衰，病人一家贫困，医生一定富；应衰世旺，反过来断。",
+        "en": "The Self line is the patient's family and the Other line the doctor's. If they combine and generate each other, the two are kin or friends; if they clash and control each other, even kin do not visit. If the Other line is strong and the Self line weak, the patient's family is poor and the doctor surely rich; if the Other line is weak and the Self line strong, judge the reverse."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6994, 6994],
+          "zh": ["应衰世旺，病家富而医贫。"],
+          "yi": ["应爻衰、世爻旺，病人家富而医生穷。"],
+          "en": ["The Other line weak and the Self line strong: the patient's family is rich and the doctor poor."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6995, 6995],
+          "zh": ["世为病家，应为医家。", "相合相生，非亲则友；", "相冲相克，亲不往来。", "若应旺世衰，病家贫乏，医必富；", "应衰世旺，反此断。"],
+          "yi": ["世是病人一家，应是医生一家。", "相合相生，不是亲戚就是朋友；", "相冲相克，就是亲戚也不往来。", "如果应旺世衰，病人一家贫困，医生一定富；", "应衰世旺，反过来断。"],
+          "en": ["The Self line is the patient's family and the Other line the doctor's family.", "Combining and generating each other, they are kin or friends;", "clashing and controlling each other, even kin do not visit.", "If the Other line is strong and the Self line weak, the patient's family is poor and the doctor surely rich;", "if the Other line is weak and the Self line strong, judge the reverse."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2426, 2426],
+          "zh": ["世为病家，应为医家，相合相生，非亲即友。", "若应旺世衰，病家贫乏，医必富，应衰世旺反此断。"],
+          "yi": ["世是病人一家，应是医生一家，相合相生，不是亲戚就是朋友。", "如果应旺世衰，病人一家贫困，医生一定富，应衰世旺就反过来断。"],
+          "en": ["The Self line is the patient's family and the Other line the doctor's; combining and generating each other, they are kin or friends.", "If the Other line is strong and the Self line weak, the patient's family is poor and the doctor surely rich; if the Other line is weak and the Self line strong, judge the reverse."] }
+      ],
+      "see": ["LY.ILL.HJC.58"]
+    },
+    {
+      "id": "LY.ILL.HJC.63",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "父母不宜持世、鬼杀岂可临身：卦身与世爻都不宜临官鬼、父母二爻，遇之药便不中；父母持世可许经醮保禳，鬼爻持世可祷鬼神护佑，然后服药才验",
+      "rule": {
+        "yi": "卦身和世爻都不宜临在官鬼、父母两爻上，遇到了，药就不中用。父母爻持世，可以许下经醮保禳的愿；鬼爻持世，可以祷告鬼神护佑，然后吃药才有效验。",
+        "en": "Neither the hexagram Body nor the Self line should sit on the Pressure or Resource lines; if they do, the medicine does not hit the mark. With Resource holding the Self line one may vow scriptures, offerings and protective rites; with Pressure holding the Self line one may pray to the ghosts and spirits for protection, and only then will the medicine be effective."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6997, 6997],
+          "zh": ["父母不宜持世，鬼杀岂可临身？"],
+          "yi": ["父母不宜持世，鬼煞怎么可以临在身上？"],
+          "en": ["Resource should not hold the Self line; how can the Pressure killer sit on the body?"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6998, 6998],
+          "zh": ["卦身与世，皆不宜临官父二爻。", "若有所遇，药便不中。", "父母持世，可许经醮保禳。", "鬼爻持世，可祷鬼神护佑，然后服药方有验。"],
+          "yi": ["卦身和世爻，都不宜临在官、父两爻上。", "如果遇到了，药就不中用。", "父母爻持世，可以许下经醮保禳的愿。", "鬼爻持世，可以祷告鬼神护佑，然后吃药才有效验。"],
+          "en": ["The hexagram Body and the Self line should neither of them sit on the Pressure or Resource lines.", "If they do, the medicine does not hit the mark.", "With Resource holding the Self line, one may vow scriptures, offerings and protective rites.", "With Pressure holding the Self line, one may pray to the ghosts and spirits for protection, and only then will the medicine be effective."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2428, 2428],
+          "zh": ["卦身与世爻皆不宜临官临父，遇之则药不效。"],
+          "yi": ["卦身和世爻都不宜临官爻、临父母爻，遇到就药不见效。"],
+          "en": ["The hexagram Body and the Self line should neither of them sit on Pressure or on Resource; if they do, the medicine has no effect."] }
+      ],
+      "note": {
+        "yi": "旧注多讲了两种补救办法（父母持世许经醮保禳，鬼爻持世祷鬼神），王洪绪只收了前一句。「经醮保禳」是念经、设醮、祈禳这一类祈求平安的仪式。「身」指哪一爻，见 LY.ILL.HJC.35。",
+        "en": "The old commentary adds two remedies (with Resource holding the Self line vow scriptures, offerings and protective rites; with Pressure holding it pray to the spirits), of which Wang Hongxu takes only the first sentence. 'Scriptures, offerings and protective rites' are the rites of chanting, holding a jiao offering and averting misfortune that ask for safety. For which line the 'body' is, see LY.ILL.HJC.35."
+      },
+      "see": ["LY.ILL.HJC.35", "LY.ILL.HJC.50"]
+    },
+    {
+      "id": "LY.ILL.HJC.64",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "官化官病变不一：医药卦中官鬼化官鬼病必有更变，症候不一、病势不定，用药不见效；王洪绪说是官爻化进神，化退神反此断",
+      "rule": {
+        "yi": "占医药，遇到官鬼变官鬼，病一定有变化：症候不一样，或者病势不稳定，用药也不见效。",
+        "en": "In a medicine hexagram, when Pressure changes into Pressure, the illness surely changes: the symptoms are not uniform, or the course of the illness is unsettled, and medicine also has no effect."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7000, 7000],
+          "zh": ["官化官，病变不一；"],
+          "yi": ["官鬼变官鬼，病的变化不止一种；"],
+          "en": ["Pressure changing into Pressure: the illness changes in more than one way;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7002, 7002],
+          "zh": ["医药卦中，遇官化官，其病必有更变。", "或症候不一，或病势不定，用药亦不见效。"],
+          "yi": ["占医药的卦里，遇到官鬼变官鬼，这病一定有变化。", "或者症候不一样，或者病势不稳定，用药也不见效。"],
+          "en": ["In a medicine hexagram, when Pressure changes into Pressure, the illness surely changes.", "Either the symptoms are not uniform, or the course of the illness is unsettled, and medicine also has no effect."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2430, 2430],
+          "zh": ["此言官爻化进神症候不一，或病势不定，化退神反此断。"],
+          "yi": ["这是说官爻变进神，症候不一样，或者病势不稳定，变退神就反过来断。"],
+          "en": ["This says that when the Pressure line changes into an Advancing spirit the symptoms are not uniform or the course is unsettled, and with a Retreating spirit judge the reverse."] }
+      ],
+      "dispute": {
+        "yi": "「官化官」指什么变化：旧注泛指官鬼变官鬼，病必有更变；王洪绪限定成官爻化进神（症候不一、病势不定），化退神则反过来断。",
+        "en": "What change 'Pressure changing into Pressure' is: the old commentary means Pressure changing into Pressure in general, and the illness must change; Wang Hongxu limits it to the Pressure line changing into an Advancing spirit (symptoms not uniform, course unsettled), and a change into a Retreating spirit is judged the reverse."
+      },
+      "note": {
+        "yi": "王洪绪这一段同时注了「官化官」和「子化子」两句经文，前半在这一条，后半在下一条（LY.ILL.HJC.65）。疾病章里另有一条讲官化官、鬼化鬼（LY.ILL.HJC.09）。",
+        "en": "Wang Hongxu's paragraph comments on both the verse 'Pressure changing into Pressure' and the verse 'Output changing into Output'; the first half is in this entry and the second in the next (LY.ILL.HJC.65). The illness chapter has a separate entry on Pressure changing into Pressure (LY.ILL.HJC.09)."
+      },
+      "see": ["LY.ILL.HJC.09", "LY.ILL.HJC.65"]
+    },
+    {
+      "id": "LY.ILL.HJC.65",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "子化子药杂不精：子孙是占药的用神，只喜一位出现、有气不空、日辰动爻扶持；卦中重叠太过或子孙重化子孙是医不精、用药杂而无功；王洪绪读作子孙化进神有效、化退神与伏吟卦不可服",
+      "rule": {
+        "yi": "子孙是占药用的用神，只喜欢出现一位：有气、不落空，又有日辰、动爻扶持，就是最吉的兆头。如果卦里重叠太多，或者子孙又变成子孙，就是医生不精，用药杂乱而没有功效。",
+        "en": "Output is the Subject in divining medicine and is glad to appear as one only: with force, not Void, and supported by the Day and moving lines, it is the best sign. If there are too many of them in the hexagram, or Output changes again into Output, the doctor is not skilled and his medicines are mixed and do no good."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7004, 7004],
+          "zh": ["子化子，药杂不精。"],
+          "yi": ["子孙变子孙，药杂乱而不精。"],
+          "en": ["Output changing into Output: the medicines are mixed and not refined."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7005, 7005],
+          "zh": ["子孙，乃占药用神。", "只喜一位出现。", "有气不空，日辰动爻扶持，即上吉之兆。", "若卦中重叠太过，或子孙重化子孙，乃是医不精，用药杂而无功也。"],
+          "yi": ["子孙是占药用的用神。", "只喜欢出现一位。", "有气、不落空，又有日辰、动爻扶持，就是上吉的兆头。", "如果卦里重叠太多，或者子孙又变成子孙，就是医生不精，用药杂乱而没有功效。"],
+          "en": ["Output is the Subject in divining medicine.", "It is glad to appear as one only.", "With force and not Void, and supported by the Day and moving lines, it is the best sign.", "If there are too many of them in the hexagram, or Output changes again into Output, the doctor is not skilled and his medicines are mixed and do no good."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2430, 2430],
+          "zh": ["子孙乃占药用神，如子孙化进神而药有效，如化退神及伏吟卦，不可服此剂。"],
+          "yi": ["子孙是占药用的用神，如果子孙变进神，药有效；如果变退神，以及伏吟卦，就不可以服这个药。"],
+          "en": ["Output is the Subject in divining medicine: if Output changes into an Advancing spirit the medicine is effective; if into a Retreating spirit, or in a Hidden Chant hexagram, this medicine may not be taken."] }
+      ],
+      "dispute": {
+        "yi": "「子化子」是好是坏：旧注说子孙重叠、或子孙又变子孙，是医生不精、用药杂；王洪绪说子孙变进神药有效，变退神和伏吟卦不可服，没有把子化子当成坏事。",
+        "en": "Whether 'Output changing into Output' is good or bad: the old commentary says that Output doubled, or Output changing again into Output, means an unskilled doctor and mixed medicines; Wang Hongxu says that with Output changing into an Advancing spirit the medicine is effective, and with a Retreating spirit or in a Hidden Chant hexagram it may not be taken, and he does not treat Output changing into Output as a bad thing."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.64"]
+    },
+    {
+      "id": "LY.ILL.HJC.66",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "福化忌爻误服杀身之恶剂：动则有变，变出父母回头来克、变出财爻扶持官鬼、变出兄弟药不精洁、变出官杀药反助病、子变子用药太杂；不如安静，变爻伤世克用必因药伤命",
+      "rule": {
+        "yi": "有动就有变。子孙动了，变出父母就回头来克它，变出财爻就去扶持官鬼，变出兄弟药不精洁，变出官鬼这个凶煞药反而助长病，子孙变子孙是用药太杂，不能见效。所以不如安静；如果变出的爻伤了世爻、克了用爻，一定会招来因为吃药而伤命的祸。",
+        "en": "Where there is movement there is change. If Output moves and changes out Resource, it turns back to control it; out Wealth, it supports Pressure; out Peer, the medicine is not refined or clean; out a Pressure killer, the medicine feeds the illness instead; Output changing into Output is medicine too mixed to work. So stillness is better; if the changed line harms the Self line or controls the Subject line, disaster through medicine, harm to life, is sure to follow."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7007, 7007],
+          "zh": ["福化忌爻，误服杀身之恶剂；"],
+          "yi": ["子孙变成忌爻，是误服了会要命的恶药；"],
+          "en": ["Output changing into an Adversary line: one wrongly takes a bad dose that kills;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7008, 7009],
+          "zh": ["世人皆疑《海底眼》误服药之句，殊不知此说极有理。", "盖有动则有变。", "变出父母，回头来克；", "变出财爻，扶持官鬼；", "变出兄弟，药不精洁；", "变出官杀，药反助病。", "子变子，乃用药太驳杂，不能见效。", "此所以不若安静为妙。", "若变爻或伤世克用者，必致因药伤命之祸。"],
+          "yi": ["世上的人都怀疑《海底眼》里讲误服药的那一句，哪里知道这个说法极有道理。", "因为有动就有变。", "变出父母，回头来克它；", "变出财爻，去扶持官鬼；", "变出兄弟，药不精纯干净；", "变出官鬼这个凶煞，药反而帮了病。", "子孙变子孙，是用药太杂乱，不能见效。", "所以不如安静才好。", "如果变出的爻伤了世爻、克了用爻，一定会招来因为吃药而伤命的祸。"],
+          "en": ["People all doubt the line in the Haidi Yan about wrongly taking medicine, little knowing that this saying is most reasonable.", "For where there is movement there is change.", "Changing out Resource, it turns back to control it;", "changing out Wealth, it supports Pressure;", "changing out Peer, the medicine is not refined or clean;", "changing out a Pressure killer, the medicine helps the illness instead.", "Output changing into Output means the medicines are far too mixed, and there is no effect.", "That is why stillness is better.", "If the changed line harms the Self line or controls the Subject line, disaster through medicine, harm to life, is sure to follow."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2432, 2432],
+          "zh": ["盖有动则有变，变出父母回头来克，难伤官鬼，必致用药伤命。"],
+          "yi": ["因为有动就有变，变出父母回头来克它，伤不了官鬼，一定会因为用药而伤命。"],
+          "en": ["For where there is movement there is change; changing out Resource that turns back to control it, it cannot harm Pressure, and harm to life through medicine is sure to follow."] }
+      ],
+      "note": {
+        "yi": "旧注说的《海底眼》「误服药」一句，在本库收的《海底眼》里查不到；《易隐》里有一句意思相近的话（颗师曰：「子孙动者误服药」）。王洪绪只收了变出父母这一种，旧注列了父母、财、兄弟、官杀、子孙五种。",
+        "en": "The Haidi Yan line on wrongly taking medicine that the old commentary mentions is not found in the Haidi Yan collected in this library; the Yiyin has a saying close in meaning (Master Ke says: 'when Output moves, one takes the wrong medicine'). Wang Hongxu takes only the case of changing out Resource, where the old commentary lists five: Resource, Wealth, Peer, the Pressure killer and Output."
+      },
+      "see": ["LY.ILL.HJC.65", "LY.ILL.HJC.67"]
+    },
+    {
+      "id": "LY.ILL.HJC.67",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "应临官鬼防投增病之药汤：应爻带官鬼必非良医，再刑克身世主象须防误药损人；或化忌爻、或化官鬼，都不宜用此人的药",
+      "rule": {
+        "yi": "应爻上临着官鬼，这位医生一定不是良医；如果他再来刑克世爻、身爻和主象，要提防他用错药伤人。应爻变出忌爻或官鬼，都不宜用这个人的药。",
+        "en": "When the Other line sits on Pressure, the doctor is surely not a good one; if it also punishes or controls the Self line, the body and the main image, beware of wrong medicine that harms. If the Other line changes into an Adversary line or into Pressure, this man's medicine is unsuitable in every case."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7011, 7011],
+          "zh": ["应临官鬼，防投增病之药汤。"],
+          "yi": ["应爻临着官鬼，提防吃下增加病情的药汤。"],
+          "en": ["The Other line sitting on Pressure: beware of taking a medicine soup that adds to the illness."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7012, 7012],
+          "zh": ["应临官，必非良医。", "更来刑克身世主象，须防误药损人。", "或化忌爻，或化官鬼，皆不宜此人之药。"],
+          "yi": ["应爻临官，一定不是好医生。", "如果再来刑克身爻、世爻和主象，就要提防他用错药伤人。", "或者变出忌爻，或者变出官鬼，都不宜用这个人的药。"],
+          "en": ["The Other line sitting on Pressure: he is surely not a good doctor.", "If it also punishes or controls the body, the Self line and the main image, beware of wrong medicine that harms.", "Whether it changes into an Adversary line or into Pressure, this man's medicine is unsuitable in every case."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2434, 2434],
+          "zh": ["应临官鬼，必非良医，更来刑克身世用神，须防误药损人。", "或化忌爻，或化官鬼，皆不宜用此人之药。"],
+          "yi": ["应爻临着官鬼，一定不是好医生，如果再来刑克身爻、世爻和用神，就要提防他用错药伤人。", "或者变出忌爻，或者变出官鬼，都不宜用这个人的药。"],
+          "en": ["The Other line sitting on Pressure: he is surely not a good doctor; if it also punishes or controls the body, the Self line and the Subject, beware of wrong medicine that harms.", "Whether it changes into an Adversary line or into Pressure, this man's medicine is unsuitable in every case."] }
+      ],
+      "see": ["LY.ILL.HJC.58", "LY.ILL.HJC.66"]
+    },
+    {
+      "id": "LY.ILL.HJC.68",
+      "topic": "轻重",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "鬼带日辰定非久病：鬼带日辰又动出卦中的是近来暴得之病；日辰虽是官鬼却不现卦中，则病眼下正炽，须过此才可用药",
+      "rule": {
+        "yi": "官鬼带着日辰、又动出在卦里的，一定是近来突然得的病，不是久病。如果日辰虽然是官鬼，却没有出现在卦里，就不是这样；可以说这病眼下正厉害，必须等这一阵过去，才可以用药。",
+        "en": "A Pressure line that carries the Day and moves out in the hexagram is surely an illness got suddenly in these days, not a long one. If the Day is Pressure but does not appear in the hexagram, it is not so; one can say the illness is at its fiercest just now, and only after this has passed can medicine be used."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7014, 7014],
+          "zh": ["鬼带日辰，定非久病；"],
+          "yi": ["鬼爻带着日辰，一定不是久病；"],
+          "en": ["Pressure carrying the Day: it is surely not a long illness;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7015, 7015],
+          "zh": ["鬼带日辰，动出卦中者，必是日下暴得之病。", "若日辰虽是官鬼，不现卦中，则不然。", "可言其病眼下正炽，必须过此，方可用药。"],
+          "yi": ["鬼爻带着日辰、又动出在卦里的，一定是近来突然得的病。", "如果日辰虽然是官鬼，却没有出现在卦里，就不是这样。", "可以说这病眼下正厉害，必须过了这一阵，才可以用药。"],
+          "en": ["Pressure that carries the Day and moves out in the hexagram is surely an illness got suddenly in these days.", "If the Day is Pressure but does not appear in the hexagram, it is not so.", "One can say the illness is at its fiercest just now, and only after this has passed can medicine be used."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2436, 2436],
+          "zh": ["鬼带日辰动出卦中者，必是日下暴病；", "若日辰虽是官爻，不现卦中则不然，可言其病眼下正炽，必须过此方可用药。"],
+          "yi": ["鬼爻带着日辰、动出在卦里的，一定是近来的急病；", "如果日辰虽然是官爻，却不出现在卦里，就不是这样，可以说这病眼下正厉害，必须过了这一阵才可以用药。"],
+          "en": ["Pressure that carries the Day and moves out in the hexagram is surely a sudden illness of these days;", "if the Day is a Pressure line but does not appear in the hexagram, it is not so; one can say the illness is at its fiercest just now, and only after this has passed can medicine be used."] }
+      ],
+      "note": {
+        "yi": "「鬼带日辰」按字面是鬼爻的地支和日辰的地支是同一个。这一条和病体章里的「日辰带鬼」（LY.ILL.HJC.50）不是一回事：那里讲的是日辰带鬼来生合世爻，该祈祷。",
+        "en": "'Pressure carrying the Day' is in the letter that the branch of the Pressure line is the same as the branch of the Day. This entry is not the same as 'the Day carrying Pressure' in the chapter on the patient's condition (LY.ILL.HJC.50), which speaks of the Day carrying Pressure to generate or combine with the Self line, where one should pray."
+      },
+      "see": ["LY.ILL.HJC.50", "LY.ILL.HJC.59"]
+    },
+    {
+      "id": "LY.ILL.HJC.69",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "应爻所临定医人是谁：持父母是僧道、兄弟是庸医、财爻是富贵医人或女医、子孙是专门医士，持太岁是世医，持日辰而被太岁刑克是初学，持月建是官医，更临子孙用药神效",
+      "rule": {
+        "yi": "应爻是医生，看它带的是什么，就知道医生是哪一类人：持父母，一定是僧道人家，或者兼会别的技艺；持兄弟，是庸医，或者先要药钱；持财爻，是富贵人家的医生，或者是女医生；临子孙，是专门行医的人，或者是僧道；持太岁，一定是世代行医的；持日辰而被太岁刑克的，是刚学医的；持月建，是官医，再临子孙，用药有神效。医生年老年少，用生旺墓绝来推。",
+        "en": "The Other line is the doctor, and what it carries shows what sort of man he is: holding Resource, a monk or Daoist household, or one who also has other arts; holding Peer, a quack, or one who asks the price of the medicine first; holding Wealth, a doctor of wealth and rank, or a woman doctor; sitting on Output, a specialist physician, or a monk or Daoist; holding Tai Sui, a doctor from a family of doctors; holding the Day but punished or controlled by Tai Sui, a beginner in medicine; holding the Month, an official physician, and if it also sits on Output, his medicine works wonders. Whether the doctor is old or young is reasoned from birth, strength, tomb and extinction."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7017, 7017],
+          "zh": ["应临月建，必是官医。"],
+          "yi": ["应爻临着月建，一定是官医。"],
+          "en": ["The Other line sitting on the Month: he is surely an official physician."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7018, 7019],
+          "zh": ["应持父母，必是僧道家，或兼艺术。", "应持兄弟，乃是庸医，或先求药价。", "持财爻，富贵医人，或女医。", "应临子孙，专门医士，或僧道。", "应持太岁，必是世医。", "持日辰，而太岁刑克者，初学医。", "持月建，是官医；", "更临子孙，用药神效。", "医人老少，以生旺墓绝推之。"],
+          "yi": ["应爻持父母，一定是僧人道士，或者兼会别的技艺。", "应爻持兄弟，是庸医，或者先要药钱。", "持财爻，是富贵人家的医生，或者是女医生。", "应爻临子孙，是专门行医的人，或者是僧人道士。", "应爻持太岁，一定是世代行医的。", "持日辰而被太岁刑克的，是刚学医的。", "持月建的，是官方的医官；", "再临子孙，用药有神效。", "医生年老年少，用生旺墓绝来推。"],
+          "en": ["The Other line holding Resource: he is surely a monk or Daoist, or one who also has other arts.", "The Other line holding Peer: he is a quack, or one who asks the price of the medicine first.", "Holding Wealth: a doctor of wealth and rank, or a woman doctor.", "The Other line sitting on Output: a specialist physician, or a monk or Daoist.", "The Other line holding Tai Sui: he is surely from a family of doctors.", "Holding the Day and punished or controlled by Tai Sui: a beginner in medicine.", "Holding the Month: an official physician;", "if it also sits on Output, his medicine works wonders.", "Whether the doctor is old or young is reasoned from birth, strength, tomb and extinction."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2438, 2438],
+          "zh": ["应持太岁必世医，持月建日辰必是官医，更待月日临子孙，用药神效。"],
+          "yi": ["应爻持太岁，一定是世代行医的；持月建、日辰，一定是官医；再等到月、日临在子孙上，用药有神效。"],
+          "en": ["The Other line holding Tai Sui is surely from a family of doctors; holding the Month or the Day, an official physician; and if the month or day also sits on Output, his medicine works wonders."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2440, 2440],
+          "zh": ["应临子孙乃专门医士，可托之。"],
+          "yi": ["应爻临子孙，是专门行医的人，可以托付。"],
+          "en": ["The Other line sitting on Output: a specialist physician, one who can be trusted."] }
+      ],
+      "dispute": {
+        "yi": "持日辰的医生是哪一种：旧注说持日辰而被太岁刑克的是刚学医的，持月建的是官医；王洪绪说持月建、日辰的一律是官医，没有「刚学医」这一档。",
+        "en": "What sort of doctor one who holds the Day is: the old commentary says one who holds the Day and is punished or controlled by Tai Sui is a beginner, and one who holds the Month is an official physician; Wang Hongxu says those who hold the Month or the Day are all official physicians and has no class of 'beginner'."
+      },
+      "note": {
+        "yi": "「官医」是官方的医官，「世医」是世代行医的人家，「庸医」是平庸的医生。旧注这一条挂在经文「应临月建，必是官医」下面，把应爻临各种爻的医生类型一次列全；王洪绪把「应临子孙」单列一句。",
+        "en": "An 'official physician' is a physician holding office, a 'family doctor' (shiyi) one from a family that has practised medicine for generations, and a 'quack' (yongyi) a mediocre doctor. The old commentary hangs this entry under the verse 'the Other line sitting on the Month: surely an official physician' and lists all the types of doctor for what the Other line carries at once; Wang Hongxu sets 'the Other line sitting on Output' apart as its own sentence."
+      },
+      "see": ["LY.ILL.HJC.58", "LY.ILL.HJC.77"]
+    },
+    {
+      "id": "LY.ILL.HJC.70",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "世下伏官子动则药虽妙而病根常在：动爻日辰能生克飞爻、不能生克伏神；鬼伏世下病必不能断根，子孙发动只能取效目前，过后伏鬼旺相月日必再发",
+      "rule": {
+        "yi": "动爻、日辰能生飞爻、克飞爻，却不能生克伏神，因为伏神是隐藏潜伏的意思。占病遇到鬼伏在世爻下面，这病一定不能断根：就算子孙发动，也只能眼前见效，过后到伏鬼旺相的月份日子，这病一定再犯。",
+        "en": "The moving lines and the Day can generate and control a flying line but cannot generate or control a hidden line, for a hidden line lies out of view. In divining illness, if Pressure lies hidden under the Self line, the illness surely cannot be cut off at the root: even if Output moves, it can take effect only for the present, and after this, in the month or day when the hidden Pressure is strong, the illness will surely break out again."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7021, 7021],
+          "zh": ["世下伏官，子动则药虽妙，而病根常在；"],
+          "yi": ["世爻下面伏着官鬼，子孙发动，药虽然好，病根还是常在；"],
+          "en": ["A Pressure line hidden under the Self line: though Output moves and the medicine is good, the root of the illness stays;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7022, 7022],
+          "zh": ["大抵动爻日辰，能生得克得飞爻，不能生克得伏神。", "盖伏神，隐伏之义。", "占病遇鬼伏世下，其病必不能断根。", "虽有子孙发动，但能取效目前，过后伏鬼旺相月日，其病必再发。"],
+          "yi": ["大体上动爻、日辰，能生飞爻、克飞爻，却不能生克伏神。", "因为伏神就是隐藏潜伏的意思。", "占病遇到鬼伏在世爻下面，这病一定不能断根。", "就算有子孙发动，也只能眼前见效，过后到伏鬼旺相的月份日子，这病一定再发。"],
+          "en": ["In general the moving lines and the Day can generate and control the flying line but cannot generate or control a hidden line.", "For a hidden line means one that lies hidden and out of view.", "In divining illness, if Pressure lies hidden under the Self line, the illness surely cannot be cut off at the root.", "Even if Output moves, it can only take effect for the present, and after this, in the month or day when the hidden Pressure is strong, the illness will surely break out again."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2442, 2442],
+          "zh": ["大抵自占病遇鬼伏世下，或占他人病遇鬼伏用爻下，其病不能断根，日后恐再发也。"],
+          "yi": ["大体上自己占病遇到鬼伏在世爻下面，或者占别人的病遇到鬼伏在用爻下面，这病不能断根，以后恐怕会再发。"],
+          "en": ["In general, if in divining one's own illness Pressure lies hidden under the Self line, or in divining another's illness Pressure lies hidden under the Subject line, the illness cannot be cut off at the root, and it may well break out again later."] }
+      ],
+      "note": {
+        "yi": "王洪绪多了「占别人的病鬼伏用爻下」一种，没有收旧注里「子孙发动只取效目前」的话。疾病章里讲官藏世下的一条是 LY.ILL.HJC.07。",
+        "en": "Wang Hongxu adds the case 'in divining another's illness, Pressure hidden under the Subject line' and does not take the old commentary's remark that Output moving only takes effect for the present. The entry in the illness chapter on Pressure hidden under the Self line is LY.ILL.HJC.07."
+      },
+      "see": ["LY.ILL.HJC.07", "LY.ILL.HJC.06", "LY.ILL.HJC.53"]
+    },
+    {
+      "id": "LY.ILL.HJC.71",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "衰中坐鬼身临则病虽轻而药力难扶：卦身临鬼病不脱体，衰弱无气缠绵难愈；世旺相出现久卧床褥虽良医亦无效；世持及主象身临持官墓者皆然",
+      "rule": {
+        "yi": "卦身上坐着鬼，病就不能脱身。鬼衰弱没有气，是缠缠绵绵难好、拖延不愈的象。世爻旺相出现在卦里，却长久卧床，就算有好医生也没有效果。世爻持着鬼，以及主象、身爻临在官墓上的，也都是这样。",
+        "en": "With Pressure on the hexagram Body, the illness does not leave the body. If Pressure is weak and without force, it is an image of lingering, hard to heal, dragging on. If the Self line appears strong in the hexagram and yet he lies long in bed, even a good doctor has no effect. The same holds when the Self line holds Pressure, and when the main image or the body sits on the tomb of Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7024, 7024],
+          "zh": ["衰中坐鬼，身临则病虽轻，而药力难扶。"],
+          "yi": ["在衰弱的地方坐着鬼，身爻临着它，病虽然轻，药力也很难扶起来。"],
+          "en": ["Pressure sitting in weakness, with the body on it: though the illness is light, the force of medicine can hardly lift it."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7025, 7025],
+          "zh": ["卦身临鬼，病不脱体。", "衰弱无气，缠绵难愈，淹滞之象。", "世旺相出现，久卧床缛，虽有良医亦无效。", "世持，及主象身临持官墓者，皆然。"],
+          "yi": ["卦身上临着鬼，病就不能脱身。", "鬼衰弱没有气，是缠缠绵绵难好、拖延不愈的象。", "世爻旺相出现，长久卧床，就算有好医生也没有效果。", "世爻持着鬼，以及主象、身爻临在官墓上的，都是这样。"],
+          "en": ["The hexagram Body sitting on Pressure: the illness does not leave the body.", "Weak and without force, it is an image of lingering, hard to heal, dragging on.", "If the Self line appears strong, he lies long in bed, and even a good doctor has no effect.", "The same holds when the Self line holds it, and when the main image or the body sits on the tomb of Pressure."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2444, 2444],
+          "zh": ["卦身虽临衰弱之鬼，缠绵难愈之象，或主象身临官墓者亦然。"],
+          "yi": ["卦身即使临着衰弱的鬼，也是缠缠绵绵难好的象，或者主象、身爻临在官墓上的也是这样。"],
+          "en": ["Even when the hexagram Body sits on a weak Pressure line, it is an image of lingering and hard to heal, and the same holds when the main image or the body sits on the tomb of Pressure."] }
+      ],
+      "note": {
+        "yi": "经文「衰中坐鬼」和「身临」连读：鬼在衰处，身又临上去。旧注「世旺相出现，久卧床缛，虽有良医亦无效」的意思书里没有再解释，译文按字面。",
+        "en": "The verse's 'Pressure sitting in weakness' and 'the body on it' are read together: Pressure in a weak place, with the body sitting on it. What the old commentary means by 'the Self line appearing strong yet lying long in bed, and even a good doctor having no effect' the book does not explain further, and the translation follows the letter."
+      },
+      "see": ["LY.ILL.HJC.34", "LY.ILL.HJC.53"]
+    },
+    {
+      "id": "LY.ILL.HJC.72",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "父若伏藏名虽医而未谙脉理：卦有父母而子孙不能专权固非吉，但卦中又不可无，宜静不宜动；人的气脉属父母，占医没有此爻必是草泽医人，用药凭意度",
+      "rule": {
+        "yi": "卦里父母爻动，子孙就不能专权，本来不吉；但卦里又不能没有父母爻，要静不要动。因为人的气脉都属父母。所以占医生，如果没有这一爻，这个医生一定是乡野草泽的医人：虽然会用药，脉理却不明白，只能凭猜测。",
+        "en": "When the Resource line moves in the hexagram, Output cannot hold sole power, which is in itself not lucky; yet the hexagram cannot be without the Resource line, and it should be still, not moving. For a person's breath and pulse all belong to Resource. So in divining a doctor, if this line is missing, he is surely a rustic country doctor: though he can use medicine, he does not understand the pulse and goes by guesswork."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7027, 7027],
+          "zh": ["父若伏藏，名虽医而未谙脉理；"],
+          "yi": ["父母爻如果伏藏着，名义上是医生，却不懂脉理；"],
+          "en": ["If Resource lies hidden, he is a doctor in name but does not know the principles of the pulse;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7028, 7029],
+          "zh": ["卦有父母，子孙不能专权，固非吉。", "卦中又不可无，宜静不宜动。", "何也？", "盖人气脉，皆属父母。", "故占医，若无此爻，必是草泽医人。", "虽能用药，脉理未明，必以意度者。"],
+          "yi": ["卦里有父母，子孙就不能专权，本来不吉。", "但卦里又不能没有它，要静不要动。", "为什么呢？", "因为人的气脉，都属于父母爻。", "所以占医生，如果没有这一爻，一定是乡野的医人。", "虽然会用药，脉理却不明白，一定是靠猜测的人。"],
+          "en": ["When Resource is in the hexagram, Output cannot hold sole power, which is in itself not lucky.", "Yet it cannot be missing from the hexagram: it should be still, not moving.", "Why?", "Because a person's breath and pulse all belong to the Resource line.", "So in divining a doctor, if this line is missing, he is surely a rustic country doctor.", "Though he can use medicine, he does not understand the pulse and surely goes by guesswork."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2446, 2446],
+          "zh": ["卦中父动，子孙不能专权固非吉，然又不可无，宜静不宜动，何也？", "盖人气脉皆属父母，故占医或无此爻，必是草泽医人，虽然用药，而脉理未明也。"],
+          "yi": ["卦中父母爻动，子孙就不能专权，本来不吉，但又不能没有，要静不要动，为什么呢？", "因为人的气脉都属于父母，所以占医生如果没有这一爻，一定是乡野的医人，虽然用药，脉理却不明白。"],
+          "en": ["When the Resource line moves in the hexagram, Output cannot hold sole power, which is in itself not lucky; yet it cannot be missing, and should be still, not moving. Why?", "Because a person's breath and pulse all belong to the Resource line; so in divining a doctor, if this line is missing, he is surely a rustic country doctor, and though he uses medicine his grasp of the pulse is not clear."] }
+      ],
+      "note": {
+        "yi": "经文写「父若伏藏」，两家的注讲的都是卦里没有父母爻。王洪绪引的经文作「父基伏藏」，大概是「父若」之误。「气脉」是气血和脉象，「草泽医人」是乡野民间的医生。",
+        "en": "The verse reads 'if Resource lies hidden' and both commentaries speak of the Resource line being missing from the hexagram. Wang Hongxu quotes the verse as 'Resource base hidden', which is probably a slip for 'if Resource'. 'Breath and pulse' is the qi and blood and the pulse image, and a 'country doctor' is a doctor of the countryside and the common people."
+      },
+      "see": ["LY.ILL.HJC.38", "LY.ILL.HJC.73"]
+    },
+    {
+      "id": "LY.ILL.HJC.73",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "鬼不出现药纵用而莫识病源：官鬼虽凶煞也不可无，出现在卦则受子孙克制、日辰刑制，用药有效；不上卦则病隐伏，根因不知症候莫决，率意用药难取效",
+      "rule": {
+        "yi": "官鬼虽然是凶煞，也不能没有。它出现在卦里，就有子孙克制它、日辰刑制它，用药有效。它不上卦，病就隐伏着，病根不知道，症候没法判定，随意用药，也难以见效。",
+        "en": "The Pressure line is a malign killer, yet it cannot be missing. If it appears in the hexagram, Output controls it and the Day punishes it, and medicine is effective. If it is not in the hexagram, the illness lies hidden, its root cause is unknown, its symptoms cannot be decided, and medicine used at random also hardly takes effect."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7031, 7031],
+          "zh": ["鬼不出现，药纵用而莫识病源。"],
+          "yi": ["官鬼不出现，药就算用了也认不清病源。"],
+          "en": ["Pressure not appearing: though medicine is used, the source of the illness is not recognized."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7032, 7032],
+          "zh": ["官鬼固凶杀，然亦不可无。", "出现在卦，则子克制，日辰刑制，用药有效。", "若不上卦，其病隐伏；", "根因不知，症候莫决，率意用药，亦难取效。"],
+          "yi": ["官鬼本来是凶煞，但也不可以没有。", "出现在卦里，就有子孙克制它、日辰刑制它，用药有效。", "如果不上卦，这病就隐伏着；", "病根不知道，症候没法判定，随意用药，也难以见效。"],
+          "en": ["Pressure is a malign killer, yet it too cannot be missing.", "If it appears in the hexagram, Output controls it and the Day punishes it, and medicine is effective.", "If it is not in the hexagram, the illness lies hidden;", "its root cause is unknown, its symptoms cannot be decided, and medicine used at random also hardly takes effect."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2448, 2448],
+          "zh": ["官鬼为病，出现则易受克制，用药有效。", "或不上卦，其病隐伏，根因不知，症候莫决，率意用药，亦难取效。"],
+          "yi": ["官鬼就是病，出现在卦里就容易受克制，用药有效。", "或者不上卦，这病隐伏着，病根不知道，症候没法判定，随意用药，也难以见效。"],
+          "en": ["Pressure is the illness; if it appears, it is easily restrained, and medicine is effective.", "If it is not in the hexagram, the illness lies hidden, its root cause is unknown, its symptoms cannot be decided, and medicine used at random also hardly takes effect."] }
+      ],
+      "note": {
+        "yi": "这一条和病体章的 LY.ILL.HJC.49（鬼伏空亡）是一个道理：官鬼是病的根由，卦里没有它就没有地方下手。那里讲的是病能不能好，这里讲的是药能不能对症。",
+        "en": "This entry gives the same reason as LY.ILL.HJC.49 (Pressure hidden in Void) in the chapter on the patient's condition: the Pressure line is the root of the illness, and without it in the hexagram there is nowhere to begin. That entry speaks of whether the patient can recover, this one of whether the medicine can fit the illness."
+      },
+      "see": ["LY.ILL.HJC.49", "LY.ILL.HJC.72"]
+    },
+    {
+      "id": "LY.ILL.HJC.74",
+      "topic": "生死",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "主绝受伤卢医难救：主象在休囚死墓绝之地又被日辰动爻乘旺刑克，或变入死墓空绝，病必死，虽良医无效",
+      "rule": {
+        "yi": "主象处在休囚死墓绝的地方，又被日辰、动爻趁着旺势刑克，这病一定死；主象变成死、墓、空、绝的，也是这样。就算有好医生，也没有效果。",
+        "en": "A main image in a place of rest, trap, death, tomb or extinction that is also punished or controlled by the Day or a moving line riding its strength: the patient will surely die; a main image that changes into death, tomb, Void or extinction is the same. Even with a good doctor there is no effect."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7034, 7034],
+          "zh": ["主绝受伤，虚医难救；"],
+          "yi": ["主象在绝地又受了伤，虚医也难以救；"],
+          "en": ["The main image in extinction and wounded: a physician of no substance can hardly save him;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7035, 7035],
+          "zh": ["主象在休囚死墓绝之地，而被日辰动爻乘旺刑克者，其病必死。", "虽有良医，亦无效。", "主象变死墓空绝者，亦然。"],
+          "yi": ["主象处在休囚死墓绝的地方，又被日辰、动爻趁着旺势刑克的，这病一定死。", "就算有好医生，也没有效果。", "主象变成死、墓、空、绝的，也是这样。"],
+          "en": ["A main image in a place of rest, trap, death, tomb or extinction that is also punished or controlled by the Day or a moving line riding its strength: the patient will surely die.", "Even with a good doctor, it has no effect.", "A main image that changes into death, tomb, Void or extinction is the same."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2450, 2450],
+          "zh": ["主象若遇休囚墓绝，或变入墓绝，再有克伤者，虽良医不能救也。"],
+          "yi": ["主象如果遇到休囚墓绝，或者变入墓绝，又有克伤它的，就算好医生也救不了。"],
+          "en": ["If the main image meets rest, trap, tomb or extinction, or changes into tomb or extinction, and something also controls and harms it, even a good doctor cannot save him."] }
+      ],
+      "note": {
+        "yi": "经文写「虚医难救」，王洪绪引作「卢医难救」。卢医就是和扁鹊齐名的古代名医，和下一条的「扁鹊无功」相对；「虚医」大概是「卢医」之误，译文按经文字面译。",
+        "en": "The verse reads 'an empty physician can hardly save him' where Wang Hongxu quotes it as 'Lu the physician can hardly save him'. Lu Yi is the ancient healer named together with Bian Que, and matches the 'Bian Que has no success' of the next entry; 'empty physician' is probably a slip for 'Lu Yi', and the translation follows the letter of the verse."
+      },
+      "see": ["LY.ILL.HJC.37", "LY.ILL.HJC.47", "LY.ILL.HJC.75"]
+    },
+    {
+      "id": "LY.ILL.HJC.75",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "父兴得地扁鹊无功：父母发动、子孙受制，药必不效；子孙有气、日辰动爻来冲合（旧注）或克（王洪绪）父母而救得有用，才可活，仍须多服；父化子孙也是医人太慢",
+      "rule": {
+        "yi": "父母爻发动，子孙受制，药一定没有效。如果子孙有气，又有日辰、动爻来救（冲、合父母爻，或者克父母爻），救得有用，才可以活，但也必须多服才好。父母变成子孙，也是医生太慢。",
+        "en": "When the Resource line moves and Output is restrained, the medicine surely has no effect. If Output has force, and the Day or a moving line comes to rescue it (clashing or combining with the Resource line, or controlling it) so that the rescue works, he may live, but even so it is best to take much of it. Resource changing into Output is also the doctor being too slow."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7037, 7037],
+          "zh": ["父兴得地，扁鹊无功。"],
+          "yi": ["父母爻兴旺、得地，扁鹊也没有功效。"],
+          "en": ["Resource rising and in its place: even Bian Que would have no success."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7038, 7038],
+          "zh": ["父母发动，子孙受制，药必不效。", "若得子孙有气，日辰动爻冲合父母，救得有用，庶几可活。", "然亦必须多服为妙。", "父化子孙，亦是医人太慢。"],
+          "yi": ["父母爻发动，子孙受了制，药一定没有效。", "如果子孙有气，日辰、动爻来冲、合父母爻，救得有用，差不多可以活。", "但也必须多服才好。", "父母变成子孙，也是医生太慢。"],
+          "en": ["When the Resource line moves and Output is restrained, the medicine surely has no effect.", "If Output has force, and the Day or a moving line clashes or combines with the Resource line so that the rescue works, he may live.", "But even so it is best to take much of it.", "Resource changing into Output is also the doctor being too slow."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2452, 2452],
+          "zh": ["父母发动子孙受伤，药必不效。", "若得子孙有气，日辰动爻克父母，必须多服有功。"],
+          "yi": ["父母爻发动，子孙受了伤，药一定没有效。", "如果子孙有气，日辰、动爻来克父母爻，必须多服才有功效。"],
+          "en": ["When the Resource line moves and Output is harmed, the medicine surely has no effect.", "If Output has force and the Day or a moving line controls the Resource line, then taking much of it is effective."] }
+      ],
+      "dispute": {
+        "yi": "怎样解救发动的父母爻：旧注说日辰、动爻「冲合」父母爻；王洪绪说日辰、动爻「克」父母爻。一个是把它冲开、合住，一个是直接克制。",
+        "en": "How to relieve a moving Resource line: the old commentary says the Day or a moving line 'clashes or combines with' the Resource line; Wang Hongxu says the Day or a moving line 'controls' it. One clashes it apart or holds it, the other restrains it directly."
+      },
+      "see": ["LY.ILL.HJC.38", "LY.ILL.HJC.74"]
+    },
+    {
+      "id": "LY.ILL.HJC.76",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "察官爻而用药：火土官爻病热宜寒凉药，金水官爻病寒宜温热药；火鬼生旺遇生扶用大寒药、休囚死绝用凉药，水鬼生旺遇合助用大热药、休囚死绝用温剂；火鬼在阴宫阴爻是阴虚火动宜滋阴降火，水鬼在阳宫内卦是血气虚损宜补中益气",
+      "rule": {
+        "yi": "看官鬼爻的五行来用药：火、土官鬼，病一定发热，宜用寒凉的药去攻；金、水官鬼，病多半发寒，一定用温热的药来治。火鬼在生旺的地方又遇到生扶，一定用大寒的药攻它，休囚死绝就用凉药；水鬼在生旺的地方又遇到合助，要用大热的药，休囚死绝就用温药。火鬼在阴宫阴爻，是阴虚火动的症候，可以用滋阴降火的药；水鬼在阳宫内卦，是血气虚损的症候，可以用补中益气的药。要会变通，其余照这个类推。",
+        "en": "Choose the medicine by the phase of the Pressure line. A Fire or Earth Pressure line: the illness is surely hot, and should be attacked with cold and cool medicine; a Metal or Water Pressure line: the illness is mostly cold, and is surely treated with warm and hot medicine. A Fire Pressure in a place of birth or strength that also meets generation and support must be attacked with very cold medicine, and with cool medicine if resting, trapped, dead or extinct; a Water Pressure in a place of birth or strength that also meets combination and help needs very hot medicine, and warm medicine if resting, trapped, dead or extinct. A Fire Pressure in a yin palace on a yin line is the syndrome of yin deficiency with stirring fire, and medicine that nourishes yin and lowers fire may be used; a Water Pressure in the inner trigram of a yang palace is the syndrome of depleted blood and qi, and medicine that supplements the centre and boosts qi may be used. One must be flexible; the rest follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7040, 7040],
+          "zh": ["察官爻而用药，火土寒凉；"],
+          "yi": ["察看官爻来用药：火、土是寒凉；"],
+          "en": ["Examine the Pressure line to choose the medicine: for Fire and Earth, cold and cool;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7041, 7041],
+          "zh": ["火土官爻，其病必热，宜寒凉药攻之；", "金水官爻，其病多寒，必温热之剂治之。", "然火必寒，土必凉，水必热，金必温剂，可也。", "又如火鬼在生旺之地，又遇生扶者，必用大寒之药攻之；", "休囚死绝，则用凉药。", "水鬼在生旺之地，又遇合助者，须用大热之药；", "休囚死绝，则用温剂攻之。", "如火鬼在阴宫阴爻，乃是阴虚火动之症，可用滋阴降火之药。", "水鬼在阳宫内卦，乃是血气虚损之症，可用补中益气之药。", "宜通变，余仿此。"],
+          "yi": ["火、土官爻，这病一定发热，宜用寒凉的药攻它；", "金、水官爻，这病多半发寒，一定用温热的药治它。", "不过火用寒药，土用凉药，水用热药，金用温药，才可以。", "又比如火鬼在生旺的地方，又遇到生扶，一定用大寒的药攻它；", "休囚死绝，就用凉药。", "水鬼在生旺的地方，又遇到合助，要用大热的药；", "休囚死绝，就用温药攻它。", "如果火鬼在阴宫阴爻，是阴虚火动的症候，可以用滋阴降火的药。", "水鬼在阳宫内卦，是血气虚损的症候，可以用补中益气的药。", "要会变通，其余照这个类推。"],
+          "en": ["A Fire or Earth Pressure line: the illness is surely hot, and should be attacked with cold and cool medicine;", "a Metal or Water Pressure line: the illness is mostly cold, and is surely treated with warm and hot medicine.", "Yet Fire calls for cold medicine, Earth for cool, Water for hot and Metal for warm, and that is right.", "Again, a Fire Pressure in a place of birth or strength that also meets generation and support must be attacked with very cold medicine;", "if resting, trapped, dead or extinct, use cool medicine.", "A Water Pressure in a place of birth or strength that also meets combination and help needs very hot medicine;", "if resting, trapped, dead or extinct, attack it with warm medicine.", "A Fire Pressure in a yin palace on a yin line is the syndrome of yin deficiency with stirring fire, and medicine that nourishes yin and lowers fire may be used.", "A Water Pressure in the inner trigram of a yang palace is the syndrome of depleted blood and qi, and medicine that supplements the centre and boosts qi may be used.", "One must be flexible; the rest follow this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2454, 2454],
+          "zh": ["火土官爻，其病必热，宜用凉药攻之；", "金水官爻，其病多寒，必温热之剂治之，如水必寒、土必凉、火必热、金必温等剂是也。", "又如火鬼在生旺之地，又遇生扶，必用大寒之药攻之；", "水鬼在生旺之地，又遇合住者，须用大热之药；", "如火鬼在阴宫阴爻，乃是阴虚火动之症，可用滋阴降火之药；", "火鬼在阳宫内卦，乃是血气虚损之症，可用补中益气之药。", "宜通变，余仿此。"],
+          "yi": ["火、土官爻，这病一定发热，宜用凉药攻它；", "金、水官爻，这病多半发寒，一定用温热的药治它，就是水用寒药、土用凉药、火用热药、金用温药这一类。", "又比如火鬼在生旺的地方，又遇到生扶，一定用大寒的药攻它；", "水鬼在生旺的地方，又遇到合住的，要用大热的药；", "如果火鬼在阴宫阴爻，是阴虚火动的症候，可以用滋阴降火的药；", "火鬼在阳宫内卦，是血气虚损的症候，可以用补中益气的药。", "要会变通，其余照这个类推。"],
+          "en": ["A Fire or Earth Pressure line: the illness is surely hot, and should be attacked with cool medicine;", "a Metal or Water Pressure line: the illness is mostly cold and is surely treated with warm and hot medicine, that is medicine of the kind: Water cold, Earth cool, Fire hot, Metal warm.", "Again, a Fire Pressure in a place of birth or strength that also meets generation and support must be attacked with very cold medicine;", "a Water Pressure in a place of birth or strength that is also held by a combination needs very hot medicine;", "a Fire Pressure in a yin palace on a yin line is the syndrome of yin deficiency with stirring fire, and medicine that nourishes yin and lowers fire may be used;", "a Fire Pressure in the inner trigram of a yang palace is the syndrome of depleted blood and qi, and medicine that supplements the centre and boosts qi may be used.", "One must be flexible; the rest follow this."] }
+      ],
+      "dispute": {
+        "yi": "有三处两家对不上：一，旧注说「火用寒药、土用凉药、水用热药、金用温药」，王洪绪写成「水必寒、土必凉、火必热、金必温」，水和火对调了，而且和他前一句「火土官爻宜用凉药攻之」也不通，大概是抄写之误；二，讲血气虚损的一种，旧注是「水鬼在阳宫内卦」，王洪绪写成「火鬼在阳宫内卦」；三，旧注在火鬼、水鬼后面各有一句休囚死绝时改用凉药、温药，王洪绪没有，而水鬼遇的是「合助」，王洪绪写成「合住」。",
+        "en": "The two disagree in three places. First, the old commentary says 'Fire takes cold medicine, Earth cool, Water hot, Metal warm', and Wang Hongxu writes 'Water cold, Earth cool, Fire hot, Metal warm', with Water and Fire exchanged, which also does not agree with his own sentence before it, 'a Fire or Earth Pressure line should be attacked with cool medicine'; probably a copyist's slip. Second, for the syndrome of depleted blood and qi the old commentary has 'a Water Pressure in the inner trigram of a yang palace' and Wang Hongxu 'a Fire Pressure in the inner trigram of a yang palace'. Third, after the Fire and the Water Pressure the old commentary has a sentence each turning to cool and warm medicine when the line is resting, trapped, dead or extinct, which Wang Hongxu lacks; and where the Water Pressure meets 'combination and help', Wang Hongxu writes 'held by a combination'."
+      },
+      "note": {
+        "yi": "「阴虚火动」是阴液不足、虚火上炎的病；「补中益气」是补脾胃之气、把下陷的中气提起来；「滋阴降火」是养阴液、降虚火。这些是中医的说法，书里没有解释。",
+        "en": "'Yin deficiency with stirring fire' is an illness in which the yin fluids are short and deficient fire flares up; 'supplement the centre and boost qi' is to build up the qi of the Spleen and Stomach and lift the sunken qi of the middle; 'nourish yin and lower fire' is to feed the yin fluids and bring down the deficient fire. These are terms of Chinese medicine, which the book does not explain."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.HJC.59"]
+    },
+    {
+      "id": "LY.ILL.HJC.77",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "验福德以迎医：子孙在什么爻就知道该请哪个方位的医生（子北方、丑东北方）；寅木子孙其医是木旁草头的姓名或属虎，虽非东方皆能医",
+      "rule": {
+        "yi": "凡是占服药，看子孙在哪一爻，就知道该请哪个方向的医生：子孙在子爻，宜请北方的医生；在丑爻，宜请东北方的医生，依此类推。又如寅爻是子孙，五行属木，那位医生姓名带木字旁或草字头，或者是属虎的；就算不在东北，也都能治。其余照这个类推。",
+        "en": "In divining the taking of medicine, look at which line Output is on, and one knows from which direction a doctor can treat him: Output on the Zi line, a doctor from the north; on the Chou line, a doctor from the north-east, and so on. Again, if the Output line is Yin, which belongs to Wood, the doctor has a name with the wood radical or the grass radical, or was born in a tiger year; though not from the north-east, all of these can treat him. The rest follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7043, 7043],
+          "zh": ["验福德以迎医，丑寅东北。"],
+          "yi": ["验看福德的位置来迎请医生，丑寅就是东北方。"],
+          "en": ["Examine Output to welcome a doctor: Chou and Yin are the north-east."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7045, 7046],
+          "zh": ["凡占服药，看子孙在何爻，便知何处医人可治。", "如在子爻，宜北方医人；", "丑爻，东北方医人类。", "又如寅爻子孙，五行属木，其医是木旁草头姓名，或是虎命者；", "虽非东北，皆能医。", "余仿此。"],
+          "yi": ["凡是占服药，看子孙在哪一爻，就知道哪个方向的医生可以治。", "如果在子爻，宜请北方的医生；", "在丑爻，是东北方的医生，依此类推。", "又如寅爻是子孙，五行属木，那位医生姓名带木字旁、草字头，或者是属虎的；", "就算不在东北，也都能治。", "其余照这个类推。"],
+          "en": ["In divining the taking of medicine, look at which line Output is on, and one knows from which direction a doctor can treat him.", "If on the Zi line, a doctor from the north is suited;", "on the Chou line, a doctor from the north-east, and so on.", "Again, if the Output line is Yin, which belongs to Wood, the doctor has a name with the wood radical or the grass radical, or was born in a tiger year;", "though not from the north-east, all of these can treat him.", "The rest follow this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2456, 2456],
+          "zh": ["凡占服药，须看子孙何爻，便知何处医人可治。", "如在子爻宜北方医人，丑爻东北方医人类。", "又如寅爻子孙五行属木，其医是木旁草头姓名，或是虎命者，虽非东方，皆能医治，余仿此。"],
+          "yi": ["凡是占服药，要看子孙在哪一爻，就知道哪个方向的医生可以治。", "如果在子爻宜请北方的医生，在丑爻是东北方的医生，依此类推。", "又如寅爻子孙五行属木，那位医生姓名带木字旁、草字头，或者是属虎的，就算不在东方，也都能治，其余照这个类推。"],
+          "en": ["In divining the taking of medicine, one must look at which line Output is on, and one knows from which direction a doctor can treat him.", "If on the Zi line, a doctor from the north is suited; on the Chou line, a doctor from the north-east, and so on.", "Again, if the Yin Output line belongs to Wood, the doctor has a name with the wood radical or the grass radical, or was born in a tiger year; though not from the east, all of these can treat him; the rest follow this."] }
+      ],
+      "note": {
+        "yi": "旧注说寅木子孙「虽非东北」，王洪绪说「虽非东方」：寅在东北偏东，五行属木、木在东方，王洪绪的写法更顺。「木旁草头姓名」指姓名里有木字旁或草字头的字。",
+        "en": "The old commentary says of a Yin Wood Output 'though not from the north-east', Wang Hongxu 'though not from the east'; Yin lies east-north-east and its phase Wood belongs to the east, so Wang Hongxu's wording is the smoother. A 'name with the wood radical or the grass radical' means a name that has a character with the wood radical or the grass radical."
+      },
+      "see": ["LY.ILL.HJC.58", "LY.ILL.HJC.69"]
+    },
+    {
+      "id": "LY.ILL.HJC.78",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "水带财兴大忌鱼鲜生冷：财是饮食，动则生助鬼爻反为所害；财属水忌鱼鲜生冷，木忌动风之物，火忌炙煿热物，金忌坚硬咸物，土忌油腻滑物；财不动不可妄言；又忌鬼爻生肖之物",
+      "rule": {
+        "yi": "财爻管饮食，靠它养生，但它一动就会去生助鬼爻，反而被它所害。财若属水，一定忌鱼鲜和生冷的东西，药才见效；属木，忌动风的东西；属火，忌烤炒的热东西；属金，忌坚硬和咸的东西；属土，忌油腻和滑的东西。财爻不动，不可乱说。又要忌鬼爻所属生肖的东西，比如丑忌牛，酉忌鸡。",
+        "en": "The Wealth line governs food and drink, on which life is sustained, but when it moves it generates and helps the Pressure line and one is harmed by it instead. If Wealth is Water, fish, fresh seafood and raw or cold things must be avoided, and only then does the medicine work; if Wood, avoid things that stir wind; if Fire, roasted, fried and hot things; if Metal, hard and salty things; if Earth, greasy and slippery things. If Wealth does not move, one may not speak at random. Also avoid what belongs to the zodiac animal of the Pressure line: for example Chou avoids the ox and You avoids the fowl."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7048, 7048],
+          "zh": ["水带财兴，大忌鱼鲜生冷；"],
+          "yi": ["属水的财爻发动，最忌鱼鲜和生冷的东西；"],
+          "en": ["A Water Wealth line rising: fish, fresh seafood and raw or cold things are most to be avoided;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7049, 7049],
+          "zh": ["财为饮食，资以养生。", "然动则生助鬼爻，反为所害。", "若更属水，必忌鱼鲜生冷，药始见功。", "如值木爻，忌动风之物。", "忌值火，忌炙煿热物。", "值金爻，忌坚硬盐物。", "值土爻，忌油腻滑物。", "财如不动，不可妄言。", "又忌鬼爻生肖物，如丑忌牛，酉忌鸡类。", "余仿此。"],
+          "yi": ["财爻是饮食，靠它来养生。", "但它一动就去生助鬼爻，反而被它所害。", "如果又属水，一定忌鱼鲜和生冷的东西，药才开始见效。", "如果遇到木爻，忌动风的东西。", "遇到火，忌烤炒的热东西。", "遇到金爻，忌坚硬和咸的东西。", "遇到土爻，忌油腻和滑的东西。", "财爻如果不动，不可乱说。", "又要忌鬼爻所属生肖的东西，比如丑忌牛，酉忌鸡这一类。", "其余照这个类推。"],
+          "en": ["Wealth is food and drink, on which life is sustained.", "But when it moves it generates and helps the Pressure line, and one is harmed by it instead.", "If it is also Water, fish, fresh seafood and raw or cold things must be avoided, and only then does the medicine begin to work.", "If it falls on a Wood line, avoid things that stir wind.", "Falling on Fire, avoid roasted, fried and hot things.", "Falling on a Metal line, avoid hard and salty things.", "Falling on an Earth line, avoid greasy and slippery things.", "If Wealth does not move, one may not speak at random.", "Also avoid what belongs to the zodiac animal of the Pressure line, for example Chou avoids the ox and You avoids the fowl.", "The rest follow this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2458, 2458],
+          "zh": ["财为饮食，资以养生，然动则生助鬼爻，反为所害。", "若更属水，必忌鱼鲜生冷等物，药治见功。", "如值木爻，忌食动风之物，值火忌炙炊热物，值金忌坚硬咸物，值土忌油腻滑物。", "财如不动，不可妄言。", "又忌鬼爻生肖物，如丑忌牛、酉忌鸡类。", "余仿此。"],
+          "yi": ["财爻是饮食，靠它来养生，但它一动就去生助鬼爻，反而被它所害。", "如果又属水，一定忌鱼鲜、生冷这一类东西，药治才见功效。", "如果遇到木爻，忌吃动风的东西，遇到火忌烤炊的热东西，遇到金忌坚硬咸的东西，遇到土忌油腻滑的东西。", "财爻如果不动，不可乱说。", "又要忌鬼爻所属生肖的东西，比如丑忌牛、酉忌鸡这一类。", "其余照这个类推。"],
+          "en": ["Wealth is food and drink, on which life is sustained, but when it moves it generates and helps the Pressure line, and one is harmed by it instead.", "If it is also Water, fish, fresh seafood, raw and cold things and the like must be avoided, and only then does the treatment take effect.", "Falling on a Wood line, avoid eating things that stir wind; on Fire, roasted and cooked hot things; on Metal, hard and salty things; on Earth, greasy and slippery things.", "If Wealth does not move, one may not speak at random.", "Also avoid what belongs to the zodiac animal of the Pressure line, for example Chou avoids the ox and You avoids the fowl.", "The rest follow this."] }
+      ],
+      "note": {
+        "yi": "「动风之物」是中医说的容易引动风病的食物（引起发痒、头晕、抽动一类）。旧注「忌值火，忌炙煿热物」多出一个「忌」字，按上下文是「值火，忌炙煿热物」；王洪绪写「炙炊」，旧注写「炙煿」，都是烤炒。这一条和 LY.ILL.HJC.38 里财管饮食、财动生鬼是一个道理。",
+        "en": "'Things that stir wind' are foods that Chinese medicine holds apt to stir up wind illnesses (itching, dizziness, twitching and the like). The old commentary's 'avoid, on Fire, avoid roasted ...' has one 'avoid' too many and from the context means 'on Fire, avoid roasted and fried hot things'; Wang Hongxu writes 'roasted and cooked' where the old commentary writes 'roasted and fried', both being roasting and frying. The entry gives the same reason as LY.ILL.HJC.38: Wealth governs food, and Wealth moving generates Pressure."
+      },
+      "see": ["LY.ILL.HJC.21", "LY.ILL.HJC.30", "LY.ILL.HJC.38"]
+    },
+    {
+      "id": "LY.ILL.HJC.79",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "木加龙助偏宜舒畅情怀：青龙是喜悦之神，又临木爻生合世爻主象，病人必须抛开家事、放宽情怀，然后服药才有效",
+      "rule": {
+        "yi": "青龙是喜悦的神，再临在木爻上，来生合世爻和主象，病人一定要把家里的事丢开、放宽心怀，然后吃药才有效。",
+        "en": "The Azure Dragon is the spirit of joy; if it also sits on a Wood line and generates or combines with the Self line and the main image, the patient must throw off household affairs and relax his mind, and only then is the medicine effective."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7051, 7051],
+          "zh": ["木加龙助，偏宜舒畅情怀。"],
+          "yi": ["木爻加上青龙相助，特别适合心情舒畅。"],
+          "en": ["A Wood line helped by the Azure Dragon: it is especially fitting to have an untroubled mind."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7052, 7052],
+          "zh": ["青龙为喜悦之神，更临木爻，生合世爻主象；", "病人必抛却家事，放宽情怀，然后服药有效。"],
+          "yi": ["青龙是喜悦的神，又临在木爻上，来生合世爻和主象；", "病人一定要抛开家里的事，放宽心怀，然后吃药才有效。"],
+          "en": ["The Azure Dragon is the spirit of joy; if it also sits on a Wood line and generates or combines with the Self line and the main image;", "the patient must throw off household affairs and relax his mind, and only then is the medicine effective."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2460, 2460],
+          "zh": ["青龙为喜悦之神，更临木爻生合世爻主象，病人必抛却家事，放宽怀抱，然后服药有功。"],
+          "yi": ["青龙是喜悦的神，又临在木爻上，来生合世爻和主象，病人一定要抛开家里的事，放宽心怀，然后吃药才有功效。"],
+          "en": ["The Azure Dragon is the spirit of joy; if it also sits on a Wood line and generates or combines with the Self line and the main image, the patient must throw off household affairs and relax his mind, and only then does the medicine work."] }
+      ],
+      "see": ["LY.ILL.HJC.88"]
+    },
+    {
+      "id": "LY.ILL.HJC.80",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "财合用神居外动吐之则痊：财爻在外卦动主吐，生合世爻用爻则用药涌吐即愈，在内卦宜疏利；财爻动来刑克世与主象，在外服药不纳、在内药后发泻",
+      "rule": {
+        "yi": "财爻在外卦发动，主呕吐。如果它生合世爻、用爻，用药催吐就会好；如果在内卦，疏通利下最好。如果财爻发动来刑克世爻和主象，在外卦就是吃药吃不下，在内卦就是吃了药之后拉肚子。",
+        "en": "A Wealth line moving in the outer trigram means vomiting. If it generates or combines with the Self and Subject lines, treating with a medicine that makes him vomit heals it; if it is in the inner trigram, a purge that opens the bowels is best. If the Wealth line moves to punish or control the Self line and the main image, then in the outer trigram the medicine is not kept down, and in the inner trigram there is diarrhoea after the medicine."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7054, 7054],
+          "zh": ["财合用神居外动，吐之则痊；"],
+          "yi": ["财爻合着用神、在外卦发动，用药催吐就会痊愈。"],
+          "en": ["The Wealth line combining with the Subject and moving in the outer trigram: induced vomiting heals it."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7055, 7055],
+          "zh": ["财在外动，主吐。", "若得生合世爻用爻，以药吐之则愈。", "如在内卦，疏利为妙。", "若财爻动来刑克世与主象，在外则主服药不纳；", "在内则主药后发泻也。"],
+          "yi": ["财爻在外卦动，主呕吐。", "如果它生合世爻、用爻，用药让它吐出来就好。", "如果在内卦，疏通利下最好。", "如果财爻发动来刑克世爻和主象，在外卦就是吃药吃不下；", "在内卦就是吃了药之后拉肚子。"],
+          "en": ["Wealth moving in the outer trigram means vomiting.", "If it generates or combines with the Self and Subject lines, treating by medicine that makes him vomit heals it.", "If it is in the inner trigram, a purge to open the bowels is best.", "If the Wealth line moves to punish or control the Self line and the main image, then in the outer trigram the medicine is not kept down;", "in the inner trigram, there is diarrhoea after the medicine."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2462, 2462],
+          "zh": ["财在外宫主吐，若得生合用爻，以药吐之则愈。"],
+          "yi": ["财爻在外宫主呕吐，如果它生合用爻，用药让它吐就好。"],
+          "en": ["Wealth in the outer palace means vomiting; if it generates or combines with the Subject line, treating with a vomit-inducing medicine heals it."] }
+      ],
+      "note": {
+        "yi": "「吐之则痊」是中医的「吐法」：病邪在上，让病人吐出来。这一条和 LY.ILL.HJC.30（财动在上卦主吐、下卦主泻）讲的是同一件事，那里是断症候，这里是定治法。",
+        "en": "'Healed by vomiting' is the emetic method of Chinese medicine: when the pathogen is high, the patient is made to vomit it up. The entry speaks of the same thing as LY.ILL.HJC.30 (Wealth moving in the upper trigram means vomiting, in the lower diarrhoea): there it judges the symptom, here it fixes the treatment."
+      },
+      "see": ["LY.ILL.HJC.30", "LY.ILL.HJC.78"]
+    },
+    {
+      "id": "LY.ILL.HJC.81",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "子逢火德寓离宫灸之则愈：子孙属火又在离宫宜用热药疗；若在他宫又居外卦必用艾灸则愈，在内卦或虽在外而系本宫者皆依此断",
+      "rule": {
+        "yi": "子孙属火，又在离宫，宜用热药来治；如果在别的宫，又居外卦，一定用艾灸才会好；如果在内卦，或者虽然在外卦却属本宫的，都照这个断。",
+        "en": "If Output is Fire and also in the Li palace, hot medicine should be used to treat it; if it is in another palace and in the outer trigram, it is healed only by moxibustion; if it is in the inner trigram, or, though in the outer, belongs to the home palace, judge in each case by this."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7057, 7057],
+          "zh": ["子逢火德寓离宫，灸之则愈。"],
+          "yi": ["子孙遇到火德、又住在离宫，用灸法就会痊愈。"],
+          "en": ["Output meeting the virtue of Fire and dwelling in the Li palace: moxibustion heals it."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7058, 7058],
+          "zh": ["子孙属火，又在离宫，宜用热药疗之。", "若在他宫，又居外卦，必用艾灸则愈。", "如在内卦，或虽在外，而系本宫者，皆依此断。"],
+          "yi": ["子孙属火，又在离宫，宜用热药来治。", "如果在别的宫，又居外卦，一定用艾灸才会好。", "如果在内卦，或者虽然在外卦却属本宫的，都照这个断。"],
+          "en": ["If Output is Fire and also in the Li palace, hot medicine should be used to treat it.", "If it is in another palace and in the outer trigram, it is healed only by moxibustion.", "If it is in the inner trigram, or, though in the outer, belongs to the home palace, judge in each case by this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2464, 2464],
+          "zh": ["子孙属火，又在离宫，宜用热药疗之，或用艾炙则愈。"],
+          "yi": ["子孙属火，又在离宫，宜用热药来治，或者用艾灸才会好。"],
+          "en": ["If Output is Fire and also in the Li palace, hot medicine should be used to treat it, or moxibustion, and it heals."] }
+      ],
+      "note": {
+        "yi": "「灸」是用艾绒烧灼穴位的疗法，王洪绪写作「艾炙」，是同一个意思。旧注末句的「依此断」指依哪一句，书里没有说。",
+        "en": "Moxibustion is the treatment of burning mugwort floss on the acupuncture points; Wang Hongxu writes it with a different character, meaning the same. Which sentence the old commentary's closing 'judge by this' refers to the book does not say."
+      },
+      "see": ["LY.ILL.HJC.76"]
+    },
+    {
+      "id": "LY.ILL.HJC.82",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "坎卦子孙必须发汗、木爻官鬼先要疏风：子孙在坎卦发动（旧注不拘五行；王洪绪说属水或在坎宫）皆宜发汗，官鬼属木须散风邪用药才有效",
+      "rule": {
+        "yi": "子孙在坎卦发动，都宜发汗（旧注：不管是什么五行；王洪绪：子孙属水，或者在坎宫）；官鬼属木，要先散风邪，用药才有效。这只是举一个例子，五行八卦都照这个推。",
+        "en": "Output moving in the Kan trigram is always suited to inducing sweat (the old commentary: whatever its phase; Wang Hongxu: Output that is Water, or in the Kan palace); a Wood Pressure line calls for dispersing the wind pathogens first, and then the medicine is effective. This is only one instance, and the five phases and eight trigrams are all reasoned in this way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7060, 7060],
+          "zh": ["坎卦子孙，必须发汗；", "木爻官鬼，先要疏风。"],
+          "yi": ["坎卦的子孙，一定要发汗；", "属木的官鬼爻，要先疏散风邪。"],
+          "en": ["Output in the Kan trigram: sweating must be induced;", "a Wood Pressure line: first disperse the wind."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7061, 7061],
+          "zh": ["子孙在坎卦发动，不拘五行，皆宜表汗；", "官鬼属木，须散风邪，用药有效。", "举其一端，五行八卦皆仿此推之。"],
+          "yi": ["子孙在坎卦发动，不管是什么五行，都宜发汗解表；", "官鬼属木，要散风邪，用药才有效。", "这只是举出其中一个例子，五行八卦都照这个推。"],
+          "en": ["Output moving in the Kan trigram, whatever its phase, is always suited to inducing sweat to release the exterior;", "a Wood Pressure line calls for dispersing wind pathogens, and then the medicine is effective.", "This takes one instance; the five phases and eight trigrams are all reasoned in this way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2466, 2466],
+          "zh": ["子孙属水或在坎宫发动，皆宜表汗，官鬼属木，先散风邪用药有效。"],
+          "yi": ["子孙属水或者在坎宫发动，都宜发汗解表，官鬼属木，先散风邪再用药才有效。"],
+          "en": ["Output that is Water, or moves in the Kan palace, is always suited to inducing sweat to release the exterior; a Wood Pressure line calls for first dispersing the wind pathogens, and then the medicine is effective."] }
+      ],
+      "dispute": {
+        "yi": "什么样的子孙宜发汗：旧注是子孙在坎卦发动，不管什么五行；王洪绪是子孙属水，或者在坎宫发动，多了「属水」这一种。",
+        "en": "What sort of Output is suited to inducing sweat: the old commentary says Output moving in the Kan trigram, whatever its phase; Wang Hongxu says Output that is Water, or moves in the Kan palace, which adds the case of 'being Water'."
+      },
+      "note": {
+        "yi": "「发汗」「表汗」是让病人出汗、把外邪从体表散出去；「疏风」「散风邪」是散去风邪。坎属水、主北方寒冷，书里没有说为什么坎宜发汗。",
+        "en": "'Inducing sweat' and 'releasing the exterior' are to make the patient sweat and disperse the external pathogen from the surface of the body; 'dispersing wind' is to scatter the wind pathogens. Kan belongs to Water and to the cold of the north, and the book does not say why Kan is suited to sweating."
+      },
+      "see": ["LY.ILL.HJC.76", "LY.ILL.HJC.84"]
+    },
+    {
+      "id": "LY.ILL.HJC.83",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "用旺有扶勿再补：用爻休囚墓绝必用补药才效；得时旺相又有生扶合助，须用克伐之药，再补则反害",
+      "rule": {
+        "yi": "用爻休囚墓绝，一定要用补药才有效。如果用爻得时旺相，又有生扶合助，就要用克伐的药来治，再补反而有害。",
+        "en": "If the Subject line is resting, trapped, in a tomb or extinct, only a tonic is effective. If the Subject line is in season and strong and also has generation, support and combination to help it, it must be treated with medicine that attacks and subdues, and to tonify further does harm instead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7063, 7063],
+          "zh": ["用旺有扶，勿再补；"],
+          "yi": ["用爻旺相又有扶助，就不要再补了；"],
+          "en": ["A Subject that is strong and supported: do not add tonics;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7064, 7064],
+          "zh": ["用爻休囚墓绝，必是补药方效。", "若得时旺相，又有生扶合助，须克伐之药治之。", "若又补，则反害。"],
+          "yi": ["用爻休囚墓绝，一定是补药才有效。", "如果得时旺相，又有生扶合助，就要用克伐的药来治。", "如果又去补，就反而有害。"],
+          "en": ["If the Subject line is resting, trapped, in a tomb or extinct, only a tonic is effective.", "If it is in season and strong and also has generation, support and combination to help it, it must be treated with medicine that attacks and subdues.", "If one tonifies further, it does harm instead."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2468, 2468],
+          "zh": ["用爻休囚墓绝，必补药方有效；", "若用爻得时旺相，又有生扶合助，须用克伐之药治之，若再补则反害矣。"],
+          "yi": ["用爻休囚墓绝，一定要补药才有效；", "如果用爻得时旺相，又有生扶合助，就要用克伐的药来治，再补反而有害了。"],
+          "en": ["If the Subject line is resting, trapped, in a tomb or extinct, only a tonic is effective;", "if the Subject line is in season and strong and also has generation, support and combination to help it, it must be treated with medicine that attacks and subdues, and to tonify further does harm instead."] }
+      ],
+      "note": {
+        "yi": "用爻的旺衰决定用补还是用泻，这和病体章 LY.ILL.HJC.36（用壮有扶，太刚则折）相通：病中的人，用爻太旺反而不好。王洪绪这一段把「用旺有扶」和「鬼衰属水」两条经文合在一起注，后半在下一条（LY.ILL.HJC.84）。",
+        "en": "That the strength or weakness of the Subject line decides whether to tonify or to purge is related to LY.ILL.HJC.36 in the chapter on the patient's condition (strong and supported, too rigid, it snaps): for a person in illness, a Subject line that is too strong is on the contrary not good. Wang Hongxu's paragraph comments on the two verses 'strong and supported, no more tonics' and 'a weak Pressure line belonging to Water, no needle' together, and the second half is in the next entry (LY.ILL.HJC.84)."
+      },
+      "see": ["LY.ILL.HJC.36", "LY.ILL.HJC.84"]
+    },
+    {
+      "id": "LY.ILL.HJC.84",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "鬼衰属水莫行针：子孙属金利用刀针，鬼爻属水而用刀针则金生水反助病势；土鬼忌热药、水鬼忌寒药（王洪绪：木鬼忌寒药）、火鬼忌风药、金鬼忌丸药",
+      "rule": {
+        "yi": "子孙属金，适合用刀针。鬼爻属水，如果用刀针，金能生水，反而助长病势，病一定加重。土鬼不宜用热药，水鬼不宜用寒药，火鬼不宜用风药，金鬼不宜用丸药。",
+        "en": "If Output is Metal, knife and needle are of use. If the Pressure line is Water and knife and needle are used, Metal can generate Water and helps the force of the illness instead, and the illness surely grows heavier. An Earth Pressure avoids hot medicine, a Water Pressure cold medicine, a Fire Pressure wind medicine, and a Metal Pressure pills."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7066, 7066],
+          "zh": ["鬼衰属水，莫行针。"],
+          "yi": ["鬼衰、属水，不要行针。"],
+          "en": ["A weak Pressure line belonging to Water: do not use the needle."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7067, 7069],
+          "zh": ["子孙属金，利用刀针。", "鬼爻属水，而用刀针，则金能生水，反助其势，病必增重。", "土鬼忌用热药，水鬼忌用寒药，火鬼忌用风药，金鬼忌用丸药。"],
+          "yi": ["子孙属金，适合用刀针。", "鬼爻属水，却用刀针，金能生水，反而助长它的势头，病一定加重。", "土鬼不宜用热药，水鬼不宜用寒药，火鬼不宜用风药，金鬼不宜用丸药。"],
+          "en": ["If Output is Metal, knife and needle are of use.", "If the Pressure line is Water and knife and needle are used, Metal can generate Water and helps its force instead, and the illness surely grows heavier.", "An Earth Pressure avoids hot medicine, a Water Pressure cold medicine, a Fire Pressure wind medicine, and a Metal Pressure pills."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2468, 2468],
+          "zh": ["子孙属金，利用刀针；", "鬼爻属水而用刀针，则金能生水，反助病势。", "土鬼忌用热药，木鬼忌用寒药，火鬼忌用风药，金鬼忌用丸药。"],
+          "yi": ["子孙属金，适合用刀针；", "鬼爻属水却用刀针，金能生水，反而助长病势。", "土鬼不宜用热药，木鬼不宜用寒药，火鬼不宜用风药，金鬼不宜用丸药。"],
+          "en": ["If Output is Metal, knife and needle are of use;", "if the Pressure line is Water and knife and needle are used, Metal can generate Water and helps the force of the illness instead.", "An Earth Pressure avoids hot medicine, a Wood Pressure cold medicine, a Fire Pressure wind medicine, and a Metal Pressure pills."] }
+      ],
+      "dispute": {
+        "yi": "哪一种鬼忌用寒药：旧注是水鬼，王洪绪是木鬼；土鬼忌热药、火鬼忌风药、金鬼忌丸药，两家相同。",
+        "en": "Which Pressure avoids cold medicine: the old commentary says the Water Pressure, Wang Hongxu the Wood Pressure; that an Earth Pressure avoids hot medicine, a Fire Pressure wind medicine and a Metal Pressure pills is the same in both."
+      },
+      "note": {
+        "yi": "经文说「鬼衰属水」，两家的注讲的都只是「鬼爻属水」，没有说「衰」字起什么作用。「风药」是发散风邪的药，「丸药」是成丸的药。",
+        "en": "The verse says 'a weak Pressure line belonging to Water', and both commentaries speak only of 'a Pressure line belonging to Water' and say nothing of what the word 'weak' does. 'Wind medicine' is medicine that disperses wind pathogens, and 'pills' medicine made up into pills."
+      },
+      "see": ["LY.ILL.HJC.76", "LY.ILL.HJC.83"]
+    },
+    {
+      "id": "LY.ILL.HJC.85",
+      "topic": "神祟",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "福鬼俱空当不治而自愈、子官皆动宜内补而外修：子孙官鬼都空是吉兆（或俱衰静无冲无并）病自愈不用服药；两爻都动不是药不对病而是神祟作祸，须服汤药又祈祷鬼神才愈，俗谓外修内补",
+      "rule": {
+        "yi": "占病，子孙、官鬼两爻都空，是吉兆；或者两爻都衰弱安静、没有冲也没有并，这病自己会好，不用吃药。如果两爻都动，不是药不对病，而是有神祟隔在中间（王洪绪：神祟在作祸），所以没有功效，必须又吃汤药、又祈祷鬼神才会痊愈，俗话叫「外修内补」。",
+        "en": "In divining illness, when the Output and Pressure lines are both Void it is a lucky sign; or if both are weak and still, with neither clash nor joining, the illness heals of itself and no medicine need be taken. If both lines move, it is not that the medicine does not fit the illness but that spirits or a haunting stand between (Wang Hongxu: are working mischief), and so it does no good; he must take decoctions and also pray to the ghosts and spirits to be cured, which the common saying calls 'cultivate without and nourish within'."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7071, 7071],
+          "zh": ["福鬼俱空，当不治而自愈；", "子官皆动，宜内补而外修。"],
+          "yi": ["子孙和官鬼都落空，应当不治疗也会自己痊愈；", "子孙和官鬼两爻都动，宜在里面补养、在外面修功德。"],
+          "en": ["Output and Pressure both Void: it should heal by itself without treatment;", "Output and Pressure both moving: it is fitting to nourish within and to cultivate merit without."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7072, 7073],
+          "zh": ["占病，子官二爻俱空，乃吉兆。", "或俱衰静，无冲无并者，其病自愈，不用服药。", "若二爻俱动，非药不对病，乃是神祟间隔，故无功；", "必须服汤药，又祈祷鬼神得痊。", "俗谓外修内补也。"],
+          "yi": ["占病，子孙、官鬼两爻都空，是吉兆。", "或者两爻都衰弱安静，没有冲也没有并的，这病自己会好，不用吃药。", "如果两爻都动，不是药不对病，而是有神祟隔在中间，所以没有功效；", "必须又吃汤药、又祈祷鬼神才会痊愈。", "俗话叫做外修内补。"],
+          "en": ["In divining illness, when the Output and Pressure lines are both Void, it is a lucky sign.", "Or if both are weak and still, with neither clash nor joining, the illness heals of itself and no medicine need be taken.", "If both lines move, it is not that the medicine does not fit the illness but that spirits or a haunting stand between, and so it does no good;", "he must take decoctions and also pray to the ghosts and spirits to be cured.", "The common saying is 'cultivate without and nourish within'."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2470, 2470],
+          "zh": ["占病子官二爻俱空，乃吉兆也，或俱衰静无冲无并者，其病自愈，不用服药。", "若二爻俱动，此非药不对病，乃是神祟作祸，故曰无功，必须祈祷服药方得病痊，俗所谓外修内补也。"],
+          "yi": ["占病，子孙、官鬼两爻都空，是吉兆，或者两爻都衰弱安静、没有冲也没有并的，这病自己会好，不用吃药。", "如果两爻都动，这不是药不对病，而是神祟在作祸，所以说没有功效，必须又祈祷又吃药才能痊愈，就是俗话说的外修内补。"],
+          "en": ["In divining illness, when the Output and Pressure lines are both Void it is a lucky sign; or if both are weak and still, with neither clash nor joining, the illness heals of itself and no medicine need be taken.", "If both lines move, this is not that the medicine does not fit the illness but that spirits or a haunting are working mischief, hence it is said to do no good; he must pray and take medicine to be cured, which is the common 'cultivate without and nourish within'."] }
+      ],
+      "note": {
+        "yi": "「并」大概是日辰、月建或别的爻和它同支、并起来帮它。旧注说神祟「间隔」（隔在药和病之间），王洪绪说神祟「作祸」。「外修内补」是外面修功德祈祷、里面吃药调养。",
+        "en": "'Joining' (bing) is probably the Day, the Month or another line of the same branch joining up to help it. The old commentary says the haunting 'stands between' (between the medicine and the illness), Wang Hongxu that it 'works mischief'. 'Cultivate without and nourish within' is to cultivate merit and pray outside while taking medicine and recuperating inside."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.HJC.50"]
+    },
+    {
+      "id": "LY.ILL.HJC.86",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "卦动两孙用药须当间服：有两爻子孙发动，用药不必连服（分权），须多服见效，或用两般汤药相间服之；疮疽肿毒内用托里外用敷贴",
+      "rule": {
+        "yi": "卦里有两爻子孙发动，用药不必连着服，因为它们分了权，要多服才见效；或者用两种汤药，轮流间隔着服就有效。如果占的是疮疽肿毒，可以说内服托里的药，外面敷贴。",
+        "en": "When two Output lines move in the hexagram, medicine need not be taken continuously, because they divide the power, and it takes much to be effective; or use two kinds of decoction and take them alternately, and it works. If the divination is about sores, carbuncles and swollen toxin, one can say to use medicine to support the inside and a poultice on the outside."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7075, 7075],
+          "zh": ["卦动两孙，用药须当间服；"],
+          "yi": ["卦里两个子孙都动，用药应当间隔着服。"],
+          "en": ["Two Output lines moving in the hexagram: medicine should be taken by turns."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7076, 7077],
+          "zh": ["卦有二爻子孙发动，用药不必连服，以其分权故也，须多服见效。", "或用两般汤药，相间服之则效。", "如占疮疽肿毒，可言内用托里，外用敷贴。"],
+          "yi": ["卦里有两爻子孙发动，用药不必连着服，因为它们分了权，要多服才见效。", "或者用两种汤药，轮流间隔着服就有效。", "如果占的是疮疽肿毒，可以说内服托里的药，外面敷贴。"],
+          "en": ["When two Output lines move in the hexagram, medicine need not be taken continuously, because they divide the power, and it takes much to be effective.", "Or use two kinds of decoction and take them alternately, and it works.", "If the divination is about sores, carbuncles and swollen toxin, one can say to use medicine to support the inside and a poultice on the outside."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2472, 2472],
+          "zh": ["卦有二爻子孙发动，用药不必连服，以其分权故也。", "或用两般汤药，间服之则效矣。"],
+          "yi": ["卦里有两爻子孙发动，用药不必连着服，因为它们分了权。", "或者用两种汤药，间隔着服就有效了。"],
+          "en": ["When two Output lines move in the hexagram, medicine need not be taken continuously, because they divide the power.", "Or use two kinds of decoction and take them by turns, and it works."] }
+      ],
+      "note": {
+        "yi": "「托里」是内服药把毒往外托出的疗法，「敷贴」是外面贴敷。疮疽肿毒一句，王洪绪没有收。",
+        "en": "'Supporting the inside' (tuoli) is the treatment of taking medicine internally to push the toxin outward, and a 'poultice' is a dressing applied outside. Wang Hongxu does not take the sentence about sores, carbuncles and swollen toxin."
+      },
+      "see": ["LY.ILL.HJC.32"]
+    },
+    {
+      "id": "LY.ILL.HJC.87",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "鬼伤二间立方须用宽胸：官鬼动来冲克间爻，或鬼在间爻发动，胸膈必不利，须用宽胸汤药；间爻逢兄弟发动是气不顺，药宜调气",
+      "rule": {
+        "yi": "官鬼发动来冲克间爻，或者鬼在两个间爻上发动，胸膈一定不舒服，要用宽胸的汤药。间爻遇到兄弟发动，是气不顺（气逆），药宜调气。",
+        "en": "When Pressure moves to clash or control a between line, or moves on the two between lines, the chest and diaphragm are surely uneasy, and a decoction that eases the chest must be used. A between line meeting a moving Peer means the qi is not flowing smoothly (counterflow of qi), and the medicine should regulate qi."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7079, 7079],
+          "zh": ["鬼伤二间，立方须用宽胸。"],
+          "yi": ["官鬼伤到两个间爻，开方要用宽胸的药。"],
+          "en": ["Pressure harming the two between lines: a prescription must use medicine that eases the chest."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7080, 7080],
+          "zh": ["官鬼动来冲克间爻，必然胸隔不利，须用宽中汤药。", "鬼在二间爻动，亦然。", "间爻逢兄弟发动，则是气不顺也，药宜调气。"],
+          "yi": ["官鬼发动来冲克间爻，胸膈一定不舒服，要用宽中的汤药。", "鬼在两个间爻上发动，也是这样。", "间爻遇到兄弟发动，就是气不顺，药宜调气。"],
+          "en": ["When Pressure moves to clash or control a between line, the chest and diaphragm are surely uneasy, and a decoction that eases the middle must be used.", "Pressure moving on the two between lines is the same.", "A between line meeting a moving Peer means the qi is not flowing smoothly, and the medicine should regulate qi."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2474, 2474],
+          "zh": ["官鬼动来冲克间爻，或鬼在间爻动，必然胸膈不利，须用宽胸之药。", "逢兄弟发动，则是气逆，治宜调气。"],
+          "yi": ["官鬼发动来冲克间爻，或者鬼在间爻上发动，胸膈一定不舒服，要用宽胸的药。", "遇到兄弟发动，就是气逆，治法宜调气。"],
+          "en": ["When Pressure moves to clash or control a between line, or Pressure moves on a between line, the chest and diaphragm are surely uneasy, and medicine that eases the chest must be used.", "If a Peer line moves, it is counterflow of qi, and the treatment should regulate qi."] }
+      ],
+      "note": {
+        "yi": "旧注说「气不顺」，王洪绪说「气逆」，意思相近。间爻是病人胸膈的位置，见 LY.ILL.HJC.22；官鬼克间爻胸膈不利见 LY.ILL.HJC.29。",
+        "en": "The old commentary says 'the qi not flowing smoothly' and Wang Hongxu 'counterflow of qi', which mean much the same. The between lines are the place of the patient's chest and diaphragm, see LY.ILL.HJC.22; Pressure controlling a between line and the chest being uneasy is in LY.ILL.HJC.29."
+      },
+      "see": ["LY.ILL.HJC.22", "LY.ILL.HJC.29"]
+    },
+    {
+      "id": "LY.ILL.HJC.88",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "父合变孙莫若闭门修养：福爻空亡、官爻衰静，若有父母动来生合世身主象，不须服药；再变出子孙，不如抛开家事静养，或入寺观闭门修养，不吃药自会好",
+      "rule": {
+        "yi": "卦里子孙爻空亡、官鬼衰弱安静，如果有父母爻发动来生合世爻、身爻和主象，就不用吃药。再变出子孙，不如丢开家里的事，到深山里静养，或者进寺庙道观闭门修养，不吃药也会自己安好。",
+        "en": "If the Output line in the hexagram is Void and the Pressure line weak and still, and a Resource line moves to generate or combine with the Self line, the body and the main image, no medicine need be taken. If it also changes into Output, better to abandon household affairs and recuperate quietly in the deep mountains, or to enter a temple or Daoist abbey and recuperate behind a closed door, and without medicine he will recover of himself."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7082, 7082],
+          "zh": ["父合变孙，莫若闭门修养；"],
+          "yi": ["父母来合、又变成子孙，不如闭门修养；"],
+          "en": ["Resource combining and changing into Output: better than anything to shut the door and recuperate;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7083, 7083],
+          "zh": ["卦中福爻空亡，官爻衰静，若有父母动来生合世身主象者，不须服药。", "更化子孙，不若抛弃家事，静养深山；", "或入寺观闭门修养，勿药自安。"],
+          "yi": ["卦里子孙爻空亡，官爻衰弱安静，如果有父母爻发动来生合世爻、身爻和主象的，就不用吃药。", "如果再变成子孙，不如丢开家里的事，到深山里静养；", "或者进寺庙道观闭门修养，不吃药也会自己安好。"],
+          "en": ["If in the hexagram the Output line is Void and the Pressure line weak and still, and a Resource line moves to generate or combine with the Self line, the body and the main image, no medicine need be taken.", "If it also changes into Output, better to abandon household affairs and recuperate quietly in the deep mountains;", "or to enter a temple or Daoist abbey and recuperate behind a closed door, and without medicine he will recover of himself."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2476, 2478],
+          "zh": ["卦中福官衰静，若有父母动来生合世身主象者，不须服药，宜居僻静，闭门修养。"],
+          "yi": ["卦里福爻、官爻衰弱安静，如果有父母爻发动来生合世爻、身爻和主象的，不用吃药，宜住在僻静的地方，闭门修养。"],
+          "en": ["If the Output and Pressure lines in the hexagram are weak and still, and a Resource line moves to generate or combine with the Self line, the body and the main image, no medicine need be taken; he should live in a secluded quiet place and recuperate behind a closed door."] }
+      ],
+      "note": {
+        "yi": "旧注比王洪绪多了两层：福爻是空亡，又变出子孙时，连家事也要抛开，到深山或寺观去静养。王洪绪只说宜住僻静处闭门修养。",
+        "en": "The old commentary has two layers more than Wang Hongxu: with the Output line Void and also changing into Output, one should abandon even household affairs and recuperate in the mountains or in a temple or abbey. Wang Hongxu says only that he should live in a secluded place and recuperate behind a closed door."
+      },
+      "see": ["LY.ILL.HJC.79", "LY.ILL.HJC.85"]
+    },
+    {
+      "id": "LY.ILL.HJC.89",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "五兴化福可用路遇医人：子孙出现逢空而第五爻变出不空的子孙，不必选求名医，路遇的草医反能治；子孙不出现、六爻不化出而日辰带子孙生合，意外自有医来治",
+      "rule": {
+        "yi": "子孙出现在卦里却落空，而第五爻动、变出不落空的子孙，不用选求名医服药，路上遇到的乡野医生反而能治好。如果子孙不出现、六爻也没有变出子孙，而日辰带着子孙来生合，想不到的时候自然有医生来治。",
+        "en": "If Output appears in the hexagram but is Void, and the fifth line moves and changes out an Output that is not Void, there is no need to seek a famous doctor and take medicine: a rustic doctor met on the road can cure him instead. If Output does not appear and none of the six lines changes it out, but the Day carries Output and generates or combines with it, a doctor will come to treat him unexpectedly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7085, 7085],
+          "zh": ["五兴化福，可用路遇医人。"],
+          "yi": ["第五爻发动、变出子孙，可以用路上遇到的医生。"],
+          "en": ["The fifth line rising and changing into Output: a doctor met on the road may be used."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7086, 7086],
+          "zh": ["子孙出现逢空，而五爻变出子孙，却不空者，不须选求名医服药，不如过路草医，反能治之。", "若子孙不出现，六爻不化出，而日辰带子孙生合者，不意中自有医来治也。"],
+          "yi": ["子孙出现却落空，而第五爻变出子孙、不落空的，不用选求名医服药，不如路过的乡野医生，反而能治好。", "如果子孙不出现，六爻也没有变出子孙，而日辰带着子孙来生合，想不到的时候自然有医生来治。"],
+          "en": ["If Output appears but is Void, while the fifth line changes out Output that is not Void, there is no need to seek a famous doctor and take medicine: a rustic doctor who passes by can cure him instead.", "If Output does not appear and none of the six lines changes it out, but the Day carries Output and generates or combines with it, a doctor will come to treat him unexpectedly."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2480, 2480],
+          "zh": ["如卦中第五爻变出子孙，不须选医服药，不如路遇草医能治。", "若子孙不现，而日辰临子孙生合者，意外自有医生可治也。"],
+          "yi": ["如果卦里第五爻变出子孙，不用选医生服药，不如路上遇到的乡野医生能治好。", "如果子孙不出现，而日辰临着子孙来生合，想不到的时候自然有医生可以治。"],
+          "en": ["If the fifth line of the hexagram changes out Output, there is no need to choose a doctor and take medicine; a rustic doctor met on the road can cure him.", "If Output does not appear but the Day sits on Output and generates or combines with it, a doctor who can treat him will come unexpectedly."] }
+      ],
+      "note": {
+        "yi": "旧注的条件比王洪绪细：子孙出现而空，第五爻变出的子孙不空。王洪绪只说第五爻变出子孙。「草医」是乡间没有名气的医生。",
+        "en": "The old commentary's condition is finer than Wang Hongxu's: Output appears and is Void, and the Output changed out at the fifth line is not Void. Wang Hongxu says only that the fifth line changes out Output. A 'rustic doctor' is a country doctor of no repute."
+      },
+      "see": ["LY.ILL.HJC.58", "LY.ILL.HJC.77"]
+    },
+    {
+      "id": "LY.ILL.HJC.90",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "世应比和无福德须用更医：世应比和而卦无福德，此药无损无益服与不服一样，须更换医人别求治疗才可痊",
+      "rule": {
+        "yi": "世爻和应爻比和，卦里又没有子孙，这药没有损害也没有益处，吃不吃都一样，必须换一个医生，另外求治，才能痊愈。",
+        "en": "When the Self and Other lines are at peace with each other and there is no Output in the hexagram, this medicine neither harms nor helps, and to take it or not is the same; he must change the doctor and seek treatment elsewhere before he can be cured."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7088, 7088],
+          "zh": ["世应比和无福德，须用更医；"],
+          "yi": ["世爻和应爻比和、又没有福德，必须换医生；"],
+          "en": ["The Self and Other lines at peace and no Output: a change of doctor is needed;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7089, 7089],
+          "zh": ["世应比和，卦无福德，此药无损无益，服与不服，只是一般。", "须是更换医人，别求治疗，方可得痊。"],
+          "yi": ["世爻和应爻比和，卦里没有福德，这药没有损害也没有益处，吃不吃都是一样。", "必须换一个医生，另外求治，才可以痊愈。"],
+          "en": ["The Self and Other lines at peace with each other and no Output in the hexagram: this medicine neither harms nor helps, and to take it or not is the same.", "He must change the doctor and seek treatment elsewhere before he can be cured."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2482, 2482],
+          "zh": ["世应比和，卦无福德，此药无损无益，须更换医人方可得痊。"],
+          "yi": ["世爻和应爻比和，卦里没有福德，这药没有损害也没有益处，要换医生才可以痊愈。"],
+          "en": ["The Self and Other lines at peace with each other and no Output in the hexagram: this medicine neither harms nor helps, and he must change the doctor to be cured."] }
+      ],
+      "note": {
+        "yi": "王洪绪这一句和下一条（LY.ILL.HJC.91）在同一段里，他把两条经文接着注。",
+        "en": "Wang Hongxu's sentence and the next entry (LY.ILL.HJC.91) are in the same paragraph, where he comments on the two verses one after the other."
+      },
+      "see": ["LY.ILL.HJC.58", "LY.ILL.HJC.91"]
+    },
+    {
+      "id": "LY.ILL.HJC.91",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "财官发动子孙空徒劳服药：财爻官鬼都动其势已凶，子孙又空则服之无益，纵有良医也无功效，不如不服渐愈",
+      "rule": {
+        "yi": "财爻、官鬼都发动，势头已经凶险，子孙又落空，吃药没有益处，就算有好医生也一定没有功效，不如不吃，病反而渐渐好起来。",
+        "en": "When Wealth and Pressure both move, the situation is already bad, and if Output is also Void, taking medicine does no good; even with a good doctor there will surely be no effect, and it is better not to take it, and he will gradually recover."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7091, 7091],
+          "zh": ["财官发动子孙空，徒劳服药。"],
+          "yi": ["财爻、官鬼发动，子孙落空，白白费力吃药。"],
+          "en": ["Wealth and Pressure moving and Output Void: taking medicine is labour in vain."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7093, 7093],
+          "zh": ["财官俱动，其势已凶。", "子孙又空，服之无益；", "纵有良医，必无功效。", "不如不服之渐愈。"],
+          "yi": ["财爻、官鬼都动，势头已经凶险。", "子孙又落空，服药没有益处；", "就算有好医生，也一定没有功效。", "不如不吃，病还会渐渐好。"],
+          "en": ["Wealth and Pressure both moving, the situation is already bad.", "Output is also Void, and taking it does no good;", "even with a good doctor there will surely be no effect.", "Better not to take it, and he will gradually recover."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2482, 2482],
+          "zh": ["财官俱动，其势已凶，子孙又空，服之无益。"],
+          "yi": ["财爻、官鬼都动，势头已经凶险，子孙又落空，吃药没有益处。"],
+          "en": ["Wealth and Pressure both moving, the situation is already bad, and Output is also Void: taking medicine does no good."] }
+      ],
+      "note": {
+        "yi": "旧注末尾多一句「不如不服之渐愈」，王洪绪没有。",
+        "en": "The old commentary has one more sentence at the end, 'better not to take it, and he will gradually recover', which Wang Hongxu lacks."
+      },
+      "see": ["LY.ILL.HJC.59", "LY.ILL.HJC.90"]
+    },
+    {
+      "id": "LY.ILL.HJC.92",
+      "topic": "医药",
+      "chapter": "医药",
+      "chapter_en": "Doctors and medicine",
+      "title": "占医药须诚心默祷，问用何人的药有效无效，不必说明姓氏；卜家据此章而断，自无荐医之弊（王洪绪）",
+      "rule": {
+        "yi": "凡是占医药，要诚心默默祷告，问用哪个人的药有效还是无效，不必说出医生的姓氏。卜家依照这一章来断，自然没有替医生推荐的毛病，心诚没有不感通的，卦没有不灵验的，这不是彼此都安心吗？",
+        "en": "Whoever divines about medicine must pray silently and sincerely, asking whether the medicine of a certain person will or will not be effective, and need not state the doctor's surname. A diviner who judges by this chapter will have no abuse of touting doctors; sincerity never fails to reach, and the hexagram never fails to prove true; is that not peace of mind for both sides?"
+      },
+      "quotes": [
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2483, 2483],
+          "zh": ["凡占医药者，须诚心默祷，用何人药有效无效，不必说明姓氏。", "卜家据此章而断，自无荐医之弊，则诚无不格，卦无不验矣，岂非彼此安心乎？"],
+          "yi": ["凡是占医药的，要诚心默默祷告，问用哪个人的药有效还是无效，不必说出他的姓氏。", "卜家依照这一章来断，自然没有替医生推荐的毛病，那么诚心没有不感通的，卦没有不灵验的，这不是彼此都安心吗？"],
+          "en": ["Whoever divines about medicine must pray silently and sincerely, asking whether the medicine of a certain person will or will not be effective, and need not state his surname.", "A diviner who judges by this chapter will have no abuse of touting doctors; sincerity then never fails to reach, and the hexagram never fails to prove true; is that not peace of mind for both sides?"] }
+      ],
+      "note": {
+        "yi": "这一段是王洪绪自己加在医药章末尾的话，卜筮大全没有对应的文字。「荐医之弊」是占卜的人借断卦替某位医生说好话、推荐他的毛病。",
+        "en": "This passage is Wang Hongxu's own addition at the end of the chapter on medicine, and the Bushi Daquan has no matching text. The 'abuse of touting doctors' is the fault of a diviner who uses his judgment of the hexagram to speak well of a certain doctor and recommend him."
+      },
+      "see": ["LY.ILL.HJC.58"]
+    }
+  ]
+}
