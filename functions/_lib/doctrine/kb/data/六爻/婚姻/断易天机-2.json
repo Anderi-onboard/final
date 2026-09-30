@@ -1,0 +1,36 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "断易天机",
+  "chapter": "占行人",
+  "chapter_en": "Divining a traveller",
+  "ranges": {"断易天机": [1459, 1460]},
+  "units": [
+    {
+      "id": "LY.MARRY.DYTJ.31",
+      "topic": "外遇",
+      "chapter": "占行人第二十二",
+      "chapter_en": "Chapter 22: Divining a traveller",
+      "title": "占行人·咸池临玄武恐逢觅水之欢：用爻加咸池玄武则行人有外情牵惹不归，二星动合应爻或用爻是觅水之欢，青龙动合世应必娶妾",
+      "rule": {
+        "yi": "占在外的人（行人）：咸池星临在玄武上，恐怕他会遇上寻欢的事。小注展开说：用爻如果加上咸池、玄武，行人在外有别的情爱牵住，不回来；咸池、玄武发动，去合应爻或用爻，是在外寻欢；青龙发动去合世爻和应爻，他一定会娶妾。",
+        "en": "Divining a traveller: if the Xianchi star sits on the Dark Tortoise, he may meet a dalliance. The note goes on: if the Subject line has the Xianchi star and the Dark Tortoise added, the traveller has an outside affair holding him and does not return; if the Xianchi star and the Dark Tortoise move and combine with the Other line or the Subject line, it is a dalliance; if the Azure Dragon moves and combines with Self and Other, he will surely take a concubine."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1459, 1459],
+          "zh": ["咸池若临玄武，", "恐逢觅水之欢。"],
+          "yi": ["咸池星如果临在玄武上，", "恐怕会遇上寻欢作乐的事。"],
+          "en": ["If the Xianchi star sits on the Dark Tortoise,", "he may meet with the pleasures of seeking the water (a dalliance)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [1460, 1460],
+          "zh": ["用爻若加咸池、玄武，行人主有外情牵惹，不归。", "咸池、玄武动合应爻或用爻，觅水之欢。", "或青龙动合世应，必娶妾。"],
+          "yi": ["用爻如果加上咸池、玄武，行人在外有别的情爱牵住，不回来。", "咸池、玄武发动去合应爻或用爻，是寻欢之事。", "或者青龙发动去合世爻和应爻，一定娶妾。"],
+          "en": ["If the Subject line has the Xianchi star and the Dark Tortoise added, the traveller has an outside affair holding him and does not return.", "If the Xianchi star and the Dark Tortoise move and combine with the Other line or the Subject line, it is the pleasure of seeking the water.", "Or if the Azure Dragon moves and combines with Self and Other, he will surely take a concubine."] }
+      ],
+      "note": {
+        "yi": "「觅水之欢」的「水」指咸池：咸池又叫桃花，是水星，主男女私情，「觅水之欢」是在外面找私情的欢会。这一段是占出门在外的人（行人），不是占本地的婚姻；这里收的是它里面和男女私情、娶妾有关的三句，前面讲梦的话和别的行人断法没有收。「用爻」这里是行人本人所在的爻。",
+        "en": "'Seeking the pleasure of water' refers to the Xianchi star: Xianchi, also called the peach blossom, is a water star and rules illicit love between man and woman, and 'seeking the pleasure of water' is going outside for a liaison. This passage divines a traveller away from home and not a marriage at home; what is taken here are the three sentences in it that concern illicit love and taking a concubine, and the words before them about dreams and the other rules for judging travellers are not taken. The 'Subject line' here is the line that stands for the traveller himself."
+      },
+      "see": ["LY.MARRY.TXF.15", "LY.MARRY.YY.24", "LY.MARRY.HJC.11", "LY.MARRY.YM.34"]
+    }
+  ]
+}

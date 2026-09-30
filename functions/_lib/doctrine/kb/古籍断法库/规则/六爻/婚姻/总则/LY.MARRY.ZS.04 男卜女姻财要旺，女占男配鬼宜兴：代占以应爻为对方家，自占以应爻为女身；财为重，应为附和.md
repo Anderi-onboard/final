@@ -12,6 +12,7 @@ speakers:
   - "本文"
   - "野鹤老人(《增删卜易》)"
   - "旧注(《卜筮全书》所载,注者不详)"
+  - "书中卦例"
 dispute: true
 terms:
   - "[[妻财]]"
@@ -20,6 +21,8 @@ terms:
   - "[[应爻]]"
   - "[[用神]]"
   - "[[旺相]]"
+  - "[[旬空]]"
+  - "[[月破]]"
   - "[[死墓绝]]"
   - "[[合]]"
 rule: "男方占，妻财要旺；女方占，官鬼要兴旺。代占的：男家占女，用财爻，应爻算女家；女家占男，用官鬼，应爻算男家。财、官要旺相，动了要化出吉象；应爻不该空、破，也不该克世（女家代占的应爻还不该入墓、绝）。男子自占娶妻：也用财爻，应爻兼算女子本人；财爻和应爻生世、持世、合世都吉，最忌破、墓、绝、空；财旺生世而应爻破空还可取，应爻生世而财爻破绝就不要求。野鹤补一句：财、应一起来生合世更吉；大体上财为重，应只是附和。"
@@ -79,6 +82,27 @@ aliases:
 > | 若见相生相合，必然夫唱妇随。 | 如果看到相生相合，必定夫唱妇随。 | If they generate or combine with each other, the husband leads and the wife follows without fail. |
 
 ^q3
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 11582 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 即如：子年未月己未日(旬空：子丑)，自占婚，得“明夷之丰” | 比如：子年未月己未日（旬空：子、丑），自己占婚姻，得明夷卦变丰卦。 | For example: in a Zi year, Wei month, on a Jiwei day (void: Zi and Chou), a person divined their own marriage and got Mingyi changing into Feng. |
+
+^q4
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 11627–11628 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 断曰：丑官持世，虽临月破日破，幸得动化财爻回头之生，目下虽破，终有不破之时。 | 断：丑土官鬼持世，虽然临着月破、日破，幸好动了化出财爻，得到回头生，眼下虽然破了，终究有不破的时候。 | Verdict: the Chou-earth Pressure holds Self; although it sits on the Month-break and the Day-break, it is fortunate that it moves and changes into a Wealth line and gets the returning generation; broken for now, there will in the end be a time when it is not broken. |
+> | 明岁丑年，定逢佳偶。 | 明年是丑年，一定遇上好配偶。 | Next year, a Chou year, one will surely meet a fine mate. |
+> | 果次年四月得配良姻。 | 果然第二年四月得了一门好亲事。 | It came true: in the fourth month of the following year a good marriage was obtained. |
+> | 应丑年者，世爻实破之年也，此非财爻生世，应爻克世耶？ | 应在丑年，是因为丑年是世爻的破被填实的一年；这不正是财爻生世、应爻克世吗？ | It answered in the Chou year because that is the year the break on the Self line is filled; is this not Wealth generating Self while Other controls Self? |
+
+^q5
 
 > [!warning] 打架
 > 「应为百岁之妻」这句在《黄金策》「身命」章（占一生的那一章）的注里，不在它的婚姻章里。野鹤驳的是把它拿来占婚：重应而不重财是错的。夫妇章的正文替《黄金策》解释了为什么那样定（身命章一个卦要断六亲，财爻另有用处），也说占妻以财为重、应次之。两边都承认要兼看财爻，争的是谁为主。

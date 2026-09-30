@@ -10,6 +10,7 @@ books:
 speakers:
   - "本文"
   - "觉子(李文辉,《增删卜易》)"
+  - "书中卦例"
 dispute: true
 terms:
   - "[[妻财]]"
@@ -18,7 +19,9 @@ terms:
   - "[[世爻]]"
   - "[[应爻]]"
   - "[[旺相]]"
+  - "[[旬空]]"
   - "[[动爻]]"
+  - "[[退神]]"
   - "[[合]]"
 rule: "占妻子：财爻为重，应爻其次，应爻只是附和。财爻旺相、应爻空破，仍按吉断；应爻旺相、财爻空破，就按凶推；应旺财旺吉上加吉，应破财破凶上加凶。《黄金策》专把应爻当妻，是因为它的身命章一卦要断父子、兄弟、妻财、官鬼各样，财爻不好又用来当妻，又拿什么爻当钱财，不得不用应爻当妻；虽然如此，它也兼看财爻，不是完全没道理。觉子补充：财爻旺、相，或者临日月，或者被日月动爻生扶，以及动而化吉，又和世爻相生相合的，占白头偕老一定白头相守，占和睦一定举案齐眉，占妻子命好不好、进门以后夫家随之兴旺；占妾占婢，指名单问的，也照这样断。"
 rule_en: "In divining a wife, the Wealth line carries the weight and the Other line comes second, only following along. If Wealth is strong while the Other line is Void or broken, still judge it auspicious; if the Other line is strong while Wealth is Void or broken, reckon it ill; both strong is good and better, both broken is ill and worse. The Huangjin Ce takes the Other line alone as the wife because its person-and-fate chapter judges father and son, brothers, Wealth and Pressure all from one hexagram, and if Wealth were used again and again for the wife some other line would be needed for money; so it had no choice but to use the Other line for the wife, though it too looks at Wealth, so it is not wholly unreasonable. Juezi adds: where the Wealth line is strong or prospering, or is the Day or Month, or is generated and helped by the Day, Month or a moving line, or moves and changes into good, and generates or combines with the Self line, then in a divination about growing old together they will surely keep company to white hair, about harmony surely treat each other with mutual respect, and about whether the wife's fate is good, her husband's family prospers with her once she enters; for a concubine or maid asked about by name, judge the same way."
@@ -69,6 +72,27 @@ aliases:
 > | 占妾占婢，指而问者，亦同此断。 | 占妾、占婢女，指名单独问的，也照这个断。 | For a concubine or a maid asked about by name, judge the same way. |
 
 ^q2
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 9453 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 又如：戌月癸卯日(旬空：辰巳)，占夫妇何如？ | 又如：戌月癸卯日（旬空：辰、巳），占夫妻情形怎样？ | Another example: in a Xu month on a Guimao day (void: Chen and Si), a divination on how a husband and wife would fare; |
+> | 有刑克否？ | 有没有刑克？ | were there punishment or control? |
+> | 得“旅之蹇” | 得旅卦变蹇卦。 | The hexagram was Lü changing into Jian. |
+
+^q3
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 9487 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 不独世应相生，而且世与财合，当许百年相守，奈何世爻空而且破，是欲合而不能合也，再加财化退神，决有生离之事。 | 不但世爻和应爻相生，而且世爻和财爻相合，本该许她百年相守；可惜世爻又空又破，是想合却合不上，再加上财爻化成退神，一定有生离的事。 | Not only do Self and Other generate each other, but Self also combines with Wealth, which should promise a hundred years together; but the Self line is both Void and broken, wanting to combine and unable to, and with Wealth changing into a Retreating spirit there is surely a parting alive. |
+> | 果自娶之后，憎嫌反目，竟休之。 | 果然自从娶了以后，互相憎嫌翻脸，最后休了她。 | It came true: after the wedding they came to hate and quarrel, and in the end he divorced her. |
+
+^q4
 
 > [!warning] 打架
 > 「应为百岁之妻」出自《黄金策》身命章的注（见 LY.MARRY.ZS.04）。这一章的正文替它解释：身命章一个卦要断六亲，财爻另有用处，所以只好用应爻当妻；同时说占妻仍以财为重、应次之。争论只在「谁为主」：《黄金策》重应，增删卜易重财。

@@ -1,0 +1,176 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "进人口",
+  "chapter_en": "Taking in persons",
+  "ranges": {"卜筮大全": [6639, 6690]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.98",
+      "topic": "入赘再嫁",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "进人口·买宠妾以财爻为主：过继小孩用子孙；买婢、雇童仆、买宠妾、收留走失的人都用财爻；窝藏有难之人看他是谁",
+      "rule": {
+        "yi": "《黄金策》「进人口」一章讲收养、买人、雇人。用神要另外占一卦来定：过继小孩用子孙爻；买婢女、雇童仆、买宠妾、收留走失的人，都用财爻；窝藏有难的人，看那个人是谁——朋友用兄弟爻、尊长用父母爻、妇人用妻财爻、官府中人用官鬼爻。买宠妾用的就是财爻。",
+        "en": "The Huangjin Ce's chapter on taking in persons covers adoption, buying people and hiring. The Subject is fixed by a separate divination: for adopting a child use the Output line; for buying a maid, hiring a servant boy, buying a favoured concubine or taking in a lost person use the Wealth line; for sheltering a person in trouble look at who he is: a friend the Peer line, an elder the Resource line, a woman the Wealth line, a man in office the Pressure line. Buying a favoured concubine uses the Wealth line."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6643, 6643],
+          "zh": ["须别来占，方知主用。"],
+          "yi": ["要另外占一卦，才知道用神是哪一爻。"],
+          "en": ["Divine it separately, and only then will the Subject be known."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6644, 6644],
+          "zh": ["过继小儿，以子孙为主。", "买婢、雇童仆、买宠妾，及收留迷失之人，皆以财为主。", "若窝藏有难之人，则看其人：与我相识朋友，以兄弟为主；", "尊长，父母为主；", "妇人，妻财为主；", "在官人，以官鬼为主也。"],
+          "yi": ["过继小孩，以子孙爻为主。", "买婢女、雇童仆、买宠妾，以及收留走失的人，都以财爻为主。", "如果是窝藏有难的人，就看这个人是谁：是和我相识的朋友，以兄弟爻为主；", "是尊长，以父母爻为主；", "是妇人，以妻财爻为主；", "是官府中人，以官鬼爻为主。"],
+          "en": ["For adopting a child, the Output line is the Subject.", "For buying a maid, hiring a servant boy, buying a favoured concubine, or taking in a lost person, Wealth is the Subject.", "If sheltering a person in trouble, look at who he is: an acquaintance of mine, the Peer line is the Subject;", "an elder, the Resource line;", "a woman, the Wealth line;", "a man in office, the Pressure line."] }
+      ],
+      "note": {
+        "yi": "原文的「宠妾」是「嬖」（受宠爱的侍妾）。「螟蛉」是过继的孩子，这一章开头的注解：老而无子叫独，过继别人的儿子叫螟蛉。这一章后面的各联都按这里定的用爻去断，「用爻」就是被收留、被买、被雇的那个人；本库只收其中讲到妻妾、妇人的几联。",
+        "en": "'Favoured concubine' in the original is 'bi', a concubine who is loved. 'Mingling' is an adopted child; the opening note of the chapter says that an old man with no son is called 'alone' and adopting another's son is called 'mingling'. The couplets that follow in the chapter are all judged from the Subject line fixed here, which is the person taken in, bought or hired; only the couplets that speak of wives, concubines and women are taken into this library."
+      },
+      "see": ["LY.MARRY.ZS.19", "LY.MARRY.ZS.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.99",
+      "topic": "风险",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "用不宜动，动必难留：买妾买婢雇人，用爻发动其人难托，遇游魂或化游魂日后逃窜，生合世爻则是吉兆",
+      "rule": {
+        "yi": "买宠妾、买婢女、雇人，用爻（就是被买被雇的那个人）不宜发动，发动了就难留住。用爻发动，这个人靠不住；遇到游魂卦，或者化入游魂卦，日后会逃走；雇工、借住的人也待不长；但如果发动来生合世爻，那是吉兆，不是逃走或留不住。",
+        "en": "In buying a favoured concubine or a maid or hiring a person, the Subject line, the person bought or hired, should not move; moving, he or she is hard to keep. A moving Subject line means the person cannot be relied on; meeting a Wandering Soul hexagram or changing into one, he or she will run away in future; a hired hand or a lodger will not stay long; but if it moves to generate or combine with the Self line, that is a lucky sign, not fleeing or being hard to keep."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6646, 6646],
+          "zh": ["用不宜动，动必难留；"],
+          "yi": ["用爻不宜发动，动了一定难留；"],
+          "en": ["The Subject should not move; moving, it is hard to keep;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6647, 6647],
+          "zh": ["用爻发动，其人难托。", "若遇游魂，或化入游魂者，异日主逃窜。", "虽螟蛉，亦不为尔子也。", "雇工借居，则主不久。", "若来生合世爻，则是吉兆，非逃与难留也。"],
+          "yi": ["用爻发动，这个人难以托付。", "如果遇到游魂卦，或者化入游魂卦，日后主逃走。", "即使是过继的小孩，也不会成为你的儿子。", "雇工、借住的人，也待不长久。", "如果发动来生合世爻，那是吉兆，不是逃走，也不是难留。"],
+          "en": ["If the Subject line moves, the person cannot be relied on.", "If it meets a Wandering Soul hexagram or changes into one, he or she will run away in future.", "Even an adopted child will not become your son.", "A hired hand or a lodger will not stay long.", "If it comes to generate or combine with the Self line, that is a lucky sign, and not fleeing or hard to keep."] }
+      ],
+      "see": ["LY.MARRY.HJC.98", "LY.MARRY.HJC.102", "LY.MARRY.ZS.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.100",
+      "topic": "对方",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "动化空亡有始无终，蛇合官鬼多谋少德：用爻发动变入空亡有头无尾，临螣蛇动合官鬼奸诈不实，妇人见之不贞洁",
+      "rule": {
+        "yi": "用爻发动变成空亡，这个人有头无尾；用爻临着螣蛇、动来合官鬼，这个人虽然多谋略，却奸诈不实、靠不住；是妇人遇到这种情形，就主不贞洁。",
+        "en": "If the Subject line moves and changes into Void, the person begins and does not finish; if it sits on the Coiling Snake and moves to combine with Pressure, the person, though full of schemes, is crafty and false and cannot be relied on; if a woman meets this, it means she is unchaste."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6656, 6656],
+          "zh": ["动化空亡，有始无终之辈；", "蛇合官鬼，多谋少德之人。"],
+          "yi": ["动了化成空亡，是有始无终的人；", "螣蛇和官鬼相合，是多谋略而缺德的人。"],
+          "en": ["Moving and changing into Void: one who begins and does not finish;", "the Coiling Snake combining with Pressure: a schemer with little virtue."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6657, 6657],
+          "zh": ["用爻发动，变入空亡，主其人有头无尾。", "若临螣蛇，动合官鬼，其人虽多谋，然奸诈不实，难凭。", "妇人见之，则主不贞洁。"],
+          "yi": ["用爻发动，变入空亡，主这个人有头无尾。", "如果临着螣蛇，动来合官鬼，这个人虽然多谋略，但是奸诈不实，靠不住。", "妇人遇到这种情形，就主不贞洁。"],
+          "en": ["If the Subject line moves and changes into Void, the person begins and does not finish.", "If it sits on the Coiling Snake and moves to combine with Pressure, the person, though full of schemes, is crafty and false and cannot be relied on.", "If a woman meets this, it means she is unchaste."] }
+      ],
+      "see": ["LY.MARRY.HJC.98", "LY.MARRY.HJC.101", "LY.MARRY.HJC.77"]
+    },
+    {
+      "id": "LY.MARRY.HJC.101",
+      "topic": "外遇",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "临玄武而化兄爻，门户须防出入：用爻临玄武动化兄弟，其人贪财好色，托以财物必窃取，且必淫乱，男女皆然",
+      "rule": {
+        "yi": "用爻落在玄武上发动，化成兄弟爻：这个人贪财好色。把财物托付给他，他一定偷来自用，而且一定淫乱，男女都是这样，所以要防他在门户出入。",
+        "en": "If the Subject line sits on the Dark Tortoise, moves and changes into a Peer line, the person is greedy for money and lust. Entrust him with goods and he will surely steal them for his own use, and he will surely be dissolute, men and women alike; so guard the doors against his coming and going."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6659, 6659],
+          "zh": ["临玄武而化兄爻，门户须防出入；"],
+          "yi": ["落在玄武上而化成兄弟爻，要防他在门户出入；"],
+          "en": ["Sitting on the Dark Tortoise and changing into a Peer line, guard the doors against his coming and going;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6660, 6662],
+          "zh": ["用临玄武动，化兄弟；", "主其人贪财好色。", "托以财物，则必窃取自用，且必淫乱；", "男女皆然。", "故门户防其出入。"],
+          "yi": ["用爻临着玄武发动，化成兄弟爻；", "主这个人贪财好色。", "把财物托付给他，他一定偷取自用，而且一定淫乱；", "男女都是这样。", "所以要防他在门户出入。"],
+          "en": ["The Subject line sits on the Dark Tortoise, moves and changes into a Peer line;", "the person is greedy for money and lust.", "Entrust him with goods and he will surely steal them for his own use, and he will surely be dissolute;", "this holds for men and women alike.", "So guard the doors against his coming and going."] }
+      ],
+      "see": ["LY.MARRY.HJC.77", "LY.MARRY.HJC.100", "LY.MARRY.TXF.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.102",
+      "topic": "对方",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "用爻生合世爻必得其力，主象克冲身象难服其心：用爻生合世则可用、用心欢爱，刑冲克害世则不悦服，更旺动是奴婢欺主",
+      "rule": {
+        "yi": "用爻生合世爻，这个人可以用，办事一定用心，即使是过继的小孩也一定对我欢喜爱戴，是大吉的兆头；最怕被合住、冲散、克坏。如果用爻刑冲克害世爻，这个人心里不服，难以使唤；再加旺相发动，就是奴婢欺主的象；再加应爻也刑克，日后必遭其祸。",
+        "en": "If the Subject line generates or combines with the Self line, the person can be used and will surely put his heart into the work; even an adopted child will be fond of me: a greatly lucky sign; what is most feared is being held by a combination, clashed apart or controlled and spoiled. If the Subject line punishes, clashes, controls or harms the Self line, the person is not content at heart and hard to command; if it is also strong and moving, that is the image of a servant cheating the master; if the Other line also punishes and controls, one will surely suffer from him in future."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6671, 6671],
+          "zh": ["用爻生合世爻，必得其力；", "主象克冲身象，难服其心。"],
+          "yi": ["用爻生合世爻，一定得他的力；", "主象克冲卦身，难以让他心服。"],
+          "en": ["If the Subject line generates or combines with the Self line, one surely gets his help;", "if the Subject image controls or clashes the Body, it is hard to win his heart."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6672, 6673],
+          "zh": ["用爻生合世爻，其人可用。", "凡有事干，必然用心；", "虽螟蛉，亦必欢爱于我，大吉之兆。", "大怕合住冲散，及克坏之。", "若用爻刑冲克害世爻，必主其人心不悦服，难以使令。", "更加旺动，是乃奴婢欺主之象。", "兼以应亦刑克，异日必遭其祸。"],
+          "yi": ["用爻生合世爻，这个人可以用。", "凡有事情要办，他一定用心；", "即使是过继的小孩，也一定对我欢喜爱戴，是大吉的兆头。", "最怕被合住、冲散，以及被克坏。", "如果用爻刑冲克害世爻，一定主这个人心里不服，难以使唤。", "再加旺相发动，就是奴婢欺主的象。", "再加上应爻也刑克，日后必遭其祸。"],
+          "en": ["If the Subject line generates or combines with the Self line, the person may be used.", "whenever there is a task he will surely put his heart into it;", "even an adopted child will be fond of me: a greatly lucky sign.", "What is most feared is being held by a combination, clashed apart or controlled and spoiled.", "If the Subject line punishes, clashes, controls or harms the Self line, the person is surely not content at heart and hard to command.", "If it is also strong and moving, that is the image of a servant cheating the master.", "If the Other line also punishes and controls, one will surely suffer from him in future."] }
+      ],
+      "note": {
+        "yi": "第二段旧注跨了两行（第 6672 和 6673 行）。「主象」在这一章就是用爻。「卦身」译作 the Body。",
+        "en": "The second commentary passage runs over two lines (lines 6672 and 6673). The 'Subject image' in this chapter is the Subject line. The 'hexagram Body' is translated as the Body."
+      },
+      "see": ["LY.MARRY.HJC.99", "LY.MARRY.HJC.98", "LY.MARRY.ZS.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.103",
+      "topic": "入赘再嫁",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "财化子，携子偕来：占妻妾婢女财爻化出子孙必有小孩带来；财动生合世而化子反来刑克，其婢可使其子顽劣",
+      "rule": {
+        "yi": "占妻妾、婢女，妻财爻化出子孙爻，一定有小孩带来。如果妻财动来生合世爻，而化出的子孙反来刑克它，那个婢女还可以使唤，她的孩子一定顽劣不听话。",
+        "en": "In divining for a wife, concubine or maid, when the Wealth line changes out an Output line there will surely be a small child brought along. If Wealth moves to generate or combine with the Self line but the Output it changes into turns to punish and control it, the maid can still be used, but her child will surely be unruly and disobedient."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6675, 6675],
+          "zh": ["财化子，携子偕来；"],
+          "yi": ["妻财化出子孙，带着孩子一起来；"],
+          "en": ["Wealth changing into Output: she comes and brings a child with her;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6676, 6676],
+          "zh": ["凡占妻妾婢女，财爻化出子孙，必有小儿带来。", "若动财生合世爻，而化子反来刑克者，其婢则可使，其子必顽劣不驯也。"],
+          "yi": ["凡是占妻妾、婢女，妻财爻化出子孙爻，一定有小孩带来。", "如果妻财动来生合世爻，而化出的子孙反来刑克它，那个婢女还可以使唤，她的孩子一定顽劣不听话。"],
+          "en": ["In divining for a wife, concubine or maid, when the Wealth line changes out an Output line there will surely be a small child brought along.", "If Wealth moves to generate or combine with the Self line but the Output it changes into turns to punish and control it, the maid can still be used, but her child will surely be unruly and disobedient."] }
+      ],
+      "see": ["LY.MARRY.HJC.98", "LY.MARRY.ZS.19", "LY.MARRY.ZS.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.104",
+      "topic": "外遇",
+      "chapter": "进人口",
+      "chapter_en": "Taking in persons",
+      "title": "世合身，终身宠用：世爻生合卦身，其人必得宠用；世爻合财爻，其妇必通于家主",
+      "rule": {
+        "yi": "世爻生合卦身，这个人一生受宠爱、被重用。不管是借房子、来投靠还是使唤婢女，只要世爻合了财爻，那个妇人一定和家主有私情。",
+        "en": "If the Self line generates or combines with the Body, the person is favoured and used for life. Whether borrowing a house, taking refuge or employing a maid, if Self combines with the Wealth line, the woman surely has an affair with the master of the house."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6678, 6678],
+          "zh": ["世合身，终身宠用。"],
+          "yi": ["世爻合卦身，一生受宠爱、被重用。"],
+          "en": ["Self combining with the Body: favoured and used for life."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6679, 6679],
+          "zh": ["卦身一爻，占事为事之体，古人为人之身。", "若遇世爻生合，其人必得宠用。", "不拘借房投靠使婢，若遇世合财爻，其妇必通于家主。"],
+          "yi": ["卦身这一爻，占事是事情的本体，占人是人的身体。", "如果遇到世爻生合它，这个人一定得到宠爱重用。", "不论是借房子、来投靠还是使唤婢女，只要世爻合了财爻，那个妇人一定和家主有私情。"],
+          "en": ["The Body line: in divining a matter it is the substance of the matter, in divining a person it is the person's body.", "If the Self line generates or combines with it, the person will surely be favoured and used.", "Whether borrowing a house, taking refuge or employing a maid, if Self combines with the Wealth line, the woman surely has an affair with the master of the house."] }
+      ],
+      "note": {
+        "yi": "旧注里「古人为人之身」的「古人」大概是「占人」之误（占人才和「占事为事之体」对得上），译文按「占人」译。",
+        "en": "'Gu ren' in 'gu ren wei ren zhi shen' in the commentary is probably a slip for 'zhan ren' (divining a person), which matches the preceding 'zhan shi wei shi zhi ti' (divining a matter); it is translated as divining a person."
+      },
+      "see": ["LY.MARRY.HJC.59", "LY.MARRY.HJC.98", "LY.MARRY.HJC.101"]
+    }
+  ]
+}

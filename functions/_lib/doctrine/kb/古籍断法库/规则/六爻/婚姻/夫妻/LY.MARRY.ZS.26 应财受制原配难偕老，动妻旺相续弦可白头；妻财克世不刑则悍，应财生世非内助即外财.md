@@ -9,13 +9,16 @@ books:
   - "[[增删卜易]]"
 speakers:
   - "本文"
+  - "书中卦例"
 dispute: false
 terms:
   - "[[妻财]]"
   - "[[世爻]]"
   - "[[应爻]]"
+  - "[[日辰]]"
   - "[[旺相]]"
   - "[[休囚]]"
+  - "[[旬空]]"
   - "[[墓库]]"
   - "[[死墓绝]]"
   - "[[动爻]]"
@@ -57,6 +60,27 @@ aliases:
 > | 卦中遇财爻生合世爻，亦不可只以和美断之，间有应在得妻家之财力者，否则内君必善于持家。 | 卦中遇到财爻生合世爻，也不可只按和美来断，间或有应在得到妻家财力帮助的，不然的话，妻子一定善于持家。 | When a Wealth line in the hexagram generates or combines with the Self line, do not judge it as simply harmony and happiness: at times it answers as gaining the wife's family's financial help; otherwise the wife will surely be good at running the household. |
 
 ^q1
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 9491 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 如：巳月丁未日(旬空：寅卯)，占夫妻偕老否？ | 比如：巳月丁未日（旬空：寅、卯），占夫妻能不能白头偕老？ | For example: in a Si month on a Dingwei day (void: Yin and Mao), a divination on whether husband and wife would grow old together; |
+> | 得“无妄之观” | 得无妄卦变观卦。 | the hexagram was Wuwang changing into Guan. |
+
+^q2
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 9531 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 满盘俱是财爻，世爻变出之未土与世爻相合，此未土之财，乃正妻也，临日建，遇月生扶，不独偕老，且许贤比周南。 | 满盘都是财爻，世爻变出来的未土和世爻相合，这个未土的财，就是正妻，临着日建，又有月来生扶，不但能白头偕老，而且贤惠可比《周南》里的女子。 | The whole hexagram is full of Wealth lines; the Wei-earth that Self changes into combines with the Self line, and that Wei-earth Wealth is the principal wife; it sits on the Day branch and is generated and helped by the Month, so they will not only grow old together, but she will be as virtuous as the ladies of the Zhounan. |
+> | 果此公美妾十余，正夫人贤而不妒，夫妻同庚而生，妻活八旬有一，夫年八十二岁。 | 果然这位先生有十几个美妾，正夫人贤惠而不嫉妒，夫妻同年出生，妻子活到八十一岁，丈夫八十二岁。 | It came true: this gentleman had more than ten fair concubines, and his principal wife was virtuous and not jealous; husband and wife were born in the same year, and she lived to eighty-one and he to eighty-two. |
+> | 此卦若以世应相冲相克而断之，岂不谬哉。 | 这一卦如果按世爻、应爻相冲相克来断，岂不是错了吗。 | Had this hexagram been judged by Self and Other clashing and controlling each other, would that not have been absurd? |
+
+^q3
 
 ## 相关
 

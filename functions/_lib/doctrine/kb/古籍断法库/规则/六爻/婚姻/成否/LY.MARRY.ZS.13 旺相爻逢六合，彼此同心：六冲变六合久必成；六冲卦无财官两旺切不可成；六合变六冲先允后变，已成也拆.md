@@ -9,9 +9,15 @@ books:
   - "[[增删卜易]]"
 speakers:
   - "本文"
+  - "书中卦例"
 dispute: false
 terms:
+  - "[[妻财]]"
+  - "[[世爻]]"
+  - "[[日辰]]"
   - "[[旺相]]"
+  - "[[旬空]]"
+  - "[[变爻]]"
   - "[[冲]]"
   - "[[合]]"
   - "[[六冲卦]]"
@@ -45,6 +51,28 @@ aliases:
 > | 六合变六冲，先允而后更张，已成者而终拆枕。 | 六合变成六冲，先是答应，后来改变，已经成的到头来也会拆散。 | a Six-combine changing into a Six-clash: first agreed, then changed; one already wed will in the end be split up. |
 
 ^q1
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 11718 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 如：戌月庚申日(旬空：子丑)，占已娶有夫之妇，夫回成讼，断离否，得“困之兑” | 比如：戌月庚申日（旬空：子、丑），占一个已经娶来、但本来有丈夫的妇人，她丈夫回来打官司，问会不会判离，得困卦变兑卦。 | For example: in a Xu month on a Gengshen day (void: Zi and Chou), a marriage to a woman who already had a husband was divined; the husband came back and brought a lawsuit, and the question was whether they would be ordered to part; the hexagram was Kun changing into Dui. |
+
+^q2
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 11723 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 财爻持世，美姻缘也。 | 财爻持世，本是一门好姻缘。 | The Wealth line holds Self: a fine match, it seems. |
+> | 但凋零寅木被日辰冲散，且又六合变冲，不惟断离，须防有罪。 | 但是已经凋零的寅木被日辰冲散，而且六合变成了六冲，不但会判离，还要防犯罪受罚。 | But the withered Yin-wood is clashed apart by the Day, and the Six-combine has changed into a clash; not only will they be ordered to part, one must beware of a penalty. |
+> | 彼曰：业已状告奸谋，不知何如？ | 他说：已经告了状，告的是奸谋，不知道会怎样？ | He said: a suit has already been filed accusing us of an adulterous scheme; what will come of it? |
+> | 余曰：世爻，变爻与日辰共作三刑，汝两人俱难免杖责。 | 我说：世爻、变爻和日辰合成三刑，你们两人都免不了杖责。 | I said: the Self line, the changed line and the Day together form the three punishments; neither of you can escape a beating. |
+> | 后审出奸娶，男女皆杖而离之。 | 后来审出是奸娶，男女都被杖责，并判离。 | Afterwards the trial found it an adulterous marriage; both man and woman were beaten and they were ordered to part. |
+
+^q3
 
 ## 相关
 

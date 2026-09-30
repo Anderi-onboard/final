@@ -9,6 +9,7 @@ books:
   - "[[易隐]]"
 speakers:
   - "本文"
+  - "书中卦例"
 dispute: true
 terms:
   - "[[妻财]]"
@@ -54,6 +55,17 @@ aliases:
 > | 在应爻财爻，主女家不允。 | 落在应爻、财爻上，主女家不答应。 | if it is on the Other line or the Wealth line, the woman's family does not agree. |
 
 ^q1
+
+## 书中卦例
+
+> [!quote]+ [[易隐]] 第 2447 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 庚寅年戊寅月甲寅旬癸亥日，男占婚，得复之颐。 | 庚寅年戊寅月甲寅旬癸亥日，一位男子占婚事，得复卦变颐卦。 | In the Gengyin year, Wuyin month, Jiayin ten-day cycle, on a Guihai day, a man divined a marriage and got Fu changing into Yi. |
+> | 六爻酉子动化寅官与亥财合，月日又值财官世应又合，两家俱肯，婚大吉也。 | 六爻里酉金、子水动，化出寅木官鬼，和亥水财爻相合，月、日又是财爻官爻，世爻应爻又相合，两家都肯，婚事大吉。 | Among the six lines the You and Zi lines move and change into the Yin-wood Pressure, which combines with the Hai-water Wealth; the Month and Day are again Wealth and Pressure, and Self and Other also combine: both families are willing, and the marriage is greatly lucky. |
+> | 但五爻亥财自刑，妇性峭刻，貌美，面尖微黑，初爻单，则足小也。 | 但是第五爻的亥水财爻自刑，妻子性情峭刻，容貌美，脸尖微黑；初爻是单爻（阳爻），脚就小。 | But the Hai-water Wealth on the fifth line punishes itself, so the wife is sharp and harsh in temper, pretty, with a pointed and slightly dark face; the first line is a single (yang) line, so her feet are small. |
+
+^q2
 
 > [!warning] 打架
 > 「冲变合」：这里说「前卦冲而化合，退后复成」（先退后成）；《易林补遗》说未配之前得冲中化合「决不相谐」（LY.MARRY.YL.15），《增删卜易》说「六冲变六合者尤吉，求婚者目下不允，久必成之」（LY.MARRY.ZS.13）。《易隐》和《增删卜易》一致：不是不成，是先退后成。

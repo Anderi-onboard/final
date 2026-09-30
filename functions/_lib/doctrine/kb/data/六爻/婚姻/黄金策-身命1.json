@@ -1,0 +1,386 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "身命",
+  "chapter_en": "Person and fate",
+  "ranges": {"卜筮大全": [6039, 6200], "卜筮正宗": [1675, 1767]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.69",
+      "topic": "夫妻",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "世应相生夫唱妇随、悔贞相克琴瑟不调：世是一身之本、应为百岁之妻；世为贞、应为悔，相生相合则和顺，相冲相克则不谐",
+      "rule": {
+        "yi": "世爻是自己一身的根本，应爻是相伴百年的妻子。世应相生相合，一定夫唱妇随（汉朝鲍宣娶桓少君）；世（贞）应（悔）相冲相克，一定夫妻不谐（唐朝郭暧招升平公主）。",
+        "en": "The Self line is the root of one's whole person and the Other line is the wife of a hundred years. Self and Other generating and combining means husband leads and wife follows (like Bao Xuan of Han and Lady Huan Shaojun); Self (Zhen) and Other (Hui) clashing and controlling means the couple is out of tune (like Guo Ai of Tang and Princess Shengping)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6085, 6085],
+          "zh": ["世应相生，汉鲍宣娶桓氏少君为妇；"],
+          "yi": ["世爻和应爻相生，就像汉朝的鲍宣娶了桓氏少君做妻子；"],
+          "en": ["The Self and Other lines generating each other: like Bao Xuan of Han taking Lady Huan Shaojun as his wife;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6086, 6086],
+          "zh": ["世是一身之本，应为百岁之妻。", "若见相生相合，必然夫唱妇随。"],
+          "yi": ["世爻是一身的根本，应爻是相伴百年的妻子。", "如果看到相生相合，一定是夫唱妇随。"],
+          "en": ["The Self line is the root of one's whole person; the Other line is the wife of a hundred years.", "If they generate and combine with each other, husband leads and wife follows, surely."] },
+        { "by": "经", "book": "卜筮大全", "range": [6088, 6088],
+          "zh": ["悔贞相克，唐郭暖招升平公主为妻。"],
+          "yi": ["悔卦贞卦相克，就像唐朝的郭暖招了升平公主做妻子。"],
+          "en": ["Hui and Zhen controlling each other: like Guo Nuan (Guo Ai) of Tang who married Princess Shengping."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6089, 6089],
+          "zh": ["世为贞，应为悔。", "若见相冲相克，必然琴瑟不调。"],
+          "yi": ["世爻是贞，应爻是悔。", "如果看到相冲相克，一定是夫妻不和谐。"],
+          "en": ["The Self line is Zhen and the Other line is Hui.", "If they clash and control each other, husband and wife are surely out of tune, like a zither and a lute not in tune."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1698, 1698],
+          "zh": ["世是一生之本，应为百岁之妻子，若见生合，必然夫唱妇随，若见冲克，必然琴瑟不调。"],
+          "yi": ["世爻是一生的根本，应爻是百年相伴的妻子，如果看到相生相合，一定夫唱妇随；如果看到相冲相克，一定夫妻不和谐。"],
+          "en": ["The Self line is the root of a whole life and the Other line is the wife of a hundred years; if they generate and combine, husband leads and wife follows, surely; if they clash and control, the couple is surely out of tune."] }
+      ],
+      "note": {
+        "yi": "「悔贞」在这里指世应两爻：注说「世为贞、应为悔」，不是内卦外卦。鲍宣、桓少君是汉朝的一对贫贱夫妻，妻子不要陪嫁、随夫过朴素日子；郭暧是唐代宗的女婿，和妻子升平公主吵过架。卜筮大全写「郭暖」，卜筮正宗写「郭曦」，人名是郭暧，译文按卜筮大全。这一句在卜筮全书里紧挨着「世是一生之本、应为百岁之妻」，那句的出处是这里的旧注（见 LY.MARRY.ZS.04）。",
+        "en": "'Hui and Zhen' here means the Self and Other lines: the commentary says 'the Self line is Zhen and the Other line is Hui', not the inner and outer trigrams. Bao Xuan and Huan Shaojun were a poor Han couple, the wife giving up her dowry to live simply with her husband; Guo Ai was a son-in-law of Emperor Daizong of Tang who quarrelled with his wife Princess Shengping. The Quanshu writes 'Guo Nuan' and the Zhengzong 'Guo Xi'; the name is Guo Ai, and the translation follows the Quanshu. The line 'the Self line is the root of a life, the Other line the wife of a hundred years' quoted at LY.MARRY.ZS.04 comes from the old commentary here."
+      },
+      "see": ["LY.MARRY.ZS.04", "LY.MARRY.ZS.24", "LY.MARRY.HJC.70", "LY.MARRY.HJC.71"]
+    },
+    {
+      "id": "LY.MARRY.HJC.70",
+      "topic": "风险",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "箕踞鼓盆歌，世伤应位：世持白虎螣蛇、乘旺发动，刑害应爻，应又临无气之地，必主克妻",
+      "rule": {
+        "yi": "世爻带着白虎或螣蛇，乘旺相发动，去刑害应爻，应爻又落在没有气的地方，一定克妻，就像庄周的妻子死了，他还箕踞着敲盆唱歌。",
+        "en": "The Self line carrying the White Tiger or the Coiling Snake, moving on strength and punishing and harming the Other line, while the Other line sits in a place without qi, means the wife is surely harmed, like Zhuang Zhou, who sat sprawled drumming on a basin and singing when his wife died."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6091, 6091],
+          "zh": ["箕踞鼓盆歌，世伤应位；"],
+          "yi": ["箕踞着敲盆唱歌，是世爻伤了应爻的位置；"],
+          "en": ["Sitting sprawled, drumming on a basin and singing: the Self line harms the Other line's place;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6092, 6092],
+          "zh": ["世持虎蛇，乘旺发动，刑害应爻，应又临无气之地，必主克妻。", "如春秋时，庄周妻死，犹箕踞鼓盆而歌。"],
+          "yi": ["世爻带白虎、螣蛇，乘旺发动，刑害应爻，应爻又落在没有气的地方，一定克妻。", "就像春秋时庄周的妻子死了，他还箕踞着敲着盆唱歌。"],
+          "en": ["The Self line carrying the White Tiger or the Coiling Snake, moving on strength, punishing and harming the Other line, while the Other line sits in a place without qi: the wife is surely harmed.", "As when, in the Spring and Autumn period, Zhuang Zhou's wife died and he still sat sprawled, drumming on a basin and singing."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1700, 1700],
+          "zh": ["世持虎蛇临兄弟，乘旺发动，刑害应爻，应爻临无气之地，必主克妻，如春秋时庄子，妻死鼓盆而歌。"],
+          "yi": ["世爻带白虎、螣蛇，又是兄弟爻，乘旺发动，刑害应爻，应爻落在没有气的地方，一定克妻，就像春秋时的庄子，妻子死了敲着盆唱歌。"],
+          "en": ["The Self line carrying the White Tiger or the Coiling Snake and being a Peer line, moving on strength, punishing and harming the Other line, while the Other line sits in a place without qi: the wife is surely harmed, like Zhuangzi in the Spring and Autumn period, who drummed on a basin and sang when his wife died."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗把「箕踞」写成「僦居」，是同一句的异文。庄子妻死鼓盆而歌，是《庄子·至乐》里的故事，这里只借它指「妻死」。卜筮正宗的注比卜筮全书多了一个条件：世爻还得是兄弟爻（「临兄弟」）。",
+        "en": "The Zhengzong writes 'jiu ju' where the Quanshu has 'ji ju' (sitting sprawled), a variant of the same line. Zhuangzi drumming on a basin and singing at his wife's death is the story in the Zhuangzi, 'Perfect Joy', and is used here only to stand for the wife's death. The Zhengzong's note adds one condition the Quanshu lacks: the Self line must also be a Peer line."
+      },
+      "see": ["LY.MARRY.HJC.69", "LY.MARRY.HJC.71", "LY.MARRY.TXF.07", "LY.MARRY.DYTJ.08"]
+    },
+    {
+      "id": "LY.MARRY.HJC.71",
+      "topic": "夫妻",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "河东狮子吼，应制世爻：应爻克制世爻是牝鸡晨鸣之象，其人凡事听妻子的",
+      "rule": {
+        "yi": "应爻克制世爻，是母鸡打鸣的样子，这个人凡事听妻子的，就像宋朝陈季常怕老婆的「河东狮子吼」。",
+        "en": "The Other line controlling and holding down the Self line is the image of the hen crowing at dawn: the man goes by his wife's word in everything, like Chen Jichang of Song and the 'lion of Hedong roars'."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6094, 6094],
+          "zh": ["河东狮子吼，应制世爻。"],
+          "yi": ["河东狮子吼叫，是应爻制住了世爻。"],
+          "en": ["The lion of Hedong roars: the Other line holds the Self line down."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6095, 6095],
+          "zh": ["应爻克制世爻，乃是牝鸡晨鸣之象，其人必凭妻言语。", "如宋陈季常河东狮子吼，东坡所戏言也。"],
+          "yi": ["应爻克制世爻，是母鸡在早晨打鸣的样子，这个人一定凭着妻子的话行事。", "就像宋朝陈季常「河东狮子吼」的故事，那是东坡开的玩笑话。"],
+          "en": ["The Other line controlling and holding down the Self line is the image of the hen crowing at dawn: the man surely goes by his wife's word.", "As with Chen Jichang of Song and the 'lion of Hedong roars', which Dongpo said in jest."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1702, 1702],
+          "zh": ["应爻克冲世爻，其人凭妻言语，如宋陈季常河东狮子吼之事也。"],
+          "yi": ["应爻克冲世爻，这个人凭着妻子的话行事，就像宋朝陈季常「河东狮子吼」那件事。"],
+          "en": ["The Other line controlling and clashing the Self line: the man goes by his wife's word, like the affair of Chen Jichang of Song and the 'lion of Hedong roars'."] }
+      ],
+      "note": {
+        "yi": "「牝鸡晨鸣」出自《尚书·牧誓》「牝鸡无晨」，指妻子当家作主。「河东狮吼」是苏东坡取笑朋友陈季常怕老婆的诗句，后来成了怕老婆的代称。卜筮大全「狮子吼」，卜筮正宗「狮吼」，字数不同，意思一样。",
+        "en": "'The hen crowing at dawn' comes from the Book of Documents, 'Oath at Mu', 'the hen does not herald the dawn', and means a wife who rules the house. 'The lion of Hedong roars' is Su Dongpo's teasing of his friend Chen Jichang for fearing his wife, and became a byword for a henpecked husband. The Quanshu has 'lion roars' and the Zhengzong 'lion roar', which differ in length but not in meaning."
+      },
+      "see": ["LY.MARRY.HJC.72", "LY.MARRY.HJC.69"]
+    },
+    {
+      "id": "LY.MARRY.HJC.72",
+      "topic": "夫妻",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "世值凶而应克，愿听鸡鸣：世爻自带刑害兄官虎蛇等凶神，反喜应爻来克世，去我之病，主有贤妻",
+      "rule": {
+        "yi": "世爻自己带着刑害、兄弟、官鬼、白虎、螣蛇这些凶神，应爻来克它，反而是对方来救我的过失、去我的毛病，不是伤我，主有贤惠的妻子（像齐国国君得到贤妃日夜规劝）。和上一条对照：世爻本来没事而被应爻克制，是怕老婆；世爻自己带凶而被应爻克制，是有人纠正我。",
+        "en": "If the Self line itself carries punishment, harm and ill spirits such as Peer, Pressure, the White Tiger or the Coiling Snake, and the Other line comes to control it, then the other party is coming to save me from my faults and cure my ailment and is not hurting me; it means a virtuous wife (as the ruler of Qi was warned day and night by a virtuous consort). Compare the previous entry: a Self line that is sound but held down by the Other line means a henpecked husband; a Self line that itself carries ill and is held down by the Other line means someone is correcting me."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6097, 6097],
+          "zh": ["世值凶而应克，愿听鸡鸣；"],
+          "yi": ["世爻遇到凶神而应爻来克它，倒愿意听那鸡鸣的规劝；"],
+          "en": ["The Self line meeting an ill spirit while the Other line controls it: one is glad to hear the cock-crow warning;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6098, 6098],
+          "zh": ["若应虽来克世，而世爻自带刑害，及兄官虎蛇等凶神者，则是彼来救我之失，去我之病，非有所伤于我。", "主其人必有贤妻。", "如齐哀公荒怠慢政，得陈贤妃，有夙夜警戒相成之道。", "故诗有鸡鸣篇。"],
+          "yi": ["如果应爻虽然来克世爻，但世爻自己带着刑害，以及兄弟、官鬼、白虎、螣蛇这些凶神，那是对方来救我的过失、去我的毛病，并没有伤害我。", "主这个人一定有贤惠的妻子。", "就像齐哀公荒废懈怠政事，得到陈国的贤妃，有日夜警戒、彼此成全的规矩。", "所以《诗经》里有《鸡鸣》这一篇。"],
+          "en": ["If the Other line does come to control the Self line, but the Self line itself carries punishment and harm and ill spirits such as Peer, Pressure, the White Tiger or the Coiling Snake, then the other party is coming to save me from my faults and cure my ailment, and does me no harm.", "It means the man surely has a virtuous wife.", "As Duke Ai of Qi, dissolute and slack in government, obtained the virtuous consort of Chen, who kept the way of warning him day and night and helping him toward success.", "So the Book of Odes has the poem 'Cock-crow'."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1704, 1704],
+          "zh": ["倘世爻自带兄官虎蛇等凶神者，反喜应来克世，谓之克我之凶，去我之病，主有贤妻，如齐襄公荒怠慢政，得陈贤妃，有夙夜警戒相成之道，故诗有《鸡鸣篇》。"],
+          "yi": ["倘若世爻自己带着兄弟、官鬼、白虎、螣蛇这些凶神，反而喜欢应爻来克世爻，这叫做克我的凶、去我的病，主有贤妻，就像齐襄公荒废懈怠政事，得到陈国的贤妃，有日夜警戒、彼此成全的规矩，所以《诗经》里有《鸡鸣》篇。"],
+          "en": ["If the Self line itself carries ill spirits such as Peer, Pressure, the White Tiger or the Coiling Snake, one is glad that the Other line comes to control it; this is called a control of me that removes my ill and cures my ailment, and it means a virtuous wife, as Duke Xiang of Qi, dissolute and slack in government, obtained the virtuous consort of Chen, who kept the way of warning him day and night and helping him toward success, and so the Odes have the poem 'Cock-crow'."] }
+      ],
+      "dispute": {
+        "yi": "同一个应克世：上一条（LY.MARRY.HJC.71）把它断成怕老婆，这一条断成有贤妻。分界在世爻自己：世爻本身平安而被应克，是被妻子压住；世爻本身带凶而被应克，是被妻子救回来。",
+        "en": "The same Other line controlling Self is judged a henpecked husband in the previous entry (LY.MARRY.HJC.71) and a virtuous wife here. The dividing line is the Self line itself: a sound Self line held down by the Other line is pressed under the wife; a Self line that itself carries ill and is controlled by the Other line is rescued by the wife."
+      },
+      "note": {
+        "yi": "卜筮大全写「愿听鸡鸣」，卜筮正宗写「顾听鸡鸣」；注里的国君，卜筮大全是齐哀公，卜筮正宗是齐襄公。《诗经·齐风·鸡鸣》的小序说的是哀公，译文照各书原样。「鸡鸣」是妻子在天亮前催丈夫起来理事的诗。",
+        "en": "The Quanshu writes 'glad to hear the cock-crow' and the Zhengzong 'willing to listen to the cock-crow'; the ruler in the note is Duke Ai of Qi in the Quanshu and Duke Xiang of Qi in the Zhengzong. The preface to 'Cock-crow' in the Odes (Qi Feng) speaks of Duke Ai; each book is translated as written. 'Cock-crow' is the poem of a wife urging her husband to rise before dawn and attend to affairs."
+      },
+      "see": ["LY.MARRY.HJC.71", "LY.MARRY.HJC.69", "LY.MARRY.ZS.11"]
+    },
+    {
+      "id": "LY.MARRY.HJC.73",
+      "topic": "风险",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "兄兴六位张瞻丧偶于中年：兄弟爻动克妻财，动在六爻主中年丧妻；财动初爻则早年克父母",
+      "rule": {
+        "yi": "兄弟爻动就克妻财，如果动在六爻上，中年一定像张瞻那样丧妻。同一对句的上半句说财爻动伤父母，动在初爻就是早年受克（像李密生下六个月父亲就去世）。",
+        "en": "A Peer line moving controls Wealth, the wife; if it moves on the sixth line, in middle age a wife is surely lost, as with Zhang Zhan. The first half of the couplet says that Wealth moving harms the parents, and on the first line the harm comes in early years (as when Li Mi's father died when he was six months old)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6125, 6125],
+          "zh": ["财动初爻，令伯克亲于早年；"],
+          "yi": ["财爻动在初爻，像令伯（李密）那样，早年就克了双亲；"],
+          "en": ["Wealth moving on the first line: like Lingbo (Li Mi), the parents are harmed in early years;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6126, 6126],
+          "zh": ["财动，则伤父母。", "如在初爻，则早年见克。", "如李密生孩六月，其父即丧。"],
+          "yi": ["财爻动，就伤到父母（父母爻）。", "如果在初爻，就在早年受克。", "就像李密才生下六个月，他的父亲就去世了。"],
+          "en": ["Wealth moving harms the parents, the Resource line.", "If it is on the first line, the harm comes in early years.", "As when Li Mi was six months old and his father died."] },
+        { "by": "经", "book": "卜筮大全", "range": [6128, 6128],
+          "zh": ["兄兴六位，张瞻丧偶于中年。"],
+          "yi": ["兄弟爻在六爻上兴旺发动，像张瞻那样，中年丧偶。"],
+          "en": ["A Peer line flourishing on the sixth line: like Zhang Zhan, a spouse is lost in middle age."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6129, 6129],
+          "zh": ["兄动，则克妻财。", "如居六位，中年必如张瞻之克妻也。"],
+          "yi": ["兄弟爻动，就克妻财。", "如果在六爻上，中年一定像张瞻那样克妻。"],
+          "en": ["A Peer line moving controls Wealth, the wife.", "If it is on the sixth line, in middle age the wife is surely harmed, as with Zhang Zhan."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1723, 1723],
+          "zh": ["财动伤父母，兄动则克妻财。"],
+          "yi": ["财爻动伤父母，兄弟爻动就克妻财。"],
+          "en": ["Wealth moving harms the parents, the Resource line; a Peer line moving controls Wealth, the wife."] }
+      ],
+      "note": {
+        "yi": "初爻代表早年，六爻代表中年以后，这是三限里「一爻管五年」的排法（见黄金策同章）。卜筮正宗把经文写成「财动克亲于早岁，兄衰丧偶于中年」（「兄兴」作「兄衰」），注文与卜筮大全一致。",
+        "en": "The first line stands for early years and the sixth for what follows middle age, following the scheme of the three periods in which each line governs five years (see the same chapter of the Huangjin Ce). The Zhengzong gives the verse as 'Wealth moving harms the parents in early years, a Peer line weak loses a spouse in middle age' ('flourishing' becomes 'weak'), with a note matching the Quanshu."
+      },
+      "see": ["LY.MARRY.TXF.07", "LY.MARRY.TXF.22", "LY.MARRY.DYTJ.08", "LY.MARRY.YY.04"]
+    },
+    {
+      "id": "LY.MARRY.HJC.74",
+      "topic": "外遇",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "化子合财，唐明皇有禄山之子：子孙从变爻里化出是螟蛉子，与财爻或应爻相合（带咸池玄武），必与妻妾有私情",
+      "rule": {
+        "yi": "子孙爻是从变爻（他宫）化出来的，是螟蛉子（义子）。它和财爻相合，或者和应爻相合（再带咸池、玄武），一定和妻妾有私情，就像安禄山和杨贵妃。",
+        "en": "An Output line that comes out by change (from another palace) is an adopted son. If it combines with the Wealth line or with the Other line (and carries the Xianchi star or the Dark Tortoise besides), it surely has an affair with the wife or concubine, like An Lushan and Yang Guifei."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6145, 6145],
+          "zh": ["化子合财，唐明皇有禄山之子；"],
+          "yi": ["化出子孙来合财爻，就像唐明皇有了安禄山这个「儿子」；"],
+          "en": ["An Output line changing out and combining with Wealth: like Emperor Ming of Tang, who had Lushan as a 'son';"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6146, 6146],
+          "zh": ["子从化出，乃螟蛉子也。", "若与财爻相合，或与应爻相合，必与妻妾有情。", "如安禄山之于杨贵妃也。"],
+          "yi": ["子孙爻是从变爻里化出来的，是螟蛉子。", "如果它和财爻相合，或者和应爻相合，一定和妻妾有私情。", "就像安禄山和杨贵妃。"],
+          "en": ["An Output line that comes out by change is an adopted son.", "If it combines with the Wealth line or with the Other line, it surely has an affair with the wife or concubine.", "As An Lushan was with Yang Guifei."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1733, 1733],
+          "zh": ["子从他宫化出，乃螟蛉子也，若与财爻相合，带咸池玄武，必与妻妾有情，如安禄山与杨贵妃之通也。"],
+          "yi": ["子孙爻是从他宫化出来的，是螟蛉子，如果它和财爻相合，又带咸池、玄武，一定和妻妾有私情，就像安禄山和杨贵妃的私通。"],
+          "en": ["An Output line that comes out of another palace by change is an adopted son; if it combines with the Wealth line and carries the Xianchi star and the Dark Tortoise, it surely has an affair with the wife or concubine, like the liaison of An Lushan and Yang Guifei."] }
+      ],
+      "note": {
+        "yi": "安禄山认杨贵妃为养母，后来与她有私情的传说，是这一句的典故。卜筮正宗把经文写作「子化合财」，意思相同。注里说「从他宫化出」才算螟蛉子；同一章里另有一句「子孙化出而系外宫则是，系于本宫则非」，本宫化出的不算。",
+        "en": "The allusion is the tale that An Lushan took Yang Guifei as his foster mother and later had an affair with her. The Zhengzong writes the verse as 'Output changing into and combining with Wealth', which means the same. The note says an Output line counts as an adopted son only if it comes 'from another palace'; the same chapter has a line saying that one from the home palace does not count."
+      },
+      "see": ["LY.MARRY.HJC.75", "LY.MARRY.HJC.77"]
+    },
+    {
+      "id": "LY.MARRY.HJC.75",
+      "topic": "外遇",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "内兄合应，陈平之盗嫂：兄弟爻在内卦（是兄弟不是朋友），与应爻或财爻相合，其妻必与兄弟相通",
+      "rule": {
+        "yi": "兄弟爻在内卦，指的是兄弟，不是朋友。它和应爻或者财爻相合，他的妻子一定和兄弟有私情，就像陈平和嫂子的旧事。",
+        "en": "A Peer line in the inner trigram means brothers, not friends. If it combines with the Other line or the Wealth line, his wife surely has an affair with his brothers, like the old story of Chen Ping and his sister-in-law."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6148, 6148],
+          "zh": ["内兄合应，陈伯常有孺子之兄。"],
+          "yi": ["内卦的兄弟爻合应爻，就像陈伯常（陈平）有个「孺子」之兄的旧事。"],
+          "en": ["A Peer line in the inner trigram combining with the Other line: like the old story of Chen Bochang (Chen Ping) and his brother, the 'young man'."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6149, 6149],
+          "zh": ["兄爻在内卦，乃兄弟，非朋友也。", "若与应爻或财爻相合，其妻必与兄弟相通。", "如陈平之盗嫂也。"],
+          "yi": ["兄弟爻在内卦，指的是兄弟，不是朋友。", "如果它和应爻或者财爻相合，他的妻子一定和兄弟有私情。", "就像陈平和嫂子的旧事。"],
+          "en": ["A Peer line in the inner trigram means brothers, not friends.", "If it combines with the Other line or the Wealth line, his wife surely has an affair with the brothers (the Peer line).", "As with Chen Ping and his sister-in-law."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1735, 1735],
+          "zh": ["兄爻在内卦，乃兄弟，非朋友也，若与应爻或财爻相合，其妻必与兄弟相通，如陈平之盗嫂也。"],
+          "yi": ["兄弟爻在内卦，指的是兄弟，不是朋友，如果它和应爻或者财爻相合，他的妻子一定和兄弟有私情，就像陈平盗嫂的旧事。"],
+          "en": ["A Peer line in the inner trigram means brothers, not friends; if it combines with the Other line or the Wealth line, his wife surely has an affair with the brothers (the Peer line), like the old story of Chen Ping and his sister-in-law."] }
+      ],
+      "note": {
+        "yi": "陈平年轻时被人说成「盗嫂」（和嫂子有私情），是史书里的旧案。经文「陈伯常有孺子之兄」的语意不清，各书都不解释，译文只照字面写，注文把意思说明白了：妻子和兄弟有私情。",
+        "en": "As a young man Chen Ping was accused of 'stealing his sister-in-law', an old case in the histories. The verse 'Chen Bochang had a brother, the young man' is unclear and no book explains it; it is translated only as written, and the commentary makes the meaning plain: the wife has an affair with the brothers."
+      },
+      "see": ["LY.MARRY.HJC.74", "LY.MARRY.HJC.77"]
+    },
+    {
+      "id": "LY.MARRY.HJC.76",
+      "topic": "对方",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "应带勾陈兼值福，妻如孟光：应爻旺相临勾陈（黑丑诚实）与子孙（贤淑）而无伤损，貌虽不扬而德美",
+      "rule": {
+        "yi": "勾陈主人肤色黑、相貌丑而诚实，子孙爻主贤惠淑德。应爻旺相，又临着勾陈和子孙，没有受伤损的，他的妻子一定像孟光：相貌虽然不出众，品德却很美。",
+        "en": "Hook Earth stands for dark, plain and honest looks, and Output for virtue and gentleness. If the Other line is strong and sits on Hook Earth and Output with no injury, the wife is surely like Meng Guang: her looks may be plain, but her virtue is fine."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6152, 6152],
+          "zh": ["应带勾陈兼值福，孟德耀复产于斯时；"],
+          "yi": ["应爻带着勾陈，又逢子孙，像孟德耀（孟光）这样的人又生在这个时候；"],
+          "en": ["The Other line carrying Hook Earth and also on Output: Meng Deyao (Meng Guang) is born again in this age;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6153, 6153],
+          "zh": ["勾陈主黑丑，子孙主贤淑。", "故应爻旺相临之，而无伤损者，其妻必如孟光；", "貌虽不扬，而其德则美也。"],
+          "yi": ["勾陈主肤色黑、相貌丑，子孙爻主贤惠淑德。", "所以应爻旺相，临着它们而没有伤损的，他的妻子一定像孟光；", "相貌虽然不出众，但品德很美。"],
+          "en": ["Hook Earth stands for dark and ugly looks; Output stands for virtue and gentleness.", "So where the Other line is strong and sits on them with no injury, the wife is surely like Meng Guang;", "her looks may be plain, but her virtue is fine."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1737, 1737],
+          "zh": ["勾陈主黑丑诚实，子孙主贤淑，应爻为妻，旺相临之无伤损者，妻如孟光，貌虽不扬而德甚美也。"],
+          "yi": ["勾陈主黑丑而诚实，子孙爻主贤惠淑德，应爻是妻子，旺相临着它们而没有伤损的，妻子像孟光，相貌虽然不出众而品德很美。"],
+          "en": ["Hook Earth stands for dark, plain and honest looks and Output for virtue and gentleness; the Other line is the wife, and if it is strong and sits on them with no injury, the wife is like Meng Guang, plain in looks but fine in virtue."] }
+      ],
+      "note": {
+        "yi": "孟光是东汉梁鸿的妻子，相貌丑而德行好，「举案齐眉」的故事就是她；孟德耀是她的字。这是黄金策断「妻的相貌品德」的一组对句里最好的一句，其后各句都是妇人的坏处或好处。",
+        "en": "Meng Guang was the wife of Liang Hong of the Later Han, plain in looks and excellent in conduct, the wife of the story of raising the tray level with her brows; Deyao was her courtesy name. This is the best of a run of couplets in the Huangjin Ce judging a wife's looks and character, the rest of which set out women's faults and merits."
+      },
+      "see": ["LY.MARRY.HJC.77", "LY.MARRY.HJC.81", "LY.MARRY.TXF.20"]
+    },
+    {
+      "id": "LY.MARRY.HJC.77",
+      "topic": "外遇",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "财临玄武更逢刑，杨太真重生：玄武是淫乱之神，临财爻则妻子不贞洁，更加三刑六害、发动合应爻或他爻，污行更甚",
+      "rule": {
+        "yi": "玄武是淫乱的神。它临在财爻上，妻子就不贞洁；再加上三刑、六害，又发动去合应爻或者别的爻，就像杨贵妃，行为更污秽。",
+        "en": "The Dark Tortoise is the spirit of lewdness. Sitting on the Wealth line it means the wife is not chaste; with three punishments and six harms added, and moving to combine with the Other line or another line, she is like Yang Guifei, and worse."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6155, 6155],
+          "zh": ["财临玄武更逢刑，杨太真重生于今日。"],
+          "yi": ["财爻临着玄武，又碰上刑，杨太真（杨贵妃）在今天又生了一回。"],
+          "en": ["Wealth on the Dark Tortoise and meeting punishment as well: Yang Taizhen is born again today."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6156, 6156],
+          "zh": ["玄武乃淫乱之神，若临财爻，必不贞洁。", "更加三刑六害，如杨贵妃污秽尤甚。"],
+          "yi": ["玄武是淫乱的神，如果临在财爻上，一定不贞洁。", "再加三刑、六害，就像杨贵妃，污秽更甚。"],
+          "en": ["The Dark Tortoise is the spirit of lewdness; if it sits on the Wealth line, she is surely not chaste.", "Add three punishments and six harms, and she is filthy like Yang Guifei, and worse."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1739, 1739],
+          "zh": ["玄武乃淫乱之神，若临财爻，妻子不贞洁，发动与应爻相合，或与他爻相合，如杨贵妃污行尤甚。"],
+          "yi": ["玄武是淫乱的神，如果临在财爻上，妻子不贞洁，发动去和应爻相合，或者和别的爻相合，就像杨贵妃，行为污秽更甚。"],
+          "en": ["The Dark Tortoise is the spirit of lewdness; if it sits on the Wealth line, the wife is not chaste, and if it moves to combine with the Other line or with another line, she is like Yang Guifei, her conduct filthy in the extreme."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗把经文写作「财逢玄武更逢刑」。「杨太真」是杨贵妃入宫前的道号。",
+        "en": "The Zhengzong writes the verse as 'Wealth meeting the Dark Tortoise and meeting punishment'. 'Yang Taizhen' is the Taoist name Yang Guifei took before entering the palace."
+      },
+      "see": ["LY.MARRY.HJC.74", "LY.MARRY.HJC.78", "LY.MARRY.TXF.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.78",
+      "topic": "外遇",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "合多而众杀争持，许子和之钱树：卦中有合诸事吉，独妇人女子见之浇浮淫佚；加玄武三刑六害临持财爻是娼妓之兆",
+      "rule": {
+        "yi": "卦中有合，诸事都吉，只有妇人女子碰上，主轻浮淫乱，春心荡漾，守不住闺门；再加玄武、三刑、六害临在财爻上，是娼妓的征兆，就像许子和做妓女，临死对母亲说「钱树子倒了」。",
+        "en": "In a hexagram a combination is good for every matter, but a woman meeting it is frivolous and lewd, her heart in spring stir, unable to keep the women's quarters; with the Dark Tortoise, three punishments and six harms added on the Wealth line, it is the sign of a courtesan, like Xu Zihe, who as a courtesan said to her mother on her deathbed, 'the money-tree has fallen'."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6158, 6158],
+          "zh": ["合多而众杀争持，乃许子和之钱树；"],
+          "yi": ["合的爻很多，而各种凶煞又争着持它，这就是许子和的「钱树子」；"],
+          "en": ["Many combinations while many ill stars contend to hold it: the money-tree of Xu Zihe;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6159, 6159],
+          "zh": ["卦中有合诸事吉。", "惟妇人女子见之，主浇浮淫佚，春心荡漾，不能坚闺门之守。", "更加玄武，三刑六害，临持财爻者，乃娼妓之兆。", "如许子和为妓，临死谓其母曰：钱树子倒矣。", "盖为娼宿客，得钱，如树之能生钱也。"],
+          "yi": ["卦中有合，诸事都吉。", "只有妇人女子碰上，主轻浮淫乱，春心荡漾，守不住闺门。", "再加玄武、三刑、六害，临持在财爻上的，是娼妓的征兆。", "就像许子和做妓女，临死对她母亲说：钱树子倒了。", "因为做娼妓接客得钱，就像树能生钱一样。"],
+          "en": ["A combination in the hexagram is good for every matter.", "Only a woman meeting it is frivolous and lewd, her heart in spring stir, unable to keep the women's quarters.", "With the Dark Tortoise, three punishments and six harms added and sitting on the Wealth line, it is the sign of a courtesan.", "Like Xu Zihe, who as a courtesan said to her mother on her deathbed: the money-tree has fallen.", "For a courtesan who entertains guests and earns money is like a tree that grows money."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1741, 1741],
+          "zh": ["应位财爻见合过多，再加玄武刑害临持者，乃娼妓也，如许子和为妓，临死谓其母曰“钱树子倒也”是也。"],
+          "yi": ["应位的财爻见到合太多，再加玄武、刑害临持它的，就是娼妓，就像许子和做妓女，临死对母亲说「钱树子倒了」那样。"],
+          "en": ["If the Wealth line at the Other position meets too many combinations, and the Dark Tortoise, punishment and harm sit on it, she is a courtesan, like Xu Zihe, who as a courtesan said to her mother on her deathbed 'the money-tree has fallen'."] }
+      ],
+      "see": ["LY.MARRY.HJC.77", "LY.MARRY.HJC.89", "LY.MARRY.TXF.15"]
+    },
+    {
+      "id": "LY.MARRY.HJC.79",
+      "topic": "入赘再嫁",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "官众而诸凶皆避，如隋炀帝之采花：卦中官鬼太多（含日月、变出）去生合财爻而财爻不临玄武，其妇重婚再醮；若鬼爻不受刑冲反来冲克财爻，是生离活别、不是夫死再嫁",
+      "rule": {
+        "yi": "卦中官鬼太多（日辰月建是官鬼、或变出官鬼太多），都去生合财爻，而财爻不临玄武这类凶神，这个妇人一定重婚再嫁，就像隋炀帝在西苑剪彩绸做花，颜色旧了就换新的一样。如果卦里的官鬼不受刑冲克害，反过来冲克财爻，那是夫妻生离，不是丈夫死了再嫁。",
+        "en": "If the hexagram has too many Pressure lines (including the Day or Month being Pressure, or too many changing out), all generating and combining with the Wealth line, and the Wealth line does not sit on the Dark Tortoise or another ill spirit, the woman surely marries again, like Emperor Yang of Sui, who cut silk into flowers in the West Park and replaced them with fresher colors when the colors faded. If the hexagram's Pressure line is not punished or clashed but itself clashes and controls the Wealth line, it is parting alive, not a widow marrying again."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6161, 6161],
+          "zh": ["官众而诸凶皆避，如隋炀帝之采花。"],
+          "yi": ["官鬼爻很多，而各种凶神都避开了，就像隋炀帝的采花。"],
+          "en": ["Many Pressure lines while the ill spirits all keep away: like Emperor Yang of Sui and his picking of flowers."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6162, 6162],
+          "zh": ["凡遇卦中有鬼，日辰月建是鬼，或又化出太过，生合财爻；", "而财爻不临玄武等凶神者，必主其妇重婚再醮。", "如隋炀帝西苑剪采为花，色渝则易以色之新者；", "喻妇人夫死则再嫁也。"],
+          "yi": ["凡是卦中有官鬼，日辰月建是官鬼，或者又变出太多官鬼，去生合财爻；", "而财爻又不临玄武这类凶神，一定主这个妇人重婚再嫁。", "就像隋炀帝在西苑剪彩绸做成花，颜色旧了就换成颜色新的；", "比喻妇人丈夫死了就再嫁。"],
+          "en": ["Whenever the hexagram has Pressure, or the Day or Month is Pressure, or too much Pressure changes out, to generate and combine with the Wealth line;", "and the Wealth line does not sit on the Dark Tortoise or another ill spirit: it means the woman surely marries again.", "Like Emperor Yang of Sui, who cut silk into flowers in the West Park and replaced them with ones of fresher color when the color faded;", "it is a figure for a woman who marries again when her husband dies."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6163, 6163],
+          "zh": ["若本卦鬼爻不受刑冲克害，而鬼爻反来冲克财爻者，乃是生离活别之兆，非夫死再嫁也。"],
+          "yi": ["如果本卦的官鬼爻不受刑冲克害，反过来去冲克财爻，那是生离活别的征兆，不是丈夫死了再嫁。"],
+          "en": ["If the hexagram's own Pressure line is not punished, clashed or controlled but itself clashes and controls the Wealth line, that is a sign of parting alive, not of a widow marrying again."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1743, 1743],
+          "zh": ["凡日月动变，见官鬼爻太过合财，而财爻不临玄武等煞者，必主其妇重婚再醮，如隋炀帝西苑剪采为花也。", "若本宫官鬼冲克财爻者，乃生离活别之兆，非夫死再嫁者也。"],
+          "yi": ["凡是日月动变，见到官鬼爻太多而去合财爻，财爻又不临玄武这类凶煞的，一定主这个妇人重婚再嫁，就像隋炀帝在西苑剪彩绸做花那样。", "如果本宫的官鬼冲克财爻，那是生离活别的征兆，不是丈夫死了再嫁。"],
+          "en": ["Whenever, through the Day, Month, moving and changing lines, too many Pressure lines are seen combining with the Wealth line, and the Wealth line does not sit on the Dark Tortoise or another ill star, it means the woman surely marries again, like Emperor Yang of Sui cutting silk into flowers in the West Park.", "If the Pressure line of the home palace clashes and controls the Wealth line, that is a sign of parting alive, not of a widow marrying again."] }
+      ],
+      "note": {
+        "yi": "「重婚再醮」的醮是古代嫁女时用酒祭神的礼，「再醮」就是再嫁。这一条讲的是妇人卜自己的婚姻状况；男子问妻子的事，可以对照 LY.MARRY.HJC.27（财化财、鬼化鬼）和 LY.MARRY.YY.08（鬼动化财、财动化鬼）。",
+        "en": "'Jiao' in 'marries again' is the wine offering to the spirits made when a daughter married in old times, and 'a second jiao' means marrying again. This entry is about a woman's marital state as she reads it herself; for a man asking about his wife compare LY.MARRY.HJC.27 (Wealth turning into Wealth, Pressure into Pressure) and LY.MARRY.YY.08 (Pressure moving into Wealth, Wealth moving into Pressure)."
+      },
+      "see": ["LY.MARRY.HJC.27", "LY.MARRY.YY.08", "LY.MARRY.TXF.09", "LY.MARRY.HJC.88"]
+    },
+    {
+      "id": "LY.MARRY.HJC.80",
+      "topic": "对方",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "白虎刑临，武后淫而且悍：白虎是强暴之神，妇人见之必凶悍，更加刑害临财爻则凶悍且淫",
+      "rule": {
+        "yi": "白虎是强暴的神，妇人碰上，一定凶悍；再加刑、害临在财爻上，就像武则天，又凶悍又淫。",
+        "en": "The White Tiger is the spirit of violence; a woman meeting it is surely fierce; with punishment and harm added on the Wealth line she is like Empress Wu, both fierce and lewd."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6165, 6165],
+          "zh": ["白虎刑临，武后淫而且悍；"],
+          "yi": ["白虎带着刑临到，武后又淫乱又凶悍；"],
+          "en": ["The White Tiger arriving with punishment: Empress Wu, lewd and fierce;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6166, 6166],
+          "zh": ["白虎乃强暴之神，妇人见之，必然凶悍；", "更加刑害临财爻，必如武则天凶悍且淫也。"],
+          "yi": ["白虎是强暴的神，妇人碰上它，一定凶悍；", "再加刑、害临在财爻上，一定像武则天那样凶悍而且淫。"],
+          "en": ["The White Tiger is the spirit of violence; a woman meeting it is surely fierce;", "with punishment and harm added on the Wealth line she is surely like Wu Zetian, fierce and lewd besides."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1745, 1745],
+          "zh": ["白虎乃强暴之神，妇人见之必然凶悍，更加刑害临财爻，如武则天凶悍且淫也。"],
+          "yi": ["白虎是强暴的神，妇人碰上必然凶悍，再加刑、害临在财爻上，像武则天那样凶悍而且淫。"],
+          "en": ["The White Tiger is the spirit of violence; a woman meeting it is surely fierce, and with punishment and harm added on the Wealth line she is like Wu Zetian, fierce and lewd besides."] }
+      ],
+      "see": ["LY.MARRY.HJC.77", "LY.MARRY.HJC.81"]
+    }
+  ]
+}

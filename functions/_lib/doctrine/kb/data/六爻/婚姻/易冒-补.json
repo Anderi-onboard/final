@@ -1,0 +1,318 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "易冒",
+  "chapter": "散在各章的婚姻句",
+  "chapter_en": "Marriage lines scattered through other chapters",
+  "ranges": {"易冒": [330, 1926]},
+  "units": [
+    {
+      "id": "LY.MARRY.YM.28",
+      "topic": "动变",
+      "chapter": "进退章第十六",
+      "chapter_en": "Chapter 16: Advancing and retreating",
+      "title": "化进日昌：功名、身命、嫁娶、求财往而遂意，忌神遇之则忧；化退道消：灾祸渐弭，用神遇之则未易得志",
+      "rule": {
+        "yi": "动爻变出进神叫「化进」，势头一天比一天旺：占功名得志、身命荣昌，占嫁娶、求财，去做就称心如意；但如果化进的是忌神，忧患就大了。变出退神叫「化退」，势头在消退：灾祸渐渐平息，官司衰弱、病退、盗贼不来侵犯；但如果化退的是用神，就不容易得志。作者小注：用神、元神要它进，忌神、仇神要它退。",
+        "en": "A moving line that changes into an advancing spirit is 'changing forward' and grows stronger day by day: in office and fame one gets one's wish, life and fate flourish, and in marriage and in seeking wealth one goes and it turns out as wished; but if it is the Adversary that changes forward, trouble is great. A line that changes into a retreating spirit is 'changing backward' and is on the wane: calamities gradually ease, lawsuits weaken, illness retreats and robbers do not come near; but if it is the Subject that changes backward, it is not easy to get one's wish. The author's small note: the Subject and its Support want to advance, the Adversary and its enemy spirit want to retreat."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [330, 330],
+          "zh": ["化进有日昌之势，", "乃功名得志，", "身命荣昌，", "嫁娶财求，", "往而遂意，", "若忌神遇之，", "则忧方大尔；", "化退有道消之嫌，", "然灾祸渐弭，", "讼衰病退，", "寇贼无侵，", "若用神遇之，", "则未易得志也。"],
+          "yi": ["动爻变出进神（化进），有一天比一天兴旺的势头，", "于是功名得志，", "身命荣耀昌盛，", "嫁娶、求财，", "去做就称心如意；", "如果是忌神遇上这个，", "那就忧患大了；", "动爻变出退神（化退），有道理消退的样子，", "不过灾祸会渐渐平息，", "官司衰弱、病退，", "盗贼不来侵犯；", "如果是用神遇上这个，", "就不容易得志了。"],
+          "en": ["A line changing forward (into an advancing spirit) has the momentum of growing more prosperous day by day,", "so in office and fame one gets one's wish,", "life and fate flourish,", "in marriage and in seeking wealth", "one goes and it turns out as wished;", "if it is the Adversary that meets it,", "then trouble is great;", "a line changing backward (into a retreating spirit) has the look of a way that is waning,", "yet calamities gradually ease,", "lawsuits weaken and illness retreats,", "robbers and thieves do not come near;", "if it is the Subject that meets it,", "then it is not easy to get one's wish."] },
+        { "by": "易冒注", "book": "易冒", "range": [331, 331],
+          "zh": ["用神元神欲其进，", "忌神仇神欲其退。"],
+          "yi": ["用神、元神要它进，", "忌神、仇神要它退。"],
+          "en": ["The Subject and its Support want it to advance;", "the Adversary and its enemy spirit want it to retreat."] }
+      ],
+      "note": {
+        "yi": "「进神」「退神」在这一章开头定义：顺着天行往前的是进神，逆着往后的是退神，亥变子是前进，未变辰是退后；只有同一五行之内才论进退（申变未是生、丑变卯是死，不论进退）。这两句里的「嫁娶」和「财求」是两件事：婚嫁，和求财；不是「为了婚嫁去求财」。",
+        "en": "'Advancing spirit' and 'retreating spirit' are defined at the head of this chapter: going forward with the heavens is advancing, going backward against them is retreating; Hai changing into Zi is forward, Wei changing into Chen is backward; advance and retreat are judged only within the same phase (Shen into Wei is 'birth' and Chou into Mao is 'death', and neither is judged as advance or retreat). 'Marriage' and 'seeking wealth' in these lines are two matters, marrying and seeking money, and not 'seeking money for the sake of a marriage'."
+      },
+      "see": ["LY.MARRY.ZS.34", "LY.MARRY.YM.16"]
+    },
+    {
+      "id": "LY.MARRY.YM.29",
+      "topic": "成否",
+      "chapter": "绝生章第三十三",
+      "chapter_en": "Chapter 33: Extinction meeting birth",
+      "title": "用神绝处逢生：男婚用财、女姻用鬼，遇之者起初如参辰、后来成泰晋",
+      "rule": {
+        "yi": "用神落在绝地，又遇到生它的，叫「绝处逢生」（这一章列了五种情形）。用在婚姻上：男子的婚事用妻财、女子的婚事用官鬼当用神；用神绝而逢生的，婚事起初像参星和辰星那样两不相见，后来成了泰、晋那样的顺遂。要注意这一章同时列了三种「生不了」的情形：用神自己被破、被散；生它的飞爻或动爻被破、被散；生它的变爻被破、被绝——遇到这三种，绝处也逢不了生。",
+        "en": "When the Subject stands in its extinction and meets a line that generates it, this is 'extinction meeting birth' (the chapter lists five forms). Applied to marriage: for a man's marriage the Subject is Wealth, for a woman's it is Pressure, and when it is in extinction and meets birth, the marriage is at first like the stars Shen and Chen that never meet, and afterwards turns out as well as Tai and Jin. Note that the same chapter lists three cases where birth cannot come: the Subject itself is broken or scattered; the flying or moving line that generates it is broken or scattered; the changed line that generates it is broken or in extinction. In these three, even in extinction it does not meet birth."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [564, 564],
+          "zh": ["用爻属木，", "申日占而绝，", "水爻动而生，", "因名绝生，", "犹穷地而遇援也。"],
+          "yi": ["用爻属木，", "在申日占卦，木在申日是绝，", "水爻动了来生它，", "因此叫做「绝生」，", "就像走投无路的人遇到了援手。"],
+          "en": ["The Subject line is Wood,", "the divination is on a Shen day, and Wood is in extinction on Shen,", "a Water line moves and generates it,", "and so it is called 'extinction meeting birth',", "like one at the end of his road who meets help."] },
+        { "by": "经", "book": "易冒", "range": [567, 568],
+          "zh": ["其不能生者有三：用神自受破散，不能生者一；", "飞爻动爻生我者受破散，不能生者二；", "变爻生我者受破绝，不能生者三。", "忌神亦以此参之。"],
+          "yi": ["不能逢生的情形有三种：用神自己被破、被散，是生不了的第一种；", "生我的飞爻、动爻被破、被散，是第二种；", "生我的变爻被破、被绝，是第三种。", "忌神也照这样来参看。"],
+          "en": ["There are three cases where birth cannot come: the Subject itself broken or scattered is the first case where it cannot be generated;", "the flying or moving line that generates me being broken or scattered is the second;", "the changed line that generates me being broken or in extinction is the third.", "The Adversary is to be checked in the same way."] },
+        { "by": "经", "book": "易冒",
+          "zh": ["身命世绝而逢生，虽困必亨，虽夭必寿；", "文科重父，武试重官，遇之者几落孙山，终登龙虎；", "男婚用财，女姻用鬼，遇之者后成泰晋，始则参辰。"],
+          "yi": ["占身命，世爻绝了又逢生，虽然困顿也一定亨通，虽然短命也一定长寿；", "文科看重父母爻，武试看重官鬼爻，遇到这种情形的人，差一点名落孙山，最后终于登上龙虎榜；", "男子的婚事用妻财，女子的婚事用官鬼，遇到这种情形的，后来成了泰、晋那样的顺遂，起初却像参星和辰星那样见不到面。"],
+          "en": ["In divining life and fate, if the Self line is in extinction and meets birth, though troubled it will surely prosper, and though short-lived it will surely live long;", "for the civil examinations the Resource line counts, for the military examinations the Pressure line; one who meets this nearly falls off the list and in the end mounts the Dragon-and-Tiger list;", "for a man's marriage use Wealth, for a woman's marriage use Pressure; one who meets this ends in the good fortune of Tai and Jin, though at the start they are like the stars Shen and Chen that never meet."] }
+      ],
+      "note": {
+        "yi": "「遇之者」指遇到「绝处逢生」这种情形的人：同一句里先是身命（世爻绝而逢生），再是文科武试，最后才是婚姻，句式相同。「泰晋」是泰卦和晋卦的名字，取通泰、上进的意思；「参辰」是参星和辰星，一个在西一个在东，此出彼没、永不同见，是分隔的老比喻（常说「参商」）。这一章前面（第 565 行）还列了「绝处逢生」的五种形式，是通例，不专讲婚姻，没有收。",
+        "en": "'One who meets this' means one who meets 'extinction meeting birth'; the sentence runs in the same form for life and fate (the Self line in extinction meeting birth), then the civil and military examinations, and last marriage. 'Tai and Jin' are the hexagram names Tai (peace) and Jin (advance), meaning ease and progress; 'Shen and Chen' are two stars, one in the west and one in the east, one rising as the other sets and never seen together, the old figure for separation (usually 'Shen and Shang'). Earlier in the chapter (line 565) five forms of extinction meeting birth are listed; they are general and do not speak of marriage in particular, and are not taken."
+      },
+      "see": ["LY.MARRY.YM.01", "LY.MARRY.YM.16"]
+    },
+    {
+      "id": "LY.MARRY.YM.30",
+      "topic": "风险",
+      "chapter": "两现章第三十",
+      "chapter_en": "Chapter 30: Two appearances",
+      "title": "用爻两现必有其象：占男婚两官是竞相来求，占女婚两财是交相给予；身命里两财是再婚之约",
+      "rule": {
+        "yi": "同一种用爻在卦里现出两个，推到人事上一定有对应的象。占男子的婚事，卦里有两个官鬼，是有人竞相来求；占女子的婚事，卦里有两个妻财，是彼此交相给予。占身命时，两个妻财是再订一门婚约。作者的理由是：鬼神对蓍草不乱动、不白白现出来，现出来就一定有话要告诉人。",
+        "en": "When the same Subject line appears twice in a hexagram, extended to human affairs it must have a matching image. Divining a man's marriage, two Pressure lines mean people are vying to seek her; divining a woman's marriage, two Wealth lines mean they give to one another in turn. In divining life and fate, two Wealth lines are a second marriage contract. The author's reason: spirits and gods do not move idly through the yarrow or appear for nothing, and when they appear they always have something to tell."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [506, 506],
+          "zh": ["夫鬼神之于蓍不妄动、不徒现，", "必有所告也，", "是以卜男婚而两官者，", "竞相求也，", "卜女婚而两财者，", "交相与也；"],
+          "yi": ["鬼神对于蓍草，不乱动、不白白现出来，", "一定有话要告诉人；", "所以占男子的婚事而卦里有两个官鬼，", "是有人竞相来求；", "占女子的婚事而卦里有两个妻财，", "是彼此交相给予。"],
+          "en": ["Spirits and gods, in the yarrow, do not move idly or appear for nothing,", "they always have something to tell;", "so when divining a man's marriage and there are two Pressure lines,", "people are vying to seek her;", "when divining a woman's marriage and there are two Wealth lines,", "they give to one another in turn."] },
+        { "by": "经", "book": "易冒", "range": [942, 942],
+          "zh": ["两财者再婚之约，"],
+          "yi": ["两个妻财，是再订一门婚约。"],
+          "en": ["Two Wealth lines: a second marriage contract."] },
+        { "by": "易冒注", "book": "易冒", "range": [943, 943],
+          "zh": ["其详备两现章中。"],
+          "yi": ["它们的详细说明，都在「两现」一章里。"],
+          "en": ["Their details are all in the chapter on the two appearances."] }
+      ],
+      "note": {
+        "yi": "「两官」「两财」是卦里同时有两个官鬼爻、两个妻财爻。「交相与」书里没有说是谁给谁（可能是两家互送聘礼、也可能是两边各给一份），译文只照字面译。第二条引的是身命章里的一句：那里一连列了两官、两父、两身、两财、两子孙、两兄弟各主什么，只有「两财者再婚之约」这一句和婚姻有关，别的没有收。",
+        "en": "'Two Pressure' and 'two Wealth' mean that the hexagram has two Pressure lines or two Wealth lines at once. The book does not say who gives to whom in 'give to one another' (two families exchanging betrothal gifts, or each side giving a share); the translation follows the words. The second quotation is one sentence of the chapter on life and fate, which lists in a row what two Pressure, two Resource, two Self, two Wealth, two Output and two Peer lines each mean; only 'two Wealth lines are a second marriage contract' concerns marriage, and the rest is not taken."
+      },
+      "see": ["LY.MARRY.YM.10", "LY.MARRY.YM.01"]
+    },
+    {
+      "id": "LY.MARRY.YM.31",
+      "topic": "夫妻",
+      "chapter": "身命章第四十六",
+      "chapter_en": "Chapter 46: Life and fate",
+      "title": "身命章论夫妇：官坐世者夫纲整、财坐应者妻德备；无妻财而有子孙者孕于他妇，无六亲皆言其大象不可执",
+      "rule": {
+        "yi": "占身命时看夫妇：官鬼坐在世爻上，丈夫的家法整肃；妻财坐在应爻上，妻子的德行完备。卦里没有妻财、却有子孙，孩子是别的女人怀的；没有父母、却有兄弟，是异母所生。小注提醒：卦里缺某个六亲，说的只是大概的象，也许是以前受了伤、也许是以后要受损，不可以拘泥。",
+        "en": "Judging husband and wife in a reading of life and fate: with Pressure sitting on Self the husband's rule is orderly; with Wealth sitting on Other the wife's virtue is complete. A hexagram with no Wealth but an Output line means the child was conceived by another woman; with no Resource but a Peer line, the child is born of a different mother. The small note warns: when a hexagram lacks a relative, it speaks only of the large image, harm that came before or loss to come after, and is not to be held to rigidly."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [940, 940],
+          "zh": ["无妻财而有子孙者孕于他妇，", "无父母而有弟兄者胞于异母。", "官坐世者夫纲整，", "财坐应者妻德备，"],
+          "yi": ["卦里没有妻财、却有子孙的，是别的女人怀的孕；", "没有父母、却有兄弟的，是异母所生。", "官鬼坐在世爻上的，丈夫的家法整肃；", "妻财坐在应爻上的，妻子的德行完备。"],
+          "en": ["With no Wealth line but an Output line, the child was conceived by another woman;", "with no Resource line but a Peer line, he was born of a different mother.", "with Pressure sitting on Self, the husband's rule is orderly;", "with Wealth sitting on Other, the wife's virtue is complete."] },
+        { "by": "易冒注", "book": "易冒", "range": [941, 941],
+          "zh": ["无六亲，", "此言其大象，", "或伤于前，", "或损于后，", "不可执也。"],
+          "yi": ["缺某个六亲，", "这说的是大概的象，", "也许是以前受了伤，", "也许是以后要受损，", "不可以拘泥。"],
+          "en": ["As for lacking one of the relatives,", "this speaks of the large image;", "it may be harm that came before,", "or loss that is to come;", "it must not be held to rigidly."] }
+      ],
+      "note": {
+        "yi": "这一章是替问自己一生的人断的，不是专为婚姻问的；夫妻这两句是同一段里讲六亲配置的一部分。原文接着还有「卦空破而出寒微、宫旺相而产豪富」等，讲出身，与夫妻无关，没有收。「夫纲」指丈夫在家里的主持和法度，「妻德」指妻子的德行；书里没有再解释。",
+        "en": "This chapter judges for a person asking about a whole life, not specially about marriage; the two lines on husband and wife are part of a passage on how the relatives are placed. The original goes on with 'a Void or broken hexagram means a humble birth, a strong palace a wealthy birth' and so on, about birth and rank and not husband and wife, which are not taken. 'Husband's rule' means the husband's management and discipline in the house, and 'wife's virtue' the wife's good conduct; the book does not explain them further."
+      },
+      "see": ["LY.MARRY.YM.01", "LY.MARRY.HJC.73", "LY.MARRY.HJC.90"]
+    },
+    {
+      "id": "LY.MARRY.YM.32",
+      "topic": "入赘再嫁",
+      "chapter": "家宅章第五十",
+      "chapter_en": "Chapter 50: The household",
+      "title": "世财应官为赘妻、世子应鬼为赘婿，应财外现为远娶、应子内财为他继；世投他外我附于人、应归亲内人趋于我",
+      "rule": {
+        "yi": "家宅章末尾，讲一家人的构成时列了几种和婚姻有关的组合：世爻投到外面，是我依附别人；应爻回到亲族里面，是别人来投靠我。世爻是妻财、应爻是官鬼，叫赘妻；世爻是子孙、应爻是官鬼，叫赘婿；应爻是妻财而现在外卦，是从远处娶来；应爻是子孙而妻财在内，是外姓人来继承。另外白虎在应爻上发吼，妻子那一边有丧事；青龙在旁边的爻上跃动，偏房那一支有喜事。",
+        "en": "At the end of the chapter on the household, in speaking of how a family is made up, the book lists several combinations that touch marriage: when Self is cast outward, I attach myself to another; when Other returns inward among kin, others come to me. Wealth on Self with Pressure on Other is a 'zhui' wife; Output on Self with Pressure on Other is a 'zhui' son-in-law; Wealth on Other showing in the outer trigram is a wife taken from afar; Other as Output with Wealth inside is a successor from another family. Besides, the White Tiger roaring on Other means a death on the wife's side, and the Azure Dragon leaping on a side line means joy in the secondary branch."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1077, 1077],
+          "zh": ["世投他外，", "我附于人，", "应归亲内，", "人趋于我。"],
+          "yi": ["世爻投到外面别人那里去，", "是我依附别人；", "应爻回到亲族里面，", "是别人来投靠我。"],
+          "en": ["Self is cast to the outside, to another's place;", "I attach myself to others;", "Other returns to the inside, among kin;", "others come to me."] },
+        { "by": "经", "book": "易冒", "range": [1078, 1079],
+          "zh": ["虎吼应象而妻党丧，", "龙跃傍爻而庶房喜，", "世财应官为赘妻，", "世子应鬼为赘婿，", "应财外现为远娶，", "应子内财为他继。"],
+          "yi": ["（应爻上）虎吼，妻子那边的亲人有丧事；", "龙在旁边的爻上跃动，偏房那一支有喜事；", "世爻是妻财、应爻是官鬼，叫赘妻；", "世爻是子孙、应爻是官鬼，叫赘婿；", "应爻是妻财而现在外卦，是从远处娶来；", "应爻是子孙而妻财在内，是外姓人来继承。"],
+          "en": ["The Tiger roars on the Other's image, and the wife's kin suffer a death;", "the Dragon leaps on a side line, and the secondary branch has joy;", "Wealth on Self and Pressure on Other is a taken-in wife (zhui qi);", "Output on Self and Pressure on Other is a taken-in son-in-law (zhui xu);", "Wealth on Other showing outside is a wife taken from afar;", "Output on Other with Wealth inside is a successor from another family."] }
+      ],
+      "note": {
+        "yi": "原文极简，「赘妻」「赘婿」没有解释。「赘」是男子住到妻家、依附妻家（入赘），「赘婿」是这样住进来的女婿；「赘妻」在这里的确切意思书里没有说，译文保留原词。「虎」「龙」是白虎、青龙，「应象」是应爻的位置，「傍爻」是世应之外的爻。这一段是家宅章里讲家里人口的话，里面「两官一家二宰、两父一宅二居、两财有异业」等讲家宅的句子没有收。",
+        "en": "The original is very terse and does not explain 'zhui wife' or 'zhui son-in-law'. 'Zhui' is a man who goes to live in his wife's family and depends on it (uxorilocal marriage), and a 'zhui son-in-law' is a son-in-law taken in that way; what exactly a 'zhui wife' is here the book does not say, and the translation keeps the word. 'Tiger' and 'Dragon' are the White Tiger and the Azure Dragon, 'the Other's image' is the place of the Other line, and 'a side line' is a line other than Self and Other. The passage is part of what the household chapter says about the people of a house; its lines on the household itself ('two Pressure lines, one family with two masters; two Resource lines, one house with two dwellings; two Wealth lines, different trades') are not taken."
+      },
+      "see": ["LY.MARRY.YM.11", "LY.MARRY.YM.14", "LY.MARRY.YM.30"]
+    },
+    {
+      "id": "LY.MARRY.YM.33",
+      "topic": "对方",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: Affairs of state",
+      "title": "择后犹婚姻：财在何宫，当应何所——财在中爻得晋女，财在内卦应本乡",
+      "rule": {
+        "yi": "国事章里说选皇后就像婚姻：妻财爻落在哪一宫，对方就出在哪个地方。小注举例：妻财在中爻，会得到晋地的女子；妻财在内卦，应在本乡。",
+        "en": "The chapter on affairs of state says that choosing an empress is like a marriage: in whichever palace the Wealth line stands, there the bride comes from. The small note gives examples: with Wealth in the middle line, she will be a woman of Jin; with Wealth in the inner trigram, she answers to the home district."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [827, 827],
+          "zh": ["择后犹婚姻也，", "财在何宫，", "当应何所。"],
+          "yi": ["选皇后就像婚姻一样：", "妻财爻落在哪一宫，", "就应在哪个地方。"],
+          "en": ["Choosing an empress is like a marriage:", "in whichever palace the Wealth line stands,", "there is the place it answers to."] },
+        { "by": "易冒注", "book": "易冒", "range": [828, 828],
+          "zh": ["如财在中爻，", "当得晋女，", "财在内卦，", "当应本乡。"],
+          "yi": ["比如妻财在中爻，", "会得到晋地的女子；", "妻财在内卦，", "就应在本乡。"],
+          "en": ["If the Wealth line is in the middle line,", "she will be a woman of Jin;", "if the Wealth line is in the inner trigram,", "it answers to her home district."] }
+      ],
+      "note": {
+        "yi": "「中爻」和「晋女」书里没有再解释：「中爻」大概是卦中间的爻，「晋」可能是晋国，也可能是晋卦，无从核对。这两句和婚姻章里「何地」一条（LY.MARRY.YM.19）是同一个办法：看妻财（或官鬼）落在哪一宫、在内在外，断对方从哪里来。",
+        "en": "The book does not explain 'middle line' or 'woman of Jin': 'middle line' is probably a line in the middle of the hexagram, and 'Jin' may be the state of Jin or the hexagram Jin; there is nothing to check against. These two lines use the same method as 'where' in the marriage chapter (LY.MARRY.YM.19): look at which palace the Wealth line (or Pressure line) stands in, and whether inside or outside, to judge where the other party comes from."
+      },
+      "see": ["LY.MARRY.YM.19", "LY.MARRY.YM.06"]
+    },
+    {
+      "id": "LY.MARRY.YM.34",
+      "topic": "成否",
+      "chapter": "行人章第七十七",
+      "chapter_en": "Chapter 77: Travellers",
+      "title": "问在外的人娶了没有：财现则娶，用病未婚",
+      "rule": {
+        "yi": "行人章里问出门在外的人娶了亲没有：妻财爻在卦里出现，就是娶了；用神有病，就是还没有结婚。",
+        "en": "In the chapter on travellers, on whether one away from home has married: if the Wealth line appears in the hexagram, he has married; if the Subject is sick, he is not yet married."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1695, 1695],
+          "zh": ["行者娶乎，", "财现则娶，", "用病未婚也。"],
+          "yi": ["问出门在外的人娶了亲没有？", "妻财爻在卦里出现，就是娶了；", "用神有病，就是还没有结婚。"],
+          "en": ["Has the traveller married?", "if the Wealth line appears in the hexagram, he has married;", "if the Subject is sick, he is not yet married."] }
+      ],
+      "note": {
+        "yi": "这一句和上一句「行者仕乎，官旺则仕，官空未仕也」同一个句式：问在外的人有没有做到官，看官鬼爻旺不旺、空不空；问有没有娶妻，看妻财现不现。「用病」的「病」这一段没有定义。",
+        "en": "This sentence has the same form as the one before it, 'has the traveller taken office? if Pressure is strong he has, if Pressure is Void he has not': to ask whether one away from home has become an official, look at whether the Pressure line is strong or Void; to ask whether he has taken a wife, look at whether the Wealth line appears. The 'sickness' of 'the Subject is sick' is not defined in this passage."
+      },
+      "see": ["LY.MARRY.YM.16", "LY.MARRY.YM.01"]
+    },
+    {
+      "id": "LY.MARRY.YM.35",
+      "topic": "动变",
+      "chapter": "合冲章第三十四",
+      "chapter_en": "Chapter 34: Combination and clash",
+      "title": "前冲后合初更张而卒和调：六冲卦而日月合世应、变成六合，占婚始悖而终就（午月丙子日兑之节）",
+      "rule": {
+        "yi": "卦本身叫「前」，变出来的卦叫「后」。前合后冲，起初繁华最后衰败；前冲后合，起初更张动荡，最后和顺；前合后合，伙伴投契而官司缠身，从头到尾结着解不开；前冲后冲，谋事难而官非散，亲疏都背离而不肯跟从。书里举的例子是：午月丙子日占婚，得兑之节，卦虽是六冲，但日辰、月建合了世爻和应爻，又变成六合，断为起初违逆、最终成就，后来两家果然走到了一起。",
+        "en": "The original hexagram is 'before' and the hexagram it changes into is 'after'. Combination then clash: flourishing at first, withered at the end. Clash then combination: upheaval at first, harmony at the end. Combination then combination: partners agree but lawsuits entangle, tied together from start to end and not loosened. Clash then clash: schemes are hard and lawsuits scatter, and kin and strangers turn their backs and do not follow. The book's example: in the Wu month on a Bingzi day a marriage was divined and Dui changing into Jie was obtained; the hexagram was a Six-clash, but the Day and Month combined Self and Other and it changed into a Six-combine; it was judged contrary at the start and fulfilled at the end, and afterwards the two families did come together."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [580, 580],
+          "zh": ["前合后冲，", "始繁华而终憔悴；", "前冲后合，", "初更张而卒和调；", "前合后合，", "伙伴契而讼狱缠，", "始终结而不解；", "前冲后冲，", "谋望难而官非散，", "亲疏背而不从。"],
+          "yi": ["前合后冲，", "起初繁华、最后憔悴；", "前冲后合，", "起初更张动荡、最后和顺调协；", "前合后合，", "伙伴投契却官司缠身，", "从头到尾结着解不开；", "前冲后冲，", "谋事难而官非散，", "亲疏都背离而不肯跟从。"],
+          "en": ["Combination first and clash after:", "flourishing at the start and withered at the end;", "clash first and combination after:", "upheaval at the start and in the end harmony;", "combination first and combination after:", "partners agree and yet lawsuits entangle,", "tied together from start to end and not loosened;", "clash first and clash after:", "schemes are hard and lawsuits scatter,", "kin and strangers turn their backs and do not follow."] },
+        { "by": "书中例", "book": "易冒", "range": [584, 584],
+          "zh": ["如午建丙子日，", "占婚得兑之节，", "卦虽六冲，", "其日月合世应，", "变成六合，", "以为始悖而终就，", "及后二家皆得偕，"],
+          "yi": ["比如午月丙子日，", "占婚姻得兑之节，", "卦虽然是六冲，", "但日辰、月建合了世爻和应爻，", "变成六合，", "断为起初违逆而最终成就，", "到后来两家都果然走到了一起。"],
+          "en": ["For example, in a Wu month on a Bingzi day,", "a marriage was divined and Dui changing into Jie was obtained;", "the hexagram, though a Six-clash,", "had the Day and Month combining Self and Other,", "and it changed into a Six-combine;", "it was judged contrary at the start and fulfilled at the end,", "and afterwards the two families did come together."] }
+      ],
+      "note": {
+        "yi": "「前」「后」是这一章第 578 行定的：卦本身冲叫前冲，变出来的卦冲叫后冲（LY.MARRY.YM.24）。例子后面还有两句「此占不成，故不贵也」，意思不明（可能是说这一卦不是「合冲」那一类，所以不作为那一类的例子看重；也可能是说这次判断没有应验），而前一句已经说了两家后来都成了，所以最后两句没有收。",
+        "en": "'Before' and 'after' are fixed at line 578 of this chapter: a clash in the hexagram itself is the front clash, and a clash in the hexagram it changes into is the back clash (LY.MARRY.YM.24). After the example come two more clauses, 'this divination does not form, and so is not valued', whose meaning is unclear (either that this hexagram is not of the 'combination-clash' kind and so is not prized as an example of that kind, or that the judgment was not confirmed); as the clause before already says the two families did come together, these last two clauses are left out."
+      },
+      "see": ["LY.MARRY.ZS.27", "LY.MARRY.YM.24", "LY.MARRY.YM.25"]
+    },
+    {
+      "id": "LY.MARRY.YM.36",
+      "topic": "风险",
+      "chapter": "助伤章第三十六",
+      "chapter_en": "Chapter 36: Helping and harming",
+      "title": "助鬼伤身而占身命：认祸为福、比匪为良，因财丧身、贪色亡命，妻妾不贤而归夫咎",
+      "rule": {
+        "yi": "助鬼伤身（世爻被鬼克，而鬼又在日辰上长生，是自己引来祸害）的格局，占身命时：把祸当成福，把匪类当成好人；为钱财送了性命，贪恋女色丢了命；妻妾不贤，过错却归到丈夫身上；奴仆放肆忤逆，连累主人遭殃。注文的理由是：财是利，鬼是害，天下的害都藏在利里面。",
+        "en": "With the pattern of 'helping Pressure to harm Self' (the Self line is controlled by Pressure while Pressure is in its birth state on the Day, so the person draws the harm on himself), in a reading of life and fate: he takes harm for fortune and wrong company for good; he loses his body for wealth and his life through lust; his wife and concubines are unworthy and yet the blame comes back to the husband; his servants are unruly and bring disaster on the master. The note gives the reason: Wealth is profit, Pressure is harm, and all the harms under heaven lie hidden in profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [618, 618],
+          "zh": ["占身命者认祸为福，", "比匪为良，", "因财丧身，", "贪色亡命，", "妻妾不贤而归夫咎，", "奴仆肆逆而累主殃。"],
+          "yi": ["占身命的人，把祸当成福，", "把匪类当成好人，", "因为钱财送了性命，", "贪恋女色丢了命；", "妻妾不贤，过错却归到丈夫身上，", "奴仆放肆忤逆，连累主人遭殃。"],
+          "en": ["One who divines his own fate takes harm for fortune,", "takes wrong company for good company,", "loses his body for the sake of wealth,", "and ruins his life through lust;", "his wife and concubines are unworthy, yet the blame comes back to the husband,", "his servants are unruly and rebellious and bring disaster on the master."] },
+        { "by": "易冒注", "book": "易冒", "range": [619, 619],
+          "zh": ["以财为利，", "以鬼为害，", "天下之害皆伏于利，", "理固然也。"],
+          "yi": ["把财当成利，", "把鬼当成害，", "天下的害都藏在利里面，", "道理本来就是这样。"],
+          "en": ["Taking Wealth as profit", "and Pressure as harm,", "all the harms under heaven lie hidden in profit;", "that is simply the way it is."] }
+      ],
+      "note": {
+        "yi": "「助鬼伤身」的定义在这一章开头（LY.MARRY.YM.02 引过第 614 行）。这一句是替问自己命的人断的，其中讲夫妻的只有「妻妾不贤而归夫咎」一句；同一章第 620 行讲「娶妇则主妇不贤」，也在 LY.MARRY.YM.02 里。「比匪」出自《易·比》「比之匪人」，是亲近了不该亲近的人。",
+        "en": "The definition of 'helping Pressure to harm Self' is at the head of this chapter (line 614, quoted in LY.MARRY.YM.02). This sentence judges for a person asking about his own fate, and only 'his wife and concubines are unworthy and the blame comes back to the husband' concerns husband and wife; line 620 of the same chapter, 'for taking a wife it means the wife is unworthy', is also in LY.MARRY.YM.02. 'Wrong company' is from the Book of Changes, Bi, 'befriending the wrong people', getting close to people one should not."
+      },
+      "see": ["LY.MARRY.YM.02", "LY.MARRY.YM.22"]
+    },
+    {
+      "id": "LY.MARRY.YM.37",
+      "topic": "总则",
+      "chapter": "身命章第四十六",
+      "chapter_en": "Chapter 46: Life and fate",
+      "title": "问妻而忌财陷，不能拿世空去断",
+      "rule": {
+        "yi": "为自己问「道」，怕的是六冲；问妻子，怕的是妻财陷落；这两种问法，都不能拿世爻落空去断。",
+        "en": "In asking about the Way the taboo is the six-clash; in asking about a wife the taboo is a sunken Wealth line; in neither is a Void Self line to be made the ground of judgment."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [927, 927],
+          "zh": ["且问道而忌六冲，", "问妻而忌财陷，", "皆不可以世空也。"],
+          "yi": ["而且问「道」，忌讳六冲，", "问妻子，忌讳妻财陷落，", "这些都不能拿世爻落空去断。"],
+          "en": ["Moreover, in asking about the Way the taboo is the six-clash,", "in asking about a wife the taboo is a sunken Wealth line,", "and in none of these is a Void Self line to be made the ground of judgment."] }
+      ],
+      "note": {
+        "yi": "这一句紧跟在「问富贵先看世象生旺，世空无成」之后，是转折：富贵要世爻旺，问道和问妻却不能因为世空就断坏。「财陷」书里在这里没有定义。",
+        "en": "This sentence follows straight after 'in asking about wealth and rank look first at whether the Self line is strong, and a Void Self means nothing is achieved', and turns from it: wealth and rank need a strong Self, but in asking about the Way or a wife one cannot judge it bad merely because Self is Void. The book does not define 'sunken' here."
+      },
+      "see": ["LY.MARRY.YM.01", "LY.MARRY.YM.16"]
+    },
+    {
+      "id": "LY.MARRY.YM.38",
+      "topic": "风险",
+      "chapter": "戒防章第八十八",
+      "chapter_en": "Chapter 88: Precautions",
+      "title": "防害以鬼为端：以婚姻淫乐而兆殃者，青龙之鬼发也",
+      "rule": {
+        "yi": "戒防章里总说防祸害以官鬼为开端：因为言语音信出祸的，是朱雀临着的官鬼发动；因为婚姻、淫乐而预兆祸殃的，是青龙临着的官鬼发动。",
+        "en": "The chapter on precautions says that in guarding against harm Pressure is where to begin: where harm comes through words and messages, it is the Pressure line on the Vermilion Bird moving; where disaster is foretold through marriage and lustful pleasure, it is the Pressure line on the Azure Dragon moving."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1925, 1926],
+          "zh": ["概言防害，", "以鬼为端。", "以言语音信而产祸者，", "朱雀之鬼发也；", "以婚姻淫乐而兆殃者，", "青龙之鬼发也；"],
+          "yi": ["总的说来，防祸害，", "以官鬼为开端。", "因为言语音信而出祸事的，", "是朱雀临着的官鬼发动；", "因为婚姻、淫乐而预兆祸殃的，", "是青龙临着的官鬼发动；"],
+          "en": ["In general, in guarding against harm,", "Pressure is where to begin.", "Where harm comes through words and messages,", "it is the Pressure line on the Vermilion Bird moving;", "where disaster is foretold through marriage and lustful pleasure,", "it is the Pressure line on the Azure Dragon moving;"] }
+      ],
+      "note": {
+        "yi": "这一句在戒防章开头，讲各种祸害由哪个六神临着的官鬼发动来。它把「婚姻」和「淫乐」放在一起，说的是因婚姻和淫乐的事出祸，不是说婚姻本身是祸；紧接着的一句讲勾陈、螣蛇、玄武、白虎各主什么祸，不属婚姻，没有收。",
+        "en": "This sentence stands at the head of the chapter on precautions and tells which six-spirit's Pressure line, moving, brings which kind of harm. It puts 'marriage' and 'lustful pleasure' together and speaks of harm coming through matters of marriage and pleasure, not of marriage itself as a harm; the sentence that follows, on what harm the Hook Earth, Coiling Snake, Dark Tortoise and White Tiger each bring, is not about marriage and is not taken."
+      },
+      "see": ["LY.MARRY.YM.36", "LY.MARRY.BSQS.07"]
+    },
+    {
+      "id": "LY.MARRY.YM.39",
+      "topic": "总则",
+      "chapter": "身命章第四十六",
+      "chapter_en": "Chapter 46: Life and fate",
+      "title": "筮室家用妻财、仆妾同焉；丈夫用官，良朋用应，不可错审",
+      "rule": {
+        "yi": "身命章里列各种人用什么爻：占家室（妻子）用妻财爻，仆人、妾也是一样；丈夫用官鬼爻，好朋友用应爻，不可以看错了。",
+        "en": "The chapter on life and fate lists which line stands for whom: divining the household (the wife) uses the Wealth line, and servants and concubines are the same; a husband uses the Pressure line, a good friend the Other line, and one must not judge it wrongly."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [952, 952],
+          "zh": ["筮室家而用于妻财，", "仆妾同焉；"],
+          "yi": ["占家室（妻子）用妻财爻，", "仆人、妾也是一样；"],
+          "en": ["Divining the household (the wife) uses the Wealth line,", "and servants and concubines are the same;"] },
+        { "by": "经", "book": "易冒", "range": [952, 952],
+          "zh": ["丈夫用官，", "良朋用应，", "而不可错审也。"],
+          "yi": ["丈夫用官鬼爻，", "好朋友用应爻，", "不可以看错了。"],
+          "en": ["for a husband use the Pressure line,", "for a good friend use the Other line,", "and one must not judge it wrongly."] }
+      ],
+      "note": {
+        "yi": "中间隔着的一句「筮手足而用于弟兄，宗娣同焉」讲兄弟姐妹，与婚姻无关，没有收。这里的「丈夫用官」和婚姻章开头的规矩（LY.MARRY.YM.01）是一回事，只是在这里多了一句「仆妾同焉」：仆人和妾也看妻财爻。",
+        "en": "The sentence in between, 'divining brothers and sisters uses the Peer line, clan kin the same', concerns siblings and not marriage, and is not taken. 'A husband uses Pressure' here is the same rule as at the head of the marriage chapter (LY.MARRY.YM.01); what this adds is 'servants and concubines the same': servants and concubines are also read from the Wealth line."
+      },
+      "see": ["LY.MARRY.YM.01", "LY.MARRY.YM.14"]
+    }
+  ]
+}

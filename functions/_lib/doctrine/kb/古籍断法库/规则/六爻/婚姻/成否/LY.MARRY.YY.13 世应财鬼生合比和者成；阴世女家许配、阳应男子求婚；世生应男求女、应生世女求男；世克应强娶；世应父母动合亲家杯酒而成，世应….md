@@ -9,6 +9,7 @@ books:
   - "[[易隐]]"
 speakers:
   - "本文"
+  - "书中卦例"
 dispute: false
 terms:
   - "[[妻财]]"
@@ -16,6 +17,8 @@ terms:
   - "[[官鬼]]"
   - "[[父母]]"
   - "[[日辰]]"
+  - "[[变爻]]"
+  - "[[冲]]"
   - "[[合]]"
 rule: "世、应、财、鬼相生、相合、比和的，成。世爻属阴，是女家许配；应爻属阳，是男方求婚。世爻生应爻，是男方求女方；应爻生世爻，是女方求男方。世爻克应爻，是用强力抢娶；世、应、日辰三样全合，是靠别人成事。世应与动的父母爻相合，两家亲家一杯酒就成了；世应与动的子孙爻相合，是两边的男女靠割襟之约成的。官鬼化成父母，男方的尊长促成；财爻化成父母，女方的尊长促成。世爻与财爻相生相合，女方的亲人促成；世爻与鬼爻相生相合，男方的亲人促成。"
 rule_en: "Where the Self, Other, Wealth and Pressure lines generate, combine or are in accord, it is made. With the Self line yin, the woman's family gives her in betrothal; with the Other line yang, the man's side is asking for the marriage. The Self line generating the Other: the man seeks the woman; the Other generating the Self: the woman seeks the man. The Self controlling the Other: taking her by force; the Self, Other and Day all combining: the matter is made through others. The Self and Other combining with a moving Resource line: the two in-law families settle it over a cup of wine; with a moving Output line: the boy and girl are betrothed by the lapel-cutting pact. Pressure changing into Resource: the man's elders bring it about; Wealth changing into Resource: the woman's elders bring it about. The Self line generating or combining with Wealth: the woman's relatives bring it about; with Pressure: the man's relatives bring it about."
@@ -54,6 +57,16 @@ aliases:
 > | 世与鬼爻生合，男家亲人成合。 | 世爻与鬼爻相生相合，男方的亲人促成。 | The Self line generating or combining with the Pressure line: the man's relatives bring it about. |
 
 ^q1
+
+## 书中卦例
+
+> [!quote]+ [[易隐]] 第 2446 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 己丑年丙子月甲寅旬戊午日，男占婚，得困之解。 | 己丑年丙子月甲寅旬戊午日，一位男子占婚事，得困卦变解卦。 | In the Jichou year, Bingzi month, Jiayin ten-day cycle, on a Wuwu day, a man divined a marriage and got Kun changing into Xie. |
+> | 世应生合，本宜成就，却被酉兄动冲卯财，化出申兄，又刑冲克世上寅财，必被人破也。 | 世爻应爻相生相合，本来该成，却被酉金兄弟爻动来冲卯木财爻，化出申金兄弟，又刑冲克世爻上的寅木财爻，一定被人破坏。 | Self and Other generate and combine, so it should have succeeded, but the You-metal Peer line moves and clashes the Mao-wood Wealth, changes out a Shen-metal Peer, and punishes, clashes and controls the Yin-wood Wealth on Self; it will surely be spoiled by someone. |
+
+^q2
 
 > [!note] 按
 > 「割襟」是旧时两家为尚未成年的儿女订婚的一种约定（割下各自的一片衣襟为信）；这是按通行说法译，原文没有解释。

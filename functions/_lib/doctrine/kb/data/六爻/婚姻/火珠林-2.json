@@ -1,0 +1,40 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "火珠林",
+  "chapter": "五乡专论·妻财独发",
+  "chapter_en": "The five-township summary: Wealth moving alone",
+  "ranges": {"火珠林": [196, 769]},
+  "units": [
+    {
+      "id": "LY.MARRY.HZL.27",
+      "topic": "风险",
+      "chapter": "五乡专论·妻财独发",
+      "chapter_en": "The five-township summary: Wealth moving alone",
+      "title": "妻财独发克父母：财爻宜旺不宜空、宜静不宜动，占婚姻财动必克翁姑；财鬼俱动则父有元神、翁姑不克",
+      "rule": {
+        "yi": "妻财爻独自发动，会克父母爻，也会生官鬼爻。所以妻财爻宜旺、不宜空，宜静、不宜动；只有占脱手货物，才要妻财发动。占婚姻，妻财爻动，一定克公婆（父母爻代表翁姑）；如果妻财和官鬼一起动，父母爻有官鬼这个生它的元神，公婆就不受克。",
+        "en": "A Wealth line moving alone controls the Resource line and can also generate the Pressure line. So Wealth should be strong and not Void, still and not moving; only in selling goods is it wanted moving. In a marriage divination, if Wealth moves it must control the parents-in-law (the Resource line stands for them); but if Wealth and Pressure both move, Resource has its Support, Pressure, and the parents-in-law are not harmed."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [197, 197],
+          "zh": ["大抵财动克父，亦能生鬼；", "然财爻宜旺，不宜空；", "宜静、不宜动。", "惟占脱货，要财爻发动。", "如占婚姻，财动必克翁姑；", "占讼，主克文书，若财鬼俱动者，父有元神而翁姑不克，文书有成。"],
+          "yi": ["大体上妻财爻动就克父母爻，也能生官鬼爻；", "不过妻财爻宜旺，不宜空；", "要静止不动，不要发动。", "只有占脱手货物，才要妻财爻发动。", "如果占婚姻，妻财爻动，一定克公婆；", "占官司，主克文书；如果妻财和官鬼一起动，父母爻有生它的元神，公婆就不被克，文书也能成。"],
+          "en": ["In general a Wealth line moving controls the Resource line, and can also generate the Pressure line;", "yet the Wealth line should be strong and not Void;", "still and not moving.", "Only in divining the selling of goods is the Wealth line wanted moving.", "If divining a marriage, when Wealth moves it must control the parents-in-law;", "in a lawsuit it controls the documents; but if Wealth and Pressure both move, the Resource line has its Support, the parents-in-law are not controlled, and the documents succeed."] },
+        { "by": "书中例", "book": "火珠林", "range": [769, 769],
+          "zh": ["兄动克妻，财动伤翁，不吉。"],
+          "yi": ["兄弟爻动克妻，妻财爻动伤公公，不吉。"],
+          "en": ["A Peer line moving controls the wife, a Wealth line moving harms the father-in-law: not lucky."] }
+      ],
+      "dispute": {
+        "yi": "《断易天机》说「妻财独发，损书伤父；若乘旺相，婚姻可成」（LY.MARRY.DYTJ.19）：同样是财动伤父，它说只要财乘旺相婚姻就可成；《火珠林》这里说的是财动必克公婆，要财鬼一起动才解。另外《海底眼》占妻看财爻要动（LY.MARRY.HDY.02），《火珠林》自己在婚姻里说占妻看财要静（LY.MARRY.HZL.04），财爻独发这一条和它是一致的。",
+        "en": "The Duanyi Tianji says 'Wealth moving alone harms documents and injures the father; if it rides strength, the marriage can be made' (LY.MARRY.DYTJ.19): both agree that Wealth moving harms the Resource line, but that book says that with Wealth strong the marriage can be made, while the Huozhulin here says Wealth moving must control the parents-in-law and is resolved only if Pressure moves too. The Haidi Yan says the Wealth line in divining a wife should move (LY.MARRY.HDY.02); the Huozhulin says in its marriage section that it should be still (LY.MARRY.HZL.04), and this passage agrees with that."
+      },
+      "note": {
+        "yi": "「翁姑」是丈夫的父母，公公婆婆；书里没有说这里是男占还是女占。父母爻在婚姻里代表这一层长辈，妻财是妻子；财动克父母，就是妻子和长辈相克。同一段的头一句「妻财独发，生鬼伤父；问病难瘳，占亲无路」讲病和尊亲，与婚姻无关，没有收。书里的占例一节（第 768 行起，十五件事共用一个卦）里「占婚姻」一条只有这一句「兄动克妻，财动伤翁，不吉」，例卦没有另作说明。「元神」是生用神的那一爻：官鬼生父母，所以官鬼一起动，父母有了靠山。",
+        "en": "'Weng gu' means the husband's parents, the father- and mother-in-law; the book does not say whether the asker is a man or a woman. The Resource line in a marriage stands for this generation of elders, and Wealth is the wife; Wealth moving and controlling Resource means the wife and the elders clash. The first line of the same section, 'Wealth moving alone generates Pressure and harms the father; in illness hard to recover, in divining a parent no way out', speaks of illness and elders and has nothing to do with marriage and is not taken. In the book's worked-example section (from line 768, one hexagram read for fifteen matters) the entry 'divining a marriage' is only this sentence, 'a Peer line moving controls the wife, a Wealth line moving harms the father-in-law: not lucky', with no further comment on the example hexagram. The 'Support' (yuanshen) is the line that generates the Subject: Pressure generates Resource, so when Pressure moves together the Resource line has its backing."
+      },
+      "see": ["LY.MARRY.DYTJ.19", "LY.MARRY.HDY.02", "LY.MARRY.HDY.06", "LY.MARRY.HZL.04"]
+    }
+  ]
+}

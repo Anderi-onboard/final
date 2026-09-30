@@ -82,7 +82,15 @@
         { "by": "旧注", "book": "卜筮大全", "range": [6086, 6086],
           "zh": ["世是一身之本，应为百岁之妻。", "若见相生相合，必然夫唱妇随。"],
           "yi": ["世是自身的根本，应是百岁相伴的妻。", "如果看到相生相合，必定夫唱妇随。"],
-          "en": ["The Self line is the root of one's own person; the Other line is the wife of a hundred years.", "If they generate or combine with each other, the husband leads and the wife follows without fail."] }
+          "en": ["The Self line is the root of one's own person; the Other line is the wife of a hundred years.", "If they generate or combine with each other, the husband leads and the wife follows without fail."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11582, 11582],
+          "zh": ["即如：子年未月己未日(旬空：子丑)，自占婚，得“明夷之丰”"],
+          "yi": ["比如：子年未月己未日（旬空：子、丑），自己占婚姻，得明夷卦变丰卦。"],
+          "en": ["For example: in a Zi year, Wei month, on a Jiwei day (void: Zi and Chou), a person divined their own marriage and got Mingyi changing into Feng."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11627, 11628],
+          "zh": ["断曰：丑官持世，虽临月破日破，幸得动化财爻回头之生，目下虽破，终有不破之时。", "明岁丑年，定逢佳偶。", "果次年四月得配良姻。", "应丑年者，世爻实破之年也，此非财爻生世，应爻克世耶？"],
+          "yi": ["断：丑土官鬼持世，虽然临着月破、日破，幸好动了化出财爻，得到回头生，眼下虽然破了，终究有不破的时候。", "明年是丑年，一定遇上好配偶。", "果然第二年四月得了一门好亲事。", "应在丑年，是因为丑年是世爻的破被填实的一年；这不正是财爻生世、应爻克世吗？"],
+          "en": ["Verdict: the Chou-earth Pressure holds Self; although it sits on the Month-break and the Day-break, it is fortunate that it moves and changes into a Wealth line and gets the returning generation; broken for now, there will in the end be a time when it is not broken.", "Next year, a Chou year, one will surely meet a fine mate.", "It came true: in the fourth month of the following year a good marriage was obtained.", "It answered in the Chou year because that is the year the break on the Self line is filled; is this not Wealth generating Self while Other controls Self?"] }
       ],
       "dispute": {
         "yi": "「应为百岁之妻」这句在《黄金策》「身命」章（占一生的那一章）的注里，不在它的婚姻章里。野鹤驳的是把它拿来占婚：重应而不重财是错的。夫妇章的正文替《黄金策》解释了为什么那样定（身命章一个卦要断六亲，财爻另有用处），也说占妻以财为重、应次之。两边都承认要兼看财爻，争的是谁为主。",
@@ -148,7 +156,15 @@
         { "by": "经", "book": "增删卜易", "range": [11668, 11670],
           "zh": ["世静空亡动化退，终须失望。", "动而空者，实空之月日必成；", "静而空者，终不成也；", "世动，化进必就，化退难成。", "应爻静而空破，及化退神，亦同此推。"],
           "yi": ["世爻静而落空亡，或者动了变成退神，终究要失望。", "动而落空的，到填实空亡的月份日子一定成；", "静而落空的，终究不成；", "世爻动，化成进神一定成，化成退神难成。", "应爻静而空、破，以及化成退神，也照这个推。"],
-          "en": ["A Self line that is still and Void, or that moves and changes into a Retreating spirit, ends in disappointment.", "If it moves and is Void, it succeeds in the month or day that fills the Void;", "if it is still and Void, it never succeeds;", "if the Self line moves, changing into an Advancing spirit it surely succeeds, changing into a Retreating spirit it is hard to accomplish.", "A still Other line that is Void or broken, or changes into a Retreating spirit, is judged the same way."] }
+          "en": ["A Self line that is still and Void, or that moves and changes into a Retreating spirit, ends in disappointment.", "If it moves and is Void, it succeeds in the month or day that fills the Void;", "if it is still and Void, it never succeeds;", "if the Self line moves, changing into an Advancing spirit it surely succeeds, changing into a Retreating spirit it is hard to accomplish.", "A still Other line that is Void or broken, or changes into a Retreating spirit, is judged the same way."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11629, 11629],
+          "zh": ["又如：子月癸酉日(旬空：戌亥)，自占婚，得“恒之鼎”"],
+          "yi": ["又如：子月癸酉日（旬空：戌、亥），自己占婚姻，得恒卦变鼎卦。"],
+          "en": ["Another example: in a Zi month on a Guiyou day (void: Xu and Hai), a person divined their own marriage and got Heng changing into Ding."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11636, 11636],
+          "zh": ["断曰：酉官持世，戌土财爻动而生之，又得世应相生，戌土虽值旬空，动不为空，明日出空之日，求之必允。", "果于次日巳时允婚，夫妇白头相守，儿女成行。"],
+          "yi": ["断：酉金官鬼持世，戌土财爻动来生它，又得世爻、应爻相生；戌土虽然值旬空，但动了就不算空，明天是它出空的日子，去求婚一定答应。", "果然第二天巳时答应了婚事，夫妻白头相守，儿女成行。"],
+          "en": ["Verdict: the You-metal Pressure holds Self, and the Xu-earth Wealth line moves and generates it; Self and Other also generate each other; though the Xu-earth falls in the Void of the ten-day cycle, a moving line is not Void, and tomorrow is the day it leaves the Void: ask for the marriage and it will surely be granted.", "It came true: on the next day, in the Si hour, the marriage was agreed, and husband and wife grew old together with a row of children."] }
       ],
       "see": ["LY.MARRY.HJC.12", "LY.MARRY.HJC.23"]
     },
@@ -283,7 +299,15 @@
         { "by": "经", "book": "增删卜易", "range": [11717, 11717],
           "zh": ["旺相爻逢六合，彼此同心。", "爻逢六合，占婚最宜，更要财官旺相为吉，男忌财逢破墓，女防官位克绝。", "六冲变六合者尤吉，求婚者，目下不允，久必成之，已成不睦者，终须和美。", "惟忌六冲卦，若无财官两旺，切不可成，即使勉就，若非死别，即是生离；", "六合变六冲，先允而后更张，已成者而终拆枕。"],
           "yi": ["旺相的爻逢六合，彼此同心。", "爻遇六合，占婚最合适，还要财爻、官爻旺相才吉，男子最忌财爻逢破、墓，女子要防官位被克、逢绝。", "六冲变成六合的更吉，求婚的，眼下不答应，时间久了一定成；已经成了但不和睦的，最终会和美。", "只忌六冲卦，如果没有财、官两旺，千万不可成婚，即使勉强成了，不是死别，就是生离；", "六合变成六冲，先是答应，后来改变，已经成的到头来也会拆散。"],
-          "en": ["Strong lines meeting a Six-combine: the two are of one heart.", "Lines meeting a Six-combine are most suitable for a marriage divination, and it is good only if Wealth and Pressure are strong too; a man fears Wealth meeting a break or tomb, a woman guards against the Pressure position being controlled or extinguished.", "A Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time; for a couple already wed but at odds, they will in the end be at peace and in harmony.", "Only a Six-clash hexagram is to be feared: unless both Wealth and Pressure are strong, on no account make the match; even if it is forced through, it ends either in death or in parting alive;", "a Six-combine changing into a Six-clash: first agreed, then changed; one already wed will in the end be split up."] }
+          "en": ["Strong lines meeting a Six-combine: the two are of one heart.", "Lines meeting a Six-combine are most suitable for a marriage divination, and it is good only if Wealth and Pressure are strong too; a man fears Wealth meeting a break or tomb, a woman guards against the Pressure position being controlled or extinguished.", "A Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time; for a couple already wed but at odds, they will in the end be at peace and in harmony.", "Only a Six-clash hexagram is to be feared: unless both Wealth and Pressure are strong, on no account make the match; even if it is forced through, it ends either in death or in parting alive;", "a Six-combine changing into a Six-clash: first agreed, then changed; one already wed will in the end be split up."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11718, 11718],
+          "zh": ["如：戌月庚申日(旬空：子丑)，占已娶有夫之妇，夫回成讼，断离否，得“困之兑”"],
+          "yi": ["比如：戌月庚申日（旬空：子、丑），占一个已经娶来、但本来有丈夫的妇人，她丈夫回来打官司，问会不会判离，得困卦变兑卦。"],
+          "en": ["For example: in a Xu month on a Gengshen day (void: Zi and Chou), a marriage to a woman who already had a husband was divined; the husband came back and brought a lawsuit, and the question was whether they would be ordered to part; the hexagram was Kun changing into Dui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11723, 11723],
+          "zh": ["财爻持世，美姻缘也。", "但凋零寅木被日辰冲散，且又六合变冲，不惟断离，须防有罪。", "彼曰：业已状告奸谋，不知何如？", "余曰：世爻，变爻与日辰共作三刑，汝两人俱难免杖责。", "后审出奸娶，男女皆杖而离之。"],
+          "yi": ["财爻持世，本是一门好姻缘。", "但是已经凋零的寅木被日辰冲散，而且六合变成了六冲，不但会判离，还要防犯罪受罚。", "他说：已经告了状，告的是奸谋，不知道会怎样？", "我说：世爻、变爻和日辰合成三刑，你们两人都免不了杖责。", "后来审出是奸娶，男女都被杖责，并判离。"],
+          "en": ["The Wealth line holds Self: a fine match, it seems.", "But the withered Yin-wood is clashed apart by the Day, and the Six-combine has changed into a clash; not only will they be ordered to part, one must beware of a penalty.", "He said: a suit has already been filed accusing us of an adulterous scheme; what will come of it?", "I said: the Self line, the changed line and the Day together form the three punishments; neither of you can escape a beating.", "Afterwards the trial found it an adulterous marriage; both man and woman were beaten and they were ordered to part."] }
       ],
       "see": ["LY.MARRY.HJC.04", "LY.MARRY.HJC.12"]
     },
@@ -304,8 +328,8 @@
           "en": ["The ancients favored Xian, Lin, Jie and Tai, and feared meeting Kui, Ge, Xie and Li."] },
         { "by": "觉子", "book": "增删卜易", "range": [11725, 11725],
           "zh": ["觉子曰：《易冒》云：卦得咸临节泰，若不遇合冲变冲，虽财官衰陷，随墓助伤，皆不为凶，暌革解离则为凶兆，虽用神全备而化合，亦不为吉，此言用神未胜于卦验也。"],
-          "yi": ["觉子说：《易冒》讲：卦得咸、临、节、泰，只要不遇到合冲、变冲，即使财、官衰弱陷落，随墓、助伤，也都不算凶；暌、革、解、离则是凶兆，即使用神齐全而化合，也不算吉，这话是说用神比不上卦名所示的应验。"],
-          "en": ["Juezi says: the Yi Mao states: if the hexagram obtained is Xian, Lin, Jie or Tai, then unless it meets a combination-clash or a change-clash, even if Wealth and Pressure are weak and fallen, following into a tomb or aiding harm, none of this counts as ill; Kui, Ge, Xie and Li are ill omens, and even if the Subject is complete and turns into a combination it is not auspicious either; this says that the Subject does not outweigh what the hexagram itself shows."] },
+          "yi": ["觉子说：《易冒》讲：卦得咸、临、节、泰，只要不遇到合、冲、变冲，即使财、官衰弱陷落，随墓、助伤，也都不算凶；暌、革、解、离则是凶兆，即使用神齐全而化合，也不算吉，这话是说用神比不上卦名所示的应验。"],
+          "en": ["Juezi says: the Yi Mao states: if the hexagram obtained is Xian, Lin, Jie or Tai, then unless it meets a combination, a clash, or a change into a clash, even if Wealth and Pressure are weak and fallen, following into a tomb or aiding harm, none of this counts as ill; Kui, Ge, Xie and Li are ill omens, and even if the Subject is complete and turns into a combination it is not auspicious either; this says that the Subject does not outweigh what the hexagram itself shows."] },
         { "by": "书中例", "book": "增删卜易", "range": [11726, 11726],
           "zh": ["曾于：巳月丁卯日(旬空：戌亥)，占婚于何时，得“地天泰”"],
           "yi": ["曾经：巳月丁卯日（旬空戌、亥），占婚事在什么时候，得地天泰卦。"],
@@ -324,8 +348,8 @@
           "en": ["The Self line is resting and trapped and broken by the Day, the Hai Water Wealth line is under a Month-break, and the hexagram is a Six-clash, a sign of great ill; so I knew the earlier Tai was not auspicious after all, and that judging by Wealth, Pressure, Self and Other remains right.", "Yet one must not take even this as certainly right: whenever in doubt, do not cling to the old methods in judging, but decide by the hexagram divined again.", "If the later hexagram is auspicious, judge it auspicious; if the later hexagram is ill, reckon it ill; the spirits do not deceive, and so neither side will be mistaken."] }
       ],
       "note": {
-        "yi": "《易冒》引文里「若不遇合冲变冲」没有标点，单看这一句可以有两种读法；但《易冒》自己在合冲章里给这两个词下过定义：六合的卦被日辰冲害在世应上叫合冲，卦化成六冲叫变冲（见 LY.MARRY.YM.25、LY.MARRY.YM.24，这一句原文见 LY.MARRY.YM.03），所以这里读作「合冲」和「变冲」。",
-        "en": "The Yi Mao quotation reads 'unless it meets he chong bian chong' with no punctuation, and taken alone the sentence can be read in two ways; but the Yi Mao itself defines the two terms in its chapter on combination and clash: a six-combine hexagram whose Self or Other is clashed or harmed by the Day is a combination-clash, and a hexagram that changes into a six-clash hexagram is a change-clash (see LY.MARRY.YM.25 and LY.MARRY.YM.24, and the sentence itself at LY.MARRY.YM.03), so it is read here as 'combination-clash' and 'change-clash'."
+        "yi": "《易冒》引文里「若不遇合冲变冲」标点不明，可以读作「合、冲、变冲」，也可以读作「合变冲、冲变冲」；这里照字面译，没有替书选一种读法。",
+        "en": "The Yi Mao quotation reads 'unless it meets he chong bian chong' without clear punctuation: it may be 'combination, clash, change into a clash' or 'combination changing to a clash, clash changing to a clash'. It is translated literally without choosing a reading for the book."
       }
     },
     {

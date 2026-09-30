@@ -9,8 +9,11 @@ books:
   - "[[增删卜易]]"
 speakers:
   - "本文"
+  - "书中卦例"
 dispute: false
 terms:
+  - "[[妻财]]"
+  - "[[世爻]]"
   - "[[应爻]]"
   - "[[旬空]]"
   - "[[退神]]"
@@ -44,6 +47,25 @@ aliases:
 > | 应爻静而空破，及化退神，亦同此推。 | 应爻静而空、破，以及化成退神，也照这个推。 | A still Other line that is Void or broken, or changes into a Retreating spirit, is judged the same way. |
 
 ^q1
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 11629 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 又如：子月癸酉日(旬空：戌亥)，自占婚，得“恒之鼎” | 又如：子月癸酉日（旬空：戌、亥），自己占婚姻，得恒卦变鼎卦。 | Another example: in a Zi month on a Guiyou day (void: Xu and Hai), a person divined their own marriage and got Heng changing into Ding. |
+
+^q2
+
+## 书中卦例
+
+> [!quote]+ [[增删卜易]] 第 11636 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 断曰：酉官持世，戌土财爻动而生之，又得世应相生，戌土虽值旬空，动不为空，明日出空之日，求之必允。 | 断：酉金官鬼持世，戌土财爻动来生它，又得世爻、应爻相生；戌土虽然值旬空，但动了就不算空，明天是它出空的日子，去求婚一定答应。 | Verdict: the You-metal Pressure holds Self, and the Xu-earth Wealth line moves and generates it; Self and Other also generate each other; though the Xu-earth falls in the Void of the ten-day cycle, a moving line is not Void, and tomorrow is the day it leaves the Void: ask for the marriage and it will surely be granted. |
+> | 果于次日巳时允婚，夫妇白头相守，儿女成行。 | 果然第二天巳时答应了婚事，夫妻白头相守，儿女成行。 | It came true: on the next day, in the Si hour, the marriage was agreed, and husband and wife grew old together with a row of children. |
+
+^q3
 
 ## 相关
 

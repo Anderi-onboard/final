@@ -66,6 +66,20 @@ aliases:
 
 ^q2
 
+## 《增删卜易》正文(未标说话人)
+
+> [!quote]+ [[增删卜易]] 第 8134 行 · Zengshan Buyi, main text (speaker not marked)
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 兄爻临世，财耗贫寒。 | 兄弟爻临在世爻上，钱财耗散，贫寒。 | A Peer line on Self: wealth wasted, poverty. |
+> | 旧系“遇兄，则财莫能聚“。 | 旧书里说：「遇到兄弟，钱财就聚不起来。」 | The old saying is: 'meeting a Peer line, wealth cannot gather.' |
+> | 解注有云：“世遇兄爻，必克妻妾，一生必不聚财。” | 解注说：「世爻遇到兄弟爻，一定克妻妾，一生一定聚不起钱财。」 | The commentary says: 'When Self meets a Peer line it must control wife and concubines, and in a whole life wealth surely will not gather.' |
+> | 既以为克妻，又以为破耗，执此而论，世之伤妻者，皆贫困之人也。 | 既然认为克妻，又认为破耗，照这样说，世上伤了妻子的人，都是贫困的人了。 | Since it is taken both as harming the wife and as wasting wealth, by that reasoning all the people in the world who have lost a wife are poor. |
+> | 假使贫者偕老，富者断弦，何以决之？ | 假使穷人白头偕老，富人却断了弦，又怎么解释？ | Suppose the poor grow old together while the rich lose their wives: how would that be explained? |
+> | 故余以分占为得理。 | 所以我认为分开占才合道理。 | So I hold that divining separately is what accords with reason. |
+
+^q3
+
 > [!warning] 打架
 > 野鹤批评的是「诸书」的一卦兼断，其中特别点了《易林补遗》一句「兄动妻亡财耗散」。这句在本库的《易林补遗》里没有原样出现，意思相近的是「兄动，妻灾奴仆患，资财耗散事无成」（该书第 109 行）和「兄动损妻，财无积聚」（第 441 行），应是转述。
 >

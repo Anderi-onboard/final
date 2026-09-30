@@ -56,7 +56,7 @@ aliases:
 > [!quote]+ [[增删卜易]] 第 11725 行 · Juezi (Li Wenhui, Zengshan Buyi)
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
-> | 觉子曰：《易冒》云：卦得咸临节泰，若不遇合冲变冲，虽财官衰陷，随墓助伤，皆不为凶，暌革解离则为凶兆，虽用神全备而化合，亦不为吉，此言用神未胜于卦验也。 | 觉子说：《易冒》讲：卦得咸、临、节、泰，只要不遇到合冲、变冲，即使财、官衰弱陷落，随墓、助伤，也都不算凶；暌、革、解、离则是凶兆，即使用神齐全而化合，也不算吉，这话是说用神比不上卦名所示的应验。 | Juezi says: the Yi Mao states: if the hexagram obtained is Xian, Lin, Jie or Tai, then unless it meets a combination-clash or a change-clash, even if Wealth and Pressure are weak and fallen, following into a tomb or aiding harm, none of this counts as ill; Kui, Ge, Xie and Li are ill omens, and even if the Subject is complete and turns into a combination it is not auspicious either; this says that the Subject does not outweigh what the hexagram itself shows. |
+> | 觉子曰：《易冒》云：卦得咸临节泰，若不遇合冲变冲，虽财官衰陷，随墓助伤，皆不为凶，暌革解离则为凶兆，虽用神全备而化合，亦不为吉，此言用神未胜于卦验也。 | 觉子说：《易冒》讲：卦得咸、临、节、泰，只要不遇到合、冲、变冲，即使财、官衰弱陷落，随墓、助伤，也都不算凶；暌、革、解、离则是凶兆，即使用神齐全而化合，也不算吉，这话是说用神比不上卦名所示的应验。 | Juezi says: the Yi Mao states: if the hexagram obtained is Xian, Lin, Jie or Tai, then unless it meets a combination, a clash, or a change into a clash, even if Wealth and Pressure are weak and fallen, following into a tomb or aiding harm, none of this counts as ill; Kui, Ge, Xie and Li are ill omens, and even if the Subject is complete and turns into a combination it is not auspicious either; this says that the Subject does not outweigh what the hexagram itself shows. |
 
 ^q2
 
@@ -99,6 +99,6 @@ aliases:
 ^q6
 
 > [!note] 按
-> 《易冒》引文里「若不遇合冲变冲」没有标点，单看这一句可以有两种读法；但《易冒》自己在合冲章里给这两个词下过定义：六合的卦被日辰冲害在世应上叫合冲，卦化成六冲叫变冲（见 LY.MARRY.YM.25、LY.MARRY.YM.24，这一句原文见 LY.MARRY.YM.03），所以这里读作「合冲」和「变冲」。
+> 《易冒》引文里「若不遇合冲变冲」标点不明，可以读作「合、冲、变冲」，也可以读作「合变冲、冲变冲」；这里照字面译，没有替书选一种读法。
 >
-> *Note:* The Yi Mao quotation reads 'unless it meets he chong bian chong' with no punctuation, and taken alone the sentence can be read in two ways; but the Yi Mao itself defines the two terms in its chapter on combination and clash: a six-combine hexagram whose Self or Other is clashed or harmed by the Day is a combination-clash, and a hexagram that changes into a six-clash hexagram is a change-clash (see LY.MARRY.YM.25 and LY.MARRY.YM.24, and the sentence itself at LY.MARRY.YM.03), so it is read here as 'combination-clash' and 'change-clash'.
+> *Note:* The Yi Mao quotation reads 'unless it meets he chong bian chong' without clear punctuation: it may be 'combination, clash, change into a clash' or 'combination changing to a clash, clash changing to a clash'. It is translated literally without choosing a reading for the book.

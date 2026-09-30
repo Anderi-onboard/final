@@ -9,12 +9,19 @@ books:
   - "[[易隐]]"
 speakers:
   - "本文"
+  - "书中卦例"
 dispute: false
 terms:
+  - "[[妻财]]"
   - "[[兄弟]]"
   - "[[父母]]"
+  - "[[月建]]"
+  - "[[旺相]]"
+  - "[[休囚]]"
   - "[[冲]]"
   - "[[合]]"
+  - "[[外卦]]"
+  - "[[本宫]]"
 rule: "父母爻化成官鬼，男方的尊长阻隔；父母爻化成财爻，女方的尊长阻隔。父母爻空，没有主婚的人，只能苟且成合。父母爻克世应，父母阻挠；兄弟爻冲世应，兄弟阻挠；兄弟爻加煞而动，一定争斗。鬼爻化鬼爻，男家反复不定；兄弟爻化兄弟爻，遇到阻碍才能成。两个父母爻一起发动，主婚的不止一人。财官动而相合，先私通后娶（自刑的应验）。两个官爻一起动，两家来求娶；两个鬼爻克应爻，女方许给了两家。"
 rule_en: "Resource changing into Pressure: the man's elders obstruct; Resource changing into Wealth: the woman's elders obstruct. With the Resource line Void there is no one to preside at the wedding, and the union is made irregularly. The Resource line controlling the Self and Other lines: the parents obstruct; a Peer line clashing the Self and Other: the brothers obstruct; a Peer line with a baleful star and moving: quarrels are certain. Pressure changing into Pressure: the man's family goes back and forth; a Peer line changing into a Peer line: made only after meeting obstruction. Two Resource lines moving together: more than one person presides at the wedding. Wealth and Pressure moving and combining: illicit relations first, marriage after (it proves true where there is self-punishment). Two Pressure lines moving together: two families ask for the bride; two Pressure lines controlling the Other line: the woman is promised to two families."
 tags:
@@ -53,6 +60,20 @@ aliases:
 > | 两鬼克应，女许二家。 | 两个鬼爻克应爻，女方许给了两家。 | Two Pressure lines controlling the Other line: the woman is promised to two families. |
 
 ^q1
+
+## 书中卦例
+
+> [!quote]+ [[易隐]] 第 2443–2445 行 · Case from the book
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 己丑年丙子月甲子旬丁卯日，男占婚，得睽之归妹。 | 己丑年丙子月甲子旬丁卯日，一位男子占婚事，得睽卦变归妹卦。 | In the Jichou year, Bingzi month, Jiazi ten-day cycle, on a Dingmao day, a man divined a marriage and got Kui changing into Guimei. |
+> | 本宫子水财，正值月建，离卦无气，而财爻有气，家虽贫而貌则美。 | 本宫的子水财爻，正好是月建，在离卦里没有气，但财爻自己有气，她家虽然贫穷而容貌却美。 | The Zi-water Wealth line of the home palace is exactly the Month branch; in the Li trigram it has no qi, yet the Wealth line itself has qi: her family is poor though her looks are fair. |
+> | 但性急贪淫，色黑而面圆耳。 | 只是性子急躁贪淫，肤色黑而脸圆。 | But she is hasty and lustful, dark in colour with a round face. |
+> | 奈财伏兄下，世应化爻俱兄，克财者多，决有人互相把持。 | 可惜财爻伏在兄弟爻下，世爻、应爻、变爻都是兄弟，克财的多，一定有人互相把持。 | Unfortunately Wealth is hidden beneath a Peer line, and Self, Other and the changed lines are all Peer lines, so many control Wealth and surely some people hold each other back. |
+> | 应又冲世，化爻又冲应，本宫父母真空，是无主婚之人，故不成也。 | 应爻又冲世爻，变爻又冲应爻，本宫的父母爻真空，是没有主婚人，所以不成。 | Other again clashes Self and the changed line clashes Other, and the Resource line of the home palace is truly Void, so there is no one to preside over the match; therefore it is not made. |
+> | 细看财官同居外卦，惟西北方亲上做亲者，是其姻缘也。 | 仔细看财爻官爻同在外卦，只有西北方面亲上加亲的婚事，才是他的姻缘。 | Looking closely, Wealth and Pressure both stand in the outer trigram; only a match in the north-west, a marriage between kin, would be his fate. |
+
+^q2
 
 ## 他本同文、异文
 
