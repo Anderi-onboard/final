@@ -1,0 +1,254 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易隐",
+  "chapter": "疾病占",
+  "chapter_en": "Divining illness",
+  "ranges": {"易隐": [2974, 3042]},
+  "units": [
+    {
+      "id": "LY.ILL.YY.01",
+      "topic": "总则",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "占疾病要慎而详：大端有四——占死生、占病症、占医药、占鬼崇；病何日起、病何处得是疾病的附占（游南子）",
+      "rule": {
+        "yi": "人不幸有了病来占，不可以不谨慎、不周详。大的方面有四件事：占他是死是活，占他是什么病症，占医和药，占有没有鬼崇；至于病是哪一天起的、在哪里得的，是疾病附带要占的事。",
+        "en": "When a person is unfortunate enough to fall ill and divines about it, one must be careful and thorough. There are four main heads: whether he will live or die, what the illness is, doctors and medicine, and ghostly influences; when the illness began and where it was caught are subsidiary matters of illness."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2976, 2976],
+          "zh": ["游南子曰，夫人不幸有疾而占之，不可不慎而详也。", "然大端有四，占其死生，占其病症，占其医药，占其鬼崇而已。", "若乃病何日起，病何处得，亦疾病之附占也。"],
+          "yi": ["游南子说：人不幸有了病来占，不可以不谨慎、不周详。", "然而大的方面有四件：占他的死活，占他的病症，占他的医药，占有没有鬼崇，仅此而已。", "至于病是哪一天起的、在哪里得的，也是疾病的附带占问。"],
+          "en": ["Master Younan says: when a person is unfortunate enough to fall ill and divines about it, one cannot but be careful and thorough.", "But the main heads are four: divine whether he lives or dies, divine the symptoms, divine the doctors and medicine, and divine the ghostly influences, and that is all.", "As for what day the illness began and where it was caught, these too are subsidiary questions of illness."] }
+      ],
+      "note": {
+        "yi": "「病症」在这里是病是什么样的症候，「鬼崇」是鬼神作祟。易隐这一章正是按这四件事排的：二、生死；三、病症；六、医药；七、鬼崇，另有四、病因，五、饮食，八、病起何方，九、病起何年月日。增删卜易的李我平也把来问的事分成吉凶、犯了什么鬼神、病源三类（见 LY.ILL.ZS.39）。",
+        "en": "'Bingzheng' here is the pattern of symptoms the illness shows, and 'guisui' is ghosts and spirits making trouble. The chapter of the Yi Yin is arranged by just these heads: 2 life and death, 3 symptoms, 6 doctors and medicine, 7 ghostly influences, with 4 the cause of the illness, 5 food and drink, 8 where the illness arose and 9 when it arose in addition. Li Woping in the Zengshan Buyi likewise sorts the matters asked into fortune, which ghost or spirit was offended, and the source of the illness (see LY.ILL.ZS.39)."
+      },
+      "see": ["LY.ILL.YY.02", "LY.ILL.YY.03", "LY.ILL.ZS.39"]
+    },
+    {
+      "id": "LY.ILL.YY.02",
+      "topic": "取象",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼谷分爻：六爻各配身体部位和一个吉凶名——六爻头脑黄泉、五爻心肺棺椁、四爻脾脏福德、三爻肝肾哭声、二爻腿股吊客、初爻足丧门",
+      "rule": {
+        "yi": "鬼谷把六爻这样分：六爻是头脑，配黄泉；五爻是心肺，配棺椁；四爻是脾脏，配福德；三爻是肝肾，配哭声；二爻是腿和大腿，配吊客；初爻是足，配丧门。",
+        "en": "Guigu divides the six lines as follows: the sixth line is the head and brain, matched with the Yellow Springs; the fifth is the heart and lungs, with the Coffin; the fourth is the spleen, with Fortune; the third is the liver and kidneys, with Wailing; the second is the legs and thighs, with the Guest of Condolence; the first is the feet, with the Mourning Gate."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2978, 2985], "literal": ["子孙"],
+          "zh": ["鬼谷分爻", "头脑黄泉", "心肺棺椁", "脾脏福德", "肝肾哭声", "腿股吊客", "足丧门"],
+          "yi": ["鬼谷分爻（表）：", "头脑，黄泉；", "心肺，棺椁；", "脾脏，福德；", "肝肾，哭声；", "腿股，吊客；", "足，丧门。"],
+          "en": ["Guigu's division of the lines (table):", "head and brain, the Yellow Springs;", "heart and lungs, the Coffin;", "spleen, Fortune;", "liver and kidneys, Wailing;", "legs and thighs, the Guest of Condolence;", "feet, the Mourning Gate."] }
+      ],
+      "note": {
+        "yi": "表是分两栏排的，书里没有说是从哪一爻排起。按后面「又分宫」一段（初爻是足，二爻股膝，三爻腹腰，四爻胸胃乳，五爻面项手，六爻头脑），头脑在六爻、足在初爻，可知表是从六爻往下排到初爻；右栏的黄泉、棺椁、福德、哭声、吊客、丧门书里没有解释，按字面译。「福德」在这里是这一爻配的名目，不是六亲里的子孙。",
+        "en": "The table is set out in two columns and the book does not say which line it starts from. By the later passage 'again by the division of the lines' (first line the feet, second the thighs and knees, third the belly and waist, fourth the chest, stomach and breasts, fifth the face, neck and hands, sixth the head and brain), the head is on the sixth line and the feet on the first, so the table runs from the sixth line down to the first; the right column — Yellow Springs, Coffin, Fortune, Wailing, Guest of Condolence, Mourning Gate — is not explained in the book and is rendered literally. 'Fortune' (fude) here is the name matched to that line and is not the Output line of the six relations."
+      },
+      "see": ["LY.ILL.YY.12", "LY.ILL.HJC.32"]
+    },
+    {
+      "id": "LY.ILL.YY.03",
+      "topic": "总则",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "占病取用爻：自占以世爻、身爻、命爻为用，代占以应爻为用；占家亲祖妣用官鬼、父兄妻子各以所属；五属不上卦从《黄金策》分爻取用；奴占家主用五爻、占主母用二爻",
+      "rule": {
+        "yi": "占病取用爻：自己占，拿世爻、身爻、命爻做用；替别人占，拿应爻做用。占家里的亲人，祖父祖母用官鬼，父亲、兄弟、妻子、子女各用自己所属的那一类爻；这五类亲属如果不上卦，就按《黄金策》分爻的办法取用。奴仆丁口占家主，拿五爻做用；占主母，拿二爻做用。",
+        "en": "Taking the Subject line in divining illness: in divining for oneself, the Self line, the Body line and the destiny line are the Subject; in divining for another, the Other line is the Subject. In divining for kin of the household, grandfather and grandmother use the Pressure line, and father, brother, wife and child each use the relation to which they belong; if these five kinds of relative do not appear in the hexagram, take the Subject by the Huangjin Ce's division of the lines. A servant or hired hand divining for the master of the house takes the fifth line as the Subject, and for the mistress the second line."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2989, 2989],
+          "zh": ["自占以世爻身爻命爻为用，代占以应爻为用。", "占家亲，祖妣用官鬼，父兄妻子，以各属为用。", "如五属不上卦者，则从黄金策分爻取用。", "若奴丁占家主，以五爻为用。", "占主母，以二爻为用也。"],
+          "yi": ["自己占，拿世爻、身爻、命爻做用；替别人占，拿应爻做用。", "占家里的亲人，祖父祖母用官鬼，父亲、兄弟、妻子、子女各用自己所属的那一类爻。", "如果这五类亲属不上卦，就按《黄金策》分爻的办法取用。", "如果奴仆丁口占家主，拿五爻做用。", "占主母，拿二爻做用。"],
+          "en": ["In divining for oneself, the Self line, the Body line and the destiny line are the Subject; in divining for another, the Other line is the Subject.", "In divining for kin of the household, grandfather and grandmother use the Pressure line, and father, brother, wife and child each use the relation to which they belong.", "If these five kinds of relative do not appear in the hexagram, take the Subject by the Huangjin Ce's division of the lines.", "If a servant or hired hand divines for the master of the house, the fifth line is the Subject.", "For the mistress of the house, the second line is the Subject."] }
+      ],
+      "dispute": {
+        "yi": "代占取哪一爻：易隐说代占以应爻为用，但占家里的亲人又各用所属的六亲；黄金策的旧注和王洪绪对这一点也不一致，旧注说自占以世为主、代占以应为主，王洪绪说占夫用官、占妻用财、按所占的人取（见 LY.ILL.HJC.33）。增删卜易则按所占的人取用神，不取应爻。",
+        "en": "Which line to take in divining for another: the Yi Yin says the Other line is the Subject in divining for another, yet for kin of the household it takes each relation as its own; the old commentary and Wang Hongxu on the Huangjin Ce also disagree on this, the old commentary saying the Self is the master in divining for oneself and the Other in divining for another, and Wang Hongxu taking Pressure for a husband and Wealth for a wife, by the person divined (see LY.ILL.HJC.33). The Zengshan Buyi takes the Subject by the person divined and does not take the Other line."
+      },
+      "note": {
+        "yi": "「五属」是父母、兄弟、妻财、子孙、官鬼这五类六亲；这里说的「黄金策分爻」是黄金策疾病章讲的按所占是谁取六亲的办法。「身爻」指卦身，「命爻」指本命所在的爻。",
+        "en": "The 'five kinds' are the five relations Resource, Peer, Wealth, Output and Pressure; the 'Huangjin Ce division of the lines' is the way the Huangjin Ce's chapter on illness takes the relation according to who is divined. 'The Body line' means the hexagram Body and 'the destiny line' the line where the person's natal branch stands."
+      },
+      "see": ["LY.ILL.YY.01", "LY.ILL.HJC.33", "LY.ILL.ZS.01"]
+    },
+    {
+      "id": "LY.ILL.YY.04",
+      "topic": "应期",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "生死·愈：用爻遇龙福月解天医天喜生合即愈；鬼伤用者子孙生旺临值之日、子孙生合用爻之日、鬼被刑害克冲之日愈；用入胎墓者刑冲胎墓之日愈；死绝者生用之日愈；伏藏而元神旺忌神衰者用爻当值之日愈；可救者待鬼衰身旺世生之日愈",
+      "rule": {
+        "yi": "用爻遇到青龙、福德、月解、天医、天喜这些吉神，临在它上面或者生它、合它，病就会好。鬼伤到用爻的，子孙生旺、当值的那天好，子孙来生用爻、合用爻的那天好，鬼被刑、害、克、冲的那天好。用爻入胎、入墓的，刑冲那个胎、墓的日子好；用爻死、绝的，生它的那天好；用爻在『病』位的，它生旺的那天好；用爻伏藏而原神旺、忌神衰的，用爻当值的那天好；用爻的墓遇空、绝遇生、克用的鬼遇克，都可以救，等鬼衰、身旺、世被生的那天好。",
+        "en": "If the Subject line meets the auspicious spirits Dragon, Fortune, Month Release, Heavenly Doctor or Heavenly Joy, sitting on it or generating or combining with it, he recovers. If the ghost harms the Subject line, he recovers on the day Output is strong and on duty, on the day Output generates or combines with the Subject line, and on the day the ghost is punished, harmed, controlled or clashed. If the Subject line enters Womb or a tomb, he recovers on the day that punishes or clashes the Womb or tomb; if it is in Death or Extinction, on the day that generates it; if it is at Sickness, on the day it is born or strong; if the Subject line is hidden but the Support is strong and the Adversary weak, on the day the Subject line comes on duty; and if its tomb meets Void, its Extinction meets generation, or the ghost that harms it meets control, he can be saved, and recovers on the day the ghost is weak, the Body strong and the Self generated."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["用爻遇龙福月解天医天喜临持生合者，即愈也。", "鬼伤用者，子孙生旺临值之日愈也，子孙生合用爻之日愈也，鬼被刑害克冲之日愈也。", "用入胎墓者，刑冲胎墓之日愈也。", "用爻死绝者，生用之日愈也。", "用爻值病者，生旺之日愈也。", "用爻伏藏而元神旺，忌神衰者，用爻临值之日愈也。", "用墓逢空，用绝逢生，用鬼逢克者，可救也，待鬼衰身旺世生之日愈也。"],
+          "yi": ["用爻遇到青龙、福德、月解、天医、天喜这些吉神，临在它上面或者生它、合它的，就会好。", "鬼爻伤到用爻的，子孙生旺、当值的那天好，子孙来生用爻、合用爻的那天好，鬼被刑、害、克、冲的那天好。", "用爻入了胎、墓的，刑冲那个胎、墓的日子好。", "用爻死、绝的，生它的那天好。", "用爻正处在『病』位的，它生旺的那天好。", "用爻伏藏，而原神旺、忌神衰的，用爻当值的那天好。", "用爻的墓遇到空，用爻的绝遇到生，伤用爻的鬼遇到克，这些都可以救，等到鬼衰、身旺、世被生的那天好。"],
+          "en": ["If the Subject line meets the Dragon, Fortune, Month Release, Heavenly Doctor or Heavenly Joy, sitting on it or generating or combining with it, he recovers at once.", "If the ghost harms the Subject line, he recovers on the day Output is strong and on duty, on the day Output generates or combines with the Subject line, and on the day the ghost is punished, harmed, controlled or clashed.", "If the Subject line enters Womb or a tomb, he recovers on the day that punishes or clashes the Womb or tomb.", "If the Subject line is in Death or Extinction, he recovers on the day that generates it.", "If the Subject line is at the stage of Sickness, he recovers on the day it is born or strong.", "If the Subject line is hidden but the Support is strong and the Adversary weak, he recovers on the day the Subject line comes on duty.", "If the Subject's tomb meets Void, its Extinction meets generation, or the ghost that harms it meets control, he can be saved, and recovers on the day the ghost is weak, the Body strong and the Self generated."] },
+        { "by": "书中例", "book": "易隐", "range": [3034, 3034],
+          "zh": ["庚寅年戊寅月辛未日，子占父病，得解之困。", "本宫子水父母，伏寅木之下，虽云泄气，喜申金，元神独发，又化进神，更得日辰生之，决能生父。", "惟不宜土财持世，喜岁月与伏下寅木克之，果于申酉日愈也。"],
+          "yi": ["庚寅年戊寅月辛未日，儿子占父亲的病，得到解卦变困卦。", "本宫的子水父母爻伏在寅木下面，虽然说被泄气，但喜有申金原神独自发动，又变出进神，再得日辰生它，一定能生扶父亲。", "只是不适合土财爻持世，好在岁、月和伏在下面的寅木克制它，果然在申酉日好了。"],
+          "en": ["In the Gengyin year, the Wuyin month, on the Xinwei day, a son divined about his father's illness and obtained Xie changing into Kun (Confinement).", "The Zi Water Resource line of the home palace lies hidden beneath Yin Wood and, though drained, is fortunate that Shen Metal, the Support, moves alone and further changes into an Advancing spirit, and is generated by the Day as well: it will surely give life to the father.", "Only it is unsuitable that an Earth Wealth line holds the Self position, but the Year, the Month and the Yin Wood hidden beneath control it, and indeed he recovered on a Shen or You day."] },
+        { "by": "书中例", "book": "易隐", "range": [3040, 3040],
+          "zh": ["庚寅年癸未月戊戌日，妻占夫病，得革之困。", "土用为神，丑土月破，化入辰墓，兄生子而子克官，人皆云凶。", "岂知本宫辰土，得寅木动生午火相扶，后至戊申日，忌神逢绝，官遇长生而愈也。"],
+          "yi": ["庚寅年癸未月戊戌日，妻子占丈夫的病，得到革卦变困卦。", "土是用神，丑土月破，变出去入了辰墓，兄爻生子孙、子孙克官爻，大家都说凶。", "哪知道本宫的辰土得到寅木发动生午火来扶助，后来到戊申日，忌神遇到绝，官爻遇到长生，病就好了。"],
+          "en": ["In the Gengyin year, the Guiwei month, on the Wuxu day, a wife divined about her husband's illness and obtained Ge changing into Kun (Confinement).", "Earth is the Subject; Chou Earth is in Month-break and changes into the Chen tomb; Peer generates Output and Output controls Pressure; everyone said it was ominous.", "But they did not know that Chen Earth of the home palace was helped by Yin Wood moving to generate Wu Fire, and later on the Wushen day the Adversary met Extinction and Pressure met Birth, and he recovered."] },
+        { "by": "书中例", "book": "易隐", "range": [3042, 3042],
+          "zh": ["庚寅年甲申月癸酉日，夫占妻病，得履之小畜。", "五爻财伏世下，飞上申金生之，三爻兄弟虽动，喜五爻子动，兄乃贪生忘克，而子得生气，生财愈有力矣。", "后至甲申日，财遇长生而愈然也。"],
+          "yi": ["庚寅年甲申月癸酉日，丈夫占妻子的病，得到履卦变小畜卦。", "五爻的财伏在世爻下面，飞神上的申金生它；三爻兄弟虽然发动，好在五爻子孙也动，兄爻贪着生子孙而忘了克财，子孙得到生气，再去生财就更有力了。", "后来到甲申日，财爻遇到长生，病就好了。"],
+          "en": ["In the Gengyin year, the Jiashen month, on the Guiyou day, a husband divined about his wife's illness and obtained Lu changing into Xiaoxu.", "The Wealth on the fifth line is hidden beneath the Self line and Shen Metal, the flying line above it, generates it; though the Peer on the third line moves, it is fortunate that Output on the fifth line also moves, so Peer, greedy to generate, forgets to control, and Output, receiving the life force, generates Wealth with more strength.", "Later, on the Jiashen day, Wealth met Birth and he recovered."] }
+      ],
+      "note": {
+        "yi": "「龙福月解天医天喜」是几个吉神：龙是青龙，福是福德，月解、天医、天喜是神煞，书里没有列表。「胎」是十二长生里的胎位。三个断例都在书末的「附断例」里，这里分别挂在它们验证的判断下：解之困（元神独发又化进神，申酉日愈）、革之困（忌神逢绝、官遇长生，戊申日愈）、履之小畜（财遇长生，甲申日愈）。",
+        "en": "'The Dragon, Fortune, Month Release, Heavenly Doctor and Heavenly Joy' are auspicious spirits: the Dragon is the Azure Dragon, Fortune is Fude, and Month Release, Heavenly Doctor and Heavenly Joy are spirit-stars, which the book does not list. 'Womb' is the Womb stage of the twelve life stages. The three cases are from the 'appended cases' at the end of the section and are hung here under the judgments they bear out: Xie into Kun (the Support moving alone and changing into an Advancing spirit, cured on a Shen or You day), Ge into Kun (the Adversary meeting Extinction and Pressure meeting Birth, cured on the Wushen day), and Lu into Xiaoxu (Wealth meeting Birth, cured on the Jiashen day)."
+      },
+      "see": ["LY.ILL.YY.05", "LY.ILL.YY.03", "LY.ILL.HJC.39", "LY.ILL.HJC.47", "LY.ILL.HJC.57", "LY.ILL.ZS.04"]
+    },
+    {
+      "id": "LY.ILL.YY.05",
+      "topic": "生死",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "生死·必死：用爻逢虎鬼与天刑飞廉大杀三坵五墓丧门吊客死炁死符丧车浴盆而动持动克必死；忌神动遇生忌之日死、静遇忌值之日死；用随鬼入墓、财动助鬼伤用、世应双空、财旺用空、鬼生命绝、鬼动化墓、月卦化墓、用化墓绝、用逢月绝皆死",
+      "rule": {
+        "yi": "用爻遇到白虎、鬼，以及天刑、飞廉、大杀、三坵五墓、丧门、吊客、死炁、死符、丧车、浴盆这些凶煞，它们发动而临在用爻上或发动来克用爻，一定死。忌神发动的，遇到生忌神的那天死；忌神安静的，遇到忌神当值的那天死。此外用爻随鬼入墓、财爻发动帮鬼伤用、世应都落空、财旺而用爻落空、鬼旺而命爻绝、鬼动变入墓、月卦变入墓、用爻变入墓绝、用爻遇月绝，都是死。",
+        "en": "If the Subject line meets the Tiger, the ghost, and the malign stars Heavenly Punishment, Feilian, Great Killing, Three Mounds and Five Tombs, Mourning Gate, Guest of Condolence, Death Qi, Death Tally, Funeral Carriage and Bath Basin, and they move to sit on it or move to control it, he will surely die. If the Adversary moves, he dies on the day that generates the Adversary; if the Adversary is still, he dies on the day the Adversary is on duty. Besides, he dies if the Subject line follows the ghost into a tomb, Wealth moves to help the ghost and harm the Subject line, the Self and the Other are both Void, Wealth is strong and the Subject line Void, the ghost is in Birth and the destiny in Extinction, the ghost moves and changes into a tomb, the month-hexagram changes into a tomb, the Subject line changes into a tomb or Extinction, or the Subject line meets Extinction in the Month."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["用爻逢虎鬼天刑飞廉大杀三坵五墓丧门吊客死炁死符丧车浴盆，动持动克者，必死也。", "忌神动者，遇生忌之日死也。", "忌神静者，遇忌值之日死也。", "用爻随鬼入墓者死。", "财动助鬼伤用者死。", "世应双空者死。", "财旺用空者死。", "鬼生命绝者死。", "鬼动化墓者死。", "月卦化墓者死。", "用化墓绝者死。", "用逢月绝者死。"],
+          "yi": ["用爻遇到白虎、鬼，以及天刑、飞廉、大杀、三坵五墓、丧门、吊客、死炁、死符、丧车、浴盆这些凶煞，它们发动而临在用爻上，或发动来克用爻的，一定死。", "忌神发动的，遇到生忌神的那天死。", "忌神安静的，遇到忌神当值的那天死。", "用爻跟着鬼入墓的，死。", "财爻发动帮助鬼、伤到用爻的，死。", "世爻、应爻都落空的，死。", "财爻旺而用爻落空的，死。", "鬼在长生而命爻绝的，死。", "鬼动了变出墓的，死。", "月卦变入墓的，死。", "用爻变出墓、绝的，死。", "用爻遇到月绝的，死。"],
+          "en": ["If the Subject line meets the Tiger, the ghost, and the malign stars Heavenly Punishment, Feilian, Great Killing, Three Mounds and Five Tombs, Mourning Gate, Guest of Condolence, Death Qi, Death Tally, Funeral Carriage and Bath Basin, and they move to sit on it or move to control it, he will surely die.", "If the Adversary moves, he dies on the day that generates the Adversary.", "If the Adversary is still, he dies on the day the Adversary is on duty.", "If the Subject line follows the ghost into a tomb, he dies.", "If Wealth moves to help the ghost and harm the Subject line, he dies.", "If the Self and the Other are both Void, he dies.", "If Wealth is strong and the Subject line Void, he dies.", "If the ghost is in Birth and the destiny line in Extinction, he dies.", "If the ghost moves and changes into a tomb, he dies.", "If the month-hexagram changes into a tomb, he dies.", "If the Subject line changes into a tomb or Extinction, he dies.", "If the Subject line meets Extinction in the Month, he dies."] },
+        { "by": "书中例", "book": "易隐", "range": [3036, 3037],
+          "zh": ["庚寅年戊寅月丁卯日，父占子病，得临之损。", "六爻酉金，子孙独发，化绝于寅，又绝于岁月建中，更加卯日冲破，果于木日死也。"],
+          "yi": ["庚寅年戊寅月丁卯日，父亲占儿子的病，得到临卦变损卦。", "六爻上的酉金子孙独自发动，变出寅而绝，又在岁、月建里绝，再加上卯日冲破它，果然在木日死了。"],
+          "en": ["In the Gengyin year, the Wuyin month, on the Dingmao day, a father divined about his son's illness and obtained Lin changing into Sun.", "The You Metal Output line on the sixth line moved alone and changed into Yin, where it is in Extinction, and it was also in Extinction in the Year and the Month, and the Mao day further clashed and broke it; and indeed he died on a Wood day."] },
+        { "by": "书中例", "book": "易隐", "range": [3039, 3039],
+          "zh": ["庚寅年庚辰月丁卯日，妻占夫病，得涣之姤。", "鬼伏三爻下，值旬空，子为忌神，兄为讐神，二爻并发，独喜用爻伏藏耳。", "至乙亥日，透出用爻，才受忌伤，而夫死也。"],
+          "yi": ["庚寅年庚辰月丁卯日，妻子占丈夫的病，得到涣卦变姤卦。", "官鬼伏在三爻下面，遇到旬空；子孙是忌神，兄弟是仇神，两爻一起发动，只喜欢用爻伏藏着。", "到乙亥日，用爻透出来，才受到忌神的伤害，丈夫就死了。"],
+          "en": ["In the Gengyin year, the Gengchen month, on the Dingmao day, a wife divined about her husband's illness and obtained Huan changing into Gou.", "The Pressure line hides beneath the third line and meets Void; Output is the Adversary and Peer the enemy spirit, and both lines move together; the only mercy is that the Subject line is hidden.", "On the Yihai day the Subject line came out into view, and only then was it harmed by the Adversary, and the husband died."] }
+      ],
+      "note": {
+        "yi": "这一条是「生死」段里断死的爻象；下一条断死的卦象、再下一条断死日。「虎」是白虎，「鬼」是官鬼；天刑、飞廉、大杀、三坵五墓、丧门、吊客、死炁、死符、丧车、浴盆都是凶的神煞，书里没有再解释。「月卦」书里没有解释，按字面译作月卦（应是按月起的卦身一类的说法）。两个断例挂在这里：临之损（用爻化绝又岁月绝再遭日冲，木日死）、涣之姤（用爻伏藏值旬空，到乙亥日透出才受忌伤而死）。",
+        "en": "This entry gives the line-images that judge death in the section on life and death; the next gives the hexagram-images and the one after the days of death. 'Tiger' is the White Tiger and 'ghost' the Pressure line; Heavenly Punishment, Feilian, Great Killing, Three Mounds and Five Tombs, Mourning Gate, Guest of Condolence, Death Qi, Death Tally, Funeral Carriage and Bath Basin are all malign spirit-stars which the book does not explain further. 'Month-hexagram' is not explained in the book and is rendered literally (probably something of the kind of the Body lines taken by the month). Two cases hang here: Lin into Sun (the Subject line changing into Extinction, in Extinction in the Year and Month as well, and clashed by the day, dying on a Wood day) and Huan into Gou (the Subject line hidden and in Void, coming out on the Yihai day, harmed by the Adversary and dying)."
+      },
+      "see": ["LY.ILL.YY.04", "LY.ILL.YY.06", "LY.ILL.HJC.41", "LY.ILL.HJC.54"]
+    },
+    {
+      "id": "LY.ILL.YY.06",
+      "topic": "生死",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "生死·死卦：卦身墓于世（损）、本宫外卦墓于内卦（遁豫升蛊井大有咸）、世坐本宫墓（噬嗑蒙泰归妹）、世坐鬼墓（乾丰中孚升家人旅）、世坐财墓（观解随益泰兑）、卦化墓绝、用逢月破者死",
+      "rule": {
+        "yi": "从卦象断死：卦身入墓在世爻的（损卦）；本宫的外卦入墓在内卦的（遁、豫、升、蛊、井、大有、咸）；世爻坐在本宫的墓上的（噬嗑、蒙、泰、归妹）；世爻坐在鬼的墓上的（乾、丰、中孚、升、家人、旅）；世爻坐在财的墓上的（财是禄命，最忌刑、冲、墓、绝；观、解、随、益、泰、兑）；卦变入墓、绝的；用爻遇月破的，都是死。",
+        "en": "Death judged from the hexagram: the Body's tomb at the Self (the hexagram Sun); the outer trigram of the home palace having its tomb in the inner trigram (Dun, Yu, Sheng, Gu, Jing, Dayou, Xian); the Self sitting on the tomb of the home palace (Shihe, Meng, Tai, Guimei); the Self sitting on the ghost's tomb (Qian, Feng, Zhongfu, Sheng, Jiaren, Lü); the Self sitting on the tomb of Wealth (Wealth is the salary and destiny and fears punishment, clash, tomb and extinction; Guan, Xie, Sui, Yi, Tai, Dui); the hexagram changing into a tomb or Extinction; and the Subject line meeting Month-break: in each case he dies."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["卦身墓于世者死也(损卦)。", "本宫外卦墓于内卦者死(遁豫升蛊井大有咸)。", "世坐本宫墓者，死也(噬嗑蒙泰归妹)。", "世坐鬼墓者死也(乾丰中孚升家人旅)。", "世坐财墓者死也(财为禄命，忌刑冲墓绝，观解随益泰兑卦)。", "卦化墓绝者死也(乾兑化艮坎，艮坤化巽离，化乾震巽化坤)。", "用逢月破者死。"],
+          "yi": ["卦身入墓在世爻的，死（损卦）。", "本宫的外卦入墓在内卦的，死（遁、豫、升、蛊、井、大有、咸）。", "世爻坐在本宫的墓上的，死（噬嗑、蒙、泰、归妹）。", "世爻坐在鬼的墓上的，死（乾、丰、中孚、升、家人、旅）。", "世爻坐在财的墓上的，死（财是禄命，最忌刑、冲、墓、绝；观、解、随、益、泰、兑卦）。", "卦变入墓、绝的，死（乾、兑变艮、坎；艮、坤变巽、离；变乾；震、巽变坤）。", "用爻遇到月破的，死。"],
+          "en": ["If the Body's tomb lies at the Self, he dies (the hexagram Sun).", "If the outer trigram of the home palace has its tomb in the inner trigram, he dies (Dun, Yu, Sheng, Gu, Jing, Dayou, Xian).", "If the Self sits on the tomb of the home palace, he dies (Shihe, Meng, Tai, Guimei).", "If the Self sits on the ghost's tomb, he dies (Qian, Feng, Zhongfu, Sheng, Jiaren, Lü).", "If the Self sits on the tomb of Wealth, he dies (Wealth is the salary and destiny and fears punishment, clash, tomb and extinction; Guan, Xie, Sui, Yi, Tai, Dui).", "If the hexagram changes into a tomb or Extinction, he dies (Qian and Dui changing into Gen and Kan; Gen and Kun changing into Xun and Li; changing into Qian; Zhen and Xun changing into Kun).", "If the Subject line meets Month-break, he dies."] }
+      ],
+      "note": {
+        "yi": "括号里的卦名是书里自己注的，指明哪几个卦有这个象。「卦化墓绝」那一句括号里的名单在原文里是「乾兑化艮坎，艮坤化巽离，化乾震巽化坤」：第三个「化乾」没有主语，书里没有说明，译文照写。「旅」是旅卦（Lü），「履」是履卦（Lu），两个卦不要混。「财为禄命」的意思是财爻代表食禄和命，所以怕刑冲墓绝。",
+        "en": "The hexagram names in brackets are the book's own and show which hexagrams carry the image. In the bracket of the sentence on the hexagram changing into a tomb or extinction, the original list is 'Qian and Dui changing into Gen and Kan, Gen and Kun changing into Xun and Li, changing into Qian, Zhen and Xun changing into Kun': the third 'changing into Qian' has no subject, which the book does not explain, and the translation follows the text. 'Lü' is the hexagram Lü (Travel) and 'Lu' the hexagram Lu (Treading); the two are not to be confused. 'Wealth is salary and destiny' means the Wealth line stands for one's pay and one's life, so it fears punishment, clash, tomb and extinction."
+      },
+      "see": ["LY.ILL.YY.05", "LY.ILL.YY.07", "LY.ILL.HJC.54"]
+    },
+    {
+      "id": "LY.ILL.YY.07",
+      "topic": "应期",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "生死·死日：忌神长生之日死（土用亥日、木用巳日、火用申日、水用巳午日、金用寅日）；土鬼动者鬼爻长生之日死；六冲卦用爻败死墓绝之日死；用空无气者元神绝忌神生之日死；用逢空冲者初病即愈久病难痊；土旺动克用者克用爻之日死；卦有三无救（无火无财无子）",
+      "rule": {
+        "yi": "死的日子：忌神长生的那天死（土做用的，亥日死；木的，巳日死；火的，申日死；水的，巳日、午日死；金的，寅日死）；土鬼发动的，鬼爻长生的那天死；卦是六冲的，用爻败、死、墓、绝的那天死；用爻落空又没有气的，原神绝、忌神生的那天死；土旺盛发动克到用爻的，克用爻的那天死。用爻遇空又被冲，刚起的病马上会好，久病却难好。卦里有三种没有救的：没有火、没有财、没有子孙。",
+        "en": "The days of death: he dies on the day the Adversary is born (for Earth as the Subject, a Hai day; Wood, a Si day; Fire, a Shen day; Water, a Si or Wu day; Metal, a Yin day); if an Earth ghost moves, on the day the Pressure line is born; if the hexagram is Six-Clash, on a day when the Subject line is at ruin, death, tomb or Extinction; if the Subject line is Void and without force, on the day the Support is extinct and the Adversary is born; if strong moving Earth controls the Subject line, on the day that controls it. If the Subject line meets Void and is clashed, a recent illness is cured at once while a long illness is hard to cure. A hexagram has three kinds of no rescue: no Fire, no Wealth, no Output."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["又忌神长生之日死(土用亥日死，木用巳日死，火用申日死，水用巳午日死，金用寅日死)。", "土鬼动者，鬼爻长生之日死。", "卦六冲者，用爻败死墓绝之日死。", "用空无气者，元神绝而忌神生之日死。", "又用逢空冲者，初病即愈而久病难痊也。", "土旺动持克用者，克用爻之日死也。", "卦有三无救者，无火无财无子也。"],
+          "yi": ["又，忌神长生的那天死（土做用的，亥日死；木做用的，巳日死；火做用的，申日死；水做用的，巳日、午日死；金做用的，寅日死）。", "土鬼发动的，鬼爻长生的那天死。", "卦是六冲的，用爻败、死、墓、绝的那天死。", "用爻落空又没有气的，原神绝、忌神生的那天死。", "又，用爻遇到空又被冲的，刚起的病马上会好，久病却难好。", "土旺盛、发动、克到用爻的，克用爻的那天死。", "卦里有三种没有救的：没有火、没有财、没有子孙。"],
+          "en": ["Also he dies on the day the Adversary is born (for Earth as the Subject, on a Hai day; Wood, a Si day; Fire, a Shen day; Water, a Si or Wu day; Metal, a Yin day).", "If an Earth ghost moves, he dies on the day the Pressure line is born.", "If the hexagram is Six-Clash, he dies on a day when the Subject line is at ruin, death, tomb or Extinction.", "If the Subject line is Void and without force, he dies on the day the Support is extinct and the Adversary is born.", "Also, if the Subject line meets Void and is clashed, a recent illness is cured at once, while a long illness is hard to cure.", "If Earth is strong and moving and controls the Subject line, he dies on the day that controls the Subject line.", "A hexagram is beyond rescue in three ways: no Fire, no Wealth, no Output."] }
+      ],
+      "note": {
+        "yi": "「三无救」的「财」「子」书里写得很简，按上下文是财爻和子孙爻；火是官鬼所怕的克，火能克金鬼，财能生官，子孙能制官，这里书里没有解释为什么这三样是救。「败」是十二长生里的沐浴位（又叫败地）。这一条讲死日，和增删卜易讲的「用神死绝生旺日」不同处见 LY.ILL.HJC.57。",
+        "en": "In the 'three kinds of no rescue', 'Wealth' and 'Output' are written very briefly and by context are the Wealth and Output lines; the book does not explain why these three are what save. 'Ruin' (bai) is the Bath stage of the twelve life stages (also called the ruin ground). This entry gives the days of death; for how it differs from the days given elsewhere see LY.ILL.HJC.57."
+      },
+      "see": ["LY.ILL.YY.06", "LY.ILL.YY.08", "LY.ILL.HJC.57", "LY.ILL.ZS.02"]
+    },
+    {
+      "id": "LY.ILL.YY.08",
+      "topic": "生死",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "生死·凶卦：黄泉杀（春大畜小畜履井复、夏遁睽临、秋明夷蛊旅、冬遁既济明夷归妹）、四灭卦（春蒙夏蛊秋剥冬旅）、四没卦（春需夏观秋节冬临）、棺椁杀（恒与益），占病逢之死",
+      "rule": {
+        "yi": "黄泉杀：春天是大畜、小畜、履、井、复，夏天是遁、睽、临，秋天是明夷、蛊、旅，冬天是遁、既济、明夷、归妹。四灭卦：春天蒙、夏天蛊、秋天剥、冬天旅。四没卦：春天需、夏天观、秋天节、冬天临。棺椁杀：恒和益。以上这些卦，占病的人逢到就会死。",
+        "en": "The Yellow Springs killer: in spring Daxu, Xiaoxu, Lu, Jing and Fu; in summer Dun, Kui and Lin; in autumn Mingyi, Gu and Lü; in winter Dun, Jiji, Mingyi and Guimei. The Four Extinguishing hexagrams: Meng in spring, Gu in summer, Bo in autumn, Lü in winter. The Four Submerging hexagrams: Xu in spring, Guan in summer, Jie in autumn, Lin in winter. The Coffin killer: Heng and Yi. One who divines about illness and meets any of these hexagrams dies."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["黄泉杀者，春则大畜小畜履井复也。", "夏则遁睽临也。", "秋则明夷蛊旅也。", "冬则遁既济明夷归妹也。", "四灭卦者，春蒙夏蛊秋剥冬旅也。", "四没卦者，春需夏观秋节冬临也。", "棺椁杀者，恒与益也(已上诸卦占病者死)。"],
+          "yi": ["黄泉杀：春天是大畜、小畜、履、井、复这几卦。", "夏天是遁、睽、临。", "秋天是明夷、蛊、旅。", "冬天是遁、既济、明夷、归妹。", "四灭卦：春天蒙，夏天蛊，秋天剥，冬天旅。", "四没卦：春天需，夏天观，秋天节，冬天临。", "棺椁杀：是恒和益（以上这些卦，占病的人会死）。"],
+          "en": ["The Yellow Springs killer: in spring it is Daxu, Xiaoxu, Lu, Jing and Fu.", "In summer it is Dun, Kui and Lin.", "In autumn it is Mingyi, Gu and Lü.", "In winter it is Dun, Jiji, Mingyi and Guimei.", "The Four Extinguishing hexagrams: spring Meng, summer Gu, autumn Bo, winter Lü.", "The Four Submerging hexagrams: spring Xu, summer Guan, autumn Jie, winter Lin.", "The Coffin killer: Heng and Yi (for all the hexagrams above, one who divines about illness dies)."] }
+      ],
+      "note": {
+        "yi": "「遁」在黄泉杀的夏和冬里各出现一次，原文如此。这几组卦名书里只列名单，没有说为什么；「四灭」「四没」是按季节各取一卦的名目。「旅」（Lü）和「履」（Lu）是两个卦。「已上诸卦占病者死」是书里对这一组的总结，是说占病遇到这些卦就是死，写得很绝对，本库照抄，不替它担保。",
+        "en": "'Dun' appears once in summer and once in winter in the Yellow Springs killer, as in the original. The book gives only the lists of hexagram names and no reasons; the 'Four Extinguishing' and 'Four Submerging' are names for one hexagram per season. 'Lü' and 'Lu' are two hexagrams. 'For all the hexagrams above, one who divines about illness dies' is the book's own summing up of the group and is stated absolutely; the library copies it and does not stand surety for it."
+      },
+      "see": ["LY.ILL.YY.07", "LY.ILL.YY.09"]
+    },
+    {
+      "id": "LY.ILL.YY.09",
+      "topic": "取象",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "僧一行占病法：从八卦取用——父乾母坤、长男震次男坎三男艮、长女巽次女离三女兑；用卦不现或代占者按年龄：一至二十男艮女兑、二十一至四十男坎女离、四十一至六十男震女巽、六十以上男乾女坤；正卦无用象取伏卦；主象化死墓绝克破皆死",
+      "rule": {
+        "yi": "僧一行占病的办法，从八卦里取用：父亲用乾，母亲用坤，长子用震，次子用坎，三子用艮，长女用巽，次女用离，三女用兑。如果所用的卦不出现，或者是替别人占，就按年龄：一岁到二十岁，男的用艮，女的用兑；二十一岁到四十岁，男的用坎，女的用离；四十一岁到六十岁，男的用震，女的用巽；六十岁以上，男的用乾，女的用坤。正卦里没有用的象，就取伏卦。主象变出死、墓、绝，或者变出克它、破它的，都主死。",
+        "en": "The monk Yixing's method of divining illness takes the Subject from the eight trigrams: father takes Qian, mother Kun, eldest son Zhen, second son Kan, third son Gen, eldest daughter Xun, second daughter Li, third daughter Dui. If the trigram to be used does not appear, or one is divining for another, go by age: from one to twenty, a male uses Gen and a female Dui; from twenty-one to forty, a male Kan and a female Li; from forty-one to sixty, a male Zhen and a female Xun; over sixty, a male Qian and a female Kun. If the main hexagram has no image to use, take the hidden hexagram. If the main image changes into Death, tomb or Extinction, or into what controls or breaks it, in every case it means death."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["又僧一行占病法，从八卦取用也。", "父用乾，母用坤，长男用震，次男用坎，三男用艮，长女用巽，次女用离，三女用兑也。", "若用卦不出现者与代他人占者，一岁至二十，男用艮，女用兑也。", "二十一岁至四十，男用坎，女用离也。", "四十一岁至六十，男用震，女用巽也。", "六十以上者，男用乾，女用坤也。", "若正卦无用象者，则取伏卦。", "若主象化死墓绝，化克破者，皆主死也。"],
+          "yi": ["另有僧一行占病的办法，从八卦里取用。", "父亲用乾，母亲用坤，长子用震，次子用坎，三子用艮，长女用巽，次女用离，三女用兑。", "如果所用的卦不出现，或者是替别人占，一岁到二十岁，男的用艮，女的用兑。", "二十一岁到四十岁，男的用坎，女的用离。", "四十一岁到六十岁，男的用震，女的用巽。", "六十岁以上，男的用乾，女的用坤。", "如果正卦里没有用的象，就取伏卦。", "如果主象变出死、墓、绝，或者变出克它、破它的，都主死。"],
+          "en": ["There is also the monk Yixing's method of divining illness, which takes the Subject from the eight trigrams.", "Father takes Qian, mother Kun, eldest son Zhen, second son Kan, third son Gen, eldest daughter Xun, second daughter Li, third daughter Dui.", "If the trigram to be used does not appear, or one is divining for another, from age one to twenty a male uses Gen and a female Dui.", "From twenty-one to forty, a male uses Kan and a female Li.", "From forty-one to sixty, a male uses Zhen and a female Xun.", "Over sixty, a male uses Qian and a female Kun.", "If the main hexagram has no image to use, take the hidden hexagram.", "If the main image changes into Death, tomb or Extinction, or into what controls or breaks it, in every case it means death."] }
+      ],
+      "note": {
+        "yi": "这是另一套办法：不在六爻里找六亲，而是拿八卦对家人（乾父坤母，震坎艮是三个儿子，巽离兑是三个女儿）。按年龄取卦是给「用卦不出现」和代占者用的备用办法。这一条和上面六爻取用（LY.ILL.YY.03）不是一回事，书里没有说两者冲突时怎么办。「僧一行」是唐代的一行和尚，书里没有另作介绍。",
+        "en": "This is another method: instead of looking for the six relations among the lines, the eight trigrams are matched to the family (Qian father, Kun mother, Zhen, Kan and Gen the three sons, Xun, Li and Dui the three daughters). Taking the trigram by age is a fallback for when the trigram to be used does not appear and for divining for another. It is not the same as taking the Subject among the six lines (LY.ILL.YY.03), and the book does not say what to do when the two conflict. 'The monk Yixing' is the Tang monk Yixing, whom the book does not otherwise introduce."
+      },
+      "see": ["LY.ILL.YY.03", "LY.ILL.YY.10"]
+    },
+    {
+      "id": "LY.ILL.YY.10",
+      "topic": "生死",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "生死·男女老少之忌：男忌官鬼长生日得病、女忌官鬼沐浴日得病；无龙福月解天医来救则鬼爻墓绝日必死；晁以道：用爻命爻不上卦者死；男忌鬼空、女忌财空，少年卦忌死囚休废、老人卦忌旺相",
+      "rule": {
+        "yi": "男的忌讳在官鬼长生的那天得病，女的忌讳在官鬼沐浴的那天得病。如果没有青龙、福德、月解、天医发动来生合用爻，鬼爻入墓、绝的那天一定死。晁以道说：用爻、命爻不上卦的，死。还有，男的忌讳鬼落空，女的忌讳财落空；少年占的卦忌讳死、囚、休、废，老人占的卦忌讳旺相。",
+        "en": "A man should fear falling ill on the day the Pressure line is born, and a woman on the day the Pressure line is at Bath. If none of the Dragon, Fortune, Month Release or Heavenly Doctor moves to generate or combine with the Subject line, he will surely die on the day the Pressure line is in its tomb or Extinction. Chao Yidao says: if the Subject line and the destiny line do not appear in the hexagram, he dies. Further, a man should fear the ghost being Void and a woman Wealth being Void; a young person's hexagram fears Death, trapped, resting and abandoned, and an old person's hexagram fears being strong."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2993, 2993],
+          "zh": ["又男忌官鬼长生日得病，女忌官鬼沐浴日得病。", "若无龙福月解天医动来生合用爻者，鬼爻墓绝日必死也。", "又晁以道曰，用爻命爻不上卦者死。", "更男忌鬼空，女忌财空，少年卦忌死囚休废，老人卦忌旺相也。"],
+          "yi": ["又，男的忌讳在官鬼长生的那天得病，女的忌讳在官鬼沐浴的那天得病。", "如果没有青龙、福德、月解、天医发动来生合用爻的，鬼爻墓、绝的那天一定死。", "另外晁以道说：用爻、命爻不上卦的，死。", "还有，男的忌讳鬼落空，女的忌讳财落空，少年占的卦忌讳死、囚、休、废，老人占的卦忌讳旺相。"],
+          "en": ["Also a man should fear falling ill on the day the Pressure line is born, and a woman on the day the Pressure line is at Bath.", "If none of the Dragon, Fortune, Month Release or Heavenly Doctor moves to generate or combine with the Subject line, he will surely die on the day the Pressure line is in its tomb or Extinction.", "Chao Yidao also says: if the Subject line and the destiny line do not appear in the hexagram, he dies.", "Further, a man should fear the ghost being Void and a woman Wealth being Void; a young person's hexagram fears Death, trapped, resting and abandoned, and an old person's hexagram fears being strong."] }
+      ],
+      "note": {
+        "yi": "这一条和黄金策讲的「主空无救」「用绝逢生」（LY.ILL.HJC.37、LY.ILL.HJC.47）相近，不同的是这里按男女、老少分了忌讳：男忌鬼空，女忌财空；少年怕死囚休废，老人怕旺相——老人怕旺相与黄金策「占病不喜旺相，太刚则折」（LY.ILL.HJC.36）同一个意思。「晁以道」是宋代人晁说之，书里只写了字。「死囚休废」是五行在季节里的四种无气状态。",
+        "en": "This entry is close to the Huangjin Ce's 'the main image Void, no rescue' and 'Extinction meeting generation' (LY.ILL.HJC.37 and LY.ILL.HJC.47); the difference is that it divides the fears by sex and age: a man fears the ghost Void and a woman Wealth Void; the young fear Death, trapped, resting and abandoned and the old fear being strong — the old fearing strength agrees with the Huangjin Ce's 'in illness one does not like strength; too rigid, it snaps' (LY.ILL.HJC.36). 'Chao Yidao' is the Song man Chao Shuozhi, of whom the book gives only the style-name. 'Death, trapped, resting, abandoned' are the four forceless states of an element in a season."
+      },
+      "see": ["LY.ILL.YY.09", "LY.ILL.YY.11", "LY.ILL.HJC.36", "LY.ILL.HJC.37", "LY.ILL.HJC.47"]
+    }
+  ]
+}

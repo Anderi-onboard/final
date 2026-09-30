@@ -1,0 +1,238 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易隐",
+  "chapter": "疾病占",
+  "chapter_en": "Divining illness",
+  "ranges": {"易隐": [2997, 3009]},
+  "units": [
+    {
+      "id": "LY.ILL.YY.11",
+      "topic": "症候",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "病症以官鬼为凭：鬼持身世命用、鬼动来刑害克冲身世命用、官鬼伏其下、或身世命用化官鬼，各随五行断；鬼属阴在内卦金肺木肝胆水肾火心小肠土脾胃大肠，鬼属阳在外卦金四肢骨节牙齿右耳、木筋骨左耳、水口皮痰血汗、土鼻腹背肌肉、火目胸手心脚底；八卦乾首坤腹震足巽股坎耳离目艮背指兑口舌",
+      "rule": {
+        "yi": "断病症以官鬼为凭据：鬼爻持在身、世、命爻、用爻上，或者鬼发动来刑、害、克、冲它们，或者官鬼伏在它们下面，或者它们发动变出官鬼，都各按官鬼的五行来断。鬼属阴爻、在内卦的：金是肺，木是肝胆，水是肾，子（水）是膀胱，火是心和小肠，土是脾、胃、大肠。鬼属阳爻、在外卦的：金是四肢、骨节、牙齿、右耳、小便，木是筋骨、左耳，水是口、嘴、皮、尿、痰涎、血、汗，土是鼻尖、腹背、肌肉，火是眼睛、胸、手心、脚底；另外辰、戌是头顶，丑、未是肩背。再按八卦：乾是头，坤是腹，震是脚，巽是大腿，坎是耳朵，离是眼睛，艮是背和手指，兑是口和舌头。",
+        "en": "The symptoms are judged by the Pressure line: if the Pressure line holds the Body, the Self, the destiny line or the Subject line; or the ghost moves to punish, harm, control or clash them; or the Pressure line is hidden beneath them; or they move and change into Pressure: in every case judge by the element of Pressure. If the ghost is yin and in the inner trigram: Metal is the lungs, Wood the liver and gallbladder, Water the kidneys and Zi the bladder, Fire the heart and small intestine, Earth the spleen, stomach and large intestine. If the ghost is yang and in the outer trigram: Metal is the limbs, bone joints, teeth, right ear and urine; Wood the sinews and bones and the left ear; Water the mouth, lips, skin, urine, phlegm and spittle, blood and sweat; Earth the tip of the nose, belly and back, and flesh; Fire the eyes, chest, palms and soles; Chen and Xu are the crown of the head and Chou and Wei the shoulders and back. And by the eight trigrams: Qian is the head, Kun the belly, Zhen the feet, Xun the thighs, Kan the ears, Li the eyes, Gen the back and fingers, and Dui the mouth and tongue."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2997, 2999],
+          "zh": ["以官鬼为凭。", "如鬼爻持身世，命爻用爻或鬼动来刑害克冲身世命用爻者，或官鬼伏于身世命用爻下者，或身世命用动化官鬼者，各随五行断之也。", "鬼属阴，在内卦，则金为肺，木为肝胆，水为肾，子膀胱，火为心小肠，土为脾胃大肠也。", "鬼属阳，在外卦，则金为四肢骨节牙齿右耳小便也，木为筋骨左耳也，水为口嘴皮溺痰涎血汗也，土为鼻准腹背肌肉也，火为目胸手心脚底也，又辰戌为顶门，丑未为肩背也。", "又八卦乾为首，坤为腹，震为足，巽为股，坎为耳，离为目，艮为背指，兑为口舌也。"],
+          "yi": ["断病症以官鬼为凭据。", "比如鬼爻持在身、世、命爻、用爻上，或者鬼发动来刑、害、克、冲身、世、命、用爻，或者官鬼伏在身、世、命、用爻下面，或者身、世、命、用爻发动变出官鬼，都各按它的五行来断。", "鬼属阴爻、在内卦的：金是肺，木是肝胆，水是肾，子（水）是膀胱，火是心和小肠，土是脾、胃、大肠。", "鬼属阳爻、在外卦的：金是四肢、骨节、牙齿、右耳、小便，木是筋骨、左耳，水是口、嘴、皮、尿、痰涎、血、汗，土是鼻尖、腹背、肌肉，火是眼睛、胸、手心、脚底；另外辰、戌是头顶，丑、未是肩背。", "又按八卦：乾是头，坤是腹，震是脚，巽是大腿，坎是耳朵，离是眼睛，艮是背和手指，兑是口和舌头。"],
+          "en": ["The symptoms are judged by the Pressure line.", "For example, if the Pressure line holds the Body, the Self, the destiny line or the Subject line; or the ghost moves to punish, harm, control or clash the Body, Self, destiny or Subject line; or the Pressure line is hidden beneath the Body, Self, destiny or Subject line; or the Body, Self, destiny or Subject line moves and changes into Pressure: in every case judge by its element.", "If the ghost is yin and in the inner trigram: Metal is the lungs, Wood the liver and gallbladder, Water the kidneys and Zi the bladder, Fire the heart and small intestine, and Earth the spleen, stomach and large intestine.", "If the ghost is yang and in the outer trigram: Metal is the limbs, bone joints, teeth, right ear and urine; Wood the sinews and bones and the left ear; Water the mouth, lips, skin, urine, phlegm and spittle, blood and sweat; Earth the tip of the nose, belly and back, and flesh; Fire the eyes, chest, palms and soles; and Chen and Xu are the crown of the head and Chou and Wei the shoulders and back.", "Again by the eight trigrams: Qian is the head, Kun the belly, Zhen the feet, Xun the thighs, Kan the ears, Li the eyes, Gen the back and fingers, and Dui the mouth and tongue."] }
+      ],
+      "note": {
+        "yi": "这一条是易隐病症段的总纲，把五行、八卦、内外卦阴阳三套办法叠在一起：先看鬼在哪个五行，再看它属阴属阳、在内在外，得出是哪个脏腑或身体部位。黄金策讲同一件事的地方见 LY.ILL.HJC.02（五行定脏腑）、LY.ILL.HJC.04（八宫定病位）。「水为口嘴皮溺痰涎血汗」里的「溺」是尿，金那一栏的「小便」也是尿，原文两处都写。",
+        "en": "This is the general outline of the Yi Yin's section on symptoms and lays three systems over one another — the five elements, the eight trigrams, and yin-yang with inner and outer trigrams: first see which element the ghost is, then whether it is yin or yang and inner or outer, to arrive at which viscus or part of the body. Where the Huangjin Ce treats the same thing see LY.ILL.HJC.02 (the element fixes the viscus) and LY.ILL.HJC.04 (the palace fixes the site of the illness). In 'Water is the mouth, lips, skin, urine ...' the 'ni' is urine, and 'xiaobian' in the Metal column is also urine; the original writes both."
+      },
+      "see": ["LY.ILL.YY.12", "LY.ILL.YY.13", "LY.ILL.HJC.02", "LY.ILL.HJC.04", "LY.ILL.HJC.11"]
+    },
+    {
+      "id": "LY.ILL.YY.12",
+      "topic": "症候",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "按爻位分身体：初爻足、二爻股膝、三爻腹小腹腰臀肛门小便、四爻胸胃乳、五爻面项手（水口火目土鼻水左耳金右耳）、六爻头脑；遇鬼伏、鬼化、鬼动来伤之处必带疾",
+      "rule": {
+        "yi": "再按爻位来分：初爻是脚，二爻是大腿和膝，三爻是腹、小腹、腰、臀、肛门、小便，四爻是胸、胃、乳，五爻是脸、颈项、手（水是口，火是眼睛，土是鼻，水是左耳，金是右耳），六爻是头和脑。凡是哪一爻遇到鬼伏在下面、变出鬼、或者鬼发动来伤到它，那个部位一定留下毛病。",
+        "en": "Again by the position of the lines: the first line is the feet, the second the thighs and knees, the third the belly, lower belly, waist, buttocks, anus and urination, the fourth the chest, stomach and breasts, the fifth the face, neck and hands (Water the mouth, Fire the eyes, Earth the nose, Water the left ear, Metal the right ear), and the sixth the head and brain. Wherever a line has a ghost hidden beneath it, or changes into a ghost, or a ghost moves to harm it, that place will surely be left with an ailment."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2997, 2999],
+          "zh": ["又分宫，初爻，足也。", "二爻，股膝也。", "三爻，腹小腹腰臀肛门小便也。", "四爻，胸胃乳也。", "五爻，面项手。", "水为口，火为目，土为鼻，水左耳，金右耳也。", "六爻头脑也。", "凡遇鬼伏鬼化鬼，或鬼动来伤者，必带疾也。"],
+          "yi": ["又按爻位来分：初爻是脚。", "二爻是大腿和膝。", "三爻是腹、小腹、腰、臀、肛门、小便。", "四爻是胸、胃、乳。", "五爻是脸、颈项、手。", "水是口，火是眼睛，土是鼻，水是左耳，金是右耳。", "六爻是头和脑。", "凡是（这一爻）遇到伏着鬼、变出鬼，或者有鬼发动来伤它的，一定留下毛病。"],
+          "en": ["Again by the position of the lines: the first line is the feet.", "The second line is the thighs and knees.", "The third line is the belly, lower belly, waist, buttocks, anus and urination.", "The fourth line is the chest, stomach and breasts.", "The fifth line is the face, neck and hands.", "Water is the mouth, Fire the eyes, Earth the nose, Water the left ear and Metal the right ear.", "The sixth line is the head and brain.", "Whenever a line has a ghost hidden beneath it or changes into a ghost, or a ghost moves to harm it, it will surely be left with an ailment."] }
+      ],
+      "dispute": {
+        "yi": "左耳属哪一行：同一段里，上一条（LY.ILL.YY.11）说木是筋骨、左耳，这里说「水左耳，金右耳」，两处对左耳的五行不一致；书里没有说明，应是传抄的差异。易隐别处（第 1447 行讲相貌处）是「木聋左耳，金虎右耳」，与这里说水的一处不同。",
+        "en": "Which element the left ear belongs to: within the same passage, the previous entry (LY.ILL.YY.11) says Wood is the sinews and bones and the left ear, and here it says 'Water the left ear, Metal the right ear', so the two disagree on the left ear's element; the book gives no explanation and it is likely a difference in transmission. Elsewhere the Yi Yin (line 1447, on appearance) has 'Wood deaf in the left ear, Metal and Tiger the right ear', which differs from this one place that says Water."
+      },
+      "note": {
+        "yi": "这里的分法是从初爻（脚）一路往上到六爻（头脑），和上面鬼谷分爻（LY.ILL.YY.02）的左栏一致。「水为口，火为目，土为鼻，水左耳，金右耳」是接在五爻（脸）后面的，讲脸上的五官各归哪一行。",
+        "en": "The division here runs from the first line (feet) up to the sixth (head and brain) and agrees with the left column of Guigu's division of the lines (LY.ILL.YY.02). 'Water the mouth, Fire the eyes, Earth the nose, Water the left ear, Metal the right ear' follows the fifth line (the face) and assigns the features of the face to the elements."
+      },
+      "see": ["LY.ILL.YY.11", "LY.ILL.YY.02", "LY.ILL.HJC.28", "LY.ILL.HJC.29"]
+    },
+    {
+      "id": "LY.ILL.YY.13",
+      "topic": "症候",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "五行鬼各主之症：金鬼阴肺腑之疾阳骨节疼痛脓血淋漓；木鬼阴肝胆之疾阳四肢风气酸疼口眼歪斜；水鬼阴遗精盗汗肾竭血枯经闭阳呕吐泄泻；火鬼阴心目之疾阳疮痍疖毒虐热；土鬼阴虚浮气喘水蛊脾泄阳瘟疫时气，辰咽喉肿塞戌腹痛胃伤丑气促痿痺未翻胃噎膈痨嗽",
+      "rule": {
+        "yi": "用爻遇到金鬼：属阴是肺腑的病，属阳是骨节疼痛、脓血淋漓；金鬼旺，是泻肚子再带一样生僻的病；金鬼衰，是血里生脓。遇到木鬼：属阴是肝胆的病，属阳是四肢风气酸疼、口眼歪斜、头疼口干；木动的，阳的痒、阴的疼；木鬼旺，是风病带热；木鬼衰，是在同一个字的病上再生出风来。遇到水鬼：属阴是遗精、盗汗、肾气枯竭，女的是血枯闭经，属阳是呕吐泄泻；水鬼旺，是呕吐带咳嗽；水鬼衰，是受寒腹泻兼虚弱。遇到火鬼：属阴是心和眼睛的病，属阳是疮痍疖毒、疟热呻吟；火鬼旺，先冷后热；火鬼衰，先热后冷。遇到土鬼：属阴是虚浮气喘、水蛊、脾泄，属阳是瘟疫时气；辰鬼是咽喉肿塞，戌鬼是腹痛胃伤，丑鬼是气促痿痹，未鬼是翻胃、噎膈、痨病咳嗽。",
+        "en": "If the Subject line meets a Metal ghost: yin means a disease of the lungs and viscera, yang means aching bone joints and dripping pus and blood; a strong Metal ghost brings diarrhea together with a rare ailment, and a weak Metal ghost brings pus forming within the blood. Meeting a Wood ghost: yin means a disease of the liver and gallbladder, yang means wind-qi with aching limbs, a crooked mouth and eyes, headache and a dry mouth; when Wood moves, yang itches and yin aches; a strong Wood ghost brings wind sickness with heat, a weak one wind growing upon the same rare ailment. Meeting a Water ghost: yin means seminal emission, night sweats and exhausted kidneys, and in a woman dried-up blood and stopped menses; yang means vomiting and diarrhea; a strong Water ghost brings vomiting with cough, a weak one cold diarrhea with weakness. Meeting a Fire ghost: yin means a disease of the heart and eyes, yang means sores, boils and poison, malarial fever and groaning; a strong Fire ghost brings cold first and then heat, a weak one heat first and then cold. Meeting an Earth ghost: yin means puffy weakness and wheezing, water-swelling and spleen diarrhea, yang means epidemic and seasonal qi; a Chen ghost is a swollen blocked throat, a Xu ghost belly pain and a damaged stomach, a Chou ghost shortness of breath and limp numbness, and a Wei ghost regurgitation, choking in the gullet, consumption and cough."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2999, 2999],
+          "zh": ["用逢金鬼者，阴则肺腑之疾，阳则骨节疼痛，脓血淋漓也。", "又金鬼旺，泻中带(此处之字上疒下去)。", "金鬼衰，血内生脓也。", "用逢木鬼者，阴则肝胆之疾，阳则四肢疯气酸疼，口眼歪斜，头疼口燥也。", "又木动者，阳痒而阴疼。", "木官旺，疯中带热，木鬼衰(此处之字上疒下去)上生疯也。", "用逢水鬼者，阴则遗精盗汗，肾竭，女为血枯经闭，阳则呕吐泄泻也。", "又水鬼旺，呕中带嗽。", "水鬼衰，寒泄兼虚也。", "用逢火鬼者，阴则心目之疾，阳则疮痍疖毒，虐热吟呻也。", "又火鬼旺，先寒后热，火鬼衰先热后寒也。", "用逢土鬼者，阴则虚浮气喘，水蛊脾泄，阳则瘟疫时气也。", "又辰鬼，则咽喉肿塞。", "戌鬼，则腹痛胃伤。", "丑鬼，则气促痿痺。", "未鬼则翻胃噎膈痨嗽也。"],
+          "yi": ["用爻遇到金鬼的，属阴就是肺腑一类的病，属阳就是骨节疼痛、脓血淋漓。", "另外金鬼旺的，是泻肚子，还带着（此处原书有一个字，上面是病字头、下面是个「去」字，是个生僻的病字，书里没有解释）。", "金鬼衰弱的，血里生脓。", "用爻遇到木鬼的，属阴是肝胆的病，属阳是四肢风气酸疼、口眼歪斜、头疼口干。", "另外木发动的，属阳的痒，属阴的疼。", "木官旺的，是风病中带热；木鬼衰的，是在（又是那个上面病字头、下面「去」字的字）上再生出风来。", "用爻遇到水鬼的，属阴是遗精、盗汗、肾气枯竭，女的是血枯、闭经，属阳是呕吐、泄泻。", "另外水鬼旺的，呕吐中带着咳嗽。", "水鬼衰弱的，是受寒腹泻再加虚弱。", "用爻遇到火鬼的，属阴是心和眼睛的病，属阳是疮痍疖毒、疟热呻吟。", "另外火鬼旺的，先冷后热；火鬼衰的，先热后冷。", "用爻遇到土鬼的，属阴是虚浮气喘、水蛊、脾泄，属阳是瘟疫、时气。", "另外辰鬼，是咽喉肿塞。", "戌鬼，是腹痛、胃伤。", "丑鬼，是气喘急促、痿痹。", "未鬼是翻胃、噎膈、痨病咳嗽。"],
+          "en": ["If the Subject line meets a Metal ghost, yin means a disease of the lungs and viscera, and yang means aching bone joints and dripping pus and blood.", "Also a strong Metal ghost: diarrhea together with (here the book has a rare character for an ailment, written with the sickness radical above and the character for 'go' below, which the book does not explain).", "A weak Metal ghost: pus forms within the blood.", "If the Subject line meets a Wood ghost, yin means a disease of the liver and gallbladder, and yang means wind-qi with aching limbs, a crooked mouth and eyes, headache and a dry mouth.", "Also when Wood moves, yang itches and yin aches.", "A strong Wood Pressure line: wind sickness with heat; a weak Wood ghost: wind grows upon (the same rare ailment character, written with the sickness radical above and 'go' below).", "If the Subject line meets a Water ghost, yin means seminal emission, night sweats and exhausted kidneys, and in a woman dried-up blood and stopped menses; yang means vomiting and diarrhea.", "Also a strong Water ghost: vomiting together with cough.", "A weak Water ghost: cold diarrhea together with weakness.", "If the Subject line meets a Fire ghost, yin means a disease of the heart and eyes, and yang means sores, boils and poison, malarial fever and groaning.", "Also a strong Fire ghost: cold first and then heat; a weak Fire ghost: heat first and then cold.", "If the Subject line meets an Earth ghost, yin means puffy weakness and wheezing, water-swelling and spleen diarrhea, and yang means epidemic and seasonal qi.", "Also a Chen ghost: a swollen, blocked throat.", "A Xu ghost: belly pain and a damaged stomach.", "A Chou ghost: shortness of breath, limpness and numbness.", "A Wei ghost: regurgitation, choking in the gullet, consumption and cough."] }
+      ],
+      "note": {
+        "yi": "原书里有两处写着「（此处之字上疒下去）」，是整理者的注：那个字上面是病字头、下面是「去」，一个生僻的病字，整理者没有打出来，病名不明，译文照写不猜。「虐热」应是疟热（疟疾发热），原书写作「虐」。「水蛊」是腹部胀水的病，「膈」「噎膈」是吞咽梗阻，「痿痺」是肢体软弱、麻木疼痛，都按字面。这一条和黄金策的五行症候（LY.ILL.HJC.02、LY.ILL.HJC.04）是同一个路子，但易隐更细：每一行分阴阳，又分旺衰，土另分辰戌丑未四种。",
+        "en": "The original has two places marked '(the character here: sickness radical above, go below)', the transcriber's note: a rare character for an ailment which the transcriber could not enter, so the name of the ailment is unknown and the translation writes it as it stands and does not guess. 'Malarial fever' (nuere) is a writing of 'nue' with the wrong character in the original. 'Water-swelling' (shuigu) is a disease with a belly swollen with fluid, 'yege' is obstruction in swallowing, and 'weibi' is limpness of the limbs with numbness and pain, all rendered literally. This entry is on the same road as the Huangjin Ce's element symptoms (LY.ILL.HJC.02 and LY.ILL.HJC.04) but the Yi Yin is finer: each element is divided into yin and yang and into strong and weak, and Earth further into Chen, Xu, Chou and Wei."
+      },
+      "see": ["LY.ILL.YY.11", "LY.ILL.YY.14", "LY.ILL.HJC.02", "LY.ILL.HJC.04"]
+    },
+    {
+      "id": "LY.ILL.YY.14",
+      "topic": "症候",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "寒热与阴阳症：水鬼化火、火鬼化水是往来寒热；内鬼冲外、外鬼冲内是内外感伤；鬼内动下元之症、外动上焦之症；世鬼出现阳症、伏藏阴症；阴鬼化阳阴症变阳、阳鬼化阴阳症变阴",
+      "rule": {
+        "yi": "水鬼变火、火鬼变水的，是忽冷忽热；内卦的鬼冲外卦、外卦的鬼冲内卦的，是内外都受了伤。鬼在内卦发动，是下元的病症；鬼在外卦发动，是上焦的病症。世爻上的鬼出现，是阳症；世爻上的鬼伏藏，是阴症。阴鬼变阳，阴症变成阳症；阳鬼变阴，阳症变成阴症。",
+        "en": "A Water ghost changing into Fire, or a Fire ghost into Water, means alternating chills and fever; an inner ghost clashing the outer, or an outer ghost the inner, means injury both within and without. A ghost moving in the inner trigram is a disorder of the lower origin; a ghost moving in the outer trigram is a disorder of the upper burner. A ghost at the Self appearing openly is a yang condition, and one at the Self hidden is a yin condition. A yin ghost changing into yang: a yin condition turns yang; a yang ghost changing into yin: a yang condition turns yin."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2999, 2999],
+          "zh": ["水鬼化火，火鬼化水者，往来寒热也。", "内鬼冲外，外鬼冲内者，内外感伤也。", "鬼内动，下元之症。", "鬼外动，上焦之症。", "世鬼出现，阳症。", "世鬼伏藏，阴症。", "阴鬼化阳，阴症变阳。", "阳鬼化阴，阳症变阴。"],
+          "yi": ["水鬼变火、火鬼变水的，是忽冷忽热（寒热往来）。", "内卦的鬼冲外卦、外卦的鬼冲内卦的，是内外都受了伤。", "鬼在内卦发动，是下元的病症。", "鬼在外卦发动，是上焦的病症。", "世爻上的鬼出现，是阳症。", "世爻上的鬼伏藏，是阴症。", "阴鬼变阳，阴症变成阳症。", "阳鬼变阴，阳症变成阴症。"],
+          "en": ["A Water ghost changing into Fire, or a Fire ghost into Water, means alternating chills and fever.", "An inner ghost clashing the outer, or an outer ghost the inner, means injury both within and without.", "A ghost moving in the inner trigram is a disorder of the lower origin.", "A ghost moving in the outer trigram is a disorder of the upper burner.", "A ghost at the Self appearing openly is a yang condition.", "A ghost at the Self hidden is a yin condition.", "A yin ghost changing into yang: a yin condition turns yang.", "A yang ghost changing into yin: a yang condition turns yin."] }
+      ],
+      "note": {
+        "yi": "「下元」按字面是下部的根本，指下焦、肾一带；「上焦」是胸膈以上。这一条和黄金策讲的「水化火火化水往来寒热」（LY.ILL.HJC.14）、「上冲下下冲上内外感伤」（LY.ILL.HJC.15）是同一个说法，易隐再添了世鬼出现与伏藏分阳症阴症、阴阳互变两条。",
+        "en": "'Lower origin' is literally the root of the lower part and means the lower burner and the kidneys; the 'upper burner' is the region above the chest and diaphragm. This entry is the same saying as the Huangjin Ce's 'Water into Fire and Fire into Water: alternating chills and fever' (LY.ILL.HJC.14) and 'upper clashing lower and lower clashing upper: injury within and without' (LY.ILL.HJC.15); the Yi Yin adds two things: a ghost at the Self, open or hidden, marks a yang or yin condition, and yin and yang turning into each other."
+      },
+      "see": ["LY.ILL.YY.13", "LY.ILL.YY.15", "LY.ILL.HJC.14", "LY.ILL.HJC.15"]
+    },
+    {
+      "id": "LY.ILL.YY.15",
+      "topic": "轻重",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "昼夜与先后：鬼属阴日轻夜重、属阳日重夜轻；外鬼旺内鬼衰先轻后重；动爻克变爻生先重后轻；游魂鬼用言语恍惚、归魂鬼用昏闷不语",
+      "rule": {
+        "yi": "鬼属阴的，白天轻、夜里重；鬼属阳的，白天重、夜里轻。外卦的鬼旺、内卦的鬼衰，先轻后重；动爻克、变爻生，先重后轻。游魂卦里鬼做用爻，说话恍惚；归魂卦里鬼做用爻，昏闷不说话。",
+        "en": "If the ghost is yin, the illness is lighter by day and heavier by night; if yang, heavier by day and lighter by night. If the outer ghost is strong and the inner weak: light at first, then heavy; if the moving line controls and the changed line generates: heavy at first, then light. A ghost taken as the Subject line in a Wandering Soul hexagram: speech is confused; in a Returning Soul hexagram: drowsy, oppressed and silent."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2999, 2999],
+          "zh": ["鬼属阴者，日轻夜重。", "鬼属阳者，日重夜轻。", "外鬼旺而内鬼衰，先轻后重。", "动爻克而变爻生，先重后轻。", "游魂鬼用，言语恍惚。", "归魂鬼用，昏闷不语。"],
+          "yi": ["鬼属阴的，白天轻、夜里重。", "鬼属阳的，白天重、夜里轻。", "外卦的鬼旺而内卦的鬼衰，先轻后重。", "发动的爻克它、变出的爻生它的，病先重后轻。", "游魂卦里鬼做用爻，说话恍惚。", "归魂卦里鬼做用爻，昏闷不说话。"],
+          "en": ["If the ghost is yin, the illness is lighter by day and heavier by night.", "If the ghost is yang, it is heavier by day and lighter by night.", "If the outer ghost is strong and the inner ghost weak: light at first, then heavy.", "If the moving line controls and the changed line generates: heavy at first, then light.", "A ghost taken as the Subject line in a Wandering Soul hexagram: speech is confused.", "In a Returning Soul hexagram: drowsy, oppressed and silent."] }
+      ],
+      "note": {
+        "yi": "「游魂」「归魂」是八宫里的两个卦（每宫第七、第八卦）。鬼属阴在内卦、属阳在外卦（见 LY.ILL.YY.11），所以「鬼属阴日轻夜重」和黄金策的「鬼在内卦夜重、在外卦日重」（LY.ILL.HJC.12）是同一个意思；「动爻克而变爻生，先重后轻」和黄金策「动生变克，暮热朝凉」（LY.ILL.HJC.13）相对应，方向一致。",
+        "en": "'Wandering Soul' and 'Returning Soul' are two hexagrams in each of the eight palaces (the seventh and eighth of each). A ghost is yin in the inner trigram and yang in the outer (see LY.ILL.YY.11), so 'a yin ghost is lighter by day and heavier by night' means the same as the Huangjin Ce's 'a ghost in the inner trigram is heavy at night, in the outer trigram heavy by day' (LY.ILL.HJC.12); and 'the moving line controls and the changed line generates: heavy first, then light' corresponds to the Huangjin Ce's 'the moving line generates and the changed line controls: warm by evening, cool by morning' (LY.ILL.HJC.13), in the same direction."
+      },
+      "see": ["LY.ILL.YY.14", "LY.ILL.YY.16", "LY.ILL.HJC.12", "LY.ILL.HJC.13"]
+    },
+    {
+      "id": "LY.ILL.YY.16",
+      "topic": "轻重",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼伏鬼化与轻重之日：鬼伏藏病来不觉；鬼化鬼膏肓之疾；鬼伏鬼、鬼化鬼非变症则两病交作；鬼生旺日重、墓胎日困、死绝日轻；元神值日轻、忌神值日重；六冲乱动者重；用持龙福被动爻伤虽重不死；鬼动伤用而月日冲鬼者免",
+      "rule": {
+        "yi": "鬼伏藏的，病来了不觉得；鬼变鬼的，是膏肓的重病；鬼伏在鬼下、鬼变出鬼的，不是病症有变，就是两种病同时发作；用爻下面伏着鬼的，鬼旺时复发。世爻持着子孙、下面伏着鬼的，子孙旺的那天病退，鬼旺的那天病重。鬼生旺的日子病重，鬼入墓、胎的日子病困，鬼死、绝的日子病轻；原神当值的日子一定轻，忌神当值的日子一定重；财爻入墓、绝的日子也重。卦是六冲又乱动的，重。用爻带着青龙、福德而被动爻伤到的，虽然重也不会死；鬼发动伤到用爻，而月、日冲鬼的，临到凶险也能免。",
+        "en": "If the ghost is hidden, the illness comes unnoticed; a ghost changing into a ghost is a disease lodged in the vitals; a ghost hidden beneath a ghost, or a ghost changing into a ghost, is either a change of symptoms or two illnesses at once; a ghost hidden beneath the Subject line makes it recur when the ghost is strong. If the Self holds Output with a ghost hidden beneath it, the illness retreats on the day Output is strong and worsens on the day the ghost is strong. It is heavy on days the ghost is born or strong, wearied on days the ghost is in a tomb or Womb, and light on days it is in Death or Extinction; on days when the Support is on duty it is surely light and when the Adversary is on duty surely heavy; it is also heavy on days when the Wealth line is in a tomb or Extinction. A Six-Clash hexagram with lines moving in disorder is heavy. If the Subject line carries the Dragon and Fortune and is harmed by a moving line, it is heavy but he does not die; if the ghost moves to harm the Subject line but the Month and Day clash the ghost, he escapes even at the brink of danger."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2999, 2999],
+          "zh": ["鬼伏藏者，病来不觉。", "鬼化鬼者膏肓之疾。", "又鬼伏鬼，与鬼化鬼者，非变症，则两病交作也。", "用下伏鬼，鬼旺复发也。", "世持子伏鬼者，子旺日病退，鬼旺日病重也。", "又鬼生旺日病重，鬼墓胎日病困，鬼死绝日病轻也。", "元神值日必轻，忌神值日必重也。", "又财爻墓绝日重也。", "卦六冲乱动者，重也。", "用持龙福，而被动爻伤者，虽重不死。", "鬼动伤用，而月日冲鬼者，临凶得免也。"],
+          "yi": ["鬼伏藏的，病来了不觉得。", "鬼变出鬼的，是膏肓一带的重病。", "另外，鬼伏在鬼下，和鬼变出鬼的，不是病症有变，就是两种病同时发作。", "用爻下面伏着鬼的，鬼旺的时候会复发。", "世爻持着子孙、下面伏着鬼的，子孙旺的那天病退，鬼旺的那天病重。", "又，鬼生旺的日子病重，鬼入墓、胎的日子病困，鬼死、绝的日子病轻。", "原神当值的日子一定轻，忌神当值的日子一定重。", "又，财爻入墓、绝的日子病重。", "卦是六冲又乱动的，重。", "用爻带着青龙、福德，而被动爻伤到的，虽然重也不会死。", "鬼发动伤到用爻，而月、日冲鬼的，临到凶险也能免。"],
+          "en": ["If the ghost is hidden, the illness comes unnoticed.", "A ghost changing into a ghost is a disease lodged in the deep vitals (gaohuang).", "Also a ghost hidden beneath a ghost, and a ghost changing into a ghost, are either a change of symptoms or two illnesses at once.", "A ghost hidden beneath the Subject line: it recurs when the ghost is strong.", "If the Self holds Output with a ghost hidden beneath it, the illness retreats on the day Output is strong and worsens on the day the ghost is strong.", "Also the illness is heavy on days the ghost is born or strong, wearied on days the ghost is in a tomb or Womb, and light on days the ghost is in Death or Extinction.", "On days when the Support is on duty it is surely light, and on days when the Adversary is on duty surely heavy.", "Also the illness is heavy on days when the Wealth line is in a tomb or Extinction.", "If the hexagram is Six-Clash with lines moving in disorder, it is heavy.", "If the Subject line carries the Dragon and Fortune and is harmed by a moving line, it is heavy but he does not die.", "If the ghost moves to harm the Subject line, but the Month and Day clash the ghost, he escapes even at the brink of danger."] }
+      ],
+      "note": {
+        "yi": "「膏肓」是心下膈上的深处，古人说病到膏肓无药可治，书里只说是「膏肓之疾」，没有再解释。「世持子伏鬼」的「子」是子孙爻。这一条的「元神值日必轻，忌神值日必重」和黄金策讲欲决病痊的日子（LY.ILL.HJC.57）是一路。",
+        "en": "'Gaohuang' is the deep region below the heart and above the diaphragm, of which the ancients said that an illness that reaches it cannot be treated; the book says only 'a disease of the gaohuang' and does not explain further. The 'zi' of 'the Self holds zi with a ghost hidden beneath' is the Output line. 'On days the Support is on duty it is light, on days the Adversary is on duty heavy' is on the same road as the Huangjin Ce's days for deciding recovery (LY.ILL.HJC.57)."
+      },
+      "see": ["LY.ILL.YY.15", "LY.ILL.YY.17", "LY.ILL.HJC.23", "LY.ILL.HJC.43", "LY.ILL.HJC.57"]
+    },
+    {
+      "id": "LY.ILL.YY.17",
+      "topic": "病因",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "病因·六神：鬼加青龙动男酒色过度或探贵问亲因财而得、女因喜得疾、逢空堕胎；加朱雀动怒气口舌咒咀（二爻灶下、三爻当门、五爻香火道路、金鬼敲锅）；加勾陈动跌打伤失饥伤饱脾胃病（加木动因修造）；加螣蛇动忧愁惊怖思虑伤神或遇妖邪；加白虎动斗殴损伤或丧葬刀兵宰杀之场；加玄武动色欲过度忍饥冒雨或失物被盗",
+      "rule": {
+        "yi": "看病是怎么得的，按鬼爻带的六神：带青龙发动，男的是酒色过度，或者去探望贵人、问候亲戚，因为钱财而得病，女的是因为喜事得病，遇空是堕胎；带朱雀发动，是生气、口舌，或者被人咒骂诅咒得病，在二爻的是灶边咒骂，在三爻的是当门咒骂，在五爻的是香火下、道路上咒骂，金鬼带朱雀发动的是敲着锅咒骂；带勾陈发动，是跌打损伤、饥饱失常，伤了脾胃，勾陈的鬼再加木发动，是因为修造得病；带螣蛇发动，是忧愁惊吓、思虑伤神，或者遇到妖邪得病；带白虎发动，是斗殴受伤，或者在丧葬、刀兵、宰杀的场合得病；带玄武发动，是色欲过度、忍饥冒雨，或者丢了东西被盗而得病。",
+        "en": "How the illness was caught, by the six spirits the ghost carries. With the Dragon and moving: in a man from excess of wine and women, or from visiting a noble or calling on kin, caught over money; in a woman from a joyful event, and if Void a miscarriage. With the Vermilion Bird and moving: from anger and quarrels, or from being cursed — on the second line, cursing at the stove; on the third, at the door; on the fifth, beneath the incense-fire or on the road; a Metal ghost with the Vermilion Bird, cursing while banging a pot. With the Hook Earth and moving: injury from falls and blows, hunger and overeating out of turn, an ailment of the spleen and stomach, and a Hook Earth ghost with Wood added and moving is caught from building work. With the Coiling Snake and moving: worry and fright, thought that harms the spirit, or meeting a demon or evil. With the Tiger and moving: injury from brawling, or caught at a funeral, in a scene of blades and weapons, or of slaughter. With the Dark Tortoise and moving: excess of lust, enduring hunger, braving rain, or losing things to theft."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3003, 3005],
+          "zh": ["鬼加龙动，男则酒色过度，或探贵问亲，因财而得。", "女则因喜得疾。", "逢空，堕胎也。", "鬼加雀动，怒气口舌，或被咒咀得病。", "在二爻者，灶下咒咀。", "在三爻者，当门咒咀。", "在五爻者，香火下道路上咒咀。", "金鬼加雀动者，敲锅咒咀也。", "鬼加勾动，跌打伤，失饥伤饱，脾胃病也。", "勾鬼加木动，因修造得病也。", "鬼加蛇动，忧愁惊怖，思虑伤神，或遇妖邪得病也。", "鬼加虎动，斗殴损伤，或从丧葬，刀兵宰杀之场得病也。", "鬼加武动，因色欲过度，忍饥冒雨，或失物被盗，得病也。"],
+          "yi": ["鬼带青龙发动，男的是酒色过度，或者去探望贵人、问候亲戚，因为钱财而得病。", "女的是因为喜事得病。", "遇到空，是堕胎。", "鬼带朱雀发动，是生气、口舌，或者被人咒骂诅咒而得病。", "在二爻的，是灶边咒骂诅咒。", "在三爻的，是当着门咒骂诅咒。", "在五爻的，是在香火下、道路上咒骂诅咒。", "金鬼带朱雀发动的，是敲着锅咒骂诅咒。", "鬼带勾陈发动，是跌打损伤、饥一顿饱一顿伤了身，是脾胃的病。", "勾陈的鬼再加木发动，是因为修造得病。", "鬼带螣蛇发动，是忧愁、惊吓，思虑伤神，或者遇到妖邪而得病。", "鬼带白虎发动，是打架斗殴受伤，或者是在丧葬、刀兵、宰杀的场合得病。", "鬼带玄武发动，是因为色欲过度、忍饥、冒雨，或者丢了东西被偷，而得病。"],
+          "en": ["A ghost carrying the Dragon and moving: in a man it is from excess of wine and women, or from visiting a noble or calling on kin, caught over money.", "In a woman it is caught from a joyful event.", "If Void, it is a miscarriage.", "A ghost carrying the Vermilion Bird and moving: from anger and quarrels, or from being cursed.", "On the second line, cursing at the stove.", "On the third line, cursing at the door.", "On the fifth line, cursing beneath the incense-fire or on the road.", "A Metal ghost carrying the Vermilion Bird and moving: cursing while banging a pot.", "A ghost carrying the Hook Earth and moving: injury from falls and blows, hunger and overeating out of turn, an ailment of the spleen and stomach.", "A Hook Earth ghost with Wood added and moving: the illness is caught from building work.", "A ghost carrying the Coiling Snake and moving: worry and fright, thought that harms the spirit, or the illness is caught from meeting a demon or evil.", "A ghost carrying the Tiger and moving: injury from brawling, or the illness is caught at a funeral, in a scene of blades and weapons, or of slaughter.", "A ghost carrying the Dark Tortoise and moving: the illness comes from excess of lust, enduring hunger, braving rain, or from losing things to theft."] }
+      ],
+      "note": {
+        "yi": "经文的「加龙」「加雀」「加勾」「加蛇」「加虎」「加武」是加青龙、朱雀、勾陈、螣蛇、白虎、玄武。黄金策讲六神临鬼各主一症（LY.ILL.HJC.05：螣蛇心惊、青龙酒色过度、勾陈肿胀、朱雀言语颠狂、白虎损伤血崩血晕、玄武忧郁阴虚），那里讲的是症状，这里讲的是怎么得病的起因；青龙都是酒色，螣蛇都是惊怖，白虎都是损伤，是相通的。",
+        "en": "The verse's 'adding the Dragon, the Bird, the Hook, the Snake, the Tiger and the Tortoise' is adding the Azure Dragon, Vermilion Bird, Hook Earth, Coiling Snake, White Tiger and Dark Tortoise. The Huangjin Ce treats the six spirits on the ghost as each governing a symptom (LY.ILL.HJC.05: Coiling Snake fright of heart, Azure Dragon excess of wine and women, Hook Earth swelling, Vermilion Bird raving speech, White Tiger injury and hemorrhage, Dark Tortoise gloom and yin deficiency); there it speaks of symptoms and here of the cause of catching the illness; the Dragon is wine and women in both, the Snake fright in both and the Tiger injury in both, so they are in accord."
+      },
+      "see": ["LY.ILL.YY.16", "LY.ILL.YY.18", "LY.ILL.HJC.05", "LY.ILL.HJC.08", "LY.ILL.HJC.10"]
+    },
+    {
+      "id": "LY.ILL.YY.18",
+      "topic": "病因",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "病因·鬼伏六亲下或六亲化鬼：伏父或父动化鬼忧心得病、衣服寒暖失时；伏兄或兄动化鬼赌博争财；伏财或财动化鬼饮食不节，财在阳宫动主吐、阴宫动主泻、加土动吐、加水动泻；伏子或子动化鬼外情牵引酒色（加龙嗜酒、加武好色）；子爻空绝调理无资；间爻鬼动胸膈不宽",
+      "rule": {
+        "yi": "鬼伏在父母爻下、或父母爻发动变出鬼的，是忧心得病，或者衣服冷暖穿脱不及时得病；鬼伏在兄爻下、或兄爻发动变出鬼的，是因为赌博争财得病；鬼伏在财爻下、或财爻发动变出鬼的，是饮食没有节制而起：财爻在阳宫发动主呕吐，在阴宫发动主泄泻，财带土发动的吐，财带水发动的泻；鬼伏在子孙爻下、或子孙发动变出鬼的，是被外面的情事牵引，或者酒色致病（带青龙是嗜酒，带玄武是好色）；子孙爻空亡、绝的，没有钱调理；间爻上的鬼发动，胸膈不舒畅。",
+        "en": "A ghost hidden beneath the Resource line, or Resource moving and changing into a ghost: the illness is caught from anxiety of heart, or from clothing not changed in time for cold and warmth. Beneath the Peer line, or Peer moving and changing into a ghost: from gambling and quarrels over money. Beneath Wealth, or Wealth moving and changing into a ghost: from intemperate eating and drinking — Wealth moving in a yang palace means vomiting, in a yin palace diarrhea, Wealth with Earth and moving vomiting, Wealth with Water and moving diarrhea. Beneath Output, or Output moving and changing into a ghost: from being drawn away by outside affairs, or wine and women (with the Dragon a taste for drink, with the Dark Tortoise a love of women); if the Output line is Void or in Extinction there are no means for treatment and care; a ghost moving on a between line makes the chest and diaphragm tight."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3003, 3003],
+          "zh": ["又鬼伏父下，与父动化鬼者，忧心得病，或衣服寒暖失时得病也。", "鬼伏兄下，与兄动化鬼者，因赌博争财得病也。", "鬼伏财下，与财动化鬼者，饮食不节而起也。", "财在阳宫动，主吐。", "在阴宫动，主泻。", "财加土动者吐，财加水动者泻也。", "鬼伏子下，与子动化鬼者，因外情牵引，或酒色致病也(加龙则嗜酒，加武则好色)。", "子爻空绝者，调理无资也。", "间爻鬼动者，胸膈不宽也。"],
+          "yi": ["又，鬼伏在父母爻下、和父母爻发动变出鬼的，是忧心而得病，或者衣服冷暖穿脱不及时而得病。", "鬼伏在兄爻下、和兄爻发动变出鬼的，是因为赌博、争财而得病。", "鬼伏在财爻下、和财爻发动变出鬼的，是饮食没有节制而起。", "财爻在阳宫发动，主呕吐。", "在阴宫发动，主泄泻。", "财带土发动的吐，财带水发动的泻。", "鬼伏在子孙爻下、和子孙发动变出鬼的，是被外面的情事牵引，或者酒色致病（带青龙就是嗜酒，带玄武就是好色）。", "子孙爻空亡、绝的，是没有钱调理养病。", "间爻上的鬼发动，胸膈不舒畅。"],
+          "en": ["Also a ghost hidden beneath the Resource line, or Resource moving and changing into a ghost: the illness is caught from anxiety of heart, or from clothing not changed in time for cold and warmth.", "A ghost hidden beneath the Peer line, or Peer moving and changing into a ghost: the illness is caught from gambling and quarrels over money.", "A ghost hidden beneath Wealth, or Wealth moving and changing into a ghost: it arises from intemperate eating and drinking.", "Wealth moving in a yang palace means vomiting.", "Moving in a yin palace means diarrhea.", "Wealth with Earth and moving: vomiting; Wealth with Water and moving: diarrhea.", "A ghost hidden beneath Output, or Output moving and changing into a ghost: the illness comes from being drawn away by outside affairs, or from wine and women (with the Dragon, a taste for drink; with the Dark Tortoise, a love of women).", "If the Output line is Void or in Extinction, there are no means for treatment and care.", "A ghost moving on a between line: the chest and diaphragm feel tight."] }
+      ],
+      "dispute": {
+        "yi": "财爻动，吐还是泻看什么：易隐说财在阳宫动主吐、在阴宫动主泻，又说财带土动吐、财带水动泻；黄金策说财爻动在上卦（外卦）主吐、动在下卦（内卦）主泻（LY.ILL.HJC.30）。一个看阴阳宫，一个看上下卦，两个分法不一样；书里没有裁决。",
+        "en": "What decides vomiting or diarrhea when Wealth moves: the Yi Yin says Wealth moving in a yang palace means vomiting and in a yin palace diarrhea, and also Wealth with Earth vomiting and with Water diarrhea; the Huangjin Ce says Wealth moving in the upper (outer) trigram means vomiting and in the lower (inner) trigram diarrhea (LY.ILL.HJC.30). One looks at yang and yin palaces and the other at the upper and lower trigrams, so the two divide differently; the books do not decide."
+      },
+      "note": {
+        "yi": "「间爻」是世、应之间的两爻。黄金策讲伏鬼在六亲下的病因（LY.ILL.HJC.08：伏财伤饥失饱、伏子酒色、伏父劳心、伏兄口舌争竞）和这里大体一致；这里多了「六亲发动化出鬼」的情形，和 LY.ILL.HJC.10（鬼爻化出六亲各有得病之处）是反过来的一组。",
+        "en": "The 'between lines' are the two lines between the Self and the Other. The Huangjin Ce's causes when the ghost is hidden beneath a relation (LY.ILL.HJC.08: beneath Wealth hurt by hunger and overeating, beneath Output wine and women, beneath Resource worry of mind, beneath Peer quarrels) are broadly the same; here there is in addition the case of a relation moving and changing into a ghost, the reverse of LY.ILL.HJC.10 (the Pressure line changing into a relation, each with its own place where the illness was caught)."
+      },
+      "see": ["LY.ILL.YY.17", "LY.ILL.YY.19", "LY.ILL.HJC.08", "LY.ILL.HJC.10", "LY.ILL.HJC.30"]
+    },
+    {
+      "id": "LY.ILL.YY.19",
+      "topic": "轻重",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "病的急缓久暴：鬼旺动伤用是急症；鬼临日辰动是暴病；临月建是经月之病；衰临太岁是经年之病；衰鬼持用动是久病难除",
+      "rule": {
+        "yi": "鬼旺盛发动伤到用爻的，是急症；鬼临在日辰上又发动的，是暴病；临在月建上，是拖了一个月的病；衰弱的鬼临在太岁上，是拖了一年的病；又，衰弱的鬼持着用爻发动的，是久病，难以除根。",
+        "en": "A strong moving ghost that harms the Subject line: an acute condition. A moving ghost on the Day: a sudden illness. On the Month: an illness of a month's standing. A weak ghost on the Tai Sui: an illness of a year's standing. Also a weak ghost holding the Subject line and moving: a long illness, hard to root out."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3003, 3005],
+          "zh": ["鬼旺动伤用者，急症也。", "鬼临日辰动者，暴病也。", "临月建，经月之病。", "衰临太岁，经年之病。", "又衰鬼持用动者，久病难除也。"],
+          "yi": ["鬼旺盛发动伤到用爻的，是急症。", "鬼临在日辰上又发动的，是暴病。", "临在月建上，是拖了一个月的病。", "衰弱的鬼临在太岁上，是拖了一年的病。", "又，衰弱的鬼持着用爻发动的，是久病，难以除根。"],
+          "en": ["A strong moving ghost that harms the Subject line: an acute condition.", "A moving ghost on the Day: a sudden illness.", "On the Month: an illness of a month's standing.", "A weak ghost on the Tai Sui: an illness of a year's standing.", "Also a weak ghost holding the Subject line and moving: a long illness, hard to root out."] }
+      ],
+      "note": {
+        "yi": "经文在原书里跨了两行（3003 行末「鬼临日辰动」和 3005 行头「者，暴病也」），这里合在一起读。",
+        "en": "In the original this passage runs across two lines (the end of line 3003, 'a ghost on the Day moving', and the start of line 3005, ', a sudden illness'), and is read together here."
+      },
+      "see": ["LY.ILL.YY.18", "LY.ILL.YY.20", "LY.ILL.HJC.12"]
+    },
+    {
+      "id": "LY.ILL.YY.20",
+      "topic": "症候",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "饮食：卦内无财或财空绝或四墓持用饮食不纳；禄入绝乡不进食而死；鬼动化财饮食仍进；财化鬼兄因食增病；应动合用而化财伤用忌食馈来之物；丑鬼忌牛肉、卯兔、未羊、酉鸡、戌犬、亥猪；水鬼忌鱼腥冷咸、木鬼忌果核酸、金鬼忌葱蒜姜辣、火鬼忌煎炒苦、土鬼忌米面瓜蔬甘",
+      "rule": {
+        "yi": "卦里没有财，或者财爻空、绝，或者四个墓库的爻持着用爻的，吃不下东西；禄（财）落入绝地的，吃不下饭而死；鬼发动变出财的，饮食还能吃；财变出鬼、兄的，是因为吃东西使病加重；应爻发动合用爻、又变出财来伤用爻的，忌讳吃人家送来的东西。忌口：丑鬼忌牛肉，卯鬼忌兔肉，未鬼忌羊肉，酉鬼忌鸡肉，戌鬼忌狗肉，亥鬼忌猪肉；水鬼忌鱼腥、冷的、咸的东西，木鬼忌带核的果子、酸的东西，金鬼忌葱、蒜、姜、辣的东西，火鬼忌煎炒烤炙、香味浓的、苦的东西，土鬼忌米面、茄子、芋头、瓜菜、甜的东西。",
+        "en": "If there is no Wealth in the hexagram, or Wealth is Void or in Extinction, or the four tombs hold the Subject line, food and drink are not taken in; if the emolument (Wealth) falls into a place of Extinction, he dies without taking food; if the ghost moves and changes into Wealth, food and drink can still be taken; if Wealth changes into a ghost or Peer, the illness worsens because of eating; if the Other line moves to combine with the Subject line and changes into Wealth that harms it, gifts of food sent over must be avoided. Foods to avoid: a Chou ghost must avoid beef, a Mao ghost rabbit, a Wei ghost mutton, a You ghost chicken, a Xu ghost dog, and a Hai ghost pork; a Water ghost must avoid fishy, cold and salty things, a Wood ghost fruit with stones and sour things, a Metal ghost onions, garlic, ginger and hot pungent things, a Fire ghost fried, roasted and strongly scented or bitter things, and an Earth ghost rice and wheat, aubergine, taro, melons and vegetables and sweet things."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3009, 3009],
+          "zh": ["卦内无财，或财空绝，或四墓持用者，饮食不纳也。", "禄入绝乡者，不进食而死也。", "鬼动化财者，饮食仍进也。", "财化鬼兄者，因食增病也。", "应动合用，而化财伤用者，忌食馈来之物也。", "又丑鬼忌牛肉，卯鬼忌兔肉，未鬼忌羊肉，酉鬼忌鸡肉，戌鬼忌犬肉，亥鬼忌猪肉。", "又水鬼忌鱼腥冷物咸物，木鬼忌果核酸物，金鬼忌葱蒜姜辣辛物，火鬼忌煿炙煎炒香味苦物，土鬼忌米面茄芋瓜蔬甘物也。"],
+          "yi": ["卦里没有财，或者财爻空、绝，或者辰戌丑未四个墓的爻持着用爻的，吃不下东西。", "禄（财）落入绝地的，吃不下饭而死。", "鬼发动变出财的，饮食还能吃。", "财变出鬼、兄的，是因为吃东西使病加重。", "应爻发动合用爻，又变出财来伤用爻的，忌讳吃人家送来的东西。", "又，丑鬼忌牛肉，卯鬼忌兔肉，未鬼忌羊肉，酉鬼忌鸡肉，戌鬼忌狗肉，亥鬼忌猪肉。", "又，水鬼忌鱼腥、冷的、咸的东西；木鬼忌带核的果子、酸的东西；金鬼忌葱、蒜、姜、辣的东西；火鬼忌煎炒烤炙、香味浓的、苦的东西；土鬼忌米面、茄子、芋头、瓜菜、甜的东西。"],
+          "en": ["If there is no Wealth in the hexagram, or Wealth is Void or in Extinction, or the four tombs hold the Subject line, food and drink are not taken in.", "If the emolument (Wealth) falls into a place of Extinction, he dies without taking food.", "If the ghost moves and changes into Wealth, food and drink can still be taken.", "If Wealth changes into a ghost or Peer, the illness worsens because of eating.", "If the Other line moves to combine with the Subject line and changes into Wealth that harms it, gifts of food sent over must be avoided.", "Also a Chou ghost must avoid beef, a Mao ghost rabbit, a Wei ghost mutton, a You ghost chicken, a Xu ghost dog, and a Hai ghost pork.", "Also a Water ghost must avoid fishy, cold and salty things; a Wood ghost fruit with stones and sour things; a Metal ghost onions, garlic, ginger and hot pungent things; a Fire ghost fried, roasted and strongly scented or bitter things; and an Earth ghost rice and wheat, aubergine, taro, melons and vegetables and sweet things."] }
+      ],
+      "note": {
+        "yi": "「禄」在这里指财爻（前面讲死卦时说「财为禄命」，LY.ILL.YY.06）。「四墓」是辰戌丑未四个墓库的地支。忌口这一段是把五行、地支和食物对起来，书里没有另讲为什么。黄金策讲饮食的地方见 LY.ILL.HJC.21（卦内无财则饮食不纳）。",
+        "en": "'Emolument' (lu) here means the Wealth line (in the hexagram-images that judge death the book says 'Wealth is the salary and destiny', LY.ILL.YY.06). The 'four tombs' are the four branches Chen, Xu, Chou and Wei, the tomb-storehouses. The passage on foods to avoid matches elements, branches and foods and the book does not say why. Where the Huangjin Ce treats food and drink see LY.ILL.HJC.21 ('no Wealth in the hexagram, food is not taken in')."
+      },
+      "see": ["LY.ILL.YY.19", "LY.ILL.YY.21", "LY.ILL.HJC.21", "LY.ILL.HJC.40"]
+    }
+  ]
+}
