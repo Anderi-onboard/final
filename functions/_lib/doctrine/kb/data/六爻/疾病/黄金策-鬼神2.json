@@ -1,0 +1,494 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "鬼神",
+  "chapter_en": "Ghosts and spirits",
+  "ranges": {"卜筮大全": [7148, 7194], "卜筮正宗": [3395, 3421]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.105",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼临日月定然新死亡灵：卦无官鬼而日辰是鬼，必是新死的人为祸；日辰是鬼而卦中又有鬼，是近日新许的愿未酬",
+      "rule": {
+        "yi": "鬼落在日辰上，一定是刚死不久的亡灵：卦里没有官鬼、日辰是鬼的，一定是刚死的人在作祸；日辰是鬼、卦里又有鬼的，是因为祈祷，近来新许下的愿还没有还。",
+        "en": "A ghost that falls on the Day is surely a newly dead spirit: if there is no Pressure in the hexagram and the Day is the ghost, a newly dead person is surely making trouble; if the Day is the ghost and the hexagram also has a ghost, it is because of a prayer: a vow newly made lately has not been paid."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7148, 7148],
+          "zh": ["如临日月，定然新死亡灵；"],
+          "yi": ["如果鬼落在日、月上，一定是刚死不久的亡灵；"],
+          "en": ["If the ghost falls on the Day or the Month, it is surely a newly dead spirit;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7149, 7149],
+          "zh": ["卦无官鬼，而日辰是鬼者，必然新死亡人为祸。", "若日辰是鬼，而卦中又有鬼，必因祈祷，而近日新许之愿未酬。"],
+          "yi": ["卦里没有官鬼，而日辰是鬼的，一定是刚死的人在作祸。", "如果日辰是鬼，而卦里又有鬼，一定是因为祈祷，近来新许下的愿还没有还。"],
+          "en": ["If there is no Pressure in the hexagram but the Day is the ghost, a newly dead person is surely making trouble.", "If the Day is the ghost and the hexagram also has a ghost, it is surely because of a prayer: a vow newly made lately has not been paid."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3395, 3395],
+          "zh": ["卦无官鬼而日辰是鬼者，必然新死亡灵为祸。", "若日辰是鬼，而卦中又有鬼，是近日新许之愿未酬也。"],
+          "yi": ["卦里没有官鬼而日辰是鬼的，一定是刚死的亡灵在作祸。", "如果日辰是鬼，而卦里又有鬼，是近来新许下的愿还没有还。"],
+          "en": ["If there is no Pressure in the hexagram but the Day is the ghost, a newly dead spirit is surely making trouble.", "If the Day is the ghost and the hexagram also has a ghost, it is a vow newly made lately that has not been paid."] }
+      ],
+      "note": {
+        "yi": "经文说的是「日月」，旧注和王洪绪都只讲日辰是鬼，没有说月建是鬼怎么办。旧注比王洪绪多一层原因：「必因祈祷」。这一条和病体章里「日辰带鬼，亟为祈祷」（LY.ILL.HJC.49、LY.ILL.HJC.50）是同一个看法，那里讲怎样认是哪一路神。",
+        "en": "The verse speaks of 'Day and Month', but both the old commentary and Wang Hongxu speak only of the Day being the ghost and do not say what to do when the Month is. The old commentary gives one more reason than Wang Hongxu: 'surely because of a prayer'. This entry is the same view as 'when the Day carries the ghost, pray urgently' in the chapter on the patient's condition (LY.ILL.HJC.49 and LY.ILL.HJC.50), where the question of which spirit it is is treated."
+      },
+      "see": ["LY.ILL.HJC.104", "LY.ILL.HJC.106", "LY.ILL.HJC.49", "LY.ILL.HJC.50"]
+    },
+    {
+      "id": "LY.ILL.HJC.106",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼自入墓刑决是狱中囚犯：未日占得木爻官鬼谓鬼自入墓，是死于囹圄的囚人之鬼，更带刑爻必死于非命；旺相发动则是庙神",
+      "rule": {
+        "yi": "鬼自己入墓、带刑，一定是关在牢里的囚犯的鬼：比如在未日占卦，得到木爻的官鬼，叫做鬼自己入墓，一定是死在牢狱里的人的鬼；再带刑爻，一定是死于非命，或者死在坟墓之间；旺相又发动的，就是庙里的神。",
+        "en": "A ghost that enters its own tomb or is punished is surely the ghost of a prisoner in jail: if one divines on a Wei day and gets a Wood Pressure line, the ghost is said to enter its own tomb, and it is surely the ghost of one who died in prison; if it also carries a punishing line, he surely died an unnatural death or died among graves; and if strong and moving, it is a temple god."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7151, 7151],
+          "zh": ["自入墓刑，决是狱中囚犯。"],
+          "yi": ["鬼自己入墓、带刑，一定是关在牢里的囚犯。"],
+          "en": ["If the ghost enters its own tomb or is punished, it is surely a prisoner in jail."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7152, 7152],
+          "zh": ["如未日占卦，得木爻官鬼，谓鬼自入墓。", "必是死于囹圄囚人之鬼。", "更带刑爻，必死于非命，或死于坟墓间者。", "旺相发动，则是庙神。"],
+          "yi": ["比如在未日占卦，得到木爻的官鬼，叫做鬼自己入墓。", "一定是死在牢狱里的囚犯的鬼。", "再带刑爻，一定是死于非命，或者死在坟墓之间的。", "旺相又发动的，就是庙里的神。"],
+          "en": ["For example, if one divines on a Wei day and gets a Wood Pressure line, the ghost is said to enter its own tomb.", "It is surely the ghost of a prisoner who died in jail.", "If it also carries a punishing line, he surely died an unnatural death, or died among graves.", "If strong and moving, it is a temple god."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3397, 3397],
+          "zh": ["如未日占卦，得木爻官鬼入墓，必是死于囹圄囚狱之鬼；", "旺相发动则是庙神。"],
+          "yi": ["比如在未日占卦，得到木爻官鬼入墓，一定是死在牢狱里的囚徒的鬼；", "旺相发动的，就是庙神。"],
+          "en": ["For example, if one divines on a Wei day and gets a Wood Pressure line entering its tomb, it is surely the ghost of one who died in prison;", "if strong and moving, it is a temple god."] }
+      ],
+      "note": {
+        "yi": "「囹圄」是监狱（卜筮大全篇末生僻字注）。「自入墓」的例子是：未是木的墓，在未日占卦，得木爻官鬼，被日辰带进了墓。旧注多一句「更带刑爻，必死于非命，或死于坟墓间者」，王洪绪没有。",
+        "en": "'Lingyu' is a prison (the book's glossary at the end of the chapter). The example of 'entering its own tomb' is: Wei is the tomb of Wood, so on a Wei day, with a Wood Pressure line, the ghost is taken into its tomb by the Day. The old commentary has one more sentence, 'if it also carries a punishing line, he surely died an unnatural death or died among graves', which Wang Hongxu lacks."
+      },
+      "see": ["LY.ILL.HJC.105", "LY.ILL.HJC.107"]
+    },
+    {
+      "id": "LY.ILL.HJC.107",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "傍爻财合必月下之情人、应位弟生乃社中好友：财爻动合鬼爻或财化鬼、鬼化财相合，是与病人私通之人为祸；被世克带玄武是因奸致死之鬼",
+      "rule": {
+        "yi": "旁边的财爻来合鬼，一定是月下私会的情人；应爻位上的兄弟来生它，是同社的好友。财爻发动来合鬼爻，或者财变鬼、鬼变财，自己互相合在一起的，一定是和病人私通的人在作祸；如果被世爻克，又带玄武，是因为通奸而死的鬼。",
+        "en": "A Wealth line beside it combining with the ghost is surely a lover met under the moon; a Peer on the Other line generating it is a good friend of the village society. If a Wealth line moves and combines with the Pressure line, or Wealth changes into Pressure or Pressure into Wealth so that they combine with each other, it is surely a person who had an illicit affair with the patient who is making trouble; if it is controlled by the Self line and carries the Dark Tortoise, it is the ghost of one who died because of adultery."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7154, 7154],
+          "zh": ["傍爻财合，必月下之情人；", "应位弟生，乃社中之好友。"],
+          "yi": ["旁边的爻是财爻来合鬼，一定是月下私会的情人；", "应爻位上的兄弟来生它，是同社的好友。"],
+          "en": ["If a Wealth line beside it combines with the ghost, it is surely a lover met under the moon;", "if a Peer on the Other line generates it, it is a good friend from the village society."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7155, 7155],
+          "zh": ["财爻动合鬼爻，或财化鬼，鬼化财，自相作合者，必与病人私通之人为祸。", "若被世克，而带玄武，乃因奸致死之鬼。", "余仿此。"],
+          "yi": ["财爻发动来合鬼爻，或者财爻变鬼、鬼爻变财，自己互相合在一起的，一定是和病人私通的人在作祸。", "如果被世爻克，又带玄武，就是因为通奸而死的鬼。", "其余照这个办法推。"],
+          "en": ["If a Wealth line moves and combines with the Pressure line, or Wealth changes into Pressure or Pressure into Wealth, so that they combine with each other, it is surely a person who had an illicit affair with the patient who is making trouble.", "If it is controlled by the Self line and carries the Dark Tortoise, it is the ghost of one who died because of adultery.", "Follow this for the rest."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3399, 3399],
+          "zh": ["财爻动合鬼爻，或财化鬼、鬼化财，自相作合者，必与病人私通之人为祸。"],
+          "yi": ["财爻发动来合鬼爻，或者财爻变鬼、鬼变财，自己互相合在一起的，一定是和病人私通的人在作祸。"],
+          "en": ["If a Wealth line moves and combines with the Pressure line, or Wealth changes into Pressure or Pressure into Wealth, so that they combine with each other, it is surely a person who had an illicit affair with the patient who is making trouble."] }
+      ],
+      "note": {
+        "yi": "经文两句，两家注都只讲了前一句（财合）；「应位弟生，乃社中之好友」这一句旧注和王洪绪都没有再解释。旧注比王洪绪多「被世克而带玄武，是因奸致死之鬼」一句。这条判断是古书里说的，写得很肯定（「必」），本库照抄，不替它加验证。",
+        "en": "Of the verse's two lines, both commentaries explain only the first (Wealth combining); neither explains 'the Peer on the Other line generating it is a good friend of the society'. The old commentary adds 'if controlled by the Self line and carrying the Dark Tortoise, it is the ghost of one who died because of adultery', which Wang Hongxu lacks. The classic states this judgment with certainty ('surely'); the library copies it without adding any verification."
+      },
+      "see": ["LY.ILL.HJC.106", "LY.ILL.HJC.108"]
+    },
+    {
+      "id": "LY.ILL.HJC.108",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼动化出六亲即以化出者断：化兄是朋友兄弟妯娌、化鬼加玄武是盗贼、化父母是伯叔、加螣蛇是匠人作魇魅；父化官虽非螣蛇亦是匠人作弊",
+      "rule": {
+        "yi": "鬼爻发动，变出哪一个六亲，就按变出来的这个断：变成兄爻，是朋友、兄弟、妯娌、公婆这一类；变成鬼再加玄武，是盗贼；变成父母，是伯叔这些亲属，再加螣蛇，是他家屋里有工匠做了魇魅的手脚，使家里的人不得安宁；父母变成官，即使没有螣蛇，也是工匠作了弊。",
+        "en": "When the Pressure line moves and turns into one of the six relations, judge by what it turns into: into Peer, friends, brothers, sisters-in-law and parents-in-law; into Pressure with the Dark Tortoise, a thief; into Resource, uncles and other relatives, and with the Coiling Snake added, a craftsman in his house has worked a nightmare-spell so that the household is uneasy; if Resource changes into Pressure, even without the Coiling Snake, a craftsman has played a trick."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7157, 7157],
+          "zh": ["化出鬼爻临玄武，则穿窬之鬼；", "变成父母遇螣蛇，则魇魅之精。"],
+          "yi": ["变出鬼爻又带玄武，是穿墙行窃的小偷的鬼；", "变成父母爻又遇螣蛇，是魇魅之类的精怪。"],
+          "en": ["If a Pressure line is changed out and carries the Dark Tortoise, it is the ghost of a thief who broke through walls;", "if it changes into Resource and meets the Coiling Snake, it is a nightmare-spell sprite."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7158, 7158],
+          "zh": ["鬼动，化出六亲，即以化出者断。", "如化兄，为朋友兄弟，妯娌姑嫜类。", "若化鬼，加玄武，必是盗贼。", "化父母，是伯叔六亲；", "加鰧蛇，乃是其家屋中，匠人作魇魅出现，以致人口不安。", "父化官，虽非鰧蛇，亦是匠人作弊。"],
+          "yi": ["鬼爻发动，变出哪一个六亲，就按变出来的这个断。", "比如变成兄爻，是朋友、兄弟、妯娌、公婆这一类。", "如果变成鬼，再加玄武，一定是盗贼。", "变成父母，是伯叔这些亲属；", "再加螣蛇，是他家屋里，有工匠做了魇魅的手脚出现，使家里的人不得安宁。", "父母变成官，即使没有螣蛇，也是工匠作了弊。"],
+          "en": ["When the ghost moves and turns into one of the six relations, judge by what it turns into.", "For example, changing into Peer means friends, brothers, sisters-in-law, parents-in-law and the like.", "If it changes into Pressure and adds the Dark Tortoise, it is surely a thief.", "Changing into Resource means uncles and other relatives;", "with the Coiling Snake added, it is that in his house a craftsman has worked a nightmare-spell and it has appeared, so that the household is uneasy.", "If Resource changes into Pressure, even without the Coiling Snake, a craftsman has played a trick."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3401, 3401],
+          "zh": ["鬼动化出六亲，即以化出者断，如化兄为朋友、兄弟、妯娌类。", "若化鬼加玄武，必是盗贼；", "化父母是伯叔六亲；", "加螣蛇，乃其家因匠人造作魇魅，以致人口不安；", "父化官，虽非螣蛇，亦是匠人作弊。"],
+          "yi": ["鬼动变出六亲，就按变出来的断，比如变成兄爻，是朋友、兄弟、妯娌这一类。", "如果变成鬼加玄武，一定是盗贼；", "变成父母是伯叔一类的亲属；", "再加螣蛇，是他家因为工匠造作魇魅，使家里的人不得安宁；", "父母变成官，即使没有螣蛇，也是工匠作了弊。"],
+          "en": ["When the ghost moves and turns into one of the six relations, judge by what it turns into; for example, changing into Peer means friends, brothers, sisters-in-law and the like.", "if it changes into Pressure with the Dark Tortoise added, it is surely a thief;", "changing into Resource means uncles and other relatives;", "with the Coiling Snake added, it is that in his house a craftsman has worked a nightmare-spell, so that the household is uneasy;", "if Resource changes into Pressure, even without the Coiling Snake, a craftsman has played a trick."] }
+      ],
+      "note": {
+        "yi": "「穿窬」是穿墙洞、爬墙头去偷，指小偷。「魇魅」是用邪术暗中害人（卜筮大全篇末的生僻字注只分别解释了「魇」「魅」两个字）。「姑嫜」是丈夫的母亲和父亲（嫜，丈夫的父亲，见生僻字注）；王洪绪的名单里没有它。「匠人作魇魅」是古人的一种说法：工匠在造房子时暗中做手脚害主人，这条书里没有再解释。这一条的核心是：鬼动变出什么，就按变出来的那一类亲属去认。",
+        "en": "'Chuanyu' is to break through a wall or climb over it to steal, meaning a thief. 'Yanmei' is to harm someone secretly with evil arts (the book's glossary explains only the two characters separately). 'Gujiang' are the husband's mother and father (the glossary defines 'zhang' as the husband's father); Wang Hongxu's list lacks them. 'A craftsman worked a nightmare-spell' is an old way of saying that a craftsman secretly does something against the owner while building the house, which the book does not explain further. The heart of this entry is that whatever the moving ghost changes into decides which kind of relative it is."
+      },
+      "see": ["LY.ILL.HJC.107", "LY.ILL.HJC.109"]
+    },
+    {
+      "id": "LY.ILL.HJC.109",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "太岁鬼临是祖传旧例、日辰官并是口许初心：太岁、日辰都带鬼，是眼下许下酬谢祖辈老规矩的愿还没办完",
+      "rule": {
+        "yi": "太岁上带鬼，是祖辈传下来的老规矩；日辰上并着官，是当初口头许下的心愿。如果太岁、日辰都带鬼，就是眼下许下要酬谢祖辈老规矩的愿，还没有办完。",
+        "en": "A ghost on the Tai Sui is an old custom handed down from the ancestors; Pressure joined to the Day is the original intention of a spoken vow. If the Tai Sui and the Day both carry the ghost, then a vow has been made for now to repay the ancestral custom, and it is not yet completed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7160, 7160],
+          "zh": ["太岁鬼临，乃祖传之旧例；", "日辰官并，是口许之初心。"],
+          "yi": ["太岁上带鬼，是祖辈传下来的老规矩；", "日辰上并着官，是口头许下的当初的心愿。"],
+          "en": ["A ghost on the Tai Sui is an old custom handed down from the ancestors;", "Pressure joined to the Day is the original intention of a spoken vow."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7161, 7161],
+          "zh": ["若太岁日辰俱带鬼，则日下许酬祖例，尚未完其事。"],
+          "yi": ["如果太岁、日辰都带鬼，就是眼下许下要酬谢祖辈老规矩的愿，还没有办完。"],
+          "en": ["If the Tai Sui and the Day both carry the ghost, then a vow has been made for now to repay the ancestral custom, and the matter is not yet completed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3403, 3403],
+          "zh": ["若太岁日辰俱官，则目下许酬祖先例未完。"],
+          "yi": ["如果太岁、日辰都是官，就是眼下许下要酬谢祖先老规矩的愿还没有办完。"],
+          "en": ["If the Tai Sui and the Day are both Pressure, then a vow made for now to repay the custom of the ancestors has not been completed."] }
+      ],
+      "note": {
+        "yi": "经文两句是分开的：太岁带鬼是「祖传旧例」，日辰官并是「口许初心」。旧注和王洪绪都把它们合成一条，只讲太岁、日辰都带鬼的情形，没有分别讲各自的意思。「日下」旧注写作「日下」，王洪绪写作「目下」，是字形相近的两种写法，都译作眼下。",
+        "en": "The verse's two lines are separate: the Tai Sui carrying the ghost is 'an ancestral custom', and Pressure joined to the Day is 'the original intention of a spoken vow'. The old commentary and Wang Hongxu both merge them into one entry and treat only the case of both the Tai Sui and the Day carrying the ghost, without explaining each separately. The old commentary writes 'ri xia' and Wang Hongxu 'mu xia', two close-looking forms, both rendered 'for now'."
+      },
+      "see": ["LY.ILL.HJC.108", "LY.ILL.HJC.110", "LY.ILL.HJC.50"]
+    },
+    {
+      "id": "LY.ILL.HJC.110",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼持世是旧愿未酬、鬼伏世下是有口无心、鬼化妻财是斋修不了、变财空亡是有头无尾",
+      "rule": {
+        "yi": "鬼爻持世，不是祖传的老规矩，而是先前口头许过愿、没有还；卦里没有鬼、世爻下面却伏着本宫的鬼，也是旧欠的愿，是嘴上答应了却没放在心上，所以招来责罚；鬼爻变出妻财，一定是斋戒修行没有做完，或者欠土煞的愿、破了戒；变成的财落空亡，是许了愿却没有戒口，有头没尾。",
+        "en": "When the Pressure line holds the Self position, it is not an old custom but a spoken vow made earlier and not yet paid; if there is no ghost in the hexagram but the ghost of the home palace is hidden beneath the Self line, it too is an old debt, words without the heart in it, and so blame has come; if the Pressure line changes into Wealth, a fast or observance was surely not completed, a debt owed to the earth spirits, or a precept was broken; and if the Wealth it changes into is Void, one made the vow but did not keep the abstinence of the mouth: a head with no tail."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7163, 7163],
+          "zh": ["持世则未酬旧愿，伏为有口无心；", "变财乃不了心斋，空则有头无尾。"],
+          "yi": ["鬼持世，是旧愿没有还；伏着的，是嘴上答应了却不放在心上；", "变成财，是斋戒没有做完；落空，就是有头没尾。"],
+          "en": ["A ghost holding the Self position means an old vow has not been paid; if hidden, it is a spoken word without the heart in it;", "changing into Wealth, the abstinence of the heart was not completed; if Void, it has a head but no tail."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7164, 7164],
+          "zh": ["鬼爻持世，亦非旧例，乃是先曾许过口愿，未得酬也。", "若无鬼，世下却伏本宫之鬼，亦是旧欠。", "但是有口无心，再不介意，故致愆责。", "若鬼爻化出妻财，必斋修不了，土杀之欠，或破戒不净。", "变财空亡，必虽许而口不戒，有头无尾也。"],
+          "yi": ["鬼爻持世，也不是祖传的老规矩，而是先前曾经口头许过愿，没有还。", "如果卦里没有鬼，世爻下面却伏着本宫的鬼，也是旧欠的愿。", "但是嘴上说说，心里不当回事，再也不放在心上，所以招来责罚。", "如果鬼爻变出妻财，一定是斋戒修行没有做完，欠的是土煞的愿，或者破了戒、不清净。", "变成的财落空亡，一定是嘴上许了愿，口却没有戒，有头没尾。"],
+          "en": ["When the Pressure line holds the Self position, it is also not an old custom but a spoken vow made earlier and not yet paid.", "If there is no ghost in the hexagram but the ghost of the home palace is hidden beneath the Self line, it too is an old debt.", "But it was words without heart; it was never taken to heart again, and so blame has come.", "If the Pressure line changes into Wealth, a fast or observance was surely not completed — a debt owed to the earth spirits — or a precept was broken and one is unclean.", "If the Wealth it changes into is Void, one surely made the vow but did not keep the abstinence of the mouth: a head with no tail."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3405, 3405],
+          "zh": ["鬼爻持世，有旧愿宜酬类。"],
+          "yi": ["鬼爻持世，是有旧愿应该还的这一类。"],
+          "en": ["The Pressure line holding the Self position is of the kind where there is an old vow that ought to be paid."] }
+      ],
+      "note": {
+        "yi": "经文「持世则未酬旧愿」，王洪绪引作「持世则来酬旧愿」，「未」和「来」形近，按上下文应是「未」；他的注「有旧愿宜酬」也是这个意思。「心斋」按旧注的解释是斋戒修行，「土杀之欠」按字面译作欠土煞的愿。王洪绪的注只有一句，旧注讲了四种情形。",
+        "en": "Where the verse says 'holding Self, the old vow is not yet paid' (wei chou), Wang Hongxu quotes 'holding Self, the old vow is to be paid' (lai chou); 'wei' and 'lai' look alike and by context 'wei' must be right, and his commentary 'an old vow that ought to be paid' means the same. 'Xinzhai', in the old commentary's explanation, is a fast or observance, and 'a debt owed to the earth-killing' is rendered literally as a debt to the earth spirits. Wang Hongxu's commentary is a single sentence, while the old commentary treats four cases."
+      },
+      "see": ["LY.ILL.HJC.109", "LY.ILL.HJC.111"]
+    },
+    {
+      "id": "LY.ILL.HJC.111",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼在宅中住居不稳、官临应上朝向不通：内卦第二爻是宅，动鬼临之宅不安常有病；应爻临鬼宅朝向不利宜改",
+      "rule": {
+        "yi": "鬼在住宅的位置上，住得不安稳；官落在应爻上，房子的朝向不顺。内卦的第二爻是宅：发动的鬼落在这里，住宅不安，常常有病；应爻带着鬼，这座宅子的朝向不利，应该改；旧注还说冲克二爻的爻也是这样。",
+        "en": "A ghost in the house position means the dwelling is unsettled; Pressure on the Other line means the orientation of the house is blocked. The second line of the inner trigram is the house: if a moving ghost sits there, the dwelling is unsettled and there is often illness; if the Other line carries the ghost, the orientation of the house is unfavourable and should be changed; the old commentary adds that a line that clashes with or controls the second line does likewise."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7166, 7166],
+          "zh": ["鬼在宅中，住居不稳；", "官临应上，朝向不通。"],
+          "yi": ["鬼在住宅的位置上，住得不安稳；", "官落在应爻上，房子的朝向不顺。"],
+          "en": ["A ghost in the house position means the dwelling is unsettled;", "Pressure on the Other line means the orientation of the house is blocked."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7167, 7167],
+          "zh": ["内卦第二爻为宅。", "若动鬼临之，宅不安，常有病。", "若冲克之爻，或应爻临鬼，其宅朝向不利，宜改。"],
+          "yi": ["内卦的第二爻是宅。", "如果发动的鬼落在这里，住宅不安，常常有病。", "如果是冲克它的爻，或者应爻带着鬼，这座宅子的朝向不利，应该改。"],
+          "en": ["The second line of the inner trigram is the house.", "If a moving ghost sits there, the house is unsettled and there is often illness.", "If a line clashes with or controls it, or the Other line carries the ghost, the orientation of the house is unfavourable and should be changed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3407, 3407],
+          "zh": ["内卦第二爻为宅若动鬼临之，住宅不安，常有疾病；", "若应爻临鬼，其宅朝向不利，宜改作为喜。"],
+          "yi": ["内卦第二爻是宅，如果发动的鬼落在这里，住宅不安，常常有病；", "如果应爻带着鬼，这座宅子的朝向不利，改动一下才好。"],
+          "en": ["The second line of the inner trigram is the house; if a moving ghost sits there, the dwelling is unsettled and there is often illness;", "if the Other line carries the ghost, the orientation of the house is unfavourable, and it is well to make changes."] }
+      ],
+      "note": {
+        "yi": "旧注多出「冲克二爻的爻」一种情形，王洪绪没有。家宅本身怎么断，旧注说另有家宅章，这里只讲鬼和宅的关系。",
+        "en": "The old commentary adds the case of a line that clashes with or controls the second line, which Wang Hongxu lacks. How to judge the household itself the old commentary leaves to the chapter on the household; here it treats only the relation of the ghost to the house."
+      },
+      "see": ["LY.ILL.HJC.110", "LY.ILL.HJC.112"]
+    },
+    {
+      "id": "LY.ILL.HJC.112",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "兑卦金龙干佛像：金鬼在兑宫是佛的善愿，带青龙勾陈是装塑、带螣蛇是图画、化父是描写、否则是经文、化财福是修舍",
+      "rule": {
+        "yi": "金在兑卦里发动，涉及佛像：兑是西方的卦，佛又是金身，所以遇到兑宫的金鬼，神佛那里一定有善愿。带青龙、勾陈，是要装銮塑像；带螣蛇，是想画像；变成父母，是描摹；不是这些，就是经文；变成财或福，是想修建房舍。",
+        "en": "Metal moving in the Dui trigram concerns a Buddha image: Dui is a trigram of the west and a Buddha has a body of gold, so meeting a Metal ghost in the Dui palace, there is surely a good vow to a god or Buddha. With the Azure Dragon and Hook Earth, it is to mount and mould an image; with the Coiling Snake, to paint a picture; changing into Resource, to copy or delineate; otherwise, scripture; changing into Wealth or Output, to build or repair a hall."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7169, 7169],
+          "zh": ["兑卦金龙干佛像；"],
+          "yi": ["兑卦里金带青龙，涉及佛像；"],
+          "en": ["In the Dui trigram, Metal with the Azure Dragon concerns a Buddha image;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7170, 7170],
+          "zh": ["兑西方卦，佛又金身，故遇兑宫金鬼，神佛中必有善愿。", "带青龙勾陈，装塑；", "带鰧蛇，是欲图画；", "化父，是描写；", "不然，则是经文。", "若化财福，是欲修舍。"],
+          "yi": ["兑是西方的卦，佛又是金身，所以遇到兑宫的金鬼，神佛那里一定有善愿。", "带青龙、勾陈，是要装銮塑像；", "带螣蛇，是想画像；", "变成父母，是描摹；", "不是这些，就是经文。", "如果变成财或福，是想修建房舍。"],
+          "en": ["Dui is a trigram of the west, and a Buddha has a body of gold, so meeting a Metal ghost in the Dui palace, there is surely a good vow to a god or Buddha.", "With the Azure Dragon and Hook Earth, it is to mount and mould an image;", "with the Coiling Snake, it is to paint a picture;", "changing into Resource, it is to copy or delineate;", "otherwise, it is scripture.", "If it changes into Wealth or Output, it is to build or repair a hall."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3409, 3409],
+          "zh": ["金在兑宫发动，金身佛像；"],
+          "yi": ["金在兑宫发动，是金身的佛像；"],
+          "en": ["Metal moving in the Dui palace: a Buddha image with a body of gold;"] }
+      ],
+      "note": {
+        "yi": "经文「金龙」按旧注是兑宫金鬼带青龙，「干」是涉及、冒犯。王洪绪的注只有一句「金身佛像」，旧注按六神和变出的六亲分了装塑、图画、描写、经文、修舍五种。「舍」在这里指房舍、殿堂，旧注没有再解释。",
+        "en": "By the old commentary, 'gold dragon' in the verse is a Metal ghost in the Dui palace carrying the Azure Dragon, and 'gan' means to concern or to offend. Wang Hongxu's commentary is the one phrase 'a Buddha image with a body of gold', while the old commentary divides by the six spirits and the relation it changes into: mounting and moulding, painting, copying, scripture, and building. 'She' here means a house or hall, and the old commentary does not explain further."
+      },
+      "see": ["LY.ILL.HJC.111", "LY.ILL.HJC.113", "LY.ILL.HJC.96"]
+    },
+    {
+      "id": "LY.ILL.HJC.113",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "坎宫木动犯划舟：木在坎宫发动是舟楫之象，必划龙船、上三相公见咎，送之则吉；艮巽卦中水鬼临青龙动及木化水、水化木皆是",
+      "rule": {
+        "yi": "木在坎宫发动，冒犯了划船（龙船）的神：是船和桨的象，一定是划龙船的事，上三相公怪罪，把他们送走就吉利；在艮卦、巽卦里水鬼带青龙发动，以及木变水、水变木，鬼落在水上，也都是这个象。",
+        "en": "Wood moving in the Kan palace has offended the spirit of the rowed boat: it is the image of a boat and oars, surely a matter of rowing the dragon boat, and the Three Lords Above are displeased; seeing them off brings good fortune. In the Gen or Xun trigram, a Water ghost carrying the Azure Dragon and moving, or Wood changing into Water or Water into Wood, with the ghost on Water, is the same image."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7172, 7172],
+          "zh": ["坎宫木动犯划舟。"],
+          "yi": ["木在坎宫发动，冒犯了划船的神。"],
+          "en": ["Wood moving in the Kan palace offends the spirit of the rowed boat."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7173, 7173],
+          "zh": ["木在坎宫发动，舟楫之象。", "必划龙船，上三相公见咎。", "送之则吉。", "若艮巽卦中，水鬼临青龙动，及木化水，水化木，鬼在水上皆是。"],
+          "yi": ["木在坎宫发动，是船和桨的象。", "一定是划龙船的事，上三相公怪罪。", "把他们送走就吉利。", "如果在艮卦、巽卦里，水鬼带青龙发动，以及木变水，水变木，鬼落在水上，都是这个象。"],
+          "en": ["Wood moving in the Kan palace is the image of a boat and oars.", "It is surely a matter of rowing the dragon boat, and the Three Lords Above are displeased.", "Seeing them off brings good fortune.", "If in the Gen or Xun trigram a Water ghost carries the Azure Dragon and moves, or Wood changes into Water or Water into Wood, with the ghost on Water, all are this image."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3409, 3409],
+          "zh": ["木在坎宫发动，舟辑之象。"],
+          "yi": ["木在坎宫发动，是船桨的象。"],
+          "en": ["Wood moving in the Kan palace is the image of a boat and oars."] }
+      ],
+      "note": {
+        "yi": "「上三相公」是旧注提到的神，书里没有解释，按字面译作上面的三位相公。王洪绪把「舟楫」写作「舟辑」，字形相近，意思同。这一条和上一条（兑卦金龙）在王洪绪那里是同一段注的前后两句。",
+        "en": "The 'Three Lords Above' are spirits the old commentary mentions but does not explain, and are rendered literally. Wang Hongxu writes 'boat and oars' with a variant character; the meaning is the same. This entry and the previous one (Metal and the Dragon in Dui) are the two halves of one passage in Wang Hongxu."
+      },
+      "see": ["LY.ILL.HJC.112", "LY.ILL.HJC.114"]
+    },
+    {
+      "id": "LY.ILL.HJC.114",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "水土交加在乾宫是三元大帝、火金互动于兑卦为五道伤官：乾宫土化水水化土遇官爻是三官（天地水），兑宫火金互发遇官爻是五道刀剑之神",
+      "rule": {
+        "yi": "水和土交错加在一起，在乾宫就是三元大帝（天官、地官、水官）：乾宫里土变水、水变土，又遇到官爻的，就是这个象；火和金互相发动，在兑卦就是五道伤官（五道是刀剑之神）：在兑宫里互相发动，又遇到官爻的，就是这个象。",
+        "en": "Water and Earth mingled together, in the Qian palace, are the Three Primes Great Emperor (the Officials of Heaven, Earth and Water): in the Qian palace, Earth changing into Water or Water into Earth and meeting a Pressure line is this image. Fire and Metal moving upon each other, in the Dui trigram, are the Five Paths and the Injuring Officer (the Five Paths are the spirit of blade and sword): moving upon each other in the Dui palace and meeting a Pressure line is this image."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7175, 7175],
+          "zh": ["水土交加，在乾宫则三元大帝；", "火金互动，于兑卦为五道伤官。"],
+          "yi": ["水和土交错加在一起，在乾宫就是三元大帝；", "火和金互相发动，在兑卦就是五道伤官。"],
+          "en": ["Water and Earth mingled together, in the Qian palace, are the Three Primes Great Emperor;", "Fire and Metal moving upon each other, in the Dui trigram, are the Five Paths and the Injuring Officer."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7175, 7175],
+          "zh": ["三官，天地水三官。", "乾宫土化水，水化土，而遇官爻者，是其象。", "五道是刀剑之神。", "在兑宫互相发，而遇官爻者，是其象。"],
+          "yi": ["三官，就是天、地、水三官。", "乾宫里土变水、水变土，又遇到官爻的，就是这个象。", "五道是掌管刀剑的神。", "在兑宫里（火和金）互相发动，又遇到官爻的，就是这个象。"],
+          "en": ["The Three Officials are the Officials of Heaven, Earth and Water.", "In the Qian palace, Earth changing into Water or Water into Earth, meeting a Pressure line, is this image.", "The Five Paths are the spirit in charge of blade and sword.", "In the Dui palace, (Fire and Metal) moving upon each other, meeting a Pressure line, is this image."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3411, 3411],
+          "zh": ["三官；", "天地水三官，乾宫土水互化遇官爻者是也。", "五道乃刀剑之神，在兑宫互相发动而遇官鬼者是也。"],
+          "yi": ["所谓三官；", "就是天、地、水三官，乾宫里土和水互相变，又遇到官爻的就是。", "五道是刀剑之神，在兑宫里（火和金）互相发动而遇到官鬼的就是。"],
+          "en": ["The 'Three Officials';", "are the Officials of Heaven, Earth and Water, and this is when in the Qian palace Earth and Water change into each other and meet a Pressure line.", "The Five Paths are the spirit of blade and sword, and this is when in the Dui palace (Fire and Metal) move upon each other and meet Pressure."] }
+      ],
+      "note": {
+        "yi": "经文和旧注在卜筮大全里写在同一行，中间只隔一个空格；本库按内容拆开。「三元大帝」旧注解作天、地、水三官。旧注和王洪绪都只解释了三官和五道，「伤官」没有再解释。王洪绪引经文时把「在乾宫」「于兑卦」的位置调到了句中，意思一样。",
+        "en": "In the Bushi Daquan the verse and old commentary sit on one line separated by a single space; the library splits them by content. The old commentary explains the 'Three Primes Great Emperor' as the Three Officials of Heaven, Earth and Water. Both commentaries explain only the Three Officials and the Five Paths, and neither explains the 'Injuring Officer'. When Wang Hongxu quotes the verse he moves 'in Qian' and 'in Dui' to the middle of the line; the meaning is the same."
+      },
+      "see": ["LY.ILL.HJC.113", "LY.ILL.HJC.115", "LY.ILL.HJC.97"]
+    },
+    {
+      "id": "LY.ILL.HJC.115",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "三空无香火之堂：占病遇第三爻空亡，象是不供香火的厅堂；动空化空似有若无，旺相空亡供器不全",
+      "rule": {
+        "yi": "第三爻落空，就是没有供香火的厅堂：占病时遇到第三爻空亡，他家不供奉香火；动了又落空、变出来也是空，像有又像没有；旺相而落空亡，供奉的器物不齐全。",
+        "en": "A Void third line means a hall where no incense or fire is offered: in divining illness, when the third line is Void, his family does not offer incense and fire; if it moves into Void or changes into Void, it is as if there were something and as if there were nothing; if strong yet Void, the sacrificial vessels are incomplete."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7177, 7177],
+          "zh": ["三空无香火之堂；"],
+          "yi": ["第三爻落空，就是没有供香火的厅堂；"],
+          "en": ["A Void third line means a hall where no incense or fire is offered;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7178, 7178],
+          "zh": ["凡占病，遇三爻空亡者，其象不供香火之堂。", "动空化空，似有若无。", "旺相空亡，供器不全。", "余见家宅章。"],
+          "yi": ["凡是占病，遇到第三爻空亡的，象是不供香火的厅堂。", "动了又落空、变出来也是空，像有又像没有。", "旺相而空亡，供奉的器物不齐全。", "其余在家宅章里有。"],
+          "en": ["In divining illness, when the third line is Void, the image is a hall where no incense or fire is offered.", "If it moves into Void or changes into Void, it is as if there were something and as if there were nothing.", "If strong yet Void, the sacrificial vessels are incomplete.", "The rest is in the chapter on the household."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3413, 3413],
+          "zh": ["三爻空，其家不奉香火。"],
+          "yi": ["第三爻空，他家不供奉香火。"],
+          "en": ["If the third line is Void, his family does not offer incense and fire."] }
+      ],
+      "note": {
+        "yi": "经文两句「三空无香火之堂，怪动有不祥之祸」，王洪绪的注把两句连成一段，本库按句拆成这一条和下一条。旧注比王洪绪多了动空化空、旺相空亡两种细分。",
+        "en": "The verse has two lines, 'a void third: no hall of incense; a strange line moving: inauspicious misfortune', and Wang Hongxu's commentary runs them into one passage; the library splits them by line into this entry and the next. The old commentary distinguishes two more cases than Wang Hongxu: moving into or changing into Void, and strong yet Void."
+      },
+      "see": ["LY.ILL.HJC.114", "LY.ILL.HJC.116"]
+    },
+    {
+      "id": "LY.ILL.HJC.116",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "怪动有不祥之祸：怪爻依月份取位（旧注：季月初六爻、仲月二五爻、孟月三四爻），动了才成怪；临父母必有怪器、加玄武是盗人之物、螣蛇又动临鬼爻然后可言有怪",
+      "rule": {
+        "yi": "怪动有不吉利的灾祸：怪爻按起卦的月份取，一定要动了才成怪，不动就没有；带父母，一定有怪异的器物；加玄武，是偷来的东西；遇到这一爻发动，即使不是鬼爻，也一定是怪事；螣蛇又发动、落在鬼爻上，然后才可以说有怪异。旧注取位是季月落在初爻和六爻，仲月二爻和五爻，孟月三爻和四爻。",
+        "en": "When the strange line moves there is inauspicious misfortune: the strange line is taken by the month of casting, and it becomes strange only when it moves — if still, there is none. With Resource there is a strange object; with the Dark Tortoise added, stolen goods; whenever this line moves, even if it is not the Pressure line, it is a strange matter; and only when the Coiling Snake also moves and sits on the Pressure line can one say there is something strange. The old commentary takes the position as the first and sixth lines in the Ji months, the second and fifth in the Zhong months, and the third and fourth in the Meng months."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7180, 7180],
+          "zh": ["怪动有不祥之祸。"],
+          "yi": ["怪爻发动，有不吉利的灾祸。"],
+          "en": ["When the strange line moves, there is inauspicious misfortune."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7181, 7182],
+          "zh": ["怪爻季是两头居，初与六爻是。", "仲月逢之二五随，孟月只宜三四是。", "动爻成怪静无之。", "临父母，必有怪器。", "加玄武是盗人之物。", "凡遇此爻动，虽非鬼爻，必是怪事。", "鰧蛇又动临鬼爻，然后可言有怪。"],
+          "yi": ["怪爻在季月落在两头，就是初爻和六爻。", "仲月遇到，是二爻、五爻跟着；孟月只在三爻、四爻。", "动爻才成怪，不动就没有。", "带父母，一定有怪异的器物。", "加玄武，是偷来的东西。", "凡是遇到这一爻发动，即使不是鬼爻，也一定是怪事。", "螣蛇又发动、落在鬼爻上，然后才可以说有怪异。"],
+          "en": ["In the Ji months the strange line sits at the two ends, the first and sixth lines.", "In the Zhong months it is followed by the second and fifth; in the Meng months it is only the third and fourth.", "A moving line becomes strange; if still there is none.", "With Resource, there is surely a strange object.", "With the Dark Tortoise added, it is a thief's stolen goods.", "Whenever this line moves, even if it is not the Pressure line, it is surely a strange matter.", "Only when the Coiling Snake also moves and sits on the Pressure line can one say there is something strange."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3413, 3413],
+          "zh": ["怪爻四季月，初六爻是仲月，二五爻是孟月，三四爻是季月。", "临父母必有怪器，加玄武是盗人之物，凡遇此爻动，虽非鬼爻，必是怪事。", "螣蛇又动临鬼爻，然后可言妖怪。"],
+          "yi": ["怪爻在四季月，初、六爻是仲月，二、五爻是孟月，三、四爻是季月。", "带父母一定有怪异的器物，加玄武是偷来的东西，凡是遇到这一爻发动，即使不是鬼爻，也一定是怪事。", "螣蛇又发动、落在鬼爻上，然后才可以说有妖怪。"],
+          "en": ["The strange line, in the four seasons' months: the first and sixth lines are the Zhong months, the second and fifth lines the Meng months, the third and fourth lines the Ji months.", "With Resource there is surely a strange object; with the Dark Tortoise added, stolen goods; whenever this line moves, even if it is not the Pressure line, it is surely a strange matter.", "Only when the Coiling Snake also moves and sits on the Pressure line can one speak of a monster."] }
+      ],
+      "dispute": {
+        "yi": "怪爻按月份落在哪几爻：旧注的口诀是季月（辰戌丑未）在初、六爻，仲月（子午卯酉）在二、五爻，孟月（寅申巳亥）在三、四爻；王洪绪写「初六爻是仲月，二五爻是孟月，三四爻是季月」，把三对爻位和三种月份的配法错开了一位（初六配仲、二五配孟、三四配季）。两家对不上，书里没有说哪个是抄错的。",
+        "en": "Which lines the strange line falls on by month: the old commentary's rhyme puts the Ji months (Chen, Xu, Chou, Wei) on the first and sixth lines, the Zhong months (Zi, Wu, Mao, You) on the second and fifth, and the Meng months (Yin, Shen, Si, Hai) on the third and fourth; Wang Hongxu writes 'the first and sixth lines are the Zhong months, the second and fifth the Meng months, the third and fourth the Ji months', which shifts the pairing of the three line-pairs and the three kinds of month by one place (first and sixth with Zhong, second and fifth with Meng, third and fourth with Ji). The two do not agree, and the books do not say which is a copying slip."
+      },
+      "note": {
+        "yi": "怪爻的月份口诀只见于旧注。另外旧注末句是「然后可言有怪」，王洪绪写作「然后可言妖怪」，前者说「有怪异」，后者说「有妖怪」，轻重略有不同。「季月」是辰戌丑未月，「仲月」是子午卯酉月，「孟月」是寅申巳亥月。",
+        "en": "The rhyme for the months of the strange line is found only in the old commentary. The old commentary's last sentence is 'only then can one say there is something strange' and Wang Hongxu's 'only then can one speak of a monster'; the first says 'something strange', the second 'a monster', a slight difference of weight. The Ji months are those of Chen, Xu, Chou and Wei, the Zhong months those of Zi, Wu, Mao and You, and the Meng months those of Yin, Shen, Si and Hai."
+      },
+      "see": ["LY.ILL.HJC.115", "LY.ILL.HJC.117"]
+    },
+    {
+      "id": "LY.ILL.HJC.117",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "龙遇文书独发经文可断：占有何鬼神不专看鬼爻，独发之爻亦可推；父母独发是祖宗求祀，临青龙则有善愿经文；本宫鬼爻伏世下在胎养生旺是新死亡人讨求经忏荐度",
+      "rule": {
+        "yi": "青龙遇到父母（文书）、一爻单独发动，可以断是经文：占有什么鬼神，不一定只看鬼爻，单独发动的那一爻也可以推。父母爻单独发动，是祖宗要求祭祀，带青龙就有善愿和经文；旧注还说，本宫的鬼爻伏在世爻下、又在胎、养、长生、帝旺的位置上，一定有刚死的人在讨要念经拜忏来超度，伏鬼属水的话棺材还暴露着，落空就不是。",
+        "en": "The Dragon meeting the document line, with a lone line moving, may be judged to mean scripture: in divining what ghost or spirit is involved, one need not rely only on the Pressure line, since a lone moving line can also be worked out. If Resource alone moves, the ancestors are asking for sacrifice, and with the Azure Dragon there is a good vow and scripture; the old commentary adds that if the Pressure line of the home palace is hidden beneath the Self line and stands at Womb, Nurture, Birth or Peak, a newly dead person is asking for scripture-chanting and rites of repentance to deliver him, and if the hidden ghost is Water the coffin is still exposed, and if it is Void it is not so."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7184, 7184],
+          "zh": ["龙遇文书，独发经文可断；"],
+          "yi": ["青龙遇到文书，一爻单独发动，可以断是经文；"],
+          "en": ["The Dragon meeting the document line, with a lone line moving, may be judged to mean scripture;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7185, 7185],
+          "zh": ["凡占有何鬼神，不持鬼爻断，独发之爻亦可推。", "如父母独发，祖宗求祀。", "临青龙，则有善愿经文。", "本宫鬼爻，又伏世下，而在胎养生旺之地者，必有新死亡人，讨求经忏荐度也。", "伏鬼属水，棺尚暴露，空则不然。"],
+          "yi": ["凡是占有什么鬼神，不专靠鬼爻来断，单独发动的那一爻也可以推。", "比如父母爻单独发动，是祖宗要求祭祀。", "带青龙，就有善愿和经文。", "本宫的鬼爻，又伏在世爻下面，而且在胎、养、长生、帝旺的位置上，一定有刚死的人，在讨要念经拜忏来超度。", "伏着的鬼属水，棺材还暴露在外；如果落空就不是这样。"],
+          "en": ["In divining what ghost or spirit is involved, one need not rely only on the Pressure line to judge; a lone moving line can also be worked out.", "If Resource alone moves, the ancestors are asking for sacrifice.", "With the Azure Dragon, there is a good vow and scripture.", "If the Pressure line of the home palace is hidden beneath the Self line and stands at Womb, Nurture, Birth or Peak, there is surely a newly dead person asking for scripture-chanting and rites of repentance to deliver him.", "If the hidden ghost is Water, the coffin is still exposed; if it is Void, it is not so."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3415, 3415],
+          "zh": ["如父母独发，乃祖宗求祀，临青龙则有善愿经文。"],
+          "yi": ["如果父母爻单独发动，是祖宗要求祭祀，带青龙就有善愿和经文。"],
+          "en": ["If Resource alone moves, the ancestors are asking for sacrifice, and with the Azure Dragon there is a good vow and scripture."] }
+      ],
+      "note": {
+        "yi": "经文说「龙遇文书」，旧注没有解「文书」，按上下文文书是父母爻。旧注多出两层：一层是「不持鬼爻断，独发之爻亦可推」的总原则，一层是本宫鬼爻伏世下、在胎养生旺的新死亡人，王洪绪只留了父母独发这一句。「荐度」是做法事超度亡灵。",
+        "en": "The verse says 'the Dragon meeting the document line', and the old commentary does not gloss 'document'; by context it is the Resource line. The old commentary has two layers Wang Hongxu lacks: the general principle 'not relying on the Pressure line, a lone moving line may also be worked out', and the newly dead person when the Pressure line of the home palace is hidden beneath the Self line at Womb, Nurture, Birth or Peak. Wang Hongxu keeps only Resource moving alone. 'Jiandu' is to perform rites to deliver the spirit of the dead."
+      },
+      "see": ["LY.ILL.HJC.116", "LY.ILL.HJC.118"]
+    },
+    {
+      "id": "LY.ILL.HJC.118",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "蛇逢官鬼属阴梦寐当推：鬼临螣蛇必有虚惊怪异，在阴宫阴象则有梦寐，冲克世爻用爻是梦中所见神祟，螣蛇临鬼动是吊死鬼",
+      "rule": {
+        "yi": "螣蛇遇到官鬼、属阴的，梦里的事该推一推：鬼带螣蛇，一定有虚惊怪异；如果在阴宫、阴象，就有梦寐；冲克世爻、用爻的，一定是梦中见到的神祟；旧注还说螣蛇带着鬼发动，就是吊死鬼。",
+        "en": "The Snake meeting Pressure, of the yin kind: dreams should be worked out. A ghost on the Coiling Snake surely brings false alarms and strange things; in a yin palace and a yin image there are dreams; one that clashes with or controls the Self line or the Subject line is surely a spirit seen in a dream; and the old commentary adds that if the Coiling Snake moves with the ghost, it is a hanged ghost."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7187, 7187],
+          "zh": ["蛇逢官鬼，属阴梦寐当推。"],
+          "yi": ["螣蛇遇到官鬼、属阴的，梦里的事该推一推。"],
+          "en": ["The Coiling Snake meeting Pressure, of the yin kind: dreams should be worked out."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7188, 7188],
+          "zh": ["鬼临鰧蛇，必有虚惊怪异。", "若在阴宫阴象，则有梦寐。", "冲克世爻用爻，必梦中所见神崇。", "鰧蛇临鬼动，则是吊死鬼。"],
+          "yi": ["鬼带螣蛇，一定有虚惊怪异。", "如果在阴宫、阴象，就有梦寐。", "冲克世爻、用爻的，一定是梦中所见的神祟。", "螣蛇带着鬼发动，就是吊死鬼。"],
+          "en": ["A ghost on the Coiling Snake surely brings false alarms and strange things.", "If it is in a yin palace and a yin image, there are dreams.", "If it clashes with or controls the Self line or the Subject line, it is surely a spirit seen in a dream.", "If the Coiling Snake moves with the ghost, it is a hanged ghost."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3417, 3417],
+          "zh": ["鬼临螣蛇，必有虚惊怪异，若在阴宫阴象则有梦寐，冲克世爻用爻，必梦中所见神祟。"],
+          "yi": ["鬼带螣蛇，一定有虚惊怪异；如果在阴宫、阴象，就有梦寐；冲克世爻、用爻的，一定是梦中见到的神祟。"],
+          "en": ["A ghost on the Coiling Snake surely brings false alarms and strange things; if it is in a yin palace and a yin image, there are dreams; if it clashes with or controls the Self line or the Subject line, it is surely a spirit seen in a dream."] }
+      ],
+      "note": {
+        "yi": "经文最后一个字，卜筮大全作「梦寐当推」，王洪绪引作「梦寐难当」：一个是「该推算」，一个是「难以承受」，字面不同，书里没有说哪个对。旧注比王洪绪多一句「螣蛇临鬼动，则是吊死鬼」。",
+        "en": "The verse's ending in the Bushi Daquan is 'dreams should be worked out' (dang tui), and Wang Hongxu quotes 'dreams are hard to bear' (nan dang); the wording differs and the books do not say which is right. The old commentary has one more sentence than Wang Hongxu: 'if the Coiling Snake moves on the ghost, it is a hanged ghost'."
+      },
+      "see": ["LY.ILL.HJC.117", "LY.ILL.HJC.119", "LY.ILL.HJC.97"]
+    },
+    {
+      "id": "LY.ILL.HJC.119",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "动入空中值鬼恐失孝思之礼：官爻动空化空，主先亡中有失祀礼，或逢忌日不设祭；在他宫外卦则是眷属中曾有祀礼今取消不设其位",
+      "rule": {
+        "yi": "鬼动了又落入空亡，恐怕丢了孝敬追思的礼数：官爻发动落空、或变出来空，都主先人亡故的人里有丢了祭祀礼数的，或者遇到忌日没有摆祭；如果在别的宫、外卦，就是亲属里曾经有过祭祀的礼，现在却取消了，不设他的牌位；或者曾经送过纸钱纸帛，现在没有了。",
+        "en": "A ghost that moves into Void: it is feared the rites of filial remembrance have been neglected. If the Pressure line moves into Void or changes into Void, it means that among the departed forebears some rites of sacrifice have been lost, or no offering was set out on the anniversary of a death; if it is in another palace or the outer trigram, it is that among the kin there was once a rite of sacrifice which has now been dropped and his place is no longer set, or paper offerings used to be sent and now none is."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7190, 7190],
+          "zh": ["动入空中值鬼，恐失孝思之礼；"],
+          "yi": ["鬼动了又落入空亡，恐怕丢了孝敬追思的礼数；"],
+          "en": ["A ghost that moves into Void: it is feared that the rites of filial remembrance have been neglected;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7191, 7191],
+          "zh": ["官爻动空化空，皆主先亡中，有失禴祀，或逢忌日不设祭也。", "若在他宫外卦，则是眷属中曾有祀礼，今却除之，不设其位。", "或曾馈送褚帛，今无之。", "皆有此象。"],
+          "yi": ["官爻发动落空、或变出来空，都主先人亡故的人里，有失了禴祭的，或者遇到忌日没有摆祭。", "如果在别的宫、外卦，就是亲属里曾经有过祭祀的礼，现在却取消了，不设他的牌位。", "或者曾经送过纸钱纸帛，现在没有了。", "都是这样的象。"],
+          "en": ["If the Pressure line moves into Void or changes into Void, in each case it means that among the departed forebears some have lost the seasonal Yue sacrifice, or that no offering was set out on the anniversary of a death.", "If it is in another palace or the outer trigram, it is that among the kin there was once a rite of sacrifice which has now been dropped, and his place is no longer set.", "Or paper offerings used to be sent, and now none is.", "All have this image."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3419, 3419],
+          "zh": ["官爻动空化空，皆主先亡中有失祀礼。", "若在他宫外卦，则是眷中曾会祀礼不设其位。"],
+          "yi": ["官爻发动落空、或变出来空，都主先人亡故的人里有丢了祭祀礼数的。", "如果在别的宫、外卦，就是亲属里曾经会过的祭祀礼，不再设他的位置。"],
+          "en": ["If the Pressure line moves into Void or changes into Void, in each case it means that among the departed forebears some rites of sacrifice have been neglected.", "If it is in another palace or the outer trigram, it is that among the kin a rite of sacrifice was once held, and his place is no longer set."] }
+      ],
+      "note": {
+        "yi": "「禴」是周礼里的一种春夏之祭。「褚帛」按旧注的用法是烧给亡人的纸钱纸帛，书里没有解释，按字面译。王洪绪没有忌日和纸钱两句；他的「眷中曾会祀礼不设其位」比旧注的「眷属中曾有祀礼，今却除之，不设其位」少了「今却除之」，语意不全，可能是传抄脱字，书里没有说明。",
+        "en": "'Yue' is a seasonal sacrifice in the Zhou rites, of spring or summer. 'Chubo' in the old commentary's usage is paper money and cloth burned for the dead; the book does not explain it and it is rendered literally. Wang Hongxu lacks the anniversary and paper-offering sentences; his 'among the kin a rite of sacrifice was once held, and his place is not set' lacks the old commentary's 'now dropped' and is incomplete in sense, perhaps a scribal omission, which the book does not explain."
+      },
+      "see": ["LY.ILL.HJC.118", "LY.ILL.HJC.120"]
+    },
+    {
+      "id": "LY.ILL.HJC.120",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "静居宅上临木家停暴露之棺：木爻官鬼安静地落在二爻，或木鬼伏在父母爻下，其家必停灵柩，举之则安；衰弱的是座席，撤了家宅安泰",
+      "rule": {
+        "yi": "鬼安静地落在宅位（二爻）上又是木，家里停着裸露的棺材：木爻的官鬼安静地落在二爻，或者木鬼伏在父母爻下面，这家一定停着灵柩，把它抬走就安宁了；衰弱的话是座席，撤掉它，家宅安泰；旧注说照这样断，万无一失。",
+        "en": "A still ghost on the house position (the second line), being Wood, means the family has a coffin lying exposed: if a Wood Pressure line sits still on the second line, or a Wood ghost is hidden beneath the Resource line, the family surely has a coffin lying in the hall, and once it is carried away there will be peace; if weak, it is a seat or mat, and once it is taken away the household is at peace. The old commentary says that judged this way nothing can go wrong."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7193, 7193],
+          "zh": ["静居宅上临木，家停暴露之棺。"],
+          "yi": ["鬼安静地坐在宅位上又是木，家里停着裸露着的棺材。"],
+          "en": ["A still ghost sitting on the house position, being Wood, means the family has a coffin lying exposed."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7194, 7194],
+          "zh": ["木爻官鬼，静临二爻，或木鬼伏于父母下，其家必然停柩在堂，举之则安。", "衰则座席，起之，家宅安泰。", "依此断，万无一失。"],
+          "yi": ["木爻的官鬼，安静地落在二爻，或者木鬼伏在父母爻下面，这家一定停着灵柩在堂屋，把它抬走就安宁了。", "衰弱的话，就是座席，撤掉它，家宅就安泰。", "照这样断，万无一失。"],
+          "en": ["If a Wood Pressure line sits still on the second line, or a Wood ghost is hidden beneath the Resource line, the family surely has a coffin lying in the hall, and once it is carried away there will be peace.", "If weak, it is a mat or seat, and once it is taken away the household will be at peace.", "Judge by this and nothing will go wrong."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3421, 3421],
+          "zh": ["木爻官鬼静临二爻，或木鬼伏于父母下，其家必然停柩不安。"],
+          "yi": ["木爻的官鬼安静地落在二爻，或者木鬼伏在父母爻下面，他家一定停着灵柩，不得安宁。"],
+          "en": ["If a Wood Pressure line sits still on the second line, or a Wood ghost is hidden beneath the Resource line, the family surely has a coffin lying unburied and is uneasy."] }
+      ],
+      "note": {
+        "yi": "「座席」旧注没有解释，按字面译作座位或席子。旧注末句「依此断，万无一失」是注者自己的保证，王洪绪没有，本库照抄注者的话，不替它担保。这一条是鬼神章的最后一条。",
+        "en": "The old commentary does not explain 'zuoxi' (seat and mat), rendered literally as a seat or mat. The old commentary's last sentence, 'judge by this and nothing will go wrong', is the commentator's own guarantee, which Wang Hongxu lacks; the library copies the commentator's words and does not stand surety for them. This is the last entry of the chapter on ghosts and spirits."
+      },
+      "see": ["LY.ILL.HJC.119", "LY.ILL.HJC.93"]
+    }
+  ]
+}

@@ -42,7 +42,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 六爻 · 疾病(132 条)→ `chapters/六爻/疾病/索引.md`
+## 六爻 · 疾病(197 条)→ `chapters/六爻/疾病/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
@@ -50,16 +50,27 @@ What is in the library and where; entries where the classics disagree are listed
 | 症候 | Symptoms: which organ or part is ill, by phase, trigram, position and spirit | 20 |
 | 病因 | Cause: how the illness was contracted, and from what | 7 |
 | 轻重 | Light or heavy, new or old, better or worse by day and night | 6 |
-| 生死 | Life or death: will the patient recover, and the signs of danger | 21 |
+| 生死 | Life or death: will the patient recover, and the signs of danger | 22 |
 | 动变 | Moving lines and what they turn into | 7 |
 | 应期 | Timing: when the illness lifts or worsens, and when death may come | 3 |
-| 医药 | Doctors and medicine: which doctor, which remedy, when to treat | 50 |
-| 神祟 | Spirits and curses: prayer, vows and what to sacrifice | 5 |
-| 痘疹 | Smallpox and measles | 4 |
+| 医药 | Doctors and medicine: which doctor, which remedy, when to treat | 51 |
+| 神祟 | Spirits and curses: prayer, vows and what to sacrifice | 34 |
+| 他人病 | Whose illness: parents, children, husband or wife, brothers, servants | 1 |
+| 痘疹 | Smallpox and measles | 37 |
 | 风险 | Warnings: what to guard against | 2 |
 
-## 打架 · Where the classics disagree(79 条)
+## 打架 · Where the classics disagree(88 条)
 
+- **LY.ILL.BSZZ.02 出花的是谁就按谁取用神：兄弟出花以兄弟爻为用神、父母爻为原神；子侄以子孙爻为用神、父动克子是凶；妻奴婢妾以财爻为用神、兄动克财不宜**(`chapters/六爻/疾病/痘疹.md`):用神取哪一爻：王洪绪按出花的是谁分开取，兄弟取兄弟爻、子侄取子孙爻、妻奴婢妾取财爻，官鬼爻则是痘花本身；增删卜易的野鹤把出花的几件事分开占，问什么时候出花拿鬼爻当用神（LY.ILL.ZS.19），问吉凶大体上全看子孙爻，不管来问的是谁（LY.ILL.ZS.21）。两家取用神的办法不一样，书里没有裁决。
+  Which line is the Subject: Wang Hongxu takes it by who has the pox — the Peer line for a brother, the Output line for a child or nephew, the Wealth line for a wife, servant, maid or concubine — and the Pressure line is the pox flowers themselves; the Old Man of Yehe in the Zengshan Buyi divides the matters of the pox into separate divinations, taking the Pressure line as the Subject for when the pox will come out (LY.ILL.ZS.19) and looking, on the whole, only at the Output line for fortune, whoever is asking (LY.ILL.ZS.21). The two differ on how the Subject is taken, and the books do not decide.
+- **LY.ILL.BSZZ.25 爻中煞当凭八卦论终身：白虎鬼居乾宫带疾在头、兑在面、震在足、巽在股、坎在耳、离在目、艮在手、坤在腹；福神克制则易医，加白虎持临是终身之疾**(`chapters/六爻/疾病/痘疹.md`):兑宫的部位，同一章里有两说：LY.ILL.BSZZ.23 说兑宫毒结在口，这一条说兑象带疾在面。书里没有裁决。
+  The place of the Dui palace has two readings in this one chapter: LY.ILL.BSZZ.23 says the poison lodges in the mouth in the Dui palace, and this entry says the ailment lingers in the face in the Dui image. The book does not decide.
+- **LY.ILL.BSZZ.34 何知章·亲人的病灾：父母疾（白虎临爻兼刑克）、父母殃（财爻发动煞神伤）、子孙疾（父母爻动相克）、子孙灾、小儿死（子孙空亡加白虎）、兄弟亡（用落空亡白虎伤）**(`chapters/六爻/疾病/他人病.md`):子孙有灾看什么：卜筮大全答「白虎当临福德来」，白虎落到子孙爻上；卜筮正宗答「父母当临福德来」，父母爻落到子孙爻上。两本一个说白虎、一个说父母，书里没有说哪个对（白虎是六神，父母是六亲，两条不是一回事）。
+  What to look at for a child's misfortune: the Bushi Daquan answers 'the White Tiger arrives upon Output', the White Tiger falling on the Output line; the Bushi Zhengzong answers 'Resource arrives upon Output', the Resource line falling on the Output line. One says the White Tiger and the other Resource, and the books do not say which is right (the White Tiger is one of the six spirits and Resource one of the six relations, so the two are not the same thing).
+- **LY.ILL.BSZZ.36 何知章·病要死：卜筮正宗答用神无救又入墓；卜筮大全答身命世鬼入墓**(`chapters/六爻/疾病/生死.md`):凭什么断病要死：卜筮正宗答「用神无救又入墓」，只看用神一爻；卜筮大全答「身命世鬼入墓推」，看身、命、世、鬼四样入墓。两本不一样，书里没有裁决。
+  What decides that the illness is unto death: the Bushi Zhengzong answers 'the Subject has no rescue and enters a tomb', looking only at the Subject line; the Bushi Daquan answers 'the Body, the destiny, the Self and the ghost enter a tomb', looking at four things entering a tomb. The two texts differ and the books do not decide.
+- **LY.ILL.BSZZ.37 何知章·怪与死：多梦寐（螣蛇带鬼持世）、出鬼怪（螣蛇白虎临门）、人投水（玄武入水煞临鬼）、有吊颈（螣蛇木鬼临世爻）、孝服来（白虎临鬼；大全作丧门吊客临鬼）**(`chapters/六爻/疾病/神祟.md`):孝服来（有丧事）看什么：卜筮正宗答「交重白虎临鬼排」，白虎发动排在鬼爻上；卜筮大全答「丧门吊客临鬼排」，丧门、吊客两颗神煞排在鬼爻上。一个用六神白虎，一个用神煞丧门吊客，书里没有裁决。
+  What tells that mourning is coming: the Bushi Zhengzong answers 'the White Tiger moving, set upon the ghost', the White Tiger of the six spirits moving on the Pressure line; the Bushi Daquan answers 'Mourning Gate and Guest of Condolence set upon the ghost', two spirit-stars on the Pressure line. One uses the White Tiger among the six spirits and the other the spirit-stars Mourning Gate and Guest of Condolence, and the books do not decide.
 - **LY.ILL.HJC.15 上冲下下冲上，内外感伤：上下有鬼内外两感；内鬼动冲外鬼先伤后感，外鬼动冲内鬼先感后伤**(`chapters/六爻/疾病/症候.md`):两鬼互冲的结果，旧注和王洪绪相反。旧注说「适感而遂伤也」，刚感受了邪就受了伤；卜筮正宗写「适感而适愈也」，刚感受就好了。书里没有再解释，也没有别家的话可对。
   The two disagree on what follows when two Pressure lines clash each other. The old commentary says 'hardly is the evil felt than harm is done', while the Bushi Zhengzong writes 'hardly is it felt than it is cured'. The book explains no further and there is no other voice to check against.
 - **LY.ILL.HJC.17 水官化土回头克、落在内卦是小便不通：属阴则大便也不通，阴阳错配二便俱闭；内卦水克加白虎，阳爻尿血、阴爻泻血，带刑是痔漏**(`chapters/六爻/疾病/症候.md`):水官化土在哪里才是小便不通：旧注说在「本宫内卦」（下三爻），王洪绪说在「本宫初爻」（最下面一爻）。范围一个宽一个窄，书里没有说哪个对。
@@ -104,6 +115,14 @@ What is in the library and where; entries where the classics disagree are listed
   What sort of Output is suited to inducing sweat: the old commentary says Output moving in the Kan trigram, whatever its phase; Wang Hongxu says Output that is Water, or moves in the Kan palace, which adds the case of 'being Water'.
 - **LY.ILL.HJC.84 鬼衰属水莫行针：子孙属金利用刀针，鬼爻属水而用刀针则金生水反助病势；土鬼忌热药、水鬼忌寒药（王洪绪：木鬼忌寒药）、火鬼忌风药、金鬼忌丸药**(`chapters/六爻/疾病/医药.md`):哪一种鬼忌用寒药：旧注是水鬼，王洪绪是木鬼；土鬼忌热药、火鬼忌风药、金鬼忌丸药，两家相同。
   Which Pressure avoids cold medicine: the old commentary says the Water Pressure, Wang Hongxu the Wood Pressure; that an Earth Pressure avoids hot medicine, a Fire Pressure wind medicine and a Metal Pressure pills is the same in both.
+- **LY.ILL.HJC.94 旺相为神、休囚为鬼，阳爻是男、阴爻是女；鬼爻临长生是少年鬼、帝旺壮年鬼、衰弱老年鬼、胎养小儿鬼；乾宫西北方、巽宫东南方之鬼**(`chapters/六爻/疾病/神祟.md`):神和鬼、男和女是一件事还是两件事：旧注分成两条，旺相是神、休囚是鬼看旺衰，阳爻是男、阴爻是女看阴阳；王洪绪把它们连成一条，「阳为神为男，阴为鬼为女」。照旧注，一条旺相的阴爻是一个女的神；照王洪绪，阴爻就是女鬼。另外王洪绪没有旧注按长生、帝旺、衰弱、胎养分年龄的那一段。书里没有裁决。
+  Whether spirit-or-ghost and male-or-female are one matter or two: the old commentary makes two rules, strong or weak deciding spirit or ghost and yang or yin deciding male or female; Wang Hongxu joins them into one, 'yang is a spirit and male, yin is a ghost and female'. On the old commentary a strong yin line is a female spirit; on Wang Hongxu a yin line is a female ghost. Wang Hongxu also lacks the old commentary's passage that gives the age by Birth, Peak, decline and Womb and Nurture. The books do not decide between them.
+- **LY.ILL.HJC.97 五行推鬼神：金是伤司刀兵鬼、火是灶神香愿、木是枷锁、水是河伯江神；旧注细分火鬼二爻灶君、午火衰弱烧死鬼、木鬼带螣蛇吊死、水鬼衰弱落水鬼**(`chapters/六爻/疾病/神祟.md`):要不要把五行落实到一位具体的神：旧注给出很具体的名目（火鬼在二爻是灶君，金旺是伤神、衰是伤司部众，水旺是江神河伯），王洪绪只留了金的一例；增删卜易的觉子认为不必把金官指为关公、岳公这一类具体的神，应该问病人心里疑的是哪位神，再占一卦验证（见 LY.ILL.ZS.24）。三处怎样落实到神，说法各不相同，书里没有裁决。
+  Whether to fix an element to a particular named spirit: the old commentary gives very specific names (a Fire ghost on the second line is the Kitchen God; strong Metal is an injuring spirit and weak Metal the followers of the Injuring Office; strong Water is a river god), while Wang Hongxu keeps only the Metal example; the Master Awakened (Jue Zi) in the Zengshan Buyi holds that one should not name Metal Pressure as Guan Gong, Yue Gong or the like, but ask which spirit the patient has in mind and divine again to check (see LY.ILL.ZS.24). The three differ on how far to name the spirit, and the books do not decide.
+- **LY.ILL.HJC.103 鬼带刑爻必非善终之鬼：旧注按地支分辰压死、午汤火烫、酉刀箭、亥落水、寅虎噬、巳蛇伤、戌犬咬、丑牛触，旺则为神道；王洪绪说按五行所属推**(`chapters/六爻/疾病/神祟.md`):怎么推是怎么死的：旧注按鬼爻的地支分（辰压死、午烫死、酉刀箭、亥落水、寅虎、巳蛇、戌犬、丑牛）；王洪绪说「当以五行所属推其何死鬼」，按五行推，不按地支。两种办法给出的名目不完全重合（例如增删卜易 LY.ILL.ZS.23 按五行说金是刀剑亡鬼、木是刑杖悬梁、水是水死、火是汤火焚烧、土是墙倒屋塌，和旧注的辰午酉亥有部分重合）。书里没有裁决。
+  How to work out how the ghost died: the old commentary goes by the branch of the Pressure line (Chen crushed, Wu scalded, You blade and arrow, Hai water, Yin tiger, Si snake, Xu dog, Chou ox); Wang Hongxu says 'work out the manner of death from the element it belongs to', by element and not by branch. The two methods do not give exactly the same categories (for instance the Zengshan Buyi, LY.ILL.ZS.23, goes by element — Metal a ghost of blade and sword, Wood of the staff or the hanging beam, Water of drowning, Fire of hot water and burning, Earth of a collapsed wall — which overlaps in part with the old commentary's Chen, Wu, You and Hai). The books do not decide.
+- **LY.ILL.HJC.116 怪动有不祥之祸：怪爻依月份取位（旧注：季月初六爻、仲月二五爻、孟月三四爻），动了才成怪；临父母必有怪器、加玄武是盗人之物、螣蛇又动临鬼爻然后可言有怪**(`chapters/六爻/疾病/神祟.md`):怪爻按月份落在哪几爻：旧注的口诀是季月（辰戌丑未）在初、六爻，仲月（子午卯酉）在二、五爻，孟月（寅申巳亥）在三、四爻；王洪绪写「初六爻是仲月，二五爻是孟月，三四爻是季月」，把三对爻位和三种月份的配法错开了一位（初六配仲、二五配孟、三四配季）。两家对不上，书里没有说哪个是抄错的。
+  Which lines the strange line falls on by month: the old commentary's rhyme puts the Ji months (Chen, Xu, Chou, Wei) on the first and sixth lines, the Zhong months (Zi, Wu, Mao, You) on the second and fifth, and the Meng months (Yin, Shen, Si, Hai) on the third and fourth; Wang Hongxu writes 'the first and sixth lines are the Zhong months, the second and fifth the Meng months, the third and fourth the Ji months', which shifts the pairing of the three line-pairs and the three kinds of month by one place (first and sixth with Zhong, second and fifth with Meng, third and fourth with Ji). The two do not agree, and the books do not say which is a copying slip.
 - **LY.ILL.ZS.01 断病生死全凭用神：卦名、卦身世身兼用、本命丧门、蛇虎星煞都不验，只有卦变六冲例外**(`chapters/六爻/疾病/生死.md`):断生死看什么：黄金策的病体章除了用神，还讲卦身、世爻、本命爻（LY.ILL.HJC.35、HJC.41、HJC.53、HJC.54）；野鹤说这些并用是舛错，断生死全凭用神，只有卦变六冲例外。
   What to look at in judging life and death: besides the Subject the Huangjin Ce's chapter on the patient's condition also speaks of the hexagram Body, the Self line and the natal line (LY.ILL.HJC.35, HJC.41, HJC.53, HJC.54); the Old Man of Yehe says that using them together is error, that life and death rest wholly on the Subject, and that a hexagram changing into Six-Clash is the only exception.
 - **LY.ILL.ZS.05 主空无救不分近久非经验之说：野鹤驳《海底眼》《黄金策》，近病久病要分；觉子验得近病旬空又逢三合六合必成久病而终**(`chapters/六爻/疾病/生死.md`):主象落空要不要紧：黄金策（LY.ILL.HJC.37）和《海底眼》说主象落空就没救，不分近病久病；野鹤说这不是经验之谈，近病落空到冲空、实空的日子就好（LY.ILL.ZS.04）。觉子又补一条：近病落旬空遇三合、六合会拖成久病而死。

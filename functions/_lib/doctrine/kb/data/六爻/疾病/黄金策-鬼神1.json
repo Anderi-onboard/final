@@ -1,0 +1,390 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "鬼神",
+  "chapter_en": "Ghosts and spirits",
+  "ranges": {"卜筮大全": [7104, 7146], "卜筮正宗": [3370, 4534]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.93",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "占鬼神先看卦内官爻：祈福祭祷不拿易爻核对就是白做，官鬼能为祸也能为福佑，看它便知鬼神的情状",
+      "rule": {
+        "yi": "向鬼神求福，是现在人们崇尚的事，古时候也是这样。可是不拿易的爻来核对，祭祀也是白办。占的时候，先看卦里的官爻，鬼神是什么情形就知道了。官鬼既能带来实实在在的灾祸，也能带来福气和保佑，所以看它就能知道鬼神的情形。",
+        "en": "Seeking blessing from ghosts and spirits is what people of the present day esteem, and it has been so since ancient times. But if it is not checked against the lines of the Yi, even the sacrificial rites are performed in vain. In divining, look first at the Pressure line in the hexagram and you will know the condition of the ghost or spirit. The Pressure line can bring real disaster and can bring blessing and protection, so looking at it tells you the condition."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7104, 7105],
+          "zh": ["徼福鬼神，乃当今之所尚；", "祷尔上下，在古昔而皆然。", "不质正于易爻，亦虚行乎祀典；", "先看卦内官爻，便知鬼神情状。"],
+          "yi": ["向鬼神求福，是现在人们崇尚的事；", "向天地神明祈祷，古时候也都是这样。", "不拿易的爻来核对，祭祀的典礼也是白办；", "先看卦里的官爻，就知道鬼神的情形。"],
+          "en": ["Seeking blessing from ghosts and spirits is what people of the present day esteem;", "praying to the powers above and below has been the same since ancient times.", "without checking it against the lines of the Yi, even the sacrificial rites are performed in vain;", "look first at the Pressure line within the hexagram and you will know the condition of the ghost or spirit."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7106, 7106],
+          "zh": ["官鬼能为实祸，能为福佑。", "故观此亦知其情状也。"],
+          "yi": ["官鬼既能带来实实在在的灾祸，也能带来福气和保佑。", "所以看它，也就知道鬼神的情形了。"],
+          "en": ["The Pressure line can bring real disaster and can bring blessing and protection.", "So by looking at it one also knows the condition."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3370, 3370],
+          "zh": ["官鬼能为祸福，故观此可知其情状也。"],
+          "yi": ["官鬼能带来灾祸，也能带来福气，所以看它就能知道鬼神的情形。"],
+          "en": ["The Pressure line can bring both harm and blessing, so by looking at it one can know the condition."] }
+      ],
+      "note": {
+        "yi": "「徼」是求（卜筮大全篇末的生僻字注）。旧注写「实祸」「福佑」，王洪绪写「祸福」，意思一样。《黄金策》有一个本子在这一章标着「存赋不注」，只有赋文；旧注见卜筮大全，王洪绪的注见卜筮正宗。",
+        "en": "'Jiao' means to seek (the book's own glossary of rare characters at the end of the chapter). The old commentary writes 'real disaster' and 'blessing and protection' where Wang Hongxu writes 'harm and blessing'; the meaning is the same. One edition of the Huangjin Ce marks this chapter 'the verse kept, no commentary', giving only the verse; the old commentary is found in the Bushi Daquan and Wang Hongxu's commentary in the Bushi Zhengzong."
+      },
+      "see": ["LY.ILL.HJC.94", "LY.ILL.HJC.50", "LY.ILL.ZS.22", "LY.ILL.ZS.23", "LY.ILL.ZS.24"]
+    },
+    {
+      "id": "LY.ILL.HJC.94",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "旺相为神、休囚为鬼，阳爻是男、阴爻是女；鬼爻临长生是少年鬼、帝旺壮年鬼、衰弱老年鬼、胎养小儿鬼；乾宫西北方、巽宫东南方之鬼",
+      "rule": {
+        "yi": "鬼爻旺相是神，休囚是鬼；阳爻是男，阴爻是女。鬼爻临长生是少年的鬼，临帝旺是壮年的鬼，临衰弱是老年的鬼，临胎、养是小孩的鬼。乾宫的鬼在西北方，巽宫的鬼在东南方。",
+        "en": "A Pressure line that is strong is a spirit; resting or trapped, it is a ghost. Yang is male and yin female. A Pressure line at Birth is a young person's ghost, at Peak a ghost of the prime of life, at decline an old person's ghost, and at Womb or Nurture a child's ghost. A ghost of the Qian palace lies to the northwest, and a ghost of the Xun palace to the southeast."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7108, 7108],
+          "zh": ["旺神衰鬼，方隅乾巽堪推；", "阴女阳男，老幼旺衰可决。"],
+          "yi": ["旺的是神，衰的是鬼，方位可以从乾宫、巽宫推出来；", "阴爻是女、阳爻是男，年老年幼可以从旺衰判定。"],
+          "en": ["The strong are spirits and the weak are ghosts; the direction can be worked out from the Qian and Xun palaces;", "yin is female and yang male, and whether old or young is settled by strength or weakness."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7109, 7110],
+          "zh": ["凡鬼爻旺相，为神。", "休囚，为鬼。", "阳为男，阴为女。", "临长生，少年鬼；", "临帝旺，壮年鬼；", "临衰弱，老年鬼；", "胎养，小儿鬼。", "乾宫，西北方；", "巽宫，东南方鬼也。"],
+          "yi": ["凡是鬼爻旺相，就是神。", "休囚，就是鬼。", "阳爻是男的，阴爻是女的。", "临长生，是少年的鬼；", "临帝旺，是壮年的鬼；", "临衰弱，是老年的鬼；", "临胎、养，是小孩的鬼。", "乾宫的鬼，在西北方；", "巽宫的鬼，在东南方。"],
+          "en": ["Whenever the Pressure line is strong, it is a spirit.", "Resting or trapped, it is a ghost.", "Yang is male, yin female.", "At Birth, a young person's ghost;", "at Peak, a ghost of the prime of life;", "at decline, an old person's ghost;", "at Womb and Nurture, a child's ghost.", "A ghost of the Qian palace is in the northwest;", "a ghost of the Xun palace is in the southeast."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3372, 3372],
+          "zh": ["凡鬼爻旺相是神，休囚是鬼，阳为神为男，阴为鬼为女。", "乾宫西北方，巽宫东南方之鬼也。"],
+          "yi": ["凡是鬼爻旺相就是神，休囚就是鬼；阳爻是神、是男的，阴爻是鬼、是女的。", "乾宫是西北方的鬼，巽宫是东南方的鬼。"],
+          "en": ["Whenever the Pressure line is strong it is a spirit, and resting or trapped it is a ghost; yang is a spirit and male, yin is a ghost and female.", "The Qian palace is a ghost of the northwest, and the Xun palace a ghost of the southeast."] }
+      ],
+      "dispute": {
+        "yi": "神和鬼、男和女是一件事还是两件事：旧注分成两条，旺相是神、休囚是鬼看旺衰，阳爻是男、阴爻是女看阴阳；王洪绪把它们连成一条，「阳为神为男，阴为鬼为女」。照旧注，一条旺相的阴爻是一个女的神；照王洪绪，阴爻就是女鬼。另外王洪绪没有旧注按长生、帝旺、衰弱、胎养分年龄的那一段。书里没有裁决。",
+        "en": "Whether spirit-or-ghost and male-or-female are one matter or two: the old commentary makes two rules, strong or weak deciding spirit or ghost and yang or yin deciding male or female; Wang Hongxu joins them into one, 'yang is a spirit and male, yin is a ghost and female'. On the old commentary a strong yin line is a female spirit; on Wang Hongxu a yin line is a female ghost. Wang Hongxu also lacks the old commentary's passage that gives the age by Birth, Peak, decline and Womb and Nurture. The books do not decide between them."
+      },
+      "note": {
+        "yi": "「长生」「帝旺」是十二长生里的两位（长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养）；「衰弱」按字面译作衰。「隅」是角落（卜筮大全篇末生僻字注），「方隅」是方位。",
+        "en": "Birth and Peak are two of the twelve life stages (Birth, Bath, Cap, Office, Peak, Decline, Sickness, Death, Tomb, Extinction, Womb, Nurture); 'weak' here is rendered as decline. 'Yu' is a corner (the book's glossary), and 'fangyu' means the direction."
+      },
+      "see": ["LY.ILL.HJC.93", "LY.ILL.HJC.95", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.HJC.95",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "八宫推鬼神：乾宫许天灯斗愿、兑宫口愿伤神、坎北朝圣象、艮城隍宅土、离南殿、坤土地坟陵、震树神或杖死男鬼、巽缢死或颠仆之阴人",
+      "rule": {
+        "yi": "按鬼所在的卦宫推：在乾宫，是许过点天灯、拜北斗的愿；在兑宫，是口头许的愿或者伤神；在坎宫，是北方朝拜的圣像；在艮宫，是城隍或宅里的土神；在离宫，是南边的殿宇；在坤宫，是土地神或坟墓陵园；在震宫，是树神，或者被杖打死的男鬼；在巽宫，一定是吊死的，或者癫狂跌倒而死的女人。把八宫仔细推敲，各路鬼自然会显应出来。",
+        "en": "Work it out by the palace in which the ghost lies. In the Qian palace there was a vow of a heavenly lamp or to the Dipper; in the Dui palace, a spoken vow or an injuring spirit; in Kan, the sacred image worshipped in the north; in Gen, the City God or the earth spirit of the house; in Li, the southern hall; in Kun, the Earth God or graves and tombs; in Zhen, a tree spirit or a male ghost beaten to death with a staff; in Xun, surely one who hanged himself, or a woman who fell in a fit. Work out the eight palaces carefully and the various ghosts will make themselves apparent."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7110, 7112],
+          "zh": ["若在乾宫，必许天灯斗愿；", "如居兑卦。", "定然口愿伤神。", "坎是北朝，艮则城隍宅土；", "离为南殿，坤则土地坟陵。", "震恐树神，或杖伤之男鬼；", "巽必缢死，或癫仆之阴人。", "八宫仔细推详，诸鬼自能显应。"],
+          "yi": ["鬼若在乾宫，一定是许过点天灯、拜北斗的愿；", "如果在兑卦，", "一定是口头许的愿，或者是伤神。", "在坎是北方朝拜的圣像，在艮就是城隍或宅里的土神；", "离是南边的殿宇，坤就是土地神或坟墓陵园；", "震要防是树神，或者被棍杖打伤的男鬼；", "巽一定是吊死的，或者癫狂跌倒而死的女人。", "把八个宫仔细推敲，各路鬼自然会显应出来。"],
+          "en": ["If it is in the Qian palace, there has surely been a vow of a heavenly lamp or to the Dipper;", "if it lies in the Dui trigram,", "it is surely a spoken vow or an injuring spirit.", "Kan is the sacred image of the north, and Gen is the City God or the earth spirit of the house;", "Li is the southern hall, and Kun is the Earth God or graves and tombs;", "Zhen may well be a tree spirit, or a male ghost beaten to death with a staff;", "Xun is surely one who hanged himself, or a woman who fell in a fit.", "Work out the eight palaces carefully, and the various ghosts will make themselves apparent."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7113, 7113],
+          "zh": ["此以八卦推之。", "乾象为天，鬼在此宫，值火，许点天灯类。", "金鬼亦然。", "木鬼许放风筝。", "子丑二爻，许拜北斗。", "坤土属阴，故是坟陵土地。", "艮土属阳，故是城隍宅土。", "离居南，故推南殿。", "坎子地，故推北朝圣象。", "震为木，故树神；", "带白虎或自刑，则杖死之鬼。", "巽为绳，故主缢死之鬼；", "不带鰧蛇，或非刑爻，则是风症死者。", "兑为口，故有呪咀口愿，又属金，故推伤神。", "盖乾三连，是浑成之金；", "兑象上缺，是伤损之金；", "故以兑为伤神，而不以乾为伤神。"],
+          "yi": ["这是按八卦来推。", "乾的象是天，鬼在乾宫，遇到火，是许过点天灯之类的愿。", "金鬼也是这样。", "木鬼是许过放风筝的愿。", "落在子、丑两个地支的爻，是许过拜北斗的愿。", "坤土属阴，所以是坟陵和土地。", "艮土属阳，所以是城隍和宅里的土神。", "离在南方，所以推作南边的殿宇。", "坎是子的位置，所以推作北方朝拜的圣像。", "震属木，所以是树神；", "带白虎或自刑，就是被杖打死的鬼。", "巽象绳子，所以主吊死的鬼；", "不带螣蛇，或者不是刑爻，就是得风症死的人。", "兑象口，所以有咒骂和口头许的愿；又属金，所以推作伤神。", "因为乾卦三画相连，是浑然一体的金；", "兑卦的象上面缺了一口，是受了损伤的金；", "所以把兑当作伤神，而不把乾当作伤神。"],
+          "en": ["This is worked out by the eight trigrams.", "Qian is the image of heaven; a ghost in this palace, meeting Fire, means a vow such as lighting a heavenly lamp.", "A Metal ghost is the same.", "A Wood ghost means a vow to fly a kite.", "On the lines of Zi and Chou, a vow to pay homage to the Dipper.", "Kun Earth is yin, so it is graves and tombs and the Earth God.", "Gen Earth is yang, so it is the City God and the earth spirit of the house.", "Li lies in the south, so it is taken as the southern hall.", "Kan is the place of Zi, so it is taken as the sacred image worshipped in the north.", "Zhen is Wood, so it is a tree spirit;", "with the White Tiger or self-punishment, it is a ghost beaten to death with a staff.", "Xun is a rope, so it means a hanged ghost;", "without the Coiling Snake, or if it is not a punishing line, it is one who died of a wind disorder.", "Dui is the mouth, so there are curses and spoken vows; it is also Metal, so it is taken as an injuring spirit.", "For Qian has three unbroken lines and is whole, undivided Metal;", "Dui is open at the top and is damaged Metal;", "so Dui is taken as the injuring spirit, and Qian is not."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3374, 3375],
+          "zh": ["此以八卦推之，乾象为天神，在此宫属火，宜许点天灯斗愿类。"],
+          "yi": ["这是按八卦来推：乾的象是天神，鬼在这个宫又属火，该是许过点天灯、拜北斗之类的愿。"],
+          "en": ["This is worked out by the eight trigrams: Qian is the image of the heavenly spirit, and a ghost in this palace, being Fire, should mean a vow such as lighting a heavenly lamp or to the Dipper."] }
+      ],
+      "note": {
+        "yi": "王洪绪引经文时，把「震恐树神，或杖伤之男鬼」写成「震恐神煞杖伤之男鬼」，把「八宫」写成「八卦」，「颠仆」写成「癫仆」的另一写法；他自己的注只讲了乾宫一例，其余各宫的推法只见于旧注。旧注里的「木鬼许放风筝」「子丑二爻许拜北斗」经文里没有，是旧注自己添的。「呪咀」是咒骂诅咒；「囹圄」「癫」的解释见卜筮大全篇末生僻字注。旧注最后一段解释了为什么以兑而不以乾为伤神：乾三画连是完整的金，兑上缺是有损伤的金。",
+        "en": "When Wang Hongxu quotes the verse he writes 'Zhen may well be a spirit-star beaten with a staff' where the Bushi Daquan has 'a tree spirit, or a male ghost beaten to death', and 'the eight trigrams' for 'the eight palaces'; his own commentary treats only the Qian example, and the workings for the other palaces are found only in the old commentary. 'A Wood ghost means a vow to fly a kite' and 'on the lines of Zi and Chou, a vow to the Dipper' are not in the verse and are the old commentary's own additions. 'Zhouzu' means cursing and imprecation. The last passage of the old commentary explains why Dui and not Qian is the injuring spirit: Qian's three unbroken lines are whole Metal, and Dui, open at the top, is damaged Metal."
+      },
+      "see": ["LY.ILL.HJC.94", "LY.ILL.HJC.96", "LY.ILL.HJC.97", "LY.ILL.ZS.23", "LY.ILL.ZS.24"]
+    },
+    {
+      "id": "LY.ILL.HJC.96",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "六神推鬼神：勾陈土神为祸、朱雀咒诅口舌、白虎血神、玄武死于不明之鬼（化兄弟则盗贼）、青龙善愿、螣蛇施相之神",
+      "rule": {
+        "yi": "按鬼爻带的六神推：带勾陈，是土神在作祸；带朱雀，是有人咒骂诅咒；带白虎，是血神，有带血的女伤，在阳爻上是凶暴恶死的鬼；带玄武，是死得不明不白的鬼，变成兄弟或从兄弟变出来的，是盗贼；带青龙，是善愿；带螣蛇，是施相之神。",
+        "en": "Work it out by the six spirits the Pressure line carries. With the Hook Earth, an earth spirit is making trouble; with the Vermilion Bird, curses and imprecations; with the White Tiger, the blood spirit, a woman's injury with blood, and on a yang line a violent ghost who died an ugly death; with the Dark Tortoise, a ghost who died in an unclear way, and if it changes into Peer or has come out of Peer, a thief or bandit; with the Azure Dragon, a good vow; with the Coiling Snake, the spirit of Shixiang."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7114, 7114],
+          "zh": ["更值勾陈，必有土神见碍；", "如临朱雀，定然呪咀相侵。", "白虎血亡，玄武则死于不明之鬼。", "青龙善愿，螣蛇则犯乎施相之神。"],
+          "yi": ["再遇到勾陈，一定有土神来作梗；", "如果临朱雀，一定是咒骂诅咒来侵扰。", "白虎是血亡，玄武就是死得不明不白的鬼；", "青龙是善愿，螣蛇就是冒犯了施相之神。"],
+          "en": ["Where the Hook Earth is added, an earth spirit is surely obstructing;", "if it falls on the Vermilion Bird, curses and imprecations surely intrude.", "The White Tiger is death by blood, and the Dark Tortoise is a ghost who died in an unclear way;", "the Azure Dragon is a good vow, and the Coiling Snake means the spirit of Shixiang has been offended."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7115, 7117],
+          "zh": ["此以六神推之。", "勾陈职专田土，鬼爻临之，乃是土神为祸。", "朱雀为口舌，故有呪咀。", "白虎为血神，故有带血女伤；", "居阳则凶暴恶死之鬼也。", "玄武是幽暗，故有不明死鬼；", "化兄弟，或从兄弟化出，则是盗贼。", "青龙是喜神，故有善愿。", "鰧蛇推施相之神，今俗祷谢，必以面作小蛇，献之取验。"],
+          "yi": ["这是按六神来推。", "勾陈专管田地土壤，鬼爻带着它，就是土神在作祸。", "朱雀主口舌，所以有咒骂诅咒。", "白虎是血神，所以有带血的女伤；", "在阳爻上，就是凶暴、死得凶恶的鬼。", "玄武是幽暗，所以有死得不明不白的鬼；", "变成兄弟，或者从兄弟变出来，就是盗贼。", "青龙是喜神，所以有善愿。", "螣蛇推作施相之神，现在民间祷告酬谢，一定用面做成小蛇献上去，来求应验。"],
+          "en": ["This is worked out by the six spirits.", "The Hook Earth is charged with fields and soil; when the Pressure line carries it, an earth spirit is making trouble.", "The Vermilion Bird is talk and quarrels, so there are curses.", "The White Tiger is the blood spirit, so there is a woman's injury with blood;", "on a yang line it is a violent ghost who died an ugly death.", "The Dark Tortoise is obscurity, so there is a ghost who died in an unclear way;", "if it changes into Peer, or has come out of a change from Peer, it is a thief or bandit.", "The Azure Dragon is the spirit of joy, so there is a good vow.", "The Coiling Snake is taken as the spirit of Shixiang; in present custom, when prayers are offered and thanks given, a small snake is always made of dough and offered up to gain proof."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3377, 3377],
+          "zh": ["此以六神推之。", "勾陈职专田土，鬼爻临之，乃是土神为祸类。"],
+          "yi": ["这是按六神来推。", "勾陈专管田地土壤，鬼爻带着它，就是土神作祸这一类。"],
+          "en": ["This is worked out by the six spirits.", "The Hook Earth is charged with fields and soil; when the Pressure line carries it, it is of the kind where an earth spirit makes trouble."] }
+      ],
+      "note": {
+        "yi": "旧注把六神一个一个讲了，王洪绪只讲了勾陈一例。「带血女伤」书里没有再解释，按字面译。「施相」书里没有解释；旧注说现在民间酬谢螣蛇这一路神，用面捏一条小蛇献上，所以译成人名式的「施相之神」。王洪绪引经文时，「螣蛇则犯乎施相之神」写作「螣蛇则犯乎施相之人」，「白虎血亡」写作「白虎血神」；这几处字面不同，书里没有说哪个对。",
+        "en": "The old commentary takes the six spirits one by one; Wang Hongxu treats only the Hook Earth. 'A woman's injury with blood' is not explained further in the book and is rendered literally. 'Shixiang' is not explained; the old commentary says that in present custom thanks to this spirit are given with a small snake moulded of dough, so it is rendered as a name. When Wang Hongxu quotes the verse he writes 'the Coiling Snake offends the person of Shixiang' for 'the spirit of Shixiang', and 'the White Tiger the blood spirit' for 'the White Tiger death by blood'; the books do not say which is right."
+      },
+      "see": ["LY.ILL.HJC.95", "LY.ILL.HJC.97", "LY.ILL.HJC.50", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.HJC.97",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "五行推鬼神：金是伤司刀兵鬼、火是灶神香愿、木是枷锁、水是河伯江神；旧注细分火鬼二爻灶君、午火衰弱烧死鬼、木鬼带螣蛇吊死、水鬼衰弱落水鬼",
+      "rule": {
+        "yi": "按鬼所属的五行推：金是被刀兵所伤的鬼，旺的是伤神，衰的是伤司手下的部众；火，一定是灶神或者香愿，落在二爻是灶君，衰弱的午火是被烧死的鬼；木是枷锁，东方的神鬼，变金或从金变出来的是戴枷锁的鬼，带螣蛇是吊死的鬼，木变木再加白虎是被夹死的鬼；水是河伯江神，旺相是江神河伯，衰弱是落水的鬼，在震、巽宫或木变水，是从船上掉下水淹死的鬼。",
+        "en": "Work it out by the element the ghost belongs to. Metal is a ghost wounded by blade and weapon: strong, an injuring spirit; weak, the followers of the Injuring Office. Fire is surely the Kitchen God or an incense vow: on the second line the Kitchen God, and a weak Wu Fire is a ghost burned to death. Wood is cangue and lock, a spirit or ghost of the east: changing into Metal or coming from Metal, a ghost in shackles; with the Coiling Snake, a hanged ghost; Wood changing into Wood with the White Tiger added, a ghost pressed to death. Water is the Lord of the River and the river god: strong, a river god; weak, a ghost who fell into the water; in the Zhen or Xun palace or Wood changing into Water, a ghost who fell from a boat and drowned."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7119, 7119],
+          "zh": ["金乃伤司，火定灶神香愿；", "木为枷锁，水为河伯江神。"],
+          "yi": ["金是伤司，火一定是灶神和香愿；", "木是枷锁，水是河伯江神。"],
+          "en": ["Metal is the Injuring Office, and Fire is surely the Kitchen God or an incense vow;", "Wood is cangue and lock, and Water is the Lord of the River and the river god."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7120, 7120],
+          "zh": ["此以五行推之。", "金主刀兵所伤之鬼；", "旺是伤神，衰是伤司部众。", "火鬼在二爻，是灶君，其余香信。", "本宫内卦，是本境土地，神佛香愿；", "他宫，别境香愿。", "在六爻，远方香信。", "在五爻，途中所许。", "持世当境，社会中香愿也。", "午火衰弱，必是烧死之鬼。", "木鬼，东方神鬼。", "化金，或从金化，是械锁鬼。", "带鰧蛇，吊死之鬼。", "木化木，又加白虎，夹死鬼。", "水鬼旺相，江神河伯；", "衰弱，落水鬼。", "在震巽二宫，或木化水，必是船上堕水死鬼。"],
+          "yi": ["这是按五行来推。", "金主被刀兵伤害的鬼；", "旺的是伤神，衰的是伤司手下的部众。", "火鬼在二爻，是灶君；其余的是香愿。", "在本宫的内卦，是本地的土地神、神佛的香愿；", "在别的宫，是别处的香愿。", "在六爻，是远方的香信。", "在五爻，是路上许下的愿。", "持世，就是本境，是社里、会里的香愿。", "午火衰弱，一定是被火烧死的鬼。", "木鬼，是东方的神鬼。", "变成金，或者从金变出来，是戴枷锁的鬼。", "带螣蛇，是吊死的鬼。", "木变木，再加白虎，是被夹死的鬼。", "水鬼旺相，是江神河伯；", "衰弱，是落水的鬼。", "在震宫、巽宫，或者木变水，一定是从船上掉下水淹死的鬼。"],
+          "en": ["This is worked out by the five elements.", "Metal governs ghosts wounded by blade and weapon;", "if strong it is an injuring spirit, if weak the followers of the Injuring Office.", "A Fire ghost on the second line is the Kitchen God; otherwise it is an incense pledge.", "In the inner trigram of the home palace, it is the local Earth God and an incense vow to a god or Buddha;", "in another palace, an incense vow elsewhere.", "On the sixth line, an incense pledge from afar.", "On the fifth line, a vow made on the road.", "Holding the Self position means the local area: an incense vow of the village society.", "A weak Wu Fire is surely a ghost who was burned to death.", "A Wood ghost is a spirit or ghost of the east.", "Changing into Metal, or coming from a change from Metal, it is a ghost in shackles and locks.", "With the Coiling Snake, a hanged ghost.", "Wood changing into Wood, with the White Tiger added, a ghost pressed to death.", "A strong Water ghost is a river god or the Lord of the River;", "if weak, a ghost who fell into the water.", "In the Zhen and Xun palaces, or Wood changing into Water, it is surely a ghost who fell from a boat and drowned."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3379, 3379],
+          "zh": ["此以五行推之。", "金乃刀兵所伤之鬼，旺是伤神，衰是伤鬼类。"],
+          "yi": ["这是按五行来推。", "金是被刀兵伤害的鬼，旺的是伤神，衰的是伤鬼这一类。"],
+          "en": ["This is worked out by the five elements.", "Metal is a ghost wounded by blade and weapon; if strong it is an injuring spirit, if weak a ghost of the wounded kind."] }
+      ],
+      "dispute": {
+        "yi": "要不要把五行落实到一位具体的神：旧注给出很具体的名目（火鬼在二爻是灶君，金旺是伤神、衰是伤司部众，水旺是江神河伯），王洪绪只留了金的一例；增删卜易的觉子认为不必把金官指为关公、岳公这一类具体的神，应该问病人心里疑的是哪位神，再占一卦验证（见 LY.ILL.ZS.24）。三处怎样落实到神，说法各不相同，书里没有裁决。",
+        "en": "Whether to fix an element to a particular named spirit: the old commentary gives very specific names (a Fire ghost on the second line is the Kitchen God; strong Metal is an injuring spirit and weak Metal the followers of the Injuring Office; strong Water is a river god), while Wang Hongxu keeps only the Metal example; the Master Awakened (Jue Zi) in the Zengshan Buyi holds that one should not name Metal Pressure as Guan Gong, Yue Gong or the like, but ask which spirit the patient has in mind and divine again to check (see LY.ILL.ZS.24). The three differ on how far to name the spirit, and the books do not decide."
+      },
+      "note": {
+        "yi": "「伤司」是主刀兵伤害的司，「部众」是它手下的众鬼；「香信」是香愿。「夹死鬼」旧注没有再解释，按字面译作被夹死的鬼。「河泊」是王洪绪引经文时对「河伯」的写法。「持世」是鬼爻落在世爻的位置，这里指鬼就是本地的，是社会中的香愿。",
+        "en": "The 'Injuring Office' is the office in charge of wounds by blade and weapon and its 'followers' are the ghosts under it; 'incense pledge' is a vow of incense. 'A ghost pressed to death' is not explained further in the old commentary and is rendered literally. 'Hebo' is Wang Hongxu's way of writing 'Lord of the River' when he quotes the verse. 'Holding the Self position' means the ghost sits on the Self line's place, here meaning the ghost belongs to the locality: a vow made in the village society."
+      },
+      "see": ["LY.ILL.HJC.95", "LY.ILL.HJC.96", "LY.ILL.HJC.98", "LY.ILL.ZS.23", "LY.ILL.ZS.24"]
+    },
+    {
+      "id": "LY.ILL.HJC.98",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼是土爻要分类：阴土阳土，震巽宫或木化土是树头土，临应冲世或日辰带土鬼冲克是飞来土，日月动变皆带土是五方土",
+      "rule": {
+        "yi": "鬼爻是土的要分清是哪一类：阴爻上是阴土，阳爻上是阳土；在震宫、巽宫，或者从木变出来的，是树头（木头）上的土；落在应爻、冲世爻的位置上，或者日辰带着土鬼来冲来克，是飞来的土；日、月、动爻、变爻都带土，是五方的土。",
+        "en": "Where the ghost is an Earth line, tell which kind: on a yin line, yin earth, on a yang line, yang earth; in the Zhen or Xun palace, or coming from a change from Wood, earth at the head of a tree (wood-head earth); standing on the Other line and clashing the Self line, or with the Day carrying an Earth ghost that clashes or controls, flying earth; if the Day, Month, moving line and changed line all carry Earth, earth of the five directions."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7122, 7122],
+          "zh": ["若见土爻，当分厂类。"],
+          "yi": ["如果看到土爻，就该分清是哪一类。"],
+          "en": ["If you see an Earth line, you should tell which kind it is."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7123, 7123],
+          "zh": ["土爻临鬼，阴是阴土，阳是阳土。", "在震巽二宫，或从木化皆然，或树头土。", "临应冲世，或日辰带土鬼相冲相克，是飞来土。", "若日月动变皆带土，五方土也。"],
+          "yi": ["土爻带鬼，阴爻是阴土，阳爻是阳土。", "在震宫、巽宫，或者从木变出来的，都一样，也可能是树头上的土。", "落在应爻、冲世爻的位置，或者日辰带着土鬼来冲来克，是飞来的土。", "如果日、月、动爻、变爻都带土，就是五方的土。"],
+          "en": ["When an Earth line carries the ghost, a yin one is yin earth and a yang one is yang earth.", "In the Zhen and Xun palaces, or when it comes from a change from Wood, it is likewise, or it may be earth at the head of a tree.", "Standing on the Other line and clashing the Self line, or when the Day carries an Earth ghost that clashes or controls, it is flying earth.", "If the Day, Month, moving line and changed line all carry Earth, it is earth of the five directions."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3381, 3381],
+          "zh": ["土鬼阴爻是阴土，阳爻是阳土，或从木化是木头土，临应冲世是飞来土，若日月动变者，五方土类也。"],
+          "yi": ["土鬼在阴爻上是阴土，在阳爻上是阳土；从木变出来的是木头土，落在应爻、冲世爻上是飞来土；如果日、月、动爻、变爻都是土，就是五方土这一类。"],
+          "en": ["An Earth ghost on a yin line is yin earth and on a yang line yang earth; one coming from a change from Wood is wood-head earth; standing on the Other line and clashing the Self line it is flying earth; if the Day, Month, moving and changed lines are all Earth, it is of the kind of earth of the five directions."] }
+      ],
+      "note": {
+        "yi": "卜筮大全经文写「当分厂类」，「厂」是「厥」字的误刻，卜筮正宗写作「厥类」，译作「哪一类」。旧注说「树头土」，王洪绪说「木头土」，书里没有解释，按字面译。旧注多出「在震巽二宫」这一条。两家都只把土分成了几种，没有说每一种土对应什么事，所以本库只记分类，不替它添意思。",
+        "en": "The Bushi Daquan verse reads 'chang lei', where 'chang' is a mis-cut for 'jue' (as in the Bushi Zhengzong's 'jue lei'), rendered 'which kind'. The old commentary says 'earth at the head of a tree' and Wang Hongxu 'wood-head earth'; neither is explained and both are rendered literally. The old commentary adds 'in the Zhen and Xun palaces'. Both only divide Earth into kinds and do not say what each kind stands for, so the library records the classification and adds no meaning of its own."
+      },
+      "see": ["LY.ILL.HJC.97", "LY.ILL.HJC.99"]
+    },
+    {
+      "id": "LY.ILL.HJC.99",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼墓是伏尸为祸、财库是藏神不安：鬼爻属金卦有丑动是鬼墓，妻财属木卦有未动是财库；不伤世则不为祸",
+      "rule": {
+        "yi": "鬼的墓，是埋着的尸骨在作祸；财的库，是藏着的神不得安宁。看法：鬼爻属金，卦里有丑爻发动，就是鬼的墓；妻财属木，卦里有未爻发动，就是财的库；别的照这样推。但是不伤到世爻，就不会作祸。",
+        "en": "The ghost's tomb means a buried corpse is making trouble; Wealth's storehouse means a hidden spirit is unsettled. How to see it: if the Pressure line is Metal and a Chou line in the hexagram moves, that is the ghost's tomb; if the Wealth line is Wood and a Wei line in the hexagram moves, that is Wealth's storehouse; work out the others the same way. But if it does not harm the Self line, it does no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7125, 7125],
+          "zh": ["鬼墓乃伏尸为祸；", "财库则藏神不安。"],
+          "yi": ["鬼的墓，是埋着的尸骨在作祸；", "财的库，是藏着的神不得安宁。"],
+          "en": ["The ghost's tomb means a buried corpse is making trouble;", "and Wealth's storehouse means a hidden spirit is unsettled."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7126, 7126],
+          "zh": ["鬼爻属金，卦有丑动是鬼墓。", "妻财属木，卦有未动是财库。", "他仿此。", "二事见家宅决中，今不尽述。", "然不伤世则不为祸。"],
+          "yi": ["鬼爻属金，卦里有丑爻发动，就是鬼的墓。", "妻财属木，卦里有未爻发动，就是财的库。", "别的照这个办法推。", "这两件事在家宅的断法里有讲，这里不全说了。", "但是不伤到世爻，就不会作祸。"],
+          "en": ["If the Pressure line is Metal and a Chou line in the hexagram moves, that is the ghost's tomb.", "If the Wealth line is Wood and a Wei line in the hexagram moves, that is Wealth's storehouse.", "Work out the others the same way.", "These two matters are treated in the household section and are not fully described here.", "But if it does not harm the Self line, it does no harm."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3383, 3383],
+          "zh": ["鬼爻属金，卦有丑动是金墓；", "妻财属木，卦有未动是木墓。", "余仿此。"],
+          "yi": ["鬼爻属金，卦里有丑爻发动，就是金的墓；", "妻财属木，卦里有未爻发动，就是木的墓。", "其余照这个办法推。"],
+          "en": ["If the Pressure line is Metal and a Chou line in the hexagram moves, that is the tomb of Metal;", "if the Wealth line is Wood and a Wei line in the hexagram moves, that is the tomb of Wood.", "Follow this for the rest."] }
+      ],
+      "note": {
+        "yi": "旧注末了有两句王洪绪没有：一句指向家宅的断法，一句给了条件「不伤世则不为祸」。王洪绪把旧注的「财库」直接写成「木墓」，意思相同（未是木的墓）。「墓」这里指的是五行入墓的那一支：金墓在丑，木墓在未。",
+        "en": "The old commentary ends with two sentences that Wang Hongxu lacks: one pointing to the household section and one giving the condition 'if it does not harm the Self line, it does no harm'. Wang Hongxu writes the old commentary's 'Wealth's storehouse' directly as 'the tomb of Wood', which means the same (Wei is the tomb of Wood). The 'tomb' here is the branch in which an element enters its tomb: Chou for Metal, Wei for Wood."
+      },
+      "see": ["LY.ILL.HJC.98", "LY.ILL.HJC.100"]
+    },
+    {
+      "id": "LY.ILL.HJC.100",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "修造动土必是煞遇勾陈、口舌起因是土逢朱雀：土鬼加勾陈因修造动土不安，初爻穿井、二爻作灶、三四爻当门、五爻路边、六爻篱墙下；临朱雀则动土时暗有口舌咒诅",
+      "rule": {
+        "yi": "因为修造、动土出了事，是土鬼碰上了勾陈：落在初爻是挖井动土，二爻是砌灶动土，三、四爻是门口动土，五爻是路边动土，六爻是篱笆墙下动土；在兑宫是挖池动土，艮宫是筑墙动土，坤宫是造坟动土，坎宫加玄武是挖厕坑动土。以上如果带朱雀，就是动土的时候暗中有口舌和咒诅，或者有人多嘴惹事，因此成了祸。",
+        "en": "Trouble from building or breaking ground is an Earth ghost meeting the Hook Earth: on the first line, digging a well; the second, building a stove; the third and fourth, breaking ground at the door; the fifth, by the road; the sixth, beneath the fence or wall; in the Dui palace, digging a pond; in the Gen palace, building a wall; in the Kun palace, building a grave; in the Kan palace with the Dark Tortoise, digging a privy pit. If any of these carries the Vermilion Bird, then at the time of breaking ground there were hidden quarrels and curses, or someone talked too much and stirred up trouble, and this became the misfortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7128, 7128],
+          "zh": ["修造动土，必然杀遇勾陈；", "口舌起因，乃是土逢朱雀。"],
+          "yi": ["因为修造、动土而出事，一定是煞遇上了勾陈；", "口舌是非的起因，是土遇上了朱雀。"],
+          "en": ["Trouble from building or breaking ground is surely a malign influence meeting the Hook Earth;", "and the cause of quarrels is Earth meeting the Vermilion Bird."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7129, 7131],
+          "zh": ["此亦言土鬼也。", "加勾陈，必因修造动土，以致不安。", "在初爻，穿井不安。", "二爻，作灶动土。", "三爻四爻，当门动土。", "五爻，路边动土。", "六爻篱笆墙下动土。", "兑宫，开池动土。", "艮宫，筑墙动土。", "坤宫，造坟动土。", "坎宫加玄武，坑厕动土。", "以上若临朱雀，则是动土时，暗有口舌，呪咀。", "或多口惹事，以致为祸。"],
+          "yi": ["这也是说土鬼。", "再加勾陈，一定是因为修造、动土，弄得不得安宁。", "在初爻，是挖井弄得不安。", "二爻，是砌灶动土。", "三爻、四爻，是门口动土。", "五爻，是路边动土。", "六爻，是篱笆、墙下动土。", "兑宫，是挖池塘动土。", "艮宫，是筑墙动土。", "坤宫，是造坟动土。", "坎宫加玄武，是挖厕坑动土。", "以上这些如果带朱雀，就是动土的时候，暗中有口舌是非、咒骂诅咒。", "或者是有人多嘴惹事，因此成了祸。"],
+          "en": ["This too speaks of an Earth ghost.", "With the Hook Earth added, it is surely because of building or breaking ground that there is unrest.", "On the first line, digging a well has caused the unrest.", "The second line: building a stove and breaking ground.", "The third and fourth lines: breaking ground at the door.", "The fifth line: breaking ground by the road.", "The sixth line: breaking ground beneath the fence or wall.", "The Dui palace: digging a pond.", "The Gen palace: building a wall.", "The Kun palace: building a grave.", "The Kan palace with the Dark Tortoise: digging a privy pit.", "If any of the above carries the Vermilion Bird, then at the time of breaking ground there were hidden quarrels and curses.", "Or a talkative person stirred up trouble, and this became the misfortune."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3385, 3385],
+          "zh": ["此亦土鬼也，如勾陈，必因修造动土以致不安。"],
+          "yi": ["这也是土鬼；带勾陈的话，一定是因为修造、动土才弄得不安。"],
+          "en": ["This too is an Earth ghost; if with the Hook Earth, it is surely because of building or breaking ground that there is unrest."] }
+      ],
+      "note": {
+        "yi": "旧注列了一长串位置，王洪绪只讲了总的一句。旧注写「在初爻」「二爻」「三爻四爻」没有说指的是土鬼落在哪一爻，按上下文译作土鬼所在的爻位。「杀」这里就是「煞」，一种凶的力量。「呪咀」是咒骂诅咒。旧注的位置表里三爻、四爻都是「当门动土」，而上面六爻推鬼神一条里三爻是门、四爻是户，两处不完全对应；书里没有说明。",
+        "en": "The old commentary gives a long list of positions and Wang Hongxu only the general sentence. The old commentary's 'on the first line', 'the second line' and 'the third and fourth lines' do not say which line is meant, and are rendered by context as the line on which the Earth ghost stands. 'Sha' here is the malign influence. 'Zhouzu' is cursing and imprecation. In the old commentary's list both the third and fourth lines are 'breaking ground at the door', while in the entry on the six lines the third is the gate and the fourth the door of the house, so the two do not correspond exactly; the book does not explain."
+      },
+      "see": ["LY.ILL.HJC.98", "LY.ILL.HJC.101"]
+    },
+    {
+      "id": "LY.ILL.HJC.101",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "六爻推鬼神：初爻水鬼犯井神、二爻火鬼干司命（灶神）、三爻犯家堂、五爻求五路神、四爻遇世冲是出门撞见、六爻月合是远地相干",
+      "rule": {
+        "yi": "按鬼落在哪一爻推：水鬼在初爻，冒犯了井神；火鬼在二爻，触犯了司命（灶神）；鬼在三爻（门），冒犯了家堂的香火；鬼在五爻（路上），要求五路神，金鬼是五道、火鬼是五圣、木鬼是五郎神众、水鬼是五路神司，衰弱就是路边的鬼；鬼在四爻，遇到冲世，一定是出门撞见的；鬼在六爻，逢月建生合，是远方的神来干犯，月建、日辰生合，是天神那里有愿。",
+        "en": "Work it out by the line on which the ghost falls. A Water ghost on the first line has offended the well god; a Fire ghost on the second has offended the Director of Fate (the Kitchen God); a ghost on the third (the gate) has offended the incense and fire of the household shrine; on the fifth (the road), seek the Gods of the Five Roads: a Metal ghost is the Five Paths, Fire the Five Sages, Wood the Five Lords and their company, Water the Officers of the Five Roads, and if weak a ghost of the roadside. A ghost on the fourth line meeting a clash with Self was surely met on going out; a ghost on the sixth line meeting a combination with the Month is a spirit from far away, and if the Month and the Day generate or combine with it there is a vow to a heavenly spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7133, 7133],
+          "zh": ["或犯井神，水在初爻遇鬼；", "或干司命，火临二位逢官。", "若在门头，须犯家堂部属；", "如临道上，当求五路神祗。", "四遇世冲，鬼必出门撞见；", "六逢月合，神须远地相干。"],
+          "yi": ["也许冒犯了井神，是水在初爻遇到了鬼；", "也许触犯了司命，是火在二爻遇到了官。", "如果在门这一头，一定是冒犯了家堂的部属；", "如果在路上这一位，该去求五路神。", "四爻遇到冲世，鬼一定是出门时撞见的；", "六爻逢到月建相合，神一定是从远处来犯的。"],
+          "en": ["Perhaps the well god has been offended: Water on the first line meeting the ghost;", "or the Director of Fate has been disturbed: Fire on the second place meeting Pressure.", "If it is at the door, the retinue of the household shrine has been offended;", "if it is on the road, one should seek the Gods of the Five Roads.", "The fourth line meeting a clash with Self means the ghost was surely met on going out;", "the sixth line meeting a combination with the Month means the spirit comes from a distant place."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7134, 7136],
+          "zh": ["此以六爻推之也。", "初爻水鬼，井泉童子不安。", "二爻火鬼，灶神见责。", "三爻为门，官鬼临之，当犯家堂香火。", "四爻为户，若遇官克世冲世，必曾出门撞见鬼崇。", "五爻临金鬼，五道；", "火鬼，五圣；", "木鬼，五郎神众；", "水鬼，五路神司。", "衰弱，则道路边鬼。", "在六爻，定远方鬼。", "月建日辰生合，乃天神中有愿。"],
+          "yi": ["这是按六个爻位来推。", "初爻是水鬼，井泉童子不得安宁。", "二爻是火鬼，灶神怪罪。", "三爻是门，官鬼落在这里，是冒犯了家堂的香火。", "四爻是户，如果官爻克世爻、冲世爻，一定是曾经出门撞见了鬼崇。", "五爻临金鬼，是五道；", "火鬼，是五圣；", "木鬼，是五郎神众；", "水鬼，是五路神司。", "衰弱的话，就是路边的鬼。", "在六爻，一定是远方的鬼。", "月建、日辰生它、合它，是天神那里有愿。"],
+          "en": ["This is worked out by the six line positions.", "A Water ghost on the first line: the child spirit of the well and spring is unsettled.", "A Fire ghost on the second line: the Kitchen God is reproaching.", "The third line is the gate; when Pressure sits there, the incense and fire of the household shrine has been offended.", "The fourth line is the door of the house; if Pressure controls or clashes the Self line, one surely met a ghostly influence on going out.", "The fifth line with a Metal ghost: the Five Paths;", "a Fire ghost: the Five Sages;", "a Wood ghost: the Five Lords and their company;", "a Water ghost: the Officers of the Five Roads.", "If weak, it is a ghost of the roadside.", "On the sixth line, it is surely a ghost from afar.", "If the Month and the Day generate or combine with it, there is a vow to a heavenly spirit."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3387, 3387],
+          "zh": ["水鬼临于初爻断井神，火鬼临于二爻断司命，如鬼临三爻断家堂，如临五爻断路头五圣，临四爻断出门撞祟，临六爻断远处染邪。"],
+          "yi": ["水鬼在初爻，断是井神；火鬼在二爻，断是司命；鬼在三爻，断是家堂；在五爻，断是路头五圣；在四爻，断是出门撞上了邪祟；在六爻，断是在远处沾染了邪气。"],
+          "en": ["A Water ghost on the first line is judged the well god; a Fire ghost on the second, the Director of Fate; a ghost on the third, the household shrine; on the fifth, the Five Sages of the road-head; on the fourth, running into an evil influence on going out; on the sixth, catching an evil taint in a far place."] }
+      ],
+      "note": {
+        "yi": "经文「四遇世冲」，王洪绪引作「四遇世神」；「神祗」他也写作「神祇」的同一个意思。王洪绪比旧注少了几样：旧注按五行分五爻上的五道、五圣、五郎、五路，还有「衰弱则道路边鬼」和「月建日辰生合，乃天神中有愿」；王洪绪把五爻一律断作路头五圣。「司命」是管人命运的灶神一类的神，这里旧注和经文都把它对到二爻的灶神。",
+        "en": "Where the verse says 'the fourth line meeting a clash with Self' (shi chong), Wang Hongxu quotes 'the fourth line meeting the Self spirit' (shi shen). Wang Hongxu has less than the old commentary: the old commentary divides the fifth line by element into the Five Paths, the Five Sages, the Five Lords and the Five Roads, adds 'if weak, a ghost of the roadside' and 'if the Month and Day generate or combine, there is a vow to a heavenly spirit'; Wang Hongxu judges every ghost on the fifth line as the Five Sages of the road-head. The 'Director of Fate' is a spirit in charge of people's destinies of the Kitchen God kind, and both the verse and the old commentary match it to the Kitchen God of the second line."
+      },
+      "see": ["LY.ILL.HJC.95", "LY.ILL.HJC.97", "LY.ILL.HJC.100", "LY.ILL.HJC.102"]
+    },
+    {
+      "id": "LY.ILL.HJC.102",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "以卦身推是什么人的鬼：鬼克身是冤家债主、身克鬼是妻妾阴人，我生它是卑幼儿童僧道、它生我是祖宗尊长父母，无生合克刑是兄弟朋友",
+      "rule": {
+        "yi": "拿卦身来推是什么人的鬼：鬼克卦身，是冤家债主的鬼，一定难以退去，病也不容易好；卦身克鬼，是妻妾一类女人的鬼；卦身生鬼，是晚辈、小孩、僧人道士的鬼（子孙）；鬼生卦身，是祖宗、长辈、父母的鬼（父母）；两者比和，是兄弟朋友的鬼，阴爻上是妯娌姊妹的鬼；没有生、合、克、刑，也一定是兄弟朋友。",
+        "en": "Work out whose ghost it is by the Body. A ghost that controls the Body is the ghost of an enemy or creditor, hard to drive off, and the illness will not easily settle; the Body controlling the ghost is the ghost of a wife, concubine or woman; the Body generating the ghost is the ghost of a junior, child, monk or Daoist (Output); a ghost generating the Body is the ghost of an ancestor, elder or parent (Resource); where the two are in harmony it is the ghost of a brother or friend (Peer), and on a yin line of a sister-in-law or sister; with no generating, combining, controlling or punishing, it is surely a brother or friend."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7138, 7139],
+          "zh": ["鬼克身，冤家债主；", "身克鬼，妻妾阴人。", "我去生他，卑幼儿童僧道；", "他来生我，祖宗尊长爹娘。", "若无生合克刑，必是弟兄朋友。"],
+          "yi": ["鬼克卦身，是冤家债主；", "卦身克鬼，是妻妾一类的女人；", "我去生它，是晚辈、小孩、僧人道士；", "它来生我，是祖宗、长辈、父母。", "如果没有生、合、克、刑，一定是兄弟朋友。"],
+          "en": ["If the ghost controls the Body, an enemy or creditor;", "if the Body controls the ghost, a wife or concubine, a woman;", "if I generate it, a junior, a child, a monk or Daoist;", "if it generates me, an ancestor, elder, father or mother.", "if there is no generating, combining, controlling or punishing, it is surely a brother or friend."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7140, 7140],
+          "zh": ["此以卦身推之。", "鬼生卦身为父母，卦身生鬼为子孙；", "鬼克卦身为冤仇，卦身克鬼为妻妾。", "二者比和为兄弟朋友；", "阴爻是妯娌姊妹之鬼。", "子孙，小口卑幼之鬼。", "父母，尊长祖宗之鬼。", "财爻，妻妾、阴人之鬼。", "惟鬼克身，冤家债主之鬼，必难退遣。", "病亦未易安。"],
+          "yi": ["这是按卦身来推。", "鬼生卦身的是父母（父母爻），卦身生鬼的是子孙（子孙爻）；", "鬼克卦身的是冤仇，卦身克鬼的是妻妾。", "两者比和（五行相同）的，是兄弟朋友；", "阴爻的，是妯娌、姊妹的鬼。", "子孙，是小孩、晚辈的鬼。", "父母，是长辈、祖宗的鬼。", "财爻，是妻妾、女人的鬼。", "只有鬼克卦身，是冤家债主的鬼，一定难以打发。", "病也不容易好。"],
+          "en": ["This is worked out by the Body.", "A ghost that generates the Body is a parent (Resource); the Body generating the ghost is a descendant (Output);", "a ghost controlling the Body is an enemy; the Body controlling the ghost is a wife or concubine.", "Where the two are in harmony (the same element), it is Peer: brothers and friends;", "a yin line is the ghost of a sister-in-law or a sister.", "Output (descendants) means the ghosts of the young and juniors.", "Resource (parents) means the ghosts of elders and ancestors.", "The Wealth line means the ghosts of a wife, concubine or woman.", "Only a ghost that controls the Body, the ghost of an enemy or creditor, is hard to be rid of.", "The illness too will not easily settle."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3389, 3391],
+          "zh": ["此以卦身推之。", "鬼生卦身为父母，卦身生鬼为子孙，鬼克卦身为冤仇，卦身克鬼为妻妾，二者比合为兄弟朋友姊妹之鬼。"],
+          "yi": ["这是按卦身来推。", "鬼生卦身的是父母，卦身生鬼的是子孙，鬼克卦身的是冤仇，卦身克鬼的是妻妾，两者比合的是兄弟朋友姊妹的鬼。"],
+          "en": ["This is worked out by the Body.", "A ghost that generates the Body is a parent (Resource), the Body generating the ghost is a descendant (Output), a ghost controlling the Body is an enemy, the Body controlling the ghost is a wife or concubine, and where the two are in harmony it is the ghost of a brother (Peer), friend or sister."] }
+      ],
+      "note": {
+        "yi": "经文只说「身」，旧注和王洪绪都说明这是「卦身」。旧注多出的四句（阴爻是妯娌姊妹、子孙是小口卑幼、父母是尊长祖宗、财爻是妻妾阴人）和最后「惟鬼克身…病亦未易安」一句王洪绪没有。月卦身法本身，增删卜易的野鹤认为不验（见 LY.ILL.ZS.01）；他的鬼神章（LY.ILL.ZS.23–25）也没有用卦身去认是谁的鬼，而是按鬼爻的五行和旺衰认。",
+        "en": "The verse says only 'the Body', and both the old commentary and Wang Hongxu make clear that it is the hexagram Body. The four sentences the old commentary adds (a yin line is a sister-in-law or sister, Output is the ghost of the young, Resource of elders and ancestors, the Wealth line of a wife, concubine or woman) and its last 'only a ghost that controls the Body... the illness will not easily settle' Wang Hongxu lacks. The month-Body method itself the Old Man of Yehe in the Zengshan Buyi held unreliable (see LY.ILL.ZS.01); his chapter on ghosts and spirits (LY.ILL.ZS.23-25) does not use the Body to tell whose ghost it is either, but goes by the element and strength of the Pressure line."
+      },
+      "see": ["LY.ILL.HJC.35", "LY.ILL.HJC.101", "LY.ILL.HJC.103", "LY.ILL.ZS.01", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.HJC.103",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼带刑爻必非善终之鬼：旧注按地支分辰压死、午汤火烫、酉刀箭、亥落水、寅虎噬、巳蛇伤、戌犬咬、丑牛触，旺则为神道；王洪绪说按五行所属推",
+      "rule": {
+        "yi": "鬼带刑爻，一定是没有善终的鬼。怎么死的：旧注按鬼的地支分，辰是被墙壁压死，午是被热汤烈火烫死烧死，酉是被刀箭所伤，亥是投河落水，寅也许是被老虎咬死，巳是被蛇咬伤，戌是被狗咬，丑是被牛顶；旺相的成了神道，像刘郡王、猛将这样的神。王洪绪说要按鬼所属的五行去推是怎么死的。",
+        "en": "A ghost carrying a punishing line is surely one who did not die a good death. How he died: the old commentary goes by the ghost's branch — Chen, crushed by a wall; Wu, scalded or burned by hot water or fire; You, wounded by blade or arrow; Hai, threw himself into a river or fell into water; Yin, perhaps devoured by a tiger; Si, bitten by a snake; Xu, bitten by a dog; Chou, gored by an ox — and if strong it becomes a spirit-way, like the god Prince Liu, the Fierce General. Wang Hongxu says to work out the manner of death from the element the ghost belongs to."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7142, 7142],
+          "zh": ["刑不善终；"],
+          "yi": ["鬼带刑，死得不好；"],
+          "en": ["If it carries punishment, the death was not a good one;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7143, 7143],
+          "zh": ["鬼带刑爻，必非善终之鬼。", "辰是墙壁压死鬼，午是汤火烧烫鬼，酉是刀箭所伤鬼，亥是投河落水鬼。", "寅或虎噬，巳或蛇伤，戌或犬咬，丑或牛触。", "旺则为神道，刘郡王猛将之神。"],
+          "yi": ["鬼带着刑爻，一定是没有善终的鬼。", "辰是被墙壁压死的鬼，午是被开水和火烧烫死的鬼，酉是被刀箭伤死的鬼，亥是投河落水而死的鬼。", "寅，也许是被老虎咬死；巳，也许是被蛇咬伤；戌，也许是被狗咬；丑，也许是被牛顶。", "旺相的，就成了神道，像刘郡王、猛将这样的神。"],
+          "en": ["A ghost carrying a punishing line is surely one who did not die a good death.", "Chen is a ghost crushed by a wall, Wu a ghost scalded or burned by hot water or fire, You a ghost wounded by blade or arrow, Hai a ghost who threw himself into a river or fell into water.", "Yin may be one devoured by a tiger, Si one bitten by a snake, Xu one bitten by a dog, Chou one gored by an ox.", "If strong, it becomes a spirit-way, such as the god Prince Liu, the Fierce General."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3393, 3393],
+          "zh": ["鬼带刑爻，必非善终之鬼，当以五行所属推其何死鬼；"],
+          "yi": ["鬼带刑爻，一定是没有善终的鬼，要按它所属的五行推是怎么死的鬼；"],
+          "en": ["A ghost carrying a punishing line is surely one who did not die a good death; work out what kind of death from the element it belongs to;"] }
+      ],
+      "dispute": {
+        "yi": "怎么推是怎么死的：旧注按鬼爻的地支分（辰压死、午烫死、酉刀箭、亥落水、寅虎、巳蛇、戌犬、丑牛）；王洪绪说「当以五行所属推其何死鬼」，按五行推，不按地支。两种办法给出的名目不完全重合（例如增删卜易 LY.ILL.ZS.23 按五行说金是刀剑亡鬼、木是刑杖悬梁、水是水死、火是汤火焚烧、土是墙倒屋塌，和旧注的辰午酉亥有部分重合）。书里没有裁决。",
+        "en": "How to work out how the ghost died: the old commentary goes by the branch of the Pressure line (Chen crushed, Wu scalded, You blade and arrow, Hai water, Yin tiger, Si snake, Xu dog, Chou ox); Wang Hongxu says 'work out the manner of death from the element it belongs to', by element and not by branch. The two methods do not give exactly the same categories (for instance the Zengshan Buyi, LY.ILL.ZS.23, goes by element — Metal a ghost of blade and sword, Wood of the staff or the hanging beam, Water of drowning, Fire of hot water and burning, Earth of a collapsed wall — which overlaps in part with the old commentary's Chen, Wu, You and Hai). The books do not decide."
+      },
+      "note": {
+        "yi": "「刑爻」这里指带刑的爻，书里没有列出哪些是刑。「刘郡王猛将之神」是民间信奉的神，书里没有解释，按字面译作刘郡王、猛将。这一条的经文只有「刑不善终」四字，和下一条「绝则无祀」在王洪绪那里连成一段注。",
+        "en": "'A punishing line' means a line carrying punishment (xing); the book does not list which they are. 'Prince Liu, the Fierce General' is a spirit worshipped among the people and is not explained in the book, so is rendered literally. The verse here is only the four characters 'punishment, no good death', and in Wang Hongxu it forms one passage of commentary with the next entry, 'extinction, no one to sacrifice'."
+      },
+      "see": ["LY.ILL.HJC.102", "LY.ILL.HJC.104", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.HJC.104",
+      "topic": "神祟",
+      "chapter": "鬼神",
+      "chapter_en": "Ghosts and spirits",
+      "title": "鬼不上卦看它伏在哪一爻下：伏父母下是家先、伏子孙下是小口小儿、伏空下是无收管的孤魂野鬼，临绝爻是无祀之鬼",
+      "rule": {
+        "yi": "鬼爻不上卦，就看它伏在哪一爻下面，便知道是什么鬼祟：伏在父母爻下，是家里已故的祖先；伏在子孙（福神）爻下，是小孩一类；伏在空亡的爻下，是没有人收管的鬼，是孤魂野鬼；如果临在绝爻上，是没有人祭祀的鬼。",
+        "en": "If the Pressure line is absent from the hexagram, see under which line it is hidden and you will know what kind of ghost it is: hidden under the Resource line, the family's forebears; under the Output (fortune spirit) line, children and the like; under a Void line, a ghost that no one keeps, a lonely wandering ghost; and if it meets an Extinction line, a ghost to whom no one sacrifices."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7145, 7145],
+          "zh": ["绝则无祀。"],
+          "yi": ["鬼临绝，就是没有人祭祀的鬼。"],
+          "en": ["If it meets Extinction, there is no one to make offerings to it."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7146, 7146],
+          "zh": ["鬼不上卦，看伏何爻下，便知是何鬼崇。", "如伏父下，为家先。", "伏福下，为小口类。", "若伏空下，乃是无收管之鬼，是孤魂野鬼。", "若临绝爻，乃无祀之鬼。"],
+          "yi": ["鬼爻不上卦，就看它伏在哪一爻下面，便知道是什么鬼崇。", "如果伏在父母爻下，是家里已故的祖先。", "伏在子孙（福神）爻下，是小孩这一类。", "如果伏在空亡爻下，是没有人收管的鬼，是孤魂野鬼。", "如果临在绝爻上，是没有人祭祀的鬼。"],
+          "en": ["If the ghost is absent from the hexagram, look under which line it is hidden, and you will know what kind of ghostly influence it is.", "If it is hidden under the Resource line, it is the family's forebears.", "If hidden under the Output (fortune spirit) line, it is of the kind of small children.", "If it is hidden under a Void line, it is a ghost with no one to keep it, a lonely wandering ghost.", "If it meets an Extinction line, it is a ghost with no one to sacrifice to it."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3393, 3393],
+          "zh": ["不上卦看伏何爻下，便知是何鬼祟，如伏父下为家先，伏福下为小儿类。"],
+          "yi": ["鬼不上卦，看它伏在哪一爻下面，便知是什么鬼祟：伏在父母爻下是家先，伏在福神（子孙）下是小孩一类。"],
+          "en": ["If it is absent from the hexagram, see under which line it is hidden and you will know what ghostly influence it is: hidden under the Resource line, the family's forebears; hidden under the Output (fortune spirit) line, children and the like."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4527, 4527],
+          "zh": ["寅月戊辰日，占病有何鬼神为祸，得小畜卦："],
+          "yi": ["寅月戊辰日，占病人有什么鬼神作祸，得小畜卦："],
+          "en": ["In the Yin month, on the Wuchen day, he divined what ghost or spirit was making trouble in an illness, and obtained Xiaoxu:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4534, 4534],
+          "zh": ["断曰：凡卜鬼神以官爻为用，今官鬼伏辰爻之下，与飞神作合，又得日辰合住。", "予想伏合乃藏匿之象，酉金是正气之神，第三爻为房室，即断曰：汝家房中藏有神像作祟。", "彼曰：有铜达摩祖师在匣中。", "命其送于寺内，其痛亦愈。"],
+          "yi": ["断说：凡是占鬼神，以官爻为用；现在官鬼伏在辰爻下面，和飞神合在一起，又被日辰合住。", "我想，伏着又被合住，是藏起来的象；酉金是正气之神；第三爻是房室；就断说：你家房里藏着一尊神像在作祟。", "他说：有一尊铜的达摩祖师像在匣子里。", "叫他把像送到寺里去，他的病痛也好了。"],
+          "en": ["Judgment: in all divining of ghosts and spirits the Pressure line is the Subject; now Pressure is hidden beneath the Chen line, combines with the flying line, and is further held by a combination with the Day.", "I thought that being hidden and combined is the image of concealment; You Metal is a spirit of proper energy; the third line is the bedroom; so I judged: a statue of a spirit is hidden in a room of your house and is making trouble.", "He said: there is a bronze figure of Patriarch Damo in a box.", "I told him to send it to a temple, and his pain was cured as well."] }
+      ],
+      "note": {
+        "yi": "这一条经文只有「绝则无祀」四字；王洪绪把它和上一条「刑不善终」并成一段注，后半是「不上卦看伏何爻下」，和旧注相同。卜筮正宗后面的书中例（小畜卦）用的是伏鬼的看法：官鬼酉金伏在第三爻辰土下面，辰酉相合，又被戊辰日合住；但断「房中藏着神像」用的是「伏合是藏匿之象、酉金是正气之神、第三爻是房室」，不是上面旧注这条里的父母下是家先、子孙下是小儿。",
+        "en": "The verse here is only the four characters 'extinction, no one to sacrifice'; Wang Hongxu joins it with the previous entry, 'punishment, no good death', into one passage of commentary, whose second half, 'if absent from the hexagram, see under which line it is hidden', is the same as the old commentary. The case that follows in the Bushi Zhengzong (Xiaoxu) uses the reading of a hidden ghost: the You Metal Pressure lies hidden beneath the third line, Chen Earth; Chen and You combine and the Wuchen day also holds it in combination; but the judgment 'a statue is hidden in the room' rests on 'hidden and combined is the image of concealment, You Metal is a spirit of proper energy, the third line is the bedroom', not on the old commentary's 'under Resource the family forebears, under Output children'."
+      },
+      "see": ["LY.ILL.HJC.103", "LY.ILL.HJC.105", "LY.ILL.ZS.23"]
+    }
+  ]
+}
