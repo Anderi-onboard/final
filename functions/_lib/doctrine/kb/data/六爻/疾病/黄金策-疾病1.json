@@ -1,0 +1,458 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "疾病",
+  "chapter_en": "Illness",
+  "ranges": {"卜筮大全": [6763, 6818], "卜筮正宗": [2301, 2327]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.01",
+      "topic": "总则",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "占病以官爻为恶杀：症候轻重、得病根由皆系此爻，独发之爻亦可推之",
+      "rule": {
+        "yi": "占病时把官鬼爻当作凶恶的煞：病的症状轻重、得病的根由，都看这一爻；卦里只有一爻独自发动的，也可以照它来推。",
+        "en": "In divining illness the Pressure line is taken as the malign killer: how heavy or light the symptoms are, and how the illness was contracted, are both read from this line; a line that moves alone in the hexagram can also be reasoned from in the same way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6763, 6763],
+          "zh": ["人孰无常，疾病无常；", "事孰为大，死生为大。"],
+          "yi": ["人谁没有无常的时候？疾病就是无常的；", "什么事最大？生死最大。"],
+          "en": ["Who among men is without impermanence? Illness is impermanent;", "what matter is greatest? Life and death are the greatest."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6764, 6764],
+          "zh": ["占病以官爻为恶杀。", "凡病：症候轻重，得病根由，皆系此爻。", "独发之爻，亦可以此推之。"],
+          "yi": ["占病，把官鬼爻当作凶恶的煞。", "凡是病，症状的轻重、得病的根由，都系在这一爻上。", "只有一爻独自发动的，也可以照这个办法推。"],
+          "en": ["In divining illness, the Pressure line is taken as the malign killer.", "In every illness, how heavy or light the symptoms are and how the illness was contracted both hang on this line.", "A line that moves alone can also be reasoned out in the same way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2301, 2301],
+          "zh": ["凡占疾症，以官鬼爻为轻重；", "得病根由，独发之爻亦可推之。"],
+          "yi": ["凡是占疾病，以官鬼爻定轻重；", "得病的根由，独自发动的爻也可以推。"],
+          "en": ["In divining any illness, the Pressure line fixes how heavy or light it is;", "for the cause of the illness, a line moving alone can also be reasoned from."] }
+      ],
+      "see": ["LY.ILL.HJC.02"]
+    },
+    {
+      "id": "LY.ILL.HJC.02",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "火属心经、水归肾部、金肺木肝、土侵脾胃：鬼爻的五行定哪一脏受病；衰轻旺重，动则煎迫",
+      "rule": {
+        "yi": "官鬼爻的五行，定哪一脏受病：火是心经（发热、咽干、口燥），水是肾（怕冷、盗汗、遗精白浊），金是肺（咳嗽、虚怯、气喘），木是肝（感冒风寒、四肢不和），土是脾胃（虚黄、浮肿、瘟疫时气）。鬼爻衰弱病轻、旺相病重；静则安卧，动则煎熬躁急。",
+        "en": "The phase of the Pressure line fixes which organ is ill: Fire is the Heart channel (fever, dry throat, dry mouth), Water the Kidney (aversion to cold, night sweats, seminal emission and cloudy urine), Metal the Lung (cough, weak timidity, panting), Wood the Liver (catching wind-cold, limbs out of harmony), Earth the Spleen and Stomach (sallow weakness, swelling, epidemic and seasonal disease). A weak Pressure line means a light illness and a strong one a heavy illness; still, the patient lies quiet, and moving, he is tormented and restless."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6766, 6766],
+          "zh": ["火属心经，发热咽干口燥；", "水归肾部，恶寒盗汗遗精。", "金肺木肝，土乃病侵脾胃；", "衰轻旺重，动则煎迫身躯。"],
+          "yi": ["火对应心经，病发热、咽喉干、口燥；", "水归肾这一部，怕冷、盗汗、遗精。", "金对应肺，木对应肝，土就是病侵到脾胃；", "鬼爻衰弱病轻，旺相病重，发动就煎熬逼迫身体。"],
+          "en": ["Fire belongs to the Heart channel: fever, dry throat and dry mouth;", "Water belongs to the Kidney: aversion to cold, night sweats and seminal emission.", "Metal is the Lung and Wood the Liver; Earth means the illness invades the Spleen and Stomach;", "weak, it is light; strong, it is heavy; moving, it gnaws at and presses on the body."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6767, 6767],
+          "zh": ["鬼爻属火，心经受病；", "其病必发热，咽干口燥类。", "属水，肾经受病；", "其病必恶寒，或盗汗，或遗精白浊类。", "属金，肺经受病；", "其症必咳嗽虚怯，或气喘类。", "属木，肝经受病；", "其症必感冒风寒，四肢不和类。", "属土，脾经受病；", "必虚黄浮肿，瘟疫时气类。"],
+          "yi": ["鬼爻五行属火，病就在心经；", "这病一定是发热、咽喉干、口燥一类。", "属水，病在肾经；", "这病一定是怕冷，或者盗汗，或者遗精、白浊一类。", "属金，病在肺经；", "这症一定是咳嗽、虚弱胆怯，或者气喘一类。", "属木，病在肝经；", "这症一定是感冒风寒、四肢不调和一类。", "属土，病在脾经；", "一定是虚黄浮肿、瘟疫时气一类。"],
+          "en": ["If the Pressure line is Fire, the Heart channel is ill;", "the illness will be of the kind with fever, dry throat and dry mouth.", "If Water, the Kidney channel is ill;", "the illness will be of the kind with aversion to cold, or night sweats, or seminal emission and cloudy urine.", "If Metal, the Lung channel is ill;", "the symptoms will be of the kind with cough and weak timidity, or panting.", "If Wood, the Liver channel is ill;", "the symptoms will be of the kind with wind-cold and limbs out of harmony.", "If Earth, the Spleen channel is ill;", "it will be of the kind with sallow weakness and swelling, epidemic and seasonal disease."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6768, 6768],
+          "zh": ["若鬼爻衰弱，病必轻；", "旺必重。", "安静则稳然安卧，发动则煎逼急躁。"],
+          "yi": ["如果鬼爻衰弱，病一定轻；", "旺就一定重。", "安静就安稳地躺着，发动就煎熬逼迫、烦躁。"],
+          "en": ["If the Pressure line is weak, the illness is light;", "if strong, it is heavy.", "Still, the patient lies quietly; moving, he is tormented and irritable."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2303, 2303],
+          "zh": ["鬼爻属火，心经受病，其症必发热、咽干、口燥类；", "属水肾经受病，其症必恶寒、盗汗、或遗精白浊类；", "属金肺经受病，其症必咳嗽、虚怯或气喘痰多类；", "属木肝经受病，其症必感冒风寒，或四肢不和类；", "属土脾经受病，其症必虚黄、浮肿或时气瘟疫类。", "或鬼爻衰弱则安卧，发动则烦躁之类也。"],
+          "yi": ["鬼爻属火，心经受病，那症状一定是发热、咽喉干、口燥一类；", "属水是肾经受病，症状一定是怕冷、盗汗，或者遗精白浊一类；", "属金是肺经受病，症状一定是咳嗽、虚弱胆怯，或者气喘痰多一类；", "属木是肝经受病，症状一定是感冒风寒，或者四肢不调和一类；", "属土是脾经受病，症状一定是虚黄、浮肿，或者时气瘟疫一类。", "又如鬼爻衰弱就安静地躺着，发动就烦躁，一类的情形。"],
+          "en": ["If the Pressure line is Fire, the Heart channel is ill, and the symptoms will be of the kind with fever, dry throat and dry mouth;", "if Water, the Kidney channel is ill, and the symptoms will be of the kind with aversion to cold, night sweats, or seminal emission and cloudy urine;", "if Metal, the Lung channel is ill, and the symptoms will be of the kind with cough, weak timidity, or panting and much phlegm;", "if Wood, the Liver channel is ill, and the symptoms will be of the kind with wind-cold, or limbs out of harmony;", "if Earth, the Spleen channel is ill, and the symptoms will be of the kind with sallow weakness, swelling, or seasonal epidemic.", "Again, a weak Pressure line means lying quiet, and a moving one means restlessness, and such things."] }
+      ],
+      "see": ["LY.ILL.HJC.01", "LY.ILL.HJC.03", "LY.ILL.HJC.04"]
+    },
+    {
+      "id": "LY.ILL.HJC.03",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "鬼在坎宫中满血虚兼湿毒，在离卦内虚眼赤及尿黄",
+      "rule": {
+        "yi": "官鬼爻在坎宫，病是中满、血虚，兼有湿毒；在离卦，病是内虚、眼红、尿黄。旧注分得更细：坎宫属水，火鬼主血虚、水鬼主湿毒；离宫属火，火鬼主眼红、水鬼主尿黄。",
+        "en": "With the Pressure line in the Kan palace, the illness is fullness in the middle and blood deficiency, together with damp toxin; in the Li hexagram it is inner deficiency, red eyes and yellow urine. The old commentary divides it more finely: the Kan palace belongs to Water, where a Fire Pressure means blood deficiency and a Water Pressure damp toxin; the Li palace belongs to Fire, where a Fire Pressure means red eyes and a Water Pressure yellow urine."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6770, 6770],
+          "zh": ["若在坎宫，中满血虚兼湿毒；", "如当离卦，内虚眼赤及尿黄。"],
+          "yi": ["鬼爻如果在坎宫，是中满、血虚，兼有湿毒；", "如果在离卦，是内虚、眼红、尿黄。"],
+          "en": ["If it is in the Kan palace: fullness in the middle, blood deficiency, together with damp toxin;", "if it is in the Li hexagram: inner deficiency, red eyes and yellow urine."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6773, 6773],
+          "zh": ["坎象中满，故主中满；", "离象中虚，故主内虚。", "然坎宫属水，火鬼主血虚，水鬼主湿毒。", "离宫属火，或火官主眼赤，水鬼主尿黄。"],
+          "yi": ["坎的卦象中间是实的，所以主中满；", "离的卦象中间是空的，所以主内虚。", "不过坎宫属水，火鬼主血虚，水鬼主湿毒。", "离宫属火，火鬼主眼红，水鬼主尿黄。"],
+          "en": ["The Kan image is full in the middle, so it means fullness in the middle;", "the Li image is empty in the middle, so it means inner deficiency.", "But the Kan palace belongs to Water: a Fire Pressure means blood deficiency, a Water Pressure means damp toxin.", "The Li palace belongs to Fire: a Fire Pressure means red eyes, a Water Pressure means yellow urine."] }
+      ],
+      "note": {
+        "yi": "这一联卜筮正宗的王洪绪注里没有。旧注里最后一句写作「或火官主眼赤」，「或」应是「火」之误，译文按上文「火鬼」对「水鬼」译。",
+        "en": "This couplet has no note by Wang Hongxu in the Bushi Zhengzong. The last sentence of the old commentary reads 'or the Fire Pressure means red eyes'; the 'or' is probably a slip, and the translation follows the contrast between the Fire Pressure and the Water Pressure in the sentence before."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.HJC.04"]
+    },
+    {
+      "id": "LY.ILL.HJC.04",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "坤腹乾头、兑喉风咳嗽、艮足震手、巽瘫痪肠风：鬼在八宫的病位；以鬼在坤宫为例，五行之鬼各主一病",
+      "rule": {
+        "yi": "鬼爻落在哪一宫，病就在哪个部位：坤是腹、乾是头，兑是喉风咳嗽，艮和震是手足，巽是瘫痪、肠风。以鬼在坤宫为例：火鬼腹痈，水鬼腹痛，动化财爻或财化水鬼是泻痢，土鬼是癖块食积或沙胀蛊症，木鬼是绞肠痧痛或大肠有病，金鬼是胁肋痛（在上胸痛、在下腰痛）。别的卦照此推。",
+        "en": "Where the Pressure line falls in the palaces fixes where the illness is: Kun is the belly and Qian the head; Dui is throat wind and cough; Gen and Zhen are the hand and foot; Xun is paralysis and intestinal wind. Taking Pressure in the Kun palace as the example: a Fire Pressure is an abdominal abscess, a Water Pressure pain in the belly; moving and changing into a Wealth line, or Wealth changing into a Water Pressure, is diarrhea and dysentery; an Earth Pressure is abdominal masses and food accumulation, or sha bloating and gu-swelling; a Wood Pressure is twisting colic or trouble in the large intestine; a Metal Pressure is pain in the flanks (chest if high, loins if low). The other palaces follow by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6771, 6771],
+          "zh": ["坤腹乾头，兑必喉风咳嗽；", "艮足震手，巽须瘫痪肠风。"],
+          "yi": ["坤是腹、乾是头，兑必定是喉风、咳嗽；", "艮是足、震是手，巽必定是瘫痪、肠风。"],
+          "en": ["Kun is the belly and Qian the head; Dui is surely throat wind and cough;", "Gen is the foot and Zhen the hand; Xun is surely paralysis and intestinal wind."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6776, 6777],
+          "zh": ["鬼在坤宫，腹中有病。", "火鬼：必患腹痈。", "水鬼：腹中疼痛。", "动化财爻，或财化水鬼，必患泻痢。", "土鬼：则是癖块，食积，或沙胀蛊症。", "木鬼：绞肠痧痛，或大肠有病。", "金鬼：胁肋痛。", "在上，胸隔痛；", "在下，腰痛。", "此鬼在坤宫断法，其诸卦仿此推之。"],
+          "yi": ["鬼爻落在坤宫，病在腹中。", "火鬼：一定得腹痈。", "水鬼：腹中疼痛。", "动了化成财爻，或者财爻化成水鬼，一定得泻痢。", "土鬼：是癖块、食积，或者沙胀蛊症。", "木鬼：绞肠痧痛，或者大肠有病。", "金鬼：胁肋痛。", "在上，胸膈痛；", "在下，腰痛。", "这是鬼在坤宫的断法，其余各卦仿照这个来推。"],
+          "en": ["If the Pressure is in the Kun palace, the illness is in the belly.", "Fire Pressure: surely an abdominal abscess.", "Water Pressure: pain in the belly.", "Moving and changing into a Wealth line, or Wealth changing into a Water Pressure: surely diarrhea and dysentery.", "Earth Pressure: abdominal masses, food accumulation, or sha bloating and gu-swelling.", "Wood Pressure: twisting colic, or trouble in the large intestine.", "Metal Pressure: pain in the flanks.", "If high, pain in the chest and diaphragm;", "if low, pain in the loins.", "This is the method for Pressure in the Kun palace; the other trigrams are reasoned in the same way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2305, 2305],
+          "zh": ["鬼在坤宫，腹中有病，火鬼必患腹疾；", "水鬼腹中疼痛；", "动化财或化水鬼必泻痢；", "土鬼则是食积痞块或痧胀蛊症；", "木鬼绞肠痧痛，或大肠有病；", "金鬼胁肋疼痛，在上胸痛，在下腰痛。", "此鬼在坤宫断，余卦类推之。"],
+          "yi": ["鬼在坤宫，病在腹中，火鬼一定得腹病；", "水鬼是腹中疼痛；", "动了化成财爻，或者化成水鬼，一定泻痢；", "土鬼是食积痞块，或者痧胀蛊症；", "木鬼是绞肠痧痛，或者大肠有病；", "金鬼是胁肋疼痛，在上胸痛，在下腰痛。", "这是鬼在坤宫的断法，其余的卦类推。"],
+          "en": ["Pressure in the Kun palace: illness in the belly; a Fire Pressure surely brings a belly complaint;", "a Water Pressure is pain in the belly;", "moving and changing into Wealth or into a Water Pressure: surely diarrhea and dysentery;", "an Earth Pressure is food accumulation and lumps, or sha bloating and gu-swelling;", "a Wood Pressure is twisting colic, or trouble in the large intestine;", "a Metal Pressure is pain in the flanks, in the chest if high, in the loins if low.", "This is judged for Pressure in the Kun palace; the other trigrams follow by analogy."] }
+      ],
+      "note": {
+        "yi": "经文和旧注写「艮足震手」，卜筮正宗写成「艮手、震足」；本章下面讲震宫的一条（LY.ILL.HJC.19）是「鬼在震宫，病在足」，和卜筮正宗的写法相合。卜筮大全旧注这一条的前半（「鬼在坤宫，腹中有病……土鬼：」）在前面重复抄了一次，这里只收完整的那一次。「沙胀蛊症」「绞肠痧」是旧医书里的病名，书里没有解释，译文保留拼音。",
+        "en": "The verse and the old commentary write 'Gen the foot, Zhen the hand', while the Bushi Zhengzong writes 'Gen the hand, Zhen the foot'; the entry below in this chapter on the Zhen palace (LY.ILL.HJC.19) says 'Pressure in the Zhen palace, the illness is in the foot', which agrees with the Bushi Zhengzong. In the Bushi Daquan the first half of this commentary ('Pressure in the Kun palace, illness in the belly ... Earth Pressure:') is copied twice, and only the complete copy is taken here. 'Sha bloating and gu-swelling' and 'twisting colic (jiaochang sha)' are disease names from old medical books which the book does not explain, and the translation keeps the sounds."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.HJC.03", "LY.ILL.HJC.19"]
+    },
+    {
+      "id": "LY.ILL.HJC.05",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "六神临鬼各主一症：螣蛇心惊、青龙酒色过度、勾陈肿胀、朱雀言语颠狂、白虎损伤血崩血晕、玄武忧郁阴虚",
+      "rule": {
+        "yi": "官鬼爻临着哪个六神，就是哪一种病：螣蛇鬼坐卧不安、心神不定；青龙鬼酒色过度、瘦弱无力；勾陈鬼胸腹胀满、脾胃不和；朱雀鬼狂言乱语、身热面赤；白虎鬼跌打损伤，女人则血崩血晕、产后各症（白虎是血神）；玄武鬼色欲过度、忧闷在心，在本宫主阴虚。最后一句叫人变通着断。",
+        "en": "Which of the six spirits the Pressure line sits on fixes the kind of illness: Coiling Snake Pressure, unable to sit or lie at ease and the mind unsettled; Azure Dragon Pressure, excess of wine and lust, thin and without strength; Hook Earth Pressure, fullness and swelling, Spleen and Stomach out of harmony; Vermilion Bird Pressure, wild talk, hot body and red face; White Tiger Pressure, falls and blows and injury, and in a woman flooding and blood-faintness and the ailments after childbirth (the White Tiger is the spirit of blood); Dark Tortoise Pressure, excess of lust and gloom pent in the heart, and in the home palace yin deficiency. The last sentence tells one to judge flexibly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6779, 6779],
+          "zh": ["螣蛇心惊，青龙则酒色过度；", "勾陈肿胀，朱雀则言语颠狂。", "虎有损伤，女子则血崩血晕；", "玄武忧郁，男人则阴症阴虚。"],
+          "yi": ["螣蛇是心惊，青龙就是酒色过度；", "勾陈是肿胀，朱雀就是言语颠狂。", "白虎是损伤，女人就是血崩血晕；", "玄武是忧郁，男人就是阴症阴虚。"],
+          "en": ["The Coiling Snake means fright of the heart; the Azure Dragon means excess of wine and lust;", "Hook Earth means swelling; the Vermilion Bird means raving speech.", "The Tiger means injury, and in a woman flooding and blood-faintness;", "the Dark Tortoise means gloom, and in a man yin syndrome and yin deficiency."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6780, 6780],
+          "zh": ["螣蛇鬼：则坐卧不安，心神不定。", "青龙鬼：则酒色过度，瘦弱无力。", "勾陈鬼：饱满肿胀，脾胃不和。", "朱雀鬼：狂言乱语，身热面赤。", "白虎鬼：跌扑打斗，伤筋损骨；", "女人则血崩血晕，产后诸症；", "白虎血神，故也。", "玄武鬼：色欲太过，忧闷在心；", "在本宫主阴虚；", "化子孙，男子必阳痿；", "盖玄武又暗昧之神，故也。", "宜通变。"],
+          "yi": ["螣蛇鬼：坐也不安，躺也不安，心里定不下来。", "青龙鬼：酒和女色过度，人瘦弱，没有力气。", "勾陈鬼：肚腹饱胀，身体肿胀，脾胃不调和。", "朱雀鬼：说狂话、乱话，身上发热，脸红。", "白虎鬼：摔跤、扑倒、打架，伤到筋骨；", "女人则是血崩血晕，和产后各种症候；", "因为白虎是血神。", "玄武鬼：贪恋色欲过度，忧愁郁闷积在心里；", "在本宫就是阴虚；", "化出子孙，男子一定阳痿；", "因为玄武又是暗昧的神。", "要变通着断。"],
+          "en": ["Coiling Snake Pressure: unable to sit or lie at ease, the mind unsettled.", "Azure Dragon Pressure: excess of wine and lust, thin and weak, without strength.", "Hook Earth Pressure: fullness and swelling, Spleen and Stomach out of harmony.", "Vermilion Bird Pressure: wild and confused talk, hot body and red face.", "White Tiger Pressure: falls, blows and fights, harm to sinews and bones;", "in a woman, flooding and blood-faintness and the various ailments after childbirth;", "for the White Tiger is the spirit of blood.", "Dark Tortoise Pressure: excess of lust, gloom pent in the heart;", "in the home palace it means yin deficiency;", "changing into Output, a man surely suffers impotence;", "for the Dark Tortoise is also the spirit of the hidden and obscure.", "Judge it flexibly."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2307, 2307],
+          "zh": ["螣蛇鬼则坐卧不安，心神不定；", "青龙鬼则酒色过度，虚弱无力；", "勾陈鬼胸满肿胀，脾胃不和；", "朱雀鬼狂言乱语，身热面赤；", "白虎鬼跌打气防，伤筋损骨，女人血崩血晕，产后诸症，盖白虎血神故也；", "玄武鬼色欲太过，郁闷在心，在本宫主阴虚，化子孙男子阴症阴虚，盖玄武暗昧之神故也。", "断宜通变。"],
+          "yi": ["螣蛇鬼是坐卧不安，心神不定；", "青龙鬼是酒色过度，虚弱无力；", "勾陈鬼是胸满肿胀，脾胃不和；", "朱雀鬼是狂言乱语，身热面赤；", "白虎鬼是跌打损伤，伤筋损骨，女人血崩血晕、产后各种症候，因为白虎是血神；", "玄武鬼是色欲太过，郁闷在心，在本宫主阴虚，化出子孙，男子是阴症阴虚，因为玄武是暗昧的神。", "断的时候要变通。"],
+          "en": ["Coiling Snake Pressure: unable to sit or lie at ease, the mind unsettled;", "Azure Dragon Pressure: excess of wine and lust, weak and without strength;", "Hook Earth Pressure: fullness in the chest and swelling, Spleen and Stomach out of harmony;", "Vermilion Bird Pressure: wild talk, hot body and red face;", "White Tiger Pressure: falls and blows, harm to sinews and bones, and in a woman flooding and blood-faintness and the ailments after childbirth, for the White Tiger is the spirit of blood;", "Dark Tortoise Pressure: excess of lust, gloom pent in the heart; in the home palace yin deficiency; changing into Output, a man's yin syndrome and yin deficiency, for the Dark Tortoise is the spirit of the hidden and obscure.", "Judge it flexibly."] }
+      ],
+      "note": {
+        "yi": "玄武鬼化子孙：旧注说男子必阳痿，王洪绪写成男子阴症阴虚，两家只差一个病名，意思都是男子的房室虚损。卜筮正宗白虎鬼一句的「跌打气防」四个字不通，大概是「跌扑打斗」之误，译文按跌打译。「阴症」是中医说的阴证（虚寒一类的病），不是阴性病。",
+        "en": "For a Dark Tortoise Pressure changing into Output, the old commentary says a man surely suffers impotence and Wang Hongxu writes yin syndrome and yin deficiency; the two differ by one disease name and both mean a man's depletion in bedchamber matters. The four words 'die da qi fang' in the Bushi Zhengzong's White Tiger clause do not read and are probably a slip for 'falls, blows and fights'; the translation takes it as falls and blows. A 'yin syndrome' is a yin-type disorder in Chinese medicine (a cold, deficient kind of illness) and not an illness of a yin nature."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.HJC.04"]
+    },
+    {
+      "id": "LY.ILL.HJC.06",
+      "topic": "病因",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "鬼伏卦中，病来莫觉：本宫鬼出现发动则得病之初就知根源；本宫无而他宫有是久伏在身今始发；都没有则隐然得病",
+      "rule": {
+        "yi": "占病时，本宫的官鬼出现并且发动，得病之初就知道根由；本宫的官鬼不出现、而别的宫有官鬼出现，是病早就伏在身上，这一回因七情四气感冒才发出来；本宫和别的宫都没有官鬼，是不知不觉得的病，起初谁也说不出为什么。旧注又附了两组按卦名的忌讳：明夷、观、贲、需、临最忌世爻和身爻入墓；大畜、丰、同人、蛊、夬不要遇上财爻鬼爻一起兴旺。",
+        "en": "In divining illness: if the Pressure of the home palace appears and moves, the source is known as soon as the illness begins; if the home palace's Pressure does not appear but another palace's Pressure does, the illness has long lain hidden in the body and now breaks out through the seven emotions and the four airs; if neither the home palace nor another palace has Pressure, the illness was contracted unseen and at first no one can say why. The old commentary adds two groups of taboos by hexagram name: for Mingyi, Guan, Bi, Xu and Lin, beware above all of Self and Body entering the tomb; for Daxu, Feng, Tongren, Gu and Guai, do not meet Wealth and Pressure both stirring."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6782, 6782],
+          "zh": ["鬼伏卦中，病来莫觉；"],
+          "yi": ["官鬼伏在卦里，病来了却不知不觉；"],
+          "en": ["Pressure hidden in the hexagram: the illness comes and is not noticed;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6783, 6784],
+          "zh": ["占病遇本宫鬼出现发动，得病初即晓根源。", "若本宫官鬼不出现，而他宫官鬼出现者，有病必然久伏在身，今因七情四气感冒而发也。", "若本宫他宫皆无官鬼，必隐然得病，初莫知何由也。", "明夷、观、贲、需、临，切忌世身入墓；", "大畜、丰、同人、蛊、夬，莫逢财鬼俱兴。"],
+          "yi": ["占病遇到本宫的鬼爻出现并且发动，得病的当初就知道根由。", "如果本宫的官鬼不出现，而别的宫的官鬼出现，有病必定早就伏在身上，现在是因为七情四气感冒才发作。", "如果本宫和别的宫都没有官鬼，一定是不知不觉得的病，起初不知道是为什么。", "明夷、观、贲、需、临，最忌世爻和身爻入墓；", "大畜、丰、同人、蛊、夬，不要遇到财爻鬼爻一起兴旺。"],
+          "en": ["In divining illness, if the Pressure of the home palace appears and moves, the source is known as soon as the illness begins.", "If the home palace's Pressure does not appear but another palace's Pressure does, the illness has surely long lain hidden in the body, and it breaks out now through the seven emotions and the four airs taking hold.", "If neither the home palace nor another palace has Pressure, the illness was surely contracted unseen, and at first no one knows the reason.", "For Mingyi, Guan, Bi, Xu and Lin, above all beware of Self and Body entering the tomb;", "for Daxu, Feng, Tongren, Gu and Guai, do not meet Wealth and Pressure both stirring."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2309, 2309],
+          "zh": ["遇官鬼不出现必隐藏，得症不知何由；"],
+          "yi": ["遇到官鬼不出现，一定是隐藏着，得了病不知道是什么缘故；"],
+          "en": ["If Pressure does not appear it is surely hidden, and the illness comes with no known reason;"] }
+      ],
+      "note": {
+        "yi": "旧注最后两句按卦名给忌讳，没有说明理由，王洪绪没有收。「七情」是喜怒忧思悲恐惊，「四气」指寒热温凉（或风寒暑湿），书里没有说是哪一种，译文保留原词。",
+        "en": "The last two sentences of the old commentary give taboos by hexagram name without reasons, and Wang Hongxu does not take them. The 'seven emotions' are joy, anger, worry, longing, grief, fear and fright, and the 'four airs' are cold, hot, warm and cool (or wind, cold, heat and damp); the book does not say which, and the translation keeps the original words."
+      },
+      "see": ["LY.ILL.HJC.07", "LY.ILL.HJC.01"]
+    },
+    {
+      "id": "LY.ILL.HJC.07",
+      "topic": "病因",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "官藏世下，病起如前：官鬼伏在世爻下是旧病重发；伏鬼不伤用而用被世克则前轻今重，伏鬼伤用而用得世生则前重今轻",
+      "rule": {
+        "yi": "本宫的官鬼伏在世爻下面，一定是旧病重新发作。如果伏着的鬼不伤用爻、用爻反而被世爻克，以前病轻、现在反倒沉重；如果伏着的鬼刑伤用爻、而用爻反而得到世爻的生扶，以前病重、现在轻。用爻要看问的是谁：比如占妻子的病就看财爻。",
+        "en": "If the home palace's Pressure is hidden beneath the Self line, it is surely an old illness breaking out again. If the hidden Pressure does not harm the Subject line but the Subject is controlled by Self, the illness was light before and is heavier now; if the hidden Pressure punishes and harms the Subject but the Subject is generated and supported by Self, it was heavy before and is lighter now. The Subject line depends on whom one asks about: for a wife's illness, for example, look at the Wealth line."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6786, 6786],
+          "zh": ["官藏世下，病起如前。"],
+          "yi": ["官鬼伏在世爻下面，病发得和从前一样。"],
+          "en": ["Pressure hidden beneath Self: the illness starts up as before."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6787, 6787],
+          "zh": ["本宫鬼官伏在世下，必是旧病重发。", "若伏鬼不伤用爻，而用爻反被世克者，前日病轻，今日反沉重。", "如伏鬼刑伤用爻，而用爻反得世爻生扶者，前日病重，今日轻。", "用爻：妻病看财爻类。"],
+          "yi": ["本宫的官鬼伏在世爻下面，一定是旧病重新发作。", "如果伏着的鬼不伤用爻，而用爻反而被世爻克的，以前病轻，现在反倒沉重。", "如果伏着的鬼刑伤用爻，而用爻反而得到世爻生扶的，以前病重，现在轻。", "用爻：比如占妻子的病就看财爻，这一类。"],
+          "en": ["If the home palace's Pressure is hidden beneath Self, it is surely an old illness breaking out again.", "If the hidden Pressure does not harm the Subject line but the Subject is controlled by Self, the illness was light before and is heavier now.", "If the hidden Pressure punishes and harms the Subject but the Subject is generated and supported by Self, the illness was heavy before and is lighter now.", "The Subject line: for a wife's illness, for example, look at the Wealth line, and so on."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2309, 2309],
+          "zh": ["官鬼伏在世下，必是旧症复发。"],
+          "yi": ["官鬼伏在世爻下面，一定是旧病重新发作。"],
+          "en": ["Pressure hidden beneath Self is surely an old illness returning."] }
+      ],
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.26"]
+    },
+    {
+      "id": "LY.ILL.HJC.08",
+      "topic": "病因",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "鬼伏六亲之下各有病因：伏财伤饥失饱、伏子酒色、伏父劳心、伏兄口舌争竞",
+      "rule": {
+        "yi": "鬼伏在哪个六亲下面，就是怎么得的病：伏在妻财下，是饮食不节、饥饱失度，或者因为钱财、妇人得病；伏在子孙下，是喝酒过度、放纵房事，夏天露宿贪凉、冬天穿得太暖，或者吃多了养生炼丹的药；伏在父母下，是劳心劳力、忧虑伤神，或者因为动土修造、尊长得病；伏在兄弟下，是口舌争竞、停食生气，或者有人诅咒、因为赌钱争财得病。",
+        "en": "Which relative the Pressure is hidden beneath shows how the illness was got: beneath Wealth, eating without restraint and hunger and surfeit, or illness through money or a woman; beneath Output, too much drinking and unrestrained sexual indulgence, sleeping out in the cool in summer, dressing too warmly in winter, or too many drugs for nourishing and refining; beneath Resource, toil of mind and body and worry that harms the spirit, or breaking ground and building, or illness through an elder; beneath Peer, quarrels and rivalry, food stopped and anger felt, or a curse laid, or gambling and struggling for money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6789, 6789],
+          "zh": ["若伏妻财，必是伤饥失饱；", "如藏福德，必然酒醉耽淫。", "父乃劳伤所致，兄为气食相侵。"],
+          "yi": ["如果伏在妻财下面，一定是饥一顿饱一顿伤了身；", "如果藏在子孙下面，一定是喝醉了酒、沉迷女色。", "伏在父母下是劳累所致，伏在兄弟下是脾气和饮食互相侵扰。"],
+          "en": ["If hidden beneath Wealth, it is surely from going hungry and then overeating;", "if hidden beneath Output, it is surely from drunkenness and lust.", "Beneath Resource it comes from overwork; beneath Peer, from temper and food attacking one another."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6790, 6790],
+          "zh": ["鬼伏财下，必是饮食不节，伤饥失饱；", "或因财物起因，或因妇人得病。", "鬼伏子下，必是饮酒过度；", "或恣行房事。", "夏或露卧，过取风凉；", "冬或伤暖，过穿裘帛；", "或过修炼养精等药所致。", "鬼伏父下，必是劳心劳力，忧虑伤神。", "或因动土修造，或因尊长得病。", "鬼伏兄下，必是口舌争竞，停食感气；", "或有咒咀，或因赌博争财得病。"],
+          "yi": ["鬼伏在财下，一定是饮食不节制，饥饱失度；", "或者因为钱财起的因，或者因为妇人得病。", "鬼伏在子下，一定是饮酒过度；", "或者放纵房事。", "夏天或者露天睡觉，贪凉风太多；", "冬天或者太暖，皮衣丝绸穿得太多；", "或者吃多了修炼养精一类的药。", "鬼伏在父下，一定是劳心劳力，忧虑伤神。", "或者因为动土修造，或者因为尊长得病。", "鬼伏在兄下，一定是口舌争竞，停食生气；", "或者有人诅咒，或者因为赌博争钱得病。"],
+          "en": ["Pressure hidden beneath Wealth: surely eating without restraint, hunger followed by surfeit;", "or the cause is money and goods, or the illness comes through a woman.", "Pressure hidden beneath Output: surely too much drinking;", "or unrestrained sexual indulgence.", "In summer, perhaps sleeping in the open and taking too much cool wind;", "in winter, perhaps harmed by too much warmth, wearing too many furs and silks;", "or from taking too many drugs for refining and nourishing the vital essence.", "Pressure hidden beneath Resource: surely toil of mind and body, worry that harms the spirit.", "Or breaking ground and building, or the illness comes through an elder.", "Pressure hidden beneath Peer: surely quarrels and rivalry, food stopped in the stomach and anger felt;", "or a curse was laid, or the illness comes from gambling and struggling for money."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2311, 2311],
+          "zh": ["鬼伏财下，必是伤食，或因财物起因，或因妇女得病。", "鬼伏子下，必是酒醉过渡，或恣行房事，夏或过于风凉，冬或多着裘帛，或过服补药所致。", "鬼伏父下，必是劳心劳力，忧虑伤神，或因动土所致，或因尊长得病。", "鬼伏兄下，必因口舌争竞，停食感气，或有咒诅得病。"],
+          "yi": ["鬼伏在财下，一定是伤了食，或者因为钱财起因，或者因为妇女得病。", "鬼伏在子下，一定是酒醉过度，或者放纵房事，夏天太贪风凉，冬天穿得太多皮衣丝绸，或者补药吃多了。", "鬼伏在父下，一定是劳心劳力，忧虑伤神，或者因为动土，或者因为尊长得病。", "鬼伏在兄下，一定是口舌争竞，停食生气，或者有人诅咒得病。"],
+          "en": ["Pressure hidden beneath Wealth: surely damage from food, or the cause is money and goods, or the illness comes through a woman.", "Pressure hidden beneath Output: surely too much drunkenness, or unrestrained sexual indulgence, too much cool wind in summer, too many furs and silks in winter, or too many tonic drugs.", "Pressure hidden beneath Resource: surely toil of mind and body, worry that harms the spirit, or breaking ground, or the illness comes through an elder.", "Pressure hidden beneath Peer: surely quarrels and rivalry, food stopped in the stomach and anger felt, or a curse laid."] }
+      ],
+      "note": {
+        "yi": "旧注里「咒咀」是「咒诅」的另一种写法。「养精等药」「修炼」指道家炼丹养生的药物，书里没有具体说是哪几种。",
+        "en": "'Curse' is written in two ways in the old commentary. The 'drugs for refining and nourishing the vital essence' are the medicines of Daoist alchemy and self-cultivation, which the book does not specify."
+      },
+      "see": ["LY.ILL.HJC.07", "LY.ILL.HJC.10"]
+    },
+    {
+      "id": "LY.ILL.HJC.09",
+      "topic": "动变",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "官化官新旧两病，鬼化鬼迁变百端：官鬼化进神病增、化退神病减",
+      "rule": {
+        "yi": "官鬼爻化出官鬼爻，是新旧两种病；鬼爻化出鬼爻，病情迁变，花样百出。旧注说：本宫官鬼还伏在别宫官鬼下面，是旧病，或者旧病没有谨慎、变出别的病，或者新旧两种病；鬼化鬼是病有进有退，或者变了症候，或者药石杂乱，或者忽冷忽热。王洪绪补充：官鬼化进神病加重，化退神病减轻。",
+        "en": "Pressure changing into Pressure means two illnesses, new and old; Pressure changing into Pressure shifts and changes in a hundred ways. The old commentary says: if the home palace's Pressure is still hidden beneath another palace's Pressure, it is an old illness, or through carelessness with the old illness another disease has grown from it, or it is two kinds of illness, new and old; Pressure changing into Pressure means the illness advances and retreats, or the syndrome changes, or the drugs and needles are muddled, or chills and fever are uncertain. Wang Hongxu adds: Pressure changing into an Advancing spirit, the illness grows; into a Retreating spirit, it lessens."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6792, 6792],
+          "zh": ["官化官，新旧两病；", "鬼化鬼，迁变百端。"],
+          "yi": ["官鬼化出官鬼，是新旧两种病；", "鬼爻化出鬼爻，病情迁变，花样百出。"],
+          "en": ["Pressure changing into Pressure: two illnesses, new and old;", "Pressure changing into Pressure: shifts and changes of a hundred kinds."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6793, 6793],
+          "zh": ["本宫官鬼，仍伏他宫官鬼之下，必是旧病；", "或因旧病不谨，变生他症；", "或新旧两般病。", "若遇鬼化鬼，其病进退。", "或有变症，或药石驳杂，或寒热不定。"],
+          "yi": ["本宫的官鬼，还伏在别宫官鬼的下面，一定是旧病；", "或者因为旧病不谨慎，变生出别的病；", "或者是新旧两种病。", "如果遇到鬼化鬼，病就有进有退。", "或者变了症候，或者用药杂乱，或者忽冷忽热不定。"],
+          "en": ["If the home palace's Pressure is still hidden beneath another palace's Pressure, it is surely an old illness;", "or, through carelessness with the old illness, another disease has grown out of it;", "or it is two kinds of illness, new and old.", "If Pressure changes into Pressure, the illness advances and retreats.", "Perhaps a changed syndrome, or muddled drugs and needles, or chills and fever uncertain."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2313, 2313],
+          "zh": ["卦中现有官爻而又变出官爻，主新旧两病也。", "又如官爻化进神则病增，或退神则病减。"],
+          "yi": ["卦中已有官爻、又变出官爻，主新旧两种病。", "又如官爻化出进神，病加重；化出退神，病减轻。"],
+          "en": ["If the hexagram has a Pressure line and also changes out a Pressure line, it means two illnesses, new and old.", "Again, if Pressure changes into an Advancing spirit the illness grows, or into a Retreating spirit it lessens."] }
+      ],
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.07"]
+    },
+    {
+      "id": "LY.ILL.HJC.10",
+      "topic": "病因",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "鬼爻化出六亲各有得病之处：化父母在修造处（五爻水则途中遇雨）、化兄弟口舌伤食（三爻木则房中伤风）、化子孙寺院渔猎、化财伤食妻奴买卖",
+      "rule": {
+        "yi": "鬼爻化出哪个六亲，就是在哪里、怎么得的病：化出父母，是在修造的地方得病，在五爻又属水，是在路上淋了雨；化出兄弟，是口舌呕气或者伤食，在三爻又属木，是在房里脱衣露体着了风寒；化出子孙，是在僧道寺院，或者打鱼打猎游戏时得的；化出财爻，多是伤食，或者因为妻子奴仆、买卖交易得病。六亲化出鬼爻，也照这样断。",
+        "en": "Which relative the Pressure line changes into shows where and how the illness was got: changing into Resource, it was got at a place of repair or building, and if it is on the fifth line and belongs to Water, it was got braving rain on the road; changing into Peer, it is from quarrels and vexation or harm by food, and if on the third line and Wood, from undressing and baring the body in the room and catching wind and cold; changing into Output, it was got at a temple of monks and Daoists, or while fishing, hunting and at play; changing into Wealth, it is mostly harm by food, or through wife or servants, or through buying and selling. Where a relative line changes into Pressure, judge in the same way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6794, 6794],
+          "zh": ["化出文书在五爻，则途中遇雨；", "变成兄弟居三位，则房内伤风。"],
+          "yi": ["化出父母爻在五爻，是路上遇了雨；", "变成兄弟爻在三爻，是房里伤了风。"],
+          "en": ["Changing out a Resource line on the fifth line: caught in the rain on the road;", "changing into a Peer line in the third place: catching wind in the room."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6795, 6797],
+          "zh": ["鬼化父母，必在修造之处得病。", "若在五爻属水，则在途冒雨而得也。", "如化兄弟，必因口舌呕气，或是伤食。", "若在三爻属木，必房中脱衣露体，感冒风寒所致。", "若化子孙，则在僧道寺院，或渔猎游戏所致。", "若化财爻，多因伤食，或因妻奴，或因买卖交易得病。", "以上六亲化出鬼爻，亦依此断。"],
+          "yi": ["鬼爻化成父母，一定是在修造的地方得的病。", "如果在五爻又属水，就是在路上冒雨得的。", "如果化成兄弟，一定是因为口舌呕气，或者是伤了食。", "如果在三爻又属木，一定是在房中脱了衣服露着身子，感冒风寒。", "如果化成子孙，就是在僧道的寺院里，或者打鱼打猎游戏时得的。", "如果化成财爻，多是因为伤了食，或者因为妻子奴仆，或者因为买卖交易得的病。", "以上是六亲化出鬼爻，也照这个断。"],
+          "en": ["Pressure changing into Resource: the illness was surely got at a place of repair or building.", "If it is on the fifth line and belongs to Water, it was got braving rain on the road.", "If it changes into Peer, it is surely from quarrels and vexation, or from harm by food.", "If it is on the third line and belongs to Wood, it comes from undressing and baring the body in the room and catching wind and cold.", "If it changes into Output, it comes from monks' and Daoists' temples, or fishing, hunting and play.", "If it changes into Wealth, it is mostly from harm by food, or through wife or servants, or the illness comes through buying and selling.", "Where the six relatives change out a Pressure line, judge in the same way as above."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2315, 2315],
+          "zh": ["化出父母，必在修造之处得病，若在五爻属水，则在途中冒雨而得也。", "如化兄弟，必因口舌呕气或是伤食；", "若在三爻，必房中脱衣露体感冒风寒。", "若化子孙，则是在僧道寺院或渔猎游戏。", "化财伤食，或因妻奴或因买卖。", "以上六亲化出官鬼爻，亦依此断。"],
+          "yi": ["化出父母，一定是在修造的地方得的病，如果在五爻又属水，就是在路上冒雨得的。", "如果化成兄弟，一定是因为口舌呕气，或者是伤食；", "如果在三爻，一定是在房中脱衣露体感冒风寒。", "如果化成子孙，就是在僧道的寺院，或者打鱼打猎游戏时得的。", "化成财爻是伤食，或者因为妻子奴仆，或者因为买卖。", "以上是六亲化出官鬼爻，也照这个断。"],
+          "en": ["Changing out Resource, the illness was surely got at a place of repair or building, and if it is on the fifth line and belongs to Water, it was got braving rain on the road.", "If it changes into Peer, it is surely from quarrels and vexation or from harm by food;", "if it is on the third line, it is surely from undressing and baring the body in the room and catching wind and cold.", "If it changes into Output, it was got at a temple of monks and Daoists, or while fishing, hunting and at play.", "Changing into Wealth, it is harm by food, or through wife or servants, or through buying and selling.", "Where the six relatives change out a Pressure line, judge in the same way as above."] }
+      ],
+      "see": ["LY.ILL.HJC.08", "LY.ILL.HJC.11"]
+    },
+    {
+      "id": "LY.ILL.HJC.11",
+      "topic": "病因",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "本宫为在家得病下必内伤，他卦为别处染灾上须外感：鬼在下三爻内伤、在上三爻外感或外科症，上下皆有鬼内伤兼外感",
+      "rule": {
+        "yi": "鬼在本宫，是在家里得的病；鬼在别的宫（别的卦），是在外面染上的。鬼在下面三爻，一定是内伤的症候，不然病也在里面；鬼在外宫、又在上三爻，一定是外感风邪，不然也是外科的症候；上下都有鬼，是内伤兼外感，症候不止一种。",
+        "en": "Pressure in the home palace means the illness was got at home; Pressure in another palace or hexagram means it was caught elsewhere. Pressure in the lower three lines is surely a syndrome of inner damage, or else the illness is in the inside; Pressure in the outer palace and in the upper three lines is surely outer wind evil from without, or else a surgical syndrome; with Pressure both above and below it is inner damage together with outer contagion, and the syndrome is mixed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6799, 6799],
+          "zh": ["本宫为在家得病，下必内伤；", "他卦为别处染灾，上须外感。"],
+          "yi": ["本宫是在家里得的病，鬼在下面一定是内伤；", "别的卦是在别处染上的灾，鬼在上面一定是外感。"],
+          "en": ["The home palace means it was got at home, and below it is surely inner damage;", "another hexagram means it was caught elsewhere, and above it must be outer contagion."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6800, 6800],
+          "zh": ["鬼在本宫，家中得病。", "在下三爻，必是内伤症候；", "不然病亦在内。", "官在外宫，外方得病。", "更在上三爻，必是外感风邪；", "不然，亦是外科症候。", "上下有鬼，内伤兼外感，症候不一。"],
+          "yi": ["鬼在本宫，是在家中得的病。", "在下面三爻，一定是内伤的症候；", "不然病也在里面。", "官鬼在外宫，是在外面得的病。", "再在上面三爻，一定是外感风邪；", "不然，也是外科的症候。", "上下都有鬼，是内伤兼外感，症候不一样。"],
+          "en": ["Pressure in the home palace: the illness was got at home.", "In the lower three lines it is surely a syndrome of inner damage;", "if not, the illness is still on the inside.", "Pressure in the outer palace: the illness was got away from home.", "If it is also in the upper three lines it is surely outer wind evil from without;", "if not, it is a surgical syndrome.", "With Pressure both above and below, it is inner damage together with outer contagion, and the syndrome is mixed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2317, 2317],
+          "zh": ["鬼在本宫，家中得病，在下三爻，必是内伤症候。", "官在外宫外方得病，更在上三爻，必是外感风邪。", "上下有鬼，内伤兼外感，症得不一。"],
+          "yi": ["鬼在本宫，是在家中得的病，在下面三爻，一定是内伤的症候。", "官鬼在外宫，是在外面得的病，再在上面三爻，一定是外感风邪。", "上下都有鬼，是内伤兼外感，症候不一样。"],
+          "en": ["Pressure in the home palace: the illness was got at home, and in the lower three lines it is surely a syndrome of inner damage.", "Pressure in the outer palace: the illness was got away from home, and in the upper three lines it is surely outer wind evil.", "With Pressure above and below, it is inner damage together with outer contagion, and the syndrome is mixed."] }
+      ],
+      "see": ["LY.ILL.HJC.06", "LY.ILL.HJC.12"]
+    },
+    {
+      "id": "LY.ILL.HJC.12",
+      "topic": "轻重",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "上实下空，夜轻日重：鬼在内卦夜重、在外卦日重，内外皆有鬼昼夜不轻；二鬼一旺一空或一动一静则分上下断日夜",
+      "rule": {
+        "yi": "鬼在内卦，病夜里重；鬼在外卦，病白天重；内外都有鬼，昼夜都不轻。如果卦里虽然有两个鬼，但一个旺一个空、或者一个动一个静，就是白天轻夜里重，或者白天重夜里轻，要分上下来断。",
+        "en": "Pressure in the inner trigram, the illness is heavy at night; Pressure in the outer trigram, heavy by day; Pressure both inside and outside, not light by day or night. If the hexagram has two Pressure lines but one is strong and one Void, or one moving and one still, it is light by day and heavy at night, or heavy by day and light at night, and one judges by upper and lower."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6802, 6802],
+          "zh": ["上实下空，夜轻日重；"],
+          "yi": ["上面实、下面空，夜里轻、白天重；"],
+          "en": ["Above full, below empty: light at night, heavy by day;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6803, 6804],
+          "zh": ["鬼在内宫，病必夜重；", "鬼在外卦，病必日重；", "内外有鬼，昼夜不轻。", "若卦虽有二鬼，一旺一空，或一动一静，必日轻夜重，或日重夜轻。", "分上下断之。"],
+          "yi": ["鬼在内卦，病一定夜里重；", "鬼在外卦，病一定白天重；", "内外都有鬼，昼夜都不轻。", "如果卦里虽然有两个鬼，一个旺一个空，或者一个动一个静，一定是白天轻夜里重，或者白天重夜里轻。", "分上下来断。"],
+          "en": ["Pressure in the inner palace: the illness is heavy at night;", "Pressure in the outer trigram: heavy by day;", "Pressure both inside and outside: not light by day or night.", "Even if the hexagram has two Pressure lines, one strong and one Void, or one moving and one still, it is surely light by day and heavy at night, or heavy by day and light at night.", "Judge by upper and lower."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2319, 2319],
+          "zh": ["鬼在内宫，病必夜重；", "鬼在外卦，病必日重。", "若卦有二鬼，一旺一空或一动一静，必日轻夜重也。"],
+          "yi": ["鬼在内宫，病一定夜里重；", "鬼在外卦，病一定白天重。", "如果卦里有两个鬼，一个旺一个空，或者一个动一个静，一定是白天轻夜里重。"],
+          "en": ["Pressure in the inner palace: the illness is heavy at night;", "Pressure in the outer trigram: heavy by day.", "If the hexagram has two Pressure lines, one strong and one Void, or one moving and one still, it is surely light by day and heavy at night."] }
+      ],
+      "see": ["LY.ILL.HJC.13", "LY.ILL.HJC.11"]
+    },
+    {
+      "id": "LY.ILL.HJC.13",
+      "topic": "轻重",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "动生变克，暮热朝凉：动爻为始变爻为终，动爻生扶用爻而变爻刑克用爻则朝凉暮热、日轻夜重，动克变生反之",
+      "rule": {
+        "yi": "占卦时动爻是开头、变爻是结尾。卦中动爻生扶用爻、而变爻刑克用爻，病一定早上凉快、晚上发热，或者白天轻夜里重；动爻克用爻、变爻生用爻，反过来断。鬼爻化出所喜的爻、所喜的爻化出鬼爻，也是这样。",
+        "en": "In every divination the moving line is the beginning and the changed line the end. If the moving line in the hexagram generates and supports the Subject while the changed line punishes and controls it, the illness is surely cool in the morning and hot in the evening, or light by day and heavy at night; if the moving line controls the Subject and the changed line generates it, judge the reverse. Where a Pressure line changes into a welcome line, or a welcome line changes into Pressure, it is the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6806, 6806],
+          "zh": ["动生变克，暮热朝凉。"],
+          "yi": ["动爻生、变爻克，晚上发热、早上清凉。"],
+          "en": ["The moving line generates and the changed line controls: hot in the evening, cool in the morning."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6807, 6807],
+          "zh": ["凡占，动爻为始，变爻为终。", "若卦中动爻生扶用爻，而变爻刑克用爻者，其病必朝凉暮热，或日轻夜重也；", "动克变生，反此断。", "凡鬼爻化出所喜爻，所喜爻化出鬼爻，亦然。"],
+          "yi": ["凡占卦，动爻是开头，变爻是结尾。", "如果卦中的动爻生扶用爻，而变爻刑克用爻，这病一定是早上凉、晚上热，或者白天轻夜里重；", "动爻克用爻、变爻生用爻，反过来断。", "凡是鬼爻化出所喜的爻，所喜的爻化出鬼爻，也是这样。"],
+          "en": ["In every divination the moving line is the beginning and the changed line the end.", "If in the hexagram the moving line generates and supports the Subject while the changed line punishes and controls the Subject, the illness is surely cool in the morning and hot in the evening, or light by day and heavy at night;", "if the moving line controls and the changed line generates, judge the reverse.", "Where a Pressure line changes into a welcome line, or a welcome line changes into Pressure, it is the same."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2321, 2321],
+          "zh": ["凡动爻为始，变爻为终，若动爻生扶用爻，而变爻刑克用爻者，必朝凉暮热，日轻夜重。", "动生变克反此断。"],
+          "yi": ["凡是动爻为开头，变爻为结尾，如果动爻生扶用爻，而变爻刑克用爻，一定是早上凉、晚上热，白天轻夜里重。", "动生变克反着这个断。"],
+          "en": ["The moving line is the beginning and the changed line the end; if the moving line generates and supports the Subject while the changed line punishes and controls it, it is surely cool in the morning and hot in the evening, light by day and heavy at night.", "Moving generating and changed controlling: judge the reverse of this."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗最后一句原文是「动生变克反此断」，和上一句同样是「动生变克」，意思接不上，应是「动克变生反此断」之误（旧注作「动克变生，反此断」），译文按旧注的意思译。",
+        "en": "The last sentence of the Bushi Zhengzong reads 'moving generating and changed controlling, judge the reverse of this', which repeats the case of the sentence before and does not follow; it is probably a slip for 'moving controlling and changed generating, judge the reverse' (the old commentary reads 'moving controlling, changed generating, judge the reverse'), and the translation follows the sense of the old commentary."
+      },
+      "see": ["LY.ILL.HJC.12", "LY.ILL.HJC.14"]
+    },
+    {
+      "id": "LY.ILL.HJC.14",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "水化火火化水往来寒热：水旺火衰寒多热少，水伤火助则常热乍寒；坎宫火动内寒外热、离宫水动皮寒骨热，带日辰是疟疾",
+      "rule": {
+        "yi": "卦里水爻动化火、火爻动化水，不论是不是鬼爻，只要冲犯世爻或主象的，都是忽冷忽热的症候；水、火两爻都动，也是这样。水旺火衰是冷多热少；水受伤、火得助，是常热而偶尔发冷。坎宫火动是里冷外热，离宫水动是皮冷骨热。再带上日辰，一定是疟疾。",
+        "en": "In the hexagram, a Water line moving and changing into Fire, or a Fire line changing into Water, whether or not it is the Pressure line, if it offends the Self line or the main image, is a syndrome of alternating chills and fever; if a Water line and a Fire line both move, it is the same. Water strong and Fire weak means more chill and less fever; Water harmed and Fire helped means constant heat with an occasional chill. Fire moving in the Kan palace is cold inside and hot outside; Water moving in the Li palace is cold skin and hot bones. If it also carries the Day, it is surely malaria."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6809, 6809],
+          "zh": ["水化火，火化水，往来寒热；"],
+          "yi": ["水爻化火、火爻化水，是忽冷忽热；"],
+          "en": ["Water changing into Fire, Fire changing into Water: alternating chills and fever;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6810, 6812],
+          "zh": ["卦爻水动化火，火动化水；", "不拘鬼爻，但有干犯世爻或主象者，皆是寒热往来之症。", "卦有水火二爻俱动，亦然。", "水旺火衰，寒多热少；", "水受伤，火得助，则常热乍寒也。", "坎宫火动，内寒外热；", "离宫水动，皮寒骨热。", "若带日辰，必是疟疾。"],
+          "yi": ["卦爻里水爻动化成火、火爻动化成水；", "不论是不是鬼爻，只要冲犯了世爻或者主象的，都是寒热往来的症候。", "卦里水、火两爻都动，也是这样。", "水旺火衰，冷多热少；", "水受伤、火得帮助，就是常常发热而偶尔发冷。", "坎宫的火爻动，是里冷外热；", "离宫的水爻动，是皮冷骨热。", "如果带着日辰，一定是疟疾。"],
+          "en": ["In the hexagram, a Water line moving and changing into Fire, or a Fire line moving and changing into Water;", "whether or not it is the Pressure line, so long as it offends the Self line or the main image, it is a syndrome of alternating chills and fever.", "If both a Water line and a Fire line move in the hexagram, it is the same.", "Water strong and Fire weak: more chill and less fever;", "Water harmed and Fire helped: constantly hot and suddenly cold.", "Fire moving in the Kan palace: cold inside and hot outside;", "Water moving in the Li palace: cold skin and hot bones.", "If it carries the Day, it is surely malaria."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2323, 2323],
+          "zh": ["水化火，火化水，不拘鬼爻，但有干犯主象者，皆是寒热往来之症，卦有水火二爻俱动亦然。", "水旺火衰，寒多热少，倘水受伤，火得助，则常热乍寒也。", "坎宫火动，内寒外热，离宫水动，皮寒骨热；", "若带日辰，必是虐疾。"],
+          "yi": ["水化火、火化水，不论是不是鬼爻，只要冲犯了主象的，都是寒热往来的症候，卦里水、火两爻都动也是这样。", "水旺火衰，冷多热少，如果水受伤、火得帮助，就是常常发热而偶尔发冷。", "坎宫火动是里冷外热，离宫水动是皮冷骨热；", "如果带着日辰，一定是疟疾。"],
+          "en": ["Water changing into Fire or Fire into Water, whether or not it is the Pressure line, if it offends the main image, is a syndrome of alternating chills and fever, and so it is if both a Water line and a Fire line move in the hexagram.", "Water strong and Fire weak means more chill and less fever; if Water is harmed and Fire helped, it is constantly hot and now and then cold.", "Fire moving in the Kan palace is cold inside and hot outside, and Water moving in the Li palace is cold skin and hot bones;", "if it carries the Day, it is surely malaria."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗把「疟疾」写成「虐疾」，是同一个字的写法不同，译作疟疾（malaria）是按后世通行的说法；书里没有说明。",
+        "en": "The Bushi Zhengzong writes 'ni ji' (cruel illness) for 'nue ji' (malaria); they are one word written two ways, and 'malaria' follows later usage, which the book does not explain."
+      },
+      "see": ["LY.ILL.HJC.13", "LY.ILL.HJC.15"]
+    },
+    {
+      "id": "LY.ILL.HJC.15",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "上冲下下冲上，内外感伤：上下有鬼内外两感；内鬼动冲外鬼先伤后感，外鬼动冲内鬼先感后伤",
+      "rule": {
+        "yi": "上下卦都有鬼，病一定是里外两处感受。两个鬼都动、或者都静，是一起受病；两个鬼互相冲，刚感受了邪就受了伤。内卦的鬼动来冲外卦的鬼，是先受伤后感邪；外卦的鬼动来冲内卦的鬼，是先感邪后受伤。要分轻重，用刑、合来断。",
+        "en": "With Pressure in both the upper and lower trigrams, the illness is surely a double contagion of inside and outside. Both Pressure lines moving, or both still, means falling ill together; two Pressure lines clashing each other means hardly is the evil felt than harm is done. If the inner Pressure moves and clashes the outer, it is first harm and then contagion; if the outer Pressure moves and clashes the inner, first contagion and then harm. To tell heavy from light, judge by punishment and combination."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6814, 6814],
+          "zh": ["上冲下，下冲上，内外感伤。"],
+          "yi": ["上冲下、下冲上，里外都感受伤害。"],
+          "en": ["Above clashing below, below clashing above: harm from both inside and outside."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6815, 6815],
+          "zh": ["上下有鬼，病必内外两感。", "俱动俱静，一同受病。", "二鬼自相冲者，适感而遂伤也。", "如内鬼动，冲外鬼，先伤后感；", "外鬼动，冲内鬼，先感后伤。", "要分轻重，以刑合断之，可也。"],
+          "yi": ["上下都有鬼，病一定是内外两种感受。", "都动或者都静，是一起受病。", "两个鬼互相冲的，是刚感受了邪就受了伤。", "如果内卦的鬼动来冲外卦的鬼，是先受伤后感邪；", "外卦的鬼动来冲内卦的鬼，是先感邪后受伤。", "要分轻重，用刑、合来断，就可以了。"],
+          "en": ["With Pressure above and below, the illness is surely a double contagion of inside and outside.", "Both moving or both still: they fall ill together.", "Two Pressure lines clashing each other: hardly is the evil felt than harm is done.", "If the inner Pressure moves and clashes the outer, it is first harm and then contagion;", "if the outer Pressure moves and clashes the inner, first contagion and then harm.", "To tell heavy from light, judge by punishment and combination, and that will do."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2325, 2325],
+          "zh": ["上下有鬼，病必内外两感；", "俱动俱静者，一同受病；", "二鬼自冲者，适感而适愈也。"],
+          "yi": ["上下有鬼，病一定是内外两处感受；", "都动或者都静的，是一起受病；", "两个鬼自己互相冲的，刚感受了邪就痊愈。"],
+          "en": ["With Pressure above and below, the illness is surely a double contagion of inside and outside;", "both moving or both still, they fall ill together;", "two Pressure lines clashing each other of themselves: hardly is the evil felt than it is cured."] }
+      ],
+      "dispute": {
+        "yi": "两鬼互冲的结果，旧注和王洪绪相反。旧注说「适感而遂伤也」，刚感受了邪就受了伤；卜筮正宗写「适感而适愈也」，刚感受就好了。书里没有再解释，也没有别家的话可对。",
+        "en": "The two disagree on what follows when two Pressure lines clash each other. The old commentary says 'hardly is the evil felt than harm is done', while the Bushi Zhengzong writes 'hardly is it felt than it is cured'. The book explains no further and there is no other voice to check against."
+      },
+      "see": ["LY.ILL.HJC.11", "LY.ILL.HJC.14"]
+    },
+    {
+      "id": "LY.ILL.HJC.16",
+      "topic": "症候",
+      "chapter": "疾病",
+      "chapter_en": "Illness",
+      "title": "火鬼冲财上临则呕逆多吐：火鬼动克外卦财爻必呕吐，重则反胃不食；财带螣蛇吐虫，财在间爻消渴易饥",
+      "rule": {
+        "yi": "火的性子向上，财爻代表饮食。占病遇到火鬼动来克外卦的财爻，一定是呕吐，重的是反胃、吃不下饭。财爻带着螣蛇，吐出来的还带虫；财爻在间爻，是消渴、容易饿的症候。",
+        "en": "Fire's nature is to flare upward and Wealth stands for food and drink. In divining illness, a Fire Pressure moving to control the outer Wealth line is surely vomiting, and when heavy, a stomach that turns and cannot take food. If Wealth carries the Coiling Snake, worms are brought up as well; if Wealth is on the between line, it is the syndrome of thirst and quick hunger."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6817, 6817],
+          "zh": ["火鬼冲财，上临则呕逆多吐；"],
+          "yi": ["火鬼冲克财爻，在上卦的，就呕逆、常常呕吐；"],
+          "en": ["A Fire Pressure clashing Wealth, above, brings retching and much vomiting;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6818, 6818],
+          "zh": ["火性炎上，财为饮食。", "故占病，遇火鬼动克外财，必是呕吐，重则反胃不食。", "若财带螣蛇，吐上兼虫；", "财在间爻，则是消渴易饥之症。"],
+          "yi": ["火的性子向上，财爻代表饮食。", "所以占病，遇到火鬼动来克外卦的财爻，一定是呕吐，重的是反胃、不能进食。", "如果财爻带着螣蛇，吐出来的还带着虫；", "财爻在间爻，就是消渴、容易饥饿的症候。"],
+          "en": ["Fire's nature is to flare upward, and Wealth stands for food and drink.", "So in divining illness, a Fire Pressure moving to control the outer Wealth line is surely vomiting, and when heavy, a stomach that turns and takes no food.", "If Wealth carries the Coiling Snake, worms are brought up as well;", "if Wealth is on the between line, it is the syndrome of thirst and quick hunger."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2327, 2327],
+          "zh": ["火性炎上，财为饮食，故占病遇火鬼动克外财，必是呕吐，重则反胃不食。"],
+          "yi": ["火的性子向上，财爻代表饮食，所以占病遇到火鬼动来克外卦的财爻，一定是呕吐，重的是反胃、不能进食。"],
+          "en": ["Fire's nature is to flare upward and Wealth stands for food and drink, so in divining illness a Fire Pressure moving to control the outer Wealth line is surely vomiting, and when heavy, a stomach that turns and takes no food."] }
+      ],
+      "see": ["LY.ILL.HJC.17", "LY.ILL.HJC.30"]
+    }
+  ]
+}

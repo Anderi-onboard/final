@@ -65,6 +65,20 @@ views:
       - rule_en
       - work
   - type: table
+    name: "疾病"
+    filters:
+      and:
+        - 'domain == "疾病"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
     name: "六爻"
     filters:
       and:

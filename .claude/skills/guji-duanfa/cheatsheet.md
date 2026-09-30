@@ -42,8 +42,24 @@ What is in the library and where; entries where the classics disagree are listed
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
 | 心术 | The asker's intent | 3 |
 
-## 打架 · Where the classics disagree(45 条)
+## 六爻 · 疾病(31 条)→ `chapters/六爻/疾病/索引.md`
 
+| 主题 | Topic | 条数 |
+| --- | --- | --- |
+| 总则 | Principles: whose illness, which line stands for the patient, strong and weak | 1 |
+| 症候 | Symptoms: which organ or part is ill, by phase, trigram, position and spirit | 19 |
+| 病因 | Cause: how the illness was contracted, and from what | 7 |
+| 轻重 | Light or heavy, new or old, better or worse by day and night | 2 |
+| 动变 | Moving lines and what they turn into | 2 |
+
+## 打架 · Where the classics disagree(48 条)
+
+- **LY.ILL.HJC.15 上冲下下冲上，内外感伤：上下有鬼内外两感；内鬼动冲外鬼先伤后感，外鬼动冲内鬼先感后伤**(`chapters/六爻/疾病/症候.md`):两鬼互冲的结果，旧注和王洪绪相反。旧注说「适感而遂伤也」，刚感受了邪就受了伤；卜筮正宗写「适感而适愈也」，刚感受就好了。书里没有再解释，也没有别家的话可对。
+  The two disagree on what follows when two Pressure lines clash each other. The old commentary says 'hardly is the evil felt than harm is done', while the Bushi Zhengzong writes 'hardly is it felt than it is cured'. The book explains no further and there is no other voice to check against.
+- **LY.ILL.HJC.17 水官化土回头克、落在内卦是小便不通：属阴则大便也不通，阴阳错配二便俱闭；内卦水克加白虎，阳爻尿血、阴爻泻血，带刑是痔漏**(`chapters/六爻/疾病/症候.md`):水官化土在哪里才是小便不通：旧注说在「本宫内卦」（下三爻），王洪绪说在「本宫初爻」（最下面一爻）。范围一个宽一个窄，书里没有说哪个对。
+  Where a Water Pressure line changing into Earth means blocked urine: the old commentary says in the 'inner trigram of the home palace' (the lower three lines), Wang Hongxu says on the 'first line of the home palace' (the lowest line). One range is wide and one narrow, and the book does not say which is right.
+- **LY.ILL.HJC.25 应爻带官鬼刑克合世：是探望亲友的病时缠染上的，鬼属土是时疫，用爻临应则病卧他家**(`chapters/六爻/疾病/病因.md`):被应鬼刑克合的是哪一爻：旧注说是世爻，而且世爻要在发动的位置上；王洪绪说是用爻，没有发动这个条件。
+  Which line the Pressure on the Other line punishes, controls or combines with: the old commentary says the Self line, which must also be in a moving position; Wang Hongxu says the Subject line, without the condition of moving.
 - **LY.MARRY.BSQS.09 六亲持世歌：官鬼持世得官，占婚问病俱凶兆；财爻持世，阴爻为妻妾、阳爻为财**(`chapters/六爻/婚姻/风险.md`):同样是官鬼持世，这首歌说「占婚问病俱凶兆」，《天玄赋》总论提纲说「官鬼不宜持世，求名婚娶两相宜」（LY.MARRY.TXF.24）。两处都是口诀，没有注，书里不裁断。《增删卜易》按男女分：女占男，官星持世、合世、生世且旺相是良缘（LY.MARRY.ZS.11）。
   For the same Pressure line holding Self, this rhyme says 'a divination on marriage or illness is an ill omen', while the opening summary of the Tianxuan Fu says 'Pressure should not hold the Self line, but for seeking office and for marrying both are fitting' (LY.MARRY.TXF.24). Both are bare rhymes and the books do not decide between them. The Zengshan Buyi divides by sex: when a woman divines about a man, a Pressure line that holds, combines with or generates the Self line and is strong makes a good match (LY.MARRY.ZS.11).
 - **LY.MARRY.BSYG.05 推占来情：旺相则婚姻官职、休囚则争财退位；内外卦俱旺相者大则求官、次则嫁娶；卦与世爻同克日则必是六畜及婚姻**(`chapters/六爻/婚姻/取象.md`):同一首歌诀，《断易天机》作「卦与世爻同与日」（LY.MARRY.DYTJ.30），这里作「卦与世爻同克日」，一字之差：「同与日」是和日辰相同，「同克日」是一起克日辰。
