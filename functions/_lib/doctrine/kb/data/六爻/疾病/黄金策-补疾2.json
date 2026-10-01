@@ -1,0 +1,336 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "种作·蚕桑·仕宦·家宅·坟墓·求师·求馆·行人·娼家",
+  "chapter_en": "Farming; silkworms; official careers; the household; graves; seeking a teacher; seeking a tutoring post; travellers; courtesan houses",
+  "ranges": {"卜筮大全": [7277, 9576], "卜筮正宗": [2523, 3524]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.136",
+      "topic": "他人病",
+      "chapter": "十三、种作",
+      "chapter_en": "Chapter 13: Farming",
+      "title": "种作·世值三刑，农须带疾（旧注：世为治田之人，被日辰动爻刑冲克害最不利；带白虎三刑农夫必带疾，世持官爻亦有疾）",
+      "rule": {
+        "yi": "《黄金策》种作章说：「世爻遇到三刑，种田的人要带着病。」旧注：世爻代表种田的人，被日辰、动爻刑冲克害，最不利；官鬼是疾病、官司、火灾盗贼一类；如果带着白虎、三刑，农夫一定带病；世爻持着官爻，也有病，不然就有差役在身；再加朱雀，恐怕是官司。王洪绪：带白虎三刑，农夫一定带病，世持官爻也是这样。",
+        "en": "The Huangjin Ce's chapter on farming says: 'With the Self line meeting the three punishments, the farmer carries an illness.' The old commentary: the Self line stands for the man who works the field, and if the Day or a moving line punishes, clashes, controls or harms it, it is the most unfavourable; Pressure is illness, lawsuits, fire and theft; if it carries the White Tiger and the three punishments, the farmer is sure to carry an illness; if the Self line holds the Pressure line there is illness too, or else some duty or service is laid on him; with the Vermilion Bird added, it is probably a lawsuit. Wang Hongxu: carrying the White Tiger and the three punishments, the farmer is sure to carry an illness, and so too if the Self line holds the Pressure line."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7277, 7277],
+          "zh": ["世值三刑，农须带疾；"],
+          "yi": ["世爻遇到三刑，种田的人要带着病；"],
+          "en": ["With the Self line meeting the three punishments, the farmer carries an illness;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7278, 7278],
+          "zh": ["世为治田之人，被日辰动爻刑冲克害者，最为不利。", "如财爻伤克，必有阴人财物事。", "福爻伤克，必有小口六畜僧道事，故有妨农事。", "兄弟为口舌争斗，父母为尊长、文书、屋宅事情，官鬼为病讼、火盗类。", "若带白虎三刑，农夫必然带疾。", "世持官爻亦有疾，否则必有职役在身。", "加朱雀，恐是官讼。"],
+          "yi": ["世爻代表种田的人，被日辰、动爻刑冲克害，最不利。", "如果是财爻伤克它，一定有女人、财物方面的事。", "福爻伤克它，一定有小孩、六畜、僧道方面的事，所以妨碍农事。", "兄弟是口舌争斗，父母是尊长、文书、屋宅的事，官鬼是疾病、官司、火灾盗贼一类。", "如果带着白虎、三刑，农夫一定带着病。", "世爻持着官爻，也有病，不然就一定有差役在身。", "再加朱雀，恐怕是官司。"],
+          "en": ["The Self line stands for the man who works the field, and if the Day or a moving line punishes, clashes, controls or harms it, it is the most unfavourable.", "If the Wealth line harms it, there is sure to be trouble over women and property.", "If a fortune line harms it, there is sure to be trouble over small children, livestock, monks or Daoists, and so it hinders the farm work.", "Peer is quarrels and fights, Resource is elders, documents and the house, and Pressure is illness, lawsuits, fire and theft.", "If it carries the White Tiger and the three punishments, the farmer is sure to carry an illness.", "If the Self line holds the Pressure line, there is illness too, or else some duty or service is sure to be laid on him.", "If the Vermilion Bird is added, it is probably a lawsuit."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2523, 2523],
+          "zh": ["世为治田之人，被日辰动爻刑冲克害最为不利。", "若带白虎三刑，农夫必然带疾，世持官爻亦然。"],
+          "yi": ["世爻代表种田的人，被日辰、动爻刑冲克害，最不利。", "如果带着白虎、三刑，农夫一定带着病，世爻持着官爻也是这样。"],
+          "en": ["The Self line stands for the man who works the field, and if the Day or a moving line punishes, clashes, controls or harms it, it is the most unfavourable.", "If it carries the White Tiger and the three punishments, the farmer is sure to carry an illness, and so too if the Self line holds the Pressure line."] }
+      ],
+      "note": {
+        "yi": "种作章是占种地、农事的一章。旧注把财爻、福爻、兄弟、父母、官鬼各自伤克世爻的后果依次列了一遍（财：女人财物事；福：小孩六畜僧道事；兄弟：口舌争斗；父母：尊长文书屋宅；官鬼：病讼火盗），这里把讲官鬼（病）和带疾的几句连着收，让「官鬼为病讼」有出处。「三刑」是几种地支相刑（寅巳申、丑戌未、子卯等）。「世持官爻亦有疾」后面的「否则必有职役在身」是说，不是病就是被官府差遣。王洪绪的版本更短，没有五类六亲的那一串。",
+        "en": "The chapter on farming is about divining the working of land and farm affairs. The old commentary lists in turn what follows when each of the Wealth, fortune, Peer, Resource and Pressure lines harms or controls the Self line (Wealth: women and property; fortune: small children, livestock, monks and Daoists; Peer: quarrels and fights; Resource: elders, documents and the house; Pressure: illness, lawsuits, fire and theft), and the sentences on Pressure (illness) and on carrying an illness are taken together here so that 'Pressure is illness and lawsuits' has its source. The 'three punishments' are several mutual punishments of branches (Yin, Si and Shen; Chou, Xu and Wei; Zi and Mao; and so on). In 'if the Self line holds the Pressure line there is illness too' the following 'or else some duty or service is laid on him' means that if it is not illness it is being called up by the authorities. Wang Hongxu's version is shorter and lacks the run through the five relations."
+      },
+      "see": ["LY.ILL.HJC.121"]
+    },
+    {
+      "id": "LY.ILL.HJC.137",
+      "topic": "他人病",
+      "chapter": "十四、蚕桑",
+      "chapter_en": "Chapter 14: Silkworms",
+      "title": "蚕桑·世爻为养蚕妇，临官鬼蚕姑必有病（旧注：世爻无故自空或化死墓绝空蚕姑当有大难，带自刑身亦病）",
+      "rule": {
+        "yi": "《黄金策》蚕桑章的旧注说：世爻代表养蚕的妇女；世爻临在官鬼上，养蚕的妇人一定有病；世爻无缘无故自己落空，或者化成死、墓、绝、空，养蚕的妇人要有大难，不然就是懒于抬蚕喂养；如果又带自刑，她自己也有病。",
+        "en": "An old commentary in the Huangjin Ce's chapter on silkworms says: the Self line stands for the woman who raises the silkworms; if it sits on Pressure, the silkworm woman is sure to be ill; if the Self line falls Void for no reason, or turns into death, tomb, extinction or Void, the silkworm woman is to meet great trouble, or else she is lazy about lifting and feeding the silkworms; if it also carries a self-punishment, she herself is ill too."
+      },
+      "quotes": [
+        { "by": "旧注", "book": "卜筮大全", "range": [7381, 7381],
+          "zh": ["世爻为养蚕妇。"],
+          "yi": ["世爻代表养蚕的妇女。"],
+          "en": ["The Self line stands for the woman who raises the silkworms."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7381, 7381],
+          "zh": ["临官鬼，蚕姑必有病。", "世爻无故自空，或化死墓绝空，蚕姑当有大难；", "不然，必懒于抬饲。", "若带自刑，身亦病。"],
+          "yi": ["（世爻）临在官鬼上，养蚕的妇人一定有病。", "世爻无缘无故自己落空，或者化成死、墓、绝、空，养蚕的妇人要有大难；", "不然，就一定是懒于抬蚕、喂养。", "如果又带自刑，她自己也有病。"],
+          "en": ["If it sits on Pressure, the silkworm woman is sure to be ill.", "If the Self line falls Void for no reason, or turns into death, tomb, extinction or Void, the silkworm woman is to meet great trouble;", "otherwise she is sure to be lazy about lifting and feeding the silkworms.", "If it also carries a self-punishment, she herself is ill too."] }
+      ],
+      "note": {
+        "yi": "蚕桑章的旧注把世爻当成养蚕的妇人，按世爻上临的六亲、旺衰断她是什么样的人：墓库是老年妇，胎养长生是少年女子，临太岁财爻是老手，临子孙精细，临兄懒，临父母辛勤但伤蚕，这里只收讲病的几句。「蚕姑」是养蚕的妇人。「自刑」是辰午酉亥这几个地支自己刑自己。这里讲的病是养蚕妇人自己的病，不是蚕的病（蚕的病不在本域）。",
+        "en": "The old commentary in the chapter on silkworms takes the Self line as the woman raising the silkworms and judges what sort of woman she is from the relation on the Self line and its strength: a tomb is an old woman, Womb, Nurture or Birth a young girl, Wealth with Tai Sui an old hand, Output fine and careful, Peer lazy, Resource hardworking but harming the silkworms; only the sentences on illness are taken here. The 'silkworm woman' is the woman who raises them. A 'self-punishment' is a branch among Chen, Wu, You and Hai punishing itself. The illness spoken of here is the woman's own illness and not the silkworms' (illness of silkworms is not in this domain)."
+      },
+      "see": ["LY.ILL.HJC.136"]
+    },
+    {
+      "id": "LY.ILL.HJC.138",
+      "topic": "风险",
+      "chapter": "十七、仕宦",
+      "chapter_en": "Chapter 17: Official careers",
+      "title": "仕宦·鬼杀伤身，因见灾殃之不免（旧注：以上不然则自身决有灾病，得世爻空避不妨）",
+      "rule": {
+        "yi": "《黄金策》仕宦章说：「鬼杀伤了身，灾殃就免不了。」旧注：官鬼发动，生合世爻的是用神，伤克世爻的是鬼杀；用神扶世，一定有进取；鬼杀伤身，一定有凶祸，按化出来的六亲来断；如果不是上面这些，就是自己一定有灾病，世爻落空避开就没有妨碍。",
+        "en": "The Huangjin Ce's chapter on official careers says: 'A ghost killing harming the Body: calamity cannot be avoided.' The old commentary: when the Pressure line moves, one that generates or combines with the Self line is the Subject, and one that harms or controls the Self line is a ghost killing; the Subject supporting the Self line brings advancement, a ghost killing harming the Body brings ill fortune, judged by the relation it turns into; if it is not the above, then he himself is sure to have calamity or illness, and no harm if the Self line is Void and escapes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7701, 7701],
+          "zh": ["鬼杀伤身，因见灾殃之不免。"],
+          "yi": ["鬼杀伤了身，灾殃就免不了。"],
+          "en": ["A ghost killing harming the Body: calamity cannot be avoided."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7702, 7702],
+          "zh": ["官鬼发动，生合世爻为用神，伤克世爻为鬼杀。", "用神扶世，必有进取；", "鬼杀伤身，必有凶祸。", "以化出六亲断之。", "如化子有贬谪之忧，化财有阴人之祸，化兄主失财，化父忧小口类。"],
+          "yi": ["官鬼发动，生合世爻的是用神，伤克世爻的是鬼杀。", "用神扶助世爻，一定有进取；", "鬼杀伤身，一定有凶祸。", "按化出来的六亲来断。", "比如化出子孙有被贬谪的忧虑，化出财有女人带来的祸，化出兄主失财，化出父母要担忧小孩之类。"],
+          "en": ["When the Pressure line moves, one that generates or combines with the Self line is the Subject, and one that harms or controls the Self line is a ghost killing.", "The Subject supporting the Self line brings advancement;", "a ghost killing harming the Body brings ill fortune.", "Judge by the relation it turns into.", "For example, turning into Output means worry of demotion, into Wealth the harm of a woman, into Peer the loss of money, into Resource worry over small children and the like."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7703, 7703],
+          "zh": ["以上不然，则自身决有灾病，得世爻空避不妨。"],
+          "yi": ["如果不是上面这些，就是自己一定有灾病，世爻落空避开就没有妨碍。"],
+          "en": ["If it is not the above, then he himself is sure to have calamity or illness, and there is no harm if the Self line is Void and escapes."] }
+      ],
+      "note": {
+        "yi": "仕宦章是占做官的一章。这里的「灾病」是做官的人自己的灾祸或疾病，旧注没有分开说是灾还是病，译文照字面写作「calamity or illness」。「用神」「鬼杀」在这一段里是按官鬼发动后对世爻的生克来分的：生合世爻是用神（官是他要的），伤克世爻是鬼杀。「世爻空避不妨」是世爻落了空亡，躲过了克害。",
+        "en": "The chapter on official careers is about divining holding office. The 'calamity or illness' here is the official's own calamity or illness, and the old commentary does not separate calamity from illness; the translation keeps the letter, 'calamity or illness'. The 'Subject' and 'ghost killing' are told apart in this passage by what the moving Pressure line does to the Self line: generating or combining with it is the Subject (the office is what he wants), harming or controlling it is a ghost killing. 'No harm if the Self line is Void and escapes' means that the Self line, falling Void, slips past the harm."
+      },
+      "see": ["LY.ILL.DYTJ.29", "LY.ILL.HJC.123"]
+    },
+    {
+      "id": "LY.ILL.HJC.139",
+      "topic": "症候",
+      "chapter": "十九、家宅",
+      "chapter_en": "Chapter 19: The household",
+      "title": "家宅·四鬼贴身，防生灾咎（旧注：贴身鬼带破碎杀主有破相之疾；乾头面小肠喘急咳嗽、坎两耳肾、艮背肋手指、震下部腰足、巽两股两腿头发血气、离眼目心经、坤肠脾胃、兑口齿唇）",
+      "rule": {
+        "yi": "《黄金策》家宅章说：「四个鬼爻贴着身，要防生出灾祸。」旧注：贴身的鬼爻带着破碎杀，主有伤了相貌的病；按八卦推：乾主头、脸、小肠，喘急咳嗽的病；坎主两耳，肾脏之间的病；艮主背和肋，手指的病；震主下半身，腰脚疼痛的病；巽主两条大腿和两条腿，头发、血气的病；离主眼睛，心经的病；坤主肠子之间，脾胃的病；兑主口和牙，以及嘴唇的病；其余照这样推。王洪绪只解释「四鬼」：是年、月、日、时都值着官鬼，持世、临身、临命，主有灾祸。",
+        "en": "The Huangjin Ce's chapter on the household says: 'Four ghosts clinging to the Body: beware of calamity.' The old commentary: a ghost clinging to the Body and carrying the Breaking killing means an illness that spoils the looks; by trigram: Qian governs the head, face and small intestine, illnesses of rapid panting and cough; Kan the two ears, illnesses of the region of the kidneys; Gen the back and ribs, illnesses of the fingers; Zhen the lower body, illnesses of pain in the waist and feet; Xun the two thighs and two legs, illnesses of the hair and of blood and qi; Li the eyes, illnesses of the heart channel; Kun the intestines, illnesses of the spleen and stomach; Dui the mouth and teeth and the lips; the rest by analogy. Wang Hongxu explains only the 'four ghosts': the year, month, day and hour all fall on Pressure, holding the Self line, sitting on the Body or on the natal line, which brings calamity."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8142, 8142],
+          "zh": ["四鬼贴身，防生灾咎；"],
+          "yi": ["四个鬼爻贴着身，要防生出灾祸；"],
+          "en": ["Four ghosts clinging to the Body: beware of calamity;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8143, 8143],
+          "zh": ["贴身鬼带破碎杀，主有破相之疾。", "乾主头面小肠，喘急咳嗽之疾；", "坎主两耳，肾间之疾；", "艮主背肋，手指之疾；", "震主下部，腰足痛之疾；", "巽主两股两腿，头发血气之疾；", "离主眼目，心经之疾；", "坤主肠间，脾胃之疾；", "兑主口齿，及唇之疾。", "余仿此。"],
+          "yi": ["贴身的鬼爻带着破碎杀，主有伤了相貌的病。", "乾主头、脸、小肠，喘得急、咳嗽一类的病；", "坎主两只耳朵，肾脏之间的病；", "艮主背和肋，手指的病；", "震主下半身，腰和脚疼痛的病；", "巽主两条大腿和两条腿，头发、血气的病；", "离主眼睛，心经的病；", "坤主肠子之间，脾胃的病；", "兑主口和牙，以及嘴唇的病。", "其余照这样推。"],
+          "en": ["A ghost clinging to the Body and carrying the Breaking killing means an illness that spoils the looks.", "Qian governs the head, face and small intestine, illnesses of rapid panting and cough;", "Kan governs the two ears, illnesses of the region of the kidneys;", "Gen governs the back and ribs, illnesses of the fingers;", "Zhen governs the lower body, illnesses of pain in the waist and feet;", "Xun governs the two thighs and two legs, illnesses of the hair and of blood and qi;", "Li governs the eyes, illnesses of the heart channel;", "Kun governs the intestines, illnesses of the spleen and stomach;", "Dui governs the mouth and teeth and the lips, illnesses of them.", "The rest follow by analogy."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3165, 3165],
+          "zh": ["四鬼者，亦谓年月日时，值官鬼持世临身临命，主有灾咎。"],
+          "yi": ["「四鬼」，也就是说年、月、日、时四个（支）都值着官鬼，持世、临身、临命，主有灾祸。"],
+          "en": ["The 'four ghosts' means that the year, month, day and hour all fall on Pressure, holding the Self line, sitting on the Body or on the natal line, which brings calamity."] }
+      ],
+      "dispute": {
+        "yi": "八卦各管身体哪一处，几处说法不同。这一条的旧注是「乾头面小肠、坎两耳肾、艮背肋手指、震下部腰足、巽两股两腿、离眼目心经、坤肠脾胃、兑口齿唇」，和卜筮元龟一段（LY.ILL.DYTJ.12：乾头、坤腹、坎耳、离目、兑口、艮手、震足、巽股）大体一致，巽也是股；阐奥歌章（LY.ILL.CA.02）是巽手、艮鼻，孙膑歌（LY.ILL.DYTJ.03）是巽肠。同一书坟墓章的另一张表（LY.ILL.HJC.140）艮多了鼻疮，震多了「笑言」，和这一张略有出入。书里没有裁决。",
+        "en": "The books differ on which part of the body each trigram governs. The old commentary on this entry has 'Qian head, face and small intestine; Kan two ears and kidneys; Gen back, ribs and fingers; Zhen lower body, waist and feet; Xun two thighs and two legs; Li eyes and heart channel; Kun intestines, spleen and stomach; Dui mouth, teeth and lips', which is in general consistent with the Bushi Yuangui passage (LY.ILL.DYTJ.12: Qian the head, Kun the belly, Kan the ear, Li the eye, Dui the mouth, Gen the hand, Zhen the foot, Xun the thigh), including Xun the thigh; the Chan'ao Gezhang (LY.ILL.CA.02) has Xun the hand and Gen the nose, and Sun Bin's verse (LY.ILL.DYTJ.03) Xun the intestines. Another table in the chapter on graves of the same book (LY.ILL.HJC.140) adds nose sores for Gen and 'laughing and talking' for Zhen, a little different from this one. The books do not decide."
+      },
+      "note": {
+        "yi": "这是占家宅一章里「四鬼贴身，防生灾咎」一联的旧注，讲贴身的鬼（持世、临身、临命的官鬼）带着破碎杀的时候，按八卦看病在身体哪里。「破碎」是一个神煞（破碎杀）。「破相之疾」是伤了相貌的病（破相是容貌残缺）。「四鬼」，王洪绪解作年月日时四个支都值着官鬼。「小口」「肠间」等按字面。",
+        "en": "This is the old commentary on the couplet 'four ghosts clinging to the Body: beware of calamity' in the chapter on the household, telling where in the body the illness lies, by trigram, when the ghost clinging to the Body (a Pressure line holding the Self line, sitting on the Body or on the natal line) carries the Breaking killing. 'Breaking' is a spirit-star (the Breaking killing). An 'illness that spoils the looks' is an illness that disfigures. As for the 'four ghosts', Wang Hongxu takes it as the year, month, day and hour branches all falling on Pressure. 'The intestines' and the like are to the letter."
+      },
+      "see": ["LY.ILL.DYTJ.12", "LY.ILL.HJC.140"]
+    },
+    {
+      "id": "LY.ILL.HJC.140",
+      "topic": "症候",
+      "chapter": "二十、坟墓",
+      "chapter_en": "Chapter 20: Graves",
+      "title": "坟墓·叠刃刑鬼破之劫亡，疲癃残疾（旧注：鬼临破碎杀兼三刑六害叠刃亡劫同克用爻，八宫主病；金鬼劳漱、木鬼风邪、火鬼热症、水鬼吐泻、土鬼黄浮肿）",
+      "rule": {
+        "yi": "《黄金策》坟墓章说：「叠刃、刑、鬼、破、劫、亡（这些凶煞）叠加，就有疲癃残疾。」旧注：鬼爻临着破碎杀，又带三刑六害、叠刃、亡神劫煞，一同克用爻，按八宫主病：乾主头脸、喘急、咳嗽、小肠；坎主手臂脸面、两耳、小便、气血、腰痛、肋和心；艮主鼻疮、手指腿脚；震主骨、脚、肝、腿、三焦、笑言；巽主须鬓膝、血气风邪；离主脾胃痈疽、眼痛、心惊心惧、热症、阳火气；坤主肚腹呕吐、便血泻痢、黄肿；兑主口齿残缺、唇翻、皮肤；金鬼乘旺是痨嗽，木鬼是风邪，火鬼是热症，水鬼是吐泻，土鬼是黄浮肿；其中说不完，要按道理推详。",
+        "en": "The Huangjin Ce's chapter on graves says: 'Doubled Blade, Punishment, ghost, break, Robbery and Loss together: infirmity and disablement.' The old commentary: a ghost on the Breaking killing, with the three punishments and six harms, the Doubled Blade, Loss and Robbery together controlling the Subject line, means illness by palace: Qian, the head and face, rapid panting, cough and the small intestine; Kan, the arms and face, the two ears, urine, blood and qi, waist pain, the ribs and heart; Gen, nose sores and the fingers, legs and feet; Zhen, the bones, feet, liver, legs, the triple burner and raving laughter and talk; Xun, the beard, temples and knees, blood and qi and wind-evil; Li, abscesses of the spleen and stomach, eye pain, heart fright and fear, heat symptoms and yang-fire qi; Kun, the belly, vomiting, blood in the stool, diarrhoea and dysentery, and yellow swelling; Dui, mouth and missing teeth, a turned-up lip and the skin; a Metal ghost in strength is consumption and cough, a Wood ghost wind-evil, a Fire ghost heat symptoms, a Water ghost vomiting and diarrhoea, an Earth ghost yellow puffy swelling; there is too much in between to set out and it is to be worked out by reason."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8364, 8364],
+          "zh": ["叠刃刑鬼破之劫亡，疲癃残疾。"],
+          "yi": ["叠刃、刑、鬼、破、劫、亡这些凶煞叠加，就有疲癃残疾。"],
+          "en": ["Doubled Blade, Punishment, ghost, break, Robbery and Loss together: infirmity and disablement."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8365, 8365],
+          "zh": ["鬼临破碎杀，兼三刑六害，叠刃亡劫，同克用爻；", "或乾宫，主头面喘急，咳嗽小肠之疾。", "坎宫主臂面两耳，小便气血，腰痛肋心之疾。", "艮宫主鼻疮，手指腿足之疾。", "震宫主骨足肝腿，三焦笑言之疾。", "巽宫主须鬓膝，血气风邪之疾。", "离宫主脾胃痈疽，眼目痛，心惊心惧热症，阳火气疾。", "坤宫主肚腹呕吐，便血泻痢，黄肿之疾。", "兑宫主口齿缺，唇掀，皮肤之疾。", "金鬼乘旺，劳漱；", "木鬼，风邪；", "火鬼，热症；", "水鬼，吐泻；", "土鬼，黄浮肿之疾。", "中间不可尽述，依理推详。"],
+          "yi": ["鬼爻临着破碎杀，又带三刑六害、叠刃、亡神劫煞，一同克用爻；", "如果在乾宫，主头脸、喘急、咳嗽、小肠的病。", "坎宫主手臂脸面、两耳、小便、气血，腰痛、肋和心的病。", "艮宫主鼻疮，手指、腿、脚的病。", "震宫主骨头、脚、肝、腿，三焦、笑言（胡言乱语）的病。", "巽宫主胡须、鬓发、膝，血气、风邪的病。", "离宫主脾胃痈疽，眼睛疼痛，心惊心惧、热症，阳火气的病。", "坤宫主肚腹、呕吐，便血、泻痢，黄肿的病。", "兑宫主口、牙齿残缺，嘴唇外翻，皮肤的病。", "金鬼乘旺，是痨病、咳嗽；", "木鬼，是风邪；", "火鬼，是热症；", "水鬼，是吐泻；", "土鬼，是黄浮肿的病。", "其中说不完，要按道理推详。"],
+          "en": ["A ghost on the Breaking killing, with the three punishments and six harms, the Doubled Blade, Loss and Robbery together controlling the Subject line;", "in the Qian palace: illnesses of the head and face, rapid panting, cough and the small intestine.", "The Kan palace: illnesses of the arms and face, the two ears, urine, blood and qi, waist pain, the ribs and heart.", "The Gen palace: nose sores, illnesses of the fingers, legs and feet.", "The Zhen palace: illnesses of the bones, feet, liver and legs, the triple burner, and raving laughter and talk.", "The Xun palace: illnesses of the beard, temples and knees, of blood and qi, and of wind-evil.", "The Li palace: abscesses of the spleen and stomach, eye pain, heart fright and fear, heat symptoms, and illnesses of yang-fire qi.", "The Kun palace: the belly, vomiting, blood in the stool, diarrhoea and dysentery, and yellow swelling.", "The Dui palace: the mouth and missing teeth, a turned-up lip, illnesses of the skin.", "A Metal ghost in strength: consumption and cough;", "a Wood ghost: wind-evil;", "a Fire ghost: heat symptoms;", "a Water ghost: vomiting and diarrhoea;", "an Earth ghost: illness of yellow, puffy swelling.", "There is too much in between to set out; work it out by reason."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3354, 3354],
+          "zh": ["鬼临月破，兼三刑六害同克用爻，或乾宫主头面、喘息、嗽咳、小肠之疾，坎宫主头面、两耳、小便、气血、腰痛、胁心之疾，艮宫主鼻疮、手指、腿足之疾，震宫主骨、足、肝、腿、三焦、颠狂之疾，巽宫主额、鬓、膝、血气、风邪之疾，"],
+          "yi": ["鬼爻临着月破，又带三刑六害，一同克用爻，或者在乾宫，主头脸、喘气、咳嗽、小肠的病；坎宫，主头脸、两耳、小便、气血、腰痛、胁和心的病；艮宫，主鼻疮、手指、腿脚的病；震宫，主骨、脚、肝、腿、三焦、癫狂的病；巽宫，主额头、鬓发、膝、血气、风邪的病；"],
+          "en": ["A ghost on the Month-break, with the three punishments and six harms together controlling the Subject line, or in the Qian palace: illnesses of the head and face, panting, cough and the small intestine; the Kan palace: the head and face, the two ears, urine, blood and qi, waist pain, the ribs and heart; the Gen palace: nose sores, the fingers, legs and feet; the Zhen palace: the bones, feet, liver, legs, the triple burner, and madness; the Xun palace: the forehead, temples, knees, blood and qi, and wind-evil;"] }
+      ],
+      "dispute": {
+        "yi": "八卦各管身体哪一处，几处说法不同。这张表里艮有「鼻疮」又有「手指腿足」，震有「骨足肝腿」和「三焦笑言」（王洪绪作「三焦癫狂」），巽是「须鬓膝、血气风邪」；同一书家宅章的另一张表（LY.ILL.HJC.139）是艮背肋手指、震下部腰足、巽两股两腿。艮有鼻（同阐奥歌章 LY.ILL.CA.02）也有手（同孙膑歌、卜筮元龟 LY.ILL.DYTJ.03、LY.ILL.DYTJ.12）；巽这里是须鬓膝，那一张是股、腿，和卜筮元龟的巽股相近。书里没有裁决。",
+        "en": "The books differ on which part of the body each trigram governs. In this table Gen has 'nose sores' and also 'fingers, legs and feet', Zhen has 'bones, feet, liver, legs' and 'the triple burner, laughing and talking' (Wang Hongxu has 'the triple burner and madness'), and Xun has 'beard, temples and knees, blood and qi and wind-evil'; another table in the chapter on the household of the same book (LY.ILL.HJC.139) has Gen the back, ribs and fingers, Zhen the lower body, waist and feet, and Xun the two thighs and two legs. Gen has the nose (as in the Chan'ao Gezhang, LY.ILL.CA.02) and also the hand (as in Sun Bin's verse and the Bushi Yuangui, LY.ILL.DYTJ.03 and LY.ILL.DYTJ.12); Xun here is the beard, temples and knees, while the other table has the thighs and legs, close to the Bushi Yuangui's Xun the thigh. The books do not decide."
+      },
+      "note": {
+        "yi": "这是坟墓章里「叠刃刑鬼破之劫亡，疲癃残疾」一句的旧注，讲鬼爻带着一串凶煞（破碎杀、三刑、六害、叠刃、亡神、劫煞）同克用爻时，按八宫和五行看病。「疲癃」是衰弱、驼背之病，「残疾」是肢体残废。「劳漱」是痨病、咳嗽；「黄浮肿」是面目浮肿发黄。王洪绪的版本在「离宫主脾胃、」处断了，后面的几宫和五行没有，所以他只收到巽宫。「用爻」就是用神。",
+        "en": "This is the old commentary on the line 'Doubled Blade, Punishment, ghost, break, Robbery and Loss together: infirmity and disablement' in the chapter on graves, telling the illness by palace and by element when a ghost line carries a run of ominous stars (the Breaking killing, the three punishments, the six harms, the Doubled Blade, Loss and Robbery) and together controls the Subject line. 'Infirmity' is weakness and a bent back, and 'disablement' is crippled limbs. 'Consumption and cough' is a consumptive illness with cough; 'yellow puffy swelling' is swelling of the face and eyes with a yellow tinge. Wang Hongxu's version breaks off at 'the Li palace governs the spleen and stomach,' and lacks the later palaces and the elements, so his is taken only as far as the Xun palace. The 'Subject line' is the Subject."
+      },
+      "see": ["LY.ILL.HJC.139", "LY.ILL.DYTJ.12", "LY.ILL.CA.02"]
+    },
+    {
+      "id": "LY.ILL.HJC.141",
+      "topic": "病因",
+      "chapter": "二十、坟墓",
+      "chapter_en": "Chapter 20: Graves",
+      "title": "坟墓·月卦勾陈之土鬼，瘟疫相侵（旧注：月卦是月将勾陈，土鬼临世身爻主时灾瘟疫相侵）",
+      "rule": {
+        "yi": "《黄金策》坟墓章说：「月卦的勾陈和土鬼，瘟疫就会侵袭。」旧注：月卦是月将、勾陈，土鬼临在世爻、身爻上，主时灾、瘟疫侵袭。王洪绪的说法一样。",
+        "en": "The Huangjin Ce's chapter on graves says: 'The Hook Earth of the month hexagram and an Earth ghost: epidemic attacks.' The old commentary: the month hexagram is the Month general and Hook Earth; an Earth ghost sitting on the Self line or the Body means a seasonal calamity, with epidemic attacking. Wang Hongxu says the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8370, 8370],
+          "zh": ["月卦勾陈之土鬼，瘟疫相侵："],
+          "yi": ["月卦的勾陈和土鬼，瘟疫就会侵袭："],
+          "en": ["The Hook Earth of the month hexagram and an Earth ghost: epidemic attacks:"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8371, 8371],
+          "zh": ["月卦是月将勾陈，土鬼临世身爻，主时灾瘟疫相侵。"],
+          "yi": ["月卦是月将、勾陈，土鬼临在世爻、身爻上，主时灾、瘟疫侵袭。"],
+          "en": ["The month hexagram is the Month general and Hook Earth; an Earth ghost sitting on the Self line or the Body means a seasonal calamity, with epidemic attacking."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3360, 3360],
+          "zh": ["月卦是月将勾陈土鬼临世身爻，主时灾瘟疫相侵；"],
+          "yi": ["月卦是月将勾陈，土鬼临在世爻、身爻上，主时灾、瘟疫侵袭；"],
+          "en": ["The month hexagram is the Month general and Hook Earth; an Earth ghost sitting on the Self line or the Body means a seasonal calamity, with epidemic attacking;"] }
+      ],
+      "note": {
+        "yi": "这一联在坟墓章里，讲的是整个时节的瘟疫（「时灾」），不是占一个人的病；和年时章的「更嫌值土，千门疫疠若符同」（LY.ILL.HJC.132）是同一个意思：土鬼发动或临世身，主瘟疫。「月卦」是按月起的卦，「月将」是当月的月将。联的后半「阳宫朱雀之凶神，火灾烦数」讲火灾，不收。",
+        "en": "This couplet in the chapter on graves is about an epidemic of the whole season ('seasonal calamity') and not one person's illness; it has the same sense as 'still worse if it meets Earth: the epidemics in a thousand households tally as one' in the chapter on the year (LY.ILL.HJC.132): an Earth ghost moving or sitting on the Self line or the Body means epidemic. The 'month hexagram' is the hexagram set up by the month, and the 'Month general' is the month's general. The second half of the couplet, 'the ominous Vermilion Bird of a yang palace: fire calamities come thick', is about fire and is not taken."
+      },
+      "see": ["LY.ILL.HJC.132"]
+    },
+    {
+      "id": "LY.ILL.HJC.142",
+      "topic": "他人病",
+      "chapter": "二十一、求师",
+      "chapter_en": "Chapter 21: Seeking a teacher",
+      "title": "求师·卦无父母而鬼化出：带贵人多是生员、不带贵人或临衰绝必是吏人、加白虎或带刑害则是有病之人",
+      "rule": {
+        "yi": "《黄金策》求师章的旧注说：卦里没有父母爻，看鬼爻化出什么来断老师是什么人：鬼带贵人化出，多半是生员；不带贵人，或者临在衰、绝上，一定是吏人；再加白虎，或者带着刑害，就是有病的人。",
+        "en": "An old commentary in the Huangjin Ce's chapter on seeking a teacher says: if the hexagram has no Resource line, what the teacher is is judged from what the ghost line turns out as: a ghost carrying the Noble is mostly a licentiate; one not carrying the Noble, or sitting on decline or extinction, is surely a clerk; with the White Tiger added, or carrying punishment and harm, he is a man who is ill."
+      },
+      "quotes": [
+        { "by": "旧注", "book": "卜筮大全", "range": [8428, 8428],
+          "zh": ["卦无父母，而鬼带贵人化出，多是生员。", "不带贵人，或临衰绝，必是吏人。", "加白虎或带刑害，则是有病之人。"],
+          "yi": ["卦里没有父母爻，而鬼带着贵人化出来，多半是生员（秀才）。", "不带贵人，或者临在衰、绝上，一定是吏人。", "再加白虎，或者带着刑害，就是有病的人。"],
+          "en": ["If the hexagram has no Resource line and a ghost carrying the Noble turns out, he is mostly a licentiate.", "If it does not carry the Noble, or sits on decline or extinction, he is surely a clerk.", "If the White Tiger is added, or it carries punishment and harm, he is a man who is ill."] }
+      ],
+      "note": {
+        "yi": "求师章是占请老师（教书先生）的一章。这里卦里没有父母爻（父母代表老师），就看鬼爻化出来的是什么来断老师是个什么人；只有最后一句讲到「有病之人」，所以收在他人病里。「生员」是秀才，「吏人」是衙门里的小吏。这一章其余讲老师才学、亲疏的句子不收。",
+        "en": "The chapter on seeking a teacher is about divining a schoolmaster to engage. Here the hexagram has no Resource line (Resource stands for the teacher), so what kind of man the teacher is is judged from what the ghost line turns out as; only the last sentence speaks of 'a man who is ill', which is why it is taken under the illness of others. A 'licentiate' is a holder of the lowest degree, and a 'clerk' a petty official in a government office. The other lines of the chapter, on the teacher's learning and on kinship, are not taken."
+      },
+      "see": ["LY.ILL.HJC.136"]
+    },
+    {
+      "id": "LY.ILL.HJC.143",
+      "topic": "风险",
+      "chapter": "二十二、求馆",
+      "chapter_en": "Chapter 22: Seeking a tutoring post",
+      "title": "求馆·身位受伤，虽成不利（旧注：世身被月建日辰动爻刑克日后不称意，鬼爻刑克有官非疾病类）",
+      "rule": {
+        "yi": "《黄金策》求馆章说：「身的位置受了伤，即使成了也不利。」旧注：世爻和身被月建、日辰、动爻刑克，即使有能成的样子，日后也不称心；如果是鬼爻来刑克，就有官非、疾病一类的事。",
+        "en": "The Huangjin Ce's chapter on seeking a tutoring post says: 'With the Body's place harmed, even if it succeeds it is unfavourable.' The old commentary: if the Self and the Body are punished or controlled by the Month, the Day or a moving line, though it looks as if it can succeed, afterwards it is still not as wished; if it is the ghost line that punishes or controls it, there are official troubles or illness and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8566, 8566],
+          "zh": ["身位受伤，虽成不利；"],
+          "yi": ["身的位置受了伤，即使成了也不利；"],
+          "en": ["With the Body's place harmed, even if it succeeds it is unfavourable;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8567, 8567],
+          "zh": ["世身被月建日辰动爻刑克，虽有可成之象，日后亦不称意。", "如鬼爻刑克，有官非疾病类。"],
+          "yi": ["世爻和身被月建、日辰、动爻刑克，即使有能成的样子，日后也不称心。", "如果是鬼爻来刑克，就有官非、疾病一类的事。"],
+          "en": ["If the Self and the Body are punished or controlled by the Month, the Day or a moving line, though it looks as if it can succeed, afterwards it is still not as wished.", "If it is the Pressure line that punishes or controls it, there are official troubles or illness and the like."] }
+      ],
+      "note": {
+        "yi": "求馆章是占谋一个教书的馆（受聘当老师）的一章，「身位」是身爻所在的位置。这里的疾病是求馆的人自己将来会碰到的事，不是占病，所以放在风险里。「官非疾病类」没有分开说哪一种鬼爻带哪一样，照字面。",
+        "en": "The chapter on seeking a tutoring post is about divining whether one will be engaged as a teacher, and the 'Body's place' is where the Body line stands. The illness here is something the man seeking the post will meet later and is not a divination about illness, which is why it is placed under risks. 'Official troubles or illness and the like' does not say which kind of ghost line brings which, and is kept to the letter."
+      },
+      "see": ["LY.ILL.HJC.138"]
+    },
+    {
+      "id": "LY.ILL.HJC.144",
+      "topic": "他人病",
+      "chapter": "二十八、行人",
+      "chapter_en": "Chapter 28: Travellers",
+      "title": "行人·如藏官下，当参飞上之六神（旧注：用爻伏官鬼爻下必为凶事所羁，临青龙酒色成病不归、临白虎卧病不起，凡遇土鬼为病火鬼为讼勿论六神）",
+      "rule": {
+        "yi": "《黄金策》行人章说：「用爻如果藏在官鬼爻下面，要参看飞神上的六神。」旧注：用爻伏在官鬼爻下，一定被凶事缠住：临着青龙，是因为酒色生了病回不来；临朱雀，是官非口舌回不来；临勾陈，是跌倒受伤；临螣蛇，是牵连惊恐；临白虎，是卧病不起；临玄武，是被盗失财回不来；凡是遇到土鬼就是病，火鬼就是官司，可以不论六神；卦里没有官鬼，也照上面断。王洪绪：临白虎或者官鬼属土，卧病不回；其余临勾陈、螣蛇、玄武各有所断。",
+        "en": "The Huangjin Ce's chapter on travellers says: 'If the Subject line is hidden under the officer, look at the six spirit on the flying line.' The old commentary: with the Subject line hidden under the Pressure line, one is surely held back by ill events: on the Azure Dragon, wine and lust have brought illness and he does not return; on the Vermilion Bird, official trouble and quarrels; on Hook Earth, a fall and injury; on the Coiling Snake, entanglement and fright; on the White Tiger, bedridden and unable to rise; on the Dark Tortoise, robbed and having lost money; whenever it meets an Earth ghost it is illness and a Fire ghost a lawsuit, and one need not discuss the six spirits; if the hexagram has no Pressure line, judge in the same way. Wang Hongxu: on the White Tiger, or with Pressure of the Earth element, bedridden and not returning; on Hook Earth, the Coiling Snake and the Dark Tortoise, other outcomes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9419, 9419],
+          "zh": ["如藏官下，当参飞上之六神。"],
+          "yi": ["（用爻）如果藏在官鬼爻下面，要参看飞神上的六神。"],
+          "en": ["If the Subject line is hidden under the officer, look at the six spirit on the flying line."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [9420, 9423],
+          "zh": ["用爻伏官鬼爻下，必为凶事所羁。", "如临青龙，必因酒色成病不归；", "临朱雀，必因官非口舌不归；", "临勾陈，蹼跌损伤；", "临螣蛇，牵连惊恐；", "临白虎，卧病不起；", "临玄武，被盗失财不归。", "凡遇土鬼为病，火鬼为讼，勿论六神可也。", "卦无官鬼，亦依上断。"],
+          "yi": ["用爻伏在官鬼爻下面，一定被凶事缠住。", "如果临着青龙，一定是因为酒色生了病回不来；", "临着朱雀，一定是因为官非口舌回不来；", "临着勾陈，是跌倒受伤；", "临着螣蛇，是牵连、惊恐；", "临着白虎，是卧病不起；", "临着玄武，是被盗、失财回不来。", "凡是遇到土鬼就是病，火鬼就是官司，不必论六神也可以。", "卦里没有官鬼，也按上面的断。"],
+          "en": ["If the Subject line is hidden under the Pressure line, one is surely held back by ill events.", "If it sits on the Azure Dragon, one surely does not return because wine and lust have brought illness;", "on the Vermilion Bird, because of official trouble and quarrels;", "on Hook Earth, a fall and injury;", "on the Coiling Snake, entanglement and fright;", "on the White Tiger, bedridden and unable to rise;", "on the Dark Tortoise, robbed and having lost money, one does not return.", "Whenever it meets an Earth ghost it is illness and a Fire ghost a lawsuit, and one need not discuss the six spirits.", "If the hexagram has no Pressure line, judge in the same way as above."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3509, 3509],
+          "zh": ["用爻伏于官爻下，必为凶事所羁，临勾陈跌仆损伤，临螣蛇勾连惊恐，临白虎或官鬼属土卧病不归，临玄武盗贼所阻，或贪色不归。", "其余下文引证类推之。"],
+          "yi": ["用爻伏在官爻下面，一定被凶事缠住：临着勾陈，是跌倒受伤；临着螣蛇，是牵连惊恐；临着白虎，或者官鬼属土，是卧病不回；临着玄武，是被盗贼阻拦，或者贪恋女色不回。", "其余的在下面引证，照这样类推。"],
+          "en": ["If the Subject line is hidden under the Pressure line, one is surely held back by ill events: on Hook Earth, a fall and injury; on the Coiling Snake, entanglement and fright; on the White Tiger, or with Pressure of the Earth element, bedridden and not returning; on the Dark Tortoise, blocked by thieves, or not returning from craving lust.", "The rest are cited below and are worked out by analogy."] }
+      ],
+      "note": {
+        "yi": "行人章是占出门在外的人的一章，用爻是那个人。用爻藏在官鬼爻下面（伏神），他就被凶事缠住不得回，飞神上临着哪位六神，就是哪一类事：青龙是酒色成病、白虎是卧病不起，这里只有青龙和白虎两处直接讲病，其余几位讲官非、伤、惊、盗，也一并带着，让「土鬼为病」的总括有上下文。「蹼跌」照原文，从意思看是「仆跌」（跌倒）。王洪绪的版本没有青龙、朱雀两条，多了「官鬼属土」一条，并且玄武一条是「盗贼所阻，或贪色不归」。这一条讲的是不在场的人的病，放在他人病里。",
+        "en": "The chapter on travellers is about people away from home, and the Subject line is that person. With the Subject line hidden under the Pressure line (as a hidden line) he is held back by ill events and cannot return, and whichever of the six spirits sits on the flying line says what kind: the Azure Dragon is illness from wine and lust, the White Tiger lying ill and unable to rise; only the Azure Dragon and the White Tiger speak directly of illness, but the others, on official trouble, injury, fright and theft, are carried along so that the summing-up 'an Earth ghost is illness' has its context. 'Fall' is as the text has it and, from the sense, means falling down. Wang Hongxu's version lacks the Azure Dragon and Vermilion Bird entries, adds 'Pressure of the Earth element', and has the Dark Tortoise as 'blocked by thieves, or not returning from craving lust'. This entry is about the illness of someone not present and is placed under the illness of others."
+      },
+      "see": ["LY.ILL.HJC.145"]
+    },
+    {
+      "id": "LY.ILL.HJC.145",
+      "topic": "他人病",
+      "chapter": "二十八、行人",
+      "chapter_en": "Chapter 28: Travellers",
+      "title": "行人·墓持墓动，必然卧病呻吟（旧注：用爻入墓化墓或持鬼墓或伏鬼墓爻下皆主病卧他家，伏官爻下亦然；带朱雀或化文书必在狱中非病；王洪绪：伏官爻下或临白虎在狱非病）",
+      "rule": {
+        "yi": "《黄金策》行人章说：「墓持着墓、墓发动，一定卧病呻吟。」旧注：用爻入墓又化成墓，或者持着鬼墓，或者卦里有鬼墓爻发动，或者用爻伏在鬼墓爻下面，都主病卧在别人家，所以不回来；如果伏在官爻下面，也是这样；带朱雀，或者化出文书，一定是在狱中，不是病。王洪绪：用爻像墓化成墓，或持鬼墓，或伏在鬼墓爻下，都主卧病不回；如果伏在官爻下，或者临白虎，一定是在狱中，不是病。",
+        "en": "The Huangjin Ce's chapter on travellers says: 'A tomb holding a tomb and moving: surely lying ill and groaning.' The old commentary: if the Subject line enters a tomb and turns into a tomb, or holds the ghost's tomb, or the hexagram has the ghost's tomb line moving, or the Subject line is hidden under the ghost's tomb line, all mean he lies ill in another's house and so does not return; if it is hidden under the Pressure line, the same; if it carries the Vermilion Bird or turns into documents, he is surely in prison and not ill. Wang Hongxu: if the Subject line is a tomb turning into a tomb, or holds the ghost's tomb, or is hidden under the ghost's tomb line, all mean lying ill and not returning; if it is hidden under the Pressure line, or sits on the White Tiger, he is surely in prison and not ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9452, 9452],
+          "zh": ["墓持墓动，必然卧病呻吟；"],
+          "yi": ["墓持着墓、墓发动，一定卧病呻吟；"],
+          "en": ["A tomb holding a tomb and moving: surely lying ill and groaning;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [9453, 9454],
+          "zh": ["用爻入墓化墓，或持鬼墓，或卦有鬼墓爻动，或用伏于鬼墓爻下，皆主病卧他家，故不回也。", "若伏官爻下，亦然。", "带朱雀，或化文书，必在狱中，非病也。"],
+          "yi": ["用爻入了墓、又化成墓，或者持着鬼墓，或者卦里有鬼墓爻发动，或者用爻伏在鬼墓爻下面，都主病卧在别人家，所以不回来。", "如果伏在官爻下面，也是这样。", "带着朱雀，或者化出文书，一定是在狱中，不是病。"],
+          "en": ["If the Subject line enters a tomb and turns into a tomb, or holds the ghost's tomb, or the hexagram has the ghost's tomb line moving, or the Subject line is hidden under the ghost's tomb line, all mean he lies ill in another's house, and so does not return.", "If it is hidden under the Pressure line, it is the same.", "If it carries the Vermilion Bird, or turns into documents, he is surely in prison and not ill."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3524, 3524],
+          "zh": ["用爻如墓化墓，或持鬼墓，或伏于鬼墓爻下者，皆主卧病不回；", "若伏官爻下或临白虎，必在狱中，非病也。"],
+          "yi": ["用爻像是墓化成墓，或者持着鬼墓，或者伏在鬼墓爻下面的，都主卧病不回；", "如果伏在官爻下面，或者临着白虎，一定是在狱中，不是病。"],
+          "en": ["If the Subject line is a tomb turning into a tomb, or holds the ghost's tomb, or is hidden under the ghost's tomb line, all mean lying ill and not returning;", "if it is hidden under the Pressure line or sits on the White Tiger, he is surely in prison and not ill."] }
+      ],
+      "dispute": {
+        "yi": "用爻伏在官爻下面，是病还是狱，两家说法相反。旧注：伏在官爻下面「亦然」，也是病卧他家；带朱雀或化出文书才是在狱中、不是病。王洪绪：伏在官爻下面，或者临白虎，必在狱中、非病。同一条上，旧注把「伏官爻下」归到病，王洪绪把它归到狱，而临白虎则被王洪绪归到狱。书里没有裁决。",
+        "en": "The two commentaries say opposite things on whether a Subject line hidden under the Pressure line is illness or prison. The old commentary says that hidden under the Pressure line it is 'the same', also lying ill in another's house, and only carrying the Vermilion Bird or turning into documents means prison and not illness; Wang Hongxu says hidden under the Pressure line, or sitting on the White Tiger, he is surely in prison and not ill. On this one case the old commentary files 'hidden under the Pressure line' under illness and Wang Hongxu files it under prison, and for sitting on the White Tiger Wang Hongxu files it under prison. The books do not decide."
+      },
+      "note": {
+        "yi": "这一联在行人章里，问的是出门在外的人为什么不回，墓是原因之一：用爻入墓、化墓、持着鬼墓，那个人是病倒在别人家。「鬼墓」是官鬼所入的墓库。这一联讲的是不在场的人的病，放在他人病里；和前面的「如藏官下」（LY.ILL.HJC.144）是同一章里的两条。「呻吟」是病中的呻吟声。",
+        "en": "This couplet in the chapter on travellers asks why a person away from home does not return, and the tomb is one cause: with the Subject line entering a tomb, turning into a tomb or holding the ghost's tomb, the person has fallen ill in another's house. The 'ghost's tomb' is the tomb that the Pressure line enters. This is about the illness of someone not present and is placed under the illness of others; it is one of two entries from the same chapter, with 'if hidden under the officer' (LY.ILL.HJC.144). 'Groaning' is the sound of groaning in illness."
+      },
+      "see": ["LY.ILL.HJC.144", "LY.ILL.BSQS.20"]
+    },
+    {
+      "id": "LY.ILL.HJC.146",
+      "topic": "风险",
+      "chapter": "三十、娼家",
+      "chapter_en": "Chapter 30: Courtesan houses",
+      "title": "娼家·官居刑地，门招恶病之人（旧注：鬼带刑爻生合世身多招带病之人来往，与世生合与财刑冲须防妓亦沾染）",
+      "rule": {
+        "yi": "《黄金策》娼家章说：「官鬼落在刑的地方，门上就招来恶病的人。」旧注：鬼爻带着刑爻、生合世和身，多半招来带病的人往来；（鬼）和世爻生合、又和财刑冲，要防妓女也被传染；鬼化成鬼，或者化成忌爻刑克世、身，恐怕因为留宿的客人招来祸事；有制伏就没有妨碍，有救就可以解开。王洪绪：鬼带刑爻生合世、身，多招恶病的人往来；与世生合、与财刑冲，要防妓女也被传染。",
+        "en": "The Huangjin Ce's chapter on courtesan houses says: 'With the officer in a place of punishment, the door draws people with vile illness.' The old commentary: a ghost carrying a punishing line and generating or combining with the Self and Body draws many people carrying illness; if it generates or combines with the Self line and punishes or clashes Wealth, beware that the courtesan too is infected; a ghost turning into a ghost, or turning into a taboo line that punishes or controls the Self and Body, may bring misfortune from a lodging guest; if it is restrained there is no harm, and if there is rescue it can be resolved. Wang Hongxu: a ghost carrying a punishing line and generating or combining with the Self and Body draws many people with vile illness; if it generates or combines with the Self line and punishes or clashes Wealth, beware that the courtesan too is infected."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9575, 9575],
+          "zh": ["官居刑地，门招恶病之人。"],
+          "yi": ["官鬼落在刑的地方，门上就招来恶病的人。"],
+          "en": ["With the officer in a place of punishment, the door draws people with vile illness."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [9576, 9576],
+          "zh": ["鬼带刑爻生合世身，多招带病之人来往。", "与世生合，与财刑冲，须防妓亦沾染。", "鬼化鬼，或化忌爻刑克世身，恐因宿客致祸。", "有制不妨，有救可解。"],
+          "yi": ["鬼爻带着刑爻、生合世和身，多半招来带病的人往来。", "（鬼）和世爻生合、又和财刑冲，要防妓女也被传染。", "鬼化成鬼，或者化成忌爻刑克世、身，恐怕因为留宿的客人招来祸事。", "有制伏就没有妨碍，有救就可以解开。"],
+          "en": ["A ghost carrying a punishing line and generating or combining with the Self and Body draws many people carrying illness.", "If it generates or combines with the Self line and punishes or clashes Wealth, beware that the courtesan too is infected.", "A ghost turning into a ghost, or turning into a taboo line that punishes or controls the Self and Body, may bring misfortune from a lodging guest.", "If it is restrained there is no harm, and if there is rescue it can be resolved."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2827, 2827],
+          "zh": ["鬼带刑爻生合世身，多招恶病之人来往；", "与世生合，与财刑冲，须防妓亦沾染。"],
+          "yi": ["鬼爻带着刑爻、生合世和身，多招恶病的人往来；", "与世爻生合、与财刑冲，要防妓女也被传染。"],
+          "en": ["A ghost carrying a punishing line and generating or combining with the Self and Body draws many people with vile illness;", "if it generates or combines with the Self line and punishes or clashes Wealth, beware that the courtesan too is infected."] }
+      ],
+      "note": {
+        "yi": "娼家章是占娼家（妓院）事的一章。这一联讲的是妓院里来往的人带病：官鬼带刑、生合世身，招来带病的客人；鬼与世爻生合、与财刑冲，妓女也要被传染。「恶病」「带病」是笼统说法，书里没有指明是哪种病，译文照字面。这不是占一个人的病，所以放在风险里。",
+        "en": "The chapter on courtesan houses is about divining matters of a courtesan house. This couplet is about the people who come and go carrying illness: Pressure carrying punishment and generating or combining with the Self and Body brings in clients who carry illness; if the ghost generates or combines with the Self line and punishes or clashes Wealth, the courtesan is infected too. 'Vile illness' and 'carrying illness' are general terms and the book does not name the illness; the translation keeps the letter. This is not a divination about one person's illness, which is why it is placed under risks."
+      },
+      "see": ["LY.ILL.HJC.127"]
+    }
+  ]
+}
