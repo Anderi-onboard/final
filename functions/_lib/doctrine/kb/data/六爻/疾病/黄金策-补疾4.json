@@ -1,0 +1,278 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "总断千金赋",
+  "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+  "ranges": {"卜筮大全": [5130, 5387], "卜筮正宗": [1155, 1253]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.149",
+      "topic": "总则",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·日辰为六爻之主宰，喜其灭项以安刘（旧注：日辰能救事能坏事；书中例：七月乙未日占兄弟病得同人之无妄，鬼动克主象绝爻又动，幸日辰未土克坏官爻合起主象，后果无事）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「日辰是六爻的主宰，喜的是它能灭项以安刘。」旧注：日辰是卜筮的主宰，不看日辰就不知道轻重；日辰能冲动安静的爻、合起安静的爻，发动的它能制住，凶恶的能压抑，强旺的能挫折，衰弱的能扶持；所以日辰能救事、也能坏事，是六爻的主宰。书中例：七月乙未日占兄弟的病，得同人变无妄，卦中鬼爻动克主象、绝爻又动，凶是可以想见的；幸好日辰是未土，克坏了官爻、合起了主象，后来果然无事。王洪绪的说法一样，并说：如果忌神旺动、用神休囚，得日辰克制忌神、生扶用神，凡事转凶为吉。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'The Day is the master of the six lines, and one welcomes how it destroys Xiang to secure Liu.' The old commentary: the Day is the master of divination, and without looking at the Day one does not know what is light and what is heavy; the Day can clash a still line into motion and combine and raise it, can restrain what moves, suppress what is ominous, break down what is strong and support what is weak; so the Day can save an affair and can spoil an affair, and is the master of the six lines. A case in the book: on a Yiwei day in the seventh month a brother's illness was divined and Tongren changing to Wuwang obtained; in the hexagram the Pressure line moved and controlled the principal image and the Extinction line moved too, so the ill omen could be imagined; fortunately the Day was Wei Earth, which broke the Pressure line and combined the principal image into life, and in the end all was well. Wang Hongxu says the same, and adds: if the Adversary is strong and moving and the Subject is resting or trapped, and the Day controls the Adversary and supports the Subject, in everything ill turns to good."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5130, 5130],
+          "zh": ["日辰为六爻之主宰，喜其灭项以安刘。"],
+          "yi": ["日辰是六爻的主宰，喜的是它能灭项以安刘。"],
+          "en": ["The Day is the master of the six lines, and one welcomes how it destroys Xiang to secure Liu."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5131, 5134],
+          "zh": ["日辰乃卜筮之主。", "不看日辰，则不知轻重。", "盖日辰能冲动安静卦之爻象，能并起安静卦之爻神；", "发动者能制之，凶恶者能抑之，强旺者能挫之，衰弱者能扶之，生合者能破之。", "古人云：日辰能救事，能坏事者，此也。", "故为六爻主宰。", "且如占文书，卦有财爻发动，是文书坏矣。", "若得日辰合住财爻，或冲散财爻，或克制财爻，不使之去伤害父母；", "故得文书有气，其事可成。", "此能救事也。", "又如占子孙，卦中父母不动，褔爻不空，其兆吉矣。", "若被日辰冲扶父母，刑害子孙，则变吉为凶，此能坏事也。", "日辰扶持用爻则吉，扶持忌爻则凶；", "克制忌爻则吉，克制用爻则凶。"],
+          "yi": ["日辰是卜筮的主宰。", "不看日辰，就不知道轻重。", "因为日辰能冲动安静卦里的爻象，能合起安静卦里的爻神；", "发动的它能制住，凶恶的它能压抑，强旺的它能挫折，衰弱的它能扶持，生合的它能破开。", "古人说：日辰能救事，也能坏事，说的就是这个。", "所以它是六爻的主宰。", "比如占文书，卦里有财爻发动，文书就坏了。", "如果得到日辰合住财爻、或冲散财爻、或克制财爻，不让它去伤害父母；", "所以文书有气，这件事就能成。", "这是日辰能救事。", "又比如占子孙，卦里父母不动，福爻不空，这个兆头就是吉。", "如果日辰冲扶父母、刑害子孙，就变吉为凶，这是日辰能坏事。", "日辰扶持用爻就吉，扶持忌爻就凶；", "克制忌爻就吉，克制用爻就凶。"],
+          "en": ["The Day is the master of divination.", "Without looking at the Day one does not know what is light and what is heavy.", "For the Day can clash into motion the lines and images of a still hexagram and can combine and raise the spirits of its lines;", "what moves it can restrain, what is ominous it can suppress, what is strong it can break down, what is weak it can support, and what generates or combines it can break apart.", "The ancients said: the Day can save an affair and can spoil an affair, and this is what they meant.", "Therefore it is the master of the six lines.", "For example, in divining documents, if a Wealth line in the hexagram moves, the documents are spoilt.", "If the Day combines the Wealth line to hold it, or clashes it apart, or controls it, so that it cannot go and harm the Resource;", "then the documents have qi and the matter can succeed.", "This is the Day saving an affair.", "Again, in divining Output (the children), if the Resource line in the hexagram does not move and the fortune line is not Void, the omen is auspicious.", "If the Day clashes and supports the Resource and punishes and harms Output, auspicious turns to ominous: this is the Day spoiling an affair.", "The Day supporting the Subject line is auspicious, supporting the Adversary line is ominous;", "controlling the Adversary line is auspicious, controlling the Subject line is ominous."] },
+        { "by": "书中例", "book": "卜筮大全", "range": [5135, 5135], "literal": ["兄弟"],
+          "zh": ["假如七月乙未日，占兄弟病，得同人之无妄卦。", "卦中鬼爻动克主象，绝爻又动，其凶可知矣。", "幸得日辰未土，克坏官爻，合起主象，所谓灭项以安刘也，后果应无事。"],
+          "yi": ["比如七月乙未日，占兄弟的病，得到同人变无妄卦。", "卦中鬼爻动、克了主象，绝爻又动，凶是可以想见的了。", "幸好日辰是未土，克坏了官爻、合起了主象，这就是所谓灭项以安刘，后来果然应验无事。"],
+          "en": ["For example, on a Yiwei day in the seventh month, divining a brother's illness, one obtains Tongren changing to Wuwang.", "In the hexagram the Pressure line moves and controls the principal image, and the Extinction line moves too, so the ill omen can be imagined.", "Fortunately the Day is Wei Earth, which breaks the Pressure line and combines the principal image into life; this is what is meant by destroying Xiang to secure Liu, and in the end it indeed turned out well."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1155, 1155],
+          "zh": ["日辰乃卜筮之主，不看日辰则不知卦中吉凶轻重了。", "盖日辰能冲起、冲实、冲散那动、空、静、旺的爻象，能合能填月破之爻，衰弱的能扶助帮比，强旺的能抑挫制伏，发动的能去克得，伏藏的能去提拔，可以成得事，可以坏得事，故为六爻之主宰也。", "如忌神旺动，用神休囚，倘得日辰去克制那忌神，生扶了用神，凡事转凶为吉，故曰：“灭项俱值”。"],
+          "yi": ["日辰是卜筮的主宰，不看日辰就不知道卦中吉凶轻重了。", "因为日辰能冲起、冲实、冲散那些动的、空的、静的、旺的爻象，能合住、能填实月破的爻，衰弱的它能扶助帮衬，强旺的它能抑制挫败，发动的它能去克，伏藏的它能去提拔，可以成事，也可以坏事，所以是六爻的主宰。", "如果忌神旺动，用神休囚，倘若得到日辰去克制那个忌神、生扶用神，凡事转凶为吉，所以说：「灭项俱值」。"],
+          "en": ["The Day is the master of divination; without looking at the Day one does not know the good and ill and the light and heavy in the hexagram.", "For the Day can clash into motion, clash into fullness and clash apart the moving, Void, still and strong lines and images, can combine and fill a line broken by the Month-break, can support and help the weak, can restrain and defeat the strong, can control what moves and can raise what is hidden, and can bring an affair to success or spoil it, and therefore it is the master of the six lines.", "If the Adversary is strong and moving and the Subject is resting or trapped, and the Day happens to control that Adversary and support the Subject, in everything ill turns to good, and so it is said: 'destroy Xiang, both worthy'."] }
+      ],
+      "note": {
+        "yi": "「灭项以安刘」是借汉高祖刘邦灭掉项羽、天下才安定的典故打比方：日辰除掉了害用神的，用神才安稳。王洪绪引作「灭项俱值」，字面不通，照原文译。这一联在总断千金赋里讲的是日辰对整个卦的权力，占病只是旧注举的一个例子（占兄弟的病），所以放在「总则」。例子里的「兄弟」是真的兄弟（不是兄弟爻）；「主象」就是所占的那一爻（兄弟占病，用神是兄弟爻）；「绝爻」书里没有解释，按字面译。书中例是旧注自己举的，结果只写「后果应无事」。旧注讲日辰的前一联「最恶者岁君」「月建乃万卜之提纲」（LY.ILL.HJC.147 是月建那一条）是同一类。",
+        "en": "'Destroy Xiang to secure Liu' is an allusion to Liu Bang, founder of the Han, destroying Xiang Yu and so settling the realm: the Day removes what harms the Subject, and only then is the Subject safe. Wang Hongxu quotes it as 'destroy Xiang, both worthy', which does not read literally and is translated as it stands. This couplet in the Rhapsody of a Thousand Golden Judgements is about the Day's power over the whole hexagram, and divining illness is only an example the old commentary gives (a brother's illness), which is why it is placed under 'general rules'. The 'brother' of the example is a real brother (not the Peer line); the 'principal image' is the line being divined (for a brother's illness the Subject is the brother line); the 'Extinction line' is not explained in the book and is translated literally. The case is the old commentary's own and the result is only given as 'in the end all was well'. The couplet before this on the Day in the same rhapsody, 'the Month is the guiding thread of every divination' (LY.ILL.HJC.147 is that one on the Month), is of the same kind."
+      },
+      "see": ["LY.ILL.HJC.147", "LY.ILL.HJC.150"]
+    },
+    {
+      "id": "LY.ILL.HJC.150",
+      "topic": "病因",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·最要者身位，喜扶而不喜伤（旧注：身即月卦身；例：困卦身爻在午，兑宫以午火为官鬼，旺则官非，衰则疾病）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「最要紧的是卦身的位置，喜欢被扶持，不喜欢被伤害。」旧注：身就是月卦身，取法见第一卷；成卦以后，先看卦身出现不出现，和月建、日辰、动爻有没有牵涉，吉凶就显出来了，所以卜易以身为最要紧；例如占得困卦，卦身在午，兑宫以午火为官鬼，官鬼旺就是官非，衰就是疾病。王洪绪：身是月卦身，占事就是事体，占人就是人身，只喜欢生扶拱合，不适宜克害刑冲。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'What matters most is the place of the Body: it welcomes support and does not welcome harm.' The old commentary: the Body is the Body of the month's hexagram, with its method in the first volume; after the hexagram is formed, first see whether the Body appears, and whether it bears on the Month, the Day or the moving lines, and good and ill show, which is why the Body is the most important in divining the Changes; for example, if the Kun (Confinement) hexagram is obtained and the Body is at Wu, then in the Dui palace Wu Fire is Pressure, and when Pressure is strong it means official trouble, when weak, illness. Wang Hongxu: the Body is the Body of the month's hexagram; in divining an affair it is the matter itself, in divining a person the person's body; it only welcomes generation, support, flanking and combination and does not suit control, harm, punishment and clash."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5148, 5148],
+          "zh": ["最要者身位，喜扶而不喜伤。"],
+          "yi": ["最要紧的是卦身的位置，喜欢被扶持，不喜欢被伤害。"],
+          "en": ["What matters most is the place of the Body: it welcomes support and does not welcome harm."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5149, 5150],
+          "zh": ["身：即月卦身也。", "其法与决，见第一卷。", "大抵成卦之后，先看卦身现与不现；", "与月建、日辰、动爻，有无干涉，则吉凶便见。", "故卜易以身为最要，而不可不看者也。", "且如占得困卦：身爻在午。", "兑宫以午火为官鬼；", "旺则官非，衰则疾病。"],
+          "yi": ["身，就是月卦身。", "它的取法和口诀，见第一卷。", "大致成卦以后，先看卦身出现不出现；", "和月建、日辰、动爻有没有牵涉，吉凶就显出来了。", "所以卜易以身为最要紧，不可不看。", "比如占得困卦：身爻在午。", "在兑宫里，午火是官鬼；", "旺就是官非，衰就是疾病。"],
+          "en": ["The Body is the Body of the month's hexagram.", "Its method and rhyme are in the first volume.", "In general, after the hexagram is formed, first see whether the Body appears or not;", "and whether it bears on the Month, the Day or the moving lines; then good and ill show.", "Therefore in divining the Changes the Body is the most important, and one must look at it.", "For example, if the Kun (Confinement) hexagram is obtained: the Body line is at Wu.", "In the Dui palace Wu Fire is Pressure;", "if strong it means official trouble, if weak it means illness."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1161, 1161],
+          "zh": ["身即月卦身也，“阳世则从子月起，阴世还从午月生”，其法见《启蒙节要》篇内。", "大抵成卦之后，看卦身现与不现，与月建、日辰、动爻有无干涉，则吉凶便知。", "占事为事体，占为为人身，唯喜生扶拱合，不宜克害刑冲。", "凡占向以身为占事之主，故曰“最要”也。"],
+          "yi": ["身就是月卦身，「阳世从子月起，阴世还从午月生」，它的取法见《启蒙节要》篇里。", "大致成卦以后，看卦身出现不出现，和月建、日辰、动爻有没有牵涉，吉凶就知道了。", "占事就是事体，占人就是人身，只喜欢生扶拱合，不适宜克害刑冲。", "凡是占卜向来以身作为占事的主，所以说「最要」。"],
+          "en": ["The Body is the Body of the month's hexagram: 'with a yang Self it starts from the Zi month, with a yin Self it again begins from the Wu month'; its method is in the 'Essentials of the Enlightenment' chapter.", "In general, after the hexagram is formed, look at whether the Body appears and whether it bears on the Month, the Day or the moving lines, and good and ill are known.", "In divining an affair it is the matter itself, in divining a person it is the person's body; it only welcomes generation, support, flanking and combination, and does not suit control, harm, punishment and clash.", "In all divination the Body has always been taken as the master of the matter, and so it is called 'the most important'."] }
+      ],
+      "note": {
+        "yi": "这一条里讲到病的只有最后一句「旺则官非，衰则疾病」：卦身恰好落在官鬼上时，官鬼旺主官非（官事），衰主疾病；旧注用困卦做例子（困卦是兑宫卦，兑属金，午火克金，所以午火是官鬼），没有再展开，也没有说这是通则还是只对身爻落在官鬼上才成立。「月卦身」的取法（「阳世从子月起，阴世从午月生」）书里只引了口诀，没有给细则。",
+        "en": "Only the last line of this entry speaks of illness, 'if strong it means official trouble, if weak it means illness': when the Body happens to fall on Pressure, a strong Pressure means official trouble (official affairs) and a weak one illness; the old commentary takes the Kun (Confinement) hexagram as its example (Kun is a Dui-palace hexagram, Dui belongs to Metal, and Wu Fire controls Metal, so Wu Fire is Pressure), and goes no further, nor does it say whether this is a general rule or holds only when the Body line falls on Pressure. The method of the 'Body of the month's hexagram' ('with a yang Self it starts from the Zi month, with a yin Self from the Wu month') is only given as a rhyme in the book, with no detailed rules."
+      },
+      "see": ["LY.ILL.HJC.149", "LY.ILL.EL.17"]
+    },
+    {
+      "id": "LY.ILL.HJC.151",
+      "topic": "生死",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·无故勿空（旧注：身世主象无故自落空亡大凶，占病必死；王洪绪：「故」是受伤，无故之空不可当真空，旧注误解）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说「无故勿空」四个字，两家读法相反。旧注：旬里的空亡，有有缘故而空的、有没有缘故而空的；被日、月、动爻伤克而落在空亡，叫有缘故而空，避开它是可以的；如果没有刑冲克害、身世主象自己落了空亡，叫没有缘故而空，是大凶的兆头：占病必死，占事不成，占人有难，因为空了，即使有日辰、动爻也难以扶持救援。王洪绪：「故」是受伤的意思，「勿」要当「不」讲；旬空的爻若安静又被月建日辰克制，是有伤的空，到底是无用的空；若是没有被月建日辰克伤，或者发动、或得月日动爻生扶拱合冲起，这是无故之空，出旬、值日、得合的时候仍然能办事，不可当真空论；旧注把意思弄反了。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements has the four characters 'wu gu wu kong', which the two commentators read in opposite ways. The old commentary: of Void within the ten-day cycle some is Void with a cause and some Void without cause; a line hurt or controlled by the Day, the Month or a moving line and in Void is Void with a cause, and avoiding the harm in this way is acceptable; if there is no punishment, clash, control or harm and the Body, Self or principal image falls into Void by itself, it is Void without cause, a greatly ominous omen: in divining illness the sick will surely die, an affair does not come to completion, a person is in trouble, for when it is Void, even the Day and moving lines can hardly support or rescue. Wang Hongxu: 'cause' means being hurt, and 'do not' must be read as 'not'; a line in the ten-day Void that is still and controlled by the Month and Day is Void with injury, in the end a useless Void; one that has not been hurt by the Month or Day, or that moves, or is supported, flanked, combined or clashed into motion by the Month, Day or a moving line, is Void without cause, and when it comes out of the cycle, when the Day falls on it, or when it gets a combination, it can still do its work, and is not to be judged as truly Void; the old commentary has the sense backwards."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5186, 5186],
+          "zh": ["无故勿空。"],
+          "yi": ["无故勿空。"],
+          "en": ["Without cause, do not be Void."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5187, 5187],
+          "zh": ["夫旬中空亡，有有故而空者，有无故而空者。", "凡遇日月动爻伤克，而在空亡，谓有故而空，避之可也。", "若无刑冲克害，而身世主象自落空亡，此为无故而空。", "大凶之兆。", "占病必死，占事不成，占人有难。", "盖空则虽有日辰动爻，难以扶持救援之故也。"],
+          "yi": ["旬里的空亡，有有缘故而空的，有没有缘故而空的。", "凡是遇到日、月、动爻伤克，而落在空亡，叫有缘故而空，避开它是可以的。", "如果没有刑、冲、克、害，而身、世、主象自己落了空亡，这叫没有缘故而空。", "是大凶的兆头。", "占病，病人一定会死；占事，事情办不成；占人，这个人要遇灾难。", "因为空了，即使有日辰、动爻，也难以扶持救援。"],
+          "en": ["Of Void within the ten-day cycle, some is Void with a cause and some Void without cause.", "When a line is hurt or controlled by the Day, the Month or a moving line and is in Void, it is called Void with a cause, and avoiding the harm in this way is acceptable.", "If there is no punishment, clash, control or harm, and yet the Body, Self or principal image falls into Void by itself, this is Void without cause.", "It is a greatly ominous omen.", "In divining illness the sick will surely die, an affair does not come to completion, in divining a person he is in trouble.", "For when it is Void, even if there are the Day and moving lines, it is hard for them to support and rescue."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1179, 1179],
+          "zh": ["故者，谓受伤的意思，“勿”字该当它“不”字解说。", "大凡旬空之爻，安静又遇月建日辰克制，这是有过之空了，即使出旬值日，亦不能为吉为凶，这样旬空，到底无用之空矣。", "若旬空之爻发动，或得月建日辰生扶拱合它，或日辰冲起它，或动爻生合它，这是无故之空，待其出旬值日得合之时，仍复能事，故曰无故之空爻，勿以为空也。", "虽值旬空而没有受月建日辰克伤的，不可当它真空论。", "又如用神化回头克，又见会局来克，来克太过，岂不是有伤了？", "若是日月不伤它，用神一空则不受其克，亦称“无故”矣。", "古有避凶之说，亦近乎无故之理。", "旧注误以无伤克之爻不可空，日月二建克它又宜空，大失先天之妙旨，又失是篇之文理矣。"],
+          "yi": ["「故」，是受伤的意思，「勿」字应当按「不」字来解。", "大凡旬空的爻，安静又遇到月建、日辰克制，这是有伤的空，即使出旬、值日，也不能成吉成凶，这样的旬空，到底是无用的空。", "如果旬空的爻发动，或者得到月建、日辰生、扶、拱、合它，或者日辰冲起它，或者动爻生合它，这是没有缘故的空，等它出旬、值日、得到合的时候，仍然能办事，所以说，没有缘故的空爻，不要把它当作空。", "虽然落在旬空、却没有被月建、日辰克伤的，不可以把它当作真空来论。", "又比如用神化出回头克，又见三合局来克，克得太过，难道不是有伤了吗？", "如果日月不伤它，用神一旦落空就不受它的克，也叫「无故」了。", "古人有避凶的说法，也接近没有缘故（的空）的道理。", "旧注错误地认为没有受伤克的爻不可以空、日月二建克它又适宜空，大大失去了先天的妙旨，又失去了这一篇的文理。"],
+          "en": ["'Cause' means being hurt, and the word 'do not' should be read as 'not'.", "Generally a line in the ten-day Void that is still and meets control by the Month and the Day is Void with injury, and even when it comes out of the cycle or the Day falls on it, it can make neither good nor ill; such a Void is in the end a useless Void.", "If a line in the ten-day Void moves, or is generated, supported, flanked or combined by the Month or the Day, or is clashed into motion by the Day, or is generated or combined by a moving line, this is Void without cause, and when it comes out of the cycle, when the Day falls on it, or when it gets a combination, it can still do its work; so it is said that a Void line without cause is not to be taken as Void.", "A line that falls in the ten-day Void but is not hurt by the Month or the Day is not to be judged as truly Void.", "Again, if the Subject turns into a line that controls it back, and is controlled by a three-harmony frame as well, the control being excessive, is it not hurt?", "If the Day and Month do not hurt it, once the Subject falls Void it is not subject to that control, and this too is called 'without cause'.", "The ancients' talk of avoiding ill is also close to the principle of Void without cause.", "The old commentary wrongly takes it that a line not hurt or controlled must not be Void and that one controlled by the Day and Month is rightly Void, which greatly loses the subtle sense of the Former Heaven and loses the sense of this passage too."] }
+      ],
+      "dispute": {
+        "yi": "「无故勿空」四个字怎么读，旧注和王洪绪相反。旧注：没有被刑冲克害、身世主象自己落空的，是「无故而空」，是大凶，占病必死；被日月动爻伤克而落空的，是「有故而空」，是避凶，可以。王洪绪：「故」是受伤的意思，没有被月建日辰克伤的旬空，才是「无故之空」，它不能当真空论，出旬、值日、得合时仍然有用；被克伤的旬空才是无用的空；他明说旧注把意思弄反了。书里没有裁决，也就是说：一个不受伤、自己落空的主象，旧注断凶（占病必死），王洪绪断不算真空。",
+        "en": "The old commentary and Wang Hongxu read the four characters 'wu gu wu kong' in opposite ways. The old commentary: a principal image that is not hurt by punishment, clash, control or harm and falls Void by itself is 'Void without cause', greatly ominous, and in divining illness the sick will surely die; one hurt or controlled by the Day, the Month or a moving line and then falling Void is 'Void with a cause', which is avoiding ill, and acceptable. Wang Hongxu: 'cause' means being hurt; only a ten-day Void not hurt by the Month and Day is 'Void without cause', which is not to be judged as truly Void and is still useful when it comes out of the cycle, when the Day falls on it or when it gets a combination; it is the ten-day Void that is hurt that is the useless Void; and he says outright that the old commentary has the sense backwards. The books do not decide: a principal image not hurt and Void by itself the old commentary judges ominous (in illness, death), and Wang Hongxu judges it not truly Void."
+      },
+      "note": {
+        "yi": "原文只有「无故勿空」四个字，没有标点以外的说明，所以两家的读法都说得通：旧注读成「没有缘故的空要不得」，王洪绪读成「没有缘故（没受伤）的空不算空」。经文翻成「Without cause， do not be Void」是照字面，保持两种读法都成立。「真空」「避凶而空」是旧注在紧接的「卦遇凶星，避之则吉」里的用语（LY.ILL.HJC.156）。「先天」指易的本来道理。「旬空」是起卦的那一旬里轮空的两个地支；三合局在王洪绪这里是来克的一方（会局克用神）。本库在疾病域收这一条，因为旧注给了「占病必死」这个断语；和天玄赋、易隐等讲「用空」的几条（LY.ILL.EL.11、ZS.04、ZS.05）互相照应。",
+        "en": "The text has only the four characters 'wu gu wu kong' with no explanation, so both readings are possible: the old commentary reads it as 'Void without cause is not to be had', Wang Hongxu as 'Void without cause (not hurt) does not count as Void'. The line is translated literally as 'Without cause, do not be Void', so that both readings stand. 'True Void' and 'Void to avoid ill' are terms of the old commentary in the immediately following 'a hexagram that meets an ominous star: avoiding it is auspicious' (LY.ILL.HJC.156). 'The Former Heaven' means the original principle of the Changes. 'The ten-day Void' is the two branches left out of the ten-day cycle of the casting; in Wang Hongxu a three-harmony frame is the side that controls (a combined frame controlling the Subject). It is taken in the illness domain because the old commentary gives the verdict 'in divining illness the sick will surely die'; it answers the several entries that speak of the Subject Void (LY.ILL.EL.11, ZS.04, ZS.05)."
+      },
+      "see": ["LY.ILL.HJC.156", "LY.ILL.EL.11", "LY.ILL.ZS.04", "LY.ILL.ZS.05", "LY.ILL.DYTJ.51"]
+    },
+    {
+      "id": "LY.ILL.HJC.152",
+      "topic": "动变",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·用爻变动忌遭死墓绝空；用化用有用无用（旧注：占病逢死墓绝空必死无疑；用爻化用爻谓之化去占病尤忌；王洪绪：用化进神有用，化退神、伏吟无用）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「用爻变动，忌遭死、墓、绝、空」，「用化用，有用无用」。旧注：死、墓、绝、空是陷阱一样的大凶之神，主象发动变入这几位，不管公私大小，都主不成；占病遇到，必死无疑；卦中既然有用爻，就不可再化出来，叫「化去」，别的爻化出（用爻）也不济事，所以和没有用爻一样，占病尤其忌讳。王洪绪：用神化用神有「有用的」「没用的」：化进神的有用，化退神和伏吟卦的没用；空爻安静就不能化空，动了就不算空，出旬有用。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'When the Subject line moves and changes, it fears meeting Death, Tomb, Extinction or Void'; 'the Subject changing into the Subject: useful or useless'. The old commentary: Death, Tomb, Extinction and Void are greatly ominous spirits like a pit; if the principal image moves and changes into them, public or private, great or small, nothing succeeds; in divining illness, meeting this, death is certain; when the hexagram already has the Subject line it must not change out again, which is called 'changing away', and another line changing out [a Subject line] does not help either, so it is the same as having no Subject line, and in divining illness this is especially feared. Wang Hongxu: a Subject changing into a Subject may be useful or useless: changing into an Advancing spirit is useful, changing into a Retreating spirit or into a Hidden Chant hexagram is useless; a Void line that is still cannot change into Void, and one that moves is not Void and is useful when it comes out of the cycle."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5310, 5310],
+          "zh": ["用爻变动，忌遭死墓绝空。"],
+          "yi": ["用爻变动，忌讳遇到死、墓、绝、空。"],
+          "en": ["When the Subject line moves and changes, it fears meeting Death, Tomb, Extinction or Void."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5311, 5311],
+          "zh": ["死墓绝空，乃陷井之地，大凶神也。", "死不复生，绝不复续，入墓则不能出，堕空则不能起。", "若主象发动而化入者，不问公私大小之事，皆主不成。", "占病逢之，必死无疑。"],
+          "yi": ["死、墓、绝、空，是陷阱一样的地方，是大凶的神。", "死了不能再生，绝了不能再续，入了墓就出不来，落了空就起不来。", "如果主象发动而变入这几位，不管公事私事、大事小事，都主不成。", "占病遇到它，必死无疑。"],
+          "en": ["Death, Tomb, Extinction and Void are a place like a pit, and are greatly ominous spirits.", "What is dead cannot live again, what is extinct cannot continue, what has entered the tomb cannot come out, and what has fallen Void cannot rise.", "If the principal image moves and changes into these, whether public or private, great or small, nothing will succeed.", "In divining illness, meeting it, death is certain."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1229, 1229],
+          "zh": ["主象亦言用神也，如值休囚，已不能为事矣，岂可再见刑克？", "如用神发动，犹人勇往直前，岂可自化墓绝？"],
+          "yi": ["主象也是说用神，如果碰上休囚，已经不能办事了，哪里还可以再遇到刑克？", "如果用神发动，就像人勇往直前，哪里可以自己变化成墓、绝？"],
+          "en": ["The principal image also means the Subject; if it is resting or trapped it already cannot do anything, so how can it meet punishment and control again?", "If the Subject moves, it is like a man advancing boldly, so how can it turn itself into Tomb or Extinction?"] },
+        { "by": "经", "book": "卜筮大全", "range": [5313, 5313],
+          "zh": ["用化用，有用无用；"],
+          "yi": ["用爻变出用爻，有用，也有没用。"],
+          "en": ["The Subject line changing into a Subject line: useful, and also useless."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5314, 5314],
+          "zh": ["卦中既有用爻，不可再化出来，谓之化去。", "且不独用爻自化，或旁爻化出，皆不济事。", "故虽有用爻，此同无用爻之卦一般。", "占病尤忌。"],
+          "yi": ["卦中既然已经有用爻，就不可以再化出来，叫做化去。", "而且不只是用爻自己变化，即使别的爻化出（用爻），都不济事。", "所以虽然有用爻，这就和没有用爻的卦一样。", "占病尤其忌讳。"],
+          "en": ["When the hexagram already has the Subject line, it must not change out again; this is called 'changing away'.", "And not only the Subject line changing itself: even if another line changes out a Subject line, nothing is helped.", "So although there is a Subject line, it is the same as a hexagram with no Subject line.", "In divining illness it is especially feared."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1231, 1231],
+          "zh": ["用神化用神，有有用之用神，有无用之用神。", "有用者，用神化进神；", "无用者，用神化退神并伏吟卦也，故以“有用无用”分别之。", "空爻安静则不能化空，爻发动则能化，既发动，动不空也，化出之空亦因动而化。", "凡动爻值空，或动爻变空，皆不作真空论，出旬有用矣。"],
+          "yi": ["用神变出用神，有有用的用神，有没有用的用神。", "有用的，是用神化进神；", "没有用的，是用神化退神，和伏吟卦，所以用「有用无用」来分别它。", "空爻安静就不能化出空，爻发动才能化，既然发动，动了就不空，化出的空也是因为动才化出的。", "凡是动爻落在空，或者动爻变成空，都不能当作真空来论，出了旬就有用了。"],
+          "en": ["A Subject changing into a Subject may be a useful Subject or a useless Subject.", "The useful one is the Subject changing into an Advancing spirit;", "The useless one is the Subject changing into a Retreating spirit, and the Hidden Chant hexagram, which is why 'useful or useless' is used to tell them apart.", "A Void line that is still cannot change into Void; only when the line moves can it change, and having moved it is not Void, and the Void it changes into comes about only because it moved.", "Whenever a moving line is in Void or changes into Void, it is not to be judged as truly Void, and once it is out of the cycle it is useful."] }
+      ],
+      "dispute": {
+        "yi": "「用化用」是好是坏，旧注和王洪绪不同。旧注：卦中已经有用爻，不可以再化出来，叫「化去」，别的爻化出（用爻）也不济事，所以有用爻也同没有一样，占病尤其忌讳——只有「不可」，没有分情形；王洪绪：要分「有用」「无用」：用神化进神的有用，化退神和伏吟卦的没用。用爻变动遇死墓绝空，两家一致认为忌，旧注加了一句「占病逢之必死无疑」。书里没有裁决。",
+        "en": "The old commentary and Wang Hongxu differ on whether 'the Subject changing into the Subject' is good or bad. The old commentary: when the hexagram already has the Subject line it must not change out again, which is called 'changing away', and another line changing out a Subject line does not help either, so having a Subject line is the same as having none, and in divining illness this is especially feared; there is only 'it must not', with no distinction of cases. Wang Hongxu: one must tell 'useful' from 'useless': a Subject changing into an Advancing spirit is useful, changing into a Retreating spirit or the Hidden Chant hexagram is useless. On the Subject line moving into Death, Tomb, Extinction or Void the two agree that it is feared, and the old commentary adds 'in divining illness, meeting it, death is certain'. The books do not decide."
+      },
+      "note": {
+        "yi": "「主象」就是所占的那一爻（用神）。「化去」是旧注的用词，意思是用爻变出来的又是用爻（化出同类），没有变出新东西。「进神」「退神」是同一五行往前、往后变（寅化卯是进神，卯化寅是退神）；「伏吟」是变出来的爻地支和原来一样。「空化空，虽空弗空」（旧注紧接着的一联）讲的是空，不涉及病，没有收。这一条里「必死无疑」「尤其忌讳」两句是占病的断语，和下面墓多暗昧（LY.ILL.HJC.153）、凶化长生（LY.ILL.HJC.154）几条合起来，是总断千金赋给占病的几个凶断。",
+        "en": "The 'principal image' is the line being divined (the Subject). 'Changing away' is a term of the old commentary, meaning that what the Subject line changes into is again a Subject line (a change into its own kind), nothing new coming out of the change. 'Advancing spirit' and 'Retreating spirit' are a change forward or backward within the same element (Yin into Mao is advancing, Mao into Yin retreating); 'Hidden Chant' is when the branch changed into is the same as the original. 'Void into Void: though Void, not Void' (the couplet right after in the old commentary) is about Void and does not touch illness, and is not taken. The sentences 'in divining illness, meeting it, death is certain' and 'in divining illness it is especially feared' are verdicts for illness, and together with the entries on the tomb bringing obscurity (LY.ILL.HJC.153) and an ominous line changing into Birth (LY.ILL.HJC.154) they are the several ominous verdicts the Rhapsody of a Thousand Golden Judgements gives for illness."
+      },
+      "see": ["LY.ILL.HJC.153", "LY.ILL.HJC.154", "LY.ILL.HJC.151", "LY.ILL.DYTJ.27"]
+    },
+    {
+      "id": "LY.ILL.HJC.153",
+      "topic": "生死",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·墓多暗昧（旧注：凶爻要入墓，吉爻不要入墓；占病遇之九死一生；主象带刑动入墓者占病必死、占讼入狱）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「墓多暗昧。」旧注：大致上凶爻要入墓，吉爻不要入墓；《金锁玄关》有人墓、事墓、鬼墓的分别，《天玄赋》有身、世、命随着鬼入墓的说法，都是大凶的兆头；占病遇到，九死一生；捕获遇到，深深躲藏难找；人物遇到，愚昧不振作；失脱遇到，暗暗藏着看不见；因为墓是滞塞的意思，是暗昧不明的象；卦中主象带着刑、发动、入了墓的，占病必死，占官司入狱。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'The tomb brings much obscurity.' The old commentary: in general an ominous line should enter the tomb and a lucky line should not; the Jinsuo Xuanguan distinguishes the person's tomb, the matter's tomb and the ghost's tomb, and the Tianxuan Fu has the saying of the Body, Self and natal line entering the tomb following the ghost, all greatly ominous omens; in divining illness, meeting it is nine deaths to one life; in a capture the quarry hides deep and is hard to find; in a person, he is dull and does not rouse himself; in a loss, it lies hidden and unseen; for the tomb means stagnation, the image of obscurity and unclarity; when the principal image in the hexagram carries punishment, moves and enters the tomb, in divining illness the sick will surely die and in a lawsuit one goes to prison."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5323, 5323],
+          "zh": ["墓多暗昧。"],
+          "yi": ["墓多暗昧。"],
+          "en": ["The tomb brings much obscurity."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5324, 5327],
+          "zh": ["大抵凶爻要入墓，吉爻不要入墓。", "《金锁玄关》有：人墓、事墓、鬼墓之别。", "《天玄赋》有身、世、命，随鬼入墓之论。", "皆大凶之兆。", "占病遇之，九死一生；", "捕获遇之，深遁难觅；", "人物遇之，愚蒙不振；", "失脱遇之，暗藏不见。", "盖墓者，滞也。", "暗昧不明之象。", "卦中主象带刑动入墓者，占病必死，占讼入狱。"],
+          "yi": ["大致凶爻要入墓，吉爻不要入墓。", "《金锁玄关》有：人墓、事墓、鬼墓的分别。", "《天玄赋》有身、世、命，随着鬼入墓的说法。", "都是大凶的兆头。", "占病遇到它，九死一生；", "捕获遇到它，深深躲藏难找；", "人物遇到它，愚昧不振作；", "失脱遇到它，暗暗藏着看不见。", "因为墓，是滞塞的意思。", "是暗昧不明的象。", "卦中主象带着刑、发动、入了墓的，占病必死，占官司入狱。"],
+          "en": ["In general an ominous line should enter the tomb and a lucky line should not.", "The Jinsuo Xuanguan distinguishes the person's tomb, the matter's tomb and the ghost's tomb.", "The Tianxuan Fu has the saying of the Body, the Self and the natal line entering the tomb following the ghost.", "All are greatly ominous omens.", "In divining illness, meeting it is nine deaths to one life;", "in a capture, the quarry hides deep and is hard to find;", "in a person, he is dull and does not rouse himself;", "in a loss, it lies hidden and unseen.", "For the tomb means stagnation.", "It is the image of obscurity and unclarity.", "When in the hexagram the principal image carries punishment, moves and enters the tomb, in divining illness the sick will surely die and in a lawsuit one goes to prison."] }
+      ],
+      "note": {
+        "yi": "这里的「墓」是十二长生里的墓位（入墓）。「人墓、事墓、鬼墓」是《金锁玄关》的分别，书里没有展开；「身、世、命随鬼入墓」是天玄赋的说法（LY.ILL.TXF.06）和断易天机的「随官入墓」（LY.ILL.DYTJ.27）是同一件事：占病遇到，断易天机写「十占九死」，这里写「九死一生」，两处意思相同。这一条只有「占病」「占讼」两句是断语，「捕获」「人物」「失脱」讲的是别的事，为了保持这一整段完整一并收在这里。王洪绪对这一联的评语是十二长生里只有长生、墓、绝要紧（LY.ILL.HJC.129 收过），这里没有专门的王洪绪段。「愚蒙」按字面是愚昧蒙昧。",
+        "en": "The 'tomb' here is the Tomb stage of the twelve stages of life (entering the tomb). 'The person's tomb, the matter's tomb, the ghost's tomb' is the Jinsuo Xuanguan's distinction, not expanded in the book; 'the Body, Self and natal line entering the tomb following the ghost' is the Tianxuan Fu's saying (LY.ILL.TXF.06) and is the same thing as 'following Pressure into the tomb' in the Duanyi Tianji (LY.ILL.DYTJ.27): for illness the Duanyi Tianji writes 'nine of ten divinations die', here it is 'nine deaths to one life', the same sense. Only the two sentences 'in divining illness' and 'in a lawsuit' are verdicts for our domain; 'a capture', 'a person' and 'a loss' are about other matters, and are kept here to keep the passage whole. Wang Hongxu's comment on this couplet is that of the twelve stages of life only Birth, Tomb and Extinction matter (taken in LY.ILL.HJC.129), and there is no separate Wang Hongxu passage here."
+      },
+      "see": ["LY.ILL.HJC.152", "LY.ILL.HJC.129", "LY.ILL.DYTJ.27", "LY.ILL.TXF.06"]
+    },
+    {
+      "id": "LY.ILL.HJC.154",
+      "topic": "轻重",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·凶化长生炽而未散（旧注：占病福化长生日渐减可，鬼化长生日加沉重，直至墓绝日始杀其势；王洪绪：凶神化入长生祸根日渐增长，必待墓绝日始锄其势）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「凶爻变成长生，祸势炽盛而没有散。」旧注：主事的爻化入长生都吉，只是成得迟；只有坏事的爻化入长生，祸根才刚萌发，一天天增长，凶恶的势头一定要到盛了才停；比如占病，福神（子孙）化成长生，病势一天天减轻就可以；鬼（官鬼）化成长生，病势一天比一天沉重，一直到墓、绝的日子才杀掉它的势头。王洪绪：用爻化入长生的吉；凶神化入长生，祸根日渐增长，一定等到墓、绝日才锄掉它的势头。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'An ominous line changing into Birth blazes and does not disperse.' The old commentary: when the line that governs the matter changes into Birth, all is auspicious, only the completion is late; only when the line of a bad matter changes into Birth does the root of its calamity just begin to sprout and grow day by day, and the ominous force does not stop until it has become full; for example in divining illness, if the Fortune line (Output) changes into Birth, the illness lessening day by day will do; if the ghost (Pressure) changes into Birth, the illness grows heavier day by day, until the Tomb or Extinction day, when its force is killed. Wang Hongxu: a Subject line changing into Birth is auspicious; an ominous spirit changing into Birth, the root of calamity grows day by day, and one must wait for the Tomb or Extinction day before its force is hoed out."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5337, 5337],
+          "zh": ["凶化长生，炽而未散；"],
+          "yi": ["凶爻变成长生，祸势炽盛而没有散。"],
+          "en": ["An ominous line changing into Birth blazes and does not disperse."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5338, 5338],
+          "zh": ["主事爻化入长生者，皆吉。", "即是成得迟耳。", "惟坏事之爻化入长生者，则其祸根始萌，日渐增长，凶恶之势，必盛而后已。", "如占病，褔化长生，日渐减可；", "鬼化长生，日加沉重。", "直至墓绝日，始杀其势。"],
+          "yi": ["所主事的爻化入长生，都吉。", "只是成得迟一些罢了。", "只有坏事的爻化入长生，它的祸根才刚刚萌发，一天天增长，凶恶的势头，一定要到盛了才停。", "比如占病，福神（子孙）化成长生，病势一天天减轻就可以；", "鬼（官鬼）化成长生，病势一天比一天沉重。", "一直到墓、绝的日子，才杀掉它的势头。"],
+          "en": ["When the line that governs the matter changes into Birth, all is auspicious.", "It only comes to completion somewhat late.", "Only when the line of a bad matter changes into Birth does the root of its calamity just begin to sprout and grow day by day, and the ominous force does not stop until it has become full.", "In divining illness, if the Fortune line (Output) changes into Birth, the illness lessening day by day will do;", "if the ghost (Pressure) changes into Birth, the illness grows heavier day by day.", "It is not until the Tomb or Extinction day that its force is killed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1235, 1235],
+          "zh": ["用爻化入长生者吉；", "如凶神化入长生者，则其祸根始萌，日渐增长也，必待墓绝日始锄其势。"],
+          "yi": ["用爻化入长生的吉；", "如果是凶神化入长生，它的祸根刚开始萌发，一天天增长，一定要等到墓、绝的日子，才锄掉它的势头。"],
+          "en": ["A Subject line changing into Birth is auspicious;", "but if an ominous spirit changes into Birth, the root of its calamity has only begun to sprout and grows day by day, and one must wait for the Tomb or Extinction day before its force is hoed out."] }
+      ],
+      "note": {
+        "yi": "「长生」是十二长生的头一位。「福化长生」的「福」是福神（子孙），「鬼化长生」的「鬼」是官鬼；旧注的意思是：占病时，子孙（医药）化入长生，是医药一天天见效，病势一天天减；官鬼（病）化入长生，病就一天一天重下去，要等到官鬼的墓、绝日才压得下来。这是占病「看病势走向」的几条之一，和 LY.ILL.EL.17、ZS.35 等不同，它不看用神旺衰，只看动爻变入哪一位。旧注和王洪绪在这一联上一致，旧注多出占病的这一例。",
+        "en": "'Birth' is the first of the twelve stages of life. The 'Fortune' of 'the Fortune line changes into Birth' is the Fortune line (Output), and the 'ghost' of 'the ghost changes into Birth' is Pressure; the old commentary means: in divining illness, when Output (the medicine) changes into Birth, the medicine works more day by day and the illness lessens day by day; when Pressure (the illness) changes into Birth, the illness grows heavier day by day and is held down only on the Tomb or Extinction day of Pressure. This is one of the entries on 'reading the course of the illness', and unlike LY.ILL.EL.17 and ZS.35 and the like it does not look at the strength of the Subject but only at which stage the moving line changes into. The old commentary and Wang Hongxu agree on this couplet, and the old commentary adds this example on illness."
+      },
+      "see": ["LY.ILL.HJC.152", "LY.ILL.HJC.153", "LY.ILL.EL.17"]
+    },
+    {
+      "id": "LY.ILL.HJC.155",
+      "topic": "生死",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·死绝岂可持身（旧注：死绝二爻临持世身主象必不利，占人有难、占病无救、占医无效、占事不济，变动化入亦然）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「死、绝，怎么可以持身？」旧注：死、绝两爻，临在、持着世、身、主象上，一定不利：占人有灾难，占病没有救，占医没有效，占事不成；变动化入的也是这样。王洪绪的这一条评语只有半句，「死、绝于日辰的爻，临持世、身、用神的，各种占都不利，变动化入」，原文到这里就断了。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'Death and Extinction: how can they hold the Body?' The old commentary: when the Death and Extinction lines sit on or hold the Self, the Body or the principal image, it is sure to be unfavourable: in divining a person he is in difficulty, in divining illness there is no rescue, in divining a doctor he is ineffective, an affair does not succeed; so too when they are moved or changed into. Wang Hongxu's comment on this has only half a sentence, 'a line in Death or Extinction by the Day branch that sits on or holds the Self, the Body or the Subject: no divination is favourable, in moving and changing into', where the text breaks off."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5386, 5386],
+          "zh": ["死绝岂可持身；"],
+          "yi": ["死、绝，怎么可以持身？"],
+          "en": ["Death and Extinction: how can they hold the Body?"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5387, 5387],
+          "zh": ["死绝二爻，临持世身主象者，必不利。", "占人有难，占病无救，占医无效，占事不济。", "变动化入者亦然。"],
+          "yi": ["死、绝两爻，临在、持着世、身、主象上，一定不利。", "占人有灾难，占病没有救，占医没有效，占事不成。", "变动化入的也是这样。"],
+          "en": ["When the Death and Extinction lines sit on or hold the Self, the Body or the principal image, it is sure to be unfavourable.", "In divining a person he is in difficulty, in divining illness there is no rescue, in divining a doctor he is ineffective, an affair does not succeed.", "So too when they are moved or changed into."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1253, 1253],
+          "zh": ["死绝于日辰之爻临持世身用神者，诸占不利，变动化入"],
+          "yi": ["死、绝于日辰的爻，临持世、身、用神的，各种占都不利，变动化入"],
+          "en": ["A line in Death or Extinction by the Day branch that sits on or holds the Self, the Body or the Subject: no divination is favourable, in moving and changing into"] }
+      ],
+      "note": {
+        "yi": "这是「刑害不宜临用」那一联（LY.ILL.HJC.130）的下半句。「死绝」是十二长生里的死、绝两位，不是「死亡」。「占医无效」的「医」是请医生。王洪绪的评语在原书里印到「变动化入」就断了（是原书如此，不是本库截的），所以这里只有半句。「持身」的「身」书里连说「世、身、主象」，「身」应是卦身。",
+        "en": "This is the second half of the couplet 'punishment and harm should not fall on the Subject' (LY.ILL.HJC.130). 'Death and Extinction' are two of the twelve stages of life and not 'death'. The 'doctor' of 'in divining a doctor' is calling in a physician. Wang Hongxu's comment is printed in the book up to 'in moving and changing into' and breaks off (this is how the book is, not cut by this library), so there is only half a sentence here. The 'Body' of 'hold the Body' is, as the text says 'the Self, the Body and the principal image' in a run, the hexagram's Body."
+      },
+      "see": ["LY.ILL.HJC.130", "LY.ILL.HJC.153"]
+    },
+    {
+      "id": "LY.ILL.HJC.156",
+      "topic": "轻重",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·卦遇凶星避之则吉（旧注：凶星是刑冲克害，避之是落空；书中例：六月壬申日占子病得姤之大过，父母旺动用爻无气，喜用爻在空避之，至丙子日愈；王洪绪：凶星即忌神，用爻被月建日辰伤克则无处可避）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「卦里遇到凶星，避开它就吉。」旧注：凶星，就是刑、冲、克、害；避开它，就是六甲空亡；用爻无缘无故自己落空是真空，万事不成；如果被日辰、动爻刑冲克害到用爻而用爻在空，这是避凶而空，就是《金锁玄关》说的「克空为用」，不会坏，只是眼下略有阻碍，过了旬就成。书中例：六月壬申日占儿子的病，得姤变大过，父母旺动、用爻无气，本是凶兆，喜得用爻落在空亡避开了它，果然到丙子日病好了。王洪绪：凶星就是忌神；用爻被月建日辰伤克，不论空伏，无处可避；如果没有月、日伤克、只是遇到忌神发动来伤，用爻值旬空伏藏而不受克，叫做避，等到冲克忌神的日子，凶就自己散了。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'A hexagram that meets an ominous star: avoiding it is auspicious.' The old commentary: an ominous star is punishment, clash, control or harm; avoiding it is the Void of the six jia; a Subject line that falls Void by itself without cause is true Void and nothing succeeds; if the Subject line is punished, clashed, controlled or harmed by the Day or a moving line and is in Void, this is Void to avoid ill, which is what the Jinsuo Xuanguan calls 'Void under control is used', it will not spoil, only for the moment there is some obstruction, and once the cycle has passed it succeeds. A case: on a Renshen day in the sixth month a son's illness was divined and Gou changing to Daguo obtained; the Resource line was strong and moving and the Subject line had no qi, which would be an ominous omen, but fortunately the Subject line was in Void and so avoided it, and indeed on the Bingzi day the illness was cured. Wang Hongxu: an ominous star is the Adversary; when the Subject line is hurt or controlled by the Month or the Day, whether Void or hidden, it cannot be avoided; if there is no hurt from the Month or Day and it is only an Adversary that moves to harm it, then if the Subject line is in the ten-day Void or hidden and does not suffer the control, this is called avoiding, and when the day comes that clashes and controls the Adversary, the ill disperses of itself."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5294, 5294],
+          "zh": ["卦遇凶星，避之则吉；"],
+          "yi": ["卦里遇到凶星，避开它就吉；"],
+          "en": ["If the hexagram meets an ominous star, avoiding it is auspicious;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5295, 5297],
+          "zh": ["凶星，刑冲克害是。", "避之，六甲空亡是。", "夫空之一字，极有玄妙；", "若执真空，便失先天之旨。", "盖百物自空中来，无中生有，还归于空。", "空中不受伤克，反有可成之机。", "如六爻安静，用爻无故自空，此为真空，万事无成。", "若被日辰动爻刑冲克害于用爻，而用爻在空，此为避凶而空。", "《金锁玄关》所谓：克空为用是也。", "即是不坏，但目下略阻，过旬即成。"],
+          "yi": ["凶星，就是刑、冲、克、害。", "避开它，就是六甲空亡。", "一个「空」字，极有玄妙；", "如果死执着真空，就失去了先天的旨意。", "因为万物从空中来，无中生有，又回归于空。", "在空中不受伤克，反而有可以成事的机会。", "比如六爻安静，用爻无缘无故自己落空，这是真空，万事不成。", "如果被日辰、动爻刑冲克害到用爻，而用爻在空，这是避凶而空。", "《金锁玄关》所说的「克空为用」就是这个。", "就是不会坏，只是眼下稍微有些阻碍，过了旬就成。"],
+          "en": ["An ominous star is punishment, clash, control or harm.", "Avoiding it is the Void of the six jia.", "The single word 'void' is profoundly subtle;", "if one clings to true Void, one loses the Former Heaven's meaning.", "For all things come from the void, something arises from nothing, and returns again to the void.", "In the void one is not hurt or controlled, and on the contrary there is a chance for things to succeed.", "For example, with the six lines still, if the Subject line falls Void by itself without cause, it is true Void and nothing succeeds.", "If the Subject line is punished, clashed, controlled or harmed by the Day or a moving line and is in Void, this is Void to avoid ill.", "What the Jinsuo Xuanguan calls 'Void under control is used' is this.", "It is that it will not spoil, only that for the moment there is some obstruction, and once the cycle has passed it succeeds."] },
+        { "by": "书中例", "book": "卜筮大全", "range": [5298, 5298],
+          "zh": ["如六月壬申日，占子病，得姤之大过卦。", "父母旺动，用爻无气，本为凶兆；", "喜得用爻在空避之，果至丙子日愈。", "盖至丙子，则前面已过，又遇用爻帝旺之地，故也。"],
+          "yi": ["如六月壬申日，占儿子的病，得到姤变大过卦。", "父母旺相发动，用爻无气，本来是凶的兆头；", "喜得用爻落在空亡里避开了它，果然到丙子日病好了。", "因为到了丙子日，前面的旬已经过去，又遇到用爻帝旺的地方，所以如此。"],
+          "en": ["For example, on a Renshen day in the sixth month, divining a son's illness, one obtains Gou changing to Daguo.", "The Resource line is strong and moves, and the Subject line has no qi, which would be an ominous omen;", "but fortunately the Subject line is in Void and so avoids it, and indeed on the Bingzi day the illness was cured.", "This is because by the Bingzi day the earlier cycle had passed and the Subject line met its Peak stage."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1225, 1225],
+          "zh": ["凶星即是忌神。", "凡用爻被月建日辰伤克，不论空伏，始终受制，无处可避。", "如无月日伤克，独遇卦爻中忌神发动来伤，若用爻值旬空伏藏不受其克，谓之避，待冲克忌神之日，其凶自散也。", "如用爻出现不空便受其毒，难免其伤也，故曰：“避之则吉”。"],
+          "yi": ["凶星就是忌神。", "凡是用爻被月建、日辰伤克，不论空还是伏，始终受制，无处可避。", "如果没有月、日伤克，只是遇到卦爻中的忌神发动来伤，如果用爻值旬空、伏藏而不受它的克，叫做避，等到冲克忌神的日子，它的凶就自己散了。", "如果用爻出现、不空，就受到它的毒害，难免被伤，所以说「避之则吉」。"],
+          "en": ["An ominous star is the Adversary.", "Whenever the Subject line is hurt or controlled by the Month or the Day, whether it is Void or hidden it is always held, and there is nowhere to avoid it.", "If there is no hurt or control from the Month or Day and it is only that an Adversary in the hexagram moves to harm it, then if the Subject line is in the ten-day Void or hidden and does not suffer its control, this is called avoiding, and when the day comes that clashes and controls the Adversary, its ill disperses of itself.", "If the Subject line appears and is not Void, it suffers its poison and cannot escape harm, and so it is said 'avoiding it is auspicious'."] }
+      ],
+      "dispute": {
+        "yi": "「凶星」是什么、怎么才算「避」，旧注和王洪绪的说法不同。旧注：凶星是刑冲克害，避就是落空亡；用爻被日辰、动爻刑冲克害而在空，就是避凶（「克空为用」）。王洪绪：凶星就是忌神；用爻被月建日辰伤克的，不论空伏，始终受制，无处可避；只有没有月日伤克、单被卦中忌神发动来伤的，用爻值旬空或伏藏，才叫避。旧注认为被日辰刑冲克害的用爻落空也是避，王洪绪认为被月建日辰克伤的就避不了。书里没有裁决。",
+        "en": "The old commentary and Wang Hongxu differ on what the 'ominous star' is and what counts as 'avoiding'. The old commentary: the ominous star is punishment, clash, control and harm, and avoiding is falling into Void; a Subject line punished, clashed, controlled or harmed by the Day or a moving line and in Void is avoiding ill ('Void under control is used'). Wang Hongxu: the ominous star is the Adversary; a Subject line hurt or controlled by the Month or the Day, whether Void or hidden, is always held and cannot avoid it; only when there is no hurt from the Month and Day and it is solely an Adversary in the hexagram moving to harm it, and the Subject line is in the ten-day Void or hidden, is it called avoiding. The old commentary takes a Subject line punished, clashed, controlled or harmed by the Day to avoid it by falling Void, while Wang Hongxu holds that one hurt or controlled by the Month and Day cannot avoid it. The books do not decide."
+      },
+      "note": {
+        "yi": "书中例是旧注举的占病例子：壬申日在甲午旬（甲午、乙未、丙申、丁酉、戊戌、己亥、庚子、辛丑、壬寅……），原文没有写这个旬；「用爻无气」又落在空亡里避开了父母的克，所以「至丙子日愈」，旧注解释说丙子日时前面的旬已过、又遇用爻帝旺（帝旺是十二长生里最旺的一位）。「六甲」是六个甲（甲子、甲戌……）管的六个旬，「六甲空亡」就是旬空。「金锁玄关」是旧注引的另一部书。「先天」指易的本来道理。这条的主旨是「空」可以是避凶，所以和 LY.ILL.HJC.151（无故勿空）互相对照：同一部总断千金赋里，自己落空的用爻旧注断凶，被克伤而落空的又断为避。",
+        "en": "The case is an illness example the old commentary gives: the Renshen day is in a ten-day cycle that begins at Jiawu (Jiawu, Yiwei, Bingshen, Dingyou, Wuxu, Jihai, Gengzi, Xinchou, Renyin ...), which the text does not state; the Subject line 'has no qi' and falls Void and so avoids the control of the Resource line, hence 'on the Bingzi day it was cured', and the old commentary explains that by the Bingzi day the earlier cycle had passed and the Subject line met its Peak (Peak is the strongest of the twelve stages of life). 'The six jia' are the six ten-day cycles governed by the six jia (Jiazi, Jiaxu and so on), and 'the Void of the six jia' is the ten-day Void. The 'Jinsuo Xuanguan' is another book that the old commentary cites. 'The Former Heaven' means the original principle of the Changes. The point of the entry is that Void can be avoiding ill, and so it is set against LY.ILL.HJC.151 (wu gu wu kong): in the same rhapsody the old commentary judges a Subject line that falls Void by itself ominous, and one hurt and then falling Void to be avoiding."
+      },
+      "see": ["LY.ILL.HJC.151", "LY.ILL.HJC.152", "LY.ILL.EL.11", "LY.ILL.ZS.04"]
+    }
+  ]
+}

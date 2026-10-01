@@ -42,11 +42,12 @@ aliases:
 ^q1
 
 > [!note] 按
-> 「四般」指前两句点名的四样：三丘、五墓、飞帘、浴盆。三丘五墓在断易天机里有按季节的取法（春丑、夏辰、秋未、冬戌是三丘，五墓从对宫取，LY.ILL.DYTJ.31），卜筮全书的神煞歌例里也有（LY.ILL.BSQS.52）。「飞帘」「浴盆」这里只点了名，没有给位置；周易尚占的神煞表里也有浴盆一栏，那一部还没有整理。
+> 「四般」指前两句点名的四样：三丘、五墓、飞帘、浴盆。三丘五墓在断易天机里有按季节的取法（春丑、夏辰、秋未、冬戌是三丘，五墓从对宫取，LY.ILL.DYTJ.31），卜筮全书的神煞歌例里也有（LY.ILL.BSQS.52）。「飞帘」「浴盆」这里只点了名，没有给位置；周易尚占的神杀例给了浴盆的位置（春辰夏未秋戌冬丑，LY.ILL.ZSZ.01）。
 >
-> *Note:* 'The four kinds' are the four named in the first two lines: the Three Mounds, the Five Tombs, the Flying Curtain and the Bathing Basin. The Duanyi Tianji gives a seasonal way of finding the Three Mounds and Five Tombs (Chou in spring, Chen in summer, Wei in autumn and Xu in winter are the Three Mounds, and the Five Tombs are taken from the opposite palace, LY.ILL.DYTJ.31), and the verses on spirit-stars in the Bushi Quanshu have them as well (LY.ILL.BSQS.52). The Flying Curtain and the Bathing Basin are only named here without positions; the table of spirit-stars in the Zhouyi Shangzhan also has a column for the Bathing Basin, and that book has not yet been worked through.
+> *Note:* 'The four kinds' are the four named in the first two lines: the Three Mounds, the Five Tombs, the Flying Curtain and the Bathing Basin. The Duanyi Tianji gives a seasonal way of finding the Three Mounds and Five Tombs (Chou in spring, Chen in summer, Wei in autumn and Xu in winter are the Three Mounds, and the Five Tombs are taken from the opposite palace, LY.ILL.DYTJ.31), and the verses on spirit-stars in the Bushi Quanshu have them as well (LY.ILL.BSQS.52). The Flying Curtain and the Bathing Basin are only named here without positions; the Zhouyi Shangzhan's table of spirit-stars gives the positions of the Bathing Basin (Chen in spring, Wei in summer, Xu in autumn, Chou in winter, LY.ILL.ZSZ.01).
 
 ## 相关
 
 - [[LY.ILL.DYTJ.31 三丘五墓杀：春丑夏辰秋未冬戌为三丘、却与五墓对宫取，病人作福也难留；此占病忌，或有吉神解救方免|LY.ILL.DYTJ.31 三丘五墓杀：春丑夏辰秋未冬戌为三丘、却与五墓对宫取，病人作福也难留；此占病忌，或有吉神解救方免]]
 - [[LY.ILL.DYTJ.32 丧车杀：丧车春鸡夏鼠秋马冬羊、人来占病断兴去、讨钱火急买棺材|LY.ILL.DYTJ.32 丧车杀：丧车春鸡夏鼠秋马冬羊、人来占病断兴去、讨钱火急买棺材]]
+- [[LY.ILL.ZSZ.01 四时吉凶神杀例·占病要忌的三个煞：五墓(春未夏戌秋丑冬辰)发动持凶；浴盆(春辰夏未秋戌冬丑)临水神水爻并凶；三丘(春丑夏辰秋未冬…|LY.ILL.ZSZ.01 四时吉凶神杀例·占病要忌的三个煞：五墓(春未夏戌秋丑冬辰)发动持凶；浴盆(春辰夏未秋戌冬丑)临水神水爻并凶；三丘(春丑夏辰秋未冬戌)发动兄鬼主死]]

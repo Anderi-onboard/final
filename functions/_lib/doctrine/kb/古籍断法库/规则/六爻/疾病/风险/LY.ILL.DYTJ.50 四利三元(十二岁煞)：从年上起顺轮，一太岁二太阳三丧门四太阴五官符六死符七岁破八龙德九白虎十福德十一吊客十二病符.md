@@ -37,21 +37,21 @@ aliases:
 > [!quote]+ [[断易天机]] 第 358 行 · Duanyi Tianji (Heavenly Secrets of Judging the Changes), "Section 31: Four Gains and Three Origins", base text
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
-> | 一太岁， | 第一位是太岁, | the first is Tai Sui, |
-> | 二太阳， | 第二位是太阳, | the second is Great Yang, |
-> | 三丧门， | 第三位是丧门, | the third is the Mourning Gate, |
-> | 四太阴， | 第四位是太阴, | the fourth is Great Yin, |
-> | 五官苻， | 第五位是官符, | the fifth is the Official Tally, |
-> | 六死苻， | 第六位是死符, | the sixth is the Death Tally, |
-> | 七岁破， | 第七位是岁破, | the seventh is the Year-break, |
-> | 八龙德， | 第八位是龙德, | the eighth is Dragon Virtue, |
-> | 九白虎， | 第九位是白虎, | the ninth is the White Tiger, |
-> | 十福德， | 第十位是福德, | the tenth is Fortune Virtue, |
-> | 十一吊客， | 第十一位是吊客, | the eleventh is the Guest of Condolence, |
+> | 一太岁， | 第一位是太岁， | the first is Tai Sui, |
+> | 二太阳， | 第二位是太阳， | the second is Great Yang, |
+> | 三丧门， | 第三位是丧门， | the third is the Mourning Gate, |
+> | 四太阴， | 第四位是太阴， | the fourth is Great Yin, |
+> | 五官苻， | 第五位是官符， | the fifth is the Official Tally, |
+> | 六死苻， | 第六位是死符， | the sixth is the Death Tally, |
+> | 七岁破， | 第七位是岁破， | the seventh is the Year-break, |
+> | 八龙德， | 第八位是龙德， | the eighth is Dragon Virtue, |
+> | 九白虎， | 第九位是白虎， | the ninth is the White Tiger, |
+> | 十福德， | 第十位是福德， | the tenth is Fortune Virtue, |
+> | 十一吊客， | 第十一位是吊客， | the eleventh is the Guest of Condolence, |
 > | 十二病苻。 | 第十二位是病符。 | the twelfth is the Sickness Tally. |
-> | 从年上起， | 从年上起, | It starts from the year |
+> | 从年上起， | 从年上起， | It starts from the year |
 > | 顺轮。 | 顺着轮。 | and goes round forward. |
-> | （见天玄赋家宅类。） | (参见天玄赋家宅一类。) | (See the household section of the Tianxuan Fu.) |
+> | （见天玄赋家宅类。） | （参见天玄赋家宅一类。） | (See the household section of the Tianxuan Fu.) |
 
 ^q1
 
@@ -70,3 +70,4 @@ aliases:
 - [[LY.ILL.DYTJ.35 神煞月令表·凶神(病)：岁杀病有官灾凶、飞杀卒病、阴杀阴谋病患、小杀小儿疾患、天杀疾病困厄同丧杀断、地杀疾病凶、天阴女人疾病…|LY.ILL.DYTJ.35 神煞月令表·凶神(病)：岁杀病有官灾凶、飞杀卒病、阴杀阴谋病患、小杀小儿疾患、天杀疾病困厄同丧杀断、地杀疾病凶、天阴女人疾病凶、大月时行疾病凶]]
 - [[LY.ILL.DYTJ.36 神煞月令表·凶神(死与瘟病)：事气病必死丧凶、吊客病死忧疾凶、哭杀时行瘟病凶|LY.ILL.DYTJ.36 神煞月令表·凶神(死与瘟病)：事气病必死丧凶、吊客病死忧疾凶、哭杀时行瘟病凶]]
 - [[LY.ILL.BSQS.51 神煞歌例·岁前神煞：从太岁起顺轮十二位，三丧门主孝服、六死符、十一天狗吊客、十二病符切莫逢|LY.ILL.BSQS.51 神煞歌例·岁前神煞：从太岁起顺轮十二位，三丧门主孝服、六死符、十一天狗吊客、十二病符切莫逢]]
+- [[LY.ILL.HJC.127 家宅章·丧门加白虎，须忧疾病丧亡（旧注：丧门、白虎谓之四利三元，乃凶神，此爻动则病患连绵、丧亡叠至）|LY.ILL.HJC.127 家宅章·丧门加白虎，须忧疾病丧亡（旧注：丧门、白虎谓之四利三元，乃凶神，此爻动则病患连绵、丧亡叠至）]]

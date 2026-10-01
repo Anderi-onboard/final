@@ -1,0 +1,262 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "文王金钱课",
+  "chapter": "六十四卦",
+  "chapter_en": "The Sixty-Four Hexagram Readings",
+  "ranges": {"文王金钱课": [34, 335]},
+  "units": [
+    {
+      "id": "LY.ILL.WWJQ.01",
+      "topic": "医药",
+      "chapter": "用神",
+      "chapter_en": "The Table of the Subject",
+      "title": "用神表·占医生、药物用子孙作用神：子孙即是福德之神，诸事见之为吉，占功名、词讼忌之",
+      "rule": {
+        "yi": "文王金钱课的用神表说：占儿女、女婿、外甥、门徒、忠臣、医生、药物、僧道（原文写作「曾道」）、兵将、六畜、禽鸟，凡是占小辈的，都用子孙作用神；子孙就是福德之神，诸事见到它都吉利，只有占功名、词讼忌讳它。",
+        "en": "The table of the Subject in the Wenwang Jinqian Ke says: in divining children, a son-in-law, a sister's son, disciples, loyal ministers, doctors, medicines, monks and Daoists (written 'zeng dao' in the original), soldiers and officers, livestock and birds, and in general in divining those of the younger generation, use Output as the Subject; Output is the spirit of fortune and virtue and is auspicious to meet in everything, and is only feared in divining fame and rank and lawsuits."
+      },
+      "quotes": [
+        { "by": "经", "book": "文王金钱课", "range": [34, 34], "chapter": "用神", "chapter_en": "The Table of the Subject",
+          "zh": ["占儿女、女婿、外甥、门徒、忠臣、医生、药物、曾道、兵将、六畜、禽鸟、凡占小辈使用子孙作用神。", "（子孙即是福德之神，", "诸事见之为吉。", "占功名、词讼忌之。）"],
+          "yi": ["占儿女、女婿、外甥、门徒、忠臣、医生、药物、僧道、兵将、六畜、禽鸟，凡是占小辈的，都用子孙作用神。", "（子孙就是福德之神，", "诸事见到它都吉利。", "占功名、词讼忌讳它。）"],
+          "en": ["In divining children, a son-in-law, a sister's son, disciples, loyal ministers, doctors, medicines, monks and Daoists, soldiers and officers, livestock and birds, and in general in divining those of the younger generation, use Output as the Subject.", "(Output is the spirit of fortune and virtue,", "and it is auspicious to meet in everything.", "In divining fame and rank and lawsuits it is feared.)"] }
+      ],
+      "note": {
+        "yi": "这一行只管一件事：占医生、药物，用子孙当用神。「子孙为医药」在别的书里也是通例（阐奥歌章 LY.ILL.CA.08、天玄赋 LY.ILL.TXF.12、易林补遗 LY.ILL.EL.26、易隐 LY.ILL.YY.21），这里是用神表里的一项。「曾道」应是「僧道」的误写（「曾」「僧」同音），原文如此，译文按「僧道」译。这一部书的用神表里没有「占病」一项，占病该用什么爻，这部书没有说。括号里「子孙即是福德之神……」是这部书自己的小注。",
+        "en": "This line is about one thing only: in divining doctors and medicines, Output is the Subject. 'Output is the medicine' is also a general rule in other books (the Chan'ao Gezhang LY.ILL.CA.08, the Tianxuan Fu LY.ILL.TXF.12, the Yilin Buyi LY.ILL.EL.26, the Yi Yin LY.ILL.YY.21), and here it is one item of the table of the Subject. The 'zeng dao' is probably a miswriting of 'monks and Daoists' (the two characters 'zeng' and 'monk' sound alike), as in the original, and the translation reads 'monks and Daoists'. The table of the Subject in this book has no entry for 'divining illness', and the book does not say which line to use for illness. The bracketed 'Output is the spirit of fortune and virtue ...' is the book's own small note."
+      },
+      "see": ["LY.ILL.CA.08", "LY.ILL.TXF.12", "LY.ILL.EL.26", "LY.ILL.YY.21", "LY.ILL.WWJQ.02", "LY.ILL.HDY.13"]
+    },
+    {
+      "id": "LY.ILL.WWJQ.02",
+      "topic": "神祟",
+      "chapter": "用神",
+      "chapter_en": "The Table of the Subject",
+      "title": "用神表·占邪崇、雷霆、鬼神用官鬼爻作用神",
+      "rule": {
+        "yi": "文王金钱课的用神表说：占官、官府、功名、（妻占父）、乱臣、贼盗、邪崇、雷霆、鬼神、词讼，凡是以上这些，都用官鬼爻作用神。",
+        "en": "The table of the Subject in the Wenwang Jinqian Ke says: in divining officials, the authorities, fame and rank, (a wife divining the father), rebellious ministers, thieves and robbers, evil curses, thunder, ghosts and spirits, and lawsuits, in all of these use the Pressure line as the Subject."
+      },
+      "quotes": [
+        { "by": "经", "book": "文王金钱课", "range": [36, 36], "chapter": "用神", "chapter_en": "The Table of the Subject",
+          "zh": ["占官、官府、功名、妻占父、乱臣、贼盗、邪崇、雷霆、鬼神、词讼、凡以上俱官鬼爻为用神。"],
+          "yi": ["占官、官府、功名、（妻占父）、乱臣、贼盗、邪崇、雷霆、鬼神、词讼，凡是以上这些，都用官鬼爻作用神。"],
+          "en": ["In divining officials, the authorities, fame and rank, a wife divining the father, rebellious ministers, thieves and robbers, evil curses, thunder, ghosts and spirits, and lawsuits, in all of the above use the Pressure line as the Subject."] }
+      ],
+      "note": {
+        "yi": "这一行列了官鬼爻作用神的各件事，「邪崇」「雷霆」「鬼神」就是占病时的「鬼」：疾病由什么鬼神作祟，在别的书里也是看官鬼（LY.ILL.BSYG.01、LY.ILL.EL.29）。「妻占父」按上下文应是「妻占夫」（妻占丈夫以官鬼为用神），原文如此，译文照字面。「崇」是「祟」的写法，按「curse」译。",
+        "en": "This line lists the matters for which the Pressure line is the Subject, and 'evil curses', 'thunder' and 'ghosts and spirits' are the 'ghost' of divining illness: what ghost or spirit afflicts an illness is also read from Pressure in other books (LY.ILL.BSYG.01, LY.ILL.EL.29). 'A wife divining the father' should from the context be 'a wife divining the husband' (a wife divining her husband takes Pressure as the Subject), as in the original, and the translation is literal. The character for 'curse' is written in its variant form, and is rendered 'curse'."
+      },
+      "see": ["LY.ILL.BSYG.01", "LY.ILL.EL.29", "LY.ILL.WWJQ.01"]
+    },
+    {
+      "id": "LY.ILL.WWJQ.03",
+      "topic": "生死",
+      "chapter": "六十四卦",
+      "chapter_en": "The Sixty-Four Hexagram Readings",
+      "title": "六十四卦课·占病逢乾、姤、观、节、革、丰、师、大畜、履、渐：病人痊愈、占病无妨、占病即愈、疾病皆除、疾病渐好、疾病大好、官司疾病皆无妨",
+      "rule": {
+        "yi": "文王金钱课的六十四卦课（原有的二十六卦）里，这十个卦的断辞说病会好：乾「病人痊愈」，姤「占病无妨」，观「占病即愈、疾病皆除」，节「疾病口舌消除安」，革「官司疾病皆无妨」，丰「疾病渐好」，师「疾病大好」，大畜「疾病口舌渐渐磨」，履「疾病皆除」，渐「官司疾病俱无妨」。",
+        "en": "In the sixty-four hexagram readings of the Wenwang Jinqian Ke (the twenty-six that the book originally has), the verdicts of these ten hexagrams say that the illness will mend: Qian, 'the sick are cured'; Gou, 'divining illness: no harm'; Guan, 'divining illness: cured at once, all illness removed'; Jie, 'illness and quarrels are cleared and peace comes'; Ge, 'lawsuit and illness are both without harm'; Feng, 'illness gradually mends'; Shi, 'illness mends greatly'; Daxu, 'illness and quarrels are gradually worn away'; Lü, 'all illness is removed'; Jian, 'lawsuit and illness are both without harm'."
+      },
+      "quotes": [
+        { "by": "经", "book": "文王金钱课", "range": [54, 54], "chapter": "乾为天（困龙得水）", "chapter_en": "Qian as Heaven (the Trapped Dragon Gets Water)",
+          "zh": ["断曰：", "词讼和吉，", "病人痊愈，", "功名有成，", "求谋大吉。"],
+          "yi": ["断语说：", "官司和解，吉利，", "病人痊愈，", "功名有成，", "求取谋划大吉。"],
+          "en": ["The verdict says:", "lawsuits are reconciled, auspicious,", "the sick are cured,", "fame and rank are achieved,", "seeking and scheming are greatly auspicious."] },
+        { "by": "经", "book": "文王金钱课", "range": [61, 61], "chapter": "天风垢（地乡遇友）", "chapter_en": "Heaven over Wind, written Gou (Meeting a Friend in a Strange Land)",
+          "zh": ["断曰：", "功名有成，", "家宅平安，", "失物得见，", "占病无妨。"],
+          "yi": ["断语说：", "功名有成，", "家宅平安，", "失物能找到，", "占病没有妨碍。"],
+          "en": ["The verdict says:", "fame and rank are achieved,", "the household is at peace,", "lost things are found,", "divining illness: no harm."] },
+        { "by": "经", "book": "文王金钱课", "range": [81, 82], "chapter": "风地观（旱蓬逢河）", "chapter_en": "Wind over Earth, Guan (the Dry Tumbleweed Meets a River)",
+          "zh": ["诗曰：", "走失得见，", "口舌消散，", "疾病皆除，", "月令真善。", "断曰：", "占讼得理，", "占病即愈，", "占信得见，", "谋事得意。"],
+          "yi": ["诗里说：", "失物能找到，", "口舌是非消散，", "疾病全都除去，", "月令实在好。", "断语说：", "占官司，得理，", "占病，马上痊愈，", "占消息，能得到消息，", "谋划事情得意。"],
+          "en": ["The poem says:", "lost things are found,", "quarrels disperse,", "all illness is removed,", "the Month is truly good.", "The verdict says:", "divining a lawsuit: one is in the right,", "divining illness: cured at once,", "divining news: news is received,", "plans meet with success."] },
+        { "by": "经", "book": "文王金钱课", "range": [116, 116], "chapter": "水泽节（斩将封神）", "chapter_en": "Water over Marsh, Jie (Killing the Generals and Conferring Divinity)",
+          "zh": ["诗曰：", "太公封神不非凡，", "谋望求财稳如山，", "交易和课大吉庆，", "疾病口舌消除安。"],
+          "yi": ["诗里说：", "姜太公封神，不是寻常事，", "谋划求财，稳如山，", "交易、合伙大吉大庆，", "疾病、口舌消除而得安。"],
+          "en": ["The poem says:", "the Grand Duke confers divinity: no ordinary thing,", "plans and the seeking of wealth are steady as a mountain,", "trade and partnership are greatly auspicious and festive,", "illness and quarrels are cleared and peace comes."] },
+        { "by": "经", "book": "文王金钱课", "range": [137, 137], "chapter": "泽火革（旱苗得雨）", "chapter_en": "Marsh over Fire, Ge (Parched Seedlings Get Rain)",
+          "zh": ["诗曰：", "旱苗得雨芪堂堂，", "交易求财也相当，", "婚姻和课皆如意，", "官司疾病皆无妨。"],
+          "yi": ["诗里说：", "旱苗得了雨，长得堂堂正正，", "交易、求财也相称，", "婚姻、合伙都如意，", "官司、疾病都没有妨碍。"],
+          "en": ["The poem says:", "parched seedlings get rain and stand tall and stately,", "trade and the seeking of wealth are also fitting,", "marriage and partnership are both as wished,", "lawsuit and illness are both without harm."] },
+        { "by": "经", "book": "文王金钱课", "range": [145, 145], "chapter": "雷火丰（古镜重明）", "chapter_en": "Thunder over Fire, Feng (the Old Mirror Bright Again)",
+          "zh": ["断曰：", "出行有益，", "交易得魁，", "疾病渐好，", "求名必遂。"],
+          "yi": ["断语说：", "出行有益，", "交易拔得头筹，", "疾病渐渐好转，", "求名必定如愿。"],
+          "en": ["The verdict says:", "travel brings gain,", "trade takes first place,", "illness gradually mends,", "seeking fame will surely be achieved."] },
+        { "by": "经", "book": "文王金钱课", "range": [159, 159], "chapter": "地水师（马到成功）", "chapter_en": "Earth over Water, Shi (Success on the Horse's Arrival)",
+          "zh": ["断曰：", "疾病大好，", "走失能找，", "行人来信，", "百般凑巧。"],
+          "yi": ["断语说：", "疾病大为好转，", "走失的能找回，", "出门的人来信，", "样样都凑得巧。"],
+          "en": ["The verdict says:", "illness mends greatly,", "what was lost can be found,", "the traveller sends word,", "all things fall out luckily."] },
+        { "by": "经", "book": "文王金钱课", "range": [179, 179], "chapter": "山天大畜（阵势得开）", "chapter_en": "Mountain over Heaven, Daxu (the Battle Formation Opened)",
+          "zh": ["诗曰：", "此卦占之带六合，", "疾病口舌渐渐磨，", "婚姻和课皆如意，", "谋望求财无差错。"],
+          "yi": ["诗里说：", "占到这一卦，带着六合，", "疾病、口舌慢慢磨掉，", "婚姻、合伙都如意，", "谋划求财没有差错。"],
+          "en": ["The poem says:", "divining this hexagram, it carries the six combinations,", "illness and quarrels are gradually worn away,", "marriage and partnership are both as wished,", "plans and the seeking of wealth have no error."] },
+        { "by": "经", "book": "文王金钱课", "range": [201, 201], "chapter": "天泽覆（风鸣歧山）", "chapter_en": "Heaven over Marsh, written Fu for Lü (the Wind Cries on Mount Qi)",
+          "zh": ["断曰：", "出行有益，", "求财必准，", "疾病皆除，", "诸事平稳。"],
+          "yi": ["断语说：", "出行有益，", "求财一定有准，", "疾病全都除去，", "各样事情平稳。"],
+          "en": ["The verdict says:", "travel brings gain,", "the seeking of wealth is sure,", "all illness is removed,", "all affairs are steady."] },
+        { "by": "经", "book": "文王金钱课", "range": [214, 214], "chapter": "风山渐（骏马出笼）", "chapter_en": "Wind over Mountain, Jian (the Fine Horse Out of the Stable)",
+          "zh": ["诗曰：", "骏马出笼万里程，", "交易出行大吉昌，", "寻人费力逃难好，", "官司疾病俱无妨。"],
+          "yi": ["诗里说：", "骏马出了笼，走万里路程，", "交易、出行大吉大昌，", "找人费力，逃难倒好，", "官司、疾病都没有妨碍。"],
+          "en": ["The poem says:", "the fine horse leaves the stable for a journey of ten thousand li,", "trade and travel are greatly auspicious and prosperous,", "finding someone takes effort, fleeing calamity is good,", "lawsuit and illness are both without harm."] }
+      ],
+      "dispute": {
+        "yi": "文王金钱课和周易尚占（LY.ILL.ZSZ.02 至 ZSZ.06）都是按卦名断病，可是同一个卦两本说的，有四个相反或相左：姤，周易尚占说「病者难安」，这里说「占病无妨」；丰，周易尚占说「病人沉滞」，这里说「疾病渐好」；师，周易尚占说「病人迟瘥」，这里说「疾病大好」；履，周易尚占说「弗占疾病」，这里说「疾病皆除」。乾、观、革、渐、大畜这五个两本一致说病会好；节，周易尚占没有讲病。另一方面，观、大畜在别的书的占病凶卦名单里（LY.ILL.CA.03、DYTJ.15、TXF.06 等），观卦两本都说病好，正好和那些名单相反（见 LY.ILL.ZSZ.02）。书里没有裁决。",
+        "en": "The Wenwang Jinqian Ke and the Zhouyi Shangzhan (LY.ILL.ZSZ.02 to ZSZ.06) both judge illness by the name of the hexagram, but for the same hexagram the two say things that are opposed or at odds in four cases: Gou, the Zhouyi Shangzhan says 'the sick will find it hard to be at peace' while here it says 'divining illness: no harm'; Feng, the Zhouyi Shangzhan says 'the sick one is weighed down and lingering' while here 'illness gradually mends'; Shi, the Zhouyi Shangzhan says 'the sick recover late' while here 'illness mends greatly'; Lü, the Zhouyi Shangzhan says 'do not divine illness' while here 'all illness is removed'. Qian, Guan, Ge, Jian and Daxu are five in which the two agree that the illness will mend; for Jie the Zhouyi Shangzhan does not speak of illness. On the other side, Guan and Daxu are in other books' lists of ominous hexagrams for illness (LY.ILL.CA.03, DYTJ.15, TXF.06 and so on), and for Guan both books say the illness mends, exactly against those lists (see LY.ILL.ZSZ.02). The books do not decide."
+      },
+      "note": {
+        "yi": "这部书原文只有二十六卦（乾宫、坎宫、艮宫各八卦，震宫两卦），每卦有「象曰」（七言四句）、「诗曰」（四言四句）、「断曰」（四言四句）三项，讲病的话有的在断曰里，有的在诗曰或象曰里；这里把含病话的那一两行收在一起，每一段的卦名写在引文标签上。每卦的题目是「卦名（课名）」，如「天山 遁（浓云蔽日）」。几处原文的写法：「天风垢」的「垢」是姤的误写，「天泽覆」的「覆」是履的误写，「风鸣歧山」按字面应是「凤鸣岐山」，原文如此，不改。「和课」（革、大畜、节、坎等处）应是「合伙」（补录部分同一位置写作「合伙」），译文按「partnership」译。「旱苗得雨芪堂堂」的「芪」意思不明，译文按上下文读作苗长得挺拔。「交易得魁」的「魁」是第一名。「疾病口舌渐渐磨」的「磨」是磨掉、慢慢消磨。这些卦的断辞每句都是四个字的断语，没有说用神、世应、动变。",
+        "en": "In the original this book has only twenty-six hexagrams (eight each for the Qian, Kan and Gen palaces and two for the Zhen palace), each with three items, 'the image verse' (four lines of seven characters), 'the poem' (four phrases of four characters) and 'the verdict' (four phrases of four characters); the words on illness are in the verdict in some, and in the poem or the image verse in others, and here the one or two lines containing words on illness are taken together, with the name of the hexagram written on each quotation label. The heading of each hexagram is 'name of hexagram (name of reading)', as in 'Heaven over Mountain, Dun (Thick Clouds Hide the Sun)'. For some original spellings: the 'gou' of 'Heaven over Wind, Gou' is a miswriting of Gou, the 'fu' of 'Heaven over Marsh, Fu' is a miswriting of Lü, and 'the Wind Cries on Mount Qi' should literally be 'the Phoenix Cries on Mount Qi'; all are as in the original and are not changed. 'He ke' (in Ge, Daxu, Jie, Kan and elsewhere) should be 'partnership' (the supplemented part writes 'partnership' in the same place), and the translation reads 'partnership'. The 'qi' of 'parched seedlings get rain, qi stately' is not clear in sense, and the translation reads it from the context as the seedlings standing tall. The 'kui' of 'trade takes first place' is the first place. The 'worn away' of 'illness and quarrels are gradually worn away' is rubbed off, slowly ground down. In these hexagrams every sentence of the verdict is a four-character phrase, and nothing is said of the Subject, the Self and Other, or moving lines."
+      },
+      "see": ["LY.ILL.WWJQ.04", "LY.ILL.WWJQ.05", "LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.CA.03", "LY.ILL.DYTJ.15"]
+    },
+    {
+      "id": "LY.ILL.WWJQ.04",
+      "topic": "轻重",
+      "chapter": "六十四卦",
+      "chapter_en": "The Sixty-Four Hexagram Readings",
+      "title": "六十四卦课·占病逢遁、否、坎、屯、睽：占病不安、疾病口舌是牵连、疾病未愈、疾病未好、病不愈",
+      "rule": {
+        "yi": "文王金钱课的六十四卦课（原有的二十六卦）里，这五个卦的断辞说病不好：遁「占病不安」，否「疾病口舌是牵连」，坎「疾病未愈」，屯「疾病未好」，睽「病不愈」。",
+        "en": "In the sixty-four hexagram readings of the Wenwang Jinqian Ke (the twenty-six that the book originally has), the verdicts of these five hexagrams say that the illness does not mend: Dun, 'divining illness: unsettled'; Pi, 'illness and quarrels are entangled with it'; Kan, 'illness is not yet cured'; Zhun, 'illness has not mended'; Kui, 'illness is not cured'."
+      },
+      "quotes": [
+        { "by": "经", "book": "文王金钱课", "range": [68, 68], "chapter": "天山 遁 （浓云蔽日）", "chapter_en": "Heaven over Mountain, Dun (Thick Clouds Hide the Sun)",
+          "zh": ["断曰：", "占病不安，", "讼事见官，", "功名慢成，", "事不遂心。"],
+          "yi": ["断语说：", "占病，不安稳，", "有官司要见官，", "功名慢慢成就，", "事情不能遂心。"],
+          "en": ["The verdict says:", "divining illness: unsettled,", "a lawsuit means going before the officials,", "fame and rank come slowly,", "affairs do not go as the heart wishes."] },
+        { "by": "经", "book": "文王金钱课", "range": [73, 73], "chapter": "天地否（虎落陷坑）", "chapter_en": "Heaven over Earth, Pi (the Tiger Falls into a Pit)",
+          "zh": ["象曰：", "虎落陷坑不堪言，", "进前容易退后难，", "谋望不遂自己便，", "疾病口舌是牵连。"],
+          "yi": ["象辞说：", "老虎落进陷坑，苦得说不出，", "往前进容易，往后退难，", "谋划指望不能如愿，各人自己方便，", "疾病、口舌都有牵连。"],
+          "en": ["The image verse says:", "the tiger falls into a pit, too wretched to tell,", "to go forward is easy, to go back is hard,", "plans and hopes do not come true, each as it suits oneself,", "illness and quarrels are entangled with it."] },
+        { "by": "经", "book": "文王金钱课", "range": [110, 110], "chapter": "坎为水（水底捞月）", "chapter_en": "Kan as Water (Fishing for the Moon in the Water)",
+          "zh": ["断曰：", "求名不遂，", "疾病未愈，", "婚姻无成，", "和课不利。"],
+          "yi": ["断语说：", "求名不能如愿，", "疾病没有痊愈，", "婚姻不成，", "合伙不利。"],
+          "en": ["The verdict says:", "seeking fame is not achieved,", "illness is not yet cured,", "marriage is not made,", "partnership is unfavourable."] },
+        { "by": "经", "book": "文王金钱课", "range": [124, 124], "chapter": "水雷屯（乱丝无头）", "chapter_en": "Water over Thunder, Zhun (Tangled Silk with No End)",
+          "zh": ["断曰：", "疾病未好，", "婚姻不巧，", "口舌琐碎，", "做事颠倒。"],
+          "yi": ["断语说：", "疾病没有好，", "婚姻不凑巧，", "口舌琐碎，", "做事颠三倒四。"],
+          "en": ["The verdict says:", "illness has not mended,", "marriage is unlucky,", "quarrels are petty,", "things are done upside down."] },
+        { "by": "经", "book": "文王金钱课", "range": [194, 194], "chapter": "火泽暌（贩卖猪羊）", "chapter_en": "Fire over Marsh, written Kui (Peddling Pigs and Sheep)",
+          "zh": ["断曰：", "名不利，", "利不全，", "病不愈，", "做事难。"],
+          "yi": ["断语说：", "名不顺利，", "利也不全，", "病不痊愈，", "做事很难。"],
+          "en": ["The verdict says:", "fame is not favoured,", "gain is not whole,", "illness is not cured,", "affairs are hard."] }
+      ],
+      "note": {
+        "yi": "这五个卦的说法都是「没好」「不安」，没有一个说死。否卦的病话在「象曰」里（「疾病口舌是牵连」），别的四卦在「断曰」里；「是牵连」是和病有牵扯的意思，书里没有说是病拖着还是病又牵出别的事，译文照字面。遁、坎、睽三卦周易尚占也说病不好（「病者迁延」「孕病皆凶」「问病有惊」，LY.ILL.ZSZ.04、ZSZ.05），两本一致。关于「和课」「垢」等写法，见 LY.ILL.WWJQ.03 的说明。",
+        "en": "The wording for all five hexagrams is 'not mended' or 'unsettled', and none speaks of death. The words on illness in Pi are in the image verse ('illness and quarrels are entangled with it'), and in the other four in the verdict; 'entangled with it' means that illness is involved, and the book does not say whether the illness drags on or draws other matters after it, and the translation is literal. For Dun, Kan and Kui the Zhouyi Shangzhan also says that the illness does not mend ('the sick one drags on', 'pregnancy and illness are both ominous', 'asking about illness: there is a fright', LY.ILL.ZSZ.04, ZSZ.05), so the two books agree. For the spellings 'he ke', 'gou' and so on, see the notes of LY.ILL.WWJQ.03."
+      },
+      "see": ["LY.ILL.WWJQ.03", "LY.ILL.WWJQ.05", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05"]
+    },
+    {
+      "id": "LY.ILL.WWJQ.05",
+      "topic": "生死",
+      "chapter": "补录·六十四卦",
+      "chapter_en": "Supplement: The Sixty-Four Hexagram Readings",
+      "title": "【补录】六十四卦课·占病逢解、恒、升、随、巽、小畜、颐、离、坤、临、大壮、夬、兑、萃、咸：疾病大好、有病就好、疾病口舌皆除根、疾病痊愈、灾消病散、疾病即痊、疾病安宁",
+      "rule": {
+        "yi": "文王金钱课文末补录的网上传本里，这十六个卦的卦辞或推断说病会好：解「疾病大好」，恒「有病就好」，升「疾病口舌皆除根」，随「疾病口舌保平安」，巽「疾病痊愈」，小畜「疾病口舌，交节安宁」，颐「疾病口舌可离身」，离「灾消病散」，坤「疾病见好」，临「疾病即痊」，大壮「疾病皆除」，夬「疾病除根」，兑「疾病痊愈」，萃「口舌疾病永无灾」，咸「疾病安宁」。",
+        "en": "In the internet copy that the library appended at the end of the Wenwang Jinqian Ke, the hexagram verse or judgment of these fifteen hexagrams says that the illness will mend: Xie, 'illness mends greatly'; Heng, 'if there is illness, it mends'; Sheng, 'illness and quarrels are all uprooted'; Sui, 'illness and quarrels are kept safe and peaceful'; Xun, 'illness is cured'; Xiaoxu, 'illness and quarrels: after the turn of the season, peace'; Yi (Nourishment), 'illness and quarrels can leave the body'; Li, 'calamity vanishes and illness disperses'; Kun, 'illness shows improvement'; Lin, 'illness is cured at once'; Dazhuang, 'all illness is removed'; Guai, 'illness is uprooted'; Dui, 'illness is cured'; Cui, 'quarrels and illness bring no calamity ever'; Xian, 'illness is at ease'."
+      },
+      "quotes": [
+        { "by": "经", "book": "文王金钱课", "range": [236, 237], "chapter": "【补录】雷水解", "chapter_en": "[Supplement] Thunder over Water, Xie",
+          "zh": ["卦辞：", "五关脱难运抬头，", "劝君须当把财求。", "交易出行有人助，", "疾病口舌不用愁。", "推断：", "疾病大好，", "行人来早，", "谋望成全，", "诸般凑巧。"],
+          "yi": ["卦辞说：", "过五关脱了难，运气抬头，", "劝你应当去求财。", "交易、出行有人帮助，", "疾病、口舌不用发愁。", "推断说：", "疾病大为好转，", "出门的人来得早，", "谋划指望得以成全，", "各样都凑巧。"],
+          "en": ["The hexagram verse says:", "passing the five gates and escaping hardship, fortune lifts its head,", "I urge you to go and seek wealth.", "trade and travel have someone's help,", "illness and quarrels need not worry you.", "The judgment says:", "illness mends greatly,", "the traveller comes early,", "plans and hopes are fulfilled,", "all things fall out luckily."] },
+        { "by": "经", "book": "文王金钱课", "range": [240, 240], "chapter": "【补录】雷风恒", "chapter_en": "[Supplement] Thunder over Wind, Heng",
+          "zh": ["推断：", "出行凑巧，", "有病就好，", "虽有口舌，", "自然消了。"],
+          "yi": ["推断说：", "出行凑巧，", "有病就会好，", "虽然有口舌，", "自然就消掉了。"],
+          "en": ["The judgment says:", "travel falls out luckily,", "if there is illness, it mends,", "though there are quarrels,", "they vanish of themselves."] },
+        { "by": "经", "book": "文王金钱课", "range": [242, 242], "chapter": "【补录】地风升", "chapter_en": "[Supplement] Earth over Wind, Sheng",
+          "zh": ["卦辞：", "指日离升气象新，", "走失行人有音信。", "功名出行遂心好，", "疾病口舌皆除根。"],
+          "yi": ["卦辞说：", "指日离开、上升，气象一新，", "走失的、出门的人有音信。", "功名、出行遂心而好，", "疾病、口舌都除了根。"],
+          "en": ["The hexagram verse says:", "soon to leave and rise, the air is new,", "what was lost and the traveller send word.", "fame and travel go well to one's heart,", "illness and quarrels are all uprooted."] },
+        { "by": "经", "book": "文王金钱课", "range": [251, 251], "chapter": "【补录】泽雷随", "chapter_en": "[Supplement] Marsh over Thunder, Sui",
+          "zh": ["卦辞：", "推车靠堰道路干，", "谋望求财不费难。", "婚姻出行无阻隔，", "疾病口舌保平安。"],
+          "yi": ["卦辞说：", "推车靠着堰，道路是干的，", "谋划求财不费难。", "婚姻、出行没有阻隔，", "疾病、口舌保平安。"],
+          "en": ["The hexagram verse says:", "pushing a cart by the weir, the road is dry,", "plans and the seeking of wealth are not hard.", "marriage and travel have no obstruction,", "illness and quarrels are kept safe and peaceful."] },
+        { "by": "经", "book": "文王金钱课", "range": [255, 255], "chapter": "【补录】巽为风", "chapter_en": "[Supplement] Xun as Wind",
+          "zh": ["推断：", "功名称意，", "求财得利，", "交易可成，", "疾病痊愈。"],
+          "yi": ["推断说：", "功名称心如意，", "求财得利，", "交易能成，", "疾病会痊愈。"],
+          "en": ["The judgment says:", "fame and rank please,", "the seeking of wealth gains profit,", "trade can be made,", "illness is cured."] },
+        { "by": "经", "book": "文王金钱课", "range": [258, 258], "chapter": "【补录】风天小畜", "chapter_en": "[Supplement] Wind over Heaven, Xiaoxu",
+          "zh": ["推断：", "月令中平，", "忍耐从容，", "疾病口舌，", "交节安宁。"],
+          "yi": ["推断说：", "月令中等平常，", "忍耐、从容，", "疾病、口舌，", "过了节气就安宁。"],
+          "en": ["The judgment says:", "the Month is middling,", "be patient and unhurried,", "illness and quarrels:", "after the turn of the season, peace."] },
+        { "by": "经", "book": "文王金钱课", "range": [271, 271], "chapter": "【补录】山雷颐", "chapter_en": "[Supplement] Mountain over Thunder, Yi (Nourishment)",
+          "zh": ["卦辞：", "文王访贤在渭滨，", "谋望求财事遂心。", "交易出行方如意，", "疾病口舌可离身。"],
+          "yi": ["卦辞说：", "周文王在渭水边访求贤人，", "谋划求财，事遂心愿。", "交易、出行才如意，", "疾病、口舌可以离开身子。"],
+          "en": ["The hexagram verse says:", "King Wen seeks a worthy man by the River Wei,", "plans and the seeking of wealth go as the heart wishes.", "trade and travel are then as wished,", "illness and quarrels can leave the body."] },
+        { "by": "经", "book": "文王金钱课", "range": [278, 278], "chapter": "【补录】离为火", "chapter_en": "[Supplement] Li as Fire",
+          "zh": ["推断：", "月令皆善，", "诸事方便，", "出门见喜，", "灾消病散。"],
+          "yi": ["推断说：", "月令都好，", "各样事情方便，", "出门见到喜事，", "灾祸消去，病散掉。"],
+          "en": ["The judgment says:", "the Month is all good,", "affairs are convenient,", "going out, one meets joy,", "calamity vanishes and illness disperses."] },
+        { "by": "经", "book": "文王金钱课", "range": [302, 302], "chapter": "【补录】坤为地", "chapter_en": "[Supplement] Kun as Earth",
+          "zh": ["推断：", "找人得见，", "走失有信，", "疾病见好，", "凡事皆顺。"],
+          "yi": ["推断说：", "找人能见到，", "走失的有消息，", "疾病见好转，", "凡事都顺。"],
+          "en": ["The judgment says:", "one finds the person sought,", "what was lost has news,", "illness shows improvement,", "all matters go smoothly."] },
+        { "by": "经", "book": "文王金钱课", "range": [308, 308], "chapter": "【补录】地泽临", "chapter_en": "[Supplement] Earth over Marsh, Lin",
+          "zh": ["推断：", "口舌消散，", "疾病即痊，", "求名称意，", "家宅平安。"],
+          "yi": ["推断说：", "口舌是非消散，", "疾病马上痊愈，", "求名称心，", "家宅平安。"],
+          "en": ["The judgment says:", "quarrels disperse,", "illness is cured at once,", "seeking fame is to one's liking,", "the household is at peace."] },
+        { "by": "经", "book": "文王金钱课", "range": [314, 314], "chapter": "【补录】雷天大壮", "chapter_en": "[Supplement] Thunder over Heaven, Dazhuang",
+          "zh": ["推断：", "出门吉利，", "口舌远避，", "疾病皆除，", "行人即至。"],
+          "yi": ["推断说：", "出门吉利，", "口舌远远避开，", "疾病全都除去，", "出门的人马上到。"],
+          "en": ["The judgment says:", "going out is auspicious,", "quarrels are kept far off,", "all illness is removed,", "the traveller arrives at once."] },
+        { "by": "经", "book": "文王金钱课", "range": [317, 317], "chapter": "【补录】泽天夬", "chapter_en": "[Supplement] Marsh over Heaven, Guai",
+          "zh": ["推断：", "词讼了结，", "疾病除根，", "求财到手，", "任意遂心。"],
+          "yi": ["推断说：", "官司了结，", "疾病除根，", "求财到手，", "任意而行，遂心如愿。"],
+          "en": ["The judgment says:", "the lawsuit is concluded,", "illness is uprooted,", "wealth sought is in hand,", "do as one pleases and one's heart is satisfied."] },
+        { "by": "经", "book": "文王金钱课", "range": [326, 326], "chapter": "【补录】兑为泽", "chapter_en": "[Supplement] Dui as Marsh",
+          "zh": ["推断：", "口舌消散，", "疾病痊愈，", "求财到手，", "谋事遂心。"],
+          "yi": ["推断说：", "口舌是非消散，", "疾病痊愈，", "求财到手，", "谋划事情遂了心愿。"],
+          "en": ["The judgment says:", "quarrels disperse,", "illness is cured,", "wealth sought is in hand,", "plans go as the heart wishes."] },
+        { "by": "经", "book": "文王金钱课", "range": [331, 331], "chapter": "【补录】泽地萃", "chapter_en": "[Supplement] Marsh over Earth, Cui",
+          "zh": ["卦辞：", "鲤鱼化龙喜气来，", "口舌疾病永无灾。", "愁疑从此都消散，", "祸门闭来福门开。"],
+          "yi": ["卦辞说：", "鲤鱼化成龙，喜气来了，", "口舌、疾病永远没有灾。", "忧愁疑虑从此都消散，", "祸门关上，福门打开。"],
+          "en": ["The hexagram verse says:", "the carp turns into a dragon and joy comes,", "quarrels and illness bring no calamity ever.", "worry and doubt all disperse from now,", "the door of misfortune closes and the door of blessing opens."] },
+        { "by": "经", "book": "文王金钱课", "range": [335, 335], "chapter": "【补录】泽山咸", "chapter_en": "[Supplement] Marsh over Mountain, Xian",
+          "zh": ["推断：", "谋望有成，", "出门可行，", "走失来信，", "疾病安宁。"],
+          "yi": ["推断说：", "谋划指望有成，", "出门可以去，", "走失的来了消息，", "疾病得到安宁。"],
+          "en": ["The judgment says:", "plans and hopes succeed,", "one may go out,", "word comes of what was lost,", "illness is at ease."] }
+      ],
+      "dispute": {
+        "yi": "补录的这些卦里，有几个和周易尚占（LY.ILL.ZSZ.03 至 ZSZ.07）说的相反或相左：巽，周易尚占说「金神为崇」，这里说「疾病痊愈」；离，周易尚占说「病重财轻」，这里说「灾消病散」；临，周易尚占说「病犯崇侵」，这里说「疾病即痊」；夬，周易尚占说「病讼迟延」，这里说「疾病除根」；大壮，周易尚占说「休占讼病」，这里说「疾病皆除」；恒，周易尚占说「病须疾治」（要赶快治），这里说「有病就好」。解、随、颐、兑、萃、咸这六个两本一致说病好；升、小畜、坤周易尚占没有讲病。（这几个卦在补录部分里，而补录部分的来历不明，见下面的说明。）书里没有裁决。",
+        "en": "Several of these supplemented hexagrams are opposed to or at odds with what the Zhouyi Shangzhan says (LY.ILL.ZSZ.03 to ZSZ.07): Xun, the Zhouyi Shangzhan says 'a Metal spirit is the curse' while here it says 'illness is cured'; Li, the Zhouyi Shangzhan says 'illness is heavy and wealth is light' while here 'calamity vanishes and illness disperses'; Lin, the Zhouyi Shangzhan says 'illness meets the encroachment of a curse' while here 'illness is cured at once'; Guai, the Zhouyi Shangzhan says 'illness and lawsuit are delayed' while here 'illness is uprooted'; Dazhuang, the Zhouyi Shangzhan says 'do not divine lawsuits or illness' while here 'all illness is removed'; Heng, the Zhouyi Shangzhan says 'illness must be treated quickly' while here 'if there is illness, it mends'. Xie, Sui, Yi (Nourishment), Dui, Cui and Xian are six in which the two books agree that the illness mends; for Sheng, Xiaoxu and Kun the Zhouyi Shangzhan does not speak of illness. (These hexagrams are in the supplemented part, whose origin is unknown; see the note below.) The books do not decide."
+      },
+      "note": {
+        "yi": "这个卦是库里「补录」的网上传本，不是这部书原文里有的（原文只有二十六卦）；库里的说明写：这份传本每卦只有「卦辞」（七言四句）和「推断」（四言四句）两项，没有课名、六亲、地支、世应，拿它和原有二十六卦对，十七卦两项都对得上，三卦卦辞对得上、推断有出入，另有三对卦的内容整个互换（风地观与山地剥、火泽睽与风泽中孚、天泽履与风山渐），所以补录部分个别卦也可能挂错了卦；卦名已按卦画订正；传本里没有风火家人。「疾病口舌」是疾病和口舌是非并说。「交节」是过了节气。「五关脱难」是过五关、脱了难。补录部分的卦名已按卦画订正，不是原帖的写法。",
+        "en": "These hexagrams are from the 'supplemented' copy found on the internet that the library appended, and are not in the original text of this book (the original has only twenty-six hexagrams); the library's note says: this copy gives each hexagram only two items, the 'hexagram verse' (four lines of seven characters) and the 'judgment' (four phrases of four characters), with no name of the reading, no six relations, no branches, no Self and Other; compared with the twenty-six original hexagrams, seventeen agree in both items, three agree in the verse but differ in the judgment, and three pairs of hexagrams have their contents swapped wholesale (Guan and Bo, Kui and Zhongfu, Lü and Jian), so some of the supplemented hexagrams may also be hung on the wrong hexagram; the names of the hexagrams have been corrected from the hexagram figures; the copy lacks Jiaren. 'Illness and quarrels' names illness and quarrels together. 'The turn of the season' is the passing of a solar term. 'Passing the five gates, escaping hardship' is getting through the five passes and escaping hardship. The names of the hexagrams in the supplemented part have been corrected from the hexagram figures and are not the original post's spelling."
+      },
+      "see": ["LY.ILL.WWJQ.03", "LY.ILL.WWJQ.06", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.05", "LY.ILL.ZSZ.07"]
+    },
+    {
+      "id": "LY.ILL.WWJQ.06",
+      "topic": "轻重",
+      "chapter": "补录·六十四卦",
+      "chapter_en": "Supplement: The Sixty-Four Hexagram Readings",
+      "title": "【补录】六十四卦课·占病逢无妄：疾病忧犯口舌愁、疾病不宜",
+      "rule": {
+        "yi": "文王金钱课文末补录的网上传本里，无妄卦的卦辞和推断都说病不好：卦辞「疾病忧犯口舌愁」（病是一件忧事，又添上口舌之愁），推断「疾病不宜」。",
+        "en": "In the internet copy that the library appended at the end of the Wenwang Jinqian Ke, both the hexagram verse and the judgment of Wuwang say that illness does not fare well: the verse 'illness is a worry, and the grief of quarrels is added', and the judgment 'illness: not fit'."
+      },
+      "quotes": [
+        { "by": "经", "book": "文王金钱课", "range": [265, 266], "chapter": "【补录】天雷无妄", "chapter_en": "[Supplement] Heaven over Thunder, Wuwang",
+          "zh": ["卦辞：", "鸟如笼中难出头，", "占着此卦不自由。", "谋望求财不定准，", "疾病忧犯口舌愁。", "推断：", "出门不遇，", "求财不利，", "婚姻走失，", "疾病不宜。"],
+          "yi": ["卦辞说：", "鸟像在笼子里，难出头，", "占到这一卦，不自由。", "谋划求财没有定准，", "疾病有忧，又犯口舌之愁。", "推断说：", "出门遇不到人，", "求财不利，", "婚姻、走失，", "疾病不适宜。"],
+          "en": ["The hexagram verse says:", "like a bird in a cage that cannot put out its head,", "divining this hexagram, one is not free.", "plans and the seeking of wealth are not sure,", "illness is a worry, and the grief of quarrels is added.", "The judgment says:", "going out, one meets no one,", "the seeking of wealth is unfavourable,", "marriage, losses:", "illness: not fit."] }
+      ],
+      "dispute": {
+        "yi": "无妄卦，周易尚占说「病瘥讼和」（病好了、官司和解）（LY.ILL.ZSZ.02），这里补录的传本却说「疾病不宜」，两本相反；另外，增删卜易（LY.ILL.ZS.01）列的「断之必死」的十个卦里没有无妄。书里没有裁决。",
+        "en": "For Wuwang the Zhouyi Shangzhan says 'the illness is cured and the lawsuit settled' (LY.ILL.ZSZ.02), but this supplemented copy says 'illness: not fit', and the two are opposed; moreover, the ten hexagrams of 'judge death' reported in the Zengshan Buyi (LY.ILL.ZS.01) do not include Wuwang. The books do not decide."
+      },
+      "note": {
+        "yi": "这个卦是库里「补录」的网上传本，不是这部书原文里有的（原文只有二十六卦）；库里的说明写：这份传本每卦只有「卦辞」（七言四句）和「推断」（四言四句）两项，没有课名、六亲、地支、世应，拿它和原有二十六卦对，十七卦两项都对得上，三卦卦辞对得上、推断有出入，另有三对卦的内容整个互换（风地观与山地剥、火泽睽与风泽中孚、天泽履与风山渐），所以补录部分个别卦也可能挂错了卦；卦名已按卦画订正；传本里没有风火家人。「婚姻走失」只有四个字，没有断语，译文照字面写成「婚姻、走失」。「出门不遇」按字面译成「出门遇不到人」，书里没有说是遇不到什么人。「忧犯口舌愁」读作「病是忧，又添口舌之愁」。",
+        "en": "These hexagrams are from the 'supplemented' copy found on the internet that the library appended, and are not in the original text of this book (the original has only twenty-six hexagrams); the library's note says: this copy gives each hexagram only two items, the 'hexagram verse' (four lines of seven characters) and the 'judgment' (four phrases of four characters), with no name of the reading, no six relations, no branches, no Self and Other; compared with the twenty-six original hexagrams, seventeen agree in both items, three agree in the verse but differ in the judgment, and three pairs of hexagrams have their contents swapped wholesale (Guan and Bo, Kui and Zhongfu, Lü and Jian), so some of the supplemented hexagrams may also be hung on the wrong hexagram; the names of the hexagrams have been corrected from the hexagram figures; the copy lacks Jiaren. 'Marriage, losses' is only four characters with no verdict, and is translated literally. 'Going out, one meets no one' is literal, and the book does not say whom one fails to meet. 'A worry, and the grief of quarrels is added' reads the line as 'illness is a worry, and the grief of quarrels is added'."
+      },
+      "see": ["LY.ILL.WWJQ.05", "LY.ILL.ZSZ.02", "LY.ILL.ZS.01"]
+    }
+  ]
+}

@@ -74,6 +74,16 @@
       "en": "Bushi Yuangui (The Great Tortoise of Divination)",
       "author": "元建安萧吉文撰集,大德十一年(1307);《断易天机》也收",
       "author_en": "compiled by Xiao Jiwen of Jian'an (Yuan), 1307; also included in the Duanyi Tianji"
+    },
+    "文王金钱课": {
+      "en": "Wenwang Jinqian Ke (King Wen's Coin Readings)",
+      "author": "",
+      "author_en": ""
+    },
+    "断易鬼灵经": {
+      "en": "Duanyi Guiling Jing (The Ghost-and-Spirit Classic of Judging the Changes)",
+      "author": "",
+      "author_en": ""
     }
   },
   "speakers": {
@@ -252,6 +262,20 @@
       "edition": "殆知阁转录本(虎易录入);只有卷上,写到「占过去未来章」中断;带「虎易注」的是今人加的,本库不引",
       "contains": [
         "卜筮元龟"
+      ]
+    },
+    "文王金钱课": {
+      "en": "Wenwang Jinqian Ke",
+      "edition": "殆知阁转录本,原只有 26 卦(乾宫、坎宫、艮宫各 8 卦,震宫 2 卦);文末「补录」的 37 卦是网上一份传本(每卦只有卦辞和推断,缺风火家人),不是这部书的原文,本库引用时在卦名前标「补录」",
+      "contains": [
+        "文王金钱课"
+      ]
+    },
+    "断易鬼灵经": {
+      "en": "Duanyi Guiling Jing",
+      "edition": "殆知阁转录本(易藏/术数),八卷加附录;没有标点,条与条之间有空格,每条以「Ｏ」起头;整理本里「灾」「未」「巳」「传」「冲」等字有多处写成「炎」「末」「已」「傅」「衡」,本库的原文照整理本逐字录,译文按上下文读",
+      "contains": [
+        "断易鬼灵经"
       ]
     }
   }

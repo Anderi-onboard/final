@@ -46,8 +46,8 @@ aliases:
 > [!quote]+ [[卜筮大全]] 第 6333 行 · Huangjin Ce (The Golden Strategy), "Marriage", base text
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
-> | 应生世，悦服成亲； | 应生世，(女方)心悦诚服地成亲； | The Other generating the Self: marriage with willing hearts; |
-> | 世克应，用强劫娶。 | 世克应，(男方)倚强抢娶。 | the Self controlling the Other: taking a bride by force. |
+> | 应生世，悦服成亲； | 应生世，（女方）心悦诚服地成亲； | The Other generating the Self: marriage with willing hearts; |
+> | 世克应，用强劫娶。 | 世克应，（男方）倚强抢娶。 | the Self controlling the Other: taking a bride by force. |
 
 ^q1
 

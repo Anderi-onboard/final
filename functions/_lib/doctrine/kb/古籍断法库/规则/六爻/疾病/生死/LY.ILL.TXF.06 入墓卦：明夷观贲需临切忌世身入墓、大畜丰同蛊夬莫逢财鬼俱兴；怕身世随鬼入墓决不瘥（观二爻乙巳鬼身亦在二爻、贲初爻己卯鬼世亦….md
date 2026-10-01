@@ -10,7 +10,7 @@ books:
 speakers:
   - "本文"
   - "《天玄赋》注(注者不详)"
-dispute: false
+dispute: true
 terms:
   - "[[兄弟]]"
   - "[[父母]]"
@@ -129,6 +129,11 @@ aliases:
 
 ^q5
 
+> [!warning] 打架
+> 周易尚占和文王金钱课按卦名断病，对这里点名的几个卦说得相反或轻重不同：观，周易尚占说「财聚病痊」，文王金钱课说「占病即愈」（LY.ILL.ZSZ.02、WWJQ.03）；贲，周易尚占说「病安」（LY.ILL.ZSZ.03）；大畜，周易尚占说「病脱」，文王金钱课说「疾病口舌渐渐磨」（LY.ILL.ZSZ.02、WWJQ.03）；丰，文王金钱课说「疾病渐好」，周易尚占说「病人沉滞」（LY.ILL.WWJQ.03、ZSZ.04）；夬，周易尚占说「病讼迟延」（LY.ILL.ZSZ.04）；临，周易尚占说「病犯崇侵」，文王金钱课补录部分说「疾病即痊」（LY.ILL.ZSZ.07、WWJQ.05）。不过天玄赋这里说的是有条件的：观、贲、需、临是世身入墓才忌，大畜、丰、同、蛊、夬是财鬼俱兴才忌，不是见到卦名就凶。书里没有裁决。
+>
+> *Where they disagree:* The Zhouyi Shangzhan and the Wenwang Jinqian Ke judge illness by the name of the hexagram, and for several of the hexagrams named here they say the opposite, or a lighter thing: for Guan the Zhouyi Shangzhan says 'wealth gathers and the illness is cured' and the Wenwang Jinqian Ke says 'divining illness, it is cured at once' (LY.ILL.ZSZ.02, WWJQ.03); for Bi the Zhouyi Shangzhan says 'the illness is settled' (LY.ILL.ZSZ.03); for Daxu (Great Accumulation) the Zhouyi Shangzhan says 'the illness is shed' and the Wenwang Jinqian Ke says 'illness and quarrels are gradually worn away' (LY.ILL.ZSZ.02, WWJQ.03); for Feng the Wenwang Jinqian Ke says 'the illness gradually gets better' and the Zhouyi Shangzhan says 'the sick are held fast' (LY.ILL.WWJQ.03, ZSZ.04); for Guai the Zhouyi Shangzhan says 'illness and lawsuit are delayed' (LY.ILL.ZSZ.04); for Lin the Zhouyi Shangzhan says 'the illness offends a curse that attacks' and the Wenwang Jinqian Ke, in its supplementary part, says 'the illness is cured at once' (LY.ILL.ZSZ.07, WWJQ.05). The Tianxuan Fu here, however, speaks with a condition: Guan, Bi, Xu (Waiting) and Lin are to be feared only when the Self and the Body enter a tomb, and Daxu, Feng, Tongren, Gu and Guai only when Wealth and Pressure both rise, so that the name of the hexagram alone does not make it ominous. The books do not decide.
+
 > [!note] 按
 > 这一节说的是「入墓卦」：两句赋点出十个卦（明夷、观、贲、需、临是「世身入墓」，大畜、丰、同、蛊、夬是「财鬼俱兴」），注里先举观、贲两例讲什么叫「身随鬼入墓」「世随鬼入墓」，再引苍屏的一首歌诀，讲八宫里各卦化入墓（乾化艮、坤化巽、震化坤、巽化坤、坎化巽、离化乾、艮化风、兑化山）对应家里的哪一位亲人有灾——「艮化风内」「兑化山中」的「风」是巽、「山」是艮。「应题」这里译作「answering the topic」，按字面，意思大概是卦象应了所问的人。「同」按上下文是同人。「条贯」是条理、头绪，「必须把其条贯」是说要把这些条件都对上了才可以断为全凶。这里用的是卦名代表一类：文字里提到的卦（观、贲、丰）是举例，「余卦仿此」。注末原文还有一段「虎易评注」，是今人加的，本库不引。 卜筮大全的这一章后面还有「虎易评注」（今人加的），本库不引。
 >
@@ -148,3 +153,15 @@ aliases:
 - [[LY.ILL.YY.06 生死·死卦：卦身墓于世（损）、本宫外卦墓于内卦（遁豫升蛊井大有咸）、世坐本宫墓（噬嗑蒙泰归妹）、世坐鬼墓（乾丰中孚升家人旅…|LY.ILL.YY.06 生死·死卦：卦身墓于世（损）、本宫外卦墓于内卦（遁豫升蛊井大有咸）、世坐本宫墓（噬嗑蒙泰归妹）、世坐鬼墓（乾丰中孚升家人旅）、世坐财墓（观解随益泰兑）、卦化墓绝、用逢月破者死]]
 - [[LY.ILL.EL.17 占自己病断之二：先凭世象次凭卦身；怕月破旬空，喜生扶拱合；克世为忌客、生世为元神，随官入墓灾难瘥、助鬼伤身命必沉；世落空辨…|LY.ILL.EL.17 占自己病断之二：先凭世象次凭卦身；怕月破旬空，喜生扶拱合；克世为忌客、生世为元神，随官入墓灾难瘥、助鬼伤身命必沉；世落空辨缓急、休囚被克无救则天年命尽、旺相无生助亦无所害；他人病身世随官入墓不必忌，命随鬼入墓即凶；卦身墓绝于月建或变爻决无救]]
 - [[LY.ILL.EL.18 占他人病断之三：代占他人以应爻为用——临月破旬空其命难保，衰弱遭动象日月伤或变墓绝便凶，应纵休囚得变生旺或动爻日月相扶命还…|LY.ILL.EL.18 占他人病断之三：代占他人以应爻为用——临月破旬空其命难保，衰弱遭动象日月伤或变墓绝便凶，应纵休囚得变生旺或动爻日月相扶命还有救；生应为元神宜动、克应为忌客宜空；鬼临应上病必难痊；卦身不可临月破、不可成墓绝之乡]]
+- [[LY.ILL.ZSZ.02 八卦断例·占病逢观、大有、大畜、损、无妄、兑、谦：病痊、病瘥、病脱(病会好)|LY.ILL.ZSZ.02 八卦断例·占病逢观、大有、大畜、损、无妄、兑、谦：病痊、病瘥、病脱(病会好)]]
+- [[LY.ILL.ZSZ.03 八卦断例·占病逢乾、既济、革、贲、渐、豫、解、随、家人、益、颐、鼎、比、萃、咸：病安、安康、安宁、无忧、俱平、终吉、利|LY.ILL.ZSZ.03 八卦断例·占病逢乾、既济、革、贲、渐、豫、解、随、家人、益、颐、鼎、比、萃、咸：病安、安康、安宁、无忧、俱平、终吉、利]]
+- [[LY.ILL.ZSZ.04 八卦断例·占病逢姤、遁、晋、丰、师、井、夬：病者难安、迁延、难瘥、沉滞、迟瘥、稽迟、迟延|LY.ILL.ZSZ.04 八卦断例·占病逢姤、遁、晋、丰、师、井、夬：病者难安、迁延、难瘥、沉滞、迟瘥、稽迟、迟延]]
+- [[LY.ILL.ZSZ.05 八卦断例·占病逢坎、噬嗑、蛊、离、困、睽、小过、明夷：病凶、病重、件件遭伤、有惊、有忧|LY.ILL.ZSZ.05 八卦断例·占病逢坎、噬嗑、蛊、离、困、睽、小过、明夷：病凶、病重、件件遭伤、有惊、有忧]]
+- [[LY.ILL.WWJQ.03 六十四卦课·占病逢乾、姤、观、节、革、丰、师、大畜、履、渐：病人痊愈、占病无妨、占病即愈、疾病皆除、疾病渐好、疾病大好、官…|LY.ILL.WWJQ.03 六十四卦课·占病逢乾、姤、观、节、革、丰、师、大畜、履、渐：病人痊愈、占病无妨、占病即愈、疾病皆除、疾病渐好、疾病大好、官司疾病皆无妨]]
+- [[LY.ILL.ZSZ.07 八卦断例·占病逢巽、旅、临：金神为祟、病者祷禳、病犯祟侵|LY.ILL.ZSZ.07 八卦断例·占病逢巽、旅、临：金神为祟、病者祷禳、病犯祟侵]]
+- [[LY.ILL.WWJQ.05 【补录】六十四卦课·占病逢解、恒、升、随、巽、小畜、颐、离、坤、临、大壮、夬、兑、萃、咸：疾病大好、有病就好、疾病口舌皆除…|LY.ILL.WWJQ.05 【补录】六十四卦课·占病逢解、恒、升、随、巽、小畜、颐、离、坤、临、大壮、夬、兑、萃、咸：疾病大好、有病就好、疾病口舌皆除根、疾病痊愈、灾消病散、疾病即痊、疾病安宁]]
+- [[LY.ILL.DYTJ.06 孙膑断疾病歌(五)：明夷蛊剥夬丰同六卦占病不可逢；财鬼二爻俱发动、丧门吊客闹匆匆；六重白虎临身恶；鬼爻并爻应发动、化蛇入库身终|LY.ILL.DYTJ.06 孙膑断疾病歌(五)：明夷蛊剥夬丰同六卦占病不可逢；财鬼二爻俱发动、丧门吊客闹匆匆；六重白虎临身恶；鬼爻并爻应发动、化蛇入库身终]]
+- [[LY.ILL.DYTJ.15 卜筮元龟·占疾病凶卦：丰观需剥节旅贲明夷蛊夬及同人，不问四时及生旺，十死分明|LY.ILL.DYTJ.15 卜筮元龟·占疾病凶卦：丰观需剥节旅贲明夷蛊夬及同人，不问四时及生旺，十死分明]]
+- [[LY.ILL.DYTJ.17 火珠林(断易天机引)·疾病财爻鬼莫连：二爻俱发命危难；同人丰夬蛊剥明夷是死缘；杀世鬼身三入墓人将魂魄入黄泉；药爻在世难医疗；…|LY.ILL.DYTJ.17 火珠林(断易天机引)·疾病财爻鬼莫连：二爻俱发命危难；同人丰夬蛊剥明夷是死缘；杀世鬼身三入墓人将魂魄入黄泉；药爻在世难医疗；虎动占身病未痊；卦入墓乡并丧命]]
+- [[LY.ILL.DYTJ.27 随官入墓·占病：身随鬼入墓、世随鬼入墓、命随鬼入墓，不问占何事皆非吉兆；占病遇之十占九死|LY.ILL.DYTJ.27 随官入墓·占病：身随鬼入墓、世随鬼入墓、命随鬼入墓，不问占何事皆非吉兆；占病遇之十占九死]]
+- [[LY.ILL.BSQS.35 疾病论·死生之兆(一)：财为禄命怕空亡；十死卦春忌需蒙、夏嫌观蛊、秋忧剥节、冬畏旅临；禄命随官难救、世身入墓难医；鬼入用爻当…|LY.ILL.BSQS.35 疾病论·死生之兆(一)：财为禄命怕空亡；十死卦春忌需蒙、夏嫌观蛊、秋忧剥节、冬畏旅临；禄命随官难救、世身入墓难医；鬼入用爻当主死]]

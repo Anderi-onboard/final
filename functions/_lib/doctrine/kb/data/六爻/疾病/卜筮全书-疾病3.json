@@ -26,7 +26,7 @@
         "yi": "这是阐幽精要里占身命（问一个人一生）一章里的一联，讲世爻上坐什么六亲，对这个人一生的影响。「疾病连绵」是病一个接一个，不是指某一场病；这一章是讲人的命，不是讲一次占病，所以放在本域的「总则」里。",
         "en": "This couplet is in the chapter of the Chanyou Jingyao on divining a person's life, and it says what the relation on the Self line does to a person over his lifetime. 'Illness drags on' means one illness after another, not one particular illness; the chapter is about a person's fate, not a single divination about illness, which is why it sits under 'principles' in this domain."
       },
-      "see": ["LY.ILL.DYTJ.39"]
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.HJC.121"]
     },
     {
       "id": "LY.ILL.BSQS.25",
@@ -284,7 +284,7 @@
         "yi": "这一段里的「官」是官鬼的简称（「兑官」「乾官」「震官」），「鬼」同指鬼爻。「乾官旺相因头痛」等句的主语是某一宫里的官鬼爻。「内爻发动」「外象交重」是内卦、外卦发动。「疮痍」是疮疡创伤。坎在这一段里出现两次，一次说腹中灾，一次说耳疾，书里没有解释哪一种对。",
         "en": "In this passage 'official' is a short form of Pressure ('the Dui official', 'the Qian official', 'the Zhen official'), and 'ghost' likewise means the ghost line. The subject of lines such as 'the Qian official strong: from headache' is the Pressure line in that palace. 'Inner lines moving' and 'outer image moving' are the inner and outer trigrams moving. 'Sores and wounds' means ulcers and injuries. Kan appears twice in this passage, once as trouble within the belly and once as an ear disease, and the book does not say which is right."
       },
-      "see": ["LY.ILL.DYTJ.12", "LY.ILL.DYTJ.03", "LY.ILL.CA.02"]
+      "see": ["LY.ILL.DYTJ.12", "LY.ILL.DYTJ.03", "LY.ILL.CA.02", "LY.ILL.HDY.12"]
     },
     {
       "id": "LY.ILL.BSQS.34",
@@ -325,14 +325,14 @@
           "en": ["Wealth is the salary and fate, and fears falling Void;", "if it lies hidden, the life line must be guarded from control and harm.", "First take the ten fatal hexagrams as ill-omened,", "and do not weigh them against the usual auspicious lines.", "The worst is", "when the Subject line is absent, or Void;", "what can be saved is", "when the Output place supports and strengthens it.", "In spring avoid Xu and Meng,", "in summer dislike Guan and Gu,", "in autumn fear Bo and Jie,", "in winter dread Lu and Lin.", "With the fate line following the Pressure line, rescue is hard;", "with the Self and the Body entering the tomb, treatment is hard.", "Pressure meeting a great killing, beware of harm to the Body;", "a ghost entering the Subject line means death."] }
       ],
       "dispute": {
-        "yi": "哪几个卦占病最凶，几本书的名单不同。这一段按季节给：春需、蒙，夏观、蛊，秋剥、节，冬旅、临；阐奥歌章第三首（LY.ILL.CA.03）是丰、蛊、困、明夷、夬、同人一例，加冬旅、春需、夏观、秋剥，和这一段在旅、需、观、剥四卦的季节上一致；卜筮元龟一段（LY.ILL.DYTJ.15）是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人「十死分明」；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）。蒙只有这一段有，临只有这一段和天玄赋有；另外这一段点名的只有八个卦，却称「十死卦」，名目和数目对不上。书里没有裁决。",
-        "en": "The books differ on which hexagrams are the worst for illness. This passage gives them by season: Xu and Meng in spring, Guan and Gu in summer, Bo and Jie in autumn, Lu and Lin in winter. The Chan'ao Gezhang's third poem (LY.ILL.CA.03) gives Feng, Gu, Kun, Mingyi, Guai and Tongren together, plus Lu in winter, Xu in spring, Guan in summer and Bo in autumn, agreeing with this passage on the seasons of Lu, Xu, Guan and Bo; the Bushi Yuangui passage (LY.ILL.DYTJ.15) gives Feng, Guan, Xu, Bo, Jie, Lu, Bi, Mingyi, Gu, Guai and Tongren, 'the ten deaths are clear'; the Tianxuan Fu (LY.ILL.TXF.06) gives Mingyi, Guan, Bi, Xu and Lin (the Self and Body entering the tomb) and Daxu, Feng, Tong, Gu and Guai (Wealth and Pressure both rising). Meng is found only in this passage, and Lin only in this passage and the Tianxuan Fu; moreover this passage names only eight hexagrams yet calls them 'the ten fatal hexagrams', so the name and the number do not match. The books do not decide."
+        "yi": "哪几个卦占病最凶，几本书的名单不同。这一段按季节给：春需、蒙，夏观、蛊，秋剥、节，冬旅、临；阐奥歌章第三首（LY.ILL.CA.03）是丰、蛊、困、明夷、夬、同人一例，加冬旅、春需、夏观、秋剥，和这一段在旅、需、观、剥四卦的季节上一致；卜筮元龟一段（LY.ILL.DYTJ.15）是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人「十死分明」；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）。蒙只有这一段有，临只有这一段和天玄赋有；另外这一段点名的只有八个卦，却称「十死卦」，名目和数目对不上。书里没有裁决。周易尚占和文王金钱课按卦名断病，和这一段点名的几个卦有出入：蒙，周易尚占说「却宜占病」（LY.ILL.ZSZ.06）；观，周易尚占说「财聚病痊」，文王金钱课说「占病即愈」（LY.ILL.ZSZ.02、WWJQ.03）；节，文王金钱课说「疾病口舌消除安」（LY.ILL.WWJQ.03）；临，周易尚占说「病犯崇侵」，文王金钱课补录部分说「疾病即痊」（LY.ILL.ZSZ.07、WWJQ.05）；蛊，周易尚占说病凶，和这一段一致（LY.ILL.ZSZ.05）。",
+        "en": "The books differ on which hexagrams are the worst for illness. This passage gives them by season: Xu and Meng in spring, Guan and Gu in summer, Bo and Jie in autumn, Lu and Lin in winter. The Chan'ao Gezhang's third poem (LY.ILL.CA.03) gives Feng, Gu, Kun, Mingyi, Guai and Tongren together, plus Lu in winter, Xu in spring, Guan in summer and Bo in autumn, agreeing with this passage on the seasons of Lu, Xu, Guan and Bo; the Bushi Yuangui passage (LY.ILL.DYTJ.15) gives Feng, Guan, Xu, Bo, Jie, Lu, Bi, Mingyi, Gu, Guai and Tongren, 'the ten deaths are clear'; the Tianxuan Fu (LY.ILL.TXF.06) gives Mingyi, Guan, Bi, Xu and Lin (the Self and Body entering the tomb) and Daxu, Feng, Tong, Gu and Guai (Wealth and Pressure both rising). Meng is found only in this passage, and Lin only in this passage and the Tianxuan Fu; moreover this passage names only eight hexagrams yet calls them 'the ten fatal hexagrams', so the name and the number do not match. The books do not decide. The Zhouyi Shangzhan and the Wenwang Jinqian Ke judge illness by the name of the hexagram, and differ from several hexagrams named in this passage: for Meng (Youthful Folly) the Zhouyi Shangzhan says 'on the contrary fit for divining illness' (LY.ILL.ZSZ.06); for Guan the Zhouyi Shangzhan says 'wealth gathers and the illness is cured' and the Wenwang Jinqian Ke says 'divining illness, it is cured at once' (LY.ILL.ZSZ.02, WWJQ.03); for Jie the Wenwang Jinqian Ke says 'illness and quarrels are removed and all is at peace' (LY.ILL.WWJQ.03); for Lin the Zhouyi Shangzhan says 'the illness offends a curse that attacks' and the Wenwang Jinqian Ke, in its supplementary part, says 'the illness is cured at once' (LY.ILL.ZSZ.07, WWJQ.05); for Gu the Zhouyi Shangzhan says the illness is ominous, which agrees with this passage (LY.ILL.ZSZ.05)."
       },
       "note": {
         "yi": "这一段连着讲了三个层次：先是用神的安危（财为禄命、用爻不见与空亡、福位扶持），然后是十死卦按季节的忌，最后是墓和大杀（世身入墓、官逢大杀、鬼入用爻）。「禄命随官」是禄命爻随着官鬼（入墓）的意思，断易天机里有「随官入墓」一节可对照（LY.ILL.DYTJ.27）。「用爻」就是用神。",
         "en": "This passage runs through three layers: first the safety of the Subject (Wealth as salary and fate, the Subject line absent or Void, the Output place supporting it), then the seasonal taboos of the ten fatal hexagrams, and last the tomb and the great killing (the Self and Body entering the tomb, Pressure meeting a great killing, a ghost entering the Subject line). 'The salary-fate following the Pressure line' means the salary-fate line following the Pressure line (into the tomb), and the section on 'following Pressure into the tomb' in the Duanyi Tianji can be compared (LY.ILL.DYTJ.27). The 'Subject line' is the Subject."
       },
-      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.15", "LY.ILL.CA.03"]
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.15", "LY.ILL.CA.03", "LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05", "LY.ILL.WWJQ.03", "LY.ILL.ZSZ.07", "LY.ILL.WWJQ.05", "LY.ILL.ZSZ.06"]
     },
     {
       "id": "LY.ILL.BSQS.36",
@@ -354,7 +354,7 @@
         "yi": "「催尸杀」「天转杀」「地转杀」是神煞名：催尸杀按春辰夏未秋戌冬丑取（和下面的句子对得上），天转杀、地转杀的位置这里没有给。「便言死处」的「死处」按字面是死的地方，也可能是死的时间，书里没有说。「秋金酉日」是秋天的金爻和酉日，两者都算。卜筮全书神煞歌例里另有「丧车杀」（LY.ILL.BSQS.53）和「沐浴杀」，位置也是春辰夏未秋戌冬丑一类的取法，可对照。",
         "en": "The 'Urging-the-Corpse', 'Heaven-Turning' and 'Earth-Turning' killings are spirit-stars: the Urging-the-Corpse killing is taken as Chen in spring, Wei in summer, Xu in autumn and Chou in winter (which matches the lines that follow), and the positions of the Heaven-Turning and Earth-Turning killings are not given here. 'The place of death' is literally where death happens, and may mean when; the book does not say. 'Autumn Metal You day' means the Metal line in autumn and the You day, and both count. The spirit-star verses of the Bushi Quanshu also have a 'Funeral Carriage killing' (LY.ILL.BSQS.53) and a 'Bathing killing', placed in the same way (Chen in spring, Wei in summer, Xu in autumn, Chou in winter), and can be compared."
       },
-      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.31", "LY.ILL.DYTJ.32"]
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.31", "LY.ILL.DYTJ.32", "LY.ILL.ZSZ.01"]
     }
   ]
 }

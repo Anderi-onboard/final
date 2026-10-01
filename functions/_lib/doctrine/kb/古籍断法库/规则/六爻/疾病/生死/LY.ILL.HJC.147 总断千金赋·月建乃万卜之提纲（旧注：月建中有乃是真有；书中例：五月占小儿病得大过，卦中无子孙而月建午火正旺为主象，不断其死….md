@@ -63,8 +63,8 @@ aliases:
 > [!quote]+ [[卜筮大全]] 第 5140 行 · Case from the book
 > | 原文 | 译文 | English |
 > | --- | --- | --- |
-> | 且如五月内，占小儿病，得大过卦。 | 比如五月里,占小孩的病,得到大过卦。 | For example, in the fifth month, divining a child's illness, one obtains the Daguo hexagram. |
-> | 卦中无子孙爻，而月建午火，正旺为主象，不断其死亡。 | 卦里没有子孙爻,但月建是午火,正旺相,作为主象,不断他死亡。 | The hexagram has no Output line, but the Month is Wu Fire, at its peak, serving as the principal image, and one does not judge death. |
+> | 且如五月内，占小儿病，得大过卦。 | 比如五月里，占小孩的病，得到大过卦。 | For example, in the fifth month, divining a child's illness, one obtains the Daguo hexagram. |
+> | 卦中无子孙爻，而月建午火，正旺为主象，不断其死亡。 | 卦里没有子孙爻，但月建是午火，正旺相，作为主象，不断他死亡。 | The hexagram has no Output line, but the Month is Wu Fire, at its peak, serving as the principal image, and one does not judge death. |
 > | 余仿此。 | 其余照这样类推。 | The rest follow this. |
 
 ^q3
