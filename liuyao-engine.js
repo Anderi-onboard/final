@@ -260,8 +260,21 @@
     if (!p){ var tb=triIndex(lines,0); return { palaceTb:tb, worldLi:5, respLi:2, series:0 }; }
     return p;
   }
+  /* 进神退神:同一五行的支,按十二支的次序往前一格是进,往回一格是退。
+     ⚠️⚠️ **土有四个支,它们也走这一圈:丑→辰→未→戌→丑。** 这里原来只写了
+     寅卯、巳午、申酉、亥子四对,土一对都没有 —— 于是未化戌、丑化辰从来不算进神,
+     戌化未、辰化丑从来不算退神,而没有任何东西会响:那一爻只是「没有进退神」。
+     两处写着该有:
+       ① 书中例(pack-20260914/gold-cases-12.jsonl)有七卦正是土的进退神:
+          002 财持世未化戌「化进」、005 兄弟丑化辰「化进神」、006 010 父母未化戌「化进神」,
+          003 官辰化丑「化退神」、004 子孙戌化未「化退」、008 兄弟戌化未「化退神」。
+          书上引的判据在这七卦上原来一条都不成立,补上以后全部成立
+          (`tests/gold-replay.mjs` 钉着)。
+       ② owner 自己的提示词栈(functions/_lib/prompt-engine.js 第三步)写的就是
+          「寅化卯 · 巳化午 · 申化酉 · 亥化子 · 丑化辰 · 辰化未 · 未化戌 · 戌化丑 是进神」。 */
   function jinTui(b0,b1){
-    var ADV = { 2:3, 5:6, 8:9, 11:0 }, RET = { 3:2, 6:5, 9:8, 0:11 };
+    var ADV = { 2:3, 5:6, 8:9, 11:0, 1:4, 4:7, 7:10, 10:1 },
+        RET = { 3:2, 6:5, 9:8, 0:11, 4:1, 7:4, 10:7, 1:10 };
     if (ADV[b0]===b1) return { dir:"advance", cn:"进神", en:"Advancing" };
     if (RET[b0]===b1) return { dir:"retreat", cn:"退神", en:"Retreating" };
     return null;
@@ -364,6 +377,13 @@
           jinTui: jinTui(b0,b1),
           backToTomb: (EL_TOMB[g0]===b1),
           backToVoid: (b1===kong[0]||b1===kong[1]),
+          /* ⭐ 变爻自己的旺衰和月破。**本爻有的这两样,变爻一直没有** ——
+             《增删卜易》进神退神章第二十九那四条(以及退神那四条)读的正是
+             「动爻变爻**各自**旺衰」和「动爻变爻有一而空破」,少了它们那五条
+             判据一条都判不了。两个都是纯机械量:`wangShuai(五行, 月建)` 和
+             「支冲月建」,和本爻用的是同一个函数、同一个月建,不是新断法。 */
+          wangShuai: wangShuai(g1, monthEl),
+          monthClash: brClash(b1, monthBr),
           clashBen: brClash(b0,b1), combineBen: brCombine(b0,b1),
           feedsBen: generates(g1,g0), controlsBen: controls(g1,g0)
         };
@@ -371,6 +391,26 @@
       markYin(L, nj, bianNj, [0,1,2]);
       markYin(L, nj, bianNj, [3,4,5]);
     }
+
+    /* 动墓:这一爻的墓库支,正好是某个动爻的支。它和日墓、月墓、化墓是四件
+       不同的事,应期尺度也不同 —— 动墓跟着那个动爻走。
+
+       ⚠️⚠️ **算在引擎里,不算在 relations 里,因为 verdict 也要读它。**
+       两边各算一遍就是这个仓库付过四次学费的那张「第二名单」,而这一次它
+       已经发生过:`liuyao-verdict.js` 的 `tomb` 写的是 `dayTomb || monthTomb`,
+       动墓整个不在里面。于是同一爻,CSV 说入墓,发给模型的 boardText 说没入墓
+       —— 实测 200 副盘 1200 格里 **142 格相反**,涉及 84 副盘。
+       模型据此写出来的那一段读起来完全正常。 */
+    L.forEach(function(l){
+      l.movingTomb = null;
+      var tb = l.tombBranch ? l.tombBranch.bi : null;
+      if (tb === null) return;
+      l.movingTomb = false;
+      for (var z = 0; z < 6; z++){
+        if (z === l.idx || !L[z].moving) continue;
+        if (L[z].branch.bi === tb){ l.movingTomb = "第" + (z+1) + "爻" + L[z].branch.cn; break; }
+      }
+    });
 
     // per-line 神煞 tags (branch-based stars land on whichever line carries that branch)
     var ssMap = {};
@@ -569,6 +609,20 @@
   window.BWLiuYao = {
     computeBoard: computeBoard, _selfTest: _selfTest,
     EL_EN:EL_EN, EL_CN:EL_CN, EL_COLOR:EL_COLOR,
-    REL:REL, SPIRIT:SPIRIT, BR_CN:BR_CN, STEM_CN:STEM_CN
+    REL:REL, SPIRIT:SPIRIT, BR_CN:BR_CN, STEM_CN:STEM_CN,
+    /* 地支之间那几张查表。应期引擎(`functions/_lib/doctrine/timing.js`)要它们:
+       「静而逢值逢冲」算的就是本支和它的冲支,「入三墓俱喜冲开」算的是墓库的冲支。
+
+       ⚠️ 导出而不是在那边再写一份。六冲六合和五行墓库是常数表,抄一份不会报错、
+          两份都跑得通,而它们一旦分叉,分叉的那次没有任何东西看得出来 ——
+          这个仓库为「两张要同步的名单」付过五次学费,最近一次就是动墓
+          (relations 算了、verdict 算了一半),142/1200 格发给模型的是相反的事实。 */
+    BRANCH: {
+      CN: BR_CN,
+      EL: BR_EL,                                   // 支 → 五行下标
+      clash: function (bi) { return (bi + 6) % 12; },
+      combine: function (bi) { return BR_COMBINE[bi]; },
+      tombOf: function (gi) { return EL_TOMB[gi]; } // 五行 → 它的墓库支
+    }
   };
 })();

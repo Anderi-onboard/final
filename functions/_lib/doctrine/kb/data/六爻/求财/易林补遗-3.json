@@ -1,0 +1,284 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易林补遗",
+  "chapter": "借贷财物章第一百九",
+  "chapter_en": "Chapter 109 - Borrowing goods and money",
+  "ranges": {"易林补遗": [2009, 2042]},
+  "units": [
+    {
+      "id": "LY.WEALTH.YL.41",
+      "topic": "借贷",
+      "chapter": "借贷财物章第一百九",
+      "chapter_en": "Chapter 109 - Borrowing goods and money",
+      "title": "借本钱经营：财爻旺相不空，待日辰生合财爻的日子到手；六冲一场空",
+      "rule": {
+        "yi": "借本钱经营：要靠财爻旺相、不落空，或者生世、克世，一定能借到、没有阻隔，但要等日辰生合财爻的那一天才到手；六冲的卦万事不成，不要指望。",
+        "en": "Borrowing capital to run a business: Wealth must be strong and not void, or generating or controlling the Self; then it is sure to be had without obstruction, but it comes to hand only on the day the Day generates or combines with the Wealth line; in a Six-Clash hexagram nothing succeeds, so do not hope."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以妻财为主，", "世应为凭。)"],
+          "yi": ["（以妻财为主，", "世应为凭。）"],
+          "en": ["(Wealth is the chief;", "the Self and the Other are the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["借求资本要财兴，", "财不空亡无改更，", "生合日期方可得，", "六冲爻象定虚名。"],
+          "yi": ["借钱做本，要财兴旺；", "财不空亡、没有改变；", "逢生逢合的日子才可以借到；", "六冲的爻象，一定只是虚名。"],
+          "en": ["To borrow capital, Wealth must thrive;", "Wealth not void and unchanged;", "it can be had only on a day of generating or combining;", "a Six-Clash line image is surely an empty name."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["借本经营，", "须靠财爻旺相，或不落空或生世克世，", "决然便得而无阻隔，", "然待日辰生合财爻之日，方可到手。", "六冲之卦万事无成，岂有得财之理者也，", "休望！休望！"],
+          "yi": ["借本钱来经营，", "要靠财爻旺相，不落空，或者生世、克世，", "一定能借到、没有阻隔，", "但要等日辰生合财爻的那一天，才能到手。", "六冲的卦万事不成，哪有得财的道理？", "不要指望！不要指望！"],
+          "en": ["Borrowing capital to run a business", "depends on the Wealth line being strong, not void, or generating or controlling the Self;", "it will surely be had without obstruction,", "but wait for the day the Day generates or combines with the Wealth line before it comes to hand.", "In a Six-Clash hexagram nothing succeeds - how could there be any reason to get money?", "Do not hope! Do not hope!"] }
+      ],
+      "see": ["LY.WEALTH.YY.10", "LY.WEALTH.ZS.27"]
+    },
+    {
+      "id": "LY.WEALTH.YL.42",
+      "topic": "借贷",
+      "chapter": "借贷财物章第一百九",
+      "chapter_en": "Chapter 109 - Borrowing goods and money",
+      "title": "世应不空、兄不动：无财有鬼也成；财爻值日是交割日",
+      "rule": {
+        "yi": "借钱：世应都不落空、兄弟不发动，就没有阻隔；即使卦里没有财爻，只要有鬼爻出现，也一定得财；哪一天得，就是财爻当值的日子。",
+        "en": "Borrowing: Self and Other both not void and Peer not moving means nothing stands in the way; even with no Wealth line in the hexagram, a Pressure line showing means money is sure to be had; the day is the day when Wealth is on duty."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["世应不空兄不动，", "无财有鬼也须成，", "后查何日财爻值，", "便是人间交兑情。"],
+          "yi": ["世应不空、兄弟不动，", "没有财、有官鬼，也一定能成；", "再查哪一天财爻当值，", "就是人间银钱交割的日子。"],
+          "en": ["Self and Other not void and Peer not moving,", "even with no Wealth, a Pressure that shows will make it succeed;", "then check which day the Wealth line is on duty,", "and that is the day the money changes hands."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["世应俱不落空，兄弟又不发动，乃无阻隔之神，", "虽无财爻上卦而有鬼爻出见，必主得财，", "要知何日得财，财值之期是也。"],
+          "yi": ["世应都不落空，兄弟又不发动，这就是没有阻隔的神，", "即使没有财爻上卦，只要有鬼爻出现，一定得财；", "想知道哪一天得财，就是财当值的日子。"],
+          "en": ["Self and Other both not void and Peer not moving: no spirit of obstruction stands in the way;", "even if the Wealth line is not in the hexagram, as long as a Pressure line shows, money is sure to be had;", "to know on what day, it is the day when Wealth is on duty."] }
+      ],
+      "see": ["LY.WEALTH.HJC.03", "LY.WEALTH.HJC.04", "LY.WEALTH.YY.10"]
+    },
+    {
+      "id": "LY.WEALTH.YL.43",
+      "topic": "借贷",
+      "chapter": "借贷财物章第一百九",
+      "chapter_en": "Chapter 109 - Borrowing goods and money",
+      "title": "借贷的中保看间爻：旺相生合能帮忙，空绝无力，动来克世反生嫉妒阻挠",
+      "rule": {
+        "yi": "借贷靠中保：一卦里的两个间爻就是居中作保的人；旺相、生合世，一定帮忙；落空落绝，没有力量帮不上；发动来克世，反而生嫉妒、阻挠。",
+        "en": "For a loan, the guarantor is the two between lines of the hexagram, the go-between who stands surety: strong, generating or combining, he will surely help; void or extinct, he has no strength and cannot assist; moving to control the Self, he breeds jealousy and obstruction."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["凡若间爻空与绝，", "其间中保定无能。"],
+          "yi": ["凡是间爻落空或绝，", "那中间的保人一定没有能力。"],
+          "en": ["If the between lines are void or extinct,", "the guarantor between is surely powerless."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["一卦之中两间爻，系为中作保之人，", "但得旺相生合，决然扶助，", "若遇空遇绝，乃无力无能不能赞囊耳。", "若动来克世者，反生嫉妒阻挠。"],
+          "yi": ["一卦当中的两个间爻，是居中作保的人；", "只要旺相、生合，一定会帮忙；", "如果遇空遇绝，就是没有力量、没有能力，帮不上忙；", "如果发动来克世，反而生出嫉妒、从中阻挠。"],
+          "en": ["The two between lines in a hexagram stand for the go-between who stands surety;", "if strong, generating or combining, he will surely help;", "if void or extinct, he has neither strength nor ability and cannot assist;", "if he moves to control the Self, he breeds jealousy and obstruction instead."] }
+      ],
+      "note": {
+        "yi": "「不能赞囊」的「囊」疑是「襄」（赞襄，帮助）之误。",
+        "en": "'Cannot assist' translates a phrase whose last character is probably a slip for 'assist'."
+      },
+      "see": ["LY.WEALTH.YY.08", "LY.WEALTH.HJC.36"]
+    },
+    {
+      "id": "LY.WEALTH.YL.44",
+      "topic": "借贷",
+      "chapter": "借贷财物章第一百九",
+      "chapter_en": "Chapter 109 - Borrowing goods and money",
+      "title": "日辰冲应加朱雀动，被谗言破阻；日月生用神加青龙福德，财满钱袋",
+      "rule": {
+        "yi": "日辰冲应，或再加朱雀交重（发动），一定被谗言破坏阻挠；日月生用神，或再加青龙、福德同在一处，一定财满钱袋。",
+        "en": "The Day clashing the Other, or the Vermilion Bird added and moving: it is surely wrecked and blocked by slander; the Day and Month generating the Subject, or the Azure Dragon and Output added on the same line: the purse is surely full of money."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["日辰冲应遭人破，", "月建扶财囊可盈。"],
+          "yi": ["日辰冲应，会被人破坏；", "月建扶助财，钱袋可以装满。"],
+          "en": ["The Day clashing the Other, someone wrecks it;", "the Month supporting Wealth, the purse can be filled."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["日辰冲应或加朱雀交重，必被馋言破阻，", "日月生用或加青龙福德同宫，决然财盈囊门耳。"],
+          "yi": ["日辰冲应，或者再加朱雀交重，一定被谗言破坏阻挠；", "日月生用神，或者再加青龙、福德同宫，一定财满钱袋。"],
+          "en": ["The Day clashing the Other, or the Vermilion Bird added and moving: it will surely be wrecked and blocked by slander;", "the Day and Month generating the Subject, or the Azure Dragon and Output added on the same line: the purse is surely full of money."] }
+      ],
+      "see": ["LY.WEALTH.HJC.24", "LY.WEALTH.YY.10"]
+    },
+    {
+      "id": "LY.WEALTH.YL.45",
+      "topic": "借贷",
+      "chapter": "借贷财物章第一百九",
+      "chapter_en": "Chapter 109 - Borrowing goods and money",
+      "title": "借东西看用神：衣服文书舟车器皿用父母，飞禽走兽鳞介用子孙",
+      "rule": {
+        "yi": "借东西各取各自的用神：帽子衣服、文书、船车、器皿这一类，以父母为用；飞禽走兽、鱼鳞介甲这些有生气的东西，以子孙为用。旺相兴隆大吉，空绝大凶。",
+        "en": "For borrowed goods each takes its own Subject: hats and clothes, documents, boats and carts and utensils take Resource; flying birds, running beasts, scaled and shelled creatures and other living things take Output. Thriving is greatly auspicious; void or extinct is greatly ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["借贷衣舟寻父母，", "那移禽兽子孙凭。"],
+          "yi": ["借贷衣服、船，找父母；", "挪借禽兽，凭子孙。"],
+          "en": ["For borrowing clothes and boats, look to Resource;", "for shifting birds and beasts, rely on Output."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["凡借贷之物，各取其用，", "冠服文书舟车器血之类，父母为用。", "飞禽走兽鳞介生气之物，子孙为用。", "兴隆大吉，空绝大凶。"],
+          "yi": ["凡是借贷的东西，各取各自的用神；", "帽子衣服、文书、船车、器皿这一类，以父母为用神；", "飞禽走兽、鱼鳞介甲这些有生气的东西，以子孙为用神；", "旺相兴隆大吉，空绝大凶。"],
+          "en": ["For any borrowed goods, each takes its own Subject;", "hats and clothes, documents, boats and carts, utensils and the like take Resource as the Subject;", "flying birds, running beasts, scaled and shelled creatures and other living things take Output as the Subject;", "thriving is greatly auspicious, void or extinct greatly ill."] }
+      ],
+      "note": {
+        "yi": "「器血」的「血」疑是「皿」之误，译作器皿。",
+        "en": "'Utensils' translates a two-character word whose second character is probably a slip for 'dishes'."
+      },
+      "see": ["LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.YL.46",
+      "topic": "借贷",
+      "chapter": "摇会得失章第一百十",
+      "chapter_en": "Chapter 110 - Gains and losses in a rotating savings society",
+      "title": "摇会：忌六冲；财官并见、生合世爻得利；财世两爻空破绝，会不成",
+      "rule": {
+        "yi": "摇会（凑钱互助）：最忌六冲，冲就是散；只要财和官同时出现、生合世爻，一定得到自然的好处；财爻、世爻遇空、破、绝，是用爻被害没有用了，会不成，钱也周转不来。",
+        "en": "A rotating savings society: a Six-Clash is the great taboo, for clashing means scattering; all that is needed is Wealth and Pressure appearing together and generating or combining with the Self line, and the natural profit is surely had; with the Wealth and Self lines void, broken or extinct, the Subject line is harmed and useless, the society does not come off, and the silver cannot be raised."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以财爻主为，", "世象为凭。)"],
+          "yi": ["（以财爻为主（原文写作「主为」，字序颠倒），", "世象为凭。）"],
+          "en": ["(Wealth is the chief (the source has the two words in reverse order);", "the image of the Self is the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["摇会求财忌六冲，", "财官不失便亨通，", "世无空破财不绝，", "管取其银入手中。"],
+          "yi": ["摇会求财，忌六冲；", "财和官都不缺就亨通；", "世不空不破、财不绝，", "包管那银子到手。"],
+          "en": ["For a rotating savings society, a Six-Clash is to be avoided;", "with Wealth and Pressure both present, all goes smoothly;", "the Self not void or broken and Wealth not extinct,", "the silver will surely come into your hand."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["摇会者乃实银赴会，祈而得之，", "最忌六冲，冲者散也，岂能成会而得财乎？", "惟要财官并见，生合世爻者必得自然之利。", "财世两爻值空值破值绝，此乃用爻被害乃无用也，", "会岂得成，而银岂得济哉？"],
+          "yi": ["摇会的人是拿着实在的银子去赴会，求着把会银摇到手；", "最忌六冲，冲就是散，怎么能成会、得到钱呢？", "只要财和官同时出现，生合世爻的，一定得到自然的好处；", "财爻、世爻遇空、遇破、遇绝，这是用爻被害，没有用了，", "会怎么能成？银子怎么能周济到手呢？"],
+          "en": ["Those who join a rotating society go with real silver and hope to win the pot;", "a Six-Clash is the great taboo: clashing means scattering, so how could the society hold and money be had?", "all that is needed is Wealth and Pressure appearing together and generating or combining with the Self line, and the natural profit is surely had;", "if the Wealth and Self lines meet void, break or extinction, the Subject line is harmed and useless;", "how could the society come off, and how could the silver be raised?"] }
+      ],
+      "note": {
+        "yi": "摇会是民间的互助会：会员按期出银，用摇骰子的办法决定谁先得会银（这是通常的说法；本章原文只说「实银赴会，祈而得之」）。",
+        "en": "A rotating savings society is a folk mutual-aid club: members put in silver at set times and dice decide who takes the pot first (this is the usual account; this chapter says only 'they go with real silver and pray to win it')."
+      },
+      "see": ["LY.WEALTH.YY.11", "LY.WEALTH.ZS.31"]
+    },
+    {
+      "id": "LY.WEALTH.YL.47",
+      "topic": "借贷",
+      "chapter": "摇会得失章第一百十",
+      "chapter_en": "Chapter 110 - Gains and losses in a rotating savings society",
+      "title": "摇会：兄弟持世或发动，世空财空，会不成、钱不到",
+      "rule": {
+        "yi": "摇会：兄弟是阻挡耗财的神，不宜持世，发动也是卦中大忌；世是主、财是用爻，不可落空，遇到这样，会成不了、钱得不到。",
+        "en": "A rotating savings society: Peer is the spirit that obstructs and consumes and should not sit on the Self, and moving is also a great taboo; the Self is the master and Wealth the Subject line and neither may be void; with these, the society does not form and no money is had."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["兄爻持世兄爻动，", "世或空亡财或空。"],
+          "yi": ["兄爻持世，或兄爻发动，", "世落空亡，或财落空。"],
+          "en": ["Peer on the Self, or Peer moving,", "the Self void, or Wealth void."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["兄弟者，乃阻耗之神，岂宜持世？", "又或发动卦中大忌。", "世为主者，财为用爻，安可落空？", "爻中值此定是会不财不得。"],
+          "yi": ["兄弟是阻挡耗财的神，怎么宜于持世？", "又或者发动，是卦中大忌；", "世是主，财是用爻，怎么可以落空？", "爻中遇到这样，一定是会成不了、钱得不到。"],
+          "en": ["Peer is the spirit that obstructs and consumes; how could it suit sitting on the Self?", "and moving is a great taboo in the hexagram;", "the Self is the master and Wealth the Subject line; how could they be void?", "if the lines show this, the society is sure not to form and the money not to be had."] }
+      ],
+      "note": {
+        "yi": "最后一句「定是会不财不得」字序不顺，应是「会不（成）、财不得」，这里照此读。",
+        "en": "The last sentence is garbled in word order and is read as 'the society does not (form) and the money is not had'."
+      },
+      "see": ["LY.WEALTH.YY.11", "LY.WEALTH.ZS.31"]
+    },
+    {
+      "id": "LY.WEALTH.YL.48",
+      "topic": "借贷",
+      "chapter": "摇会得失章第一百十",
+      "chapter_en": "Chapter 110 - Gains and losses in a rotating savings society",
+      "title": "摇会：卦内无财无利，无鬼无人张罗，都不成事",
+      "rule": {
+        "yi": "摇会：卦里没有财，就没有钱财利益；卦里没有官鬼，就没有人张罗做主；都办不成事，只是白费心机。",
+        "en": "A rotating savings society: with no Wealth in the hexagram there is no profit; with no Pressure in the hexagram there is no one to run it; neither gets done, and it is only wasted effort."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["无鬼无财皆不实，", "定然空去费心功。"],
+          "yi": ["没有官鬼、没有财，都不落实；", "一定白白费心费力。"],
+          "en": ["With no Pressure and no Wealth, nothing is solid;", "you will surely spend effort for nothing."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["卦内无财则无财利，卦中无鬼则无张主，", "皆不成事，则枉费心机，徒然一番话柄耳。"],
+          "yi": ["卦里没有财，就没有钱财利益；卦里没有官鬼，就没有人张罗做主；", "都办不成事，只是枉费心机，白白留下一番话柄罢了。"],
+          "en": ["With no Wealth in the hexagram there is no profit; with no Pressure in the hexagram there is no one to run it;", "neither gets done; it is only wasted effort and a mere topic of gossip."] }
+      ],
+      "see": ["LY.WEALTH.YY.11", "LY.WEALTH.ZS.31"]
+    },
+    {
+      "id": "LY.WEALTH.YL.49",
+      "topic": "买卖",
+      "chapter": "变产求财章第一百十一",
+      "chapter_en": "Chapter 111 - Selling property for money",
+      "title": "卖产业：财爻生旺月日可卖；世应相冲两退悔；勾陈持世或动，永远难变更",
+      "rule": {
+        "yi": "变卖产业：只看财爻生旺的月份、日子，就可以卖出去，财爻衰弱终究难成交；世应相冲，双方都反悔，成交不了；勾陈是管田地的，又是迟滞之神，持世或发动，很难变更，永远搬不动。",
+        "en": "Selling property: look only at the months and days when the Wealth line is born or strong, and it can be sold; with a weak Wealth line the deal is hard to close; Self and Other clashing, both sides regret and the deal does not close; Hook Earth rules fields and is the spirit of delay, and sitting on the Self or moving it is very hard to change and stays put for good."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以应爻为主，", "财象为凭。)"],
+          "yi": ["（以应爻为主，", "财象为凭。）"],
+          "en": ["(the Other line is the chief;", "the image of Wealth is the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["要知产业何时脱，", "财值提纲便可抛，", "世应相冲多退悔，", "勾陈持世永坚牢。"],
+          "yi": ["想知道产业什么时候能脱手，", "财值月令（提纲）就可以抛出；", "世应相冲，多半反悔退出；", "勾陈持世，永远牢固不动。"],
+          "en": ["To know when the property will sell,", "when Wealth is on the ruling line of the month it can be let go;", "Self and Other clashing, there is often regret and withdrawal;", "Hook Earth on the Self stays firm forever."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["变卖产业，但看财爻生旺月日，便可卖去，", "财爻衰弱终难交易。", "世应相冲，彼此退悔两不成交。", "勾陈者，乃职专田主，又为迟滞之神，", "若持世或动者，决难更变，永久无移，", "经云：勾陈职专田土，凡事终见迟留。"],
+          "yi": ["变卖产业，只看财爻生旺的月份、日子，就可以卖出去；", "财爻衰弱，终究难成交。", "世应相冲，双方都反悔，两边都成交不了。", "勾陈是专管田地的，又是迟滞之神，", "如果它持世或发动，很难变更，永远不动；", "经上说：勾陈专管田土，凡事终究迟迟留滞。"],
+          "en": ["To sell off property, look only at the months and days when the Wealth line is born or strong, and it can be sold;", "with a weak Wealth line the deal is hard to close.", "Self and Other clashing, both sides regret and the deal does not close.", "Hook Earth is the ruler of fields and also the spirit of delay;", "if it sits on the Self or moves, it is very hard to change and stays put for good;", "the classic says: 'Hook Earth rules fields and soil; whatever is done ends in delay.'"] }
+      ],
+      "see": ["LY.WEALTH.HJC.38", "LY.WEALTH.YY.21"]
+    },
+    {
+      "id": "LY.WEALTH.YL.50",
+      "topic": "买卖",
+      "chapter": "变产求财章第一百十一",
+      "chapter_en": "Chapter 111 - Selling property for money",
+      "title": "卖产业：应爻是买主，落空冲破无人买；应生合世、财旺，争抢价高",
+      "rule": {
+        "yi": "卖产业：应爻是买主，落空亡就没有力量成交，被日辰冲破就被人阻挠；卦里没有官，也难成事；应爻生世、合世，或者财旺来生合，买主争抢，价钱立刻上涨。",
+        "en": "Selling property: the Other line is the buyer; fallen into void he has not the means to close, clashed and broken by the Day someone obstructs it; with no Pressure in the hexagram it is also hard to complete; the Other line generating or combining with the Self, or a strong Wealth coming to generate or combine, buyers scramble and the price shoots up."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["应居空破谁人买，", "卦乏官爻孰与交，", "应生合世妻财旺，", "争夺相求价必高。"],
+          "yi": ["应落在空、破，谁来买？", "卦里缺官爻，谁和你成交？", "应生合世，妻财又旺，", "争着抢着来买，价钱必定高。"],
+          "en": ["With the Other in void or broken, who will buy?", "With no Pressure line in the hexagram, who will deal with you?", "The Other generating or combining with the Self and Wealth strong,", "buyers scramble for it and the price must be high."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["应爻为承买之人，若落空亡乃无力成交。", "日辰冲破，被人挠阻。", "用户内外无官，亦难成事。", "应爻生世合世，又或财旺来生合，纷纷争夺产价顿增。"],
+          "yi": ["应爻是承买的人，如果落空亡，就是没有力量成交；", "被日辰冲破，会被人阻挠；", "内外卦里都没有官，也难成事；", "应爻生世、合世，或者财旺来生合，买主纷纷争抢，产业价钱立刻上涨。"],
+          "en": ["The Other line is the buyer; if it falls into void, he has not the means to close;", "clashed and broken by the Day, someone obstructs it;", "with no Pressure in the inner or outer trigram it is also hard to complete;", "the Other line generating or combining with the Self, or a strong Wealth coming to generate or combine, buyers scramble one after another and the price of the property shoots up."] }
+      ],
+      "note": {
+        "yi": "「用户内外无官」的「用户」在这里读作占问的这一家（用神所在的内外），原文语焉不详。",
+        "en": "'The user's household, inner and outer, has no Pressure' is terse in the source; here it is read as no Pressure anywhere in the inner or outer trigram."
+      },
+      "see": ["LY.WEALTH.HJC.38", "LY.WEALTH.YY.21"]
+    },
+    {
+      "id": "LY.WEALTH.YL.51",
+      "topic": "风险",
+      "chapter": "变产求财章第一百十一",
+      "chapter_en": "Chapter 111 - Selling property for money",
+      "title": "卖产业：兄动财静或空衰，难脱手；官鬼加朱雀发动，招官司是非牵缠",
+      "rule": {
+        "yi": "卖产业：兄弟兴旺、财爻安静，或又空又衰，一定难脱手，不必多疑；官鬼鼓动、朱雀噪闹，必有官司拖累、是非招来，牵缠不安宁。",
+        "en": "Selling property: Peer rising with the Wealth line still, or void and weak besides, is surely hard to unload, no need to doubt it; Pressure stirring and the Vermilion Bird clamouring bring lawsuits, burdens and quarrels, and entanglement with no peace."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["兄动财安难脱卸，", "鬼加雀动讼非招。"],
+          "yi": ["兄弟动、财安静，难脱手；", "官鬼加朱雀发动，招来官司是非。"],
+          "en": ["Peer moving and Wealth still, it is hard to unload;", "Pressure with the Vermilion Bird moving, and lawsuits and quarrels are invited."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["兄弟若兴，财爻安静，又或空衰，决然难脱，", "不必多疑，", "若鬼鼓雀噪，必有讼累非招，牵缠不泰。"],
+          "yi": ["兄弟若兴旺，财爻安静，或者又空又衰，一定难脱手，", "不必多疑；", "如果官鬼鼓动、朱雀噪闹，必有官司拖累、是非招来，牵缠不安宁。"],
+          "en": ["If Peer rises and the Wealth line is still, or void and weak besides, it is surely hard to unload,", "no need to doubt it;", "if Pressure stirs and the Vermilion Bird clamours, there will surely be lawsuits, burdens and quarrels, and entanglement with no peace."] }
+      ],
+      "see": ["LY.WEALTH.HJC.16", "LY.WEALTH.YY.21"]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "卜筮元龟",
+  "chapter": "总例门",
+  "chapter_en": "The general rules",
+  "ranges": {"大易断例卜筮元龟目": [340, 480]},
+  "units": [
+    {
+      "id": "LY.MARRY.BSYG.01",
+      "topic": "总则",
+      "chapter": "总例门",
+      "chapter_en": "The general rules",
+      "title": "妻妾财同此：妻、妾和财都看同一个财爻；凡婚姻及求财，皆要此爻旺相有气，不落空亡",
+      "rule": {
+        "yi": "妻、妾和财是同一类，都看财爻。占婚姻和求财，这一爻都要旺相有气，不落空亡。",
+        "en": "Wife, concubine and wealth are the same kind, all read from the Wealth line. In divining a marriage or seeking wealth alike, this line must be strong and have qi, and must not fall Void."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [363, 363],
+          "zh": ["妻妾财同此。"],
+          "yi": ["妻、妾和财都是这一爻。"],
+          "en": ["Wife, concubine and wealth are all this one line."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [363, 363],
+          "zh": ["凡婚姻及求财，", "皆要此卦爻旺相有气，", "不落空亡。"],
+          "yi": ["凡是婚姻和求财，", "都要这一卦的这一爻旺相有气，", "不落空亡。"],
+          "en": ["In marriage and in seeking wealth alike,", "this line of the hexagram must be strong and have qi,", "and must not fall Void."] }
+      ],
+      "note": {
+        "yi": "前一句是「我克者为财」，这一句接着说：妻、妾都跟着财爻。",
+        "en": "The line before it is 'what I control is Wealth', and this one goes on: wife and concubine both follow the Wealth line."
+      },
+      "see": ["LY.MARRY.HJC.18", "LY.MARRY.YL.06", "LY.MARRY.YM.01", "LY.MARRY.DYTJ.20"]
+    },
+    {
+      "id": "LY.MARRY.BSYG.02",
+      "topic": "取象",
+      "chapter": "总例门",
+      "chapter_en": "The general rules",
+      "title": "喜庆视青龙：青龙属木春旺，其神若同子孙发动及持世有气不落空亡，主有婚姻官禄财帛、添进人口之喜",
+      "rule": {
+        "yi": "喜庆的事看青龙。青龙属木，春天旺；它如果和子孙一起发动，或者持世有气、不落空亡，主有婚姻、官禄、财帛，添人进口的喜事。",
+        "en": "For joyful events look to the Azure Dragon. It belongs to Wood and thrives in spring; if it moves together with Output, or holds Self with qi and does not fall Void, it means the joy of marriage, official salary and wealth, and of people added to the household."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [367, 367],
+          "zh": ["喜庆视青龙，"],
+          "yi": ["喜庆的事看青龙，"],
+          "en": ["For joyful events look to the Azure Dragon,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [367, 367],
+          "zh": ["属木，", "春旺。", "其神若同子孙发动，", "及持世有气，", "不落空亡，", "主有婚姻官禄财帛，", "添进人口之喜。"],
+          "yi": ["青龙属木，", "春天旺。", "这个神如果和子孙一起发动，", "或者持世有气，", "不落空亡，", "主有婚姻、官禄、财帛，", "添进人口的喜事。"],
+          "en": ["It belongs to Wood,", "and thrives in spring.", "If this spirit moves together with Output,", "or holds Self and has qi,", "and does not fall Void,", "it means marriage, official salary and wealth,", "and the joy of adding people to the household."] }
+      ],
+      "see": ["LY.MARRY.DYTJ.22", "LY.MARRY.DYTJ.24", "LY.MARRY.HJC.32", "LY.MARRY.TXF.13"]
+    },
+    {
+      "id": "LY.MARRY.BSYG.03",
+      "topic": "取象",
+      "chapter": "总例门",
+      "chapter_en": "The general rules",
+      "title": "月建青龙：青龙在内象，月内有婚姻进人口之喜；在外象，求官进职吉",
+      "rule": {
+        "yi": "月建上的青龙：在内象，这个月里有婚姻、添人进口的喜事；在外象，求官、升职吉利。",
+        "en": "The Azure Dragon of the Month: in the inner image, that month brings the joy of a marriage and of people added to the household; in the outer image, seeking office and promotion is lucky."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [409, 409],
+          "zh": ["月建青龙在内象，", "月内有婚姻进人口之喜。", "在外象，", "求官进职吉。"],
+          "yi": ["月建上的青龙在内象，", "这个月里有婚姻、添人进口的喜事；", "如果在外象，", "求官、升职吉利。"],
+          "en": ["The Azure Dragon of the Month, in the inner image,", "brings within that month the joy of a marriage and of people added to the household;", "in the outer image,", "seeking office and promotion is lucky."] }
+      ],
+      "note": {
+        "yi": "这一句前面有一张表，按月排六神（青龙从正月的寅起顺排到十二月的丑），本库没有收表。「内象」「外象」书里没有解释，按字面译。",
+        "en": "Before this line the book has a table laying the six spirits out by month (the Azure Dragon runs from Yin in the first month to Chou in the twelfth), which is not included here. 'Inner image' and 'outer image' are not explained and are translated literally."
+      },
+      "see": ["LY.MARRY.BSYG.02", "LY.MARRY.DYTJ.25", "LY.MARRY.DYTJ.22"]
+    },
+    {
+      "id": "LY.MARRY.BSYG.04",
+      "topic": "取象",
+      "chapter": "总例门",
+      "chapter_en": "The general rules",
+      "title": "青龙内摇多喜庆：青龙在内三爻动，主家中有婚姻喜庆之事，春寅卯爻为旺相",
+      "rule": {
+        "yi": "青龙在内卦动，多有喜庆：青龙在内三爻上动，主家里有婚姻喜庆的事；春天在寅、卯爻上为旺相。",
+        "en": "The Azure Dragon moving within brings much celebration: when it moves on one of the inner three lines it means a marriage or other celebration in the household; in spring, on a Yin or Mao line, it is strong."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [433, 433],
+          "zh": ["青龙内摇多喜庆，"],
+          "yi": ["青龙在内摇动，多有喜庆，"],
+          "en": ["The Azure Dragon moving within brings much celebration,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [433, 433],
+          "zh": ["青龙在内三爻动，", "主家中有婚姻喜庆之事。", "春寅卯爻为旺相。"],
+          "yi": ["青龙在内三爻上动，", "主家里有婚姻喜庆的事。", "春天在寅、卯爻上为旺相。"],
+          "en": ["The Azure Dragon moving on one of the inner three lines", "means a marriage or other celebration in the household.", "In spring, on a Yin or Mao line, it is strong."] }
+      ],
+      "see": ["LY.MARRY.BSYG.02", "LY.MARRY.BSYG.03", "LY.MARRY.DYTJ.22"]
+    },
+    {
+      "id": "LY.MARRY.BSYG.05",
+      "topic": "取象",
+      "chapter": "总例门",
+      "chapter_en": "The general rules",
+      "title": "推占来情：旺相则婚姻官职、休囚则争财退位；内外卦俱旺相者大则求官、次则嫁娶；卦与世爻同克日则必是六畜及婚姻",
+      "rule": {
+        "yi": "要知道占卜的人为什么事来：先看旺相休囚的气，旺相是婚姻、官职的事，休囚是争财、丢官位的事。注说：春天是艮、震，夏天是巽、离，秋天是坤、兑，冬天是乾、坎；占卜一定要先看八卦的休旺之气，内外卦都旺相的，大的是求官，其次是嫁娶；内外都休囚的，则相反。卦和世爻同克日辰，来问的一定是六畜和婚姻。",
+        "en": "To know what the diviner has come about, first look at whether the qi is strong, resting or trapped: strong, it is marriage and office; resting or trapped, it is quarrels over money and an official losing his place. The note says: spring is Gen and Zhen, summer Xun and Li, autumn Kun and Dui, winter Qian and Kan; a divination must first look at the resting or strong qi of the eight trigrams, and when inner and outer are both strong, the great matter is seeking office and next comes marriage; when inner and outer are both resting or trapped, it is the reverse. If the hexagram and the Self line both control the Day, it must be livestock and marriage."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [462, 462],
+          "zh": ["欲知卜者来何意，", "先看旺相休囚气，", "旺相婚姻宜官职，", "休囚争财官退位。"],
+          "yi": ["要知道占卜的人为什么事来，", "先看旺相休囚的气；", "旺相就是婚姻、官职的事，", "休囚是争财、丢官位的事。"],
+          "en": ["To know what the diviner has come about,", "first look at whether the qi is strong, resting or trapped;", "strong, it is marriage and office;", "resting or trapped, it is quarrels over money and an official losing his place."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [462, 462],
+          "zh": ["春艮震，", "夏巽离，", "秋坤兑，", "冬乾坎。", "凡占卜必先看八卦休旺之气者，", "盖休生之卦，", "乃占卜之提纲也。", "故内外俱在旺相者，", "大则求官，", "次则嫁娶，", "出类而知。", "凡在公在私，", "经常有隧者皆是也。", "如内外休囚者，", "则反此。"],
+          "yi": ["春天是艮、震，", "夏天是巽、离，", "秋天是坤、兑，", "冬天是乾、坎。", "凡是占卜，一定先看八卦休旺的气，", "因为休、生的卦，", "是占卜的纲领。", "所以内外卦都在旺相的，", "大的是求官，", "其次是嫁娶，", "按类推就能知道。", "凡是在公在私，", "有常规可循的都是这样。", "如果内外都休囚，", "就与此相反。"],
+          "en": ["Spring is Gen and Zhen,", "summer is Xun and Li,", "autumn is Kun and Dui,", "winter is Qian and Kan.", "In every divination one must first look at the resting or strong qi of the eight trigrams,", "for the trigrams' states of rest and birth", "are the guiding thread of divination.", "So when inner and outer are both in strength,", "the greatest matter is seeking office,", "next comes marriage,", "and by type one can tell;", "whether public or private,", "whatever has a regular course is so.", "If inner and outer are both resting or trapped,", "it is the reverse of this."] },
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [468, 468],
+          "zh": ["卦与世爻同克日，", "必须六畜及婚姻，"],
+          "yi": ["卦和世爻同克日辰，", "来问的一定是六畜和婚姻，"],
+          "en": ["If the hexagram and the Self line both control the Day,", "it must be livestock and marriage,"] }
+      ],
+      "dispute": {
+        "yi": "同一首歌诀，《断易天机》作「卦与世爻同与日」（LY.MARRY.DYTJ.30），这里作「卦与世爻同克日」，一字之差：「同与日」是和日辰相同，「同克日」是一起克日辰。",
+        "en": "In the same rhyme the Duanyi Tianji reads 'the hexagram and the Self line are the same as the Day' (LY.MARRY.DYTJ.30), and this text 'the hexagram and the Self line both control the Day', a one-character difference: 'the same as the Day' means matching the Day and 'both control the Day' means together controlling it."
+      },
+      "note": {
+        "yi": "「休生之卦」的「生」疑是「旺」之误（上下文说的是休旺之气），译文照字面写；「经常有隧」书里没有解释，译作「有常规可循」。",
+        "en": "'Rest and birth' looks like a slip for 'rest and strength', as the context speaks of resting and strong qi, and is translated as written; 'has a regular tunnel' is not explained and is rendered as having a regular course."
+      },
+      "see": ["LY.MARRY.DYTJ.30", "LY.MARRY.YM.06"]
+    }
+  ]
+}

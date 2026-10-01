@@ -1,0 +1,316 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮全书",
+  "chapter": "阐幽精要(疾病论后半、五行论病歌、六神论神鬼心决、六神论神崇决、妖孽赋、搜鬼论)",
+  "chapter_en": "Chanyou Jingyao (second half of the chapter on illness, verse on illness by the five elements, the six spirits, the Fu on monsters, searching out the ghost)",
+  "ranges": {"卜筮大全": [9782, 9874]},
+  "units": [
+    {
+      "id": "LY.ILL.BSQS.37",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·神鬼之由(一)：乾宫愿欠天庭、坤鬼动地府、艮鬼路神作祸、震宫克世狱司降灾；鬼临五位路头神、官在三爻家内崇；坎鬼溺水之魂、巽鬼悬梁之崇；坎宫船车之鬼、艮象路狱之魂",
+      "rule": {
+        "yi": "疾病论里按八卦推是哪一路神鬼作祟：乾宫发动，是欠了天庭的愿；坤宫鬼爻兴旺，是冒犯了地府；艮宫鬼爻伤身，是路神作祸；震宫克世，是狱司降灾；鬼临在第五爻，是路头神；官鬼在第三爻，是家里作祟；坎宫鬼动，要求溺水之魂；巽宫鬼兴，要祭上吊之祟；坎宫交重是船车之鬼，艮象土爻发动是路上、狱中之魂。",
+        "en": "The chapter on illness works out from the trigrams which kind of spirit or ghost is at work: Qian moving, a vow owed to the Heavenly Court; Kun ghost thriving, it disturbs the Earth Prefecture; Gen ghost harming the person, a road spirit causing harm; Zhen controlling the Self line, a spirit of the prison sends down calamity; the ghost on the fifth place, the Road-Head spirit; Pressure on the third line, a haunting within the house; a Kan ghost moving, seek the soul of one drowned; a Xun ghost rising, sacrifice to the haunting of one who hanged himself from a beam; Kan moving is a ghost of boats and carts, a Gen Earth line moving is a soul of the road or the prison."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9782, 9784],
+          "zh": ["要推神鬼之由，", "便知天道地道。", "乾宫发动，", "愿欠天庭；", "坤鬼兴隆，", "动干地府；", "艮鬼伤身，", "路神作祸；", "震宫克世，", "狱司降灾。", "鬼临五位路头神，", "官在三爻家内崇。"],
+          "yi": ["要推求是哪路神鬼作祟，", "就要知道天道、地道。", "乾宫发动，", "是欠了天庭的愿；", "坤宫的鬼爻兴旺，", "是冒犯了地府；", "艮宫的鬼爻伤身，", "是路神在作祸；", "震宫克世，", "是狱司降下灾祸。", "鬼临在第五爻，是路头神；", "官鬼在第三爻，是家里作祟。"],
+          "en": ["To work out which spirit or ghost is at work,", "one must know the way of heaven and the way of earth.", "With the Qian palace moving,", "it is a vow owed to the Heavenly Court;", "with the Kun ghost thriving,", "it disturbs the Earth Prefecture;", "with the Gen ghost harming the person,", "a road spirit is causing the harm;", "with the Zhen palace controlling the Self line,", "a spirit of the prison sends down calamity.", "With the ghost on the fifth place, it is the Road-Head spirit;", "with Pressure on the third line, it is a haunting within the house."] },
+        { "by": "经", "book": "卜筮大全", "range": [9785, 9785],
+          "zh": ["坎鬼动，", "须求溺水之魂；", "巽鬼兴，", "当祭悬梁之崇。", "月破入官求七杀，", "日辰带鬼告三司。"],
+          "yi": ["坎宫的鬼发动，", "要求溺水而死的魂；", "巽宫的鬼兴旺，", "应当祭上吊而死者的作祟。", "月破落在官鬼上，要求七杀；", "日辰带着鬼爻，要告三司。"],
+          "en": ["With the Kan ghost moving,", "one must seek the soul of one who drowned;", "with the Xun ghost rising,", "the haunting of one who hanged himself from a beam is to be sacrificed to.", "With the Month-break falling on Pressure, seek the Seven Killings;", "with the Day carrying the ghost, petition the Three Offices."] },
+        { "by": "经", "book": "卜筮大全", "range": [9788, 9788],
+          "zh": ["坎宫本为交重，船车之鬼；", "艮象土爻发动，路狱之魂。"],
+          "yi": ["坎宫本来交重，是船和车上的鬼；", "艮象土爻发动，是路上、狱中的魂。"],
+          "en": ["Kan moving as it stands is a ghost of boats and carts;", "a Gen Earth line moving is a soul of the road or the prison."] }
+      ],
+      "dispute": {
+        "yi": "鬼爻落在哪一爻是什么神，几处说法不同。这一段是「五位路头神、三爻家内崇」；卜筮全书的六位取象表（LY.ILL.BSQS.02）是初爻井神、二爻司命、三爻家先、四爻土地、五爻社司、六爻天神，三爻家先和这里的「家内崇」相通，五爻则是社司，不是路头神。另两种排法见 LY.ILL.HZL.11 和 LY.ILL.EL.37。书里没有裁决。",
+        "en": "The books differ on what spirit a ghost on each line stands for. This passage has 'the fifth place the Road-Head spirit, the third line a haunting within the house'; the table of the positions of the lines in the Bushi Quanshu (LY.ILL.BSQS.02) has the first line the well spirit, the second the Life-Governing Spirit, the third the family ancestors, the fourth the Earth God, the fifth the village altar spirit and the sixth the heavenly spirit; the third line, family ancestors, is akin to 'a haunting within the house' here, but the fifth line is the village altar spirit there and not the Road-Head spirit. Two other arrangements are in LY.ILL.HZL.11 and LY.ILL.EL.37. The books do not decide."
+      },
+      "note": {
+        "yi": "这一段按「哪一宫（八卦）的鬼爻发动」来断是哪一类神鬼作祟：乾是天庭（欠了天上神的愿），坤是地府，艮是路神，震是狱司，坎是溺水的魂（也是船车的鬼），巽是上吊的鬼；按爻位断的只有「鬼临五位」「官在三爻」两处。「求七杀」的七杀是一颗凶星，「三司」是几个官署，书里没有解释，译文照字面；「动干地府」的「干」按冒犯、触犯读。这一段按八卦取神，和按爻位取神的表（LY.ILL.BSQS.02）是两条思路。",
+        "en": "This passage judges which kind of spirit or ghost is at work from the palace (trigram) whose ghost line moves: Qian is the Heavenly Court (a vow owed to the gods above), Kun the Earth Prefecture, Gen a road spirit, Zhen a spirit of the prison, Kan the soul of one drowned (and a ghost of boats and carts), Xun the ghost of one who hanged himself; only 'the ghost on the fifth place' and 'Pressure on the third line' go by line position. 'Seek the Seven Killings' names a malign star, and the 'Three Offices' are several government offices; the book does not explain them and the translation keeps to the letter; the 'disturbs' in 'disturbs the Earth Prefecture' is read as offending or intruding on. This passage takes the spirit from the trigram, which is a different line of thought from the table that takes it from the line position (LY.ILL.BSQS.02)."
+      },
+      "see": ["LY.ILL.BSQS.02", "LY.ILL.BSQS.38", "LY.ILL.BSQS.39"]
+    },
+    {
+      "id": "LY.ILL.BSQS.38",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·神鬼之由(二)：日值贵官可告城隍、岁临官贵宜求五道家堂；兑象官兴急还口愿、火爻鬼动速祀灶君；离鬼休囚持世祈斗、乾鬼旺相克身告天神还素愿；衰官外动别宫来是外崇、休鬼内兴本宫动可辨家亲",
+      "rule": {
+        "yi": "疾病论里接着按日、岁、五行和宫来断神鬼：日辰值着贵官，可以向当地的城隍祷告；太岁临官贵，宜求五道和家堂；兑象官鬼兴旺，赶紧还口愿；火爻鬼动，赶快祭灶君；离鬼休囚持世，要祈禳北斗；乾鬼旺相克身，宜向天神还素愿；衰官在外卦、从别宫来，是外来作祟；休鬼在内卦、本宫动，可以辨出是家亲。",
+        "en": "The chapter on illness goes on judging spirits by the Day, the Year, the elements and the palace: with the Day on the noble officer, one may petition the City God of the district; with the Year on the noble officer, it is fitting to beseech the Five Roads and the household shrine; with Pressure in the Dui image rising, hurry to repay a spoken vow; with a Fire ghost moving, quickly sacrifice to the Hearth Lord; a Li ghost resting or confined and holding the Self line, pray to the Dipper; a Qian ghost strong and controlling the Body, petition the heavenly spirits and repay a vegetarian vow; a weak Pressure line moving outside and coming from another palace is an outside haunting; a resting ghost rising inside and moving from the home palace can be identified as the family's own kin."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9786, 9786],
+          "zh": ["日值贵官，", "可告城隍当境；", "岁临官贵，", "宜求五道家堂。", "兑象官兴，", "急还口愿；", "火爻鬼动，", "速祀灶君。"],
+          "yi": ["日辰值着贵官，", "可以向当地的城隍祷告；", "太岁临着官贵，", "宜求五道和家堂。", "兑象的官鬼兴旺，", "赶紧还口头许的愿；", "火爻的鬼发动，", "赶快祭祀灶君。"],
+          "en": ["With the Day on the noble officer,", "one may petition the City God of the district;", "with the Year on the noble officer,", "it is fitting to beseech the Five Roads and the household shrine.", "With Pressure in the Dui image rising,", "hurry to repay a vow spoken aloud;", "with a Fire ghost moving,", "quickly sacrifice to the Hearth Lord."] },
+        { "by": "经", "book": "卜筮大全", "range": [9787, 9787],
+          "zh": ["离鬼休囚持世，", "值须祈斗祷花穷；", "乾鬼旺相克身，", "宜告天神还素愿。", "衰官外动别宫来，", "便言外崇；", "休鬼内兴本宫动，", "可辨家亲。"],
+          "yi": ["离宫的鬼休囚、持世，", "遇到这种情形，要祈禳北斗，还要向「花穷」祷告；", "乾宫的鬼旺相、克身，", "宜向天神祷告，还清素愿。", "衰弱的官鬼在外卦发动、从别的宫来，", "就说是外来的作祟；", "休囚的鬼在内卦兴起、是本宫动的，", "可以辨认是家亲。"],
+          "en": ["With a Li ghost resting or confined and holding the Self line,", "in such a case one must pray to the Dipper and offer prayers to Huaqiong;", "with a Qian ghost strong and controlling the Body,", "it is fitting to petition the heavenly spirits and repay a vegetarian vow.", "A weak Pressure line moving outside and coming from another palace", "is called an outside haunting;", "a resting ghost rising inside and moving from the home palace", "can be identified as the family's own kin."] }
+      ],
+      "note": {
+        "yi": "这一段里「日值贵官」「岁临官贵」的贵官、官贵是有贵人星的官鬼一类（书里没有展开）。「城隍」是城隍神，「五道」是五道神，「家堂」是家里供的神堂，「灶君」是灶神，「素愿」是许下的吃素、斋戒一类的愿，「口愿」是口头许的愿。「花穷」两字书里没有解释，译文只音译。「家亲」是家里已故的亲人的鬼魂。「衰官外动别宫来」「休鬼内兴本宫动」是用鬼爻的旺衰、内外、本宫来分外来的祟和家里的祟。",
+        "en": "In this passage the 'noble officer' and 'officer noble' of 'the Day on the noble officer' and 'the Year on the officer noble' are a Pressure line carrying a noble star (the book does not go further). The 'City God' is the god of the city, the 'Five Roads' are the Five Road gods, the 'household shrine' is the shrine of spirits kept at home, the 'Hearth Lord' is the kitchen god, a 'vegetarian vow' is a vow of vegetarian fasting, and a 'spoken vow' is one made aloud. The two characters rendered 'Huaqiong' are not explained in the book and are only transliterated. 'The family's own kin' are the ghosts of deceased relatives of the household. 'A weak Pressure line moving outside from another palace' and 'a resting ghost rising inside and moving from the home palace' use the strength or weakness of the ghost line, inside or outside, and the home palace to tell a haunting from outside from a haunting of the household."
+      },
+      "see": ["LY.ILL.BSQS.37", "LY.ILL.BSQS.39"]
+    },
+    {
+      "id": "LY.ILL.BSQS.39",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·神鬼之由(三)：应鬼克身逢外鬼、官爻生世是连亲；日辰冲发为无主、土位塞兴定有坟；土动死囚牢狱、火兴临没产亡；旺日看四时、休囚寻八节",
+      "rule": {
+        "yi": "疾病论里最后几联讲神鬼：应爻的鬼克身，遇到的是外来的鬼；官爻生世爻，是连着亲戚的；被日辰冲动而发出来的，是无主的鬼；土位被堵塞又兴起，一定有坟；土爻动，是死在牢狱里的囚犯；火爻兴旺，是产亡的鬼；只要知道旺的日子，就看四季；细察休囚的日子，就找八节。",
+        "en": "The last couplets of the chapter on illness on spirits and ghosts: a ghost on the Other line controlling the Body is an outside ghost; a Pressure line generating the Self line is of kin connections; one stirred out by the Day's clash is a ghost without an owner; with the Earth place stopped up and rising, there is surely a grave; an Earth line moving is one who died as a prisoner in jail; a Fire line rising is one who died in childbirth; know the strong days and look to the four seasons, examine the resting and confined closely and seek the eight festivals."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9789, 9789],
+          "zh": ["应鬼克身逢外鬼，", "官爻生世是连亲。", "日辰冲发为无主，", "土位塞兴定有坟。", "土动死囚牢狱，", "火兴临没产亡。"],
+          "yi": ["应爻上的鬼克身，遇到的是外来的鬼；", "官鬼爻生世爻，是连着亲戚的。", "被日辰冲动而发出来的，是无主的鬼；", "土位堵塞又兴起，一定有坟。", "土爻动，是死在牢狱里的囚犯；", "火爻兴旺，是产妇死亡的鬼。"],
+          "en": ["A ghost on the Other line controlling the Body: it is an outside ghost;", "a Pressure line generating the Self line is of kin connections.", "One stirred out by the Day's clash is a ghost without an owner;", "with the Earth place stopped up and rising, there is surely a grave.", "an Earth line moving: one who died as a prisoner in jail;", "a Fire line rising: one who died in childbirth."] },
+        { "by": "经", "book": "卜筮大全", "range": [9790, 9790],
+          "zh": ["但知旺日看四时，", "细察休囚寻八节。"],
+          "yi": ["只要知道旺的日子，就看四季；", "细细察看休囚，就找八节。"],
+          "en": ["Only know the strong days and look to the four seasons;", "examine the resting and confined closely and seek the eight festivals."] }
+      ],
+      "note": {
+        "yi": "「应鬼克身逢外鬼」的「应鬼」是应爻上的鬼，「外鬼」是外来的鬼。「官爻生世是连亲」的「连亲」是连着亲戚的鬼。「日辰冲发为无主」是说被日辰冲动、自己本来不动的鬼，是没有主人的鬼（游魂）。「土位塞兴」「火兴临没产亡」两处文意不全，「塞」按字面是堵塞，「临没」按字面是快要死，译文照字面，没有补。最后两句「旺日看四时，休囚寻八节」是说找神鬼作祟的时间：旺的日子看四季，休囚的日子找八节（立春、春分等八个节气）。",
+        "en": "'A ghost on the Other line controlling the Body: an outside ghost' is a ghost on the Other line, and the 'outside ghost' one from elsewhere. 'Pressure generating the Self line is kin connections' is a ghost connected to relatives. 'Stirred out by the Day's clash: without an owner' is a ghost that was not itself moving and is set moving by the Day's clash, a ghost with no master (a wandering soul). In 'the Earth place stopped up and rising' and 'Fire rising and on the point of death: a death in childbirth' the sense is incomplete; 'stopped up' is literally blocked and 'on the point of death' literally about to die, and the translation keeps to the letter without filling in. The last two lines, 'know the strong days and look to the four seasons, examine the resting and confined and seek the eight festivals', are about finding the time of the haunting: strong days by the four seasons, resting days by the eight festivals (the start of spring, the spring equinox and so on)."
+      },
+      "see": ["LY.ILL.BSQS.37", "LY.ILL.BSQS.38"]
+    },
+    {
+      "id": "LY.ILL.BSQS.40",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·鬼的形貌：乾金之鬼白发老翁、坎鬼休囚耳聋鬼崇、艮鬼手瘫、震官脚疾、巽爻官发折腿腰跎、离象鬼兴眼昏目暗、坤土之鬼花苍母、兑金死鬼缺唇魂",
+      "rule": {
+        "yi": "疾病论里按八卦说鬼的模样和它带来的病：乾金之鬼是白发老头；坎鬼休囚，是耳聋的鬼作祟；艮宫的鬼，手瘫；震宫的官鬼，脚有病；巽宫的官鬼发动，折腿、腰驼；离象的鬼兴旺，眼睛昏暗；坤土之鬼是花白头发的老母；兑金的死鬼是缺嘴唇的魂。",
+        "en": "The chapter on illness gives, by trigram, the look of the ghost and the illness it brings: the ghost of Qian Metal is a white-haired old man; a Kan ghost resting or confined is a deaf ghost haunting; a Gen ghost, a paralysed hand; the Pressure line of Zhen, disease of the foot; the Pressure line of Xun moving, a broken leg and a bent waist; a ghost rising in the Li image, dim and dark eyes; the ghost of Kun Earth is an old mother with mottled grey hair; the dead ghost of Dui Metal is the soul of one with a split lip."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9791, 9791],
+          "zh": ["乾金之鬼，", "白发老翁；", "坎鬼休囚，", "耳聋鬼崇。", "艮鬼手瘫，", "震官脚疾；", "巽爻官发，", "折腿腰跎；", "离象鬼兴，", "眼昏目暗；", "坤土之鬼花苍母，", "兑金死鬼缺唇魂。"],
+          "yi": ["乾宫金爻的鬼，", "是白发老头；", "坎宫的鬼休囚，", "是耳聋的鬼在作祟；", "艮宫的鬼，手瘫；", "震宫的官鬼，脚有病；", "巽宫的官鬼发动，", "折了腿，腰驼了；", "离象的鬼兴旺，", "眼睛昏暗看不清；", "坤宫土爻的鬼，是花白头发的老母；", "兑宫金爻的死鬼，是缺嘴唇的魂。"],
+          "en": ["The ghost of Qian Metal", "is a white-haired old man;", "a Kan ghost resting or confined", "is a deaf ghost haunting;", "a Gen ghost: a paralysed hand;", "the Pressure line of Zhen: disease of the foot;", "with the Pressure line of Xun moving,", "a broken leg and a bent waist;", "with a ghost rising in the Li image,", "the eyes are dim and dark;", "the ghost of Kun Earth is an old mother with mottled grey hair;", "the dead ghost of Dui Metal is the soul of one with a split lip."] }
+      ],
+      "note": {
+        "yi": "这一段讲的是鬼的模样，同时也是它带来的病或伤：白发老翁、花苍母、缺唇魂是鬼的样子，手瘫、脚疾、折腿、眼昏目暗既可以读作鬼的模样，也可以读作病人的病，书里没有分开。「腰跎」的「跎」字读作驼背、腰弯，按字面译成「腰驼了」。这一段里艮手、震足、离目、坎耳和本篇前面的八卦配病位（LY.ILL.BSQS.33）一致，巽这里是腿和腰，和前面的「股」相近，见 LY.ILL.BSQS.33 的「打架」。",
+        "en": "This passage gives the look of the ghost and, at the same time, the illness or injury it brings: the white-haired old man, the mottled grey mother and the soul with a split lip are how the ghost looks, while the paralysed hand, the foot disease, the broken leg and the dim and dark eyes can be read either as the look of the ghost or as the illness of the sick person, and the book does not separate them. The character rendered 'bent' in 'a bent waist' means stooped or bowed, and it is translated to the letter. In this passage Gen the hand, Zhen the foot, Li the eye and Kan the ear agree with the matching of the trigrams to places of illness earlier in the chapter (LY.ILL.BSQS.33); for Xun it gives the leg and the waist, which is close to the thigh there; see the dispute in LY.ILL.BSQS.33."
+      },
+      "see": ["LY.ILL.BSQS.33"]
+    },
+    {
+      "id": "LY.ILL.BSQS.41",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·家亲与愿：看祖宗叔伯推父母爻、姨母妻奴推财爻；白虎丧门亲座席、青龙天乙贵家亲；龙雀素愿、虎勾晕盟；雀虎入乾离只言拜愿烧香、勾陈临震巽便说愿心枷锁；鬼静生身吉、官兴克世告神凶",
+      "rule": {
+        "yi": "疾病论里讲是哪一位亲人、哪一种愿：要看祖宗、叔伯，用父母爻推；要看姨母、妻子、奴仆，用财爻断；阳爻是男子，阴爻是女人；白虎、丧门，是亲人在座；青龙、天乙贵人，是尊贵的家亲；青龙、朱雀叫素愿，白虎、勾陈是晕盟；朱雀、白虎进乾、离动，只说拜愿烧香；勾陈临震、巽交重，就说愿心枷锁；鬼静、生身还是吉，官鬼兴动、克世，告神也凶。",
+        "en": "The chapter on illness on which kin and which vow: to see the ancestors and uncles, work it out from the Resource line; to see the aunt, wife or servants, judge by the Wealth line; a yang line is a man, a yin line a woman; the White Tiger and Mourning Gate are kin in their seats; the Azure Dragon and Heavenly Noble are honoured family kin; the Azure Dragon and Vermilion Bird are called vegetarian vows, the White Tiger and Hook Earth are sure to be yun-meng oaths; the Vermilion Bird and White Tiger in Qian or Li and moving speak only of making vows and burning incense; Hook Earth on Zhen or Xun and moving speaks of the cangue and lock of a vow; a ghost still and generating the Body is still auspicious, Pressure rising and controlling the Self line is ominous even when one petitions the spirits."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9792, 9794],
+          "zh": ["要见祖宗叔伯，", "须将父母推详。", "如求姨母妻奴，", "更把财爻决断。", "阳爻男子，", "阴爻女流。", "白虎丧门亲座席，", "青龙天乙贵家亲。", "龙雀名为素愿，", "虎勾定是晕盟。", "雀虎入乾离兴动，", "只言拜愿烧香；", "勾陈临震巽交重，", "便说愿心枷锁。", "鬼静生身还是吉，", "官兴克世告神凶。"],
+          "yi": ["要看祖宗、叔伯，", "要用父母爻来推详。", "如果要求的是姨母、妻子、奴仆，", "就用财爻来决断。", "阳爻是男子，", "阴爻是女人。", "白虎、丧门，是亲人在座；", "青龙、天乙贵人，是尊贵的家亲。", "青龙、朱雀叫作素愿，", "白虎、勾陈一定是晕盟。", "朱雀、白虎进乾、离发动，", "只说是拜愿、烧香；", "勾陈临在震、巽而交重，", "就说是愿心枷锁。", "鬼爻安静、生身，还是吉；", "官鬼兴动、克世，告神也凶。"],
+          "en": ["To see the ancestors and uncles,", "one must work it out from the Resource line.", "To seek an aunt, wife or servants,", "judge by the Wealth line.", "A yang line is a man;", "a yin line is a woman.", "The White Tiger and Mourning Gate are kin in their seats;", "the Azure Dragon and Heavenly Noble are honoured family kin.", "The Azure Dragon and Vermilion Bird are called vegetarian vows,", "the White Tiger and Hook Earth are sure to be yun-meng oaths.", "With the Vermilion Bird and White Tiger in Qian or Li and moving,", "it speaks only of making vows and burning incense;", "with Hook Earth on Zhen or Xun and moving,", "it speaks of the cangue and lock of a vow.", "With the ghost still and generating the Body, it is still auspicious;", "with Pressure rising and controlling the Self line, even petitioning the spirits is ominous."] }
+      ],
+      "note": {
+        "yi": "「晕盟」照原文，字面是「晕」（头晕）的盟，从上下句看它和「素愿」相对，可能是「荤盟」（带荤腥的盟誓）的误字，书里没有说，译文只音译为「yun-meng 盟誓」。「天乙」是天乙贵人。「愿心枷锁」是许了愿没有还，被愿心锁住。「亲座席」按字面是亲人坐在席上，书里没有解释。「阳爻男子，阴爻女流」是说被推的亲人是男是女，按爻的阴阳分。",
+        "en": "'Yun-meng' is kept as written; literally it is an oath of 'dizziness', and from the lines before and after, where it stands opposite 'vegetarian vow', it may be a miswriting of 'meat oath' (an oath sworn with meat); the book does not say, and the translation only transliterates it as 'yun-meng oaths'. 'Heavenly Noble' is the Heavenly Noble star. 'The cangue and lock of a vow' is a vow made and not repaid, leaving one locked in by it. 'Kin in their seats' is literally relatives seated at the mat, and the book does not explain it. 'A yang line a man, a yin line a woman' says whether the kinsman being worked out is male or female, by the yin or yang of the line."
+      },
+      "see": ["LY.ILL.BSQS.37", "LY.ILL.BSQS.38"]
+    },
+    {
+      "id": "LY.ILL.BSQS.42",
+      "topic": "医药",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·医药：亦求子位同推、反作药爻以治；子旺福神得力、子衰扁鹊难医",
+      "rule": {
+        "yi": "疾病论最后说医药：也要去求子孙的位置一起推，反过来把它当作药爻来治；子孙旺，福神就得力；子孙衰，连扁鹊也难医；还要深入详察整个卦象怎么样，察看吉凶休咎。",
+        "en": "The chapter on illness ends on medicine: also seek the Output place and work it out together, and in turn take it as the medicine line for treatment; if Output is strong the spirit of fortune is effective, if Output is weak even Bian Que finds it hard to cure; and examine deeply how the whole image stands, observing good and ill fortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9795, 9795],
+          "zh": ["亦求子位同推，", "反作药爻以治。", "子旺福神而得力，", "子衰扁鹊以难医。", "深详大象如何，", "要察吉凶休咎。"],
+          "yi": ["也要去求子孙的位置一起推，", "反过来把它当作药爻来治病。", "子孙旺，福神就得力；", "子孙衰，连扁鹊也难医。", "要深入详察整个卦象怎么样，", "察看吉凶休咎。"],
+          "en": ["Also seek the Output place and work it out together,", "and in turn take it as the medicine line for treatment.", "If Output is strong, the spirit of fortune is effective;", "if Output is weak, even Bian Que finds it hard to cure.", "Examine deeply how the whole image stands,", "and observe good and ill fortune."] }
+      ],
+      "note": {
+        "yi": "子孙爻在占病里有两重身份：克官鬼（病），所以是「福神」；又是药，所以是「药爻」。这一段和断易天机的孙真人论医歌、洞林秘诀里「卦中子孙爻为药」是同一个说法（LY.ILL.DYTJ.45、LY.ILL.DYTJ.47）。扁鹊是战国时的名医。",
+        "en": "In divining illness the Output line has two roles: it controls Pressure (the illness), which is why it is the 'spirit of fortune'; and it is the medicine, which is why it is the 'medicine line'. This passage says the same as Master Sun's song on doctors and the Dongling Mijue in the Duanyi Tianji, 'the Output line in the hexagram is the medicine' (LY.ILL.DYTJ.45, LY.ILL.DYTJ.47). Bian Que was a famous physician of the Warring States."
+      },
+      "see": ["LY.ILL.DYTJ.45", "LY.ILL.DYTJ.47"]
+    },
+    {
+      "id": "LY.ILL.BSQS.43",
+      "topic": "症候",
+      "chapter": "阐幽精要·十二、五行论病歌",
+      "chapter_en": "Chanyou Jingyao, no. 12: verse on illness by the five elements",
+      "title": "五行论病歌：金鬼牙与头、更兼白虎血脓流；木鬼风疾头眩眼暗；水兴寒热多因疟、痢疾伤风；火鬼虚劳弱症眼疼；土鬼脾胃虚黄肿、间动膈病",
+      "rule": {
+        "yi": "五行论病歌：金鬼兴隆，病在牙和头，再加白虎，血和脓流；木鬼发动是风病，头晕眼花；水兴是发冷发热，多半是疟疾，痢疾、伤风不容易治；火鬼是虚劳加上虚弱，眼睛疼痛也有来由；土鬼是脾胃虚、黄肿，间爻动要担心膈的病。",
+        "en": "The verse on illness by the five elements: a Metal ghost thriving, the teeth and the head, with the White Tiger as well, blood and pus flow; a Wood ghost moving, a wind illness, with dizziness and dim eyes; Water rising, chills and fever mostly from malaria, and dysentery and wind-damage are not easily treated; a Fire ghost, consumption and weakness, and eye pain has its cause too; an Earth ghost, weak spleen and stomach and yellow swelling, and if the between lines move, worry about a diaphragm illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9805, 9805],
+          "zh": ["金鬼兴隆牙与头，", "更兼白虎血脓流。", "木鬼动时风疾症，", "头眩眼暗几时休。", "水兴寒热多因疟，", "痢疾伤风未易疗。", "火鬼虚劳兼弱症，", "眼目疼痛有来由。", "土鬼脾胃虚黄肿，", "间动须当膈病愁。"],
+          "yi": ["金鬼兴旺，病在牙和头，", "再加白虎，血和脓流出来。", "木鬼发动的时候，是风病一类，", "头晕眼花，不知什么时候才好。", "水鬼兴起，发冷发热，多半是疟疾；", "痢疾、伤风不容易治。", "火鬼，是虚劳加上虚弱的病，", "眼睛疼痛也有它的来由。", "土鬼，脾胃虚、黄肿；", "间爻动，要担心膈的病。"],
+          "en": ["A Metal ghost thriving: the teeth and the head;", "with the White Tiger as well, blood and pus flow.", "A Wood ghost moving: a wind illness;", "dizziness and dim eyes, when will it end?", "Water rising: chills and fever, mostly from malaria;", "dysentery and wind-damage are not easily treated.", "A Fire ghost: consumption and weakness;", "eye pain has its cause too.", "An Earth ghost: weak spleen and stomach, yellow swelling;", "if the between lines move, worry about a diaphragm illness."] }
+      ],
+      "dispute": {
+        "yi": "五行的鬼各主什么病，几家说法不同。这一首是「金鬼牙与头（加白虎血脓）、木鬼风疾头眩眼暗、水寒热疟痢、火鬼虚劳眼痛、土鬼脾胃虚黄肿」；阐奥歌章（LY.ILL.CA.02）是水腰肾、金肺、火心经、木肝、土脾胃；卜筮元龟一段（LY.ILL.DYTJ.12）是木鬼身体疼痛、水土鬼痈肿、金鬼牙骨痛；同一本书的疾病论（LY.ILL.BSQS.32）是金木动骨骼疼酸、水火兴皮肤寒热、丑未伤脾。土配脾胃、金配牙，几家相近；火配心（阐奥歌章）、配虚劳眼痛（这一首）、配皮肤寒热（疾病论），木配肝（阐奥歌章）、配风疾头眩（这一首）、配身体疼痛（卜筮元龟），各不相同。书里没有裁决。",
+        "en": "The books differ on what illness each element's ghost governs. This verse has 'Metal ghost teeth and head (with the White Tiger, blood and pus), Wood ghost wind illness, dizziness and dim eyes, Water chills and fever with malaria and dysentery, Fire ghost consumption and eye pain, Earth ghost weak spleen and stomach with yellow swelling'; the Chan'ao Gezhang (LY.ILL.CA.02) has Water the waist and kidneys, Metal the lungs, Fire the heart channel, Wood the liver, Earth the spleen and stomach; the Bushi Yuangui passage (LY.ILL.DYTJ.12) has a Wood ghost bodily pain, a Water or Earth ghost swollen abscesses, a Metal ghost pain in the teeth and bones; and the chapter on illness in the same book (LY.ILL.BSQS.32) has Metal or Wood moving, aching bones and joints, Water or Fire rising, chills and fever of the skin, Chou or Wei moving, harm to the spleen. Earth matched to the spleen and stomach and Metal to the teeth are close in several; Fire is matched to the heart (Chan'ao Gezhang), to consumption and eye pain (this verse) and to chills and fever of the skin (the chapter on illness), and Wood to the liver (Chan'ao Gezhang), to wind illness and dizziness (this verse) and to bodily pain (Bushi Yuangui), all different. The books do not decide."
+      },
+      "note": {
+        "yi": "这是阐幽精要里一首十句的歌，每一句配一种五行的鬼爻和它主的病。「风疾」是风病，头晕、抽搐、中风一类；「虚劳」是体虚而劳损，近于痨病；「膈病」是胸膈的病，噎膈一类；「间动」是间爻（世应之间的爻）发动。书里的病名按字面译，括号里不加现代病名。",
+        "en": "This is a ten-line verse in the Chanyou Jingyao, each line matching one element's ghost line to the illness it governs. 'Wind illness' is an illness of wind, dizziness, convulsions, strokes and the like; 'consumption' is deficiency and wasting, close to a consumptive illness; 'diaphragm illness' is illness of the chest and diaphragm, of the choking-obstruction kind; 'the between lines move' is the lines between the Self and Other lines moving. The names of illnesses are translated to the letter, without modern disease names added in brackets."
+      },
+      "see": ["LY.ILL.CA.02", "LY.ILL.DYTJ.12", "LY.ILL.BSQS.32", "LY.ILL.HDY.12"]
+    },
+    {
+      "id": "LY.ILL.BSQS.44",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十三、六神论神鬼心决",
+      "chapter_en": "Chanyou Jingyao, no. 13: the six spirits and the heart-secret of spirits and ghosts",
+      "title": "六神论神鬼心决：青龙观音三官、朱雀家堂灶君鬼为吐血劳怯、勾陈土地城隍鬼为痢疾蛊胀、螣蛇缢死汤火、白虎横死肚饱魂、玄武真武帝鬼作落水伤亡",
+      "rule": {
+        "yi": "六神论神鬼心决是六首歌，每首一位神：青龙是善愿、观音、三官；朱雀是家堂、灶君，鬼为吐血和劳怯，目疾、伤亡也有缘故；勾陈是土地、城隍，鬼为痢疾和蛊胀，遇土爻是咽塞而死；螣蛇逢官缢死，孩童汤火受伤；白虎临太岁是大将军，横死伤亡；玄武是真武帝，鬼爻作祟断为落水伤亡。",
+        "en": "The verses on the six spirits and the heart-secret of spirits and ghosts are six songs, one for each spirit: the Azure Dragon is good vows, Guanyin and the Three Officials; the Vermilion Bird is the household shrine and the Hearth Lord, its ghost means spitting blood and consumptive weakness, and eye disease, injury and death have their cause in it; Hook Earth is the Earth God and the City God, its ghost means dysentery and swelling of the belly, and meeting an Earth line one dies of a blocked throat; the Coiling Snake meeting Pressure means death by hanging, and children are hurt by scalding and fire; the White Tiger on Tai Sui is the great general, with violent death and injury; the Dark Tortoise is the Emperor Zhenwu, and its ghost doing harm is judged a death by drowning."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9809, 9809],
+          "zh": ["青龙善愿是观音，", "上圣三官总是神，", "断鬼产亡并带血，", "交重必是本堂临。"],
+          "yi": ["青龙是善愿，是观音，", "上圣、三官，都是神；", "断鬼，是产亡的、带血的鬼；", "交重，必定是本堂的神鬼临到了。"],
+          "en": ["The Azure Dragon is good vows, it is Guanyin,", "the Supreme Sage and the Three Officials are all gods;", "to judge the ghost: one dead in childbirth, with blood;", "if moving, it is surely the household's own hall that has come."] },
+        { "by": "经", "book": "卜筮大全", "range": [9811, 9811],
+          "zh": ["朱雀家堂并灶君，", "花幡香愿素存心，", "鬼为吐血兼劳怯，", "目疾伤亡并有因。"],
+          "yi": ["朱雀是家堂和灶君，", "花幡、香愿、素愿，都存在心里；", "鬼爻是吐血加上劳怯的病，", "眼病、伤亡也都有它的缘故。"],
+          "en": ["The Vermilion Bird is the household shrine and the Hearth Lord,", "flower banners, incense vows and vegetarian vows are kept in the heart;", "as a ghost it means spitting blood and consumptive weakness,", "and eye disease, injury and death all have their cause in it."] },
+        { "by": "经", "book": "卜筮大全", "range": [9813, 9813],
+          "zh": ["勾陈土地及城隍，", "土神同断亦无伤，", "鬼为痢疾兼蛊胀，", "遇土因知咽塞亡。"],
+          "yi": ["勾陈是土地和城隍，", "土神一起断，也没有妨害；", "鬼爻是痢疾加蛊胀，", "遇到土爻，就知道是咽喉堵塞而死。"],
+          "en": ["Hook Earth is the Earth God and the City God,", "judging the earth gods together does no harm;", "as a ghost it means dysentery and swelling of the belly,", "and meeting an Earth line, one knows it is death from a blocked throat."] },
+        { "by": "经", "book": "卜筮大全", "range": [9815, 9815],
+          "zh": ["鰧蛇本是飞来土，", "遇鬼七杀金作三，", "逢官缢死火劳怯，", "孩童汤火必然伤。"],
+          "yi": ["螣蛇本来是飞来的土，", "遇到鬼、七杀、金，三样合在一起；", "逢到官鬼是上吊死，逢到火是劳怯，", "孩童一定被汤火所伤。"],
+          "en": ["The Coiling Snake is at root earth that has flown in,", "meeting a ghost, the Seven Killings and Metal, the three making one;", "meeting Pressure it is death by hanging, meeting Fire it is consumptive weakness,", "and children are sure to be hurt by scalding and fire."] },
+        { "by": "经", "book": "卜筮大全", "range": [9817, 9817],
+          "zh": ["虎临太岁大将军，", "五路伤司五圣神，", "经文香信家堂愿，", "横死伤亡肚饱魂。"],
+          "yi": ["白虎临在太岁上，是大将军，", "五路、伤司、五圣这些神；", "经文、香信、家堂的愿；", "横死、伤亡、肚子饱胀而死的魂。"],
+          "en": ["The White Tiger on Tai Sui is the great general,", "with the Five Roads, the Injuring Officer and the Five Sages;", "vows of scripture, incense pledges and the household shrine;", "souls of violent death, injury and death, and of death from a swollen belly."] },
+        { "by": "经", "book": "卜筮大全", "range": [9819, 9819],
+          "zh": ["玄武就名真武帝，", "水仙五圣佛经祈，", "鬼作落水伤亡断，", "活法全凭智略推。"],
+          "yi": ["玄武就叫作真武帝，", "水仙、五圣，靠佛经祈祷；", "鬼爻作祟，断为落水伤亡；", "活的办法全凭智谋来推。"],
+          "en": ["The Dark Tortoise is called the Emperor Zhenwu,", "the water immortals and the Five Sages are prayed to by scripture;", "a ghost doing harm is judged a death by drowning;", "the living method rests wholly on wit and strategy."] }
+      ],
+      "note": {
+        "yi": "这是六首歌，每首四句：前两句说这位神对应哪些神（青龙配观音、三官；朱雀配家堂、灶君；勾陈配土地、城隍；螣蛇配飞来土；白虎配太岁、大将军、五路神；玄武配真武帝），后两句说鬼爻加在这位神上时的病或死法。各句省得很，好几处字面读不出完整的意思（「断鬼产亡并带血」「遇鬼七杀金作三」「肚饱魂」「活法全凭智略推」），译文照字面，没有补。「蛊胀」是腹胀如鼓一类的病，「劳怯」是虚劳怯弱，「咽塞」是咽喉堵塞。原文「鰧蛇」是「螣蛇」的异写。",
+        "en": "These are six songs of four lines each: the first two lines say which gods the spirit matches (the Azure Dragon Guanyin and the Three Officials; the Vermilion Bird the household shrine and the Hearth Lord; Hook Earth the Earth God and the City God; the Coiling Snake earth that has flown in; the White Tiger Tai Sui, the great general and the Five Road gods; the Dark Tortoise the Emperor Zhenwu), and the last two lines say what illness or manner of death a ghost line on this spirit gives. The lines are very terse and in several places the letter does not give a complete sense ('to judge the ghost: dead in childbirth, with blood', 'meeting a ghost, the Seven Killings and Metal, making three', 'the soul with a swollen belly', 'the living method rests wholly on wit'); the translation keeps to the letter without filling in. 'Swelling of the belly' is a drum-like bloating of the abdomen, 'consumptive weakness' is deficiency and feebleness, and 'blocked throat' is a blockage in the gullet. The original writes the snake with a variant character."
+      },
+      "see": ["LY.ILL.BSQS.45", "LY.ILL.DYTJ.38"]
+    },
+    {
+      "id": "LY.ILL.BSQS.45",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十四、六神论神崇决",
+      "chapter_en": "Chanyou Jingyao, no. 14: the six spirits and the secret of haunting spirits",
+      "title": "六神论神崇决：青龙爻动旧年佛愿催讨、朱雀爻兴游方五鬼梦中口愿、勾陈爻动土地家堂灶王时疫五瘟、螣蛇爻发病缠身东厨土地家亲、白虎爻兴神前愿佛前香、玄武爻兴病患凶家中人物不和",
+      "rule": {
+        "yi": "六神论神崇决也是六首歌，讲六神的爻发动时，病是哪一路神鬼、该向谁祭祀还愿：青龙爻动，是往年的佛愿在催讨，赶紧告东厨和祖先；朱雀爻兴，是游方的五鬼、梦中的口愿；勾陈爻动，是土地、家堂、灶王，时疫、五瘟要求祭祀；螣蛇爻发，病缠身，是东厨、土地、家亲和天曹的口愿；白虎爻兴，是神前的愿、佛前的香；玄武爻兴，病患凶，家里人彼此不和，要靠北阴求土地。",
+        "en": "The verses on the six spirits and the secret of haunting spirits are also six songs, saying, when the line of each spirit moves, which kind of spirit or ghost the illness comes from and to whom to sacrifice or repay a vow: the Azure Dragon line moving, a Buddhist vow of past years is pressing for repayment, hurry to tell the Eastern Kitchen and the ancestors; the Vermilion Bird line rising, wandering Five Ghosts and a vow spoken in a dream; Hook Earth moving, the Earth God, household shrine and Hearth King, with epidemics and the Five Plagues calling for sacrifice; the Coiling Snake line moving, illness clings to the body, from the Eastern Kitchen, the Earth God, family kin and a vow spoken to the Celestial Bureau; the White Tiger line rising, a vow before the gods and incense before the Buddha; the Dark Tortoise line rising, illness is ominous, the people of the household are at odds, and one must rely on the North Yin to beseech the Earth God."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9823, 9823],
+          "zh": ["青龙爻动及黄泉，", "得病先占问祸原，", "旧年佛愿相催讨，", "急告东厨及祖先。"],
+          "yi": ["青龙爻动，又及黄泉，", "得了病，先占卜，问祸的根源；", "是往年的佛愿在催着讨还，", "赶紧告知东厨和祖先。"],
+          "en": ["With the Azure Dragon line moving and reaching the Yellow Springs,", "when one is ill, first divine and ask the origin of the harm;", "it is a Buddhist vow of past years pressing for repayment,", "hurry to tell the Eastern Kitchen and the ancestors."] },
+        { "by": "经", "book": "卜筮大全", "range": [9825, 9825],
+          "zh": ["朱雀爻兴祸不轻，", "游方五鬼立门庭，", "梦中口愿相催讨，", "正照傍临本命星。"],
+          "yi": ["朱雀爻兴起，祸不轻；", "游方的五鬼立在门庭；", "是梦里口头许的愿在催讨，", "又正照、傍临本命星。"],
+          "en": ["With the Vermilion Bird line rising, the harm is not light;", "wandering Five Ghosts stand in the gate and courtyard;", "it is a vow spoken in a dream pressing for repayment,", "directly shining on and close beside the natal star."] },
+        { "by": "经", "book": "卜筮大全", "range": [9827, 9827],
+          "zh": ["勾陈爻动祸难当，", "土地家堂及灶王，", "时疫五瘟求祭祀，", "家堂踪迹被虫伤。"],
+          "yi": ["勾陈爻动，祸难当；", "是土地、家堂和灶王；", "时疫、五瘟，要求祭祀；", "家堂的踪迹被虫伤了。"],
+          "en": ["With the Hook Earth line moving, the harm is hard to bear;", "it is the Earth God, the household shrine and the Hearth King;", "epidemics and the Five Plagues call for sacrifice;", "the traces at the household shrine have been hurt by insects."] },
+        { "by": "经", "book": "卜筮大全", "range": [9829, 9829],
+          "zh": ["鰧蛇爻发病缠身，", "东厨土地及家亲，", "天曹口愿相催讨，", "是非口舌梦中惊。"],
+          "yi": ["螣蛇爻发动，病缠身；", "是东厨、土地和家亲；", "是天曹的口头愿在催讨，", "是非口舌，梦里受惊。"],
+          "en": ["With the Coiling Snake line moving, illness clings to the body;", "it is the Eastern Kitchen, the Earth God and family kin;", "a vow spoken to the Celestial Bureau is pressing for repayment,", "with quarrels and gossip and fright in dreams."] },
+        { "by": "经", "book": "卜筮大全", "range": [9831, 9831], "literal": ["子孙"],
+          "zh": ["白虎爻兴事不祥，", "神前有愿佛前香，", "福德五道求祭祀，", "土地北殿及乖张。"],
+          "yi": ["白虎爻兴，事不吉祥；", "神前有愿，佛前有香；", "福德、五道，要求祭祀；", "土地、北殿，以及性情乖张的神。"],
+          "en": ["With the White Tiger line rising, things are not auspicious;", "there is a vow before the gods and incense before the Buddha;", "the Spirit of Fortune and the Five Roads call for sacrifice;", "the Earth God, the Northern Hall, and gods of perverse temper."] },
+        { "by": "经", "book": "卜筮大全", "range": [9833, 9833],
+          "zh": ["玄武爻兴病患凶，", "家中人物不和同，", "急靠北阴求土地，", "守命家亲在此中。"],
+          "yi": ["玄武爻兴，病患凶；", "家里的人彼此不和；", "赶紧靠北阴，求土地；", "守护命的家亲就在其中。"],
+          "en": ["With the Dark Tortoise line rising, illness is ominous;", "the people in the household are at odds with one another;", "hurry to rely on the North Yin and beseech the Earth God;", "the family kin who guard one's life are among them."] }
+      ],
+      "note": {
+        "yi": "这是六首歌，每首四句，按六神讲爻发动时的病和该祭祀的对象。青龙一首的第二句「得病先占问祸原」点出了这一组的用处：先占出病因，再决定向谁还愿、向谁祭祀。「黄泉」是阴间；「东厨」是灶神；「五瘟」是五种瘟疫（五瘟使者）；「天曹」是天官的衙门；「北阴」「北殿」是北方阴间的神（北阴是北方玄武之阴，北殿是阎罗殿一类），书里没有解释，译文照字面；「正照傍临本命星」是（鬼）照在本命星上、或靠近本命星，照字面。和前一组六神论神鬼心决（LY.ILL.BSQS.44）是姊妹篇：那一组讲每位神配哪些神鬼，这一组讲每位神爻发动时应向谁祭祀。",
+        "en": "These are six songs of four lines each that set out, by the six spirits, the illness when that spirit's line moves and the one to whom to sacrifice. The second line of the Azure Dragon song, 'when one is ill, first divine and ask the origin of the harm', states the purpose of this set: first divine the cause of the illness, then decide to whom to repay a vow and to whom to sacrifice. The 'Yellow Springs' is the underworld; the 'Eastern Kitchen' is the kitchen god; the 'Five Plagues' are five kinds of epidemic (the Five Plague Envoys); the 'Celestial Bureau' is the office of the heavenly officials; the 'North Yin' and the 'Northern Hall' are spirits of the north and the underworld (the yin of the northern Dark Tortoise, and a hall of the Yama kind), which the book does not explain, and the translation keeps to the letter; 'directly shining on and close beside the natal star' is the ghost shining on, or near, the natal star, to the letter. This set is a sister to the preceding verses on the heart-secret of spirits and ghosts (LY.ILL.BSQS.44): that set says which gods each spirit matches, and this one to whom to sacrifice when each spirit's line moves."
+      },
+      "see": ["LY.ILL.BSQS.44"]
+    },
+    {
+      "id": "LY.ILL.BSQS.46",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十七、妖孽赋",
+      "chapter_en": "Chanyou Jingyao, no. 17: the Fu on monsters",
+      "title": "妖孽赋·震蛇鬼：酉冲刑、空中椅桌动闻声、桶箱作孽人丁病",
+      "rule": {
+        "yi": "妖孽赋讲震宫螣蛇带鬼、遇酉冲刑时的怪异：空中的椅子桌子动，听得到声音，踢踏的响声像人在走；大蛇常出现，窑里的器具响得惊人；桶、箱作孽，家里的人生病。",
+        "en": "The Fu on monsters on the oddities when a Coiling Snake carrying a ghost in the Zhen palace is clashed and punished by You: chairs and tables move in the air and sounds are heard, a stamping sound like a person walking; a great snake often appears, and kiln wares clatter alarmingly; casks and chests do harm, and the people of the household fall ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9859, 9859],
+          "zh": ["震蛇鬼，", "酉冲刑，", "空中椅桌动闻声，", "踢踏响，", "似人行。", "大蛇常出现，", "窑器响惊人，", "桶箱作孽人丁病。"],
+          "yi": ["震宫螣蛇带鬼，", "遇到酉来冲刑，", "空中椅子桌子动，能听到声音，", "踢踏的响声，", "像人在走。", "大蛇常常出现，", "窑里的器具响得惊人，", "桶、箱作孽，家里的人生病。"],
+          "en": ["The Coiling Snake carrying a ghost in Zhen,", "clashed and punished by You,", "chairs and tables move in the air and sounds are heard,", "a stamping sound,", "like a person walking.", "A great snake often appears,", "kiln wares clatter alarmingly,", "casks and chests do harm and the people of the household fall ill."] }
+      ],
+      "note": {
+        "yi": "妖孽赋按八卦讲螣蛇带鬼时出的怪异（乾、坎、艮、震、巽、离、坤、兑各一段），大多和病无关，这一段结尾的「桶箱作孽人丁病」明说家里人生病，所以收在这里。「蛇鬼」是螣蛇临在鬼爻上，「酉冲刑」是酉来冲刑（按前面「震」的位置：酉冲卯）。这一篇的标点是整理者（虎易）重新点的，译文按现有标点。",
+        "en": "The Fu on monsters goes through the trigrams (Qian, Kan, Gen, Zhen, Xun, Li, Kun, Dui, one passage each) and tells the oddities when the Coiling Snake carries a ghost; most have nothing to do with illness, and this passage, whose last clause 'casks and chests do harm and the people of the household fall ill' says outright that people fall ill, is taken here. 'The snake ghost' is the Coiling Snake on the ghost line, and 'You clashing and punishing' is You coming to clash and punish (You clashes Mao, which is Zhen's place). The punctuation of this piece was redone by the modern editor (Hu Yi), and the translation follows the punctuation as it stands."
+      },
+      "see": ["LY.ILL.BSQS.47"]
+    },
+    {
+      "id": "LY.ILL.BSQS.47",
+      "topic": "神祟",
+      "chapter": "阐幽精要·十八、搜鬼论",
+      "chapter_en": "Chanyou Jingyao, no. 18: searching out the ghost",
+      "title": "搜鬼论·鬼在寅卯：寅鬼蛇虎作怪、人口有病患；卯鬼隔墙带血鬼、作灾母病床",
+      "rule": {
+        "yi": "搜鬼论按十二地支列出鬼爻发动时所应的怪异：寅爻为鬼，蛇、虎来作怪，六畜见血、钱财亡失，家里人口有病患，要赶紧保平安；卯爻为鬼，是隔墙带着血的鬼，作灾，母亲卧病在床。",
+        "en": "The essay on searching out the ghost lists, by the twelve branches, what a moving ghost line answers: with Yin as the ghost, snakes and tigers come making trouble, livestock bleed and wealth is lost, the household has illness and one must quickly secure safety; with Mao as the ghost, it is a ghost with blood from across the wall, it makes calamity, and the mother lies ill in bed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9874, 9874],
+          "zh": ["寅：", "蛇虎来作怪，", "六畜血财亡，", "人口有病患，", "急须保安康。", "卯：", "隔墙带血鬼，", "作灾母病床，", "破伞并橱柜，", "及有死人床。"],
+          "yi": ["寅爻为鬼：", "蛇、虎来作怪，", "六畜见血、钱财亡失，", "家里人口有病患，", "要赶紧保平安康健。", "卯爻为鬼：", "隔墙带着血的鬼，", "作灾，母亲卧病在床，", "破伞和橱柜，", "以及死过人的床。"],
+          "en": ["For Yin:", "snakes and tigers come making trouble,", "livestock bleed and wealth is lost,", "the household has illness,", "one must quickly secure safety and health.", "For Mao:", "a ghost with blood from across the wall,", "it makes calamity, and the mother lies ill in bed,", "a broken umbrella and a cupboard,", "and a bed on which someone has died."] }
+      ],
+      "note": {
+        "yi": "搜鬼论开头一句是「观鬼爻发动为实」——看的是发动的鬼爻，然后按子到亥十二支各列一条；这里只收和病有关的寅、卯两条，其余十条讲的是鼠咬屋、火灾、走失、牲畜、神庙等，不收。卯条的「作灾母病床」是作灾，母亲卧病在床；「破伞并橱柜」「及有死人床」是这个鬼附着的东西。",
+        "en": "The essay begins with 'see the ghost line moving as real' (what is looked at is the moving ghost line) and then gives one entry for each branch from Zi to Hai; only the entries for Yin and Mao, which bear on illness, are taken here, and the other ten, on rats gnawing the house, fire, runaways, livestock and shrines, are not. In the Mao entry 'it makes calamity, the mother lies ill in bed' is calamity with the mother bedridden, and 'a broken umbrella and a cupboard' and 'a bed on which someone has died' are the things this ghost clings to."
+      },
+      "see": ["LY.ILL.BSQS.46"]
+    }
+  ]
+}

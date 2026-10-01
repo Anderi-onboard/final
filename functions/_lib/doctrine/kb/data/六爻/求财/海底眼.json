@@ -1,0 +1,320 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "海底眼",
+  "chapter": "求财",
+  "chapter_en": "Seeking wealth",
+  "ranges": {"海底眼": [1, 900]},
+  "units": [
+    {
+      "id": "LY.WEALTH.HDY.01",
+      "topic": "总则",
+      "chapter": "求财",
+      "chapter_en": "Seeking wealth",
+      "title": "占财：财旺相喜持世，出现有生扶，卖货要用神兴，开张生意得利；最忌空亡临财、飞爻克伏",
+      "rule": {
+        "yi": "占求财：财旺相，喜欢它持世；出现在卦上又有生扶，就掌了权、出了力；卖货求财，用神要兴旺；开张做生意才得利。眉批说：最忌空亡临在财上、伏着的财被飞爻克制，那样只是白费力。",
+        "en": "Divining for wealth: Wealth thriving is glad to hold the Self; showing in the hexagram and supported, it takes charge and does the work; to sell off goods for money the Subject must thrive; in opening a business there is profit. The marginal comment says: most to be avoided are Void on Wealth and a hidden Wealth controlled by its flying line, where the effort is only wasted."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [648, 648],
+          "zh": ["占财旺相喜持世，", "出现生扶司秉劳，", "脱货求财要用兴，", "开张生意方得利。"],
+          "yi": ["占财，财旺相，喜欢它持世；", "出现在卦上又有生扶，就掌了权、出了力；", "卖货求财，用神要兴旺；", "开张做生意，才得利。"],
+          "en": ["Divining for wealth, Wealth thriving is glad to hold the Self;", "showing in the hexagram and supported, it takes charge and does the work;", "to sell off goods for money the Subject must thrive;", "in opening a business there is profit."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [648, 648],
+          "zh": ["最忌空亡临财，", "飞爻克伏，", "徒为费力。"],
+          "yi": ["最忌空亡临在财上，", "伏着的财被飞爻克制，", "只是白费力。"],
+          "en": ["Most to be avoided is Void on Wealth,", "or a hidden Wealth controlled by its flying line,", "where the effort is only wasted."] }
+      ],
+      "note": {
+        "yi": "《断易天机》的求财章里也有这一首，引作「海底眼云」，第二句作「出现生扶可乘势」（见 DYTJ.07）；这里作「司秉劳」，字义比较费解，「司秉劳」照字面译作「掌权担劳」，不确定。",
+        "en": "The Duanyi Tianji's chapter on wealth also has this verse, quoted as 'the Eye at the Bottom of the Sea says', with the second line reading 'showing and supported one may ride the moment' (see DYTJ.07); here it reads 'si bing lao', which is hard to make out and is translated literally as 'takes charge and does the work', without certainty."
+      },
+      "see": ["LY.WEALTH.DYTJ.07", "LY.WEALTH.DYTJ.08"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.02",
+      "topic": "总则",
+      "chapter": "求财",
+      "chapter_en": "Seeking wealth",
+      "title": "又曰：月破空亡未可凭，飞爻克伏要留神；要事事如意，只看财生世",
+      "rule": {
+        "yi": "财逢月破、空亡，不可凭信；伏着的财被飞爻克制，要留神；如果想事事如意，只看财有没有生世。眉批举了一个例子：寅日占得益卦，讨益（求利）当天就有益，因为日辰与财库比和。",
+        "en": "Wealth meeting Month-break or Void cannot be relied on; a hidden Wealth controlled by its flying line needs care; if you want everything to go as wished, look only at whether Wealth generates the Self. The marginal comment gives an example: on a Yin day the Yi hexagram is got, and the benefit sought comes the same day, because the Day matches the store of Wealth."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [650, 650],
+          "zh": ["又曰：", "月破空亡未可凭，", "飞爻克伏要留神，", "若求件件皆如意，", "但看财生世者是。"],
+          "yi": ["又说道：", "财逢月破、空亡，不可凭信；", "伏着的财被飞爻克制，要留神；", "如果想事事如意，", "只看财有没有生世就是了。"],
+          "en": ["It says again:", "Wealth meeting Month-break or Void cannot be relied on;", "a hidden Wealth controlled by its flying line needs care;", "if you want everything to go as wished,", "look only at whether Wealth generates the Self."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [650, 650],
+          "zh": ["且如寅日卜得益卦，", "讨益当日便有益，", "日辰比财库中也。"],
+          "yi": ["比如寅日占得益卦，", "讨益，当天就有益，", "因为日辰与财库比和。"],
+          "en": ["Suppose on a Yin day the Yi hexagram is got:", "the benefit sought comes the very same day,", "because the Day matches the store of Wealth."] }
+      ],
+      "note": {
+        "yi": "眉批后面还有一句「虎易注」，是今人加的，本库不引。眉批里的例子是一个卦例，书里只说这一句。",
+        "en": "After the marginal comment comes a remark marked as a modern editor's, which this library does not cite. The example in the comment is a single case."
+      },
+      "see": ["LY.WEALTH.HDY.01", "LY.WEALTH.DYTJ.08"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.03",
+      "topic": "难易",
+      "chapter": "求财",
+      "chapter_en": "Seeking wealth",
+      "title": "世空不妨，需鼎困豫家人诸卦始难终如意；卖货宜动",
+      "rule": {
+        "yi": "世爻空亡也不妨，比如需、鼎、困、豫、家人这几卦，开头虽然艰难，终究能如意；如果是卖货，宜于动。",
+        "en": "The Self falling Void does no harm; in hexagrams such as Xu, Ding, Kun, Yu and Jia Ren, though hard at first, in the end it can be as wished; if it is for selling off goods, movement suits."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [652, 652],
+          "zh": ["世空不妨，", "即需鼎困豫家人，", "始虽艰难，", "终可如意。", "为脱货，", "宜动。"],
+          "yi": ["世空也不妨，", "就是需、鼎、困、豫、家人这几卦，", "开头虽然艰难，", "终究能如意。", "如果是卖货，", "宜于动。"],
+          "en": ["Self Void does no harm,", "namely in the hexagrams Xu, Ding, Kun, Yu and Jia Ren;", "though hard at the beginning,", "in the end it can be as wished.", "If it is for selling off goods,", "movement suits."] }
+      ],
+      "note": {
+        "yi": "这几个卦为什么世空不妨，书里没有解释。",
+        "en": "The book does not say why the Self falling Void does no harm in these hexagrams."
+      },
+      "see": ["LY.WEALTH.DYTJ.24"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.04",
+      "topic": "总则",
+      "chapter": "求财",
+      "chapter_en": "Seeking wealth",
+      "title": "开张贩卖、营运抽拈、停塌赌博、索欠觅借，都要财爻旺相、日辰生扶、官静；福德旺相也可有财",
+      "rule": {
+        "yi": "开张、贩卖、营运、抽拈、囤货、赌博、讨债、借钱这些，都要财爻旺相，有日辰生扶，官爻安静才吉祥；福德旺相，也可以有财。",
+        "en": "Opening a business, hawking goods, running a trade, drawing lots, storing goods, gambling, collecting debts and seeking loans all need the Wealth line thriving and supported by the Day, with Pressure quiet for it to be auspicious; if Output is thriving there can be wealth as well."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [654, 654],
+          "zh": ["至如开张贩卖，", "营运抽拈，", "停塌赌博，", "索欠觅借，", "并要财爻旺相，", "日辰生扶，", "官静言祥。", "如福德旺相，", "亦可有财。"],
+          "yi": ["至于开张、贩卖，", "营运、抽拈，", "囤货存放、赌博，", "讨债、借钱，", "都要财爻旺相，", "有日辰生扶，", "官爻安静，才说吉祥。", "如果福德旺相，", "也可以有财。"],
+          "en": ["As for opening a business and hawking goods,", "running a trade and drawing lots,", "storing goods and gambling,", "collecting debts and seeking loans,", "all need the Wealth line thriving,", "with the support of the Day,", "and Pressure quiet, only then is it called auspicious.", "If Output is thriving,", "there can be wealth as well."] }
+      ],
+      "note": {
+        "yi": "「停塌」指存放货物的塌房（货栈），这里按此译作囤货；「抽拈」原文没有解释，照字译作「抽签」一类的事。",
+        "en": "'Ting ta' refers to a goods-shed or warehouse and is rendered as storing goods; 'drawing lots' is translated literally as the original does not explain it."
+      },
+      "see": ["LY.WEALTH.DYTJ.24", "LY.WEALTH.HJC.01"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.05",
+      "topic": "应期",
+      "chapter": "求财",
+      "chapter_en": "Seeking wealth",
+      "title": "财旺相出现，日克之必有；日辰旺相，不克伏财而冲散飞爻，其财必有",
+      "rule": {
+        "yi": "财爻旺相、又出现在卦上，日辰克它，钱一定有；日辰旺相，却不要克财，要看财伏在哪一爻下，日辰冲散那个飞爻，这笔钱一定有。",
+        "en": "When the Wealth line is thriving and showing in the hexagram, the Day controlling it means the money is sure to come; when the Day is thriving it should not control the Wealth, and one looks at which line the Wealth is hidden under: if the Day clashes and scatters that flying line, the money is sure to come."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [656, 656],
+          "zh": ["凡财爻旺相出现者，", "日克之必有。"],
+          "yi": ["凡是财爻旺相、又出现在卦上的，", "日辰克它，一定有财。"],
+          "en": ["Whenever the Wealth line is thriving and showing in the hexagram,", "the Day controlling it means there is surely money."] },
+        { "by": "经", "book": "海底眼", "range": [658, 658],
+          "zh": ["日辰旺相，", "却不要克他，", "看财伏于何爻，", "日辰冲散飞爻，", "其财必有。"],
+          "yi": ["日辰旺相，", "却不要去克它（财），", "看财伏在哪一爻下，", "日辰冲散了飞爻，", "这笔钱一定有。"],
+          "en": ["When the Day is thriving,", "it should not control it [the Wealth];", "look at which line the Wealth is hidden under;", "if the Day clashes and scatters the flying line,", "the money is sure to come."] }
+      ],
+      "dispute": {
+        "yi": "这里说「财旺相出现，日克之必有」；《黄金策》说「日伤妻位，财虽旺，而当日应无」（见 HJC.08）。两句都讲日辰克旺财，结论相反。一种可能是两处说的应期不同（这里似是日克之时财才发，那里是克日当天无财），书里没有明说，本库不裁。",
+        "en": "This says 'a thriving Wealth that shows, the Day controlling it, surely has money'; the Huangjin Ce says 'the Day harming the Wealth place, though Wealth is thriving, has none on that day' (see HJC.08). Both speak of the Day controlling a thriving Wealth and reach opposite results. The two may be speaking of different dates, but the books do not say so and this library does not decide."
+      },
+      "note": {
+        "yi": "第二段里的「他」我读作财；这一段说的是财伏藏的情形：日辰不要去克伏着的财，而要冲散压着它的飞爻。",
+        "en": "In the second passage 'it' is read as the Wealth; the passage is about a hidden Wealth: the Day should not control the hidden Wealth but should clash and scatter the flying line that presses on it."
+      },
+      "see": ["LY.WEALTH.HJC.08", "LY.WEALTH.ZS.21", "LY.WEALTH.YY.07"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.06",
+      "topic": "有无",
+      "chapter": "求财",
+      "chapter_en": "Seeking wealth",
+      "title": "卦中无财：福能生财，福爻旺相必遂；无财无福，月令有财亦成，日辰是财当日亦有，谓之无中生有",
+      "rule": {
+        "yi": "卦里没有财，别忘了福德能生财，只要福爻旺相，一定如愿；卦里既没有财也没有福，月令里有财也能成；日辰是财，当天也有；这叫无中生有。凡是有财的卦也是这样，不可错过，要谨慎。",
+        "en": "If a hexagram has no Wealth, remember that Output can generate Wealth, and if the Output line is thriving it is sure to be fulfilled; where the hexagram has neither Wealth nor Output, Wealth held by the month can still bring it about; if the Day is Wealth there is money that day; this is called producing something from nothing. The same holds for hexagrams that do have Wealth; it should not be missed, and one should be careful."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [660, 660],
+          "zh": ["凡卦中无财，", "殊不知福能生财，", "但能福爻旺相，", "必遂。"],
+          "yi": ["凡是卦里没有财，", "殊不知福德能生财，", "只要福爻旺相，", "一定如愿。"],
+          "en": ["Whenever a hexagram has no Wealth,", "do not overlook that Output can generate Wealth;", "as long as the Output line is thriving,", "it is sure to be fulfilled."] },
+        { "by": "经", "book": "海底眼", "range": [662, 662],
+          "zh": ["又卦内无财无福，", "月令中有财，", "亦可成。", "或日辰是财，", "当日亦有。", "此谓之无中生有。", "凡有财卦即此，", "亦不可错过，", "慎之。"],
+          "yi": ["又有卦里既没有财、也没有福的，", "月令里有财，", "也是可以成功的。", "或者日辰是财，", "当天也有钱。", "这叫作无中生有。", "凡是有财的卦也是这样，", "也不可错过，", "要谨慎。"],
+          "en": ["Again, where the hexagram has neither Wealth nor Output,", "if the month's command holds Wealth,", "it can still succeed.", "Or if the Day is Wealth,", "there is money that day as well.", "This is called producing something from nothing.", "The same holds for any hexagram that has Wealth;", "it should not be missed either,", "be careful."] }
+      ],
+      "see": ["LY.WEALTH.YL.20", "LY.WEALTH.TXF.06", "LY.WEALTH.DYTJ.30"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.07",
+      "topic": "博戏",
+      "chapter": "博戏",
+      "chapter_en": "Gambling",
+      "title": "博戏求财：子孙出现、世临它，再旺相无刑克，称心而归；眉批：子孙持世财旺得遂，鬼持世福星无益",
+      "rule": {
+        "yi": "赌博求财，子孙出现在卦上、世临着它，再加旺相、没有刑克，一定高高兴兴称心而归。眉批：子孙持世，财旺才能如愿；鬼爻持世，福星也没有用。",
+        "en": "In gambling for wealth, with Output showing in the hexagram and the Self sitting on it, thriving and free of punishment or control, you will surely come home glad and satisfied. The marginal comment: with Output on the Self, Wealth thriving is fulfilled; with a Pressure line on the Self, even the Fortune star is of no use."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [666, 666],
+          "zh": ["博戏求财皆是木，", "子孙出现世临之，", "更兼旺相无刑克，", "管取欢欣称意归。"],
+          "yi": ["赌博求财，全是木（疑是「本」，本钱）；", "子孙出现，世临着它；", "再加旺相、没有刑克，", "保管欢欢喜喜、称心而回。"],
+          "en": ["For gambling for wealth it is all Wood [probably a miscopy of 'stake'];", "Output showing and the Self sitting on it;", "thriving as well, with no punishment or control:", "you will come home glad and satisfied."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [666, 666],
+          "zh": ["子孙持世，", "财旺得遂，", "鬼爻持世，", "福星无益。"],
+          "yi": ["子孙持世，", "财旺才能如愿；", "鬼爻持世，", "福星也没有用。"],
+          "en": ["With Output on the Self,", "Wealth thriving is fulfilled;", "with a Pressure line on the Self,", "even the Fortune star is of no use."] }
+      ],
+      "note": {
+        "yi": "第一句「皆是木」，《断易天机》同一首作「财是本」（见 DYTJ.09），「木」疑是「本」之误；这里照原文，译文里注明。「福星」指福德，眉批里的「福星」不一定就是子孙，书里没有说。",
+        "en": "The first line's 'all Wood' reads 'Wealth is the stake' in the Duanyi Tianji's version of the same verse (see DYTJ.09), so 'Wood' is probably a miscopy of 'stake'; the original is kept, and the translation says so. 'The Fortune star' is Output; the book does not say more."
+      },
+      "see": ["LY.WEALTH.DYTJ.09", "LY.WEALTH.YL.55", "LY.WEALTH.HZL.14"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.08",
+      "topic": "博戏",
+      "chapter": "博戏",
+      "chapter_en": "Gambling",
+      "title": "博戏又曰：世见鬼、应来克，纵有精神也输；福德休囚陷伏，白费功夫；间爻动冲撞多，兄弟动多闹，官动财爻必输",
+      "rule": {
+        "yi": "赌博：世爻见鬼，被应爻克，纵然有精神也是输；福德休囚、又陷伏，来回白下功夫；间爻动，冲撞多；兄弟动，吵闹多；官动财爻，一定输。",
+        "en": "Gambling: the Self showing Pressure and controlled by the Other loses even with spirit; Output weak and sunk or hidden, one goes back and forth and works in vain; the between lines moving means many clashes; Peer moving means much noise; Pressure moving on the Wealth line surely loses."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [668, 668],
+          "zh": ["又曰：", "世爻见鬼应来克，", "纵有精神也是输，", "福德休囚皆陷伏，", "往来空去下工夫。"],
+          "yi": ["又说道：", "世爻见鬼，被应爻克，", "纵然有精神，也是输；", "福德休囚，又都陷伏，", "来来往往白下功夫。"],
+          "en": ["It says again:", "The Self line showing Pressure and controlled by the Other:", "even with spirit, you lose;", "Output weak and all of it sunk or hidden:", "coming and going, you work in vain."] },
+        { "by": "经", "book": "海底眼", "range": [670, 670],
+          "zh": ["间爻动，", "冲撞多，", "兄弟动多闹，", "官动财爻必输。"],
+          "yi": ["间爻发动，", "冲撞的事就多；", "兄弟动，吵闹多；", "官动财爻，一定输。"],
+          "en": ["The between lines moving,", "there are many clashes;", "Peer moving, there is much noise;", "Pressure moving on the Wealth line, you surely lose."] }
+      ],
+      "note": {
+        "yi": "《断易天机》同一首（DYTJ.10）第二句作「纵有财神也是输」，这里作「纵有精神也是输」。「间爻」在博戏里指旁人，书里没有明说，这里只照字译。「官动财爻必输」也可读作「官动、财爻必输」。",
+        "en": "The Duanyi Tianji's version of the same verse (DYTJ.10) reads 'even with the Wealth spirit you lose' in the second line, and this one reads 'even with spirit'. The book does not say who the between lines stand for in gambling, and they are translated by their words. 'Pressure moving on the Wealth line' can also be read 'Pressure moving, the Wealth line surely loses'."
+      },
+      "see": ["LY.WEALTH.DYTJ.10", "LY.WEALTH.YL.52", "LY.WEALTH.YL.54"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.09",
+      "topic": "有无",
+      "chapter": "持世",
+      "chapter_en": "Which relation holds the Self",
+      "title": "妻财持世益财荣，问卜求财定称心；再得子孙临应上，官鬼断不成",
+      "rule": {
+        "yi": "妻财持世，财运增益（财持世容易得）；占求财一定称心；再有子孙临在应爻上（应爻上的子孙克鬼），官鬼就成不了事（有鬼就没有官司）。",
+        "en": "Wealth holding the Self increases wealth and fortune (Wealth on the Self is easy to get); divining for wealth, you will surely be satisfied; and with Output sitting on the Other (Output on the Other controls Pressure), Pressure cannot bring anything about (with Pressure there is no lawsuit)."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [332, 332],
+          "zh": ["妻财持世益财荣（财世易得），", "问卜求财定称心（同上），", "更得子孙临应上（应子克鬼），", "官鬼从他断不成（有鬼无讼）。"],
+          "yi": ["妻财持世，财运增益（财持世容易得），", "占求财，一定称心（同上），", "再有子孙临在应爻上（应上的子孙克鬼），", "官鬼由它，断定成不了（有鬼就没有官司）。"],
+          "en": ["Wealth holding the Self increases wealth and fortune (Wealth on the Self is easy to get),", "and divining for wealth you will surely be satisfied (the same);", "and with Output sitting on the Other (Output on the Other controls Pressure),", "Pressure, however it may act, is judged unable to bring it about (with Pressure there is no lawsuit)."] }
+      ],
+      "note": {
+        "yi": "括号里的小字是书里句下的小注，和歌诀排在一起，这里跟着原文一起收。",
+        "en": "The bracketed small print is the book's own gloss under each line, printed together with the verse, and is quoted with it."
+      },
+      "see": ["LY.WEALTH.CA.02", "LY.WEALTH.HJC.03"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.10",
+      "topic": "取象",
+      "chapter": "六神爻动",
+      "chapter_en": "When a spirit line moves",
+      "title": "青龙发动万物通，进财旺禄福无穷；临凶遇杀无碍，惟忌临金与落空",
+      "rule": {
+        "yi": "青龙发动，什么事都通顺（青龙属木）；进财、旺禄，福气无穷；临了凶星、遇了煞也没有妨碍（能化解凶煞）；只忌讳临金和落空（龙被金克）。",
+        "en": "The Azure Dragon moving, all things go through (the Azure Dragon belongs to Wood); wealth comes in and salary thrives, and blessings are without end; sitting on an ominous star or meeting a baleful one, there is no obstruction (it can resolve them); only to be avoided is sitting on Metal or falling Void (the Dragon is controlled by Metal)."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [346, 346],
+          "zh": ["青龙发动万物通（青龙属木），", "进财旺禄福无穷（无不亨通），", "临凶遇杀都无碍（能化凶杀）", "惟忌临金与落空（龙受金克）。"],
+          "yi": ["青龙发动，万物通顺（青龙属木），", "进财旺禄，福气无穷（没有不亨通的），", "临了凶星、遇了煞，也都没有妨碍（能化解凶煞），", "只忌讳临金和落空（龙被金克）。"],
+          "en": ["The Azure Dragon moving, all things go through (the Azure Dragon belongs to Wood),", "wealth coming in and salary thriving, blessings without end (nothing that does not go well);", "sitting on an ominous star or meeting a baleful one, there is no obstruction (it can resolve them),", "only sitting on Metal or falling Void is to be avoided (the Dragon is controlled by Metal)."] }
+      ],
+      "note": {
+        "yi": "括号里的小字是书里句下的小注，和歌诀排在一起。「进财旺禄」的「禄」这里译作俸禄、进项。",
+        "en": "The bracketed small print is the book's own gloss under each line, printed with the verse. 'Salary' renders the word for official emolument."
+      },
+      "see": ["LY.WEALTH.DYTJ.39"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.11",
+      "topic": "买卖",
+      "chapter": "六亲发动",
+      "chapter_en": "When a relation moves",
+      "title": "妻财发用克文书，买卖交易财利吉（用神出现）",
+      "rule": {
+        "yi": "妻财发动克文书，考试求官总是落空；买卖交易，财利吉祥（因为用神出现）；婚姻如意（财是妻的主）；出门的人身想动（财动，人就要回）；产妇求神容易分娩；失物静着，在家里找；病人伤脾和胃（财是饮食）。",
+        "en": "The Wealth line moving and controlling the document line: sitting exams and seeking office always come to nothing; in trade and dealing, profit is auspicious (because the Subject shows); marriage goes as wished (Wealth is the master of the wife); the traveller feels like moving (Wealth moving brings him back); the woman in labour finds childbirth easy; a lost thing is quiet, look for it at home; the sick have trouble in spleen and stomach (Wealth is food and drink)."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [287, 287],
+          "zh": ["妻财发用克文书（财能克文），", "应举求官总是虚（文书受伤），", "买卖交易财利吉（用神出现），", "婚姻如意乐无虞（财为妻主）。", "行人在外身欲动（财动生回），", "产妇求神易娩除（财动生鬼），", "失物静安家里觅（财静可寻）病者伤脾并胃虚（财为饮食）。"],
+          "yi": ["妻财发动，克文书（财能克文），", "应考求官总是落空（文书受伤），", "买卖交易，财利吉祥（用神出现），", "婚姻如意，快乐无忧（财是妻的主）。", "出门在外的人想动身（财动，人就回来），", "产妇求神，容易分娩（财动生鬼），", "失物静着，在家里找（财静可寻）；病人伤脾和胃虚（财是饮食）。"],
+          "en": ["The Wealth line moving and controlling the document line (Wealth can control documents),", "sitting exams and seeking office always come to nothing (the document line is hurt),", "in trade and dealing, profit is auspicious (the Subject shows),", "marriage goes as wished, glad and free of worry (Wealth is the master of the wife).", "The traveller abroad feels like setting out (Wealth moving brings him home),", "the woman in labour prays and finds childbirth easy (Wealth moving generates Pressure),", "a lost thing is quiet, look at home (a still Wealth can be found); the sick have a hurt spleen and weak stomach (Wealth is food and drink)."] }
+      ],
+      "note": {
+        "yi": "括号里的小字是书里句下的小注，和歌诀排在一起。这首歌诀和《断易天机》的「妻财用变」（DYTJ.44）是同一首，字句略有出入。",
+        "en": "The bracketed small print is the book's own gloss under each line, printed with the verse. This verse is the same as the Duanyi Tianji's verse on the Wealth line moving (DYTJ.44), with small differences in wording."
+      },
+      "see": ["LY.WEALTH.DYTJ.44"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.12",
+      "topic": "风险",
+      "chapter": "六亲发动",
+      "chapter_en": "When a relation moves",
+      "title": "兄弟同人克了财，货物经商消折本（以财为主）；见官虚词应累众；求妻买婢事难谐",
+      "rule": {
+        "yi": "兄弟发动，克了财（同是同类），病人有悲哀，考试雷同、文章不一，平常占问也还要破财；见官打官司，虚词牵累多人（兄动虚诈）；出门的人身未来（兄动有阻）；货物经商亏本（以财为主）；求妻买婢事难成。",
+        "en": "Peer moving and controlling Wealth (the 'same' means the same kind): the sick have sorrow, in exams the candidates are alike and the essays inconsistent, and even an ordinary divination still loses money; going to an official, false pleas involve many people (Peer moving is false and deceitful); the traveller has not yet come (Peer moving obstructs); goods and trade lose capital (Wealth is the main thing); seeking a wife or buying a maid does not go smoothly."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [291, 291],
+          "zh": ["兄弟同人克了财（同谓同类），", "病人占者恐悲哀（兄动反复），", "应举雷同文不一（兄主文杂），", "若是常占尚破财（兄动克财）。", "见官虚词应累众（兄动虚诈）出路行人身未来（兄动有阻），", "货物经商消折本（以财为主），", "求妻买婢事难谐（同上断之）。"],
+          "yi": ["兄弟发动，同类克了财（同，就是同类），", "占病的人恐怕悲哀（兄动反复），", "应考雷同、文章不一（兄主文杂），", "平常占问也还要破财（兄动克财）。", "见官，虚假的词状牵累多人（兄动虚诈），出门的人身还没来（兄动有阻），", "货物、经商亏本（以财为主），", "求妻、买婢，事难和谐（照同样断）。"],
+          "en": ["Peer moving and a like kind controlling Wealth ('same' means the same kind),", "one who divines an illness may well grieve (Peer moving brings relapse),", "in exams the candidates are alike and the essays inconsistent (Peer means mixed writing),", "even an ordinary divination still breaks money (Peer moving controls Wealth).", "Going to an official, false pleas involve many people (Peer moving is false and deceitful), and the traveller on the road has not yet come (Peer moving obstructs),", "goods and trade lose capital (Wealth is the main thing),", "seeking a wife or buying a maid does not go smoothly (judged the same way)."] }
+      ],
+      "note": {
+        "yi": "括号里的小字是书里句下的小注，和歌诀排在一起。原文第五句在整理本里没有断开，两个短句连在一起，这里合译。",
+        "en": "The bracketed small print is the book's own gloss under each line, printed with the verse. In the transcription the fifth line runs two short phrases together without a break, and they are translated together."
+      },
+      "see": ["LY.WEALTH.DYTJ.45"]
+    },
+    {
+      "id": "LY.WEALTH.HDY.13",
+      "topic": "取象",
+      "chapter": "来情",
+      "chapter_en": "What the visit is about",
+      "title": "冲克妻财：即是系占财，铺店金银买卖来，或有阴人成合事，金银钱铜器和钗",
+      "rule": {
+        "yi": "冲克妻财，就是关系到占财的事：开铺店、金银、买卖，或者有女人参与的合作事，以及金银钱铜器和钗的交易。",
+        "en": "A clash or control upon Wealth means a matter tied to divining for wealth: shops, gold and silver, buying and selling, or a joint matter involving a woman, and dealings in gold, silver, coin, copper ware and hairpins."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [550, 550],
+          "zh": ["冲妻即是系占财，", "铺店金银买卖来，", "或有阴人成合事，", "金银钱铜器和钗。"],
+          "yi": ["冲克妻财，就是关系到占财的事，", "铺店、金银、买卖来问，", "或者有女人参与的合作事，", "金银钱铜器和钗的交易。"],
+          "en": ["A clash or control upon Wealth is a matter tied to divining for wealth:", "shops, gold and silver, and buying and selling are what is asked;", "or a joint matter involving a woman,", "and dealings in gold, silver, coin, copper ware and hairpins."] }
+      ],
+      "note": {
+        "yi": "《断易天机》来情章里同一句作「冲克即是非占财」（DYTJ.36）；这里作「冲妻即是系占财」，「系」是关系到的意思，读起来更顺。两处只差一个字，「非」和「系」哪一个是原字，书里没有别的证据，本库不裁。",
+        "en": "The Duanyi Tianji's chapter on what the visit is about has the same line as 'a clash or control is disputes, and divining wealth' (DYTJ.36); here it reads 'a clash on Wealth is tied to divining wealth', in which 'tied to' reads more smoothly. The two differ in one character, and the books give no further evidence about which is original; this library does not decide."
+      },
+      "see": ["LY.WEALTH.DYTJ.36"]
+    }
+  ]
+}

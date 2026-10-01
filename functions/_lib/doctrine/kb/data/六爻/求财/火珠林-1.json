@@ -1,0 +1,400 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "火珠林",
+  "chapter": "占买卖",
+  "chapter_en": "Divining for trade",
+  "ranges": {"火珠林": [72, 783]},
+  "units": [
+    {
+      "id": "LY.WEALTH.HZL.01",
+      "topic": "总则",
+      "chapter": "公私用事",
+      "chapter_en": "Public and private business",
+      "title": "公私用事：占买卖、占求财看财爻；占财必用子孙；兄弟是破财之人，不主不辅",
+      "rule": {
+        "yi": "公事用官爻，私事用财爻：占买卖钱财、占家事、占婚姻、占求财，都看财爻。天下的事总起来不出财、官两个字；占官必用父母，占财必用子孙；兄弟是破财的人，既不是主也不是辅，不必去看。",
+        "en": "Public business takes the Pressure line and private business the Wealth line: trade and money, household affairs, marriage and money-seeking all look to the Wealth line. The affairs of the world come down to the two words Wealth and Pressure; seeking office always uses Resource and seeking wealth always uses Output; Peer is the one who breaks Wealth, neither chief nor helper, and need not be looked at."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [72, 79],
+          "zh": ["阴阳男女，次策推排；", "官用取官，私用取财。"],
+          "yi": ["分清阴阳男女，依次推算；", "公事用官爻，私事用财爻。"],
+          "en": ["Sort out yin and yang, male and female, and work through them in turn;", "for public business take Pressure, for private business take Wealth."] },
+        { "by": "经", "book": "火珠林", "range": [72, 79],
+          "zh": ["占病鬼祟，占失看贼，占求官事，占官词讼，占婚问夫，", "以上皆看官爻。", "占买卖财，占家事，占婚婢事，占求财事，占婚姻事，", "以上皆看财爻。"],
+          "yi": ["占病与鬼祟、占失物要看贼、占求官、占官司词讼、占婚姻问丈夫，", "以上都看官爻。", "占买卖钱财、占家事、占娶婢女的事、占求财的事、占婚姻的事，", "以上都看财爻。"],
+          "en": ["Illness and haunting, lost things (look for the thief), seeking office, lawsuits, and asking about a husband in marriage:", "all look to the Pressure line.", "Trade and money, household affairs, taking a maidservant, seeking money, and matters of marriage:", "all look to the Wealth line."] },
+        { "by": "经", "book": "火珠林", "range": [72, 79],
+          "zh": ["或问：言公私用事，只言财官，而不及父子兄弟，何也？", "答曰：", "天下之事，散而言之，纷若物色；", "总而言之，不出财官二字。", "占官必用父母，占财必用子孙。", "兄弟是破财之人，不为主、不为辅，何必看也？"],
+          "yi": ["有人问：说公事私事，只说财和官，而不说父母、子孙、兄弟，为什么？", "回答说：", "天下的事，分开来说，纷纷杂杂像各种颜色；", "总起来说，逃不出财、官两个字。", "占官一定用到父母，占财一定用到子孙；", "兄弟是破财的人，既不是主，也不是辅，何必去看它？"],
+          "en": ["Someone asks: in speaking of public and private business you speak only of Wealth and Pressure and not of Resource, Output and Peer - why?", "The answer:", "the affairs of the world, spoken of one by one, are as varied as colours;", "taken together, they come down to the two words Wealth and Pressure.", "seeking office always uses Resource, seeking wealth always uses Output;", "Peer is the one who breaks Wealth, neither chief nor helper; why look at it?"] }
+      ],
+      "dispute": {
+        "yi": "兄弟要不要看：《火珠林》说兄弟是破财的人、不主不辅，不必去看；《黄金策》《易隐》《增删卜易》里却有大量条目专看兄弟动不动、旺不旺、持世还是克世（如兄弟交重、兄弟持世、兄弟克世）。",
+        "en": "Whether to look at Peer: the Huozhu Lin says Peer is only the one who breaks Wealth, neither chief nor helper, and need not be looked at; the Huangjin Ce, the Yi Yin and the Zengshan Buyi devote a great many entries to whether Peer moves, is strong, sits on the Self or controls it."
+      },
+      "see": ["LY.WEALTH.HJC.06", "LY.WEALTH.HJC.11", "LY.WEALTH.HJC.27"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.02",
+      "topic": "买卖",
+      "chapter": "占买卖",
+      "chapter_en": "Divining for trade",
+      "title": "买卖：财福出现必利，世应相生交易可成；兄发上爻地头不吉，凶杀在四五途路坎坷",
+      "rule": {
+        "yi": "占买卖只要财、福（子孙）出现，没有就不利；世应相生，交易能成。兄弟宫在上爻发动，那个地方不吉；凶杀落在四爻、五爻，路上多坎坷。",
+        "en": "In a trade hexagram all that is needed is Wealth and Output showing, and without them it is unfavourable; Self and Other generating each other, the deal can be made. Peer moving on the top line, the place is inauspicious; the ill stars on the fourth or fifth line, the road is full of hardships."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["财福出现，买卖必利；", "世应相生，交易可成。"],
+          "yi": ["财和福神出现，买卖一定有利；", "世应相生，交易可以成功。"],
+          "en": ["Wealth and Output showing, buying and selling surely profits;", "Self and Other generating each other, the deal can be made."] },
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["卦占买卖，惟要财福出现，如无不利。", "若是兄宫发动于上爻，必知地头不吉。", "凶杀泊四五，途路坎坷多。"],
+          "yi": ["占买卖的卦，只要财和福神出现；如果没有，就不利。", "如果兄弟宫在上爻发动，一定知道那个地方不吉；", "凶杀落在四爻、五爻，路上多有坎坷。"],
+          "en": ["In a trade hexagram all that is needed is Wealth and Output showing; without them, it is unfavourable.", "If the Peer palace moves on the top line, know that the place is inauspicious;", "with the ill stars on the fourth or fifth line, the road is full of hardships."] }
+      ],
+      "note": {
+        "yi": "「兄宫」按字面译成兄弟宫（兄弟所在的爻）。",
+        "en": "'Peer palace' is translated literally as the position where Peer stands."
+      },
+      "see": ["LY.WEALTH.HJC.36", "LY.WEALTH.HJC.38", "LY.WEALTH.YY.18"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.03",
+      "topic": "买卖",
+      "chapter": "占买卖",
+      "chapter_en": "Divining for trade",
+      "title": "买卖：财爻持世克身得利，发动克身亦利；外克内、应克世易得财，内克外、世克应难得利",
+      "rule": {
+        "yi": "买卖：财爻持世、克卦身，得利；发动去克卦身，也得利。外卦克内卦、应克世，容易得财；内卦克外卦、世克应，难得利。",
+        "en": "In a trade: Wealth sitting on the Self and controlling the Body brings profit, and moving to control the Body also brings profit. The outer trigram controlling the inner and the Other controlling the Self: money comes easily; the inner controlling the outer and the Self controlling the Other: profit is hard to get."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["财支持世克身得利，发动克身亦利。", "外克内，应克世，易得财；", "内克外，世克应难得利。"],
+          "yi": ["财爻持世、克卦身，得利；发动去克卦身，也得利；", "外卦克内卦、应克世，容易得财；", "内卦克外卦、世克应，难得利。"],
+          "en": ["Wealth on the Self line and controlling the Body brings profit, and moving to control the Body brings profit too;", "the outer trigram controlling the inner and the Other controlling the Self: money comes easily;", "the inner trigram controlling the outer and the Self controlling the Other: profit is hard to get."] }
+      ],
+      "see": ["LY.WEALTH.YY.02", "LY.WEALTH.ZS.22"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.04",
+      "topic": "买卖",
+      "chapter": "占买卖",
+      "chapter_en": "Divining for trade",
+      "title": "买卖：内旺外无气先贵后贱；财旺主贵宜卖，财休囚主贱宜买",
+      "rule": {
+        "yi": "内卦旺相、外卦没有气，货先贵后贱；财旺相，价贵，宜卖；财休囚，价贱，宜买。",
+        "en": "Inner strong and outer without breath: the goods are dear first and cheap later; Wealth strong means dear and the time to sell; Wealth resting or trapped means cheap and the time to buy."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["内旺相，外无气，其物先贵后贱。"],
+          "yi": ["内卦旺相、外卦没有气，货先贵后贱；"],
+          "en": ["Inner strong and outer without breath: the goods are dear first and cheap later;"] },
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["财旺相，主贵、宜卖；", "财休囚主贱，宜买。"],
+          "yi": ["财旺相，主价贵，宜卖；", "财休囚，主价贱，宜买。"],
+          "en": ["Wealth strong means dear and time to sell;", "Wealth resting and trapped means cheap and time to buy."] }
+      ],
+      "note": {
+        "yi": "原文这两句的「内」「外」没有写「卦」字，按内卦、外卦读，与《易林补遗》「内卦为近时，外卦为远期」同一套。",
+        "en": "The source writes just 'inner' and 'outer' without 'trigram'; they are read as the inner and outer trigrams, the same scheme as the Yilin Buyi's 'the inner is the near term, the outer the far term'."
+      },
+      "see": ["LY.WEALTH.YL.29", "LY.WEALTH.ZS.15", "LY.WEALTH.YY.19"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.05",
+      "topic": "买卖",
+      "chapter": "占买卖",
+      "chapter_en": "Divining for trade",
+      "title": "买卖：月建临财则吉；官鬼临库，公财吉私财凶",
+      "rule": {
+        "yi": "买卖：兄弟和财不利，官鬼动则价贱、货要出手；月建临财就吉；官鬼临库，公家的财吉，私人的财凶。",
+        "en": "In a trade: Peer and Wealth are unfavourable, and Pressure moving means cheap and the goods should go out; the Month on Wealth is auspicious; Pressure on the tomb-store: public money is auspicious and private money ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["兄财不利，鬼动贱发，", "月建临财则吉，", "官鬼临库，公财吉，私财凶。"],
+          "yi": ["兄弟和财不利，官鬼动则价贱、货要发出去；", "月建临财就吉；", "官鬼临库，公家的财吉，私人的财凶。"],
+          "en": ["Peer and Wealth are unfavourable, and Pressure moving means cheap and the goods should go out;", "the Month on Wealth is auspicious;", "Pressure on the tomb-store: public money is auspicious and private money ill."] }
+      ],
+      "note": {
+        "yi": "「兄财不利，鬼动贱发」两句很省，读法不止一种，这里照字面译。",
+        "en": "'Peer and Wealth unfavourable, Pressure moving, cheap, send out' is terse and has more than one reading; it is translated literally."
+      },
+      "see": ["LY.WEALTH.YY.19", "LY.WEALTH.YL.28"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.06",
+      "topic": "买卖",
+      "chapter": "占买卖",
+      "chapter_en": "Divining for trade",
+      "title": "买卖：卦有二身三身，财与人分共；本宫鬼化财可求，本宫财化鬼防失",
+      "rule": {
+        "yi": "卦里有两个、三个卦身的，财要和别人分；本宫的官鬼化成财，可以求；本宫的财化成官鬼，要防损失。",
+        "en": "A hexagram with two or three Body lines: the money is to be shared with others; the home palace's Pressure turning into Wealth can be sought; the home palace's Wealth turning into Pressure, guard against loss."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [283, 294],
+          "zh": ["卦有二身三身者，财当与人分共，", "本宫鬼化财可求，本宫财化鬼防失。"],
+          "yi": ["卦里有两个、三个卦身的，财要和别人分共有；", "本宫的官鬼化成财，可以求；本宫的财化成官鬼，要防损失。"],
+          "en": ["A hexagram with two or three Body lines: the money is to be shared with others;", "the home palace's Pressure turning into Wealth can be sought; the home palace's Wealth turning into Pressure, guard against loss."] }
+      ],
+      "see": ["LY.WEALTH.HJC.18", "LY.WEALTH.YY.03"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.07",
+      "topic": "有无",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "求财总则：财来扶世不难，财空鬼旺山水阻隔；应生世无财也可求；外克内宜出财，内克外宜入财",
+      "rule": {
+        "yi": "求财：财来扶世，求起来不难；财空、官鬼旺，隔着千山万水。与吉神合、并与世应相合，六爻上有财就可以得到。白虎临财、临应，先生气；比和无关；官鬼动就要费力经营。应生世，没有财也可以求；外生内、应生世，或比和不落空，现在没有，将来还有钱回来。死气的财在长生日得到。外卦克内卦宜出钱，内卦克外卦宜进钱。",
+        "en": "Seeking wealth: Wealth coming to support the Self, seeking is not hard; Wealth void and Pressure strong, a thousand rivers and ten thousand hills lie in the way. Combining with an auspicious spirit and with the Self and the Other, and with Wealth among the six lines, it can be had. The White Tiger on Wealth or on the Other is angry first; in harmony it does not matter; Pressure moving, you must work at it. The Other generating the Self, even with no Wealth it can be sought; the outer generating the inner and the Other generating the Self, or harmony without void: none yet, but money still comes back. Wealth in the dead state is got on a Birth day. The outer trigram controlling the inner suits paying out; the inner controlling the outer suits bringing in."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["财来扶世，求之不难；", "财空鬼旺，千水万山。"],
+          "yi": ["财来扶世，求起来不难；", "财落空、官鬼旺，隔着千山万水。"],
+          "en": ["Wealth coming to support the Self, seeking is not hard;", "Wealth void and Pressure strong, a thousand rivers and ten thousand hills lie in the way."] },
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["合吉神并世应，而六位有财可得。", "白虎临财已先嗔、临应也先嗔，", "比和则无关，", "鬼动则必经营也。", "应生世，虽无财亦可求，", "外生内、应生世，或比和不落空者，", "虽未有，尚有还财。", "子爻动彼自不还。", "死气财必长生日得。", "外克内卦宜出财、内克外卦宜入财。"],
+          "yi": ["与吉神合，并与世应相合，而六爻上有财，就可以得到；", "白虎临财，已经先生气；临应，也先生气；", "比和就没有关系；", "官鬼动，就一定要费力经营。", "应生世，即使没有财也可以求；", "外生内、应生世，或者比和而不落空的，", "现在虽然还没有，将来还有钱回来。", "子孙爻一动，对方自然不还。", "死气的财，一定在长生的日子得到。", "外卦克内卦，宜出财；内卦克外卦，宜入财。"],
+          "en": ["Combining with an auspicious spirit and with the Self and the Other, and with Wealth among the six lines, it can be had;", "the White Tiger on Wealth is already angry first, and on the Other likewise;", "in harmony it does not matter;", "Pressure moving, you must work at it.", "The Other generating the Self, even with no Wealth it can be sought;", "the outer generating the inner and the Other generating the Self, or harmony without void,", "though there is none yet, money still comes back.", "Output moving, he will not repay of himself.", "Wealth in the dead state is got on a Birth day.", "The outer trigram controlling the inner suits paying out; the inner controlling the outer suits bringing in."] }
+      ],
+      "see": ["LY.WEALTH.TXF.02", "LY.WEALTH.HJC.01", "LY.WEALTH.YY.02", "LY.WEALTH.ZS.19"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.08",
+      "topic": "总则",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "将本求利：财爻持世、应旺相有气大吉；无气不多，空亡必无，生旺倍加、休囚减半，逢冲有阻",
+      "rule": {
+        "yi": "有本钱求利：要财爻持世，应旺相有气，才大吉；财爻没气，有也不多；财爻空亡，那财一定没有，还要防破失；财爻生旺可以加倍，休囚减半；遇冲，快到手时有阻碍。",
+        "en": "Seeking profit with capital: the Wealth line must sit on the Self and the Other be strong and with breath for great good fortune; a Wealth line without breath gives little even if there is some; a Wealth line in Void means there is surely none, and beware of breakage and loss; born or strong, it can double, resting or trapped, it halves; clashed, there is an obstruction just as it reaches the hand."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["将本求利，须要财爻持世，", "应旺相，有气，乃大吉。", "财爻无气，虽有亦无多。", "财爻空亡。其财决无，尤防破失。", "财爻生旺可倍加，休囚减半。", "逢冲，将入手有阻。"],
+          "yi": ["有本钱求利，要财爻持世，", "应旺相、有气，才大吉；", "财爻没有气，即使有也不多；", "财爻空亡，那财一定没有，更要防破财损失；", "财爻生旺可以加倍，休囚减半；", "遇冲，快到手时有阻碍。"],
+          "en": ["Seeking profit with capital, the Wealth line must sit on the Self;", "the Other strong and with breath is greatly auspicious;", "a Wealth line without breath gives little even if there is some;", "a Wealth line in Void means there is surely none, and beware of breakage and loss;", "a Wealth line born or strong can double it, resting or trapped, half;", "when clashed, there is an obstruction just as it reaches the hand."] }
+      ],
+      "see": ["LY.WEALTH.TXF.02", "LY.WEALTH.YY.04", "LY.WEALTH.HJC.13", "LY.WEALTH.YL.01"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.09",
+      "topic": "总则",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "空手求财：有财爻还要鬼旺才全吉；财旺无鬼、有鬼无财都得不到，二者齐全才大吉",
+      "rule": {
+        "yi": "空手求财：虽有财爻，还要官鬼旺相才算全吉；财爻旺相而卦里没有官鬼，财虽可求却实际得不到；有官鬼没有财，即使有高明的手艺也得不到财；两样都要齐全，才是大吉。",
+        "en": "Seeking money empty-handed: even with a Wealth line, Pressure must also be strong to be fully auspicious; a strong Wealth line with no Pressure in the hexagram can be sought yet in fact cannot be had; Pressure with no Wealth gives no money even to a fine skill; both must be there for great good fortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["空手求财，虽有财爻，", "却要鬼旺方为全吉。", "如财爻旺相，卦中无鬼，虽财可求，实无可得。", "若有鬼无财，虽有高术，亦不得财。", "二者必用二全，方为大吉。"],
+          "yi": ["空手求财，虽然有财爻，", "还要官鬼旺相才算全吉；", "如果财爻旺相，但卦里没有官鬼，财虽然可以求，实际得不到；", "如果有官鬼没有财，即使有高明的手艺，也得不到财；", "两者必须都齐全，才是大吉。"],
+          "en": ["Seeking money empty-handed, even with a Wealth line,", "Pressure must also be strong to be fully auspicious;", "if the Wealth line is strong but the hexagram has no Pressure, money may be sought yet in fact cannot be had;", "if there is Pressure but no Wealth, even a fine skill will not bring money;", "the two must both be there for great good fortune."] }
+      ],
+      "see": ["LY.WEALTH.TXF.02", "LY.WEALTH.YY.09", "LY.WEALTH.YL.02", "LY.WEALTH.YL.22"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.10",
+      "topic": "动变",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "动变：父母化财先难后易，财化父母先易后难；财化兄弟先聚后散，兄弟化财先散后聚；前卦有财速谋，前卦无财迟取",
+      "rule": {
+        "yi": "父母化成财，先难后易；财化成父母，先易后难。财化成兄弟，先聚后散；兄弟化成财，先散后聚。本卦有财、变卦无财，赶快谋求有得，迟了就没有；本卦无财、变卦有财，迟一些取才有，眼下还不当值。钱财多少，要凭爻的衰旺来定。书中例：九二的财动，求就一定有；九五的比肩爻动，被阻拦还没得到；买卖同样推。",
+        "en": "Resource turning into Wealth: hard first, easy later; Wealth turning into Resource: easy first, hard later. Wealth turning into Peer: gathered first, scattered later; Peer turning into Wealth: scattered first, gathered later. Wealth in the first hexagram and none in the later one: act quickly and you get it, late and you do not; no Wealth in the first and Wealth in the later one: take it late and you have it, it is not on duty now. How much money there is must be decided by the strength or weakness of the line. Case in the book: the Wealth on the second line moves, so seeking will surely bring it; the Peer on the fifth line moves, so it is blocked and not yet obtained; trade is worked out the same way."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["父母化财，先难后易，", "财化父母，先易后难。", "财化兄弟，先聚后散，", "兄弟化财，先散后聚。"],
+          "yi": ["父母化成财，先难后易；", "财化成父母，先易后难；", "财化成兄弟，先聚后散；", "兄弟化成财，先散后聚。"],
+          "en": ["Resource turning into Wealth: hard first, easy later;", "Wealth turning into Resource: easy first, hard later;", "Wealth turning into Peer: gathered first, scattered later;", "Peer turning into Wealth: scattered first, gathered later."] },
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["前卦有财，后卦无财，速谋有得，迟则无。", "前卦无财，后卦有财，迟取方有，目下未值。", "财之多寡，须凭爻之衰旺决之。"],
+          "yi": ["本卦有财、变卦无财，赶快谋求有得，迟了就没有；", "本卦无财、变卦有财，迟一些取才有，眼下还不当值；", "钱财多少，要凭爻的衰旺来定。"],
+          "en": ["Wealth in the first hexagram and none in the later one: act quickly and you get it, late and you do not;", "no Wealth in the first hexagram and Wealth in the later one: take it late and you have it, it is not on duty now;", "how much money there is must be decided by the strength or weakness of the line."] },
+        { "by": "书中例", "book": "火珠林", "range": [778, 783],
+          "zh": ["（二十）占求财", "九二财动、求之必有；", "九五比肩爻动，", "阻而未得也。", "买卖同此推之。"],
+          "yi": ["（第二十项）占求财：", "九二爻的财发动，求就一定有；", "九五爻的比肩爻发动，", "被阻拦，还没有得到。", "买卖也照这个来推。"],
+          "en": ["(No. 20) A money question:", "the Wealth on the second line moves: seek and you will surely have it;", "the Peer on the fifth line moves,", "and it is blocked and not yet obtained.", "Trade is worked out the same way."] }
+      ],
+      "note": {
+        "yi": "最后一段是书里的占例：那一卦是乾变离，九二、九五两爻动（前面「占来情」等各项说的是同一卦）。「前卦」「后卦」指本卦和变卦。「比肩」是和世爻同五行的爻，这里就是兄弟。",
+        "en": "The last passage is a case from the book: the hexagram is Qian changing to Li with the second and fifth lines moving (the earlier items on the arrival of the question and so on speak of the same hexagram). 'Former' and 'later' hexagram mean the main and the changed hexagram. 'Bijian' is a line of the same element as the Self line, here Peer."
+      },
+      "see": ["LY.WEALTH.HJC.15", "LY.WEALTH.HJC.17", "LY.WEALTH.HJC.18", "LY.WEALTH.TXF.03", "LY.WEALTH.TXF.10", "LY.WEALTH.YY.03", "LY.WEALTH.YL.25"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.11",
+      "topic": "有无",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "子孙为财之源：加青龙发动，不问财衰旺可求；父母动、财源绝再遇白虎凶；财旺生世也只一度",
+      "rule": {
+        "yi": "子孙是财的源头，再加青龙发动，不管财爻旺衰，一定可以谋求，是大吉之兆；父母动则子孙受伤，不能生财；财源已断再遇白虎同上，凶；即使财旺、生合世爻，也只能得一次，不能再谋。",
+        "en": "Output is the source of Wealth; with the Azure Dragon added and moving, then whether the Wealth line is strong or weak it can surely be sought, a sign of great good fortune; Resource moving hurts Output, which then cannot generate Wealth; the source already cut and the White Tiger joining is ill; even if Wealth is strong and generates or combines with the Self line it allows one time only and cannot be sought again."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["子孙为财之源，若加青龙发动，", "不问财爻衰旺，决可求谋，乃大吉之兆。", "父母动则子受伤，不能生财。", "财源已绝，若遇白虎同登，凶。", "纵其财旺生合世爻，只许一度，不可再图。"],
+          "yi": ["子孙是财的源头，如果再加青龙发动，", "不管财爻旺衰，一定可以谋求，是大吉的兆头；", "父母一动，子孙受伤，就不能生财；", "财源已断，如果再遇白虎同上，凶；", "即使财旺、生合世爻，也只能得一次，不能再谋。"],
+          "en": ["Output is the source of Wealth; if the Azure Dragon is added and it moves,", "then whether the Wealth line is strong or weak, it can surely be sought: a sign of great good fortune;", "Resource moving hurts Output, which then cannot generate Wealth;", "the source of Wealth already cut, and if the White Tiger also joins, it is ill;", "even if Wealth is strong and generates or combines with the Self line, it allows one time only and cannot be sought again."] }
+      ],
+      "see": ["LY.WEALTH.TXF.06", "LY.WEALTH.YL.01"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.12",
+      "topic": "难易",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "求财难易：财来生我、克我易得；我克财为克退，财动追不上；世静财动来生克我，财来逐我易求",
+      "rule": {
+        "yi": "世是我：财来生我、克我，都吉，是容易得到的象；我克财爻叫克退，财静还可以，财动就像下面追高处，追不上；世安静、财爻发动来生我、克我，是财追着我的象，一定容易求。",
+        "en": "The Self is me: Wealth coming to generate or control me is auspicious, the image of easy gain; my controlling the Wealth line is called driving it back, and if Wealth is still it is tolerable but if it moves it is like chasing something above from below and you cannot reach it; the Self still and the Wealth line moving to generate or control me is the image of wealth coming after me, and it is sure to be easy to seek."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["世为我，若财来生我，克我皆吉，乃易得之象；", "若我克财爻，谓之克退，财静犹可，", "若动，如入下逐高，不能及也。", "若世安静，财爻发动，生我、克我，", "此财来逐我之象，决主易求。"],
+          "yi": ["世是我，如果财来生我、克我，都吉，是容易得到的象；", "如果是我克财爻，叫做克退，财安静还可以；", "如果财发动，像是在下面追高处的东西，追不上。", "如果世安静，财爻发动，来生我、克我，", "这是财追着我来的象，一定容易求得。"],
+          "en": ["The Self is me; if Wealth comes to generate or control me, both are auspicious, the image of easy gain;", "if I control the Wealth line, that is called driving it back, and if Wealth is still it is tolerable;", "if it moves, it is like chasing from below something above, and you cannot reach it.", "If the Self is still and the Wealth line moves to generate or control me,", "this is the image of wealth coming after me, and it is sure to be easy to seek."] }
+      ],
+      "see": ["LY.WEALTH.TXF.07", "LY.WEALTH.HJC.13", "LY.WEALTH.HJC.14"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.13",
+      "topic": "应期",
+      "chapter": "占求财",
+      "chapter_en": "Divining for wealth",
+      "title": "得财日：与日辰合方得入手；旺相之财墓日可得，无气之财生旺日得",
+      "rule": {
+        "yi": "看得财的日子，要和日辰相合才能到手；旺相的财，墓日可以得到；没有气的财，要生旺的日子才得到。",
+        "en": "To find the day money is got, it must combine with the Day to come into the hand; a strong Wealth can be had on a tomb day; a Wealth without breath is had only on a day of Birth or strength."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [295, 306],
+          "zh": ["看得财日，须与日辰合方得入手。", "若旺相之财，墓日可得；", "无气之财，生旺日乃得也。"],
+          "yi": ["看得财的日子，要和日辰相合才能到手；", "旺相的财，墓日可以得到；", "没有气的财，要到生旺的日子才得到。"],
+          "en": ["To find the day money is got, it must combine with the Day to come into the hand;", "a strong Wealth can be had on a tomb day;", "a Wealth without breath is had only on a day of Birth or strength."] }
+      ],
+      "see": ["LY.WEALTH.TXF.11", "LY.WEALTH.YL.18", "LY.WEALTH.YL.19", "LY.WEALTH.HJC.25", "LY.WEALTH.YY.07"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.14",
+      "topic": "博戏",
+      "chapter": "占博戏",
+      "chapter_en": "Divining for gambling",
+      "title": "占博戏：世旺克应我胜，应旺克世彼胜；子孙妻财扶世胜；斗禽虫要子孙持世旺相，鬼兄财动输",
+      "rule": {
+        "yi": "赌博斗禽：福神旺，才有真物（能赢）；财是利息，官鬼动就不赢。世应上见鬼爻都败；世旺克应，我胜；应旺克世，对方胜；子孙、妻财扶世，我胜；子孙旺相喜动。斗禽虫要子孙持世旺相，或子孙独发才赢，鬼、兄、财爻动就输。",
+        "en": "Gambling and setting birds to fight: Output strong makes the creature true (able to win); Wealth is the winnings, and Pressure moving means no win. Pressure showing on the Self or the Other means defeat; a strong Self controlling the Other, I win; a strong Other controlling the Self, he wins; Output and Wealth supporting the Self, I win; Output strong is glad to move. For fighting birds and insects Output must sit on the Self and be strong, or move alone, and you win; if Pressure, Peer or the Wealth line moves, you lose."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [307, 315],
+          "zh": ["博戏斗禽，福旺物真；", "财为利息，鬼动不赢。"],
+          "yi": ["赌博、斗禽，福神旺，物才真（能赢）；", "财是利息（赢头），官鬼动就不赢。"],
+          "en": ["In gambling and fighting birds, Output strong makes the creature true;", "Wealth is the winnings; Pressure moving, no win."] },
+        { "by": "经", "book": "火珠林", "range": [307, 315],
+          "zh": ["世应见鬼爻皆败，乃彼我不得地，", "世旺克应，我胜；", "应旺克也，彼胜。", "子孙妻财喜扶世，我胜。", "子孙旺相喜动。"],
+          "yi": ["世应上见到鬼爻，都要败，是彼此都不得地；", "世旺克应，我胜；", "应旺克世，对方胜；", "子孙、妻财喜欢扶助世，我胜；", "子孙旺相，喜欢发动。"],
+          "en": ["The Self and the Other both showing a Pressure line lose - neither side is in a good position;", "a strong Self controlling the Other: I win;", "a strong Other controlling the Self: he wins;", "Output and Wealth supporting the Self: I win;", "Output strong is glad to move."] },
+        { "by": "经", "book": "火珠林", "range": [307, 315],
+          "zh": ["或问：妻为我物，鬼为彼虫，如何取用？", "答曰：此言斗禽虫也。", "若转变之事，则不一同专，", "要子孙持世旺相，或独发便赢，若鬼兄财爻动便输。", "要知当日，俱以时辰取福德言之。"],
+          "yi": ["有人问：妻财是我的东西，官鬼是对方的虫，怎么取用神？", "回答说：这说的是斗禽虫（斗鸡、斗蟋蟀之类）。", "如果是别的转变之事，就不专一同论；", "要子孙持世旺相，或子孙独发就赢；如果鬼、兄、财爻动就输。", "想知道当天（结果），都用时辰取福德来说。"],
+          "en": ["Someone asks: Wealth is my creature and Pressure his insect - how is the Subject chosen?", "The answer: this speaks of pitting birds and insects.", "For other kinds of matter it is not judged as one;", "Output must sit on the Self strong, or move alone, and you win; if Pressure, Peer or the Wealth line moves, you lose.", "To know the day's result, take Output by the hour."] }
+      ],
+      "note": {
+        "yi": "「妻为我物，鬼为彼虫」是斗禽虫时的取法，财是我的、鬼是对方的；「若转变之事」一句很省，这里照字面译。",
+        "en": "'Wealth is my creature, Pressure his insect' is how the roles are taken when birds and insects are pitted against each other; 'if a matter of change' is terse and translated literally."
+      },
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.YY.12", "LY.WEALTH.YL.12", "LY.WEALTH.YL.53", "LY.WEALTH.ZS.30"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.15",
+      "topic": "畜养渔猎",
+      "chapter": "占畜养",
+      "chapter_en": "Divining for livestock",
+      "title": "占畜养：财福上卦，虎动鬼兴防损失；鬼持初爻鸡鸭不吉，官坐五爻牛马难安",
+      "rule": {
+        "yi": "占畜养：财旺、福神相，牲畜有益；虎动、鬼兴，要防损失。占畜养先定体：关键要财、福上卦，没有就不利；官鬼在初爻，鸡鸭不吉；官鬼在五爻，牛马难安；还要配合六神来断。",
+        "en": "Livestock: Wealth strong and Output thriving, the animals do well; the Tiger moving and Pressure rising, guard against loss. First fix the body of the question: the essential is Wealth and Output in the hexagram, and without them it is unfavourable; Pressure on the first line, poultry do badly; Pressure on the fifth line, cattle and horses are unsettled; and the six spirits are consulted together."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [520, 529],
+          "zh": ["旺财相福，牲畜有益；", "虎动鬼兴；必防损失。"],
+          "yi": ["财旺、福神相（旺相），牲畜有益；", "白虎动、官鬼兴，必须防损失。"],
+          "en": ["Wealth strong and Output thriving, the animals do well;", "the Tiger moving and Pressure rising, guard against loss."] },
+        { "by": "经", "book": "火珠林", "range": [520, 529],
+          "zh": ["卦之畜养，须论定体。", "端要财福上卦，如无不利。", "鬼持初爻，鸡鸭不吉，", "官坐五爻，牛马难安，", "参合六神论断。"],
+          "yi": ["占畜养的卦，要论定它的体；", "关键要财和福神上卦，没有就不利；", "官鬼在初爻，鸡鸭不吉；", "官鬼在五爻，牛马难安；", "还要配合六神来断。"],
+          "en": ["In a livestock hexagram, first fix its body;", "the essential is Wealth and Output in the hexagram; without them it is unfavourable;", "Pressure on the first line: poultry do badly;", "Pressure on the fifth line: cattle and horses are unsettled;", "and the six spirits are consulted together."] }
+      ],
+      "see": ["LY.WEALTH.HJC.30", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.16",
+      "topic": "畜养渔猎",
+      "chapter": "占畜养",
+      "chapter_en": "Divining for livestock",
+      "title": "畜养：最忌兄弟官鬼；官鬼五行各主一样病；本命爻临财福无伤则吉",
+      "rule": {
+        "yi": "畜养最忌兄弟、官鬼。官鬼落在上爻（或说以五爻为主）：金鬼，牛极瘦；木鬼，脚疼或肚子受风；水鬼，牲畜散失；火鬼，中热；土鬼，发痒、瘟疫、发黄。所属牲畜的本命爻临在财、福上、没有受伤，就吉；比如兄弟、官鬼临三爻本来不好，但有亥爻这个本命临财福，就吉，不为害，其余照此类推。",
+        "en": "Livestock most fear Peer and Pressure. With Pressure on the top line (or, some say, the fifth line as the chief): a Metal Pressure, the ox grows very thin; Wood, sore feet or wind in the belly; Water, the animals scatter; Fire, heat stroke; Earth, itching, plague and jaundice. The animal's own natal line on Wealth or Output and unharmed is auspicious; for instance Peer or Pressure on the third line is bad in itself, but if the Hai line, the natal one, sits on Wealth or Output it is auspicious and does no harm; the rest follow from this."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [520, 529],
+          "zh": ["诸爻最忌兄弟、官鬼。", "如鬼值上爻或曰五爻为主：", "金鬼牛极瘦，", "木鬼脚疼或腹风，", "水鬼散，", "火鬼触热，", "土鬼发痒瘟黄。"],
+          "yi": ["各爻最忌兄弟、官鬼；", "比如官鬼落在上爻（或说以五爻为主）：", "金鬼，牛极瘦；", "木鬼，脚疼或肚子受风；", "水鬼，牲畜散失；", "火鬼，中热；", "土鬼，发痒、瘟疫、发黄。"],
+          "en": ["Of all the lines, Peer and Pressure are the most feared;", "with Pressure on the top line (or, some say, the fifth line as the chief):", "a Metal Pressure: the ox grows very thin;", "a Wood Pressure: sore feet or wind in the belly;", "a Water Pressure: the animals scatter;", "a Fire Pressure: heat stroke;", "an Earth Pressure: itching, plague and jaundice."] },
+        { "by": "经", "book": "火珠林", "range": [520, 529],
+          "zh": ["逢所属本命爻临财福，无伤则吉。", "且如兄鬼临三爻，本为不佳，", "却有亥爻本命临财福，吉，亦不为害，", "余仿此推。"],
+          "yi": ["碰到所属牲畜的本命爻临在财、福上，没有受伤，就吉；", "比如兄弟、官鬼临三爻，本来不好，", "但有亥爻这个本命临在财、福上，吉，也没有害；", "其余照这个类推。"],
+          "en": ["The animal's own natal line on Wealth or Output, unharmed, is auspicious;", "for instance, Peer or Pressure on the third line is bad in itself,", "but if the Hai line, the natal one, sits on Wealth or Output, it is auspicious and does no harm;", "the rest follow from this."] }
+      ],
+      "note": {
+        "yi": "「本命爻」是牲畜属相所对的地支爻，例子里的亥就是猪。",
+        "en": "The natal line is the branch line matching the animal's zodiac sign; in the example Hai is the pig."
+      },
+      "see": ["LY.WEALTH.HJC.30", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.HZL.17",
+      "topic": "畜养渔猎",
+      "chapter": "占渔猎",
+      "chapter_en": "Divining for fishing and hunting",
+      "title": "占渔猎：以世为主、以财为物，财子旺相大吉；财在四爻遇兔豕，鬼在六爻防虎豹；内克外、世克应、青龙财动不空可得",
+      "rule": {
+        "yi": "占渔猎：以世为主，以财为猎物；福神兴旺、财旺，前程可望；财、官鬼落空，一无所获。财和子孙都旺相大吉；财在四爻，可遇兔和猪；官鬼在六爻，要防虎豹。内克外、内旺相、世克应，有青龙、财爻发动又不空亡，猎物可得；恶杀临在旺相的财上，发动克世，主有野兽伤人，凶。",
+        "en": "Fishing and hunting: the Self is the chief and Wealth the quarry; Output rising and Wealth strong, the prospect is bright; Wealth and Pressure falling void, nothing is caught. Wealth and Output both strong is greatly auspicious; Wealth on the fourth line, hares and boars may be met; Pressure on the sixth line, beware of tigers and leopards. The inner controlling the outer, the inner strong and the Self controlling the Other, with the Azure Dragon and the Wealth line moving and not void, the quarry can be had; the ill stars on a strong Wealth, moving and controlling the Self, mean a wound from a beast: ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [530, 537],
+          "zh": ["福兴财旺，前程可望；", "财鬼虚临，山枯海旷。"],
+          "yi": ["福神兴、财旺，前程可望；", "财、官鬼落空，山空海阔（一无所获）。"],
+          "en": ["Output rising and Wealth strong, the prospect is bright;", "Wealth and Pressure falling void, the mountains are dry and the sea empty."] },
+        { "by": "经", "book": "火珠林", "range": [530, 537],
+          "zh": ["卦之渔猎，", "以世为主，以财为物，", "财子俱见旺相大吉。", "财值四爻，兔豕堪遇，", "鬼临六爻，虎豹须防。", "震棒、器弓、离网、艮犬，克财者宜用之。", "若财艾值断，如巽鸡、艮豹、震兔、坎狐、野豕、兑羊、乾虎、离雉、坤羊之类。"],
+          "yi": ["占渔猎的卦，", "以世为主，以财为猎物，", "财和子孙都见旺相，大吉；", "财在四爻，可以遇到兔和猪；", "官鬼在六爻，要防虎豹；", "震用棒、（器）用弓、离用网、艮用狗，哪个能克财，就宜用哪个。", "如果「财艾值断」（原文不通，「艾」疑是「爻」），猎物就是这一类：巽鸡、艮豹、震兔、坎狐、野猪、兑羊、乾虎、离雉、坤羊。"],
+          "en": ["In a fishing-and-hunting hexagram,", "the Self is the chief and Wealth is the quarry;", "Wealth and Output both seen strong is greatly auspicious;", "Wealth on the fourth line, hares and boars may be met;", "Pressure on the sixth line, beware of tigers and leopards;", "Zhen a club, 'qi' a bow, Li a net, Gen a dog: use whichever controls Wealth.", "If the 'Wealth ai on duty and cut' (the source is corrupt, and 'ai' is probably a slip for 'line'), the quarry is of this kind: Xun the chicken, Gen the leopard, Zhen the hare, Kan the fox, the wild boar, Dui the sheep, Qian the tiger, Li the pheasant, Kun the sheep."] },
+        { "by": "经", "book": "火珠林", "range": [530, 537],
+          "zh": ["内克外，内旺相，世克应，", "得青龙财爻动，不空亡，物可得。", "恶杀临财旺相，发动、克世，主有兽伤，凶。"],
+          "yi": ["内克外、内旺相、世克应，", "得到青龙、财爻发动、又不空亡，猎物可以得到；", "恶杀临在旺相的财上，发动、克世，主有野兽伤人，凶。"],
+          "en": ["The inner controlling the outer, the inner strong, the Self controlling the Other,", "with the Azure Dragon and the Wealth line moving and not void, the quarry can be had;", "the ill stars on a strong Wealth, moving and controlling the Self, mean a wound from a beast: ill."] }
+      ],
+      "note": {
+        "yi": "「器弓」「财艾值断」两处字不通，译文只译能读的部分并标出；八卦配的动物是原文所列，照抄。",
+        "en": "'Qi bow' and 'Wealth ai on duty and cut' are corrupt; only the readable parts are translated and marked. The animals assigned to the trigrams are as the source lists them."
+      },
+      "see": ["LY.WEALTH.YY.13", "LY.WEALTH.YL.56", "LY.WEALTH.YL.57", "LY.WEALTH.HJC.30"]
+    }
+  ]
+}

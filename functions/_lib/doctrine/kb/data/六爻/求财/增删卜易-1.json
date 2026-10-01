@@ -1,0 +1,336 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "增删卜易",
+  "ranges": { "增删卜易": [11258, 11570] },
+  "units": [
+    {
+      "id": "LY.WEALTH.ZS.01",
+      "topic": "公门九流",
+      "chapter": "谒贵求财章",
+      "chapter_en": "Calling on the great for money",
+      "title": "世克官，官生世，须宜谒见",
+      "rule": {
+        "yi": "谒贵求财：世爻克官鬼或官鬼生世，宜去拜见；财临月破、官鬼克世，白跑。野鹤：求名以官鬼为用，求利以妻财为用，用神持世或生合世爻为吉；逢空破墓绝、动而变凶，徒劳；世爻化鬼、化回头克，或随鬼入墓、助鬼伤身，不宜去，去则到彼或途中遇祸。",
+        "en": "Calling on the great for money: the Self line controlling Pressure, or Pressure generating the Self line, go; Wealth under a Month-break or Pressure controlling the Self line, a wasted journey. Yehe: for a post take Pressure, for gain take Wealth; the Subject on or generating or combining with the Self line is good; void, broken, entombed, extinguished, or turning harmful, the trip is for nothing; the Self line turning into Pressure or into its own control, following the ghost into the tomb or feeding the ghost that harms it, do not go, or trouble meets you there or on the way."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["世克官，官生世，须宜谒见；", "财临破，鬼克世，枉费奔驰。"],
+          "yi": ["世爻克官鬼、官鬼生世爻，应当去拜见；", "财爻逢月破、官鬼克世爻，白白奔走。"],
+          "en": ["The Self line controlling Pressure, or Pressure generating the Self line: go and call on them;", "Wealth under a Month-break, or Pressure controlling the Self line: the running about is wasted."] },
+        { "by": "野鹤", "book": "增删卜易",
+          "zh": ["野鹤曰：见贵有两问，为名者用官，为利者用财。", "皆宜持世及生合世爻为吉，", "如逢空破墓绝，及动而变凶者，徒劳奔驰耳。", "倘若世爻化鬼化克，及随墓助伤者，更不宜行，", "若非到彼逢凶，定在中途遇祸。", "占谒贵者，亦同此断。"],
+          "yi": ["野鹤说：拜见贵人有两种问法：为求名，以官鬼为用神；为求利，以妻财为用神。", "都以用神持世或生合世爻为吉；", "如果用神逢空、破、墓、绝，或动而变凶，只是白跑一趟。", "如果世爻化出官鬼、化出回头克，以及随鬼入墓、助鬼伤身，更不宜去；", "不是到了那里遇凶，就是半路遇祸。", "占拜见贵人的，也这样断。"],
+          "en": ["Yehe says: calling on a person of rank can be asked two ways; for a post, take Pressure; for gain, take Wealth.", "In both, the Subject sitting on or generating or combining with the Self line is good;", "if it is void, broken, entombed or extinguished, or turns harmful when it moves, the journey is for nothing.", "If the Self line turns into Pressure or into something that controls it, or follows the ghost into the tomb, or feeds the ghost that harms it, all the more do not go;", "if trouble does not meet you there, it will on the way.", "Questions about calling on the great are judged the same way."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.02",
+      "topic": "应期",
+      "chapter": "谒贵求财章",
+      "chapter_en": "Calling on the great for money",
+      "title": "世动遇空，身兴遇破",
+      "rule": {
+        "yi": "谒贵：世爻动而化空、化破，不作凶论，是应期——应在到达那里的月日（书中例：官星持世而空，出空之日见到，财利如意）。",
+        "en": "Calling on the great: the Self line moving into the void or into a Month-break is not bad; it marks the month or day you arrive (case in the book: Pressure on the Self line was void, and the meeting came on the day it left the void, with the money as wished)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["世动遇空，身兴遇破。", "世动化空破者，勿曰不吉，乃应到彼之月日也。"],
+          "yi": ["世爻动而逢空，世身动而逢破。", "世爻动而化空、化破，不要说不吉，那是应在到达那里的月日。"],
+          "en": ["The Self line moving into the void; the Self stirring into a Month-break.", "If the Self line moves and turns void or broken, do not call it unlucky: it marks the month or day you arrive there."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：申月丁卯日(旬空：戌亥)，占出行谒见贵人，得“天火同人”"],
+          "yi": ["例：申月丁卯日（旬空戌、亥），占出门拜见贵人，得天火同人卦。"],
+          "en": ["Case: Shen month, Dingmao day (void: Xu and Hai); the question was travelling to call on a person of rank; the hexagram Tianhuo Tongren."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：官星持世而空，亥日出空得见，财利如心。", "果于出空之日见官，财利得意。", "乃月建财爻生世之故也。"],
+          "yi": ["断语：官鬼持世而落空，到亥日出空时能见到，财利如意。", "果然在出空的那天见到官员，财利得意。", "这是因为月建是财爻、来生世爻。"],
+          "en": ["Judgment: Pressure sat on the Self line but was void; on the Hai day it would leave the void and the meeting would happen, with the money as wished.", "He did meet the official on the day it left the void, and did well by it.", "That was because the Month was the Wealth line and generated the Self line."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.03",
+      "topic": "公门九流",
+      "chapter": "谒贵求财章",
+      "chapter_en": "Calling on the great for money",
+      "title": "官持世财动相生，财持世官无缺陷",
+      "rule": {
+        "yi": "谒贵求财：官鬼持世而财爻动来生它，或财持世而官鬼完好无损，再得日月生世生财（或世、财临日月），双方投缘，吉。",
+        "en": "Calling on the great for money: Pressure on the Self line with a moving Wealth generating it, or Wealth on the Self line with Pressure sound, and the Day and Month generating the Self or Wealth (or the Self or Wealth line being the Day or Month branch): the two sides take to each other; good."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["官持世，财动相生；", "财持世，官无缺陷；", "再得日月照临，彼此缘投有幸。", "日月照临者，乃日月生世、生财，或世爻、财爻而临日月是也。"],
+          "yi": ["官鬼持世，而财爻发动来生它；", "财爻持世，而官鬼完好无损（不空不破）；", "再有日月照临，双方投缘，有幸运。", "「日月照临」，是指日辰月建生世爻、生财爻，或世爻、财爻本身就是日辰月建。"],
+          "en": ["Pressure on the Self line with a moving Wealth generating it;", "Wealth on the Self line with the Pressure line sound (neither void nor broken);", "and the Day and Month shining on it: the two sides take to each other, and fortune smiles.", "'The Day and Month shining on it' means the Day and Month generate the Self line or the Wealth, or the Self line or Wealth line is itself the Day or Month branch."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.04",
+      "topic": "总则",
+      "chapter": "谒贵求财章",
+      "chapter_en": "Calling on the great for money",
+      "title": "为名宜父动，因利忌兄兴",
+      "rule": {
+        "yi": "问的是什么就看什么：谒贵能否见到，看世爻与官鬼相生相合；能否得名、得利要另起一卦（名看父母、官鬼两旺，利看妻财、子孙两旺）。为求名而起的卦里财爻持世，是破文书的忌神，不能读作「不成名也得利」。",
+        "en": "Read what was asked: whether you will be received depends on the Self line and Pressure generating or combining; whether it brings a post or gain needs a separate casting (a post wants Resource and Pressure strong, gain wants Wealth and Output). In a hexagram cast for a post, Wealth on the Self line is the Adversary that breaks the documents; do not read it as 'no post, but money'."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["为名宜父动，因利忌兄兴。", "凡占谒贵，既得世与官星相生相合，必然得见。", "若为名利，须宜另占，不可即以此卦断之。", "盖为名者，宜父官两旺；为利者，宜财福两旺也。"],
+          "yi": ["为求名，宜父母发动；为求利，忌兄弟兴动。", "凡是占拜见贵人，只要世爻和官鬼相生相合，一定能见到。", "至于能否得名得利，要另外起卦，不能就用这一卦来断。", "因为求名要父母、官鬼两旺，求利要妻财、子孙两旺。"],
+          "en": ["For a post, a moving Resource is welcome; for gain, a stirring Peer is feared.", "When asking about calling on the great, if the Self line and Pressure generate or combine with each other, you will be received.", "Whether it brings a post or gain must be asked in a separate casting; do not judge it from this one.", "For a post, Resource and Pressure should both be strong; for gain, Wealth and Output."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：申月甲辰日(旬空：寅卯)，占谒贵求题荐，得“火雷噬嗑”"],
+          "yi": ["例：申月甲辰日（旬空寅、卯），占拜见贵人求推荐，得火雷噬嗑卦。"],
+          "en": ["Case: Shen month, Jiachen day (void: Yin and Mao); the question was calling on a person of rank to ask for a recommendation; the hexagram Huolei Shihe."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["求题荐全仗文书，卦中财爻持世，父母受克，难许如心。", "彼曰：如果得财，亦不负此一行。", "余曰：非此论也，汝来意原为求名，此持世之财，乃破文书之忌神也。非许汝以求财也。"],
+          "yi": ["求推荐全靠文书（父母），卦里财爻持世，父母受克，难以如愿。", "他说：如果能得到钱财，也不枉走这一趟。", "我说：不是这样论的。你来的本意是求名，这个持世的财，是破文书的忌神，并不是许你求财。"],
+          "en": ["A recommendation depends wholly on documents (Resource); here the Wealth line sat on the Self line and Resource was controlled, so success could not be promised.", "He said: if I get money out of it, the trip will still be worth it.", "I said: that is not how it reads. You came to seek a post; this Wealth on the Self line is the Adversary that breaks the documents. It does not promise you money."] },
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：每见人断如此之卦，竟以此财爻决为有财，", "殊不知财爻持世破文书，求荐举而不得也，", "误作虽不成名必得其利者，岂不大谬。"],
+          "yi": ["觉子说：常见人断这样的卦，竟然凭这个财爻断定有财，", "却不知道财爻持世是破文书，求推荐而得不到；", "错断成「虽然成不了名，一定得利」，岂不是大错。"],
+          "en": ["Juezi says: I often see people read such a hexagram and conclude from this Wealth line that there is money,", "not realising that the Wealth line on the Self line breaks the documents, and the recommendation will not come;", "to read it as 'no post, but certainly gain' is a grave mistake."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.05",
+      "topic": "公门九流",
+      "chapter": "谒贵求财章",
+      "chapter_en": "Calling on the great for money",
+      "title": "六合六冲须看用，反吟化退枉奔劳",
+      "rule": {
+        "yi": "六合、六冲不能单独定吉凶：六合要用神旺相，或世与财、官相合，才吉；六冲要用神受克失陷，才凶。反吟、世动化退：难以成行，勉强去也空手回。",
+        "en": "Six-Combine and Six-Clash do not decide the matter by themselves: a Six-Combine is good only with the Subject strong or the Self line combining with Wealth or Pressure; a Six-Clash is bad only if the Subject is controlled and falls. Reversed Chant, or the Self line moving into Retreating: hard to set out, and back empty-handed if you force it."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["六合六冲须看用，反吟化退枉奔劳。", "爻逢六合，亦要用神旺相，或世与财官相合，乃为吉兆。", "卦遇六冲，必须用神受克失陷，始作凶征。", "卦得反吟，及世动化退，多见难于行动，勉强而去，素手空归。"],
+          "yi": ["六合、六冲都要看用神，反吟、化退是白白奔劳。", "爻逢六合，也要用神旺相，或世爻与财、官相合，才是吉兆。", "卦逢六冲，一定要用神受克、失陷，才算凶兆。", "卦得反吟，以及世爻动而化退，多半难以成行，勉强去了，也空手而归。"],
+          "en": ["Six-Combine and Six-Clash both depend on the Subject; Reversed Chant or turning Retreating means toil for nothing.", "Even with Six-Combine lines, the Subject must be strong, or the Self line must combine with Wealth or Pressure, before it is a good sign.", "With a Six-Clash hexagram, only if the Subject is controlled and falls does it become a bad sign.", "A Reversed Chant hexagram, or the Self line moving into Retreating, usually means the trip is hard to make; go anyway and you come back empty-handed."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.06",
+      "topic": "公门九流",
+      "chapter": "谒贵求财章",
+      "chapter_en": "Calling on the great for money",
+      "title": "贵人谒贵宜世应相生，平人见贵宜官贵相合",
+      "rule": {
+        "yi": "谒贵分身份：贵人见贵人看世应相生相合；平民见贵人看官鬼与世爻相生相合，或官鬼持世。问能否得见，官鬼生合世即见；问功名，官鬼持世、生世才得名（觉子：勿把所见贵人之官当功名）。世应冲克、财伏而空，去无益；官鬼克世、世化鬼化克，凶，平人勿去；财官生世、持世吉。",
+        "en": "It depends on who is calling: rank calling on rank reads Self and Other generating or combining; a commoner calling on the great reads Pressure generating or combining with the Self line, or sitting on it. If the question is only whether you will be received, Pressure generating or combining with the Self line says yes; if it is office, Pressure must sit on or generate the Self line (Juezi: do not take the great man's Pressure line for office). Self and Other clashing or controlling with Wealth hidden and void, no use going; Pressure controlling the Self line, or the Self turning into Pressure or into its own control, bad, and a commoner should not go; Wealth or Pressure generating or sitting on the Self line is good."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["贵人谒贵，宜世应以相生；平人见贵，宜官贵而相合。", "贵人谒贵人，宜世应相合相生；平人见贵人，宜官贵相合相生及官星持世。"],
+          "yi": ["有身份的人拜见贵人，宜世应相生；平民拜见贵人，宜官鬼（贵人）与世相合。", "贵人见贵人，宜世应相合相生；平民见贵人，宜官鬼与世相合相生，以及官鬼持世。"],
+          "en": ["A person of rank calling on another: Self and Other should generate each other; a commoner calling on the great: Pressure (the great man) should combine with him.", "Rank to rank: Self and Other should combine or generate; commoner to the great: Pressure should combine with or generate the Self line, or sit on it."] },
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：有心而问见贵求名者，官星持世、生世，必得功名。", "有心问谒贵人者，官星生世、合世而得见也，", "切勿以此所见贵人之官星，误作成名而断也。"],
+          "yi": ["觉子说：如果心里问的是见贵人求功名，官鬼持世、生世，一定得功名。", "如果心里问的是能否见到贵人，官鬼生世、合世，就能见到；", "千万不要把代表所见贵人的官鬼，误当成功名来断。"],
+          "en": ["Juezi says: if the question in your mind is seeking office through a great man, Pressure on or generating the Self line means office will come.", "If the question is only whether you will be received, Pressure generating or combining with the Self line means you will;", "never take the Pressure line that stands for the great man as a sign of office."] },
+        { "by": "野鹤", "book": "增删卜易",
+          "zh": ["野鹤曰：贵人谒贵，世应若相冲克，财伏而空，去之何益？", "官鬼克世、世变鬼变克，更凶。", "平人见贵，官克世、世变鬼变克，勿去，去则须防不测。", "财官生世、持世为吉。"],
+          "yi": ["野鹤说：贵人拜见贵人，世应如果相冲相克，财又伏藏落空，去了有什么用？", "官鬼克世、世爻化鬼或化回头克，更凶。", "平民拜见贵人，官鬼克世、世爻化鬼或化回头克，不要去，去了要防意外。", "财、官生世或持世为吉。"],
+          "en": ["Yehe says: when a person of rank calls on another, if Self and Other clash or control each other and Wealth is hidden and void, what is the use of going?", "Pressure controlling the Self line, or the Self line turning into Pressure or into something that controls it, is worse.", "For a commoner calling on the great: Pressure controlling the Self line, or the Self line turning into Pressure or into its own control, means do not go; if you go, beware of the unexpected.", "Wealth or Pressure generating or sitting on the Self line is good."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.07",
+      "topic": "公门九流",
+      "chapter": "为贵人奔走效力求财章",
+      "chapter_en": "Earning money by serving a great man",
+      "title": "最重财官两旺，不宜世应皆空",
+      "rule": {
+        "yi": "替贵人奔走效力求财：财、官两旺为要，世应俱空不宜；世临财、应临福，我得益；应临官、世逢破，他得益；兄弟持世，不如不去；应克世，防对方反目。",
+        "en": "Earning by serving a great man: Wealth and Pressure both strong is what matters; Self and Other both void is bad. Wealth on the Self line and Output on the Other, I gain; Pressure on the Other and the Self line broken, he gains; Peer on the Self line, better not to go; the Other controlling the Self, beware of him turning on you."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["最重财官两旺，不宜世应皆空。", "世遇财、应临福，我益他损；", "应临官、世逢破，他益我损。", "兄持世，不如闲处安身；", "应克世，防虑他人反目。"],
+          "yi": ["最看重财、官两旺，不宜世、应都空。", "世爻临财、应爻临子孙，我得益、他受损；", "应爻临官鬼、世爻逢月破，他得益、我受损。", "兄弟持世，不如闲着安身；", "应克世，要防对方翻脸。"],
+          "en": ["What matters most is Wealth and Pressure both strong; Self and Other both void is bad.", "Wealth on the Self line and Output on the Other: I gain, he loses;", "Pressure on the Other and the Self line broken: he gains, I lose.", "Peer on the Self line: better to stay idle and safe;", "the Other controlling the Self: beware of him turning against you."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.08",
+      "topic": "开店",
+      "chapter": "开行开店及各项铺面章",
+      "chapter_en": "Opening a brokerage, a shop or any storefront",
+      "title": "世为己，应为人，大宜相合；财为本，福为基，最喜同兴",
+      "rule": {
+        "yi": "开行开店：世为自己、应为对方，宜相合；财为本、福为基，宜同旺。觉子：应爻代表谁，看问者本意——问伙计，应为伙计（世应生合同心；应生世他益我，世生应我益他；冲克生变，应克世我被瞒，世克应他从我；应临玄武兄爻暗中盗骗，应临官鬼克世明降灾非；世财应兄受累，世财应子得力；世应空合彼此虚诈）；问买卖，应为顾客（应生合世，生客成熟客；世应冲克，熟人成仇）。",
+        "en": "Opening a shop: the Self line is oneself, the Other the other party, and they should combine; Wealth is the capital, Output the foundation, and both should flourish. Juezi: who the Other line stands for depends on what is asked. Asking about a partner, it is the partner (generating or combining, of one mind; Other generating Self, he benefits me; Self generating Other, I benefit him; clashing or controlling, goodwill changes; Other controlling Self, he deceives me; Self controlling Other, he goes along; Other on the Dark Tortoise and Peer, secret fraud; Other on Pressure controlling Self, open trouble; Wealth on Self and Peer on Other, he drags me down; Wealth on Self and Output on Other, he helps; both void yet combining, both insincere). Asking about the trade, it is the customer (generating or combining with the Self line, strangers become regulars; clashing or controlling, old friends become enemies)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["世为已，应为人，大宜相合；", "财为本，福为基，最喜同兴。"],
+          "yi": ["世爻是自己，应爻是别人，最好相合；", "财是本钱，子孙是根基，最喜欢一起兴旺。"],
+          "en": ["The Self line is oneself, the Other line the other party; they should combine;", "Wealth is the capital, Output the foundation; best if both flourish together."] },
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：古法，应为伙计，又为下顾之客。", "《黄金策》曰：开行定主有人投，余以为须在占者之念。", "彼若一意而问伙计，则应为伙计。", "若得世应相生相合，彼此同心；应生世，他益于我；世生应，我益于他。", "相克相冲，两情有变，应克世，我被他瞒；世克应，他从我愿。", "应临玄武兄爻，暗中盗骗；应临官鬼克世，明降灾非。", "世财应兄，受他之累；世财应子，得他之力；世应空合，彼此有虚诈之心。", "如一意而重在买卖者，则以应爻为下顾之客。", "应爻生世、合世，生客来交成故旧；", "世应相冲相克，熟人终久变成仇。"],
+          "yi": ["觉子说：古法把应爻当作伙计，又当作上门的顾客。", "《黄金策》说「开行定主有人投」，我认为要看占的人心里问的是什么。", "他如果一心问的是伙计，应爻就是伙计。", "世应相生相合，彼此同心；应生世，他对我有益；世生应，我对他有益。", "相克相冲，两人的情分会变；应克世，我被他瞒；世克应，他顺我的意。", "应爻临玄武、兄弟，暗中偷骗；应爻临官鬼来克世，公开带来灾祸是非。", "世临财、应临兄弟，受他连累；世临财、应临子孙，得他的力；世应空而相合，彼此都有虚假欺诈之心。", "如果一心问的是买卖，就以应爻为上门的顾客。", "应爻生世、合世，生客也会成为老主顾；", "世应相冲相克，熟人最终也会变成仇人。"],
+          "en": ["Juezi says: the old method takes the Other line as the partner, and also as the customer who calls.", "The Golden Strategy says 'a brokerage that opens will draw clients'; I hold that it depends on what the asker has in mind.", "If he is asking only about a partner, the Other line is the partner.", "Self and Other generating or combining: of one mind; Other generating Self: he benefits me; Self generating Other: I benefit him.", "Controlling or clashing: their goodwill will change; Other controlling Self: he deceives me; Self controlling Other: he does as I wish.", "The Other line on the Dark Tortoise and the Peer line: secret theft and fraud; the Other line on Pressure controlling the Self line: open trouble and disputes.", "Wealth on Self and Peer on Other: he drags me down; Wealth on Self and Output on Other: he helps me; Self and Other void yet combining: both sides are insincere.", "If his mind is on the trade itself, the Other line is the customer.", "The Other line generating or combining with the Self line: strangers become regular customers;", "Self and Other clashing or controlling: even old acquaintances become enemies in the end."] }
+      ],
+      "note": {
+        "yi": "「世为已」的「已」当是「己」，两个本子都作「已」，原文照录。",
+        "en": "The text writes yi (already) where ji (oneself) is meant; both editions have it, and we quote it as it stands."
+      },
+      "see": ["LY.WEALTH.HJC.32"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.09",
+      "topic": "开店",
+      "chapter": "开行开店及各项铺面章",
+      "chapter_en": "Opening a brokerage, a shop or any storefront",
+      "title": "鬼作灾非须忌动，财为活计畏刑冲",
+      "rule": {
+        "yi": "开店：官鬼发动招是非，克世最忌（鬼现爻中是非日有，鬼摇克世灾祸连绵）；财为资本，忌衰墓空破、动而变凶、日月刑冲克害；世爻与财爻落空，开不成。",
+        "en": "Opening a shop: a moving Pressure invites disputes, and controlling the Self line is worst (Pressure present, disputes daily; Pressure moving against the Self, one disaster after another); Wealth is the capital and fears being weak, entombed, void or broken, turning harmful, or being punished, clashed or controlled by the Day or Month; the Self line and Wealth void, the shop will not open."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["鬼作灾非须忌动，财为活计畏刑冲。", "鬼动招非，克世最忌。", "法云：鬼现爻中，是非日有；鬼摇克世，灾祸连绵。", "须看鬼值何神克世，当于家宅章内详之。", "财为资本，忌衰墓空破，及动而变凶，或日月刑冲克害，", "更忌世与财空，俱开不成。"],
+          "yi": ["官鬼主灾祸是非，最忌发动；财是营生，最怕刑冲。", "官鬼动就招是非，来克世最忌。", "古法说：官鬼出现在卦中，天天有是非；官鬼发动克世，灾祸连绵。", "要看官鬼临什么六神来克世，详见家宅章。", "财是资本，忌衰、墓、空、破，以及动而变凶，或被日月刑冲克害；", "更忌世爻和财爻落空，那样都开不成。"],
+          "en": ["Pressure brings trouble and disputes, so its moving is feared; Wealth is the livelihood, so punishment and clash are feared.", "A moving Pressure invites disputes; controlling the Self line is the worst.", "The rule says: Pressure present in the lines, disputes every day; Pressure moving to control the Self line, one disaster after another.", "See which spirit the Pressure line carries when it controls the Self line; details in the chapter on the household.", "Wealth is the capital; it fears being weak, entombed, void or broken, turning harmful when it moves, or being punished, clashed, controlled or harmed by the Day or Month;", "above all it fears the Self line and Wealth being void: then the shop will not open."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.10",
+      "topic": "开店",
+      "chapter": "开行开店及各项铺面章",
+      "chapter_en": "Opening a brokerage, a shop or any storefront",
+      "title": "鬼兄发动，有制何妨；随墓助伤，多凶少吉",
+      "rule": {
+        "yi": "兄弟、官鬼发动，有制则无妨（子孙制鬼，或日月冲克鬼爻）；兄、鬼同动时，官鬼反能制兄、护财（觉子）。忌世随鬼入墓、世动变凶；做买卖虽宜财动，官鬼克世时财动反成「助鬼伤身」。",
+        "en": "Peer and Pressure moving do no harm if restrained (Output holding Pressure down, or the Day or Month clashing or controlling it); when Peer and Pressure move together, Pressure actually restrains Peer and shields the money (Juezi). Beware of the Self line following the ghost into the tomb or moving into harm; in trade a moving Wealth is welcome, but with Pressure controlling the Self line it only 'feeds the ghost that harms you'."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["鬼兄发动，有制何妨；", "随墓助伤，多凶少吉。", "鬼动招非，若得子孙制鬼，或日月冲克鬼爻，谓之有制。"],
+          "yi": ["官鬼、兄弟发动，有制就不妨；", "随鬼入墓、助鬼伤身，多凶少吉。", "官鬼动招是非，如果有子孙克制官鬼，或日月冲克官鬼，叫作有制。"],
+          "en": ["Pressure and Peer moving: no harm if they are restrained;", "following the ghost into the tomb, or feeding the ghost that harms you: mostly bad, seldom good.", "A moving Pressure invites disputes; if Output restrains it, or the Day or Month clashes with or controls the Pressure line, that is called restrained."] },
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：凡遇兄鬼同动者，不可概曰鬼动招非，盖鬼动能制兄爻不劫财也。", "兄弟又为阻隔破耗之小人，得此鬼动可以制服。", "独不宜世随鬼入墓，或世动而变凶，皆凶兆也。"],
+          "yi": ["觉子说：凡是兄弟、官鬼同时发动，不能一概说官鬼动招是非，因为官鬼动能制住兄弟，使它不劫财。", "兄弟又是阻隔、破耗的小人，有官鬼发动就能制服它。", "只是不宜世爻随官鬼入墓，或世爻动而变凶，这些都是凶兆。"],
+          "en": ["Juezi says: when Peer and Pressure move together, do not simply say the moving Pressure invites disputes, for it holds the Peer line down so that it cannot rob the money.", "Peer is also the petty person who obstructs and wastes; a moving Pressure can subdue it.", "Only the Self line following the ghost into the tomb, or moving into something harmful, is a bad sign."] },
+        { "by": "增删卜易正文", "book": "增删卜易",
+          "zh": ["凡占贸易，虽宜财动，若遇鬼爻克世，又不相宜，乃为助鬼以伤身也。"],
+          "yi": ["凡是占做买卖，虽然宜财爻发动，如果遇到官鬼克世，又不合适，这叫「助鬼伤身」（财生鬼，鬼伤世）。"],
+          "en": ["In trade, a moving Wealth is welcome, but if the Pressure line controls the Self line it is not, for that is 'feeding the ghost that harms you' (Wealth feeds Pressure, and Pressure hurts the Self)."] }
+      ],
+      "see": ["LY.WEALTH.HJC.10", "LY.WEALTH.HJC.17"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.11",
+      "topic": "开店",
+      "chapter": "开行开店及各项铺面章",
+      "chapter_en": "Opening a brokerage, a shop or any storefront",
+      "title": "卦得反吟多反复，冲中变合再重兴",
+      "rule": {
+        "yi": "开店：卦得反吟，反复不定，已开久的店主迁移变更；六冲变六合、爻逢六合，或世与财、子成三合，关后重兴；六合变六冲，眼前热闹，终久萧条。",
+        "en": "Opening a shop: a Reversed Chant hexagram means back and forth, and a long-established shop will move or change hands; Six-Clash changing into Six-Combine, combining lines, or the Self line in a three-harmony frame with Wealth and Output, it will close and flourish again; Six-Combine changing into Six-Clash, busy now and deserted in the end."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["卦得反吟多反复。", "卦得反吟，欲行不行，行而又止，或开而又闭，闭而又开，", "倘店已开久，遇此一定更迁。", "冲中变合再重兴。", "爻逢六合，及六冲卦变六合，或世与财爻、子孙共成三合，定是闭后重兴。", "惟六合变冲，则不宜也，眼前热闹，终久萧条。"],
+          "yi": ["卦得反吟，多反复。", "卦得反吟，想做又不做，做了又停，或开了又关，关了又开；", "如果店已经开了很久，遇到反吟一定要搬迁变更。", "六冲变六合，会重新兴旺。", "爻逢六合，以及六冲卦变成六合卦，或世爻和财爻、子孙一起成三合，一定是关张之后重新兴起。", "只有六合变六冲不好，眼前热闹，终究冷清。"],
+          "en": ["A Reversed Chant hexagram means going back and forth.", "With Reversed Chant, you mean to act and do not, start and stop again, open and close, close and open;", "if the shop has long been open, this means it will move or change hands.", "Clash changing into combination: it will flourish again.", "Six-Combine lines, a Six-Clash hexagram changing into a Six-Combine one, or the Self line forming a three-harmony frame with the Wealth line and Output: it will close and then flourish again.", "Only combination changing into clash is bad: busy now, deserted in the end."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.12",
+      "topic": "开店",
+      "chapter": "投行损益章",
+      "chapter_en": "Gain and loss in placing goods with a broker",
+      "title": "官若兴隆，行主可千金之托；应如空破，牙人无毫忽之能",
+      "rule": {
+        "yi": "委托牙行（投行）：官鬼（行主）、应爻（牙人）旺而生合世爻，可托千金；官、应静衰空破，是奸险之人，交财必被骗。",
+        "en": "Placing goods with a brokerage: Pressure (the house) and the Other line (the broker) strong and generating or combining with the Self line, you can trust them with a fortune; still, weak, void or broken, they are crooks and your money will be taken."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["官若兴隆，行主可千金之托；", "应如空破，牙人无毫忽之能。", "官旺应旺，生合世爻者，其人可托。", "如静衰空破，即是奸险小人，若交财，定遭欺骗。"],
+          "yi": ["官鬼兴旺，牙行的主人可以托付千金；", "应爻如果空破，经纪人一点本事都没有。", "官鬼旺、应爻旺，又生合世爻，这个人可以托付。", "如果（官、应）安静衰弱、空破，就是奸险小人，把钱交给他，一定被骗。"],
+          "en": ["If Pressure flourishes, the brokerage owner can be trusted with a fortune;", "if the Other line is void or broken, the broker has no ability at all.", "Pressure strong and the Other strong, generating or combining with the Self line: the man can be trusted.", "If they are still, weak, void or broken, he is a treacherous man; hand him money and you will be cheated."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.13",
+      "topic": "开店",
+      "chapter": "投行损益章",
+      "chapter_en": "Gain and loss in placing goods with a broker",
+      "title": "世被应伤，遭他陷害；财逢兄克，虑彼相瞒",
+      "rule": {
+        "yi": "投行交易：应伤世遭陷害，应克世账目不清；兄克财已入圈套、防隐瞒；兄动货难脱卸；子孙兴、财旺，交易顺利、利息丰厚。",
+        "en": "Trading through a broker: the Other hurting the Self line, you will be framed; the Other controlling the Self, the accounts will never be clear; Peer controlling Wealth, you are already in the trap and should beware of concealment; Peer moving, the goods are hard to sell; Output stirring and Wealth strong, the deal goes well and the interest is rich."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["世被应伤，遭他陷害；财逢兄克，虑彼相瞒。", "应克世，帐目难清；兄克财，已入局套。", "兄动，货难脱卸；子兴，物宜交关。", "兄动阻隔，货难尽脱，子与财旺，利息丰隆。"],
+          "yi": ["世爻被应爻所伤，会遭他陷害；财爻被兄弟所克，要防他隐瞒。", "应克世，账目难算清；兄弟克财，已经落入圈套。", "兄弟动，货难卖掉；子孙兴动，货物好成交。", "兄弟动主阻隔，货难全部卖出；子孙和财旺，利息丰厚。"],
+          "en": ["The Self line hurt by the Other: you will be framed; Wealth controlled by Peer: beware of him hiding things.", "Other controlling Self: the accounts will never be clear; Peer controlling Wealth: you are already in the trap.", "Peer moving: the goods are hard to sell off; Output stirring: the goods change hands well.", "Peer moving means obstruction and the goods do not all sell; Output and Wealth strong means rich interest."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.14",
+      "topic": "风险",
+      "chapter": "投行损益章",
+      "chapter_en": "Gain and loss in placing goods with a broker",
+      "title": "兄雀并摇，难逃口舌；武鬼同发，须虑穿窃",
+      "rule": {
+        "yi": "投行交易：朱雀临兄弟而官鬼动来克世，有口舌官灾；玄武临兄弟而官鬼动来克世，防盗窃。",
+        "en": "Trading through a broker: the Vermilion Bird on Peer with Pressure moving to control the Self line, quarrels and trouble with officials; the Dark Tortoise on Peer with Pressure moving to control the Self line, beware of theft."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["兄雀并摇，难逃口舌；武鬼同发，须虑穿窃。", "雀临兄，鬼动而克世者，口舌官灾；", "武临兄，鬼动而克世者，须防窃盗。"],
+          "yi": ["兄弟和朱雀一起动，免不了口舌；玄武和官鬼一起发动，要防穿墙偷盗。", "朱雀临兄弟，官鬼动来克世，有口舌官灾；", "玄武临兄弟，官鬼动来克世，要防盗窃。"],
+          "en": ["Peer and the Vermilion Bird both stirring: quarrels cannot be escaped; the Dark Tortoise and Pressure moving together: beware of burglary.", "The Vermilion Bird on Peer, with Pressure moving to control the Self line: quarrels and trouble with officials;", "the Dark Tortoise on Peer, with Pressure moving to control the Self line: beware of theft."] }
+      ],
+      "see": ["LY.WEALTH.HJC.16"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.15",
+      "topic": "买卖",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "财爻衰者宜停脱，妻位当时可脱之",
+      "rule": {
+        "yi": "囤货卖货看财爻四时旺衰：财衰宜囤，财旺宜卖（如春天木财旺宜速卖，金水土财宜囤，火财为相也不宜囤）；忌财空破、动而变回头克。觉子：财衰可买，但要查它有没有根——有根将来再涨，无根终难卖出。",
+        "en": "Stockpiling or selling goes by the seasonal strength of the Wealth line: weak Wealth, stockpile; strong Wealth, sell (in spring Wood Wealth is thriving, sell fast; Metal, Water or Earth Wealth, stockpile; Fire is strong in spring, do not stockpile). Void or broken Wealth, or Wealth turning into its own control, is bad. Juezi: weak Wealth can be bought, but check its root; rooted, it will rise again; rootless, it will never sell."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["财爻衰者宜停脱，妻位当时可脱之。", "积货卖货，皆忌财逢空破，及动而变克。", "财衰宜囤，财旺宜脱。", "如春时占得财爻属木，谓之旺，宜速发卖；", "若临金水土者，宜堆积也；临火为相，亦不宜堆积。", "此论四时之衰旺也。"],
+          "yi": ["财爻衰弱的，宜停下不卖；财爻当令的，可以卖出。", "囤货、卖货，都忌财爻逢空、破，以及动而变出回头克。", "财衰宜囤积，财旺宜卖出。", "比如春天占得财爻属木，叫作旺，宜赶快卖；", "如果财属金、水、土，宜囤积；属火，春天是相，也不宜囤积。", "这是按四季的旺衰来论。"],
+          "en": ["A weak Wealth line: hold off selling; a Wealth in season: sell.", "Stockpiling or selling, both fear Wealth being void or broken, or moving into something that controls it.", "Weak Wealth: stockpile; strong Wealth: sell.", "For instance, in spring a Wood Wealth line is called thriving: sell quickly;", "if it is Metal, Water or Earth, stockpile; Fire is strong (xiang) in spring, so do not stockpile that either.", "This goes by the strength of the four seasons."] },
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：衰虽可买，须要查其根蒂。", "衰若有根，则将来再发；如无根蒂，到底难于出脱。", "断卦者所当知也。"],
+          "yi": ["觉子说：财衰虽然可以买进，还要查它有没有根。", "衰而有根，将来还会涨；如果没有根，终究难卖出去。", "断卦的人应当知道这一点。"],
+          "en": ["Juezi says: a weak Wealth may be bought, but check its root.", "Weak but rooted, it will rise again; with no root, it will never sell.", "A reader must know this."] }
+      ],
+      "see": ["LY.WEALTH.HJC.37", "LY.WEALTH.HJC.38"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.16",
+      "topic": "买卖",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "货有定时，须凭时令；物无定者，指利而占",
+      "rule": {
+        "yi": "有固定旺季的货（麻葛夏、棉花冬）凭时令断价；没有固定时节的货（木料、绸缎）要指明求利单独占。",
+        "en": "Goods with a set season (hemp and linen in summer, cotton in winter) are priced by the season; goods without one (timber, silk) need a casting that asks specifically about the profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["货有定时，须凭时令；物无定者，指利而占。", "定时者，有贵贱之时也，如麻葛得价于夏令，花棉得价于冬天。", "又如木料、绸缎之类无定时也。"],
+          "yi": ["有固定时节的货，要凭时令来断；没有固定时节的货，就指明求利来占。", "有固定时节，是说有贵有贱的时候，比如麻葛在夏天卖得上价，棉花在冬天卖得上价。", "又比如木料、绸缎这一类，没有固定时节。"],
+          "en": ["Goods with a fixed season are judged by the season; goods without one, ask specifically about the profit.", "A fixed season means a time when it is dear and a time when it is cheap: hemp and linen fetch a price in summer, cotton in winter.", "Timber, silk and the like have no fixed season."] }
+      ]
+    }
+  ]
+}

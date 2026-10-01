@@ -1,0 +1,66 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易天机",
+  "chapter": "散见各章·论(顺带讲到病的话)",
+  "chapter_en": "Scattered sections: the discussions (lines that touch on illness in passing)",
+  "ranges": {"断易天机": [64, 89]},
+  "units": [
+    {
+      "id": "LY.ILL.DYTJ.52",
+      "topic": "风险",
+      "chapter": "散见各章·论(顺带讲到病的话)",
+      "chapter_en": "Scattered sections: the discussions (lines that touch on illness in passing)",
+      "title": "绝处逢生·占家宅：吉神绝处逢生复有兴隆之象；凶神绝处逢生灾欲退而祸复来、病治瘥而官事至",
+      "rule": {
+        "yi": "占家宅时：吉神遇上绝处逢生，家宅又有兴隆的样子；凶神遇上绝处逢生，灾祸正要退下去，祸又转回来——病治好了，官事又到了。后面还有一句「占国同此义推」，占国家大事也照这个意思推。",
+        "en": "Divining the house: when a lucky spirit meets life in a place of extinction, the house again has the look of prosperity; when an ominous spirit meets life in a place of extinction, the calamity is about to withdraw and then misfortune comes again: the illness is treated and mends, and an official matter arrives. The book adds, 'divining the state is inferred in the same sense'."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [64, 64],
+          "zh": ["家宅：吉神逢绝处逢生，", "家宅复有兴隆之象；", "凶神绝处逢生，灾欲退而祸复来，", "病治瘥而官事至。", "占国同此义推。"],
+          "yi": ["占家宅时：吉神遇上绝处逢生，", "家宅又有兴隆的样子；", "凶神遇上绝处逢生，灾祸正要退去，", "祸又转回来，病治好了，官事又到。", "占国家大事，也照这个意思推。"],
+          "en": ["Divining the house: when a lucky spirit meets life in a place of extinction,", "the house again has the look of prosperity;", "when an ominous spirit meets life in a place of extinction, the calamity is about to withdraw,", "and misfortune comes again; the illness is treated and mends, and an official matter arrives.", "Divining the state is inferred in the same sense."] }
+      ],
+      "note": {
+        "yi": "「绝处逢生」的意思和例子见 LY.ILL.DYTJ.25（用爻落在绝地、有生它的爻发动来生，像人在困境里遇到贵人）；断易天机在那一章里给占婚、占产、占官、占讼、求财、出行、行人、家宅各写了一句，占病的一句收在 DYTJ.25，这一条收家宅里的一句，因为它提到了病：凶神绝处逢生，灾祸要退又回来，病治好了官事又到。「瘥」是病好；「官事」书里没有说是哪一类官事。这一句和占病那一句（「鬼爻与忌神绝处逢生，病欲安而复作」）是同一个思路——凶的一方在绝处遇到生它的，退下去的又回头——只是这里讲的是整个宅的事，病和官事是宅里先后出的两件。三本字句有出入：卜筮大全写「家宅：吉神逢绝处逢生，复有兴隆之象」，少了第二个「家宅」；火珠林写「吉神绝处逢生，复有兴隆之象」，少了「逢」，而且「家宅」两个字连在上一句「必遇故人同回家宅」的末尾；两本都没有「占国同此义推」。",
+        "en": "For what 'meeting life in a place of extinction' means and an example, see LY.ILL.DYTJ.25 (a Subject line fallen in extinction, with a line that generates it moving to generate it, like a person in hard straits who meets a patron); in that chapter the Duanyi Tianji writes one line each for marriage, childbirth, office, lawsuit, wealth, travel, a traveller and the house, the line on illness is taken in DYTJ.25, and this entry takes the line on the house, because it mentions illness: an ominous spirit meeting life in a place of extinction, the calamity about to withdraw comes back, the illness is treated and mends, and an official matter arrives. 'Mends' is the book's word for recovering from illness; the book does not say what kind of official matter. The line is of one mind with the line on illness ('the Pressure line and the Adversary meeting life in a place of extinction, the illness about to settle breaks out again'): the ominous side meets what generates it in a place of extinction and what was withdrawing turns back; only here it is the whole house that is spoken of, and illness and official matters are two things that come one after the other in the house. The three books differ slightly: the Bushi Daquan reads 'the house: a lucky spirit meeting life in a place of extinction, again has the look of prosperity', lacking the second 'the house'; the Huozhu Lin reads 'a lucky spirit in a place of extinction meeting life, again has the look of prosperity', lacking the word for 'meeting', and the two characters for 'the house' are joined to the end of the line before, 'will surely meet an old friend and come home together with him'; neither has 'divining the state is inferred in the same sense'."
+      },
+      "see": ["LY.ILL.DYTJ.25"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.53",
+      "topic": "风险",
+      "chapter": "散见各章·论(顺带讲到病的话)",
+      "chapter_en": "Scattered sections: the discussions (lines that touch on illness in passing)",
+      "title": "随官入墓·占讼、出行：讼散身危、讼中有病；出行多去不成、若去愈为不美、必主去后有病",
+      "rule": {
+        "yi": "随官入墓有三种（身、世、命随鬼入墓），不问占什么事都不是吉兆。占官司遇到它，恐怕有牢狱禁系的忧患，或者官司散了而人有危险，或者官司进行中出现疾病；出行遇到它，多半去不成，硬要去更不好，一定是去了以后生病。",
+        "en": "Following the ghost into a tomb has three kinds (the Body, the Self or the natal line following the ghost into a tomb), and whatever is divined it is no lucky sign. Divining a lawsuit and meeting it, there may be the worry of prison and confinement, or the lawsuit breaks up and the person is in danger, or illness appears in the course of the lawsuit; divining a journey and meeting it, one most likely cannot go, and if one goes it is the worse, and surely there will be illness after leaving."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [78, 78],
+          "zh": ["随官入墓，", "其目有三：", "有身随鬼入墓，", "有世随鬼入墓，", "有命随鬼入墓。"],
+          "yi": ["跟着官鬼入墓，", "它的名目有三种：", "有卦身跟着鬼入墓，", "有世爻跟着鬼入墓，", "有本命跟着鬼入墓。"],
+          "en": ["Following Pressure into the tomb", "its kinds are three:", "the Body following Pressure into the tomb,", "the Self following Pressure into the tomb,", "and the natal line following Pressure into the tomb."] },
+        { "by": "经", "book": "断易天机", "range": [82, 82],
+          "zh": ["以上三墓，", "不问占何事，", "皆非吉兆。"],
+          "yi": ["以上三种入墓，", "不管占什么事，", "都不是吉兆。"],
+          "en": ["Of these three tombs,", "whatever is being divined,", "none is an auspicious sign."] },
+        { "by": "经", "book": "断易天机", "range": [87, 87],
+          "zh": ["占讼遇之，", "恐有牢狱禁系之忧，", "或讼散身危，", "或讼中有病。"],
+          "yi": ["占官司遇到它，", "恐怕有牢狱禁系的忧患，", "或者官司散了而人有危险，", "或者官司进行中出现疾病。"],
+          "en": ["Divining a lawsuit and meeting it,", "there may be the worry of prison and confinement,", "or the lawsuit breaks up and the person is in danger,", "or illness appears in the course of the lawsuit."] },
+        { "by": "经", "book": "断易天机", "range": [89, 89],
+          "zh": ["出行遇之，", "多是去不成，", "若去愈为不美，", "必主去后有病。"],
+          "yi": ["出行遇到它，", "多半是去不成，", "如果去了反而更不好，", "一定是去了以后生病。"],
+          "en": ["Setting out on a journey and meeting it,", "one most likely cannot go,", "and if one goes it is the worse,", "and there will surely be illness after leaving."] }
+      ],
+      "note": {
+        "yi": "「随官入墓」的三种、占病的一句（「占病遇之，十占九死」）和三个卦例的说明见 LY.ILL.DYTJ.27；这一条收那一章里另外两处顺带提到病的话：占讼的「或讼中有病」和出行的「必主去后有病」。「讼散身危」是官司了结或撤了、人却有危险；「讼中有病」书里没有说是谁病、是原告被告还是涉案的人，译文只照字面写「官司进行中出现疾病」；「去后有病」是动身以后生病，也没说在路上还是到了地方。卜筮大全和火珠林都有这两句：出行那一句三本一字不差，占讼那一句只差一个字，这两本写「占讼遇之，有牢狱禁系之忧」，没有断易天机的「恐」字。这一章里占身、占婚、占产、求官、求财、行人、家宅、移居、风水各有一句，不在病的范围，不收；占婚一句火珠林写「女财不备」、断易天机写「男财不备」，是另一个问题域的出入。",
+        "en": "For the three kinds of 'following the ghost into a tomb', the line on illness ('divining illness and meeting it, nine out of ten die') and a note on the three example hexagrams, see LY.ILL.DYTJ.27; this entry takes the two other places in that chapter that touch on illness in passing: 'illness appears in the course of the lawsuit' in the lawsuit line and 'there will surely be illness after leaving' in the journey line. 'The lawsuit breaks up and the person is in danger' is the lawsuit ending or being withdrawn while the person is in danger; the book does not say who is ill in 'illness in the course of the lawsuit', whether plaintiff, defendant or someone in the case, and the translation keeps to the letter, 'illness appears in the course of the lawsuit'; 'illness after leaving' is falling ill after setting out, and it does not say whether on the road or on arrival. The Bushi Daquan and the Huozhu Lin both have these two lines: the line on the journey is word for word the same in all three, and the line on the lawsuit differs by a single word, for they write 'divining a lawsuit and meeting it, there is the worry of prison and confinement', lacking the Duanyi Tianji's word for 'there may be'. The lines in this chapter on the person, marriage, childbirth, seeking office, wealth, a traveller, the house, moving house and geomancy are outside illness and are not taken; on marriage the Huozhu Lin reads 'the woman's wealth is not complete' where the Duanyi Tianji reads 'the man's wealth is not complete', a difference that belongs to another domain."
+      },
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.52"]
+    }
+  ]
+}

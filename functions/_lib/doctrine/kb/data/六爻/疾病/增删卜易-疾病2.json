@@ -1,0 +1,186 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "增删卜易",
+  "chapter": "疾病章",
+  "chapter_en": "Chapter on illness",
+  "ranges": {"增删卜易": [12804, 13078]},
+  "units": [
+    {
+      "id": "LY.ILL.ZS.15",
+      "topic": "总则",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "数卦合看、吉凶之月可知（多占之法）：一卦看不清就叫人再占，几卦合起来断月份（例：久病占药，三占合断冬至月卒；子痘症再占，寅日卒；近病逢冲再占问应期，乙酉日全愈）",
+      "rule": {
+        "yi": "一个卦看不清、或者问到应期的时候，不要硬断，叫问卜的人再占几个卦，把几个卦合起来详细看，吉凶发生在哪个月就能看出来。",
+        "en": "When one hexagram is unclear, or when the time of fulfilment is asked, do not press a judgment: have the asker divine several more hexagrams and read them together in detail, and the month in which good or ill fortune falls can be known."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12952, 12952],
+          "zh": ["野鹤曰：以上数卦，教人多占之法也，以数卦合而详之，吉凶之月可知矣。"],
+          "yi": ["野鹤说：以上几个卦，是教人多占的办法，几个卦合起来详细看，吉凶发生在哪个月就可以知道了。"],
+          "en": ["The Old Man of Yehe says: the hexagrams above teach the method of divining many times; put the several hexagrams together and study them in detail, and the months of good and ill fortune can be known."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12804, 12804],
+          "zh": ["又如：申月丙子日(旬空：申酉)，自因久病占此药能去病否？", "得“升之渐”"],
+          "yi": ["又如：申月丙子日（旬空：申、酉），他自己因为久病占这药能不能去病？", "得升卦变渐卦。"],
+          "en": ["Another: in the Shen month, on a Bingzi day (void: Shen and You), a man, because of a long illness, divined on his own whether this medicine could drive the illness out.", "He got Sheng changing into Jian."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12808, 12808],
+          "zh": ["巳午火为子孙，乃变爻也，变爻不能生正卦之世爻，无药可医，况嫌外卦反吟，病多反复，再命亲人占之。"],
+          "yi": ["巳、午火是子孙，是变出来的爻，变爻不能生本卦的世爻，没有药可医，何况外卦是反吟，病多反复，叫他的亲人再占。"],
+          "en": ["Si and Wu Fire are Output but they are the changed lines, and a changed line cannot generate the Self line of the original hexagram, so there is no medicine that can treat him; moreover the outer trigram is a Reversed Chant, and the illness relapses often; I had his relative divine again."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12809, 12809],
+          "zh": ["同日子占父病，得“益之渐”"],
+          "yi": ["同一天，儿子占父亲的病，得益卦变渐卦。"],
+          "en": ["On the same day a son divining his father's illness got Yi changing into Jian."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12852, 12852],
+          "zh": ["前卦日辰合世，此卦父值日辰，目下无碍，但嫌土动伤水，又是风雷合卦，震为棺，巽为椁，棺椁俱全矣，然年月未敢定也。", "再令亲人占之。"],
+          "yi": ["前一卦日辰合世爻，这一卦父母爻值日辰，眼下没有妨碍，只是嫌土爻发动伤水，又是风雷相合的卦，震是棺，巽是椁，棺椁齐全了，不过年月不敢断定。", "再叫亲人占一次。"],
+          "en": ["In the former hexagram the Day combines with the Self line, and in this one the Resource line rules the Day, so for the present there is no harm; but I dislike Earth moving and harming Water, and this is also a Wind-Thunder combining hexagram, in which Zhen is the coffin and Xun the outer coffin, so coffin and outer coffin are both present; yet I did not dare to fix the year and month.", "I had a relative divine once more."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12853, 12853],
+          "zh": ["同日女占父病，得“雷天大壮”"],
+          "yi": ["同一天，女儿占父亲的病，得雷天大壮卦。"],
+          "en": ["On the same day a daughter divining her father's illness got Dazhuang (Thunder over Heaven)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12857, 12857],
+          "zh": ["前卦占药，巳午子孙为药，至冬令水旺之时，无药可医。", "二卦子水化辰土回头之克，子月逢之而无救，后卦午火，子月冲克，东至月是其时矣。", "果卒于冬至月。"],
+          "yi": ["前一卦占药，巳、午的子孙是药，到冬季水旺的时候，就没有药可医。", "两卦里子水变辰土，是回头之克，子月遇到它就没有救；后一卦的午火，在子月被冲克，冬至月就是它的时候了。", "果然死在冬至月。"],
+          "en": ["The former hexagram divined the medicine: the Si and Wu Output lines are the medicine, and in the winter season when Water is strong there is no medicine that can treat him.", "In the two hexagrams Zi Water changes into Chen Earth, a returning control, and meeting it in the Zi month there is no rescue; the Wu Fire of the latter hexagram is clashed and controlled in the Zi month, and the month of the winter solstice is its time.", "He did die in the month of the winter solstice."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12858, 12858],
+          "zh": ["又如：丑月辛卯日(旬空：午未)，占子痘症，得“大壮之乾”"],
+          "yi": ["又如：丑月辛卯日（旬空：午、未），占儿子的痘症，得大壮卦变乾卦。"],
+          "en": ["Another: in the Chou month, on a Xinmao day (void: Wu and Wei), a divination on a son's smallpox gave Dazhuang changing into Qian."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12904, 12904],
+          "zh": ["六冲变六冲，花未发而先谢，又是伏吟之卦，皆为凶兆，子孙虽遇生扶，难保其吉也。", "命再占之，又得“艮之升”"],
+          "yi": ["六冲变六冲，痘花还没有出就先谢了，又是伏吟的卦，都是凶兆，子孙虽然遇到生扶，也难保吉利。", "叫他再占一次，又得艮卦变升卦。"],
+          "en": ["Six-Clash changing into Six-Clash: the flowers fade before they open; it is also a Hidden Chant hexagram; all are ill omens, and though Output meets generation and support, good fortune can hardly be assured.", "I had him divine again, and he got Gen changing into Sheng."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12944, 12944],
+          "zh": ["午火父动克子，虽有制服，但嫌鬼变子孙，须防寅日。", "已而卒于寅日。", "夫应寅日者，午火父爻长生于寅也，又应前卦申金子孙化伏吟，寅日而冲申也。"],
+          "yi": ["午火父母动来克子孙，虽然有东西制服它，但嫌鬼变成子孙，要提防寅日。", "不久他死在寅日。", "至于应验在寅日，是因为午火父爻在寅长生；又应验在前一卦申金子孙变伏吟，寅日冲申。"],
+          "en": ["Wu Fire Resource moves and controls Output; though something restrains it, I dislike Pressure changing into Output, and one must guard against the Yin day.", "Before long he died on the Yin day.", "As for its coming true on the Yin day, that is because the Wu Fire Resource line is born at Yin, and it also answers the Shen Metal Output of the former hexagram changing into a Hidden Chant, the Yin day clashing Shen."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12945, 12945],
+          "zh": ["又如：戌月庚辰日(旬空：午未)，占父近病，得“离为火”"],
+          "yi": ["又如：戌月庚辰日（旬空：午、未），占父亲的近病，得离为火卦。"],
+          "en": ["Another: in the Xu month, on a Gengchen day (void: Wu and Wei), a divination on a father's recent illness gave Li (Fire)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12948, 12948],
+          "zh": ["断曰：近病逢冲即愈，彼问应期，余曰：尔再占之，又得“大过之困”"],
+          "yi": ["断语：近病遇冲就好，他问应期，我说：你再占一次，又得大过卦变困卦。"],
+          "en": ["Judgment: a recent illness meeting a clash heals at once. He asked the time of fulfilment; I said: divine again; and he got Daguo changing into Kun."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12952, 12952],
+          "zh": ["乙酉日全愈。", "酉鬼逢空，出空之日而生亥水，果甲申日起床，乙酉日大愈。"],
+          "yi": ["乙酉日会全好。", "酉金鬼爻落空，出空的日子生亥水，果然甲申日起床，乙酉日大好了。"],
+          "en": ["He will be wholly well on the Yiyou day.", "The You Metal Pressure line is Void, and on the day it leaves the Void it generates Hai Water; indeed he got up from bed on the Jiashen day and was much better on the Yiyou day."] }
+      ],
+      "note": {
+        "yi": "野鹤这一句放在几个卦例之后，说的是「以上数卦」，指从 LY.ILL.ZS.14 里朋友痔病那一例起的几组卦：每一组都是第一卦不敢定，叫亲人或本人再占，合几个卦断月份、日子。「东至月」原文如此，按后一句是「冬至月」。「棺椁」是内棺和外棺；风雷益卦上巽下震，野鹤取震象为棺、巽象为椁。",
+        "en": "The Old Man puts this sentence after a run of cases, and 'the hexagrams above' means the groups of hexagrams from the case of the friend's piles in LY.ILL.ZS.14 onward: in each group the first hexagram is not decided, the relative or the man himself is told to divine again, and the several hexagrams are put together to judge the month or day. 'Dongzhi month' is written with a wrong character in the original, and from the following sentence it is the month of the winter solstice. A 'coffin and outer coffin' is the inner coffin and the outer one; the Old Man takes the image of Zhen as the coffin and that of Xun as the outer coffin."
+      },
+      "see": ["LY.ILL.HJC.49", "LY.ILL.ZS.14", "LY.ILL.ZS.16"]
+    },
+    {
+      "id": "LY.ILL.ZS.16",
+      "topic": "应期",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "近病逢空、化空即愈，若两卦俱值三合必成久病而终：应在填实墓库的年月（例：妻占夫近病，卯官化未土空亡，两卦俱三合，明年未月卒）",
+      "rule": {
+        "yi": "近病：用神落空、或变成空，到出空的日子就好；可是如果两个卦都值三合，就会拖成久病，最后死掉，死期应在把它的墓填实的年月。",
+        "en": "In a recent illness, if the Subject falls into Void or changes into Void, it heals on the day the Void is out; but if both hexagrams meet a three-harmony, it turns into a long illness and ends in death, the time of death falling in the year or month that fills its tomb."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12993, 12993],
+          "zh": ["存此式者，使人知近病逢空、化空即愈，若值三合，必成久病而终也。"],
+          "yi": ["存这个卦式，是要让人知道近病逢空、变空就好，如果遇到三合，一定拖成久病而死。"],
+          "en": ["This form is kept so that one may know that a recent illness meeting Void or changing into Void heals, but if it meets a three-harmony it surely turns into a long illness and ends in death."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12952, 12952],
+          "zh": ["丑月丙戌日(旬空：午未)，自占近病，得“比之革”"],
+          "yi": ["丑月丙戌日（旬空：午、未），自己占近病，得比卦变革卦。"],
+          "en": ["In the Chou month, on a Bingxu day (void: Wu and Wei), a person divined his own recent illness and got Bi changing into Ge."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12986, 12986],
+          "zh": ["官鬼持世，申金动而克去身边之鬼，及世化亥水回头之生，当许其愈，但世爻虽鬼入墓又值三合，恐成久病，令亲人再占："],
+          "yi": ["官鬼持世，申金动而克掉身边的鬼，以及世爻变亥水是回头生，应当断他会好，但世爻虽然是鬼入墓又遇三合，恐怕拖成久病，叫他的亲人再占："],
+          "en": ["Pressure holds the Self line; Shen Metal moves and controls away the Pressure beside him, and the Self line changes into Hai Water, a returning generation, so I should promise recovery; but the Self line, though Pressure entering the tomb, meets a three-harmony as well, and I feared it would become a long illness, so I had a relative divine again:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12987, 12987],
+          "zh": ["同日，妻占夫近病，得“中孚之兑”"],
+          "yi": ["同一天，妻子占丈夫的近病，得中孚卦变兑卦。"],
+          "en": ["On the same day, a wife divining her husband's recent illness got Zhongfu changing into Dui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12993, 12993],
+          "zh": ["卯官为用，化未土空亡，近病化空即愈，但两卦俱值三合，恐成久病而终。", "彼问期。", "余曰：未墓空而且破，若占防忧虑患，则破网破罗，脱之极易；", "今占病，值三合而难痊，明年未月，犹恐填实其墓也。", "已如期而卒。"],
+          "yi": ["卯木官是用神，变成未土落空亡，近病变空就会好，但两卦都遇上三合，恐怕拖成久病而死。", "他问日期。", "我说：未土墓库又空又破，如果占防备忧患，那就是破网破罗，脱身极容易；", "现在占的是病，遇三合就难痊愈，明年未月，还怕把它的墓填实了。", "后来果然如期死了。"],
+          "en": ["The Mao Wood Pressure line is the Subject and changes into Wei Earth, which is Void; a recent illness that changes into Void heals at once, but both hexagrams meet a three-harmony, and I fear it will turn into a long illness and end in death.", "He asked the date.", "I said: the Wei tomb is Void and also broken; if one were divining to guard against worry and trouble, it would be a torn net and torn snare, and escape would be very easy;", "but now the divination is on illness, and meeting a three-harmony it is hard to heal; next year in the Wei month I fear the tomb will be filled.", "He did die as scheduled."] }
+      ],
+      "note": {
+        "yi": "「近病逢空即愈」是野鹤在 LY.ILL.ZS.04 讲的道理；这一条补上例外：近病落空虽然好得快，但两个卦都值三合就不行了，三合把病拖成久病。觉子在 LY.ILL.ZS.05 里说的是同一个经验。「填实其墓」是等到墓的地支值年、值月，把空着的墓填上，病人就在那时死。「存此式者」这一句野鹤是说他为什么把这个卦例留在书里。",
+        "en": "'A recent illness meeting Void heals at once' is the principle the Old Man gives in LY.ILL.ZS.04; this entry adds the exception: a recent illness in Void gets well quickly, but if both hexagrams meet a three-harmony it does not, for the three-harmony drags it into a long illness. Juezi says the same experience in LY.ILL.ZS.05. To 'fill the tomb' is to wait until the branch of the tomb rules the year or month and fills the empty tomb, and the patient dies at that time. In 'the one who keeps this form' the Old Man says why he kept this case in the book."
+      },
+      "see": ["LY.ILL.ZS.04", "LY.ILL.ZS.05", "LY.ILL.ZS.15", "LY.ILL.DYTJ.51"]
+    },
+    {
+      "id": "LY.ILL.ZS.17",
+      "topic": "风险",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "避瘟之法：瘟病卦里子水克世、月建克世是大凶，幸有寅日相生，可迁到南方、夜卧南床使火旺水枯以避；不肯移床的死于亥日",
+      "rule": {
+        "yi": "占瘟病，卦里子水克世爻、月建也克世爻，是大凶的兆头；要避开，就搬到南方，夜里睡南面的床，让火旺、水枯，可以保平安。",
+        "en": "In divining an epidemic illness, when Zi Water controls the Self line and the Month controls it too, it is a sign of great misfortune; to avoid it, move to the south and sleep at night on a south-facing bed, so that Fire is strong and Water dries up, and he may be kept safe."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13071, 13071],
+          "zh": ["存后向者，使知趋避之法也。"],
+          "yi": ["留下后面这一卦，是要让人知道趋避的办法。"],
+          "en": ["The latter hexagram is kept so that one may know the method of avoiding and evading."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13043, 13043],
+          "zh": ["又如：子月丙寅日(旬空：戌亥)，自占瘟病，得“节之中孚”"],
+          "yi": ["又如：子月丙寅日（旬空：戌、亥），自己占瘟病，得节卦变中孚卦。"],
+          "en": ["Another: in the Zi month, on a Bingyin day (void: Xu and Hai), a person divined his own epidemic illness and got Jie changing into Zhongfu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13070, 13070],
+          "zh": ["断曰：子水克世，月建克世，大凶之兆，幸有寅日相生，若肯避瘟于南方，夜卧南床，使火旺而水枯，可保无虞。", "果依此行，亥日病势危急，得遇良医，寅日而愈。", "彼时瘟疫流行，家家传染，一人同日亦得此卦，余亦传此法以避之。", "因此人病重，又信旁言病人不可移床，未肯迁移，卒于亥日。"],
+          "yi": ["断语：子水克世，月建也克世，是大凶的兆头，幸好有寅日来生，如果肯到南方避瘟，夜里睡南面的床，让火旺水枯，可以保证没有忧患。", "他果然照这个办，亥日病势危急，遇到了好医生，寅日就好了。", "那时瘟疫流行，家家传染，有一个人同一天也得到这一卦，我也把这个办法传给他来避瘟。", "因为这个人病得重，又听信旁人说病人不可以移床，不肯迁移，死在亥日。"],
+          "en": ["Judgment: Zi Water controls the Self line, and the Month also controls the Self line, a sign of great misfortune; luckily the Yin day generates it, and if he is willing to avoid the epidemic in the south and sleep at night on a south-facing bed, so that Fire is strong and Water dries up, he can be kept free from harm.", "He did as told; on the Hai day the illness became critical, but he met a good doctor and recovered on the Yin day.", "At that time an epidemic was going round and every household was infected; a man got this same hexagram on the same day, and I also passed on this method to him for avoiding it.", "But this man was gravely ill and believed what others said, that a patient must not have his bed moved, and would not move; he died on the Hai day."] }
+      ],
+      "note": {
+        "yi": "这一条是趋避：卦里克世的是水，就让病人搬到属火的南方去睡，书里只在这一个卦例里用它，没有把它写成对一切五行都通用的规则。「移床」是把病人的床换到别的方位。野鹤把这一卦和上一个久病逢冲必死的卦（LY.ILL.ZS.02）放在一起，说一个是让人知道死，一个是让人知道避。",
+        "en": "This entry is avoidance: when the line that controls the Self line in the hexagram is Water, the patient is moved to sleep in the south, which belongs to Fire; the book uses it only in this one case and does not write it as a rule for all five phases. 'Moving the bed' is to change the patient's bed to another direction. The Old Man sets this hexagram beside the previous one on a long illness meeting a clash being fatal (LY.ILL.ZS.02), saying that one teaches how to know death and the other how to avoid it."
+      },
+      "see": ["LY.ILL.ZS.02", "LY.ILL.ZS.14"]
+    },
+    {
+      "id": "LY.ILL.ZS.18",
+      "topic": "痘疹",
+      "chapter": "疾病章",
+      "chapter_en": "Chapter on illness",
+      "title": "断是不是出痘：旧法以官鬼旺者是花痘，野鹤试之不验，只看子孙衰旺，子孙旺者出花无碍；日月世爻克子孙、卦得六冲，花未开而先谢（例：占子发热是痘否，兑为泽，次日再占大过之涣）",
+      "rule": {
+        "yi": "问发热是不是出痘：旧法说官鬼旺的就是出花痘，野鹤试过不灵验，说那是揣摩出来的说法，只看子孙的衰旺就行，子孙旺的，出花也没有妨碍。子孙被日月、世爻克，卦又是六冲，是花还没开就先谢了，是不祥的兆头。",
+        "en": "To ask whether a fever is smallpox: the old method says a strong Pressure line means smallpox is flowering; the Old Man tried it and it did not prove true, saying it was a guess, and one need only look at whether Output is strong or weak: if Output is strong, no harm comes even if the flowers come out. Output controlled by the Day, the Month and the Self line, with the hexagram Six-Clash, means the flowers fade before they open, an ill omen."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13077, 13077],
+          "zh": ["法以官鬼旺者，是花痘也。", "余试不验，乃揣摩之说耳，只看子孙之衰旺而已，子孙旺者，是花何碍。"],
+          "yi": ["旧法认为官鬼旺的，就是出花痘。", "我试过不灵验，那是揣摩出来的说法罢了，只看子孙的衰旺就行，子孙旺的，是出花又有什么妨碍。"],
+          "en": ["The old method holds that when the Pressure line is strong it is the flowering of smallpox.", "I have tried it and it does not prove true; it is only a guess. One need only look at whether Output is strong or weak: if Output is strong, what harm is there if it is smallpox?"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13072, 13072],
+          "zh": ["又如：丑月乙未日(旬空：辰巳)，占子发热，是痘否？", "得“兑为泽”"],
+          "yi": ["又如：丑月乙未日（旬空：辰、巳），占儿子发热，是不是出痘？", "得兑为泽卦。"],
+          "en": ["Another: in the Chou month, on a Yiwei day (void: Chen and Si), a divination on a son's fever, whether it was smallpox?", "The hexagram was Dui (Lake)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13077, 13077],
+          "zh": ["此卦日月世爻克子孙，卦得六冲，花未开而先谢，不祥之兆，明早诚敬再占，"],
+          "yi": ["这一卦日月和世爻克子孙，卦又是六冲，是花还没开就先谢了，是不祥的兆头，明天早上诚心再占一次，"],
+          "en": ["In this hexagram the Day, Month and Self line control Output and the hexagram is Six-Clash, so the flowers fade before they open, an ill omen; divine again reverently tomorrow morning,"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13078, 13078],
+          "zh": ["丙申日又占，得“大过之涣”"],
+          "yi": ["丙申日又占了一次，得大过卦变涣卦。"],
+          "en": ["On the Bingshen day he divined again and got Daguo changing into Huan."] }
+      ],
+      "dispute": {
+        "yi": "怎样断是不是出痘：旧法（书里没有指名）以官鬼旺相的为花痘；野鹤试了不验，说是揣摩之说，只看子孙衰旺。",
+        "en": "How to judge whether it is smallpox: the old method (which the book does not name) takes a strong Pressure line as smallpox in flower; the Old Man tried it without result, calls it guesswork, and looks only at whether Output is strong or weak."
+      },
+      "note": {
+        "yi": "「花痘」「出花」都是出天花、痘疹。这个卦例的后半（医人从哪个方位请，请到杨姓医生）在 LY.ILL.ZS.34，那里用的是同一个孩子的后几个卦。痘疹章（LY.ILL.ZS.19 起）里另有以鬼爻为用神断出花的办法。",
+        "en": "'Flowering' and 'coming into flower' both mean the coming out of smallpox and pox eruptions. The second half of this case (from which direction to call the doctor, and calling a doctor with the surname Yang) is in LY.ILL.ZS.34, which uses the later hexagrams of the same child. The chapter on smallpox (from LY.ILL.ZS.19) has a separate way of judging the coming of the flowers with the Pressure line as the Subject."
+      },
+      "see": ["LY.ILL.ZS.19", "LY.ILL.ZS.34"]
+    }
+  ]
+}

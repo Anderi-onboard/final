@@ -1,0 +1,338 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易冒",
+  "chapter": "鬼神章第五十七",
+  "chapter_en": "Chapter 57: Ghosts and Spirits",
+  "ranges": {"易冒": [1260, 1290]},
+  "units": [
+    {
+      "id": "LY.ILL.YM.42",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "鬼神章总纲：欲知鬼神情状亦以筮而得之；天神地祗以官鬼类其象，不外二仪四象五行八卦及六神诸星；索鬼神之性（生前偏好）、司（上帝命司何事）、成（何因缘而成）",
+      "rule": {
+        "yi": "古时候的祭祀，不是那位神的主祭人就不当「尸」，不是鬼的同类就不享用祭品，所以没有越位的祭祀、没有轻慢的祭祀。后来的人有祟就做禳解、求福就去祈祷，鬼神的名目就多起来了；虽然这样，吉事有神帮忙，凶事有鬼凭依，史书传记里记的，并不全是虚妄。想知道鬼神的情形，也可以用占筮得到。天神地祇，就用官鬼来归类它的象；取象、画出它的样子，离不开两仪、四象、五行、八卦，再加上六神、诸星来给它成形，用有无来衡量，用上下来定位。探求这位鬼神的性情、所掌管的事，以及它怎么成为鬼神的，就可以推断了。注解释这三样：「性」是生前偏爱的性情，「司」是上帝命它掌管什么事，「成」是因为什么缘由成为鬼神。",
+        "en": "In the sacrifices of old, one who was not the rightful master did not stand as the impersonator, and a ghost did not savour what was not of its kind, so there were no sacrifices beyond one's station and no profane offerings. Later ages exorcised when there was a haunting and prayed for blessing, and so ghosts and spirits multiplied; even so, good fortune has spirits to help and misfortune has ghosts to possess, and what the histories and traditions record is not all false. To learn the state of ghosts and spirits, this too can be obtained by divination. For heavenly spirits and earthly deities, the image is classified by the Pressure line; the image is taken and drawn, and it does not go beyond the two modes, the four images, the five phases and the eight trigrams, together with the six spirits and the various stars to give it form, presence or absence to measure it, and above or below to place it. Seek the nature of the ghost or spirit, what it governs, and how it came to be one, and it can be worked out. The note explains the three: 'nature' is the disposition it favoured in life, 'what it governs' is what the Supreme Lord appointed it to govern, and 'how it came to be' is by what cause it became a ghost or spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1262, 1262],
+          "zh": ["古之祀祭，非其主不尸，鬼非其类不馨，故无越祭、无渎祀也。", "后世乃以有祟而禳福而祈者，而鬼神繁兴矣，虽然，吉有神相，凶有鬼凭，史传所载，非尽诬也。", "欲知鬼神情状，则亦以筮而得之。"],
+          "yi": ["古时候的祭祀，不是那位神的主祭人就不当「尸」，不是鬼的同类就不享用祭品的香气，所以没有越位的祭祀、没有轻慢的祭祀。", "后来的人因为有祟就做禳解、为求福就去祈祷，鬼神的名目就多起来了；虽然这样，吉事有神在帮忙，凶事有鬼在凭依，史书传记里记的，并不全是虚妄。", "想知道鬼神是什么情形，也可以用占筮得到。"],
+          "en": ["In the sacrifices of old, one who was not the rightful master did not stand as the impersonator, and a ghost did not savour what was not of its kind, so there were no sacrifices beyond one's station and no profane offerings.", "Later ages exorcised when there was a haunting and prayed for blessing, and so ghosts and spirits multiplied; even so, good fortune has spirits to help and misfortune has ghosts to possess, and what the histories and traditions record is not all false.", "To learn the state of ghosts and spirits, this too can be obtained by divination."] },
+        { "by": "经", "book": "易冒", "range": [1263, 1263],
+          "zh": ["夫天神地祗，则以官鬼而类其象，象而像之，其不外乎二仪、四象、五行、八卦，及六神、诸星以形之，有无以度之，上下以位之。"],
+          "yi": ["天神地祇，就用官鬼来归类它的象；取象、画出它的样子，离不开两仪、四象、五行、八卦，再加上六神、诸星来给它成形，用有无来衡量它，用上下来定它的位置。"],
+          "en": ["For heavenly spirits and earthly deities, the image is classified by the Pressure line; the image is taken and drawn, and it does not go beyond the two modes, the four images, the five phases and the eight trigrams, together with the six spirits and the various stars to give it form, presence or absence to measure it, and above or below to place it."] },
+        { "by": "经", "book": "易冒", "range": [1264, 1264],
+          "zh": ["索其鬼神之性，鬼神之司，及鬼神所由成，而可推矣。"],
+          "yi": ["探求这位鬼神的性情、所掌管的事，以及它是怎么成为鬼神的，就可以推断了。"],
+          "en": ["Seek the nature of the ghost or spirit, what it governs, and how it came to be one, and it can be worked out."] },
+        { "by": "易冒注", "book": "易冒", "range": [1265, 1265],
+          "zh": ["性，索其鬼神生前偏好之性；", "司，索其鬼神上帝命司何事；", "成，索其以何因缘而成鬼神也。"],
+          "yi": ["「性」，是探求这位鬼神生前偏爱的性情；", "「司」，是探求上帝命这位鬼神掌管什么事；", "「成」，是探求它因为什么缘由成为鬼神。"],
+          "en": ["'Nature' is seeking the disposition the ghost or spirit favoured in life;", "'what it governs' is seeking what the Supreme Lord appointed the ghost or spirit to govern;", "'how it came to be' is seeking by what cause and condition it became a ghost or spirit."] }
+      ],
+      "note": {
+        "yi": "「尸」是祭祀时代表神或亡者接受祭品的人。「二仪」指阴阳，「四象」是老阳、少阴、少阳、老阴一类的四象。这一章通篇的办法在这里立好了：鬼神只由官鬼爻来看，看的方法有五行、八卦（宫）、六神、诸星、六爻、六亲、十二支；要探的有三样，性、司、成，后面「金木水火土」各有一段，把这三样分开说。开头几句里作者的态度是，鬼神不是全然虚妄的，但也不主张一味祭祀，这一点到章末（LY.ILL.YM.63、YM.64）才收拢。",
+        "en": "The 'impersonator' (shi) is the person who stands for the god or the dead in a sacrifice and receives the offerings. The 'two modes' are yin and yang, and the 'four images' are the four of old yang, young yin, young yang and old yin. The method of the whole chapter is set up here: ghosts and spirits are read only from the Pressure line, by the five phases, the eight trigrams (palaces), the six spirits, the stars, the six lines, the six relations and the twelve branches; there are three things to seek, nature, charge and origin, and the later paragraphs on Metal, Wood, Water, Fire and Earth each speak of these three separately. In the opening lines the author's attitude is that ghosts and spirits are not wholly false, but he does not urge sacrifice on every occasion, and this is only drawn together at the end of the chapter (LY.ILL.YM.63, YM.64)."
+      },
+      "see": ["LY.ILL.YM.41", "LY.ILL.YM.43", "LY.ILL.YM.63", "LY.ILL.YM.64", "LY.ILL.HJC.93", "LY.ILL.ZS.23", "LY.ILL.YY.27"]
+    },
+    {
+      "id": "LY.ILL.YM.43",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼属阳则阳神、属阴则阴神：阴神如王母、大悲、水母、太山、天妃、蚕母、子母、催生、太君娘娘之属，要因地（同神异名）、因神（男女）、因事（问蚕得阴官乃蚕母）而考",
+      "rule": {
+        "yi": "官鬼爻属阳的，就是阳神；属阴的，就是阴神。属阴的官鬼，像王母、大悲、水母、太山、天妃、陈周、圣妃、蚕母、子母、催生、太君、娘娘这一类，也应当按地方、按人、按事去考察，这里只是举个大概。因为有的神是同一位而名字不同，这叫因地，比如在北方叫子母娘娘，在南方叫太君娘娘；男女有别叫因神，为什么事叫因事，比如问蚕的事，得到阴的官鬼，就是蚕母。",
+        "en": "A Pressure line that is yang is a yang spirit, and one that is yin is a yin spirit. Where the Pressure line is yin, as with the Queen Mother, the Great Compassionate, the Water Mother, Taishan, the Heavenly Consort, Chen and Zhou, the Holy Consort, the Silkworm Mother, the Child Mother, the Birth Hastener, the Grand Lady and the Ladies, one should also examine by place, by person and by matter; this only gives an outline. For there are spirits who are the same but named differently, which is 'by place': in the north she is the Lady of Child and Mother, in the south the Lady Grand Dame. Difference of man and woman is 'by spirit', and what the matter is about is 'by matter': for instance, when asking about silkworms, a yin Pressure line is the Silkworm Mother."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1265, 1265],
+          "zh": ["夫官鬼之爻属阳，则阳神也，属阴，则阴神也。"],
+          "yi": ["官鬼爻属阳的，就是阳神；属阴的，就是阴神。"],
+          "en": ["A Pressure line that is yang is a yang spirit, and one that is yin is a yin spirit."] },
+        { "by": "易冒注", "book": "易冒", "range": [1266, 1266],
+          "zh": ["官鬼属阴，如王母、大悲、水母、太山、天妃、陈周、圣妃、蚕母、子母、催生、太君、娘娘之属，亦当因地、因人、因事而考之，此则举其略尔。", "盖有神同而名异，曰因地，如在北为子母娘娘，在南为太君娘娘；", "男女相别曰因神，为何事曰因事，如问蚕，得阴官乃蚕母也。"],
+          "yi": ["官鬼属阴的，像王母、大悲、水母、太山、天妃、陈周、圣妃、蚕母、子母、催生、太君、娘娘这一类，也应当按地方、按人、按事去考察，这里只是举个大概。", "因为有的神是同一位而名字不同，这叫因地，比如在北方叫子母娘娘，在南方叫太君娘娘；", "男女有别叫因神，为什么事叫因事，比如问蚕的事，得到阴的官鬼，就是蚕母。"],
+          "en": ["Where the Pressure line is yin, as with the Queen Mother, the Great Compassionate, the Water Mother, Taishan, the Heavenly Consort, Chen and Zhou, the Holy Consort, the Silkworm Mother, the Child Mother, the Birth Hastener, the Grand Lady and the Ladies, one should also examine by place, by person and by matter; this only gives an outline.", "For there are spirits who are the same but named differently, which is 'by place': in the north she is the Lady of Child and Mother, in the south the Lady Grand Dame;", "difference of man and woman is 'by spirit', and what the matter is about is 'by matter': for instance, when asking about silkworms, a yin Pressure line is the Silkworm Mother."] }
+      ],
+      "dispute": {
+        "yi": "阴阳是分「神」和「鬼」，还是分男神女神：易冒说官鬼属阳是阳神、属阴是阴神，举的阴神是王母、天妃、蚕母这些女神，阴的仍是神，不是鬼；易隐说「阳鬼为神、阴官为鬼」，卜筮正宗的王洪绪说「阳为神为男，阴为鬼为女」（LY.ILL.YY.27、LY.ILL.HJC.94），阴就是鬼；黄金策旧注和增删卜易的觉子则按旺衰分，旺相是神、休囚是鬼（LY.ILL.HJC.94、LY.ILL.ZS.23）。易冒在这里分的是阳神和阴神，神与鬼另在后面「生前之性」几段里分（LY.ILL.YM.49 起）。",
+        "en": "Whether yin and yang divide 'spirit' from 'ghost' or male deity from female: the Yi Mao says a yang Pressure line is a yang spirit and a yin one a yin spirit, and its yin examples are goddesses such as the Queen Mother, the Heavenly Consort and the Silkworm Mother, so yin is still a spirit and not a ghost; the Yi Yin says 'a yang ghost is a spirit, a yin Pressure is a ghost', and Wang Hongxu of the Bushi Zhengzong says 'yang is a spirit and male, yin is a ghost and female' (LY.ILL.YY.27, LY.ILL.HJC.94), so yin is a ghost; the old commentary on the Huangjin Ce and Jue Zi of the Zengshan Buyi divide by strength, strong being a spirit and resting or trapped a ghost (LY.ILL.HJC.94, LY.ILL.ZS.23). The Yi Mao here divides yang spirits from yin spirits, and divides spirit from ghost later, in the paragraphs on how each was in life (from LY.ILL.YM.49)."
+      },
+      "note": {
+        "yi": "这一份名单里的神名，书里一个也没有解释，这里按字面译或音译，不作认定；「大悲」「太山」「陈周」也是照字面写。「因地、因神、因事」三样是考察同一位神的三个角度：同神异名靠地方分，男女靠神分，要问什么事靠事分。",
+        "en": "Names of gods and goddesses in the lists are given by transliteration or by a plain rendering; the book does not explain any of them, and none is identified here beyond what the book says. 'Great Compassionate', 'Taishan' and 'Chen and Zhou' are likewise written as they stand. 'By place, by spirit, by matter' are three angles from which to examine the same deity: the same deity under different names is told by place, male and female by the spirit, and what is being asked by the matter."
+      },
+      "see": ["LY.ILL.YM.42", "LY.ILL.YM.44", "LY.ILL.HJC.94", "LY.ILL.YY.27", "LY.ILL.YY.28", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.YM.44",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼属金则武神：天将、关帝、伍公、岳王、玄坛、总官、七煞、金刚、伤司、丧煞之属，及称元帅将军金甲神、威武斗勇成神者",
+      "rule": {
+        "yi": "官鬼属金的，就是武神。像天将、关帝、伍公、岳王、玄坛、总官、七煞、金刚、伤司、丧煞这一类；有的地方称作元帅、将军、金甲神的，以及靠威武善斗成了神的，都可以类推。",
+        "en": "If the Pressure line is Metal, it is a martial spirit, as with the Heavenly Generals, Emperor Guan, Lord Wu, Prince Yue, the Dark Altar, the Chief Official, the Seven Killings, the Vajra, the Injuring Office and the Mourning Killing; and those locally called marshals, generals and golden-armoured spirits, and those who became spirits by martial might and fighting courage, can all be reasoned by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1268, 1268],
+          "zh": ["属金，则武神也。"],
+          "yi": ["属金的，就是武神。"],
+          "en": ["If it is Metal, it is a martial spirit."] },
+        { "by": "易冒注", "book": "易冒", "range": [1269, 1269],
+          "zh": ["官鬼属金，如天将、关帝、伍公、岳王、元坛、总官、七煞、金刚、伤司、丧煞之属，盖方隅有称元帅将军金甲之神，及威武斗勇成神者，皆可类推。"],
+          "yi": ["官鬼属金的，像天将、关帝、伍公、岳王、元坛、总官、七煞、金刚、伤司、丧煞这一类；有的地方称作元帅、将军、金甲神的，以及靠威武斗勇成了神的，都可以类推。"],
+          "en": ["Where the Pressure line is Metal, as with the Heavenly Generals, Emperor Guan, Lord Wu, Prince Yue, the Dark Altar, the Chief Official, the Seven Killings, the Vajra, the Injuring Office and the Mourning Killing, and those locally called marshals, generals and golden-armoured spirits, and those who became spirits by martial might and fighting courage, all can be reasoned by analogy."] }
+      ],
+      "dispute": {
+        "yi": "要不要把金鬼指成关帝、岳王这样的具体某位神：易冒举天将、关帝、伍公、岳王等作例子，但同一章的末尾说「必实指鬼神而泥之则诬」（LY.ILL.YM.63）；增删卜易的李我平点名批评《易冒》指定关岳（LY.ILL.ZS.25），觉子也认为金官指为关公岳公等武神不对，武神有封有未封、各地不同，要问病人许愿未酬的是哪座庙（LY.ILL.ZS.24）。易冒自己也只把这些当作例子，不当作定论。",
+        "en": "Whether a Metal ghost should be pinned to a particular god such as Emperor Guan or Prince Yue: the Yi Mao gives the Heavenly Generals, Emperor Guan, Lord Wu, Prince Yue and the rest as examples, but at the end of the same chapter says 'to point insistently at a particular ghost or spirit and cling to it is to make a false claim' (LY.ILL.YM.63); Li Woping of the Zengshan Buyi names the Yi Mao in criticising the pinning to Guan and Yue (LY.ILL.ZS.25), and Jue Zi also holds that calling a Metal Pressure line Guan Gong or Yue Gong is wrong, since martial spirits are enfeoffed or not and differ from place to place, and one should ask which temple the patient vowed to without redeeming (LY.ILL.ZS.24). The Yi Mao itself takes these only as examples, not as conclusions."
+      },
+      "note": {
+        "yi": "「元坛」是「玄坛」避讳的写法，下面属火那一条里也有。这份名单里的神名，书里一个也没有解释，这里按字面译或音译，不作认定。「方隅有称元帅将军金甲之神」是说各地方对武神的称呼不同，按当地的称呼归到金里。",
+        "en": "'Yuan Altar' is the taboo-avoiding form of 'Xuan Altar' (the Dark Altar), and appears again in the Fire list below. Names of gods and goddesses in the lists are given by transliteration or by a plain rendering; the book does not explain any of them, and none is identified here beyond what the book says. 'Locally called marshals, generals and golden-armoured spirits' means that the names given to martial spirits differ from place to place, and whatever the local name, it is filed under Metal."
+      },
+      "see": ["LY.ILL.YM.43", "LY.ILL.YM.45", "LY.ILL.YM.49", "LY.ILL.YM.63", "LY.ILL.HJC.97", "LY.ILL.YY.28", "LY.ILL.ZS.24", "LY.ILL.ZS.25"]
+    },
+    {
+      "id": "LY.ILL.YM.45",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼属水则河海江神：普陀、真武、云台、北斗、海神、龙王、河神、大王、杨将、施相、天妃、晏公、祠山、周王、汪公、水母、井神池神之属；各方水神随占人之民俗土风，漕河尊大王、东海尊天妃、南河尊周王",
+      "rule": {
+        "yi": "官鬼属水的，就是河、海、江的神。像普陀、真武、云台、北斗、海神、龙王、河神、大王、杨将、施相、天妃、晏公、祠山、周王、汪公、水母、水圣、井神、池神、水伤神这一类，以及因水而成神的，都可以类推。九河百川，各个地方各有掌管的神，百姓的尊称各不相同，要随着占卜人所在的民俗和风土，用五行八卦、六神诸星去取象，才算射中靶心。大体上水神、火神灵验显赫的多，没法一一细说，各地不一样：漕河尊大王，东海尊天妃，南河尊周王，洞庭尊湘妃，鄱阳是小姑，长江是杨四将军，各有各的分管。",
+        "en": "If the Pressure line is Water, it is the spirits of river, sea and great river, as with Putuo, Zhenwu, Yuntai, the Dipper, the Sea God, the Dragon King, the River God, the Great King, General Yang, Lord Shi, the Heavenly Consort, Lord Yan, Cishan, Prince Zhou, Lord Wang, the Water Mother, the Water Sage, the Well God, the Pond God and the water-wound spirits, and those who became spirits through water. For the nine rivers and the hundred streams each place has its own governing spirit, and the honorifics the common people give differ from place to place; following the customs and local ways of the one who divines, take the image by the five phases, the eight trigrams, the six spirits and the various stars, and one hits the mark. In general the spirits of water and fire are often powerfully manifest and cannot be set out in detail, differing from place to place: the grain-transport canal honours the Great King, the Eastern Sea the Heavenly Consort, the southern river Prince Zhou, Dongting the Xiang Consort, Poyang has the Little Aunt, and the Yangtze General Yang the Fourth, each with its own domain."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1270, 1270],
+          "zh": ["属水，则河海江神也。"],
+          "yi": ["属水的，就是河、海、江的神。"],
+          "en": ["If it is Water, it is the spirits of river, sea and great river."] },
+        { "by": "易冒注", "book": "易冒", "range": [1271, 1271],
+          "zh": ["官鬼属水，如普陀、真武、云台、北斗、海神、龙王、河神、大王、杨将、施相、天妃、晏公、祠山、周王、汪公、水母、水圣、井神、池神、水伤神之属，及由水成神可类。", "盖九河百川，方隅各有所司之神，黎庶尊称，各有相别，随占人之民俗土风，以五行八卦、六神诸星，象而像之，则射的矣。", "大抵水火之神，灵显者多，无能细陈，方隅各异，犹若漕河尊大王，东海尊天妃，南河尊周王，洞庭尊湘妃，鄱阳小姑，长江杨四将军，各有所分也。"],
+          "yi": ["官鬼属水的，像普陀、真武、云台、北斗、海神、龙王、河神、大王、杨将、施相、天妃、晏公、祠山、周王、汪公、水母、水圣、井神、池神、水伤神这一类，以及因水而成神的，都可以类推。", "九河百川，各个地方各有掌管的神，百姓的尊称各不相同，要随着占卜人所在的民俗和风土，用五行八卦、六神诸星去取象，这样才是射中靶心。", "大体上水神、火神灵验显赫的多，没法一一细说，各地方不一样，比如漕河尊大王，东海尊天妃，南河尊周王，洞庭湖尊湘妃，鄱阳湖是小姑，长江是杨四将军，各有各的分管。"],
+          "en": ["Where the Pressure line is Water, as with Putuo, Zhenwu, Yuntai, the Dipper, the Sea God, the Dragon King, the River God, the Great King, General Yang, Lord Shi, the Heavenly Consort, Lord Yan, Cishan, Prince Zhou, Lord Wang, the Water Mother, the Water Sage, the Well God, the Pond God and the water-wound spirits, and those who became spirits through water, all can be reasoned by analogy.", "For the nine rivers and the hundred streams each place has its own governing spirit, and the honorifics the common people give differ from place to place; following the customs and local ways of the one who divines, take the image by the five phases, the eight trigrams, the six spirits and the various stars, and one hits the mark.", "In general, the spirits of water and fire are often powerfully manifest, and cannot be set out in detail, differing from place to place: for instance, the grain-transport canal honours the Great King, the Eastern Sea honours the Heavenly Consort, the southern river honours Prince Zhou, Dongting honours the Xiang Consort, Poyang has the Little Aunt, and the Yangtze has General Yang the Fourth, each with its own domain."] }
+      ],
+      "note": {
+        "yi": "神名的处理见 LY.ILL.YM.44 的注。这一条比别的四行多讲了一点道理：各地的水神名号不同，要随占卜人所在的地方风俗去取象，不是拿一张名单去对。「射的」是射中靶心。",
+        "en": "Names are treated as in the note to LY.ILL.YM.44. This entry gives more of a reason than the other four phases: the names of water spirits differ from region to region, so the image is to be taken according to the customs of the place of the one who divines, and not by matching against a list. 'Hits the mark' is hitting the bull's-eye."
+      },
+      "see": ["LY.ILL.YM.44", "LY.ILL.YM.46", "LY.ILL.YM.50", "LY.ILL.HJC.97", "LY.ILL.HJC.113", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.46",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼属木则文神及倚草附木之妖：东岳、家堂、山神、树神、五圣、园神、九良、茶筵、三茅、九天、鲁班、花神、三郎、道君、文昌、南木神之属，及凭依山木树木器皿成神者",
+      "rule": {
+        "yi": "官鬼属木的，就是文神，以及依托在草木上的精怪。像东岳、家堂、山神、树神、五圣、园神、九良、茶筵、三茅、九天、鲁班、花神、三郎、道君、文昌、南木神这一类，以及各地有依附山木、树木、器皿而成神的，都可以类推。",
+        "en": "If the Pressure line is Wood, it is a civil spirit, and the demons that lean on grass and cling to trees, as with the Eastern Peak, the household shrine, the Mountain God, the Tree God, the Five Sages, the Garden God, the Nine Good Ones, the Tea Feast, the Three Mao, the Nine Heavens, Lu Ban, the Flower God, the Third Lord, the Daoist Lord, Wenchang and the Southern Wood God, and those places where a spirit has arisen from a mountain, a tree or a vessel it clings to; all can be reasoned by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1272, 1272],
+          "zh": ["属木，则文神也，及倚草附木之妖也。"],
+          "yi": ["属木的，就是文神，以及依托在草木上的精怪。"],
+          "en": ["If it is Wood, it is a civil spirit, and the demons that lean on grass and cling to trees."] },
+        { "by": "易冒注", "book": "易冒", "range": [1273, 1273],
+          "zh": ["官鬼属木，如东岳、家堂、山神、树神、五圣、园神、九良、茶筵、三茅、九天、鲁班、花神、三郎、道君、文昌、南木神之属，及方隅有凭依山木、树木、器皿成神者，皆可类推。"],
+          "yi": ["官鬼属木的，像东岳、家堂、山神、树神、五圣、园神、九良、茶筵、三茅、九天、鲁班、花神、三郎、道君、文昌、南木神这一类，以及各地有依附山木、树木、器皿而成神的，都可以类推。"],
+          "en": ["Where the Pressure line is Wood, as with the Eastern Peak, the household shrine, the Mountain God, the Tree God, the Five Sages, the Garden God, the Nine Good Ones, the Tea Feast, the Three Mao, the Nine Heavens, Lu Ban, the Flower God, the Third Lord, the Daoist Lord, Wenchang and the Southern Wood God, and those places where a spirit has arisen from a mountain, a tree or a vessel it clings to, all can be reasoned by analogy."] }
+      ],
+      "note": {
+        "yi": "神名的处理见 LY.ILL.YM.44 的注。「文神」和金的「武神」相对（LY.ILL.YM.44）：文昌、鲁班是文事、工艺的神，东岳、家堂、山神、树神是草木土地一类的神，都算木。",
+        "en": "Names are treated as in the note to LY.ILL.YM.44. 'Civil spirit' is the counterpart of the Metal 'martial spirit' (LY.ILL.YM.44): Wenchang and Lu Ban are spirits of letters and crafts, and the Eastern Peak, the household shrine, the Mountain God and the Tree God are spirits of plants and land, all counted as Wood."
+      },
+      "see": ["LY.ILL.YM.45", "LY.ILL.YM.47", "LY.ILL.YM.51", "LY.ILL.HJC.97", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.47",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼属火则火神、生育雷电之司：离神、电神、南斗、火雷、韦陀、玄坛、华光、五神、五赫、三煞、灶神、炉神、炮神、香火、南堂、利市、生育神之属，及由火成神者",
+      "rule": {
+        "yi": "官鬼属火的，就是火神，是掌管生育、雷电的。像离神、电神、南斗、火雷、韦陀、元坛、华光、五神、五赫、三煞、灶神、旗纛（？）、炉神、炮神、香火、南堂、利市、生育神这一类，以及因火而成神的，都可以类推。",
+        "en": "If the Pressure line is Fire, it is a fire spirit, in charge of childbirth, thunder and lightning, as with the Li spirit, the Lightning God, the Southern Dipper, Fire and Thunder, Weituo, the Dark Altar, Huaguang, the Five Spirits, the Five Blazes, the Three Killings, the Kitchen God, the banner-standard (?), the Furnace God, the Cannon God, the incense fire, the Southern Hall, the Market Luck and the birth-giving spirits, and those who became spirits through fire; all can be reasoned by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1274, 1274],
+          "zh": ["属火，则火神也，生育雷电之司也。"],
+          "yi": ["属火的，就是火神，是掌管生育、雷电的。"],
+          "en": ["If it is Fire, it is a fire spirit, in charge of childbirth, thunder and lightning."] },
+        { "by": "易冒注", "book": "易冒", "range": [1275, 1275],
+          "zh": ["官鬼属火，如离神、电神、南斗、火雷、韦陀、元坛、华光、五神、五赫、三煞、灶神、旗纛？、炉神、炮神、香火、南堂、利市、生育神之属，及由火成神可类。"],
+          "yi": ["官鬼属火的，像离神、电神、南斗、火雷、韦陀、元坛、华光、五神、五赫、三煞、灶神、旗纛（？）、炉神、炮神、香火、南堂、利市、生育神这一类，以及因火而成神的，可以类推。"],
+          "en": ["Where the Pressure line is Fire, as with the Li spirit, the Lightning God, the Southern Dipper, Fire and Thunder, Weituo, the Dark Altar, Huaguang, the Five Spirits, the Five Blazes, the Three Killings, the Kitchen God, the banner-standard (?), the Furnace God, the Cannon God, the incense fire, the Southern Hall, the Market Luck and the birth-giving spirits, and those who became spirits through fire, can be reasoned by analogy."] }
+      ],
+      "note": {
+        "yi": "神名的处理见 LY.ILL.YM.44 的注。「旗纛？」后面的问号是转录者标的，表示对这两个字没有把握，这里照录、没有改；那个问号在原文里把这一句切成了两段，这里按一句译。",
+        "en": "Names are treated as in the note to LY.ILL.YM.44. The question mark after 'banner-standard' is the transcriber's own, showing doubt about the two characters, and is copied as it stands; in the original it cuts this sentence into two, and it is translated here as one sentence."
+      },
+      "see": ["LY.ILL.YM.46", "LY.ILL.YM.48", "LY.ILL.YM.52", "LY.ILL.HJC.97", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.48",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼属土则土神及山川社稷之司：地祗、太岁、城隍、社稷、土神、庙神、宅神、伽蓝、皮肠、当境、本家土地之属；土部名号非一（飞游作犯斫伐坟墓坑厮金神吟神伏尸螣蛇天曹土），当以八宫六神诸星配辨；西北土厚知地祗、东南土薄多土曹",
+      "rule": {
+        "yi": "官鬼属土的，就是土神，以及掌管山川社稷的。像地祇、太岁、城隍、社稷、土神、庙神、宅神、伽蓝、皮肠、当境、本家土地这一类，以及因为在当地有功绩而成神的，都是。土这一部的神灵，圣号、曹名不止一种，有飞游、作犯、斫伐、坟墓、坑厮、金神、吟神、伏尸、螣蛇、天曹土等称呼，要用八宫、六神、诸星配合起来辨别，比如白虎带土官，就断成金神七煞。大体上西北土地厚，只知道有地祇；东南土地薄，所以有很多土曹的名号。所以要因人、因地、因事，变通的方法很多。",
+        "en": "If the Pressure line is Earth, it is an earth spirit, and those in charge of mountains, rivers and the altars of soil and grain, as with the Earth Spirit, the Tai Sui, the City God, the Altars of Soil and Grain, earth gods, temple gods, house gods, the Sangharama, the Skin and Intestines, the Local Boundary God and the family's own Earth God, and those who became spirits through merit in a locality. The spirits of the Earth department have more than one holy title and office name, such as Flying Wanderer, Offence-maker, Felling, Grave, Pit Rascal, Golden Spirit, Chanting Spirit, Buried Corpse, Coiling Snake and Heavenly Bureau Earth; one must tell them apart by combining the eight palaces, the six spirits and the various stars, so that for example an Earth Pressure line with the White Tiger is judged the Golden Spirit or the Seven Killings. In general the earth of the northwest is thick and people know only the Earth Spirit, while the earth of the southeast is thin and so has many bureau titles of the earth. So one goes by person, place and matter, and the ways of adapting are many."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1276, 1276],
+          "zh": ["属土，则土神也，及山川社稷之司也。"],
+          "yi": ["属土的，就是土神，以及掌管山川社稷的。"],
+          "en": ["If it is Earth, it is an earth spirit, and those in charge of mountains, rivers and the altars of soil and grain."] },
+        { "by": "易冒注", "book": "易冒", "range": [1277, 1277],
+          "zh": ["官鬼属土，如地祗、太岁、城隍、社稷、土神、庙神、宅神、伽蓝、皮肠、当境、本家土地之属，及由地方功勣为神俱是。", "盖土部神灵、圣号、曹名非一，有飞游、作犯、斫伐、坟墓、坑厮、金神、吟神、伏尸、螣蛇、天曹土诸称，当以八宫、六神、诸星，配合辨别，若白虎土官，乃断金神七煞。", "大凡西北土厚，惟知有地祗，东南土薄，故多土曹之号也。", "所以因人、因地、因事、通变多端尔。"],
+          "yi": ["官鬼属土的，像地祇、太岁、城隍、社稷、土神、庙神、宅神、伽蓝、皮肠、当境、本家土地这一类，以及因为在当地有功绩而成神的，都是。", "土这一部的神灵，圣号、曹名不止一种，有飞游、作犯、斫伐、坟墓、坑厮、金神、吟神、伏尸、螣蛇、天曹土等称呼，要用八宫、六神、诸星配合起来辨别，比如白虎带土官，就断成金神七煞。", "大体上西北土地厚，只知道有地祇；东南土地薄，所以有很多土曹的名号。", "所以要因人、因地、因事，变通的方法很多。"],
+          "en": ["Where the Pressure line is Earth, as with the Earth Spirit, the Tai Sui, the City God, the Altars of Soil and Grain, earth gods, temple gods, house gods, the Sangharama, the Skin and Intestines, the Local Boundary God and the family's own Earth God, and those who became spirits through merit in a locality, all are included.", "The spirits of the Earth department have more than one holy title and office name, such as Flying Wanderer, Offence-maker, Felling, Grave, Pit Rascal, Golden Spirit, Chanting Spirit, Buried Corpse, Coiling Snake and Heavenly Bureau Earth; one must tell them apart by combining the eight palaces, the six spirits and the various stars, so that for example an Earth Pressure line with the White Tiger is judged the Golden Spirit or the Seven Killings.", "In general the earth of the northwest is thick and people know only the Earth Spirit, while the earth of the southeast is thin and so has many bureau titles of the earth.", "So one goes by person, place and matter, and the ways of adapting are many."] }
+      ],
+      "note": {
+        "yi": "神名的处理见 LY.ILL.YM.44 的注。土部的称呼里「螣蛇」在这里是土部一个神煞的名字，不是六神里的螣蛇，原文没有再分；「土曹」是掌管土地的曹官。西北土厚、东南土薄的说法，和前面土鬼独发那一条（LY.ILL.YM.12）里东南土薄、犯土忌多、西北土厚不畏土禁，是同一个地理判断。",
+        "en": "Names are treated as in the note to LY.ILL.YM.44. Among the titles of the Earth department 'Coiling Snake' is the name of one earth star here, not the Coiling Snake of the six spirits, and the original does not distinguish them further; 'bureau of the earth' is the office that governs the land. The saying that the northwest earth is thick and the southeast earth thin is the same geographical judgment as in the entry on an Earth ghost moving alone (LY.ILL.YM.12), where in the southeast the earth is thin and earth taboos are often broken, and in the northwest it is thick and earth prohibitions are not feared."
+      },
+      "see": ["LY.ILL.YM.47", "LY.ILL.YM.53", "LY.ILL.YM.12", "LY.ILL.HJC.98", "LY.ILL.HJC.100", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.49",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "金鬼的来历：生前好勇（性属金），或亡于干戈锋镝、病丧于喉肺、为义为利，是成鬼之因；成鬼能善则上帝命其所司，位西方、权秋令、主兵事，按金象考",
+      "rule": {
+        "yi": "生前好勇的鬼，是就它的性情说，所以属金；或者死在兵器锋镝之下，以及病死在喉、肺，为义、为利而死，这是就它怎样成鬼说，所以也归金类。成了鬼又能行善的，上帝命它掌管的事，如果位在西方、权在秋令、主管兵事，就按金象来考察。注说：这是察看鬼神的来历。金鬼一定生前好勇，就性情说，它死在刀兵之下；就它成为鬼神说，这位神掌管什么事，可能属水、属火、属土、属金、属木；就所掌管的属性说，比如关帝、岳王的神勇和义属金，七煞、丧煞，体属金、掌管杀伐，也属金。遁甲里的七煞是庚，这就叫体属金。",
+        "en": "A ghost who loved courage in life is Metal, speaking of its nature; or one who died under weapons and arrowheads, or of illness of the throat or lungs, or over righteousness or profit, is spoken of as how it became a ghost, and so is also classed as Metal. One who, having become a ghost, can do good, and whom the Supreme Lord has appointed to a charge, if its seat is in the west, its authority in the autumn season and its charge in military affairs, is examined by the Metal image. The note says: this is to examine where the ghost or spirit came from. A Metal ghost must have loved courage in life; by nature, that ghost died by blade and weapon; as to its becoming a ghost or spirit, what this spirit governs may be Water, Fire, Earth, Metal or Wood; as to what its charge belongs to, for example, the valour and righteousness of Guan and Yue belong to Metal, and the Seven Killings and the Mourning Killing, whose body is Metal and whose charge is killing, belong to Metal. The Seven Killings of the Dunjia is Geng, which is what is meant by a body of Metal."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1278, 1278],
+          "zh": ["生前好勇之鬼，言其性故属金，或亡于干戈锋镝之下，及病丧于喉、肺、义、利，言其成鬼，故金类之。", "成鬼而能有善，上帝命其所司，若位于西方，权于秋令，主于兵事，则金象而考也。"],
+          "yi": ["生前好勇的鬼，是就它的性情说，所以属金；或者死在兵器锋镝之下，以及病死在喉、肺，为义、为利而死，这是就它怎样成鬼说，所以归入金类。", "成了鬼又能行善的，上帝命它掌管的事，如果位在西方、权在秋令、主管兵事，就按金象来考察。"],
+          "en": ["A ghost who loved courage in life is Metal, speaking of its nature; or one who died under weapons and arrowheads, or of illness of the throat or lungs, or over righteousness or profit, is spoken of as how it became a ghost, and so is classed as Metal.", "One who, having become a ghost, can do good, and whom the Supreme Lord has appointed to a charge, if its seat is in the west, its authority in the autumn season and its charge in military affairs, is examined by the Metal image."] },
+        { "by": "易冒注", "book": "易冒", "range": [1279, 1279],
+          "zh": ["此察鬼神所由来。", "金鬼，其鬼必生前好勇，以性言之，其鬼亡于刀兵；", "以成鬼神言之，其神所司何事，或水或火或土或金或木；", "以所司属言之，如关岳神勇义属金，七煞丧煞，体金司煞属金也。", "遁甲七煞乃庚，是谓体金。"],
+          "yi": ["这是察看鬼神是怎么来的。", "金鬼，这个鬼生前一定好勇，就性情说，它死在刀兵之下；", "就它成为鬼神说，这位神所掌管的是什么事，可能属水、属火、属土、属金、属木；", "就所掌管的属性说，比如关帝、岳王的神勇和义属金，七煞、丧煞，体属金、掌管杀伐的也属金。", "遁甲里的七煞就是庚，这就叫体属金。"],
+          "en": ["This is to examine where the ghost or spirit came from.", "A Metal ghost must have loved courage in life; by nature, that ghost died by blade and weapon;", "as to its becoming a ghost or spirit, what this spirit governs may be Water, Fire, Earth, Metal or Wood;", "as to what its charge belongs to, for example, the valour and righteousness of Guan and Yue belong to Metal, and the Seven Killings and the Mourning Killing, whose body is Metal and whose charge is killing, belong to Metal.", "The Seven Killings of the Dunjia is Geng, which is what is meant by a body of Metal."] }
+      ],
+      "note": {
+        "yi": "这一条讲的是 LY.ILL.YM.42 里「性、司、成」三样怎么用。「性」是生前的性情（好勇），「成」是怎么成鬼的（死于刀兵），「司」是成神以后上帝派它管什么（西方、秋令、兵事）；三样各自可以属金，也可以三样属的不一样（注里说「所司」可以属水火土金木任何一行）。「体金」是本体属金：七煞在遁甲里是庚，庚是金，所以七煞体金；关、岳靠神勇与义归金，是靠所司的性质。",
+        "en": "This entry shows how the three of 'nature, charge and origin' in LY.ILL.YM.42 are used. 'Nature' is the disposition in life (love of courage), 'origin' is how it became a ghost (died by blade), and 'charge' is what the Supreme Lord set it to govern after it became a spirit (the west, autumn, military affairs); each of the three can be Metal, or the three can belong to different phases (the note says the 'charge' may belong to any of Water, Fire, Earth, Metal or Wood). 'Body of Metal' means the substance is Metal: the Seven Killings in the Dunjia is Geng, and Geng is Metal, so the Seven Killings has a body of Metal, while Guan and Yue go under Metal through the nature of their charge, valour and righteousness."
+      },
+      "see": ["LY.ILL.YM.48", "LY.ILL.YM.50", "LY.ILL.YM.42", "LY.ILL.YM.44", "LY.ILL.HJC.94", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.50",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "水鬼的来历：生前谋利于水，或亡于江海风波汤卤，病丧于腰肾茶酒，凡司河泊舟楫，按水象考；出身显圣者亦可推而变化无穷",
+      "rule": {
+        "yi": "生前靠水谋利的，或者死在江海风浪、开水卤水之中，以及病死在腰、肾，因茶、酒而死的，凡是掌管河泊舟船的，就按水象来考察。注说：凡是靠出身、来历显了圣的，也可以这样推，变化就无穷无尽了；大慈在南海显道，三官从龙神那里受生，都仿照这样。",
+        "en": "One who sought profit by water in life, or died in river and sea, wind and waves, or scalding water and brine, or of illness of the waist and kidneys, or over tea and wine, and whose charge is rivers, moorings, boats and oars, is examined by the Water image. The note says: those who manifested as holy beings from their origins can likewise be worked out, and then the variations are without end; Great Compassion manifested the Way in the Southern Sea, and the Three Officials received their birth from the Dragon Spirit; follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1280, 1280],
+          "zh": ["生前谋利于水，或亡于江海风波汤卤之中，及病丧于腰、肾、茶、酒，凡司河泊舟楫，则水象而考也。"],
+          "yi": ["生前靠水谋利的，或者死在江海风浪、开水卤水之中，以及病死在腰、肾，因茶、酒而死的，凡是掌管河泊舟船的，就按水象来考察。"],
+          "en": ["One who sought profit by water in life, or died in river and sea, wind and waves, or scalding water and brine, or of illness of the waist and kidneys, or over tea and wine, and whose charge is rivers, moorings, boats and oars, is examined by the Water image."] },
+        { "by": "易冒注", "book": "易冒", "range": [1281, 1281],
+          "zh": ["凡出身显圣，亦可推之，则变化无穷矣。", "大慈显道南海，三官生受龙神，仿此。"],
+          "yi": ["凡是靠出身显了圣的，也可以这样推，变化就无穷无尽了。", "大慈在南海显道，三官从龙神那里受生，都仿照这样。"],
+          "en": ["Those who manifested as holy beings from their origins can likewise be worked out, and then the variations are without end.", "Great Compassion manifested the Way in the Southern Sea, and the Three Officials received their birth from the Dragon Spirit; follow this."] }
+      ],
+      "note": {
+        "yi": "「凡出身显圣」原文没有再解释，这里译成「凡是靠出身显了圣的」。「大慈」指大慈大悲的观世音；「三官生受龙神」的读法原文没有讲，这里按字面译。这一条和金的那一条（LY.ILL.YM.49）是平行的：性（谋利于水）、成（亡于江海风波）、司（河泊舟楫），最后一句提醒神的来历还有另一条路——靠出身显圣，那就没有一定之规了。",
+        "en": "The original does not explain 'those who manifested as holy beings from their origins', and it is rendered as it stands. 'Great Compassion' is the Guanyin of great compassion and mercy; how 'the Three Officials received birth from the Dragon Spirit' is to be read is not stated, and it is translated literally. This entry runs parallel to the Metal one (LY.ILL.YM.49): nature (seeking profit by water), origin (dying in river and sea) and charge (rivers, moorings, boats); the last sentence warns that a spirit may also come by another road, manifesting from its origins, for which there is no fixed rule."
+      },
+      "see": ["LY.ILL.YM.49", "LY.ILL.YM.51", "LY.ILL.YM.45", "LY.ILL.HJC.97", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.51",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "木鬼的来历：生前陶情花乡、立业桑麻，或亡于笞杖树木之下、丧于捆缚疯癫，凡司栽植砍伐，按木象考；两可不能一见则审累重（南木神应水官者体木司水）",
+      "rule": {
+        "yi": "生前在花乡里陶冶性情、靠桑麻立业的，或者死在笞杖、树木之下，死于捆绑、疯癫的，凡是掌管栽种砍伐的，就按木象来考察。注说：凡是两种都说得通、不能只取一种的，要审察哪种分量重，比如南木神对应水官的，是体属木、掌管水。",
+        "en": "One who in life took his pleasure in the land of flowers and made his living from mulberry and hemp, or died under the rod or beneath a tree, or by binding or madness, and whose charge is planting and felling, is examined by the Wood image. The note says: where either reading is possible and one cannot be settled on by a single look, one must weigh which carries more; for example, the Southern Wood God answering a Water Pressure line has a body of Wood and a charge of Water."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1283, 1284],
+          "zh": ["生前陶情花乡，立业桑麻，或亡于笞杖树木之下，丧于捆缚、疯癫，凡司栽植砍伐，则木象而考也。"],
+          "yi": ["生前在花乡里陶冶性情、靠桑麻立业的，或者死在笞杖、树木之下，死于捆绑、疯癫的，凡是掌管栽种砍伐的，就按木象来考察。"],
+          "en": ["One who in life took his pleasure in the land of flowers and made his living from mulberry and hemp, or died under the rod or beneath a tree, or by binding or madness, and whose charge is planting and felling, is examined by the Wood image."] },
+        { "by": "易冒注", "book": "易冒", "range": [1285, 1285],
+          "zh": ["凡两可不能一见，当审累重，如南木神应水官者，体木司水也。"],
+          "yi": ["凡是两种都说得通、不能只取一种的，应当审察哪种分量重，比如南木神对应水官的，是体属木、掌管水。"],
+          "en": ["Where either reading is possible and one cannot be settled on by a single look, one must weigh which carries more; for example, the Southern Wood God answering a Water Pressure line has a body of Wood and a charge of Water."] }
+      ],
+      "note": {
+        "yi": "这一条的注比正文重要：它给了一条判别规则，当一位神的「体」（本身属哪一行）和它的「所司」（掌管的属哪一行）不是同一行，不能只取一个，要看哪个分量重；例是南木神，本身是木神，可是掌管水，所以官鬼是水时要按「体木司水」去读。这是对 LY.ILL.YM.49 里「性、司、成」三样可以各属一行的补充。",
+        "en": "The note of this entry matters more than the text: it gives a rule of discrimination, that when a spirit's 'body' (which phase it is itself) and its 'charge' (which phase what it governs is) are not the same phase, one cannot take only one, and must weigh which carries more; the example is the Southern Wood God, a Wood spirit by nature yet governing water, so that when the Pressure line is Water it is read as 'body Wood, charge Water'. It supplements what LY.ILL.YM.49 says, that nature, charge and origin may each belong to a different phase."
+      },
+      "see": ["LY.ILL.YM.50", "LY.ILL.YM.52", "LY.ILL.YM.46", "LY.ILL.HJC.97", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.52",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "火鬼的来历：生为炉煅之事，死于烈焰疮痍血衂胎产，凡司鼎釜孕育，按火象考；宜推而广之",
+      "rule": {
+        "yi": "生前做炉锻的事，死在烈火、疮痍、流血、胎产中的，凡是掌管鼎釜和孕育的，就按火象来考察。注说：应当推广开来，用五行、六神、诸星去配。",
+        "en": "One who in life worked at furnace and forge, or died in raging flame, sores and wounds, bleeding, or childbirth, and whose charge is cauldrons and pots and pregnancy, is examined by the Fire image. The note says: one should extend it further, matching it with the five phases, the six spirits and the various stars."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1286, 1286],
+          "zh": ["生为炉煅之事，死于烈焰疮痍，血衂胎产，凡司鼎釜孕育，则火象而考也。"],
+          "yi": ["生前做炉锻的事，死在烈火、疮痍、流血、胎产中的，凡是掌管鼎釜和孕育的，就按火象来考察。"],
+          "en": ["One who in life worked at furnace and forge, or died in raging flame, sores and wounds, bleeding, or childbirth, and whose charge is cauldrons and pots and pregnancy, is examined by the Fire image."] },
+        { "by": "易冒注", "book": "易冒", "range": [1287, 1287],
+          "zh": ["宜推而广之，五行六神诸星配之。"],
+          "yi": ["应当推广开来，用五行、六神、诸星去配。"],
+          "en": ["One should extend it further, matching it with the five phases, the six spirits and the various stars."] }
+      ],
+      "note": {
+        "yi": "「血衂」的「衂」同「衄」，流血、鼻出血；这里译作流血。这一条和 LY.ILL.YM.49–LY.ILL.YM.51、YM.53 是平行的，只是火的注只有一句「宜推而广之」，没有像木那条一样给出判别规则。",
+        "en": "'Xue nu' (bleeding) uses a variant of the character for nosebleed and is rendered as bleeding. This entry runs parallel to LY.ILL.YM.49 to YM.51 and YM.53, except that the note on Fire has only the one sentence 'one should extend it further', and gives no rule of discrimination as the one on Wood does."
+      },
+      "see": ["LY.ILL.YM.51", "LY.ILL.YM.53", "LY.ILL.YM.47", "LY.ILL.HJC.97", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.53",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "土鬼的来历：生前土技农耕，死于瘟疫脾胃土石之难，凡司动作，按土象考；惟灵显东南",
+      "rule": {
+        "yi": "生前做土工、务农耕作的，死在瘟疫、脾胃的病、土石之难中的，凡是掌管动土动作的，就按土象来考察。注说：只是灵验多显现在东南。",
+        "en": "One who in life had an earth craft or farmed, or died of epidemic, illness of the spleen and stomach, or the calamity of earth and stone, and whose charge is works and movement, is examined by the Earth image. The note says: only, its power is manifest chiefly in the southeast."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1288, 1288],
+          "zh": ["生前土技农耕，死于瘟疫脾胃土石之难，凡司动作，则土象而考也。"],
+          "yi": ["生前做土工、务农耕作的，死在瘟疫、脾胃的病、土石之难中的，凡是掌管动土动作的，就按土象来考察。"],
+          "en": ["One who in life had an earth craft or farmed, or died of epidemic, illness of the spleen and stomach, or the calamity of earth and stone, and whose charge is works and movement, is examined by the Earth image."] },
+        { "by": "易冒注", "book": "易冒", "range": [1289, 1289],
+          "zh": ["惟灵显东南。"],
+          "yi": ["只是灵验多显现在东南。"],
+          "en": ["Only, its power is manifest chiefly in the southeast."] }
+      ],
+      "note": {
+        "yi": "「惟灵显东南」承接土神那条（LY.ILL.YM.48）：东南土薄，土曹的名号多，土鬼的灵验也多显在东南。这一条和 LY.ILL.YM.49–LY.ILL.YM.52 合起来，是五行各自的「性、成、司」的一张表。",
+        "en": "'Only its power is manifest in the southeast' follows the entry on Earth spirits (LY.ILL.YM.48): in the southeast the earth is thin and the bureau titles are many, and the power of an Earth ghost is chiefly manifest there too. Together with LY.ILL.YM.49 to YM.52 this makes a table of the 'nature, origin and charge' of each of the five phases."
+      },
+      "see": ["LY.ILL.YM.52", "LY.ILL.YM.54", "LY.ILL.YM.48", "LY.ILL.HJC.98", "LY.ILL.YY.28"]
+    }
+  ]
+}

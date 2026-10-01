@@ -1,0 +1,70 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "卜筮正宗",
+  "chapter": "赋文三篇·何知章",
+  "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+  "ranges": {"卜筮正宗": [3243, 3566], "卜筮大全": [9843, 9843]},
+  "units": [
+    {
+      "id": "LY.MARRY.BSZZ.03",
+      "topic": "夫妻",
+      "chapter": "赋文三篇·何知章",
+      "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+      "title": "何知章·妻：妻有灾（虎临兄弟动伤财）、妻有孕（青龙财临喜神）、有妻妾（内外两财旺相）、损妻房（财爻带鬼落空亡）",
+      "rule": {
+        "yi": "「何知章」是一问一答的口诀，问的是一家人的各样事。其中四问是关于妻子的：妻子有灾，是白虎临着兄弟爻发动，伤克财爻；妻子有孕，是青龙、财爻临着喜神；这家有妻有妾，是内外卦两个财爻都旺相；这家要损妻房（丧妻），是财爻带着官鬼又落空亡。",
+        "en": "The 'how to know' rhyme is a rhyme of questions and answers on the affairs of a household. Four of its questions concern the wife: the wife has misfortune when the White Tiger sits on a moving Peer line and injures Wealth; the wife has conceived when the Azure Dragon and Wealth arrive with a spirit of joy; the household has a wife and concubines when the two Wealth lines, inside and outside, are both strong; the household will lose its wife when the Wealth line carries Pressure and falls into Void."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3566, 3566],
+          "zh": ["何知人家妻有灾？", "虎临兄弟动伤财；", "何知人家妻有孕？", "青龙财临添喜神；", "何知人家有妻妾？", "内外两财旺相决；", "何知人家损妻房？", "财爻带鬼落空亡；"],
+          "yi": ["怎么知道这家的妻子有灾？", "白虎临着兄弟爻发动，伤克财爻；", "怎么知道这家的妻子有孕？", "青龙、财爻临着，再加上喜神；", "怎么知道这家有妻有妾？", "内外卦两个财爻都旺相，就能断定；", "怎么知道这家损了妻房？", "财爻带着官鬼，落到空亡。"],
+          "en": ["How can one know that the wife of a household has misfortune?", "The Tiger on a Peer line, moving, injures Wealth;", "How can one know that the wife has conceived?", "the Azure Dragon and Wealth arrive with a spirit of joy added;", "How can one know that the household has a wife and concubines?", "two Wealth lines, inside and outside, both strong, settle it;", "How can one know that the household loses its wife?", "the Wealth line carries Pressure and falls into Void."] },
+        { "by": "经", "book": "卜筮大全", "range": [9843, 9843],
+          "zh": ["何知人家妻有灾？", "虎临兄弟动伤财。", "何知人家妻有孕？", "青龙财临天喜神。", "何知人家有妻妾？", "内外两财旺相决。", "休知人家损妻房？", "财爻带鬼落空亡。"],
+          "yi": ["怎么知道这家的妻子有灾？", "白虎临着兄弟爻发动，伤克财爻。", "怎么知道这家的妻子有孕？", "青龙、财爻临着天喜这个喜神。", "怎么知道这家有妻有妾？", "内外卦两个财爻都旺相，就能断定。", "（怎么）知道这家损了妻房？", "财爻带着官鬼，落到空亡。"],
+          "en": ["How can one know that the wife of a household has misfortune?", "The Tiger on a Peer line, moving, injures Wealth.", "How can one know that the wife has conceived?", "The Azure Dragon and Wealth arrive with the Tianxi star, a spirit of joy.", "How can one know that the household has a wife and concubines?", "Two Wealth lines, inside and outside, both strong, settle it.", "How can one know that the household loses its wife?", "The Wealth line carries Pressure and falls into Void."] }
+      ],
+      "note": {
+        "yi": "「何知章」一共问了三四十件事（父母有病、有没有子孙、讼事、财富、田地、屋宇、坟墓、六畜、口舌、盗贼……），都是家宅的事；这里只收关于妻子的四问，其余与婚姻无关，不收。「损妻房」就是丧妻。《卜筮大全》本第三问作「青龙财临天喜神」，第四问的头一个字作「休」（应是「何」字之误），《卜筮正宗》本作「添喜神」「何」。",
+        "en": "The 'how to know' rhyme asks thirty or forty things (illness of the parents, whether there are children, lawsuits, wealth, land, houses, graves, livestock, quarrels, thieves and more), all about the household; only the four questions about the wife are taken here, and the rest have nothing to do with marriage. 'Loses its wife' means bereavement. The Bushi Daquan text has 'the Azure Dragon and Wealth arrive with the Tianxi spirit' for the second, and 'xiu' for the first word of the fourth question (a slip for 'he'); the Bushi Zhengzong text has 'an added spirit of joy' and 'he'."
+      },
+      "see": ["LY.MARRY.ZS.25", "LY.MARRY.DYTJ.24", "LY.MARRY.HJC.15", "LY.MARRY.HJC.19"]
+    },
+    {
+      "id": "LY.MARRY.BSZZ.04",
+      "topic": "入赘再嫁",
+      "chapter": "论家宅六爻位置",
+      "chapter_en": "On the positions of the six lines in a household reading",
+      "title": "世临阴位女为政，财爻持世赘为姻；二爻冲克破，当家夫妻少恩情（王洪绪注：财爻持世居五爻阴位是入赘成婚，二爻冲克是夫妇各主张，不是赘婚）",
+      "rule": {
+        "yi": "卜筮正宗论家宅六爻的位置时，有两联和夫妻有关。世爻落在阴位（比如五爻是阴爻），家里是妇人当家；但如果是财爻持世在这个位置，是那个男人入赘去成婚，就不是女人主事。二爻如果被冲、被克、被破，当家的夫妻之间少恩爱，王洪绪注：那是夫妇各有各的主张，不是赘婚的说法。",
+        "en": "In its treatment of the positions of the six lines in a household reading, the Bushi Zhengzong has two couplets touching husband and wife. Self on a yin position (for example the fifth line being a yin line): the woman rules the household; but if it is the Wealth line that holds Self in that place, the man has gone in to marry as a son-in-law, and a woman is not in charge. If the second line is clashed, controlled or broken, the couple who run the household have little affection; Wang Hongxu's note says that then husband and wife each hold their own views, and it is not the reading of a marriage taken in."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3243, 3243],
+          "zh": ["世临阴位女为政，财爻持世赘为姻"],
+          "yi": ["世爻落在阴位，女人当家主事；财爻持世，就是入赘成婚。"],
+          "en": ["Self on a yin position, the woman runs the household; Wealth holding Self, the marriage is one taken in (zhui)."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3243, 3243],
+          "zh": ["如世居五爻，爻是阴位，主其家内降为政主持家事。", "财爻持世居此位，其人赘去为婚，又非女人主事也。"],
+          "yi": ["比如世爻在五爻，这一爻是阴位，主这家里的妇人当家，主持家里的事。", "财爻持世，又在这个位置，那个男人是去入赘成婚，就不是女人主事了。"],
+          "en": ["If Self stands on the fifth line and it is a yin position, the woman in the household rules and manages the family's affairs.", "If Wealth holds Self in this place, the man has gone off to marry in as a son-in-law, and it is then not a woman in charge."] },
+        { "by": "经", "book": "卜筮正宗", "range": [3245, 3245],
+          "zh": ["若是二爻冲克破，当家夫妻少恩情"],
+          "yi": ["如果二爻被冲、被克、被破，当家的夫妻之间少恩爱。"],
+          "en": ["If the second line is clashed, controlled or broken, the couple who run the household have little affection."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3245, 3245],
+          "zh": ["二爻如逢冲克，主夫妇各主张，又非赘婚之论也。"],
+          "yi": ["二爻如果遇上冲克，主夫妻各有各的主张，那就不是入赘婚的说法了。"],
+          "en": ["If the second line meets clash or control, husband and wife each hold their own views, and it is then not a judgment of marrying in."] }
+      ],
+      "note": {
+        "yi": "这两联是家宅里的六爻分位诗（五爻是一家之主、二爻是宅和主妇）中的两句；这一组的其余各联讲屋宇、田、畜、坟、水等，与婚姻无关，没有收。注里的「主其家内降为政」的「降」字在这里说不通，大概是「妇」的误字，译文按「妇人当家」译。",
+        "en": "These are two lines of the rhyme on the positions of the six lines in a household reading (the fifth line as the head of the house, the second as the dwelling and the mistress); the other couplets in the group, on buildings, land, livestock, graves and water, have nothing to do with marriage and are not taken. The word 'jiang' in the note's 'zhu qi jia nei jiang wei zheng' does not read here and is probably a slip for 'fu' (woman); it is translated as the woman ruling the household."
+      },
+      "see": ["LY.MARRY.HJC.46", "LY.MARRY.HJC.50", "LY.MARRY.HJC.52"]
+    }
+  ]
+}

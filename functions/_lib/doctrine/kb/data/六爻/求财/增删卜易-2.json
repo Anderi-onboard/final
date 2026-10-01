@@ -1,0 +1,370 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "增删卜易",
+  "ranges": { "增删卜易": [11258, 11570] },
+  "units": [
+    {
+      "id": "LY.WEALTH.ZS.17",
+      "topic": "买卖",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "财化进神，其价正涨；兄爻持世，破败之端",
+      "rule": {
+        "yi": "财化进神：价正在涨，不可收购囤积；财化退：价将落，有货速卖。兄弟持世或兄弟发动：破财之兆。",
+        "en": "Wealth turning Advancing: the price is rising, do not buy to store; turning Retreating: the price will fall, sell what you hold at once. Peer on the Self line or Peer moving: a sign of losing money."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["财化进神，其价正涨；兄爻持世，破败之端；", "财化进神，价正涨，不可收积；", "化退者，价将落，有货速宜脱卸。", "兄爻持世，及兄动卦中，破财之兆。"],
+          "yi": ["财化进神，价格正在上涨；兄弟持世，是破败的开端；", "财化进神，价正在涨，不可收购囤积；", "财化退神，价格将要下跌，有货赶快卖掉。", "兄弟持世，或兄弟在卦中发动，是破财之兆。"],
+          "en": ["Wealth turning Advancing: the price is rising; Peer on the Self line: the beginning of ruin;", "Wealth turning Advancing: the price is rising, so do not buy in to store;", "turning Retreating: the price will fall, so sell what you hold at once.", "Peer on the Self line, or Peer moving anywhere in the hexagram, is a sign of losing money."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.18",
+      "topic": "心术",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "算甚命？问甚卜？亏人是祸，饶人是福",
+      "rule": {
+        "yi": "义取之财神告显然，不义之财神不告：品行不端的人占财，卦卦兄弟持世、发动，只示破财，不示利与不利（觉子的例子：亏待伙计的人占卖货，占了又占都是兄弟持世，终于折本流落）。",
+        "en": "For money honestly sought the spirits answer plainly; for ill-gotten money they do not: a man of bad conduct asking about money gets Peer on the Self line and moving every time, showing only loss and saying nothing of profit (Juezi's example: a man who cheated his partners asked about selling, got Peer on the Self line again and again, and ended ruined and adrift)."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：算甚命？问甚卜？亏人是祸，饶人是福。", "财将义取者，神告显然。财之不义者，神不告矣。", "昔有一人亏损伙计，独得其利，人人知而詈骂，", "因占货当卖否，卦得兄爻持世，又占不卖何如，又是兄爻持世，占过又占，不离兄动，", "余亦知其此人亏损伙计，而得货抑买，素行不端。", "余悟兄动者破财之兆也，有利无利，神不告之，", "后此人不卖者，其价一日贱似一日，不得不卖，及至急急卖毕，其价大长，", "折本漂流，难回故里，所以丧心之人何须占卜！"],
+          "yi": ["觉子说：算什么命？问什么卜？亏待别人就是祸，宽待别人就是福。", "以正当手段求财的，神明会清楚地告诉；不义之财，神明不告诉。", "从前有个人亏待伙计，独吞利益，人人都知道、都骂他；", "他占货该不该卖，卦得兄弟持世；又占不卖怎样，又是兄弟持世；占了又占，总离不开兄弟发动。", "我也知道这个人亏待伙计，货是压价强买来的，平素品行不端。", "我明白了：兄弟动是破财之兆，至于有利无利，神明不告诉他。", "后来这人不卖，价格一天比一天便宜，不得不卖；等他急急忙忙卖完，价格却大涨；", "他亏了本钱，流落在外，回不了家乡。所以丧尽良心的人何必占卜！"],
+          "en": ["Juezi says: why tell fortunes? Why divine? To wrong others is misfortune; to spare them is fortune.", "For money sought honestly, the spirits answer plainly; for money sought unjustly, they do not answer.", "There was once a man who cheated his partners and kept the profit for himself; everyone knew and cursed him.", "He asked whether to sell the goods: the Peer line on the Self line; he asked what if he did not sell: the Peer line on the Self line again; ask as he might, Peer kept moving.", "I too knew he had cheated his partners and got the goods by forced buying, a man of bad conduct.", "I understood: the moving Peer was the sign of losing money, and whether there would be profit the spirits would not tell him.", "Afterwards he held on and the price fell day by day until he had to sell; as soon as he had hurriedly sold out, the price shot up;", "he lost his capital and drifted, unable to go home. So what need has a heartless man of divination!"] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.19",
+      "topic": "应期",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "财值旺衰墓绝，自有得令之秋；妻逢破克伏空，岂无乘除之日",
+      "rule": {
+        "yi": "货物何时得价：财太旺→墓库之月；休囚→生旺之时；入墓→冲开；逢绝→生旺；月破→填实；被克→冲去克神之时；伏藏→出现之时；旬空→冲空、实空之月；被合→冲开。觉子：财受克要分有根无根——有根者冲去克神即得价，无根者财命两伤（书中例：归妹之兑、复之颐、家人之小畜）。",
+        "en": "When goods fetch a price: over-strong Wealth, its tomb month; resting or trapped, its time of birth and strength; entombed, when clashed open; extinguished, at birth and strength; under a Month-break, when filled in; controlled, when the controller is clashed away; hidden, when it appears; void, in the month that clashes or fills the void; combined, when clashed open. Juezi: a controlled Wealth must be judged by its root; rooted, it gains once the controller is clashed away; rootless, both money and life may be lost (cases: Guimei to Dui, Fu to Yi, Jiaren to Xiaoxu)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["财值旺衰墓绝，自有得令之秋；妻逢破克伏空，岂无乘除之日。", "财太旺者，得利于墓库之月；休囚者，出脱于生旺之时。", "入墓必待冲开，遇绝宜逢生旺。", "月破者，填实之候；被克者，冲去克神之秋；", "伏藏者，得价于出现之时；旬空者，冲空、实空之月。", "财逢合住，亦待冲开。"],
+          "yi": ["财爻无论旺、衰、墓、绝，自有它得时的时候；妻财逢破、受克、伏藏、落空，哪会没有消长转机的日子。", "财太旺的，在墓库之月得利；休囚的，在生旺之时卖出。", "入墓的一定要等冲开，逢绝的宜等生旺。", "月破的，等填实之时；受克的，等冲去克神的时候；", "伏藏的，在出现之时得价；旬空的，在冲空、实空的月份。", "财被合住，也要等冲开。"],
+          "en": ["Whether Wealth is strong, weak, entombed or extinguished, it has its season; whether it is broken, controlled, hidden or void, it has its day of reckoning.", "Over-strong Wealth profits in its tomb month; resting or trapped Wealth sells in its time of birth and strength.", "Entombed, wait for the clash that opens it; extinguished, wait for birth and strength.", "Under a Month-break: when it is filled in; controlled: when the controlling line is clashed away;", "hidden: it fetches its price when it appears; void: in the month that clashes or fills the void.", "Wealth held by a combination also waits to be clashed open."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：子月己丑日(旬空：午未)，占货何时得价？得“归妹之兑”"],
+          "yi": ["例：子月己丑日（旬空午、未），占货物什么时候得价，得归妹卦变兑卦。"],
+          "en": ["Case: Zi month, Jichou day (void: Wu and Wei); when would the goods fetch a price? The hexagram Guimei changing to Dui."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：卯木财爻，子月生之，财有根蒂，", "目下不得价者，被申金动而克制之故也，", "待寅月冲去申金，其价必涨。", "果于正月勃然大涨，此乃财爻被克，冲去克神之月也。"],
+          "yi": ["断语：卯木财爻，子月生它，财有根；", "眼下卖不上价，是因为申金发动克制它；", "等到寅月冲去申金，价格一定上涨。", "果然在正月猛然大涨，这就是财爻被克、在冲去克神之月得价。"],
+          "en": ["Judgment: the Mao Wood Wealth line was generated by the Zi month, so the money had a root;", "it fetched no price for now because the Shen Metal line was moving and controlling it;", "when the Yin month clashed the Shen Metal away, the price would rise.", "Indeed it leapt up in the first month: a controlled Wealth line, priced in the month that clashed the controller away."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["又如：巳月戊申日(旬空：寅卯)，占买台连纸有利否？得“复之颐”"],
+          "yi": ["又例：巳月戊申日（旬空寅、卯），占买台连纸有没有利，得复卦变颐卦。"],
+          "en": ["Another case: Si month, Wushen day (void: Yin and Mao); would buying Tailian paper profit? The hexagram Fu changing to Yi."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：子水财爻持世，日辰生之，酉金动而生之，", "但嫌金水逢于夏令，元神用神俱值休囚，", "秋冬必长，有纸多收。", "果于堆时每块九钱，后卖至三两六七，此乃财值休囚，出脱于生旺之时也。"],
+          "yi": ["断语：子水财爻持世，日辰生它，酉金发动也生它，", "只是金、水遇上夏令，原神和用神都休囚，", "到秋冬一定涨价，有纸就多收。", "果然囤的时候每块九钱，后来卖到三两六七钱。这就是财爻休囚，在生旺之时卖出。"],
+          "en": ["Judgment: the Zi Water Wealth line sat on the Self line, generated by the Day and by the moving You Metal line;", "but Metal and Water were out of season in summer, so both the Support and the Subject were resting or trapped;", "in autumn and winter the price would surely rise: buy all the paper you can.", "Indeed he stored it at nine qian a block and later sold at three taels six or seven: Wealth resting or trapped, sold in its time of birth and strength."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["卯月乙未日(旬空：辰巳)，占卖货，得“家人之小畜”"],
+          "yi": ["例：卯月乙未日（旬空辰、巳），占卖货，得家人卦变小畜卦。"],
+          "en": ["Case: Mao month, Yiwei day (void: Chen and Si); selling goods; the hexagram Jiaren changing to Xiaoxu."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：丑财持世，月克日冲，又化回头之克，", "不独财爻被克，而世爻亦被冲伤，", "六月世临月破，不独破财，且防不测。", "果于六月回禄，货成灰烬，身被火伤，阅七日而死。"],
+          "yi": ["断语：丑土财持世，月建克它、日辰冲它，又化出回头克，", "不只是财爻被克，世爻也被冲伤；", "到六月世爻逢月破，不只破财，还要防意外。", "果然六月遭火灾，货物烧成灰，人被火烧伤，过了七天就死了。"],
+          "en": ["Judgment: the Chou Wealth sat on the Self line, controlled by the Month, clashed by the Day, and turning into something that controlled it;", "not only was the Wealth line controlled, the Self line too was clashed and hurt;", "in the sixth month the Self line would be under a Month-break: not only loss of money, but beware of disaster.", "Indeed in the sixth month fire broke out; the goods burned to ashes, he was burned, and died seven days later."] },
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：归妹与小畜两卦皆是财爻受克，", "前卯木之财有子月之生，谓之有根，所以逢寅月冲去克神而得财；", "后卦丑财并无生扶，谓之无根，所以财命两伤，", "岂可亦许冲去克神之月而旺耶？所以断卦贵乎周详通变也。"],
+          "yi": ["觉子说：归妹、小畜两卦都是财爻受克，", "前一卦卯木财有子月生它，叫有根，所以逢寅月冲去克神就得财；", "后一卦丑财没有任何生扶，叫无根，所以钱和命都伤了；", "怎么能也断它到冲去克神之月就旺呢？所以断卦贵在周详变通。"],
+          "en": ["Juezi says: in both the Guimei and the Xiaoxu hexagrams the Wealth line was controlled;", "in the first, the Mao Wood Wealth was generated by the Zi month, which is called having a root, so it gained when the Yin month clashed its controller away;", "in the second, the Chou Wealth had no generation or support at all, which is called rootless, so both money and life were lost;", "how could one also promise it a revival when its controller is clashed away? So a reading must be thorough and flexible."] }
+      ],
+      "see": ["LY.WEALTH.HJC.25", "LY.WEALTH.HJC.26"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.20",
+      "topic": "应期",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "财逢合而当遇",
+      "rule": {
+        "yi": "财逢合正当时：应爻发动而在逢合之月得价，或财衰静而占时得日月生合，价眼下正好（书中例：贲卦，财逢月合，速去卖，得价一倍多）。",
+        "en": "Wealth meeting a combination: the moment has come; either the moving Other line gets its price in the month that combines with it, or a weak still Wealth is generated or combined by the Day and Month at the time of casting and the price is right now (case: the hexagram Bi, Wealth combined by the Month; he went at once and sold at more than double)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["财逢合而当遇。", "合者，有应动而逢合之月而得价者，", "亦有财爻衰静，占时得遇日月生合，其价目下正及时者。"],
+          "yi": ["财爻逢合，正当其时。", "所谓合，有应爻发动、在逢合之月得价的，", "也有财爻衰弱安静，占时正好遇日月生合，价格眼下正是时候的。"],
+          "en": ["Wealth meeting a combination: the moment has come.", "Combination here means either the Other line moving and the price coming in the month that combines with it,", "or a weak, still Wealth line that at the time of casting is generated or combined by the Day and Month, so the price is right now."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：寅月己酉日(旬空：寅卯)，占脱货于何时？得“山火贲”"],
+          "yi": ["例：寅月己酉日（旬空寅、卯），占货什么时候卖出，得山火贲卦。"],
+          "en": ["Case: Yin month, Jiyou day (void: Yin and Mao); when to sell the goods? The hexagram Shanhuo Bi."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：亥水财爻，酉日生之，寅月合之，目下正及时也。", "但因世爻暗动，身动方可脱卸。", "彼曰：“我闻某处得价，正欲移货去卖，不知可否？”", "余曰：“卦已明现，速宜行之。”", "果去不数日，得价倍余。此乃爻逢六合，财逢月合，及时而脱货也。"],
+          "yi": ["断语：亥水财爻，酉日生它，寅月合它，眼下正是时候。", "只因为世爻暗动，人要动身才能卖掉。", "他说：「我听说某地价钱好，正想把货运过去卖，不知道行不行？」", "我说：「卦已经显示得很清楚，赶快去。」", "他果然去了没几天，卖得的价比原来高出一倍多。这是爻逢六合、财逢月合，及时卖出。"],
+          "en": ["Judgment: the Hai Water Wealth line was generated by the You day and combined by the Yin month: now was the time.", "But since the Self line was stirred by a hidden clash, he would have to set out to sell.", "He said: 'I hear the price is good in a certain place; I was about to move the goods there to sell. Should I?'", "I said: 'The hexagram shows it plainly; go at once.'", "He went, and within a few days sold at more than double. The lines were in Six-Combine and Wealth was combined by the Month: the goods were sold at the right time."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.21",
+      "topic": "应期",
+      "chapter": "囤货卖货章",
+      "chapter_en": "Stockpiling and selling goods",
+      "title": "财逢冲而当起",
+      "rule": {
+        "yi": "财旺而静或旺而空，被占日的日辰冲：价渐涨；财静而休囚被日冲是日破，不作起价论。",
+        "en": "A strong Wealth that is still, or strong but void, clashed by the Day of casting: the price will gradually rise. A still, resting or trapped Wealth clashed by the Day is broken, and must not be read this way."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["财逢冲而当起。", "财旺而静，或旺而空，得占日之日辰冲者，其价渐渐涨矣。", "倘静而休囚，日冲则为破也，勿以此断。"],
+          "yi": ["财爻逢冲，应当起价。", "财爻旺而安静，或旺而落空，被占卦那天的日辰冲，价格会渐渐上涨。", "如果安静而休囚，被日辰冲就是破，不能这样断。"],
+          "en": ["Wealth meeting a clash: it should rise.", "A strong Wealth that is still, or strong but void, clashed by the Day of casting: the price will gradually rise.", "But if it is still and resting or trapped, the Day's clash breaks it; do not read it this way."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.22",
+      "topic": "买卖",
+      "chapter": "卖货宜守宜动章",
+      "chapter_en": "Selling goods: stay or move",
+      "title": "内财衰而外财旺，宜往他乡",
+      "rule": {
+        "yi": "内卦财衰、外卦财旺，或外卦财旺而生合世爻、持世：宜到外地卖。财不生合世爻或世爻动而化凶：外地再好，我去也遇不上。",
+        "en": "Wealth weak in the inner trigram and strong in the outer, or strong in the outer and generating, combining with or sitting on the Self line: sell elsewhere. If Wealth does not generate or combine with the Self line, or the Self line moves into harm, however good the other place, you will not find your spring there."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["内财衰而外财旺，宜往他乡。", "外卦财旺，生合世爻及持世者，宜往他乡。", "倘财不生合世爻，及世动化凶者，他乡花似锦，我去不逢春。"],
+          "yi": ["内卦财衰而外卦财旺，宜到外地去。", "外卦财旺，生合世爻或持世，宜到外地去。", "如果财不生合世爻，或世爻动而化凶，外地再繁华，我去了也遇不上好时候。"],
+          "en": ["Wealth weak in the inner trigram and strong in the outer: go elsewhere.", "Wealth strong in the outer trigram, generating or combining with the Self line or sitting on it: go elsewhere.", "But if Wealth does not generate or combine with the Self line, or the Self line moves into something harmful, the other place may bloom like brocade, yet I will not find spring there."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.23",
+      "topic": "买卖",
+      "chapter": "卖货宜守宜动章",
+      "chapter_en": "Selling goods: stay or move",
+      "title": "六冲须要别图，六合还宜坐守",
+      "rule": {
+        "yi": "卖货守还是动：旧说六冲宜另图、六合宜坐守；野鹤屡验：六冲而财旺不必改、财衰改也无益，应再占「更改如何」，财世两旺许改，衰则耐守；六合也看财爻：财持世而动不可坐守，衰而静则守待旺时。",
+        "en": "Selling, stay or move: the old rule says Six-Clash, change plans; Six-Combine, stay put. Yehe tested it: with a Six-Clash and Wealth strong there is no need to change, with Wealth weak changing does not help; cast again asking 'what if I change', and allow it only if Wealth and the Self line are both strong, otherwise wait. With a Six-Combine, look at Wealth too: on the Self line and moving, do not sit still; weak and still, wait for its season."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["六冲须要别图，六合还宜坐守。", "卦得六冲，虽宜改图，余屡试之，财旺者无须更改，财衰者改亦无益。"],
+          "yi": ["得六冲卦要另作打算，得六合卦还是宜坐守。", "卦得六冲，虽说宜改变打算，我屡次验证：财旺的不必更改，财衰的改了也没用。"],
+          "en": ["A Six-Clash hexagram calls for another plan; a Six-Combine one, for staying put.", "With a Six-Clash hexagram one should change plans, they say; but I have tested it often: with Wealth strong there is no need to change, with Wealth weak changing does not help."] },
+        { "by": "野鹤", "book": "增删卜易",
+          "zh": ["野鹤曰：凡得此象，须令其再占，问更改何如？", "卦得财世两旺，许之改图；再逢衰者，且须耐守。", "卦得六合，亦看财爻衰旺。", "财持世而动者，不可坐守；衰而静者，守待旺时。"],
+          "yi": ["野鹤说：凡是得这种卦，要让他再占一卦，问改了怎么样。", "卦得财、世两旺，就许他改；再遇衰的，暂且耐心守着。", "卦得六合，也要看财爻衰旺。", "财持世而动的，不可坐守；财衰而静的，守着等它旺的时候。"],
+          "en": ["Yehe says: whenever this appears, have him cast again and ask what changing would bring.", "If Wealth and the Self line are both strong, let him change; if weak again, he must wait patiently.", "With a Six-Combine hexagram, still look at the strength of the Wealth line.", "Wealth on the Self line and moving: do not sit and wait; weak and still: wait for its strong season."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.24",
+      "topic": "买卖",
+      "chapter": "卖货宜守宜动章",
+      "chapter_en": "Selling goods: stay or move",
+      "title": "财衰变旺，先屈后伸；财旺变衰，先金后土",
+      "rule": {
+        "yi": "财衰动变旺：眼下贱、将来涨；财旺动变衰：卖要急、买不可收。财爻旺时卖，衰时买。内卦财衰外卖，世临旺财近卖；财化进神往外发卖，世爻化退回近处出脱。",
+        "en": "A weak Wealth moving into strength: cheap now, dearer later; a strong Wealth moving into weakness: sell fast, do not buy. Sell when Wealth is strong, buy when it is weak. Wealth weak in the inner trigram, sell elsewhere; a strong Wealth on the Self line, sell near home; Wealth turning Advancing, go further afield; the Self line turning Retreating, come back and sell nearby."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["财衰变旺，先屈后体；财旺变衰，先金后土。", "谓财爻动而变也。", "财衰动变旺相，目下虽贱，而将来必长；", "财旺动变衰绝，如若卖货，宜于急卖；如果收货，切不可收。", "买货与卖货相反，财爻旺而可卖，财爻衰而宜买。", "内卦财衰，宜于外卖；世爻财旺，近地相宜。", "财化进神，宜往外方发卖；世爻化退，宜回近地出脱。"],
+          "yi": ["财由衰变旺，先屈后伸；财由旺变衰，先贵后贱（先是金，后是土）。", "说的是财爻动而变。", "财衰而动变旺相，眼下虽然贱，将来一定涨；", "财旺而动变衰绝，如果卖货，宜赶紧卖；如果收货，千万不可收。", "买货和卖货相反：财爻旺时可以卖，财爻衰时宜买。", "内卦财衰，宜到外地卖；世爻临财而旺，就近卖合适。", "财化进神，宜往外地发卖；世爻化退，宜回到近处卖掉。"],
+          "en": ["Wealth changing from weak to strong: bent first, then straightened; from strong to weak: gold first, then dirt.", "This refers to the Wealth line moving and changing.", "A weak Wealth moving into strength: cheap now, bound to rise later;", "a strong Wealth moving into weakness or extinction: if selling, sell quickly; if buying, do not buy.", "Buying is the reverse of selling: sell when the Wealth line is strong, buy when it is weak.", "Wealth weak in the inner trigram: sell elsewhere; strong Wealth on the Self line: sell near home.", "Wealth turning Advancing: go further afield to sell; the Self line turning Retreating: come back and sell nearby."] }
+      ],
+      "note": {
+        "yi": "「先屈后体」的「体」，按上下文当是「伸」（先屈后伸）；原文照录，标题按意思写作「先屈后伸」。",
+        "en": "The text reads 'bent first, then ti'; from the context ti stands for shen (straightened). We quote it as written and give the sense in the title."
+      }
+    },
+    {
+      "id": "LY.WEALTH.ZS.25",
+      "topic": "买卖",
+      "chapter": "往何方买卖章",
+      "chapter_en": "Which way to go to trade",
+      "title": "往何方买卖：古法屡试不验，须指其方而卜之",
+      "rule": {
+        "yi": "往何方买卖：古法有推方位的说法，野鹤屡试不验；要指明去哪个地方单独起卦（书中例：往楚买豆，财休囚在外卦主那里货贱，日建生世主厚利，间爻兄弟旺主耗费；后果如此）。",
+        "en": "Which way to trade: the old methods have rules for finding the direction, but Yehe found they fail; name the place and cast for it (case: going to Chu to buy beans, Wealth resting in the outer trigram meant cheap goods there, the Day generating the Self line meant rich profit, a strong between-line Peer meant heavy expenses; all came true)."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易",
+          "zh": ["野鹤曰：古法有之，屡试不验，须指其方而卜之。"],
+          "yi": ["野鹤说：古法里有（推往何方有利的）说法，屡试不灵，一定要指明哪个地方来卜。"],
+          "en": ["Yehe says: the old methods have rules for this, but they fail when tested; you must name the place and divine for it."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：午月戊子日(旬空：午未)，占往楚买豆，得“地泽临”"],
+          "yi": ["例：午月戊子日（旬空午、未），占去楚地买豆子，得地泽临卦。"],
+          "en": ["Case: Wu month, Wuzi day (void: Wu and Wei); going to Chu to buy beans; the hexagram Dize Lin."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：亥水财爻，休囚于外，楚豆必贱，", "子水日建而生世爻，必得厚利，宜速行之，", "但嫌间爻兄弟月生日合，耗费者多。", "后果牙人作弊，鸣之于官，迟误一月，花费些须。", "幸到地头，其价大涨，得厚利而归。此乃指地而占，无有不验者如此。"],
+          "yi": ["断语：亥水财爻，在外卦而休囚，楚地的豆子一定便宜；", "子水是日建，又生世爻，一定得厚利，宜赶快去；", "只嫌间爻兄弟被月建生、日辰合，花费会多。", "后来果然牙人作弊，告到官府，耽误了一个月，花了些钱。", "好在到了地头，价格大涨，得了厚利回来。这就是指明地方来占，没有不灵验的。"],
+          "en": ["Judgment: the Hai Water Wealth line was resting or trapped in the outer trigram, so beans in Chu must be cheap;", "the Zi Water Day generated the Self line, so a rich profit was certain; go quickly;", "but the between-line Peer was generated by the Month and combined by the Day, so expenses would be heavy.", "In the event the broker cheated, the matter went to the officials, a month was lost, and some money spent.", "Luckily, when he reached his destination the price had soared and he came back with a rich profit. That is divining for a named place: it never fails."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.26",
+      "topic": "买卖",
+      "chapter": "买何货为吉章",
+      "chapter_en": "Which goods to buy",
+      "title": "买何货为吉：揣摩五行之论，屡试不验",
+      "rule": {
+        "yi": "买什么货：古法以财爻五行、六神定货类（金珠宝、水鱼盐、火陶冶果实、木竹木、土五谷；青龙喜庆、白虎丧葬屠宰等），野鹤认为是揣摩之论、屡试不验；要指定某一货物单独占（书中例：旅卦六合、世应相生，只断此行顺遂，不断买何物，后买檀香翠羽都获大利）。",
+        "en": "Which goods to buy: the old method reads the goods from the element and spirit of the Wealth line (Metal jewels, Water fish and salt, Fire pottery and fruit, Wood timber, Earth grain; Azure Dragon festive goods, White Tiger funeral and butchery goods, and so on); Yehe holds this speculation that fails when tested; name a particular kind of goods and cast for it (case: the hexagram Lü in Six-Combine with Self and Other generating, read only as 'the journey will go well'; he bought sandalwood and kingfisher feathers and profited on both)."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易",
+          "zh": ["野鹤曰：古以金财而像珠宝玉石，水财以类鱼盐，火财陶冶果实，木财竹木，土财五谷。", "青龙木利，又兼喜庆之用；白虎金财，丧仪屠宰之物；玄武水利；朱雀火宜；螣蛇利于出入；勾陈利于农工。", "余以为此乃揣摩五行之论，非经验者也，屡试不验，间有验者，亦偶尔凑合耳，不可为法，", "必须意属何类，指其事而占之，方能有效。"],
+          "yi": ["野鹤说：古法以金财象珠宝玉石，水财象鱼盐，火财象陶冶和果实，木财象竹木，土财象五谷。", "青龙利木，又兼喜庆用品；白虎金财，是丧葬、屠宰用物；玄武利水；朱雀宜火；螣蛇利于进出买卖；勾陈利于农工。", "我认为这是揣摩五行的推论，不是验证过的，屡试不灵，偶尔灵了也只是碰巧，不能当法则；", "一定要心里想好是哪一类货，指明这件事来占，才会灵验。"],
+          "en": ["Yehe says: the old method took Metal Wealth for jewels, pearls and jade, Water Wealth for fish and salt, Fire Wealth for pottery, smelting and fruit, Wood Wealth for bamboo and timber, Earth Wealth for grain.", "The Azure Dragon favours wood and festive goods; the White Tiger with Metal Wealth, funeral and butchery goods; the Dark Tortoise favours water; the Vermilion Bird, fire; the Coiling Snake, buying and selling; the Hook Earth, farming and crafts.", "I hold this to be speculation from the five elements, not experience; tested again and again it fails, and when it works it is chance; it cannot be a rule;", "you must decide which kind of goods you mean and divine for that specific thing; only then does it work."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：未月戊申日(旬空：寅卯)，占往东粤探亲，可带何货归来得利？得“火山旅”"],
+          "yi": ["例：未月戊申日（旬空寅、卯），占去广东探亲，可以带什么货回来得利，得火山旅卦。"],
+          "en": ["Case: Wei month, Wushen day (void: Yin and Mao); visiting relatives in eastern Guangdong, which goods to bring back for profit? The hexagram Huoshan Lü."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：爻逢六合，世应相生，此行遂意。", "如问应买何物，余无此法，不敢相误，", "但喜既得吉卦，任尔冬月卖扇，夏天卖毡，亦得厚利。", "后此人买檀香翠羽而归，俱获大利。", "若执古法而断者，则此卦酉金为财，可买珠宝玉石耶？财临玄武，可买水利鱼盐耶？"],
+          "yi": ["断语：爻逢六合，世应相生，这一趟会顺利。", "如果问该买什么东西，我没有这个方法，不敢误导你；", "但既然得了吉卦，任凭你冬天卖扇、夏天卖毡，也能得厚利。", "后来这个人买了檀香、翠鸟羽毛回来，都获了大利。", "如果死守古法来断，这一卦酉金是财，难道该买珠宝玉石？财临玄武，难道该买鱼盐？"],
+          "en": ["Judgment: the lines are in Six-Combine and Self and Other generate each other; the journey will go as wished.", "If you ask what to buy, I have no method for it and will not mislead you;", "but since the hexagram is good, you could sell fans in winter or felt in summer and still profit.", "He came back with sandalwood and kingfisher feathers and profited on both.", "Had one held to the old method, this hexagram's You Metal is Wealth: should he have bought jewels and jade? Wealth on the Dark Tortoise: should he have bought fish and salt?"] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.27",
+      "topic": "借贷",
+      "chapter": "借贷章",
+      "chapter_en": "Borrowing",
+      "title": "世逢兄，何须开口；应空破，难遂我心",
+      "rule": {
+        "yi": "借贷：世临兄弟不必开口；应爻空破难遂意；财空破休指望；子孙兴、财发动可求；世应都不宜月破旬空；兄弟不可临世或发动。书中例：兄动化退，而明日辰日合住兄爻，借款于辰日到手。",
+        "en": "Borrowing: Peer on the Self line, do not bother asking; the Other line void or broken, you will not get your wish; Wealth void or broken, no hope; Output stirring and Wealth moving, ask; neither Self nor Other should be under a Month-break or void; Peer must not sit on the Self line or move. Case: the moving Peer turned Retreating, and the next day, a Chen day, combined with and held it; the loan came that day."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["世逢兄，何须开口；应空破，难遂我心。", "财如空破休指望，子兴财发可相求。", "世应两爻，皆不宜月破旬空；", "兄弟一爻，断不可临身及动。"],
+          "yi": ["世爻临兄弟，何必开口；应爻空破，难以如愿。", "财如果空破，别指望；子孙兴、财爻发动，可以去求。", "世、应两爻，都不宜月破、旬空；", "兄弟这一爻，绝不能临世（身）或发动。"],
+          "en": ["Peer on the Self line: why even ask? The Other line void or broken: you will not get what you want.", "Wealth void or broken: do not hope; Output stirring and Wealth moving: go and ask.", "Neither the Self nor the Other line should be under a Month-break or void;", "and the Peer line must on no account sit on the Self line or move."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：未月丁卯日(旬空：戌亥)，占借贷，得“兑之震”"],
+          "yi": ["例：未月丁卯日（旬空戌、亥），占借贷，得兑卦变震卦。"],
+          "en": ["Case: Wei month, Dingmao day (void: Xu and Hai); borrowing money; the hexagram Dui changing to Zhen."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：兑卦属金，变震卦属木，金克木为财，", "卯木财爻化退，酉金兄动亦化退，", "幸得财临日辰，旺而不退，明日辰日合住酉爻，必得。", "果得于辰日，此乃酉金兄爻得辰日合住，不能克其财也。"],
+          "yi": ["断语：兑卦属金，变出的震卦属木，金克木，木是财；", "卯木财爻化退，酉金兄弟发动也化退；", "幸好财临日辰（卯日），旺而不算退；明天辰日合住酉爻，一定能借到。", "果然在辰日借到，这是酉金兄弟被辰日合住，不能克财。"],
+          "en": ["Judgment: Dui is Metal and it changed into Zhen, Wood; Metal controls Wood, so Wood is Wealth;", "the Mao Wood Wealth line turned Retreating, and the moving You Metal Peer turned Retreating too;", "fortunately the Wealth was on the Day branch, strong and not really retreating; the next day, a Chen day, would combine with and hold the You line, so the loan would come.", "It came on the Chen day: the You Metal Peer line was held by the Chen day and could not control the Wealth."] }
+      ],
+      "see": ["LY.WEALTH.HJC.33"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.28",
+      "topic": "借贷",
+      "chapter": "放债索债章",
+      "chapter_en": "Lending and collecting debts",
+      "title": "兄临世，放则无还；应临兄，索则不获",
+      "rule": {
+        "yi": "放债、索债：兄弟持世，放出去收不回；应临兄弟，去讨讨不到（「世应同人」两头都忌）；应临官鬼克世，防负义，好意成恶意；应临财生世，对方守信。",
+        "en": "Lending and collecting: Peer on the Self line, what you lend does not come back; Peer on the Other line, what you ask for you do not get ('both Self and Other Peer' is feared at either end); the Other on Pressure controlling the Self line, beware of ingratitude, goodwill turning to ill will; the Other on Wealth generating the Self line, he will keep faith."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["兄临世，放则无还；应临兄，索则不获。", "应鬼克身防负义，应财生世定怀忠。", "古以世应同人，放债必然连本折，谓不独世临兄弟忌之，即应临兄弟亦忌。", "官鬼克身，美意终成恶意。"],
+          "yi": ["兄弟持世，放出去的债收不回；应临兄弟，去讨也讨不到。", "应爻临官鬼来克世，要防对方忘恩负义；应爻临财来生世，对方一定忠厚守信。", "古法说「世应同人，放债必然连本折」，意思是不只世临兄弟忌，应临兄弟也忌。", "官鬼克世，好意最后也会变成恶意。"],
+          "en": ["Peer on the Self line: lend and it will not come back; Peer on the Other line: ask for repayment and you will not get it.", "The Other on Pressure controlling the Self line: beware of ingratitude; the Other on Wealth generating the Self line: he will be loyal.", "The old rule 'Self and Other both Peer: lending loses even the principal' means that not only Peer on the Self line is feared but Peer on the Other line as well.", "Pressure controlling the Self line: goodwill ends as ill will."] }
+      ],
+      "see": ["LY.WEALTH.HJC.31"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.29",
+      "topic": "畜养渔猎",
+      "chapter": "买卖六畜章",
+      "chapter_en": "Buying and selling livestock",
+      "title": "不拘家禽野兽，皆以子孙为用神，兼看财爻",
+      "rule": {
+        "yi": "买卖、饲养六畜（家畜野兽）以子孙为用神，兼看财爻：财持世而子孙动来生、日月生助，或财化子孙，大利；子孙持世、财合世也有利。防鬼化子、子化鬼、父化子、子化父、父兄持世、财临空破（书中例：子孙动变鬼、又临月破，贩马多死，幸财暗动生世，未大亏本）。",
+        "en": "Livestock, bought, sold or raised, domestic or wild: Output is the Subject, with Wealth considered too. Wealth on the Self line fed by a moving Output or by the Day and Month, or Wealth turning into Output, great profit; Output on the Self line with Wealth combining, profit too. Beware of Pressure turning into Output or the reverse, Resource turning into Output or the reverse, Resource or Peer on the Self line, Wealth void or broken (case: Output moving into Pressure and under a Month-break; most of the horses died on the road, but a hidden-stirred Wealth generating the Self line saved the capital)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["山野兽禽，须寻福德；家畜牛犬，亦看子孙。", "不拘家禽野兽，皆以子孙为用神，兼看财爻。", "财持世，子动生之，或日月生助，或财动化子，乃吉象也，", "无分买卖畜养，多多益善，大有利益。", "子孙持世，财爻合世，亦有利益。", "独防鬼变子孙、子孙变鬼、父化子、子化父、父兄持世、财临空破，必有损害。"],
+          "yi": ["山野的鸟兽，要看子孙；家里的牛狗牲畜，也看子孙。", "不论家禽野兽，都以子孙为用神，同时看财爻。", "财持世，子孙动来生它，或日月生助它，或财动化子孙，是吉象；", "不论买卖还是饲养，越多越好，大有利益。", "子孙持世、财爻合世，也有利益。", "只防官鬼变子孙、子孙变官鬼、父母化子孙、子孙化父母、父母兄弟持世、财临空破，一定有损害。"],
+          "en": ["Wild birds and beasts: look for Output; domestic cattle and dogs: also Output.", "Domestic or wild, Output is the Subject, with the Wealth line considered too.", "Wealth on the Self line with Output moving to generate it, or the Day and Month helping it, or Wealth moving into Output: a good sign;", "whether trading or raising, the more the better; great profit.", "Output on the Self line with the Wealth line combining with it also profits.", "Beware only of Pressure turning into Output, Output into Pressure, Resource into Output, Output into Resource, Resource or Peer on the Self line, or Wealth void or broken: there will certainly be losses."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：丑月丁卯日(旬空：戌亥)，占买马往南地贩卖，得“鼎之大有”"],
+          "yi": ["例：丑月丁卯日（旬空戌、亥），占买马到南方去贩卖，得鼎卦变大有卦。"],
+          "en": ["Case: Chou month, Dingmao day (void: Xu and Hai); buying horses to sell in the south; the hexagram Ding changing to Dayou."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：内卦子孙虽临月建，不宜动而变鬼；", "外卦未土子孙又临月破，不宜买也。", "幸而间爻酉财暗动生世，马虽多死，财不致于大耗。", "后果买马七十余匹，一路多死，仅存二十八匹，幸而得价，不致大亏其本。"],
+          "yi": ["断语：内卦的子孙虽然临月建，却不宜动而变出官鬼；", "外卦未土子孙又临月破，不宜买。", "幸好间爻酉金财暗动生世，马虽然会死很多，钱不至于大亏。", "后来果然买了七十多匹马，一路上死了很多，只剩二十八匹，幸好卖上了价，没有大亏本钱。"],
+          "en": ["Judgment: the Output line in the inner trigram, though on the Month branch, should not have moved into Pressure;", "the Wei Earth Output in the outer trigram was under a Month-break: do not buy.", "Luckily the You Wealth on the between lines was stirred by a hidden clash and generated the Self line: many horses would die, but the money would not be badly lost.", "He bought over seventy horses; many died on the road and only twenty-eight survived, but they fetched a good price and the capital was not badly lost."] }
+      ],
+      "see": ["LY.WEALTH.HJC.30"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.30",
+      "topic": "博戏",
+      "chapter": "博戏章",
+      "chapter_en": "Gambling and contests",
+      "title": "技斗力斗首重世应，禽鸟斗者专重子孙",
+      "rule": {
+        "yi": "博戏：比技、比力看世应，赌钱兼看财爻；世临日月、财得日月生扶、世动化吉、应带财生世，我胜，反之他胜；兄动破财，鬼克世有灾。斗禽专看子孙：旺者胜；休囚空破、受克害刑冲，或卦中父母动，多败（书中例：父母当令的巳午时斗，大败）。",
+        "en": "Contests: skill or strength, read Self and Other; with money staked, the Wealth line too. The Self on the Day or Month branch, Wealth supported by them, the Self moving into good, the Other carrying Wealth and generating the Self: I win; the reverse, he wins. Peer moving, money lost; Pressure controlling the Self, disaster. Bird fights: Output alone; strong wins; resting, trapped, void, broken, controlled, clashed, or Resource moving in the hexagram, mostly loses (case: fighting at the hours when Resource was in season, a heavy defeat)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["有技斗、力斗，首重世应，若以财斗者，兼用财爻。", "世喜临于日月，财宜日月生扶，", "世爻动而化吉，应带财而生世，皆我胜也；反此者，必系他赢。", "兄动卦中，破财之兆；鬼爻克世，灾祸相侵。", "有禽鸟斗者，专重子孙，子孙旺者，必胜；", "休囚空破，或被克害刑冲，及卦中父动者，多被其伤。"],
+          "yi": ["比技艺、比力气，首先看世应；如果是赌钱，同时看财爻。", "世爻喜临日月，财爻宜得日月生扶；", "世爻动而化吉，应爻带财来生世，都是我赢；相反的，一定是对方赢。", "兄弟在卦中发动，是破财之兆；官鬼克世，灾祸临身。", "斗鸟斗禽的，专看子孙，子孙旺的一定赢；", "子孙休囚空破，或受克害刑冲，以及卦中父母发动的，多半被对方所伤。"],
+          "en": ["In contests of skill or strength, look first at Self and Other; if money is staked, look at the Wealth line too.", "The Self line is best on the Day or Month branch, Wealth best generated or supported by them;", "the Self line moving into something good, or the Other line carrying Wealth and generating the Self: I win; the reverse, he wins.", "Peer moving in the hexagram: a sign of losing money; the Pressure line controlling the Self line: disaster.", "For fights between birds, look only at Output: strong Output wins;", "resting, trapped, void or broken, or controlled, harmed, punished or clashed, or with Resource moving in the hexagram, it will mostly be hurt."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["如：巳月戊申日(旬空：寅卯)，占斗鹌鹑，得“渐之巽”"],
+          "yi": ["例：巳月戊申日（旬空寅、卯），占斗鹌鹑，得渐卦变巽卦。"],
+          "en": ["Case: Si month, Wushen day (void: Yin and Mao); a quail fight; the hexagram Jian changing to Xun."] },
+        { "by": "书中例", "book": "增删卜易",
+          "zh": ["断曰：子孙持世，以临日辰，父爻虽动，亥水制之，", "独不宜亥为月破，难于制火，今日巳午时，切不可斗。", "彼问：何也？余曰：巳午时，午火父母得令，必克子孙，", "果于早斗得胜，午时又斗，大败，输数金焉。"],
+          "yi": ["断语：子孙持世，又临日辰；父母虽然发动，有亥水制住它；", "只是亥水逢月破，难以制火，今天巳时、午时千万不可斗。", "他问：为什么？我说：巳时午时，午火父母当令，一定克子孙。", "果然早上斗赢了，午时又斗，大败，输了好几两银子。"],
+          "en": ["Judgment: Output sat on the Self line and on the Day branch; the Resource line was moving, but the Hai Water held it down;", "only the Hai was under a Month-break and could hardly hold the Fire, so on this day he must not fight at the Si or Wu hour.", "He asked why. I said: at the Si and Wu hours, the Wu Fire Resource is in its season and will surely control Output.", "Indeed he won in the morning; he fought again at the Wu hour, was badly beaten, and lost several taels."] }
+      ],
+      "see": ["LY.WEALTH.HJC.34"]
+    },
+    {
+      "id": "LY.WEALTH.ZS.31",
+      "topic": "借贷",
+      "chapter": "请会摇会章",
+      "chapter_en": "Savings societies",
+      "title": "请会须宜财旺，更宜世应相生",
+      "rule": {
+        "yi": "请会：宜财旺、世应相生；六冲则财旺也不久，六冲变合（即使世应相克）可成，六合变冲有始无终，财破绝宜速止。摇会：旺财持世必得；何时得：破空→填实之时，伏藏→出现之时，太旺→逢墓之时，衰绝→逢生旺之时；财化回头克、衰静破空又六冲，会散，终无得会之期。",
+        "en": "Starting a savings society: Wealth strong and Self and Other generating; a Six-Clash means it will not last even with strong Wealth; clash changing into combination forms (even with Self and Other controlling); combination changing into clash, a start with no finish; Wealth broken or extinguished, stop at once. Winning the draw: a strong Wealth on the Self line wins; when: broken or void, when filled in; hidden, when it appears; over-strong, at its tomb; weak or extinguished, at its birth or strength; Wealth turning into its own control, or weak, still, broken or void in a Six-Clash hexagram, the society breaks up and your turn never comes."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易",
+          "zh": ["请会须宜财旺，更宜世应相生。", "卦遇六冲，财虽旺而不久；", "六冲变合、世应相克，亦成；六合变冲，有始无终；", "财逢破绝，宜速止之。", "摇会得否？旺财持世必得。", "如占得在何时？财破财空，填实之月日；财若伏藏，出现之月日；", "财太旺者，逢墓之月日；财衰绝者，逢生旺之月日；", "倘财化回头之克，及衰静而逢破空，又遇六冲者，会场必散，终无得会之期矣。"],
+          "yi": ["请会（发起互助会）宜财旺，更宜世应相生。", "卦逢六冲，财虽旺也不长久；", "六冲变六合，即使世应相克，也能成；六合变六冲，有始无终；", "财逢破、绝，宜赶快停止。", "摇会能不能摇到？旺财持世一定能得。", "如果问什么时候得：财破、财空，在填实的月日；财伏藏，在出现的月日；", "财太旺，在逢墓的月日；财衰绝，在逢生旺的月日；", "如果财化回头克，以及衰静而逢破、空，又遇六冲，会一定散掉，始终没有得会的日子。"],
+          "en": ["Starting a savings society needs Wealth strong, and better still Self and Other generating each other.", "A Six-Clash hexagram: even with strong Wealth it will not last;", "Six-Clash changing into combination, even with Self and Other controlling each other: it forms; combination changing into clash: a start with no finish;", "Wealth broken or extinguished: stop at once.", "Will I win the draw? A strong Wealth on the Self line: certainly.", "When? Wealth broken or void: in the month or day that fills it in; hidden: in the month or day it appears;", "over-strong: in the month or day of its tomb; weak or extinguished: in the month or day of its birth or strength;", "if Wealth turns into its own control, or is weak, still, broken or void, and the hexagram is Six-Clash as well, the society will break up and your turn will never come."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.32",
+      "topic": "心术",
+      "chapter": "行险求财章",
+      "chapter_en": "Seeking money by risky means",
+      "title": "行险求财：丧心之事，卜亦不验，故不注",
+      "rule": {
+        "yi": "行险求财（不义之财）不占：古法以青龙临财为吉，觉子认为这是丧心之事，神不告不义，卜亦不验，本章不注。",
+        "en": "Money sought by risky or dishonest means is not divined: the old method counted the Azure Dragon on Wealth as good, but Juezi calls it heartless business; the spirits do not answer the unjust, divination does not work for it, and the chapter is left without comment."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易",
+          "zh": ["觉子曰：古以青龙财爻为吉。", "余以此非营生之本，必丧心之事也。", "行此丧心之事，亦敢告之于神耶？", "既告之于神，而神若以吉凶而告者，乃神之教人而作丧心之事也。", "可谓大道之易卦耶？可谓之伏羲大圣之神耶？", "然不独此，凡占非礼非义之事，不忠不孝之谋，一念之恶，恶神随之。", "即不告之于神，亦遭天谴。", "《尚书》曰：“惠迪吉，从逆凶，何须问卜？”", "所以卜亦不验，故不注。"],
+          "yi": ["觉子说：古法以青龙临财爻为吉。", "我认为这（行险求财）不是谋生的正道，一定是丧尽良心的事。", "做这种丧良心的事，还敢拿去问神吗？", "既然问了神，神如果回答吉凶，那就是神教人去做丧良心的事了。", "这还能叫大道的易卦吗？还能叫伏羲大圣的神明吗？", "不只这一类，凡是占非礼非义的事、不忠不孝的图谋，一念起恶，恶神就跟上了。", "即使不去问神，也会遭天谴。", "《尚书》说：「顺道就吉，从逆就凶，何必问卜？」", "所以卜了也不灵，这一章不作注。"],
+          "en": ["Juezi says: the old method counted the Azure Dragon on the Wealth line as good.", "I hold that this is no proper livelihood but a heartless business.", "Would you dare put such a thing before the spirits?", "If you did, and the spirits answered with good or bad fortune, they would be teaching people to do heartless things.", "Could that be called the Changes of the great Way? Could those be the spirits of the sage Fuxi?", "And not only this: whenever one divines about something improper or unjust, a disloyal or unfilial scheme, the moment of evil intent brings evil spirits with it.", "Even without asking the spirits, one will be punished by Heaven.", "The Book of Documents says: 'Follow the way and prosper, follow the wrong and suffer; what need to divine?'", "So divination does not work for it, and this chapter is left without comment."] }
+      ],
+      "see": ["LY.WEALTH.ZS.18"]
+    }
+  ]
+}

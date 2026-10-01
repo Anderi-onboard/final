@@ -1,0 +1,358 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "断易天机",
+  "chapter": "占求财第十九",
+  "chapter_en": "Chapter 19: Divining for wealth",
+  "ranges": {"断易天机": [1202, 1343]},
+  "units": [
+    {
+      "id": "LY.WEALTH.DYTJ.01",
+      "topic": "取象",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "求财六爻各主一样：初己身、二伴侣、三行李、四车门、五道路、六店舍",
+      "rule": {
+        "yi": "求财占里，六个爻各代表一样：初爻是自己，二爻是同伴，三爻是行李，四爻是车门，五爻是道路，上爻是店舍。",
+        "en": "In a wealth divination each of the six lines stands for one thing: the first for oneself, the second for a companion, the third for baggage, the fourth for the carriage door, the fifth for the road, the top for the lodging."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1202, 1343],
+          "zh": ["初爻二爻三爻四爻五爻六爻", "己身伴侣行李车门道路店舍"],
+          "yi": ["第一爻、第二爻、第三爻、第四爻、第五爻、第六爻，依次是：", "自己、同伴、行李、车门、道路、店舍。"],
+          "en": ["The first line, the second, the third, the fourth, the fifth, the sixth, in order, are:", "oneself, a companion, baggage, the carriage door, the road, the lodging."] }
+      ],
+      "note": {
+        "yi": "这一对只是一张对照表，书里没有说怎么用；本库不替它编用法。同一本书在买卖章另有一张（见 DYTJ.11），两张不一样。",
+        "en": "This is only a look-up list; the book does not say how to use it, and this library does not invent a use. The chapter on buying and selling has a second list (see DYTJ.11), and the two differ."
+      },
+      "see": ["LY.WEALTH.DYTJ.11"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.02",
+      "topic": "心术",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "辨君子小人求财：小人求财得乾卦，心里无良，行劫害之事",
+      "rule": {
+        "yi": "辨君子和小人求财：小人求财，占到乾卦，心里没有善念，做的是抢夺伤害人的事。后面几句按巳酉丑、寅午戌、申子辰三组，说泰卦里的劫杀和驿马。",
+        "en": "On telling a gentleman from a petty person seeking wealth: a petty person who gets Qian has no goodness in the heart and does robbery and harm. The remaining lines take the three groups Si-You-Chou, Yin-Wu-Xu and Shen-Zi-Chen and speak of the Robbery star and the Post Horse in Tai."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1259, 1260],
+          "zh": ["小人求财得乾卦，", "心底无良行劫害（1），", "巳酉丑兮卜得泰，", "寅午戌兮劫杀害，", "申子辰兮驿马寅，", "财与寅兮六合亥。"],
+          "yi": ["小人求财，占到乾卦，", "心里没有善念，做的是抢夺伤害人的事。", "逢巳、酉、丑而占到泰卦，", "逢寅、午、戌，劫杀带来祸害；", "逢申、子、辰，驿马在寅；", "财与寅，在亥上六合。"],
+          "en": ["A petty person seeking wealth who gets the Qian hexagram:", "no goodness in the heart, he does robbery and harm.", "Meeting Si, You and Chou and getting Tai:", "meeting Yin, Wu and Xu, the Robbery star brings harm;", "meeting Shen, Zi and Chen, the Post Horse is at Yin;", "Wealth and Yin form a six-harmony at Hai."] }
+      ],
+      "note": {
+        "yi": "这首歌诀省得很厉害，后四句怎么读，书里没有解释。整理本后面有今人写的注，把最后一句读作「贵人求财」；那段注文不是古籍，本库不引，也不跟着下结论，只照字译。原文里的「（1）」是整理本给那段注文编的号。",
+        "en": "The verse is very terse and the book does not explain its last four lines. The transcription appends a modern note that reads the last line as a nobleman seeking wealth; that note is not a classic, so this library neither cites it nor draws the conclusion, and only translates the words. The '(1)' in the Chinese is the number the transcription gave to that note."
+      },
+      "see": ["LY.WEALTH.CA.10"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.03",
+      "topic": "借贷",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "有意还财否：世应相生、外生内卦、子孙财爻动生世，他有还意；相克又无财，再去也白去",
+      "rule": {
+        "yi": "对方有没有还钱的意思：世应相生、外卦生内卦、子孙和财爻发动生世，他心里是想还的；世应相克又没有财，再去讨也白讨。",
+        "en": "Whether the other side means to repay: Self and Other generating each other, the outer trigram generating the inner, or Output and the Wealth line moving to generate the Self, all show that he means to pay; Self and Other controlling each other with no Wealth, to go again is in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1261, 1262],
+          "zh": ["世应相生有意还，", "虽道无财常准拟，", "外生内卦有还心，", "内外比和终有益（2）。", "子与财爻动生世，", "他心自来还有意（3），", "相生无财意欲还，", "相克无财徒再诣（4）。"],
+          "yi": ["世应相生，对方有还钱的意思，", "嘴上说没有钱，其实常在筹划；", "外卦生内卦，有还钱的心；", "内外卦比和，终究有好处。", "子孙和财爻发动生世，", "他自己心里本来就有还的意思；", "世应相生而卦里没有财，仍是想还；", "世应相克而卦里没有财，再去也是白去。"],
+          "en": ["Self and Other generating each other: he has the will to repay,", "and though he says there is no money, he is often making ready;", "the outer trigram generating the inner trigram: a heart to repay;", "inner and outer trigrams in harmony: in the end there is benefit.", "Output and the Wealth line moving to generate the Self:", "in his own heart he already has the will to repay;", "Self and Other generating each other with no Wealth, he still wants to repay;", "Self and Other controlling each other with no Wealth, to go again is in vain."] }
+      ],
+      "note": {
+        "yi": "原文里的（2）（3）（4）是整理本给今人注文编的号，那些注文本库不引。",
+        "en": "The (2), (3) and (4) in the Chinese are numbers the transcription gave to modern notes, which this library does not cite."
+      },
+      "see": ["LY.WEALTH.YL.36", "LY.WEALTH.YL.39", "LY.WEALTH.YY.16"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.04",
+      "topic": "应期",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "求财何日得：死财等财生的日月，生财不要拿财合当日期；空亡加退度，说得再多也要迟疑",
+      "rule": {
+        "yi": "求财哪天到手：财爻衰死的，等财逢长生的日月才得；财爻得令的，不要拿合日当日期。上下相生的，可以取相克的时候；内克外的，白说合日；再遇空亡、退度，怎么说能得，也要迟疑。",
+        "en": "On which day the money arrives: for a dead Wealth, the day or month that gives it life; for a living Wealth, do not take the combining day as the date. When above and below generate each other one may take a time of control; when the inner controls the outer it is idle to speak of a combining day; with Void and a retreating degree added, however much one says it will come, hesitate."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1263, 1264],
+          "zh": ["凡占求财何日得，", "死财财生日月得（5），", "生财财合莫为期，", "以此推之必无惑（6）。", "上下相生可克时，", "克外徒言相合期，", "更想空亡兼退度，", "百般云得亦迟疑。"],
+          "yi": ["凡是占求财哪天能得，", "死财，等财逢生的日月能得；", "生财，财合的日子不要当日期，", "照这样推，一定没有疑惑。", "上下相生的，可以取相克的时候；", "克外的，白白说相合的日期；", "再想到空亡，加上退度，", "怎么说能得，也要迟疑。"],
+          "en": ["Whenever you divine on which day the money will come,", "a dead Wealth comes on the day or month that gives it life;", "a living Wealth: do not take the combining day as the date;", "reasoned this way, there will be no doubt.", "When above and below generate each other, the time of control may be taken;", "when the inner controls the outer, it is idle to name the day of combining;", "and think further of Void together with a retreating degree:", "however one says it will come, still hesitate."] }
+      ],
+      "dispute": {
+        "yi": "《天玄赋》说「财合日辰，方能入手」，合日是入手的条件；这里说生财「财合莫为期」，合日不能当日期。两处不好并成一说：一处讲财与日辰合，一处讲财自己得令时的合日。整理本后面今人注把「财合」读成「入墓」，原文写的是「合」，本库照原文，不改。",
+        "en": "The Tianxuan Fu says that when Wealth combines with the Day the money can be taken in hand, making the combining day a condition; this verse says that for a living Wealth 'Wealth combining' is not to be taken as the date. The two do not merge into one statement. A modern note in the transcription reads 'combining' as 'entering the tomb'; the original says 'combining', and this library follows the original."
+      },
+      "note": {
+        "yi": "「上下相生可克时」一句，字面很难落实；这里照字译，不加解释。原文里的（5）（6）是整理本给今人注文编的号。",
+        "en": "The line about 'above and below generate each other, a time of control is possible' is hard to pin down from its words; it is translated literally here without explanation. The (5) and (6) in the Chinese are numbers the transcription gave to modern notes."
+      },
+      "see": ["LY.WEALTH.TXF.11", "LY.WEALTH.YL.18", "LY.WEALTH.YY.07", "LY.WEALTH.HZL.13", "LY.WEALTH.CA.11"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.05",
+      "topic": "有无",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "出入财：内阴、外阴，财也阴的吉；纯阳的多散失",
+      "rule": {
+        "yi": "看钱进钱出：内卦阳、财空、又变阳，不宜进财，多散失；内卦阴、财爻也变阴，如期变吉；外卦阴、财阴，出钱吉；外卦阳、财阳，宜藏好；总之逢阴为好，纯阳多散失。",
+        "en": "Money coming in and going out: an inner yang with Wealth void and changing to yang is no good for taking money in and mostly scatters; an inner yin whose Wealth line changes to yin turns auspicious on time; an outer yin with yin Wealth is good for spending; an outer yang with yang Wealth should be stored away; yin is always the good sign, pure yang mostly loses."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1265, 1266],
+          "zh": ["内阳财空还变阳，", "不宜入财多散亡，", "内阴财爻还变阴，", "如期变吉不须吟（7）。", "外阴财阴出财吉，", "外阳财阳宜贮密，", "但阴为好吉无疑，", "若是纯阳多散失。"],
+          "yi": ["内卦是阳，财空，又变成阳，", "不宜进财，多半散失；", "内卦是阴，财爻也变成阴，", "如期变吉，不必犹豫。", "外卦阴、财也阴，出钱吉；", "外卦阳、财也阳，宜藏好；", "只要是阴就好，吉无疑；", "若是纯阳，多半散失。"],
+          "en": ["An inner trigram of yang, its Wealth void and changing to yang:", "not fit for taking money in, it mostly scatters;", "an inner trigram of yin, its Wealth line also changing to yin:", "it turns auspicious on time, and there is no need to hesitate.", "An outer yin with yin Wealth: spending is good;", "an outer yang with yang Wealth: store it away;", "as long as it is yin it is good, and auspicious without doubt;", "if it is pure yang, most of it is lost."] }
+      ],
+      "note": {
+        "yi": "「财空还变阳」的断句，有的读作「财空、还变阳」，有的读作「财空还，变阳」；这里取前一种。原文里的（7）是整理本给今人注文编的号。",
+        "en": "The phrase about Wealth void 'and again changing to yang' can be punctuated in more than one way; this entry takes the first. The (7) in the Chinese is a number the transcription gave to a modern note."
+      },
+      "see": ["LY.WEALTH.TXF.03", "LY.WEALTH.DYTJ.06"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.06",
+      "topic": "风险",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "财库：入财时财库化成鬼，是折财耗害；如坎卦以火为财，火墓在戌",
+      "rule": {
+        "yi": "进财时，财的库（墓）化成了鬼，是折本耗损之象；比如坎卦以火为财，火墓在戌，就是这个例子。",
+        "en": "When money is coming in but the store of Wealth turns into Pressure, that is loss of capital and wasting harm; take the Kan trigram, whose Wealth is Fire and whose Fire tomb is at Xu, as the example."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1267, 1268],
+          "zh": ["入财财库化为鬼，", "此是折财耗害耳，", "假令坎卦火为财，", "火丧在戌此为是。"],
+          "yi": ["进财的时候，财的库化成了鬼，", "这就是折本耗损。", "比如坎卦，火是它的财，", "火的墓在戌，就是这个例子。"],
+          "en": ["When money is coming in and the store of Wealth turns into Pressure,", "this is loss of capital and wasting harm.", "Take the Kan trigram, whose Wealth is Fire:", "the tomb of Fire is at Xu, and that is the case."] }
+      ],
+      "see": ["LY.WEALTH.ZS.10"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.07",
+      "topic": "总则",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "海底眼：财旺相喜持世，有生扶可乘势；卖货要用神兴，开店要财爻安静",
+      "rule": {
+        "yi": "海底眼说：占财，财旺相，喜欢它持世；财出现在卦上又有生扶，可以乘势而为；卖货求财要用神兴旺；开店要财爻安静才有利。",
+        "en": "The Eye at the Bottom of the Sea says: when divining for wealth, Wealth thriving is best when it holds the Self; Wealth showing and supported may be ridden while it lasts; for selling goods the Subject must be thriving; for opening a shop the Wealth line should be quiet."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1292, 1294],
+          "zh": ["占财旺相喜持世，", "出现生扶可乘势，", "脱货求财要用兴，", "开店财爻安者利。"],
+          "yi": ["占财，财旺相，喜欢它持世；", "财出现在卦上又有生扶，可以乘势；", "卖货求财，要用神兴旺；", "开店，财爻安静的有利。"],
+          "en": ["Divining for wealth, Wealth thriving, it is glad to hold the Self;", "Wealth showing and supported may be ridden while it lasts;", "to sell goods for money the Subject must thrive;", "for a shop, the one whose Wealth line is quiet profits."] }
+      ],
+      "note": {
+        "yi": "这几句在《海底眼》原书里也有（见 HDY.01），第二句字面不同：这里作「出现生扶可乘势」，原书作「出现生扶司秉劳」。",
+        "en": "These lines also stand in the Haidi Yan itself (see HDY.01), where the second line reads differently: here 'showing and supported one may ride the moment', there 'showing and supported it takes charge and does the work'."
+      },
+      "see": ["LY.WEALTH.HZL.03", "LY.WEALTH.HJC.14", "LY.WEALTH.ZS.08", "LY.WEALTH.HDY.01"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.08",
+      "topic": "风险",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "海底眼：财逢月破空亡不可凭，伏财被飞爻克制白留意；最后两句只看财生不生命",
+      "rule": {
+        "yi": "财遇月破、空亡，不可凭信；伏着的财被飞爻克制，白白留意；最后「争困撼钱财」几个字含义不明，只能读出：看财有没有生到命上。",
+        "en": "Wealth meeting Month-break or Void cannot be relied on; a hidden Wealth controlled by its flying line is attended to in vain; the last two lines, with their unclear words about contending, being pressed and shaking money, can only be read as: look at whether Wealth generates the natal line."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1292, 1294],
+          "zh": ["月破空亡未可凭，", "飞爻克制徒留意，", "若求争困撼钱财，", "但看财生命者是。"],
+          "yi": ["财逢月破、空亡，不能凭信；", "伏着的财被飞爻克制，白白留意；", "如果是求争、困、撼一类的钱财，", "只看财有没有生到命上就是了。"],
+          "en": ["Wealth meeting Month-break or Void cannot be relied on;", "a hidden Wealth controlled by the flying line is attended to in vain;", "if the money sought is of the sort called contending, pressed or shaken loose,", "look only at whether Wealth generates the natal line."] }
+      ],
+      "note": {
+        "yi": "「争困撼钱财」四个字，「撼钱」在本书别处（六爻俱静类）和「赌斗」放在一起，可能指赌斗得来的钱；「争」「困」两字含义不明。这里照字译，不解释。「命」按本书「随官入墓」一节里「命随鬼入墓」的用法，指问卜人生年地支所在的爻。",
+        "en": "The words about contending, being pressed and shaking loose money are unclear. 'Shaking money' stands beside 'gambling and contests' elsewhere in this book (the section on six quiet lines) and may mean money won in contests; the other two words are unclear. They are translated literally without explanation. 'The natal line' follows the sense of 'the natal line following Pressure into the tomb' elsewhere in this book: the line of the asker's birth-year branch."
+      },
+      "see": ["LY.WEALTH.DYTJ.07"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.09",
+      "topic": "博戏",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "博戏求财以财为本：子孙出现、世临它，再旺相无刑克，称心而归",
+      "rule": {
+        "yi": "赌博求财，以财为本；子孙出现在卦上、世临着它，再加旺相、没有刑克，保管高高兴兴、称心而归。",
+        "en": "In gambling for wealth Wealth is the stake; with Output showing and the Self sitting on it, and thriving with no punishment or control, you will surely come home glad and satisfied."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1296, 1298],
+          "zh": ["博戏求财财是本，", "子孙出现世临之，", "更乘旺相无刑克，", "管取欢欣称意归。"],
+          "yi": ["赌博求财，财是本钱；", "子孙出现，世临着它；", "再加旺相、没有刑克，", "保管欢欢喜喜、称心而回。"],
+          "en": ["Gambling for wealth, Wealth is the stake;", "Output showing and the Self sitting on it;", "thriving as well, with no punishment or control:", "you will come home glad and satisfied."] }
+      ],
+      "see": ["LY.WEALTH.YL.55", "LY.WEALTH.HZL.14", "LY.WEALTH.YY.12"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.10",
+      "topic": "博戏",
+      "chapter": "占求财第十九",
+      "chapter_en": "Chapter 19: Divining for wealth",
+      "title": "博戏又云：世上出现鬼、被应爻克，纵有财神也输；福德休囚陷伏，白费功夫",
+      "rule": {
+        "yi": "赌博的另一首：世爻上见鬼、又被应爻克，纵然有财也是输；福德休囚、又都陷伏，来回白下功夫。",
+        "en": "Another verse on gambling: the Self showing Pressure and controlled by the Other loses even with Wealth present; Output weak and hidden everywhere, one goes back and forth and works in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1296, 1298],
+          "zh": ["又云：", "世出现鬼应爻克，", "纵有财神也是输，", "福德休囚皆陷伏，", "往来空去下功夫。"],
+          "yi": ["书里又有一首说：", "世上出现鬼，被应爻克，", "纵然有财神也是输；", "福德休囚，又都陷伏，", "来来往往白下功夫。"],
+          "en": ["The book also has another verse, which says:", "with Pressure showing on the Self and controlled by the Other,", "even with Wealth present you lose;", "Output weak and all of it sunk or hidden:", "coming and going, you work in vain."] }
+      ],
+      "see": ["LY.WEALTH.YL.52", "LY.WEALTH.YL.54", "LY.WEALTH.HJC.34"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.11",
+      "topic": "取象",
+      "chapter": "占买卖第二十",
+      "chapter_en": "Chapter 20: Divining for buying and selling",
+      "title": "买卖六爻各主一样：初货物、二己身、三伴侣、四中途、五店舍、六地头",
+      "rule": {
+        "yi": "买卖占里六个爻各代表一样：初爻是货物，二爻是自己，三爻是同伴，四爻是半路，五爻是店舍，上爻是买卖的地方。",
+        "en": "In a divination on buying and selling the six lines each stand for one thing: the first for goods, the second for oneself, the third for a companion, the fourth for the road midway, the fifth for the lodging, the top for the place of the trade."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1202, 1343],
+          "zh": ["初爻二爻三爻四爻五爻六爻", "货物己身伴侣中途店舍地头"],
+          "yi": ["第一爻、第二爻、第三爻、第四爻、第五爻、第六爻，依次是：", "货物、自己、同伴、半路、店舍、地头。"],
+          "en": ["The first line, the second, the third, the fourth, the fifth, the sixth, in order, are:", "goods, oneself, a companion, the road midway, the lodging, the local ground."] }
+      ],
+      "note": {
+        "yi": "「地头」是买卖发生的那个地方。《阐奥歌章》求财买卖章里，外卦是「地头」，内卦是「人」（见 CA.15）。",
+        "en": "'The local ground' is the place where the trade happens. In the Chan'ao Gezhang's verse on seeking wealth and trade the outer trigram is 'the local ground' and the inner is 'the person' (see CA.15)."
+      },
+      "see": ["LY.WEALTH.DYTJ.01", "LY.WEALTH.CA.15"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.12",
+      "topic": "买卖",
+      "chapter": "占买卖第二十",
+      "chapter_en": "Chapter 20: Divining for buying and selling",
+      "title": "郭璞论买卖：财爻克世最好，身旺相与财并、无煞不空；贞旺悔囚先赢，悔旺贞休后赢",
+      "rule": {
+        "yi": "贩运买卖，财爻克世最好；卦身旺相又与财并，再没有凶煞，不落空亡，就能成；贞旺悔囚，起初买卖就赢，悔旺贞休，要后来才赢；卦里上下互相刑克，即使有财爻，也只是空有名声。「贞」「悔」指内外卦还是本卦之卦，见「打架」。",
+        "en": "For trading goods, a Wealth line controlling the Self is best; the Body thriving and joined with Wealth, with no baleful stars and not falling Void, it succeeds; Zhen thriving and Hui imprisoned, the first trades win, Hui thriving and Zhen resting, the win comes later; if above and below punish and control each other, even with a Wealth line it is only a name. Whether Zhen and Hui mean the inner and outer trigrams or the original and resulting hexagrams: see the dispute."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1314, 1316],
+          "zh": ["兴贩财爻克世精，", "兼身旺相与财并，", "更看役此无诸煞，", "不落空亡有所成。", "贞旺悔囚初买卖，", "悔旺贞休后始赢，", "卦中上下相刑克，", "纵有财爻空有声。"],
+          "yi": ["贩运买卖，财爻克世最好；", "卦身旺相，又和财并在一起；", "再看这件事上有没有各种凶煞；", "不落空亡，就有成就。", "贞旺、悔囚，起初的买卖有利；", "悔旺、贞休，后来才赢；", "卦中上下互相刑克，", "纵有财爻，也只是空有名声。"],
+          "en": ["In trading goods, a Wealth line controlling the Self is best;", "the Body thriving and joined with Wealth;", "then see whether any baleful stars attend the matter;", "not falling Void, there is success.", "Zhen thriving and Hui imprisoned: the first trades profit;", "Hui thriving and Zhen resting: the win comes later;", "if above and below in the hexagram punish and control each other,", "even with a Wealth line there is only a name and no substance."] },
+        { "by": "他书本文", "book": "易林补遗", "range": [63, 64],
+          "zh": ["凡有动爻，便有之卦。", "以本卦为贞，之卦为悔，", "凡爻静无之者，便取内卦为贞，外卦为悔，", "以贞为始，以悔为终。"],
+          "yi": ["凡是有动爻，就有之卦；", "以本卦为贞，之卦为悔；", "凡是爻都静、没有之卦的，就取内卦为贞、外卦为悔；", "以贞为开始，以悔为终结。"],
+          "en": ["Wherever there is a moving line, there is a resulting hexagram;", "the original hexagram is Zhen, the resulting hexagram is Hui;", "where the lines are all still and there is no resulting hexagram, the inner trigram is Zhen and the outer trigram is Hui;", "Zhen is the beginning and Hui is the end."] }
+      ],
+      "dispute": {
+        "yi": "这首歌里的「贞」「悔」，有两种读法。一种是内卦为贞、外卦为悔；一种是本卦为贞、之卦为悔。《易林补遗》两种都记：有动爻时，本卦是贞、之卦是悔；爻都静、没有之卦时，才取内卦为贞、外卦为悔，并且「以贞为始，以悔为终」。歌诀自己没有说是哪一种。「贞旺悔囚初买卖，悔旺贞休后始赢」里的「初」和「后」有先后，和「以贞为始，以悔为终」对得上；但这不是歌诀的明文，本库不裁。",
+        "en": "'Zhen' and 'Hui' in this verse can be read in two ways: the inner trigram as Zhen and the outer as Hui, or the original hexagram as Zhen and the resulting hexagram as Hui. The Yilin Buyi records both: when there is a moving line, the original hexagram is Zhen and the resulting hexagram is Hui; only when all lines are still and there is no resulting hexagram does it take the inner trigram as Zhen and the outer as Hui, and 'Zhen is the beginning and Hui is the end.' The verse itself does not say which. The words 'first' and 'later' in 'Zhen thriving and Hui imprisoned, the first trades; Hui thriving and Zhen resting, only later a win' have a before and after that fits 'Zhen is the beginning, Hui the end'; but that is not the verse's own statement, and this library does not decide."
+      },
+      "note": {
+        "yi": "「更看役此无诸煞」的「役此」字义不明，可能有讹字；这里照字面译作「这件事上」，不确定。",
+        "en": "The words 'yi ci' in the third line are unclear and may be miscopied; they are translated loosely as 'in this matter', without certainty."
+      },
+      "see": ["LY.WEALTH.HJC.14", "LY.WEALTH.CA.02"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.13",
+      "topic": "买卖",
+      "chapter": "占买卖第二十",
+      "chapter_en": "Chapter 20: Divining for buying and selling",
+      "title": "卜筮元龟：财持世克世得利；财旺买的货贵、休囚买的货贱；卖看财与世应，见三金得宝，无财鬼克身防偷",
+      "rule": {
+        "yi": "财爻持世、克世都得利；财旺，买来的货贵如金玉；财休囚，买来的货贱如尘土；卖货看财、世应旺相；买货遇上休囚，货多有益；卦里三个金得宝多，见离象没有不吉的；卦里没有财、鬼克身，丢东西多半是遇上偷的人；内外卦相生有气、财与龙德并，金银加倍。",
+        "en": "Wealth holding or controlling the Self brings profit; with Wealth thriving what is bought is as precious as gold and jade, with it weak what is bought is cheap as dust; in selling, Wealth and the Self and Other thriving are solid; in buying, meeting Wealth weak, goods are plentiful and profitable; three Metal lines in the hexagram bring many treasures and the Li image is always auspicious; a hexagram without Wealth and Pressure controlling the Body: what is lost is probably taken by a thief; the trigrams generating each other and having qi, Wealth joined with the Dragon Virtue, gold and silver double."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1321, 1323],
+          "zh": ["财爻持世兼克世，", "此皆得利自然真，", "财旺买物金玉贵，", "休囚买必贱如尘。", "卖财世应旺相实，", "买遇休囚货盈益，", "卦有三金得宝多，", "离象见之无不吉。", "凡卦无财鬼克身，", "遗忘应是遇偷人，", "贞悔相生都有气，", "财并龙德倍金银。"],
+          "yi": ["财爻持世，又克世，", "这都是得利之象，一定是真的；", "财旺，买来的东西贵如金玉；", "财休囚，买来的东西必定贱如尘土。", "卖货，财和世应旺相就实在；", "买货，遇上休囚，货物多、有益；", "卦里有三个金，得的宝物多，", "见到离象，没有不吉的。", "凡是卦里没有财、鬼克着身，", "丢了东西，多半是遇上了偷东西的人；", "贞悔相生，都有气，", "财再和龙德并在一起，金银加倍。"],
+          "en": ["Wealth holding the Self and also controlling it:", "these are all signs of profit, sure and true;", "Wealth thriving, what is bought is precious as gold and jade;", "Wealth weak, what is bought will be cheap as dust.", "In selling, Wealth and the Self and Other thriving is solid;", "in buying, meeting them weak, goods are plentiful and profitable;", "three Metal lines in the hexagram, the treasures gained are many,", "and where the Li image is seen there is nothing that is not auspicious.", "Whenever a hexagram has no Wealth and Pressure controls the Body,", "what is lost is probably taken by a thief;", "Zhen and Hui generating each other and both having qi,", "with Wealth joined to the Dragon Virtue, gold and silver are doubled."] }
+      ],
+      "note": {
+        "yi": "「龙德」是一颗神煞，书里没有在这一条里解释。「卜筮元龟」是《断易天机》转引的书名，原书这里没有另收。",
+        "en": "'The Dragon Virtue' is a spirit-star that this passage does not explain. 'Bushi Yuangui' is a book the Duanyi Tianji quotes; this library has no separate copy of it."
+      },
+      "see": ["LY.WEALTH.HJC.21", "LY.WEALTH.CA.05", "LY.WEALTH.HZL.05"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.14",
+      "topic": "动变",
+      "chapter": "占买卖第二十",
+      "chapter_en": "Chapter 20: Divining for buying and selling",
+      "title": "四五处求财买卖，哪处得财：财旺相不空为吉，财初动克身居首；无财放弃；鬼化财易得，财化鬼失财；财化兄弟克，兄弟化财得，化子孙无忧",
+      "rule": {
+        "yi": "几处都想求财做买卖，看哪处得财：财爻旺相、不落空亡就吉；财爻刚发动又克身，这处最好；卦里没有财（如遁、蹇一类），说白了就是放弃；鬼化为财，财容易得；财化为鬼，有失财之忧；财化兄弟，终究被克；兄弟化财，终究能得；化为子孙，也没有忧。",
+        "en": "With four or five places in mind for seeking wealth and trade, which one gets the money: Wealth thriving and not falling Void is auspicious; a Wealth line just moving and controlling the Body makes that place the first; a hexagram without Wealth, such as Dun or Jian, says plainly to give it up; Pressure changing into Wealth, the money is easy to get; Wealth changing into Pressure, worry over losing it; Wealth changing to Peer is finally controlled, Peer changing to Wealth is finally gained, and changing to Output is free of worry."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1325, 1326],
+          "zh": ["欲得财爻临旺相，", "不落空亡便为吉，", "财爻初动兼克身，", "此处得云为第一。", "卦里无财遁蹇流，", "直说须云抛却休，", "鬼化为财财易得，", "财化为鬼失财忧。", "财化兄弟终言克，", "兄弟化财终可得，", "化为子位亦无忧，", "以此推之必无惑。"],
+          "yi": ["想得财，要财爻临着旺相，", "不落空亡就是吉；", "财爻刚发动，又克身，", "这个地方说是第一。", "卦里没有财，像遁、蹇这一类，", "直说就是：放弃算了；", "鬼化为财，财容易得；", "财化为鬼，有失财之忧；", "财化兄弟，终究说是被克；", "兄弟化财，终究能得；", "化成子孙，也没有忧；", "照这样推断，一定没有疑惑。"],
+          "en": ["To get the money, the Wealth line must sit on a thriving state,", "and not falling Void is auspicious;", "a Wealth line just moving and controlling the Body:", "that place is called the first.", "A hexagram with no Wealth, of the Dun and Jian kind,", "says in plain words: give it up;", "Pressure changing into Wealth, the money is easy to get;", "Wealth changing into Pressure, there is worry over losing it;", "Wealth changing into Peer, it is in the end said to be controlled;", "Peer changing into Wealth, it can in the end be gained;", "changing into Output, there is likewise no worry;", "reasoned this way, there will be no doubt."] }
+      ],
+      "note": {
+        "yi": "题目的「四五处」就是四五个候选的地方；「财爻初动」可读作「财爻刚发动」，也可读作「初爻上的财发动」，原文没有分明，这里取前一种。",
+        "en": "The heading's 'four or five places' means four or five candidate places. 'The Wealth line first moving' can be read as 'just beginning to move' or as 'the Wealth on the first line moving'; the text does not settle it, and this entry takes the first."
+      },
+      "see": ["LY.WEALTH.TXF.03", "LY.WEALTH.CA.08", "LY.WEALTH.HJC.15"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.15",
+      "topic": "风险",
+      "chapter": "占买卖第二十",
+      "chapter_en": "Chapter 20: Divining for buying and selling",
+      "title": "本宫财与鬼并，忧失财：求财遇萃必折本，世与鬼并同断，要防盗贼和自己损耗",
+      "rule": {
+        "yi": "本宫里财和鬼并在一起，怕失财：求财遇到萃卦，一定折本；世和鬼并在一起的，也这样断；要谨慎防备，把它当作禳解，担心遇上盗贼，或者自己损耗。",
+        "en": "When in the home palace Wealth and Pressure are joined, fear losing the money: seeking wealth and meeting Cui means a sure loss of capital, and the Self joined with Pressure is judged the same; be careful and guard against it as if by a rite, for fear of thieves or of one's own waste."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1327, 1328],
+          "zh": ["求财遇萃必折本，", "世与鬼并即此论，", "须当防慎以为禳，", "忧逢盗贼自侵损。"],
+          "yi": ["求财遇到萃卦，一定折本；", "世和鬼并在一起，就照这样断；", "应当防备谨慎，当作禳解；", "担心遇上盗贼，或者自己损耗。"],
+          "en": ["Seeking wealth and meeting the Cui hexagram, capital is surely lost;", "the Self joined with Pressure is judged the same way;", "one should guard and be careful, as if performing a rite;", "for fear of meeting thieves, or of one's own waste."] }
+      ],
+      "see": ["LY.WEALTH.CA.06", "LY.WEALTH.HJC.19"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.16",
+      "topic": "取象",
+      "chapter": "占买卖第二十",
+      "chapter_en": "Chapter 20: Divining for buying and selling",
+      "title": "求财买卖往哪个方向：避开本宫绝命和墓绝之方，走生气、长生和世爻旺处",
+      "rule": {
+        "yi": "求财买卖往哪个方向走吉：本宫的绝命方、入墓的方位、加上鬼的墓在同一边，墓绝的方位最凶，想经营就避开这条路；生气、长生的方位吉，世爻旺的地方好，八卦的方位都照这个定，终身没有病也没有灾。",
+        "en": "Which direction is auspicious for seeking wealth and trade: the Life-severing direction of the home palace, the tomb direction, and the tomb of Pressure on the same side, the directions of tomb and severance are the worst, and one who means to run a business avoids that road; the directions of Vital Qi and Long Life are auspicious, a place where the Self is thriving is good, and the directions of the eight trigrams are all fixed this way; then one has no illness and no calamity for life."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1329, 1330],
+          "zh": ["本宫绝命及入墓，", "兼之鬼墓同厢顾，", "墓绝之方最为凶，", "若欲经营避此路。", "生气长生是吉方，", "世爻旺处即为良，", "八卦之方同此定，", "终身无病亦无秧。"],
+          "yi": ["本宫的绝命方，以及入墓的方位，", "再加上鬼的墓也在同一边，", "墓、绝的方位最凶，", "想经营就要避开这条路。", "生气、长生的方位是吉方，", "世爻旺的地方就是好的；", "八卦的方位都照这个来定，", "终身没有病，也没有灾。"],
+          "en": ["The Life-severing direction of the home palace, and the tomb direction,", "together with the tomb of Pressure on the same side:", "the directions of tomb and severance are the worst;", "if you mean to run a business, avoid that road.", "The directions of Vital Qi and Long Life are the auspicious ones;", "where the Self is thriving is good;", "the directions of the eight trigrams are all fixed this way,", "and for life there is no illness and no calamity."] }
+      ],
+      "note": {
+        "yi": "「绝命」「生气」是八宅游年里的方位名；本书没有在这一条里讲怎么排，本库不补。「无秧」的「秧」可能是「殃」的误字，原文如此。",
+        "en": "'Life-severing' and 'Vital Qi' are direction names from the house-facing system; this passage does not explain how they are laid out and this library does not add it. 'Yang' in the last line may be a miscopy of 'calamity'; the original reads as given."
+      },
+      "see": ["LY.WEALTH.CA.10"]
+    }
+  ]
+}

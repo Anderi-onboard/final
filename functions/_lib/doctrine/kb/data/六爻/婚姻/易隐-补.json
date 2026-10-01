@@ -1,0 +1,54 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "易隐",
+  "chapter": "附占丈夫",
+  "chapter_en": "Appendix: divining a husband",
+  "ranges": {"易隐": [1279, 1615]},
+  "units": [
+    {
+      "id": "LY.MARRY.YY.34",
+      "topic": "对方",
+      "chapter": "附占丈夫",
+      "chapter_en": "Appendix: divining a husband",
+      "title": "附占丈夫：自占以应爻为夫、代占以鬼爻为夫；本宫出现的是正夫、他宫出的是偏夫；鬼临空墓绝胎加虎蛇刑刃亡劫旺动者夫死；子孙带煞旺动克鬼则鬼旺有灾病、衰则死；鬼下伏鬼或伏兄是两姓贴夫营活",
+      "rule": {
+        "yi": "女方自己占，把应爻当丈夫；替别人占，把官鬼爻当丈夫。在本宫里出现的是正夫，在年月日时别的宫里出现的是偏夫；卦里有两个官鬼，阳爻得位的是正夫，阴爻失位的是偏夫（已经成婚的叫正，只是口头说说没成的叫偏）。官鬼临在空、墓、绝、胎上，又加白虎、螣蛇、刑、刃、亡神、劫煞，又旺又动，丈夫会死；子孙爻旺动带着这些煞来克官鬼，官鬼旺就有灾病，衰就会死；丈夫本来有病，倒要官鬼衰、不要官鬼旺。官鬼下面伏着官鬼，或者伏着兄弟爻，一定是两姓人家依附着丈夫谋生。丈夫的贫富、贵贱、带病、祸福，都和世爻一样判断。",
+        "en": "For a woman divining for herself the Other line is the husband; for another, the Pressure line is the husband. One who appears in the home palace is the principal husband, and one who appears in another palace through the year, month, day or hour is a collateral husband; if the hexagram has two Pressure lines, the yang line in its place is the principal and the yin line out of place the collateral (a marriage that has been made is called principal; one only spoken of and not made is called collateral). If Pressure sits on Void, Tomb, Extinction or Womb, with the White Tiger, Coiling Snake, punishment, blade, Loss and Robbery stars added, and is strong and moving, the husband dies; if the Output line is strong and moving, carries these stars and comes to control Pressure, then strong Pressure means illness or misfortune and weak Pressure means death; if the husband is already ill, it is better that Pressure be weak and not strong. Pressure with Pressure hidden beneath it, or a Peer line hidden beneath it, surely means two surnames living off the husband. The husband's poverty or wealth, rank, illness and fortune are judged as for the Self line."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [1279, 1279],
+          "zh": ["自占以应爻为夫，代占以鬼爻为夫。", "本宫出现者，为正夫。", "(不分内外)。", "年月日时他宫见者，为偏夫也。", "如卦有两鬼出现，以阳爻得位为正夫，阴爻失位为偏夫。", "(成婚曰正，空言而不成者曰偏)。", "如正鬼在寅卯爻旺相，则木命者吉，女命属午酉戌亥者吉。", "(午生在寅，卯与戌合，寅与亥合)。", "如鬼临空墓绝胎，加虎蛇刑刃亡劫，旺动者死也。", "子孙旺动，带虎蛇刑刃亡劫，来克鬼者，鬼旺则有灾病，衰则死也。", "若夫病者，宜鬼衰不宜鬼旺也。", "又鬼下伏鬼与鬼下伏兄者，必两姓贴夫营活也。", "凡丈夫贫富、贵贱、带疾、祸福俱与世爻同断。"],
+          "yi": ["自己占，拿应爻当丈夫；替别人占，拿官鬼爻当丈夫。", "在本宫里出现的，是正夫。", "（不分内卦外卦）。", "年、月、日、时上别的宫里出现的，是偏夫。", "如果卦里有两个官鬼出现，阳爻得位的是正夫，阴爻失位的是偏夫。", "（已经成婚的叫正，只是口头说说、没有成的叫偏）。", "如果正夫的官鬼在寅、卯爻上旺相，就属木命的人吉利，女方的命属午、酉、戌、亥的吉利。", "（午长生在寅，卯和戌相合，寅和亥相合）。", "如果官鬼临在空、墓、绝、胎上，又加白虎、螣蛇、刑、刃、亡神、劫煞，又旺又动，丈夫会死。", "子孙爻旺相发动，带着白虎、螣蛇、刑、刃、亡神、劫煞，来克官鬼的，官鬼旺就有灾病，官鬼衰就会死。", "如果是丈夫有病，官鬼爻宜衰、不宜旺。", "另外，官鬼下面伏着官鬼，或者官鬼下面伏着兄弟爻的，一定是两姓人家依附着丈夫谋生。", "凡是丈夫的贫富、贵贱、带病、祸福，都和世爻一样判断。"],
+          "en": ["In a divination for oneself, the Other line is the husband; in a divination for another, the Pressure line is the husband.", "One who appears in the home palace is the principal husband.", "(without distinction of inner and outer).", "One who appears in another palace through the year, month, day or hour is a collateral husband.", "If the hexagram has two Pressure lines, the yang line in its place is the principal husband and the yin line out of place the collateral one.", "(a marriage that has been made is called principal; one only spoken of and not made is called collateral).", "If the principal Pressure line is strong on a Yin or Mao line, a man of the Wood fate is auspicious, and a woman whose fate is Wu, You, Xu or Hai is auspicious.", "(Wu is born at Yin, Mao combines with Xu, and Yin combines with Hai).", "If Pressure sits on Void, Tomb, Extinction or Womb, with the White Tiger, Coiling Snake, punishment, blade, Loss and Robbery stars added, and is strong and moving, the husband dies.", "If the Output line is strong and moving, carrying the White Tiger, Coiling Snake, punishment, blade, Loss and Robbery stars, and comes to control Pressure, then strong Pressure means illness or misfortune and weak Pressure means death.", "If the husband is ill, Pressure should be weak and not strong.", "Also, if Pressure has Pressure hidden beneath it, or a Peer line hidden beneath it, two surnames surely live off the husband and make a living together.", "The husband's poverty or wealth, rank, illness and fortune are all judged as for the Self line."] }
+      ],
+      "note": {
+        "yi": "这一段紧接在「断妻妾」「附占女婿」后面，是同一个方法用在妻子身上：自占的女人把应爻当丈夫。「贴夫营活」是靠着丈夫谋生；「正夫」「偏夫」是名分上的正偏，括号里书里自己注了：成了婚的是正，口头说说没成的是偏。命属木、午酉戌亥的吉，是说这个鬼爻生旺的五行和女方命宫五行的配合。",
+        "en": "This passage follows 'Judging wives and concubines' and 'Appendix: divining a son-in-law' and applies the same method to the husband: a woman divining for herself takes the Other line as the husband. 'Living off the husband' is making a living by depending on him; 'principal' and 'collateral' husband are about standing, and the book itself glosses it in brackets: one whose marriage has been made is principal, one only spoken of and not made is collateral. 'A man of the Wood fate and a woman of Wu, You, Xu or Hai is auspicious' is about how the element in which the Pressure line is strong fits the element of the woman's fate."
+      },
+      "see": ["LY.MARRY.YY.32", "LY.MARRY.HJC.90", "LY.MARRY.HJC.91", "LY.MARRY.ZS.11", "LY.MARRY.DYTJ.11"]
+    },
+    {
+      "id": "LY.MARRY.YY.35",
+      "topic": "夫妻",
+      "chapter": "十二宫断",
+      "chapter_en": "Judging by the twelve palaces",
+      "title": "十二宫断·夫妇宫：喜旺相得生，财临子值来助自身则吉；杀刃临爻多怪疾；衰空难保百年之姻",
+      "rule": {
+        "yi": "十二宫里的夫妇宫：喜欢旺相、得到生扶，财爻临着、子孙爻值着来帮助自身；煞、刃临在这个爻上，多有怪病；衰弱落空，就难保百年的婚姻。",
+        "en": "The husband-and-wife palace among the twelve: it is glad to be strong and generated, with Wealth on it and Output holding it to help the person; punishment and blade stars on the line bring much strange illness; weak or Void, a marriage of a hundred years is hard to keep."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [1615, 1615],
+          "zh": ["夫妇宫中喜旺生，财临子值助吾身，杀刃临爻多怪疾，衰空难保百年姻。"],
+          "yi": ["夫妇宫中喜欢旺相得生，财爻临着、子孙爻值着来帮助自身，煞、刃临在爻上多有怪病，衰弱落空就难保百年的婚姻。"],
+          "en": ["In the husband-and-wife palace it is glad to be strong and generated, with Wealth on it and Output holding it to help the person; punishment and blade stars on the line bring much strange illness; weak or Void, a marriage of a hundred years is hard to keep."] }
+      ],
+      "note": {
+        "yi": "这是《易隐》引《黄金策》的一大段十二宫诗里的一句：先按生月、生时排出命宫，再排十二宫（命宫、兄弟、夫妻、子息、财帛、疾厄、迁移、奴婢、官禄、田宅、福德、父母），夫妇宫是第三位。排法在同一章前面，这里不收；这首诗其余各宫讲的是命、兄弟、子女、财帛等，也没有收。",
+        "en": "This is one line of a long rhyme on the twelve palaces that the Yiyin quotes from the Huangjin Ce: first the life palace is set from the month and hour of birth, then the twelve palaces are laid out (life, brothers, husband and wife, children, wealth, illness, travel, servants, office, property, fortune, parents), the husband-and-wife palace being the third. The method of laying them out is earlier in the chapter and is not included here, nor are the lines of the rhyme on the other palaces (the life palace, brothers, children, wealth and so on)."
+      },
+      "see": ["LY.MARRY.YY.22", "LY.MARRY.HJC.73"]
+    }
+  ]
+}

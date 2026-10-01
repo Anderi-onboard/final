@@ -1,0 +1,576 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮全书",
+  "chapter": "卜筮全书歌诀、通玄妙论·断易总论·断易通玄赋",
+  "chapter_en": "Verses of the Bushi Quanshu; the Tongxuan Miaolun; the Duanyi Tongxuan Fu",
+  "ranges": {"卜筮大全": [2845, 3928], "火珠林": [918, 920]},
+  "units": [
+    {
+      "id": "LY.ILL.BSQS.03",
+      "topic": "生死",
+      "chapter": "卜筮歌诀·十九、六神空亡诀",
+      "chapter_en": "Bushi Quanshu verses, no. 19: the six spirits falling Void",
+      "title": "六神空亡诀·白虎空亡病可痊",
+      "rule": {
+        "yi": "卜筮全书的六神空亡诀说：白虎落了空亡，病可以痊愈。",
+        "en": "The Bushi Quanshu's verse on the six spirits falling Void says: if the White Tiger is Void, the illness can be cured."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3139, 3139],
+          "zh": ["白虎空亡病可痊，"],
+          "yi": ["白虎落了空亡，病可以痊愈，"],
+          "en": ["With the White Tiger Void, the illness can be cured,"] }
+      ],
+      "note": {
+        "yi": "这一句是六神空亡诀里的一句。全诀六句，每一句讲一位神落空亡的结果：青龙、朱雀、勾陈、螣蛇、白虎、玄武各一句，讲的分别是家里的喜事、官司、牵连、怪异、病和盗贼，这里只收和病有关的白虎一句。道理是白虎主丧病，它落了空亡，它的凶力暂时不作数。断易天机的六神章里也有「白虎空亡病无事」（LY.ILL.DYTJ.38）。",
+        "en": "This is one line of the verse on the six spirits falling Void. The whole verse has six lines, one for each of the Azure Dragon, Vermilion Bird, Hook Earth, Coiling Snake, White Tiger and Dark Tortoise, dealing in turn with joy in the house, lawsuits, entanglements, strange happenings, illness and thieves; only the White Tiger line, which bears on illness, is taken here. The reason is that the White Tiger means mourning and illness, and once it is Void its force does not count for the time being. The chapter on the six spirits in the Duanyi Tianji also has 'the White Tiger Void: the illness comes to nothing' (LY.ILL.DYTJ.38)."
+      },
+      "see": ["LY.ILL.DYTJ.38"]
+    },
+    {
+      "id": "LY.ILL.BSQS.04",
+      "topic": "总则",
+      "chapter": "卜筮歌诀·三、诸爻持世诀",
+      "chapter_en": "Bushi Quanshu verses, no. 3: each line holding the Self line",
+      "title": "诸爻持世诀·鬼爻持世：事难安、占身不病也遭官、财物忧失脱、骨肉分离会合难",
+      "rule": {
+        "yi": "诸爻持世诀说：官鬼爻持世，事情难得安稳；占自身，就算没有病，也会遇上官司；财物时时担心丢失，亲人分离了很难再聚。",
+        "en": "The verse on each line holding the Self line says: with the Pressure line holding the Self line, matters are hard to settle; if one divines about oneself, even without illness one meets an official case; property is always at risk of loss, and kin who are parted are hard to bring together again."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3044, 3044],
+          "zh": ["鬼爻持世事难安，", "占身不病也遭官；", "财物时时忧失脱，", "骨肉分离会合难。"],
+          "yi": ["鬼爻持世，事情难得安稳，", "占自身，没有病也会遇上官司；", "财物时时担心丢失，", "亲人分离，很难再聚。"],
+          "en": ["With the Pressure line holding the Self line, matters are hard to settle,", "if one divines about oneself, even without illness one meets an official case;", "property is always at risk of loss,", "and kin who are parted are hard to bring together again."] }
+      ],
+      "note": {
+        "yi": "「占身」是占问的人自己，歌里没有说是占身体还是占身命，译文照字面写成「占自身」。「不病也遭官」的意思是官鬼持世时，占自身，不是有病就是有官司，两样里总要占一样。这首诀一共六句，父母、子孙、官鬼、财爻、兄弟各持世一句，这里只收和病有关的官鬼一句；同样的诀在火珠林（第 945 行）里也有。",
+        "en": "'Divining about one's person' is the asker himself; the verse does not say whether it means the body or one's fortune, and the translation keeps it literal as 'about oneself'. 'If not ill, then an official case' means that with Pressure on the Self line, in a divination about oneself, if it is not illness it will be a lawsuit, one or the other. The verse has six lines, one each for Resource, Output, Pressure, Wealth and Peer holding the Self line; only the Pressure line, which bears on illness, is taken here. The same verse also appears in the Huozhu Lin (line 945)."
+      },
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.HDY.17"]
+    },
+    {
+      "id": "LY.ILL.BSQS.05",
+      "topic": "总则",
+      "chapter": "卜筮歌诀·二十三、六亲持世歌",
+      "chapter_en": "Bushi Quanshu verses, no. 23: the six relations holding the Self line",
+      "title": "六亲持世歌·占病：父母持世占胎问病却成凶；子孙持世占胎问病重重喜；官鬼持世占婚问病俱凶兆；阴为妻妾阳为财、若占病产鬼为胎",
+      "rule": {
+        "yi": "六亲持世歌里讲病的几句：父母爻持世，占胎产、问疾病反而凶；子孙爻持世，占胎产、问疾病重重有喜；官鬼爻持世，占婚姻、问疾病都是凶兆；财爻持世，若占病、占产，官鬼爻就是胎。",
+        "en": "The lines on illness in the verse on the six relations holding the Self line: with Resource holding the Self line, divining a pregnancy or asking about illness is ominous; with Output holding the Self line, divining a pregnancy or asking about illness brings joy upon joy; with Pressure holding the Self line, divining marriage or asking about illness are both ill omens; with Wealth holding the Self line, if divining illness or birth, Pressure is the womb."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3175, 3175],
+          "zh": ["父母持世及身宫，", "旺相文书喜信逢；", "田宅禾苗皆遂意，", "占胎问病却成凶。"],
+          "yi": ["父母爻持世，或者持身宫，", "旺相的话，文书、喜信都到；", "田宅、庄稼都称心，", "占胎产、问疾病，反而是凶。"],
+          "en": ["With the Resource line holding the Self line, or the Body's palace,", "if thriving, documents and happy news both arrive;", "fields, houses and crops are all as one wishes,", "but divining a pregnancy or asking about illness is ominous instead."] },
+        { "by": "经", "book": "卜筮大全", "range": [3177, 3177],
+          "zh": ["子孙持世为福神，", "事成忧散谷财盈；", "占胎问病重重喜，", "遏贵求官反不亨。"],
+          "yi": ["子孙爻持世，就是福神，", "事情办成，忧愁消散，谷米钱财充盈；", "占胎产、问疾病，重重有喜，", "求见贵人、求官，反而不顺。"],
+          "en": ["With the Output line holding the Self line, it is the spirit of fortune,", "matters are accomplished, worries scatter, grain and money are abundant;", "in divining a pregnancy or asking about illness, there is joy upon joy,", "but seeking an audience with a noble or seeking office goes badly instead."] },
+        { "by": "经", "book": "卜筮大全", "range": [3179, 3179],
+          "zh": ["官鬼持世必得官，", "文书印信两相看；", "占婚问病俱凶兆，", "破宅伤财身不安。"],
+          "yi": ["官鬼持世，一定得官，", "文书印信两样都看得见；", "占婚姻、问疾病都是凶兆，", "破宅伤财，身不安宁。"],
+          "en": ["Pressure holding the Self line: one is sure to get office,", "and documents and seals both show;", "but a divination on marriage or illness is an ill omen,", "with a broken house, lost money and no ease."] },
+        { "by": "经", "book": "卜筮大全", "range": [3181, 3181],
+          "zh": ["阴为妻妾阳为财，", "持世持身总称怀；", "财谷田蚕收百倍，", "若占病产鬼为胎。"],
+          "yi": ["阴爻是妻妾，阳爻是财，", "持世持身都合心意；", "财谷、田地、蚕桑，收成百倍，", "如果占病占产，官鬼就是胎。"],
+          "en": ["A yin line is the wife or concubine, a yang line is wealth;", "holding the Self or the Body both please the heart;", "in grain, fields and silkworms the yield is a hundredfold;", "if divining illness or birth, Pressure is the womb."] }
+      ],
+      "note": {
+        "yi": "这首歌分五段（父母、子孙、官鬼、财、兄弟），和病有关的是前四段，兄弟一段不收。「占胎问病」是两件事并提：占怀孕和占病。「遏贵」原文如此，照上下文应是「谒贵」（拜见贵人），译文按「求见贵人」写。「若占病产鬼为胎」只有这一句，歌里没有讲官鬼是胎对占病意味着什么，译文照字面。后两段婚姻域收过（LY.MARRY.BSQS.09）。同一首歌在火珠林（第 948 行）和周易尚占（第 475 至 478 行）里也有，字句略有不同：周易尚占第一段作「占身问病却成凶」（占身，不是占胎），第二段作「占胎问病重重吉」「谒贵求官反不亨」（「谒」字不误，可证「遏」是误字），第三段作「占婚问病俱凶犯」。",
+        "en": "The poem has five stanzas (Resource, Output, Pressure, Wealth, Peer); the first four bear on illness and the stanza on Peer is not taken. 'Divining a pregnancy or asking about illness' puts two matters together: a divination about conception and a divination about illness. The text reads 'to check the noble' where, from the context, 'to call on the noble' is expected; the translation gives 'seeking an audience with a noble'. The line 'if divining illness or birth, Pressure is the womb' stands alone, and the poem does not say what Pressure being the womb means for an illness; it is translated literally. The last two stanzas were taken in the marriage domain (LY.MARRY.BSQS.09). The same poem is also in the Huozhu Lin (line 948) and the Zhouyi Shangzhan (lines 475 to 478), with small differences: the Zhouyi Shangzhan has the first stanza as 'divining about one's person or asking about illness is ominous' (person, not pregnancy), the second as 'divining pregnancy or asking about illness: joy upon joy' and 'calling on a noble and seeking office goes badly' (with the correct character for 'call on', which bears out that the Bushi Daquan's 'check' is a mistake), and the third as 'divining marriage or asking about illness are both ominous and offending'."
+      },
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.DYTJ.41", "LY.ILL.HDY.17"]
+    },
+    {
+      "id": "LY.ILL.BSQS.06",
+      "topic": "动变",
+      "chapter": "卜筮歌诀·二十一、六亲发动诀",
+      "chapter_en": "Bushi Quanshu verses, no. 21: the six relations moving",
+      "title": "六亲发动诀·疾病：父动克子孙病人无药昏沉；子孙发动伤官鬼占病求医即痊；官鬼发动克兄弟病因门庭祸祟；财爻发动克文书病人伤胃伤脾；兄弟交重克财病人难愈",
+      "rule": {
+        "yi": "六亲发动诀里讲病的句子：父母爻发动，当头克子孙，病人没有药可用，昏沉；子孙爻发动伤官鬼，占病求医，人就痊愈；官鬼爻发动克兄弟，病因是门庭里有祸祟；财爻发动克文书，病人伤胃，更伤脾；兄弟交重克了财，病人难愈，灾没有离开。",
+        "en": "The lines on illness in the verse on the six relations moving: with Resource moving and controlling Output head-on, the sick person has no medicine to use and sinks into stupor; with Output moving and injuring Pressure, in divining illness and seeking a doctor one is cured at once; with Pressure moving and controlling Peer, the cause of the illness is misfortune from the gate and courtyard; with Wealth moving and controlling documents, the sick person has harm to the stomach and still more to the spleen; with Peer moving together and controlling Wealth, the sick person is hard to cure and has not left misfortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3147, 3147],
+          "zh": ["父动当头克子孙，", "病人无药主昏沉。"],
+          "yi": ["父爻发动，当头克子孙，", "病人没有药可用，主昏沉。"],
+          "en": ["With the Resource line moving and controlling Output head-on,", "the sick person has no medicine to use and sinks into stupor."] },
+        { "by": "经", "book": "卜筮大全", "range": [3151, 3151],
+          "zh": ["子孙发动伤官鬼，", "占病求医身便痊。"],
+          "yi": ["子孙爻发动，伤克官鬼，", "占病求医，人就痊愈。"],
+          "en": ["With the Output line moving and injuring Pressure,", "in divining illness and seeking a doctor one is cured at once."] },
+        { "by": "经", "book": "卜筮大全", "range": [3153, 3153],
+          "zh": ["官鬼发动克兄弟，", "婚姻未就生滞疑。", "病因门庭祸祟来，"],
+          "yi": ["官鬼爻发动，克兄弟，", "婚姻没有成，生出迟滞疑虑；", "病的起因是门庭里来了祸祟。"],
+          "en": ["With the Pressure line moving and controlling Peer,", "a marriage is not made and delay and doubt arise;", "the cause of illness is misfortune and haunting coming from the gate and courtyard."] },
+        { "by": "经", "book": "卜筮大全", "range": [3155, 3155],
+          "zh": ["财爻发动克文书，", "应举求名总是虚。", "将本经营为大吉，", "亲姻如意乐无虞。", "行人在外身将动，", "产妇求神易脱除。", "失物静安家未出，", "病人伤胃更伤脾。"],
+          "yi": ["财爻发动，克文书，", "应考、求名总是落空；", "拿本钱经营是大吉，", "亲事如意，快乐无忧；", "出门在外的人将要动身，", "产妇求神，容易分娩；", "失物安安静静，还没有出家门，", "病人是伤胃，更伤脾。"],
+          "en": ["With the Wealth line moving and controlling documents,", "sitting an examination or seeking fame all comes to nothing;", "trading with capital is very fortunate,", "a marriage connection is as wished, happy and free of worry;", "the traveller away from home is about to move,", "the woman in childbirth who prays to the spirits is easily delivered;", "a lost thing is quiet and safe, it has not left the house,", "and the sick person has harm to the stomach, and still more to the spleen."] },
+        { "by": "经", "book": "卜筮大全", "range": [3157, 3157],
+          "zh": ["兄弟交重克了财，", "病人难愈未离灾。"],
+          "yi": ["兄弟爻交重，克了财，", "病人难以痊愈，还没有脱离灾难。"],
+          "en": ["With the Peer line moving and controlling Wealth,", "the sick person is hard to cure and has not left misfortune."] }
+      ],
+      "note": {
+        "yi": "这首诀每一段讲一种六亲发动时各件事的结果，共五段（父母、子孙、官鬼、财、兄弟），每一段里讲到病的那一句都收在这里。财爻一段里讲病的是最后一句，所以整段八句原样带着。「官鬼发动克兄弟」一句里的兄弟是兄弟爻。父动克子孙、子孙发动伤官鬼两段，断易天机的六亲用变里也有，文字几乎一样（LY.ILL.DYTJ.40）。「病因门庭祸祟来」的「祸祟」是鬼神、邪气作祟。",
+        "en": "Each stanza of this verse gives the outcome of one relation moving, five stanzas in all (Resource, Output, Pressure, Wealth, Peer), and the line on illness in each is taken here. In the stanza on Wealth the line on illness is the last, so the whole stanza of eight lines is carried. In 'Pressure moving and controlling Peer' the Peer is the Peer line. The stanzas 'Resource moving controls Output' and 'Output moving injures Pressure' are also in the section on the six relations turning in the Duanyi Tianji, in almost the same words (LY.ILL.DYTJ.40). 'Misfortune and haunting' means a harm from spirits or evil influence."
+      },
+      "see": ["LY.ILL.DYTJ.40", "LY.ILL.HDY.15"]
+    },
+    {
+      "id": "LY.ILL.BSQS.07",
+      "topic": "动变",
+      "chapter": "卜筮歌诀·二十六、六亲变化歌",
+      "chapter_en": "Bushi Quanshu verses, no. 26: what each relation turns into",
+      "title": "六亲变化歌·疾病：子孙化鬼忧病产；官鬼化财占病凶",
+      "rule": {
+        "yi": "六亲变化歌里讲病的两句：子孙爻动，变出官鬼，担忧疾病和生产；官鬼爻动，变出财爻，占病主凶。",
+        "en": "The two lines on illness in the verse on what each relation turns into: when the Output line moves and turns into Pressure, worry over illness and childbirth; when the Pressure line moves and turns into Wealth, divining illness is ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3211, 3211],
+          "zh": ["子孙化子孙，", "人财两称情；", "化父田蚕旺，", "化财加倍荣；", "化鬼忧病产，", "兄弟必相争。"],
+          "yi": ["子孙爻化出子孙，", "人和财两样都称心；", "化出父母，田地蚕桑兴旺；", "化出财，加倍荣盛；", "化出官鬼，担忧疾病和生产；", "化出兄弟，必定互相争夺。"],
+          "en": ["Output turning into Output,", "both people and money are as wished;", "turning into Resource, fields and silkworms flourish;", "turning into Wealth, doubly prosperous;", "turning into Pressure, worry over illness and childbirth;", "turning into Peer, there will surely be quarrelling between brothers."] },
+        { "by": "经", "book": "卜筮大全", "range": [3213, 3213],
+          "zh": ["官化官为禄，", "求官宜疾速；", "化财占病凶，", "化父文书逐；", "化子必伤官，", "化兄家不睦。"],
+          "yi": ["官爻化出官爻，是得俸禄，", "求官宜要快；", "化出财，占病主凶；", "化出父母，文书跟着来；", "化出子孙，必定伤官；", "化出兄弟，家里不和睦。"],
+          "en": ["Pressure turning into Pressure is a salary,", "in seeking office one should be quick;", "turning into Wealth, divining illness is ominous;", "turning into Resource, documents follow;", "turning into Output, it is sure to harm the office;", "turning into Peer, the household is not at peace."] }
+      ],
+      "note": {
+        "yi": "歌里每一句的格式是「甲化乙」：甲爻发动，变出乙爻（动是事情的开头，变是事情的结局）。全诀按「父母化」「子孙化」「官化」「妻财化」「兄弟化」一段一段排，这里只收有病的两段，整段带着。「化鬼忧病产」的「产」是生产。",
+        "en": "Every line of the verse has the form 'A turns into B': line A moves and changes into line B (the moving line is the start of the matter, the changed line its end). The whole verse runs in stanzas on Resource, Output, Pressure, Wealth and Peer turning; only the two stanzas with illness in them are taken, each complete. In 'turning into Pressure, worry over illness and childbirth' the word rendered 'childbirth' is giving birth."
+      },
+      "see": ["LY.ILL.DYTJ.40", "LY.ILL.HDY.16"]
+    },
+    {
+      "id": "LY.ILL.BSQS.08",
+      "topic": "动变",
+      "chapter": "卜筮歌诀·二十七、六神歌断",
+      "chapter_en": "Bushi Quanshu verses, no. 27: judging by the six spirits",
+      "title": "六神歌断·白虎：交重丧恶事、官司病患必成凶；持金坐世妨人口，遇火临空便不同",
+      "rule": {
+        "yi": "六神歌断里的白虎一段：白虎爻交重，主丧事、恶事，官司和病患一定凶；白虎属金、坐在世爻上，妨害家里的人口；遇到火，或者落空，情形就不同了。",
+        "en": "The White Tiger stanza in the verse judging by the six spirits: with the White Tiger line moving, there is mourning and ill fortune, and lawsuits and illness are surely ominous; if it is Metal and sits on the Self line it harms the household members; if it meets Fire or falls Void, things are different."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3229, 3229],
+          "zh": ["白虎交重丧恶事，", "官司病患必成凶。", "持金坐世妨人口，", "遇火临空便不同。"],
+          "yi": ["白虎爻交重，主丧事、恶事，", "官司、病患一定是凶。", "持金坐在世爻上，妨害人口，", "遇到火，或者落空，情形就不同了。"],
+          "en": ["With the White Tiger line moving, there is mourning and ill fortune,", "and lawsuits and illness are surely ominous.", "If it holds Metal and sits on the Self line, it harms the household members;", "if it meets Fire or falls Void, things are different."] }
+      ],
+      "note": {
+        "yi": "这一段讲白虎爻发动。「持金」指白虎本身属金（白虎五行属金，见 LY.ILL.DYTJ.38）落在金爻上。末一句给了一个例外：遇火（火克金）或者白虎落了空亡，前面的凶就变了。六神歌断一共六段，每段一位神，这里只收白虎。",
+        "en": "This stanza is about the White Tiger line moving. 'Holding Metal' means the White Tiger, which is itself Metal (see LY.ILL.DYTJ.38), falling on a Metal line. The last line gives an exception: if it meets Fire (Fire controls Metal) or the White Tiger is Void, the ill omen above changes. The verse has six stanzas, one for each spirit; only the White Tiger is taken here."
+      },
+      "see": ["LY.ILL.DYTJ.38", "LY.ILL.BSQS.03"]
+    },
+    {
+      "id": "LY.ILL.BSQS.09",
+      "topic": "动变",
+      "chapter": "卜筮歌诀·二十四、月建直符",
+      "chapter_en": "Bushi Quanshu verses, no. 24: the Month as duty-star",
+      "title": "月建直符·白虎：对宫为白虎凡占当忌，外动有忧惊、内摇生疾苦",
+      "rule": {
+        "yi": "月建直符里说：月建对宫的那一位是白虎，凡是占问都要避忌它；它在外卦发动主忧虑惊恐，在内卦发动生出疾病和痛苦。",
+        "en": "The verse on the Month as duty-star says: the palace opposite the Month is the White Tiger and is to be shunned in any divination; moving outside it means anxiety and fright, moving inside it brings illness and suffering."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3193, 3193],
+          "zh": ["对宫为白虎，", "凡占当忌取；", "外动有忧惊，", "内摇生疾苦。"],
+          "yi": ["对宫是白虎，", "凡是占问都应当避忌它；", "在外发动，有忧虑惊恐；", "在内发动，生出疾病痛苦。"],
+          "en": ["The opposite palace is the White Tiger,", "to be shunned in any divination;", "moving outside, there is anxiety and fright;", "moving inside, it brings illness and suffering."] }
+      ],
+      "note": {
+        "yi": "月建直符是另一种排六神的办法：拿当月的月建作青龙，月建往前数三位是朱雀，往后数三位是玄武，月建对冲的那一宫（对宫）是白虎，再往后一位是勾陈，螣蛇从正月的辰起、每月逆行一位。歌里的「内」「外」指内卦、外卦。这里的「对宫」就是月建对冲的那个地支，也就是月破的位置；歌没有说这一点，是从前面几句的排法读出来的。原书在歌后加了一句小注：「正月寅爻动是也，主管一月之事」，说的是月建所在的那一爻发动，管这个月的事。",
+        "en": "The Month as duty-star is another way of setting the six spirits: the Month branch of the current month is the Azure Dragon, three places ahead of it is the Vermilion Bird, three places behind is the Dark Tortoise, the palace opposite the Month branch (the clash) is the White Tiger, one place further back is Hook Earth, and the Coiling Snake starts from Chen in the first month and moves one place backward each month. 'Inside' and 'outside' in the verse are the inner and outer trigrams. Here 'the opposite palace' is the branch that clashes the Month, which is where the Month-break falls; the verse does not say so, and this is read from the way the earlier lines set things out. The original adds a small note after the verse: 'in the first month it is a moving Yin line, and it governs that month's affairs', meaning the line in the Month's place moves and governs the matters of that month."
+      },
+      "see": ["LY.ILL.DYTJ.38", "LY.ILL.BSQS.08"]
+    },
+    {
+      "id": "LY.ILL.BSQS.10",
+      "topic": "医药",
+      "chapter": "卜筮歌诀·二十二、神杀断例",
+      "chapter_en": "Bushi Quanshu verses, no. 22: examples of judging by spirit-stars",
+      "title": "神杀断例·病遇天医瘥",
+      "rule": {
+        "yi": "神杀断例说：占病遇到天医，病会痊愈。",
+        "en": "The verse of examples on judging by spirit-stars says: in divining illness, meeting the Heavenly Physician, the illness is cured."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3163, 3163],
+          "zh": ["病遇天医瘥，"],
+          "yi": ["占病遇到天医，病就痊愈，"],
+          "en": ["In divining illness, meeting the Heavenly Physician, the illness is cured,"] }
+      ],
+      "note": {
+        "yi": "「瘥」是病愈。天医是一个神煞，按月定位（正月卯、二月亥……）；断易天机有完整的月表（LY.ILL.DYTJ.30、LY.ILL.DYTJ.34），卜筮全书的神煞歌例里也有（LY.ILL.BSQS.48）。这里只有一句结论，没有位置。同一句的下一句「囚因血忌刑」讲的是囚犯，不收。",
+        "en": "'Chai' means recovery from illness. The Heavenly Physician is a spirit-star set by month (Mao in the first month, Hai in the second, and so on); the Duanyi Tianji gives the full monthly table (LY.ILL.DYTJ.30, LY.ILL.DYTJ.34), and the verses on spirit-stars in the Bushi Quanshu have it too (LY.ILL.BSQS.48). Here there is only the conclusion, without the positions. The next line, 'a prisoner, because of the Blood Taboo, is punished', is about prisoners and is not taken."
+      },
+      "see": ["LY.ILL.DYTJ.30", "LY.ILL.DYTJ.34"]
+    },
+    {
+      "id": "LY.ILL.BSQS.11",
+      "topic": "风险",
+      "chapter": "卜筮歌诀·二十二、神杀断例",
+      "chapter_en": "Bushi Quanshu verses, no. 22: examples of judging by spirit-stars",
+      "title": "神杀断例·四般休问病：三丘、五墓、飞帘、浴盆四煞不要问病",
+      "rule": {
+        "yi": "神杀断例说：三丘、五墓、飞帘、浴盆这四样煞，不要拿来问病；占怀孕见了它们，也主忧虑惊恐。",
+        "en": "The verse of examples on judging by spirit-stars says: do not ask about illness when the Three Mounds, the Five Tombs, the Flying Curtain and the Bathing Basin are present; in divining a pregnancy too they bring worry and fright."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3165, 3167],
+          "zh": ["三丘并五墓，", "飞帘及浴盆。", "四般休问病，", "占孕亦忧惊。"],
+          "yi": ["三丘和五墓，", "飞帘和浴盆。", "这四样不要问病，", "占怀孕也忧虑惊恐。"],
+          "en": ["The Three Mounds together with the Five Tombs,", "the Flying Curtain and the Bathing Basin:", "of these four, do not ask about illness,", "and in divining a pregnancy there is worry and fright too."] }
+      ],
+      "note": {
+        "yi": "「四般」指前两句点名的四样：三丘、五墓、飞帘、浴盆。三丘五墓在断易天机里有按季节的取法（春丑、夏辰、秋未、冬戌是三丘，五墓从对宫取，LY.ILL.DYTJ.31），卜筮全书的神煞歌例里也有（LY.ILL.BSQS.52）。「飞帘」「浴盆」这里只点了名，没有给位置；周易尚占的神杀例给了浴盆的位置（春辰夏未秋戌冬丑，LY.ILL.ZSZ.01）。",
+        "en": "'The four kinds' are the four named in the first two lines: the Three Mounds, the Five Tombs, the Flying Curtain and the Bathing Basin. The Duanyi Tianji gives a seasonal way of finding the Three Mounds and Five Tombs (Chou in spring, Chen in summer, Wei in autumn and Xu in winter are the Three Mounds, and the Five Tombs are taken from the opposite palace, LY.ILL.DYTJ.31), and the verses on spirit-stars in the Bushi Quanshu have them as well (LY.ILL.BSQS.52). The Flying Curtain and the Bathing Basin are only named here without positions; the Zhouyi Shangzhan's table of spirit-stars gives the positions of the Bathing Basin (Chen in spring, Wei in summer, Xu in autumn, Chou in winter, LY.ILL.ZSZ.01)."
+      },
+      "see": ["LY.ILL.DYTJ.31", "LY.ILL.DYTJ.32", "LY.ILL.ZSZ.01"]
+    },
+    {
+      "id": "LY.ILL.BSQS.12",
+      "topic": "取象",
+      "chapter": "卜筮歌诀·禾苗田地章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on crops and fields",
+      "title": "禾苗田地章·六爻为田夫：六爻鬼克忧病疾",
+      "rule": {
+        "yi": "占庄稼的歌里，第六爻代表种田的人，主灾祸；第六爻被官鬼克，担忧病疾。",
+        "en": "In the verse on crops, the sixth line stands for the farmer and means calamity; if Pressure controls the sixth line, there is worry over illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3456, 3456],
+          "zh": ["六是田夫主灾咎。"],
+          "yi": ["第六爻是种田的人，主灾祸。"],
+          "en": ["The sixth line is the farmer and means calamity."] },
+        { "by": "经", "book": "卜筮大全", "range": [3456, 3456],
+          "zh": ["六爻鬼克忧病疾。"],
+          "yi": ["第六爻被鬼克，担忧病疾。"],
+          "en": ["With a ghost controlling the sixth line, there is worry over illness."] }
+      ],
+      "note": {
+        "yi": "这是占耕种的歌（禾苗田地章第四首）。歌里爻位依次是：初爻田、二爻种、三爻主长、四爻苗秀、五爻禾（收成）、六爻田夫；每一爻被鬼克都各有一句，只有六爻这一句讲到病。「六爻鬼克」是说官鬼克第六爻（和前面「初爻鬼克田瘦瘠」的句式一样）。这条是爻位配人的一个例子：六爻配的是种田的人。",
+        "en": "This is a verse on farming (the fourth poem of the chapter on crops and fields). Its positions run: the first line is the field, the second the seed, the third the growth, the fourth the fine seedlings, the fifth the grain (the harvest), the sixth the farmer; each line controlled by a ghost has its own sentence, and only the one on the sixth line mentions illness. 'A ghost controls the sixth line' means Pressure controls the sixth line, in the same pattern as 'a ghost controls the first line: the field is lean'. This is an example of a line position matched to a person: the sixth line is matched to the farmer."
+      },
+      "see": ["LY.ILL.DYTJ.01"]
+    },
+    {
+      "id": "LY.ILL.BSQS.13",
+      "topic": "病因",
+      "chapter": "卜筮歌诀·住居宅第章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on dwellings and houses",
+      "title": "住居宅第章·杀爻旺相官灾起、杀遇休囚疾病生（旧注：旺主官非，衰主疾病）",
+      "rule": {
+        "yi": "占家宅的歌里说：杀爻旺相，官灾就起；杀爻遇到休囚，疾病就生。旧注：旺的杀主官非，衰的杀主疾病。",
+        "en": "The verse on dwellings says: when the killing line is strong, official calamity arises; when the killing line meets rest or confinement, illness arises. The old note: a strong killing spirit brings official trouble, a weak one brings illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3488, 3488],
+          "zh": ["杀爻旺相官灾起，"],
+          "yi": ["杀爻旺相，官灾就起；"],
+          "en": ["When the killing line is strong, official calamity arises;"] },
+        { "by": "经", "book": "卜筮大全", "range": [3490, 3490],
+          "zh": ["杀遇休囚疾病生。"],
+          "yi": ["杀爻遇到休囚，疾病就生。"],
+          "en": ["when the killing line meets rest or confinement, illness arises."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3492, 3492],
+          "zh": ["旺主官非，", "衰主疾病。"],
+          "yi": ["旺的杀主官非，", "衰的杀主疾病。"],
+          "en": ["A strong one brings official trouble,", "a weak one brings illness."] }
+      ],
+      "note": {
+        "yi": "这是占家宅（住居宅第章第二首）里的一联。歌里的「杀」，歌前面一句的旧注说是勾陈杀（鬼谷起勾陈杀例：正月起辰、二月卯，每月逆行一位；如正月占宅，辰爻动，就是杀旺，主官灾起），歌本身没有明说，译文照字面写「杀爻」。断易天机把勾陈杀列为占病忌发动的四杀之一（LY.ILL.DYTJ.33）。",
+        "en": "This is a couplet in the verse on dwellings (the second poem of the chapter on dwellings and houses). The 'killing' line here is, according to the old note on the previous line, the Hook Earth killing (the Guigu method: begin at Chen in the first month and Mao in the second, moving back one place each month; if a house is divined in the first month and the Chen line moves, the killing is strong and official calamity arises), but the verse itself does not say so, and the translation keeps the literal 'killing line'. The Duanyi Tianji lists the Hook Earth killing among the four killings to avoid when divining illness (LY.ILL.DYTJ.33)."
+      },
+      "see": ["LY.ILL.DYTJ.33"]
+    },
+    {
+      "id": "LY.ILL.BSQS.14",
+      "topic": "他人病",
+      "chapter": "卜筮歌诀·住居宅第章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on dwellings and houses",
+      "title": "住居宅第章·财若动时妻有疾（旧注：妻宫有悔）；更值丧门暴病殂（旧注：丧门杀例，在内三爻发动，主其家必有暴病死）",
+      "rule": {
+        "yi": "占家宅的歌里说：财爻发动，妻子有病；再遇丧门，暴病而死。旧注：丧门的取法是正月未、二月辰、三月丑、四月戌，四个位置轮着用到十二个月；丧门在内卦三爻发动，主这家一定有人暴病而死。",
+        "en": "The verse on dwellings says: when Wealth moves, the wife is ill; if the Mourning Gate is met as well, sudden illness and death. The old note: the Mourning Gate is placed at Wei in the first month, Chen in the second, Chou in the third and Xu in the fourth, the four places turning through the twelve months; if the Mourning Gate is in the inner three lines and moves, someone in the household is sure to die of a sudden illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3572, 3572],
+          "zh": ["财若动时妻有疾，"],
+          "yi": ["财若发动，妻子有病，"],
+          "en": ["When Wealth moves, the wife is ill,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3573, 3573],
+          "zh": ["若值妻财发动，", "则妻宫有悔也。"],
+          "yi": ["如果遇到妻财发动，", "那么妻子这一宫有悔（不好的事）。"],
+          "en": ["If the Wealth line moves,", "then the wife's place has cause for regret."] },
+        { "by": "经", "book": "卜筮大全", "range": [3578, 3578],
+          "zh": ["更值丧门暴病殂。"],
+          "yi": ["更遇到丧门，暴病而死。"],
+          "en": ["and if the Mourning Gate is met as well, sudden illness and death."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3579, 3579],
+          "zh": ["丧门杀例：", "正月未，", "二月辰，", "三月丑，", "四月戌。", "只此四位，", "轮十二月。", "若遇此杀在内三爻，", "更发动，", "主其家必有暴病死也。"],
+          "yi": ["丧门杀的取法：", "正月在未，", "二月在辰，", "三月在丑，", "四月在戌。", "只有这四个位置，", "轮着用到十二个月。", "如果这个杀在内卦三爻，", "又发动起来，", "主他家一定有人暴病而死。"],
+          "en": ["The way to place the Mourning Gate killing:", "the first month, Wei;", "the second month, Chen;", "the third month, Chou;", "the fourth month, Xu.", "Only these four places,", "turning through the twelve months.", "If this killing is in the inner three lines,", "and moves,", "then someone in the household is sure to die of a sudden illness."] }
+      ],
+      "note": {
+        "yi": "这里讲病的两处都在占家宅（住居宅第章第二首）的歌里：「财若动时妻有疾」「更值丧门暴病殂」，后面各跟一条旧注。「悔」是易经里的小凶、小麻烦。丧门的位置按旧注，正月未、二月辰、三月丑、四月戌，每月退三位，四月之后又回到未（五月），所以「只此四位，轮十二月」是每四个月一轮；旧注只写了前四个月，五月起的轮换是按「轮十二月」读出来的。断易天机的神煞表里也有丧门（LY.ILL.DYTJ.35 的邻近各条），位置是另一种排法，见那边。",
+        "en": "Both lines on illness here come from the verse on dwellings (the second poem of the chapter on dwellings and houses): 'when Wealth moves, the wife is ill' and 'the Mourning Gate as well: sudden illness and death', each followed by an old note. 'Regret' in the Yijing is a minor trouble. The old note places the Mourning Gate at Wei in the first month, Chen in the second, Chou in the third and Xu in the fourth, three places back each month, with the fifth month returning to Wei, so 'only these four places, turning through twelve months' means one turn every four months; the note writes out only the first four months, and the turning from the fifth month on is read from 'turning through twelve months'. The table of spirit-stars in the Duanyi Tianji also has the Mourning Gate, placed in another way, see there."
+      },
+      "see": ["LY.ILL.DYTJ.35"]
+    },
+    {
+      "id": "LY.ILL.BSQS.15",
+      "topic": "他人病",
+      "chapter": "卜筮歌诀·住居宅第章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on dwellings and houses",
+      "title": "住居宅第章·阴化为阳忧女子、阳化为阴损丈夫（旧注：阴变阳女子疾，阳变阴丈夫灾）",
+      "rule": {
+        "yi": "占家宅的歌里说：动爻从阴变阳，女子有忧（旧注：女子有病）；从阳变阴，损伤男子（旧注：男子有灾）。",
+        "en": "The verse on dwellings says: when a moving line turns from yin into yang, there is worry for the woman (the old note: the woman is ill); when it turns from yang into yin, the man is harmed (the old note: the man has calamity)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3580, 3580],
+          "zh": ["阴化为阳忧女子，"],
+          "yi": ["阴爻化成阳爻，女子有忧；"],
+          "en": ["A yin line turning into yang, there is worry for the woman;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3580, 3580],
+          "zh": ["阴变阳，女子疾。"],
+          "yi": ["阴变阳，女子有病；"],
+          "en": ["yin changing to yang, the woman is ill;"] },
+        { "by": "经", "book": "卜筮大全", "range": [3580, 3580],
+          "zh": ["阳化为阴损丈夫。"],
+          "yi": ["阳爻化成阴爻，损伤男子；"],
+          "en": ["a yang line turning into yin, the man is harmed;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3580, 3580],
+          "zh": ["阳变阴，丈夫灾。"],
+          "yi": ["阳变阴，男子有灾。"],
+          "en": ["yang changing to yin, the man has calamity."] }
+      ],
+      "note": {
+        "yi": "歌只说「忧」「损」，是笼统的担忧和损伤；夹在歌句中间的两条旧注把它写成「女子疾」「丈夫灾」，所以放在疾病域。「阴化为阳」是动爻本来是阴爻、变出来是阳爻，这里的「阴」「阳」指爻，不是卦。旧注「丈夫灾」里的灾不一定是病，译文照字面。断易通玄赋里有相近的一联（阳动男人滞、阴动女人殃，LY.ILL.BSQS.23），那一联讲的是动爻本身的阴阳，这一条讲的是变爻的阴阳，不要混。",
+        "en": "The verse says only 'worry' and 'harm', a general worry and harm; the two old notes set between its lines put it as 'the woman is ill' and 'the man has calamity', which is why it is placed in the illness domain. 'A yin line turning into yang' means the moving line was a yin line and what it changes into is a yang line; 'yin' and 'yang' here refer to lines, not to hexagrams. The 'calamity' in the note 'the man has calamity' is not necessarily illness, and the translation keeps it literal. The Duanyi Tongxuan Fu has a related couplet (a yang line moving: the man is held up; a yin line moving: the woman has misfortune, LY.ILL.BSQS.23); that couplet is about the yin or yang of the moving line itself and this one about the yin or yang of the changed line, so they should not be mixed."
+      },
+      "see": ["LY.ILL.BSQS.23"]
+    },
+    {
+      "id": "LY.ILL.BSQS.16",
+      "topic": "他人病",
+      "chapter": "卜筮歌诀·住居宅第章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on dwellings and houses",
+      "title": "住居宅第章·子兴有喜没官非、更无灾病与盗贼；兄动耗财妻妾病",
+      "rule": {
+        "yi": "占家宅的歌里说：子孙发动，有喜事，没有官非，也没有灾病和盗贼；兄弟发动，耗财，妻妾有病，是非和谋望又多阻隔。",
+        "en": "The verse on dwellings says: when Output moves, there is joy, no official trouble, and no calamity, illness or thieves either; when Peer moves, money is spent, the wife and concubines fall ill, and quarrels and plans meet many obstacles."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3586, 3586],
+          "zh": ["子兴有喜没官非，", "更无灾病与盗贼。"],
+          "yi": ["子孙爻发动，有喜事，没有官非，", "更没有灾病和盗贼。"],
+          "en": ["When the Output line moves, there is joy and no official trouble,", "and no calamity, illness or thieves either."] },
+        { "by": "经", "book": "卜筮大全", "range": [3586, 3586],
+          "zh": ["兄动耗财妻妾病，", "是非谋望多阻隔。"],
+          "yi": ["兄弟发动，耗财，妻妾有病，", "是非和谋望多有阻隔。"],
+          "en": ["When Peer moves, money is spent and the wife and concubines fall ill,", "and quarrels and plans meet many obstacles."] }
+      ],
+      "note": {
+        "yi": "这是占家宅（住居宅第章第三首）里的两联。全歌先说「五事俱全不可克」（父母、兄弟、子孙、妻财、官鬼五类都要齐全、不被克），再按子、财、兄、父、鬼各一联讲各自发动的结果，这里只收有病的两联。",
+        "en": "These are two couplets in the verse on dwellings (the third poem of the chapter on dwellings and houses). The whole poem first says 'all five kinds must be present and not controlled' (Resource, Peer, Output, Wealth and Pressure), then gives one couplet each for Output, Wealth, Peer, Resource and Pressure moving; only the two couplets with illness in them are taken."
+      },
+      "see": ["LY.ILL.DYTJ.40"]
+    },
+    {
+      "id": "LY.ILL.BSQS.17",
+      "topic": "风险",
+      "chapter": "卜筮歌诀·移徒章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on moving house",
+      "title": "移徒章·朱雀又临官鬼位、克世兼持世：病遭危困、讼遭囚",
+      "rule": {
+        "yi": "占迁居的歌里说：朱雀又临在官鬼爻上，官司口舌就有来由；再克世、又持世，生病会遇到危险困厄，打官司会被囚禁。",
+        "en": "The verse on moving house says: if the Vermilion Bird sits on a Pressure line, there is cause for lawsuits and quarrels; if it also controls and holds the Self line, illness meets danger and distress, and a lawsuit ends in imprisonment."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3609, 3609],
+          "zh": ["朱雀又临官鬼位，", "官司口舌有来由。", "那更克世兼持世，", "病遭危困讼遭囚。"],
+          "yi": ["朱雀又临在官鬼位上，", "官司口舌有来由。", "再克世又持世，", "生病遇到危险困厄，打官司遇到囚禁。"],
+          "en": ["If the Vermilion Bird also sits on the Pressure position,", "there is cause for lawsuits and quarrels.", "and if it also controls and holds the Self line,", "illness meets danger and distress, and a lawsuit meets imprisonment."] }
+      ],
+      "note": {
+        "yi": "这是占迁居（移徒章第一首）里的一联，讲朱雀、官鬼、世爻三样凑在一起。「克世兼持世」是同一个神既克世爻又坐在世爻上，照字面写成「控制并占住」在汉语里说不通，译文写作「又克世、又持世」，保留歌里两个动作并列的样子。",
+        "en": "This couplet is in the verse on moving house (the first poem of the chapter on moving), where the Vermilion Bird, Pressure and the Self line come together. 'Controls and holds the Self line' describes one spirit that both controls the Self line and sits on it; the translation keeps the two actions side by side as in the verse."
+      },
+      "see": ["LY.ILL.DYTJ.38"]
+    },
+    {
+      "id": "LY.ILL.BSQS.18",
+      "topic": "他人病",
+      "chapter": "卜筮歌诀·六亲章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on the six relations",
+      "title": "六亲章·杀神朱雀同时并重病如何得起床；妻犯勾陈妻病殃",
+      "rule": {
+        "yi": "六亲章里讲病的两处：父母爻带着杀神，又和朱雀同时并在一起，重病怎么还能起得了床；妻财犯了勾陈，妻子有病灾。",
+        "en": "Two places on illness in the chapter on the six relations: when the Resource line carries a killing spirit and is joined by the Vermilion Bird, how can a grave illness ever rise from bed; when Wealth offends Hook Earth, the wife has illness and misfortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3641, 3641],
+          "zh": ["父母休囚离祖早，", "两重父母过亲房。", "杀神朱雀同时并，", "重病如何得起床。"],
+          "yi": ["父母爻休囚，早早离开祖上；", "有两重父母爻，过继到亲房。", "杀神和朱雀同时并在一起，", "重病怎么还能起得了床。"],
+          "en": ["With the Resource line resting or confined, one leaves the ancestors early;", "with two Resource lines, one passes into a relative's household.", "When a killing spirit and the Vermilion Bird are together,", "how can a grave illness ever rise from bed?"] },
+        { "by": "经", "book": "卜筮大全", "range": [3641, 3641],
+          "zh": ["财临朱雀妻贤慧，", "妻犯勾陈妻病殃。"],
+          "yi": ["财爻临朱雀，妻子贤惠聪明；", "妻财犯了勾陈，妻子有病灾。"],
+          "en": ["Wealth on the Vermilion Bird: the wife is worthy and clever;", "Wealth offending Hook Earth: the wife has illness and misfortune."] }
+      ],
+      "note": {
+        "yi": "这首六亲章是一段很长的歌，从父母一直讲到兄弟，这里只收和病有关的两处。「杀神朱雀同时并」里的杀神泛指凶煞，歌里没有点名；这一联接在讲父母爻的几句后面，所以译文按「父母爻带着杀神」读，歌没有明写主语。婚姻域收过第二处（LY.MARRY.BSQS.10）。",
+        "en": "This poem on the six relations is long, running from Resource to Peer, and only the two places bearing on illness are taken here. The 'killing spirit' in 'a killing spirit and the Vermilion Bird together' is a general word for ill-omened stars and the verse names none; the couplet follows the lines on the Resource line, so the translation reads it as 'the Resource line carrying a killing spirit', though the verse does not write the subject. The second place was taken in the marriage domain (LY.MARRY.BSQS.10)."
+      },
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.DYTJ.41"]
+    },
+    {
+      "id": "LY.ILL.BSQS.19",
+      "topic": "他人病",
+      "chapter": "卜筮歌诀·行人章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on travellers",
+      "title": "行人章·鬼兄并发多应病，官化为官更不祥",
+      "rule": {
+        "yi": "占行人的歌里说：官鬼爻和兄弟爻一起发动，多半应在行人生病；官鬼化出官鬼，更不吉祥。",
+        "en": "The verse on travellers says: when the Pressure line and the Peer line move together, it mostly points to the traveller falling ill; Pressure turning into Pressure is still more inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3892, 3892],
+          "zh": ["鬼兄并发多应病，", "官化为官更不祥。"],
+          "yi": ["鬼爻和兄弟爻一起发动，多半应在生病，", "官鬼化成官鬼，更不吉祥。"],
+          "en": ["When Pressure and Peer move together, it mostly points to illness,", "and Pressure turning into Pressure is still more inauspicious."] }
+      ],
+      "note": {
+        "yi": "这是占行人（外出的人）的歌里的一联，讲的是出门在外的人生病。「鬼兄」是官鬼和兄弟两爻。「官化为官」是官鬼发动、变出来又是官鬼。同一首歌的其余句子讲行人什么时候回、在路上有什么事，不收。",
+        "en": "This couplet is in the verse on travellers (people away from home) and is about the traveller falling ill. 'Ghost and brother' means the Pressure and Peer lines. 'Official turning into official' is a Pressure line that moves and changes into Pressure again. The other lines of the same poem are about when the traveller returns and what befalls him on the road, and are not taken."
+      },
+      "see": ["LY.ILL.DYTJ.41"]
+    },
+    {
+      "id": "LY.ILL.BSQS.20",
+      "topic": "生死",
+      "chapter": "卜筮歌诀·行人章",
+      "chapter_en": "Bushi Quanshu verses: the chapter on travellers",
+      "title": "行人章·附健否：旺相不入墓爻活、囚死空亡随水沫；卦爻不化入墓中皆平善，反之必死",
+      "rule": {
+        "yi": "占行人是否平安的歌里说：行人的爻旺相、没有入墓就活，囚死、落空亡就像水沫一样散去；卦和爻不变化入墓，都平安稳当，反过来一定死，只好去招魂、办殡宫。",
+        "en": "The verse on whether a traveller is well says: if the traveller's line is strong and does not enter the tomb it lives; if it is confined, dead or Void it drifts away like foam on water; if the hexagram and lines do not change into a tomb, all is peaceful and secure; the reverse is certain death, and one can only go and call the soul and prepare the mourning hall."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3926, 3928],
+          "zh": ["旺相不入墓爻活，", "囚死空亡随水沫。", "又看上下卦如何，", "旺相相生行泼泼。", "卦爻不化入墓中，", "皆为平善得安隆。", "反之必死不须望，", "但去招魂作殡宫。"],
+          "yi": ["旺相，没有入墓，这一爻就活；", "囚死、落空亡，就像水上的泡沫散去。", "再看上卦下卦怎么样：", "旺相又相生，行动就活泼泼的。", "卦和爻不变化入墓，", "都是平安顺遂，稳当兴隆；", "反过来就一定死，不必指望，", "只好去招魂、办殡宫了。"],
+          "en": ["Strong and not entering the tomb, the line lives;", "confined, dead or Void, it drifts away like foam on the water.", "Then see how the upper and lower trigrams are:", "thriving and generating each other, one moves about briskly.", "If the hexagram and lines do not change into a tomb,", "all is peaceful and smooth, secure and prosperous;", "the reverse is certain death, with no hope,", "and one can only go and call the soul and prepare the mourning hall."] }
+      ],
+      "note": {
+        "yi": "这一首歌收在占行人一章末尾的「附：健否」，问的是出门在外的人是死是活，和占病的生死是同一类判断：看用爻旺不旺、入没入墓、落没落空。「殡宫」是停放灵柩的地方。这里的行人是一个不在场的人，他的病死判断和本域「他人病」「生死」两类相通。",
+        "en": "This poem is the 'Appendix: whether he is well' at the end of the chapter on travellers and asks whether a person away from home is alive or dead; it is the same kind of judgement as life and death in an illness: whether the Subject line is strong, whether it enters a tomb, whether it is Void. A 'mourning hall' is where the coffin is kept. The traveller is someone not present, and the judgement of his illness or death is akin to the 'illness of others' and 'life and death' topics in this domain."
+      },
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.23"]
+    },
+    {
+      "id": "LY.ILL.BSQS.21",
+      "topic": "动变",
+      "chapter": "通玄妙论·五、逢冲暗动",
+      "chapter_en": "Tongxuan Miaolun, no. 5: a clash that stirs a still line",
+      "title": "通玄妙论·逢冲暗动：占家宅暗动吉则暗中有补、凶则暗中有害；占病亦随其所遇之神而定其吉凶",
+      "rule": {
+        "yi": "通玄妙论讲逢冲暗动，末一句是：占病也是随着所遇到的那位神，来定它的吉凶。",
+        "en": "The Tongxuan Miaolun on a line stirred by a clash ends with: in divining illness, too, good or ill is fixed by the spirit that is met."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2845, 2845],
+          "zh": ["家宅遇之，", "吉则暗中有补，", "福已至而不知；", "凶则暗中有害，", "祸欲萌而未觉。", "占病亦随其所遇之神，", "而定其吉凶也。"],
+          "yi": ["占家宅遇到暗动，", "吉就暗中有补益，", "福已经来了却不知道；", "凶就暗中有伤害，", "祸刚要萌生却没有察觉。", "占病也是随着所遇到的那位神，", "来定它的吉凶。"],
+          "en": ["In divining a house, meeting a stirred line,", "if good there is a hidden help,", "fortune has already come and is not known;", "if bad there is a hidden harm,", "and misfortune is about to sprout and is not noticed.", "In divining illness too, it goes by the spirit that is met,", "and its good or ill is fixed."] }
+      ],
+      "note": {
+        "yi": "「暗动」是静爻被日辰冲动（断易天机、卜筮大全这一节开头都有定义：六爻安静，不遇冲则不动，日辰相冲，名曰暗动）。「所遇之神」按上下文读是被冲动的那一爻是什么神，就按那一爻是吉还是凶来断，书里没有另外注。断易天机里同一节对占病写得具体（LY.ILL.DYTJ.28：吉则病人有默佑，凶则阴隙所致），卜筮大全这一本只有这一句概括，一本具体、一本笼统，不矛盾。这一句前面的家宅一联是同一节里的，一并带着，让「占病亦随」有所指。",
+        "en": "A 'stirred' line is a still line set moving by the Day branch clashing it (both the Duanyi Tianji and the Bushi Daquan define it at the head of this section: if all six lines are still and there is no clash, nothing moves; if the Day clashes a line, it is called stirred). 'The spirit that is met' is read from the context as: whatever kind of line has been stirred, judge by whether that line is good or bad; the book gives no separate note. The same section in the Duanyi Tianji is more specific about illness (LY.ILL.DYTJ.28: if good, the sick person has a silent protector; if bad, it comes from a hidden crack), while this copy in the Bushi Daquan has only this general sentence; one is specific and the other general, and they do not conflict. The couplet on houses before this sentence belongs to the same section and is carried along so that 'in divining illness too' has something to refer to."
+      },
+      "see": ["LY.ILL.DYTJ.28"]
+    },
+    {
+      "id": "LY.ILL.BSQS.22",
+      "topic": "总则",
+      "chapter": "通玄妙论·八、断易总论",
+      "chapter_en": "Tongxuan Miaolun, no. 8: general discussion of Duanyi",
+      "title": "断易总论·疾病几句：散官治病全赖子孙；月破临于用爻作事无成病不痊；五墓临世临身问病一生九死",
+      "rule": {
+        "yi": "断易总论里讲病的几句：要消散官事、医治疾病，全靠子孙；月破落在用爻上，做事没有结果，病不得痊愈；五墓落在世爻或卦身上，问病是一生九死。",
+        "en": "The lines on illness in the general discussion of Duanyi: to disperse official matters and to treat illness, rely wholly on Output; with the Month-break falling on the Subject line, nothing done comes to completion and the illness is not cured; with the Five Tombs on the Self line or the Body, in asking about illness it is nine deaths to one life."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2888, 2888],
+          "zh": ["散官治病，", "全赖子孙。", "兴讼求名，", "须凭官鬼。"],
+          "yi": ["要消散官事、医治疾病，", "全靠子孙。", "要打官司、求功名，", "必须凭官鬼。"],
+          "en": ["To disperse official matters and to treat illness,", "rely wholly on Output.", "To start a lawsuit or seek fame,", "one must depend on Pressure."] },
+        { "by": "经", "book": "卜筮大全", "range": [2890, 2890],
+          "zh": ["月破临于用爻，", "作事无成病不痊。"],
+          "yi": ["月破落在用爻上，", "做事没有结果，病不得痊愈。"],
+          "en": ["With the Month-break falling on the Subject line,", "nothing done comes to completion and the illness is not cured."] },
+        { "by": "经", "book": "卜筮大全", "range": [2890, 2890],
+          "zh": ["五墓临世临身，", "问病一生九死。"],
+          "yi": ["五墓落在世爻、落在卦身上，", "问病，是一生九死。"],
+          "en": ["With the Five Tombs falling on the Self line or the Body,", "in asking about illness it is nine deaths to one life."] }
+      ],
+      "note": {
+        "yi": "「散官治病」按下一句「兴讼求名，须凭官鬼」对着读：兴讼求名要靠官鬼，散官治病要靠子孙（子孙克官鬼），所以「散官」是消散官事，不是指一个官职；这是按对句读出来的，书里没有注。「用爻」就是用神。「五墓」指什么书里没有当场讲：可能是五行的墓库（断易天机论墓一节，LY.ILL.DYTJ.23），也可能是三丘五墓杀里的五墓（LY.ILL.DYTJ.31），译文直写「五墓」。「一生九死」是九分死、一分生。同一段话在火珠林里也有（第 866 行）。",
+        "en": "'Disperse official matters and treat illness' is read against the next line, 'to start a suit or seek fame one must depend on Pressure': starting a suit or seeking fame relies on Pressure, and dispersing official matters or treating illness relies on Output (which controls Pressure), so 'disperse officials' means dissolving official trouble and not an official post; this is read from the parallel lines and the book gives no note. The 'Subject line' is the Subject. The book does not say on the spot what 'the Five Tombs' are: they may be the tombs of the five elements (the section on tombs in the Duanyi Tianji, LY.ILL.DYTJ.23) or the Five Tombs of the Three Mounds and Five Tombs killing (LY.ILL.DYTJ.31), and the translation writes 'the Five Tombs' as it stands. 'Nine deaths to one life' is nine parts death and one part life. The same passage is also in the Huozhu Lin (line 866)."
+      },
+      "see": ["LY.ILL.DYTJ.23", "LY.ILL.DYTJ.31"]
+    },
+    {
+      "id": "LY.ILL.BSQS.23",
+      "topic": "他人病",
+      "chapter": "断易通玄赋",
+      "chapter_en": "The Duanyi Tongxuan Fu",
+      "title": "断易通玄赋·阳动男人滞、阴动女人殃（旧注：问病事，阳爻发动主男人有病；阴爻动主女人有灾）",
+      "rule": {
+        "yi": "断易通玄赋里说：阳爻动，男子受阻滞；阴爻动，女子有灾殃。火珠林的旧注讲得明白：问病的事，遇到阳爻发动，主男人有病；阴爻发动，主女人有灾。",
+        "en": "The Duanyi Tongxuan Fu says: when a yang line moves the man is held up; when a yin line moves the woman meets misfortune. The old note in the Huozhu Lin is explicit: in asking about illness, if a yang line moves, the man is ill; if a yin line moves, the woman has calamity."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2989, 2989],
+          "zh": ["阳动男人滞，", "阴动女人殃。"],
+          "yi": ["阳爻发动，男人受阻滞；", "阴爻发动，女人有灾殃。"],
+          "en": ["When a yang line moves, the man is held up;", "when a yin line moves, the woman meets misfortune."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [2990, 2990],
+          "zh": ["阳爻动，主男人唉。", "阴爻动，主女人灾。"],
+          "yi": ["阳爻动，主男人叹息；", "阴爻动，主女人有灾。"],
+          "en": ["A yang line moving means the man sighs;", "a yin line moving means the woman has calamity."] },
+        { "by": "经", "book": "火珠林", "range": [918, 920],
+          "zh": ["阳动男人滞。"],
+          "yi": ["阳动男人滞。"],
+          "en": ["A yang line moving: the man is held up."] },
+        { "by": "旧注", "book": "火珠林", "range": [919, 919],
+          "zh": ["（问病事，如遇阳爻发动，主男人有病。）"],
+          "yi": ["（问病事，如果遇到阳爻发动，主男人有病。）"],
+          "en": ["(In asking about illness, if a yang line moves, it means the man is ill.)"] },
+        { "by": "经", "book": "火珠林", "range": [919, 919],
+          "zh": ["阴动女人殃。"],
+          "yi": ["阴动女人殃。"],
+          "en": ["A yin line moving: the woman meets misfortune."] },
+        { "by": "旧注", "book": "火珠林", "range": [920, 920],
+          "zh": ["（阴爻动主女人有灾。）"],
+          "yi": ["（注：阴爻动，主女人有灾。）"],
+          "en": ["(A yin line moving means the woman has calamity.)"] }
+      ],
+      "note": {
+        "yi": "这一联在卜筮大全里的旧注只写「阳爻动，主男人唉；阴爻动，主女人灾」，「唉」字照原文，按上下文该是「滞」或「疾」的误字，译文照字面写成「叹息」；火珠林本的旧注则明写「问病事」，所以放在疾病域。虎易的评注认为这两句可能转抄有误，应是「子动男人滞，兄动女人殃」（从夫妻生克上说），那是今人的评注，这里不收。另：这一条讲动爻本身的阴阳，和前面「阴化为阳」「阳化为阴」（LY.ILL.BSQS.15）讲的变爻阴阳不同。断易天机里也有同一联（第 2807 行，无旧注）。",
+        "en": "In the Bushi Daquan the old note reads only 'a yang line moving means the man sighs; a yin line moving means the woman has calamity'; the character for 'sighs' is kept as in the text, which from the context should be a miswritten 'held up' or 'ill', and the translation renders it literally as 'sighs'; the old note in the Huozhu Lin says outright 'in asking about illness', which is why this is placed in the illness domain. Hu Yi's commentary holds that the two lines may have been miscopied and should read 'Output moves: the man is held up; Peer moves: the woman meets misfortune' (from the control relations of husband and wife); that is a modern commentary and is not quoted here. Note also that this entry is about the yin or yang of the moving line itself, unlike the 'yin turning into yang' and 'yang turning into yin' lines (LY.ILL.BSQS.15) which are about the changed line. The Duanyi Tianji also has the same couplet (line 2807, without an old note)."
+      },
+      "see": ["LY.ILL.BSQS.15"]
+    }
+  ]
+}

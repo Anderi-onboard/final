@@ -1,0 +1,66 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "总断千金赋·年时",
+  "chapter_en": "The Rhapsody of a Thousand Golden Judgements; the year",
+  "ranges": {"卜筮大全": [5137, 5661]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.147",
+      "topic": "生死",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·月建乃万卜之提纲（旧注：月建中有乃是真有；书中例：五月占小儿病得大过，卦中无子孙而月建午火正旺为主象，不断其死亡）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「月建是万卜的总纲，怎么可以帮着凶爻作恶。」旧注：月建是龙德之神，所以占卜以它为总纲；要详细看它有没有刑冲克害、生扶拱合，和世爻、身、主象有没有牵涉，就看出吉凶；月建里有的，才是真有，如果是坏事，就是真正的坏事。书中例：五月里占小孩的病，得到大过卦，卦里没有子孙爻，但月建是午火，正旺相，作为主象，所以不断他死亡。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'The Month is the guiding thread of every divination: how could it help the tyrant do harm?' The old commentary: the Month is the spirit of Dragon Virtue, and so a divination takes it as its guiding thread; look closely at whether it has punishment, clash, control or harm, and generation, support, flanking or combination, and whether it bears on the Self, the Body or the principal image, and good and ill show; what the Month has is truly there, and if it is a bad matter it is truly a bad matter. A case in the book: in the fifth month a child's illness was divined and the Daguo hexagram obtained; the hexagram had no Output line, but the Month was Wu Fire, at its peak, serving as the principal image, and so death was not judged."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5137, 5137],
+          "zh": ["月建乃万卜之提纲，岂可助桀而为虐。"],
+          "yi": ["月建是万卜的总纲，怎么可以帮着凶爻作恶？"],
+          "en": ["The Month is the guiding thread of every divination: how could it help the tyrant do harm?"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5138, 5138],
+          "zh": ["月建乃龙德之神，故卜卦以是为提纲。", "须详其有无刑冲克害，有无生扶拱合；", "与世身主象，有无干涉，便见吉凶。", "月建中有，乃是真有。", "如坏事，乃真正坏事也。"],
+          "yi": ["月建是龙德之神，所以占卜以它为总纲。", "要详细看它有没有刑、冲、克、害，有没有生、扶、拱、合；", "和世爻、身、主象有没有牵涉，就看出吉凶。", "月建里有的，才是真有。", "如果是坏事，就是真正的坏事。"],
+          "en": ["The Month is the spirit of Dragon Virtue, and so a divination takes it as its guiding thread.", "One must look closely at whether it has punishment, clash, control or harm, and whether it has generation, support, flanking or combination;", "and whether it bears on the Self, the Body or the principal image; then good and ill show.", "What the Month has is truly there.", "If it is a bad matter, it is truly a bad matter."] },
+        { "by": "书中例", "book": "卜筮大全", "range": [5140, 5140],
+          "zh": ["且如五月内，占小儿病，得大过卦。", "卦中无子孙爻，而月建午火，正旺为主象，不断其死亡。", "余仿此。"],
+          "yi": ["比如五月里，占小孩的病，得到大过卦。", "卦里没有子孙爻，但月建是午火，正旺相，作为主象，不断他死亡。", "其余照这样类推。"],
+          "en": ["For example, in the fifth month, divining a child's illness, one obtains the Daguo hexagram.", "The hexagram has no Output line, but the Month is Wu Fire, at its peak, serving as the principal image, and one does not judge death.", "The rest follow this."] }
+      ],
+      "note": {
+        "yi": "这条的意思是：卦里没有用神（占小孩的病，用神是子孙爻），可是当月的月建正是用神那个五行、又正旺，就算数，不能因为卦里没有子孙爻就断死。「月建中有，乃是真有」是这一条的总括。「龙德」是月建的别名（月建是龙德之神）。「助桀为虐」是帮着暴君作恶，这里指月建帮着凶爻，使凶更凶（旧注接着说「忌爻旺动而又生扶之，则是助桀为虐」）。书中例是旧注自己举的，没有写明后来的结果。",
+        "en": "The sense of this entry: when the hexagram has no Subject (in divining a child's illness, the Subject is the Output line) but the Month branch of that month is exactly the Subject's element and at its peak, it counts, and one cannot judge death merely because the hexagram has no Output line. 'What the Month has is truly there' is the summing-up. 'Dragon Virtue' is another name for the Month (the Month is the spirit of Dragon Virtue). 'Help the tyrant do harm' is to help a tyrant do evil, and here means the Month helping an ominous line to make it more ominous (the old commentary goes on: 'if the Adversary is strong and moving and is also supported, that is helping the tyrant do harm'). The case is the old commentary's own, and the book does not say how it turned out."
+      },
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.HJC.123"]
+    },
+    {
+      "id": "LY.ILL.HJC.148",
+      "topic": "痘疹",
+      "chapter": "二、年时",
+      "chapter_en": "Chapter 2: The year",
+      "title": "年时·次察群黎：二爻为人民之位，自空化空民多暴死、火鬼化父小儿多出痘疹",
+      "rule": {
+        "yi": "《黄金策》年时章说：「其次观察百姓，喜欢（二爻）在旺相的地方。」旧注：二爻是人民的位置；遇到子孙，四季安乐；逢到官鬼，太岁多灾，发动克世，百姓多去做盗贼；二爻自己落空又化成空，百姓多有暴死的；空而动、又生合应爻，百姓多迁徙到外郡；火鬼化成父母，小孩多出痘疹。",
+        "en": "The Huangjin Ce's chapter on the year says: 'Next observe the common people; it is good for them to be in a place of strength and birth.' The old commentary: the second line is the place of the people; meeting Output, the four seasons are peaceful and happy; meeting Pressure, with Tai Sui, the year has many calamities, and if it moves and controls the Self, many of the people turn to banditry; if the line is Void and turns into Void, many of the people die suddenly; if Void and moving and it generates or combines with the Other line, many of the people move away to other counties; a Fire ghost turning into Resource, many small children break out in pox and rash."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5660, 5660],
+          "zh": ["次察群黎，喜在旺生之地。"],
+          "yi": ["其次观察百姓，喜欢（二爻）在旺相、生旺的地方。"],
+          "en": ["Next observe the common people; it is good for them to be in a place of strength and birth."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5661, 5661],
+          "zh": ["二爻为人民之位。", "遇子孙，四时安乐。", "逢官鬼，太岁多灾；", "发动克世，民多为盗。", "自空化空，民多暴死。", "空动，生合应爻，民多迁徙外郡。", "火鬼化父，小儿多出痘疹。"],
+          "yi": ["二爻是人民的位置。", "遇到子孙，四季安乐；", "逢到官鬼，太岁（这一年）多灾；", "发动克世，百姓多去做盗贼。", "自己落空又化成空，百姓多有暴死的。", "空而动，生合应爻，百姓多迁徙到外郡。", "火鬼化成父母，小孩多出痘疹。"],
+          "en": ["The second line is the place of the people.", "Meeting Output, the four seasons are peaceful and happy;", "meeting Pressure, with Tai Sui, the year has many calamities;", "if it moves and controls the Self, many of the people turn to banditry.", "If it is Void and turns into Void, many of the people die suddenly.", "If it is Void and moving and generates or combines with the Other line, many of the people move away to other counties.", "A Fire ghost turning into Resource, many small children break out in pox and rash."] }
+      ],
+      "note": {
+        "yi": "年时章是占一年的事的一章，用六爻分管天、地、人：二爻是人民。这里和病有关的是两句：「民多暴死」（自空化空，百姓多有突然死的）和「小儿多出痘疹」（火鬼化成父母，当年小孩多出痘疹）。这是一年的气运，不是占一个人的病。痘疹见本域「痘疹」一类的其他条目（卜筮正宗新增痘疹章，LY.ILL.BSZZ.23 等）。「应爻」是应爻，「外郡」是别的郡县。",
+        "en": "The chapter on the year is about divining the affairs of a whole year, using the six lines to govern heaven, earth and people: the second line is the people. Two sentences bear on illness: 'many die suddenly' (the line Void and turning into Void, many of the people die suddenly) and 'many small children break out in pox and rash' (a Fire ghost turning into Resource, in that year many small children break out in pox and rash). This is the year's fortune and not one person's illness. For pox and rash see the other entries under the 'pox and rash' topic of this domain (the chapter on pox and rash added in the Bushi Zhengzong, LY.ILL.BSZZ.23 and others). The 'Other line' is the Other line, and 'other counties' are other prefectures."
+      },
+      "see": ["LY.ILL.HJC.132", "LY.ILL.BSZZ.23"]
+    }
+  ]
+}

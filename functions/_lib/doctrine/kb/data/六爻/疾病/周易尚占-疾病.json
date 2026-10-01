@@ -1,0 +1,336 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "周易尚占",
+  "chapter": "八卦断例章",
+  "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+  "ranges": {"周易尚占": [394, 1302]},
+  "units": [
+    {
+      "id": "LY.ILL.ZSZ.01",
+      "topic": "风险",
+      "chapter": "旁通部·十、四时吉凶神杀例",
+      "chapter_en": "Parallel Tables, Section 10: Auspicious and Ominous Spirit-Stars of the Four Seasons",
+      "title": "四时吉凶神杀例·占病要忌的三个煞：五墓(春未夏戌秋丑冬辰)发动持凶；浴盆(春辰夏未秋戌冬丑)临水神水爻并凶；三丘(春丑夏辰秋未冬戌)发动兄鬼主死",
+      "rule": {
+        "yi": "周易尚占旁通部的「四时吉凶神杀例」表列了三个占病要忌的煞，位置按春、夏、秋、冬的次序排：五墓是未、戌、丑、辰，发动、持（世）都凶；浴盆是辰、未、戌、丑，落在水神（玄武）或水爻上都凶；三丘是丑、辰、未、戌，发动、又有兄弟或官鬼，主死。",
+        "en": "The table of auspicious and ominous spirit-stars of the four seasons in the Parallel Tables of the Zhouyi Shangzhan lists three stars to avoid in asking about illness, set out in the order spring, summer, autumn, winter: the Five Tombs at Wei, Xu, Chou, Chen, ominous when they move or hold the Self; the Bathing Basin at Chen, Wei, Xu, Chou, ominous when it falls on a Water spirit (the Dark Tortoise) or a Water line; the Three Mounds at Chou, Chen, Wei, Xu, which mean death when they move together with Peer or Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [394, 397],
+          "zh": ["四季春夏秋冬", "五墓未戌丑辰占病忌之，", "发动持凶", "浴盆辰未戌丑占病忌之，", "临水神水爻并凶", "三丘丑辰未戌占病忌之，", "发动兄鬼主死"],
+          "yi": ["四季：春、夏、秋、冬。", "五墓：未、戌、丑、辰（依春、夏、秋、冬的次序），占病要忌它，", "发动、持（世），凶。", "浴盆：辰、未、戌、丑，占病要忌它，", "落在水神、水爻上，都凶。", "三丘：丑、辰、未、戌，占病要忌它，", "发动，有兄弟、官鬼，主死。"],
+          "en": ["The four seasons: spring, summer, autumn, winter.", "Five Tombs: Wei, Xu, Chou, Chen (in the order spring, summer, autumn, winter); in asking about illness avoid it,", "if it moves or holds [the Self], it is ominous.", "Bathing Basin: Chen, Wei, Xu, Chou; in asking about illness avoid it,", "falling on a Water spirit or a Water line, both are ominous.", "Three Mounds: Chou, Chen, Wei, Xu; in asking about illness avoid it,", "if it moves, with Peer or Pressure, it means death."] }
+      ],
+      "note": {
+        "yi": "这三行是周易尚占旁通部「十、四时吉凶神杀例」表的末三行，表头是春夏秋冬，每个煞的四个地支按这个次序排。三丘、五墓的位置和断易天机（LY.ILL.DYTJ.31）、易林补遗（LY.ILL.EL.51）一致：三丘春丑夏辰秋未冬戌，五墓取三丘的对宫（春未夏戌秋丑冬辰）。浴盆的位置（春辰夏未秋戌冬丑）和卜筮全书神煞歌例里的沐浴杀（LY.ILL.BSQS.53）、疾病论里的催尸杀（LY.ILL.BSQS.36）一样，书里没有说它们是不是同一个煞；卜筮全书「四般休问病」里的浴盆只点了名、没有给位置（LY.ILL.BSQS.11）。「发动持凶」的「持」书里没有写「世」，译文照一般的用法读作持世，放在方括号里；「临水神水爻并凶」「发动兄鬼主死」书里都没有写主语，译文补成「它」。「水神」按这一部前面「十一、定六神」里的「青龙木神，朱雀火神，勾陈土神，白虎金神，玄武水神」（第 461 行），是玄武；「兄鬼」是兄弟、官鬼。同一部分前面的合刑杀例（六合、三合、三刑、驿马、劫杀、亡神、咸池）不管病，这里不收。",
+        "en": "These are the last three rows of the table 'Section 10: Auspicious and Ominous Spirit-Stars of the Four Seasons' in the Parallel Tables of the Zhouyi Shangzhan; the header row is spring, summer, autumn, winter, and the four branches of each star follow that order. The positions of the Three Mounds and the Five Tombs agree with the Duanyi Tianji (LY.ILL.DYTJ.31) and the Yilin Buyi (LY.ILL.EL.51): the Three Mounds are Chou in spring, Chen in summer, Wei in autumn, Xu in winter, and the Five Tombs are taken from the opposite palace of the Three Mounds (Wei in spring, Xu in summer, Chou in autumn, Chen in winter). The positions of the Bathing Basin (Chen in spring, Wei in summer, Xu in autumn, Chou in winter) are the same as those of the Bathing killing in the verses of spirit-stars of the Bushi Quanshu (LY.ILL.BSQS.53) and of the Corpse-Urging killing in its essay on illness (LY.ILL.BSQS.36); the books do not say whether they are the same star, and the Bathing Basin in the Bushi Quanshu's 'four kinds not to ask about illness' is only named, with no positions given (LY.ILL.BSQS.11). The 'hold' of 'if it moves or holds, it is ominous' is not followed by 'the Self' in the book; the translation reads it in the usual way as holding the Self, and puts that in square brackets; neither 'falling on a Water spirit or a Water line, both ominous' nor 'if it moves, with Peer or Pressure, it means death' has a subject in the book, and the translation supplies 'it'. 'Water spirit' is, by the earlier section 'Section 11: Fixing the Six Spirits' in the same part, with its 'Azure Dragon is the Wood spirit, Vermilion Bird the Fire spirit, Hook Earth the Earth spirit, White Tiger the Metal spirit, Dark Tortoise the Water spirit' (line 461), the Dark Tortoise; 'Peer or Pressure' stands for the two characters meaning 'brother' and 'ghost'. The table of combining, punishing and killing stars before it in the same part (six combinations, three harmonies, three punishments, post horse, robbery, loss, bathing pool) is not about illness and is not taken here."
+      },
+      "see": ["LY.ILL.BSQS.11", "LY.ILL.BSQS.52", "LY.ILL.BSQS.53", "LY.ILL.BSQS.36", "LY.ILL.DYTJ.31", "LY.ILL.EL.51", "LY.ILL.TXF.08", "LY.ILL.YY.05"]
+    },
+    {
+      "id": "LY.ILL.ZSZ.02",
+      "topic": "生死",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+      "title": "八卦断例·占病逢观、大有、大畜、损、无妄、兑、谦：病痊、病瘥、病脱(病会好)",
+      "rule": {
+        "yi": "周易尚占的八卦断例是一卦一行断辞，下面七个卦的断辞明说病会好：观「财聚病痊」，大有「讼散病痊」，大畜「婚成病脱」，损「婚成病瘥」，无妄「病瘥讼和」，兑「病瘥婚成」，谦「身吉病瘥」。痊、瘥是痊愈，病脱是病脱去了。",
+        "en": "In the judgments by example of the Zhouyi Shangzhan each hexagram has one line of verdicts, and in these seven the line says outright that the illness will be well: Guan, 'wealth gathers, the illness is cured'; Dayou, 'the lawsuit disperses, the illness is cured'; Daxu, 'marriage is made, the illness drops away'; Sun, 'marriage is made, the illness is cured'; Wuwang, 'the illness is cured, the lawsuit is settled'; Dui, 'the illness is cured, marriage is made'; Qian (Humility), 'the person is fortunate, the illness is cured'. 'Cured' and 'recovered' both mean full recovery, and 'drops away' means the illness is shed."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [890, 890],
+          "zh": ["观者望也", "凡事有望", "田蚕进益", "家宅兴旺", "占婚最宜", "求官为上", "财聚病痊", "获福无量"],
+          "yi": ["观，就是观望。", "凡事都有指望。", "田蚕有进益。", "家宅兴旺。", "占婚事，最合适。", "求官，最好。", "钱财聚拢，病痊愈。", "得福无量。"],
+          "en": ["Guan (Viewing) means looking out.", "All matters hold hope.", "Fields and silkworms bring gain.", "The household flourishes.", "Asking about marriage: most fitting.", "Seeking office: the best.", "Wealth gathers and the illness is cured.", "Blessing is won beyond measure."] },
+        { "by": "经", "book": "周易尚占", "range": [896, 896],
+          "zh": ["盛大丰育", "所求必至", "田宅昌荣", "生财吉利", "讼散病痊", "孕生婚遂", "除却出行", "般般称意"],
+          "yi": ["兴盛、盛大、丰足、养育。", "所求的一定会到。", "田地住宅昌盛荣耀。", "生财吉利。", "官司散去，病痊愈。", "怀孕能生育，婚事如愿。", "只有出行除外，", "样样称心如意。"],
+          "en": ["Flourishing, grand, abundant, nourishing.", "What is sought will surely come.", "Fields and house prosper and flourish.", "Making wealth is auspicious.", "The lawsuit disperses and the illness is cured.", "Pregnancy comes to birth and marriage is achieved.", "Excepting travel,", "everything is to one's liking."] },
+        { "by": "经", "book": "周易尚占", "range": [1002, 1002],
+          "zh": ["畜者聚也", "人财利益", "进喜散忧", "加官转职", "田熟蚕收", "婚成病脱", "事事亨通", "般般大吉"],
+          "yi": ["畜，就是聚。", "人和财都得益。", "喜事进门，忧愁散去。", "加官进职，转任。", "田地成熟，蚕丝收成。", "婚事成，病痊脱。", "事事亨通。", "样样大吉。"],
+          "en": ["Xu (Great Accumulation) means gathering.", "People and wealth both profit.", "Joy enters and worry scatters.", "Promotion and transfer of post.", "Fields ripen and silkworms are harvested.", "Marriage is made and the illness drops away.", "Every matter goes through.", "Everything is greatly auspicious."] },
+        { "by": "经", "book": "周易尚占", "range": [1004, 1004],
+          "zh": ["损者损也", "身宅平平", "婚成病瘥", "官旺财兴", "人口进益", "家宅利贞", "弗宜公讼", "不利出行"],
+          "yi": ["损，就是减损。", "自身和住宅平平。", "婚事成，病痊愈。", "官运旺，财运兴。", "人口增益。", "家宅有利，守正。", "不宜打官司。", "不利出行。"],
+          "en": ["Sun (Decrease) means decrease.", "The person and dwelling are middling.", "Marriage is made and the illness is cured.", "Office flourishes and wealth rises.", "The household members increase.", "The household is favourable and upright.", "Lawsuits do not suit.", "Travel is unfavourable."] },
+        { "by": "经", "book": "周易尚占", "range": [1122, 1122],
+          "zh": ["无妄实也", "凡事从实", "动有灾眚", "守旧元吉", "病瘥讼和", "田收财积", "官贵文书", "重重进益"],
+          "yi": ["无妄，就是真实。", "凡事要按实际。", "一动就有灾祸。", "守旧大吉。", "病痊愈，官司和解。", "田有收成，钱财积聚。", "官贵、文书，", "层层进益。"],
+          "en": ["Wuwang (Without Falsehood) means truthfulness.", "In all matters follow what is real.", "Moving brings calamity and blight.", "Keeping to the old is supremely auspicious.", "The illness is cured and the lawsuit settled.", "Fields give harvest and wealth accumulates.", "Office, nobles, documents:", "gain upon gain."] },
+        { "by": "经", "book": "周易尚占", "range": [1288, 1288],
+          "zh": ["兑者悦也", "凡事和会", "病瘥婚成", "孕生灾退", "身宅平安", "行人立至", "六畜生财", "获利百倍"],
+          "yi": ["兑，就是喜悦。", "凡事和谐相会。", "病痊愈，婚事成。", "怀孕得生，灾祸退去。", "自身和住宅平安。", "在外的人马上到。", "六畜生财。", "获利百倍。"],
+          "en": ["Dui (Joy) means delight.", "All matters meet in harmony.", "Illness is cured and marriage is made.", "Pregnancy comes to birth and calamity retreats.", "The person and dwelling are safe.", "The traveller arrives at once.", "The six domestic animals bring wealth.", "Profit a hundredfold."] },
+        { "by": "经", "book": "周易尚占", "range": [1298, 1298],
+          "zh": ["谦者逊也", "柔谦知止", "弗利婚姻", "休问移徙", "财帛休求", "公讼且已", "身吉病瘥", "行人至矣"],
+          "yi": ["谦，就是谦逊。", "柔顺谦逊，知道止步。", "不利婚姻。", "不要问迁移。", "不要求财帛。", "官司姑且算了。", "自身吉，病痊愈。", "在外的人到了。"],
+          "en": ["Qian (Humility) means modesty.", "Soft and modest, knowing when to stop.", "Marriage is not favoured.", "Do not ask about moving house.", "Do not seek money.", "As for a lawsuit, let it rest.", "The person is fortunate and the illness is cured.", "The traveller arrives."] }
+      ],
+      "dispute": {
+        "yi": "按卦名断病，各书不一样，而这七个卦里的观、大畜，别的书说占病凶。观卦：这里说「财聚病痊」，可是阐奥歌章（LY.ILL.CA.03）说「夏观」凶，卜筮全书疾病论（LY.ILL.BSQS.35）说「夏嫌观蛊」，卜筮元龟一段（LY.ILL.DYTJ.15）和阐奥歌章第五首（LY.ILL.CA.06）都把观列进占病的凶卦，天玄赋（LY.ILL.TXF.06）说观「切忌世身入墓」（有条件的），增删卜易（LY.ILL.ZS.01）转述的「断之必死」的十个卦里也有观、大畜。大畜卦这里说「婚成病脱」，天玄赋却说大畜「莫逢财鬼俱兴」。另一方面，野鹤（LY.ILL.ZS.01）和易林补遗（LY.ILL.EL.13）根本反对按卦名断病，说断病全凭用神、「休把卦名推祸福」。书里没有裁决。",
+        "en": "Judging illness by hexagram name differs from book to book, and of these seven the other books call Guan and Daxu ominous for illness. Guan: here it says 'wealth gathers, the illness is cured', but the Chan'ao Gezhang (LY.ILL.CA.03) calls 'Guan in summer' ominous, the Bushi Quanshu's essay on illness (LY.ILL.BSQS.35) says 'summer dislikes Guan and Gu', the passage of the Bushi Yuangui (LY.ILL.DYTJ.15) and the fifth poem of the Chan'ao Gezhang (LY.ILL.CA.06) both put Guan among the ominous hexagrams for illness, the Tianxuan Fu (LY.ILL.TXF.06) says of Guan 'above all avoid the Self or the Body entering the tomb' (a conditional statement), and the ten hexagrams of 'judge death' reported in the Zengshan Buyi (LY.ILL.ZS.01) include Guan and Daxu. For Daxu the line here says 'marriage is made, the illness drops away', while the Tianxuan Fu says of Daxu 'do not meet Wealth and Pressure both stirring'. On the other side, the Old Man of Yehe (LY.ILL.ZS.01) and the Yilin Buyi (LY.ILL.EL.13) are against judging illness by hexagram name at all, saying that life and death in illness rest wholly on the Subject, 'do not push fortune and misfortune from the name of the hexagram'. The books do not decide."
+      },
+      "note": {
+        "yi": "八卦断例章一卦一行断辞，每行八个词组：头一个解释卦名的字义，后面几个分别讲事、人口、田蚕、官司、婚姻、出行、病、孕等。所以病只是其中的一个词组，这里把整行录出来，病的那一句在观卦是第七个、大有第五个、大畜第六个、损第三个、无妄第五个、兑第三个、谦第七个词组。这些断辞只按卦名给，没有讲用神、世应、动变，也不分近病久病。大有卦这一行开头没有「X者Y也」的释名，是「盛大丰育」四个字，照原文。第三个卦「畜者聚也」是大畜（艮宫第三卦），不是小畜，小畜另有一行「小畜止也」，那一行没有讲病，这里不用。「病脱」的「脱」是病去掉了。原文里整行没有标点，词组之间只有空格，译文分词组对齐。",
+        "en": "The chapter of judgments by example gives each hexagram one line of verdicts, in eight phrases: the first explains the sense of the hexagram's name, and the rest speak in turn of affairs, household members, fields and silkworms, lawsuits, marriage, travel, illness, pregnancy and so on. Illness is therefore only one phrase among them, and the whole line is taken here, with the phrase on illness being the seventh for Guan, the fifth for Dayou, the sixth for Daxu, the third for Sun, the fifth for Wuwang, the third for Dui and the seventh for Qian (Humility). These verdicts are given by hexagram name alone, with nothing said of the Subject, Self and Other or moving lines, and no distinction between recent and long illness. The line of Dayou has no explanation of the name of the form 'X means Y' at its head, but the four characters 'flourishing, grand, abundant, nourishing', as in the original. The 'Xu means gathering' of the third hexagram is Daxu (the third hexagram of the Gen palace) and not Xiaoxu, which has a line of its own, 'Xiaoxu means holding back', that does not speak of illness and is not used here. The 'drops away' of 'the illness drops away' is the illness being shed. The whole line has no punctuation in the original, only spaces between the phrases, and the translation is aligned phrase by phrase."
+      },
+      "see": ["LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05", "LY.ILL.ZS.01", "LY.ILL.EL.13", "LY.ILL.CA.03", "LY.ILL.CA.06", "LY.ILL.DYTJ.15", "LY.ILL.BSQS.35", "LY.ILL.TXF.06"]
+    },
+    {
+      "id": "LY.ILL.ZSZ.03",
+      "topic": "轻重",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+      "title": "八卦断例·占病逢乾、既济、革、贲、渐、豫、解、随、家人、益、颐、鼎、比、萃、咸：病安、安康、安宁、无忧、俱平、终吉、利",
+      "rule": {
+        "yi": "周易尚占八卦断例里，这十五个卦的断辞说病平安、顺利：乾「问病获安」，既济「病者安康」，革「孕病皆吉」，贲「病安婚遂」，渐「病疾渐安」，豫「病者获安」，解「病者安宁」，随「疾病安康」，家人「病讼无忧」，益「词病俱平」，颐「讼吉病安」，鼎「婚成病利」，比「讼病解散」，萃「病讼终吉」，咸「利讼利病」。",
+        "en": "In the judgments by example of the Zhouyi Shangzhan the line of each of these fifteen hexagrams says that illness fares peacefully and well: Qian (Heaven), 'asking about illness: safety is gained'; Jiji, 'the sick are at peace and in health'; Ge, 'pregnancy and illness are both auspicious'; Bi (Adornment), 'the sick are safe, marriage is achieved'; Jian (Gradual Progress), 'illness gradually settles'; Yu, 'the sick gain peace'; Xie, 'the sick are at ease'; Sui, 'illness is eased and health returns'; Jiaren, 'neither illness nor lawsuit brings worry'; Yi (Increase), 'lawsuit and illness are both calm'; Yi (Nourishment), 'the lawsuit is auspicious and the illness safe'; Ding, 'marriage is made, illness fares well'; Bi (Union), 'lawsuit and illness are dissolved'; Cui, 'illness and lawsuit end auspiciously'; Xian, 'favourable to lawsuits and favourable to illness'."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [882, 882],
+          "zh": ["乾者健也", "事宜专一", "人口安康", "田蚕进益", "问病获安", "占官转职", "所谋必成", "所求皆得"],
+          "yi": ["乾，就是刚健。", "做事适合专一。", "家里人口平安健康。", "田地和养蚕有进益。", "问病，能得平安。", "占官职，会转任调职。", "所谋划的事一定成功。", "所求的都能得到。"],
+          "en": ["Qian (Heaven) means strength.", "In affairs, single-mindedness suits.", "The household is at peace and in health.", "Fields and silkworms bring gain.", "Asking about illness: safety is gained.", "Asking about office: a change of post.", "What is planned will surely succeed.", "All that is sought is obtained."] },
+        { "by": "经", "book": "周易尚占", "range": [946, 946],
+          "zh": ["既济济也", "舟行无滞", "病者安康", "讼者解释", "婚姻早成", "生财迟得", "出入无虞", "营谋有益"],
+          "yi": ["既济，就是已经渡过。", "乘船走没有阻滞。", "病人平安健康。", "打官司的人得到化解。", "婚姻早成。", "生财，得来晚。", "出入没有忧患。", "营谋有益。"],
+          "en": ["Jiji (Already Across) means having crossed over.", "Travel by boat meets no delay.", "The sick are at peace and in health.", "Those in a lawsuit find it resolved.", "Marriage comes early.", "Making wealth: gained late.", "Going out and coming in are free of worry.", "Schemes bring benefit."] },
+        { "by": "经", "book": "周易尚占", "range": [948, 948],
+          "zh": ["革者变也", "事宜改更", "身宜谋用", "宅利修营", "迁移进益", "出入光亨", "孕病皆吉", "祸灭福生"],
+          "yi": ["革，就是变。", "事情适合改换。", "自身适合谋求任用。", "住宅利于修建营造。", "迁居移动有进益。", "出入光明亨通。", "怀孕和生病都吉。", "祸灭掉，福生出。"],
+          "en": ["Ge (Change) means change.", "Affairs suit alteration.", "The person suits seeking employment.", "The house suits repair and building.", "Moving house brings gain.", "Going out and coming in are bright and smooth.", "Pregnancy and illness are both auspicious.", "Misfortune is wiped out and blessing is born."] },
+        { "by": "经", "book": "周易尚占", "range": [1000, 1000],
+          "zh": ["贲者饰也", "公私并利", "财禄双荣", "田蚕收熟", "讼散孕生", "病安婚遂", "凡有施为", "称心满意"],
+          "yi": ["贲，就是装饰。", "公事私事都有利。", "钱财和俸禄都荣耀。", "田蚕丰收。", "官司散去，怀孕得生。", "病人平安，婚事如愿。", "凡是有所作为，", "称心满意。"],
+          "en": ["Bi (Adornment) means adornment.", "Public and private affairs are both favourable.", "Wealth and salary both flourish.", "Fields and silkworms ripen to harvest.", "The lawsuit disperses and the pregnancy comes to birth.", "The sick are safe and marriage is achieved.", "In whatever one undertakes,", "one is pleased and content."] },
+        { "by": "经", "book": "周易尚占", "range": [1012, 1012],
+          "zh": ["渐者进也", "田蚕进益", "求官渐升", "求财渐得", "病疾渐安", "公讼渐释", "一切所占", "渐则大吉"],
+          "yi": ["渐，就是渐进。", "田蚕有进益。", "求官，慢慢升。", "求财，慢慢得。", "病，慢慢安稳。", "官司慢慢化解。", "一切所占的事，", "循序渐进就大吉。"],
+          "en": ["Jian (Gradual Progress) means advancing step by step.", "Fields and silkworms bring gain.", "Seeking office: gradual promotion.", "Seeking wealth: gained gradually.", "Illness: it gradually settles.", "Lawsuits are gradually resolved.", "In every matter divined,", "gradual progress is greatly auspicious."] },
+        { "by": "经", "book": "周易尚占", "range": [1058, 1058],
+          "zh": ["豫者悦也", "动以顺豫", "贵喜官荣", "身安财聚", "病者获安", "行人在路", "一切施为", "贤朋相助"],
+          "yi": ["豫，就是喜悦。", "顺着理而动就喜悦。", "贵人欢喜，官职荣耀。", "自身平安，钱财聚拢。", "病人得到平安。", "在外的人在路上。", "一切作为，", "有贤良的朋友相助。"],
+          "en": ["Yu (Delight) means delight.", "Moving in accord brings delight.", "Nobles are pleased and office is glorious.", "The person is safe and wealth gathers.", "The sick gain peace.", "The traveller is on the road.", "In all one does,", "worthy friends help."] },
+        { "by": "经", "book": "周易尚占", "range": [1060, 1060],
+          "zh": ["解者散也", "忧散喜生", "田蚕进益", "婚姻不成", "久囚得赦", "病者安宁", "孕生贵子", "公讼和平"],
+          "yi": ["解，就是散开。", "忧愁散去，喜事生出。", "田蚕有进益。", "婚姻不成。", "久囚的人得到赦免。", "病人安宁。", "怀孕，生贵子。", "官司和平了结。"],
+          "en": ["Xie (Release) means dispersal.", "Worry scatters and joy arises.", "Fields and silkworms bring gain.", "Marriage is not achieved.", "Those long imprisoned are pardoned.", "The sick are at ease.", "Pregnancy: a noble son is born.", "A lawsuit ends in peace."] },
+        { "by": "经", "book": "周易尚占", "range": [1070, 1070],
+          "zh": ["随者从也", "阴必从阳", "官贵随顺", "财禄荣昌", "婚姻和睦", "疾病安康", "凡占身命", "福寿无疆"],
+          "yi": ["随，就是跟从。", "阴一定跟从阳。", "官员贵人顺从。", "财禄荣昌。", "婚姻和睦。", "疾病平安康复。", "凡是占自身和命运，", "福寿没有边际。"],
+          "en": ["Sui (Following) means following.", "Yin must follow yang.", "Officials and nobles comply.", "Wealth and salary flourish.", "Marriage is harmonious.", "Illness is eased and health returns.", "In all divining of the person and fate,", "blessing and long life are without limit."] },
+        { "by": "经", "book": "周易尚占", "range": [1118, 1118],
+          "zh": ["风火家人", "成家之象", "婚姻和合", "人财兴旺", "病讼无忧", "田蚕有望", "谒贵求官", "获福无量"],
+          "yi": ["风火家人这一卦，", "是成家的象。", "婚姻和合。", "人丁和财运兴旺。", "病和官司都无忧。", "田蚕有指望。", "拜见贵人、求官，", "得福无量。"],
+          "en": ["Wind over Fire, Jiaren (the Household),", "is the image of founding a household.", "Marriage is in harmony.", "People and wealth flourish.", "Neither illness nor lawsuit brings worry.", "Fields and silkworms hold promise.", "Calling on nobles and seeking office,", "one wins blessing beyond measure."] },
+        { "by": "经", "book": "周易尚占", "range": [1120, 1120],
+          "zh": ["益者益也", "凡事有益", "利合婚姻", "宜占身宅", "词病俱平", "生财大吉", "宜己益人", "乾坤合德"],
+          "yi": ["益，就是增益。", "凡事有益。", "利于合婚。", "适合占自身和住宅。", "词讼和病都平稳。", "生财大吉。", "适合自己，也有益于人。", "乾坤合德。"],
+          "en": ["Yi (Increase) means increase.", "All matters bring benefit.", "Favourable to joining in marriage.", "Suits divining the person and dwelling.", "Lawsuit and illness are both calm.", "Making wealth is greatly auspicious.", "Good for oneself and beneficial to others.", "Heaven and Earth unite in virtue."] },
+        { "by": "经", "book": "周易尚占", "range": [1126, 1126],
+          "zh": ["颐者养也", "养宜从正", "谋望周全", "婚姻吉庆", "讼吉病安", "财荣禄盛", "公事清平", "门庭安静"],
+          "yi": ["颐，就是养。", "养要从正道。", "谋划指望周到完满。", "婚姻吉庆。", "官司吉，病平安。", "财荣，俸禄盛。", "公事清平。", "门庭安静。"],
+          "en": ["Yi (Nourishment) means nourishment.", "Nourishment should follow what is right.", "Plans and hopes are complete.", "Marriage is auspicious and festive.", "The lawsuit is auspicious and the illness safe.", "Wealth flourishes and salary is abundant.", "Public affairs are clear and calm.", "The household is quiet and at rest."] },
+        { "by": "经", "book": "周易尚占", "range": [1176, 1176],
+          "zh": ["鼎者器也", "烹饪之器", "求官十全", "生财百倍", "身吉宅荣", "婚成病利", "求事托人", "却宜仔细"],
+          "yi": ["鼎，就是器物。", "是烹煮饮食的器具。", "求官十全十美。", "生财百倍。", "自身吉利，住宅荣耀。", "婚事成，病有利。", "求事要托人，", "却要仔细。"],
+          "en": ["Ding (the Cauldron) means a vessel.", "It is a vessel for cooking.", "Seeking office: complete in all ten parts.", "Making wealth a hundredfold.", "The person is fortunate and the dwelling flourishes.", "Marriage is made and illness fares well.", "Seeking a matter: entrust it to someone,", "but be careful."] },
+        { "by": "经", "book": "周易尚占", "range": [1244, 1244],
+          "zh": ["比者辅也", "阴来辅阳", "官贵旺相", "身宅安康", "讼病解散", "婚姻吉祥", "一切谋运", "和顺乃光"],
+          "yi": ["比，就是辅助。", "阴来辅助阳。", "官员贵人旺相。", "自身和住宅平安健康。", "官司和病解散。", "婚姻吉祥。", "一切谋划运作，", "和顺才光明。"],
+          "en": ["Bi (Union) means support.", "Yin comes to support yang.", "Officials and nobles are thriving and strong.", "The person and dwelling are safe and sound.", "Lawsuit and illness are dissolved.", "Marriage is auspicious.", "In all one plans and works,", "harmony and accord bring brightness."] },
+        { "by": "经", "book": "周易尚占", "range": [1292, 1292],
+          "zh": ["萃者聚也", "物惟诚身", "身财两吉", "福禄双荣", "婚姻和合", "六畜孳生", "病讼终吉", "田蚕晚成"],
+          "yi": ["萃，就是聚集。", "万物只在于自身要诚。", "自身和钱财都吉。", "福禄双双荣盛。", "婚姻和合。", "六畜繁衍。", "病和官司终究吉。", "田蚕晚成。"],
+          "en": ["Cui (Gathering) means gathering.", "Things depend only on sincerity in oneself.", "The person and wealth are both auspicious.", "Blessing and salary both flourish.", "Marriage is in harmony.", "The six domestic animals multiply.", "Illness and lawsuit end auspiciously.", "Fields and silkworms ripen late."] },
+        { "by": "经", "book": "周易尚占", "range": [1294, 1294],
+          "zh": ["咸者感也", "有感必应", "官鬼周全", "宅身喜庆", "宜孕宜婚", "利讼利病", "咸道虽通", "更宜贞正"],
+          "yi": ["咸，就是感应。", "有感就必有应。", "官鬼爻周全。", "住宅和自身有喜庆。", "适合怀孕，适合婚姻。", "利于官司，利于病。", "咸的道理虽然通达，", "更要贞正。"],
+          "en": ["Xian (Influence) means influence.", "Where there is influence there is response.", "The Pressure line is complete.", "The dwelling and the person have joy.", "Pregnancy and marriage both suit.", "Favourable to lawsuits and favourable to illness.", "Though the way of Xian goes through,", "it needs all the more uprightness."] }
+      ],
+      "dispute": {
+        "yi": "贲卦这里说「病安婚遂」，别的书却把贲列进占病的凶卦：卜筮元龟一段（LY.ILL.DYTJ.15）和阐奥歌章第五首（LY.ILL.CA.06）都有贲，天玄赋（LY.ILL.TXF.06）说贲「切忌世身入墓」（有条件的），增删卜易（LY.ILL.ZS.01）转述的「断之必死」的十个卦里也有贲。书里没有裁决。",
+        "en": "Of these, the line of Bi (Adornment) says 'the sick are safe, marriage is achieved', yet other books put Bi among the ominous hexagrams for illness: the passage of the Bushi Yuangui (LY.ILL.DYTJ.15) and the fifth poem of the Chan'ao Gezhang (LY.ILL.CA.06) both have Bi, the Tianxuan Fu (LY.ILL.TXF.06) says of Bi 'above all avoid the Self or the Body entering the tomb' (conditional), and the ten hexagrams of 'judge death' reported in the Zengshan Buyi (LY.ILL.ZS.01) include Bi. The books do not decide."
+      },
+      "note": {
+        "yi": "这十五行的说法有轻有重：乾、既济、豫、解、随说得最干脆（获安、安康、安宁），渐是「渐安」（慢慢好），萃是「终吉」（最后吉），革、家人、益、颐、比、咸、鼎的病只是和别的事并说（「孕病皆吉」「病讼无忧」），没有单独给病一个断语；「词病俱平」的「词」是词讼、官司。「利讼利病」「婚成病利」的「利」是有利。各行里别的词组（田蚕、官司、婚姻、孕、出行等）对问病没有用处，但一并录在这里，是为了让每一行保持完整、可以对着原书查。书里同一个卦有两个同音的名字（乾和谦，益和颐，贲和比，蹇和渐），英文名后面括号里写的是卦的意思，用来区分。原文「媾」「畜」等写法见各行。上面比较各卦用词轻重的话是编者的归纳，不是书里的话。",
+        "en": "The statements of these fifteen lines range from light to heavy: Qian (Heaven), Jiji, Yu, Xie and Sui are the most outright (gain safety, at peace and in health, at ease); Jian (Gradual Progress) says 'gradually settles' (getting better slowly), and Cui says 'ends auspiciously' (auspicious in the end); for Ge, Jiaren, Yi (Increase), Yi (Nourishment), Bi (Union), Xian and Ding illness is only named together with other matters ('pregnancy and illness are both auspicious', 'neither illness nor lawsuit brings worry') without a verdict of its own; the 'ci' of 'ci and illness are both calm' is a lawsuit or pleading. The 'favourable' of 'favourable to lawsuits and favourable to illness' and 'marriage is made, illness fares well' is 'to the advantage of'. The other phrases of each line (fields and silkworms, lawsuits, marriage, pregnancy, travel and so on) are not useful to a question on illness but are all kept here so that each line stays whole and can be checked against the original book. Some hexagram names in the book have a homonym (Qian for Heaven and for Humility, Yi for Increase and for Nourishment, Bi for Adornment and for Union, Jian for Obstruction and for Gradual Progress), and the parenthesis after the English name gives the meaning of the hexagram to tell them apart. The variant ways of writing a name in the original, such as the 'union' character for Gou, are seen in the lines themselves. The comparison of the strength of the words used in each hexagram above is the editor's summary and not the book's own words."
+      },
+      "see": ["LY.ILL.ZSZ.02", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05", "LY.ILL.ZS.01", "LY.ILL.DYTJ.15", "LY.ILL.CA.06", "LY.ILL.TXF.06"]
+    },
+    {
+      "id": "LY.ILL.ZSZ.04",
+      "topic": "轻重",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+      "title": "八卦断例·占病逢姤、遁、晋、丰、师、井、夬：病者难安、迁延、难瘥、沉滞、迟瘥、稽迟、迟延",
+      "rule": {
+        "yi": "周易尚占八卦断例里，这七个卦的断辞说病难好、拖得久：姤「病者难安」，遁「病者迁延」，晋「病者难瘥」，丰「病人沉滞」，师「病人迟瘥」，井「问病稽迟」，夬「病讼迟延」。",
+        "en": "In the judgments by example of the Zhouyi Shangzhan the line of each of these seven hexagrams says that illness is hard to mend and drags on: Gou, 'the sick will find it hard to be at peace'; Dun, 'the sick one drags on'; Jin, 'the sick will find it hard to recover'; Feng, 'the sick one is weighed down and lingering'; Shi, 'the sick recover late'; Jing, 'asking about illness: delay and slowness'; Guai, 'illness and lawsuit are delayed'."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [884, 884],
+          "zh": ["媾者遇也", "谋必有遇", "求官官荣", "求财财遂", "病者难安", "婚姻休娶", "卜筮行人", "端的在路"],
+          "yi": ["媾（姤），就是相遇。", "谋事一定会有所遇。", "求官，官位荣耀。", "求财，财能如愿。", "病人难得平安。", "婚姻，不要娶。", "占问出门在外的人，", "的确还在路上。"],
+          "en": ["Gou (Meeting) means to meet.", "Any plan is sure to meet with an encounter.", "Seeking office: the office is glorious.", "Seeking wealth: the wealth comes as wished.", "The sick will find it hard to be at peace.", "Marriage: do not take the bride.", "As for divining about a traveller,", "he is indeed on the road."] },
+        { "by": "经", "book": "周易尚占", "range": [886, 886],
+          "zh": ["遁者退也", "凡事宜退", "公讼而和", "行人阻滞", "问婚不成", "求财无利", "病者迁延", "田蚕微细"],
+          "yi": ["遁，就是退。", "凡事适合退让。", "官司可以和解。", "在外的人被阻滞。", "问婚事，成不了。", "求财，没有利。", "病人拖延不愈。", "田蚕收成微薄。"],
+          "en": ["Dun (Retreat) means to withdraw.", "In all matters, withdrawing suits.", "A lawsuit can end in reconciliation.", "The traveller is held up.", "Asking about a betrothal: it will not come about.", "Seeking wealth: no profit.", "The sick one drags on.", "Fields and silkworms yield very little."] },
+        { "by": "经", "book": "周易尚占", "range": [894, 894],
+          "zh": ["晋者进也", "进必有升", "进身必遂", "进事有成", "行人未至", "公讼不明", "病者难瘥", "财平稍平"],
+          "yi": ["晋，就是前进。", "进就一定有升。", "求进身一定如愿。", "进取的事有成。", "在外的人还没到。", "官司不明朗。", "病人难痊愈。", "财运平平，只是稍微平顺一点。"],
+          "en": ["Jin (Advance) means to go forward.", "Advancing surely brings promotion.", "Advancing oneself will surely be achieved.", "Ventures that advance succeed.", "The traveller has not yet arrived.", "A lawsuit is unclear.", "The sick will find it hard to recover.", "Wealth is level, only slightly so."] },
+        { "by": "经", "book": "周易尚占", "range": [950, 950],
+          "zh": ["丰者大也", "利官利贵", "婚姻有成", "行人必至", "孕生女子", "病人沉滞", "凡占家宅", "半明半晦"],
+          "yi": ["丰，就是大。", "利于求官，利于见贵人。", "婚姻能成。", "在外的人一定到。", "怀孕，生女孩。", "病人沉重拖延。", "凡是占家宅，", "一半明朗，一半昏暗。"],
+          "en": ["Feng (Abundance) means great.", "Favourable to office and favourable to nobles.", "Marriage is achieved.", "The traveller will surely arrive.", "Pregnancy: a girl is born.", "The sick one is weighed down and lingering.", "In all divining of the household,", "it is half bright and half dim."] },
+        { "by": "经", "book": "周易尚占", "range": [954, 954],
+          "zh": ["师者众也", "不利占身", "求官虽吉", "见贵遭嗔", "休占财帛", "莫问行人", "病人迟瘥", "家宅灾迍"],
+          "yi": ["师，就是众。", "占自身不利。", "求官虽然吉，", "但见贵人会遭嗔怪。", "不要占财帛。", "不要问行人。", "病人痊愈得迟。", "家宅有灾祸困顿。"],
+          "en": ["Shi (the Army) means the multitude.", "Divining about oneself is unfavourable.", "Seeking office is auspicious,", "but seeing a noble draws his anger.", "Do not divine about wealth.", "Do not ask about the traveller.", "The sick recover late.", "The household has calamity and hardship."] },
+        { "by": "经", "book": "周易尚占", "range": [1066, 1066],
+          "zh": ["井者静也", "不宜妄为", "求官谒贵", "问病稽迟", "田蚕半得", "行人未归", "占婚阻滞", "藏器待时"],
+          "yi": ["井，就是静。", "不宜乱作为。", "求官、拜见贵人，", "问病，拖延迟缓。", "田蚕得一半。", "在外的人没有回来。", "占婚事，阻滞。", "把本事藏起来，等待时机。"],
+          "en": ["Jing (the Well) means stillness.", "Rash action does not suit.", "Seeking office, calling on nobles:", "Asking about illness: delay and slowness.", "Fields and silkworms yield half.", "The traveller has not returned.", "Asking about marriage: obstruction and delay.", "Keep the tools hidden and wait for the time."] },
+        { "by": "经", "book": "周易尚占", "range": [1240, 1240],
+          "zh": ["夬者决也", "有决定志", "交易称心", "生财如意", "婚孕吉昌", "贵官成遂", "病讼迟延", "文书迟滞"],
+          "yi": ["夬，就是决断。", "有决断的心志。", "交易称心。", "生财如意。", "婚事和怀孕吉利昌盛。", "贵人和官职如愿。", "病和官司拖延。", "文书迟缓阻滞。"],
+          "en": ["Guai (Resolution) means decision.", "There is a resolute will.", "Deals please.", "Making wealth is as wished.", "Marriage and pregnancy are auspicious and prosperous.", "Nobles and office are achieved.", "Illness and lawsuit are delayed.", "Documents are slow and stuck."] }
+      ],
+      "dispute": {
+        "yi": "丰、夬两卦的轻重，几本书说得不一样。别的书把丰、夬列为占病的凶卦，甚至是「十死」：阐奥歌章第三首（LY.ILL.CA.03）、第五首（LY.ILL.CA.06）、卜筮元龟一段（LY.ILL.DYTJ.15）、天玄赋（LY.ILL.TXF.06）、增删卜易转述的十卦（LY.ILL.ZS.01）里都有丰和夬；周易尚占这里丰只是「病人沉滞」，夬只是「病讼迟延」，是病拖得久，没有说死。同样，丰在这里是「利官利贵、婚姻有成」的卦。程度不同，书里没有裁决。",
+        "en": "The books do not agree on how heavy Feng and Guai are. Other books list Feng and Guai among the ominous hexagrams for illness, even among the 'ten deaths': the third (LY.ILL.CA.03) and fifth (LY.ILL.CA.06) poems of the Chan'ao Gezhang, the passage of the Bushi Yuangui (LY.ILL.DYTJ.15), the Tianxuan Fu (LY.ILL.TXF.06) and the ten hexagrams reported in the Zengshan Buyi (LY.ILL.ZS.01) all have Feng and Guai; here in the Zhouyi Shangzhan Feng is only 'the sick one is weighed down and lingering' and Guai only 'illness and lawsuit are delayed', that is, illness that drags on, with no word of death. Likewise Feng is here a hexagram of 'favourable to office and to nobles, marriage is achieved'. The degree differs, and the books do not decide."
+      },
+      "note": {
+        "yi": "这七行的病句都是「拖」：难安、迁延、难瘥、沉滞、迟瘥、稽迟、迟延，没有一个说死；姤的「病者难安」最重（难得平安），夬是病和官司一起拖。「沉滞」是沉重、拖着不好，「稽迟」是拖延迟缓，「迁延」是一拖再拖。姤卦在原书里写作「媾」（「媾者遇也」），这里照原文；「卜筮行人 端的在路」是说占行人，他确实还在路上，和病无关。「求官谒贵」（井）这个词组只有事项、没有断语，原文如此。「财平稍平」（晋）意思不清，译文照字面。",
+        "en": "The illness phrases of these seven lines all speak of dragging on: hard to be at peace, protracted, hard to recover, weighed down, late to recover, delay and slowness, delayed; none speaks of death. The heaviest is 'the sick will find it hard to be at peace' of Gou (hard to gain peace), and for Guai illness and the lawsuit drag on together. 'Weighed down and lingering' is heavy and not getting better, 'delay and slowness' is dragging and slow, and 'drags on' is delay upon delay. In the original book Gou is written with the 'union' character ('that character means meeting'), and the line is quoted as it stands; 'as for divining about a traveller, he is indeed on the road' is about a traveller and not about illness. The phrase 'seeking office, calling on nobles' (Jing) has an affair but no verdict, as in the original. 'Wealth is level, only slightly so' (Jin) is unclear in sense and is translated literally."
+      },
+      "see": ["LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.05", "LY.ILL.CA.03", "LY.ILL.CA.06", "LY.ILL.DYTJ.15", "LY.ILL.TXF.06", "LY.ILL.ZS.01"]
+    },
+    {
+      "id": "LY.ILL.ZSZ.05",
+      "topic": "生死",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+      "title": "八卦断例·占病逢坎、噬嗑、蛊、离、困、睽、小过、明夷：病凶、病重、件件遭伤、有惊、有忧",
+      "rule": {
+        "yi": "周易尚占八卦断例里，这八个卦的断辞说病凶险、沉重或有忧：坎「孕病皆凶」，噬嗑「病重讼凶」，蛊「孕吉病凶」，离「病重财轻」，困「宅身孕病件件遭伤」，睽「问病有惊」，小过「官阻病忧」，明夷「占家父病」。",
+        "en": "In the judgments by example of the Zhouyi Shangzhan the line of each of these eight hexagrams says that illness is ominous, heavy or a worry: Kan, 'pregnancy and illness are both ominous'; Shihe, 'illness is heavy and the lawsuit is ill'; Gu, 'pregnancy is auspicious, illness is ominous'; Li, 'illness is heavy and wealth is light'; Kun (Confinement), 'dwelling, person, pregnancy, illness: each one is hurt'; Kui, 'asking about illness: there is a fright'; Xiaoguo, 'office is blocked and illness is a worry'; Mingyi, 'divining the household: the father is ill'."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [940, 940],
+          "zh": ["坎者陷也", "凡事不通", "田蚕不利", "孕病皆凶", "营财逢盗", "行船遇风", "惟诚惟信", "出险成功"],
+          "yi": ["坎，就是陷。", "什么事都行不通。", "田蚕不利。", "怀孕和生病都凶。", "经营求财会遇到盗贼。", "行船会遇到风。", "只有诚、只有信，", "走出险境才成功。"],
+          "en": ["Kan (the Abyss) means falling in.", "No matter goes through.", "Fields and silkworms are unfavourable.", "Pregnancy and illness are both ominous.", "Seeking wealth in business meets robbers.", "A boat on the way meets wind.", "Only sincerity, only good faith:", "coming out of danger, one succeeds."] },
+        { "by": "经", "book": "周易尚占", "range": [1124, 1124],
+          "zh": ["噬者啮也", "嗑者合也", "谋望卑安", "求财且且", "病重讼凶", "孕忧婚寡", "去碍除奸", "惟道有者"],
+          "yi": ["噬，就是咬。", "嗑，就是合。", "谋划指望，放低才安稳。", "求财，不过勉强而已。", "病重，官司凶。", "怀孕有忧，婚姻孤寡。", "去除障碍，铲除奸邪。", "只有有道的人。"],
+          "en": ["Shi means to bite.", "He means to close together.", "Plans and hopes are safe when kept low.", "Seeking wealth: barely so.", "Illness is heavy and the lawsuit is ill.", "Pregnancy is anxious and marriage is lonely.", "Remove obstacles and eliminate the wicked:", "only those who have the Way."] },
+        { "by": "经", "book": "周易尚占", "range": [1128, 1128],
+          "zh": ["蛊者乱也", "乱必有治", "家宅扰攘", "身体暗昧", "公讼迁延", "文书纯滞", "孕吉病凶", "婚成财利"],
+          "yi": ["蛊，就是乱。", "乱了一定会有治。", "家宅纷乱。", "自身暗昧不明。", "官司拖延。", "文书全都停滞。", "怀孕吉，病凶。", "婚事成，财有利。"],
+          "en": ["Gu (Decay) means disorder.", "Disorder will surely be followed by order.", "The household is in turmoil.", "The person is in obscurity.", "A lawsuit drags on.", "Documents are wholly stuck.", "Pregnancy is auspicious; illness is ominous.", "Marriage is made and wealth profits."] },
+        { "by": "经", "book": "周易尚占", "range": [1172, 1172],
+          "zh": ["离者丽也", "凡事分明", "不宜占宅", "婚讼九成", "孕双蚕半", "病重财轻", "官贵有喜", "最利行人"],
+          "yi": ["离，就是附丽。", "凡事分明。", "不宜占住宅。", "婚事和官司九成能成。", "怀孕得双胎，蚕收一半。", "病重，财轻。", "官员贵人有喜。", "最利于在外的人。"],
+          "en": ["Li (Fire) means clinging.", "All matters are clear.", "Divining the dwelling does not suit.", "Marriage and lawsuit: nine parts in ten succeed.", "Pregnancy: twins; silkworms: half.", "Illness is heavy and wealth is light.", "Officials and nobles have joy.", "Most favourable to the traveller."] },
+        { "by": "经", "book": "周易尚占", "range": [1290, 1290],
+          "zh": ["困者厄也", "阴以掩阳", "宅身孕病", "件件遭伤", "生财利少", "公讼多妨", "报言占者", "安分守常"],
+          "yi": ["困，就是厄困。", "阴掩盖阳。", "住宅、自身、怀孕、疾病，", "件件受伤。", "生财，利少。", "官司多有妨碍。", "告诉占卜的人：", "安分守常。"],
+          "en": ["Kun (Confinement) means distress.", "Yin covers yang.", "Dwelling, person, pregnancy, illness:", "each one is hurt.", "Making wealth: profit is little.", "A lawsuit meets many hindrances.", "A word to the one who divines:", "keep to one's lot and the ordinary."] },
+        { "by": "经", "book": "周易尚占", "range": [1006, 1006],
+          "zh": ["睽者异也", "三体相违", "问病有惊", "求财不宜", "婚姻不相", "行人不归", "小事虽吉", "也应迟迟"],
+          "yi": ["睽，就是相异。", "三体互相违背。", "问病，有惊吓。", "求财不宜。", "婚姻不相配。", "在外的人不回来。", "小事虽然吉，", "也要迟迟才应验。"],
+          "en": ["Kui (Opposition) means difference.", "The three bodies are at odds with one another.", "Asking about illness: there is a fright.", "Seeking wealth does not suit.", "Marriage: the two are not matched.", "The traveller does not return.", "Small matters, though auspicious,", "will still answer slowly."] },
+        { "by": "经", "book": "周易尚占", "range": [1300, 1300],
+          "zh": ["小过过也", "所过不远", "身宅微灾", "交易财鲜", "官阻病忧", "孕惊婚免", "凡百所占", "悉皆俴俴"],
+          "yi": ["小过，就是小有过越。", "所过之处不远。", "自身与住宅有小灾。", "交易，钱财很少。", "官路受阻，病有忧。", "怀孕有惊，婚事免了。", "凡是所占的一切，", "全都浅浅薄薄。"],
+          "en": ["Xiaoguo (Small Excess) means a small excess.", "What is passed over is not far.", "The person and dwelling have a small calamity.", "Trade: wealth is scant.", "Office is blocked and illness is a worry.", "Pregnancy has a fright; marriage is to be avoided.", "In all that is divined,", "all is thin and shallow."] },
+        { "by": "经", "book": "周易尚占", "range": [952, 952],
+          "zh": ["明夷伤也", "凡事不顺", "婚姻无成", "公讼有竞", "占孕母忧", "占家父病", "一切施为", "切宜谨慎"],
+          "yi": ["明夷，就是受伤。", "凡事不顺。", "婚姻不成。", "官司有争竞。", "占怀孕，母亲有忧。", "占家宅，父亲有病。", "一切行事做为，", "务必谨慎。"],
+          "en": ["Mingyi (Light Wounded) means being wounded.", "Nothing goes smoothly.", "Marriage is not achieved.", "A lawsuit brings contention.", "Divining pregnancy: the mother is in anxiety.", "Divining the household: the father is ill.", "In all one undertakes,", "be sure to be careful."] }
+      ],
+      "dispute": {
+        "yi": "别的书的占病凶卦名单里，同人、需、剥、节、蒙在内，周易尚占对这几个卦的断辞里却没有讲病：同人是「婚孕皆成、所求皆至」，需是「不宜轻举、所谋不成」，剥是「退则获安、进则不利」，节是「身命不宁」，蒙是「却宜占病」（LY.ILL.ZSZ.06）。阐奥歌章第三首（LY.ILL.CA.03）、第五首（LY.ILL.CA.06）、卜筮元龟一段（LY.ILL.DYTJ.15）和增删卜易转述的十卦（LY.ILL.ZS.01）都有同人；需、剥、节见于卜筮元龟一段和阐奥歌章；蒙只见于卜筮全书疾病论（LY.ILL.BSQS.35）。没有说的不等于说了好，这几个卦占病吉凶，周易尚占这一行没有表态。反过来，这里的坎、噬嗑、蛊、离、困、睽、小过，别的凶卦名单里大多没有（只有蛊、困在），是周易尚占独有的断语。书里没有裁决。",
+        "en": "Among the other books' lists of ominous hexagrams for illness are Tongren, Xu, Bo, Jie and Meng, yet the lines of the Zhouyi Shangzhan for these hexagrams do not speak of illness: Tongren is 'marriage and pregnancy both succeed, all that is sought arrives', Xu is 'rash moves do not suit, what is planned does not succeed', Bo is 'to withdraw is to gain safety, to advance is unfavourable', Jie is 'the person and fate are unsettled', and Meng is 'but it suits divining illness' (LY.ILL.ZSZ.06). Tongren is in the third (LY.ILL.CA.03) and fifth (LY.ILL.CA.06) poems of the Chan'ao Gezhang, in the passage of the Bushi Yuangui (LY.ILL.DYTJ.15) and in the ten hexagrams reported in the Zengshan Buyi (LY.ILL.ZS.01); Xu, Bo and Jie are in the Bushi Yuangui passage and the Chan'ao Gezhang; Meng is only in the Bushi Quanshu's essay on illness (LY.ILL.BSQS.35). Not saying is not saying good: for the verdict on illness of these hexagrams the line of the Zhouyi Shangzhan takes no position. Conversely, of the hexagrams here, Kan, Shihe, Li, Kui and Xiaoguo are for the most part absent from the other lists of ominous hexagrams (only Gu and Kun (Confinement) are in them), so these verdicts are peculiar to the Zhouyi Shangzhan. The books do not decide."
+      },
+      "note": {
+        "yi": "这八行里，坎「孕病皆凶」、蛊「孕吉病凶」把病和怀孕并说，困是「宅身孕病」四件并说，都是一句话管几件事。明夷「占孕母忧，占家父病」两句对着读：占怀孕时母亲有忧，占家宅时父亲有病；「占家父病」只有四个字，这个读法是按上一句的格式推的。噬嗑一行的「求财且且」「惟道有者」两处意思不清，「道有者」读来像「有道者」的倒文，译文都照字面，没有改字。噬嗑的头两个词组「噬者啮也」「嗑者合也」都是在解释卦名。「婚寡」译作婚姻孤寡，「孕双」译作怀孕得双胎，都是字面的读法。",
+        "en": "In these eight lines, Kan, 'pregnancy and illness are both ominous', and Gu, 'pregnancy is auspicious, illness is ominous', speak of illness and pregnancy together, and Kun (Confinement) names 'dwelling, person, pregnancy, illness' together, each a single phrase covering several matters. For Mingyi the two phrases 'divining pregnancy: the mother is in anxiety' and 'divining the household: the father is ill' are read in parallel: in divining pregnancy the mother is anxious, in divining the household the father is ill; 'divining the household: the father is ill' is only four characters in the book, and this reading is inferred from the pattern of the previous phrase. In the line of Shihe, 'seeking wealth: barely so' and 'only those who have the Way' are unclear in sense, and the second looks like an inverted form of 'those who have the Way'; both are translated literally and no character has been changed. The first two phrases of Shihe, 'Shi means to bite' and 'He means to close together', both explain the name of the hexagram. 'Marriage is lonely' translates the literal 'marriage widowed' and 'twins' of Li translates the literal 'pregnancy double'."
+      },
+      "see": ["LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.06", "LY.ILL.CA.03", "LY.ILL.CA.06", "LY.ILL.DYTJ.15", "LY.ILL.ZS.01", "LY.ILL.BSQS.35"]
+    },
+    {
+      "id": "LY.ILL.ZSZ.06",
+      "topic": "总则",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+      "title": "八卦断例·占病宜不宜：履「弗占疾病」、大壮「休占讼病」、蒙「却宜占病」；恒「病须疾治」",
+      "rule": {
+        "yi": "周易尚占八卦断例里有四个卦对占病给的是劝告：履卦说不要占疾病，大壮卦说不要占官司和病，蒙卦说不要营谋、倒适合占病，恒卦说病要赶快治。",
+        "en": "In the judgments by example of the Zhouyi Shangzhan four hexagrams give advice about divining illness rather than a verdict: Lü (Treading) says do not divine illness, Dazhuang says do not divine lawsuits or illness, Meng says one cannot yet scheme but it suits divining illness, and Heng says illness must be treated quickly."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [1008, 1008],
+          "zh": ["履者礼也", "以柔履刚", "危中有救", "险处无妨", "弗占疾病", "莫问官方", "一切谋运", "谨始营昌"],
+          "yi": ["履，就是礼。", "用柔去踩刚。", "危险之中有救。", "险处没有妨碍。", "不要占疾病。", "不要问官府的事。", "一切谋划运作，", "开头谨慎，经营才昌盛。"],
+          "en": ["Lü (Treading) means ritual propriety.", "The soft treads on the hard.", "In danger there is rescue.", "In a perilous place there is no harm.", "Do not divine illness.", "Do not ask about official business.", "In all one plans and works,", "be careful at the start and the venture will prosper."] },
+        { "by": "经", "book": "周易尚占", "range": [1238, 1238],
+          "zh": ["大壮壮也", "四阳壮盛", "用壮灾生", "用罔吉应", "宜问婚姻", "休占讼病", "动则不中", "守则为正"],
+          "yi": ["大壮，就是强壮。", "四个阳爻壮盛。", "用强壮，灾就生。", "用「罔」（不逞强），吉就应。", "适合问婚姻。", "不要占官司和病。", "动就不合。", "守就是正。"],
+          "en": ["Dazhuang (Great Strength) means strength.", "Four yang lines are strong and full.", "Using force gives rise to calamity.", "Using non-force, good fortune answers.", "Suits asking about marriage.", "Do not divine lawsuits or illness.", "To move is not to hit the mark.", "To hold still is to be upright."] },
+        { "by": "经", "book": "周易尚占", "range": [1180, 1180],
+          "zh": ["蒙者昧也", "蒙以养正", "未可营谋", "却宜占病", "失物异寻", "婚姻无分", "一切求谋", "仗人引进"],
+          "yi": ["蒙，就是蒙昧。", "用蒙来养正。", "还不可以营谋。", "却适合占病。", "失物要另外去找。", "婚姻没有缘分。", "一切求取谋划，", "要靠人引荐。"],
+          "en": ["Meng (Obscurity) means dimness.", "Through dimness one nourishes what is right.", "One cannot yet scheme.", "But it suits divining illness.", "Lost things must be sought elsewhere.", "Marriage: there is no fated share.", "In all seeking and scheming,", "rely on someone to introduce."] },
+        { "by": "经", "book": "周易尚占", "range": [1062, 1062],
+          "zh": ["恒者久也", "久常之义", "身宅双荣", "公私两利", "讼宜早和", "病须疾治", "守旧安和", "出行无殢"],
+          "yi": ["恒，就是长久。", "取长久恒常的意思。", "自身和住宅都荣盛。", "公事私事两利。", "官司宜早点和解。", "病要赶快治。", "守旧就安和。", "出行没有滞留。"],
+          "en": ["Heng (Constancy) means lasting.", "It carries the sense of long constancy.", "The person and dwelling both flourish.", "Public and private both profit.", "A lawsuit is best settled early.", "Illness must be treated quickly.", "Keeping to the old way is peaceful and harmonious.", "Travel meets no delay."] }
+      ],
+      "dispute": {
+        "yi": "蒙卦这里说「却宜占病」，卜筮全书疾病论（LY.ILL.BSQS.35）却把蒙列进春天的十死卦。「宜占病」说的是适合拿这一卦来问病，没有说病会好，所以两处不一定正面冲突，合起来看蒙卦占病到底吉凶，书里没有定论。",
+        "en": "Of Meng the line here says 'but it suits divining illness', whereas the Bushi Quanshu's essay on illness (LY.ILL.BSQS.35) puts Meng among the ten fatal hexagrams of spring. 'Suits divining illness' says that this hexagram is a fit one with which to ask about illness, and does not say the illness will mend, so the two places need not clash head on; taken together, the books do not settle whether Meng is auspicious or ominous for illness."
+      },
+      "note": {
+        "yi": "「弗占疾病」「休占讼病」是劝人不要占这件事，书里没有说是因为病凶，还是因为这一卦本身不适合问这类事；履卦同一行里还有「危中有救，险处无妨」。「却宜占病」的「却」是转折：上一个词组说「未可营谋」，这一个说倒适合占病。恒卦「病须疾治」里的「疾」是迅速、赶快，不是疾病。",
+        "en": "'Do not divine illness' and 'do not divine lawsuits or illness' advise against divining this matter, and the book does not say whether this is because illness is ominous or because the hexagram itself is not a fit one for such questions; the same line of Lü (Treading) also has 'in danger there is rescue, in a perilous place there is no harm'. The 'but' of 'but it suits divining illness' is a turn: the previous phrase says 'one cannot yet scheme', and this says that it nevertheless suits divining illness. The 'quickly' of 'illness must be treated quickly' in Heng is the word for swift, not the word for illness."
+      },
+      "see": ["LY.ILL.ZSZ.05", "LY.ILL.BSQS.35", "LY.ILL.ZS.01"]
+    },
+    {
+      "id": "LY.ILL.ZSZ.07",
+      "topic": "神祟",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of Judgments by Example for the Eight Palaces",
+      "title": "八卦断例·占病逢巽、旅、临：金神为祟、病者祷禳、病犯祟侵",
+      "rule": {
+        "yi": "周易尚占八卦断例里有三个卦的断辞把病和鬼神联在一起：巽卦「惟占病人，金神为崇」，占病人的时候是金神（白虎）在作祟；旅卦「病者祷禳」，病人要祷告、禳解；临卦「病犯崇侵」，病是撞上了鬼神作祟的侵扰。",
+        "en": "In the judgments by example of the Zhouyi Shangzhan three hexagrams link illness with spirits: Xun, 'only in divining a sick person: a Metal spirit (the White Tiger) is the curse'; Lü (the Traveller), 'the sick should pray and perform exorcism'; Lin, 'illness meets the encroachment of a curse'."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [1114, 1114],
+          "zh": ["巽者顺也", "顺时行事", "利财利婚", "利官利贵", "身泰讼和", "田收蚕遂", "惟占病人", "金神为崇"],
+          "yi": ["巽，就是顺。", "顺着时势行事。", "利于财、利于婚。", "利于官、利于贵人。", "自身安泰，官司和解。", "田有收成，蚕如愿。", "只有占病人，", "是金神作祟。"],
+          "en": ["Xun (Wind) means compliance.", "Act in accord with the time.", "Favourable to wealth and to marriage.", "Favourable to office and to nobles.", "The person is at ease and a lawsuit is settled.", "Fields give harvest and silkworms thrive.", "Only in divining a sick person:", "a Metal spirit is the curse."] },
+        { "by": "经", "book": "周易尚占", "range": [1174, 1174],
+          "zh": ["旅者羁也", "在旅之象", "不利守常", "运谋为上", "讼散婚成", "孕生狱放", "病者祷禳", "行人休望"],
+          "yi": ["旅，就是羁旅在外。", "是在旅途的象。", "不利于守常。", "运作谋划最好。", "官司散去，婚事成。", "怀孕得生，囚犯得放。", "病人要祷告、禳解。", "在外的人不要指望（归来）。"],
+          "en": ["Lü (the Traveller) means sojourning.", "It is the image of being on a journey.", "Keeping to the usual is unfavourable.", "Working and scheming is best.", "The lawsuit disperses and marriage is made.", "Pregnancy comes to birth and prisoners are freed.", "The sick should pray and perform exorcism.", "Do not look for the traveller."] },
+        { "by": "经", "book": "周易尚占", "range": [1234, 1234],
+          "zh": ["临者大也", "克己临人", "宜占家宅", "利问婚姻", "财官并吉", "谋望同伦", "孕生男子", "病犯崇侵"],
+          "yi": ["临，就是大。", "克制自己，面对别人。", "适合占家宅。", "利于问婚姻。", "财、官都吉。", "谋划指望，与同辈同步。", "怀孕，生男孩。", "病，遇到鬼神作祟的侵扰。"],
+          "en": ["Lin (Approach) means great.", "Master oneself to face others.", "Suits divining the household.", "Favourable to asking about marriage.", "Wealth and office are both auspicious.", "Plans and hopes are in step with one's peers.", "Pregnancy: a boy is born.", "Illness meets the encroachment of a curse."] }
+      ],
+      "note": {
+        "yi": "巽、临两处原文写的是「崇」（崇高的崇），按上下文是作祟的「祟」，译文按「祟」（鬼神降灾）译，书里没有标注。「金神」按这一部前面「十一、定六神」的「白虎金神」（第 461 行）是白虎，这里「金神为崇」是白虎作祟；别的书里金神常和七煞连称（LY.ILL.EL.34、EL.47），那是另一个意思，这里没有用。「祷禳」是祈祷、禳解（用仪式把灾禳除）。「病犯崇侵」读作病是触犯了、遇到了鬼神作祟的侵扰。三行里别的词组照录。",
+        "en": "In Xun and Lin the original writes the character for 'lofty' where the context calls for the character for 'curse'; the translation reads it as 'curse' (harm sent by a spirit), and the book gives no mark. By 'Section 11: Fixing the Six Spirits' earlier in the same part ('the White Tiger is the Metal spirit', line 461) the 'Metal spirit' is the White Tiger, so 'a Metal spirit is the curse' here is the White Tiger afflicting; in other books the Golden Spirit is often named together with the Seven Killings (LY.ILL.EL.34, EL.47), which is another sense and is not used here. 'Pray and perform exorcism' is to pray and to dispel the calamity by rites. 'Illness meets the encroachment of a curse' reads the illness as having offended or run into the invasion of a curse sent by a spirit. The other phrases of the three lines are kept as they stand."
+      },
+      "see": ["LY.ILL.ZSZ.05", "LY.ILL.EL.34", "LY.ILL.EL.47", "LY.ILL.TXF.11", "LY.ILL.BSYG.05", "LY.ILL.DYTJ.38"]
+    }
+  ]
+}

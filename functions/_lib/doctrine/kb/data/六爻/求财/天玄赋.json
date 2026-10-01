@@ -1,0 +1,282 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "天玄赋",
+  "chapter": "求财章",
+  "chapter_en": "Seeking wealth",
+  "ranges": { "卜筮大全": [4555, 4595], "断易天机": [1216, 1249] },
+  "units": [
+    {
+      "id": "LY.WEALTH.TXF.01",
+      "topic": "总则",
+      "title": "饥寒起盗心，富贵享遐福",
+      "rule": {
+        "yi": "求财本身艰险，卜卦是为了决疑；出外求财重在分祸福，在家求财重在分得失。见妻财、子孙为吉，见兄弟、官鬼为凶。",
+        "en": "Seeking money is hazardous, and we divine to settle doubt; for money sought abroad the question is danger or safety, at home it is gain or loss. Wealth and Output are friends; Peer and Pressure are enemies."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["饥寒起盗心，亦为困穷而至此；", "富贵享遐福，莫非营运而后能。", "赍财于蛟龙背上行舟，负命于虎狼丛中取路。", "欲决心中之疑虑，端详爻上之吉凶。"],
+          "yi": ["人饥寒交迫就会起偷盗之心，也是穷困才走到这一步；", "富贵之人享长久之福，无不是经营之后才得到。", "带着钱财在蛟龙背上行船，背着性命在虎狼群里找路。", "想要解开心中的疑虑，就要仔细看爻上的吉凶。"],
+          "en": ["Hunger and cold breed the thought of theft; it is poverty that brings people to it;", "the rich enjoy lasting fortune only because they worked their trade to get it.", "Carrying money, one sails on a dragon's back; carrying one's life, one picks a path among tigers and wolves.", "To settle the doubt in your heart, study the omens in the lines."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["求财之言艰险，于斯可见。", "但能信占卜，必无不测之祸。", "若出外求财，须言祸福之分。在家求财，亦有得失之别。学者可不究哉。", "卜以决疑，不疑何卜？", "凡来占者，必有疑虑之事，当详吉凶衰旺。", "见财福如值故人，遇兄鬼如逢仇敌。"],
+          "yi": ["求财的艰险，从这几句就能看出来。", "只要相信占卜，就不会有意外之祸。", "出门求财，要说清祸福；在家求财，也有得失的分别。学的人能不深究吗？", "卜卦是为了决断疑惑，不疑惑还卜什么？", "来占卦的人，一定有疑虑的事，要细看吉凶衰旺。", "见到妻财、子孙像遇见老朋友，遇到兄弟、官鬼像碰上仇人。"],
+          "en": ["How hard and dangerous the pursuit of money is can be seen from these words.", "If one trusts divination, there will be no unforeseen disaster.", "For money sought away from home one must tell danger from safety; for money sought at home there is still gain and loss to tell apart. Should a student not look into it?", "We divine to resolve doubt; without doubt, why divine?", "Whoever comes to ask has something in doubt; examine the good and bad, the strong and weak.", "Meeting Wealth and Output is like meeting old friends; meeting Peer and Pressure is like running into enemies."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.TXF.02",
+      "topic": "总则",
+      "title": "将本求财，妻位偏宜旺相；空拳问利，官爻喜遇兴隆",
+      "rule": {
+        "yi": "将本求财看妻财：财爻旺相、克世或生世吉，世克财凶；卦有两财，外旺内冲本少利多，内旺外冲只能保本；内外财死绝、财不上卦或空亡则折本；财绝逢生仍有利。空手求财（百工技艺）看官鬼：鬼旺财厚；《断易天机》本说官鬼所临六神指财的来路（青龙馈送、朱雀文书口舌、勾陈稳当、螣蛇靠人带挈、白虎诈取、玄武暗昧）。",
+        "en": "Trading with capital: read the Wealth line; thriving and controlling or generating the Self line is good, the Self line controlling Wealth is bad; with two Wealth lines, outer strong and inner clashed means small capital and large profit, inner strong and outer clashed means only the capital is kept; both dead, absent or void means losing the capital; Wealth at extinction meeting birth still profits. Earning without capital (crafts and trades): read the Pressure line; strong Pressure, ample money. The Duanyi Tianji text adds that the spirit on the Pressure line shows where the money comes from (Azure Dragon gifts, Vermilion Bird documents or talk, Hook Earth steady, Coiling Snake through others, White Tiger fraud, Dark Tortoise hidden dealings)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["将本求财，妻位偏宜旺相；", "空拳问利，官爻喜遇兴隆。"],
+          "yi": ["拿本钱求财，妻财尤其宜旺相；", "空手求利，喜欢官鬼兴旺。"],
+          "en": ["Trading with capital: the Wealth line above all should be thriving;", "earning without capital: the Pressure line is welcome to flourish."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["凡占求财，先达人事，然后决断。", "若将本求财，必要财爻旺相，克世生世则吉，世克财则凶。", "若卦有两财，外财旺而内财冲，本虽少而利则多；", "若内财旺而外财冲，利息淡薄，但可正本。", "若：内外财爻俱死绝，将本生涯敛手折。", "财不上卦及空亡，买卖经商连本灭。", "财爻绝处又逢生，利息依然动欢悦。", "妻财虽旺不克世，却向爻中看亡劫。", "先生若也问求财，请看天仙玄妙诀。", "空手求财者，不过是百工技艺之人，以鬼爻为用，鬼旺则财丰厚。"],
+          "yi": ["凡是占求财，先要了解他实际在做什么事，然后再下断。", "如果是拿本钱求财，一定要财爻旺相；财克世、生世就吉，世克财就凶。", "如果卦里有两个财爻，外卦的财旺而内卦的财被冲，本钱虽少利却多；", "如果内卦的财旺而外卦的财被冲，利息微薄，只能保本。", "（有诗说：）内外卦的财爻都死绝，拿本钱的生意只能收手认赔；", "财不在卦上或落空亡，做买卖经商连本钱都没了。", "财爻在绝地又遇到生扶，利息照样让人高兴。", "妻财虽旺却不克世，就要到爻中去看亡神、劫杀。", "先生如果也来问求财，请看这天仙玄妙的口诀。", "空手求财的，不过是各行手艺之人，以官鬼为用神，官鬼旺财就丰厚。"],
+          "en": ["In every money question, first understand the person's actual affairs, then judge.", "When trading with capital, the Wealth line must be thriving; Wealth controlling or generating the Self line is good, the Self line controlling Wealth is bad.", "If there are two Wealth lines, the outer one strong and the inner one clashed, the capital is small but the profit large;", "if the inner one is strong and the outer one clashed, the profit is thin, and only the capital is kept.", "(As the verse says:) if inner and outer Wealth lines are both dead or extinguished, a capital venture ends with hands folded and money lost;", "Wealth absent from the hexagram or void: trade and commerce lose even the capital;", "a Wealth line at extinction that meets birth again: the profit still brings joy;", "if Wealth is strong but does not control the Self line, look among the lines for the Loss and Robbery stars.", "Sir, if you too ask about money, see this marvellous formula of the immortals.", "Those who earn without capital are craftsmen and artisans; the Pressure line is what they read, and when it is strong the money is plentiful."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["旺相财空，闹处得财。", "青龙鬼，馈送得财。", "朱雀鬼，文书口舌之财。", "勾陈鬼，财稳无反复。", "蛇鬼，事未伶俐，是于人之财，或是人带挈之财。", "白虎鬼，必是诈取。", "玄武鬼，是骗人，阴私不明之财，阴鬼加咸池，必得女人财。"],
+          "yi": ["（官鬼）旺相而财爻落空，在热闹的地方得财。", "官鬼临青龙，因馈赠得财。", "官鬼临朱雀，是文书、口舌（说话）得来的财。", "官鬼临勾陈，财稳当，不反复。", "官鬼临螣蛇，事情不太利索，是从别人那里来的财，或是别人提携带来的财。", "官鬼临白虎，一定是诈取来的。", "官鬼临玄武，是骗来的、见不得光的财；阴爻官鬼加咸池，一定得女人的财。"],
+          "en": ["Pressure strong while Wealth is void: the money comes from crowded places.", "Pressure on the Azure Dragon: money from gifts.", "On the Vermilion Bird: money from documents or from talking.", "On the Hook Earth: steady money, no reversals.", "On the Coiling Snake: the matter is not clean-cut; the money comes from others, or through someone taking you along.", "On the White Tiger: it must be taken by fraud.", "On the Dark Tortoise: money got by deceit, hidden and unclear; a yin Pressure line with the Salt Pool star: money from a woman."] }
+      ],
+      "note": {
+        "yi": "《断易天机》本这一段注比《卜筮大全》本多出官鬼临六神那几句；这里只引多出来的部分，相同的部分见上一段。",
+        "en": "The Duanyi Tianji text of this commentary has extra sentences on the six spirits over the Pressure line; only those extra sentences are quoted here, the shared part is in the previous quote."
+      },
+      "see": ["LY.WEALTH.HJC.28", "LY.WEALTH.HJC.29"]
+    },
+    {
+      "id": "LY.WEALTH.TXF.03",
+      "topic": "动变",
+      "title": "鬼化为财克世大吉，财爻化鬼逢空全凶",
+      "rule": {
+        "yi": "官鬼化财（鬼送财）而来克世：大吉；若世爻去克官鬼则无财。财化官鬼：从有到无，再逢空为全凶。《断易天机》本：得日辰扶合、动爻生扶为「财入鬼手」，可无伤；旺财化衰鬼，财不全；衰财化旺鬼，防加倍折财。财化财：本卦财旺而变出的财无气，宜速求；反之宜待。",
+        "en": "Pressure turning into Wealth ('the ghost bringing money') that controls the Self line: very lucky; if the Self line controls the Pressure line instead, no money. Wealth turning into Pressure: something becomes nothing, and void as well it is wholly unlucky. The Duanyi Tianji text: with the Day supporting or combining, or a moving line generating it, it is 'money in the ghost's hand' and may do no harm; strong Wealth into weak Pressure, the money is not whole; weak Wealth into strong Pressure, beware of double loss. Wealth into Wealth: a strong original turning into a forceless one, seek quickly; the reverse, wait."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["鬼化为财，克世须云大吉；", "财爻化鬼，逢空可谓全凶。"],
+          "yi": ["官鬼化出财来，又来克世，应当说大吉；", "财爻化出官鬼，再逢空亡，可说全凶。"],
+          "en": ["Pressure turning into Wealth that controls the Self line: call it very lucky;", "the Wealth line turning into Pressure and falling void: call it wholly unlucky."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["鬼化财，从空而至。", "且来克世，是利追我而走，故云大吉；", "财化鬼，自有化无。", "又落空亡，是消磨殆尽，故曰全凶。"],
+          "yi": ["官鬼化财，财是从无中来的。", "又来克世，是利追着我跑，所以说大吉；", "财化官鬼，是从有变成无。", "又落空亡，是消耗殆尽，所以说全凶。"],
+          "en": ["Pressure turning into Wealth: the money comes out of nothing.", "If it also controls the Self line, the profit is chasing after me; hence very lucky;", "Wealth turning into Pressure: what exists turns into nothing.", "Falling void as well, it wears away to nothing; hence wholly unlucky."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["鬼化财，是财从空而至。", "财本是生鬼的，而鬼反而化财，谓之鬼送财。", "且来克世，是利追我而走，故云大吉。", "若世爻克鬼，则无财。", "财化鬼，是财自有化无。", "午前占，谓之鬼偷财。", "若得日辰扶合，或动爻生扶，谓之财入鬼手，庶无伤也。", "若旺财化衰鬼，其财不全。", "若衰财化旺鬼，须防两倍折财。", "又落空亡，是消磨殆尽，故曰全凶。", "凡遇财化财，本来是吉，但其中也有分别。", "若前卦财旺化财无气，午前占，宜速求，向后财必薄。", "午后占，宜早求，财利丰盈，今财稍薄不如前。", "若前卦财衰而化财旺，反此断之必无差。"],
+          "yi": ["官鬼化财，是财从无中来。", "本来是财生官鬼，现在官鬼反而化出财来，叫作「鬼送财」。", "又来克世，是利追着我跑，所以说大吉。", "如果是世爻去克官鬼，就没有财。", "财化官鬼，是财从有变无。", "午前占得，叫作「鬼偷财」。", "如果有日辰扶合，或动爻生扶，叫作「财入鬼手」，大概没有伤害。", "旺的财化成衰的官鬼，财不能全得。", "衰的财化成旺的官鬼，要防加倍折财。", "又落空亡，是消耗殆尽，所以说全凶。", "凡是财化财，本来是吉，但其中也有分别。", "如果本卦的财旺、化出的财无气：午前占得，宜赶快求，往后财一定薄；", "午后占得，宜早点求，财利丰厚，现在的财比先前稍薄。", "如果本卦的财衰而化出的财旺，就反过来断，一定不会错。"],
+          "en": ["Pressure turning into Wealth: the money comes out of nothing.", "Normally Wealth feeds Pressure; when Pressure turns into Wealth instead, it is called 'the ghost bringing money'.", "If it also controls the Self line, the profit is chasing me; hence very lucky.", "If instead the Self line controls the Pressure line, there is no money.", "Wealth turning into Pressure: the money turns from something into nothing.", "Cast before noon, it is called 'the ghost stealing money'.", "If the Day supports or combines with it, or a moving line generates and supports it, it is called 'money in the ghost's hand', and there may be no harm.", "A strong Wealth turning into a weak Pressure: the money does not come whole.", "A weak Wealth turning into a strong Pressure: beware of losing twice as much.", "Falling void as well, it wears away to nothing; hence wholly unlucky.", "Wealth turning into Wealth is normally lucky, but there are distinctions.", "If the original Wealth is strong and the Wealth it turns into has no force: cast before noon, seek it quickly, for later the money will be thin;", "cast after noon, seek it early; the profit is ample, though the money now is a little thinner than before.", "If the original Wealth is weak and the Wealth it turns into is strong, judge the other way round and you will not err."] }
+      ],
+      "note": {
+        "yi": "《断易天机》本的注比《卜筮大全》本详细，而且是穿插着多出来的，所以两段都全文引出，方便对照。",
+        "en": "The Duanyi Tianji commentary is fuller than the Bushi Daquan one, with its extra sentences woven through, so both are quoted in full for comparison."
+      },
+      "see": ["LY.WEALTH.HJC.17", "LY.WEALTH.HJC.18"]
+    },
+    {
+      "id": "LY.WEALTH.TXF.04",
+      "topic": "动变",
+      "title": "父化妻爻当涉艰辛，财连兄位积聚当分",
+      "rule": {
+        "yi": "父母化财：先难后得；父旺财衰，辛苦多财少；父衰财旺，用力少财多。财化兄弟：有侵夺，积蓄也要分散（本就与人分利则无妨）。兄弟化财：先散后聚。《断易天机》本：父母、兄弟化财，虽辛苦亦吉；父爻带贵人有依靠，带太岁凶煞防因财染病。",
+        "en": "Resource turning into Wealth: difficulty first, gain later; Resource strong and Wealth weak, much toil and little money; the reverse, little effort and much money. Wealth turning into Peer: encroachment, savings scattered (no harm if you were sharing the profit anyway). Peer turning into Wealth: scattered first, gathered later. The Duanyi Tianji text: Resource or Peer turning into Wealth is lucky however hard the way; the Resource line with the Noble star means someone to lean on, with the Tai Sui's killing star beware of falling ill over the money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["父化妻爻，当涉艰辛始得；", "财连兄位，纵然积聚当分。"],
+          "yi": ["父母化出妻财，要经历艰辛才得到；", "财连着兄弟（财化兄弟），即使积聚了也要分掉。"],
+          "en": ["Resource turning into Wealth: gain comes only after hardship;", "Wealth linked with Peer: whatever is gathered will be shared out."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["凡父化财，必先难后获。", "父旺财衰，则艰辛多而财少；父衰财旺，则用力少而财多。", "财化弟兄，将有侵夺之患，虽有积蓄，亦当分散也。"],
+          "yi": ["凡是父母化财，一定先难后得。", "父母旺、财衰，辛苦多而财少；父母衰、财旺，用力少而财多。", "财化兄弟，会有被侵夺的祸患，即使有积蓄，也要分散。"],
+          "en": ["Resource turning into Wealth: first difficulty, then gain.", "Resource strong and Wealth weak: much toil, little money; Resource weak and Wealth strong: little effort, much money.", "Wealth turning into Peer: there will be encroachment; even savings will be scattered."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["凡父化财，必先难后获。", "父旺财衰，则艰辛多而财少。父衰财旺，则用力少而财多。", "父爻带贵，可言倚靠，若加太岁杀，因财染病归。", "财化弟兄，纵来克世，亦无全得，将有侵夺之患，虽有积蓄，亦当分散也。", "若持世，难取谋望之心。", "财爻旺化兄弟，当见聚而后分，若果与人分利则无妨。", "若兄弟化财，则主先散后聚，或谋出于众，利归一源，或始艰辛，然后称心。", "凡父兄化财，纵有艰辛，亦吉。"],
+          "yi": ["凡是父母化财，一定先难后得。", "父母旺、财衰，辛苦多而财少；父母衰、财旺，用力少而财多。", "父母爻带贵人，可以说有依靠；如果带太岁凶煞，会因为求财染病而归。", "财化兄弟，即使来克世，也不能全得，会有被侵夺的祸患，即使有积蓄，也要分散。", "如果（化出的兄弟）持世，所谋所望难以达成。", "财爻旺而化兄弟，会先聚后分；如果本来就是和人分利，就不要紧。", "如果兄弟化财，主先散后聚；或者是大家出主意、利归一处；或者开头艰辛，后来称心。", "凡是父母、兄弟化财，即使有艰辛，也是吉。"],
+          "en": ["Resource turning into Wealth: first difficulty, then gain.", "Resource strong and Wealth weak: much toil, little money; Resource weak and Wealth strong: little effort, much money.", "If the Resource line carries the Noble star, there is someone to lean on; if it carries the Tai Sui's killing star, you will come home ill because of the money.", "Wealth turning into Peer: even if it controls the Self line, you will not get it all; there will be encroachment, and even savings will be scattered.", "If that Peer sits on the Self line, what you hope for is hard to reach.", "A strong Wealth line turning into Peer: gathered first, then divided; if you were sharing the profit with others anyway, no harm.", "Peer turning into Wealth: first scattered, then gathered; or many plan together and the profit flows to one place; or hardship first, then satisfaction.", "Whenever Resource or Peer turns into Wealth, it is lucky, however hard the way."] }
+      ],
+      "see": ["LY.WEALTH.HJC.17", "LY.WEALTH.HJC.18"]
+    },
+    {
+      "id": "LY.WEALTH.TXF.05",
+      "topic": "风险",
+      "title": "凶神冲散财爻，劫杀加临兄位",
+      "rule": {
+        "yi": "凶神（如白虎、螣蛇）冲克财爻：出外行船防风波，世爻临吉神则人无事而财散，虎蛇克世则财命难保；在家求财则主恶人搅扰或因财惹官非，有解神无事。劫杀（神煞）临财，财不可得；临发动的兄弟，得财后防失，再加玄武有盗劫；贵人临官鬼持世，或官鬼动而制住兄弟，可免；官鬼无气则兄弟仍为祸。",
+        "en": "A baleful spirit (such as the White Tiger or the Coiling Snake) clashing or controlling the Wealth line: abroad, beware of storms on the water; with a good spirit on the Self line you are safe but the money drifts off; the Tiger or Snake controlling the Self line endangers both money and life. At home it means troublemakers or the money dragging you into an official matter; a relieving spirit ends it. The Robbery star on Wealth: the money cannot be had; on a moving Peer: beware of losing it afterwards, and with the Dark Tortoise, of robbery; the Noble star on a Pressure line holding the Self line, or a moving Pressure restraining Peer, averts it; a forceless Pressure line cannot."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["凶神冲散财爻，切忌风波险阻；", "劫杀加临兄位，须防盗贼相侵。"],
+          "yi": ["凶神冲散财爻，千万要防风波险阻；", "劫杀临在兄弟爻上，要防盗贼来侵犯。"],
+          "en": ["If a baleful spirit clashes the Wealth line apart, beware of storms and perils;", "if the Robbery star falls on the Peer line, beware of thieves."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["凡凶神来冲克财爻，行船便见风波之患。", "世爻若值吉神，身虽无咎，财必飘零。", "凶神若遇虎蛇克世，财命不可保全。", "若就家中求，却不如此断。", "必是凶人搅乱，或因财引惹公事。", "若值解神，却得无事。", "劫杀乃求财之大忌，若临财位，必不可得。", "若临兄弟发动，得财之后，防有失脱；", "若更玄武加临，必有盗贼劫掠之祸；", "若得贵人临鬼持世，虽有贼来，无伤于我；", "如逢鬼动，兄弟受制，纵有凶神，亦无大患。", "鬼爻无气则无权，兄弟依然来作祸。"],
+          "yi": ["凡是凶神来冲克财爻，行船就有风浪之患。", "世爻如果临吉神，人虽然没事，财一定散失。", "凶神如果是白虎、螣蛇来克世，钱财和性命都难保。", "如果是在家里求财，就不这样断。", "那一定是有恶人捣乱，或因为财惹上官司。", "如果遇到解神，就能没事。", "劫杀是求财的大忌，如果临在财爻上，一定得不到。", "如果临在发动的兄弟上，得财之后，要防失落；", "如果再加玄武，一定有盗贼抢劫之祸；", "如果贵人临官鬼持世，即使有贼来，也伤不到我；", "如果官鬼发动，兄弟受制，即使有凶神，也没有大患。", "官鬼无气就没有力量，兄弟照样来作祸。"],
+          "en": ["Whenever a baleful spirit clashes with or controls the Wealth line, a voyage will meet storms.", "If the Self line carries a good spirit, you yourself are unharmed but the money drifts away.", "If the baleful spirit is the White Tiger or the Coiling Snake controlling the Self line, neither money nor life is safe.", "If the money is sought at home, do not judge it this way.", "It will be bad people making trouble, or the money dragging you into an official matter.", "If a relieving spirit is present, all will be well.", "The Robbery star is the great enemy of seeking money; if it falls on the Wealth line, the money cannot be had.", "If it falls on a moving Peer line, after you get the money, beware of losing it;", "if the Dark Tortoise is there as well, robbery is certain;", "if the Noble star falls on a Pressure line sitting on the Self line, thieves may come but cannot hurt me;", "if Pressure moves and Peer is held down, there is no great harm even with baleful spirits about.", "But a Pressure line without force has no power, and Peer will still do its damage."] }
+      ],
+      "note": {
+        "yi": "这里的「劫杀」是神煞，和《黄金策》「岁君逢劫杀」里指兄弟爻的「劫杀」不是一回事。",
+        "en": "The Robbery star here is a spirit-star; it is not the 'robber' of the Golden Strategy's 'Tai Sui meets the robber', which means the Peer line."
+      },
+      "see": ["LY.WEALTH.HJC.20", "LY.WEALTH.HJC.35"]
+    },
+    {
+      "id": "LY.WEALTH.TXF.06",
+      "topic": "有无",
+      "title": "子动会青龙，生财大道；父兴临白虎，绝利根源",
+      "rule": {
+        "yi": "子孙是财源：卦无财而子孙旺动仍可求，临青龙等同有财；鬼化财或化子孙最利；子孙化子孙，财从两处来，宜两处求或与人同求；财逢长生、子孙临官，绵绵不绝；财旺而子孙死绝，只得一次；子孙旺而被父母克（父母发动临白虎），断绝财源，日辰合子孙可免。",
+        "en": "Output is the source of money: with no Wealth in the hexagram, a strong moving Output still allows the venture, and with the Azure Dragon it counts as having money; Pressure turning into Wealth or into Output is the best of luck; Output turning into Output, money from two places, so seek in two places or with a partner; Wealth at Birth and Output at its Official stage, the money keeps coming; Wealth strong but Output dead or extinguished, only once; Output strong but controlled by Resource (Resource moving with the White Tiger), the source is cut, unless the Day combines with Output."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["子动会青龙，乃生财之大道；", "父兴临白虎，为绝利之根源。"],
+          "yi": ["子孙发动又临青龙，是生财的大道；", "父母发动又临白虎，是断绝财利的根源。"],
+          "en": ["Output moving with the Azure Dragon: the great road to making money;", "Resource moving with the White Tiger: the root that cuts off profit."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["若卦内无财，而子孙旺动，亦可求谋。", "更临青龙，比同有财之卦；若值休囚，更宜斟酌；", "若鬼化子孙，谓之鬼运财来付好人。", "苍屏有歌曰：鬼化为财及子孙，求财最利称心情。更逢福德来生世，安坐高堂也获珍。", "若子孙化子孙，财从两处生。财既是两处生，宜两处求，或与人同求，大吉。", "子孙乃生财之神，比同水之有源，源头受克则泉竭，泉水旺盛则流长。", "若财位逢长生，福德临官，此等求财，绵绵不绝。", "或财虽旺，子孙死绝，只许一度，后再难求。", "子孙虽旺，父母来克，谓之绝生财之源，虽有钱财，亦无接济。", "若遇日辰相合，庶几不被克伤。"],
+          "yi": ["如果卦里没有财，而子孙旺相发动，也可以去求。", "再临青龙，就等同有财的卦；如果子孙休囚，就要再斟酌；", "如果官鬼化子孙，叫作「鬼把财运来交给好人」。", "苍屏有歌说：官鬼化财或化子孙，求财最有利、最称心；再有子孙来生世，安坐家中也能得宝。", "如果子孙化子孙，财从两处来。既然从两处来，宜在两处求，或和别人一起求，大吉。", "子孙是生财之神，就像水有源头：源头受克泉水就干，泉水旺盛水流就长。", "如果财爻逢长生，子孙临官，这样求财绵绵不绝。", "如果财虽旺而子孙死绝，只能得一次，以后难再求。", "子孙虽旺，父母来克它，叫作断绝生财之源，即使有钱也没有后续。", "如果子孙遇日辰相合，大概不会被克伤。"],
+          "en": ["If there is no Wealth in the hexagram but Output is strong and moving, the venture can still be pursued.", "With the Azure Dragon as well, it counts as a hexagram with money; if Output is resting or trapped, weigh it further;", "Pressure turning into Output is called 'the ghost carrying money to a good person'.", "Cangping's song says: Pressure turning into Wealth or into Output is the best of luck for money; if Output also generates the Self line, you gain treasure sitting at home.", "Output turning into Output: money arises from two places; so seek it in two places, or together with someone; very lucky.", "Output is the spirit that generates money, like the spring of a stream: controlled at the source, the spring dries; strong at the source, the stream runs long.", "If Wealth is at its Birth stage and Output at its Official stage, the money keeps coming.", "If Wealth is strong but Output dead or extinguished, you get it once, and not again.", "If Output is strong but Resource controls it, it is called cutting off the source; even with money now, nothing follows.", "If the Day combines with Output, it may escape the harm."] }
+      ],
+      "see": ["LY.WEALTH.HJC.15", "LY.WEALTH.HJC.06"]
+    },
+    {
+      "id": "LY.WEALTH.TXF.07",
+      "topic": "难易",
+      "title": "世克动财若赶沙场之马，财生静世如逢涸泽之鱼",
+      "rule": {
+        "yi": "财来生、克、合世爻或持世：财来就我，伸手可得；世爻去克发动的财：我去追财，难得（即使日辰合财也不得）；世生动财而日辰合住，或许可得。《断易天机》本：财在内卦动易，在外卦动难。",
+        "en": "Wealth generating, controlling or combining with the Self line, or sitting on it: the money comes to me, reach out and take it. The Self line controlling a moving Wealth: I chase the money and do not catch it (even if the Day combines with it). The Self line generating a moving Wealth that the Day holds by combination: it may be had. The Duanyi Tianji text: Wealth moving in the inner trigram is easy, in the outer hard."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["世克动财，若赶沙场之马；", "财生静世，如逢涸泽之鱼。"],
+          "yi": ["世爻去克发动的财，像在沙场上追马；", "财来生安静的世爻，像在干涸的水塘里捉鱼。"],
+          "en": ["The Self line controlling a moving Wealth: like chasing a horse across the sands;", "Wealth generating a still Self line: like catching fish in a dried-up pond."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["大凡求财，财来生世克世则易。", "财来逐我，如涸泽取鱼，伸手便得。", "若世克动财，是我去逐利，如沙丘劣马，愈赶愈奔，终难上手。"],
+          "yi": ["大凡求财，财来生世、克世就容易。", "财来追我，像在干塘里取鱼，伸手就得。", "如果世爻克发动的财，是我去追利，像沙丘上的劣马，越赶跑得越远，终究抓不到手。"],
+          "en": ["In seeking money, Wealth generating or controlling the Self line makes it easy.", "The money chases me, like taking fish from a dry pond: reach out and it is yours.", "If the Self line controls a moving Wealth, I am the one chasing profit, like an unruly horse on the dunes: the more you chase, the farther it runs, and you never catch it."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["大凡求财，财在内动易求，外动难求。", "财来生世、克世、合世、持世则易，是财来逐我，如涸泽取鱼，伸手便得。", "若世生动财，得日辰合住，财庶几可以得。", "若世克动财，是我去逐利，纵与日辰相合，亦不可得。", "倘世爻无杀，财在内动稍可，若在外动，则如沙丘劣马，愈赶愈奔，终难上手。"],
+          "yi": ["大凡求财，财在内卦动容易求，在外卦动难求。", "财来生世、克世、合世、持世就容易，是财来追我，像在干塘里取鱼，伸手就得。", "如果世爻去生发动的财，有日辰把财合住，财大概还能得到。", "如果世爻克发动的财，是我去追利，即使（财）和日辰相合，也得不到。", "如果世爻上没有凶煞，财在内卦动还稍可；如果在外卦动，就像沙丘上的劣马，越赶越跑，终究抓不到手。"],
+          "en": ["In seeking money, Wealth moving in the inner trigram is easy to get, in the outer hard.", "Wealth generating, controlling, combining with or sitting on the Self line is easy: the money chases me, like taking fish from a dry pond.", "If the Self line generates a moving Wealth and the Day combines with and holds it, the money may still be had.", "If the Self line controls a moving Wealth, I am chasing profit; even if the Day combines with it, it cannot be had.", "If the Self line carries no killing star, Wealth moving in the inner trigram is just possible; moving in the outer, it is the unruly horse on the dunes that runs the harder you chase."] }
+      ],
+      "see": ["LY.WEALTH.HJC.13"]
+    },
+    {
+      "id": "LY.WEALTH.TXF.08",
+      "topic": "难易",
+      "title": "克害刑冲迫兄鬼，则灾殃消散",
+      "rule": {
+        "yi": "兄弟、官鬼是求财的忌神，它们受克、害、刑、冲就灾消、财有望。《断易天机》本细分：吉神克我吉、凶神克我凶，我克兄鬼愁散、我克财福无财；害财则财有妨，害鬼则鬼无作，还要看衰旺；刑鬼煞吉、刑财福凶，刑世伤我、刑应伤彼，应合世而被刑难成；日辰冲世应或冲财难成，冲散财则无财；吉神逢冲凶，凶神逢冲吉。",
+        "en": "Peer and Pressure are the adversaries of money; when they are controlled, harmed, punished or clashed, trouble disperses and money becomes possible. The Duanyi Tianji text details it: a good spirit controlling me is good, a baleful one bad; my controlling Peer or Pressure dispels worry, my controlling Wealth or Output means no money; harming Wealth hinders it, harming Pressure disarms it, strength decides; punishing Pressure or a killing star is good, punishing Wealth or Output bad, punishing the Self line hurts me, the Other line the other side, and an Other line combining with the Self but punished will not close; the Day clashing Self, Other or Wealth makes it hard, clashing Wealth apart leaves no money; a good spirit clashed is bad, a baleful one clashed is good."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["克害刑冲迫兄鬼，", "则灾殃消散；"],
+          "yi": ["兄弟、官鬼受到克、害、刑、冲的逼迫，", "灾祸就消散；"],
+          "en": ["When Peer and Pressure are pressed by control, harm, punishment and clash,", "disaster melts away;"] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["兄鬼：皆求财之忌神。", "今彼受制，不惟求财有望，抑且灾散祸消矣。"],
+          "yi": ["兄弟、官鬼都是求财的忌神。", "现在它们受制，不但求财有望，而且灾祸都消散了。"],
+          "en": ["Peer and Pressure are both Adversary lines in seeking money.", "Now that they are held down, not only is there hope of money, but disaster disperses as well."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["凡占求财福，吉神克我则吉，兄鬼凶神克我则凶，", "我克兄鬼则愁散，我克财福则无财。"],
+          "yi": ["凡是占求财，吉神（财、福）来克我就吉，兄弟、官鬼这些凶神来克我就凶；", "我去克兄弟、官鬼，忧愁消散；我去克妻财、子孙，就没有财。"],
+          "en": ["In seeking money, a good spirit (Wealth, Output) controlling me is good; Peer, Pressure or a baleful spirit controlling me is bad;", "my controlling Peer and Pressure dispels worry; my controlling Wealth and Output means no money."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["凡遇害妻财，则财有妨。害鬼杀，则鬼无作。", "害彼则吉，害我则凶。", "占者当分衰旺，若我世旺，彼虽欲害而无伤，若害爻旺，则凶。", "刑者：阴阳反德也。若加羊刃，可谓逞凶刑伤也。刃者，煞也。有刑而无刃，则不杀。", "凡占刑，刑鬼煞凶神则吉，刑财福吉神则凶。", "世应皆怕逢刑，刑世伤我，刑应则对方遭伤。", "求财必应合世，若被刑伤，安可就也。", "冲者：十二支战击之象。", "有日辰冲世应，冲财，则难就，冲散财则无财。", "吉神逢冲凶，凶神恶煞逢冲则吉。"],
+          "yi": ["凡是（某爻）害妻财，财就受妨碍；害官鬼凶煞，鬼就作不了祸。", "害别人就吉，害自己就凶。", "占的人要分清衰旺：如果我的世爻旺，对方虽想害也伤不着；如果害我的那一爻旺，就凶。", "刑，是阴阳违背了本德。若再加羊刃，就是逞凶的刑伤。刃就是煞。有刑而没有刃，就不至于杀伤。", "凡是看刑：刑官鬼、凶煞就吉，刑妻财、子孙这些吉神就凶。", "世、应都怕逢刑：刑世伤我，刑应就是对方受伤。", "求财一定要应爻合世爻，如果被刑伤，怎么能成呢。", "冲，是十二地支相互攻击的象。", "日辰冲世、应，或冲财，事情难成；把财冲散，就没有财。", "吉神逢冲凶，凶神恶煞逢冲反而吉。"],
+          "en": ["When something harms Wealth, the money is hindered; when it harms the Pressure line or a killing star, that ghost can do nothing.", "Harm done to the other side is good; harm done to me is bad.", "Distinguish strength: if my Self line is strong, the other cannot hurt it though it tries; if the harming line is strong, it is bad.", "Punishment is yin and yang turned against their virtue. With the Goat Blade star added, it is a punishment that wounds. The blade is the killing star; punishment without the blade does not kill.", "As for punishment: punishing Pressure or a baleful star is good; punishing Wealth, Output or a good spirit is bad.", "Both Self and Other fear punishment: punishing the Self line hurts me, punishing the Other hurts the other side.", "Seeking money needs the Other line to combine with the Self line; if that is punished, how can it succeed?", "A clash is the twelve branches striking at each other.", "If the Day clashes with Self, Other or Wealth, the matter is hard to close; if it clashes the Wealth apart, there is no money.", "A good spirit clashed is bad; a baleful spirit or killing star clashed is good."] }
+      ],
+      "note": {
+        "yi": "《断易天机》本在这一句下有一大段讲克、害、刑、冲的通论（包括哪几对地支相害、各家说法），这里只引和求财有关的几句。",
+        "en": "Under this line the Duanyi Tianji text has a long general essay on control, harm, punishment and clash (including which branch pairs harm each other and what various authorities say); only the sentences bearing on money are quoted here."
+      }
+    },
+    {
+      "id": "LY.WEALTH.TXF.09",
+      "topic": "有无",
+      "title": "生扶拱合辅财福，则货宝丰盈",
+      "rule": {
+        "yi": "妻财、子孙得生扶拱合，财货丰盈。《断易天机》本细分：日辰生财福吉、生鬼杀凶；财生世易求、世生财难求；应生世是人来就我，世生应是我赶他人；世应相生逢冲仍有阻；财福拱我得人相助，我拱兄弟是他人把权；合财福吉、合鬼杀凶，合处逢生十拿九稳。",
+        "en": "Wealth and Output helped by generation, support, propping and combination: goods and money abound. The Duanyi Tianji text details it: the Day generating Wealth or Output is good, generating Pressure or a killing star bad; Wealth generating the Self line is easy money, the Self generating Wealth hard; the Other generating the Self means they come to me, the reverse means I run after them; Self and Other generating each other can still be blocked by a clash; Wealth or Output propping me means help from others, my propping Peer means others hold the power; combining with Wealth or Output is good, with Pressure or a killing star bad; a combination that also meets generation is a sure thing."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["生扶拱合辅财福，", "则货宝丰盈。"],
+          "yi": ["妻财、子孙得到生、扶、拱、合的辅助，", "货物财宝就丰盈。"],
+          "en": ["When Wealth and Output are helped by generation, support, propping and combination,", "goods and treasure abound."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["妻财子孙，生涯紧要。", "且有生扶拱合，岂不财货盈溢，珍宝满箱。"],
+          "yi": ["妻财、子孙，是谋生的要害。", "再有生扶拱合，岂不是财货满溢、珍宝满箱。"],
+          "en": ["Wealth and Output are what a livelihood hangs on.", "Add generation, support, propping and combination, and how could the goods not overflow and the chests fill with treasure?"] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["生者：阴阳交会而相生也。", "日辰生财福则吉，生鬼杀则凶。", "财生世易求，世生财难求。", "若应生世，他人就我，世生应，我赶他人。", "世应相生，逢冲亦有阻。"],
+          "yi": ["生，是阴阳交会而相生。", "日辰生妻财、子孙就吉，生官鬼凶煞就凶。", "财生世容易求，世生财难求。", "应生世，是别人来就我；世生应，是我去追别人。", "世应相生，但逢冲也会有阻碍。"],
+          "en": ["Generation is yin and yang meeting and giving rise to each other.", "The Day generating Wealth or Output is good; generating Pressure or a killing star is bad.", "Wealth generating the Self line: easy to get; the Self line generating Wealth: hard.", "The Other generating the Self: the other party comes to me; the Self generating the Other: I run after them.", "Self and Other generating each other can still be blocked by a clash."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["凡遇财福拱，我则得人佐助，财力倍常。", "若我拱兄弟，是他人把权，其财爻纵旺，亦难遂意。", "合者：阴阳之和，天地之德也。", "凡合财福则吉，合鬼杀则凶也。", "合处逢生，如同瓮中捉鳖。"],
+          "yi": ["凡是财、福来拱我，就得人帮助，财力加倍。", "如果是我去拱兄弟，就是别人掌权，财爻即使旺，也难如意。", "合，是阴阳和谐、天地之德。", "凡是合财、福就吉，合官鬼凶煞就凶。", "合住之处又逢生，就像瓮中捉鳖（十拿九稳）。"],
+          "en": ["When Wealth or Output props me up, others come to my aid and my means double.", "If I prop up Peer, others hold the power, and even a strong Wealth line will not go as I wish.", "Combination is the harmony of yin and yang, the virtue of heaven and earth.", "Combining with Wealth or Output is good; combining with Pressure or a killing star is bad.", "A combination that also meets generation is like catching a turtle in a jar: a sure thing."] }
+      ],
+      "note": {
+        "yi": "《断易天机》本在这一句下也有一段讲生、扶、拱、合的通论，这里只引和求财有关的几句。",
+        "en": "Here too the Duanyi Tianji text has a general essay on generation, support, propping and combination; only the sentences bearing on money are quoted."
+      }
+    },
+    {
+      "id": "LY.WEALTH.TXF.10",
+      "topic": "应期",
+      "title": "前卦有财后卦无，前卦无财后卦有",
+      "rule": {
+        "yi": "本卦有财、变卦无财：宜速求，迟则难得；本卦无财、变卦有财：先难后得，宜等时机，或等财爻旺相的年月。",
+        "en": "Wealth in the original hexagram but not in the changed one: seek quickly, for later it is hard to get. No Wealth in the original but Wealth in the changed one: hardship first, gain later; wait for the moment, or for the year and month in which Wealth is strong."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["前卦有财后卦无，不利于后；", "前卦无财后卦有，艰难在前。"],
+          "yi": ["本卦有财、变卦没有，不利于后面；", "本卦没有财、变卦有，艰难在前面。"],
+          "en": ["Wealth in the original hexagram but not in the changed one: bad for later;", "no Wealth in the original but Wealth in the changed one: the hardship comes first."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["前卦有财后卦无，宜速求，迟则难得；", "前卦无财后卦有，宜待时行事，或看财爻旺相年月，方可谋望。"],
+          "yi": ["本卦有财、变卦无财，宜赶快求，晚了难得；", "本卦无财、变卦有财，宜等时机再做，或看财爻旺相的年月，才可谋求。"],
+          "en": ["Wealth before but not after: seek it quickly; later it is hard to get;", "no Wealth before but Wealth after: wait for the right time, or for the year and month in which the Wealth line is strong, before making a move."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.TXF.11",
+      "topic": "应期",
+      "title": "财合日辰方能入手，财逢墓库便可归怀",
+      "rule": {
+        "yi": "得财之日：财与日辰相合之日（或财爻值日）、财爻入墓之日；《断易天机》本细分：财旺逢入墓之日得，财衰逢生旺之日得。",
+        "en": "The day the money comes: the day that combines with Wealth (or Wealth's own day), or the day Wealth enters its tomb. The Duanyi Tianji text: a strong Wealth on its tomb day, a weak one on a day that births or empowers it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全",
+          "zh": ["财合日辰，方能入手；", "财逢墓库，便可归怀。"],
+          "yi": ["财爻逢日辰相合，才能到手；", "财爻逢墓库，就能收进怀里。"],
+          "en": ["Only when Wealth combines with the Day does it come into hand;", "when Wealth meets its tomb, you can take it home."] },
+        { "by": "天玄赋注", "book": "卜筮大全",
+          "zh": ["财与日辰合，财爻入墓日，方可断其上手。"],
+          "yi": ["财和日辰相合的日子、财爻入墓的日子，才可以断它到手。"],
+          "en": ["The day that combines with Wealth, or the day the Wealth line enters its tomb: only then can you say it is in hand."] },
+        { "by": "天玄赋注", "book": "断易天机",
+          "zh": ["欲知何日财可到手，但看财爻旺衰。", "财与日辰合，临财值日可得。", "财爻旺相，逢入墓日可得。", "财衰则逢生旺日可得。"],
+          "yi": ["要知道哪天财可以到手，只看财爻旺衰。", "财与日辰相合（的日子），或者财爻本身值日的那天，可以得。", "财爻旺相，逢入墓的日子可以得。", "财爻衰弱，逢生旺的日子可以得。"],
+          "en": ["To know on what day the money arrives, look at the strength of the Wealth line.", "On the day that combines with Wealth, or on the day of Wealth's own branch, it can be had.", "A thriving Wealth line: on the day it enters its tomb.", "A weak one: on a day that births or empowers it."] }
+      ],
+      "see": ["LY.WEALTH.HJC.25"]
+    }
+  ]
+}

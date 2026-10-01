@@ -1,0 +1,376 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易林补遗",
+  "chapter": "收顿货物章第一百六",
+  "chapter_en": "Chapter 106 - Stocking goods",
+  "ranges": {"易林补遗": [1966, 2008]},
+  "units": [
+    {
+      "id": "LY.WEALTH.YL.26",
+      "topic": "买卖",
+      "chapter": "收顿货物章第一百六",
+      "chapter_en": "Chapter 106 - Stocking goods",
+      "title": "顿货先访脱期：近买近卖看本月财旺，置后再脱看以后财逢生旺之日",
+      "rule": {
+        "yi": "囤货先推脱手的日期，有快有慢：近期买近期卖，要本月财旺相的日子才有利；现在买、以后再脱手，要等年里财逢生旺的日子才入袋。",
+        "en": "For stocking goods, first work out the time of sale, which may be quick or slow: buying and selling soon, profit comes this month when Wealth is strong; buying now for a later sale, wait for a day later in the year when Wealth meets Birth or strength and it can go into the purse."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以妻财为主，", "衰旺为凭。)"],
+          "yi": ["（以妻财为主，", "以旺衰为凭。）"],
+          "en": ["(Wealth is the chief;", "strength and weakness are the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["凡占顿货，先访脱期。", "有迟速之不同，取旺衰之名异，", "近买近卖，于本月当旺相而得财。", "今置后脱，於经年值休囚而有利。"],
+          "yi": ["凡是占囤货，先要访问脱手的日期。", "有迟有快的不同，取旺衰的名目也不一样；", "近期买、近期卖的，在本月正当旺相的时候得财；", "现在买进、以后再脱手的，隔了一年，在休囚的时候反而有利。"],
+          "en": ["In any question about stocking goods, first look into the time of sale.", "There is a difference between slow and quick, and the names taken from strength and weakness differ;", "for buying and selling soon, money comes this month when Wealth is strong;", "for buying now and selling later, over a full year, there is profit even in the resting and trapped time."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["置买货物欲求利息，专看迟速之期，可觅厚薄子财。", "近买即卖，求目下财旺之日而利入手。", "今制后脱，待年馀财逢生旺之日而可入囊。"],
+          "yi": ["买进货物想求利息，专看快慢的时间，就能求得厚薄不同的利钱。", "近期买了就卖，求的是眼下财旺的日子，利润才到手；", "现在置办、以后脱手，要等到年里财逢生旺的日子，才能入袋。"],
+          "en": ["To seek interest from buying goods, look only at the time, fast or slow, and you can find a thicker or thinner return.", "Buying and selling at once, look for a day when Wealth is strong now, and the profit comes to hand;", "buying now for a later sale, wait for a day later in the year when Wealth meets Birth or strength, and it can go into the purse."] }
+      ],
+      "note": {
+        "yi": "「於经年值休囚而有利」一句，字面是说隔了整年、在休囚的时候反而有利，这里照字面译。「年馀」译成年里以后。",
+        "en": "'Over a full year, in the resting and trapped time, there is profit' is translated literally; 'the rest of the year' is rendered as 'later in the year'."
+      },
+      "see": ["LY.WEALTH.ZS.15", "LY.WEALTH.ZS.16", "LY.WEALTH.YY.19"]
+    },
+    {
+      "id": "LY.WEALTH.YL.27",
+      "topic": "买卖",
+      "chapter": "收顿货物章第一百六",
+      "chapter_en": "Chapter 106 - Stocking goods",
+      "title": "按买卖的季节看财爻：冬收夏发用巳午火，秋置春卖用寅卯木，夏养冬鱼用亥子水，春种秋收用申酉金",
+      "rule": {
+        "yi": "按买进、卖出的季节，看那个季节里旺的五行：冬天收进、夏天卖出，看巳午的财爻，四五月有财；秋天置办、春天卖，看寅卯的财，正二月大吉；夏天养、冬天出鱼，见水，十月十一月亥子得利；春天种、秋天收，逢金，七八月申酉财可得。",
+        "en": "Follow the season of buying and of selling, and the element that is strong in that season: buying in winter and selling in summer, look for a Wealth line of Si or Wu, with money in the fourth and fifth months; buying in autumn and selling in spring, a Wealth of Yin or Mao, greatly auspicious in the first and second months; raising in summer and selling fish in winter, Water, with profit in the tenth and eleventh months, Hai and Zi; planting in spring and reaping in autumn, Metal, with money in the seventh and eighth months, Shen and You."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["且如冬藏夏货，宜巳午之财爻。", "秋放春收，喜卯寅之妻位。", "夏育冬鱼利见水，", "春培秋果要逢金。"],
+          "yi": ["比如冬天收藏、夏天出货，宜用巳午的财爻；", "秋天放出、春天收回，喜欢卯寅的妻位（财）；", "夏天养、冬天出鱼的，利在见水；", "春天培、秋天出果的，要逢金。"],
+          "en": ["For example, goods stored in winter and sold in summer suit a Wealth line of Si or Wu;", "let out in autumn and taken in during spring, they like the Wealth position of Mao or Yin;", "fish raised in summer for winter find profit in Water;", "fruit tended in spring for autumn needs Metal."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["假令冬收夏发，乃夏旺于火，在四五巳午之期有财。", "秋置春卖，乃春旺于木，故正二月卯寅之期大吉。", "夏养冬鱼，乃冬旺于水，是十月十一月亥子节而得利。", "春种秋收，乃秋旺于金，在七八月申酉之令而财可得。"],
+          "yi": ["比如冬天收进、夏天发出，是因为夏天火旺，在四、五月巳午的时候有财；", "秋天置办、春天卖出，是因为春天木旺，所以正、二月卯寅的时候大吉；", "夏天养、冬天出鱼，是因为冬天水旺，在十月、十一月亥子的节令得利；", "春天种、秋天收，是因为秋天金旺，在七、八月申酉的节令财可以到手。"],
+          "en": ["For instance, buying in winter and selling in summer: Fire is strong in summer, so there is money in the fourth and fifth months, Si and Wu;", "buying in autumn and selling in spring: Wood is strong in spring, so the first and second months, Yin and Mao, are greatly auspicious;", "raising in summer for winter fish: Water is strong in winter, so profit comes in the tenth and eleventh months, Hai and Zi;", "planting in spring and reaping in autumn: Metal is strong in autumn, so money can be had in the seventh and eighth months, Shen and You."] }
+      ],
+      "note": {
+        "yi": "这一节和《易隐》「冬收夏化货，火财者吉……」是同一套配法（冬收夏卖看火、秋收春卖看木、夏收冬卖看水、春收秋卖看金）。",
+        "en": "This pairing is the same scheme as the Yi Yin's 'bought in winter, sold in summer: a Fire Wealth is auspicious ...' (winter to summer, Fire; autumn to spring, Wood; summer to winter, Water; spring to autumn, Metal)."
+      },
+      "see": ["LY.WEALTH.YY.19", "LY.WEALTH.ZS.16"]
+    },
+    {
+      "id": "LY.WEALTH.YL.28",
+      "topic": "买卖",
+      "chapter": "收顿货物章第一百六",
+      "chapter_en": "Chapter 106 - Stocking goods",
+      "title": "买贱卖贵：买时世克财价贱，卖时财克世价高；兄临月将价不长宜收，财值提纲利兴可脱",
+      "rule": {
+        "yi": "买的时候世克财，价便宜；卖的时候财克世，价高。兄弟临月将，价钱涨不起来，适合收进；财值月令，利润正旺，可以脱手。凡世克财爻、兄临月将、财休囚，价贱货宜买；财爻克世或财值月建，货价高、利润加倍，各要赶那个时候，不可错过。",
+        "en": "When buying, the Self controlling Wealth means cheap; when selling, Wealth controlling the Self means high. Peer on the month general: the price will not rise, a good time to buy; Wealth on the ruling line of the month: the profit is rising and it can be sold. Whenever the Self controls the Wealth line, Peer sits on the month general, or Wealth is resting or trapped, the price is cheap and the goods should be bought; when the Wealth line controls the Self, or Wealth is on the Month, the price is high and the profit doubled - catch each in its time and do not miss it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["买时，世克财当贱；", "卖时，财克世为高。", "兄临月将，价不长而宜收。", "财值提纲，利当兴而可脱。"],
+          "yi": ["买的时候，世克财，该便宜；", "卖的时候，财克世，价就高。", "兄弟临月将，价钱涨不起来，适合收进；", "财值月令（提纲），利润正旺，可以脱手。"],
+          "en": ["When buying, the Self controlling Wealth means cheap;", "when selling, Wealth controlling the Self means high.", "Peer on the month general: the price will not rise, a good time to buy;", "Wealth on the ruling line of the month: the profit is rising and it can be sold."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["但世克财爻、或兄临月将、或财值休囚，皆系价值贱而货宜买。", "若财爻克世或财值月建，皆属货价高而利倍增，各赶其时不可挫也。"],
+          "yi": ["凡是世克财爻，或者兄弟临月将，或者财值休囚，都是价钱便宜、货宜买进；", "如果财爻克世，或者财值月建，都是货价高、利润加倍，各要赶那个时候，不可错过。"],
+          "en": ["Whenever the Self controls the Wealth line, or Peer is on the month general, or Wealth is resting or trapped, the price is cheap and the goods should be bought;", "if the Wealth line controls the Self, or Wealth is on the Month, the price is high and the profit doubled; catch each in its time and do not miss it."] }
+      ],
+      "note": {
+        "yi": "「月将」在这里原文没有解释，按字面译成「月将」（当月的将）；下一句「财值月建」里的月建则译作 Month。",
+        "en": "'Month general' is not explained in the source and is translated literally; the Month in the next sentence, 'Wealth on the Month', is the usual month branch."
+      },
+      "see": ["LY.WEALTH.ZS.24", "LY.WEALTH.ZS.17", "LY.WEALTH.HJC.38"]
+    },
+    {
+      "id": "LY.WEALTH.YL.29",
+      "topic": "买卖",
+      "chapter": "收顿货物章第一百六",
+      "chapter_en": "Chapter 106 - Stocking goods",
+      "title": "内卦是眼下、外卦是将来：内强外弱先贵后贱，内弱外强先贱后贵",
+      "rule": {
+        "yi": "内卦代表眼下、近期，外卦代表将来、远期。内卦旺相、外卦衰，一定是先贵后贱；外卦强盛、内卦没有气，一定是后贵先贱。",
+        "en": "The inner trigram stands for the present and near term, the outer trigram for the season to come and the far term. Inner strong and outer weak: dear first and cheap later; outer strong and inner without breath: cheap first and dear later."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["内宫为目下之时，外卦乃未来之节。", "内强外弱，必前重而后轻。", "内弱外强，必前轻而后重。"],
+          "yi": ["内卦是眼下的时候，外卦是将来的节令；", "内强外弱，必定先重后轻；", "内弱外强，必定先轻后重。"],
+          "en": ["The inner trigram (the source says 'inner palace') is the present time and the outer trigram the season to come;", "inner strong and outer weak: heavy first and light later;", "inner weak and outer strong: light first and heavy later."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["凡内卦为近时，外卦为远期，", "内卦旺相外卦衰，彼决见前贵后贱，", "外象强盛内象无气，必然后重前轻。"],
+          "yi": ["内卦代表近期，外卦代表远期；", "内卦旺相、外卦衰，那就一定是先贵后贱；", "外卦强盛、内卦没有气，必然是后贵先贱。"],
+          "en": ["The inner trigram stands for the near term, the outer trigram for the far term;", "inner strong and outer weak, it will surely be dear first and cheap later;", "outer strong and inner without breath, it will surely be dear later and cheap first."] }
+      ],
+      "note": {
+        "yi": "经里说「前重后轻」，解里说「前贵后贱」，可见「重」指价钱高、「轻」指价钱低。",
+        "en": "The verse says 'heavy first, light later' and the commentary 'dear first, cheap later', so 'heavy' means a high price and 'light' a low one."
+      },
+      "see": ["LY.WEALTH.YY.19", "LY.WEALTH.ZS.22"]
+    },
+    {
+      "id": "LY.WEALTH.YL.30",
+      "topic": "买卖",
+      "chapter": "收顿货物章第一百六",
+      "chapter_en": "Chapter 106 - Stocking goods",
+      "title": "置脱货物：子孙发动最宜，子动生财，独忌兄弟交重",
+      "rule": {
+        "yi": "囤货、脱货：要子孙发动，从头到尾嫌兄弟发动；贵贱要赶时机，盈亏凭这一卦。子孙动就生财，兄弟旺就克财。",
+        "en": "Stocking and selling goods: Output should move, and Peer moving is unwelcome from start to finish; catch the moment, dear or cheap, for profit and loss rest on the cast. Output moving generates Wealth, and Peer rising controls it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["置脱用子孙发动，", "始终嫌兄弟交重。", "贵贱赶时，盈亏据卜"],
+          "yi": ["囤货、脱货，用子孙发动；", "自始至终都嫌兄弟交重。", "价贵价贱都要赶上时机，盈亏就凭这一卦。"],
+          "en": ["For stocking and selling off, Output should move;", "from start to finish Peer moving is unwelcome.", "Dear or cheap, catch the moment; profit or loss rests on this cast."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["大凡脱货制货，最宜子动，", "子动生财，独忌兄兴，", "兴则克财，大概如此据理推详。"],
+          "yi": ["大凡脱货、置货，最适宜子孙动，", "子孙动就生财，只忌兄弟兴旺，", "兴旺了就克财；大概就是这样，按道理去推详。"],
+          "en": ["In selling off goods and buying them in, the best is Output moving;", "Output moving generates Wealth, and the only taboo is Peer rising;", "risen, it controls Wealth; that is the general rule, to be worked out by reason."] }
+      ],
+      "note": {
+        "yi": "「盈亏据卜大凡脱货制货」是一句连着的原文，前半属诗，后半「大凡脱货制货……」起是解，这里在那里切开。",
+        "en": "The source runs the end of the verse into the start of the commentary without a break ('profit and loss rests on the cast in selling and buying goods ...'); it is cut there."
+      },
+      "see": ["LY.WEALTH.HJC.38", "LY.WEALTH.ZS.15", "LY.WEALTH.YY.21"]
+    },
+    {
+      "id": "LY.WEALTH.YL.31",
+      "topic": "借贷",
+      "chapter": "托本求利章第一百七",
+      "chapter_en": "Chapter 107 - Lending capital for interest",
+      "title": "托本求利：放债求息、出租房船车轿，同一个断法",
+      "rule": {
+        "yi": "把本钱借给亲戚邻居、放债求息、把房屋车船轿子租给别人取利，都以妻财为主，看世应和内外卦来断。",
+        "en": "Lending capital to kin and neighbours, lending at interest, and letting houses, boats, carts and sedan chairs are all judged the same way: Wealth is the chief, and the Self and the Other, inner and outer, are the evidence."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以妻财为主，", "世应内外为凭。)"],
+          "yi": ["（以妻财为主，", "世应内外为凭。）"],
+          "en": ["(Wealth is the chief;", "the Self and the Other, inner and outer, are the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["凡将资本借亲邻，", "房室用车赁与人。"],
+          "yi": ["凡是把本钱借给亲戚邻居，", "把房屋、车租给别人，"],
+          "en": ["Whenever capital is lent to kin or neighbours,", "or houses and vehicles are rented to others,"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["凡放债求息并物件与人取利者，", "或将房船车轿赁与亲朋同断。"],
+          "yi": ["凡是放债求利息，以及把物件借给别人取利的，", "或者把房子、船、车、轿租给亲戚朋友的，都同样来断。"],
+          "en": ["whenever one lends at interest, or lets goods to others for profit,", "or rents houses, boats, carts or sedan chairs to kin and friends, all are judged the same way."] }
+      ],
+      "see": ["LY.WEALTH.YY.10", "LY.WEALTH.ZS.27"]
+    },
+    {
+      "id": "LY.WEALTH.YL.32",
+      "topic": "借贷",
+      "chapter": "托本求利章第一百七",
+      "chapter_en": "Chapter 107 - Lending capital for interest",
+      "title": "放债借出：有子孙、妻财旺相生世合世，有财有利；官鬼、兄弟发动冲世克世，多耗多是非",
+      "rule": {
+        "yi": "借出本钱：卦里有子孙，遇到善良的客人；有官鬼，遇到强横的对手。妻财最喜欢落在生旺之地；兄弟只怕克世和卦身。爻上有子孙、妻财，旺相，或生世、合世、克世，有财有利；官鬼、兄弟发动，冲世、克世，多耗损多是非，即使只是发动也不是吉象，要忌讳。",
+        "en": "Lending out capital: Output in the hexagram means meeting a good customer; Pressure means meeting a domineering guest. Wealth is most glad to sit in a place of Birth or strength; Peer only worries about controlling the Self and the Body. Output or Wealth on the lines, strong, or generating, combining with or controlling the Self, means money and profit; Pressure or Peer moving to clash with or control the Self brings many losses and quarrels, and even merely moving is not auspicious and must be avoided."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["卦有子孙逢善客，", "爻逢官鬼遇强宾，", "妻财最喜临生旺，", "兄弟单忧克世身。"],
+          "yi": ["卦里有子孙，遇到的是善良的客人；", "爻上逢官鬼，遇到的是强横的宾客；", "妻财最喜欢落在生旺的地方；", "兄弟只担心克了世和卦身。"],
+          "en": ["Output in the hexagram means meeting a good customer;", "Pressure on a line means meeting a domineering guest;", "Wealth is most glad to sit in a place of Birth or strength;", "Peer has only one worry: controlling the Self and the Body."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["爻有子孙妻财，或旺相或生世合世克世者，有财有利。", "若遇官鬼兄弟发动，冲世克世者，", "多耗多非，", "若动亦非吉象，切宜忌之。"],
+          "yi": ["爻上有子孙、妻财，旺相，或者生世、合世、克世的，有财有利；", "如果遇到官鬼、兄弟发动，冲世、克世的，", "多耗损、多是非；", "即使只是发动，也不是吉象，一定要忌讳。"],
+          "en": ["With Output or Wealth on the lines, strong, or generating, combining with or controlling the Self, there is money and profit;", "if Pressure or Peer moves, clashing with or controlling the Self,", "there are many losses and many quarrels;", "even merely moving is not an auspicious sign, and it must be avoided."] }
+      ],
+      "see": ["LY.WEALTH.ZS.27", "LY.WEALTH.HJC.31"]
+    },
+    {
+      "id": "LY.WEALTH.YL.33",
+      "topic": "借贷",
+      "chapter": "托本求利章第一百七",
+      "chapter_en": "Chapter 107 - Lending capital for interest",
+      "title": "世空我心变，应陷他意不真；应克世爻、外伤内卦，对方狠心欺赖、忘恩负义",
+      "rule": {
+        "yi": "世空，我自己不情愿；应空，对方灰心；世应两空，彼此都算了。应克世爻，他必定狠着心欺赖；外卦伤内卦，也是对方不好，必然忘恩负义。",
+        "en": "Self void: I am unwilling; Other void: he loses heart; both void: both are done with it. The Other controlling the Self line: he will harden his heart and cheat and default; the outer trigram hurting the inner is also bad on his part, and he will forget kindness and betray your trust."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["世空我必心多变，", "应陷他须意不真，", "应克世爻遭虎噬，", "外伤内卦被鲸吞。"],
+          "yi": ["世空，我必定心里多变；", "应陷空，他的心意必然不真；", "应克世爻，会被老虎咬噬（吃大亏）；", "外卦伤内卦，被鲸鱼吞掉。"],
+          "en": ["Self void: my own mind must be changeable;", "Other sunk: his intention must be insincere;", "the Other controlling the Self line: bitten by a tiger;", "the outer trigram hurting the inner is swallowed by a whale."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["世空则我不情原，应空则他必灰心。", "世应两空，彼此皆休。", "若应克世爻，他必狠心欺赖。", "外伤内卦，亦彼不良，必致忘恩负义。"],
+          "yi": ["世空，我自己不情愿；应空，他必定灰心。", "世应两空，彼此都算了。", "如果应克世爻，他必定狠着心欺骗赖账。", "外卦伤内卦，也是他不好，必然忘恩负义。"],
+          "en": ["Self void, I myself am unwilling; the Other void, he must lose heart.", "Self and Other both void: both are done with it.", "If the Other controls the Self line, he will surely harden his heart and cheat and default.", "The outer trigram hurting the inner is also bad on his part: he will surely forget kindness and betray your trust."] }
+      ],
+      "see": ["LY.WEALTH.ZS.28", "LY.WEALTH.HJC.33"]
+    },
+    {
+      "id": "LY.WEALTH.YL.34",
+      "topic": "借贷",
+      "chapter": "托本求利章第一百七",
+      "chapter_en": "Chapter 107 - Lending capital for interest",
+      "title": "上下彼我不相克、内外比和：应生世、外生内信义不忘，世生应、内生外义中取利",
+      "rule": {
+        "yi": "借贷双方上下、彼我没有相克，内外比和、世应相合，是两个「我」和顺，和同胞兄弟没有两样；应生世、外生内，对方不忘信义，利钱不少；世生应、内生外，或者比和，也是情义中取利，两边心意缠绵长久。",
+        "en": "With no control between above and below, between him and me, inner and outer in harmony and Self and Other combined, the two sides are like two selves in accord, no different from brothers. The Other generating the Self and the outer generating the inner: he keeps faith and the interest is not small; the Self generating the Other and the inner generating the outer, or harmony: profit taken within good faith, the two minds entwined and lasting."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["上下彼我无相克，", "异姓相交胜嫡亲，", "应生身世外生内，", "借主常思了债根，", "贞悔比和世生应，", "也主和谐无异心。"],
+          "yi": ["上下、彼我之间没有相克，", "异姓相交也胜过亲骨肉；", "应生卦身和世，外卦生内卦，", "借钱的人常想着还清债的根由；", "贞悔（内外卦）比和，世生应，", "也主和谐，没有二心。"],
+          "en": ["No control between above and below, between him and me,", "and dealings between people of different surnames beat those of blood kin;", "the Other generates the Body and the Self, the outer generates the inner,", "and the borrower keeps thinking of clearing the debt at its root;", "inner and outer trigrams in harmony and the Self generating the Other,", "also mean harmony and no double heart."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["内外比和，世应相合，乃两我和顺，同胞无异。", "若应生世、外生内，是信义不忘，利资不少。", "世生应、内生外，或比和，", "亦主义中取利，两意绸缪永久耳。"],
+          "yi": ["内外比和，世应相合，是两个「我」和顺，和同胞兄弟没有两样；", "如果应生世、外生内，是不忘信义，利钱不少；", "世生应、内生外，或者比和，", "也主在情义中取利，两边心意缠绵长久。"],
+          "en": ["Inner and outer in harmony and Self and Other combined: two selves in accord, no different from brothers;", "if the Other generates the Self and outer generates inner, he keeps faith and the interest is not small;", "the Self generating the Other and inner generating outer, or harmony,", "also means profit taken within good faith, the two minds entwined and lasting."] }
+      ],
+      "note": {
+        "yi": "「贞悔」是内卦、外卦的旧称（内为贞，外为悔）。",
+        "en": "'Zhen and hui' is the old name for the inner and outer trigrams (by the usual account inner is zhen, outer hui)."
+      },
+      "see": ["LY.WEALTH.YY.10", "LY.WEALTH.YY.25"]
+    },
+    {
+      "id": "LY.WEALTH.YL.35",
+      "topic": "借贷",
+      "chapter": "托本求利章第一百七",
+      "chapter_en": "Chapter 107 - Lending capital for interest",
+      "title": "借贷看六合六冲：六合鱼水相投，六冲冰炭不投；前合后冲不久，前冲后合尚可",
+      "rule": {
+        "yi": "借贷往来看六合、六冲：六合的卦像鱼得水，六冲的卦像冰和炭合不到一起；先合后冲，聚了不久就分开；先冲后合，分了又合，往来还可以。",
+        "en": "For lending and borrowing, look at Six-Combine and Six-Clash: a Six-Combine hexagram is like fish in water, a Six-Clash like ice and coals that cannot unite; combining first and clashing after, they gather but not for long and then part; clashing first and combining after, they part and join again and dealings can go on."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["六合百年颜带悦，", "六冲旬日面生嗔，", "前合后冲交不久，", "今人却要细沉吟。"],
+          "yi": ["六合，一辈子面带喜色；", "六冲，十天就翻脸生气；", "先合后冲，交情不久；", "现在的人却要仔细斟酌。"],
+          "en": ["Six-Combine: a lifetime of a pleased face;", "Six-Clash: within ten days the face turns angry;", "combining first and clashing after: the friendship does not last;", "people today should think it over carefully."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["六合之卦，鱼水相投。", "六冲之卦，冰炭不投。", "前合后冲，聚而不久两分离。", "前冲后合，分而再合交还可。"],
+          "yi": ["六合的卦，像鱼得水，互相投合；", "六冲的卦，像冰和炭，合不到一起；", "先合后冲，聚了不久，两下分离；", "先冲后合，分开了又合，交往还可以。"],
+          "en": ["A Six-Combine hexagram: like fish and water, they suit each other;", "a Six-Clash hexagram: like ice and coals, they do not suit;", "combining then clashing: they gather but not for long and then part;", "clashing then combining: parted, then joined again, and dealings can go on."] }
+      ],
+      "see": ["LY.WEALTH.YY.10", "LY.WEALTH.YY.25"]
+    },
+    {
+      "id": "LY.WEALTH.YL.36",
+      "topic": "借贷",
+      "chapter": "索取债利章第一百八",
+      "chapter_en": "Chapter 108 - Collecting debts and interest",
+      "title": "索债看世应：应生世肯还；世临兄弟被骗；应陷空亡，人逃亡或穷得没力量还",
+      "rule": {
+        "yi": "讨债从世应上找：应爻生世，欢欢喜喜肯还；世临兄弟，财又休囚，必被骗；应落空亡，那人不是逃走、亡故了，就是穷得没力量还。",
+        "en": "To collect a debt, look to the Self and the Other: the Other line generating the Self, he is glad to pay; the Self on Peer with Wealth resting and trapped, you will be cheated; the Other fallen into void, he has fled or died, or else is too poor to repay."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(以财爻为主，", "应象为凭。)"],
+          "yi": ["（以财爻为主，", "应象为凭。）"],
+          "en": ["(Wealth is the chief;", "the image of the Other is the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["索债还从世应寻，", "应爻生世必欢忻，", "世临兄弟财难取，", "应陷空中物送人。"],
+          "yi": ["讨债还是从世应上找；", "应爻生世，一定欢欢喜喜（肯还）；", "世临兄弟，钱难要回；", "应陷入空亡，东西等于送了人。"],
+          "en": ["To collect a debt, look to the Self and the Other;", "the Other line generating the Self, he is sure to be glad to pay;", "the Self on Peer, the money is hard to get back;", "the Other sunk in void, and the goods are as good as given away."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["放债本图利息，日久人心更变。", "若应爻生世，不负信行遂有偿还之意。", "世临兄弟，财亦休囚必然被骗。", "应落空亡，彼非逃故，亦是贫乏无力而还也。"],
+          "yi": ["放债本来是图利息，日子久了人心会变。", "如果应爻生世，不会辜负信用，就有偿还的心意；", "世临兄弟，财又休囚，必然被骗；", "应落空亡，那人不是逃走了、亡故了，就是穷得没力量还。"],
+          "en": ["Lending is meant to earn interest, but with time hearts change.", "If the Other line generates the Self, he will not betray his word and means to repay;", "the Self on Peer with Wealth resting and trapped, you will surely be cheated;", "the Other fallen into void, he has either fled or died, or else he is too poor to repay."] }
+      ],
+      "see": ["LY.WEALTH.HJC.31", "LY.WEALTH.HJC.33", "LY.WEALTH.YY.16", "LY.WEALTH.ZS.28"]
+    },
+    {
+      "id": "LY.WEALTH.YL.37",
+      "topic": "借贷",
+      "chapter": "索取债利章第一百八",
+      "chapter_en": "Chapter 108 - Collecting debts and interest",
+      "title": "应是官鬼或兄弟克世：对方口是心非、赖账，本利都亏；再加朱雀白虎更有祸非",
+      "rule": {
+        "yi": "应是官鬼克世，或应临兄弟克世，都是对方不良善：嘴里说脏话，心里存奸险，不但没有利息，本钱也亏；再加朱雀、白虎，反而有祸事是非。",
+        "en": "The Other on Pressure controlling the Self, or on Peer controlling the Self, means he is not good: foul words in his mouth, a treacherous intent in his heart, no interest and the capital lost too; and with the Vermilion Bird or the White Tiger added, disaster and quarrel besides."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["应值鬼爻如克世，", "彼生恶计赖其银，", "应逢兄弟伤身命，", "口是心非定不仁。"],
+          "yi": ["应是官鬼又克世，", "他会生出恶计赖掉银子；", "应逢兄弟，伤害卦身，", "口是心非，一定不仁义。"],
+          "en": ["The Other on Pressure and controlling the Self,", "he will hatch a wicked plan to default on the silver;", "the Other meeting Peer and hurting the Body,", "says one thing and means another, and is surely unkind."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["应值鬼爻克世，应临兄弟克世者，皆主不良，", "口吐出秽之言，心存奸险之意，", "不惟无利，资本亦亏，", "若加雀虎，反有祸非。"],
+          "yi": ["应是官鬼克世，或应临兄弟克世的，都主对方不良善，", "嘴里说脏话，心里存着奸险的念头；", "不但没有利息，本钱也亏掉；", "如果再加朱雀、白虎，反而有祸事是非。"],
+          "en": ["The Other on Pressure controlling the Self, or on Peer controlling the Self, both mean he is not good;", "foul words come from his mouth and a treacherous intent lies in his heart;", "there is not only no interest but the capital is lost too;", "and if the Vermilion Bird or the White Tiger is added, there is disaster and quarrel besides."] }
+      ],
+      "see": ["LY.WEALTH.ZS.28", "LY.WEALTH.HJC.31"]
+    },
+    {
+      "id": "LY.WEALTH.YL.38",
+      "topic": "借贷",
+      "chapter": "索取债利章第一百八",
+      "chapter_en": "Chapter 108 - Collecting debts and interest",
+      "title": "官鬼、兄弟临应而安静、不伤世：虽然迟延，终不抵赖",
+      "rule": {
+        "yi": "即使官鬼、兄弟临在应上，只要安静、不伤卦身和世，就不用生气：虽然拖延，终究不会抵赖。",
+        "en": "Even with Pressure or Peer on the Other line, as long as it is still and does not hurt the Body and the Self, there is no need to be angry: he delays, but in the end he does not deny the debt."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["纵若鬼兄临此应，", "不伤身世静非嗔。"],
+          "yi": ["即使官鬼、兄弟临在这个应上，", "只要不伤卦身和世、又安静，就不用生气。"],
+          "en": ["Even if Pressure or Peer sits on this Other line,", "as long as it does not hurt the Body and the Self and stays still, there is no need to be angry."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["但应爻临兄、临鬼、静不伤世者，", "虽见迟延，", "终无抵赖。"],
+          "yi": ["只是应爻临兄弟、临官鬼，安静而不伤世的，", "虽然看得到拖延，", "终究不会抵赖。"],
+          "en": ["But when the Other line sits on Peer or Pressure, still and not hurting the Self,", "there is delay, to be sure,", "but in the end no denial."] }
+      ],
+      "see": ["LY.WEALTH.HJC.31", "LY.WEALTH.YY.16"]
+    },
+    {
+      "id": "LY.WEALTH.YL.39",
+      "topic": "借贷",
+      "chapter": "索取债利章第一百八",
+      "chapter_en": "Chapter 108 - Collecting debts and interest",
+      "title": "应临父母不克世迟可得；应临财福称心；子兴财旺兄爻静，本利倍获",
+      "rule": {
+        "yi": "应临父母（文书）而不克世，或再加勾陈，不过迟一点，终究有钱可得；应值财爻或临福德，即使不生世，钱也称心；子孙兴旺、财旺，兄弟休囚或安静，本钱不亏、利息加倍，是上等大吉的卦。",
+        "en": "The Other on Resource without controlling the Self, or with Hook Earth added, is merely late and the money can be had in the end; the Other on the Wealth line or on Output, even if it does not generate the Self, gives money as one wishes; Output rising and Wealth strong with Peer resting or still, the capital is not lost and the interest comes doubled - the best and most auspicious kind of hexagram."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["如带文书迟可得，", "应居财福遂吾心，", "子兴财旺兄爻静，", "本利无亏倍获金。"],
+          "yi": ["如果带文书（父母），迟一些可以得到；", "应居财或福德，称我的心；", "子孙兴旺、财旺、兄爻安静，", "本利都不亏，还能加倍得到银子。"],
+          "en": ["If it carries documents (Resource), it can be had late;", "the Other in Wealth or Output suits my heart;", "Output rising, Wealth strong and the Peer line still,", "capital and interest are unharmed and the silver comes back doubled."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["如应临父母不克世者，或加勾陈，不过迟迟而已，终久有财可得。", "应值财爻或临福德，纵不生世，财亦如心。", "若得子兴财旺，兄弟或休或静，本不亏而利倍获乃上分大吉之卦。"],
+          "yi": ["如果应临父母而不克世，或者再加勾陈，不过是迟一点罢了，终究有钱可得；", "应值财爻或临福德，即使不生世，钱也称心；", "如果子孙兴旺、财旺，兄弟或休囚或安静，本钱不亏、利息加倍，是上等大吉的卦。"],
+          "en": ["If the Other sits on Resource without controlling the Self, or Hook Earth is added, it is merely late, and in the end the money can be had;", "the Other on the Wealth line or on Output: even if it does not generate the Self, the money is as one wishes;", "if Output rises and Wealth is strong, and Peer is resting or still, the capital is not lost and the interest comes doubled: the best and most auspicious kind of hexagram."] }
+      ],
+      "see": ["LY.WEALTH.HJC.31", "LY.WEALTH.YY.16"]
+    },
+    {
+      "id": "LY.WEALTH.YL.40",
+      "topic": "借贷",
+      "chapter": "索取债利章第一百八",
+      "chapter_en": "Chapter 108 - Collecting debts and interest",
+      "title": "兄动财空本利绝望；鬼化为财，须经官追讨才得",
+      "rule": {
+        "yi": "兄弟发动或财落空，本钱和利息都没指望；官鬼化成财，一定要经官府追讨才能得到。",
+        "en": "Peer moving or Wealth void leaves no hope of capital or interest; Pressure turning into Wealth, the debt must go through the officials before it can be had."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["兄动财空连本失，", "鬼化为财须诉论。"],
+          "yi": ["兄弟动、财落空，连本钱都亏；", "官鬼化成财，必须打官司争论。"],
+          "en": ["Peer moving and Wealth void, even the capital is lost;", "Pressure turning into Wealth, you must go to law to argue it."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["兄弟动或财空，本利绝望。", "若鬼化为财，必经官追诉，方可得之。"],
+          "yi": ["兄弟发动，或者财落空，本钱和利息都没指望。", "如果官鬼化成财，一定要经官府追讨，才能得到。"],
+          "en": ["Peer moving or Wealth void, neither capital nor interest can be hoped for.", "If Pressure turns into Wealth, it must go through the officials to be recovered before it can be had."] }
+      ],
+      "see": ["LY.WEALTH.HJC.31", "LY.WEALTH.HJC.33", "LY.WEALTH.ZS.28", "LY.WEALTH.YY.16"]
+    }
+  ]
+}

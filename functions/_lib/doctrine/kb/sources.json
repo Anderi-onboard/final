@@ -1,0 +1,282 @@
+{
+  "_说明": [
+    "works:古书本身(一条规则的出处)。books:books/ 下的文件(原文从哪个文件逐字核对)。同一部古书可能收在几个文件里,比如《黄金策》收在卜筮大全、卜筮正宗、黄金策三个文件里,字句各有出入。",
+    "speakers:一段引文是谁说的。每段 quote 的 by 必须在这里。「经」指这条规则所属那部书的本文。",
+    "作者、年代只写书单.md 和文件里写着的,没写着的不补。"
+  ],
+  "works": {
+    "黄金策": {
+      "en": "Huangjin Ce (The Golden Strategy)",
+      "author": "旧题明刘基",
+      "author_en": "attributed to Liu Ji (Ming)"
+    },
+    "天玄赋": {
+      "en": "Tianxuan Fu (Rhapsody of the Heavenly Mystery)",
+      "author": "未题撰者,约宋元间",
+      "author_en": "anonymous, probably Song–Yuan"
+    },
+    "阐奥歌章": {
+      "en": "Chan'ao Gezhang (Songs Expounding the Mysteries)",
+      "author": "未题撰人",
+      "author_en": "anonymous"
+    },
+    "火珠林": {
+      "en": "Huozhu Lin (The Fire-Pearl Forest)",
+      "author": "旧题宋麻衣道者",
+      "author_en": "attributed to the Hemp-Robed Taoist (Song)"
+    },
+    "增删卜易": {
+      "en": "Zengshan Buyi (Divination, Pruned and Supplemented)",
+      "author": "清野鹤老人著,觉子(李文辉)增删",
+      "author_en": "the Old Man of Yehe (Qing), revised by Juezi (Li Wenhui)"
+    },
+    "卜筮正宗": {
+      "en": "Bushi Zhengzong (The Orthodox Line of Divination)",
+      "author": "清王洪绪",
+      "author_en": "Wang Hongxu (Qing)"
+    },
+    "卜筮全书": {
+      "en": "Bushi Quanshu (Complete Book of Divination)",
+      "author": "明姚百愚重订",
+      "author_en": "re-edited by Yao Baiyu (Ming)"
+    },
+    "易隐": {
+      "en": "Yi Yin (What Lies Hidden in the Changes)",
+      "author": "清曹九锡",
+      "author_en": "Cao Jiuxi (Qing)"
+    },
+    "易林补遗": {
+      "en": "Yilin Buyi (Supplement to the Forest of Changes)",
+      "author": "明张世宝",
+      "author_en": "Zhang Shibao (Ming)"
+    },
+    "易冒": {
+      "en": "Yi Mao",
+      "author": "清程元如",
+      "author_en": "Cheng Yuanru (Qing)"
+    },
+    "断易天机": {
+      "en": "Duanyi Tianji (Heavenly Secrets of Judging the Changes)",
+      "author": "明万历间",
+      "author_en": "Wanli era (Ming)"
+    },
+    "海底眼": {
+      "en": "Haidi Yan (The Eye at the Bottom of the Sea)",
+      "author": "",
+      "author_en": ""
+    },
+    "周易尚占": {
+      "en": "Zhouyi Shangzhan (Divination First in the Zhou Changes)",
+      "author": "元李清庵",
+      "author_en": "Li Qing'an (Yuan)"
+    },
+    "卜筮元龟": {
+      "en": "Bushi Yuangui (The Great Tortoise of Divination)",
+      "author": "元建安萧吉文撰集,大德十一年(1307);《断易天机》也收",
+      "author_en": "compiled by Xiao Jiwen of Jian'an (Yuan), 1307; also included in the Duanyi Tianji"
+    },
+    "文王金钱课": {
+      "en": "Wenwang Jinqian Ke (King Wen's Coin Readings)",
+      "author": "",
+      "author_en": ""
+    },
+    "断易鬼灵经": {
+      "en": "Duanyi Guiling Jing (The Ghost-and-Spirit Classic of Judging the Changes)",
+      "author": "",
+      "author_en": ""
+    }
+  },
+  "speakers": {
+    "经": {
+      "zh": "本文",
+      "en": "base text"
+    },
+    "书中例": {
+      "zh": "书中卦例",
+      "en": "Case from the book",
+      "note": "书里举的卦例:起卦的月日、所问之事、卦名,和作者当时的断语、后来的应验。不收排盘图。"
+    },
+    "旧注": {
+      "zh": "旧注(《卜筮全书》所载,注者不详)",
+      "en": "Old commentary (printed in the Bushi Quanshu; commentator unknown)",
+      "note": "王洪绪、野鹤都称它为「旧注」,并有几处驳它。《黄金策》文件里的注和它是同一套。"
+    },
+    "王洪绪": {
+      "zh": "王洪绪注(《卜筮正宗》)",
+      "en": "Wang Hongxu's commentary (Bushi Zhengzong)"
+    },
+    "野鹤": {
+      "zh": "野鹤老人(《增删卜易》)",
+      "en": "The Old Man of Yehe (Zengshan Buyi)",
+      "note": "包括书里明写「野鹤曰」的话,和他照《黄金策》改写过的句子。"
+    },
+    "觉子": {
+      "zh": "觉子(李文辉,《增删卜易》)",
+      "en": "Juezi (Li Wenhui, Zengshan Buyi)"
+    },
+    "增删卜易正文": {
+      "zh": "《增删卜易》正文(未标说话人)",
+      "en": "Zengshan Buyi, main text (speaker not marked)"
+    },
+    "天玄赋注": {
+      "zh": "《天玄赋》注(注者不详)",
+      "en": "Commentary on the Tianxuan Fu (commentator unknown)"
+    },
+    "游南子": {
+      "zh": "游南子(《易隐》引)",
+      "en": "Master Younan (quoted in the Yi Yin)"
+    },
+    "郭雍": {
+      "zh": "郭雍(《易隐》引)",
+      "en": "Guo Yong (quoted in the Yi Yin)"
+    },
+    "管公口诀": {
+      "zh": "《管公口诀》(《易隐》引)",
+      "en": "Guan Gong's rhymes (quoted in the Yi Yin)"
+    },
+    "易林补遗解": {
+      "zh": "《易林补遗》诀下的解说",
+      "en": "Yilin Buyi, prose explanation under the verse"
+    },
+    "断易天机注": {
+      "zh": "《断易天机》注(注者不详)",
+      "en": "Duanyi Tianji commentary (commentator unknown)"
+    },
+    "海底眼眉批": {
+      "zh": "《海底眼》眉批(书眉上的旁注,注者不详)",
+      "en": "Marginal comment in the Haidi Yan (author unknown)",
+      "note": "整理本把眉批排成「（眉批：……）」夹在正文里。带「虎易注」的是今人加的,本库不引。"
+    },
+    "易冒注": {
+      "zh": "《易冒》括号小注(书里没有标注者)",
+      "en": "Bracketed small note in the Yi Mao (author not named in the book)",
+      "note": "整理本把小注排成「（……）」，紧接在被注的那几句后面，有的是解释，有的是卦例。"
+    },
+    "他书本文": {
+      "zh": "他书本文(引来对照)",
+      "en": "Base text of another book (quoted for comparison)",
+      "note": "这条规则所属的那部书自己没有解释、别的书解释了的地方，引那部书的本文来对照。看 book 字段知道是哪一部。"
+    },
+    "李我平": {
+      "zh": "李我平(楚江李坦,《增删卜易》的鉴定者)",
+      "en": "Li Woping (Li Tan of Chujiang, who appraised the Zengshan Buyi)",
+      "note": "《增删卜易》整理本的说明写:「书中保留了楚江李坦我平鉴定与湖南李文辉觉子增删按语原貌。」书里的「李我平曰」是他的评语,和「觉子曰」「野鹤曰」并列。"
+    },
+    "元龟目自注": {
+      "zh": "《大易断例卜筮元龟目》括号里的自注(没标「虎易注」的)",
+      "en": "The Dayi Duanli's own bracketed notes (those not marked as the modern editor's)",
+      "note": "整理本(虎易录入)把小注排成「（注：……）」或「（……）」夹在歌诀后面；标着「虎易注」的是今人加的，本库不引。"
+    }
+  },
+  "books": {
+    "卜筮大全": {
+      "en": "Bushi Daquan (= Bushi Quanshu)",
+      "edition": "owner 合集本,还原 + 校对;据 1630 年姚百愚重订本影印录入",
+      "contains": [
+        "通玄妙论",
+        "阐奥歌章",
+        "天玄赋",
+        "黄金策",
+        "卜筮全书"
+      ]
+    },
+    "卜筮正宗": {
+      "en": "Bushi Zhengzong",
+      "edition": "owner 合集本,还原 + 校对",
+      "contains": [
+        "卜筮正宗",
+        "黄金策"
+      ]
+    },
+    "增删卜易": {
+      "en": "Zengshan Buyi",
+      "edition": "owner 合集本(2006 年网上整理本),还原 + 校对;书里「[乾按]」「[提要]」「[居士按]」是今人按语,本库不引",
+      "contains": [
+        "增删卜易"
+      ]
+    },
+    "黄金策": {
+      "en": "Huangjin Ce",
+      "edition": "殆知阁转录本;第一章的括号注是今人白话注,求财章的括号注和《卜筮全书》旧注同一套",
+      "contains": [
+        "黄金策"
+      ]
+    },
+    "火珠林": {
+      "en": "Huozhu Lin",
+      "edition": "owner 合集本,还原 + 校对;一个文件里依次是《火珠林》《通玄妙论》《阐奥歌章》《天玄赋》四部",
+      "contains": [
+        "火珠林",
+        "通玄妙论",
+        "阐奥歌章",
+        "天玄赋"
+      ]
+    },
+    "易隐": {
+      "en": "Yi Yin",
+      "edition": "owner 合集本,还原 + 校对",
+      "contains": [
+        "易隐"
+      ]
+    },
+    "易林补遗": {
+      "en": "Yilin Buyi",
+      "edition": "owner 合集本(白宝全 1998 年编校),还原 + 校对",
+      "contains": [
+        "易林补遗"
+      ]
+    },
+    "易冒": {
+      "en": "Yi Mao",
+      "edition": "owner 合集本,还原 + 校对",
+      "contains": [
+        "易冒"
+      ]
+    },
+    "断易天机": {
+      "en": "Duanyi Tianji",
+      "edition": "殆知阁转录本;带「[注释]」「[译文]」「虎易注」的是今人(虎易)写的,本库不引",
+      "contains": [
+        "断易天机",
+        "天玄赋",
+        "卜筮元龟",
+        "海底眼"
+      ]
+    },
+    "海底眼": {
+      "en": "Haidi Yan",
+      "edition": "殆知阁转录本(怡然斋藏版)",
+      "contains": [
+        "海底眼"
+      ]
+    },
+    "周易尚占": {
+      "en": "Zhouyi Shangzhan",
+      "edition": "殆知阁转录本,元大德丁未(1307)序",
+      "contains": [
+        "周易尚占"
+      ]
+    },
+    "大易断例卜筮元龟目": {
+      "en": "Dayi Duanli Bushi Yuangui Mu",
+      "edition": "殆知阁转录本(虎易录入);只有卷上,写到「占过去未来章」中断;带「虎易注」的是今人加的,本库不引",
+      "contains": [
+        "卜筮元龟"
+      ]
+    },
+    "文王金钱课": {
+      "en": "Wenwang Jinqian Ke",
+      "edition": "殆知阁转录本,原只有 26 卦(乾宫、坎宫、艮宫各 8 卦,震宫 2 卦);文末「补录」的 37 卦是网上一份传本(每卦只有卦辞和推断,缺风火家人),不是这部书的原文,本库引用时在卦名前标「补录」",
+      "contains": [
+        "文王金钱课"
+      ]
+    },
+    "断易鬼灵经": {
+      "en": "Duanyi Guiling Jing",
+      "edition": "殆知阁转录本(易藏/术数),八卷加附录;没有标点,条与条之间有空格,每条以「Ｏ」起头;整理本里「灾」「未」「巳」「传」「冲」等字有多处写成「炎」「末」「已」「傅」「衡」,本库的原文照整理本逐字录,译文按上下文读",
+      "contains": [
+        "断易鬼灵经"
+      ]
+    }
+  }
+}

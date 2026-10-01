@@ -1,0 +1,300 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易冒",
+  "chapter": "鬼神章第五十七",
+  "chapter_en": "Chapter 57: Ghosts and Spirits",
+  "ranges": {"易冒": [1290, 1312]},
+  "units": [
+    {
+      "id": "LY.ILL.YM.54",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "以动爻当鬼、按数推：阳男阴女、午南子北；一动一鬼、三动三鬼；爻与鬼皆动，则以鬼所属之方为方、鬼所属之数为数（例：鬼动值土断五鬼）",
+      "rule": {
+        "yi": "有一种办法是拿动爻当鬼：阳的是男、阴的是女，午来自南方、子来自北方；动一爻就是一个鬼，动三爻就是三个鬼；如果爻和鬼都动，就以鬼所属的方位为方位、鬼所属的数为数。注说：鬼静而别的爻动，考察动的爻；鬼动而别的爻也动，考察鬼爻；动的按爻数算，鬼按数算，比如鬼动而值土，就断成五鬼。",
+        "en": "There is a method of taking the moving lines as the ghosts: yang is male and yin female, Wu comes from the south and Zi from the north; one moving line is one ghost and three moving lines are three ghosts; if the lines and the ghost all move, take the direction the ghost belongs to as the direction and the number the ghost belongs to as the number. The note says: if the ghost is still and other lines move, examine the moving lines; if the ghost moves and other lines move too, examine the Pressure line; the moving ones are counted by lines and the ghost by number, so that if the ghost moves and falls on Earth it is judged five ghosts."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1290, 1290],
+          "zh": ["法有以动为鬼，阳男阴女之分，午南子北之来，一动一鬼，三动三鬼，爻以鬼皆动，则以鬼属之方为方，鬼属之数为数也。"],
+          "yi": ["有一种办法是拿动爻当鬼：阳的是男、阴的是女，午来自南方、子来自北方；动一爻就是一个鬼，动三爻就是三个鬼；如果爻和鬼都动，就以鬼所属的方位为方位、鬼所属的数为数。"],
+          "en": ["There is a method of taking the moving lines as the ghosts: yang is male and yin female, Wu comes from the south and Zi from the north; one moving line is one ghost and three moving lines are three ghosts; if the lines and the ghost all move, take the direction the ghost belongs to as the direction and the number the ghost belongs to as the number."] },
+        { "by": "易冒注", "book": "易冒", "range": [1291, 1291],
+          "zh": ["鬼静爻动考动爻，鬼动爻动考鬼爻，动与爻计，鬼与数计，如鬼动值土，断五鬼也。"],
+          "yi": ["鬼静而别的爻动，就考察动爻；鬼动而别的爻也动，就考察鬼爻；动的按爻数算，鬼按数算，比如鬼动而值土，就断成五鬼。"],
+          "en": ["If the ghost is still and other lines move, examine the moving lines; if the ghost moves and other lines move too, examine the Pressure line; the moving ones are counted by lines and the ghost by number, so that if the ghost moves and falls on Earth it is judged five ghosts."] }
+      ],
+      "note": {
+        "yi": "「一动一鬼，三动三鬼」数的是动爻的条数；「鬼所属之数」是五行的数，例子里土断五鬼，正是通常的生成数里土为五（水一、火二、木三、金四、土五），但这一段里书没有列出这张表。「午南子北」是把午配南、子配北，和 LY.ILL.YM.29 里离在南、坎在北是同一种配法。",
+        "en": "'One moving line, one ghost; three moving, three ghosts' counts the number of moving lines; 'the number the ghost belongs to' is the number of its phase, and in the example an Earth ghost is judged five, which matches the usual generating numbers in which Earth is five (Water one, Fire two, Wood three, Metal four, Earth five), though the book does not list these in this passage. 'Wu the south, Zi the north' assigns Wu to the south and Zi to the north, the same assignment as Li in the south and Kan in the north in LY.ILL.YM.29."
+      },
+      "see": ["LY.ILL.YM.53", "LY.ILL.YM.55", "LY.ILL.YM.29", "LY.ILL.HJC.94"]
+    },
+    {
+      "id": "LY.ILL.YM.55",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "考鬼的四种情形：鬼爻发动考其宫、卦爻俱静求之外卦、无鬼索伏考其飞爻、伏鬼若空则无鬼祟惟修德；此专考鬼、非断神",
+      "rule": {
+        "yi": "鬼爻发动，就考察它所在的宫；卦爻都静，就从外卦去找；卦里没有鬼，就去找伏着的鬼，考察它上面的飞爻；伏鬼如果又落空，就致力于修德。注说：鬼爻独发，用八宫来考察这个鬼；爻和鬼都静，用外卦来考察；鬼爻隐伏，用鬼上面的飞爻来考察；鬼伏着又落空，就是没有鬼祟，只要修德就行了。这一节是专门考察鬼，不是判断神。",
+        "en": "If the Pressure line moves, examine its palace; if the hexagram and lines are all still, seek it in the outer trigram; if there is no ghost, look for the hidden one and examine the flying line above it; if the hidden ghost is also Void, devote oneself to cultivating virtue. The note says: if the Pressure line moves alone, examine the ghost by the eight palaces; if the lines and the ghost are all still, examine it by the outer trigram; if the Pressure line is hidden, examine it by the flying line above the ghost; if the hidden ghost is again Void, there is no haunting by a ghost, and one need only cultivate virtue. This section is solely to examine the ghost, not to judge the spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1292, 1292],
+          "zh": ["鬼爻发动，考之宫也，卦爻俱静，求之外也，无鬼索伏，考之飞爻，伏鬼若空，务之修德也。"],
+          "yi": ["鬼爻发动，就考察它所在的宫；卦爻都静，就从外卦去找；卦里没有鬼，就去找伏着的鬼，考察它上面的飞爻；伏鬼如果又落空，就致力于修德。"],
+          "en": ["If the Pressure line moves, examine its palace; if the hexagram and lines are all still, seek it in the outer trigram; if there is no ghost, look for the hidden one and examine the flying line above it; if the hidden ghost is also Void, devote oneself to cultivating virtue."] },
+        { "by": "易冒注", "book": "易冒", "range": [1293, 1293],
+          "zh": ["鬼爻独发，以八宫考鬼，爻与鬼皆静，以外卦考鬼，鬼爻隐伏，以鬼上飞爻考鬼，鬼伏复空，乃无鬼祟，惟修德而已。", "此专考鬼，非断神也。"],
+          "yi": ["鬼爻独自发动，用八宫来考察这个鬼；爻和鬼都静，用外卦来考察这个鬼；鬼爻隐伏，用鬼上面的飞爻来考察；鬼伏着又落空，就是没有鬼祟，只要修德就行了。", "这一节是专门考察鬼，不是判断神。"],
+          "en": ["If the Pressure line moves alone, examine the ghost by the eight palaces; if the lines and the ghost are all still, examine it by the outer trigram; if the Pressure line is hidden, examine it by the flying line above the ghost; if the hidden ghost is again Void, there is no haunting by a ghost, and one need only cultivate virtue.", "This is solely to examine the ghost, not to judge the spirit."] }
+      ],
+      "note": {
+        "yi": "这一条和 LY.ILL.YM.29「病从何起」是同一套四步（动看宫、静看外卦、无鬼看伏鬼的飞爻），只是那里问的是病从哪个方向来，这里问的是作祟的是什么。第四步「伏鬼若空」得出的结论是没有鬼祟，只有修德，这是全章「祭祀莫善于解禳，解禳莫善于修身」（LY.ILL.YM.64）那个结论的一个具体出口。注里最后一句「此专考鬼，非断神」把这一节和下一节（LY.ILL.YM.56 讲专断神）分开：前者是找到那个鬼，后者是给它定神名。",
+        "en": "This entry is the same four steps as LY.ILL.YM.29, 'where the illness rose from' (moving, look at the palace; still, look at the outer trigram; no ghost, look at the flying line above a hidden ghost), except that there the question was from what direction the illness came, and here it is what is doing the haunting. The conclusion of the fourth step, 'if the hidden ghost is also Void', is that there is no haunting and only virtue remains, which is one concrete outlet of the chapter's final conclusion, 'of sacrifice none is better than exorcism, and of exorcism none is better than cultivating oneself' (LY.ILL.YM.64). The note's last sentence, 'solely to examine the ghost, not to judge the spirit', separates this section from the next (LY.ILL.YM.56, which is solely for judging the spirit): the first finds the ghost and the second names the spirit."
+      },
+      "see": ["LY.ILL.YM.54", "LY.ILL.YM.56", "LY.ILL.YM.29", "LY.ILL.YM.64", "LY.ILL.HJC.104"]
+    },
+    {
+      "id": "LY.ILL.YM.56",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "断神的五种专法：一官鬼专五行、二官鬼专六神、动官鬼专八卦、乱官鬼专诸星、世官鬼专六爻——卦有一官以五行、二官以六神（下临白虎为武神、上临青龙为树神）、动鬼以八宫（鬼动乾天神、鬼动坤地祗）、乱动以何星临官",
+      "rule": {
+        "yi": "卦里只有一个官鬼，专门用五行来断；有两个官鬼，专门用六神来断；官鬼发动的，专门用八卦；官鬼乱动的，专门用诸星；官鬼在世爻上的，专门用六爻。注说：卦里有一个官，用五行取象；有两个官，用六神取象，比如下面的官临白虎，就说是武神，上面的官临青龙，就说是树神；有动的鬼，用八宫取象，比如鬼在乾宫动，就说是天神，鬼在坤宫动，就说是地祇；卦爻乱动、或者其中有官在动，就看哪颗星临在官上来取象。这一节是专门断神的。",
+        "en": "With one Pressure line, go by the five phases alone; with two Pressure lines, go by the six spirits alone; with a moving Pressure line, go by the eight trigrams alone; with Pressure lines moving in disorder, go by the various stars alone; with the Pressure line on the Self, go by the six lines alone. The note says: where the hexagram has one Pressure line, take the image by the five phases; where it has two, take the image by the six spirits, so that if the lower one carries the White Tiger it is called a martial spirit, and if the upper one carries the Azure Dragon it is called a tree spirit; where it has a moving ghost, take the image by the eight palaces, so that a ghost moving in Qian is called a heavenly spirit and in Kun an earthly deity; where the lines move in disorder, or a Pressure line among them moves, take the image by whichever star sits on the Pressure line. This section is solely for judging the spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1294, 1294],
+          "zh": ["夫一官鬼而专于五行，二官鬼而专于六神，动官鬼而专八卦，乱官鬼而专诸星，世官鬼而专六爻也。"],
+          "yi": ["卦里只有一个官鬼，专门用五行来断；有两个官鬼，专门用六神；官鬼发动的，专门用八卦；官鬼乱动的，专门用诸星；官鬼在世爻上的，专门用六爻。"],
+          "en": ["With one Pressure line, go by the five phases alone; with two Pressure lines, go by the six spirits alone; with a moving Pressure line, go by the eight trigrams alone; with Pressure lines moving in disorder, go by the various stars alone; with the Pressure line on the Self, go by the six lines alone."] },
+        { "by": "易冒注", "book": "易冒", "range": [1295, 1295],
+          "zh": ["卦有一官，以五行像之。", "卦有二官，以六神像之，如下临白虎，则曰武神，上临青龙，则曰树神也。", "卦有动鬼，以八宫像之，如鬼动乾，则曰天神，如鬼动坤，则曰地祗也。", "卦爻乱动，或中有官动，以何星临官像之。", "此专断神也。"],
+          "yi": ["卦里有一个官，用五行取象。", "卦里有两个官，用六神取象，比如下面的官临白虎，就说是武神，上面的官临青龙，就说是树神。", "卦里有动的鬼，用八宫取象，比如鬼在乾宫动，就说是天神，鬼在坤宫动，就说是地祇。", "卦爻乱动，或者其中有官在动，就看哪颗星临在官上来取象。", "这一节是专门断神的。"],
+          "en": ["Where the hexagram has one Pressure line, take the image by the five phases.", "Where it has two, take the image by the six spirits: for example, if the lower one carries the White Tiger, call it a martial spirit, and if the upper one carries the Azure Dragon, call it a tree spirit.", "Where the hexagram has a moving ghost, take the image by the eight palaces: for example, if the ghost moves in Qian, call it a heavenly spirit, and if in Kun, an earthly deity.", "Where the lines move in disorder, or a Pressure line among them moves, take the image by whichever star sits on the Pressure line.", "This is solely for judging the spirit."] }
+      ],
+      "note": {
+        "yi": "这一条给出了后面六段（LY.ILL.YM.57 到 YM.62）的分工：五行（前面 LY.ILL.YM.44–YM.48 已讲）、六神（LY.ILL.YM.59）、八宫（LY.ILL.YM.57）、诸星（LY.ILL.YM.62）、六爻（LY.ILL.YM.58）；六亲（LY.ILL.YM.60）和十二支（LY.ILL.YM.61）在这一条的总目里没有列出，但下面紧接着还有。「乱官鬼」的「乱」是乱动、多爻纷动。原文「世官鬼而专六爻」只说官鬼在世爻上，后面讲六爻（LY.ILL.YM.58）时又分了「现在何爻」和「世鬼居何象」两种。",
+        "en": "This entry sets out the division of labour among the following sections (LY.ILL.YM.57 to YM.62): the five phases (already treated in LY.ILL.YM.44 to YM.48), the six spirits (LY.ILL.YM.59), the eight palaces (LY.ILL.YM.57), the various stars (LY.ILL.YM.62) and the six lines (LY.ILL.YM.58); the six relations (LY.ILL.YM.60) and the twelve branches (LY.ILL.YM.61) are not listed in this summary but follow immediately. 'Disorderly Pressure' means Pressure lines moving in confusion, many lines stirring at once. The text's 'the Pressure line on the Self, go by the six lines alone' says only that the Pressure line is on the Self, and the later treatment of the six lines (LY.ILL.YM.58) distinguishes 'which line it appears on' from 'in what image the ghost on the Self lies'."
+      },
+      "see": ["LY.ILL.YM.55", "LY.ILL.YM.57", "LY.ILL.YM.44", "LY.ILL.YM.58", "LY.ILL.YM.59", "LY.ILL.YM.62", "LY.ILL.HJC.95", "LY.ILL.HJC.96", "LY.ILL.HJC.97", "LY.ILL.HJC.101"]
+    },
+    {
+      "id": "LY.ILL.YM.57",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "官鬼独发按八宫断神鬼：乾天神寺庙父老僧人王侯之灵；坤地祗坟墓母妪后妃；震九天之神蚕桑舟车辱身折足鬼雷火部；巽风波镇海花果园林长妇女；坎北斗北极百川四海；离荧惑香火灶中女；艮山神五岳荒塚童儿；兑释之宗咒咀尸祝师尼酒色",
+      "rule": {
+        "yi": "神和鬼虽有分别，考察的办法却没有两样。所以官在乾宫发动，是触犯了天神，是冲犯了寺庙，是年老父辈、僧人的鬼，是王侯宫殿的灵；在坤宫动，是亵渎了地祇，是妨碍了坟墓，是母亲、老妇人的鬼，是皇后妃子的神；震是东方，是九天的神，是道的宗主，是掌管蚕桑舟车的，是受辱折了脚的鬼，是雷火部的威灵；巽是东南，是掌管风浪、镇守大海的神，是花果园林里作祟的，是长女、妇人的魂；坎是北方，在天是北斗，在地是北极，是百川、四海、恒河的灵，它的广大是这样，天下的水神火神，确实不能改易；离是火德，在星是荧惑，对读书人和百姓是香火，对一家是灶神，对骨肉亲人是中女的鬼；艮是山神，是五岳，是荒坟，以及童子的鬼；兑是西方，是佛家的宗主，是咒骂诅咒的孽，是巫祝的欺诳，是和尚尼姑的鬼，是酒色的邪。注说：这是官鬼独自发动、其他卦爻都静时，用八宫的象来断。",
+        "en": "Spirits and ghosts differ, but the way of examining them is not two. So when the Pressure line moves in Qian, a heavenly spirit has been offended, a temple has been struck against, and it is the ghost of an elder or a monk, the spirit of a prince or marquis and his great halls; moving in Kun, the earthly deity has been profaned and the graves obstructed, and it is the ghost of a mother or an old woman, the spirit of an empress or a consort; Zhen is the east: a spirit of the Nine Heavens, the head of the Way, in charge of silkworms and mulberries, boats and carts, the ghost of one who was disgraced or broke a leg, the awesome spirit of the Thunder and Fire department; Xun is the southeast: a spirit in charge of wind and waves and of pacifying the sea, a haunting of flowers, fruit, gardens and groves, the soul of an eldest daughter or a woman; Kan is the north: in heaven the Northern Dipper, on earth the North Pole, the spirit of the hundred rivers, the four seas and the Ganges, so vast is it, and the spirits of water and fire under heaven are firmly beyond change; Li is the virtue of Fire: among the stars Yinghuo, to gentry and commoners the incense fire, in the household the stove, and among kin the ghost of the middle daughter; Gen is the mountain spirit, the Five Peaks, a wild grave, and the ghost of a boy or child; Dui is the west, the head of the Buddhists: the baleful work of curses, the deceit of impersonator and invoker, the ghost of a monk or nun, the evil of wine and lust. The note says: this is judgment by the images of the eight palaces when the Pressure line moves alone and the other lines are all still."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1296, 1296],
+          "zh": ["神鬼有殊，考求无二，是故官动乎乾，谓干天神，谓冲寺庙，父老僧人之鬼，王侯都厦之灵也。", "动乎坤，谓渎地祗，谓妨坟墓，母妪之鬼，后妃之神也。", "震东方也，九天之神，道之宗，蚕桑舟车之司也，辱身折足之鬼，雷火部之威灵也。", "巽东南也，其司风波镇海之神也，花果园林之祟，长妇女之魄也。", "坎北方也，在天为北斗，在地为北极，百川四海恒河之灵，其广大也；", "盖天下水火之神，确乎其不可易也。", "离火德也，于星荧惑，于士庶曰香火，于家曰灶，于骨肉曰中女之鬼也。", "艮为山神，为五岳，为荒塚，及童儿之鬼也。", "兑为西方，释之宗也，咒咀之孽，尸祝之诳，师尼之鬼，酒色之邪也。"],
+          "yi": ["神和鬼虽有分别，考察的办法却没有两样。所以官在乾宫发动，是触犯了天神，是冲犯了寺庙，是年老父辈、僧人的鬼，是王侯宫殿的灵。", "在坤宫动，是亵渎了地祇，是妨碍了坟墓，是母亲、老妇人的鬼，是皇后妃子的神。", "震是东方，是九天的神，是道的宗主，是掌管蚕桑舟车的，是受辱折了脚的人的鬼，是雷火部的威灵。", "巽是东南，是掌管风浪、镇守大海的神，是花果园林里作祟的，是长女、妇人的魂。", "坎是北方，在天是北斗，在地是北极，是百川、四海、恒河的灵，它的广大是这样；", "天下的水神、火神，确实不能改易。", "离是火德，在星是荧惑，对读书人和百姓是香火，对一家是灶神，对骨肉亲人是中女的鬼。", "艮是山神，是五岳，是荒坟，以及童子、小孩的鬼。", "兑是西方，是佛家的宗主；是咒骂诅咒的孽，是巫祝的欺诳，是和尚尼姑的鬼，是酒色的邪。"],
+          "en": ["Spirits and ghosts differ, but the way of examining them is not two. So when the Pressure line moves in Qian, a heavenly spirit has been offended, a temple has been struck against, and it is the ghost of an elder or a monk, the spirit of a prince or marquis and his great halls.", "Moving in Kun, the earthly deity has been profaned and the graves obstructed; it is the ghost of a mother or an old woman, the spirit of an empress or a consort.", "Zhen is the east: a spirit of the Nine Heavens, the head of the Way, in charge of silkworms and mulberries, boats and carts; the ghost of one who was disgraced or broke a leg, the awesome spirit of the Thunder and Fire department.", "Xun is the southeast: a spirit in charge of wind and waves and of pacifying the sea; a haunting of flowers, fruit, gardens and groves, the soul of an eldest daughter or a woman.", "Kan is the north: in heaven it is the Northern Dipper, on earth the North Pole, the spirit of the hundred rivers, the four seas and the Ganges, so vast is it;", "for the spirits of water and fire under heaven are firmly beyond change.", "Li is the virtue of Fire: among the stars it is Yinghuo, to gentry and commoners it is the incense fire, in the household it is the stove, and among kin it is the ghost of the middle daughter.", "Gen is the mountain spirit, the Five Peaks, a wild grave, and the ghost of a boy or child.", "Dui is the west, the head of the Buddhists: the baleful work of curses, the deceit of impersonator and invoker, the ghost of a monk or nun, the evil of wine and lust."] },
+        { "by": "易冒注", "book": "易冒", "range": [1297, 1297],
+          "zh": ["言官鬼独发，卦爻皆静，以八宫象断如此。"],
+          "yi": ["这是说官鬼独自发动、卦爻都静的时候，用八宫的象来断，是这样的。"],
+          "en": ["This says that when the Pressure line moves alone and the hexagram's other lines are all still, judgment by the images of the eight palaces is as above."] }
+      ],
+      "dispute": {
+        "yi": "八宫各配什么鬼神，黄金策（LY.ILL.HJC.95）和易冒大体同路，细目不同：乾都是天神一路；坤都有坟墓、地祇；坎、离都是水火之神。不同的地方——艮，黄金策是城隍、宅土，易冒是山神、五岳、荒坟、童子之鬼；巽，黄金策是缢死或颠仆的阴人，易冒是掌管风浪镇海的神、花果园林之祟、长女妇人之魄；兑，黄金策是口愿、伤神，易冒是佛家宗主、咒诅、巫祝之诳、僧尼之鬼、酒色之邪；震，黄金策是树神或杖死的男鬼，易冒是九天之神、蚕桑舟车之司、辱身折足之鬼、雷火部的威灵。两本书都没有说谁对谁错。",
+        "en": "What each palace stands for among ghosts and spirits: the Huangjin Ce (LY.ILL.HJC.95) and the Yi Mao run roughly the same way, with differences of detail: in Qian both have the heavenly spirits; in Kun both have graves and the earthly deity; in Kan and Li both have the spirits of water and fire. Where they differ: for Gen, the Huangjin Ce has the City God and the earth of the house, the Yi Mao the mountain spirit, the Five Peaks, a wild grave and the ghost of a boy; for Xun, the Huangjin Ce has a woman who hanged herself or fell in a fit, the Yi Mao a spirit in charge of wind and waves and pacifying the sea, the haunting of flowers, fruit, gardens and groves, and the soul of an eldest daughter or a woman; for Dui, the Huangjin Ce has a spoken vow or an injuring spirit, the Yi Mao the head of the Buddhists, curses, the deceit of impersonators and invokers, the ghost of a monk or nun and the evil of wine and lust; for Zhen, the Huangjin Ce has a tree spirit or a male ghost beaten to death with a staff, the Yi Mao a spirit of the Nine Heavens, one in charge of silkworms, boats and carts, the ghost of one disgraced or with a broken leg, and the awesome spirit of the Thunder and Fire department. Neither book says which is right."
+      },
+      "note": {
+        "yi": "这一条原文里「官」是官鬼的省写；「干天神」的「干」是触犯。「荧惑」是火星，「九天」是九重天。「师尼」是和尚、尼姑一类的出家人。「盖天下水火之神，确乎其不可易也」承接坎（水）、离（火）两条，意思是水神、火神的名号大体是固定的。这一条与黄金策的八宫（LY.ILL.HJC.95）、易隐的鬼神名目（LY.ILL.YY.28）是同一件事。",
+        "en": "In the original 'guan' (official) is short for the Pressure line. 'Gan' in 'offended a heavenly spirit' is to offend or infringe. 'Yinghuo' is the planet Mars, and the 'Nine Heavens' are the nine layers of heaven. 'Monks and nuns' covers those who have left the household life. 'The spirits of water and fire under heaven are firmly beyond change' follows the entries on Kan (Water) and Li (Fire) and means that the names of water and fire spirits are more or less fixed. This entry treats the same matter as the Huangjin Ce's eight palaces (LY.ILL.HJC.95) and the Yi Yin's names of spirits and ghosts (LY.ILL.YY.28)."
+      },
+      "see": ["LY.ILL.YM.56", "LY.ILL.YM.58", "LY.ILL.HJC.95", "LY.ILL.YY.28", "LY.ILL.ZS.24"]
+    },
+    {
+      "id": "LY.ILL.YM.58",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "按爻位断神鬼：初爻井祟、二爻灶祟、三爻家堂之祟、四爻门户之祟、五爻道路之祟、六爻坟墓之祟；世在初为家神、二为土神、三为园神、四为五神、上为山神",
+      "rule": {
+        "yi": "初爻，是井祟，是井里的鬼，是掌管居住的神；二爻，是灶祟，是灶下的亡魂，是掌管境内城邑的神；三爻，是家堂的祟，是闺房里的鬼，是掌管都郡桥埠的神；四爻，是门户的祟，是关隘的神；五爻，是道路的祟，是王侯的神；六爻，是坟墓的祟，是慈悲的尊神，是奴仆的亡魂。世在初爻的，是家神；世在二爻的，是土神；世在三爻，是园神；世在四爻，是五神；世在上爻，是山神。注说：这是卦里得一个鬼，现在哪一爻，以及世爻带鬼落在什么象上，用六爻的象来断。",
+        "en": "The first line: a haunting by the well, a ghost in the well, a spirit in charge of dwellings; the second: a haunting by the stove, one who died beside the stove, a spirit in charge of the district and its town; the third: a haunting of the household shrine, a ghost of the women's quarters, a spirit in charge of cities, prefectures, bridges and wharves; the fourth: a haunting of the doors, a spirit of passes and defiles; the fifth: a haunting of the road, a spirit of princes and marquises; the sixth: a haunting of the graves, a compassionate honoured one, one who died a servant. With the Self on the first line, a household spirit; on the second, an earth spirit; on the third, a garden spirit; on the fourth, the Five Spirits; on the top, a mountain spirit. The note says: where the hexagram has one ghost, on whichever line it appears, and in whatever image the ghost on the Self lies, judgment by the images of the six lines is as above."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1298, 1300],
+          "zh": ["初爻井祟，井中之鬼，司居之神也；", "二爻灶祟，灶下之亡，司境邑之神也；", "三爻家堂之祟，闺壸之鬼，司都郡桥埠之神也；", "四爻门户之祟，关隘之神；", "五爻道路之祟，王侯之神；", "六爻坟墓之祟，慈悲之尊，奴仆之亡也。", "世于初者，家神也，世于二者，土神也，世于三，为园神，世于四，为五神，世于上，为山神也。"],
+          "yi": ["初爻，是井祟，是井里的鬼，是掌管居住的神；", "二爻，是灶祟，是灶下的亡魂，是掌管境内城邑的神；", "三爻，是家堂的祟，是闺房里的鬼，是掌管都郡桥埠的神；", "四爻，是门户的祟，是关隘的神；", "五爻，是道路的祟，是王侯的神；", "六爻，是坟墓的祟，是慈悲的尊神，是奴仆的亡魂。", "世在初爻的，是家神；世在二爻的，是土神；世在三爻，是园神；世在四爻，是五神；世在上爻，是山神。"],
+          "en": ["The first line: a haunting by the well, a ghost in the well, a spirit in charge of dwellings;", "the second: a haunting by the stove, one who died beside the stove, a spirit in charge of the district and its town;", "the third: a haunting of the household shrine, a ghost of the women's quarters, a spirit in charge of cities, prefectures, bridges and wharves;", "the fourth: a haunting of the doors, a spirit of passes and defiles;", "the fifth: a haunting of the road, a spirit of princes and marquises;", "the sixth: a haunting of the graves, a compassionate honoured one, one who died a servant.", "With the Self on the first line, a household spirit; on the second, an earth spirit; on the third, a garden spirit; on the fourth, the Five Spirits; on the top, a mountain spirit."] },
+        { "by": "易冒注", "book": "易冒", "range": [1301, 1301],
+          "zh": ["言卦得一鬼，现在何爻，及世鬼居何象，以六爻象断如此。"],
+          "yi": ["这是说卦里得一个鬼，现在哪一爻，以及世爻带鬼落在什么象上，用六爻的象来断，是这样的。"],
+          "en": ["This says that where the hexagram has one ghost, on whichever line it appears, and in whatever image the ghost on the Self lies, judgment by the images of the six lines is as above."] }
+      ],
+      "note": {
+        "yi": "这一条给两张表：一张是鬼落在哪一爻（六条），一张是世爻带鬼时世在哪一爻（五条，三个爻位之外的第五爻没有列）。第一张里「初井、二灶、三家堂、四门户、五道路、六坟墓」是一处住宅由内到外、由近到远的次序，和黄金策的六爻推鬼神（LY.ILL.HJC.101）前三条（井神、灶神/司命、家堂）相同，第五爻的道路也相同；第四爻黄金策讲的是出门撞见，这里是门户与关隘，着眼点不同。「五神」在第二张表里是第四爻的世，书里没有解释是哪五位神。",
+        "en": "This entry gives two tables: one for the line the ghost falls on (six items), and one for which line the Self is on when the Self carries the ghost (five items, the fifth line not being listed). In the first, 'first the well, second the stove, third the household shrine, fourth the doors, fifth the road, sixth the graves' runs in order through a house from inside out and near to far, and agrees with the Huangjin Ce's reading by the six lines (LY.ILL.HJC.101) in its first three items (the well god, the stove god or Director of Fate, the household shrine) and in the road at the fifth line; for the fourth line the Huangjin Ce speaks of a meeting on going out, and here it is doors and passes, a different angle. The 'Five Spirits' for the Self on the fourth line in the second table are not explained in the book."
+      },
+      "see": ["LY.ILL.YM.57", "LY.ILL.YM.59", "LY.ILL.HJC.101", "LY.ILL.HJC.111", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.59",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "按六神断神鬼：青龙喜庆财利之神桃李之妖胎产之鬼；朱雀离神词讼囹圄冤鬼；勾陈土神禾黍社稷工巧折跌之鬼；螣蛇妖邪怪异飞游砍伐绳结惊狂之鬼；白虎金甲之神丧服之祟；玄武强梁之神盗贼河井妓女之魄",
+      "rule": {
+        "yi": "青龙的象，是掌管喜庆财利的神，东方的圣贤，文官班列里的师相；是桃李的精怪，是胎产而死的鬼。朱雀也是离的神，掌管词讼、纠察善恶，掌管交易，主管生育，守在端门，权衡中鼎；是言语触犯了天曹，或者是牢里被冤枉的鬼。勾陈是一位土神，掌管禾黍，主管社稷；是工匠巧人的亡魂，是摔断跌伤的鬼。螣蛇属火，是黄帝的左右；是妖邪怪异的骚扰，是飞游砍伐的神，是绳结、惊狂的鬼。白虎是金甲的神，是丧服的祟，是兵灾凶险、老虎横行，被称作元帅的就像它。北方的玄武，是强横的神，是盗贼的鬼，是河里井里死去的，是妓女的魂。注说：卦里有两个鬼，上面的鬼临哪个六神、下面的鬼临哪个六神，用六神的象来断，是这样的。",
+        "en": "The image of the Azure Dragon: a spirit in charge of festivity and gain, a sage of the east, a teacher-minister among the civil ranks; a demon of peach and plum, a ghost of childbirth. The Vermilion Bird is also a spirit of Li: it presides over suits, oversees good and evil, has charge of trade and governs birth, hunts at the Main Gate and weighs the central cauldron; a case of words offending the Heavenly Bureau, or a ghost wrongly imprisoned. Hook Earth is an earth spirit, in charge of millet and grain and governing the altars of soil and grain; the departed spirit of a craftsman, a ghost of breaks and falls. The Coiling Snake belongs to Fire and attends the Yellow Emperor; it is the disturbance of demons and oddities, a spirit of flying wanderers and felling, a ghost of knotted cords, fright and madness. The White Tiger is a golden-armoured spirit, a haunting of mourning dress, the disaster of weapons and the rampage of tigers; those called marshals are its image. The Dark Tortoise of the north is a violent spirit, a ghost of thieves and bandits, one who died in a river or well, the soul of a prostitute. The note says: where the hexagram has two ghosts, whichever spirit the upper one carries and whichever the lower one carries, judgment by the images of the six spirits is as above."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1302, 1302],
+          "zh": ["青龙之为象也，司喜庆财利之神，东方圣贤，文班之师相，为桃李之妖，胎产之鬼也。", "朱雀亦离神也，司词讼、紏善恶，掌交易，主生育，狩端门，权中鼎，或言语之干天曹，或囹圄之妄冤鬼也。", "勾陈一土神也，司禾黍，主社稷，为工巧之亡，折跌之鬼也。", "螣蛇属火，黄帝之左右也，为妖邪怪异之扰，飞游砍伐之神，绳结惊狂之鬼也。", "白虎为金甲之神，为丧服之祟，兵凶虎横，称呼元帅者像焉。", "北方元武，强梁之神，盗贼之鬼，河井之亡，妓女之魄也。"],
+          "yi": ["青龙的象，是掌管喜庆财利的神，东方的圣贤，文官班列里的师相；是桃李的精怪，是胎产而死的鬼。", "朱雀也是离的神，掌管词讼、纠察善恶，掌管交易，主管生育，守在端门，权衡中鼎；是言语触犯了天曹，或者是牢里被冤枉的鬼。", "勾陈是一位土神，掌管禾黍，主管社稷；是工匠巧人的亡魂，是摔断跌伤的鬼。", "螣蛇属火，是黄帝的左右；是妖邪怪异的骚扰，是飞游砍伐的神，是绳结、惊狂的鬼。", "白虎是金甲的神，是丧服的祟，是兵灾凶险、老虎横行，被称作元帅的就像它。", "北方的玄武，是强横的神，是盗贼的鬼，是河里井里死去的，是妓女的魂。"],
+          "en": ["The image of the Azure Dragon: a spirit in charge of festivity and gain, a sage of the east, a teacher-minister among the civil ranks; a demon of peach and plum, a ghost of childbirth.", "The Vermilion Bird is also a spirit of Li: it presides over suits, oversees good and evil, has charge of trade and governs birth, hunts at the Main Gate and weighs the central cauldron; a case of words offending the Heavenly Bureau, or a ghost wrongly imprisoned.", "Hook Earth is an earth spirit, in charge of millet and grain and governing the altars of soil and grain; the departed spirit of a craftsman, a ghost of breaks and falls.", "The Coiling Snake belongs to Fire and attends the Yellow Emperor; it is the disturbance of demons and oddities, a spirit of flying wanderers and felling, a ghost of knotted cords, fright and madness.", "The White Tiger is a golden-armoured spirit, a haunting of mourning dress, the disaster of weapons and the rampage of tigers; those called marshals are its image.", "The Dark Tortoise of the north is a violent spirit, a ghost of thieves and bandits, one who died in a river or well, the soul of a prostitute."] },
+        { "by": "易冒注", "book": "易冒", "range": [1303, 1303],
+          "zh": ["卦得二鬼，上临何神，下临何神，以六神像断如此。"],
+          "yi": ["卦里有两个鬼，上面的鬼临哪个六神、下面的鬼临哪个六神，用六神的象来断，是这样的。"],
+          "en": ["Where the hexagram has two ghosts, whichever spirit the upper one carries and whichever the lower one carries, judgment by the images of the six spirits is as above."] }
+      ],
+      "note": {
+        "yi": "「元武」是「玄武」避讳的写法。朱雀那一句「狩端门，权中鼎」原文很简，「端门」是宫殿的正门，「中鼎」是中央的鼎，这里照字面译，没有加解释。与黄金策六神推鬼神（LY.ILL.HJC.96）、易隐鬼崇六神（LY.ILL.YY.17）是同一件事：白虎都是血、丧、兵一路，玄武都是盗贼、暗昧一路，青龙都是喜庆一路，细目不同。",
+        "en": "'Yuan wu' is the taboo-avoiding form of 'Xuan wu' (the Dark Tortoise). The Vermilion Bird's 'hunts at the Main Gate and weighs the central cauldron' is very terse in the original; the 'Main Gate' is the front gate of a palace and the 'central cauldron' the cauldron at the centre, and both are translated literally without explanation. It treats the same matter as the Huangjin Ce's reading by the six spirits (LY.ILL.HJC.96) and the Yi Yin's six spirits in haunting (LY.ILL.YY.17): the White Tiger is always of the blood, mourning and weapons kind, the Dark Tortoise of thieves and obscurity, the Azure Dragon of festivity, with details differing."
+      },
+      "see": ["LY.ILL.YM.58", "LY.ILL.YM.60", "LY.ILL.HJC.96", "LY.ILL.YY.17", "LY.ILL.YM.26"]
+    },
+    {
+      "id": "LY.ILL.YM.60",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "按六亲断神鬼：父母为祖先、妻财为臣妾、兄弟为手足之缠、子孙为儿女之孽，世是本宗、应是异姓；六亲有动以六亲象断，化鬼及独发者尤甚",
+      "rule": {
+        "yi": "父母爻是祖先，妻财爻是臣妾，兄弟爻是手足纠缠，子孙爻是儿女带来的孽；世是本宗，应是异姓。注说：六亲有动的，用六亲的象来断；只有变出鬼的和独自发动的，尤其厉害；世是本家的鬼，应是别姓的亡魂。",
+        "en": "The Resource line is the ancestors, the Wealth line is servants and concubines, the Peer line is the entanglement of brothers and kin, and the Output line is the affliction of sons and daughters; the Self is the same lineage, and the Other is a different surname. The note says: where a relation line moves, judgment by the images of the six relations is as above; one that changes into a ghost or moves alone is especially severe; the Self is a ghost of one's own house, and the Other is the departed of another surname."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1304, 1304],
+          "zh": ["父母为祖先，妻财为臣妾，兄弟为手足之缠，子孙为儿女之孽，世是本宗，应是异姓。"],
+          "yi": ["父母爻是祖先，妻财爻是臣妾，兄弟爻是手足纠缠，子孙爻是儿女带来的孽；世是本宗，应是异姓。"],
+          "en": ["The Resource line is the ancestors, the Wealth line is servants and concubines, the Peer line is the entanglement of brothers and kin, and the Output line is the affliction of sons and daughters; the Self is the same lineage, and the Other is a different surname."] },
+        { "by": "易冒注", "book": "易冒", "range": [1305, 1305],
+          "zh": ["六亲有动，则以六亲像断如此。", "惟化鬼及独发者尤甚。", "世，本家鬼也，应，他姓亡也。"],
+          "yi": ["六亲有动的，就用六亲的象来断，是这样的。", "只有变出鬼的和独自发动的，尤其厉害。", "世是本家的鬼，应是别姓的亡魂。"],
+          "en": ["Where a relation line moves, judgment by the images of the six relations is as above.", "One that changes into a ghost or moves alone is especially severe.", "The Self is a ghost of one's own house, and the Other is the departed of another surname."] }
+      ],
+      "note": {
+        "yi": "这一条的用法是：官鬼旁边的六亲爻在动，或者官鬼变成了某个六亲，就按那个六亲去认是谁的鬼。和黄金策「鬼动化出六亲即以化出者断」（LY.ILL.HJC.108）、易隐「鬼崇是谁的鬼」（LY.ILL.YY.30）是同一件事；易冒的写法更短，只列六亲各是谁（父母祖先、妻财臣妾、兄弟手足、子孙儿女），没有再分阴阳老少。注里的这一段夹在正文中间，原文的括号在「他姓亡也」处收尾，后面的「犯亥子……」仍是正文（见 LY.ILL.YM.61）。",
+        "en": "The use is this: when a relation line beside the Pressure line moves, or the Pressure line changes into a certain relation, one identifies whose ghost it is by that relation. It is the same matter as the Huangjin Ce's 'a ghost moving into a relation is judged by what it turns into' (LY.ILL.HJC.108) and the Yi Yin's 'whose ghost it is' (LY.ILL.YY.30); the Yi Mao writes it more briefly, listing only who each relation is (Resource the ancestors, Wealth servants and concubines, Peer brothers and kin, Output sons and daughters), without going on to divide by yin and yang, old and young. The note in this passage sits in the middle of the running text, the original bracket closing at 'the departed of another surname', and the 'if it offends Hai and Zi...' that follows is still the text (see LY.ILL.YM.61)."
+      },
+      "see": ["LY.ILL.YM.59", "LY.ILL.YM.61", "LY.ILL.HJC.108", "LY.ILL.HJC.102", "LY.ILL.YY.30"]
+    },
+    {
+      "id": "LY.ILL.YM.61",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "按十二支断神鬼：犯亥子则天将斗神可祷、犯巳午则火德财神可禳、树神东岳乃寅卯之官、佛氏丧车乃申酉之象、辰戌为处处之土神、丑未为家家之地鬼",
+      "rule": {
+        "yi": "犯了亥、子，就是天将斗神，可以祷告；犯了巳、午，就是火德财神，可以禳解；树神、东岳，是寅、卯的官；佛家的丧车，是申、酉的象；辰、戌是处处都有的土神，丑、未是家家都有的地鬼。注说：十二支的神值在鬼上，就用十二支的象来断，是这样的。",
+        "en": "If it offends Hai and Zi, the Heavenly Generals and the spirit of the Dipper may be prayed to; if it offends Si and Wu, the Fire Virtue and the god of wealth may be exorcised; the tree spirit and the Eastern Peak are officials of Yin and Mao; the Buddhist funeral carriage is the image of Shen and You; Chen and Xu are the earth spirits found everywhere, and Chou and Wei the earth ghosts found in every house. The note says: where a spirit of the twelve branches sits on the ghost, judgment by the images of the twelve branches is as above."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1305, 1306],
+          "zh": ["犯亥子，则天将斗神可祷也；", "犯巳午，则火德财神可禳也；", "树神东岳，乃寅卯之官，佛氏丧车，乃申酉之象；", "辰戌为处处之土神，丑未为家家之地鬼。"],
+          "yi": ["犯了亥、子，就是天将斗神，可以祷告；", "犯了巳、午，就是火德财神，可以禳解；", "树神、东岳，是寅、卯的官；佛家的丧车，是申、酉的象；", "辰、戌是处处都有的土神，丑、未是家家都有的地鬼。"],
+          "en": ["If it offends Hai and Zi, the Heavenly Generals and the spirit of the Dipper may be prayed to;", "if it offends Si and Wu, the Fire Virtue and the god of wealth may be exorcised;", "the tree spirit and the Eastern Peak are officials of Yin and Mao; the Buddhist funeral carriage is the image of Shen and You;", "Chen and Xu are the earth spirits found everywhere, and Chou and Wei the earth ghosts found in every house."] },
+        { "by": "易冒注", "book": "易冒", "range": [1307, 1307],
+          "zh": ["十二支神值鬼，则以十二支像断如此。"],
+          "yi": ["十二支的神值在鬼上，就用十二支的象来断，是这样的。"],
+          "en": ["Where a spirit of the twelve branches sits on the ghost, judgment by the images of the twelve branches is as above."] }
+      ],
+      "note": {
+        "yi": "原文里这一段跨了两行：第三句「树神东岳，乃寅卯之官，佛氏丧车，」在上一行结尾，「乃申酉之象；」在下一行开头，这里合起来读。「亥子」是北、水，配天将斗神；「巳午」是南、火，配火德财神；「寅卯」是东、木，配树神东岳；「申酉」是西、金，配佛家丧车。「辰戌」与「丑未」是四土，分成处处的土神和家家的地鬼。「可祷」「可禳」两个词分开用：亥子是神，可以向它祷告；巳午是火德财神，是可以禳解的。",
+        "en": "In the original this passage runs over two lines: the third sentence, 'the tree spirit and the Eastern Peak are officials of Yin and Mao, the Buddhist funeral carriage', ends the first line and 'is the image of Shen and You' begins the next, and they are read here together. Hai and Zi are north and Water, matched with the Heavenly Generals and the spirit of the Dipper; Si and Wu are south and Fire, matched with the Fire Virtue and the god of wealth; Yin and Mao are east and Wood, matched with the tree spirit and the Eastern Peak; Shen and You are west and Metal, matched with the Buddhist funeral carriage. Chen, Xu, Chou and Wei are the four Earths, divided into the earth spirits found everywhere and the earth ghosts found in every house. 'May be prayed to' and 'may be exorcised' are used separately: with Hai and Zi it is a spirit that may be prayed to, and with Si and Wu it is the Fire Virtue and the god of wealth, which may be exorcised."
+      },
+      "see": ["LY.ILL.YM.60", "LY.ILL.YM.62", "LY.ILL.HJC.109", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.62",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "按诸星断神鬼：贵人冠冕之神、天喜利市吉庆、丧门丧服、天火火德天触灶司天贼强梁劫夺、天狱笞杖徒流、官符主讼、羊刃司兵、驿马商旅之冤、天河觉溺之屈、华盖僧道、咸池娼妓、暗金产妇、太岁土德、刀针斩绞、坵墓坟茔、丧车棺椁、浴盆婴童之溺、孤神绝嗣之鬼",
+      "rule": {
+        "yi": "还有官鬼出现在贵人上的，是戴冠冕的神；天喜，是带来生意兴隆、吉庆的神；丧门，是丧服的神；天火、火德、天触、灶司、天贼，是强横劫夺而死的亡魂；天狱，是受笞刑、杖刑、徒刑、流放的鬼；官符主管诉讼，羊刃掌管兵刃，驿马是行商旅客的冤魂，天河是溺水者的冤屈；华盖是僧人道士，咸池是娼妓，暗金是产妇，血衂是血鬼；太岁是土德；刀针是被斩杀、绞死、受伤，坵墓是坟墓的咎，丧车是棺椁的殃，折煞是摔断跌伤的鬼；飞廉是游神，将星是武神，天医是医神，天马是被马踏的；浴盆是婴孩溺死，摧尸是伏尸的祸，孤神是断了后嗣的鬼；太阴、月德从王母那里受福，太阳、天德靠上帝保佑。注说：鬼临哪颗星宿，就用诸星的象来断；天河是水库，是天上浩大的府库，所以从辰起逐月顺行，刀针是金宿，正月应当从乾起，所以从亥起顺行；其余详见诸星章。",
+        "en": "Further, a Pressure line appearing on the Noble is a spirit in cap and robes of office; Heavenly Joy is a spirit of good trade and celebration; Mourning Gate is a spirit of mourning dress; Heavenly Fire, Fire Virtue, Heavenly Touch, Stove Official and Heavenly Thief are the departed of violence and robbery; Heavenly Prison is a ghost of flogging, beating, penal servitude and exile; Official Talisman presides over lawsuits, Goat Blade governs weapons, the Post Horse is the grievance of merchants and travellers, and Heavenly River is the wrong of the drowned; Huagai is monks and Daoists, Xianchi is courtesans, Hidden Metal is women in childbirth, and Bleeding is a blood ghost; the Tai Sui is the Earth Virtue; Blade and Needle is beheading, strangling and wounds, Mounds and Tombs is the fault of the graves, Funeral Carriage is the misfortune of coffins, and Breaking Killing is a ghost of breaks and falls; Feilian is the wandering spirit, the General Star is the martial spirit, Heavenly Doctor is the medicine spirit, and Heavenly Horse is trampling by a horse; Bath Basin is the drowning of infants, Corpse Breaker is the calamity of the buried corpse, and Lone Spirit is a ghost with no heir; Great Yin and Month Virtue receive blessing from the Queen Mother, the Sun and Heavenly Virtue depend on the protection of the Supreme Lord. The note says: whichever star the ghost falls on, judgment by the images of the various stars is as above; Heavenly River is a water store, the vast treasury of heaven, and so it runs forward month by month starting from Chen; Blade and Needle is a Metal lodge, and the first month should start from Qian, so it begins at Hai and runs forward; the rest is detailed in the chapter on the stars."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1308, 1308],
+          "zh": ["犹有官鬼现于贵人者，冠冕之神也；", "天喜者，利市吉庆之神也；", "丧门，丧服神也；", "天火、火德，天触、灶司、天贼，强梁劫夺之亡；", "天狱，笞杖徒流之鬼；", "官符主讼，羊刃司兵，驿马为商旅之冤，天河为觉溺之屈；", "华盖，僧道也，咸池，娼妓也，暗金，产妇也，血衂，血鬼也；", "太岁，土德；", "刀针，斩绞伤也，坵墓，坟茔之咎，丧车，棺椁之殃，折煞，折跌之鬼；", "飞廉，游神，将星，武神，天医，医神，天马，马踏；", "浴盆，婴童之溺，摧尸，伏尸之祸，孤神，绝嗣之鬼；", "太阴月德，受福于王母，太阳天德，赖祐于上帝也。"],
+          "yi": ["还有官鬼出现在贵人上的，是戴冠冕的神；", "天喜，是带来生意兴隆、吉庆的神；", "丧门，是丧服的神；", "天火、火德、天触、灶司、天贼，是强横劫夺而死的亡魂；", "天狱，是受笞刑、杖刑、徒刑、流放的鬼；", "官符主管诉讼，羊刃掌管兵刃，驿马是行商旅客的冤魂，天河是觉后溺水的冤屈；", "华盖是僧人道士，咸池是娼妓，暗金是产妇，血衂是血鬼；", "太岁是土德；", "刀针是被斩杀、绞死、受伤，坵墓是坟墓的咎，丧车是棺椁的殃，折煞是摔断跌伤的鬼；", "飞廉是游神，将星是武神，天医是医神，天马是被马踏的；", "浴盆是婴孩溺死，摧尸是伏尸的祸，孤神是断了后嗣的鬼；", "太阴、月德从王母那里受福，太阳、天德靠上帝保佑。"],
+          "en": ["Further, a Pressure line appearing on the Noble is a spirit in cap and robes of office;", "Heavenly Joy is a spirit of good trade and celebration;", "Mourning Gate is a spirit of mourning dress;", "Heavenly Fire, Fire Virtue, Heavenly Touch, Stove Official and Heavenly Thief are the departed of violence, robbery and plunder;", "Heavenly Prison is a ghost of flogging, beating, penal servitude and exile;", "Official Talisman presides over lawsuits, Goat Blade governs weapons, the Post Horse is the grievance of merchants and travellers, and Heavenly River is the wrong of those who wake to drown;", "Huagai is monks and Daoists, Xianchi is courtesans, Hidden Metal is women in childbirth, and Bleeding is a blood ghost;", "the Tai Sui is the Earth Virtue;", "Blade and Needle is beheading, strangling and wounds, Mounds and Tombs is the fault of the graves, Funeral Carriage is the misfortune of coffins, and Breaking Killing is a ghost of breaks and falls;", "Feilian is the wandering spirit, the General Star is the martial spirit, Heavenly Doctor is the medicine spirit, and Heavenly Horse is trampling by a horse;", "Bath Basin is the drowning of infants, Corpse Breaker is the calamity of the buried corpse, and Lone Spirit is a ghost with no heir;", "Great Yin and Month Virtue receive blessing from the Queen Mother; the Sun and Heavenly Virtue depend on the protection of the Supreme Lord."] },
+        { "by": "易冒注", "book": "易冒", "range": [1309, 1309],
+          "zh": ["鬼值何宿，则以诸星像断如此。", "天河水库，乃天之浩府，故正自辰逐月顺行，刀针金宿，正月当自乾起，故始亥顺行也。", "余详诸星章内。"],
+          "yi": ["鬼临哪颗星宿，就用诸星的象来断，是这样的。", "天河是水库，是天上浩大的府库，所以从辰起，逐月顺行；刀针是金宿，正月应当从乾起，所以从亥起、顺着走。", "其余详见诸星章。"],
+          "en": ["Whichever star the ghost falls on, judgment by the images of the various stars is as above.", "Heavenly River is a water store, the vast treasury of heaven, and so it runs forward month by month starting from Chen; Blade and Needle is a Metal lodge, and the first month should start from Qian, so it begins at Hai and runs forward.", "The rest is detailed in the chapter on the stars."] }
+      ],
+      "note": {
+        "yi": "「天火、火德，天触、灶司、天贼，强梁劫夺之亡」这一句，谓语「强横劫夺而死的亡魂」管到哪几个星，原文的逗号并不清楚，这里照字面把它放在这一串的末尾。「天河为觉溺之屈」的「觉溺」原文没有解释，这里按字面译作「觉后溺水」，读法没有把握。星名的译名在本仓库各处保持一致：咸池 Xianchi、驿马 Post Horse、浴盆 Bath Basin、丧车 Funeral Carriage。这些星怎么查，详见易冒诸星章。",
+        "en": "In 'Heavenly Fire, Fire Virtue, Heavenly Touch, Stove Official, Heavenly Thief: the departed of violence and robbery', it is not clear from the commas how many of the stars the predicate 'the departed of violence and robbery' extends to, and it is placed literally at the end of the run. The 'awake-drown' in 'Heavenly River is the wrong of those who wake to drown' is not explained in the original, and is translated literally as 'wake to drown', the reading being uncertain. Star names (Noble, Heavenly Joy, Mourning Gate, Heavenly Fire, Heavenly Prison, Official Talisman, Goat Blade, Post Horse, Heavenly River, Huagai, Xianchi and so on) keep the same renderings used elsewhere in this repository: Xianchi, Post Horse, Bath Basin, Funeral Carriage. How the stars and spirit-stars are found is set out in the Yi Mao's chapters on the stars."
+      },
+      "see": ["LY.ILL.YM.61", "LY.ILL.YM.63", "LY.ILL.HJC.109", "LY.ILL.YY.29"]
+    },
+    {
+      "id": "LY.ILL.YM.63",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "察鬼神但以五行八宫变化而像之，必实指鬼神而泥之则诬：四穹之内无处非鬼神，各乡所尊不同，千古之上未有之神何所知，千古之下再成之神何所拟",
+      "rule": {
+        "yi": "天地四方之内，没有哪里没有鬼神，但各地方各有风俗所尊奉的，地水火风所掌管的，有的只显灵在一个乡，有的应验在一个国，很难一一细说。俗话说，千古以前还没有的神，怎么知道；千古以后再成的神，又拿什么去比拟。考察鬼神，只要用五行、八宫，变化着去取象，作为后学的规范，古今都能通用。如果一定要落实指定是哪位鬼神、还死抠着不放，那就是诬妄了。",
+        "en": "Within the four vaults of heaven there is no place without ghosts and spirits, yet each quarter has those its customs revere and those that earth, water, fire and wind govern, some manifest in a single village, some proving true over a whole country, hard to set out one by one. It is said: of spirits that did not exist a thousand ages ago, how can they be known; of spirits that will come to be a thousand ages hence, what can they be compared to. In examining ghosts and spirits, simply take the image by the five phases and the eight palaces with their changes, as a pattern for later learners, and it applies to past and present alike. To point insistently at a particular ghost or spirit and cling to it is to make a false claim."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1310, 1310],
+          "zh": ["夫四穹之内，无处而非鬼神，然有方隅风俗之所尊，地水火风之所司，或显一乡，或征一国，难以繁陈。", "语谓千古而上，未有之神何所知，千古而下，再成之神何所拟。", "察鬼神者，但以五行八宫，变化而像之，以为后学之范，虽今古可通也。", "必实指鬼神而泥之，则诬矣。"],
+          "yi": ["天地四方之内，没有哪里没有鬼神，但各地方各有风俗所尊奉的，地水火风所掌管的，有的只显灵在一个乡，有的应验在一个国，很难一一细说。", "俗话说，千古以前还没有的神，怎么知道；千古以后再成的神，又拿什么去比拟。", "考察鬼神，只要用五行、八宫，变化着去取象，作为后学的规范，那么古今都能通用。", "如果一定要落实指定是哪位鬼神、还死抠着不放，那就是诬妄了。"],
+          "en": ["Within the four vaults of heaven there is no place without ghosts and spirits, yet each quarter has those its customs revere and those that earth, water, fire and wind govern, some manifest in a single village, some proving true over a whole country, hard to set out one by one.", "It is said: of spirits that did not exist a thousand ages ago, how can they be known; of spirits that will come to be a thousand ages hence, what can they be compared to.", "In examining ghosts and spirits, simply take the image by the five phases and the eight palaces with their changes, as a pattern for later learners, and it applies to past and present alike.", "To point insistently at a particular ghost or spirit and cling to it is to make a false claim."] }
+      ],
+      "dispute": {
+        "yi": "要不要落实到某一位神：易冒在本章前面（LY.ILL.YM.44 到 YM.62）列了大量神名，这里却说「必实指鬼神而泥之，则诬矣」，前后的关系是：名单是举例，办法是用五行八宫去取象。增删卜易的觉子和李我平批评的是把名单当成定论，即金官就指关公岳公（LY.ILL.ZS.24、ZS.25），而且李我平点名批评了《易冒》指定关岳、并说本书疾病章讲鬼神是「从俗」；从这一段看，易冒自己在这里已经说了不能泥于某一位。黄金策（LY.ILL.HJC.93 到 HJC.104）和易隐（LY.ILL.YY.28）则直接给出神名和鬼的死因，没有这样的收束。",
+        "en": "Whether to pin it to a particular god: the Yi Mao lists a large number of names earlier in the chapter (LY.ILL.YM.44 to YM.62), yet here says 'to point insistently at a particular ghost or spirit and cling to it is to make a false claim'; the relation between the two is that the lists are examples and the method is to take the image by the five phases and the eight palaces. What Jue Zi and Li Woping of the Zengshan Buyi criticise is taking the list as a conclusion, that is, naming Guan Gong or Yue Gong at once for a Metal Pressure line (LY.ILL.ZS.24, ZS.25), and Li Woping names the Yi Mao for pinning Guan and Yue and says its talk of ghosts and spirits in the illness chapter 'follows the common custom'; from this passage the Yi Mao itself already says here that one must not cling to a particular one. The Huangjin Ce (LY.ILL.HJC.93 to HJC.104) and the Yi Yin (LY.ILL.YY.28) give names of gods and the causes of death of ghosts directly, without such a closing qualification."
+      },
+      "note": {
+        "yi": "「地水火风」是佛家说的四大，这里指各地方由地、水、火、风所司的神。「千古而上，未有之神何所知」这句话的意思是，一个人死后成神，是后来的事；古书里没有的神，不能用古书去对。这一段在 LY.ILL.YM.42 总纲里埋下的「鬼神不是全然虚妄」和这里的「必实指而泥之则诬」合在一起，就是这一章的态度：承认有，但不为一个具体的名字负责。",
+        "en": "'Earth, water, fire and wind' are the four elements of the Buddhist teaching, here the spirits of each place that are governed by earth, water, fire and wind. 'Of spirits that did not exist a thousand ages ago, how can they be known' means that a person becoming a spirit after death is a later matter, and a spirit not found in the old books cannot be matched against the old books. What was planted in the outline (LY.ILL.YM.42), 'ghosts and spirits are not wholly false', together with this 'to point insistently and cling to it is to make a false claim', is the attitude of the chapter: to admit that they exist, but not to answer for any particular name."
+      },
+      "see": ["LY.ILL.YM.62", "LY.ILL.YM.64", "LY.ILL.YM.42", "LY.ILL.YM.44", "LY.ILL.HJC.93", "LY.ILL.ZS.24", "LY.ILL.ZS.25", "LY.ILL.YY.28"]
+    },
+    {
+      "id": "LY.ILL.YM.64",
+      "topic": "神祟",
+      "chapter": "鬼神章第五十七",
+      "chapter_en": "Chapter 57: Ghosts and Spirits",
+      "title": "神多为祐、鬼多为祟，灾病多因自孽：不洗心悔过而聚巫陈牲媚鬼神，鬼神未必享；炰杀生命以祈己命，益重其孽；祭祀莫善于解禳，解禳莫善于修身",
+      "rule": {
+        "yi": "大体上神多半是保佑的，鬼多半是作祟的；灾病的到来，多半是自己造的孽。如果不洗心悔过、除掉孽的根本，只是聚集巫师、摆上牲畜去讨好鬼神，鬼神未必享用。何况宰杀生灵来为自己的性命祈祷，那是加重自己的罪孽。所以说：祭祀没有比解禳更好的，解禳没有比修身更好的，说的就是这个。我在鬼神这一章里，再三告诫。",
+        "en": "In general spirits mostly bless and ghosts mostly haunt; for calamity and illness mostly come from one's own doing, and if one does not cleanse the heart and repent to remove the root of the fault, but merely gathers shamans and lays out animal victims to please ghosts and spirits, the ghosts and spirits will not necessarily partake. How much more so to roast and slaughter living creatures to pray for my own life: that only makes the fault heavier. Hence it is said: of sacrifice none is better than exorcism, and of exorcism none is better than cultivating oneself; this is what it means. In this chapter on ghosts and spirits I have given warning again and again."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1311, 1311],
+          "zh": ["大抵神多为祐，鬼多为祟，盖灾病之来，多因自孽，若不洗心悔过，以除孽本，徒聚巫陈牲以媚鬼神，鬼神未必享也。", "况炰杀生命，以祈我之命，是益重其孽也。", "故曰：祭祀莫善于解禳，解禳莫善于修身，此之谓也。", "吾于鬼神章，兽三致戒云。"],
+          "yi": ["大体上神多半是保佑的，鬼多半是作祟的；因为灾病的到来，多半是自己造的孽，如果不洗心悔过、除掉孽的根本，只是聚集巫师、摆上牲畜去讨好鬼神，鬼神未必享用。", "何况宰杀生灵来为自己的性命祈祷，那是加重自己的罪孽。", "所以说：祭祀没有比解禳更好的，解禳没有比修身更好的，说的就是这个。", "我在鬼神这一章里，再三告诫。"],
+          "en": ["In general spirits mostly bless and ghosts mostly haunt; for calamity and illness mostly come from one's own doing, and if one does not cleanse the heart and repent to remove the root of the fault, but merely gathers shamans and lays out animal victims to please ghosts and spirits, the ghosts and spirits will not necessarily partake.", "How much more so to roast and slaughter living creatures to pray for my own life: that only makes the fault heavier.", "Hence it is said: of sacrifice none is better than exorcism, and of exorcism none is better than cultivating oneself; this is what it means.", "In this chapter on ghosts and spirits I have given warning again and again."] }
+      ],
+      "dispute": {
+        "yi": "祭祀送鬼有没有用：易冒说灾病多因自孽，不修身而只靠巫祝牲牢献媚鬼神，鬼神未必享用，杀生祈命更是加重罪孽，祭祀最好不过解禳、解禳最好不过修身；增删卜易的野鹤同样反对靠杀牲救命（LY.ILL.ZS.25），但承认时灾瘟癖照法祭送屡验；黄金策（LY.ILL.HJC.93、HJC.50）和易隐（LY.ILL.YY.27、YY.31）则把祈禳的对象、祭品、方法一项项讲出来，把祭祀当作要认真做的事。三家不是互相否定，重点不同：易冒重修身，野鹤按病分，黄金策和易隐重办法。",
+        "en": "Whether sacrifice and sending away ghosts is of use: the Yi Mao says calamity and illness mostly come from one's own doing, that without cultivating oneself, currying favour with ghosts and spirits by means of shamans and animal victims is not necessarily partaken of, that slaughtering to pray for life makes the fault heavier, and that of sacrifice none is better than exorcism and of exorcism none is better than cultivating oneself; the Old Man of Yehe in the Zengshan Buyi likewise opposes slaughter to save a life (LY.ILL.ZS.25), but admits that sacrifice and sending away by the method has been proved many times for seasonal calamities and abdominal masses; the Huangjin Ce (LY.ILL.HJC.93, HJC.50) and the Yi Yin (LY.ILL.YY.27, YY.31) set out object, offering and method of prayer and exorcism item by item and treat sacrifice as something to be done with care. The three do not deny one another; their emphasis differs: the Yi Mao stresses self-cultivation, the Old Man of Yehe distinguishes by illness, the Huangjin Ce and the Yi Yin stress procedure."
+      },
+      "note": {
+        "yi": "「炰杀生命」的「炰」是煮烤，「牲」是祭祀用的牲畜，「巫」是巫师。「吾于鬼神章，兽三致戒云」的「兽」字放在这里说不通，像是「再」「屡」一类字的误刻；「三致戒」是再三告诫，这一层意思是清楚的，这里译成「再三告诫」，没有替这个字定读音。「祭祀莫善于解禳，解禳莫善于修身」是作者引的成语（前面有「故曰」），书里没有说出处。这一句正是 LY.ILL.YM.55 里「伏鬼若空则无鬼祟，惟修德」的落点。",
+        "en": "'Roast and slaughter' (pao sha) is boiling and roasting, 'victims' are the animals used in sacrifice, and 'shamans' are wu. The 'shou' (beast) in 'in the chapter on ghosts and spirits I have given warning shou-three times' does not make sense here and looks like a miscarved form of a word such as 'again' or 'repeatedly'; that it means 'has given warning three times over', that is, again and again, is clear, and it is rendered 'again and again' without deciding what the character should be. 'Of sacrifice none is better than exorcism, and of exorcism none is better than cultivating oneself' is quoted by the author as a saying (it is introduced by 'hence it is said'), and the book gives no source. This sentence is where 'if the hidden ghost is also Void there is no haunting, and only cultivating virtue remains' in LY.ILL.YM.55 lands."
+      },
+      "see": ["LY.ILL.YM.63", "LY.ILL.YM.55", "LY.ILL.HJC.93", "LY.ILL.HJC.50", "LY.ILL.ZS.25", "LY.ILL.YY.27", "LY.ILL.YY.31"]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "海底眼",
+  "chapter": "婚姻",
+  "chapter_en": "Marriage",
+  "ranges": {"海底眼": [593, 606]},
+  "units": [
+    {
+      "id": "LY.MARRY.HDY.01",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "娶妻先向财中觅，嫁夫可类鬼爻推：旺相得时成合配，休囚刑害不相宜；兄旺克妻妻不就，子旺伤夫夫有疑；八纯动者主离别，五世游魂损小儿",
+      "rule": {
+        "yi": "娶妻先看财爻，嫁夫也照样看鬼爻。旺相得时就能配成，休囚或被刑害就不合适。兄弟爻旺克妻，妻子成不了；子孙爻旺伤夫，丈夫有疑。八纯卦动主离别，五世卦、游魂卦损害小孩。眉批的意思相同：财、鬼旺相成合，休囚不宜，兄旺克妻，子动伤夫。",
+        "en": "To take a wife look first at the Wealth line; to marry a husband, look likewise at the Pressure line. If it is strong and in season the match is made; if resting, trapped, punished or harmed it is unsuitable. A strong Peer line controls the wife and she cannot be had; a strong Output line harms the husband and he is in doubt. A pure eight-palace hexagram that moves means parting; a fifth-generation or Wandering Soul hexagram harms the children. The marginal comment says the same: Wealth and Pressure strong, they combine; resting or trapped, unsuitable; a strong Peer line controls the wife; Output moving harms the husband."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [595, 595],
+          "zh": ["娶妻先向财中觅，嫁夫可类鬼爻推，", "旺相得时成合配，休囚刑害不相宜。", "兄旺克妻妻不就，子旺伤夫夫有疑，", "八纯动者主离别，五世游魂损小儿。"],
+          "yi": ["娶妻先在财爻里找，嫁夫可以照样在鬼爻里推；", "旺相得时就能配成，休囚、遭刑害就不合适。", "兄弟爻旺克妻，妻子成不了；子孙爻旺伤夫，丈夫有疑；", "八纯卦动主离别，五世卦、游魂卦损害小孩。"],
+          "en": ["To take a wife look first in the Wealth line; to marry a husband, reckon likewise in the Pressure line;", "if it is strong and in season the match is made; if resting, trapped, punished or harmed it is unsuitable.", "a strong Peer line controls the wife and she cannot be had; a strong Output line harms the husband and he is in doubt;", "a pure eight-palace hexagram that moves means parting; a fifth-generation or Wandering Soul hexagram harms the children."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [595, 595],
+          "zh": ["妻财鬼爻，旺相成合，休囚不宜，兄旺克妻。", "子动伤夫，八纯离别，五世游魂，必损小儿。"],
+          "yi": ["妻财、鬼爻，旺相就成合，休囚就不宜，兄弟爻旺就克妻。", "子孙爻动伤夫，八纯卦离别，五世、游魂卦，必定损伤小孩。"],
+          "en": ["Wealth and Pressure: strong, they combine and succeed; resting or trapped, unsuitable; a strong Peer line controls the wife.", "Output moving harms the husband; a pure eight-palace hexagram means parting; a fifth-generation or Wandering Soul hexagram surely harms the children."] }
+      ],
+      "see": ["LY.MARRY.HJC.18", "LY.MARRY.HZL.22", "LY.MARRY.HZL.24", "LY.MARRY.ZS.10"]
+    },
+    {
+      "id": "LY.MARRY.HDY.02",
+      "topic": "总则",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "占妻看财宜动，占夫有鬼宜静",
+      "rule": {
+        "yi": "占妻子看财爻，宜动；占丈夫要有鬼爻，宜静。",
+        "en": "To divine a wife look at the Wealth line, which should move; to divine a husband the Pressure line must be present and should be still."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [597, 597],
+          "zh": ["占妻看财宜动，占夫有鬼宜静。"],
+          "yi": ["占妻子看财爻，宜动；占丈夫要有鬼爻，宜静。"],
+          "en": ["To divine a wife look at the Wealth line, which should move; to divine a husband the Pressure line must be present and should be still."] }
+      ],
+      "dispute": {
+        "yi": "占妻看财爻：《海底眼》说宜动；《火珠林》说「占妻看财爻，宜静」（LY.MARRY.HZL.04）；《易林补遗》也说要静。占夫看鬼爻，两家都说宜静。这一处是《海底眼》独异，也可能是转录之误，书里无从核对。",
+        "en": "For divining a wife by the Wealth line, the Haidi Yan says it should move; the Huozhulin says 'for a wife look at the Wealth line, which should be still' (LY.MARRY.HZL.04); the Yilin Buyi also asks for stillness. For a husband by the Pressure line both say it should be still. Here the Haidi Yan stands alone; it may be a transcription slip, and there is nothing in the books to check it against."
+      },
+      "see": ["LY.MARRY.HZL.04", "LY.MARRY.YL.19"]
+    },
+    {
+      "id": "LY.MARRY.HDY.03",
+      "topic": "对方",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "阳宫端正、阴宫丑陋，落在飞神上应头面，卦无子孙不喜悦",
+      "rule": {
+        "yi": "阳宫的人端正，阴宫的人丑陋；落在飞神上，只应在头面；落在飞神……不应在四肢。卦里没有子孙爻，不喜悦。",
+        "en": "A yang palace means upright looks, a yin palace ugly ones: on the flying spirit it answers only in the head and face; on the flying spirit... it does not answer in the limbs. A hexagram without an Output line is not a happy one."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [599, 599],
+          "zh": ["阳宫端正，阴宫丑陋，在飞止应头面，在飞不应四肢，卦无子孙不喜悦。"],
+          "yi": ["阳宫端正，阴宫丑陋，落在飞神上只应在头面，落在飞神（下）不应在四肢，卦里没有子孙爻，不喜悦。"],
+          "en": ["A yang palace is upright, a yin palace ugly; on the flying spirit it answers only in the head and face, on the flying spirit (below) it does not answer in the limbs; a hexagram without an Output line is not a happy one."] }
+      ],
+      "note": {
+        "yi": "「在飞止应头面，在飞不应四肢」两个「在飞」不同义，读不通。《火珠林》同一句作「在飞上应头面四肢，在飞下应拙不稳」（LY.MARRY.HZL.04），这里的第二个「在飞」像是漏了「下」字；译文照原文译，括号里注明。",
+        "en": "The two 'on the flying spirit' in 'on the flying spirit it answers only in the head and face; on the flying spirit it does not answer in the limbs' cannot both mean the same, and the sentence does not read through. The Huozhulin has the same sentence as 'on the flying spirit it answers in the head, face and limbs, and under it, in clumsiness' (LY.MARRY.HZL.04), so the second 'on the flying spirit' looks as if the word 'below' has dropped out; it is translated as written, with the doubt marked in brackets."
+      },
+      "see": ["LY.MARRY.HZL.04"]
+    },
+    {
+      "id": "LY.MARRY.HDY.04",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "男占得震主再婚，女占得坎主再嫁",
+      "rule": {
+        "yi": "男子占得震卦，主再婚；女子占得坎卦，主再嫁。",
+        "en": "A man who gets Zhen will marry again; a woman who gets Kan will marry again."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [601, 601],
+          "zh": ["男占得震主再婚，女占得坎主再嫁。"],
+          "yi": ["男子占，得震卦，主再婚；女子占，得坎卦，主再嫁。"],
+          "en": ["A man who gets the hexagram Zhen will marry again; a woman who gets Kan will marry again."] }
+      ],
+      "note": {
+        "yi": "《火珠林》同一句是「男占得震巽主再婚，女占得坎离主再嫁」，这里各少一个卦名。",
+        "en": "The Huozhulin has 'a man who gets Zhen or Xun... a woman who gets Kan or Li...', one trigram name more on each side."
+      },
+      "see": ["LY.MARRY.HZL.04", "LY.MARRY.YY.09"]
+    },
+    {
+      "id": "LY.MARRY.HDY.05",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "妻在间爻女有亲为主婚、夫在间爻男有亲为主婚，得时旺相则成，出现忌日冲月破；世动男不肯、应动女生疑；用神发动成也分离；父伤损长亲，间动阻隔或媒人作鬼",
+      "rule": {
+        "yi": "妻子（财爻）在间爻上，女方有亲人做主婚人；丈夫（鬼爻）在间爻上，男方有亲人做主婚人。得时旺相就能成；用神出现时，忌日冲、月破。世爻动，男方不肯；应爻动，女方起疑。用神发动，即使成了也见分离。父母爻受伤，损害长辈；间爻动，有阻隔；或者媒人又化作鬼爻。",
+        "en": "If the wife (the Wealth line) is on a between line, a relative of the woman's side presides at the marriage; if the husband (the Pressure line) is on a between line, a relative of the man's side presides. If it is in season and strong it can be made; when the Subject appears, it fears a clash from the Day and a Month-break. If the Self line moves the man will not agree; if the Other line moves the woman grows doubtful. If the Subject moves, even if made it ends in separation. If the Resource line is harmed the elders are injured; a moving between line means obstruction; or the go-between turns into Pressure again."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [603, 605],
+          "zh": ["妻在同爻女有亲为主婚，夫在同爻男有亲为主婚。", "若得时旺相，则有成。", "如出现，忌日冲月破。", "世动男不肯，应动女生疑。", "用神发动，成也见分离。", "父伤损长亲，间动阻隔，或媒人又作鬼。"],
+          "yi": ["妻子在间爻上，女方有亲人做主婚人；丈夫在间爻上，男方有亲人做主婚人。", "如果得时旺相，就能成。", "如果用神出现，忌讳日冲、月破。", "世爻动，男方不肯；应爻动，女方起疑。", "用神发动，即使成了也见分离。", "父母爻受伤，损害长辈；间爻动，有阻隔；或者媒人又化作鬼爻。"],
+          "en": ["If the wife is on a between line, a relative of the woman's side presides at the marriage; if the husband is on a between line, a relative of the man's side presides.", "If it is in season and strong, it can be made.", "If the Subject appears, it fears a clash from the Day and a Month-break.", "If the Self line moves the man will not agree; if the Other line moves the woman grows doubtful.", "If the Subject moves, even if made it ends in separation.", "If the Resource line is harmed the elders are injured; a moving between line means obstruction; or the go-between turns into Pressure again."] }
+      ],
+      "note": {
+        "yi": "「妻在同爻」「夫在同爻」的「同爻」多半是「间爻」之误（《火珠林》同一句作「妻在间爻」，LY.MARRY.HZL.05），译文按「间爻」译。这一节和《火珠林》「占婚姻」里的几句几乎相同，词句略有出入。",
+        "en": "'Same line' in 'the wife on the same line' and 'the husband on the same line' is most likely a slip for 'between line' (the Huozhulin has 'the wife on a between line', LY.MARRY.HZL.05) and is translated so. This passage is almost the same as several sentences in the Huozhulin's 'divining marriage', with small differences of wording."
+      },
+      "see": ["LY.MARRY.HZL.05", "LY.MARRY.HJC.13", "LY.MARRY.HJC.09"]
+    }
+  ]
+}

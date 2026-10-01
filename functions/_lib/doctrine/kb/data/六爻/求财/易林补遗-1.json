@@ -1,0 +1,598 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易林补遗",
+  "chapter": "求财觅利章第一百四",
+  "chapter_en": "Chapter 104 - Seeking wealth and profit",
+  "ranges": {"易林补遗": [1930, 1965]},
+  "units": [
+    {
+      "id": "LY.WEALTH.YL.01",
+      "topic": "总则",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "有本钱求财：以财为用，不可空破；旺来克世、生世得利；子动会青龙是生财大道；兄动、父动加白虎，本利俱无",
+      "rule": {
+        "yi": "有本钱去求财，以财爻为用神：不能空无，逢旬空月破，不但没有利，连本也亏；财旺来克世爻，利息滚滚，生世，财源滚滚。子孙发动是生财之神，会青龙是生财的大道；兄弟动而子孙不动，本利都没有；父母动、兄弟不动再加白虎，克伤子孙这个元神，财得不到生助，是断利的根源。福德发动财源增，兄弟发动资本亏。",
+        "en": "Seeking money with capital, Wealth is the Subject: it must not be void or absent; with Void or Month-break there is no profit and the capital is lost too. Wealth strong and controlling the Self brings interest in a flood, and generating the Self, a flowing source of wealth. Output moving is the spirit that gives birth to Wealth, and meeting the Azure Dragon it is the great road to wealth; Peer moving with Output still leaves neither capital nor profit; Resource moving with Peer still and the White Tiger added controls Output, the Support of Wealth, so Wealth has nothing to feed it and the root of profit is cut. Output moving increases the source of wealth; Peer moving wounds the capital."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(将本以财爻为主，福德为凭。", "空拳以官爻为主，财象为凭。)"],
+          "yi": ["（有本钱去求财的，以财爻为主，以福德为凭；", "空手求财的，以官爻为主，以财象为凭。）"],
+          "en": ["(With capital: Wealth is the chief and Output the evidence;", "empty-handed: Pressure is the chief and the image of Wealth the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["将财求利，财为用，", "凡值旬空月破，凶", "旺相生身兼死世。", "金银倍得利无穷，", "财源增益。摇福德", "资本亏伤，动弟兄", "父发助兄能克子，", "生涯有始定无终。"],
+          "yi": ["有本钱去求利，以财爻为用神，", "凡是碰上旬空、月破，凶；", "旺相，生扶卦身，又……（「死世」读不通，下面的解说的是「旺来克世」，疑是「克世」之误）；", "金银加倍到手，利润无穷；", "财源不断增加，是福德发动的时候；", "资本亏伤，是兄弟发动的时候；", "父母发动，帮着兄弟去克子孙；", "生意有开头，一定没有结果。"],
+          "en": ["Seeking profit with capital, Wealth is the Subject;", "whenever it meets Void or Month-break, ill;", "strong, generating the Body, and also 'dead Self' (probably a slip for 'controlling the Self', as the commentary below reads it);", "gold and silver come in double and the profit has no end;", "the source of wealth grows when Output moves;", "the capital is wounded when Peer moves;", "Resource moving helps Peer to control Output;", "the business will have a beginning and surely no end."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["将本求财，以财为用，不可空无，", "如遇旬空月破，不但无利，本亦亏折。", "如若旺来克世者，利息津津。", "生世者，财源滚滚。", "若得子孙发动，乃生财之神，财如源水流而不竭，", "故经云：子动会青龙，乃生财之大道，", "若兄动而子不动者，本利俱无，", "若父动而兄不动更加白虎，乃在克子孙元神，财无生助，", "故经云：父兴临白虎，为绝利之根源也。"],
+          "yi": ["有本钱求财，以财爻为用神，不能落空或没有；", "碰上旬空、月破，不但没有利润，本钱也要亏掉。", "如果财旺来克世，利息滚滚而来；", "生世的，财源滚滚。", "如果子孙发动，那是生财的神，财就像源头的水流个不停；", "所以经上说：子孙动而会青龙，是生财的大道；", "如果兄弟动而子孙不动，本钱和利润都没有；", "如果父母动、兄弟不动，再加白虎，那是克伤子孙这个元神，财得不到生助，", "所以经上说：父母兴旺而临白虎，是断绝利润的根源。"],
+          "en": ["Seeking money with capital, Wealth is the Subject and must not be void or absent;", "if it meets Void or Month-break, there is no profit and the capital is lost too.", "If a strong Wealth comes to control the Self, the interest flows in;", "if it generates the Self, the source of wealth rolls on.", "If Output moves, it is the spirit that gives birth to Wealth, and money is like water from a spring that never runs dry;", "so the classic says: 'Output moving and meeting the Azure Dragon is the great road to wealth';", "if Peer moves and Output does not, neither capital nor profit remains;", "if Resource moves and Peer does not, and the White Tiger is added, it controls Output, the Support of Wealth, and Wealth has nothing to feed it,", "so the classic says: 'Resource rising on the White Tiger cuts the root of profit.'"] }
+      ],
+      "note": {
+        "yi": "这首诗在原书里标点错位：按七字一句，应是八句——「将财求利财为用，凡值旬空月破凶，旺相生身兼死世，金银倍得利无穷，财源增益摇福德，资本亏伤动弟兄，父发助兄能克子，生涯有始定无终」。这里原文照抄原来的标点，译文按七字句读。第三句「死世」读不通，解里说的是「旺来克世」，疑是「克世」之误。",
+        "en": "In the source the punctuation of this poem is off: read seven characters to a line it is eight lines. The original text is kept with its own punctuation and translated by the seven-character lines. In the third line 'dead Self' cannot be read, and the commentary speaks of a strong Wealth 'coming to control the Self', so a slip for 'control' is likely."
+      },
+      "see": ["LY.WEALTH.TXF.02", "LY.WEALTH.TXF.06", "LY.WEALTH.HJC.02"]
+    },
+    {
+      "id": "LY.WEALTH.YL.02",
+      "topic": "总则",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "空拳问利：以官为主，官旺生合世为大吉；财是元神不可空；子孙动伤官，父母动空拳无害",
+      "rule": {
+        "yi": "空手（没本钱）问利，是九流、工匠、靠手艺吃饭一类人的事：以官爻为主，要旺相并生世、合世，又喜财爻兴旺来扶助，最吉；财爻是官的元神，不能空；子孙发动伤官，用神就没用了；父母发动，空手求财没有妨碍，有本钱的却遭殃。",
+        "en": "Seeking profit empty-handed is for the trades, craftsmen and people who work for their food: Pressure is the chief; it must be strong and generate or combine with the Self, and it is best of all if a strong Wealth comes to support it; Wealth is the Support of Pressure and must not be void; Output moving hurts Pressure and leaves the Subject useless; Resource moving does the empty-handed no harm but is a curse to those with capital."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["空拳问利宜官旺，", "财作元神莫犯空，", "反怪子兴来制鬼，", "不嫌父母值兴隆。"],
+          "yi": ["空手问利，宜官爻旺相；", "财爻是它的元神，不要落空；", "反倒要怪子孙兴旺来制住官鬼；", "不嫌父母兴旺。"],
+          "en": ["Seeking profit empty-handed, Pressure should be strong;", "Wealth is its Support and must not fall void;", "on the contrary, blame Output rising to hold Pressure in check;", "Resource being strong is no objection."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["空拳问利者，九流之辈。", "工匠餐食之流，皆名白手求财，", "以官为主，须要兴隆生世合世，又喜财爻兴旺而来扶助，此为大吉。", "犯忌子孙动，动则伤官，而用无用也。", "父母发动，空拳无害，将本为殃。", "将本为殃，有资本者遭殃。"],
+          "yi": ["空手问利的，是九流一类的人。", "工匠、靠做饭卖吃食过日子的这类人，都叫白手求财，", "以官爻为主，要兴旺并且生世、合世，又喜财爻兴旺来扶助，这样最吉。", "忌讳子孙发动，一动就伤官，用神就没用了。", "父母发动，空手求财没有妨碍，有本钱的却成了祸害。", "说「将本为殃」，就是有本钱的人遭殃。"],
+          "en": ["Those who seek profit empty-handed are people of the trades.", "Craftsmen and people who make their living from food are all said to make money with bare hands;", "Pressure is the chief; it must be strong and generate or combine with the Self, and it is a joy if Wealth is strong and comes to support it: this is greatly auspicious.", "Output moving is taboo: moving, it hurts Pressure and the Subject becomes useless.", "Resource moving does no harm to the empty-handed but is a curse to those with capital.", "'A curse to those with capital' means that those who have capital suffer."] }
+      ],
+      "see": ["LY.WEALTH.TXF.02", "LY.WEALTH.YY.09"]
+    },
+    {
+      "id": "LY.WEALTH.YL.03",
+      "topic": "公门九流",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "衙门：官为用爻，只怕官伤世；再加白虎，有刑罚之忧",
+      "rule": {
+        "yi": "在衙门当差求财：官爻是用爻，旺相为好，只怕官爻伤世；若再加白虎，一定有刑罚之忧。",
+        "en": "Earning money from a post in a government office: Pressure is the Subject line and should be strong; the only fear is Pressure hurting the Self, and with the White Tiger added there is surely the worry of punishment."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["衙门但怕官伤世，"],
+          "yi": ["衙门里当差，只怕官爻伤世；"],
+          "en": ["In a government office, the only fear is Pressure hurting the Self;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["公门之役，", "官为用爻但不可伤世，", "若加白虎，必有刑之忧。"],
+          "yi": ["在公门当差的，", "官爻是用爻，只是不能伤世；", "如果再加白虎，一定有刑罚之忧。"],
+          "en": ["For those who serve in a government office,", "Pressure is the Subject line but must not hurt the Self;", "if the White Tiger is added, there is surely the worry of punishment."] }
+      ],
+      "see": ["LY.WEALTH.HJC.28", "LY.WEALTH.ZS.01"]
+    },
+    {
+      "id": "LY.WEALTH.YL.04",
+      "topic": "开店",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "店肆：最愁六冲；一冲，顾客聚不拢，货物销不动",
+      "rule": {
+        "yi": "开店做买卖最怕六冲卦：一冲，主顾聚不拢，货物销不动。",
+        "en": "A shop and its business fear a Six-Clash hexagram above all: with a clash, customers are hard to gather and the goods do not move."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["店肆惟愁卦六冲，"],
+          "yi": ["开店的，最愁卦是六冲；"],
+          "en": ["For shops, the only worry is a Six-Clash hexagram;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["店肆肄业，切忌六冲，", "冲则主雇难聚，货物不岂。"],
+          "yi": ["开店经营，切忌六冲，", "一冲，主顾就难聚拢，货物销不动。"],
+          "en": ["A shop and its business must above all avoid a Six-Clash;", "with a clash, customers are hard to gather and the goods do not move."] }
+      ],
+      "note": {
+        "yi": "「主雇」在这本书里是主顾、来雇你或买你东西的人。「货物不岂」的「岂」疑是「起」字之误，译作销不动。",
+        "en": "'Zhu gu' in this book means the patrons who hire you or buy from you. 'The goods do not rise' is written with a character that is probably a slip for 'rise', and is translated as 'do not move'."
+      },
+      "see": ["LY.WEALTH.YY.23", "LY.WEALTH.HJC.32"]
+    },
+    {
+      "id": "LY.WEALTH.YL.05",
+      "topic": "风险",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "走水：官衰无险厄，风浪不险全靠官爻衰",
+      "rule": {
+        "yi": "走江湖水路求利：官爻衰弱就没有险难，风浪不凶险，全靠官爻衰。",
+        "en": "Seeking profit on rivers and lakes: a weak Pressure means no danger; that the wind and waves are not dangerous depends wholly on Pressure being weak."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["走水官衰无险厄，"],
+          "yi": ["走水路的，官爻衰弱就没有险难；"],
+          "en": ["For travel by water, a weak Pressure means no danger;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["若涉江湖而觅利，风波不险全赖官衰。"],
+          "yi": ["如果渡江湖去求利，风浪不凶险，全靠官爻衰弱。"],
+          "en": ["If you cross rivers and lakes to seek profit, that the waves are not dangerous depends wholly on Pressure being weak."] }
+      ],
+      "see": ["LY.WEALTH.HJC.39"]
+    },
+    {
+      "id": "LY.WEALTH.YL.06",
+      "topic": "公门九流",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "祝巫：鬼旺有神通；官旺合真人之应，鬼空则道不通彻",
+      "rule": {
+        "yi": "圆光召将、画符念咒的太保、师巫这类人求财，一定靠官鬼兴旺，灵验才像回声一样快；官旺合真人之应，法术高明；官鬼落空，就没有野祟那样的灵验，道法不通透。",
+        "en": "For crystal-gazers who summon spirit generals and for the Taibao and shamans who draw talismans and utter spells, everything rests on Pressure being strong, and then the response is as prompt as an echo: a strong Pressure fits the response of a true adept and the art is lofty; with Pressure void there is none of the efficacy of the wild spirits and the art is not fully effective."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["祝巫鬼旺有神通。"],
+          "yi": ["祝巫一类，官鬼旺相就有神通。"],
+          "en": ["For priests and shamans, a strong Pressure means spirit power."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["惟有圆光召将、施符设咒太保师巫等类，必仗官兴鬼旺，其应如音。", "经云：请师来巫水祈延术、蓍龟之卜，官旺合真人之应，法必高明。", "鬼空，无野祟之灵道非通撤。"],
+          "yi": ["只有圆光召将、画符念咒的太保、师巫这一类人，一定要靠官鬼兴旺，灵验才像回声一样快。", "经上说：请师、请巫、水中祈祷、延请法术、蓍龟占卜这一类，官爻旺相，才合真人的灵验，法术一定高明；", "官鬼落空，就没有野祟那样的灵验，道法不通透。"],
+          "en": ["Only for the likes of crystal-gazers who summon spirit generals, and Taibao and shamans who draw talismans and utter spells, everything rests on Pressure being strong, and then the response is as prompt as an echo.", "The classic says: for inviting masters, shamans, water prayers, extension arts and milfoil-and-tortoise divination, a strong Pressure fits the response of a true adept, and the art is surely lofty;", "with Pressure void, there is none of the efficacy of the wild spirits, and the art is not fully effective."] }
+      ],
+      "note": {
+        "yi": "「请师来巫水祈延术、蓍龟之卜」一句列举的行当，原文断句不明，这里是照字面拆开译的；「通撤」疑是「通彻」之误。",
+        "en": "The list 'inviting masters, shamans, water prayers, extension arts, milfoil and tortoise divination' is punctuated unclearly in the source and is split literally here; 'not thoroughly effective' translates a phrase whose last character is probably a slip."
+      },
+      "see": ["LY.WEALTH.HJC.29"]
+    },
+    {
+      "id": "LY.WEALTH.YL.07",
+      "topic": "畜养渔猎",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "血财：父母交重克害子孙，牲畜养不大，财利轻",
+      "rule": {
+        "yi": "养六畜这类血财：最怕父母交重去克害子孙，那样牲畜养不大，财利也薄。",
+        "en": "For living-goods money such as livestock: the great fear is Resource moving to harm Output, and then the animals do not thrive and the profit is small."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["血财更虑文书发，"],
+          "yi": ["血财更担心文书（父母）发动；"],
+          "en": ["For living-goods money, the further worry is the document line, Resource, stirring;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["若是收养六畜，", "偏怪父母交重而克害子孙者，", "则畜不长而财利轻。"],
+          "yi": ["如果是养六畜，", "偏怕父母交重去克害子孙的，", "那牲畜就养不大，财利也轻。"],
+          "en": ["If it is raising livestock,", "what is most feared is Resource moving to harm Output;", "then the animals do not thrive and the profit is small."] }
+      ],
+      "see": ["LY.WEALTH.HJC.30", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.YL.08",
+      "topic": "买卖",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "顿货：财爻衰弱才可买进囤置，利反而厚",
+      "rule": {
+        "yi": "囤货：偏偏要财爻衰弱才可以买进，衰的时候买，利润反而更厚。",
+        "en": "Stocking goods: it is precisely a weak Wealth line that allows buying, and buying when it is weak makes the profit richer."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["顿货财衰利转浓，"],
+          "yi": ["囤货，财衰，利反而更厚；"],
+          "en": ["For stocking goods, a weak Wealth makes the profit richer, not poorer;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["顿货偏要财爻衰弱而可置。"],
+          "yi": ["囤货偏偏要财爻衰弱，才可以买进。"],
+          "en": ["For stocking goods, it is precisely a weak Wealth line that makes buying possible."] }
+      ],
+      "see": ["LY.WEALTH.ZS.15", "LY.WEALTH.YY.19"]
+    },
+    {
+      "id": "LY.WEALTH.YL.09",
+      "topic": "买卖",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "脱物：用爻宜发动，财旺而动最易脱手",
+      "rule": {
+        "yi": "脱手货物：用爻宜发动，最适宜财旺而发动，一动就容易把货泄出去（卖掉）。",
+        "en": "Selling off goods: the Subject line should move; best is a strong Wealth that moves, for moving it lets the goods flow out easily."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["脱物用爻宜发动，"],
+          "yi": ["脱手货物，用爻宜发动；"],
+          "en": ["For selling off goods, the Subject line should move;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["脱货最宜财旺而动则易泄。"],
+          "yi": ["脱货最适宜财旺而发动，一动就容易泄出去。"],
+          "en": ["For selling goods, the best is a strong Wealth that moves, for moving it lets the goods flow out easily."] }
+      ],
+      "see": ["LY.WEALTH.HJC.38", "LY.WEALTH.YY.21"]
+    },
+    {
+      "id": "LY.WEALTH.YL.10",
+      "topic": "开店",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "开张：主象不要交重，财爻安静才稳，一动必败或搬走",
+      "rule": {
+        "yi": "开张店业：用神不要交重（发动）；只要财爻安静，如果发动，一定败坏或迁移。",
+        "en": "Opening a shop: the chief image must not be moving; all that is needed is a still Wealth, and if it moves it will surely fail or have to move away."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["开张主象莫交重。"],
+          "yi": ["开张店铺，主象不要交重。"],
+          "en": ["In opening a shop, the chief image should not be moving."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["开张店业，只要财静，", "纵若举动必定败移。"],
+          "yi": ["开张店业，只要财爻安静，", "如果发动，一定败坏或搬走。"],
+          "en": ["In opening a shop, all that is needed is Wealth still;", "if it moves, it will surely fail or have to move away."] }
+      ],
+      "see": ["LY.WEALTH.YY.23"]
+    },
+    {
+      "id": "LY.WEALTH.YL.11",
+      "topic": "公门九流",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "梨园：不忌官和兄弟；官鬼是用爻，兄弟是伴侣，两个都动才全美",
+      "rule": {
+        "yi": "戏班、走戏、傀儡这类行当：不是一两个人做得了的事，又要有主顾来找；兄弟是他们的伙伴，官鬼是用爻，两个都发动才十全十美，所以说不怕官兴、兄发。",
+        "en": "For theatre troupes, touring players and puppet shows: it is not work for one or two people and patrons must come to hire them; Peer is their companion and Pressure the Subject line, and only if both move is it perfect, hence the saying that there is no fear of Pressure rising and Peer moving."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["梨园不忌官和弟，"],
+          "yi": ["戏班不忌讳官和兄弟；"],
+          "en": ["A theatre troupe does not mind Pressure or Peer;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["搬演走戏、傀儡偶儿等类，不是二人所为之事，", "又要主雇来寻，", "兄弟为之伴侣，官鬼为用爻，", "若得两动，方为全美，故云不怕官兴兄发。"],
+          "yi": ["搬演、走戏、傀儡偶人这一类，不是一两个人做得了的事，", "又要有主顾来找，", "兄弟是他们的伙伴，官鬼是用爻，", "如果两个都动，才算十全十美，所以说不怕官兴兄发。"],
+          "en": ["Staging plays, touring performances and puppet shows are not the work of one or two people,", "and patrons must come looking for them;", "Peer is their companion and Pressure is the Subject line;", "if both move, that is perfection, hence the saying: no fear of Pressure rising and Peer moving."] }
+      ],
+      "see": ["LY.WEALTH.HJC.29"]
+    },
+    {
+      "id": "LY.WEALTH.YL.12",
+      "topic": "博戏",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "搏戏：嫌官鬼、兄弟兴旺；兄隆鬼旺必全输",
+      "rule": {
+        "yi": "下棋赌钱、争采取胜，是钱财往来来决输赢的事：兄弟耗财，官鬼克削，兄弟隆盛、官鬼旺相，必然输光。",
+        "en": "Board games, betting and contests for prizes are matters where money passes back and forth and decides who wins: Peer wastes money and Pressure strips it, and with Peer thriving and Pressure strong you will lose everything."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["搏戏犹嫌鬼兴兄，"],
+          "yi": ["赌博还是嫌官鬼和兄弟兴旺；"],
+          "en": ["In gambling, Pressure and Peer rising are still unwelcome;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["博弈赌钱关采争胜，乃系财物往来而决输赢，", "兄弟耗财，官鬼克剥，", "若值兄隆鬼旺，必致全输。"],
+          "yi": ["下棋赌钱、争采取胜，是钱财往来来决输赢的事；", "兄弟耗财，官鬼克削；", "如果兄弟隆盛、官鬼旺相，必然输光。"],
+          "en": ["Board games, betting and contests for the prize are matters where goods and money pass back and forth and decide who wins;", "Peer wastes money and Pressure strips it;", "if Peer is thriving and Pressure strong, you will lose everything."] }
+      ],
+      "see": ["LY.WEALTH.HJC.34", "LY.WEALTH.YY.12", "LY.WEALTH.ZS.30"]
+    },
+    {
+      "id": "LY.WEALTH.YL.13",
+      "topic": "公门九流",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "屠户：官爻宜临白虎，要见血",
+      "rule": {
+        "yi": "屠宰这一行要见血：官爻要骑在白虎上。",
+        "en": "The slaughtering trade must see blood: Pressure must ride the White Tiger."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["屠户官宜临白虎，"],
+          "yi": ["屠户，官爻宜临白虎；"],
+          "en": ["For butchers, Pressure should sit on the White Tiger;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["屠宰之流须见血，必得官骑白虎，"],
+          "yi": ["屠宰这一行要见血，一定要官爻骑着白虎，"],
+          "en": ["The slaughtering trade must see blood, so Pressure must ride the White Tiger,"] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YL.14",
+      "topic": "公门九流",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "空门：出家修道要安稳，子孙要带青龙",
+      "rule": {
+        "yi": "出家修道求安稳：子孙要骑青龙。",
+        "en": "For those who take up the religious life and need peace: Output must ride the Azure Dragon."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["空门子要带青龙。"],
+          "yi": ["出家人，子孙要带青龙。"],
+          "en": ["For those who have left the world, Output must carry the Azure Dragon."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["空门修道要安然，惟祈子跨青龙者也。"],
+          "yi": ["出家修道要安稳，只求子孙骑着青龙。"],
+          "en": ["Those who take up the religious life need peace, and can only pray that Output rides the Azure Dragon."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.YL.15",
+      "topic": "公门九流",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "抽丰：喜财官旺；官旺、官生、官合，对方慷慨厚赠，再有财动助鬼，称心如意",
+      "rule": {
+        "yi": "向人求资助（抽丰）：以官爻为用神，只喜官旺相、被生、被合，对方一定慷慨厚赠；再有财发动来帮官鬼，就称心如意。",
+        "en": "Soliciting gifts (choufeng): Pressure is the Subject; all that is wanted is Pressure strong, generated and combined, and then he will give generously; if Wealth also moves to help Pressure, the heart is content."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["抽丰却喜财官旺，"],
+          "yi": ["抽丰，却喜财和官都旺；"],
+          "en": ["For soliciting gifts, it is a joy if Wealth and Pressure are both strong;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["抽丰者，晋眉侯门餐食伊利，", "以官为用，", "惟喜官旺官生官合，彼必慨然厚赠，", "又得财动助鬼，则积心遂意。"],
+          "yi": ["抽丰的人，去到侯门大户那里，靠他们的好处吃饭（「晋眉」二字不明），", "以官为用神，", "只喜官旺、官生、官合，那人一定慷慨厚赠，", "又有财发动来帮官鬼，就称心如意了。"],
+          "en": ["Those who solicit gifts go to the gates of the great and eat off their bounty ('jin mei' here is unclear),", "with Pressure as the Subject;", "all that is wanted is Pressure strong, Pressure generated, Pressure combined, and he will surely give generously;", "and if Wealth moves to help Pressure as well, the heart is content."] }
+      ],
+      "note": {
+        "yi": "「官旺官生官合」读作官爻旺相、又被生、被合（或者是官去生世、合世，原文没有说明宾语），这里照字面译。",
+        "en": "'Pressure strong, generated, combined' is translated literally; the source does not say whether Pressure is being generated and combined or is generating and combining with the Self."
+      },
+      "see": ["LY.WEALTH.YY.09"]
+    },
+    {
+      "id": "LY.WEALTH.YL.16",
+      "topic": "借贷",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "合会：忌世应空；应生合世易成，应空、应被冲破、兄弟动冲，被人阻挠；世应两空或六冲，彼此灰心",
+      "rule": {
+        "yi": "合会（亲友凑钱互助）：怕世应落空。应爻生世、合世，容易成、容易得；应空则对方推却；应被日冲月破或兄弟动来冲，被人搅扰办不成；世空，自己起不来；世应两空或六冲，双方灰心，事情难成。",
+        "en": "Pooling money with kin and friends (a savings society): what is feared is the Self or the Other void. The Other generating or combining with the Self makes it easy to form and to receive; the Other void, and he declines; the Other clashed by the Day or broken by the Month, or Peer moving to clash it, and someone interferes and blocks it; the Self void, and I cannot get it going; both void or a Six-Clash, and both sides lose heart and the affair fails."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["合会须忧世应空，"],
+          "yi": ["合会，要担心世应落空；"],
+          "en": ["For a savings society, the worry is the Self or the Other going void;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["而回合会者，纠集亲朋凑财济急以世空为主，", "但得应爻生世合世，乃易成易得，", "若应空他人见却，", "应被日冲月破、或兄弟动冲，皆主被人扰阻不成。", "若世空，我不能兴，虽兴物难入手。", "若世应两空或值六冲，则彼此灰心难济其事，"],
+          "yi": ["至于合会，是纠集亲友凑钱救急，以世落空为要点，", "只要应爻生世、合世，就容易成、容易得；", "如果应空，别人就推辞；", "应被日冲、月破，或兄弟发动来冲，都是被人搅扰阻挠，办不成。", "如果世空，我自己起不来，即使起来，钱也难到手。", "如果世应两空或遇六冲，那么彼此灰心，事情难成，"],
+          "en": ["As for pooling money, gathering kin and friends to raise funds in an emergency, the main thing to watch is the Self going void;", "as long as the Other generates or combines with the Self, it is easy to form and easy to receive;", "if the Other is void, others decline;", "if the Other is clashed by the Day or hit by Month-break, or clashed by a moving Peer, someone interferes and blocks it, and it does not happen.", "If the Self is void, I cannot get it going, and even if it starts the money is hard to get into my hand.", "If Self and Other are both void or meet a Six-Clash, then both sides lose heart and the affair is hard to accomplish,"] }
+      ],
+      "see": ["LY.WEALTH.YY.11", "LY.WEALTH.ZS.31"]
+    },
+    {
+      "id": "LY.WEALTH.YL.17",
+      "topic": "畜养渔猎",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "开矿淘沙取藏：取伏财为用，要有气才可获",
+      "rule": {
+        "yi": "开矿、淘沙、掘藏：地下的宝物藏而不露，只取伏着的财为用神，伏财要有气才能得到，福神成双跟着来；劈山开矿、破石寻珍，是同一个道理。",
+        "en": "Mining, panning sand and digging for buried treasure: treasure in the ground lies hidden, so take the hidden Wealth as the Subject; it must have breath to be had, and Output follows alongside; splitting mountains, opening mines and breaking rock to find gems are judged by the same principle."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["开矿淘沙兼取藏，伏财有气福骈从。"],
+          "yi": ["开矿、淘沙，还有掘藏，伏着的财有气，福神成双跟着来。"],
+          "en": ["Mining, panning sand and digging for buried treasure: hidden Wealth with breath, and Output follows alongside."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["地中宝乃藏而不露，但只取伏财为用，须要有气可获。", "沙内之金乃理而禾吐必得。", "财隐旺土动而变化淘之方，", "有劈山开旷破石寻珍以此无异，一理同推。"],
+          "yi": ["地下的宝物是藏着不露的，只取伏财为用神，伏财要有气才能得到。", "沙里的金子，（「理而禾吐」读不通，这句有讹）一定能得。", "财隐伏在旺相的土下面，土动而变化，是淘取的办法；", "劈山开矿、破石寻珍，和这个没有两样，同一个道理去推。"],
+          "en": ["Treasure in the ground lies hidden and does not show, so take the hidden Wealth as the Subject; it must have breath to be had.", "The gold in the sand (the words 'put in order and grain spits out' cannot be read; the sentence is corrupt) is surely obtained.", "Wealth hidden under a strong Earth, the Earth moving and changing: that is the method of washing it out;", "splitting mountains, opening mines and breaking rock to find gems are no different, all judged by the same principle."] }
+      ],
+      "note": {
+        "yi": "「沙内之金乃理而禾吐必得」一句字有讹误，读不通，译文只译出能读的部分并标出。「财隐旺土动而变化淘之方」也很省，这里照字面译。",
+        "en": "The sentence about gold in the sand is corrupt and cannot be read; only the readable part is translated and marked. 'Wealth hidden under a strong Earth ... the method of washing' is also terse and is translated literally."
+      },
+      "see": ["LY.WEALTH.YY.15"]
+    },
+    {
+      "id": "LY.WEALTH.YL.18",
+      "topic": "应期",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "何日得钱财：日辰生合财爻的那天就是日期；财合日辰才能入手",
+      "rule": {
+        "yi": "求财想知道哪一天到手：看日辰生合财爻的那一天。经上说，财爻合日辰，才能入手。",
+        "en": "To know on what day money arrives in any money question: it is the day on which the Day generates or combines with the Wealth line. The classic says: only when Wealth combines with the Day can it come into the hand."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["又云欲知何日得钱财，", "但逢合处定欢谐。"],
+          "yi": ["又说：想知道哪一天得到钱财，", "只要碰上合的地方，一定欢喜顺遂。"],
+          "en": ["It also says: to know on what day money is obtained,", "just meet the place of combining and all will be joyful and smooth."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["凡一应求财，要知何日到手，但以日辰生合财爻是期矣！", "经云：财合日辰，方能入手。"],
+          "yi": ["凡是各种求财，想知道哪天到手，只看日辰生合财爻的那一天就是日期！", "经上说：财合日辰，才能入手。"],
+          "en": ["For every kind of money question, to know the day it arrives, it is the day on which the Day generates or combines with the Wealth line!", "The classic says: only when Wealth combines with the Day can it come into the hand."] }
+      ],
+      "see": ["LY.WEALTH.TXF.11", "LY.WEALTH.HJC.25", "LY.WEALTH.YY.07"]
+    },
+    {
+      "id": "LY.WEALTH.YL.19",
+      "topic": "应期",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "财爻死绝要等日辰生它，太旺太多要等墓日",
+      "rule": {
+        "yi": "财爻落在衰、绝之地，要日辰来生扶，那一天才是能得到的日期；财爻太旺太多，必定要到墓日才有。经上说，财逢墓库便可归还，多财反复，必须墓库收藏。",
+        "en": "Wealth in decline or extinction needs the Day to generate or support it, and that day is when it can be had; Wealth too strong and too many comes on a tomb day. The classic says: Wealth meeting the tomb-store can be brought home; abundant Wealth is unsteady and needs the tomb-store to hold it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["死绝财爻生日得，", "太旺财爻死墓来。"],
+          "yi": ["死绝的财爻，逢生它的日子才得；", "太旺的财爻，要到死墓的日子才来。"],
+          "en": ["A dead or extinct Wealth line gets its money on the day that generates it;", "an over-strong Wealth line comes on the day of death or tomb."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["财爻逢衰绝之地，必得日辰生扶，乃可得之期。", "若财爻太旺太多，决定墓日免有。", "故经云：财逢墓库便可归还，", "又云多财反覆，必须墓库以收藏。"],
+          "yi": ["财爻落在衰、绝之地，一定要日辰来生扶，才是能得到的日期；", "如果财爻太旺太多，一定要到墓日才有。", "所以经上说：财逢墓库，便可以归还（到手）；", "又说：多财反复，必须用墓库收藏。"],
+          "en": ["When Wealth is in decline or extinction, the Day must generate or support it, and that is the day it can be had;", "if Wealth is too strong and too many, it will be on a tomb day that there is any.", "So the classic says: Wealth meeting the tomb-store can be brought home;", "and again: abundant Wealth is unsteady and needs the tomb-store to hold it."] }
+      ],
+      "note": {
+        "yi": "「决定墓日免有」的「免」疑是「方」（然后）之误，译成「一定要到墓日才有」。",
+        "en": "'Exempt from having' in 'it is decided that on a tomb day there is exemption' is probably a slip for 'then there is', and is translated as 'it will be on a tomb day that there is any'."
+      },
+      "see": ["LY.WEALTH.HJC.09", "LY.WEALTH.TXF.11", "LY.WEALTH.YY.07"]
+    },
+    {
+      "id": "LY.WEALTH.YL.20",
+      "topic": "应期",
+      "chapter": "求财觅利章第一百四",
+      "chapter_en": "Chapter 104 - Seeking wealth and profit",
+      "title": "卦中有福无财：等财星值日才到手",
+      "rule": {
+        "yi": "卦里有福神（子孙）而没有财：六爻里没有财出现，即使有子孙也还得不到，一定要遇到财爻当值的日子，钱才进口袋。",
+        "en": "A hexagram with Output but no Wealth: with no Wealth appearing among the six lines, even Output gives nothing yet; only on the day the Wealth line is on duty does the money go into the purse."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["卦中有福无财者，", "财星值日也开怀。"],
+          "yi": ["卦里有福神而没有财的，", "财星当值的日子，也能开怀。"],
+          "en": ["In a hexagram with Output but no Wealth,", "the day the Wealth star is on duty still brings joy."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["六爻无财出现，虽有子孙尚未可获，", "必逢财爻值日，物乃归囊。"],
+          "yi": ["六爻里没有财出现，即使有子孙也还不能得到，", "一定要遇到财爻当值的日子，钱才进了口袋。"],
+          "en": ["With no Wealth appearing among the six lines, even with Output there is nothing yet to be had;", "only when the day of the Wealth line comes will the money enter the purse."] }
+      ],
+      "see": ["LY.WEALTH.HJC.03", "LY.WEALTH.HJC.07", "LY.WEALTH.YY.07"]
+    },
+    {
+      "id": "LY.WEALTH.YL.21",
+      "topic": "开店",
+      "chapter": "开张店肆章第一百五",
+      "chapter_en": "Chapter 105 - Opening a shop",
+      "title": "开张（有本钱）：卦内财福齐全，福德临门、妻财持世为吉；财子两全，兄动世克财则终无利息",
+      "rule": {
+        "yi": "有本钱开张：卦里要财和福都齐全，福德临门则顾客盈门，妻财持世则利润绵绵；以财为用神，财子两全，财旺则财源无穷，子孙动则顾客不断；不宜兄弟动又世克财，那样即使勤谨也终无利息。",
+        "en": "Opening a shop with capital: the hexagram needs Wealth and Output both complete; Output at the gate fills the shop with customers and Wealth on the Self brings unbroken profit. Wealth is the Subject and Wealth and Output must both be there: Wealth thriving, its source is endless; Output moving, customers keep coming; but Peer moving while the Self controls Wealth is bad, and even a diligent person ends with no interest. With capital, Wealth and Pressure each want to be still."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["(将本以财爻为主，福德为凭。", "空拳以官爻为主，财象为凭。)"],
+          "yi": ["（有本钱去求财的，以财爻为主，以福德为凭；", "空手求财的，以官爻为主，以财象为凭。）"],
+          "en": ["(With capital: Wealth is the chief and Output the evidence;", "empty-handed: Pressure is the chief and the image of Wealth the evidence.)"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["开张口诀无多语，", "卦内须求财福全，", "福德临门人济济，", "妻财持世利绵绵，"],
+          "yi": ["开张店铺的口诀没有多少话：", "卦里要求财和福都齐全；", "福德临门，人来人往，热闹兴旺；", "妻财持世，利润绵绵不断；"],
+          "en": ["The rhyme for opening a shop has few words:", "look in the hexagram for Wealth and Output both complete;", "Output at the gate, and the people come in crowds;", "Wealth on the Self, and the profit flows on unbroken;"] },
+        { "by": "经", "book": "易林补遗",
+          "zh": ["将本财官各要安。"],
+          "yi": ["有本钱的，财和官各自要安静。"],
+          "en": ["With capital, Wealth and Pressure each want to be still."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["开张店业亦有二端：", "将本求财者，以财为用，", "须要财子两全，财兴则财源炽盛无穷。", "子动则主雇络纭不绝，", "但不宜兄动又值世克财者，纵是勤谨之人，终无利息。", "故经云：世克动财若越沙场之马。"],
+          "yi": ["开张店铺也有两种：", "有本钱求财的，以财为用神，", "要财和子孙两样齐全，财兴旺，财源就旺盛无穷；", "子孙动，顾客络绎不绝；", "只是不宜兄弟动，又碰上世克财，即使是勤勤恳恳的人，最终也没有利息。", "所以经上说：世克发动的财，好比要越过沙场的马。"],
+          "en": ["Opening a shop has two cases:", "with capital, Wealth is the Subject;", "Wealth and Output must both be present; when Wealth thrives its source flows without end;", "when Output moves, customers keep coming;", "but it is bad if Peer moves and the Self also controls Wealth: even a diligent person ends with no interest;", "so the classic says: 'the Self controlling a moving Wealth is like a horse crossing a battlefield of sand.'"] }
+      ],
+      "note": {
+        "yi": "《天玄赋》里同一句作「世克动财若赶沙场之马」，这里是「越」，一个字之差。",
+        "en": "The Tianxuan Fu has the same line as 'like chasing a horse across a battlefield of sand'; here the verb is 'cross' - one character apart."
+      },
+      "see": ["LY.WEALTH.TXF.07", "LY.WEALTH.YY.23", "LY.WEALTH.HJC.32"]
+    },
+    {
+      "id": "LY.WEALTH.YL.22",
+      "topic": "开店",
+      "chapter": "开张店肆章第一百五",
+      "chapter_en": "Chapter 105 - Opening a shop",
+      "title": "开张（空拳）：以官为主，财鬼并值，财动助鬼、鬼动发财；空拳问利官爻喜遇兴隆",
+      "rule": {
+        "yi": "空手开张：以官爻为主，一定要财和官鬼同时有；财动就帮官鬼，官鬼动就发财；九流的手艺无中生有、空手得财，所以经上说，空手问利，官爻喜欢遇到兴旺。",
+        "en": "Opening a shop empty-handed: Pressure is the chief; both Wealth and Pressure must be present; Wealth moving helps Pressure and Pressure moving makes money; the skills of the trades make something from nothing, so the classic says: empty-handed, Pressure is glad to meet a thriving state."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["空拳财鬼皆宜动，"],
+          "yi": ["空手开张的，财和官鬼都宜发动；"],
+          "en": ["Empty-handed, Wealth and Pressure should both move;"] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["空拳问利者，以官为主，", "必得财鬼并值，财动则助鬼，鬼动则发财。", "九流之术，无中生有，空手得财，", "故经云：空拳问利，官爻喜遇兴隆。"],
+          "yi": ["空手问利的，以官爻为主，", "一定要财和官鬼同时有，财动就帮官鬼，官鬼动就发财；", "九流的手艺，无中生有，空手得财，", "所以经上说：空手问利，官爻喜欢遇到兴旺。"],
+          "en": ["Empty-handed, Pressure is the chief;", "Wealth and Pressure must both be present: Wealth moving helps Pressure, and Pressure moving makes money;", "the skills of the trades create something out of nothing and gain money with empty hands,", "so the classic says: 'empty-handed, Pressure is glad to meet a thriving state.'"] }
+      ],
+      "see": ["LY.WEALTH.TXF.02", "LY.WEALTH.YY.09"]
+    },
+    {
+      "id": "LY.WEALTH.YL.23",
+      "topic": "开店",
+      "chapter": "开张店肆章第一百五",
+      "chapter_en": "Chapter 105 - Opening a shop",
+      "title": "开张遇六冲兄弟发，开不满一年",
+      "rule": {
+        "yi": "开张遇六冲又兄弟发动，一定开不满一年：卦是六冲，不论有本钱还是空手，到头来成不了，成了也不长久；只有兄弟发动，有本钱的还嫌不好，空手的没有妨碍。",
+        "en": "A Six-Clash with Peer moving means the shop will not last a year: in a Six-Clash hexagram, with capital or empty-handed, it comes to nothing or does not last; with only Peer moving, it is still unwelcome with capital but no taboo for the empty-handed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["若遇六冲兄弟发，", "定是开张不满年。"],
+          "yi": ["如果遇到六冲，兄弟又发动，", "一定是开张不满一年。"],
+          "en": ["If you meet a Six-Clash with Peer moving,", "the shop surely will not last a year."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["卦值六冲，不论将本空拳者，", "毕竟不成，成来不久，岂有利禄哉？", "若兄弟独发，将本犹嫌，空拳无忌。"],
+          "yi": ["卦是六冲，不论有本钱的还是空手的，", "到头来成不了，成了也不长久，哪里会有利禄？", "如果只有兄弟发动，有本钱的还嫌不好，空手的没有妨碍。"],
+          "en": ["A Six-Clash hexagram, whether with capital or empty-handed,", "will come to nothing in the end, or if it succeeds it will not last: how could there be profit?", "If only Peer moves, it is still unwelcome with capital, but no taboo for the empty-handed."] }
+      ],
+      "see": ["LY.WEALTH.YY.23", "LY.WEALTH.HJC.32"]
+    },
+    {
+      "id": "LY.WEALTH.YL.24",
+      "topic": "开店",
+      "chapter": "开张店肆章第一百五",
+      "chapter_en": "Chapter 105 - Opening a shop",
+      "title": "世动则己心多变，应动则伙伴怀反背，应空无能不久；应克世更要防欺害分离",
+      "rule": {
+        "yi": "世代表自己，不宜发动，一动心里变化多端；应代表伙伴，也宜安静，一动就怀了背叛的心，空就没有能力也不长久，动而克世，更要防被欺害、分离；应空，合伙的人还是换掉为好。",
+        "en": "The Self stands for oneself and should not move: moving, the mind changes in many ways. The Other stands for the partner and should also be still: moving, he harbors a heart of betrayal; void, he has no ability and will not last; moving and controlling the Self, expect to be cheated and harmed and to part. With the Other void, the partner should be replaced."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["又云世动己心多改易，", "应空夥伴再宜更。"],
+          "yi": ["又说：世动，自己的心多有改变；", "应空，合伙的人还是换掉为好。"],
+          "en": ["It also says: if the Self moves, one's own mind changes often;", "if the Other is void, the partner should be replaced."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["世为自己，岂宜发动，动则心有变多端。", "应为伴夥，亦宜安静，动则怀反背之心，", "空则无能亦不久远，", "若动而克世者，尤当欺害而分离。"],
+          "yi": ["世代表自己，怎么宜于发动？一动，心里就有很多变化；", "应代表伙伴，也宜安静，一动就怀了背叛的心；", "空就没有能力，也不能长久；", "如果动而克世，更是要被欺害而分离。"],
+          "en": ["The Self stands for oneself; how could it be right for it to move? Moving, the mind changes in many ways;", "the Other stands for the partner and should also be still; moving, he harbors a heart of betrayal;", "void, he has no ability and will not last;", "if he moves and controls the Self, all the more will he cheat and harm you and you will part."] }
+      ],
+      "see": ["LY.WEALTH.ZS.08", "LY.WEALTH.YY.25", "LY.WEALTH.HJC.27"]
+    },
+    {
+      "id": "LY.WEALTH.YL.25",
+      "topic": "动变",
+      "chapter": "开张店肆章第一百五",
+      "chapter_en": "Chapter 105 - Opening a shop",
+      "title": "财是根本不可变：化鬼化兄则耗散无结果，化子孙则利禄津津",
+      "rule": {
+        "yi": "财是根本，不能变动：化成官鬼、变成兄弟，财就被耗散，两条路都没有好处，终究难有结果；财化成子孙，则利禄滚滚，永远没有边际。",
+        "en": "Wealth is the root and must not change: turning into Pressure or Peer, Wealth is consumed and scattered, neither way does any good, and in the end there is no result; Wealth turning into Output, profit and emolument flow on without limit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗",
+          "zh": ["财化鬼兄无结果，", "财之子象有收成。"],
+          "yi": ["财化成官鬼或兄弟，没有结果；", "财化成子孙的象，有收成。"],
+          "en": ["Wealth turning into Pressure or Peer comes to no result;", "Wealth turning into an image of Output brings a harvest."] },
+        { "by": "易林补遗解", "book": "易林补遗",
+          "zh": ["财为根本，不可更变。", "若化鬼变兄，则财被耗散，两途无益，终难结果，", "若财化子孙，则利禄津津，永久无缰。"],
+          "yi": ["财是根本，不能变动。", "如果化成官鬼、变成兄弟，财就被耗散，两条路都没有好处，终究难有结果；", "如果财化成子孙，就利禄滚滚，永远没有边际。"],
+          "en": ["Wealth is the root and must not change.", "If it turns into Pressure or changes into Peer, Wealth is consumed and scattered; neither way does any good, and in the end there is no result;", "if Wealth turns into Output, profit and emolument flow on and on without limit."] }
+      ],
+      "see": ["LY.WEALTH.HJC.15", "LY.WEALTH.HJC.17", "LY.WEALTH.HJC.18", "LY.WEALTH.TXF.03"]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易天机",
+  "chapter": "散见各章·论(占病一句)",
+  "chapter_en": "Scattered sections: the discussions (the sentences on illness)",
+  "ranges": {"断易天机": [1, 135]},
+  "units": [
+    {
+      "id": "LY.ILL.DYTJ.22",
+      "topic": "总则",
+      "chapter": "六十四卦吉凶歌",
+      "chapter_en": "The song of the good and ill fortune of the sixty-four hexagrams",
+      "title": "六十四卦吉凶歌·无鬼七卦：小畜未济家人旅讼益颐七者皆无鬼、问病可喜亦可悲",
+      "rule": {
+        "yi": "小畜、未济、家人、旅、讼、益、颐这七个卦，卦里都没有鬼；占病的时候，可喜也可悲。",
+        "en": "Xiaochu, Weiji, Jiaren, Lü, Song, Yi (Increase) and Yi (Nourishment): in all these seven hexagrams there is no ghost; in asking after illness it may be glad and it may be sad."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [11, 11],
+          "zh": ["小畜未济家人卦，", "更同旅讼并益颐，", "七者之中皆无鬼（3），", "问病可喜亦可悲。"],
+          "yi": ["小畜、未济、家人这几个卦，", "再加上旅、讼、益、颐，", "这七个卦里都没有鬼，", "问病的时候，可喜也可悲。"],
+          "en": ["Xiaochu, Weiji and Jiaren,", "together with Lü, Song, Yi (Increase) and Yi (Nourishment),", "in all these seven there is no ghost,", "in asking after illness it may be glad and it may be sad."] }
+      ],
+      "note": {
+        "yi": "这是《六十四卦吉凶歌》里的一段：歌里先说哪些卦没有父母、哪些卦没有兄弟、哪些卦没有妻财、哪些卦没有子孙，最后是这七个卦「皆无鬼」。「（3）」是今人加的注号，那条注不收。「问病可喜亦可悲」为什么可喜、为什么可悲，歌里没有说：没有鬼，可以说没有病或没有祟（喜），也可以说没有能祈求的鬼神、没有病的出口（悲）；后一种读法和这一章孙膑断疾病歌「卦中无鬼病难医」（LY.ILL.DYTJ.02）、「占病无鬼，必无叩告之门」（LY.ILL.DYTJ.24）一致，前一种读法和易林补遗「鬼空亡或不上卦决无鬼祟」（LY.ILL.EL.29）一致，这里只照原文译，不作选择。「益」「颐」拼音都是 Yi，英文分别标出。",
+        "en": "This is a passage of the 'Song of the good and ill fortune of the sixty-four hexagrams': the song first says which hexagrams have no Resource, which no Peer, which no Wealth and which no Output, and last that in these seven hexagrams there is 'no ghost in all'. The '(3)' is a modern annotation mark and that annotation is not quoted. Why 'in asking after illness it may be glad and it may be sad' the song does not say: with no ghost one can say there is no illness or no curse (glad), or that there is no spirit to appeal to and no way out for the illness (sad); the second reading agrees with 'with no ghost in the hexagram the illness is hard to treat' in Sun Bin's song in this chapter (LY.ILL.DYTJ.02) and 'divining illness with no ghost, there is surely no door to knock and pray at' (LY.ILL.DYTJ.24), and the first agrees with the Yilin Buyi's 'a ghost Void or not in the hexagram surely has no ghostly curse' (LY.ILL.EL.29); here it is only rendered as in the original and no choice is made. The two characters 'yi' and 'yi' have the same pinyin, and the English marks them separately."
+      },
+      "see": ["LY.ILL.DYTJ.02", "LY.ILL.DYTJ.24", "LY.ILL.EL.29", "LY.ILL.EL.10"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.23",
+      "topic": "生死",
+      "chapter": "论墓字如何取用",
+      "chapter_en": "How to use the word tomb",
+      "title": "论墓字如何取用：辰戌丑未五行之库、凶爻要入吉爻不可墓；人墓、事墓、鬼墓；占病得鬼墓为庙神、占病墓旺鬼难脱病难安多死、鬼是庙神墓旺乃太庙之神；墓要冲克破即解神",
+      "rule": {
+        "yi": "辰、戌、丑、未是五行的库（墓）：凶爻要入库，吉爻不可入墓，入墓就成了休囚。墓有三种：人墓、事墓、鬼墓。人墓：比如占兄弟的病，墓在辰，当日是戌，虽然合着入了墓，也不会死；人旺墓衰，不会死；兄弟旺、墓爻衰，不会死。鬼墓：占病得到鬼墓，鬼是庙里的神；占病而墓旺，鬼难脱身、病难安、多半死；占病时鬼是庙神，若墓旺，就是大庙的神，不是小小的神祠。墓这个字，要冲克破它，这是按墓爻的活法来论，也就是解神。",
+        "en": "Chen, Xu, Chou and Wei are the storehouses (tombs) of the five phases: a fierce line should enter one, a lucky line must not be in a tomb, and in a tomb it is resting or trapped. There are three tombs: the person's tomb, the matter's tomb and the ghost's tomb. The person's tomb: for example divining a brother's illness, the tomb is Chen and the day is Xu; though it combines and enters the tomb he does not die; if the person is strong and the tomb weak he does not die; if the brother is strong and the tomb line weak he does not die. The ghost's tomb: divining illness and obtaining the ghost's tomb, the ghost is a temple god; divining illness with the tomb strong, the ghost is hard to shake off, the illness hard to settle and mostly ends in death; where the ghost is a temple god in divining illness, if the tomb is strong it is a god of a great temple and not a small shrine. As for the word tomb, it must be clashed, controlled or broken; this is judged by the living method of the tomb line, and it is the resolving spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [32, 32],
+          "zh": ["辰戌丑未，", "五行之库，", "凶爻要入，", "吉爻不可墓，", "墓则为休囚。", "有人墓、事墓、鬼墓。"],
+          "yi": ["辰、戌、丑、未，", "是五行的库（墓）；", "凶爻要入库，", "吉爻不可入墓，", "入墓就成了休囚。", "墓有人墓、事墓、鬼墓三种。"],
+          "en": ["Chen, Xu, Chou and Wei,", "are the storehouses (tombs) of the five phases:", "a fierce line should enter one,", "a lucky line must not be in a tomb,", "and in a tomb it is resting or trapped.", "There are the person's tomb, the matter's tomb and the ghost's tomb."] },
+        { "by": "经", "book": "断易天机", "range": [32, 32], "literal": ["兄弟"],
+          "zh": ["何为人墓？", "且如占兄弟病，辰为墓，当日是戌，", "虽合入墓，不死；", "又人旺墓衰，不死；", "兄弟旺，墓爻衰，不死。"],
+          "yi": ["什么是人墓？", "比如占兄弟的病，墓在辰，当日是戌，", "虽然合着入了墓，也不会死；", "又人旺墓衰，不会死；", "兄弟旺、墓爻衰，不会死。"],
+          "en": ["What is the person's tomb?", "For example, divining a brother's illness, the tomb is Chen and the day is Xu;", "though it combines and enters the tomb he does not die;", "again, if the person is strong and the tomb weak he does not die;", "if the brother is strong and the tomb line weak he does not die."] },
+        { "by": "经", "book": "断易天机", "range": [32, 32],
+          "zh": ["何为鬼墓？", "占病得鬼墓，为庙神；"],
+          "yi": ["什么是鬼墓？", "占病得到鬼墓，鬼是庙里的神；"],
+          "en": ["What is the ghost's tomb?", "Divining illness and obtaining the ghost's tomb, the ghost is a temple god;"] },
+        { "by": "经", "book": "断易天机", "range": [32, 32],
+          "zh": ["占病墓旺，鬼难脱，病难安，多死。"],
+          "yi": ["占病而墓旺，鬼难脱身，病难安，多半死。"],
+          "en": ["Divining illness with the tomb strong, the ghost is hard to shake off, the illness hard to settle, and mostly it ends in death."] },
+        { "by": "经", "book": "断易天机", "range": [32, 32],
+          "zh": ["占病鬼是庙神，如墓旺，乃太庙之神，非小小神祠。"],
+          "yi": ["占病时鬼是庙神，若墓旺，就是大庙的神，不是小小的神祠。"],
+          "en": ["Where the ghost is a temple god in divining illness, if the tomb is strong it is a god of a great temple and not a small shrine."] },
+        { "by": "经", "book": "断易天机", "range": [32, 32],
+          "zh": ["墓之一字，要冲克破，此以墓爻活法论之，即解神也。"],
+          "yi": ["墓这个字，要冲克破它，这是按墓爻的活法来论，也就是解神。"],
+          "en": ["As for the word tomb, it must be clashed, controlled or broken; this is judged by the living method of the tomb line, and it is the resolving spirit."] }
+      ],
+      "note": {
+        "yi": "这一段是断易天机「问曰：墓字如何取用」的答话，原来的问答一问一答是旺、墓、空三字各一段，这里只收墓字。原文说墓有三种（人墓、事墓、鬼墓），但只把人墓和鬼墓举了例，事墓只说了「所卜之事为难成费力」（占病用不到，不收）。「人墓」是人（用爻）入墓：占兄弟病，兄弟属土（或以辰为墓），当日是戌，虽戌辰相冲、合入墓，也不死；人旺墓衰、兄弟旺墓爻衰也不死。「鬼墓」里「占病得鬼墓，为庙神」是说这一病的鬼入了墓，这个鬼是庙里的神灵（鬼是神灵作祟）；「墓旺」是墓爻旺，鬼在墓里出不来（脱不了），所以病难安。这一节的「鬼墓」和火珠林的三墓（LY.ILL.HZL.01：宫墓、鬼墓、财墓，是世爻遇到某一墓）不是同一个分类：火珠林的鬼墓是鬼爻五行的墓，这里的鬼墓是鬼入墓；两处都说墓与鬼合在一起病重。「占贼」「占讼」「占失物」「占行人」「占财」的几句不在病的范围，不收。「解神」是把凶事解开的神，墓爻被冲克破，也就是解神。",
+        "en": "This passage is the answer to 'someone asks: how is the word tomb to be used' in the Duanyi Tianji; the questions and answers originally take the three words strong, tomb and Void a passage each, and only the word tomb is taken here. The original says there are three tombs (the person's, the matter's and the ghost's) but gives examples only for the person's and the ghost's, and for the matter's tomb says only 'the thing divined is hard to accomplish and costs effort' (not used in illness, and not taken). The 'person's tomb' is the person (the Subject line) entering a tomb: divining a brother's illness, the tomb is Chen and the day is Xu, and though it combines and enters the tomb he does not die; and if the person is strong and the tomb weak, or the brother strong and the tomb line weak, he does not die. In the 'ghost's tomb', 'divining illness and obtaining the ghost's tomb, the ghost is a temple god' says that the ghost of this illness has entered a tomb, and this ghost is a spirit of a temple (a spirit is bringing the curse); 'the tomb strong' is the tomb line strong, and the ghost cannot get out of the tomb (cannot shake off), and so the illness is hard to settle. The 'ghost's tomb' of this passage and the three tombs of the Huozhu Lin (LY.ILL.HZL.01: the palace tomb, the ghost's tomb and the Wealth tomb, where the Self line meets one of the tombs) are not the same classification: the Huozhu Lin's ghost's tomb is the tomb of the phase of the ghost line, and this passage's ghost's tomb is the ghost entering a tomb; both say that a tomb joined with the ghost makes the illness heavy. The sentences about divining a thief, a lawsuit, lost things, a traveller and wealth are outside illness and are not taken. The 'resolving spirit' is a spirit that unties an ill matter, and a tomb line that is clashed, controlled or broken is the resolving spirit."
+      },
+      "see": ["LY.ILL.HZL.01", "LY.ILL.TXF.06", "LY.ILL.DYTJ.27", "LY.ILL.HDY.11"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.24",
+      "topic": "总则",
+      "chapter": "散见各章·论",
+      "chapter_en": "Scattered sections: the discussions",
+      "title": "无鬼无气·占病：占病无鬼必无叩告之门、乃天年命尽也、其病难疗",
+      "rule": {
+        "yi": "官鬼这一爻没有形体却有用处，卦里不能没有，宜静不宜动；带着吉神动也能有福，加上凶煞动没有不成祸的。占病而卦里没有鬼，一定没有可以叩告（祷告）的门路，这是天年命数到头了，病难疗。",
+        "en": "Pressure has no form but has its use; it must not be absent from the hexagram, and should be still and not move; moving with a lucky spirit it can also bring fortune, moving with a fierce star it always brings calamity. In divining illness with no ghost in the hexagram, there is surely no door to knock at and pray, for the heavenly years and the fate are used up, and the illness is hard to treat."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [43, 43],
+          "zh": ["鬼者，", "无形而有用；", "卦中不可无，", "宜静不宜动。", "带吉神动，", "亦能为福；", "加凶煞动，", "无不为殃。"],
+          "yi": ["鬼这个东西，", "看不见形体却有用处；", "卦里不能没有，", "宜于安静，不宜发动。", "带着吉神发动，", "也能带来福；", "加上凶煞发动，", "没有不成为祸殃的。"],
+          "en": ["As for Pressure,", "it has no form yet has its use;", "it must not be absent from the hexagram,", "it should be still and not move.", "moving with a lucky spirit,", "it can also bring fortune;", "moving with a fierce star,", "it never fails to bring calamity."] },
+        { "by": "经", "book": "断易天机", "range": [52, 52],
+          "zh": ["占病无鬼，", "必无叩告之门，", "乃天年命尽也，", "其病难疗。"],
+          "yi": ["占病而卦里没有鬼，", "一定没有可以叩告的门路，", "这是天年命数到头了，", "病难治疗。"],
+          "en": ["In divining illness with no ghost in the hexagram,", "there is surely no door to knock at and pray,", "for the heavenly years and the fate are used up,", "means an illness hard to treat."] }
+      ],
+      "note": {
+        "yi": "头一段是「无鬼无气」一章的总句，占婚、占官、占讼、求财各有各的例（见 LY.MARRY.DYTJ.01 一带），这一条只收占病那一句。「叩告之门」是叩首祷告的门路，大概是没有鬼就没有能祈求的鬼神（病的祟没有着落），所以没有办法祷解；「天年命尽」是天年（寿数）到了头。这一句和「卦中无鬼病难医」（LY.ILL.DYTJ.02）、天玄赋「卦若无鬼，其病难医」（LY.ILL.TXF.10）、阐奥歌章「卦中无鬼病难医」（LY.ILL.CA.04）是同一条。下面一句「惟有占产、出行、行人、田蚕，无鬼方为大吉」不在病的范围，不收。",
+        "en": "The first passage is the general statement of the chapter 'no ghost and no qi', and marriage, office, lawsuit and wealth each have their own cases (see LY.MARRY.DYTJ.01 and around); this entry takes only the sentence on illness. The 'door of knocking and praying' is the way of bowing and praying, and it probably means that with no ghost there is no spirit to appeal to (the curse of the illness has nowhere to rest), and so there is no way to pray it away; 'the heavenly years and the fate are used up' is that the lifespan has come to its end. This sentence is the same as 'with no ghost in the hexagram the illness is hard to treat' (LY.ILL.DYTJ.02), the Tianxuan Fu's 'if the hexagram has no ghost, the illness is hard to treat' (LY.ILL.TXF.10) and the Chan'ao Gezhang's 'with no ghost in the hexagram the illness is hard to treat' (LY.ILL.CA.04). The next sentence, 'only in divining childbirth, travel, a traveller and fields and silkworms is no ghost greatly lucky', is outside illness and is not taken."
+      },
+      "see": ["LY.ILL.DYTJ.02", "LY.ILL.DYTJ.22", "LY.ILL.TXF.10", "LY.ILL.CA.04", "LY.ILL.EL.10"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.25",
+      "topic": "生死",
+      "chapter": "散见各章·论",
+      "chapter_en": "Scattered sections: the discussions",
+      "title": "绝处逢生·占病：用爻与吉神绝处逢生病将死而复活；鬼爻与忌神绝处逢生病欲安而复作",
+      "rule": {
+        "yi": "绝处逢生：比如申日占卜，卦里的用爻属木，木遇到申就是绝，这木爻就没有用了，和没有一样；如果有水爻发动，水在申长生，动来相生，木爻又重新有用，好比人在困窘的时候遇到贵人扶持，必有寒谷回春的样子。占病：用爻和吉神在绝处逢生，病将死而又活过来；鬼爻和忌神在绝处逢生，病快要好了却又发作。",
+        "en": "Meeting life in a place of extinction: for example, on a Shen day the Subject line in the hexagram belongs to Wood; Wood meeting Shen is in Extinction and this Wood line is of no use, the same as absent; if a Water line moves, Water having its Long Life at Shen moves to generate it, and the Wood line is again of use, like a person in hard straits who meets a patron to support him, and there is surely the look of spring returning to a cold valley. Divining illness: if the Subject line and a lucky spirit meet life in a place of extinction, the illness about to end in death revives; if the Pressure line and the Adversary meet life in a place of extinction, the illness about to settle breaks out again."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [56, 56],
+          "zh": ["且如申日占，", "卦遇用爻属木，", "木见申则绝，", "木爻无用矣。", "此同无也。", "若得水爻发动，", "水长生动来相生，", "木爻仍复有用。", "譬如人当困穷之际，", "得遇贵人扶持，", "必有寒谷回春之象，", "此乃是绝处逢生也。"],
+          "yi": ["比如申日占卜，", "卦里的用爻属木，", "木遇到申就是绝，", "这木爻就没有用了。", "这等于没有。", "如果有水爻发动，", "水在申长生，动来生木，", "这木爻又重新有用了。", "好比人在困窘的时候，", "遇到贵人扶持，", "必有寒谷回春的样子，", "这就是绝处逢生。"],
+          "en": ["Take a divination on a Shen day:", "the Subject line in the hexagram belongs to Wood;", "Wood meeting Shen is in Extinction,", "and this Wood line is of no use.", "this is the same as having none.", "If a Water line moves,", "Water having its Long Life at Shen moves to generate it,", "the Wood line is again of use.", "like a person in hard straits", "who meets a patron to support him,", "there is surely the look of spring returning to a cold valley;", "this is meeting life in a place of extinction."] },
+        { "by": "经", "book": "断易天机", "range": [65, 65],
+          "zh": ["占病：", "用爻与吉神绝处逢生，", "病将死而复活。", "鬼爻与忌神绝处逢生，", "病欲安而复作。"],
+          "yi": ["占病时：", "用爻和吉神在绝处逢生，", "病将死而又活过来；", "鬼爻和忌神在绝处逢生，", "病快要好了却又发作。"],
+          "en": ["Divining illness:", "if the Subject line and a lucky spirit meet life in a place of extinction,", "the illness about to end in death revives;", "if the Pressure line and the Adversary meet life in a place of extinction,", "the illness about to settle breaks out again."] }
+      ],
+      "note": {
+        "yi": "「绝处逢生」是断易天机「论」里的一章：一个爻在它的绝地，又逢生它的爻发动来相生，就像人在困境里遇到贵人。这一章占婚、占产、占官、占讼、求财、出行、行人、家宅各有一例（见 LY.MARRY.DYTJ 一带、LY.WEALTH.DYTJ 一带），这一条收占病那一句：用爻（病人）遇吉神绝处逢生，病将死而复活；鬼爻（病）遇忌神（生鬼的神）绝处逢生，病要好了又发作。「木见申则绝」是木在申（金）受克为绝；「水长生动来相生」是水在申长生。这两句和天玄赋「月解交重灾渐退，天医发动便回生」（LY.ILL.TXF.05）的「病将好又复发」是不同的：那里是吉神动，这里是绝地逢生。",
+        "en": "'Meeting life in a place of extinction' is a chapter in the 'discussions' of the Duanyi Tianji: a line in its place of extinction, with a line that generates it moving to generate it, like a person in hard straits meeting a patron. This chapter has one case each for marriage, childbirth, office, lawsuit, wealth, travel, a traveller and the house (see LY.MARRY.DYTJ and around, LY.WEALTH.DYTJ and around), and this entry takes the sentence on illness: the Subject line (the sick person) with a lucky spirit meeting life in a place of extinction, the illness about to end in death revives; the Pressure line (the illness) with the Adversary (the spirit that generates the ghost) meeting life in a place of extinction, the illness about to settle breaks out again. 'Wood meeting Shen is in Extinction' is Wood controlled at Shen (Metal) and so in Extinction; 'Water having its Long Life at Shen' is Water born long-lived at Shen. These two lines differ from the Tianxuan Fu's 'when the Month resolves and the Day moves heavily calamity fades, when the Heavenly Physician moves he recovers at once' (LY.ILL.TXF.05): there it is a lucky spirit moving, and here it is meeting life in extinction."
+      },
+      "see": ["LY.ILL.TXF.05", "LY.ILL.DYTJ.26", "LY.ILL.DYTJ.27"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.26",
+      "topic": "生死",
+      "chapter": "散见各章·论",
+      "chapter_en": "Scattered sections: the discussions",
+      "title": "合处逢冲·占病：惟有占讼与病喜遇合处逢冲；合则事必成、逢冲灾必散、事将危而有救病欲死而复生；吉神合处不可冲、凶神合处喜逢冲",
+      "rule": {
+        "yi": "合处逢冲：比如占得雷地豫卦，世应相生，六爻相合，吉，没有不利的，是事事可以成的样子；却是在子日占得，子冲应上的午、害世上的未，这就是合处逢冲。只有占官司和占病，喜欢遇到合处逢冲：合，事就一定成；逢冲，灾就一定散；事将危而有救，病欲死而复生。其余照这样类推。又说：吉神合的地方不可以冲，凶神合的地方喜欢逢冲。大概可以照这个断。",
+        "en": "A clash where there is a combination: for example, divining the hexagram Thunder over Earth, Yu: the Self and the Other generate each other, the six lines combine, lucky and nothing unfavourable, the image of every matter succeeding; but it is divined on a Zi day, and Zi clashes with the Wu on the Other line and harms the Wei on the Self line, which is meeting a clash where there is a combination. Only in divining a lawsuit and an illness is meeting a clash where there is a combination welcome: combining, the matter surely succeeds; meeting a clash, calamity surely scatters; a matter about to be in danger is rescued, an illness about to end in death revives. The rest follow this. It also says: where a lucky spirit combines it must not be clashed, and where a fierce spirit combines a clash is welcome. One may perhaps follow this judgement."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [68, 68],
+          "zh": ["且如占得雷地豫卦。", "世应相生，", "六爻相合，", "吉无不利，", "乃事事可成之象也。", "却在子日占得，", "子冲应上午、害世上未，", "此乃合处逢冲也。"],
+          "yi": ["比如占到雷地豫卦。", "世应相生，", "六爻相合，", "吉，没有不利的，", "是事事可以成的样子。", "却是在子日占到的，", "子冲应爻上的午、又害世爻上的未，", "这就是合处逢冲。"],
+          "en": ["Suppose the divination gets the Yu hexagram, Thunder over Earth.", "The Self and the Other generate each other,", "the six lines combine,", "lucky and nothing unfavourable,", "the image of every matter succeeding.", "But it is got on a Zi day,", "and Zi clashes the Wu on the Other line and harms the Wei on the Self line;", "this is 'meeting a clash where there was combination'."] },
+        { "by": "经", "book": "断易天机", "range": [73, 74],
+          "zh": ["惟有占讼与病，", "喜遇合处逢冲。", "合则事必成，", "逢冲灾必散。", "事将危而有救、病欲死而复生。", "其余仿此。", "又云：", "吉神合处不可冲，", "凶神合处喜逢冲也。", "庶几可遵此断。"],
+          "yi": ["只有占官司和占病，", "喜欢遇到合处逢冲。", "合，事就一定成；", "逢冲，灾就一定散；", "事将危而有救，病欲死而复生。", "其余照这样类推。", "书里又有一首说：", "吉神合的地方不可以冲，", "凶神合的地方喜欢逢冲。", "大概可以照这个断。"],
+          "en": ["Only in divining a lawsuit and an illness", "is meeting a clash where there is a combination welcome.", "Combining, the matter surely succeeds;", "meeting a clash, calamity surely scatters;", "a matter about to be in danger is rescued, an illness about to end in death revives.", "The rest follow this.", "The book also has another verse, which says:", "where a lucky spirit combines it must not be clashed,", "and where a fierce spirit combines a clash is welcome.", "one may perhaps follow this judgement."] }
+      ],
+      "note": {
+        "yi": "「合处逢冲」一章的总句是：吉事逢合本来好，若在合的地方遇冲，事情将成而破。占婚、占官、占财、谋事都是这样，只有占官司和占病是例外：那两样要的是灾散，逢冲正好。这一条是占病那一句：病快要死了逢冲就活。「子冲应上午、害世上未」是子日冲午、又害未（子未相害）。这一句和这本书的「逢冲」一章（LY.ILL.DYTJ.28）一起，是冲在病里的两面：合处逢冲救病，静爻遇日冲叫暗动，吉凶都有。另外，天玄赋的「月解交重灾渐退」（LY.ILL.TXF.05）也是把灾冲散一类。",
+        "en": "The general statement of the chapter 'a clash where there is a combination' is that a lucky matter meeting a combination is good, but if it meets a clash in the place of the combination, the matter about to succeed is broken. It is so in divining marriage, office, wealth and planning a matter, and only in divining a lawsuit and an illness is it the exception: those two want calamity to scatter, and meeting a clash is just right. This entry is the sentence on illness: an illness about to end in death lives on meeting a clash. 'Zi clashes with the Wu on the Other line and harms the Wei on the Self line' is the Zi day clashing with Wu and also harming Wei (Zi and Wei harm each other). This sentence together with the chapter of this book on 'meeting a clash' (LY.ILL.DYTJ.28) gives the two sides of a clash in illness: a clash where there is a combination saves the illness, and a still line meeting a day clash is called a hidden movement, with both luck and ill. The Tianxuan Fu's 'when the Month resolves and the Day moves heavily calamity fades' (LY.ILL.TXF.05) is also of the kind that scatters calamity."
+      },
+      "see": ["LY.ILL.DYTJ.25", "LY.ILL.DYTJ.28", "LY.ILL.TXF.05"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.27",
+      "topic": "生死",
+      "chapter": "散见各章·论",
+      "chapter_en": "Scattered sections: the discussions",
+      "title": "随官入墓·占病：身随鬼入墓、世随鬼入墓、命随鬼入墓，不问占何事皆非吉兆；占病遇之十占九死",
+      "rule": {
+        "yi": "随官入墓有三种：身随鬼入墓、世随鬼入墓、命随鬼入墓。以上三种墓，不问占什么事，都不是吉兆。占病遇到它，十占里有九个死。",
+        "en": "Following the ghost into a tomb has three kinds: the Body following the ghost into a tomb, the Self following the ghost into a tomb, and the natal line following the ghost into a tomb. These three tombs, whatever is divined, are none of them a lucky sign. Divining illness and meeting one, nine out of ten die."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [78, 78],
+          "zh": ["随官入墓，", "其目有三：", "有身随鬼入墓，", "有世随鬼入墓，", "有命随鬼入墓。"],
+          "yi": ["跟着官鬼入墓，", "它的名目有三种：", "有卦身跟着鬼入墓，", "有世爻跟着鬼入墓，", "有本命跟着鬼入墓。"],
+          "en": ["Following Pressure into the tomb", "its kinds are three:", "the Body following Pressure into the tomb,", "the Self following Pressure into the tomb,", "and the natal line following Pressure into the tomb."] },
+        { "by": "经", "book": "断易天机", "range": [82, 82],
+          "zh": ["以上三墓，", "不问占何事，", "皆非吉兆。"],
+          "yi": ["以上三种入墓，", "不管占什么事，", "都不是吉兆。"],
+          "en": ["Of these three tombs,", "whatever is being divined,", "none is an auspicious sign."] },
+        { "by": "经", "book": "断易天机", "range": [93, 93],
+          "zh": ["占病遇之，", "十占九死。"],
+          "yi": ["占病遇到它，", "十占里有九个死。"],
+          "en": ["Divining illness and meeting it,", "nine out of ten die."] }
+      ],
+      "note": {
+        "yi": "「随官入墓」的三种（身、世、命随鬼入墓）在这本书里各有一个卦例（丑日占得雷水解卦、未日占得山天大畜、未日寅日生人占得地雷复……），例不收。这一条只收总句和占病的一句：「占病遇之，十占九死」。天玄赋的「入墓卦」（LY.ILL.TXF.06）说的是「世身随鬼入墓决不瘥」，这里多了「命随鬼入墓」（病人的本命爻随鬼入墓）。「命」是病人的本命爻，这一点和孙膑断疾病歌里「先从卦中寻本命」（LY.ILL.DYTJ.02）是同一个「命」。其余各事（占身、占婚、占产、求官、占讼、求财、出行、行人、家宅、移居、风水）的一句不在病的范围，不收。",
+        "en": "Each of the three kinds of 'following the ghost into a tomb' (the Body, the Self and the natal line following the ghost into a tomb) has an example hexagram in this book (a Chou day divining Thunder over Water, Jie; a Wei day divining Mountain over Heaven, Daxu; a Wei day and a person born on a Yin day divining Earth over Thunder, Fu ...), and the examples are not taken. This entry takes only the general statement and the sentence on illness: 'divining illness and meeting it, nine out of ten die'. The Tianxuan Fu's 'hexagrams that enter tombs' (LY.ILL.TXF.06) says 'the Self and the Body following the ghost into a tomb surely does not recover', and here there is in addition 'the natal line following the ghost into a tomb' (the sick person's natal line following the ghost into a tomb). The 'natal line' is the sick person's natal line, the same 'natal line' as in 'first look in the hexagram for the natal line' in Sun Bin's song (LY.ILL.DYTJ.02). The sentences for the other matters (the person, marriage, childbirth, seeking office, lawsuit, wealth, travel, a traveller, the house, moving house, geomancy) are outside illness and are not taken."
+      },
+      "see": ["LY.ILL.TXF.06", "LY.ILL.DYTJ.02", "LY.ILL.DYTJ.23"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.28",
+      "topic": "动变",
+      "chapter": "散见各章·论",
+      "chapter_en": "Scattered sections: the discussions",
+      "title": "逢冲暗动·占病：六爻安静不遇冲则不动、日辰相冲名曰暗动；凶煞暗动伤身克世百事不佳、吉神暗动合世生身事事吉；占病遇之吉则病人有默佑、凶则脉阴隙所致、病人不病须防暗有伤",
+      "rule": {
+        "yi": "六爻安静，不遇到冲就不动；如果日辰来冲它，叫作暗动。暗动有吉有凶，各有各的用处，不可以一概而论：凶煞暗动、伤身克世，百事都不好；吉神暗动、合世生身，事事都吉。我推究它的意思：暗的一定不是明的，是阴私、潜藏的样子，福来了却不知道，祸来了却没有察觉；爻吉，暗中就有补益，爻凶，暗中就有伤害。占病遇到它：吉，就说病人有暗中的保佑；凶，就说是脉络里暗中的空隙造成的；病人若还没有发病，也要防暗中有伤。这一章宜细细玩味，就万无一失。",
+        "en": "When the six lines are still, they do not move unless they meet a clash; if the Day clashes with one, it is called a hidden movement. A hidden movement has luck and ill, each with its own use, and it cannot be judged all alike: a fierce killing moving hidden, injuring the Body and controlling the Self, is not good in all things; a lucky spirit moving hidden, combining with the Self and generating the Body, is lucky in everything. I work out its sense: what is hidden is surely not open, it is of the private and the concealed, fortune comes and one does not know it, calamity comes and one does not notice it; if the line is lucky there is help in secret, and if ominous there is injury in secret. Divining illness and meeting it: if lucky it is said the sick person has a silent protection; if ominous it is said to be caused by a hidden gap in the pulse; and if the sick person is not yet sick one must guard against a hidden injury. This chapter should be studied closely, and nothing will fail."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [102, 102],
+          "zh": ["且如六爻安静，", "不遇冲则不动。", "若日辰相冲，", "名曰暗动。", "暗动者，", "有吉有凶，", "各有所用焉，", "不可一概而论。", "若遇凶煞暗动,伤身克世，", "百事皆不为佳。", "吉神暗动，", "合世生身，", "事事无不为吉。", "吾推其义，", "暗者必非明也，", "乃阴私潜然也。", "福来而不知，", "祸来而未觉。", "爻吉则暗中有补，", "爻凶则暗中有伤。"],
+          "yi": ["比如六爻安静，", "不遇到冲就不动。", "如果日辰来冲它，", "叫作暗动。", "暗动这个东西，", "有吉有凶，", "各有各的用处，", "不可以一概而论。", "如果遇到凶煞暗动，伤身克世，", "百事都不好。", "吉神暗动，", "合世、生身，", "事事没有不吉的。", "我推究它的意思：", "暗的一定不是明的，", "是阴私、潜藏的样子；", "福来了却不知道，", "祸来了却没有察觉。", "爻吉，暗中就有补益；", "爻凶，暗中就有伤害。"],
+          "en": ["Take a hexagram whose six lines are still:", "not meeting a clash they do not move.", "If the Day clashes with one,", "it is called a hidden movement.", "As for a hidden movement,", "there is luck and there is ill,", "each with its own use,", "and it cannot be judged all alike.", "If a fierce killing moves hidden, injuring the Body and controlling the Self,", "in all things it is not good.", "If a lucky spirit moves hidden,", "combining with the Self and generating the Body,", "everything is lucky.", "I work out its sense:", "what is hidden is surely not open,", "it is of the private and the concealed;", "fortune comes and one does not know it,", "calamity comes and one does not notice it.", "If the line is lucky there is help in secret;", "if the line is ominous there is injury in secret."] },
+        { "by": "经", "book": "断易天机", "range": [112, 113],
+          "zh": ["占病遇之，", "吉则言病人有默佑，", "凶则言脉阴隙所致也，", "病人不病须防暗有伤。", "此章宜细玩之，", "万无一失。"],
+          "yi": ["占病遇到它，", "吉，就说病人有暗中的保佑；", "凶，就说是脉络里暗中的空隙造成的；", "病人若还没有发病，也要防暗中有伤。", "这一章宜细细玩味，", "就万无一失。"],
+          "en": ["Divining illness and meeting it,", "if lucky it is said the sick person has a silent protection;", "if ominous it is said to be caused by a hidden gap in the pulse;", "and if the sick person is not yet sick one must guard against a hidden injury.", "This chapter should be studied closely,", "and nothing will fail."] }
+      ],
+      "note": {
+        "yi": "「暗动」是静爻遇日辰冲而动（见增删卜易的「暗动」）。这一章占婚、占产、占官、占讼、失脱、求财、出行、行人、家宅各有一句，这一条收占病那一句。「凶则言脉阴隙所致也」的「脉阴隙」意思读不确定，「阴隙」是暗中的缝隙，这里按「脉络里暗中的空隙」字面译；「病人不病须防暗有伤」的「病人不病」按「病人还没有发病」译，原文没有解释。「吉则言病人有默佑」的「默佑」是暗中的神佑。这一节和「合处逢冲」（LY.ILL.DYTJ.26）是冲在病里的两面。「（暗动）遇凶煞伤身克世」的「身」是卦身。",
+        "en": "A 'hidden movement' is a still line moving on meeting a clash from the Day (see the Zengshan Buyi on hidden movement). This chapter has one sentence each for marriage, childbirth, office, lawsuit, losses, wealth, travel, a traveller and the house, and this entry takes the sentence on illness. The 'mai yin xi' of 'if ominous it is said to be caused by a hidden gap in the pulse' is not certain in sense; 'yin xi' is a hidden crack, and it is rendered literally as 'a hidden gap in the pulse'; 'the sick person not sick' of 'the sick person not sick must guard against a hidden injury' is rendered 'the sick person is not yet sick', and the original does not explain it. The 'silent protection' of 'if lucky it is said the sick person has a silent protection' is protection by a spirit in secret. This section and 'a clash where there is a combination' (LY.ILL.DYTJ.26) are the two sides of a clash in illness. The 'Body' of 'injuring the Body and controlling the Self' is the hexagram Body."
+      },
+      "see": ["LY.ILL.DYTJ.26", "LY.ILL.DYTJ.29", "LY.ILL.HDY.11"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.29",
+      "topic": "风险",
+      "chapter": "散见各章·论",
+      "chapter_en": "Scattered sections: the discussions",
+      "title": "助鬼伤身·占病：生助官鬼者不过妻财、妻财发动衰鬼变旺鬼；占病遇之占父母必致顷危、其余问病亦沉重缠绵卒难脱体、若作本名占或因财致病或房事过频乃大凶之兆；子孙发动解神来救庶可反凶成吉",
+      "rule": {
+        "yi": "生助官鬼的，不过是妻财，不宜发动，动了衰鬼就变成旺鬼；旺鬼遇到它，势头更凶。比如申日占得离卦，鬼临应爻克世，本来不是好兆，再加妻财发动、生助鬼爻，凶更厉害，这就是助鬼伤身；凡是卦里鬼爻克身、世的，没有财，凶有限；若有两个财爻都动，祸就大凶。占病遇到它：若占的是父母，必定顷刻危险；其余人问病，也是沉重缠绵，一时难以脱身；若是替本人占，或是因财致病，或是房事过频，是大凶的兆。以上各种事，若有子孙发动、解神来救，或许可以反凶成吉、变祸为祥。",
+        "en": "What generates and helps the Pressure line is only Wealth, which should not move, for moving it turns a weak ghost into a strong ghost; a strong ghost meeting it, its force is fiercer still. For example, divining the hexagram Li on a Shen day, the ghost sits on the Other line and controls the Self, which is not a good sign to begin with, and Wealth moving in addition to generate and help the ghost line makes the ill fiercer still: this is helping the ghost to injure the Body; whenever the ghost line in a hexagram controls the Body or the Self, with no Wealth the ill is limited, and if two Wealth lines both move the calamity is greatly ominous. Divining illness and meeting it: if a parent (the Resource line) is divined for, it will surely bring peril in a moment; for other askers about illness it is also heavy and lingering, and hard to shake off in the end; if it is divined in one's own name, it may be illness brought on by wealth, or excess of sexual activity, and it is a sign of great ill. In all the above matters, if Output moves and a resolving spirit comes to rescue, it may be possible to turn ill into luck and calamity into fortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [117, 118],
+          "zh": ["生助官鬼者，", "不过妻财也。", "不宜发动，", "动则衰鬼变成旺鬼。", "旺鬼遇之，", "其势愈凶。", "且如申日占得离卦，", "鬼临应爻克世，", "本非佳兆，", "更兼妻财发动，", "生助鬼爻，", "其凶愈甚，", "此乃助鬼伤身也。", "凡卦中鬼爻克身世者，", "无财，", "凶有限；", "若有两财皆动，", "其祸大凶。"],
+          "yi": ["生助官鬼的，", "不过是妻财，", "它不宜发动，", "一动，衰弱的鬼就变成旺鬼。", "旺鬼遇到它，", "势头更凶。", "比如申日占得离卦，", "鬼临应爻克世，", "本来就不是好兆头；", "再加上妻财发动，", "生助鬼爻，", "凶就更重了，", "这就是助鬼伤身。", "凡是卦中鬼爻克身世的，", "没有财，", "凶险有限；", "如果有两个财都动，", "那祸就大凶。"],
+          "en": ["What generates and helps the Pressure line", "is only Wealth,", "It should not move,", "for once it moves a weak Pressure becomes a strong one.", "a strong ghost meeting it,", "its force is fiercer still.", "Take a divination made on a Shen day that gives the hexagram Li:", "Pressure sits on the Other line and controls Self,", "which is not a fine omen to begin with;", "and if Wealth also moves,", "generating and supporting the Pressure line,", "the ill is all the worse:", "this is helping Pressure to harm the person.", "Whenever the Pressure line in a hexagram controls the Body or Self,", "if there is no Wealth,", "the ill is limited;", "if there are two Wealth lines and both move,", "the calamity is very great."] },
+        { "by": "经", "book": "断易天机", "range": [129, 130],
+          "zh": ["占病遇之，", "若占父母必致顷危，", "其余问病，", "亦是沉重缠绵，", "卒难脱体。", "若作本名占，", "或因财致病，", "或房事过频，", "乃大凶之兆。", "以上诸事，", "若有子孙发动，", "解神来救，", "庶可反凶成吉，", "变祸为祥。"],
+          "yi": ["占病遇到它，", "若占的是父母（父母爻），必定顷刻危险；", "其余的人问病，", "也是沉重缠绵，", "一时难以脱身。", "若是替本人占，", "或是因财致病，", "或是房事过频，", "是大凶的兆。", "以上各种事，", "若有子孙发动、", "解神来救，", "或许可以反凶成吉，", "变祸为祥。"],
+          "en": ["Divining illness and meeting it,", "if a parent (the Resource line) is divined for, it will surely bring peril in a moment;", "for other askers about illness,", "it is also heavy and lingering,", "and hard to shake off in the end.", "If it is divined in one's own name,", "it may be illness brought on by wealth,", "or excess of sexual activity,", "and it is a sign of great ill.", "In all the above matters,", "if Output moves", "and a resolving spirit comes to rescue,", "it may be possible to turn ill into luck", "and calamity into fortune."] }
+      ],
+      "note": {
+        "yi": "「助鬼伤身」是鬼爻克世或卦身、又有财爻发动生鬼，三样凑在一起。头一段是总句，和婚姻、求财、占官等一章（LY.MARRY.DYTJ.03 一带）相同；这一条收占病那一段。「占父母必致顷危」是因为财爻克父母、又生鬼；「其余问病亦是沉重缠绵」是别人的病也重；「若作本名占」是替自己占，「本名」是占的人自己；「或因财致病」是因财而得病（钱事劳心或财多招灾），「房事过频」是色欲。最后一句「子孙发动，解神来救」是说有子孙发动能克鬼、有解神来解，可以转祸为福；但子孙发动若同时有财爻发动生鬼，情形又不同，原文没有再展开。财爻发动生鬼、问病难愈，和火珠林「妻财独发，生鬼伤父；问病难瘳」（LY.ILL.HZL.18）、天玄赋的「鬼旺财兴难保命」（LY.ILL.DYTJ.02）是同一个道理。",
+        "en": "'Helping the ghost to injure the Body' is the ghost line controlling the Self or the Body, and a Wealth line moving to generate the ghost, the three together. The first passage is the general statement, the same as the chapters on marriage, wealth and office (around LY.MARRY.DYTJ.03); this entry takes the passage on illness. 'If a parent is divined for it will surely bring peril in a moment' is because Wealth controls Resource and also generates the ghost; 'for other askers about illness it is also heavy and lingering' is that another person's illness is heavy too; 'if it is divined in one's own name' is divining for oneself, the 'own name' being the diviner himself; 'illness brought on by wealth' is caught through money worries or through much wealth inviting calamity, and 'excess of sexual activity' is lust. The last sentence, 'Output moves and a resolving spirit comes to rescue', says that with Output moving to control the ghost and a resolving spirit to untie, calamity may be turned into fortune; but if, while Output moves, a Wealth line also moves to generate the ghost, the case is different, and the original does not go on to say so. Wealth moving to generate the ghost, so that an illness is hard to cure, is the same principle as the Huozhu Lin's 'Wealth moving alone generates the ghost and injures the father; asking about illness it is hard to cure' (LY.ILL.HZL.18) and the Duanyi Tianji's 'ghost strong and Wealth rising, life is hard to keep' (LY.ILL.DYTJ.02)."
+      },
+      "see": ["LY.ILL.HZL.18", "LY.ILL.DYTJ.02", "LY.ILL.DYTJ.28", "LY.ILL.HZL.07"]
+    }
+  ]
+}

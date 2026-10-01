@@ -1,0 +1,36 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易隐",
+  "chapter": "十六变卦",
+  "chapter_en": "The sixteen changed hexagrams",
+  "ranges": {"易隐": [92, 92]},
+  "units": [
+    {
+      "id": "LY.ILL.YY.36",
+      "topic": "症候",
+      "chapter": "十六变卦",
+      "chapter_en": "The sixteen changed hexagrams",
+      "title": "十六变卦(京房)：外戒吉凶从外来、内戒祸福从内起；骸骨卦生则羸瘦死不葬埋；棺槨卦病必死亡；血脉卦主血疾漏下；绝命卦事多反复；游魂肌肉卦精神恍惚；归魂塚墓卦坟墓吉而事可成",
+      "rule": {
+        "yi": "每一宫都有十六个变卦，占的人遇到变入本宫卦的，灾福应验十分。外戒卦，吉凶从外面来；内戒卦，祸福从里面起；骸骨卦，活着的人羸弱消瘦，死了的人不得埋葬；棺槨卦，病人必定死亡；血脉卦，主血疾和漏下；绝命卦，事情多反复，为人孤独、和世俗不合；游魂、肌肉卦，精神恍惚，像做梦、像痴呆；归魂、坟墓卦，坟墓吉，事可以成。",
+        "en": "Each palace has sixteen changed hexagrams, and when the diviner meets a change into a hexagram of the own palace, calamity and fortune are borne out to the full. An Outer Warning hexagram: good and ill come from outside; an Inner Warning hexagram: calamity and fortune arise from within; a Bones hexagram: the living are frail and thin, the dead are not buried; a Coffin hexagram: in illness the person surely dies; a Blood Vessels hexagram means blood disease and leakage from below; an End of Life hexagram: affairs mostly reverse and repeat, and the person is solitary and out of tune with the customs; a Wandering Soul or Flesh hexagram: the spirit is dazed, as in a dream or as if foolish; a Returning Soul or Grave hexagram: graves are auspicious and the matter can succeed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [92, 92],
+          "zh": ["京房曰，", "自初至五不动复下飞四往复用飞，", "上飞下飞还本体，", "便是十六变卦例。", "如乾宫一变姤，", "至五变剥，", "上爻为宗庙，", "永不变。", "复下飞四晋为游魂，", "下飞三旅为外戒，", "下飞二鼎为内戒，", "下飞初大有为归魂。", "复上飞二离为绝命，", "复上飞三噬嗑为血脉，", "上飞四颐为肌肉，", "上飞五益为骸骨，", "复下飞四无妄为棺槨，", "下飞三同人为坟墓，", "下飞二乾复还本体。"],
+          "yi": ["京房这样说：", "从初爻变到五爻，上爻不动，再往下飞变第四爻，往复用「飞」的办法；", "往上飞、往下飞，还回本体，", "这便是十六变卦的规矩。", "比如乾宫，一变是姤，", "到五变是剥，", "上爻是宗庙，", "永远不变。", "再下飞第四爻，晋是游魂；", "下飞第三爻，旅是外戒；", "下飞第二爻，鼎是内戒；", "下飞初爻，大有是归魂。", "再上飞第二爻，离是绝命；", "再上飞第三爻，噬嗑是血脉；", "上飞第四爻，颐是肌肉；", "上飞第五爻，益是骸骨；", "再下飞第四爻，无妄是棺槨；", "下飞第三爻，同人是坟墓；", "下飞第二爻，乾，又回到本体。"],
+          "en": ["Jing Fang says:", "changing from the first line to the fifth, the top line not moving, then flying down to change the fourth, going back and forth using the flying;", "flying up and flying down, returning to the original body,", "this is the rule of the sixteen changed hexagrams.", "Take the Qian palace: the first change is Gou,", "to the fifth change, Bo;", "the top line is the ancestral temple,", "and never changes.", "then flying down to the fourth line, Jin is the Wandering Soul;", "flying down to the third, Lü is the Outer Warning;", "flying down to the second, Ding is the Inner Warning;", "flying down to the first, Dayou is the Returning Soul.", "then flying up to the second, Li is the End of Life;", "then flying up to the third, Shihe is the Blood Vessels;", "flying up to the fourth, Yi (Nourishment) is the Flesh;", "flying up to the fifth, Yi (Increase) is the Bones;", "then flying down to the fourth, Wuwang is the Coffin;", "flying down to the third, Tongren is the Grave;", "flying down to the second, Qian, back to the original body."] },
+        { "by": "经", "book": "易隐", "range": [92, 92],
+          "zh": ["凡十六变八宫皆仿此，", "占者遇变入本宫卦者，灾福应十分。", "外戒卦，吉凶从外来。", "内戒卦，祸福从内起。", "骸骨卦，生则赢瘦，死不葬埋。", "棺槨卦，病必死亡。", "血脉卦，主血疾漏下。", "绝命卦，事多反复，为人孤独，不谐于俗。", "游魂肌肉卦，精神恍惚，如梦如癡。", "归魂塚墓卦，坟墓吉，而事可成也。"],
+          "yi": ["凡十六变，八个宫都照这样；", "占的人遇到变入本宫卦的，灾福应验十分。", "外戒卦，吉凶从外面来。", "内戒卦，祸福从里面起。", "骸骨卦，活着羸弱消瘦，死了不得埋葬。", "棺槨卦，病人必定死亡。", "血脉卦，主血疾和漏下。", "绝命卦，事情多反复，为人孤独，和世俗不合。", "游魂、肌肉卦，精神恍惚，像做梦、像痴呆。", "归魂、坟墓卦，坟墓吉，事可以成。"],
+          "en": ["The sixteen changes are made likewise in all eight palaces;", "when the diviner meets a change into a hexagram of the own palace, calamity and fortune are borne out to the full.", "An Outer Warning hexagram: good and ill come from outside.", "An Inner Warning hexagram: calamity and fortune arise from within.", "A Bones hexagram: alive, frail and thin; dead, not buried.", "A Coffin hexagram: in illness the person surely dies.", "A Blood Vessels hexagram means blood disease and leakage from below.", "An End of Life hexagram: affairs mostly reverse and repeat, the person is solitary, and out of tune with the customs.", "A Wandering Soul or Flesh hexagram: the spirit is dazed, as in a dream or as if foolish.", "A Returning Soul or Grave hexagram: for graves, auspicious, and the matter can succeed."] }
+      ],
+      "note": {
+        "yi": "这是京房的「十六变卦」：每一宫从本宫卦起，一爻一爻地变（「飞」就是变一爻），依次得到十六个卦，其中几个有专名（游魂、外戒、内戒、归魂、绝命、血脉、肌肉、骸骨、棺槨、坟墓）。头一段是乾宫的走法：乾变姤、遁、否、观、剥（五变），上爻不动；再从剥变第四爻得晋（游魂），变第三爻得旅（外戒），变第二爻得鼎（内戒），变初爻得大有（归魂）；再从大有变第二爻得离（绝命），变第三爻得噬嗑（血脉），变第四爻得颐（肌肉），变第五爻得益（骸骨），再变第四爻得无妄（棺槨），变第三爻得同人（坟墓），变第二爻回到乾。「自初至五不动」按「从初到五逐爻变、上爻不动」读，因为下文说「上爻为宗庙，永不变」。后一段是这些名称的断语，只有「棺槨卦，病必死亡」和「骸骨卦」「血脉卦」直接说到病；「游魂肌肉卦精神恍惚」和卜筮元龟的「游魂恍惚」是同一个说法。「塚墓」即冢墓，按 Grave 译。「遇变入本宫卦者」的「本宫卦」是本卦所属那一宫里的卦。断易天机里的卜筮元龟一段用了这些名称，见 LY.ILL.DYTJ.13。",
+        "en": "This is Jing Fang's 'sixteen changed hexagrams': each palace, starting from the palace hexagram, changes one line at a time ('fei', flying, means changing one line) and gives sixteen hexagrams in turn, several of which have their own names (Wandering Soul, Outer Warning, Inner Warning, Returning Soul, End of Life, Blood Vessels, Flesh, Bones, Coffin, Grave). The first passage gives the walk for the Qian palace: Qian changes to Gou, Dun, Pi, Guan and Bo (five changes), the top line not moving; then from Bo changing the fourth line gives Jin (Wandering Soul), the third line Lü (Outer Warning), the second line Ding (Inner Warning), the first line Dayou (Returning Soul); then from Dayou changing the second line gives Li (End of Life), the third line Shihe (Blood Vessels), the fourth line Yi (Nourishment; Flesh), the fifth line Yi (Increase; Bones), then the fourth line again gives Wuwang (Coffin), the third line Tongren (Grave), and the second line returns to Qian. 'Zi chu zhi wu bu dong' is read as 'changing line by line from the first to the fifth, the top line not moving', because the text goes on to say 'the top line is the ancestral temple and never changes'. The second passage gives the judgments for these names, and only 'a Coffin hexagram: in illness the person surely dies', and the Bones and Blood Vessels hexagrams, speak of illness directly; 'a Wandering Soul or Flesh hexagram: the spirit is dazed' is the same saying as the 'Wandering Soul dazed' of the Bushi Yuangui. 'Zhong mu' (a tomb mound) is rendered Grave. The 'hexagram of the own palace' of 'a change into a hexagram of the own palace' is a hexagram in the palace to which the original hexagram belongs. The passage of the Bushi Yuangui in the Duanyi Tianji uses these names, see LY.ILL.DYTJ.13."
+      },
+      "see": ["LY.ILL.DYTJ.13", "LY.ILL.DYTJ.10", "LY.ILL.CA.04"]
+    }
+  ]
+}

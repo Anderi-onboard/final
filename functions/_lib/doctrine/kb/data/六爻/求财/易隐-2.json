@@ -1,0 +1,272 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易隐",
+  "chapter": "贸易占",
+  "chapter_en": "Divining for trade",
+  "ranges": {"易隐": [2912, 2973]},
+  "units": [
+    {
+      "id": "LY.WEALTH.YY.18",
+      "topic": "买卖",
+      "chapter": "贸易占",
+      "chapter_en": "Divining for trade",
+      "title": "贸易占大略：先问时价，再问牙行，后问脱货；六爻各管一事",
+      "rule": {
+        "yi": "买卖要问三件事：现在的价钱是贵是贱、以后是涨是落；牙行（中间人）是好是坏；货好不好脱手。六爻各管一事（鬼谷分爻）：上爻店舍，五爻道路，四爻舟车马，三爻行李，二爻伴侣，初爻己身。哪一爻旺相、带财福龙德贵禄、又扶着卦身和世爻，那件事就顺；哪一爻带鬼、伏鬼、化鬼来刑冲克害卦身和世爻，或落在空死墓绝胎、被四直和动爻冲伤，疏漏就出在那件事上。",
+        "en": "A trade question asks three things: is the price now dear or cheap, and will it later rise or fall; is the broker honest or crooked; and will the goods sell easily. The six lines each govern one matter (Guigu's assignment): top, the lodging; fifth, the road; fourth, carts, boats and horses; third, baggage; second, companions; first, oneself. A line that is strong, carries Wealth, Output, the Azure Dragon, Virtue, Noble or Emolument, and supports the Body and Self lines means that matter goes well; a line that holds, hides or turns into Pressure and punishes, clashes with, controls or harms the Body and Self lines, or falls in void, death, tomb, extinction or the womb stage, or is clashed and hurt by the four rulers and moving lines, is where things go wrong."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐",
+          "zh": ["游南子曰，凡买卖者，", "先占时价之贵贱，", "与后价之旺衰，", "次考牙行之淑慝，", "并究脱货之难易，", "此其大略也。"],
+          "yi": ["游南子说：凡是做买卖的，", "先占现在的价钱是贵是贱，", "和以后的价钱是涨是落；", "再看牙行（中间人）是好是坏，", "并查货好不好脱手，", "这就是大概的次序。"],
+          "en": ["Master Younan says: in any buying and selling,", "first divine whether the price now is dear or cheap,", "and whether the later price will rise or fall;", "then examine whether the broker is honest or crooked,", "and look into how easily the goods can be sold off;", "that is the outline."] },
+        { "by": "经", "book": "易隐",
+          "zh": ["鬼谷分爻", "店舍道路舟车马行李伴侣己身"],
+          "yi": ["鬼谷分爻（六爻各管一件事）：", "从上爻到初爻依次是：店舍、道路、舟车马、行李、伴侣、己身。"],
+          "en": ["Guigu's assignment of the lines:", "from the top line down to the first: the lodging, the road, carts, boats and horses, baggage, companions, oneself."] },
+        { "by": "经", "book": "易隐",
+          "zh": ["凡分爻生旺，", "带财福龙德贵禄，", "临扶身世爻，", "便知吉祥如意也。", "又看何爻持鬼，", "伏鬼，", "化鬼，", "刑冲克害身世爻，", "更看何爻临空死墓绝胎，", "受四直动爻冲伤，", "便知疏虞处也。"],
+          "yi": ["凡是哪一爻生旺，", "带着财、福、青龙、德星、贵人、禄，", "又靠近并扶助卦身和世爻，", "就知道那件事吉祥如意。", "还要看哪一爻带着官鬼，", "或伏着官鬼，", "或变出官鬼，", "去刑、冲、克、害卦身和世爻；", "再看哪一爻落在空、死、墓、绝、胎上，", "又被四直和动爻冲伤，", "就知道那件事的疏漏在哪里。"],
+          "en": ["Whichever line is strong and thriving,", "and carries Wealth, Output, the Azure Dragon, Virtue, Noble or Emolument,", "and stands by and supports the Body and Self lines,", "you know that matter will go as you wish.", "Then see which line holds Pressure,", "hides Pressure,", "or turns into Pressure,", "to punish, clash with, control or harm the Body and Self lines;", "and see which line falls in void, death, tomb, extinction or the womb stage,", "or is clashed and hurt by the four rulers and moving lines:", "there you know where the neglect lies."] }
+      ],
+      "note": {
+        "yi": "鬼谷分爻的表原文只列了名目，没写各是哪一爻；从上到下的读法，本书自己有旁证：捕鱼占里《管公口诀》写明「初爻船主，二爻伴侣，三爻行李雨具，四爻网，五爻道路，六爻渔所」。「舟车马行李」在原书里连着排、中间没有断开，这里读作四爻舟车马、三爻行李。",
+        "en": "The source lists the items without naming their lines. Reading them from the top down is supported by the same book's fishing chapter, where Guan Gong's rhymes say: first line the boat's master, second companions, third baggage and rain gear, fourth the net, fifth the road, sixth the fishing ground. Here the source runs 'carts, boats and horses' and 'baggage' together with no break; they are read as the fourth and third lines."
+      },
+      "see": ["LY.WEALTH.HJC.36", "LY.WEALTH.HJC.38"]
+    },
+    {
+      "id": "LY.WEALTH.YY.19",
+      "topic": "买卖",
+      "chapter": "贸易占",
+      "chapter_en": "Divining for trade",
+      "title": "买卖：官鬼旺静兄弟弱为吉；按买卖的季节配财爻五行；财旺价贵，财死价贱",
+      "rule": {
+        "yi": "买卖看价：官鬼旺相安静、兄弟无气，吉。财爻旺相有生助，价贵；死败，价贱；财属火价一天天涨，属水一天天落。按季节看财爻的五行：冬收夏卖看火财，春收秋卖看金财，秋收春卖看木财，夏收冬卖看水财。财变兄弟或官鬼、子孙变父母，先贵后贱；财化子孙、官鬼化财，先贱后贵。内卦财旺外卦财衰，别处贱；外卦财旺内卦财衰，以后贵。本卦有财而变卦无，晚买便宜；本卦财旺而变卦财衰，先卖的卖得贵。内卦财空可卖，外卦财空难买；外卦的财生合世易买，应爻合内卦的财易卖，世爻落在财的墓上难卖。",
+        "en": "Reading the price in a trade: Pressure strong and still, with Peer lacking strength, is auspicious. Wealth strong and fed means dear; Wealth dead or spent means cheap; Wealth on Fire, the price climbs day by day; on Water, it falls. By season, look at the element of Wealth: goods bought in winter and sold in summer want a Fire Wealth, spring to autumn Metal, autumn to spring Wood, summer to winter Water. Wealth turning into Peer or Pressure, or Output turning into Resource: dear first, cheap later; Wealth turning into Output, or Pressure into Wealth: cheap first, dear later. Wealth strong inside and weak outside: cheap elsewhere; strong outside and weak inside: dear later. Wealth in the main hexagram but not in the changed one: buy late and it is cheaper; strong in the main and weak in the change: whoever sells first gets the dear price. Inner Wealth void: it can be sold; outer Wealth void: hard to buy; outer Wealth generating or combining with the Self: easy to buy; the Other combining with the inner Wealth: easy to sell; the Self standing on the tomb of Wealth: hard to sell."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["官鬼旺静，兄弟无气者，吉也。", "冬收夏化货，火财者吉。", "春收秋货，金财者吉。", "秋收春货，木财者吉。", "夏收冬货，水财者吉。", "收四季所卖之货，各从辰戌丑未之时者，吉也。", "旺财生克世者贵，衰财世克之者贱。", "财旺生者贵，财死败者贱，", "财值火者价日增。", "财值水者价日减。", "财变兄官子变父者，先贵后贱。", "财化子孙鬼化财者，先贱后贵。", "内财旺而外财衰，他乡贱也。", "外财旺而内财衰，后价贵也。", "正卦有财后卦无，迟买者贱。", "正卦财旺，变财衰，先卖者贵也。", "内财空者，可卖。", "外财空者，难买。", "外财生合世者，易买。", "应合内财者易卖。", "世临财墓者，难卖也。"],
+          "yi": ["官鬼旺相而安静，兄弟没有气的，吉。", "冬天收进、夏天脱手的货，财爻是火的，吉；", "春天收进、秋天脱手的，财爻是金的，吉；", "秋天收进、春天脱手的，财爻是木的，吉；", "夏天收进、冬天脱手的，财爻是水的，吉。", "收进的货要在四季（辰、戌、丑、未这几个季末月）里卖的，各自顺着辰、戌、丑、未的时候来，吉。", "旺相的财生世、克世的，价贵；衰弱的财，被世克的，价贱。", "财旺而有生助的，价贵；财死败的，价贱。", "财属火的，价钱一天天涨；", "财属水的，价钱一天天落。", "财变成兄弟或官鬼、子孙变成父母的，先贵后贱。", "财化成子孙、官鬼化成财的，先贱后贵。", "内卦的财旺、外卦的财衰，别处的价钱贱。", "外卦的财旺、内卦的财衰，以后的价钱贵。", "本卦有财、变卦没有，晚买的便宜。", "本卦财旺、变出来的财衰，先卖的卖得贵。", "内卦的财落空，可以卖；", "外卦的财落空，难买；", "外卦的财生合世，容易买；", "应合内卦的财，容易卖；", "世落在财的墓上，难卖。"],
+          "en": ["Pressure strong and still, with Peer lacking strength: auspicious.", "Goods bought in winter and turned into money in summer: a Fire Wealth is auspicious;", "bought in spring, sold in autumn: a Metal Wealth is auspicious;", "bought in autumn, sold in spring: a Wood Wealth is auspicious;", "bought in summer, sold in winter: a Water Wealth is auspicious.", "For goods bought to be sold in the four season-ends (the Chen, Xu, Chou and Wei months), going with the times of Chen, Xu, Chou and Wei, each in its own turn, is auspicious.", "A strong Wealth that generates or controls the Self means dear; a weak Wealth controlled by the Self means cheap.", "Wealth strong and fed is dear; Wealth dead or spent is cheap.", "Wealth on Fire: the price climbs day by day;", "Wealth on Water: the price drops day by day.", "Wealth turning into Peer or Pressure, or Output turning into Resource: dear first, cheap later.", "Wealth turning into Output, or Pressure turning into Wealth: cheap first, dear later.", "Wealth strong inside and weak outside: cheap in other places.", "Wealth strong outside and weak inside: dear later.", "Wealth in the main hexagram but not in the changed one: whoever buys late gets it cheap.", "Wealth strong in the main hexagram and weak in the change: whoever sells first gets the dear price.", "Inner Wealth void: it can be sold;", "outer Wealth void: hard to buy;", "outer Wealth generating or combining with the Self: easy to buy;", "the Other combining with the inner Wealth: easy to sell;", "the Self standing on the tomb of Wealth: hard to sell."] }
+      ],
+      "note": {
+        "yi": "「收四季所卖之货」一句很省，「四季」「时」都还有别的读法；这里按四季月就是辰戌丑未这四个季末月读。另外，这一节用买进卖出的季节去配财爻的五行；《增删卜易》野鹤的取法不同：财旺宜卖、财衰宜囤，有固定旺季的货凭时令断，没有固定时节的货要单独占，并说古人按五行推货类屡试不验。",
+        "en": "The sentence 'goods bought to be sold in the four seasons' is terse; both 'four seasons' and 'times' have other readings, and here the four seasons are read as the four season-end months Chen, Xu, Chou and Wei. Also, this passage pairs the season of buying and selling with the element of Wealth; the Old Man of Yehe in the Zengshan Buyi works differently: sell when Wealth is strong and stock up when it is weak, judge goods with a fixed season by the season, cast separately for goods without one, and he says the old element-by-goods method never held up in his trials."
+      },
+      "see": ["LY.WEALTH.ZS.15", "LY.WEALTH.ZS.16", "LY.WEALTH.ZS.17", "LY.WEALTH.ZS.22", "LY.WEALTH.ZS.24", "LY.WEALTH.ZS.26"]
+    },
+    {
+      "id": "LY.WEALTH.YY.20",
+      "topic": "开店",
+      "chapter": "贸易占",
+      "chapter_en": "Divining for trade",
+      "title": "牙行：应爻、官爻旺相生合世，千金可托；休空冲伤世，百货难依",
+      "rule": {
+        "yi": "找牙行（中间人）：应爻、官爻旺相，又生合世爻，千金也可托付；休囚落空、或冲伤世，各样货物都难托付。应爻发动克世，或应上的财化成兄弟，难免被侵吞；应上的财发动生合世、或化成子孙，或应上的官鬼化成财，办事肯替你周旋。",
+        "en": "Choosing a broker: the Other and Pressure lines strong and generating or combining with the Self, and a thousand gold can be entrusted to him; resting or void, or clashing with and hurting the Self, and no goods can be relied upon to him. The Other moving to control the Self, or the Other's Wealth turning into Peer: you cannot escape being fleeced. The Other's Wealth moving to generate or combine with the Self, or turning into Output, or the Other's Pressure turning into Wealth: he handles matters with care and works on your behalf."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["应爻官爻旺相生合世者，千金可托也。", "休空冲伤世者，百货难依也。", "应爻动克世，与应财化兄者，侵渔不免也。", "应财动来生合世，与应财化子，应鬼化财者，作事周旋也。"],
+          "yi": ["应爻和官爻旺相，又生合世爻的，千金也可以托付。", "衰弱落空、或冲伤世的，各样货物都难以托付。", "应爻发动克世，以及应上的财化成兄弟的，难免被侵吞。", "应上的财发动来生合世、或化成子孙，或者应上的官鬼化成财的，办事肯替你周旋。"],
+          "en": ["The Other and Pressure lines strong and generating or combining with the Self line: a thousand gold can be entrusted to him.", "Resting or void, or clashing with and hurting the Self: no goods can be relied upon to him.", "The Other line moving to control the Self, or the Other's Wealth turning into Peer: you cannot escape being fleeced.", "The Other's Wealth moving to generate or combine with the Self, or turning into Output, or the Other's Pressure turning into Wealth: he handles matters with care and works on your behalf."] }
+      ],
+      "see": ["LY.WEALTH.ZS.12", "LY.WEALTH.HJC.36", "LY.WEALTH.HJC.32"]
+    },
+    {
+      "id": "LY.WEALTH.YY.21",
+      "topic": "买卖",
+      "chapter": "贸易占",
+      "chapter_en": "Divining for trade",
+      "title": "脱货：以财爻生旺的月日为脱手之期；财化五行各防一样货损；应动合财易脱",
+      "rule": {
+        "yi": "脱货：财爻生旺的月份、日子是脱手的日期。应发动合财、或财发动合应，易脱；应落空落破，一定没有买主；财临勾陈土，货难脱。财化水防漏和潮，化火防枯干和火灾，化木防微烂，化土防朽腐，化金又临螣蛇防生虫；财落在辰午酉亥自刑的地支上，货差难脱。世应相冲又带退悔杀发动，或应动合财却化成退神，多半中途作罢；应动合财而被日辰或动爻冲破，有人破坏；日辰合住动财，旁人把持；官鬼动伤世，牙人阻挠；卦里没有官鬼，买卖不成；财动生世生应而官鬼入墓，要等冲开墓的日子成交。书中例：需卦安静，申金子孙持世，人人说吉，作者断四月金空生不了财、又有四个兄弟互相冲脱，买主看了货就散了。",
+        "en": "Selling off goods: the month or day when the Wealth line is born or strong is the time to unload. The Other moving to combine with Wealth, or Wealth moving to combine with the Other: easy to sell; the Other void or broken: surely no buyer; Wealth on Hook Earth: hard to sell. Wealth turning into Water: beware leaks and damp; into Fire: drying out and fire; into Wood: slight rot; into Earth: decay; into Metal with the Coiling Snake: worms; Wealth on Chen, Wu, You or Hai, the self-punishing branches: poor goods, hard to sell. Self and Other clashing with the Regret star moving, or the Other moving to combine with Wealth but turning into a Retreating line: often broken off midway; the Other moving to combine with Wealth but clashed and broken by the Day or a moving line: someone wrecks it; the Day combining with a moving Wealth: a bystander holds it back; Pressure moving to hurt the Self: the broker obstructs; no Pressure in the hexagram: the trade does not close; Wealth moving to generate both Self and Other while Pressure has gone into its tomb: it closes on the day the tomb is clashed open. In the case from the book, hexagram Xu with no moving line looked auspicious because Output on Shen Metal held the Self line; the author judged that Metal was void in the fourth month and could not generate Wealth, and that four Peer lines clashed each other away, so the buyers left when they saw the goods."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["以财爻生旺月日为脱卸之期。", "应动合财，财动合应者，易脱。", "应居空破，必无买主。", "财持勾土，货必难脱。", "财化水，防上漏下湿。", "财化火，防枯干回禄，", "财化木，防微烂。", "财化土，防朽腐。", "财化金加蛇，防生虫。", "财持辰午酉亥自刑，货恶难脱也。", "世应相冲，加退悔杀动，或应动合财，化退神者，多中止也。", "应动合财，被日辰动爻冲破者，有人破也。", "日合动财者，旁人把持也。", "鬼动伤世者，牙人挠阻也。", "卦无官鬼者，买卖不成也。", "财动生世生应，而官鬼入墓者，待冲开墓日成交也。"],
+          "yi": ["以财爻生旺的月份、日子为脱手的日期。", "应发动去合财，或财发动去合应，容易脱手。", "应落在空、破上，一定没有买主。", "财临勾陈土，货一定难脱手。", "财化成水，要防上面漏、下面潮。", "财化成火，要防枯干和火灾；", "财化成木，要防微烂；", "财化成土，要防朽腐。", "财化成金又临螣蛇，要防生虫。", "财落在辰、午、酉、亥这几个自刑的地支上，货色差，难脱手。", "世应相冲，又带退悔杀发动，或者应发动去合财、却化成退神，多半中途作罢。", "应发动去合财，却被日辰或动爻冲破，有人从中破坏。", "日合住发动的财，旁人把持着不放。", "官鬼发动伤世，牙人从中阻挠。", "卦里没有官鬼，买卖成不了。", "财发动，既生世又生应，而官鬼入了墓，要等冲开墓的那天才成交。"],
+          "en": ["The month or day when the Wealth line is born or strong is the time to unload.", "The Other moving to combine with Wealth, or Wealth moving to combine with the Other: easy to sell.", "The Other in void or broken: there will surely be no buyer.", "Wealth on Hook Earth: the goods will surely be hard to sell.", "Wealth turning into Water: guard against leaks above and damp below.", "Wealth turning into Fire: guard against drying out and fire;", "turning into Wood: guard against slight rot;", "Wealth turning into Earth: guard against decay.", "Wealth turning into Metal with the Coiling Snake: guard against worms.", "Wealth on Chen, Wu, You or Hai, the self-punishing branches: the goods are poor and hard to sell.", "Self and Other clashing with the Regret star moving, or the Other moving to combine with Wealth but turning into a Retreating line: it is often broken off midway.", "The Other moving to combine with Wealth but clashed and broken by the Day or a moving line: someone wrecks it.", "The Day combining with a moving Wealth: a bystander holds it back.", "Pressure moving to hurt the Self: the broker obstructs.", "No Pressure in the hexagram: the trade will not go through.", "Wealth moving to generate both the Self and the Other, while Pressure has gone into its tomb: the deal closes on the day the tomb is clashed open."] },
+        { "by": "书中例", "book": "易隐",
+          "zh": ["庚寅年辛巳月甲辰日，占脱货，得需卦安静。", "申金子孙持世，人皆云吉。", "岂知四月金空，不能生财。", "经云，用爻最怕立时空也。", "本宫亥财，伏辰土兄下，", "本宫世应俱持兄弟，日辰又是兄弟，必有对主承买。", "但因亥财自刑，其货必背时不佳，买主见货散去也。", "盖兄弟绝于月建巳中，墓于日建辰中，", "又飞伏辰戌丑未，四位兄弟，", "自相冲脱，故不买而去也。"],
+          "yi": ["庚寅年辛巳月甲辰日，占脱货，得需卦，没有动爻。", "申金子孙持世，人人都说吉。", "哪知道四月里金落空，生不了财。", "经上说，用爻最怕起卦那一刻就落空。", "本宫的亥水财，伏在辰土兄弟下面，", "本宫里世爻、应爻都带兄弟，日辰又是兄弟，一定有买主来接货。", "只是亥水的财自刑，那批货一定不合时、不好，买主看了货就散了。", "因为兄弟在月建巳里是绝、在日建辰里是墓，", "又飞神伏神都在辰戌丑未上，四个兄弟，", "自己互相冲开、把货脱散了，所以不买就走了。"],
+          "en": ["In a Gengyin year, Xinsi month, Jiachen day, he divined about selling off goods and got Xu (Waiting) with no moving line.", "Output on Shen Metal held the Self line, and everyone called it auspicious.", "But in the fourth month Metal is void, and cannot generate Wealth.", "The classic says the Subject line most fears being void at the moment of the cast.", "The home palace's Hai Wealth is hidden under the Chen-Earth Peer,", "and in the home palace both Self and Other carry Peer, and the Day is also Peer, so a buyer will surely come to take the goods.", "But because the Hai Wealth punishes itself, the goods are surely out of season and poor, and the buyers left when they saw the goods.", "For Peer is in extinction in the Month's Si and in its tomb in the Day's Chen,", "and the flying and hidden lines are all Chen, Xu, Chou and Wei, four Peers,", "clashing among themselves and scattering the goods, so they left without buying."] }
+      ],
+      "note": {
+        "yi": "需卦是第五卦，原文只说「安静」，没写哪一爻动，这里译成「没有动爻」。「用爻最怕立时空」一句，例里引作「经云」，《易隐》别处没有单独的出处。",
+        "en": "Xu is the fifth hexagram; the source says only that it is 'still', which is rendered as 'no moving line'. The line 'the Subject fears being void at the moment of the cast' is quoted in the case as 'the classic says'; nothing else in the Yi Yin gives it a separate source."
+      },
+      "see": ["LY.WEALTH.HJC.38", "LY.WEALTH.ZS.15", "LY.WEALTH.ZS.17", "LY.WEALTH.ZS.24"]
+    },
+    {
+      "id": "LY.WEALTH.YY.22",
+      "topic": "开店",
+      "chapter": "开店占",
+      "chapter_en": "Divining for opening a shop",
+      "title": "开店占大略：先问可开否，再问本利、合伙、店面、货物、收放",
+      "rule": {
+        "yi": "开店要依次问六件事：能不能开成；本钱多少、利润厚薄；合伙人好不好；店面大小；店里的货物；能不能放账收账。管辂分爻（六爻各管一件事）：上爻财路，五爻主人，四爻店屋，三爻基业，二爻伴侣，初爻心事。",
+        "en": "Opening a shop asks six things in order: can it be opened; how much capital and how thick the profit; is the partner worthy; how big is the shopfront; what of the goods in the shop; and may credit be given and collected. Guan Lu's assignment of the lines: top, the money road; fifth, the master; fourth, the shop building; third, the foundation of the business; second, companions; first, the mind's intent."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐",
+          "zh": ["游南子曰，凡开张店业者，", "先问可开否，", "次论本之多少，利之厚薄，", "合伙之贤否，", "店面之大小，", "更看店中之货物，", "复推收放之可否，", "此其大略也。"],
+          "yi": ["游南子说：凡是开张店铺、做买卖的，", "先问开不开得成，", "再论本钱多少、利润厚薄，", "合伙人好不好，", "店面大小，", "再看店里的货物，", "又推能不能放账收账；", "这就是大概的次序。"],
+          "en": ["Master Younan says: whoever opens a shop or business", "first asks whether it can be opened at all,", "then weighs how much capital and how thick or thin the profit,", "whether the partner is worthy,", "how big the shopfront,", "then the goods in the shop,", "and last whether credit may be extended and collected:", "that is the outline."] },
+        { "by": "经", "book": "易隐",
+          "zh": ["管辂分爻", "财路主人店屋基业伴侣心事"],
+          "yi": ["管辂分爻（六爻各管一件事）：", "从上爻到初爻依次是：财路、主人、店屋、基业、伴侣、心事。"],
+          "en": ["Guan Lu's assignment of the lines:", "from the top line down to the first: the money road, the master, the shop building, the foundation of the business, companions, the mind's intent."] }
+      ],
+      "note": {
+        "yi": "这一表和贸易占的「鬼谷分爻」一样，原文没写各是哪一爻，这里照同一套次序从上爻读到初爻（依据见 LY.WEALTH.YY.18 的说明）。",
+        "en": "As with Guigu's list in the trade chapter, the source does not name the lines; they are read from the top down in the same order (see the note on LY.WEALTH.YY.18)."
+      },
+      "see": ["LY.WEALTH.YY.18"]
+    },
+    {
+      "id": "LY.WEALTH.YY.23",
+      "topic": "开店",
+      "chapter": "开店占",
+      "chapter_en": "Divining for opening a shop",
+      "title": "可开否：本宫、世爻、财爻带福禄龙喜旺相可开；死墓绝胎空破刑害不可开；六冲开不成",
+      "rule": {
+        "yi": "能不能开：本宫、世爻、财爻带福、禄、龙、喜而旺相，财或子孙持世旺相且不犯刑害克破，应上的财旺而发动生合世，或四直临财生合世，可开。本宫、世爻、财爻逢死墓绝胎、空破刑害，或四直和应爻带兄弟官鬼、旺而发动克世，不可开；四直全是兄弟而世爻旺相，兄弟受制，开张安稳。六冲卦开不成，开成也不久；太岁生合世而有动爻冲太岁，开不满一年；月生合世而有动爻冲月，开不满一月。财化子孙，宜守老本行。",
+        "en": "Whether it can be opened: if the home palace, the Self line and the Wealth line carry Output, Emolument, the Dragon or Joy and are strong, or Wealth or Output on the Self is strong and free of punishment, harm, control and breaking, or the Other's Wealth is strong and moving to generate or combine with the Self, or the four rulers on Wealth generate or combine with the Self, it can be opened. If the home palace, the Self and the Wealth line meet death, tomb, extinction or the womb stage, void, broken, punished or harmed, or the four rulers and the Other carry Peer or Pressure, strong and moving to control the Self, it cannot; but if the four rulers are all Peer while the Self is strong, Peer is held in check and the opening is safe. A Six-Clash hexagram cannot be opened, or if opened will not last; the Tai Sui generating or combining with the Self but a moving line clashing the Tai Sui: it will not last a year; the Month generating or combining with the Self but a moving line clashing the Month: not a month. Wealth turning into Output: keep to the old business."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["本宫，与世爻财爻带福禄龙喜旺相者，", "财子持世旺相，不犯刑害克破者，", "应财旺动生合世，与四直临财生合世者，", "可开也。", "本宫与世爻，财爻逢死墓绝胎，空破刑害者，", "四直与应爻，临兄鬼旺动克世者，", "不可开也。", "若四直皆兄，则兄弟受制，", "倘世持旺相，开张安稳无破也。", "卦六冲者，开不成，成亦不久也。", "太岁生合世，逢动爻冲太岁者，开不及年也。", "月生合世，而动冲月者，开不逾月也。", "财化子者，宜守旧也。"],
+          "yi": ["本宫，加上世爻、财爻带着福、禄、龙、喜而且旺相的，", "财或子孙持世而旺相，又不犯刑、害、克、破的，", "应上的财旺而发动、生合世，或者四直临财、生合世的，", "这家店可以开成。", "本宫、世爻、财爻碰上死、墓、绝、胎，或者空、破、刑、害的，", "四直和应爻带着兄弟、官鬼，旺而发动、克世的，", "不可以开。", "如果四直全是兄弟，兄弟就被制住了，", "只要世旺相，开张就安稳，不会破败。", "卦是六冲的，开不成，开成了也不长久。", "太岁生合世，却有动爻冲太岁，开不满一年。", "月生合世，却有动爻冲月，开不满一个月。", "财化成子孙的，宜守老本行。"],
+          "en": ["the home palace, with the Self line and the Wealth line carrying Output, Emolument, the Dragon or Joy and strong,", "Wealth or Output on the Self, strong, and free of punishment, harm, control or breaking,", "the Other's Wealth strong and moving to generate or combine with the Self, or the four rulers on Wealth generating or combining with the Self,", "the shop can be opened.", "The home palace, the Self line and the Wealth line meeting death, tomb, extinction or the womb stage, or void, broken, punished or harmed,", "or the four rulers and the Other line carrying Peer or Pressure, strong and moving to control the Self:", "it cannot be opened.", "If the four rulers are all Peer, Peer is held in check,", "and if the Self is strong, the opening is safe and nothing breaks.", "A Six-Clash hexagram: it cannot be opened, and if opened it will not last.", "The Tai Sui generating or combining with the Self, but a moving line clashing the Tai Sui: it will not last a year.", "The Month generating or combining with the Self, but a moving line clashing the Month: it will not last a month.", "Wealth turning into Output: better to keep to the old business."] }
+      ],
+      "see": ["LY.WEALTH.HJC.32", "LY.WEALTH.HJC.41"]
+    },
+    {
+      "id": "LY.WEALTH.YY.24",
+      "topic": "开店",
+      "chapter": "开店占",
+      "chapter_en": "Divining for opening a shop",
+      "title": "本利：卦旺财旺本多，卦衰财衰本少；财旺生扶得利；财不上卦、空破死绝，或兄劫动克世，折本",
+      "rule": {
+        "yi": "本钱和利润：卦旺财旺，本钱多；卦衰财衰，本钱少；财落在胎、墓，本钱少；财落空、绝，缺本钱。得利：世带旺财，财得生而库旺，财在绝地逢生，外卦的财生合内卦的世，财落在三爻或四爻（门户）旺而发动，三传临财发动生合世，财伏在世爻或子孙下得生得旺，财发动化成子孙、化长生、化旺，子孙发动化成财、化长生、化旺。折本：财不上卦，财空破死绝，三传临兄弟或劫煞发动，兄弟旺动克世，父母发动帮兄弟克世，应爻刑害克破世。财伏在父母下，失一半；伏在官鬼下，耗损多；伏在兄弟下，谨防口舌。",
+        "en": "Capital and profit: hexagram and Wealth both strong, much capital; both weak, little; Wealth in the womb or tomb stage, little; Wealth void or extinct, no capital. Profit comes when: the Self carries a strong Wealth; Wealth is generated and its store strong; Wealth in extinction meets Birth; outer Wealth generates or combines with the inner Self; Wealth on the Gate or Door line (the third and fourth), strong and moving; the three rulers on Wealth, moving to generate or combine with the Self; Wealth hidden under the Self or under Output and generated or strong; Wealth moving into Output, into Birth or into strength; Output moving into Wealth, into Birth or into strength. Capital is lost when: Wealth is absent from the hexagram, or void, broken, dead or extinct; the three rulers on Peer or the Robbery star, moving; Peer strong and moving to control the Self; Resource moving to help Peer control the Self; or the Other line punishes, harms, controls or breaks the Self. Wealth hidden under Resource: half is lost; under Pressure: heavy losses; under Peer: beware of quarrels."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["卦旺财旺本多也，卦衰财衰本少也。", "财胎墓，本少。", "财空绝，乏本也。", "世持旺财，", "或财持旺雀，", "或财生库旺，", "或财绝逢生，", "或外财生合内世，", "或财临门户旺动(三爻门，四爻户)，", "或三传临财，动生合世，", "或财伏世下，财伏子下，生旺，", "或财动化子，化生，化旺，", "子动化财，化生，化旺，", "皆得利也。", "若财不上卦，", "或财逢空破死绝，", "或三传临兄劫动，", "或兄旺动克世，", "或父动助兄克世，", "或应爻刑害克破世者，折本也。", "财伏父下，一半失也。", "财伏鬼下，多耗失也。", "财伏兄下，谨口舌也。"],
+          "yi": ["卦旺、财旺，本钱多；卦衰、财衰，本钱少。", "财落在胎、墓，本钱少。", "财落空、绝，缺本钱。", "世爻带着旺相的财，", "或者财带着旺相的朱雀，", "或者财得生、库又旺，", "或者财在绝地逢生，", "或者外卦的财生合内卦的世，", "或者财落在门户上、旺而发动（三爻是门，四爻是户），", "或者三传临财，发动来生合世，", "或者财伏在世下，或伏在子孙下，得生得旺，", "或者财发动化成子孙，化成长生，化成旺，", "或者子孙发动化成财，化成长生，化成旺，", "都能得利。", "如果财不上卦，", "或者财逢空、破、死、绝，", "或者三传临兄弟、劫煞而发动，", "或者兄弟旺而发动、克世，", "或者父母发动去帮兄弟克世，", "或者应爻刑、害、克、破世的，都要折本。", "财伏在父母下，失去一半。", "财伏在官鬼下，耗损很多。", "财伏在兄弟下，要谨防口舌。"],
+          "en": ["Hexagram and Wealth both strong: much capital; both weak: little capital.", "Wealth in the womb or tomb stage: little capital.", "Wealth void or extinct: no capital.", "The Self line carrying a strong Wealth,", "or Wealth carrying a strong Vermilion Bird,", "or Wealth generated and its store strong,", "or Wealth in extinction meeting Birth,", "or the outer Wealth generating or combining with the inner Self,", "or Wealth on the Gate or Door line, strong and moving (the third line is the Gate, the fourth the Door),", "or the three rulers on Wealth, moving to generate or combine with the Self,", "or Wealth hidden under the Self or under Output, and generated or strong,", "or Wealth moving into Output, into Birth, or into strength,", "or Output moving into Wealth, into Birth, or into strength,", "all of these bring profit.", "If Wealth is absent from the hexagram,", "or Wealth is void, broken, dead or extinct,", "or the three rulers are on Peer or the Robbery star, moving,", "or Peer, strong and moving, controls the Self,", "or Resource moves to help Peer control the Self,", "or the Other line punishes, harms, controls or breaks the Self: you lose your capital.", "Wealth hidden under Resource: half is lost.", "Wealth hidden under Pressure: heavy losses.", "Wealth hidden under Peer: beware of quarrels."] }
+      ],
+      "note": {
+        "yi": "「财持旺雀」在别的书里没有这一句，按字面译成财带着旺相的朱雀；朱雀通常主口舌，这里却算得利的一项，可能是字有误，没有别本可对，不改。「财生库旺」《阐奥歌章》也有（「财生库旺聚钱财」），这里读作「财得生、库又旺」。「化生」译成化出长生，「化旺」译成化出旺相，是照字面取的读法。",
+        "en": "'Wealth carrying a strong Vermilion Bird' appears in no other book here and is translated literally; the Vermilion Bird usually means quarrels yet is counted as a gain, so a wrong character is possible, but there is no other copy to check against and it is left as it is. 'Wealth generated and its store strong' also appears in the Chan'ao Gezhang verse 'Wealth generated and its store strong gathers money' and is read as Wealth being generated while its store is strong. 'Turning into Birth' and 'turning into strength' follow the literal words."
+      },
+      "see": ["LY.WEALTH.HJC.41", "LY.WEALTH.HJC.42"]
+    },
+    {
+      "id": "LY.WEALTH.YY.25",
+      "topic": "开店",
+      "chapter": "开店占",
+      "chapter_en": "Divining for opening a shop",
+      "title": "合伙：应生合世益我，刑冲克害世损我；世应比和同心，六冲不协；兄弟旺静为吉",
+      "rule": {
+        "yi": "合伙：应生合世，对我有益；应刑冲克害世，对我有损。世生应、内生外，是成全别人；世克应、内克外，是借别人的力。世应比和，两人同心；世应六冲，两情不协；世应六合，两意相投；应静而逢冲，心意多变；世空，自己心疏懒；应空，对方心松弛；世应俱空，两家都要退悔；应遭刑害克破，对方多灾病。应带龙喜，交易和气；应临白虎兄弟刻傲，螣蛇兄弟琐碎，玄武兄弟欺诈，勾陈兄弟拙钝，朱雀兄弟多是非。应上的财伏在官鬼下、或应上的财发动化兄弟，必被侵占。游魂卦应临驿马发动，人不守店；归魂卦应临驿马发动，常在家。福神带朱雀加咸池发动，爱吹爱喝；应合财加咸池，有私情。离宫火应带月盲杀克金财，分不出银子成色。应旺，勤俭多能；应衰，疲弱无才；应先合后化冲，有始无终。卦无兄弟，店里没人掌管；兄弟以旺相安静为吉。与内外亲属合伙，以用爻为凭。",
+        "en": "Partnership: the Other generating or combining with the Self helps me; the Other punishing, clashing with, controlling or harming the Self costs me. The Self generating the Other, inner generating outer: helping another succeed; the Self controlling the Other, inner controlling outer: drawing on another's strength. Self and Other in harmony: two of one mind; in a Six-Clash: feelings do not agree; in a Six-Combine: minds meet; the Other still but clashed: his mind keeps changing; the Self void: my heart is slack; the Other void: his intent is loose; both void: both sides withdraw and regret; the Other punished, harmed, controlled or broken: he has many mishaps and illnesses. The Other with the Dragon and Joy stars: dealings are gracious; on the White Tiger as Peer: sharp and arrogant; Coiling Snake as Peer: petty; Dark Tortoise as Peer: deceitful; Hook Earth as Peer: clumsy and dull; Vermilion Bird as Peer: many quarrels. The Other's Wealth hidden under Pressure, or moving into Peer: he will surely take your share. A Wandering-Soul hexagram with the Other on the Post Horse, moving: he does not stay in the shop; a Returning-Soul hexagram: he is often at home. Output on the Vermilion Bird with the Salt Pool star, moving: fond of boasting and drinking; the Other combining with Wealth and carrying the Salt Pool star: a private affair. In the Li palace, the Other on Fire with the Moon-Blind star, controlling Metal Wealth: cannot tell the fineness of silver. The Other strong: diligent, thrifty and capable; weak: feeble and without talent; combining then turning into a clash: a start with no finish. No Peer in the hexagram: the shop has no one in charge; Peer is auspicious when strong and still. For a partnership with relatives, inside or outside the family, take the Subject line as your guide."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["应生合世者，益我。", "应刑冲克害世者，损我。", "世生应，内生外，成人之美。", "世克应，内克外，得人之力。", "世应比和，二人同心。", "世应六冲，两情不协。", "世应六合，两意相投。", "应静逢冲，心多变更。", "世空己心疏懒，应空他意懒弛。", "世应俱空，两家退悔也。", "应遭刑害克破者，多灾病也。", "应持龙喜，交易和雅也。", "应临虎兄，交易刻傲也。", "蛇兄琐屑，", "武兄欺诈，", "勾兄拙钝，", "雀兄多招是非也。", "应财伏鬼下，与应财动化兄者，必侵牟也。", "游魂应临马动，不守店也。", "归魂应临马动，常顾家也。", "福雀加咸池动，好吹好饮也。", "应合财，加咸池，有私情也。", "离宫火应，带月盲杀，", "克金财者，不辨银色也。", "应旺，则勤俭多能。", "应衰，则(此处之字上艹下爾)弱无才也。", "应合化冲，有始无终也。", "卦无兄弟，店无掌管也。", "兄以旺静为吉也。", "又凡与内外亲属合本者，以用爻为凭也。"],
+          "yi": ["应生合世的，对我有益。", "应刑、冲、克、害世的，对我有损。", "世生应、内卦生外卦，是成全别人。", "世克应、内卦克外卦，是借到别人的力。", "世应比和，两人同心。", "世应六冲，两人情意不合。", "世应六合，两人心意相投。", "应静而遇冲，心意多变。", "世空，自己心里疏懒；应空，对方心意松弛。", "世应都空，两家都要退悔。", "应遭刑、害、克、破的，对方多灾病。", "应带龙、喜，交易和气文雅。", "应临白虎又是兄弟，交易时刻薄傲慢。", "螣蛇兄弟，琐碎；", "玄武兄弟，欺诈；", "勾陈兄弟，拙钝；", "朱雀兄弟，多惹是非。", "应上的财伏在官鬼下，或应上的财发动化成兄弟，必被侵占牟利。", "游魂卦，应临驿马发动，人不守在店里。", "归魂卦，应临驿马发动，常在家里。", "福神带朱雀、加咸池而发动，爱吹牛爱喝酒。", "应爻去合财，又带着咸池星，会有私情。", "离宫，应是火，带月盲杀，", "又克金的财，分不清银子的成色。", "应旺，就勤俭、多才能。", "应衰，就疲弱无才。（原书这个字只写了「上艹下爾」，即「薾」字。）", "应先合、后来变成冲，有始无终。", "卦里没有兄弟，店里没人掌管。", "兄弟以旺相而安静为吉。", "还有，凡是和内外亲属合伙出本的，以用爻为凭。"],
+          "en": ["The Other generating or combining with the Self: he benefits me.", "The Other punishing, clashing with, controlling or harming the Self: he costs me.", "The Self generating the Other, inner generating outer: helping another succeed.", "The Self controlling the Other, inner controlling outer: drawing on another's strength.", "Self and Other in harmony: two of one mind.", "Self and Other in a Six-Clash: their feelings do not agree.", "Self and Other in a Six-Combine: their minds meet.", "The Other still but clashed: his mind keeps changing.", "The Self void: my own heart is slack; the Other void: his intent is loose.", "Both Self and Other void: both sides withdraw and regret.", "The Other meeting punishment, harm, control or breaking: he has many mishaps and illnesses.", "The Other carrying the Dragon and Joy stars: dealings are gracious.", "The Other on the White Tiger as Peer: sharp and arrogant in dealings.", "Coiling Snake as Peer: petty;", "Dark Tortoise as Peer: deceitful;", "Hook Earth as Peer: clumsy and dull;", "Vermilion Bird as Peer: brings many quarrels.", "The Other's Wealth hidden under Pressure, or the Other's Wealth moving into Peer: he will surely take your share.", "A Wandering-Soul hexagram, the Other on the Post Horse and moving: he does not stay in the shop.", "A Returning-Soul hexagram, the Other on the Post Horse and moving: he is often at home.", "Output on the Vermilion Bird with the Salt Pool star, moving: fond of boasting and drinking.", "The Other combining with Wealth and carrying the Salt Pool star: a private affair.", "In the Li palace, the Other on Fire, carrying the Moon-Blind star", "and controlling a Metal Wealth: he cannot tell the fineness of the silver.", "The Other strong: diligent, thrifty and capable.", "The Other weak: then feeble (the source gives the first character only as a description: grass on top, 'er' below) and without talent.", "The Other combining, then turning into a clash: a start with no finish.", "No Peer in the hexagram: the shop has no one in charge.", "Peer is auspicious when strong and still.", "Again, for going into partnership with relatives, inside or outside the family, take the Subject line as your guide."] }
+      ],
+      "note": {
+        "yi": "兄弟在这一段里出现两回，说的不是同一个位置：卦里有旺静的兄弟是好事（店里有人掌管）；应爻自己是兄弟并带某个六神时，是对方的毛病。「应衰则□弱无才」里那个字，原书没有印出来，只写了「此处之字上艹下爾」，这里照原文保留，译文里注明是「薾」。",
+        "en": "Peer appears twice in this passage and not in the same place: a strong, still Peer in the hexagram is good (someone runs the shop), while the Other itself being Peer under a given spirit is a fault of the other party. The character in 'the Other weak ... feeble' is not printed in the source; only its description 'grass on top, er below' is, and it is kept as written."
+      },
+      "see": ["LY.WEALTH.HJC.27", "LY.WEALTH.ZS.08"]
+    },
+    {
+      "id": "LY.WEALTH.YY.26",
+      "topic": "开店",
+      "chapter": "开店占",
+      "chapter_en": "Divining for opening a shop",
+      "title": "店面货物：父母为店，妻财为货；父旺店大，财旺货流；书纸店以父为用，宝珠古董店以财为用",
+      "rule": {
+        "yi": "看店和货：父母代表店，妻财代表货。父旺而静，店里热闹平安；财旺而动，货物畅销。父旺是大店，父衰是小店；父逢冲开不长，父遇生合能长久。有财无父是有货无店，有父无财是有店无货；父旺财衰，店大利薄；父衰财旺，店小利厚。两个财：内卦被冲、外卦旺，本少利多；内卦旺、外卦被冲，本多利少。卦身和世爻跟官鬼入墓，白费力，利归别人。财爻遇冲暗动，带龙喜暗中得利，带玄武劫煞被骗失财。官鬼临财库发动，不是官司就是灾祸。父母带杀刃亡劫发动，或日雀会月雀发动，招争讼。珠宝古董杂货店以财为用，书纸巾帽衣服店以父为用，酒肴牲畜店以子为用；用神旺、财衰，货多利薄。另有郭雍说：开书籍纸货古董店，财旺而父母被克，吉；开当铺，父母旺而财被克，吉。",
+        "en": "Reading the shop and its goods: Resource stands for the shop, Wealth for the goods. Resource strong and still: the shop is busy and peaceful; Wealth strong and moving: the goods circulate. Resource strong is a big shop, weak a small one; Resource clashed will not stay open long, generated or combined it stays open for good. Wealth without Resource is goods without a shop; Resource without Wealth is a shop without goods; Resource strong and Wealth weak: a big shop, thin profit; the reverse: a small shop, thick profit. Two Wealth lines, the inner clashed and the outer strong: little capital, much profit; the inner strong and the outer clashed: much capital, little profit. The Body and Self lines following Pressure into the tomb: labor in vain, the profit goes to others. A Wealth line clashed into hidden motion profits in secret with the Dragon and Joy stars, and is cheated of money with the Dark Tortoise or the Robbery star. Pressure moving on the tomb-store of Wealth: a lawsuit or a disaster. Resource moving with the killing stars, the Goat Blade, the Loss or the Robbery star, or the Day's Vermilion Bird meeting the Month's Vermilion Bird, moving: it invites lawsuits. Jewel, antique and sundry shops take Wealth as the Subject; shops of books, paper, scarves, hats and clothes take Resource; wine, food and livestock shops take Output; the Subject strong but Wealth weak: many goods, thin profit. Guo Yong adds: for a shop of books, paper goods and antiques, Wealth strong while Resource is controlled is auspicious; for a pawnshop, Resource strong while Wealth is controlled is auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐",
+          "zh": ["父母为店，妻财为货。", "父旺静者，闹热平安。", "财旺动者，货物流行也。", "父旺大店，父衰小店。", "父逢冲开不久，", "父遇生合，开张永远也。", "有财无父，有货无店，", "有父无财，有店无货。", "父旺财衰，店大利微。", "父衰财旺，店小利厚。", "卦有两财，内冲外旺者，本少利多。", "内旺外冲者，本多利少也。", "身世随官入墓者，徒劳而利归他人也。", "财爻逢冲暗动者，带龙喜，则暗中得利。", "带武劫，则被骗失财也。", "官临财库动者，非讼即灾也。", "父临杀刃亡劫动，", "或日雀会月雀动者，主招争讼也。", "又宝珠古董杂货店，以财为用。", "书纸巾帽衣服店，以父为用。", "酒肴牲畜店，以子为用。", "用旺财衰者，货多利薄也。"],
+          "yi": ["父母代表店，妻财代表货。", "父母旺而安静，店里热闹平安。", "财旺而发动，货物畅销。", "父母旺是大店，父母衰是小店。", "父母逢冲，开不长久；", "父母遇生合，开张能长久。", "有财而没有父母，是有货没有店；", "有父母而没有财，是有店没有货。", "父母旺、财衰，店大利薄。", "父母衰、财旺，店小利厚。", "卦里有两个财，内卦被冲、外卦旺的，本钱少利润多；", "内卦旺、外卦被冲的，本钱多利润少。", "卦身和世爻跟着官鬼入墓的，白费力气，利润归了别人。", "财爻遇冲而暗动，若带龙、喜，就在暗地里得利；", "带玄武、劫煞，就被骗失财。", "官鬼落在财库上发动，不是官司就是灾祸。", "父母带着杀、刃、亡、劫而发动，", "或者日的朱雀与月的朱雀相会而发动，主招来争讼。", "还有，卖珠宝、古董、杂货的店，以财为用神。", "卖书、纸、头巾、帽子、衣服的店，以父母为用神。", "卖酒菜、牲畜的店，以子孙为用神。", "用神旺、财衰，货多利薄。"],
+          "en": ["Resource stands for the shop; Wealth for the goods.", "Resource strong and still: the shop is busy and peaceful.", "Wealth strong and moving: the goods circulate freely.", "Resource strong: a big shop; Resource weak: a small shop.", "Resource clashed: it will not stay open long;", "Resource generated or combined: it will stay open for good.", "Wealth without Resource: goods without a shop;", "Resource without Wealth: a shop without goods.", "Resource strong and Wealth weak: a big shop with thin profit.", "Resource weak and Wealth strong: a small shop with thick profit.", "Two Wealth lines in the hexagram, the inner clashed and the outer strong: little capital, much profit;", "the inner strong and the outer clashed: much capital, little profit.", "The Body and Self lines following Pressure into the tomb: labor in vain, and the profit goes to others.", "A Wealth line clashed into hidden motion: with the Dragon and Joy stars, it profits in secret;", "with the Dark Tortoise or the Robbery star, you are cheated of your money.", "Pressure moving on the tomb-store of Wealth: a lawsuit or a disaster.", "Resource moving with the killing stars, the Goat Blade, the Loss star or the Robbery star,", "or the Day's Vermilion Bird meeting the Month's Vermilion Bird, moving: it invites lawsuits.", "Again, for jewel, antique and sundry shops, Wealth is the Subject.", "For shops of books, paper, scarves, hats and clothes, Resource is the Subject.", "For shops of wine, food and livestock, Output is the Subject.", "The Subject strong but Wealth weak: many goods, thin profit."] },
+        { "by": "郭雍", "book": "易隐",
+          "zh": ["又郭雍曰，开书籍纸贴古董店，", "财旺而父母受克者，吉也。", "开当铺者，父旺而财受克者，吉也。"],
+          "yi": ["又郭雍说：开书籍、纸货、古董店，", "财旺而父母被克，吉。", "开当铺的，父母旺而财被克，吉。"],
+          "en": ["Guo Yong also says: for a shop of books, paper goods and antiques,", "Wealth strong while Resource is controlled: auspicious.", "For a pawnshop: Resource strong while Wealth is controlled: auspicious."] }
+      ],
+      "dispute": {
+        "yi": "书籍纸张店该看谁，同一段里有两个说法：前面说书、纸、巾、帽、衣服店以父母为用神，父母旺才好；郭雍却说开书籍纸货古董店，要财旺、父母被克才吉；当铺则反过来，父母旺、财被克才吉。原文并列，没有分出高下。",
+        "en": "For a bookshop the same paragraph gives two readings: first, shops of books, paper, scarves, hats and clothes take Resource as the Subject, so Resource should be strong; Guo Yong says a shop of books, paper goods and antiques does well when Wealth is strong and Resource controlled, while a pawnshop is the other way round, Resource strong and Wealth controlled. The source sets them side by side and does not rank them."
+      },
+      "note": {
+        "yi": "「日雀会月雀」只见于《易隐》这一处，按字面译成日的朱雀会月的朱雀。「纸贴」译成纸货。",
+        "en": "'The Day's Bird meeting the Month's Bird' occurs only here in the Yi Yin and is translated literally. 'Paper and sheets' is rendered as 'paper goods'."
+      },
+      "see": ["LY.WEALTH.ZS.08", "LY.WEALTH.HJC.32"]
+    },
+    {
+      "id": "LY.WEALTH.YY.27",
+      "topic": "借贷",
+      "chapter": "开店占",
+      "chapter_en": "Divining for opening a shop",
+      "title": "收放：哪一爻生合世可放账；临空破死绝或动来刑害克冲世，有放无收",
+      "rule": {
+        "yi": "放账收账：《管公口诀》说，六爻是钱财往来的路；哪一爻生合世爻，可以放账；如果它落在空、破、死、绝上，或者发动来刑、害、克、冲世爻，放出去收不回来。",
+        "en": "Extending and collecting credit: Guan Gong's rhymes say the six lines are the roads by which money comes and goes; a line that generates or combines with the Self, you may lend on credit; if it falls in void, break, death or extinction, or moves to punish, harm, control or clash the Self, you lend and never collect."
+      },
+      "quotes": [
+        { "by": "管公口诀", "book": "易隐",
+          "zh": ["管公口诀曰，", "六爻为东西财路，", "生合世者，可放帐。", "若临空破死绝，及动来刑害克冲世者，", "主有放无收也。"],
+          "yi": ["管公口诀说：", "六爻是钱财东来西往的路，", "哪一爻生合世爻，就可以放账。", "如果它落在空、破、死、绝上，或者发动来刑、害、克、冲世爻，", "主放出去收不回来。"],
+          "en": ["Guan Gong's rhymes say:", "the six lines are the roads by which money comes and goes, east and west;", "a line that generates or combines with the Self: you may lend on credit.", "But if it falls in void, break, death or extinction, or moves to punish, harm, control or clash the Self,", "you lend and never collect."] }
+      ],
+      "note": {
+        "yi": "「东西财路」的「东西」原文没有解释，这里按字面译成东来西往。",
+        "en": "The source does not explain 'east and west money roads'; it is translated literally."
+      },
+      "see": ["LY.WEALTH.HJC.31", "LY.WEALTH.ZS.27", "LY.WEALTH.ZS.28"]
+    },
+    {
+      "id": "LY.WEALTH.YY.28",
+      "topic": "风险",
+      "chapter": "寄物占",
+      "chapter_en": "Divining for leaving goods with someone",
+      "title": "寄物：卦六合、财旺静可寄；财衰动、空破、应动带凶神则有失",
+      "rule": {
+        "yi": "把东西寄放在别人那里：先要托给可托的人，因为人心难测，有见物起欺心的，有收藏不严招盗的，有安放不当弄坏东西的。卦六合可寄，六冲不可寄；月日和动爻合财、合世应可寄，冲财、冲世应不可寄。财旺静，或财动化子孙、化长生、化旺，无失；财衰动，或动化兄弟、官鬼、空破绝，有失。财化土朽腐，化木微黷，化火遭火灾，化水受潮漏，化金封识被拆开。世应空破、随官鬼入墓、被兄弟官鬼动伤，应爻动化兄鬼空破绝，都有失。应爻动，他心变；应动助鬼伤身世财，他与人合谋劫骗。应临玄武动偷窃，临朱雀动口舌，临勾陈动牵连，临螣蛇动惊恐，临白虎动吞没，临青龙动则善加保护。",
+        "en": "Leaving goods with someone: first choose a person who can be trusted, for hearts are hard to fathom: some see the goods and turn deceitful, some store them carelessly and invite thieves, some put them in the wrong place and let them spoil. A Six-Combine hexagram: you may leave things; a Six-Clash: you may not. The Month, the Day and moving lines combining with Wealth, the Self or the Other: you may; clashing with them: you may not. Wealth strong and still, or Wealth moving into Output, into Birth or into strength: nothing is lost; Wealth weak and moving, or moving into Peer, Pressure, void, break or extinction: loss. Wealth turning into Earth: rot and decay; into Wood: slightly soiled; into Fire: fire; into Water: damp and leaks; into Metal: the seals broken open. Self and Other void or broken, following Pressure into the tomb, hurt by moving Peer or Pressure, or the Other moving into Peer, Pressure, void, break or extinction: loss. The Other moving: his mind has changed; the Other moving to help Pressure hurt the Body, the Self and the Wealth line: he plots with others to rob and cheat you. The Other moving on the Dark Tortoise: theft; on the Vermilion Bird: quarrels; on Hook Earth: entanglement; on the Coiling Snake: fright; on the White Tiger: devouring; on the Azure Dragon: good safekeeping."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐",
+          "zh": ["游南子曰，", "吾之寄物，必托其人之可托，", "而后以物付之也，", "然而人情叵测，", "睹物怀欺者有之，", "谩藏诲盗者有之，", "安置失所，致物败坏者有之，", "是不可以不慎厥始也。"],
+          "yi": ["游南子说：", "我把东西寄放出去，一定要托给可以托付的人，", "然后才把东西交给他。", "可是人心难测：", "有看见东西就起欺心的，", "有收藏不严、招来盗贼的，", "有安放不当、把东西弄坏的，", "所以一开始就不能不谨慎。"],
+          "en": ["Master Younan says:", "when I leave my goods with someone, I must choose a person who can be trusted,", "and only then hand the goods over.", "But human hearts are hard to fathom:", "some see the goods and turn deceitful;", "some store them carelessly and so invite thieves;", "some put them in the wrong place and let them spoil;", "so one cannot but be careful from the very start."] },
+        { "by": "经", "book": "易隐",
+          "zh": ["故卦六合者，可寄。", "六冲者，不可寄也。", "月日与动爻合财合世应者，可寄。", "冲财冲世应者，不可寄也。", "财旺静，与财动化子，化生化旺者，无失。", "财衰动，与动化兄鬼空破绝者，有失也。", "财化土者朽腐。", "财化木者微黷。", "财化火者回禄。", "财化水者湿漏。", "财化金者，封识拆开也。", "世应空破者失，", "世应随鬼入墓者失，", "兄鬼动伤应爻者失，", "应爻动化兄鬼空破绝者失也。", "应爻动者，他心变也。", "应动助鬼伤身世财爻者，与人合计劫骗也。", "应临武动者偷窃。", "应临雀动者口舌。", "应临勾动者牵连。", "应临蛇动者惊恐。", "应临虎动者吞噬。", "应临龙动者，善保护也。"],
+          "yi": ["所以卦是六合的，可以寄放。", "六冲的，不可以寄放。", "月建、日辰和动爻合财、合世、合应的，可以寄放；", "冲财、冲世、冲应的，不可以寄放。", "财旺而静，或财发动化成子孙、化长生、化旺的，不会有失。", "财衰而动，或发动化成兄弟、官鬼、空、破、绝的，会有损失。", "财化成土的，朽烂腐坏。", "财化成木的，略有污损。", "财化成火的，遭火灾。", "财化成水的，受潮渗漏。", "财化成金的，封条印记被拆开。", "世、应落空或破的，有失；", "世、应跟着官鬼入墓的，有失；", "兄弟、官鬼发动伤应爻的，有失；", "应爻发动化成兄弟、官鬼、空、破、绝的，有失。", "应爻发动，对方变了心。", "应发动去帮官鬼、伤害卦身、世爻和财爻，是他和别人合谋劫骗你。", "应临玄武而发动，偷窃。", "应临朱雀而发动，口舌是非。", "应临勾陈而发动，牵连不清。", "应临螣蛇而发动，惊恐。", "应临白虎而发动，被吞没。", "应临青龙而发动，能好好保护。"],
+          "en": ["So a Six-Combine hexagram: you may leave things.", "A Six-Clash hexagram: you may not.", "The Month, the Day and moving lines combining with Wealth, the Self or the Other: you may leave things;", "clashing with Wealth, the Self or the Other: you may not.", "Wealth strong and still, or Wealth moving into Output, into Birth or into strength: nothing is lost.", "Wealth weak and moving, or moving into Peer, Pressure, void, break or extinction: something is lost.", "Wealth turning into Earth: rot and decay.", "Wealth turning into Wood: slightly soiled.", "Wealth turning into Fire: fire strikes.", "Wealth turning into Water: damp and leaks.", "Wealth turning into Metal: the seals are broken open.", "Self and Other void or broken: loss;", "Self and Other following Pressure into the tomb: loss;", "Peer or Pressure moving to hurt the Other line: loss;", "the Other line moving into Peer, Pressure, void, break or extinction: loss.", "The Other line moving: his mind has changed.", "The Other moving to help Pressure hurt the Body, the Self and the Wealth line: he is plotting with others to rob and cheat you.", "The Other moving on the Dark Tortoise: theft.", "On the Vermilion Bird: quarrels.", "On Hook Earth: entanglement.", "On the Coiling Snake: fright.", "On the White Tiger: devouring.", "On the Azure Dragon: he guards it well."] }
+      ],
+      "note": {
+        "yi": "原文是一整段，「游南子曰」之后没有另外标出说话人的分界；「故」字以下这里按本文（未标说话人）放，如果它其实也是游南子的话，归属会不同。「微黷」译成略有污损。",
+        "en": "The source is one paragraph with no marked change of speaker after 'Master Younan says'; from 'so' onward it is placed as the base text, and if it is also Master Younan's, the attribution would differ. 'Slightly soiled' translates a two-character phrase whose first character means 'slight'."
+      },
+      "see": ["LY.WEALTH.HJC.35"]
+    }
+  ]
+}

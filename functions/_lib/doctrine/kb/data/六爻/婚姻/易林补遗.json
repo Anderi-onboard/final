@@ -1,0 +1,675 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "易林补遗",
+  "chapter": "倩媒说合章第九 / 婚姻嫁娶章第十",
+  "chapter_en": "Chapters 9-10: go-betweens; marriage",
+  "ranges": {"易林补遗": [503, 573]},
+  "units": [
+    {
+      "id": "LY.MARRY.YL.01",
+      "topic": "媒妁",
+      "chapter": "倩媒说合章第九",
+      "chapter_en": "Chapter 9: go-betweens and matchmaking",
+      "title": "嫁聚当求媒妁人，应为月老忌冲刑：卜媒人以应爻为主象，忌空冲破绝、喜扶合旺生；应克世媒心刁诈，应生世是良媒",
+      "rule": {
+        "yi": "占婚以间爻为主，单问媒人以应爻的象为凭。这时应爻是主要的象：不能落在空、冲、破、绝的地方，最喜逢扶、合、旺、生。应爻克世爻，媒人心怀刁滑欺诈；应爻来生世爻，就是好媒人。应爻空而陷是没有功效，旺而有生扶才有力量。",
+        "en": "In a marriage divination the between lines come first, and when the go-between alone is asked about, rely on the sign of the Other line. Then the Other line is the chief sign: it must not fall into Void, clash, break or extinction, and is most glad to meet support, combination, strength and generation. If the Other line controls the Self line the go-between is cunning and deceitful; if it comes to generate the Self line, the go-between is a good one. If the Other line is Void and fallen it achieves nothing; strong and supported, it has power."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [505, 505],
+          "zh": ["占婚以间爻为主，", "问媒以应象为凭。"],
+          "yi": ["占婚，以间爻为主；", "问媒，以应爻的象为凭据。"],
+          "en": ["In divining a marriage, the between lines come first;", "in asking about the go-between, the sign of the Other line is what to rely on."] },
+        { "by": "经", "book": "易林补遗", "range": [506, 506],
+          "zh": ["嫁聚当求媒妁人，应为月老忌冲刑，", "无功必遇空而陷，有力须旺与生，", "克制世爻心不善，生扶身象意多能。"],
+          "yi": ["嫁娶要找媒人牵线，应爻就是月下老人，最怕被冲被刑；", "没有功效，必定是遇到空而陷落；有力量，须要旺相又得生扶；", "克制世爻，心地不善；生扶自身之象，用意多能干。"],
+          "en": ["Marriage calls for a go-between: the Other line is the Old Man under the Moon, and it fears clash and punishment;", "if it achieves nothing it has surely met Void and fallen; if it has power it must be strong and supported;", "if it controls the Self line the heart is not kind; if it generates and supports the sign of oneself, the intent is capable."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [507, 507],
+          "zh": ["卜媒人，应为主象，切不可临于空冲破绝之乡，最喜遇扶合旺生之地。", "应克世爻，心怀刁诈，如来生世却是良媒。"],
+          "yi": ["占媒人，应爻是主要的象，千万不可落在空、冲、破、绝的地方，最喜欢遇到扶、合、旺、生的地方。", "应爻克世爻，媒人心怀刁滑欺诈；如果来生世爻，就是好媒人。"],
+          "en": ["In divining a go-between, the Other line is the chief sign; on no account should it fall in Void, clash, break or extinction, and it is most glad to meet support, combination, strength or generation.", "If the Other line controls the Self line, the go-between harbors cunning and deceit; if it comes to generate the Self line, it is a good go-between."] }
+      ],
+      "see": ["LY.MARRY.HJC.33", "LY.MARRY.HJC.42", "LY.MARRY.YL.03"]
+    },
+    {
+      "id": "LY.MARRY.YL.02",
+      "topic": "成否",
+      "chapter": "倩媒说合章第九",
+      "chapter_en": "Chapter 9: go-betweens and matchmaking",
+      "title": "财官不失方谐合，世应临空岂得成，三合其人能赞美，六冲此客欠调停：卦得财鬼俱全方成，无鬼不谐；世应临空纵有财官也难合；六合定成、六冲未就、合处逢冲将成有变",
+      "rule": {
+        "yi": "求媒人、同时占成不成：卦里财、鬼两样齐全，才能成；没有官鬼，事情一定不谐。世应落在空地，即使有财官也难相合。卦逢六合，一定成婚；见六冲，姻缘还没成；合处又逢冲，快成时有变。三合，媒人能说好话促成；六冲，媒人欠调停的本事。",
+        "en": "In seeking a go-between and also divining whether the match will be made: the hexagram must have both Wealth and Pressure before it can be accomplished, and with no Pressure the matter does not go well. If the Self and Other lines fall in Void, even with Wealth and Pressure present it is hard for them to combine. A Six-combine hexagram surely makes the marriage; a Six-clash means the match is not yet made; a combination that meets a clash is about to succeed and then changes. With a three-harmony the go-between can speak well and bring it about; with a Six-clash he lacks the skill to mediate."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [509, 509],
+          "zh": ["财官不失方谐合，世应临空岂得成，", "三合其人能赞美，六冲此客欠调停。"],
+          "yi": ["财爻、官爻都不失，才能谐合；世应临空，怎么能成；", "三合，这个媒人能说好话促成；六冲，这个客人欠缺调停的本事。"],
+          "en": ["Only if Wealth and Pressure are not lost can there be harmony; with the Self and Other in Void, how can it be made;", "with a three-harmony this person can speak well and bring it about; with a Six-clash this guest lacks the skill to mediate."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [510, 510],
+          "zh": ["凡求媒妁、兼占成与不成，卦得财鬼俱全，方能成就。", "爻如无鬼，事决不谐。", "世应若临空地，纵有财官，亦难相合。", "若得卦逢六合，定主成婚，如见六冲，姻缘未就，合处逢冲将成有变。"],
+          "yi": ["凡是求媒人、同时占成不成的，卦里财、鬼两样齐全，才能成。", "爻里如果没有官鬼，事情一定不谐。", "世应如果落在空地，即使有财、官，也难以相合。", "如果得到的卦逢六合，一定成婚；如果见到六冲，姻缘还没成，合处又逢冲，快成了会有变。"],
+          "en": ["When seeking a go-between and also divining whether it will be made, the hexagram must have both Wealth and Pressure before it can be accomplished.", "If there is no Pressure line, the matter surely does not go well.", "If the Self and Other lines fall in Void, even with Wealth and Pressure present it is hard for them to combine.", "If the hexagram meets a Six-combine, the marriage is sure to be made; if it shows a Six-clash, the match is not yet made; a combination that meets a clash is about to succeed and then changes."] }
+      ],
+      "see": ["LY.MARRY.HJC.04", "LY.MARRY.HJC.23", "LY.MARRY.ZS.13"]
+    },
+    {
+      "id": "LY.MARRY.YL.03",
+      "topic": "媒妁",
+      "chapter": "倩媒说合章第九",
+      "chapter_en": "Chapter 9: go-betweens and matchmaking",
+      "title": "占婚又不观其应，二间为媒细审情：单占媒人看应爻；在婚姻卦里推就不凭应爻，反取间爻为媒，旺则有力、空则无能",
+      "rule": {
+        "yi": "占婚时不看应爻，把两个间爻当作媒人，仔细审察实情。只占媒人时看应爻；要是在婚姻卦里推，就不凭应爻，反过来取间爻当媒人：旺就有力，空就无能。",
+        "en": "In a marriage divination one does not look at the Other line; take the two between lines as the go-betweens and examine the facts closely. When only the go-between is divined, look at the Other line; but when reckoning within a marriage hexagram, do not rely on the Other line and take the between lines for the go-between instead: strong means capable, Void means incapable."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [511, 511],
+          "zh": ["占婚又不观其应，二间为媒细审情。"],
+          "yi": ["占婚又不看应爻，就把两个间爻当作媒人，仔细审察实情。"],
+          "en": ["In a marriage divination one does not look at the Other line; take the two between lines as the go-betweens and examine the facts closely."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [512, 512],
+          "zh": ["单占有月老，当看应爻，如在婚姻卦内推之，又不凭其应象，反取间爻为婚，旺须有力，空则无能。"],
+          "yi": ["单独占媒人，要看应爻；如果是在婚姻卦里推，就不凭应爻的象，反过来取间爻来看婚事，旺就有力，空就无能。"],
+          "en": ["When divining the go-between alone, look at the Other line; but when reckoning within a marriage hexagram, do not rely on the sign of the Other line and take the between lines instead: strong means capable, Void means incapable."] }
+      ],
+      "note": {
+        "yi": "原文最后一句「反取间爻为婚」，按上下文「婚」应是「媒」之误（同一段前面说「单占月老看应爻」）；译文按「媒」的意思译。",
+        "en": "The last sentence reads 'take the between lines for the match', but from the context the word 'match' should be 'go-between' (the same passage says a go-between alone is read from the Other line); it is translated in the sense of go-between."
+      },
+      "see": ["LY.MARRY.HJC.33", "LY.MARRY.HJC.35", "LY.MARRY.YL.01"]
+    },
+    {
+      "id": "LY.MARRY.YL.04",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "易道无穷须把阴阳为首，人伦有五还将夫归为先；纯阳恐男子之鳏（无财），纯阴女人之寡（无鬼）；先看阴阳，次凭财官",
+      "rule": {
+        "yi": "论婚姻，先看阴阳，再凭财爻、官爻。卦如果纯阳或者没有财爻，一定伤妻；纯阴的卦或者缺少官爻，丈夫要早死。",
+        "en": "In judging marriage, first look at yin and yang, then rely on Wealth and Pressure. If the hexagram is pure yang or has no Wealth line, the wife will surely be harmed; a pure yin hexagram, or one lacking a Pressure line, means the husband dies early."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [516, 516],
+          "zh": ["以内外世应为主，", "阴阳财鬼为凭。"],
+          "yi": ["（这一章）以内外卦、世应为主，", "以阴阳、财爻官鬼为凭据。"],
+          "en": ["Take the inner and outer trigrams and the Self and Other lines as the main thing,", "and yin and yang, Wealth and Pressure as the evidence."] },
+        { "by": "经", "book": "易林补遗", "range": [517, 517],
+          "zh": ["易道无穷，须把阴阳为首；", "人伦有五，还将夫归为先。", "纯阳，恐男子之鳏，无财可比；", "纯阴，女人之寡，无鬼亦然。"],
+          "yi": ["易道没有穷尽，须以阴阳为首；", "人伦有五种，还要把夫妇之归排在前面。", "纯阳（全阳）的卦，怕男子成了鳏夫，因为没有财爻可以比配；", "纯阴（全阴）的卦，女人成了寡妇，没有官鬼爻也是这样。"],
+          "en": ["The way of the Changes is without end, and yin and yang must come first;", "there are five human relations, and the joining of husband and wife comes first among them.", "A pure yang hexagram: fear that the man becomes a widower, since there is no Wealth line to match him;", "a pure yin hexagram: the woman becomes a widow, and it is the same when there is no Pressure line."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [518, 518],
+          "zh": ["凡论婚姻之事，先看阴阳，次凭财官，卦若纯阳或无财者，定见伤妻。", "纯阴之卦、或缺官爻，夫当早丧。"],
+          "yi": ["凡是论婚姻的事，先看阴阳，再凭财、官；卦如果纯阳或者没有财爻，一定伤妻。", "纯阴的卦，或者缺少官爻，丈夫要早死。"],
+          "en": ["In judging any matter of marriage, first look at yin and yang, then rely on Wealth and Pressure; if the hexagram is pure yang or has no Wealth line, the wife will surely be harmed.", "A pure yin hexagram, or one lacking a Pressure line, means the husband dies early."] }
+      ],
+      "note": {
+        "yi": "「人伦有五，还将夫归为先」的「夫归」，原文没有解释；译作「夫妇之归」是取上下文。前面括号里的一行是章的提纲，这里去掉括号引。",
+        "en": "The phrase 'the return of the husband' in 'there are five human relations, and the return of the husband comes first' is not explained in the original; it is rendered as the joining of husband and wife from the context. The bracketed line before it is the chapter's outline, quoted here without the brackets."
+      },
+      "see": ["LY.MARRY.HJC.01", "LY.MARRY.HZL.18"]
+    },
+    {
+      "id": "LY.MARRY.YL.05",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "夫唱妇随卦必阴阳得位，男情女喜爻当财鬼俱全：内卦为夫外卦为妇、世为夫应为妇，内阳外阴或世阳应阴为得位；有鬼无财有夫无妇，有财无鬼有妇无夫",
+      "rule": {
+        "yi": "夫唱妇随，卦里阴阳要得位；男女情投意合，爻里财、鬼要齐全。内卦是夫、外卦是妇，又以世爻为夫、应爻为妇：内阳外阴，或世阳应阴，都算得位，婚姻遇到百年和合。内阴外阳，或世阴应阳，是阴阳交错，夫妻只有一半称心。世应得位而内外卦纯阴纯阳，或内外卦得位而世应纯阴纯阳，都只是半吉。内外卦和世应全是纯阳或纯阴，不成夫妇——自古纯阴不生、纯阳不化，要一阴一阳才成配偶。再看：鬼爻是夫、财爻是妇；有鬼无财是有夫无妇，有财无鬼是有妇无夫；财、鬼齐全，夫妇才能和谐到老。",
+        "en": "For the husband to lead and the wife to follow the hexagram must have yin and yang in their places; for man and woman to love and delight in each other, the lines must have Wealth and Pressure complete. The inner trigram is the husband and the outer the wife, and likewise the Self line is the husband and the Other line the wife: inner yang with outer yin, or the Self line yang with the Other yin, count as in their places, and a marriage meeting this is in harmony for a hundred years. Inner yin with outer yang, or the Self yin with the Other yang, is yin and yang crossed, and husband and wife have their wish only by half. If the Self and Other lines are in their places but the inner and outer trigrams are pure yin or pure yang, or the reverse, it is only half auspicious. If the inner and outer trigrams and the Self and Other lines are all pure yang or pure yin, they do not become husband and wife: since antiquity pure yin does not give birth and pure yang does not transform, and only one yin with one yang makes a pair. Then: the Pressure line is the husband and the Wealth line the wife; Pressure without Wealth is a husband without a wife, Wealth without Pressure a wife without a husband; only when both are complete can husband and wife grow old in harmony."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [519, 519],
+          "zh": ["夫唱妇随，卦必阴阳得位；", "男情女喜，爻当财鬼俱全。"],
+          "yi": ["要夫唱妇随，卦一定阴阳得位；", "要男女情投意合，爻里财、鬼两样都要齐全。"],
+          "en": ["For the husband to lead and the wife to follow, the hexagram must have yin and yang in their places;", "for man and woman to love and delight in each other, the lines must have both Wealth and Pressure complete."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [520, 520],
+          "zh": ["内卦为夫，外卦为妇，又以世为夫，应为妇，若得内阳外阴、或世阳应阴二者，皆为得位，婚姻遇之百年和合。", "若内阴外阳、或世阴应阳皆是阴阳交错，夫妻半遂其心。", "又如世应阴阳得位，内外纯阴纯阳，或内外阴阳得位，世应纯阴纯阳，皆为半吉。", "若内外世应皆值纯阳纯阴，不成夫妇。", "自古纯阴不生，纯阳不化，须得一阴一阳方成配偶。", "复论鬼为夫，财为妇。", "有鬼无财，有夫无妇。", "有财无鬼，有妇无夫。", "卦若财鬼俱全，夫妇方能谐老。"],
+          "yi": ["内卦是夫，外卦是妇，又以世爻为夫、应爻为妇，如果得到内阳外阴，或者世阳应阴，这两样都算得位，婚姻遇到了，百年和合。", "如果内阴外阳，或者世阴应阳，都是阴阳交错，夫妻只有一半称心。", "又如世应的阴阳得位而内外卦纯阴纯阳，或者内外卦阴阳得位而世应纯阴纯阳，都是半吉。", "如果内外卦、世应都是纯阳或纯阴，成不了夫妇。", "自古纯阴不能生，纯阳不能化，必须一阴一阳才成配偶。", "再论鬼爻是丈夫，财爻是妻子。", "有鬼爻没有财爻，有丈夫没有妻子。", "有财爻没有鬼爻，有妻子没有丈夫。", "卦里如果财、鬼两样齐全，夫妻才能和谐到老。"],
+          "en": ["The inner trigram is the husband and the outer trigram the wife, and again the Self line is the husband and the Other line the wife; if one gets inner yang and outer yin, or the Self line yang and the Other yin, both count as in their places, and a marriage meeting this is in harmony for a hundred years.", "If the inner is yin and the outer yang, or the Self yin and the Other yang, yin and yang are crossed, and husband and wife have their wish only by half.", "Again, if the Self and Other lines are in their places but the inner and outer trigrams are pure yin or pure yang, or the inner and outer are in their places but the Self and Other are pure yin or pure yang, all are half auspicious.", "If the inner and outer trigrams and the Self and Other lines are all pure yang or pure yin, they do not become husband and wife.", "Since antiquity pure yin does not give birth and pure yang does not transform; only one yin with one yang makes a pair.", "Next: the Pressure line is the husband and the Wealth line the wife.", "With Pressure but no Wealth, there is a husband but no wife.", "With Wealth but no Pressure, there is a wife but no husband.", "Only if the hexagram has both Wealth and Pressure can husband and wife grow old in harmony."] }
+      ],
+      "see": ["LY.MARRY.HJC.01", "LY.MARRY.HJC.18", "LY.MARRY.HZL.09", "LY.MARRY.HZL.18", "LY.MARRY.YL.20"]
+    },
+    {
+      "id": "LY.MARRY.YL.06",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "男婚须财象兴隆、女嫁得官爻旺相；男占妇以财为主决不可无，女占夫用鬼为先",
+      "rule": {
+        "yi": "男子的婚事，财爻的象要兴旺，才能早晚一同欢悦；女子出嫁，官鬼爻要旺相，才能朝夕同欢。男占妻子，以财爻为主，决不可没有；女占丈夫，以鬼爻为先，道理相仿。",
+        "en": "For a man's marriage the sign of Wealth must flourish, so that they delight together morning and evening; for a woman's marriage the Pressure line must be strong, so that they share joy morning and evening. A man divining a wife takes the Wealth line as the main thing, and it must never be absent; a woman divining a husband puts the Pressure line first; the principle is the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [521, 521],
+          "zh": ["男婚，须教授象兴隆，晨错共悦；", "女嫁，得官爻旺相，朝夕同欢。"],
+          "yi": ["男子的婚事，须要「教授」象兴旺（疑为「财爻」象之误），早晚共同欢悦；", "女子出嫁，得官鬼爻旺相，朝夕一同欢乐。"],
+          "en": ["For a man's marriage the 'professor' sign must flourish (probably a slip for the Wealth sign), so that they delight together morning and evening;", "for a woman's marriage, with the Pressure line strong, they share joy morning and evening."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [522, 522],
+          "zh": ["男占妇，以财为主，决不可无，女占夫，用鬼为先，其理仿此。"],
+          "yi": ["男子占妻子，以财爻为主，决不可没有；女子占丈夫，以鬼爻为先，道理相仿。"],
+          "en": ["A man divining about a wife takes the Wealth line as the main thing, and it must never be absent; a woman divining about a husband puts the Pressure line first; the principle is the same."] }
+      ],
+      "note": {
+        "yi": "「须教授象兴隆，晨错共悦」两处像是转录之误：「教授象」多半是「财爻象」（下一句「女嫁，得官爻旺相」与它对着说），「晨错」多半是「晨昏」。译文按这个读法译，并在括号里注明。",
+        "en": "Two phrases look like transcription slips: 'the professor sign' is most likely 'the Wealth line sign' (the next clause, 'for a woman's marriage, the Pressure line strong', is its counterpart), and 'morning error' is most likely 'morning and dusk'. They are translated in that sense, with the doubt marked in brackets."
+      },
+      "see": ["LY.MARRY.HJC.18", "LY.MARRY.ZS.01"]
+    },
+    {
+      "id": "LY.MARRY.YL.07",
+      "topic": "对方",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "世为男家应为女宅，世旺应衰女贫男富、世衰应旺女富男贫；卦旺官衰男富而夫貌不充、卦衰官旺夫宅贫而男容秀；卦旺财衰女舍丰而姿欠美、卦衰财旺女家寒而色精妍；官喜生不喜绝、财宜旺不宜空",
+      "rule": {
+        "yi": "世爻代表男方的家，应爻代表女方的家；世旺应衰是男方富、女方贫，世衰应旺是女方富、男方贫。鬼爻所在的卦是男家，财爻所在的宫是女宅：卦旺而官衰，男家富而丈夫相貌不足；卦衰而官旺，夫家穷而男子秀气；卦旺而财衰，女方家里丰足而姿容欠美；卦衰而财旺，女方家里寒素而肤色如雪、精致。官鬼爻是丈夫，喜生不喜绝，绝了丈夫亡故；财爻是妻子，宜旺不宜空，空了妻子亡故。鬼爻空，丈夫无远寿；财爻陷，妻子不高寿。",
+        "en": "The Self line stands for the man's household and the Other line for the woman's: with the Self strong and the Other weak the man's side is rich and the woman's poor; with the Self weak and the Other strong the woman's side is rich and the man's poor. The trigram where Pressure sits is the man's family and the palace where Wealth sits is the woman's house: with the trigram strong and Pressure weak, the man's family is rich but the husband's looks are lacking; with the trigram weak and Pressure strong, the husband's house is poor but the man is handsome; with the trigram strong and Wealth weak, the woman's home is plentiful but her looks are not fair; with the trigram weak and Wealth strong, the woman's family is poor but her complexion is snow-white and refined. The Pressure line is the husband: it likes generation and not extinction, and if extinguished the husband dies; the Wealth line is the wife: it should be strong and not Void, and if Void the wife dies. If Pressure is Void the husband will not live long; if Wealth has fallen the wife will not reach a great age."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [523, 523],
+          "zh": ["世作男安，旺则荣华之宅。", "应为女室，衰还贫乏之门，", "鬼是夫身，空无远寿。", "财成妻体，陷不遐龄。"],
+          "yi": ["世爻当男方的家，旺就是荣华的门第；", "应爻当女方的家，衰就还是贫乏的门户；", "鬼爻是丈夫本人，空了就没有长寿；", "财爻是妻子本人，陷落了就没有高寿。"],
+          "en": ["The Self line stands for the man's household; strong, it is a house of splendor;", "the Other line stands for the woman's household; weak, it is a poor and wanting door;", "the Pressure line is the husband himself, and if it is Void he will not live long;", "the Wealth line is the wife herself, and if it falls she will not reach a great age."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [524, 524],
+          "zh": ["世为男家，应为女宅，世旺应衰，便曰女贫男富，世衰应旺，当云女富男贫。", "又云鬼居此卦为男家，财值其宫为女宅，卦旺官衰，男家虽富而夫貌不充。", "卦衰官旺夫宅虽贫而男容且秀。", "卦旺财衰，女舍丰而女姿欠美。", "卦衰财旺，女家寒而雪色精姘。", "官作夫君，喜生不喜绝，绝则夫亡。", "财为妻室，宜旺不宜空，空须妇丧。"],
+          "yi": ["世爻是男家，应爻是女宅，世旺应衰，就说女方贫、男方富；世衰应旺，就说女方富、男方贫。", "又说：鬼爻所在的卦是男家，财爻所在的宫是女宅；卦旺而官衰，男家虽然富，但丈夫相貌不足；", "卦衰而官旺，丈夫家虽然贫寒，但男子相貌秀气。", "卦旺而财衰，女方家里丰足，但女子姿容欠美；", "卦衰而财旺，女方家里寒素，但肤色如雪、精致美丽。", "官鬼爻是丈夫，喜生、不喜绝，绝了丈夫就亡故。", "财爻是妻子，宜旺、不宜空，空了妻子要亡故。"],
+          "en": ["The Self line is the man's family and the Other line the woman's house; with the Self strong and the Other weak, say the woman's side is poor and the man's rich; with the Self weak and the Other strong, say the woman's side is rich and the man's poor.", "It is also said that the trigram where Pressure sits is the man's family and the palace where Wealth sits is the woman's house; with the trigram strong and Pressure weak, the man's family is rich but the husband's looks are lacking;", "with the trigram weak and Pressure strong, the husband's house is poor but the man is handsome.", "With the trigram strong and Wealth weak, the woman's home is plentiful but her looks are not fair;", "with the trigram weak and Wealth strong, the woman's family is poor but her complexion is snow-white and refined.", "The Pressure line is the husband: it likes generation and not extinction, and if extinguished the husband dies.", "The Wealth line is the wife: it should be strong and not Void, and if Void the wife dies."] }
+      ],
+      "note": {
+        "yi": "有两处字看着是转录之误：「世作男安」的「安」多半是「家」，「雪色精姘」的「姘」多半是「妍」。译文按这个意思译。",
+        "en": "Two characters look like transcription slips: 'an' in 'the Self line stands for the man's peace' is most likely 'jia' (household), and 'pin' in 'snow-white and refined' is most likely 'yan' (fair). They are translated in that sense."
+      },
+      "see": ["LY.MARRY.HJC.37", "LY.MARRY.HJC.25"]
+    },
+    {
+      "id": "LY.MARRY.YL.08",
+      "topic": "媒妁",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "间曰良媒，逢空少力：两间之爻皆为媒妁，近世为男家月老、近应为女舍冰人；临空犯绝媒必无能，遇旺逢生中须有力",
+      "rule": {
+        "yi": "间爻叫作好媒人，逢空就少了力量。两个间爻都是媒人：靠近世爻的是男家的月老，靠近应爻的是女方的冰人。临空、犯绝，媒人必定无能；遇旺、逢生，中间人必定有力。",
+        "en": "The between line is called the good go-between, but meeting Void it lacks strength. The two between lines are both go-betweens: the one next to the Self line is the man's family's Old Man under the Moon, and the one next to the Other line is the woman's house's ice-man. Meeting Void or extinction, the go-between is surely incompetent; meeting strength or generation, he is surely effective."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [525, 525],
+          "zh": ["间曰良媒，逢空少力；"],
+          "yi": ["间爻叫作好媒人，逢空就少了力量；"],
+          "en": ["The between line is called the good go-between, but meeting Void it lacks strength;"] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [526, 528],
+          "zh": ["两间之爻，皆为媒妁，近世则男家月老，近应则女舍冰人。", "临空犯绝，媒必无能；", "遇旺逢生，中须有力。"],
+          "yi": ["两个间爻，都是媒人；靠近世爻的是男家的月老，靠近应爻的是女方的冰人。", "临空、犯绝，媒人必定无能；", "遇旺、逢生，中间人必定有力。"],
+          "en": ["The two between lines are both go-betweens; the one next to the Self line is the man's family's Old Man under the Moon, and the one next to the Other line is the woman's house's ice-man.", "Meeting Void or extinction, the go-between is surely incompetent;", "meeting strength or generation, the intermediary is surely effective."] }
+      ],
+      "see": ["LY.MARRY.HJC.33", "LY.MARRY.HJC.34", "LY.MARRY.HJC.38"]
+    },
+    {
+      "id": "LY.MARRY.YL.09",
+      "topic": "子嗣",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "子云后代，遇绝无儿：子孙宜静不宜动（动则刑夫）、宜旺不宜空（空则无子）；临绝又主无儿，绝中得生扶反主儿孙多",
+      "rule": {
+        "yi": "子孙爻代表后代，遇到绝就没有儿子。子孙爻宜静、不宜动，动了刑克丈夫；宜旺、不宜空，空了没有儿子；落在绝地又没有儿子；绝中如果得到生扶，反而儿孙多育。",
+        "en": "The Output line is the descendants, and meeting extinction there is no son. The Output line should be still and not moving, since moving it punishes the husband; it should be strong and not Void, since Void means no son; in a place of extinction, again no son; but if in extinction it receives generation and support, on the contrary there are many sons and grandsons."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [525, 525],
+          "zh": ["子云后代，遇绝无儿。"],
+          "yi": ["子孙爻代表后代，遇到绝就没有儿子。"],
+          "en": ["The Output line is the descendants; meeting extinction there is no son."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [526, 528],
+          "zh": ["子孙之象，宜静不宜动，动则刑夫；", "宜旺不宜空，空须无子。", "若临绝地，又主无儿。", "绝中如得生扶，反主儿孙多育。"],
+          "yi": ["子孙的象，宜静、不宜动，动了就刑克丈夫；", "宜旺、不宜空，空了就没有儿子。", "如果落在绝地，又主没有儿子。", "绝中如果得到生扶，反而主儿孙多育。"],
+          "en": ["The sign of Output should be still and not moving, for if it moves it punishes the husband;", "it should be strong and not Void, for if Void there is no son.", "If it falls in a place of extinction, again there is no son.", "If in extinction it receives generation and support, on the contrary there are many sons and grandsons."] }
+      ],
+      "see": ["LY.MARRY.HJC.10", "LY.MARRY.HJC.16", "LY.MARRY.HZL.10"]
+    },
+    {
+      "id": "LY.MARRY.YL.10",
+      "topic": "夫妻",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "财爻变鬼变冲妻遭久疾，鬼象化官化破夫染陈灾：财忌冲或化鬼、鬼忌刑冲再化官爻；病在何方看鬼在何卦何爻",
+      "rule": {
+        "yi": "财爻是妻子本人，变成鬼爻或被冲，妻子遭受久病；鬼爻是丈夫，忌刑冲又变成官爻或破，丈夫染上旧病。要知道病在哪个方位，看鬼爻在哪个卦、哪一爻，可以断出带病的部位。",
+        "en": "The Wealth line is the wife's own body: changing into Pressure or clashed, the wife suffers a long illness; the Pressure line is the husband: if it is punished or clashed and changes into Pressure again or into a break, the husband contracts an old affliction. To know where the illness lies, look at which trigram and which line the Pressure is in; the diseased part can be judged from it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [529, 529],
+          "zh": ["财爻变鬼变冲，妻遭久疾。", "鬼象化官化破，夫染陈灾。"],
+          "yi": ["财爻变成鬼爻或变成冲，妻子遭受久病；", "鬼爻的象变成官爻或变成破，丈夫染上旧灾。"],
+          "en": ["Wealth changing into Pressure or into a clash: the wife suffers a long illness;", "the Pressure sign changing into Pressure again or into a break: the husband contracts an old affliction."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [530, 530],
+          "zh": ["财为妻体，切不宜冲或化鬼爻，便生残疾。", "鬼为夫主，忌犯刑冲再化官爻，夫当有疾。", "要知疾在何方，看鬼在谁卦谁爻，可断带疾之处，详见身命章中。"],
+          "yi": ["财爻是妻子本人，千万不宜被冲，或者变成鬼爻，那样就生残疾。", "鬼爻是丈夫，忌犯刑冲，又变成官爻，丈夫就有病。", "要知道病在哪个方位，看鬼爻在哪个卦、哪一爻，可以断出带病的部位，详见身命章中。"],
+          "en": ["The Wealth line is the wife's own body, and it must not be clashed or change into a Pressure line, or a disability arises.", "The Pressure line is the husband; if it suffers punishment or clash and changes into a Pressure line again, the husband has illness.", "To know where the illness lies, look at which trigram and which line the Pressure is in; the diseased part can be judged from it, as detailed in the chapter on one's person and fate."] }
+      ],
+      "note": {
+        "yi": "末句说「详见身命章」，那一章不在婚姻域里，这里没有收。",
+        "en": "The last sentence refers the reader to the chapter on one's person and fate, which is not part of the marriage domain and is not included here."
+      }
+    },
+    {
+      "id": "LY.MARRY.YL.11",
+      "topic": "夫妻",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "合内又生必享天长地久，冲中再克定应死别生离：用神寅亥合、未午、酉辰得生得合则和谐；午子、卯酉有冲有克则终分离",
+      "rule": {
+        "yi": "合中又有生，一定享到天长地久；冲中又加克，一定应在死别生离。比如用神寅与亥合，用神未逢午，用神酉见辰，都是得生得合，自然极其和谐；又如用神午见子，卯酉相冲，就是有冲有克，终究分离。",
+        "en": "A combination with a generation inside it surely enjoys heaven-long, earth-lasting happiness; a clash with a control inside it surely answers in death or parting alive. For example, if the Subject is Yin and combines with Hai, or the Subject is Wei and Wu comes, or the Subject is You and meets Chen, all are cases of gaining generation and combination, and naturally there is harmony a million-fold; again, if the Subject is Wu and meets Zi, or Mao and You clash, there is clash and control, and this means separation in the end."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [531, 531],
+          "zh": ["合内又生，必享天长地久。", "冲中再克，定应死别生离。"],
+          "yi": ["合中又有生，一定享到天长地久；", "冲中又加克，一定应在死别生离。"],
+          "en": ["Within a combination, again a generation: surely enjoy heaven-long, earth-lasting happiness;", "within a clash, again a control: surely death or parting alive."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [532, 532],
+          "zh": ["且如用寅亥合，用未午来，用酉见辰，皆是得生得合，自然百万和谐。", "又如用午见子，用卯酉冲，便是有冲有克，此为终见分离。"],
+          "yi": ["比如用神寅与亥合，用神未逢午来，用神酉见辰，都是得生得合，自然极其和谐。", "又如用神午见子，用神卯酉互冲，便是有冲有克，这是终究分离。"],
+          "en": ["For example, if the Subject is Yin and combines with Hai, or the Subject is Wei and Wu comes, or the Subject is You and meets Chen, all are cases of gaining generation and combination, and naturally there is harmony a million-fold.", "Again, if the Subject is Wu and meets Zi, or Mao and You clash, there is clash and control, and this means separation in the end."] }
+      ],
+      "see": ["LY.MARRY.HJC.04", "LY.MARRY.YL.14"]
+    },
+    {
+      "id": "LY.MARRY.YL.12",
+      "topic": "聘嫁",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "旺财与旺应生身妆奁厚实，衰世并衰官克应聘礼轻微：应为妻宅、财乃嫁资，二者旺而生世倍得妆奁；世作男家、鬼作夫主，休囚克应聘礼轻微",
+      "rule": {
+        "yi": "旺相的财爻和旺相的应爻来生扶自身，嫁妆丰厚；世爻衰、官爻也衰又克应爻，聘礼轻薄。应爻是妻子家，财爻是嫁资，两样旺相而生世，加倍得到嫁妆；世爻是男家，鬼爻是丈夫，如果休囚而克应爻，自然聘礼轻薄。",
+        "en": "A strong Wealth line and a strong Other line generating the Self bring a rich and solid dowry; a weak Self line and a weak Pressure line controlling the Other line bring slight betrothal gifts. The Other line is the wife's house and Wealth the marriage portion: if both are strong and generate the Self, the dowry is doubled; the Self line is the man's family and Pressure the husband: if they are resting and trapped and control the Other line, the betrothal gifts are naturally slight."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [533, 533],
+          "zh": ["旺财与旺应生身，妆奁厚实。", "衰世并衰官克应，聘礼轻微。"],
+          "yi": ["旺相的财爻和旺相的应爻来生扶自身，嫁妆丰厚扎实；", "世爻衰、官爻也衰又克应爻，聘礼轻薄。"],
+          "en": ["A strong Wealth line and a strong Other line generating the Self bring a rich and solid dowry;", "a weak Self line and a weak Pressure line controlling the Other line bring slight betrothal gifts."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [534, 534],
+          "zh": ["应为妻宅，财乃嫁资，二者旺而生世，倍得妆奁。", "世作男家，鬼作夫主，若值休囚克应，自然聘礼轻微。"],
+          "yi": ["应爻是妻子家，财爻是嫁资，两样旺相而生世，加倍得到嫁妆。", "世爻是男家，鬼爻是丈夫，如果休囚而克应爻，自然聘礼轻薄。"],
+          "en": ["The Other line is the wife's house and the Wealth line the marriage portion; if both are strong and generate the Self, the dowry is doubled.", "The Self line is the man's family and the Pressure line the husband; if they are resting and trapped and control the Other line, the betrothal gifts are naturally slight."] }
+      ],
+      "see": ["LY.MARRY.HJC.32", "LY.MARRY.HZL.20"]
+    },
+    {
+      "id": "LY.MARRY.YL.13",
+      "topic": "成否",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "男心少就只因世陷世冲，女意多更切为应空应动：世空或冲破则男家无意求成，应空或冲或动则女家无心匹配",
+      "rule": {
+        "yi": "男方心意不成，是因为世爻陷落或被冲；女方心意多变，是因为应爻空或动。世爻逢空亡或遭冲破，男家无意求成；应爻临空、被冲或发动，女家无心匹配。",
+        "en": "The man's heart seldom settles because the Self line has fallen or is clashed; the woman's mind changes often because the Other line is Void or moving. If the Self line is Void or is clashed or broken, the man's family has no intention of making it; if the Other line is Void, clashed or moving, the woman's family has no heart for the match."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [535, 535],
+          "zh": ["男心少就，只因世陷世冲。", "女意多更，切为应空应动。"],
+          "yi": ["男方心意少有成就，只因世爻陷落或被冲；", "女方心意多变，正是因为应爻空或动。"],
+          "en": ["The man's heart seldom settles, only because the Self line has fallen or is clashed;", "the woman's mind changes often, precisely because the Other line is Void or moving."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [536, 536],
+          "zh": ["世爻若值空亡或遭冲破，男家无意求成。", "应若临空或冲或动，女家无心匹配。"],
+          "yi": ["世爻如果逢空亡，或者遭冲破，男家无意求成。", "应爻如果临空，或者被冲，或者发动，女家无心匹配。"],
+          "en": ["If the Self line is Void or is clashed or broken, the man's family has no intention of making it.", "If the Other line is Void, clashed or moving, the woman's family has no heart for the match."] }
+      ],
+      "see": ["LY.MARRY.HJC.23", "LY.MARRY.HJC.12", "LY.MARRY.ZS.07", "LY.MARRY.HZL.02"]
+    },
+    {
+      "id": "LY.MARRY.YL.14",
+      "topic": "成否",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "卦爻相合必男妇成欢，贞悔相冲定夫妻不睦：卦得六爻相合绵远和谐，遇六冲定然反目",
+      "rule": {
+        "yi": "卦爻相合，男女必定成欢；贞卦、悔卦相冲，夫妻一定不和睦。卦得六爻相合，长远和谐；遇到六冲，一定反目。",
+        "en": "When the hexagram and its lines combine, man and woman surely find joy together; when the Zhen and Hui trigrams clash, husband and wife are surely at odds. A hexagram whose six lines combine has long-lasting harmony; meeting a Six-clash, they surely fall out."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [537, 537],
+          "zh": ["卦爻相合，必男妇之成欢。", "贞悔相冲，定夫妻之不睦。"],
+          "yi": ["卦爻相合，男女必定成欢；", "贞卦悔卦相冲，夫妻一定不和睦。"],
+          "en": ["When the hexagram and its lines combine, man and woman surely find joy together;", "when the Zhen and Hui trigrams clash, husband and wife are surely at odds."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [538, 538],
+          "zh": ["卦得六爻相合，绵远和谐。", "若遇六冲，定然反目。"],
+          "yi": ["卦得六爻相合，长远和谐。", "如果遇到六冲，一定反目。"],
+          "en": ["If the hexagram has all six lines combining, the harmony is long-lasting.", "If it meets a Six-clash, they surely fall out."] }
+      ],
+      "note": {
+        "yi": "「贞悔」在这一联里，下面的解说读成「六爻相合」「六冲」（整卦的合与冲），没有读成上下两卦相冲；译文保留「贞、悔」两字，读法交给解说。",
+        "en": "The explanation under the couplet reads 'Zhen and Hui' as the whole hexagram combining or clashing (six-combine and six-clash), not as the two trigrams clashing; the translation keeps the words Zhen and Hui and leaves the reading to the explanation."
+      },
+      "see": ["LY.MARRY.HJC.04", "LY.MARRY.ZS.13", "LY.MARRY.YL.11"]
+    },
+    {
+      "id": "LY.MARRY.YL.15",
+      "topic": "成否",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "前冲后合初离别复聚欢情，前合后冲始谐和终遭变易：未配之前得冲中化合决不相谐；成亲之后先冲后合初生离后复就；卦占六合被月辰冲开或化六冲，始欢悦后不和",
+      "rule": {
+        "yi": "先冲后合，起初离别，后来又聚欢情；先合后冲，起初和谐，最终遭变易。还没婚配之前，如果卜得冲中化合，一定不能相谐；成亲之后，如果得到先冲后合，起初见生离，后来还会重新合好。卦占得六合，被月建日辰冲开，或世应财官变成六冲，都主起初欢悦，后来一定不和谐。",
+        "en": "First a clash and then a combination: at first parting, then joy gathered again; first a combination and then a clash: harmony at the start and change in the end. Before the match is made, if the divination gives a clash turning into a combination, it surely will not be harmonious; after the wedding, if it gives first a clash and then a combination, there is at first parting alive and afterwards they come together again. If the hexagram is a Six-combine that is clashed open by the Month or Day, or the Self, Other, Wealth and Pressure change into a Six-clash, all mean joy at the start and surely disharmony afterwards."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [539, 539],
+          "zh": ["前冲后台，初离别复聚欢情。", "前合后冲，始谐和终遭变易。"],
+          "yi": ["先冲后合，起初离别，后来又聚欢情；", "先合后冲，开头和谐，最终遭到变易。"],
+          "en": ["First a clash and then a combination: at first parting, then joy gathered again;", "first a combination and then a clash: harmony at the start, and change in the end."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [540, 540],
+          "zh": ["未配之前，若卜冲中化合，决不相谐，成亲之后，如得先冲后合，初见生离后还复就。", "若卦占六合被月辰冲开，世应财官或化六冲皆主始初欢悦，后来定不和谐。"],
+          "yi": ["还没婚配之前，如果卜得冲中化合，一定不能相谐；成亲以后，如果得到先冲后合，起初见生离，后来还会重新合好。", "如果卦占得六合，被月建日辰冲开，世应财官，或者变成六冲，都主起初欢悦，后来一定不和谐。"],
+          "en": ["Before the match is made, if the divination gives a clash turning into a combination, it surely will not be harmonious; after the wedding, if it gives first a clash and then a combination, there is at first parting alive and afterwards they come together again.", "If the hexagram is a Six-combine that is clashed open by the Month or Day, or the Self, Other, Wealth and Pressure change into a Six-clash, all mean joy at the start and surely disharmony afterwards."] }
+      ],
+      "dispute": {
+        "yi": "还没成亲时得到冲变合：这里说「决不相谐」；《增删卜易》（觉子）说「六冲变六合者尤吉，求婚者目下不允，久必成之」（见 LY.MARRY.ZS.13）——两家在这一种卦上判得相反。成亲以后先冲后合、起初生离后来重聚，两家看法一致。",
+        "en": "For a clash turning into a combination obtained before the wedding this text says 'it surely will not be harmonious', while the Zengshan Buyi (Juezi) says 'a Six-clash changing into a Six-combine is better still: for one seeking a marriage, although refused for now, it will be made in time' (see LY.MARRY.ZS.13): the two books judge this kind of hexagram in opposite ways. For a couple already wed, first a clash and then a combination, parting at first and reunion after, the two agree."
+      },
+      "note": {
+        "yi": "第一句原文作「前冲后台」，「台」是「合」的转录之误；引用原字，译文按「合」译。",
+        "en": "The first line reads 'first clash, then platform', where 'platform' is a transcription slip for 'combination'; the character is quoted as it stands and translated as 'combination'."
+      },
+      "see": ["LY.MARRY.ZS.13", "LY.MARRY.HJC.04", "LY.MARRY.YL.11"]
+    },
+    {
+      "id": "LY.MARRY.YL.16",
+      "topic": "子嗣",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "孤辰值鬼夫必无儿，寡宿临财妻当少子；父旺少兄妨儿女，妻强无鬼损公姑；子摇刑夫财兴有解，兄动克妇子发无妨",
+      "rule": {
+        "yi": "孤辰星落在鬼爻上，丈夫必定没有儿子；寡宿星临在财爻上，妻子该少子息。男子怕孤辰临官鬼，女子嫌寡宿落妻财，遇到其中一样，以后没有子息，不仅儿女受伤，更主夫妻相克。父母爻旺、兄弟爻少，妨碍儿女；妻财强、没有鬼爻，损害公婆。子孙爻动固然刑克丈夫，但财爻兴旺就有化解；兄弟爻动虽说克妻，但子孙发动就无妨。父母爻动而兄弟爻不动，一定伤儿女；财爻动而鬼爻不动，一定损公婆。子孙动伤夫，财动去生官鬼反而吉；兄弟兴旺害妻，子孙一同发动就无妨。",
+        "en": "The Solitary Star on the Pressure line: the husband surely has no son; the Widowhood Star on the Wealth line: the wife should have few children. A man fears the Solitary Star on Pressure and a woman dislikes the Widowhood Star on Wealth; meeting either, there will be no offspring later, and not only are the children harmed, husband and wife also harm each other. A strong Resource line with few Peer lines hinders the children; a strong Wealth line without Pressure harms the parents-in-law. When the Output line moves it indeed punishes the husband, but if Wealth flourishes there is a remedy; when a Peer line moves it is said to harm the wife, yet if Output moves there is no harm. When the Resource line moves and the Peer line does not, the children are surely harmed; when Wealth moves and Pressure does not, the parents-in-law are surely hurt. When Output moves it harms the husband, but if Wealth moves to generate Pressure it is on the contrary auspicious; when a Peer line flourishes it harms the wife, but if the Output line moves together with it, there is no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [541, 541],
+          "zh": ["孤辰值鬼，夫必无儿。", "寡宿临财，妻当少子。"],
+          "yi": ["孤辰星落在鬼爻上，丈夫必定没有儿子；", "寡宿星临在财爻上，妻子该少子息。"],
+          "en": ["The Solitary Star on the Pressure line: the husband surely has no son;", "the Widowhood Star on the Wealth line: the wife should have few children."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [542, 543],
+          "zh": ["男怕孤辰忧临官鬼，女嫌寡宿忌值妻财，二者逢之，后无子息，非惟儿女遭伤，更主夫妻相克。", "父旺少兄妨儿女，妻强无鬼捐公姑。", "子摇固曰刑夫，财兴有解；", "兄动虽云克妇，子发无妨。", "父摇兄不摇决伤儿女，财动鬼不动定损公姑。", "子动伤夫，财动生官反吉。", "兄兴害室，子孙并动无妨。"],
+          "yi": ["男子怕孤辰星，忧的是它临在官鬼爻上；女子嫌寡宿星，忌的是它落在妻财爻上；这两样遇到一样，以后没有子息，不仅儿女受伤，更主夫妻相克。", "父母爻旺、兄弟爻少，妨碍儿女；妻财强、没有鬼爻，损害公婆。", "子孙爻动，固然说是刑克丈夫，但财爻兴旺就有化解；", "兄弟爻动，虽说克妻，但子孙发动就没妨碍。", "父母爻动而兄弟爻不动，一定伤儿女；财爻动而鬼爻不动，一定损公婆。", "子孙动伤夫，财爻动去生官鬼反而吉。", "兄弟爻兴旺伤害妻室，但子孙爻一同发动就无妨。"],
+          "en": ["A man fears the Solitary Star, worried that it sits on the Pressure line; a woman dislikes the Widowhood Star, fearing that it falls on the Wealth line; meeting either, there will be no offspring later, and not only are the children harmed, husband and wife also harm each other.", "A strong Resource line with few Peer lines hinders the children; a strong Wealth line without Pressure harms the parents-in-law.", "When the Output line moves it is indeed said to punish the husband, but if Wealth flourishes there is a remedy;", "when a Peer line moves it is said to harm the wife, yet if Output moves there is no harm.", "When the Resource line moves and the Peer line does not, the children are surely harmed; when Wealth moves and Pressure does not, the parents-in-law are surely hurt.", "When Output moves it harms the husband, but if Wealth moves to generate Pressure it is on the contrary auspicious.", "When a Peer line flourishes it harms the wife, but if the Output line moves together with it, there is no harm."] }
+      ],
+      "note": {
+        "yi": "孤辰、寡宿是神煞（孤独之星、寡居之星）。「父旺少兄妨儿女」是把「父旺」「少兄」连读，原文标点没有分开；译文照字面。",
+        "en": "The Solitary Star and the Widowhood Star are spirit-stars. 'Strong Resource, few Peer lines' is read together as the original does not punctuate between them; the translation is literal."
+      },
+      "see": ["LY.MARRY.HJC.10", "LY.MARRY.HJC.20", "LY.MARRY.ZS.11"]
+    },
+    {
+      "id": "LY.MARRY.YL.17",
+      "topic": "对方",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "龙值财爻形骸秀丽，蛇临宴位情性虚浮；白虎悖逆、玄武风流、朱雀巧词、勾陈持重；带咸池多情多欲、临马勤往勤来",
+      "rule": {
+        "yi": "财爻代表妻子的性情，看它带的是什么神，就知道好坏。带青龙，容貌像西施，性情慈祥、有礼、友悌、柔顺、贞洁廉正；带螣蛇，性情虚浮，心机多而少信实，言语能打动人；带白虎，心里怀着妒忌凶悍，性情也刚强；带玄武，吝啬、无缘无故地放荡；带朱雀，急躁多话；带勾陈，做事迟钝；带咸池，在家里扰乱人伦、在外面寻花问柳；再加驿马，早晚在外奔走。",
+        "en": "The Wealth line stands for the wife's nature; see what spirit it carries and you know whether it is good or bad. With the Azure Dragon, her looks are like Xi Shi's and her nature kind, courteous, brotherly, gentle, compliant, chaste and upright; with the Coiling Snake, a light and unstable nature, many schemes and little trustworthiness, though her words move people; with the White Tiger, she harbors jealousy and fierceness, and her nature is also hard; with the Dark Tortoise, she is stingy and dissolute without reason; with the Vermilion Bird, hasty and talkative; with Hook Earth, slow and dull in action; with the Xianchi star, she disorders the human relations at home and seeks flowers and willows outside; adding the Post Horse, she is out and about morning and evening."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [544, 544],
+          "zh": ["龙值财爻，形骸秀丽。", "蛇临宴位，情性虚浮。", "白虎乃悖逆之星，玄武是风流之宿，", "朱雀巧词绕舌，勾陈持重寡言。", "带咸池则多情多欲，临马则勤往勤来。"],
+          "yi": ["青龙落在财爻上，身形秀丽；", "螣蛇临在宴位，性情虚浮；", "白虎是悖逆之星，玄武是风流之宿，", "朱雀是巧言绕舌，勾陈是持重寡言。", "带咸池就多情多欲，临驿马就勤于往来。"],
+          "en": ["The Azure Dragon on the Wealth line: a fair and graceful form;", "the Coiling Snake in the banquet position: a nature light and unstable;", "the White Tiger is the star of perversity, the Dark Tortoise the lodge of dalliance,", "the Vermilion Bird is glib words and a twisting tongue, Hook Earth is steadiness and few words;", "with the Xianchi star, much passion and much desire; on the Post Horse, often going and coming."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [545, 545],
+          "zh": ["财为妻性，看值何爻，便知美恶。", "带青龙貌如西子，性主慈祥礼悌、柔顺贞廉。", "值螣蛇虚浮之性，多心机而少信实，言语感人。", "逢白虎，心怀妒悍，性亦刚强。", "犯玄武，为人悭吝、放荡无端。", "逢朱雀，急躁多言。", "遇勾陈事行迟钝。", "值咸池，则内乱人伦，外寻花柳，加驿马，则朝行东北，暮返西南。"],
+          "yi": ["财爻代表妻子的性情，看它落在什么上，就知道好坏。", "带青龙，容貌像西施，性情慈祥、有礼、友悌、柔顺、贞洁廉正。", "遇螣蛇，性情虚浮，心机多而少信实，言语能打动人。", "逢白虎，心里怀着妒忌凶悍，性情也刚强。", "犯玄武，为人吝啬、无缘无故地放荡。", "逢朱雀，急躁多话。", "遇勾陈，做事迟钝。", "遇咸池，就在家里扰乱人伦，在外面寻花问柳；再加驿马，就早上往东北、晚上回西南。"],
+          "en": ["The Wealth line stands for the wife's nature; see what it falls on and you know whether it is good or bad.", "With the Azure Dragon, her looks are like Xi Shi's and her nature kind, courteous, brotherly, gentle, compliant, chaste and upright.", "With the Coiling Snake, a light and unstable nature, many schemes and little trustworthiness, though her words move people.", "With the White Tiger, she harbors jealousy and fierceness, and her nature is also hard.", "With the Dark Tortoise, she is stingy and dissolute without reason.", "With the Vermilion Bird, hasty and talkative.", "With Hook Earth, slow and dull in action.", "With the Xianchi star, she disorders the human relations at home and seeks flowers and willows outside; adding the Post Horse, she goes northeast in the morning and returns southwest at night."] }
+      ],
+      "note": {
+        "yi": "「蛇临宴位」的「宴位」原文没有解释，像是转录之误（可能是「妻位」一类）；译文照字面译成「宴位」。解说里说「看值何爻」，下面讲的却是六神，所以译作「看它带的是什么神」。",
+        "en": "The 'banquet position' in 'the Coiling Snake in the banquet position' is not explained and looks like a slip (perhaps 'the wife's position'); it is translated literally. The explanation says 'see which line it is with' but goes on to talk of the six spirits, so it is rendered as 'what spirit it carries'."
+      },
+      "see": ["LY.MARRY.HJC.26", "LY.MARRY.ZS.22", "LY.MARRY.HZL.14"]
+    },
+    {
+      "id": "LY.MARRY.YL.18",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十",
+      "chapter_en": "Chapter 10: marriage and giving in marriage",
+      "title": "凡配婚姻须得永年和合，惟凭奇偶自然顷刻昭彰",
+      "rule": {
+        "yi": "凡是婚配，要得到长久和合，只凭奇偶（阴阳），自然顷刻之间就分明。",
+        "en": "In any marriage match, to gain lasting harmony, rely only on odd and even (yang and yin), and it becomes clear in an instant."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [547, 547],
+          "zh": ["凡配婚姻，须得永年和合，惟凭奇偶，自然顷刻昭彰。"],
+          "yi": ["凡是婚配，要得到长久和合，只凭奇偶（阴阳），自然顷刻之间就分明。"],
+          "en": ["In any marriage match, to gain lasting harmony, rely only on odd and even (yang and yin), and it becomes clear in an instant."] }
+      ],
+      "see": ["LY.MARRY.YL.05", "LY.MARRY.HJC.01"]
+    },
+    {
+      "id": "LY.MARRY.YL.19",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十·女占男",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (a woman divining)",
+      "title": "女卜男婚当用官，财兴子静是良缘：女占夫以官爻为主，官旺为佳，鬼空莫用；嫌子动伤官，喜财兴助鬼",
+      "rule": {
+        "yi": "女子占男方的婚事，以官鬼爻为主，以应爻的象为凭。财爻兴旺、子孙爻安静，是好姻缘。官旺为佳，鬼爻空就不要用；又嫌子孙爻动伤官鬼，喜的是财爻兴旺来帮助鬼爻。",
+        "en": "A woman divining a man's marriage takes the Pressure line as the main thing and the sign of the Other line as evidence. With Wealth flourishing and Output still, it is a good match. A strong Pressure line is good, and if it is Void do not use it; a moving Output line hurting Pressure is disliked, and what is welcome is a flourishing Wealth line helping the Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [549, 549],
+          "zh": ["以官爻为主，", "应象为凭。"],
+          "yi": ["以官鬼爻为主，", "以应爻的象为凭据。"],
+          "en": ["Take the Pressure line as the main thing,", "and the sign of the Other line as the evidence."] },
+        { "by": "经", "book": "易林补遗", "range": [550, 550],
+          "zh": ["女卜男婚当用官，财兴子静是良缘。"],
+          "yi": ["女子占男方的婚事应当用官鬼爻，财爻兴旺而子孙爻安静，是好姻缘。"],
+          "en": ["A woman divining a man's marriage should use the Pressure line; with Wealth flourishing and Output still, it is a good match."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [551, 551],
+          "zh": ["女占夫，以官爻为主，官旺为佳，鬼空莫用。", "又嫌子动伤官，所喜财兴助鬼。"],
+          "yi": ["女子占丈夫，以官爻为主；官旺就好，鬼爻空就不要用。", "又嫌子孙爻动伤官鬼，喜的是财爻兴旺来帮助鬼爻。"],
+          "en": ["A woman divining a husband takes the Pressure line as the main thing; a strong Pressure line is good, and if it is Void do not use it.", "A moving Output line hurting Pressure is also disliked; what is welcome is a flourishing Wealth line helping the Pressure."] }
+      ],
+      "note": {
+        "yi": "从这一段起到「怀胎虚实章第十四」之前，转录本里有三小段各带一行括号提纲（女占男、招赘、后嗣），但没有章名；它们应是第十一至第十三章，书里的章名缺了，这里只按提纲和顺序放在第十章之后，没有替它补章名。",
+        "en": "From this passage to the chapter on pregnancy (chapter 14) the transcription has three short passages, each with a bracketed outline line (a woman divining, taking a son-in-law, heirs) but without chapter titles; they should be chapters 11 to 13 whose titles are missing. They are placed after chapter 10 by their outline and order, and no titles are supplied."
+      },
+      "see": ["LY.MARRY.ZS.11", "LY.MARRY.HJC.14", "LY.MARRY.HZL.22"]
+    },
+    {
+      "id": "LY.MARRY.YL.20",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十·女占男",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (a woman divining)",
+      "title": "妻看内爻夫看外，世为女体应为男：女占男时反过来，内为妇、外为夫，世为妇、应为夫",
+      "rule": {
+        "yi": "看妻子看内爻，看丈夫看外爻；世爻是女方本人，应爻是男方。女子占男方，反过来取内卦为妇、外卦为夫，又以世爻为妇、应爻为夫。也就是说，占卦的人这一边总是内卦和世爻。",
+        "en": "For the wife look at the inner lines, for the husband at the outer; the Self line is the woman herself and the Other line the man. When a woman divines about a man, take the inner as the wife and the outer as the husband, the reverse of the usual, and the Self line as the wife and the Other line as the husband. That is, the divining party's own side is always the inner trigram and the Self line."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [552, 552],
+          "zh": ["妻看内爻夫看外，世为女体应为男。"],
+          "yi": ["看妻子看内爻，看丈夫看外爻；世爻是女方本人，应爻是男方。"],
+          "en": ["For the wife look at the inner lines, for the husband at the outer; the Self line is the woman herself and the Other line the man."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [553, 553],
+          "zh": ["女占男，反取内为妇外为夫，又以世为妇应为夫。"],
+          "yi": ["女子占男方，反过来取内卦为妇、外卦为夫，又以世爻为妇、应爻为夫。"],
+          "en": ["When a woman divines about a man, take the inner as the wife and the outer as the husband, the reverse of the usual, and take the Self line as the wife and the Other line as the husband."] }
+      ],
+      "note": {
+        "yi": "最后一句「占卦的人这一边总是内卦和世爻」是把上一章（男占：内为夫、世为夫）和这一段（女占：内为妇、世为妇）放在一起得出的概括，原文没有这句话；它是这条规则的译述，不是引文。",
+        "en": "The last sentence, that the divining party's own side is always the inner trigram and the Self line, is a summary drawn by putting the previous chapter (a man divining: inner is husband, Self is husband) beside this passage (a woman divining: inner is wife, Self is wife); it is not in the original, and is our paraphrase rather than a quotation."
+      },
+      "see": ["LY.MARRY.YL.05", "LY.MARRY.YL.21"]
+    },
+    {
+      "id": "LY.MARRY.YL.21",
+      "topic": "总则",
+      "chapter": "婚姻嫁娶章第十·女占男",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (a woman divining)",
+      "title": "夫择妇兮阴应美，妇择夫兮阳应欢；阴阳得位方和合，纵然交错乐长年",
+      "rule": {
+        "yi": "男子择妻，应爻属阴才好；女子择夫，应爻属阳才欢喜。阴阳得位才和合，即使阴阳交错，也长久快乐。男子娶妻，世爻属阳、应爻属阴算得位；女子嫁男子，世爻属阴、应爻属阳算得位；内阴外阳，也一样。得位则欢喜无穷，即使交错，也主欢乐和谐。",
+        "en": "When a man chooses a wife, a yin Other line is fair; when a woman chooses a husband, a yang Other line brings joy. Yin and yang in their places make harmony; even if they are crossed, there is long joy. For a man taking a wife, the Self line yang and the Other yin count as in their places; for a woman marrying a man, the Self yin and the Other yang count as in their places; inner yin with outer yang is the same. In their places, joy is endless; even crossed, there is still gladness and harmony."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [554, 554],
+          "zh": ["夫择妇兮阴应美，妇择夫兮阳应欢。", "阴阳得位方和合，纵然交错乐长年！"],
+          "yi": ["男子择妻，应爻属阴才好；女子择夫，应爻属阳才欢喜。", "阴阳得位才和合，即使阴阳交错，也长久快乐！"],
+          "en": ["When a man chooses a wife, a yin Other line is fair; when a woman chooses a husband, a yang Other line brings joy.", "Yin and yang in their places make harmony; even if they are crossed, there is long joy!"] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [555, 555],
+          "zh": ["夫聚妇，世阳应动为得位。", "女嫁男，世阴应阳为得位。", "或内阴外阳者，亦同。", "若得阴阳得位，喜悦无穷，纵然阴阳交错，也主欢谐。"],
+          "yi": ["男子娶妻，世爻属阳、应爻属阴，算得位；", "女子嫁男子，世爻属阴、应爻属阳，算得位；", "或者内阴外阳，也一样。", "如果阴阳得位，欢喜无穷；即使阴阳交错，也主欢乐和谐。"],
+          "en": ["For a man taking a wife, the Self line yang and the Other yin count as in their places;", "for a woman marrying a man, the Self line yin and the Other yang count as in their places;", "an inner yin with outer yang is the same.", "If yin and yang are in their places, joy is endless; even if yin and yang are crossed, there is still gladness and harmony."] }
+      ],
+      "note": {
+        "yi": "解说第一句原文作「世阳应动为得位」，按下一句（「世阴应阳」）对着看，「动」应是「阴」之误；译文按「应阴」译。",
+        "en": "The first sentence of the explanation reads 'the Self line yang and the Other moving counts as in place'; set against the next sentence ('the Self yin, the Other yang'), 'moving' should be 'yin', and it is translated as 'the Other yin'."
+      },
+      "see": ["LY.MARRY.HJC.01", "LY.MARRY.HJC.02", "LY.MARRY.YL.05"]
+    },
+    {
+      "id": "LY.MARRY.YL.22",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻嫁娶章第十·赘婿",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (taking a son-in-law)",
+      "title": "将女招夫继子祥，必须兼看结婚章，内阴外阳称大吉，鬼旺财生夫妇昌：赘婿同继子，与婚姻章同看，须一阴一阳，纯阴纯阳不可，财鬼不全也不宜",
+      "rule": {
+        "yi": "招女婿入赘和过继儿子一样吉祥，要和婚姻章一起看：内阴外阳是大吉，鬼爻旺、财爻生，夫妇昌盛。卦中的内外卦或者世应，必须一阴一阳才是好配偶；遇到纯阴或纯阳，决不可成；财、鬼不齐全，也不合适。",
+        "en": "Taking a son-in-law into the household is as auspicious as adopting a son, and it is to be read together with the marriage chapter: inner yin with outer yang is greatly auspicious, and with a strong Pressure line and Wealth generating, husband and wife prosper. In the hexagram the inner and outer trigrams, or the Self and Other lines, must have one yin and one yang to make a good match; if it is pure yin or pure yang it must never be made; if Wealth and Pressure are not both complete, that too is unsuitable."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [557, 557],
+          "zh": ["以子孙为主，", "官鬼为凭。"],
+          "yi": ["以子孙爻为主，", "以官鬼爻为凭据。"],
+          "en": ["Take the Output line as the main thing,", "and the Pressure line as the evidence."] },
+        { "by": "经", "book": "易林补遗", "range": [558, 558],
+          "zh": ["将女招夫继子祥，必须兼看结婚章，", "内阴外阳称大吉，鬼旺财生夫妇昌。"],
+          "yi": ["把女儿招婿、过继儿子是吉祥的，必须同时看婚姻章；", "内阴外阳叫大吉，鬼旺、财生，夫妇昌盛。"],
+          "en": ["To take a husband for a daughter or adopt a son is auspicious, and the marriage chapter must be consulted too;", "inner yin and outer yang is called greatly auspicious; with strong Pressure and Wealth generating, husband and wife prosper."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [559, 559],
+          "zh": ["赘婿者，比同继子也，却与婚姻章同看。", "卦中内外或世应，必须得一阴一阳，方为良配。", "如遇纯阴纯阳，决不可就。", "倘若财鬼不全，又不宜也。"],
+          "yi": ["招赘女婿，等同过继儿子，却要和婚姻章一起看。", "卦中的内外卦或者世应，必须得到一阴一阳，才是好配偶。", "如果遇到纯阴或纯阳，决不可成就。", "倘若财、鬼不齐全，也不合适。"],
+          "en": ["Taking a son-in-law into the household is like adopting a son, and it is to be read together with the marriage chapter.", "In the hexagram the inner and outer trigrams, or the Self and Other lines, must have one yin and one yang to make a good match.", "If it is pure yin or pure yang, it must never be made.", "If Wealth and Pressure are not both complete, that too is unsuitable."] }
+      ],
+      "see": ["LY.MARRY.HJC.05", "LY.MARRY.YL.21", "LY.MARRY.ZS.17"]
+    },
+    {
+      "id": "LY.MARRY.YL.23",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻嫁娶章第十·赘婿",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (taking a son-in-law)",
+      "title": "父母忌神愁发动，子孙用象怕空亡，世应变空难送老，六冲之卦岂绵长：赘婿占子孙为赘婿、世为己应为婿，皆不可空；世应皆动后必有更，六冲丝毫莫用",
+      "rule": {
+        "yi": "招婿入赘：父母爻是忌神，不动为吉；子孙爻代表入赘的女婿，空了就不确定，又不宜动，动了还怕妨碍丈夫。子孙爻虽然动，但财爻也动来帮助鬼爻，就无妨。世爻是自己、应爻是女婿，都不可空：世空，自己有打发他回去的意思；应空，女婿没有久留的心；世应都动，以后必有变更；遇到六冲，丝毫不要用。合处逢冲，或变出六冲，起初和谐，后来分拆。",
+        "en": "Taking a son-in-law in: the Resource line is the Adversary and is auspicious when it does not move; the Output line stands for the son-in-law, and if Void it is unsettled, and it should not move either, since moving may still harm the husband. Even if Output moves, if Wealth also moves and helps the Pressure line there is no harm. The Self line is oneself and the Other line the son-in-law, and neither may be Void: if the Self line is Void, one has a mind to send him back; if the Other line is Void, the son-in-law has no heart to stay long; if both move, there will surely be change later; a Six-clash is not to be used at all. A combination meeting a clash, or changing into a Six-clash, means harmony at first and separation afterwards."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [560, 560],
+          "zh": ["父母忌神愁发动，子孙用象怕空亡，", "世应变空难送老，六冲之卦岂绵长。"],
+          "yi": ["父母爻是忌神，愁它发动；子孙爻是用神之象，怕它空亡；", "世应变成空，难以养老送终；六冲的卦，怎能长久。"],
+          "en": ["The Resource line is the Adversary, and its moving is a worry; the Output line is the sign of the Subject, and Void is what it fears;", "if the Self and Other change into Void, it is hard for them to see out their years together; how could a Six-clash hexagram last long?"] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [561, 561],
+          "zh": ["父母为忌神，不动为吉。", "子孙为赘婿，空则非定，又不宜动，动则犹恐妨夫。", "子孙虽动，而财亦动者，助鬼无妨。", "又论世为己应为婿，皆不可空。", "世空者，自有遣归之意。", "应空者，婿无久恋之心，世应皆动，后必有更，但遇六冲丝毫莫用。", "合处逢冲及变出六冲，主始得和谐，后当分拆。"],
+          "yi": ["父母爻是忌神，不动为吉。", "子孙爻是入赘的女婿，空了就不确定，又不宜动，动了还怕妨碍丈夫。", "子孙爻虽然动，但财爻也动的，帮助鬼爻，就无妨。", "又论，世爻是自己，应爻是女婿，都不可空。", "世爻空的，自己就有打发他回去的意思。", "应爻空的，女婿没有久留眷恋的心；世应都动，以后必有变更；只要遇到六冲，丝毫不要用。", "合处逢冲，以及变出六冲，主起初和谐，后来分拆。"],
+          "en": ["The Resource line is the Adversary, and it is auspicious when it does not move.", "The Output line stands for the son-in-law who joins the family; if Void, it is not settled, and it should not move either, since moving may still harm the husband.", "Even if the Output line moves, if Wealth also moves and helps the Pressure line there is no harm.", "Again: the Self line is oneself and the Other line the son-in-law; neither may be Void.", "If the Self line is Void, one has a mind to send him back.", "If the Other line is Void, the son-in-law has no heart to stay long; if both the Self and Other move, there will surely be change later; but a Six-clash is not to be used at all.", "A combination meeting a clash, or changing into a Six-clash, means harmony at first and separation afterwards."] }
+      ],
+      "see": ["LY.MARRY.YL.22", "LY.MARRY.HJC.05"]
+    },
+    {
+      "id": "LY.MARRY.YL.24",
+      "topic": "子嗣",
+      "chapter": "婚姻嫁娶章第十·后嗣",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (heirs)",
+      "title": "欲知向后生儿否，切忌福德犯空亡：子孙不论阴阳衰旺，在卦又不旬空月破，必有子孙；落空亡寻伏象，伏再空看动爻化子，更无则绝嗣；出见早生、伏藏迟育；旺相或动来速、休囚或静来迟",
+      "rule": {
+        "yi": "想知道以后生不生儿子，最忌子孙（福德）爻落空亡。子孙爻不论阴阳、衰旺，只要在卦中，又不逢旬空、月破，一定有儿有孙。落了空亡，再找伏神；伏着的子孙再空，就看动爻有没有化出子孙；都没有，一定有绝嗣的叹息。想知道得子的早晚：子孙旺相或者动，来得快；休囚或者静，来得迟；出现的早生，伏藏的迟育。",
+        "en": "To know whether a son will be born later, above all fear the Output line, the fortune-and-virtue line, falling into Void. Whatever its yin or yang or strength, if the Output line is in the hexagram and is not Void in its cycle or under a Month-break, there will surely be sons and grandsons. If it falls into Void, look for a hidden spirit; if the hidden Output is Void too, look at whether a moving line changes into Output; if none is produced either, there will surely be the sigh of a line without heirs. As to how soon: strong or moving, it comes quickly; resting, trapped or still, it comes late; if it appears, the birth is early; if it is hidden, the child comes late."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [563, 563],
+          "zh": ["以子孙为主，", "不遇绝空克破为佳。"],
+          "yi": ["以子孙爻为主，", "不遇绝、空、克、破才好。"],
+          "en": ["Take the Output line as the main thing,", "and it is good so long as it does not meet extinction, Void, control or break."] },
+        { "by": "经", "book": "易林补遗", "range": [564, 564],
+          "zh": ["欲知向后生儿否，切忌福德犯空亡，", "不论阴阳太衰旺，卦有其神定吉昌，", "静废伏藏迟可立，交重出见早成行。"],
+          "yi": ["想知道以后生不生儿子，最忌福德（子孙）爻落空亡；", "不论阴阳、太衰太旺，卦里有这个神就一定吉昌；", "静的、废的、伏藏的，迟些才能成；交重的、出现的，早早就成行。"],
+          "en": ["To know whether a son will be born later, above all fear the Output line, the fortune-and-virtue line, falling into Void;", "whether yin or yang, too weak or too strong, if the hexagram has that spirit it is sure to be auspicious;", "if still, discarded or hidden, it can stand only late; if crossed, doubled or emerging, it comes about early."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [565, 565],
+          "zh": ["问后嗣者，须看子孙，若落空亡，再寻伏象，伏子再空，却看动爻化子变出更无，必有绝嗣之叹。", "子孙不论阴阳衰旺，如在卦中又不值旬空月破，决然有子有孙。", "要问得儿迟早，须观子象与衰旺相或动而来速，休囚或静以来迟。", "又云：出见早生，伏藏迟育。"],
+          "yi": ["问后嗣的，要看子孙爻；如果落空亡，再找伏神；伏着的子孙再空，就看动爻有没有化出子孙；如果都没有，一定有绝嗣的叹息。", "子孙爻不论阴阳、衰旺，只要在卦中，又不逢旬空、月破，一定有儿有孙。", "要问得儿子的早晚，要看子孙爻的衰旺：旺相或者动，来得快；休囚或者静，来得迟。", "又说：出现的早生，伏藏的迟育。"],
+          "en": ["In asking about heirs, look at the Output line; if it falls into Void, look for a hidden spirit; if the hidden Output is Void too, look at whether a moving line changes into Output; if none is produced either, there will surely be the sigh of a line without heirs.", "Whatever its yin or yang or strength, if the Output line is in the hexagram and is not Void in its cycle or under a Month-break, there will surely be sons and grandsons.", "To ask how soon a son comes, look at the strength of the Output sign: strong or moving, it comes quickly; resting, trapped or still, it comes late.", "It is also said: if it appears, the birth is early; if it is hidden, the child comes late."] }
+      ],
+      "see": ["LY.MARRY.HJC.10", "LY.MARRY.HJC.16", "LY.MARRY.YL.09"]
+    },
+    {
+      "id": "LY.MARRY.YL.25",
+      "topic": "子嗣",
+      "chapter": "婚姻嫁娶章第十·后嗣",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (heirs)",
+      "title": "兄弟值年方废贺，福临胎养一般详：子衰绝者待兄弟值年可生，子旺相者临胎养之年可得，卦无子者候子孙值年方育",
+      "rule": {
+        "yi": "子孙爻衰、绝的，要等兄弟爻值年才可能生；子孙爻旺相的，到胎、养的年份可以得子；卦里没有子孙爻的，要等子孙爻值年才能生育。",
+        "en": "If the Output line is weak or extinguished, wait for the year ruled by a Peer line for a birth; if it is strong, a child can be had in the year of its Womb or Nurture stage; if the hexagram has no Output line, wait for the year ruled by Output for a birth."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [567, 567],
+          "zh": ["兄弟值年方废贺，福临胎养一般详。"],
+          "yi": ["兄弟爻值年，才有喜可贺；福德爻临胎、养的年份，道理一样。"],
+          "en": ["When the Peer line rules the year, congratulations are due; when the Output line reaches the Womb or Nurture stage, examine it the same way."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [568, 568],
+          "zh": ["子如衰绝者，待兄弟值年可生。", "子若旺相者，临胎养之年可得。", "卦若无子者，候子孙值年方育。"],
+          "yi": ["子孙爻如果衰、绝，要等兄弟爻值年才可能生。", "子孙爻如果旺相，到胎、养的年份可以得子。", "卦里如果没有子孙爻，要等子孙爻值年才能生育。"],
+          "en": ["If the Output line is weak or extinguished, wait for the year ruled by a Peer line for a birth.", "If the Output line is strong, a child can be had in the year of its Womb or Nurture stage.", "If the hexagram has no Output line, wait for the year ruled by Output for a birth."] }
+      ],
+      "note": {
+        "yi": "诀里「废贺」两字与下面的解说对不上（解说说的是兄弟值年才可能生），多半是「发贺」之误；译文按解说的意思译。解说后面还有三个卦例（辛丑年问何年得子等），这里没有收。",
+        "en": "The two words 'set aside congratulations' in the verse do not fit the explanation below (which says a birth can come in the year ruled by a Peer line), and are probably a slip for 'give congratulations'; it is translated in the sense of the explanation. Three cases follow the explanation (a divination in the Xinchou year on when a son would come, and so on), and are not included here."
+      },
+      "see": ["LY.MARRY.YL.24", "LY.MARRY.HJC.16"]
+    },
+    {
+      "id": "LY.MARRY.YL.26",
+      "topic": "子嗣",
+      "chapter": "婚姻嫁娶章第十·后嗣",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (heirs)",
+      "title": "世空本体多柔弱，应空室命少儿郎：世为自己空则精阳不足须医药，应为妻室空则妻命无儿理宜娶妾；世应皆不空而子独陷是天命无儿",
+      "rule": {
+        "yi": "世爻空，本人多柔弱；应爻空，妻子命里少儿子。世爻是自己，落了空亡就精阳不足，还要靠医药调理；应爻多半代表妻室，临空就推断妻命无儿，理应娶妾。世应都不空，只有子孙爻陷落，是天命无儿，不是人力能定的。",
+        "en": "With the Self line Void the man himself is often frail; with the Other line Void the wife's fate has few sons. The Self line is oneself: if it falls into Void, vital yang is insufficient and medicine is needed to restore balance; the Other line mostly stands for the wife: if it is on Void ground, infer that her fate has no son and that a concubine should be taken. If neither the Self nor the Other line is Void and only the Output line has fallen, this is fate without a son and not something human effort settles."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [569, 569],
+          "zh": ["世空本体多柔弱，应空室命少儿郎。"],
+          "yi": ["世爻空，本人多柔弱；应爻空，妻子命里少儿子。"],
+          "en": ["With the Self line Void the man himself is often frail; with the Other line Void the wife's fate has few sons."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [570, 570],
+          "zh": ["世爻为自己，若落空亡，便主精阳不足，还须医药调和。", "应多为妻室，如临空地，便推妻命无儿，理宜娶妾。", "世应皆不空亡，子独陷者，此乃天命无儿，非人力所定致也。"],
+          "yi": ["世爻是自己，如果落空亡，就主精阳不足，还要靠医药调理。", "应爻多半代表妻室，如果临空地，就推断妻子命中无儿，理应娶妾。", "世应都不空亡，只有子孙爻陷落的，这是天命无儿，不是人力所能决定的。"],
+          "en": ["The Self line is oneself; if it falls into Void, vital yang is insufficient and medicine is needed to restore balance.", "The Other line mostly stands for the wife; if it is on Void ground, infer that the wife's fate has no son and that she should take a concubine.", "If neither the Self nor the Other line is Void and only the Output line has fallen, this is fate without a son and not something human effort settles."] }
+      ],
+      "see": ["LY.MARRY.HJC.16", "LY.MARRY.YL.24"]
+    },
+    {
+      "id": "LY.MARRY.YL.27",
+      "topic": "子嗣",
+      "chapter": "婚姻嫁娶章第十·后嗣",
+      "chapter_en": "Chapter 10: marriage and giving in marriage (heirs)",
+      "title": "衰子化空或化绝，纵然得后复遭伤：卦虽有子而休囚又变父母、化绝化空，纵得其儿后遭刑克",
+      "rule": {
+        "yi": "衰弱的子孙爻变成空或者变成绝，即使有了后代，又要遭伤。卦里虽然有子孙爻，但恰逢休囚，又变成父母爻，或者变成绝、变成空，即使得到儿子，以后也遭刑克。",
+        "en": "A weak Output line changing into Void or into extinction: even if an heir is had, he will again be harmed. Although the hexagram has an Output line, if it is resting and trapped and changes into Resource, or into extinction or Void, even if a son is obtained he will later be punished or harmed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [571, 571],
+          "zh": ["衰子化空或化绝，纵然得后复遭伤。"],
+          "yi": ["衰弱的子孙爻变成空或变成绝，即使有了后代，又要遭伤。"],
+          "en": ["A weak Output line changing into Void or into extinction: even if an heir is had, he will again be harmed."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [572, 572],
+          "zh": ["卦虽有子，合值休囚又之父母、或化绝或化空者，纵得其儿，后遭刑克。"],
+          "yi": ["卦里虽然有子孙爻，但恰逢休囚，又变成父母爻，或者变成绝、变成空，即使得到儿子，以后也遭刑克。"],
+          "en": ["Although the hexagram has an Output line, if it is resting and trapped and changes into Resource, or into extinction or Void, even if a son is obtained he will later be punished or harmed."] }
+      ],
+      "see": ["LY.MARRY.YL.24", "LY.MARRY.HJC.16"]
+    }
+  ]
+}

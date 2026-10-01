@@ -1,0 +1,150 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "周易尚占",
+  "chapter": "六畜血财章",
+  "chapter_en": "Livestock and living wealth",
+  "ranges": {"周易尚占": [733, 746]},
+  "units": [
+    {
+      "id": "LY.WEALTH.ZSZ.01",
+      "topic": "畜养渔猎",
+      "chapter": "六畜血财章",
+      "chapter_en": "Livestock and living wealth",
+      "title": "六畜血财：以那种畜为身，占牛看丑；喜子孙、父母，怕劫杀、亡神",
+      "rule": {
+        "yi": "占六畜，以那一种牲畜为身；假如占牛，丑才是真；喜欢见到子孙和父母，怕遇上劫杀，忌讳亡神。",
+        "en": "In divining livestock, the animal itself is the Body; if it is an ox, Chou is the true one; it likes to see Output and Resource, fears meeting the Robbery star, and dislikes the Loss star."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [734, 734],
+          "zh": ["凡占六畜畜为身，", "假使占牛丑是真，", "喜见子孙并父母，", "怕逢劫杀忌亡神。"],
+          "yi": ["凡是占六畜，以那一种牲畜为身；", "假如占牛，丑才是真；", "喜欢见到子孙和父母，", "怕遇上劫杀，忌讳亡神。"],
+          "en": ["In divining livestock, the animal itself is the Body;", "if divining an ox, Chou is the true one;", "it likes to see Output and Resource,", "fears meeting the Robbery star, and dislikes the Loss star."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.DYTJ.48", "LY.WEALTH.HZL.15", "LY.WEALTH.YM.25"]
+    },
+    {
+      "id": "LY.WEALTH.ZSZ.02",
+      "topic": "畜养渔猎",
+      "chapter": "六畜血财章",
+      "chapter_en": "Livestock and living wealth",
+      "title": "卦内无所肖者取八卦象：乾马坤牛艮狗，巽鸡离雉兑羊；毛色：巽兑白、离赤、乾玄、震翠、艮坤黄",
+      "rule": {
+        "yi": "卦里如果没有它所肖的（生肖），就用八卦的象来轮着看：乾是马，坤是牛，艮是狗，巽是鸡，离是雉，兑是羊，震是龙，艮又作马，坎是豕（又作乌）；颜色：巽、兑白，离赤，乾玄（黑），震翠，艮、坤黄。",
+        "en": "If the hexagram holds none of the sign it resembles, go round by the images of the eight trigrams: Qian is the horse, Kun the ox, Gen the dog, Xun the chicken, Li the pheasant, Dui the sheep, Zhen the dragon, Gen also the horse, and Kan the pig, also the crow; for colour, Xun and Dui are white, Li red, Qian black, Zhen green, and Gen and Kun yellow."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [735, 735],
+          "zh": ["卦内若无所肖者，", "却将八卦象来轮，", "乾马坤牛艮狗当，", "巽鸡离雉兑为羊。"],
+          "yi": ["卦里如果没有它所肖的（生肖），", "就拿八卦的象来轮着看：", "乾是马，坤是牛，艮是狗，", "巽是鸡，离是雉，兑是羊。"],
+          "en": ["If the hexagram holds none of the sign it resembles,", "go round by the images of the eight trigrams:", "Qian is the horse, Kun the ox, Gen the dog,", "Xun the chicken, Li the pheasant, Dui the sheep."] },
+        { "by": "经", "book": "周易尚占", "range": [736, 736],
+          "zh": ["震龙艮马一般断，", "坎豕为乌细审详，", "巽兑白兮离又赤，", "乾玄震翠艮坤黄。"],
+          "yi": ["震是龙，艮又作马，也照这样断；", "坎是豕，又作乌，要仔细审察；", "巽、兑是白色，离又是赤色；", "乾是玄（黑），震是翠（青绿），艮、坤是黄。"],
+          "en": ["Zhen is the dragon and Gen also the horse, judged in the same way;", "Kan is the pig, also the crow, to be examined closely;", "Xun and Dui are white, and Li is red;", "Qian is black, Zhen green, and Gen and Kun yellow."] }
+      ],
+      "note": {
+        "yi": "「艮又作马」和《断易天机》八卦诗歌里的「艮为手狗」不同，这里照原文译；「坎豕为乌」的「乌」字义不明，这里译作「乌」（黑色的鸟），不确定。",
+        "en": "'Gen also the horse' differs from the Duanyi Tianji's verse on the eight trigrams, where Gen is 'the hand and the dog'; it is translated as it stands. The word 'crow' after Kan the pig is unclear and is rendered literally, without certainty."
+      },
+      "see": ["LY.WEALTH.DYTJ.51"]
+    },
+    {
+      "id": "LY.WEALTH.ZSZ.03",
+      "topic": "畜养渔猎",
+      "chapter": "六畜血财章",
+      "chapter_en": "Livestock and living wealth",
+      "title": "推本位、所属身宫：本身旺相保无虞，死囚灾立至；本身发动按子孙推，生财长育，得青龙相助吉，杀神并则倾危",
+      "rule": {
+        "yi": "还要旁通，推它的本位，再推它所属的身宫：本身旺相，保证没有忧患，如果逢死、囚，灾祸立刻到；本身发动，要按子孙来推，正是生财、长养的时候，再得青龙相助就吉，杀神并在一起，就有倾覆的危险。",
+        "en": "Then go by the side route and judge its own place, and next the palace of the Body it belongs to: the Body thriving, it is sure to be free of worry, and meeting Death or Imprisonment, calamity comes at once; the Body moving, judge by Output, for it is just the time of breeding wealth and growing; with the Azure Dragon's help it is auspicious, and with baleful stars joined there is danger of ruin."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [737, 737],
+          "zh": ["更有旁通推本位，", "次推所属身宫义，", "本身旺相保无虞，", "若值死囚灾立至。"],
+          "yi": ["还有旁通的办法，推它的本位；", "再推它所属的身宫的意思；", "本身旺相，保证没有忧患；", "如果逢死、囚，灾祸立刻就到。"],
+          "en": ["There is also the side route, judging its own place;", "then judge the meaning of the palace of the Body it belongs to;", "the Body thriving, it is sure to be free of worry;", "if it meets Death or Imprisonment, calamity comes at once."] },
+        { "by": "经", "book": "周易尚占", "range": [738, 738],
+          "zh": ["本身发动子孙推，", "正是生财长育时，", "更得青龙相助吉，", "杀神相并及倾危。"],
+          "yi": ["本身发动，要按子孙来推；", "这正是生财、长养的时候；", "再得青龙相助就吉；", "杀神并在一起，就有倾覆的危险。"],
+          "en": ["The Body moving, judge by Output;", "it is just the time of breeding wealth and growing;", "with the Azure Dragon's help it is auspicious;", "with baleful stars joined, there is danger of ruin."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.ZSZ.01"]
+    },
+    {
+      "id": "LY.WEALTH.ZSZ.04",
+      "topic": "畜养渔猎",
+      "chapter": "六畜血财章",
+      "chapter_en": "Livestock and living wealth",
+      "title": "本肖空亡、白虎发动忧；午带杀忧马、未忧羊、丑忧牛；坤旺牛、乾旺马，遇子加龙旺主人，见武同宫防盗；死绝休囚牛不耕马不骑",
+      "rule": {
+        "yi": "它自己的生肖落空亡，格外发愁；白虎发动，牲畜（血财）有忧；午爻带杀，要忧马，未要忧羊，丑要忧牛。还要推本卦、追究它的宫卦：坤旺是牛，乾旺是马；遇子加青龙，旺，利于主人；见玄武同宫，防盗贼。死、绝、休、囚的爻持在本位，牛不能耕、马不能骑；再遇煞来，应主病死，十占八九无疑。",
+        "en": "If its own sign falls Void, worry is doubled; the White Tiger moving, the livestock have trouble; Wu carrying a baleful star means worry for the horse, Wei for the sheep, Chou for the ox. Then look at the hexagram and its palace: Kun thriving is the ox, Qian thriving the horse; meeting Zi with the Dragon added and thriving favours the owner; the Dark Tortoise in the same palace, guard against thieves. Dead, cut-off, resting or imprisoned lines holding their own place mean the ox cannot plough and the horse cannot be ridden; meeting a baleful star as well, sickness and death answer, nine in ten without doubt."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [739, 739],
+          "zh": ["本肖空亡分外愁，", "交重白虎血财忧，", "午爻带杀当忧马，", "未虑羊儿丑虑牛。"],
+          "yi": ["它自己的生肖落空亡，格外发愁；", "白虎发动，牲畜（血财）有忧；", "午爻带杀，要忧马；", "未要忧羊，丑要忧牛。"],
+          "en": ["If its own sign falls Void, worry is doubled;", "the White Tiger moving, the livestock have trouble;", "Wu carrying a baleful star means worry for the horse;", "Wei for the sheep, Chou for the ox."] },
+        { "by": "经", "book": "周易尚占", "range": [740, 740],
+          "zh": ["更须推本究宫卦，", "坤旺牛兮乾旺马，", "遇子加龙旺主人，", "见武同宫防盗者。"],
+          "yi": ["还要推本卦，追究它的宫卦：", "坤旺是牛，乾旺是马；", "遇子加青龙而旺，利于主人；", "见玄武同宫，防备盗贼。"],
+          "en": ["Then look at the hexagram and trace its palace:", "Kun thriving is the ox, Qian thriving the horse;", "meeting Zi with the Dragon added and thriving favours the owner;", "with the Dark Tortoise in the same palace, guard against thieves."] },
+        { "by": "经", "book": "周易尚占", "range": [741, 741],
+          "zh": ["死绝休囚本位持，", "牛不耕兮马不骑，", "更遇杀来应病死，", "十占八九定无疑。"],
+          "yi": ["死、绝、休、囚的爻持在本位，", "牛不能耕，马不能骑；", "再遇煞来，应主病死，", "十占八九，无疑。"],
+          "en": ["Dead, cut-off, resting or imprisoned lines holding their own place:", "the ox cannot plough and the horse cannot be ridden;", "meeting a baleful star as well, sickness and death answer,", "nine in ten, without doubt."] }
+      ],
+      "note": {
+        "yi": "「见武同宫」的「武」是玄武的简写。「血财」指牲畜这类有血气的财。",
+        "en": "'Wu' in 'seeing Wu in the same palace' abbreviates the Dark Tortoise. 'Living wealth' means wealth in creatures that have blood and breath."
+      },
+      "see": ["LY.WEALTH.DYTJ.49", "LY.WEALTH.DYTJ.51"]
+    },
+    {
+      "id": "LY.WEALTH.ZSZ.05",
+      "topic": "畜养渔猎",
+      "chapter": "六畜血财章",
+      "chapter_en": "Livestock and living wealth",
+      "title": "青龙旺相生财厚，六爻安静无殃咎，逢羊刃三刑遭屠；财值青龙化子孙，驴骡牛马保兴生",
+      "rule": {
+        "yi": "青龙旺相，生财丰厚，六爻安静，没有灾殃；如果遇上羊刃和三刑，一定落到屠夫手里。财爻值青龙又化成子孙，驴、骡、牛、马保证兴旺滋生，牛强马壮，没有别的事；外卦旺是乾的刚，内卦旺是坤。",
+        "en": "The Azure Dragon thriving breeds wealth richly, and with the six lines still there is no calamity; meeting the Goat Blade and the three punishments, the animal surely falls into the butcher's hands. Wealth ruling with the Azure Dragon and changing into Output guarantees that donkeys, mules, oxen and horses prosper and breed, the ox strong and the horse sturdy, with nothing else amiss; a thriving outer trigram is the strength of Qian, a thriving inner one is Kun."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [742, 742],
+          "zh": ["青龙旺相生财厚，", "六爻安静无殃咎，", "若逢羊刃及三刑，", "决定遭他屠子手。"],
+          "yi": ["青龙旺相，生财丰厚；", "六爻安静，没有灾殃；", "如果遇上羊刃和三刑，", "一定落到屠夫手里。"],
+          "en": ["The Azure Dragon thriving breeds wealth richly;", "with the six lines still, there is no calamity;", "if it meets the Goat Blade and the three punishments,", "it surely falls into the butcher's hands."] },
+        { "by": "经", "book": "周易尚占", "range": [743, 743],
+          "zh": ["财值青龙化子孙，", "驴骡牛马保兴生，", "牛强马壮无他事，", "外旺乾刚内旺坤。"],
+          "yi": ["财爻值青龙又化成子孙，", "驴、骡、牛、马保证兴旺滋生；", "牛强马壮，没有别的事；", "外卦旺，是乾的刚；内卦旺，是坤。"],
+          "en": ["Wealth ruling with the Azure Dragon and changing into Output,", "donkeys, mules, oxen and horses are sure to prosper and breed;", "the ox strong and the horse sturdy, with nothing else amiss;", "a thriving outer trigram is the strength of Qian, a thriving inner one is Kun."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.DYTJ.48"]
+    },
+    {
+      "id": "LY.WEALTH.ZSZ.06",
+      "topic": "畜养渔猎",
+      "chapter": "六畜血财章",
+      "chapter_en": "Livestock and living wealth",
+      "title": "父母重重化父母，一畜三换主；大杀伤本肖，今朝换主明朝止；困颐噬嗑明夷，鬼杀交重定剥皮，青龙救助也不育",
+      "rule": {
+        "yi": "父母爻重重叠叠又化成父母，一头牲畜一年要三换主人；大杀来伤本肖爻，今天换主，明天就到头了；困、颐、噬嗑和明夷这几卦，鬼、杀交重，一定被剥皮；忽然见到青龙来救助，也一定没有生育，只是瘦弱。",
+        "en": "Resource doubled and changing into Resource means one animal changes owners three times in a year; a great baleful star harming its own sign means today it changes owners and tomorrow it is over; in the hexagrams Distress, Nourishment, Biting Through and the Darkening of the Light, with Pressure and baleful stars doubled, it is surely skinned; if the Azure Dragon suddenly comes to the rescue, there is still no breeding and it is merely thin and weak."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [744, 744],
+          "zh": ["父母重重化父母，", "一畜经年三换主，", "大杀来伤本肖爻，", "今朝换主明朝止。"],
+          "yi": ["父母爻重重叠叠又化成父母，", "一头牲畜一年要三换主人；", "大杀来伤本肖爻，", "今天换了主，明天就到头了。"],
+          "en": ["Resource doubled and changing into Resource:", "one animal changes owners three times in a year;", "a great baleful star harming its own sign:", "today it changes owners and tomorrow it is over."] },
+        { "by": "经", "book": "周易尚占", "range": [745, 745],
+          "zh": ["困颐噬嗑及明夷，", "鬼杀交重定剥皮，", "忽见青龙来救助，", "决无生育只尫羸。"],
+          "yi": ["困、颐、噬嗑和明夷这几卦，", "鬼、杀交重，一定被剥皮；", "忽然见到青龙来救助，", "也一定没有生育，只是瘦弱。"],
+          "en": ["In the hexagrams Distress, Nourishment, Biting Through and the Darkening of the Light,", "with Pressure and baleful stars doubled, it is surely skinned;", "if the Azure Dragon suddenly comes to the rescue,", "there is still no breeding and it is merely thin and weak."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.53"]
+    }
+  ]
+}

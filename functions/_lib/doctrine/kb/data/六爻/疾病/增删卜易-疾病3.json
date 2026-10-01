@@ -1,0 +1,650 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "增删卜易",
+  "chapter": "疾病章",
+  "chapter_en": "Chapter on illness",
+  "ranges": {"增删卜易": [13127, 13516]},
+  "units": [
+    {
+      "id": "LY.ILL.ZS.19",
+      "topic": "痘疹",
+      "chapter": "痘疹章",
+      "chapter_en": "Chapter on smallpox",
+      "title": "问何时出花以鬼爻为用（鬼静逢值逢冲、鬼动逢值逢合、鬼衰逢生旺之年、鬼旺鬼多逢墓库之岁、鬼空鬼破在填实之时、鬼伏在出现之岁）；见花问吉凶忌六冲、子孙化鬼、鬼化子、父化子、子化父、子孙伏而空破",
+      "rule": {
+        "yi": "平常问什么时候出花，拿鬼爻当用神：鬼爻静的，逢到值日、逢到冲的时候；鬼爻动的，逢到值日、逢到合；鬼爻衰的，在生旺的年份；鬼旺、鬼多的，在墓库的年岁；鬼空、鬼破的，在填实的时候；鬼伏藏的，在它出现的年岁。已经见花来问吉凶的，卦忌六冲，还忌子孙变鬼、鬼变子、父变子、子变父、子孙伏藏又空又破，都不是吉兆。",
+        "en": "In ordinary times, when asking when the flowers will come out, the Pressure line is the Subject: if it is still, at a day it rules or a clash; if moving, when it rules the day or meets a combination; if weak, in a year of birth or strength; if strong or many, in the year of its tomb; if Void or broken, at the time it is filled; if hidden, in the year it appears. For one who asks about fortune when the flowers have already come out, the hexagram must avoid Six-Clash, and also Output changing into Pressure, Pressure into Output, Resource into Output, Output into Resource, and Output hidden and also Void and broken: none of these is a lucky sign."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [13183, 13185],
+          "zh": ["平时，问男女何时出花者，以鬼爻为用。", "鬼爻静者，逢值逢冲；", "鬼爻动者，逢值逢合；", "鬼爻衰者，逢生旺之年；", "鬼旺鬼多者，逢墓库之岁；", "鬼空鬼破者，在填实之时；", "鬼若伏藏者，在出现之岁。", "见花而问吉凶者，卦忌六冲，兼忌子孙化鬼，及鬼化子、父化子、子化父、子孙伏而空破，皆非吉兆。"],
+          "yi": ["平常问男孩女孩什么时候出花，拿鬼爻当用神。", "鬼爻静的，逢到值日、逢到冲就出；", "鬼爻动的，逢到值日、逢到合就出；", "鬼爻衰的，逢到生旺的年份就出；", "鬼旺、鬼多的，逢到墓库的年岁就出；", "鬼落空、鬼被破的，在填实的时候；", "鬼如果伏藏着，在它出现的年岁。", "已经见花来问吉凶的，卦忌六冲，还忌子孙变鬼，以及鬼变子、父变子、子变父、子孙伏藏而又空又破，都不是吉兆。"],
+          "en": ["In ordinary times, when asking when a boy or girl will break out in flower, the Pressure line is the Subject.", "If the Pressure line is still, it comes out when it rules the day or meets a clash;", "if the Pressure line moves, when it rules the day or meets a combination;", "if the Pressure line is weak, in a year of birth or strength;", "if Pressure is strong or many, in the year of its tomb;", "if Pressure is Void or broken, at the time it is filled;", "if Pressure is hidden, in the year it appears.", "For one who asks about fortune when the flowers have already come out, the hexagram must avoid Six-Clash, and also Output changing into Pressure, Pressure into Output, Resource into Output, Output into Resource, and Output hidden and also Void and broken: none of these is a lucky sign."] }
+      ],
+      "note": {
+        "yi": "「花」是痘花，出花就是出痘。「墓库」是鬼爻五行的墓；「填实」是落空或被破的爻等到它的地支值年、值月、值日，把空破填上。这一条问的是出花的时间，和 LY.ILL.ZS.18 里问「发热是不是出痘」不同。",
+        "en": "The 'flowers' are the flowers of the pox, and to 'flower' is to have the pox come out. The 'tomb' is the tomb of the phase of the Pressure line, and 'filling' is for a Void or broken line to wait until its branch rules the year, month or day and fills the void or break. This entry asks when the flowers come out, which is different from asking in LY.ILL.ZS.18 whether a fever is smallpox."
+      },
+      "see": ["LY.ILL.ZS.18", "LY.ILL.ZS.20", "LY.ILL.ZS.21"]
+    },
+    {
+      "id": "LY.ILL.ZS.20",
+      "topic": "痘疹",
+      "chapter": "痘疹章",
+      "chapter_en": "Chapter on smallpox",
+      "title": "问花的疏密、部位、颜色：鬼爻旺临日月又有生扶花必稠密，空破休囚墓绝痘疏朗；鬼在乾多生头、坤多腹、艮多手、兑多口、坎离上身、震巽下身；火鬼紫红、金鬼虚白、水鬼防黑陷、木鬼杂细、土鬼肿大",
+      "rule": {
+        "yi": "问花出得稀还是密：鬼爻旺相、临着日月、又有动爻生扶的，花一定稠密；如果遇到空、破、休囚、入墓入绝，痘就稀疏明朗。鬼在乾宫发动，多长在头上；鬼在坤卦摇动，肚子上成丛；艮宫多在手上，兑宫多在口上，坎、离在上半身，震、巽在下半身。颜色：火鬼紫红，金鬼虚白，水鬼要防发黑塌陷，木鬼又杂又细，土鬼肿大。",
+        "en": "To ask whether the flowers will be sparse or dense: if the Pressure line is strong, sits on the Day or Month and is generated and supported by a moving line, the flowers are surely dense; if it meets Void or a break, or is resting, trapped, in a tomb or extinct, the pox are sparse and clear. Pressure moving in the Qian palace: mostly on the head; stirring in Kun: clusters on the belly; Gen, more on the hands; Dui, more on the mouth; Kan and Li, the upper body; Zhen and Xun, the lower body. As to colour: a Fire Pressure, purple-red; a Metal Pressure, pale white; a Water Pressure, beware of black and sunken pox; a Wood Pressure, mixed and fine; an Earth Pressure, swollen and large."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [13186, 13186],
+          "zh": ["问花之疏密者，鬼爻旺临日月及动爻生扶，花必稠密；", "如值空破、休囚墓绝，痘当疏朗。", "鬼动乾宫，多生头上；", "鬼摇坤卦，腹上多丛；", "艮宫多于手；", "兑宫多于口；", "坎离上身，震巽下身。", "火鬼，其色紫红；", "金鬼，其色虚白；", "水鬼，须防黑陷；", "木鬼杂细；", "土鬼肿大。"],
+          "yi": ["问花出得稀还是密：鬼爻旺相、临着日月、又有动爻生扶的，花一定稠密；", "如果遇到空、破、休囚、入墓入绝，痘就应当稀疏明朗。", "鬼在乾宫发动，多长在头上；", "鬼在坤卦摇动，肚子上多成丛；", "艮宫多在手上；", "兑宫多在口上；", "坎、离在上半身，震、巽在下半身。", "火鬼，颜色紫红；", "金鬼，颜色虚白；", "水鬼，要提防发黑、塌陷；", "木鬼，又杂又细；", "土鬼，肿大。"],
+          "en": ["To ask whether the flowers will be sparse or dense: if the Pressure line is strong, sits on the Day or Month and is generated and supported by a moving line, the flowers are surely dense;", "if it meets Void or a break, or is resting, trapped, in a tomb or extinct, the pox are sparse and clear.", "Pressure moving in the Qian palace: mostly on the head;", "stirring in Kun: clusters on the belly;", "in Gen, more on the hands;", "in Dui, more on the mouth;", "Kan and Li, the upper body; Zhen and Xun, the lower body.", "A Fire Pressure: the colour is purple-red;", "a Metal Pressure: pale white;", "a Water Pressure: beware of black and sunken pox;", "a Wood Pressure: mixed and fine;", "an Earth Pressure: swollen and large."] }
+      ],
+      "note": {
+        "yi": "「乾宫、坤卦、艮宫……」都是鬼爻所在的卦或宫。「黑陷」是痘色发黑、痘顶塌陷，书里没有解释，译文按字面。",
+        "en": "'The Qian palace, the Kun hexagram, the Gen palace ...' are the palace or hexagram in which the Pressure line lies. 'Black and sunken' is pox that turn black and whose tops collapse, which the book does not explain, and the translation follows the letter."
+      },
+      "see": ["LY.ILL.ZS.19", "LY.ILL.ZS.21"]
+    },
+    {
+      "id": "LY.ILL.ZS.21",
+      "topic": "痘疹",
+      "chapter": "痘疹章",
+      "chapter_en": "Chapter on smallpox",
+      "title": "出花吉凶全在子孙爻：所问各事应分占，不可一卦兼断；子孙临日月或被日月动爻生扶、动而化吉、不受刑冲克、爻不乱动，花虽密可全生，痘虽陷仍收功效",
+      "rule": {
+        "yi": "上面问的几件事应当分开占，不能用一个卦兼着断，大体上全看子孙爻。子孙临着日月、又被日月和动爻生扶，动了变出吉的，不受刑伤冲克，爻又不乱动的，花虽然密，也可以保全性命；痘就算塌陷了，仍然能收到效果。",
+        "en": "The matters asked above should be divined separately and cannot be judged from one hexagram together; in general everything depends on the Output line. If Output sits on the Day or Month, is generated and supported by the Day, Month or a moving line, moves and changes into something lucky, suffers no punishment, harm, clash or control, and the lines do not move wildly, then though the flowers are dense the child can survive whole, and even if the pox sink, the treatment still takes effect."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [13187, 13187],
+          "zh": ["以上所问，当分占，不可一卦而兼断，大抵全在子孙爻也。", "子孙临日月及日月动爻生扶，动而化吉，不受刑伤冲克，爻不乱动者，花虽密，可以全生；", "痘虽陷，仍收功效。"],
+          "yi": ["以上所问的几件事，应当分开占，不能用一个卦兼着断，大体上全看子孙爻。", "子孙临着日月、以及被日月和动爻生扶，动了变出吉的，不受刑伤冲克，爻又不乱动的，花虽然密，也可以保全性命；", "痘就算塌陷了，仍然能收到效果。"],
+          "en": ["The matters asked above should be divined separately and cannot be judged from one hexagram together; in general everything depends on the Output line.", "If Output sits on the Day or Month, is generated and supported by the Day, Month or a moving line, moves and changes into something lucky, suffers no punishment, harm, clash or control, and the lines do not move wildly, then though the flowers are dense the child can survive whole;", "even if the pox sink, the treatment still takes effect."] }
+      ],
+      "note": {
+        "yi": "这一条把出花的几件事（何时出、疏密、吉凶）都归到子孙爻上：LY.ILL.ZS.19 讲时间用鬼爻，吉凶还是回到子孙。痘疹章末的「乾按」是今人加的话，本库不引。",
+        "en": "This entry brings the several matters of the coming of the flowers (when, how dense, fortune) back to the Output line: LY.ILL.ZS.19 uses the Pressure line for the time, but the fortune returns to Output. The 'Qian note' at the end of the chapter on smallpox is a modern addition and is not quoted here."
+      },
+      "see": ["LY.ILL.ZS.18", "LY.ILL.ZS.19", "LY.ILL.ZS.20"]
+    },
+    {
+      "id": "LY.ILL.ZS.22",
+      "topic": "总则",
+      "chapter": "病源章",
+      "chapter_en": "Chapter on the source of illness",
+      "title": "占病先分占吉凶、不靠猜症候：野鹤称《黄金策》占疾病首论（五行脏腑、六神症）是「撞门槌」，无益之论悉删；他的办法是先占吉凶，卦吉许以调理即愈，卦凶命延医，鬼动克用神再占鬼神、家宅、坟茔",
+      "rule": {
+        "yi": "占病时不靠猜症候，先单占一卦问吉凶：卦吉就说调理调理就好，不必吃药求神；卦凶就叫他请医生；卦里鬼动克用神的，再占鬼神，或者占家宅、占坟墓，一定要弄清楚是犯了什么、用什么办法治。拿五行脏腑、六神去猜发冷发热这类症候，病人本来就知道，对他没有用处。",
+        "en": "In divining illness do not rely on guessing the symptoms, but first divine a hexagram on good or ill fortune alone: if it is lucky, say that with care he will recover and there is no need for medicine or prayer; if ill, tell him to call a doctor; if the hexagram shows Pressure moving to control the Subject, divine the ghosts and spirits again, or the house or the tomb, and be sure to find out what he has offended and how to treat it. To guess symptoms such as chills and fever from the five phases, the organs and the six spirits tells the patient nothing he does not already know, and is of no use to him."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [13192, 13192],
+          "zh": ["火属心经，发热、咽干、口燥；", "水归肾部，恶寒、盗汗、遗精；", "金肺、木肝；", "土乃病侵脾胃；", "衰轻旺重，动则煎迫身躯。", "螣蛇心惊，青龙则酒色过度，勾陈肿胀，朱雀则言语颠狂。", "白虎有损伤，女子则血崩血晕。", "玄武忧郁，男人则阴症阴虚。"],
+          "yi": ["火属心经，发热、咽喉干、口燥；", "水归肾部，怕冷、盗汗、遗精；", "金对应肺，木对应肝；", "土是病侵到脾胃；", "鬼爻衰弱病轻，旺相病重，发动就煎熬逼迫身体。", "螣蛇是心惊，青龙是酒色过度，勾陈是肿胀，朱雀是言语癫狂。", "白虎是损伤，女人就是血崩血晕。", "玄武是忧郁，男人就是阴症阴虚。"],
+          "en": ["Fire belongs to the Heart channel: fever, dry throat, dry mouth;", "Water belongs to the Kidney: aversion to cold, night sweats, seminal emission;", "Metal is the Lung, Wood the Liver;", "Earth means the illness invades the Spleen and Stomach;", "weak, it is light; strong, it is heavy; moving, it gnaws at and presses on the body.", "The Coiling Snake means fright of the heart, the Azure Dragon excess of wine and lust, Hook Earth swelling, the Vermilion Bird raving speech.", "The White Tiger means injury, and in a woman flooding and blood-faintness.", "The Dark Tortoise means gloom, and in a man yin syndrome and yin deficiency."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [13193, 13193],
+          "zh": ["野鹤曰：此《黄金策》占疾病之首论，余以为撞门槌也。", "对俗人而言，不得不以此而断之。", "若知分占之法，另占一卦，以定吉凶，庶有后验，若即以此卦而兼断死生，乃曰灵应，吾不信也。", "要来问病者，原欲求问吉凶，及是何所犯，何以治之也，而我且以发寒发热等语妄猜之，猜得着者哄此一时。", "夫病人既不得趋避之指，问卦何益？", "今此章俱是单言病症，并不言及何法治之，如果心经发热，来人岂不知也？", "请问治其热者是何法也？", "无益之论，故悉删之。"],
+          "yi": ["野鹤说：这是《黄金策》占疾病的开头一段议论，我看它是「撞门槌」。", "对一般世俗的人来说，不得不拿这个去断。", "如果知道分开占的办法，另外占一卦来定吉凶，才有后来的应验；要是就拿这一卦兼着断死生，还说灵验，我不信。", "来问病的人，本来是想问吉凶，以及是犯了什么、用什么办法治，而我却拿发冷发热这类话乱猜，猜中的也只是哄一时。", "病人既然得不到趋吉避凶的指点，问卦有什么用？", "现在这一章都是单讲病症，并不讲用什么办法治，如果是心经发热，来问的人难道不知道吗？", "请问治这个热的是什么办法？", "没有益处的议论，所以全部删掉。"],
+          "en": ["The Old Man of Yehe says: this is the opening discussion on divining illness in the Huangjin Ce, and I take it for a battering ram.", "For ordinary people one has no choice but to judge by it.", "If one knows the method of divining separately, and divines another hexagram to fix good or ill fortune, there may be later proof; if one judges life and death together from this same hexagram and calls it accurate, I do not believe it.", "The one who comes to ask about illness wants to ask about good or ill fortune, what he has offended, and how to treat it, yet I would guess wildly with words such as chills and fever, and a lucky guess only fools him for the moment.", "If the patient gets no guidance on what to pursue and avoid, what use is asking by divination?", "This chapter speaks only of the symptoms and never says how to treat them; if the Heart channel has a fever, would the asker not know it?", "Tell me, what is the way to treat that heat?", "It is a discussion of no use, and so I have deleted it all."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [13194, 13194],
+          "zh": ["余法，凡人问病，先命占祈凶吉。", "卦吉者，许以调理即愈，不必服药求神；", "卦凶者，命之延医；", "卦得鬼动克用神者，命之再占鬼神，或占家宅，或占坟茔，务必求其是何所犯，何法治之，庶不负来人之问也。"],
+          "yi": ["我的办法是，凡是有人问病，先叫他占一卦问吉凶。", "卦吉的，断他调理调理就好，不必吃药求神；", "卦凶的，叫他去请医生；", "卦里得到鬼动克用神的，叫他再占鬼神，或者占家宅，或者占坟墓，一定要弄清楚是犯了什么、用什么办法治，才不辜负来问的人。"],
+          "en": ["My method is this: whenever someone asks about an illness, first have him divine on good or ill fortune.", "If the hexagram is lucky, promise that with care he will recover, and there is no need for medicine or prayer;", "if it is ill, tell him to call a doctor;", "if the hexagram shows Pressure moving to control the Subject, tell him to divine the ghosts and spirits again, or the house, or the tomb, and be sure to find out what he has offended and how to treat it, so as not to fail the one who came to ask."] }
+      ],
+      "dispute": {
+        "yi": "占病开头该讲什么：黄金策的疾病章开头（LY.ILL.HJC.02 到 HJC.05）拿鬼爻的五行、宫和六神去断症候，并且用同一卦兼断死生；野鹤说这是撞门槌，只是猜发冷发热，对病人没有用，全部删掉，改成先占吉凶、再占治法。",
+        "en": "What the divination of illness should begin with: the opening of the Huangjin Ce's chapter on illness (LY.ILL.HJC.02 to HJC.05) judges the symptoms from the phase of the Pressure line, the palace and the six spirits, and judges life and death from the same hexagram; the Old Man of Yehe says this is a battering ram, only a guess at chills and fever, of no use to the patient, and deletes it all, replacing it with first divining good or ill fortune and then divining the treatment."
+      },
+      "note": {
+        "yi": "「撞门槌」是拿来撞门的粗木槌，比喻只会硬撞一下、没有下文。第一段引的就是他要删的黄金策原文（见 LY.ILL.HJC.02 和 HJC.05）。「祈凶吉」的「祈」字按上下文是「占」，即占一卦问吉凶。",
+        "en": "A 'battering ram' is a rough wooden beam used to batter a door, and is a figure for one who can only knock once and has nothing to follow. The first passage quotes the very text of the Huangjin Ce that he deletes (see LY.ILL.HJC.02 and HJC.05). The 'qi' of 'qi xiong ji' is from the context 'divine', that is, divine a hexagram on good or ill fortune."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.HJC.03", "LY.ILL.HJC.04", "LY.ILL.HJC.05", "LY.ILL.ZS.39"]
+    },
+    {
+      "id": "LY.ILL.ZS.23",
+      "topic": "神祟",
+      "chapter": "鬼神章",
+      "chapter_en": "Chapter on ghosts and spirits",
+      "title": "占鬼神看鬼爻的五行与旺衰：鬼休囚或空破墓绝都不是鬼神作祟；旺相是神、休囚是鬼——金是武神西方神/刀剑亡鬼，木是文神东方神/依草附木之妖或刑杖悬梁之鬼，水是河海北方神/水死之鬼，火是火神南方神雷公电母窖灶神/汤火焚烧之鬼，土是土神中央神山川社稷神/墙倒屋塌土死之鬼",
+      "rule": {
+        "yi": "占鬼神，卦里的鬼要是休囚，或者空、破、墓、绝，都不是鬼神在作祟。鬼爻旺相是神，休囚衰弱是鬼：临金，旺相是武神和西方的神，衰弱是死于刀剑的鬼；临木，旺相是文神和东方的神，衰弱是依草附木的妖、或被杖责悬梁而死的鬼；临水，旺相是河海和北方的神，衰弱是死在池井江湖里的鬼；临火，旺相是火神和南方的神、雷公电母、窖灶的神，衰弱是被汤火烧死的鬼；临土，旺相是土神和中央的神、掌管山川社稷的神，衰弱是墙倒屋塌压死的鬼。",
+        "en": "In divining ghosts and spirits, if the Pressure line in the hexagram is resting or trapped, or Void, broken, in a tomb or extinct, it is not the harm of ghosts or spirits. A strong Pressure line is a god and a weak one a ghost: on Metal, if strong a martial god and a god of the west, if weak a ghost that died by sword or blade; on Wood, if strong a civil god and a god of the east, if weak a goblin clinging to grass and trees or a ghost that died by the rod or by hanging from a beam; on Water, if strong a god of river and sea and of the north, if weak a ghost that drowned in a pond, well, river or lake; on Fire, if strong the god of fire and a god of the south, the Duke of Thunder and Lady Lightning, the gods of the cellar and the stove, if weak a ghost that died by scalding or burning; on Earth, if strong the god of the soil and a god of the centre and a god in charge of mountains, rivers and the altars of the land and grain, if weak a ghost that died buried under a fallen wall or collapsed house."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易", "range": [13199, 13203],
+          "zh": ["觉子曰：凡占鬼神，卦中鬼值休囚，及空破墓绝，皆非鬼神之害也。", "鬼临金，旺相者，武神及西方之神；", "衰弱休囚者，刀剑身亡之鬼。", "鬼临木，旺相者，文神及东方之神；", "衰弱休囚者，依草附木之妖，或是刑杖悬梁之鬼。", "鬼临水，旺相者，河海及北方之神；", "衰弱休囚者，池井江湖水死之鬼。", "鬼临火，旺相者，火神及南方之神，雷公电母，窖灶之神；", "衰弱休囚者，汤火焚烧之鬼。", "鬼临土，旺相者，土神及中央之神，及掌管山川社稷之神；", "衰弱休囚者，墙倒屋塌土死之鬼。"],
+          "yi": ["觉子说：凡是占鬼神，卦里的鬼落在休囚上，以及空、破、墓、绝的，都不是鬼神在作祟。", "鬼临金，旺相的，是武神和西方的神；", "衰弱休囚的，是死于刀剑的鬼。", "鬼临木，旺相的，是文神和东方的神；", "衰弱休囚的，是依草附木的妖，或是被杖责、悬梁而死的鬼。", "鬼临水，旺相的，是河海和北方的神；", "衰弱休囚的，是死在池、井、江、湖里的鬼。", "鬼临火，旺相的，是火神和南方的神，雷公电母，窖灶的神；", "衰弱休囚的，是被汤火烧死的鬼。", "鬼临土，旺相的，是土神和中央的神，以及掌管山川社稷的神；", "衰弱休囚的，是墙倒屋塌、被土压死的鬼。"],
+          "en": ["Juezi says: in all divinations about ghosts and spirits, if the Pressure line in the hexagram is resting or trapped, or Void, broken, in a tomb or extinct, it is not the harm of ghosts or spirits.", "Pressure on Metal, if strong: a martial god or a god of the west;", "if weak, resting or trapped: a ghost that died by sword or blade.", "Pressure on Wood, if strong: a civil god or a god of the east;", "if weak, resting or trapped: a goblin that clings to grass and trees, or a ghost that died by the rod or by hanging from a beam.", "Pressure on Water, if strong: a god of river and sea or of the north;", "if weak, resting or trapped: a ghost that drowned in a pond, well, river or lake.", "Pressure on Fire, if strong: the god of fire or a god of the south, the Duke of Thunder and Lady Lightning, the gods of the cellar and the stove;", "if weak, resting or trapped: a ghost that died by scalding or burning.", "Pressure on Earth, if strong: the god of the soil or a god of the centre, or a god in charge of mountains, rivers and the altars of the land and grain;", "if weak, resting or trapped: a ghost that died buried under a fallen wall or collapsed house."] }
+      ],
+      "dispute": {
+        "yi": "怎样认是哪一路神鬼：黄金策旧注（LY.ILL.HJC.50）按日辰的地支推（子是北斗或北阴，亥是溺死鬼），王洪绪按生合世爻或用爻的那一爻带的六神认；觉子这里按鬼爻自己的五行和旺衰认（旺相是神，休囚是鬼），又说鬼休囚或空破墓绝根本不是鬼神作祟。三家的办法各不相同。",
+        "en": "How to tell which sort of spirit or ghost it is: the old commentary of the Huangjin Ce (LY.ILL.HJC.50) reasons from the branch of the Day (Zi is the Northern Dipper or the North Yin, Hai a drowned ghost), and Wang Hongxu from the six spirits carried by the line that generates or combines with the Self or Subject line; Juezi here tells by the phase and strength of the Pressure line itself (strong is a god, resting or trapped a ghost), and adds that Pressure that is resting or trapped, Void, broken, in a tomb or extinct is not the harm of ghosts and spirits at all. The three ways all differ."
+      },
+      "note": {
+        "yi": "「武神」是关公、岳飞一类的神；「文神」是文昌、孔子一类，书里没有列名单，译文按字面。「刑杖悬梁」是被杖打死、吊死。「雷公电母」是司雷电的神，「窖灶」是地窖和灶，「社稷」是土神和谷神。",
+        "en": "'Martial gods' are gods such as Guan Yu and Yue Fei, and 'civil gods' are of the kind of Wenchang and Confucius; the book gives no list, and the translation follows the letter. 'The rod or hanging from a beam' is being beaten to death or hanged. The 'Duke of Thunder and Lady Lightning' are the gods of thunder and lightning, 'cellar and stove' are the underground store and the hearth, and 'the altars of the land and grain' are the gods of soil and grain."
+      },
+      "see": ["LY.ILL.HJC.50", "LY.ILL.ZS.24", "LY.ILL.ZS.25"]
+    },
+    {
+      "id": "LY.ILL.ZS.24",
+      "topic": "神祟",
+      "chapter": "鬼神章",
+      "chapter_en": "Chapter on ghosts and spirits",
+      "title": "不必按五行硬指哪路神：金官指为关公岳公等武神不对，武神有封有未封各地不同；须问病人许愿未酬或污秽了哪座庙，把所疑的神占一卦，鬼爻旺或动就是此神，不上卦再占别处；得罪正神用香花纸马祭，招惹邪祟用浆纸钱夜静时送（金鬼向西、水鬼向北）",
+      "rule": {
+        "yi": "古时候按五行分是哪路神，比如金官就说是天将、关公、金刚、伍公、岳公这些武神，觉子认为不对：武神有朝廷敕封的、有没有封的，各地风俗又不同，书里没记的更多，不可能一座庙一座庙地祭。该问病人是不是在哪座武神庙里许了愿没有还、或者在哪座庙里弄脏糟蹋了；凡是心里怀疑哪位神，就指着那位神占一卦，鬼爻旺或发动就是这位神，不上卦再占别处的神。鬼临木火水土的，都这样办。得罪了正神的，用香花纸马祭；招惹了邪祟的鬼，用浆水和纸钱，夜深人静时送走，金鬼向西送，水鬼向北送。",
+        "en": "In ancient times the gods were told apart by the five phases, for example a Metal Pressure was said to be a heavenly general, Guan Gong, a Vajra, Wu Gong, Yue Gong and the other martial gods; Juezi thinks this wrong: martial gods include those enfeoffed by imperial decree and those not, local customs differ, and those not recorded in books are still more, so one cannot sacrifice at temple after temple. One should ask the patient whether he vowed something in the temple of some martial god and has not paid it, or defiled and abused some temple; whatever god he suspects in his heart, point to that god and divine, and if the Pressure line is strong or moving it is that god, and if it is not in the hexagram divine the god of some other place. Pressure on Wood, Fire, Water or Earth is treated in the same way. If he has offended an orthodox god, sacrifice with incense, flowers and paper horses; if he has provoked an evil haunting ghost, use rice-water and paper money and send it off in the stillness of the night, a Metal ghost to the west and a Water ghost to the north."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易", "range": [13204, 13204],
+          "zh": ["按，古以五行而分其神，如金官，谓之天将、关公、金刚、伍公、岳公，诸武神，余以为非也。", "夫武神，有敕封者，有未封者，有各方土俗之不同，书之未载者更多，岂能庙庙而祭之？", "然则奈何？", "须问病人，或于某武神庙中许愿未酬乎？", "或于何庙污秽作践乎？", "凡心有所疑者，则指其神而占之。", "鬼爻或旺或动，是此神也；", "如不上卦，再占他处之神可耳。", "其鬼值木火水土者，皆同此法。", "如既得罪于正神者，以香花纸马祭之；", "勾惹邪祟之鬼者，用浆纸钱，夜静之时，金鬼者向西送之，水鬼者向北送之。", "余仿此。"],
+          "yi": ["按：古时候按五行来分是哪路神，比如金官就说是天将、关公、金刚、伍公、岳公这些武神，我认为不对。", "武神有朝廷敕封的，有没有封的，各地风俗又不一样，书里没有记载的更多，哪里能一座庙一座庙地祭过去？", "那么该怎么办呢？", "要问病人，是不是在某位武神的庙里许过愿、还没有还？", "或者是不是在哪座庙里弄脏了、糟蹋了？", "凡是心里有怀疑的，就指着那位神来占。", "鬼爻旺相或者发动，就是这位神；", "如果不上卦，再占别处的神就行。", "鬼临木、火、水、土的，都照这个办法。", "如果是得罪了正神，用香花纸马来祭；", "如果是招惹了邪祟的鬼，用浆水和纸钱，夜深人静的时候送走：金鬼向西送，水鬼向北送。", "其余照这个类推。"],
+          "en": ["Note: in ancient times the gods were told apart by the five phases, for example a Metal Pressure was said to be a heavenly general, Guan Gong, a Vajra, Wu Gong, Yue Gong and the other martial gods; I think this is wrong.", "Martial gods include those enfeoffed by imperial decree and those not, and local customs differ from place to place, and those not recorded in books are still more; how could one sacrifice at temple after temple?", "Then what is to be done?", "One must ask the patient whether he vowed something in the temple of some martial god and has not yet paid it.", "Or whether he defiled or abused some temple.", "Whatever god he suspects in his heart, point to that god and divine.", "If the Pressure line is strong or moving, it is that god;", "if it is not in the hexagram, divine the god of some other place.", "Pressure on Wood, Fire, Water or Earth is treated in the same way.", "If he has offended an orthodox god, sacrifice with incense, flowers and paper horses;", "if he has provoked an evil haunting ghost, use rice-water and paper money, and send it off in the stillness of the night: a Metal ghost to the west, a Water ghost to the north.", "The rest follow this."] }
+      ],
+      "note": {
+        "yi": "觉子上一条（LY.ILL.ZS.23）先按五行分了大类，这一条说不必再把大类落实到某位具体的神：古人把金官指为关公岳飞等，他不同意，主张问病人心里疑的是哪位神，再占一卦验证。「金官」按字面是金爻的官鬼。「浆纸钱」是米浆水和纸钱。「香花纸马」是香、花和纸扎的马，祭正神用。",
+        "en": "In the previous entry (LY.ILL.ZS.23) Juezi first told the great kinds apart by the five phases; this entry says the great kinds need not be pinned down to a particular god: he disagrees with the ancients pointing a Metal Pressure to Guan Gong, Yue Fei and the like, and holds that one should ask which god the patient suspects in his heart and then divine to test it. A 'Metal official' is in the letter a Metal Pressure line. 'Rice-water and paper money' is rice-water and paper money. 'Incense, flowers and paper horses' are incense, flowers and paper-made horses, used to sacrifice to orthodox gods."
+      },
+      "see": ["LY.ILL.HJC.50", "LY.ILL.ZS.23", "LY.ILL.ZS.25"]
+    },
+    {
+      "id": "LY.ILL.ZS.25",
+      "topic": "神祟",
+      "chapter": "鬼神章",
+      "chapter_en": "Chapter on ghosts and spirits",
+      "title": "祭送不是万灵药：时灾瘟癖照法祭送屡验，疯痨气蛊是自己失调、与鬼神无关；野鹤见滇黔蜀粤病不服药专信鬼神、杀牲救命反害命；李我平驳《易冒》《易林补遗》指定关岳、说不祭降灾是邪神，并说此书疾病章言鬼神是从俗",
+      "rule": {
+        "yi": "祭送鬼神，对时行灾病、瘟疫、癖积一类的病有用（野鹤多次验过）；疯、痨、气、蛊是自己没有调养好、酒色伤了身，和鬼神没有关系，祭送没有益处，该做的是节制饮食、远离色欲、平息怒气、养护精神。有病不吃药、专靠杀牲祭神的，反而害了性命。李我平批评有的书指定哪位神（关帝、岳王、关圣），又说祭了降福、不祭降灾，那是作威作福的邪神。",
+        "en": "Sacrificing and sending off the ghosts and spirits is of use for seasonal calamities, epidemics and hard lumps (the Old Man of Yehe verified it many times); madness, consumption, qi disorder and drum-belly come from failing to look after oneself and from wine and lust damaging the body, have nothing to do with ghosts and spirits, and gain nothing from sacrifice, what is to be done being to moderate food, keep away from lust, calm anger and nourish the spirit. Those who take no medicine when ill and rely wholly on slaughtering animals to the gods only harm life. Li Woping criticises books that name a particular god (Emperor Guan, King Yue, the Sage Guan) and say that those who sacrifice are blessed and those who do not are sent calamity, which he calls evil gods who lord it and dispense favour."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13205, 13205],
+          "zh": ["野鹤曰：凡得时灾瘟癖，照此法而祭送者，余屡验之。", "倘若是疯痨气蛊，既失调于前，酒色伤身，又失慎重于后，与鬼神何干？", "祭之送之皆无益矣。", "惟节饱食、远色欲、息气养神，其病自减。", "余游遍江湖，曾至滇黔蜀粤，见彼病不服药，专信鬼神。", "先用三牲五牲，后至杀牛宰马，一次不愈，甚至二三十次。", "因病致穷者多矣。", "殊不知害彼命而救命，其罪愈彰。", "所以屡见害性命之多者，终不能救而死，可不戒与？", "今下路读书人亦信此邪神者，余实不解。", "神农尝百草，遗救生灵。", "未闻有何圣贤，教人宰牲命以救命也。"],
+          "yi": ["野鹤说：凡是得的是时行灾病、瘟疫、癖积一类的，照这个办法祭送，我多次验过。", "如果是疯病、痨病、气病、蛊胀，先前没有调养好，酒色伤了身，后来又不谨慎，和鬼神有什么关系？", "祭他、送他都没有用。", "只有节制饮食、远离色欲、平息怒气、养护精神，病自然会减轻。", "我走遍江湖，到过云南、贵州、四川、广东，看到那里的人生病不吃药，专门相信鬼神。", "先用三牲、五牲，后来杀牛宰马，一次不好，甚至做二三十次。", "因为生病弄穷的人很多。", "殊不知伤害别的生命来救自己的命，罪过更加明显。", "所以屡次看到伤害的性命越多的人，最后还是救不了而死，难道不该引以为戒吗？", "现在下游一带的读书人也信这种邪神，我实在不明白。", "神农尝百草，是留给后世来救活生灵的。", "没听说有哪位圣贤，教人杀牲畜的命来救人的命。"],
+          "en": ["The Old Man of Yehe says: for illnesses that are seasonal calamities, epidemics or hard lumps, sacrifices and sending-off by this method have proved true many times.", "But if it is madness, consumption, qi disorder or drum-belly, when he first failed to look after himself and wine and lust damaged his body, and then was again not careful, what has this to do with ghosts and spirits?", "Sacrificing to them and sending them off is of no use.", "Only by moderating food, keeping away from lust, calming anger and nourishing the spirit does the illness ease of itself.", "I have travelled all over the rivers and lakes, to Yunnan, Guizhou, Sichuan and Guangdong, and seen how there the sick take no medicine and put their whole trust in ghosts and spirits.", "First they use three or five kinds of sacrificial animals, then they slaughter oxen and horses, and if once does not cure, they go on even twenty or thirty times.", "Many are made poor by illness.", "They do not realise that to harm other lives in order to save a life makes the sin all the plainer.", "So I have often seen that those who harmed the most lives could still not be saved and died in the end; should one not take warning?", "Now even scholars of the lower reaches believe in such evil gods, which I truly do not understand.", "Shennong tasted the hundred herbs and left them to save living beings.", "I have never heard of any sage who taught men to slaughter animals' lives in order to save a life."] },
+        { "by": "李我平", "book": "增删卜易", "range": [13207, 13207],
+          "zh": ["李我平曰：《易冒》以鬼临金者为关帝、岳王。", "《易林补遗》又以青龙为关圣，却不知关岳以前，金官与青龙是何神也？", "又曰：祭者降之以福，不祭者降之以灾。", "若此，乃作威福之邪神也，而谓正直之神，何得有此？", "悖甚。", "此书通前彻后，无一不合于理，惟疾病章中，亦言鬼神之事，何也？", "疑因今人问病，开口先问鬼神，不得不从俗耳，知者察之。"],
+          "yi": ["李我平说：《易冒》把鬼临金的当作关帝、岳王。", "《易林补遗》又把青龙当作关圣，却不知道在关羽、岳飞以前，金官和青龙是什么神？", "又说：祭的就降福给他，不祭的就降灾给他。", "如果是这样，那是作威作福的邪神，而说是正直的神，哪里会有这种事？", "荒谬极了。", "这部书从头到尾，没有一处不合道理，只有疾病章里也讲鬼神的事，为什么呢？", "我怀疑是因为现在的人问病，开口先问鬼神，不得不随俗罢了，明白的人自己去体察。"],
+          "en": ["Li Woping says: the Yi Mao takes Pressure on Metal as Emperor Guan and King Yue.", "The Yilin Buyi in turn takes the Azure Dragon as the Sage Guan, but does not ask what gods the Metal Pressure and the Azure Dragon were before Guan and Yue.", "It also says: to those who sacrifice they send blessing, to those who do not they send calamity.", "If so, they are evil gods who lord it and dispense favour, and how could a god called upright do this?", "Utterly absurd.", "This book, from beginning to end, is in accord with reason everywhere, and only its chapter on illness also speaks of ghosts and spirits; why?", "I suspect it is because people now, in asking about illness, first ask about ghosts and spirits as soon as they open their mouths, so that the book has had to follow custom; let those who understand judge."] }
+      ],
+      "dispute": {
+        "yi": "要不要指定是哪位神：《易冒》以鬼临金为关帝、岳王，《易林补遗》以青龙为关圣（李我平点了这两部书）；李我平说这些说法不通，还说「祭者降福、不祭者降灾」是作威作福的邪神。野鹤对祭送的态度是：时灾瘟癖照法祭送灵验，疯痨气蛊与鬼神无关。",
+        "en": "Whether to name a particular god: the Yi Mao takes Pressure on Metal as Emperor Guan and King Yue, and the Yilin Buyi takes the Azure Dragon as the Sage Guan (Li Woping names the two books); Li Woping says this does not hold, and that 'blessing to those who sacrifice, calamity to those who do not' would make evil gods who lord it and dispense favour. The Old Man's attitude to sacrifice is that for seasonal calamities and epidemics sacrifice by the method proves true, and that madness, consumption, qi disorder and drum-belly have nothing to do with ghosts and spirits."
+      },
+      "note": {
+        "yi": "「时灾瘟癖」是当令的灾病、瘟疫和癖积（腹内结块的病）；「疯痨气蛊」是疯病、痨病（肺结核一类）、气病和蛊胀。「三牲」是牛、羊、猪，「五牲」是再加鸡、犬之类。「下路」在这里指长江下游一带。「乾按」是今人加的话，本库不引。",
+        "en": "'Seasonal calamity, epidemic and hard lump' are the calamities in season, pestilence and lumps forming in the belly; 'madness, consumption, qi disorder and drum-belly' are madness, consumption (an illness of the lungs) and disorders of qi and of belly distension. 'Three sacrificial animals' are the ox, sheep and pig and 'five' add the fowl, dog and the like. 'Lower reaches' here means the lower Yangtze. The 'Qian note' is a modern addition and is not quoted here."
+      },
+      "see": ["LY.ILL.HJC.50", "LY.ILL.ZS.23", "LY.ILL.ZS.24"]
+    },
+    {
+      "id": "LY.ILL.ZS.26",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "问卜求神、延医服药有没有用：术不精则不效；病要分有根无根，有根者可救、无根者不能（像移花接木，上盖下浇自能渐活，无根之木浇盖无益）",
+      "rule": {
+        "yi": "问卜求神、请医吃药是有道理的：不灵验有两个原因，一是术不精，精了没有不灵验的；二是病要分有根无根，有根的可以救，无根的救不了，就像移栽花木，有根的上面遮盖、下面浇灌，自然慢慢活过来，无根的树、无蒂的花，浇了盖了也没有用。人不懂这个，一次不灵验就不信神和药，是冤枉了它。",
+        "en": "There is reason in consulting the oracle and praying to the spirits, calling a doctor and taking medicine: when it fails there are two causes, one that the art is not refined, for if refined nothing fails, and the other that an illness must be told as rooted or rootless, the rooted being savable and the rootless not, as with moving a flowering plant, where one that has roots is covered above and watered below and revives gradually, while a tree without root or a flower without stem gains nothing from watering and covering. People who do not understand this lose faith in the spirits and medicine at the first failure, and wrong them."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13212, 13212],
+          "zh": ["野鹤曰：有人而问余曰：问卜求神，延医服药，有是理乎？", "余曰：若无此理，伏羲神农，开天大圣人也，画卦尝药可为乎？", "彼曰：然则每有不效者，何也？", "余曰：有二说焉，一在术之不精，精则无有不效者；", "一人之疾，要分有根无根。", "有根者可以救之，无根者则不能也。", "人之星辰过宫，或是交运脱运，谓之移花接木之年，移其有根之花木者，上则遮盖，下宜浇溉，自能渐活，不浇不盖，见日亦枯，有病而求神服药者，即此意也；", "若使无根之木，无蒂之花，虽浇之盖之，亦无益矣，故尝有求神服药而弗效者。", "此天地之至理也，人不识此，一不效，而不信神药焉，岂不冤哉！"],
+          "yi": ["野鹤说：有人问我：问卜求神、请医吃药，有这个道理吗？", "我说：如果没有这个道理，伏羲、神农是开天辟地的大圣人，他们画卦、尝药能这样做吗？", "他说：那么常常有不灵验的，是什么缘故？", "我说：有两种说法，一是术不精，精了就没有不灵验的；", "另一种是，一个人的病，要分有根还是无根。", "有根的可以救，无根的就不能。", "人的星辰过宫，或者是交运、脱运，叫做移花接木的年份，移栽有根的花木，上面要遮盖，下面要浇灌，自然慢慢活过来，不浇不盖，见了太阳也枯死，有病而去求神、吃药，就是这个意思；", "如果是无根的树、无蒂的花，虽然浇它、盖它，也没有用，所以常常有求神吃药却不灵验的。", "这是天地间最根本的道理，人不懂这个，一次不灵验，就不信神和药，难道不冤枉吗！"],
+          "en": ["The Old Man of Yehe says: someone asked me: to consult the oracle and pray to spirits, to call a doctor and take medicine, is there any reason in this?", "I said: if there were no reason in it, Fuxi and Shennong were great sages who opened up the world, could they have drawn the trigrams and tasted the herbs?", "He said: then why does it so often fail?", "I said: there are two accounts. One is that the art is not refined, for if refined nothing fails;", "the other is that a person's illness must be told as rooted or rootless.", "The rooted can be saved; the rootless cannot.", "When a person's stars pass into another palace, or he enters or leaves a fortune cycle, it is called a year of grafting flowers: for a flowering plant that has roots and is moved, one covers it above and waters it below, and it revives gradually, while without watering and covering it withers in the sun; one who is ill and prays and takes medicine is in the same case;", "but a tree without root or a flower without stem gains nothing from watering and covering, and so there are those who pray and take medicine and are not cured.", "This is the supreme principle of heaven and earth; people who do not understand it lose faith in the spirits and medicine at the first failure; is that not unjust?"] }
+      ],
+      "note": {
+        "yi": "「有根、无根」书里只用移花接木打了比方，没有说怎样从卦上看出病有根无根。「星辰过宫」「交运脱运」是命理里说的运势交接。",
+        "en": "For 'rooted' and 'rootless' the book uses only the figure of grafting flowers and does not say how to see from the hexagram whether an illness is rooted or rootless. 'Stars passing into another palace' and 'entering or leaving a fortune cycle' are the handing over of fortune spoken of in fate reckoning."
+      },
+      "see": ["LY.ILL.ZS.27"]
+    },
+    {
+      "id": "LY.ILL.ZS.27",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "鬼是忧神、子孙是喜悦解忧之神：鬼持世或动，得子孙动而制之，此医可请手到成功；子孙临应爻是明医，因为子孙克去的是忧不是邪魔（例：三十余人泪眼相对，子水兄爻旬空，半夜子时退灾）",
+      "rule": {
+        "yi": "官鬼这一爻，不是鬼也不是病，是忧神：替儿子占病的，父母爱子的心，没病时都怕他生病担忧，何况已经病了；自己占病的，性命在一呼一吸之间，一个人起不来，全家惊慌，谁不担忧？所以官鬼就是一家人的忧神，能解这份忧的，只有子孙爻。鬼持世或在卦中发动，得到子孙发动来制服它，这个医生可以请，一下手就成功；子孙临在应爻上，是高明的医生，因为子孙克掉的是忧神，我就没有忧愁了。",
+        "en": "The Pressure line is neither ghost nor illness but the spirit of worry: in divining a son's illness, the parents' love for their son is such that even before he is ill they fear illness and worry, and how much more when he is already ill; in divining one's own illness, life hangs on a breath, and when one person cannot rise the whole household is alarmed, and who would not worry? So the Pressure line is the spirit of worry of the whole household, and what can relieve that worry is only the Output line. If Pressure holds the Self line or moves in the hexagram and Output moves to restrain it, this doctor can be called and his hand will succeed; if Output sits on the Other line he is a brilliant doctor, because what Output controls away is the spirit of worry, and then I have no worry."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13214, 13214],
+          "zh": ["鬼作忧神休妄动，福为喜悦要生扶。", "自占代占，鬼乃犹疑之神也，若持世，及动于卦中，得子孙动而制之，此医可请，手到成功。", "若得子孙临应爻者，乃明医也，其故何也？", "子孙乃制鬼之神，非治邪魔之鬼也，乃克去忧神，我无忧也。"],
+          "yi": ["鬼是忧愁的神，不要乱动；子孙（福）是喜悦的神，要有生扶。", "自己占也好替别人占也好，鬼是犹疑不定的神；如果它持世、或在卦中发动，得到子孙发动来制服它，这个医生可以请，一下手就成功。", "如果子孙临在应爻上，那是高明的医生，为什么呢？", "子孙是制服鬼的神，不是去治邪魔的鬼，而是克掉忧神，我就没有忧愁了。"],
+          "en": ["Pressure is the spirit of worry and should not move at random; Output should be the spirit of joy, generated and supported.", "Whether divining for oneself or for another, Pressure is the spirit of doubt; if it holds the Self line or moves in the hexagram, and Output moves and restrains it, this doctor can be called, and his hand will succeed.", "If Output sits on the Other line, he is a brilliant doctor; why?", "Output is the spirit that restrains Pressure, not one that treats evil ghosts; it controls away the spirit of worry, and I have no worry."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [13232, 13232], "literal": ["父母"],
+          "zh": ["野鹤曰：诸书无不以官为鬼为病，应为医人，子孙为药，理固然也，但此官鬼者，非鬼非病，乃忧神耳。", "占子病者，父母爱子之心，未病惟恐疾忧，况已病乎？", "自占病者，性命在呼吸之间，且一人不起，举室惊惶，谁不忧乎？", "故此官鬼者，即一家之忧神也，解此忧者，惟凭子孙爻也。"],
+          "yi": ["野鹤说：各种书没有不把官当作鬼、当作病，应当作医生，子孙当作药的，道理本来如此，但这个官鬼，不是鬼也不是病，而是忧神。", "占儿子病的，父母爱儿子的心，没病时都怕他生病担忧，何况已经病了呢？", "自己占病的，性命在一呼一吸之间，而且一个人起不来，全家人都惊慌，谁不担忧呢？", "所以这个官鬼，就是一家人的忧神，能解这份忧的，只有靠子孙爻。"],
+          "en": ["The Old Man of Yehe says: all the books take the Pressure line as the ghost and the illness, the Other line as the doctor and Output as the medicine, which is reasonable enough, but this Pressure line is neither ghost nor illness; it is the spirit of worry.", "In divining a son's illness: the parents' love for their son is such that even before he is ill they fear illness and worry, and how much more when he is already ill?", "In divining one's own illness: life hangs on a breath, and when one person cannot rise the whole household is alarmed; who would not worry?", "So this Pressure line is the spirit of worry of the whole household, and what can relieve that worry is only the Output line."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13233, 13233],
+          "zh": ["如：午月甲寅日(旬空：子丑)，曾有一人，病在危笃，医家不治，迎余到宅。", "见有三十余人，至亲泪眼不干，密友愁容可掬，此非一家之忧乎？"],
+          "yi": ["比如：午月甲寅日（旬空：子、丑），曾经有一个人，病危重，医生治不了，请我到他家。", "看到有三十多个人，至亲的眼泪不干，密友满脸愁容，这难道不是一家人的忧愁吗？"],
+          "en": ["For example: in the Wu month, on a Jiayin day (void: Zi and Chou), there was a man gravely ill whom the doctors could not treat, and I was invited to his house.", "I saw more than thirty people there, the nearest kin with tears unceasing and close friends with faces full of sorrow; is this not the worry of a whole household?"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13234, 13234],
+          "zh": ["午月甲寅日(旬空：子丑)，弟占兄病，得“屯之中孚”"],
+          "yi": ["午月甲寅日（旬空：子、丑），弟弟占哥哥的病，得屯卦变中孚卦。"],
+          "en": ["In the Wu month, on a Jiayin day (void: Zi and Chou), a younger brother divining his elder brother's illness got Zhun changing into Zhongfu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13281, 13281],
+          "zh": ["余即笑而言曰：“列位放心，今日半夜退灾，明日卯日即起床矣。”", "举家大小一门愁容变喜。", "此卦中之子孙爻者，是药耶？", "是解忧之神耶？", "许即愈者，何也？", "盖此人虽是险症，其实乃近病，子水兄爻值旬空，近病逢空即愈，值半夜子时而不空也。", "或曰：“近病逢空，何不许冲空之午日，实空之子日？”", "余曰：“因子水兄爻化卯木子孙，世爻又临寅木子孙，而化卯木子孙，次日即是卯日，正一家解忧释疑之时，所以许半夜实空之时也。”", "果于子时退灾，次日起床。", "此何尝用药而制鬼耶？"],
+          "yi": ["我就笑着说：“各位放心，今天半夜灾就退了，明天卯日就能起床了。”", "全家大小一门的愁容都变成了喜色。", "这个卦里的子孙爻，是药吗？", "还是解忧的神呢？", "断定马上就好，是什么缘故？", "因为这个人病症虽然凶险，其实是近病，子水兄弟爻落旬空，近病遇空就好，到半夜子时就不空了。", "有人说：“近病遇空，为什么不断在冲空的午日、填实空的子日？”", "我说：“因为子水兄弟爻变成卯木子孙，世爻又临着寅木子孙，变出卯木子孙，第二天就是卯日，正是一家人解忧释疑的时候，所以断在半夜填实空的时候。”", "果然在子时灾退，第二天起了床。", "这哪里是用药来制鬼呢？"],
+          "en": ["I said with a smile: 'Set your minds at rest, gentlemen; the trouble recedes at midnight tonight, and tomorrow, the Mao day, he will be out of bed.'", "The whole household, old and young, turned from sorrow to joy.", "Is the Output line in this hexagram medicine?", "Or is it the spirit that relieves worry?", "Why did I promise recovery at once?", "Because though this man's illness was dangerous, it was in fact a recent illness; the Zi Water Peer line falls into Void, a recent illness meeting Void heals, and at the Zi hour at midnight it is no longer Void.", "Someone said: 'For a recent illness meeting Void, why did you not fix the Wu day that clashes the Void, or the Zi day that fills it?'", "I said: 'Because the Zi Water Peer line changes into Mao Wood Output, and the Self line sits on Yin Wood Output and changes into Mao Wood Output, and the next day is the Mao day, exactly the time when the household is relieved of worry and doubt, I fixed the midnight hour when the Void is filled.'", "Indeed the trouble receded at the Zi hour and the next day he got out of bed.", "Was this ever a matter of controlling Pressure with medicine?"] }
+      ],
+      "dispute": {
+        "yi": "子孙是什么：黄金策旧注、王洪绪都说子孙是医药（LY.ILL.HJC.32）；野鹤说官鬼不是鬼也不是病，是一家人的忧神，子孙不是药，是解忧的喜悦之神，所以「子孙旺动，不药而愈」。",
+        "en": "What Output is: the old commentary of the Huangjin Ce and Wang Hongxu both say Output is the medicine (LY.ILL.HJC.32); the Old Man says the Pressure line is neither ghost nor illness but the spirit of worry of the whole household, and that Output is not medicine but the spirit of joy that relieves worry, so that 'with Output strong and moving, one recovers without medicine'."
+      },
+      "note": {
+        "yi": "这是野鹤对「子孙为医药」的新解释，后面几条（LY.ILL.ZS.28、ZS.37、ZS.39、ZS.40）都建立在它上面。书中例里近病、子水兄弟爻落旬空，野鹤断半夜子时（空被填实）退灾，次日卯日（子孙日）起床。子孙（福）一词在译文里保留为 Output。",
+        "en": "This is the Old Man's new explanation of 'Output is the medicine', and several later entries (LY.ILL.ZS.28, ZS.37, ZS.39 and ZS.40) rest on it. In the case the illness is recent and the Zi Water Peer line falls into Void; the Old Man fixed the Zi hour at midnight (when the Void is filled) for the trouble to recede, and the next day, the Mao day (a day of Output), for him to rise. The word for Output as 'fortune' is kept as Output in the translation."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.ZS.28", "LY.ILL.ZS.37", "LY.ILL.ZS.39"]
+    },
+    {
+      "id": "LY.ILL.ZS.28",
+      "topic": "总则",
+      "chapter": "医占往治章",
+      "chapter_en": "Chapter on a doctor divining whether to go and treat",
+      "title": "子孙也是解忧之神（占船被风阻的类比）：不看木爻兄弟爻，看子孙——子孙持世化空，出空之日大晴，被日辰合住则冲开之日顺风",
+      "rule": {
+        "yi": "野鹤再拿船上被风阻住的例子来说明：子孙是解忧的神。占什么时候顺风，别人按木爻、兄弟爻断风云，他看的是子孙：子孙持世又变空，连着几天风雨，等它出空那天才晴，再等到被日辰合住的地方被冲开的那天才顺风。他从前也按木、兄弟去断，屡试不验，后来看到子孙值日开船就顺风的比比皆是，才悟出这个道理，和疾病篇把子孙当解忧之神是一个理。",
+        "en": "The Old Man takes the case of a boat held up by the wind to show that Output is the spirit that relieves worry. In divining when the wind would be fair, another judged the wind and cloud by the Wood and Peer lines, but he looked at Output: Output holding the Self line and changing into Void meant wind and rain for several days, clearing on the day it leaves the Void, and a fair wind only on the day the place held by the Day's combination is clashed open. He too used to judge by Wood and Peer and it failed again and again, and only after seeing that boats setting sail on a day when Output rules the day have fair wind time after time did he come to understand the principle, which is the same as taking Output as the spirit that relieves worry in the chapter on illness."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13282, 13282],
+          "zh": ["余再取舟中阻风之例言之，而子孙为解忧之神，愈可知矣。"],
+          "yi": ["我再拿船上被风阻住的例子来说，子孙是解忧的神，就更明白了。"],
+          "en": ["Let me take the case of a boat held up by the wind, and it will be still clearer that Output is the spirit that relieves worry."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13283, 13283],
+          "zh": ["曾过洞庭阻风，同行者于：卯月辛丑日(旬空：辰巳)，占何日顺风，得“剥之观”"],
+          "yi": ["我曾经过洞庭湖被风阻住，同行的人在卯月辛丑日（旬空：辰、巳），占哪一天顺风，得剥卦变观卦。"],
+          "en": ["Once I crossed Dongting Lake and was held up by the wind, and a fellow traveller, in the Mao month on a Xinchou day (void: Chen and Si), divined which day the wind would be fair and got Bo changing into Guan."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13310, 13310],
+          "zh": ["彼断曰：若论风云，全凭兄弟。", "又云木动生风，卦中寅卯不动，幸而旺相，兄爻申金伏于世下，今日申时出而冲动寅木，必有顺风，不然明日寅日冲出申金兄爻，一定开舟。"],
+          "yi": ["他断道：要论风和云，全凭兄弟爻。", "又说木动生风，卦里寅、卯不动，幸好旺相，兄弟爻申金伏在世爻下面，今天申时出来冲动寅木，必定有顺风，不然明天寅日冲出申金兄爻，一定开船。"],
+          "en": ["He judged: if one speaks of wind and cloud, it depends wholly on the Peer line.", "He also said that moving Wood produces wind; Yin and Mao are not moving in the hexagram but are luckily strong, and the Shen Metal Peer line is hidden under the Self line; at the Shen hour today it will come out and clash Yin Wood into motion and there will surely be a fair wind, or else tomorrow, the Yin day, will clash out the Shen Metal Peer line and the boat will surely set sail."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13311, 13311],
+          "zh": ["余答曰：此时大风大雨，何尝无风？", "彼曰：我问者，顺风也。", "余曰：似此断法，正没把鼻。", "夫占天时之旱涝，以木爻兄爻为风云，今已登舟，岂可执此为法？", "尔问我阻风于此，焦心如焚，能解我辈之忧者，乃子孙之爻耳，此卦子孙持世而化空，连朝风雨。", "只待出空而后晴，子孙出空之日，开船解我之忧矣。", "果于乙巳日大晴，风恬浪静，尚无顺风。", "次日丙午，一日顺风，竟过湖矣。", "顺风顺水，畅饮开怀，得非子孙之力，释我之忧耶？", "彼曰：卜书从来无此论，必有秘传。", "余曰：昔亦以木兄而断，屡试不验，因见子孙值日以开舟而风顺者，比比皆然，遂悟出此理耳。", "彼又问：子水子孙化巳空，巳日已开舟矣，何故至丙午日而始得顺风？", "余曰：此卦占于丑日，子水到巳日虽则出空，还被日辰合住，故必待丙午日冲开，方遇顺风也。", "此子孙者，不犹夫疾病之篇以子孙为解忧之神者，理一而已。"],
+          "yi": ["我回答说：这时候大风大雨，哪里是没有风？", "他说：我问的是顺风。", "我说：像这样的断法，正是没有把握。", "占天时的旱涝，用木爻、兄弟爻当风云，现在已经上了船，哪里能死守这个办法？", "你问的是我们被风阻在这里，心急如焚，能解我们这些人的忧愁的，是子孙爻，这一卦子孙持世又变空，连着几天风雨。", "只等出空以后才会晴，子孙出空的那天，开船解了我们的忧愁。", "果然在乙巳日大晴，风平浪静，还没有顺风。", "第二天丙午，一整天顺风，就过了湖。", "顺风顺水，畅饮开怀，这不是子孙的力量，解了我们的忧愁吗？", "他说：卜书从来没有这个说法，一定有秘传。", "我说：我从前也是按木爻、兄弟爻来断，多次试都不灵，因为看到子孙值日开船而顺风的，比比皆是，才悟出这个道理。", "他又问：子水子孙变出巳空，巳日已经开船了，为什么到丙午日才得到顺风？", "我说：这一卦占在丑日，子水到巳日虽然出了空，还被日辰合住，所以一定要等到丙午日冲开，才遇到顺风。", "这个子孙，不就像疾病篇里把子孙当作解忧之神一样吗，道理是同一个。"],
+          "en": ["I answered: at this moment there is a great wind and heavy rain; how can you say there is no wind?", "He said: what I asked about is a fair wind.", "I said: judging like this gets no grip at all.", "In divining the drought or flood of the weather, the Wood line and the Peer line are taken as wind and cloud; but now that we are already on board, how can one hold to this method?", "What you ask is that we are held up here by the wind, burning with anxiety, and what can relieve our worry is the Output line; in this hexagram Output holds the Self line and changes into Void, so there will be wind and rain for several days.", "Only after it leaves the Void will the weather clear; on the day Output leaves the Void the boat sails and our worry is relieved.", "Indeed on the Yisi day it was fully clear, the wind was still and the waves calm, but there was not yet a fair wind.", "On the next day, Bingwu, there was a fair wind all day and we crossed the lake.", "With fair wind and current we drank freely and made merry; was this not the power of Output, relieving our worry?", "He said: the divination books have never had this saying; there must be a secret transmission.", "I said: I too used to judge by the Wood and Peer lines and it failed again and again; because I saw that boats setting sail on a day when Output rules the day have fair wind time after time, I came to understand this principle.", "He asked again: the Zi Water Output line changes into Si, which is Void; the boat sailed on the Si day, so why was the fair wind got only on the Bingwu day?", "I said: this hexagram was divined on a Chou day, and though Zi Water leaves the Void on the Si day, it is still held by the Day's combination, so one had to wait until the Bingwu day to clash it open before meeting a fair wind.", "This Output line is just like the Output of the chapter on illness taken as the spirit that relieves worry: the principle is one."] }
+      ],
+      "note": {
+        "yi": "这一条讲的是天时行舟，不是病；野鹤拿它作类比，证明「子孙是解忧之神」这条道理通用。占的时候人已经在船上，所以不再按占天时的通例（木爻、兄弟爻主风云）去断。出行的判断另见其他章。",
+        "en": "This entry is about weather and a voyage, not illness; the Old Man uses it as an analogy to show that 'Output is the spirit that relieves worry' holds generally. The people were already on board when they divined, and so he did not judge by the usual rule for weather (the Wood and Peer lines govern wind and cloud). The judgment of travel is treated in other chapters."
+      },
+      "see": ["LY.ILL.ZS.27", "LY.ILL.ZS.37"]
+    },
+    {
+      "id": "LY.ILL.ZS.29",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "应作医人不宜破空墓绝：自占或代六亲求医都以应爻为医人；应爻空破墓绝休囚衰弱，或旺相被日月动爻冲克，或动而化鬼、化绝、化回头克，药不见效",
+      "rule": {
+        "yi": "应爻当作医生，不宜落在破、空、墓、绝上。自己求医、替六亲求医，都拿应爻当医生。应爻如果空、破、入墓、入绝、休囚衰弱，或者旺相却被日月和动爻冲克，或者动了变成鬼、变成绝、变出回头克，药就不见效。",
+        "en": "The Other line is taken as the doctor and should not be broken, Void, in a tomb or extinct. Whether one seeks a doctor for oneself or for a relation, the Other line is the doctor. If the Other line is Void, broken, in a tomb or extinct, resting, trapped or weak, or is strong but clashed or controlled by the Day, Month or a moving line, or moves and changes into Pressure, into extinction or into a returning control, the medicine has no effect."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13215, 13215],
+          "zh": ["应作医人，不宜破空墓绝。", "自占求医，代六亲求医，皆以应爻为医人。", "应爻若空破墓绝、休囚衰弱，或旺相而被日月动爻冲克，或动而化鬼、化绝、化回头克，药不见效。"],
+          "yi": ["应爻当作医生，不宜落在破、空、墓、绝上。", "自己占求医，替六亲求医，都拿应爻当医生。", "应爻如果空、破、入墓、入绝、休囚衰弱，或者旺相却被日月、动爻冲克，或者动了变成鬼、变成绝、变出回头克，药就不见效。"],
+          "en": ["The Other line is taken as the doctor and should not be broken, Void, in a tomb or extinct.", "Whether one seeks a doctor for oneself or for a relation, the Other line is the doctor.", "If the Other line is Void, broken, in a tomb or extinct, resting, trapped or weak, or is strong but clashed or controlled by the Day, Month or a moving line, or moves and changes into Pressure, into extinction or into a returning control, the medicine has no effect."] }
+      ],
+      "note": {
+        "yi": "这一条是黄金策 LY.ILL.HJC.58（应作医人，空则闲亡而不遇）的野鹤版，只是把「应空」扩成好几种坏的情形。",
+        "en": "This entry is the Old Man's version of LY.ILL.HJC.58 in the Huangjin Ce (the Other line as the doctor, Void, idle and not to be met), except that he widens 'the Other line Void' into several bad conditions."
+      },
+      "see": ["LY.ILL.HJC.58", "LY.ILL.ZS.30"]
+    },
+    {
+      "id": "LY.ILL.ZS.30",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "子孙制鬼最喜旺相生扶：不受刑冲克害、不逢破墓绝空药必见效；子动化鬼化克药不精、化空实空之日有效、化生化旺化进神更灵；古以子动化子药必杂，野鹤说非也，子动化旺子孙是改换药品即比仙丹",
+      "rule": {
+        "yi": "子孙制服鬼，最喜欢旺相、有生扶。子孙临在世爻、应爻上，或者在卦中发动，也要旺相，不受刑、冲、克、害，不遇破、墓、绝、空，药就一定见效；子孙动了变成鬼、变出克，那药就不精；动了变空，到填实空的那天有效；动了变出生、变旺、变进神，药更灵。古人认为子孙动变子孙，药一定杂乱，不对！子孙动变成旺相的子孙，是另外改换了药品，好比仙丹。",
+        "en": "Output restrains Pressure and most wants to be strong and to be generated and supported. If Output sits on the Self or Other line, or moves in the hexagram, it too must be strong, suffer no punishment, clash, control or harm, and meet no break, tomb, extinction or Void, and then the medicine surely takes effect; if Output moves and changes into Pressure or into a control, the medicine is not refined; if it moves and changes into Void, it is effective on the day the Void is filled; if it moves and changes into generation, strength or an Advancing spirit, the medicine is even more effective. The ancients held that Output moving and changing into Output means a mixed medicine, but this is wrong! Output moving and changing into an Output that is strong means that the medicines have been changed, and it is as good as an immortal's elixir."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13216, 13216],
+          "zh": ["子孙制鬼，最喜旺相生扶。", "子孙临世应，或发动于卦中，亦要旺相，不受刑冲克害，不逢破墓绝空，药必见效；", "子动化鬼化克，其药不精；", "子动化空，实空之日有效；", "子动化生、化旺、化进神者，其药更灵。", "古以子动化子，其药必杂，非也！", "子动化子孙而旺相者，另改药品，即比仙丹。"],
+          "yi": ["子孙制服鬼，最喜欢旺相、有生扶。", "子孙临在世爻、应爻上，或者在卦中发动，也要旺相，不受刑、冲、克、害，不遇破、墓、绝、空，药就一定见效；", "子孙动了变成鬼、变出克，那药就不精；", "子孙动了变空，到填实空的那天有效；", "子孙动了变出生、变旺、变进神的，那药更灵。", "古人认为子孙动变子孙，那药一定杂乱，不对！", "子孙动变成旺相的子孙，是另外改换了药品，就好比仙丹。"],
+          "en": ["Output restrains Pressure and most wants to be strong and to be generated and supported.", "If Output sits on the Self or Other line, or moves in the hexagram, it too must be strong, suffer no punishment, clash, control or harm, and meet no break, tomb, extinction or Void, and then the medicine surely takes effect;", "if Output moves and changes into Pressure or into a control, the medicine is not refined;", "if Output moves and changes into Void, it is effective on the day the Void is filled;", "if Output moves and changes into generation, into strength or into an Advancing spirit, the medicine is even more effective.", "The ancients held that Output moving and changing into Output means a mixed medicine, but this is wrong!", "Output moving and changing into an Output that is strong means that the medicines have been changed, and it is as good as an immortal's elixir."] }
+      ],
+      "dispute": {
+        "yi": "「子化子」是好是坏：黄金策旧注（LY.ILL.HJC.65）说子孙重叠、或子孙又变子孙，是医生不精、用药杂；王洪绪读作子孙化进神药有效、化退神与伏吟卦不可服；野鹤直接说「古以子动化子，其药必杂，非也」，变成旺相的子孙是另换药品，好比仙丹。",
+        "en": "Whether 'Output changing into Output' is good or bad: the old commentary of the Huangjin Ce (LY.ILL.HJC.65) says that Output doubled, or Output changing again into Output, means an unskilled doctor and mixed medicines; Wang Hongxu reads it as Output changing into an Advancing spirit making the medicine effective, and a change into a Retreating spirit or a Hidden Chant hexagram meaning it may not be taken; the Old Man says outright that 'the ancients judged Output moving and changing into Output as a surely mixed medicine, and this is wrong', and that a change into a strong Output means the medicine is changed, as good as an elixir."
+      },
+      "see": ["LY.ILL.HJC.65", "LY.ILL.ZS.29"]
+    },
+    {
+      "id": "LY.ILL.ZS.31",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "医克用爻近病即愈：自占病应爻克世、应爻克用神是克制我的病；不宜久病和体弱的人，克病也伤身；应爻临兄鬼而克用神或克世爻，不拘久近必遭其害",
+      "rule": {
+        "yi": "医生克用爻，近病就好。自己占病，应爻克世爻，是克制我的病；应爻克用神，也这样断。但是不适宜久病和体弱的人，因为它不光克掉了病，身体也受到伤害。应爻临着兄弟、官鬼而去克用神，以及克世爻的，不管久病近病，一定受它的害。",
+        "en": "The doctor controlling the Subject line: a recent illness heals at once. In divining one's own illness, if the Other line controls the Self line, it restrains my illness; if the Other line controls the Subject, judge the same. It is unsuitable only for one long ill or of weak body, for it controls not only the illness but harms the body too. If the Other line sits on Peer or Pressure and controls the Subject, or controls the Self line, whether the illness is long or recent, harm from it is certain."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13217, 13217],
+          "zh": ["医克用爻，近病即愈。", "自占病，应爻克世者，克制我之病也；", "应爻克用神，亦如此断。", "惟不宜乎久病及体弱之人，非独克病，身亦受其伤矣。", "应爻临兄鬼而克用神，及克世爻者，不拘久病近病，必遭其害。"],
+          "yi": ["医生克用爻，近病就好。", "自己占病，应爻克世爻，是克制我的病；", "应爻克用神，也这样断。", "只是不适宜久病和体弱的人，因为它不光克掉了病，身体也受到它的伤害。", "应爻临着兄弟、官鬼而克用神，以及克世爻的，不管久病近病，一定受它的害。"],
+          "en": ["The doctor controlling the Subject line: a recent illness heals at once.", "In divining one's own illness, if the Other line controls the Self line, it restrains my illness;", "if the Other line controls the Subject, judge the same.", "It is unsuitable only for one long ill or of weak body, for it controls not only the illness but harms the body too.", "If the Other line sits on Peer or Pressure and controls the Subject, or controls the Self line, whether the illness is long or recent, harm from it is certain."] }
+      ],
+      "note": {
+        "yi": "这一条讲的是「应爻」克世爻反而是好事：病是克我的，应（医生）去克它。和黄金策病体章里应克世的一般讲法（LY.ILL.HJC.25 的应临鬼刑克世）不同，那里是别人的病缠过来。",
+        "en": "This entry treats the Other line controlling the Self line as, on the contrary, good: the illness is what controls me, and the Other line (the doctor) comes to control it. It differs from the usual reading of the Other line against the Self line in the chapter on the patient's condition of the Huangjin Ce (LY.ILL.HJC.25, Pressure on the Other line punishing the Self line), where someone else's illness comes to entangle the patient."
+      },
+      "see": ["LY.ILL.HJC.25", "LY.ILL.ZS.29"]
+    },
+    {
+      "id": "LY.ILL.ZS.32",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "父爻持世妙药难调：自占病父持世药不见功宜静养；兄持世有子孙动可延医，嫌鬼旺鬼兴主误服药；财爻持世勿误食肥甘；旺相遇生扶良医有觅，休囚逢冲克无药可医",
+      "rule": {
+        "yi": "父母爻持世，再好的药也难调治。自己占病，父母持世，药不见功效，宜于静养，远离色欲，平息气恼就可以了；兄弟持世，有子孙在卦中发动的，可以请医生，只嫌鬼旺相、鬼兴起，主吃错药；财爻持世，千万不要误吃油腻甘美的东西。旺相又遇到生扶，能找到良医；休囚又遇到冲克，没有药可以医。",
+        "en": "With the Resource line holding the Self line, even wonderful medicine is hard to prescribe. In divining one's own illness, with Resource holding the Self line the medicine shows no effect, and it is fitting to rest quietly, keep away from lust and calm one's anger, and that will do; with Peer holding the Self line, if Output moves in the hexagram a doctor may be called, and the only fear is that Pressure is strong and rising, which means taking the wrong medicine; with the Wealth line holding the Self line, take care not to eat rich food by mistake. If strong and generated and supported, a good doctor can be found; if resting or trapped and clashed or controlled, there is no medicine that can treat him."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13218, 13218],
+          "zh": ["父爻持世，妙药难调。", "自占病，父持世，药不见功，宜于静养，远色欲，息气恼，可也；", "兄持世，有子孙动于卦中者，医可延之，惟嫌鬼旺鬼兴，主误服药饵；", "财爻持世，切勿误食肥甘。", "旺相遇生扶，良医有觅；", "休囚逢冲克，无药可医。"],
+          "yi": ["父母爻持世，再好的药也难调治。", "自己占病，父母持世，药不见功效，宜于静养，远离色欲，平息气恼就可以了；", "兄弟持世，有子孙在卦中发动的，可以请医生，只嫌鬼旺相、鬼兴起，主吃错药；", "财爻持世，千万不要误吃油腻甘美的东西。", "旺相又遇到生扶，能找到良医；", "休囚又遇到冲克，没有药可以医。"],
+          "en": ["The Resource line holding the Self line: even wonderful medicine is hard to prescribe.", "In divining one's own illness, with Resource holding the Self line the medicine shows no effect, and it is fitting to rest quietly, keep away from lust and calm one's anger, and that will do;", "with Peer holding the Self line, if Output moves in the hexagram a doctor may be called, and the only fear is that Pressure is strong and rising, which means taking the wrong medicine;", "with the Wealth line holding the Self line, take care not to eat rich food by mistake.", "If strong and generated and supported, a good doctor can be found;", "if resting or trapped and clashed or controlled, there is no medicine that can treat him."] }
+      ],
+      "dispute": {
+        "yi": "父母持世怎么办：黄金策旧注（LY.ILL.HJC.63）说父母持世可以许经醮保禳、祈祷之后再服药；野鹤说药不见功，宜静养、远色欲、息气恼。兄弟持世饮食减省见 LY.ILL.HJC.46。",
+        "en": "What to do when Resource holds the Self line: the old commentary of the Huangjin Ce (LY.ILL.HJC.63) says one may vow scriptures, offerings and protective rites and take medicine after praying; the Old Man says the medicine shows no effect and one should rest quietly, keep from lust and calm anger. For Peer holding the Self line reducing food, see LY.ILL.HJC.46."
+      },
+      "see": ["LY.ILL.HJC.46", "LY.ILL.HJC.63", "LY.ILL.ZS.29"]
+    },
+    {
+      "id": "LY.ILL.ZS.33",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "子不代父占药、妻不代夫卜医：子占父宜父爻旺，占药占医又以子孙为用神，父旺伤子，一爻不能两用；妻占夫宜官鬼旺，占医药又以子孙为用神，子旺伤夫，所以不可代占医药",
+      "rule": {
+        "yi": "儿子不替父亲占药，妻子不替丈夫卜医。儿子占父亲的病，宜父爻旺相；可是占药、占医，又要拿子孙当用神，父爻旺就会伤子孙，一个爻不能同时当两样用。妻子占丈夫的病，宜官鬼旺相；占医占药，也拿子孙当用神，子孙旺又会伤丈夫，所以不可以替他占医药。",
+        "en": "A son does not divine medicine for his father, nor a wife a doctor for her husband. A son divining his father's illness wants the Resource line strong; but in divining medicine or a doctor Output is taken as the Subject, and a strong Resource line harms Output, and one line cannot serve two uses. A wife divining her husband's illness wants the Pressure line strong; in divining a doctor or medicine Output is also taken as the Subject, and a strong Output harms the husband, so one may not divine medicine or a doctor on his behalf."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13219, 13219],
+          "zh": ["子不代父以占药，妻不代夫以卜医。", "子占父，宜父爻旺相，占药占医，又以子孙为用神，父旺以伤子。", "一爻不能两用也；", "妻占夫，宜官鬼旺相，占医占药，亦以子孙为用神，子旺又能伤夫，所以不可代占医药也。"],
+          "yi": ["儿子不替父亲占药，妻子不替丈夫卜医。", "儿子占父亲的病，宜父爻旺相；可是占药、占医，又要拿子孙当用神，父爻旺就会伤子孙。", "一个爻不能同时当两样用；", "妻子占丈夫的病，宜官鬼旺相；占医占药，也拿子孙当用神，子孙旺又会伤丈夫，所以不可以替他占医药。"],
+          "en": ["A son does not divine medicine for his father, nor a wife a doctor for her husband.", "A son divining his father's illness wants the Resource line strong; but in divining medicine or a doctor Output is taken as the Subject, and a strong Resource line harms Output.", "one line cannot serve two uses;", "a wife divining her husband's illness wants the Pressure line strong; in divining a doctor or medicine Output is also taken as the Subject, and a strong Output harms the husband, so one may not divine medicine or a doctor on his behalf."] }
+      ],
+      "note": {
+        "yi": "这一条和 LY.ILL.HJC.32 里王洪绪的限定（占父母、丈夫病不宜子孙发动）是一个道理。但野鹤在医占往治章里自己给儿子占父病的药占过两卦（LY.ILL.ZS.37 的人参、牛黄），用的是子孙，并说「卦无不灵，在人通变」；所以这条是通则，他自己的实占是按情形变通的。",
+        "en": "This entry gives the same reason as Wang Hongxu's limit in LY.ILL.HJC.32 (in divining a parent's or a husband's illness Output should not move). But in the chapter on the doctor's divination the Old Man himself divined medicine twice for a father's illness on the son's behalf (the ginseng and the bezoar of LY.ILL.ZS.37), used Output, and said 'no hexagram fails to work, it depends on whether one adapts'; so this entry is the general rule and his own practice adapted to the case."
+      },
+      "see": ["LY.ILL.HJC.32", "LY.ILL.ZS.37"]
+    },
+    {
+      "id": "LY.ILL.ZS.34",
+      "topic": "医药",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "延医于子孙之方、治病以应爻为定：子孙旺则往子孙所在方位请（午火请南方医）；子孙休囚空破则看应爻旺相生合用神，往应爻之方请；有一爻独发生用神，往此方请，姓名按五行——水点水、火象火、木草头木旁、土有土、金有金",
+      "rule": {
+        "yi": "请医生要往子孙所在的方位去请，治病则以应爻来定。卦里子孙爻旺相的，从子孙所在的方位请医生，比如午火子孙，旺相或发动，就请南方的医生。子孙休囚、空、破的，再看应爻旺不旺，如果应爻旺相、又生合用神，就往应爻所在的方位请，比如应爻临申金，名医一定在西南。卦里有一个爻单独发动、而且生用神的，就从这个爻的方位请，并用五行来定医生的姓名：水爻动，姓名带三点水；火爻动，姓名像火；木爻动，带草字头、木字旁；土爻动，姓名里有土；金爻动，姓名里有金。比如占妻子的病，妻爻属水，得申金发动来生它，就请姓钱的医生。",
+        "en": "Call the doctor from the direction of Output; for treatment, the Other line decides. If the Output line in the hexagram is strong, call the doctor from the direction of Output; for example, with Wu Fire Output, strong or moving, call a doctor from the south. If Output is resting, trapped, Void or broken, look at whether the Other line is strong; if the Other line is strong and generates or combines with the Subject, call from the direction of the Other line; for example, with the Other line on Shen Metal, a famous doctor is surely in the south-west. If one line in the hexagram moves alone and generates the Subject, call from the direction of that line, and fix the doctor's name by the five phases: a Water line moving, a name with the water radical; Fire, a name resembling fire; Wood, a name with the grass or wood radical; Earth, a name with earth in it; Metal, a name with metal in it. For example, in divining a wife's illness, if the wife's line is Water and Shen Metal moves and generates it, call a doctor with the surname Qian."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13220, 13220],
+          "zh": ["延医于子孙之方，治病以应爻为定。"],
+          "yi": ["请医生要往子孙所在的方位去请，治病则以应爻来定。"],
+          "en": ["Call the doctor from the direction of Output; for treatment, the Other line decides."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [13221, 13223],
+          "zh": ["卦中子孙爻旺者，延医于子孙之方，且如午火子孙，或旺或动，请南方之医是也。", "余仿此。", "卦中子孙休囚空破者，又看应爻旺否，若得应爻旺相，生合用神，即于应爻之方请之，且如应爻临申金，名医必在西南。", "余仿此。", "卦中有一爻独发而生用神者，即以此方而延医，以五行而定名姓。", "如水爻动，点水之姓名；", "火爻动，姓名象火；", "木爻动，草头木旁之名姓；", "土爻动，姓名有土；", "金爻动，姓名有金。", "且如占妻病，妻爻属水，得申金动而相生，请钱姓之医以治之。", "余仿此。"],
+          "yi": ["卦里子孙爻旺相的，从子孙所在的方位请医生，比如午火子孙，或旺相或发动，就请南方的医生。", "其余照这个类推。", "卦里子孙休囚、空、破的，再看应爻旺不旺，如果应爻旺相、又生合用神，就往应爻所在的方位去请，比如应爻临申金，名医一定在西南。", "其余照这个类推。", "卦里有一个爻单独发动、而且生用神的，就从这个爻的方位请医生，并用五行来定医生的姓名。", "比如水爻动，姓名带三点水；", "火爻动，姓名像火；", "木爻动，姓名带草字头、木字旁；", "土爻动，姓名里有土；", "金爻动，姓名里有金。", "比如占妻子的病，妻爻属水，得申金发动来生它，就请姓钱的医生来治。", "其余照这个类推。"],
+          "en": ["If the Output line in the hexagram is strong, call the doctor from the direction of Output; for example, with Wu Fire Output, strong or moving, call a doctor from the south.", "The rest follow this.", "If the Output line in the hexagram is resting, trapped, Void or broken, look at whether the Other line is strong; if the Other line is strong and generates or combines with the Subject, call from the direction of the Other line; for example, with the Other line on Shen Metal, a famous doctor is surely in the south-west.", "The rest follow this.", "If one line in the hexagram moves alone and generates the Subject, call the doctor from the direction of that line, and fix the doctor's name by the five phases.", "If a Water line moves, a name with the water radical;", "if a Fire line moves, a name resembling fire;", "if a Wood line moves, a name with the grass or wood radical;", "if an Earth line moves, a name with earth in it;", "if a Metal line moves, a name with metal in it.", "For example, in divining a wife's illness, if the wife's line is Water and Shen Metal moves and generates it, call a doctor with the surname Qian to treat her.", "The rest follow this."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13127, 13129],
+          "zh": ["父爻发动，虽有制服，而鬼又变子，此子须请高明手治之，彼问：何处医人为吉？", "余曰：古以子孙爻为医人，今既占子病，又不得以子孙爻为医药也。", "须再占之，又得“临之师”"],
+          "yi": ["父母爻发动，虽然有东西制服它，可是鬼又变成子孙，这个孩子要请高明的手来治，他问：哪个方向的医生吉利？", "我说：古人拿子孙爻当医生，现在既然占的是儿子的病，就不能再拿子孙爻当医药了。", "要再占一次，又得临卦变师卦。"],
+          "en": ["The Resource line moves; though something restrains it, Pressure changes into Output again, and this boy must be treated by a skilful hand; he asked: from which direction is a doctor lucky?", "I said: the ancients took the Output line as the doctor, but now that the divination is on a son's illness, the Output line cannot also be taken as the medicine.", "It must be divined again, and he got Lin changing into Shi."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13159, 13159],
+          "zh": ["巳火父动克子，北方医人可治，如言请之，至庚子日痘变，又占：得“解之归妹”"],
+          "yi": ["巳火父母动来克子孙，北方的医生可以治，照这话去请，到庚子日痘症起了变化，又占了一次：得解卦变归妹卦。"],
+          "en": ["Si Fire Resource moves and controls Output, so a doctor from the north can treat him; he called one as told, and on the Gengzi day the pox changed, and he divined again and got Xie changing into Guimei."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13178, 13178],
+          "zh": ["子日冲动午火子孙，遇寅木生之，此卦与前卦不同，已有生机矣。", "彼曰：今日痘变，意欲延北门一杨姓之医，再占一卦何如？", "余曰：杨字有木，卦中寅木生火，是此人也，不必再占。", "果此人治之而愈。", "此乃教人延医之法也。"],
+          "yi": ["子日冲动午火子孙，又有寅木生它，这一卦和前一卦不同，已经有生机了。", "他说：今天痘症起了变化，想请北门一位姓杨的医生，再占一卦怎么样？", "我说：杨字有木，卦里寅木生火，就是这个人，不必再占。", "果然这个人治好了他。", "这就是教人请医生的办法。"],
+          "en": ["The Zi day clashes Wu Fire Output into motion and Yin Wood generates it; this hexagram differs from the former, and there is already a chance of life.", "He said: the pox have changed today, and I would like to call a doctor of the surname Yang at the north gate; how about divining once more?", "I said: the character Yang has wood in it, and Yin Wood in the hexagram generates Fire; it is this man, and there is no need to divine again.", "Indeed this man treated him and he recovered.", "This is the method of teaching how to call a doctor."] }
+      ],
+      "note": {
+        "yi": "书中例是 LY.ILL.ZS.18 里那个孩子的后几个卦：第二卦（临之师）之后，父母爻巳火动克子孙，说北方的医生可治；痘症变化后再占（解之归妹），子日冲动午火子孙、寅木生它，姓杨的医生名字里有木，野鹤说就是他。「古以子孙爻为医人」一句，按上下文「医人」应是「医药」的意思（下一句讲医药），译文按字面。黄金策的对应条目是 LY.ILL.HJC.77（验福德以迎医）。",
+        "en": "The case is the later hexagrams of the child of LY.ILL.ZS.18: after the second hexagram (Lin into Shi), the Si Fire Resource line moves and controls Output, and a doctor from the north can treat him; after the pox changed he divined again (Xie into Guimei), the Zi day clashed Wu Fire Output into motion and Yin Wood generated it, and the Yang doctor's name has wood in it, so the Old Man said it was he. In the phrase 'the ancients took the Output line as the doctor', 'doctor' is from the context probably meant as 'medicine' (the next words speak of medicine), and the translation follows the letter. The matching entry of the Huangjin Ce is LY.ILL.HJC.77 (examine Output to welcome a doctor)."
+      },
+      "see": ["LY.ILL.HJC.77", "LY.ILL.ZS.18", "LY.ILL.ZS.29"]
+    },
+    {
+      "id": "LY.ILL.ZS.35",
+      "topic": "生死",
+      "chapter": "延医章",
+      "chapter_en": "Chapter on calling a doctor",
+      "title": "不起之症卦中不见其医、立愈之灾爻中不报用药：用神化鬼、鬼化用神、忌神化六亲、六亲化忌神、用神化绝化克化墓、久病逢冲逢空、随鬼入墓，都是无药可医；近病六冲或用神旬空或化回头生、自占子孙持世，不药而愈，也不现医",
+      "rule": {
+        "yi": "占医生的卦里看不到医生，有两种情形。一种是治不好的病，神不让医生出现：用神变鬼、鬼变用神，忌神变六亲、六亲变忌神，用神变绝、变克、变墓，久病遇冲遇空，随着鬼入墓，这些都是没有药可医的病。另一种是马上就好的病，神也不让医生出现：近病如果不是卦得六冲，就是用神值旬空、或用神变回头生；自己占病，子孙持世，这些都是不吃药就好的。",
+        "en": "In a hexagram that divines a doctor, the doctor may fail to appear, in two cases. One is an illness that cannot be cured, where the spirit does not let the doctor appear: the Subject changing into Pressure or Pressure into the Subject, the Adversary into a relation or a relation into the Adversary, the Subject changing into extinction, into a control or into a tomb, a long illness meeting a clash or Void, following Pressure into the tomb; all these are illnesses that no medicine can treat. The other is an illness that heals at once, where the spirit also does not let the doctor appear: a recent illness is either in a Six-Clash hexagram, or has its Subject in Void or changing into a returning generation; in divining one's own illness, Output holds the Self line; in all these the patient recovers without medicine."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13224, 13224],
+          "zh": ["不起之症，卦中不见其医；", "立愈之灾，爻中不报用药。", "屡见占医之卦，无药可医之症者，神不现其医矣。", "若用神化鬼、鬼化用神，忌神化六亲、六亲化忌神，及用神化绝、化克、化墓，久病逢冲逢空，随鬼入墓者，皆无药可医之症也，故神不现其医。", "立愈之疾，神亦不现其医；", "近病者，若非卦得六冲，即现用值旬空，或用神化回头生；", "自占者，子孙持世，此皆不药而愈也。"],
+          "yi": ["治不好的病，卦里看不到那位医生；", "马上就好的灾病，爻里不显示用什么药。", "多次见到占医生的卦，遇到没有药可医的病，神就不让那位医生出现。", "如果用神变鬼、鬼变用神，忌神变六亲、六亲变忌神，以及用神变绝、变克、变墓，久病遇冲遇空，随着鬼入墓的，都是没有药可医的病，所以神不让医生出现。", "马上就好的病，神也不让医生出现；", "近病的，如果不是卦得六冲，就是用神值旬空，或者用神变回头生；", "自己占的，子孙持世，这些都是不吃药就好的。"],
+          "en": ["In an incurable illness, the doctor is not seen in the hexagram;", "in a trouble that heals at once, the lines do not report any medicine to use.", "I have often seen in hexagrams divining a doctor that for an illness that no medicine can treat, the spirit does not let the doctor appear.", "If the Subject changes into Pressure or Pressure into the Subject, the Adversary into a relation or a relation into the Adversary, or the Subject changes into extinction, into a control or into a tomb, or a long illness meets a clash or Void, or follows Pressure into the tomb: all are illnesses that no medicine can treat, and so the spirit does not let the doctor appear.", "in an illness that heals at once, the spirit also does not let the doctor appear;", "for a recent illness, it is either that the hexagram is Six-Clash, or that the Subject falls into Void, or that the Subject changes into a returning generation;", "in divining oneself, Output holding the Self line: in all these the patient recovers without medicine."] }
+      ],
+      "note": {
+        "yi": "这一条把前面几条（LY.ILL.ZS.02、ZS.06、ZS.07、ZS.13）里的死症和不药而愈的情形放到一处，用「卦里看不看得见医生」来当记号。它说的是占医生的卦，不是占病的卦。",
+        "en": "This entry gathers the fatal cases and the cases of recovery without medicine from several earlier entries (LY.ILL.ZS.02, ZS.06, ZS.07 and ZS.13) and uses 'whether the doctor can be seen in the hexagram' as the sign. It speaks of the hexagram that divines a doctor, not of the one that divines the illness."
+      },
+      "see": ["LY.ILL.ZS.02", "LY.ILL.ZS.06", "LY.ILL.ZS.07", "LY.ILL.ZS.13"]
+    },
+    {
+      "id": "LY.ILL.ZS.36",
+      "topic": "医药",
+      "chapter": "医占往治章",
+      "chapter_en": "Chapter on a doctor divining whether to go and treat",
+      "title": "医生自占往治与否：世爻旺相、子孙财爻持世、世生应爻、世动化进、化回头生，日月动爻临财星子孙生世，皆主手到病除；近病应空或化空、卦逢六冲等宜速往，久病应旺相或生世宜往，此外勿往治",
+      "rule": {
+        "yi": "医生自己占要不要去治，和替别人占卜差不多：世爻是自己，应爻是病人。世爻旺相，子孙或财爻持世，世爻生应爻，世动变进神、变回头生，日月和动爻临着财星或子孙来生世爻，都主手到病除。近病：应爻值旬空，或动了变空、变回头生、变旺、变退，或日月、动爻生应爻，以及卦逢六冲、卦变六冲的，都该赶快去救，别让别人先到而成了功。久病：应爻旺相，或遇到日月、动爻来生，或动了变生、变旺，应爻临子孙、临财爻，动而生世爻的，虽然是久病，我一定能除根。除了这些，都不要去治，白白损了名声。",
+        "en": "A doctor divining for himself whether to go and treat is much like divining for another: the Self line is oneself and the Other line is the patient. If the Self line is strong, Output or Wealth holds the Self line, the Self line generates the Other line, the Self line moves and changes into an Advancing spirit or into a returning generation, or the Day, Month or a moving line sits on the Wealth star or Output and generates the Self line, all mean that the hand arrives and the illness is gone. For a recent illness: if the Other line falls into Void, or moves and changes into Void, a returning generation, strength or retreat, or the Day, Month or a moving line generates the Other line, or the hexagram is Six-Clash or changes into Six-Clash, one should hurry to the rescue and not let others arrive first and succeed. For a long illness: if the Other line is strong, or is generated by the Day, Month or a moving line, or moves and changes into generation or strength, or sits on Output or Wealth, or moves and generates the Self line, then though the illness is long I shall surely remove the root. Apart from these, do not go to treat, for it only harms one's reputation."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [13231, 13231],
+          "zh": ["大抵与医卜相仿，世为己，应为病人，若得世爻旺相、子孙财爻持世、世生应爻、世动化进、化回头生、日月动爻临财星子孙而生世者，皆主手到病除。", "近病者，应值旬空，或动而化空、化回头生、化旺、化退，或日月动爻生应，及卦逢六冲、卦变六冲者，皆宜速往救，莫让他人先到以成功也。", "久病者，应爻旺相，或逢日月动爻相生，或动而化生化旺、应临子孙、应临财爻、动而生世，虽然久病，我必除根。", "除此之外，皆勿往治，徒损盛名。"],
+          "yi": ["大体上和医生自己占卜相仿：世爻是自己，应爻是病人；如果世爻旺相、子孙或财爻持世、世爻生应爻、世动变进神、变回头生、日月和动爻临着财星或子孙来生世爻，都主手到病除。", "近病：应爻值旬空，或者动了变空、变回头生、变旺、变退，或者日月、动爻生应爻，以及卦逢六冲、卦变六冲的，都该赶快去救，别让别人先到而成了功。", "久病：应爻旺相，或者遇到日月、动爻来生，或者动了变生、变旺，应爻临子孙、临财爻，动而生世爻，虽然是久病，我一定能除根。", "除了这些，都不要去治，白白损了名声。"],
+          "en": ["In general it is like a doctor's own divination: the Self line is oneself and the Other line is the patient; if the Self line is strong, Output or Wealth holds the Self line, the Self line generates the Other line, the Self line moves and changes into an Advancing spirit or into a returning generation, or the Day, Month or a moving line sits on the Wealth star or Output and generates the Self line, all mean that the hand arrives and the illness is gone.", "For a recent illness: if the Other line falls into Void, or moves and changes into Void, a returning generation, strength or retreat, or the Day, Month or a moving line generates the Other line, or the hexagram is Six-Clash or changes into Six-Clash, one should hurry to the rescue and not let others arrive first and succeed.", "For a long illness: if the Other line is strong, or is generated by the Day, Month or a moving line, or moves and changes into generation or strength, or sits on Output or Wealth, or moves and generates the Self line, then though the illness is long I shall surely remove the root.", "Apart from these, do not go to treat, for it only harms one's reputation."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13312, 13313],
+          "zh": ["又如一日，时值初更，叩门入曰：“家小主有病，相迎占卜。”", "余问得病源，自山东方回，顷刻得病。", "余即自占一卦。", "于未月壬子日(旬空：寅卯)，占此行有益否？", "得“节之比”"],
+          "yi": ["又有一天，正值初更，有人敲门进来说：“我家小主人有病，来接您去占卜。”", "我问起病因，说是刚从山东回来，顷刻之间得的病。", "我就自己占了一卦。", "在未月壬子日（旬空：寅、卯），占这一趟去有没有好处？", "得节卦变比卦。"],
+          "en": ["Another day, at the first watch, someone knocked at the door and came in saying: 'Our young master is ill; we have come to fetch you to divine.'", "I asked the cause of the illness and was told that he had just come back from Shandong and fell ill in an instant.", "I at once divined a hexagram for myself.", "In the Wei month, on a Renzi day (void: Yin and Mao), I divined whether this trip would do good.", "I got Jie changing into Bi."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13339, 13339],
+          "zh": ["巳火财爻持世，子动生世，子孙乃喜悦之神，此行有益。", "及到达伊家，值医检药，其父卜之。", "未月壬子日(旬空：寅卯)，占子病，得“解之坎”"],
+          "yi": ["巳火财爻持世，子孙动来生世爻，子孙是喜悦的神，这一趟去有好处。", "等到了他家，正碰上医生在检点药，孩子的父亲占了一卦。", "未月壬子日（旬空：寅、卯），占儿子的病，得解卦变坎卦。"],
+          "en": ["Si Fire Wealth holds the Self line and Output moves to generate it; Output is the spirit of joy, so this trip will do good.", "When I reached his house, the doctor was just checking the medicines, and the boy's father divined.", "In the Wei month, on a Renzi day (void: Yin and Mao), he divined his son's illness and got Xie changing into Kan."] }
+      ],
+      "note": {
+        "yi": "这一条是医生自己占「要不要去治」的规则；野鹤的书中例是他被请去看一个刚从山东回来就得病的孩子，出门前自占「此行有益否」，得财爻持世、子孙动生世，断此行有益。这个孩子的病和用药，接着在 LY.ILL.ZS.37 里展开。",
+        "en": "This entry is the rule for a doctor's divination on whether to go and treat; the Old Man's case is of being called to a child who fell ill on coming back from Shandong, and who, before setting out, divined 'will this trip do good' and got Wealth holding the Self line with Output moving to generate it, and judged that the trip would do good. The child's illness and medicine are carried on in LY.ILL.ZS.37."
+      },
+      "see": ["LY.ILL.ZS.37"]
+    },
+    {
+      "id": "LY.ILL.ZS.37",
+      "topic": "医药",
+      "chapter": "医占往治章",
+      "chapter_en": "Chapter on a doctor divining whether to go and treat",
+      "title": "占药能不能服以子孙为用神：医生治危症想用某药、行舟远行无处寻医得一奇方、半夜来不及请医，都要占；子孙持世或发动服之立可解忧；子孙不拘五行，旺或动即喜悦之神，不可因金临子孙用针、火属子孙用炙（例：热极用附子肉桂、人参、牛黄）",
+      "rule": {
+        "yi": "占药能不能服，拿子孙当用神。医生治垂危的病、想用某味药，可以起死回生，又怕一有闪失；泛海行船、长途旅行没有地方找医生、有人传来奇方；半夜来不及请医、手边的古方或家里的药散确实对这个病却不敢擅用，都要占。只要子孙持世或发动，服了立刻可以解忧，必定见效。子孙不管是金木水火土哪一行，旺相或发动就是喜悦的神；不可以又因为金临子孙就用针、火属子孙就用灸。",
+        "en": "To divine whether a medicine may be taken, take Output as the Subject. It should be divined when a doctor treating a dying patient wants a certain medicine that may bring him back from death, and fears one failure; when one is crossing the sea or on a long journey with nowhere to find a doctor and someone passes on a rare prescription; when in the depth of night there is no time to call a doctor and the old prescriptions or powders kept at home truly fit the illness but one does not dare use them on one's own authority. If Output holds the Self line or moves, taking it at once relieves the worry, and it will surely work. Whatever phase Output is, metal, wood, water, fire or earth, so long as it is strong or moving it is the spirit of joy; one must not take Metal on Output to mean the needle, or Fire as Output to mean moxibustion."
+      },
+      "quotes": [
+        { "by": "李我平", "book": "增删卜易", "range": [13451, 13454],
+          "zh": ["李我平曰：凡卜药，亦有当卜之道，或医家治临危之症，欲投此药，可以起死回生，惟恐一失，关系不小。", "得子孙动者，必喜悦也，即可用之，用而必效。", "或泛海行舟，或长途穹旅，无处寻医，有人传一奇方，占得子孙动者，其方必效。", "或半夜更深，延医不及，检点古方及家藏药散，实对此症，不敢擅用，不可不占，皆以子孙为用神，但得子孙持世，子孙发动，服之立可解忧。", "此诸占之子孙者，不拘金木水火土也，或旺或动，即为喜悦之神，盖用此方，见效而喜，不效，何喜之有？", "切不可又以金临子孙而用针，火属子孙而用炙，反致错误。"],
+          "yi": ["李我平说：凡是占药，也有该占的时候，比如医生治疗垂危的病，想用这味药，能起死回生，只怕一有闪失，关系不小。", "得到子孙发动的，一定是喜悦，就可以用它，用了必定见效。", "或者泛海行船，或者长途旅行，没有地方找医生，有人传来一个奇方，占得子孙发动的，这个方子一定见效。", "或者半夜更深，来不及请医生，翻检古方和家里藏的药散，确实对这个病，却不敢擅自用，就不能不占，都拿子孙当用神，只要子孙持世、子孙发动，吃下去马上可以解忧。", "在这些占里，子孙不管是金木水火土哪一行，只要旺相或发动，就是喜悦的神，因为用这个方子，见效才喜，不见效，哪里有什么喜？", "千万不可又因为金临子孙就用针，火属子孙就用灸，反而弄错。"],
+          "en": ["Li Woping says: in divining medicine there are times when one ought to divine, as when a doctor treating a dying patient wants to give a certain medicine that might bring him back from death, and fears only one failure, which would matter greatly.", "If Output moves, there is surely joy, and it may be used, and used it will surely be effective.", "Or crossing the sea in a boat, or on a long journey with nowhere to find a doctor, someone passes on a rare prescription; if the divination shows Output moving, the prescription will surely work.", "Or in the depth of night with no time to call a doctor, one checks old prescriptions and the powders kept at home, which truly fit this illness, but does not dare use them on one's own authority; then one must divine, and in all cases Output is the Subject: if only Output holds the Self line and Output moves, taking it at once relieves the worry.", "In all these divinations Output, whatever its phase of metal, wood, water, fire or earth, is the spirit of joy so long as it is strong or moving, for one takes the prescription in order to be glad that it works, and if it does not work, what gladness is there?", "One must on no account take Metal on Output to mean the needle, or Fire as Output to mean moxibustion, which only leads to error."] },
+        { "by": "觉子", "book": "增删卜易", "range": [13451, 13452],
+          "zh": ["觉子曰：此卦酉金兄动以生子孙，服此热药而病愈者，若使前贤见之，又以酉金兄爻而为药矣。"],
+          "yi": ["觉子说：这一卦酉金兄弟动来生子孙，服了这热药而病好了，要是让前辈贤人看到，又会把酉金兄弟爻当成药了。"],
+          "en": ["Juezi says: in this hexagram You Metal Peer moves to generate Output, and the patient recovered by taking this hot medicine; had the worthies of old seen it, they would again have taken the You Metal Peer line as the medicine."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13383, 13383],
+          "zh": ["余见此卦生疑，近病化六冲，不死之症，却是子孙变鬼，必死之症，不敢断之，再请亲人卜之。", "叔占侄病，得“坤为地”"],
+          "yi": ["我看了这一卦心生疑惑：近病变六冲，是不会死的症；可是子孙变鬼，又是必死的症，所以不敢断，请亲人再卜一次。", "叔叔占侄子的病，得坤为地卦。"],
+          "en": ["Seeing this hexagram I was doubtful: a recent illness changing into Six-Clash is an illness that does not kill, but Output changing into Pressure is one that surely kills; I did not dare judge and asked a relative to divine again.", "An uncle divining his nephew's illness got Kun (Earth)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13414, 13414],
+          "zh": ["又得六冲，知之不死矣，问有旧病否？", "彼曰：“从无病根，便自山东一路而来，亦无病起。", "适间日落之时，忽而满床乱滚，口不能言。”", "余曰：既无旧病，余敢保之即愈。"],
+          "yi": ["又得到六冲，知道他不会死了，问有没有旧病？", "他说：“从来没有病根，从山东一路回来，也没有生病。", "刚才日落的时候，忽然在床上满床乱滚，嘴里说不出话。”", "我说：既然没有旧病，我敢保证他马上就好。"],
+          "en": ["The hexagram was again Six-Clash, and I knew he would not die, and asked whether he had an old illness.", "He said: 'He has never had a root of illness, and coming all the way from Shandong he did not fall ill either.", "Just now at sunset he suddenly rolled all over the bed and could not speak.'", "I said: since there is no old illness, I dare guarantee that he will recover at once."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13440, 13440],
+          "zh": ["应为病人，世克应爻还不妨，乃是克制病人之病也。", "但不宜应爻化回头之克，定是用药有误。", "余问东家：药曾吃否？", "答曰：“未热。”", "问医者曰：“所得何病？", "所下何药？”", "伊曰：“三伏天途中受暑，不过解暑之凉药耳。”", "余私对东家曰：“令郎不死，却得必死之卦，恐此药未必对症，再请复看。”"],
+          "yi": ["应爻是病人，世爻克应爻还不妨碍，那是克制病人的病。", "只是不宜应爻变出回头克，那一定是用药有错。", "我问主人：药吃了没有？", "回答说：“药还没热。”", "我问医生：“得的是什么病？", "下的是什么药？”", "他说：“三伏天路上中了暑，不过是解暑的凉药罢了。”", "我私下对主人说：“令郎不会死，却得到必死的卦，恐怕这药未必对症，请再复查一下。”"],
+          "en": ["The Other line is the patient, and the Self line controlling the Other line does no harm, for it controls the patient's illness.", "But the Other line should not change into a returning control; that would surely be a mistake in the medicine.", "I asked the master of the house: has the medicine been taken?", "He answered: 'It has not yet been heated.'", "I asked the doctor: 'What illness is it?", "What medicine have you given?'", "He said: 'He took the heat on the road in the dog days, and it is only a cooling medicine to relieve the heat.'", "I said privately to the master: 'Your son will not die, yet the hexagram he got is one of certain death; I fear this medicine may not fit the illness; please have him examined again.'"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13442, 13442],
+          "zh": ["医者曰：“床上乱滚，不能把脉。”", "随以家人问途中何如，家人言曰：“到家热极，移床于此有风之处，再用大冰二块，安于凉床之下，命侄女掌扇。", "一觉睡熟，忽然醒来呼唤几声，即不言矣。”", "余想：热极之人，卧冰临风，空旷之夫，使姻掌扇，其病可知。", "医者亦曰：“适看病已扶入房矣，不知此节事，看来寒药实不可服。”", "余曰：竟用附子、肉桂，方可治之。", "再命伊父占之："],
+          "yi": ["医生说：“他在床上乱滚，没法把脉。”", "接着我问家里人路上怎么样，家人说：“到家热得厉害，把床移到这个有风的地方，又用两块大冰放在凉床下面，叫侄女摇扇。", "他一觉睡得很熟，忽然醒来叫了几声，就不说话了。”", "我想：热到极点的人，躺在冰上、对着风，又是空虚之体，还叫姻亲摇扇，他的病就可以知道了。", "医生也说：“刚才看病时已经扶进房里了，不知道这一节事，看来寒药实在不能服。”", "我说：要用附子、肉桂，才能治他。", "再叫他父亲占一次："],
+          "en": ["The doctor said: 'He is rolling about on the bed and I cannot take his pulse.'", "Then I asked the household about the journey, and they said: 'He came home extremely hot; we moved the bed to this windy place, put two large blocks of ice under the cool bed and told his niece to fan him.", "He fell into a deep sleep, woke suddenly and called out a few times, and then said no more.'", "I thought: a man extremely hot, lying on ice in the wind, with an empty body, with an in-law made to fan him, the illness is easy to know.", "The doctor also said: 'When I saw him just now he had already been helped into the room, and I did not know about this; it seems cold medicine really must not be taken.'", "I said: it must be aconite and cinnamon bark that treat him.", "I then had his father divine again:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13443, 13443],
+          "zh": ["壬子日(旬空：寅卯)，占用附子可否？", "得“大有之大畜”"],
+          "yi": ["壬子日（旬空：寅、卯），占用附子行不行？", "得大有卦变大畜卦。"],
+          "en": ["On the Renzi day (void: Yin and Mao), divining whether aconite might be used.", "He got Dayou changing into Daxu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13449, 13449],
+          "zh": ["子孙临日辰，酉金兄动以相生。", "服用一剂，保管立愈。", "医家先用干姜汤试之，少刻开言，肚疼之甚。", "余曰：“何如？", "快服此药。”", "医家加减调理一夜，次日曰愈。", "此人之不死也。", "因我出门，子孙发动一卦而断定矣。", "厥后连占数卦，合而参之，方敢用大热之剂，起死回生。", "不然，一剂凉药，寒上加寒，能于治耶？"],
+          "yi": ["子孙临着日辰，酉金兄弟动来生它。", "服一剂，保证马上好。", "医生先用干姜汤试着给他，过一会儿他开了口，说肚子疼得厉害。", "我说：“怎么样？", "快服这药。”", "医生加减着调理了一夜，第二天说他好了。", "这个人没有死。", "是因为我出门时，子孙发动的那一卦就已经断定了。", "后来连着占了几卦，合起来参看，才敢用大热的药，起死回生。", "不然，一剂凉药，寒上加寒，能治得了吗？"],
+          "en": ["Output sits on the Day and You Metal Peer moves to generate it.", "One dose taken, and he will surely recover at once.", "The doctor first tried dry-ginger soup on him, and after a while he spoke, saying that his belly hurt terribly.", "I said: 'How is it?", "Take this medicine quickly.'", "The doctor adjusted the dose and treated him through the night, and the next day said he was well.", "This man did not die.", "It was because the hexagram in which Output moved, when I set out, had already settled it.", "After that I divined several more hexagrams in a row and studied them together before daring to use very hot medicine, which brought him back from death.", "Otherwise, one dose of cool medicine would add cold to cold, and could it treat him?"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13455, 13455],
+          "zh": ["一日到一府中，众客告曰：“老先生昨日在后园仆倒，扶起口出狂言，至今不知人事。", "适间诸位医者，有曰：不服人参不能提气。", "有曰：幸无痰上，若吃人参，痰上则难治矣。”", "余曰：“就卜人参吃得否。”"],
+          "yi": ["有一天到一位官府家里，众客人告诉我：“老先生昨天在后花园跌倒，扶起来口出狂话，到现在不省人事。", "刚才几位医生，有的说：不服人参不能提气。", "有的说：幸好没有痰涌上来，如果吃人参，痰涌上来就难治了。”", "我说：“就卜一卜人参吃得吃不得。”"],
+          "en": ["One day I came to an official's household, and the guests told me: 'The old gentleman fell down in the back garden yesterday, and when he was helped up he spoke wild words, and until now he has been unconscious.", "Just now the doctors said, some of them: without ginseng the qi cannot be lifted.", "and some said: luckily no phlegm has risen, and if he takes ginseng and phlegm rises it will be hard to treat.'", "I said: 'Let us divine whether ginseng may be taken.'"] },
+        { "by": "书中例", "book": "增删卜易", "range": [13456, 13456],
+          "zh": ["寅月丁卯日(旬空：戌亥)，子占父病，人参吃得否？", "得“萃之否”"],
+          "yi": ["寅月丁卯日（旬空：戌、亥），儿子占父亲的病，人参吃得吃不得？", "得萃卦变否卦。"],
+          "en": ["In the Yin month, on a Dingmao day (void: Xu and Hai), a son divining his father's illness, whether ginseng could be taken?", "He got Cui changing into Pi."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13493, 13493],
+          "zh": ["占人参，必以子孙为用神，若不通变，只以卦中父动克子而论，不过曰人参不可服也已，病愈与否，弗顾也，余不以此断。", "子占父病，父爻为用神，未父化戌父，戌父值旬空，人参可勿用，药亦可不服，明日辰日，冲空即愈。", "果于鸡鸣时苏醒，次日不药而愈。"],
+          "yi": ["占人参，一定要拿子孙当用神，如果不会变通，只按卦里父母动来克子孙去论，也不过是说人参不能服罢了，病好不好，不管，我不这样断。", "儿子占父亲的病，父爻是用神，未土父母变成戌土父母，戌土父母值旬空，人参可以不用，药也可以不吃，明天辰日，冲空就好。", "果然在鸡叫的时候苏醒，第二天不吃药就好了。"],
+          "en": ["In divining ginseng the Subject must be Output; if one does not adapt and reasons only from the Resource line moving in the hexagram to control Output, one says no more than that ginseng may not be taken, without regard to whether the illness heals, and I do not judge in this way.", "A son divining his father's illness takes the Resource line as the Subject; Wei Earth Resource changes into Xu Earth Resource, and Xu Earth Resource is in Void, so ginseng need not be used and the medicine need not be taken; tomorrow, the Chen day, clashes the Void and he recovers.", "Indeed he came to at cockcrow, and the next day recovered without medicine."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13494, 13494],
+          "zh": ["又如一日在席间，忽而东翁口歪眼斜，痰涎长流，余亦在座，其子即问余：“家有牛黄，但不知可服否？”", "余命占之。"],
+          "yi": ["又有一天在酒席上，忽然主人口歪眼斜，痰涎直流，我也在座，他的儿子就问我：“家里有牛黄，不知道能不能服？”", "我叫他占一卦。"],
+          "en": ["Another day, at a banquet, the host's mouth and eyes suddenly twisted and phlegm ran from his mouth; I was at the table, and his son asked me: 'We have bezoar at home, but I do not know whether it may be taken.'", "I told him to divine."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13495, 13495],
+          "zh": ["亥月辛酉日(旬空：子丑)，子占父病，服牛黄丸可否？", "得“泽天夬”"],
+          "yi": ["亥月辛酉日（旬空：子、丑），儿子占父亲的病，服牛黄丸行不行？", "得泽天夬卦。"],
+          "en": ["In the Hai month, on a Xinyou day (void: Zi and Chou), a son divining his father's illness, whether the bezoar pill could be taken?", "He got Guai (Lake over Heaven)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13501, 13501],
+          "zh": ["余曰：“灌服此丸，可保立愈。”", "服之果醒。", "盖喜子孙持世也。", "或曰：同是子占父药，一卦看父爻，一卦看子孙，其故何也？", "余曰：前卦父爻发动，神兆基于动，故以父母断之；", "后卦子孙持世值日辰，子孙乃喜悦之神，父病即安，则喜悦矣。", "故用子孙也，卦无不灵，在人通变。"],
+          "yi": ["我说：“灌服这颗丸药，可以保证马上好。”", "服了果然醒过来。", "是因为喜见子孙持世。", "有人问：同样是儿子占父亲的药，一卦看父爻，一卦看子孙，是什么缘故？", "我说：前一卦父爻发动，神的兆示在于动，所以按父母爻来断；", "后一卦子孙持世又值日辰，子孙是喜悦的神，父亲的病马上安了，就喜悦了。", "所以用子孙。卦没有不灵验的，在于人会不会变通。"],
+          "en": ["I said: 'Give him this pill by pouring it down, and he will surely recover at once.'", "He took it and did come to.", "It was because Output holding the Self line is what is wanted.", "Someone asked: both are a son divining medicine for his father, yet in one hexagram you look at the Resource line and in the other at Output; why?", "I said: in the former hexagram the Resource line moves, and the spirit's omen is based on the movement, so I judged by the Resource line;", "in the latter hexagram Output holds the Self line and rules the Day, and Output is the spirit of joy; when the father's illness is at once at peace, there is joy.", "So I used Output. No hexagram fails to work; it depends on whether one adapts."] }
+      ],
+      "dispute": {
+        "yi": "占药看什么：黄金策旧注、王洪绪讲用药（LY.ILL.HJC.76 起）是看官鬼的五行、子孙的五行来定药；李我平、野鹤说占某味药能不能服，拿子孙当用神，子孙持世或发动服了就见效，不拘五行。同样是儿子占父亲的药，一卦看父爻（人参）、一卦看子孙（牛黄），野鹤说要看哪一个动、哪一个持世，在人通变。",
+        "en": "What to look at in divining medicine: the old commentary of the Huangjin Ce and Wang Hongxu fix the medicine (from LY.ILL.HJC.76 on) by the phase of the Pressure line and of Output; Li Woping and the Old Man say that in divining whether a given medicine may be taken, Output is the Subject, and if Output holds the Self line or moves it works when taken, whatever its phase. Of two hexagrams of a son divining medicine for his father, one looks at the Resource line (ginseng) and the other at Output (bezoar), and the Old Man says one must see which one moves and which holds the Self line, and adapt."
+      },
+      "note": {
+        "yi": "书中例是 LY.ILL.ZS.36 里那个孩子：在山东受暑回来，卧冰吹风后满床乱滚，医生已经下了凉药。野鹤连占几卦，子孙动、酉金兄弟动来生它，断定要用附子、肉桂这样的大热药，服后果然好了。觉子说，前辈看到酉金兄动，又会把兄爻当成药，这是不对的。「使姻掌扇」的「姻」按上下文大概是「侄女」之误，译文按字面。人参、牛黄两例讲的是同一个道理：占药要看的是喜悦之神。",
+        "en": "The case is the child of LY.ILL.ZS.36, who had taken the heat in Shandong and after lying on ice in the wind rolled about the bed, the doctor having already given cold medicine. The Old Man divined several hexagrams in a row, found Output moving and You Metal Peer moving to generate it, judged that a very hot medicine such as aconite and cinnamon bark was needed, and he recovered after taking it. Juezi says that the worthies of old would again have taken the moving Peer line as the medicine, which is wrong. The 'in-law' of 'an in-law made to fan him' is from the context probably a slip for 'niece', and the translation follows the letter. The ginseng and bezoar cases speak of the same principle: what one looks at in divining medicine is the spirit of joy."
+      },
+      "see": ["LY.ILL.HJC.76", "LY.ILL.ZS.27", "LY.ILL.ZS.33", "LY.ILL.ZS.38", "LY.ILL.ZS.40"]
+    },
+    {
+      "id": "LY.ILL.ZS.38",
+      "topic": "医药",
+      "chapter": "医占往治章",
+      "chapter_en": "Chapter on a doctor divining whether to go and treat",
+      "title": "子孙持世也要不受克：前面各篇都说子孙持世病即愈，野鹤补一条——必要子孙不受克才行（例：杨梅疮占医人，子孙持世应为医人，但初爻巳火动克申金，巳日添灾）",
+      "rule": {
+        "yi": "前面几篇都说子孙持世，病就马上好，但一定要子孙不受克才行，后来的人不可以不知道。比如有人生了杨梅疮，占这位医生好不好：虽然是子孙持世、应爻是医生，但初爻巳火发动克申金，又有卯木生火，世爻虽旺，巳日一定添灾；他不听，还是请了这位医生，卯日、辰日服药还平安，巳日忽然病症变了，全身疼痛难以忍受。",
+        "en": "The earlier passages all say that with Output holding the Self line the illness heals at once, but it is so only when Output is not controlled, which later people must know. For example, a man with syphilitic sores divined whether a certain doctor was a good one: though Output held the Self line and the Other line was the doctor, the first line, Si Fire, moved and controlled Shen Metal, with Mao Wood also generating Fire, so that though the Self line was strong there would be added trouble on the Si day; he did not listen and called the doctor, and on the Mao and Chen days the medicine kept him safe, but on the Si day the symptoms suddenly changed and pain all over the body was unbearable."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [13510, 13510],
+          "zh": ["野鹤曰：前篇俱言子孙持世，其病即愈，然必要子孙不受克方可，后贤不可不知。"],
+          "yi": ["野鹤说：前面几篇都说子孙持世，病就马上好，但一定要子孙不受克才行，后来的贤人不可以不知道。"],
+          "en": ["The Old Man of Yehe says: the earlier passages all say that with Output holding the Self line the illness heals at once, but it is so only when Output is not controlled; later worthies must not fail to know this."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13502, 13502],
+          "zh": ["又如：有生杨梅疮者，于申月癸卯日(旬空：辰巳)，占医人好否？", "得“履之否”"],
+          "yi": ["又如：有人生了杨梅疮，在申月癸卯日（旬空：辰、巳），占这位医生好不好？", "得履卦变否卦。"],
+          "en": ["Another: a man with syphilitic sores, in the Shen month on a Guimao day (void: Chen and Si), divined whether the doctor was a good one.", "He got Lu changing into Pi."] },
+        { "by": "书中例", "book": "增删卜易", "range": [13509, 13509],
+          "zh": ["断曰：此医不可用之。", "虽系子孙持世，应为医人，但不宜初爻巳火动克申金，又有卯木生火，世爻虽旺，巳日一定添灾。", "不听，竟延此医治之。", "卯辰日服药，还保平安，巳日忽然变症，遍身疼痛难当。", "病人着急而问余曰：可伤命否？", "余曰：世值月建，如何伤命？", "速服解药，过此巳午日则止疼矣。", "即服解药，至申日，其病如常。"],
+          "yi": ["断语：这个医生不能用。", "虽然是子孙持世，应爻是医生，但初爻巳火发动克申金不合适，又有卯木生火，世爻虽然旺，巳日一定添灾。", "他不听，还是请这位医生来治。", "卯日、辰日服药，还平安，巳日忽然病症变了，全身疼痛难以忍受。", "病人着急，问我说：会伤到性命吗？", "我说：世爻值月建，怎么会伤命？", "赶快服解药，过了巳日、午日就不疼了。", "立即服了解药，到申日，他的病像平常一样。"],
+          "en": ["Judgment: this doctor must not be used.", "Though Output holds the Self line and the Other line is the doctor, it is not fitting that the first line, Si Fire, moves and controls Shen Metal, with Mao Wood also generating Fire; though the Self line is strong, on the Si day there will surely be added trouble.", "He did not listen and called this doctor to treat him.", "On the Mao and Chen days he took the medicine and was still safe, but on the Si day the symptoms suddenly changed and pain all over the body was unbearable.", "The patient was anxious and asked me: will it endanger my life?", "I said: the Self line rules the Month; how could it endanger life?", "Take the antidote quickly, and once the Si and Wu days are past the pain will stop.", "He took the antidote at once, and by the Shen day his illness was as usual."] }
+      ],
+      "note": {
+        "yi": "这一条是对 LY.ILL.ZS.10（子孙持世不药而痊）的补充限制：子孙持世还要看它有没有被克。书中例是占医生，不是占病：子孙持世、应是医人，但初爻巳火动来克申金，野鹤据此断这位医生的药会在巳日添灾。",
+        "en": "This entry is a limiting supplement to LY.ILL.ZS.10 (Output holding the Self line heals without medicine): one must also see whether Output is controlled. The case divines a doctor and not an illness: Output holds the Self line and the Other line is the doctor, but the Si Fire at the first line moves to control Shen Metal, and from this the Old Man judged that this doctor's medicine would bring added trouble on the Si day."
+      },
+      "see": ["LY.ILL.ZS.10", "LY.ILL.ZS.30", "LY.ILL.ZS.37"]
+    },
+    {
+      "id": "LY.ILL.ZS.39",
+      "topic": "总则",
+      "chapter": "医占往治章",
+      "chapter_en": "Chapter on a doctor divining whether to go and treat",
+      "title": "来人所问决定看什么：问病的吉凶，鬼持世或动是忧神、子孙持世或动是解忧喜悦之神；问病犯何鬼神，看鬼爻五行（金鬼冲犯武神、水鬼得罪河神）；问病源，看鬼爻五行脏腑（火鬼心经、水鬼肾部）——李我平",
+      "rule": {
+        "yi": "官鬼是忧神、子孙是喜悦解忧之神，虽然是古法，用起来很恰当；但也有不把鬼当忧神的，全看来问的人心里想问什么。他问病的吉凶：鬼爻持世、鬼在卦里发动，是忧神；子孙持世、子孙发动，是解忧喜悦的神。他问病是犯了哪路鬼神：卦里出现金鬼，一定冲犯了武神；水鬼，一定得罪了河神这一类。他问病源：卦里出现火鬼，一定属心经；水鬼，一定在肾部。",
+        "en": "That the Pressure line is the spirit of worry and Output the spirit of joy that relieves worry, though an old method, is very apt in use; but there are cases in which Pressure is not taken as the spirit of worry, and it all depends on what the asker has in mind to ask. If he asks about the fortune of the illness: Pressure holding the Self line or moving in the hexagram is the spirit of worry, and Output holding the Self line or moving is the spirit of joy that relieves worry. If he asks which ghost or spirit the illness offends: a Metal Pressure appearing in the hexagram means he has surely offended a martial god, and a Water Pressure that he has offended the river god and the like. If he asks about the source of the illness: a Fire Pressure appearing in the hexagram surely belongs to the Heart channel, and a Water Pressure surely lies in the Kidney."
+      },
+      "quotes": [
+        { "by": "李我平", "book": "增删卜易", "range": [13512, 13512],
+          "zh": ["李我平曰：此论官鬼为忧神，子孙为喜悦解忧之神，虽系古法，然用之甚当，非合鬼神之机，不能幻想至此。", "然又有不以鬼作忧神者，全在来人念之所指。"],
+          "yi": ["李我平说：这个论断把官鬼当作忧神，把子孙当作喜悦解忧的神，虽然是古法，用起来却很恰当，不是合了鬼神的机要，想不到这一步。", "但是也有不把鬼当忧神的，全在来问的人心里念头指向什么。"],
+          "en": ["Li Woping says: this account takes the Pressure line as the spirit of worry and Output as the spirit of joy that relieves worry; though it is an old method, it is very apt in use, and one could not have imagined it without accord with the working of the spirits.", "But there are cases in which Pressure is not taken as the spirit of worry, and it all depends on what the asker has in mind."] },
+        { "by": "李我平", "book": "增删卜易", "range": [13513, 13513],
+          "zh": ["彼若问病之凶吉，倘鬼爻持世、鬼动卦中，则为忧神；", "子持世、子动卦中，则为解忧喜悦之神。", "彼若问病犯是何鬼神，倘卦现金鬼，必冲犯于武神；", "水鬼，必获罪于河神之类。", "彼若问病源，卦现火鬼，必属心经；", "水鬼，必居肾部。"],
+          "yi": ["他如果问病的吉凶，假使鬼爻持世、鬼在卦中发动，那就是忧神；", "子孙持世、子孙在卦中发动，就是解忧喜悦的神。", "他如果问病是犯了哪路鬼神，假使卦里出现金鬼，一定是冲犯了武神；", "水鬼，一定是得罪了河神这一类。", "他如果问病源，卦里出现火鬼，一定属心经；", "水鬼，一定在肾这一部。"],
+          "en": ["If he asks about the fortune of the illness, then if the Pressure line holds the Self line or moves in the hexagram, it is the spirit of worry;", "if Output holds the Self line or moves in the hexagram, it is the spirit of joy that relieves worry.", "If he asks which ghost or spirit the illness offends, then if a Metal Pressure appears in the hexagram, he has surely offended a martial god;", "a Water Pressure means he has surely offended the river god and the like.", "If he asks about the source of the illness, then if a Fire Pressure appears in the hexagram it surely belongs to the Heart channel;", "a Water Pressure surely lies in the Kidney."] }
+      ],
+      "note": {
+        "yi": "李我平在这里把三种看法各归到它回答的问题上：野鹤的「忧神/喜悦神」回答病的吉凶，觉子的五行鬼神（LY.ILL.ZS.23）回答犯了什么，黄金策疾病章开头的五行脏腑（LY.ILL.HJC.02）回答病在哪里。所以野鹤删掉黄金策的首论（LY.ILL.ZS.22），李我平认为不是不对，是问题不同。",
+        "en": "Here Li Woping assigns each of three ways of looking to the question it answers: the Old Man's 'spirit of worry and spirit of joy' answers the fortune of the illness, Juezi's ghosts and spirits by phase (LY.ILL.ZS.23) answers what has been offended, and the organs by phase at the opening of the Huangjin Ce's chapter on illness (LY.ILL.HJC.02) answers where the illness lies. So when the Old Man deletes the opening discussion of the Huangjin Ce (LY.ILL.ZS.22), Li Woping holds that it is not wrong but answers a different question."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.ZS.22", "LY.ILL.ZS.23", "LY.ILL.ZS.27"]
+    },
+    {
+      "id": "LY.ILL.ZS.40",
+      "topic": "医药",
+      "chapter": "医占往治章",
+      "chapter_en": "Chapter on a doctor divining whether to go and treat",
+      "title": "子孙不是针灸之药，火鬼忌热水鬼忌寒是拘泥：子孙旺动则不药自愈，前贤以金生子孙用针、火持子孙用炙是错；诸书说火鬼旺宜大寒药、水鬼旺宜大热药，李我平举土用神、妻占夫二例驳之，说胶柱决之坑陷人命",
+      "rule": {
+        "yi": "子孙旺相又发动的，不吃药就好，并不是教人拿这个子孙当治病的药；前辈贤人常常看到子孙旺动，占病病好、占医医良，就把子孙爻当成治病的药，金生子孙就断用针，火持子孙就断用灸，不知道子孙旺相病自己就好了，哪里用得着针灸，子孙落空被破，针灸又有什么益处。各种书又说火鬼忌热、水鬼忌寒，水鬼在生旺之地要用大热的药，火鬼旺相宜用大寒的药去攻；李我平不知道他们从哪里看出来的：假使用神属土、儿子占父亲的病，父爻临土，火鬼发动是生用爻的元神，怎么能用大寒的药去治元神？妻子占丈夫的病，鬼是用神，丈夫临水鬼，又怎么能用大热的药去攻用神？死板地照大寒大热去断，坑害了不知多少性命。",
+        "en": "Where Output is strong and moving, one recovers without medicine, and this does not teach us to take that Output as the medicine that treats the illness; the worthies of old often saw Output strong and moving, found that in divining illness the illness healed and in divining a doctor the doctor was good, and so took the Output line as the medicine, judging the needle where Metal generates Output and moxibustion where Fire holds Output, without realising that if Output is strong the illness heals of itself, so what need is there of needle and moxa, and if Output is Void or broken what good would they do. The books also say that a Fire Pressure fears heat and a Water Pressure fears cold, that a Water Pressure in a place of birth or strength must be treated with very hot medicine and a strong Fire Pressure attacked with very cold; Li Woping does not know where they saw this: suppose the Subject is Earth, as when a son divines his father's illness and the Resource line sits on Earth, a moving Fire Pressure is the Support that generates the Subject line, and how could one treat the Support with very cold medicine? When a wife divines her husband's illness, Pressure is the Subject, and if the husband sits on a Water Pressure, how could one attack the Subject with very hot medicine? To judge rigidly by very cold and very hot has sunk who knows how many lives in the pit."
+      },
+      "quotes": [
+        { "by": "李我平", "book": "增删卜易", "range": [13514, 13514],
+          "zh": ["子孙旺而动者，不药而愈，非教人以此子孙为治病之药也，往往前贤见此子孙旺动，占病病愈，占医医良，遂以此子孙爻为治病之药。", "金生子孙者，断用针；", "火持子孙者，断用炙。", "殊不知子孙若旺，其病自痊，何用针灸？", "子孙若值空破，用针灸而何益？"],
+          "yi": ["子孙旺相又发动的，不吃药就好，并不是教人拿这个子孙当治病的药；往往前辈贤人看到这个子孙旺相发动，占病病好，占医医生高明，就拿这个子孙爻当成治病的药了。", "金生子孙的，就断用针；", "火持子孙的，就断用灸。", "殊不知子孙如果旺相，那病自己就好了，哪里用得着针灸？", "子孙如果落空、被破，用针灸又有什么益处？"],
+          "en": ["Where Output is strong and moving, one recovers without medicine, and this does not teach us to take that Output as the medicine that treats the illness; the worthies of old often saw Output strong and moving, found that in divining illness the illness healed and in divining a doctor the doctor was good, and so took that Output line as the medicine that treats the illness.", "Where Metal generates Output, they judged to use the needle;", "where Fire holds Output, to use moxibustion.", "They did not realise that if Output is strong the illness heals of itself, so what need is there of needle and moxa?", "and if Output is Void or broken, what good would needle and moxa do?"] },
+        { "by": "李我平", "book": "增删卜易", "range": [13515, 13515],
+          "zh": ["诸书又皆曰：“火鬼忌热，水鬼忌寒，水鬼若居生旺之地，须大热之药以治之；", "火鬼旺者，宜大寒之剂以攻之。”", "余不知从何所见。", "假使用神属土，及子占父病，父爻临土，若得火鬼发动，乃生用爻之元神也，岂可用大寒之药而治元神耶？", "又如妻占夫病，鬼为用神，假便夫临水鬼，又可以大热之药以攻夫爻之用神耶？", "每见穷乡僻壤，无处觅医，只谓《周易》乃大圣大贤之书，遵之必灵，而卜者以此大寒大热之药胶柱决之，不知坑陷如许之命，言及发指。", "此书一出，而寒热之药不敢轻用，从此泉下无怨鬼矣。"],
+          "yi": ["各种书又都说：“火鬼忌热，水鬼忌寒，水鬼如果在生旺的地方，要用大热的药来治；", "火鬼旺相的，宜用大寒的药去攻它。”", "我不知道他们是从哪里看出来的。", "假使用神属土，比如儿子占父亲的病，父爻临土，如果火鬼发动，那是生用爻的元神，怎么可以用大寒的药去治元神呢？", "又如妻子占丈夫的病，鬼是用神，假使丈夫临水鬼，又可以用大热的药去攻丈夫爻的用神吗？", "常见穷乡僻壤，没有地方找医生，只当《周易》是大圣大贤的书，照着它办必定灵验，而占卜的人拿这大寒大热的药死板地去决断，不知道坑害了多少条命，说起来令人发指。", "这部书一出来，寒热的药就不敢轻易用了，从此黄泉之下没有含冤的鬼了。"],
+          "en": ["The books all say again: 'A Fire Pressure fears heat and a Water Pressure fears cold; if a Water Pressure is in a place of birth or strength, it must be treated with very hot medicine;", "if a Fire Pressure is strong, attack it with very cold medicine.'", "I do not know from where they saw this.", "Suppose the Subject is Earth, as when a son divines his father's illness and the Resource line sits on Earth; if a Fire Pressure moves, it is the Support that generates the Subject line, and how could one treat the Support with very cold medicine?", "Again, when a wife divines her husband's illness, Pressure is the Subject; suppose the husband sits on a Water Pressure, may one attack the husband line's Subject with very hot medicine?", "I have often seen in poor and remote places where there is nowhere to find a doctor, people who think the Zhouyi a book of great sages and worthies that must prove true if followed, and diviners who settle the matter rigidly with these very cold and very hot medicines, not knowing how many lives they have sunk into the pit; it makes one's hair stand on end to speak of it.", "Once this book is out, no one will dare to use cold or hot medicines lightly, and from then on there will be no wronged ghosts under the springs."] }
+      ],
+      "dispute": {
+        "yi": "用药看什么：黄金策旧注、王洪绪（LY.ILL.HJC.76、HJC.81、HJC.84）按官鬼的五行定寒热（火鬼旺用大寒、水鬼旺用大热），按子孙的五行定针灸（子孙属金用刀针、属火用灸）；李我平、野鹤说这是拘泥：子孙旺动本来就不药而愈，不是针灸之药；火鬼可能是用神的元神，不能拿大寒药去攻；死板照大寒大热去断，是坑人性命。",
+        "en": "What to look at in fixing the medicine: the old commentary of the Huangjin Ce and Wang Hongxu (LY.ILL.HJC.76, HJC.81, HJC.84) fix cold or hot by the phase of the Pressure line (a strong Fire Pressure very cold, a strong Water Pressure very hot) and needle or moxa by the phase of Output (Metal Output knife and needle, Fire Output moxa); Li Woping and the Old Man call this rigid: Output strong and moving means recovery without medicine and is not the medicine of needle and moxa, a Fire Pressure may be the Support of the Subject and cannot be attacked with very cold medicine, and to judge rigidly by very cold and very hot sinks lives."
+      },
+      "note": {
+        "yi": "这是整个疾病域里两派分歧最尖锐的一条。李我平末尾说「此书一出，而寒热之药不敢轻用」，是说《增删卜易》出来以后，占卜的人不该再拿五行定寒热。「炙」「灸」在书里写法不一，都指艾灸。「元神」的用法见 LY.ILL.ZS.08。",
+        "en": "This is the sharpest split between the two schools in the whole illness domain. Li Woping's closing 'once this book is out, no one will dare to use cold or hot medicines lightly' means that after the Zengshan Buyi diviners should no longer fix cold and hot by the five phases. 'Zhi' and 'jiu' are written differently in the book and both mean moxibustion. For the use of the 'Support' see LY.ILL.ZS.08. The 'Qian note' at the end of the chapter is a modern addition and is not quoted here."
+      },
+      "see": ["LY.ILL.HJC.76", "LY.ILL.HJC.81", "LY.ILL.HJC.84", "LY.ILL.ZS.37"]
+    }
+  ]
+}

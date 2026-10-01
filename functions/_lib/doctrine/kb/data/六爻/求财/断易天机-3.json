@@ -1,0 +1,358 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "断易天机",
+  "chapter": "散见各章",
+  "chapter_en": "Scattered sections",
+  "ranges": {"断易天机": [1, 2000]},
+  "units": [
+    {
+      "id": "LY.WEALTH.DYTJ.42",
+      "topic": "买卖",
+      "chapter": "父母用变",
+      "chapter_en": "What the Resource line does when it moves or changes",
+      "title": "父母发动克子孙，买卖劳心利不存；父化财，交易利",
+      "rule": {
+        "yi": "父母爻发动克子孙，做买卖劳心费力、利钱留不住；父母化成财，交易有利，只是家里长辈不安宁、求人办事不顺。",
+        "en": "Resource moving and controlling Output means that in trade one wears out the mind and no profit remains; Resource changing into Wealth, dealing profits, though the elders of the house are uneasy and seeking help goes badly."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [818, 818],
+          "zh": ["父动当头克子孙，", "病人无药主沉昏；", "婚姻子息应难得，", "买卖劳心利不存。"],
+          "yi": ["父母爻发动，当头克子孙，", "病人没有药可用，昏沉不醒；", "婚姻、子嗣难得；", "做买卖，劳心费力，没有利。"],
+          "en": ["Resource moving and squarely controlling Output:", "the sick have no medicine and sink into stupor;", "marriage and offspring are hard to get;", "in trade one wears out the mind and no profit remains."] },
+        { "by": "经", "book": "断易天机", "range": [819, 819],
+          "zh": ["父化财兮交易利，", "家长不宁求事拙。"],
+          "yi": ["父母化成财，交易有利；", "家里长辈不安宁，求人办事不顺。"],
+          "en": ["Resource changing into Wealth, dealing profits;", "the elders of the house are uneasy and seeking help goes badly."] }
+      ],
+      "note": {
+        "yi": "这首七言歌诀把病、婚姻、考试、行人、官司、失物等一并说完，本库整首收下，求财只在其中一两句；书里的今人[译文]不引。",
+        "en": "This seven-character verse covers illness, marriage, exams, travellers, lawsuits and lost things together; this library takes the whole verse, of which only a line or two concerns wealth, and does not cite the modern translation printed after it."
+      },
+      "see": ["LY.WEALTH.DYTJ.27", "LY.WEALTH.HJC.05"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.43",
+      "topic": "买卖",
+      "chapter": "子孙用变",
+      "chapter_en": "What the Output line does when it moves or changes",
+      "title": "子孙发动伤官鬼，行人买卖身康泰；子化财宜守旧，托人办事人心不一",
+      "rule": {
+        "yi": "子孙发动，伤克官鬼，出门的人和做买卖的人都平安康泰；子孙化成财，宜于守旧，托人办事，对方心不在一处。",
+        "en": "Output moving and harming Pressure leaves the traveller and the trader safe and well; Output changing into Wealth suits keeping to the old, and if one entrusts a favour, the other is not of one mind."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [827, 827],
+          "zh": ["子孙发动伤官鬼，", "占病求医身便痊；", "行人买卖身康泰，", "婚姻喜美是姻缘。"],
+          "yi": ["子孙发动，伤克官鬼，", "占病求医，身体就痊愈；", "出门的人和做买卖的人，平安康泰；", "婚姻喜庆美满，是好姻缘。"],
+          "en": ["Output moving and harming Pressure:", "in divining illness and seeking a doctor, the body is cured;", "the traveller and the trader are safe and well;", "a marriage is happy and fair, a good match."] },
+        { "by": "经", "book": "断易天机", "range": [837, 837],
+          "zh": ["子化财兮宜守旧，", "托用人情不一心。"],
+          "yi": ["子孙化成财，宜于守旧；", "托人办事，对方心不在一处。"],
+          "en": ["Output changing into Wealth suits keeping to the old;", "entrusting a favour, the other is not of one mind."] }
+      ],
+      "note": {
+        "yi": "这首七言歌诀把病、婚姻、考试、行人、官司、失物等一并说完，本库整首收下，求财只在其中一两句；书里的今人[译文]不引。",
+        "en": "This seven-character verse covers illness, marriage, exams, travellers, lawsuits and lost things together; this library takes the whole verse, of which only a line or two concerns wealth, and does not cite the modern translation printed after it."
+      },
+      "see": ["LY.WEALTH.DYTJ.29", "LY.WEALTH.TXF.06"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.44",
+      "topic": "动变",
+      "chapter": "妻财用变",
+      "chapter_en": "What the Wealth line does when it moves or changes",
+      "title": "财爻发动，买卖交官财吉利；财化子好望财，财化兄财少成",
+      "rule": {
+        "yi": "财爻发动，克文书，应试求官都落空，做买卖、结交官府对财有利；财化成子孙有望得财，化成兄弟钱财少成、熟人之间要避嫌；财化成官鬼要防走失，化成文书办事和谐。",
+        "en": "The Wealth line moving and controlling documents: exams and office come to nothing, but trading and dealing with officials favour the money; Wealth changing into Output gives hope of gaining money, into Peer little money is made and with acquaintances one should avoid suspicion; into Pressure guard against loss, into Resource matters go smoothly."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [836, 836],
+          "zh": ["财爻发动克文书，", "应举求官总是虚；", "买卖交官财吉利，", "亲姻如意乐无虞。"],
+          "yi": ["财爻发动，克父母文书，", "应试求官，总是落空；", "做买卖、结交官府，对财有利；", "婚姻亲事如意，快乐无忧。"],
+          "en": ["The Wealth line moving and controlling the document line:", "sitting exams and seeking office always come to nothing;", "trading and dealing with officials favour the money;", "marriages and family ties go as wished, glad and free of worry."] },
+        { "by": "经", "book": "断易天机", "range": [837, 837],
+          "zh": ["财化子兮好望财，", "财化财兮妇主灾；", "财化官兮防走失，", "财化文书用可谐。", "财化兄兮财少成，", "相知脱嫌勿交亲；"],
+          "yi": ["财化成子孙，有望得财；", "财化成财，妇人有灾；", "财化成官，要防走失；", "财化成文书，办事可以和谐；", "财化成兄弟，钱财少成；", "熟识的人之间，要避嫌，不要走得太近；"],
+          "en": ["Wealth changing into Output, there is hope of gaining money;", "Wealth changing into Wealth, the woman meets calamity;", "Wealth changing into Pressure, guard against loss and straying;", "Wealth changing into Resource, what is needed goes smoothly;", "Wealth changing into Peer, little money is made;", "among acquaintances, avoid suspicion and do not grow too close;"] }
+      ],
+      "note": {
+        "yi": "这首七言歌诀把病、婚姻、考试、行人、官司、失物等一并说完，本库整首收下，求财只在其中一两句；书里的今人[译文]不引。",
+        "en": "This seven-character verse covers illness, marriage, exams, travellers, lawsuits and lost things together; this library takes the whole verse, of which only a line or two concerns wealth, and does not cite the modern translation printed after it."
+      },
+      "see": ["LY.WEALTH.DYTJ.30", "LY.WEALTH.TXF.03", "LY.WEALTH.HJC.15"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.45",
+      "topic": "风险",
+      "chapter": "兄弟用变",
+      "chapter_en": "What the Peer line does when it moves or changes",
+      "title": "兄弟发动克财，货物经商消折本；兄化兄家不足，兄化财财反复",
+      "rule": {
+        "yi": "兄弟发动，克了财，货物、经商亏本，官司和暗中的盗贼耗损钱财；兄弟化成兄弟，家里钱不足；兄弟化成财，钱财反复。",
+        "en": "Peer moving and controlling Wealth means that goods and trade lose capital and lawsuits and secret thieves waste money; Peer changing into Peer, the household is short; Peer changing into Wealth, the money comes and goes."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [845, 845],
+          "zh": ["兄弟交重克了财，", "病人难愈未离灾；", "应举雷同为大忌，", "官非阴贼耗钱财。", "若带吉神为有助，", "出路行人尚未来；", "货物经商消折本，", "买婢求妻事不谐。"],
+          "yi": ["兄弟发动，克了财，", "病人难好，灾还没有走；", "应考遇到雷同，是大忌；", "官司和暗中的盗贼，耗损钱财。", "如果带着吉神，就有帮助；", "出门在外的人还没有回来；", "货物、经商，亏了本；", "买婢女、求妻，事不和谐。"],
+          "en": ["Peer moving and controlling Wealth:", "the sick are hard to cure and the calamity has not left;", "in an exam, meeting the same rivals is a great taboo;", "lawsuits and secret thieves waste money.", "if it carries an auspicious spirit, there is help;", "the traveller on the road has not yet come home;", "goods and trade lose capital;", "buying a maid or seeking a wife does not go smoothly."] },
+        { "by": "经", "book": "断易天机", "range": [846, 846],
+          "zh": ["兄化兄兮家不足，", "兄化财兮财反复；"],
+          "yi": ["兄弟化成兄弟，家里钱不足；", "兄弟化成财，钱财反复。"],
+          "en": ["Peer changing into Peer, the household is short;", "Peer changing into Wealth, the money comes and goes."] }
+      ],
+      "note": {
+        "yi": "这首七言歌诀把病、婚姻、考试、行人、官司、失物等一并说完，本库整首收下，求财只在其中一两句；书里的今人[译文]不引。",
+        "en": "This seven-character verse covers illness, marriage, exams, travellers, lawsuits and lost things together; this library takes the whole verse, of which only a line or two concerns wealth, and does not cite the modern translation printed after it."
+      },
+      "see": ["LY.WEALTH.DYTJ.28", "LY.WEALTH.DYTJ.26", "LY.WEALTH.HJC.07"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.46",
+      "topic": "风险",
+      "chapter": "官鬼用变",
+      "chapter_en": "What the Pressure line does when it moves or changes",
+      "title": "官鬼发动克兄弟，买卖财轻赌博输；官化财，财自得，赌博抽拈却输",
+      "rule": {
+        "yi": "官鬼发动克兄弟，做买卖财利微薄，赌博输；官鬼化成财，钱财自己到手，但赌博、抽拈反而输。",
+        "en": "Pressure moving and controlling Peer means that trade brings slight profit and gambling loses; Pressure changing into Wealth, the money comes of itself, but gambling and drawing lots lose all the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [854, 854],
+          "zh": ["官鬼发动克兄弟，", "婚姻未就生滞疑；", "病困门庭祸祟来，", "更改动身皆不吉。", "出外逃亡定见灾，", "词讼官非有囚系；", "买卖财轻赌博输，", "失物难寻多暗昧。"],
+          "yi": ["官鬼发动，克兄弟，", "婚姻还没成，生出停滞和疑虑；", "家里病困，灾祸作祟；", "改动、动身，都不吉；", "出外、逃亡，一定遇灾；", "打官司，有被拘禁的事；", "做买卖财利微薄，赌博输；", "失物难找，多是暗昧不明。"],
+          "en": ["Pressure moving and controlling Peer:", "a marriage not yet made meets delay and doubt;", "illness besets the household and misfortune haunts it;", "changing plans or setting out are both inauspicious;", "going abroad or fleeing surely meets calamity;", "a lawsuit brings confinement;", "in trade the profit is slight, and in gambling one loses;", "lost things are hard to find and mostly obscure."] },
+        { "by": "经", "book": "断易天机", "range": [855, 855],
+          "zh": ["官化财兮财自得，", "赌博抽拈却主输；"],
+          "yi": ["官鬼化成财，钱财自然到手；", "赌博、抽拈，却主输。"],
+          "en": ["Pressure changing into Wealth, the money comes of itself;", "gambling and drawing lots, however, lose."] }
+      ],
+      "note": {
+        "yi": "这首七言歌诀把病、婚姻、考试、行人、官司、失物等一并说完，本库整首收下，求财只在其中一两句；书里的今人[译文]不引。",
+        "en": "This seven-character verse covers illness, marriage, exams, travellers, lawsuits and lost things together; this library takes the whole verse, of which only a line or two concerns wealth, and does not cite the modern translation printed after it."
+      },
+      "see": ["LY.WEALTH.DYTJ.31", "LY.WEALTH.DYTJ.24", "LY.WEALTH.HJC.34"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.47",
+      "topic": "畜养渔猎",
+      "chapter": "占六畜·天玄赋",
+      "chapter_en": "Divining livestock: the Tianxuan Fu",
+      "title": "六畜爻位：初爻鸡鸭，二爻猫犬；遇青龙旺盛，加白虎两难全",
+      "rule": {
+        "yi": "六畜里，鸡鸭在初爻，猫犬在二爻；遇到青龙就四季旺盛，加上白虎就鸡鸭猫犬两样难保全。注：初爻带鬼或落空亡，难养鸡鸭，加大小耗有狐狸黄鼠伤害，临青龙大吉；二爻的猫犬，寅动克戌是虎伤犬，戌克二爻是犬伤猫，猫爻带吉煞善捕鼠，带鬼煞家有恶犬，逢空不利，加白虎必有伤，带青龙必旺相。",
+        "en": "Among the six kinds of livestock, chickens and ducks are on the first line and cats and dogs on the second; meeting the Azure Dragon they thrive through the four seasons, and with the White Tiger added the two cannot both be kept. The commentary adds: the first line with Pressure or Void makes chickens and ducks hard to keep, with the Great and Small Waste stars foxes and weasels hurt them, and on the Azure Dragon it is greatly auspicious; for cats and dogs on the second line, Yin moving against Xu is the tiger hurting the dog, Xu controlling the second line is the dog hurting the cat, a cat line with an auspicious star catches rats well, with Pressure and a baleful star the house has a fierce dog, falling Void is bad, with the White Tiger added there is surely harm, and with the Azure Dragon added it surely thrives."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1751, 1751],
+          "zh": ["鸡鸭原在初爻，", "遇青龙则四时旺盛，", "猫犬端居二位，", "加白虎则两件难全。"],
+          "yi": ["鸡鸭原本在初爻，", "遇到青龙，就四季旺盛；", "猫犬居在二爻，", "加上白虎，两样都难保全。"],
+          "en": ["Chickens and ducks are originally on the first line;", "meeting the Azure Dragon, they thrive through the four seasons;", "cats and dogs sit on the second line;", "with the White Tiger added, the two cannot both be kept."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [1752, 1752],
+          "zh": ["（初爻鸡鸭位。", "带鬼或空亡，难为鸡鸭。", "加大小耗，必有狐狸黄鼠所伤。", "若临青龙，大吉。", "二爻为猫犬。", "寅爻旁动克戌爻，虎伤犬。", "戌爻克二爻，犬伤猫。", "猫爻若加吉杀，必善捕鼠。", "杀带鬼，家有恶犬。", "逢空不利，", "旺空有犬无猫，有猫无犬，不能两全。", "加白虎必然有伤，带青龙必然旺相。"],
+          "yi": ["（初爻是鸡鸭的位置。", "带鬼或者落空亡，难养鸡鸭；", "加大耗、小耗，必有狐狸、黄鼠狼伤害；", "如果临青龙，大吉。", "二爻是猫犬。", "寅爻在旁边动，克戌爻，是虎伤犬；", "戌爻克二爻，是犬伤猫。", "猫爻如果加吉煞，一定善于捕鼠；", "煞带着鬼，家里有恶犬。", "逢空不利，", "旺相而空的，有犬无猫，有猫无犬，不能两全。", "加白虎，必定有伤；带青龙，必定旺相。"],
+          "en": ["(The first line is the place of chickens and ducks.", "With Pressure or Void, chickens and ducks are hard to keep;", "with the Great or Small Waste stars, foxes and weasels will surely hurt them;", "if it sits on the Azure Dragon, greatly auspicious.", "The second line is cats and dogs.", "Yin moving beside and controlling Xu is the tiger hurting the dog;", "Xu controlling the second line is the dog hurting the cat.", "A cat line with an auspicious star will surely catch rats well;", "with a baleful star carrying Pressure, the house has a fierce dog.", "Falling Void is bad;", "thriving but Void, there is a dog and no cat, or a cat and no dog, and not both.", "With the White Tiger added there is surely harm; with the Azure Dragon it surely thrives."] }
+      ],
+      "note": {
+        "yi": "第一段是《天玄赋》的歌诀，第二段是紧接着的括号小注（《断易天机》这一节里没有另外标注者）。「寅爻旁动克戌爻」是说寅木克土（戌）；「杀带鬼」原文如此。",
+        "en": "The first passage is the verse of the Tianxuan Fu and the second the bracketed small note that follows it (this section of the Duanyi Tianji names no other author). 'Yin moving beside Xu' is Wood controlling Earth; 'a baleful star carrying Pressure' is the original wording."
+      },
+      "see": ["LY.WEALTH.HZL.15", "LY.WEALTH.HZL.16", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.48",
+      "topic": "畜养渔猎",
+      "chapter": "占六畜·天玄赋",
+      "chapter_en": "Divining livestock: the Tianxuan Fu",
+      "title": "三四爻猪羊怕官杀兄弟；五六爻牛马喜福德妻财；各爻带什么看盈亏",
+      "rule": {
+        "yi": "三爻猪、四爻羊，怕见官杀、兄弟；五爻牛、六爻马，喜遇福德、妻财。注：猪带子孙妻财必旺，带兄弟不长，带官逢空有损；羊带财福旺，带鬼杀损失，逢空无羊；牛带子孙有子母牛，遇青龙财福吉，遇鬼杀白虎凶；驴马一爻照牛爻断。",
+        "en": "The third line is the pig and the fourth the sheep, which fear Pressure, baleful stars and Peer; the fifth is the ox and the sixth the horse, which like Output and Wealth. The commentary adds: a pig with Output or Wealth thrives, with Peer does not grow, with Pressure and Void suffers loss; a sheep with Wealth or Output thrives, with Pressure or baleful stars suffers loss, falling Void there is no sheep; an ox with Output has cow and calf, is auspicious with the Azure Dragon, Wealth or Output, and ominous with Pressure, baleful stars or the White Tiger; the last line for donkey and horse is judged like the ox line."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1754, 1754],
+          "zh": ["三四猪羊，", "怕见官杀兄弟；", "五六牛马，", "喜逢福德妻财。"],
+          "yi": ["三爻猪、四爻羊，", "怕遇上官杀、兄弟；", "五爻牛、六爻马，", "喜欢遇上福德、妻财。"],
+          "en": ["The third and fourth lines are the pig and the sheep,", "which fear meeting Pressure, baleful stars and Peer;", "the fifth and sixth lines are the ox and the horse,", "which like to meet Output and Wealth."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [1755, 1755],
+          "zh": ["（三爻为猪。", "带子孙妻财，必旺。", "带兄弟，猪不长。", "带官逢空，猪有损失。", "带子孙胎爻，其家猪有胎。", "若见申酉二爻动，或克三爻，猪决有损失。", "四爻为羊。", "带财福则旺，带鬼杀则损失，逢空无羊。", "胎养临爻则羊母旺，劫杀临爻则羯羊多。", "朱雀临大杀，在兑宫、乾宫动，羊生臊口。", "遇青龙动则吉，白虎动则凶。", "五爻为牛。", "带子孙，其家有子母牛，", "带胎爻，其家牛有胎。", "凡遇青龙财福则吉，鬼杀白虎则凶。", "青龙临爻，多是水牛。", "勾陈螣蛇，多是黄牛。", "若五爻带金鬼，主牛夜啼。", "水鬼败肚，", "木鬼脚痛，", "火鬼因触热，土鬼时气发瘴。", "兄弟化兄弟，与人相合牛只。", "旺相墓库老牛，胎养小牛。", "六爻为驴马。", "带财福则吉，带鬼杀则凶。", "如子日冲午爻，主走热饮水，火动则无妨。", "此一爻依牛爻断之。"],
+          "yi": ["（三爻是猪。", "带子孙、妻财，一定旺；", "带兄弟，猪不长；", "带官又逢空，猪有损失；", "带子孙、胎爻，家里的猪有胎；", "如果见到申、酉二爻发动，或者克三爻，猪一定有损失。", "四爻是羊。", "带财福就旺，带鬼杀就损失，逢空就没有羊；", "胎养临爻，母羊旺；劫杀临爻，羯羊多；", "朱雀临大杀，在兑宫、乾宫动，羊生臊口；", "遇青龙动吉，白虎动凶。", "五爻是牛。", "带子孙，家里有母牛带小牛；", "带胎爻，家里的牛有胎；", "凡遇青龙、财福就吉，鬼杀、白虎就凶。", "青龙临爻，多是水牛；", "勾陈、螣蛇，多是黄牛；", "如果五爻带金鬼，牛夜里叫；", "水鬼，肚子败坏；", "木鬼，脚疼；", "火鬼，是因为中了暑热；土鬼，时气发瘴。", "兄弟化成兄弟，是和别人合养的牛；", "旺相墓库是老牛，胎养是小牛。", "六爻是驴马。", "带财福吉，带鬼杀凶；", "如果子日冲午爻，主走热了要饮水，火动就无妨。", "这一爻照牛爻来断。"],
+          "en": ["(The third line is the pig.", "With Output and Wealth it surely thrives;", "with Peer, the pig does not grow;", "with Pressure and Void, the pig suffers loss;", "with Output and the womb line, the household's sow is in young;", "if the Shen or You line moves, or controls the third line, the pig surely suffers loss.", "The fourth line is the sheep.", "With Wealth or Output it thrives, with Pressure or baleful stars it suffers loss, and falling Void there is no sheep;", "with Womb or Nurture on the line the ewes thrive, with the Robbery star on the line the wethers are many;", "the Vermilion Bird on a great baleful star, moving in the Dui or Qian palace, the sheep get sores in the mouth;", "meeting the Azure Dragon moving is auspicious, the White Tiger moving is ominous.", "The fifth line is the ox.", "With Output, the household has a cow with her calf;", "with the womb line, the household's cow is in calf;", "meeting the Azure Dragon, Wealth or Output is auspicious, meeting Pressure, baleful stars or the White Tiger is ominous.", "The Azure Dragon on the line, mostly water buffalo;", "Hook Earth or the Coiling Snake, mostly yellow oxen;", "if the fifth line carries a Metal Pressure, the ox bellows at night;", "with Water Pressure, the belly is spoiled;", "with Wood Pressure, the foot aches;", "with Fire Pressure, from heat; with Earth Pressure, the season's miasma breaks out.", "Peer changing into Peer, it is an ox kept jointly with another;", "thriving or in the tomb it is an old ox, at Womb or Nurture a young one.", "The sixth line is donkey and horse.", "With Wealth or Output it is auspicious, with Pressure or baleful stars ominous;", "if a Zi day clashes the Wu line, it has run hot and wants water, and if Fire moves there is no harm.", "This line is judged like the ox line."] }
+      ],
+      "note": {
+        "yi": "第一段是《天玄赋》的歌诀，第二段是紧接着的括号小注。「胎养临爻」的「胎」「养」是长生十二宫里的胎、养两位。「子日冲午爻」是子冲午。",
+        "en": "The first passage is the verse of the Tianxuan Fu and the second the bracketed small note that follows it. 'Womb' and 'Nurture' are two of the twelve stages of the life cycle. 'A Zi day clashing the Wu line' is Zi clashing Wu."
+      },
+      "see": ["LY.WEALTH.HZL.15", "LY.WEALTH.HZL.16", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.49",
+      "topic": "畜养渔猎",
+      "chapter": "占六畜·天玄赋",
+      "chapter_en": "Divining livestock: the Tianxuan Fu",
+      "title": "最嫌本命逢冲，须忌分宫受克；六畜本命：丑牛、寅虎（作猫）、午马、未羊、酉鸡、戌犬、亥猪",
+      "rule": {
+        "yi": "最怕的是六畜的本命爻逢冲，也忌分宫爻受克。注：丑爻是牛，寅爻是虎（也当猫爻断），午马、未羊、酉鸡、戌犬、亥猪；本命怕遇鬼煞、大小耗相刑相克，也嫌空亡，都主损伤；另一说，初鸡鸭、二猫犬、三猪、四羊、五牛、六马和驴骡，是分宫；本命上卦以分宫为主，吉神来生则吉，凶煞来克则凶，日辰扶持亦吉，日辰刑冲则凶。",
+        "en": "What is most disliked is the livestock's natal line meeting a clash, and the line of its own palace being controlled. The commentary says: Chou is the ox, Yin the tiger (also judged as the cat line), Wu the horse, Wei the sheep, You the chicken, Xu the dog, Hai the pig; the natal line fears Pressure, baleful stars and the Great and Small Waste stars punishing and controlling it, and dislikes Void, all of which mean damage; another saying gives first chicken and duck, second cat and dog, third pig, fourth sheep, fifth ox, sixth horse, donkey and mule as the palace division; when the natal line is in the hexagram, the palace division is the main thing, an auspicious spirit coming to generate it is auspicious, a baleful one coming to control it is ominous, the Day's support is auspicious and the Day's punishment or clash is ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1757, 1757],
+          "zh": ["最嫌本命逢冲，", "须忌分宫受克。"],
+          "yi": ["最嫌的是本命爻逢冲，", "也忌分宫的爻受克。"],
+          "en": ["What is most disliked is the natal line meeting a clash,", "and the line of its own palace being controlled."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [1758, 1758],
+          "zh": ["（丑爻为牛，寅爻为虎，亦作猫爻断。", "午爻为马，未爻为羊，酉爻为鸡，戌爻为犬，亥爻为猪。", "以上六畜之本命，怕逢鬼杀、大小耗相刑相克，", "又嫌本命空亡，皆主损折狸伤。", "一云：", "初鸡鸭，二猫犬，三猪，四羊，五牛，六马及驴骡，", "以上乃分宫也。", "如本命上卦，当看分宫为主。", "若吉神动来相生则吉，", "凶杀动来克害则凶。", "更得日辰扶持亦吉，", "若日辰刑冲则凶。", "能依此断，万无一失。"],
+          "yi": ["（丑爻是牛，寅爻是虎，也当猫爻来断。", "午是马，未是羊，酉是鸡，戌是犬，亥是猪。", "以上六畜的本命，怕遇上鬼煞、大小耗相刑相克，", "又嫌本命空亡，都主损伤折失。", "又一种说法：", "初爻鸡鸭，二爻猫犬，三爻猪，四爻羊，五爻牛，六爻马以及驴骡，", "以上是分宫。", "如果本命上了卦，就要以分宫为主。", "吉神动来相生就吉，", "凶煞动来克害就凶。", "再得日辰扶持也吉，", "如果日辰刑冲就凶。", "能照这样断，万无一失。"],
+          "en": ["(Chou is the ox, Yin is the tiger, and is also judged as the cat line.", "Wu is the horse, Wei the sheep, You the chicken, Xu the dog, Hai the pig.", "The natal lines of these livestock fear meeting Pressure, baleful stars and the Great and Small Waste stars punishing and controlling them,", "and dislike the natal line falling Void, all of which mean damage and loss.", "Another saying:", "first line chickens and ducks, second cats and dogs, third pigs, fourth sheep, fifth oxen, sixth horses, donkeys and mules,", "which is the palace division.", "If the natal line is in the hexagram, the palace division is the main thing.", "An auspicious spirit moving to generate it is auspicious,", "a baleful star moving to control and harm it is ominous.", "The support of the Day is also auspicious,", "and if the Day punishes or clashes it, it is ominous.", "One who judges this way will not fail."] }
+      ],
+      "note": {
+        "yi": "第一段是《天玄赋》的歌诀，第二段是紧接着的括号小注。「分宫」指六爻各主一种牲畜（初鸡鸭……），「本命」指这种牲畜的生肖地支所在的爻，两者在这段注里并用。",
+        "en": "The first passage is the verse of the Tianxuan Fu and the second the bracketed small note that follows it. 'The palace division' assigns each line to one animal (first line chickens and ducks, and so on) and 'the natal line' is the line at the animal's own branch; the note uses the two side by side."
+      },
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.DYTJ.48"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.50",
+      "topic": "畜养渔猎",
+      "chapter": "占六畜·天玄赋",
+      "chapter_en": "Divining livestock: the Tianxuan Fu",
+      "title": "命逢生旺当别吉凶；爻值刑冲须分表里：旺处逢冲则损，绝处逢冲则散，空处逢冲则不空",
+      "rule": {
+        "yi": "本命逢生旺，要分吉凶：临财福、旺相则吉，临鬼煞、大小耗则凶，反不如不旺；分宫爻遇刑冲，也要分表里：会财福、青龙逢刑冲则凶，临鬼煞、白虎逢刑冲反吉；旺处逢冲则损，绝处逢冲则散，空处逢冲则不空。",
+        "en": "When the natal line meets a thriving state one must tell auspicious from ominous: on Wealth or Output and thriving it is auspicious, on Pressure, baleful stars or the Great and Small Waste stars it is ominous and worse than not thriving; when the palace line meets punishment or clash one must tell the outside from the inside: joined with Wealth, Output or the Azure Dragon it is ominous, on Pressure, baleful stars or the White Tiger it is on the contrary auspicious; thriving and clashed it is damaged, severed and clashed it is scattered, Void and clashed it is no longer Void."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1760, 1760],
+          "zh": ["命逢生旺，", "当别吉凶；"],
+          "yi": ["本命遇到生旺，", "要分吉凶；"],
+          "en": ["When the natal line meets a thriving state,", "one must tell auspicious from ominous;"] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [1761, 1761],
+          "zh": ["（生旺若逢本命，本为吉兆，", "却看临财福旺相则吉，临鬼杀、大小耗则凶，反不如不旺。", "凡吉神扶命，旺处六畜必盛，", "若加鬼杀，得是休囚，庶几损折亦轻。", "凡本命旺临财福，却加大小杀于其上，", "此主孳生虽盛，损失亦多，得失相半之兆。", "不可概论，而断其吉凶。"],
+          "yi": ["（生旺遇到本命，本来是吉兆，", "要看它是不是临财福：旺相就吉，临鬼煞、大小耗就凶，反而不如不旺。", "凡是吉神扶持本命，旺的地方六畜必兴盛；", "如果加了鬼煞，倒是休囚了好，损伤也轻些。", "凡本命旺临财福，却加了大小杀在上面，", "这主繁殖虽然兴盛，损失也多，是得失各半的兆头。", "不能一概而论，要分别断它的吉凶。"],
+          "en": ["(A thriving state meeting the natal line is originally an auspicious sign,", "but look at whether it sits on Wealth or Output: thriving it is auspicious, on Pressure, baleful stars or the Great and Small Waste stars it is ominous, worse than not thriving.", "Whenever an auspicious spirit supports the natal line, where it thrives the livestock surely flourish;", "if Pressure or baleful stars are added, it is better that it be weak, and the loss is lighter.", "When the natal line is thriving on Wealth or Output but the Great and Small baleful stars are added upon it,", "it means that breeding flourishes but the losses are many, a sign of gain and loss in equal halves.", "It cannot be judged all alike, and its good and ill must be told apart."] },
+        { "by": "经", "book": "断易天机", "range": [1763, 1763],
+          "zh": ["爻值刑冲，", "须分表里。"],
+          "yi": ["分宫的爻遇到刑冲，", "要分表里。"],
+          "en": ["When the palace line meets punishment or clash,", "one must tell the outside from the inside."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [1764, 1764],
+          "zh": ["（分宫若日辰刑冲，或动爻刑冲，当有吉凶之辨，表里之分。", "凡分宫会财福、青龙，若逢刑冲则凶。", "若临鬼杀、白虎，逢刑冲反吉，", "必主前虽损失，以后必然旺盛。", "大凡旺处逢冲则损，绝处逢冲则散，空处逢冲则不空。"],
+          "yi": ["（分宫的爻如果被日辰刑冲，或者被动爻刑冲，就有吉凶之辨、表里之分。", "凡分宫会上财福、青龙，如果逢刑冲就凶；", "如果临鬼煞、白虎，逢刑冲反而吉，", "必定是先前虽有损失，以后一定旺盛。", "大凡旺处逢冲就损，绝处逢冲就散，空处逢冲就不空。"],
+          "en": ["(If the palace line is punished or clashed by the Day, or by a moving line, there is a distinction of good and ill and of outside and inside.", "When the palace line joins Wealth, Output or the Azure Dragon, meeting punishment or clash is ominous;", "when it sits on Pressure, baleful stars or the White Tiger, meeting punishment or clash is on the contrary auspicious,", "and surely, though there was loss before, later it will surely flourish.", "In general, a thriving line meeting a clash is damaged, a severed one meeting a clash is scattered, and a Void one meeting a clash is no longer Void."] }
+      ],
+      "note": {
+        "yi": "第一、三段是《天玄赋》的歌诀，第二、四段是紧接着的括号小注。「表里」书里没有解释，注里的意思是：会财福、青龙的遇刑冲看似吉而实凶，临鬼煞、白虎的遇刑冲看似凶而实吉。",
+        "en": "The first and third passages are verses of the Tianxuan Fu, the second and fourth the bracketed small notes that follow. 'Outside and inside' is not glossed; in the note it means that what joins Wealth, Output or the Azure Dragon looks auspicious but is really ominous when punished or clashed, while what sits on Pressure, baleful stars or the White Tiger looks ominous but is really auspicious."
+      },
+      "see": ["LY.WEALTH.DYTJ.49"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.51",
+      "topic": "畜养渔猎",
+      "chapter": "占六畜·洞林秘诀",
+      "chapter_en": "Divining livestock: the Dongling secret",
+      "title": "洞林秘诀·六畜：以生肖和财鬼推；有财之卦畜财旺，无财六畜衰，忌刀砧",
+      "rule": {
+        "yi": "六畜牛马看生肖，以财爻、鬼爻推；生肖看哪一爻动：初爻鸡鸭，二爻犬猫，三爻猪，四爻羊，五爻牛，六爻马；从卦上看，乾震是马，巽是鸡，离是雉，兑是羊，艮是狗，坤是牛，离也兼牛，坎是猪；有财的卦畜财旺，无财六畜衰；占畜忌刀砧卦，离是屠杀，乾坤也主破散。",
+        "en": "For cattle and horses look at the animal's sign and judge by the Wealth and Pressure lines; the sign is found by which line moves: first line chickens and ducks, second dogs and cats, third pigs, fourth sheep, fifth oxen, sixth horses; by trigram, Qian and Zhen are horses, Xun is the chicken, Li the pheasant, Dui the sheep, Gen the dog, Kun the ox with Li also sharing it, Kan the pig; a hexagram with Wealth means the herd prospers, without Wealth the livestock decline; in divining livestock avoid the Knife-and-Block hexagram, since Li means slaughter and Qian and Kun also mean breaking up."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1774, 1774],
+          "zh": ["六畜牛马生肖奇，为财为鬼便推之，", "生肖要看哪爻动，初爻鸡鸭二犬猫。", "三猪四羊五牛地，六爻为马可推之，", "以远先推乾震马，鸡居巽卦雉居离。", "兑卦为羊艮为狗，坤卦为牛离兼之，", "坎为豚豕看财鬼，若值无财绝不宜。", "有财之卦畜财旺，卦若无财六畜衰，", "占畜忌逢刀砧卦，刀居砧上不通医。", "离为屠杀归铛镬，乾坤亦主破分离，", "更加六神时下看，占畜余皆仿此推（1）。"],
+          "yi": ["六畜牛马看生肖，为财为鬼便可推断；", "生肖要看哪一爻动，初爻鸡鸭，二爻犬猫，", "三爻猪，四爻羊，五爻牛，六爻马，都可以这样推；", "从远处说，先推乾、震是马，巽卦是鸡，离卦是雉；", "兑卦是羊，艮卦是狗，坤卦是牛，离也兼着牛；", "坎是猪，看财、鬼，如果没有财，就绝不相宜；", "有财的卦，畜类的财旺，卦里无财，六畜就衰；", "占畜忌遇刀砧卦，刀在砧上，医治不了；", "离是屠杀，归到铛镬，乾、坤也主破散分离；", "再加上六神、时下来看，占畜其余的都照这样推。"],
+          "en": ["For the six kinds of livestock, cattle and horses, look at the animal's sign, and judge by whether it is Wealth or Pressure;", "the sign is found by which line moves: the first line chickens and ducks, the second dogs and cats,", "the third pigs, the fourth sheep, the fifth oxen, the sixth horses, all judged this way;", "by trigram, first Qian and Zhen are horses, Xun is the chicken, Li is the pheasant;", "Dui is the sheep, Gen the dog, Kun the ox, and Li shares in the ox;", "Kan is the pig, look at Wealth and Pressure, and if there is no Wealth it is in no way fitting;", "in a hexagram with Wealth the livestock's wealth thrives, in one without Wealth the livestock decline;", "in divining livestock avoid the Knife-and-Block hexagram: with the knife above the block it cannot be cured;", "Li is slaughter, ending in the pot and cauldron, and Qian and Kun also mean breaking up and parting;", "add to that the six spirits and the present moment, and for the rest divine livestock the same way."] }
+      ],
+      "note": {
+        "yi": "原文最后的（1）是整理本给今人注文编的号，那段注（刀砧：春亥子，夏寅卯……）本库不引。「以远先推乾震马」的「以远」含义不明，这里译作「从卦上说」，不确定；「刀砧」在书里指金在木上（刀在砧上）等，见断易天机今人注，本库不引。",
+        "en": "The (1) at the end of the Chinese is a number the transcription gave to a modern note (on the Knife-and-Block hexagram: spring Hai and Zi, summer Yin and Mao, and so on), which this library does not cite. The words 'yi yuan' in the fourth couplet are unclear and are rendered loosely as 'by trigram', without certainty."
+      },
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.DYTJ.48", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.52",
+      "topic": "畜养渔猎",
+      "chapter": "占牛马·经验云",
+      "chapter_en": "Divining oxen and horses: the tested saying",
+      "title": "买牛买马只宜财；大怕兄兴鬼发；父摇空费力；子孙发动佳",
+      "rule": {
+        "yi": "买牛买马，只要财爻好；最怕兄弟兴旺、官鬼发动；父母动了是空费力气；子孙发动最好。",
+        "en": "In buying oxen and horses only Wealth matters; what is most feared is Peer thriving and Pressure moving; Resource moving is wasted effort; Output moving is best."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1802, 1802],
+          "zh": ["买牛买马只宜财，", "大怕兄兴鬼发来，", "若是父摇空费力，", "子孙发动是佳哉。"],
+          "yi": ["买牛买马，只宜有财；", "最怕兄弟兴旺、鬼发动；", "如果是父母动，是白费力气；", "子孙发动，最好。"],
+          "en": ["In buying oxen and horses, only Wealth is fitting;", "what is most feared is Peer thriving and Pressure moving;", "if Resource moves, the effort is wasted;", "Output moving is best."] }
+      ],
+      "see": ["LY.WEALTH.HJC.30", "LY.WEALTH.DYTJ.53"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.53",
+      "topic": "畜养渔猎",
+      "chapter": "占牛马·周公断牛马歌",
+      "chapter_en": "Divining oxen and horses: the Duke of Zhou on oxen and horses",
+      "title": "周公断牛马歌：占牛马怕泰卦倒装，夬强，益怕刀，离遭屠，坎入镬，噬嗑颐需咸入鼎，坤艮分散；刀砧分上下，无杀始昌",
+      "rule": {
+        "yi": "占牛马怕得泰卦，坤在上乾在下是倒装；夬卦力强不畏热；益卦怕刀伤；离卦遭屠宰；坎卦重爻入镬汤；噬嗑、颐、需、咸入鼎；坤、艮怕被分散；再看刀砧上下，没有各种煞才昌盛。",
+        "en": "In divining oxen and horses, fear getting Tai, with Kun above and Qian below, an upside-down placing; Guai is strong and does not fear heat; Yi fears the knife; Li means slaughter; Kan with a doubled line goes into the cauldron; Shi He, Yi, Xu and Xian go into the tripod; fear meeting Kun and Gen and being split up; then tell the Knife and Block above and below, and only with none of the baleful stars does it prosper."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1791, 1791],
+          "zh": ["但占牛马泰成殃，", "坤腹乾头是倒装（1），", "夬是力强宁畏热，", "若逢益卦怕刀伤。", "离为虚市遭屠杀，", "坎卦重爻入镬汤，", "噬嗑頥需咸入鼎，", "怕逢坤艮被分张（（2）。", "更以刀砧分上下，", "若无诸杀始为昌（3）。"],
+          "yi": ["占牛马，泰卦成殃，", "坤在上是腹、乾在下是头，是倒装；", "夬卦力强，不怕热；", "如果遇到益卦，怕刀伤。", "离卦是空市，遭屠宰；", "坎卦重爻，入镬汤；", "噬嗑、颐、需、咸，入鼎；", "怕遇上坤、艮，被分散。", "再用刀砧来分上下，", "如果没有各种煞，才昌盛。"],
+          "en": ["In divining oxen and horses, Tai brings calamity,", "with Kun above as the belly and Qian below as the head, an upside-down placing;", "Guai is strong and does not fear heat;", "if Yi is met, fear the knife.", "Li is an empty market and means slaughter;", "Kan with a doubled line goes into the cauldron;", "Shi He, Yi, Xu and Xian go into the tripod;", "fear meeting Kun and Gen and being split up.", "Then tell Knife and Block above and below,", "and only if none of the baleful stars is there does it prosper."] }
+      ],
+      "note": {
+        "yi": "原文里的（1）（2）（3）和一处误排的「（（2）」是整理本给今人注文编的号，那些注文本库不引。「坤腹乾头」是说泰卦是坤上乾下。「离为虚市」的「虚市」字义不明，这里译作「空市」。",
+        "en": "The (1), (2) and (3), and a stray '((2)', in the Chinese are numbers the transcription gave to modern notes, which this library does not cite. 'Kun belly, Qian head' says that in Tai Kun is above and Qian below. The words 'xu shi' are unclear and are rendered 'an empty market'."
+      },
+      "see": ["LY.WEALTH.DYTJ.52"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.54",
+      "topic": "畜养渔猎",
+      "chapter": "占渔猎第二十九",
+      "chapter_en": "Chapter 29: Divining fishing and hunting",
+      "title": "姜太公论渔猎：外卦为物内为人；内克外得千斤；物克人无所得；财爻旺相最亨",
+      "rule": {
+        "yi": "占渔猎，外卦是猎物，内卦是人；内卦能克外卦，能得千斤；猎物克人，一无所得；财爻旺相最亨通；打猎宜金，捕鱼宜水；财爻、鬼爻兴旺一定称心；相克哪里还会有；杀鬼交重收获丰厚。",
+        "en": "In divining fishing and hunting the outer trigram is the quarry and the inner is the person; the inner controlling the outer gains a thousand catties; the quarry controlling the person gains nothing; a thriving Wealth line is most favourable; Metal suits hunting and Water suits fishing; with Wealth and Pressure lines thriving one is sure to be satisfied; if they control each other, how could there be a catch; with the killing and Pressure stars doubled the gain is rich."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1066, 1066],
+          "zh": ["外卦为物内为人（1），", "内能克外得千斤（2），", "物若克人无所得（3），", "财爻旺相最为亨（4）。", "金宜获兽鱼宜水（5），", "财鬼爻兴定称心，", "若逢相克哪能有，", "杀鬼交重厚获金（6）。"],
+          "yi": ["外卦是猎物，内卦是人；", "内卦能克外卦，能得千斤；", "猎物如果克人，一无所得；", "财爻旺相，最为亨通。", "打猎宜金，捕鱼宜水；", "财爻、鬼爻兴旺，一定称心；", "如果相克，哪里还会有收获；", "杀与鬼交重发动，收获丰厚。"],
+          "en": ["The outer trigram is the quarry and the inner is the person;", "the inner able to control the outer gains a thousand catties;", "if the quarry controls the person, nothing is gained;", "a thriving Wealth line is most favourable.", "Metal suits hunting beasts and Water suits fishing;", "with Wealth and Pressure lines thriving, one is sure to be satisfied;", "if they control each other, how could there be a catch;", "with the killing star and Pressure doubled and moving, the gain is rich."] }
+      ],
+      "note": {
+        "yi": "原文里的（1）到（6）是整理本给今人注文编的号，那些注文本库不引。「财鬼爻」在原文里连写，读作财爻、鬼爻。「杀鬼交重厚获金」的「杀」指后面说的天罡杀，书里在今人注里才解释，这里只照字译。",
+        "en": "The (1) to (6) in the Chinese are numbers the transcription gave to modern notes, which this library does not cite. 'Wealth and Pressure lines' run together in the original and are read as two lines. The 'killing star' in the last line is explained only in the modern note (the Tiangang star), so it is translated by its words only."
+      },
+      "see": ["LY.WEALTH.YY.13", "LY.WEALTH.YL.57", "LY.WEALTH.HZL.17"]
+    },
+    {
+      "id": "LY.WEALTH.DYTJ.55",
+      "topic": "畜养渔猎",
+      "chapter": "占渔猎·洞林秘诀",
+      "chapter_en": "Divining fishing and hunting: the Dongling secret",
+      "title": "洞林秘诀·渔猎：内卦世爻旺相克外，世克应，得青龙勾陈，吉神临动财爻，无空亡，多得渔猎之财",
+      "rule": {
+        "yi": "内卦的世爻旺相，克外卦，外卦休囚，世爻克应爻，六神又得青龙、勾陈，吉神临在动的财爻上，又没有空亡，主多得财，得渔猎的财物。",
+        "en": "With the Self line in the inner trigram thriving and controlling the outer, the outer trigram weak, the Self controlling the Other, the six spirits also giving the Azure Dragon and Hook Earth, an auspicious spirit on a moving Wealth line, and no Void, much wealth is gained, the fruits of fishing and hunting."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [1081, 1081],
+          "zh": ["内卦世爻旺相克他，", "外卦休囚，", "世爻克应爻，", "六神又得青龙、勾陈，", "吉神临财爻动，", "又无空亡，", "主多得财，", "得渔猎财物也。"],
+          "yi": ["内卦的世爻旺相，克着对方，", "外卦休囚，", "世爻克应爻，", "六神里又得到青龙、勾陈，", "吉神临在动的财爻上，", "又没有空亡，", "主多得财，", "得到渔猎的财物。"],
+          "en": ["The Self line in the inner trigram thriving and controlling the other side,", "the outer trigram weak,", "the Self line controlling the Other line,", "the six spirits also giving the Azure Dragon and Hook Earth,", "an auspicious spirit on a moving Wealth line,", "and no Void:", "much wealth is gained,", "the fruits of fishing and hunting."] }
+      ],
+      "note": {
+        "yi": "这一段后面还接着「诗云」和「又云」几段，其中夹着今人的[虎易注]，字句不全，本库只收这一段完整的。",
+        "en": "After this passage come 'the poem says' and 'again it says' passages interleaved with a modern editor's remarks and with gaps in the text; this library takes only this complete passage."
+      },
+      "see": ["LY.WEALTH.DYTJ.54", "LY.WEALTH.YL.56"]
+    }
+  ]
+}
