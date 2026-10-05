@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(462 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(511 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 16 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 46 |
+| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 25 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 52 |
 | 动变 | Moving lines and what they turn into | 3 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 21 |
-| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 41 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 27 |
-| 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 23 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 22 |
+| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 42 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 28 |
+| 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 39 |
 | 军旅 | Soldiers, campaigns and military posts | 123 |
-| 国朝 | The court and the state: ruler, ministers, the realm | 66 |
-| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 25 |
-| 应期 | Timing: when the post comes, changes or ends | 14 |
-| 取象 | Reading the images: what kind of post, which office, which place | 27 |
-| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 30 |
+| 国朝 | The court and the state: ruler, ministers, the realm | 67 |
+| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 26 |
+| 应期 | Timing: when the post comes, changes or ends | 15 |
+| 取象 | Reading the images: what kind of post, which office, which place | 36 |
+| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 33 |
 
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 

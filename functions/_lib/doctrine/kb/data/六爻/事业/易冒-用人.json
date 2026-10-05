@@ -1,0 +1,132 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "用人章第六十三",
+  "chapter_en": "Chapter 63: Employing people",
+  "ranges": {"易冒": [1446, 1457]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.64",
+      "topic": "总则",
+      "chapter": "用人章第六十三",
+      "chapter_en": "Chapter 63: Employing people",
+      "title": "用人总纲：古之治国莫难于知人，知人善任而庶事有济，营家治生者亦然；任仆以财为用、任人以应为尊，三冲则鲜克有终、克世则中怀不利",
+      "rule": {
+        "yi": "古代治国的人，没有比识人更难的：认得清人又用得对，各种事情才办得成，何况是经营家业、谋生的人呢？任用仆人以财爻为用，任用一般的人以应爻为尊；三冲，很少能有始有终；应克世，心里怀着对我不利的念头。",
+        "en": "Of those who governed a state in antiquity, nothing was harder than knowing men: if one knows men and employs them well, all affairs are carried through, and how much more for one who runs a household and makes a living? To employ a servant the Wealth line is the Subject, and to employ anyone else the Other line is honoured; with the three clashes it is rare to see a thing through to the end, and with the Other controlling the Self he bears in his heart what is not to my advantage."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1448, 1448],
+          "zh": ["古之治国者，莫难于知人，", "知人善任，而庶事有济，", "况于营家治生者乎？", "任仆以财为用，任人以应为尊，", "三冲则鲜克有终，克世则中怀不利。"],
+          "yi": ["古代治国的人，没有比识人更难的：", "认得清人又用得对，各种事情才办得成，", "何况是经营家业、谋生的人呢？", "任用仆人以财为用，任用一般的人以应为尊；", "三冲，很少能有始有终；应克世，心里怀着对我不利的念头。"],
+          "en": ["Of those who governed a state in antiquity, nothing was harder than knowing men:", "if one knows men and employs them well, all affairs are carried through,", "and how much more for one who runs a household and makes a living?", "To employ a servant the Wealth line is taken as the Subject, and to employ anyone else the Other line is honoured;", "with the three clashes it is rare to see a thing through to the end, and with the Other controlling the Self he bears in his heart what is not to my advantage."] }
+      ],
+      "note": {
+        "yi": "「知人善任」是认得清人、又用得对。「任仆以财为用」是用仆人取妻财爻，「任人以应为尊」是用一般的人取应爻。「三冲」（见 YM.07 注）是散、是变，所以很少有始有终；「克世则中怀不利」是应克世，他心里存着对我不利的念头。这一章的『用人』是雇用、任用仆人、帮手、伙计，和上一章讲的做官任职不是一回事，归事业里的差役一类。与易林补遗用人藏否（EL.131–133）对着看。",
+        "en": "'Zhiren shanren' is knowing men clearly and employing them rightly. 'Employing a servant takes Wealth as the Subject' is taking the Wealth line for a servant, and 'for anyone else the Other is honoured' is taking the Other line for ordinary people. The 'three clashes' (see the note to YM.07) are scattering and changing, hence it is rare to see a thing through; 'controlling the Self, he bears in his heart what is not to my advantage' is the Other controlling the Self, so that he carries in his heart a thought against me. The 'employing people' of this chapter is hiring and employing servants, helpers and hands, which is not the same as holding office as in the previous chapter, and belongs to the runners-and-servants group in Career. Read against the Yilin Buyi on employing people and whether they hide (EL.131-133)."
+      },
+      "see": ["LY.CAREER.YM.65", "LY.CAREER.EL.131", "LY.CAREER.EL.132", "LY.CAREER.EL.133"]
+    },
+    {
+      "id": "LY.CAREER.YM.65",
+      "topic": "差役",
+      "chapter": "用人章第六十三",
+      "chapter_en": "Chapter 63: Employing people",
+      "title": "用人·任人取爻：任长以父、任幼以子、任士以福、任臣以应；生世为忠良、克世为奸恶，空则无能或不为我力、散则无心或不从我用、破不一向、绝不先劳、纵生世不得其力；任文以父、任贾以财、任畜牧以子孙、任交游以兄弟，应象皆不可病；应为根本艺为枝叶",
+      "rule": {
+        "yi": "任用年长的用父爻，任用年幼的用子爻，任用读书人用福爻，任用臣属用应爻，依他所担的任来取用爻。生世的是忠良，克世的是奸恶；空就无能，或者不为我出力；散就无心，或者不听我用；破就不一心向着我，绝就不肯先出力，纵然生世也得不到他的力。任用文人用父爻，任用商人用财爻，任用养牲畜的用子孙，任用交游往来的用兄弟，而应象都不可有病。因为应是根本，技艺是枝叶，应空、应破，即使父爻旺，也做不成文事。",
+        "en": "For employing an elder, use the father line; for a youth, the child line; for a scholar, the Output line; for a subordinate, the Other line: the line is taken according to the charge he is given. One that generates the Self is loyal and good, one that controls the Self is treacherous and wicked; Void means incapable, or not exerting himself for me; scattered means no heart, or not following my use; broken means not wholly turned toward me; extinct means not willing to labour first, and even if it generates the Self one does not get his strength. For a literary man use the Resource line, for a merchant the Wealth line, for a herdsman the Output line, and for a man of social contacts the Peer line, and in all of these the Other image must not be sick. For the Other is the root and the skill is the branches and leaves: if the Other is Void or broken, even with a thriving Resource line he cannot do literary work."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1449, 1449],
+          "zh": ["任长以父，任幼以子，任士以福，任臣以应，", "因其任而为用也。", "以生世为忠良，克世为奸恶，", "空则无能，或不为我力，", "散则无心，或不从我用，", "破不一向，绝不先劳也，纵生世而不得其力。", "任文以父，任贾以财，任畜牧以子孙，任交游以兄弟，", "而应象皆不可病。", "盖应为根本，艺为枝叶，应空破，虽父旺而不文。"],
+          "yi": ["任用年长的用父爻，任用年幼的用子爻，任用读书人用福爻，任用臣属用应爻，", "依他所担的任来取用爻。", "生世的是忠良，克世的是奸恶；", "空就无能，或者不为我出力；", "散就无心，或者不听我用；", "破就不一心向着我，绝就不肯先出力，纵然生世也得不到他的力。", "任用文人用父爻，任用商人用财爻，任用养牲畜的用子孙，任用交游往来的用兄弟，", "而应象都不可有病。", "因为应是根本，技艺是枝叶，应空、应破，即使父爻旺，也做不成文事。"],
+          "en": ["For employing an elder use the father line, for a youth the child line, for a scholar the Output line, for a subordinate the Other line,", "the line being taken according to the charge he is given.", "One that generates the Self is loyal and good, one that controls the Self is treacherous and wicked;", "Void means incapable, or not exerting himself for me;", "scattered means no heart, or not following my use;", "broken means not wholly turned toward me, extinct means not willing to labour first, and even if it generates the Self one does not get his strength.", "For a literary man use the Resource line, for a merchant the Wealth line, for a herdsman the Output line, and for a man of social contacts the Peer line,", "and in all of these the Other image must not be sick.", "For the Other is the root and the skill is the branches and leaves: if the Other is Void or broken, even with a thriving Resource line he cannot do literary work."] }
+      ],
+      "note": {
+        "yi": "「任长」是用年长的人，「任幼」是用年幼的，「任士」是用读书人，「任臣」是用臣属、属下；「福」是福神，即子孙。「忠良」「奸恶」是好坏。「不为我力」是不为我出力，「不一向」是不一心向着我，「不先劳」是不肯先出力。「文」是文事，「贾」是商人，「畜牧」是养牲畜的人，「交游」是交际往来的人。「应为根本，艺为枝叶」是说应爻是这个人本身，他的才艺只是枝叶，所以应空、应破时，即使父母旺（有文才），人也成不了文事。这一条是用爻的选法（按所用的人取爻）再加上生、克、空、散、破、绝对这个人的品性、出力的判断。",
+        "en": "'Renzhang' is employing an older person, 'renyou' a younger, 'renshi' a scholar, and 'renchen' a subordinate or underling; 'fu' is the fortune spirit, that is, Output. 'Zhongliang' and 'jian'e' are good and bad. 'Bu wei wo li' is not exerting himself for me, 'bu yi xiang' is not wholly turning toward me, and 'bu xian lao' is not being willing to labour first. 'Wen' is literary work, 'gu' is a merchant, 'xumu' is one who raises livestock, and 'jiaoyou' is one who keeps social company. 'The Other is the root and skill is the branches and leaves' says that the Other line is the man himself, and his skills are only branches and leaves, so when the Other is Void or broken, even if Resource is thriving (he has the literary talent) the man cannot do literary work. This entry is both the way of choosing the line (taking the line according to the man employed) and the judging of the man's character and effort by generation, control, Void, scattered, broken and extinct."
+      },
+      "see": ["LY.CAREER.YM.64", "LY.CAREER.YM.66", "LY.CAREER.EL.131", "LY.CAREER.EL.132"]
+    },
+    {
+      "id": "LY.CAREER.YM.66",
+      "topic": "取象",
+      "chapter": "用人章第六十三",
+      "chapter_en": "Chapter 63: Employing people",
+      "title": "用人·六亲推人：父母为才能、弟兄为诡诈、子孙为善良、妻财为术技、官鬼为强梁；先忠后佞者子化官、先奸后义者鬼化财，必因生克而后言吉凶",
+      "rule": {
+        "yi": "六亲推一个人的品性：父母是才能，弟兄是诡诈，子孙是善良，妻财是术技，官鬼是强梁。先忠后佞的，是子化官；先奸后义的，是鬼化财。必须依据生克，之后才说吉凶。",
+        "en": "The six relations judge a man's character: Resource is talent, Peer is trickery, Output is goodness, Wealth is skill and craft, and Pressure is the bully. One who is first loyal and then flattering is Output turning into Pressure; one who is first treacherous and then righteous is Pressure turning into Wealth. One must go by generation and control before speaking of good or ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1450, 1450],
+          "zh": ["六亲之推，父母为才能，", "弟兄为诡诈，", "子孙为善良，", "妻财为术技，", "官鬼为强梁也。", "先忠后侫者，子化官，", "先奸后义者，鬼化财也。"],
+          "yi": ["六亲推人的品性：父母是才能，", "弟兄是诡诈，", "子孙是善良，", "妻财是术技，", "官鬼是强梁。", "先忠后佞的，是子化官；", "先奸后义的，是鬼化财。"],
+          "en": ["The six relations judge a man's character: Resource is talent,", "Peer is trickery,", "Output is goodness,", "Wealth is skill and craft,", "and Pressure is the bully.", "One who is first loyal and then flattering is Output turning into Pressure;", "one who is first treacherous and then righteous is Pressure turning into Wealth."] },
+        { "by": "易冒注", "book": "易冒", "range": [1451, 1451],
+          "zh": ["必因生克，而后言吉凶。"],
+          "yi": ["必须依据生克，之后才说吉凶。"],
+          "en": ["One must go by generation and control before speaking of good or ill."] }
+      ],
+      "note": {
+        "yi": "「才能」「诡诈」「善良」「术技」「强梁」是六亲配给人的品性：父母主才能，弟兄（兄弟）主诡诈，子孙主善良，妻财主术技（手艺），官鬼主强梁（强横不驯）。「先忠后佞者，子化官」：子孙（善良）变成官鬼（强梁），先忠后佞；「先奸后义者，鬼化财」：官鬼变成妻财，先奸后义。书里自注：必须依据生克才说吉凶——也就是六亲配的品性，还要看它生世还是克世才定好坏。",
+        "en": "'Talent', 'trickery', 'goodness', 'skill' and 'the bully' are the characters the six relations are assigned: Resource governs talent, Peer trickery, Output goodness, Wealth skill and craft, and Pressure the bully (forceful and unruly). 'First loyal then flattering is Output turning into Pressure': Output (goodness) turns into Pressure (the bully), first loyal and then flattering; 'first treacherous then righteous is Pressure turning into Wealth': Pressure turns into Wealth, first treacherous and then righteous. The book's own gloss: one must go by generation and control before speaking of good or ill, that is, the character assigned to a relation must also be looked at by whether it generates or controls the Self before good or bad is fixed."
+      },
+      "see": ["LY.CAREER.YM.65", "LY.CAREER.YM.67", "LY.CAREER.EL.131"]
+    },
+    {
+      "id": "LY.CAREER.YM.67",
+      "topic": "取象",
+      "chapter": "用人章第六十三",
+      "chapter_en": "Chapter 63: Employing people",
+      "title": "用人·六神推人：青龙生世得弹铗之贤、克世惟藏刀之诈；白虎生世刚而直、克世勇而暴；朱雀生世辩而忠、克世佞而奸；玄武生世智而敏、克世巧而贼；螣蛇生克分损益之虚浮、勾陈克生分善不善之迟滞；若来生世虽凶亦吉、来克世虽吉为凶",
+      "rule": {
+        "yi": "六神推人：带青龙而生世，就得到弹铗那样的贤人；随青龙而克世，就只有藏刀的诈。白虎生世的，刚而直；白虎克世的，勇而暴。朱雀生世的，能辩而忠；朱雀克世的，佞而奸。玄武生世的，智而敏；玄武克世的，巧而贼。螣蛇的生、克，分出他对我的损益是真是虚；勾陈的克、生，分出他善不善是否迟钝滞涩。如果来生世，虽然（神）凶也吉；如果来克世，虽然（神）吉也成凶。",
+        "en": "The six spirits judge a man: with the Azure Dragon and generating the Self, one gets a worthy like the man who strikes his sword-hilt; following the Azure Dragon and controlling the Self, there is only the deceit of the hidden blade. The White Tiger generating the Self is firm and straight, the White Tiger controlling the Self is bold and violent. The Vermilion Bird generating the Self is eloquent and loyal, the Vermilion Bird controlling the Self is glib and treacherous. The Dark Tortoise generating the Self is wise and quick, the Dark Tortoise controlling the Self is cunning and thievish. The Coiling Snake's generating and controlling tell whether the gain or loss to me is real or empty; Hook Earth's controlling and generating tell whether his goodness or lack of it is sluggish and stuck. If one comes to generate the Self, even if ominous it is auspicious; if one comes to control the Self, even if auspicious it becomes ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1452, 1452],
+          "zh": ["六神之推，", "带青龙而生，则得弹铗之贤，", "随青龙而克，则惟藏刀之诈。", "虎生世者，刚而直，", "虎克世者，勇而暴。", "雀生世者，辩而忠，", "雀克世者，侫而奸。", "武生世者，智而敏，", "武克世者，巧而贼。", "螣蛇生克，分损益之虚浮，", "勾陈克生，分善不善之迟滞也。"],
+          "yi": ["六神推人：", "带青龙而生世，就得到弹铗那样的贤人；", "随青龙而克世，就只有藏刀的诈。", "白虎生世的，刚而直；", "白虎克世的，勇而暴。", "朱雀生世的，能辩而忠；", "朱雀克世的，佞而奸。", "玄武生世的，智而敏；", "玄武克世的，巧而贼。", "螣蛇的生、克，分出他对我的损益是真是虚；", "勾陈的克、生，分出他善不善是否迟钝滞涩。"],
+          "en": ["The six spirits judge a man:", "with the Azure Dragon and generating the Self, one gets a worthy like the man who strikes his sword-hilt;", "following the Azure Dragon and controlling the Self, there is only the deceit of the hidden blade.", "The White Tiger generating the Self is firm and straight,", "the White Tiger controlling the Self is bold and violent.", "The Vermilion Bird generating the Self is eloquent and loyal,", "the Vermilion Bird controlling the Self is glib and treacherous.", "The Dark Tortoise generating the Self is wise and quick,", "the Dark Tortoise controlling the Self is cunning and thievish.", "The Coiling Snake's generating and controlling tell whether the gain or loss to me is real or empty;", "Hook Earth's controlling and generating tell whether his goodness or lack of it is sluggish and stuck."] },
+        { "by": "易冒注", "book": "易冒", "range": [1453, 1453],
+          "zh": ["若来生世，虽凶亦吉，", "如来克世，虽吉为凶。"],
+          "yi": ["如果来生世，虽然神凶也吉；", "如果来克世，虽然神吉也成凶。"],
+          "en": ["If one comes to generate the Self, even if the spirit is ominous it is auspicious;", "if one comes to control the Self, even if the spirit is auspicious it becomes ominous."] }
+      ],
+      "note": {
+        "yi": "「弹铗之贤」用的是冯谖弹剑的典故（战国时孟尝君的门客冯谖，倚柱弹他的剑柄唱歌要求待遇，后来为孟尝君经营「三窟」），指有才、不轻易屈从的贤客。「藏刀之诈」是笑里藏刀。「虎」「雀」「武」是白虎、朱雀、玄武（原文写作「元武」）。「损益之虚浮」「善不善之迟滞」书里没有展开，按文意：螣蛇主虚浮，所以它的生克辨的是他对我的损益是真是虚；勾陈主迟滞，所以它的克生辨的是他的善不善是不是迟钝。书里自注：来生世的，神本身即使凶也吉；来克世的，神本身即使吉也凶——生克对我的关系，比六神本来的吉凶更要紧。六神的本义见术语表。",
+        "en": "'The worthy who strikes his sword-hilt' alludes to Feng Xuan striking his sword (in the Warring States period Feng Xuan, a retainer of Lord Mengchang, leant against a pillar, struck the hilt of his sword and sang to ask for better treatment, and later made 'three burrows' for Lord Mengchang), meaning a retainer of talent who does not bow easily. 'The deceit of the hidden blade' is the knife behind the smile. 'Tiger', 'bird' and 'tortoise' are the White Tiger, the Vermilion Bird and the Dark Tortoise (written in the text with another character for 'xuan'). 'The emptiness and flightiness of gain and loss' and 'the sluggishness of the good and the not good' are not expanded in the book; by the sense, the Coiling Snake governs emptiness and flightiness, so its generating and controlling tell whether the gain or loss to me is real or empty, and Hook Earth governs delay and stagnation, so its controlling and generating tell whether his goodness is slow. The book's own gloss: one that comes to generate the Self, even if the spirit itself is ominous, is auspicious; one that comes to control the Self, even if the spirit itself is auspicious, is ominous: the relation of generation and control to me matters more than the spirit's own luck. The original meanings of the six spirits are in the glossary."
+      },
+      "see": ["LY.CAREER.YM.66", "LY.CAREER.YM.68", "LY.CAREER.EL.132"]
+    },
+    {
+      "id": "LY.CAREER.YM.68",
+      "topic": "取象",
+      "chapter": "用人章第六十三",
+      "chapter_en": "Chapter 63: Employing people",
+      "title": "用人·八宫五行星煞推人：用爻独发论八宫（乾刚健/骄恣、坤柔顺/阿逢、震正直/暴戾、巽伶俐/风从、坎智巧/奸险、离明识/浮躁、艮笃实/疑滞、兑和悦/谄佞），五行六神诸星论用爻所值（水智/贼、火急/纵、木慈/懦、金刚毅/强横、土敦信/愚蠢；驿马勤趋走/数往来、天财善生息/善贪攘、官符长智谋/长讼斗、咸池能工技/溺酒色）；生世有益于己为贤、克世有损于己为不肖",
+      "rule": {
+        "yi": "用爻动在八宫，就察八宫的性情；坐在五行，就推五行的性质；星煞详细看，衰旺仔细考，这个人是贤还是不肖，就可以借蓍草得知。八宫只论用爻单独发动：乾，生世是刚健，克世是骄恣；坤，生世是柔顺，克世是阿谀逢迎；震，生世是正直，克世是暴戾；巽，生世是伶俐，克世是随风倒；坎，生世是智巧，克世是奸险；离，生世是明白识事，克世是浮躁；艮，生世是笃实，克世是疑滞；兑，生世是和悦，克世是谄媚奸佞。五行、六神、诸星只论用爻所落的：水之贤叫智，不肖叫贼；火之贤叫急，不肖叫纵；木之贤叫慈，不肖叫懦；金之贤叫刚毅，不肖叫强横；土之贤叫敦信，不肖叫愚蠢。驿马生世，勤于奔走，克世，频繁来往；天财生世，善于生息，克世，善于贪占；官符生世，长于智谋，克世，长于讼斗；咸池生世，能于工技，克世，沉溺酒色。生世则对自己有益而是贤，克世则对自己有损而是不肖。",
+        "en": "When the Subject line moves in an eight-palace trigram, one examines the nature of that palace; when it sits in a phase, one infers the character of the phase; the stars and spirit-stars are examined in detail and strength and weakness carefully weighed, and whether a man is worthy or unworthy can be learned by the stalks. The eight palaces are discussed only when the Subject line moves alone: Qian, generating the Self is firm and strong, controlling the Self is arrogant and wilful; Kun, generating the Self is gentle and yielding, controlling the Self is fawning; Zhen, generating the Self is upright, controlling the Self is violent and perverse; Xun, generating the Self is clever, controlling the Self is going with the wind; Kan, generating the Self is shrewd and skilful, controlling the Self is treacherous and dangerous; Li, generating the Self is clear-sighted, controlling the Self is flighty and rash; Gen, generating the Self is solid and honest, controlling the Self is suspicious and stuck; Dui, generating the Self is harmonious and pleasant, controlling the Self is flattering and glib. The phases, the six spirits and the stars are discussed only by where the Subject line stands: Water, as worthy called wisdom, as unworthy called thievery; Fire, as worthy called ardour, as unworthy called licence; Wood, as worthy called kindness, as unworthy called weakness; Metal, as worthy called firmness, as unworthy called brutality; Earth, as worthy called steadfast good faith, as unworthy called stupidity. The Post Horse generating the Self is diligent in running about, controlling it is coming and going often; Heavenly Wealth generating is good at making money breed, controlling it is good at grabbing; the Official Charge generating is strong in wit and plans, controlling it is strong in lawsuits and quarrels; the Peach Blossom generating is able in crafts, controlling it is sunk in wine and women. Generating the Self, it benefits oneself and he is worthy; controlling the Self, it harms oneself and he is unworthy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1454, 1454],
+          "zh": ["动于八宫，则察八宫之情，", "坐于五行，则推五行之性，", "星煞详之，衰旺考之，", "则人之贤不肖，可藉蓍而得也。"],
+          "yi": ["用爻动在八宫，就察八宫的性情；", "坐在五行，就推五行的性质；", "星煞详细看，衰旺仔细考，", "这个人是贤还是不肖，就可以借蓍草得知。"],
+          "en": ["When the Subject line moves in an eight-palace trigram, one examines the nature of that palace;", "when it sits in a phase, one infers the character of the phase;", "the stars and spirit-stars are examined in detail and strength and weakness carefully weighed,", "and whether a man is worthy or unworthy can be learned by the stalks."] },
+        { "by": "易冒注", "book": "易冒", "range": [1455, 1457],
+          "zh": ["八宫专论独发，五行六神诸星，惟论用爻所值，", "如动于乾，生世为刚健，克世为骄恣；", "发于坤，生世为柔顺，克世为阿逢；", "在震，生世为正直，克世为暴戾；", "在巽，生世为伶俐，克世为风从；", "在坎，生世为智巧，克世为奸险；", "在离，生世为明识，克世为浮燥；", "在艮，生世为笃实，克世为疑滞；", "在兑，生世为和悦，克世为谄侫。", "水之为贤曰智，为不肖曰贼；", "火之为贤曰急，为不肖曰纵；", "木之为贤曰慈，为不肖曰懦；", "金之为贤曰刚毅，为不肖曰强横；", "土之为贤曰敦信，为不肖曰愚蠢也。", "驿马之生也，勤于趋走，克也，数于往来；", "天财之生也，善于生息，克也，善于贪攘；", "官符之生也，长于智谋，克也，长于讼斗；", "咸池之生也，能于工技，克也，溺于酒色。", "生世，则有益于己而为贤，克世，则有损于己而为不肖。"],
+          "yi": ["八宫只论用爻单独发动，五行、六神、诸星只论用爻所落的：", "如动在乾，生世是刚健，克世是骄恣；", "发在坤，生世是柔顺，克世是阿谀逢迎；", "在震，生世是正直，克世是暴戾；", "在巽，生世是伶俐，克世是随风倒；", "在坎，生世是智巧，克世是奸险；", "在离，生世是明白识事，克世是浮躁；", "在艮，生世是笃实，克世是疑滞；", "在兑，生世是和悦，克世是谄媚奸佞。", "水之贤叫智，不肖叫贼；", "火之贤叫急，不肖叫纵；", "木之贤叫慈，不肖叫懦；", "金之贤叫刚毅，不肖叫强横；", "土之贤叫敦信，不肖叫愚蠢。", "驿马生世，勤于奔走，克世，频繁来往；", "天财生世，善于生息，克世，善于贪占；", "官符生世，长于智谋，克世，长于讼斗；", "咸池生世，能于工技，克世，沉溺酒色。", "生世则对自己有益而是贤，克世则对自己有损而是不肖。"],
+          "en": ["The eight palaces are discussed only when the Subject line moves alone, and the phases, the six spirits and the stars only by where the Subject line stands:", "if it moves in Qian, generating the Self is firm and strong, controlling the Self is arrogant and wilful;", "issuing in Kun, generating the Self is gentle and yielding, controlling the Self is fawning;", "in Zhen, generating the Self is upright, controlling the Self is violent and perverse;", "in Xun, generating the Self is clever, controlling the Self is going with the wind;", "in Kan, generating the Self is shrewd and skilful, controlling the Self is treacherous and dangerous;", "in Li, generating the Self is clear-sighted, controlling the Self is flighty and rash;", "in Gen, generating the Self is solid and honest, controlling the Self is suspicious and stuck;", "in Dui, generating the Self is harmonious and pleasant, controlling the Self is flattering and glib.", "Water, as worthy called wisdom, as unworthy called thievery;", "Fire, as worthy called ardour, as unworthy called licence;", "Wood, as worthy called kindness, as unworthy called weakness;", "Metal, as worthy called firmness, as unworthy called brutality;", "Earth, as worthy called steadfast good faith, as unworthy called stupidity.", "The Post Horse generating the Self is diligent in running about, controlling it is coming and going often;", "Heavenly Wealth generating is good at making money breed, controlling it is good at grabbing;", "the Official Charge generating is strong in wit and plans, controlling it is strong in lawsuits and quarrels;", "the Peach Blossom generating is able in crafts, controlling it is sunk in wine and women.", "Generating the Self, it benefits oneself and he is worthy; controlling the Self, it harms oneself and he is unworthy."] }
+      ],
+      "note": {
+        "yi": "「八宫专论独发」是只有用爻单独发动时才论八宫；五行、六神、诸星则只论用爻所落的。八宫的性格：乾刚健（过则骄恣）、坤柔顺（过则阿逢）、震正直（过则暴戾）、巽伶俐（过则风从）、坎智巧（过则奸险）、离明识（过则浮躁）、艮笃实（过则疑滞）、兑和悦（过则谄佞）；每一宫都是生世取它的好处，克世取它的过。「风从」是随风倒、没有定见。五行各有贤与不肖两面。「驿马」「天财」「官符」「咸池」是神煞：驿马主奔走、天财主生息、官符主智谋讼斗、咸池主工技酒色。总原则：生世对我有益就是贤，克世对我有损就是不肖。原文这一大段注的末尾没有收尾的「）」，这里照原文取到「不肖」为止。",
+        "en": "'The eight palaces are discussed only for a line moving alone' means that the eight palaces are discussed only when the Subject line moves by itself; the phases, the six spirits and the stars are discussed only by where the Subject line stands. The characters of the eight palaces: Qian is firm and strong (overdone, arrogant), Kun gentle and yielding (overdone, fawning), Zhen upright (overdone, violent), Xun clever (overdone, going with the wind), Kan shrewd (overdone, treacherous), Li clear-sighted (overdone, flighty), Gen solid (overdone, stuck), Dui pleasant (overdone, flattering); in each palace generating the Self takes its good side and controlling the Self takes its excess. 'Fengcong' is falling with the wind, without settled views. Each phase has a worthy and an unworthy side. The Post Horse, Heavenly Wealth, the Official Charge and the Peach Blossom are spirit-stars: the Post Horse governs running about, Heavenly Wealth governs breeding money, the Official Charge governs wit and plans and lawsuits, and the Peach Blossom governs crafts, wine and women. The general principle: generating the Self benefits me and he is worthy, controlling the Self harms me and he is unworthy. The long note in the original has no closing bracket at its end, and here it is taken as in the original up to 'unworthy'."
+      },
+      "see": ["LY.CAREER.YM.67", "LY.CAREER.YM.69", "LY.CAREER.EL.132"]
+    }
+  ]
+}
