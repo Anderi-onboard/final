@@ -4,21 +4,21 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(255 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(385 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 8 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 30 |
-| 动变 | Moving lines and what they turn into | 2 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 13 |
+| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 11 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 39 |
+| 动变 | Moving lines and what they turn into | 3 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 20 |
 | 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 33 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 14 |
-| 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 6 |
-| 军旅 | Soldiers, campaigns and military posts | 50 |
-| 国朝 | The court and the state: ruler, ministers, the realm | 42 |
-| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 2 |
-| 应期 | Timing: when the post comes, changes or ends | 8 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 24 |
+| 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 17 |
+| 军旅 | Soldiers, campaigns and military posts | 105 |
+| 国朝 | The court and the state: ruler, ministers, the realm | 56 |
+| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 19 |
+| 应期 | Timing: when the post comes, changes or ends | 11 |
 | 取象 | Reading the images: what kind of post, which office, which place | 19 |
 | 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 28 |
 
@@ -78,8 +78,10 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: colour, direction and kind of person or spirit | 8 |
 | 风险 | Warnings: what to guard against | 27 |
 
-## 打架 · Where the classics disagree(170 条)
+## 打架 · Where the classics disagree(171 条)
 
+- **LY.CAREER.EL.92 朝天面旨：日辰月建生身吉、克世伤官尽不祥，卦值晋升蒙上宠、爻成屯蹇岂为强；世爻与官爻纵值休囚得日月或动爻生助或变出生扶皆为佳兆，朝王卜得火地晋、地风升皆吉，水雷屯、水山蹇皆为难遇者必凶**(`chapters/六爻/事业/国朝.md`):这里说卜得屯、蹇两卦「皆为难也，遇者必凶」；增删卜易引了古人「晋、升为吉，屯、蹇为凶」的说法后，野鹤（ZS.07）说晋、升也要世爻得地，屯、蹇两卦只要世爻旺相就没有妨碍，他有一次世爻旺相占到屯卦，照样越级升迁。也就是说：这里把卦名当作断语，增删卜易把卦名放在世爻旺衰的后面。
+  This entry says that casting Zhun or Jian 'both mean difficulty, and whoever meets them will surely have ill'; the Zengshan Buyi quotes the ancients' 'Jin and Sheng are auspicious, Zhun and Jian ominous' and then the Old Man of Yehe (ZS.07) says that Jin and Sheng also need the Self to be well placed, that for Zhun and Jian there is no harm so long as the Self is thriving, and that once he got Zhun with a thriving Self and was promoted beyond rank all the same. That is, this entry takes the hexagram name as a verdict, while the Zengshan Buyi puts the hexagram name behind the strength of the Self.
 - **LY.CAREER.HJC.12 仕宦·日辰冲克，定然诽谤之多招（旧注：日辰刑冲克世必招诽谤，依五类推：带兄弟贪贿赂或征科太急、带财无调度、带子孙嗜酒好游、带父母事繁剧、带官鬼酷刑或同僚不和；世临月建则无害）**(`chapters/六爻/事业/风险.md`):「带兄弟」那一类，两家说得不一样：旧注说带兄弟是贪图贿赂、征税太急，而把「嗜酒好游，疏于政事」归给子孙；王洪绪却说带兄弟是「贪酒好游，疏于政事」，而且他只列了兄弟、父母、官鬼三类，没有提财爻和子孙。书里没有裁决。
   On what carrying Peer means, the two commentators differ: the old commentary says that with Peer it is greed for bribes and over-hasty tax collecting and gives 'fondness for wine and wandering and neglect of government' to Output, while Wang Hongxu says that with Peer it is 'greed for drink and wandering and neglect of the business of government', and lists only three kinds, Peer, Resource and Pressure, saying nothing of Wealth or Output. The books do not decide.
 - **LY.CAREER.HJC.21 仕宦·官在贰司，只为鬼临旁位（旧注：鬼在世应爻上或带月建日辰是掌印正官，被世合或在旁爻是佐贰之职；六爻无鬼而动爻化出者亦然；王洪绪：官临子午卯酉是正任、寅申巳亥是佐二、辰戌丑未是杂职）**(`chapters/六爻/事业/取象.md`):两家判断「正官还是佐贰」的标准不一样：旧注看官鬼在卦里的位置（在世应爻上或带月建日辰是正官，被世爻合住或在旁爻是佐贰）；王洪绪看官鬼所临的地支（四仲子午卯酉是正官，四孟寅申巳亥是佐贰，四季辰戌丑未是杂职），再加上带月建日辰是掌印官。两个标准在同一个卦里可能给出相反的结果，书里没有裁决。

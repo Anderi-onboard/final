@@ -1,0 +1,270 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "官员荐奖章第三十三",
+  "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+  "ranges": {"易林补遗": [811, 828]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.79",
+      "topic": "总则",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖总纲：推荐以官文为主、旌奖以财鬼为凭；官吏贤能望宪台之荐奖、黎民良善赖邑宰之旌扬；所喜者鬼旺龙兴，所忌者世空子动；凡占奖荐各要官爻旺相青龙得地，大忌世值空亡子孙发动",
+      "rule": {
+        "yi": "占推荐，以官爻、文书爻为主；占旌奖（表彰奖励），以财爻、官鬼为凭据。官吏贤能，盼望上司宪台的荐举嘉奖；百姓善良，依靠县令的旌表褒扬。所喜欢的是官鬼旺相、青龙兴旺；所忌讳的是世爻落空、子孙发动。凡是占嘉奖、荐举，都要官爻旺相、青龙得位，最忌世爻落在空亡、子孙发动。",
+        "en": "For a recommendation, take the Pressure line and the document line as the chief; for a commendation or award, take Wealth and Pressure as the ground. Officials who are worthy and able look to the supervising authorities for recommendation and award; common people who are good depend on the county magistrate for commendation and praise. What is welcomed is Pressure thriving and the Dragon flourishing; what is feared is the Self Void and Output moving. In every divination about award or recommendation, the Pressure line should be thriving and the Azure Dragon in its place, and what is most feared is the Self falling on Void and Output moving."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [813, 813],
+          "zh": ["推荐以官文为主，旌奖以财鬼为凭。"],
+          "yi": ["推荐以官爻、文书爻为主要看的，旌奖以财爻、官鬼为凭据。"],
+          "en": ["For recommendation take the Pressure and document lines as the chief to be looked at, and for commendation take Wealth and Pressure as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [814, 814],
+          "zh": ["官吏贤能，望宪台之荐奖；", "黎民良善，赖邑宰之旌扬。", "所喜者，鬼旺龙兴。", "所忌者，世空子动。"],
+          "yi": ["官吏贤明有才干，盼望宪台（上司）的荐举和嘉奖；", "百姓善良，依靠县令的旌表褒扬。", "所喜欢的，是官鬼旺相、青龙兴旺。", "所忌讳的，是世爻落空、子孙发动。"],
+          "en": ["Officials who are worthy and able look to the supervising authorities for recommendation and award;", "common people who are good depend on the county magistrate for commendation and praise.", "What is welcomed is Pressure thriving and the Dragon flourishing.", "What is feared is the Self Void and Output moving."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [815, 815],
+          "zh": ["凡占奖荐，各要官爻旺相，青龙得地，大忌世值空亡，子孙发动。"],
+          "yi": ["凡是占嘉奖、荐举，各自都要官爻旺相、青龙得位，最忌世爻落在空亡、子孙发动。"],
+          "en": ["In every divination about award or recommendation, the Pressure line should be thriving and the Azure Dragon in its place, and what is most feared is the Self falling on Void and Output moving."] }
+      ],
+      "note": {
+        "yi": "小标里的「官文」是官爻和文书爻（父母），「财鬼」是财爻和官鬼。「宪台」是上级的监察、巡抚、按察一类官署；「邑宰」是县令；「旌扬」是旌表、褒扬。「奖荐」是荐举嘉奖。诀里的「龙」是青龙。这一章看荐举和奖励两件事：荐举看官和文书，奖励看财和官。",
+        "en": "'Guanwen' in the subtitle is the Pressure line and the document line (Resource), and 'caigui' is Wealth and Pressure. 'Xiantai' is the supervisory offices of higher level such as the censors, governors and provincial judges; 'yizai' is the county magistrate; 'jingyang' is official commendation and praise. 'Jiangjian' is recommendation and award. The 'Dragon' in the verse is the Azure Dragon. The chapter looks at two things, recommendation and award: recommendation looks at the star of office and the document, award at Wealth and the star of office."
+      },
+      "see": ["LY.CAREER.EL.80", "LY.CAREER.EL.84", "LY.CAREER.ZS.20", "LY.CAREER.HJC.02"]
+    },
+    {
+      "id": "LY.CAREER.EL.80",
+      "topic": "贵人",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：臣沐君恩必得岁君生世；欲求恩宠须看五爻为天子、太岁为朝廷，此二象内若得一爻生世或生官便沾天泽，如值空亡恩先莫望从，不值空如来克世伤官原不为福",
+      "rule": {
+        "yi": "臣子蒙受君王的恩典，必须得到岁君（太岁）来生世爻。要求恩宠，要看五爻是天子、太岁是朝廷：这两个象里如果有一个来生世爻或者生官爻，就沾到天子和朝廷所给的恩泽；如果落在空亡，就不要指望得到恩宠；不落空而来克世爻、伤克官爻的，本来就不是福。",
+        "en": "A minister who receives the sovereign's favour must have Tai Sui, the sovereign of the year, generating the Self. To seek favour, look at the fifth line as the Son of Heaven and Tai Sui as the court: if either of these two images generates the Self or generates the star of office, one shares in the grace given by the Son of Heaven and the court; if it falls on Void, do not hope for favour; if it is not Void but comes to control the Self or to hurt the star of office, it was never a blessing."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [816, 816],
+          "zh": ["臣沐君恩，必得岁君生世。"],
+          "yi": ["臣子蒙受君王的恩典，必须得到岁君（太岁）来生世爻。"],
+          "en": ["A minister bathed in the sovereign's favour must have Tai Sui, the sovereign of the year, generating the Self."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [817, 817],
+          "zh": ["欲求恩宠，须看五爻为天子，太岁为朝廷，此二象内若得一爻生世或生官，便沾天泽天子与朝廷之位。", "如值空亡，恩先莫望从，不值空如来克世伤官，原不为福。"],
+          "yi": ["想求得恩宠，要看五爻是天子、太岁是朝廷；这两个象里如果有一个来生世爻或者生官爻，就沾到天子、朝廷的位置所给的恩泽。", "如果落在空亡，就不要指望得到恩宠；不落空而来克世爻、伤克官爻的，本来就不是福。"],
+          "en": ["To seek favour, one must look at the fifth line as the Son of Heaven and Tai Sui as the court; if either of these two images generates the Self or generates the star of office, one shares in the heavenly grace of the positions of the Son of Heaven and the court.", "If it falls on Void, do not hope for favour; if it is not Void but comes to control the Self or hurt the star of office, it was never a blessing."] }
+      ],
+      "note": {
+        "yi": "「五爻为天子」是第五爻代表君王，「太岁为朝廷」是太岁代表朝廷，与黄金策国朝「九五逢阳，当遇仁明之主」（HJC.65）、「太岁为君」（HJC.64）同取。「岁君」就是太岁。「天泽」是上天的恩泽，这里指天子的恩典。「恩先莫望从」文字疑有误，按文意译作「不要指望得到恩宠」。",
+        "en": "'The fifth line is the Son of Heaven' is the fifth line standing for the sovereign, and 'Tai Sui is the court' is Tai Sui standing for the court, taken as in 'the ninth-fifth meeting yang, one meets a benevolent and enlightened sovereign' (HJC.65) and 'Tai Sui is the sovereign' (HJC.64) in the Huangjin Ce on the state. 'Suijun' is Tai Sui. 'Tianze' is the bounty of heaven and here means the favour of the Son of Heaven. 'En xian mo wang cong' looks corrupt in its characters and is translated by the sense as 'do not hope for favour'."
+      },
+      "see": ["LY.CAREER.EL.79", "LY.CAREER.EL.81", "LY.CAREER.HJC.64", "LY.CAREER.HJC.65", "LY.CAREER.HJC.07"]
+    },
+    {
+      "id": "LY.CAREER.EL.81",
+      "topic": "贵人",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：下叨上荐须求外鬼扶身；如占举荐专看外卦官爻，外象如无内官可用、内鬼再空不须谋望，不论内外卦中若有官来生身生世决叨提拔之恩",
+      "rule": {
+        "yi": "下级要承蒙上级的荐举，要求外卦的官鬼来扶持卦身。占荐举，专看外卦的官爻；外卦没有，内卦的官爻也可以用；内卦的官鬼再落空，就不必谋求指望；不论内卦外卦，卦中如果有官爻来生卦身、生世爻，一定承蒙提拔的恩典。",
+        "en": "A subordinate who is to receive a recommendation from above must seek the outer Pressure line to support the Body. In divining for a recommendation, look only at the Pressure line in the outer trigram; if the outer trigram has none, the inner star of office can be used; if the inner Pressure too is Void, there is no need to scheme and hope; whether inner or outer, if the hexagram has a star of office that generates the Body or the Self, one will surely receive the grace of being raised."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [816, 816],
+          "zh": ["下叨上荐，须求外鬼扶身。"],
+          "yi": ["下级承受上级的荐举，要求外卦的官鬼来扶持卦身。"],
+          "en": ["A subordinate receiving a recommendation from above must seek the outer Pressure line to support the Body."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [817, 817],
+          "zh": ["如占举荐，专看外卦官爻。", "外象如无，内官可用，内鬼再空，不须谋望。", "不论内外，卦中若有官来生身生世，决叨提拔之恩。"],
+          "yi": ["如果占荐举，专看外卦的官爻。", "外卦如果没有，内卦的官爻可以用；内卦的官鬼再落空，就不必谋求指望。", "不论内卦外卦，卦中如果有官爻来生卦身、生世爻，一定承蒙提拔的恩典。"],
+          "en": ["If divining for a recommendation, look only at the Pressure line in the outer trigram.", "If the outer image has none, the inner star of office can be used; if the inner Pressure too is Void, there is no need to scheme and hope.", "Whether inner or outer, if the hexagram has a star of office that generates the Body or the Self, one will surely receive the grace of being raised."] }
+      ],
+      "note": {
+        "yi": "「叨」是承受（多用作谦辞）。「外鬼」是外卦的官鬼。这一条与易隐官禄占「官贵旺动生合世目下蒙荐」（YY.17）、黄金策求馆「鬼动合身，须得贵人推荐」（HJC.36）取同一个关系：官鬼来生合世身，有人荐举。",
+        "en": "'Tao' is receiving (mostly used as a modest word). 'Waigui' is the Pressure line of the outer trigram. This entry takes the same relation as 'if the star of office and the Noble are thriving and moving and generate or combine with the Self, one is recommended at once' in the Yi Yin divination on official salary (YY.17) and 'if Pressure moves and combines with the Body, one must have a noble recommend one' in the Huangjin Ce on seeking a school post (HJC.36): Pressure generating or combining with the Self or Body means that someone recommends one."
+      },
+      "see": ["LY.CAREER.EL.80", "LY.CAREER.EL.82", "LY.CAREER.YY.17", "LY.CAREER.HJC.36"]
+    },
+    {
+      "id": "LY.CAREER.EL.82",
+      "topic": "贵人",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：卦有二官六部重推重举、爻无一鬼三司不奖不褒；如得旺官迭见又来生合世爻必得重重之荐，六爻内如无鬼者定无推举之官",
+      "rule": {
+        "yi": "卦里有两个官爻，六部就一再推荐、一再举用；爻里一个官鬼也没有，三司就不奖励也不褒扬。如果旺相的官爻接连出现，又来生合世爻，一定得到一重又一重的荐举；六爻里如果没有官鬼，一定没有推举的官员。",
+        "en": "If the hexagram has two stars of office, the Six Boards recommend and raise one again and again; if the lines have not even one Pressure, the Three Offices neither commend nor praise. If thriving stars of office appear one after another and come to generate or combine with the Self line, one will surely receive recommendation upon recommendation; if there is no Pressure among the six lines, there is surely no official to recommend one."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [816, 816],
+          "zh": ["卦有二官六部，重推重举。", "爻无一鬼三司，不奖不褒。"],
+          "yi": ["卦里有两个官爻，六部就一再推荐、一再举用。", "爻里一个官鬼也没有，三司就不奖励也不褒扬。"],
+          "en": ["If the hexagram has two stars of office, the Six Boards recommend and raise one again and again.", "If the lines have not even one Pressure, the Three Offices neither commend nor praise."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [817, 817],
+          "zh": ["如得旺官迭见又来生合世爻，必得重重之荐。", "六爻内如无鬼者，定无推举之官。"],
+          "yi": ["如果旺相的官爻接连出现，又来生合世爻，一定得到一重又一重的荐举。", "六爻里如果没有官鬼，一定没有推举的官员。"],
+          "en": ["If thriving stars of office appear one after another and come to generate or combine with the Self line, one will surely receive recommendation upon recommendation.", "If there is no Pressure among the six lines, there is surely no official to recommend one."] }
+      ],
+      "note": {
+        "yi": "「六部」是朝廷的吏、户、礼、兵、刑、工六部；「三司」是省一级的布政使司、按察使司、都指挥使司。「卦有二官六部」「爻无一鬼三司」书里没有展开，这里按字面对仗译：有两个官，六部再三推荐；一个官鬼也没有，三司都不奖励。",
+        "en": "'Liubu', the Six Boards, are the Boards of Personnel, Revenue, Rites, War, Justice and Works at court; 'sansi', the Three Offices, are the provincial commissions for administration, for judicial matters and for military command. The book does not unfold 'the hexagram has two stars of office, the Six Boards' and 'the lines have not one Pressure, the Three Offices', and they are translated here literally as a matched pair: with two stars of office the Six Boards recommend again and again; with not one Pressure the Three Offices do not commend."
+      },
+      "see": ["LY.CAREER.EL.81", "LY.CAREER.EL.83", "LY.CAREER.YY.17"]
+    },
+    {
+      "id": "LY.CAREER.EL.83",
+      "topic": "成否",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：推举得官父旺动稳望高迁奖劳、若财鬼衰空虚图给赏；推荐者若得官父两全便为佳兆二中欠一未得稳成，奖励者虽用官爻又宜财旺、财鬼如空定无奖勤给赏之美",
+      "rule": {
+        "yi": "推举时，官爻、父爻旺相发动，稳稳地盼得高升、奖励功劳；如果财爻、官鬼衰弱落空，想谋求赏赐也是白费。具体说：推荐的，官爻、父爻两样齐全才是好兆头，两样缺一，就不能稳稳办成；论奖励的，虽然用官爻，还适宜财爻旺相；财爻、官鬼如果落空，就一定没有奖励勤劳、给予赏赐的美事。",
+        "en": "For a recommendation, if the star of office and Resource are thriving and moving, one can securely hope for high promotion and an award for service; if Wealth and Pressure are weak or Void, to plan for a reward is vain. In detail: for a recommendation, to have both the star of office and Resource is a good omen, and if one of the two is lacking it is not securely accomplished; for an award, though the Pressure line is the one used, Wealth should also be thriving, and if Wealth and Pressure are Void there will surely be no fine thing like an award for diligence and the granting of a reward."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [818, 818],
+          "zh": ["推举得官父旺动，稳望高迁奖劳。", "若财鬼衰空虚图给赏。"],
+          "yi": ["推举时得官爻、父爻旺相发动，稳稳地盼得高升、奖励功劳；", "如果财爻、官鬼衰弱落空，想谋求赏赐也是白费。"],
+          "en": ["For a recommendation, if the star of office and Resource are thriving and moving, one can securely hope for high promotion and an award for service;", "if Wealth and Pressure are weak or Void, to plan for a reward is vain."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [819, 821],
+          "zh": ["推荐者若得官父两全，便为佳兆。", "二中欠一，未得稳成。", "奖动者虽用官爻，又宜财旺。", "财鬼如空，定无奖勤给赏之美也。"],
+          "yi": ["推荐的，如果官爻、父爻两样齐全，就是好兆头。", "两样当中缺一样，就不能稳稳办成。", "论奖励的，虽然用官爻，还适宜财爻旺相。", "财爻、官鬼如果落空，一定没有奖励勤劳、给予赏赐的美事。"],
+          "en": ["For a recommendation, if both the star of office and Resource are present, it is a good omen.", "If one of the two is lacking, it is not securely accomplished.", "For an award, though the Pressure line is the one used, Wealth should also be thriving.", "If Wealth and Pressure are Void, there will surely be no fine thing like an award for diligence and the granting of a reward."] }
+      ],
+      "note": {
+        "yi": "「奖动者」疑是「奖勤者」（后一句有「奖勤给赏」），译作「论奖励的」。「官父」是官爻和父母爻，「财鬼」是财爻和官鬼。「高迁」是高升。小标说推荐看官文、旌奖看财鬼，这一条把两样合起来说：推荐要官父齐，奖励要财官俱旺。",
+        "en": "'Jiang dong zhe' is presumably 'jiang qin zhe', for the next sentence has 'award for diligence and granting of reward', and it is translated 'for an award'. 'Guanfu' is the Pressure line and the Resource line, 'caigui' is Wealth and Pressure. 'Gaoqian' is high promotion. The subtitle said that recommendation looks at the star of office and the document and commendation at Wealth and Pressure, and this entry puts the two together: a recommendation needs both the star of office and Resource, and an award needs Wealth and the star of office both thriving."
+      },
+      "see": ["LY.CAREER.EL.82", "LY.CAREER.EL.84", "LY.CAREER.HJC.05", "LY.CAREER.HJC.18"]
+    },
+    {
+      "id": "LY.CAREER.EL.84",
+      "topic": "动变",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：鬼化子爻荐贤未听、官之财象奖励能从；荐与奖皆以官为主旺者来速衰则来迟，动化子孙虽荐未能听信，财来助鬼奖得如心",
+      "rule": {
+        "yi": "官鬼化成子孙爻，推荐贤能就不被听从；官爻变成财的象，奖励就能被应允。荐举和奖励，都以官爻为主：旺的来得快，衰的来得迟；官爻发动化成子孙，即使有人推荐也不被听信；财爻来帮助官鬼，奖励就能如愿。",
+        "en": "If Pressure changes into an Output line, the recommendation of the worthy is not heeded; if the star of office changes into the Wealth image, the award can be granted. Both recommendation and award take the star of office as the chief: if it is thriving it comes quickly, if weak it comes late; if it moves and changes into Output, even if one is recommended it is not heeded and believed; if Wealth comes to aid Pressure, the award is obtained as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [822, 822],
+          "zh": ["鬼化子爻荐贤未听。", "官之财象，奖励能从。"],
+          "yi": ["官鬼化成子孙爻，推荐贤能就不被听从。", "官爻变成财的象，奖励就能被应允。"],
+          "en": ["If Pressure changes into an Output line, the recommendation of the worthy is not heeded.", "If the star of office changes into the Wealth image, the award can be granted."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [823, 823],
+          "zh": ["荐与奖，皆以官为主，旺者来速，衰则来迟。", "动化子孙，虽荐未能听信。", "财来助鬼，奖得如心。"],
+          "yi": ["荐举和奖励，都以官爻为主：旺的来得快，衰的来得迟。", "官爻发动化成子孙，即使有人推荐也不被听信。", "财爻来帮助官鬼，奖励就能如愿。"],
+          "en": ["Both recommendation and award take the star of office as the chief: if it is thriving it comes quickly, if weak it comes late.", "If it moves and changes into Output, even if one is recommended it is not heeded and believed.", "If Wealth comes to aid Pressure, the award is obtained as one wishes."] }
+      ],
+      "note": {
+        "yi": "「荐贤」是荐举贤能。这一条与前面仕宦升迁「官化子孙非降即调」「官若化财平升品级」（EL.56）取同一个关系，这里换到荐举、奖励上：官变子孙是失，官变财是得。",
+        "en": "'Jianxian' is recommending the worthy. This entry takes the same relation as 'if Pressure changes into Output it is demotion or transfer' and 'if Pressure changes into Wealth, a level promotion' (EL.56) in the earlier chapter on official promotion, here moved to recommendation and award: Pressure changing into Output is a loss and Pressure changing into Wealth is a gain."
+      },
+      "see": ["LY.CAREER.EL.83", "LY.CAREER.EL.85", "LY.CAREER.EL.56", "LY.CAREER.YY.17"]
+    },
+    {
+      "id": "LY.CAREER.EL.85",
+      "topic": "应期",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：如卜官凭但愿文书逢旺气、若占到日远寻父母遇生方；又附占文凭到日须看父母之爻候临生临旺之期此凭决到，卦无父须待父爻值日方得凭来，父若衰而又空纵然等候而未至",
+      "rule": {
+        "yi": "占官凭（官员的委任凭据），只要文书爻逢上旺相的气；占凭据哪一天到，要远远去找父母爻遇上生它的时候。另外附带占文凭到的日子，要看父母爻，等它临到生、旺的时候，这份凭据一定到；卦里没有父爻，要等到父爻当值的日子，凭据才会来；父爻如果衰弱又落空，即使等候，凭据也还没有到。",
+        "en": "To divine about the official credentials, the document line need only meet a thriving qi; to divine on what day they arrive, look far for Resource meeting the time that generates it. Also appended: for the day the credentials arrive, look at the Resource line and wait for the time when it meets generation or thriving, and the credentials will surely arrive; if there is no Resource in the hexagram, one must wait for the day when the Resource line is on duty, and only then will the credentials come; if Resource is weak and also Void, even if one waits the credentials have not arrived."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [824, 824],
+          "zh": ["如卜官凭，但原文书逢旺气。", "若占到日，远寻父母遇生方。"],
+          "yi": ["如果卜官凭（委任的凭据），只要文书爻逢上旺相的气。", "如果占凭据哪一天到，要远远去找父母爻遇上生它的时候。"],
+          "en": ["To divine about the official credentials, the document line need only meet a thriving qi.", "To divine on what day they arrive, look far for Resource meeting the time that generates it."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [825, 825],
+          "zh": ["又附占文凭到日，须看父母之爻，候临生临旺之期，此凭决到卦无父，须待父爻值日，方得凭来。", "父若衰而又空，纵然等候而未至。"],
+          "yi": ["又附带占文凭哪一天到，要看父母爻，等它临到生、旺的时候，这份凭据一定到；卦里没有父爻，要等到父爻当值的日子，凭据才会来。", "父爻如果衰弱又落空，即使等候，凭据也还没有到。"],
+          "en": ["Also appended: for the day the credentials arrive, look at the Resource line and wait for the time when it meets generation or thriving, and the credentials will surely arrive; if there is no Resource in the hexagram, one must wait for the day when the Resource line is on duty, and only then will the credentials come.", "If Resource is weak and also Void, even if one waits the credentials have not arrived."] }
+      ],
+      "note": {
+        "yi": "「官凭」是官员到任的凭证（委任文凭）。「但原文书」的「原」疑是「愿」，译作「只要文书逢旺气」，不论怎么读，要的都是文书爻旺相。解里「此凭决到卦无父」书里没有断句，这里按文意断作「此凭决到；卦无父，须待父爻值日，方得凭来」。「值日」与求馆章「卦中无父，但逢值日方在」（EL.54）同，书里没有说按什么取。这一条与易隐官禄占「领凭」（YY.10）取同一类法：都以父母爻（文书）为用，看它的生旺和当值之日。",
+        "en": "'Guanping' is the credentials with which an official takes up his post (the letter of appointment). The 'yuan' of 'dan yuan wenshu' is presumably 'yuan', to wish, and it is translated 'the document line need only meet a thriving qi'; whichever way it is read, what is wanted is the document line thriving. In the explanation 'ci ping jue dao gua wu fu' has no punctuation in the book, and it is broken here by the sense as 'the credentials will surely arrive; if there is no Resource in the hexagram, one must wait for the day when Resource is on duty, and then the credentials will come'. 'Zhiri', the duty day, is the same as in 'if there is no Resource in the hexagram, it is present only when its duty day comes' in the chapter on seeking a school post (EL.54), and the book does not say by what it is reckoned. This entry takes the same kind of method as the 'receiving the credentials' section of the Yi Yin divination on official salary (YY.10): in both, Resource (the document) is the Subject and its thriving and its duty day are looked at."
+      },
+      "see": ["LY.CAREER.EL.84", "LY.CAREER.EL.86", "LY.CAREER.EL.54", "LY.CAREER.YY.10"]
+    },
+    {
+      "id": "LY.CAREER.EL.86",
+      "topic": "成否",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：欲求坊扁方光辉必藉官爻之旺相，世空绝望、子动难谋、财动还须嘱托、鬼空不必祈求；凡求牌坊扁额光辉门闾先看官爻次推世象二者若有一空始终绝望，子孙动亦不能求，财动生官谋为遂意",
+      "rule": {
+        "yi": "想求得牌坊、匾额来光耀门庭，必须凭官爻旺相。世爻落空就绝望，子孙发动就难谋求，财爻发动还要托人嘱托，官鬼落空就不必祈求了。凡是求牌坊、匾额来光耀门庭的，先看官爻，再推世爻；这两个只要有一个落空，始终没有指望；子孙发动，也求不到；财爻发动去生官爻，谋求就遂心如意。",
+        "en": "To seek an honorific archway or plaque that will bring glory to one's door, one must rely on the Pressure line being thriving. If the Self is Void there is no hope, if Output moves it is hard to arrange, if Wealth moves one must still entrust the matter to someone, and if Pressure is Void there is no need to pray for it. In every seeking of an archway or plaque to bring glory to one's gate, look first at the Pressure line and then reckon the Self image; if either of the two is Void, there is no hope to the end; if Output moves, it cannot be obtained either; if Wealth moves to generate the star of office, the scheming turns out as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [826, 826],
+          "zh": ["欲求坊扁方光辉，必藉官爻之旺相。", "世空绝望。", "子动难谋，", "财动还须嘱托，", "鬼空不必祈求，"],
+          "yi": ["想求得牌坊、匾额才光耀门庭，必须凭官爻旺相。", "世爻落空，就绝望了。", "子孙发动，就难以谋求；", "财爻发动，还要托人嘱托；", "官鬼落空，就不必祈求了。"],
+          "en": ["To seek an archway or plaque that will bring glory to one's door, one must rely on the Pressure line being thriving.", "If the Self is Void there is no hope.", "If Output moves it is hard to arrange;", "if Wealth moves one must still entrust the matter to someone;", "if Pressure is Void there is no need to pray for it."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [827, 827],
+          "zh": ["凡求牌坊扁额光辉门闾，先看官爻，次推世象，二者若有一空，始终绝望。", "子孙动，亦不能求。", "财动生官，谋为遂意。"],
+          "yi": ["凡是求牌坊、匾额来光耀门庭的，先看官爻，再推世爻；这两个如果有一个落空，始终没有指望。", "子孙发动，也求不到。", "财爻发动去生官爻，谋求就遂心如意。"],
+          "en": ["In every seeking of an archway or plaque to bring glory to one's gate, look first at the Pressure line and then reckon the Self image; if either of the two is Void, there is no hope to the end.", "If Output moves, it cannot be obtained either.", "If Wealth moves to generate the star of office, the scheming turns out as one wishes."] }
+      ],
+      "note": {
+        "yi": "「坊扁」是牌坊和匾额，「光辉门闾」是光耀门庭；官府给牌坊匾额是一种表彰，所以看官爻。「嘱托」是托人关照。诀里「财动还须嘱托」和解里「财动生官，谋为遂意」并不冲突：财动生官是成事的路子，但事要有人去办。",
+        "en": "'Fangbian' are the honorific archway and the plaque, and 'guanghui menlü' is bringing glory to one's gate; an archway or plaque given by the authorities is a kind of commendation, so the Pressure line is looked at. 'Zhutuo' is entrusting a matter to someone. The verse's 'if Wealth moves one must still entrust the matter to someone' and the explanation's 'if Wealth moves to generate the star of office, the scheming turns out as one wishes' do not clash: Wealth moving to generate the star of office is the road by which the matter is done, but someone must be sent to see to it."
+      },
+      "see": ["LY.CAREER.EL.85", "LY.CAREER.EL.87", "LY.CAREER.HJC.02"]
+    },
+    {
+      "id": "LY.CAREER.EL.87",
+      "topic": "成否",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖：六合则心怀喜悦、六冲则面染忧愁；如求扎帖又看文书反嫌财动，父鬼财空允能给发，不拘扁贴皆忌六冲",
+      "rule": {
+        "yi": "六合的卦，心里喜悦；六冲的卦，脸上带着忧愁。如果求扎帖（官府的帖文），又要看文书爻，反而嫌财爻发动；父爻、官鬼在而财爻落空，就准许发给；不论匾额还是帖文，都忌讳六冲。",
+        "en": "With a six-combine the heart is glad; with a six-clash the face is clouded with sorrow. If one seeks an official warrant, look also at the document line, and on the contrary dislike Wealth moving; with Resource and Pressure present and Wealth Void, it is allowed and can be issued; whether plaque or warrant, a six-clash is feared in all."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [826, 826],
+          "zh": ["六合则心怀喜悦，", "六冲则面染忧愁。"],
+          "yi": ["卦是六合，心里喜悦；", "卦是六冲，脸上带着忧愁。"],
+          "en": ["With a six-combine the heart is glad;", "with a six-clash the face is clouded with sorrow."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [827, 827],
+          "zh": ["如求扎帖，又看文书，反嫌财动。", "父鬼财空，允能给发。", "不拘扁贴皆忌六冲。"],
+          "yi": ["如果求扎帖（官府的帖文），又要看文书爻，反而嫌财爻发动。", "父爻、官鬼在而财爻落空，就准许发给。", "不论匾额还是帖文，都忌讳六冲。"],
+          "en": ["If one seeks an official warrant, look also at the document line, and on the contrary dislike Wealth moving.", "With Resource and Pressure present and Wealth Void, it is allowed and can be issued.", "Whether plaque or warrant, a six-clash is feared in all."] }
+      ],
+      "note": {
+        "yi": "「扎帖」是官府发给的帖文（札帖），求的是一张批准的文书，所以看文书爻；文书爻怕财克，所以反嫌财动。「父鬼财空」书里连写，按上一句「反嫌财动」读作父、鬼在而财空；若读成三样都空，就与「允能给发」不合。「扁贴」是匾额和帖文。",
+        "en": "'Zhatie' is a written warrant issued by the authorities (a 'zhatie' of the yamen); what is sought is an approving document, so the document line is looked at, and the document line fears being controlled by Wealth, which is why Wealth moving is disliked. 'Fu gui cai kong' is written run together in the book and is read, after the previous sentence's 'on the contrary dislike Wealth moving', as Resource and Pressure present and Wealth Void; if it were read as all three Void it would not agree with 'it is allowed and can be issued'. 'Bian tie' is the plaque and the warrant."
+      },
+      "see": ["LY.CAREER.EL.86", "LY.CAREER.EL.88", "LY.CAREER.HJC.40"]
+    },
+    {
+      "id": "LY.CAREER.EL.88",
+      "topic": "总则",
+      "chapter": "官员荐奖章第三十三",
+      "chapter_en": "Chapter 33: Recommendation and commendation of officials",
+      "title": "官员荐奖结语：上察官情之喜怒皆由四象之兴衰，下推人事之亲疏不出两仪之变化",
+      "rule": {
+        "yi": "往上察看官府的喜怒，全由四象的兴衰决定；往下推究人事的亲疏，不出两仪的变化。",
+        "en": "Observing above the pleasure or anger of the officials all depends on the rise and fall of the four images; reckoning below the closeness or distance of human affairs does not go beyond the changes of the two modes."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [828, 828],
+          "zh": ["上察官情之喜怒，皆由四象之兴衰。", "下推人事之亲疏，不出两仪之变化。"],
+          "yi": ["向上察看官府的喜怒，全由四象的兴衰决定。", "向下推究人事的亲疏，不会超出两仪的变化。"],
+          "en": ["Observing above the pleasure or anger of the officials, it all depends on the rise and fall of the four images.", "Reckoning below the closeness or distance in human affairs, it does not go beyond the changes of the two modes."] }
+      ],
+      "note": {
+        "yi": "这是官员荐奖章的结语，后面没有解说。「四象」「两仪」书里没有说指的是什么，这里只按字面译，不加解释。",
+        "en": "This is the closing couplet of the chapter on the recommendation and commendation of officials, and the book gives no explanation after it. The book does not say what the 'four images' and the 'two modes' are, and they are translated literally here without comment."
+      },
+      "see": ["LY.CAREER.EL.87", "LY.CAREER.EL.79"]
+    }
+  ]
+}

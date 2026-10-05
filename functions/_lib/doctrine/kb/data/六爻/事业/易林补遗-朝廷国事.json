@@ -1,0 +1,344 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "朝廷国事章第四",
+  "chapter_en": "Chapter 4: Affairs of the court and state",
+  "ranges": {"易林补遗": [278, 316]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.01",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事总纲：以世爻为主、应象为佐，六合子旺为吉、六冲杀动为凶；国泰民安全资文武匡襄；欲知宗社安危须审易爻而较量",
+      "rule": {
+        "yi": "占朝廷国事，以世爻为主，应爻为辅；六合、子孙旺相的是吉，六冲、凶煞发动的是凶。国家太平、百姓安宁，靠文臣武将的匡正辅佐；想知道宗庙社稷的安危，须要审察易爻来衡量。",
+        "en": "In divining the affairs of the court and state, take the Self as the chief and the Other image as the aid; a six-combine and a thriving Output are auspicious, a six-clash and a moving baleful spirit are ominous. A state at peace and a people secure depend on the correction and aid of civil and military ministers; to know the safety or danger of the ancestral temple and altars, one must examine the lines of the Yi and weigh them."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [280, 280],
+          "zh": ["以世爻为主，应象为佐，六合子旺为吉，六冲杀动为凶。"],
+          "yi": ["以世爻为主，应象为佐，六合、子孙旺为吉，六冲、杀动为凶。"],
+          "en": ["Take the Self as the chief and the Other image as the aid; a six-combine and a thriving Output are auspicious, a six-clash and a moving baleful spirit are ominous."] },
+        { "by": "经", "book": "易林补遗", "range": [281, 281],
+          "zh": ["国泰民安，共际唐虞之化育，", "河清海晏，全资文武之匡襄。"],
+          "yi": ["国家太平、百姓安宁，正逢唐尧虞舜那样的教化；", "黄河水清、海面平静，全靠文臣武将的匡正辅佐。"],
+          "en": ["The state at peace and the people secure, meeting the transforming influence of Tang and Yu;", "the Yellow River clear and the sea calm, all depend on the aid and correction of civil and military ministers."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [282, 282],
+          "zh": ["云国之宁靖，民之太平，幸生尧舜之世，沾其化育。", "而黄河澄清，海波宁息，皆藉文臣武将之力匡扶而致冶也。"],
+          "yi": ["说的是国家安宁、百姓太平，有幸生在尧舜那样的时代，沾受他们的教化。", "而黄河水清、海浪平息，都是借文臣武将的力量匡正扶持，才达到治理。"],
+          "en": ["It means that the state is calm and the people at peace, and that one is fortunate to be born in the age of Yao and Shun and to share in their transforming influence.", "And that the Yellow River runs clear and the waves of the sea are still is all through the strength of civil and military ministers who correct and support, and so bring about good government."] },
+        { "by": "经", "book": "易林补遗", "range": [283, 283],
+          "zh": ["欲知宗社之安危，须审易爻而较量。"],
+          "yi": ["想知道宗庙社稷的安危，须要审察易爻来衡量。"],
+          "en": ["To know the safety or danger of the ancestral temple and altars, one must examine the lines of the Yi and weigh them."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [284, 284],
+          "zh": ["宗社乃宗庙社稷六朝延治则安，乱则危，审析易理爻辞，而可剖决吉凶也。"],
+          "yi": ["宗社就是宗庙社稷：国家（历朝）延续得治理好就安稳，混乱就危险；审察剖析易理爻辞，就能判断吉凶。"],
+          "en": ["'Zongshe' is the ancestral temple and altars of grain and soil: if the dynasty continues well governed it is secure, and if in disorder it is in danger; by examining and analysing the principles and line texts of the Yi, one can decide good and ill."] }
+      ],
+      "note": {
+        "yi": "小标是这一章的取法：世爻为主、应爻为辅。第二、三句的「冶」应是「治」（第二条解里写作「而致冶也」），译文按「治」译。「宗社乃宗庙社稷六朝延治则安」的「六朝」文意不顺，疑是「历朝」之误，译文按「历朝」译。「六合子旺」「六冲杀动」里的六合、六冲指卦的六合、六冲（见术语表）。",
+        "en": "The subtitle gives the method of the chapter: the Self as chief, the Other as aid. In the explanation the 'ye' of 'zhi zhi ye' is presumably 'zhi', to govern, and the translation reads 'govern'. 'Liu chao yan zhi ze an' in the explanation of 'zongshe' does not run smoothly, and 'liu chao' is presumably a miswriting of 'li chao', successive dynasties, and the translation reads it so. 'Six-combine' and 'six-clash' in the subtitle are the hexagram patterns (see the glossary)."
+      },
+      "see": ["LY.CAREER.EL.02", "LY.CAREER.YY.31", "LY.CAREER.HJC.63", "LY.CAREER.HJC.64"]
+    },
+    {
+      "id": "LY.CAREER.EL.02",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：亲宫为邦国大忌空亡、本卦作朝堂最宜旺相；本卦是所占之卦名、亲宫是本宫之卦，皆宜旺相兴隆，大忌空亡墓绝",
+      "rule": {
+        "yi": "亲宫（本宫）当作邦国，最忌空亡；本卦当作朝堂，最适宜旺相。本卦是所占得的那一卦的卦名，亲宫是本宫之卦，所以都当作邦国、朝堂，都适宜旺相兴隆，最忌空亡、墓、绝。",
+        "en": "The home palace is taken as the state, and Void is most to be avoided; the original hexagram is taken as the court hall, and thriving is best. The original hexagram is the name of the hexagram cast, and the home palace is the hexagram of the palace to which it belongs; so both are taken as the state and the court, both should be thriving and flourishing, and Void, tomb and extinction are most to be avoided."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [285, 285],
+          "zh": ["亲宫为邦国，大忌空亡；", "本卦作朝堂，最宜旺相。"],
+          "yi": ["亲宫（本宫）当作邦国，最忌空亡；", "本卦当作朝堂，最适宜旺相。"],
+          "en": ["The home palace is taken as the state, and Void is most to be avoided;", "the original hexagram is taken as the court hall, and thriving is best."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [286, 286],
+          "zh": ["本卦者，乃所占之卦名，亲宫者，乃本宫之卦也，故为邦国朝堂，皆宜旺相兴隆；", "大忌空亡墓绝。"],
+          "yi": ["本卦是所占得的那一卦的卦名，亲宫是本宫之卦，所以（它们）当作邦国、朝堂，都适宜旺相兴隆；", "最忌空亡、墓、绝。"],
+          "en": ["The original hexagram is the name of the hexagram cast, and the home palace is the hexagram of the palace to which it belongs; so they are taken as the state and the court, and both should be thriving and flourishing;", "Void, tomb and extinction are most to be avoided."] }
+      ],
+      "note": {
+        "yi": "「亲宫」书里的解释是「本宫之卦」，即占得的卦所属的那一宫（八宫之一）；这一章里的「亲宫」「本宫」是同一个意思。「旺相」是这一宫（的五行）当令得气。与易隐朝廷占「世爻所居之卦为国」（YY.32）是两种取法：易隐取世爻所在的那一个单卦，这里取整个本宫和整个本卦。",
+        "en": "'Qingong' is explained in the book as 'the hexagram of the home palace', that is the palace of the eight to which the hexagram cast belongs; in this chapter 'qingong' and 'home palace' mean the same. 'Thriving' means that the element of this palace is in season and has qi. This is a different way of taking it from the 'trigram in which the Self sits is the state' of the Yi Yin court divination (YY.32): the Yi Yin takes the one trigram holding the Self, and this takes the whole home palace and the whole original hexagram."
+      },
+      "see": ["LY.CAREER.EL.01", "LY.CAREER.EL.03", "LY.CAREER.YY.32"]
+    },
+    {
+      "id": "LY.CAREER.EL.03",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：初爻属黎元吉曜当权培国本，二爻为士子文昌得令焕文章",
+      "rule": {
+        "yi": "初爻是百姓，吉星当权就能培固国家的根本；二爻是士人，文昌得令，文章就焕发光彩。初爻的百姓是国家的根本，喜欢临吉星；二爻的士人属文明，喜欢值文昌。",
+        "en": "The first line is the common people; if an auspicious star holds power, the root of the state is nurtured. The second line is the scholars; if Wenchang is in season, their writings shine. The people of the first line are the root of the state and like to sit on an auspicious star; the scholars of the second line belong to civilization and like to meet Wenchang."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [288, 288],
+          "zh": ["初属黎元，吉曜当权培国本；", "二为士子，文昌得令焕文章。"],
+          "yi": ["初爻属于百姓，吉星当权，就能培固国家的根本；", "二爻是士人，文昌得令，文章就焕发光彩。"],
+          "en": ["The first line belongs to the common people; if an auspicious star holds power, it nurtures the root of the state;", "the second line is the scholars; if Wenchang is in season, their writings shine."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [289, 289],
+          "zh": ["初民为邦本，欣临吉曜，二士属文明，喜值文昌。"],
+          "yi": ["初爻的百姓是国家的根本，喜欢临吉星；二爻的士人属文明，喜欢值文昌。"],
+          "en": ["The common people of the first line are the root of the state and like to sit on an auspicious star; the scholars of the second line belong to civilization and like to meet Wenchang."] }
+      ],
+      "note": {
+        "yi": "初爻为民、二爻为士，与易隐朝廷占的分配（初民、二士，YY.31）相同。文昌是一颗主文运的神煞。",
+        "en": "The first line as the people and the second as the scholars is the same assignment as in the Yi Yin court divination (the first the people, the second the scholars, YY.31). Wenchang is a spirit-star of literary fortune."
+      },
+      "see": ["LY.CAREER.EL.02", "LY.CAREER.EL.04", "LY.CAREER.YY.31", "LY.CAREER.YY.43"]
+    },
+    {
+      "id": "LY.CAREER.EL.04",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：喜聚三垣——天喜值二爻则守令贤能如龚遂；贵临四位——贵人星临四爻则卿相公侯政绩过郭子仪",
+      "rule": {
+        "yi": "喜神聚在三垣，郡守县令的贤能可比渤海的龚遂：喜，就是天喜，如果值在二爻，郡守、县令的贤能就和汉代的龚遂一样，龚遂做渤海太守时，教化百姓卖掉刀剑去买耕牛。贵人临在四爻，公侯的功绩超过汾阳王：贵，就是贵人星，如果临在四爻，卿相公侯的政绩就超过唐代的郭子仪，他以文武全才辅佐肃宗收复西京，立下中兴的伟绩，受封汾阳王。",
+        "en": "If Joy gathers at the Three Enclosures, the worth of prefects and magistrates equals Gong Sui of Bohai: 'Joy' is the Heavenly Joy, and if it sits on the second line the ability of prefects and magistrates is like that of Gong Sui of Han, who as prefect of Bohai taught the people to sell their swords and buy oxen. If the Noble sits on the fourth line, the achievements of dukes and marquises surpass the Prince of Fenyang: 'the Noble' is the Noble star, and if it sits on the fourth line the governing record of ministers and marquises exceeds that of Guo Ziyi of the Tang, who with his gifts in both letters and arms helped Emperor Suzong recover the western capital, achieved the great work of the restoration, and was enfeoffed Prince of Fenyang."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [290, 290],
+          "zh": ["喜聚三垣，守令贤齐于渤海。"],
+          "yi": ["喜神聚在三垣，郡守县令的贤能可比渤海（的龚遂）。"],
+          "en": ["If Joy gathers at the Three Enclosures, the worth of prefects and magistrates equals that of Gong Sui of Bohai."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [291, 291],
+          "zh": ["喜者，天喜是也，若值二爻，则固守邑令贤能同于汉之龚遂也。", "昔龚为渤海太守，化民卖刀买牛故云。"],
+          "yi": ["喜，就是天喜；如果值在二爻，郡守、县令的贤能就和汉代的龚遂一样。", "从前龚遂做渤海太守，教化百姓卖掉刀剑去买耕牛，所以这样说。"],
+          "en": ["'Joy' is the Heavenly Joy; if it sits on the second line, the ability of prefects and magistrates is like that of Gong Sui of Han.", "Formerly Gong Sui as prefect of Bohai taught the people to sell their swords and buy oxen, and that is why it is said so."] },
+        { "by": "经", "book": "易林补遗", "range": [292, 292],
+          "zh": ["贵临四位，公侯绩迈于汾阳。"],
+          "yi": ["贵人临在四爻，公侯的功绩超过汾阳（郭子仪）。"],
+          "en": ["If the Noble sits on the fourth line, the achievements of dukes and marquises surpass the Prince of Fenyang (Guo Ziyi)."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [293, 293],
+          "zh": ["贵者，贵人星也，若临四爻，则卿相公侯之政绩过子唐之郭令公子仪，郭以文武全才辅佐肃宗克复西京，中兴伟绩，赐爵汾阳王故云。"],
+          "yi": ["贵，就是贵人星；如果临在四爻，卿相公侯的政绩就超过唐代的郭令公子仪；郭子仪以文武全才辅佐肃宗收复西京，立下中兴的伟绩，受封汾阳王，所以这样说。"],
+          "en": ["'The Noble' is the Noble star; if it sits on the fourth line, the governing record of ministers and marquises exceeds that of the Tang Duke Guo Ziyi, who with his gifts in both letters and arms helped Emperor Suzong recover the western capital, achieved the great work of the restoration, and was enfeoffed Prince of Fenyang, and that is why it is said so."] }
+      ],
+      "note": {
+        "yi": "「三垣」是紫微垣、太微垣、天市垣三个星区；这一联只说「喜聚三垣」，解里只解释了喜是天喜、值二爻，没有再解释三垣，译文照字面。「固守邑令」疑是「郡守邑令」之误，译文按「郡守、县令」译；「过子唐之郭令公子仪」疑是「过于唐之郭令公子仪」，译文按此译。龚遂是汉宣帝时的渤海太守，郭子仪是唐代名将、封汾阳王，这两个典故书里自己写了出来。",
+        "en": "'The Three Enclosures' are the three star regions Ziwei, Taiwei and Tianshi; the couplet says only 'Joy gathers at the Three Enclosures', and the explanation only explains that Joy is Heavenly Joy sitting on the second line, and does not explain the Three Enclosures further; the translation follows the letter. 'Gu shou yi ling' is presumably a miswriting of 'jun shou yi ling', and the translation reads 'prefects and magistrates'; 'guo zi Tang zhi Guo ling gong Ziyi' is presumably 'guo yu Tang zhi Guo ling gong Ziyi', surpassing the Tang Duke Guo Ziyi, and is translated so. Gong Sui was prefect of Bohai under Emperor Xuan of the Han, and Guo Ziyi was a famous Tang general enfeoffed Prince of Fenyang; the book writes out both allusions itself."
+      },
+      "see": ["LY.CAREER.EL.03", "LY.CAREER.EL.05", "LY.CAREER.HJC.65"]
+    },
+    {
+      "id": "LY.CAREER.EL.05",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：福德司权则君子进小人退（福德即子孙，用爻值之正人在位邪佞潜踪）；青龙当道则干戈偃息文教丕兴",
+      "rule": {
+        "yi": "福德（子孙）当权，君子被进用、小人退下：福德就是子孙，用爻值在子孙上，正直的人在位，邪佞的人隐藏踪迹。青龙当道，战事止息，文教大兴。",
+        "en": "If Fortune Virtue holds power, gentlemen advance and petty men retire: Fortune Virtue is Output, and if the Subject line sits on it, upright men are in office and the crafty and flattering hide their traces. If the Azure Dragon holds the road, arms are laid down and culture and teaching flourish."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [294, 294],
+          "zh": ["福德司权，君子进而小人退。"],
+          "yi": ["福德当权，君子进用、小人退下。"],
+          "en": ["If Fortune Virtue, that is Output, holds power, gentlemen advance and petty men retire."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [295, 295],
+          "zh": ["福德者，即子孙，用爻值之则正人在位，邪佞潜踪。"],
+          "yi": ["福德就是子孙，用爻值在它上面，正直的人在位，邪佞的人隐藏踪迹。"],
+          "en": ["Fortune Virtue is Output; if the Subject line sits on it, upright men are in office and the crafty and flattering hide their traces."] },
+        { "by": "经", "book": "易林补遗", "range": [296, 296],
+          "zh": ["青龙当道，干戈偃息文教丕兴。"],
+          "yi": ["青龙当道，战事止息，文教大兴。"],
+          "en": ["If the Azure Dragon holds the road, arms are laid down and culture and teaching flourish."] }
+      ],
+      "note": {
+        "yi": "「干戈偃息」是兵器收起、战事停止；「丕兴」是大兴。这一联后面书里没有解说。",
+        "en": "'Gan ge yan xi' is weapons put away and war stopped; 'pi xing' is flourishing greatly. The book gives no explanation after this couplet."
+      },
+      "see": ["LY.CAREER.EL.04", "LY.CAREER.EL.06", "LY.CAREER.YY.39"]
+    },
+    {
+      "id": "LY.CAREER.EL.06",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：圣主躬占以世爻安帝座，臣民间卜以五爻为天子",
+      "rule": {
+        "yi": "君主自己占，用世爻来安放帝座；臣民代占，还是用五爻来定君王。当今皇帝亲自占的，以世爻安帝座；臣民推占的，仍以五爻为天子；各有各的道理，断然不会出错。",
+        "en": "When the sovereign divines for himself, set the throne by the Self line; when ministers and commoners divine on his behalf, fix the ruler by the fifth line. When the present emperor divines in person, the throne is set by the Self; when ministers and commoners divine for him, the fifth line is still taken as the Son of Heaven; each has its principle, and there will surely be no error."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [297, 297],
+          "zh": ["圣主躬占，当以世爻安帝座；", "臣民间卜，还将五位定君王。"],
+          "yi": ["圣明的君主亲自占，当以世爻安放帝座；", "臣民代占，还是用五爻来定君王。"],
+          "en": ["When the wise sovereign divines in person, the throne is set by the Self line;", "when ministers and commoners divine on his behalf, the ruler is still fixed by the fifth line."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [298, 298],
+          "zh": ["云当今躬卜者，当以世爻而安帝座。", "臣庶推占，仍以五爻而为天子，各得具理断无外误。"],
+          "yi": ["说的是当今亲自占卜的，当以世爻来安放帝座。", "臣民推占的，仍以五爻为天子，各有各的道理，断然不会出错。"],
+          "en": ["It means that one who in the present age divines in person should set the throne by the Self line.", "Ministers and commoners who divine on his behalf still take the fifth line as the Son of Heaven; each has its principle, and there will surely be no error."] }
+      ],
+      "note": {
+        "yi": "这一条与易隐朝廷占总述（YY.31）的「主上自占以世爻为用，臣庶代卜以五爻为用」完全一致。「间卜」的「间」字义不明，疑是「闻」或「代」，译文按「代占」译。",
+        "en": "This entry agrees exactly with the Yi Yin court overview (YY.31): 'when the sovereign divines himself, take the Self as the Subject; when ministers and commoners divine on his behalf, take the fifth line as the Subject'. The character 'jian' in 'jian bu' is unclear and is presumably 'wen' or 'dai', and the translation reads 'divine on his behalf'."
+      },
+      "see": ["LY.CAREER.EL.05", "LY.CAREER.EL.07", "LY.CAREER.YY.31", "LY.CAREER.HJC.64"]
+    },
+    {
+      "id": "LY.CAREER.EL.07",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：不临克害刑冲则升平四海、值生扶拱合则玉帛万方（用爻不犯克害刑冲决主四海承平万民乐业，卦内相生相合若拱若扶则殊方绝域皆来朝贡）",
+      "rule": {
+        "yi": "用爻不遇克、害、刑、冲，天下升平；遇到生、扶、拱、合，四方都来献玉帛。克害刑冲各有另章的起例；用爻不犯这些的，必定是四海承平、万民乐业；卦内相生相合、有拱有扶的，连远方绝域也都来朝贡。",
+        "en": "If the Subject line does not meet control, harm, punishment or clash, the realm is in peace; if it meets generation, support, flanking or combination, all quarters bring jade and silk. The rules for control, harm, punishment and clash are set out in other chapters; if the Subject line is not hit by them, the four seas are at peace and the people content in their work; if within the hexagram there is generation and combination, flanking and support, even distant lands and remote regions come to pay tribute."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [299, 299],
+          "zh": ["不临克害刑冲，升平四海。", "如值生扶拱合，玉帛万方。"],
+          "yi": ["用爻不遇克、害、刑、冲，天下升平；", "如果遇到生、扶、拱、合，四方都来献玉帛。"],
+          "en": ["If the Subject line does not meet control, harm, punishment or clash, the realm is in peace;", "if it meets generation, support, flanking or combination, all quarters bring jade and silk."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [300, 300],
+          "zh": ["克害刑冲，别章各有起例，若用爻不犯者，决主四海承平，万民乐业。", "卦内相生相合，若拱若扶者，则殊方绝域皆来朝贡也。"],
+          "yi": ["克、害、刑、冲，别的章里各有起例；如果用爻没有犯这些，必定是四海承平、万民乐业。", "卦内相生相合，有拱有扶的，远方绝域都来朝贡。"],
+          "en": ["Control, harm, punishment and clash each have their rules in other chapters; if the Subject line is not hit by them, the four seas are surely at peace and the people content in their work.", "If within the hexagram there is generation and combination, flanking and support, distant lands and remote regions all come to pay tribute."] }
+      ],
+      "note": {
+        "yi": "「拱」是两个爻夹着另一个爻（拱夹）。「玉帛」是诸侯朝会的礼物。「用爻」是这一联里没有写出、解里补出的主语。",
+        "en": "'Gong', flanking, is two lines holding another between them. 'Jade and silk' are the gifts of the feudal lords at a court assembly. The subject, the Subject line, is not written in the couplet and is supplied by the explanation."
+      },
+      "see": ["LY.CAREER.EL.06", "LY.CAREER.EL.08", "LY.CAREER.HJC.63"]
+    },
+    {
+      "id": "LY.CAREER.EL.08",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：宗庙管上爻安静则邦家巩固（比和安静则皇图如磐石）；岁星（太岁）关世旺相则国祚绵长",
+      "rule": {
+        "yi": "宗庙由上爻掌管：上爻安静，国家就稳固。宗庙专管社稷，得到比和、安静，国家的版图就像磐石一样安稳。岁星（太岁）关系到世爻、光芒旺相的，国祚就绵长：岁星就是太岁，关系到治乱，光芒旺相；如果这样，国祚就久远无疆。",
+        "en": "The ancestral temple is governed by the top line: if it is still, the state is firm. The ancestral temple governs the altars of the state alone, and if it is in harmony and still, the realm is as secure as a rock. If the Year Star (Tai Sui) is linked with the Self and shines thriving, the dynasty's span is long: the Year Star is Tai Sui, it bears on order and disorder and shines thriving; if so, the dynasty lasts long without limit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [301, 301],
+          "zh": ["宗庙管上爻，安静，则邦家巩固。"],
+          "yi": ["宗庙由上爻掌管，安静的话，国家就稳固。"],
+          "en": ["The ancestral temple is governed by the top line; if it is still, the state is firm."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [302, 302],
+          "zh": ["宗庙者，专主社稷，若得比和安静，则皇图巩盘石之安。"],
+          "yi": ["宗庙专管社稷，如果得到比和、安静，国家的版图就像磐石一样安稳。"],
+          "en": ["The ancestral temple governs the altars of the state alone, and if it is in harmony and still, the realm is as secure as a rock."] },
+        { "by": "经", "book": "易林补遗", "range": [303, 303],
+          "zh": ["岁星关世连，光芒则国祚绵长。"],
+          "yi": ["岁星关系到世爻，光芒旺相的话，国祚就绵长。"],
+          "en": ["If the Year Star is linked with the Self and shines thriving, the dynasty's span is long."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [304, 304],
+          "zh": ["岁星，即太岁也，关乎治乱光芒旺相也，若然值此，则国祚久远无疆也。"],
+          "yi": ["岁星就是太岁，关系到治乱，光芒旺相；如果值在这里，国祚就久远无疆。"],
+          "en": ["The Year Star is Tai Sui; it bears on order and disorder and shines thriving; if it sits here, the dynasty lasts long without limit."] }
+      ],
+      "note": {
+        "yi": "「岁星关世连」字面不太顺，按解里的「关乎治乱」译成「关系到世爻」；「安静」是上爻不发动。「比和安静」见 YY.39 一类的「比和」用法。太岁是当年的地支（见术语表）。",
+        "en": "'Sui xing guan shi lian' does not read smoothly by the letter, and following the explanation's 'bears on order and disorder' it is translated as 'is linked with the Self'; 'still' means that the top line does not move. Tai Sui is the branch of the current year (see the glossary)."
+      },
+      "see": ["LY.CAREER.EL.07", "LY.CAREER.EL.09", "LY.CAREER.YY.31"]
+    },
+    {
+      "id": "LY.CAREER.EL.09",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：木位遇长生则前星焕彩（木爻属东方为青宫太子之象）；金官逢制陷则逆节潜藏（金爻属西方主兵革，鬼杀为叛逆之人，制服或随空亡墓绝则不久潜消）",
+      "rule": {
+        "yi": "木爻遇到长生，前星（太子星）焕发光彩：木爻属东方，是青宫太子之象，前星也是太子之星，「焕彩」是说他得位，如果遇到长生又有气，他的德泽就广被而长久。金爻的官鬼逢到克制、陷落，就知道叛逆之人潜藏着：金爻属西方，主兵革之象，官鬼和凶煞是叛逆的人，如果被制服，或者随着空亡、墓、绝，不久就潜消。",
+        "en": "If a Wood line meets Birth, the Front Star (the heir's star) shines: Wood belongs to the east and is the image of the Azure Palace and the heir apparent; the Front Star is also the star of the heir; 'shines' says that he has his place, and if it meets Birth and has qi, his virtue spreads widely and lasts. If a Metal Pressure line meets restraint or sinks, then know that rebels lie hidden: Metal belongs to the west and is the image of war; Pressure and baleful spirits are the rebels, and if they are subdued, or follow Void, tomb or extinction, they soon vanish in secret."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [305, 305],
+          "zh": ["木位遇长生，会购买关星焕彩。"],
+          "yi": ["木爻遇到长生，前星（太子星）焕发光彩。"],
+          "en": ["If a Wood line meets Birth, the Front Star shines."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [306, 306],
+          "zh": ["木爻属东方，为青宫太子之象，前星者，亦太子之星，焕彩，言其得位，如遇长生有气，则德被长生。"],
+          "yi": ["木爻属东方，是青宫太子之象，前星也是太子之星；「焕彩」是说他得位，如果遇到长生又有气，他的德泽就广被而长久。"],
+          "en": ["Wood belongs to the east and is the image of the Azure Palace and the heir apparent; the Front Star is also the star of the heir; 'shines' says that he has his place, and if it meets Birth and has qi, his virtue spreads widely and lasts."] },
+        { "by": "经", "book": "易林补遗", "range": [307, 307],
+          "zh": ["金官逢制陷，乃知逆节潜藏。"],
+          "yi": ["金爻的官鬼逢到克制、陷落，就知道叛逆之人潜藏着。"],
+          "en": ["If a Metal Pressure line meets restraint or sinks, then know that rebels lie hidden."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [308, 308],
+          "zh": ["金爻属西方，主兵革之象，鬼杀为叛逆之人，如有制服或随空亡墓绝，则不久潜消耳。"],
+          "yi": ["金爻属西方，主兵革之象，官鬼和凶煞是叛逆的人，如果被制服，或者随着空亡、墓、绝，不久就潜消。"],
+          "en": ["Metal belongs to the west and is the image of war; Pressure and baleful spirits are the rebels, and if they are subdued, or follow Void, tomb or extinction, they soon vanish in secret."] }
+      ],
+      "note": {
+        "yi": "第一联的原文是「木位遇长生，会购买关星焕彩」，「会购买关」是传抄的错字，按解里「前星者，亦太子之星，焕彩」应是「前星焕彩」，译文按「前星焕彩」译。「德被长生」字面不顺，译作「德泽广被而长久」。「青宫」是太子的东宫（见 YY.38）。「逆节」是叛逆的行为。",
+        "en": "The text of the first couplet reads 'mu wei yu changsheng, hui gou mai guan xing huan cai'; 'hui gou mai guan' is a miscopy, and following the explanation, 'the Front Star is also the star of the heir; shines', it should be 'qian xing huan cai', and the translation reads 'the Front Star shines'. 'De bei changsheng' does not run smoothly by the letter and is rendered 'his virtue spreads widely and lasts'. The 'Azure Palace' is the heir apparent's Eastern Palace (see YY.38). 'Nijie' is rebellious conduct."
+      },
+      "see": ["LY.CAREER.EL.08", "LY.CAREER.EL.10", "LY.CAREER.YY.38", "LY.CAREER.HJC.75"]
+    },
+    {
+      "id": "LY.CAREER.EL.10",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事：粮饷论妻财休临败绝（妻财为粮饷，兴隆则国本克盈，衰败则京储匮乏）；城池看父母莫变刑伤（父母为城池，旺相则金汤之固，刑伤则有残缺之虞）",
+      "rule": {
+        "yi": "粮饷看妻财，不要临败、绝：妻财是粮饷，兴旺则国家的根本充盈，衰败则京城的储备匮乏。城池看父母，不要变出刑伤：父母是城池，旺相则城池固若金汤，遇刑伤就有残缺的忧患。",
+        "en": "Provisions are judged by Wealth, which must not sit on spent or extinct: Wealth is the grain and pay, and if it flourishes the root of the state is full, and if it is spent the capital's stores run short. The city walls are judged by Resource, which must not change into punishment or injury: Resource is the walls and moats, and if it is thriving they are as firm as walls of metal and moats of boiling water, and if punished or injured there is the worry of breaches."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [309, 309],
+          "zh": ["粮饷论妻财，休临败绝。"],
+          "yi": ["粮饷看妻财，不要临在败、绝。"],
+          "en": ["Provisions are judged by Wealth, which must not sit on spent or extinct."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [310, 310],
+          "zh": ["妻财为粮饷，兴隆则国本克盈，衰败则京储匮乏。"],
+          "yi": ["妻财是粮饷，兴旺则国家的根本充盈，衰败则京城的储备匮乏。"],
+          "en": ["Wealth is the grain and pay; if it flourishes the root of the state is full, and if it is spent the capital's stores run short."] },
+        { "by": "经", "book": "易林补遗", "range": [311, 311],
+          "zh": ["城池看父母，莫变刑伤。"],
+          "yi": ["城池看父母，不要变出刑伤。"],
+          "en": ["The city walls are judged by Resource, which must not change into punishment or injury."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [312, 312],
+          "zh": ["父母为城池旺相则有金汤之固，刑伤宁无残缺之虞。"],
+          "yi": ["父母是城池，旺相则城池固若金汤，遇到刑伤，岂能没有残缺的忧患。"],
+          "en": ["Resource is the walls and moats; if it is thriving they are as firm as walls of metal and moats of boiling water, and if it meets punishment or injury, how can there not be the worry of breaches."] }
+      ],
+      "note": {
+        "yi": "「金汤」是金属的城、滚水的护城河，比喻极其坚固。这两联和易隐朝廷占的城池（YY.40）、帑藏（YY.41）取法相同：父母为城池，妻财为国库粮饷。",
+        "en": "'Jintang' are walls of metal and a moat of boiling water, an image of extreme firmness. These two couplets take the same view as the walls (YY.40) and treasury (YY.41) in the Yi Yin court divination: Resource is the city walls, and Wealth the state treasury and provisions."
+      },
+      "see": ["LY.CAREER.EL.09", "LY.CAREER.EL.11", "LY.CAREER.YY.40", "LY.CAREER.YY.41"]
+    },
+    {
+      "id": "LY.CAREER.EL.11",
+      "topic": "国朝",
+      "chapter": "朝廷国事章第四",
+      "chapter_en": "Chapter 4: Affairs of the court and state",
+      "title": "朝廷国事结语：祸福攸关于大象，吉凶不离五行衰旺；筮者当察其衰旺、变通活泼、相机而断",
+      "rule": {
+        "yi": "祸福关系在大象，要变通地洞察细微；吉凶离不开五行，要剖析精研衰旺。人能推究事物、获得知识，报应比影子、回声还快。祸福吉凶所关，易的大象离不开卦的五行，千姿百态哪里能都说尽？筮者应当审察五行的衰旺，自然要变通灵活，相机判断，没有不灵验的，就像回声应着声音。",
+        "en": "Fortune and misfortune turn on the great image, and one must adapt and perceive the faintest signs; good and ill do not leave the five elements, and one must analyse and study their strength and weakness. If a man can investigate things and gain knowledge, retribution is faster than shadow or echo. What fortune and misfortune turn on is that the great image of the Yi does not leave the five elements of the hexagram; of the thousand shapes and ten thousand states, how can all be told? The diviner should examine their strength and weakness and naturally adapt and be flexible, judging as the occasion offers, and there will be none that fail to prove true, as an echo answers a sound."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [314, 315],
+          "zh": ["祸福攸关于大象变通洞烛机微。", "吉凶不离于五行剖精研衰旺。", "人能格物致知，报应捷于影响。"],
+          "yi": ["祸福关系在大象，要变通地洞察细微。", "吉凶离不开五行，要剖析精研衰旺。", "人能推究事物、获得知识，报应比影子、回声还快。"],
+          "en": ["Fortune and misfortune turn on the great image, and one must adapt and perceive the faintest signs.", "Good and ill do not leave the five elements, and one must analyse and study their strength and weakness.", "If a man can investigate things and gain knowledge, retribution is faster than shadow or echo."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [314, 315],
+          "zh": ["祸福吉凶关系，易之大象不离卦之五行，千态万状焉能悉战？", "筮者当察其衰旺，自宜变通活泼，相机而断，无有不验，若响之应声也。"],
+          "yi": ["祸福吉凶所关，易的大象离不开卦的五行，千姿百态哪里能都说尽？", "筮者应当审察五行的衰旺，自然要变通灵活，相机判断，没有不灵验的，就像回声应着声音。"],
+          "en": ["What fortune and misfortune turn on is that the great image of the Yi does not leave the five elements of the hexagram; of the thousand shapes and ten thousand states, how can all be told?", "The diviner should examine their strength and weakness and naturally adapt and be flexible, judging as the occasion offers, and there will be none that fail to prove true, as an echo answers a sound."] }
+      ],
+      "note": {
+        "yi": "结语三联在书里没有标点（「祸福攸关于大象变通洞烛机微」），按对仗读成「祸福攸关于大象，变通洞烛机微」「吉凶不离于五行，剖精研衰旺」。「格物致知」出自《大学》，是推究事物、获得知识；「悉战」疑是「悉载」，译文按「说尽」译。",
+        "en": "The three closing couplets are unpunctuated in the book ('huofu youguan yu daxiang biantong dongzhu jiwei'), and by their parallelism are read as 'fortune and misfortune turn on the great image; adapt and perceive the faintest signs' and 'good and ill do not leave the five elements; analyse and study strength and weakness'. 'Gewu zhizhi' is from the Daxue, investigating things to gain knowledge; 'xi zhan' is presumably 'xi zai', to record fully, and the translation reads 'tell all'."
+      },
+      "see": ["LY.CAREER.EL.10", "LY.CAREER.EL.12"]
+    }
+  ]
+}

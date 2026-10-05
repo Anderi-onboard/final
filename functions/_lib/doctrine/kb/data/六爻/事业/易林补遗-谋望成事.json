@@ -1,0 +1,92 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "谋望成事章第三十九",
+  "chapter_en": "Chapter 39: Scheming and accomplishing affairs",
+  "ranges": {"易林补遗": [881, 890]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.103",
+      "topic": "总则",
+      "chapter": "谋望成事章第三十九",
+      "chapter_en": "Chapter 39: Scheming and accomplishing affairs",
+      "title": "谋望成事总纲：以世应为主、内外为凭；成事须将世应查，世为本主应为他，空冲破绝临其世凡去谋为莫起牙，冲破绝空居应位他心不合枉嗟呀；凡成事体一应谋为皆取世应为主，或世或应如临绝地或犯旬空月破日冲皆难成就，次将内卦为谋事之人不宜空破，如临旺相定主亨通，再得内克外卦或内外相生比和俱为美",
+      "rule": {
+        "yi": "谋求成事，以世爻、应爻为主，以内卦、外卦为凭据。要成事，必须查世、应：世是本主（自己），应是他人；空、冲、破、绝临到世爻，凡是去谋求，就不要动手；冲、破、绝、空落在应位，对方的心思不合，白白叹息。凡是成事办事、一切谋求，都取世、应为主：不论世还是应，如果落在绝地，或者犯旬空、月破、日冲，都难成就。其次把内卦当作谋事的人，不适宜空、破；如果旺相，一定亨通；再得到内克外卦，或者内外相生以及比和，都是美好的。",
+        "en": "In scheming to accomplish an affair, take the Self and the Other as the chief and the inner and outer trigrams as the ground. To accomplish an affair one must examine the Self and the Other: the Self is the principal and the Other is the other party; if Void, clash, break or extinction sits on the Self, do not set about scheming; if clash, break, extinction or Void is in the Other's place, the other party's mind does not agree and one sighs in vain. In every business and every scheme, take the Self and the Other as the chief: if either the Self or the Other falls on a place of extinction, or runs into the ten-day Void, Month-break or the Day's clash, it is hard to accomplish. Next, take the inner trigram as the one who schemes the affair, which should not be Void or broken; if it meets thriving it surely means success; if in addition the inner controls the outer trigram, or the inner and outer generate each other or are in accord, all is fine."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [883, 883],
+          "zh": ["以世应为主，内外为凭。"],
+          "yi": ["以世爻、应爻为主要看的，以内卦、外卦为凭据。"],
+          "en": ["Take the Self and the Other as the chief to be looked at, and the inner and outer trigrams as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [884, 884],
+          "zh": ["成事须将世应查，世为本主应为他，", "空冲破绝临其世，凡去谋为莫起牙，", "冲破绝空居应位，他心不合枉嗟呀。"],
+          "yi": ["要成事，必须查世、应：世是本主（自己），应是他人；", "空、冲、破、绝临到世爻，凡是去谋求，就不要动手；", "冲、破、绝、空落在应位，对方的心思不合，白白叹息。"],
+          "en": ["To accomplish an affair one must examine the Self and the Other: the Self is the principal and the Other is the other party;", "if Void, clash, break or extinction sits on the Self, do not set about scheming;", "if clash, break, extinction or Void is in the Other's place, the other party's mind does not agree and one sighs in vain."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [885, 885],
+          "zh": ["凡成事体一应谋为，皆取世应为主，或世或应，如临绝地或犯旬空月破日冲，皆难成就。", "次将内卦为谋事之人，不宜空破。", "如临旺相，定主亨通，再得内克外卦，或内外相生及比和俱为美也。"],
+          "yi": ["凡是成事办事、一切谋求，都取世、应为主；不论是世还是应，如果落在绝地，或者犯旬空、月破、日冲，都难成就。", "其次把内卦当作谋事的人，不适宜空、破。", "如果内卦旺相，一定亨通；再得到内克外卦，或者内外相生以及比和，都是美好的。"],
+          "en": ["In every business and every scheme, take the Self and the Other as the chief: if either the Self or the Other falls on a place of extinction, or runs into the ten-day Void, Month-break or the Day's clash, it is hard to accomplish.", "Next, take the inner trigram as the one who schemes the affair, which should not be Void or broken.", "If it meets thriving it surely means success; if in addition the inner controls the outer trigram, or the inner and outer generate each other or are in accord, all is fine."] }
+      ],
+      "note": {
+        "yi": "「谋望成事」讲托人、找门路把一件事办成，不限哪一类。「本主」是自己。「莫起牙」的「牙」疑是「芽」，「起芽」是开头、动手，译作「不要动手」。「嗟呀」是叹息。「旬空」「月破」见术语表。这一条与易隐谋望占「可否成败」（YY.83、YY.84）取同一个法：以世应为主，内卦为谋事之人。",
+        "en": "'Mouwang chengshi' is getting a matter done by asking others and finding ways in, and is not limited to one kind of matter. 'Benzhu' is oneself. The 'ya' of 'mo qi ya' is presumably 'ya', a sprout, and 'to put out a sprout' is to begin and set about it, so it is translated 'do not set about scheming'. 'Jieya' is sighing. 'Ten-day Void' and 'Month-break' are in the glossary. This entry takes the same method as 'whether it can be done and whether it succeeds' in the Yi Yin divination on scheming (YY.83, YY.84): the Self and the Other are the chief and the inner trigram is the one who schemes the affair."
+      },
+      "see": ["LY.CAREER.EL.104", "LY.CAREER.YY.82", "LY.CAREER.YY.83", "LY.CAREER.YY.84"]
+    },
+    {
+      "id": "LY.CAREER.EL.104",
+      "topic": "成否",
+      "chapter": "谋望成事章第三十九",
+      "chapter_en": "Chapter 39: Scheming and accomplishing affairs",
+      "title": "谋望成事：六冲爻象难谐就、卦内无官事必差、世应若逢日辰合任君不愿也堪夸；六冲之卦事决不成，合处逢冲成后复退，鬼若空亡及不上卦皆不就，世应二爻自相会合或得日辰合世合应纵若心中不欲也得允成",
+      "rule": {
+        "yi": "六冲的爻象难以谐成，卦里没有官爻，事一定出差错；世应如果逢日辰来合，任凭你不愿意也值得夸赞。六冲的卦，事一定不成；合的地方遇到冲，成了之后还会退回；官鬼如果空亡或者不上卦，都办不成；世、应二爻自相会合，或者得到日辰来合世、合应，即使心里不想，也能得到允准办成。",
+        "en": "A six-clash image is hard to bring to harmony, and with no star of office in the hexagram the affair is sure to go wrong; if the Self and the Other meet a combination from the Day, even if you do not wish it, it is worth praising. With a six-clash hexagram the affair will surely not succeed; if where there is a combination it meets a clash, after it succeeds it falls back again; if Pressure is Void or not in the hexagram, in neither case does it succeed; if the Self and the Other lines combine with each other, or the Day combines with the Self or the Other, even if one does not wish it in one's heart, it will be granted and accomplished."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [886, 886],
+          "zh": ["六冲爻象难谐就，卦内无官事必差，", "世应若逢日辰合，任君不愿也堪夸。"],
+          "yi": ["六冲的爻象难以谐成，卦内没有官爻，事一定出差错；", "世应如果逢上日辰来合，任凭你不愿意也值得夸赞。"],
+          "en": ["A six-clash image is hard to bring to harmony, and with no star of office in the hexagram the affair is sure to go wrong;", "if the Self and the Other meet a combination from the Day, even if you do not wish it, it is worth praising."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [887, 887],
+          "zh": ["六冲之卦，事决不成。", "合处逢冲，成后复退。", "鬼若空亡及不上卦，皆不就也。", "世应二爻自相会合，或得日辰合世合应，纵若心中不欲，也得允成。"],
+          "yi": ["六冲的卦，事一定不成。", "合的地方遇到冲，成了之后还会退回。", "官鬼如果空亡或者不上卦，都办不成。", "世、应二爻自相会合，或者得到日辰来合世、合应，即使心里不想，也能得到允准办成。"],
+          "en": ["With a six-clash hexagram the affair will surely not succeed.", "If where there is a combination it meets a clash, after it succeeds it falls back again.", "If Pressure is Void or not in the hexagram, in neither case does it succeed.", "If the Self and the Other lines combine with each other, or the Day combines with the Self or the Other, even if one does not wish it in one's heart, it will be granted and accomplished."] }
+      ],
+      "note": {
+        "yi": "「合处逢冲，成后复退」与求馆章「如合处逢冲或变出六冲，虽见成就，其年定主不终」（EL.53）取同一个关系。「任君不愿」「心中不欲」书里没有说是谁心里不愿，这里按字面译。",
+        "en": "'Where there is a combination it meets a clash, after it succeeds it falls back' takes the same relation as 'if where there is a combination it meets a clash, or it changes out a six-clash, then even if it seems settled that year it will not last' in the chapter on seeking a school post (EL.53). The book does not say whose heart it is that is unwilling in 'even if you do not wish it' and 'even if one does not wish it in one's heart', and it is translated literally."
+      },
+      "see": ["LY.CAREER.EL.103", "LY.CAREER.EL.105", "LY.CAREER.EL.53", "LY.CAREER.YY.84"]
+    },
+    {
+      "id": "LY.CAREER.EL.105",
+      "topic": "成否",
+      "chapter": "谋望成事章第三十九",
+      "chapter_en": "Chapter 39: Scheming and accomplishing affairs",
+      "title": "谋望成事：陛官迁职兼兴讼官鬼交重名倍加、觅利还须财旺相、求书必得父光华，兄爻独发般般忌、子象兴隆事事佳；官中谋望所断如前复喜官爻旺相独忌子摇，谋利息财忌空亡、斡文书不宜财动卦如无父终不能成，诸般谋事各嫌兄弟交重惟子动无不为佳功名独忌",
+      "rule": {
+        "yi": "升官迁职、兴讼，官鬼发动，名声更添；求利，还要财爻旺相；求书信，必须父爻有光彩；兄爻独自发动，样样都忌；子孙兴旺，事事都好。在官府里谋求的，断法同前，又喜官爻旺相，唯独忌讳子孙发动。谋求利息钱财，忌讳财空亡；如果是办理文书，不适宜财爻发动；卦里如果没有父爻，终究不能成。各种谋事，都嫌兄弟发动；只有子孙发动没有不好的，唯独功名一项忌讳。",
+        "en": "For promotion and transfer in office, and for starting a lawsuit, if Pressure moves one's name is doubled; for seeking profit, Wealth must also be thriving; for seeking a letter, Resource must be bright; if the Peer line moves alone, everything is taboo; if Output flourishes, everything is good. For scheming in official business the judgment is as before, and one is again glad for the Pressure line to be thriving and alone fears Output moving. In scheming for interest and wealth, Void is to be avoided for Wealth; if one is managing a document, Wealth moving is not fitting; and if the hexagram has no Resource it cannot in the end succeed. In every kind of scheming, Peer moving is disliked; only Output moving is never anything but good, and for fame and office alone is it a taboo."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [888, 888],
+          "zh": ["陛官迁职兼兴讼，官鬼交重名倍加，", "觅利还须财旺相，求书必得父光华。", "兄爻独发般般忌，子象兴隆事事佳。"],
+          "yi": ["升官迁职、兴讼，官鬼发动，名声更添；", "求利，还要财爻旺相；求书信，必须父爻有光彩。", "兄爻独自发动，样样都忌；子孙兴旺，事事都好。"],
+          "en": ["For promotion and transfer in office, and for starting a lawsuit, if Pressure moves one's name is doubled;", "for seeking profit, Wealth must also be thriving; for seeking a letter, Resource must be bright.", "if the Peer line moves alone, everything is taboo; if Output flourishes, everything is good."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [890, 890],
+          "zh": ["官中谋望所断如前，复喜官爻旺相，独忌子摇。", "如谋利息财忌空亡，若斡文书，不宜财动。", "卦如无父，终不能成。", "诸般谋事，各嫌兄弟交重，惟子动无不为佳，功名独忌。"],
+          "yi": ["在官府里谋求的，断法同前，又喜官爻旺相，唯独忌讳子孙发动。", "如果是谋求利息钱财，财爻忌空亡；如果是办理文书，不适宜财爻发动。", "卦里如果没有父爻，终究不能成。", "各种谋事，都嫌兄弟发动；只有子孙发动没有不好的，唯独功名一项忌讳。"],
+          "en": ["For scheming in official business the judgment is as before, and one is again glad for the Pressure line to be thriving and alone fears Output moving.", "In scheming for interest and wealth, Void is to be avoided for Wealth; if one is managing a document, Wealth moving is not fitting.", "If the hexagram has no Resource, it cannot in the end succeed.", "In every kind of scheming, Peer moving is disliked; only Output moving is never anything but good, and for fame and office alone is it a taboo."] }
+      ],
+      "note": {
+        "yi": "「陛官迁职」的「陛」是「升」（见仕宦升迁章）。「斡文书」的「斡」是转、办理。「父光华」是父爻有光彩，即旺相不受伤。子孙发动是各种谋事的吉兆，唯独功名、官职一项忌讳——这与前面仕宦升迁章「官职升迁子莫刚」（EL.55）是一回事：官职功名最忌子孙。",
+        "en": "The 'bi' of 'bi guan qian zhi' is 'sheng', to rise (see the chapter on official promotion). The 'wo' of 'wo wenshu' is to turn and to manage. 'Fu guanghua' is Resource having lustre, that is thriving and unhurt. Output moving is an auspicious sign for every kind of scheming, and only for fame and office is it a taboo, which is the same thing as 'for promotion in office Output must not be strong' in the earlier chapter on official promotion (EL.55): office and fame most fear Output."
+      },
+      "see": ["LY.CAREER.EL.104", "LY.CAREER.EL.55", "LY.CAREER.YY.77", "LY.CAREER.YY.85"]
+    }
+  ]
+}

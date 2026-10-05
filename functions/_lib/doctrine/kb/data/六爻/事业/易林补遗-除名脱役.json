@@ -1,0 +1,92 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "除名脱役章第四十三",
+  "chapter_en": "Chapter 43: Removal from the rolls and release from service",
+  "ranges": {"易林补遗": [913, 922]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.114",
+      "topic": "差役",
+      "chapter": "除名脱役章第四十三",
+      "chapter_en": "Chapter 43: Removal from the rolls and release from service",
+      "title": "除名脱役：以子孙为主、世象为凭；官爻克世兼临世用尽机谋脱不成，卦得六冲应脱役，子孙在世定除名；凡求脱役专看官爻，官如克世临世欲退其役难以推开，若得六冲或子孙持世或子孙交重皆主役去名消",
+      "rule": {
+        "yi": "求脱役（解除差役），以子孙为主，以世爻为凭据。官爻克世爻、又临在世爻上，用尽机谋也脱不成；卦得六冲，应该能脱役；子孙在世爻上，一定除名。凡是求脱役，专看官爻：官如果克世、临世，想退掉这份役，难以推开；如果得到六冲，或者子孙持世，或者子孙发动，都主役免名消。",
+        "en": "In seeking release from service, take Output as the chief and the Self image as the ground. If the Pressure line controls the Self and also rests on the Self, however much scheming one uses one cannot get free; if the hexagram is a six-clash, one should be freed from the service; if Output is on the Self, one will surely be struck from the rolls. In every seeking of release from service, look especially at the Pressure line: if it controls the Self or rests on the Self, it is hard to push off the service one wants to leave; if one gets a six-clash, or Output holds the Self, or Output moves, in every case the service goes and the name is cleared."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [916, 916],
+          "zh": ["以子孙为主，世象为凭。"],
+          "yi": ["以子孙为主要看的，以世爻为凭据。"],
+          "en": ["Take Output as the chief to be looked at, and the Self image as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [917, 917],
+          "zh": ["官爻克世兼临世，用尽机谋脱不成，", "卦得六冲应脱役，子孙在世定除名。"],
+          "yi": ["官爻克制世爻，又临在世爻上，用尽机谋也脱不成；", "卦得六冲，应该能脱役；子孙在世爻上，一定除名。"],
+          "en": ["If the Pressure line controls the Self and also rests on the Self, however much scheming one uses one cannot get free;", "if the hexagram is a six-clash, one should be freed from the service; if Output is on the Self, one will surely be struck from the rolls."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [918, 918],
+          "zh": ["凡求脱役，专看官爻，官如克世临世，欲退其役难以推开。", "若得六冲或子孙持世，或子孙交重，皆主役去名消。"],
+          "yi": ["凡是求脱役，专看官爻：官如果克世、临世，想退掉这份役，难以推开。", "如果得到六冲，或者子孙持世，或者子孙发动，都主役免名消。"],
+          "en": ["In every seeking of release from service, look especially at the Pressure line: if it controls the Self or rests on the Self, it is hard to push off the service one wants to leave.", "If one gets a six-clash, or Output holds the Self, or Output moves, in every case the service goes and the name is cleared."] }
+      ],
+      "note": {
+        "yi": "「脱役」是摆脱差役，「除名」是从役籍里除去名字。章名在书里写了两次，头一次写作「除吊脱役」，「吊」是「名」的误写。「推开」是推脱开。「交重」是动爻的记号，泛指爻发动。这一章要看子孙，与前面谋差顶役（要官爻）正好相反：要脱役，官爻是缠住你的，子孙才是解脱的。",
+        "en": "'Tuoyi' is getting free of a service and 'chuming' is having one's name removed from the service roll. The chapter title is written twice in the book, the first time as 'chudiao tuoyi', where the 'diao' is a miswriting of 'ming'. 'Tuikai' is pushing off. 'Jiaozhong' is the mark of a moving line and here means a line moving in general. This chapter looks at Output, which is exactly the opposite of the earlier chapter on seeking a commission (which wanted the Pressure line): to be released from a service, the Pressure line is what holds one fast and Output is what frees one."
+      },
+      "see": ["LY.CAREER.EL.115", "LY.CAREER.EL.106", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.EL.115",
+      "topic": "差役",
+      "chapter": "除名脱役章第四十三",
+      "chapter_en": "Chapter 43: Removal from the rolls and release from service",
+      "title": "除名脱役：世空自退无忧虑、应陷他非上籍丁，世应俱空官又动傍人顶役两无刑；世值空亡自当解散，应值空亡他难顶替，世应皆空官又动者自能解脱，彼不克当必有傍人代役已免其忧",
+      "rule": {
+        "yi": "世爻落空，自己就能退役，没有忧虑；应爻落陷，别人就不能上籍当丁；世应都空而官又发动，旁人顶役，两边都没有刑害。世爻值空亡，自然解散；应爻值空亡，他难以顶替；世、应都空、官又发动的，自己能解脱；他担当不了，一定有旁人代役，自己就免了忧虑。",
+        "en": "If the Self is Void one retires of oneself and has no worry; if the Other is sunk, the other man cannot be entered on the rolls as an able-bodied adult; if the Self and the Other are both Void and the star of office moves, another man takes over the service and neither side is punished. If the Self falls on Void, one is naturally released; if the Other falls on Void, he can hardly take one's place; if the Self and the Other are both Void and the star of office moves, one can free oneself; if he cannot bear it, another man will stand in for the service, and one is free of the worry."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [919, 919],
+          "zh": ["世空自退无忧虑，应陷他非上籍丁，", "世应俱空官又动，傍人顶役两无刑。"],
+          "yi": ["世爻落空，自己就能退役，没有忧虑；应爻落陷，他人就不能上籍当丁；", "世应都空而官又发动，旁人顶役，两边都没有刑害。"],
+          "en": ["If the Self is Void one retires of oneself and has no worry; if the Other is sunk, the other man cannot be entered on the rolls as an able-bodied adult;", "if the Self and the Other are both Void and the star of office moves, another man takes over the service and neither side is punished."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [920, 920],
+          "zh": ["世值空亡，自当解散，应值空亡，他难顶替。", "世应皆空官又动者，自能解脱。", "彼不克当，必有傍人代役，已免其忧。"],
+          "yi": ["世爻值空亡，自然解散；应爻值空亡，他难以顶替。", "世、应都空、官又发动的，自己能解脱。", "他担当不了，一定有旁人代役，自己就免了忧虑。"],
+          "en": ["If the Self falls on Void, one is naturally released; if the Other falls on Void, he can hardly take one's place.", "If the Self and the Other are both Void and the star of office moves, one can free oneself.", "If he cannot bear it, another man will stand in for the service, and one is free of the worry."] }
+      ],
+      "note": {
+        "yi": "「上籍丁」是登记入役籍的成年男丁。「顶役」「代役」都是由别人顶替服役。「傍人」是旁人。「已免其忧」的「已」疑是「己」，译作「自己免了忧虑」。",
+        "en": "'Shang ji ding' is an adult male entered on the service roll. 'Dingyi' and 'daiyi' both mean another man serving in one's place. 'Bangren' is another person. The 'yi' of 'yi mian qi you' is presumably 'ji', oneself, and it is translated 'one is free of the worry'."
+      },
+      "see": ["LY.CAREER.EL.114", "LY.CAREER.EL.116"]
+    },
+    {
+      "id": "LY.CAREER.EL.116",
+      "topic": "差役",
+      "chapter": "除名脱役章第四十三",
+      "chapter_en": "Chapter 43: Removal from the rolls and release from service",
+      "title": "除名脱役：鬼爻立应兼伤彼他必承当永不更、鬼若兴隆财迭发还须自己入公庭；官爻临应兼克应皆主他人代役，官临旺动又不伤他况遭财动生官定难脱也，官爻纵动如来生助世爻反有益我之情必然得脱",
+      "rule": {
+        "yi": "官鬼爻立在应爻上、又伤克对方，他必定承担下来，永不更改；官鬼如果兴旺、财爻接连发动，还须自己进公堂。官爻临在应爻上又克应爻，都主他人代役；官爻临旺相发动、又不伤他，何况遇到财爻发动来生官爻，一定难脱；官爻即使发动，如果来生助世爻，反而有益于我，必定得脱。",
+        "en": "If the Pressure line stands on the Other and also hurts him, he will surely take it on and it will never change; if Pressure flourishes and Wealth moves one after another, one must still go oneself into the public court. If the Pressure line rests on the Other and controls it, in every case another man takes over the service; if the star of office is thriving and moving and does not hurt him, and still more if Wealth moves to generate the star of office, release is surely hard; even if the Pressure line moves, if it comes to generate and aid the Self line, it is on the contrary of benefit to me and I will surely get free."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [921, 921],
+          "zh": ["鬼爻立应兼伤彼，他必承当永不更，", "鬼若兴隆财迭发，还须自己入公庭。"],
+          "yi": ["官鬼爻立在应爻上，又伤克对方，他必定承担下来，永不更改；", "官鬼如果兴旺、财爻接连发动，还须自己进公堂。"],
+          "en": ["If the Pressure line stands on the Other and also hurts him, he will surely take it on and it will never change;", "if Pressure flourishes and Wealth moves one after another, one must still go oneself into the public court."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [922, 922],
+          "zh": ["官爻临应兼克应，皆主他人代役。", "官临旺动又不伤他，况遭财动生官，定难脱也。", "官爻纵动，如来生助世爻，反有益我之情，必然得脱。"],
+          "yi": ["官爻临在应爻上、又克应爻，都主他人代役。", "官爻临旺相发动、又不伤他，何况又遇到财爻发动来生官爻，一定难脱。", "官爻即使发动，如果来生助世爻，反而有益于我，必定得脱。"],
+          "en": ["If the Pressure line rests on the Other and controls it, in every case another man takes over the service.", "If the star of office is thriving and moving and does not hurt him, and still more if Wealth moves to generate the star of office, release is surely hard.", "Even if the Pressure line moves, if it comes to generate and aid the Self line, it is on the contrary of benefit to me and I will surely get free."] }
+      ],
+      "note": {
+        "yi": "「立应」是立在应爻上；「公庭」是官府的公堂，「入公庭」是自己到官府去服役。「伤彼」是伤克对方（应）。诀里「鬼爻立应兼伤彼，他必承当永不更」说的是对方把役顶下来，与解里「官爻临应兼克应，皆主他人代役」是一回事；「鬼若兴隆财迭发」与解里「官临旺动……况遭财动生官，定难脱也」也是一回事。「官爻纵动，如来生助世爻」是官爻的力量转过来生世，反而有利，是解里在「官临旺动」之外补的一条例外。这是全章和「谋差顶役」至「脱役」各章的收尾。",
+        "en": "'Liying' is standing on the Other line; 'gongting' is the public court of the authorities, and 'ru gongting' is going oneself to the authorities to serve. 'Shangbi' is hurting the other party (the Other). The verse's 'if the Pressure line stands on the Other and also hurts him, he will surely take it on and it will never change' says that the other party takes the service over, which is the same as the explanation's 'if the Pressure line rests on the Other and controls it, in every case another man takes over the service'; and 'if Pressure flourishes and Wealth moves one after another' is likewise the same as the explanation's 'if the star of office is thriving and moving ... and still more if Wealth moves to generate the star of office, release is surely hard'. 'Even if the Pressure line moves, if it comes to generate and aid the Self line' is the force of the Pressure line turning to generate the Self, which on the contrary helps, and is an exception that the explanation adds beside 'the star of office thriving and moving'. This closes the chapter and the run of chapters from seeking a commission to release from service."
+      },
+      "see": ["LY.CAREER.EL.115", "LY.CAREER.EL.114"]
+    }
+  ]
+}
