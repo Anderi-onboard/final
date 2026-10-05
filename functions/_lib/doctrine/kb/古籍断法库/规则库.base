@@ -37,6 +37,20 @@ views:
       - work
       - dispute
   - type: table
+    name: "事业"
+    filters:
+      and:
+        - 'domain == "事业"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
     name: "婚姻"
     filters:
       and:

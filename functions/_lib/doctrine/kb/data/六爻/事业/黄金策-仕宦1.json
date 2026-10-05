@@ -1,0 +1,340 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "黄金策",
+  "chapter": "仕宦",
+  "chapter_en": "Holding office",
+  "ranges": {"卜筮大全": [7660, 7693], "卜筮正宗": [1926, 1946]},
+  "units": [
+    {
+      "id": "LY.CAREER.HJC.01",
+      "topic": "总则",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·旺相妻财，必得千钟之粟（旧注：未仕不要财爻、已仕要见财爻；财旺俸禄多，财空财伏未得俸禄，财动逢冲减俸，冲财刑世官有停俸罢职之患）",
+      "rule": {
+        "yi": "占做官，妻财就是俸禄。还没做官而求功名的人，不要财爻；已经做官的人，要见财爻，因为有爵位就有俸禄，没有没俸禄就能做官的。妻财旺相，俸禄一定多；休囚就微薄；卦里没有财或财落空亡，还没有俸禄；财动遇冲，任职以后会因事减俸；日辰月建冲财、又刑害世爻和官爻，恐怕有停发俸禄、罢职的祸患。",
+        "en": "In divining an office, Wealth is the salary. For one not yet in office who is seeking a name, Wealth is not wanted; for one already in office, Wealth is wanted, since where there is rank there is a stipend, and no one gets an office with no pay. When Wealth is thriving the salary is surely large; resting or trapped, it is meagre; if there is no Wealth in the hexagram or it falls Void, no salary has yet been received; if Wealth moves and meets a clash, the salary is cut after taking up the post, on account of some matter; and if the Day or the Month clashes Wealth while also punishing or harming the Self and Pressure, there may be the calamity of salary being stopped and dismissal from office."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7660, 7660],
+          "zh": ["为国求贤，治国之本；", "致身辅相，禄养为先。", "旺相妻财，必得千钟之粟；"],
+          "yi": ["为国家求贤才，是治国的根本；", "献身辅佐君王和宰相，以俸禄养身为先。", "妻财旺相，一定能得到千钟的俸米；"],
+          "en": ["Seeking worthies for the state is the root of governing it;", "to give oneself to assist the sovereign and his ministers, with the salary that sustains one coming first.", "when Wealth is thriving, one will surely obtain a thousand zhong of grain;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7661, 7663],
+          "zh": ["未仕求名，不要财爻；", "已仕贵人，要见财爻。", "盖有爵必有禄，未有无俸而得官者。", "故凡占官卦，得此爻旺相，俸禄必多；", "休囚定然微薄。", "卦中无财，或落空亡，未得俸禄；", "财动逢冲，任后因事减俸。", "或日辰月建冲财，而刑害世爻及官爻者，恐有停俸罢职之患。"],
+          "yi": ["还没做官而求功名的，不要财爻；", "已经做官的贵人，要见到财爻。", "因为有爵位就一定有俸禄，没有没俸禄就得到官职的。", "所以凡是占官的卦，这一爻旺相，俸禄一定多；", "休囚就一定微薄。", "卦中没有财，或者落空亡，还没有俸禄；", "财动遇冲，任职以后因事减俸。", "或者日辰、月建冲财，又刑害世爻和官爻的，恐怕有停发俸禄、罢职的祸患。"],
+          "en": ["For one not yet in office who is seeking a name, Wealth is not wanted;", "for a noble already in office, Wealth is wanted.", "For where there is rank there is surely salary, and no one gets an office without a stipend.", "So in any hexagram divining an office, if this line is thriving the salary is surely large;", "if resting or trapped, it is surely meagre.", "if there is no Wealth in the hexagram or it falls Void, no salary has yet been received;", "if Wealth moves and meets a clash, after taking up the post the salary is cut on account of some matter.", "If the Day or the Month clashes Wealth while also punishing or harming the Self and Pressure, there may be the calamity of salary being stopped and dismissal from office."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1926, 1928],
+          "zh": ["未仕求名，不要财爻，已仕贵人，要见财爻，盖有爵必有禄，未有无俸而居官者。", "故凡占官星，得此爻旺相，俸禄必多；", "若财爻休囚，或空或伏，未得俸禄；", "财动逢冲，因事减俸；", "或日辰月建冲财，而刑害世爻及官爻者，恐有停俸罢职之患。"],
+          "yi": ["没做官而求功名的，不要财爻，已经做官的，要见财爻，因为有爵位就有俸禄，没有没俸禄而居官的。", "所以凡是占官星，这一爻旺相，俸禄一定多；", "如果财爻休囚，或者空亡、或者伏藏，还没有俸禄；", "财动遇冲，因事减俸；", "或者日辰、月建冲财，又刑害世爻和官爻的，恐怕有停发俸禄、罢职的祸患。"],
+          "en": ["For one not yet in office who is seeking a name, Wealth is not wanted; for one already in office, Wealth is wanted, since where there is rank there is a stipend, and no one holds office without pay.", "So in divining the star of office, if this line is thriving the salary is surely large;", "if Wealth is resting or trapped, or Void, or hidden, no salary has yet been received;", "if Wealth moves and meets a clash, the salary is cut on account of some matter;", "if the Day or the Month clashes Wealth while also punishing or harming the Self and Pressure, there may be the calamity of salary being stopped and dismissal from office."] }
+      ],
+      "note": {
+        "yi": "这一首的前两句「为国求贤，治国之本；致身辅相，禄养为先」是章首的引语，不是判断；卜筮正宗写作「治民为本」。「千钟之粟」的「钟」是古时量粮的单位，「千钟」是说俸禄很多。「未仕求名，不要财爻」是说还没做官的人求功名时，财爻反而不要（财克父母，妨文书），这和黄金策求名章「财若交重，休望青钱之中选」是同一个道理（求名章在「考试」一域）；已经做官的就要有财，因为官有俸禄。「禄养」是靠俸禄养身养家。卜筮正宗把「兴隆官鬼」那一联的注和这一联的注写在一起，所以王洪绪这一段的后两句（官鬼旺相、发动生合世爻）分到 LY.CAREER.HJC.02。",
+        "en": "The two opening lines of this entry, 'seeking worthies for the state is the root of governing it; giving oneself to assist the sovereign and his ministers, with the salary that sustains one coming first', are a preface and not a judgement; the Bushi Zhengzong writes 'the root of governing the people'. A 'zhong' is an ancient measure of grain, and 'a thousand zhong' means a large salary. 'For one not yet in office who is seeking a name, Wealth is not wanted' says that for someone not yet in office seeking a name, Wealth on the contrary is not wanted (Wealth controls Resource and harms the documents), the same reasoning as 'if Wealth moves heavily, do not hope to be chosen for the blue coins' in the chapter on seeking a name of this book (that chapter belongs to the domain of examinations); for one already in office there must be Wealth, since an office carries a stipend. 'The salary that sustains' is living and keeping a household on the stipend. The Bushi Zhengzong runs the comment on the couplet 'with Pressure flourishing' together with the comment on this couplet, so the last two sentences of Wang Hongxu's passage (Pressure thriving; moving to generate or combine with the Self) are placed in LY.CAREER.HJC.02."
+      },
+      "see": ["LY.CAREER.HJC.02"]
+    },
+    {
+      "id": "LY.CAREER.HJC.02",
+      "topic": "总则",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·兴隆官鬼，定居一品之尊（旧注：鬼为官爵，旺相官高爵大、休囚死绝官小职卑；发动生合世爻、得月日生扶必有升擢；安静被克害无声名）",
+      "rule": {
+        "yi": "官鬼代表官职和爵位：旺相有气，官高爵大；休囚死绝，官小职卑；发动去生合世爻，或者得到月建、日辰的生扶，一定有升迁提拔，名声远播京城；安静不动而被月建、日辰克害，或者被世爻刑冲克害，一定没有声名威望。",
+        "en": "Pressure stands for office and rank: thriving and with breath, the office is high and the rank great; resting, trapped, dead or in extinction, the office is small and the post low; moving to generate or combine with the Self, or generated and supported by the Month or the Day, there will surely be promotion and the name spreads far to the capital; still, and controlled or harmed by the Month or the Day, or punished, clashed, controlled or harmed by the Self, there will surely be no fame or standing."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7665, 7665],
+          "zh": ["兴隆官鬼，定居一品之尊。"],
+          "yi": ["官鬼兴隆旺盛，一定居于一品的尊位。"],
+          "en": ["When Pressure is flourishing, one will surely hold the honoured place of the first rank."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7666, 7666],
+          "zh": ["鬼为官爵。", "旺相有气，官高爵大；", "休囚死绝，官小职卑。", "发动生合世爻，或得月建日辰生扶，必有升擢，远播都下；", "安静不动，而被月建日辰克害者，或世爻刑冲克害者，必无声名闻望。"],
+          "yi": ["官鬼代表官职爵位。", "官鬼旺相有气的，官位高、爵位大；", "官鬼休囚死绝的，官位小、职务低。", "发动去生合世爻，或者得到月建、日辰生扶，一定有升迁提拔，名声远传京城；", "安静不动，而被月建、日辰克害，或者被世爻刑冲克害，一定没有声名威望。"],
+          "en": ["Pressure stands for office and rank.", "Thriving and with breath, the office is high and the rank great;", "resting, trapped, dead or in extinction, the office is small and the post low.", "If it moves to generate or combine with the Self, or is generated and supported by the Month or the Day, there will surely be promotion and the name spreads far to the capital;", "if it is still and is controlled or harmed by the Month or the Day, or punished, clashed, controlled or harmed by the Self, there will surely be no fame or standing."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1926, 1928],
+          "zh": ["官鬼旺相，官高爵大，休囚死绝，官小职卑。", "若发动生合世爻，得月建日辰生扶，必有荐擢。"],
+          "yi": ["官鬼旺相的，官位高、爵位大；休囚死绝的，官位小、职务低。", "如果发动生合世爻，得到月建、日辰生扶，一定有人举荐提拔。"],
+          "en": ["When Pressure is thriving the office is high and the rank great; resting, trapped, dead or in extinction, the office is small and the post low.", "If it moves to generate or combine with the Self and is generated and supported by the Month and the Day, there will surely be recommendation and promotion."] }
+      ],
+      "note": {
+        "yi": "「一品」是官阶里最高的一级，「定居一品之尊」是形容官鬼旺相时最好的情形，不是说一定做到一品。「声名闻望」是名声和威望。旧注说的「升擢，远播都下」，卜筮正宗改成「荐擢」（有人举荐提拔），意思略有不同：旧注是升迁加名声远传，王洪绪这里强调的是被举荐。",
+        "en": "'The first rank' is the highest grade of office, and 'one will surely hold the honoured place of the first rank' describes the best case when Pressure is thriving, and does not say that one will certainly reach the first rank. 'Fame and standing' is name and reputation. Where the old commentary says 'promotion, and the name spreads far to the capital', the Bushi Zhengzong changes it to 'recommendation and promotion' (someone recommends and raises one), a slightly different sense: the old commentary has promotion and a far-spreading name, and Wang Hongxu stresses being recommended."
+      },
+      "see": ["LY.CAREER.HJC.01", "LY.CAREER.HJC.06"]
+    },
+    {
+      "id": "LY.CAREER.HJC.03",
+      "topic": "风险",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·子若交重，当虑剥官削职（旧注：子孙是伤官之杀，发动则所谋不遂；未仕不能除选、已仕有夺官褫职之祸，鬼爻无气必至除名落籍）",
+      "rule": {
+        "yi": "子孙是伤官的煞，最喜欢它空亡墓绝，尤其适宜安静受制才吉。它如果在卦里发动，所谋的事必不遂意：没做官的得不到除授选用，已经做官的有被夺官革职的祸患；官鬼再无气，必定被除名、削去官籍，不只是贬责降罚。",
+        "en": "Output is the killer that harms office. It is best when Void, in a tomb or in extinction, and above all fitting when still and held in check. If it moves in the hexagram, what is planned will surely go against one's wish: one not yet in office cannot be appointed or selected, and one already in office has the calamity of being deprived of office and stripped of post; and if Pressure has no breath as well, one will surely be struck from the roll and removed from the register of office, which is more than being rebuked and demoted."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7668, 7668],
+          "zh": ["子若交重，当虑剥官削职；"],
+          "yi": ["子孙如果交重发动，就该担心被革官削职；"],
+          "en": ["If Output moves heavily, one should fear being stripped of office and cut from rank;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7669, 7669],
+          "zh": ["子孙乃伤官之杀。", "最喜空亡墓绝，尤宜安静受制则吉。", "若在卦中发动，所谋必不遂意。", "未仕则不能除选，已仕则有夺官褫职之祸。", "鬼爻更若无气，必至除名落籍，非但贬责降罚而已也。"],
+          "yi": ["子孙是伤官的煞。", "最喜欢它空亡、墓绝，尤其适宜安静受制才吉。", "如果它在卦中发动，所谋的事必定不遂意。", "没做官的得不到除授选用，已经做官的有被夺官革职的祸患。", "官鬼如果再无气，必定被除名、削去官籍，不只是贬责降罚而已。"],
+          "en": ["Output is the killer that harms office.", "It is best when it is Void, in a tomb or in extinction, and above all fitting when it is still and held in check.", "If it moves in the hexagram, what is planned will surely go against one's wish.", "One not yet in office cannot be appointed or selected, and one already in office has the calamity of being deprived of office and stripped of post.", "If Pressure, moreover, has no breath, one will surely be struck from the roll and removed from the register of office, which is more than being rebuked and demoted."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1930, 1930],
+          "zh": ["子孙若在卦中发动，所谋必不遂意，已任者，恐有褫职之祸。"],
+          "yi": ["子孙如果在卦中发动，所谋的事必定不遂意，已经任职的，恐怕有被革职的祸患。"],
+          "en": ["If Output moves in the hexagram, what is planned will surely go against one's wish, and for one already in office there may be the calamity of being stripped of post."] }
+      ],
+      "note": {
+        "yi": "「除选」是朝廷任命、选用官员；「褫职」是革职；「落籍」是从官籍上除去。这里和占病、占财的说法反过来：占财、占病子孙都是吉神，占官却是「伤官之杀」，因为子孙克官鬼。同样的道理见黄金策求名章「福如发动，难期金榜之题名」（在「考试」一域）。",
+        "en": "'Appointment and selection' is the court appointing and choosing officers, 'stripped of post' is dismissal, and 'removed from the register' is being struck from the roll of officers. This is the reverse of divining illness or wealth, where Output is a lucky spirit, whereas in divining an office it is 'the killer that harms office', because Output controls Pressure. The same reasoning is in the chapter on seeking a name, 'if Output moves, do not hope to be listed on the golden roll' (that chapter belongs to the domain of examinations)."
+      },
+      "see": ["LY.CAREER.HJC.04", "LY.CAREER.HJC.06"]
+    },
+    {
+      "id": "LY.CAREER.HJC.04",
+      "topic": "风险",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·兄如发动，须防减俸除粮（旧注：兄弟是劫财之神，发动费财多招诽谤；与子孙同发或化子孙必有除粮减俸，持世临身皆不利）",
+      "rule": {
+        "yi": "兄弟是劫财的神。它空亡、不上卦，或者临死绝而安静，就吉；如果发动，免不了花费钱财、招来诽谤，俸禄也不称心；再和子孙一起发动，或者就化成子孙，必有被除粮、减俸的事；持世、临身都不利。",
+        "en": "Peer is the spirit that robs wealth. If it is Void, absent from the hexagram, or in death or extinction and still, it is auspicious; if it moves, there is bound to be spending of money and slander, and the salary will not be to one's liking; if it moves together with Output, or turns directly into Output, there will surely be grain struck off and salary cut; holding the Self or settling on the Body is in every case unfavourable."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7671, 7671],
+          "zh": ["兄如发动，须防减俸除粮。"],
+          "yi": ["兄弟如果发动，须提防减俸除粮。"],
+          "en": ["If Peer moves, beware of cuts to salary and grain."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7672, 7672],
+          "zh": ["兄弟乃劫财之神。", "空亡不上卦，或临死绝安静则吉。", "若发动，未免费财，多招诽谤，俸禄亦不称意。", "更与子孙同发，或就化子孙，必有除粮减俸之事也。", "持世临身皆不利。"],
+          "yi": ["兄弟是劫财的神。", "空亡、不上卦，或者临死绝而安静，就吉。", "如果发动，免不了花费钱财、招来诽谤，俸禄也不称心。", "再和子孙一起发动，或者就化成子孙，必有除粮、减俸的事。", "持世、临身都不利。"],
+          "en": ["Peer is the spirit that robs wealth.", "If Void, absent from the hexagram, or in death or extinction and still, it is auspicious.", "If it moves, there is bound to be spending of money and slander, and the salary will not be to one's liking.", "If it moves together with Output, or turns directly into Output, there will surely be matters of grain struck off and salary cut.", "Holding the Self or settling on the Body is in every case unfavourable."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1932, 1932],
+          "zh": ["兄弟发动，不免费财多招诽误；", "如与子孙同发或化子孙，必有除粮减俸之事。", "持身临世皆不吉利。"],
+          "yi": ["兄弟发动，免不了费财，多招诽谤和过失；", "如果和子孙一同发动，或者化出子孙，必有除粮减俸的事。", "持身、临世都不吉利。"],
+          "en": ["When Peer moves, there is bound to be spending of money and a good deal of slander and fault;", "if it moves together with Output or turns into Output, there will surely be grain struck off and salary cut.", "Holding the Body or settling on the Self is in every case unlucky."] }
+      ],
+      "note": {
+        "yi": "「除粮」是从俸粮里扣除。卜筮正宗把「诽谤」写作「诽误」，意思是诽谤和过失。上一条 LY.CAREER.HJC.01 说财动逢冲会减俸，这一条说兄弟发动会减俸：一个是财被冲，一个是兄弟劫财，两处都说减俸，书里没有说哪一种更重。",
+        "en": "'Grain struck off' is grain deducted from the stipend. The Bushi Zhengzong writes 'slander and error' in place of 'slander', in the sense of slander and fault. The preceding entry, LY.CAREER.HJC.01, says that a moving Wealth meeting a clash cuts the salary, and this one says that a moving Peer cuts it: in one Wealth is clashed and in the other Peer robs Wealth, both speak of the salary being cut, and the book does not say which is the heavier."
+      },
+      "see": ["LY.CAREER.HJC.01", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.HJC.05",
+      "topic": "成否",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·父母空亡，休望差除宣敕（旧注：父母为印绶文书诰牒宣敕，持太岁生合世爻有朝廷宣召，加月建是敕制或上司奖励；冲空化空多不实，衰静空亡无宣敕、卦无父母休望迁选）",
+      "rule": {
+        "yi": "父母爻是印绶、文书、诰牒、宣敕、奏疏、表章，卦里不能没有它，宜旺不宜衰，扶助世爻最吉。它持太岁、有气、生合世爻，主有朝廷的宣召；再加月建，多是敕令制命和上司的奖励；最怕冲、空、化空，那就多半不实；衰弱安静又空亡，必定没有宣敕，也没有差遣任命；卦里没有父母，别指望迁升选用。",
+        "en": "Resource is the seal and ribbon, documents, patents, imperial edicts, memorials and petitions. It cannot be missing from the hexagram, should be thriving and not weak, and supporting the Self is the most auspicious. If it holds the Tai Sui with breath and generates or combines with the Self, there will be a summons from the court; with the Month added, it is mostly an edict or a commendation from superiors; what is most feared is a clash, Void or turning into Void, and then it is mostly unreal; if weak, still and Void, there will surely be no edict and no appointment; if Resource is not in the hexagram, do not hope for promotion or selection."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7674, 7674],
+          "zh": ["父母空亡，休望差除宣敕；"],
+          "yi": ["父母爻空亡，别指望得到差遣、任命和宣敕；"],
+          "en": ["If Resource is Void, do not hope for a posting, an appointment or an imperial edict;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7675, 7675],
+          "zh": ["父母为印缓、文书、诰牒、宣敕、奏疏、表章。", "卦中不可无，宜旺不宜衰，扶世最吉。", "若持太岁有气生合世爻，主有朝廷宣召。", "如加月建，多是敕制及上司奖励之类。", "最怕冲空化空，则多不实。", "衰静空亡，必无宣敕，亦无差除。", "卦无父母，休望迁选。"],
+          "yi": ["父母是印绶、文书、诰牒、宣敕、奏疏、表章。", "卦中不能没有它，宜旺不宜衰，扶助世爻最吉。", "如果它持太岁、有气，生合世爻，主有朝廷的宣召。", "如果再加月建，多是敕令制命和上司奖励之类。", "最怕冲、空、化空，那就多半不实。", "衰弱、安静又空亡，必定没有宣敕，也没有差遣任命。", "卦里没有父母，别指望迁升选用。"],
+          "en": ["Resource is the seal and ribbon, documents, patents, imperial edicts, memorials and petitions.", "It cannot be missing from the hexagram, should be thriving and not weak, and supporting the Self is the most auspicious.", "If it holds the Tai Sui with breath and generates or combines with the Self, there will be a summons from the court.", "If the Month is added, it is mostly an edict and a commendation from superiors and the like.", "What is most feared is a clash, Void or turning into Void, and then it is mostly unreal.", "If weak, still and Void, there will surely be no edict and no appointment.", "If Resource is not in the hexagram, do not hope for promotion or selection."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1934, 1934],
+          "zh": ["父母爻为印绶、文书、诰牒、宣敕、奏书、表章，卦中不可无，宜旺不宜衰，扶世最吉。", "若持太岁有气，生合世爻，主有朝廷宣召，如加月建，乃上司奖励之类；", "若空亡则休望也。"],
+          "yi": ["父母爻是印绶、文书、诰牒、宣敕、奏书、表章，卦中不能没有，宜旺不宜衰，扶助世爻最吉。", "如果持太岁有气，生合世爻，主有朝廷的宣召，如果加月建，是上司的奖励之类；", "如果空亡，就别指望了。"],
+          "en": ["Resource is the seal and ribbon, documents, patents, imperial edicts, memorials and petitions; it cannot be missing from the hexagram, should be thriving and not weak, and supporting the Self is the most auspicious.", "If it holds the Tai Sui with breath and generates or combines with the Self, there will be a summons from the court; if the Month is added, it is a commendation from superiors and the like;", "if Void, do not hope for it."] }
+      ],
+      "note": {
+        "yi": "「印缓」是「印绶」（官印和系印的丝带）的误写，卜筮大全的原文就是这样写的，译文按「印绶」读。「宣敕」是皇帝的诏命，「诰牒」是授官的文书，「差除」是差遣、任命。这一条是说做官的「文书」：没有父母就没有任命、没有升迁。",
+        "en": "'Seal and ribbon' in the Bushi Daquan is written with a wrong character for 'ribbon' (the original prints it that way), and the translation reads 'seal and ribbon'. 'Edict' is an imperial decree, 'patent' is the document conferring office, and 'posting and appointment' is being sent out on a commission or being appointed. This entry is about the 'documents' of an official career: with no Resource there is no appointment and no promotion."
+      },
+      "see": ["LY.CAREER.HJC.06"]
+    },
+    {
+      "id": "LY.CAREER.HJC.06",
+      "topic": "升迁",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·官爻隐伏，莫思爵位升迁（旧注：官爻临持身世或生合世爻不受月日冲克必称意；不上卦、落空亡、墓绝无气、受克制皆不如意，世身冲克亦凶）",
+      "rule": {
+        "yi": "官爻是占官的象。它临持身世，或者来生合世爻，又不受月建、日辰冲克，凡有谋求必然称心；如果不上卦，或者落空亡，或者虽然出现却墓绝无气、受克制，都不如意；世爻、身爻被冲克，也凶。",
+        "en": "Pressure is the image in divining an office. If it settles on the Body or the Self, or comes to generate or combine with the Self, and is not clashed or controlled by the Month or the Day, whatever is sought will surely turn out to one's liking; if it is absent from the hexagram or falls Void, or even though it appears is in a tomb or extinction and without breath, or controlled, nothing will be as one wishes; a clash or control on the Self or the Body is also ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7677, 7677],
+          "zh": ["官爻隐伏，莫思爵位升迁。"],
+          "yi": ["官爻隐伏不现，就别想爵位升迁。"],
+          "en": ["If Pressure lies hidden and does not appear, do not think of rank and promotion."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7678, 7678],
+          "zh": ["官爻为占官之象。", "若得临持身世，或来生合世爻，不受月建日辰冲克者，凡有谋望，必然称意。", "若不上卦，或落空亡，虽出现墓绝无气，及受克制，皆不如意。", "世身冲克亦凶。"],
+          "yi": ["官爻是占官的象。", "如果它临持身世，或者来生合世爻，不受月建、日辰冲克，凡有谋求，必然称心。", "如果不上卦，或者落空亡，即使出现而墓绝无气，以及受到克制，都不如意。", "世爻、身爻被冲克，也凶。"],
+          "en": ["Pressure is the image in divining an office.", "If it settles on the Body or the Self, or comes to generate or combine with the Self, and is not clashed or controlled by the Month or the Day, whatever is sought will surely turn out to one's liking.", "If it is absent from the hexagram or falls Void, or even if it appears but is in a tomb or extinction and without breath, or is controlled, nothing will be as one wishes.", "A clash or control on the Self or the Body is also ominous."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1936, 1936],
+          "zh": ["官爻临持身世，或动来生合世爻，不受月建日辰冲克者，凡有谋望，必能称意。"],
+          "yi": ["官爻临持身世，或者动来生合世爻，不受月建、日辰冲克的，凡有谋求，必能称心。"],
+          "en": ["If Pressure settles on the Body or the Self, or moves to generate or combine with the Self, and is not clashed or controlled by the Month or the Day, whatever is sought will surely turn out to one's liking."] }
+      ],
+      "note": {
+        "yi": "这一条是「占官」的基本判据：官爻（官鬼）是用神，看它在不在、有没有气、被不被冲克，再看它和世身的关系。旧注把不如意的几种情形都列出来（不上卦、落空亡、墓绝无气、受克制），王洪绪只写了吉的一半。",
+        "en": "This entry is the basic criterion of 'divining an office': the Pressure line is the Subject, and one sees whether it is present, whether it has breath, whether it is clashed or controlled, and then its relation to the Self and the Body. The old commentary lists the ways it can go wrong (absent from the hexagram, Void, in a tomb or extinction without breath, controlled), and Wang Hongxu writes only the auspicious half."
+      },
+      "see": ["LY.CAREER.HJC.02", "LY.CAREER.HJC.05"]
+    },
+    {
+      "id": "LY.CAREER.HJC.07",
+      "topic": "贵人",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·月建生身当际风云之会，岁君合世必承雨露之恩（旧注：太岁为君、月建为执政之官，生合世身必有好处，冲克世身必遭贬谪；月建扶出官爻世爻是风宪之职，太岁加父母扶出官鬼及世爻必有天恩）",
+      "rule": {
+        "yi": "太岁是君主的象，月建是执政的官。它们如果生合世爻、身爻，必有好处；只怕冲克世身，必定遭到贬谪。月建扶出官爻、世爻，必是风宪的职位；太岁加在父母上、扶出官鬼和世爻的，必有天恩，再得日辰在生旺之地更好；衰绝、遇空就没有用。",
+        "en": "The Tai Sui is the image of the sovereign, and the Month is the officer who holds government. If they generate or combine with the Self or the Body, there will surely be benefit; what is feared is that they clash or control the Self or the Body, and then one will surely be demoted and exiled. If the Month supports Pressure or the Self, it is surely a post in the censorate; if the Tai Sui is added to Resource and supports Pressure and the Self, there will surely be the Emperor's favour, better still if the Day then stands in a thriving place; if weak, in extinction or Void, it is of no use."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7680, 7680],
+          "zh": ["月建生身，当际风云之会；", "岁君合世，必承雨露之恩。"],
+          "yi": ["月建生身，正逢风云际会；", "岁君合世，必然承受雨露的恩泽。"],
+          "en": ["When the Month generates the Body, one meets the gathering of wind and cloud;", "when the Tai Sui (the Year Lord) combines with the Self, one will surely receive the favour of rain and dew."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7681, 7681],
+          "zh": ["太岁乃人君之象，月建是执政之官。", "若得生合世身爻，必有好处。", "惟怕冲克世身，必遭贬谪。", "如月建扶出官爻世爻者，必是风宪之职。", "太岁加父母扶出官鬼及世爻者，必有天恩。", "更得日下生旺之地，尤美。", "衰绝逢空无用。"],
+          "yi": ["太岁是人君的象，月建是执政的官。", "如果生合世爻、身爻，必有好处。", "只怕冲克世爻、身爻，必定遭到贬谪。", "如果月建扶出官爻、世爻，必是风宪的职位。", "太岁加在父母上，扶出官鬼和世爻的，必有天恩。", "再得日辰在生旺之地，更美。", "衰绝、遇空就没有用。"],
+          "en": ["The Tai Sui is the image of the sovereign, and the Month is the officer who holds government.", "If they generate or combine with the Self or the Body, there will surely be benefit.", "What is feared is that they clash or control the Self or the Body, and one will surely be demoted and exiled.", "If the Month supports Pressure or the Self, it is surely a post in the censorate.", "If the Tai Sui is added to Resource and supports Pressure and the Self, there will surely be the Emperor's favour.", "If the Day then stands in a thriving place, it is better still.", "If weak, in extinction or Void, it is of no use."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1938, 1938],
+          "zh": ["太岁乃君象，月建是执政之官，若得生合世爻者，必是风宪之职；", "太岁加父母扶出官爻及世爻者，必有天恩，更得生旺尤美。"],
+          "yi": ["太岁是君的象，月建是执政的官，如果生合世爻，必是风宪的职位；", "太岁加在父母上，扶出官爻和世爻的，必有天恩，再得生旺更美。"],
+          "en": ["The Tai Sui is the image of the sovereign and the Month is the officer who holds government; if they generate or combine with the Self, it is surely a post in the censorate;", "if the Tai Sui is added to Resource and supports Pressure and the Self, there will surely be the Emperor's favour, and better still if it is thriving."] }
+      ],
+      "note": {
+        "yi": "「风云之会」是君臣相遇、得志的时候，「雨露之恩」是君主的恩泽。「风宪」是负责监察、执法的官署（御史台、按察司一类）。这一联里「太岁」是君、「月建」是执政的官，也就是做官的人头上的两层上司，所以放在「贵人」这一题下。「贬谪」是降职并外放。注里「月建扶出官爻世爻者必是风宪之职」「太岁加父母扶出官鬼及世爻者必有天恩」两句，是占某一类官的象，见 LY.CAREER.HJC.19 以下几条。",
+        "en": "'The gathering of wind and cloud' is the time when a ruler and his minister meet and the minister achieves his aim, and 'the favour of rain and dew' is the sovereign's grace. 'The censorate' is the office that supervises and enforces the law (the Censorate, the Surveillance Commission and the like). In this couplet the Tai Sui is the sovereign and the Month the officer who holds government, that is, the two levels of superiors above an official, and so the entry is placed under 'patrons and superiors'. The two sentences in the commentary 'if the Month supports Pressure or the Self, it is surely a post in the censorate' and 'if the Tai Sui is added to Resource and supports Pressure and the Self, there will surely be the Emperor's favour' say what kind of post, which are taken up again in the entries from LY.CAREER.HJC.19 onwards."
+      },
+      "see": ["LY.CAREER.HJC.15", "LY.CAREER.HJC.20"]
+    },
+    {
+      "id": "LY.CAREER.HJC.08",
+      "topic": "任所",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·世动逢空，官居不久（旧注：未任世动必无京官牧守、出巡之职反顺利；已任遇之居官不久，日辰动爻相冲必不久任政事）",
+      "rule": {
+        "yi": "世爻发动又遇空亡：没做官的，卦中世爻发动，必定得不到京官、牧守一类的职位，不过如果是出巡的职位，反而顺利；已经做官的遇到这种情形，居官不久，再遇日辰、动爻相冲，必定不能长久任职理政。",
+        "en": "If the Self moves and meets Void: for one not yet in office, with the Self moving in the hexagram, one will surely get no post as a capital official or a governor or magistrate, though if it is a post of touring and inspecting it goes smoothly on the contrary; for one already in office, meeting this means one will not stay long in office, and if the Day or a moving line also clashes it, one will surely not hold the post and govern for long."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7683, 7683],
+          "zh": ["世动逢空，官居不久；"],
+          "yi": ["世爻发动又遇空亡，做官居位不久；"],
+          "en": ["If the Self moves and meets Void, one will not stay long in office;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7684, 7684],
+          "zh": ["未任：卦中世动，必无京官牧守；", "若是出巡之职，反为顺利。", "已任：遇之，居官不久。", "更遇日辰动爻相冲，必不久任政事。"],
+          "yi": ["没做官的：卦中世爻发动，必定得不到京官、牧守一类的职位；", "如果是出巡的职位，反而顺利。", "已经做官的：遇到这种情形，居官不久。", "再遇到日辰、动爻相冲，必定不能长久任职理政。"],
+          "en": ["For one not yet in office: if the Self moves in the hexagram, one will surely get no post as a capital official or a governor or magistrate;", "if it is a post of touring and inspecting, it goes smoothly on the contrary.", "For one already in office: meeting this, one will not stay long in office.", "If the Day or a moving line also clashes it, one will surely not hold the post and govern for long."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1940, 1940],
+          "zh": ["若是出巡之职，世动逢空反利己任；", "遇日辰动爻相冲，必不久任政事。"],
+          "yi": ["如果是出巡的职位，世爻发动逢空反而有利于已经任职的；", "遇到日辰、动爻相冲，必定不能长久任职理政。"],
+          "en": ["If it is a post of touring and inspecting, the Self moving into Void is on the contrary favourable to one already in office;", "if the Day or a moving line clashes it, one will surely not hold the post and govern for long."] }
+      ],
+      "note": {
+        "yi": "「牧守」是牧民之官，即州郡的长官；「京官」是在京城任职的官。「出巡」是出外巡视的差使（见 LY.CAREER.HJC.23）。这里的两种读法：旧注说出巡的职位「反为顺利」（没分已任未任），王洪绪说「反利己任」，「己」按上下文是「已」的误写，译作「有利于已经任职的」；两家差一点：旧注是出巡这类差使世动逢空都顺，王洪绪限在已经任职的人身上。",
+        "en": "'Governor or magistrate' is the officer who shepherds the people, that is, the head of a prefecture or commandery, and 'capital official' is one holding office in the capital. 'Touring and inspecting' is a commission to go out on a tour of inspection (see LY.CAREER.HJC.23). The two commentators read the last point a little differently: the old commentary says that a post of touring 'goes smoothly on the contrary' (without distinguishing already in office from not yet), while Wang Hongxu writes 'is on the contrary favourable to the one in office', where the printed character for 'in office' is a misprint of the similar character 'already' and is translated 'one already in office'; the old commentary says that for this kind of commission the Self moving into Void goes smoothly in general, and Wang Hongxu confines it to the person already in office."
+      },
+      "see": ["LY.CAREER.HJC.09", "LY.CAREER.HJC.23"]
+    },
+    {
+      "id": "LY.CAREER.HJC.09",
+      "topic": "风险",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·身空无救，命尽当危（旧注：世爻无故自空，不拘已任未任必有大难甚至死亡，求谋干事则不成）",
+      "rule": {
+        "yi": "世爻无缘无故自己落空亡又没有救助，不管已经任职还是没有任职，必有大难，甚至死亡；想谋求办事的，主不成。",
+        "en": "If the Self falls Void by itself without cause and there is no rescue, whether one is already in office or not, there will surely be a great calamity, even death; and if one wants to seek or manage something, it will not succeed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7686, 7686],
+          "zh": ["身空无救，命尽当危。"],
+          "yi": ["世爻空亡又得不到救助，命数将尽，就有危险。"],
+          "en": ["When the Self is Void with no rescue, one's life is spent and in danger."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7687, 7687],
+          "zh": ["世爻无故自空，不拘已任未任，必有大难，甚至死亡。", "若欲求谋干事，则主不成。"],
+          "yi": ["世爻无缘无故自己落空，不管已经任职还是没有任职，必有大难，甚至死亡。", "如果想谋求办事，就主不成。"],
+          "en": ["If the Self falls Void by itself without cause, whether already in office or not, there will surely be a great calamity, even death.", "If one wants to seek or manage something, it will not succeed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1942, 1942],
+          "zh": ["世临无救之空，不拘已任未任，必有大难甚至死亡；", "若欲求谋干事，则主不成。"],
+          "yi": ["世爻临着无救的空亡，不管已经任职还是没有任职，必有大难，甚至死亡；", "如果想谋求办事，就主不成。"],
+          "en": ["If the Self rests on a Void with no rescue, whether already in office or not, there will surely be a great calamity, even death;", "if one wants to seek or manage something, it will not succeed."] }
+      ],
+      "note": {
+        "yi": "「无故自空」是指世爻落空亡，而日辰、月建、动爻都没有伤克它（不是因为被伤克而空）。这个说法在黄金策总断千金赋里就是「无故勿空」，两家读法相反，见 LY.ILL.HJC.151：旧注说无故自空是大凶，王洪绪说旧注把意思弄反了。这里的旧注和王洪绪都取「大凶」的读法，没有分歧。",
+        "en": "'Void by itself without cause' means the Self falls into Void while the Day, the Month and the moving lines have not injured it (it is not Void because it was injured). This is the line 'without cause, do not be Void' in the Rhapsody of a Thousand Golden Judgements, which the two commentators read in opposite ways, see LY.ILL.HJC.151: the old commentary says that Void without cause is greatly ominous, and Wang Hongxu says the old commentary has the sense backwards. Here the old commentary and Wang Hongxu both take the 'greatly ominous' reading, and there is no disagreement."
+      },
+      "see": ["LY.CAREER.HJC.08", "LY.ILL.HJC.151"]
+    },
+    {
+      "id": "LY.CAREER.HJC.10",
+      "topic": "任所",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·鬼化福冲当代职（旧注：出巡官宜鬼动、牧守官宜鬼静；鬼动化子必有别官代职；子动化鬼先难后易；官福皆动亦主有官替代）",
+      "rule": {
+        "yi": "出巡的官，适合官鬼发动；牧守一类的官，适合官鬼安静。如果官鬼发动、化出子孙，必有别的官员来代理职务，不然也会被别人抢在前面；子孙发动化出官鬼，就是先难后易，或者先凶后吉；官鬼和子孙都发动，也主有官员来接替。",
+        "en": "For an officer on tour, it is fitting that Pressure moves; for a governor or magistrate, it is fitting that Pressure is still. If Pressure moves and turns into Output, another officer will surely come to take over the post, or one is otherwise forestalled by someone else; if Output moves and turns into Pressure, it is hard first and easy later, or ominous first and fortunate later; if both Pressure and Output move, it likewise means an officer comes to replace one."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7689, 7689],
+          "zh": ["鬼化福冲当代职；"],
+          "yi": ["官鬼发动化出子孙又遇冲，会有别的官员来代理职务；"],
+          "en": ["When Pressure moves, turns into Output and is clashed, another officer will come to take over the post;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7690, 7690],
+          "zh": ["出巡官，宜鬼爻发动；", "牧守官，宜鬼爻安静。", "若鬼动化子，必有别官代职。", "不然，亦被他人所先也。", "子动化鬼，则先难后易，或先凶后吉。", "官福皆动，亦主有官替代。"],
+          "yi": ["出巡的官，适合官鬼发动；", "牧守一类的官，适合官鬼安静。", "如果官鬼发动化出子孙，必有别的官员来代理职务。", "不然，也会被别人抢在前头。", "子孙发动化出官鬼，就是先难后易，或者先凶后吉。", "官鬼和子孙都发动，也主有官员来接替。"],
+          "en": ["For an officer on tour, it is fitting that Pressure moves;", "for a governor or magistrate, it is fitting that Pressure is still.", "If Pressure moves and turns into Output, another officer will surely come to take over the post.", "Otherwise one is also forestalled by someone else.", "If Output moves and turns into Pressure, it is hard first and easy later, or ominous first and fortunate later.", "If both Pressure and Output move, it likewise means an officer comes to replace one."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1944, 1944],
+          "zh": ["出巡官宜鬼爻发动，牧守官宜官爻安静，若鬼动化子，必有别官代替。"],
+          "yi": ["出巡的官适合官鬼发动，牧守的官适合官爻安静，如果官鬼发动化出子孙，必有别的官员来代替。"],
+          "en": ["An officer on tour should have Pressure moving and a governor or magistrate should have Pressure still, and if Pressure moves and turns into Output, another officer will surely come to take his place."] }
+      ],
+      "note": {
+        "yi": "经文的「福冲」是说官鬼动化出子孙（福）、又被冲；「当代职」是「会有人来替代」。出巡官与牧守官对官鬼动静的要求相反：出巡是外出差使，官鬼动才有事可办；牧守是坐镇一地，官鬼静才稳。同一个判据又见 LY.CAREER.HJC.22（牧守）和 LY.CAREER.HJC.23（出巡）。",
+        "en": "'Turns into Output and is clashed' in the verse means Pressure moving and turning into Output (the 'blessing' line) and then being clashed, and 'another takes over the post' means that someone will come to replace one. An officer on tour and a governor or magistrate need opposite things of Pressure: touring is a commission outside, where Pressure must move for there to be business to do, and a magistrate is posted in one place, where Pressure must be still for the post to be steady. The same criteria are met again in LY.CAREER.HJC.22 (governing) and LY.CAREER.HJC.23 (touring)."
+      },
+      "see": ["LY.CAREER.HJC.22", "LY.CAREER.HJC.23"]
+    },
+    {
+      "id": "LY.CAREER.HJC.11",
+      "topic": "风险",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·财临虎动必丁忧（旧注：占官不可无财亦不可发动；鬼有气得财动扶起须用财谋干方得升迁；父衰财临白虎旺动必有丁忧）",
+      "rule": {
+        "yi": "占官，不能没有财爻，也不能让它发动。如果官鬼有气，又得到财爻发动来扶起，就必须用钱财去谋求打点，才能升迁；如果父母衰弱，又遇到这一爻加临白虎旺相发动，必有丁忧（为父母守丧）的事；财化子孙、子孙化财，或财临世发动，或子孙发动而父母无故自己空亡的，都主丁忧。",
+        "en": "In divining an office, Wealth cannot be missing, nor should it move. If Pressure has breath and is raised up by a moving Wealth, one must use money to seek and arrange it before one is promoted; if Resource is weak and this line, settled on the White Tiger, moves in strength, there will surely be a mourning for a parent; and if Wealth turns into Output, or Output into Wealth, or Wealth settles on the Self and moves, or Output moves while Resource falls Void by itself without cause, in all these cases there will be mourning."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7692, 7692],
+          "zh": ["财临虎动必丁忧。"],
+          "yi": ["财爻临着白虎发动，必定有丁忧（守丧）；"],
+          "en": ["When Wealth settles on the Tiger and moves, there will surely be a mourning for a parent;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7693, 7693],
+          "zh": ["凡占官，不可无财，亦不可发动。", "若鬼爻有气，而得财动扶起，必须用财谋干，方得升迁。", "若父母衰弱，而遇此爻加临白虎旺动者，必有丁忧之事。", "财化子，子化财，或财临世动，或子动而父母无故自空者，皆主丁忧。"],
+          "yi": ["凡是占官，不能没有财爻，也不能让它发动。", "如果官鬼有气，又得到财爻发动来扶起，就必须用钱财去谋求打点，才能升迁。", "如果父母衰弱，又遇到这一爻加临白虎旺相发动，必有丁忧的事。", "财化子孙，子孙化财，或者财临世爻发动，或者子孙发动而父母无故自己空亡的，都主丁忧。"],
+          "en": ["In divining an office, Wealth cannot be missing, nor should it move.", "If Pressure has breath and is raised up by a moving Wealth, one must use money to seek and arrange it before one is promoted.", "If Resource is weak and this line, settled on the White Tiger, moves in strength, there will surely be a mourning.", "If Wealth turns into Output, or Output into Wealth, or Wealth settles on the Self and moves, or Output moves while Resource falls Void by itself without cause, in all these cases there will be mourning."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1946, 1946],
+          "zh": ["凡占官不可无财，亦不可发动，若鬼爻无气而得财动扶起，必须用财谋干，方得升迁；", "若父母衰弱，而遇此爻加临白虎旺动者，必有忧丁之事。"],
+          "yi": ["凡占官不可没有财，也不可发动，如果官鬼无气而得财爻发动扶起，必须用财谋求，才能升迁；", "如果父母衰弱，而遇到这一爻加临白虎旺相发动的，必有忧丁的事。"],
+          "en": ["In divining an office, Wealth must not be missing nor may it move, and if Pressure has no breath and is raised up by a moving Wealth, one must seek by means of money before one is promoted;", "if Resource is weak and this line, settled on the White Tiger, moves in strength, there will surely be a mourning."] }
+      ],
+      "note": {
+        "yi": "「丁忧」是官员遭遇父母丧事，要离职守孝（通常二十七个月）。财克父母（文书），所以财动、父母衰是丁忧的象。「用财谋干」是花钱打点，书里没有说怎么打点。卜筮大全旧注说的是「财临虎动」（财爻临白虎发动），卜筮正宗把经文改成「财临福动」（财爻临子孙发动），可是它的注里仍写「加临白虎旺动」；「福」像是「虎」的误写，或是另有传本，书里没有说明，译文按卜筮大全的「虎」读。王洪绪把「忧丁」和旧注的「丁忧」是同一个词（丁忧）的两种写法。另有「官鬼有气得财动扶起」一句，卜筮正宗改写为「鬼爻无气而得财动扶起」：旧注说鬼有气、财动扶起，王洪绪说鬼无气、财动扶起，一个是锦上添花，一个是雪中送炭，但结论都是要用钱谋干。",
+        "en": "'Mourning' is the official's leave from post to observe mourning (usually twenty-seven months) on the death of a parent. Wealth controls Resource (the documents), so Wealth moving while Resource is weak is the sign of mourning. 'Use money to seek and arrange' means spending money to smooth the way, and the book does not say how. The old commentary of the Bushi Daquan says 'Wealth settled on the Tiger moves' (Wealth on the White Tiger moving), while the Bushi Zhengzong changes the verse to 'Wealth settled on Output moves', yet its commentary still says 'settled on the White Tiger and moving in strength'; the character printed 'Output' looks like a miswriting of 'Tiger', or there was another transmitted text, and the book does not say, and the translation follows the 'Tiger' of the Bushi Daquan. In one sentence the old commentary says 'if Pressure has breath and is raised up by a moving Wealth' and Wang Hongxu says 'if Pressure has no breath and is raised up by a moving Wealth': one adds flowers to brocade and the other sends charcoal in the snow, but both conclude that money must be used."
+      },
+      "see": ["LY.CAREER.HJC.01"]
+    }
+  ]
+}

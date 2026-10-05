@@ -1,0 +1,374 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "黄金策",
+  "chapter": "求馆(附束修)",
+  "chapter_en": "Seeking a school post (with the tuition fee)",
+  "ranges": {"卜筮大全": [8558, 8597], "卜筮正宗": [2763, 2781]},
+  "units": [
+    {
+      "id": "LY.CAREER.HJC.40",
+      "topic": "成否",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·动象临财，难称意（旧注：文书为占馆用神，遇财动则被克坏，未成者不能成、已成者不遂意；世身日月皆忌临财；父持月建或临生旺庶亦可成）",
+      "rule": {
+        "yi": "文书（父母）是占馆的用神，遇到财爻发动就被克坏：没成的不能成，已经成的也不称意；世爻、身爻、日辰、月建都忌讳临着财爻；如果父母持月建，或者临在生旺之地，或许还能成。",
+        "en": "Resource, the document, is the Subject in divining a school post, and if Wealth moves it is controlled and spoiled: what has not yet come about cannot, and what has come about is not to one's liking; the Self, the Body, the Day and the Month all dislike resting on Wealth; if Resource holds the Month or rests in a place of birth or thriving, it may perhaps still come through."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8558, 8558],
+          "zh": ["动象临财，难称意；"],
+          "yi": ["动的象遇上财爻，就难以称意；"],
+          "en": ["A moving sign that meets Wealth is hard to be satisfied with;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8559, 8559],
+          "zh": ["文书为占馆用神。", "若遇财动，则被克坏。", "未成者，不能成；", "已成者，不遂意。", "世身日月皆忌临之。", "若得父持月建，或临生旺，庶亦可成。"],
+          "yi": ["文书是占馆的用神。", "如果遇到财爻发动，就被克坏。", "没成的，不能成；", "已经成的，不称心意。", "世爻、身爻、日辰、月建都忌讳临着财爻。", "如果父母持月建，或者临在生旺之地，或许也能成。"],
+          "en": ["Resource, the document, is the Subject in divining a school post.", "If Wealth moves, it is controlled and spoiled.", "What has not come about cannot come about;", "what has come about is not to one's liking.", "The Self, the Body, the Day and the Month all dislike resting on Wealth.", "If Resource holds the Month, or rests in a place of birth or thriving, it may perhaps still come through."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2763, 2763],
+          "zh": ["文书为占馆用神，若遇财动则被克坏，未成者不能成，已成者不能遂意。"],
+          "yi": ["文书是占馆的用神，如果遇到财动就被克坏，没成的不能成，已经成的不能称心。"],
+          "en": ["Resource, the document, is the Subject in divining a school post, and if Wealth moves it is controlled and spoiled; what has not come about cannot, and what has come about cannot be to one's liking."] }
+      ],
+      "note": {
+        "yi": "这一联和 LY.CAREER.HJC.01 是一个道理的两面：仕宦里要有财（俸禄），求馆里财动克父（文书）就坏事。这一章里的「父母」是书馆（见 LY.CAREER.HJC.35），所以财克父，就是财克了书馆。「用神」在这里指父母爻（书馆）。王洪绪这一行里同时写了「动象临财」和「空爻持世」两联的注，这一条取前一联。",
+        "en": "This couplet and LY.CAREER.HJC.01 are two faces of one principle: in holding office one must have Wealth (the salary), and in a school post Wealth moving to control Resource (the document) spoils the matter. In this chapter 'Resource' is the school (see LY.CAREER.HJC.35), so Wealth controlling Resource is Wealth controlling the school. 'The Subject' here means the Resource line (the school). Wang Hongxu's line carries the comments on both couplets 'a moving sign meets Wealth' and 'a Void line holds the Self', and this entry takes the former."
+      },
+      "see": ["LY.CAREER.HJC.35", "LY.CAREER.HJC.41"]
+    },
+    {
+      "id": "LY.CAREER.HJC.41",
+      "topic": "成否",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·空爻持世，岂如心（旧注：父母出现、应来生合而世空，非馆不成乃自不上前或成而不去；应不生合父母重叠世空是有别馆；无故自空必不成、成亦不如意）",
+      "rule": {
+        "yi": "卦里父母出现、应爻来生合，而世爻空亡的，不是馆不成，是自己不肯上前，或者虽然成了却不去；应爻不生合、父母重叠而世爻空亡的，是另有别的馆，所以不成这一个；世爻无缘无故自己空亡，必定不能成，即使成了也终究不如意。",
+        "en": "If Resource appears in the hexagram and the Other comes to generate or combine while the Self is Void, it is not that the school will not come about but that one does not step forward oneself, or that even if it comes about one does not go; if the Other does not generate or combine, Resource is doubled and the Self is Void, there is another school, and so this one does not come about; if the Self falls Void by itself without cause, it will surely not come about, and even if it does it is in the end not as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8561, 8561],
+          "zh": ["空爻持世，岂如心。"],
+          "yi": ["空亡的爻持世，哪里还能称心。"],
+          "en": ["With a Void line holding the Self, how can one be satisfied."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8562, 8564],
+          "zh": ["卦中父母出现，应来生合，而世爻空亡者，非馆不成，乃是自不上前，或虽成不去也。", "应不生合，父母重叠，而世爻空亡者，为有别馆，故不成此事。", "无故自空，必不可成，虽成终不如意。"],
+          "yi": ["卦里父母出现，应爻来生合，而世爻空亡的，不是馆不成，而是自己不上前，或者即使成了也不去。", "应爻不生合，父母重叠，而世爻空亡的，是有别的馆，所以不成这个事。", "世爻无缘无故自己空亡，必定不能成，即使成了，终究不如意。"],
+          "en": ["If Resource appears in the hexagram and the Other comes to generate or combine while the Self is Void, it is not that the school will not come about but that one does not step forward oneself, or that even if it comes about one does not go.", "If the Other does not generate or combine, Resource is doubled and the Self is Void, there is another school, and so this matter does not come about.", "If the Self falls Void by itself without cause, it will surely not come about, and even if it does it is in the end not as one wishes."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2763, 2763],
+          "zh": ["卦中父母出现，应来生合，而世爻空亡者，求馆不成。"],
+          "yi": ["卦中父母出现，应爻来生合，而世爻空亡的，求馆不成。"],
+          "en": ["If Resource appears in the hexagram and the Other comes to generate or combine while the Self is Void, the school is not obtained."] }
+      ],
+      "dispute": {
+        "yi": "同一个象（父母出现、应来生合、世爻空亡），旧注把原因讲清楚：是自己不肯去，或者另有别的馆；王洪绪只写「求馆不成」，没有讲这是为什么。这不是说两家判断不同，是旧注比王洪绪多了一层理由，按旧注读，「不成」不是外面不给，而是自己不去。",
+        "en": "For the same image (Resource appears, the Other comes to generate or combine, the Self is Void), the old commentary makes the reason clear: one does not wish to go oneself, or there is another school; Wang Hongxu writes only 'the school is not obtained' without saying why. The two do not judge differently, but the old commentary gives a further reason, and read by it, 'not coming about' is not that the outside refuses but that one does not go oneself."
+      },
+      "note": {
+        "yi": "「无故自空」的读法见 LY.CAREER.HJC.09 和 LY.ILL.HJC.151。「应来生合」是东家愿意聘请，「世爻空亡」是自己这一头空，所以不是别人不请，是自己没有去。",
+        "en": "For how to read 'Void by itself without cause' see LY.CAREER.HJC.09 and LY.ILL.HJC.151. 'The Other comes to generate or combine' means the host is willing to engage one, and 'the Self is Void' means one's own side is empty, so it is not that others do not engage one but that one does not go oneself."
+      },
+      "see": ["LY.CAREER.HJC.40", "LY.CAREER.HJC.09"]
+    },
+    {
+      "id": "LY.CAREER.HJC.42",
+      "topic": "风险",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·身位受伤，虽成不利（旧注：世身被月建日辰动爻刑克虽有可成之象日后亦不称意；鬼爻刑克有官非疾病类）",
+      "rule": {
+        "yi": "世爻、身爻被月建、日辰、动爻刑克，虽然有可成的象，日后也不称心；如果是官鬼爻刑克，会有官非、疾病之类的事。",
+        "en": "If the Self and the Body are punished or controlled by the Month, the Day or a moving line, then though there is the image of its coming about, it will not be to one's liking later; if it is Pressure that punishes or controls, there will be lawsuits, illness and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8566, 8566],
+          "zh": ["身位受伤，虽成不利；"],
+          "yi": ["世身受到伤害，即使成了也不利；"],
+          "en": ["If the Self and the Body are injured, even if it comes about it is unfavourable;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8567, 8567],
+          "zh": ["世身被月建日辰动爻刑克，虽有可成之象，日后亦不称意。", "如鬼爻刑克，有官非疾病类。"],
+          "yi": ["世爻、身爻被月建、日辰、动爻刑克，虽然有可成的象，日后也不称心。", "如果是官鬼爻刑克，有官非、疾病之类的事。"],
+          "en": ["If the Self and the Body are punished or controlled by the Month, the Day or a moving line, then though there is the image of its coming about, it will not be to one's liking later.", "If it is Pressure that punishes or controls, there will be lawsuits, illness and the like."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2764, 2764],
+          "zh": ["世身被月建、日辰、动爻刑克，虽成而日后有官非疾病。"],
+          "yi": ["世身被月建、日辰、动爻刑克，虽然成了，日后有官非、疾病。"],
+          "en": ["If the Self and the Body are punished or controlled by the Month, the Day or a moving line, then though it comes about there will be lawsuits and illness later."] }
+      ],
+      "note": {
+        "yi": "这一条是「成了以后」的风险：事成了，但世身受伤，日后不如意；官鬼刑克世身，还会招来官司和疾病。王洪绪没有区分是什么爻刑克，一概说日后有官非疾病。",
+        "en": "This entry is a risk 'after it has come about': the matter is obtained but the Self and the Body are injured and things go ill later; and if Pressure punishes or controls the Self and the Body, lawsuits and illness are also drawn in. Wang Hongxu does not distinguish by which line is doing the punishing and controlling, and says in all cases that lawsuits and illness come later."
+      },
+      "see": ["LY.CAREER.HJC.41", "LY.CAREER.HJC.43"]
+    },
+    {
+      "id": "LY.CAREER.HJC.43",
+      "topic": "成否",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·间爻有动，纵吉难成（旧注：间爻动则事多阻隔，故难成）",
+      "rule": {
+        "yi": "间爻（世应之间的爻）发动，事情多有阻隔，纵然卦象吉也难成。",
+        "en": "If a between line (a line between the Self and the Other) moves, the matter is often obstructed, and even if the hexagram is auspicious it is hard to bring about."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8569, 8569],
+          "zh": ["间爻有动，纵吉难成。"],
+          "yi": ["间爻发动，纵然吉也难成。"],
+          "en": ["If a between line moves, then even if it is auspicious it is hard to bring about."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8570, 8570],
+          "zh": ["间爻动，事多阻隔，故难成。"],
+          "yi": ["间爻发动，事情多半有阻隔，所以难成。"],
+          "en": ["When a between line moves, the matter is often obstructed, and so it is hard to bring about."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2764, 2764],
+          "zh": ["间爻动克，事多阻隔，故难成也。"],
+          "yi": ["间爻发动来克，事情多有阻隔，所以难成。"],
+          "en": ["A between line moving to control the matter is often obstructed, and so it is hard to bring about."] }
+      ],
+      "note": {
+        "yi": "「间爻」是世爻和应爻之间的爻，在求馆里就是先生和东家之间的人（中人、荐馆人）。间爻动，是中间的人插了手，所以多阻隔。这个判据在别的章里也常见，如占婚的「间爻」（见 LY.MARRY 一带）。",
+        "en": "'A between line' is a line between the Self and the Other, and in a school post it is the person between the teacher and the host (the go-between, the one who recommends). When it moves, the go-between has stepped in, and so there is obstruction. This criterion is common in other chapters too, as with the 'between lines' in divining marriage (see around LY.MARRY)."
+      },
+      "see": ["LY.CAREER.HJC.42", "LY.CAREER.HJC.44"]
+    },
+    {
+      "id": "LY.CAREER.HJC.44",
+      "topic": "贵人",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·鬼或化兄，备礼先酬乎荐馆（旧注：鬼爻动出兄弟必得礼物先酬荐馆之人则可成；兄临世身亦主先费财物；兄临应上是东家好利必得礼仪馈送而后可成）",
+      "rule": {
+        "yi": "官鬼发动化出兄弟，必须拿出礼物先酬谢推荐馆的人，才能成；兄弟临世身，也主要先花费财物；兄弟临在应爻上，是东家好利，必须有礼品馈送，然后才能成。",
+        "en": "If Pressure moves and turns into Peer, one must give gifts first to repay the person who recommended one to the school, and then it can come through; Peer resting on the Self or the Body likewise means that one must first spend money and goods; if Peer rests on the Other, the host is fond of profit, and gifts must be sent before it can come through."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8572, 8572],
+          "zh": ["鬼或化兄，备礼先酬乎荐馆；"],
+          "yi": ["官鬼发动化出兄弟，要备好礼物先酬谢推荐馆的人；"],
+          "en": ["If Pressure turns into Peer, one must prepare gifts and first repay the one who recommended one to the school;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8573, 8573],
+          "zh": ["凡遇鬼爻动出兄弟，必得礼物先酬荐馆之人，则可成。", "兄临世身，亦主先费财物。", "兄临应上，则是东家好利，必得礼仪馈送，而后可成也。"],
+          "yi": ["凡是遇到官鬼爻发动化出兄弟，必须拿出礼物先酬谢推荐馆的人，才能成。", "兄弟临世爻、身爻，也主要先花费财物。", "兄弟临在应爻上，就是东家好利，必须有礼品馈送，然后才能成。"],
+          "en": ["Whenever Pressure moves and turns into Peer, one must give gifts first to repay the person who recommended one to the school, and then it can come through.", "Peer resting on the Self or the Body likewise means that one must first spend money and goods.", "If Peer rests on the Other, the host is fond of profit, and gifts must be sent before it can come through."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2765, 2765],
+          "zh": ["凡遇鬼爻动出兄弟，必得礼物先酬荐馆之人，则可成就，兄临世身亦然。"],
+          "yi": ["凡是遇到官鬼爻发动化出兄弟，必须拿出礼物先酬谢推荐馆的人，才能成就，兄弟临世身也是这样。"],
+          "en": ["Whenever Pressure moves and turns into Peer, one must give gifts first to repay the person who recommended one to the school, and then it can be accomplished, and likewise if Peer rests on the Self or the Body."] }
+      ],
+      "note": {
+        "yi": "兄弟是劫财的神，在求馆里就是「要花钱」：鬼（荐馆人）化兄弟，要先谢荐馆人；兄弟临世身，自己先破费；兄弟临应，东家好利要礼。王洪绪只写了前两种，没有写兄弟临应的一种。",
+        "en": "Peer is the spirit that robs wealth, and in a school post it means 'money must be spent': Pressure (the one who recommends) turning into Peer means the recommender must be thanked first; Peer on the Self or the Body means one spends first; Peer on the Other means the host is fond of profit and wants gifts. Wang Hongxu writes only the first two and not the case of Peer on the Other."
+      },
+      "see": ["LY.CAREER.HJC.36", "LY.CAREER.HJC.45"]
+    },
+    {
+      "id": "LY.CAREER.HJC.45",
+      "topic": "贵人",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·世如变鬼，央人转荐于东家（旧注：鬼爻出现而世又化鬼须再得推荐乃成；卦无官而动爻化出者初无人荐亦待央人荐之；鬼化鬼父化父反复难成）",
+      "rule": {
+        "yi": "官鬼爻出现而世爻又化出官鬼的，必须再得到推荐才能成；卦里没有官鬼而动爻化出官鬼的，当初没有人推荐，也必须等央求人去推荐才能成；官鬼化官鬼、父母化父母，又主反复难成。",
+        "en": "If Pressure appears and the Self also turns into Pressure, one must obtain a further recommendation before it can come through; if there is no Pressure in the hexagram but a moving line turns into Pressure, no one recommended one at first and one must wait for someone to be begged to recommend one before it can come through; if Pressure turns into Pressure or Resource into Resource, it also means going back and forth and being hard to bring about."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8575, 8575],
+          "zh": ["世如变鬼，央人转荐于东家。"],
+          "yi": ["世爻如果变出官鬼，要央求人再转荐给东家。"],
+          "en": ["If the Self turns into Pressure, one must beg someone to recommend one again to the host."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8576, 8576],
+          "zh": ["鬼爻出现，而世又化出者，必须再得推荐，乃可成。", "卦无官，而动爻有化出者，初未有人推荐，亦必待央人荐之，则可成。", "若鬼化鬼，父化父，又主反复难成。"],
+          "yi": ["官鬼爻出现，而世爻又化出官鬼的，必须再得到推荐，才能成。", "卦里没有官鬼，而动爻有化出官鬼的，当初没有人推荐，也必须等央求人去推荐，才能成。", "如果官鬼化官鬼、父母化父母，又主反复难成。"],
+          "en": ["If Pressure appears and the Self also turns into Pressure, one must obtain a further recommendation before it can come through.", "If there is no Pressure in the hexagram but a moving line turns into Pressure, no one recommended one at first and one must wait for someone to be begged to recommend one before it can come through.", "If Pressure turns into Pressure or Resource into Resource, it also means going back and forth and being hard to bring about."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2767, 2769],
+          "zh": ["鬼爻出现而世又化出者，再得推荐可成；", "卦无官而动爻有化出者，初无人荐，亦必央人荐之可成也。"],
+          "yi": ["官鬼爻出现而世爻又化出官鬼的，再得到推荐就能成；", "卦里没有官鬼而动爻有化出官鬼的，当初没有人推荐，也必须央求人推荐才能成。"],
+          "en": ["If Pressure appears and the Self also turns into Pressure, with a further recommendation it can come through;", "if there is no Pressure in the hexagram but a moving line turns into Pressure, no one recommended one at first and one must beg someone to recommend one before it can come through."] }
+      ],
+      "note": {
+        "yi": "「转荐」是荐馆人再向东家转荐一次，等于多一层中间人。旧注最后一句「鬼化鬼、父化父，又主反复难成」（和 LY.CAREER.HJC.35 里「父化父有两处书馆」不同，那里是吉），王洪绪没有。",
+        "en": "'Recommend again' means the recommender passes one on to the host a second time, one more level of go-between. The old commentary's last sentence, 'Pressure turning into Pressure or Resource into Resource also means going back and forth and being hard to bring about' (different from 'Resource turning into Resource means two schools' in LY.CAREER.HJC.35, where it is favourable), is not in Wang Hongxu."
+      },
+      "see": ["LY.CAREER.HJC.44", "LY.CAREER.HJC.35"]
+    },
+    {
+      "id": "LY.CAREER.HJC.46",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·世无生合，谩看白眼之纷纷（旧注：应不克世、父母不空、兄鬼不动而月日动爻并不生合世，其事可成，但主人不钦敬皆以白眼待之）",
+      "rule": {
+        "yi": "应爻不克世爻，父母不空，兄弟、官鬼不发动，而月建、日辰、动爻都不生合世爻的，这个事可以成，只是主人不敬重，都用白眼对待。",
+        "en": "If the Other does not control the Self, Resource is not Void, Peer and Pressure do not move, and the Month, the Day and the moving lines do not generate or combine with the Self, the matter can come about, only the master does not respect one and treats one with disdain."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8578, 8578],
+          "zh": ["世无生合，谩看白眼之纷纷；"],
+          "yi": ["世爻没有人来生合，只能徒然看着人们翻白眼的纷纷景象；"],
+          "en": ["With no one to generate or combine with the Self, one can only look on at the crowds of white-eyed disdain;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8579, 8579],
+          "zh": ["凡遇应不克世，父母不空，兄鬼不动，而月建日辰动爻，并不生合世爻者，其事可成。", "但主人不钦敬，皆以白眼待之也。"],
+          "yi": ["凡是遇到应爻不克世爻，父母不空，兄弟、官鬼不发动，而月建、日辰、动爻都不生合世爻的，这个事可以成。", "只是主人不敬重，都用白眼对待。"],
+          "en": ["Whenever the Other does not control the Self, Resource is not Void, Peer and Pressure do not move, and the Month, the Day and the moving lines do not generate or combine with the Self, the matter can come about.", "But the master does not respect one and treats one with white eyes."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2771, 2771],
+          "zh": ["应不克世，父母不空，兄鬼不动，而月日动爻并不生合世爻者，其事纵成，但主人不钦敬，故白眼待之。"],
+          "yi": ["应爻不克世爻，父母不空，兄弟、官鬼不发动，而月建、日辰、动爻都不生合世爻的，这个事即使成了，主人也不敬重，所以用白眼相待。"],
+          "en": ["If the Other does not control the Self, Resource is not Void, Peer and Pressure do not move, and the Month, the Day and the moving lines do not generate or combine with the Self, then even if the matter comes about the master does not respect one, and so treats one with white eyes."] }
+      ],
+      "note": {
+        "yi": "「白眼」是用白眼看人，表示轻视（阮籍青白眼的典故）。这一条说的是：事能成，但没有人扶（日月动爻不生合世），所以在东家那里不受重视。王洪绪加了「纵成」二字，更强调这是成了之后的待遇。",
+        "en": "'White eyes' is looking at someone with the whites of one's eyes, showing contempt (from the story of Ruan Ji and his green and white eyes). This entry says that the matter can come about but, with no one to prop one up (the Day, the Month and the moving lines do not generate or combine with the Self), one is not valued by the host. Wang Hongxu adds 'even if it comes about', stressing that this is the treatment after it has come about."
+      },
+      "see": ["LY.CAREER.HJC.33"]
+    },
+    {
+      "id": "LY.CAREER.HJC.47",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·福或兴隆，会见青矜之济济（旧注：占馆以福爻为门生，旺相多、休囚少；空亡不上卦未必其家子弟；子化子生徒必多；带杀动来克世日后恐有操戈入室者）",
+      "rule": {
+        "yi": "占馆以子孙爻代表门生（学生）：旺相就多，休囚就少；空亡、不上卦，虽是这家人作主，未必是他家的子弟；子孙化出子孙，学生必定多；带煞发动来克世爻，日后恐怕有动手作乱、入室反目的人。",
+        "en": "In divining a school post, Output stands for the pupils: if thriving there are many, if resting or trapped, few; if it is Void or absent from the hexagram, though this household is the master the pupils are not necessarily the sons of that family; Output turning into Output means many pupils; if it carries a killer and moves to control the Self, there may later be one who takes up arms and turns on his master within the room."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8581, 8581],
+          "zh": ["福或兴隆，会见青矜之济济。"],
+          "yi": ["子孙如果兴旺，就会看到一群群青衿弟子济济一堂。"],
+          "en": ["If Output flourishes, one will see rows upon rows of blue-collared pupils."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8582, 8582],
+          "zh": ["占馆以福爻为门生。", "旺相多，休囚少。", "空亡不上卦，虽是其人作主，未必其家子弟也。", "子化子，生徒必多。", "带杀动来克世，日后恐有操戈入室者。"],
+          "yi": ["占馆以子孙爻代表门生。", "旺相就多，休囚就少。", "空亡、不上卦，虽然是这家人作主，未必是他家的子弟。", "子孙化出子孙，学生必定多。", "带煞发动来克世爻，日后恐怕有动手作乱、入室反目的人。"],
+          "en": ["In divining a school post, Output stands for the pupils.", "If thriving there are many, if resting or trapped, few.", "If Void or absent from the hexagram, though this household is the master, the pupils are not necessarily the sons of that family.", "Output turning into Output means many pupils.", "If it carries a killer and moves to control the Self, there may later be one who takes up arms and turns on his master within the room."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2773, 2773],
+          "zh": ["占馆以福爻为门生，旺相多，休囚少。"],
+          "yi": ["占馆以子孙爻代表门生，旺相就多，休囚就少。"],
+          "en": ["In divining a school post Output stands for the pupils, and if thriving there are many, if resting or trapped, few."] }
+      ],
+      "note": {
+        "yi": "「青矜」（青衿）是读书人穿的青领的衣服，这里指学生。「操戈入室」是动手作乱、反目成仇（「入室操戈」是说反过来用老师教的东西来对付老师）。注意：在仕宦里，子孙是「伤官之杀」（LY.CAREER.HJC.03），在求馆里，子孙是门生，是吉神。这一章里子孙只吉不凶，书里这一章里的子孙是「学生」。",
+        "en": "'Blue collar' is the blue-collared dress that students wear, here meaning pupils. 'Take up arms and enter the room' is rising in violence and turning into enemies (it also means using what the teacher taught against the teacher). Note that in holding office Output is 'the killer that harms office' (LY.CAREER.HJC.03), whereas in a school post Output is the pupils, a lucky spirit; in this chapter Output is simply the 'students'."
+      },
+      "see": ["LY.CAREER.HJC.48", "LY.CAREER.HJC.50"]
+    },
+    {
+      "id": "LY.CAREER.HJC.48",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·衰逢扶起，日加鼓箧之徒（旧注：子孙旺相却被日辰动爻刑克，生徒始多日后渐减；子孙休囚得日辰动爻生合扶起，始虽不多开馆后日渐增进）",
+      "rule": {
+        "yi": "子孙旺相却被日辰、动爻刑克，学生开始时虽然很多聚集在馆，日后渐渐减少；子孙休囚却被日辰、动爻生合扶起，开始时虽然不多，开馆后日渐增加。",
+        "en": "If Output is thriving but is punished or controlled by the Day or a moving line, then although many pupils gather in the school at first, they gradually dwindle later; if Output is resting or trapped but is generated, combined or raised up by the Day or a moving line, then though there are not many at first, they increase day by day after the school opens."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8584, 8584],
+          "zh": ["衰逢扶起，日加鼓箧之徒；"],
+          "yi": ["子孙衰弱却被扶起，日渐增加敲鼓开箧受业的学徒；"],
+          "en": ["If Output is weak but is raised up, the pupils who open their book-boxes at the drum grow in number day by day;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8585, 8585],
+          "zh": ["子孙旺相，却被日辰动爻刑克，主生徒始虽多集在馆，日后渐自减少。", "子孙休囚，却系日辰动爻生合扶起，则主始虽不多，开馆后日渐增进也。"],
+          "yi": ["子孙旺相，却被日辰、动爻刑克，主学生开始时虽然很多聚集在馆，日后渐渐减少。", "子孙休囚，却被日辰、动爻生合扶起，就主开始时虽然不多，开馆后日渐增加。"],
+          "en": ["If Output is thriving but is punished or controlled by the Day or a moving line, it means that although many pupils gather in the school at first, they gradually dwindle later.", "If Output is resting or trapped but is generated, combined or raised up by the Day or a moving line, it means that though there are not many at first, they increase day by day after the school opens."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2775, 2775],
+          "zh": ["子孙衰弱，得日辰动爻生合扶起，学徒始虽不多，开馆后日渐增举益也。"],
+          "yi": ["子孙衰弱，得到日辰、动爻生合扶起，学徒开始时虽然不多，开馆后日渐增加。"],
+          "en": ["If Output is weak and is generated, combined and raised up by the Day or a moving line, then though the pupils are not many at first, they increase day by day after the school opens."] }
+      ],
+      "note": {
+        "yi": "「鼓箧」是古时入学的仪式（击鼓召集学生、打开书箱），这里指学生入学。旧注说的是两种相反的走势：先盛后衰（旺而被克）和先少后多（衰而被扶）；王洪绪只写了后一种。「开馆」是开始办馆。",
+        "en": "'Open their book-boxes at the drum' is an old school ceremony (a drum is struck to summon the pupils and the book-boxes are opened), here meaning pupils entering school. The old commentary gives two opposite courses: many first and then few (thriving but controlled) and few first and then many (weak but raised up); Wang Hongxu writes only the second. 'Open the school' means start running the school."
+      },
+      "see": ["LY.CAREER.HJC.47", "LY.CAREER.HJC.49"]
+    },
+    {
+      "id": "LY.CAREER.HJC.49",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·动遇冲开，时减执经之子（旧注：子孙动被日辰动爻冲散其徒必有背师而去；被世冲散是先生叱退其徒；子孙动变空亡弟子半途而废是歇学非叛去）",
+      "rule": {
+        "yi": "子孙爻发动，本来是吉兆，如果被日辰、动爻冲散，他的学生必定有背弃老师而去的；如果被世爻冲散，是先生呵斥退了学生，不是弟子自己背弃老师；子孙动而变出空亡，弟子中有半途而废的，那是歇学，不是叛离。",
+        "en": "If the Output line moves, it is of itself an auspicious sign, but if it is clashed apart by the Day or a moving line, some of his pupils will surely turn their backs on him and leave; if it is clashed apart by the Self, it is the teacher who scolds his pupils away, and not the disciples who abandon their teacher; if Output moves and changes into Void, some of the disciples give up halfway, which is leaving off study and not defection."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8587, 8587],
+          "zh": ["动遇冲开，时减执经之子。"],
+          "yi": ["子孙发动遇到冲散，不时减少执经受业的弟子。"],
+          "en": ["If Output moves and meets a clash that scatters it, the pupils who carry their classics grow fewer from time to time."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8589, 8590],
+          "zh": ["子孙爻动，固是吉兆，若被日辰动爻冲散，其徒必有背师而去者。", "如被世冲散，是先生叱退其徒，非弟子自背其师也。", "子孙动变空亡，则弟子中有半途而废者，是歇学，非叛去。"],
+          "yi": ["子孙爻发动，本来是吉兆，如果被日辰、动爻冲散，他的学生必定有背弃老师而去的。", "如果被世爻冲散，是先生呵斥退了他的学生，不是弟子自己背弃老师。", "子孙发动而变出空亡，那么弟子中有半途而废的，这是歇学，不是叛离。"],
+          "en": ["If the Output line moves, it is of itself an auspicious sign, but if it is clashed apart by the Day or a moving line, some of his pupils will surely turn their backs on him and leave.", "If it is clashed apart by the Self, it is the teacher who scolds his pupils away, and not the disciples who abandon their teacher.", "If Output moves and changes into Void, then some of the disciples give up halfway, which is leaving off study and not defection."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2777, 2777],
+          "zh": ["子孙爻动，若被日辰动爻冲散，其徒必背师而去；", "如被世冲，是先生叱退其徒。"],
+          "yi": ["子孙爻发动，如果被日辰、动爻冲散，他的学生必定背弃老师而去；", "如果被世爻冲，是先生呵斥退了他的学生。"],
+          "en": ["If the Output line moves and is clashed apart by the Day or a moving line, his pupils will surely turn their backs on him and leave;", "if it is clashed by the Self, it is the teacher who scolds his pupils away."] }
+      ],
+      "note": {
+        "yi": "这一联分三种走法：被日辰动爻冲散（学生背师）、被世冲散（先生赶走学生）、动变空亡（学生中途歇学），区别在于谁的责任。「执经」是拿着经书受业（指学生）。王洪绪只写了前两种。",
+        "en": "This couplet separates three courses by who is at fault: clashed apart by the Day or a moving line (the pupils turn on the teacher), clashed apart by the Self (the teacher drives the pupils off), and moving into Void (the pupils break off their studies halfway). 'Carry the classics' is going to study with the classics in hand (meaning pupils). Wang Hongxu writes only the first two."
+      },
+      "see": ["LY.CAREER.HJC.48", "LY.CAREER.HJC.50"]
+    },
+    {
+      "id": "LY.CAREER.HJC.50",
+      "topic": "取象",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·逢龙则俊秀聪明，遇虎则刚强顽劣（旧注：子临青龙其徒聪明俊秀，更逢月日生合又临金水必有颖悟非常之子；临白虎多顽劣不驯，发动性野难教训；青龙必有礼貌，白虎必不尽礼）",
+      "rule": {
+        "yi": "子孙临青龙，他的学生必然聪明俊秀，再遇月建、日辰生合、又临金、水爻的，必有颖悟非常的孩子；临白虎，就多是顽劣不驯的，发动则性情粗野，难以教训；遇到青龙，必定有礼貌，遇到白虎，必定不尽礼。",
+        "en": "If Output rests on the Azure Dragon, his pupils are surely clever and handsome, and if the Month or the Day also generates or combines with it and it rests on a Metal or Water line, there will surely be an exceptionally quick-witted child; if it rests on the White Tiger, they are mostly unruly and untamed, and if it moves their nature is wild and hard to teach; with the Azure Dragon they are surely courteous, and with the White Tiger they surely fall short in manners."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8592, 8592],
+          "zh": ["逢龙则俊秀聪明，遇虎则刚强顽劣。"],
+          "yi": ["遇青龙就俊秀聪明，遇白虎就刚强顽劣。"],
+          "en": ["Meeting the Azure Dragon, they are handsome and clever; meeting the White Tiger, they are headstrong and unruly."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8593, 8593],
+          "zh": ["子临青龙，其徒必然聪明俊秀；", "更逢月建日辰生合，而又临金水爻者，必有颖悟非常之子。", "若临白虎，则多顽劣不驯；", "发动，其性必野，难以教训。", "凡遇青龙，必有礼貌；", "遇白虎，必不尽礼。"],
+          "yi": ["子孙临青龙，他的学生必然聪明俊秀；", "再遇到月建、日辰生合，又临金、水爻的，必有颖悟非常的孩子。", "如果临白虎，就多是顽劣不驯的；", "发动，他的性情必定粗野，难以教训。", "凡是遇到青龙，必定有礼貌；", "遇到白虎，必定不尽礼。"],
+          "en": ["If Output rests on the Azure Dragon, his pupils are surely clever and handsome;", "if the Month or the Day also generates or combines with it and it rests on a Metal or Water line, there will surely be an exceptionally quick-witted child.", "If it rests on the White Tiger, they are mostly unruly and untamed;", "if it moves, his nature is surely wild and hard to teach.", "Whenever the Azure Dragon is met, they are surely courteous;", "whenever the White Tiger is met, they surely fall short in manners."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2779, 2779],
+          "zh": ["子孙临青龙，逢月建生合，而又临金水，必有颖悟非常之徒；", "若临白虎，则多顽劣之徒。"],
+          "yi": ["子孙临青龙，逢月建生合，又临金、水的，必有颖悟非常的学生；", "如果临白虎，就多是顽劣的学生。"],
+          "en": ["If Output rests on the Azure Dragon, meets generation or combination by the Month, and rests on Metal or Water, there will surely be an exceptionally quick-witted pupil;", "if it rests on the White Tiger, they are mostly unruly pupils."] }
+      ],
+      "note": {
+        "yi": "这一联用六神看学生的性情：青龙是喜庆、文雅，所以学生聪明有礼；白虎是刚猛，所以学生顽劣、不守礼。「金、水」在这里是聪明灵敏的五行（金白水智）。",
+        "en": "This couplet reads the pupils' temper from the six spirits: the Azure Dragon is joy and refinement, so the pupils are clever and polite; the White Tiger is fierceness, so the pupils are unruly and ill-mannered. 'Metal and Water' here are the elements of quickness and cleverness."
+      },
+      "see": ["LY.CAREER.HJC.47", "LY.CAREER.HJC.51"]
+    },
+    {
+      "id": "LY.CAREER.HJC.51",
+      "topic": "取象",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·阳卦阳爻居养位，座前有刘恕之神童；阴宫阴象化财爻，帐后列马融之女乐（旧注：子孙在阳宫阳爻临胎养及金水旺相不空有扶者，其徒有出类拔萃；在阴宫阴爻又化财必有女儿受学，不化财而在兑宫亦有女徒）",
+      "rule": {
+        "yi": "子孙在阳宫阳爻，又临胎、养以及金、水两爻，旺相不空，有扶助的，他的学生必有出类拔萃的，像刘恕那样的神童在门下；如果在阴宫阴爻，又化出财爻的，必有女孩来受学，不化出财爻而在兑宫的，也有女学生。",
+        "en": "If Output is in a yang palace on a yang line and rests on the Embryo or Nurture stage or on a Metal or Water line, thriving and not Void and supported, there will surely be an outstanding pupil among them, a child prodigy like Liu Shu at the door; if it is in a yin palace on a yin line and also turns into Wealth, there will surely be girls who come to study, and if it does not turn into Wealth but is in the Dui palace, there are also girl pupils."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8595, 8595],
+          "zh": ["阳卦阳爻居养位，座前有刘恕之神童；", "阴宫阴象化财爻，帐后列马融之女乐。"],
+          "yi": ["阳卦阳爻处在「养」位，座前有刘恕那样的神童；", "阴宫阴象化出财爻，帐后排着马融那样的女乐。"],
+          "en": ["With a yang hexagram and a yang line in the Nurture stage, there will be a child prodigy like Liu Shu before one's seat;", "with a yin palace and a yin image turning into Wealth, there will be women musicians behind the curtain like Ma Rong's."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8596, 8597],
+          "zh": ["子孙在阳宫阳爻，而临胎养及金水二爻，旺相不空，有扶者，其徒必有出类拔萃，如刘恕之神童在门。", "若在阴宫阴爻，而又化财者，必有女儿受学；", "不化财爻而在兑宫者，亦有女徒。"],
+          "yi": ["子孙在阳宫阳爻，又临胎、养以及金、水两爻，旺相不空，有扶助的，他的学生必有出类拔萃的，像刘恕那样的神童在门下。", "如果在阴宫阴爻，又化出财爻的，必有女孩来受学；", "不化出财爻而在兑宫的，也有女学生。"],
+          "en": ["If Output is in a yang palace on a yang line and rests on the Embryo or Nurture stage or on a Metal or Water line, thriving and not Void and supported, there will surely be an outstanding pupil among them, a child prodigy like Liu Shu at the door.", "If it is in a yin palace on a yin line and also turns into Wealth, there will surely be girls who come to study;", "if it does not turn into Wealth but is in the Dui palace, there are also girl pupils."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2781, 2781],
+          "zh": ["子孙在阳宫阳爻，而临金水旺相不空，有拱扶者，其徒必有出类拔萃，如刘恕之神童在门；", "若阴宫阴爻，主有女徒受学。"],
+          "yi": ["子孙在阳宫阳爻，而临金、水旺相不空，有拱扶的，他的学生必有出类拔萃的，像刘恕那样的神童在门下；", "如果是阴宫阴爻，主有女学生来受学。"],
+          "en": ["If Output is in a yang palace on a yang line and rests on Metal or Water, thriving and not Void and flanked and supported, there will surely be an outstanding pupil among them, a child prodigy like Liu Shu at the door;", "if it is in a yin palace on a yin line, there will be girl pupils who come to study."] }
+      ],
+      "note": {
+        "yi": "「刘恕」是宋代以博学著称的人（从小聪颖，十三岁就通经史），「马融」是东汉经学家，讲学时帐后常有女乐，所以用来比有女学生；这里的「女乐」是借典故说「有女徒」，不是说真的有歌女。「胎、养」是十二长生里的两个阶段（胎、养是幼小的阶段），所以「居养位」是说子孙爻落在幼小的阶段，正好对应「神童」。王洪绪没有写胎养、不化财而在兑宫这几句。",
+        "en": "'Liu Shu' was a man of the Song famed for his learning (clever from childhood and master of the classics and histories at thirteen), and 'Ma Rong' was a classicist of the Eastern Han who had women musicians behind the curtain when he lectured, so he is used for having girl pupils; the 'women musicians' here borrow the story to say 'there are girl pupils' and do not mean singing girls. 'Embryo' and 'Nurture' are two stages of the twelve life stages (the stages of the very young), so 'in the Nurture stage' means the Output line falls in a stage of youth, which fits a 'child prodigy'. Wang Hongxu does not write the Embryo and Nurture stages or the case of not turning into Wealth but being in the Dui palace."
+      },
+      "see": ["LY.CAREER.HJC.50", "LY.CAREER.HJC.52"]
+    }
+  ]
+}

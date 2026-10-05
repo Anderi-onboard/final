@@ -1,0 +1,380 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "黄金策",
+  "chapter": "征战",
+  "chapter_en": "Campaigns and war",
+  "ranges": {"卜筮大全": [5897, 5986], "卜筮正宗": [1510, 1563]},
+  "units": [
+    {
+      "id": "LY.CAREER.HJC.99",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·子化死爻，曹操丧师于赤壁（旧注：子孙为我军卒，动入死墓空绝败，应又克世，或鬼父动伤身世，必致三军丧命、损兵折将；如曹操夸水军八十万众袭吴，为周瑜黄盖火攻所败）",
+      "rule": {
+        "yi": "子孙是我方的士兵。子孙发动变入死、墓、空、绝、败，应爻又来克世爻，或者官鬼、父母发动伤克世身，必定三军丧命、损兵折将，就像曹操夸耀水军八十万，乘势袭击吴国，被周瑜、黄盖的火攻打败。",
+        "en": "Output is our soldiers. If Output moves into death, tomb, Void, extinction or defeat, and the Other also controls the Self, or Pressure or Resource moves and injures the Self or Body, the three armies will surely lose their lives and the troops and officers be lost, like Cao Cao, who boasted of eight hundred thousand marines, attacked Wu in the same breath, and was beaten by the fire attack of Zhou Yu and Huang Gai."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5943, 5943],
+          "zh": ["子化死爻，曹操丧师于赤壁；"],
+          "yi": ["子孙变成死爻，就像曹操在赤壁丧失了大军；"],
+          "en": ["If Output turns into a dead line, it is like Cao Cao losing his army at Red Cliff;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5944, 5944],
+          "zh": ["子孙为我军卒。", "若动入死墓空绝败，应又克世，或鬼父动伤身世；", "必致三军丧命，损兵折将之兆。", "如曹操夸水军八十万众，乘势袭吴，而为周瑜、黄盖火攻所败。"],
+          "yi": ["子孙是我方的士兵。", "如果它发动变入死、墓、空、绝、败，应爻又克世爻，或者官鬼、父母发动伤克世身；", "必定是三军丧命、损兵折将的征兆。", "就像曹操夸耀水军八十万，乘势袭击吴国，结果被周瑜、黄盖的火攻打败。"],
+          "en": ["Output is our soldiers.", "If it moves into death, tomb, Void, extinction or defeat, and the Other also controls the Self, or Pressure or Resource moves and injures the Self or Body;", "it is surely a sign that the three armies will lose their lives and the troops and officers be lost.", "It is like Cao Cao, who boasted of eight hundred thousand marines, attacked Wu in the same breath, and was beaten by the fire attack of Zhou Yu and Huang Gai."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1538, 1538],
+          "zh": ["子孙为我军卒，若动入死墓绝败，应临鬼父动伤身世，必致损兵折将，如曹操为周瑜黄盖火攻所败。"],
+          "yi": ["子孙是我方的士兵，如果发动变入死、墓、绝、败，应爻临着官鬼、父母发动伤克世身，必定损兵折将，就像曹操被周瑜、黄盖的火攻打败。"],
+          "en": ["Output is our soldiers; if it moves into death, tomb, extinction or defeat, and the Other sits on Pressure or Resource and moves to injure the Self or Body, the troops and officers will surely be lost, like Cao Cao beaten by the fire attack of Zhou Yu and Huang Gai."] }
+      ],
+      "see": ["LY.CAREER.HJC.98", "LY.CAREER.HJC.100"]
+    },
+    {
+      "id": "LY.CAREER.HJC.100",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·世逢绝地，项羽自刎于乌江（旧注：世为一国之君、三军之帅，宜旺相克应为吉，若被应爻刑冲克害而世又休囚，或动入死墓空绝，主将必不利；如项羽百战百胜而一朝兵散，羞见江东父老自刎乌江）",
+      "rule": {
+        "yi": "世爻是一国之君、三军之帅，最好旺相、克住应爻才吉；如果被应爻刑、冲、克、害，世爻又休囚，或者发动变入死、墓、空、绝，主将必然不利，就像项羽百战百胜，一朝兵败星散，羞于去见江东父老，在乌江自刎。",
+        "en": "The Self is the ruler of a state and the commander of the three armies; it is best thriving or strong and controlling the Other. If it is punished, clashed with, controlled or harmed by the Other, and the Self is also resting or trapped, or moves into death, tomb, Void or extinction, the chief commander is surely in trouble, like Xiang Yu, who won a hundred battles in a hundred, yet in one morning his troops scattered and, ashamed to face the elders east of the river, he cut his own throat at Wu River."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5946, 5946],
+          "zh": ["世逢绝地，项羽自刎于乌江。"],
+          "yi": ["世爻遇到绝地，就像项羽在乌江自刎。"],
+          "en": ["If the Self meets a place of extinction, it is like Xiang Yu cutting his own throat at Wu River."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5947, 5947],
+          "zh": ["世乃一国之君，三军之帅。", "最宜旺相，克应为吉，若被应爻刑冲克害，而世又休囚，及动入死墓空绝，主将必然不利。", "如项羽百战百胜，而一朝兵散，羞见江东父老，自刎乌江也。"],
+          "yi": ["世爻是一国的君主、三军的统帅。", "最好旺相，克住应爻才吉；如果被应爻刑、冲、克、害，而世爻又休囚，以及发动变入死、墓、空、绝，主将必然不利。", "就像项羽百战百胜，一朝兵败星散，羞于去见江东父老，在乌江自刎。"],
+          "en": ["The Self is the ruler of a state and the commander of the three armies.", "It is best thriving or strong and controlling the Other; if it is punished, clashed with, controlled or harmed by the Other, and the Self is also resting or trapped, or moves into death, tomb, Void or extinction, the chief commander is surely in trouble.", "It is like Xiang Yu, who won a hundred battles in a hundred, yet in one morning his troops scattered and, ashamed to face the elders east of the river, he cut his own throat at Wu River."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1540, 1540],
+          "zh": ["世为国主、三军之帅，宜旺动克应，若衰世而被应爻刑冲克害，动入死墓空绝者，如项羽自刎于乌江也。"],
+          "yi": ["世是国主、三军的统帅，宜旺相发动、克住应爻；如果世衰弱而被应爻刑、冲、克、害，发动变入死、墓、空、绝，就像项羽在乌江自刎。"],
+          "en": ["The Self is the ruler of the state and commander of the three armies, and should be thriving and moving and controlling the Other; if the Self is weak and is punished, clashed with, controlled or harmed by the Other and moves into death, tomb, Void or extinction, it is like Xiang Yu cutting his own throat at Wu River."] }
+      ],
+      "see": ["LY.CAREER.HJC.99", "LY.CAREER.HJC.101"]
+    },
+    {
+      "id": "LY.CAREER.HJC.101",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·水鬼克身，秦符坚有淝水之败（旧注：水鬼旺动伤克世身，敌兵必得舟楫渡江之利，如苻坚以投鞭断流之众竟败于谢玄八千渡江之兵）",
+      "rule": {
+        "yi": "水爻的官鬼旺相发动，伤克世爻或世身，敌兵必定占到乘船渡江的便利，就像苻坚凭着能投鞭断流的大军，竟然败给了谢玄八千渡江的兵马。",
+        "en": "If a Water Pressure line is thriving and moves and injures and controls the Self or Body, the enemy troops will surely gain the advantage of crossing the river by boat, like Fu Jian, who with a host that could dam the river with the whips they threw in still lost to the eight thousand troops Xie Xuan brought across the river."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5949, 5949],
+          "zh": ["水鬼克身，秦符坚有淝水之败；"],
+          "yi": ["水爻官鬼克制世身，就像秦国的苻坚遭到淝水的失败；"],
+          "en": ["If a Water Pressure line controls the Self or Body, it is like Fu Jian of Qin meeting defeat at the Fei River;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5950, 5950],
+          "zh": ["水鬼旺动，伤克世身，敌兵必得舟揖渡江之利。", "如秦符坚，以投鞭断流之众，而竟败于谢玄八千渡江之兵也。"],
+          "yi": ["水爻的官鬼旺相发动，伤克世身，敌兵必定占到舟船渡江的便利。", "就像秦国的苻坚，凭着投鞭断流的大军，竟然败给了谢玄八千渡江的兵马。"],
+          "en": ["If a Water Pressure line is thriving and moves and injures and controls the Self or Body, the enemy troops will surely gain the advantage of crossing the river by boat.", "It is like Fu Jian of Qin, who with a host that could dam the river with the whips they threw in still lost to the eight thousand troops Xie Xuan brought across the river."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1542, 1542],
+          "zh": ["水鬼旺动伤克世身，敌兵必得舟楫渡江之利，如秦苻坚败于谢玄八千渡江之兵也。"],
+          "yi": ["水爻的官鬼旺相发动，伤克世身，敌兵必定占到舟船渡江的便利，就像秦国的苻坚败给了谢玄八千渡江的兵马。"],
+          "en": ["If a Water Pressure line is thriving and moves and injures and controls the Self or Body, the enemy troops will surely gain the advantage of crossing the river by boat, like Fu Jian of Qin who lost to the eight thousand troops Xie Xuan brought across the river."] }
+      ],
+      "see": ["LY.CAREER.HJC.100", "LY.CAREER.HJC.102"]
+    },
+    {
+      "id": "LY.CAREER.HJC.102",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·火官持世，汉高祖遇平城之围（旧注：火爻带鬼则贼寨必近，火鬼持世须防困围；子孙旺动虽被围亦得胜如田单下齐城，子衰官旺必致困围如汉高祖被匈奴围于平城七日乃解）",
+      "rule": {
+        "yi": "火爻带着官鬼，敌人的营寨一定很近；火鬼持世，要防被围困。这时如果子孙旺相发动，即使被围也能得胜，像田单下齐城；如果子孙衰弱、官鬼旺相，必定陷入围困，像汉高祖被匈奴围在平城，七天才解围。",
+        "en": "If a Fire line carries Pressure, the enemy's stockade is surely near; if a Fire Pressure line holds the Self, guard against being besieged. Then if Output is thriving and moves, one wins even when besieged, like Tian Dan's taking of the cities of Qi; if Output is weak and Pressure is thriving, one is surely besieged, like the founder of Han, whom the Xiongnu surrounded at Pingcheng until the siege was lifted after seven days."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5952, 5952],
+          "zh": ["火官持世，汉高祖遇平城之围。"],
+          "yi": ["火官持世，就像汉高祖遇到平城之围。"],
+          "en": ["If a Fire Pressure line holds the Self, it is like the founder of Han meeting the siege of Pingcheng."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5953, 5953],
+          "zh": ["火爻带鬼，贼寨必近。", "若火鬼持世，须防困围。", "若得子孙旺动，虽被围得胜。", "如田单之下齐城。", "若子衰官旺，必致困围。", "如汉高祖被匈奴围于平城，七日乃解。"],
+          "yi": ["火爻带着官鬼，敌人的营寨一定很近。", "如果火鬼持世，要防被围困。", "如果得到子孙旺相发动，即使被围也能得胜。", "就像田单攻下齐国的城池。", "如果子孙衰弱、官鬼旺相，必定陷入围困。", "就像汉高祖被匈奴围困在平城，七天才解围。"],
+          "en": ["If a Fire line carries Pressure, the enemy's stockade is surely near.", "If a Fire Pressure line holds the Self, guard against being besieged.", "If Output is thriving and moves, one wins even when besieged.", "It is like Tian Dan's taking of the cities of Qi.", "If Output is weak and Pressure is thriving, one is surely besieged.", "It is like the founder of Han, whom the Xiongnu surrounded at Pingcheng until the siege was lifted after seven days."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1544, 1544],
+          "zh": ["火官带鬼，贼寨必近，火爻持世，须防困围。", "子孙旺动被围得胜，若子衰官旺，如汉高祖被围平城七日乃解。"],
+          "yi": ["火官带着官鬼，敌人的营寨一定很近，火爻持世，要防被围困。", "子孙旺相发动，即使被围也得胜；如果子孙衰弱、官鬼旺相，就像汉高祖被围在平城，七天才解围。"],
+          "en": ["If a Fire line carries Pressure, the enemy's stockade is surely near, and if a Fire line holds the Self, guard against being besieged.", "If Output is thriving and moves, one wins even when besieged; if Output is weak and Pressure is thriving, it is like the founder of Han surrounded at Pingcheng until the siege was lifted after seven days."] }
+      ],
+      "note": {
+        "yi": "旧注只写「如田单之下齐城」；田单是被燕军围在即墨、反而打败燕军的齐国将领，正合「虽被围得胜」。",
+        "en": "The old commentary writes only 'like Tian Dan's taking of the cities of Qi'; Tian Dan was a Qi general besieged at Jimo by the army of Yan who turned round and beat it, which fits 'wins even when besieged'."
+      },
+      "see": ["LY.CAREER.HJC.101", "LY.CAREER.HJC.103"]
+    },
+    {
+      "id": "LY.CAREER.HJC.103",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·应官克世卦无财，张睢阳食尽而毙（旧注：应持鬼克世、卦又无财，是食尽死亡之象，如张巡被围睢阳城）",
+      "rule": {
+        "yi": "应爻持着官鬼来克世爻，卦里又没有妻财，是粮食吃尽、困死的象，就像张巡被围在睢阳城。",
+        "en": "If the Other holds Pressure and controls the Self, and there is no Wealth in the hexagram, it is the image of running out of food and dying, like Zhang Xun besieged in Suiyang."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5955, 5955],
+          "zh": ["应官克世卦无财，张睢阳食尽而毙。"],
+          "yi": ["应爻的官鬼克世爻，卦里又没有财，就像张睢阳粮食吃尽而死。"],
+          "en": ["If the Other's Pressure line controls the Self and the hexagram has no Wealth, it is like Zhang of Suiyang who ran out of food and died."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5956, 5956],
+          "zh": ["应持鬼，克世，卦又无财，乃是食尽死亡之象。", "如张巡被围睢阳城也。"],
+          "yi": ["应爻持着官鬼，克世爻，卦里又没有妻财，就是粮食吃尽、困死的象。", "就像张巡被围在睢阳城。"],
+          "en": ["If the Other holds Pressure and controls the Self, and the hexagram has no Wealth, it is the image of running out of food and dying.", "It is like Zhang Xun besieged in Suiyang."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1546, 1546],
+          "zh": ["应爻持鬼冲世，卦中无财，乃食尽死亡之象，如张巡被围睢阳城也。"],
+          "yi": ["应爻持着官鬼冲世爻，卦中没有妻财，是粮食吃尽、困死的象，就像张巡被围在睢阳城。"],
+          "en": ["If the Other holds Pressure and clashes with the Self, and there is no Wealth in the hexagram, it is the image of running out of food and dying, like Zhang Xun besieged in Suiyang."] }
+      ],
+      "note": {
+        "yi": "旧注说应爻鬼「克世」，卜筮正宗说「冲世」。",
+        "en": "The old commentary says the Other's Pressure line 'controls the Self'; the Bu Shi Zheng Zong says 'clashes with the Self'."
+      },
+      "see": ["LY.CAREER.HJC.102", "LY.CAREER.HJC.104"]
+    },
+    {
+      "id": "LY.CAREER.HJC.104",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·世鬼兴隆生合应，吕文焕无援而降（旧注：旺鬼持世是困围之象，卦又无财、子孙又弱、世又生合应爻，是兵少食尽降敌之兆；如宋吕文焕守襄阳，元兵围之甚久，贾似道隐蔽不援，城中食尽遂降）",
+      "rule": {
+        "yi": "旺相的官鬼持世，是被围困的象；卦里又没有妻财、子孙又衰弱，世爻还去生合应爻，是兵少粮尽、向敌人投降的征兆，就像宋朝的吕文焕守襄阳，被元兵围了很久，贾似道隐瞒不发援兵，城中粮尽，于是投降。",
+        "en": "A thriving Pressure line holding the Self is the image of being besieged; if the hexagram also has no Wealth, Output is weak, and the Self also generates or combines with the Other, it is a sign of few troops, food run out and surrender to the enemy, like Lü Wenhuan of Song, who held Xiangyang while the Yuan troops besieged it for a very long time, Jia Sidao concealed the matter and sent no relief, and the city ran out of food and surrendered."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5958, 5958],
+          "zh": ["世鬼兴隆生合应，吕文焕无援而降。"],
+          "yi": ["世爻上的官鬼兴旺、又生合应爻，就像吕文焕没有援兵而投降。"],
+          "en": ["If a thriving Pressure line on the Self generates or combines with the Other, it is like Lü Wenhuan who had no relief and surrendered."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5959, 5959],
+          "zh": ["旺鬼持世，乃困围之象。", "卦又无财，子孙又弱，世又生合应爻，乃兵少食尽降敌之兆。", "宋吕文焕守襄阳，元兵围之甚久，贾似道隐蔽不援，城中食尽遂降。"],
+          "yi": ["旺相的官鬼持世，是被围困的象。", "卦里又没有妻财，子孙又衰弱，世爻又生合应爻，是兵少粮尽、向敌人投降的征兆。", "宋朝的吕文焕守襄阳，元兵围了他很久，贾似道隐瞒不发援兵，城中粮食吃尽，于是投降。"],
+          "en": ["A thriving Pressure line holding the Self is the image of being besieged.", "If the hexagram also has no Wealth, Output is weak, and the Self also generates or combines with the Other, it is a sign of few troops, food run out and surrender to the enemy.", "Lü Wenhuan of Song held Xiangyang while the Yuan troops besieged him for a very long time, Jia Sidao concealed the matter and sent no relief, and when the food in the city ran out he surrendered."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1548, 1548],
+          "zh": ["旺鬼持世，乃困围之象，卦爻又无财，子孙又弱，世又生合应爻，乃兵少食尽降敌之兆。", "宋吕文焕守襄阳，元兵围久，贾似道隐蔽不援，城中食尽遂降。"],
+          "yi": ["旺相的官鬼持世，是被围困的象，卦爻又没有妻财，子孙又衰弱，世爻又生合应爻，是兵少粮尽、向敌人投降的征兆。", "宋朝的吕文焕守襄阳，元兵围了很久，贾似道隐瞒不发援兵，城中粮食吃尽，于是投降。"],
+          "en": ["A thriving Pressure line holding the Self is the image of being besieged; if the lines also have no Wealth, Output is weak, and the Self also generates or combines with the Other, it is a sign of few troops, food run out and surrender to the enemy.", "Lü Wenhuan of Song held Xiangyang while the Yuan troops besieged it for long, Jia Sidao concealed the matter and sent no relief, and when the food in the city ran out he surrendered."] }
+      ],
+      "see": ["LY.CAREER.HJC.103", "LY.CAREER.HJC.105"]
+    },
+    {
+      "id": "LY.CAREER.HJC.105",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·外宫子动化绝爻，李陵所以降虏（旧注：子在外卦动、应克世，是我军远征，初虽见胜终必有败，又化绝爻不免降虏，如汉武帝时李陵）",
+      "rule": {
+        "yi": "子孙在外卦发动、应爻克制世爻，是我军远征的象，起初虽然能得胜，最终必定失败；子孙又变成绝爻，免不了投降敌虏，就像汉武帝时李陵的往事。",
+        "en": "If Output moves in the outer trigram and the Other controls the Self, it is the image of our army on a distant campaign: at first it may win, but in the end it must lose, and if Output also turns into an extinct line it cannot avoid surrendering to the enemy, like Li Ling in the time of Emperor Wu of Han."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5961, 5961],
+          "zh": ["外宫子动化绝爻，李陵所以降虏。"],
+          "yi": ["外宫的子孙发动又变成绝爻，这就是李陵投降敌虏的缘故。"],
+          "en": ["If Output moves in the outer palace and turns into an extinct line, this is why Li Ling surrendered to the enemy."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5962, 5962],
+          "zh": ["子在外宫动，而被应克世，是我军远征。", "初虽见胜，终必有败。", "又化绝爻，不免降虏。", "如汉武时李陵往事也。"],
+          "yi": ["子孙在外宫发动，而应爻克世爻，是我军远征。", "起初虽然见到胜利，最终必定失败。", "又变成绝爻，免不了投降敌虏。", "就像汉武帝时李陵的往事。"],
+          "en": ["If Output moves in the outer palace and the Other controls the Self, it is our army on a distant campaign.", "At first a victory may be seen, but in the end there must be defeat.", "If it also turns into an extinct line, surrender to the enemy cannot be avoided.", "It is like what happened to Li Ling in the time of Emperor Wu of Han."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1550, 1550],
+          "zh": ["子在外宫动，世被应克，终必有败，又化绝爻，不免降虏，如汉武帝时李陵之事也。"],
+          "yi": ["子孙在外宫发动，世爻被应爻克，最终必定失败，又变成绝爻，免不了投降敌虏，就像汉武帝时李陵的事。"],
+          "en": ["If Output moves in the outer palace and the Self is controlled by the Other, there will in the end be defeat, and if it also turns into an extinct line, surrender to the enemy cannot be avoided, like the affair of Li Ling in the time of Emperor Wu of Han."] }
+      ],
+      "see": ["LY.CAREER.HJC.104", "LY.CAREER.HJC.106"]
+    },
+    {
+      "id": "LY.CAREER.HJC.106",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·内卦福兴生合应，乐毅所以背燕（旧注：内卦子孙发动反去生合应爻、伤克世身，是我将卒背主降敌之兆，如燕将乐毅背燕投赵）",
+      "rule": {
+        "yi": "内卦的子孙发动，反而去生合应爻、伤克世身，是我方将领士兵背叛主人、投降敌人的征兆，就像燕国的将领乐毅背弃燕国、投奔赵国。",
+        "en": "If Output in the inner trigram moves and, instead, generates or combines with the Other and injures and controls the Self or Body, it is a sign that our generals and soldiers will betray their lord and surrender to the enemy, like Yue Yi, general of Yan, who turned his back on Yan and went over to Zhao."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5964, 5964],
+          "zh": ["内卦福兴生合应，乐毅所以背燕。"],
+          "yi": ["内卦的福神兴旺、又生合应爻，这就是乐毅背弃燕国的缘故。"],
+          "en": ["If the Output line in the inner trigram is thriving and generates or combines with the Other, this is why Yue Yi turned his back on Yan."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5965, 5965],
+          "zh": ["内卦子孙动，而反生合应爻，伤克身世，是我将卒有背主降敌之兆。", "如燕将乐毅背燕投赵是也。"],
+          "yi": ["内卦的子孙发动，反而去生合应爻，伤克世身，是我方将领士兵背叛主人、投降敌人的征兆。", "就像燕国的将领乐毅背弃燕国、投奔赵国。"],
+          "en": ["If Output in the inner trigram moves and, instead, generates or combines with the Other and injures and controls the Self or Body, it is a sign that our generals and soldiers will betray their lord and surrender to the enemy.", "It is like Yue Yi, general of Yan, who turned his back on Yan and went over to Zhao."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1552, 1552],
+          "zh": ["子孙发动反去生合应爻，伤克身世，是我将卒有背主降敌之兆，如燕将乐毅背燕投赵是也。"],
+          "yi": ["子孙发动，反而去生合应爻，伤克世身，是我方将领士兵背叛主人、投降敌人的征兆，就像燕国的将领乐毅背弃燕国、投奔赵国。"],
+          "en": ["If Output moves and, instead, generates or combines with the Other and injures and controls the Self or Body, it is a sign that our generals and soldiers will betray their lord and surrender to the enemy, like Yue Yi, general of Yan, who turned his back on Yan and went over to Zhao."] }
+      ],
+      "note": {
+        "yi": "旧注说「内卦子孙动」，卜筮正宗只说「子孙发动」，没有限定在内卦。",
+        "en": "The old commentary says 'Output moves in the inner trigram'; the Bu Shi Zheng Zong says only 'Output moves' and does not limit it to the inner trigram."
+      },
+      "see": ["LY.CAREER.HJC.105", "LY.CAREER.HJC.107"]
+    },
+    {
+      "id": "LY.CAREER.HJC.107",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·鬼虽衰而遇生扶，勿追穷寇（旧注：官爻虽衰，若遇动爻日辰生扶拱合，是敌兵虽少必有救援）",
+      "rule": {
+        "yi": "官鬼爻虽然衰弱，但如果遇到动爻、日辰来生、扶、拱、合它，那就是敌兵虽然少，也一定有救援，不要去追击陷入穷途的敌人。",
+        "en": "Though a Pressure line is weak, if a moving line or the Day comes to generate, support, hold up or combine with it, then the enemy troops, though few, will surely have relief, and one should not chase a desperate foe."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5967, 5967],
+          "zh": ["鬼虽衰而遇生扶，勿追穷寇。"],
+          "yi": ["官鬼虽然衰弱，但遇到生扶，就不要追击走投无路的敌人。"],
+          "en": ["Though Pressure is weak, if it meets generation and support, do not chase a desperate foe."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5968, 5968],
+          "zh": ["官爻虽衰，若遇动爻日辰，生扶拱合，是敌兵虽少，必有救援。"],
+          "yi": ["官爻虽然衰弱，如果遇到动爻、日辰来生、扶、拱、合，就是敌兵虽然少，也必定有救援。"],
+          "en": ["Though a Pressure line is weak, if it meets a moving line or the Day generating, supporting, holding up or combining with it, the enemy troops, though few, will surely have relief."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1554, 1555],
+          "zh": ["官爻虽衰，若遇动爻日辰生扶拱合，是敌兵虽少，必有救援。"],
+          "yi": ["官爻虽然衰弱，如果遇到动爻、日辰来生、扶、拱、合，就是敌兵虽然少，也必定有救援。"],
+          "en": ["Though a Pressure line is weak, if it meets a moving line or the Day generating, supporting, holding up or combining with it, the enemy troops, though few, will surely have relief."] }
+      ],
+      "see": ["LY.CAREER.HJC.106", "LY.CAREER.HJC.108"]
+    },
+    {
+      "id": "LY.CAREER.HJC.108",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·子虽旺而遭克制，毋急兴师（旧注：子孙虽旺，若被父母日辰动爻克害，彼必有计，不可急攻；攻之必被摧折，虽不大败亦损军威，宜缓图之）",
+      "rule": {
+        "yi": "子孙虽然旺相，但如果被父母、日辰、动爻克害，对方一定有计谋，不可急着进攻；进攻就必定受挫，即使不至于大败，也会损伤军威，应当缓缓图谋。",
+        "en": "Though Output is thriving, if it is controlled and harmed by Resource, the Day or a moving line, the enemy surely has a stratagem and one must not attack in haste; an attack will be broken, and even if it is not a great defeat it will damage the army's prestige, so one should plan it slowly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5970, 5970],
+          "zh": ["子虽旺而遭克制，毋急兴师。"],
+          "yi": ["子孙虽然旺相却遭到克制，不要急着出兵。"],
+          "en": ["Though Output is thriving, if it is controlled, do not send out troops in haste."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5971, 5971],
+          "zh": ["子孙虽旺，若被父母日辰动爻克害，彼必有计，不可急攻。", "攻之，必被摧折；", "虽不大败，亦损军威。", "宜缓图之。"],
+          "yi": ["子孙虽然旺相，如果被父母、日辰、动爻克害，对方一定有计谋，不可急着进攻。", "进攻的话，必定受到摧折；", "即使不至于大败，也会损伤军威。", "应当缓缓图谋。"],
+          "en": ["Though Output is thriving, if it is controlled and harmed by Resource, the Day or a moving line, the enemy surely has a stratagem and one must not attack in haste.", "If one attacks, one will be broken;", "even if it is not a great defeat, it will damage the army's prestige.", "One should plan it slowly."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1554, 1555],
+          "zh": ["子孙虽旺，若被日辰动爻克害，彼必有计，不可急攻，攻之必被摧折，虽不大败，亦损军威。", "宜缓图之。"],
+          "yi": ["子孙虽然旺相，如果被日辰、动爻克害，对方一定有计谋，不可急着进攻，进攻必定受到摧折，即使不至于大败，也会损伤军威。", "应当缓缓图谋。"],
+          "en": ["Though Output is thriving, if it is controlled and harmed by the Day or a moving line, the enemy surely has a stratagem and one must not attack in haste; an attack will be broken, and even if it is not a great defeat it will damage the army's prestige.", "One should plan it slowly."] }
+      ],
+      "note": {
+        "yi": "旧注说克害子孙的是「父母日辰动爻」，卜筮正宗只说「日辰动爻」，没有父母。",
+        "en": "The old commentary names the controllers of Output as 'Resource, the Day or a moving line'; the Bu Shi Zheng Zong says only 'the Day or a moving line', without Resource."
+      },
+      "see": ["LY.CAREER.HJC.107", "LY.CAREER.HJC.109"]
+    },
+    {
+      "id": "LY.CAREER.HJC.109",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·鬼爻暗动伤身，吴王被专诸之刺（旧注：官爻虽静而被日辰冲动旺相，克害身世，必若吴王被专诸之刺；鬼暗动而被世克，或子动来救，则如荆轲刺秦王不中反被诛）",
+      "rule": {
+        "yi": "官鬼爻本来安静，却被日辰冲动、又旺相，克害世爻或世身，必定像吴王被专诸刺杀；如果鬼暗动却被世爻克住，或者子孙发动来救，就像荆轲刺秦王没有刺中，反而自己被杀。",
+        "en": "If a Pressure line is still but the Day clashes it into motion and it is thriving and injures and controls the Self or Body, it is surely like the King of Wu stabbed by Zhuanzhu; if the Pressure line moves in secret but is controlled by the Self, or Output moves to rescue, it is like Jing Ke, who failed to stab the King of Qin and was himself put to death instead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5973, 5973],
+          "zh": ["鬼爻暗动伤身，吴王被专诸之刺。"],
+          "yi": ["官鬼暗中发动伤克世身，就像吴王被专诸刺杀。"],
+          "en": ["If a Pressure line moves in secret and injures and controls the Self or Body, it is like the King of Wu stabbed by Zhuanzhu."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5974, 5974],
+          "zh": ["官爻虽静，而被日辰冲动旺相，克害身世，必若吴王被专诸之刺。", "若鬼暗动，而被世克，或子动来救，则如荆何刺秦王不中，而反自被诛也。"],
+          "yi": ["官爻虽然安静，却被日辰冲动、又旺相，克害世爻或世身，必定像吴王被专诸刺杀。", "如果鬼暗中发动却被世爻克住，或者子孙发动来救，就像荆轲（这里原文作「荆何」）刺秦王没有刺中，反而自己被杀。"],
+          "en": ["If a Pressure line is still but is clashed into motion by the Day and is thriving, and injures and controls the Self or Body, it is surely like the King of Wu stabbed by Zhuanzhu.", "If the Pressure line moves in secret but is controlled by the Self, or Output moves to rescue, it is like Jing Ke (written Jing He here), who failed to stab the King of Qin and was himself put to death instead."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1557, 1557],
+          "zh": ["旺官暗动克害世身，如吴王被专诸之刺；", "世克暗动之鬼或子动来救，如荆轲刺秦王不中，自反被诛也。"],
+          "yi": ["旺相的官鬼暗中发动，克害世爻或世身，就像吴王被专诸刺杀；", "世爻克住暗动的鬼，或者子孙发动来救，就像荆轲刺秦王没有刺中，反而自己被杀。"],
+          "en": ["If a thriving Pressure line moves in secret and injures and controls the Self or Body, it is like the King of Wu stabbed by Zhuanzhu;", "if the Self controls the secretly moving Pressure line, or Output moves to rescue, it is like Jing Ke, who failed to stab the King of Qin and was himself put to death instead."] }
+      ],
+      "note": {
+        "yi": "旧注把荆轲写成「荆何」，卜筮正宗写「荆轲」。",
+        "en": "The old commentary writes Jing Ke as 'Jing He'; the Bu Shi Zheng Zong writes 'Jing Ke'."
+      },
+      "see": ["LY.CAREER.HJC.108", "LY.CAREER.HJC.110"]
+    },
+    {
+      "id": "LY.CAREER.HJC.110",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·子化官爻克世，张飞遭范张之诛（旧注：子孙化官生合应而克害身世，是我兵卒谋杀主帅而欲降敌之象，如后汉张翼德素不恤士卒，被小卒范强、张达枭首帐下，顺流投孙权）",
+      "rule": {
+        "yi": "子孙变出官鬼，去生合应爻、克害世爻或世身，是我方的士兵谋杀主帅、想要投降敌人的象，就像后汉的张翼德，平时不体恤士兵，有一天被小兵范强、张达在帐下砍了头，顺流而下投奔孙权。",
+        "en": "If Output turns into Pressure that generates or combines with the Other and controls and harms the Self or Body, it is the image of our soldiers murdering their commander in order to surrender to the enemy, like Zhang Yide of the Later Han, who never cared for his soldiers and one day had his head cut off in his tent by the common soldiers Fan Qiang and Zhang Da, who went down the river to Sun Quan."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5976, 5976],
+          "zh": ["子化官爻克世，张飞遭范张之诛。"],
+          "yi": ["子孙变出官鬼来克世爻，就像张飞遭到范强、张达的诛杀。"],
+          "en": ["If Output turns into Pressure that controls the Self, it is like Zhang Fei put to death by Fan and Zhang."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5977, 5977],
+          "zh": ["子孙化官生合应，而克害身世，乃是我兵卒谋杀主帅，而欲降敌之象。", "如后汉张翼德，素不恤士卒，一日被小卒范强、张达枭首帐下，顺流而投孙权也。"],
+          "yi": ["子孙变出官鬼、去生合应爻，而克害世爻或世身，就是我方的士兵谋杀主帅、想要投降敌人的象。", "就像后汉的张翼德，平时不体恤士兵，有一天被小兵范强、张达在帐下砍了头，顺流而下投奔孙权。"],
+          "en": ["If Output turns into Pressure and generates or combines with the Other and controls and harms the Self or Body, it is the image of our soldiers murdering their commander in order to surrender to the enemy.", "It is like Zhang Yide of the Later Han, who never cared for his soldiers and one day had his head cut off in his tent by the common soldiers Fan Qiang and Zhang Da, who went down the river to Sun Quan."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1559, 1559],
+          "zh": ["子孙化官鬼生合应爻，反来克害身世者，是我兵卒杀主降敌，如后汉张翼德被部卒范疆、张达之刺帐下，因之而投孙权也。"],
+          "yi": ["子孙变出官鬼、去生合应爻，反过来克害世爻或世身的，是我方的士兵杀主帅投降敌人，就像后汉的张翼德被部下范疆、张达在帐下刺杀，他们因此投奔孙权。"],
+          "en": ["If Output turns into Pressure that generates or combines with the Other and in turn controls and harms the Self or Body, it is our soldiers killing their commander to surrender to the enemy, like Zhang Yide of the Later Han, stabbed in his tent by his men Fan Jiang and Zhang Da, who therefore went over to Sun Quan."] }
+      ],
+      "note": {
+        "yi": "范强、范疆是同一个人的两种写法：旧注作「范强」，卜筮正宗作「范疆」。",
+        "en": "'Fan Qiang' and 'Fan Jiang' are two ways of writing the same man's name: the old commentary has the first and the Bu Shi Zheng Zong the second."
+      },
+      "see": ["LY.CAREER.HJC.109", "LY.CAREER.HJC.111"]
+    },
+    {
+      "id": "LY.CAREER.HJC.111",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·要识用兵之利器，五行卦象并推详；仁智勇器之将，岂越于此（旧注：土为炮石，金为刀箭，水木为舟，火为营寨；乾兑为刀，震巽为弓马，坤为野战；有克应之神宜用此器克敌，应爻官父在此象克世则反防敌用此器）",
+      "rule": {
+        "yi": "要知道用兵该用什么器械，要把五行和卦象一起推究：土是炮石，金是刀箭，水、木是舟船，火是营寨；乾、兑是刀，震、巽是弓马，坤是野战之类。哪个象里有能克应爻的神，就适合用这种器械去克敌；应爻的官鬼或父母在这个象里克世爻，就要反过来防备敌人用这种器械。",
+        "en": "To know the sharp tools for war, work out the five elements and the hexagram images together: Earth is cannon-stones, Metal is blades and arrows, Water and Wood are boats, Fire is the camp; Qian and Dui are blades, Zhen and Xun are bows and horses, Kun is open-field fighting and the like. Where an image holds a spirit that controls the Other, it is fit to use that tool against the enemy; where the Other's Pressure or Resource in that image controls the Self, one must instead guard against the enemy using that tool."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5979, 5979],
+          "zh": ["要识用兵之利器，五行卦象并推详。"],
+          "yi": ["要认识用兵的利器，要把五行和卦象一起推究。"],
+          "en": ["To know the sharp tools for war, work out the five elements and the hexagram images together."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5980, 5980],
+          "zh": ["土为炮石，金为刀箭，水木为舟，火为营寨。", "又乾兑为刀，震巽为弓马，火枪，坤为野战类。", "若此象有克应之神，宜用此器以克敌；", "应爻官父在此象克世，宜反防敌人用此器也。"],
+          "yi": ["土是炮石，金是刀箭，水、木是舟船，火是营寨。", "又有乾、兑是刀，震、巽是弓马，火是枪，坤是野战之类。", "如果这个象里有克应爻的神，适合用这种器械去克敌；", "应爻的官鬼、父母在这个象里克世爻，就要反过来防备敌人用这种器械。"],
+          "en": ["Earth is cannon-stones, Metal is blades and arrows, Water and Wood are boats, Fire is the camp.", "Also Qian and Dui are blades, Zhen and Xun are bows and horses, Fire is the lance, and Kun is open-field fighting and the like.", "If this image holds a spirit that controls the Other, it is fit to use that tool against the enemy;", "if the Other's Pressure or Resource in this image controls the Self, one should instead guard against the enemy using that tool."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1561, 1561],
+          "zh": ["土为炮石，金为刀箭，水木为舟，火为营寨；", "又乾兑为刀，震巽为弓马，火为枪，坤为野战类。", "若有克应之神，宜用此器敌之，如应爻克世，须防敌人用此器也。"],
+          "yi": ["土是炮石，金是刀箭，水、木是舟船，火是营寨；", "又有乾、兑是刀，震、巽是弓马，火是枪，坤是野战之类。", "如果有克应爻的神，适合用这种器械去对付敌人，如果应爻克世爻，就要防备敌人用这种器械。"],
+          "en": ["Earth is cannon-stones, Metal is blades and arrows, Water and Wood are boats, Fire is the camp;", "also Qian and Dui are blades, Zhen and Xun are bows and horses, Fire is the lance, and Kun is open-field fighting and the like.", "If there is a spirit that controls the Other, it is fit to use that tool against the enemy; if the Other controls the Self, one must guard against the enemy using that tool."] },
+        { "by": "经", "book": "卜筮大全", "range": [5982, 5982],
+          "zh": ["仁智勇器之将，岂越于此？", "攻守克敌用兵，当审于时。"],
+          "yi": ["仁、智、勇和器械，作为一个将领所要的这些，哪里能越出这些象之外？", "是攻是守、克敌用兵，都应当看准时机。"],
+          "en": ["Benevolence, wisdom, courage and the tools of war, which a general needs, how could they go beyond these?", "Whether to attack or defend, to overcome the enemy and deploy troops, one must judge the moment."] }
+      ],
+      "note": {
+        "yi": "旧注「震巽为弓马，火枪」，卜筮正宗写成「火为枪」，译文按卜筮正宗读作「火是枪」。",
+        "en": "The old commentary has 'Zhen and Xun are bows and horses, fire lance'; the Bu Shi Zheng Zong writes 'Fire is the lance', and the translation reads it so."
+      },
+      "see": ["LY.CAREER.HJC.110", "LY.CAREER.HJC.86"]
+    }
+  ]
+}

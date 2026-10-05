@@ -1,0 +1,400 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "黄金策",
+  "chapter": "征战",
+  "chapter_en": "Campaigns and war",
+  "ranges": {"卜筮大全": [5897, 5986], "卜筮正宗": [1510, 1563]},
+  "units": [
+    {
+      "id": "LY.CAREER.HJC.86",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·观世应之旺衰，以决两家之胜负；将福官之强弱，以分彼我之军师（旧注：世为我、应为彼，世旺克应则胜、应旺克世则负；子孙为我之将军、官鬼为彼之敌帅）",
+      "rule": {
+        "yi": "占征战，世爻是我方，应爻是对方：世爻旺相、克住应爻就胜，应爻旺相、克住世爻就败。子孙是我方的将军，官鬼是对方的主帅，两边军师的强弱，就从这两个爻上分。",
+        "en": "In a question about a campaign the Self is our side and the Other is the enemy: if the Self is thriving or strong and controls the Other we win, and if the Other is thriving and controls the Self we lose. Output is our general and Pressure is the enemy commander, and the strength of the two sides' leaders is told apart from these two lines."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5899, 5900],
+          "zh": ["医不执方，兵不执法，堪推大将之才能；", "谋事在人，成事在天，当究先师之妙论。"],
+          "yi": ["医生不拘泥于一个药方，用兵也不拘泥于一种战法，这样才称得上大将的才能；", "谋划在人，成败在天，要钻研前辈高人的精妙议论。"],
+          "en": ["A physician does not hold to one prescription and a soldier does not hold to one method, and this is what is meant by a great general's talent;", "planning lies with men and success with heaven, so one should study the fine words of the masters before us."] },
+        { "by": "经", "book": "卜筮大全", "range": [5902, 5902],
+          "zh": ["观世应之旺衰，以决两家之胜负；", "将福官之强弱，以分彼我之军师。"],
+          "yi": ["看世、应的旺衰，来判定两家的胜负；", "看福神、官鬼的强弱，来分辨我方和对方的军师。"],
+          "en": ["Look at the strength and weakness of the Self and the Other to decide the victory or defeat of the two houses;", "look at the strength of Output and Pressure to tell apart the leaders of our side and theirs."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5904, 5904],
+          "zh": ["世为我，应为彼。", "世旺克应则胜，应旺克世则负。", "子孙为我之将军，官鬼为彼之敌帅。"],
+          "yi": ["世是我方，应是对方。", "世旺相、克住应就胜，应旺相、克住世就败。", "子孙是我方的将军，官鬼是对方的敌帅。"],
+          "en": ["The Self is us and the Other is them.", "If the Self is thriving and controls the Other we win; if the Other is thriving and controls the Self we lose.", "Output is our general and Pressure is the enemy's commander."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1512, 1512],
+          "zh": ["世为我，应为彼，世旺克应则胜，应旺克世则负。", "子为我之将，鬼彼之师。"],
+          "yi": ["世是我方，应是对方，世旺相克应就胜，应旺相克世就败。", "子孙是我方的将，官鬼是对方的军队主帅。"],
+          "en": ["The Self is us and the Other is them; if the Self is thriving and controls the Other we win, and if the Other is thriving and controls the Self we lose.", "Output is our general and Pressure is the enemy's commander."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗收的是同一段，只有末一句「鬼彼之师」比旧注的「官鬼为彼之敌帅」简略。",
+        "en": "The Bu Shi Zheng Zong gives the same passage; only its last phrase, 'Pressure is their army', is shorter than the old commentary's 'Pressure is the enemy's commander'."
+      },
+      "see": ["LY.CAREER.HJC.87", "LY.CAREER.HJC.88"]
+    },
+    {
+      "id": "LY.CAREER.HJC.87",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·父母兴隆，立望旌旗之蔽野；金爻空动，侧听金鼓之喧天（旧注：父母为旌旗，旺动主兵起；金空动则闻金鼓声，金空则响故也）",
+      "rule": {
+        "yi": "父母爻是旌旗。父母旺相发动，主兵马起动，旌旗遮满原野；金爻落空而动，就听到金鼓声喧闹震天，因为金落空了才会响。",
+        "en": "The Resource line is the banners. If Resource is thriving and moves, an army is rising and banners cover the plain; if a Metal line is Void and moves, one hears the din of gongs and drums shaking the sky, since Metal sounds when it is void."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5906, 5906],
+          "zh": ["父母兴隆，立望旌旗之蔽野；", "金爻空动，侧听金鼓之喧天。"],
+          "yi": ["父母爻兴旺，站着就能望见旌旗遮满原野；", "金爻落空而发动，侧耳就能听到锣鼓声喧闹震天。"],
+          "en": ["If Resource is thriving, one standing and looking sees banners covering the plain;", "if a Metal line is Void and moves, listening aside one hears the din of gongs and drums shaking the sky."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5907, 5907],
+          "zh": ["父母为旌旗。", "旺动主兵起。", "金空动，则闻金鼓声。", "金空则响，故也。"],
+          "yi": ["父母是旌旗。", "旺相发动，主兵马起动。", "金落空而发动，就能听到金鼓之声。", "金落空就会响，所以是这样。"],
+          "en": ["Resource is the banners.", "If it is thriving and moves, it means an army rises.", "If Metal is Void and moves, one hears the sound of gongs and drums.", "Metal sounds when it is void, which is why."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1514, 1514],
+          "zh": ["父母为旌旗；", "金动则闻金鼓声，金空则响故也。"],
+          "yi": ["父母是旌旗；", "金爻发动就能听到金鼓之声，因为金落空了才会响。"],
+          "en": ["Resource is the banners;", "if Metal moves one hears the sound of gongs and drums, since Metal sounds when it is void."] }
+      ],
+      "note": {
+        "yi": "旧注在「父母兴持」一联末尾说「以上数节，出《天玄赋》，不细解」，所以这一组几联的注都很简短。",
+        "en": "At the end of the couplet 'Resource holds the Self' the old commentary says 'the sections above come from the Tianxuan Fu and are not explained in detail', so the notes on this group of couplets are brief."
+      },
+      "see": ["LY.CAREER.HJC.86", "LY.CAREER.HJC.88"]
+    },
+    {
+      "id": "LY.CAREER.HJC.88",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·财为粮草之本根，兄乃伏兵之形势（旧注：财为粮草，旺多衰少、空为无粮；兄为伏兵又为夺粮之神，不宜旺动）",
+      "rule": {
+        "yi": "妻财是粮草：旺相的粮草多，衰弱的粮草少，落空就是没有粮；兄弟是伏兵，也是抢夺粮草的神，不宜旺相发动。",
+        "en": "Wealth is grain and fodder: thriving means plenty, weak means little, and Void means none; Peer is the ambush, and also the spirit that seizes the grain, and should not be thriving and moving."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5909, 5909],
+          "zh": ["财为粮草之本根，兄乃伏兵之形势。"],
+          "yi": ["财是粮草的根本，兄是伏兵的形势。"],
+          "en": ["Wealth is the root of grain and fodder, and Peer is the shape of an ambush."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5910, 5910],
+          "zh": ["财为粮草。", "旺多衰少，空为无粮。", "兄为伏兵，又为夺粮之神，不宜旺动。"],
+          "yi": ["财是粮草。", "旺相的多，衰弱的少，落空就是没有粮。", "兄是伏兵，又是夺粮的神，不宜旺相发动。"],
+          "en": ["Wealth is grain and fodder.", "If it is thriving there is plenty, if it is weak there is little, and if it is Void there is no grain.", "Peer is the ambush and also the spirit that seizes the grain, and should not be thriving and moving."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1516, 1516],
+          "zh": ["财为粮草，旺多衰少，空为无粮；", "兄为伏兵，又为夺粮之神，不宜旺动。"],
+          "yi": ["财是粮草，旺相的多，衰弱的少，落空就是没有粮；", "兄是伏兵，又是夺粮的神，不宜旺相发动。"],
+          "en": ["Wealth is grain and fodder; thriving means plenty, weak means little, and Void means no grain;", "Peer is the ambush and also the spirit that seizes the grain, and should not be thriving and moving."] }
+      ],
+      "note": {
+        "yi": "旧注在「父母兴持」一联末尾说「以上数节，出《天玄赋》，不细解」，所以这一组几联的注都很简短。",
+        "en": "At the end of the couplet 'Resource holds the Self' the old commentary says 'the sections above come from the Tianxuan Fu and are not explained in detail', so the notes on this group of couplets are brief."
+      },
+      "see": ["LY.CAREER.HJC.86", "LY.CAREER.HJC.87", "LY.CAREER.HJC.89"]
+    },
+    {
+      "id": "LY.CAREER.HJC.89",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·木兴扶世，济川宜驾乎轻舟；火旺生身，立寨必安于胜地（旧注：木为舟楫，动来生扶世身，或水爻与子孙动，宜乘舟决战；火为营寨，旺动生扶世身，结寨必得形胜之地）",
+      "rule": {
+        "yi": "木是舟船：木爻发动来生扶世爻，或者水爻和子孙发动，适合乘船决战取胜；火是营寨：火爻旺相发动来生扶世身，扎寨必定得到地形优越的好地方。",
+        "en": "Wood is boats: if a Wood line moves to generate or support the Self, or a Water line moves together with Output, it is fit to fight a decisive battle in boats and win; Fire is the camp: if a Fire line is thriving and moves to generate or support the Self, the stockade will surely stand in a place of natural advantage."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5912, 5912],
+          "zh": ["木兴扶世，济川宜驾乎轻舟；", "火旺生身，立寨必安于胜地。"],
+          "yi": ["木爻兴旺来扶助世爻，渡河作战适合驾着轻快的小船；", "火爻旺相来生助世身，扎营立寨必定安稳地处在形势优越的地方。"],
+          "en": ["If Wood is thriving and supports the Self, to cross the river it is fit to sail in light boats;", "if Fire is thriving and generates the Self or Body, the camp set up will surely rest in a place of advantage."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5913, 5913],
+          "zh": ["木为舟揖。", "若动来生扶世身，或水爻与子孙动，宜乘舟决战以取胜；", "火为营寨。", "若旺动生扶世身，结寨必得形胜之地也。"],
+          "yi": ["木是舟船和桨。", "如果它发动来生扶世身，或者水爻和子孙一起发动，适合乘船决战来取胜；", "火是营寨。", "如果它旺相发动来生扶世身，扎寨必定得到地形优越的好地方。"],
+          "en": ["Wood is boats and oars.", "If it moves to generate or support the Self, or a Water line moves together with Output, it is fit to fight a decisive battle in boats to win;", "Fire is the camp.", "If it is thriving and moves to generate or support the Self, the stockade will surely stand in a place of natural advantage."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1518, 1518],
+          "zh": ["水若动来生扶世身，或水爻子孙动，宜乘舟决战以取胜；", "火若旺动生扶世身，结寨必得形胜之地也。"],
+          "yi": ["水爻如果发动来生扶世身，或者水爻、子孙发动，适合乘船决战来取胜；", "火爻如果旺相发动来生扶世身，扎寨必定得到地形优越的好地方。"],
+          "en": ["If Water moves to generate or support the Self, or a Water line and Output move, it is fit to fight a decisive battle in boats to win;", "if Fire is thriving and moves to generate or support the Self, the stockade will surely stand in a place of natural advantage."] }
+      ],
+      "dispute": {
+        "yi": "舟是木还是水，两本不一样：卜筮大全的经文是「木兴扶世」，旧注先说「木为舟楫」、又说「水爻与子孙动」；卜筮正宗正文写成「水兴扶世」，注里只说水。",
+        "en": "The two books differ on whether the boat is Wood or Water: the verse in the Bu Shi Da Quan reads 'Wood thriving supports the Self', and the old commentary says first 'Wood is boats and oars' and then 'a Water line and Output move'; the main text of the Bu Shi Zheng Zong reads 'Water thriving supports the Self', and its note speaks only of Water."
+      },
+      "note": {
+        "yi": "旧注在「父母兴持」一联末尾说「以上数节，出《天玄赋》，不细解」，所以这一组几联的注都很简短。",
+        "en": "At the end of the couplet 'Resource holds the Self' the old commentary says 'the sections above come from the Tianxuan Fu and are not explained in detail', so the notes on this group of couplets are brief."
+      },
+      "see": ["LY.CAREER.HJC.88", "LY.CAREER.HJC.90"]
+    },
+    {
+      "id": "LY.CAREER.HJC.90",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·父母兴持，主帅无宽仁之德；子孙得地，将军有决胜之才（旧注：父母持世动，主帅不恤士卒、上下离心，带兄弟凶神须防自变；子孙持世身旺动，将军必决胜千里外）",
+      "rule": {
+        "yi": "父母爻持世发动，主帅不体恤士兵，上下离心，如果又带着兄弟或凶神，要防备内部自己生变；子孙持世、旺相发动，将军一定能在千里之外决定胜负。",
+        "en": "If Resource holds the Self and moves, the commander has no kindness for his soldiers and high and low are of different minds, and if it also carries Peer or a baleful spirit one must guard against a change from within; if Output holds the Self and is thriving and moves, the general will surely decide the victory from a thousand li away."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5915, 5915],
+          "zh": ["父母兴持，主帅无宽仁之德；", "子孙得地，将军有决胜之才。"],
+          "yi": ["父母爻兴旺而持世，主帅没有宽厚仁爱的德行；", "子孙得地，将军就有决胜的才能。"],
+          "en": ["If Resource is thriving and holds the Self, the commander lacks the virtue of leniency and kindness;", "if Output gains its ground, the general has the talent to decide the battle."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5916, 5917],
+          "zh": ["父母持世动，乃主帅不恤士卒，上下离心。", "若带兄弟凶神，须防自变。", "子孙持世身旺动，将军必决胜千里外。", "以上数节，出《天玄赋》，不细解。"],
+          "yi": ["父母持世并且发动，是主帅不体恤士兵，上下离心。", "如果又带着兄弟、凶神，要防备内部自己生变。", "子孙持世、世身旺相发动，将军一定能在千里之外决定胜负。", "以上几节出自《天玄赋》，这里不详细解释。"],
+          "en": ["If Resource holds the Self and moves, the commander does not care for his soldiers and high and low are of different minds.", "If it also carries Peer or a baleful spirit, one must guard against a change from within.", "If Output holds the Self and the Self is thriving and moves, the general will surely decide the victory from a thousand li away.", "The sections above come from the Tianxuan Fu and are not explained in detail here."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1520, 1520],
+          "zh": ["父母持世动，乃主帅不恤士卒，上下离心，若带兄弟官鬼，须防自变；", "若子孙持世旺动，将军必决胜千里。"],
+          "yi": ["父母持世发动，是主帅不体恤士兵，上下离心，如果又带着兄弟、官鬼，要防备内部自己生变；", "如果子孙持世、旺相发动，将军一定能在千里之外决定胜负。"],
+          "en": ["If Resource holds the Self and moves, the commander does not care for his soldiers and high and low are of different minds, and if it also carries Peer or Pressure, one must guard against a change from within;", "if Output holds the Self and is thriving and moves, the general will surely decide the victory from a thousand li away."] }
+      ],
+      "note": {
+        "yi": "旧注说「带兄弟凶神」，卜筮正宗说「带兄弟官鬼」。",
+        "en": "The old commentary says 'carrying Peer or a baleful spirit'; the Bu Shi Zheng Zong says 'carrying Peer or Pressure'."
+      },
+      "see": ["LY.CAREER.HJC.89", "LY.CAREER.HJC.91"]
+    },
+    {
+      "id": "LY.CAREER.HJC.91",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·水爻克子子孙强，韩信背水阵而陈余被斩（旧注：卦中水爻动、世持水爻、或水爻动克伤子孙，若子孙旺相得日月生扶或子孙旺动，可效韩信背水战，死中求生反胜）",
+      "rule": {
+        "yi": "卦中水爻发动，或者世爻持着水爻，或者水爻发动克伤子孙，只要子孙旺相、得到月建日辰生扶，或者子孙旺相发动，就可以效法韩信背水列阵，在绝境里求生，反而取胜。",
+        "en": "If a Water line moves in the hexagram, or the Self holds a Water line, or a Water line moves and controls and injures Output, then so long as Output is thriving or strong and is generated and supported by the Month and Day, or Output is thriving and moves, one may follow Han Xin's battle with the river at his back, seeking life in the midst of death, and win instead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5919, 5919],
+          "zh": ["水爻克子子孙强，韩信背水阵而陈余被斩；"],
+          "yi": ["水爻克子孙而子孙强，就像韩信摆背水之阵、陈余被斩；"],
+          "en": ["If Water controls Output and Output is strong, it is like Han Xin drawing up his army with the river at his back and Chen Yu being cut down;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5920, 5920],
+          "zh": ["卦中水爻动，及世持水爻，或动出水爻克伤子孙，若子孙旺相，得日辰月建生扶，或子孙旺动，则可效韩信背水战，死中求生而反胜也。"],
+          "yi": ["卦中水爻发动，以及世爻持着水爻，或者发动变出水爻来克伤子孙，如果子孙旺相，得到日辰月建生扶，或者子孙旺相发动，就可以效法韩信背水一战，在死地里求生而反过来取胜。"],
+          "en": ["If a Water line moves in the hexagram, or the Self holds a Water line, or a moving line turns into a Water line that controls and injures Output, then if Output is thriving or strong and is generated and supported by the Day and Month, or Output is thriving and moves, one may follow Han Xin's battle with the river at his back, seeking life in the midst of death, and win instead."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1522, 1522],
+          "zh": ["世持水动或水爻克子孙，若子孙亦动，得日月生扶，可效韩信背水战而反胜也。"],
+          "yi": ["世爻持着水爻发动，或者水爻克子孙，如果子孙也发动、得到月建日辰生扶，可以效法韩信背水一战而反过来取胜。"],
+          "en": ["If the Self holds a Water line that moves, or a Water line controls Output, and Output also moves and is generated and supported by the Month and Day, one may follow Han Xin's battle with the river at his back and win instead."] }
+      ],
+      "note": {
+        "yi": "旧注列了水爻动、世持水爻、动出水爻克子孙三种情形，并要子孙旺相或旺动；卜筮正宗压缩成两种，要「子孙亦动」。",
+        "en": "The old commentary lists three cases: a Water line moving, the Self holding Water, and a moving line turning into Water that controls Output, with Output thriving or thriving and moving; the Bu Shi Zheng Zong compresses them into two and requires 'Output also moving'."
+      },
+      "see": ["LY.CAREER.HJC.90", "LY.CAREER.HJC.92"]
+    },
+    {
+      "id": "LY.CAREER.HJC.92",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·阴象持兄兄克应，李愬雪夜走而元济遭擒（旧注：兄为伏兵，内象旺动克应是我伏兵、克世是他伏兵；兄在阳象宜日间伏、在阴象宜夜间伏，如李愬雪夜衔枚直捣蔡城擒吴元济）",
+      "rule": {
+        "yi": "兄弟是伏兵。兄弟在内卦旺相发动、克应爻，是我方设伏；克世爻，是对方设伏。兄弟在阳象适合白天设伏，在阴象适合夜里设伏，就像唐宪宗时李愬雪夜衔枚疾行，直捣蔡州城，擒住了吴元济。",
+        "en": "Peer is the ambush. If Peer in the inner trigram is thriving and moves and controls the Other, it is our ambush; if it controls the Self, it is the enemy's. If Peer is in a yang image the ambush is fit for the day and in a yin image for the night, like Li Su in the reign of Emperor Xianzong of Tang, who marched through a snowy night with his men holding sticks in their mouths for silence, struck straight at the city of Cai and captured Wu Yuanji."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5922, 5922],
+          "zh": ["阴象持兄兄克应，李愬雪夜走而元济遭擒。"],
+          "yi": ["兄弟在阴象上、克制应爻，就像李愬雪夜行军而吴元济被擒。"],
+          "en": ["If Peer sits in a yin image and controls the Other, it is like Li Su's march on a snowy night and the capture of Yuanji."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5923, 5923],
+          "zh": ["兄为伏兵。", "如在内象旺动，克应，乃我伏兵；", "克世，是他伏兵。", "若兄在阳象，宜日间伏；", "兄在阴象，宜夜间伏。", "如唐宪宗朝，李朔雪夜衔枚走，直捣蔡城，以擒吴元济也。"],
+          "yi": ["兄弟是伏兵。", "如果它在内卦旺相发动、克应爻，就是我方的伏兵；", "克世爻，就是对方的伏兵。", "如果兄弟在阳象，适合白天设伏；", "兄弟在阴象，适合夜里设伏。", "就像唐宪宗时，李愬（这里原文作「李朔」）雪夜衔枚疾行，直捣蔡州城，擒住吴元济。"],
+          "en": ["Peer is the ambush.", "If it is in the inner trigram, thriving and moving, and controls the Other, it is our ambush;", "if it controls the Self, it is the enemy's ambush.", "If Peer is in a yang image, the ambush is fit for the day;", "if Peer is in a yin image, the ambush is fit for the night.", "It is like Li Su (written Li Shuo here) in the reign of Emperor Xianzong of Tang, who marched through a snowy night with his men holding sticks in their mouths for silence, struck straight at the city of Cai and captured Wu Yuanji."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1524, 1524],
+          "zh": ["兄为伏兵，在内象动克应爻，乃我之伏兵也；", "克世是他人之伏兵。", "若在阳象宜日间伏，在阴象宜夜间伏，如唐宪宗朝李愬雪夜衔枚，直捣蔡城以擒吴元济也。"],
+          "yi": ["兄弟是伏兵，在内卦发动、克应爻，是我方的伏兵；", "克世爻的是对方的伏兵。", "如果在阳象适合白天设伏，在阴象适合夜里设伏，就像唐宪宗时李愬雪夜衔枚疾行，直捣蔡州城，擒住吴元济。"],
+          "en": ["Peer is the ambush; if it moves in the inner trigram and controls the Other, it is our ambush;", "if it controls the Self, it is the enemy's ambush.", "If it is in a yang image the ambush is fit for the day and in a yin image for the night, like Li Su in the reign of Emperor Xianzong of Tang, who marched through a snowy night with his men holding sticks in their mouths for silence, struck straight at the city of Cai and captured Wu Yuanji."] }
+      ],
+      "note": {
+        "yi": "旧注把李愬写成「李朔」，卜筮正宗写对了。",
+        "en": "The old commentary writes Li Su as 'Li Shuo', and the Bu Shi Zheng Zong writes it correctly."
+      },
+      "see": ["LY.CAREER.HJC.88", "LY.CAREER.HJC.91", "LY.CAREER.HJC.93"]
+    },
+    {
+      "id": "LY.CAREER.HJC.93",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·世持子而被伤，可效周亚夫坚壁不战（旧注：世持子孙则将有才能可克敌，若父动克则宜固守避其锋、不利速战；如汉景帝时七国反，周亚夫屯细柳，中夜军惊坚卧不起，深沟高垒数日乃定，遂破七国之兵）",
+      "rule": {
+        "yi": "世爻持着子孙，将领有才能，可以克敌；但如果被父母发动来克，就应当固守营垒、避开敌人的锋芒，不利于速战，就像汉景帝时七国造反，周亚夫驻军细柳，半夜军营受惊他也卧着不起，深沟高垒，几天后营里安定下来，终于击破了七国的军队。",
+        "en": "If the Self holds Output, the general has the ability to defeat the enemy; but if Resource moves to control it, one should hold the fort and avoid the enemy's edge, and a quick battle is not favourable, as when the seven states rebelled under Emperor Jing of Han and Zhou Yafu camped at Xiliu and lay still when the camp was alarmed at midnight, kept his ditches deep and his ramparts high, and after some days the camp settled and in the end he broke the armies of the seven states."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5925, 5925],
+          "zh": ["世持子而被伤，可效周亚夫坚壁不战；"],
+          "yi": ["世爻持着子孙却被克伤，可以效法周亚夫坚守壁垒、不出战；"],
+          "en": ["If the Self holds Output but is injured, one may follow Zhou Yafu, who held his ramparts and would not fight;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5926, 5926],
+          "zh": ["世持子孙，将必才能，可以克敌。", "若父动克，宜且固守，以避其锋，不利速战。", "如汉景帝朝，七国反，帝使周亚夫，屯细柳以攻之。", "中夜军惊，扰乱至帐下，亚夫坚卧不起，深沟高垒，数日乃定，遂破七国之兵。"],
+          "yi": ["世爻持着子孙，将领必定有才能，可以克敌。", "如果父爻发动来克，应当暂且固守，避开敌人的锋芒，不利于速战。", "就像汉景帝时，七国造反，景帝派周亚夫驻军细柳去攻打他们。", "半夜军营受惊，骚乱一直闹到他的帐下，周亚夫仍然稳卧不起，深挖壕沟、高筑壁垒，几天后军营才安定下来，终于击破了七国的军队。"],
+          "en": ["If the Self holds Output, the general surely has ability and can defeat the enemy.", "If Resource moves to control it, one should for the time being hold firm to avoid the enemy's edge, and a quick battle is not favourable.", "It is like the reign of Emperor Jing of Han, when the seven states rebelled and the emperor sent Zhou Yafu to camp at Xiliu and attack them.", "At midnight the army was alarmed and the disorder reached his tent, but Yafu lay firmly and did not rise, kept his ditches deep and his ramparts high, and after some days the camp settled, and in the end he broke the armies of the seven states."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1526, 1526],
+          "zh": ["世持子孙，将必才能，可以克敌。", "若被动克宜固守，不宜速战，如汉景帝时七国反，帝使周亚夫屯细柳以攻之，中夜军惊，扰乱至帐下，亚夫坚卧不起，深沟高垒，数日乃定，遂破七国之兵。"],
+          "yi": ["世爻持着子孙，将领必定有才能，可以克敌。", "如果被动爻克，应当固守，不宜速战，就像汉景帝时七国造反，景帝派周亚夫驻军细柳去攻打他们，半夜军营受惊，骚乱一直闹到他的帐下，周亚夫稳卧不起，深挖壕沟、高筑壁垒，几天后军营才安定下来，终于击破了七国的军队。"],
+          "en": ["If the Self holds Output, the general surely has ability and can defeat the enemy.", "If it is controlled by a moving line one should hold firm and not fight a quick battle, as when the seven states rebelled under Emperor Jing of Han and the emperor sent Zhou Yafu to camp at Xiliu and attack them: at midnight the army was alarmed and the disorder reached his tent, but Yafu lay firmly and did not rise, kept his ditches deep and his ramparts high, and after some days the camp settled, and in the end he broke the armies of the seven states."] }
+      ],
+      "note": {
+        "yi": "旧注说克它的是「父动克」，卜筮正宗说「被动克」，没有指明是父爻。",
+        "en": "The old commentary says the controller is 'Resource moving to control'; the Bu Shi Zheng Zong says only 'controlled by a moving line' and does not name Resource."
+      },
+      "see": ["LY.CAREER.HJC.92", "LY.CAREER.HJC.94"]
+    },
+    {
+      "id": "LY.CAREER.HJC.94",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·应临官而遭克，当如司马懿固垒休兵（旧注：应持官鬼旺相则彼将才能、我难与敌，卦有子孙发动终不能大胜；如司马懿自料不如孔明，甘受巾帼之辱，坚垒不战）",
+      "rule": {
+        "yi": "应爻持着旺相的官鬼，对方的将领有才能，我方难以对敌；就算卦中有子孙发动，最终也不能大胜，应当像司马懿那样，自知才能不如诸葛孔明，甘愿受送来妇人头巾的羞辱，坚守营垒不出战。",
+        "en": "If the Other line holds Pressure that is thriving or strong, the enemy general is able and it is hard for us to face him, and even if Output in the hexagram moves, in the end there will be no great victory; one should do as Sima Yi did, who judged that his ability did not match Kongming's, swallowed the insult of the women's head-cloths, and held his ramparts without fighting."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5928, 5928],
+          "zh": ["应临官而遭克，当如司马懿固垒休兵。"],
+          "yi": ["应爻临着官鬼却被克，应当像司马懿那样巩固营垒、停止出兵。"],
+          "en": ["If the Other sits on Pressure and is controlled, one should do as Sima Yi did, strengthening the ramparts and resting the troops."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5929, 5929],
+          "zh": ["应持官旺相，彼将才能，我难与敌。", "虽卦有子孙发动，终不能大胜。", "如三国时，司马懿自料才能不如孔明，甘受巾帼之辱，坚垒不战尚矣。"],
+          "yi": ["应爻持着官鬼而且旺相，对方的将领有才能，我方难以与他对敌。", "即使卦里有子孙发动，最终也不能大胜。", "就像三国时，司马懿自己估量才能不如诸葛孔明，甘愿受送来妇人头巾的羞辱，坚守营垒不出战，这就最好了。"],
+          "en": ["If the Other holds Pressure that is thriving or strong, the enemy general is able and it is hard for us to face him.", "Even if Output moves in the hexagram, in the end there will be no great victory.", "It is like Sima Yi in the Three Kingdoms, who judged that his own ability was not equal to Kongming's, accepted the insult of the women's head-cloths, and held his ramparts without fighting, which was best."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1528, 1528],
+          "zh": ["应持官旺，彼将才能，我难与敌，虽有子孙动不能大胜，如三国时司马懿自料不能如孔明，甘受巾帼，坚壁不战也。"],
+          "yi": ["应爻持着旺相的官，对方的将领有才能，我方难以对敌，即使有子孙发动也不能大胜，就像三国时司马懿自己估量不能像孔明那样，甘愿受妇人头巾的羞辱，坚守壁垒不出战。"],
+          "en": ["If the Other holds Pressure that is thriving, the enemy general is able and it is hard for us to face him, and even if Output moves there will be no great victory, as Sima Yi in the Three Kingdoms judged that he could not match Kongming, accepted the insult of the women's head-cloths, and held his ramparts without fighting."] }
+      ],
+      "see": ["LY.CAREER.HJC.93", "LY.CAREER.HJC.95"]
+    },
+    {
+      "id": "LY.CAREER.HJC.95",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·世持衰福得生扶，王翦以六十万众而胜楚（旧注：世身虽持子孙而衰弱难胜敌，若得月建日辰生扶，可效始皇朝王翦以六十万人成胜楚之功）",
+      "rule": {
+        "yi": "世爻虽然持着子孙，但子孙衰弱也难以战胜敌人；如果得到月建、日辰生扶，就可以效法秦始皇时王翦率六十万大军取得灭楚的功劳。",
+        "en": "Although the Self holds Output, a weak Output can hardly overcome the enemy; if it gets generation and support from the Month and Day, one may follow Wang Jian in the reign of the First Emperor, who with six hundred thousand men achieved the conquest of Chu."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5931, 5931],
+          "zh": ["世持衰福得生扶，王翦以六十万众而胜楚；"],
+          "yi": ["世爻持着衰弱的福神却得到生扶，就像王翦率六十万大军战胜楚国；"],
+          "en": ["If the Self holds a weak Output and gets generation and support, it is like Wang Jian who with six hundred thousand men overcame Chu;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5932, 5932],
+          "zh": ["世身虽持子孙，衰弱亦难胜敌。", "若得月建日辰生扶，可效始皇朝，王翦以六十万众，卒成胜楚之功。"],
+          "yi": ["世身虽然持着子孙，但衰弱也难以战胜敌人。", "如果得到月建、日辰生扶，可以效法秦始皇时，王翦率六十万大军，终于成就战胜楚国的功劳。"],
+          "en": ["Although the Self or Body holds Output, if it is weak it can hardly overcome the enemy.", "If it gets generation and support from the Month and Day, one may follow the reign of the First Emperor, when Wang Jian with six hundred thousand men in the end achieved the victory over Chu."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1530, 1530],
+          "zh": ["身世虽持子孙，衰弱亦难胜，若得月建日辰生扶，可效始皇时王翦以六十万人而成胜楚之功。"],
+          "yi": ["世身虽然持着子孙，但衰弱也难以取胜，如果得到月建、日辰生扶，可以效法秦始皇时王翦率六十万人而成就战胜楚国的功劳。"],
+          "en": ["Although the Self or Body holds Output, if it is weak it can hardly win; if it gets generation and support from the Month and Day, one may follow Wang Jian in the time of the First Emperor, who with six hundred thousand men achieved the victory over Chu."] }
+      ],
+      "see": ["LY.CAREER.HJC.94", "LY.CAREER.HJC.96"]
+    },
+    {
+      "id": "LY.CAREER.HJC.96",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·卦有众官临旺子，谢玄以八千之兵而破秦（旧注：卦有官鬼、父母虽多而安静休囚，子孙虽少而当权旺动，是寡胜众之象，如晋谢玄刘牢之以八千兵渡江破秦王苻坚九十万众）",
+      "rule": {
+        "yi": "卦里官鬼、父母虽然多，却安静休囚；子孙虽然少，却当令旺相而发动，这是以少胜多的象，就像晋朝的谢玄、刘牢之，以八千兵马渡江，击破秦王苻坚的九十万大军。",
+        "en": "If the hexagram has many Pressure and Resource lines that are still and resting or trapped, while Output is few but holds the season and is thriving and moving, it is the image of the few overcoming the many, like Xie Xuan and Liu Laozhi of Jin, who crossed the river with eight thousand men and broke the nine hundred thousand of Fu Jian, King of Qin."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5934, 5934],
+          "zh": ["卦有众官临旺子，谢玄以八千之兵而破秦。"],
+          "yi": ["卦里有很多官鬼，而子孙旺相，就像谢玄凭八千兵马击破了秦国。"],
+          "en": ["If the hexagram has many Pressure lines while Output is thriving, it is like Xie Xuan who with eight thousand soldiers broke Qin."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5935, 5935],
+          "zh": ["卦有官鬼，父母虽多，而安静休囚；", "子孙虽少，而当权旺动。", "此乃寡胜众之象。", "如晋谢玄、刘牢之，以八千兵渡江，破秦王符坚九十万众也。"],
+          "yi": ["卦里有官鬼，父母虽然多，却安静休囚；", "子孙虽然少，却当令旺相而发动。", "这就是以少胜多的象。", "就像晋朝的谢玄、刘牢之，以八千兵马渡江，击破了秦王符坚的九十万大军。"],
+          "en": ["If the hexagram has Pressure, and Resource lines are many but still and resting or trapped;", "and Output is few but holds the season and is thriving and moving.", "This is the image of the few overcoming the many.", "It is like Xie Xuan and Liu Laozhi of Jin, who crossed the river with eight thousand soldiers and broke the nine hundred thousand of Fu Jian, King of Qin."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1532, 1532],
+          "zh": ["官父虽多而安静，子孙虽少而旺动，必寡可胜众也，如晋谢玄、刘牢以八千兵破秦王苻坚九十万众也。"],
+          "yi": ["官鬼、父母虽然多却安静，子孙虽然少却旺相发动，必定是以少胜多，就像晋朝的谢玄、刘牢以八千兵马击破秦王苻坚的九十万大军。"],
+          "en": ["Though Pressure and Resource lines are many, they are still, and Output is few but thriving and moving; the few will surely overcome the many, like Xie Xuan and Liu Lao of Jin who with eight thousand soldiers broke the nine hundred thousand of Fu Jian, King of Qin."] }
+      ],
+      "note": {
+        "yi": "人名写法不同：旧注作「刘牢之」「符坚」，卜筮正宗作「刘牢」「苻坚」；译文按通行写法。",
+        "en": "The names are written differently: the old commentary has 'Liu Laozhi' and a variant character for 'Fu', the Bu Shi Zheng Zong has 'Liu Lao' and the usual 'Fu'; the translation follows the common forms."
+      },
+      "see": ["LY.CAREER.HJC.95", "LY.CAREER.HJC.97"]
+    },
+    {
+      "id": "LY.CAREER.HJC.97",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·两子合世扶身，李郭同心而兴唐室（旧注：子孙为将、世为国君，卦有两子旺动生扶世身，主国有二将合谋胜敌，如唐李光弼、郭子仪同心忠义，终能靖乱复兴唐室）",
+      "rule": {
+        "yi": "子孙是将，世爻是国君。卦里有两个子孙旺相发动，生扶世爻或世身，主国家有两位将领合谋战胜敌人，就像唐朝的李光弼、郭子仪，两人同心，以忠义自勉，终于平定叛乱，复兴了唐朝。",
+        "en": "Output is the general and the Self is the ruler. If the hexagram has two Output lines that are thriving and moving and generate or support the Self, the state has two generals who plot together to overcome the enemy, like Li Guangbi and Guo Ziyi of Tang, who were of one heart, urged themselves on with loyalty and righteousness, and in the end put down the rebellion and restored the house of Tang."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5937, 5937],
+          "zh": ["两子合世扶身，李郭同心而兴唐室；"],
+          "yi": ["两个子孙合住世爻、扶助世身，就像李光弼、郭子仪同心协力而复兴唐朝；"],
+          "en": ["If two Output lines combine with the Self and support the Self or Body, it is like Li and Guo working with one heart and restoring the house of Tang;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5938, 5938],
+          "zh": ["子孙为将，世为国君。", "若卦中有两子旺动，生扶世身；", "主国有二将，合谋胜敌之兆。", "如唐李光弼、郭子仪，二人同心，以忠义自励，终能靖乱，复兴唐室。"],
+          "yi": ["子孙是将，世是国君。", "如果卦里有两个子孙旺相发动，生扶世身；", "主国家有两位将领合谋战胜敌人的征兆。", "就像唐朝的李光弼、郭子仪，两人同心，以忠义自勉，终于能平定叛乱，复兴唐朝。"],
+          "en": ["Output is the general and the Self is the ruler.", "If the hexagram has two Output lines thriving and moving that generate and support the Self or Body;", "it is a sign that the state has two generals plotting together to overcome the enemy.", "It is like Li Guangbi and Guo Ziyi of Tang, who were of one heart, urged themselves on with loyalty and righteousness, and in the end were able to put down the rebellion and restore the house of Tang."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1534, 1534],
+          "zh": ["卦有两子旺动生世，主有二将合谋胜敌，如唐李弼、郭子仪二人，同心以忠义自厉，终能靖乱复兴唐室。"],
+          "yi": ["卦里有两个子孙旺相发动、生扶世，主有两位将领合谋战胜敌人，就像唐朝的李光弼（这里作「李弼」）、郭子仪，两人同心，以忠义自勉，终于能平定叛乱、复兴唐朝。"],
+          "en": ["If the hexagram has two Output lines thriving and moving that generate the Self, there are two generals plotting together to overcome the enemy, like Li Bi (for Li Guangbi) and Guo Ziyi of Tang, who were of one heart, urged themselves on with loyalty and righteousness, and in the end were able to put down the rebellion and restore the house of Tang."] }
+      ],
+      "note": {
+        "yi": "卜筮正宗把「李光弼」写成「李弼」，少了一个字。",
+        "en": "The Bu Shi Zheng Zong writes 'Li Guangbi' as 'Li Bi', one character short."
+      },
+      "see": ["LY.CAREER.HJC.96", "LY.CAREER.HJC.98"]
+    },
+    {
+      "id": "LY.CAREER.HJC.98",
+      "topic": "军旅",
+      "chapter": "征战",
+      "chapter_en": "Campaigns and war",
+      "title": "征战·二福刑冲化绝，钟邓互隙而丧身家（旧注：两个子孙生旺变动相冲相刑、两化入死墓绝空，虽胜敌将必争权夺宠互相残害，如晋钟会邓艾平蜀后嫌隙互生，自相屠戮，身家俱丧）",
+      "rule": {
+        "yi": "两个子孙爻生旺发动，互相冲、刑，又都变入死、墓、绝、空，虽然能战胜敌将，但必定争权夺宠、互相残害，就像晋朝的钟会、邓艾带兵平定蜀国，蜀国平定之后彼此生出嫌隙，以致自相残杀，身家都丧。",
+        "en": "If two Output lines are thriving and moving, clash with and punish each other, and both turn into death, tomb, extinction or Void, then though they may overcome the enemy's generals they will surely struggle for power and favour and harm each other, like Zhong Hui and Deng Ai of Jin, who led troops to subdue Shu and, when Shu was settled, fell into mutual suspicion, until they killed each other and lost both their persons and their families."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5940, 5940],
+          "zh": ["二福刑冲化绝，钟邓互隙而丧身家。"],
+          "yi": ["两个福神相刑相冲又变成绝爻，就像钟会、邓艾互相结下嫌隙而丧了身家。"],
+          "en": ["If the two Output lines punish and clash with each other and turn into extinction, it is like Zhong and Deng falling out and losing both their persons and their families."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5941, 5941],
+          "zh": ["若有二子爻生旺变动，相冲，相刑、两化入死墓绝空，虽胜敌将，必争权夺宠，相残害之兆。", "如晋钟会、邓艾领兵平蜀，蜀平，而嫌隙互生，乃至自相屠戮、身家俱丧。"],
+          "yi": ["如果有两个子孙爻生旺变动，互相冲、互相刑，两个都变入死、墓、绝、空，虽然能战胜敌将，必定争权夺宠，是互相残害的征兆。", "就像晋朝的钟会、邓艾带兵平定蜀国，蜀国平定之后，彼此生出嫌隙，以致自相屠杀，身家都丧。"],
+          "en": ["If there are two Output lines that are thriving and changing, clash with and punish each other, and both turn into death, tomb, extinction or Void, then though they may overcome the enemy's generals they will surely struggle for power and favour, a sign that they will harm each other.", "It is like Zhong Hui and Deng Ai of Jin, who led troops to subdue Shu and, when Shu was settled, fell into mutual suspicion, until they slaughtered each other and lost both their persons and their families."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1536, 1536],
+          "zh": ["两重子孙旺动皆化入死墓绝空，虽胜敌将，必争权夺宠，两相残害，如晋钟会、邓艾领兵平蜀，蜀平而嫌隙互生，乃至自相屠戮，身家俱丧。"],
+          "yi": ["两个子孙旺相发动，都变入死、墓、绝、空，虽然能战胜敌将，必定争权夺宠，互相残害，就像晋朝的钟会、邓艾带兵平定蜀国，蜀国平定之后彼此生出嫌隙，以致自相屠杀，身家都丧。"],
+          "en": ["If two Output lines are thriving and moving and both turn into death, tomb, extinction or Void, then though they may overcome the enemy's generals they will surely struggle for power and favour and harm each other, like Zhong Hui and Deng Ai of Jin, who led troops to subdue Shu and, when Shu was settled, fell into mutual suspicion, until they slaughtered each other and lost both their persons and their families."] }
+      ],
+      "note": {
+        "yi": "书里写「晋钟会、邓艾」；钟会、邓艾平蜀（公元 263 年）时的国家是魏，晋是三年后才建立的，译文照书写作晋朝。旧注还写了两个子孙「相冲相刑」，卜筮正宗没有这一层。",
+        "en": "The books write 'Zhong Hui and Deng Ai of Jin'; when they subdued Shu (263 CE) the state was Wei and Jin was founded three years later, but the translation follows the books and says Jin. The old commentary also has the two Output lines clashing with and punishing each other; the Bu Shi Zheng Zong has no such clause."
+      },
+      "see": ["LY.CAREER.HJC.97", "LY.CAREER.HJC.99"]
+    }
+  ]
+}

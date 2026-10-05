@@ -1,0 +1,358 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "增删卜易",
+  "chapter": "在任吉凶章、援例章、投麾效用章",
+  "chapter_en": "Chapters on life in office, buying office, and joining the colours",
+  "ranges": {"增删卜易": [10537, 10701]},
+  "units": [
+    {
+      "id": "LY.CAREER.ZS.11",
+      "topic": "任所",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·官旺财兴，仕途显赫；子摇兄动，减俸休官（官旺遇生扶或动化吉、世旺财旺，兵民颂德；官临日月生合世，近君异宠、大位超升、外任卓异；兄持世或动，破财罚俸；子孙持世或动，有削职之忧）",
+      "rule": {
+        "yi": "在任吉凶：官星旺相、妻财兴旺，仕途显赫。官星旺相又得生扶，或发动变吉，世旺财旺，或财发动生世，官民称颂，宦途平稳；官星临日月生合世爻，或三合官局生合世爻，或官星持世又得日月生扶、太岁五爻相生合，在君主身边的特别受宠，居高位的不久越级升迁，外任的被评为卓异。反过来，兄弟持世或发动，不是破财就是罚俸；子孙持世或在动爻中，有被剥官削职的忧虑，只有官星休囚而有扶、子孙发动而被制住时，才不过降级。",
+        "en": "How one fares in office: with the star of office thriving and Wealth flourishing, the official career is brilliant. If the star of office is thriving and gets generation and support, or moves and turns auspicious, with the Self and Wealth thriving or Wealth moving to generate the Self, soldiers and people praise his virtue and the sea of officialdom is calm; if the star of office sits on the Day or Month and generates or combines with the Self, or a three-harmony Pressure frame generates or combines with the Self, or the star of office holds the Self and the Day and Month generate and support it with Tai Sui or the fifth line generating and combining, then one near the ruler receives uncommon favour, one in high office is soon promoted beyond rank, and one serving outside is rated outstanding. The reverse: if Peer holds the Self or moves, there is either a loss of goods or a fine of salary; if Output holds the Self or is among the moving lines, there is cause to fear being stripped of office and rank, and only when the star of office is resting or trapped but supported and Output moves but is restrained does it come to no more than a demotion."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10539, 10540],
+          "zh": ["官旺财兴，仕途显赫；", "子摇兄动，减俸休官。", "官旺遇生扶，或动而化吉，世旺财旺，或财动生世，皆主兵民颂德，宦海无波。", "官临日月，生合世爻，三合官局生合世爻，或官星持世，日月生扶，岁五又相生合，近君者，必蒙异宠。", "大位者，不久超升；", "外任者，必为卓异。", "兄弟持世，兄爻发动，若非破耗财物，定然罚俸除粮；", "子孙持世，及子动爻中，有剥官削职之忧。", "倘得官星休囚而有扶，子孙发动而有制，降级而已。"],
+          "yi": ["官星旺相、妻财兴旺，仕途显赫；", "子孙摇动、兄弟发动，减俸、罢官。", "官星旺相又遇生扶，或者发动变吉，世爻旺相、财旺相，或者财发动生世，都主兵士百姓称颂他的德政，宦途风平浪静。", "官星临在日月上，生合世爻，或者三合官局生合世爻，或者官星持世、有日月生扶，太岁、五爻又来相生相合，在君主身边的人，必定蒙受特别的恩宠。", "居高位的，不久就越级升迁；", "在外任职的，必定被评为卓异（政绩特别突出）。", "兄弟持世，兄爻发动，如果不是破财耗财，必定是罚俸、扣除俸粮；", "子孙持世，以及子孙在动爻之中，有被剥夺官职的忧虑。", "倘若官星休囚但有生扶，子孙发动但有制伏，不过是降级罢了。"],
+          "en": ["With the star of office thriving and Wealth flourishing, the official career is brilliant;", "with Output swaying and Peer moving, there is a cut in salary or removal from office.", "If the star of office is thriving and gets generation and support, or moves and turns auspicious, or the Self and Wealth are both thriving, or Wealth moves to generate the Self, then soldiers and people praise his virtue and the sea of officialdom is calm.", "If the star of office sits on the Day or Month and generates or combines with the Self, or a three-harmony Pressure frame generates or combines with the Self, or the star of office holds the Self with the Day and Month generating and supporting it and Tai Sui or the fifth line also generating and combining, then one who is near the ruler will surely receive uncommon favour.", "one in high office will soon be promoted beyond his rank;", "one serving outside will surely be rated outstanding.", "If Peer holds the Self and a Peer line moves, then unless it is a loss and waste of goods, there will surely be a fine of salary and a cut of grain pay;", "if Output holds the Self, or is among the moving lines, there is cause to fear being stripped of office and rank.", "If the star of office is resting or trapped but is supported, and Output moves but is restrained, it comes to no more than a demotion."] }
+      ],
+      "see": ["LY.CAREER.ZS.12", "LY.CAREER.HJC.01", "LY.CAREER.HJC.02", "LY.CAREER.HJC.03", "LY.CAREER.HJC.04"]
+    },
+    {
+      "id": "LY.CAREER.ZS.12",
+      "topic": "任所",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·官旺兄兴，清风两袖；父发鬼旺，雨露三加（兄动虽耗财减俸，官星旺相则是为官清正、非义不取，非无财；旺父临世官动临岁五或日月生扶，外任蒙上官推荐，近君大位三赐荣加）",
+      "rule": {
+        "yi": "官星旺相而兄爻发动，不一定是坏事：兄爻发动虽然是耗财、减俸的神，但不必拘泥；官星旺相的话，那是做官清正、不义之财不取，并不是没有财；官星旺相而财落空破，也这样断。旺相的父母爻临世，官星发动临在太岁、五爻上，或有日月生扶，外任的必得上司推荐，在君主身边和居高位的，恩赐荣誉一再加身。",
+        "en": "A moving Peer line with a thriving star of office is not necessarily bad: a moving Peer line is indeed a spirit that wastes money and cuts salary, but one need not cling to that; when the star of office is thriving, it means an upright official who takes nothing unrighteous, not one who has no wealth; the same judgment holds when the star of office is thriving and Wealth is Void or broken. If a thriving Resource line holds the Self and the star of office moves on Tai Sui or the fifth line, or the Day and Month generate and support it, an official serving outside will surely be recommended by his superiors, and those near the ruler and in high office receive honours again and again."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10541, 10543],
+          "zh": ["官旺兄兴，清风两袖；", "父发鬼旺，雨露三加。", "兄动，虽为耗财减俸之神，然亦不必泥之。", "若得官星旺相，乃是为官清正，非义不取也，非无财也。", "官星旺相，财临空破者，亦同此断。", "旺父临世，官动临岁五，或日月生扶，外任者，必蒙上官推荐；", "近君及大位者，三赐荣加。"],
+          "yi": ["官星旺相、兄弟兴旺，为官清廉，两袖清风；", "父母发动、官鬼旺相，恩泽像雨露一样一再加身。", "兄爻发动，虽然是耗财、减俸的神，但也不必拘泥。", "如果官星旺相，那是做官清正，不义之财不取，并不是没有财。", "官星旺相，而财落空落破的，也照这样断。", "旺相的父母爻临世，官星发动临在太岁、五爻上，或者有日月生扶，外任的人，必定得到上司的推荐；", "在君主身边的和居高位的，恩赐荣誉一再加身。"],
+          "en": ["With the star of office thriving and Peer flourishing, one is an upright official with two sleeves of clean wind;", "with Resource moving and Pressure thriving, favours like rain and dew are added three times over.", "A moving Peer line is indeed a spirit that wastes money and cuts salary, yet one need not cling to that.", "If the star of office is thriving, it means the official is upright and takes nothing unrighteous, not that he has no wealth.", "If the star of office is thriving and Wealth falls in Void or break, the same judgment holds.", "If a thriving Resource line holds the Self and the star of office moves on Tai Sui or the fifth line, or the Day and Month generate and support it, one serving outside will surely be recommended by his superiors;", "for those near the ruler and those in high office, honours are bestowed again and again."] }
+      ],
+      "see": ["LY.CAREER.ZS.11", "LY.CAREER.HJC.04", "LY.CAREER.HJC.18"]
+    },
+    {
+      "id": "LY.CAREER.ZS.13",
+      "topic": "任所",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·兄鬼安宁，地方少事（兄鬼乱动于卦中，旱涝兵荒，地方不宁之兆）",
+      "rule": {
+        "yi": "兄弟、官鬼安静，管辖的地方上事情少；兄弟、官鬼在卦中乱动，是旱涝、兵荒，地方不安宁的征兆。",
+        "en": "When Peer and Pressure are still, the district under one's charge has few troubles; when Peer and Pressure move in disorder in the hexagram, it is a sign of drought, flood, war and famine, and of a district at unrest."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10544, 10544],
+          "zh": ["兄鬼安宁，地方少事。", "兄鬼若乱动于卦中，旱涝兵荒，地方不宁之兆。"],
+          "yi": ["兄、鬼安静，地方上事情少。", "兄、鬼如果在卦中乱动，是旱灾、水灾、兵祸、饥荒，地方不安宁的征兆。"],
+          "en": ["When Peer and Pressure are still, the district has few troubles.", "If Peer and Pressure move in disorder in the hexagram, it is a sign of drought, flood, war and famine, and of a district at unrest."] }
+      ],
+      "see": ["LY.CAREER.ZS.14", "LY.CAREER.HJC.22"]
+    },
+    {
+      "id": "LY.CAREER.ZS.14",
+      "topic": "风险",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·日月冲克，诽谤多招（日月克官或克世、朱雀螣蛇克世而世休囚，得祸不浅；世旺有敕多是非须检点；官鬼克世世旺官衰亦主诽谤；世衰鬼旺临蛇雀必挂弹章）",
+      "rule": {
+        "yi": "日月来冲克，在任上多招诽谤：日月克官星或克世爻，或者朱雀、螣蛇克世而世爻休囚，招来的祸不小；世爻旺相、有敕命的，也多招是非，要检点、勤勉谨慎处理政事，以免过失；官鬼克世爻，但世旺官衰的，也主有诽谤；世爻衰弱、官鬼旺相，如果又临螣蛇、朱雀，必定被弹劾。",
+        "en": "When the Day and Month clash with or control, slander is much invited in office: if the Day and Month control the star of office or the Self, or the Vermilion Bird or the Coiling Snake controls the Self while the Self is resting or trapped, the misfortune is not slight; if the Self is thriving and one holds an imperial edict there is still much gossip and trouble, so one should be careful and diligent and prudent in affairs of government to avoid fault; if Pressure controls the Self though the Self is thriving and Pressure is weak, there is slander too; if the Self is weak and Pressure thriving and it also sits on the Coiling Snake or the Vermilion Bird, one will surely be named in an impeachment."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10545, 10545],
+          "zh": ["日月冲克，诽谤多招。", "日月克官，或克世爻，及朱雀、螣蛇克世、世爻休囚者，得祸不浅；", "世爻旺相有敕者，多招是非，须宜检点，政事勤慎，以免愆尤；", "官鬼克世、世旺官衰者，亦主诽谤；", "世衰鬼旺，若临蛇雀，必挂弹章。"],
+          "yi": ["日月冲克，多招来诽谤。", "日月克官星，或者克世爻，以及朱雀、螣蛇克世、世爻休囚的，招来的祸不小；", "世爻旺相、有敕命（得朝廷任命）的，也多招是非，应当检点，处理政事勤勉谨慎，以免过失和罪责；", "官鬼克世爻，但世爻旺相、官鬼衰弱的，也主有诽谤；", "世爻衰弱、官鬼旺相，如果又临螣蛇、朱雀，必定被挂上弹劾的奏章。"],
+          "en": ["If the Day and Month clash with or control, slander is much invited.", "If the Day and Month control the star of office or control the Self, or the Vermilion Bird or the Coiling Snake controls the Self and the Self is resting or trapped, the misfortune is not slight;", "if the Self is thriving and one holds an imperial edict, there is still much gossip and trouble, so one should be careful, diligent and prudent in affairs of government to avoid faults and blame;", "if Pressure controls the Self, though the Self is thriving and Pressure is weak, there is slander too;", "if the Self is weak and Pressure thriving, and it also sits on the Coiling Snake or the Vermilion Bird, one will surely be named in an impeachment memorial."] }
+      ],
+      "see": ["LY.CAREER.HJC.12", "LY.CAREER.HJC.13", "LY.CAREER.HJC.15", "LY.CAREER.ZS.15"]
+    },
+    {
+      "id": "LY.CAREER.ZS.15",
+      "topic": "升迁",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·化进神，冲变合，加官晋爵（世旺官化进神、官旺世化进神、世官得地财化进神，皆进爵之征）",
+      "rule": {
+        "yi": "在任时，变出进神，或冲变成合，都是加官晋爵的征兆：世爻旺相、官星变进神；官星旺相、世爻变进神；世爻与官星都得地、财爻变进神。",
+        "en": "In office, turning into an Advancing line, or a clash turning into a combination, are signs of added office and higher rank: the Self thriving and the star of office turning into an Advancing line; the star of office thriving and the Self turning into an Advancing line; or the Self and the star of office both well placed and Wealth turning into an Advancing line."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10546, 10546],
+          "zh": ["化进神，冲变合，加官晋爵。", "世爻旺相，官化进神；", "官星旺相，世化进神；", "及世官得地，财化进神者，皆进爵之征也。"],
+          "yi": ["变出进神，冲变成合，加官晋爵。", "世爻旺相，官星变进神；", "官星旺相，世爻变进神；", "以及世爻、官星都得地，财爻变进神的，都是晋升爵位的征兆。"],
+          "en": ["Turning into an Advancing line, or a clash turning into a combination, brings added office and a higher rank.", "The Self thriving and the star of office turning into an Advancing line;", "the star of office thriving and the Self turning into an Advancing line;", "or the Self and the star of office both well placed with Wealth turning into an Advancing line: all are signs of a higher rank."] }
+      ],
+      "see": ["LY.CAREER.ZS.14", "LY.CAREER.ZS.16", "LY.CAREER.HJC.02"]
+    },
+    {
+      "id": "LY.CAREER.ZS.16",
+      "topic": "动变",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·爻反吟，入三墓，反复昏庸（卦得反吟，世官旺相必升，世官衰必降罚，世官被冲克有不测之祸；世休囚被克化墓入墓立见灾非，世有气化墓入墓不过昏聩）",
+      "rule": {
+        "yi": "爻遇反吟或入三墓，主反复不定、昏庸糊涂。卦得反吟：世爻、官爻旺相，一定升迁；世爻、官星衰弱，必遭降职处罚，降后还要焦虑；世爻或官星被冲被克，有想不到的灾祸。世爻休囚被克、变墓或入墓，立刻见到灾祸是非；世爻有气而变墓、入墓，不过是糊里糊涂、昏聩罢了。",
+        "en": "Lines in Reversed Chant, or entering the three tombs, mean going back and forth, muddle and dullness. If the hexagram gets Reversed Chant: with the Self and the Pressure line thriving one is surely promoted; with the Self and the star of office weak one is demoted and punished and anxious after the demotion; if the Self or the star of office is clashed or controlled, there is unforeseen calamity. If the Self is resting or trapped and controlled, turns into the tomb or enters the tomb, disaster and trouble appear at once; if the Self has strength and turns into the tomb or enters the tomb, it is no more than being hazy and befuddled."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10547, 10547],
+          "zh": ["爻反吟，入三墓，反复昏庸。", "卦得反吟，虽是身动不宁，若得世与官爻旺相，一定升迁；", "若世与官星衰者，必遭降罚，降后还虑焦灼；", "惟畏世官被冲被克者，定有不测之祸。", "世爻休囚被克、化墓、入墓者，立见灾非；", "世爻有气、化墓、入墓者，朦胧昏聩而已。"],
+          "yi": ["爻遇反吟，入了三墓，反复不定，昏庸糊涂。", "卦得反吟，虽然是人要变动、不安宁，但如果世爻与官爻旺相，一定升迁；", "如果世爻与官星衰弱，必定遭到降职处罚，降职之后还要担心焦虑；", "只怕世爻、官星被冲被克，必定有想不到的灾祸。", "世爻休囚被克、变入墓、入墓的，立刻看到灾祸是非；", "世爻有气、变入墓、入墓的，不过是糊里糊涂、昏聩罢了。"],
+          "en": ["Lines in Reversed Chant, or entering the three tombs, mean going back and forth, muddle and dullness.", "If the hexagram gets Reversed Chant, though the person is unsettled and on the move, if the Self and the Pressure line are thriving he will surely be promoted;", "if the Self and the star of office are weak he will surely be demoted and punished, and after the demotion there is still anxiety;", "what is feared above all is the Self and the star of office being clashed or controlled, for there will surely be unforeseen calamity.", "if the Self is resting or trapped and controlled, turns into the tomb or enters the tomb, disaster and trouble appear at once;", "if the Self has strength and turns into the tomb or enters the tomb, it is no more than being hazy and befuddled."] }
+      ],
+      "see": ["LY.CAREER.ZS.15", "LY.CAREER.ZS.17"]
+    },
+    {
+      "id": "LY.CAREER.ZS.17",
+      "topic": "风险",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·世破鬼空，居官不久；身衰化鬼，命尽当危（世破世空官破官空在任不能多日；世衰动而化鬼或化回头克，须防寿命不牢）",
+      "rule": {
+        "yi": "世爻被破、官鬼落空，当官不会长久；世爻或官星被破、落空，在任上待不了几天；世爻衰弱发动变出官鬼，以及变出回头克的，要防备寿命不牢靠。",
+        "en": "If the Self is broken and Pressure is Void, one will not hold office long; if the Self or the star of office is broken or Void, one cannot stay long in the post; if a weak Self moves and turns into Pressure, or into a returning control, guard against a life that is not firm."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10548, 10548],
+          "zh": ["世破鬼空，居官不久；", "身衰化鬼，命尽当危。", "世破世空、官破官空，在任不能多日，世衰动而化鬼，及化回头克者，须防寿命不坚牢。"],
+          "yi": ["世爻被破、官鬼落空，当官不会长久；", "身体衰弱又变出官鬼，寿命将尽，当心危险。", "世爻被破、世爻落空、官星被破、官星落空，在任上待不了几天，世爻衰弱发动变出官鬼，以及变出回头克的，要防备寿命不牢靠。"],
+          "en": ["If the Self is broken and Pressure is Void, one will not hold office long;", "if the Body is weak and turns into Pressure, life is running out and there is danger.", "If the Self is broken or Void, or the star of office is broken or Void, one cannot stay long in the post; if a weak Self moves and turns into Pressure, or into a returning control, guard against a life that is not firm."] }
+      ],
+      "see": ["LY.CAREER.HJC.08", "LY.CAREER.HJC.09", "LY.CAREER.ZS.16"]
+    },
+    {
+      "id": "LY.CAREER.ZS.18",
+      "topic": "任所",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·世化官而遇官，政权多摄（世旺化出官星生合比助得权摄之济，化出官星刑克世反受权摄之害，化出官星泄世气因权摄赔累，官星持世旺又动出官星拱扶亦主多摄）",
+      "rule": {
+        "yi": "世爻变出官星又遇官星，多代理职务：世爻旺相，变出的官星生合、比助世爻，代理有益；变出的官星刑克世爻，代理反受其害；变出的官星泄世爻之气，代理要赔钱受累；官星持世旺相、爻中又发动出官星来拱扶、比合，也主多次代理政务。",
+        "en": "If the Self turns into the star of office and meets the star of office again, one often takes charge of the administration in an acting capacity: if the Self is thriving and the star of office it turns into generates, combines with or helps the Self, acting in a post benefits one; if the star of office it turns into punishes or controls the Self, acting in a post brings harm instead; if it drains the Self's strength, one loses money and is burdened by acting; if the star of office holds the Self and is thriving and another star of office moves in the lines to hold up, help or combine with it, one also often takes charge in an acting capacity."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10549, 10549],
+          "zh": ["世化官而遇官，政权多摄。", "世爻旺相，化出官星生合、比助世爻者，得权摄之济；", "世爻旺相，化出官星刑世、克世者，反受权摄之害；", "化出官星泄世爻之气者，因权摄以赔累；", "官星持世而旺，爻中又动出官星拱扶、比合者，亦主政权多摄。"],
+          "yi": ["世爻变出官星又遇到官星，多次代理政务。", "世爻旺相，变出的官星生合、比助世爻的，能得到代理职务的好处；", "世爻旺相，变出的官星刑世、克世的，反而受到代理职务之害；", "变出的官星泄世爻之气的，因为代理职务而赔钱受累；", "官星持世而且旺相，爻中又发动出官星来拱扶、比合的，也主多次代理政务。"],
+          "en": ["If the Self turns into the star of office and meets the star of office again, one often takes charge of the administration in an acting capacity.", "If the Self is thriving and the star of office it turns into generates, combines with or helps the Self, one benefits from acting in a post;", "if the Self is thriving but the star of office it turns into punishes or controls the Self, one instead suffers harm from acting in a post;", "if the star of office it turns into drains the Self's strength, one loses money and is burdened because of acting in a post;", "if the star of office holds the Self and is thriving, and another star of office moves in the lines to hold up, help or combine with it, one also often takes charge in an acting capacity."] }
+      ],
+      "note": {
+        "yi": "「权摄」按这一章的用法，是暂时代理别人的职务；书里没有另外解释。",
+        "en": "'Quanshe' in this chapter's usage means temporarily taking over another man's post; the book does not explain it separately."
+      },
+      "see": ["LY.CAREER.HJC.10", "LY.CAREER.ZS.19"]
+    },
+    {
+      "id": "LY.CAREER.ZS.19",
+      "topic": "差役",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·世临官而遇马，差遣烦劳（官星持世，明动暗动加临驿马必有差遣；日月动爻作财生扶，差中得利；兄爻发动日月动爻刑克世，辛苦赔财；盼差遣者世动即有差）",
+      "rule": {
+        "yi": "世爻临官星又遇驿马，会有差遣，烦劳辛苦：官星持世，明动、暗动又加临驿马的，必定有差遣；日月、动爻作财来生扶的，在差遣中能得到利益；卦中兄爻发动，日月、动爻刑克世爻的，辛苦还要赔钱；心里盼着得到差遣的人，不用等驿马加临，只要世爻发动就有差遣了。",
+        "en": "If the Self sits on the star of office and meets the Post Horse, there will be commissions and toil: if the star of office holds the Self and moves openly or in secret upon the Post Horse, there will surely be a commission; if the Day, Month or a moving line acts as Wealth and generates or supports it, one profits from the commission; if a Peer line moves in the hexagram and the Day, Month or a moving line punishes or controls the Self, one toils and loses money as well; for one who hopes in his heart for a commission, there is no need to wait for the Post Horse, for as soon as the Self moves there is a commission."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10550, 10550],
+          "zh": ["世临官而遇马，差遣烦劳。", "官星持世，明动暗动加临驿马者，必有差遣；", "日月动爻作财而生扶者，差中得利；", "卦中兄爻发动，日月动爻刑克世爻者，辛苦赔财。", "心有望于差遣者，不待驿马加临，但遇世动即有差矣。"],
+          "yi": ["世爻临官星又遇驿马，会有差遣，烦劳辛苦。", "官星持世，明动、暗动又加临驿马的，必定有差遣；", "日月、动爻作财爻来生扶的，在差遣中能得到利益；", "卦中兄爻发动，日月、动爻刑克世爻的，辛苦还要赔钱。", "心里盼望得到差遣的人，不用等驿马加临，只要遇到世爻发动就有差遣了。"],
+          "en": ["If the Self sits on the star of office and meets the Post Horse, there will be commissions and toil.", "If the star of office holds the Self and moves openly or in secret upon the Post Horse, there will surely be a commission;", "if the Day, Month or a moving line acts as Wealth and generates or supports it, one profits from the commission;", "if a Peer line moves in the hexagram and the Day, Month or a moving line punishes or controls the Self, one toils and loses money as well.", "For one who hopes in his heart for a commission, there is no need to wait for the Post Horse to come: as soon as the Self moves, there is a commission."] }
+      ],
+      "see": ["LY.CAREER.ZS.18", "LY.CAREER.ZS.20"]
+    },
+    {
+      "id": "LY.CAREER.ZS.20",
+      "topic": "贵人",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·官合龙兴，恩命至（青龙官星持世，或世临日月，或日月动爻生合世，或世临岁五或岁五生合世，或世官三合，皆吉；大位皇恩特用，平位加级超升）",
+      "rule": {
+        "yi": "官星相合、青龙兴旺，恩命就到了：青龙官星持世，或世爻临日月，或日月、动爻生合世爻，或世爻临太岁、五爻，或太岁、五爻生合世爻，或世爻与官星三合，都是吉兆；居高位的蒙皇上特别重用，职位一般的加级越级升迁。",
+        "en": "When the star of office combines and the Dragon flourishes, a gracious order arrives: the star of office on the Azure Dragon holding the Self, or the Self on the Day or Month, or the Day, Month or a moving line generating or combining with the Self, or the Self on Tai Sui or the fifth line, or Tai Sui or the fifth line generating or combining with the Self, or the Self and the star of office in three-harmony, are all auspicious signs; for one in high office the emperor's favour brings a special employment, and for one in an ordinary post a rise in grade and promotion beyond rank."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10551, 10551],
+          "zh": ["官合龙兴，恩命至。", "青龙官星持世，或世临日月，或日月动爻生合世爻，或世临岁五之爻，或岁五生合世爻，或世官三合，皆为吉兆。", "大位者，皇恩特用；", "平位者，加级超升。"],
+          "yi": ["官星相合、青龙兴旺，恩命就到了。", "青龙官星持世，或者世爻临在日月上，或者日月、动爻生合世爻，或者世爻临在太岁、五爻上，或者太岁、五爻生合世爻，或者世爻与官星三合，都是吉兆。", "居高位的，蒙皇上特别重用；", "职位一般的，加级越级升迁。"],
+          "en": ["When the star of office combines and the Dragon flourishes, a gracious order arrives.", "If the star of office on the Azure Dragon holds the Self, or the Self sits on the Day or Month, or the Day, Month or a moving line generates or combines with the Self, or the Self sits on Tai Sui or the fifth line, or Tai Sui or the fifth line generates or combines with the Self, or the Self and the star of office form a three-harmony, all are auspicious signs.", "for one in high office, the emperor's favour brings a special employment;", "for one in an ordinary post, a rise in grade and promotion beyond rank."] }
+      ],
+      "see": ["LY.CAREER.HJC.07", "LY.CAREER.ZS.11"]
+    },
+    {
+      "id": "LY.CAREER.ZS.21",
+      "topic": "风险",
+      "chapter": "在任吉凶章",
+      "chapter_en": "Chapter on how one fares in office",
+      "title": "在任吉凶·财临虎动，讣音来（财爻持世或卦中财动，或父母爻休囚空破，家有尊亲勿以财断，须防孝服；书中例两个：颐之噬嗑，八月丁艰；中孚之损，六月火灾、闻讣）",
+      "rule": {
+        "yi": "财爻持世，或者卦中财爻发动，或者父母爻休囚、落空、被破的，如果家里有尊长亲人，不要只当财来断，要防备孝服（父母之丧）。",
+        "en": "If the Wealth line holds the Self or moves in the hexagram, or the Resource line is resting or trapped, Void or broken, then if one has elders and parents, do not judge it as wealth alone, but guard against mourning dress (the death of a parent)."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10552, 10552],
+          "zh": ["财临虎动，讣音来。", "财爻持世及卦中财动，或父母爻休囚空破者，若有尊亲，切勿以财断之，须防孝服。"],
+          "yi": ["财爻临白虎而发动，会有讣告传来。", "财爻持世以及卦中财动，或者父母爻休囚、落空、被破的，如果有尊长亲人，千万不要用财来断，要防备孝服。"],
+          "en": ["When Wealth sits on the White Tiger and moves, news of a death arrives.", "If the Wealth line holds the Self or moves in the hexagram, or the Resource line is resting or trapped, Void or broken, then if one has elders and parents, do not judge it as wealth, but guard against mourning dress."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10553, 10553],
+          "zh": ["如：寅月壬午日(旬空：申酉)，占在任平安否？", "得“颐之噬嗑”"],
+          "yi": ["例如：寅月壬午日（旬空：申、酉），占在任上平安不平安？", "得到颐卦变噬嗑卦。"],
+          "en": ["For example: in the Yin month on a Renwu day (void: Shen and You), a divination on whether his term in office would be safe;", "the hexagram was Yi changing into Shihe."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10598, 10598],
+          "zh": ["有人出此卦而问余曰：“今岁占在任之流年，世爻变鬼，我甚忧之。”", "余曰：世爻戌土，虽则休囚，得午火生之，自身无碍，须防孝服。", "彼曰：财非临虎，如何主孝服？", "余曰：不然，午日冲动子水父母，被戌土财爻之克，世化官空，八九月必见。", "果至八月丁艰。"],
+          "yi": ["有人拿出这个卦来问我：「今年占在任上的流年，世爻变出官鬼，我很担忧。」", "我说：世爻是戌土，虽然休囚，但有午火生它，你自己没有妨碍，要防备孝服。", "他说：财爻没有临白虎，怎么会主孝服？", "我说：不是这样，午日冲动了子水父母爻，又被戌土财爻所克，世爻变出的官星落空，八、九月必定应验。", "结果到八月遭了父母之丧（丁艰）。"],
+          "en": ["Someone showed me this hexagram and asked: 'I divined for the fortunes of this year in office, and the Self has turned into Pressure; it worries me greatly.'", "I said: the Self is Xu Earth, which though resting or trapped is generated by Wu Fire, so you yourself are not harmed, but guard against mourning dress.", "He said: Wealth does not sit on the White Tiger, so how can it mean mourning dress?", "I said: not so; the Wu day clashes into motion the Zi Water Resource line, which is then controlled by the Xu Earth Wealth line, and the star of office the Self turns into is Void, so it will surely appear in the eighth or ninth month.", "And in the eighth month he did suffer the death of a parent."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10599, 10599],
+          "zh": ["又如：辰月己丑日(旬空：午未)，占在任吉凶，得“中孚之损”"],
+          "yi": ["又例：辰月己丑日（旬空：午、未），占在任上的吉凶，得到中孚卦变损卦。"],
+          "en": ["Another: in the Chen month on a Jichou day (void: Wu and Wei), a divination on his fortunes in office gave Zhongfu changing into Sun."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10604, 10604],
+          "zh": ["官鬼克世，幸而不动，在任可保无凶。", "但不宜兄爻持世，丑日冲动，今冬身必动摇，身动则耗费不小。", "彼问：因何事而动？", "余曰：火被水伤，冬令须防孝服，恐因此而动也。", "不意六月公署遭回禄，科月闻讣音。", "回禄者，兄爻持世暗动破财；", "伤父者，巳火父化子水克也。"],
+          "yi": ["官鬼克世爻，幸好不发动，在任上可以保证没有凶险。", "但是兄爻持世不好，丑日冲动了它，今年冬天自身必定动摇，身动的话耗费不小。", "他问：因为什么事而动？", "我说：火被水伤，冬天要防备孝服，恐怕是因为这个而动。", "没想到六月官署遭了火灾，考试的月份听到了讣告。", "火灾，是因为兄爻持世暗动破财；", "伤到父亲，是因为巳火父母爻变出子水来克。"],
+          "en": ["Pressure controls the Self but fortunately does not move, so one is safe from ill in the post.", "But a Peer line holding the Self is unfavourable, and the Chou day clashes it into motion, so this winter one is sure to be unsettled, and being unsettled costs a good deal.", "He asked: what will cause the move?", "I said: Fire is injured by Water, so in winter guard against mourning dress; it is probably for this that you will be unsettled.", "Unexpectedly in the sixth month the government office suffered a fire, and in the month of the examinations news of a death came.", "The fire was because the Peer line held the Self and moved in secret, wasting money;", "the harm to the father was because Si Fire the Resource line turned into Zi Water, which controls it."] }
+      ],
+      "note": {
+        "yi": "「丁艰」是遭父母之丧；「回禄」是火神，指火灾。「科月」书里没有解释，译文按字面读作考试的月份。",
+        "en": "'Dingjian' is the mourning for a parent's death, and 'Huilu' is the fire god, here meaning a fire. The book does not explain 'the month of the examinations', and the translation reads it literally."
+      },
+      "see": ["LY.CAREER.HJC.11", "LY.CAREER.ZS.17"]
+    },
+    {
+      "id": "LY.CAREER.ZS.22",
+      "topic": "成否",
+      "chapter": "援例章",
+      "chapter_en": "Chapter on buying office by precedent",
+      "title": "援例·财旺官空，且自堆金于白屋（财旺世旺而官临月破旬空，或被日月冲克、动而变凶，官如朽木枯枝，有旺财也生不起，终是白屋富翁，难食王家天禄）",
+      "rule": {
+        "yi": "用钱买官（援例）：妻财旺相、世爻旺相，但官星落在月破、旬空上，或被日月冲克，以及发动变凶，官星像朽木枯枝，有再旺相的财也生不起它，到头来只是个有钱的平民，吃不上国家的俸禄。",
+        "en": "Buying office by precedent: if Wealth and the Self are thriving but the star of office falls in Month-break or Void, or is clashed or controlled by the Day or Month, or moves and turns bad, the star of office is like a rotten log and a dry branch: though Wealth is thriving it cannot raise it, and in the end one is only a rich man in a commoner's house who cannot eat the heavenly salary of the royal house."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10610, 10610],
+          "zh": ["财旺官空，且自堆金于白屋。", "财旺世旺，而官临月破旬空，或被日月冲克，及动而变凶，官如朽木枯枝，虽有旺相之财，生之不起，终属白屋之富翁，难食王家之天禄。"],
+          "yi": ["财旺相而官星落空，只能自己在平民的白屋里堆金子。", "财旺相、世爻旺相，但官星临在月破、旬空上，或者被日月冲克，以及发动变凶，官星就像朽木枯枝，虽然有旺相的妻财，也生不起来，终究只是平民之家的富翁，难以享用王家的俸禄。"],
+          "en": ["With Wealth thriving but the star of office Void, one can only pile up gold in a white-roofed house (a commoner's home).", "If Wealth and the Self are thriving but the star of office falls in Month-break or Void, or is clashed or controlled by the Day or Month, or moves and turns bad, the star of office is like a rotten log and a dry branch: though there is thriving Wealth it cannot raise it, and in the end one is only a rich man in a commoner's house, who cannot eat the heavenly salary of the royal house."] }
+      ],
+      "note": {
+        "yi": "「援例」是按成例出钱捐官（捐纳）；书里没有另外解释，这里是按标题「凡用财图名者同此」和内容读的。",
+        "en": "'Yuanli' is buying office or rank with money under established precedent; the book does not explain it separately, and this is how it reads from the heading 'the same for all who use money to seek a name' and from the content."
+      },
+      "see": ["LY.CAREER.ZS.23", "LY.CAREER.HJC.01"]
+    },
+    {
+      "id": "LY.CAREER.ZS.23",
+      "topic": "成否",
+      "chapter": "援例章",
+      "chapter_en": "Chapter on buying office by precedent",
+      "title": "援例·妻摇鬼旺，定然执王拜丹墀（世、官星、财星三者不可一陷：财官旺而世陷，得官无福安享；官世旺而财陷，有例无财；书中例：豫之否，财动生官世临月破，名成而身丧；困之兑，世休囚动变鬼，次年得噎疾而终）",
+      "rule": {
+        "yi": "援例捐官，世爻、官星、财星这三样不能有一样失陷：妻财、官星都旺而世爻失陷，终究得了官也没有福气安享；官星、世爻都旺而财星失陷，是有例可援却没有钱。",
+        "en": "In buying office by precedent, of the Self, the star of office and the star of Wealth, not one may be lost: if Wealth and the star of office are both thriving but the Self is lost, one may in the end get office but has no fortune to enjoy it in peace; if the star of office and the Self are both thriving but the star of Wealth is lost, there is a precedent to appeal to but no money."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10611, 10612],
+          "zh": ["妻摇鬼旺，定然执王拜丹墀。", "世与官星、财星，三者不可一陷，若财官两旺，而世爻失陷者，终使得官，无福安享；", "若官世两旺，财星失陷者，乃有例无财。"],
+          "yi": ["妻财摇动、官鬼旺相，必定能上殿朝拜、得官。", "世爻、官星、财星这三样不能有一样失陷；如果财、官都旺，而世爻失陷，终究得了官，也没有福气安享；", "如果官星、世爻都旺，而财星失陷，就是有例可援而没有钱。"],
+          "en": ["When Wealth sways and Pressure thrives, one will surely bow at the vermilion steps of the court.", "Of the Self, the star of office and the star of Wealth, not one may be lost: if Wealth and the star of office are both thriving but the Self is lost, one may in the end get office but has no fortune to enjoy it in peace;", "if the star of office and the Self are both thriving but the star of Wealth is lost, there is a precedent to appeal to but no money."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10613, 10613],
+          "zh": ["如：丑月乙卯日(旬空：子丑)，占援例，得“豫之否”"],
+          "yi": ["例如：丑月乙卯日（旬空：子、丑），占援例，得到豫卦变否卦。"],
+          "en": ["For example: in the Chou month on a Yimao day (void: Zi and Chou), a divination on buying office by precedent gave Yu changing into Pi."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10656, 10656],
+          "zh": ["财动生官，不宜世临月破，破而被克，有官不能享也。", "后竟纳之，名成而身丧矣。"],
+          "yi": ["财爻发动生官星，不宜世爻临月破，被破又被克，有了官也不能享用。", "后来他竟然还是捐纳了，功名成了，人却死了。"],
+          "en": ["Wealth moves to generate the star of office, but it is not good for the Self to sit in Month-break; broken and also controlled, one has the office but cannot enjoy it.", "Afterwards he went ahead and made the payment; the rank was gained but he himself died."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10656, 10656],
+          "zh": ["又如：戌月癸丑日(旬空：寅卯)，占捐复，得“困之兑”"],
+          "yi": ["又例：戌月癸丑日（旬空：寅、卯），占捐复，得到困卦变兑卦。"],
+          "en": ["Another: in the Xu month on a Guichou day (void: Yin and Mao), a divination on buying reinstatement gave Kun changing into Dui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10682, 10682],
+          "zh": ["世爻休囚，动而变鬼，不可行也。", "不听。", "余曰：明年秋令甚低，名成亦不能出仕。", "果捐复，至次年正月得噎疾，七月而终。"],
+          "yi": ["世爻休囚，发动变出官鬼，不可以去办。", "他不听。", "我说：明年秋天时令很低，功名成了也不能出来做官。", "他果然捐复，到第二年正月得了噎病，七月就去世了。"],
+          "en": ["The Self is resting or trapped and moves into Pressure, so it should not be done.", "He would not listen.", "I said: next year's autumn is very low, so even if the rank is gained you will not be able to take up office.", "He did buy the reinstatement; in the first month of the next year he fell ill with a choking disease and died in the seventh month."] }
+      ],
+      "note": {
+        "yi": "「执王拜丹墀」原文如此，意思是上殿朝拜、得官；「王」字可能是「玉」（手执玉圭）的误字，译文只按意思译。「捐复」是出钱捐纳恢复官职。",
+        "en": "'Holding the king and bowing at the vermilion steps' is how the text reads and means bowing at court and gaining office; the character 'king' may be a slip for 'jade' (holding the jade tablet), and the translation follows the sense only. 'Juanfu' is buying reinstatement in office with money."
+      },
+      "see": ["LY.CAREER.ZS.22", "LY.CAREER.ZS.24"]
+    },
+    {
+      "id": "LY.CAREER.ZS.24",
+      "topic": "成否",
+      "chapter": "援例章",
+      "chapter_en": "Chapter on buying office by precedent",
+      "title": "援例·财静子飞空用意（子孙持世，财爻动不动皆不可行；财临空破亦不可行；子财官同动又可行，因子动生财、财动生官）",
+      "rule": {
+        "yi": "援例捐官，子孙持世，不管财爻动不动，都不可以去办；财爻落空落破，也不可以去办；但子孙、财、官一起发动又可以去办，因为子孙动生财、财动生官。",
+        "en": "In buying office by precedent, if Output holds the Self, whether or not the Wealth line moves it should not be done; if Wealth falls in Void or break, it should not be done either; but if Output, Wealth and the star of office all move together, it may be done, because Output moves to generate Wealth and Wealth moves to generate the star of office."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10683, 10683],
+          "zh": ["财静子飞空用意。", "子孙持世，财爻动与不动，皆不可行；", "财临空破，亦不可行。", "子财官同动者，又可行之，其故以子动生财，财动以生官也。"],
+          "yi": ["财爻安静而子孙飞动，用意落空。", "子孙持世，财爻动不动，都不可以去办；", "财爻临空、临破，也不可以去办。", "子孙、财、官一起发动的，又可以去办，原因是子孙动生财、财动生官。"],
+          "en": ["If Wealth is still while Output flies, the intent is spent in vain.", "If Output holds the Self, whether or not the Wealth line moves it should not be done;", "if Wealth falls in Void or break, it should not be done either.", "If Output, Wealth and the star of office all move together, it may be done, because Output moves to generate Wealth and Wealth moves to generate the star of office."] }
+      ],
+      "see": ["LY.CAREER.ZS.23", "LY.CAREER.ZS.25"]
+    },
+    {
+      "id": "LY.CAREER.ZS.25",
+      "topic": "成否",
+      "chapter": "援例章",
+      "chapter_en": "Chapter on buying office by precedent",
+      "title": "援例·兄兴财动枉劳心（兄弟持世或兄发动，破耗之神，枉费其财名终不就，与官同动则可行；野鹤：官星不动而兄持世、兄父发动、财持世化兄，百无一成）",
+      "rule": {
+        "yi": "援例捐官，兄弟爻持世，或者兄爻发动，是破耗的神，白花钱财，功名终究不成；如果和官星一起发动，又可以去办，因为官鬼能制住兄弟。野鹤说：卦中官星不动，只要遇到兄弟持世、兄爻和父母爻发动、以及财爻持世变出兄弟，百件里没有一件成，即使成了也必有别的缘故，到头来没有地方吃俸禄。",
+        "en": "In buying office by precedent, if the Peer line holds the Self or a Peer line moves, it is a spirit of waste and loss: the money is spent for nothing and the rank is never gained; if it moves together with the star of office it may be done, since Pressure restrains Peer. The Old Man of Yehe says: if the star of office does not move in the hexagram, and Peer holds the Self, or Peer and Resource lines move, or the Wealth line holds the Self and turns into Peer, not one in a hundred succeeds, and even if it succeeds there will surely be some other cause, and in the end one has no place to eat a salary."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10684, 10685],
+          "zh": ["兄兴财动枉劳心。", "兄弟爻持世，或兄爻发动，乃是破耗之神，枉费其财，名终不就。", "若与官同动者，又可行之，以鬼而制兄也。"],
+          "yi": ["兄弟兴旺、财爻发动，白白劳心。", "兄弟爻持世，或者兄爻发动，是破耗的神，白白花了钱财，功名终究不成。", "如果和官星一起发动，又可以去办，因为官鬼可以制住兄弟。"],
+          "en": ["With Peer flourishing and Wealth moving, one wears out one's heart for nothing.", "If the Peer line holds the Self, or a Peer line moves, it is a spirit of waste and loss: the money is spent for nothing, and the rank is never gained.", "If it moves together with the star of office, it may be done, since Pressure restrains Peer."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10684, 10685],
+          "zh": ["野鹤曰：卦中官星不动，但遇兄弟持世、兄父发动，及财爻持世化兄，百无一成，即使成后，必有他故，终食禄无地也。"],
+          "yi": ["野鹤说：卦中官星不动，只要遇到兄弟持世、兄爻和父母爻发动，以及财爻持世变出兄弟，百件里没有一件成；即使成了之后，也必有别的缘故，终究没有地方吃俸禄。"],
+          "en": ["The Old Man of Yehe says: if the star of office does not move in the hexagram, and Peer holds the Self, or Peer and Resource lines move, or the Wealth line holds the Self and turns into Peer, not one in a hundred succeeds, and even if it succeeds there will surely be some other cause, and one will in the end have no place to eat a salary."] }
+      ],
+      "see": ["LY.CAREER.ZS.24", "LY.CAREER.HJC.04"]
+    },
+    {
+      "id": "LY.CAREER.ZS.26",
+      "topic": "军旅",
+      "chapter": "投麾效用，入武从军章",
+      "chapter_en": "Chapter on joining the colours and entering military service",
+      "title": "投麾效用·官宜旺相不宜空破休囚，世与财忌刑冲克坏（世、官、财哪个失陷或动变凶各有其害；官持世财相生、官世临日月、世动化吉，封拜可期；觉子：先识来人之意，未见用而问收用与否，则官星是收用之官）",
+      "rule": {
+        "yi": "投军效用：官星要旺相，不能落空、被破、休囚；妻财和世爻两个爻，怕遇到刑、冲、克、坏。世爻与官星都要旺相又变出吉象，财是俸禄的供养，哪能让日月来刑冲？世爻失陷或发动变凶，自身尤其难保；官星失陷或发动变凶，难许成名；财爻失陷或发动变凶，缺粮没有俸禄，官星再旺也像厨房没有烟火。只喜欢官星持世、有财发动生它、财爻持世、官星发动与它相合，或官星与世爻临日月，以及太岁、月建、日辰相生，或世爻发动变吉，将来封官拜将可以期待。觉子说：要先识得来占的人的用意，为名利而问的这样断；如果问的是还没被任用时能不能被收用，官星就是收用他的那个官，官星来生合世爻的必收，官爻克世爻、或落空落破的不录用。",
+        "en": "On joining the colours: the star of office should be thriving and must not be Void, broken, or resting or trapped, and the Wealth line and the Self line fear punishment, clash, control and ruin. The Self and the star of office should both be thriving and turn into auspicious lines, and Wealth is the support of the salary, so how could the Day and Month punish or clash with it? If the Self is lost or moves and turns bad, one's own safety is all the harder to keep; if the star of office is lost or moves and turns bad, a name is hard to promise; if the Wealth line is lost or moves and turns bad, there is no grain and no salary, and even if the star of office is thriving no smoke rises from the kitchen stove. What is welcomed is the star of office holding the Self with moving Wealth generating it, the Wealth line holding the Self, the star of office moving to combine with it, the star of office and the Self sitting on the Day or Month, Tai Sui, the Month and the Day generating each other, or the Self moving and turning auspicious: then investiture and the rank of general may be hoped for. Juezi says: first understand the intent of the person who comes; for one asking for rank and profit this is how to judge; if he asks whether, not yet employed, he can be taken on, the star of office is the officer who takes him on: if it comes to generate or combine with the Self he will surely be taken on, and if the Pressure line controls the Self or is Void or broken he will not be enrolled."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [10698, 10698],
+          "zh": ["官宜旺相，不宜空破休囚，财世两爻，怕见刑冲克坏。", "世与官星，皆宜旺而化吉，财为禄养，岂宜日月刑冲？", "世爻失陷，及动而变凶，身尤难保。", "官星失陷，及动而变凶，难许成名。", "财爻失陷，及动而变凶，乏粮无禄，即使官旺，厨灶无烟。", "惟喜官星持世，财动相生、财爻持世、官动相合，或官世临乎日月，及岁月日建相生，或世动化吉，将来封拜可期，岂惟百夫长而已耶。"],
+          "yi": ["官星要旺相，不能落空、被破、休囚；妻财和世爻两个爻，怕遇到刑、冲、克、坏。", "世爻与官星，都应当旺相又变出吉象；财是俸禄的供养，哪能让日月来刑冲？", "世爻失陷，以及发动变凶，自身尤其难保。", "官星失陷，以及发动变凶，难以答应他成名。", "财爻失陷，以及发动变凶，缺粮没有俸禄，即使官星旺相，厨房灶上也没有烟火。", "只喜欢官星持世，有发动的财来生它、财爻持世、官星发动与它相合，或者官星和世爻临在日月上，以及太岁、月建、日辰相生，或者世爻发动变吉，将来封官拜将可以期待，哪里只是做个百夫长而已呢。"],
+          "en": ["The star of office should be thriving and must not be Void, broken, or resting or trapped; the Wealth line and the Self line fear punishment, clash, control and ruin.", "The Self and the star of office should both be thriving and turn into auspicious lines; Wealth is the support of the salary, so how could the Day and Month punish or clash with it?", "If the Self is lost or moves and turns bad, one's own safety is all the harder to keep.", "If the star of office is lost or moves and turns bad, it is hard to promise a name.", "If the Wealth line is lost or moves and turns bad, there is no grain and no salary, and even if the star of office is thriving, no smoke rises from the kitchen stove.", "What is welcomed is the star of office holding the Self with moving Wealth generating it, or the Wealth line holding the Self, or the star of office moving to combine with it, or the star of office and the Self sitting on the Day or Month, or Tai Sui, the Month and the Day generating each other, or the Self moving and turning auspicious: then investiture and the rank of general may be hoped for, and not only the leader of a hundred men."] },
+        { "by": "觉子", "book": "增删卜易", "range": [10700, 10700],
+          "zh": ["觉子曰：以此断者，虽无不验，但要识来人之意。", "彼若以名利而问，以此而决者是也。", "如若未见用，占问可能收用否？", "又以官星为收用之官；", "官来生合世爻者，必收；", "官爻克世，及空破者，不录。", "如不知此诀，竟以此官星断为彼人自己之功名者，如天远也。"],
+          "yi": ["觉子说：用这个办法断，虽然没有不应验的，但要识得来占的人的用意。", "他如果是为名利来问，用这个办法判断就对了。", "如果还没有被任用，占问能不能被收用呢？", "那就又要以官星为收用他的官；", "官星来生合世爻的，一定收用；", "官爻克世爻，以及落空落破的，不录用。", "如果不知道这个诀窍，竟然把这个官星断成他本人自己的功名，就差得像天那么远了。"],
+          "en": ["Juezi says: judged this way it never fails to come true, but one must understand the intent of the person who comes.", "If he asks for rank and profit, to decide by this is right.", "But if he has not yet been employed and asks whether he can be taken on?", "then the star of office stands for the officer who takes him on;", "if the star of office comes to generate or combine with the Self, he will surely be taken on;", "if the Pressure line controls the Self, or is Void or broken, he will not be enrolled.", "One who does not know this secret and judges this star of office as the man's own rank is as far from the truth as heaven is far."] }
+      ],
+      "note": {
+        "yi": "这一段没有标说话人，放在「增删卜易正文」里；「投麾效用」是投到将帅麾下、效力从军。",
+        "en": "This passage does not mark a speaker and is placed under the main text of the Zeng Shan Bu Yi; 'touhui xiaoyong' is going to serve under a commander's banner."
+      },
+      "see": ["LY.CAREER.HJC.24", "LY.CAREER.HJC.25"]
+    }
+  ]
+}
