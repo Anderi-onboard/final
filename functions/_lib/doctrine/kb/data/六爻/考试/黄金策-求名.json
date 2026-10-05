@@ -1,0 +1,689 @@
+{
+  "shushu": "六爻",
+  "domain": "考试",
+  "work": "黄金策",
+  "chapter": "求名",
+  "chapter_en": "Seeking a name",
+  "ranges": {"卜筮正宗": [1863, 1922]},
+  "units": [
+    {
+      "id": "LY.EXAM.HJC.16",
+      "topic": "总则",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·父爻旺相其文掷地金声、鬼位兴隆家报泥金捷喜：凡占功名以父爻为文章、鬼为官职，二者一卦之主，伤一则不成",
+      "rule": {
+        "yi": "占功名，父爻是文章，官鬼是官职，这两样是一卦的主体，伤了一样就不成；父爻旺相文章必好，官鬼得地功名有望，泥金报喜。",
+        "en": "In divining for fame and rank, the Resource line is the writing and Pressure the post; these two are the masters of the hexagram, and if either is harmed it will not succeed; with the Resource line thriving the writing is surely fine, and with Pressure well placed fame and rank are within hope and the gilt-ink news of joy comes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1864, 1866],
+          "zh": ["读书五车，", "固欲致身于廓廊，", "胸藏万卷，", "肯甘遁迹于丘园？", "要相国家，", "当详易卦。", "父爻旺相，", "其文掷地金声，", "鬼位兴隆，", "家报泥金捷喜"],
+          "yi": ["读书读到五车，", "本来就想把自己献身于朝廷；", "胸藏万卷书的人，", "怎肯甘心隐居在山丘田园？", "想要辅佐国家，", "应当仔细看易卦。", "父爻旺相的话，", "他的文章掷在地上有金石之声；", "官鬼位兴隆的话，", "家里会传来泥金报捷的喜讯"],
+          "en": ["One who has read five cartloads of books", "surely wishes to give himself to the court;", "one who holds ten thousand volumes in his breast", "is he willing to hide away in the hills and gardens?", "To assist the state,", "one must study the hexagram closely.", "If the Resource line is thriving,", "his writing rings like gold when thrown to the ground;", "if the Pressure position is flourishing,", "the news of victory in gilt ink comes to the home"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1864, 1866],
+          "zh": ["凡占功名，以父爻为文章，鬼为官职，二者一卦之主，伤一则不成。", "若父爻旺相，文章必佳，官鬼得地，功名有望，泥金报喜。", "总言金榜题名，功成名就之意，非以鬼为音信也。", "学者志之。"],
+          "yi": ["凡是占功名，以父爻为文章，官鬼为官职，这两个是一卦的主体，伤了一个就不成。", "如果父爻旺相，文章必定好；官鬼得地，功名有望，泥金报喜。", "这是总的说金榜题名、功成名就的意思，不是拿官鬼当作音信。", "学的人要记住。"],
+          "en": ["In divining for fame and rank, the Resource line is the writing and Pressure is the post; these two are the masters of the hexagram, and if either is harmed it will not succeed.", "If the Resource line is thriving, the writing is surely fine; if Pressure is well placed, fame and rank are within hope and the gilt-ink news of joy comes.", "This speaks in general of one's name on the Golden List and success in fame and rank, and does not take Pressure as news.", "Students should remember it."] }
+      ],
+      "note": {
+        "yi": "「泥金」是用金粉写的捷报（旧时中举后把泥金帖子寄回家）；注特别说「不是拿鬼当音信」，是怕读的人把「鬼」当作报信的人。这一章是求名（应考成名）的总纲，下面各条逐联细讲。增删卜易的乡试会试章（LY.EXAM.ZS.27）是同一个意思的另一种写法。",
+        "en": "\"Gilt ink\" is gold-powder ink used for the victory notice (after passing, a gilt-ink card was sent home); the commentary stresses that Pressure is not taken as a bearer of news, lest the reader think the word \"ghost\" stands for the messenger. This chapter opens the whole of seeking a name (taking examinations to win fame); the couplets below take it up one by one. The chapter of the Zengshan Buyi on the provincial and metropolitan examinations (LY.EXAM.ZS.27) says the same thing in other words."
+      },
+      "see": ["LY.EXAM.ZS.27"]
+    },
+    {
+      "id": "LY.EXAM.HJC.17",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·财若交重休望青钱之中选、福如发动难期金榜之题名：唯卜功名财福反为恶煞（财克父、子克鬼）；官爻持世得财动来生则财无忌，子孙固为忌客",
+      "rule": {
+        "yi": "财爻发动，别指望被选中；福神（子孙）发动，难指望金榜题名。只有占功名时，财、福反而是恶煞，因为财克父、子孙克官鬼；官爻持世又得财爻动来生它，财就没有忌讳，子孙则本来就是忌客。",
+        "en": "If Wealth moves, do not hope to be chosen; if Output moves, it is hard to hope for one's name on the Golden List. Only in divining for fame and rank are Wealth and Output on the contrary baleful spirits, for Wealth controls Resource and Output controls Pressure; if the Pressure line holds the Self and Wealth moves to give it life, Wealth is no taboo, but Output is by nature the hostile guest."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1868, 1868],
+          "zh": ["财若交重，", "休望青钱之中选；", "福如发动，", "难期金榜之题名"],
+          "yi": ["财爻如果交重（发动），", "就别指望被选中（青钱中选）；", "福神（子孙）如果发动，", "就难指望金榜题名"],
+          "en": ["If Wealth moves,", "do not hope to be chosen like the \"green coin\";", "if Output moves,", "it is hard to hope for one's name on the Golden List"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1868, 1868],
+          "zh": ["唯卜功名，以财福反为恶煞，盖财能克父，子能克鬼故也。", "如官爻持世，若得财动来生，而财无忌也；", "子孙固为忌客。"],
+          "yi": ["只有占功名，财爻和福神（子孙）反而是恶煞，因为财能克父、子孙能克官鬼。", "如果官爻持世，又得财爻动来生它，那么财就没有忌讳；", "子孙本来就是忌客。"],
+          "en": ["Only in divining for fame and rank are Wealth and Output on the contrary baleful spirits, since Wealth can control Resource and Output can control Pressure.", "If the Pressure line holds the Self and Wealth moves to give it life, then Wealth is no taboo;", "Output is by nature the hostile guest."] }
+      ],
+      "note": {
+        "yi": "「青钱中选」是说像「青钱学士」那样每试必中：唐代张鷟应试屡次得第一，人称「青钱学士」，这里只借来比喻考中。财克父（伤文章）、子孙克官鬼（伤功名），所以在求名里这两样都是忌；和占财时财、子孙为吉正好相反。官爻持世又有财来生，是财生官，所以财不忌。",
+        "en": "\"Chosen like the green coin\" is a figure for passing every time: Zhang Zhuo of the Tang took first place over and over and was called the \"green-coin scholar\", and the book borrows it only as a figure for passing. Wealth controls Resource (harming the writing) and Output controls Pressure (harming rank), so in seeking a name both are taboos, which is the opposite of divining for wealth, where Wealth and Output are auspicious. With the Pressure line holding the Self and Wealth giving it life, Wealth gives life to Pressure, so Wealth is not taboo."
+      },
+      "see": ["LY.EXAM.ZS.15"]
+    },
+    {
+      "id": "LY.EXAM.HJC.18",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·兄弟同经乃夺标之恶客：求名见兄弟即是同治一经的人，发动或月建日辰俱带兄弟则同经者多，必夺我之标，纵大象可成名亦落后",
+      "rule": {
+        "yi": "求名时见到兄弟爻，就是和自己同治一经的人；兄弟发动，或月建、日辰都带兄弟，同经的人多，必定夺走自己的魁首，纵然大局可成，名次也落后。",
+        "en": "Seeing the Peer line in seeking a name means men who study the same classic as oneself; if it moves, or the Month and the Day both carry Peer, there are many who share one's classic and they will surely snatch one's prize, and even if the overall picture can succeed one's rank falls behind."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1870, 1870],
+          "zh": ["兄弟同经，", "乃夺标之恶客"],
+          "yi": ["兄弟爻（同类的人）同治一经，", "是来夺魁首的恶客"],
+          "en": ["Peer is one who studies the same classic,", "the unwelcome guest who snatches the prize"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1870, 1870],
+          "zh": ["同类者为兄弟，求名见之，乃是与我同经之人，如遇发动，或月建日辰俱带兄弟，则同经者多，必能夺我之标，纵大象可成，名亦落后。"],
+          "yi": ["同类的是兄弟爻；求名时见到它，就是和我同治一经的人；如果它发动，或者月建、日辰都带兄弟，那么同经的人多，必定能夺我的魁首，纵然大局可成，名次也落在后面。"],
+          "en": ["Those of the same kind are Peer; seen in seeking a name, they are men who study the same classic as I; if it moves, or the Month and the Day both carry Peer, then there are many who share my classic and they will surely snatch my prize, and even if the overall picture can succeed, my rank falls behind."] }
+      ],
+      "dispute": {
+        "yi": "这里（王洪绪注）说兄弟发动、或月建日辰带兄弟，同经者多，必夺其标。增删卜易（野鹤）却说：俗传兄弟爻兴难上榜、凡兄爻持世或动都断不吉，「殊不知有喜有忌」——财父同兴时喜兄动制财，父官两动时喜兄弟持世，兄弟持世临日月旺相再得官文两旺也能中式，只是不能夺魁（LY.EXAM.ZS.28）。两说在「兄弟夺魁」上一致，分歧在「兄弟是不是一概不吉」。",
+        "en": "Here (Wang Hongxu's commentary) says that if Peer moves, or the Month and the Day carry Peer, there are many who share the classic and they will snatch the prize. The Zengshan Buyi (the Old Man of Yehe) says that common lore holds that if the Peer line flourishes it is hard to get on the list and that Peer holding the Self or moving is always ill, \"not knowing that there are welcome cases and feared ones\": when Wealth and Resource flourish together it is welcome that Peer moves to control Wealth, when Resource and Pressure both move it is welcome that Peer holds the Self, and with Peer holding the Self and standing on the Day or Month or thriving, and the official star and writing both strong, one can pass but cannot take first place (LY.EXAM.ZS.28). The two agree that Peer costs one first place; they differ on whether Peer is always ill."
+      },
+      "see": ["LY.EXAM.ZS.28"]
+    },
+    {
+      "id": "LY.EXAM.HJC.19",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·日辰辅德实劝驾之良朋：父母官鬼无气得日辰扶起、克制恶煞仍有望；世爻衰静空亡得日辰生扶冲实，亲友资助盘费辅其前往求名",
+      "rule": {
+        "yi": "父母爻、官鬼无气，得日辰扶起、克制恶煞，仍然有望，叫辅德；世爻衰、静、空亡，得日辰生扶或冲实，有亲友资助路费，帮他去应考求名。",
+        "en": "If the Resource and Pressure lines have no breath but the Day raises them up and restrains the baleful spirit, there is still hope, which is called supporting virtue; if the Self is weak, still and Void but the Day gives it life and support or clashes it solid, relatives and friends will help with the travelling expenses and aid his going to seek a name."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1872, 1872],
+          "zh": ["日辰辅德，", "实劝驾之良朋"],
+          "yi": ["日辰辅助有德（扶起用爻），", "实在是劝你出发赴考的好朋友"],
+          "en": ["If the Day supports the virtuous line,", "it is truly a good friend urging one to set out"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1872, 1872],
+          "zh": ["如父母官鬼无气，若得日辰扶起，克制恶煞，仍旧有望，故曰辅德。", "或世爻衰静空亡，得日辰生扶冲实，主有亲友资助盘费，辅其前往求名也。"],
+          "yi": ["如果父母爻、官鬼无气，若得日辰扶起、克制恶煞，仍然有望，所以叫辅德。", "或者世爻衰而静、落空亡，得日辰生扶、冲实，主有亲友资助路费，帮助他前去求名。"],
+          "en": ["If the Resource and Pressure lines have no breath but the Day raises them up and restrains the baleful spirit, there is still hope, which is why it is called supporting virtue.", "Or if the Self is weak and still and Void but the Day gives it life and support or clashes it solid, relatives and friends will help with the travelling expenses and aid his going to seek a name."] }
+      ],
+      "note": {
+        "yi": "「冲实」是冲开落空的爻，让它实在起来（空遇冲则实）。「劝驾」是劝人出来应考、做官，这里指资助盘费的人。",
+        "en": "\"Clashed solid\" is clashing a Void line so that it becomes real (a Void line that meets a clash is made real). \"Urging one to set out\" is urging a man to come forward for the examination or for office, here meaning the people who give money for the journey."
+      },
+      "see": ["LY.EXAM.ZS.29"]
+    },
+    {
+      "id": "LY.EXAM.HJC.20",
+      "topic": "取象",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·两用相冲题目生疏而不熟：官爻为用爻喜合不喜冲，见官爻相冲主出题生涩不熟",
+      "rule": {
+        "yi": "两个用爻互相冲，出的题目生僻不熟；官爻是用爻，喜合不喜冲，见官爻相冲，主出题生涩、不熟悉。",
+        "en": "If the two Subject lines clash each other, the topic set is strange and unfamiliar; the Pressure line is the Subject line and likes combination and not clash, and if two Pressure lines clash each other the topic set is obscure and unfamiliar."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1874, 1874],
+          "zh": ["两用相冲，", "题目生疏而不熟"],
+          "yi": ["两个用爻互相冲，", "出的题目生僻而不熟悉"],
+          "en": ["If the two Subject lines clash each other,", "the topic set is strange and unfamiliar"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1874, 1874],
+          "zh": ["以官爻为用爻，喜合而不喜冲，若见官爻相冲，主出题生涩不熟也。"],
+          "yi": ["以官爻为用爻，喜合不喜冲；如果见到官爻相冲，主出的题目生涩、不熟悉。"],
+          "en": ["The Pressure line is the Subject line and likes combination and not clash; if two Pressure lines clash each other, the topic set is obscure and unfamiliar."] }
+      ],
+      "note": {
+        "yi": "「出题」是主考官出的试题；这是少数把卦象对到试题上的句子。",
+        "en": "The \"topic\" is the question set by the examiner; this is one of the few lines that match the hexagram to the question paper."
+      }
+    },
+    {
+      "id": "LY.EXAM.HJC.21",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·六爻竞发功名恍惚以难成：六爻皆喜安静，官鬼有气不空、月建日辰不伤克则吉；动则有变，变出之爻又有死墓绝空刑克为破败；乱动卦大概不吉",
+      "rule": {
+        "yi": "六爻都争着发动，功名恍惚难成：六爻都喜安静，只要官鬼有气不空、月建日辰不来伤克就吉；凡动就有变，变出的爻又有死、墓、绝、空、刑、克的说法，都是破败，所以乱动的卦大概不吉。",
+        "en": "If all six lines contend to move, fame and rank are dim and hard to achieve: the six lines all like stillness, and as long as the Pressure line has breath and is not Void and the Month and Day do not come to harm or control it, it is auspicious; whatever moves changes, and the line it changes into is again judged by death, tomb, extinction, Void, punishment and control, all of which are ruin, so a hexagram of disordered movement is on the whole inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1876, 1876],
+          "zh": ["六爻竞发，", "功名恍惚以难成"],
+          "yi": ["六爻都争着发动，", "功名恍惚不定，难以成就"],
+          "en": ["If all six lines contend to move,", "fame and rank are dim and hard to achieve"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1876, 1876],
+          "zh": ["六爻皆喜安静，只要官鬼有气不空，月建日辰不来伤克，则吉；", "凡动则有变，变出之爻又有死墓绝空刑克等论，皆为破败。", "故凡乱动卦，其大概不吉可知矣。"],
+          "yi": ["六爻都喜欢安静，只要官鬼有气不空、月建日辰不来伤克，就吉；", "凡是动就有变，变出的爻又有死、墓、绝、空、刑、克等说法，都是破败。", "所以凡是乱动的卦，大概不吉就可以知道了。"],
+          "en": ["All six lines like to be still; as long as the Pressure line has breath and is not Void and the Month and the Day do not come to harm or control it, it is auspicious;", "Whatever moves changes, and the line it changes into is again judged by death, tomb, extinction, Void, punishment and control, all of which are ruin;", "so in any hexagram of disordered movement, it can be known that on the whole it is inauspicious."] }
+      ],
+      "note": {
+        "yi": "增删卜易引过这一联（LY.EXAM.ZS.31），并补充自己的验证：占功名必中的，不是旺父生身就是旺官持世；没成的，不是子孙持世就是子孙财爻发动、世破世空或六爻乱动。",
+        "en": "The Zengshan Buyi quotes this couplet (LY.EXAM.ZS.31) and adds its own findings: where one is sure to pass it is either a strong Resource line giving life to the Body or a strong Pressure line holding the Self; where one does not succeed it is Output holding the Self, or Output and Wealth moving, or the Self broken or Void, or the six lines moving in disorder."
+      },
+      "see": ["LY.EXAM.ZS.31"]
+    },
+    {
+      "id": "LY.EXAM.HJC.22",
+      "topic": "取象",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·月克文书程式背而不中：父旺得动爻日辰生合文字字锦绣，妻财伤克必多破绽，月建冲克文必不中试官之程式",
+      "rule": {
+        "yi": "月建克文书（父爻），文章违背程式，考不中：父爻旺又得动爻、日辰生合，文章字字锦绣；妻财伤克，必多破绽；月建冲克，文章必不合考官的程式。",
+        "en": "If the Month controls the document line, the essay goes against the model form and is not chosen: with the Resource line strong and given life and combination by a moving line or the Day, the essay is brocade in every word; if Wealth harms and controls it, there are many flaws; if the Month clashes and controls it, the essay will surely not fit the examiner's model form."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1878, 1878],
+          "zh": ["月克文书，", "程式背而不中"],
+          "yi": ["月建克文书（父母），", "文章违背程式而考不中"],
+          "en": ["If the Month controls the document line,", "the essay goes against the model form and is not chosen"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1878, 1878],
+          "zh": ["父旺而得动爻日辰生合，其文字字锦绣；", "妻财伤克，必多破绽；", "月建冲克，其文必不中试官之程式也。"],
+          "yi": ["父爻旺而又得动爻、日辰生合，他的文章字字锦绣；", "妻财伤克，必定多有破绽；", "月建冲克，他的文章必定不合考官的程式。"],
+          "en": ["If the Resource line is strong and given life and combination by a moving line or the Day, his essay is brocade in every word;", "if Wealth harms and controls it, there will surely be many flaws;", "if the Month clashes and controls it, his essay will surely not fit the examiner's model form."] }
+      ],
+      "note": {
+        "yi": "「程式」是科举文章的规定格式（八股）；增删卜易岁考科考章里讲文章好坏也是看父爻（LY.EXAM.ZS.18）。",
+        "en": "The \"model form\" is the prescribed form of an examination essay (the eight-legged essay); the Zengshan Buyi chapter on the annual and qualifying examinations also judges the quality of the writing by the Resource line (LY.EXAM.ZS.18)."
+      },
+      "see": ["LY.EXAM.ZS.18"]
+    },
+    {
+      "id": "LY.EXAM.HJC.23",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·世伤官鬼仕途窒而不通：世乃求名之人，持官鬼或得官鬼生合则有望；临子孙则克制官鬼，仕途未通，徒去求谋无济",
+      "rule": {
+        "yi": "世爻是求名的人：持官鬼或得官鬼生合，功名有望；世爻临子孙，就克制官鬼，仕途不通，白去求谋也没有用。",
+        "en": "The Self is the man seeking a name: if it holds Pressure or is given life or combination by Pressure, fame and rank are within hope; if it stands on Output it controls Pressure, the path of office is not open, and seeking and scheming in vain is of no avail."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1880, 1880],
+          "zh": ["世伤官鬼，", "仕途窒而不通"],
+          "yi": ["世爻伤克官鬼，", "仕途堵塞不通"],
+          "en": ["If the Self harms Pressure,", "the path of office is blocked"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1880, 1880],
+          "zh": ["世乃求名之人，若持官鬼或得官鬼生合，功名有望；", "若临子孙，则克制官鬼，是仕途未通，徒去求谋无济。"],
+          "yi": ["世爻是求名的人，如果持官鬼，或者得官鬼生合，功名有望；", "如果临子孙，就克制官鬼，是仕途还没有通，白去求谋也没有用。"],
+          "en": ["The Self is the man seeking a name; if it holds Pressure, or is given life or combined by Pressure, fame and rank are within hope;", "if it stands on Output, then it controls Pressure, which means the path of office is not yet open and seeking and scheming in vain is of no avail."] }
+      ],
+      "see": ["LY.EXAM.ZS.35"]
+    },
+    {
+      "id": "LY.EXAM.HJC.24",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·妻财助鬼父爻空可图侥幸：父母空亡而财爻发动生扶官鬼侥幸可成；财官两动而父爻旬空反不宜用，父爻不空可望",
+      "rule": {
+        "yi": "父母爻空亡，如果财爻发动来生扶官鬼，侥幸可以成；如果财、官两爻都动而父爻在旬空里，反而不宜用这个说法，父爻不空才有希望。",
+        "en": "If the Resource line is Void but the Wealth line moves to give life and support to Pressure, one may succeed by luck; if Wealth and Pressure both move and the Resource line is in the Void, this saying must not be used, and there is hope only if the Resource line is not Void."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1882, 1882],
+          "zh": ["妻财助鬼父爻空，", "可图侥幸"],
+          "yi": ["妻财帮助官鬼、而父爻落空，", "可以图个侥幸"],
+          "en": ["If Wealth helps Pressure while the Resource line is Void,", "one may try for luck"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1882, 1882],
+          "zh": ["父母空亡，若得财爻发动生扶官鬼，侥幸可成；", "若财官两动而父爻旬空，反不宜用，父爻不空可望。"],
+          "yi": ["父母爻空亡，如果财爻发动来生扶官鬼，侥幸可成；", "如果财、官两爻都动而父爻旬空，反而不宜用这个说法，父爻不空才有希望。"],
+          "en": ["If the Resource line is Void but the Wealth line moves to give life and support to Pressure, luck may bring success;", "If Wealth and Pressure both move and the Resource line is in the Void, this saying must not be used; there is hope only if the Resource line is not Void."] }
+      ],
+      "note": {
+        "yi": "这一联是上一联「财若交重」的例外：一般财克父，但父爻已经空了、文章靠不住时，反要借财去生官，所以说「可图侥幸」；注里又把这个例外收紧（财官两动而父旬空，又不宜）。",
+        "en": "This couplet is an exception to the earlier \"if Wealth moves\": ordinarily Wealth controls Resource, but when the Resource line is already Void and the writing cannot be relied on, one borrows Wealth to give life to Pressure, hence \"one may try for luck\"; the commentary then tightens the exception (when Wealth and Pressure both move and the Resource line is in the Void it is again unsuitable)."
+      },
+      "see": ["LY.EXAM.HJC.17"]
+    },
+    {
+      "id": "LY.EXAM.HJC.25",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·福德变官身位合亦忝科名：正卦无官而子孙变出官鬼、与世身生合、文书有气，功名有望但不能高中",
+      "rule": {
+        "yi": "本卦没有官鬼，如果子孙变出官鬼，和世爻、卦身生合，文书有气，功名有望，但不能高中。",
+        "en": "If the original hexagram has no Pressure but Output changes into Pressure and gives life to or combines with the Self and Body, and the document line has breath, fame and rank are within hope, but one cannot pass high."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1884, 1884],
+          "zh": ["福德变官身位合，", "亦忝科名"],
+          "yi": ["福德（子孙）变出官爻，和世身相合，", "也能勉强玷列科名"],
+          "en": ["If Output changes into the official star and combines with the Self and Body,", "one may also unworthily share the roll of fame"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1884, 1884],
+          "zh": ["正卦无官，若得子孙变出官鬼，与世身生合，得文书有气，功名有望，但不能高中也。"],
+          "yi": ["本卦没有官鬼，如果子孙变出官鬼，和世爻、卦身生合，文书有气，功名有望，但不能高中。"],
+          "en": ["If the original hexagram has no Pressure but Output changes into Pressure and gives life to or combines with the Self and Body, and the document line has breath, fame and rank are within hope, but one cannot pass high."] }
+      ],
+      "see": ["LY.EXAM.HJC.17"]
+    },
+    {
+      "id": "LY.EXAM.HJC.26",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·出现无情难遂青云之志：卦中官父不持临身世反临应爻，或发动反生他爻不来生合世身，或破坏墓绝，皆谓出现无情，虽在卦中与我无益",
+      "rule": {
+        "yi": "官爻、父爻出现在卦中却无情：不持临身、世，反而临在应爻上，或者发动却去生别的爻、不来生合世爻和卦身，或者被破坏、入墓、逢绝，虽在卦中，对我没有益处，难遂青云之志。",
+        "en": "Present but without feeling: the Pressure and Resource lines are in the hexagram but do not hold or stand on the Body or Self and instead stand on the Other, or move but give life to another line and do not give life to or combine with the Self and Body, or are spoiled, in the tomb or extinct; though in the hexagram they do one no good, and it is hard to fulfil the ambition to rise to the clouds."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1886, 1886],
+          "zh": ["出现无情，", "难遂青云之志"],
+          "yi": ["出现却无情，", "难以实现青云之志"],
+          "en": ["Present but without feeling,", "it is hard to fulfil the ambition to rise to the clouds"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1886, 1886],
+          "zh": ["卦中官父若不持临身世，反而临应爻，或发动而反生他爻，不来生合世身，或破坏墓绝，皆谓出现无情，虽在卦中，与我无益，所以难遂青云之志也。"],
+          "yi": ["卦中的官爻、父爻如果不持临身、世，反而临在应爻上，或者发动却去生别的爻，不来生合世爻和卦身，或者被破坏、入墓、逢绝，都叫出现无情；虽然在卦中，对我没有益处，所以难遂青云之志。"],
+          "en": ["If the Pressure and Resource lines in the hexagram do not hold or stand on the Body or Self but instead stand on the Other, or move but give life to another line and do not come to give life to or combine with the Self and Body, or are spoiled, in the tomb or extinct, it is called present but without feeling; though they are in the hexagram they do me no good, which is why it is hard to fulfil the ambition to rise to the clouds."] }
+      ],
+      "see": ["LY.EXAM.ZS.32"]
+    },
+    {
+      "id": "LY.EXAM.HJC.27",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·伏藏有用终辞白屋之人：官爻不现，观其所伏何处，如得有用之官爻，元值年当辞白屋",
+      "rule": {
+        "yi": "官爻不出现，看它伏在哪里；如果是有用的官爻，到它自己地支值年的那一年，就会告别平民的白屋。",
+        "en": "If the Pressure line does not appear, look where it lies hidden; if it is a useful Pressure line, in the year of its own branch one will leave the white cottage."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1888, 1888],
+          "zh": ["伏藏有用，", "终辞白屋之人"],
+          "yi": ["伏藏的爻有用，", "终究是能告别白屋的人"],
+          "en": ["A hidden line that is of use", "makes a man who in the end leaves the white cottage"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1888, 1888],
+          "zh": ["官爻不现，但观其所伏何处，如得有用之官爻，元值年当辞白屋矣。"],
+          "yi": ["官爻不出现，只要看它伏在哪里，如果得到有用的官爻，元值年就会告别白屋。"],
+          "en": ["If the Pressure line does not appear, look only where it lies hidden; if one gets a useful Pressure line, in the year of its own branch one will leave the white cottage."] }
+      ],
+      "note": {
+        "yi": "「元值年」书里没有解释，从上下文看是这个官爻自己的地支轮到当年（流年）的那一年，译文按此译。",
+        "en": "The book does not explain the \"year of its own branch\"; from the context it is the year in which the branch of that Pressure line comes round as the year, and the translation reads it so."
+      },
+      "see": ["LY.EXAM.ZS.33"]
+    },
+    {
+      "id": "LY.EXAM.HJC.28",
+      "topic": "名次",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·月建克身当被责、财如生世必帮粮：月建在身爻发动刑克世而官爻失时必遭杖责；官爻持世而财爻发动生合世必有帮粮之喜",
+      "rule": {
+        "yi": "月建在身爻上、发动刑克世爻，而官爻失时，必遭杖责；卦中官爻持世、财爻发动生合世爻，必有得帮粮的喜事。",
+        "en": "If the Month is on the Body line and moves to punish and control the Self while the Pressure line is out of season, one will surely be caned; if the Pressure line holds the Self in the hexagram and the Wealth line moves to give life to and combine with the Self, there will surely be the joy of a grain allowance."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1890, 1890],
+          "zh": ["月建克身当被责，", "财如生世必帮粮"],
+          "yi": ["月建克卦身，就会被责罚；", "财爻如果生世，必有帮粮（的好处）"],
+          "en": ["If the Month controls the Body, one will be reproved;", "if Wealth gives life to the Self, one will surely get the grain allowance"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1890, 1890],
+          "zh": ["月建若在身爻，发动刑克世爻，而官爻失时者，必遭杖责；", "卦中官爻持世，而财爻发动生合世爻者，必有帮粮之喜。"],
+          "yi": ["月建如果在身爻上，发动刑克世爻，而官爻又失时（无气）的，必定遭杖责；", "卦中官爻持世，而财爻发动生合世爻的，必有得帮粮的喜事。"],
+          "en": ["If the Month is on the Body line and moves to punish and control the Self while the Pressure line is out of season, one will surely be caned;", "if the Pressure line holds the Self in the hexagram and the Wealth line moves to give life to and combine with the Self, there will surely be the joy of a grain allowance."] }
+      ],
+      "note": {
+        "yi": "「帮粮」是廪生之外官府另给的补助口粮（增删卜易岁考章里「优等帮粮」是同一件事，LY.EXAM.ZS.18）。「失时」是爻没有得月令（休囚）。",
+        "en": "A \"grain allowance\" is the supplementary ration the government gave in addition to the stipend (the \"excellent grade with a grain allowance\" in the Zengshan Buyi chapter on the annual examination is the same thing, LY.EXAM.ZS.18). \"Out of season\" means the line has not got the month's command (it is resting or trapped)."
+      },
+      "see": ["LY.EXAM.ZS.18", "LY.EXAM.ZS.22"]
+    },
+    {
+      "id": "LY.EXAM.HJC.29",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·父官三合相逢连科及第：卦有三合会成官局必连科及第，会成父局亦吉",
+      "rule": {
+        "yi": "父爻、官星三合相遇，接连考中：卦中三合会成官局，必定接连及第，会成父局也吉。",
+        "en": "If the Resource line and the official star meet in a three-harmony one passes in successive examinations: a three-harmony forming a Pressure frame in the hexagram means one will surely pass in successive examinations, and forming a Resource frame is also auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1892, 1892],
+          "zh": ["父官三合相逢，", "连科及第"],
+          "yi": ["父爻、官星三合相遇，", "接连考中"],
+          "en": ["If the Resource line and the official star meet in a three-harmony,", "one passes in successive examinations"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1892, 1892],
+          "zh": ["卦有三合会成官局者，必主连科及第，会成父局亦吉。"],
+          "yi": ["卦中有三合会成官局的，必主接连科举及第，会成父局也吉。"],
+          "en": ["If the hexagram has a three-harmony forming a Pressure frame, one will surely pass in successive examinations; forming a Resource frame is also auspicious."] }
+      ],
+      "see": ["LY.EXAM.ZS.30"]
+    },
+    {
+      "id": "LY.EXAM.HJC.30",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·龙虎二爻俱动一举成名：青龙白虎俱在卦中动来生合世爻必中魁选，持官父或持身世尤妙",
+      "rule": {
+        "yi": "青龙、白虎两爻都动，一考就成名：两样都在卦中、动来生合世爻，必定中魁选；若又持官爻、父爻或持身、世就更好。",
+        "en": "If the Azure Dragon and White Tiger lines both move, one makes a name at a single stroke: if both are in the hexagram and move to give life to or combine with the Self, one will surely be chosen at the head, and it is better still if they hold the official star or Resource, or hold the Body or Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1894, 1894],
+          "zh": ["龙虎二爻俱动，", "一举成名"],
+          "yi": ["青龙、白虎两爻都动，", "一考就成名"],
+          "en": ["If the Azure Dragon and White Tiger lines both move,", "one makes a name at a single stroke"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1894, 1894],
+          "zh": ["青龙白虎俱在卦中，动来生合世爻，必中魁选；", "若持官父或持身世尤妙。"],
+          "yi": ["青龙、白虎都在卦中，动来生合世爻，必中魁选；", "如果（青龙、白虎）持官爻、父爻或者持身、世就更好。"],
+          "en": ["If the Azure Dragon and White Tiger are both in the hexagram and move to give life to or combine with the Self, one will surely be chosen at the head;", "it is better still if they hold the official star or Resource, or hold the Body or Self."] }
+      ],
+      "note": {
+        "yi": "通常白虎是凶神，这里青龙白虎「俱动生合世爻」却是吉：因为它们是六神，吉凶要看它们生合的是什么爻。",
+        "en": "The White Tiger is ordinarily a baleful spirit, but here the Azure Dragon and White Tiger moving \"to give life to and combine with the Self\" are auspicious: as six-spirit lines, their good or ill depends on which line they give life to and combine with."
+      }
+    },
+    {
+      "id": "LY.EXAM.HJC.31",
+      "topic": "风险",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·杀化生身之鬼恐发青衣：以子孙为煞，乘旺发动必遭斥退；得化鬼爻生世终不脱白，无过降青衣；卦有财动合住子孙可用资财谋旧职",
+      "rule": {
+        "yi": "子孙是求名的煞，趁旺发动必被斥退；如果变出官鬼来生世，终究不至于被削成白身，最多降为青衣；卦中有财动来合住子孙，可以用钱财去谋求保住旧职。",
+        "en": "Output is the baleful spirit in seeking a name, and if it moves while strong one is surely dismissed; if it changes into a Pressure line that gives life to the Self, one is in the end not stripped to a commoner and at worst demoted to the blue gown; if Wealth moves in the hexagram and combines with Output and holds it, one may use money to try to keep one's former post."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1896, 1896],
+          "zh": ["杀化生身之鬼，", "恐发青衣"],
+          "yi": ["煞神（子孙）变出生身的官鬼，", "恐怕被打发成青衣"],
+          "en": ["If the baleful spirit changes into a Pressure line that gives life to the Body,", "one fears being sent down to the blue gown"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1896, 1896],
+          "zh": ["以子孙为煞，乘旺发动必遭斥退，若得化鬼爻生世，终不脱白，无过降青衣而已。", "卦有财动合住子孙，可用资财谋能干旧职。"],
+          "yi": ["以子孙为煞，趁旺发动必定被斥退；如果得变出官鬼爻来生世，终究不会被削去身份，不过降为青衣罢了。", "如果卦中有财爻动来合住子孙，可以用钱财去谋求保住旧职。"],
+          "en": ["Taking Output as the baleful spirit, if it moves while strong he will surely be expelled; if a Pressure line it changes into gives life to the Self, he will in the end not be stripped to a commoner, and at worst is only demoted to the blue gown.", "If Wealth moves in the hexagram and combines with Output and holds it, one may use money to try to keep one's former post."] }
+      ],
+      "note": {
+        "yi": "「脱白」「青衣」书里没有解释；这一联讲的是已经有功名（生员）的人遇到子孙发动被斥退的情形，「脱白」译作「被削成白身」、「青衣」译作「降为青衣（较低的身份）」是按上下文（斥退—不脱白—降青衣）读出来的，只供参考。",
+        "en": "The book does not explain \"stripped to white\" or \"the blue gown\"; this couplet concerns one who already has a degree (a licentiate) and is dismissed when Output moves, and \"stripped to a commoner\" and \"demoted to the blue gown (a lower standing)\" are read from the context (dismissed, not stripped, demoted), for reference only."
+      },
+      "see": ["LY.EXAM.HJC.17"]
+    },
+    {
+      "id": "LY.EXAM.HJC.32",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·岁加有气之官终登黄甲：太岁最喜有情，临鬼爻是人臣面君之象，更得生旺有气必然名姓高标",
+      "rule": {
+        "yi": "太岁加在有气的官爻上，终究登上黄甲：太岁最喜有情，临官鬼爻是臣子面见君主的象，再得生旺有气，名姓必然高高标榜。",
+        "en": "If Tai Sui is added to a Pressure line that has breath, one will in the end enter the Yellow List: Tai Sui most wants to be favourable, standing on the Pressure line is the image of a minister before his sovereign, and if it is further given life and strength and has breath, one's name will surely be set high."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1898, 1898],
+          "zh": ["岁加有气之官，", "终登黄甲"],
+          "yi": ["太岁加在有气的官爻上，", "终究登上黄甲"],
+          "en": ["If Tai Sui is added to a Pressure line that has breath,", "one will in the end enter the Yellow List"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1898, 1898],
+          "zh": ["太岁之爻最喜有情，若临鬼爻，是人臣面君之象，更得生旺有气，必然名姓高标。"],
+          "yi": ["太岁这一爻最喜欢有情，如果临官鬼爻，是臣子面见君主的象，再得生旺有气，必定名姓高标。"],
+          "en": ["The Tai Sui line most wants to be favourable; if it stands on the Pressure line, it is the image of a minister before his sovereign, and if it is further given life and strength and has breath, one's name will surely be set high."] }
+      ],
+      "see": ["LY.EXAM.ZS.34"]
+    },
+    {
+      "id": "LY.EXAM.HJC.33",
+      "topic": "风险",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·病阻试期无故空临于世位：动爻日辰来伤世爻而世爻落空大凶，试前占去不成，强去终不利，轻则病重则死",
+      "rule": {
+        "yi": "无缘无故病倒耽误考期，是空亡临在世位：动爻、日辰来伤世爻而世爻又落空，是大凶的象；考试前占，说去不成，勉强去终归不利，轻的生病，重的死亡。",
+        "en": "Being blocked from the examination by illness for no reason is Void standing on the Self's position: a moving line or the Day harming the Self while the Self falls Void is a sign of great ill; if divined before the examination that going will not come about, going by force is in the end unfavourable, lightly it is illness and heavily death."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1900, 1900],
+          "zh": ["病阻试期无故，", "空临于世位"],
+          "yi": ["无缘无故病倒、耽误考期，", "是因为空亡临在世爻的位置上"],
+          "en": ["If one is blocked from the examination date by illness for no reason,", "it is because Void stands on the position of the Self"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1900, 1900],
+          "zh": ["动爻日辰来伤世爻，而世爻落空，大凶之象。", "试前占去不成，强去终不利，轻则病，重则死。"],
+          "yi": ["动爻、日辰来伤世爻，而世爻又落空，是大凶的象。", "考试前占，说去不成，勉强去终归不利，轻的生病，重的死亡。"],
+          "en": ["If a moving line or the Day comes to harm the Self and the Self falls Void, it is a sign of great ill.", "If divined before the examination that going will not come about, going by force is in the end unfavourable, lightly it is illness and heavily death."] }
+      ],
+      "see": ["LY.EXAM.ZS.49"]
+    },
+    {
+      "id": "LY.EXAM.HJC.34",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·喜添场屋有情龙合于身爻：大象既吉更得青龙动生合世身，不但名成，必然别有喜事；空动则出空之月日见喜",
+      "rule": {
+        "yi": "大局已吉，再得青龙动来生合世爻和卦身，不但成名，必定另有喜事；如果是空而动，出空的月、日有喜。",
+        "en": "If the overall figure is already auspicious and the Azure Dragon moves to give life to and combine with the Self and Body, not only will one win a name but there will surely be other joy besides; if it is Void and moving, the joy comes in the month or day it leaves the Void."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1902, 1902],
+          "zh": ["喜添场屋有情，", "龙合于身爻"],
+          "yi": ["喜上加喜，考场里也有情，", "青龙合在身爻上"],
+          "en": ["A further joy: the examination cells show feeling,", "if the Azure Dragon combines with the Body line"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1902, 1902],
+          "zh": ["若大象既吉，更得龙动生合世身，不但名成，必然别有喜事；", "空动，出空之月日见喜。"],
+          "yi": ["如果大的格局已经吉，再得青龙动来生合世爻和卦身，不但成名，必定另有喜事；", "如果是空而动，出空的月、日见喜。"],
+          "en": ["If the overall figure is already auspicious and the Azure Dragon moves to give life to and combine with the Self and Body, not only will one win a name but there will surely be other joy besides;", "if it is Void and moving, the joy comes in the month or day it leaves the Void."] }
+      ],
+      "note": {
+        "yi": "「场屋」是考场里一间间的号舍；「空动」是落空而又发动，应期在出空（出旬）的月日。",
+        "en": "\"Examination cells\" are the numbered cubicles in the examination hall; \"Void and moving\" is a line that is Void and also moving, whose time is the month or day it leaves the Void (leaves the ten-day period)."
+      }
+    },
+    {
+      "id": "LY.EXAM.HJC.35",
+      "topic": "风险",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·财伏逢空行粮必乏：六爻无财、伏财又居空地，必乏行粮盘缠",
+      "rule": {
+        "yi": "财爻伏藏又逢空，路上的口粮必定不足：六爻里没有财爻，伏着的财又落在空地，必定缺少行粮、盘缠。",
+        "en": "If Wealth lies hidden and meets Void, the travelling provisions will surely run short: with no Wealth among the six lines and the hidden Wealth in a Void place, provisions and travelling expenses will surely fall short."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1904, 1904],
+          "zh": ["财伏逢空，", "行粮必乏"],
+          "yi": ["财爻伏藏又逢空，", "路上的口粮必定不足"],
+          "en": ["If Wealth lies hidden and meets Void,", "the travelling provisions will surely run short"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1904, 1904],
+          "zh": ["六爻无财，伏财又居空地，必乏行粮，盘缠欠缺。"],
+          "yi": ["六爻里没有财爻，伏着的财又落在空地，必定缺少行粮，盘缠不足。"],
+          "en": ["If there is no Wealth among the six lines and the hidden Wealth is in a Void place, provisions will surely run short and the travelling expenses fall short."] }
+      ],
+      "see": ["LY.EXAM.HJC.19"]
+    },
+    {
+      "id": "LY.EXAM.HJC.36",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·身兴变鬼来试方成：卦遇不成之兆，而身、世爻变出官鬼有气、父母不坏，下帷可中（来年再考才成）",
+      "rule": {
+        "yi": "卦里有不成的兆头，但卦身、世爻变出有气的官鬼、父母爻又没有坏，闭门苦读（下帷）可以考中，要等下一次考试才成。",
+        "en": "If the hexagram shows a sign of failure but the Body or Self line changes into a Pressure line that has breath and the Resource line is not spoiled, one may pass by shutting oneself away to study, and success comes only on the next sitting."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1906, 1908],
+          "zh": ["身兴变鬼，", "来试方成"],
+          "yi": ["卦身兴旺变出官鬼，", "要到下一回考试才成"],
+          "en": ["If the Body flourishes and changes into Pressure,", "success comes only on the next sitting"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1906, 1908],
+          "zh": ["卦遇不成之兆，而得身世爻变官鬼有气，而父母不坏者，下帷可中也。"],
+          "yi": ["卦遇到不成的兆头，而得到身爻、世爻变出官鬼有气，父母爻又没有坏的，闭门读书（下帷）就可以考中。"],
+          "en": ["If the hexagram shows a sign of failure but the Body or Self line changes into a Pressure line that has breath, and the Resource line is not spoiled, one may pass by shutting oneself away to study."] }
+      ],
+      "note": {
+        "yi": "「下帷」是放下帷幕闭门读书（汉代董仲舒下帷讲诵）。「来试方成」是这一科不中，下一次才成。增删卜易也引过「身兴变鬼，来试方成」（LY.EXAM.ZS.40），说这类讲卦身的旧说它试过不灵，只在世爻上灵验。",
+        "en": "\"Lowering the curtain\" is shutting oneself away to study (from Dong Zhongshu of the Han, who taught behind a lowered curtain). \"Success on the next sitting\" means failing this time and succeeding the next. The Zengshan Buyi also quotes \"the Body flourishes and changes into Pressure, success comes only on the next sitting\" (LY.EXAM.ZS.40) and says that of these old sayings about the Body it found them inaccurate and true only of the Self line."
+      },
+      "see": ["LY.EXAM.ZS.40"]
+    },
+    {
+      "id": "LY.EXAM.HJC.37",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·卦值六冲此去难题雁塔、爻逢六合这回必占鳌头：占功名得六冲卦必难成，得六合卦必易得",
+      "rule": {
+        "yi": "占功名，得六冲卦一定难成，得六合卦一定容易得到。",
+        "en": "In divining for fame and rank, a Six-Clash hexagram is surely hard to achieve and a Six-Combine hexagram surely easy to gain."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1910, 1910],
+          "zh": ["卦值六冲，", "此去难题雁塔；", "爻逢六合，", "这回必占鳌头"],
+          "yi": ["卦遇上六冲，", "这一去难以在雁塔题名；", "爻遇上六合，", "这一回一定夺得鳌头"],
+          "en": ["If the hexagram is a Six-Clash,", "this time it is hard to inscribe one's name at the Wild Goose Pagoda;", "if the lines meet a Six-Combine,", "this time one will surely take the head of the turtle"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1910, 1910],
+          "zh": ["占功名，得六冲卦必难成，得六合卦必易得也。"],
+          "yi": ["占功名，得六冲卦一定难成，得六合卦一定容易得到。"],
+          "en": ["In divining for fame and rank, a Six-Clash hexagram is surely hard to achieve and a Six-Combine hexagram surely easy to gain."] }
+      ],
+      "dispute": {
+        "yi": "这里（王洪绪注）断得很干脆：得六冲卦必难成，得六合卦必易得。增删卜易（野鹤）不赞成一刀切：六冲卦只要官、父、世爻都旺，不必再占，竟断必发；欠旺的另占一卦再断；六合卦也要官、父、世都得地，有一个失陷又无生扶，六合也没有益处（LY.EXAM.ZS.36）。野鹤还记了旧注「卦逢六冲，冲之即散」，说他见过六冲而世、父皆旺的卦应了高中。",
+        "en": "Here (Wang Hongxu's commentary) judges flatly: a Six-Clash is surely hard to achieve and a Six-Combine surely easy to gain. The Zengshan Buyi (the Old Man of Yehe) does not accept a blanket rule: a Six-Clash hexagram in which the official star, Resource and Self are all strong needs no second divination and one judges outright that one will succeed; one lacking in strength should be divined again; a Six-Combine also needs the official star, Resource and Self all well placed, and if one is lost with no life or support even a Six-Combine is of no use (LY.EXAM.ZS.36). The Old Man of Yehe also records the old note, \"a hexagram meeting a Six-Clash is scattered by the clash\", and says he has seen a Six-Clash with the Self and Resource both strong come out in a high pass."
+      },
+      "see": ["LY.EXAM.ZS.36"]
+    },
+    {
+      "id": "LY.EXAM.HJC.38",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·父旺官衰可惜刘蒉之下第、父衰官旺堪嗟张奭之登科：父母官鬼皆宜有力无损；父旺而官空亡或不上卦文好不能中式，父衰而官旺动扶起文书文平亦可成名",
+      "rule": {
+        "yi": "父母爻、官鬼都宜有力而没有损伤才可成功名：父爻旺相而官鬼空亡或不上卦，文字再好也不能中式；父爻衰弱而官爻旺动、扶起文书，文字平常也可许他成名。",
+        "en": "The Resource and Pressure lines should both be strong and unharmed for fame and rank to be achieved: with the Resource line thriving but Pressure Void or absent from the hexagram, however fine the writing one cannot pass; with the Resource line weak but the Pressure line strong and moving and raising the document line up, one may be granted a name even if the writing is ordinary."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1912, 1912],
+          "zh": ["父旺官衰，", "可惜刘蒉之下第；", "父衰官旺，", "堪嗟张奭之登科"],
+          "yi": ["父爻旺、官星衰，", "可惜，像刘蒉那样落第；", "父爻衰、官星旺，", "可叹，像张奭那样登科"],
+          "en": ["With Resource strong and Pressure weak,", "it is a pity, as with Liu Fen, who failed;", "with Resource weak and Pressure strong,", "it is worth a sigh, as with Zhang Shi, who passed"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1912, 1912],
+          "zh": ["父母官鬼皆宜有力无损，功名可成。", "若父母爻旺相，官鬼空亡，或不上卦，文字虽好不能中式，如刘蒉之锦绣文章，竟不登第；", "若父爻衰弱，得官爻旺动扶起文书，文字虽平常，可许成名，如张奭之文章，虽欠精美，反登高第也。"],
+          "yi": ["父母爻、官鬼都宜有力量而没有损伤，功名才可成。", "如果父母爻旺相，官鬼空亡或不上卦，文字虽然好也不能中式，就像刘蒉的锦绣文章，竟然没有登第；", "如果父爻衰弱，得官爻旺而动，扶起文书，文字虽然平常，可以许他成名，就像张奭的文章，虽然欠精美，反而登了高第。"],
+          "en": ["The Resource and Pressure lines should both be strong and unharmed, and then fame and rank can be achieved.", "If the Resource line is thriving but Pressure is Void or absent from the hexagram, however fine the writing one cannot pass, like Liu Fen's brocade essays, which failed to win him the degree;", "If the Resource line is weak but the Pressure line is strong and moving and raises the document line up, though the writing is ordinary one may be granted a name, like Zhang Shi's essay, which lacked polish yet won a high place."] }
+      ],
+      "note": {
+        "yi": "刘蒉、张奭是唐代的两位应试者（书里只提名字、没有讲故事）：一个文章好却落第，一个文章平常却登科，正对着「父旺官衰」「父衰官旺」。增删卜易乡试会试章有同一对意思（「父旺官衰，终须下第」「父衰官旺，堪许登科」，LY.EXAM.ZS.37、38）。",
+        "en": "Liu Fen and Zhang Shi were two Tang examination candidates (the book gives only the names and tells no stories): one failed with fine writing and the other passed with ordinary writing, matching \"Resource strong, Pressure weak\" and \"Resource weak, Pressure strong\". The Zengshan Buyi chapter on the provincial and metropolitan examinations has the same pair (\"with Resource strong and the official star weak one fails in the end\", \"with Resource weak and the official star strong one may be granted success\", LY.EXAM.ZS.37 and 38)."
+      },
+      "see": ["LY.EXAM.ZS.37", "LY.EXAM.ZS.38"]
+    },
+    {
+      "id": "LY.EXAM.HJC.39",
+      "topic": "成否",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·应合日生必资鹗荐、动伤日克还守鸡窗：父官化绝名必不成；应爻、动爻或月建日辰扶起官鬼，必须浼人推荐或用财资求才可成",
+      "rule": {
+        "yi": "应爻来合、日辰来生，必靠推荐；动爻受伤、被日辰克，还得守着鸡窗读书。父爻、官星变绝，名必不成；如果应爻、动爻或月建、日辰扶起官鬼，必须托人推荐，或者用钱财去求才可成。",
+        "en": "If the Other combines and the Day gives life, one will surely rely on a recommendation; if the moving line is harmed and the Day controls it, one must go on keeping to the chicken window. If the Resource line or the official star changes into extinction, the name will surely not be made; if the Other line, a moving line, the Month or the Day raises the Pressure line up, one must ask someone to recommend one or use money to seek it, and then it can succeed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1914, 1914],
+          "zh": ["应合日生必资鹗荐，", "动伤日克还守鸡窗"],
+          "yi": ["应爻来合、日辰来生，必定靠推荐，", "动爻受伤、日辰克它，还得守着鸡窗读书"],
+          "en": ["If the Other combines and the Day gives life, one will surely rely on a recommendation,", "if the moving line is harmed and the Day controls it, one must go on keeping to the chicken window"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1914, 1914],
+          "zh": ["父官化绝，名必不成，若应爻、动爻或月建日辰扶起官鬼，必须浼人推荐，或用财资求可成。"],
+          "yi": ["父爻、官星变绝，名必不成；如果应爻、动爻或月建、日辰扶起官鬼，必须托人推荐，或者用钱财资助去求才可成。"],
+          "en": ["If the Resource line or the official star changes into extinction, the name will surely not be made; if the Other line, a moving line, the Month or the Day raises the Pressure line up, one must ask someone to recommend one, or use money to help in seeking it, and then it can succeed."] }
+      ],
+      "note": {
+        "yi": "这一联增删卜易（乡试会试章）引过并各自讲了喜忌（LY.EXAM.ZS.38、39）。「浼人」是请托别人；「用财资求」是花钱去谋求。",
+        "en": "The Zengshan Buyi (chapter on the provincial and metropolitan examinations) quotes this couplet and discusses each half (LY.EXAM.ZS.38 and 39). \"Asking a man\" is entrusting the matter to someone; \"using money to seek it\" is spending money to try for it."
+      },
+      "see": ["LY.EXAM.ZS.38", "LY.EXAM.ZS.39"]
+    },
+    {
+      "id": "LY.EXAM.HJC.40",
+      "topic": "动变",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·世动化空用旺则豹变翻成蝴蝶：必中之卦世爻发动变入墓绝，恐成名之后不能享福；游魂卦死于途中、归魂卦到家而死，墓绝爻本太岁逾年而死",
+      "rule": {
+        "yi": "本是必中的卦，但世爻发动变入墓、绝，恐怕成名之后不能享福；游魂卦的死在路上，归魂卦的到家才死，入墓绝的爻就是太岁的，过一年就死。",
+        "en": "If one has a hexagram of sure success but the Self moves and changes into the tomb or extinction, one fears that after winning the name one cannot enjoy the blessing; with a Wandering Soul hexagram one dies on the road, with a Returning Soul hexagram one dies on reaching home, and if the line that enters the tomb or extinction is Tai Sui itself, one dies after a year."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1916, 1916],
+          "zh": ["世动化空用旺，", "则豹变翻成蝴蝶"],
+          "yi": ["世爻动而变空、用神旺，", "豹变（的好事）反而成了蝴蝶梦"],
+          "en": ["If the Self moves and changes into Void while the Subject is strong,", "the leopard's change turns instead into a butterfly dream"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1916, 1916],
+          "zh": ["若得必中之卦，如遇世爻发动变入墓绝，恐成名之后不能享福。", "游魂死于途中，归魂卦到家而死，墓绝爻本太岁，逾年而死也。"],
+          "yi": ["如果得的是必中的卦，但遇到世爻发动变入墓、绝，恐怕成名之后不能享福。", "游魂卦（的人）死在路上，归魂卦（的人）到家才死，入墓、入绝的爻如果就是太岁，过了一年就会死。"],
+          "en": ["If one has obtained a hexagram of sure success but the Self moves and changes into the tomb or extinction, one fears that after winning the name one cannot enjoy the blessing.", "With a Wandering Soul hexagram one dies on the road, with a Returning Soul hexagram one dies on reaching home, and if the line that enters the tomb or extinction is Tai Sui itself, one dies after a year."] }
+      ],
+      "dispute": {
+        "yi": "这里（王洪绪注）把「世动化空（入墓绝）」读作成名后不得享福。增删卜易（觉子）引同一联时指出：旧说都是就卦身讲的，野鹤试过不灵，只验于世爻；并举例世爻午火官星化出丑土、官文两旺而丑父旬空，午年入场、丑年中了甲榜——「化空者必应实空之年」，并没有成蝴蝶梦（LY.EXAM.ZS.40）。",
+        "en": "Here (Wang Hongxu's commentary) reads \"the Self moves into Void (tomb or extinction)\" as one winning a name but being unable to enjoy it. The Zengshan Buyi (Juezi), quoting the same couplet, points out that the old sayings all speak of the Body, that the Old Man of Yehe found them inaccurate and true only of the Self line, and gives an example in which the Self, Wu Fire the official star, changed into the Chou Earth writing with the official star and writing both strong and the Chou Resource line in the Void, entered the examination in a Wu year and passed in a Chou year: \"a change into Void is answered in the year that fills the Void\", and it did not turn into a butterfly dream (LY.EXAM.ZS.40)."
+      },
+      "note": {
+        "yi": "「游魂」「归魂」是八宫卦里的两种卦（每宫第七、第八卦），游魂主漂泊、归魂主回家。这一联的「豹变」是君子像豹那样变化（比喻考中后的飞黄腾达）。",
+        "en": "A \"Wandering Soul\" and a \"Returning Soul\" are two kinds of hexagram in the eight palaces (the seventh and eighth of each palace), the first meaning drifting and the second coming home. The \"leopard's change\" is the gentleman changing like a leopard (a figure for rising after passing)."
+      },
+      "see": ["LY.EXAM.ZS.40"]
+    },
+    {
+      "id": "LY.EXAM.HJC.41",
+      "topic": "动变",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·身官化鬼月扶则鹏程连步蟾宫：卦身为事体功名尤宜见之怕临财福；官爻临之必有成望，发动化官爻得月建生合必连科及第",
+      "rule": {
+        "yi": "卦身或官爻变出官鬼又有月建扶助，接连登科：卦身是事情的体，占功名尤其宜见到它，怕它临财、福；官爻临在它上面必有成功的希望，若发动变出官爻又得月建生合，必主连科及第。",
+        "en": "If the Body or the official star changes into Pressure with the Month's support, one passes in succession: the Body is the substance of the matter, and in divining for fame and rank it is especially welcome to see it and one fears it standing on Wealth or Output; with the Pressure line on it there is surely hope of success, and if it moves and changes into the Pressure line and the Month gives life to and combines with it, one will surely pass in successive examinations."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1918, 1918],
+          "zh": ["身官化鬼月扶，", "则鹏程连步蟾宫"],
+          "yi": ["卦身、官星变出官鬼又有月建扶助，", "就像鹏鸟程程高升，接连登步蟾宫"],
+          "en": ["If the Body or official star changes into Pressure with the Month's support,", "it is like the roc rising stage after stage, going on step by step in the Toad Palace"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1918, 1918],
+          "zh": ["卦身为事体，功名尤宜见之，怕临财福。", "如得官爻临之，必有成望，更若发动化官爻，而得月建生合者，必主连科及第。"],
+          "yi": ["卦身是事情的体，占功名尤其宜见到它，怕它临财、福。", "如果有官爻临在它上面，必有成功的希望；再如果发动变出官爻，而得月建生合，必主连科及第。"],
+          "en": ["The Body is the substance of the matter; in divining for fame and rank it is especially welcome to see it, and one fears it standing on Wealth or Output.", "If the Pressure line stands on it there is surely hope of success; and if it moves and changes into the Pressure line and the Month gives life to and combines with it, one will surely pass in successive examinations."] }
+      ],
+      "dispute": {
+        "yi": "这里（王洪绪注）认为卦身得官爻临、发动化官爻又有月建生合就必连科及第。增删卜易（觉子）举了一个卦：巳为卦身，世爻变出子水官星，又得月建生合，正合这一说，却没有连捷，反而因变出的鬼回头克世，后来客死途中——结论是这类讲卦身的旧说「试不验，惟验于世爻」（LY.EXAM.ZS.40）。",
+        "en": "Here (Wang Hongxu's commentary) holds that a Body stood on by the Pressure line, or moving and changing into the Pressure line with the Month giving life and combining, will surely pass in successive examinations. The Zengshan Buyi (Juezi) gives a hexagram in which Si was the Body, the Self changed into the Zi Water official star and the Month gave life and combined, exactly as this saying has it, yet the man did not pass in succession and, because the ghost he changed into turned back to control the Self, died on the road later; the conclusion is that of such old sayings about the Body \"when tried they were not accurate, and hold true only of the Self line\" (LY.EXAM.ZS.40)."
+      },
+      "note": {
+        "yi": "「蟾宫」是月宫，旧时以「蟾宫折桂」比喻考中；「鹏程」是大鹏飞行的路程，比喻前程远大。",
+        "en": "The \"Toad Palace\" is the moon palace, and \"breaking a laurel in the Toad Palace\" was the figure for passing the examination; the \"roc's flight\" is the course of the great roc, a figure for a great future."
+      },
+      "see": ["LY.EXAM.ZS.40"]
+    },
+    {
+      "id": "LY.EXAM.HJC.42",
+      "topic": "总则",
+      "chapter": "求名",
+      "chapter_en": "Seeking a name",
+      "title": "求名·更详本主之爻神方论其人之命运：本主者本人之主爻，自占以世爻论，子侄看子孙爻，此爻最怕伤克变坏",
+      "rule": {
+        "yi": "再要看本主的爻神，才能论这个人的命运：本主是本人的主爻，自己占以世爻论，子侄占看子孙爻等，这一爻最怕被伤克、变坏。",
+        "en": "Study further the line that is the principal of the person, and then one may judge his fortune: the principal is the person's own chief line, which for oneself is the Self, and for a son or nephew the Output line, and so on; this line most fears being harmed, controlled or changed for the worse."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1920, 1920],
+          "zh": ["更详本主之爻神，", "方论其人之命运"],
+          "yi": ["再详看本主的爻神，", "才能论这个人的命运"],
+          "en": ["Study further the line that is the principal,", "and then judge that man's fortune"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1920, 1920],
+          "zh": ["本主者，本人之主爻也，自占以世爻论，如子侄看子孙爻类，此爻最怕伤克变坏。", "如此搜索吉凶自应。"],
+          "yi": ["本主，就是本人的主爻：自己占以世爻来论，比如子侄看子孙爻等，这一爻最怕被伤克、变坏。", "这样搜寻，吉凶自然就会应验。"],
+          "en": ["The principal is the person's own chief line: for oneself it is taken as the Self, and for a son or nephew one looks at the Output line, and so on; this line most fears being harmed, controlled or changed for the worse.", "Searching in this way, the auspicious and inauspicious will answer of themselves."] }
+      ],
+      "note": {
+        "yi": "这一联是整章的收束：前面讲官、父，这里提醒：占的是谁（自己、子侄），就要看谁的主爻，不能只看官父。「本主」就是本人。",
+        "en": "This couplet closes the chapter: the earlier lines speak of Pressure and Resource, and this reminds one that whoever it is that is divined for (oneself, a son or nephew), that person's own chief line must be looked at, and one cannot look only at Pressure and Resource. The \"principal\" is the person himself."
+      },
+      "see": ["LY.EXAM.HJC.16"]
+    }
+  ]
+}

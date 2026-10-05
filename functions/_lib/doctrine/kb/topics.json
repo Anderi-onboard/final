@@ -276,7 +276,56 @@
       "key": "考试",
       "code": "EXAM",
       "en": "Examinations",
-      "topics": []
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: which line is the candidate, the writing, the official star; strong and weak"
+        },
+        {
+          "key": "成否",
+          "en": "Will one pass or be chosen: signs for and against"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "学业",
+          "en": "Study: whether study will come to anything, which classic to take up"
+        },
+        {
+          "key": "延师",
+          "en": "Teachers and schools: engaging, following or keeping a teacher"
+        },
+        {
+          "key": "小考",
+          "en": "The minor examinations: county, prefecture, circuit, annual and qualifying, the stipend"
+        },
+        {
+          "key": "乡会试",
+          "en": "The provincial, metropolitan and palace examinations"
+        },
+        {
+          "key": "武试",
+          "en": "The military examination"
+        },
+        {
+          "key": "名次",
+          "en": "Rank and the list: grade, first place, the supplementary list"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: when the list is posted and the result known"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: the classic, the examiner, the hall, the paper"
+        },
+        {
+          "key": "风险",
+          "en": "Risks: illness at the hall, mourning, intrigue, failure"
+        }
+      ]
     },
     {
       "key": "出行",

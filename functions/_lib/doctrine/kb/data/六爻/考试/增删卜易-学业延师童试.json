@@ -1,0 +1,444 @@
+{
+  "shushu": "六爻",
+  "domain": "考试",
+  "work": "增删卜易",
+  "chapter": "学业章、治经章、延师章、求名章、童试章",
+  "chapter_en": "Chapters on study, taking up a classic, engaging a teacher, seeking a name and the youth examinations",
+  "ranges": {"增删卜易": [9805, 10021]},
+  "units": [
+    {
+      "id": "LY.EXAM.ZS.01",
+      "topic": "学业",
+      "chapter": "学业章",
+      "chapter_en": "The chapter on study",
+      "title": "学业章·儒业：世爻、父母爻同旺，日月动爻相生，必成大器；财动卦中青灯不久，子孙持世皓首无成",
+      "rule": {
+        "yi": "学儒业的人，世爻和父母爻都旺，日月、动爻再来生扶，将来一定成大器；反过来，财爻在卦中发动，读书会半途而废，子孙爻持世或发动，一辈子成不了功名。",
+        "en": "For one studying the scholar's career: if the Self and Resource lines are both strong and the Day, the Month and the moving lines add support, he will surely become a great vessel; the other way round, if Wealth moves in the hexagram he will give up study halfway, and if Output holds the Self or moves he will not win fame and rank in his whole life."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9807, 9811],
+          "zh": ["儒业者，父母世爻同旺，终须变化成龙，日月动爻相生，定是王家储器。", "世爻、父母爻皆宜旺相，或动而变吉，或父母持世，日月动爻生合世爻，攀龙附凤，指日可期。", "财动卦中，青灯不久；", "子孙持世，皓首无成。", "财动克文章，读书中道而废；", "子动无官之象，皓首必不成功名。"],
+          "yi": ["学儒业的人，父母爻和世爻都旺，终究会变化成龙；日月、动爻再来相生，一定是朝廷储备的人才。", "世爻、父母爻都宜旺相，或者发动变出吉象，或者父母爻持世、日月和动爻生合世爻，那就是攀龙附凤，指日可待。", "财爻在卦中发动，青灯苦读的日子不会长；", "子孙爻持世，白了头也没有成就。", "财动克了文章（父母），读书半途而废；", "子孙动，就没有官星的象，白了头也成不了功名。"],
+          "en": ["For one who studies the scholar's career, if the Resource and Self lines are both strong, he will in the end transform into a dragon; and if the Day, the Month and the moving lines give them life, he is surely a vessel stored up for the royal house.", "The Self and Resource lines should both be thriving, or move and change into an auspicious line, or the Resource line should hold the Self with the Day, the Month and the moving lines giving life to or combining with the Self; then he will cling to the dragon and the phoenix, a matter of days.", "If Wealth moves in the hexagram, the green lamp will not burn long;", "if the Output line holds the Self, one grows white-haired with nothing achieved.", "if Wealth moves and controls the writing (the Resource line), one gives up study halfway;", "if Output moves there is no sign of the official star, and even in white hair one will not achieve fame and rank."] }
+      ],
+      "note": {
+        "yi": "「王家储器」是为朝廷储备的人才；「青灯」是夜里读书的灯；「财动克文章」里的文章就是父母爻（父母爻管文书、文章）。这一章后面的[乾按]是今人按语，不收。",
+        "en": "\"A vessel stored up for the royal house\" is a talent kept in reserve for the court; the \"green lamp\" is the lamp one studies by at night; the \"writing\" that Wealth controls is the Resource line (Resource governs documents and compositions). The \"[Qian's note]\" at the end of the chapter is a modern comment and is not quoted."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.02",
+      "topic": "学业",
+      "chapter": "学业章",
+      "chapter_en": "The chapter on study",
+      "title": "学业章·九流、百工：财兴官旺则道重人钦，兄动世衰则有毁无誉；百工以财为用神、子孙为元神，最忌兄爻持世；天师驱邪治鬼之家反以子孙持世为吉（觉子）",
+      "rule": {
+        "yi": "学九流技艺要财爻兴旺、官爻旺相；学百工手艺以财爻为用神、子孙爻为元神，最忌兄弟持世或旺而发动；觉子补充：天师、驱邪治鬼的、师巫和医家，反而要子孙持世或发动才吉，因为靠子孙制鬼。",
+        "en": "For learning the nine schools of skill, Wealth should be thriving and Pressure strong; for learning a craft, Wealth is the Subject and Output the Support, and what is most feared is Peer holding the Self or being strong and moving; Juezi adds that for Heavenly Masters, exorcists, shamans and physicians, it is the other way round: Output holding the Self or moving is auspicious, since they control ghosts by Output."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9812, 9812],
+          "zh": ["九流者，财兴官旺，道重人钦；", "兄动世衰，有毁无誉。", "财持世、官持世，财官世爻皆宜得地；", "兄动卦中，兄爻持世，只可糊口，难许成家。"],
+          "yi": ["学九流技艺的，财爻兴旺、官爻旺相，所学的道就受人看重、人人佩服；", "兄弟动而世爻衰，只有诋毁、没有赞誉。", "财爻持世也好，官爻持世也好，财、官、世爻都要得地；", "兄弟在卦中发动，或者兄弟爻持世，只能勉强糊口，难以成家立业。"],
+          "en": ["For the nine schools, with Wealth thriving and Pressure strong, one's way is valued and people admire one;", "if Peer moves and the Self is weak, there is censure and no praise.", "Whether Wealth or Pressure holds the Self, Wealth, Pressure and the Self line should all be well placed;", "if Peer moves in the hexagram, or the Peer line holds the Self, one can only just make a living and can hardly set up a household."] },
+        { "by": "觉子", "book": "增删卜易", "range": [9814, 9814],
+          "zh": ["觉子曰：古以九流皆以官鬼为吉，殊不知天师家，及驱邪治鬼家、师巫医家，必以子孙持世及子孙发动为吉，盖皆以子旺能于治鬼也。"],
+          "yi": ["觉子说：古人以九流都以官鬼为吉，却不知道天师一类的，以及驱邪治鬼的、师巫和医家，必须以子孙持世以及子孙发动为吉，因为这些人都靠子孙旺，才能治服鬼。"],
+          "en": ["Juezi says: the ancients took Pressure as the auspicious line for all nine schools, not knowing that for Heavenly Masters, exorcists who drive out evil and subdue ghosts, and shamans and physicians, it must be Output holding the Self and Output moving that is auspicious, because all of them can control ghosts only when Output is strong."] },
+        { "by": "经", "book": "增删卜易", "range": [9815, 9815],
+          "zh": ["百工皆以财为用神，子孙为元神，最忌兄爻持世，及兄爻旺动者，劳碌终身。", "余以求财章同断。"],
+          "yi": ["各种工匠都以财爻为用神、子孙爻为元神，最忌兄弟爻持世，以及兄弟爻旺而发动，会劳碌一生。", "我用求财章的断法一并来断。"],
+          "en": ["For all the crafts, Wealth is the Subject and Output is the Support; what is most feared is the Peer line holding the Self, or the Peer line strong and moving, and one toils all one's life.", "I judge them together by the rules of the chapter on seeking wealth."] }
+      ],
+      "note": {
+        "yi": "九流是各种技艺、行当（书里没有列名单），百工是各行手艺人。觉子这一条是纠正「九流皆以官鬼为吉」：靠制服鬼神吃饭的人，官鬼是他要制的东西，所以反以子孙为吉。「余以求财章同断」的「余」是野鹤老人。",
+        "en": "The \"nine schools\" are the various skills and trades (the book gives no list) and the \"hundred crafts\" are the manual trades. Juezi's remark corrects the claim that Pressure is auspicious for all the nine schools: for those who live by subduing ghosts and spirits, Pressure is what they are to subdue, so Output is auspicious for them instead. The \"I\" in \"I judge them together by the chapter on seeking wealth\" is the Old Man of Yehe."
+      },
+      "see": ["LY.EXAM.ZS.03"]
+    },
+    {
+      "id": "LY.EXAM.ZS.03",
+      "topic": "总则",
+      "chapter": "学业章",
+      "chapter_en": "The chapter on study",
+      "title": "学业章·世爻忌空破墓绝休囚；世休囚又随鬼入墓、受冲克、动化鬼化绝化克，不唯学业难成还防不测",
+      "rule": {
+        "yi": "学业上世爻最怕落空、受破、入墓、逢绝或休囚，否则诸事无成；世爻休囚，又跟着官鬼入墓，或被日月、动爻冲克，或发动变官鬼、变绝、变克，不但学业难成，还要提防意外。",
+        "en": "In study the Self line most fears being Void, broken, in the tomb, extinct, or resting and trapped, or nothing will succeed; if the Self is resting and trapped and moreover follows Pressure into the tomb, or is clashed and controlled by the Day, the Month or a moving line, or moves and changes into Pressure, extinction or control, then not only will study be hard to complete but one must guard against the unforeseen."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9815, 9815],
+          "zh": ["以上皆不宜世爻空破墓绝休囚，诸事无成。", "世若休囚，而又随鬼入墓，及受日月动爻冲克，或动而化鬼、化绝、化克者，不唯学业难成，还防不测。"],
+          "yi": ["以上各种，都不适宜世爻落空、受破、入墓、逢绝或休囚，否则诸事无成。", "世爻如果休囚，而且又跟着官鬼入了墓，以及被日月、动爻冲克，或者发动变成官鬼、变绝、变克的，不但学业难成，还要提防意外。"],
+          "en": ["In all the above, the Self line must not be Void, broken, in the tomb, extinct, or resting and trapped, or nothing will succeed.", "If the Self is resting and trapped, and moreover follows Pressure into the tomb, or is clashed and controlled by the Day, the Month or a moving line, or moves and changes into Pressure, extinction or control, then not only will study be hard to complete but one must guard against the unforeseen."] }
+      ],
+      "note": {
+        "yi": "「随鬼入墓」指世爻跟着官鬼一起入墓，通玄妙论讲过它的三种（LY.CAREER.BSQS.04）。「不测」是意外、不测之祸，书里没有说具体是什么。",
+        "en": "\"Following Pressure into the tomb\" means the Self follows the Pressure line into the tomb, the three kinds of which are given in the Tongxuan Miaolun (LY.CAREER.BSQS.04). \"The unforeseen\" is an unexpected misfortune; the book does not say what."
+      },
+      "see": ["LY.EXAM.ZS.02"]
+    },
+    {
+      "id": "LY.EXAM.ZS.04",
+      "topic": "取象",
+      "chapter": "治经章",
+      "chapter_en": "The chapter on taking up a classic",
+      "title": "治经章·占习何经：金作春秋、木作毛诗、水作书经、火为礼记、土为易经，须指定一经祷告「我习此经何如」，再看卦象（觉子）",
+      "rule": {
+        "yi": "占自己该学哪一部经，不能笼统地问：要把五行对五经（金春秋、木毛诗、水书经、火礼记、土易经），指定其中一部，向神祷告说「我学这部经怎么样」，再看得到的卦象决定可不可以。",
+        "en": "In divining which classic one should take up, one must not ask in general: match the five phases to the five classics (Metal the Spring and Autumn Annals, Wood the Songs, Water the Documents, Fire the Rites, Earth the Changes), name one of them and pray to the spirits, saying \"How will it go if I study this classic?\", and then decide from the hexagram obtained whether it can be done."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易", "range": [9820, 9820],
+          "zh": ["觉子曰：占以金作春秋、木作毛诗、水作书经、火为礼记、土为易经，占者不可概问，须指定一经祈于神曰：“我习此经何如？”", "后视所得之卦象而决其可否？", "始无错误。"],
+          "yi": ["觉子说：占的时候，把金当作春秋，木当作毛诗，水当作书经，火当作礼记，土当作易经；占的人不能笼统地问，要指定一部经，向神祷告说：「我学这部经怎么样？」", "然后看所得的卦象，来决定可不可以？", "这样才不会出错。"],
+          "en": ["Juezi says: in divining, take Metal as the Spring and Autumn Annals, Wood as the Songs, Water as the Documents, Fire as the Rites and Earth as the Changes; the one divining must not ask in general, but name one classic and pray to the spirits, saying, \"How will it go if I study this classic?\"", "Then look at the hexagram obtained and decide whether it can be done.", "Only so will there be no mistake."] }
+      ],
+      "note": {
+        "yi": "五经在科举里要选一部「本经」专治。这一条是说：占卦时就要点名问哪一部，不要问「我学经怎么样」。原文第二句句末是问号，照录；意思是「看卦象来决定可不可以」。后面的[乾按]不收。",
+        "en": "Under the examination system one chose one of the five classics as one's own to specialise in. This says that in divining one should name the classic in the question and not ask \"how will studying a classic go\". The second sentence ends in a question mark in the text, which is kept; it means \"decide from the hexagram whether it can be done\". The [Qian's note] after the chapter is not quoted."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.05",
+      "topic": "成否",
+      "chapter": "治经章",
+      "chapter_en": "The chapter on taking up a classic",
+      "title": "治经章·文旺官兴王家栋梁，世空子动蓬荜寒儒；吉象各举，凶象宜另习一经再诚心卜（附例：酉月丙子日占本经，改经再占，果于子科中魁）",
+      "rule": {
+        "yi": "占所学的经：文章（父母）旺、官星兴旺是国家栋梁；世爻落空、子孙动是寒士。官持世而父动相生，或父母持世、官动相生、日月生世、世动化吉，都是飞腾之兆；世空世破、动变凶、子孙财爻持世、父母官鬼空破，宜另学一部经，诚心再占一次。",
+        "en": "Divining the classic one studies: with the writing (Resource) strong and the official star thriving one is a pillar of the realm; with the Self Void and Output moving one is a poor scholar. Pressure holding the Self with Resource moving to give it life, or Resource holding the Self with Pressure moving to give life, or the Day or Month giving life to the Self, or the Self moving into an auspicious line, are all signs of soaring; if the Self is Void or broken, or moves into ill, or Output or Wealth holds the Self, or Resource and Pressure are Void or broken, one should study another classic and divine again with sincerity."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9821, 9821],
+          "zh": ["文旺官兴，王家栋梁；", "世空子动，蓬荜寒儒。", "官持世、父动相生，（疑为父持世、官动相生。）", "或日月临父母生世，或官爻旺相，父爻持世，及世爻动而化吉，皆主飞腾变化之兆。", "世空世破，及动而变凶，或子孙财爻持世，父母官鬼空破，须宜另习一经，虔诚再卜。"],
+          "yi": ["文章（父母）旺、官星兴旺，是国家的栋梁；", "世爻落空、子孙发动，是蓬门草屋里的寒士。", "官爻持世、父爻发动来相生，（疑是父母持世、官爻发动相生。）", "或者日月临在父母爻上来生世，或者官爻旺相、父爻持世，以及世爻发动变出吉象，都主有飞黄腾达、变化的预兆。", "世爻落空、被破，以及发动变凶，或者子孙、财爻持世，父母、官鬼落空被破，最好另学一部经，诚心再占。"],
+          "en": ["With the writing strong and the official star thriving, one is a pillar of the royal house;", "with the Self Void and Output moving, one is a poor scholar in a hut of weeds.", "With Pressure holding the Self and the Resource line moving to give it life, (probably it should read: Resource holding the Self and Pressure moving to give life.)", "Or the Day or the Month stands on the Resource line and gives life to the Self, or the Pressure line is thriving and the Resource line holds the Self, or the Self line moves and changes into an auspicious line: all are signs of soaring and transformation.", "If the Self is Void or broken, or moves and changes into an ill line, or Output or Wealth holds the Self, or Resource and Pressure are Void or broken, it is best to study another classic and divine again with sincerity."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9822, 9822],
+          "zh": ["如：酉月丙子日(旬空：申酉)，占本经能发否？", "得“益之观”"],
+          "yi": ["例如：酉月丙子日（旬空：申、酉），占本经能不能发达？", "得「益之观」"],
+          "en": ["For example: on a Bing-Zi day in the You month (Void: Shen and You), divining whether one's own classic would bring success?", "I obtained \"Yi changing to Guan\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9872, 9874],
+          "zh": ["断曰：卦中旺官合世，不宜初爻、朱雀子水文章，皆被未土回头之克，宜于改经。", "彼问：宜改何经？", "余曰：古法有之，余占不验，意欲何经，再占一卦。", "即卜易经，得“天火同人”"],
+          "yi": ["断：卦中旺官合世，不宜初爻、朱雀子水文章，都被未土回头之克，宜于改经。", "他问：改学哪一部经？", "我说：古法有这个说法，但我占了不灵验；你想学哪一部经，再占一卦。", "就占易经，得「天火同人」"],
+          "en": ["Verdict: the strong Pressure line combines with the Self in the hexagram, but the writing, the Zi Water of the first line with the Vermilion Bird, is controlled by Wei Earth turning back on it, so it is better to change classic.", "He asked: which classic should I change to?", "I said: the old method has this, but when I divine by it it is not accurate; whichever classic you want, divine once more.", "He divined for the Changes and obtained \"Heaven over Fire, Tongren\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9882, 9882],
+          "zh": ["旺官持世，虽以为吉，但父临月破，还当再更。", "又占书经，得“丰之离”"],
+          "yi": ["旺官持世，虽然以为是吉，但父爻临月破，还应当再改。", "又占书经，得「丰之离」"],
+          "en": ["The strong Pressure line holds the Self, which would be taken as auspicious, but the Resource line stands on the Month-break and one should change again.", "He then divined for the Documents and obtained \"Feng changing to Li\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9886, 9886],
+          "zh": ["旺父持世，官动生之，只因今日子日，冲动午火伤金，此经相宜，下科壬子，冲去午火，管许高发。", "果于子科中魁。"],
+          "yi": ["旺父持世，官动生它，只因今天是子日，冲动午火伤了金，这部经相宜，下一科壬子年，冲去午火，管保高中。", "果然在子年一科中了魁首。"],
+          "en": ["The strong Resource line holds the Self and the Pressure line moves to give it life; it is only because today is a Zi day that it clashes Wu Fire and harms Metal; this classic suits him, and in the next examination, in the Ren-Zi year, Wu Fire is clashed away, which guarantees high success.", "He did indeed pass at the head in the Zi-year examination."] }
+      ],
+      "note": {
+        "yi": "这一条的例子是三个卦连着：第一卦「益之观」断为官旺合世但文章被回头克，宜改经；第二卦占易经「天火同人」，旺官持世却父爻临月破，还要再改；第三卦占书经「丰之离」，旺父持世、官动生之，只因子日冲午火，等下科壬子年冲去午火就应。「官持世、父动相生」后面的括注「疑为父持世、官动相生」是整理本里的校语（书里没有标是谁写的），照录。后面的[乾按]不收。",
+        "en": "The example is three hexagrams in a row: the first, \"Yi changing to Guan\", is judged as a strong Pressure line combining with the Self but with the writing controlled by a line turning back on it, so one should change classic; the second, for the Changes, \"Heaven over Fire, Tongren\", has a strong Pressure line holding the Self but the Resource line on the Month-break, so one must change again; the third, for the Documents, \"Feng changing to Li\", has a strong Resource line holding the Self with Pressure moving to give it life, and the only fault is that the Zi day clashes Wu Fire, which is cleared in the next examination in the Ren-Zi year. The bracketed remark \"probably Resource holding the Self and Pressure moving to give life\" after \"Pressure holding the Self, Resource moving to give life\" is a correction in the edited text (the book does not say who wrote it) and is kept. The [Qian's note] after it is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.04"]
+    },
+    {
+      "id": "LY.EXAM.ZS.06",
+      "topic": "延师",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·父爻旺相就而正焉：延师以父母爻为用神，宜旺相、临日月、动而化吉；休囚空破墓绝、动而化凶则有素食之讥无师资之益",
+      "rule": {
+        "yi": "请老师教学，以父母爻为用神：父母爻旺相、临日月、动而变吉，老师可做楷模；休囚、落空被破、入墓绝、动而变凶，老师徒有虚名，得不到益处。",
+        "en": "In engaging a teacher, the Resource line is the Subject: if it is thriving, stands on the Day or the Month, or moves and changes into an auspicious line, the teacher can be a model; if it is resting and trapped, Void or broken, in the tomb or extinct, or moves and changes into an ill line, he is a teacher in name only and there is no benefit."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9891, 9891],
+          "zh": ["父爻旺相，就而正焉。", "父母爻，既为师长，又为诗书。", "延师受教，即以此爻为用神。", "宜旺相，或临日月，及动而化吉，可式可矜。", "如若休囚、空破、墓绝、及动而化凶，有素食之讥，无师资之益。"],
+          "yi": ["父爻旺相，就可以向他求教、得到匡正。", "父母爻既代表老师，又代表诗书。", "请老师来教，就以这一爻为用神。", "宜旺相，或临日月，以及发动变出吉象，就可以做楷模、值得敬重。", "如果休囚、落空被破、入墓或绝、以及发动变凶，就会被讥为白吃饭，得不到老师的益处。"],
+          "en": ["If the Resource line is thriving, one may go to him and be set right.", "The Resource line stands both for the teacher and for the books of poetry and history.", "In engaging a teacher for instruction, take this line as the Subject.", "It should be thriving, or stand on the Day or the Month, or move and change into an auspicious line; then he can be a model and be respected.", "If it is resting and trapped, Void or broken, in a tomb or extinct, or moves and changes into an ill line, he is mocked as eating the bread of idleness, and there is no benefit from the teacher."] }
+      ],
+      "note": {
+        "yi": "「素食之讥」是「尸位素餐」的意思，白吃饭不做事；「师资之益」是从老师那里得到的帮助。",
+        "en": "\"Mocked as eating the bread of idleness\" means drawing a salary and doing nothing; \"the benefit of a teacher\" is the help one gets from the teacher."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.07",
+      "topic": "延师",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·世位相生博约善诱：父旺生合世则成人有德，克世而世得地则有责成之功，世休囚则受师尊之累",
+      "rule": {
+        "yi": "世爻和父爻相生，老师博学守约、善于诱导；父旺生合世，能造就人又有德行；父克世但世爻得地，严教也能成才；世爻休囚，会受老师的拖累。",
+        "en": "When the Self and the Resource line give each other life, the teacher is learned, restrained and good at drawing one on; if the strong Resource line gives life to or combines with the Self he makes men of his pupils and is virtuous; if it controls the Self but the Self is well placed, his stern demands still bring results; if the Self is resting and trapped, one will be burdened by the teacher."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9892, 9892],
+          "zh": ["世位相生，博约善诱。", "父旺生合世爻，成人有德；", "若克世爻，而世爻得地者，有责成人之功。", "世若休囚，必受师尊之累。"],
+          "yi": ["世爻和父爻相生，老师博学守约，善于诱导。", "父旺生合世爻，能造就人、有德行；", "如果克世爻，而世爻得地的，有严格责成而成就人的功劳。", "世爻如果休囚，必定受老师的拖累。"],
+          "en": ["When the Self and the teacher's line give each other life, the teacher is learned and restrained and skilled at drawing one on.", "If the Resource line is strong and gives life to or combines with the Self, he makes men of his pupils and is virtuous;", "if it controls the Self but the Self is well placed, he has the merit of making men through stern demands;", "if the Self is resting and trapped, one will surely be burdened by the teacher."] }
+      ],
+      "note": {
+        "yi": "「博约」出自《论语》的「博我以文，约我以礼」，意思是学问广博又守规矩；「世位相生」指世爻和父爻（老师）互相生。",
+        "en": "\"Learned and restrained\" comes from the Analects, \"he broadened me with letters and restrained me with ritual\", meaning broad learning together with discipline; \"the Self and the teacher's line give each other life\" means the Self and the Resource line (the teacher) give life to each other."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.08",
+      "topic": "延师",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·父入墓中懒于教训，财临世上懦弱不严",
+      "rule": {
+        "yi": "父爻入墓或临绝，不是老师偷安懒惰，就是老师不肯教；财爻持世，是我克了父爻，不是老师教得不严，就是老师怕被我欺凌。",
+        "en": "If the Resource line enters the tomb or rests on extinction, then unless the teacher is idly seeking ease he will not teach; if Wealth holds the Self, I control the Resource line, and if the teacher is not strict it is because he fears being bullied by me."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9894, 9894],
+          "zh": ["父入墓中，懒于教训。", "父爻入三墓，及临绝者，若非偷安懒惰，定是师不授教。", "财临世上，懦弱不严。", "财爻持世乃我克父母，若非师教不严，定是我师畏凌。"],
+          "yi": ["父爻入墓，老师懒于教导训诫。", "父爻入了三墓，以及临在绝地的，如果不是老师偷安懒惰，就一定是老师不肯传授教导。", "财爻临在世爻上，老师软弱不严厉。", "财爻持世就是我克父母爻；如果不是老师教得不严，就一定是老师怕被我欺凌。"],
+          "en": ["If the Resource line enters the tomb, the teacher is lazy about teaching and admonishing.", "If the Resource line enters one of the three tombs, or rests on the extinction stage, then unless the teacher is idly seeking ease he surely will not teach.", "If Wealth stands on the Self, the teacher is weak and not strict.", "If the Wealth line holds the Self, it is I who control the Resource line; if the teacher is not strict, he is surely afraid of being bullied by me."] }
+      ],
+      "note": {
+        "yi": "「三墓」指五行入墓的三种（火墓戌、金墓丑、木墓未，水土墓辰）；书里没有在这里列出。",
+        "en": "The \"three tombs\" are the tombs of the five phases (Fire at Xu, Metal at Chou, Wood at Wei, Water and Earth at Chen); the book does not list them here."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.09",
+      "topic": "风险",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·鬼化文书克世则讼由乎学：鬼动化父母冲克世，日后必有争讼；纵有日月动爻制服也不宜，鬼动克世、世动变凶皆不宜从",
+      "rule": {
+        "yi": "官鬼变成父母来冲克世爻，日后一定因学业上的事引出官司；就算日月、动爻能制住官鬼也不适宜，因为眼下制住了，日后官鬼逢生旺还是灾祸；凡官鬼动克世、世动变凶，都不宜跟这位老师学。",
+        "en": "If the Pressure line changes into Resource and clashes and controls the Self, a lawsuit will arise from the schooling in future; even if the Day, the Month or a moving line subdues Pressure it is unsuitable, for though it is held down for now, when Pressure later meets life and strength there will be calamity and trouble; whenever Pressure moves and controls the Self, or the Self moves into ill, it is unsuitable to follow this teacher."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9895, 9895],
+          "zh": ["鬼化文书克世，讼由乎学。", "鬼动化父母，冲克世爻，异日必主争讼。", "能使日月动爻制服鬼爻，也不相宜，此何故也？", "神兆机于动。", "目前虽可制服，他日鬼逢生旺，必见灾非。", "不唯鬼动化父，但系鬼动克世，或世动变凶，皆不宜从。"],
+          "yi": ["官鬼变成文书来克世，会因为学业上的事引起官司。", "官鬼发动变成父母，冲克世爻，将来一定有争讼。", "即使有日月、动爻能制服鬼爻，也不相宜，这是什么缘故呢？", "因为神在动处显出先兆。", "眼前虽然可以制服，日后官鬼遇到生旺，一定出现灾祸是非。", "不只是官鬼动变父母，凡是官鬼发动克世，或者世爻发动变凶，都不适宜跟这位老师学。"],
+          "en": ["If Pressure turns into the document line and controls the Self, a lawsuit will arise from the schooling.", "If the Pressure line moves and changes into Resource and clashes and controls the Self, there will surely be a quarrel and lawsuit in future.", "Even if the Day, the Month or a moving line can subdue the Pressure line, it is still unfavourable; why is that?", "Because the spirits show their omen in what moves.", "Though it can be subdued for now, when Pressure meets life and strength later, calamity and trouble will surely appear.", "Not only when Pressure moves and turns into Resource: whenever Pressure moves and controls the Self, or the Self moves and changes into an ill line, it is unsuitable to follow this teacher."] }
+      ],
+      "note": {
+        "yi": "「神兆机于动」是这一段的理由：神的先兆从动处显出来，所以被制住的鬼只是暂时按下，等它逢生旺会再起。官非的断法另见官非域。",
+        "en": "\"The spirits show their omen in what moves\" is the reason given: the omen appears in what moves, so a Pressure line that is held down is only suppressed for the moment and will rise again when it meets life and strength. Rules on lawsuits are in the lawsuit domain."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.10",
+      "topic": "延师",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·月扶世爻日助生世则青出于蓝；动衰变旺先惰后勤、动旺变衰后怠；父化父殊经、化财多病、化鬼显贵之交、化兄贪财好利",
+      "rule": {
+        "yi": "世爻旺相、父母持世或官星持世又得日月动爻生扶，学生必有长进、青出于蓝；父爻由衰变旺老师先惰后勤，由旺变衰老师后来懈怠；父化父教的经不同，化财多病，化官鬼是结交显贵的人，化兄弟是贪财好利的人。",
+        "en": "If the Self is thriving, or Resource or the official star holds the Self with the Day, the Month and moving lines giving life and support, the pupil will make progress and surpass the master; a Resource line moving from weak to strong means the teacher is lazy first then diligent, and from strong to weak, slack later; Resource turning into Resource, he teaches a different classic; into Wealth, he is often ill; into Pressure, he keeps company with the eminent; into Peer, he is greedy for money and profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9896, 9896],
+          "zh": ["月扶世爻，日助生世，青出于蓝。"],
+          "yi": ["月建扶着世爻、日辰帮着生世，学生能青出于蓝。"],
+          "en": ["If the Month supports the Self line and the Day helps give it life, the pupil will surpass the master."] },
+        { "by": "经", "book": "增删卜易", "range": [9897, 9897],
+          "zh": ["世爻旺相，或父母持世，或官星持世、日月动爻生扶，及世爻动而化吉，必有进益，青出于蓝。", "动衰变旺，先惰后勤；", "动旺变衰，后勤后怠。"],
+          "yi": ["世爻旺相，或者父母持世，或者官星持世、日月和动爻来生扶，以及世爻发动变出吉象，一定有长进，青出于蓝。", "从衰的发动变旺，先懒后勤；", "从旺的发动变衰，先勤后怠。"],
+          "en": ["If the Self line is thriving, or Resource holds the Self, or the official star holds the Self with the Day, the Month and moving lines giving life and support, or the Self moves and changes into an auspicious line, there will surely be progress and the pupil will surpass the master.", "Moving from weak to strong, first lazy then diligent;", "moving from strong to weak, first diligent then slack."] },
+        { "by": "经", "book": "增删卜易", "range": [9898, 9898],
+          "zh": ["父爻衰，而化生、化旺、化日月、化进神，皆主后勤；", "父爻旺，而化空破墓绝、化退神，皆主后怠。", "父化父而殊经，父化财而多病。", "父化鬼显贵之交；", "父化兄贪财好利。"],
+          "yi": ["父爻衰，但变成长生、变旺、变成日月、变进神，都主老师后来勤勉；", "父爻旺，却变空、变破、变墓、变绝、变退神，都主老师后来懈怠。", "父爻变父爻，老师教的经和别人不同；父爻变财，老师多病。", "父爻变官鬼，是和显贵交往的人；", "父爻变兄弟，是贪财好利的人。"],
+          "en": ["If the Resource line is weak but changes into Birth, into strength, into the Day or the Month, or into an Advancing line, all indicate that the teacher becomes diligent later;", "if the Resource line is strong but changes into Void, break, tomb, extinction or a Retreating line, all indicate that he becomes slack later.", "Resource turning into Resource: he teaches a different classic; Resource turning into Wealth: he is often ill.", "Resource turning into Pressure: he is a man who keeps company with the eminent;", "Resource turning into Peer: he is greedy for money and profit."] }
+      ],
+      "note": {
+        "yi": "原文「动旺变衰，后勤后怠」的「后勤」应是「先勤」之误（与前一句「先惰后勤」对仗，下面一条也说「父爻旺而化空破墓绝、化退神，皆主后怠」），译文按「先勤后怠」译。「殊经」是教的经和一般的不同，书里没有说是什么经。",
+        "en": "In the line \"moving from strong to weak, diligent later, slack later\" the first \"later\" is a slip for \"first\" (it balances the line before, \"lazy first, diligent later\", and the next entry says that a strong Resource line changing into Void, break, tomb, extinction or a Retreating line indicates slackness later); the translation reads it as \"first diligent, then slack\". \"A different classic\" means the classic he teaches is not the usual one; the book does not say which."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.11",
+      "topic": "延师",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·三合连年受教，六冲半载难留：世、父爻加日月成三合则情同父子受连年之教，卦得六冲或世克父、父克世则难收一岁之功",
+      "rule": {
+        "yi": "世爻、父爻再加日月成三合，师生情同父子，会受连年教导；卦成六冲，或世爻克父爻、父爻克世爻，彼此不投缘，连一年的成效也难收到。",
+        "en": "If the Self and Resource lines together with the Day or the Month form a three-harmony, teacher and pupil are as close as father and son and he is taught year after year; if the hexagram is a Six-Clash, or the Self controls the Resource line or the Resource line controls the Self, they do not get on and even a year's result is hard to gain."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9899, 9899],
+          "zh": ["三合连年受教，六冲半载难留。"],
+          "yi": ["三合，连年受教；六冲，半年也难留住。"],
+          "en": ["With a three-harmony one is taught year after year; with a Six-Clash not even half a year can be kept."] },
+        { "by": "经", "book": "增删卜易", "range": [9900, 9900],
+          "zh": ["世与父爻，兼日月作三合者，情同父子，必受连年之教，门墙始终成就。", "卦得六冲，或世克父爻，及父爻克世者，彼此不投，难收一岁之功。"],
+          "yi": ["世爻和父爻，再加日月构成三合的，师生情同父子，必定受连年的教导，门下始终有所成就。", "卦成六冲，或者世爻克父爻，以及父爻克世爻的，彼此不投缘，难有一年的成效。"],
+          "en": ["If the Self and Resource lines, together with the Day or the Month, form a three-harmony, teacher and pupil are close as father and son, he will surely be taught year after year, and his studies will be accomplished in the end.", "If the hexagram is a Six-Clash, or the Self controls the Resource line or the Resource line controls the Self, they do not get on, and it is hard to gain even a year's result."] }
+      ]
+    },
+    {
+      "id": "LY.EXAM.ZS.12",
+      "topic": "延师",
+      "chapter": "延师章",
+      "chapter_en": "The chapter on engaging a teacher",
+      "title": "延师章·为子延师：应为西席、世为东家，宜世应相生合；应生世我得益、应空破延之不来、应动他心有变、世空我意不专；父旺与子孙合名实兼收，父动伤子孙、子动化克不宜延、子动化鬼速谢辞（觉子；附例）",
+      "rule": {
+        "yi": "为儿子请老师：应爻是老师、世爻是东家，宜世应相生相合，不宜相克相冲；应生世我得益，应空破请不来，应动他有变心，世空我自己心意不专。觉子补充：父爻旺又和子孙相合，名实都有；父动伤克子孙，有损无益；子孙动变克，不宜聘请；子孙动变官鬼，应赶快辞退。",
+        "en": "In engaging a teacher for one's son: the Other is the teacher and the Self is the host; the Self and Other should give life to and combine with each other and not control or clash; if the Other gives life to the Self I gain, if the Other is Void or broken he will not come, if the Other moves he has a change of mind, if the Self is Void my own mind is not set. Juezi adds: a strong Resource line combining with Output gains both name and substance; if Resource moves and harms Output there is harm and no gain; if Output moves and changes into control the man should not be engaged; if Output moves and changes into Pressure he should be thanked and dismissed quickly."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9901, 9901],
+          "zh": ["父为子而延师者，应为西席，世乃东家，宜世应相生相合，不宜相克相冲。", "应生世，我得其益；", "应空破，延之不来；", "应动，他心有变；", "世空，我意不专。"],
+          "yi": ["做父亲的为儿子请老师：应爻是西席（老师），世爻是东家，宜世应相生相合，不宜相克相冲。", "应生世，我得到他的益处；", "应爻落空被破，请他也请不来；", "应爻动，他心里有变化；", "世爻空，我自己心意不专。"],
+          "en": ["A father engaging a teacher for his son: the Other is the guest in the west seat (the teacher) and the Self is the host; the Self and Other should give life to and combine with each other, and not control or clash with each other.", "If the Other gives life to the Self, I gain from him;", "if the Other is Void or broken, he will not come when invited;", "if the Other moves, he has a change of mind;", "if the Self is Void, my own mind is not set."] },
+        { "by": "觉子", "book": "增删卜易", "range": [9903, 9903],
+          "zh": ["觉子曰：虽以世应为主，父爻必不可缺，父旺与子孙相合，名实兼收。", "父动伤克子孙，无益有损；", "子动化克，不宜延请；", "子动化鬼，当速谢辞。"],
+          "yi": ["觉子说：虽然以世应为主，父爻一定不可缺少；父爻旺又和子孙相合，名和实都得到。", "父爻动而伤克子孙，没有益处反有损害；", "子孙动而变克，不宜聘请；", "子孙动而变官鬼，应当赶快谢绝辞退。"],
+          "en": ["Juezi says: although the Self and Other are the main thing, the Resource line must not be missing; if it is strong and combines with Output, both name and substance are gained.", "If the Resource line moves and harms Output, there is no benefit and harm instead;", "if Output moves and changes into control, he should not be engaged;", "if Output moves and changes into Pressure, he should be thanked and dismissed quickly."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9904, 9904],
+          "zh": ["如：寅月戊午日(旬空：子丑)，占子从师，得“旅之离”"],
+          "yi": ["例如：寅月戊午日（旬空：子、丑），占儿子拜师，得「旅之离」"],
+          "en": ["For example: on a Wu-Wu day in the Yin month (Void: Zi and Chou), divining for a son taking a teacher, I obtained \"Lü changing to Li\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9910, 9910],
+          "zh": ["子动化克，不宜从之。", "不听，后因师责，逃至桥头，跌折左足。"],
+          "yi": ["子孙动而变克，不宜跟从他。", "不听，后来因为老师责罚，逃到桥头，跌断了左脚。"],
+          "en": ["Output moves and changes into control: it is unsuitable to follow him.", "He did not heed it, and afterwards, because the teacher reproved him, he ran off to the bridge and broke his left foot in a fall."] }
+      ],
+      "note": {
+        "yi": "「西席」「东家」是旧时请私塾先生的说法：老师坐西席，主人是东家。这里主人是父亲，所以世爻是父亲（东家），儿子拜师时看子孙爻。前面「延师受教，以父母爻为用神」是自己拜师的取法；这一条是父亲为儿子请老师，多看世应，再加子孙爻。后面的[乾按]不收。",
+        "en": "\"The west seat\" and \"the host\" are the old way of speaking of hiring a private-school teacher: the teacher sits in the west seat and the master of the house is the host. Here the master is the father, so the Self is the father; when the son takes a teacher, the Output line is also looked at. The earlier line, \"in engaging a teacher for instruction take the Resource line as the Subject\", is for a man taking a teacher himself; this one is for a father engaging a teacher for his son, so the Self and Other are looked at first, with the Output line added. The [Qian's note] after it is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.06"]
+    },
+    {
+      "id": "LY.EXAM.ZS.13",
+      "topic": "小考",
+      "chapter": "求名章",
+      "chapter_en": "The chapter on seeking a name",
+      "title": "求名章·占小考须先占县考、再占府考、又占道考，都得吉卦才许榜上有名；内有一卦不吉，勿望道考成名（野鹤）",
+      "rule": {
+        "yi": "占小考（县考、府考、道考这几关），神应近不应远，一卦吉只应在府县有名；所以要先占县考，再占府考，又占道考，三卦都吉才可以说榜上有名，有一卦不吉，就别指望道考成名。",
+        "en": "For the minor examinations (the county, prefecture and circuit examinations): the spirits answer what is near and not what is far, so one auspicious hexagram answers only for the name being on the county or prefecture list; one must divine the county examination first, then the prefecture, then the circuit, and only when all three are auspicious may one say the name will be on the list; if one of them is not auspicious, do not hope for fame at the circuit examination."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [9916, 9916],
+          "zh": ["野鹤曰：或问凡占小考，尝见卜得吉卦，后竟道考无名者，何也？", "余曰：神每应近而不应远，已吉卦者，乃应府县之有名也，故凡占小考者，必须先占县考，再占府考，又占道考，俱得吉卦者，许之榜上有名。", "内有一卦而不吉者，勿望道考而成名也。"],
+          "yi": ["野鹤说：有人问，凡是占小考，常常看到占得吉卦，后来竟然道考没有名字，这是为什么？", "我说：神常常应近的、不应远的，已经得吉卦的，是应在府县有名；所以凡是占小考的，必须先占县考，再占府考，又占道考，都得吉卦的，才许他榜上有名。", "其中有一卦不吉的，不要指望道考能成名。"],
+          "en": ["The Old Man of Yehe says: someone asked, \"In divining for the minor examinations I have often seen an auspicious hexagram obtained and then the name still did not appear at the circuit examination; why is that?\"", "I said: the spirits usually answer what is near and not what is far; an auspicious hexagram already obtained answers that the name will be on the county and prefecture lists; so for the minor examinations one must first divine the county examination, then the prefecture examination, then the circuit examination, and only if all give auspicious hexagrams may one say that the name will be on the list.", "If any one of them is not auspicious, do not hope for fame at the circuit examination."] }
+      ],
+      "note": {
+        "yi": "「小考」是科举里考秀才之前的考试：县考、府考、道考（道是提学道，管一省学政的官），考过才得进县学成生员。这一条是野鹤自己的说明，[乾按]说「若以一卦而断数考必大谬」，是今人按语，不收。",
+        "en": "The \"minor examinations\" are the examinations before the one that makes a licentiate: the county, prefecture and circuit examinations (the circuit being the education intendant who ran the schools of a province); passing them lets one enter the county school and become a student. This is the Old Man of Yehe's own explanation; the [Qian's note] saying that judging several examinations by one hexagram is a great mistake is a modern comment and is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.14"]
+    },
+    {
+      "id": "LY.EXAM.ZS.14",
+      "topic": "小考",
+      "chapter": "童试章",
+      "chapter_en": "The chapter on the youth examinations",
+      "title": "童试章·父旺官兴堪期首选、官衰父发亦论抡收；官星持世得日月动爻生合首选无疑；父爻持世得生合还要官星有气始许成名",
+      "rule": {
+        "yi": "童试：父爻旺、官星兴，可期名列榜首；官衰而父爻发动，也算能被选中；官星持世，得日月动爻相生相合，首选没有疑问；父爻持世得生合，一定要官星有气，才许成名。",
+        "en": "In the youth examinations: with the Resource line strong and the official star thriving one may hope to be first; with the official star weak but the Resource line moving one is still counted as selected; with the official star holding the Self and the Day, the Month and moving lines giving it life and combining with it, being first is beyond doubt; with the Resource line holding the Self and given life and combination, the official star must also have breath before one may win a name."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9921, 9921],
+          "zh": ["父旺官兴，堪期首选，官衰父发，亦论抡收。", "官星持世，得日月动爻相生相合，首选无疑。", "父爻持世，得日月动爻生合者，必要官星有气，始许成名。"],
+          "yi": ["父爻旺、官星兴，可以期望名列榜首；官衰而父爻发动，也算能被选中。", "官星持世，得到日月、动爻相生相合，名列榜首没有疑问。", "父爻持世，得到日月、动爻生合的，一定要官星有气，才许成名。"],
+          "en": ["With the Resource line strong and the official star thriving, one may hope to be chosen first; with the official star weak but the Resource line moving, one is still counted as selected.", "If the official star holds the Self and the Day, the Month and the moving lines give it life and combine with it, being first on the list is beyond doubt.", "If the Resource line holds the Self and the Day, the Month and moving lines give life to and combine with it, the official star must also have breath before one may win a name."] }
+      ],
+      "note": {
+        "yi": "「童试」是考秀才之前的各级考试（县试、府试、院试）；「首选」「抡收」是被选中、取中。官星就是官鬼。",
+        "en": "The \"youth examinations\" are the examinations before the one that makes a licentiate; \"chosen first\" and \"selected\" mean being picked and admitted. The official star is the Pressure line."
+      },
+      "see": ["LY.EXAM.ZS.13", "LY.EXAM.ZS.15"]
+    },
+    {
+      "id": "LY.EXAM.ZS.15",
+      "topic": "小考",
+      "chapter": "童试章",
+      "chapter_en": "The chapter on the youth examinations",
+      "title": "童试章·子兴财发于卦中难游泮水；子动克官、财动克父、或持于世爻者皆不宜",
+      "rule": {
+        "yi": "童试时子孙兴旺、财爻发动在卦中，难以入县学；子孙动克官星、财爻动克父爻，或者子孙、财爻持在世爻上，都不适宜。",
+        "en": "In the youth examinations, if Output flourishes and Wealth moves in the hexagram it is hard to enter the county school; Output moving and controlling Pressure, or Wealth moving and controlling Resource, or either of them holding the Self line, is unfavourable in every case."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9922, 9922],
+          "zh": ["子兴财发于卦中，难游泮水。", "子动克官，财动克父，或持于世爻者，皆为不宜。"],
+          "yi": ["子孙兴旺、财爻发动在卦中，难以入县学。", "子孙动克官，财爻动克父爻，或者持在世爻上的，都不适宜。"],
+          "en": ["If Output flourishes and Wealth moves in the hexagram, it is hard to enter the county school.", "Output moving and controlling Pressure, or Wealth moving and controlling the Resource line, or either holding the Self line, is unfavourable in every case."] }
+      ],
+      "note": {
+        "yi": "「游泮水」是入县学成生员（旧时县学前有泮池，新生入学要行礼，叫「游泮」）。子孙克官星、财爻克父爻是考试里最忌的两种克：官星管功名，父爻管文章。",
+        "en": "\"Swimming in the Pan pond\" is entering the county school and becoming a student (the county school had a ceremonial pond, and new students performed a rite there). Output controlling the official star and Wealth controlling the Resource line are the two most feared controls in examinations: the official star governs rank and the Resource line governs the writing."
+      },
+      "see": ["LY.EXAM.ZS.14"]
+    },
+    {
+      "id": "LY.EXAM.ZS.16",
+      "topic": "小考",
+      "chapter": "童试章",
+      "chapter_en": "The chapter on the youth examinations",
+      "title": "童试章·世破身空兼墓绝再奋芸窗；文旺遭伤收而复弃，冲中逢合弃而仍收；父母旺相化休囚空破墓绝、回头克或被冲克则始取终弃（附例：官星月破伏藏、飞神合破，择三月考之必取）",
+      "rule": {
+        "yi": "世爻被破、卦身落空又入墓逢绝，不能遂愿，只好再苦读；文章旺却遭伤害，先收取后舍弃；父母爻旺相却变休囚、空破、墓绝、回头克或被冲克，是开始被取、最后被弃；世爻、父爻动而遇冲，若得日月动爻相合，叫冲中逢合，一定续取。",
+        "en": "With the Self broken, the Body Void and moreover in the tomb or extinct, one cannot fulfil one's aim and must work hard again at the study window; with the writing strong but harmed, one is taken and then cast aside; if the Resource line is thriving but changes into resting and trapped, Void or broken, tomb, extinction or a line that turns back to control it, or is clashed and controlled, one is taken at first and cast aside in the end; if the Self and Resource lines move and meet a clash but the Day, the Month or a moving line combines with them, this is a combination within a clash and one will surely be taken afterwards."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9923, 9924],
+          "zh": ["世破身空兼墓绝，再奋芸窗。", "世爻空破墓绝，或被日月动爻冲克，及动而变凶者，不能遂志。", "文旺遭伤，收而复弃，冲中逢合，弃而仍收。", "父母旺相，若化休囚、空破、墓绝，化回头克，及被冲克者，始取终弃。", "世与父爻，动而逢冲，若得日月动爻相合者，谓之冲中逢合，定获续取。"],
+          "yi": ["世爻被破、卦身落空，又兼入墓、逢绝，只好再发奋读书。", "世爻落空、被破、入墓、逢绝，或者被日月、动爻冲克，以及发动变凶的，不能遂愿。", "文章旺却遭伤害，先收取后又舍弃；冲中逢合，舍弃了还会再收取。", "父母爻旺相，如果变成休囚、落空被破、入墓逢绝，变出回头克，以及被冲克的，开始被取、最终被弃。", "世爻和父爻发动后遇冲，如果又得日月、动爻来合，叫做冲中逢合，一定能获得续取。"],
+          "en": ["With the Self broken, the Body Void, and moreover in the tomb or extinct, one must work hard again at the study window.", "If the Self is Void, broken, in the tomb or extinct, or is clashed and controlled by the Day, the Month or a moving line, or moves and changes into an ill line, one cannot fulfil one's aim.", "If the writing is strong but harmed, one is taken in and then cast aside; with a combination found within a clash, one cast aside is taken in again.", "If the Resource line is thriving but changes into resting and trapped, Void or broken, tomb or extinction, or into a line that turns back to control it, or is clashed and controlled, one is taken at first and cast aside in the end.", "If the Self and Resource lines move and meet a clash, but the Day, the Month or a moving line combines with them, this is called a combination within a clash, and one will surely be taken in afterwards."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9963, 9963],
+          "zh": ["又如：卯月壬子日(旬空：寅卯)，占道考，得“风天小畜”"],
+          "yi": ["再如：卯月壬子日（旬空：寅、卯），占道考，得「风天小畜」"],
+          "en": ["Another example: on a Ren-Zi day in the Mao month (Void: Yin and Mao), divining for the circuit examination, I obtained \"Wind over Heaven, Xiaochu\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9990, 9990],
+          "zh": ["世子水父母临日建，旺文持世，佳作定然得意，但不宜酉金官星临月破，伏藏不露，幸得辰土作飞神，破而逢合，若在三月考之，必取。", "果考于三月，取之。"],
+          "yi": ["世爻是子水，父母爻临日建，旺相的文章持世，佳作一定得意；只是不宜酉金官星临月破、又伏藏不现；幸好有辰土做飞神，破了又逢合，如果在三月考，必定录取。", "果然考试在三月，被录取了。"],
+          "en": ["The Self is Zi Water and the Resource line stands on the Day; a strong writing holds the Self and a fine essay will surely be admired; but it is unfortunate that the Pressure line of You Metal stands on the Month-break and lies hidden and unseen; luckily Chen Earth is its flying line, so what is broken meets a combination, and if the examination is held in the third month he will surely be taken.", "The examination was indeed held in the third month and he was taken."] }
+      ],
+      "note": {
+        "yi": "「冲中逢合」是被冲的爻又遇到来合它的日月或动爻，冲的力量被合化解。例子里说官星酉金月破又伏藏，辰土（飞神）和酉合（辰酉合），所以破而逢合，断为「在三月考之必取」。第 2 句里「再奋芸窗」「始取终弃」是榜上被取、后又被除名的情形。",
+        "en": "A \"combination within a clash\" is a clashed line meeting a Day, Month or moving line that combines with it, the combination resolving the clash. In the example the official star You Metal is on the Month-break and hidden, and Chen Earth, its flying line, combines with You (Chen and You combine), so what is broken meets a combination, and the verdict is that if the examination is in the third month he will be taken. \"Taken at first and cast aside in the end\" is the case of being admitted and later struck from the list."
+      },
+      "see": ["LY.EXAM.ZS.17"]
+    },
+    {
+      "id": "LY.EXAM.ZS.17",
+      "topic": "动变",
+      "chapter": "童试章",
+      "chapter_en": "The chapter on the youth examinations",
+      "title": "童试章·父衰变旺愈出愈奇、文化退神日长日短：父衰动化旺、回头生、进神则后胜于前，皆不宜化退神；旺化退神前篇稍遂后劲不力，衰化退神窗下千日之长临场一日之短（附例）",
+      "rule": {
+        "yi": "父爻衰而发动变旺、变回头生、变进神，文章越写越好，后胜于前；最不宜变退神：旺的变退神，前面顺利后劲不足；衰的变退神，以及变克、变空破墓绝、变回头克，是窗下千日用功、临场一日不济。",
+        "en": "If the Resource line is weak and moves to change into strength, into a line that turns back to give it life, or into an Advancing line, the writing grows better as it goes and the later is better than the earlier; a change into a Retreating line is what is most unwelcome: a strong line changing into a Retreating line goes well at first but lacks force later; a weak line changing into a Retreating line, or into control, or into Void, break, tomb or extinction, or into a line that turns back to control it, means a thousand days of work at the window and one day that falls short in the hall."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [9925, 9925],
+          "zh": ["父衰变旺，愈出愈奇；", "文化退神，日长日短。", "父衰，动而化旺，及化回头生、化进神，文章得意，后胜于前，皆不宜化退神。", "旺化退神者，前篇稍遂，后劲不力；", "衰化退神者，及化克、化空破墓绝，或化回头克者，窗下千日之长，临场一日之短。"],
+          "yi": ["父爻衰而变旺，文章越写越奇；", "文章变成退神，平日用功的日子长，临场的那一天却短（不济）。", "父爻衰，发动变旺，以及变回头生、变进神，文章得意，后面胜过前面，都不适宜变退神。", "旺的变退神，前面的文章还算顺利，后劲不足；", "衰的变退神，以及变克、变空破墓绝，或者变回头克的，是窗下千日之长、临场一日之短。"],
+          "en": ["If the Resource line is weak and changes into strength, the more he writes the more striking it is;", "if the writing turns into a Retreating line, the days of study are long but the day of the test falls short.", "If the Resource line is weak and moves to change into strength, or into a line that turns back to give it life, or into an Advancing line, the writing is admired and the later is better than the earlier; in none of these should it change into a Retreating line.", "A strong line changing into a Retreating line: the earlier essays go fairly well but the later force is weak;", "a weak line changing into a Retreating line, or into control, or into Void, break, tomb or extinction, or into a line that turns back to control it: a thousand days at the window are long, one day in the hall falls short."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9926, 9926],
+          "zh": ["如：亥月丙戌日(旬空：午未)，占道考，得“丰之革”"],
+          "yi": ["例如：亥月丙戌日（旬空：午、未），占道考，得「丰之革」"],
+          "en": ["For example: on a Bing-Xu day in the Hai month (Void: Wu and Wei), divining for the circuit examination, I obtained \"Feng changing to Ge\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9963, 9963],
+          "zh": ["父母持世化进神，日建作官而生世，文章愈出愈奇，后胜于前，定然首取。", "后果取案首。"],
+          "yi": ["父母爻持世，变出进神，日建又做官星来生世，文章越写越奇，后面胜过前面，一定榜首录取。", "后来果然取了案首。"],
+          "en": ["The Resource line holds the Self and changes into an Advancing line, and the Day acts as the official star to give life to the Self; the writing grows more striking as it goes, the later better than the earlier, so he will surely be taken first.", "Afterwards he was indeed taken at the head of the list."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9991, 9991],
+          "zh": ["又如：辰月丁巳日（旬空：子丑），占续案能取否？", "得“革之既济”"],
+          "yi": ["再如：辰月丁巳日（旬空：子、丑），占续案能不能被取？", "得「革之既济」"],
+          "en": ["Another example: on a Ding-Si day in the Chen month (Void: Zi and Chou), divining whether one would be taken in the supplementary list?", "I obtained \"Ge changing to Jiji\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10021, 10021],
+          "zh": ["世爻亥水，月克日冲，幸化回头之生，续取无疑。", "果续取之。", "前说父衰变旺为吉，此其验也。"],
+          "yi": ["世爻是亥水，被月建克、日辰冲，幸好变出回头生它的爻，续取没有疑问。", "果然续取了。", "前面说父爻衰变旺为吉，这就是它的应验。"],
+          "en": ["The Self is Hai Water, controlled by the Month and clashed by the Day, but luckily it changes into a line that turns back to give it life, so being taken in the supplementary list is beyond doubt.", "He was indeed taken.", "What I said earlier, that a weak Resource line changing to strength is auspicious, is proved here."] }
+      ],
+      "note": {
+        "yi": "「进神」「退神」是同一五行往前、往后变（寅化卯是进，卯化寅是退）；「日长日短」书里自己解释为「窗下千日之长，临场一日之短」。「续案」是第一榜之后补取的名单。第二个例子在上一条（LY.EXAM.ZS.16）里。",
+        "en": "An \"Advancing\" or \"Retreating\" line is the same phase changing forward or back (Yin turning into Mao is advancing, Mao into Yin retreating); the book itself explains \"the days long, the day short\" as \"a thousand days at the window are long, one day in the hall falls short\". The \"supplementary list\" is the list of those taken after the first posting. The second example is under the previous entry (LY.EXAM.ZS.16)."
+      },
+      "see": ["LY.EXAM.ZS.16"]
+    }
+  ]
+}

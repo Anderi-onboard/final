@@ -1,0 +1,268 @@
+{
+  "shushu": "六爻",
+  "domain": "考试",
+  "work": "卜筮正宗",
+  "chapter": "十八论、启蒙节要、十八问答里与考试有关的条文",
+  "chapter_en": "Passages on examinations from the Eighteen Treatises, the Qimeng Jieyao and the Eighteen Questions",
+  "ranges": {"卜筮正宗": [197, 5385]},
+  "units": [
+    {
+      "id": "LY.EXAM.BSZZ.01",
+      "topic": "总则",
+      "chapter": "十八论·一、用神分类定例",
+      "chapter_en": "Eighteen treatises, no. 1: the standard assignment of the Subject",
+      "title": "十八论·用神分类定例：考试里要看的人和物各有各的用神——功名官府取官鬼，师长、文章、馆室取父母，门生取子孙，结盟同寅和知交朋友取兄弟",
+      "rule": {
+        "yi": "考试这件事里，先要定下来看哪一爻：问功名（考中、做官），用神是官鬼爻；问老师、文章、奏章、读书的馆舍，用神是父母爻；问学生（门生），用神是子孙爻；问结拜兄弟、同僚和知交朋友，用神是兄弟爻。",
+        "en": "In an examination reading one first settles which line to watch: for success in the examinations and in office the Subject is the Pressure line; for a teacher, an essay, a memorial or the study hall the Subject is the Resource line; for pupils the Subject is the Output line; for sworn brothers, colleagues and close friends the Subject is the Peer line."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [949, 949], "literal": ["兄弟"],
+          "zh": ["凡占功名、官府、雷电、鬼神、丈夫、夫之兄弟同辈及夫之相与朋友，乱臣、盗贼、邪祟、忧疑、病症、尸首、逆风，俱以官鬼爻为用神。"],
+          "yi": ["凡是占问功名、官府、雷电、鬼神、丈夫、丈夫的同辈兄弟和丈夫相交的朋友，以及乱臣、盗贼、邪祟、忧虑疑难、病症、尸首、逆风，全都以官鬼爻为用神。"],
+          "en": ["Whenever one asks about success in the examinations and in office, government offices, thunder and lightning, ghosts and spirits, a husband, the brothers of the husband's own generation and the friends he keeps, or about rebellious ministers, thieves and bandits, evil hauntings, worry and doubt, illness, a corpse or an adverse wind, the Pressure line is in every case the Subject."] },
+        { "by": "经", "book": "卜筮正宗", "range": [948, 948],
+          "zh": ["凡占祖父母、父母、师长、家主、伯叔、姑姨，与我父母同辈与父母年若之亲友，及墙城、宅舍、舟车、衣服、雨具、求雨、细布、毡货、章奏、文章、馆室，俱以父母爻为用神。"],
+          "yi": ["凡是占问祖父母、父母、老师、一家之主、伯叔、姑姨，以及和我父母同辈、年纪和我父母相当的亲友，还有城墙、住宅、船车、衣服、雨具、求雨、细布、毡货、奏章、文章、馆舍，全都以父母爻为用神。"],
+          "en": ["Whenever one asks about grandparents, parents, teachers, the head of the household, paternal uncles, aunts, and relatives and friends of my parents' own generation and age, or about city walls, dwellings, boats and carts, clothing, rain gear, praying for rain, fine cloth, felt goods, memorials to the throne, essays or a lodging hall, the Resource line is in every case the Subject."] },
+        { "by": "经", "book": "卜筮正宗", "range": [952, 952],
+          "zh": ["凡占儿、女、孙、侄、女婿、门生、忠臣、良将、药材、僧、道、六畜、禽鸟、顺风、解忧避祸，及问天时日月星斗，俱以子孙爻为用神。"],
+          "yi": ["凡是占问儿子、女儿、孙辈、侄辈、女婿、门生、忠臣、良将、药材、僧人、道士、六畜、禽鸟、顺风、解忧避祸，以及问天气里的日月星斗，全都以子孙爻为用神。"],
+          "en": ["Whenever one asks about sons, daughters, grandchildren, nephews and nieces, a son-in-law, disciples, loyal ministers, good generals, medicinal herbs, monks, Daoists, the six domestic animals, birds, a following wind, or dispelling worry and avoiding misfortune, or about the weather, the sun, moon, stars and constellations, the Output line is in every case the Subject."] },
+        { "by": "经", "book": "卜筮正宗", "range": [950, 950],
+          "zh": ["凡占兄弟姊妹、姊妹丈夫、妻之兄弟、世兄弟、结盟同寅及知交朋友，俱以兄弟爻为用神。"],
+          "yi": ["凡是占问兄弟姊妹、姊妹的丈夫、妻子的兄弟、世交的兄弟、结盟的同僚和知交朋友，全都以兄弟爻为用神。"],
+          "en": ["Whenever one asks about brothers and sisters, a sister's husband, a wife's brothers, brothers by old family ties, sworn colleagues and close friends, the Peer line is in every case the Subject."] }
+      ],
+      "note": {
+        "yi": "同一节原文还把嫂子、弟媳、妻妾、朋友的妻妾和仆婢、物价、钱财、珠宝、金银、仓库、钱粮、杂物、器皿和天晴都归给妻财爻，考试里用不上，这里没有收；妻财爻在考试里是父母（文章）的克神，见 LY.EXAM.HJC.17。",
+        "en": "The same section also gives sisters-in-law, wives and concubines, the wives, concubines and servants of friends, prices, money, jewels, gold and silver, treasuries, stores, miscellaneous goods, utensils and clear weather to the Wealth line; none of this is used in examinations and it is not included. In an examination the Wealth line is the controller of the Resource line (the essay): see LY.EXAM.HJC.17."
+      },
+      "see": ["LY.EXAM.HJC.16", "LY.EXAM.HJC.01", "LY.EXAM.ZS.06"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.02",
+      "topic": "成否",
+      "chapter": "启蒙节要·四十六、六亲发动诀",
+      "chapter_en": "Qimeng Jieyao, no. 46: the verse on the moving of the six relations",
+      "title": "启蒙节要·六亲发动诀·父母发动：父动当头克子孙，士人科举登金榜",
+      "rule": {
+        "yi": "父母爻（文书）发动，当头克制子孙时，读书人应科举能登上金榜。同一诀里还说，父母发动时，等远行的人、盼书信会有动静；打官司下状子，先把是非分清；失物、逃亡要靠告状评理才能了结。",
+        "en": "When the Resource line (the document line) moves and squarely controls Output, a scholar sitting the civil examinations is placed on the golden list. The same verse adds that with Resource moving, a traveller or a letter being waited for shows movement, a plaint filed in a lawsuit first sorts out right from wrong, and lost goods or a runaway have to be pleaded for in court."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [254, 254],
+          "zh": ["父动当头克子孙，"],
+          "yi": ["父母爻发动，当头克制子孙，"],
+          "en": ["Resource moving and squarely controlling Output,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [254, 254],
+          "zh": ["观望行人书信动，", "论官下状理先分，", "士人科举登金榜，", "失物逃亡要诉论。"],
+          "yi": ["等候远行的人、盼书信，都有动静；", "说到官司，下状子，先把是非分清；", "读书人应科举，登上金榜；", "失物、逃亡，要靠告状评理。"],
+          "en": ["for a traveller or a letter being waited for, there is movement;", "in a lawsuit, when the plaint is filed, right and wrong are sorted out first;", "a scholar sitting the civil examinations is placed on the golden list;", "for lost goods or a runaway, one must plead the case in court."] }
+      ],
+      "note": {
+        "yi": "这一诀中间三句（病人无药、婚姻子息、买卖劳心）说的是别的事，这里没有收。",
+        "en": "The three lines in the middle of this verse (the sick without medicine, marriage and offspring, trade that wears out the mind) speak of other matters and are not included here."
+      },
+      "see": ["LY.EXAM.HJC.16", "LY.EXAM.ZS.31"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.03",
+      "topic": "成否",
+      "chapter": "启蒙节要·四十六、六亲发动诀",
+      "chapter_en": "Qimeng Jieyao, no. 46: the verse on the moving of the six relations",
+      "title": "启蒙节要·六亲发动诀·子孙发动：子孙发动伤官鬼，谒贵求名休进用，劝君守分听乎天",
+      "rule": {
+        "yi": "子孙爻发动，会伤官鬼；这时拜见贵人、求功名都不宜往前进取，诀劝人守住本分、听凭天意。同一诀里，子孙发动对别的事是吉的：病人求医就痊愈，出门人和做买卖的平安，婚姻美满，产妇生子好养，官司私下和解不到官府。",
+        "en": "When the Output line moves it wounds Pressure; then calling on a patron or seeking a title should not press forward, and the verse urges one to keep to one's lot and leave it to Heaven. The same verse treats a moving Output as good for other matters: the sick who seek a physician recover, travellers and traders are safe, a marriage is a happy one, a woman in labour bears a child easy to rear, and a lawsuit is settled privately without reaching the court."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [255, 255],
+          "zh": ["子孙发动伤官鬼，"],
+          "yi": ["子孙爻发动，伤了官鬼，"],
+          "en": ["Output moving and wounding Pressure,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [255, 255],
+          "zh": ["产妇当生子易养，", "词讼私和不到官，", "谒贵求名休进用，", "劝君守分听乎天。"],
+          "yi": ["产妇临产，生下的孩子好养；", "官司私下和解，不到官府；", "拜见贵人、求功名，不要进取；", "劝你守住本分，听凭天意。"],
+          "en": ["a woman in childbirth bears a child easy to rear;", "a lawsuit is settled privately and does not reach the court;", "calling on a patron and seeking a title should not press forward;", "I urge you to keep to your lot and leave it to Heaven."] }
+      ],
+      "note": {
+        "yi": "诀的中间三句（病人求医、出门做买卖、婚姻）说的是别的事，这里没有收。",
+        "en": "The three lines in the middle of this verse (the sick who seek a physician, travelling and trade, marriage) speak of other matters and are not included here."
+      },
+      "see": ["LY.EXAM.HJC.17", "LY.EXAM.ZS.15"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.04",
+      "topic": "成否",
+      "chapter": "启蒙节要·四十六、六亲发动诀",
+      "chapter_en": "Qimeng Jieyao, no. 46: the verse on the moving of the six relations",
+      "title": "启蒙节要·六亲发动诀·财爻发动：财爻发动克文书，应举求名总是虚",
+      "rule": {
+        "yi": "财爻发动，克住父母文书：应考、求名总是落空。同一诀里，财动对别的事是吉的：拿本钱经营大吉，亲戚婚姻如意。",
+        "en": "When the Wealth line moves and controls the document line, sitting the examinations and seeking a title all come to nothing. The same verse says a moving Wealth line is good elsewhere: trading with capital is greatly auspicious and marriages and family ties go as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [257, 257],
+          "zh": ["财爻发动克文书，", "应举求名总是虚，", "将本经营为大吉，", "亲姻如意乐无虞，"],
+          "yi": ["财爻发动，克住文书，", "应考、求名，总是落空；", "拿本钱去经营，大吉；", "亲戚婚姻如意，快乐无忧。"],
+          "en": ["The Wealth line moves and controls the document line:", "sitting the examinations and seeking a title always come to nothing;", "trading with capital is greatly auspicious;", "marriages and family ties go as one wishes, glad and free of worry."] }
+      ],
+      "note": {
+        "yi": "诀文说的是财克父母文书的一般情形。《黄金策》另讲了一种例外：父母爻空亡，而财爻发动生扶官鬼，侥幸可以成（LY.EXAM.HJC.24）。",
+        "en": "The verse speaks of the usual case of Wealth controlling the Resource line (the document line). The Huangjin Ce gives one exception: when the Resource line is Void and the Wealth line moves to give life and support to Pressure, one may succeed by luck (LY.EXAM.HJC.24)."
+      },
+      "see": ["LY.EXAM.HJC.17", "LY.EXAM.HJC.24", "LY.EXAM.ZS.31", "LY.EXAM.ZS.01"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.05",
+      "topic": "成否",
+      "chapter": "启蒙节要·四十六、六亲发动诀",
+      "chapter_en": "Qimeng Jieyao, no. 46: the verse on the moving of the six relations",
+      "title": "启蒙节要·六亲发动诀·兄弟交重克财：应举夺标为忌客，官非阴贼耗钱财",
+      "rule": {
+        "yi": "兄弟爻发动、克住财爻时：病人难好，灾还没有走；应举时，同来夺魁首的人是最要提防的客人；官司和暗中的盗贼会耗损钱财。",
+        "en": "When the Peer line moves and controls Wealth: the sick are hard to cure and the calamity has not left; in sitting the examinations, those who contend for the top place are the guests most to be avoided; and lawsuits and secret thieves waste money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [258, 258],
+          "zh": ["兄弟交重克了财，", "病人难愈未离灾，", "应举夺标为忌客，", "官非阴贼耗钱财，"],
+          "yi": ["兄弟爻发动，克了财，", "病人难好，灾还没有走；", "应举时，夺魁的人是要忌的客人；", "官司和暗中的盗贼，耗损钱财。"],
+          "en": ["The Peer line moves and controls Wealth:", "the sick are hard to cure and the calamity has not left;", "in sitting the examinations, those who contend for the top place are the guests to be avoided;", "lawsuits and secret thieves waste money."] }
+      ],
+      "dispute": {
+        "yi": "诀文把兄弟发动克财看成应举的大忌。《增删卜易》（LY.EXAM.ZS.28）却说兄爻持世或发动不是一概不吉：财、父两爻都动时，兄动制住财反而是喜；父、官两动时，喜兄弟持世。《黄金策》（LY.EXAM.HJC.18）和这句诀一致，把兄弟看成同经的竞争者，必夺魁首。",
+        "en": "The verse makes a moving Peer line that controls Wealth a great taboo for sitting the examinations. The Zengshan Buyi (LY.EXAM.ZS.28) says that Peer holding the Self or moving is not ill throughout: when Wealth and Resource both move, Peer moving to control Wealth is on the contrary welcome, and when Resource and Pressure both move, Peer holding the Self is welcome. The Huangjin Ce (LY.EXAM.HJC.18) agrees with this verse in treating Peer as rivals who share one's classic and will snatch first place."
+      },
+      "see": ["LY.EXAM.ZS.28", "LY.EXAM.HJC.18"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.06",
+      "topic": "成否",
+      "chapter": "启蒙节要·三十三、诸爻持世诀",
+      "chapter_en": "Qimeng Jieyao, no. 33: the verse on lines holding the Self",
+      "title": "启蒙节要·诸爻持世诀·考试三句：父母持世，官动财旺宜赴试；子孙持世，求名切忌；鬼爻持世，功名最喜世当权",
+      "rule": {
+        "yi": "诸爻持世诀里和考试有关的三句：父母爻持世，官爻发动、财爻旺相，适合去赴考；子孙爻持世，求名最忌（子孙坐在世位上）；官鬼爻持世，别的事难安，只有求功名最喜欢世爻当权。",
+        "en": "Three lines of the verse on lines holding the Self bear on examinations: with Resource holding the Self, if Pressure moves and Wealth is strong it is a good time to go and sit the examination; with Output holding the Self, seeking a title above all should avoid it; with Pressure holding the Self, other matters are uneasy, but for success in the examinations the best thing is that the Self holds power."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [197, 197],
+          "zh": ["父母持世主身劳，", "求嗣妾众也难招，", "官动财旺宜赴试，", "财摇谋利莫心焦，"],
+          "yi": ["父母爻持世，主身体劳碌，", "求子嗣的，妾再多也难招来；", "官爻发动、财爻旺相，宜去赴考；", "财爻发动，谋利的不要心焦；"],
+          "en": ["Resource holding the Self means toil of the body;", "one seeking an heir will find it hard to draw one, however many concubines there are;", "when Pressure moves and Wealth is strong, it is fit to go and sit the examination;", "when Wealth moves, one seeking profit need not be anxious;"] },
+        { "by": "经", "book": "卜筮正宗", "range": [198, 198],
+          "zh": ["子孙持世事无忧，", "求名切忌坐当头，"],
+          "yi": ["子孙爻持世，事情无忧，", "只有求名，切忌它坐在当头的世位上；"],
+          "en": ["Output holding the Self, matters are free of worry;", "only in seeking a title must one avoid its sitting at the head;"] },
+        { "by": "经", "book": "卜筮正宗", "range": [199, 199],
+          "zh": ["鬼爻持世事难安，", "占身不病也遭官，", "财物时时忧失脱，", "功名最喜世当权，"],
+          "yi": ["官鬼爻持世，事情难安，", "占自身，即使不生病也要遭官非；", "财物时时担忧失脱；", "求功名，最喜世爻当权。"],
+          "en": ["Pressure holding the Self, matters are uneasy;", "in divining for oneself, even without illness one meets an official suit;", "goods and money are always at risk of loss;", "but in seeking success in the examinations, the best thing is that the Self holds power."] }
+      ],
+      "note": {
+        "yi": "诀文没有解释「官动财旺」为什么宜赴试；读的时候要和「财爻发动克文书，应举求名总是虚」（LY.EXAM.BSZZ.04）分开看：这里的前提是父母爻持世、官爻发动，那一句只说财动克文书。引文里夹着的求嗣、谋利、占身、失脱几句说的是别的事，因为引文要连着引、中间不能断，所以留在了里面。",
+        "en": "The verse does not explain why Pressure moving and Wealth strong should be fit for sitting the examination. Read it apart from \"Wealth moves and controls the document line, so sitting exams and seeking a title all come to nothing\" (LY.EXAM.BSZZ.04): the premise here is Resource holding the Self with Pressure moving, whereas that line speaks only of Wealth moving against the document line. The clauses about heirs, profit, the body and loss that sit inside the quotations are other matters; they are kept because each quotation must run on without a gap."
+      },
+      "see": ["LY.EXAM.ZS.31", "LY.EXAM.ZS.49", "LY.EXAM.HJC.23"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.07",
+      "topic": "动变",
+      "chapter": "十八问答·第十问·进神喜忌",
+      "chapter_en": "Eighteen questions, no. 10: Advancing spirits, welcome and feared",
+      "title": "十八问答·第十问·进神喜忌：吉神宜化进、忌神宜化退；进有三种（旺相乘势、休囚待时、逢空破冲合待期），退也有三种；例：乡试官星持世，第五爻官化进神，今秋中式、次年辰年联捷",
+      "rule": {
+        "yi": "动爻变出来的神有进神、退神，吉凶要分喜忌：吉神喜欢化进神，忌神喜欢化退神。进有三种：旺相的趁势就进；休囚的等到得时才进；动爻或变爻有一个遇到空、破、冲、合的，等到填补、合住、冲开的时候才进。退也有三种：旺相的有日月或动爻生扶，占近期的事暂时不退；休囚的当时就退；动变爻有一个遇空破冲合的，等到那个时候填补、合冲了才退。书中例：申月癸卯日占乡试，得恒之大过卦，酉金官星持世，日辰冲而暗动，又得第五爻官化进神拱扶，断为不但今秋中举，来春也定占鳌头；结果登了乡榜，第二年辰年连中——「化进神」应在今秋，「联捷」应在辰年冲而逢合。",
+        "en": "The spirits that come out of a moving line when it changes are Advancing and Retreating spirits, and their luck divides into the welcome and the feared: an auspicious spirit is glad to change into an Advancing spirit, and an Adversary is glad to change into a Retreating spirit. There are three ways of advancing: a strong spirit advances by riding its momentum; a resting or trapped one advances by waiting for its season; and if the moving line or the changed line meets Void, break, clash or combination, it advances by waiting for the period that fills, combines or clashes it. There are also three ways of retreating: a strong spirit given life and support by the Day, the Month or a moving line does not retreat for the time being when a near matter is divined; a resting or trapped one retreats at once; and if the moving line or the changed line meets Void, break, clash or combination, it retreats when the period comes that fills, combines or clashes it. The case in the book: on a Gui-Mao day in the Shen month a man divined the provincial examination and got Heng changing to Daguo; the Pressure star in You Metal held the Self and was stirred in secret by the clash of the Day, and the fifth line's Pressure changing into an Advancing spirit supported it, so the judgement was that not only would he pass in the autumn but next spring he would surely take first place; he made the provincial list and succeeded again in the Chen year after: the change into an Advancing spirit answered in this autumn, and the consecutive success answered in the Chen year, a clash that meets a combination."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [4540, 4540],
+          "zh": ["第十问：进退神乃动爻变出之神也，吉凶祸福有喜忌之分，何以论之？", "答曰：吉神宜于化进，忌神宜于化退。", "而进退之法有三：旺相者乘势而进一也；", "休囚者待时而进二也；", "动爻变爻有一而逢空破冲合者，待期填补合冲而进三也。", "退神之法亦有三：旺相者或有日月动爻生扶，占近事暂时而不退者一也；", "休囚者即时而退二也；", "动爻变爻有一而逢空破冲合者，待期填补合冲而退三也。"],
+          "yi": ["第十问：进神、退神是动爻变出来的神，吉凶祸福有喜有忌之分，怎么论呢？", "回答说：吉神宜于化进，忌神宜于化退。", "进退的法则有三种：旺相的趁着势头进，是第一种；", "休囚的等到得时才进，是第二种；", "动爻、变爻有一个遇到空、破、冲、合的，等到填补、合住、冲开的时候才进，是第三种。", "退神的法则也有三种：旺相的，有日月或动爻生扶，占近期的事暂时不退，是第一种；", "休囚的当时就退，是第二种；", "动爻、变爻有一个遇到空、破、冲、合的，等到填补、合住、冲开的时候才退，是第三种。"],
+          "en": ["Question 10: the Advancing and Retreating spirits are the spirits that come out of a moving line when it changes; their luck and misfortune divide into the welcome and the feared; how are they judged?", "Answer: an auspicious spirit is glad to change into an Advancing spirit, and an Adversary is glad to change into a Retreating spirit.", "The ways of advancing and retreating are three; a strong spirit advances by riding its momentum, which is the first;", "a resting or trapped one advances by waiting for its season, which is the second;", "if either the moving line or the changed line meets Void, break, clash or combination, it advances by waiting for the period that fills, combines or clashes it, which is the third.", "The ways of the Retreating spirit are also three: a strong one, given life and support by the Day, the Month or a moving line, does not retreat for the time being when a near matter is divined, which is the first;", "a resting or trapped one retreats at once, which is the second;", "if either the moving line or the changed line meets Void, break, clash or combination, it retreats when the period comes that fills, combines or clashes it, which is the third."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4542, 4542],
+          "zh": ["申月癸卯日占乡试，得恒之大过卦："],
+          "yi": ["申月癸卯日占乡试，得恒卦变大过卦："],
+          "en": ["In the Shen month, on a Gui-Mao day, a man divined the provincial examination and got the hexagram Heng changing to Daguo:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4549, 4549],
+          "zh": ["断曰：酉金官星持世，日冲暗动，又得第五爻官化进神拱扶，不独金秋折桂，来春定占鳌头。", "果登乡榜，即于次岁辰年联捷。", "盖化进神者，今秋也，联捷者，辰年冲而逢合也。"],
+          "yi": ["断语：酉金官星持世，日辰冲而暗动，又得第五爻官爻化进神拱扶，不但金秋折桂，来春也一定占鳌头。", "果然登上乡榜，第二年辰年连中进士。", "因为化进神，应在今年秋天；连中，应在辰年冲而逢合。"],
+          "en": ["Judgement: the Pressure star in You Metal holds the Self and is stirred in secret by the clash of the Day, and it gains the support of the fifth line, Pressure changing into an Advancing spirit; not only will he break the laurel in the golden autumn, but next spring he will surely take first place.", "He indeed made the provincial list, and in the following year, the Chen year, he succeeded again in the next round.", "For the change into an Advancing spirit answered in this autumn, and the consecutive success answered in the Chen year, a clash that meets a combination."] }
+      ],
+      "note": {
+        "yi": "卦例的卦图（恒卦变大过卦的六爻排列）不收，只收卦图前后的文字。「折桂」指乡试中举（乡试在秋天，榜叫桂榜），「占鳌头」指在更高一级的考试里名列第一，「联捷」指一场接一场连续考中；这是科举里通行的说法，不是本书给的定义。",
+        "en": "The case's hexagram diagram (the arrangement of the six lines of Heng changing to Daguo) is not included, only the text before and after it. \"Breaking the laurel\" means passing the provincial examination (held in autumn, with its list called the laurel list), \"taking the head of the sea-turtle\" means coming first in a higher round, and \"consecutive success\" means passing round after round in a row; these are common examination idioms, not definitions given in this book."
+      },
+      "see": ["LY.EXAM.ZS.42", "LY.EXAM.ZS.17"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.08",
+      "topic": "成否",
+      "chapter": "十八问答·第十三问·六冲六合",
+      "chapter_en": "Eighteen questions, no. 13: Six-Clash and Six-Combine hexagrams",
+      "title": "十八问答·第十三问·六冲六合：所恶宜冲、所好宜合；冲中逢合、合处逢冲分日辰与变爻；冲忌神合用神为去煞留恩，冲用神合忌神为留煞害命；例：会试未土持世，化出日辰午火官星生合，果中探花",
+      "rule": {
+        "yi": "六冲、六合怎么断：人所厌恶的事宜冲，所喜欢的事宜合，只有占病要分近病、久病：近病遇冲就好、久病遇冲就死，六合则相反。六冲卦里，有日辰相合、变爻相合的，叫冲中逢合；六合卦里，有日辰相冲、变爻相冲的，叫合处逢冲。冲掉忌神、合住用神，叫去煞留恩，事事说吉；冲掉用神、合住忌神，叫留煞害命，件件皆凶。书中例：辰月庚午日占会试，得观卦变否卦，未土持世，变出的午火官星正是日辰，生着合着世爻，断为「鼎甲在掌」，结果中了探花。",
+        "en": "How the Six-Clash and Six-Combine hexagrams are judged: what a person hates is better clashed and what he likes is better combined, and only in divining illness is there the distinction between a recent and a long illness: a recent illness that meets a clash is cured, a long one dies, and with a combination it is the reverse. In a Six-Clash hexagram, if the Day or the changed line combines with it, it is called a clash meeting a combination; in a Six-Combine hexagram, if the Day or the changed line clashes with it, it is called a combination meeting a clash. If the Adversary is clashed and the Subject combined, it is called removing the baleful and keeping the gracious and every matter is called lucky; if the Subject is clashed and the Adversary combined, it is called keeping the baleful to harm life and every matter is ill. The case in the book: on a Geng-Wu day in the Chen month a man divined the metropolitan examination and got Guan changing to Pi; Wei Earth held the Self and changed out into the Wu Fire Pressure star, which is the Day itself, giving it life and combining with it, so the judgement was that the top three places lay in the palm of his hand, and he indeed passed as Tanhua."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [4868, 4868],
+          "zh": ["第十三问，六冲六合何以断之？", "答曰：人之所恶者宜冲，所好者宜合，唯占病有近病久病论。", "近病逢冲即愈，久病逢冲即死，六合反是。", "凡六冲卦，有日辰相合、变爻相合，谓之冲中逢合；", "凡六合卦，有日辰相冲，变爻相冲，谓之合处逢冲。", "如冲忌神合用神，名为去煞留恩，般般云吉；", "冲用神合忌神，名为留煞害命，件件皆凶。"],
+          "yi": ["第十三问：六冲、六合怎么断？", "回答说：人所厌恶的宜冲，所喜好的宜合；只有占病，要分近病和久病来论。", "近病遇冲就好，久病遇冲就死，六合则相反。", "凡六冲卦，有日辰相合、变爻相合的，叫冲中逢合；", "凡六合卦，有日辰相冲、变爻相冲的，叫合处逢冲。", "如果冲掉忌神、合住用神，名叫去煞留恩，事事说吉；", "冲掉用神、合住忌神，名叫留煞害命，件件都凶。"],
+          "en": ["Question 13: how are the Six-Clash and Six-Combine hexagrams to be judged?", "Answer: what a person hates is better clashed and what he likes is better combined; only in divining illness is there the distinction between a recent and a long illness.", "A recent illness that meets a clash is cured at once, a long illness that meets a clash dies, and with a combination it is the reverse.", "In any Six-Clash hexagram, if the Day combines with it or the changed line combines with it, it is called a clash meeting a combination;", "in any Six-Combine hexagram, if the Day clashes with it or the changed line clashes with it, it is called a combination meeting a clash.", "If the Adversary is clashed and the Subject combined, it is called removing the baleful and keeping the gracious, and every matter is called lucky;", "if the Subject is clashed and the Adversary combined, it is called keeping the baleful to harm life, and every matter is ill."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4946, 4946],
+          "zh": ["辰日庚午日占会试，得观之否卦："],
+          "yi": ["辰月庚午日占会试，得观卦变否卦："],
+          "en": ["In the Chen month, on a Geng-Wu day, a man divined the metropolitan examination and got the hexagram Guan changing to Pi:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4953, 4953],
+          "zh": ["断曰：未土持世，化出日辰午火官星生合，鼎甲在掌。", "果中探花。"],
+          "yi": ["断语：未土持世，变出日辰午火官星，生着合着世爻，鼎甲稳在手中。", "果然中了探花。"],
+          "en": ["Judgement: Wei Earth holds the Self and changes out into the Wu Fire Pressure star, which is the Day itself, giving it life and combining with it; the top three places lie in the palm of his hand.", "He indeed passed as Tanhua."] }
+      ],
+      "note": {
+        "yi": "卦例原文作「辰日庚午日占会试」，第一个「日」疑为「月」之误（辰月庚午日），译文按「辰月」翻；卦图不收。按通行说法，「鼎甲」是殿试一甲的前三名（状元、榜眼、探花），「探花」是第三名。功名里六冲、六合的取法，《黄金策》说六冲难成、六合易得（LY.EXAM.HJC.37），《增删卜易》补上了官、父、世要旺才行（LY.EXAM.ZS.36）。合处逢冲、冲中逢合三种分法，婚姻里的同一条见 LY.MARRY.BSZZ.02。",
+        "en": "The case text reads \"Chen day, Geng-Wu day\"; the first \"day\" is probably a slip for \"month\" (a Geng-Wu day in the Chen month), and the translation follows that; the hexagram diagram is not included. By the usual reckoning the \"top three\" are the first three places of the palace examination (Zhuangyuan, Bangyan, Tanhua), and Tanhua is third. For examinations, the Huangjin Ce says a Six-Clash hexagram is hard to succeed and a Six-Combine one easy (LY.EXAM.HJC.37), and the Zengshan Buyi adds that Pressure, Resource and the Self must also be strong (LY.EXAM.ZS.36). The same threefold division of a combination meeting a clash is given for marriage at LY.MARRY.BSZZ.02."
+      },
+      "see": ["LY.EXAM.ZS.36", "LY.EXAM.HJC.37", "LY.MARRY.BSZZ.02"]
+    },
+    {
+      "id": "LY.EXAM.BSZZ.09",
+      "topic": "风险",
+      "chapter": "十八问答·第十八问·诚明不验",
+      "chapter_en": "Eighteen questions, no. 18: sincere and shrewd, yet not borne out",
+      "title": "十八问答·第十八问·诚明不验：占的人心诚、断的人精明仍有不验，缘故在占的人——事涉机密难对人说，或问的是这件、心里想的是那件；例：问家宅实为乡试功名（自己头场落榜、业师中第四名），十二岁的孩子被父命占功名实为父占子（父动克子而亡）",
+      "rule": {
+        "yi": "占的人心诚、断的人精明，有时仍然不验，缘故在占的人，不在断的人：占的人的心意虽然诚，但有的事是机密，难对人说，或者问的是这件事，心里真正想的却是另一件事，所以才有不验。书中例一：申月乙亥日「占家宅」得井卦变节卦，断为应爻临父母、必有外姓长者同住，内卦合成鬼局、宅内不安，兄弟月破伏藏、兄弟家不利，对方一句句说没有，最后才说，占家宅其实是想和家里的老师一同去赴乡试；王洪绪说功名和家宅天远地隔，功名以官鬼为官星，家宅以鬼为祸害，既然占功名，你的功名不许，你的老师必定高中——官局生应、不来生世，叫出现无情，与你无干；后来到八月酉金实空之月，他自己头场就被贴出，他的老师中了第四名。例二：午月辛酉日占功名，得萃卦变遁卦，是一个十二岁的孩子，父亲命他占功名；若按孩子自占，官爻持世、夏火当令、未土父母爻是文章又化进神，功名有望，谁知是父亲叫孩子占，这个心意发自父亲的诚，所以是父占子，父母爻发动来克子孙，未月戌日孩子就去世了。",
+        "en": "When the one who divines is sincere and the one who judges is shrewd, the result is sometimes still not borne out, and the cause lies in the one who divines, not the one who judges: however sincere his intent, the matter may be a secret that is hard to tell anyone, or he asks about one thing while his mind is really on another, and so it fails to come true. First case: in the Shen month, on a Yi-Hai day, a man divined \"the household\" and got Jing changing to Jie; the judgement was that the Other line sat in the second line carrying Resource, so an elder of another surname must be living with them, that the inner trigram combined into a Pressure frame, so the house was uneasy, and that Peer was Month-broken and hidden, so the brothers' family was unlucky; he denied each point in turn and at last said that he had divined the household but really wanted to go to the provincial examination together with the tutor of his family; Wang Hongxu replied that examination success and the household are as far apart as heaven and earth, that for examination success Pressure is the official star while for the household Pressure is calamity, and that since it was examination success that was asked, his own was not promised and his tutor would surely pass high: the Pressure frame gave life to the Other and not to the Self, which is called appearing without feeling and has nothing to do with him; later, in the eighth month, when the Void You Metal was filled, he himself was struck off in the first session and his tutor passed as number four. Second case: in the Wu month, on a Xin-You day, a twelve-year-old boy, ordered by his father to divine his examination prospects, got Cui changing to Dun; judging it as the boy's own divination, Pressure held the Self, Fire was in command in summer and Wei Earth, the Resource line, was the essay and changed into an Advancing spirit, so success looked hopeful; but the father had told the son to divine, so the intent arose from the father's sincerity and it was the father divining for the son; Resource moved to control Output, and in the Wei month, on a Xu day, the boy died."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [5321, 5321],
+          "zh": ["第十八问：卜者心诚，断者精明，亦有验，何也？", "答曰：此其故在卜者而不在断者，乃卜者之意虽诚，或密事难以语人，或问此而意别有在也，所以有不验之故耳。"],
+          "yi": ["第十八问：占的人心诚，断的人精明，也有不验的，为什么？", "回答说：缘故在占的人，不在断的人，是占的人的心意虽然诚，有的是机密事难对人说，有的是问的是这件事，心意却别有所在，所以才有不验的缘故。"],
+          "en": ["Question 18: the one who divines is sincere and the one who judges is shrewd, yet it is sometimes not borne out; why?", "Answer: the cause lies in the one who divines and not in the one who judges: however sincere his intent, the matter may be a secret that is hard to tell anyone, or he asks about one thing while his mind is really elsewhere, and that is why it is not borne out."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5332, 5332],
+          "zh": ["申月乙亥日，占家宅得井之节卦："],
+          "yi": ["申月乙亥日，占家宅，得井卦变节卦："],
+          "en": ["In the Shen month, on a Yi-Hai day, a man divined the household and got the hexagram Jing changing to Jie:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5339, 5341],
+          "zh": ["断曰：应居二爻，谓之应飞入宅，临父母，必有外姓长者同居。", "彼曰：从无外人同舍。", "内卦合成鬼局，宅内不安。", "彼曰：从无驳杂。", "寅木兄弟月破伏藏，官局克之，或昆仲家不利。", "彼曰：吾占家宅，即日欲同家业师乡试，实为功名耳。", "予曰：功名与家宅天远地隔矣！", "功名以官鬼为官星，家宅以鬼为祸害。", "既占功名，兄之功名不许，令业师必高中也。", "彼曰：何以知之？", "答曰：官局生应，不来生世，谓之出现无情，与我无干也。", "后果至八月酉金实空之月，此人自己头场贴出，其业师中式第四名。"],
+          "yi": ["断语：应爻在第二爻，叫应飞入宅，临着父母，一定有外姓的长者同住。", "他说：从来没有外人同住。", "内卦的三爻合成了官鬼局，家宅里不得安宁。", "他说：从来没有这样杂乱。", "寅木兄弟月破、伏藏，又被官局克，也许兄弟一家不利。", "他说：我占的是家宅，其实当天是想和家里的老师一同去赴乡试，实在是为功名。", "我说：功名和家宅天远地隔！", "求功名，官鬼爻是官星；占家宅，官鬼却是祸害。", "既然占的是功名，您的功名是不许的，您的老师必定高中。", "他说：怎么知道？", "回答说：官局生应，不来生世，叫出现无情，与我无干。", "后来果然到八月酉金填实空亡的月份，这个人自己头场被贴出，他的老师中了第四名。"],
+          "en": ["Judgement: the Other line sits in the second line, which is called the Other flying into the house, and it carries Resource, so there must be an elder of another surname living together with you.", "He said: no outsider has ever lodged with us.", "The inner trigram combines into a Pressure frame, so the house is uneasy within.", "He said: it has never been so disordered.", "Yin Wood Peer is under a Month-break and hidden, and the Pressure frame controls it; perhaps the brothers' family is unlucky.", "He said: I divined the household, but that very day I meant to go with my family tutor to the provincial examination; it was really for the examination title.", "I said: examination success and the household are as far apart as heaven and earth!", "For examination success Pressure is the official star, but for the household Pressure is calamity.", "Since it is examination success you ask about, yours is not promised, and your tutor will surely pass with high rank.", "He said: how do you know?", "I answered: the Pressure frame gives life to the Other and does not come to give life to the Self; this is called appearing without feeling, and it has nothing to do with me.", "Later, when the eighth month came, the month when the Void You Metal is filled, this man himself was struck off in the first session, and his tutor passed as number four."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5371, 5371],
+          "zh": ["午月辛酉日占功名，得萃之遁卦："],
+          "yi": ["午月辛酉日占功名，得萃卦变遁卦："],
+          "en": ["In the Wu month, on a Xin-You day, a man divined for an examination title and got the hexagram Cui changing to Dun:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5385, 5385],
+          "zh": ["此子十二岁，乃父命其占名。", "若以官爻持世，夏火当令，未土父母爻为文章，化进神功名有望。", "岂知父叫子占，此心发于乃父之诚也，是父占子也。", "卯木不能克父，则父动克子也。", "未月戌日而亡。"],
+          "yi": ["这个孩子十二岁，是他的父亲命他占功名。", "如果按官爻持世，夏天火当令，未土父母爻是文章，又化进神，功名有望。", "谁知是父亲叫儿子占，这个心意发自父亲的诚心，是父亲占儿子。", "卯木不能克父，就是父亲发动来克儿子。", "未月戌日孩子就去世了。"],
+          "en": ["This boy was twelve, and it was his father who ordered him to divine his examination prospects.", "If it were judged as Pressure holding the Self, with Fire in command in summer, Wei Earth the Resource line being the essay, and changing into an Advancing spirit, success would look hopeful.", "But the father told the son to divine, so the intent arose from the father's sincerity, and it was the father divining for the son.", "Mao Wood cannot control the father, so it is the father moving that controls the son.", "In the Wei month, on a Xu day, the boy died."] }
+      ],
+      "note": {
+        "yi": "第十八问的问句原文作「亦有验」，依答语讲的是不验的缘故、以及标题「诚明不验」，应是「亦有不验」，译文按这个意思翻。例一、例二的卦图都不收；例二的原文开头连着卦图最后一行（「兄弟申金」），只取「此子十二岁」起的正文。例一最后一句「其业师中」后面接着的「式第四名」在下一行。",
+        "en": "The question in question 18 reads \"yet it is also borne out\" in the text; since the answer speaks of why it is not borne out, and the heading is \"sincere and shrewd, yet not borne out\", it should read \"also not borne out\", and the translation follows that sense. The hexagram diagrams of both cases are not included; the text of the second case begins glued to the last line of its diagram (\"Peer, Shen Metal\"), and only the text from \"this boy was twelve\" is taken. In the first case the words \"and passed as number four\" follow on the next line after \"his tutor passed\"."
+      },
+      "see": ["LY.EXAM.HJC.26", "LY.EXAM.ZS.32"]
+    }
+  ]
+}

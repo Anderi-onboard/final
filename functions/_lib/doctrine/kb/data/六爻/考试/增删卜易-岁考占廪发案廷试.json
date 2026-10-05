@@ -1,0 +1,242 @@
+{
+  "shushu": "六爻",
+  "domain": "考试",
+  "work": "增删卜易",
+  "chapter": "岁考科考章、占廪章、考遗才章、发案挂榜章、廷试章",
+  "chapter_en": "Chapters on the annual and qualifying examinations, the stipend, the supplementary examination, issuing the list and the palace examination",
+  "ranges": {"增删卜易": [10026, 10098]},
+  "units": [
+    {
+      "id": "LY.EXAM.ZS.18",
+      "topic": "名次",
+      "chapter": "岁考科考章",
+      "chapter_en": "The chapter on the annual and qualifying examinations",
+      "title": "岁考科考章·文宜旺相最忌休囚、官要生身不宜克世：父、世旺相又得生扶全无破绽定考超等，旺而逢生上等，有一遇刑冲又次之，世父同受克劣等无疑（野鹤、觉子；附例）",
+      "rule": {
+        "yi": "岁考、科考按父爻和世爻的旺衰分等第：两爻旺相又得日月动爻生扶、全无破绽的考超等；旺而逢生上等；旺而无生、或相而遇扶、没有刑冲克破的次之；两爻有一个遇刑冲的又次之；世爻受克要受责罚，世爻父爻同受克必定劣等。野鹤说要变通，以六冲变冲、反吟伏吟、变克化绝为破绽；觉子说《易冒》以进神为上等、退神为下等，没有进退之神时就按旺衰定。",
+        "en": "In the annual and qualifying examinations the grade is set by how strong the Resource and Self lines are: both thriving and given life and support by the Day, the Month and moving lines, with no flaw at all, is the top grade; strong and meeting life is the upper grade; strong without life, or thriving and given support, with no punishment, clash, control or breaking, is next; one of the two meeting punishment or clash is lower still; if the Self is controlled one will be flogged, and if the Self and Resource are both controlled it is surely the lowest grade. The Old Man of Yehe says to be flexible, and takes a Six-Clash, a clash by change, a Reversed or Hidden Chant, or a change into control or extinction as flaws; Juezi says the Yi Mao takes an Advancing line as the upper grade and a Retreating line as the lower, and that when there is neither one decides by strength and weakness."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10026, 10026],
+          "zh": ["文宜旺相，最忌休囚；", "官要生身，不宜克世。", "父与世爻旺相，又得日月动爻生扶，及动而化吉，全无破绽者，定考超等。", "若父世旺而逢生，上等；", "旺而无生，相而遇扶，无刑冲克破者，次之；", "父母有一而遇刑冲者，又次之；", "世爻受克，教刑不免，世父同受克者，劣等无疑。"],
+          "yi": ["文章（父母爻）宜旺相，最怕休囚；", "官星要来生身，不适宜克世。", "父爻和世爻旺相，又得到日月、动爻生扶，以及发动变吉，全无破绽的，一定考超等。", "如果父爻、世爻旺而又逢生，是上等；", "旺而没有生、相而得到扶助，没有刑、冲、克、破的，是次一等；", "两爻（父母、世爻）里有一个遇到刑、冲的，再次一等；", "世爻受克，会受到教官的责罚；世爻、父爻同时受克的，必定是劣等。"],
+          "en": ["The writing (the Resource line) should be thriving and most fears being resting and trapped;", "the official star should give life to the Body and must not control the Self.", "If the Resource and Self lines are thriving, given life and support by the Day, the Month and moving lines, or move and change into auspicious lines, with no flaw at all, one will surely take the top grade.", "If Resource and Self are strong and meet life, it is the upper grade;", "strong but without life, or thriving and given support, with no punishment, clash, control or breaking, is the next grade;", "if one of the two (Resource and Self) meets punishment or clash, the grade is lower still;", "if the Self is controlled, a flogging by the teacher cannot be avoided; if the Self and Resource are both controlled, it is surely the lowest grade."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10027, 10027],
+          "zh": ["野鹤曰：此法是也，亦要人之通变。", "观其父世两爻轻重而言之。", "世父同旺，有生扶又无刑克者，全美之卦，卷之上上也。", "以此挨次查之，或有生扶，而得六冲变冲、反吟伏吟、变克化绝，即是破绽。", "父爻受克而无救，难免勾涂；", "世爻受克而有扶，尚蒙姑恕。"],
+          "yi": ["野鹤说：这个方法是对的，也要人懂得变通。", "要看父爻和世爻两爻的轻重来断。", "世爻、父爻同旺，有生扶又没有刑克的，是完美的卦，卷子是上上等。", "依此一级一级往下查，即使有生扶，但遇到六冲、变冲、反吟、伏吟、变克、化绝，就是破绽。", "父爻受克又没有救，免不了被勾掉涂去；", "世爻受克但有扶助，还能得到宽容。"],
+          "en": ["The Old Man of Yehe says: this method is right, but one also needs to be flexible.", "Judge by the weight of the Resource and Self lines.", "If the Self and Resource are both strong, with life and support and no punishment or control, it is a perfect hexagram, and the paper is of the very highest grade.", "Check on down in this order; even if there is life and support, meeting a Six-Clash, a clash by change, a Reversed Chant, a Hidden Chant, a change into control or into extinction is a flaw.", "If the Resource line is controlled with no rescue, the paper will not escape being struck through and crossed out;", "if the Self is controlled but has support, one may still be forgiven."] },
+        { "by": "觉子", "book": "增删卜易", "range": [10029, 10029],
+          "zh": ["觉子曰：此以父世之旺衰，而分等第者，是确论也。", "《易冒》谓：卦得进神，考上等；", "退神，而考下等。", "假使卦无进退之神，何以定之？"],
+          "yi": ["觉子说：这是按父爻、世爻的旺衰来分等第，是确切的论断。", "《易冒》说：卦得进神，考上等；", "得退神，就考下等。", "假如卦里没有进神、退神，又拿什么来定？"],
+          "en": ["Juezi says: this divides the grades by the strength of the Resource and Self lines, and is a sound judgement.", "The Yi Mao says: if the hexagram has an Advancing line, one takes the upper grade;", "if it has a Retreating line, the lower grade.", "But if the hexagram has neither an Advancing nor a Retreating line, by what is it decided?"] },
+        { "by": "书中例", "book": "增删卜易", "range": [10030, 10030],
+          "zh": ["如：申月乙巳日(旬空：寅卯)，占岁考，得“大过之鼎”"],
+          "yi": ["例如：申月乙巳日（旬空：寅、卯），占岁考，得「大过之鼎」"],
+          "en": ["For example: on a Yi-Si day in the Shen month (Void: Yin and Mao), divining for the annual examination, I obtained \"Daguo changing to Ding\"."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10037, 10037],
+          "zh": ["断曰：财动克父，乃不通变之论也，此卦乃亥水父爻持世，申月生之，文旺而身亦旺，巳日冲之为暗动，未土财爻虽动，喜其生助酉金。", "酉官生世，名曰“接续相生”，一定篇篇锦绣，财生官旺，优等帮粮。", "果取一等补廪。"],
+          "yi": ["断：说「财动克父」，是不懂变通的说法；这一卦是亥水父爻持世，申月生它，文章旺、自身也旺，巳日冲它成了暗动，未土财爻虽然动，喜的是它去生助酉金。", "酉金官星生世，叫做「接续相生」，一定篇篇锦绣；财生官旺，是优等、有帮粮。", "果然取了一等，补上廪生。"],
+          "en": ["Verdict: to say \"Wealth moving controls Resource\" is a view that does not understand adaptation; in this hexagram the Hai Water Resource line holds the Self, born by the Shen month, so the writing is strong and the man himself is strong; the Si day clashes it into a secret movement; and although the Wei Earth Wealth line moves, it is glad to give support to You Metal.", "The You Metal official star gives life to the Self, which is called \"giving life in succession\"; every essay will surely be brocade; with Wealth giving life to a strong official star, it is an excellent grade with a grain allowance.", "He was indeed taken in the first grade and made a stipend student."] }
+      ],
+      "note": {
+        "yi": "岁考是生员每年一次的考试，科考是应乡试前的资格考，按成绩分一二三…等；「超等」「上等」「平等」「劣等」是等第的叫法。「廪」是官给口粮的廪膳生，「帮粮」是优等另给的补贴口粮。「教刑」是教官的责罚。「父世」就是父爻和世爻。这一章后面的[乾按]不收。",
+        "en": "The annual examination was held each year for licentiates, and the qualifying examination was the one that qualified a man to sit the provincial examination; results were graded first, second and so on, and \"top\", \"upper\", \"middle\" and \"lowest\" are names of grades. A \"stipend student\" received a government grain ration, and the \"grain allowance\" was an extra ration for the excellent. The \"flogging\" is the teacher's punishment. The \"Resource and Self\" is the Resource line and the Self line. The [Qian's note] at the end of the chapter is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.19", "LY.EXAM.ZS.20"]
+    },
+    {
+      "id": "LY.EXAM.ZS.19",
+      "topic": "名次",
+      "chapter": "岁考科考章",
+      "chapter_en": "The chapter on the annual and qualifying examinations",
+      "title": "岁考科考章·六冲变冲或六爻乱动即使文旺世旺也只考平等；飞神无助身无克荣辱无施；伏藏旺相也遭伤赏罚并见（野鹤；附例：泰卦，巳午之火非文旺乃字佳）",
+      "rule": {
+        "yi": "卦成六冲、变冲或六爻乱动，即使文章旺、世爻旺，也只考平等；文章衰受刑克、世爻休囚被克、变凶的，必定劣等；飞神得不到帮助、卦身不受克，无荣无辱；父爻出现、不旺不衰、没有生扶也没有克制、世爻不被冲克的，保得住平等；伏藏的爻即使旺相也遭伤，赏罚一起来。",
+        "en": "If the hexagram is a Six-Clash or changes into a clash, or the six lines move in disorder, then even with the writing strong and the Self strong one takes only the middle grade; with the writing weak and punished or controlled, or the Self resting and trapped and controlled, or changing into ill, it is surely the lowest grade; if the flying line gets no help and the Body is not controlled there is neither honour nor disgrace; if the Resource line appears, neither strong nor weak, with neither support nor control and the Self not clashed or controlled, the middle grade is assured; a hidden line, even though thriving, is harmed, and reward and punishment appear together."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [10038, 10038],
+          "zh": ["野鹤曰：大凡卦得六冲变冲，及六爻乱动者，设文旺世旺，还考平等，倘文衰受刑克，及世爻休囚被克，及变凶者，劣等无疑。"],
+          "yi": ["野鹤说：大凡卦得六冲、变冲，以及六爻乱动的，即使文章旺、世爻旺，也只考平等；如果文章衰、又受刑克，以及世爻休囚被克，以及变凶的，一定是劣等。"],
+          "en": ["The Old Man of Yehe says: in general, when the hexagram is a Six-Clash or changes into a clash, or the six lines all move in disorder, even if the writing is strong and the Self is strong one takes only the middle grade; and if the writing is weak and punished or controlled, or the Self is resting and trapped and controlled, or it changes into ill, it is surely the lowest grade."] },
+        { "by": "经", "book": "增删卜易", "range": [10039, 10039],
+          "zh": ["飞神无助身无克，荣辱无施。", "父爻出现，不旺不衰，虽无生扶，亦无克制，而世爻不被冲克者，可保平等。"],
+          "yi": ["飞神得不到帮助，卦身又没有受克，没有荣也没有辱。", "父爻出现在卦中，不旺不衰，虽然没有生扶，也没有受克制，而且世爻不被冲克的，可以保住平等。"],
+          "en": ["If the flying line gets no help and the Body is not controlled, there is neither honour nor disgrace.", "If the Resource line appears in the hexagram, neither strong nor weak, with no life or support but also no control, and the Self is not clashed or controlled, the middle grade is assured."] },
+        { "by": "经", "book": "增删卜易", "range": [10040, 10040],
+          "zh": ["伏藏旺相也遭伤，赏罚并见。"],
+          "yi": ["伏藏的爻即使旺相也遭到伤害，赏和罚会一起出现。"],
+          "en": ["If a hidden line, even though thriving, is harmed, reward and punishment appear together."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10041, 10041],
+          "zh": ["如：午月乙卯日(旬空：子丑)，占岁考，得“地天泰卦”"],
+          "yi": ["例如：午月乙卯日（旬空：子、丑），占岁考，得「地天泰卦」"],
+          "en": ["For example: on a Yi-Mao day in the Wu month (Void: Zi and Chou), divining for the annual examination, I obtained the hexagram Earth over Heaven, Tai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10072, 10072],
+          "zh": ["午火月建为父母，而卦中之巳火伏藏于寅木之下，旺而又遇飞神之生，爻逢六合，堪称吉卦，独嫌日辰克世，未为全美。", "发落之日，果宗师面叱，念字仿古帖，姑置三等。", "后悟此巳午之火，非文旺也，乃字佳也，但此卦虽多逢，事确少见，存之为法。"],
+          "yi": ["午火是月建、做父母爻，而卦里的巳火伏藏在寅木之下，旺相，又得飞神来生，爻遇六合，可以称作吉卦，只嫌日辰克世，不算完美。", "放榜发落那天，果然被学官当面训斥，又念及他的字是临仿古帖，姑且列在三等。", "后来才悟到这巳午之火，不是说文章旺，而是说字写得好；不过这样的卦虽然常遇到，这样的事确实少见，留下来作个参考。"],
+          "en": ["Wu Fire is the Month and acts as the Resource line, and the Si Fire in the hexagram lies hidden under Yin Wood, thriving and given life by its flying line, the lines meeting a Six-Combine; it may be called an auspicious hexagram, only that the Day controls the Self, so it is not perfect.", "On the day the results were announced, the examiner indeed reproved him to his face but, taking into account that his writing followed an old copy-book model, placed him in the third grade for the time being.", "Later I realized that this Si-Wu Fire did not mean strong writing but fine handwriting; though such a hexagram is often met, such a matter is truly rare, and I keep it as a model."] }
+      ],
+      "note": {
+        "yi": "「飞神无助身无克，荣辱无施」是说父爻没有得到生扶、也没有受克，不上不下，所以无赏无罚；「伏藏旺相也遭伤」是伏神旺相但飞神克它，所以赏罚并见。例子里巳火伏在寅木下、午火是月建，断语说「旺」本来该是文章好，结果是字好，所以野鹤说这样的卦存之为法而已。「宗师」是学官（提学）。",
+        "en": "\"If the flying line gets no help and the Body is not controlled, there is neither honour nor disgrace\" means the Resource line is neither supported nor controlled, in the middle, so there is neither reward nor punishment; \"a hidden line, though thriving, is harmed\" is a hidden line that is strong but controlled by its flying line, so reward and punishment appear together. In the example Si Fire lies hidden under Yin Wood and Wu Fire is the Month; the verdict first took the strength to mean good writing, and it turned out to mean good handwriting, so the author keeps such a hexagram only as a model. The \"examiner\" is the school official (the education commissioner)."
+      },
+      "see": ["LY.EXAM.ZS.18", "LY.EXAM.ZS.20"]
+    },
+    {
+      "id": "LY.EXAM.ZS.20",
+      "topic": "名次",
+      "chapter": "岁考科考章",
+      "chapter_en": "The chapter on the annual and qualifying examinations",
+      "title": "岁考科考章·总括：父、世旺相遇生扶为上，略欠次之，刑伤有救又次之，刑伤无救而轻者又次之，世父被刑冲克破而重者劣等；善卜者通变而断（觉子）",
+      "rule": {
+        "yi": "岁考科考的等第次序：父爻世爻旺相又得生扶最上；略有欠缺的次之；受刑伤但有救的又次之；受刑伤无救但程度轻的又次之；世、父被刑冲克破而且重的，必定劣等。会占的人要把吉凶和用神衰旺的轻重合起来，灵活变通地断。",
+        "en": "The order of grades in the annual and qualifying examinations: the Resource and Self lines thriving and given life and support is the top; one with a slight lack is next; one punished or harmed but with rescue is lower again; one punished or harmed with no rescue but lightly is lower again; if the Self and Resource are punished, clashed, controlled or broken, and badly, it is surely the lowest grade. One skilled at divining must weigh the signs together with how heavy or light the strength or weakness of the Subject is, and judge flexibly."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易", "range": [10074, 10074],
+          "zh": ["觉子曰：以上总而言之，父与世爻旺相遇生扶为上，略有欠缺者次之；", "刑伤有救者又次之；", "刑伤无救而轻者又次之；", "世父被刑冲克破而重者，劣等必矣。", "善卜者，须以向之吉凶兼用神衰旺之轻重，通变而断之。"],
+          "yi": ["觉子说：以上总的说来，父爻和世爻旺相、又得生扶的为上等，略有欠缺的次一等；", "受刑伤但有救的又次一等；", "受刑伤没有救但程度轻的又次一等；", "世爻、父爻被刑冲克破而且严重的，必定是劣等。", "善于占卜的人，要把先前所说的吉凶，连同用神衰旺的轻重一起考虑，灵活变通地来断。"],
+          "en": ["Juezi says: to sum up the above, the Resource and Self lines thriving and given life and support is the top; one with a slight lack is the next;", "one that is punished or harmed but has rescue is lower again;", "one that is punished or harmed with no rescue but only lightly is lower again;", "one where the Self and Resource are punished, clashed, controlled or broken, and badly, is surely the lowest grade.", "One skilled at divining must take the auspicious and inauspicious signs spoken of above together with how heavy or light the strength or weakness of the Subject is, and judge flexibly."] }
+      ],
+      "note": {
+        "yi": "这是整章的总结，前几条的举例见 LY.EXAM.ZS.18、19。「用神」在这一章就是父爻和世爻。后面的[乾按]不收。",
+        "en": "This sums up the chapter; the examples are under LY.EXAM.ZS.18 and 19. In this chapter the \"Subject\" is the Resource and Self lines. The [Qian's note] after it is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.18", "LY.EXAM.ZS.19"]
+    },
+    {
+      "id": "LY.EXAM.ZS.21",
+      "topic": "名次",
+      "chapter": "占廪章",
+      "chapter_en": "The chapter on the stipend",
+      "title": "占廪章·占廪以财爻为用神：财是文章（父母）的忌神，占岁考与问廪不可并在一卦，先占岁考、另卜一卦问廪；财爻持世或动而生世为吉，断同求财章（觉子）",
+      "rule": {
+        "yi": "占廪（廪生的名额和官给口粮）以财爻为用神，而财是文章（父母爻）的忌神，所以不能把岁考和占廪放在一卦里问：先占岁考的吉凶，另外再卜一卦问廪；财爻持世，或动而生世为吉，断法同求财章。",
+        "en": "In divining for the stipend (a stipend place and the government ration) the Wealth line is the Subject, but Wealth is the adversary of the writing (the Resource line), so the annual examination and the stipend must not be asked in one hexagram: first divine the fortune of the annual examination, then divine another hexagram for the stipend; Wealth holding the Self, or moving to give life to the Self, is auspicious, and it is judged as in the chapter on seeking wealth."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易", "range": [10080, 10080],
+          "zh": ["觉子曰：占廪若不得其决，而望验者，未之有也。", "盖占廪用财，财乃文章之忌神，不知其法，卜岁考而兼问廪，财爻若旺，父母受伤，财若休囚，如何得廪？", "余有法焉，先占岁考之吉凶，另卜一卦而问廪，即其秘也。"],
+          "yi": ["觉子说：占廪生名额，如果不得其中的诀窍，却指望灵验，是没有的事。", "因为占廪要用财，而财是文章（父母）的忌神；不知道这个办法，占岁考同时又问廪，财爻如果旺，父母受伤，财如果休囚，又怎么能得廪？", "我有个办法：先占岁考的吉凶，另外再卜一卦来问廪，这就是它的秘诀。"],
+          "en": ["Juezi says: in divining for the stipend, one who does not have the secret of it and yet hopes for accuracy has never been seen.", "For in divining for the stipend Wealth is used, and Wealth is the adversary of the writing; if one does not know the method and asks about the annual examination and the stipend together, then if Wealth is strong the Resource line is harmed, and if Wealth is resting and trapped how can one obtain the stipend?", "I have a method: first divine the fortune of the annual examination, then divine a separate hexagram to ask about the stipend; that is the secret."] },
+        { "by": "经", "book": "增删卜易", "range": [10081, 10081],
+          "zh": ["廪以财爻为用神，财爻持世，或动而生世为吉，与求财章同断。"],
+          "yi": ["廪以财爻为用神，财爻持世，或者发动来生世为吉，按求财章的断法同断。"],
+          "en": ["For the stipend the Wealth line is the Subject; Wealth holding the Self, or moving to give life to the Self, is auspicious, and it is judged as in the chapter on seeking wealth."] }
+      ],
+      "note": {
+        "yi": "「廪」是廪膳生，考岁考得一等才补；「占廪」是占能不能补上廪生的名额。财是文章的忌神（财克父），所以占考试时财是坏的，占廪时财却是用神，正反要分开占，书里叫「秘」。后面的[乾按]不收。",
+        "en": "A \"stipend student\" was a licentiate who drew a government grain ration, appointed on a first-grade result in the annual examination; \"divining for the stipend\" is asking whether one will be given a place. Wealth is the adversary of the writing (Wealth controls Resource), so in an examination Wealth is bad, while in the stipend it is the Subject; the two must be divined separately, which the book calls the \"secret\". The [Qian's note] after it is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.22"]
+    },
+    {
+      "id": "LY.EXAM.ZS.22",
+      "topic": "风险",
+      "chapter": "占廪章",
+      "chapter_en": "The chapter on the stipend",
+      "title": "占廪章·有廪而恐失者：忌兄弟持世、兄爻发动，财逢空破墓绝、动而变凶；官鬼兄爻克世轻则革粮重则追罚，三合兄局亦主革廪",
+      "rule": {
+        "yi": "已有廪生名额而怕失去的，忌兄弟持世、兄弟爻发动，以及财爻逢空破墓绝、发动变凶，都会失去；官鬼或兄弟爻克世，轻的革去口粮，重的追罚；卦里三合成兄弟局，也主革去廪生。",
+        "en": "For one who already holds the stipend and fears losing it: Peer holding the Self, the Peer line moving, or Wealth meeting Void, break, tomb or extinction or moving into ill, all mean it will be lost; if Pressure or the Peer line controls the Self the lighter result is that the grain allowance is stopped and the heavier is a penalty with recovery; a three-harmony frame of Peer in the hexagram also means the stipend is revoked."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10082, 10082],
+          "zh": ["有廪而恐失者，忌兄弟持世，兄爻发动，及财逢空破墓绝，动而变凶，皆有失也。", "如官鬼兄爻克世者，轻则革粮，重则追罚，倘卦中三合兄局者，亦主革廪。"],
+          "yi": ["已有廪生名额而担心失去的，忌兄弟持世、兄弟爻发动，以及财爻逢空破墓绝、发动变凶，都会失去。", "如果官鬼、兄弟爻克世，轻的革去口粮，重的追罚；如果卦中三合成兄弟局，也主革去廪生。"],
+          "en": ["For one who holds the stipend and fears losing it, Peer holding the Self, the Peer line moving, or Wealth meeting Void, break, tomb or extinction, or moving and changing into ill, all mean it will be lost.", "If Pressure or the Peer line controls the Self, the lighter result is that the grain allowance is stopped and the heavier is a penalty with recovery; if the hexagram forms a three-harmony frame of Peer, the stipend is also revoked."] }
+      ],
+      "note": {
+        "yi": "「革粮」是停发口粮，「追罚」是追回已领的粮并罚；「三合兄局」是卦中的爻合成兄弟五行的三合局。",
+        "en": "\"Stopped grain allowance\" means the ration is cut off, and \"penalty with recovery\" means the grain already drawn is recovered and a fine imposed; a \"three-harmony frame of Peer\" is a three-harmony group in the hexagram of the Peer relation's phase."
+      },
+      "see": ["LY.EXAM.ZS.21"]
+    },
+    {
+      "id": "LY.EXAM.ZS.23",
+      "topic": "小考",
+      "chapter": "考遗才章",
+      "chapter_en": "The chapter on the supplementary examination",
+      "title": "考遗才章·官爻持世生世则必蒙收，父母空破墓绝则不见用；世受克、空破墓绝、动化凶、子孙持世或动则不录；父母持世生世吉，休囚空破凶（凡告考同例）",
+      "rule": {
+        "yi": "考遗才（补考漏掉的人）和告考：官爻持世或生世，一定被收录；父母爻空破墓绝，不会被用；世爻受克或空破墓绝、动变凶、子孙持世或子孙发动，都主不被录取；父母持世生世吉，休囚空破凶。",
+        "en": "For the supplementary examination (taking those who were missed) and for petitioning to sit an examination: the Pressure line holding or giving life to the Self means one will surely be admitted; the Resource line Void, broken, in the tomb or extinct means one will not be used; the Self controlled, or Void, broken, in the tomb or extinct, or moving into ill, or Output holding the Self or moving, all mean one will not be taken; the Resource line holding or giving life to the Self is auspicious, and resting and trapped, Void or broken is inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10087, 10087],
+          "zh": ["官爻持世生世，我必蒙收；", "父母空破墓绝，他不见用。", "如世爻受克，及空破墓绝，或动而化凶，或子孙持世，或子孙动于卦中，皆主不录。", "父母持世生世者，皆吉；", "休囚空破者，皆凶。"],
+          "yi": ["官爻持世或生世，我一定被收录；", "父母爻空、破、入墓、逢绝，他不会被录用。", "如果世爻受克，以及空、破、墓、绝，或者发动变凶，或者子孙持世，或者子孙在卦中发动，都主不被录取。", "父母爻持世、生世的，都吉；", "休囚、空破的，都凶。"],
+          "en": ["If the Pressure line holds or gives life to the Self, I will surely be admitted;", "if the Resource line is Void, broken, in the tomb or extinct, he will not be taken into use.", "If the Self is controlled, or Void, broken, in the tomb or extinct, or moves and changes into ill, or Output holds the Self, or Output moves in the hexagram, all indicate he will not be taken.", "Resource holding or giving life to the Self is auspicious in every case;", "resting and trapped, Void or broken is inauspicious in every case."] }
+      ],
+      "note": {
+        "yi": "「考遗才」是学官为没赶上考试的人再开的补考；「告考」是自己具呈请求准许应考，章名下注「凡告考同例」。「他不见用」的「他」是主考的人（书里没有明说）。后面的[乾按]不收。",
+        "en": "The \"supplementary examination\" is a later examination the school official holds for those who missed the main one; \"petitioning to sit\" is submitting a petition to be allowed to sit, and the chapter title notes that the same rules apply. The \"he\" in \"he will not be taken into use\" is the examiner (the book does not say so). The [Qian's note] after it is not quoted."
+      }
+    },
+    {
+      "id": "LY.EXAM.ZS.24",
+      "topic": "应期",
+      "chapter": "发案挂榜章",
+      "chapter_en": "The chapter on issuing the list and posting the board",
+      "title": "发案挂榜章·应期：父母为用神，衰者于生旺之日，旺而静者逢值逢冲之日，动而逢值逢合之日，空与入墓必待冲开，破与旬空须期填实",
+      "rule": {
+        "yi": "占考试结果几时公布（发案、挂榜），以父母爻为用神：衰的，应在它得生、得旺的日子；旺而静的，应在值日或冲日；动的，应在值日或合日；落空和入墓的，要等冲开；被破和旬空的，要等填实。",
+        "en": "To divine when the result will be issued and the board posted, the Resource line is the Subject: if weak, it answers on the day that gives it life or strength; if strong and still, on the day of its own branch or the day that clashes it; if moving, on the day of its own branch or the day that combines with it; if Void or in the tomb, one must wait until it is clashed open; if broken or in the Void, one must wait until it is filled."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10092, 10092],
+          "zh": ["父母为用神，衰者，于生旺之日；", "旺而静者，逢值逢冲之日；", "动而逢值逢合之日；", "空与入墓，必待冲开；", "破与旬空，须期填实。"],
+          "yi": ["以父母爻为用神，衰的，在它得生、得旺的日子应验；", "旺而静的，在逢值、逢冲的日子；", "动的，在逢值、逢合的日子；", "落空和入墓的，一定要等冲开；", "被破和旬空的，要等到填实。"],
+          "en": ["The Resource line is the Subject; if weak, it is fulfilled on the day that gives it life or strength;", "if strong and still, on the day when it is met by its own branch or clashed;", "if moving, on the day when it is met by its own branch or combined;", "if Void or in the tomb, one must wait until it is clashed open;", "if broken or in the Void, one must wait until it is filled."] }
+      ],
+      "note": {
+        "yi": "「发案」是考官公布取中的名单（案），「挂榜」是把榜张挂出来。「值」是爻的地支恰好是当日的地支；「填实」是等到落空的地支那一日。这一章后面的[乾按]不收。",
+        "en": "\"Issuing the list\" is the examiner publishing the list of those taken, and \"posting the board\" is hanging the board up. \"Meeting its own branch\" is the day whose branch is the same as the line's branch; \"filled\" means waiting for the day whose branch is the one that is Void. The [Qian's note] after it is not quoted."
+      },
+      "see": ["LY.EXAM.ZS.25"]
+    },
+    {
+      "id": "LY.EXAM.ZS.25",
+      "topic": "应期",
+      "chapter": "发案挂榜章",
+      "chapter_en": "The chapter on issuing the list and posting the board",
+      "title": "发案挂榜章·心有忧惧者得子孙持世则值子孙之日发案；心有欢喜者得官星持世则逢官鬼之日挂榜（野鹤验得）",
+      "rule": {
+        "yi": "心里忧虑害怕的，如果子孙持世，在子孙值日的那天发案；心里欢喜的，如果官星持世，在官鬼值日的那天挂榜。",
+        "en": "For one whose heart is anxious and fearful, if Output holds the Self, the list is issued on the day of Output; for one whose heart is glad, if the official star holds the Self, the board is posted on the day of Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10093, 10093],
+          "zh": ["余又得验：心有忧惧者，若得子孙持世，值子孙之日而发案；", "心有欢喜者，若得官星持世，逢官鬼之日而挂榜。"],
+          "yi": ["我又验证到：心里有忧虑、害怕的，如果得子孙持世，在子孙值日的那天发案；", "心里欢喜的，如果得官星持世，在官鬼值日的那天挂榜。"],
+          "en": ["I have also found by experience: for one whose heart is anxious and fearful, if Output holds the Self, the list is issued on the day of Output;", "for one whose heart is glad, if the official star holds the Self, the board is posted on the day of Pressure."] }
+      ],
+      "note": {
+        "yi": "「心有忧惧」「心有欢喜」是占的人当时的心情，书里没有再解释；这一条按字面译，是作者自己试出来的验法，与上一条按用神定应期的办法并用。",
+        "en": "\"The heart anxious and fearful\" and \"the heart glad\" are the asker's mood at the time, which the book does not explain further; this is translated as written. It is a rule the author found by trial, used alongside the previous entry, which fixes the time by the Subject."
+      },
+      "see": ["LY.EXAM.ZS.24"]
+    },
+    {
+      "id": "LY.EXAM.ZS.26",
+      "topic": "乡会试",
+      "chapter": "廷试章",
+      "chapter_en": "The chapter on the palace examination",
+      "title": "廷试章·官星为用父母次之：持世爻得日月岁生合定蒙首拔，官父世爻三合必受殊恩；世与官爻有一遇空破墓绝克害刑冲或动变凶为不祥，岁五官鬼冲克世为不测之灾（与会场兼断）",
+      "rule": {
+        "yi": "廷试（殿试）以官星为用神，父母爻次之：持世爻得日、月、太岁生合的，一定被选拔为首；官、父、世三爻合成三合，必受特别恩宠；世爻和官爻有一个遇空破、墓绝、克害、刑冲或发动变凶，是不吉之兆；太岁作官鬼来冲克世爻，是意想不到的灾祸。",
+        "en": "In the palace examination the official star is the Subject and the Resource line comes second: the line holding the Self given life or combined by the Day, the Month and the Year means one will surely be raised first; the Pressure, Resource and Self lines forming a three-harmony means special favour; if either the Self or the Pressure line meets Void or break, tomb or extinction, control or harm, punishment or clash, or moves into ill, it is an ill omen; if the Year acts as Pressure and clashes and controls the Self, it is an unforeseen disaster."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10098, 10098],
+          "zh": ["官星为用，父母次之。", "若持世爻，得日月岁五生合者，定蒙首拔；", "官父世爻三合，必受殊恩。", "世与官爻，有一而逢空破、墓绝、克害、刑冲，及动而变凶者，不祥之兆；", "岁五官鬼冲克世爻者，不测之灾。"],
+          "yi": ["廷试以官星为用神，父母次之。", "如果持世爻得到日、月、太岁（原文作「岁五」）生合的，一定蒙受首选的拔擢；", "官爻、父爻、世爻成三合，必定受到特别的恩宠。", "世爻和官爻，有一个遇到空破、墓绝、克害、刑冲，以及发动变凶的，是不吉祥的预兆；", "太岁（原文作「岁五」）作官鬼来冲克世爻的，是意想不到的灾祸。"],
+          "en": ["In the palace examination the official star is the Subject and Resource comes second.", "If the line holding the Self is given life or combined by the Day, the Month and the Year (the text has \"sui wu\", probably Tai Sui), one will surely be raised first;", "if the Pressure, Resource and Self lines form a three-harmony, one will surely receive special favour.", "If either the Self or the Pressure line meets Void or break, tomb or extinction, control or harm, punishment or clash, or moves and changes into ill, it is an ill omen;", "if the Year (the text has \"sui wu\") acts as Pressure and clashes and controls the Self, it is an unforeseen disaster."] }
+      ],
+      "note": {
+        "yi": "「廷试」是皇帝在殿廷亲自主持的考试（殿试），章名下注「与会场兼断」，是说和会试一起看。原文「日月岁五」「岁五官鬼」的「岁五」不见于别处，从上下文看是太岁（「岁君」「岁王」之类），可能是「岁王」的误字；译文按太岁译，并保留原文字面在括注里。「首拔」是被首先选拔。后面的[乾按]不收。",
+        "en": "The \"palace examination\" is the one the emperor himself presided over in the palace hall; the title notes that it is judged together with the metropolitan examination. The \"sui wu\" in \"the Day, the Month and the sui wu\" and \"sui wu as Pressure\" is not found elsewhere; from the context it is the Tai Sui (the Year Lord) and may be a slip for \"sui wang\"; the translation reads it as Tai Sui and keeps the literal reading in brackets. \"Raised first\" means selected first. The [Qian's note] after it is not quoted."
+      }
+    }
+  ]
+}
