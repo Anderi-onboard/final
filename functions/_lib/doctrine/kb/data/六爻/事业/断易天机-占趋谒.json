@@ -1,0 +1,412 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "断易天机",
+  "chapter": "占趋谒第十二",
+  "chapter_en": "Chapter 12: Divining a call on a noble",
+  "ranges": {"断易天机": [2230, 2314]},
+  "units": [
+    {
+      "id": "LY.CAREER.DYTJ.33",
+      "topic": "取象",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "鬼谷辨爻法·占趋谒：初乡贵、二县贵、三州贵、四朝贵、五内贵、六大贵",
+      "rule": {
+        "yi": "占趋谒（拜谒贵人），按鬼谷子的爻位法：初爻是乡里的贵人，二爻是县里的贵人，三爻是州里的贵人，四爻是朝中的贵人，五爻是内廷的贵人，六爻是大贵人。",
+        "en": "In divining a call on a noble, by the Guigu line-position method the first line is the noble of the township, the second the noble of the county, the third the noble of the prefecture, the fourth the noble of the court, the fifth the noble of the inner court and the sixth the great noble."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2230, 2233],
+          "zh": ["鬼谷辨爻法", "初爻二爻三爻四爻五爻六爻", "乡贵县贵州贵朝贵内贵大贵"],
+          "yi": ["鬼谷子的爻位法", "从初爻数到六爻，依次是：", "乡里的贵人、县里的贵人、州里的贵人、朝廷的贵人、内廷的贵人、大贵人"],
+          "en": ["The Guigu method of the line positions", "The first, second, third, fourth, fifth and sixth lines are in order:", "noble of the township, of the county, of the prefecture, of the court, of the inner court, great noble"] }
+      ],
+      "see": ["LY.CAREER.DYTJ.01", "LY.CAREER.YM.50", "LY.CAREER.HZL.03"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.34",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "周公断趋谒歌（一）：欲参高贵把爻详（按鬼谷子爻位法），内外相生喜倍常，遇青龙发动主吉庆，遇白虎发动主适当",
+      "rule": {
+        "yi": "想去参见高贵的人，要把爻位仔细推详（按鬼谷子爻位法推：如贵人落在初爻，宜谒乡里的贵人）；内、外卦相生，喜事加倍；如果遇到青龙发动，主有吉庆；如果遇到白虎发动，主拜谒适当。",
+        "en": "To call on a person of high rank, examine the lines closely (by the Guigu line-position method: if the noble stands on the first line it is fitting to call on a noble of the township); inner and outer generating each other, joy is doubled; if the Azure Dragon moves there is good fortune; if the White Tiger moves, the call is fitting."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2237, 2237],
+          "zh": ["欲参高贵把爻详（1），", "内外相生喜倍常（2），", "若遇青龙飞吉庆（3），", "若逢白虎动很当（4）。"],
+          "yi": ["想去参见高贵的人，要把爻位仔细推详（1）；", "内外相生，喜事比寻常加倍（2）；", "如果遇到青龙，吉庆就飞来（3）；", "如果逢到白虎发动，很恰当（4）。"],
+          "en": ["To call on a person of high rank, examine the lines closely (1);", "inner and outer generating each other, joy is more than usual (2);", "if one meets the Azure Dragon, good fortune comes flying (3);", "if the White Tiger is met moving, it is very fitting (4)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2240, 2240],
+          "zh": ["(1)若要拜谒贵人，以鬼谷子爻位法推之。", "如贵人临初爻，宜谒乡贵之类。"],
+          "yi": ["（1）若要拜谒贵人，用鬼谷子的爻位法来推。", "比如贵人落在初爻，就宜去拜谒乡里的贵人，其余类推。"],
+          "en": ["(1) To call on a noble, reckon by the Guigu line-position method.", "For example if the Noble stands on the first line, it is fitting to call on a noble of the township, and so on."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2241, 2241],
+          "zh": ["(2)若得内外卦相生，则主遇贵有喜也。"],
+          "yi": ["（2）如果得内、外卦相生，就主见到贵人有喜事。"],
+          "en": ["(2) If the inner and outer trigrams generate each other, it means joy in meeting the noble."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2242, 2242],
+          "zh": ["(3)若值青龙发动，主有吉庆。"],
+          "yi": ["（3）如果值青龙发动，主有吉庆。"],
+          "en": ["(3) If the Azure Dragon moves, there is good fortune."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2243, 2243],
+          "zh": ["(4)若值白虎发动，主趋谒适当。"],
+          "yi": ["（4）如果值白虎发动，主拜谒适当。"],
+          "en": ["(4) If the White Tiger moves, the call is fitting."] }
+      ],
+      "note": {
+        "yi": "白虎一般主凶，这里却说白虎发动「很当」「趋谒适当」，是原文的说法，本库照录，不改。数字注号（1）到（10）是整理时编的。",
+        "en": "The White Tiger generally stands for ill, yet here it is said that the White Tiger moving is 'very fitting' for a call, as the text has it; it is recorded as it stands and not altered. The numbered notes (1) to (10) were numbered in editing."
+      },
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.HZL.04"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.35",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "周公断趋谒歌（二）：和同爱子翩翩起（世应相合、子孙发动吉利），屯滞嫌官冉冉扬（官鬼发动主困顿难行），外卦是阳兼被克，门前趋谒见凄惶",
+      "rule": {
+        "yi": "世应和同、子孙（爱子）发动，轻快地兴起，主吉利；屯滞，最嫌官鬼慢慢扬起（发动），主困顿难行；外卦是阳又被内卦所克（如既济这一类），到门前拜谒，只见凄惶而归。",
+        "en": "With Self and Other in harmony and the beloved son (Output) moving, one rises lightly and gaily, which is auspicious; stagnation: Pressure slowly rising (moving) is disliked and means being stuck and hard to proceed; with the outer trigram yang and also controlled by the inner (as in a hexagram such as Jiji), at the door where one calls one meets only dismay and goes home in distress."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2237, 2237],
+          "zh": ["和同爱子翩翩起（5），", "屯滞嫌官冉冉扬（6），", "外卦是阳兼被克（7），", "门前趋谒见凄惶（8）。"],
+          "yi": ["世应和同、子孙（爱子）发动，轻快地兴起（5）；", "屯滞，嫌官鬼慢慢扬起（发动）（6）；", "外卦是阳、又被克（7），", "到门前拜谒，只见凄惶（8）。"],
+          "en": ["with Self and Other in harmony and the beloved son moving, one rises lightly and gaily (5);", "stagnation: Pressure slowly rising is disliked (6);", "the outer trigram yang and also controlled (7),", "at the door where one calls, one meets only dismay (8)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2244, 2244],
+          "zh": ["(5)世应相合，子孙爻发动，主吉利。"],
+          "yi": ["（5）世、应相合，子孙爻发动，主吉利。"],
+          "en": ["(5) If Self and Other combine and the Output line moves, it is auspicious."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2245, 2245],
+          "zh": ["(6)若官鬼爻发动，主困顿难行。"],
+          "yi": ["（6）如果官鬼爻发动，主困顿难行。"],
+          "en": ["(6) If the Pressure line moves, it means being stuck and hard to proceed."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2246, 2246],
+          "zh": ["(7)外卦属阳克内卦，如既济卦之类。"],
+          "yi": ["（7）外卦属阳而克内卦，比如既济卦这一类。"],
+          "en": ["(7) The outer trigram being yang and controlling the inner trigram, as in a hexagram such as Jiji."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2247, 2247],
+          "zh": ["(8)若如上受克，主趋谒会凄惶而归。"],
+          "yi": ["（8）如果像上面这样受克，主拜谒会凄惶而归。"],
+          "en": ["(8) If it is controlled as above, the call will end in dismay and a return."] }
+      ],
+      "note": {
+        "yi": "「爱子」没有解释，注（5）说的是子孙爻，这里按子孙读。注（7）说「外卦属阳克内卦」，正文却说「外卦是阳兼被克」，一个是克内卦，一个是被克，两处不一致，本库照录，不改。",
+        "en": "'Beloved son' is not explained, and note (5) speaks of the Output line, so it is read as Output. Note (7) says 'the outer trigram being yang controls the inner trigram' while the verse says 'the outer trigram is yang and also controlled', one having it control and the other be controlled; the two do not agree and are recorded as they stand."
+      },
+      "see": ["LY.CAREER.HZL.05"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.36",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "周公断趋谒歌（三）：喜神驿马兼财禄，若动应知大吉昌（天喜、驿马、财爻、禄四者发动，谒贵如意并有获财之吉）",
+      "rule": {
+        "yi": "喜神、驿马兼有财、禄，如果发动，就知道大吉昌：天喜、驿马、财爻和禄这四样发动，谒见贵人如意，并且有得财的吉利。",
+        "en": "With the Joy spirit and the Post Horse together with Wealth and the Emolument, if they move, know that it is greatly auspicious: if the Joy star, the Post Horse, the Wealth line and the Emolument, these four, move, the call on the noble goes as one wishes and there is also the good fortune of gaining wealth."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2237, 2237],
+          "zh": ["喜神驿马兼财禄（9），", "若动应知大吉昌（10）。"],
+          "yi": ["喜神、驿马兼有财、禄（9），", "如果发动，就知道大吉昌（10）。"],
+          "en": ["the Joy spirit and the Post Horse together with Wealth and the Emolument (9),", "if they move, know that it is greatly auspicious (10)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2248, 2248],
+          "zh": ["(9)若得天喜、驿马兼财爻和禄。"],
+          "yi": ["（9）如果得到天喜、驿马，又有财爻和禄。"],
+          "en": ["(9) If one gets the Joy star and the Post Horse together with the Wealth line and the Emolument."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2249, 2249],
+          "zh": ["(10)以上四者发动，主谒贵如意，并有获财之吉。"],
+          "yi": ["（10）以上四者发动，主谒见贵人如意，并有得财的吉利。"],
+          "en": ["(10) If these four move, the call on the noble goes as one wishes, and there is the good fortune of gaining wealth."] }
+      ],
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.CA.18"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.37",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·趋谒（一）：贞悔相生吉、内外相凌凶且伤；世克应则群长怒、更相鬼爻为不祥",
+      "rule": {
+        "yi": "拜谒，内卦（贞）和外卦（悔）相生，吉利恰当；内外互相欺凌（相克、相冲），凶而且受伤；世克应，是众位尊长发怒，再加官鬼爻，就不祥。",
+        "en": "In a call, the inner trigram (zhen) and the outer (hui) generating each other is fitting and auspicious; inner and outer bullying each other (controlling or clashing) is bad and brings harm; the Self controlling the Other means the elders are angry, and with the Pressure line besides it is inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2256, 2256],
+          "zh": ["贞悔相生吉是当，", "内外相凌凶且伤（1），", "世克应云群长怒，", "更相鬼爻为不祥（2）。"],
+          "yi": ["内卦（贞）和外卦（悔）相生，吉利恰当；", "内外互相欺凌，凶而且有伤（1）；", "世克应，是说众位尊长发怒；", "再加上官鬼爻，就不祥（2）。"],
+          "en": ["The inner trigram (zhen) and the outer (hui) generating each other is fitting and auspicious;", "inner and outer bullying each other is bad and brings harm (1);", "the Self controlling the Other means the elders are angry;", "and with the Pressure line besides, it is inauspicious (2)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2268, 2268],
+          "zh": ["（1）内外卦相生，吉利。", "内外卦相克、冲，凶且受伤害。"],
+          "yi": ["（1）内卦和外卦相生，是吉利的。", "内外卦相克、相冲，凶而且受伤害。"],
+          "en": ["(1) Inner and outer trigrams generating each other is auspicious.", "Inner and outer trigrams controlling or clashing with each other is bad and one is harmed."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2269, 2269],
+          "zh": ["（2）应与用及卦身为趋处。", "若世克应或克官鬼，皆不利。", "后仿此。"],
+          "yi": ["（2）应、用和卦身，是所要去的地方的象。", "如果世克应，或者克官鬼，都不利。", "后面照此类推。"],
+          "en": ["(2) The Other, the Subject and the Body of the hexagram stand for the place one is going to.", "If the Self controls the Other or controls Pressure, it is unfavourable.", "Later cases follow this."] }
+      ],
+      "note": {
+        "yi": "「卜筮元龟」是断易天机转引的书名；「贞」是内卦、「悔」是外卦。",
+        "en": "'Bushi Yuangui' is the name of a book quoted by the Duanyi Tianji; 'zhen' is the inner trigram and 'hui' the outer."
+      },
+      "see": ["LY.CAREER.HZL.05"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.38",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·趋谒（二）：悔克贞则君主念、亦忧谗言之刑害；贞克悔为伤主心，俯仰唯须自卑钦",
+      "rule": {
+        "yi": "悔（外卦）克贞（内卦），是说主人惦念你，但也要担忧谗言带来的刑害；贞克悔，是伤了主人的心，进退俯仰只须自己谦卑恭敬。注文说：终究不如相生好。",
+        "en": "The outer trigram controlling the inner means the host is thinking of you, but worry too about punishment and harm through slander; the inner controlling the outer means one has hurt the host's heart, and in every bearing one must humble oneself and show respect. The note says: in the end it is not as good as mutual generation."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2256, 2256],
+          "zh": ["悔克贞云君主念，", "亦忧刑害于谗言（3），", "贞克悔为伤主心，", "俯仰唯须自卑钦。"],
+          "yi": ["悔（外卦）克贞（内卦），是说主人惦念你；", "也要担忧刑害，来自谗言（3）；", "贞（内卦）克悔（外卦），是伤了主人的心；", "进退俯仰，只须自己谦卑敬重。"],
+          "en": ["the outer trigram controlling the inner means the host is thinking of you;", "but worry too about punishment and harm through slander (3);", "the inner trigram controlling the outer means one has hurt the host's heart;", "in every bearing one must humble oneself and show respect."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2270, 2270],
+          "zh": ["（3）终不及相生也。"],
+          "yi": ["（3）终究不如相生好。"],
+          "en": ["(3) In the end it is not as good as mutual generation."] }
+      ]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.39",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·趋谒（三）：应克世则君主爱；内外相生吉最；世应比和吉无凶；官鬼旺身乐无碍",
+      "rule": {
+        "yi": "应克世，是说主人喜爱你；内外相生，吉利最好；世、应比和，有吉无凶；官鬼旺、身（卦身）旺，欢乐无阻碍。注文说：内外相生、世应比和、官鬼生世爻，都是吉利。",
+        "en": "The Other controlling the Self means the host is fond of you; inner and outer generating each other is the best auspice; Self and Other in accord is auspicious without ill; with Pressure strong and the Body strong, joy is without obstruction. The note says: inner and outer generating each other, Self and Other in accord, and Pressure generating the Self line are all auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2256, 2256],
+          "zh": ["应克世云君主爱，", "内外相生吉为最，", "世应比和吉无凶，", "官鬼旺身乐无碍（4）。"],
+          "yi": ["应克世，是说主人喜爱你；", "内外相生，吉利最好；", "世、应比和，有吉无凶；", "官鬼旺、身旺，欢乐无阻碍（4）。"],
+          "en": ["the Other controlling the Self means the host is fond of you;", "inner and outer generating each other is the best auspice;", "Self and Other in accord, auspicious without ill;", "with Pressure strong and the Body strong, joy is without obstruction (4)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2271, 2271],
+          "zh": ["（4）内外相生，世应比和，官鬼生世爻，都为吉利。"],
+          "yi": ["（4）内外相生，世、应比和，官鬼生世爻，都是吉利。"],
+          "en": ["(4) Inner and outer generating each other, Self and Other in accord, and Pressure generating the Self line are all auspicious."] }
+      ],
+      "see": ["LY.CAREER.HZL.05"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.40",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·占得见贵人否：欲见贵人占月卦（卦身），官鬼生身尤益；卦若无身又无鬼则欲见临行必止；官鬼落空亡则终不得见",
+      "rule": {
+        "yi": "要见贵人，看月卦（月的卦身）：卦里有着落，就能相见；占卦要见到官鬼爻，官鬼生身更有益；卦里如果没有身、又没有鬼，想去见人临出发一定又作罢；卦中官鬼落空亡，终究见不到。注文举例：假如正月占得泰卦，月令寅和卦身上的官鬼寅并在一起，就是和那个人平等相交。",
+        "en": "To see a noble, look at the monthly hexagram and its Body: if the hexagram has a footing in it one can meet; in divining one must see the Pressure line, and Pressure generating the Body is all the more helpful; if the hexagram has no Body and no Pressure, one who wishes to go and see will surely stop again as he sets out; if Pressure in the hexagram falls Void, in the end one cannot see him. The note gives an example: suppose in the first month one gets the hexagram Tai, and the month branch Yin joins the Pressure Yin on the Body of the hexagram: one meets that person as an equal."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2258, 2259],
+          "zh": ["占得见贵人否云：", "欲见贵人占月卦，", "卦底有着相见也（5），", "占卦须见官鬼爻，", "官鬼生身尤益雅。", "卦若无身又无鬼，", "欲见临行必又止，", "卦中官鬼落空亡，", "此则终须不劳拟（6）。"],
+          "yi": ["占问能不能见到贵人，（卜筮元龟）说：", "要见贵人，占月卦（月的卦身）；", "卦底有着落，就能相见（5）；", "占卦要见到官鬼爻，", "官鬼生身更有益、更相宜。", "卦里如果没有身、又没有鬼，", "想去见人，临出发一定又作罢；", "卦中官鬼落空亡，", "那么终究不必费心打算了（6）。"],
+          "en": ["On divining whether one will see the noble, it says:", "to see a noble, divine the monthly hexagram;", "if the foot of the hexagram has something to land on, one can meet (5);", "in divining the hexagram one must see the Pressure line,", "and Pressure generating the Body is all the more helpful and fitting.", "If the hexagram has no Body and no Pressure,", "one who wishes to go and see will surely stop again as he sets out;", "if Pressure in the hexagram falls Void,", "then in the end there is no need to trouble to plan (6)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2272, 2272],
+          "zh": ["（5）假令正月得泰卦，月令寅与卦身官鬼寅并，与其人平交也。"],
+          "yi": ["（5）假如正月占得泰卦，月令寅和卦身上的官鬼寅并在一起，就是和那个人平等相交。"],
+          "en": ["(5) Suppose in the first month one gets the hexagram Tai, and the month branch Yin joins the Pressure Yin on the Body of the hexagram: one meets that person as an equal."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2273, 2273],
+          "zh": ["（6）终不得见也。"],
+          "yi": ["（6）终究见不到。"],
+          "en": ["(6) In the end one cannot see him."] }
+      ],
+      "note": {
+        "yi": "「卦底有着」没有解释，这里读作「卦里有着落」，不确定；注（5）的例子说的是月令与卦身官鬼相并。",
+        "en": "'The foot of the hexagram has it' is not explained and is read here as 'the hexagram has a footing', which is uncertain; the example in note (5) speaks of the month branch joining the Pressure line on the Body."
+      },
+      "see": ["LY.CAREER.HZL.04"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.41",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·占见常人或喜怒：内阳外阴相见美、容貌如嗔心中喜；阳爻动他出外游、阴爻动在家；外阴内阳九五相承吉昌；内阴外阳不相见；注：内为心外为貌、阴主不见阳主见、阴主喜阳主嗔",
+      "rule": {
+        "yi": "占见平常人是喜是怒：内卦阳、外卦阴，相见美好，容貌像是嗔怒、心里却欢喜；阳爻动，是他出外游走，阴爻动，是他在家里；外卦阴、内卦见阳，九五相承，求见吉昌；内阴外阳，见不到面，即使见到，他嗔怒、在外面有伴。注文说：内卦是心，外卦是貌；阴主见不到、阳主见得到；阴主喜、阳主嗔；外卦阴主近、能相见，外卦阳主远、见不到；外阳内阴主不吉，见了也不相喜。",
+        "en": "On divining whether an ordinary person will be glad or angry on being seen: inner yang and outer yin, the meeting is fair, the face looks angry but the heart is glad; a yang line moving says he has gone out roaming, a yin line moving says he is at home; the outer trigram yin and the inner yang, with the fifth line yang on top, the call is auspicious; inner yin and outer yang, one does not meet, and even if they meet he is angry and has company outside. The notes say: the inner is the heart and the outer the countenance; yin means not meeting, yang means meeting; yin means gladness, yang means anger; outer yin means near and one can meet, outer yang means far and one cannot; outer yang with inner yin means ill luck, and even if they meet they do not take to each other."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2260, 2261],
+          "zh": ["占见常人或喜怒云：", "内阳外阴相见美，", "容貌如嗔心中喜（7），", "阳爻动言出外游，", "阴爻动云居内底。", "外卦见阴内见阳，", "九五相承求吉昌（8），", "内阴外阳不相见，", "虽见哪嗔外作伴（9）。"],
+          "yi": ["占见平常人是喜是怒，（卜筮元龟）说：", "内卦阳、外卦阴，相见美好；", "容貌像是嗔怒，心里却欢喜（7）；", "阳爻动，说是他出外游走；", "阴爻动，说是他在家里。", "外卦见阴、内卦见阳，", "九五相承，求见吉昌（8）；", "内阴外阳，见不到面；", "即使见到，他也嗔怒，在外面有伴（9）。"],
+          "en": ["On divining whether an ordinary person will be glad or angry on being seen, it says:", "inner yang and outer yin, the meeting is fair;", "the face looks angry but the heart is glad (7);", "a yang line moving says he has gone out roaming;", "a yin line moving says he is at home.", "The outer trigram showing yin and the inner showing yang,", "with the fifth line yang on top, the call is auspicious (8);", "inner yin and outer yang, one does not meet;", "even if they meet, he is angry and has company outside (9)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2274, 2274],
+          "zh": ["（7）内为心，外为貌。", "阴主不见，阳主见。", "阴主喜，阳主嗔。"],
+          "yi": ["（7）内卦是心，外卦是貌。", "阴主见不到，阳主见得到。", "阴主欢喜，阳主嗔怒。"],
+          "en": ["(7) The inner is the heart and the outer is the countenance.", "Yin means not meeting, yang means meeting.", "Yin means gladness, yang means anger."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2275, 2275],
+          "zh": ["（8）外阴主近，得相见。", "外阳主远，不相见。"],
+          "yi": ["（8）外卦阴，主近，能够相见。", "外卦阳，主远，见不到。"],
+          "en": ["(8) With the outer trigram yin it means near, and one can meet.", "With the outer trigram yang it means far, and one cannot meet."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2276, 2276],
+          "zh": ["（9）外阳内阴，主不吉，若见也不相喜。"],
+          "yi": ["（9）外阳内阴，主不吉，即使见面也不相喜欢。"],
+          "en": ["(9) Outer yang and inner yin means ill luck, and even if they meet they do not take to each other."] }
+      ],
+      "note": {
+        "yi": "「虽见哪嗔外作伴」的「哪」原文难解（疑是「那」），这里按「他嗔怒、在外有伴」译，不确定。",
+        "en": "The 'na' of 'though they meet, he is angry (na chen) and has company outside' is hard to read (perhaps a slip for another character), and it is translated as 'he is angry and has company outside', which is uncertain."
+      },
+      "see": ["LY.CAREER.HZL.03"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.42",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·占献书：旺相相生皆敏，休废不和终不允；一阴复一阳上下相生亦顺；内外俱阳应生世吉庆；阴居休囚刑杀并、相克防忧滞；外阳听顺阴不从；纯阳相生喜听、纯阴相凌似诈聋",
+      "rule": {
+        "yi": "占进献书信、奏章：旺相、相生，都主顺利敏捷；休废、不和，终究不被应允；一阴又一阳、上下相生，也算相顺；内外都是阳、应生世，吉庆无疑；阴居休囚、刑杀并见、相克，要防忧愁滞碍；外卦阳，他听从，阴，他不从；有气相生就好，无气就凶；纯阳相生，他欢喜就听从；纯阴相凌，他像是装聋。注文逐条解释了阴阳相生为顺、相克为逆，以及应生世、父母爻是书信等。",
+        "en": "On divining the presenting of a letter or memorial: strong and generating one another, all go swiftly and smoothly; at rest or abandoned and at odds, in the end it is not granted; a yin and then a yang, upper and lower generating each other, it is also in accord; with inner and outer both yang and the Other generating the Self, good fortune is beyond doubt; yin in a place at rest or trapped with punishment and baleful spirits together, and mutual control, guard against worry and obstruction; the outer trigram yang, he listens and complies, yin, he does not follow; with qi and generating it is good, without qi bad; pure yang generating, he is glad and listens; pure yin bullying, he seems to feign deafness. The notes explain item by item that yin and yang generating each other is accord and controlling each other is opposition, that the Other generating the Self, and that the Resource line is the letter."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2262, 2263],
+          "zh": ["占献书云：", "旺相相生皆为敏，", "休废不和终不允，", "若得一阴复一阳，", "上下相生亦相顺（10）。", "内外俱阳应生世，", "吉庆无疑不须记（11），", "阴居休囚刑杀并，", "相克须防至忧滞（12）。", "外阳听顺阴不从，", "有气相生无气凶（13），", "纯阳相生喜即听，", "纯阴相凌似诈聋（14）。"],
+          "yi": ["占进献书信、奏章，（卜筮元龟）说：", "旺相、相生，都主敏捷顺利；", "休废、不和，终究不被应允；", "如果得到一阴又一阳，", "上下相生，也算相顺（10）。", "内外都是阳、应生世，", "吉庆无疑，不用再记挂（11）；", "阴居于休囚，刑、杀并见，", "相克，要防备到忧愁滞碍（12）。", "外卦阳，他听从顺应；阴，他不从；", "有气相生就好，无气就凶（13）；", "纯阳相生，他欢喜就听从；", "纯阴相凌，好像装聋（14）。"],
+          "en": ["On divining the presenting of a letter or memorial, it says:", "strong and generating one another, all go swiftly and smoothly;", "at rest or abandoned and at odds, in the end it is not granted;", "if one gets a yin and then a yang,", "upper and lower generating each other, it is also in accord (10).", "with inner and outer both yang and the Other generating the Self,", "good fortune is beyond doubt and needs no worry (11);", "with yin in a place at rest or trapped and punishment and baleful spirits together,", "and mutual control, guard against worry and obstruction (12).", "the outer trigram yang, he listens and complies; yin, he does not follow;", "with qi and generating it is good, without qi it is bad (13);", "pure yang generating, he is glad and listens;", "pure yin bullying, he seems to feign deafness (14)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2277, 2277],
+          "zh": ["（10）阴阳相生为顺，如恒泰之类是也。", "阴阳相克为逆，未济之类是也。", "按：经云：上阴即逆不乐顺。", "临、小过之类是也。"],
+          "yi": ["（10）阴阳相生为顺，像恒、泰这一类就是。", "阴阳相克为逆，未济这一类就是。", "按：经上说：上面是阴就是逆，不乐顺。", "临、小过这一类就是。"],
+          "en": ["(10) Yin and yang generating each other is accord, as in hexagrams such as Heng and Tai.", "Yin and yang controlling each other is opposition, as in hexagrams such as Weiji.", "A comment: the classic says that yin on top is opposition and does not take pleasure in accord.", "Hexagrams such as Lin and Xiaoguo are of this kind."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2278, 2278],
+          "zh": ["（11）如讼、中孚之类是应生世。", "应爻父母爻为书信，父母化鬼欲求官职，父母化兄欲进身求名财之事。", "但父母为吉神，并之则吉也。", "其余仿此。"],
+          "yi": ["（11）比如讼、中孚这一类，是应生世。", "应爻、父母爻是书信，父母化鬼想求官职，父母化兄想进身求名财之事。", "但父母是吉神，并上它就吉。", "其余照此类推。"],
+          "en": ["(11) Hexagrams such as Song and Zhongfu are cases of the Other generating the Self.", "The Other line and the Resource line are the letter; Resource turning into Pressure means wanting to seek office, and Resource turning into Peer means wanting to advance oneself and seek fame and wealth.", "But Resource is an auspicious spirit, and joining it is auspicious.", "The rest follow this."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2279, 2279],
+          "zh": ["（12）纯阴怒，纯阳喜。", "世居纯阴，休囚无气，并带刑杀，受克大凶。", "书启申事，不得其意也。"],
+          "yi": ["（12）纯阴发怒，纯阳欢喜。", "世落在纯阴里，又休囚无气，还带着刑、杀，再受克，大凶。", "书启申事，不得其意。"],
+          "en": ["(12) Pure yin means anger, pure yang means gladness.", "With the Self in pure yin, at rest or trapped without qi, carrying punishment and baleful spirits and controlled, it is very bad.", "A letter or petition stating one's case will not get what it wants."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2280, 2280],
+          "zh": ["（13）内为身，外为君。", "外阴如有气相生内亦吉，例如卜得家人卦是也。", "外阴如无气亦凶。", "更须细详之。"],
+          "yi": ["（13）内卦是身，外卦是君。", "外卦阴如果有气相生，内卦也吉，比如占得家人卦就是。", "外卦阴如果无气也凶。", "还要仔细详察。"],
+          "en": ["(13) The inner trigram is oneself and the outer trigram is the lord.", "If the outer trigram is yin and has qi and generates, the inner is auspicious too, as in the hexagram Jiaren.", "If the outer trigram is yin and has no qi it is also bad.", "Examine it further with care."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2281, 2281],
+          "zh": ["（14）纯阳相生，有气为喜。", "纯阴无气，相克为怒。"],
+          "yi": ["（14）纯阳相生，有气是喜；", "纯阴无气、相克，是怒。"],
+          "en": ["(14) Pure yang generating with qi is gladness;", "pure yin without qi and controlling is anger."] }
+      ],
+      "note": {
+        "yi": "「献书」是向贵人进献书信、奏章。注（10）里「按：经云」以下的话，原文没有交代是谁的按语，照录。",
+        "en": "'Presenting a letter' is the offering of a letter or memorial to a noble. In note (10) the words after 'a comment' are not attributed to anyone in the text and are recorded as they stand."
+      },
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.EL.88"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.43",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "卜筮元龟·占欲见人可出不可出：阴兴之时得阴卦宜见小人、阳生之后得阳卦宜见士贤；阴卦遇阳时灭没出则被小人害、阳卦遇阴不顺出亦难同君子爱",
+      "rule": {
+        "yi": "占想去见人该不该出门：阴气兴起的时候得阴卦，适宜见小人；阳气生起之后得阳卦，适宜见士人、贤者；阴卦遇上阳的时节就灭没，出门会被小人所害；阳卦遇上阴的时节不顺，出门也难得到君子的喜爱。注文说：夏至后阴气生，得阴卦是小人得时；冬至后阳气生，得阳卦是君子得时；得时则吉，失时则凶。",
+        "en": "On divining whether one who wishes to see someone may go out or not: when yin rises and one gets a yin hexagram it suits seeing petty people; after yang is born and one gets a yang hexagram it suits seeing scholars and the worthy; a yin hexagram meeting a yang season is extinguished, and going out one will be harmed by petty people; a yang hexagram meeting a yin season is not in accord, and going out one will hardly win the regard of the gentleman. The notes say: after the Summer Solstice yin qi is born, and getting a yin hexagram is the petty person's time; after the Winter Solstice yang qi is born, and getting a yang hexagram is the gentleman's time; in its time it is auspicious, out of its time it is bad."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2264, 2265],
+          "zh": ["占欲见人可出不可出云：", "阴兴之时得阴卦，", "相见法宜小人也（15），", "阳生之后得阳卦，", "此则方宜士贤者（16）。", "阴卦遇阳时灭没，", "出则应被小人害（17），", "阳卦遇阴弗顺时，", "出亦难同君子爱（18）。"],
+          "yi": ["占想去见人该不该出门，（卜筮元龟）说：", "阴气兴起的时候得阴卦，", "相见的法则，适宜见小人（15）；", "阳气生起之后得阳卦，", "这时才适宜见士人、贤者（16）。", "阴卦遇上阳的时节，就灭没；", "出门就会被小人所害（17）；", "阳卦遇上阴的时节不顺，", "出门也难得到君子的喜爱（18）。"],
+          "en": ["On divining whether one who wishes to see someone may go out or not, it says:", "When yin rises and one gets a yin hexagram,", "the rule for meeting is to see petty people (15);", "after yang is born and one gets a yang hexagram,", "this is the time to see scholars and the worthy (16).", "a yin hexagram meeting a yang season is extinguished;", "going out one will be harmed by petty people (17);", "a yang hexagram meeting a yin season is not in accord,", "and going out one will hardly win the regard of the gentleman (18)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2282, 2282],
+          "zh": ["（15）夏至后阴气生，卜得阴卦，是小人得其时也。"],
+          "yi": ["（15）夏至之后阴气生起，占得阴卦，是小人得时。"],
+          "en": ["(15) After the Summer Solstice yin qi is born, and getting a yin hexagram is the petty person's time."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2283, 2283],
+          "zh": ["（16）冬至后阳气生，卜得阳卦，是君子得其时也。", "得时则吉，失时即凶。"],
+          "yi": ["（16）冬至之后阳气生起，占得阳卦，是君子得时。", "得时就吉，失时就凶。"],
+          "en": ["(16) After the Winter Solstice yang qi is born, and getting a yang hexagram is the gentleman's time.", "In its time it is auspicious, out of its time it is bad."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2284, 2284],
+          "zh": ["（17）阴卦遇阳时为灭没，出门易被小人之害。"],
+          "yi": ["（17）阴卦遇上阳的时节是灭没，出门容易被小人所害。"],
+          "en": ["(17) A yin hexagram meeting a yang season is extinguished, and going out one is easily harmed by petty people."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2285, 2285],
+          "zh": ["（18）阳卦遇阴时也不顺，出门也难得和君子相见，相投。"],
+          "yi": ["（18）阳卦遇上阴的时节也不顺，出门也难和君子相见、相投。"],
+          "en": ["(18) A yang hexagram meeting a yin season is also not in accord, and going out it is hard to meet and get on with the gentleman."] }
+      ]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.44",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "洞林秘诀·参谒（一）：先看卦名，爻动利生成，相扶相合见终美、有气如心；只忌世内克应外，其余皆可望相迎；阴爻旺相利见武、阳爻升旺见文人",
+      "rule": {
+        "yi": "参见拜谒，先要看卦名；稍遇爻动，利于生成；相扶相合，见面终究美好；有气，就如心遂意。只忌世在内卦克应在外卦，其余都可以指望受到迎接；阴爻旺相，利于见武职的人；阳爻升旺，利于见文人。注文说：世爻克应爻、内卦克外卦，都不利相见；应生世、外克内，则他欢喜、盼我去求；阴爻旺相利见武职和平辈，阳爻旺相利见文职和尊长。",
+        "en": "In calling on someone, first look at the name of the hexagram; a little movement of a line favours bringing it about; with mutual support and combination the meeting is in the end fair, and with qi it goes as the heart wishes. Only avoid the Self in the inner trigram controlling the Other in the outer; all the rest can hope to be welcomed; a strong yin line favours seeing military men and a rising, strong yang line favours seeing literati. The notes say: the Self line controlling the Other line, or the inner trigram controlling the outer, is unfavourable for meeting; if the Other generates the Self or the outer controls the inner, he is glad and hopes I will come and ask; a strong yin line favours seeing military officials and equals, a strong yang line civil officials and elders."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2302, 2302],
+          "zh": ["参谒先须看卦名，", "稍逢爻动利生成，", "相扶相合见终美，", "有气如心遂称情。", "只忌世内克应外，", "其余皆可望相迎（1），", "阴爻旺相利见武，", "阳爻升旺见文人（2）。"],
+          "yi": ["参见拜谒，先要看卦名；", "稍微遇到爻动，利于生成；", "相扶相合，见面终究美好；", "有气，就如心所愿、称心遂意。", "只忌讳世在内卦克应在外卦，", "其余都可以指望受到迎接（1）；", "阴爻旺相，利于见武职的人；", "阳爻升旺，利于见文人（2）。"],
+          "en": ["In calling on someone, first look at the name of the hexagram;", "a little movement of a line favours bringing it about;", "with mutual support and combination, the meeting is in the end fair;", "with qi, it goes as the heart wishes and to one's liking.", "Only avoid the Self in the inner trigram controlling the Other in the outer,", "all the rest can hope to be welcomed (1);", "a strong yin line favours seeing military men;", "a rising and strong yang line favours seeing literati (2)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2305, 2305],
+          "zh": ["(1)世爻克应爻，内卦克外卦，都不利相见。", "应生世，外克内，则他相喜，望我来求。"],
+          "yi": ["（1）世爻克应爻，内卦克外卦，都不利相见。", "应生世，外克内，则他相喜，盼我来求。"],
+          "en": ["(1) The Self line controlling the Other line, or the inner trigram controlling the outer, is unfavourable for meeting.", "If the Other generates the Self, or the outer controls the inner, then he is glad and hopes I will come and ask."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2306, 2306],
+          "zh": ["(2)阴爻旺相，利见武职之人；", "以及平辈之交。", "阳爻旺相，利见文职之人，以及尊长之类。"],
+          "yi": ["（2）阴爻旺相，利于见武职的人；", "以及平辈的朋友。", "阳爻旺相，利于见文职的人，以及尊长一类。"],
+          "en": ["(2) A strong yin line favours seeing military men;", "and friends of the same generation.", "a strong yang line favours seeing civil officials, and elders and the like."] }
+      ],
+      "note": {
+        "yi": "「洞林秘诀」「海底眼」都是断易天机转引的书名。",
+        "en": "'Dongling Mijue' and 'Haidi Yan' are names of books quoted by the Duanyi Tianji."
+      },
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.HZL.05"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.45",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "洞林秘诀·参谒（二）：世应本宫内外旺则不怕旬中空亡、纵然初到未见即时会遇；望财须有官鬼、伏神卦有亦强；休囚之卦宜休望、喜神动助亦寻常；休囚空亡休准拟、旺杀伤身返有伤；生合扶而不旺寻常相见正忠良",
+      "rule": {
+        "yi": "世、应、本宫、内外卦都旺，就不怕旬中碰上空亡，纵然刚到的时候没能见到，不久也会遇上，很相当；指望得财，必须有官鬼，伏神在卦里也算强；休囚的卦就不要指望，有喜神发动相助也不过寻常；休囚、空亡，不要打算；旺的杀伤身，反而受伤；生合扶助的卦如果不旺，寻常相见，见到的正是忠良之人。",
+        "en": "With the Self, the Other, the palace and the inner and outer trigrams all strong, one need not fear meeting Void within the decade, and even if on first arriving one cannot see him, one will soon meet and it is very fitting; hoping for wealth, there must be Pressure, and a hidden spirit present in the hexagram is also strong; a hexagram at rest or trapped, give up hope, and with the Joy spirit moving to help it is still only ordinary; at rest, trapped or Void, do not plan on it; a strong baleful spirit injuring the self brings injury instead; a hexagram generated, combined and supported but not strong, one meets as usual and the one met is just a loyal and good man."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2302, 2302],
+          "zh": ["世应本宫内外旺，", "不怕旬中犯空亡，", "纵然初到未得见，", "即时会遇甚相当。", "望财须要有官鬼，", "伏神卦有亦为强，", "休囚之卦宜休望，", "喜神动助自寻常。", "休囚空亡休准拟，", "旺杀伤身返有伤，", "生合扶之卦不旺，", "寻常相见正忠良。"],
+          "yi": ["世、应、本宫、内外卦都旺，", "就不怕旬中碰上空亡；", "纵然刚到的时候没能见到，", "不久就会遇上，很相当。", "指望得财，必须有官鬼；", "伏神在卦里有，也算强；", "休囚的卦，就不要指望；", "有喜神发动相助，也不过寻常。", "休囚、空亡，不要打算；", "旺的杀伤身，反而受伤；", "生合扶助的卦如果不旺，", "寻常相见，见到的正是忠良之人。"],
+          "en": ["With the Self, the Other, the palace and the inner and outer trigrams all strong,", "one need not fear meeting Void within the decade;", "even if on first arriving one cannot see him,", "one will soon meet, and it is very fitting.", "hoping for wealth, there must be Pressure;", "a hidden spirit present in the hexagram is also strong;", "a hexagram at rest or trapped, give up hope;", "with the Joy spirit moving to help, it is still only ordinary.", "at rest, trapped or Void, do not plan on it;", "a strong baleful spirit injuring the self brings injury instead;", "a hexagram generated, combined and supported but not strong,", "one meets as usual, and the one met is just a loyal and good man."] }
+      ],
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.HZL.04"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.46",
+      "topic": "贵人",
+      "chapter": "占趋谒第十二",
+      "chapter_en": "Chapter 12: Divining a call on a noble",
+      "title": "海底眼·谒人：须问谒何人；世应坐鬼枉劳心；用爻出现不乘土、往见必不在家；以外卦取，外阳可见外阴不见，阴化阳宜再见阳化阴公已出；忌外卦独发伏藏，应动皆不见；一看财爻旺相出现忌发动，见官看官爻，忌世应坐鬼",
+      "rule": {
+        "yi": "拜谒人，要问拜谒的是谁；世、应坐着官鬼，白费心思；用爻出现却不乘土，去见他必定不在家。又说：凡拜谒人，以外卦来取：外卦阳，可以见到，外卦阴，见不到；阴化阳，宜再次去见，阳化阴，人已经出去了；外卦要出现，他才在家；忌讳外卦单独发动或伏藏，应爻发动，都见不到；第一看财爻，旺相、出现，忌讳发动；要见官员，看官爻；忌讳世、应坐着鬼。",
+        "en": "In calling on someone, ask whom one is calling on; with the Self or the Other sitting on Pressure, one wearies the mind in vain; the Subject line appearing but not riding Earth, going to see him, he is surely not at home. It also says: in calling on anyone, take it from the outer trigram: outer yang, one can see him, outer yin, one cannot; yin turning into yang, it suits seeing him again, yang turning into yin, he has already gone out; the outer trigram must appear for him to be at home; avoid the outer trigram moving alone or hidden, and with the Other moving in all cases one cannot see him; first look at the Wealth line, strong and appearing, and it should not move; to see an official, look at the Pressure line; avoid the Self or the Other sitting on Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2313, 2313],
+          "zh": ["谒人须问谒何人，", "世应坐鬼枉劳心，", "用爻出现不乘土，", "往见必不在家庭。"],
+          "yi": ["拜谒人，要问拜谒的是什么人；", "世、应坐着官鬼，白费心思；", "用爻出现、却不乘土，", "去见他，一定不在家里。"],
+          "en": ["In calling on someone, ask whom one is calling on;", "with the Self or the Other sitting on Pressure, one wearies the mind in vain;", "the Subject line appearing but not riding Earth,", "going to see him, he is surely not at home."] },
+        { "by": "经", "book": "断易天机", "range": [2314, 2314],
+          "zh": ["又云：", "凡拜谒人，", "以外卦取，", "外阳可见，", "外阴不见。", "阴化阳宜再见，", "阳化阴公已出。", "要外卦出现，", "在家。", "忌外卦独发、伏藏，", "应动皆不见。", "一看财爻，", "旺相出现，", "忌发动。", "见官看官爻，", "谒人须问谒何人。", "忌世应坐鬼。"],
+          "yi": ["它又说：", "凡是拜谒人，", "以外卦来取，", "外卦阳，可以见到；", "外卦阴，见不到。", "阴化阳，宜再次去见；", "阳化阴，人已经出去了。", "要外卦出现，", "他才在家。", "忌讳外卦单独发动、或伏藏；", "应爻发动，都见不到。", "第一看财爻，", "要强旺而且显现，", "忌讳发动。", "要见官员，看官爻；", "拜谒人，要问拜谒的是谁。", "忌讳世、应坐着鬼。"],
+          "en": ["It also says:", "In calling on anyone,", "take it from the outer trigram,", "outer yang, one can see him;", "outer yin, one cannot.", "yin turning into yang, it suits seeing him again;", "yang turning into yin, he has already gone out.", "The outer trigram must appear,", "and then he is at home.", "avoid the outer trigram moving alone or hidden;", "with the Other moving, in all cases one cannot see him.", "First look at the Wealth line,", "it must be strong and appearing,", "it should not move.", "to see an official, look at the Pressure line;", "in calling on someone, ask whom one is calling on.", "avoid the Self or the Other sitting on Pressure."] }
+      ],
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.HZL.04"]
+    }
+  ]
+}

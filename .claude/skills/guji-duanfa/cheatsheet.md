@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(590 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(665 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 27 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 63 |
+| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 32 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 82 |
 | 动变 | Moving lines and what they turn into | 4 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 27 |
-| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 47 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 37 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 37 |
+| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 51 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 53 |
 | 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 39 |
-| 军旅 | Soldiers, campaigns and military posts | 139 |
-| 国朝 | The court and the state: ruler, ministers, the realm | 80 |
+| 军旅 | Soldiers, campaigns and military posts | 140 |
+| 国朝 | The court and the state: ruler, ministers, the realm | 81 |
 | 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 27 |
-| 应期 | Timing: when the post comes, changes or ends | 16 |
-| 取象 | Reading the images: what kind of post, which office, which place | 42 |
-| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 42 |
+| 应期 | Timing: when the post comes, changes or ends | 19 |
+| 取象 | Reading the images: what kind of post, which office, which place | 50 |
+| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 50 |
 
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
@@ -78,12 +78,16 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: colour, direction and kind of person or spirit | 8 |
 | 风险 | Warnings: what to guard against | 27 |
 
-## 打架 · Where the classics disagree(175 条)
+## 打架 · Where the classics disagree(178 条)
 
 - **LY.CAREER.CA.21 天乙贵人再来相合：不止自己享禄，子孙代代为官受封赠（旧注的天乙贵人按月份取巳申亥寅轮转）**(`chapters/六爻/事业/贵人.md`):旧注里的天乙贵人按月份取（巳申亥寅轮转），而卜筮大全另一处、卜筮正宗、增删卜易、易林补遗等讲的天乙贵人都是按日干取：甲戊（庚）牛羊、乙己鼠猴、丙丁猪鸡、壬癸兔蛇、庚辛（六辛）马虎。两种起法不同，本库各照原书录，不裁定。
   The note here finds the Tianyi Noble by the month (turning through Si, Shen, Hai, Yin), while elsewhere in the Bushi Daquan itself, and in the Bushi Zhengzong, the Zengshan Buyi and the Yilin Buyi, the Tianyi Noble is found by the day stem: Jia and Wu (and Geng) ox and sheep, Yi and Ji rat and monkey, Bing and Ding pig and rooster, Ren and Gui hare and snake, Geng and Xin (or the six Xin) horse and tiger. The two methods differ; each is recorded as its book gives it and neither is adjudicated.
+- **LY.CAREER.DYTJ.05 丘寺丞易鉴歌（四）：问文官武职，求官用唐苻、国印——寅申年巳亥、巳亥年寅申、子午年卯酉、卯酉年子午、辰戌年丑未、丑未年辰戌；鬼临符印最佳，宜静而动必左迁（卜筮大全作升迁）、宜动而静多掩抑**(`chapters/六爻/事业/升迁.md`):卜筮大全本作「宜静而动必升迁」，断易天机本作「宜静而动必左迁」：「升迁」是升官，「左迁」是降职，意思正相反。两本都没有交代「宜静」「宜动」指哪一爻，所以无法靠上下文裁定。另外，卜筮大全的旧注把巳、亥读成唐符、国印本身，断易天机的注则说巳、亥爻要发动、旺相才吉，两处的读法也不完全一样。本库各照原书录，不裁定。
+  The Bushi Daquan text reads 'what should be still but moves will surely rise in post', the Duanyi Tianji text 'will surely be demoted': the first is promotion and the second demotion, exactly opposite. Neither book says which line 'should be still' or 'should move', so the context cannot decide it. In addition the note in the Bushi Daquan reads Si and Hai as the Tangfu and the State Seal themselves, while the note here says that the Si or Hai line must move and be strong to be auspicious, so the two do not read it quite alike. Each is recorded as its book gives it and neither is adjudicated.
 - **LY.CAREER.EL.92 朝天面旨：日辰月建生身吉、克世伤官尽不祥，卦值晋升蒙上宠、爻成屯蹇岂为强；世爻与官爻纵值休囚得日月或动爻生助或变出生扶皆为佳兆，朝王卜得火地晋、地风升皆吉，水雷屯、水山蹇皆为难遇者必凶**(`chapters/六爻/事业/国朝.md`):这里说卜得屯、蹇两卦「皆为难也，遇者必凶」；增删卜易引了古人「晋、升为吉，屯、蹇为凶」的说法后，野鹤（ZS.07）说晋、升也要世爻得地，屯、蹇两卦只要世爻旺相就没有妨碍，他有一次世爻旺相占到屯卦，照样越级升迁。也就是说：这里把卦名当作断语，增删卜易把卦名放在世爻旺衰的后面。
   This entry says that casting Zhun or Jian 'both mean difficulty, and whoever meets them will surely have ill'; the Zengshan Buyi quotes the ancients' 'Jin and Sheng are auspicious, Zhun and Jian ominous' and then the Old Man of Yehe (ZS.07) says that Jin and Sheng also need the Self to be well placed, that for Zhun and Jian there is no harm so long as the Self is thriving, and that once he got Zhun with a thriving Self and was promoted beyond rank all the same. That is, this entry takes the hexagram name as a verdict, while the Zengshan Buyi puts the hexagram name behind the strength of the Self.
+- **LY.CAREER.HDY.06 谒见：谒人须问谒何人，世应作鬼枉劳心，用爻出现不乘旺往见必不在家；世应坐鬼彼此疑心，用爻衰弱我何籍焉**(`chapters/六爻/事业/总则.md`):断易天机转引的这首（「海底眼云」），第一二句作「世应坐鬼枉劳心」，第三句作「用爻出现不乘土」；这里作「世应作鬼」「用爻出现不乘旺」。「坐」「作」一字之差关系不大，但「不乘土」和「不乘旺」差得远：前者说用爻没有落在土爻上，后者说用爻没有得旺。两本都没有解释，本库各照原书录，不裁定。
+  The poem as quoted in the Duanyi Tianji ('the Eye at the Bottom of the Sea says') has 'the Self or the Other sitting on Pressure, the mind wearied in vain' in its first two lines and 'the Subject line appearing but not riding Earth' in the third, while here it reads 'the Self or the Other as Pressure' and 'not riding strength'. The one-word difference between 'sit' and 'be' matters little, but 'not riding Earth' and 'not riding strength' are far apart: the first says the Subject line does not stand on an Earth line, the second that it has not gained strength. Neither book explains it, and each is recorded as its book gives it, without adjudication.
 - **LY.CAREER.HJC.12 仕宦·日辰冲克，定然诽谤之多招（旧注：日辰刑冲克世必招诽谤，依五类推：带兄弟贪贿赂或征科太急、带财无调度、带子孙嗜酒好游、带父母事繁剧、带官鬼酷刑或同僚不和；世临月建则无害）**(`chapters/六爻/事业/风险.md`):「带兄弟」那一类，两家说得不一样：旧注说带兄弟是贪图贿赂、征税太急，而把「嗜酒好游，疏于政事」归给子孙；王洪绪却说带兄弟是「贪酒好游，疏于政事」，而且他只列了兄弟、父母、官鬼三类，没有提财爻和子孙。书里没有裁决。
   On what carrying Peer means, the two commentators differ: the old commentary says that with Peer it is greed for bribes and over-hasty tax collecting and gives 'fondness for wine and wandering and neglect of government' to Output, while Wang Hongxu says that with Peer it is 'greed for drink and wandering and neglect of the business of government', and lists only three kinds, Peer, Resource and Pressure, saying nothing of Wealth or Output. The books do not decide.
 - **LY.CAREER.HJC.21 仕宦·官在贰司，只为鬼临旁位（旧注：鬼在世应爻上或带月建日辰是掌印正官，被世合或在旁爻是佐贰之职；六爻无鬼而动爻化出者亦然；王洪绪：官临子午卯酉是正任、寅申巳亥是佐二、辰戌丑未是杂职）**(`chapters/六爻/事业/取象.md`):两家判断「正官还是佐贰」的标准不一样：旧注看官鬼在卦里的位置（在世应爻上或带月建日辰是正官，被世爻合住或在旁爻是佐贰）；王洪绪看官鬼所临的地支（四仲子午卯酉是正官，四孟寅申巳亥是佐贰，四季辰戌丑未是杂职），再加上带月建日辰是掌印官。两个标准在同一个卦里可能给出相反的结果，书里没有裁决。
@@ -116,6 +120,8 @@ What is in the library and where; entries where the classics disagree are listed
   The Huangjin Ce's chapter on holding office says 'a Void Body and a moving baleful spirit are a sign of avoiding disaster' (LY.CAREER.HJC.16), and the old commentary explains it as Pressure moving and being injured and controlled by the Month, Day and Tai Sui, which is escaping disaster; the Zeng Shan Bu Yi quotes 'a Void Body and a moving baleful spirit are a sign of avoiding disaster' and says outright 'I think it is wrong', its reason being that on the day the Self leaves the Void it will surely be harmed.
 - **LY.CAREER.ZS.53 僧官医官·亦喜官文发动（旧文谓僧道医官占功名以子孙为用神、不宜父动，作者以为非：他人占僧道医以子孙为用神，自占功名仍看官爻；官星持世或父母持世得旺官生，名必成；阴阳杂职嫌子动；书中例：屯之既济，子孙持世官临应，果退职）**(`chapters/六爻/事业/取象.md`):黄金策仕宦章讲僧道医官「岂可文书发动」，旧注解作僧道医官的功名以子孙为用神、父母发动克子孙必有灾悔（LY.CAREER.HJC.27）；增删卜易引了这句旧文，说「余以为非也」，并且主张自占功名时看官爻、不看子孙。
   The Huangjin Ce's chapter on holding office says of monastic, Daoist and medical officials 'how can the document move', and the old commentary explains it as: their rank takes Output as the Subject, and a moving Resource that controls Output surely brings misfortune and regret (LY.CAREER.HJC.27); the Zeng Shan Bu Yi quotes this old text and says 'I think this is wrong', holding that when they divine about their own rank one looks at the Pressure line and not at Output.
+- **LY.CAREER.ZSZ.14 六位例·仕宦、占事、转官、僧道：六爻到初爻各主什么——仕宦（隐逸、王公、诸侯、大夫、士人、庶民）；占事（国事、心事、官事、家事、身事、人事）；转官（任所、宣命、差遣、保举、己身、解由）；僧道（祖师、师父、檀越、法眷、己身、徒弟）**(`chapters/六爻/事业/取象.md`):「占事」一行，周易尚占的六位例是：六爻国事、五爻心事、四爻官事、三爻家事、二爻身事、初爻人事；断易天机的「鬼谷辨爻法·占求事」是：初心事、二身事、三家事、四人事、五官事、六国事。国事（六）、家事（三）、身事（二）两处位置相同，心事、官事、人事的位置不同：心事一个在五爻、一个在初爻，官事一个在四爻、一个在五爻，人事一个在初爻、一个在四爻。两书都没有解释，本库各照原书录，不裁定。另外，「仕宦」一行是按王公、诸侯、大夫的等级排的，断易天机的「占仕宦」（初吏人、二曹官、三长官、四监司、五朝仕、六执政）是按官署的层级排的，是两种分法。
+  On the row for matters divined, the table of the Zhouyi Shangzhan reads: the sixth line the state, the fifth the heart, the fourth officials, the third the household, the second oneself, the first dealings with people; the Duanyi Tianji's 'Guigu method for divining an undertaking' reads: the first the heart, the second oneself, the third the household, the fourth dealings with people, the fifth officials, the sixth the state. The state (sixth), household (third) and oneself (second) stand in the same places, while the heart, officials and dealings with people differ: the heart is on the fifth in one and the first in the other, officials on the fourth in one and the fifth in the other, and dealings with people on the first in one and the fourth in the other. Neither book explains it, and each is recorded as it stands, without adjudication. The row for official careers is ordered by the rank of princes, dukes and grandees, while the Duanyi Tianji's 'divining official careers' (first clerk, second bureau officer, third head of office, fourth supervising commissioner, fifth court official, sixth minister in power) is ordered by the levels of the offices; these are two different schemes.
 - **LY.ILL.BSQS.33 疾病论·八卦鬼与病位：巽鬼股痛、震官足疾不瘳；离宫疮痍、火鬼心目之灾；兑官面病、坎鬼腹中灾；乾官头痛、坤鬼肚疼；坎水耳疾、艮土手灾**(`chapters/六爻/疾病/症候.md`):八卦各管身体哪一处，几处说法不同。疾病论这一段是「乾头、坤肚腹、坎耳（另一联又说腹中）、艮手、震足、巽股、离疮痍和心目、兑面」；卜筮元龟一段（LY.ILL.DYTJ.12）是「乾头、坤腹、坎耳、离目、兑口、艮手、震足、巽股」，和这一段在巽股、艮手上一致；孙膑断疾病歌（LY.ILL.DYTJ.03）是巽肠、艮手；阐奥歌章（LY.ILL.CA.02）是巽手、艮鼻。不同的地方有三处：兑，这里是面，别处是口；坎，这一段本身就有两说，一联说耳、一联说腹中；离，这里多了疮痍和心，别处只有目。书里没有裁决。
   The books differ on which part of the body each trigram governs. This passage of the chapter on illness gives 'Qian the head, Kun the belly, Kan the ear (and in another couplet the inside of the belly), Gen the hand, Zhen the foot, Xun the thigh, Li sores and heart and eyes, Dui the face'. The Bushi Yuangui passage (LY.ILL.DYTJ.12) gives 'Qian the head, Kun the belly, Kan the ear, Li the eye, Dui the mouth, Gen the hand, Zhen the foot, Xun the thigh', which agrees with this passage on Xun the thigh and Gen the hand; Sun Bin's verse (LY.ILL.DYTJ.03) has Xun the intestines and Gen the hand; the Chan'ao Gezhang (LY.ILL.CA.02) has Xun the hand and Gen the nose. There are three places of difference: Dui is the face here and the mouth elsewhere; Kan has two readings within this one passage, the ear in one couplet and the inside of the belly in another; and Li has sores and the heart added here, where elsewhere there is only the eye. The books do not decide.
 - **LY.ILL.BSQS.35 疾病论·死生之兆(一)：财为禄命怕空亡；十死卦春忌需蒙、夏嫌观蛊、秋忧剥节、冬畏旅临；禄命随官难救、世身入墓难医；鬼入用爻当主死**(`chapters/六爻/疾病/生死.md`):哪几个卦占病最凶，几本书的名单不同。这一段按季节给：春需、蒙，夏观、蛊，秋剥、节，冬旅、临；阐奥歌章第三首（LY.ILL.CA.03）是丰、蛊、困、明夷、夬、同人一例，加冬旅、春需、夏观、秋剥，和这一段在旅、需、观、剥四卦的季节上一致；卜筮元龟一段（LY.ILL.DYTJ.15）是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人「十死分明」；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）。蒙只有这一段有，临只有这一段和天玄赋有；另外这一段点名的只有八个卦，却称「十死卦」，名目和数目对不上。书里没有裁决。周易尚占和文王金钱课按卦名断病，和这一段点名的几个卦有出入：蒙，周易尚占说「却宜占病」（LY.ILL.ZSZ.06）；观，周易尚占说「财聚病痊」，文王金钱课说「占病即愈」（LY.ILL.ZSZ.02、WWJQ.03）；节，文王金钱课说「疾病口舌消除安」（LY.ILL.WWJQ.03）；临，周易尚占说「病犯崇侵」，文王金钱课补录部分说「疾病即痊」（LY.ILL.ZSZ.07、WWJQ.05）；蛊，周易尚占说病凶，和这一段一致（LY.ILL.ZSZ.05）。
