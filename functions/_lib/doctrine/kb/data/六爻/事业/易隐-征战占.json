@@ -1,0 +1,468 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易隐",
+  "chapter": "征战占",
+  "chapter_en": "Divining war",
+  "ranges": {"易隐": [2011, 2038]},
+  "units": [
+    {
+      "id": "LY.CAREER.YY.50",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占总述（游南子）：兵凶战危，观八卦知方向，观世应知彼己，观六亲知师徒，观五行知器具，观日辰知我兵之淑慝",
+      "rule": {
+        "yi": "征战占总述：用兵凶险，打仗危险，关系人命生死和国家安危，所以要慎重。看八卦来知道方向；看世爻、应爻来知道彼此；看六亲来知道将帅和士卒；看五行来知道器械用具；看日辰来知道我方兵士的好坏。",
+        "en": "Overview of divining war. Arms are ill-omened and war is perilous, bearing on life and death and the safety of the state, so one must be careful. Look at the eight trigrams to know the direction; at the Self and Other to know them and us; at the six kin to know the commanders and the troops; at the five elements to know the arms and gear; and at the Day to know whether my soldiers are good or bad."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2013, 2013],
+          "zh": ["游南子曰，兵凶战危，古人慎之，谓其关人命之生死，系宗稷之安危也。", "故观八卦，以知方向。", "观世应以知彼己，观六亲以知师徒，观五行以知器具，观日辰，以知我兵之淑慝。", "盖绳绳乎其慎之也。"],
+          "yi": ["游南子说：兵事凶险，战争危险，古人对它很慎重，是因为它关系到人命的生死，牵系着宗庙社稷的安危。", "所以看八卦，来知道方向。", "看世爻、应爻来知道彼此，看六亲来知道将帅和士卒，看五行来知道器械用具，看日辰来知道我方兵士的善恶。", "大概是要时时谨慎地对待它。"],
+          "en": ["Master Younan says: arms are ill-omened and war is perilous, and the ancients were careful of it, because it bears on the life and death of men and hangs on the safety of the ancestral temple and the altars of the state.", "So look at the eight trigrams to know the direction.", "Look at the Self and Other to know them and us, at the six kin to know the commanders and the troops, at the five elements to know the arms and gear, and at the Day to know whether my soldiers are good or bad.", "It is, after all, to be treated with constant care."] }
+      ],
+      "note": {
+        "yi": "这一节是征战占的提纲，后面五节（方向、彼己、六亲、五行、日辰）就是按这个顺序排的。「绳绳」书里写作「盖绳绳乎其慎之也」，字面不很清楚，译文取「时时、连绵不断」的意思。",
+        "en": "This section is the outline of the divination of war, and the five sections after it (direction, them and us, the six kin, the five elements and the Day) follow this order. In 'sheng sheng hu qi shen zhi ye', the sense of 'sheng sheng' is not clear from the letter, and the translation takes the sense of 'constantly, without a break'."
+      },
+      "see": ["LY.CAREER.YY.51", "LY.CAREER.HJC.86", "LY.CAREER.HJC.111"]
+    },
+    {
+      "id": "LY.CAREER.YY.51",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·方向（一）：内卦为我寨外卦为彼营，内卦旺相吉、胎没次之、死囚休废凶；附八卦旺相胎没死囚休废随八节的排列",
+      "rule": {
+        "yi": "方向：内卦是我方的营寨，外卦是对方的军营。内卦旺相的，吉；胎、没次一等；死、囚、休、废的，凶。八卦的旺、相、胎、没、死、囚、休、废随八个节气排列：立春后艮旺、震相、巽胎、离没、坤死、兑囚、乾休、坎废；春分后震旺、巽相、离胎、坤没、兑死、乾囚、坎休、艮废；立夏后巽旺、离相、坤胎、兑没、乾死、坎囚、艮休、震废；夏至后离旺、坤相、兑胎、乾没、坎死、艮囚、震休、巽废；立秋后坤旺、兑相、乾胎、坎没、艮死、震囚、巽休、离废；秋分后兑旺、乾相、坎胎、艮没、震死、巽囚、离休、坤废；立冬后乾旺、坎相、艮胎、震没、巽死、离囚、坤休、兑废；冬至后坎旺、艮相、震胎、巽没、离死、坤囚、兑休、乾废。",
+        "en": "Direction. The inner trigram is my camp and the outer trigram is the enemy's. If the inner trigram is thriving or assisting it is auspicious; Tai and Mo come next; if dead, imprisoned, resting or abandoned it is ominous. The eight states of the trigrams run through the eight solar terms: after the Start of Spring Gen thrives, Zhen assists, Xun is Tai, Li is Mo, Kun is dead, Dui imprisoned, Qian resting and Kan abandoned; after the Spring Equinox Zhen thrives, Xun assists, Li is Tai, Kun is Mo, Dui is dead, Qian imprisoned, Kan resting and Gen abandoned; after the Start of Summer Xun thrives, Li assists, Kun is Tai, Dui is Mo, Qian is dead, Kan imprisoned, Gen resting and Zhen abandoned; after the Summer Solstice Li thrives, Kun assists, Dui is Tai, Qian is Mo, Kan is dead, Gen imprisoned, Zhen resting and Xun abandoned; after the Start of Autumn Kun thrives, Dui assists, Qian is Tai, Kan is Mo, Gen is dead, Zhen imprisoned, Xun resting and Li abandoned; after the Autumn Equinox Dui thrives, Qian assists, Kan is Tai, Gen is Mo, Zhen is dead, Xun imprisoned, Li resting and Kun abandoned; after the Start of Winter Qian thrives, Kan assists, Gen is Tai, Zhen is Mo, Xun is dead, Li imprisoned, Kun resting and Dui abandoned; after the Winter Solstice Kan thrives, Gen assists, Zhen is Tai, Xun is Mo, Li is dead, Kun imprisoned, Dui resting and Qian abandoned."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2017, 2017],
+          "zh": ["内卦为我寨，外卦为彼营也。", "内卦，旺相者，吉也，胎没次之，死囚伏废者，凶也。", "立春后艮旺震相巽胎离没坤死兑囚乾休坎废也。", "春分后震旺巽相离胎坤没兑死乾囚坎休艮废也。", "立夏后巽旺离相坤胎兑没乾死坎囚艮休震废也。", "夏至后离旺坤相兑胎乾没坎死艮囚震休巽废也。", "立秋后坤旺兑相乾胎坎没艮死震囚巽休离废也。", "秋分后兑旺乾相坎胎艮没震死巽囚离休坤废也。", "立冬后乾旺坎相艮胎震没巽死离囚坤休兑废也。", "冬至后坎旺艮相震胎巽没离死坤囚兑休乾废也。"],
+          "yi": ["内卦是我方的营寨，外卦是对方的军营。", "内卦旺相的，吉；胎、没次一等；死、囚、伏、废的，凶。", "立春以后：艮旺、震相、巽胎、离没、坤死、兑囚、乾休、坎废。", "春分以后：震旺、巽相、离胎、坤没、兑死、乾囚、坎休、艮废。", "立夏以后：巽旺、离相、坤胎、兑没、乾死、坎囚、艮休、震废。", "夏至以后：离旺、坤相、兑胎、乾没、坎死、艮囚、震休、巽废。", "立秋以后：坤旺、兑相、乾胎、坎没、艮死、震囚、巽休、离废。", "秋分以后：兑旺、乾相、坎胎、艮没、震死、巽囚、离休、坤废。", "立冬以后：乾旺、坎相、艮胎、震没、巽死、离囚、坤休、兑废。", "冬至以后：坎旺、艮相、震胎、巽没、离死、坤囚、兑休、乾废。"],
+          "en": ["The inner trigram is my camp and the outer trigram is the enemy's.", "If the inner trigram is thriving or assisting, it is auspicious; Tai and Mo come next; if it is dead, imprisoned, hidden or abandoned, it is ominous.", "After the Start of Spring: Gen thrives, Zhen assists, Xun is Tai, Li is Mo, Kun is dead, Dui imprisoned, Qian resting, Kan abandoned.", "After the Spring Equinox: Zhen thrives, Xun assists, Li is Tai, Kun is Mo, Dui is dead, Qian imprisoned, Kan resting, Gen abandoned.", "After the Start of Summer: Xun thrives, Li assists, Kun is Tai, Dui is Mo, Qian is dead, Kan imprisoned, Gen resting, Zhen abandoned.", "After the Summer Solstice: Li thrives, Kun assists, Dui is Tai, Qian is Mo, Kan is dead, Gen imprisoned, Zhen resting, Xun abandoned.", "After the Start of Autumn: Kun thrives, Dui assists, Qian is Tai, Kan is Mo, Gen is dead, Zhen imprisoned, Xun resting, Li abandoned.", "After the Autumn Equinox: Dui thrives, Qian assists, Kan is Tai, Gen is Mo, Zhen is dead, Xun imprisoned, Li resting, Kun abandoned.", "After the Start of Winter: Qian thrives, Kan assists, Gen is Tai, Zhen is Mo, Xun is dead, Li imprisoned, Kun resting, Dui abandoned.", "After the Winter Solstice: Kan thrives, Gen assists, Zhen is Tai, Xun is Mo, Li is dead, Kun imprisoned, Dui resting, Qian abandoned."] }
+      ],
+      "note": {
+        "yi": "第二句「死囚伏废」的「伏」，对照后面八张表里的「休」，应是「休」字抄错；译文照字面写成 hidden，没有改字。八种状态在朝廷占「大象」里也用到（见 YY.32），这里是书里唯一把它们按节气逐项排出来的地方。表里每一行的八个字，都是那一节气之后八个卦各自的状态，每一行里八个卦各出现一次。",
+        "en": "In the second sentence the character 'fu', hidden, in 'dead, imprisoned, hidden, abandoned' is compared with 'xiu', resting, in the eight tables after it, and is presumably a miscopy for 'xiu'; the translation writes 'hidden' by the letter and does not change the character. The eight states are also used in the 'great image' of the court divination (see YY.32), and this is the only place in the book that sets them out one by one by solar term. In each row, the eight characters give the state of each of the eight trigrams after that solar term, and each trigram appears once in every row."
+      },
+      "see": ["LY.CAREER.YY.50", "LY.CAREER.YY.52", "LY.CAREER.YY.32"]
+    },
+    {
+      "id": "LY.CAREER.YY.52",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·方向（二）：青龙财福旺动之宫可居；白虎鬼飞廉大杀凶神劫杀旺动之宫不可居；日辰动爻刑害克破、旬空月破、动化死墓绝胎之宫不可居；世爻死墓绝胎之宫不可居",
+      "rule": {
+        "yi": "驻扎的方位：青龙、财、福神旺相发动的那一宫，可以驻扎；白虎、官鬼、飞廉、大杀等凶神和劫杀旺相发动的那一宫，不可驻扎；被日辰和动爻刑、害、克、破，或落旬空、月破，或发动变成死、墓、绝、胎的那一宫，不可驻扎；世爻处在死、墓、绝、胎的那一宫，不可驻扎。",
+        "en": "Where to camp. A palace where the Azure Dragon, Wealth and the fortune spirit are thriving and moving can be occupied; a palace where the White Tiger, Pressure, Feilian, great baleful spirits, other ill spirits and Robbery are thriving and moving cannot be occupied; a palace punished, harmed, controlled or broken by the Day and a moving line, or falling into decade Void or Month-break, or moving and turning into death, tomb, extinction or the womb stage, cannot be occupied; a palace in which the Self is in death, tomb, extinction or the womb stage cannot be occupied."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2017, 2017],
+          "zh": ["又青龙财福旺动之宫可居也。", "白虎足鬼飞廉大杀凶神劫杀旺动之宫，不可居也。", "日辰与动爻刑害克破，及旬空月破与动化死墓绝胎之宫，不可居。", "世爻死墓绝胎之宫，不可居也。"],
+          "yi": ["又，青龙、财、福神旺相发动的那一宫，可以驻扎。", "白虎、官鬼、飞廉、大杀等凶神和劫杀旺相发动的那一宫，不可驻扎。", "被日辰和动爻刑、害、克、破，以及落旬空、月破，和发动变成死、墓、绝、胎的那一宫，不可驻扎。", "世爻处在死、墓、绝、胎的那一宫，不可驻扎。"],
+          "en": ["Again, a palace where the Azure Dragon, Wealth and the fortune spirit are thriving and moving can be occupied.", "A palace where the White Tiger, Pressure, Feilian, great baleful spirits, other ill spirits and Robbery are thriving and moving cannot be occupied.", "A palace punished, harmed, controlled or broken by the Day and a moving line, or falling into decade Void or Month-break, or moving and turning into death, tomb, extinction or the womb stage, cannot be occupied.", "A palace in which the Self line is in death, tomb, extinction or the womb stage cannot be occupied."] }
+      ],
+      "note": {
+        "yi": "第二句「白虎足鬼飞廉」的「足鬼」书里没有解释，疑是「及鬼」（白虎以及官鬼）之误，译文按「白虎、官鬼」译。「宫」在这一节指八个方位的宫。飞廉、劫杀、大杀是神煞。",
+        "en": "In the second sentence 'baihu zu gui feilian', the 'zu gui' is not explained, and is presumably a miswriting of 'ji gui', 'and Pressure', so the translation reads 'the White Tiger, Pressure'. 'Palace' in this section means the palace of one of the eight directions. Feilian, Robbery and the great baleful spirits are spirit-stars."
+      },
+      "see": ["LY.CAREER.YY.51", "LY.CAREER.YY.53"]
+    },
+    {
+      "id": "LY.CAREER.YY.53",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·方向（三）：出战内旺外衰可战、内衰外旺宜守、内克外可战、外克内宜守；内宫之方可战可攻；世爻生旺之方可遁可避；应爻鬼爻生旺之方宜避其锐，败死绝之方击其懈，墓胎之方防其伏",
+      "rule": {
+        "yi": "出战还是固守，以及往哪个方位：内卦旺相、外卦衰弱的，可以出战；内卦衰弱、外卦旺相的，宜固守；内卦克外卦的，可以出战；外卦克内卦的，宜固守。内宫所在的方位，可战可攻；世爻生旺的方位，可遁走可躲避；应爻、官鬼爻生旺的方位，适宜避开对方的锋芒；败、死、绝的方位，适宜打击对方松懈之处；墓、胎的方位，适宜提防对方的埋伏。",
+        "en": "To fight or hold, and in which direction. If the inner trigram is thriving and the outer weak, one can go out and fight; if the inner is weak and the outer thriving, hold the line; if the inner controls the outer one can fight; if the outer controls the inner, hold the line. In the direction of the inner palace one can fight and attack; in the direction where the Self is born or thriving one can flee or evade; in the direction where the Other and the Pressure line are born or thriving, avoid their sharp edge; in the direction of spent, dead or extinct, strike where they are slack; in the direction of tomb or womb, guard against their ambush."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2017, 2017],
+          "zh": ["又凡出战者，内旺外衰者，可战。", "内衰外旺者，宜守。", "内克外者，可战。", "外克内者，宜守也。", "内宫之方，可战可攻。", "世爻生旺之方，可遁可避也。", "又应爻鬼爻生旺之方，宜避其锐。", "败死绝之方宜击其懈。", "墓胎之方，宜防其伏也。"],
+          "yi": ["又，凡是出战的，内卦旺相、外卦衰弱的，可以出战。", "内卦衰弱、外卦旺相的，宜固守。", "内卦克外卦的，可以出战。", "外卦克内卦的，宜固守。", "内宫所在的方位，可战可攻。", "世爻生旺的方位，可遁走可躲避。", "又，应爻、官鬼爻生旺的方位，适宜避开对方的锋芒。", "败、死、绝的方位，适宜打击对方松懈之处。", "墓、胎的方位，适宜提防对方的埋伏。"],
+          "en": ["Again, whoever goes out to fight, if the inner is thriving and the outer weak, can fight.", "If the inner is weak and the outer thriving, hold the line.", "If the inner controls the outer, one can fight.", "If the outer controls the inner, hold the line.", "In the direction of the inner palace one can fight and attack.", "In the direction where the Self is born or thriving one can flee or evade.", "Again, in the direction where the Other line and the Pressure line are born or thriving, avoid their sharp edge.", "In the direction of spent, dead or extinct, strike where they are slack.", "In the direction of tomb or womb, guard against their ambush."] }
+      ],
+      "note": {
+        "yi": "前四句里「内旺外衰」「内克外」的「内」「外」指内卦、外卦，译文按内、外写；「内宫之方」指内卦所在的那一宫的方位（见 YY.51）。",
+        "en": "In the first four sentences the 'inner' and 'outer' of 'inner thriving, outer weak' and 'inner controls outer' mean the inner and outer trigrams; 'the direction of the inner palace' means the direction of the palace that the inner trigram belongs to (see YY.51)."
+      },
+      "see": ["LY.CAREER.YY.52", "LY.CAREER.YY.54", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.YY.54",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·彼己（一）：世为我帅应为彼将；世空取子为用应空取鬼为用；世旺应衰宜攻、世衰应旺宜守；世克应可战、应克世宜守防贼；世阳动宜出师、世阴静宜坚壁；世空我有难、应空彼必伤、世应俱空两将休兵",
+      "rule": {
+        "yi": "彼此强弱：世爻是我方主帅，应爻是对方将领。世爻落空，取子孙为用神；应爻落空，取官鬼为用神。世旺应衰，我强彼弱，宜进攻；世衰应旺，我弱彼强，宜固守。世克应，可以打；应克世，宜固守，而且要防贼来。世爻是阳爻而发动的，宜出兵；世爻是阴爻而安静的，宜坚壁固守。世爻落空，我方有难；应爻落空，对方必受损伤；世、应都落空，两方将领休兵。",
+        "en": "Strength of them and us. The Self is my commander and the Other is the enemy's general. If the Self is Void, take Output as the Subject; if the Other is Void, take Pressure as the Subject. If the Self is thriving and the Other weak, I am strong and they weak, and one should attack; if the Self is weak and the Other thriving, hold the line. If the Self controls the Other, one can fight; if the Other controls the Self, hold the line and guard against the bandits' coming. If the Self is yang and moves, march out; if yin and still, hold the walls. If the Self is Void, I am in trouble; if the Other is Void, they will surely be hurt; if both are Void, the two commanders rest their troops."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2021, 2021],
+          "zh": ["世为我帅，应为彼将也。", "世空，则取子为用，应空则取鬼为用也。", "世旺应衰者，我强彼弱，宜攻也。", "世衰应旺者，我弱彼强，宜守也。", "世克应者，可战。", "应克世者，宜守，且宜防贼来也。", "世阳而动者，宜出师。", "世阴而静者，宜坚壁也。", "世空，我有难。", "应空，彼必伤。", "世应俱空，两将休兵也。"],
+          "yi": ["世爻是我方主帅，应爻是对方将领。", "世爻落空，就取子孙为用神；应爻落空，就取官鬼为用神。", "世爻旺相、应爻衰弱的，我强彼弱，宜进攻。", "世爻衰弱、应爻旺相的，我弱彼强，宜固守。", "世爻克应爻的，可以打。", "应爻克世爻的，宜固守，而且要防贼来。", "世爻是阳爻而发动的，宜出兵。", "世爻是阴爻而安静的，宜坚壁固守。", "世爻落空，我方有难。", "应爻落空，对方必受损伤。", "世爻、应爻都落空，两方将领休兵。"],
+          "en": ["The Self is my commander and the Other is the enemy's general.", "If the Self is Void, take Output as the Subject; if the Other is Void, take Pressure as the Subject.", "If the Self is thriving and the Other weak, I am strong and they weak, and one should attack.", "If the Self is weak and the Other thriving, I am weak and they strong, and one should hold the line.", "If the Self controls the Other, one can fight.", "If the Other controls the Self, hold the line, and guard against the bandits' coming.", "If the Self is yang and moves, it is fit to march out.", "If the Self is yin and still, it is fit to hold the walls.", "If the Self is Void, I am in trouble.", "If the Other is Void, they will surely be hurt.", "If the Self and the Other are both Void, the two commanders rest their troops."] }
+      ],
+      "note": {
+        "yi": "「坚壁」是加固壁垒、固守不出。「贼」在这里指对方的敌军。",
+        "en": "'Jianbi' is strengthening the ramparts and holding without going out. 'Bandits' here means the enemy force."
+      },
+      "see": ["LY.CAREER.YY.53", "LY.CAREER.YY.55", "LY.CAREER.HJC.86", "LY.CAREER.HJC.94"]
+    },
+    {
+      "id": "LY.CAREER.YY.55",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·彼己（二）：世入墓胎宜退；世应皆旺或比和必不交锋；世应持金火鬼旺动两败俱伤；世持虎福旺相决胜千里，加日辰生扶百战百胜；世临龙福加将星良将、虎福猛将、勾福密擒、雀福号令严明、蛇福变幻、武福善用囊沙背水；世加凶煞动宜坚壁不出",
+      "rule": {
+        "yi": "主将的才具和进退：世爻入墓、入胎的，宜退兵；世、应都旺相，或相生相合比和的，必不交锋，打起来也胜负难分；世、应持金爻、火爻的官鬼，旺相发动，两败俱伤；世爻持白虎、福神旺相的，决胜千里之外，再加日辰生扶，百战百胜；世爻临青龙、福神，再加将星发动，是良将；临白虎、福神是猛将；临勾陈、福神是秘密派人擒贼；临朱雀、福神是号令严明；临螣蛇、福神是变化莫测；临玄武、福神是善用囊沙、背水的计谋，或者巧于偷袭劫营；世爻加往亡、归忌、受死、大败、四废、月厌、飞廉、大杀、亡神、劫杀而发动的，宜坚壁不出，出则必败。",
+        "en": "The commander's talent, and advance or retreat. If the Self enters tomb or womb, it is fit to withdraw; if the Self and Other are both thriving or generate, combine or are in harmony, they will not cross swords and a fight would be hard to decide; if the Self and Other hold Metal or Fire Pressure lines, thriving and moving, both sides are badly hurt; if the Self holds the White Tiger and the fortune spirit, thriving, he wins decisively a thousand miles away, and with the Day generating or supporting, wins a hundred battles out of a hundred; if the Self sits on the Azure Dragon and the fortune spirit with the General star added and moving, he is a good general; on the White Tiger, a fierce general; on Hook Earth, one who secretly sends men to seize the bandits; on the Vermilion Bird, one whose orders are strict and clear; on the Coiling Snake, one whose changes cannot be fathomed; on the Dark Tortoise, one skilled in the stratagems of sandbags and fighting with the water behind, or clever at raiding camps; if the Self adds Wangwang, Guiji, Shousi, Dabai, the Four Wastes, Yueyan, Feilian, great baleful spirits, the Lost Spirit and Robbery and moves, hold the walls and do not go out, for going out means defeat."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2023, 2023],
+          "zh": ["世入墓胎者，宜退也。", "世应皆旺，或相生合比和者，必不交锋，战亦胜负难决也。", "世应持金火鬼旺动者，两败俱伤也。", "世持虎福旺相者，决胜千里也。", "加日辰生扶者，百战百胜也。", "世临龙福，加将星动者，良将也。", "临虎福者，猛将也。", "临勾福者，密遣擒贼也。", "临雀福者，号令严明也。", "临蛇福者，变幻不测也。", "临武福者，善用囊沙背水之术，或巧于偷营劫寨也。", "世加往亡归忌，受死大败四废月厌飞廉大杀亡神劫杀动者，宜坚壁不出，出则必败也。"],
+          "yi": ["世爻入墓、入胎的，宜退兵。", "世、应都旺相，或者相生、相合、比和的，必定不交锋，即使打起来也胜负难分。", "世、应持金爻、火爻的官鬼，旺相发动的，两败俱伤。", "世爻持白虎、福神，旺相的，决胜千里之外。", "再加日辰生扶的，百战百胜。", "世爻临青龙、福神，再加将星发动的，是良将。", "临白虎、福神的，是猛将。", "临勾陈、福神的，秘密派人擒贼。", "临朱雀、福神的，号令严明。", "临螣蛇、福神的，变化莫测。", "临玄武、福神的，善用囊沙、背水的计谋，或者巧于偷袭劫营。", "世爻加往亡、归忌、受死、大败、四废、月厌、飞廉、大杀、亡神、劫杀而发动的，宜坚壁不出，出则必败。"],
+          "en": ["If the Self enters tomb or womb, it is fit to withdraw.", "If the Self and Other are both thriving, or generate, combine or are in harmony, they will surely not cross swords, and even if they fight the outcome is hard to decide.", "If the Self and Other hold Metal or Fire Pressure lines, thriving and moving, both sides are badly hurt.", "If the Self holds the White Tiger and the fortune spirit, thriving, he wins decisively a thousand miles away.", "With the Day generating or supporting as well, he wins a hundred battles out of a hundred.", "If the Self sits on the Azure Dragon and the fortune spirit, with the General star added and moving, he is a good general.", "On the White Tiger and the fortune spirit, a fierce general.", "On Hook Earth and the fortune spirit, one who secretly sends men to seize the bandits.", "On the Vermilion Bird and the fortune spirit, one whose orders are strict and clear.", "On the Coiling Snake and the fortune spirit, one whose changes cannot be fathomed.", "On the Dark Tortoise and the fortune spirit, one skilled in the stratagems of sandbags and fighting with the water behind, or clever at raiding camps.", "If the Self adds Wangwang, Guiji, Shousi, Dabai, the Four Wastes, Yueyan, Feilian, great baleful spirits, the Lost Spirit and Robbery and moves, it is fit to hold the walls and not go out, for going out means defeat."] }
+      ],
+      "note": {
+        "yi": "「囊沙背水」指韩信用沙袋堵住水流再放水淹敌、背水列阵的计谋；「决胜千里」出自「运筹帷幄之中，决胜千里之外」。往亡、归忌、受死、大败、四废、月厌、飞廉等是神煞，书里没有逐个解释。「世应持金火鬼」可以读成世、应各持金鬼或火鬼，书里没有分开。",
+        "en": "'Nang sha bei shui' refers to Han Xin's stratagems of damming a river with sandbags and then loosing it on the enemy, and of drawing up the army with the water behind; 'deciding victory a thousand miles away' comes from 'planning in the tent and deciding victory a thousand miles off'. Wangwang, Guiji, Shousi, Dabai, the Four Wastes, Yueyan and Feilian are spirit-stars that the book does not explain one by one. 'The Self and Other holding Metal and Fire Pressure' can be read as each holding a Metal or a Fire Pressure line, and the book does not separate them."
+      },
+      "see": ["LY.CAREER.YY.54", "LY.CAREER.YY.56", "LY.CAREER.HJC.90", "LY.CAREER.HJC.97", "LY.CAREER.HJC.98"]
+    },
+    {
+      "id": "LY.CAREER.YY.56",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·彼己（三）：鬼克世彼胜、鬼克应他欲退、鬼持世防围困；鬼暗动加大杀劫杀刑刃克世防刺客，遇福动必擒；日辰冲克世爻伏鬼刑害飞神防下人谋我；无子救鬼生旺日见祸；世衰鬼杀旺动军机泄露；内外两鬼动克世防内应外合；世被日辰动爻刑害克冲防奇兵；世化空死墓绝胎将不遁即死；世应皆旺看日辰生合刑害克破何爻决胜负",
+      "rule": {
+        "yi": "官鬼看敌情：官鬼克世爻，对方胜；官鬼克应爻，他想退兵；官鬼持世爻，防围困。官鬼暗动，加大杀、劫杀、刑、刃克世爻的，防刺客，遇福神发动，刺客必被擒。日辰冲克世爻下伏的官鬼、刑害它的飞神的，防下面的人谋害我。没有子孙发动来救，官鬼生旺的日子必定见祸。世爻衰弱而官鬼和凶煞旺相发动的，军机泄露。内外两个官鬼发动克世爻的，防内应外合；世爻被日辰、动爻刑、害、克、冲的，防奇兵冲击。世爻变成空、死、墓、绝、胎的，主将不逃走就战死。世、应都旺相的，看日辰生合刑害克破哪一爻，来决定胜负。",
+        "en": "Reading the enemy by Pressure. If Pressure controls the Self, they win; if Pressure controls the Other, they want to withdraw; if Pressure holds the Self, guard against encirclement. If Pressure moves in secret, with a great baleful spirit, Robbery, punishment and the blade added, and controls the Self, guard against assassins, and if the fortune spirit moves, the assassin will surely be caught. If the Day clashes with or controls the Pressure line hidden under the Self, or punishes or harms its flying spirit, guard against those below plotting against me. With no Output moving to rescue, on the day Pressure is born or thriving there will surely be disaster. If the Self is weak and Pressure and baleful spirits are thriving and moving, military secrets leak. If both Pressure lines, inside and outside, move to control the Self, guard against collusion between inside and outside; if the Self is punished, harmed, controlled or clashed by the Day or a moving line, guard against a surprise force charging in. If the Self turns into Void, death, tomb, extinction or the womb stage, the commander either flees or dies. If the Self and Other are both thriving, see which line the Day generates, combines with, punishes, harms, controls or breaks, to decide victory."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2023, 2023],
+          "zh": ["鬼克世者彼胜。", "鬼克应者，他欲退也。", "鬼持世者，防围困也。", "鬼暗动，加大杀劫杀刑刃克世者，防刺客也。", "若遇福动，刺客必擒也。", "日辰冲克世爻伏鬼，刑害飞神者，防下人谋我也。", "无子动来救，鬼生旺日必见祸也。", "世衰而鬼杀旺动者，军机泄露也。", "内外两鬼动克世者，防内应外合也，世被日辰动爻刑害克冲者，防奇兵冲突也。", "世化空死墓绝胎者，将不遁即死也。", "世应皆旺者，看日辰生合刑害克破何爻，以决胜负也。"],
+          "yi": ["官鬼克世爻的，对方胜。", "官鬼克应爻的，他想退兵。", "官鬼持世爻的，防围困。", "官鬼暗动，加大杀、劫杀、刑、刃克世爻的，防刺客。", "若遇福神发动，刺客必被擒。", "日辰冲克世爻下伏的官鬼、刑害它的飞神的，防下面的人谋害我。", "没有子孙发动来救，官鬼生旺的日子必定见祸。", "世爻衰弱而官鬼和凶煞旺相发动的，军机泄露。", "内外两个官鬼发动克世爻的，防内应外合；世爻被日辰、动爻刑、害、克、冲的，防奇兵冲击。", "世爻变成空、死、墓、绝、胎的，主将不逃走就战死。", "世、应都旺相的，看日辰生合刑害克破哪一爻，来决定胜负。"],
+          "en": ["If Pressure controls the Self, they win.", "If Pressure controls the Other, they want to withdraw.", "If Pressure holds the Self, guard against encirclement.", "If Pressure moves in secret, with a great baleful spirit, Robbery, punishment and the blade added, and controls the Self, guard against assassins.", "If the fortune spirit moves, the assassin will surely be caught.", "If the Day clashes with or controls the Pressure line hidden under the Self, or punishes or harms its flying spirit, guard against those below plotting against me.", "With no Output moving to rescue, on the day Pressure is born or thriving there will surely be disaster.", "If the Self is weak and Pressure and baleful spirits are thriving and moving, military secrets leak.", "If both Pressure lines, inside and outside, move to control the Self, guard against collusion between inside and outside; if the Self is punished, harmed, controlled or clashed by the Day or a moving line, guard against a surprise force charging in.", "If the Self turns into Void, death, tomb, extinction or the womb stage, the commander either flees or dies.", "If the Self and Other are both thriving, see which line the Day generates, combines with, punishes, harms, controls or breaks, to decide victory."] }
+      ],
+      "note": {
+        "yi": "「刺客」「奇兵」按字面译。「飞神」是伏神上面那一爻（见术语表），这里指世爻。第九句是一句话里的两个分句（内外两鬼；世被刑害克冲），中间只有逗号相连，所以放在一起。",
+        "en": "'Assassin' and 'surprise force' are by the letter. The 'flying spirit' is the line above a hidden spirit (see the glossary), and here it is the Self line. The ninth sentence is two clauses joined only by a comma (two Pressure lines; the Self punished and harmed), and they are therefore kept together."
+      },
+      "see": ["LY.CAREER.YY.55", "LY.CAREER.YY.57", "LY.CAREER.HJC.100", "LY.CAREER.HJC.109"]
+    },
+    {
+      "id": "LY.CAREER.YY.57",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·六亲（一）：父为军师旌旗，财粮草，子先锋，兄埋伏，鬼敌人；父下伏子众将慑服、伏财备器足饷但防伏戎、伏兄贪色、伏鬼智短；父临衰墓老、生旺少壮、胎养不威、刑害不恤众；父旺外动彼兴兵、内动我出师；世持父动将不惜士",
+      "rule": {
+        "yi": "六亲配军中的人和物，以及军师：父爻是军师，也是旌旗；财爻是粮草，子孙是先锋，兄弟是埋伏，官鬼是敌人。父爻下面伏着子孙，众将慑服，擒纵如意；伏着财爻，器械齐备粮饷充足、谋略周全，但要防左右的伏兵；伏着兄爻，军师贪财好色、狎侮身边的人；伏着官鬼，智谋短、计策拙，一行动就出疏漏。父爻临衰、墓，军师年老；临生旺，军师年轻力壮；临胎、养，不威严持重；临刑、害，不体恤众人。父爻旺相在外卦发动，对方兴兵；在内卦发动，我方出师；带白虎、凶煞在外卦发动，作战失利；在外卦发动克世爻，他来侵犯；克应爻，他自己退去。世爻持父爻发动，主将不爱惜士卒，再加大杀、劫杀发动，不爱惜士卒还要防兵变。",
+        "en": "Assigning the six kin to people and things in the army, and the strategist. The Resource line is the military adviser and also the banners; Wealth is provisions, Output the vanguard, Peer the ambush, and Pressure the enemy. If Output lies hidden under Resource, the generals are cowed and capture and release go as wished; if Wealth, arms are ready and rations plentiful and plans complete, but guard against hidden troops on both sides; if Peer, the adviser is greedy for money and women and treats those around him with contempt; if Pressure, his wit is short and his schemes clumsy, and any move shows a flaw. If Resource sits on weak or tomb, the adviser is old; on born or thriving, young and strong; on Tai or Yang, not awe-inspiring; on punishment or harm, he has no care for the many. If Resource is thriving and moves in the outer trigram, the enemy raises troops; in the inner trigram, I send out troops; with the Tiger and baleful spirits moving outside, the battle goes badly; moving outside to control the Self, they come to invade; controlling the Other, they withdraw of themselves. If the Self holds Resource and it moves, the commander does not spare his men, and with great baleful spirits and Robbery added and moving, he spares not his men and one must guard against mutiny."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2027, 2029],
+          "zh": ["父为军师，为旌旗。", "财为粮草，子为先锋，兄为埋伏，鬼为敌人也。", "父下伏子，众将慑服，擒纵如意也。", "父下伏财，备器足饷，智无遗算，但左右防伏戎也。", "父下伏兄，贪财好色，狎侮私人也。", "父下伏鬼，智短计拙，动见疏虞也。", "父临衰墓，军师老髦也。", "父临生旺，军师少壮也。", "父临胎养不威重也。", "父临刑害，不恤众也。", "父旺外动，彼兴兵也。", "父旺内动，我出师也。", "父带虎杀外动，战失利也。", "父外动克世，他来侵也。", "父外动克应，他自退也。", "世持父动者，将不惜士也。", "加大杀劫杀动，不惜士而防兵变也。"],
+          "yi": ["父爻是军师，也是旌旗。", "财爻是粮草，子孙是先锋，兄弟是埋伏，官鬼是敌人。", "父爻下面伏着子孙，众将慑服，擒、纵都如意。", "父爻下面伏着财爻，器械齐备、粮饷充足，谋略没有遗漏的算计，但要防左右有伏兵。", "父爻下面伏着兄爻，军师贪财好色，狎侮身边的人。", "父爻下面伏着官鬼，智谋短浅、计策拙劣，一行动就出现疏漏。", "父爻临衰、墓，军师年老。", "父爻临生旺，军师年轻力壮。", "父爻临胎、养，不威严持重。", "父爻临刑、害，不体恤众人。", "父爻旺相在外卦发动，对方兴兵。", "父爻旺相在内卦发动，我方出师。", "父爻带白虎、凶煞在外卦发动，作战失利。", "父爻在外卦发动克世爻，他来侵犯。", "父爻在外卦发动克应爻，他自己退去。", "世爻持父爻发动的，主将不爱惜士卒。", "再加大杀、劫杀发动，不爱惜士卒还要防兵变。"],
+          "en": ["The Resource line is the military adviser, and also the banners.", "Wealth is provisions, Output is the vanguard, Peer is the ambush, and Pressure is the enemy.", "If Output lies hidden under Resource, the generals are cowed, and capture and release both go as wished.", "If Wealth lies hidden under Resource, arms are ready and rations plentiful, with no miscalculation in his plans, but guard against hidden troops on both sides.", "If Peer lies hidden under Resource, the adviser is greedy for money and women and treats those around him with contempt.", "If Pressure lies hidden under Resource, his wit is short and his schemes clumsy, and any move shows a flaw.", "If Resource sits on weak or tomb, the adviser is old.", "If Resource sits on born or thriving, the adviser is young and strong.", "If Resource sits on Tai or Yang, he is not awe-inspiring.", "If Resource sits on punishment or harm, he has no care for the many.", "If Resource is thriving and moves in the outer trigram, the enemy raises troops.", "If Resource is thriving and moves in the inner trigram, I send out troops.", "If Resource carrying the Tiger and baleful spirits moves in the outer trigram, the battle goes badly.", "If Resource moves in the outer trigram to control the Self, they come to invade.", "If Resource moves in the outer trigram to control the Other, they withdraw of themselves.", "If the Self holds Resource and it moves, the commander does not spare his men.", "With great baleful spirits and Robbery added and moving, he spares not his men and one must guard against mutiny."] }
+      ],
+      "note": {
+        "yi": "「慑服」是畏惧而服从；「擒纵如意」是抓住还是放走都由自己；「伏戎」是埋伏的兵；「老髦」是年老的人；「狎侮」是亲昵而轻慢。第一句的「父为军师，为旌旗」是后面讲旌旗（YY.58）的依据。",
+        "en": "'Shefu' is submitting from fear; 'qinzong ruyi' is that catching or letting go is entirely at one's will; 'fuyong' are troops lying in ambush; 'laomao' is an old man; 'xiawu' is being familiar and disrespectful. The first sentence, 'Resource is the adviser and also the banners', is the basis for the section on banners which follows (YY.58)."
+      },
+      "see": ["LY.CAREER.YY.56", "LY.CAREER.YY.58", "LY.CAREER.HJC.87", "LY.CAREER.HJC.90"]
+    },
+    {
+      "id": "LY.CAREER.YY.58",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·六亲（二）：旌旗——父旺则旗新带龙雀则彩鲜，父衰墓则旧加勾蛇虎武则敝垢；卦无父或父空绝则帜不备；父被刑害克破宜改旗帜；父静财动功成拔帜；内财动克外父我夺彼帜、外财动克内父彼夺我帜",
+      "rule": {
+        "yi": "旌旗：父爻旺相，旗帜就新；带青龙、朱雀，画的色彩鲜艳；父爻衰、墓，旗帜就旧，加勾陈、螣蛇、白虎、玄武，就破旧肮脏没有颜色。卦里没有父爻，或父爻落空、绝的，旗帜不齐备；父爻被刑、害、克、破的，宜改换旗帜。父爻安静、财爻发动的，功成之后拔旗（收兵）；内卦的财爻发动克外卦的父爻，我夺对方的旗；外卦的财爻发动克内卦的父爻，对方夺我的旗。",
+        "en": "The banners. If Resource is thriving the banners are new, and with the Azure Dragon and Vermilion Bird the colours are bright and fresh; if Resource is weak or in tomb the banners are old, and with Hook Earth, the Coiling Snake, the White Tiger and the Dark Tortoise they are tattered, dirty and colourless. If the hexagram has no Resource line, or it is Void or extinct, the banners are incomplete; if Resource is punished, harmed, controlled or broken, it is fit to change the banners. If Resource is still and Wealth moves, success is won and the banners are pulled up; if inner Wealth moves to control outer Resource, I seize their banners; if outer Wealth moves to control inner Resource, they seize mine."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2027, 2029],
+          "zh": ["又父旺相，则旗帜新。", "带龙雀，则画彩鲜丽也。", "父衰墓则旧，加勾蛇虎武，则敝垢无色也。", "卦无父，或父空绝者，乃帜不备也。", "父被刑害克破者，宜改旗帜也。", "父静财动者，功成拔帜也。", "内财动克外父者，我夺彼帜也。", "外财动克内父者，彼夺我帜也。"],
+          "yi": ["又，父爻旺相，旗帜就新。", "带青龙、朱雀，画的色彩鲜艳。", "父爻衰、墓，旗帜就旧，加勾陈、螣蛇、白虎、玄武，就破旧肮脏、没有颜色。", "卦里没有父爻，或父爻落空、绝的，旗帜不齐备。", "父爻被刑、害、克、破的，宜改换旗帜。", "父爻安静、财爻发动的，功成之后拔旗（收兵）。", "内卦的财爻发动克外卦的父爻，我夺对方的旗。", "外卦的财爻发动克内卦的父爻，对方夺我的旗。"],
+          "en": ["Again, if Resource is thriving, the banners are new.", "With the Azure Dragon and Vermilion Bird, the colours painted are bright and fresh.", "If Resource is weak or in tomb the banners are old, and with Hook Earth, the Coiling Snake, the White Tiger and the Dark Tortoise added they are tattered, dirty and colourless.", "If the hexagram has no Resource line, or it is Void or extinct, the banners are incomplete.", "If Resource is punished, harmed, controlled or broken, it is fit to change the banners.", "If Resource is still and Wealth moves, success is won and the banners are pulled up.", "If inner Wealth moves to control outer Resource, I seize their banners.", "If outer Wealth moves to control inner Resource, they seize mine."] }
+      ],
+      "note": {
+        "yi": "「勾蛇虎武」是勾陈、螣蛇、白虎、玄武的省称。「拔帜」按字面是拔掉旗帜，即收兵；书里没有解释，译文按「功成之后收旗」译。",
+        "en": "'Gou she hu wu' is an abbreviation for Hook Earth, the Coiling Snake, the White Tiger and the Dark Tortoise. 'Ba zhi' is by the letter pulling up the banners, that is, withdrawing the troops; the book does not explain it, and the translation reads it as taking in the banners after success."
+      },
+      "see": ["LY.CAREER.YY.57", "LY.CAREER.YY.59"]
+    },
+    {
+      "id": "LY.CAREER.YY.59",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·六亲（三）：财旺相粮草丰足，衰败无余，墓胎不发，空绝或卦无财粮草缺绝；子化财向邻国呼庚；财加武动下人偷窃；内兄动克财督饷侵渔；外兄动克财敌人劫掠",
+      "rule": {
+        "yi": "粮草：财爻旺相，粮草丰足；衰败，没有余粮；临墓、胎，粮草发不下来；落空、绝，或卦里没有财爻，粮草断绝。子孙变出财爻的，向邻国借粮（呼庚）；财爻加玄武发动的，下面的人偷窃；内卦的兄爻发动克财爻的，督办粮饷的人侵吞中饱；外卦的兄爻发动克财爻的，敌人劫掠。",
+        "en": "Provisions. If Wealth is thriving, provisions are ample; if spent, there is no surplus; if on tomb or womb, provisions are not issued; if Void or extinct, or the hexagram has no Wealth, provisions are cut off. If Output turns into Wealth, one begs grain from a neighbouring state; if Wealth carries the Dark Tortoise and moves, those below steal; if an inner Peer line moves to control Wealth, the official in charge of supplies embezzles; if an outer Peer line moves to control Wealth, the enemy plunders."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2027, 2029],
+          "zh": ["又财旺相，粮草丰足也。", "财衰败，粮草无余也。", "财墓胎，粮草不发也。", "财空绝，或卦无财者，粮草缺绝也。", "子化财者，呼庚邻国也。", "财加武动者，下人偷窃也。", "内兄动克财者，督饷侵渔也。", "外兄动克财者，敌人劫掠也。"],
+          "yi": ["又，财爻旺相，粮草丰足。", "财爻衰败，没有余粮。", "财爻临墓、胎，粮草发不下来。", "财爻落空、绝，或者卦里没有财爻的，粮草断绝。", "子孙变出财爻的，向邻国借粮（呼庚）。", "财爻加玄武发动的，下面的人偷窃。", "内卦的兄爻发动克财爻的，督办粮饷的人侵吞中饱。", "外卦的兄爻发动克财爻的，敌人劫掠。"],
+          "en": ["Again, if Wealth is thriving, provisions are ample.", "If Wealth is spent, there is no surplus.", "If Wealth is on tomb or womb, provisions are not issued.", "If Wealth is Void or extinct, or the hexagram has no Wealth line, provisions are cut off.", "If Output turns into Wealth, one begs grain from a neighbouring state.", "If Wealth carries the Dark Tortoise and moves, those below steal.", "If an inner Peer line moves to control Wealth, the official in charge of supplies embezzles.", "If an outer Peer line moves to control Wealth, the enemy plunders."] }
+      ],
+      "note": {
+        "yi": "「呼庚」即「呼庚癸」，出自《左传》，军中向人讨粮的暗语；「侵渔」是侵吞百姓或公家的钱粮。原文是「呼庚邻国」，字面是向邻国呼庚。",
+        "en": "'Hugeng' is 'hu geng gui', from the Zuo Zhuan, the code words for begging for grain in an army; 'qinyu' is embezzling the money and grain of the people or the government. The text reads 'hu geng neighbouring state', by the letter calling 'geng' to a neighbouring state."
+      },
+      "see": ["LY.CAREER.YY.58", "LY.CAREER.YY.60", "LY.CAREER.HJC.88"]
+    },
+    {
+      "id": "LY.CAREER.YY.60",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·六亲（四）：子旺先锋谋勇，衰墓懦弱，空绝有难，化败死墓绝胎必败绩；子带大杀动克应先锋冲突取胜；子旺受刑害克冲勿轻出；子衰得日辰动爻生合用多取胜，子旺动克众官用少取胜；子化兄将弱功成，化父兵骄致败；世下伏子合应先锋降敌，加日辰生子被唆降仇",
+      "rule": {
+        "yi": "先锋：子孙旺相，先锋有谋有勇；衰、墓，懦弱无能；落空、绝，先锋有难；变成败、死、墓、绝、胎，必定战败。子孙带大杀发动克应爻的，先锋冲突取胜；子孙旺相却受刑、害、克、冲的，不要轻易出战；子孙衰弱而得日辰、动爻生合的，以多取胜；子孙旺相发动克众多官鬼的，以少取胜；子孙变兄爻，将弱而成功；子孙变父爻，兵骄而致败。世爻下伏着子孙并合应爻的，先锋投降敌人；再加日辰生子孙的，必定被人唆使怂恿而投降仇敌。",
+        "en": "The vanguard. If Output is thriving, the vanguard has both wit and courage; if weak or in tomb, timid and incapable; if Void or extinct, the vanguard is in trouble; if it turns into spent, dead, tomb, extinction or the womb stage, it surely loses the battle. If Output carrying a great baleful spirit moves to control the Other, the vanguard wins by a charge; if Output is thriving but punished, harmed, controlled or clashed, do not go out lightly; if Output is weak but generated or combined by the Day or a moving line, win with numbers; if it is thriving and moves to control many Pressure lines, win with few; if Output turns into Peer, the commander is weak but succeeds; if Output turns into Resource, the troops grow proud and bring defeat. If Output lies hidden under the Self and combines with the Other, the vanguard goes over to the enemy; with the Day generating Output as well, he will surely be egged on to surrender to his enemy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2027, 2029],
+          "zh": ["子旺相，先锋谋勇也。", "子衰墓，懦弱无能也。", "子空绝，先锋有难也。", "子化败死墓绝胎，必败续也。", "子带大杀动克应爻者，先锋无突取胜也。", "子旺受刑害克冲者，勿轻出也。", "子衰而得日辰动爻生合者，用多取胜也。", "子旺而动克众官者，用少取胜也。", "子化兄者，将弱而功成也。", "子化父者，兵骄而致败也。", "世下伏子合应者，先锋降敌也。", "加日辰生子者，必被人唆赞而降仇也。"],
+          "yi": ["子孙旺相，先锋有谋有勇。", "子孙衰、墓，懦弱无能。", "子孙落空、绝，先锋有难。", "子孙变成败、死、墓、绝、胎，必定战败。", "子孙带大杀发动克应爻的，先锋冲突取胜。", "子孙旺相却受刑、害、克、冲的，不要轻易出战。", "子孙衰弱而得日辰、动爻生合的，以多取胜。", "子孙旺相发动克众多官鬼的，以少取胜。", "子孙变兄爻的，将弱而成功。", "子孙变父爻的，兵骄而致败。", "世爻下伏着子孙并合应爻的，先锋投降敌人。", "再加日辰生子孙的，必定被人唆使怂恿而投降仇敌。"],
+          "en": ["If Output is thriving, the vanguard has both wit and courage.", "If Output is weak or in tomb, he is timid and incapable.", "If Output is Void or extinct, the vanguard is in trouble.", "If Output turns into spent, dead, tomb, extinction or the womb stage, it surely loses the battle.", "If Output carrying a great baleful spirit moves to control the Other, the vanguard wins by a charge.", "If Output is thriving but punished, harmed, controlled or clashed, do not go out lightly.", "If Output is weak but generated or combined by the Day or a moving line, win with numbers.", "If Output is thriving and moves to control many Pressure lines, win with few.", "If Output turns into Peer, the commander is weak but succeeds.", "If Output turns into Resource, the troops grow proud and bring defeat.", "If Output lies hidden under the Self and combines with the Other, the vanguard goes over to the enemy.", "With the Day generating Output as well, he will surely be egged on to surrender to his enemy."] }
+      ],
+      "note": {
+        "yi": "第四句「必败续」疑是「必败绩」（败绩是战败），第五句「先锋无突取胜」的「无突」疑是「冲突」（冲锋），译文按「败绩」「冲突」译，没有改原文字。「官」在「克众官」里指官鬼。「唆赞」是唆使怂恿。",
+        "en": "In the fourth sentence 'bi bai xu' is presumably 'bi bai ji', defeat in battle, and in the fifth 'xianfeng wu tu qu sheng' the 'wu tu' is presumably 'chong tu', to charge; the translation reads 'defeat' and 'charge' without changing the original characters. 'Official' in 'control many officials' means the Pressure lines. 'Suozan' is egging on."
+      },
+      "see": ["LY.CAREER.YY.59", "LY.CAREER.YY.61", "LY.CAREER.HJC.91", "LY.CAREER.HJC.93", "LY.CAREER.HJC.97", "LY.CAREER.HJC.98"]
+    },
+    {
+      "id": "LY.CAREER.YY.61",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·六亲（五）：兄旺动有埋伏，来冲世冲子防劫营，暗动来冲防奸细；欲知何日来犯看兄爻生旺日时",
+      "rule": {
+        "yi": "兄弟看埋伏：兄爻旺相发动，有埋伏；来冲世爻、冲子孙的，防劫营；兄爻暗动来冲的，防奸细。想知道哪天来进犯，就看兄爻生旺的日子、时辰。",
+        "en": "Peer and ambush. If the Peer line is thriving and moving, there is an ambush; if it comes to clash with the Self or Output, guard against a raid on the camp; if it moves in secret and comes to clash, guard against spies. To know on what day they will attack, look at the day or hour when the Peer line is born or thriving."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2027, 2029],
+          "zh": ["兄旺动，有埋伏也。", "若来冲世冲子者，防劫营也。", "兄如暗动来冲者，防奸细也。", "欲知何日来犯，则在兄爻，生旺日时也。"],
+          "yi": ["兄爻旺相发动，有埋伏。", "如果来冲世爻、冲子孙的，防劫营。", "兄爻如果暗动来冲的，防奸细。", "想知道哪一天来进犯，就看兄爻生旺的日子、时辰。"],
+          "en": ["If the Peer line is thriving and moving, there is an ambush.", "If it comes to clash with the Self or Output, guard against a raid on the camp.", "If the Peer line moves in secret and comes to clash, guard against spies.", "To know on what day they will attack, look at the day or hour when the Peer line is born or thriving."] }
+      ],
+      "see": ["LY.CAREER.YY.60", "LY.CAREER.YY.62", "LY.CAREER.HJC.88", "LY.CAREER.HJC.92"]
+    },
+    {
+      "id": "LY.CAREER.YY.62",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·六亲（六）：鬼衰静敌胆怯，旺动敌势盛，加财动助诡计多端；鬼空敌必灭；内外无鬼及鬼墓绝胎敌必遁；鬼衰得扶勿穷追；鬼带亡神劫杀在内卦动防奸细，世旺动伤克鬼奸细必擒；世鬼动生合应无援而降；卦无财应克世食尽而毙",
+      "rule": {
+        "yi": "官鬼看敌人：官鬼衰弱安静，敌人胆怯；旺相发动，敌势强盛；再加财爻发动帮它，敌人诡计多端、变诈百出。官鬼落空，敌人必定灭亡；内外卦都没有官鬼，以及官鬼临墓、绝、胎的，敌人必定逃走；官鬼衰弱但得到扶助，不要追穷寇。官鬼带亡神、劫杀在内卦发动的，防奸细；如果世爻旺相发动、伤克官鬼，奸细必被擒获。世爻和官鬼发动、生合应爻的，因为没有救援而投降；卦里没有财爻，而应爻克世爻的，因为粮尽而毙命。",
+        "en": "Pressure and the enemy. If Pressure is weak and still, the enemy is timid; if thriving and moving, the enemy's force is strong, and with Wealth moving to help it, the enemy has many tricks and a hundred deceits. If Pressure is Void, the enemy is surely destroyed; if there is no Pressure in the inner or outer trigram, or Pressure sits on tomb, extinction or the womb stage, the enemy surely slips away; if Pressure is weak but supported, do not hound a desperate foe. If Pressure carrying the Lost Spirit and Robbery moves in the inner trigram, guard against spies; if the Self is thriving and moving and injures or controls Pressure, the spy is surely caught. If the Self and Pressure move and generate or combine with the Other, he surrenders for lack of relief; if the hexagram has no Wealth and the Other controls the Self, he dies when the food runs out."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2027, 2029],
+          "zh": ["鬼衰静，敌胆怯。", "鬼旺动，敌势盛也。", "更加财动助之者，则诡计多端，变诈百出也。", "鬼空者，敌必灭。", "内外无鬼，与鬼墓绝胎者，敌必遁去也。", "鬼衰得扶，勿穷追也。", "鬼带亡神劫杀在内卦动者，防奸细也。", "如得世爻旺动伤克鬼，奸细必擒也。", "世鬼动，而生合应者，以无援而降也。", "卦无财，而应克世者，以食尽而毙也。"],
+          "yi": ["官鬼衰弱安静，敌人胆怯。", "官鬼旺相发动，敌势强盛。", "再加财爻发动帮它的，敌人诡计多端，变诈百出。", "官鬼落空，敌人必定灭亡。", "内外卦都没有官鬼，以及官鬼临墓、绝、胎的，敌人必定逃走。", "官鬼衰弱但得到扶助的，不要追穷寇。", "官鬼带亡神、劫杀在内卦发动的，防奸细。", "如果世爻旺相发动，伤克官鬼，奸细必被擒获。", "世爻和官鬼发动、生合应爻的，因为没有救援而投降。", "卦里没有财爻，而应爻克世爻的，因为粮尽而毙命。"],
+          "en": ["If Pressure is weak and still, the enemy is timid.", "If Pressure is thriving and moving, the enemy's force is strong.", "With Wealth moving to help it as well, the enemy has many tricks and a hundred deceits.", "If Pressure is Void, the enemy is surely destroyed.", "If there is no Pressure in the inner or outer trigram, or Pressure sits on tomb, extinction or the womb stage, the enemy surely slips away.", "If Pressure is weak but supported, do not hound a desperate foe.", "If Pressure carrying the Lost Spirit and Robbery moves in the inner trigram, guard against spies.", "If the Self is thriving and moving and injures or controls Pressure, the spy is surely caught.", "If the Self and Pressure move and generate or combine with the Other, he surrenders for lack of relief.", "If the hexagram has no Wealth and the Other controls the Self, he dies when the food runs out."] }
+      ],
+      "note": {
+        "yi": "「穷寇勿追」是兵法的老话；「世鬼动」按字面是世爻和官鬼发动，书里没有说是谁生合应爻，译文把世爻与官鬼一并译出。末句在书里被断行隔开（「而应」在上一行末，「克世者」在下一行首），这里连起来读。",
+        "en": "'Do not pursue a desperate foe' is an old maxim of the art of war; 'shi gui dong' is by the letter the Self and Pressure moving, and the book does not say which of them generates or combines with the Other, so the translation renders both together. The last sentence is split by a line break in the book ('and the Other' at the end of one line and 'controls the Self' at the start of the next) and is read here joined up."
+      },
+      "see": ["LY.CAREER.YY.61", "LY.CAREER.YY.63", "LY.CAREER.HJC.100", "LY.CAREER.HJC.103", "LY.CAREER.HJC.104"]
+    },
+    {
+      "id": "LY.CAREER.YY.63",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·五行（一）：木为舟楫、火营寨、土炮石、金刀刃、水水泉；木旺动利舟师，旺舟大衰舟小空绝无舟；青龙船柁左、白虎樯帆锚链右、勾陈平基跳板中仓、螣蛇索缆、朱雀烟灶船头、玄武挠头挡浪后艄；旺相新休囚旧空无冲破漏受刑害克及木持动鬼木下伏鬼必损伤；伏土鬼湊浅、伏火鬼燥裂、伏金鬼钉眼损；木带鬼贼船",
+      "rule": {
+        "yi": "五行配兵器和舟船：木是舟船，火是营寨，土是炮石，金是刀刃，水是水源泉水。木爻旺相发动，利于水军；木旺，船大；木衰，船小；木落空、绝，没有船。船的各部分：青龙是船舵，在左；白虎是桅杆、帆、锚链，在右；勾陈是平基、跳板，在中舱；螣蛇是缆索；朱雀是烟灶，在船头；玄武是挠头、挡浪，在船尾。旺相，船新；休囚，船旧；落空，没有；被冲，破漏；受刑、害、克，以及木爻持发动的官鬼、木爻下伏着官鬼的，必定损伤。木下伏土爻官鬼，船搁浅；伏火爻官鬼，船干燥开裂；伏金爻官鬼，钉眼处损坏。又，木爻带官鬼的，是贼船。",
+        "en": "The five elements and arms and boats. Wood is boats and oars, Fire is the camp, Earth is catapult stones, Metal is blades, and Water is springs. If Wood is thriving and moving, it favours the navy; thriving Wood means a big boat, weak Wood a small boat, Void or extinct Wood no boat. The parts of the boat: the Azure Dragon is the rudder, on the left; the White Tiger is the mast, sail and anchor chain, on the right; Hook Earth is the flat base and gangplank, the middle hold; the Coiling Snake is the cables; the Vermilion Bird is the smoke and stove, at the bow; the Dark Tortoise is the scull-heads and wave-guard, at the stern. Thriving, the boat is new; resting or trapped, old; Void, there is none; clashed, it leaks; punished, harmed or controlled, or if Wood holds a moving Pressure line, or Pressure lies hidden under Wood, it is surely damaged. Earth Pressure hidden under it, the boat runs into the shallows; Fire Pressure, it dries and splits; Metal Pressure, the nail holes are damaged. Again, Wood carrying Pressure is the enemy's boat."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2033, 2034],
+          "zh": ["木为舟楫，火为营寨，土为炮石，金为刀刃，水为水泉也。", "木旺动，利舟师也。", "木旺，舟大。", "木衰，舟小。", "木空绝，无舟也。", "又青龙为船柁，为左也。", "白虎为樯帆锚链，为右也。", "勾陈为平基跳板，为中仓也。", "螣蛇为索缆也。", "朱雀为烟灶，为船头也。", "玄武为挠头挡浪，为后稍也。", "旺相新，休囚旧，空则无，冲则破漏，受刑害克，及木持动鬼，与木下伏鬼者，必损伤也。", "伏土鬼者，舟湊浅也。", "伏火鬼者，舟燥裂也。", "伏金鬼者，钉眼处损也。", "又木带鬼者，贼船也。"],
+          "yi": ["木是舟船，火是营寨，土是炮石，金是刀刃，水是水源和泉水。", "木爻旺相发动，利于水军。", "木旺，船大。", "木衰，船小。", "木落空、绝，没有船。", "又，青龙是船舵，在左边。", "白虎是桅杆、帆和锚链，在右边。", "勾陈是平基、跳板，在中舱。", "螣蛇是缆索。", "朱雀是烟灶，在船头。", "玄武是挠头、挡浪，在船尾。", "旺相，船新；休囚，船旧；落空，没有；被冲，破漏；受刑、害、克，以及木爻持发动的官鬼、木爻下伏着官鬼的，必定损伤。", "木下伏着土爻官鬼的，船搁浅。", "伏着火爻官鬼的，船干燥开裂。", "伏着金爻官鬼的，钉眼的地方损坏。", "又，木爻带官鬼的，是贼船。"],
+          "en": ["Wood is boats and oars, Fire is the camp, Earth is catapult stones, Metal is blades, and Water is springs.", "If Wood is thriving and moving, it favours the navy.", "Thriving Wood means a big boat.", "Weak Wood means a small boat.", "Void or extinct Wood means no boat.", "Again, the Azure Dragon is the rudder, on the left.", "The White Tiger is the mast, sail and anchor chain, on the right.", "Hook Earth is the flat base and gangplank, the middle hold.", "The Coiling Snake is the cables.", "The Vermilion Bird is the smoke and stove, at the bow.", "The Dark Tortoise is the scull-heads and wave-guard, at the stern.", "Thriving, the boat is new; resting or trapped, old; Void, there is none; clashed, it leaks; punished, harmed or controlled, or if Wood holds a moving Pressure line, or Pressure lies hidden under Wood, it is surely damaged.", "If an Earth Pressure line lies hidden under Wood, the boat runs into the shallows.", "If a Fire Pressure line, the boat dries and splits.", "If a Metal Pressure line, the nail holes are damaged.", "Again, Wood carrying Pressure is the enemy's boat."] }
+      ],
+      "note": {
+        "yi": "船的各部分和六神的配法，书里只列了名目，没有解释：「平基」「挠头」「后稍（艄）」按字面译成 flat base、scull-heads、stern；「舟湊浅」的「湊」疑是「搁」（搁浅），译文按搁浅译。「舟楫」是船和桨。",
+        "en": "The book only lists the parts of the boat and their assignment to the six spirits without explaining them: 'pingji', 'naotou' and 'hou shao' are translated by the letter as the flat base, the scull-heads and the stern; in 'zhou cou qian' the 'cou' is presumably 'ge', so that it is running aground, and the translation reads 'runs into the shallows'. 'Zhouji' is boats and oars."
+      },
+      "see": ["LY.CAREER.YY.62", "LY.CAREER.YY.64", "LY.CAREER.HJC.89"]
+    },
+    {
+      "id": "LY.CAREER.YY.64",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·五行（二）：火动生合世立营得地利，冲克刑害世失地利；火鬼持世动被贼围，贴世贼寨近；火旺营大衰营小，空危险，绝无出路；火动利迁营；火鬼伤世防劫营；加龙贼左来、加虎右来、雀前来、武后来、勾蛇四隅来",
+      "rule": {
+        "yi": "火看营寨：火爻发动生合世爻，立营得地利；发动冲、克、刑、害世爻，立营失地利。火爻官鬼持世发动的，被贼围困；火爻官鬼贴近世爻的，贼寨离得近。火旺，营大；火衰，营小；火落空，营危险；火绝，没有出路；火发动，利于迁营；火爻官鬼伤世爻，防劫营。加青龙，贼从左边来；加白虎，从右边来；朱雀从前面来；玄武从后面来；勾陈、螣蛇从四个角落来。",
+        "en": "Fire and the camp. If Fire moves to generate or combine with the Self, setting up camp gains the advantage of ground; if it moves to clash with, control, punish or harm the Self, the camp loses the advantage of ground. If a Fire Pressure line holds the Self and moves, one is besieged by bandits; if a Fire Pressure line is next to the Self, the bandits' camp is near. Thriving Fire means a big camp, weak Fire a small camp; Void Fire means a camp in danger; extinct Fire means no way out; if Fire moves, it favours moving camp; if a Fire Pressure line injures the Self, guard against a raid on the camp. With the Azure Dragon added, the bandits come from the left; with the White Tiger, from the right; the Bird, from the front; the Tortoise, from behind; Hook Earth and the Snake, from the four corners."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2033, 2034],
+          "zh": ["火动生合世者，立营得地利也。", "火动冲克刑害世者，立营失地利也。", "火鬼持世动者，被贼围也。", "火鬼贴世者，贼寨相近也。", "火旺，营大。", "火衰，营小。", "火空，营危险。", "火绝，无出路也。", "火动，利迁营。", "火鬼伤世，防劫营也。", "加龙，贼左来。", "加虎，贼右来。", "雀前来，武后来，勾蛇，四隅来也。"],
+          "yi": ["火爻发动生合世爻的，立营得地利。", "火爻发动冲、克、刑、害世爻的，立营失地利。", "火爻官鬼持世爻发动的，被贼围困。", "火爻官鬼贴近世爻的，贼寨离得近。", "火旺，营大。", "火衰，营小。", "火落空，营危险。", "火绝，没有出路。", "火发动，利于迁营。", "火爻官鬼伤世爻，防劫营。", "加青龙，贼从左边来。", "加白虎，贼从右边来。", "朱雀从前面来，玄武从后面来，勾陈、螣蛇从四个角落来。"],
+          "en": ["If Fire moves to generate or combine with the Self, setting up camp gains the advantage of ground.", "If Fire moves to clash with, control, punish or harm the Self, the camp loses the advantage of ground.", "If a Fire Pressure line holds the Self and moves, one is besieged by bandits.", "If a Fire Pressure line is next to the Self, the bandits' camp is near.", "Thriving Fire means a big camp.", "Weak Fire means a small camp.", "Void Fire means a camp in danger.", "Extinct Fire means no way out.", "If Fire moves, it favours moving camp.", "If a Fire Pressure line injures the Self, guard against a raid on the camp.", "With the Azure Dragon added, the bandits come from the left.", "With the White Tiger added, they come from the right.", "The Bird comes from the front, the Tortoise from behind, Hook Earth and the Snake from the four corners."] }
+      ],
+      "note": {
+        "yi": "最后一句「雀前来，武后来，勾蛇，四隅来也」是承上两句「加龙」「加虎」的写法，所以译文把朱雀、玄武、勾陈、螣蛇也当作「加」在火鬼上的神。「贴世」按字面是紧贴着世爻（相邻）。",
+        "en": "The last sentence, 'the Bird comes from the front, the Tortoise from behind, Hook and Snake from the four corners', follows the form of the two sentences before, 'with the Dragon' and 'with the Tiger', and the translation therefore takes the Vermilion Bird, the Dark Tortoise, Hook Earth and the Coiling Snake also as spirits added to the Fire Pressure line. 'Tie shi' is by the letter pressed against the Self, adjoining it."
+      },
+      "see": ["LY.CAREER.YY.63", "LY.CAREER.YY.65", "LY.CAREER.HJC.89", "LY.CAREER.HJC.102"]
+    },
+    {
+      "id": "LY.CAREER.YY.65",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·五行（三）：阳土鬼旺动带大杀刑害克冲世防炮石；阴土鬼旺动带阴杀防陷阱；世爻子爻临阳土伤应伤鬼利用炮石、临阴土利用机井；当于应爻鬼爻死墓绝胎之右设伏",
+      "rule": {
+        "yi": "土看炮石和陷阱：阳土爻的官鬼旺相发动，带大杀来刑、害、克、冲世爻的，防炮石；阴土爻的官鬼旺相发动，带阴杀来冲、刑、克、害世爻的，防陷阱。世爻、子孙爻临阳土而伤应爻、伤官鬼的，利于使用炮石；临阴土而伤应爻与官鬼的，利于使用机关陷阱。应当在应爻、官鬼爻死、墓、绝、胎的右侧设下伏兵。",
+        "en": "Earth, catapult stones and pits. If a yang Earth Pressure line is thriving and moving, with a great baleful spirit, and comes to punish, harm, control or clash with the Self, guard against catapult stones; if a yin Earth Pressure line is thriving and moving, with a yin baleful spirit, and comes to clash with, punish, control or harm the Self, guard against pits. If the Self and Output sit on yang Earth and injure the Other and Pressure, it is favourable to use catapult stones; if on yin Earth and injuring the Other and Pressure, favourable to use mechanisms and pitfalls. One should set an ambush to the right of where the Other and Pressure lines are in death, tomb, extinction or the womb stage."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2033, 2034],
+          "zh": ["阳土鬼旺动，带大杀来刑害克冲世者，防炮石也。", "阴土鬼旺动，带阴杀来冲刑克害世者，防陷井也。", "世爻子爻临阳土，伤应伤鬼者，利用炮石也。", "临阴土，伤应与鬼者，利用机井也。", "当于应爻鬼爻死墓绝胎之右设伏也。"],
+          "yi": ["阳土爻的官鬼旺相发动，带大杀来刑、害、克、冲世爻的，防炮石。", "阴土爻的官鬼旺相发动，带阴杀来冲、刑、克、害世爻的，防陷阱。", "世爻、子孙爻临阳土，伤应爻、伤官鬼的，利于使用炮石。", "临阴土，伤应爻与官鬼的，利于使用机关陷阱。", "应当在应爻、官鬼爻死、墓、绝、胎的右侧设下伏兵。"],
+          "en": ["If a yang Earth Pressure line is thriving and moving, with a great baleful spirit, and comes to punish, harm, control or clash with the Self, guard against catapult stones.", "If a yin Earth Pressure line is thriving and moving, with a yin baleful spirit, and comes to clash with, punish, control or harm the Self, guard against pits.", "If the Self and Output sit on yang Earth and injure the Other and Pressure, it is favourable to use catapult stones.", "If on yin Earth and injuring the Other and Pressure, it is favourable to use mechanisms and pitfalls.", "One should set an ambush to the right of where the Other and Pressure lines are in death, tomb, extinction or the womb stage."] }
+      ],
+      "note": {
+        "yi": "「陷井」即陷阱。「阴杀」书里没有解释，是阴性的凶煞；「右」是五个方位里的哪一边，书里没有说是相对于谁，译文照字面译。",
+        "en": "'Xian jing' is a pit trap. 'Yin baleful spirit' is not explained in the book and is a yin-natured baleful spirit; the book does not say to whose right 'the right' is, and the translation follows the letter."
+      },
+      "see": ["LY.CAREER.YY.64", "LY.CAREER.YY.66", "LY.CAREER.HJC.111"]
+    },
+    {
+      "id": "LY.CAREER.YY.66",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·五行（四）：金旺兵甲新加龙雀虎光明耀日，金衰兵甲旧加勾蛇武钝敝；金胎墓弓橐戈戢；金动将战斗，金动带刑刃战必伤人，金空动征鼓齐鸣兵刃既接",
+      "rule": {
+        "yi": "金看兵甲：金爻旺相，兵器铠甲新，加青龙、朱雀、白虎的，光亮耀眼；金爻衰弱，兵甲旧，加勾陈、螣蛇、玄武的，钝坏没有光彩；金临胎、墓，弓入囊、戈收起（休兵）；金发动，将要打仗；金发动带刑、刃的，打起来必定伤人；金落空而发动，战鼓齐鸣，兵刃已经相接。",
+        "en": "Metal and arms. If Metal is thriving, weapons and armour are new, and with the Azure Dragon, the Bird or the Tiger added they are bright and dazzling; if Metal is weak, arms and armour are old, and with Hook Earth, the Snake or the Tortoise added they are blunt, worn and colourless; Metal on Tai or tomb, bows are put in their cases and spears put away; if Metal moves, a battle is about to be fought; if Metal moves carrying punishment and the blade, the fight will surely wound men; if Metal is Void and moves, war drums sound together and blades have already met."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2033, 2034],
+          "zh": ["金旺，兵甲新。", "加龙雀虎者，光明耀日也。", "金衰，兵甲旧。", "加勾蛇武者，钝敝无色也。", "金胎墓，弓橐戈戢也。", "金动，将战斗也。", "金动带刑刃，战必伤人也。", "金空动，征鼓齐鸣，兵刃既接也。"],
+          "yi": ["金爻旺相，兵器铠甲新。", "加青龙、朱雀、白虎的，光亮耀眼。", "金爻衰弱，兵甲旧。", "加勾陈、螣蛇、玄武的，钝坏没有光彩。", "金临胎、墓，弓入囊、戈收起（休兵）。", "金发动，将要打仗。", "金发动而带刑、刃的，打起来必定伤人。", "金落空而发动，战鼓齐鸣，兵刃已经相接。"],
+          "en": ["If Metal is thriving, weapons and armour are new.", "With the Azure Dragon, the Bird or the Tiger added, they are bright and dazzling.", "If Metal is weak, arms and armour are old.", "With Hook Earth, the Snake or the Tortoise added, they are blunt, worn and colourless.", "Metal on Tai or tomb: bows are put in their cases and spears put away.", "If Metal moves, a battle is about to be fought.", "If Metal moves carrying punishment and the blade, the fight will surely wound men.", "If Metal is Void and moves, war drums sound together and blades have already met."] }
+      ],
+      "note": {
+        "yi": "「龙雀虎」「勾蛇武」是青龙、朱雀、白虎和勾陈、螣蛇、玄武的省称，前一组好、后一组坏。「弓橐戈戢」出自《诗·时迈》「载戢干戈，载櫜弓矢」，意思是收起兵器、不再用兵。",
+        "en": "'Long que hu' and 'gou she wu' are abbreviations for the Azure Dragon, the Vermilion Bird and the White Tiger and for Hook Earth, the Coiling Snake and the Dark Tortoise, the first group good and the second bad. 'Gong tuo ge ji' comes from the Odes, 'Shi mai', 'they put away shield and spear, they sheathe bow and arrow', meaning that the weapons are put away and the army rests."
+      },
+      "see": ["LY.CAREER.YY.65", "LY.CAREER.YY.67", "LY.CAREER.HJC.111"]
+    },
+    {
+      "id": "LY.CAREER.YY.67",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·五行（五）：水旺则盈衰绝则竭；申爻旺动有水，以八卦定方；初爻旺动有井，以十二支定方（申爻水源，初爻为井）；初爻庚子水屋下有井、甲子水门前有井；初木动树下有井；初值土水浊，值火井干，土空有一池",
+      "rule": {
+        "yi": "水看水源和井：水旺相，水就满；衰、绝，水就干。申爻旺相发动的，有水，方位用八卦来定；初爻旺相发动的，有井，方位用十二地支来定（申爻是水源，初爻是井）。初爻是庚子水的，屋下有井；是甲子水的，门前有井。初爻是木爻发动的，树下有井；初爻值土，水浑浊；值火，井干；初爻是土爻落空的，有一个池塘。",
+        "en": "Water, springs and wells. If Water is thriving it is full; if weak or extinct, it runs dry. If the Shen line is thriving and moving, there is water, its direction fixed by the eight trigrams; if the first line is thriving and moving, there is a well, its direction fixed by the twelve branches (the Shen line is the source of water and the first line is the well). If the first line is Gengzi Water, there is a well under the house; if Jiazi Water, there is a well in front of the gate. If the first line is Wood and moves, there is a well beneath a tree; if the first line is on Earth, the water is muddy; on Fire, the well is dry; if the first line is Earth and Void, there is a pond."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2033, 2034],
+          "zh": ["水旺则盈，衰绝则竭也。", "申爻旺动者，有水。", "以八卦定其何方，初爻旺动者，有井。", "以十二支神定其何方也(申爻水源，初爻为井)。", "初爻庚子水，屋下有井。", "甲子水，门前有井也。", "初木动树下有井。", "初值土水浊。", "初值火，井干。", "初土空，有一池也。"],
+          "yi": ["水旺相，水就满；衰、绝，水就干。", "申爻旺相发动的，有水。", "（水的）方位用八卦来定；初爻旺相发动的，有井。", "（井的）方位用十二地支来定。（申爻是水源，初爻是井。）", "初爻是庚子水的，屋下有井。", "是甲子水的，门前有井。", "初爻是木爻发动的，树下有井。", "初爻值土，水浑浊。", "值火，井干。", "初爻是土爻落空的，有一个池塘。"],
+          "en": ["If Water is thriving it is full; if weak or extinct, it runs dry.", "If the Shen line is thriving and moving, there is water.", "Its direction is fixed by the eight trigrams; if the first line is thriving and moving, there is a well.", "Its direction is fixed by the twelve branches. (The Shen line is the source of water and the first line is the well.)", "If the first line is Gengzi Water, there is a well under the house.", "If it is Jiazi Water, there is a well in front of the gate.", "If the first line is Wood and moves, there is a well beneath a tree.", "If the first line is on Earth, the water is muddy.", "On Fire, the well is dry.", "If the first line is Earth and Void, there is a pond."] }
+      ],
+      "note": {
+        "yi": "第三、四句在书里被句号切成「申爻旺动者，有水。以八卦定其何方，初爻旺动者，有井。以十二支神定其何方也」，按文意应读成「申爻旺动，有水，以八卦定其方；初爻旺动，有井，以十二支神定其方」，译文照这个读法把括号补在句首。「初爻庚子水」「甲子水」是初爻的干支再加上子的五行（水），书里没有解释，译文照字面。",
+        "en": "In the book the third and fourth sentences are cut by full stops as 'the Shen line thriving and moving, there is water. Fix its direction by the eight trigrams; the first line thriving and moving, there is a well. Fix its direction by the twelve branch spirits', and by sense they should be read as 'the Shen line thriving and moving, there is water, its direction fixed by the eight trigrams; the first line thriving and moving, there is a well, its direction fixed by the twelve branch spirits'; the translation follows this reading and supplies the bracketed words at the head of each sentence. 'The first line Gengzi Water' and 'Jiazi Water' are the stem-branch of the first line followed by the element of Zi (Water), which the book does not explain, and the translation follows the letter."
+      },
+      "see": ["LY.CAREER.YY.66", "LY.CAREER.YY.68", "LY.CAREER.HJC.89", "LY.CAREER.HJC.91"]
+    },
+    {
+      "id": "LY.CAREER.YY.68",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·五行（六）：水鬼旺动克世敌将灌水；水子旺动克应我可囊沙或用背水阵；阴水兄旺动克应渡冰踏雪夜晦擒贼",
+      "rule": {
+        "yi": "水用于战：水爻的官鬼旺相发动、克世爻的，敌将会灌水淹我；水爻的子孙旺相发动、克应爻的，我可以用沙袋壅水，或者背水列阵；阴水爻的兄弟旺相发动、克应爻的，可以渡冰踏雪，在夜里晦暗时擒贼。",
+        "en": "Water in battle. If a Water Pressure line is thriving and moving and controls the Self, the enemy general will flood me; if a Water Output line is thriving and moving and controls the Other, I can use sandbags or draw up with the water behind me; if a yin Water Peer line is thriving and moving and controls the Other, one can cross the ice and tread the snow and seize the bandits on a dark night."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2033, 2034],
+          "zh": ["水鬼旺动克世者，敌将灌水也。", "水子旺动克应者，我可囊沙也，或用背水阵也。", "阴水兄旺动克应者，渡冰踏雪，夜晦擒贼也。"],
+          "yi": ["水爻的官鬼旺相发动、克世爻的，敌将会灌水淹我。", "水爻的子孙旺相发动、克应爻的，我可以用沙袋壅水，或者背水列阵。", "阴水爻的兄弟旺相发动、克应爻的，可以渡冰踏雪，在夜里晦暗时擒贼。"],
+          "en": ["If a Water Pressure line is thriving and moving and controls the Self, the enemy general will flood me.", "If a Water Output line is thriving and moving and controls the Other, I can use sandbags or draw up with the water behind me.", "If a yin Water Peer line is thriving and moving and controls the Other, one can cross the ice and tread the snow and seize the bandits on a dark night."] }
+      ],
+      "note": {
+        "yi": "「囊沙」「背水阵」见 YY.55 的注。书里「水鬼旺动克世」没有说克世的是官鬼本身还是水，译文按水爻的官鬼译。",
+        "en": "'Nang sha' and the 'water-behind formation' are explained in the note to YY.55. 'Water Pressure thriving and moving controls the Self' does not say whether it is the Pressure line itself or Water that controls, and the translation reads it as the Pressure line of Water."
+      },
+      "see": ["LY.CAREER.YY.67", "LY.CAREER.YY.69", "LY.CAREER.HJC.91", "LY.CAREER.HJC.101"]
+    },
+    {
+      "id": "LY.CAREER.YY.69",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·日辰（一）：日辰为我兵——生合世子则士卒用命，冲克世子则兵骄难制，世子克日辰则上不惜下；加龙德喜神动将帅御下严肃；日辰克应克鬼我兵胜，应鬼克日辰敌兵强",
+      "rule": {
+        "yi": "日辰看我方的兵：日辰代表我方的兵。日辰生合世爻、子孙爻的，士卒听命效力；冲克世爻、子孙爻的，兵骄横难以管束；世爻、子孙爻克日辰的，上面的人不爱惜下面的人；日辰加青龙、德神、喜神而发动的，将帅统御部下严肃；日辰克应爻、克官鬼的，我方兵胜；应爻、官鬼克日辰的，敌兵强。",
+        "en": "The Day and my troops. The Day stands for my soldiers. If the Day generates or combines with the Self or Output, the soldiers obey orders and serve; if it clashes with or controls the Self or Output, the troops are proud and hard to rein in; if the Self or Output controls the Day, those above do not spare those below; if the Day adds the Azure Dragon, Virtue and Joy and moves, the commander governs his men with strictness and dignity; if the Day controls the Other and Pressure, my troops win; if the Other or Pressure controls the Day, the enemy troops are strong."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2037, 2037],
+          "zh": ["日辰为我兵也，日辰生合世爻子爻者，士卒用命也。", "冲克世爻子爻者，兵骄难制也。", "世爻子爻克日辰者，上不惜下也。", "加龙德喜神动者，将帅御下严肃也。", "日辰克应克鬼者，我兵胜也。", "应爻鬼爻，克日辰者，敌兵强也。"],
+          "yi": ["日辰代表我方的兵，日辰生合世爻、子孙爻的，士卒听命效力。", "冲克世爻、子孙爻的，兵骄横难以管束。", "世爻、子孙爻克日辰的，上面的人不爱惜下面的人。", "日辰加青龙、德神、喜神而发动的，将帅统御部下严肃。", "日辰克应爻、克官鬼的，我方兵胜。", "应爻、官鬼爻克日辰的，敌兵强。"],
+          "en": ["The Day stands for my soldiers, and if the Day generates or combines with the Self or Output, the soldiers obey orders and serve.", "If it clashes with or controls the Self or Output, the troops are proud and hard to rein in.", "If the Self or Output controls the Day, those above do not spare those below.", "If the Day adds the Azure Dragon, Virtue and Joy and moves, the commander governs his men with strictness and dignity.", "If the Day controls the Other and Pressure, my troops win.", "If the Other or the Pressure line controls the Day, the enemy troops are strong."] }
+      ],
+      "note": {
+        "yi": "「淑慝」是善和恶（见 YY.50）。「用命」是听从命令效力。",
+        "en": "'Shu te' is good and evil (see YY.50). 'Yongming' is serving by obeying orders."
+      },
+      "see": ["LY.CAREER.YY.68", "LY.CAREER.YY.70", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.YY.70",
+      "topic": "军旅",
+      "chapter": "征战占",
+      "chapter_en": "Divining war",
+      "title": "征战占·日辰（二）：日加龙动生世——内卦兵守纪律、外卦作止听令；日加雀喜动善间谍，加雀鬼动逢空内造言外探听无实；日加勾土鬼动内阻令外退缩；日加蛇鬼动内诡谲外兴妖；日加虎鬼动内偏强外轻敌偾事；日加武鬼动内属垣窃听外攫功利己；加天贼天盗劫杀旺动克世内窃符盗印外掠妇劫财",
+      "rule": {
+        "yi": "日辰加六神，看我方兵的品性（在内卦是营内，在外卦是出征在外）：日辰加青龙发动、生世爻的，在内卦，兵守纪律，在外卦，行动停止都听号令；日辰加朱雀、喜神发动的，善用间谍；加朱雀、官鬼发动又逢空的，在内造谣生谤，在外打探的情报不实；日辰加勾陈、土爻官鬼发动的，在内阻挠号令不遵从，在外退缩不前进；加螣蛇、官鬼发动的，在内诡诈多端，在外兴妖惑众；加白虎、官鬼发动的，在内偏强难驯，在外轻敌坏事；加玄武、官鬼发动的，在内隔墙偷听，在外抢功图利；加玄武、官鬼，带天贼、天盗、劫杀旺相发动、克世爻的，在内偷窃符印，在外掠夺妇女财物。",
+        "en": "The Day carrying the six spirits, reading the character of my troops (inside means within the camp, outside means on campaign). If the Day carries the Azure Dragon, moves and generates the Self, then inside the troops keep discipline, and outside they stop and go at command; if the Day carries the Bird and Joy and moves, spies are used well; if it carries the Bird and Pressure, moves and meets Void, then inside they spread rumours and slander, and outside the intelligence gathered is untrue; if the Day carries Hook Earth and an Earth Pressure line and moves, inside they obstruct orders and do not comply, and outside they shrink back and do not advance; with the Snake and Pressure, inside they are crafty in many ways and outside they raise evil and delude the crowd; with the Tiger and Pressure, inside they are headstrong and hard to tame, and outside they despise the enemy and spoil the matter; with the Tortoise and Pressure, inside they listen at the wall and eavesdrop, and outside they grab credit for private gain; with the Tortoise and Pressure, carrying Tianzei, Tiandao and Robbery, thriving and moving and controlling the Self, inside they steal the tally and seal, and outside they plunder women and goods."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2037, 2037],
+          "zh": ["日加龙动生世者，在内卦，则兵守纪律。", "在外卦，则作止听令也。", "日加雀喜动者，善间谍也。", "加日雀鬼动逢空者，在内则造言兴谤。", "在外，则探听无实也。", "日加勾土鬼动者，在内，则阻令不遵。", "在外则退缩不进也。", "日加蛇鬼动者，在内，则诡谲多端。", "在外，则兴妖惑众也。", "日加虎鬼动者，在内，则偏强难驯。", "在外，则轻敌偾事也。", "日加武鬼动者，在内，则瞩垣窃听。", "在外，则攫功利己也。", "日加武鬼，带天贼天盗劫杀旺动克世者，内则窃符盗印，外则掠妇劫财也。"],
+          "yi": ["日辰加青龙发动、生世爻的，在内卦，士兵遵守纪律。", "在外卦，行动停止都听号令。", "日辰加朱雀、喜神发动的，善用间谍。", "日辰加朱雀、官鬼发动又逢空的，在内造谣生谤。", "在外，打探来的情报不实。", "日辰加勾陈、土爻官鬼发动的，在内阻挠号令、不遵从。", "在外，退缩不前进。", "日辰加螣蛇、官鬼发动的，在内诡诈多端。", "在外，兴妖惑众。", "日辰加白虎、官鬼发动的，在内偏强难驯。", "在外，轻敌坏事。", "日辰加玄武、官鬼发动的，在内隔墙偷听。", "在外，抢功图利。", "日辰加玄武、官鬼，带天贼、天盗、劫杀旺相发动、克世爻的，在内偷窃符印，在外掠夺妇女财物。"],
+          "en": ["If the Day carries the Azure Dragon, moves and generates the Self, in the inner trigram the soldiers keep discipline.", "In the outer trigram, they stop and go at command.", "If the Day carries the Vermilion Bird and Joy and moves, spies are used well.", "If the Day carries the Bird and Pressure, moves and meets Void, inside they spread rumours and slander.", "Outside, the intelligence gathered is untrue.", "If the Day carries Hook Earth and an Earth Pressure line and moves, inside they obstruct orders and do not comply.", "Outside, they shrink back and do not advance.", "If the Day carries the Snake and Pressure and moves, inside they are crafty in many ways.", "Outside, they raise evil and delude the crowd.", "If the Day carries the Tiger and Pressure and moves, inside they are headstrong and hard to tame.", "Outside, they despise the enemy and spoil the matter.", "If the Day carries the Tortoise and Pressure and moves, inside they listen at the wall and eavesdrop.", "Outside, they grab credit for private gain.", "If the Day carries the Tortoise and Pressure, with Tianzei, Tiandao and Robbery, thriving and moving and controlling the Self, inside they steal the tally and seal, and outside they plunder women and goods."] }
+      ],
+      "note": {
+        "yi": "「在内」「在外」在前两句里写作内卦、外卦，后面几句省了「卦」字，译文同样按内卦、外卦理解，并在规则里解释成营内、出征在外；这是读法，不是书里明写的。「雀」「勾」「蛇」「虎」「武」是朱雀、勾陈、螣蛇、白虎、玄武的省称。「瞩垣」疑是「属垣」（「有耳属垣」，墙外有耳），译文按隔墙偷听译。「偾事」是把事情搞坏。「符印」是调兵的凭证和官印。「加日雀鬼」的「日」是承前的日辰。天贼、天盗是神煞。",
+        "en": "In the first two sentences 'inside' and 'outside' are written as the inner and outer trigrams, and the later sentences drop the word 'trigram'; the translation reads them the same way, and the rule explains them as inside the camp and on campaign, which is a way of reading it and not something the book writes out. 'Que', 'gou', 'she', 'hu' and 'wu' are abbreviations for the Vermilion Bird, Hook Earth, the Coiling Snake, the White Tiger and the Dark Tortoise. 'Zhu yuan' is presumably 'shu yuan', 'ears against the wall', and the translation reads it as eavesdropping through a wall. 'Fenshi' is spoiling a matter. 'Fuyin' is the tally for mobilizing troops and the official seal. The 'Day' in 'adding Day, Bird, Pressure' continues the Day from before. Tianzei and Tiandao are spirit-stars."
+      },
+      "see": ["LY.CAREER.YY.69", "LY.CAREER.HJC.99", "LY.CAREER.HJC.110"]
+    }
+  ]
+}

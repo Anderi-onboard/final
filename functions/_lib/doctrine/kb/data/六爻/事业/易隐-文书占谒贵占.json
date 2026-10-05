@@ -1,0 +1,202 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易隐",
+  "chapter": "文书占 谒贵占",
+  "chapter_en": "Divining documents and calls on nobles",
+  "ranges": {"易隐": [2679, 2713]},
+  "units": [
+    {
+      "id": "LY.CAREER.YY.71",
+      "topic": "成否",
+      "chapter": "文书占",
+      "chapter_en": "Divining documents",
+      "title": "文书占·公私之辨与成否（游南子）：虽俱以父母为用，公占以官旺为助，私占以子旺为助；三传刑害克破父母不成；卦无官父或官父临空绝化空绝非不发则遗失；父值墓胎、化墓胎、加勾土旺动必阻滞；在官占文凭诰敕公文差札身世坐禄马贵官印或三传值官印动生合身世必得；商占盐引钞文私居占契券田贴父旺动生合世身而财子旺静者有；应空绝墓胎、世持财加武动者无",
+      "rule": {
+        "yi": "文书的占问，有公事和私事的分别：虽然都以父母爻为用神，但公事占以官星旺相为助，私事占以子孙旺相为助。三传（太岁、月建、日辰）刑、害、克、破父母爻的，不成；卦里没有官星、父爻，或官星、父爻临空、绝，以及化成空、绝的，不是发不下来，就是遗失；父爻值墓、胎，以及化成墓、胎，或者加勾陈、土爻而旺相发动的，必定被阻滞耽搁拖延月日。在官的人占文凭、诰敕、公文、差委的札付，只要身爻、世爻坐着禄、驿马、贵人、官星、印绶，或者三传值官星、印星发动来生合身爻、世爻的，必定可以得到。为经商占盐引、钞文，以及居家占契券、田地凭帖，只要父母爻旺相发动生合世爻、身爻，而财爻、子孙旺相安静的，有；应爻空、绝、墓、胎，以及世爻持财爻加玄武发动的，没有（财爻克文书，玄武克朱雀）。",
+        "en": "Documents differ between public and private matters: though Resource is the Subject in both, in a public matter the star of office being thriving helps, and in a private matter Output being thriving helps. If the three rulers punish, harm, control or break Resource, it does not come about; if the hexagram has no star of office or seal line, or they sit on Void or extinction or turn into Void or extinction, it is either not issued or lost; if the seal line meets tomb or womb, or turns into tomb or womb, or carries Hook Earth and an Earth line and is thriving and moving, it will surely be blocked and delayed for months and days. For one in office divining credentials, imperial edicts, official letters and orders of appointment, if the Body and Self sit on Emolument, the Horse, the Noble, the star of office and the seal and ribbon, or the three rulers on the star of office and seal move to generate or combine with the Body and Self, they can surely be had. For a merchant divining salt vouchers and notes of credit, or a householder divining contracts, deeds and land certificates, if the Resource line is thriving and moving and generates or combines with the Self and Body while Wealth and Output are thriving and still, there will be one; if the Other is Void, extinct, in tomb or in womb, or the Self holds Wealth with the Dark Tortoise added and moving, there will be none (Wealth controls the document and the Dark Tortoise controls the Vermilion Bird)."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2681, 2681],
+          "zh": ["游南子曰，文书之占，有公私之辨焉。", "虽俱以父母为用，然公占则以官旺为助，私占则以子旺为助也。", "三传刑害克破父母者，不成。", "卦无官父或官父临空绝，与化空绝者，非不发，则遗失。", "父值墓胎，与化墓胎，或加勾土旺动者，必阻滞耽隔逗留月日也。", "若乃在官而占，文凭诰勅，与夫公文差劄者，但身世坐禄马贵官印绶，或三传值官印动来生合身世者，必可得也。", "为商而占盐引钞文，与私居而占契券田贴者，但父母旺动生合世身，而财子旺静者，有也。", "应爻空绝墓胎，与世持财加武动者，无也。", "(财克文书，武克朱雀)。"],
+          "yi": ["游南子说：占文书，有公事和私事的分别。", "虽然都以父母爻为用神，但公事占以官星旺相为助，私事占以子孙旺相为助。", "三传（太岁、月建、日辰）刑、害、克、破父母爻的，不成。", "卦里没有官星、父爻，或者官星、父爻临空、绝，以及化成空、绝的，不是发不下来，就是遗失。", "父爻值墓、胎，以及化成墓、胎，或者加勾陈、土爻而旺相发动的，必定被阻滞、耽搁、拖延月日。", "如果是在官的人占文凭、诰敕，以及公文、差委的札付，只要身爻、世爻坐着禄、驿马、贵人、官星、印绶，或者三传值官星、印星发动来生合身爻、世爻的，必定可以得到。", "为经商占盐引、钞文，和居家占契约、田地凭帖的，只要父母爻旺相发动生合世爻、身爻，而财爻、子孙旺相安静的，有。", "应爻空、绝、墓、胎，以及世爻持财爻加玄武发动的，没有。", "（财爻克文书，玄武克朱雀。）"],
+          "en": ["Master Younan says: in divining documents there is a distinction between public and private.", "Though in both Resource is taken as the Subject, for a public matter the star of office being thriving helps, and for a private matter Output being thriving helps.", "If the three rulers punish, harm, control or break Resource, it does not come about.", "If the hexagram has no star of office or seal line, or they sit on Void or extinction, or turn into Void or extinction, it is either not issued or lost.", "If the seal line meets tomb or womb, or turns into tomb or womb, or carries Hook Earth and an Earth line and is thriving and moving, it will surely be blocked, delayed and held up for months and days.", "For one in office divining credentials, imperial edicts, official letters and orders of appointment, if the Body and Self sit on Emolument, the Horse, the Noble, the star of office and the seal and ribbon, or the three rulers on the star of office and seal move to generate or combine with the Body and Self, they can surely be had.", "For a merchant divining salt vouchers and notes of credit, or a householder divining contracts, deeds and land certificates, if the Resource line is thriving and moving and generates or combines with the Self and Body while Wealth and Output are thriving and still, there will be one.", "If the Other is Void, extinct, in tomb or in womb, or the Self holds Wealth with the Dark Tortoise added and moving, there will be none.", "(Wealth controls the document, and the Dark Tortoise controls the Vermilion Bird.)"] },
+        { "by": "书中例", "book": "易隐", "range": [2685, 2687],
+          "zh": ["庚寅年戊寅月乙卯日，代占求文书，得剥之观。", "傍爻巳官临应，受岁月日生，人多云吉，终是被岁月刑巳，又世上旁爻子动伤官，本宫辰戌文书，皆值时空，三传克之，且世应相克，人事不和，决主徒劳无成也。"],
+          "yi": ["庚寅年戊寅月乙卯日，替人占求文书，得剥卦变观卦。", "旁边的巳火官星临在应爻上，受太岁、月建、日辰相生，人们多说吉，但终究是巳被太岁、月建刑；又世爻上旁边的子水发动，伤官星；本宫的辰土、戌土文书，都值当时的空，被三传克它；而且世爻、应爻相克，人事不和，断定白费力气、没有结果。"],
+          "en": ["In the Gengyin year, Wuyin month, on a Yimao day, someone divined for another on seeking a document and got Bo changing into Guan.", "The side Si Fire star of office sits on the Other and is generated by the Year, Month and Day, and people mostly called it auspicious, but in the end Si is punished by the Year and Month; also the side Zi Water line on the Self moves and injures the star of office; the Chen and Xu Earth documents of the home palace both fall in the Void of the time and are controlled by the three rulers; and the Self and Other control each other and the human side is not in harmony, so it was judged to be wasted effort without result."] },
+        { "by": "书中例", "book": "易隐", "range": [2688, 2688],
+          "zh": ["庚寅年庚辰月己巳日，占托人求文书，得丰之复。", "主文书却在，其人必死也。", "缘申金文书，与月辰巳火六合，而动爻亥水兄弟，化入辰墓，又犯月破，况病于岁建寅，申墓于月建辰，申绝于日建巳中，故知其必死也。"],
+          "yi": ["庚寅年庚辰月己巳日，占托人求文书，得丰卦变复卦。", "主文书倒还在，但受托的那个人必死。", "因为申金文书，和月建辰、巳火六合，而发动的亥水兄弟，变入辰墓，又犯月破，何况病在太岁寅，申（水）墓在月建辰，申（水）绝在日建巳中，所以知道他必死。"],
+          "en": ["In the Gengyin year, Gengchen month, on a Jisi day, a divination on entrusting someone to seek a document got Feng changing into Fu.", "It meant that the document would still be there, but the man entrusted would surely die.", "Because the Shen Metal document forms a six-combination with the Month Chen and Si Fire, while the moving Hai Water Peer line turns into its tomb at Chen and also suffers Month-break, and moreover it is ill at the Year Yin, Shen (Water) is in tomb at the Month Chen and extinct in the Day Si, so it was known that he would surely die."] }
+      ],
+      "note": {
+        "yi": "两个例子都是《易隐》文书占末尾附的断例，放在最相关的这一条下。第二例里有几处字面对不上通行的说法，译文都照字面：「月辰巳火六合」按字面是月建辰和巳火，而申的六合只有巳，辰与申是申子辰的半三合；「又犯月破」按通行的月破（月建所冲的支）庚辰月破的是戌，不是亥，这里大概是说亥水被月建辰土克破；「病于岁建寅，申墓于月建辰，申绝于日建巳」说的是亥水兄弟（受托的人）：水病在寅、墓在辰、绝在巳，「申」是借申来指水长生之位。「三传」是太岁、月建、日辰（见术语表）。",
+        "en": "Both examples are appended at the end of this chapter on documents in the Yi Yin, and are placed under the entry they illustrate most. In the second example several wordings do not match the usual way of speaking, and the translation follows the letter: 'six-combination with the Month Chen and Si Fire' is by the letter the Month Chen and Si Fire, whereas Shen's six-combination is only Si, and Chen and Shen are a half three-harmony of Shen, Zi and Chen; 'also suffers Month-break' by the usual Month-break (the branch the Month clashes) would be Xu in a Gengchen month and not Hai, and here it presumably means that Hai Water is controlled and broken by the Month Chen Earth; 'ill at the Year Yin, Shen in tomb at the Month Chen, Shen extinct in the Day Si' speaks of the Hai Water Peer line (the man entrusted): Water is ill at Yin, in tomb at Chen and extinct at Si, and 'Shen' is used for the position where Water is born. The 'three rulers' are Tai Sui, the Month and the Day (see the glossary)."
+      },
+      "see": ["LY.CAREER.YY.72", "LY.CAREER.YY.10", "LY.CAREER.HJC.05"]
+    },
+    {
+      "id": "LY.CAREER.YY.72",
+      "topic": "应期",
+      "chapter": "文书占",
+      "chapter_en": "Divining documents",
+      "title": "文书占·何时可得：旺则待入墓之月日，衰则候生旺之月日，旺动则逢合之月日，旺静则冲动之月日，伏藏则文书临值之月日",
+      "rule": {
+        "yi": "问文书什么时候可以拿到：文书爻旺相的，等它入墓的月日；衰弱的，等它生旺的月日；旺相发动的，等逢合的月日；旺相安静的，等冲动它的月日；文书爻伏藏的，等文书当值的月日才能得到。",
+        "en": "To ask when a document can be had: if the document line is thriving, wait for the month or day it enters tomb; if weak, wait for the month or day it is born or thriving; if thriving and moving, the month or day it meets a combination; if thriving and still, the month or day that clashes it into motion; if the document line lies hidden, it is had in the month or day in which the document rules."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2681, 2681],
+          "zh": ["至问文书何时可得者，旺则待入墓之月日，衰则候生旺之月日，旺动则逢合之月日，旺静则冲动之月日也。", "若文书伏藏者，待文书临值之月日得也。"],
+          "yi": ["至于问文书什么时候可以拿到：文书爻旺相的，等它入墓的月日；衰弱的，等它生旺的月日；旺相发动的，等逢合的月日；旺相安静的，等冲动它的月日。", "如果文书爻伏藏的，等文书当值的月日才能得到。"],
+          "en": ["To ask when a document can be had: if the document line is thriving, wait for the month or day it enters tomb; if weak, wait for the month or day it is born or thriving; if thriving and moving, the month or day it meets a combination; if thriving and still, the month or day that clashes it into motion.", "If the document line lies hidden, it is had in the month or day in which the document rules."] },
+        { "by": "书中例", "book": "易隐", "range": [2689, 2689],
+          "zh": ["庚寅年甲申月庚辰日，求占文书，得升之小过。", "二爻亥水文书，动化午火子孙，水胎于午，是为文收化入胎爻，乃小墓也，主事难成。", "却喜申月旺生，文书化胎不能为害，后于子日成就，盖文书旺于子，且冲破午胎也。"],
+          "yi": ["庚寅年甲申月庚辰日，占求文书，得升卦变小过卦。", "二爻亥水文书，发动变成午火子孙，水胎在午，这是文书变入胎爻，是小墓，主事情难成。", "却喜申月旺相相生，文书变胎不能为害；后来在子日办成，因为文书在子旺相，并且冲破午胎。"],
+          "en": ["In the Gengyin year, Jiashen month, on a Gengchen day, a divination on seeking a document got Sheng changing into Xiaoguo.", "The Hai Water document of the second line moves and turns into Wu Fire Output; Water is in the womb stage at Wu, so the document turns into the womb line, which is a small tomb and means the matter is hard to complete.", "But happily the Shen month is thriving and generates it, so the document turning into the womb cannot do harm; later it was settled on a Zi day, because the document is thriving at Zi and also clashes and breaks the Wu womb."] },
+        { "by": "书中例", "book": "易隐", "range": [2690, 2690],
+          "zh": ["寅年丁亥月丁酉日，日占托人求文书，得大壮安静。", "主本月可成，出月则不成也。", "盖世持午火文书，生本宫世下丑土，应上飞神，子与世下丑合，应下伏神未，与世上午合，故可成也。", "若出月，则十一月建子，并动应爻，冲脱文书，所以不成也。"],
+          "yi": ["寅年丁亥月丁酉日，白天占托人求文书，得大壮卦，没有动爻。", "主本月可以办成，出了本月就不成。", "因为世爻持午火文书，生本宫世爻下的丑土，应爻上的飞神子，与世爻下的丑相合，应爻下的伏神未，与世爻上的午相合，所以可以办成。", "如果出了本月，到十一月建子，并发动应爻，冲脱文书，所以不成。"],
+          "en": ["In a Yin year, Dinghai month, on a Dingyou day, a divination by day on entrusting someone to seek a document got Dazhuang with no moving line.", "It meant that it could be settled this month, and not after the month is out.", "Because the Self holds the Wu Fire document and generates the Chou Earth under the Self in the home palace; the flying spirit Zi on the Other combines with the Chou under the Self, and the hidden spirit Wei under the Other combines with the Wu on the Self, so it can be settled.", "If the month is out, in the eleventh month the Month is Zi, and together with the moving Other line it clashes away and drains the document, so it does not succeed."] }
+      ],
+      "note": {
+        "yi": "例子是文书占末尾附的断例。「文收」疑是「文书」，译文按文书译。「水胎于午」是水在十二长生里胎在午。第三例的「日占」是白天占，「寅年」没有写干支。",
+        "en": "The examples are those appended at the end of the divination of documents. 'Wen shou' is presumably 'wenshu', document, and the translation reads it as the document. 'Water is in the womb at Wu' is Water's womb stage at Wu among the twelve stages. In the third example 'ri zhan' is a divination by day, and the 'Yin year' is given without its stem."
+      },
+      "see": ["LY.CAREER.YY.71", "LY.CAREER.YY.08", "LY.CAREER.ZS.01"]
+    },
+    {
+      "id": "LY.CAREER.YY.73",
+      "topic": "贵人",
+      "chapter": "谒贵占",
+      "chapter_en": "Divining a call on a noble",
+      "title": "谒贵占总述（游南子）与鬼谷分爻：人之谒贵必有所求所托，始恐不得见，见恐不如所请；看所谒之贵是何分爻，旺动生合身世者往必得见见必如请，伏藏空死墓绝胎而刑害克冲世身者往必不见见必不遂",
+      "rule": {
+        "yi": "拜谒显贵的占问：人去拜谒显贵，必定有所求、有所托，起初担心见不到，见到了又担心他不照所请求的办，所以不能不占。看所拜谒的那位贵人是哪一爻（大贵、中贵、朝贵、州郡、省贵、县贵、乡贵），这一爻出现、旺相发动、生合身爻、世爻的，去了必定见得到，见了必定如我所请；如果伏藏、空、死、墓、绝、胎，又刑、害、克、冲世爻、身爻的，去了必定见不到，见了必定不遂我的求。",
+        "en": "Divining a call on a noble. A man calling on a noble surely has something to ask and something to entrust, and at first fears he will not be seen, and once seen fears the noble will not do as asked, so one cannot do without a divination. Look at which line the noble called on is (the great noble, the middle noble, the court noble, prefecture and commandery, the provincial noble, the county noble, the village noble): if this line appears, thriving and moving, and generates or combines with the Body and Self, going he will surely be seen and once seen it will surely be as I ask; if it lies hidden or is Void, dead, in tomb, extinct or in womb, and punishes, harms, controls or clashes with the Self and Body, going he will surely not be seen and if seen it will surely not fulfil my request."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2694, 2694],
+          "zh": ["游南子曰，人之谒贵，必有所求，必有所托也，故始焉恐其不得见也。", "见矣，恐其不如所请也，是不可以无占也。"],
+          "yi": ["游南子说：人去拜谒显贵，必定有所求、有所托，所以起初担心见不到他。", "见到了，又担心他不照所请求的办，所以不能不占。"],
+          "en": ["Master Younan says: a man calling on a noble surely has something to ask and something to entrust, and so at first he fears he will not be seen.", "Once seen, he fears the noble will not do as asked, and so one cannot do without a divination."] },
+        { "by": "经", "book": "易隐", "range": [2696, 2701],
+          "zh": ["鬼谷分爻", "大贵中贵朝贵", "州郡省贵县贵", "乡贵", "占者，但看所谒之贵，是何分爻出现，旺动生合身世者，往必得见，见必如吾所请也。", "如逢伏藏空死墓绝胎，而刑害克冲世身者，往必不见，见必不遂吾求也。"],
+          "yi": ["鬼谷分爻（表）：", "大贵、中贵、朝贵，", "州郡、省贵、县贵，", "乡贵。", "占的人，只看所拜谒的那位贵人，是哪一爻出现，旺相发动、生合身爻、世爻的，去了必定见得到，见了必定如我所请。", "如果遇到伏藏、空、死、墓、绝、胎，又刑、害、克、冲世爻、身爻的，去了必定见不到，见了必定不遂我的求。"],
+          "en": ["Guigu's division of the lines (table):", "the great noble, the middle noble, the court noble,", "the prefecture and commandery, the provincial noble, the county noble,", "the village noble.", "The diviner has only to look at which line the noble called on is: if it appears, thriving and moving, and generates or combines with the Body and Self, going he will surely be seen and once seen it will surely be as I ask.", "If it lies hidden or is Void, dead, in tomb, extinct or in womb, and punishes, harms, controls or clashes with the Self and Body, going he will surely not be seen and if seen it will surely not fulfil my request."] }
+      ],
+      "note": {
+        "yi": "鬼谷分爻表里的名目是「大贵、中贵、朝贵、州郡、省贵、县贵、乡贵」，书里没有写各是哪一爻，也没有写到底是六个还是七个，读法同 YY.02：从上爻写到初爻。「中贵」在明代常指宫中有权势的宦官，这里也可能只是「中等的贵人」，书里没有说明，译文照字面。",
+        "en": "The names in the Guigu table are 'the great noble, the middle noble, the court noble, the prefecture and commandery, the provincial noble, the county noble, the village noble'; the book does not say which line each is, nor whether there are six or seven, and it is read as in YY.02, from the top line down to the first. 'Zhonggui' in the Ming often meant the powerful eunuchs of the palace, though here it may be only 'a noble of middle rank'; the book does not explain, and the translation follows the letter."
+      },
+      "see": ["LY.CAREER.YY.02", "LY.CAREER.YY.74", "LY.CAREER.HJC.36"]
+    },
+    {
+      "id": "LY.CAREER.YY.74",
+      "topic": "贵人",
+      "chapter": "谒贵占",
+      "chapter_en": "Divining a call on a noble",
+      "title": "谒贵占·见否（一）：外卦与应爻官爻属阴在家、属阳出外；阳变阴外方回、阴变阳方出外；应爻官爻出现在家、伏藏不在",
+      "rule": {
+        "yi": "见不见得到，先看他在不在家：外卦和应爻、官爻属阴的，他在家；属阳的，他出外；阳变阴的，刚从外地回来；阴变阳的，刚要出外。应爻、官爻出现的，在家；伏藏的，不在。",
+        "en": "Whether he can be seen, first whether he is at home. If the outer trigram and the Other and Pressure lines are yin, he is at home; if yang, he is out; yang changing into yin, he has just returned from elsewhere; yin changing into yang, he is just going out. If the Other and Pressure lines appear, he is at home; if they lie hidden, he is not in."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2705, 2707],
+          "zh": ["外卦与应爻官爻属阴者，在家也。", "属阳者，出外也。", "阳变阴者，外方回也。", "阴变阳者，方出外也。", "应爻官爻出现者，在家也。", "伏藏者不在也。"],
+          "yi": ["外卦和应爻、官爻属阴的，他在家。", "属阳的，他出外。", "阳变阴的，刚从外地回来。", "阴变阳的，刚要出外。", "应爻、官爻出现的，在家。", "伏藏的，不在。"],
+          "en": ["If the outer trigram and the Other and Pressure lines are yin, he is at home.", "If they are yang, he is out.", "Yang changing into yin: he has just returned from elsewhere.", "Yin changing into yang: he is just going out.", "If the Other and Pressure lines appear, he is at home.", "If they lie hidden, he is not in."] }
+      ],
+      "note": {
+        "yi": "这一段的前四句里「外方回」「方出外」的「方」是刚刚。书里这一行被断行隔开（「方出外」在上一行末、「也」在下一行首），这里连起来读。",
+        "en": "In the first four sentences the 'fang' of 'fang chu wai' is 'just now'. This passage is split by a line break in the book ('just going out' at the end of one line and 'ye' at the start of the next), and is read here joined up."
+      },
+      "see": ["LY.CAREER.YY.73", "LY.CAREER.YY.75"]
+    },
+    {
+      "id": "LY.CAREER.YY.75",
+      "topic": "贵人",
+      "chapter": "谒贵占",
+      "chapter_en": "Divining a call on a noble",
+      "title": "谒贵占·见否（二）：动者难见空者不见；空而旺过旬乃见；出现旺动而不带土不见；阴化阳见而遇、阳化阴再见而拒；六合见六冲不见；卦无身或无鬼或世应俱空世应俱鬼不必往；世应内外官鬼生合比和待应爻官爻生世合世之日或生旺之日见",
+      "rule": {
+        "yi": "见得到见不到：官星发动的，难见；落空的，见不到；空而旺相的，过了这一旬才见得到；出现、旺相发动而不带土爻的，见不到；阴爻变阳爻的，见到而且被接待；阳爻变阴爻的，第二次去见时被拒绝。占得六合的，见得到；占得六冲的，见不到。卦里没有身爻，或没有官鬼，或世、应都落空，世、应都是官鬼的，不必去见。凡世、应、内外卦的官鬼相生相合比和的，等应爻、官爻生世爻、合世爻的日子可以见到，或者应爻、官爻生旺的日子见面。",
+        "en": "Whether he is seen. If the star of office is moving, he is hard to see; if Void, he is not seen; if Void but thriving, he is seen only after the decade is past; if it appears, thriving and moving, without carrying Earth, he is not seen; a yin line changing into yang: seen and received; a yang line changing into yin: refused on the second visit. If the divination is a six-combine, he is seen; if a six-clash, not. If the hexagram has no Body, or no Pressure, or the Self and Other are both Void, or the Self and Other are both Pressure, there is no need to go. Whenever the Pressure lines of the Self, the Other, and the inner and outer trigrams generate, combine or are in harmony, wait for a day when the Other or the Pressure line generates or combines with the Self, or a day when the Other or the Pressure line is born or thriving, to meet him."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2705, 2707],
+          "zh": ["动者难见，空者不见。", "空而旺者，过旬乃见。", "出现旺动而不带土者，不见也。", "阴爻化阳者，而见而遇。", "阳爻化阴者，再见而拒也。", "占六合者见，六冲者不见也。", "卦无身，或无鬼，或世应俱空，世应俱鬼者，不必往见也。", "凡世应内外官鬼，生合比和者，待应爻官爻生世合世之日可见，或应爻官爻生旺之日相见也。"],
+          "yi": ["官星发动的，难见；落空的，见不到。", "空而旺相的，过了这一旬才见得到。", "出现、旺相发动而不带土爻的，见不到。", "阴爻变阳爻的，见到而且被接待。", "阳爻变阴爻的，第二次去见时被拒绝。", "占得六合的，见得到；占得六冲的，见不到。", "卦里没有身爻，或没有官鬼，或世、应都落空，世、应都是官鬼的，不必去见。", "凡世、应、内外卦的官鬼相生、相合、比和的，等应爻、官爻生世爻、合世爻的日子可以见到，或者应爻、官爻生旺的日子见面。"],
+          "en": ["If the star of office is moving, he is hard to see; if Void, he is not seen.", "If Void but thriving, he is seen only after the decade is past.", "If it appears, thriving and moving, without carrying Earth, he is not seen.", "A yin line changing into yang: he is seen and received.", "A yang line changing into yin: he is refused on the second visit.", "If the divination is a six-combine, he is seen; if a six-clash, he is not.", "If the hexagram has no Body line, or no Pressure, or the Self and Other are both Void, or the Self and Other are both Pressure, there is no need to go and see him.", "Whenever the Pressure lines of the Self, the Other, and the inner and outer trigrams generate, combine or are in harmony, he can be seen on a day when the Other or the Pressure line generates or combines with the Self, or met on a day when the Other or the Pressure line is born or thriving."] }
+      ],
+      "note": {
+        "yi": "第一句「动者难见，空者不见」的主语省了，承上一段是应爻、官爻，译文写成官星。「而见而遇」按字面是见了并且遇到（被接待）。「六合」「六冲」指卦的六合、六冲（见术语表）；「卦无身」的身指卦身，书里没有说是不是上卦。",
+        "en": "The subject of the first sentence, 'moving, hard to see; Void, not seen', is left out, following on from the previous passage on the Other and Pressure lines, and the translation writes it as the star of office. 'Er jian er yu' is by the letter 'seen and met', that is received. 'Six-combine' and 'six-clash' are the hexagram patterns (see the glossary); the 'Body' of 'the hexagram has no Body' is the hexagram Body, and the book does not say whether it needs to be on the board."
+      },
+      "see": ["LY.CAREER.YY.74", "LY.CAREER.YY.76"]
+    },
+    {
+      "id": "LY.CAREER.YY.76",
+      "topic": "贵人",
+      "chapter": "谒贵占",
+      "chapter_en": "Divining a call on a noble",
+      "title": "谒贵占·相见喜怒：外卦与应爻官爻生合世身内卦见而悦，刑害克冲世身内卦见而嗔；应官虽生合而变爻刑害克冲先悦后嗔，先刑害而变来生合先怒后善；应官受日辰动爻刑害克破或化死墓绝胎彼有灾病；加龙和蔼多情、雀多言易怒、勾率直无文、蛇多疑寡信、虎狠毒无恩、武狡诈多端",
+      "rule": {
+        "yi": "见面时他是喜是怒：外卦和应爻、官爻，生合世爻、身爻和内卦的，见面时他高兴；刑、害、克、冲世爻、身爻和内卦的，见面时他恼怒。应爻、官爻虽然生合身爻、世爻，而变爻刑、害、克、冲的，先高兴后恼怒；先刑、害、克、冲身爻、世爻，而变爻来生合的，先恼怒后和善。应爻、官爻受日辰、动爻刑、害、克、破，或变成死、墓、绝、胎的，他有灾病祸事。加青龙发动的，和气多情；加朱雀发动的，话多易怒；加勾陈发动的，直率没有文采；加螣蛇发动的，多疑少信；加白虎发动的，狠毒没有恩情；加玄武发动的，狡诈多端。",
+        "en": "Whether he is pleased or angry at the meeting. If the outer trigram and the Other and Pressure lines generate or combine with the Self, Body and inner trigram, he is pleased at the meeting; if they punish, harm, control or clash with the Self, Body and inner trigram, he is angry. If the Other and Pressure lines generate or combine with the Body and Self but the changed line punishes, harms, controls or clashes with them, he is pleased first and angry after; if they first punish, harm, control or clash with the Body and Self and the changed line comes to generate or combine, he is angry first and kind after. If the Other and Pressure lines are punished, harmed, controlled or broken by the Day or a moving line, or turn into death, tomb, extinction or the womb stage, he has illness or disaster. With the Azure Dragon moving, he is genial and warm; with the Bird, talkative and quick to anger; with Hook Earth, blunt and unrefined; with the Snake, suspicious and little trusting; with the Tiger, fierce and without kindness; with the Dark Tortoise, deceitful in many ways."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2711, 2711],
+          "zh": ["外卦与应爻官爻，生合世身内卦者，见而悦也。", "刑害克冲世身内卦者，见而嗔也。", "应爻官爻虽生合身世，而变爻刑害克冲者，先悦后嗔也。", "先刑害克冲身世，而变来生合者，先怒后善也。", "应爻官爻受日辰动爻刑害克破，或化死墓绝胎者，彼有灾病祸事也。", "加龙动者，和蔼多情。", "加雀动者，多言易怒。", "加勾动者，率直无文。", "加蛇动者，多疑寡信。", "加虎动者，狠毒无恩。", "加武动者，狡诈多端也。"],
+          "yi": ["外卦和应爻、官爻，生合世爻、身爻和内卦的，见面时他高兴。", "刑、害、克、冲世爻、身爻和内卦的，见面时他恼怒。", "应爻、官爻虽然生合身爻、世爻，而变爻刑、害、克、冲的，先高兴后恼怒。", "先刑、害、克、冲身爻、世爻，而变爻来生合的，先恼怒后和善。", "应爻、官爻受日辰、动爻刑、害、克、破，或变成死、墓、绝、胎的，他有灾病祸事。", "加青龙发动的，和气多情。", "加朱雀发动的，话多易怒。", "加勾陈发动的，直率没有文采。", "加螣蛇发动的，多疑少信。", "加白虎发动的，狠毒没有恩情。", "加玄武发动的，狡诈多端。"],
+          "en": ["If the outer trigram and the Other and Pressure lines generate or combine with the Self, Body and inner trigram, he is pleased at the meeting.", "If they punish, harm, control or clash with the Self, Body and inner trigram, he is angry at the meeting.", "If the Other and Pressure lines generate or combine with the Body and Self but the changed line punishes, harms, controls or clashes with them, he is pleased first and angry after.", "If they first punish, harm, control or clash with the Body and Self and the changed line comes to generate or combine, he is angry first and kind after.", "If the Other and Pressure lines are punished, harmed, controlled or broken by the Day or a moving line, or turn into death, tomb, extinction or the womb stage, he has illness or disaster.", "With the Azure Dragon added and moving, he is genial and warm.", "With the Bird, he is talkative and quick to anger.", "With Hook Earth, he is blunt and unrefined.", "With the Snake, he is suspicious and little trusting.", "With the Tiger, he is fierce and without kindness.", "With the Dark Tortoise, he is deceitful in many ways."] }
+      ],
+      "see": ["LY.CAREER.YY.75", "LY.CAREER.YY.77"]
+    },
+    {
+      "id": "LY.CAREER.YY.77",
+      "topic": "贵人",
+      "chapter": "谒贵占",
+      "chapter_en": "Divining a call on a noble",
+      "title": "谒贵占·所求不同用神不同：夤援兴讼上书献策以官鬼为用（旺动生合世身吉，空死墓绝胎无力，动刑害克冲不允，加虎杀反遭罪谪）；息讼释罪以子孙为用；求书恳荐以父母为用（旺动生合身世有，空死墓绝胎无，刑害克破有若无）；财持世旺动、财独发求必不得",
+      "rule": {
+        "yi": "所求的事不同，取的用神也不同：为攀援求助、打官司，以及上书献策而去谒见贵人的，以官鬼为用神——官鬼旺相发动、生合世爻、身爻的，吉；官鬼逢空、死、墓、绝、胎的，没有力量；官鬼发动来刑、害、克、冲身爻、世爻的，不允；加白虎、凶煞来伤的，不但不允，反而遭到罪责贬谪。为平息官司、开脱罪名而谒见贵人的，以子孙为用神——应爻持子孙旺相发动，带喝散、解神生合世爻的，或者世爻持子孙，或者月建、日辰是子孙来生合世爻的，吉；应爻上的子孙逢空、死、墓、绝、胎，或被刑、害、克、冲的，没有力量。为求书信、恳求荐举而谒见贵人的，以父母为用神——官鬼旺相发动、生合父爻，以及父爻旺相发动、生合身爻、世爻的，有；父爻逢空、死、墓、绝、胎的，没有；父爻被刑、害、克、破的，有也像没有一样。财爻持世旺相发动，以及财爻单独发动的，所求必定得不到，得到也没有力量。",
+        "en": "What is asked decides the Subject. For one calling on a noble to scheme for help, to sue, or to present a memorial with proposals, take Pressure as the Subject: if Pressure is thriving and moving and generates or combines with the Self and Body, it is auspicious; if Pressure meets Void, death, tomb, extinction or the womb stage, it has no strength; if Pressure moves to punish, harm, control or clash with the Body and Self, it is not granted; with the Tiger and a baleful spirit coming to injure, not only is it not granted, but he is instead blamed and demoted. For one calling on a noble to end a lawsuit and clear a charge, take Output as the Subject: if the Other holds Output, thriving and moving, with Hesan and Jiexie generating or combining with the Self, or the Self holds Output, or the Month or Day is Output coming to generate or combine with the Self, it is auspicious; if Output on the Other meets Void, death, tomb, extinction or the womb stage, or is punished, harmed, controlled or clashed, it has no strength. For one calling on a noble to ask for a letter or beg for a recommendation, take Resource as the Subject: if Pressure is thriving and moving and generates or combines with Resource, or Resource is thriving and moving and generates or combines with the Body and Self, there will be one; if Resource meets Void, death, tomb, extinction or the womb stage, there will be none; if Resource is punished, harmed, controlled or broken, it is as if there were none though there is. If Wealth holds the Self and is thriving and moving, or if the Wealth line alone moves, what is asked will surely not be had, and if had it will have no force."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2711, 2711],
+          "zh": ["凡寅援与兴讼，及上书献策而谒贵者，以官鬼为用也。", "鬼爻旺动生合世身者，吉也。", "鬼逢空死墓绝胎者，无力也。", "鬼动来刑害克冲身世者，不允也。", "加虎杀来伤者，非惟不允，反遭罪谪也。", "为息讼释罪，而谒贵者，子孙为用也。", "应爻持子旺动，带喝散解神生合世者，或世持子孙，或月日是子孙来生合世者，吉也。", "应爻子孙逢空死墓绝胎，或被刑害克冲者，无力也。", "为求书恳荐，而谒贵者，以父母为用也。", "鬼旺动生合父，与父旺动生合身世者，有也。", "父逢空死墓绝胎者，无也。", "父被刑害克破者，有而若无也。", "财持世旺动，与财爻独发者，求必不得，得亦无力也。"],
+          "yi": ["凡是为了攀援求助、打官司，以及上书献策而去谒见贵人的，以官鬼为用神。", "官鬼旺相发动、生合世爻、身爻的，吉。", "官鬼逢空、死、墓、绝、胎的，没有力量。", "官鬼发动来刑、害、克、冲身爻、世爻的，不允。", "加白虎、凶煞来伤的，不但不允，反而遭到罪责贬谪。", "为平息官司、开脱罪名而谒见贵人的，以子孙为用神。", "应爻持子孙旺相发动，带喝散、解神生合世爻的，或者世爻持子孙，或者月建、日辰是子孙来生合世爻的，吉。", "应爻上的子孙逢空、死、墓、绝、胎，或被刑、害、克、冲的，没有力量。", "为求书信、恳求荐举而谒见贵人的，以父母为用神。", "官鬼旺相发动、生合父爻，以及父爻旺相发动、生合身爻、世爻的，有。", "父爻逢空、死、墓、绝、胎的，没有。", "父爻被刑、害、克、破的，有也像没有一样。", "财爻持世旺相发动，以及财爻单独发动的，所求必定得不到，得到也没有力量。"],
+          "en": ["Whenever one calls on a noble to scheme for help, to sue, or to present a memorial with proposals, take Pressure as the Subject.", "If Pressure is thriving and moving and generates or combines with the Self and Body, it is auspicious.", "If Pressure meets Void, death, tomb, extinction or the womb stage, it has no strength.", "If Pressure moves to punish, harm, control or clash with the Body and Self, it is not granted.", "With the Tiger and a baleful spirit coming to injure, not only is it not granted, but he is instead blamed and demoted.", "For one calling on a noble to end a lawsuit and clear a charge, take Output as the Subject.", "If the Other holds Output, thriving and moving, with Hesan and Jiexie generating or combining with the Self, or the Self holds Output, or the Month or Day is Output coming to generate or combine with the Self, it is auspicious.", "If Output on the Other meets Void, death, tomb, extinction or the womb stage, or is punished, harmed, controlled or clashed, it has no strength.", "For one calling on a noble to ask for a letter or beg for a recommendation, take Resource as the Subject.", "If Pressure is thriving and moving and generates or combines with Resource, or Resource is thriving and moving and generates or combines with the Body and Self, there will be one.", "If Resource meets Void, death, tomb, extinction or the womb stage, there will be none.", "If Resource is punished, harmed, controlled or broken, it is as if there were none though there is.", "If Wealth holds the Self and is thriving and moving, or if the Wealth line alone moves, what is asked will surely not be had, and if had it will have no force."] }
+      ],
+      "note": {
+        "yi": "「寅援」即「夤缘」，攀附权贵、借助关系；「罪谪」是治罪和贬官。「喝散」「解神」是神煞，书里没有解释，译文只音译。「世持子孙」「月日是子孙」按字面译。",
+        "en": "'Yinyuan' is 'yinyuan', climbing up through connections with the powerful; 'zuizhe' is punishment and demotion. Hesan and Jiexie are spirit-stars that the book does not explain, and the translation only gives their sounds. 'The Self holds Output' and 'the Month or Day is Output' are by the letter."
+      },
+      "see": ["LY.CAREER.YY.76", "LY.CAREER.YY.78", "LY.CAREER.HJC.36"]
+    },
+    {
+      "id": "LY.CAREER.YY.78",
+      "topic": "贵人",
+      "chapter": "谒贵占",
+      "chapter_en": "Divining a call on a noble",
+      "title": "谒贵占·馈送：有馈送而谒贵以应爻为用；应逢空死墓绝胎人不遇、遇亦不投；财带退神动、财动化退神物不纳；应财旺动生合世馈薄答厚；应动刑害克冲世而间爻又动被间情疏",
+      "rule": {
+        "yi": "带着礼物去谒见贵人：以应爻为用神。应爻逢空、死、墓、绝、胎的，人遇不到，遇到了也不投合；财爻带退神发动，以及财爻发动变成退神的，礼物不被收纳；应爻的财旺相发动、生合世爻的，送得薄而回报厚；应爻发动刑、害、克、冲世爻，而间爻又发动的，被人从中挑拨而情分疏远。",
+        "en": "Calling on a noble with a gift. Take the Other as the Subject. If the Other meets Void, death, tomb, extinction or the womb stage, the man is not met, and if met he does not take to the visitor; if Wealth carries the Retreating spirit and moves, or Wealth moves and turns into a Retreating spirit, the gift is not accepted; if the Wealth of the Other is thriving and moving and generates or combines with the Self, the gift is slight and the return generous; if the Other moves to punish, harm, control or clash with the Self and a line between also moves, someone comes between them and the feeling cools."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2711, 2711],
+          "zh": ["有馈送而谒贵者，以应爻为用也。", "应逢空死墓绝胎者，人不遇遇亦不投也。", "财带退神动，(丁丑丁未壬辰壬戌)，与财动化退神者，物不纳也。", "应财旺动生合世者，馈薄而答厚也。", "应动刑害克冲世，而间爻又动者，被间而情踈也。"],
+          "yi": ["带着礼物去谒见贵人的，以应爻为用神。", "应爻逢空、死、墓、绝、胎的，人遇不到，遇到了也不投合。", "财爻带退神发动（丁丑、丁未、壬辰、壬戌），以及财爻发动变成退神的，礼物不被收纳。", "应爻的财旺相发动、生合世爻的，送得薄而回报厚。", "应爻发动刑、害、克、冲世爻，而间爻又发动的，被人从中挑拨而情分疏远。"],
+          "en": ["For one calling on a noble with a gift, take the Other as the Subject.", "If the Other meets Void, death, tomb, extinction or the womb stage, the man is not met, and if met he does not take to the visitor.", "If Wealth carries the Retreating spirit (Dingchou, Dingwei, Renchen, Renxu) and moves, or Wealth moves and turns into a Retreating spirit, the gift is not accepted.", "If the Wealth of the Other is thriving and moving and generates or combines with the Self, the gift is slight and the return generous.", "If the Other moves to punish, harm, control or clash with the Self and a line between also moves, someone comes between them and the feeling cools."] }
+      ],
+      "note": {
+        "yi": "「财带退神动」后面的括号（丁丑、丁未、壬辰、壬戌）是退神的干支，《卜筮全书》写「退神者，壬戌、壬辰、丁丑、丁未」（见 YY.19）；所以这句的两半说的是两件事：财爻自己带着退神的干支发动，和财爻发动后变成退神。「间爻」是世爻和应爻之间的爻（见术语表）。",
+        "en": "The bracket after 'Wealth carrying the Retreating spirit and moving', (Dingchou, Dingwei, Renchen, Renxu), gives the ganzhi of the Retreating spirit; the Bushi Quanshu writes 'the Retreating spirit is Renxu, Renchen, Dingchou and Dingwei' (see YY.19). The two halves of the sentence therefore speak of two things: Wealth itself carrying a Retreating ganzhi and moving, and Wealth moving and then turning into a Retreating spirit. 'A line between' is a line between the Self and the Other (see the glossary)."
+      },
+      "see": ["LY.CAREER.YY.77", "LY.CAREER.YY.19", "LY.CAREER.HJC.44"]
+    }
+  ]
+}

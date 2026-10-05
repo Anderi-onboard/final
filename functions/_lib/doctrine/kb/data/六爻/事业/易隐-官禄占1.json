@@ -1,0 +1,292 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易隐",
+  "chapter": "官禄占",
+  "chapter_en": "Divining office and salary",
+  "ranges": {"易隐": [2600, 2640]},
+  "units": [
+    {
+      "id": "LY.CAREER.YY.01",
+      "topic": "总则",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占总述（游南子）：未仕占何官、何月选、何日领凭、任所何方；既仕占赴任吉凶、在任休咎、何日升除、何时替代；官之贫廉、失职、补任、丁制、起复为附占",
+      "rule": {
+        "yi": "官禄占分两种情形：还没做官的，占将做什么官、哪个月选官、哪天领到凭证、任所在哪个方向；已经做官的，占赴任的吉凶、在任上的顺逆、哪天升迁任命、什么时候被人替代。至于做官是贫还是廉，以及失去职位、补缺任职、遭父母之丧、起复，是官禄占附带的占问。",
+        "en": "The divination of office and salary has two cases. For one not yet in office: what office he will take, in which month he will be selected, on what day he will receive his credentials, and in which direction the post lies. For one already in office: the good or ill of his journey to the post, how his term goes, on what day he will be promoted or appointed, and when he will be replaced. Whether an official is poor or incorruptible, and losing a post, being given a post to fill, mourning for a parent and being recalled to office, are subsidiary questions of this divination."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2602, 2602],
+          "zh": ["游南子曰官禄之占，其未仕也。", "占其仕为何官，选在何月，领凭于何日，任所在何方也，其既仕也。", "占其赴任之吉凶，在任之休咎，升除于何日，替代于何时也。", "若乃为官之贫廉，与夫为官而失职，而补任，而丁制，而起复，亦官禄之附占也。"],
+          "yi": ["游南子说：官禄的占问，先说还没有做官的时候。", "占他将做什么官，选官在哪个月，哪一天领到凭证，任所在哪个方向；再说已经做了官的时候。", "占他赴任的吉凶，在任上的顺逆，哪一天升迁任命，什么时候被人替代。", "至于做官是贫是廉，以及做官而失去职位、补缺任职、遭父母之丧（丁制）、起复，也是官禄的附带占问。"],
+          "en": ["Master Younan says: on the divination of office and salary, first the case where one is not yet in office.", "divine what office he will hold, in which month he will be selected, on what day he will receive his credentials, and in which direction the post lies; then the case where he is already in office.", "divine the good or ill of his journey to the post, the fortunes of his term, on what day he will be promoted or appointed, and when he will be replaced.", "As for whether an official is poor or incorruptible, and losing a post, being given a post to fill, mourning for a parent and being recalled to office, these too are subsidiary questions of office and salary."] }
+      ],
+      "note": {
+        "yi": "「丁制」就是丁忧，遭父母之丧；「起复」是服丧或革职之后重新起用。本章后面的小节正是按这个提纲排的：何官、候选、领凭、任所、赴任、在任、升迁、替代、贪廉、官职退复、丁忧起复。",
+        "en": "'Dingzhi' is Dingyou, mourning for a parent's death, and 'qifu' is being called back to office after mourning or dismissal. The sections of this chapter follow just this outline: what office, awaiting selection, collecting credentials, the post, going to the post, in office, promotion, replacement, greed and integrity, loss and recovery of office, mourning and recall."
+      },
+      "see": ["LY.CAREER.YY.02", "LY.CAREER.ZS.01"]
+    },
+    {
+      "id": "LY.CAREER.YY.02",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·鬼谷分爻：执政、朝仕、监司、长官、曹官、吏人，看所占是何官职，就在对应的爻上取用、断吉凶",
+      "rule": {
+        "yi": "断官职用鬼谷分爻：六爻各配一类官，依次是执政、朝仕、监司、长官、曹官、吏人；看所占的是哪一类官，就在对应的那一爻上取用，来断吉凶。",
+        "en": "To judge an office use Guigu's division of the lines: the six lines are matched with six kinds of official, in order the ruling minister, the court official, the supervising commissioner, the head of an office, the departmental officer and the clerk; see which kind of official is being asked about, take the matching line, and judge good or ill from it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2604, 2607],
+          "zh": ["鬼谷分爻", "执政朝仕监司长官曹官吏人", "但看所占是何官职，各于分爻取用，断其吉凶也。"],
+          "yi": ["鬼谷分爻（表）：", "执政、朝仕（朝官）、监司、长官、曹官、吏人。", "只看所占的是什么官职，就在对应的爻上取用，来断吉凶。"],
+          "en": ["Guigu's division of the lines (table):", "the ruling minister, the court official, the supervising commissioner, the head of an office, the departmental officer, the clerk.", "Just see what office is being asked about, take the matching line for it, and judge good or ill from that."] }
+      ],
+      "note": {
+        "yi": "表里六个名目没有写各是哪一爻；按这部书别处的鬼谷分爻表（如疾病占、贸易占）都是从上爻写到初爻，这里也照从上到下读，即上爻执政、五爻朝仕、四爻监司、三爻长官、二爻曹官、初爻吏人。这是读法，不是书里明写的。",
+        "en": "The table does not say which line each of the six names belongs to. The other Guigu tables of this book (for illness and for trade) are written from the top line down to the first, and this one is read the same way: the top line the ruling minister, the fifth the court official, the fourth the supervising commissioner, the third the head of an office, the second the departmental officer and the first the clerk. This is a way of reading it and not something the book states."
+      },
+      "see": ["LY.CAREER.YY.01", "LY.CAREER.YY.03"]
+    },
+    {
+      "id": "LY.CAREER.YY.03",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·何官（一）：四直贵马聚身世更德合相扶在官印阳爻者宰辅，加刑刃大杀出将入相；太岁五爻生合世身朝仕，冲克外任；内卦动外任外卦动朝仕；阳宫阳爻文职阴宫阴爻武弁；世持岁破朝仕六部、外任布按都司；持月建巡方安抚，持日建郡邑之宰",
+      "rule": {
+        "yi": "断是什么官：四直、贵人、驿马聚在身爻、世爻上，又有德神、合神相扶，落在官星、印星的阳爻上，必是宰相之位；再加刑、刃、大杀，是出将入相；再加太岁或五爻生合，必荣获赐宴。太岁与五爻生合世身，是在朝为官；冲克世身，是外任；世爻、官爻在内卦发动是外任，在外卦发动是朝官（五爻是君位，四爻六爻都挨近君位）。官星、贵人持世，在阳宫阳爻的是文职，在阴宫阴爻的是武官。世爻持岁破，在朝是六部等大衙门，外任是布政司、按察司、都司；持月建，是巡方、安抚、行人这类；持日建，是郡县的长官。",
+        "en": "To tell what office it is: if the four rulers, the Noble and the Horse gather on the Body and Self lines, and Virtue and combination also support them, and they sit on a yang line of the star of office and seal, it is surely the post of chief minister; with the punishing blade and great baleful spirits added, one goes out as a general and comes in as chancellor; with Tai Sui or the fifth line generating or combining, he is surely honoured with a gift of banquet. If Tai Sui and the fifth line generate or combine with the Self and Body, it is an official at court; if they clash with or control the Self and Body, a post outside; if the Self or the Pressure line moves in the inner trigram it is a post outside, and in the outer trigram a court official (the fifth is the ruler's seat, and the fourth and sixth are both near the ruler). If the star of office and the Noble hold the Self in a yang palace and on a yang line it is a civil post, and in a yin palace and on a yin line a military officer. If the Self holds the Year-break, at court it is in the great offices such as the Six Ministries, and outside it is in the provincial administration, judicial or military commissions; holding the Month it is an inspecting commissioner, a pacification commissioner or an envoy; holding the Day it is the head of a prefecture or county."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2611, 2613],
+          "zh": ["凡四直贵马聚于身世爻，更德合相扶，在官印阳爻者，必职在阿衡助和鼎昧也。", "加刑刃大杀者，出将入相也。", "加太岁或五爻生合之者，必荣膺燕赐，后荫前卦也。", "又太岁与五爻生合世身者，朝仕也。", "冲克世身者，外任也。", "世爻官爻在内卦动者，外任也。", "在外卦动者，朝仕也。", "(五为君位四六皆近君者)。", "官贵持世，在阳宫阳爻者，文职。", "阴宫阴爻者，武弁也。", "世持岁破者朝仕，则六部通都在大也。", "外任则布按都司也。", "(太岁为天子，风岁破取重臣遥对天子之象)。", "世持月建者，巡方安抚行人也。", "(取四时巡环之象)。", "世持日建者，郡邑之宰也。", "(取朝夕蔽民之象)。"],
+          "yi": ["凡是四直、贵人、驿马聚在身爻、世爻上，又有德神、合神相扶，落在官星、印星的阳爻上的，官职必定是宰相之位，辅佐调和鼎鼐。", "再加刑、刃、大杀的，是出将入相。", "再加太岁或五爻来生合它的，必定荣耀地得到赐宴，后来的荫庇前面的卦。", "又，太岁与五爻生合世身的，是在朝为官。", "冲克世身的，是外任。", "世爻、官爻在内卦发动的，是外任。", "在外卦发动的，是在朝为官。", "（五爻是君位，四爻、六爻都挨近君位。）", "官星、贵人持世，在阳宫阳爻的，是文职。", "在阴宫阴爻的，是武官。", "世爻持岁破的，在朝为官，就是六部和其他京城的大衙门。", "外任就是布政使司、按察使司、都指挥使司。", "（太岁是天子，岁破取的是重臣远远对着天子的象。）", "世爻持月建的，是巡方、安抚、行人这类官。", "（取四季循环巡行的象。）", "世爻持日建的，是郡县的长官。", "（取早晚庇护百姓的象。）"],
+          "en": ["Whenever the four rulers, the Noble and the Horse gather on the Body and Self lines, and Virtue and combination also support them, and they sit on a yang line of the star of office and seal, the post is surely that of chief minister, helping to blend the broth in the cauldron.", "If the punishing blade and great baleful spirits are added, one goes out as a general and comes in as chancellor.", "If Tai Sui or the fifth line is added to generate or combine with it, he is surely honoured with a gift of banquet, and the later shades the earlier hexagram.", "Again, if Tai Sui and the fifth line generate or combine with the Self and Body, it is an official at court.", "If they clash with or control the Self and Body, it is a post outside.", "If the Self or the Pressure line moves in the inner trigram, it is a post outside.", "If it moves in the outer trigram, it is an official at court.", "(The fifth is the ruler's seat, and the fourth and sixth are both near the ruler.)", "If the star of office and the Noble hold the Self in a yang palace and on a yang line, it is a civil post.", "In a yin palace and on a yin line, it is a military officer.", "If the Self holds the Year-break, an official at court, it is in the Six Ministries and the other great offices of the capital.", "A post outside is in the provincial administration, judicial or military commissions.", "(Tai Sui is the Son of Heaven, and the Year-break takes the image of a great minister facing the Son of Heaven from afar.)", "If the Self holds the Month, it is an inspecting commissioner, a pacification commissioner or an envoy.", "(It takes the image of the four seasons going round in a cycle.)", "If the Self holds the Day, it is the head of a prefecture or county.", "(It takes the image of sheltering the people morning and evening.)"] }
+      ],
+      "note": {
+        "yi": "几处文字可疑，译文只按字面意思译：「后荫前卦也」文意不通；「六部通都在大也」应是指六部和通政、都察、大理这样的大衙门，译文只写成「六部和其他大衙门」；「风岁破取重臣」里的「风」字像是衍字。「阿衡」是商代伊尹的官名，后来指宰相；「鼎昧」应是「鼎鼐」（调和羹汤的鼎），比喻宰相调和国政。「布按都司」是明代省一级的布政使司、按察使司和都指挥使司。",
+        "en": "Several places are doubtful and are translated only by the letter: 'the later shades the earlier hexagram' makes no sense; 'Six Ministries, Tong, Du, in the great' presumably points to the Six Ministries and great offices such as the Office of Transmission, the Censorate and the Court of Judicial Review, but is rendered only as 'the Six Ministries and the other great offices'; the character 'wind' in 'wind Year-break takes' looks superfluous. 'Aheng' is the title of Yi Yin of the Shang, later used for the chief minister, and 'dingmei' is presumably 'dingnai', the cauldron for blending broth, an image for the chancellor harmonizing the government. 'Bu-an-dusi' are the provincial administration, surveillance and military commissions of the Ming."
+      },
+      "see": ["LY.CAREER.YY.02", "LY.CAREER.YY.04", "LY.CAREER.HJC.21"]
+    },
+    {
+      "id": "LY.CAREER.YY.04",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·何官（二）：世持官贵禄马又得岁月文书生合是威权风宪之职；世持官印旺相而旁爻带贵人禄马来扶者只是正官不风宪",
+      "rule": {
+        "yi": "世爻持官星、贵人、禄、驿马，又得太岁、月建、文书来生合，是有威权的监察之职（风宪）；世爻持官星、印星而旺相，但是靠旁边的爻带着贵人、禄、驿马来扶助的，只是正官，不是风宪。",
+        "en": "If the Self holds the star of office, the Noble, Emolument and the Horse, and Tai Sui, the Month and the document also generate or combine with it, it is a post of authority in the censorate; if the Self holds the star of office and seal and is thriving, but it is a side line carrying the Noble, Emolument and the Horse that supports it, he is only a regular official and not in the censorate."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2611, 2613],
+          "zh": ["世持官贵禄马，又得岁月文书来生合，威权风宪之职也。", "世持官印旺相，而旁爻带贵人禄马来扶者，但为正官，而不风宪也。"],
+          "yi": ["世爻持官星、贵人、禄、驿马，又得太岁、月建、文书来生合，是有威权的风宪（监察）之职。", "世爻持官星、印星而旺相，但是旁边的爻带着贵人、禄、驿马来扶助的，只是正官，不是风宪。"],
+          "en": ["If the Self holds the star of office, the Noble, Emolument and the Horse, and is also generated or combined by Tai Sui, the Month and the document, it is a post of authority in the censorate.", "If the Self holds the star of office and seal and is thriving, but it is a side line carrying the Noble, Emolument and the Horse that supports it, he is only a regular official and not in the censorate."] }
+      ],
+      "see": ["LY.CAREER.YY.03", "LY.CAREER.YY.05", "LY.CAREER.HJC.20"]
+    },
+    {
+      "id": "LY.CAREER.YY.05",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·何官（三）：世持官贵禄马不空刑克破，按所在爻的五行定部门——金：司马司寇大理(旺)、尚宝武选车驾职方武库(衰)、外任总制抚按总兵；木：司空(旺)营缮虞衡(衰)、外任关津主税；水：家宰(旺)文选稽勋验封都水(衰)、外任盐漕河道；火：宗伯翰林(旺)中书(衰)、加雀科道、午爻司马、外任文昌驿马月建督学；上爻：司农京兆巡城仓院、外任方伯屯田",
+      "rule": {
+        "yi": "世爻持官星、贵人、禄、驿马，不落空、不被刑克破，再按它所在爻的五行定部门：金爻旺相，京官是兵部尚书、刑部尚书、大理寺和都察院中丞，衰弱的是尚宝司和兵部的武选、车驾、职方、武库各司郎官，武职是五军都督府和锦衣卫，外任旺相的是总制、巡抚、按察、观察、总兵，衰弱的是恤刑、司理、参将游击、把总；木爻旺相，京官是工部尚书，衰弱的是营缮司、虞衡司，外任旺相的是关津主税，衰弱的是税课、茶水之职；水爻旺相，京官是吏部尚书，衰弱的是文选、稽勋、验封、都水各司郎官，外任旺相的是盐政、漕运、河道、操江，衰弱的是水利、盐运、粮运之职；火爻旺相，京官是礼部尚书、詹事府、学士、国子监祭酒司业、太常寺、翰林这类官，衰弱的是中书，旺相又加朱雀的是科道官，衰弱的是鸿胪寺，在午爻上的旺相是兵部尚书、衰弱的是苑马寺，外任带文昌、驿马、又加月建的，不是主考官，必是督学官，衰弱的是学官和炉冶坑场之职；上爻旺相，京官是户部、京兆尹、巡城御史、仓场院，加青龙德神的是光禄寺，外任旺相的是布政使、屯田督运督粮，衰弱的是知府、知县和开矿、采石、垦荒的差使。",
+        "en": "When the Self holds the star of office, the Noble, Emolument and the Horse, and is not Void, punished, controlled or broken, the department is fixed by the element of the line it sits on. On a Metal line, thriving: a capital official is the Minister of War, the Minister of Justice, or the head of the Court of Judicial Review or a vice censor-in-chief; weak: the Seal Office and the directors of the bureaus of the Ministry of War, and for the military the Five Commissions and the Embroidered-Uniform Guard; serving outside, thriving: a governor-general, governor, judicial commissioner, intendant or regional commander; weak: a commissioner for mercy in punishments, a judicial clerk, a deputy or flying column commander, a company captain. On a Wood line, thriving: the Minister of Works; weak: the Yingshan and Yuheng bureaus; outside, thriving: a customs and tax master; weak: a post for taxes and the tea and water duties. On a Water line, thriving: the Minister of Personnel; weak: the directors of the Wenxuan, Jixun, Yanfeng and Dushui bureaus; outside, thriving: salt, grain transport, river works or the river patrol; weak: a post for water conservancy, salt transport or grain transport. On a Fire line, thriving: the Minister of Rites, the Supervisorate of the Heir, a scholar, the Imperial Academy, the Court of Imperial Sacrifices or the Hanlin Academy; weak: a secretary of the Secretariat; thriving with the Vermilion Bird added: a supervising secretary or censor; weak: the Court of State Ceremonial; on the Wu line, thriving: the Minister of War, weak: the Pasturage Court; outside, carrying the Wenchang star, the Post Horse and the Month: not an examiner but surely an education commissioner; weak: a school instructor or a post in the furnaces, smelting works and mines. On the top line, thriving: a capital official is the Minister of Revenue, the governor of the capital prefecture, the city-patrol censor or the granary office, and with the Dragon and Virtue added, the Court of Banqueting; outside, thriving: a provincial administration commissioner or an officer of military farms, transport and grain; weak: a prefect, a county magistrate, or an envoy to open mines, quarry stone or clear land."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2611, 2613],
+          "zh": ["又世持官贵禄马，不空刑克破者，其在金爻旺相，京官则司马司寇大理中丞也。", "衰则尚宝乡武选车驾职方武库郎也，武则五府衣使也。", "在外任者，旺则总制抚按，观察，总兵也，衰则恤刑司理，参游，把总也。", "木爻旺相京官则司空，衰则营缮，虞衡司也，在外任者，旺则关津主税，衰亦税课茶水之职也。", "水爻旺相京官则家宰也。", "(取其铨衡如水之平)。", "衰则文选稽勋封验都水郎也。", "在外任者，旺则盐漕河道操江也。", "衰则水利盐运粮运之职也。", "火爻旺相京官则宗伯宫詹学士司成司业太常翰林之官也，衰则中书也。", "旺加雀，则科道。", "衰则鸿臚也。", "在午爻者，旺则司马，衰亦苑马也。", "在外任者，带文昌驿马加月建者，非典试之官，必督学之官也。", "衰则文学炉冶坑场之职也。", "上爻旺相，京官则司农京兆巡城仓院也，加龙德则光禄也。", "在外任者，旺则方伯，屯田督运督粮也。", "衰则郡守邑宰开矿取石垦辟之使也。"],
+          "yi": ["又，世爻持官星、贵人、禄、驿马，不落空、不被刑克破的，如果在金爻上而旺相，京官就是兵部、刑部尚书和大理寺、都察院的中丞这类。", "衰弱的，是尚宝司和兵部武选、车驾、职方、武库各司的郎官，武职就是五军都督府和锦衣卫这类。", "在外任职的，旺相的是总制、巡抚、按察使、观察、总兵，衰弱的是恤刑、司理、参将游击、把总。", "木爻旺相的，京官是工部尚书；衰弱的是营缮司、虞衡司；在外任职的，旺相的是关津主税，衰弱的也是税课、茶水这类职务。", "水爻旺相的，京官是吏部尚书。", "（取其选拔衡量像水一样公平的意思。）", "衰弱的是文选、稽勋、验封、都水各司的郎官。", "在外任职的，旺相的是盐政、漕运、河道、操江。", "衰弱的是水利、盐运、粮运这类职务。", "火爻旺相的，京官是礼部尚书、詹事府、学士、国子监祭酒司业、太常寺、翰林这类官；衰弱的是中书。", "旺相又加朱雀的，是科道官。", "衰弱的是鸿胪寺。", "在午爻上的，旺相的是兵部尚书，衰弱的也是苑马寺。", "在外任职的，带文昌、驿马、又加月建的，不是主持考试的官，一定是督学官。", "衰弱的是学官和炉冶、坑场这类职务。", "上爻旺相的，京官是户部、京兆尹、巡城御史、仓场院这类，加青龙、德神的是光禄寺。", "在外任职的，旺相的是布政使、屯田、督运、督粮。", "衰弱的是知府、知县，或开矿、采石、垦荒的差使。"],
+          "en": ["Again, if the Self holds the star of office, the Noble, Emolument and the Horse, and is not Void, punished, controlled or broken, and it sits on a Metal line and is thriving, a capital official is the Minister of War, the Minister of Justice, or the head of the Court of Judicial Review or a vice censor-in-chief.", "If weak, it is the Seal Office and the directors of the Wuxuan, Chejia, Zhifang and Wuku bureaus of the Ministry of War, and for the military the Five Commissions and the Embroidered-Uniform Guard.", "Serving outside, thriving, he is a governor-general, governor, judicial commissioner, intendant or regional commander; weak, a commissioner for mercy in punishments, a judicial clerk, a deputy or flying column commander, or a company captain.", "On a Wood line thriving, a capital official is the Minister of Works; weak, the Yingshan or Yuheng bureaus; serving outside, thriving, a customs-house and tax master, and weak, also a post for taxes and the tea and water duties.", "On a Water line thriving, a capital official is the Minister of Personnel.", "(It takes the sense of weighing and selecting as level as water.)", "Weak, the directors of the Wenxuan, Jixun, Yanfeng and Dushui bureaus.", "Serving outside, thriving, he is in charge of salt, grain transport, river works or the river patrol.", "Weak, a post for water conservancy, salt transport or grain transport.", "On a Fire line thriving, a capital official is the Minister of Rites, an official of the Supervisorate of the Heir, a scholar, the Chancellor or Vice-Chancellor of the Imperial Academy, the Court of Imperial Sacrifices or the Hanlin Academy; weak, a secretary of the Secretariat.", "Thriving and with the Vermilion Bird added, a supervising secretary or censor.", "Weak, the Court of State Ceremonial.", "On a Wu line, thriving is the Minister of War, and weak is the Pasturage Court.", "One serving outside who carries the Wenchang star and the Post Horse and the Month is, if not an examiner, surely an education commissioner.", "Weak, a school instructor or a post in the furnaces, smelting works and mines.", "On the top line thriving, a capital official is the Minister of Revenue, the governor of the capital prefecture, the city-patrol censor or the granary office, and with the Dragon and Virtue added, the Court of Banqueting.", "Serving outside, thriving, a provincial administration commissioner, or an officer of military farms, transport or grain.", "Weak, a prefect, a county magistrate, or an envoy to open mines, quarry stone or clear land."] }
+      ],
+      "note": {
+        "yi": "这一条的官名都是明代的官署和职务，书里没有解释，译文按通行的叫法对译，个别地方不一定准：「大理中丞」应是大理寺和都察院的长官；「尚宝乡武选车驾职方武库郎」里的「乡」像是衍字；「五府衣使」按文意译作五军都督府和锦衣卫；「家宰」按文意是吏部尚书（冢宰）。「文昌」是一颗主文运的星煞。「午爻」指地支为午的那一爻。",
+        "en": "The titles in this entry are Ming offices and posts that the book does not explain, and the translation renders them by the usual names; a few may not be exact: 'Dali zhongcheng' is presumably the heads of the Court of Judicial Review and the Censorate; the character 'xiang' in the string of bureau names looks superfluous; 'wufu yishi' is rendered by sense as the Five Commissions and the Embroidered-Uniform Guard; 'jiazai' is by sense the Minister of Personnel (the chief steward). 'Wenchang' is a spirit-star of literary fortune, and 'the Wu line' means the line whose branch is Wu."
+      },
+      "see": ["LY.CAREER.YY.04", "LY.CAREER.YY.06"]
+    },
+    {
+      "id": "LY.CAREER.YY.06",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·何官（四）：世持官贵禄而无印绶是佐贰；世持衰官得日辰动财生合或伏财化财是仓场府库驿典之官；世持官印而无财非正选而差委之官；官衰印旺是署印官",
+      "rule": {
+        "yi": "世爻持官星、贵人、禄而没有印绶（父母），是佐贰官；世爻持衰弱的官星，得到日辰、动爻的财来生合，或者财伏藏、化出财的，是管仓场、府库、驿站这类的官；世爻持官星、印星而没有财的，不是正式选授的官，而是差遣委任的官（筮诀说，卦里若没有财，必定不是正式选授）；官星衰弱、印星旺相的，是代理掌印的官。",
+        "en": "If the Self holds the star of office, the Noble and Emolument but has no seal and ribbon (Resource), it is an assistant official; if the Self holds a weak star of office and Wealth from the Day or a moving line generates or combines with it, or Wealth lies hidden or turns into Wealth, it is an official of the granaries, treasuries, post stations and the like; if the Self holds the star of office and seal but has no Wealth, it is not a regularly selected official but one dispatched or commissioned (the Divination Secret says: if the hexagram has no Wealth, it is surely not a regular selection); if the star of office is weak and the seal thriving, he is an acting seal-holder."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2611, 2613],
+          "zh": ["世持官贵禄而无印绶者，佐贰也。", "世持衰官得日辰动财来生合，或伏财化财者，仓场府库驿典之官也。", "世持官印，而无财者，非正选而差委之官也。", "(筮诀曰卦若无财必非正选)。", "官衰印旺者，署印官也。"],
+          "yi": ["世爻持官星、贵人、禄而没有印绶的，是佐贰官。", "世爻持衰弱的官星，得到日辰、动爻的财来生合，或者财伏藏、化出财的，是管仓场、府库、驿站这类的官。", "世爻持官星、印星而没有财的，不是正式选授的官，而是差遣委任的官。", "（筮诀说：卦里如果没有财，一定不是正式选授。）", "官星衰弱、印星旺相的，是代理掌印的官。"],
+          "en": ["If the Self holds the star of office, the Noble and Emolument but has no seal and ribbon, it is an assistant official.", "If the Self holds a weak star of office and Wealth from the Day or a moving line generates or combines with it, or Wealth lies hidden or turns into Wealth, it is an official of the granaries, treasuries, post stations and the like.", "If the Self holds the star of office and seal but has no Wealth, it is not a regularly selected official but one dispatched or commissioned.", "(The Divination Secret says: if the hexagram has no Wealth, it is surely not a regular selection.)", "If the star of office is weak and the seal thriving, he is an acting seal-holder."] }
+      ],
+      "see": ["LY.CAREER.YY.05", "LY.CAREER.HJC.21", "LY.CAREER.ZS.27"]
+    },
+    {
+      "id": "LY.CAREER.YY.07",
+      "topic": "成否",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·候选（一）：官临身世与财爻独发，或世官加书贵带龙雀动，或岁月带官印生合世身者得选；世下伏官伏驿马印绶迟选；卦无官印、身世空绝、子孙持世独发不得选；鬼化鬼反覆，鬼动财空选司无力；身世随鬼入墓选不成",
+      "rule": {
+        "yi": "候选（等待选官）——能选上：官星临在身爻、世爻上，财爻单独发动；或者世爻、官星加文书、贵人，带青龙或朱雀发动；或者太岁、月建带着官星、印星来生合世身。选得迟：官星伏在世爻下，或伏着驿马、印绶。选在下等：世爻持官星、贵人遇升爻，但休囚受克。选不上：卦里没有官星、印星，或它们空绝，或身爻世爻空绝，或子孙持世旺动、子孙单独发动；官鬼变官鬼，事情多反复；官鬼发动而财空绝，选官的衙门没有力量；官星入绝但逢生，事虽有阻挠，终得贵人之力而成；身爻世爻随官鬼入墓，选不成，成了也不如意；遇丁未、戊戌二杀之墓，即使选了官、到了任，也要带着亲人回乡；官鬼带亡神劫杀大杀克世身，选了官也不得赴任；有官星而无父母，或父母空死墓绝胎，没有任所。",
+        "en": "Awaiting selection. Selected: the star of office sits on the Body or the Self and the Wealth line alone moves; or the Self and the star of office carry the document and the Noble and move with the Azure Dragon or the Vermilion Bird; or Tai Sui and the Month carry the star of office and seal and generate or combine with the Self and Body. Late selection: the star of office or the Post Horse or seal lies hidden under the Self. A low selection: the Self holds the star of office and the Noble on a promotion line but is resting or trapped and controlled. Not selected: the hexagram has no star of office or seal, or they are Void or extinct, or the Body and Self are Void or extinct, or Output holds the Self and is thriving and moving, or Output alone moves. Pressure turning into Pressure: the matter goes back and forth; Pressure moves while Wealth is Void or extinct: the selecting office has no power; the star of office extinct but meeting generation: the matter meets obstruction but is in the end achieved through a patron's help; the Body and Self following Pressure into the tomb: the selection fails, and if it succeeds it is not as wished; meeting the tombs of the two baleful spirits Dingwei and Wuxu: though selected and arrived at the post, he travels home with his kin; Pressure carrying the Lost Spirit, Robbery and great baleful spirits and controlling the Self and Body: though selected he cannot go to his post; the star of office present but no Resource, or Resource Void, dead, in tomb, extinct or in the womb stage: there is no post."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2617, 2617],
+          "zh": ["官临身世，与财爻独发，或世官加书贵，带龙雀动，或岁月带官印生合世身者，选也。", "世下伏官，或伏驿马印绶者，迟选。", "世持官贵值升爻，而休囚受克者，下选。", "世加夜贵带龙雀动者，方催选陪点也。", "卦无官印，与官印空绝，或身世空绝，或子持世旺动，或子孙独发者，俱不得选也。", "鬼化鬼者，事多反覆也。", "鬼动而财空绝者，选司无力也。", "官绝逢生者，事虽有沮，终得贵人力而成也。", "身世随鬼入墓者选不成，成亦不如意也。", "若值丁未戊戌二杀墓者，虽选官到任，而旅亲回乡也。", "鬼带亡劫大杀克世身者，虽选官而不得赴任也。", "卦有官无父，或父值空死墓绝胎者，无在所也。"],
+          "yi": ["官星临在身爻、世爻上，与财爻单独发动，或者世爻、官星加上文书、贵人，带着青龙或朱雀发动，或者太岁、月建带着官星、印星来生合世身的，能被选上。", "世爻下面伏着官星，或者伏着驿马、印绶的，选得迟。", "世爻持官星、贵人，遇到升爻，但休囚又受克的，选在下等。", "世爻加夜贵人、带青龙或朱雀发动的，正是催着选官、陪着点名的时候。", "卦里没有官星、印星，或者官星、印星落空入绝，或者身爻、世爻落空入绝，或者子孙持世旺相发动，或者子孙单独发动的，都选不上。", "官鬼变官鬼的，事情多有反复。", "官鬼发动而财落空入绝的，负责选官的衙门没有力量。", "官星入绝但逢生的，事情虽然有阻挠，最终得到贵人的力量而成。", "身爻、世爻随官鬼入墓的，选不成，即使成了也不如意。", "如果遇到丁未、戊戌两个杀的墓，虽然选了官、到了任，也要带着亲人回乡。", "官鬼带亡神、劫杀等大杀去克世身的，虽然选了官，也不能赴任。", "卦里有官星而没有父母，或者父母遇空、死、墓、绝、胎的，没有任所。"],
+          "en": ["If the star of office sits on the Body or the Self and the Wealth line alone moves, or the Self and the star of office carry the document and the Noble and move with the Azure Dragon or the Vermilion Bird, or Tai Sui and the Month carry the star of office and seal and generate or combine with the Self and Body, one will be selected.", "If the star of office lies hidden under the Self, or the Post Horse or seal lies hidden there, the selection is late.", "If the Self holds the star of office and the Noble on a promotion line but is resting or trapped and controlled, the selection is a low one.", "If the Self carries the night Noble and moves with the Dragon or the Bird, it is just the time when the selection is being pressed and one is called in company.", "If the hexagram has no star of office or seal, or they are Void or extinct, or the Body and Self are Void or extinct, or Output holds the Self and is thriving and moving, or Output alone moves, none of these is selected.", "If Pressure turns into Pressure, the matter goes back and forth.", "If Pressure moves while Wealth is Void or extinct, the selecting office has no power.", "If the star of office is extinct but meets generation, the matter meets obstruction but is in the end achieved through the help of a patron.", "If the Body and Self follow Pressure into the tomb, the selection fails, and if it succeeds it is not as wished.", "If one meets the tombs of the two baleful spirits Dingwei and Wuxu, then though he is selected and reaches his post, he travels home with his kin.", "If Pressure carries the Lost Spirit, Robbery and great baleful spirits and controls the Self and Body, then though he is selected he cannot go to his post.", "If the hexagram has the star of office but no Resource, or Resource meets Void, death, tomb, extinction or the womb stage, there is no post to go to."] },
+        { "by": "书中例", "book": "易隐", "range": [2668, 2668],
+          "zh": ["己丑年壬申月甲子旬乙丑日，占求官，得震之豫。", "此卦己事不成，代占则成也。", "但费心力多用财耳，盖子水动化未土，文书受伤，又应财亦克文书，所云克我者，他来就我易，我克者，我去就他难也。", "所喜日辰丑土，冲未合子，子水又长生于月建申中，故只损心神，行财贿，终必成也。", "若夫世爻旬空，丑日又刑之，己事必不可成也。"],
+          "yi": ["己丑年壬申月，甲子旬乙丑日，占求官，得震卦变豫卦。", "这个卦，自己的事不成，别人代占就成。", "但是要多费心力、多花钱财，因为子水发动化出未土，文书受伤，又有应爻的财也克文书；所谓「克我的，他来就我容易；我克的，我去就他难」，就是这个道理。", "幸好日辰丑土，冲未土、合子水，子水又在月建申中长生，所以只是耗费心神、行贿花钱，最终一定成。", "至于自己的事，世爻落旬空，丑日又刑它，必定不能成。"],
+          "en": ["In the Jichou year, Renshen month, Jiazi decade, on a Yichou day, a divination on seeking office gave Zhen changing into Yu.", "In this hexagram one's own business fails, but when divined on one's behalf by another it succeeds.", "But it will take much effort and money, because Zi Water moves and turns into Wei Earth and the document is injured, and the Wealth of the Other line also controls the document; as the saying goes, 'what controls me, he comes to me easily; what I control, I go to him with difficulty'.", "Fortunately the Day, Chou Earth, clashes with Wei Earth and combines with Zi Water, and Zi Water is also born in the Month Shen, so it only costs mental effort and money in bribes, and in the end it will surely succeed.", "As for one's own business, the Self falls in Void and the Chou day also punishes it, so it surely cannot succeed."] },
+        { "by": "书中例", "book": "易隐", "range": [2670, 2672],
+          "zh": ["己丑年丙子月甲子旬丁卯日，占求官，得睽之归妹。", "本官寅宫，动合世下戌兄，所托贵人得力，父母属火，文书难立时空，得日辰生扶，必可成也，但本宫午火自刑，求仕文书，字眼必有踈驳处。", "得旁爻卯官相生，又得官府主张成就，本宫寅官，又伏傍爻巳火文书下，必另有贵人保举，或别经勘验，方得完备，乃经两三衙门之事也。", "毕竟火空无气，须待立春后官现，方准。", "立夏后文书旺，方完备。", "官动六爻，地方远，外离化震，必选东方也。"],
+          "yi": ["己丑年丙子月，甲子旬丁卯日，占求官，得睽卦变归妹卦。", "本宫寅木官星发动，合住世爻下面的戌土兄弟，所托的贵人得力；父母爻属火，文书难以立住，时值落空，得到日辰生扶，必定能成；但是本宫的午火自刑，求官的文书，字眼上必有疏漏被驳的地方。", "得到旁边的卯木官星相生，又得到官府主张成全；本宫的寅木官星，又伏在旁边巳火文书下面，必定另有贵人保举，或者另外经过勘验，才能完备，这是要经过两三个衙门的事。", "毕竟火落空无气，必须等立春以后官星出现，才批准。", "立夏以后文书旺相，才算完备。", "官星在六爻发动，地方远；外卦离化震，必选在东方。"],
+          "en": ["In the Jichou year, Bingzi month, Jiazi decade, on a Dingmao day, a divination on seeking office gave Kui changing into Guimei.", "The Yin Wood star of office of the home palace moves and combines with the Xu Earth Peer line under the Self, so the patron entrusted has real strength; the Resource line is Fire and the document is hard to establish because it is Void at the time, but with generation and support from the Day it can surely succeed; but the home palace's Wu Fire punishes itself, so the document seeking office will surely have rough spots in its wording that get queried.", "With the side Mao Wood star of office generating it and the authorities also pushing it through, and the home palace's Yin Wood star of office lying hidden under the side Si Fire document, there will surely be another patron to recommend him, or another inspection, before it is complete; it is a matter that goes through two or three offices.", "In the end Fire is Void and without breath, and one must wait until after the start of spring when the star of office appears before it is approved.", "After the start of summer the document thrives and then it is complete.", "The star of office moves in the sixth line, so the place is far; the outer trigram Li turns into Zhen, so it will surely be selected in the east."] },
+        { "by": "书中例", "book": "易隐", "range": [2674, 2674],
+          "zh": ["庚寅年辛巳月甲申旬壬辰日，占求官，得需卦安静。", "本宫巳火文书，临月建，伏在官鬼之下，又巳火生世丁丑土，求官必得。", "所嫌旁爻申金持世，与月建六合来克官，日辰又生之，主暂时阻节，终是夏金逢时空，不能为祸。", "本宫卯木官，伏辰土兄弟下，日辰又是兄弟，为劫财之神，无旁爻寅鬼与本宫巳父相刑，乃所掌官吏，有求索之意，若与之贿，事必谐矣。"],
+          "yi": ["庚寅年辛巳月，甲申旬壬辰日，占求官，得需卦，没有动爻。", "本宫巳火文书，临在月建上，伏在官鬼下面，又巳火生世爻丁丑土，求官必定得到。", "所嫌的是旁边的申金持世，与月建六合、来克官星，日辰又生它，主暂时有阻碍；但终究是夏天的金遇到时令空，不能成祸。", "本宫的卯木官星，伏在辰土兄弟下面，日辰又是兄弟，是劫财之神；没有旁边的寅鬼与本宫的巳父相刑；这是主管的官吏，有索求的意思，如果给他送贿赂，事情必定顺利。"],
+          "en": ["In the Gengyin year, Xinsi month, Jiashen decade, on a Renchen day, a divination on seeking office gave Xu with no moving line.", "The Si Fire document of the home palace sits on the Month and lies hidden under Pressure, and Si Fire also generates the Self, Dingchou Earth, so the office will surely be had.", "What is disliked is that the side Shen Metal holds the Self and combines with the Month to control the star of office, and the Day also generates it, so there is a temporary obstruction; but in the end it is summer Metal meeting an empty season and cannot make misfortune.", "The Mao Wood star of office of the home palace lies hidden under Chen Earth Peer, and the Day is also Peer, a spirit that robs wealth; there is no side Yin Pressure line to punish the home palace's Si Resource; this is the official in charge, who has the sense of demanding something, and if he is given a bribe, the matter will surely go smoothly."] }
+      ],
+      "note": {
+        "yi": "几处字面可疑，译文只按字面意思译：「旅亲回乡」疑是「旅榇回乡」（扶柩回乡）；「丁未戊戌二杀墓」书里没有解释是哪两个杀；「方催选陪点」按字面译。「选」是明清的铨选，按资格抽签选授官缺。三个附断例都是《易隐》官禄占后面的附断例，这里放在最相关的一条下。",
+        "en": "A few places are doubtful and are translated only by the letter: 'travelling home with kin' is presumably 'travelling home with the coffin' (escorting a coffin home); the book does not say which two baleful spirits the 'tombs of the two killers Dingwei and Wuxu' belong to; and 'just urging the selection and accompanying the roll-call' is rendered literally. 'Xuan' is the Ming and Qing selection by which vacant posts were allotted by lot according to qualification. The three examples are from the examples appended to the end of this chapter of the Yi Yin and are placed here under the entry they illustrate most."
+      },
+      "see": ["LY.CAREER.YY.08", "LY.CAREER.YY.09", "LY.CAREER.ZS.01", "LY.CAREER.ZS.02"]
+    },
+    {
+      "id": "LY.CAREER.YY.08",
+      "topic": "应期",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·候选（二）：何日得官——官旺动者远以值年合月、近以值月合日为期，官旺静者以冲动之年月日，官伏藏者以临值之年月日；官临火动选速，水动选迟",
+      "rule": {
+        "yi": "想知道哪一天得官：官星旺相发动的，远的以它当值的年、合它的月为期，近的以当值的月、合它的日为期；官星旺相而安静的，以冲动它的年、月、日为期；官星伏藏的，以它当值的年、月、日为期；官星临火发动，选得快，临水发动，选得慢。",
+        "en": "To know on what day one gets office: if the star of office is thriving and moving, a distant date is set by the year it rules and the month that combines with it, and a near date by the month it rules and the day that combines with it; if it is thriving but still, the date is the year, month or day that clashes it into motion; if it lies hidden, the date is the year, month or day in which it rules; if the star of office moves on Fire the selection is quick, and if on Water, slow."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2617, 2617],
+          "zh": ["欲知何日得官，官旺动者，远则以值年合月为期，近则以值月合日为期也。", "官旺静者，以冲动之年月日为期也。", "官伏藏者，以临值之年月日为期也。", "官临火动，选速，水动选迟也。"],
+          "yi": ["想知道哪一天得官，官星旺相发动的，远的以它当值的年、合它的月为期，近的以当值的月、合它的日为期。", "官星旺相而安静的，以冲动它的年、月、日为期。", "官星伏藏的，以它当值的年、月、日为期。", "官星临火发动的，选得快，临水发动的，选得慢。"],
+          "en": ["To know on what day one gets office: if the star of office is thriving and moving, a distant date is set by the year it rules and the month that combines with it, and a near date by the month it rules and the day that combines with it.", "If the star of office is thriving but still, the date is the year, month or day that clashes it into motion.", "If the star of office lies hidden, the date is the year, month or day in which it rules.", "If the star of office moves on Fire, the selection is quick; if it moves on Water, the selection is slow."] },
+        { "by": "书中例", "book": "易隐", "range": [2669, 2669],
+          "zh": ["己丑年癸酉月甲子旬丁酉日，婿占岳翁，在京选官否，得晋之噬嗑。", "此卦父临岁破，巳官旬空，又初爻动化福来伤官，木宫午官伏酉兄之下，火死于酉，且月日冲动卯财，克伏下辰土父母，戌土父母，虽伏巳官下受生，奈巳火空亡，土又败于酉也，毫无生气，故今岁恐选不成，待次年庚寅，火官长生，正月可选，五月可到任也。"],
+          "yi": ["己丑年癸酉月，甲子旬丁酉日，女婿占岳父，在京城能不能选上官，得晋卦变噬嗑卦。", "这个卦，父母临岁破，巳火官星落旬空，又初爻发动化出福神来伤官星；木宫的午火官星伏在酉金兄弟下面，火在酉死，而且月、日冲动卯木财，克伏在下面的辰土父母、戌土父母，虽然伏在巳火官星下面受生，无奈巳火空亡，土又在酉败，毫无生气，所以今年恐怕选不成，等到明年庚寅年，火官星长生，正月可以选上，五月可以到任。"],
+          "en": ["In the Jichou year, Guiyou month, Jiazi decade, on a Dingyou day, a son-in-law divined for his father-in-law on whether he would be selected for office in the capital, and got Jin changing into Shihe.", "In this hexagram Resource sits on the Year-break, the Si Fire star of office is Void, and the first line moves and turns into Output to injure the star of office; the Wu Fire star of office of the Wood palace lies hidden under the You Metal Peer line, and Fire is dead in You; moreover the Month and Day clash the Mao Wood Wealth line into motion, which controls the Chen Earth and Xu Earth Resource lines hidden below; though they lie hidden under the Si star of office and are generated, Si Fire is Void and Earth is spent in You, so there is no life at all; therefore I fear that this year the selection will not succeed; wait for next year, Gengyin, when the Fire star of office is born, and he can be selected in the first month and reach his post in the fifth month."] },
+        { "by": "书中例", "book": "易隐", "range": [2675, 2675],
+          "zh": ["庚寅年辛巳月甲子旬丁酉日，占求官，得乾之离。", "二五爻辞，俱有利见大人本吉，但六冲化六冲，又寅财动克文书中，兄动多阻隔，目下不成。", "直待辰戌印绶年可求，午火官鬼年，可得官也。"],
+          "yi": ["庚寅年辛巳月，甲子旬丁酉日，占求官，得乾卦变离卦。", "二爻、五爻的爻辞，都有「利见大人」，本来是吉的；但是六冲卦变六冲卦，又有寅木财发动克文书，兄弟发动多阻隔，眼下不成。", "要等到辰年、戌年（印绶之年）才可以去求，午火官鬼之年才能得官。"],
+          "en": ["In the Gengyin year, Xinsi month, Jiazi decade, on a Dingyou day, a divination on seeking office gave Qian changing into Li.", "The line texts of the second and fifth lines both say 'it is fitting to see the great man', which is auspicious in itself; but a Six-Clash hexagram turns into a Six-Clash hexagram, and the Yin Wood Wealth line moves to control the document, and a moving Peer line brings many obstructions, so it will not succeed for now.", "One must wait for a Chen or Xu year, the years of the seal, to seek it, and the year of Wu Fire Pressure to obtain office."] }
+      ],
+      "see": ["LY.CAREER.YY.07", "LY.CAREER.YY.09"]
+    },
+    {
+      "id": "LY.CAREER.YY.09",
+      "topic": "应期",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·候选（三）：按卦宫定选官的节气——艮立春后、震春分后、巽立夏后、离夏至后、坤立秋后、兑秋分后、乾立冬后、坎冬至后",
+      "rule": {
+        "yi": "再看卦宫来定选官的节气：卦宫是艮的，立春以后选；震，春分以后；巽，立夏以后；离，夏至以后；坤，立秋以后；兑，秋分以后；乾，立冬以后；坎，冬至以后。",
+        "en": "Look also at the palace of the hexagram to fix the solar term of the selection: if the palace is Gen, the selection comes after the start of spring; Zhen, after the spring equinox; Xun, after the start of summer; Li, after the summer solstice; Kun, after the start of autumn; Dui, after the autumn equinox; Qian, after the start of winter; Kan, after the winter solstice."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2617, 2617],
+          "zh": ["又看卦宫，宫居艮，立春后选。", "宫居震，春分后选。", "宫居巽，立夏后选。", "宫居离，夏至后选。", "宫居坤，立秋后选。", "宫居兑，秋分后选。", "宫居乾，立冬后选。", "宫居坎，冬至后选也。"],
+          "yi": ["再看卦宫：卦宫是艮的，立春以后选。", "卦宫是震的，春分以后选。", "卦宫是巽的，立夏以后选。", "卦宫是离的，夏至以后选。", "卦宫是坤的，立秋以后选。", "卦宫是兑的，秋分以后选。", "卦宫是乾的，立冬以后选。", "卦宫是坎的，冬至以后选。"],
+          "en": ["Look also at the palace of the hexagram: if the palace is Gen, the selection comes after the start of spring.", "If the palace is Zhen, after the spring equinox.", "If the palace is Xun, after the start of summer.", "If the palace is Li, after the summer solstice.", "If the palace is Kun, after the start of autumn.", "If the palace is Dui, after the autumn equinox.", "If the palace is Qian, after the start of winter.", "If the palace is Kan, after the winter solstice."] }
+      ],
+      "see": ["LY.CAREER.YY.08", "LY.CAREER.YY.10"]
+    },
+    {
+      "id": "LY.CAREER.YY.10",
+      "topic": "成否",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·领凭：以文书为用，旺则墓日可领、衰则生旺日可领、伏藏则临值之日领；卦无父或父临空死墓绝胎候久而不得；父化父文凭不实",
+      "rule": {
+        "yi": "领凭证：以文书（父母）为用神。文书旺相，到它入墓的日子可以领；衰弱，到它生旺的日子可以领；伏藏，到它当值的日子领。卦里没有父母，或者父母临空、死、墓、绝、胎，等很久也领不到；父母变出父母，文凭不实在。",
+        "en": "Collecting the credentials: the document line is the Subject. If it is thriving, the credentials can be collected on the day it enters the tomb; if weak, on a day of its birth or strength; if hidden, on the day in which it rules. If the hexagram has no Resource line, or Resource sits on Void, death, tomb, extinction or the womb stage, one waits long and does not get them; if Resource turns into Resource, the credentials are not genuine."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2621, 2621],
+          "zh": ["以文书为用。", "旺则墓日可领，衰则生旺日可领，伏藏则临值之日领也。", "卦无父，与父临空死墓绝胎者，候久而不得也。", "又父化父者，文凭不实也。"],
+          "yi": ["以文书（父母）为用神。", "旺相的，到它入墓的日子可以领；衰弱的，到它生旺的日子可以领；伏藏的，到它当值的日子领。", "卦里没有父母，或者父母临在空、死、墓、绝、胎上的，等很久也得不到。", "又，父母变出父母的，文凭不实在。"],
+          "en": ["The document line is the Subject.", "If it is thriving, the credentials can be collected on the day it enters the tomb; if weak, on a day of its birth or strength; if hidden, on the day in which it rules.", "If the hexagram has no Resource line, or Resource sits on Void, death, tomb, extinction or the womb stage, one waits long and does not get them.", "Again, if Resource turns into Resource, the credentials are not genuine."] }
+      ],
+      "see": ["LY.CAREER.YY.09", "LY.CAREER.YY.11", "LY.CAREER.HJC.05"]
+    },
+    {
+      "id": "LY.CAREER.YY.11",
+      "topic": "升迁",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·任所（一）：世在一二位近、三四位远、五六位更远；六合卦近、六冲卦远",
+      "rule": {
+        "yi": "任所的远近：世爻在一、二位的近，三、四位的远，五、六位的更远；六合卦近，六冲卦远。",
+        "en": "The distance of the post: if the Self is in the first or second place it is near, in the third or fourth far, and in the fifth or sixth farther still; a Six-Combine hexagram is near and a Six-Clash hexagram far."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2625, 2627],
+          "zh": ["一二世者近，三四世者远，五六世者愈远也。", "六合近，而六冲远也。"],
+          "yi": ["世爻在一、二位的，任所近；在三、四位的，远；在五、六位的，更远。", "六合卦近，六冲卦远。"],
+          "en": ["If the Self is in the first or second place the post is near; in the third or fourth, far; in the fifth or sixth, farther still.", "A Six-Combine hexagram is near, and a Six-Clash hexagram far."] }
+      ],
+      "see": ["LY.CAREER.YY.12", "LY.CAREER.ZS.09"]
+    },
+    {
+      "id": "LY.CAREER.YY.12",
+      "topic": "升迁",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·任所（二）：按世爻所属地支定任所的分野——子山东济南等五府；丑南京应天等府、浙江、江西、福建、广东诸府；寅北京顺天等府与辽东；卯南京徐州淮安；辰山东兖州；巳湖广、四川夔州、贵州、广东廉州、广西诸府；午河南河南南阳、湖广郧阳襄阳德安；未陕西、甘肃、四川、云南、贵州诸府；申山西太原平阳等；酉北直真定顺德、山西大同；戌南京凤阳庐州与徐州；亥河南开封等与北直大名",
+      "rule": {
+        "yi": "任所在什么地方，按世爻所属的地支和星宿分野来定：世属子，是坎宫、女宿虚宿危宿三宿的分野，今山东济南等五府；世属丑，是艮宫、牛宿斗宿的分野，今南京的应天、扬州等府，浙江、江西、福建、广东诸府；世属寅，是艮宫、尾宿箕宿的分野，今北京顺天等府和辽东沈阳；世属卯，是震宫、氐房心三宿的分野，今南京徐州、淮安；世属辰，是巽宫、角亢二宿的分野，今山东兖州府；世属巳，是巽宫、翼轸二宿的分野，今湖广诸府、四川夔州府、贵州铜仁黎平、广东廉州、广西诸府；世属午，是离宫、柳星张三宿的分野，今河南河南府、南阳府和湖广郧阳、襄阳、德安三府；世属未，是坤宫、井鬼二宿的分野，今陕西、甘肃、四川、云南、贵州的诸府州；世属申，是坤宫、毕觜参三宿的分野，今山西太原、平阳等地；世属酉，是兑宫、胃昴二宿的分野，今北直真定、顺德二府和山西大同府；世属戌，是乾宫、奎娄二宿的分野，今南京凤阳、庐州二府和徐州；世属亥，是乾宫、室壁二宿的分野，今河南开封、彰德、卫辉、怀庆、汝宁等府和北直大名府。",
+        "en": "The region of the post is fixed by the branch the Self belongs to and the allotted lunar mansions: Zi is the Kan palace and the mansions Nü, Xu and Wei, today five prefectures of Shandong; Chou is the Gen palace and the mansions Niu and Dou, today the prefectures of the southern capital region such as Yingtian and Yangzhou and those of Zhejiang, Jiangxi, Fujian and Guangdong; Yin is the Gen palace and the mansions Wei (Tail) and Ji, today the prefectures of Beijing such as Shuntian, with Liaodong and Shenyang; Mao is the Zhen palace and the mansions Di, Fang and Xin, today Xuzhou and Huai'an in the southern capital region; Chen is the Xun palace and the mansions Jiao and Kang, today Yanzhou prefecture in Shandong; Si is the Xun palace and the mansions Yi and Zhen, today the prefectures of Huguang, Kuizhou in Sichuan, Tongren and Liping in Guizhou, Lianzhou in Guangdong and the prefectures of Guangxi; Wu is the Li palace and the mansions Liu, Xing and Zhang, today Henan and Nanyang prefectures in Henan and Yunyang, Xiangyang and De'an in Huguang; Wei is the Kun palace and the mansions Jing and Gui, today the prefectures and departments of Shaanxi, Gansu, Sichuan, Yunnan and Guizhou; Shen is the Kun palace and the mansions Bi, Zi and Shen, today Taiyuan, Pingyang and other places in Shanxi; You is the Dui palace and the mansions Wei (Stomach) and Mao, today Zhending and Shunde in the northern metropolitan region and Datong prefecture in Shanxi; Xu is the Qian palace and the mansions Kui and Lou, today Fengyang and Luzhou in the southern capital region and Xuzhou; Hai is the Qian palace and the mansions Shi and Bi, today Kaifeng, Zhangde, Weihui, Huaiqing and Runing in Henan and Daming prefecture in the northern metropolitan region."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2625, 2627],
+          "zh": ["世属子，则坎宫女虚危三宿之分野。", "今山东济南、东昌、青州、登州、莱州五府之地也。", "世属丑，则艮宫牛斗二宿之分野，今南京应天扬州、徽州、宁国池州、太平、安庆、苏州、松江、常州、镇江等府，与浙江杭州、嘉兴、湖州、宁波、绍兴、台州、金华、卫州、严州、温州、处州等府，与江西南昌、瑞州、饶州、抚州、建昌、吉安、南安、临江、赣州、南康、九江、广信等府，与福建福州、泉州、兴化、福宁州、邵武、延平、建宁、汀州、漳州等府，及广东广州、南雄、惠州、潮州、肇庆、高州、琼州之地也。", "世属寅，则艮宫尾箕二宿分野，今北京顺天、昌平、永平、保定、河涧等府，与辽东、沈阳等处地也。", "世属卯，则震宫氏房心三宿之分野，今南京徐州、淮安之地也。", "世属辰，则巽宫角亢二宿之分野，今山东兗州府之地也。", "世属巳，则巽宫翼轸二宿之分野，今湖广荆州、岳州、长沙、宝庆、辰州、常德衡州、永州、武昌、黄州、承天等府，与四川虁州府、贵州、铜仁、黎平府、广东廉州府、广西桂林、梧州、浔州、南宁太平、思明、柳州、庆远、思恩、镇安等府之地也。", "世属午，则离宫柳星张三宿之分野，今河南河南府、南阳府、湖广郧阳、襄阳、德安三府之地也。", "世属未，则坤宫井鬼二宿之分野，今陕西西安、汉中、凤翔、平凉、临洮、巩昌、庆阳、延安等府，甘州、潼关、榆林、宁夏、甘肃等处，与四川成都、龙安、顺庆、保宁、重庆、叙州、马湖等府，卢州、嘉定州、卯州、眉州、雅州等处，与云南云南府、临安、广西、楚雄、姚安、武定、景东、顺宁、大理、蒙化、永宁、永昌等府，北胜州、云州、丽江府、鹤庆府与贵州、贵阳、都匀思州、石阡铜仁等府之地也。", "世属申，则坤宫毕觜参三宿之分野，今山西太原、平阳、潞安府、沁州、泽州、汾州、渣州之地也。", "世属酉，则兑宫，胃昂二宿之分野，今北直真定、顺德二府，山西大同府之地也。", "世属戌，则乾宫奎娄二宿之分野，今南京凤阳、卢州二府，徐州之地也。", "世属亥，则乾宫室璧二宿之分野，今河南开封、彰德、卫辉、怀庆、汝宁等府与北直大名府之地也。"],
+          "yi": ["世爻属子，就是坎宫、女宿虚宿危宿三个星宿的分野。", "现在是山东济南、东昌、青州、登州、莱州五个府的地方。", "世爻属丑，就是艮宫、牛宿斗宿两个星宿的分野，现在是南京的应天、扬州、徽州、宁国、池州、太平、安庆、苏州、松江、常州、镇江等府，和浙江的杭州、嘉兴、湖州、宁波、绍兴、台州、金华、卫州、严州、温州、处州等府，和江西的南昌、瑞州、饶州、抚州、建昌、吉安、南安、临江、赣州、南康、九江、广信等府，和福建的福州、泉州、兴化、福宁州、邵武、延平、建宁、汀州、漳州等府，以及广东的广州、南雄、惠州、潮州、肇庆、高州、琼州的地方。", "世爻属寅，就是艮宫、尾宿箕宿两个星宿的分野，现在是北京的顺天、昌平、永平、保定、河涧等府，和辽东、沈阳等处的地方。", "世爻属卯，就是震宫、氐宿房宿心宿三个星宿的分野，现在是南京的徐州、淮安的地方。", "世爻属辰，就是巽宫、角宿亢宿两个星宿的分野，现在是山东兖州府的地方。", "世爻属巳，就是巽宫、翼宿轸宿两个星宿的分野，现在是湖广的荆州、岳州、长沙、宝庆、辰州、常德、衡州、永州、武昌、黄州、承天等府，和四川的夔州府，贵州、铜仁、黎平府，广东的廉州府，广西的桂林、梧州、浔州、南宁、太平、思明、柳州、庆远、思恩、镇安等府的地方。", "世爻属午，就是离宫、柳宿星宿张宿三个星宿的分野，现在是河南的河南府、南阳府，和湖广的郧阳、襄阳、德安三府的地方。", "世爻属未，就是坤宫、井宿鬼宿两个星宿的分野，现在是陕西的西安、汉中、凤翔、平凉、临洮、巩昌、庆阳、延安等府，甘州、潼关、榆林、宁夏、甘肃等处，和四川的成都、龙安、顺庆、保宁、重庆、叙州、马湖等府，卢州、嘉定州、卯州、眉州、雅州等处，和云南的云南府、临安、广西、楚雄、姚安、武定、景东、顺宁、大理、蒙化、永宁、永昌等府，北胜州、云州、丽江府、鹤庆府，和贵州的贵阳、都匀、思州、石阡、铜仁等府的地方。", "世爻属申，就是坤宫、毕宿觜宿参宿三个星宿的分野，现在是山西的太原、平阳、潞安府、沁州、泽州、汾州、渣州的地方。", "世爻属酉，就是兑宫、胃宿昴宿两个星宿的分野，现在是北直隶的真定、顺德二府，和山西的大同府的地方。", "世爻属戌，就是乾宫、奎宿娄宿两个星宿的分野，现在是南京的凤阳、卢州二府，和徐州的地方。", "世爻属亥，就是乾宫、室宿壁宿两个星宿的分野，现在是河南的开封、彰德、卫辉、怀庆、汝宁等府，和北直隶大名府的地方。"],
+          "en": ["If the Self belongs to Zi, it is the Kan palace and the allotted region of the three lunar mansions Nü, Xu and Wei.", "That is, today, the land of the five prefectures Jinan, Dongchang, Qingzhou, Dengzhou and Laizhou in Shandong.", "If the Self belongs to Chou, it is the Gen palace and the allotted region of the two lunar mansions Niu and Dou, that is, today, the prefectures of the southern capital region Yingtian, Yangzhou, Huizhou, Ningguo, Chizhou, Taiping, Anqing, Suzhou, Songjiang, Changzhou and Zhenjiang, and in Zhejiang the prefectures Hangzhou, Jiaxing, Huzhou, Ningbo, Shaoxing, Taizhou, Jinhua, Weizhou, Yanzhou, Wenzhou and Chuzhou, and in Jiangxi the prefectures Nanchang, Ruizhou, Raozhou, Fuzhou, Jianchang, Ji'an, Nan'an, Linjiang, Ganzhou, Nankang, Jiujiang and Guangxin, and in Fujian the prefectures Fuzhou, Quanzhou, Xinghua, Funing department, Shaowu, Yanping, Jianning, Tingzhou and Zhangzhou, and in Guangdong the lands of Guangzhou, Nanxiong, Huizhou, Chaozhou, Zhaoqing, Gaozhou and Qiongzhou.", "If the Self belongs to Yin, it is the Gen palace and the region of the two lunar mansions Wei (Tail) and Ji, that is, today, the prefectures of the northern capital Shuntian, Changping, Yongping, Baoding and Hejian, and the lands of Liaodong, Shenyang and elsewhere.", "If the Self belongs to Mao, it is the Zhen palace and the region of the three lunar mansions Di, Fang and Xin, that is, today, the land of Xuzhou and Huai'an in the southern capital region.", "If the Self belongs to Chen, it is the Xun palace and the region of the two lunar mansions Jiao and Kang, that is, today, the land of Yanzhou prefecture in Shandong.", "If the Self belongs to Si, it is the Xun palace and the region of the two lunar mansions Yi and Zhen, that is, today, the prefectures of Huguang Jingzhou, Yuezhou, Changsha, Baoqing, Chenzhou, Changde, Hengzhou, Yongzhou, Wuchang, Huangzhou and Chengtian; Kuizhou prefecture in Sichuan; Guizhou, Tongren and Liping prefecture; Lianzhou prefecture in Guangdong; and in Guangxi the prefectures Guilin, Wuzhou, Xunzhou, Nanning, Taiping, Siming, Liuzhou, Qingyuan, Si'en and Zhen'an.", "If the Self belongs to Wu, it is the Li palace and the region of the three lunar mansions Liu, Xing and Zhang, that is, today, Henan prefecture and Nanyang prefecture in Henan, and the three prefectures Yunyang, Xiangyang and De'an in Huguang.", "If the Self belongs to Wei, it is the Kun palace and the region of the two lunar mansions Jing and Gui, that is, today, in Shaanxi the prefectures Xi'an, Hanzhong, Fengxiang, Pingliang, Lintao, Gongchang, Qingyang and Yan'an, and Ganzhou, Tongguan, Yulin, Ningxia, Gansu and other places; in Sichuan the prefectures Chengdu, Long'an, Shunqing, Baoning, Chongqing, Xuzhou and Mahu, and Luzhou, Jiadingzhou, Maozhou, Meizhou, Yazhou and other places; in Yunnan the prefectures Yunnan, Lin'an, Guangxi, Chuxiong, Yao'an, Wuding, Jingdong, Shunning, Dali, Menghua, Yongning and Yongchang, and Beishengzhou, Yunzhou, Lijiang prefecture and Heqing prefecture; and in Guizhou the prefectures Guiyang, Duyun, Sizhou, Shiqian and Tongren.", "If the Self belongs to Shen, it is the Kun palace and the region of the three lunar mansions Bi, Zi and Shen, that is, today, in Shanxi the lands of Taiyuan, Pingyang, Lu'an prefecture, Qinzhou, Zezhou, Fenzhou and Zhazhou.", "If the Self belongs to You, it is the Dui palace and the region of the two lunar mansions Wei (Stomach) and Mao, that is, today, the two prefectures Zhending and Shunde in the northern metropolitan region and Datong prefecture in Shanxi.", "If the Self belongs to Xu, it is the Qian palace and the region of the two lunar mansions Kui and Lou, that is, today, the two prefectures Fengyang and Luzhou in the southern capital region, and the land of Xuzhou.", "If the Self belongs to Hai, it is the Qian palace and the region of the two lunar mansions Shi and Bi, that is, today, the prefectures Kaifeng, Zhangde, Weihui, Huaiqing and Runing in Henan and Daming prefecture in the northern metropolitan region."] }
+      ],
+      "note": {
+        "yi": "这是明代的府州名，按分野（把天上二十八宿对应地上区域）排的。原文有几处地名和星宿名像是形近误字，译文照原文拼写，不改：卫州（浙江的一府，应是衢州）、河涧（应是河间）、氏（应是氐宿）、虁州（夔州）、卢州（一处在四川，一处在南京，应分别是泸州和庐州）、卯州、渣州、胃昂（应是胃昴）、室璧（应是室壁）。「北直」是北直隶，「南京」指南直隶。",
+        "en": "These are Ming prefecture and department names arranged by 'fenye', the matching of the twenty-eight lunar mansions in the sky to regions of the earth. Several place and mansion names in the text look like miscopied look-alike characters, and the translation follows the spelling in the text without emending: Weizhou (a Zhejiang prefecture, presumably Quzhou), Hejian, 'Shi' for the mansion Di, Kuizhou, Luzhou (once in Sichuan and once in the southern capital region, presumably Luzhou and Luzhou with different characters), Maozhou, Zhazhou, 'Ang' for the mansion Mao and 'Bi' for the mansion Bi (Wall). 'Beizhi' is the northern metropolitan region and 'Nanjing' the southern one."
+      },
+      "see": ["LY.CAREER.YY.11", "LY.CAREER.ZS.08", "LY.CAREER.ZS.56"]
+    },
+    {
+      "id": "LY.CAREER.YY.13",
+      "topic": "任所",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·赴任：分爻值旺相而逢生合者吉，遇鬼值空而被刑害克破者必有灾难；世为官、应为任所：世克应道途无阻，应克世到任不利，世生应因官耗损，应生世因官进益；世空必有灾难，陆行忧跌扑舟行忧风浪",
+      "rule": {
+        "yi": "赴任：对应的那一爻旺相又逢生合的，吉；遇上官鬼、落空，又被刑、害、克、破的，必有灾难。又，世爻是做官的人，应爻是任所：世克应，路上没有阻碍；应克世，到任不利；世生应，因为做官而耗损；应生世，因为做官而得益。世爻落空必有灾难：走陆路担心跌伤，走水路担心风浪；如果是旺相的空，只是生病而已，或者得到日辰、动爻来冲克，才大概能免于灾咎。",
+        "en": "Going to the post: the matching line is auspicious when it is thriving and meets generation or combination; if it meets Pressure and is Void, and is punished, harmed, controlled or broken, there will surely be disaster. Again, the Self is the official and the Other is the post: if the Self controls the Other the road is unobstructed; if the Other controls the Self, taking up the post is unfavourable; if the Self generates the Other, one is drained because of the office; if the Other generates the Self, one gains because of the office. A Void Self means disaster: going by land fear a fall, by water fear wind and waves; if it is a thriving Void it is only illness, or if the Day or a moving line comes to clash with or control it one may perhaps escape blame."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2631, 2636],
+          "zh": ["鬼谷分爻", "任所道路宾师车马家眷伴侣行李", "分爻值旺相而逢生合者吉，遇鬼值空，而被刑害克破者，必有灾难也。", "又世为官，应为任所。", "世克应，道途无阻。", "应克世，到任不利。", "世生应，因官耗损。", "应生世，因官进益也。", "世空必有灾难。", "陆行忧跌扑，舟行忧风浪。", "若旺空，惟病而已，或得日辰动爻来冲克，庶几免咎也。"],
+          "yi": ["鬼谷分爻（表）：", "任所、道路、宾师车马、家眷伴侣行李。", "对应的那一爻旺相又逢到生合的，吉；遇上官鬼、落空，又被刑、害、克、破的，必定有灾难。", "又，世爻是做官的人，应爻是任所。", "世克应，路上没有阻碍。", "应爻克世爻，到任上不顺利。", "世生应，因为做官而耗损。", "应生世，因为做官而得益。", "世爻落空，必有灾难。", "走陆路担心跌伤，走水路担心风浪。", "如果是旺相的空，只是生病而已；或者得到日辰、动爻来冲克，才大概能免于灾咎。"],
+          "en": ["Guigu's division of the lines (table):", "the post, the road, guests and teachers with carts and horses, family and companions and baggage.", "The matching line is auspicious when it is thriving and meets generation or combination; if it meets Pressure and is Void, and is punished, harmed, controlled or broken, there will surely be disaster.", "Again, the Self is the official and the Other is the post.", "If the Self controls the Other, the road is unobstructed.", "If the Other controls the Self, taking up the post is unfavourable.", "If the Self generates the Other, one is drained because of the office.", "If the Other generates the Self, one gains because of the office.", "If the Self is Void, there will surely be disaster.", "Going by land, fear a fall; going by water, fear wind and waves.", "If it is a thriving Void it is only illness, or if the Day or a moving line comes to clash with or control it, one may perhaps escape blame."] }
+      ],
+      "note": {
+        "yi": "表里的名目是「任所、道路、宾师车马、家眷伴侣行李」，书里没有写各是哪一爻，读法同 YY.02：从上爻写到初爻。「宾师」是随行的幕宾和师爷。",
+        "en": "The items in the table are 'the post, the road, guests and teachers with carts and horses, family and companions and baggage', and the book does not say which line each belongs to; it is read as in YY.02, from the top line down to the first. 'Binshi' are the guests and secretaries who accompany the official."
+      },
+      "see": ["LY.CAREER.YY.12", "LY.CAREER.YY.14", "LY.CAREER.YY.02"]
+    }
+  ]
+}

@@ -37,8 +37,10 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 // cannot be used to quietly hide a leak from the scan.
 const DEV_DIRS = ['functions/', 'eval/', 'tests/', 'scripts/', 'copywriting/', 'artifacts/'];
 
-const tracked = execFileSync('git', ['-C', ROOT, 'ls-files'], { encoding: 'utf8' })
-  .split('\n')
+// -z 不转义、不加引号,并放宽 1 MiB 的输出上限:古籍断法库每条规则一个中文文件名,
+// 默认写法的输出会越过上限抛 ENOBUFS,带引号的路径也不再以 functions/ 开头(见 doctrine-pack.mjs)。
+const tracked = execFileSync('git', ['-C', ROOT, 'ls-files', '-z'], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 })
+  .split('\0')
   .filter(Boolean)
   .filter((f) => !DEV_DIRS.some((d) => f.startsWith(d)));
 

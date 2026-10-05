@@ -4,21 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(167 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(255 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 6 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 22 |
+| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 8 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 30 |
 | 动变 | Moving lines and what they turn into | 2 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 7 |
-| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 30 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 5 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 13 |
+| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 33 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 14 |
 | 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 6 |
-| 军旅 | Soldiers, campaigns and military posts | 29 |
-| 国朝 | The court and the state: ruler, ministers, the realm | 24 |
-| 取象 | Reading the images: what kind of post, which office, which place | 11 |
-| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 25 |
+| 军旅 | Soldiers, campaigns and military posts | 50 |
+| 国朝 | The court and the state: ruler, ministers, the realm | 42 |
+| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 2 |
+| 应期 | Timing: when the post comes, changes or ends | 8 |
+| 取象 | Reading the images: what kind of post, which office, which place | 19 |
+| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 28 |
 
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
@@ -76,7 +78,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: colour, direction and kind of person or spirit | 8 |
 | 风险 | Warnings: what to guard against | 27 |
 
-## 打架 · Where the classics disagree(169 条)
+## 打架 · Where the classics disagree(170 条)
 
 - **LY.CAREER.HJC.12 仕宦·日辰冲克，定然诽谤之多招（旧注：日辰刑冲克世必招诽谤，依五类推：带兄弟贪贿赂或征科太急、带财无调度、带子孙嗜酒好游、带父母事繁剧、带官鬼酷刑或同僚不和；世临月建则无害）**(`chapters/六爻/事业/风险.md`):「带兄弟」那一类，两家说得不一样：旧注说带兄弟是贪图贿赂、征税太急，而把「嗜酒好游，疏于政事」归给子孙；王洪绪却说带兄弟是「贪酒好游，疏于政事」，而且他只列了兄弟、父母、官鬼三类，没有提财爻和子孙。书里没有裁决。
   On what carrying Peer means, the two commentators differ: the old commentary says that with Peer it is greed for bribes and over-hasty tax collecting and gives 'fondness for wine and wandering and neglect of government' to Output, while Wang Hongxu says that with Peer it is 'greed for drink and wandering and neglect of the business of government', and lists only three kinds, Peer, Resource and Pressure, saying nothing of Wealth or Output. The books do not decide.
@@ -96,6 +98,8 @@ What is in the library and where; entries where the classics disagree are listed
   The old commentary says 'when a Qian-palace hexagram turns into a Xun-palace hexagram, the whole image is auspicious'; the Bu Shi Zheng Zong writes 'the whole image is bad, but if there is an auspicious star'. One says the image itself is good, the other that the image is bad and only an auspicious star makes it work. The books do not decide which is right.
 - **LY.CAREER.HJC.89 征战·木兴扶世，济川宜驾乎轻舟；火旺生身，立寨必安于胜地（旧注：木为舟楫，动来生扶世身，或水爻与子孙动，宜乘舟决战；火为营寨，旺动生扶世身，结寨必得形胜之地）**(`chapters/六爻/事业/军旅.md`):舟是木还是水，两本不一样：卜筮大全的经文是「木兴扶世」，旧注先说「木为舟楫」、又说「水爻与子孙动」；卜筮正宗正文写成「水兴扶世」，注里只说水。
   The two books differ on whether the boat is Wood or Water: the verse in the Bu Shi Da Quan reads 'Wood thriving supports the Self', and the old commentary says first 'Wood is boats and oars' and then 'a Water line and Output move'; the main text of the Bu Shi Zheng Zong reads 'Water thriving supports the Self', and its note speaks only of Water.
+- **LY.CAREER.YY.20 官禄占·在任（七）：游魂化归魂宜致仕；世空杀动宜避罪；世持官加大杀动、鬼带亡劫动伤衰世、世身命爻俱空死墓绝者皆死于任所**(`chapters/六爻/事业/风险.md`):「世空杀动」宜避罪，是黄金策仕宦章「身空杀动，避祸之征」（HJC.16）一路的说法；增删卜易（ZS.43）明说这样断不对：忌神发动而世爻落空，等到世爻出空的月份日子，必定遭它的害，怎么能避开。易隐这里没有给理由，也没有提出空的那一天。
+  'The Self Void and a baleful spirit moving: evade a charge' is the same line of saying as the Huangjin Ce's 'Body Void and baleful spirit moving, a sign of avoiding misfortune' (HJC.16); the Zengshan Buyi (ZS.43) says plainly that this is wrong to judge so: when the Adversary moves and the Self is Void, the month or day when the Self leaves Void will surely bring its harm, so how could one avoid it. The Yi Yin gives no reason here and does not mention the day of leaving Void.
 - **LY.CAREER.ZS.06 升选候补·随官入墓，世旺者官升；助鬼伤身，身衰者祸至（古以随官入墓、助鬼伤世为凶，作者屡试：世旺反升、世衰不吉，助鬼伤身而元神同动者官必升，世休囚必有祸）**(`chapters/六爻/事业/动变.md`):古人把「随官入墓」「助鬼伤世」都当作凶；增删卜易说自己多次试验，世爻旺的反而升官，元神同时发动的官必升，只有世爻休囚才有祸。这是作者对古说的修正，不是两本书的分歧。
   The ancients took 'following the star of office into the tomb' and 'helping Pressure to injure the Self' as ominous; the Zeng Shan Bu Yi says that after many tests the man whose Self was thriving was promoted instead, that where the Support moves at the same time the office is surely raised, and that only a resting or trapped Self brings disaster. This is the author's correction of the old teaching, not a disagreement between two books.
 - **LY.CAREER.ZS.43 防参劾·世陷逢生，煞兴何碍（古说「身空煞动，避祸之征」作者以为非：忌神动而世空，待世出空之月日必遭其害，何能避；唯世空逢元神动而相生，忌神动亦无碍）**(`chapters/六爻/事业/风险.md`):黄金策仕宦章说「身空杀动，避祸之征」（LY.CAREER.HJC.16），旧注解作鬼发动被月日岁君伤克，是避祸脱灾；增删卜易引了「身空煞动，避祸之征」，明说「余以为非也」，理由是世爻出空之日必遭其害。

@@ -90,8 +90,11 @@ assert.ok(bound >= 31, `只接上 ${bound} 条(应 ≥ 31)—— 接线退步了
    ⚠️ 量的是 git 跟踪的东西。部署就是一次 checkout,本地未跟踪的文件永远到不了
    生产 —— 反过来,扫工作树会让一个**已跟踪的泄漏**在本地缺失时通过。
    prompt-secrecy.mjs 为同一件事写过同一条。 */
-const tracked = execFileSync("git", ["-C", ROOT, "ls-files"], { encoding: "utf8" })
-  .split("\n").filter(Boolean);
+// ⚠️ 古籍断法库每条规则一个文件、文件名是中文:默认的 `ls-files` 把非 ASCII 字节转义成
+// "\346\225…" 并加引号,输出越过 execFileSync 默认的 1 MiB 上限就抛 ENOBUFS(整条检查崩掉,
+// 而不是红),带引号的路径也不再以 functions/ 开头。用 -z(不转义、不加引号)并放宽上限。
+const tracked = execFileSync("git", ["-C", ROOT, "ls-files", "-z"], { encoding: "utf8", maxBuffer: 256 * 1024 * 1024 })
+  .split("\0").filter(Boolean);
 assert.ok(tracked.length > 50, `git ls-files 只回了 ${tracked.length} 个 —— 这条检查在空转`);
 const packFiles = tracked.filter((p) => /pack-20260914/.test(p));
 assert.ok(packFiles.length >= 9, `包里只有 ${packFiles.length} 个文件被跟踪(应 ≥ 9)`);

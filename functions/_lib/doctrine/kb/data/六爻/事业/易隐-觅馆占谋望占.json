@@ -1,0 +1,234 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易隐",
+  "chapter": "觅馆占 谋望占",
+  "chapter_en": "Seeking a teaching post and divining a scheme",
+  "ranges": {"易隐": [2516, 2848]},
+  "units": [
+    {
+      "id": "LY.CAREER.YY.79",
+      "topic": "求职",
+      "chapter": "附觅馆占",
+      "chapter_en": "Appendix: seeking a teaching post",
+      "title": "觅馆占·六亲取象：世为己、应为东主，父为书馆、子为生徒、财为束修、鬼为荐人、兄为谋夺之人；世应父空绝无馆，父值墓胎无好馆，财空墓绝胎修薄，子空墓绝胎徒少，鬼空墓绝胎无荐人，兄空墓绝胎无谋夺人",
+      "rule": {
+        "yi": "觅馆（找教书的馆），六亲的取象：世爻是自己，应爻是东家；父爻是书馆，子孙是学生，财爻是束修（馆金），官鬼是推荐人，兄弟是谋夺（这个馆）的人。世爻、应爻、父爻落空、绝的，没有馆；父爻值墓、胎，没有好馆；财爻空、墓、绝、胎的，束修菲薄；子孙空、墓、绝、胎的，学生少；官鬼空、墓、绝、胎的，没有推荐人；兄弟空、墓、绝、胎的，没有人来谋夺。",
+        "en": "Seeking a teaching post, the images of the six kin. The Self is oneself and the Other is the host; the Resource line is the schoolroom, Output the pupils, Wealth the fee, Pressure the one who recommends, and Peer the one who schemes to take the post. If the Self, the Other and the Resource line are Void or extinct, there is no post; if Resource meets tomb or womb, there is no good post; if Wealth is Void, in tomb, extinct or in womb, the fee is slight; if Output is Void, in tomb, extinct or in womb, the pupils are few; if Pressure is Void, in tomb, extinct or in womb, there is no one to recommend; if Peer is Void, in tomb, extinct or in womb, there is no one to scheme for the post."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2518, 2521],
+          "zh": ["世为己，应为东主。", "父为书馆，子为生徒。", "财为东修，鬼为荐人。", "兄为谋夺之人。", "世爻应爻父爻空绝者，无馆。", "父值墓胎，无好馆。", "财空墓绝胎者，修薄。", "子空墓绝胎者，徒少。", "鬼空墓绝胎者，无荐人。", "兄空墓绝胎者，无谋夺人也。"],
+          "yi": ["世爻是自己，应爻是东家。", "父爻是书馆，子孙是学生。", "财爻是束修（馆金），官鬼是推荐人。", "兄弟是谋夺（这个馆）的人。", "世爻、应爻、父爻落空、绝的，没有馆。", "父爻值墓、胎，没有好馆。", "财爻空、墓、绝、胎的，束修菲薄。", "子孙空、墓、绝、胎的，学生少。", "官鬼空、墓、绝、胎的，没有推荐人。", "兄弟空、墓、绝、胎的，没有人来谋夺。"],
+          "en": ["The Self is oneself and the Other is the host.", "The Resource line is the schoolroom and Output is the pupils.", "Wealth is the fee, and Pressure is the one who recommends.", "Peer is the one who schemes to take the post.", "If the Self, the Other and the Resource line are Void or extinct, there is no post.", "If Resource meets tomb or womb, there is no good post.", "If Wealth is Void, in tomb, extinct or in womb, the fee is slight.", "If Output is Void, in tomb, extinct or in womb, the pupils are few.", "If Pressure is Void, in tomb, extinct or in womb, there is no one to recommend.", "If Peer is Void, in tomb, extinct or in womb, there is no one to scheme for the post."] }
+      ],
+      "note": {
+        "yi": "「修」「脩」都是束脩，即教书先生的酬金。这一节的取象和黄金策求馆章（HJC.29–38）几乎相同，只是黄金策以世爻为西席、应爻为东家，这里世爻是「己」。「东修」按字面是东家给的束修。",
+        "en": "'Xiu' and 'xiu' are both the tuition fee, the teacher's pay. The images in this section are nearly the same as those in the Huangjin Ce chapter on seeking a teaching post (HJC.29-38), the difference being that the Huangjin Ce takes the Self as the teacher's seat and the Other as the host, while here the Self is 'oneself'. 'Dongxiu' is by the letter the fee given by the host."
+      },
+      "see": ["LY.CAREER.YY.80", "LY.CAREER.HJC.29", "LY.CAREER.HJC.30", "LY.CAREER.HJC.34", "LY.CAREER.HJC.35"]
+    },
+    {
+      "id": "LY.CAREER.YY.80",
+      "topic": "求职",
+      "chapter": "附觅馆占",
+      "chapter_en": "Appendix: seeking a teaching post",
+      "title": "觅馆占·卦象与进退：游魂宜别图，归魂宜仍旧；六冲无馆、六合有馆，合逢冲被人破，合变冲初允终拒；官加贵三合世应贵人荐；兄动克世有人争夺；财动化兄荐人分修；世动化鬼央人转荐；鬼动化兄先索谢仪；子合逢冲聚而复散；子衰得助徒少后增",
+      "rule": {
+        "yi": "觅馆，卦象和进退：游魂卦，宜另作打算；归魂卦，宜仍留旧馆；六冲卦没有馆，六合卦有馆；六合卦遇冲的，被人破坏；六合变六冲的，起初应承、最后拒绝。官星加贵人三合世爻、应爻的，有贵人推荐；兄弟发动克世爻的，有人争夺；财爻发动变兄弟的，推荐的人要分走束修；世爻发动变官鬼的，要央求别人转荐；官鬼发动变兄弟的，推荐人先索要谢礼；子孙爻合而遇冲的，学生聚了又散；子孙衰弱而得到帮助的，学生起初少、后来增多。",
+        "en": "Seeking a teaching post, the hexagram and advance or retreat. In a Wandering Soul hexagram it is fit to look elsewhere; in a Returning Soul hexagram, to stay in the old post; a six-clash hexagram has no post and a six-combine hexagram has one; a six-combine meeting a clash is broken by someone; a six-combine changing into a clash is agreed at first and refused in the end. If the star of office with the Noble forms a three-harmony with the Self and Other, a patron recommends; if Peer moves to control the Self, someone contends for the post; if Wealth moves and turns into Peer, the one who recommends takes a share of the fee; if the Self moves and turns into Pressure, one must ask another to pass it on; if Pressure moves and turns into Peer, the recommender first demands a gift of thanks; if Output combines and meets a clash, the pupils gather and then scatter; if Output is weak but helped, the pupils are few at first and grow later."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2518, 2521],
+          "zh": ["游魂卦，宜别图。", "归魂卦，宜仍旧。", "六冲卦无馆，六合卦有馆。", "合逢冲者，被人破。", "合变冲者，初尤而终拒也。", "官加贵三合世应者，贵人荐也。", "兄动克世者，有人争夺。", "财动化兄者，荐人分脩。", "世动化鬼者，凂人转荐。", "鬼动化兄者，先索谢仪。", "子合逢冲者，从聚复散。", "子衰得助者，徒少后增也。"],
+          "yi": ["游魂卦，宜另作打算。", "归魂卦，宜仍留旧馆。", "六冲卦没有馆，六合卦有馆。", "六合卦遇冲的，被人破坏。", "六合变六冲的，起初应承、最后拒绝。", "官星加贵人三合世爻、应爻的，有贵人推荐。", "兄弟发动克世爻的，有人争夺。", "财爻发动变兄弟的，推荐的人要分走束修。", "世爻发动变官鬼的，要央求别人转荐。", "官鬼发动变兄弟的，推荐人先索要谢礼。", "子孙爻合而遇冲的，学生聚了又散。", "子孙衰弱而得到帮助的，学生起初少、后来增多。"],
+          "en": ["In a Wandering Soul hexagram it is fit to look elsewhere.", "In a Returning Soul hexagram, it is fit to stay in the old post.", "A six-clash hexagram has no post and a six-combine hexagram has one.", "A six-combine meeting a clash is broken by someone.", "A six-combine changing into a clash is agreed at first and refused in the end.", "If the star of office with the Noble forms a three-harmony with the Self and Other, a patron recommends.", "If Peer moves to control the Self, someone contends for the post.", "If Wealth moves and turns into Peer, the one who recommends takes a share of the fee.", "If the Self moves and turns into Pressure, one must ask another to pass the recommendation on.", "If Pressure moves and turns into Peer, the recommender first demands a gift of thanks.", "If Output combines and meets a clash, the pupils gather and then scatter.", "If Output is weak but helped, the pupils are few at first and grow later."] }
+      ],
+      "note": {
+        "yi": "第五句「合变冲者，初尤而终拒也」的「尤」疑是「允」，译文按「起初应承」译。「凂人」是央求别人。「合」在这里指六合卦，「合逢冲」是六合卦被日月或动爻冲，「合变冲」是六合卦变成六冲卦。「官加贵三合世应」按字面是官星加贵人，与世、应形成三合。",
+        "en": "In the fifth sentence the 'you' of 'chu you er zhong ju' is presumably 'yun', agree, and the translation reads 'agreed at first'. 'Mei ren' is begging another. 'Combine' here means a six-combine hexagram: 'combine meeting a clash' is a six-combine hexagram clashed by the Month, Day or a moving line, and 'combine changing into a clash' is a six-combine turning into a six-clash. 'The star of office with the Noble in a three-harmony with the Self and Other' is by the letter the star of office carrying the Noble and forming a three-harmony with the Self and Other."
+      },
+      "see": ["LY.CAREER.YY.79", "LY.CAREER.YY.81", "LY.CAREER.HJC.36", "LY.CAREER.HJC.37", "LY.CAREER.HJC.44", "LY.CAREER.HJC.45"]
+    },
+    {
+      "id": "LY.CAREER.YY.81",
+      "topic": "应期",
+      "chapter": "附觅馆占",
+      "chapter_en": "Appendix: seeking a teaching post",
+      "title": "觅馆占·关约何日来：以父母为用；卦无父死值之日来，父旺合日来，父衰生旺日来，父空墓逢冲之日来；又父生世合世之日亦可成关得关",
+      "rule": {
+        "yi": "想知道聘书（关约）什么时候来：以父母爻为用神。卦里没有父爻的，在（父爻）死、当值的日子来；父母爻旺相的，在合它的日子来；衰弱的，在它生旺的日子来；空、墓的，在冲它的日子来。又，父母爻生世爻、合世爻的日子，也可以成关、得到聘约。",
+        "en": "To know when the engagement (contract) will come: take Resource as the Subject. If the hexagram has no Resource line, it comes on the day it dies and rules; if Resource is thriving, on the day that combines with it; if weak, on the day it is born or thriving; if Void or in tomb, on the day that clashes with it. Again, on the day Resource generates or combines with the Self, the engagement can also be made and obtained."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2518, 2521],
+          "zh": ["欲知关约之来，以父母为用也。", "卦无父者，死值之日来。", "父母旺，则合日来。", "父母衰，则生旺日来。", "父母空墓，逢冲之日来。", "又父母生世合世之日，亦可成关得关也。"],
+          "yi": ["想知道聘书（关约）什么时候来，以父母爻为用神。", "卦里没有父爻的，在（父爻）死、当值的日子来。", "父母爻旺相的，在合它的日子来。", "父母爻衰弱的，在它生旺的日子来。", "父母爻空、墓的，在冲它的日子来。", "又，父母爻生世爻、合世爻的日子，也可以成关、得到聘约。"],
+          "en": ["To know when the engagement contract will come, take Resource as the Subject.", "If the hexagram has no Resource line, it comes on the day when it dies and rules.", "If Resource is thriving, it comes on the day that combines with it.", "If Resource is weak, it comes on the day when it is born or thriving.", "If Resource is Void or in tomb, it comes on the day that clashes with it.", "Again, on the day Resource generates or combines with the Self, the engagement can also be made and obtained."] }
+      ],
+      "note": {
+        "yi": "「关约」是聘请教书先生的聘书（关书）。「成关得关」是定下聘约、得到聘约。第二句「死值之日」书里没有解释，按字面是父爻在十二长生里「死」而又当值的日子，疑是「伏值」之误（无父即伏藏，待它当值的日子来，和 YY.72 文书伏藏「待文书临值之月日」同理），译文照字面译。",
+        "en": "'Guanyue' is the engagement letter (guanshu) hiring a private teacher. 'Cheng guan de guan' is settling and obtaining the engagement. The 'day of death and ruling' in the second sentence is not explained in the book; by the letter it is a day on which the Resource line is in its 'death' stage and also rules, and it is presumably a slip for 'hidden and ruling' (with no Resource line it lies hidden and waits for the day it rules, as for a hidden document in YY.72, 'wait for the month or day when the document rules'); the translation follows the letter."
+      },
+      "see": ["LY.CAREER.YY.80", "LY.CAREER.YY.72", "LY.CAREER.HJC.35"]
+    },
+    {
+      "id": "LY.CAREER.YY.82",
+      "topic": "总则",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占总述（游南子）与鬼谷分爻：欲为而不敢遽为则有谋，欲得而不可必得则有望；先占可否、再占成败、三占迟速；分爻国事官事人事家事身事心事",
+      "rule": {
+        "yi": "谋望占总述：想做一件事又不敢马上去做，就有了谋；想得到又不能一定得到，就有了望。所以先占它行不行，既然行了，再占它成不成，既然成了，再占它是快是慢，大致就是这些。分爻是：国事、官事、人事、家事、身事、心事。",
+        "en": "Overview of divining a scheme. When one wants to do a thing and does not dare to do it at once, there is a scheme; when one wants to get a thing and cannot be sure of getting it, there is a hope. So first divine whether it is feasible; once feasible, whether it will succeed; once successful, whether it will be slow or fast; that is the general outline. The division of the lines: affairs of state, official affairs, affairs of others, family affairs, personal affairs and affairs of the heart."
+      },
+      "quotes": [
+        { "by": "游南子", "book": "易隐", "range": [2832, 2832],
+          "zh": ["游南子曰，凡人欲为而不敢遽为，则有谋。", "欲得而不可必得，则有望。", "故始焉占其可否，既可矣。", "占其成败，既成矣。", "占其迟速，此大都也。"],
+          "yi": ["游南子说：人想做一件事又不敢马上去做，就有了谋。", "想得到又不能一定得到，就有了望。", "所以起初先占它行不行，既然行了，", "再占它成不成，既然成了，", "再占它是快是慢，大致就是这些。"],
+          "en": ["Master Younan says: when a man wants to do a thing and does not dare to do it at once, there is a scheme.", "When he wants to get a thing and cannot be sure of getting it, there is a hope.", "So first divine whether it is feasible; once it is feasible,", "divine whether it will succeed; once it has succeeded,", "divine whether it will be slow or fast; that is the general outline."] },
+        { "by": "经", "book": "易隐", "range": [2834, 2836],
+          "zh": ["鬼谷分爻", "国事官事人事家事身事心事"],
+          "yi": ["鬼谷分爻（表）：", "国事、官事、人事、家事、身事、心事。"],
+          "en": ["Guigu's division of the lines (table):", "affairs of state, official affairs, affairs of others, family affairs, personal affairs, affairs of the heart."] }
+      ],
+      "note": {
+        "yi": "表里六个名目没有写各是哪一爻，读法同 YY.02：从上爻写到初爻，即上爻国事、五爻官事、四爻人事、三爻家事、二爻身事、初爻心事。这是读法，不是书里明写的。第三、四句在书里各自成句，但意思连着前一句，译文用分号接起来。",
+        "en": "The table does not say which line each of the six names belongs to, and it is read as in YY.02, from the top line down to the first: the top line affairs of state, the fifth official affairs, the fourth affairs of others, the third family affairs, the second personal affairs and the first affairs of the heart. This is a way of reading it and not something the book writes out. The third and fourth sentences stand each alone in the book but their sense runs on from the previous one, and the translation joins them with semicolons."
+      },
+      "see": ["LY.CAREER.YY.02", "LY.CAREER.YY.83"]
+    },
+    {
+      "id": "LY.CAREER.YY.83",
+      "topic": "成否",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占·可否成败（一）：以世应为主，内卦为谋事之人；内克外、世克应、外应生内世、内外世应俱旺相比和，事可图易就；月日合世应心虽不欲亦允成；间动鬼动生合世应得人劝成；谋官官旺生合世身而子衰静成、谋财财旺而兄衰静成、谋文书父旺而财衰静成；凡事嫌兄动，并贵禄生世则为吹嘘之人；凡事喜福动，求名忌之",
+      "rule": {
+        "yi": "谋事能不能成，以世爻、应爻为主，内卦是谋事的人。内卦克外卦、世爻克应爻，外卦、应爻生内卦、世爻，或者内外卦、世应都旺相比和的，事情可以谋，谋也容易成；月建、日辰合世、应的，对方心里虽然不愿意，也会答应成全；间爻、官鬼发动生合世、应的，有人劝说成全。谋官，逢官星旺相生合世身、子孙衰弱安静的，成；谋财，逢财爻旺相生合世身、兄弟衰弱安静的，成；谋文书，逢父爻旺相生合世身、财爻衰弱安静的，成。凡事都嫌兄弟发动，但如果兄弟带着贵人、禄一起生世爻，就是替你吹嘘推荐的人；凡事都喜欢福神发动，求名（功名）却忌讳它。这是可谋而成的占。",
+        "en": "Whether a scheme can succeed takes the Self and Other as the chief, and the inner trigram is the man who schemes. If the inner controls the outer, the Self controls the Other, the outer and the Other generate the inner and Self, or the inner and outer and the Self and Other are all thriving and in harmony, the matter can be planned and is easily done; if the Month and Day combine with the Self and Other, though the other side is unwilling at heart he will agree and see it through; if a line between or Pressure moves to generate or combine with the Self and Other, someone persuades him to see it through. Scheming for office, if the star of office is thriving and generates or combines with the Self and Body while Output is weak and still, it succeeds; scheming for wealth, if Wealth is thriving and generates or combines with the Self and Body while Peer is weak and still, it succeeds; scheming for a document, if Resource is thriving and generates or combines with the Self and Body while Wealth is weak and still, it succeeds. In everything a moving Peer line is disliked, but if it carries the Noble and Emolument and generates the Self, it is one who talks you up and recommends you; in everything the fortune spirit moving is liked, but in seeking fame it is avoided. This is the pattern of a scheme that can be planned and will succeed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2840, 2843],
+          "zh": ["以世应为主。", "内卦为谋事之人。", "内克外，世克应，外应生内世者，内外世应俱旺相比和者，事可图，图亦易就。", "月日合世应，心虽不欲，亦得允成。", "间动鬼动生合世应，得人劝成。", "谋官逢官旺生合世身，而子衰静者成。", "谋财逢财旺生合世身，而兄衰静者成。", "谋文书，逢父旺生合世身，而财衰静者成。", "凡事皆嫌兄动，若并贵禄生世，又为吹嘘之人。", "凡事皆喜福动，求名则忌之，此可谋而成之占也。"],
+          "yi": ["以世爻、应爻为主。", "内卦是谋事的人。", "内卦克外卦，世爻克应爻，外卦、应爻生内卦、世爻的，内外卦、世应都旺相比和的，事情可以谋，谋也容易成。", "月建、日辰合世、应的，对方心里虽然不愿意，也会答应成全。", "间爻、官鬼发动生合世、应的，有人劝说成全。", "谋官，逢官星旺相生合世身、子孙衰弱安静的，成。", "谋财，逢财爻旺相生合世身、兄弟衰弱安静的，成。", "谋文书，逢父爻旺相生合世身、财爻衰弱安静的，成。", "凡事都嫌兄弟发动；但如果兄弟带着贵人、禄一起生世爻，就是替你吹嘘推荐的人。", "凡事都喜欢福神发动，求名（功名）却忌讳它；这是可谋而成的占。"],
+          "en": ["Take the Self and Other as the chief.", "The inner trigram is the man who schemes.", "If the inner controls the outer, the Self controls the Other, the outer and the Other generate the inner and Self, or the inner and outer and the Self and Other are all thriving and in harmony, the matter can be planned and is easily done.", "If the Month and Day combine with the Self and Other, though the other side is unwilling at heart he will agree and see it through.", "If a line between or Pressure moves to generate or combine with the Self and Other, someone persuades him to see it through.", "Scheming for office, if the star of office is thriving and generates or combines with the Self and Body while Output is weak and still, it succeeds.", "Scheming for wealth, if Wealth is thriving and generates or combines with the Self and Body while Peer is weak and still, it succeeds.", "Scheming for a document, if Resource is thriving and generates or combines with the Self and Body while Wealth is weak and still, it succeeds.", "In everything a moving Peer line is disliked; but if it carries the Noble and Emolument and generates the Self, it is one who talks you up and recommends you.", "In everything the fortune spirit moving is liked, but in seeking fame it is avoided; this is the pattern of a scheme that can be planned and will succeed."] }
+      ],
+      "note": {
+        "yi": "「世身」是世爻和身爻，「内外世应」按字面是内卦、外卦、世爻、应爻。「吹嘘」是替人说好话、推荐。「福动」是子孙（福神）发动；求名忌子孙是因为子孙克官（见 HJC.03）。",
+        "en": "'Shishen' is the Self and the Body line; 'inner, outer, Self, Other' is by the letter the inner trigram, the outer trigram, the Self and the Other. 'Chuixu' is speaking well of someone, recommending him. 'The fortune spirit moves' is Output moving; Output is avoided in seeking fame because Output controls the star of office (see HJC.03)."
+      },
+      "see": ["LY.CAREER.YY.82", "LY.CAREER.YY.84", "LY.CAREER.HJC.03", "LY.CAREER.HJC.04"]
+    },
+    {
+      "id": "LY.CAREER.YY.84",
+      "topic": "成否",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占·可否成败（二）：内外世应身爻逢空死墓绝胎被刑害克破、卦六冲、世应俱动、外克内应克世、鬼兄临间爻带隔神退神退悔杀动，俱不可谋；合中犯刑害克破恩中变怨成而后毁；用神不上卦或空绝（求官无官爻、求财求文书无财印爻）谋不成；卦中无官及官空绝诸事不成；卦中无鬼伏谋事父动费力成",
+      "rule": {
+        "yi": "不可谋、难成的占：内外卦、世爻、应爻、身爻，逢空、死、墓、绝、胎，被刑、害、克、破的，或者卦是六冲，或者世、应都发动，或者外卦克内卦、应爻克世爻，或者官鬼、兄弟临在间爻、带隔神、退神、退悔杀发动的，都不可谋，谋也不成。又，合中犯了刑、害、克、破的，事情多半恩中生怨，成了之后又毁，虽然是自己的事，也被旁人阻隔。又，用神不上卦的（比如求官而卦里没有官爻、官爻空绝；求财、求文书而没有财爻、印爻，或财爻、印爻空绝），都谋不成。又凡是卦里没有官星，以及官星逢空、绝的，诸事不成。所以经书说：卦中没有官鬼、伏着的谋事，父爻发动，终究要费力才成。这是不可谋而难成的占。",
+        "en": "The pattern of a scheme that cannot be planned and is hard to complete. If the inner and outer trigrams, the Self, Other and Body meet Void, death, tomb, extinction or womb and are punished, harmed, controlled or broken, or the hexagram is a six-clash, or the Self and Other both move, or the outer controls the inner and the Other controls the Self, or Pressure or Peer sits on a line between carrying the obstructing spirit, the Retreating spirit or the regret baleful spirit and moves, none can be planned, and if planned will not succeed. Again, if within a combination there is punishment, harm, control or breaking, the matter often turns from favour to resentment, and is spoiled after succeeding, and though it is one's own matter it is blocked by others. Again, if the Subject does not appear on the board (as when seeking office there is no Pressure line, or Pressure is Void or extinct; seeking wealth or a document, there is no Wealth or seal line, or they are Void or extinct), the scheme will not succeed. Again, when the hexagram has no star of office, or the star of office is Void or extinct, nothing succeeds. So the classic says: if there is no Pressure in the hexagram and it lies hidden, in a scheme, with the Resource line moving, it is in the end completed only with effort. This is the pattern of a scheme that cannot be planned and is hard to complete."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2840, 2843],
+          "zh": ["若内外世应身爻，逢空死墓绝胎，被刑害克破者，或卦六冲者，或世应俱动者，或外克内，应克世者，或鬼兄临间爻带隔神退神退悔杀动者，俱不可谋，谋亦不成。", "又合中犯刑害克破者，事多恩中变怨，成而后毁，虽是已事，亦被旁人阻隔。", "又用神不上卦者，如求官无官爻，或官爻空绝。", "求财，求文书，无财印爻，或财印爻空绝，俱谋不成也。", "又凡卦中无官，与官逢空绝者，诸事不成。", "故经曰，卦中无鬼伏谋事，父动终当费力成也。", "此不可谋而难成之占也。"],
+          "yi": ["如果内外卦、世爻、应爻、身爻，逢空、死、墓、绝、胎，被刑、害、克、破的，或者卦是六冲，或者世、应都发动，或者外卦克内卦、应爻克世爻的，或者官鬼、兄弟临在间爻、带隔神、退神、退悔杀发动的，都不可谋，谋也不成。", "又，合中犯了刑、害、克、破的，事情多半恩中生怨，成了之后又毁，虽然是自己的事，也被旁人阻隔。", "又，用神不上卦的，比如求官而卦里没有官爻，或官爻空、绝；", "求财、求文书，没有财爻、印爻，或财爻、印爻空、绝，都谋不成。", "又凡是卦里没有官星，以及官星逢空、绝的，诸事不成。", "所以经书说：卦中没有官鬼、伏着的谋事，父爻发动，终究要费力才成。", "这是不可谋而难成的占。"],
+          "en": ["If the inner and outer trigrams, the Self, Other and Body meet Void, death, tomb, extinction or womb and are punished, harmed, controlled or broken, or the hexagram is a six-clash, or the Self and Other both move, or the outer controls the inner and the Other controls the Self, or Pressure or Peer sits on a line between carrying the obstructing spirit, the Retreating spirit or the regret baleful spirit and moves, none can be planned, and if planned will not succeed.", "Again, if within a combination there is punishment, harm, control or breaking, the matter often turns from favour to resentment, and is spoiled after succeeding, and though it is one's own matter it is blocked by others.", "Again, if the Subject does not appear on the board, as when seeking office there is no Pressure line, or the Pressure line is Void or extinct;", "seeking wealth or a document, there is no Wealth or seal line, or they are Void or extinct, the scheme will not succeed.", "Again, when the hexagram has no star of office, or the star of office meets Void or extinction, nothing succeeds.", "So the classic says: if there is no Pressure in the hexagram and it lies hidden, in a scheme, with the Resource line moving, it is in the end completed only with effort.", "This is the pattern of a scheme that cannot be planned and is hard to complete."] }
+      ],
+      "note": {
+        "yi": "「隔神」「退悔杀」是神煞，书里没有解释，译文照字面。「经曰」引的是另一部经书，书里没有说是哪一部，所以这句译文照字面，不指认出处；「卦中无鬼伏谋事」这句字面不太通，译文按「卦中没有官鬼，而官鬼伏藏时谋事」译。「用神」是占问时被拿来看这件事成败的那个爻。",
+        "en": "'Geshen' (the obstructing spirit) and 'tuihui sha' (the regret baleful spirit) are spirit-stars that the book does not explain, and the translation follows the letter. 'The classic says' quotes another classic, and the book does not say which, so the translation follows the letter and does not identify the source; the line 'gua zhong wu gui fu mou shi' does not run smoothly by the letter, and the translation reads it as 'when there is no Pressure in the hexagram and it lies hidden, in a scheme'. The 'Subject' is the line taken as the matter asked about."
+      },
+      "see": ["LY.CAREER.YY.83", "LY.CAREER.YY.85", "LY.CAREER.HJC.06", "LY.CAREER.ZS.02"]
+    },
+    {
+      "id": "LY.CAREER.YY.85",
+      "topic": "成否",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占·可否成败（三）：内外纯阳用爻旺相出现宜公不宜私，内外纯阴用爻休囚伏藏宜私不宜公；内生外世生应我去求人，外生内应生世人来就我；主卦冲变卦合、动克世变生世先难后易，主卦合变卦冲、动合世变刑世先易后难",
+      "rule": {
+        "yi": "谋事的几种格局：内外卦纯阳、用爻旺相出现的，适宜公事，不适宜私事；内外卦纯阴、用爻休囚伏藏的，适宜私事，不适宜公事。内卦生外卦、世爻生应爻，是我去求人；外卦生内卦、应爻生世爻，是人来就我。本卦冲而变卦合、发动克世爻而变出来生世爻的，先难后易；本卦合而变卦冲、发动合世爻而变出来刑世爻的，先易后难。",
+        "en": "Some patterns in a scheme. If the inner and outer trigrams are pure yang and the Subject line is thriving and appears, it is fit for a public matter and not a private one; if the inner and outer are pure yin and the Subject line is resting or trapped and hidden, it is fit for a private matter and not a public one. If the inner generates the outer and the Self generates the Other, I go to ask others; if the outer generates the inner and the Other generates the Self, others come to me. If the original hexagram clashes and the changed hexagram combines, or a moving line controls the Self and changes into one that generates the Self, it is hard at first and easy after; if the original hexagram combines and the changed hexagram clashes, or a moving line combines with the Self and changes into one that punishes the Self, it is easy at first and hard after."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2840, 2843],
+          "zh": ["然有宜公而不宜私者，内外纯阳，用爻旺相出现也。", "有宜私而不宜公者，内外纯阴，用爻休囚伏藏也。", "内生外，世生应，我去求人也。", "外生内，应生世，人来就我也。", "主卦冲而变卦合，动克世而变生世，先难后易也。", "主卦合而变卦冲，动合世而变刑世，先易后难也。"],
+          "yi": ["然而有适宜公事、不适宜私事的：内外卦纯阳，用爻旺相出现。", "有适宜私事、不适宜公事的：内外卦纯阴，用爻休囚伏藏。", "内卦生外卦、世爻生应爻，是我去求人。", "外卦生内卦、应爻生世爻，是人来就我。", "本卦冲而变卦合，发动克世爻而变出来生世爻的，先难后易。", "本卦合而变卦冲，发动合世爻而变出来刑世爻的，先易后难。"],
+          "en": ["Yet there is a pattern fit for a public matter and not a private one: the inner and outer trigrams are pure yang, and the Subject line is thriving and appears.", "There is a pattern fit for a private matter and not a public one: the inner and outer trigrams are pure yin, and the Subject line is resting or trapped and hidden.", "If the inner generates the outer and the Self generates the Other, I go to ask others.", "If the outer generates the inner and the Other generates the Self, others come to me.", "If the original hexagram clashes and the changed hexagram combines, or a moving line controls the Self and changes into one that generates the Self, it is hard at first and easy after.", "If the original hexagram combines and the changed hexagram clashes, or a moving line combines with the Self and changes into one that punishes the Self, it is easy at first and hard after."] }
+      ],
+      "note": {
+        "yi": "「宜公不宜私」「宜私不宜公」是看这件事该走公家的路还是私人的路：纯阳、用爻出现，是公开、光明的事；纯阴、用爻伏藏，是私下、隐秘的事。这一句书里没有解释理由，译文只照字面译。",
+        "en": "'Fit for the public and not the private' and 'fit for the private and not the public' ask whether the matter should take an official road or a private one: pure yang with the Subject line appearing is an open and bright matter, and pure yin with the Subject line hidden is a private and hidden one. The book gives no reason for this sentence, and the translation follows only the letter."
+      },
+      "see": ["LY.CAREER.YY.84", "LY.CAREER.YY.86"]
+    },
+    {
+      "id": "LY.CAREER.YY.86",
+      "topic": "成否",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占·可否成败（四）：成败于何人以六亲定——本宫内卦至亲、本宫外卦远亲、他宫内卦邻里、他宫外卦远方人，鬼加贵缙绅否则牙人保人媒人，八卦定其方；托人图事外人看应、家亲看用爻，应爻用爻犯日破月破旬空及空死墓绝胎无能赞襄，生旺化空死墓绝胎有始无终，冲克刑害世必怀欺，六冲终反目，虎损害蛇心变勾愚钝武诈欺雀多诳语，惟旺相带龙喜成神生合世身者赖其扶持",
+      "rule": {
+        "yi": "想知道事情成败在哪个人身上，就用六亲来定：本宫的内卦，是至亲；本宫的外卦，是远亲；他宫的内卦，是邻里；他宫的外卦，是远方的人；官鬼加贵人，是缙绅，否则是牙人、保人、媒人；想知道是哪个方向的人，用八卦来定。又有托人办事的，外人看应爻，亲人看用爻。凡应爻、用爻犯日破、月破、旬空的，都主受托的人没有能力帮忙，空、死、墓、绝、胎也一样；生旺而变成空、死、墓、绝、胎的，必有始无终；冲、克、刑、害世爻的，受托的人必定怀着欺骗，难以托付；六冲的卦，终究反目成仇。白虎发动的，损害；螣蛇发动的，变心；勾陈发动的，愚钝；玄武发动的，欺诈；朱雀旺相落空而发动的，多说谎话。只有旺相、带青龙、喜神、成神，发动来生合世爻、身爻的，才靠他扶持把事办成。",
+        "en": "To know through whom the matter succeeds or fails, fix it by the six kin: the inner trigram of the home palace is the nearest kin; the outer trigram of the home palace, distant kin; the inner trigram of another palace, neighbours; the outer trigram of another palace, men from afar; Pressure with the Noble is gentry, otherwise a broker, a guarantor or a go-between; the direction is fixed by the eight trigrams. If one entrusts someone with the matter, outsiders are seen through the Other and kin through the Subject line. Whenever the Other or the Subject line suffers Day-break, Month-break or decade Void, the man entrusted has no ability to help, and so too for Void, death, tomb, extinction and womb; if thriving and turning into Void, death, tomb, extinction or womb, there is a beginning without an end; if the Self is clashed, controlled, punished or harmed, the man entrusted surely harbours deceit and cannot be relied on; a six-clash hexagram ends in a falling out. If the Tiger moves, he does harm; the Snake, his heart changes; Hook Earth, he is dull; the Dark Tortoise, he cheats; the Bird thriving and Void and moving, he tells many lies. Only if he is thriving and carries the Dragon, Joy and the Completion spirit and moves to generate or combine with the Self and Body does one rely on his support to get the matter done."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2840, 2843],
+          "zh": ["欲知事成败于何人，则以六亲定之。", "本宫内卦，至亲也。", "本宫外卦，远亲也。", "他宫内卦，邻里也。", "他宫外卦，远方人也。", "鬼加贵，缙绅也，否则牙人保人媒人也。", "欲知何方人，以八卦定之。", "又有托人图事者，外人看应，家亲看用爻。", "凡应爻用爻犯日破月破旬空者，皆主无能赞勷，空死墓绝胎亦然。", "若生旺化空死墓绝胎，必有始无终。", "冲克刑害世者，必怀欺难托。", "六冲之卦，终成反目。", "虎动者损害，蛇动者心变，勾动者愚钝，武动者，诈欺，雀旺空动者，多诳语。", "惟旺相带龙喜成神，动来生合世身者，则赖其扶持以成事也。"],
+          "yi": ["想知道事情成败在哪个人身上，就用六亲来定。", "本宫的内卦，是至亲。", "本宫的外卦，是远亲。", "他宫的内卦，是邻里。", "他宫的外卦，是远方的人。", "官鬼加贵人，是缙绅，否则是牙人、保人、媒人。", "想知道是哪个方向的人，用八卦来定。", "又有托人办事的，外人看应爻，亲人看用爻。", "凡应爻、用爻犯日破、月破、旬空的，都主受托的人没有能力帮忙，空、死、墓、绝、胎也一样。", "生旺而变成空、死、墓、绝、胎的，必有始无终。", "冲、克、刑、害世爻的，受托的人必定怀着欺骗，难以托付。", "六冲的卦，终究反目成仇。", "白虎发动的，损害；螣蛇发动的，变心；勾陈发动的，愚钝；玄武发动的，欺诈；朱雀旺相落空而发动的，多说谎话。", "只有旺相、带青龙、喜神、成神，发动来生合世爻、身爻的，才靠他扶持把事办成。"],
+          "en": ["To know through whom the matter succeeds or fails, fix it by the six kin.", "The inner trigram of the home palace is the nearest kin.", "The outer trigram of the home palace is distant kin.", "The inner trigram of another palace is neighbours.", "The outer trigram of another palace is men from afar.", "Pressure with the Noble is gentry, otherwise a broker, a guarantor or a go-between.", "To know from which direction the man comes, fix it by the eight trigrams.", "Again, if one entrusts someone with the matter, outsiders are seen through the Other and kin through the Subject line.", "Whenever the Other or the Subject line suffers Day-break, Month-break or decade Void, the man entrusted has no ability to help, and so too for Void, death, tomb, extinction and womb.", "If thriving and turning into Void, death, tomb, extinction or womb, there is a beginning without an end.", "If the Self is clashed, controlled, punished or harmed, the man entrusted surely harbours deceit and cannot be relied on.", "A six-clash hexagram ends in a falling out.", "If the Tiger moves, he does harm; the Snake, his heart changes; Hook Earth, he is dull; the Dark Tortoise, he cheats; the Bird thriving and Void and moving, he tells many lies.", "Only if he is thriving and carries the Dragon, Joy and the Completion spirit and moves to generate or combine with the Self and Body does one rely on his support to get the matter done."] }
+      ],
+      "note": {
+        "yi": "「本宫」「他宫」指占得的这一卦所属的宫和别的宫（本宫是用爻或世爻所在的宫，书里没有展开，译文照字面）。「缙绅」是做官的人和乡绅；「牙人」是经纪，「保人」是担保的人，「媒人」是中间说合的人。「赞襄」是帮助。日破是被日辰冲的爻。「成神」书里没有解释，是神煞。「雀旺空动」按字面是朱雀旺相、落空、而发动。",
+        "en": "'Home palace' and 'another palace' mean the palace to which the hexagram cast belongs and other palaces (the book does not spell out whose palace the home palace is, and the translation follows the letter). 'Jinshen' are officials and country gentry; 'yaren' are brokers, 'baoren' guarantors, and 'meiren' go-betweens. 'Zanxiang' is helping. Day-break is a line clashed by the Day. 'Chengshen' (the Completion spirit) is a spirit-star that the book does not explain. 'Que wang kong dong' is by the letter the Vermilion Bird thriving, Void, and moving."
+      },
+      "see": ["LY.CAREER.YY.85", "LY.CAREER.YY.87", "LY.CAREER.HJC.36"]
+    },
+    {
+      "id": "LY.CAREER.YY.87",
+      "topic": "贵人",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占·可否成败（五）：托贵人图事——官贵受刑害克破不可告贵人事；官贵刑冲克害身世爻求情难蒙许诺后被搀越有始无终反有所费；毕法赋：书占得夜贵曰脱气凡事被贵人掇赚",
+      "rule": {
+        "yi": "托贵人办事：只要官星、贵人受刑、害、克、破，就不可以向贵人求事，因为贵人自己受克制，不能成就我。如果官星、贵人刑、冲、克、害身爻、世爻的，求情难得许诺，后来被别人插队抢先，有始无终，反而要花费钱财。《毕法赋》说：凡是书占得夜贵人，叫作脱气，凡事被贵人哄骗；这是谋望可否成败的附带占断。",
+        "en": "Entrusting a noble with the matter. If the star of office and the Noble are punished, harmed, controlled or broken, one must not ask the noble for the matter, because the noble himself is under restraint and cannot see me through. If the star of office and the Noble punish, clash with, control or harm the Body and Self, a plea is hard to get granted, and later someone else jumps ahead, so it begins and does not end, and one even spends money for it. The Bifa Fu says: when a document divination gets the night Noble, it is called a drained breath, and in everything one is cajoled and cheated by the noble; this is an appended judgment on whether a scheme can and will succeed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2840, 2843],
+          "zh": ["又有托贵人图事者，但官贵受刑害克破，不可告贵人事，缘贵人自受克制，不能成就我也。", "如官贵刑冲克害身世爻者，求情难蒙许诺，后被别人搀越，有始无终，反有所费也。", "毕法赋曰，凡书占得夜贵，曰脱气，凡事被贵人掇赚也，此谋望可否成败之附占也。"],
+          "yi": ["又有托贵人办事的，只要官星、贵人受刑、害、克、破，就不可以向贵人求事，因为贵人自己受克制，不能成就我。", "如果官星、贵人刑、冲、克、害身爻、世爻的，求情难得许诺，后来被别人插队抢先，有始无终，反而要花费钱财。", "《毕法赋》说：凡是书占得夜贵人，叫作脱气，凡事被贵人哄骗；这是谋望可否成败的附带占断。"],
+          "en": ["Again, one who entrusts a noble with the matter, if the star of office and the Noble are punished, harmed, controlled or broken, must not ask the noble for the matter, because the noble himself is under restraint and cannot see me through.", "If the star of office and the Noble punish, clash with, control or harm the Body and Self, a plea is hard to get granted, and later someone else jumps ahead, so it begins and does not end, and one even spends money for it.", "The Bifa Fu says: when a document divination gets the night Noble, it is called a drained breath, and in everything one is cajoled and cheated by the noble; this is an appended judgment on whether a scheme can and will succeed."] }
+      ],
+      "note": {
+        "yi": "「搀越」是插进来越过；「掇赚」是哄骗、诓骗。「夜贵」是夜间的贵人（贵人有昼夜两位），「脱气」书里没有解释，按字面是被泄掉了气。《毕法赋》这句是引的另一部书，书里没有说它的上下文，译文照字面。",
+        "en": "'Chanyue' is cutting in and getting ahead; 'duozhuan' is cajoling and cheating. 'Night Noble' is the night one of the two Nobles (the Noble has a day and a night one), and 'tuoqi' is not explained in the book and means by the letter that the breath is drained away. The sentence from the Bifa Fu is quoted from another book, and the book does not give its context; the translation follows the letter."
+      },
+      "see": ["LY.CAREER.YY.86", "LY.CAREER.YY.88", "LY.CAREER.HJC.36"]
+    },
+    {
+      "id": "LY.CAREER.YY.88",
+      "topic": "应期",
+      "chapter": "谋望占",
+      "chapter_en": "Divining a scheme",
+      "title": "谋望占·迟速：以用爻为主；动速静迟，旺相出现速、囚死伏藏迟；阳变阴速、阴变阳迟；动临震巽速、临坎艮迟；用临卯酉速、辰戌迟；初二爻动速、三四犹豫、五动迟、六动更迟；用临太岁不出一年、月将不出一月、日辰本日、日建本时；尹逢头断法",
+      "rule": {
+        "yi": "快慢：以用爻为主。发动的快，安静的慢；旺相、出现的快，囚、死、伏藏的慢；阳变阴的快，阴变阳的慢；发动临在震、巽的快，临在坎、艮的慢；用爻临卯、酉的快（卯酉是日月出入的门户），临辰、戌的慢（辰戌是天罗地网，是天涯海角）；初爻、二爻发动的快，三爻、四爻发动的犹豫迟疑，五爻发动的慢，六爻发动的更慢。用爻临太岁，不出一年；临月将，不出一月；临日辰，就在当日；临日建，就在当时。尹逢头的断法说：用爻旺相，还要等入墓的日子来定；用爻休囚，在生旺的日子应当成；用爻伏藏，只看用爻当值的日子；发动而被合住的，等冲它的日辰。",
+        "en": "Slow or fast. Take the Subject line as the chief. Moving is quick, still is slow; thriving and appearing is quick, imprisoned, dead and hidden is slow; yang changing into yin is quick, yin changing into yang is slow; moving on Zhen or Xun is quick, on Kan or Gen is slow; the Subject on Mao or You is quick (Mao and You are the gates of sun and moon), on Chen or Xu is slow (Chen and Xu are the net of heaven and the snare of earth, the ends of the earth); a first or second line moving is quick, a third or fourth moving hesitates and delays, a fifth moving is slow, and a sixth moving slower still. If the Subject sits on Tai Sui, it is within a year; on the Month General, within a month; on the Day, that same day; on the Day branch, that very hour. The Chuan Yin Feng method of judgment says: if the Subject is thriving, fix it by the day it enters tomb; if resting, it should be done on the day it is born or thriving; if hidden, look only at the day the Subject rules; if moving and held by a combination, wait for the day that clashes it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2846, 2846],
+          "zh": ["以用爻为主。", "动速静迟，旺相出现速，囚死伏藏迟。", "阳变阴速，阴变阳迟。", "动临震巽速，动临坎艮迟。", "用临卯酉速。", "(卯酉为日月之门户)，用临辰戌迟。", "(辰戌为天罗地网，为天涯海角)。", "初二爻动速，三四爻动，犹豫迟疑。", "五动迟，六动更迟。", "用临太岁，不出一年。", "用临月将，不出一月。", "用临日辰，则本日。", "临日建，则本时也。", "尹逢头断法曰，用旺还须墓日定，用休生旺日当成，用伏但看用值日，动逢合住待冲辰。"],
+          "yi": ["以用爻为主。", "发动的快，安静的慢；旺相、出现的快，囚、死、伏藏的慢。", "阳变阴的快，阴变阳的慢。", "发动临在震、巽的快，临在坎、艮的慢。", "用爻临卯、酉的快。", "（卯酉是日月出入的门户。）用爻临辰、戌的慢。", "（辰戌是天罗地网，是天涯海角。）", "初爻、二爻发动的快，三爻、四爻发动的，犹豫迟疑。", "五爻发动的慢，六爻发动的更慢。", "用爻临太岁，不出一年。", "用爻临月将，不出一月。", "用爻临日辰，就在当日。", "临日建，就在当时。", "尹逢头的断法说：用爻旺相，还要等入墓的日子来定；用爻休囚，在生旺的日子应当成；用爻伏藏，只看用爻当值的日子；发动而被合住的，等冲它的日辰。"],
+          "en": ["Take the Subject line as the chief.", "Moving is quick, still is slow; thriving and appearing is quick, imprisoned, dead and hidden is slow.", "Yang changing into yin is quick, yin changing into yang is slow.", "Moving on Zhen or Xun is quick, on Kan or Gen is slow.", "The Subject on Mao or You is quick.", "(Mao and You are the gates of sun and moon.) The Subject on Chen or Xu is slow.", "(Chen and Xu are the net of heaven and the snare of earth, the ends of the earth.)", "A first or second line moving is quick; a third or fourth moving hesitates and delays.", "A fifth line moving is slow, and a sixth moving slower still.", "If the Subject sits on Tai Sui, it is within a year.", "If it sits on the Month General, it is within a month.", "If it sits on the Day, it is that same day.", "If it sits on the Day branch, it is that very hour.", "The Chuan Yin Feng method of judgment says: if the Subject is thriving, fix it by the day it enters tomb; if resting, it should be done on the day it is born or thriving; if hidden, look only at the day the Subject rules; if moving and held by a combination, wait for the day that clashes it."] }
+      ],
+      "note": {
+        "yi": "「月将」是太阳所在的月份地支（神煞，不是月建），「日建」是当日的地支，书里没有解释；「天罗地网」是辰、戌两个位置，「天涯海角」比喻远。「尹逢头」是一位断卦的人，书里没有说他是谁，「断法」这里是他的断语。第五、六句的括号小注是对前一句「卯酉」「辰戌」的说明。「动临震巽速」按字面是发动的爻落在震、巽两个卦里。",
+        "en": "The 'Month General' is the branch of the month in which the sun stands (a spirit-star, not the Month branch), and the 'Day branch' is the branch of the day; the book does not explain them. 'The net of heaven and the snare of earth' are the two positions Chen and Xu, and 'the ends of the earth' is an image of far away. 'Yin Fengtou' is a diviner, and the book does not say who he was; his 'method of judgment' here is his saying. The bracketed notes in the fifth and sixth sentences explain 'Mao and You' and 'Chen and Xu' of the sentence before. 'Moving on Zhen or Xun' is by the letter the moving line falling in the Zhen or Xun trigram."
+      },
+      "see": ["LY.CAREER.YY.87", "LY.CAREER.YY.08", "LY.CAREER.YY.72"]
+    }
+  ]
+}
