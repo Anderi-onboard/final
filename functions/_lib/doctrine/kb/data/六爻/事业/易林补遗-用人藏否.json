@@ -1,0 +1,92 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "用人藏否章第八十三",
+  "chapter_en": "Chapter 83: Whether the man one employs is good or bad",
+  "ranges": {"易林补遗": [1625, 1635]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.131",
+      "topic": "成否",
+      "chapter": "用人藏否章第八十三",
+      "chapter_en": "Chapter 83: Whether the man one employs is good or bad",
+      "title": "用人藏否：以用爻为主、应象为凭；凡用他人应上寻、家亲各有用爻分，日冲月破空亡者临在斯爻永不亨；用人行事、请人代劳、招人作生涯、托付图利，用外人以应爻为主，占亲戚以用象为凭；用爻遇日辰冲月建破或落旬空皆主不成纵成无力又不久远切莫用之",
+      "rule": {
+        "yi": "用人，以用爻为主，以应象为凭据。凡是用别人，就在应爻上找；亲属各有各的用爻划分；日冲、月破、空亡落在这个爻上，就永远不亨通。凡是用人办事，或者请人代自己劳作，或者招人做生意，或者托付别人图利益，如果用的是外人，以应爻为主；如果是亲戚，以用象为凭据。用爻如果遇到日辰冲、月建破，或者落旬空，都主不成；即使成了，也没有力量，又不长久，千万不要用这个人。",
+        "en": "In employing a man, take the Subject line as the chief and the Other image as the ground. In employing an outsider, look to the Other; for one's own kin, each has a Subject line to itself; if the Day's clash, Month-break or Void sits on this line, it never prospers. Whenever one employs a man to act, or asks a man to labour in one's place, or takes on a man for a business, or entrusts something to another for gain, if one employs an outsider the Other line is the chief; if it is a relative, the Subject image is the ground. If the Subject line meets the Day's clash, the Month's break, or falls on the ten-day Void, in every case it does not succeed, and even if it succeeds it has no strength and does not last, so by no means employ him."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [1627, 1627],
+          "zh": ["以用爻为主，应象为凭。"],
+          "yi": ["以用爻为主要看的，以应象为凭据。"],
+          "en": ["Take the Subject line as the chief to be looked at, and the Other image as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [1628, 1628],
+          "zh": ["凡用他人应上寻，家亲各有用爻分，", "日冲月破空亡者，临在斯爻永不亨。"],
+          "yi": ["凡是用别人，就在应爻上找；亲属各有各的用爻划分；", "日冲、月破、空亡落在这个爻上，就永远不亨通。"],
+          "en": ["In employing an outsider, look to the Other; for one's own kin, each has a Subject line to itself;", "if the Day's clash, Month-break or Void sits on this line, it never prospers."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [1629, 1629],
+          "zh": ["凡若用人行事、或请人代己之劳、或招人而作生涯、或托付而图利益，如用他人，以应爻为主。", "若占亲戚，以用象为凭。", "用爻若遇日辰冲、月建破、或落旬空者，皆主不成，纵成无力又不久远，切莫用之。"],
+          "yi": ["凡是用人办事，或者请人代自己劳作，或者招人做生意，或者托付别人图利益，如果用的是外人，以应爻为主。", "如果是占亲戚，就以用象为凭据。", "用爻如果遇到日辰冲、月建破，或者落旬空，都主不成；即使成了，也没有力量，又不长久，千万不要用这个人。"],
+          "en": ["Whenever one employs a man to act, or asks a man to labour in one's place, or takes on a man for a business, or entrusts something to another for gain, if one employs an outsider the Other line is the chief.", "If it is about a relative, the Subject image is the ground.", "If the Subject line meets the Day's clash, the Month's break, or falls on the ten-day Void, in every case it does not succeed, and even if it succeeds it has no strength and does not last, so by no means employ him."] }
+      ],
+      "note": {
+        "yi": "「用人」是雇用、托付别人办事。「藏否」就是「臧否」，好坏。「家亲各有用爻分」是用亲属时按六亲各取那一爻。「斯爻」是这一爻。这一章看的是被用的这个人：外人取应爻，亲属取他那个六亲的爻。",
+        "en": "'Yong ren' is employing and entrusting a man with an affair. 'Zangpi' is written 'cang fou' and means good and bad. 'Jiaqin ge you yongyao fen' is that in employing a relative, each of the six kin takes its own line. 'Siyao' is this line. This chapter looks at the man who is employed: for an outsider, the Other line; for a relative, the line of his own kin."
+      },
+      "see": ["LY.CAREER.EL.132", "LY.CAREER.EL.134"]
+    },
+    {
+      "id": "LY.CAREER.EL.132",
+      "topic": "成否",
+      "chapter": "用人藏否章第八十三",
+      "chapter_en": "Chapter 83: Whether the man one employs is good or bad",
+      "title": "用人藏否：用遇绝乡终不美、世遭用克却无情、六冲反目非宾主、用变刑伤力必轻；用爻临绝又无生助者此人定主无能，用来克世者实怀欺主之心彼非仗义之人，卜六冲之卦终成反目，用爻虽有气而变克制之乡或墓绝人必先勤后惰事当有始无终",
+      "rule": {
+        "yi": "用爻遇到绝乡，终究不好；世爻被用爻所克，却是无情；六冲就反目、不成宾主；用爻变出刑伤，力量一定轻。用爻临绝又没有生扶，这个人一定没有能耐；用爻来克世，实在怀着欺骗主人的心，他不是仗义的人；卜得六冲的卦，终究反目，怎么能和谐？卦上用爻虽然有气，但变成克制它的地方、或者变入墓、绝，这个人必定先勤后惰，事情当是有始无终。",
+        "en": "If the Subject meets a place of extinction it is in the end not good; if the Self is controlled by the Subject, it is without feeling; with a six-clash they fall out and are not host and guest; if the Subject changes into punishment and injury, its strength is surely slight. If the Subject line is in extinction and has no generation or support, the man is surely incapable; if the Subject comes to control the Self, he truly harbours a mind to cheat his master and is not a man of loyalty and justice; if a six-clash hexagram is cast, they end by falling out, and how can there be harmony? Even if the Subject line in the hexagram has qi, if it changes into a place that controls it or into tomb or extinction, the man will surely be diligent at first and idle later, and the affair will have a beginning but no end."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [1630, 1630],
+          "zh": ["用遇绝乡终不美，世遭用克却无情，", "六冲反目非宾主，用变刑伤力必轻。"],
+          "yi": ["用爻遇到绝乡，终究不好；世爻被用爻所克，却是无情；", "六冲就反目、不成宾主；用爻变出刑伤，力量一定轻。"],
+          "en": ["If the Subject meets a place of extinction it is in the end not good; if the Self is controlled by the Subject, it is without feeling;", "with a six-clash they fall out and are not host and guest; if the Subject changes into punishment and injury, its strength is surely slight."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [1631, 1633],
+          "zh": ["倘若用爻临绝又无生助者，此人定主无能。", "用来克世者，实怀欺主之心，彼非仗义之人。", "若卜六冲之卦，终成反目，岂得和谐？", "卦上用爻虽然有气，变成克制之乡或之墓绝，人必先勤后惰，事当有始无终。"],
+          "yi": ["如果用爻临绝、又没有生助，这个人一定没有能耐。", "用爻来克世，实在怀着欺骗主人的心，他不是仗义的人。", "如果卜得六冲的卦，终究反目，怎么能和谐？", "卦上用爻虽然有气，但变成克制它的地方、或者变入墓、绝，这个人必定先勤后惰，事情当是有始无终。"],
+          "en": ["If the Subject line is in extinction and has no generation or support, the man is surely incapable.", "If the Subject comes to control the Self, he truly harbours a mind to cheat his master and is not a man of loyalty and justice.", "If a six-clash hexagram is cast, they end by falling out, and how can there be harmony?", "Even if the Subject line in the hexagram has qi, if it changes into a place that controls it or into tomb or extinction, the man will surely be diligent at first and idle later, and the affair will have a beginning but no end."] }
+      ],
+      "note": {
+        "yi": "「绝乡」是绝地。「世遭用克却无情」是世爻被用爻所克。「仗义之人」是讲义气、可靠的人。「之墓绝」的「之」是变入。这一条与前一条（EL.131）合起来，是用人的两面：用爻不被冲破空绝是可用，用爻临绝、克世、六冲、变克都是不可用。",
+        "en": "'Juexiang' is a place of extinction. 'Shi zao yong ke que wuqing' is the Self line controlled by the Subject line. 'Zhangyi zhi ren' is a man of loyalty and justice, one who can be relied on. The 'zhi' of 'zhi mu jue' is changing into. This entry and the previous one (EL.131) together are the two sides of employing a man: a Subject line that is not clashed, broken, Void or extinct can be employed, while a Subject line in extinction, controlling the Self, in a six-clash or changing into control cannot."
+      },
+      "see": ["LY.CAREER.EL.131", "LY.CAREER.EL.133"]
+    },
+    {
+      "id": "LY.CAREER.EL.133",
+      "topic": "成否",
+      "chapter": "用人藏否章第八十三",
+      "chapter_en": "Chapter 83: Whether the man one employs is good or bad",
+      "title": "用人藏否：以上七般发不犯方言和悦又多能，若还世得他扶助必受渠恩事有成；应爻并用爻不遇日冲月破空亡死绝又不克世又不变出冲伤、本卦之卦皆非六冲，便曰宾主相投用之有力，用爻若来生世合世者赖以维持周旋吾事",
+      "rule": {
+        "yi": "以上七样都不犯，才可说他和悦又多能；如果世爻又得他的扶助，必定受他的恩，事情成功。应爻和用爻，不遇日冲、月破、空亡、死绝，又不克世，又不变出冲伤，本卦和之卦都不是六冲，就叫做宾主相投，用他有力；用爻如果来生世、合世，就靠他维持，替我周旋办事。",
+        "en": "If none of these seven things is violated, one may say he is amiable and very capable; if the Self also gets his support, one will surely receive his kindness and the affair will succeed. If the Other line and the Subject line do not meet the Day's clash, Month-break, Void, death or extinction, and do not control the Self, and do not change out a clash or injury, and neither the original nor the changed hexagram is a six-clash, it is called host and guest in accord, and the man is strong to employ; if the Subject line comes to generate or combine with the Self, one relies on him to hold things up and he manages my affairs for me."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [1634, 1634],
+          "zh": ["以上七般发不犯，方言和悦又多能，", "若还世得他扶助，必受渠恩事有成。"],
+          "yi": ["以上七样都不犯，才可说他和悦又多能；", "如果世爻又得他的扶助，必定受他的恩，事情成功。"],
+          "en": ["If none of these seven things is violated, one may say he is amiable and very capable;", "if the Self also gets his support, one will surely receive his kindness and the affair will succeed."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [1635, 1635],
+          "zh": ["应爻并用爻，不遇日冲、月破、空亡、死绝、又不克世、又不变出冲伤，本卦兴之卦皆非六冲便曰宾主相投，用之有力。", "用爻若来生世合世者，赖以难持，周旋吾事。"],
+          "yi": ["应爻和用爻，不遇日冲、月破、空亡、死绝，又不克世，又不变出冲伤，本卦和之卦都不是六冲，就叫做宾主相投，用他有力。", "用爻如果来生世、合世，就靠他维持，替我周旋办事。"],
+          "en": ["If the Other line and the Subject line do not meet the Day's clash, Month-break, Void, death or extinction, and do not control the Self, and do not change out a clash or injury, and neither the original nor the changed hexagram is a six-clash, it is called host and guest in accord, and the man is strong to employ.", "If the Subject line comes to generate or combine with the Self, one relies on him to hold things up and he manages my affairs for me."] }
+      ],
+      "note": {
+        "yi": "「七般」按解里列出的是：日冲、月破、空亡、死绝、克世、变出冲伤、六冲。「本卦兴之卦」疑是「本卦与之卦」，「赖以难持」疑是「赖以维持」，按文意译。「周旋」是替我张罗办事。「宾主」在这里是用人的人和被用的人。",
+        "en": "The 'seven things' are, by what the explanation lists: the Day's clash, Month-break, Void, death or extinction, controlling the Self, changing out a clash or injury, and a six-clash. The 'xing' of 'ben gua xing zhi gua' is presumably 'yu', and 'ben gua yu zhi gua' is 'the original hexagram and the changed hexagram'; 'lai yi nan chi' is presumably 'lai yi weichi', relying on him to hold up; they are translated by the sense. 'Zhouxuan' is bustling about on my behalf. 'Host and guest' here are the man who employs and the man who is employed."
+      },
+      "see": ["LY.CAREER.EL.132", "LY.CAREER.EL.134"]
+    }
+  ]
+}

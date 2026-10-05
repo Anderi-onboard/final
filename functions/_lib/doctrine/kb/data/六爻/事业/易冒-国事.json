@@ -1,0 +1,278 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "国事章第四十二",
+  "chapter_en": "Chapter 42: State affairs",
+  "ranges": {"易冒": [808, 831]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.01",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事总则：为国之要必以进忠良、故福爻不可失，必以退奸宄、故鬼象不可动；凡国占皆喜福临而恶鬼动",
+      "rule": {
+        "yi": "占国事，要义是进用忠良、为万民造福，所以福爻（子孙）不能失；要退去奸邪、除去四海的疾患，所以鬼象（官鬼）不能动。凡是占国事，都喜欢福神临到、厌恶官鬼发动，这是占国事的大象。本章细讲迁都、建庙、择后、立储、改制、享国各问。",
+        "en": "In divining about the state, the essential is to advance the loyal and good and to bring blessing to the myriad people, so the fortune line, Output, must not be lost; one must also remove the treacherous and rid the four seas of their sickness, so the Pressure image must not move. In every divination about the state one is glad to see the fortune spirit arrive and dislikes Pressure moving, and this is the great image of such divinations. The chapter treats in detail the questions of moving the capital, building a temple, choosing an empress, naming an heir, changing the institutions, and how long the dynasty will last."
+      },
+      "quotes": [
+        { "by": "易冒注", "book": "易冒", "range": [810, 810],
+          "zh": ["内详迁都、建庙、择后、立储、改制、享国诸问"],
+          "yi": ["本章细讲迁都、建庙、择后、立储、改制、享国各问。"],
+          "en": ["This chapter treats in detail the questions of moving the capital, building a temple, choosing an empress, naming an heir, changing the institutions, and how long the dynasty will last."] },
+        { "by": "经", "book": "易冒", "range": [811, 811],
+          "zh": ["为国之要，必以进忠良，为万民之福，故福爻不可失也；", "必以退奸宄，去四海之疾，故鬼象不可动也。"],
+          "yi": ["治国的要义，必定是进用忠良，为万民造福，所以福爻不可失；", "必定要退去奸邪，除去四海的疾患，所以鬼象不可动。"],
+          "en": ["The essential of governing a state is surely to advance the loyal and good and to bring blessing to the myriad people, and so the fortune line, Output, must not be lost;", "one must also drive out the treacherous and rid the four seas of their sickness, and so the Pressure image must not move."] },
+        { "by": "易冒注", "book": "易冒", "range": [812, 812],
+          "zh": ["凡国占皆喜福临，而恶鬼动，此其大象也。"],
+          "yi": ["凡是占国事，都喜欢福神临到，厌恶官鬼发动，这是大象。"],
+          "en": ["In every divination about the state one is glad to see the fortune spirit arrive and dislikes Pressure moving; this is the great image."] }
+      ],
+      "note": {
+        "yi": "「福爻」是子孙（福神），「鬼象」是官鬼之象（见术语表）。「奸宄」是奸邪作乱的人。这一章把国事的好坏归在两件事上：福神在不在、官鬼动不动，后面各条是它的展开。",
+        "en": "'Fuyao', the fortune line, is Output (the fortune spirit), and 'guixiang', the Pressure image, is the image of Pressure (see the glossary). 'Jiangui' are the treacherous who stir up disorder. The chapter puts the good or ill of the state on two things, whether the fortune spirit is present and whether Pressure moves, and the entries that follow unfold this."
+      },
+      "see": ["LY.CAREER.YM.02", "LY.CAREER.EL.01", "LY.CAREER.HJC.63", "LY.CAREER.YY.31"]
+    },
+    {
+      "id": "LY.CAREER.YM.02",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：内为邦畿、外为人民，卦宫安旺而国祚长、爻象合和而宗社久；冲莫见于正之、合莫被于破害，则天下和平国家奠安；次观旺衰动静合冲",
+      "rule": {
+        "yi": "内卦是国都和邦畿，外卦是人民；卦宫安稳旺相，国运就长；爻象和合，宗庙社稷就长久。冲不要出现在正卦和之卦（本卦和变卦）里，合不要被破、被害，这样天下就和平，国家就安定了。接着还要再看旺衰、动静、合冲。",
+        "en": "The inner trigram is the capital and its domain and the outer is the people: if the palace of the hexagram is secure and thriving the dynasty is long, and if the lines combine harmoniously the ancestral temple and altars last long. If clash does not appear in the original or the changed hexagram, and a combination is not broken or harmed, the world is at peace and the state is secure. Next look at strength and weakness, movement and stillness, combination and clash."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [813, 815],
+          "zh": ["是以内为邦畿，外为人民，", "卦宫安旺而国祚长，爻象合和而宗社久；", "冲莫见于正之，合莫被于破害，则天下和平，而国家奠安矣。"],
+          "yi": ["所以内卦是国都邦畿，外卦是人民；", "卦宫安稳旺相，国运就长；爻象和合，宗庙社稷就长久；", "冲不要出现在正卦、之卦里，合不要被破、被害，这样天下就和平，国家就安定了。"],
+          "en": ["So the inner trigram is the capital and its domain and the outer trigram is the people;", "if the palace of the hexagram is secure and thriving the dynasty is long, and if the lines combine harmoniously the ancestral temple and altars last long;", "if clash does not appear in the original or the changed hexagram, and a combination is not broken or harmed, then the world is at peace and the state is secure."] },
+        { "by": "易冒注", "book": "易冒", "range": [816, 816],
+          "zh": ["次观旺衰动静合冲。"],
+          "yi": ["接着再看旺衰、动静、合冲。"],
+          "en": ["Next look at strength and weakness, movement and stillness, combination and clash."] }
+      ],
+      "note": {
+        "yi": "「邦畿」是国都周围的王畿之地。「国祚」是国运，「宗社」是宗庙社稷。「正之」是正卦（本卦）和之卦（变卦）；「冲莫见于正之」是本卦、变卦里都不要出现冲（见术语表）。这一条与易林补遗朝廷国事「亲宫为邦国大忌空亡、本卦作朝堂最宜旺相」（EL.02）取同一个象：卦的整体代表国。",
+        "en": "'Bangji' is the royal domain around the capital. 'Guozuo' is the fortune of the dynasty and 'zongshe' is the ancestral temple and altars. 'Zheng zhi' is the original hexagram and the changed hexagram; 'clash must not appear in the original or the changed hexagram' means that neither is to show a clash (see the glossary). This entry takes the same image as 'the home palace is taken as the state, Void most to be avoided; the original hexagram is taken as the court hall, thriving best' in the Yilin Buyi chapter on court and state affairs (EL.02): the hexagram as a whole stands for the state."
+      },
+      "see": ["LY.CAREER.YM.01", "LY.CAREER.YM.03", "LY.CAREER.EL.02", "LY.CAREER.HJC.64", "LY.CAREER.YY.32"]
+    },
+    {
+      "id": "LY.CAREER.YM.03",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：皇帝亲占以世爻为主象宜临日月生扶、臣下筮国以九五当尊位忌随墓空破；亲占应合世者后德著于樛木，臣占二持福者母仪冠于掖庭",
+      "rule": {
+        "yi": "皇帝亲自占卜，以世爻为主象，适宜得到日月的生扶；臣下为国占卜，以九五爻当作尊位，忌讳随墓、空、破。皇帝亲占而应爻合世的，皇后的德行像樛木那样昭著；臣下占卜而二爻持福神的，皇后的母仪在后宫居首。臣下占卜，以五爻为君、二爻为后，所以这样说。",
+        "en": "When the emperor divines in person, the Self line is the chief image and it is fitting for the Day and Month to generate and support it; when a minister divines for the state, the ninth-fifth line is the honoured position and following into the tomb, Void and break are to be avoided. If the emperor divines in person and the Other combines with the Self, the empress's virtue shines like that of the drooping tree; if a minister divines and the second line holds the fortune spirit, the empress's model of motherhood heads the harem. A minister divining takes the fifth line as the sovereign and the second as the empress, hence what is said."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [817, 817],
+          "zh": ["皇陛亲占，以世爻为主象，宜临日月生扶；", "臣下筮国，以九五当尊位，忌随墓空破。", "亲占而应合世者，后德著于樛木；", "臣占而二持福者，母仪冠于掖庭。"],
+          "yi": ["皇帝亲自占卜，以世爻为主象，适宜得到日、月的生扶；", "臣下为国占卜，以九五爻当作尊位，忌讳随墓、空、破。", "皇帝亲占而应爻合世的，皇后的德行像樛木那样昭著；", "臣下占卜而二爻持福神的，皇后的母仪在后宫居首。"],
+          "en": ["When the emperor divines in person, the Self line is the chief image, and it is fitting for it to meet generation and support from the Day and Month;", "when a minister divines for the state, the ninth-fifth line is the honoured position, and following into the tomb, Void and break are to be avoided.", "If the emperor divines in person and the Other combines with the Self, the empress's virtue shines like that of the drooping tree;", "if a minister divines and the second line holds the fortune spirit, the empress's model of motherhood heads the harem."] },
+        { "by": "易冒注", "book": "易冒", "range": [818, 818],
+          "zh": ["臣子占五为君，二为后，故云。"],
+          "yi": ["臣下占卜，以五爻为君、二爻为后，所以这样说。"],
+          "en": ["A minister divining takes the fifth line as the sovereign and the second as the empress, hence what is said."] }
+      ],
+      "note": {
+        "yi": "「皇陛」疑是「皇帝」。「九五」是第五爻，代表君位。「樛木」是《诗经·周南》里称颂后妃德行（能惠及下人）的篇名；「掖庭」是后宫。「世爻为主象」是皇帝自己占，世就是皇帝本人。这一条与易林补遗「五爻为天子、太岁为朝廷」（EL.80）和黄金策国朝「九五逢阳，当遇仁明之主」（HJC.65）同取五爻为君。",
+        "en": "'Huangbi' is presumably 'huangdi', emperor. 'Jiuwu', the ninth-fifth, is the fifth line, which stands for the sovereign's position. 'Jiumu', the drooping tree, is the title of an ode in the Book of Odes that praises the virtue of a queen who is gracious to those beneath her; 'yeting' is the inner palace. 'The Self line is the chief image' means that when the emperor divines for himself the Self is the emperor in person. This entry takes the fifth line as the sovereign, as 'the fifth line is the Son of Heaven, Tai Sui is the court' in the Yilin Buyi (EL.80) and 'the ninth-fifth meeting yang, one meets a benevolent and enlightened sovereign' in the Huangjin Ce on the state (HJC.65) do."
+      },
+      "see": ["LY.CAREER.YM.02", "LY.CAREER.YM.04", "LY.CAREER.EL.80", "LY.CAREER.HJC.65", "LY.CAREER.YY.35", "LY.CAREER.YY.37"]
+    },
+    {
+      "id": "LY.CAREER.YM.04",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：初为国本、二为士人、三乃万方之守牧、四为九州之屏藩、上为宗庙之爻，俱恶鬼而喜福、喜安旺而恶动摇；鬼为国之患又为巨寇，福为国之储又为良臣，财为国之赋又为阍寺，兄弟为国之聚敛又为宗支，父母为山川城郭又为诏令",
+      "rule": {
+        "yi": "推爻位：初爻是国本，二爻是士人，三爻是各地的守牧（地方长官），四爻是九州的屏藩，上爻是宗庙之爻；都厌恶官鬼、喜欢福神，喜欢安稳旺相、厌恶动摇。推六亲：官鬼是国家的祸患，又是大盗；福神是国家的储君，又是良臣；妻财是国家的赋税，又是宦官；兄弟是国家的聚敛，又是宗室；父母是山川城郭，又是诏令。看它们临在什么位置、属于哪一宫，比如官鬼发动在乾宫，西北有事；福神临在三爻，地方守牧得人，等等。",
+        "en": "Reckoning by the line positions: the first line is the root of the state, the second the scholars, the third the governors of all the regions, the fourth the screens and bulwarks of the nine provinces, and the top line the line of the ancestral temple; all dislike Pressure and like the fortune spirit, like quiet and thriving and dislike moving and shaking. Reckoning by the six kin: Pressure is the plague of the state and also a great bandit; Output, the fortune spirit, is the heir of the state and also a good minister; Wealth is the revenue of the state and also the palace gatekeepers; Peer is the state's levying and hoarding and also the imperial clan; Resource is the mountains, rivers and city walls and also the edicts and orders. Look at where they sit and what palace they belong to: for example, if Pressure moves in the Qian palace there is trouble in the north-west, and if the fortune spirit sits on the third line the governors are well chosen, and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [819, 819],
+          "zh": ["推之爻位，初为国本，", "二为士人，", "三乃万方之守牧，", "四为九州之屏藩，", "上为宗庙之爻，", "俱恶鬼而喜福，喜安旺而恶动摇。", "推之六亲，", "鬼者，国之患也，又为巨寇；", "福者，国之储也，又为良臣；", "财者，国之赋也，又为阍寺；", "兄弟者，国之聚敛也，又为宗支；", "父母者，山川城郭也，又为诏令。"],
+          "yi": ["推爻位：初爻是国本，", "二爻是士人，", "三爻是各地的守牧（地方长官），", "四爻是九州的屏藩，", "上爻是宗庙之爻，", "都厌恶官鬼、喜欢福神，喜欢安稳旺相、厌恶动摇。", "推究六亲：", "官鬼是国家的祸患，又是大盗；", "福神是国家的储君，又是良臣；", "妻财是国家的赋税，又是宦官；", "兄弟是国家的聚敛，又是宗室；", "父母是山川城郭，又是诏令。"],
+          "en": ["Reckoning by the line positions: the first line is the root of the state,", "the second the scholars,", "the third the governors of all the regions,", "the fourth the screens and bulwarks of the nine provinces,", "and the top line the line of the ancestral temple;", "all dislike Pressure and like the fortune spirit, like quiet and thriving and dislike moving and shaking.", "Reckoning by the six kin:", "Pressure is the plague of the state and also a great bandit;", "Output, the fortune spirit, is the heir of the state and also a good minister;", "Wealth is the revenue of the state and also the palace gatekeepers;", "Peer is the state's levying and hoarding and also the imperial clan;", "Resource is the mountains, rivers and city walls and also the edicts and orders."] },
+        { "by": "易冒注", "book": "易冒", "range": [820, 820],
+          "zh": ["观其所临所属，如鬼动乾宫，西北有事，福临三位，守牧得人之类。"],
+          "yi": ["看它们所临的位置、所属的宫：比如官鬼发动在乾宫，西北有事；福神临在三爻，地方守牧得人，等等。"],
+          "en": ["Look at where they sit and what palace they belong to: for example, if Pressure moves in the Qian palace there is trouble in the north-west, and if the fortune spirit sits on the third line the governors are well chosen, and the like."] }
+      ],
+      "note": {
+        "yi": "「守牧」是地方长官，「屏藩」是拱卫朝廷的藩镇，「阍寺」是守宫门的宦官，「宗支」是皇室宗亲的各支，「聚敛」是征收搜刮，「诏令」是皇帝的诏书命令。这一条的取象与易隐朝廷占的「分官」（YY.43、YY.44）、黄金策国朝的爻位（HJC.65）同一套：初民、二士、三守牧、四公卿、五君、上宗庙。",
+        "en": "'Shoumu' are the local governors, 'pingfan' are the border governors who guard the court, 'hunshi' are the eunuchs who keep the palace gate, 'zongzhi' are the branches of the imperial clan, 'juilian' is levying and extorting, and 'zhaoling' are the emperor's edicts and orders. The images here are the same set as the 'division of officials' in the Yi Yin divination on the court (YY.43, YY.44) and the line positions in the Huangjin Ce on the state (HJC.65): the first the common people, the second scholars, the third governors, the fourth ministers, the fifth the sovereign, the top the ancestral temple."
+      },
+      "see": ["LY.CAREER.YM.03", "LY.CAREER.YM.05", "LY.CAREER.YY.43", "LY.CAREER.YY.44", "LY.CAREER.HJC.65"]
+    },
+    {
+      "id": "LY.CAREER.YM.05",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：鬼空内而无内衅、鬼发外而有外攘，近五防佞臣、附三戒酷吏、患在二而士横、患在初而民困；虎官不发于金乡则无干戈、武鬼不扬于水地则无泛潦，火鬼螣蛇岁忧火患、土官朱雀年虑蝗灾；凡鬼发内外何宫何位何属皆宜慎之",
+      "rule": {
+        "yi": "官鬼在内卦落空，就没有内乱；官鬼在外卦发动，就有外患要抵御；官鬼靠近五爻，要防佞臣；依附三爻，要戒酷吏；祸患在二爻，是士人横行；祸患在初爻，是百姓困苦。白虎官如果不在金乡发动，就没有战事；玄武官如果不在水地张扬，就没有水涝；火属官鬼带螣蛇，当年忧火灾；土官带朱雀，当年虑蝗灾。凡是官鬼发动，在内还是在外、哪一宫、哪一位、属于哪一类，都应当谨慎；整饬弊端要防奸邪，朝廷的谋划应当预先。",
+        "en": "If Pressure is Void in the inner trigram there is no disorder within; if Pressure moves in the outer trigram there are outside enemies to repel; if Pressure is near the fifth line guard against treacherous ministers; if it attaches to the third line beware of cruel officials; if the trouble is on the second line the scholars run riot, and if on the first line the people are in distress. If a White Tiger Pressure does not move in a Metal palace there is no war; if a Dark Tortoise Pressure does not show itself on watery ground there is no flooding; a Fire Pressure with the Coiling Snake means anxiety about fire in the year, and an Earth star of office with the Vermilion Bird means worry about a plague of locusts. Wherever Pressure moves, inside or outside, in which palace, in which position and of which element, one should be careful; in setting right abuses guard against treachery, and the court's planning should be done in advance."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [821, 821],
+          "zh": ["是以鬼空内而无内衅，", "鬼发外而有外攘，", "近五而防佞（？）臣，", "附三而戒酷吏，", "患在二而士横，", "患在初而民困。", "虎官不发于金乡，则无干戈，", "武鬼不扬于水地，则无泛潦；", "如火鬼螣蛇，岁忧火患，", "土官朱雀，年虑蝗灾。"],
+          "yi": ["官鬼在内卦落空，就没有内乱；", "官鬼在外卦发动，就有外患要抵御；", "官鬼靠近五爻，要防佞臣；", "依附三爻，要戒酷吏；", "祸患在二爻，是士人横行；", "祸患在初爻，是百姓困苦。", "白虎官如果不在金乡发动，就没有战事；", "玄武官如果不在水地张扬，就没有水涝；", "火属官鬼带螣蛇，当年忧火灾；", "土官带朱雀，当年虑蝗灾。"],
+          "en": ["If Pressure is Void in the inner trigram there is no disorder within;", "if Pressure moves in the outer trigram there are outside enemies to repel;", "if Pressure is near the fifth line guard against treacherous ministers;", "if it attaches to the third line beware of cruel officials;", "if the trouble is on the second line the scholars run riot;", "if on the first line the people are in distress.", "If a White Tiger Pressure does not move in a Metal palace there is no war;", "if a Dark Tortoise Pressure does not show itself on watery ground there is no flooding;", "a Fire Pressure with the Coiling Snake means anxiety about fire in the year,", "and an Earth star of office with the Vermilion Bird means worry about a plague of locusts."] },
+        { "by": "易冒注", "book": "易冒", "range": [822, 822],
+          "zh": ["凡鬼发内外、何宫、何位、何属，皆宜慎之，干蛊防奸，庙算当豫也。"],
+          "yi": ["凡是官鬼发动，在内还是在外、哪一宫、哪一位、属于哪一类，都应当谨慎；整饬弊端要防奸邪，朝廷的谋划应当预先。"],
+          "en": ["Wherever Pressure moves, inside or outside, in which palace, in which position and of which element, one should be careful; in setting right abuses guard against treachery, and the court's planning should be done in advance."] }
+      ],
+      "note": {
+        "yi": "「近五而防佞（？）臣」的「佞」字书里自己标了问号，是传抄者对这个字没有把握；文意是官鬼靠近君位（五爻）要防奸臣，译作「佞臣」。「内衅」是内部的变乱，「外攘」是对外抵御，「干戈」是战事，「泛潦」是水涝，「干蛊」是整饬前人留下的弊端（《易》蛊卦「干父之蛊」）。「金乡」「水地」是金、水所属的宫位。「虎官」「武鬼」是白虎、玄武上的官鬼。「庙算」是朝廷的谋划。",
+        "en": "The book itself puts a question mark after the character 'ning' in 'jin wu er fang ning(?) chen', showing that the copyist was not sure of it; by the sense, Pressure near the sovereign's position (the fifth line) means guarding against treacherous ministers, and it is translated so. 'Neixin' is disorder within, 'waixiang' is repelling enemies from outside, 'gange' is war, 'fanlao' is flooding, and 'gan gu' is setting right the abuses left by one's predecessors (from the Gu hexagram of the Book of Changes, 'setting right the father's decay'). 'Jinxiang' and 'shuidi' are the palaces that Metal and Water belong to. 'Huguan' and 'wugui' are Pressure on the White Tiger and the Dark Tortoise. 'Miaosuan' is the court's planning."
+      },
+      "see": ["LY.CAREER.YM.04", "LY.CAREER.YM.06", "LY.CAREER.EL.03", "LY.CAREER.YY.33", "LY.CAREER.YY.42", "LY.CAREER.HJC.64"]
+    },
+    {
+      "id": "LY.CAREER.YM.06",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：子孙遇木而旺相岁稔桑麻、妻财遇土而兴隆年丰田野、父母值巳午而见当启文明；子在青龙文士彬彬、子临白虎武功烈烈，动朱雀善弹劾之章、摇元武懿宫闱之德，勾陈得田畯之喜、螣蛇籍使臣之力",
+      "rule": {
+        "yi": "子孙遇木而旺相，当年桑麻丰收；妻财遇土而兴隆，当年田野丰收；父母爻值巳、午而出现，当开启文明。子孙在青龙，文士彬彬有礼；子孙临白虎，武功烈烈；动在朱雀，善于弹劾的奏章；摇在玄武，美在宫闱的德行；勾陈得田官的喜庆，螣蛇靠使臣的力量。凡是福神临在五行、六亲、六神上，都是吉祥的应验，所以福神摇在玄武，也是后宫的美事。",
+        "en": "If Output meets Wood and thrives, the year's mulberry and hemp are plentiful; if Wealth meets Earth and flourishes, the fields yield well in the year; if Resource falls on Si or Wu and appears, civilisation is opened up. If Output is on the Azure Dragon, the scholars are refined; if Output is on the White Tiger, military exploits blaze; moving on the Vermilion Bird, good memorials of impeachment; swaying on the Dark Tortoise, fine virtue in the inner palace; on Hook Earth it enjoys the delight of the field officers, and on the Coiling Snake it relies on the strength of envoys. Wherever the fortune spirit rests, on the five elements, the six kin or the six spirits, it is an auspicious response, so the fortune spirit swaying on the Dark Tortoise is also a fine thing for the inner palace."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [823, 823],
+          "zh": ["子孙遇木而旺相，岁稔桑麻，", "妻财遇土而兴隆，年丰田野，", "父母值巳午而见，当启文明；", "子在青龙，则文士彬彬，", "子临白虎，则武功烈烈；", "动朱雀，善弹劾之章，", "摇元武，懿宫闱之德；", "勾陈得田畯之喜，", "螣蛇籍使臣之力。"],
+          "yi": ["子孙遇到木而旺相，当年桑麻丰收；", "妻财遇到土而兴隆，当年田野丰收；", "父母爻值巳、午而出现，当开启文明；", "子孙在青龙，就文士彬彬有礼；", "子孙临白虎，就武功烈烈；", "（子孙）动在朱雀，善于弹劾的奏章；", "摇在玄武，美在宫闱的德行；", "（福神）在勾陈，得田官的喜庆，", "在螣蛇，靠使臣的力量。"],
+          "en": ["If Output meets Wood and thrives, the year's mulberry and hemp are plentiful;", "if Wealth meets Earth and flourishes, the fields yield well in the year;", "if Resource falls on Si or Wu and appears, civilisation is opened up;", "if Output is on the Azure Dragon, the scholars are refined;", "if Output is on the White Tiger, military exploits blaze;", "moving on the Vermilion Bird, good memorials of impeachment;", "swaying on the Dark Tortoise, fine virtue in the inner palace;", "on Hook Earth it enjoys the delight of the field officers,", "and on the Coiling Snake it relies on the strength of envoys."] },
+        { "by": "易冒注", "book": "易冒", "range": [824, 824],
+          "zh": ["凡福临五行六亲六神，俱是祯应，故福摇元武，亦为后宫之美。"],
+          "yi": ["凡是福神临在五行、六亲、六神上，都是吉祥的应验，所以福神摇在玄武，也是后宫的美事。"],
+          "en": ["Wherever the fortune spirit rests, on the five elements, the six kin or the six spirits, it is an auspicious response, so the fortune spirit swaying on the Dark Tortoise is also a fine thing for the inner palace."] }
+      ],
+      "note": {
+        "yi": "「稔」是丰熟。「田畯」是管田事的官（《诗经》里的田官）。「弹劾」是监察官的检举。「宫闱」是后宫。「元武」就是玄武。这一条是福神（子孙）落在五行、六神上的象：木主桑麻，土主田野，青龙文、白虎武、朱雀言官、玄武后宫、勾陈农事、螣蛇使臣。「巳午」是火，「父母值巳午」取的是火为文明。",
+        "en": "'Ren' is ripening. 'Tianjun' is the official in charge of the fields (the field officer of the Book of Odes). 'Tanhe' is impeachment by the censors. 'Gongwei' is the inner palace. 'Yuanwu' is the Dark Tortoise. This entry gives the images of the fortune spirit (Output) falling on the five elements and the six spirits: Wood governs mulberry and hemp, Earth the fields, the Azure Dragon the civil, the White Tiger the military, the Vermilion Bird the censors, the Dark Tortoise the inner palace, Hook Earth farming, the Coiling Snake envoys. 'Si and Wu' are Fire, and Resource on Si or Wu takes Fire as civilisation."
+      },
+      "see": ["LY.CAREER.YM.05", "LY.CAREER.YM.07", "LY.CAREER.YY.35", "LY.CAREER.YY.38"]
+    },
+    {
+      "id": "LY.CAREER.YM.07",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：问迁都犹迁居、当以外旺为凭、鬼兴为忌；问建庙犹奉灵、当以三冲六坏鬼动鬼疾鬼克为忌；迁都建庙皆忌贞冲悔冲合处逢冲，太庙不可破散、太灵不可鬼动鬼空鬼散及鬼克世",
+      "rule": {
+        "yi": "问迁都，如同迁居：以外卦旺相为凭据，官鬼兴旺是忌。问建庙，如同供奉神灵：以三冲、六坏、鬼动、鬼疾、鬼克为忌。迁都、建庙，都忌贞冲、悔冲、合处逢冲这几种情形。六爻是太庙所属，所以不可破散；官鬼是太灵（祖先神灵），所以不可鬼动、鬼空、鬼散，以及鬼克世。",
+        "en": "For moving the capital, which is like moving house, the outer being thriving is the ground and Pressure flourishing is the taboo; for building a temple, which is like enshrining the spirits, the taboos are the three clashes, the six breakages, and Pressure moving, being sick or controlling. In moving the capital and building a temple, the taboos are the clash of the original hexagram, the clash of the changed hexagram, and a combination meeting a clash. The six lines belong to the great temple, so it must not be broken or scattered; Pressure is the great spirit, so Pressure must not move, be Void or scatter, nor control the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [825, 825],
+          "zh": ["如问迁都，犹迁居也，当以外旺为凭，鬼兴为忌。", "如问建庙，犹奉灵也，当以三冲六坏鬼动鬼疾鬼克为忌。"],
+          "yi": ["如果问迁都，如同迁居，应当以外卦旺相为凭据，官鬼兴旺是忌；", "如果问建庙，如同供奉神灵，应当以三冲、六坏、鬼动、鬼疾、鬼克为忌。"],
+          "en": ["If one asks about moving the capital, it is like moving house, and the outer being thriving is the ground, with Pressure flourishing a taboo;", "if one asks about building a temple, it is like enshrining the spirits, and the taboos are the three clashes, the six breakages, and Pressure moving, being sick or controlling."] },
+        { "by": "易冒注", "book": "易冒", "range": [826, 826],
+          "zh": ["迁都建庙，皆忌贞冲、悔冲、合处逢冲之例。", "六爻太庙所属，故不可破散，", "鬼为太灵，故不可鬼动、鬼空、鬼散，及鬼克世也。"],
+          "yi": ["迁都、建庙，都忌贞冲、悔冲、合处逢冲这几种情形。", "六爻是太庙所属，所以不可破散；", "官鬼是太灵（祖先神灵），所以不可鬼动、鬼空、鬼散，以及鬼克世。"],
+          "en": ["In moving the capital and building a temple, the taboos are the cases of the clash of the original hexagram, the clash of the changed hexagram, and a combination meeting a clash.", "The six lines belong to the great temple, and so it must not be broken or scattered;", "Pressure is the great spirit, and so Pressure must not move, be Void or scatter, nor control the Self."] }
+      ],
+      "note": {
+        "yi": "「贞冲」「悔冲」是本卦（贞）、变卦（悔）是六冲卦；「合处逢冲」是本来相合的地方遇到冲；注里列的这三种就是正文的「三冲」（见术语表）。「六坏」书里这一处没有列出。「奉灵」是供奉神灵，「太庙」是帝王的宗庙，「太灵」是祖先的神灵。这一条与易林补遗朝廷国事里的忌六冲（EL.01）取同一类忌：国是一个整体，冲散就是国破。",
+        "en": "'Zhenchong' and 'huichong' are the original hexagram (zhen) and the changed hexagram (hui) being a six-clash hexagram; 'hechu fengchong' is a place that was a combination meeting a clash; these three listed in the note are the 'three clashes' of the main text (see the glossary). The 'six breakages' are not listed here in the book. 'Fengling' is enshrining the spirits, 'taimiao' is the emperor's ancestral temple, and 'tailing' is the spirits of the ancestors. This entry takes the same kind of taboo as the six-clash in the Yilin Buyi chapter on court and state affairs (EL.01): the state is a whole, and a clash that scatters it is the state broken."
+      },
+      "see": ["LY.CAREER.YM.06", "LY.CAREER.YM.08", "LY.CAREER.EL.01"]
+    },
+    {
+      "id": "LY.CAREER.YM.08",
+      "topic": "国朝",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：择后犹婚姻、财在何宫当应何所；立储喜子孙跨于日月、改制忧官鬼发于强梁",
+      "rule": {
+        "yi": "选皇后如同婚姻：财爻在哪一宫，就应在哪个地方的女子。如果财在中间的爻，应得晋地的女子；财在内卦，应在本乡。立储君，喜欢子孙跨在日、月上；改制，忧虑官鬼在强横的位置上发动。",
+        "en": "Choosing an empress is like a marriage: in whichever palace Wealth lies, the match corresponds to that place. If Wealth is in a middle line, the match should be a woman of Jin; if Wealth is in the inner trigram, it should correspond to the home district. In naming an heir one is glad for Output to straddle the Day and Month; in changing the institutions one worries about Pressure moving in the place of the violent and overbearing."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [827, 827],
+          "zh": ["择后犹婚姻也，财在何宫，当应何所。"],
+          "yi": ["选皇后如同婚姻，财爻在哪一宫，就应在哪个地方的女子。"],
+          "en": ["Choosing an empress is like a marriage: in whichever palace Wealth lies, the match corresponds to that place."] },
+        { "by": "易冒注", "book": "易冒", "range": [828, 828],
+          "zh": ["如财在中爻，当得晋女，财在内卦，当应本乡。"],
+          "yi": ["如果财在中间的爻，应得晋地的女子；财在内卦，应在本乡。"],
+          "en": ["If Wealth is in a middle line, the match should be a woman of Jin; if Wealth is in the inner trigram, it should correspond to the home district."] },
+        { "by": "经", "book": "易冒", "range": [829, 829],
+          "zh": ["立储喜子孙跨于日月，改制忧官鬼发于强梁。"],
+          "yi": ["立储君，喜欢子孙跨在日、月上；改制，忧虑官鬼在强横的位置上发动。"],
+          "en": ["In naming an heir one is glad for Output to straddle the Day and Month; in changing the institutions one worries about Pressure moving in the place of the violent and overbearing."] }
+      ],
+      "note": {
+        "yi": "「择后」是选立皇后，「立储」是确立太子，「改制」是改革制度。「中爻」「晋女」书里没有说明，这里照字面译，「晋」疑指晋地。「跨于日月」「发于强梁」书里没有解释，按字面是子孙同时受日、月扶助、官鬼在强横的位置发动。择后看财与婚姻章同（见本书婚姻部分），立储看子孙与易隐朝廷占「青宫：以子孙为用」（YY.38）、黄金策国朝「日辰拱扶子位」（HJC.75）同。",
+        "en": "'Zehou' is choosing and installing an empress, 'lichu' is establishing the crown prince, and 'gaizhi' is reforming the institutions. The book does not explain 'zhong yao' and 'Jin nü', which are translated literally, and 'Jin' is presumably the land of Jin. 'Kua yu riyue' and 'fa yu qiangliang' are not explained in the book and by the letter are Output being supported by both the Day and Month and Pressure moving in a violent and overbearing place. Choosing an empress looks at Wealth as in the chapter on marriage (see the marriage part of this library), and naming an heir looks at Output as in 'the Crown Prince: take Output as the Subject' in the Yi Yin divination on the court (YY.38) and 'the Day generating and supporting Output's place' in the Huangjin Ce on the state (HJC.75)."
+      },
+      "see": ["LY.CAREER.YM.07", "LY.CAREER.YM.09", "LY.CAREER.YY.37", "LY.CAREER.YY.38", "LY.CAREER.HJC.75"]
+    },
+    {
+      "id": "LY.CAREER.YM.09",
+      "topic": "应期",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事：占享国几何以岁为纪，有岁则一位一元、再之亦一位一元，然必考其本宫之旺衰、鬼象之动静方可推而定；岁司年历国祚，如己亥年得丁亥太岁有六元之运，又以内卦参之、鬼动权之方可推",
+      "rule": {
+        "yi": "占国运能延续多久，以太岁为纪年：有太岁就是一位一元，再有也是一位一元；但必须考察本宫的旺衰、官鬼之象的动静，才能推定。太岁管年历国运：比如己亥年，得丁亥太岁，有六元的运数，还要用内卦参看，以官鬼发动来权衡，才可以推。",
+        "en": "To divine how long the dynasty will last, take the Year as the reckoning: if the Tai Sui is present it is one position, one cycle; with another it is again one position, one cycle; but one must still examine the strength or weakness of the home palace and the movement or stillness of the Pressure image before it can be reckoned and settled. The Year governs the calendar and the dynasty's fortune: for example, in a Jihai year, getting the Dinghai Tai Sui, there is a destiny of six cycles, and one also consults the inner trigram and weighs it by Pressure moving, and only then can it be reckoned."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [829, 829],
+          "zh": ["若占享国几何，以岁为纪，有岁则一位一元，再之亦一位一元，然必考其本宫之旺衰、鬼象之动静，方可推而定也。"],
+          "yi": ["如果占国运能延续多久，以太岁为纪年：有太岁就是一位一元，再有也是一位一元；但必须考察本宫的旺衰、官鬼之象的动静，才能推定。"],
+          "en": ["To divine how long the dynasty will last, take the Year as the reckoning: if the Tai Sui is present it is one position, one cycle; with another it is again one position, one cycle; but one must still examine the strength or weakness of the home palace and the movement or stillness of the Pressure image before it can be reckoned and settled."] },
+        { "by": "易冒注", "book": "易冒", "range": [830, 830],
+          "zh": ["岁司年历国祚，如己亥年，得丁亥太岁，有六元之运，又以内卦参之，鬼动权之，方可推也。"],
+          "yi": ["太岁管年历国运：比如己亥年，得丁亥太岁，有六元的运数，还要用内卦参看，以官鬼发动来权衡，才可以推。"],
+          "en": ["The Year governs the calendar and the dynasty's fortune: for example, in a Jihai year, getting the Dinghai Tai Sui, there is a destiny of six cycles, and one also consults the inner trigram and weighs it by Pressure moving, and only then can it be reckoned."] }
+      ],
+      "note": {
+        "yi": "「享国」是在位、国运延续的年数。「一位一元」「六元之运」书里没有说明怎么算（「元」像是一个计年的单位），这里照字面译，不替它加解释；注里「己亥年」「丁亥太岁」的对应关系书里也没有展开。这一条与易隐朝廷占「卜世卜年」（YY.49）是同一问，但算法不同，不可混用。",
+        "en": "'Xiangguo' is the number of years a dynasty holds the throne and its fortune lasts. How 'one position, one cycle' and 'a destiny of six cycles' are counted is not explained in the book ('yuan' looks like a unit for counting years), so it is translated literally with no explanation added, and the book does not unfold how the 'Jihai year' and 'Dinghai Tai Sui' of the note correspond. This entry asks the same question as 'counting the reigns and the years' in the Yi Yin divination on the court (YY.49), but the method of counting differs and the two must not be mixed."
+      },
+      "see": ["LY.CAREER.YM.08", "LY.CAREER.YM.10", "LY.CAREER.YY.49"]
+    },
+    {
+      "id": "LY.CAREER.YM.10",
+      "topic": "总则",
+      "chapter": "国事章第四十二",
+      "chapter_en": "Chapter 42: State affairs",
+      "title": "国事结语：以正得国、以德守国者常，以力得国、以暴守国者不常；天命之矣宁俟筮哉；天授之学者仁知、人授之学者象数，安能以人授之学测天命之微，唯述旧闻以备昭格，占者慎之",
+      "rule": {
+        "yi": "听先贤说过：以正道得国、以德行守国的，国运常久；以武力得国、以暴虐守国的，不能长久。这是天命注定的，哪里还要等占筮？而且天所授的学问是仁与智，人所授的学问是象数，怎么能用人教的学问去测度天命的精微？这里只是转述旧时的见闻，以备昭示之用，占的人要谨慎。",
+        "en": "I have heard the worthies of old say: those who gain the state by what is right and keep it by virtue endure; those who gain the state by force and keep it by violence do not endure. It is decreed by Heaven, so why wait for the yarrow stalks? Moreover, what Heaven teaches is benevolence and wisdom, and what men teach is images and numbers; how can one use what men have taught to fathom the subtlety of Heaven's decree? I merely relate what was heard of old, to be ready for clear manifestation; let the diviner take care."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [830, 830],
+          "zh": ["闻之先贤曰：", "以正得国，以德守国者常；", "以力得国，以暴守国者不常。", "天命之矣，宁俟筮哉？"],
+          "yi": ["听先贤说过：", "以正道得到国家、用德行守住国家的，国运常久；", "靠武力得国、靠暴虐守国的，不能长久。", "这是天命注定的，哪里还要等占筮呢？"],
+          "en": ["I have heard the worthies of old say:", "those who gain the state by what is right and keep it by virtue endure;", "those who gain the state by force and keep it by violence do not endure.", "It is decreed by Heaven, so why wait for the yarrow stalks?"] },
+        { "by": "经", "book": "易冒", "range": [831, 831],
+          "zh": ["且天授之学者仁知，人授之学者象数，", "安能以人授之学，测天命之微？", "唯述旧闻，以备昭格，占者慎之。"],
+          "yi": ["而且，天所授的学问是仁与智，人所授的学问是象数；", "怎么能用人教的学问，去测度天命的精微？", "只是转述旧时的见闻，以备明白昭示之用，占卜的人要谨慎。"],
+          "en": ["Moreover, what Heaven teaches is benevolence and wisdom, and what men teach is images and numbers;", "how can one use what men have taught to fathom the subtlety of Heaven's decree?", "I merely relate what was heard of old, to be ready for clear manifestation; let the diviner take care."] }
+      ],
+      "note": {
+        "yi": "这是国事章的结语。作者在这里说：得国守国靠的是德行，天命不是占筮能完全测度的，章中所讲只是转述旧说，占的人要谨慎。「昭格」是明白昭示、神明降临，这里指占卜的显示。「知」同「智」。",
+        "en": "This is the closing of the chapter on state affairs. The author says here that gaining and keeping a state depends on virtue, that Heaven's decree cannot be fully fathomed by divination, that what the chapter says is only the relaying of old views, and that the diviner should take care. 'Zhaoge' is clear manifestation and the descent of the spirits, here meaning what divination reveals. 'Zhi' is the same as 'zhi', wisdom."
+      },
+      "see": ["LY.CAREER.YM.09", "LY.CAREER.YM.01"]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "卜馆章第六十一",
+  "chapter_en": "Chapter 61: Divining a teaching post",
+  "ranges": {"易冒": [1354, 1369]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.29",
+      "topic": "求职",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆总纲：问馆有无成否，喜六合生世、恶三冲应空；本章十三问——何地、何时、就馆、开馆、附学、代馆、辞馆、荐馆、攘馆、选刻、卜徒、幕馆、商馆",
+      "rule": {
+        "yi": "问馆（教书的馆席）有没有、成不成，喜六合、喜生世，恶三冲、恶应空。本章分十三问：在什么地方、什么时候、就馆、开馆、附学、代馆、辞馆、荐馆、攘馆、选文刻书、卜徒、幕馆、商馆。",
+        "en": "In asking whether a teaching post exists and whether it will come off, Six-Combine and generation of the Self are welcome, while the three clashes and a Void Other are hated. The chapter takes thirteen questions in turn: where, when, taking up a post, opening a school, pupils coming to attach themselves, standing in for another, resigning, recommending, snatching a post, choosing texts for cutting, divining a disciple, a secretary's post, and a merchant's post."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1357, 1357],
+          "zh": ["问馆有无成否，", "喜六合生世，", "恶三冲应空。"],
+          "yi": ["问馆有没有、成不成，", "喜六合、生世，", "恶三冲、应空。"],
+          "en": ["In asking whether a post exists and whether it will come off,", "Six-Combine and generation of the Self are welcome,", "the three clashes and a Void Other are hated."] },
+        { "by": "易冒注", "book": "易冒", "range": [1356, 1356],
+          "zh": ["内详何地、何时、就馆、开馆、附学、代馆、辞馆、荐馆、攘馆、选刻、卜徒、幕馆、商馆十三问"],
+          "yi": ["里面详述：在何地、何时、就馆、开馆、附学、代馆、辞馆、荐馆、攘馆、选刻、卜徒、幕馆、商馆，共十三问。"],
+          "en": ["Within are treated in detail the thirteen questions: where, when, taking up a post, opening a school, attaching pupils, standing in for another, resigning, recommending, snatching a post, choosing and cutting texts, divining a disciple, a secretary's post, a merchant's post."] }
+      ],
+      "note": {
+        "yi": "「馆」是教书的馆席，也就是请先生的聘约。「就馆」是应聘上任，「开馆」是自己设帐招生，「附学」是学生来附读（下文「问附来者」），「代馆」是替人坐席，「辞馆」是辞去，「荐馆」是荐人去，「攘馆」是被人谋夺馆席，「选刻」是选文刻书，「卜徒」是看收的徒弟，「幕馆」是衙门里的幕友，「商馆」是在商家、富豪处共事。这一章的馆是私塾先生、幕友、商家账房一类的聘职，按职业归入事业；上一章末尾（L1350–1352）讲学生附学、延师、访师的那一半是读书求学，另归考试。「三冲」是贞冲（本卦六冲）、悔冲（变卦六冲）、合处逢冲这三种（见 YM.07 的注）。",
+        "en": "'Guan' is the teaching post, that is, the engagement of a teacher. 'Jiuguan' is taking up an engagement, 'kaiguan' is setting up a school oneself, 'fuxue' is pupils coming to attach themselves (the text below, 'asking about those who come to attach'), 'daiguan' is standing in for another, 'ciguan' is resigning, 'jianguan' is recommending someone, 'rangguan' is the post being plotted against and snatched, 'xuanke' is choosing texts and cutting blocks, 'butu' is looking at the disciples taken on, 'muguan' is a secretary in a government office, and 'shangguan' is working in the house of a merchant or rich man. The posts in this chapter are those of a village-school teacher, a secretary and a merchant's accountant, and are placed under Career by occupation; the other half, at the end of the previous chapter (L1350–1352), about pupils attaching themselves, hiring a teacher and seeking a teacher, is about study and belongs under Examinations. The 'three clashes' are the original hexagram being a six-clash, the changed hexagram being a six-clash, and a combination meeting a clash (see the note to YM.07)."
+      },
+      "see": ["LY.CAREER.YM.30", "LY.CAREER.EL.52", "LY.CAREER.EL.53", "LY.CAREER.YY.80"]
+    },
+    {
+      "id": "LY.CAREER.YM.30",
+      "topic": "取象",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·问馆何地：以应为方——坎兑近水、震巽入林、坤艮山野、离城市、乾大都灵宫；应居父母诗书礼乐之家、官鬼仕宦史胥之宅、妻财商贾、兄弟同侪、子孙清闲道德之门；阴阳分男女之延、内外分远近之请、游魂归魂分本土他境；六神分景色、诸星为人事",
+      "rule": {
+        "yi": "问馆在什么地方，以应爻为方位：应在坎、兑宫，近水；在震、巽，入林；在坤、艮，是山野；在离，是城市；在乾，是大都会或灵宫（神庙）。应落在父母，是诗书礼乐之家；落在官鬼，是做官的、书吏衙役的住宅；落在妻财是商贾，落在兄弟是同辈同行，落在子孙就是清闲讲道德的门第。用阴阳分是男是女来聘，用内外分是远是近来请，用游魂、归魂分本地还是他乡；用六神看四周的景色，用诸星看人事。应带青龙，馆在长林丰草之间；带玄武，在水边池旁；带朱雀，在闹市或有炊烟的村子；带白虎，在荒僻的乡下；带勾陈，近田野旧坟；带螣蛇，依在来往的工匠、舟车一带。贵人是做官的，驿马是经商的，华盖是出家人，天财是商贩，天猪是屠户，其余照这样类推。",
+        "en": "In asking where the post is, the Other gives the direction: the Other in Kan or Dui is near water, in Zhen or Xun it goes into woods, in Kun or Gen it is mountain wilds, in Li it is a town, and in Qian it is a great city or a hall of the spirits (a temple). The Other on Resource is a house of poetry, books, rites and music; on Pressure, the residence of officials, clerks and runners; on Wealth, merchants; on Peer, one's fellows of the same trade; on Output, a quiet, leisured house of morals and the Way. Yin and yang tell whether a man or a woman engages me, inner and outer whether the invitation is near or far, Wandering Soul and Returning Soul whether it is home ground or another region; the six spirits give the scenery around and the stars give the human affairs. The Other with the Azure Dragon: the place is among long woods and thick grass; the Dark Tortoise: a house by water, beside a pond; the Vermilion Bird: a busy market or a smoky village; the White Tiger: a barren, remote countryside; Hook Earth: near fields and old graves; the Coiling Snake: by the traffic of craftsmen, boats and carts. The Noble is an official, the Post Horse a merchant, the Canopy a monk, Heavenly Wealth a trader, the Heavenly Boar a butcher, and the rest are sought by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1358, 1358],
+          "zh": ["问馆何地，以应为方，", "在坎兑而近水，在震巽而入林，在坤艮为山野，在离为城市，在乾为大都灵宫也。", "应居父母，则诗书礼乐之家，", "应居官鬼，则仕宦史胥之宅，", "居妻财为商贾，居兄弟为同侪，居子孙则清闲道德之门也。", "以阴阳而分男女之延，以内外而分远近之请，", "以游魂归魂而分本土他境，", "以六神分景色，诸星为人事也。"],
+          "yi": ["问馆在什么地方，以应爻为方位：", "应在坎、兑宫就近水，在震、巽宫就入林，在坤、艮宫是山野，在离宫是城市，在乾宫是大都会或灵宫。", "应落在父母，是诗书礼乐之家；", "应落在官鬼，是做官的、书吏衙役的住宅；", "落在妻财是商贾，落在兄弟是同辈同行，落在子孙就是清闲讲道德的门第。", "用阴阳分是男是女来聘，用内外分是远是近来请，", "用游魂、归魂分是本地还是他乡，", "用六神看四周的景色，用诸星看人事。"],
+          "en": ["In asking where the post is, the Other gives the direction:", "the Other in Kan or Dui is near water, in Zhen or Xun it goes into woods, in Kun or Gen it is mountain wilds, in Li it is a town, and in Qian it is a great city or a hall of the spirits.", "the Other on Resource is a house of poetry, books, rites and music;", "the Other on Pressure is the residence of officials, clerks and runners;", "on Wealth it is merchants, on Peer it is one's fellows of the same trade, and on Output it is a quiet, leisured house of morals and the Way.", "Yin and yang tell whether a man or a woman engages me, inner and outer tell whether the invitation is near or far,", "Wandering Soul and Returning Soul tell whether it is home ground or another region,", "the six spirits give the scenery around, and the stars give the human affairs."] },
+        { "by": "易冒注", "book": "易冒", "range": [1359, 1359],
+          "zh": ["应带青龙，其地在长林丰草，", "元武其家在水畔池傍，", "朱雀闹市烟村，", "白虎荒乡僻境，", "勾陈近于田野故茔，", "螣蛇依于往来工艺舟车也。", "贵人为宦，驿马为商，华盖为僧，天财为贾，天猪为屠，", "余以类求。"],
+          "yi": ["应带青龙，馆在长林丰草之间；", "带玄武，他家在水边池旁；", "带朱雀，是闹市和有炊烟的村子；", "带白虎，是荒僻的乡下；", "带勾陈，近田野旧坟；", "带螣蛇，依在来往的工匠、舟车一带。", "贵人是做官的，驿马是经商的，华盖是出家人，天财是商贩，天猪是屠户，", "其余照这样类推。"],
+          "en": ["The Other with the Azure Dragon: the place is among long woods and thick grass;", "with the Dark Tortoise, his house is by water, beside a pond;", "with the Vermilion Bird, it is a busy market or a smoky village;", "with the White Tiger, a barren, remote countryside;", "with Hook Earth, near fields and old graves;", "with the Coiling Snake, by the traffic of craftsmen, boats and carts.", "The Noble is an official, the Post Horse a merchant, the Canopy a monk, Heavenly Wealth a trader, the Heavenly Boar a butcher,", "and the rest are sought by analogy."] }
+      ],
+      "note": {
+        "yi": "「史胥」就是吏胥，书吏和衙役。「灵宫」是供神的宫观。「男女之延」是聘他的是男主人还是女主人；「远近之请」是请他的地方远还是近。游魂主迁徙、归魂主回原处，所以拿来分本乡他乡（和 EL.53「游魂迁改它图吉、归魂乃旧胜西东」是同一个意思）。「景色」是馆舍周围的光景。「天财」「天猪」是神煞名，书里没有列出怎么取，按字面译。这一条是把应爻当作东家来看的一整套取象，与黄金策求馆「应乃东家，若遇官爻须作吏」（HJC.30）同类，易冒比它多了方位和六神、神煞一层。",
+        "en": "'Shixu' is 'lixu', clerks and runners. 'Lingong' is a hall for the worship of spirits. 'Engaged by man or woman' is whether it is the master or the mistress of the house who engages him; 'far or near invitation' is whether the place that invites him is far or near. Wandering Soul stands for moving about and Returning Soul for going back to the original place, so they are used to tell home ground from other regions (the same idea as in EL.53, 'Wandering Soul: another scheme is good; Returning Soul: the old post is better than east or west'). 'Scenery' is the view around the schoolroom. 'Heavenly Wealth' and 'Heavenly Boar' are names of spirit-stars, and the book does not list how they are taken, so they are translated literally. This entry is a whole set of images that treats the Other as the master of the house, of a kind with 'the Other is the master of the house, and if it meets the Pressure line he must be an official' in the Huangjin Ce on seeking a post (HJC.30), the Yimao adding a layer of direction, the six spirits and the spirit-stars."
+      },
+      "see": ["LY.CAREER.YM.29", "LY.CAREER.YM.31", "LY.CAREER.HJC.30", "LY.CAREER.EL.53"]
+    },
+    {
+      "id": "LY.CAREER.YM.31",
+      "topic": "应期",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·问得馆何时：实世、生世、合世之日就是它的日期",
+      "rule": {
+        "yi": "问什么时候能得到馆，看填实世爻（世爻落空时）、生世、合世的日子，那就是它的日期。",
+        "en": "In asking when a post will be obtained, the days that fill the Self, generate the Self or combine with the Self are its date."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1358, 1358],
+          "zh": ["问得馆何时，", "实世生世合世，", "则其期也。"],
+          "yi": ["问什么时候能得到馆，", "实世、生世、合世的日子，", "就是它的日期。"],
+          "en": ["In asking when the post will be obtained,", "the days that fill the Self, generate the Self or combine with the Self", "are its date."] }
+      ],
+      "note": {
+        "yi": "「实世」按文意是填实世爻：世落空时，逢到把它填实的日子叫实；「生世」「合世」是生它、合它的日子。书里只有这一句，没有展开。易林补遗求馆（EL.54）和易隐觅馆占（YY.81）把它细讲了：以父母为用，按旺衰取日。",
+        "en": "'Shishi' is, by the sense, filling the Self line: when the Self is Void, a day that meets and fills it is called 'real'; 'generating the Self' and 'combining with the Self' are days that generate or combine with it. The book has only this sentence and does not expand on it. The Yilin Buyi on seeking a post (EL.54) and the Yi Yin divination of a post (YY.81) treat it in detail: Resource is the Subject, and the day is taken by thriving or declining."
+      },
+      "see": ["LY.CAREER.YM.30", "LY.CAREER.EL.54", "LY.CAREER.YY.81"]
+    },
+    {
+      "id": "LY.CAREER.YM.32",
+      "topic": "成否",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·就馆之吉：三冲则砚席难终、财陷则束修未腆、应空无尊道之志、克世有慢师之嫌、应破散绝有怠学之心，唯六合财旺应生为吉；馆定之后随墓助伤不可犯、世用空破散绝不可遇、官鬼不可动，动则以五行八宫六神诸星详之，游魂不久三冲不定",
+      "rule": {
+        "yi": "已经聘定，问去就馆吉不吉：三冲，教席难以做满；财陷，酬金不丰；应空，东家没有尊师重道的志向；应克世，有怠慢先生的嫌疑；应破、散、绝，有懈怠学业的心；只有六合、财旺、应生世才是吉。馆已经定了，要问我在那里能不能身安心定：随墓、助伤不可犯；世用空、破、散、绝不可遇；官鬼不可动；动了就用五行、八宫、六神、诸星细看。游魂主不长久，三冲主不安定。",
+        "en": "Once the engagement is made, in asking whether taking up the post is auspicious: the three clashes, and the seat at the inkstone is hard to keep to the end; Wealth fallen, and the tuition gift is not generous; the Other Void, and the family has no will to honour the teacher and the Way; the Other controlling the Self, and there is a suspicion of slighting the teacher; the Other broken, scattered or extinct, and there is a heart of idleness about study; only Six-Combine, thriving Wealth and the Other generating the Self are auspicious. The post is settled; in asking whether I shall be at ease in body and settled in mind there, following into the tomb and helping the injury must not be committed, the Self or the Subject Void, broken, scattered or extinct must not be met, and Pressure must not move; if it moves, examine it by the five phases, the eight palaces, the six spirits and the stars. Wandering Soul does not last, and the three clashes are unsettled."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1360, 1360],
+          "zh": ["既延而问就馆之吉，", "三冲则砚席难终，财陷则束修未腆，", "应空无尊道之志，克世有慢师之嫌，应破散绝有怠学之心，", "唯六合财旺应生为吉。", "馆已定矣，如我处而身安心定乎，", "则随墓助伤，不可犯也，", "世用空破散绝，不可遇也，", "官鬼不可动也，", "动则以五行八宫、六神诸星详之。", "游魂不久，三冲不定。"],
+          "yi": ["已经聘定，问去就馆的吉凶：", "三冲，教席就难以做满；财陷，酬金就不丰厚；", "应空，没有尊师重道的志向；应克世，有怠慢先生的嫌疑；应破、散、绝，有懈怠学业的心；", "只有六合、财旺、应生世才是吉。", "馆已经定了，要问我在那里能不能身安心定：", "随墓、助伤，不可犯；", "世用空、破、散、绝，不可遇；", "官鬼不可动；", "动了，就用五行、八宫、六神、诸星细看。", "游魂主不长久，三冲主不安定。"],
+          "en": ["Once the engagement is made, in asking whether taking up the post is auspicious:", "the three clashes, and the seat at the inkstone is hard to keep to the end; Wealth fallen, and the tuition gift is not generous;", "the Other Void, and there is no will to honour the teacher and the Way; the Other controlling the Self, and there is a suspicion of slighting the teacher; the Other broken, scattered or extinct, and there is a heart of idleness about study;", "only Six-Combine, thriving Wealth and the Other generating the Self are auspicious.", "The post is settled; in asking whether I shall be at ease in body and settled in mind there:", "following into the tomb and helping the injury must not be committed;", "the Self or the Subject Void, broken, scattered or extinct must not be met;", "Pressure must not move;", "if it moves, examine it by the five phases, the eight palaces, the six spirits and the stars.", "Wandering Soul does not last, and the three clashes are unsettled."] },
+        { "by": "易冒注", "book": "易冒", "range": [1361, 1361],
+          "zh": ["鬼静无戒，鬼动有忌，", "艮由童仆产祸，兑由妇女生言，乾坤防老翁妪之憎，震巽慎小工技之谗，", "坎惊盗，离惊火，八宫之约举也。", "金丧，火非，土病，水失，木折，", "咸池淫，天贼盗，官符讼，驿马迁，", "五行诸星之约举也。", "六神亦然，元武遗亡，", "朱雀毁谤，", "龙败事于嗜酒，", "虎失利于兵丧，", "勾陈趄咨遁闷，", "螣蛇浮燥惊惶。"],
+          "yi": ["鬼静就没有要戒备的，鬼动就有所忌：", "艮宫是由童仆惹出祸，兑宫是由妇女生出闲话，乾、坤宫要防老翁老妇的憎恶，震、巽宫要慎防小工匠的谗言，", "坎宫惊盗，离宫惊火，这是八宫的大略举例。", "金主丧，火主是非，土主病，水主失，木主折；", "咸池主淫，天贼主盗，官符主讼，驿马主迁。", "这是五行和诸星的大略举例。", "六神也是这样：玄武主遗失，", "朱雀主毁谤，", "青龙因嗜酒坏事，", "白虎因兵、丧失利，", "勾陈迟疑叹息、退缩郁闷，", "螣蛇浮躁惊惶。"],
+          "en": ["When Pressure is still there is nothing to guard against, when it moves there is something to avoid:", "Gen, trouble starts from young servants; Dui, gossip comes from women; with Qian and Kun guard against the hatred of old men and old women; with Zhen and Xun beware of the slander of petty craftsmen;", "Kan, alarm of thieves; Li, alarm of fire. This is a rough listing of the eight palaces.", "Metal means mourning, Fire means disputes, Earth means illness, Water means loss, Wood means breakage;", "the Peach Blossom means lewdness, the Heavenly Thief means theft, the Official Charge means lawsuits, and the Post Horse means moving away.", "This is a rough listing of the five phases and the stars.", "It is the same with the six spirits: the Dark Tortoise means losses,", "the Vermilion Bird means slander,", "the Azure Dragon spoils matters through fondness for wine,", "the White Tiger loses advantage through soldiers and mourning,", "Hook Earth means hesitation and sighing, withdrawal and gloom,", "the Coiling Snake means restlessness and alarm."] }
+      ],
+      "note": {
+        "yi": "「砚席」是教书的席位，「束修」是给先生的酬金，「未腆」是不丰厚。「就馆」是应聘上任。「随墓助伤」书里没有再注，是前几章反复出现的忌：随着官鬼入墓、帮着官鬼伤世（见 YM.13）。「世用」是世爻和用神。「游魂不久」是游魂主变动不长久。书里的注自己说明那三组（八宫、五行诸星、六神）都只是大略举例：八宫取象，艮是少男，所以祸由童仆起，兑是少女，所以话从妇女生，乾坤是老父老母，所以防老人，震巽是长男长女，所以防小工匠，坎主盗、离主火；五行金主丧、火主是非、土主病、水主失、木主折；诸星里咸池主淫、天贼主盗、官符主讼、驿马主迁；六神里龙主酒、虎主兵丧。「趄咨」疑是「趑趄咨嗟」（迟疑叹息），「遁闷」是退缩郁闷。「官鬼动」的忌点原文只说「鬼静无戒，鬼动有忌」，后面的举例是各宫各神各自带来的具体事。",
+        "en": "'Yanxi' is the seat of a teacher, 'shuxiu' is the tuition gift to the teacher, and 'weitian' is not generous. 'Jiuguan' is taking up an engagement. The book does not gloss 'following into the tomb and helping the injury', which is a taboo recurring in earlier chapters: following Pressure into the tomb and helping Pressure to injure the Self (see YM.13). 'Self or Subject' is the Self line and the Subject. 'Wandering Soul does not last' is that Wandering Soul means change and no lasting. The note in the book says itself that the three groups (the eight palaces, the five phases with the stars, and the six spirits) are only rough listings: by the images of the eight palaces, Gen is the youngest son, so trouble starts from young servants, Dui is the youngest daughter, so talk comes from women, Qian and Kun are the old father and mother, so guard against old people, Zhen and Xun are the eldest son and daughter, so guard against petty craftsmen, Kan governs thieves and Li governs fire; of the five phases Metal governs mourning, Fire disputes, Earth illness, Water loss and Wood breakage; among the stars the Peach Blossom governs lewdness, the Heavenly Thief theft, the Official Charge lawsuits and the Post Horse moving away; among the six spirits the Dragon governs wine and the Tiger soldiers and mourning. 'Quzi' is presumably 'zijuzi jie', hesitating and sighing, and 'dunmen' is shrinking back in gloom. For Pressure moving, the main text says only 'Pressure still, nothing to guard against; Pressure moving, there is something to avoid', and the examples after are the particular troubles each palace and each spirit brings."
+      },
+      "see": ["LY.CAREER.YM.29", "LY.CAREER.YM.33", "LY.CAREER.YM.13", "LY.CAREER.EL.52"]
+    },
+    {
+      "id": "LY.CAREER.YM.33",
+      "topic": "成否",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·设帐、附学、代席、辞馆：设帐应空则负笈无徒、财虚则馆谷不盛；问附来者同设帐、问代席者同成馆；辞馆以应为主人，应克世则主不从虽六冲不能解、应空散破绝则不遂虽游魂不可辞，惟应实及不克世者可以去",
+      "rule": {
+        "yi": "设帐（开馆）会不会有人来跟着学：应空，就没有背着书箱来的学徒；财虚，馆谷（教书的酬金）就不丰盛。问学生来附读的，和设帐一样断；问代人坐席的，和成馆一样断。占辞馆，以应为主人：应克世，主人不依从；应空、散、破、绝，事情做不成；主人不依从，即使六冲也解不开；事情做不成，即使游魂又怎么辞得掉？只有应爻实（不空）、又不克世的，才可以离开。",
+        "en": "In asking whether, on opening a school, anyone will come to study: the Other Void, and no pupils come carrying their book-chests; Wealth empty, and the stipend for the post is not rich. In asking about pupils who come to attach themselves, judge as for opening a school; in asking about standing in for another, judge as for a post that comes off. In divining about resigning from a post, the Other is the master: the Other controlling the Self, and the master does not comply; the Other Void, scattered, broken or extinct, and it does not go through; when the master does not comply, even a six-clash cannot dissolve it; when it does not go through, even Wandering Soul, how can one resign? Only when the Other is solid and does not control the Self may one leave."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1362, 1362],
+          "zh": ["设帐来从乎，", "应空则负笈无徒，财虚则馆榖不盛。", "问附来者，同于设帐。", "问代席者，同于成馆。", "若筮辞馆，以应为主人，", "应克世而不从，应空散破绝而不遂；", "主不从虽六冲不能解，主不遂虽游魂安可辞，", "惟应实及不克世者，可以去也。"],
+          "yi": ["设帐（开馆），会不会有人来跟着学？", "应空，就没有背着书箱来的学徒；财虚，馆谷就不丰盛。", "问学生来附读的，和设帐一样断。", "问代人坐席的，和成馆一样断。", "如果占辞馆，以应为主人，", "应克世，主人不依从；应空、散、破、绝，事情做不成；", "主人不依从，即使六冲也解不开；事情做不成，即使游魂又怎么辞得掉？", "只有应实、又不克世的，才可以离开。"],
+          "en": ["In opening a school, will anyone come to study?", "If the Other is Void, no pupils come carrying their book-chests; if Wealth is empty, the stipend for the post is not rich.", "In asking about those who come to attach themselves, judge as for opening a school.", "In asking about standing in for another, judge as for a post that comes off.", "In divining about resigning from a post, the Other is the master:", "if the Other controls the Self, the master does not comply; if the Other is Void, scattered, broken or extinct, it does not go through;", "when the master does not comply, even a six-clash cannot dissolve it; when it does not go through, even with Wandering Soul, how can one resign?", "Only when the Other is solid and does not control the Self may one leave."] }
+      ],
+      "note": {
+        "yi": "「设帐」是开馆教书，「负笈」是背着书箱（来求学），「馆榖」就是馆谷，指教书的酬金口粮。「附来者」是带着孩子来附在这个馆里读书的人。「代席」是替人坐馆。「主不遂」的「遂」是事情顺遂成就，这里指辞馆这件事做不成。辞馆本来是『世想走』，看的是东家肯不肯放：应克世是东家不依，应空散破绝是这件事落不了地，这两种情形即使卦是六冲（该散）、游魂（该迁），也走不成。「六冲」在别处主散，这里是反说：再散的卦，主人不依也解不开。",
+        "en": "'Shezhang' is opening a school to teach, 'fuji' is carrying a book-chest (to come to study), and 'guangu' is the stipend of grain for the teacher. 'Those who come to attach' are those who bring a child to read at this school. 'Daixi' is sitting in for another at his post. The 'sui' of 'the master does not sui' is a matter going through to success, here the resignation not getting done. Resigning is the Self wishing to leave, and what is looked at is whether the master will let go: the Other controlling the Self is the master not complying, and the Other Void, scattered, broken or extinct is the matter failing to land, so even in a six-clash (which should break up) or Wandering Soul (which should move on) one cannot get away. 'Six-clash' elsewhere means dispersal, and here it is put the other way: however scattering the hexagram, if the master does not comply it cannot be undone."
+      },
+      "see": ["LY.CAREER.YM.32", "LY.CAREER.YM.34", "LY.CAREER.EL.52", "LY.CAREER.HJC.39"]
+    },
+    {
+      "id": "LY.CAREER.YM.34",
+      "topic": "贵人",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·荐馆与攘馆：荐馆类于仗托，贞冲应坏则不力、克世则不忠；攘馆犹于夺婚，应破散空则彼谋不遂、克世则为其所夺",
+      "rule": {
+        "yi": "占荐馆（托人推荐馆席），类似仗托（托人办事）：本卦六冲、应坏，他就不出力；应克世，他就不忠。占攘馆（有人谋夺馆席），如同占夺婚：应破、散、空，他的图谋不成；应克世，就被他夺走。",
+        "en": "In divining about recommending someone to a post it is like entrusting a matter to someone: if the original hexagram is a six-clash and the Other is damaged, he does not exert himself; if the Other controls the Self, he is not loyal. In divining about snatching a post it is like snatching a marriage: if the Other is broken, scattered or Void, his scheme does not succeed; if the Other controls the Self, one is robbed of it by him."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1363, 1363],
+          "zh": ["筮荐馆，类于仗托，", "贞冲应坏则不力，克世则不忠。", "筮攘馆，犹于夺婚，", "应破散空，彼谋不遂，克世而为其所夺也。"],
+          "yi": ["占荐馆，类似仗托，", "本卦六冲、应坏，他就不出力；应克世，他就不忠。", "占攘馆，如同夺婚，", "应破、散、空，他的图谋不成；应克世，就被他夺走。"],
+          "en": ["In divining about recommending to a post, it is like entrusting a matter,", "if the original hexagram is a six-clash and the Other is damaged he does not exert himself; if the Other controls the Self, he is not loyal.", "In divining about snatching a post, it is like snatching a marriage:", "if the Other is broken, scattered or Void, his scheme does not succeed; if it controls the Self, one is robbed of it by him."] }
+      ],
+      "note": {
+        "yi": "「荐馆」是托人把我（或别人）荐进某个馆，「仗托」是仗着别人去办（见 EL.134 起的仗托人力）。「贞冲」是本卦（贞）是六冲卦。「攘馆」按下面「彼谋不遂」读，是有人图谋夺我的馆；书里只用「犹于夺婚」一句交代，夺婚的断法见婚姻域。「克世而为其所夺」是应爻克世，我反而被夺了去。",
+        "en": "'Jianguan' is getting someone to recommend me (or another) into a post, and 'zhangtuo' is relying on another to see to it (see the entrustment of human help from EL.134). 'Zhenchong' is the original hexagram (zhen) being a six-clash hexagram. 'Rangguan', read by 'his scheme does not succeed' below, is someone plotting to snatch my post; the book gives it only the sentence 'as with snatching a marriage', and the method of snatching a marriage is in the Marriage domain. 'Controlling the Self and being robbed by him' is the Other line controlling the Self, so that I am the one robbed."
+      },
+      "see": ["LY.CAREER.YM.33", "LY.CAREER.YM.35", "LY.CAREER.EL.134", "LY.CAREER.HJC.36"]
+    },
+    {
+      "id": "LY.CAREER.YM.35",
+      "topic": "求职",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·选文刻书与卜徒好恶：选文刻书名用父母、利用妻财；卜徒三教用子孙、百工用应象，执贽之后分、束修未行则皆从应象；应克世其人矫罔、应空破散其人下劣、三冲无恒心、财空无礼币",
+      "rule": {
+        "yi": "问选文刻书，用神有两个：求名用父母，求利用妻财。卜徒弟的好坏，用神也是两个：儒、释、道三教的师徒情谊同父子，所以用子孙；百工是为谋利学的，所以凭应象。不过执贽（行了拜师礼）之后，才有用子孙还是用应象的分别；束修还没送，就都从应象，这是三教、百工相同的。应克世，这个人矫饰欺罔；应空、破、散，这个人下劣；三冲，没有恒心；财空，没有礼金礼物。",
+        "en": "In asking about choosing texts and cutting blocks, the Subject is of two kinds: for fame Resource is used, for profit Wealth. In divining whether a disciple is good or bad the Subject is also of two kinds: the three teachings, Confucian, Buddhist and Daoist, have a bond of teacher and pupil like father and son, so Output is used; the hundred crafts are learned for gain, so the Other image is relied on. But it is after the formal presenting of gifts that there is the division between Output and the Other image; before the tuition gift is offered, all follow the Other image, and in this the three teachings and the hundred crafts are the same. The Other controlling the Self, and the person is deceitful; the Other Void, broken or scattered, and the person is base; the three clashes, and he has no constancy; Wealth Void, and he has no gift of money or goods."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1364, 1364],
+          "zh": ["有问选文刻书，其用有二：", "名用父母，利用妻财。", "卜徒好恶，其用亦二：", "三教谊同父子，故用子孙；", "百工业以求利，故凭应象；", "然执贽之后，有子孙应象之分，", "束修未行，则皆从应象，此三教百工同也；", "应克世而其人矫罔，应空破散而其人下劣，三冲而无恒心，财空而无礼币。"],
+          "yi": ["有人问选文刻书，用神有两个：", "求名用父母，求利用妻财。", "卜徒弟的好坏，用神也有两个：", "三教的师徒情谊同于父子，所以用子孙；", "百工是为谋利学业，所以凭应象。", "不过行了拜师礼（执贽）之后，才有用子孙还是用应象的分别；", "束修还没送，就都从应象，这是三教、百工相同的。", "应克世，这个人矫饰欺罔；应空、破、散，这个人下劣；三冲，没有恒心；财空，没有礼金礼物。"],
+          "en": ["If one asks about choosing texts and cutting blocks, the Subject is of two kinds:", "for fame Resource is used, for profit Wealth.", "In divining whether a disciple is good or bad, the Subject is also of two kinds:", "the three teachings have a bond of teacher and pupil like father and son, so Output is used;", "the hundred crafts are learned for gain, so the Other image is relied on.", "But after the formal presenting of gifts there is the division between using Output and using the Other image;", "before the tuition gift is offered, all follow the Other image, and in this the three teachings and the hundred crafts are the same.", "The Other controlling the Self, and the person is deceitful; the Other Void, broken or scattered, and the person is base; the three clashes, and he has no constancy; Wealth Void, and he has no gift of money or goods."] }
+      ],
+      "note": {
+        "yi": "「选文刻书」是选编文章、刻版印行，「名用父母」是为名声，父母是文书；「利用妻财」是为卖书得利。「三教」是儒释道，「百工」是各行手艺。「执贽」是学生向老师行拜师礼、送上见面礼；「束修」是一束干肉，后来指学生送给先生的酬金，「未行」是还没送。「应象」是用应爻来看这个人。这一条是『收徒』这一边：前面是我被人聘，这里是我收人做徒弟。「矫罔」是矫饰欺骗。「礼币」是礼金礼物。",
+        "en": "'Xuanwen keshu' is compiling essays and cutting blocks to print them, and 'fame uses Resource' is because Resource is documents, for the sake of reputation; 'profit uses Wealth' is for the gain from selling the books. The 'three teachings' are Confucianism, Buddhism and Daoism, and the 'hundred crafts' are the trades of every line. 'Zhizhi' is a pupil's formal ceremony of becoming a disciple and the first gift to the teacher; 'shuxiu' is a bundle of dried meat, later the fee a pupil gives his teacher, and 'not yet offered' is not yet given. 'The Other image' is using the Other line to look at this person. This entry is the side of taking disciples: earlier I am the one engaged, and here I am taking on someone as a disciple. 'Jiaowang' is deceit and false show. 'Libi' is gifts of money and goods."
+      },
+      "see": ["LY.CAREER.YM.34", "LY.CAREER.YM.36"]
+    },
+    {
+      "id": "LY.CAREER.YM.36",
+      "topic": "求职",
+      "chapter": "卜馆章第六十一",
+      "chapter_en": "Chapter 61: Divining a teaching post",
+      "title": "卜馆·幕馆、商馆与遇于何地：筮馆于衙幕及同业于富豪，看财官世应，喜其生合、忌彼空冲；筮遇于何地不取应而取财，财生之方、财动之宫乃可图，财属五行为其象，再参六神诸星",
+      "rule": {
+        "yi": "占在衙门里做幕友，以及和富豪同业共事，看财、官、世、应，喜它们生、合，忌它们空、冲。占在什么地方遇到馆，就不取应爻，而取财：财长生的方位、财动所在的宫，才是可以去图谋的；财属哪一行，就是它的象。再参看六神、诸星。财动按宫来论，如财动在乾宫，宜往西北去；财静按长生来论，如财属金爻（金长生在巳，在东南），利涉东南；妻财临水，遇鱼盐一类的行业、江海之滨；妻财临木，遇花果的行当、山林之处；土是田野，火是城市，金是玉石；玄武主水、青龙主木，白虎主兵，朱雀主市，螣蛇主商，勾陈主医；天医主医使，华盖主僧从，都用财来考察。接受人家的聘请，以世应为先；替人家办事，以财利为务。",
+        "en": "In divining about a post as a secretary in a government office, or about working in the same trade as a rich man, look at Wealth, Pressure, the Self and the Other: it is good for them to generate and combine, and bad for them to be Void and clashed. In divining where one will meet a post, one does not take the Other line but takes Wealth: the quarter where Wealth is born and the palace where Wealth moves are where one can make plans, and the phase Wealth belongs to is its image. Then consult the six spirits and the stars. When Wealth moves, judge by the palace: if Wealth moves in the palace of Qian, go to the north-west; when Wealth is still, judge by Birth: if Wealth is a Metal line (Metal is born at Si, in the south-east), the south-east is favourable. Wealth on Water meets trades of fish and salt and the shores of river and sea; Wealth on Wood meets the flower-and-fruit trade and the mountain forest; Earth looks for fields, Fire for towns, Metal for jade and stone; the Dark Tortoise is water, the Azure Dragon is wood, the White Tiger is soldiers, the Vermilion Bird is markets, the Coiling Snake is merchants and Hook Earth is doctors; the Heavenly Doctor is physicians and messengers, the Canopy is monks and followers; all are examined by Wealth. In accepting a person's invitation the Self and the Other come first; in serving a person's affairs, Wealth and profit are the business."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1365, 1367],
+          "zh": ["若筮馆于衙幕，及同业于富豪，", "财官世应，喜其生合，忌彼空冲。", "若筮遇于何地，", "则不以应而财，", "财生之方，财动之宫，乃可图也，", "财属五行，乃其象也。", "六神诸星参之。"],
+          "yi": ["如果占在衙门里做幕友，以及和富豪同业共事，", "看财、官、世、应，喜它们生、合，忌它们空、冲。", "如果占在什么地方遇到馆，", "就不取应而取财，", "财长生的方位、财动所在的宫，才是可以去图谋的，", "财属哪一行，就是它的象。", "再参看六神、诸星。"],
+          "en": ["In divining about a post as a secretary in a government office, or about working in the same trade as a rich man,", "look at Wealth, Pressure, the Self and the Other: it is good for them to generate and combine, and bad for them to be Void and clashed.", "In divining where one will meet a post,", "one does not take the Other but takes Wealth,", "the quarter where Wealth is born and the palace where Wealth moves are where one can make plans,", "and the phase Wealth belongs to is its image.", "Then consult the six spirits and the stars."] },
+        { "by": "易冒注", "book": "易冒", "range": [1368, 1369],
+          "zh": ["财动论宫，如财动乾宫，宜趋西北；", "财静论生，如财属金爻，利涉东南；", "妻财临水，遇鱼盐之业、江海之滨，", "妻财临木，遇花果之行、山林之所，", "土觅田野，火觅城市，金觅玉石；", "武水龙木，虎兵雀市，蛇商勾医；", "天医医使，华盖僧从，皆以财考也。", "纳人之请，世应为先，服人之事，财利为务。"],
+          "yi": ["财动按宫来论，如财动在乾宫，宜往西北去；", "财静按长生来论，如财属金爻，利涉东南；", "妻财临水，遇鱼盐一类的行业、江海之滨；", "妻财临木，遇花果的行当、山林之处；", "土是田野，火是城市，金是玉石；", "玄武主水，青龙主木，白虎主兵，朱雀主市，螣蛇主商，勾陈主医；", "天医主医使，华盖主僧从，都用财来考察。", "接受人家的聘请，以世应为先；替人家办事，以财利为务。"],
+          "en": ["When Wealth moves, judge by the palace: if Wealth moves in the palace of Qian, one should go to the north-west;", "when Wealth is still, judge by Birth: if Wealth is a Metal line, crossing to the south-east is favourable;", "Wealth on Water meets trades of fish and salt and the shores of river and sea;", "Wealth on Wood meets the flower-and-fruit trade and mountain forest;", "Earth looks for fields, Fire for towns, Metal for jade and stone;", "the Dark Tortoise is water, the Azure Dragon is wood, the White Tiger is soldiers, the Vermilion Bird is markets, the Coiling Snake is merchants, and Hook Earth is doctors;", "the Heavenly Doctor is physicians and messengers, the Canopy is monks and followers, and all are examined by Wealth.", "In accepting a person's invitation the Self and the Other come first; in serving a person's affairs, Wealth and profit are the business."] }
+      ],
+      "note": {
+        "yi": "「衙幕」是衙门里的幕友（师爷），「同业于富豪」是在富商豪门的行当里共事，这两样就是章首十三问里的「幕馆」「商馆」。「遇于何地」是在哪个地方能遇到馆。「则不以应而财」一句，「而」字下原文疑脱一字（当是「取」或「以」），按文意译作「不取应而取财」。「财生之方」按文意是财的长生所在的方位，「财动之宫」是财爻动在哪一宫、那一宫所主的方位：动用宫、静用生，这就是注里「财动论宫、财静论生」。书里的例子：财动乾宫，乾在西北，宜趋西北；财是金爻，金长生在巳，巳在东南，所以利涉东南。「武水龙木，虎兵雀市，蛇商勾医」是六神各配一个行业；「天医医使，华盖僧从」是两个神煞。收尾「纳人之请，世应为先，服人之事，财利为务」是总括：被人聘用看世应，替人办事看财利。",
+        "en": "'Yamu' is a secretary in a government office, and 'working in the same trade as a rich man' is working in the line of a rich merchant's or magnate's house; these two are the 'muguan' and 'shangguan' of the thirteen questions at the head of the chapter. 'Yu yu hedi' is where one can meet a post. In the sentence 'ze bu yi ying er cai' a character seems to be missing below 'er' (presumably 'qu' or 'yi'), and by the sense it is translated 'does not take the Other but takes Wealth'. 'The quarter where Wealth is born', by the sense, is the quarter of Wealth's Birth, and 'the palace Wealth moves in' is the direction governed by the palace in which the Wealth line moves: for a moving line the palace is used, for a still one Birth, which is what the note means by 'Wealth moving, judge by the palace; Wealth still, judge by Birth'. The examples in the book: Wealth moving in Qian, which is in the north-west, one should go north-west; Wealth a Metal line, Metal being born at Si, which is in the south-east, so crossing to the south-east is favourable. 'Wu shui long mu, hu bing que shi, she shang gou yi' gives each of the six spirits a trade; 'tian yi yi shi, hua gai seng cong' are two spirit-stars. The closing 'in accepting a person's invitation the Self and the Other come first, in serving a person's affairs Wealth and profit are the business' sums it up: when engaged by someone, look at the Self and the Other; when working for someone, look at Wealth and profit."
+      },
+      "see": ["LY.CAREER.YM.35", "LY.CAREER.YM.30", "LY.CAREER.EL.52"]
+    }
+  ]
+}

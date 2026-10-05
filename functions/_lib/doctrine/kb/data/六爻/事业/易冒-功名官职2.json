@@ -1,0 +1,270 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "功名章第六十二(官职部分之二)",
+  "chapter_en": "Chapter 62: Fame and office (office, part 2)",
+  "ranges": {"易冒": [1405, 1427]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.44",
+      "topic": "任所",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "升何方：以官爻所属五行为法——金官升任西土、木官治事东方、水官齐民北海、土官秉政中央、火官为化南隅；不拘官爻衰旺及十二支神，大略以五行分之多验（戌月戊申日占得革，丑官东北未官西南，后擢河南中土）",
+      "rule": {
+        "yi": "升到哪个方向，以官爻所属的五行为法：属金，该到西方上任；属木，该在东方治事；属水，该在北海一带治民；属土，该在中央执政；属火，该在南方一隅施行教化。不论官爻的衰旺，也不论十二支神所主的方位，大略按五行来分，多半应验。例如戌月戊申日占升到哪个方向，得革卦；若按地支说，丑官在东北、未官在西南，后来升到了河南中土。",
+        "en": "As to which direction one will be promoted to, the rule is the phase to which the Pressure line belongs: if Metal, one should take up office in the west; if Wood, one should govern in the east; if Water, one should rule the people by the northern sea; if Earth, one should hold the government in the centre; if Fire, one should carry out the transforming teaching in a corner of the south. Whether the Pressure line is strong or weak, and the directions governed by the twelve branch spirits, do not matter; dividing by the five phases in rough outline is mostly confirmed. For example, in a Xu month on a Wu-Shen day, divining in which direction one would be promoted, one got Ge; going by the branches, a Chou Pressure line is north-east and a Wei one south-west, and later one was promoted to the central earth, Henan."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1405, 1405],
+          "zh": ["其升何方，官属为法，", "属金而当升任于西土，", "属木而当治事于东方，", "属水而当齐民于北海，", "属土而当秉政于中央，", "属火而当为化于南隅也。"],
+          "yi": ["升到哪个方向，以官所属的五行为法：", "属金，该到西方上任；", "属木，该在东方治事；", "属水，该在北海一带治民；", "属土，该在中央执政；", "属火，该在南方一隅施行教化。"],
+          "en": ["As to which direction one will be promoted to, the rule is the phase to which the Pressure line belongs:", "if Metal, one should take up office in the west;", "if Wood, one should govern in the east;", "if Water, one should rule the people by the northern sea;", "if Earth, one should hold the government in the centre;", "if Fire, one should carry out the transforming teaching in a corner of the south."] },
+        { "by": "易冒注", "book": "易冒", "range": [1406, 1406],
+          "zh": ["不拘官爻衰旺，及十二支神，大略以五行分之多验，", "如戌建戊申日，占何方得革，", "以支神言，", "则以丑官东北，未官西南，", "后应擢河南中土，", "其他仿此。"],
+          "yi": ["不论官爻的衰旺，也不论十二支神所主的方位，大略按五行来分，多半应验。", "例如戌月戊申日，占升到哪个方向得革卦，", "若按地支来说，", "丑官在东北，未官在西南，", "后来升到了河南中土；", "其他照这样仿推。"],
+          "en": ["Whether the Pressure line is strong or weak, and the directions governed by the twelve branch spirits, do not matter; dividing by the five phases in rough outline is mostly confirmed.", "For example, in a Xu month on a Wu-Shen day, divining in which direction one would be promoted, one got Ge,", "going by the branches,", "a Chou Pressure line is north-east and a Wei one south-west,", "and later one was promoted to the central earth, Henan;", "the rest are inferred in the same way."] }
+      ],
+      "note": {
+        "yi": "「升任」「治事」「齐民」「秉政」「为化」是各行官的取向：金主肃杀所以西、木主生发所以东、水在北、土居中、火在南。「北海」是北方，「南隅」是南方一角。「齐民」是治理百姓。书里自注的例子：戌月戊申日得革卦，革卦里官鬼是丑土和未土，按地支丑在东北、未在西南，但应验的却是土行主中央——升到河南（中土），可见按五行比按地支准，这也是书里说「大略以五行分之多验」的依据。独发的情形看下一条（YM.45），一世官、一伏官看 YM.46。",
+        "en": "'Shengren', 'zhishi', 'qimin', 'bingzheng' and 'weihua' are the leanings of the officials of each phase: Metal governs the severe and the killing and so is west, Wood governs the growing and so is east, Water is north, Earth is the centre, and Fire is south. 'Beihai' is the north, and 'nanyu' is a corner of the south. 'Qimin' is governing the people. The book's own example: in a Xu month on a Wu-Shen day, getting Ge, whose Pressure lines are Chou Earth and Wei Earth, by the branches Chou is north-east and Wei is south-west, but what was confirmed was the Earth phase governing the centre, a promotion to Henan (the central earth), which shows that the phases are more accurate than the branches, and is the basis of the book's 'dividing roughly by the five phases is mostly confirmed'. The case of a Pressure line moving alone is in the next entry (YM.45), and a Pressure line on the Self or a hidden one in YM.46."
+      },
+      "see": ["LY.CAREER.YM.45", "LY.CAREER.YM.46", "LY.CAREER.YY.11", "LY.CAREER.YY.12"]
+    },
+    {
+      "id": "LY.CAREER.YM.45",
+      "topic": "任所",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "升何方（独发）：官爻独发则论宫——离宫关南柱石、坎卦塞北屏藩、巽东南兴教化、乾西北立功名、兑当陇蜀、震偏齐鲁、艮行辽蓟之漠、坤来秦晋之疆；独发以八宫断方、其余以五行断地利，举天下而言不拘乡任",
+      "rule": {
+        "yi": "官爻单独发动，就按它所在的宫来论方位：独发在离宫，是关南的柱石；单动在坎卦，是塞北的屏藩；在巽，在东南兴教化；在乾，在西北立功名；兑当陇蜀，震偏齐鲁，艮往辽蓟的沙漠，坤到秦晋的疆土。凡独发，用八宫来断方位；其他的情形用五行来断地利；这是就天下而言，不拘泥于本乡、本任。",
+        "en": "When the Pressure line moves alone, direction is discussed by the palace it is in: moving alone in the palace of Li, one is a pillar south of the passes; moving alone in Kan, a screen and bulwark north of the frontier; in Xun, one spreads teaching in the south-east; in Qian, one makes one's name in the north-west; Dui corresponds to Long and Shu, Zhen leans to Qi and Lu, Gen goes to the deserts of Liao and Ji, and Kun comes to the borders of Qin and Jin. When a line moves alone, one judges the direction by the eight palaces; in other cases one judges the lie of the land by the five phases; this speaks of the whole realm, and is not tied to the home district or the present post."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1407, 1407],
+          "zh": ["若独发离宫，关南柱石，", "单摇坎卦，塞北屏藩。", "其在巽也，兴教化于东南，", "其在乾也，立功名于西北。", "兑当陇蜀，震偏齐鲁，", "艮行辽蓟之漠，坤来秦晋之疆也。"],
+          "yi": ["如果官爻独发在离宫，是关南的柱石；", "单动在坎卦，是塞北的屏藩；", "在巽，在东南兴教化；", "在乾，在西北立功名；", "兑对应陇、蜀，震偏向齐、鲁，", "艮往辽蓟的沙漠，坤来秦晋的疆土。"],
+          "en": ["If the Pressure line moves alone in the palace of Li, one is a pillar south of the passes;", "moving alone in Kan, a screen and bulwark north of the frontier;", "in Xun, one spreads teaching in the south-east;", "in Qian, one makes one's name in the north-west;", "Dui corresponds to Long and Shu, Zhen leans to Qi and Lu,", "Gen goes to the deserts of Liao and Ji, and Kun comes to the borders of Qin and Jin."] },
+        { "by": "易冒注", "book": "易冒", "range": [1408, 1408],
+          "zh": ["凡独发，则以八宫断方数，", "其他则以五行断地利也，", "举天下而言之，弗拘乡、任。"],
+          "yi": ["凡是独发，就用八宫来断方位；", "其他的情形就用五行来断地利；", "这是就天下而言，不拘泥于本乡、本任。"],
+          "en": ["Whenever a line moves alone, one judges the direction by the eight palaces;", "in other cases one judges the lie of the land by the five phases;", "this speaks of the whole realm, and is not tied to the home district or the present post."] }
+      ],
+      "note": {
+        "yi": "「关南」「塞北」是关隘之南、边塞之北，「柱石」「屏藩」是撑国家的柱石和护卫的藩篱。「陇蜀」是甘肃、四川，「齐鲁」是山东，「辽蓟」是辽东和蓟州一带，「秦晋」是陕西、山西。八宫的方位是后天八卦：离南、坎北、巽东南、乾西北、兑西、震东、艮东北、坤西南，再配各地的古名。「独发」是卦里只有这一个官爻在动。书里自注：独发用八宫断方位、其余情形（上一条 YM.44）用五行，而且这是就全国而言，不拘泥于原籍或现任所在。",
+        "en": "'Guannan' and 'saibei' are south of the passes and north of the frontier, and 'zhushi' and 'pingfan' are the pillar that holds up the state and the screen that guards it. 'Long and Shu' are Gansu and Sichuan, 'Qi and Lu' is Shandong, 'Liao and Ji' are Liaodong and the region of Jizhou, and 'Qin and Jin' are Shaanxi and Shanxi. The directions of the eight palaces are those of the later-heaven arrangement: Li south, Kan north, Xun south-east, Qian north-west, Dui west, Zhen east, Gen north-east, Kun south-west, with the old names of the regions assigned to them. 'Moving alone' is when this is the only Pressure line moving in the hexagram. The book's own gloss: for a line moving alone use the eight palaces for direction, in other cases (the previous entry, YM.44) use the five phases, and it speaks of the whole country and is not tied to the home registry or the present post."
+      },
+      "see": ["LY.CAREER.YM.44", "LY.CAREER.YM.46", "LY.CAREER.YY.12"]
+    },
+    {
+      "id": "LY.CAREER.YM.46",
+      "topic": "任所",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "升何方（一世官、一伏官）：一世官以禽宿（演禽二十八宿）定分野、一伏官以飞神定地方，占官而不占世、既仕以官为象不执世；例：亥月戊寅日得同人亥官居世京房降宿危星后擢齐地，酉月乙巳日得颐丙戌世伏酉官后擢西北",
+      "rule": {
+        "yi": "只有一个官爻、又落在世爻上的，用演禽二十八宿的所属来定分野；只有一个官爻、伏藏着的，用它上面的飞神来定地方。不过这是占官，不是占世；已经做官的，以官爻为象，不拘泥于世。例如亥月戊寅日卜升到哪个方向，得同人卦，亥官居世，京房降宿是危星，后来升到齐地的分野；又如酉月乙巳日得颐卦，丙戌世下伏着酉官，后来升到西北。",
+        "en": "When there is a single Pressure line and it sits on the Self, the assignment of the twenty-eight mansions of the Yanqin system is used to fix the field-allocation; when there is a single Pressure line and it is hidden, the flying line above it is used to fix the place. But this is divining the Pressure line, not the Self; for one already in office the Pressure line is the image, and one does not hold to the Self. For example, in a Hai month on a Wu-Yin day, divining which direction one would be promoted, one got Tongren, with a Hai Pressure line on the Self, and the mansion that Jing Fang assigns to it is Wei, and later one was promoted to the field-allocation of Qi; or in a You month on a Yi-Si day one got Yi, with a hidden You Pressure line under the Bing-Xu Self, and later one was promoted to the north-west."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1409, 1409],
+          "zh": ["一世官则以禽宿为分野，", "一伏官则以飞神为地方，", "然占官而不占世也，", "既仕以官为象，而不执世。"],
+          "yi": ["只有一个官爻、又落在世爻上的，用禽宿来定分野；", "只有一个官爻、伏藏着的，用飞神来定地方；", "不过这是占官，不是占世。", "已经做官的，以官爻为象，不拘泥于世。"],
+          "en": ["When there is a single Pressure line and it sits on the Self, the mansions are used to fix the field-allocation;", "when there is a single hidden Pressure line, the flying line is used to fix the place;", "but this is divining the Pressure line, not the Self;", "for one already in office the Pressure line is the image, and one does not hold to the Self."] },
+        { "by": "易冒注", "book": "易冒", "range": [1410, 1412],
+          "zh": ["卦中一爻官鬼复居世上，当用演禽二十八宿分属、何处、禄仕是也，", "如亥建戊寅日，卜升方得同人，亥官居世，京房降宿危星，后擢齐地分野。", "卦内无官，当求伏官之上飞神，以为任所是也，", "如酉建乙巳日，占升方得颐，丙戌世伏己酉官，后擢西北，余仿此。"],
+          "yi": ["卦中有一个官鬼又居在世爻上，应当用演禽二十八宿的所属来看在哪一处、做什么官，", "例如亥月戊寅日，卜升到哪个方向得同人卦，亥官居世，京房降宿是危星，后来升到齐地的分野。", "卦里没有官，应当求伏官上面的飞神，把它当作任所，", "例如酉月乙巳日占升到哪个方向得颐卦，丙戌世下伏着己酉官，后来升到西北，其余仿此。"],
+          "en": ["When in the hexagram a single Pressure line also sits on the Self, one should use the assignment of the twenty-eight mansions of the Yanqin system to see which place and which salaried post it is,", "for example, in a Hai month on a Wu-Yin day, divining which direction one would be promoted, one got Tongren, with a Hai Pressure line on the Self, the mansion Jing Fang assigns being Wei, and later one was promoted to the field-allocation of Qi.", "When there is no Pressure line in the hexagram, one should seek the flying line above the hidden Pressure line and take it as the place of the post,", "for example, in a You month on a Yi-Si day, divining which direction one would be promoted, one got Yi, with a hidden Ji-You Pressure line under the Bing-Xu Self, and later one was promoted to the north-west; the rest are inferred in the same way."] }
+      ],
+      "note": {
+        "yi": "「演禽」是一种按二十八宿推断吉凶的术数，「禽宿」是二十八宿各配一禽（如危月燕、斗木獬）；「京房降宿」是京房把六十四卦的每一爻配到二十八宿上的那一套，「危星」是危宿；「分野」是天上星宿对应地上的区域，危宿对应的是齐地（山东一带）。「飞神」是伏神上面那一爻（见术语表）。书里的两个例子：同人卦里亥官居世（亥水官落在世上），按京房降宿落在危宿，所以应在齐地；颐卦里卦中没有官，要去看伏官（酉）上面的飞神，即世爻丙戌，戌是西北，所以后来升到西北（注里写的伏官是「己酉」，本卦纳甲里这一爻是酉金，这里按原文译）。「然占官而不占世也」是说这套法子取的是官爻，不是世爻本身的地支。和易隐官禄占的任所（YY.12）取分野的办法可对着看：那边是用世爻的地支定分野。",
+        "en": "'Yanqin' is a method of divination that judges fortune by the twenty-eight mansions, and the 'mansion animals' are the animal paired with each of the twenty-eight mansions (as the Wei mansion is the swallow and the Dou mansion the xie-beast); 'the mansion Jing Fang assigns' is the scheme by which Jing Fang paired each line of the sixty-four hexagrams with the twenty-eight mansions, and 'Wei' is the Wei mansion; the 'field-allocation' is the region on earth that corresponds to a star-mansion in heaven, and the region the Wei mansion corresponds to is Qi (the Shandong area). The 'flying line' is the line above a hidden line (see the glossary). The two examples in the book: in Tongren, the Hai Pressure line sits on the Self (a Hai Water Pressure line on the Self), and by Jing Fang's assignment it falls on the Wei mansion, so it corresponds to Qi; in Yi there is no Pressure line in the hexagram, so one looks at the flying line above the hidden Pressure line (You), which is the Self line Bing-Xu, Xu being north-west, so one was later promoted to the north-west (the note writes the hidden Pressure line as 'Ji-You', and in the hexagram's line assignment this line is You Metal, and it is translated here as the text has it). 'But this is divining the Pressure line, not the Self' says that this method takes the Pressure line and not the branch of the Self line itself. Compare the way the Yi Yin on the place of the post (YY.12) takes the field-allocation: there the branch of the Self line fixes it."
+      },
+      "see": ["LY.CAREER.YM.45", "LY.CAREER.YM.47", "LY.CAREER.YY.12"]
+    },
+    {
+      "id": "LY.CAREER.YM.47",
+      "topic": "任所",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "升何方（远近）：归魂屡复旧任、游魂尝履新途；六冲官伏藏则远、六合官出现则近；内近地外远方、初爻接壤六爻边鄙；一官以内外分远近、两官以卦象分遐迩",
+      "rule": {
+        "yi": "归魂卦，常常回到旧任；游魂卦，常常走上新路。六冲而官伏藏，就远；六合而官出现，就近。内卦是近处，外卦是远方；初爻在接壤的近处，六爻在边远之地。卦中只有一个官爻，在内卦为近、在外卦为远，初爻近、六爻远，其余爻照这样类推；若有内外两个官爻，就看卦：游魂、六冲、官伏藏，应在远；归魂、六合、官出现，应在近。因为一个官爻以内外分远近，两个官爻以卦象分远近。",
+        "en": "A Returning Soul hexagram often goes back to the old post; a Wandering Soul hexagram often walks a new road. A six-clash with Pressure hidden is far; a six-combine with Pressure showing is near. The inner trigram is near, the outer far; the first line borders on the near, the sixth is the remote frontier. When there is only one Pressure line in the hexagram, in the inner trigram it is near and in the outer far, the first line near and the sixth far, the other lines by analogy; if there are two Pressure lines, inner and outer, one looks at the hexagram: Wandering Soul, a six-clash and Pressure hidden answer far; Returning Soul, a six-combine and Pressure showing answer near. For one Pressure line distance is divided by inner and outer; for two Pressure lines it is divided by the image of the hexagram."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1413, 1413],
+          "zh": ["归魂屡复旧任，游魂尝履新途。", "六冲伏藏则远，六合出现则近，", "内近地而外远方，初接壤而六边鄙也。"],
+          "yi": ["归魂卦常常回到旧任，游魂卦常常走上新路。", "六冲而官伏藏就远，六合而官出现就近，", "内卦是近处，外卦是远方，初爻在接壤的近处，六爻在边远之地。"],
+          "en": ["A Returning Soul hexagram often goes back to the old post; a Wandering Soul hexagram often walks a new road.", "A six-clash with Pressure hidden is far, a six-combine with Pressure showing is near,", "the inner trigram is near and the outer far, the first line borders on the near and the sixth is the remote frontier."] },
+        { "by": "易冒注", "book": "易冒", "range": [1414, 1414],
+          "zh": ["凡卦中只一官爻，在内为近，在外为远，", "初爻近，六爻远，余爻类推之。", "若遇内外两官，则考其卦，", "游魂六冲伏藏应远，归魂六合出现应近。", "盖一官以内外分远近，两官以卦象分遐迩。"],
+          "yi": ["凡是卦中只有一个官爻，在内卦为近，在外卦为远，", "初爻近，六爻远，其余爻照这样类推。", "如果遇到内外两个官爻，就看它的卦：", "游魂、六冲、官伏藏，应在远；归魂、六合、官出现，应在近。", "因为一个官爻以内外分远近，两个官爻以卦象分远近。"],
+          "en": ["Whenever there is only one Pressure line in the hexagram, in the inner trigram it is near, in the outer far,", "the first line near, the sixth far, the other lines by analogy.", "If one meets two Pressure lines, inner and outer, one looks at the hexagram:", "Wandering Soul, a six-clash and Pressure hidden answer far; Returning Soul, a six-combine and Pressure showing answer near.", "For one Pressure line distance is divided by inner and outer; for two Pressure lines it is divided by the image of the hexagram."] }
+      ],
+      "note": {
+        "yi": "「归魂」「游魂」是八宫卦序里的两个卦（第八个归魂、第七个游魂）：游魂主迁动、归魂主回返，所以归魂常复旧任、游魂常换新地方。「履新途」是走上新的路。「六冲伏藏则远，六合出现则近」：冲散、隐藏主远，合聚、显现主近。「接壤」是和本地相连，「边鄙」是边远。「遐迩」是远近。书里自注：只有一个官爻按内外、爻位定远近；两个官爻内外分不出，就改看卦象（游魂、六冲、伏藏则远，归魂、六合、出现则近）。内外卦和初六爻位的远近，与易隐官禄占任所（YY.11）「世在一二位近、三四位远、五六位更远」是同一个意思。",
+        "en": "'Returning Soul' and 'Wandering Soul' are two hexagrams in the order of the eight palaces (the eighth is Returning Soul, the seventh Wandering Soul): Wandering Soul governs shifting and Returning Soul going back, so Returning Soul often resumes the old post and Wandering Soul often changes to a new place. 'Walking a new road' is setting out on a new road. 'A six-clash with Pressure hidden is far, a six-combine with Pressure showing is near': scattering and hiding mean far, gathering and showing mean near. 'Jierang' is bordering on one's home place and 'bianbi' is the remote frontier. 'Xia er' is far and near. The book's own gloss: with only one Pressure line distance is fixed by inner and outer and by the line position; with two Pressure lines, where inner and outer cannot tell, one looks at the image of the hexagram instead (Wandering Soul, six-clash and hidden: far; Returning Soul, six-combine and showing: near). The distance by inner and outer trigram and by the first to sixth line is the same idea as 'the Self in the first or second place is near, in the third or fourth far, in the fifth or sixth farther still' in the Yi Yin on the place of the post (YY.11)."
+      },
+      "see": ["LY.CAREER.YM.46", "LY.CAREER.YM.48", "LY.CAREER.YY.11", "LY.CAREER.EL.58"]
+    },
+    {
+      "id": "LY.CAREER.YM.48",
+      "topic": "成否",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "问能否得某地、某官：有指一地而筮，贞冲合冲、官坏世空则非食禄之方；筮考选升调得某官，世实官旺则为应拜之职；考职选官、升任调缺、指是地是官同此法",
+      "rule": {
+        "yi": "有指定一个地方来占，问能不能得到这个地方：本卦六冲、合处逢冲、官坏世空，就不是食禄的地方。占考选、升调，问能不能得到某个官职：世爻实、官旺，就是应当拜受的职位。考职选官、升任调缺，或者指定哪个地方、哪个官来占，都用这个办法。",
+        "en": "If one points to a particular place and divines whether one will get that place: if the original hexagram is a six-clash, a combination is clashed, Pressure is damaged and the Self is Void, it is not a place to draw salary. If one divines about selection by examination, promotion or transfer and asks whether one will get a certain office: when the Self is solid and Pressure thriving, it is the post one is due to be appointed to. Taking a post by examination, selecting an official, being promoted into or transferred to a vacancy, or pointing to a certain place or a certain office, are all divined by this same method."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1415, 1415],
+          "zh": ["有指而筮得是地乎，贞冲合冲、官坏世空，则非食禄之方。", "有卜考选升调，而筮得是官乎，世实官旺，则为应拜之职。"],
+          "yi": ["有人指定一个地方来占，问能不能得到这个地方：本卦六冲、合处逢冲、官坏世空，就不是食禄的地方；", "有人占考选、升调，问能不能得到某个官职：世爻实、官旺，就是应当拜受的职位。"],
+          "en": ["If one points to a particular place and divines whether one will get it: if the original hexagram is a six-clash, a combination is clashed, Pressure is damaged and the Self is Void, it is not a place to draw salary;", "if one divines about selection by examination, promotion or transfer and asks whether one will get a certain office: when the Self is solid and Pressure thriving, it is the post one is due to be appointed to."] },
+        { "by": "易冒注", "book": "易冒", "range": [1416, 1416],
+          "zh": ["考职选官，升任调缺，", "或指是地是官，而筮同此法。"],
+          "yi": ["考职选官、升任调缺，", "或者指定哪个地方、哪个官来占，也都用这个办法。"],
+          "en": ["Taking a post by examination, selecting an official, being promoted into or transferred to a vacancy,", "or pointing to a certain place or a certain office and divining about it, are all divined by this same method."] }
+      ],
+      "note": {
+        "yi": "「食禄之方」是能领俸禄的地方，也就是任所。「贞冲合冲」是本卦（贞）是六冲、以及合处逢冲，这是三冲里的两种（见 YM.07 的注）。「应拜之职」是该受任命的职位。这一条是『指名问』：升迁（YM.42）问的是升不升，这里问的是是不是这个地、这个官，所以要世实官旺、不犯冲坏。和易隐官禄占的任所、候选（YY.07、YY.11）可对着看。",
+        "en": "'Shilu zhi fang' is a place where one can draw salary, that is, the place of the post. 'Zhenchong hechong' is the original hexagram (zhen) being a six-clash and a combination meeting a clash, two of the three clashes (see the note to YM.07). 'Ying bai zhi zhi' is the post one is due to be appointed to. This entry is 'asking by name': promotion (YM.42) asks whether one is promoted, and here the question is whether it is this place or this office, so the Self must be solid and Pressure thriving, with no clash or damage. Compare the place of the post and the candidacy in the Yi Yin on official careers (YY.07, YY.11)."
+      },
+      "see": ["LY.CAREER.YM.42", "LY.CAREER.YM.47", "LY.CAREER.YM.49", "LY.CAREER.YY.07", "LY.CAREER.YY.11"]
+    },
+    {
+      "id": "LY.CAREER.YM.49",
+      "topic": "取象",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "概占当得何官：专察官爻，以八卦别其属之部曹——乾天官（冢宰）管禁内杂职厩马、坎冬官（司空）管河漕台谏水利、艮阍寺管晨门防卫狱禁矿藏宝库钱局、震春官（宗伯）管东宫师傅试务宗庙礼乐文章、巽天使管上林与奉命四方之上差、离夏官（司马）管耳目纠弹修史、坤地官（司徒）管农事疆场社稷母后内臣、兑秋官（司寇）管言语刑罚章疏上膳",
+      "rule": {
+        "yi": "总的占该得什么官，专门察看官爻，用八卦分它属于哪个部曹：乾是天官（古称冢宰），管朝廷禁内的杂职、厩马；坎是冬官（古称司空），管总河、总漕之务和台谏，属天下水利的官；艮是阍寺，管晨门的官吏、防御守卫的僚属、治狱禁，属矿藏、宝库、钱局一类；震是春官（古称宗伯），是太子东宫的师傅，或总试、总裁，以及管宗庙祭祀、礼乐文章的官；巽是天使，以及管上林苑、奉命向四方宣布的上差的僚佐；离是夏官（古称司马），专管耳目之权、纠弹之事，又一说是端门的辅臣、修史的文明之官；坤是地官（古称司徒），管天下农事，是有土之官，担疆场社稷之任，是皇太后的内臣；兑是秋官（古称司寇），管言语、主刑罚、通章疏、主皇上膳食之事。",
+        "en": "To divine in general what office one will get, look only at the Pressure line, and tell by the eight trigrams the department it belongs to: Qian is the Heavenly Office (anciently called the Grand Steward), governing miscellaneous posts within the forbidden palace and the stable horses; Kan is the Winter Office (anciently the Minister of Works), governing the affairs of the river-conservancy and grain-transport directorates and the censors and remonstrators, officials of the waterworks of the realm; Gen is the palace gatekeeper, governing the officers of the dawn gate, the officials of defence and guard, the management of prisons, and things like mines, treasuries and mints; Zhen is the Spring Office (anciently the Elder of the Ancestral Temple), the tutors of the Crown Prince's Eastern Palace, or chief examiners and chief compilers, and the officials who manage the ancestral temples, sacrifices, rites, music and letters; Xun is the Heavenly Envoy, and those who manage the Shanglin park and the assistants of senior envoys sent with orders to the four quarters; Li is the Summer Office (anciently the Marshal), governing the power of ears and eyes and the work of impeachment, or also the supporting ministers of the Duan Gate and the civilised office of compiling histories; Kun is the Earth Office (anciently the Minister of the Multitude), governing the farming of the realm, officials with land, who carry the charge of the borders and the altars of the state, and the inner servants of the Empress Dowager; Dui is the Autumn Office (anciently the Minister of Crime), governing speech, in charge of punishments, passing memorials, and having the charge of the sovereign's meals."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1416, 1416],
+          "zh": ["概占当得何官，", "则专察官爻，", "以八卦而别其属之部曹。"],
+          "yi": ["总的占该得什么官，", "专门察看官爻，", "用八卦来分它属于哪个部曹。"],
+          "en": ["To divine in general what office one will get,", "look only at the Pressure line,", "and tell by the eight trigrams the department it belongs to."] },
+        { "by": "易冒注", "book": "易冒", "range": [1417, 1417],
+          "zh": ["乾为天官，古称冢宰，木天之臣，属朝廷禁内杂职，及厩马之司。", "坎为冬官，古称司空，总河总漕之务，司台谏，属天下之水利者。", "艮为阍寺，司晨门之吏，防御备卫之僚，治狱禁，属矿藏宝库钱局之类也。", "震为春官，古称宗伯，师傅太子东宫，或总试总裁，及司宗庙祭祀礼乐文章之官也。", "巽为天使，及司上林，奉命申四方者，上差之僚佐也。", "离为夏官，古称司马，专耳目之权、纠弹之事，一为端门之辅，修史之文明也。", "坤为地官，古称司徒，司天下农事，有土之官也，疆场社稷之任，母后之内臣尔。", "兑为秋官，古称司寇，司言语，职刑罚，通章疏，主上膳之事也。"],
+          "yi": ["乾是天官，古称冢宰，是木天之臣，属朝廷禁内的杂职，以及厩马之司；", "坎是冬官，古称司空，管总河、总漕之务，管台谏，属天下水利的官；", "艮是阍寺，管晨门的官吏、防御守卫的僚属，治狱禁，属矿藏、宝库、钱局一类；", "震是春官，古称宗伯，是太子东宫的师傅，或总试、总裁，以及管宗庙祭祀、礼乐文章的官；", "巽是天使，以及管上林苑、奉命向四方宣布的上差的僚佐；", "离是夏官，古称司马，专管耳目之权、纠弹之事，又一说是端门的辅臣，修史的文明之官；", "坤是地官，古称司徒，管天下农事，是有土之官，担疆场社稷之任，是皇太后的内臣；", "兑是秋官，古称司寇，管言语，主刑罚，通章疏，主皇上膳食之事。"],
+          "en": ["Qian is the Heavenly Office, anciently called the Grand Steward, a minister of the 'wood heaven' (the Hanlin), belonging to the miscellaneous posts within the forbidden palace and the bureau of stable horses;", "Kan is the Winter Office, anciently the Minister of Works, governing the affairs of the river-conservancy and grain-transport directorates, governing the censors and remonstrators, an official of the waterworks of the realm;", "Gen is the palace gatekeeper, governing the officers of the dawn gate and the officials of defence and guard, managing prisons, and belonging to things like mines, treasuries and mints;", "Zhen is the Spring Office, anciently the Elder of the Ancestral Temple, the tutors of the Crown Prince's Eastern Palace, or chief examiners and chief compilers, and the officials who manage the ancestral temples, sacrifices, rites, music and letters;", "Xun is the Heavenly Envoy, and those who manage the Shanglin park and the assistants of the senior envoys sent with orders to the four quarters;", "Li is the Summer Office, anciently the Marshal, governing the power of ears and eyes and the work of impeachment, or also a supporting minister of the Duan Gate, the civilised office of compiling histories;", "Kun is the Earth Office, anciently the Minister of the Multitude, governing the farming of the realm, an official with land, who carries the charge of the borders and the altars of the state, and an inner servant of the Empress Dowager;", "Dui is the Autumn Office, anciently the Minister of Crime, governing speech, in charge of punishments, passing memorials, and having the charge of the sovereign's meals."] }
+      ],
+      "note": {
+        "yi": "天官、地官、春官、夏官、秋官、冬官是《周礼》的六官（冢宰、司徒、宗伯、司马、司寇、司空），后世分别相当于吏部、户部、礼部、兵部、刑部、工部。八卦配六官：乾配天官、坤配地官、震配春官、离配夏官、兑配秋官、坎配冬官，艮和巽另配阍寺（守门的）和天使（奉使的）。「木天」是翰林院的别称。「总河」「总漕」是总督河道、总督漕运。「台谏」是御史和谏官。「阍寺」是守宫门的官，「晨门」是清晨守城门的。「钱局」是铸钱的局。「东宫」是太子居处。「上林」是皇家的上林苑。「上差」是上司派出的差官。「端门」是宫殿的正南门。「一」在这类注里是「又一说」的意思（下面 YM.50 同）。「司台谏」的「司」按文意是管。这一条与易隐官禄占的何官（YY.03–YY.06）取同一类：先按官爻定官，再按所在宫、五行、爻位和六神细分。",
+        "en": "The Heavenly, Earth, Spring, Summer, Autumn and Winter Offices are the six offices of the Rites of Zhou (the Grand Steward, the Minister of the Multitude, the Elder of the Ancestral Temple, the Marshal, the Minister of Crime and the Minister of Works), which later correspond to the Boards of Personnel, Revenue, Rites, War, Punishments and Works. The eight trigrams are matched to the six offices: Qian to the Heavenly Office, Kun to the Earth Office, Zhen to the Spring Office, Li to the Summer Office, Dui to the Autumn Office and Kan to the Winter Office, while Gen and Xun are matched separately to the palace gatekeepers (those who keep the gates) and the Heavenly Envoy (those sent on missions). 'Wood heaven' is a name for the Hanlin Academy. 'Zonghe' and 'zongcao' are the governors-general of river conservancy and of grain transport. 'Taijian' are the censors and remonstrators. 'Hunsi' are the officials who guard the palace gates, and 'chenmen' are those who keep the city gate at dawn. 'Qianju' is the mint. 'Donggong' is where the Crown Prince lives. 'Shanglin' is the imperial Shanglin park. 'Shangchai' is an envoy sent out by a superior. 'Duanmen' is the main south gate of a palace. 'Yi', in notes of this kind, means 'another view' (the same in YM.50 below). The 'si' of 'si taijian' is read by the sense as 'govern'. This entry is of a kind with 'which office' in the Yi Yin on official careers (YY.03–YY.06): first fix the office by the Pressure line, then divide it more finely by palace, phase, line position and the six spirits."
+      },
+      "see": ["LY.CAREER.YM.48", "LY.CAREER.YM.50", "LY.CAREER.YY.02", "LY.CAREER.YY.03", "LY.CAREER.YY.05", "LY.CAREER.HJC.20"]
+    },
+    {
+      "id": "LY.CAREER.YM.50",
+      "topic": "取象",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "概占何官（六爻位）：以六爻辨位之高卑——官在初爻为散缺（或本乡官守）、二爻为县邑（或谏议大臣相国学士）、三爻为守牧（或三司首领及大衙门随从）、四爻为司道（或九卿六曹近君之臣）、五爻君象惟代天巡狩与钦差者当之、六爻为贵戚之乡及宗庙功勋高尚辅相之臣；武途封职其义相类",
+      "rule": {
+        "yi": "用六爻来分辨官位的高低：官爻在初爻，是散缺（闲散的缺额），或是本乡的官守；在二爻，是县邑，或是谏议大臣、相国学士；在三爻，是守牧（知府、知州一类），或是三司的首领，以及大衙门里随从的官；在四爻，是司道，或是九卿六曹，以及近君的臣子；五爻是君象，不是臣子所居，只有代天巡狩的官和奉钦命的钦差才当得起；六爻是贵戚之乡，以及宗庙功勋之臣、高尚之士、辅相王府的官、四围的股肱。武途的封职，意义相类似。",
+        "en": "By the six lines one tells the height or lowness of the rank: the Pressure line in the first line is a scattered vacancy (an idle post), or an official guard of his home district; in the second line, a county or town, or a remonstrating minister, a chief minister or academician; in the third line, a prefect or governor, or the head of the Three Offices, and officials attending in a great yamen; in the fourth line, a commissioner or circuit intendant, or the Nine Ministers and the Six Boards, and ministers near the sovereign; the fifth is the sovereign's image and not where a subject dwells, and only an official who makes tours of inspection in Heaven's stead or one sent by imperial command can fill it; the sixth line is the home of the noble kin, and of ministers of merit to the ancestral temple, men of lofty virtue, officials who assist a prince's household, and the limbs and trunk on all four sides. For appointments on the military path the meaning is similar."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1418, 1418],
+          "zh": ["以六爻而辨其位之高卑。"],
+          "yi": ["用六爻来分辨他官位的高低。"],
+          "en": ["By the six lines one tells the height or lowness of his rank."] },
+        { "by": "易冒注", "book": "易冒", "range": [1419, 1419],
+          "zh": ["凡官在初爻为散缺，一为本乡官守。", "在二爻为县邑，一为谏议大臣、相国学士。", "在三爻为守牧，一为三司首领，及大衙门随从之官。", "在四爻为司道，一为九卿六曹，及近君之臣也。", "五乃君象，非臣所居，惟代天巡狩之官，及钦命钦差者当之。", "六爻为贵戚之乡，及宗庙功勳之臣、高尚之士、辅相王府之官、四围之股肱也。", "武途封职，其义相类。"],
+          "yi": ["凡是官爻在初爻，是散缺，或是本乡的官守；", "在二爻，是县邑，或是谏议大臣、相国学士；", "在三爻，是守牧，或是三司的首领，以及大衙门里随从的官；", "在四爻，是司道，或是九卿六曹，以及近君的臣子；", "五是君象，不是臣子所居，只有代天巡狩的官，以及奉钦命的钦差才当得起；", "六爻是贵戚之乡，以及宗庙功勋之臣、高尚之士、辅相王府的官、四围的股肱；", "武途的封职，意义相类似。"],
+          "en": ["Whenever the Pressure line is in the first line, it is a scattered vacancy, or an official guard of his home district;", "in the second line, a county or town, or a remonstrating minister, a chief minister or academician;", "in the third line, a prefect or governor, or the head of the Three Offices, and officials attending in a great yamen;", "in the fourth line, a commissioner or circuit intendant, or the Nine Ministers and the Six Boards, and ministers near the sovereign;", "the fifth is the sovereign's image and not where a subject dwells, and only an official who makes tours of inspection in Heaven's stead or one sent by imperial command can fill it;", "the sixth line is the home of the noble kin, and of ministers of merit to the ancestral temple, men of lofty virtue, officials who assist a prince's household, and the limbs and trunk on all four sides;", "for appointments on the military path, the meaning is similar."] }
+      ],
+      "note": {
+        "yi": "「散缺」是闲散的缺；「守牧」是知府、知州一类的地方长官（「守」是太守，「牧」是州牧）；「司道」是布政使、按察使一类的司和各道的道员；「三司」是明代的布政使司、按察使司、都指挥使司；「九卿六曹」是朝廷的九卿和六部。「代天巡狩」是代天子巡视各地。「钦差」是奉皇帝之命外出办事的官。「贵戚之乡」是皇亲国戚居的位置。「武途封职」是武官一路的封授。每一爻后面的「一为」都是「又一说」。这一条和易隐官禄占的分爻（YY.02，鬼谷把执政、朝仕、监司、长官、曹官、吏人对应到六爻）是同一类办法，两家的对应并不完全一样，这里按易冒自己的说法。",
+        "en": "'Sanque' is an idle vacancy; 'shoumu' is a local head such as a prefect or a department magistrate ('shou' is a governor, 'mu' is a provincial shepherd); 'sidao' is the provincial commissioners such as the financial and judicial commissioners, and the intendants of circuits; 'the Three Offices' are the Ming provincial administration, surveillance and military commissions; 'the Nine Ministers and Six Boards' are the nine ministers of the court and the six ministries. 'Making a tour of inspection in Heaven's stead' is making a tour of the regions on the Son of Heaven's behalf. 'Qinchai' is an official sent out on the emperor's order to do a task. 'Home of the noble kin' is the place where the imperial relatives live. 'Appointments on the military path' is the conferring of posts along the military track. The 'yi wei' after each line is 'another view'. This entry is of a kind with the division by line in the Yi Yin on official careers (YY.02, where Guiguzi matches the ruler, court official, circuit supervisor, head official, bureau official and clerk to the six lines), and the two schools' correspondences are not wholly alike; here the Yimao's own saying is followed."
+      },
+      "see": ["LY.CAREER.YM.49", "LY.CAREER.YM.51", "LY.CAREER.YY.02"]
+    },
+    {
+      "id": "LY.CAREER.YM.51",
+      "topic": "取象",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "概占何官（五行职掌）：以五行分其官之职掌——金官司兵事或执刑衡、木官司工务礼乐苑囿车舆舟楫及桑麻制造、水官司江淮河海及水利盐务税饷漕储、火官司文章参劾祭祀及冶铸喉舌之权、土官司土地农田社稷边疆及陵寝屯守之柄",
+      "rule": {
+        "yi": "用五行来分这个官的职掌：金官必管兵事，或执掌刑罚法度；木官必管工务、礼乐、苑囿、车舆舟楫，以及桑麻、制造之事；水官必管江淮河海，以及水利盐务、税饷漕储；火官必管文章、弹劾、祭祀，以及冶铸、喉舌的权柄；土官必管土地农田、社稷边疆，以及陵寝、屯守的权柄。",
+        "en": "By the five phases one divides the duties of the office: a Metal official must govern military affairs, or hold the scales of punishment; a Wood official must govern public works, rites and music, parks, carriages and boats, and the affairs of mulberry, hemp and manufacture; a Water official must govern the rivers, the Huai, the Yellow River and the seas, and waterworks, the salt administration, tax and army supplies, and grain transport; a Fire official must govern letters, impeachment and sacrifice, and the powers of smelting and casting and of being the sovereign's mouthpiece; an Earth official must govern land and farmland, the altars of the state and the borders, and the powers over imperial tombs and garrison farms."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1420, 1420],
+          "zh": ["以五行而分其官之职掌。"],
+          "yi": ["用五行来分这个官的职掌。"],
+          "en": ["By the five phases one divides the duties of the office."] },
+        { "by": "易冒注", "book": "易冒", "range": [1421, 1421],
+          "zh": ["凡金官必司兵事，或执刑衡。", "木官必司工务、礼乐苑囿、车舆舟楫，及桑麻、制造之事。", "水官必司江淮河海，及水利盐务、税饷漕储。", "火官必司文章、参劾、祭祀，及冶铸、喉舌之权。", "土官必司土地农田、社稷边疆，及陵寝、屯守之柄也。"],
+          "yi": ["凡金官必管兵事，或执掌刑罚法度；", "木官必管工务、礼乐、苑囿、车舆舟楫，以及桑麻、制造之事；", "水官必管江淮河海，以及水利盐务、税饷漕储；", "火官必管文章、弹劾、祭祀，以及冶铸、喉舌的权柄；", "土官必管土地农田、社稷边疆，以及陵寝、屯守的权柄。"],
+          "en": ["A Metal official must govern military affairs, or hold the scales of punishment;", "a Wood official must govern public works, rites and music, parks, carriages and boats, and the affairs of mulberry, hemp and manufacture;", "a Water official must govern the rivers, the Huai, the Yellow River and the seas, and waterworks, the salt administration, tax and army supplies, and grain transport;", "a Fire official must govern letters, impeachment and sacrifice, and the powers of smelting and casting and of being the sovereign's mouthpiece;", "an Earth official must govern land and farmland, the altars of the state and the borders, and the powers over imperial tombs and garrison farms."] }
+      ],
+      "note": {
+        "yi": "「刑衡」是刑罚的轻重衡量，即执法。「苑囿」是皇家园林。「车舆舟楫」是车和船。「桑麻」是农桑。「江淮河海」是长江、淮河、黄河、海。「盐务」是盐政，「税饷」是税收和军饷，「漕储」是漕运和仓储。「参劾」是弹劾。「冶铸」是冶炼铸造。「喉舌」是替君主传达政令的权。「陵寝」是帝王陵墓。「屯守」是屯田和守卫。这一条和黄金策仕宦的取象（HJC.20）、易隐官禄占的分爻、何官里按五行定部门的一条（YY.05）可对着看，各家配的行业不尽相同。",
+        "en": "'Xingheng' is the weighing of the lightness or heaviness of punishments, that is, enforcing the law. 'Yuanyou' are the imperial gardens. 'Chejuzhouji' are carriages and boats. 'Sangma' are farming and sericulture. 'Jianghuaihehai' are the Yangtze, the Huai, the Yellow River and the sea. 'Yanwu' is salt administration, 'shuixiang' is taxes and army pay, and 'caochu' is grain transport and granaries. 'Canhe' is impeachment. 'Yezhu' is smelting and casting. 'Houshe' is the power of conveying the ruler's orders. 'Lingqin' are imperial tombs. 'Tunshou' is garrison farming and guarding. This entry can be read against the images in the Huangjin Ce on official careers (HJC.20) and the entry in the Yi Yin that fixes the department by phase (YY.05); the trades each school assigns are not entirely the same."
+      },
+      "see": ["LY.CAREER.YM.49", "LY.CAREER.YM.52", "LY.CAREER.YY.05", "LY.CAREER.HJC.20"]
+    },
+    {
+      "id": "LY.CAREER.YM.52",
+      "topic": "取象",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "概占何官（六神诸星）：以六神参考其官之政事——青龙清耀文章诗赋清华之府、朱雀剖断谏议言路、勾陈田土劝农治寇一方之牧、螣蛇传宣驰骤差遣、白虎威武掌生杀军旅刑罚之宰、元武水利司捕司谋；文昌翰林、官符有司、天马钦差、天狱禁吏，斗木獬巡方、尾火虎兵权、星日马圣传之司、亢金龙文章之相；大抵五行六爻八宫为经、六神诸星为纬",
+      "rule": {
+        "yi": "用六神和诸星（「诸监」疑是「诸星」之误）来参看这个官的政务：青龙，政务清明显耀，是文章诗赋、清华的官署；朱雀，政务是剖断，谏议善恶，折辨是非，是言路之官；勾陈，政务在田土，兴教劝农，治寇保民，是一方的牧守；螣蛇，政务是传宣，往来奔走，上下体察，是差遣之利；白虎，政务是威武，掌生杀之权，秉军旅之事，是刑罚的主宰；元武，政务是水利，是司捕、司谋之象。文昌是翰林，官符是有司，天马是钦差，天狱是禁吏；斗木獬是巡方之官，尾火虎是兵权之主，星日马是圣传之司，亢金龙是文章之相。大抵以五行、六爻、八宫为经，以六神、诸星为纬来参看。",
+        "en": "By the six spirits and the various stars ('jian' here is presumably a slip for 'xing', stars) one consults the government business of the office: with the Azure Dragon the government is clear and bright, the offices of letters, poetry and distinguished rank; with the Vermilion Bird the government is judging, remonstrating on good and evil, deciding right and wrong, an official of the channels of speech; with Hook Earth the government is in land and soil, promoting teaching and urging farming, quelling bandits and protecting the people, a shepherd of one region; with the Coiling Snake the government is relaying proclamations, going to and fro at speed, looking into things high and low, the advantage of commissions; with the White Tiger the government is awesome force, holding the power of life and death, in charge of military affairs, the master of punishments; with the Dark Tortoise the government is waterworks, the image of arresting and of planning. The Literary Star is the Hanlin, the Official Charge is the competent department, the Heavenly Horse is the imperial envoy, the Heavenly Prison is the prison officer; the Dipper Wood Xie-beast is an official who tours the regions, the Tail Fire Tiger is the master of military power, the Star Sun Horse is the office of transmitting the imperial word, the Neck Metal Dragon is the minister of letters. In general the five phases, the six lines and the eight palaces are the warp, and the six spirits and the various stars the weft that is consulted along with them."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1422, 1422],
+          "zh": ["以六神诸监，而参考其官之政事。"],
+          "yi": ["用六神和诸星（「诸监」疑是「诸星」之误），来参看这个官的政务。"],
+          "en": ["By the six spirits and the various stars ('jian' here is presumably a slip for 'xing', stars) one consults the government business of the office."] },
+        { "by": "易冒注", "book": "易冒", "range": [1423, 1425],
+          "zh": ["青龙则其政清耀，文章诗赋清花之府也。", "朱雀则其政剖断，谏议善恶，折辨是非，言路之官也。", "勾陈则其政田土，兴教劝农，治寇保民，一方之牧也。", "螣蛇则其政传宣，往来驰骤，浮沉体察，差遣之利也。", "白虎则其政威武，掌生杀之权，秉军旅之事，刑罚之宰也。", "元武则其政水利，司捕司谋之象也。", "文昌为翰林，官符为有司，天马为钦差，天狱为禁吏，", "斗木獬，巡方之官也，", "尾火虎，兵权之主也，", "星日为马，圣传之司也，", "亢金龙，文章之相也。", "大抵五行六爻八宫为经，六神诸星为纬以参之。"],
+          "yi": ["青龙，政务清明显耀，是文章诗赋、清华的官署；", "朱雀，政务是剖断，谏议善恶，折辨是非，是言路之官；", "勾陈，政务在田土，兴教劝农，治寇保民，是一方的牧守；", "螣蛇，政务是传宣，往来奔走，上下体察，是差遣之利；", "白虎，政务是威武，掌生杀之权，秉军旅之事，是刑罚的主宰；", "元武，政务是水利，是司捕、司谋之象。", "文昌是翰林，官符是有司，天马是钦差，天狱是禁吏；", "斗木獬是巡方之官，", "尾火虎是兵权之主，", "星日马是圣传之司，", "亢金龙是文章之相。", "大抵以五行、六爻、八宫为经，以六神、诸星为纬来参看。"],
+          "en": ["With the Azure Dragon the government is clear and bright, the offices of letters, poetry and distinguished rank;", "with the Vermilion Bird the government is judging, remonstrating on good and evil, deciding right and wrong, an official of the channels of speech;", "with Hook Earth the government is in land and soil, promoting teaching and urging farming, quelling bandits and protecting the people, a shepherd of one region;", "with the Coiling Snake the government is relaying proclamations, going to and fro at speed, looking into things high and low, the advantage of commissions;", "with the White Tiger the government is awesome force, holding the power of life and death, in charge of military affairs, the master of punishments;", "with the Dark Tortoise the government is waterworks, the image of arresting and of planning.", "The Literary Star is the Hanlin, the Official Charge is the competent department, the Heavenly Horse is the imperial envoy, the Heavenly Prison is the prison officer;", "the Dipper Wood Xie-beast is an official who tours the regions,", "the Tail Fire Tiger is the master of military power,", "the Star Sun Horse is the office of transmitting the imperial word,", "the Neck Metal Dragon is the minister of letters.", "In general the five phases, the six lines and the eight palaces are the warp, and the six spirits and the various stars the weft that is consulted along with them."] }
+      ],
+      "note": {
+        "yi": "「清华」是清贵显要（「清花」疑是「清华」之误）。「言路」是进言的途径，指谏官御史。「牧」是州牧、地方长官。「传宣」是传达宣布诏令，「差遣」是奉派出差。「文昌」「官符」「天马」「天狱」是神煞名；「斗木獬」「尾火虎」「星日马」「亢金龙」是二十八宿（斗宿木獬、尾宿火虎、星宿日马、亢宿金龙）。「圣传之司」书里没有展开，下面接「星日为马」，当是管传递诏命的驿传一类（存疑）。「六神诸监」的「监」，按下面注文「六神诸星」当是「星」之误。「经」「纬」是织布的纵线和横线：五行、六爻、八宫是定官的主线，六神、诸星是补充。六神的本来取象见术语表；这里是把它们取到官职的政务上。",
+        "en": "'Qinghua' is pure and eminent in rank ('qinghua' written with another character is presumably a slip for it). 'Yanlu' is the channel for presenting counsel, meaning remonstrating officials and censors. 'Mu' is a provincial governor, a local head. 'Chuanxuan' is conveying and proclaiming imperial orders, and 'chaiqian' is being sent out on a commission. 'Wenchang', 'guanfu', 'tianma' and 'tianyu' are names of spirit-stars; 'Dou Mu Xie', 'Wei Huo Hu', 'Xing Ri Ma' and 'Kang Jin Long' are four of the twenty-eight mansions (the Dipper mansion, Wood, the xie-beast; the Tail mansion, Fire, the tiger; the Star mansion, Sun, the horse; the Neck mansion, Metal, the dragon). The book does not expand on 'shengchuan zhi si'; it is followed by 'Star Sun is the horse', and it is presumably the postal relay that carries imperial orders (doubtful). The 'jian' of 'liushen zhu jian' is by the note below, 'six spirits and various stars', presumably a slip for 'xing'. 'Jing' and 'wei' are the warp and weft threads of a weave: the five phases, six lines and eight palaces are the main thread that fixes the office, and the six spirits and stars supplement it. The original images of the six spirits are in the glossary; here they are taken onto the government business of an office."
+      },
+      "see": ["LY.CAREER.YM.51", "LY.CAREER.YM.53", "LY.CAREER.YY.03", "LY.CAREER.HJC.19"]
+    },
+    {
+      "id": "LY.CAREER.YM.53",
+      "topic": "取象",
+      "chapter": "功名章第六十二",
+      "chapter_en": "Chapter 62: Fame and office",
+      "title": "概占何官（总括）：日月象之、世应度之、君臣位之；官爻独发论宫、一位论爻位、两现求所属、俱无考伏与变（伏占飞神、变占八宫）；官临日月建非社稷之臣即直节科道、持世为正印临应为左右、五爻为君二爻为大臣；虽代有更名理不远",
+      "rule": {
+        "yi": "日、月来象征它，世、应来度量它，君、臣来定它的位置。所以官爻独发的论宫，官爻只有一位的论爻位，官爻两现的求它所属，都没有的就考伏和变：伏的占飞神，变的占八宫。伏、变的办法也可以分出位置和所属。要知道当世的官守，用象去求，即使各代名称有更改，道理相差不远。官临日辰月建，不是社稷之臣，一定是直节的科道官；官爻持世是正印，临应是左右辅佐之职；五爻是君，不是御史就是当宠幸之臣；二爻是大臣，是宰相，是国家的仪表。卦里没有官鬼，就求伏下的飞神，用位和所属来分辨；卦有动象，就求所变的官爻，用八宫来区别。",
+        "en": "The Day and Month image it, the Self and the Other measure it, ruler and minister fix its place. So when the Pressure line moves alone one discusses the palace; when there is only one Pressure line one discusses the line position; when two Pressure lines show one seeks the department they belong to; when there is none one examines the hidden and the changed: for a hidden one one divines the flying line, for a changed one the eight palaces; this method of hidden and changed lines can also separate out the place and the department. To know the offices of the present age, one seeks them by the image, and though the names have been changed from age to age, the principle is not far off. When Pressure sits on the Day or Month branch, if he is not a minister of the altars of the state, he is surely an upright censor or supervising official; the Pressure line on the Self is the principal seal, and on the Other it is a post at the side, an assistant; the fifth line is the sovereign, and if not a censor he is a minister favoured by the throne; the second line is a great minister, a chief minister, the model of the state. If there is no Pressure line in the hexagram, one seeks the flying line above the hidden one and tells it by position and department; if there is a moving image, one seeks the Pressure line it changes into and tells it by the eight palaces."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1426, 1426],
+          "zh": ["日月以像之，世应以度之，君臣以位之，", "是故独发论宫，一爻论位，", "两现而求诸属，", "俱无而考诸伏与变，", "伏占飞神，变占八宫，", "伏变这法，亦可离位属也。", "欲知当世之官守，以象求之，虽代有更名，理不远矣。"],
+          "yi": ["日、月来象征它，世、应来度量它，君、臣来定它的位置。", "所以官爻独发的论宫，官爻只有一位的论爻位，", "官爻两现的求它所属，", "都没有的就考伏和变：", "伏的占飞神，变的占八宫。", "伏、变的办法也可以分出位置和所属。", "要知道当世的官守，用象去求，即使各代名称有更改，道理相差不远。"],
+          "en": ["The Day and Month image it, the Self and the Other measure it, ruler and minister fix its place.", "So when the Pressure line moves alone one discusses the palace; when there is only one Pressure line one discusses the line position;", "when two Pressure lines show one seeks the department they belong to;", "when there is none one examines the hidden and the changed:", "for a hidden one one divines the flying line, for a changed one the eight palaces;", "this method of hidden and changed lines can also separate out the place and the department.", "To know the offices of the present age, one seeks them by the image, and though the names have been changed from age to age, the principle is not far off."] },
+        { "by": "易冒注", "book": "易冒", "range": [1427, 1427],
+          "zh": ["凡官临日月建，若非社稷之臣，定是直节科道之官。", "官爻持世为正印，临应为左右之职。", "五爻为君，非御史而当宠幸之臣；二爻为大臣，为宰相，而为国家之仪表。", "官爻独发，但论八宫，", "官爻一位，但论六爻，", "官爻两现，但论所属，", "卦无官鬼，则求伏上飞神，以位属辨之，", "卦有动象，则求所变官爻，以八宫别之。"],
+          "yi": ["凡是官临日辰月建，不是社稷之臣，一定是直节的科道官；", "官爻持世是正印，临应是左右的辅佐之职；", "五爻是君，不是御史就是当宠幸之臣；二爻是大臣，是宰相，是国家的仪表。", "官爻独发，只论八宫；", "官爻只有一位，只论六爻；", "官爻两现，只论所属；", "卦里没有官鬼，就求伏下的飞神，用位和所属来分辨；", "卦有动象，就求所变的官爻，用八宫来区别。"],
+          "en": ["Whenever Pressure sits on the Day or the Month branch, if he is not a minister of the altars of the state, he is surely an upright censor or supervising official;", "the Pressure line on the Self is the principal seal, and on the Other it is a post at the side, an assistant;", "the fifth line is the sovereign, and if not a censor he is a minister favoured by the throne; the second line is a great minister, a chief minister, the model of the state.", "When the Pressure line moves alone, only the eight palaces are discussed;", "when there is only one Pressure line, only the six lines are discussed;", "when two Pressure lines show, only the department they belong to is discussed;", "when there is no Pressure line in the hexagram, one seeks the flying line above the hidden one and tells it by position and department;", "when there is a moving image, one seeks the Pressure line it changes into and tells it by the eight palaces."] }
+      ],
+      "note": {
+        "yi": "这一条是 YM.49–52 的总括：先看官爻在卦里的情形（独发、只有一位、两现、全无），再决定用哪一把尺：宫、爻位、所属、伏神的飞神、变出的八宫。「社稷之臣」是关系国家安危的重臣，「直节」是刚直有节操，「科道」是六科给事中和各道监察御史。「正印」是掌印的正官，「左右之职」是辅佐之职。「宠幸之臣」是受君主宠信的近臣。「伏变这法」的「这」疑是「之」之误，按文意译作「伏、变的办法」。「代有更名」是历代官名有改变，用象求就不受名称变化影响。注里「官临日月建」里的「月建」是当月的月建（见术语表）。",
+        "en": "This entry sums up YM.49–52: first look at how the Pressure line stands in the hexagram (moving alone, only one, two showing, none), then decide which ruler to use: the palace, the line position, the department, the flying line of a hidden one, or the eight palaces of a changed one. 'Shejizhichen' is a leading minister on whom the safety of the state depends, 'zhijie' is upright and of principle, and 'kedao' are the supervising secretaries of the six departments and the censors of the circuits. 'Zhengyin' is the principal official who holds the seal, and 'zuoyouzhizhi' is a post of assistance. 'Chongxingzhichen' is a close minister favoured by the sovereign. The 'zhe' of 'fu bian zhe fa' is presumably a slip for 'zhi', and by the sense it is translated 'the method of hidden and changed lines'. 'Dai you geng ming' is that official titles have changed from age to age, and seeking by the image is not affected by the change of names. The 'Month' of 'Pressure sits on the Day or Month branch' in the note is the Month branch of the current month (see the glossary)."
+      },
+      "see": ["LY.CAREER.YM.52", "LY.CAREER.YM.54", "LY.CAREER.YY.02", "LY.CAREER.HJC.21"]
+    }
+  ]
+}
