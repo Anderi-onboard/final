@@ -1,0 +1,318 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "卜筮全书",
+  "chapter": "通玄妙论·断易总论·断易通玄赋",
+  "chapter_en": "The Tongxuan Miaolun; the Duanyi Tongxuan Fu",
+  "ranges": {"卜筮大全": [2795, 2998]},
+  "units": [
+    {
+      "id": "LY.CAREER.BSQS.01",
+      "topic": "总则",
+      "chapter": "通玄妙论·一、无鬼无气",
+      "chapter_en": "Tongxuan Miaolun, no. 1: no Pressure, no spirit",
+      "title": "通玄妙论·无鬼无气：占官无鬼功名难就，卦中纵有贵人终为贵而无位；官鬼宜静不宜动",
+      "rule": {
+        "yi": "求官的卦里不能没有官鬼：没有官鬼，功名难成，卦里纵然有贵人，也只是有贵人而没有位子。官鬼这一爻宜安静不宜发动：带着吉神动是福，加上凶煞动是祸。",
+        "en": "A divination for office must not lack the Pressure line: without it name and rank are hard to achieve, and even with a Noble in the hexagram one is a noble without a post. The Pressure line should be still and not moving: moving with an auspicious spirit it is a blessing, moving with a baleful one it is a calamity."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2795, 2797],
+          "zh": ["鬼者，", "无形而有用；", "卦中不可无，", "宜静不宜动。", "带吉神动，", "亦能为福；", "加凶煞动，", "无不为殃。"],
+          "yi": ["官鬼这一爻，", "看不见形状，却有它的用处；", "卦里不可以没有它，", "宜安静，不宜发动。", "带着吉神发动，", "也能成为福；", "加上凶煞发动，", "没有不成为祸殃的。"],
+          "en": ["As for the Pressure line,", "it has no shape yet has its use;", "in a hexagram it must not be missing,", "and it should be still, not moving.", "Moving with an auspicious spirit,", "it can also be a blessing;", "moving with a baleful spirit,", "it never fails to be a calamity."] },
+        { "by": "经", "book": "卜筮大全", "range": [2799, 2799],
+          "zh": ["占官无鬼，", "功名难就；", "卦中纵有贵人，", "终为贵而无位。"],
+          "yi": ["占求官的时候，卦里没有官鬼，", "功名难以成就；", "卦里纵然有贵人，", "到头来也只是有贵人而没有位子。"],
+          "en": ["In divining for office, when there is no Pressure line,", "name and rank are hard to achieve;", "even if the hexagram holds a Noble,", "he is in the end a noble without a post."] }
+      ],
+      "note": {
+        "yi": "同一段的下文还讲到占身、占婚、求财、占宅、占病、占失脱没有官鬼是什么样，那几件不是事业，没有收；求财无鬼那一句里「主在他人手下趁财」是给人做事挣钱的意思，放在求财域。这里的「功名」是求官职、求名位。",
+        "en": "The rest of the passage says what it means to lack the Pressure line when divining for one's person, marriage, wealth, the house, illness and lost goods; those are not career matters and are not included. In the line on seeking wealth, \"making money under someone else's hand\" means working for another and belongs to the wealth domain. \"Name and rank\" here means seeking an official post and standing."
+      },
+      "see": ["LY.CAREER.ZSZ.06"]
+    },
+    {
+      "id": "LY.CAREER.BSQS.02",
+      "topic": "成否",
+      "chapter": "通玄妙论·二、绝处逢生",
+      "chapter_en": "Tongxuan Miaolun, no. 2: life from the place of extinction",
+      "title": "通玄妙论·绝处逢生·占官：父母绝处逢生，文书虽有阻节，终有贵人主张，其事必成",
+      "rule": {
+        "yi": "求官时遇到父母爻绝处逢生（它落在日辰的绝地，又得动爻来生）：文书上虽然有阻滞卡节，终究有贵人替你做主，事情必成。",
+        "en": "In divining for office, if the Resource line meets life in the place of extinction (it falls where the Day extinguishes it but a moving line gives it life): though the documents meet delays and hold-ups, a noble will in the end take charge and the matter will surely succeed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2806, 2806],
+          "zh": ["且如申日占卦，遇用爻属木，木见申则绝，木爻无用矣。", "若得水爻发动来相生，木爻仍复有用。", "譬人当困穷之际，得遇贵人扶持，必有寒谷回春之象，此乃是绝处逢生也。"],
+          "yi": ["比如申日占卦，用爻属木，木到申上就是绝地，这个木爻就没有用了。", "如果有水爻发动来生它，木爻又有了用处。", "就像人在穷困的时候，遇到贵人扶持，一定有寒谷回春的景象，这就叫绝处逢生。"],
+          "en": ["Suppose a divination on a Shen day in which the Subject line belongs to Wood: Wood meets extinction at Shen, and the Wood line is of no use.", "If a Water line moves to give it life, the Wood line is useful again.", "It is like a person in hardship who meets a noble and is helped: surely there is the look of spring returning to a cold valley; this is what is meant by life from the place of extinction."] },
+        { "by": "经", "book": "卜筮大全", "range": [2810, 2810],
+          "zh": ["占官：", "遇父母绝处逢生，", "文书虽有阻节，", "终有贵人主张，", "其事必成。"],
+          "yi": ["占求官：", "遇到父母爻绝处逢生，", "文书上虽然有阻滞卡节，", "终究有贵人替你做主，", "这件事一定成。"],
+          "en": ["In divining for office:", "if the Resource line finds life in extinction,", "though the documents meet delays and hold-ups,", "a noble will in the end take charge,", "the matter will surely succeed."] }
+      ],
+      "note": {
+        "yi": "这一段后面接着讲占讼、出行（那两件放在官非、出行域）。「绝处逢生」的做法见第一个引文：用爻落在绝地，有动爻来生才算。",
+        "en": "The passage goes on to lawsuits and travel, which belong to the lawsuit and travel domains. How \"life in extinction\" works is in the first quotation: the Subject line falls in a place of extinction and a moving line must give it life."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.03",
+      "topic": "成否",
+      "chapter": "通玄妙论·三、合处逢冲",
+      "chapter_en": "Tongxuan Miaolun, no. 3: a clash at a place of combination",
+      "title": "通玄妙论·合处逢冲·占官遇官鬼文书暗冲尚有反复变动；谋事遇之必因人阻滞将成而有变",
+      "rule": {
+        "yi": "合处逢冲（卦本来相合，却被日辰冲了）：求官时官鬼、文书被暗中冲着，事里还有反复和变动；谋事遇到这样，一定因为别人而受阻，眼看要成又有变。",
+        "en": "A clash at a place of combination (a hexagram of combination that is clashed by the Day): in divining for office, if the Pressure line and the documents are clashed in secret, the matter still has reversals and changes; in planning a matter, meeting this means being held up by someone, and just as it is about to succeed there is a change."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2817, 2817],
+          "zh": ["且如占得雷地豫卦。", "世应相生，六爻相合，吉无不利，乃事事可成之象也。", "却在子日占得，子冲应上午、害世上未，此乃合处逢冲也。"],
+          "yi": ["比如占到雷地豫卦。", "世应相生，六爻相合，吉利没有不顺的，是事事都能成的卦象。", "却是在子日占到的，子冲应爻上的午、害世爻上的未，这就是合处逢冲。"],
+          "en": ["Suppose one gets the hexagram Thunder over Earth, Yu.", "The Self and Other give each other life and the six lines combine; all is auspicious and nothing unfavourable, the sign of every matter being achievable.", "But if it is got on a Zi day, Zi clashes the Wu on the Other line and harms the Wei on the Self line: this is a clash at a place of combination."] },
+        { "by": "经", "book": "卜筮大全", "range": [2818, 2818],
+          "zh": ["占官遇官鬼文书暗冲，", "其中尚有反复变动。"],
+          "yi": ["占求官时遇到官鬼和文书被暗中冲着，", "里面还有反复和变动。"],
+          "en": ["In divining for office, when the Pressure line and the documents are clashed in secret,", "there are still reversals and changes within it."] },
+        { "by": "经", "book": "卜筮大全", "range": [2819, 2819],
+          "zh": ["谋事遇之，必因人阻滞，将成而有变。"],
+          "yi": ["谋事遇到这种情形，一定因为别人而受阻滞，快成的时候会有变化。"],
+          "en": ["In planning a matter, meeting this means being held up by someone, and just as it is about to succeed there is a change."] }
+      ],
+      "note": {
+        "yi": "同一段还讲占婚、占财，以及占讼与病「喜遇合处逢冲」（合则事必成，逢冲灾必散），那几件放在别的问题域。「官鬼文书暗冲」是官鬼和文书（父母）这两爻被日辰暗冲，书里没有展开，译文照字面。",
+        "en": "The same passage goes on to marriage and wealth, and says that lawsuits and illness are glad to meet a clash at a place of combination (combination means the matter surely succeeds, a clash means the calamity disperses); those go to other domains. \"The Pressure line and the documents clashed in secret\" means the Pressure and Resource lines are clashed by the Day without moving; the book does not expand on it and the translation follows the words."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.04",
+      "topic": "风险",
+      "chapter": "通玄妙论·四、随官入墓",
+      "chapter_en": "Tongxuan Miaolun, no. 4: following Pressure into the tomb",
+      "title": "通玄妙论·随官入墓·求官遇之事体难成，虽成终不能振，若入杀墓更为大凶",
+      "rule": {
+        "yi": "随官入墓是身、世或本命跟着官鬼入了墓。求官遇到它，事情难成，就算成了也振作不起来；入的如果是杀墓（丁未、戊戌），就更是大凶。",
+        "en": "Following Pressure into the tomb means the Body, the Self or one's birth year follows the Pressure line into its tomb. In seeking office, meeting it makes the matter hard to achieve, and even if achieved one cannot rise; if it enters a killing tomb (Ding-Wei or Wu-Xu) it is greatly inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2824, 2824],
+          "zh": ["随官入墓，其目有三：有身随鬼入墓，有世随鬼入墓，有命随鬼入墓。"],
+          "yi": ["随官入墓有三种：有身爻跟着官鬼入墓的，有世爻跟着官鬼入墓的，有本命跟着官鬼入墓的。"],
+          "en": ["Following Pressure into the tomb has three kinds: the Body following the Pressure line into the tomb, the Self following it, or one's birth year following it."] },
+        { "by": "经", "book": "卜筮大全", "range": [2826, 2826],
+          "zh": ["以上三墓，不问占何事，意皆非吉兆。"],
+          "yi": ["以上这三种入墓，不管占什么事，意思都不是吉兆。"],
+          "en": ["These three kinds of entering the tomb, whatever matter is divined, are none of them an auspicious sign."] },
+        { "by": "经", "book": "卜筮大全", "range": [2828, 2828],
+          "zh": ["求官遇之，", "事体难成。", "虽成，", "终不能振。", "若入杀墓，", "更为大凶。", "（杀墓者，丁未、戊戌是也。）"],
+          "yi": ["求官遇到这种情形，", "事情难成。", "就算成了，", "最终也振作不起来。", "如果入的是杀墓，", "就更是大凶。", "（所谓杀墓，就是丁未、戊戌。）"],
+          "en": ["In seeking office, if this is met,", "the matter is hard to achieve.", "and even if achieved,", "one cannot in the end rise.", "if it enters a killing tomb,", "it is all the more greatly inauspicious.", "(The killing tombs are Ding-Wei and Wu-Xu.)"] }
+      ],
+      "note": {
+        "yi": "这一段的例子是：丑日占得雷水解，身和鬼同在五爻是身随鬼入墓；未日占得山天大畜，世在二爻属木是世随鬼入墓；未日寅生人占得地雷复、卯生人占得火泽睽，本命在鬼爻是命随鬼入墓（这几个例子没有收）。虎易注说这里的「身」是世身，不是卦身，那是今人的注，这里不收。后面讲占身、占婚、占产、占讼、求财、出行、家宅、占病各遇此如何，放在别的问题域。",
+        "en": "The examples in the passage are: a Chou day with Water over Thunder, Jie, where the Body and Pressure are both on the fifth line, is the Body following Pressure into the tomb; a Wei day with Mountain over Heaven, Daxu, where the Self is on the second line and is Wood, is the Self following it; a Wei day with Earth over Thunder, Fu, for someone born in Yin, or Fire over Marsh, Kui, for someone born in Mao, where the birth year falls on the Pressure line, is the birth year following it (these examples are not quoted). Hu Yi's note says the \"body\" here is the Self-body and not the hexagram Body; that is a modern note and is not quoted. What follows on one's person, marriage, childbirth, lawsuits, wealth, travel, the house and illness goes to other domains."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.05",
+      "topic": "动变",
+      "chapter": "通玄妙论·五、逢冲暗动",
+      "chapter_en": "Tongxuan Miaolun, no. 5: a clash that stirs a still line",
+      "title": "通玄妙论·逢冲暗动·求官遇之，吉则有无心之机会，凶则阴中有人损害",
+      "rule": {
+        "yi": "安静的爻被日辰冲到，叫暗动，有吉有凶。求官遇到暗动：吉的话有意想不到的机会，凶的话暗中有人损害。",
+        "en": "A still line clashed by the Day is said to move in secret, and it may be auspicious or inauspicious. In seeking office, meeting this: if auspicious there is a chance one did not seek; if inauspicious someone harms one in secret."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2840, 2840],
+          "zh": ["且如六爻安静，不遇冲则不动。", "若日辰相冲，名曰暗动。", "暗动者，有吉有凶，各有所用，不可一概而论。", "若遇凶煞暗动，伤身克世，件件皆非所宜。", "吉神暗动，合世生身，事事无不为吉。", "余推其义，暗者必非明也，乃阴私潜伏也。", "福来而不知，祸来而未觉。", "爻吉则暗中有补，爻凶则暗中有伤。"],
+          "yi": ["比如六爻都安静，没有遇到冲，就不会动。", "如果日辰来冲它，就叫暗动。", "暗动有吉有凶，各有各的用处，不能一概而论。", "如果是凶煞暗动，伤到卦身、克到世爻，件件都不适宜。", "吉神暗动，合着世爻、生着卦身，事事没有不吉的。", "我推究它的意思：暗，一定不是明，是阴暗私下、潜伏着的。", "福来了不知道，祸来了也没察觉。", "爻吉，暗中有补益；爻凶，暗中有损伤。"],
+          "en": ["Suppose the six lines are still: unless clashed they do not move.", "If the Day clashes a line, it is called a secret movement.", "A secret movement may be auspicious or inauspicious, each with its own use; it cannot be judged by one rule.", "If a baleful spirit moves in secret, harming the Body and controlling the Self, nothing is fitting.", "If an auspicious spirit moves in secret, combining with the Self and giving life to the Body, every matter is auspicious.", "I infer its meaning: \"in secret\" is surely not \"in the open\"; it is hidden and private, lying in wait.", "Fortune comes and one does not know; misfortune comes and one has not noticed.", "If the line is auspicious there is help in secret; if it is inauspicious there is harm in secret."] },
+        { "by": "经", "book": "卜筮大全", "range": [2842, 2842],
+          "zh": ["求官遇之，", "吉则有无心之机会，", "凶则阴中有人损害。"],
+          "yi": ["求官遇到暗动，", "吉的话，会有意想不到的机会；", "凶的话，暗中有人损害。"],
+          "en": ["In seeking office, if one meets a secret movement,", "if auspicious there is a chance one did not seek;", "if inauspicious someone harms one in secret."] }
+      ],
+      "note": {
+        "yi": "这一段后面接着讲占婚、占产、占讼、失脱、求财、行人、家宅、占病遇暗动各如何，放在别的问题域。",
+        "en": "The passage goes on to marriage, childbirth, lawsuits, lost goods, wealth, travellers, the house and illness; those go to other domains."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.06",
+      "topic": "总则",
+      "chapter": "通玄妙论·七、六亲取用",
+      "chapter_en": "Tongxuan Miaolun, no. 7: how each relation is used",
+      "title": "通玄妙论·六亲取用·官鬼与父母：官鬼克我、凶多福少，畏子孙恃妻财，宜静不宜动；父母遇财伤本体、逢鬼增光辉",
+      "rule": {
+        "yi": "官鬼是克我的爻，凶的地方多、福的地方少，怕子孙、靠妻财，动起来克兄弟、生扶父母；卦里虽然凶，却不能没有它，宜静不宜动。父母是生我的爻，遇到财爻就伤到自己的根本，碰到官鬼就增添光辉。",
+        "en": "The Pressure line is the line that controls me: it is more often ill than a blessing; it fears Output and relies on Wealth; moving, it harms Peer and gives life and support to Resource; though it is ill in a hexagram it must not be missing, and is best still and not moving. The Resource line is the line that gives me life: meeting Wealth it harms its own substance, meeting Pressure it gains in lustre."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2871, 2871],
+          "zh": ["克我者谓之官鬼也。", "大抵为凶处多，", "为福处少。", "所畏者福德，", "所恃者妻财。", "动则克伤兄弟，", "生扶父母。", "然卦中虽凶而不可无，", "但宜静而不宜动耳。"],
+          "yi": ["克我的爻叫官鬼。", "大体上是凶的地方多，", "福的地方少。", "它所怕的是福德（子孙），", "它所依靠的是妻财。", "动起来就克伤兄弟，", "生助扶持父母。", "然而在卦里，它虽然凶，却不可以没有，", "只是宜静不宜动罢了。"],
+          "en": ["The line that controls me is called Pressure.", "On the whole it is ill in more respects,", "and a blessing in fewer.", "What it fears is Output;", "what it relies on is Wealth.", "Moving, it harms Peer", "and gives life and support to Resource.", "Yet though it is ill in a hexagram it must not be missing,", "only it should be still and not moving."] },
+        { "by": "经", "book": "卜筮大全", "range": [2863, 2863],
+          "zh": ["生我者谓之父母也。", "能为凶，", "能为吉，", "各有所用。", "遇财则有伤本体，", "逢鬼则增长光辉。"],
+          "yi": ["生我的爻叫父母。", "它能成凶，", "也能成吉，", "各有各的用处。", "遇到财爻，就会伤到它自己的根本；", "碰到官鬼，就增添光辉。"],
+          "en": ["The line that gives me life is called Resource.", "It can be ill,", "and it can be auspicious,", "each with its own use.", "Meeting Wealth, it harms its own substance;", "meeting Pressure, it gains in lustre."] }
+      ],
+      "note": {
+        "yi": "官鬼这一爻在求官里是用神，「官鬼」本来是克我的爻，所以这里讲的是它的一般性质，不是专讲求官；求官时的取用见黄金策仕宦章。官鬼一条后面接着讲占身命、占婚姻为夫，那几件不是事业，没有收。",
+        "en": "In a divination for office the Pressure line is the Subject, but it is by nature the line that controls me, so this passage gives its general character and is not specifically about seeking office; how it is used in seeking office is in the Huangjin Ce chapter on official posts. After this the passage goes on to the reading of one's person and of marriage (Pressure as husband), which are not career matters and are not included."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.07",
+      "topic": "总则",
+      "chapter": "通玄妙论·八、断易总论",
+      "chapter_en": "Tongxuan Miaolun, no. 8: general discussion of Duanyi",
+      "title": "断易总论·公用以官鬼为尊：父母辅佐官鬼、子孙辅佐妻财；私用妻财为主、公用官鬼为尊，最忌动摇大宜安静；兴讼求名须凭官鬼",
+      "rule": {
+        "yi": "父母帮着官鬼，子孙帮着妻财；私事用妻财做主，公事用官鬼为尊，官鬼最怕乱动、最适宜安静。要打官司、求功名，必须凭官鬼。",
+        "en": "Resource assists Pressure, and Output assists Wealth. For private matters Wealth is the chief; for public matters Pressure is the honoured one, which above all fears moving about and is best still. To start a suit or to seek fame one must depend on Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2877, 2877],
+          "zh": ["父母辅佐于官鬼，", "子孙辅佐于妻财。", "父母与官鬼同气相求，", "子孙与妻财同声相应。", "私用以妻财为主，", "公用以官鬼为尊。", "最忌动摇，", "大宜安静。"],
+          "yi": ["父母爻辅佐官鬼，", "子孙爻辅佐妻财。", "父母和官鬼同气相求，", "子孙和妻财同声相应。", "私事用妻财做主，", "公事用官鬼为尊。", "最怕乱动，", "最适宜安静。"],
+          "en": ["Resource assists Pressure,", "Output assists Wealth.", "Resource and Pressure seek each other as of one breath,", "Output and Wealth answer each other as of one voice.", "For private matters Wealth is the chief,", "for public matters Pressure is the honoured one.", "What is most feared is its moving about;", "what suits it best is stillness."] },
+        { "by": "经", "book": "卜筮大全", "range": [2888, 2888],
+          "zh": ["兴讼求名，", "须凭官鬼。"],
+          "yi": ["要打官司、求功名，", "必须凭官鬼。"],
+          "en": ["To start a suit or seek fame,", "one must depend on Pressure."] }
+      ],
+      "note": {
+        "yi": "「公用」「私用」是公事、私事：求官、官司是公事，取官鬼；求财、买卖是私事，取妻财。「兴讼求名」和上一句「散官治病，全赖子孙」是一对，那一句讲疾病，放在疾病域（LY.ILL.BSQS.22）。",
+        "en": "\"Public use\" and \"private use\" mean public and private matters: seeking office and lawsuits are public and take Pressure; seeking wealth and trade are private and take Wealth. \"Start a suit or seek fame\" is paired with the previous line, \"to disperse official matters and cure illness rely wholly on Output\", which is about illness and is in the illness domain (LY.ILL.BSQS.22)."
+      },
+      "see": ["LY.ILL.BSQS.22"]
+    },
+    {
+      "id": "LY.CAREER.BSQS.08",
+      "topic": "成否",
+      "chapter": "通玄妙论·八、断易总论",
+      "chapter_en": "Tongxuan Miaolun, no. 8: general discussion of Duanyi",
+      "title": "断易总论·财官若遇生扶谋望并无阻滞；用官忌子孙持世；子孙兴发求官应举枉劳心",
+      "rule": {
+        "yi": "求官时，财爻、官鬼如果得到生扶，谋划的事没有阻滞；卦身和世爻没有救助，做的事一定彼此背离。用官鬼做用神的，忌子孙持世；子孙兴旺发动，求官、应举都是白费心。",
+        "en": "In seeking office, if Wealth and Pressure are given life and support, plans meet no obstruction; if the Body and the Self have no rescue or help, what one does will surely run to discord. When Pressure is the Subject, Output holding the Self is feared; if Output flourishes and moves, seeking office or taking the examinations is a waste of effort."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2880, 2880],
+          "zh": ["用官忌子孙持世，", "求财忌兄弟临身。"],
+          "yi": ["用官鬼做用神的，忌子孙持世；", "求财的，忌兄弟临身。"],
+          "en": ["When Pressure is the Subject, Output holding the Self is feared;", "in seeking wealth, Peer on the Body is feared."] },
+        { "by": "经", "book": "卜筮大全", "range": [2881, 2881],
+          "zh": ["财官若遇生扶，", "谋望并无阻滞。", "身世若无救助，", "所为必主参商。"],
+          "yi": ["财爻、官鬼如果得到生扶，", "谋划和指望的事没有阻滞。", "卦身和世爻如果没有救助，", "所做的事一定彼此背离、合不到一起。"],
+          "en": ["If Wealth and Pressure are given life and support,", "plans and hopes meet no obstruction.", "If the Body and the Self have no rescue or help,", "what one does will surely run to discord and not come together."] },
+        { "by": "经", "book": "卜筮大全", "range": [2881, 2881],
+          "zh": ["子孙兴发，", "求官应举枉劳心。"],
+          "yi": ["子孙兴旺发动，", "求官、应举都是白费心思。"],
+          "en": ["If Output flourishes and moves,", "seeking office or taking the examinations is a waste of effort."] }
+      ],
+      "note": {
+        "yi": "「财官若遇生扶」里的财是妻财、官是官鬼（原文写作「财官」）；「参商」是参星和商星，此出彼没，比喻彼此背离。同一行里「兄弟动摇，买婢求财空费力」是求财，放在求财域。「应举」是考试，这一条同时属考试域。「用官忌子孙持世」是说官鬼做用神时怕子孙持世，因为子孙克官鬼。",
+        "en": "\"Wealth and Pressure\" are the Wealth and Pressure lines (the text writes them as \"wealth-official\"); \"Shen and Shang\" are two stars that never appear together, a figure for people at odds. In the same line, \"if Peer moves, buying a maid or seeking wealth is wasted effort\" concerns seeking wealth and is in the wealth domain. \"Taking the examinations\" is also an examination matter, so this entry belongs to the examination domain as well. \"When Pressure is the Subject, Output holding the Self is feared\" is because Output controls Pressure."
+      },
+      "see": ["LY.CAREER.ZSZ.06"]
+    },
+    {
+      "id": "LY.CAREER.BSQS.09",
+      "topic": "取象",
+      "chapter": "通玄妙论·八、断易总论",
+      "chapter_en": "Tongxuan Miaolun, no. 8: general discussion of Duanyi",
+      "title": "断易总论·伏神：用官宜伏父母，官伏子孙用官必无成就，用官伏兄怕阻隔之挠",
+      "rule": {
+        "yi": "用官鬼做用神，最好它伏在父母爻下；官鬼伏在子孙爻下，就一定没有成就；伏在兄弟爻下，怕有阻隔的阻挠。用父母做用神伏在妻财下都是祸患。",
+        "en": "When Pressure is the Subject, it does best hidden under Resource; hidden under Output, it will have no accomplishment; hidden under Peer, one fears the hindrance of obstruction. When Resource is the Subject, hidden under Wealth is all trouble."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2885, 2888],
+          "zh": ["用官宜伏父母，", "用财宜伏子孙。", "官伏子孙，", "用官必无成就。", "财伏父母，", "用财一半亏伤。", "用财伏官，", "怕侵匿之扰。", "用官伏兄，", "怕阻隔之挠。", "用父伏财皆为患，", "用财伏兄总不中。"],
+          "yi": ["用官鬼做用神，宜它伏在父母爻下；", "用妻财做用神，宜它伏在子孙爻下。", "官鬼伏在子孙爻下，", "用官鬼做用神就一定没有成就。", "妻财伏在父母爻下，", "用妻财做用神就要损伤一半。", "用妻财做用神而伏在官鬼爻下，", "怕有侵吞藏匿的搅扰。", "用官鬼做用神而伏在兄弟爻下，", "怕有阻隔的阻挠。", "用父母做用神而伏在妻财爻下，都是祸患；", "用妻财做用神而伏在兄弟爻下，总不合用。"],
+          "en": ["When Pressure is the Subject it does well hidden under Resource;", "when Wealth is the Subject it does well hidden under Output.", "Pressure hidden under Output", "means that when Pressure is the Subject there will be no accomplishment.", "Wealth hidden under Resource", "means that when Wealth is the Subject half is lost and harmed.", "When Wealth is the Subject and is hidden under Pressure,", "one fears the trouble of embezzlement and concealment.", "When Pressure is the Subject and is hidden under Peer,", "one fears the hindrance of obstruction.", "When Resource is the Subject and is hidden under Wealth, it is all trouble;", "when Wealth is the Subject and is hidden under Peer, it is never of use."] }
+      ],
+      "note": {
+        "yi": "伏神是卦里没有出现的六亲，伏在本宫首卦的某一爻（飞神）下面；飞神生伏神为得长生，所以官伏在父母下是「宜」（父母生官鬼），伏在子孙下是克（子孙克官鬼）。「用官」是拿官鬼当用神。这一段里用财的几句是求财，同在这里是因为它们和用官的句子连着，没有拆开。",
+        "en": "A hidden line is a relation that does not appear in the hexagram and lies under some line (the flying line) of the home palace's first hexagram; when the flying line gives life to the hidden line it is well placed, so Pressure hidden under Resource is \"fitting\" (Resource gives life to Pressure) while hidden under Output is controlled (Output controls Pressure). \"Using the official\" means taking Pressure as the Subject. The lines on wealth in this passage are about seeking wealth and are kept here because they run on from the lines on Pressure and are not separated."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.10",
+      "topic": "升迁",
+      "chapter": "通玄妙论·八、断易总论",
+      "chapter_en": "Tongxuan Miaolun, no. 8: general discussion of Duanyi",
+      "title": "断易总论·月建临于用爻，求官必定迁高职",
+      "rule": {
+        "yi": "月建落在用爻上，求官一定升到高的职位。",
+        "en": "When the Month falls on the Subject line, one seeking office will surely be promoted to a high post."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2890, 2890],
+          "zh": ["月建临于用爻，", "求官必定迁高职。"],
+          "yi": ["月建落在用爻上，", "求官一定升到高的职位。"],
+          "en": ["When the Month falls on the Subject line,", "one seeking office will surely be promoted to a high post."] }
+      ],
+      "note": {
+        "yi": "「用爻」就是用神，求官时是官鬼；月建临它就是官鬼临月建（旺而有力）。「迁高职」是升到更高的职位。这一行的下一句「月破临于用爻，作事无成病不痊」放在疾病域（LY.ILL.BSQS.22）。仕宦章里「官鬼临月建」的说法见 LY.CAREER.HJC 各条和阐奥歌章。",
+        "en": "The \"Subject line\" is the Subject, which in seeking office is the Pressure line; the Month falling on it means Pressure standing on the Month, strong and powerful. \"Promoted to a high post\" means rising to a higher office. The next line, \"if the Month-break falls on the Subject line, nothing done comes to completion and illness is not cured\", is in the illness domain (LY.ILL.BSQS.22)."
+      },
+      "see": ["LY.ILL.BSQS.22"]
+    },
+    {
+      "id": "LY.CAREER.BSQS.11",
+      "topic": "贵人",
+      "chapter": "断易通玄赋",
+      "chapter_en": "The Duanyi Tongxuan Fu",
+      "title": "断易通玄赋·禄马最为良（旧注：有禄马爻临世应，求官可进，名利俱成）",
+      "rule": {
+        "yi": "有禄、有马的爻落在世爻或应爻上，求官可以进，名和利都能成。禄是日干的禄所在的地支（甲禄在寅、乙禄在卯），马是日支三合的驿马所在的地支（申子辰马在寅）。",
+        "en": "When a line that is the Emolument or the Horse stands on the Self or Other line, one seeking office can advance and both name and profit are achieved. The Emolument is the branch where the day-stem has its Emolument (Jia at Yin, Yi at Mao); the Horse is the branch of the Post Horse of the day's three-harmony group (Shen-Zi-Chen has its horse at Yin)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2961, 2961],
+          "zh": ["禄马最为良。"],
+          "yi": ["禄和马最好。"],
+          "en": ["The Emolument and the Horse are the best."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [2963, 2964],
+          "zh": ["假如甲日有寅爻，则是禄也。", "即甲禄在寅，乙禄在卯。", "申子辰日有寅爻，则是马也。", "即申子辰马居寅。", "若有此爻临世应，求官可进，名利俱成。"],
+          "yi": ["比如甲日，卦里有寅爻，这就是禄。", "就是说甲的禄在寅，乙的禄在卯。", "申子辰日，卦里有寅爻，这就是马。", "就是说申子辰的马在寅。", "如果有这样的爻临在世爻或应爻上，求官可以进，名和利都成。"],
+          "en": ["For example, on a Jia day a Yin line is the Emolument.", "That is, Jia has its Emolument at Yin and Yi at Mao.", "On a Shen, Zi or Chen day a Yin line is the Horse.", "That is, the horse of Shen-Zi-Chen is at Yin.", "If such a line stands on the Self or Other line, one seeking office can advance, and both name and profit are achieved."] }
+      ],
+      "note": {
+        "yi": "「禄」是天元禄（日干在哪个地支有禄），「马」是驿马（三合局的第一位的冲位：申子辰马居寅）。书里说禄马全篇歌诀见后面的神杀章，就是卜筮大全末尾的神煞歌例（见 LY.CAREER.BSQS 神煞各条）。旧注只说求官，这两个神煞的一般用法见神煞歌例。「看六爻卦还是要以用神为主」是虎易评注，不收。",
+        "en": "The \"Emolument\" is the Heavenly Emolument (the branch where the day-stem has its Emolument) and the \"Horse\" is the Post Horse (the branch that clashes the first of the three-harmony group: Shen-Zi-Chen has its horse at Yin). The book says the full verses on the Emolument and Horse are in the later chapter on spirit-stars, which is the Spirit-Star Verses at the end of the Bushi Daquan (see the spirit-star entries in this chapter). The old note speaks only of seeking office. The remark that the reading should still rest on the Subject is Hu Yi's commentary and is not quoted."
+      }
+    },
+    {
+      "id": "LY.CAREER.BSQS.12",
+      "topic": "成否",
+      "chapter": "断易通玄赋",
+      "chapter_en": "The Duanyi Tongxuan Fu",
+      "title": "断易通玄赋·父母爻兴旺，为官至侯王（旧注：印旺主大贵）",
+      "rule": {
+        "yi": "父母爻兴旺，做官能做到侯王；旧注说，印（父母）旺，主有大贵。",
+        "en": "If the Resource line flourishes, one who holds office rises to marquis or prince; the old note says that when the Seal (Resource) is strong, great nobility is indicated."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [2997, 2997],
+          "zh": ["父母爻兴旺，为官至侯王。"],
+          "yi": ["父母爻兴旺，做官能做到侯王。"],
+          "en": ["If the Resource line flourishes, one who holds office rises to marquis or prince."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [2998, 2998],
+          "zh": ["印旺主大贵。"],
+          "yi": ["印旺，主有大贵。"],
+          "en": ["When the Seal is strong, great nobility is indicated."] }
+      ],
+      "note": {
+        "yi": "「印」是印绶，也就是父母爻（文书、印信），官印旺就是父母旺。同一联前半「占宅青龙旺，豪富冠一乡」是占宅，放在家宅。后面的虎易评注说这两句旧注太简略，那是今人的话，不收。",
+        "en": "The \"Seal\" is the seal of office, that is, the Resource line (documents and seals); a strong seal means a strong Resource line. The first half of the couplet, \"in divining the house, a strong Azure Dragon makes one rich above all in the village\", is about the house and goes to the house domain. The later remark by Hu Yi that these notes are too brief is modern commentary and is not quoted."
+      }
+    }
+  ]
+}

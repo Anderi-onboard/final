@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(665 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(677 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 32 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 82 |
-| 动变 | Moving lines and what they turn into | 4 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 37 |
+| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 35 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 86 |
+| 动变 | Moving lines and what they turn into | 5 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 38 |
 | 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 51 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 53 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 54 |
 | 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 39 |
 | 军旅 | Soldiers, campaigns and military posts | 140 |
 | 国朝 | The court and the state: ruler, ministers, the realm | 81 |
 | 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 27 |
 | 应期 | Timing: when the post comes, changes or ends | 19 |
-| 取象 | Reading the images: what kind of post, which office, which place | 50 |
-| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 50 |
+| 取象 | Reading the images: what kind of post, which office, which place | 51 |
+| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 51 |
 
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
