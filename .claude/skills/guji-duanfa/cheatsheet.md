@@ -4,23 +4,23 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(511 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(590 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 25 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 52 |
-| 动变 | Moving lines and what they turn into | 3 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 22 |
-| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 42 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 28 |
+| 总则 | Principles: which line is the post, the document, the patron; strong and weak | 27 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 63 |
+| 动变 | Moving lines and what they turn into | 4 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 27 |
+| 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 47 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 37 |
 | 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 39 |
-| 军旅 | Soldiers, campaigns and military posts | 123 |
-| 国朝 | The court and the state: ruler, ministers, the realm | 67 |
-| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 26 |
-| 应期 | Timing: when the post comes, changes or ends | 15 |
-| 取象 | Reading the images: what kind of post, which office, which place | 36 |
-| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 33 |
+| 军旅 | Soldiers, campaigns and military posts | 139 |
+| 国朝 | The court and the state: ruler, ministers, the realm | 80 |
+| 求职 | Finding work: a tutor's post, an apprenticeship, hiring | 27 |
+| 应期 | Timing: when the post comes, changes or ends | 16 |
+| 取象 | Reading the images: what kind of post, which office, which place | 42 |
+| 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 42 |
 
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
@@ -78,8 +78,10 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: colour, direction and kind of person or spirit | 8 |
 | 风险 | Warnings: what to guard against | 27 |
 
-## 打架 · Where the classics disagree(174 条)
+## 打架 · Where the classics disagree(175 条)
 
+- **LY.CAREER.CA.21 天乙贵人再来相合：不止自己享禄，子孙代代为官受封赠（旧注的天乙贵人按月份取巳申亥寅轮转）**(`chapters/六爻/事业/贵人.md`):旧注里的天乙贵人按月份取（巳申亥寅轮转），而卜筮大全另一处、卜筮正宗、增删卜易、易林补遗等讲的天乙贵人都是按日干取：甲戊（庚）牛羊、乙己鼠猴、丙丁猪鸡、壬癸兔蛇、庚辛（六辛）马虎。两种起法不同，本库各照原书录，不裁定。
+  The note here finds the Tianyi Noble by the month (turning through Si, Shen, Hai, Yin), while elsewhere in the Bushi Daquan itself, and in the Bushi Zhengzong, the Zengshan Buyi and the Yilin Buyi, the Tianyi Noble is found by the day stem: Jia and Wu (and Geng) ox and sheep, Yi and Ji rat and monkey, Bing and Ding pig and rooster, Ren and Gui hare and snake, Geng and Xin (or the six Xin) horse and tiger. The two methods differ; each is recorded as its book gives it and neither is adjudicated.
 - **LY.CAREER.EL.92 朝天面旨：日辰月建生身吉、克世伤官尽不祥，卦值晋升蒙上宠、爻成屯蹇岂为强；世爻与官爻纵值休囚得日月或动爻生助或变出生扶皆为佳兆，朝王卜得火地晋、地风升皆吉，水雷屯、水山蹇皆为难遇者必凶**(`chapters/六爻/事业/国朝.md`):这里说卜得屯、蹇两卦「皆为难也，遇者必凶」；增删卜易引了古人「晋、升为吉，屯、蹇为凶」的说法后，野鹤（ZS.07）说晋、升也要世爻得地，屯、蹇两卦只要世爻旺相就没有妨碍，他有一次世爻旺相占到屯卦，照样越级升迁。也就是说：这里把卦名当作断语，增删卜易把卦名放在世爻旺衰的后面。
   This entry says that casting Zhun or Jian 'both mean difficulty, and whoever meets them will surely have ill'; the Zengshan Buyi quotes the ancients' 'Jin and Sheng are auspicious, Zhun and Jian ominous' and then the Old Man of Yehe (ZS.07) says that Jin and Sheng also need the Self to be well placed, that for Zhun and Jian there is no harm so long as the Self is thriving, and that once he got Zhun with a thriving Self and was promoted beyond rank all the same. That is, this entry takes the hexagram name as a verdict, while the Zengshan Buyi puts the hexagram name behind the strength of the Self.
 - **LY.CAREER.HJC.12 仕宦·日辰冲克，定然诽谤之多招（旧注：日辰刑冲克世必招诽谤，依五类推：带兄弟贪贿赂或征科太急、带财无调度、带子孙嗜酒好游、带父母事繁剧、带官鬼酷刑或同僚不和；世临月建则无害）**(`chapters/六爻/事业/风险.md`):「带兄弟」那一类，两家说得不一样：旧注说带兄弟是贪图贿赂、征税太急，而把「嗜酒好游，疏于政事」归给子孙；王洪绪却说带兄弟是「贪酒好游，疏于政事」，而且他只列了兄弟、父母、官鬼三类，没有提财爻和子孙。书里没有裁决。

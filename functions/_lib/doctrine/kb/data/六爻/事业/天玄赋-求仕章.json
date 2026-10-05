@@ -1,0 +1,484 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "天玄赋",
+  "chapter": "求仕章",
+  "chapter_en": "Seeking office",
+  "ranges": {"卜筮大全": [4368, 4429], "断易天机": [2602, 2661]},
+  "units": [
+    {
+      "id": "LY.CAREER.TXF.01",
+      "topic": "总则",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "有子万事足、无官一身轻；谋望利名先要鬼爻旺相，斟量宣敕但观父母兴衰：官鬼是用爻宜旺不宜衰，宣敕看父母最宜旺相扶世不加凶杀",
+      "rule": {
+        "yi": "求官，官鬼爻是用爻，宜旺不宜衰，喜欢日辰扶持拱卫，怕刑、害、克、冲；宣敕（任命的诏书）看父母爻，卦中不可没有，最好旺相、扶助世爻、不加凶杀；若被刑冲，根基不正；加临大耗，要多花钱财。太岁、月建旺的，多半是「宣」；贵人、禄、马同在一处的，不过是「敕」；虽有吉神却散漫不当权的，无非是吏员的文书。冲世凶，生世吉；只要不落空亡，再辛苦费力，终归能成。",
+        "en": "In seeking office the Pressure line is the Subject line and should be strong, not weak; it likes the Day to support and gather round it and fears punishment, harm, control and clash. The proclamation and decree are read from Resource, which cannot be missing from the hexagram and is best strong, supporting the Self and with no baleful spirit added; if it is punished or clashed the footing is not sound, and if Great Loss is added much money will be spent. If Tai Sui and the Month are strong it is mostly a 'proclamation'; if the Noble, the Emolument and the Horse share one place it is no more than a 'decree'; if there are auspicious spirits but they are scattered and without authority it is no more than a clerk's papers. A clash on the Self is bad and a generating of the Self is good; so long as it does not fall Void, however hard and wearing the labour, it will in the end be accomplished."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4370, 4370],
+          "zh": ["有子万事足，当如仪俨侃称喜；", "无官一身轻，谁佐禹汤及文武。", "欲作大廷之宰辅，须凭易卦以推详。"],
+          "yi": ["有儿子就万事满足，该像仪、俨、侃、称那样令人欢喜；", "没有官做一身轻松，可那样谁去辅佐禹、汤、文王、武王呢？", "想做朝廷里的宰辅，就要凭易卦来推详。"],
+          "en": ["With a son all is enough; one should rejoice as with Yi, Yan, Kan and Cheng;", "without office the body is light, but then who would assist Yu, Tang, King Wen and King Wu?", "to become a chief minister of the great court, one must rely on the hexagrams of the Yi to reckon in detail."] },
+        { "by": "经", "book": "卜筮大全", "range": [4371, 4371],
+          "zh": ["谋望利名，", "先要鬼爻旺相；", "斟量宣敕，", "但观父母兴衰。"],
+          "yi": ["谋求名利，", "先要官鬼爻旺相；", "要斟酌宣、敕（任命的诏书），", "只看父母爻的兴衰。"],
+          "en": ["In scheming for profit and name,", "first the Pressure line must be strong;", "to weigh the proclamation and the decree,", "look only at whether Resource thrives or declines."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4372, 4372],
+          "zh": ["凡卜求官，官鬼是用爻。", "宜旺不宜衰。", "喜日辰扶拱，怕刑害克冲。", "宣敕者，父母是也。", "卦中不可无，最宜旺相扶世，不加凶杀则吉。", "若被刑冲，根脚不正；", "加临大耗，广费资财。"],
+          "yi": ["凡是占求官，官鬼爻是用爻。", "宜旺相，不宜衰弱。", "喜欢日辰扶持拱卫，怕刑、害、克、冲。", "宣敕，就是父母爻。", "它在卦中不可以没有，最好旺相、扶助世爻，不加凶杀就吉。", "如果被刑、冲，根基就不正；", "加临大耗，要多花钱财。"],
+          "en": ["In every divination for office, the Pressure line is the Subject line.", "It should be strong and not weak.", "It likes the Day to support and gather round it, and fears punishment, harm, control and clash.", "The proclamation and decree are Resource.", "It cannot be missing from the hexagram, and is best strong and supporting the Self, auspicious if no baleful spirit is added.", "If it is punished or clashed, the footing is not sound;", "if Great Loss is added, much money will be spent."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4373, 4373],
+          "zh": ["若太岁月建旺者，多是宣也。", "若贵人禄马同乡，不过是敕也。", "若虽有吉神，散漫而不当权者，无过是吏掾文书。", "冲世凶，生克世吉。", "若不落空亡，纵有艰辛费力，终当成就。"],
+          "yi": ["如果太岁、月建旺相，多半是「宣」。", "如果贵人、禄、马同在一处，不过是「敕」。", "如果虽有吉神，却散漫而不当权，不过是吏员的文书。", "冲世是凶，生世、克世是吉。", "只要不落空亡，即使辛苦费力，最终也该成就。"],
+          "en": ["If Tai Sui and the Month are strong, it is mostly a 'proclamation'.", "If the Noble, the Emolument and the Horse share one place, it is no more than a 'decree'.", "If there are auspicious spirits but they are scattered and without authority, it is no more than a clerk's paperwork.", "A clash on the Self is bad; generating or controlling the Self is good.", "So long as it does not fall Void, however hard and wearing the labour, it will in the end be accomplished."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2607, 2607],
+          "zh": ["若冲则为仇人所害，克者事不相容，刑者势不两立。"],
+          "yi": ["如果遇冲，就是被仇人所害；遇克，事情不能相容；遇刑，势不两立。"],
+          "en": ["If it is clashed, one is harmed by an enemy; if controlled, the matter cannot be accommodated; if punished, the two cannot stand together."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2607, 2607],
+          "zh": ["冲世凶，生世吉，若不落空亡，纵有艰辛费力，终当成就。）"],
+          "yi": ["冲世是凶，生世是吉；只要不落空亡，即使辛苦费力，最终也该成就。"],
+          "en": ["A clash on the Self is bad and generating the Self is good; so long as it does not fall Void, however hard and wearing the labour, it will in the end be accomplished."] }
+      ],
+      "note": {
+        "yi": "「仪俨侃称」是宋代窦禹钧五个儿子（仪、俨、侃、偁、僖）的名字，他们相继登科，这是个典故；注文没有解释。「冲世凶，生克世吉」卜筮大全本如此，断易天机本作「生世吉」，并多出「若冲则为仇人所害，克者事不相容，刑者势不两立」一句；这两处另引在后面。",
+        "en": "'Yi Yan Kan Cheng' are the names of the five sons of Dou Yujun of the Song (Yi, Yan, Kan, Cheng and Xi), who passed the examinations one after another; it is an allusion and the commentary does not explain it. The Bushi Daquan text reads 'a clash on the Self is bad; generating or controlling the Self is good', while the Duanyi Tianji text reads 'generating the Self is good' and adds the sentence 'if it is clashed one is harmed by an enemy; if controlled the matter cannot be accommodated; if punished the two cannot stand together'; both are quoted after it."
+      },
+      "see": ["LY.CAREER.HJC.05", "LY.CAREER.CA.01"]
+    },
+    {
+      "id": "LY.CAREER.TXF.02",
+      "topic": "成否",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "印绶旺则职守弥高、官鬼衰则声名卑小：父母官鬼乃占官之根本缺一则事难成；二者生旺官职高大、休囚职分卑小；父强鬼弱则冷衙门；遇进神声名益大、逢退神减前任政声",
+      "rule": {
+        "yi": "印绶（父母）旺，职位就高；官鬼衰，名声就卑小。父母、官鬼是占官的根本，缺一个事情就难成；两个都逢生逢旺，官职必然高大，休囚则只是卑小的职分；父母强旺而官鬼无气，职位虽平平，身处的是清静冷淡的衙门，没有威光权柄；遇进神，名声更大；逢退神，必减损前任的政声。",
+        "en": "With the seal and ribbon (Resource) strong the post held is high; with Pressure weak the name is humble and small. Resource and Pressure are the root of divining for office, and lacking either the matter is hard to accomplish; if both meet birth or strength the post is surely high and great, and if they are at rest or trapped it is only a humble station; if Resource is strong but Pressure has no qi, the rank may be ordinary but one sits in a quiet, cold office without glory or authority; meeting an Advancing spirit the name grows greater, meeting a Retreating spirit it will surely lessen the reputation for government of the previous post."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4375, 4375],
+          "zh": ["印绶旺，则职守弥高；", "官鬼衰，则声名卑小。"],
+          "yi": ["印绶（父母）旺，职位就更高；", "官鬼衰，名声就卑小。"],
+          "en": ["With the seal and ribbon strong, the post held is all the higher;", "with Pressure weak, the name and standing are humble and small."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4376, 4376],
+          "zh": ["父母官鬼，乃占官之根本，缺一则事难成。", "二者若逢生旺，必然官职高大；", "若值休囚，只是卑小职分。", "若父母强旺，而官鬼无气，职虽平等，身居镇静冷淡衙门，无威耀权柄。", "若遇进神，声名益大；", "如逢退神，必减前任政声。", "此举大纲，后仿此推之。"],
+          "yi": ["父母和官鬼，是占官的根本，缺一个事情就难成。", "两者如果逢生逢旺，官职必然高大；", "如果值休囚，只是卑小的职分。", "如果父母强旺而官鬼无气，职位虽然平平，身处的是清静冷淡的衙门，没有威光和权柄。", "如果遇到进神，名声更大；", "如果逢到退神，必定减损前任的政声。", "这里只举大纲，后面照此推。"],
+          "en": ["Resource and Pressure are the root of divining for office; lacking either, the matter is hard to accomplish.", "If both meet birth or strength, the post is surely high and great;", "if they are at rest or trapped, it is only a humble and petty station.", "If Resource is strong but Pressure has no qi, the rank may be ordinary but one sits in a quiet, cold office, without glory or authority.", "If it meets an Advancing spirit, the name grows greater;", "if it meets a Retreating spirit, it will surely lessen the reputation for government of the previous post.", "This gives only the outline; what follows is reckoned in the same way."] },
+        { "by": "经", "book": "卜筮大全", "range": [4378, 4378],
+          "zh": ["欲知品秩，", "无倦推详。"],
+          "yi": ["要知道品级秩位，", "不要厌倦地仔细推详。"],
+          "en": ["To know the grade and rank,", "do not tire of reckoning in detail."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4379, 4379],
+          "zh": ["以上两节，只言大体，精妙之理，具陈于后。"],
+          "yi": ["以上两节，只讲大概，精妙的道理，都在后面陈述。"],
+          "en": ["The two sections above speak only of the broad outline; the subtle principles are all set out below."] }
+      ],
+      "see": ["LY.CAREER.HJC.05", "LY.CAREER.YY.22"]
+    },
+    {
+      "id": "LY.CAREER.TXF.03",
+      "topic": "成否",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "禄马扶身，万里风云际会：禄以旺位为禄（甲禄在寅，在临官帝旺之处），马为驿马；禄马临身世或官鬼父母、动来生扶身世大吉，唾手成名；大忌空亡与刑害",
+      "rule": {
+        "yi": "禄、马扶助自身，万里风云际会。禄是以旺位为禄（如甲的禄在寅，在临官、帝旺的地方），比喻人长大后食禄；马是驿马，落在身、世，或官鬼、父母上，以及发动来生扶身、世，是大吉，唾手成名的象；最忌空亡和刑、害。",
+        "en": "With the Emolument and the Horse supporting the self there is a meeting of wind and cloud across ten thousand li. The Emolument takes strength as the Emolument (for Jia it is at Yin, at the Office and Peak stages), likening a person grown up and eating a salary; the Horse is the Post Horse, and standing on the Body or the Self, or on Pressure or Resource, or moving to generate or support the Body and Self, it is greatly auspicious, the image of making a name as easily as spitting into one's palms; Void and punishment or harm are the great taboos."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4381, 4381],
+          "zh": ["禄马扶身，", "万里风云际会；"],
+          "yi": ["禄、马扶助自身，", "万里风云，际遇会合；"],
+          "en": ["With the Emolument and the Horse supporting the self,", "wind and cloud meet across ten thousand li;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4382, 4382],
+          "zh": ["禄者：十干五行。", "譬之人生一世，幼壮老死也。", "于长生为学堂：甲乙生亥，丙丁生寅，戊己壬癸生申，庚辛生巳，皆学堂。", "喻人之幼而学也。", "以旺为禄：则甲禄在寅之类。", "在临官帝旺之处，喻人之长而食禄也。"],
+          "yi": ["禄，指十干五行的禄位。", "好比人的一生：幼年、壮年、老年、死亡。", "在长生的位置是学堂：甲乙长生在亥，丙丁在寅，戊己壬癸在申，庚辛在巳，都是学堂。", "比喻人幼年求学。", "以旺位为禄：比如甲的禄在寅。", "在临官、帝旺的地方，比喻人长大后食禄。"],
+          "en": ["The Emolument: that of the ten stems and the five phases.", "It is like a person's lifetime: youth, prime, old age and death.", "At the Birth stage is the study hall: Jia and Yi are born at Hai, Bing and Ding at Yin, Wu, Ji, Ren and Gui at Shen, and Geng and Xin at Si; all are study halls.", "It likens the learning of a person's childhood.", "Strength is taken as the Emolument: for example the Emolument of Jia is at Yin, and so on.", "At the Office and Peak stages, it likens a person grown up and eating a salary."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4383, 4383],
+          "zh": ["马者：驿马。", "如寅午戌马居申，乃长生，谓之驿马。", "若临身世，或临官鬼父母，及动来生扶身世，乃大吉，唾手成名之象。", "大忌空亡与刑害也。"],
+          "yi": ["马，就是驿马。", "比如寅午戌的马在申，是长生之地，称为驿马。", "如果落在身、世上，或落在官鬼、父母上，以及发动来生扶身、世，是大吉，是唾手成名的象。", "最忌空亡和刑、害。"],
+          "en": ["The Horse is the Post Horse.", "For example for Yin, Wu and Xu the horse is at Shen, a Birth place, and is called the Post Horse.", "If it stands on the Body or the Self, or on Pressure or Resource, or moves to generate or support the Body and Self, it is greatly auspicious, the image of making a name as easily as spitting into one's palms.", "Void and punishment or harm are the great taboos."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2616, 2616],
+          "zh": ["如寅午戌马居申，谓之驿马。"],
+          "yi": ["比如寅午戌的马在申，称为驿马。"],
+          "en": ["For example for Yin, Wu and Xu the horse is at Shen, and is called the Post Horse."] }
+      ],
+      "note": {
+        "yi": "卜筮大全本说「马居申，乃长生」，断易天机本没有「乃长生」三个字。",
+        "en": "The Bushi Daquan text says 'the horse is at Shen, a Birth place'; the Duanyi Tianji text lacks the words 'a Birth place'."
+      },
+      "see": ["LY.CAREER.YY.04"]
+    },
+    {
+      "id": "LY.CAREER.TXF.04",
+      "topic": "贵人",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "贵人持世，九天雨露承恩：贵人有天乙贵人、福星贵人二种，宜旺相怕刑冲；临官鬼及文书主官职高迁必登相位；福贵持世主人有福德、一生见险无虞",
+      "rule": {
+        "yi": "贵人持世，承受九天雨露般的恩泽。贵人有两种：天乙贵人和福星贵人，宜旺相，怕刑、冲；落在官鬼和文书上，主官职高升、必登相位；福星、贵人持世，这人有福德，一生遇险不用忧虑，临到凶事也无祸咎。",
+        "en": "With the Noble holding the Self one receives favour like the rain and dew of the ninth heaven. There are two kinds of Noble, the Tianyi Noble and the Fortune-star Noble; it should be strong and fears punishment and clash; standing on Pressure or on the documents it means a high promotion and surely a seat as chancellor; with the Fortune star or the Noble holding the Self the person has blessing and virtue, meets danger all his life without anxiety and meets calamity without fault."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4385, 4385],
+          "zh": ["贵人持世，", "九天雨露承恩。"],
+          "yi": ["贵人持世，", "九重天的雨露（皇恩）降下来，承受恩泽。"],
+          "en": ["With the Noble holding the Self,", "the rain and dew of the ninth heaven fall, and one receives favour."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4386, 4386], "literal": ["子孙"],
+          "zh": ["贵人有二：有天乙贵人，有福星贵人。", "宜旺相，怕刑冲。", "若临官鬼及文书，主官职高迁，必登相位。", "福贵持世，主人有福德，一生见险无虞，临凶无咎也。"],
+          "yi": ["贵人有两种：有天乙贵人，有福星贵人。", "宜旺相，怕刑、冲。", "如果落在官鬼和文书上，主官职高升，必登相位。", "福星、贵人持世，主这个人有福德，一生遇险没有忧虑，临到凶事也没有祸咎。"],
+          "en": ["There are two kinds of Noble: the Tianyi Noble and the Fortune-star Noble.", "It should be strong and fears punishment and clash.", "If it stands on Pressure or on the documents, it means a high promotion and surely a seat as chancellor.", "With the Fortune star or the Noble holding the Self, the person has blessing and virtue; all his life he meets danger without anxiety and faces calamity without fault."] }
+      ],
+      "see": ["LY.CAREER.CA.21", "LY.CAREER.HJC.07"]
+    },
+    {
+      "id": "LY.CAREER.TXF.05",
+      "topic": "成否",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "青龙动则事业易成、朱雀空而文书难就：青龙为吉庆福德之喜神（年建、月建、日建），发动必加官进禄、与天马并立有升腾之喜，不宜落空；朱雀为占官用爻，宜旺不宜衰，空亡则文书难成、被刑克则文书伤坏",
+      "rule": {
+        "yi": "青龙发动，事业容易成；朱雀落空，文书难成。青龙是吉庆福德的喜神，有年建、月建、日建三种，发动必定加官进禄，与天马并立自有升腾进益之喜，不宜落空，落空只是空欢喜；朱雀是占官的用爻，宜旺不宜衰，见空亡文书必难成，被刑克文书必遭伤坏。",
+        "en": "When the Azure Dragon moves the undertaking is easily accomplished; when the Vermilion Bird is void the documents are hard to complete. The Azure Dragon is the spirit of joy of auspicious celebration, blessing and virtue, of three kinds, that of the year, of the Month and of the day; moving, it surely adds rank and emolument, and standing together with the Heavenly Horse there is the joy of rising and gain; it must not fall void, for then it is only empty joy. The Vermilion Bird is the Subject line in divining for office and should be strong and not weak; seen Void the documents are sure to be hard to complete, and punished or controlled they are sure to be spoiled."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4388, 4388],
+          "zh": ["青龙动，则事业易成；", "朱雀空，而文书难就。"],
+          "yi": ["青龙发动，事业就容易成；", "朱雀落空，文书就难成。"],
+          "en": ["When the Azure Dragon moves, the undertaking is easily accomplished;", "when the Vermilion Bird is void, the documents are hard to complete."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4389, 4389], "literal": ["子孙"],
+          "zh": ["青龙者：吉庆福德之喜神，其动有三：年建青龙、月建青龙、日建青龙。", "若见发动，必加官进禄。", "与天马并立，自有升腾进益之喜。", "不宜落空，必主虚喜。", "若得兴隆，事事称心，吉无不利。", "朱雀：占官之用爻，宜旺不宜衰。", "若见空亡，文书必难成就。", "或被刑克，文书必遭伤坏。"],
+          "yi": ["青龙，是吉庆福德的喜神，它的发动有三种：年建的青龙、月建的青龙、日建的青龙。", "如果见到发动，必定加官进禄。", "和天马并立，自然有升腾进益的喜事。", "不宜落空，落空必主空欢喜。", "如果得到兴隆，事事称心，吉利无有不顺。", "朱雀，是占官的用爻，宜旺不宜衰。", "如果见空亡，文书必定难成。", "或者被刑克，文书必定受伤损坏。"],
+          "en": ["The Azure Dragon is the spirit of joy of auspicious celebration, blessing and virtue; its moving is of three kinds: the Azure Dragon of the year, of the Month and of the day.", "If it is seen moving, one surely gains rank and emolument.", "Standing together with the Heavenly Horse, there is naturally the joy of rising and gain.", "It must not fall void; if void it surely means empty joy.", "If it flourishes, everything goes to one's heart's content and all is auspicious and favourable.", "The Vermilion Bird is the Subject line in divining for office and should be strong, not weak.", "If it is seen Void, the documents are sure to be hard to complete.", "Or if it is punished or controlled, the documents are sure to be spoiled."] }
+      ],
+      "see": ["LY.CAREER.YM.52"]
+    },
+    {
+      "id": "LY.CAREER.TXF.06",
+      "topic": "风险",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "子孙发动，纵然在任也休官：子孙乃剥官之神，发动则虽在任所亦当休致，求仕者不必言",
+      "rule": {
+        "yi": "子孙发动，即使已在任上也要休官；子孙是剥官的神，一发动，虽在任所也该休致，求仕的人就更不用说了。",
+        "en": "With Output moving, even one already in office will be dismissed; Output is the spirit that strips office, and if it moves even one at his post should retire, to say nothing of one seeking office."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4391, 4391],
+          "zh": ["子孙发动，纵然在任也休官；"],
+          "yi": ["子孙发动，纵然在任上也要休官；"],
+          "en": ["With Output moving, even one in office will be dismissed;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4392, 4392],
+          "zh": ["子孙：乃剥官之神。", "若发动，虽在任所，亦当休致。", "其求仕者，不必言也。"],
+          "yi": ["子孙，是剥官的神。", "如果发动，即使在任所，也该休致。", "那求仕的人，就不用说了。"],
+          "en": ["Output is the spirit that strips office.", "If it moves, even one at his post should retire.", "As for one seeking office, there is no need to say."] }
+      ],
+      "see": ["LY.CAREER.CA.10", "LY.CAREER.ZS.39", "LY.CAREER.ZS.11"]
+    },
+    {
+      "id": "LY.CAREER.TXF.07",
+      "topic": "风险",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "劫杀交重，当见承恩方损己：官鬼临劫杀发动，必因官损命（劫杀者五行混浊之神，阴气尤毒者谓之杀）",
+      "rule": {
+        "yi": "劫杀交重发动，正当受恩的时候反而损伤自己；官鬼落在劫杀上发动，必定因为做官而损命。劫杀见后面神杀章；它是五行混浊的神，阴气特别毒的叫做杀，遇到都不是吉兆。",
+        "en": "With the Robbery Killing moving heavily, just when one is to receive favour one is harmed; if Pressure stands on it and moves, one is sure to lose one's life through office. The Robbery Killing is dealt with in the later chapter on baleful spirits; it is a spirit of the five phases muddied and turbid, yin qi that is especially poisonous being called a 'killing', and meeting it is never an auspicious sign."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4394, 4394],
+          "zh": ["劫杀交重，当见承恩方损已。"],
+          "yi": ["劫杀交重发动，正当受恩的时候反而损伤自己。"],
+          "en": ["With the Robbery Killing moving heavily, just when one is to receive favour one is harmed."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4395, 4395],
+          "zh": ["劫杀：见后神杀章内。", "若官鬼临之发动，必因官损命。"],
+          "yi": ["劫杀，见后面神杀章。", "如果官鬼落在它上面发动，必定因为做官而损命。"],
+          "en": ["The Robbery Killing: see the later chapter on baleful spirits.", "If Pressure stands on it and moves, one is sure to lose one's life through office."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2628, 2628],
+          "zh": ["劫杀者，五行混浊之神。", "又云：阴气尤毒者，谓之杀也。", "占者遇之，皆非吉兆。"],
+          "yi": ["劫杀，是五行混浊的神。", "又说：阴气特别毒的，叫做杀。", "占卜的人遇到它，都不是吉兆。"],
+          "en": ["The Robbery Killing is a spirit of the five phases muddied and turbid.", "Another saying: where yin qi is especially poisonous it is called a 'killing'.", "In divination, meeting it is never an auspicious sign."] }
+      ],
+      "note": {
+        "yi": "卜筮大全本作「损已」，应是「损己」之误（断易天机本作「损己」），这里按「损己」译。后三句是断易天机本多出来的注。",
+        "en": "The Bushi Daquan text writes 'harm oneself' with a wrong character (the one for 'already' in place of the one for 'oneself'); the Duanyi Tianji text has it right, and it is translated as 'harm oneself'. The last three sentences are an extra note found only in the Duanyi Tianji text."
+      },
+      "see": ["LY.CAREER.CA.20", "LY.CAREER.EL.28"]
+    },
+    {
+      "id": "LY.CAREER.TXF.08",
+      "topic": "成否",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "妻财持世诰牒岂得如心、兄弟扶身俸禄安能称意：妻财持世克文书纵成不如意；兄弟为克剥之神俸资必非厚",
+      "rule": {
+        "yi": "妻财持世，任命的文书哪能称心？兄弟扶身，俸禄哪能称意？妻财持世克了文书（父母），就算成了也不如意；兄弟是克剥的神，俸禄必定不丰厚。",
+        "en": "With Wealth holding the Self, how can the patent of appointment go as one wishes? With Peer supporting the self, how can the salary be as one wishes? Wealth holding the Self and controlling the documents (Resource) means that even if it succeeds it is not as one wishes; Peer is the spirit that strips and takes, so the salary will surely not be generous."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4397, 4397],
+          "zh": ["妻财持世，诰牒岂得如心？", "兄弟扶身，俸禄安能称意？"],
+          "yi": ["妻财持世，诰牒（任命的文书）哪能称心？", "兄弟扶身，俸禄怎能称意？"],
+          "en": ["With Wealth holding the Self, how can the patent of appointment go as one wishes?", "With Peer supporting the self, how can the salary be as one wishes?"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4398, 4398],
+          "zh": ["妻财持世克文书，纵成，不如意。", "兄弟为克剥之神，俸资必非厚也。"],
+          "yi": ["妻财持世克文书，就算成了，也不如意。", "兄弟是克剥的神，俸禄必定不丰厚。"],
+          "en": ["Wealth holding the Self and controlling the documents (Resource): even if it succeeds, it is not as one wishes.", "Peer is the spirit that strips and takes, so the salary will surely not be generous."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2631, 2631],
+          "zh": ["凡占官，文书克我则吉，我克文书则凶。", "妻财持世克文书，纵使成就，文辞亦不如意。"],
+          "yi": ["凡是占官，文书克我就吉，我克文书就凶。", "妻财持世克文书，即使成就，文辞也不如意。"],
+          "en": ["In every divination for office, if the documents control me it is auspicious, and if I control the documents it is bad.", "With Wealth holding the Self and controlling the documents, even if it succeeds, the wording too is not as one wishes."] }
+      ],
+      "note": {
+        "yi": "断易天机本多出「凡占官，文书克我则吉，我克文书则凶」一句，又把「纵成，不如意」写成「纵使成就，文辞亦不如意」。",
+        "en": "The Duanyi Tianji text adds the sentence 'in every divination for office, if the documents control me it is auspicious, and if I control the documents it is bad', and writes 'even if it succeeds, it is not as one wishes' as 'even if it succeeds, the wording too is not as one wishes'."
+      },
+      "see": ["LY.CAREER.HJC.05", "LY.CAREER.ZS.26"]
+    },
+    {
+      "id": "LY.CAREER.TXF.09",
+      "topic": "动变",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "父化父文书不实、官化官事体翻腾",
+      "rule": {
+        "yi": "父母化父母，文书是虚的、不实在；官鬼化官鬼，事情翻腾反复。",
+        "en": "Resource turning into Resource, the documents are hollow and not solid; Pressure turning into Pressure, the matter churns and reverses."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4400, 4400],
+          "zh": ["父化父，文书不实；", "官化官，事体翻腾。"],
+          "yi": ["父化父，文书虚而不实；", "官化官，事情翻腾反复。"],
+          "en": ["Resource turning into Resource, the documents are not real;", "Pressure turning into Pressure, the matter is tossed over and over."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4401, 4401],
+          "zh": ["父母为文书。", "父化父，文书虚而不实也。", "官化官，事体翻腾反复也。"],
+          "yi": ["父母是文书。", "父化父，文书是虚的、不实在。", "官化官，事情翻腾反复。"],
+          "en": ["Resource stands for the documents.", "Resource turning into Resource: the documents are hollow and not solid.", "Pressure turning into Pressure: the matter churns and reverses."] }
+      ],
+      "see": ["LY.CAREER.YY.22"]
+    },
+    {
+      "id": "LY.CAREER.TXF.10",
+      "topic": "成否",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "卦中两父两官，必是鸳鸯求仕：必有两意此失彼得；前鬼旺后鬼空只宜守旧不可改谋，前鬼衰后鬼旺宜舍旧图新，前后皆旺所求遂意",
+      "rule": {
+        "yi": "卦里有两个父母、两个官鬼，一定是「鸳鸯求仕」：心里有两个打算，是此失彼得的兆头。前面的官鬼旺、后面的官鬼空，只宜守旧，不可改谋；前面的衰而后面的旺，宜舍旧图新；前后都旺，所求遂意。",
+        "en": "With two Resource lines and two Pressure lines in the hexagram it is surely 'mandarin ducks seeking office': there are two intentions, a sign of losing here and gaining there. If the former Pressure is strong and the latter void, one should only hold to the old and not change the plan; if the former is weak and the latter strong, give up the old and plan for the new; if both are strong, what is sought is attained as wished."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4403, 4403],
+          "zh": ["卦中两父两官，", "必是鸳鸯求仕。"],
+          "yi": ["卦中有两个父、两个官，", "必是「鸳鸯求仕」。"],
+          "en": ["With two Resource lines and two Pressure lines in the hexagram,", "it is surely 'mandarin ducks seeking office'."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4404, 4404],
+          "zh": ["卦中遇之，必有两意干事，此失彼得之兆，此乃鸳鸯求仕。", "若前鬼旺后鬼空，只宜守旧，不可改谋；", "前鬼衰而后鬼旺，宜舍旧图新；", "前后皆旺，所求遂意。"],
+          "yi": ["卦中遇到这种情形，一定是有两个心思在办事，是此失彼得的兆头，这就叫鸳鸯求仕。", "如果前面的官鬼旺、后面的官鬼空，只宜守旧，不可改谋；", "前面的鬼衰而后面的鬼旺，宜舍旧图新；", "前后都旺，所求遂意。"],
+          "en": ["Meeting this in the hexagram, one surely has two intentions in the matter, a sign of losing here and gaining there; this is 'mandarin ducks seeking office'.", "If the former Pressure is strong and the latter void, one should only hold to the old and not change the plan;", "if the former is weak and the latter strong, give up the old and plan for the new;", "if both are strong, what is sought is attained as wished."] }
+      ],
+      "see": ["LY.CAREER.YY.22"]
+    },
+    {
+      "id": "LY.CAREER.TXF.11",
+      "topic": "贵人",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "爻上月德月建，须逢獬豸为冠：月德月建皆清正吉神，加临贵人扶持官鬼及世爻必非州县之官而是风宪之职；更看目下衰旺断擢官赴任；不忌凶杀，逢杀则威风凛凛",
+      "rule": {
+        "yi": "爻上有月德、月建，必定戴上獬豸冠（监察执法之冠）。月德、月建都是清正的吉神，各种杀都不敢抬头看；若加在贵人上、扶持官鬼和世爻，必定不是州县的官，而是风宪（监察）的职位；再看眼下的衰旺，就能断他升官赴任；这种情形不忌凶杀，遇杀反而威风凛凛、一举一动惊人、掌权轰轰烈烈。",
+        "en": "With the Month Virtue and the Month on the line one will surely wear the Xiezhi cap (the cap of the censor and judge). The Month Virtue and the Month are both upright auspicious spirits at which no baleful spirit dares look up; added to the Noble and supporting Pressure and the Self line, it is surely not a post in a prefecture or county but a censorate office; look then at the present strength or weakness to judge his promotion and taking up the post; here baleful spirits are not feared, and meeting one makes one awe-inspiring, every move startling and one's wielding of power resounding."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4406, 4406],
+          "zh": ["爻上月德月建，", "须逢獬豸为冠。"],
+          "yi": ["爻上有月德、月建，", "必定戴上獬豸冠（监察执法之冠）。"],
+          "en": ["With the Month Virtue and the Month on the line,", "one will surely wear the Xiezhi cap (the cap of the censor and judge)."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4407, 4407],
+          "zh": ["月德、月建，皆清正之吉神，诸杀莫敢仰视。", "若见加临贵人，扶持官鬼及世爻，必非州县之官，乃风宪之职。", "更看目下衰旺，便可断其擢官赴任。", "此又不忌凶杀，逢杀，则威风凛凛，动止惊人，操权轰烈。"],
+          "yi": ["月德、月建都是清正的吉神，各种杀都不敢抬头看。", "如果见它们加在贵人上，扶持官鬼和世爻，必定不是州县的官，而是风宪（监察）的职位。", "再看眼下的衰旺，就可以断他升官赴任。", "这种情形又不忌凶杀，遇到杀，反而威风凛凛，一举一动惊人，掌权轰轰烈烈。"],
+          "en": ["The Month Virtue and the Month are both upright auspicious spirits, at which no baleful spirit dares look up.", "If they are seen added to the Noble and supporting Pressure and the Self line, it is surely not a post in a prefecture or county but a censorate office.", "Then look at the present strength or weakness, and one can judge his promotion and taking up the post.", "In this case baleful spirits are not feared either; meeting a baleful spirit, one is awe-inspiring, every move startles, and one wields power resoundingly."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2640, 2640],
+          "zh": ["更看日下衰旺，便可断其擢官赴任。"],
+          "yi": ["再看日下的衰旺，就可以断他升官赴任。"],
+          "en": ["Then look at the day's present strength or weakness, and one can judge his promotion and taking up the post."] }
+      ],
+      "note": {
+        "yi": "「目下」断易天机本作「日下」。獬豸是传说中能分辨曲直的异兽，獬豸冠是执法监察官戴的冠。",
+        "en": "The Duanyi Tianji text has 'ri xia' (the day) for 'mu xia' (at present). The Xiezhi is the legendary beast that tells right from wrong, and the Xiezhi cap is the cap worn by officers of law and censorship."
+      },
+      "see": ["LY.CAREER.HJC.07", "LY.CAREER.YY.03"]
+    },
+    {
+      "id": "LY.CAREER.TXF.12",
+      "topic": "升迁",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "太岁动则在任有除、劫杀空则逢凶无咎：太岁为地杀之主宰诸神不敢当；值青龙月建加临父母官鬼发动，虽居任所又当升擢美职；加劫杀则当贬责；落空亡逢凶无咎",
+      "rule": {
+        "yi": "太岁发动，在任的人就有任命、调动；劫杀落空，遇凶也没有祸咎。太岁是地杀的主宰，各神都不敢当它；如果碰上青龙、月建，加在父母、官鬼上发动，即使已在任所，也该升迁到好职位；如果加劫杀，就该受贬责；如果落空亡，遇凶也无咎。",
+        "en": "When Tai Sui moves, one in office gets an appointment or transfer; when the Robbery Killing is void, meeting calamity brings no fault. Tai Sui is the master of the earthly baleful spirits, which no spirit dares withstand; if it meets the Azure Dragon and the Month, added to Resource and Pressure and moving, even one already at his post will be promoted to a fine office; if the Robbery Killing is added, one is to be demoted and reprimanded; if it falls Void, meeting calamity brings no fault."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4409, 4409],
+          "zh": ["太岁动，则在任有除；", "劫杀空，则逢凶无咎。"],
+          "yi": ["太岁发动，在任的人就有任命、调动；", "劫杀落空，遇凶也没有祸咎。"],
+          "en": ["When Tai Sui moves, one in office gets an appointment or transfer;", "when the Robbery Killing is void, meeting calamity brings no fault."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4410, 4410],
+          "zh": ["太岁，地杀之主宰，诸神不敢当。", "若值青龙月建，加临父母官鬼发动，虽见居任所，又当升擢美职也。", "若加劫杀，则当贬责；", "如落空亡，逢凶无咎。"],
+          "yi": ["太岁，是地上各杀的主宰，各神都不敢当它。", "如果碰上青龙、月建，加在父母、官鬼上发动，即使已在任所，也该升迁到好职位。", "如果加上劫杀，就该受贬责；", "如果落空亡，遇凶也没有祸咎。"],
+          "en": ["Tai Sui is the master of the earthly baleful spirits, which no spirit dares withstand.", "If it meets the Azure Dragon and the Month, added to Resource and Pressure and moving, even one already at his post will be promoted to a fine office.", "If the Robbery Killing is added, one is to be demoted and reprimanded;", "if it falls Void, meeting calamity brings no fault."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2643, 2643],
+          "zh": ["若值青龙、月建，加临父官发动，虽见居任所，又当升擢美职也。", "若加劫杀，则当贬谪。"],
+          "yi": ["如果碰上青龙、月建，加在父、官上发动，即使已在任所，也该升迁到好职位。", "如果加上劫杀，就该贬谪。"],
+          "en": ["If it meets the Azure Dragon and the Month, added to Resource and Pressure and moving, even one already at his post will be promoted to a fine office.", "If the Robbery Killing is added, one is to be banished."] }
+      ],
+      "note": {
+        "yi": "卜筮大全本作「加临父母官鬼」「贬责」，断易天机本作「加临父官」「贬谪」。",
+        "en": "The Bushi Daquan text reads 'added to Resource and Pressure' and 'demoted and reprimanded'; the Duanyi Tianji text reads 'added to father and official' and 'banished'."
+      },
+      "see": ["LY.CAREER.HJC.07", "LY.CAREER.HJC.15", "LY.CAREER.EL.80"]
+    },
+    {
+      "id": "LY.CAREER.TXF.13",
+      "topic": "任所",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "鬼爻持世应知到任把权、印绶扶身必定临庭掌案：持世扶身为卦之主宰，用爻加临主到任把权、临庭掌案",
+      "rule": {
+        "yi": "官鬼爻持世，应当知道到任后要掌权；印绶（父母）扶身，必定临堂掌管案牍。官鬼持世、印绶扶身是卦的主宰，再有用爻加在上面，一定到任把权、临堂掌案。",
+        "en": "With the Pressure line holding the Self, know that on taking up the post one will hold power; with the seal and ribbon (Resource) supporting the self, one will surely sit in court and take charge of the cases. Pressure holding the Self and the seal supporting the self are the masters of the hexagram, and if the Subject line is added to them one surely takes power on taking up the post and presides in court over the cases."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4412, 4412],
+          "zh": ["鬼爻持世，应知到任把权；", "印绶扶身，必定临庭掌案。"],
+          "yi": ["官鬼爻持世，应当知道到任后要把权；", "印绶扶身，必定临堂掌管案牍。"],
+          "en": ["With the Pressure line holding the Self, know that on taking up the post one will hold power;", "with the seal and ribbon supporting the self, one will surely sit in court and take charge of the cases."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4413, 4413],
+          "zh": ["持世扶身，卦之主宰。", "若见用爻加临，定主到任把权，临庭掌案也。"],
+          "yi": ["持世、扶身，是卦的主宰。", "如果见用爻加在上面，一定主到任把权、临堂掌案。"],
+          "en": ["Holding the Self and supporting the self are the masters of the hexagram.", "If the Subject line is seen added to them, it surely means taking power on taking up the post and presiding in court over the cases."] },
+        { "by": "天玄赋注", "book": "断易天机", "range": [2646, 2646],
+          "zh": ["鬼爻持世，印绶扶身，卦之主宰。"],
+          "yi": ["官鬼爻持世、印绶扶身，是卦的主宰。"],
+          "en": ["The Pressure line holding the Self and the seal and ribbon supporting the self are the masters of the hexagram."] }
+      ],
+      "note": {
+        "yi": "卜筮大全本这条注只说「持世扶身，卦之主宰」，没点明是谁持世扶身；断易天机本补成「鬼爻持世，印绶扶身，卦之主宰」，与赋文对上。",
+        "en": "The Bushi Daquan note says only 'holding the Self and supporting the self are the masters of the hexagram' without saying who holds and supports; the Duanyi Tianji text fills it out as 'the Pressure line holding the Self and the seal supporting the self', matching the rhapsody."
+      }
+    },
+    {
+      "id": "LY.CAREER.TXF.14",
+      "topic": "任所",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "卦无父母终无所任之邦、爻隐妻财未得养廉之俸：父母为任所之地，不出现或落空恐无所任之处；妻财隐伏及落空养廉之俸未足",
+      "rule": {
+        "yi": "卦里没有父母，终究没有可任职的地方；妻财隐伏不现，还拿不到养廉的俸禄。父母是任所所在的地方，不出现或落空，恐怕没有任职之处；妻财隐伏或落空，养廉的俸禄就不够。",
+        "en": "With no Resource in the hexagram there is in the end no place to take up office; with the Wealth line hidden one does not yet get the stipend that fosters integrity. Resource is the place of the post, and if it does not appear or falls void there may be nowhere to take office; with Wealth hidden or void the stipend that fosters integrity is not enough."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4415, 4415],
+          "zh": ["卦无父母，终无所任之邦；", "爻隐妻财，未得养廉之俸。"],
+          "yi": ["卦里没有父母，终究没有可任职的地方；", "妻财隐伏不现，还拿不到养廉的俸禄。"],
+          "en": ["With no Resource in the hexagram, in the end there is no place to take up office;", "with the Wealth line hidden, one does not yet get the stipend that fosters integrity."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4416, 4416],
+          "zh": ["父母为任所之地。", "若不出现，或落空，恐无所任之处。", "妻财隐伏及落空，养廉之俸未足也。"],
+          "yi": ["父母是任所所在的地方。", "如果不出现，或者落空，恐怕没有任职的地方。", "妻财隐伏以及落空，养廉的俸禄就不够。"],
+          "en": ["Resource is the place of the post.", "If it does not appear, or falls void, there may be no place to take up office.", "With Wealth hidden or void, the stipend that fosters integrity is not enough."] }
+      ],
+      "see": ["LY.CAREER.HJC.05"]
+    },
+    {
+      "id": "LY.CAREER.TXF.15",
+      "topic": "任所",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "一世二世任所非遥、五世八纯仕途远涉：一二三世在内卦故非遥，四五八纯在外卦故远涉",
+      "rule": {
+        "yi": "一世、二世卦，任所不远；五世卦、八纯卦，仕途要远行。一、二、三世的世爻在内卦，所以说不远；四、五、八纯在外卦，所以说要远行。",
+        "en": "In a First- or Second-Generation hexagram the post is not far; in a Fifth-Generation or Eight-Pure hexagram the career takes one far. The First, Second and Third Generations are in the inner trigram, so it is said not to be far; the Fourth, Fifth and Eight-Pure are in the outer trigram, so it is said one travels far."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4418, 4418],
+          "zh": ["一世二世，任所非遥；", "五世八纯，仕途远涉。"],
+          "yi": ["一世、二世卦，任所不远；", "五世卦、八纯卦，仕途要远行。"],
+          "en": ["In a First- or Second-Generation hexagram, the post is not far;", "in a Fifth-Generation or Eight-Pure hexagram, the career takes one far."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4419, 4419],
+          "zh": ["一、二、三世在内卦，故曰非遥；", "四、五、八纯在外卦，故曰远涉也。"],
+          "yi": ["一世、二世、三世在内卦，所以说不远；", "四世、五世、八纯在外卦，所以说要远行。"],
+          "en": ["The First, Second and Third Generations are in the inner trigram, so it is said not to be far;", "the Fourth, Fifth and Eight-Pure are in the outer trigram, so it is said one travels far."] }
+      ],
+      "see": ["LY.CAREER.YM.47"]
+    },
+    {
+      "id": "LY.CAREER.TXF.16",
+      "topic": "取象",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "要识宦情好恶须凭卦象推详：隔手来占要知本官为人及形貌性情，但将鬼爻论之，看在何宫论其形体并六兽之形貌",
+      "rule": {
+        "yi": "要认识做官人的性情好恶，必须凭卦象仔细推详。托别人来占、要知道这位官员的为人、形貌、性情，只把官鬼爻来论：看它在哪一宫，论他的形体，再合上六兽的形貌，性情就清清楚楚。",
+        "en": "To know an official's likes and dislikes one must reckon in detail from the hexagram image. If the question is asked through another's hand and one wants to know the official's character, appearance and temper, reckon only from the Pressure line: see in which palace it lies, reckon his build, and together with the looks of the six beasts his nature can be seen clearly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4421, 4421],
+          "zh": ["要识宦情好恶，", "须凭卦象推详。"],
+          "yi": ["要认识做官人的性情好恶，", "必须凭卦象仔细推详。"],
+          "en": ["To know an official's likes and dislikes,", "one must reckon in detail from the hexagram image."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4422, 4422],
+          "zh": ["假如隔手来占，要知本官为人，及形貌性情，但将鬼爻论之。", "看在何宫，论其形体，并六兽之形貌，情性了然可见。", "奥义开列于后。"],
+          "yi": ["假如是隔手（托别人）来占，要知道这位本官的为人和形貌性情，只把官鬼爻来论。", "看它在哪一宫，论他的形体，再合上六兽的形貌，性情就清清楚楚能看出来。", "精微的道理列在后面。"],
+          "en": ["If one asks through another's hand and wants to know the character, appearance and temper of the official himself, reckon only from the Pressure line.", "See in which palace it lies and reckon his build, together with the looks of the six beasts, and his nature can be seen clearly.", "The deeper meanings are listed below."] }
+      ],
+      "see": ["LY.CAREER.CA.17"]
+    },
+    {
+      "id": "LY.CAREER.TXF.17",
+      "topic": "取象",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "世在离宫眼露聪明性急、身居乾象面圆正大仁慈：离属火为目，乾属金为首",
+      "rule": {
+        "yi": "世在离宫，这人眼睛外露、聪明、性急；身在乾象，这人脸圆、正大、仁慈。离属火，为目；乾属金，为首；各取它的形体和德性来说。",
+        "en": "With the Self in the palace of Li the man's eyes show, he is clever and quick-tempered; with the Body in the Qian image his face is round and he is upright and magnanimous and benevolent. Li belongs to Fire and is the eye; Qian belongs to Metal and is the head; each is taken by its bodily form and its virtue."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4424, 4424],
+          "zh": ["世在离宫，眼露聪明性急；", "身居乾象，面圆正大仁慈。"],
+          "yi": ["世在离宫，眼睛外露、聪明、性急；", "身在乾象，脸圆、正大、仁慈。"],
+          "en": ["With the Self in the palace of Li, the eyes show, the man is clever and quick-tempered;", "with the Body in the Qian image, the face is round, he is upright and magnanimous and benevolent."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4425, 4425],
+          "zh": ["离属火为目，乾属金为首，各取其体德而言之也。"],
+          "yi": ["离属火，为目；乾属金，为首；各取它的形体和德性来说。"],
+          "en": ["Li belongs to Fire and is the eye; Qian belongs to Metal and is the head; each is taken by its bodily form and its virtue."] }
+      ]
+    },
+    {
+      "id": "LY.CAREER.TXF.18",
+      "topic": "取象",
+      "chapter": "求仕章",
+      "chapter_en": "Seeking office",
+      "title": "金为武职之官掌生杀之重柄、火乃文章之士探礼义之根源：金有断制之义故取为武职，火乃文明之象必职司儒业",
+      "rule": {
+        "yi": "金是武职的官，掌握生杀的大权；火是文章之士，探求礼义的根源。金有决断制裁的意思，所以取为武职；火是文明的象，必定职掌儒业。",
+        "en": "Metal is the military officer, holding the heavy handle of life and death; Fire is the man of letters, who probes the source of ritual and righteousness. Metal has the sense of judging and restraining, so it is taken for military office; Fire is the image of civilization and brightness, so the office is surely over the Confucian scholarly profession."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4427, 4427],
+          "zh": ["金为武职之官，掌生杀之重柄；", "火乃文章之士，探礼义之根源。"],
+          "yi": ["金是武职的官，掌握生杀的大权；", "火是文章之士，探求礼义的根源。"],
+          "en": ["Metal is the military officer, holding the heavy handle of life and death;", "Fire is the man of letters, who probes the source of ritual and righteousness."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4428, 4428],
+          "zh": ["金有断制之义，故取为武职；", "火乃文明之象，必职司儒业。"],
+          "yi": ["金有决断制裁的意思，所以取为武职；", "火是文明的象，必定职掌儒业。"],
+          "en": ["Metal has the sense of judging and restraining, so it is taken for military office;", "Fire is the image of civilization and brightness, so the office is surely over the Confucian scholarly profession."] }
+      ],
+      "see": ["LY.CAREER.CA.17", "LY.CAREER.YY.05"]
+    }
+  ]
+}

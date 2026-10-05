@@ -1,0 +1,185 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "阐奥歌章",
+  "chapter": "僧道章",
+  "chapter_en": "Verse on monks and Daoists",
+  "ranges": {"卜筮大全": [3833, 3839]},
+  "units": [
+    {
+      "id": "LY.CAREER.CA.26",
+      "topic": "总则",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "羽士缁流占：身安世静最先；身爻克世可谋用、世应比和自然乐；世克身当退守、财克世好求缘；六爻不动为清福、一位交重事变迁",
+      "rule": {
+        "yi": "道士、僧人来问占：身安稳、世安静最要紧；身爻克世，可以去谋划；世、应比和，自然安乐；世去克身，应当退守；财来克世，适合去求缘；六爻不动是清福；有一位交重发动，事情就有变迁。",
+        "en": "For Taoist priests and monks asking by divination: the Body at ease and the Self still comes first; the Body line controlling the Self, one may plan and act; Self and Other in accord, ease comes of itself; the Self controlling the Body, one should withdraw and hold; Wealth coming to control the Self, it is good to seek alms; the six lines still is pure blessing; one line moving means change in the matter."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["羽士缁流来问占，", "身安世静最为先。", "身爻克世堪谋用，", "世应比和乐自然。", "世若克身当退守，", "财来克世好求缘。", "六爻不动为清福，", "一位交重事变迁。"],
+          "yi": ["道士、僧人来问占，", "身安稳、世安静，最要紧；", "身爻克世，可以谋划行事；", "世、应比和，自然安乐。", "世若克身，应当退守；", "财来克世，适合去求缘。", "六爻不动，是清福；", "有一位交重发动，事情就有变迁。"],
+          "en": ["Taoist priests and black-robed monks coming to ask by divination:", "the Body at ease and the Self still comes first;", "the Body line controlling the Self, one may plan and act;", "Self and Other in accord, ease comes of itself.", "If the Self controls the Body, one should withdraw and hold;", "Wealth coming to control the Self is good for seeking alms.", "With the six lines still it is pure blessing;", "one line moving, the matter changes."] }
+      ],
+      "see": ["LY.CAREER.YM.91", "LY.CAREER.YM.97"]
+    },
+    {
+      "id": "LY.CAREER.CA.27",
+      "topic": "成否",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占：财旺宜收布施、鬼交偏好谒官员；财空注疏徒劳力、鬼旺营谋枉费钱",
+      "rule": {
+        "yi": "财旺，正适合收布施；官鬼发动，偏适合去谒见官员；财落空，注解经疏是白费力气；官鬼旺，营谋是白费钱。",
+        "en": "Wealth thriving is just right for receiving alms; Pressure moving is especially good for calling on officials; Wealth void, annotating the scriptures is wasted labour; Pressure strong, scheming is money wasted."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["财旺正宜收布施，", "鬼交偏好谒官员。"],
+          "yi": ["财旺，正适合收取布施；", "官鬼发动，偏适合去谒见官员。"],
+          "en": ["Wealth thriving is just right for receiving alms;", "Pressure moving is especially good for calling on officials."] },
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["财空注疏徒劳力，", "鬼旺营谋枉费钱。"],
+          "yi": ["财落空，注解经疏是白费力气；", "官鬼旺，谋求营运是白白费钱。"],
+          "en": ["Wealth void, annotating the scriptures is wasted labour;", "Pressure strong, scheming and managing is money wasted."] }
+      ],
+      "see": ["LY.CAREER.YM.96"]
+    },
+    {
+      "id": "LY.CAREER.CA.28",
+      "topic": "风险",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占：世临白虎官司绕、身遇勾陈心事缠；勾陈带杀遭魔障、玄武临财被贼冤；兄弟勾陈同位动谨防法眷外勾连",
+      "rule": {
+        "yi": "世临白虎，官司缠绕；身遇勾陈，心事牵缠；勾陈带杀，会遭魔障；玄武临财，被盗贼冤害；兄弟和勾陈同在一位发动，要提防同门法眷在外面勾结牵连。",
+        "en": "The Self on the White Tiger, lawsuits dog one; the Body meeting Hook Earth, worries entangle the heart; Hook Earth carrying a baleful spirit meets demonic obstruction; the Dark Tortoise on Wealth, one is wronged by thieves; Peer and Hook Earth moving together in the same place, beware of Dharma kin colluding with outsiders."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["世临白虎官司绕，", "身遇勾陈心事缠。"],
+          "yi": ["世临白虎，官司缠绕；", "身遇勾陈，心事牵缠。"],
+          "en": ["The Self on the White Tiger, lawsuits dog one;", "the Body meeting Hook Earth, worries entangle the heart."] },
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["勾陈带杀遭魔障，", "玄武临财被贼冤。", "兄弟勾陈同位动，", "谨防法眷外勾连。"],
+          "yi": ["勾陈带杀，遭到魔障；", "玄武临财，被盗贼冤害。", "兄弟和勾陈同在一位发动，", "要谨防同门法眷在外面勾结牵连。"],
+          "en": ["Hook Earth carrying a baleful spirit meets demonic obstruction;", "the Dark Tortoise on Wealth, one is wronged by thieves.", "Peer and Hook Earth moving together in the same place,", "beware of Dharma kin colluding and entangling you from outside."] }
+      ],
+      "see": ["LY.CAREER.YM.100"]
+    },
+    {
+      "id": "LY.CAREER.CA.29",
+      "topic": "贵人",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占：父母克身师接引、青龙持世贵周全；贵临父母师通圣、福德龙交弟子贤；父母重重身受克断然身被俗家牵",
+      "rule": {
+        "yi": "父母克身，有师父接引；青龙持世，有贵人周全；贵人落在父母上，师父通达圣道；福德、青龙交动，弟子贤能；父母重重叠叠、身受克，断定是被俗家牵累。",
+        "en": "Resource controlling the Body, a master receives and leads one on; the Azure Dragon holding the Self, a patron sees one through; the Noble on Resource, the master is versed in the sacred; Output and the Dragon moving together, the disciples are worthy; Resource upon Resource and the Body controlled, it is certain one is dragged back by one's lay family."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["父母克身师接引，", "青龙持世贵周全。"],
+          "yi": ["父母克身，有师父来接引；", "青龙持世，有贵人周全。"],
+          "en": ["Resource controlling the Body, a master receives and leads one on;", "the Azure Dragon holding the Self, a patron sees one through."] },
+        { "by": "经", "book": "卜筮大全", "range": [3835, 3835],
+          "zh": ["贵临父母师通圣，", "福德龙交弟子贤。", "父母重重身受克，", "断然身被俗家牵。"],
+          "yi": ["贵人落在父母上，师父通达圣道；", "福德、青龙交动，弟子贤能。", "父母重重叠叠、身受克，", "断定是身被俗家牵累。"],
+          "en": ["the Noble on Resource, the master is versed in the sacred;", "Output and the Dragon moving together, the disciples are worthy.", "Resource upon Resource while the Body is controlled,", "it is certain one is dragged back by one's lay family."] }
+      ],
+      "see": ["LY.CAREER.YM.95", "LY.CAREER.YM.99"]
+    },
+    {
+      "id": "LY.CAREER.CA.30",
+      "topic": "取象",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占：乱动坐关为大忌、八纯好参玄、艮坤栖岩壑、离巽隐市廛；龙虎交驰宜访道、坎离辐辏好安禅；游魂带杀休云水、一世休囚莫置田",
+      "rule": {
+        "yi": "爻乱动而去坐关（闭关），是大忌；八纯卦倒好去参玄；艮、坤只能栖身岩穴山谷；离、巽适合隐居市井；龙虎交驰，适合访道；坎、离汇聚，适合安心坐禅；游魂卦带杀，别去云游；一世卦遇休囚，不要置买田产。",
+        "en": "With lines moving in disorder, going into retreat is the great taboo; an Eight-Pure hexagram is on the contrary good for studying the mysteries; Gen and Kun suit only a dwelling among crags and ravines; Li and Xun suit hiding in the marketplace; the Dragon and Tiger racing against each other suit seeking the Way; Kan and Li converging suit settling into meditation; a Wandering Soul hexagram with a baleful spirit, do not go wandering like cloud and water; a First-Generation hexagram resting or trapped, do not buy fields."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3837, 3837],
+          "zh": ["乱动坐关为大忌，", "八纯却好去参玄。", "艮坤只可栖岩壑，", "离巽偏宜隐市廛。"],
+          "yi": ["爻乱动而去坐关，是大忌；", "八纯卦，倒好去参玄。", "艮、坤只能栖身岩穴山谷；", "离、巽偏适合隐居市井。"],
+          "en": ["With lines moving in disorder, going into retreat is the great taboo;", "an Eight-Pure hexagram is on the contrary good for studying the mysteries.", "Gen and Kun suit only a dwelling among crags and ravines;", "Li and Xun are better for hiding in the marketplace."] },
+        { "by": "经", "book": "卜筮大全", "range": [3838, 3838],
+          "zh": ["龙虎交驰宜访道，", "坎离辐辏好安禅。", "游魂带杀休云水，", "一世休囚莫置田。"],
+          "yi": ["龙虎交驰，适合访道；", "坎、离汇聚，适合安心坐禅。", "游魂卦带杀，不要云游；", "一世卦休囚，不要置买田产。"],
+          "en": ["With the Dragon and Tiger racing against each other, it suits seeking the Way;", "with Kan and Li converging, it suits settling into meditation.", "A Wandering Soul hexagram with a baleful spirit, do not go wandering like cloud and water;", "a First-Generation hexagram resting or trapped, do not buy fields."] }
+      ],
+      "note": {
+        "yi": "「一世」原文没有展开；这里按「一世卦」（世在初爻）读，也可能指世这一爻本身休囚，本库不裁定。",
+        "en": "'Yi shi' is not expanded in the text; it is read here as a First-Generation hexagram (the Self on the first line), though it could mean the Self line itself being at rest or trapped, and this is not decided."
+      },
+      "see": ["LY.CAREER.YM.98"]
+    },
+    {
+      "id": "LY.CAREER.CA.31",
+      "topic": "风险",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占：子动妻交还俗汉；忽然负结、财身动免不了填还俗债；世应不和身妄动，了身达命待驴年",
+      "rule": {
+        "yi": "子孙发动、妻财交动，是要还俗的人；忽然有负债纠结、财和身一起发动，免不了去偿还俗世的债和冤；世、应不和、身又乱动，想了身达命要等到驴年（也就是永远等不到）。",
+        "en": "Output moving with Wealth also moving: a man who will return to lay life; if suddenly there is a debt-knot and Wealth and the Body move, one cannot avoid paying back worldly debts and grievances; with Self and Other at odds and the Body moving wildly, to finish with the body and reach one's destiny one must wait for the Year of the Donkey (that is, for ever)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3839, 3839],
+          "zh": ["子动妻交还俗汉，"],
+          "yi": ["子孙发动、妻财交动，是要还俗的汉子；"],
+          "en": ["Output moving and Wealth also moving: a man who will return to lay life;"] },
+        { "by": "经", "book": "卜筮大全", "range": [3839, 3839],
+          "zh": ["忽然负结财身动，", "未免填还俗债冤。", "世应不和身妄动。", "了身达命待驴年。"],
+          "yi": ["忽然有负债纠结、财和身一起发动，", "免不了要偿还俗世的债和冤。", "世、应不和，身又乱动，", "想了身达命，要等到驴年。"],
+          "en": ["If suddenly there is a debt-knot and Wealth and the Body move,", "one cannot avoid paying back worldly debts and grievances.", "Self and Other at odds and the Body moving wildly,", "to finish with the body and reach one's destiny, wait for the Year of the Donkey."] }
+      ],
+      "note": {
+        "yi": "「负结」原文难解，这里按上下文读作「负债纠结」；「驴年」的十二支里没有驴，意思是永远等不到。",
+        "en": "'Fu jie' is hard to read in the text and is taken from the context as 'debts and entanglement'; there is no donkey among the twelve branches, so the 'Year of the Donkey' means never."
+      },
+      "see": ["LY.CAREER.YM.94"]
+    },
+    {
+      "id": "LY.CAREER.CA.32",
+      "topic": "成否",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占成道之象：世空身旺为地行仙、身空不动头头是道、应旺无魔处处是禅；应偶世奇生合、神清身静寿绵绵",
+      "rule": {
+        "yi": "世空、身旺，是地上的行仙；身空而不动，事事都是道；应旺而没有魔，处处都是禅；应落偶位、世落奇位，又生又合，精神清明、身体安静，寿命绵长。",
+        "en": "The Self void and the Body strong makes an earth-wandering immortal; the Body void and still, every single thing is the Way; the Other strong with no demon, Chan is everywhere; the Other on an even place and the Self on an odd one, generating and combining, the spirit clear and the body at peace, life is long."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3839, 3839],
+          "zh": ["世空身旺地行仙。", "身空不动头头道，", "应旺无魔处处禅。", "应偶世奇生又合，", "神清身静寿绵绵。"],
+          "yi": ["世空、身旺，是地上的行仙；", "身空而不动，事事都是道；", "应旺而没有魔，处处都是禅；", "应落偶位、世落奇位，又生又合，", "精神清明、身体安静，寿命绵长。"],
+          "en": ["the Self void and the Body strong, an earth-wandering immortal;", "the Body void and still, every single thing is the Way;", "the Other strong with no demon, Chan is everywhere;", "the Other on an even place and the Self on an odd one, generating and combining,", "the spirit clear and the body at peace, life is long."] }
+      ],
+      "see": ["LY.CAREER.YM.101", "LY.CAREER.YM.92"]
+    },
+    {
+      "id": "LY.CAREER.CA.33",
+      "topic": "贵人",
+      "chapter": "僧道章",
+      "chapter_en": "Verse on monks and Daoists",
+      "title": "僧道占：木神太岁临身命即日逢神得正传；太岁火神加父母天边恩命定来宣",
+      "rule": {
+        "yi": "木神、太岁落在身和命上，当天就遇上神人、得到真传；太岁、火神加在父母上，天边的恩命一定会来宣布。",
+        "en": "The Wood spirit and Tai Sui on the Body and one's fate: on that very day one meets a divine person and receives the true transmission; Tai Sui and the Fire spirit added to Resource: a favour commanded from the edge of heaven will surely be proclaimed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3839, 3839],
+          "zh": ["木神太岁临身命，", "即日逢神得正传。", "太岁火神加父母，", "天边恩命定来宣。", "问予末后天机事，", "拈笔书将一个缘。"],
+          "yi": ["木神、太岁落在身和命上，", "当天就遇上神人，得到真传。", "太岁、火神加在父母上，", "天边的恩命一定会来宣布。", "问我最后这件天机之事，", "我拈起笔来，写下一个缘字。"],
+          "en": ["The Wood spirit and Tai Sui on the Body and one's fate,", "on that very day one meets a divine person and receives the true transmission.", "Tai Sui and the Fire spirit added to Resource,", "a favour commanded from the edge of heaven will surely be proclaimed.", "If you ask me about this last matter of heaven's secret,", "I take up my brush and write down a single word, yuan (affinity)."] }
+      ],
+      "note": {
+        "yi": "最后两句（「问予末后天机事，拈笔书将一个缘」）是全章的收尾，不是判语。",
+        "en": "The last two lines ('if you ask me about this last matter of heaven's secret, I take up my brush and write down a single yuan') close the whole chapter and are not a judgment."
+      }
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "火珠林",
+  "chapter": "占科举(求进职部分)/占谒贵/占朝国/占征战",
+  "chapter_en": "Divining the examinations (seeking posts), calling on a great man, the court and war",
+  "ranges": {"火珠林": [267, 563]},
+  "units": [
+    {
+      "id": "LY.CAREER.HZL.01",
+      "topic": "求职",
+      "chapter": "占科举(求进职部分)",
+      "chapter_en": "Divining the examinations (the seeking-of-posts part)",
+      "title": "求进职·谋干事看世上有无文书：科举功名求进职皆取官多、旺相必得；凡占赴试、谒贵、面君、参官、到部谋干事，看世上有无文书——父母旺相可许、官爻旺相便吉、忌子孙持世；占赴任子孙持世或独发必不满任；看世上文书者，因专用官为主、用爻为辅",
+      "rule": {
+        "yi": "科举功名，是为了求进职，都以官爻为主，旺相就一定得到。凡是占赴考、谒见贵人、面见君主、参谒官员、到部里谋办事情的，看世爻上有没有文书（父母爻）：父母旺相，可以允许；官爻旺相，就吉；忌子孙持世，不中。占赴任，子孙持世或独发，必定做不满任期。为什么要看世爻上有没有文书？因为这是专以官为主、用爻为辅，所以要父母在世爻上。",
+        "en": "Examinations and a name in office are for seeking advancement in post, and the Pressure line is taken as the main one in all of them; if it is thriving it is certainly obtained. In divining about going to an examination, calling on a great man, seeing the sovereign, attending an official, or going to a ministry to see to business, look at whether there is the document line, Resource, on the Self: if the Resource line is thriving, it may be granted; if the Pressure line is thriving, it is auspicious; Output holding the Self is feared, and it does not hit the mark. In divining about going to take up a post, if Output holds the Self or moves alone, one will surely not complete the term. Why look at whether there is Resource on the Self? Because this takes the official alone as the master and the Subject line as the aid, and so one wants Resource on the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [268, 268],
+          "zh": ["科举功名，于求进职；", "皆取官多，旺相必得。"],
+          "yi": ["科举功名，是为了求进职；", "都以官爻为主，旺相就一定得到。"],
+          "en": ["Examinations and a name in office are for seeking advancement in post;", "the Pressure line is taken as the main one in all of them, and if it is thriving it is certainly obtained."] },
+        { "by": "经", "book": "火珠林", "range": [269, 269],
+          "zh": ["凡占赴试、谒贵、面君、参官、到部谋干事，看世上有无文书。", "若父母旺相，可许。", "但官爻旺相，便吉。", "忌子孙持世，不中。", "占赴任，子孙持世或独发，必不满任也。"],
+          "yi": ["凡是占赴考、谒见贵人、面见君主、参谒官员、到部里谋办事情的，看世爻上有没有文书。", "如果父母爻旺相，可以允许。", "只要官爻旺相，就吉。", "忌子孙持世，考不中。", "占赴任，子孙持世或独发，必定做不满任期。"],
+          "en": ["In divining about going to an examination, calling on a great man, seeing the sovereign, attending an official, or going to a ministry to see to business, look at whether there is the document line on the Self.", "If the Resource line is thriving, it may be granted.", "If the Pressure line is thriving, it is auspicious.", "Output holding the Self is feared, and it does not hit the mark.", "In divining about going to take up a post, if Output holds the Self or moves alone, one will surely not complete the term."] },
+        { "by": "经", "book": "火珠林", "range": [270, 270],
+          "zh": ["或问：看世上有无文书，何也？", "答曰：此专用官为主，用爻为辅，所以要父母在世上也。"],
+          "yi": ["有人问：看世爻上有没有文书，为什么？", "答：这是专以官为主、用爻为辅，所以要父母在世爻上。"],
+          "en": ["Someone asks: why look at whether there is the document line on the Self?", "The answer: this takes the official alone as the master and the Subject line as the aid, and so one wants Resource on the Self."] }
+      ],
+      "note": {
+        "yi": "「求进职」是求升官取职。「赴试、谒贵、面君、参官、到部谋干事」是一串求上进的事：赴试归考试域，其余（谒见贵人、面君、参谒官员、到部门谋办事情）归事业。「文书」是父母爻。「世上」是世爻上。「专用官为主，用爻为辅」是说这类占问官爻是主角，所求的那件事的用爻只是辅助，所以文书（父母）要在世爻上扶持。「赴任」是上任。「不满任」是做不满一个任期。第三段末尾「以文书为主，要文书持世无刑克太岁贴身，必作状元」是专讲考中状元的，另收入考试域，这里不取。这一节同时是考试域的，该域另收。参看易林补遗趋谒贵人（EL.99–102）。",
+        "en": "'Qiu jin zhi' is seeking promotion and a post. 'Going to an examination, calling on a great man, seeing the sovereign, attending an official, going to a ministry to see to business' is a string of matters of seeking advancement: going to an examination belongs to Examinations, and the rest (calling on a great man, seeing the sovereign, attending an official, going to a department to see to business) belong to Career. 'Wenshu' is the Resource line. 'On the Self' is on the Self line. 'The official alone as the master and the Subject line as the aid' says that in this kind of divination the Pressure line is the principal and the Subject line of the matter sought is only the aid, so Resource must support from the Self. 'Fu ren' is taking up a post, and 'bu man ren' is not completing a term. The sentence at the end of the third section, 'taking Resource as the master, one wants Resource to hold the Self, with no punishment or control and the Tai Sui attached to the body, and one will surely be the top graduate', speaks only of coming first in the examination, is taken under Examinations and not here. This section is also one for Examinations, which takes it separately. See the Yilin Buyi on calling on the great (EL.99-102)."
+      },
+      "see": ["LY.CAREER.EL.99", "LY.CAREER.EL.100", "LY.CAREER.EL.101", "LY.CAREER.HZL.02", "LY.CAREER.HZL.03"]
+    },
+    {
+      "id": "LY.CAREER.HZL.02",
+      "topic": "成否",
+      "chapter": "占科举(求进职部分)",
+      "chapter_en": "Divining the examinations (the seeking-of-posts part)",
+      "title": "求职请判与在任、谋干事通则：求职请判宜官鬼出现忌动发、在任宜鬼静鬼发有动子动有替；六爻只有一爻动最吉、兄动事不实难成、现有气可速成怕落空；官与文书俱旺相亦要持世方可成、应不克事体分明；乾兑坎宫谋事不一，见官用动其人多出见亦生嗔",
+      "rule": {
+        "yi": "求职、请上司批判，宜官鬼出现，忌发动；已在任的，宜鬼静，鬼发动就有变动，子动就有人来替。如果六爻中只有一爻动，最吉。兄动，事情不实在，难成。如果（用爻）出现而有气，可以很快成，怕落空。易说：动爻急如火。其次，是文书和贵人出现。但如果卦中本来没有、或不入卦、或落空，那件事就难。官和文书都旺相，也要持世才可以成。应又不克世，事情就清楚。乾、兑、坎宫，谋事不专一；见官爻发动，那个人多半外出，见了也生气。",
+        "en": "In seeking a post or asking a superior for a ruling, it is right for Pressure to appear and wrong for it to move; for one in office, it is right for Pressure to be still, Pressure moving means a change, and Output moving means someone to take his place. If only one of the six lines moves, it is most auspicious. If Peer moves, the matter is not solid and is hard to accomplish. If it appears and has force, it can be accomplished quickly, but fear Void. The Yi says: a moving line is urgent as fire. Next come the document line and the Noble appearing. But if the hexagram originally lacks it, or it does not enter the hexagram, or it is Void, the matter is hard. If Pressure and Resource are both strong, they must also hold the Self before it can be accomplished. If the Other does not control the Self either, the matter stands clear. In the palaces of Qian, Dui and Kan, the scheming is not single-minded; when Pressure is seen moving, the man is mostly out, and if one sees him he flares up in anger."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [271, 271],
+          "zh": ["求职请判，宜官鬼出现，忌动发，在任宜鬼静，鬼发有动，子动有替。"],
+          "yi": ["求职、请上司批判，宜官鬼出现，忌发动；已在任的，宜鬼静，鬼发动就有变动，子动就有人来替。"],
+          "en": ["In seeking a post or asking a superior for a ruling, it is right for Pressure to appear and wrong for it to move; for one in office, it is right for Pressure to be still, Pressure moving means a change, and Output moving means someone to take his place."] },
+        { "by": "经", "book": "火珠林", "range": [272, 272],
+          "zh": ["若六爻中只有一爻动最吉。", "兄动，事不实，难成。", "若现有气，可速成，怕落空。", "易云：动爻急如火。", "次或出现文书与贵人。", "但卦中原无或不入卦，或落空，其事难。", "官与文书俱旺相，亦要持世方可成。", "应又不克，事体分明。", "乾兑坎宫，谋事不一，见官用动，其人多出，见亦生嗔。"],
+          "yi": ["如果六爻中只有一爻动，最吉。", "兄动，事情不实在，难成。", "如果（用爻）出现而有气，可以很快成，怕落空。", "易说：动爻急如火。", "其次，是文书和贵人出现。", "但如果卦中本来没有、或不入卦、或落空，那件事就难。", "官和文书都旺相，也要持世才可以成。", "应又不克世，事情就清楚。", "乾、兑、坎宫，谋事不专一；见官爻发动，那个人多半外出，见了也生气。"],
+          "en": ["If only one of the six lines moves, it is most auspicious.", "If Peer moves, the matter is not solid and is hard to accomplish.", "If it appears and has force, it can be accomplished quickly, but fear Void.", "The Yi says: a moving line is urgent as fire.", "Next come the document line and the Noble appearing.", "But if the hexagram originally lacks it, or it does not enter the hexagram, or it is Void, the matter is hard.", "If Pressure and Resource are both strong, they must also hold the Self before it can be accomplished.", "If the Other does not control the Self either, the matter stands clear.", "In the palaces of Qian, Dui and Kan, the scheming is not single-minded; when Pressure is seen moving, the man is mostly out, and if one sees him he flares up in anger."] }
+      ],
+      "note": {
+        "yi": "「请判」是请上司批判、批示。「宜官鬼出现、忌动发」是求职请批时官鬼要出现、不要发动，否则事情生变；「在任宜鬼静」是已在任时官鬼要静，「鬼发有动」是鬼一发动就有变动，「子动有替」是子孙动就有人来接替。后面一组是谋干事的通则：六爻只有一爻动最吉（目标集中），兄动不实，用爻有气可速成（「易云动爻急如火」是引《易》），怕落空；文书、贵人出现是次一等的好；原本没有、不入卦、落空，事难；官和文书都旺相，还要持世才成；应不克世，事情才清楚。最后一句「乾兑坎宫……」是说这几宫谋事不专一，官爻发动则所要见的人多外出、见了也发怒；书里没有再展开。",
+        "en": "'Qingpan' is asking a superior for a ruling or an instruction. 'It is right for Pressure to appear and wrong for it to move' is that in seeking a post and asking for a ruling Pressure should appear and not move, otherwise the matter changes; 'for one in office, it is right for Pressure to be still' is that for one already in office Pressure should be still; 'Pressure moving means a change' is that as soon as Pressure moves there is a change; 'Output moving means someone to take his place' is Output moving meaning that someone will succeed him. The group after it is a general rule for seeking business: only one line of the six moving is most auspicious (the aim is concentrated), Peer moving is not solid, a Subject line with force can succeed quickly ('the Yi says a moving line is urgent as fire' quotes the Yi) but fears Void; the document line and the Noble appearing are second best; if originally absent, not in the hexagram, or Void, the matter is hard; if Pressure and Resource are both strong, they must also hold the Self to succeed; the Other not controlling the Self, the matter is clear. The last sentence, 'in the palaces of Qian, Dui and Kan ...', says that in these palaces the scheming is not single-minded, and with Pressure moving the man one wants to see is mostly out and angry when seen; the book does not expand on it."
+      },
+      "see": ["LY.CAREER.HZL.01", "LY.CAREER.HZL.03", "LY.CAREER.EL.99", "LY.CAREER.EL.103"]
+    },
+    {
+      "id": "LY.CAREER.HZL.03",
+      "topic": "贵人",
+      "chapter": "占谒贵",
+      "chapter_en": "Divining a call on a great man",
+      "title": "占谒贵（一）：官鬼为主、世我应彼、世应相生得遇和喜；以外卦取——外阳爻可见外阴爻不见、阴鬼阳世再见阳鬼阴世已外出、出现在家忌外卦独发、伏藏应动皆不见",
+      "rule": {
+        "yi": "占谒见贵人，以官鬼为主，世是我、应是他：世应相生，就能遇到和气喜悦。凡占谒贵，以外卦来取：外卦阳爻，见得到；外卦阴爻，见不到。阴的鬼遇阳的世，再来相见；阳的鬼遇阴的世，他已经外出。（用爻）出现，是在家；忌外卦独发。伏藏、应动，都见不到。",
+        "en": "In divining about calling on a great man, Pressure is the master; the Self is me and the Other is he: if the Self and the Other generate each other, one meets with harmony and pleasure. In all divinations about calling on a great man, take it from the outer trigram: a yang line in the outer trigram means he can be seen, a yin line in the outer trigram means he cannot. With a yin Pressure line and a yang Self, one will see him later; with a yang Pressure line and a yin Self, he has already gone out. If it appears, he is at home; the outer trigram moving alone is feared. If it is hidden, or the Other moves, he is not seen in either case."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [276, 282],
+          "zh": ["官鬼为主，世我应彼；", "世应相生，得遇和喜。", "凡占谒贵，以外卦取，外阳爻可见，外阴爻不见。", "阴鬼阳世再见，阳鬼阴世已外出。", "出现在家，忌外卦独发。", "伏藏应动，皆不见。"],
+          "yi": ["占谒见贵人，以官鬼为主，世是我、应是他；", "世应相生，就能遇到和气喜悦。", "凡是占谒贵，以外卦来取：外卦阳爻，见得到；外卦阴爻，见不到。", "阴的鬼遇阳的世，再来相见；阳的鬼遇阴的世，他已经外出。", "（用爻）出现，是在家；忌外卦独发。", "伏藏、应动，都见不到。"],
+          "en": ["In divining about calling on a great man, Pressure is the master; the Self is me and the Other is he;", "if the Self and the Other generate each other, one meets with harmony and pleasure.", "In all divinations about calling on a great man, take it from the outer trigram: a yang line in the outer trigram means he can be seen, a yin line in the outer trigram means he cannot.", "With a yin Pressure line and a yang Self, one will see him later; with a yang Pressure line and a yin Self, he has already gone out.", "If it appears, he is at home; the outer trigram moving alone is feared.", "If it is hidden, or the Other moves, he is not seen in either case."] }
+      ],
+      "note": {
+        "yi": "「谒贵」是去拜见有地位的人。「以外卦取」是用外卦（对方、外面）来看对方的情形，外卦阳爻是显出、阴爻是隐没。「阴鬼阳世再见，阳鬼阴世已外出」按文意是鬼属阴、世属阳时，他此刻不在、要再来；鬼属阳、世属阴时，他已经出门了。「出现在家」是用爻出现在卦里表示对方在家；「伏藏应动，皆不见」是用爻伏藏、或应爻发动，都见不到。这一节是火珠林里最简的谒贵断法，与易林补遗趋谒贵人（EL.99–102）、易隐谒贵占的见否（YY.74–YY.75）对着看。",
+        "en": "'Yegui' is going to call on a person of standing. 'Taking it from the outer trigram' is using the outer trigram (the other side, the outside) to see the other side's situation: a yang line in the outer trigram shows, a yin line hides. 'With a yin Pressure line and a yang Self, one will see him later; with a yang Pressure line and a yin Self, he has already gone out', by the sense: when Pressure is yin and the Self yang, he is not in just now and one must come again; when Pressure is yang and the Self yin, he has already gone out. 'If it appears, he is at home' is the Subject line appearing in the hexagram meaning that the other side is at home; 'if hidden, or the Other moves, he is not seen' is the Subject line hidden, or the Other line moving, in either case one does not see him. This section is the simplest method of calling on a great man in the Huozhulin; read against the Yilin Buyi on calling on the great (EL.99-102) and the Yi Yin on calling on the great, whether one is seen (YY.74-75)."
+      },
+      "see": ["LY.CAREER.HZL.04", "LY.CAREER.EL.99", "LY.CAREER.EL.100", "LY.CAREER.YY.74", "LY.CAREER.YY.75"]
+    },
+    {
+      "id": "LY.CAREER.HZL.04",
+      "topic": "贵人",
+      "chapter": "占谒贵",
+      "chapter_en": "Divining a call on a great man",
+      "title": "占谒贵（二）：看财爻旺相出现忌动、用官则看官爻忌世应坐鬼，又须问见何人以用爻为主；谒见用支出现旺相不动在家、空冲散不在",
+      "rule": {
+        "yi": "（为求财去谒见）看财爻旺相、出现，忌讳它动；（要见的是官员，用官）就看官爻，忌世、应坐鬼；又必须问清要见的是什么人，以那个人的用爻为主。谒见的时候，用爻的地支出现、旺相、不动，他在家；如果空、冲、散，他不在。",
+        "en": "(For one who calls to seek money) look at the Wealth line thriving and showing, and fear it moving; (if the one to be seen is an official, so that Pressure is used) look at the Pressure line, and fear the Self or the Other sitting on Pressure; and one must also ask whom one is to see, and the Subject line of that man is the master. In calling on him, if the branch of the Subject line appears, is thriving and does not move, he is at home; if it is Void, clashed or scattered, he is not in."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [276, 282],
+          "zh": ["看财爻旺相出现，忌动用官，看官爻，忌世应坐鬼，又须问见何人，看用爻为主。", "谒见，用支出现旺相不动，在家；", "若空、冲、散，不在。"],
+          "yi": ["（为求财去谒见）看财爻旺相、出现，忌讳它动；（要见的是官员）就看官爻，忌世、应坐鬼；又必须问清要见的是什么人，以那个人的用爻为主。", "谒见的时候，用爻的地支出现、旺相、不动，他在家；", "如果空、冲、散，他不在。"],
+          "en": ["(For one who calls to seek money) look at the Wealth line thriving and showing, and fear it moving; (if the one to be seen is an official) look at the Pressure line, and fear the Self or the Other sitting on Pressure; and one must also ask whom one is to see, and the Subject line of that man is the master.", "In calling on him, if the branch of the Subject line appears, is thriving and does not move, he is at home;", "if it is Void, clashed or scattered, he is not in."] }
+      ],
+      "note": {
+        "yi": "「看财爻旺相出现，忌动用官」这一句书里没有写明主语，按文意：去谒见是为求财（或有求于对方）时，看财爻旺相、出现、不动；若所求的是官员（用官），就改看官爻，忌世、应坐在鬼上（世或应带官鬼，表示被官鬼压着）。「又须问见何人，看用爻为主」是还要问清要见的是谁（父亲、兄弟、官员……），取那个人对应的爻为用爻。「用支出现旺相不动，在家」是用爻的地支在卦里出现、旺相、不动，对方在家；「空、冲、散，不在」是用爻空、被冲、散，对方不在。这一句的括号里的解释是按文意补的，书里原文没有写「为求财」。",
+        "en": "The sentence 'look at the Wealth line thriving and showing, and fear it moving; ... Pressure' has no subject written out in the book, and by the sense: when one calls to seek money (or to ask something of the other), look at the Wealth line thriving, showing and not moving; if what is sought is an official (so that Pressure is used), look instead at the Pressure line, and fear the Self or the Other sitting on Pressure (the Self or Other carrying Pressure, showing one is pressed by Pressure). 'One must also ask whom one is to see, and the Subject line is the master' is that one must also be clear whom one is to see (father, brother, official ...), and take the line corresponding to that man as the Subject line. 'The branch of the Subject appears, thriving and not moving: at home' is the Subject line's branch appearing in the hexagram, thriving and not moving, so the other side is at home; 'Void, clashed, scattered: not in' is the Subject line Void, clashed or scattered, so the other side is not in. The explanation in brackets is supplied by the sense, and the original does not write 'to seek money'."
+      },
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.HZL.05"]
+    },
+    {
+      "id": "LY.CAREER.HZL.05",
+      "topic": "贵人",
+      "chapter": "占谒贵",
+      "chapter_en": "Divining a call on a great man",
+      "title": "占谒贵（三）：世应相生合则吉相克必凶；世克应或克用爻皆致怨之象当俯仰小心；应克世或用爻克世皆愿见亦忧刑、应用相克不及相生；卦有身相见更看用爻、用爻生身尤好；卦无身又无用爻或用爻空亡终不见",
+      "rule": {
+        "yi": "世应相生、相合就吉，相克必然凶。世克应，或克用爻，都是招致怨恨之象，应当处处小心。应克世，或用爻克世，（他）都愿意见，但也担忧（受）刑责。应和用爻相克，不如相生。卦有身，见面时更要看用爻，用爻生身尤其好；卦无身，又无用爻，或者用爻空亡，终究见不到。",
+        "en": "If the Self and the Other generate or combine with each other it is auspicious, and if they control each other it is surely ominous. The Self controlling the Other, or controlling the Subject line, are all signs of drawing resentment, and one should be careful in every move. The Other controlling the Self, or the Subject line controlling the Self, he is willing to see one, but there is also the worry of punishment. The Other and the Subject line controlling each other is not as good as generating each other. If the hexagram has a Body, in the meeting one looks further at the Subject line, and the Subject line generating the Body is especially good; if the hexagram has no Body and no Subject line, or the Subject line is Void, one is never seen."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [276, 282],
+          "zh": ["世应相生合则吉，相克必凶。", "世克应，或克用爻、皆致怨之象。", "当俯仰小心。", "应克世、或用爻克世，皆愿见，亦忧刑。", "应用相克不及相生也。", "卦有身，相见更看用爻，用爻生身尤好；", "卦无身又无用爻，或用爻空亡，终不见。"],
+          "yi": ["世应相生、相合就吉，相克必然凶。", "世克应，或者克用爻，都是招致怨恨之象。", "应当处处小心。", "应克世，或者用爻克世，他都愿意见，但也担忧受刑责。", "应和用爻相克，不如相生。", "卦有身，见面时更要看用爻，用爻生身尤其好；", "卦无身，又无用爻，或者用爻空亡，终究见不到。"],
+          "en": ["If the Self and the Other generate or combine with each other it is auspicious, and if they control each other it is surely ominous.", "The Self controlling the Other, or controlling the Subject line, are all signs of drawing resentment.", "One should be careful in every move.", "The Other controlling the Self, or the Subject line controlling the Self, he is willing to see one, but there is also the worry of punishment.", "The Other and the Subject line controlling each other is not as good as generating each other.", "If the hexagram has a Body, in the meeting one looks further at the Subject line, and the Subject line generating the Body is especially good;", "if the hexagram has no Body and no Subject line, or the Subject line is Void, one is never seen."] }
+      ],
+      "note": {
+        "yi": "「致怨」是招来怨恨，「俯仰小心」是一举一动都小心。「应克世」「用爻克世」是对方克我：对方愿意见，但因为克我，仍担心受到责罚（「忧刑」）。「应用相克不及相生」是对方的应爻和他的用爻之间，相生比相克好。「卦有身」是卦里有卦身（见术语表），相见时还要看用爻，用爻生卦身尤其好；「卦无身又无用爻」是卦身和用爻都没有，或用爻空亡，就终究见不到。这一节与易林补遗趋谒贵人的世应内外（EL.100）、世空应空（EL.101）对着看。",
+        "en": "'Zhiyuan' is drawing resentment, and 'fuyang xiaoxin' is being careful in every movement. 'The Other controlling the Self' and 'the Subject line controlling the Self' are the other side controlling me: the other side is willing to see me, but because he controls me there is still the worry of reproof ('worry of punishment'). 'The Other and the Subject line controlling each other is not as good as generating each other' is that between the Other line and his Subject line, generation is better than control. 'The hexagram has a Body' is the hexagram having a hexagram Body (see the glossary), in the meeting one looks further at the Subject line, and the Subject line generating the hexagram Body is especially good; 'the hexagram has no Body and no Subject line' is neither the Body nor the Subject line being present, or the Subject line being Void, and one is never seen. Read this section against the Self and the Other, inner and outer, in the Yilin Buyi on calling on the great (EL.100) and against the Self Void and the Other Void (EL.101)."
+      },
+      "see": ["LY.CAREER.HZL.04", "LY.CAREER.EL.100", "LY.CAREER.EL.101"]
+    },
+    {
+      "id": "LY.CAREER.HZL.06",
+      "topic": "国朝",
+      "chapter": "占朝国",
+      "chapter_en": "Divining the court and the state",
+      "title": "占朝国（一）：世应相得则君臣用心、六位无克则万国咸宁；世为帝王、应为功臣、本宫为都；内外比和旺相则天生圣主；金兵戈忌动、土城垒宜安、水泛滥、火炎晴、木风恶、吉神为瑞；震离坎兑四方、艮坤中土",
+      "rule": {
+        "yi": "占朝廷、国家，世应相得，君臣就同心用力；六位没有相克，万国都安宁。世是帝王，应是功臣，本宫是都城。内外卦比和、旺相，是天生圣明的君主，刚柔动静有常规，大地出奇才；最宜吉神，切忌大煞。金是兵戈，忌动；土是城垒，宜安；水是泛滥，火是炎热晴天，木爻是恶风；吉神是祥瑞。震、离、坎、兑是四方，艮、坤两卦是中土。",
+        "en": "In divining about the court and the state, if the Self and the Other are in accord, ruler and ministers are of one mind; if none of the six places controls another, all the states are at peace. The Self is the sovereign, the Other is the meritorious minister, and the home palace is the capital. If the inner and outer trigrams are in accord and strong, Heaven has produced a sage ruler, firmness and softness, movement and stillness keep their constancy, and the earth brings forth rare talents; auspicious spirits are most suitable, and great baleful stars are strictly to be avoided. Metal is arms and the spear, and it must not move; Earth is the city wall and rampart, and it should be at peace; Water is flooding, Fire is blazing heat, the Wood line is wicked wind; auspicious spirits are good omens. Zhen, Li, Kan and Dui are the four quarters, and the two trigrams Gen and Kun are the central earth."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [547, 554],
+          "zh": ["世应相得，君臣用心；", "六位无克，万国咸宁。", "世为帝王，应为功臣，本宫为都。", "内外比和、旺相，天生圣主，刚柔动静有常，地出奇材，最宜吉神，切忌大杀。", "金为兵戈忌动，土为城垒宜安，水为泛滥，火为炎晴，木爻风恶，吉神为瑞。", "震离坎兑为四方，艮坤二卦为中土。"],
+          "yi": ["占朝廷、国家，世应相得，君臣就同心用力；", "六位没有相克，万国都安宁。", "世是帝王，应是功臣，本宫是都城。", "内外卦比和、旺相，是天生圣明的君主，刚柔动静有常规，大地出奇才；最宜吉神，切忌大煞。", "金是兵戈，忌动；土是城垒，宜安；水是泛滥，火是炎热晴天，木爻是恶风；吉神是祥瑞。", "震、离、坎、兑是四方，艮、坤两卦是中土。"],
+          "en": ["In divining about the court and the state, if the Self and the Other are in accord, ruler and ministers are of one mind;", "if none of the six places controls another, all the states are at peace.", "The Self is the sovereign, the Other is the meritorious minister, and the home palace is the capital.", "If the inner and outer trigrams are in accord and strong, Heaven has produced a sage ruler, firmness and softness, movement and stillness keep their constancy, and the earth brings forth rare talents; auspicious spirits are most suitable, and great baleful stars are strictly to be avoided.", "Metal is arms and the spear, and it must not move; Earth is the city wall and rampart, and it should be at peace; Water is flooding, Fire is blazing heat, the Wood line is wicked wind; auspicious spirits are good omens.", "Zhen, Li, Kan and Dui are the four quarters, and the two trigrams Gen and Kun are the central earth."] }
+      ],
+      "note": {
+        "yi": "「朝国」是朝廷和国家。「世为帝王，应为功臣，本宫为都」是把卦里的位置配成国家的位置：世是君、应是臣、本宫是京都。「六位无克」是六爻之间没有互相克。「内外比和旺相」是内外卦五行和睦、都旺相。「吉神」「大杀」是神煞。「金为兵戈……木爻风恶」是各行主的国家大事：金主兵、土主城、水主水灾、火主旱热、木主风。「震离坎兑为四方」是震东、离南、坎北、兑西，「艮坤二卦为中土」是艮（东北）、坤（西南）居中。这一节与本书国事（YM.01 起）、易林补遗朝廷国事（EL.01 起）、易隐朝廷占（YY.31–YY.37）取同一类：世应、五爻、各爻位对应君臣百姓，金木水火土对应兵、工、水、旱。",
+        "en": "'Chaoguo' is the court and the state. 'The Self is the sovereign, the Other is the meritorious minister, the home palace is the capital' matches the positions in the hexagram to the positions of a state: the Self is the ruler, the Other the minister, and the home palace the capital. 'None of the six places controls another' is no line among the six controlling another. 'Inner and outer in accord and strong' is the phases of the inner and outer trigrams being at peace and both strong. 'Auspicious spirits' and 'great baleful stars' are spirit-stars. 'Metal is arms ... the Wood line is wicked wind' lists the great affairs of state each phase governs: Metal governs the military, Earth city walls, Water floods, Fire heat and drought, Wood wind. 'Zhen, Li, Kan and Dui are the four quarters' is Zhen east, Li south, Kan north, Dui west, and 'Gen and Kun are the central earth' is Gen (north-east) and Kun (south-west) taken as the middle. This section is of a kind with the affairs of state in this book (from YM.01), the Yilin Buyi on the affairs of the court (from EL.01) and the Yi Yin on the court: the Self and the Other, the fifth line and each line position correspond to ruler, ministers and people, and the five phases correspond to the military, public works, floods and drought."
+      },
+      "see": ["LY.CAREER.HZL.07", "LY.CAREER.YM.01", "LY.CAREER.EL.01", "LY.CAREER.YY.31", "LY.CAREER.YY.32"]
+    },
+    {
+      "id": "LY.CAREER.HZL.07",
+      "topic": "国朝",
+      "chapter": "占朝国",
+      "chapter_en": "Divining the court and the state",
+      "title": "占朝国（二）：五爻为至尊——加吉神太岁仁慈之主、带杀白虎暴虐之君、与吉神生合必亲贤任能远佞去奸；初爻安静吉神持世生世万民悦服；二爻为侍臣、四爻会吉神克世生世必上忠君下安黎庶",
+      "rule": {
+        "yi": "五爻是至尊，加上吉神、太岁，是仁慈的君主；带煞、白虎，是暴虐的君主；（五爻）与吉神生合，必定亲近贤人、任用能人，远离佞臣、去除奸邪。初爻安静，吉神持世或生世，万民心悦诚服。本象的二爻是侍臣，带吉神，左右必定得到贤人；加凶煞的，多是奸邪谄佞。四爻会合吉神，克世或生世，必定向上忠于君主，向下安定百姓。",
+        "en": "The fifth line is the supreme one; with an auspicious spirit and the Tai Sui added, he is a benevolent ruler; carrying a baleful star and the White Tiger, he is a tyrannical ruler; if it generates and combines with an auspicious spirit, he will surely draw near the worthy and employ the able, keep far from flatterers and dismiss the treacherous. If the first line is still and an auspicious spirit holds or generates the Self, the people are all pleased and submit. In the image, the second line is the attending minister; with an auspicious spirit, he will surely have worthy men about him; with a baleful star added, they are mostly treacherous and flattering. If the fourth line meets an auspicious spirit and controls or generates the Self, he will be loyal to the sovereign above and bring peace to the common people below."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [547, 554],
+          "zh": ["五爻为至尊，加吉神太岁，仁慈之主也。", "带杀白虎，暴虐之君也。", "与吉神生合，必亲贤任能，远佞去奸。", "初爻安静，吉神持世或生世，万民悦服。", "本象二爻为侍臣，带吉神左右必得贤人，加凶杀者，多奸邪便佞。", "四爻会吉神克世生世，必上忠君，下安黎庶。"],
+          "yi": ["五爻是至尊，加上吉神、太岁，是仁慈的君主。", "带煞、白虎，是暴虐的君主。", "（五爻）与吉神生合，必定亲近贤人、任用能人，远离佞臣、去除奸邪。", "初爻安静，吉神持世或生世，万民心悦诚服。", "本象的二爻是侍臣，带吉神，左右必定得到贤人；加凶煞的，多是奸邪谄佞。", "四爻会合吉神，克世或生世，必定向上忠于君主，向下安定百姓。"],
+          "en": ["The fifth line is the supreme one; with an auspicious spirit and the Tai Sui added, he is a benevolent ruler.", "Carrying a baleful star and the White Tiger, he is a tyrannical ruler.", "If it generates and combines with an auspicious spirit, he will surely draw near the worthy and employ the able, keep far from flatterers and dismiss the treacherous.", "If the first line is still and an auspicious spirit holds or generates the Self, the people are all pleased and submit.", "In the image, the second line is the attending minister; with an auspicious spirit, he will surely have worthy men about him; with a baleful star added, they are mostly treacherous and flattering.", "If the fourth line meets an auspicious spirit and controls or generates the Self, he will be loyal to the sovereign above and bring peace to the common people below."] }
+      ],
+      "note": {
+        "yi": "「至尊」是君主。五爻在卦里是君位，「加吉神太岁」是五爻带吉神、又带当年太岁，为仁慈之君；「带杀白虎」是带凶煞和白虎，为暴虐之君。「亲贤任能，远佞去奸」是亲近贤人、任用能人，疏远奸佞。「万民悦服」是百姓心悦诚服。「侍臣」是君主身边的臣子，本书（YM.01、YM.50）里也以二爻为大臣、近臣。「吉神」「凶杀」是神煞。四爻是近君之位，会吉神又克世或生世，上忠下安。这一节是把爻位配成君臣百姓的细则，可与易冒功名章按六爻辨官位的高卑（YM.50）对着看：五爻是君、二爻是大臣、四爻近君之臣。",
+        "en": "'Zhizun' is the sovereign. The fifth line is the sovereign's place in a hexagram; 'with an auspicious spirit and the Tai Sui added' is the fifth line carrying an auspicious spirit and also the Tai Sui of the year, a benevolent ruler; 'carrying a baleful star and the White Tiger' is carrying a baleful star and the White Tiger, a tyrannical ruler. 'Qin xian ren neng, yuan ning qu jian' is drawing near the worthy and employing the able, keeping away from the flatterers and the treacherous. 'Wan min yue fu' is the people submitting gladly. 'Shichen' is the ministers beside the sovereign, and in this book (YM.01, YM.50) the second line is likewise the great minister or near minister. 'Auspicious spirits' and 'baleful stars' are spirit-stars. The fourth line is the place near the sovereign, and meeting an auspicious spirit while controlling or generating the Self is loyalty above and peace below. This section is the detailed rule that matches the line positions to ruler, ministers and people, and can be read against the way the chapter on fame and office in the Yimao tells the height of a post by the six lines (YM.50): the fifth line is the sovereign, the second a great minister, and the fourth a minister near the sovereign."
+      },
+      "see": ["LY.CAREER.HZL.06", "LY.CAREER.HZL.08", "LY.CAREER.YM.50"]
+    },
+    {
+      "id": "LY.CAREER.HZL.08",
+      "topic": "国朝",
+      "chapter": "占朝国",
+      "chapter_en": "Divining the court and the state",
+      "title": "占朝国（三）：子孙为储君郡主、宜旺相不空，大杀动刑冲克则有废立之患；子孙在初爻动克三爻或世者士庶上书直言、二爻动才德舌辨之臣入上封事、三爻动贤能诸侯诣门直谏、四爻动近臣尽忠死诤",
+      "rule": {
+        "yi": "子孙是储君、郡主，宜旺相不空；如果大煞发动、刑冲克它，恐怕有废立的祸患。子孙在初爻动，克三爻或克世的，有士人百姓上书直言利害；在二爻动，必有有才有德、口才好的臣子进呈密封奏事；在三爻动，有贤能的诸侯到门前直言劝谏；在四爻动（「艾」疑是「爻」之误），身边近臣必定尽忠、冒死直谏。",
+        "en": "Output is the crown prince and the princesses; it should be strong and not Void; if a great baleful star moves to punish, clash or control it, I fear there is the trouble of deposition and installation. If Output on the first line moves to control the third line or the Self, scholars and commoners submit memorials speaking directly on benefit and harm; moving on the second line, there will be ministers of talent and virtue and a ready tongue who present sealed memorials; moving on the third line, a worthy and able lord comes to the gate to remonstrate frankly; moving on the fourth line (the 'ai' is presumably a slip for 'yao', line), the courtiers at his side will surely be wholly loyal and remonstrate at the risk of death."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [547, 554],
+          "zh": ["子孙为储君郡主，宜旺相不空，若大杀动刑冲克，恐有废立之患。", "子孙在初爻动克三爻或世者，士庶民有上书直言利害；", "在二爻动，必有才德舌辨之臣入上封事；", "在三爻动，有贤能诸侯谓门直谏；", "在四艾动，左右近臣必尽忠死诤也。"],
+          "yi": ["子孙是储君、郡主，宜旺相不空；如果大煞发动、刑冲克它，恐怕有废立的祸患。", "子孙在初爻动，克三爻或克世的，有士人百姓上书直言利害；", "在二爻动，必有有才有德、口才好的臣子进呈密封奏事；", "在三爻动，有贤能的诸侯到门前直言劝谏；", "在四爻动，身边近臣必定尽忠、冒死直谏。"],
+          "en": ["Output is the crown prince and the princesses; it should be strong and not Void; if a great baleful star moves to punish, clash or control it, I fear there is the trouble of deposition and installation.", "If Output on the first line moves to control the third line or the Self, scholars and commoners submit memorials speaking directly on benefit and harm;", "moving on the second line, there will be ministers of talent and virtue and a ready tongue who present sealed memorials;", "moving on the third line, a worthy and able lord comes to the gate to remonstrate frankly;", "moving on the fourth line, the courtiers at his side will surely be wholly loyal and remonstrate at the risk of death."] }
+      ],
+      "note": {
+        "yi": "「储君」是太子，「郡主」是亲王之女。子孙在这里是君主的后嗣一类，所以宜旺相、不空，怕大煞发动来刑冲克它，有『废立』（废太子、另立）之患。「士庶民」是读书人和百姓，「上书直言利害」是上书说出国事的利弊，「上封事」是进呈密封的奏章，「诸侯」是分封各地的诸侯，「直谏」是直言劝谏，「尽忠死诤」是尽忠并不惜死地劝谏。原文「贤能诸侯谓门直谏」的「谓门」疑是「诣门」（到门前）之误，「在四艾动」的「艾」是「爻」之误，这里按文意译。这一节讲的是子孙在各个爻位发动，各会引出哪一类人向君主进言。",
+        "en": "'Chujun' is the crown prince, and 'junzhu' is a prince's daughter. Output here is the sovereign's heir and the like, so it should be strong and not Void, and a great baleful star moving to punish, clash or control it brings the trouble of 'deposition and installation' (deposing the crown prince and setting up another). 'Shi shu min' are scholars and commoners; 'shangshu zhiyan lihai' is submitting a memorial that states plainly the benefits and harms of state affairs; 'shang fengshi' is presenting a sealed memorial; 'zhuhou' are the lords enfeoffed in the regions; 'zhijian' is frank remonstrance; and 'jin zhong si zheng' is being wholly loyal and remonstrating at the risk of death. The 'wei men' of 'xian neng zhuhou wei men zhijian' is presumably a slip for 'yi men' (go to the gate), and the 'ai' of 'zai si ai dong' is a slip for 'yao' (line); both are translated by the sense. This section says which kind of person will speak to the sovereign when Output moves on each line position."
+      },
+      "see": ["LY.CAREER.HZL.07", "LY.CAREER.HZL.06", "LY.CAREER.YM.57"]
+    },
+    {
+      "id": "LY.CAREER.HZL.09",
+      "topic": "军旅",
+      "chapter": "占征战",
+      "chapter_en": "Divining war",
+      "title": "占征战（一）：出兵交战鬼贼财粮、鬼旺彼胜子旺我强；以鬼为彼贼、以子为我军，子孙旺相必获全胜、出现宜先伏藏宜后；鬼父旺相或独发或持世身大败；六爻安静世旺克应必胜",
+      "rule": {
+        "yi": "出兵交战，鬼是敌人（贼），财是粮草；鬼旺，敌人胜；子旺，我方强。以鬼为对方的贼寇，以子为我军；子孙旺相，必定获得全胜；（子孙）出现，宜先出战，伏藏，宜后出战；卦内凡是鬼、父旺相，或者独发，或者持世、持身，是大败之兆。如果六爻安静，世旺、克应，必胜。",
+        "en": "In sending out troops to give battle, Pressure is the enemy and Wealth is the provisions; when Pressure is thriving the enemy wins, and when Output is thriving I am strong. Take Pressure as the bandits on the other side and Output as my army; with Output thriving, one is sure to win entirely; if it appears it is right to go first, and if it is hidden it is right to go after; within the hexagram, if Pressure and Resource are thriving, or move alone, or hold the Self or the Body, it is a sign of great defeat. If the six lines are still, and the Self is thriving and controls the Other, one will surely win."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [558, 563],
+          "zh": ["出兵交战，鬼贼财粮；", "鬼旺彼胜，子旺我强。", "以鬼为彼贼，以子为我军，子孙旺相，必获全胜，出现宜先，伏藏宜后，内凡鬼父旺相或是独发，或持世身，大败之兆。", "若六爻安静世旺克应，必胜。"],
+          "yi": ["出兵交战，鬼是敌人，财是粮草；", "鬼旺，敌人胜；子旺，我方强。", "以鬼为对方的贼寇，以子为我军；子孙旺相，必定获得全胜；（子孙）出现，宜先出战，伏藏，宜后出战；卦内凡是鬼、父旺相，或者独发，或者持世、持身，是大败之兆。", "如果六爻安静，世旺、克应，必胜。"],
+          "en": ["In sending out troops to give battle, Pressure is the enemy and Wealth is the provisions;", "when Pressure is thriving the enemy wins, and when Output is thriving I am strong.", "Take Pressure as the bandits on the other side and Output as my army; with Output thriving, one is sure to win entirely; if it appears it is right to go first, and if it is hidden it is right to go after; within the hexagram, if Pressure and Resource are thriving, or move alone, or hold the Self or the Body, it is a sign of great defeat.", "If the six lines are still, and the Self is thriving and controls the Other, one will surely win."] }
+      ],
+      "note": {
+        "yi": "「鬼贼财粮」是鬼为贼（敌人），财为粮。「彼」是对方，「我」是自己这一边。「出现宜先，伏藏宜后」是子孙在卦里出现的宜先出战，伏藏的宜后出战。「内凡鬼父旺相或是独发，或持世身，大败之兆」是官鬼、父母旺相，或官鬼独发，或持世、持身，都是大败之兆。这一节是征战占的总纲：胜负看官鬼和子孙的旺衰，以及世应的强弱。与易隐征战占的彼己（YY.54–56）、易林补遗出师征伐（EL.12 起）、本书军机（YM.11 起）对着看：都是『世我应彼、子兵鬼寇』这一套。",
+        "en": "'Gui zei cai liang' is Pressure as the bandits (the enemy) and Wealth as the grain. 'Bi' is the other side, and 'wo' is oneself, my side. 'If it appears it is right to go first, if hidden after' is that Output appearing in the hexagram means going first to battle, and hidden means going after. 'Nei fan gui fu wangxiang huo shi du fa, huo chi shi shen, da bai zhi zhao' is Pressure and Resource thriving, or Pressure moving alone, or holding the Self or the Body, in each case a sign of great defeat. This section is the general rule for divining war: victory and defeat are seen by the strength and weakness of Pressure and Output, and by the strength of the Self and the Other. Read against the 'we and they' of the Yi Yin on war (YY.54-56), the Yilin Buyi on sending out troops (from EL.12) and the military chapter of this book (from YM.11): all use the same set of 'the Self is me, the Other is they; Output is the troops, Pressure the bandits'."
+      },
+      "see": ["LY.CAREER.HZL.10", "LY.CAREER.YM.11", "LY.CAREER.YY.54", "LY.CAREER.EL.12"]
+    },
+    {
+      "id": "LY.CAREER.HZL.10",
+      "topic": "军旅",
+      "chapter": "占征战",
+      "chapter_en": "Divining war",
+      "title": "占征战（二）：父母为城池壕寨雄旗、子孙为兵将军马、兄弟为辕门惊恐伏兵、官鬼为敌兵刀剑；世应空亡主和、世空我军弱、应空征兵退、世爻被鬼冲克我军不利、兄弟独发凶；鬼去爻中而兄弟化出官鬼合世爻身主有奸人在军中、世下伏鬼亦然",
+      "rule": {
+        "yi": "父母是城池、壕沟营寨、大旗；子孙是兵、将、军、马；兄弟是辕门、惊恐、伏兵；官鬼是敌兵和刀剑。世应空亡，主议和；世空，我军弱；应空，来攻的兵退；世爻被官鬼冲克，我军不利；兄弟独自发动，是凶。鬼不在爻中，兄弟化出官鬼来合世爻或身，主有奸细在军中；世下伏着鬼，也是这样。",
+        "en": "Resource is the city, the moat and stockade, and the great banner; Output is the soldiers, generals, army and horses; Peer is the camp gate, alarms and ambush troops; Pressure is the enemy soldiers and their swords. If the Self and the Other are both Void, it means peace; the Self Void, my army is weak; the Other Void, the troops marching against me withdraw; the Self line clashed or controlled by Pressure, my army is at a disadvantage; Peer moving alone is ominous. If Pressure is absent from the lines, and Peer changes into Pressure that combines with the Self line or the Body, it means a traitor in the army; with Pressure hidden under the Self it is the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [558, 563],
+          "zh": ["父母、城池、壕寨、雄旗；", "子孙为兵将军马；", "兄弟为辕门惊恐伏兵；", "官鬼为敌兵刀剑。", "世应空亡，主和；", "世空我军弱；", "应空征兵退；", "世爻被鬼冲克，我军不利；", "兄弟独发凶。", "鬼去爻中，兄弟化出官鬼来合世爻身，主有奸人在军中，世下伏鬼亦然。"],
+          "yi": ["父母是城池、壕沟营寨、大旗；", "子孙是兵、将、军、马；", "兄弟是辕门、惊恐、伏兵；", "官鬼是敌兵和刀剑。", "世应空亡，主议和；", "世空，我军弱；", "应空，来攻的兵退；", "世爻被官鬼冲克，我军不利；", "兄弟独自发动，是凶。", "鬼不在爻中，兄弟化出官鬼来合世爻或身，主有奸细在军中；世下伏着鬼，也是这样。"],
+          "en": ["Resource is the city, the moat and stockade, and the great banner;", "Output is the soldiers, generals, army and horses;", "Peer is the camp gate, alarms and ambush troops;", "Pressure is the enemy soldiers and their swords.", "If the Self and the Other are both Void, it means peace;", "the Self Void, my army is weak;", "the Other Void, the troops marching against me withdraw;", "the Self line clashed or controlled by Pressure, my army is at a disadvantage;", "Peer moving alone is ominous.", "If Pressure is absent from the lines, and Peer changes into Pressure that combines with the Self line or the Body, it means a traitor in the army; with Pressure hidden under the Self it is the same."] }
+      ],
+      "note": {
+        "yi": "「壕寨」是壕沟和营寨，「雄旗」是大旗，「辕门」是军营的大门（军门），「惊恐」是惊慌恐惧，「伏兵」是设伏的兵。六亲配军中的人与物：父母是城池营寨旗号，子孙是兵将，兄弟是军门、惊慌和伏兵，官鬼是敌兵刀剑。「世应空亡，主和」是世应都空，战事议和；「世空我军弱，应空征兵退」是世空我弱，应空则来攻的兵退。「鬼去爻中」按文意是官鬼不在卦里（「去」是不在）；「合世爻身」是合世爻或身；兄弟变出官鬼来合我，等于有奸细（内奸）混在军中。「世下伏鬼亦然」是官鬼伏在世爻下面，也是同样。这一节与易隐征战占的六亲（YY.57–59）、本书军机的六亲分工（YM.26）对着看，三书取象大体相近。",
+        "en": "'Haozhai' is the moat and the stockade, 'xiongqi' is the great banner, 'yuanmen' is the great gate of a camp (the army gate), 'jingkong' is alarm and fright, and 'fubing' is troops set in ambush. The six relations are matched to the people and things of an army: Resource is the city, stockade and banners, Output is the soldiers and generals, Peer is the army gate, alarms and ambush troops, and Pressure is the enemy soldiers and their swords. 'The Self and the Other Void, it means peace' is both the Self and the Other Void, and the war moves to peace talks; 'the Self Void, my army is weak; the Other Void, the troops marching against me withdraw' is the Self Void and my side weak, and the Other Void and the troops that come to attack withdraw. 'Gui qu yao zhong' is by the sense Pressure absent from the hexagram ('qu' is not there); 'combines with the Self line or the Body'; Peer changing into Pressure that combines with me is the same as a traitor (an inside agent) mixed into the army. 'With Pressure hidden under the Self it is the same' is Pressure hidden under the Self line, likewise. Read this section against the six relations in the Yi Yin on war (YY.57-59) and the division of the six relations in the military chapter of this book (YM.26); the three books take much the same images."
+      },
+      "see": ["LY.CAREER.HZL.09", "LY.CAREER.HZL.11", "LY.CAREER.YY.57", "LY.CAREER.YM.26"]
+    },
+    {
+      "id": "LY.CAREER.HZL.11",
+      "topic": "军旅",
+      "chapter": "占征战",
+      "chapter_en": "Divining war",
+      "title": "占征战（三）：变爻冲克子孙损名将、冲克财爻或财持世落空粮受困、刑克父母战船城寨有失指挥号令不宜、冲克官爻彼贼必败；动火刑克父母火烧宫室、火冲克财火焚粮草；财有仓库近子近我军近父近壕堑近鬼近贼所；父母塞位方",
+      "rule": {
+        "yi": "凡是变爻冲克子孙，主损伤名将。冲克财爻，以及财持世又落空，主粮食受困。刑克父母，主战船、城寨有损失，指挥号令大为不宜。冲克官爻，对方的贼寇必败。凡是卦中动火（火爻发动）刑父母、克父母，必然火烧宫室；火冲克财，主火烧粮草。又，财有仓库（财的所在）：靠近子的，就近我军；靠近父的，就近壕堑；靠近鬼的，就近敌人所在。又，父母堵塞的方位，比如在坤宫就是西南方。",
+        "en": "Whenever a changed line clashes with or controls Output, it means a famous general is lost. Clashing with or controlling the Wealth line, or Wealth holding the Self and falling Void, means the provisions are in trouble. Punishing or controlling Resource means loss of warships, city and stockade, and command and orders are greatly unsuitable. Clashing with or controlling the Pressure line, the enemy bandits are sure to lose. Whenever in the hexagram a moving Fire line punishes or controls Resource, there will surely be fire burning the halls; Fire clashing with or controlling Wealth means fire burns the provisions. Also, Wealth has storehouses: near Output, they are near my army; near Resource, near the trenches; near Pressure, near the enemy's place. Also, the direction in which Resource stands as the barrier, as in the palace of Kun it is the south-west."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [558, 563],
+          "zh": ["凡变爻冲克子孙，主损名将。", "冲克财爻，并财持世落空，主粮受困。", "刑克父母，主战船城寨有失，指挥号令大不宜。", "冲克官爻，彼贼必败。", "凡卦中动火刑父母、克父母，必然火烧宫室，火冲克财，主火焚粮草。", "又，财有仓库，如近子近我军，近父近壕堑，近鬼近贼所。", "又父母塞位方，如坤宫西南方也。"],
+          "yi": ["凡是变爻冲克子孙，主损伤名将。", "冲克财爻，以及财持世又落空，主粮食受困。", "刑克父母，主战船、城寨有损失，指挥号令大为不宜。", "冲克官爻，对方的贼寇必败。", "凡是卦中动火（火爻发动）刑父母、克父母，必然火烧宫室；火冲克财，主火烧粮草。", "又，财有仓库：靠近子的，就近我军；靠近父的，就近壕堑；靠近鬼的，就近敌人所在。", "又，父母堵塞的方位，比如在坤宫就是西南方。"],
+          "en": ["Whenever a changed line clashes with or controls Output, it means a famous general is lost.", "Clashing with or controlling the Wealth line, or Wealth holding the Self and falling Void, means the provisions are in trouble.", "Punishing or controlling Resource means loss of warships, city and stockade, and command and orders are greatly unsuitable.", "Clashing with or controlling the Pressure line, the enemy bandits are sure to lose.", "Whenever in the hexagram a moving Fire line punishes or controls Resource, there will surely be fire burning the halls; Fire clashing with or controlling Wealth means fire burns the provisions.", "Also, Wealth has storehouses: near Output, they are near my army; near Resource, near the trenches; near Pressure, near the enemy's place.", "Also, the direction in which Resource stands as the barrier, as in the palace of Kun it is the south-west."] }
+      ],
+      "note": {
+        "yi": "「变爻冲克子孙」是变出来的爻冲克子孙，损名将；「冲克财爻」「财持世落空」是粮草受困；「刑克父母」是战船城寨有失；「冲克官爻」是敌人必败。「动火刑父母、克父母」是火爻发动去刑克父母，烧宫室；「火冲克财」是烧粮草。「财有仓库」是财爻（粮草）所在的方位也有仓库，按它靠近哪一类爻来定在谁那边：近子在我军、近父在壕堑、近鬼在敌处。「父母塞位方，如坤宫西南方也」按文意是父母（城池）所堵塞的位置，取它所在的宫的方位，如在坤宫就是西南。这一节是征战占里的具体征兆，与易隐征战占的各条（YY.57–YY.70）对着看。",
+        "en": "'A changed line clashes with or controls Output' is the line that is changed out clashing with or controlling Output, losing a famous general; 'clashing with or controlling the Wealth line' and 'Wealth holding the Self and falling Void' are the provisions in trouble; 'punishing or controlling Resource' is loss of warships, city and stockade; 'clashing with or controlling the Pressure line' is the enemy being sure to lose. 'A moving Fire line punishes or controls Resource' is a Fire line moving to punish or control Resource and burn the halls; 'Fire clashing with or controlling Wealth' is burning the provisions. 'Wealth has storehouses' is that the direction where the Wealth line (the provisions) stands also has storehouses, and which side they are on is fixed by which kind of line it is near: near Output they are at my army, near Resource at the trenches, near Pressure at the enemy's place. 'Fu mu sai wei fang, ru Kun gong xi nan fang ye', by the sense, is the position where Resource (the city) blocks, taking the direction of the palace it stands in, as Kun is south-west. This section gives the concrete omens in divining war; read against each entry in the Yi Yin on war (YY.57-YY.70)."
+      },
+      "see": ["LY.CAREER.HZL.10", "LY.CAREER.YY.57", "LY.CAREER.YY.59"]
+    }
+  ]
+}
