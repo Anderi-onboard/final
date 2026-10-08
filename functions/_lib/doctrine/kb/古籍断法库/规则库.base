@@ -107,6 +107,20 @@ views:
       - rule_en
       - work
   - type: table
+    name: "应期"
+    filters:
+      and:
+        - 'domain == "应期"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
     name: "求财"
     filters:
       and:

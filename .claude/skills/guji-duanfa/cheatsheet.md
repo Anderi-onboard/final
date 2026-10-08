@@ -90,6 +90,24 @@ What is in the library and where; entries where the classics disagree are listed
 | 消散 | When the matter fades away | 2 |
 | 避讼 | Avoiding a suit | 2 |
 
+## 六爻 · 应期(37 条)→ `chapters/六爻/应期/索引.md`
+
+| 主题 | Topic | 条数 |
+| --- | --- | --- |
+| 总则 | Principles: how the day is found | 4 |
+| 静动 | Still and moving lines | 1 |
+| 旺衰 | Strength and weakness | 1 |
+| 墓库 | The tomb and storehouse | 2 |
+| 合冲 | Combination and clash | 4 |
+| 空破 | The Void and the Month-break | 10 |
+| 受克 | When the Subject is controlled | 1 |
+| 进退 | Advancing and Retreating spirits | 1 |
+| 远近 | Near and far: day, month and year | 1 |
+| 再占 | Divining again | 1 |
+| 天时 | Weather and sky | 2 |
+| 病程 | The course of an illness | 5 |
+| 求取 | Gains, visitors and news | 4 |
+
 ## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
 
 | 主题 | Topic | 条数 |
