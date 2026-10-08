@@ -1,0 +1,220 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "增删卜易",
+  "chapter": "行人章",
+  "chapter_en": "The chapter on travellers away",
+  "ranges": {"增删卜易": [12284, 12599]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.ZS.32",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占兄何日回：用神旺相而空，出空之日必至，子孙持世而动生合世爻皆是喜悦之神；觉子：寻常占风以兄爻为风，唯舟行占风以子孙为风，子孙发动之日就是顺风之日",
+      "rule": {
+        "yi": "发动而空、旺而空的，在填实或冲开空亡的月日回来。书中例：酉月癸酉日占兄长哪天回，得师卦变临卦：亥水兄爻旺相而空，出空的日子必到；来问的人说，后天就是卯日，前面有信约好今天起身，可是两千多里，三天怎么能到？作者说：不只是亥日出空，凡是卦中子孙持世、以及发动而生合世爻的，都是喜悦之神；答应亥日到的，是因为寅与亥相合，又是合起子孙的日子，亥日必归无疑；哪知道走水路遇到顺风，日夜兼程，竟然在亥日到了。觉子说：一般占风，兄爻发动为风，木发动生风；只有行船占风，以子孙为风——行船风逆我就忧愁，子孙发动的日子就得顺风，风顺我就无忧了，这也是没有传下来的秘诀。",
+        "en": "A Void line that moves, or one that is strong yet Void, returns in a month or day that fills it or clashes the Void open. Worked example: in the You month, on a Guiyou day, a man divined on what day his elder brother would return and got Shi changing to Lin: the Subject, the Hai-water Peer line, is strong yet Void, and on the day it comes out of the Void he will surely arrive. The questioner said: the day after tomorrow is a Mao day, and a letter before had said he would set out today, but it is over two thousand li; how can he arrive in three days? I said: it is not only that Hai comes out of the Void; whenever Output holds the Self in a hexagram, or moves and gives life to or combines with the Self, that is a spirit of joy; I promised the Hai day because Yin combines with Hai, which is also the day that combines Output awake, so he would surely return on the Hai day. Who would have thought that he came by water, met a fair wind, and travelled day and night, arriving on the Hai day after all. Juezi says: in ordinary divination of wind, a moving Peer line is wind, and moving Wood gives rise to wind; but for a boat in motion, Output is the wind. When the wind is foul for a boat, I am worried; on the day Output moves one gets a fair wind, and with a fair wind I have no worry. This too is a secret that was never handed down."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11999, 11999],
+          "zh": ["动空旺空者，归于实空冲空之月日，惟恐卦变克绝，及反吟、用神被冲被克者，皆难望其回也。"],
+          "yi": ["发动而空、旺而空的，在填实或冲开空亡的月日回来；就怕卦变到克、绝，或变成反吟，或用神被冲被克，这些都很难盼到他回来。"],
+          "en": ["A Void line that moves, or one that is strong yet Void, brings him back in a month or day that fills it or clashes the Void open; but if the hexagram changes into control or extinction, or into Reversed Chant, or the Subject is clashed or controlled, there is little hope of his return."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12284, 12284],
+          "zh": ["酉月癸酉日(旬空：戌亥)，占兄何日回？", "得“师之临”"],
+          "yi": ["酉月癸酉日（旬空戌、亥），占兄长哪天回？", "得师卦变临卦。"],
+          "en": ["In the You month, on a Guiyou day (Void: Xu and Hai), divining on what day an elder brother would return:", "the hexagram Shi changing to Lin."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12332, 12332],
+          "zh": ["亥兄旺相而空，出空之日必至。", "彼曰：后日即是卯日，前有信，约今日起身，但二千余里，三日如何能到？", "余曰：不独亥日出空，凡卦中子孙持世，及动而生合世爻，皆是喜悦之神，许亥日归者，寅与亥合，又是合起子孙之日也，亥日必归无疑。", "岂料由水路，遇顺风，日夜行，竟归于亥日。"],
+          "yi": ["亥水兄爻旺相而空，出空的日子必到。", "来问的人说：后天就是卯日，前面有信约好今天起身，可是两千多里，三天怎么能到？", "我说：不只是亥日出空，凡是卦中子孙持世、以及发动而生合世爻的，都是喜悦之神；答应亥日到的，是因为寅与亥相合，又是合起子孙的日子，亥日必归无疑。", "哪知道走水路遇到顺风，日夜兼程，竟然在亥日到了。"],
+          "en": ["The Subject, the Hai-water Peer line, is strong yet Void, and on the day it comes out of the Void he will surely arrive.", "The questioner said: the day after tomorrow is a Mao day, and a letter before had said he would set out today, but it is over two thousand li; how can he arrive in three days?", "I said: it is not only that Hai comes out of the Void; whenever Output holds the Self in a hexagram, or moves and gives life to or combines with the Self, that is a spirit of joy; I promised the Hai day because Yin combines with Hai, which is also the day that combines Output awake, so he would surely return on the Hai day.", "Who would have thought that he came by water, met a fair wind, and travelled day and night, arriving on the Hai day after all."] },
+        { "by": "觉子", "book": "增删卜易", "range": [12332, 12333],
+          "zh": ["觉子曰：泛常占风，兄动为风，木动生风，唯舟行占风，以子孙为风。", "盖行舟风逆，我心忧也，子孙发动之日，乃得顺风之日，风顺，我无忧矣，此亦未传之秘。"],
+          "yi": ["觉子说：一般占风，兄爻发动为风，木发动生风；只有行船占风，以子孙为风。", "行船风逆我就忧愁，子孙发动的日子，就是得到顺风的日子，风顺，我就无忧了，这也是没有传下来的秘诀。"],
+          "en": ["Juezi says: in ordinary divination of wind, a moving Peer line is wind, and moving Wood gives rise to wind; but for a boat in motion, Output is the wind.", "When the wind is foul for a boat I am worried; the day Output moves is the day one gets a fair wind, and with a fair wind I have no worry. This too is a secret that was never handed down."] }
+      ],
+      "note": {
+        "yi": "「寅与亥合」指地支六合，寅亥合木；这里的意思是卦里有子孙在寅，寅日出现、亥日合起它，所以亥日既是出空之日，又是合起子孙（顺风之神）的日子，走水路得顺风就能三天赶两千里。",
+        "en": "The \"combination of Yin and Hai\" is the earthly-branch six combination, Yin and Hai together making Wood. The point made is that the Hai day is both the day the Void line comes out of the Void and the day that combines the Output (the fair-wind spirit), so travelling by water with a fair wind he covers two thousand li in three days."
+      },
+      "see": ["LY.TRAVEL.ZS.14", "LY.TRAVEL.ZS.20"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.33",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，由江右登舟占一路平安否：酉金官鬼持世本是忧疑之象，实应风阻；子水父母发动是子日的风雨，化出巳火子孙则巳日方晴，从此悟到子孙乃行舟之顺风",
+      "rule": {
+        "yi": "乘船遇到风阻的，不要拿兄弟爻当风云，要拿子孙爻当顺风。书中例：戌月丙戌日作者从江右上船，占一路平安与否，得蛊卦变巽卦：我怀疑酉金官鬼持世，是一路忧虑猜疑之象，起初不知道是应在风阻上；等到戊子日，风雨大作，船停在南康，才明白这一卦子水父母发动，是子日的风雨；看到它化出巳火子孙，就知道巳日才放晴；结果船停了五天，巳日天开，得到顺风；从此才领悟子孙就是行船的顺风。",
+        "en": "For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind. Worked example: in the Xu month, on a Bingxu day, the author boarded a boat at Jiangyou and divined whether the whole road would be safe, and got Gu changing to Xun: I suspected that Pressure You-metal holding the Self was a sign of worry and doubt on the road, not knowing at first that it answered in the wind holding us up; when the Wuzi day came, wind and rain broke out and the boat moored at Nankang, and only then did I understand that in this hexagram the Resource Zi-water moves, which is the wind and rain of the Zi day; and seeing that it changes into Output Si-fire, I knew the sky would clear on the Si day. The boat lay for five days, the sky opened on the Si day, and a fair wind came. From then on I understood that Output is the fair wind for a boat."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12334, 12334],
+          "zh": ["余曾于：戌月丙戌日(旬空：午未)，由江右登舟，占一路平安否，得“蛊之巽”"],
+          "yi": ["我曾在戌月丙戌日（旬空午、未），从江右上船，占一路平安与否，得蛊卦变巽卦。"],
+          "en": ["Once, in the Xu month, on a Bingxu day (Void: Wu and Wei), boarding a boat at Jiangyou, I divined whether the whole road would be safe and got Gu changing to Xun."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12370, 12370],
+          "zh": ["余疑酉金鬼爻持世，一路忧疑之象，初不知应风阻也，及至戊子日，风雨大作，舟泊南康，始悟此卦子水父动，子日之风雨也，见其化出巳火子孙，即知巳日方晴。", "果舟停五日，巳日天开，得顺风矣，自此始悟子孙乃行舟之顺风也。"],
+          "yi": ["我怀疑酉金官鬼持世，是一路忧虑猜疑之象，起初不知道是应在风阻上，等到戊子日，风雨大作，船停在南康，才明白这一卦子水父母发动，是子日的风雨，看到它化出巳火子孙，就知道巳日才放晴。", "结果船停了五天，巳日天开，得到顺风，从此才领悟子孙就是行船的顺风。"],
+          "en": ["I suspected that Pressure You-metal holding the Self was a sign of worry and doubt on the road, not knowing at first that it answered in the wind holding us up; when the Wuzi day came, wind and rain broke out and the boat moored at Nankang, and only then did I understand that in this hexagram the Resource Zi-water moves, which is the wind and rain of the Zi day; and seeing that it changes into Output Si-fire, I knew the sky would clear on the Si day.", "The boat lay for five days, the sky opened on the Si day, and a fair wind came; from then on I understood that Output is the fair wind for a boat."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.13", "LY.TRAVEL.ZS.32"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.34",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，行舟占顺风：午火子孙回头生世，今日午时必得顺风，嫌当日是戌日、午火子孙入墓之日，风必不久，午时扬帆，未时风止",
+      "rule": {
+        "yi": "行船以子孙为顺风：子孙发动回头生世，当日就得顺风；子孙入墓则风不久。书中例：辰月甲戌日行船占顺风，得升卦变恒卦：午火子孙回头生世爻，今天午时必得顺风，只嫌今天是戌日，是午火子孙入墓的日子，风必定不长久；果然午时子孙当令，顺风扬帆，到未时风就停了。",
+        "en": "For a boat, Output is the fair wind: when Output moves and turns back to give life to the Self, a fair wind comes that day, and if Output enters the tomb the wind does not last. Worked example: in the Chen month, on a Jiaxu day, a man divined for a fair wind on a boat and got Sheng changing to Heng: the Output Wu-fire turns back to give life to the Self, so a fair wind will surely come at the Wu hour today, only that today is a Xu day, the day when Wu-fire Output enters the tomb, so the wind will not last; indeed at the Wu hour Output was in command and the sail was hoisted in a fair wind, and by the Wei hour the wind had dropped."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12371, 12371],
+          "zh": ["又于：辰月甲戌日(旬空：申酉)，行舟占顺风，得“升之恒”"],
+          "yi": ["又在辰月甲戌日（旬空申、酉），行船占顺风，得升卦变恒卦。"],
+          "en": ["Again, in the Chen month, on a Jiaxu day (Void: Shen and You), on a boat, divining for a fair wind and getting Sheng changing to Heng."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12377, 12377],
+          "zh": ["午子回头生世，今日午时，必得顺风，但嫌今日戌日，午火子孙入墓之日，风必不久。", "果于午时子孙当令，顺风扬帆，至未时而风止矣。"],
+          "yi": ["午火子孙回头生世，今天午时必得顺风，只嫌今天是戌日，是午火子孙入墓的日子，风必定不长久。", "果然午时子孙当令，顺风扬帆，到未时风就停了。"],
+          "en": ["The Output Wu-fire turns back to give life to the Self, so a fair wind will surely come at the Wu hour today, only that today is a Xu day, the day when Wu-fire Output enters the tomb, so the wind will not last.", "Indeed at the Wu hour Output was in command and the sail was hoisted in a fair wind, and by the Wei hour the wind had dropped."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.32"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.35",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，命船家占风：变爻寅木子孙克制丑土之鬼，必到寅日得顺风，戊寅日寅时果然开船",
+      "rule": {
+        "yi": "子孙发动变出子孙，是顺风之神：变爻寅木子孙克制丑土官鬼，必到寅日得顺风；果然在戊寅日寅时得到顺风开船。书中例：次日乙亥日叫船家占风，得丰卦变大壮卦。",
+        "en": "When Output moves and changes into Output, it is the fair-wind spirit: the changed line, Yin-wood Output, controls the Chou-earth Pressure, so a fair wind will surely come on the Yin day; indeed on the Wuyin day, in the Yin hour, a fair wind came and the boat set out. Worked example: the next day, a Yihai day, the boatman was told to divine for the wind and got Feng changing to Dazhuang."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12378, 12378],
+          "zh": ["至：次日乙亥日(旬空：申酉)，命船家占风，得“丰之大壮”"],
+          "yi": ["第二天乙亥日（旬空申、酉），叫船家占风，得丰卦变大壮卦。"],
+          "en": ["The next day, a Yihai day (Void: Shen and You), the boatman was told to divine for the wind and got Feng changing to Dazhuang."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12410, 12410],
+          "zh": ["变爻寅木子孙，克制丑土之鬼，必至寅日而得顺风。", "已于戊寅日寅时，果得顺风而开舟矣。"],
+          "yi": ["变爻寅木子孙，克制丑土官鬼，必到寅日得顺风。", "已在戊寅日寅时，果然得到顺风，开船了。"],
+          "en": ["The changed line, Yin-wood Output, controls the Chou-earth Pressure, so a fair wind will surely come on the Yin day.", "Indeed on the Wuyin day, in the Yin hour, a fair wind came and the boat set out."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.34"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.36",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，由淮回扬附载登舟占风：二爻辰土子孙是得顺风之喜，四爻戌土子孙是到家之喜，断明日辰时顺风、戌时抵扬",
+      "rule": {
+        "yi": "子孙发动是顺风；子孙落在哪一爻、临哪个时辰，就应在哪一个时辰有风。书中例：亥月癸亥日占顺风，得未济卦变艮卦：有人从淮安回扬州，我搭他的船，上船后他就占风，我说：明天辰时得顺风，戌时就能到扬州。他问：怎么这么快？我说：二爻辰土子孙，是得顺风的喜悦；四爻戌土子孙，是到家的喜悦。结果和所占的一样。",
+        "en": "Output moving is the fair wind; the hour answers on whichever line Output sits and whichever hour it rules. Worked example: in the Hai month, on a Guihai day, a man divined for a fair wind and got Weiji changing to Gen: someone was going back from Huai to Yang and I took passage with him; on boarding he divined for the wind at once, and I said: tomorrow at the Chen hour a fair wind will come, and at the Xu hour we will reach Yang. He asked: why so fast? I said: the Output Chen-earth in the second line is the joy of getting a fair wind; the Output Xu-earth in the fourth line is the joy of getting home. It came out as divined."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12410, 12410],
+          "zh": ["又如：亥月癸亥日(旬空：子丑)，占顺风，得“未济之艮”"],
+          "yi": ["又如：亥月癸亥日（旬空子、丑），占顺风，得未济卦变艮卦。"],
+          "en": ["Another example: in the Hai month, on a Guihai day (Void: Zi and Chou), divining for a fair wind and getting Weiji changing to Gen."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12445, 12445], "literal": ["日辰"],
+          "zh": ["有由淮回杨者，余附载之，登州，彼即占风，余曰：明日辰时，得顺风，戌时即抵杨矣。", "彼问：何其速也？", "余曰：二爻辰土子孙，乃得顺风之喜悦也；", "四爻戌土子孙，到家之喜悦也。", "果如所占。"],
+          "yi": ["有人从淮安回扬州，我搭他的船，上船后他就占风，我说：明天辰时得顺风，戌时就到扬州了。", "他问：怎么这么快？", "我说：二爻辰土子孙，是得顺风的喜悦；", "四爻戌土子孙，是到家的喜悦。", "结果和所占的一样。"],
+          "en": ["Someone was going back from Huai to Yang and I took passage with him; on boarding he divined for the wind at once, and I said: tomorrow at the Chen hour a fair wind will come, and at the Xu hour we will reach Yang.", "He asked: why so fast?", "I said: the Output Chen-earth in the second line is the joy of getting a fair wind;", "the Output Xu-earth in the fourth line is the joy of getting home.", "It came out as divined."] }
+      ],
+      "note": {
+        "yi": "原文「余附载之，登州」中的「登州」疑是「登舟」之误（上船）；这里按「上船」译。「杨」即扬州。",
+        "en": "The original has the place-name \"Dengzhou\" after \"I took passage with him\"; it is probably a slip for the phrase meaning \"boarding the boat\", which sounds the same, and it is translated as \"boarding\". \"Yang\" is Yangzhou."
+      },
+      "see": ["LY.TRAVEL.ZS.34"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.37",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，舟中占风、次日再占：酉金子孙持世安静，应在静而逢冲之日，卯日必有顺风；次日再占仍是酉金子孙持世，果然卯日风顺",
+      "rule": {
+        "yi": "子孙安静，在逢冲的日子有顺风。书中例：戌月戊子日在船上占风，得坤卦变震卦：酉金子孙持世，必应在安静而逢冲的日子，卯日必有顺风；第二天己丑日又占，得夬卦，仍是酉金子孙持世，果然到卯日风顺。",
+        "en": "A still Output brings a fair wind on the day that clashes it. Worked example: in the Xu month, on a Wuzi day, a man divined for the wind on a boat and got Kun changing to Zhen: Output You-metal holds the Self, and it must answer on the day when a still line meets a clash, so a fair wind will surely come on the Mao day; the next day, a Jichou day, he divined again and got Guai, again with Output You-metal holding the Self, and indeed on the Mao day the wind was fair."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12446, 12446],
+          "zh": ["又余于：戌月戊子日(旬空：午未)，舟中占风，得“坤之震”"],
+          "yi": ["又在戌月戊子日（旬空午、未），船中占风，得坤卦变震卦。"],
+          "en": ["Again, in the Xu month, on a Wuzi day (Void: Wu and Wei), divining for the wind on a boat and getting Kun changing to Zhen."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12500, 12500],
+          "zh": ["酉子持世，必应静而逢冲之日，卯日必有顺风。"],
+          "yi": ["酉金子孙持世，必应在安静而逢冲的日子，卯日必有顺风。"],
+          "en": ["Output You-metal holds the Self, and it must answer on the day when a still line meets a clash, so a fair wind will surely come on the Mao day."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12501, 12501],
+          "zh": ["至：次日己丑日(旬空：午未)，又占，得“泽天夬”"],
+          "yi": ["第二天己丑日（旬空午、未），又占，得夬卦。"],
+          "en": ["The next day, a Jichou day (Void: Wu and Wei), he divined again and got the hexagram Guai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12531, 12531],
+          "zh": ["仍是酉金子孙持世，果至卯日风顺。"],
+          "yi": ["仍是酉金子孙持世，果然到卯日风顺。"],
+          "en": ["It was again Output You-metal holding the Self, and indeed on the Mao day the wind was fair."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.34"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.38",
+      "topic": "舟行",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，连日占风：上爻寅鬼化酉金子孙则明日酉时有风；次日再占不再报，因为已知；子水子孙与世爻相合若被合住须冲破，明日午时顺风必大，舟行三百余里",
+      "rule": {
+        "yi": "子孙发动化出子孙，这一天有风；子孙与世爻相合，被合住要冲开才成。书中例：戌月壬辰日占风，得大畜卦变泰卦：上爻寅木官鬼化出酉金子孙，明天酉时有风；第二天癸巳日又占风，得姤卦变小畜卦。有人问：昨天说今天酉时有风，今天的卦为什么不显现？我说：神灵以为我已经知道了，不再报；然而今天酉时固然有风，但一定不大，神灵报的是明天的大风，因为子水子孙与世爻相合，如果被合住，必须冲破才成功，明天午时，顺风必大；果然第二天风顺帆饱，船行三百多里。",
+        "en": "When Output moves, that day has wind; when Output combines with the Self and is held fast, it needs to be clashed open to succeed. Worked example: in the Xu month, on a Renchen day, a man divined for the wind and got Daxu changing to Tai: the Pressure Yin-wood in the top line changes into Output You-metal, so tomorrow at the You hour there will be wind; the next day, a Guisi day, he divined for the wind again and got Gou changing to Xiaoxu. Someone asked: you said yesterday there would be wind at the You hour today, so why does today's hexagram not show it? I said: the spirits take it that I already know, and do not report it again. There will indeed be wind at the You hour today, but it will certainly not be strong; what the spirits report is tomorrow's great wind. Output Zi-water combines with the Self, and when it is held fast by a combination it must be clashed open before it succeeds; tomorrow at the Wu hour the fair wind will certainly be strong. Indeed the next day the wind was fair and the sail full, and the boat made over three hundred li."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12532, 12532],
+          "zh": ["又：戌月壬辰日(旬空：午未)，占风，得“大畜之泰”"],
+          "yi": ["又在戌月壬辰日（旬空午、未），占风，得大畜卦变泰卦。"],
+          "en": ["Again, in the Xu month, on a Renchen day (Void: Wu and Wei), divining for the wind and getting Daxu changing to Tai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12560, 12560],
+          "zh": ["上爻寅鬼化出酉金子孙，明日酉时有风。"],
+          "yi": ["上爻寅木官鬼化出酉金子孙，明天酉时有风。"],
+          "en": ["The Pressure Yin-wood in the top line changes into Output You-metal, so tomorrow at the You hour there will be wind."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12561, 12561],
+          "zh": ["至：次日癸巳日(旬空：午未)，又占风，得“姤之小畜”"],
+          "yi": ["第二天癸巳日（旬空午、未），又占风，得姤卦变小畜卦。"],
+          "en": ["The next day, a Guisi day (Void: Wu and Wei), he divined for the wind again and got Gou changing to Xiaoxu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12599, 12599],
+          "zh": ["或问：昨说今日酉时有风，而今日之卦如何不现？", "余曰：神谓我已知矣，不再报也。", "然今日酉时固然有风，而必不大。", "神报明日之大风也。", "盖子水子孙与世爻相合，若逢和住，须冲破以成功。", "明日午时，顺风必大。", "果于次日风顺帆饱，舟行三百余里。"],
+          "yi": ["有人问：昨天说今天酉时有风，今天的卦为什么不显现？", "我说：神灵以为我已经知道了，不再报了。", "然而今天酉时固然有风，但一定不大。", "神灵报的是明天的大风。", "因为子水子孙与世爻相合，如果被合住，必须冲破才成功。", "明天午时，顺风必定很大。", "果然第二天风顺帆饱，船行三百多里。"],
+          "en": ["Someone asked: you said yesterday there would be wind at the You hour today, so why does today's hexagram not show it?", "I said: the spirits take it that I already know, and do not report it again.", "There will indeed be wind at the You hour today, but it will certainly not be strong.", "What the spirits report is tomorrow's great wind.", "Output Zi-water combines with the Self, and when it is held fast by a combination it must be clashed open before it succeeds.", "Tomorrow at the Wu hour the fair wind will certainly be strong.", "Indeed the next day the wind was fair and the sail full, and the boat made over three hundred li."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.34"]
+    }
+  ]
+}

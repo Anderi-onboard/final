@@ -1,0 +1,147 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "增删卜易",
+  "chapter": "行人章",
+  "chapter_en": "The chapter on travellers away",
+  "ranges": {"增删卜易": [11993, 12002]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.ZS.16",
+      "topic": "总则",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·问归期有远有近：近则应日、远则应月，去久而眼下当归的只用日断；问平安与否要另占一卦，不可一卦兼断",
+      "rule": {
+        "yi": "问行人什么时候回来，有远有近：近的应在日，远的应在月；也有离开很久、眼下就该回来的，只用日来断。问行人平安与否，要另外占一卦，不可以一卦兼断。",
+        "en": "In asking when a traveller will return, some returns are far and some near: a near one falls on a day, a far one on a month; there are also those who have long been away and are due back very soon, and these too are judged by the day alone. In asking whether the traveller is faring well or ill, divine separately; do not judge both from a single hexagram."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11995, 11996],
+          "zh": ["问行人之归期，有远有近，近则应日，远则应月；", "亦有去久，目下当归者，又止以日断之。", "问行人之否泰，宜另占，不可一卦兼断。"],
+          "yi": ["问行人什么时候回来，有远有近：近的应在日，远的应在月；", "也有离开很久、眼下就该回来的，只用日来断。", "问行人平安与否，要另外占一卦，不可以一卦兼断。"],
+          "en": ["In asking when a traveller will return, some returns are far and some near: a near one falls on a day, a far one on a month;", "there are also those who have long been away and are due back very soon, and these too are judged by the day alone.", "In asking whether the traveller is faring well or ill, divine separately; do not judge both from a single hexagram."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.17",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·世克用则人未动、用克世必然归：占亲人看所属用神，疏远的以应爻为用神；世克用且无归志，用克世指日回家（作者说试过果验）",
+      "rule": {
+        "yi": "世爻克用神，人还没有动身；用神克世爻，一定会回来。占亲人，看所属的用神；关系疏远的，拿应爻当用神。世爻克用神，他还没有回来的心思；用神克世爻，不久就回家。作者说：我试过，果然应验。",
+        "en": "When the Self controls the Subject, the man has not yet moved; when the Subject controls the Self, he will surely return. In divining for a kinsman, look at that kinsman's own Subject; for a distant person, take the Other line as the Subject. If the Self controls the Subject, he has no mind to return; if the Subject controls the Self, he will be home within days. The author says: I have tried it, and it was indeed borne out."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11997, 11997],
+          "zh": ["世克用兮人未动，用爻克世必然归。", "占亲人，看所用用神；", "疏者，以应爻为用神。", "世克用，且无归志；", "用克世，指日回家。", "余试果验。"],
+          "yi": ["世爻克用神，人还没有动身；用神克世爻，一定会回来。", "占亲人，看所属的用神；", "关系疏远的，拿应爻当用神。", "世爻克用神，他还没有回来的心思；", "用神克世爻，不久就回家。", "我试过，果然应验。"],
+          "en": ["When the Self controls the Subject, the man has not yet moved; when the Subject controls the Self, he will surely return.", "In divining for a kinsman, look at that kinsman's own Subject;", "for a distant person, take the Other line as the Subject.", "If the Self controls the Subject, he has no mind to return;", "if the Subject controls the Self, he will be home within days.", "I have tried it, and it was indeed borne out."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.29"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.18",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·用神墓绝空破则音信杳然、暗动明摇则归鞭已发：用神伏藏的在出现之日回，发动的在逢合之日回",
+      "rule": {
+        "yi": "用神入墓、绝、空、破，回来的消息杳无音信；用神暗动（安静而日辰冲动它）或明动（自己发动），就是出发回家了。用神伏藏的，在它出现的日子回来；用神发动的，在逢合的日子回来。",
+        "en": "When the Subject is in the tomb, extinct, Void or broken, no word of a return comes; when it is stirred in secret (still but moved by the clashing day) or moves in the open, the whip is already raised for home. A hidden Subject returns on the day it appears; a moving one returns on the day it meets a combination."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11998, 11998],
+          "zh": ["墓绝空破，归信杳然；", "暗动明摇，归鞭发矣。", "伏藏者，出现之日；", "动者，逢合之日；"],
+          "yi": ["用神入墓、绝、空、破，回来的消息杳无音信；", "用神暗动、明动，就是出发回家了。", "伏藏的，在它出现的日子回来；", "发动的，在逢合的日子回来。"],
+          "en": ["When the Subject is in the tomb, extinct, Void or broken, no word of a return comes;", "when the Subject is stirred in secret or moves in the open, the whip is already raised for home.", "A hidden one returns on the day it appears;", "a moving one returns on the day it meets a combination."] }
+      ],
+      "note": {
+        "yi": "「暗动」是用神安静、被日辰冲起来；「明摇」是用神自己发动。这里把二者并说，都当作要动身的信号。",
+        "en": "\"Stirred in secret\" means the Subject is still and moved by the clashing day; \"moving in the open\" means the Subject moves on its own. Both are taken here as signs that he is about to set out."
+      },
+      "see": ["LY.TRAVEL.HJC.28", "LY.TRAVEL.HJC.38"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.19",
+      "topic": "动变",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·用神动化进神不返、化退神必归，动逢合有事阻隔、动化鬼在外危灾：最忌动而化克，还防卦变反吟",
+      "rule": {
+        "yi": "用神发动化出进神，不回来；用神发动化出退神，一定回来。发动遇到合，有事阻隔在外；发动化出官鬼，在外有危险灾祸。最怕发动而化出克它的爻，还要提防卦变成反吟。",
+        "en": "A Subject that moves and changes into an Advancing spirit does not return; one that changes into a Retreating spirit surely returns. A moving Subject that meets a combination is held up by some affair; one that changes into Pressure meets danger and calamity abroad. Most to be feared is a movement that changes into a controlling line, and beware too of the hexagram changing into Reversed Chant."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11998, 11998],
+          "zh": ["动化进神不返，用神化退必归；", "动逢合，有事阻隔；", "动化鬼，在外危灾。", "最忌动而化克，还防卦变反吟。"],
+          "yi": ["动化进神不返，用神化退神必定回来；", "发动遇到合，有事阻隔；", "发动化出官鬼，在外有危险灾祸。", "最怕发动而化出克它的爻，还要提防卦变成反吟。"],
+          "en": ["A moving Subject that changes into an Advancing spirit does not return, and one that changes into a Retreating spirit surely returns;", "a moving Subject that meets a combination is held up by some affair;", "one that changes into Pressure meets danger and calamity abroad.", "Most to be feared is a movement that changes into a controlling line, and beware too of the hexagram changing into Reversed Chant."] }
+      ],
+      "dispute": {
+        "yi": "《黄金策》说用爻化进神，行人很快就回，化退神则来了又返回或又去别处（见黄金策·行人）；这里相反：化进神不回，化退神必回。两书对进退神的读法正好相反，没有哪一本交代理由。",
+        "en": "The Huangjin Ce says that a Subject changing into an Advancing spirit means the traveller hurries home, and changing into a Retreating spirit means he comes and then goes back or goes elsewhere (see the Huangjin Ce on travellers); this chapter says the opposite, that an Advancing change does not return and a Retreating change surely returns. The two books read Advancing and Retreating in opposite ways, and neither gives its reason."
+      },
+      "see": ["LY.TRAVEL.HJC.31", "LY.TRAVEL.HJC.34", "LY.TRAVEL.HJC.37"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.20",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·世爻空者行人即至、用神静逢休囚空破者且不思回：动空、旺空的在冲实、冲空的月日回来，卦变克绝、反吟、用神被冲克的难望其回",
+      "rule": {
+        "yi": "世爻空的，行人马上就到；用神安静，又遇到休囚空破的，还没有回来的念头。发动而空、旺而空的，在填实或冲开空亡的月日回来；就怕卦变到克、绝，或变成反吟，或用神被冲被克，这些都很难盼到他回来。",
+        "en": "When the Self is Void, the traveller is arriving at once; when the Subject is still and meets resting, trapped, Void or broken, he does not yet think of returning. A Void line that moves, or one that is strong yet Void, brings him back in a month or day that fills it or clashes the Void open; but if the hexagram changes into control or extinction, or into Reversed Chant, or the Subject is clashed or controlled, there is little hope of his return."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11999, 11999],
+          "zh": ["世爻空者，行人即至；", "用神静，逢休囚空破者，且不思回。", "动空旺空者，归于实空冲空之月日，惟恐卦变克绝，及反吟、用神被冲被克者，皆难望其回也。"],
+          "yi": ["世爻空的，行人马上就到；", "用神安静，又遇到休囚空破的，还没有回来的念头。", "发动而空、旺而空的，在填实或冲开空亡的月日回来；就怕卦变到克、绝，或变成反吟，或用神被冲被克，这些都很难盼到他回来。"],
+          "en": ["When the Self is Void, the traveller is arriving at once;", "when the Subject is still and meets resting, trapped, Void or broken, he does not yet think of returning.", "A Void line that moves, or one that is strong yet Void, brings him back in a month or day that fills it or clashes the Void open; but if the hexagram changes into control or extinction, or into Reversed Chant, or the Subject is clashed or controlled, there is little hope of his return."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.29", "LY.TRAVEL.HJC.36"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.21",
+      "topic": "应期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·用神三合则冲开之月日来、六冲则行人无定而不返：用爻静的冲动之日来，墓的开墓之期来",
+      "rule": {
+        "yi": "用神三合，在冲开三合的月日回来；卦遇六冲，行人去向不定，不会回来。用爻安静的，在冲动它的日子回来；用爻入墓的，在开墓的时候回来。",
+        "en": "When the Subject is in a three-harmony, he returns in a month or day that clashes the harmony open; when the hexagram meets six-clash, the traveller's course is unsettled and he does not return. A still Subject returns on the day that clashes it into motion; a Subject in the tomb returns at the time the tomb is opened."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12000, 12000],
+          "zh": ["用神三合，冲开之月日而来；", "卦逢六冲，行人无定而不返。", "用爻静者，冲动之日；", "用爻墓者，开墓之期。"],
+          "yi": ["用神三合，在冲开三合的月日回来；", "卦遇六冲，行人去向不定，不会回来。", "用爻安静的，在冲动它的日子回来；", "用爻入墓的，在开墓的时候回来。"],
+          "en": ["When the Subject is in a three-harmony, he returns in a month or day that clashes the harmony open;", "when the hexagram meets six-clash, the traveller's course is unsettled and he does not return.", "A still Subject returns on the day that clashes it into motion;", "a Subject in the tomb returns at the time the tomb is opened."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.38", "LY.TRAVEL.HJC.56"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.22",
+      "topic": "平安",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·用爻无病可断归期、有病则在外不安：野鹤说用神墓绝空破受伤才叫有病；问平安要看有病无病，问归期只看来与不来",
+      "rule": {
+        "yi": "用爻没有病，可以断回来的日期；用爻有病，他在外面不安。野鹤说：用神入墓、绝、空、破、受伤，叫做有病。来人问行人在外平安与否，要看用神有病没病；如果问回来的日期，只看卦象来断来不来。",
+        "en": "If the Subject line is free of illness, the day of return can be judged; if it is ill, he is uneasy abroad. Yehe says: a Subject in the tomb, extinct, Void, broken or injured is called ill. When a visitor asks whether the traveller is well abroad, look at whether the Subject is ill; if asked when he will return, look only at the hexagram to judge whether he comes or not."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12001, 12001],
+          "zh": ["用爻无病，可断归期；", "用爻有病，在外不安。"],
+          "yi": ["用爻没有病，可以断回来的日期；", "用爻有病，他在外面不安。"],
+          "en": ["If the Subject line is free of illness, the day of return can be judged;", "if it is ill, he is uneasy abroad."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [12002, 12002],
+          "zh": ["野鹤曰：用神墓绝空破受伤，谓之有病。", "来人问行人在外平安否？", "须看有病无病；", "若问归期，只看卦象而断来与不来也。"],
+          "yi": ["野鹤说：用神入墓、绝、空、破、受伤，叫做有病。", "来人问行人在外平安与否？", "要看用神有病没病；", "如果问回来的日期，只看卦象来断来不来。"],
+          "en": ["Yehe says: a Subject in the tomb, extinct, Void, broken or injured is called ill.", "When a visitor asks whether the traveller is well abroad,", "look at whether the Subject is ill;", "if asked when he will return, look only at the hexagram to judge whether he comes or not."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.37"]
+    }
+  ]
+}

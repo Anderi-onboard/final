@@ -22,6 +22,25 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: what kind of post, which office, which place | 51 |
 | 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 51 |
 
+## 六爻 · 出行(171 条)→ `chapters/六爻/出行/索引.md`
+
+| 主题 | Topic | 条数 |
+| --- | --- | --- |
+| 总则 | Principles: which line is the traveller, the destination, the baggage and the purse | 8 |
+| 去留 | Go or stay: whether one can set out, delays and detentions | 14 |
+| 同行 | Companions: the between lines, fellow travellers, sharing a boat | 5 |
+| 路途 | The road: dangers, thieves, storms, losses and gains on the way | 9 |
+| 动变 | Moving lines and what they turn into | 11 |
+| 方位 | Direction: which way to go and which to avoid | 7 |
+| 舟行 | Travel by boat: buying and hiring a boat, wind, safety, the crew | 19 |
+| 归期 | Return: whether and when an absent person comes home | 29 |
+| 平安 | The traveller abroad: safety, sickness, detention, where he is | 17 |
+| 音信 | Letters and news from the traveller | 3 |
+| 避难 | Fleeing disorder: bandits, soldiers, escape and hiding | 34 |
+| 应期 | Timing: the day or month of setting out or of arrival | 3 |
+| 取象 | Reading the images: what the six spirits and palaces show on the road | 1 |
+| 风险 | Risks: robbery, storm, lawsuit, illness on the way | 11 |
+
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
@@ -95,7 +114,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: the classic, the examiner, the hall, the paper | 12 |
 | 风险 | Risks: illness at the hall, mourning, intrigue, failure | 12 |
 
-## 打架 · Where the classics disagree(184 条)
+## 打架 · Where the classics disagree(188 条)
 
 - **LY.CAREER.CA.21 天乙贵人再来相合：不止自己享禄，子孙代代为官受封赠（旧注的天乙贵人按月份取巳申亥寅轮转）**(`chapters/六爻/事业/贵人.md`):旧注里的天乙贵人按月份取（巳申亥寅轮转），而卜筮大全另一处、卜筮正宗、增删卜易、易林补遗等讲的天乙贵人都是按日干取：甲戊（庚）牛羊、乙己鼠猴、丙丁猪鸡、壬癸兔蛇、庚辛（六辛）马虎。两种起法不同，本库各照原书录，不裁定。
   The note here finds the Tianyi Noble by the month (turning through Si, Shen, Hai, Yin), while elsewhere in the Bushi Daquan itself, and in the Bushi Zhengzong, the Zengshan Buyi and the Yilin Buyi, the Tianyi Noble is found by the day stem: Jia and Wu (and Geng) ox and sheep, Yi and Ji rat and monkey, Bing and Ding pig and rooster, Ren and Gui hare and snake, Geng and Xin (or the six Xin) horse and tiger. The two methods differ; each is recorded as its book gives it and neither is adjudicated.
@@ -433,6 +452,14 @@ What is in the library and where; entries where the classics disagree are listed
   The old commentary says that when the between lines move there are many obstructions; the Old Man of Yehe says plainly that this is not to be judged across the board: between lines that move to generate or combine with the Self and Other lines help, and only those that control the Self or Other line obstruct. Juezi says only that in marriage the between lines are the go-betweens, without saying whether their moving is lucky or not, and adds that the Day or Month clashing or controlling them resolves the obstruction. In the book's case a moving Pressure between line is answered by 'Pressure turning into Retreating, obstructing but without strength', which is on the same road as the Old Man's 'look at whether it generates and combines or controls'.
 - **LY.MARRY.ZS.35 占身命不可一卦兼断：夫妻偕老要另占一卦；「兄动妻亡」这类一条通断，世上贫寒之士岂都是丧偶之人**(`chapters/六爻/婚姻/总则.md`):野鹤批评的是「诸书」的一卦兼断，其中特别点了《易林补遗》一句「兄动妻亡财耗散」。这句在本库的《易林补遗》里没有原样出现，意思相近的是「兄动，妻灾奴仆患，资财耗散事无成」（该书第 109 行）和「兄动损妻，财无积聚」（第 441 行），应是转述。
   What the Old Man of Yehe criticizes is judging everything from one hexagram as 'the books' do, and he singles out the Yilin Buyi line 'a moving Peer line, the wife dies and wealth is scattered'. That sentence does not appear word for word in the Yilin Buyi in this library; the close ones are 'Peer moving: trouble for wife and servants, wealth scattered and nothing accomplished' (line 109 of that book) and 'Peer moving harms the wife, wealth does not gather' (line 441), so it is presumably a paraphrase.
+- **LY.TRAVEL.BSZZ.02 通玄赋·出行宜世动、归魂不出疆，用神发动值三合则行人立回：出行要世爻动；归魂卦不出边疆；用爻发动逢三合，行人马上回来**(`chapters/六爻/出行/去留.md`):《增删卜易》三合章说：占出行，用神在三合之内，被合而留；占行人，用神在三合之内，被合不返。这里却说用爻发动值三合，行人立回。两处都有「三合」，但一说被合住不回、一说立回，没有一本说明区别。
+  The chapter on three-harmony in the Zengshan Buyi says that in setting out a Subject inside a three-harmony is combined shut and stays, and for a traveller it is combined shut and does not return; this verse says that a Subject that moves and meets a three-harmony means the traveller returns at once. Both name three-harmony, one saying the traveller is held and the other that he is back, and neither book explains the difference.
+- **LY.TRAVEL.ZS.19 行人章·用神动化进神不返、化退神必归，动逢合有事阻隔、动化鬼在外危灾：最忌动而化克，还防卦变反吟**(`chapters/六爻/出行/动变.md`):《黄金策》说用爻化进神，行人很快就回，化退神则来了又返回或又去别处（见黄金策·行人）；这里相反：化进神不回，化退神必回。两书对进退神的读法正好相反，没有哪一本交代理由。
+  The Huangjin Ce says that a Subject changing into an Advancing spirit means the traveller hurries home, and changing into a Retreating spirit means he comes and then goes back or goes elsewhere (see the Huangjin Ce on travellers); this chapter says the opposite, that an Advancing change does not return and a Retreating change surely returns. The two books read Advancing and Retreating in opposite ways, and neither gives its reason.
+- **LY.TRAVEL.ZS.28 行人章·书中例，占父何时来：初爻丑父与子合、五爻未父化进神，皆不来，须午年方来，果然午年戌月到**(`chapters/六爻/出行/动变.md`):这一例的断法是「化进神不来、等逢合之年才来」，与《黄金策》行人章「用爻化进神行人急回」相反；两书各有书中例，没有交代谁错。
+  This example judges that a change into an Advancing spirit means he does not come and arrives only in the year of the combination, which is the opposite of the Huangjin Ce on travellers, where a Subject changing into an Advancing spirit means a quick return; each book has worked examples, and neither says which is wrong.
+- **LY.TRAVEL.ZS.46 千金赋注·觉子论用克世：旧注说用神克世不作凶看、是事来就我，觉子以为不尽然——求财财爻克世必得、行人用神克世即归、医药子孙克世即愈，其余各占都不宜用神克世，占功名官鬼克世更是非祸即灾**(`chapters/六爻/出行/归期.md`):旧注：用神来克世是「事来就我」，不当凶看；觉子：只有求财、行人、医药这几种占才是好的，其余都不宜，功名占官鬼克世非祸即灾。
+  The old commentary holds that the Subject coming to control the Self is the matter coming to me and is not ill; Juezi holds that this is good only in divining for wealth, a traveller and medicine, that it is unfit in the rest, and that in divining for office Pressure controlling the Self is calamity.
 - **LY.WEALTH.DYTJ.04 求财何日得：死财等财生的日月，生财不要拿财合当日期；空亡加退度，说得再多也要迟疑**(`chapters/六爻/求财/应期.md`):《天玄赋》说「财合日辰，方能入手」，合日是入手的条件；这里说生财「财合莫为期」，合日不能当日期。两处不好并成一说：一处讲财与日辰合，一处讲财自己得令时的合日。整理本后面今人注把「财合」读成「入墓」，原文写的是「合」，本库照原文，不改。
   The Tianxuan Fu says that when Wealth combines with the Day the money can be taken in hand, making the combining day a condition; this verse says that for a living Wealth 'Wealth combining' is not to be taken as the date. The two do not merge into one statement. A modern note in the transcription reads 'combining' as 'entering the tomb'; the original says 'combining', and this library follows the original.
 - **LY.WEALTH.DYTJ.12 郭璞论买卖：财爻克世最好，身旺相与财并、无煞不空；贞旺悔囚先赢，悔旺贞休后赢**(`chapters/六爻/求财/买卖.md`):这首歌里的「贞」「悔」，有两种读法。一种是内卦为贞、外卦为悔；一种是本卦为贞、之卦为悔。《易林补遗》两种都记：有动爻时，本卦是贞、之卦是悔；爻都静、没有之卦时，才取内卦为贞、外卦为悔，并且「以贞为始，以悔为终」。歌诀自己没有说是哪一种。「贞旺悔囚初买卖，悔旺贞休后始赢」里的「初」和「后」有先后，和「以贞为始，以悔为终」对得上；但这不是歌诀的明文，本库不裁。

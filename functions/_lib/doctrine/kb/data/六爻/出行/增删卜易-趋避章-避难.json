@@ -1,0 +1,162 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "增删卜易",
+  "chapter": "趋避章",
+  "chapter_en": "The chapter on seeking luck and avoiding harm",
+  "ranges": {"增删卜易": [9060, 9132]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.ZS.39",
+      "topic": "避难",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·克神在内卦宜出外避、克神在外卦宜在家避：世与忌神都在外卦不可出行、宜家居，都在内卦不可家居、宜出外；与出行章「路上有官休出外，宅中有鬼莫家居」同意",
+      "rule": {
+        "yi": "克世的神在内卦，动了来克世爻，宜出外去避；克世的神在外卦，动了来克世爻，宜待在家里避。世爻和忌神都在外卦的，不可出行，宜在家居住来避；世爻和忌神都在内卦的，不可在家居住，宜出外去避。出行章说「路上有官休出外，宅中有鬼莫家居」，是同一个意思。",
+        "en": "If the controlling spirit is in the inner trigram and moves to control the Self, it is fit to go out and avoid it; if the controlling spirit is in the outer trigram and moves to control the Self, it is fit to stay at home and avoid it. When the Self and the Adversary are both in the outer trigram one must not set out and should stay at home to avoid harm; when both are in the inner trigram one must not stay at home and should go out to avoid harm. The chapter on setting out says \"if there is an official on the road, do not go out; if there is Pressure in the house, do not stay at home\", which is the same idea."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9062, 9062],
+          "zh": ["克神若在内卦，动而克世，宜出外避之。", "克神若在外卦，动而克世，宜在家避之。"],
+          "yi": ["克世的神如果在内卦，动了来克世爻，宜出外去避；", "克世的神如果在外卦，动了来克世爻，宜待在家里避。"],
+          "en": ["If the controlling spirit is in the inner trigram and moves to control the Self, it is fit to go out and avoid it;", "if the controlling spirit is in the outer trigram and moves to control the Self, it is fit to stay at home and avoid it."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9072, 9072],
+          "zh": ["世在外，克在外，宜于家居。", "世爻与忌神皆在外卦者，不可出行，宜家居可避；", "世爻与忌神皆在内卦者，不可家居，宜出外可避。"],
+          "yi": ["世爻在外卦，克世的也在外卦，宜在家居住。", "世爻与忌神都在外卦的，不可出行，宜在家居住来避；", "世爻与忌神都在内卦的，不可在家居住，宜出外来避。"],
+          "en": ["When the Self is in the outer trigram and what controls it is also in the outer trigram, it is fit to stay at home.", "When the Self and the Adversary are both in the outer trigram one must not set out and should stay at home to avoid harm;", "when the Self and the Adversary are both in the inner trigram one must not stay at home and should go out to avoid harm."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9073, 9073],
+          "zh": ["出行章云：路上有官休出外，宅中有鬼莫家居。", "同此意耳。"],
+          "yi": ["出行章说：路上有官休出外，宅中有鬼莫家居。", "也是同一个意思。"],
+          "en": ["The chapter on setting out says: if there is an official on the road, do not go out; if there is Pressure in the house, do not stay at home.", "It is the same idea."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.06", "LY.TRAVEL.ZS.40"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.40",
+      "topic": "方位",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·书中例，占流年：寅木动爻临月建化进神克世，六七月木衰墓时防土木之厄，宜出外避；目下去宜往西，六七月去反宜往东；此人七月初八往东，二十八地震房塌，独他得免",
+      "rule": {
+        "yi": "克世的神动了，宜出外避；去的方向要看克世的神旺衰：它旺的时候去西，它衰的时候反而宜往东。书中例：寅月丁卯日占流年，得噬嗑卦变睽卦：寅木动爻临月建，化出进神克世爻，这时木盛、贪着自己的旺，不来克世；六、七月是木衰墓的时候，防土木之灾；问可不可以避，宜出外才能避；问往哪个方向吉，目下去的宜往西，六、七月去的宜往东，因为六七月木衰，反而宜东。这个人竟没有出门，拖到七月初七又做了凶梦，初八就往东去了，二十八日地震房塌，人口受伤，只有他幸免。",
+        "en": "When the controlling spirit moves, it is fit to go out to avoid it; the direction depends on that spirit's strength: while it is strong go west, while it is weak go east instead. Worked example: in the Yin month, on a Dingmao day, a man divined the year ahead and got Shihe changing to Kui: the moving Yin-wood line sits on the Month and changes into an Advancing spirit that controls the Self; at this time the Wood is thriving and greedy for its own flourishing, so it does not come to control the Self, but in the sixth and seventh months, when Wood is weak and in the tomb, beware calamity from earth and timber. Asked whether it could be avoided, I said it could, only by going out; asked which direction was lucky, I said: if you go now, go west; if you go in the sixth or seventh month, go east, because in those months Wood is weak and east becomes the fit direction. The man did not leave and put it off until the seventh day of the seventh month, when he had an ill dream again; on the eighth he went east, and on the twenty-eighth there was an earthquake, the house fell and people were hurt, and he alone escaped."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9062, 9062],
+          "zh": ["克神若在内卦，动而克世，宜出外避之。", "克神若在外卦，动而克世，宜在家避之。"],
+          "yi": ["克世的神如果在内卦，动了来克世爻，宜出外去避；", "克世的神如果在外卦，动了来克世爻，宜待在家里避。"],
+          "en": ["If the controlling spirit is in the inner trigram and moves to control the Self, it is fit to go out and avoid it;", "if the controlling spirit is in the outer trigram and moves to control the Self, it is fit to stay at home and avoid it."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9064, 9064],
+          "zh": ["如：寅月丁卯日(旬空：戍亥)，占流年，得“噬嗑之睽”"],
+          "yi": ["如：寅月丁卯日（旬空戍、亥），占流年，得噬嗑卦变睽卦。"],
+          "en": ["For example: in the Yin month, on a Dingmao day (Void: Xu and Hai), divining the year ahead and getting Shihe changing to Kui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9071, 9071],
+          "zh": ["余曰：寅木动爻临月建，化进神克世，此时木盛贪荣，不来克世，六、七月衰墓之时，防土木之厄。", "彼问：可避否？", "余曰：宜往外方可避。", "又问：何方为吉？", "余曰：目下去者，宜往西方，六、七月去者，宜往东方。", "何也？", "六七月木衰矣，所以反宜于东。", "此人竟未出门，捱至七月初七，又得凶梦，初八即往东行，二十八，地震房塌，人口被伤，独伊得免。"],
+          "yi": ["我说：寅木动爻临月建，化出进神克世爻，这时木盛、贪着自己的旺，不来克世；六、七月是木衰墓的时候，防土木之灾。", "他问：可以避吗？", "我说：宜出外才能避。", "又问：往哪个方向吉？", "我说：目下去的宜往西，六、七月去的宜往东。", "为什么？", "六、七月木衰，所以反而宜东。", "这个人竟然没有出门，拖到七月初七又做了凶梦，初八就往东去了，二十八日地震房塌，人口受伤，只有他幸免。"],
+          "en": ["I said: the moving Yin-wood line sits on the Month and changes into an Advancing spirit that controls the Self; at this time the Wood is thriving and greedy for its own flourishing, so it does not come to control the Self, but in the sixth and seventh months, when Wood is weak and in the tomb, beware calamity from earth and timber.", "He asked: can it be avoided?", "I said: it can, only by going out.", "He asked again: which direction is lucky?", "I said: if you go now, go west; if you go in the sixth or seventh month, go east.", "Why?", "In the sixth and seventh months Wood is weak, so east becomes the fit direction instead.", "The man did not leave and put it off until the seventh day of the seventh month, when he had an ill dream again; on the eighth he went east, and on the twenty-eighth there was an earthquake, the house fell and people were hurt, and he alone escaped."] }
+      ],
+      "note": {
+        "yi": "旬空「戍亥」的「戍」是「戌」的刻误，原文如此。书中夹的「注」（版本校勘说明）是整理者写的，不是原书，没有收。",
+        "en": "The Void pair written \"Xu-Hai\" in the original has a slip in the first character (a look-alike for Xu); the original is kept. The bracketed editor's note on editions inside the text is not part of the book and is not taken in."
+      },
+      "see": ["LY.TRAVEL.ZS.39"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.41",
+      "topic": "避难",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·书中例，占仆人能为祸否：防患只看忌神不看财，世临辰土被两重寅木伤，未月木墓、七月木绝是他败露之月，宜出外避；主人往坟庄住半月，两仆果然逃走",
+      "rule": {
+        "yi": "防患的占卜只看忌神，不看财；克世的神在你这一方就宜出外避。书中例：未月丙子日占仆人能不能为祸，得解卦变震卦：这位主人知道仆人变了心，想处置他，还没有实迹，所以占；这一卦如果把仆人当财就错了，因为他既是防患，只看忌神；现在世爻临辰土，被两重寅木伤克。我说：不止这一个人，还有跟随的人。他问：怎么处置？我说：他确实没有实迹，怎么处置？只是未月是木的墓、七月是木的绝，这两个月是他们败露的月份，你宜出外去避，自然能免祸。他果然照做，到坟庄上住了半个月，家中两个仆人逃走了，一个妇人跟着去，一个没有去；没去的妇人说：那两个人本来想害主人才逃，因为主人出外，不能下手，计谋泄露才逃的。",
+        "en": "In divining to guard against harm, look only at the Adversary and not at Wealth; where the controlling spirit presses on one's own side, it is fit to go out and avoid it. Worked example: in the Wei month, on a Bingzi day, a man divined whether his servant could do him harm and got Jie changing to Zhen: the master knew the servants had changed their hearts and wished to deal with them but had no proof, so he divined; if one took the servant as Wealth in this hexagram one would be mistaken, since he is guarding against harm and only looks at the Adversary; here the Self sits on Chen-earth and is injured by two Yin-wood lines. I said: it is not only this man, there are followers too. He asked how to deal with them. I said: he has really left no trace, how can you deal with him? But the Wei month is the tomb of Wood and the seventh month is its extinction, and these two months are when they will be exposed; you should go out and avoid them, and you will be free of harm. He did as told, stayed half a month at the tomb farm, and two servants at home ran away, one woman following them and one not; the woman who stayed said: those two had meant to harm the master and ran; because the master went out they could not harm him, and the plot leaked, so they fled."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9072, 9072],
+          "zh": ["世爻与忌神皆在外卦者，不可出行，宜家居可避；", "世爻与忌神皆在内卦者，不可家居，宜出外可避。"],
+          "yi": ["世爻与忌神都在外卦的，不可出行，宜在家居住来避；", "世爻与忌神都在内卦的，不可在家居住，宜出外来避。"],
+          "en": ["When the Self and the Adversary are both in the outer trigram one must not set out and should stay at home to avoid harm;", "when the Self and the Adversary are both in the inner trigram one must not stay at home and should go out to avoid harm."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9074, 9074],
+          "zh": ["如：未月丙子日(旬空：申酉)，占仆人能为祸否？", "得“解之震”"],
+          "yi": ["如：未月丙子日（旬空申、酉），占仆人能不能为祸？", "得解卦变震卦。"],
+          "en": ["For example: in the Wei month, on a Bingzi day (Void: Shen and You), divining whether a servant could do harm:", "the hexagram Jie changing to Zhen."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9081, 9081],
+          "zh": ["此公知仆役变心，意欲处治，尚无实迹，故占之。", "此卦若执奴仆为财则愚矣。", "盖彼既防患，只看忌神，今世临辰土，两重寅木伤之。", "余曰：不独此人，还有附从者。", "彼问：何法处之？", "余曰：彼实无迹，如何处之？", "但未月乃木之墓，七月乃木之绝，此两月是彼败露之月也，公宜出外避之，自能免祸。", "果依数而行，往坟庄上住过半月，家中两仆逃矣，一妇随去，一妇未去。", "未去之妇曰：彼二人原欲害主而逃，今因主出外，不能相害。", "故机泄而逃耳。"],
+          "yi": ["这位主人知道仆人变了心，想处置他，还没有实迹，所以占。", "这一卦如果把仆人当财就错了。", "因为他既是防患，只看忌神，现在世爻临辰土，被两重寅木伤克。", "我说：不止这一个人，还有跟随的人。", "他问：怎么处置？", "我说：他确实没有实迹，怎么处置？", "只是未月是木的墓，七月是木的绝，这两个月是他们败露的月份，你宜出外去避，自然能免祸。", "他果然照做，到坟庄上住了半个月，家中两个仆人逃走了，一个妇人跟着去，一个没有去。", "没去的妇人说：那两个人本来想害主人才逃，因为主人出外，不能下手。", "所以计谋泄露才逃走的。"],
+          "en": ["The master knew the servants had changed their hearts and wished to deal with them but had no proof, so he divined.", "It would be a mistake to take the servant as Wealth in this hexagram.", "For he is guarding against harm and so looks only at the Adversary; here the Self sits on Chen-earth and is injured by two Yin-wood lines.", "I said: it is not only this man, there are followers too.", "He asked: how should I deal with them?", "I said: he has really left no trace, how can you deal with him?", "But the Wei month is the tomb of Wood and the seventh month is its extinction, and these two months are when they will be exposed; you should go out and avoid them, and you will be free of harm.", "He did as told, stayed half a month at the tomb farm, and two servants at home ran away, one woman following them and one not.", "The woman who stayed said: those two had meant to harm the master and ran; because the master went out, they could not harm him.", "So the plot leaked and they fled."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.39"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.42",
+      "topic": "方位",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·避患于生世之方、趋吉于福神之地：避兵、避盗、避瘟、养病、避是非，都宜避到「生世」之方和「子孙」之方；子孙若在卦中发动，不论克世、生世、持世都吉",
+      "rule": {
+        "yi": "避祸要避到生助世爻的那个方向，求吉要去福神所在的地方。凡是避兵、避盗、避瘟疫、养病、避是非，都适宜避到「生世」的方向和「子孙」的方向才吉。子孙如果在卦中发动，不论克世、生世还是持世，都吉。",
+        "en": "To avoid harm, go to the direction that gives life to the Self; to seek luck, go to the place of Output. In avoiding soldiers, avoiding thieves, avoiding plague, recuperating from illness and avoiding quarrels alike, it is lucky to avoid to the direction that gives life to the Self and the direction of Output. If Output moves in the hexagram, it is lucky whether it controls, gives life to or holds the Self."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9083, 9083],
+          "zh": ["避患于生世之方，趋吉于福神之地。", "凡避兵、避盗、避瘟、养病、避是非，皆宜避于“生世”之方及“子孙”之方为吉。", "子孙若发动于卦中，不拘克世、生世、持世俱吉。"],
+          "yi": ["避祸要避到生助世爻的那个方向，求吉要去福神所在的地方。", "凡是避兵、避盗、避瘟疫、养病、避是非，都适宜避到「生世」的方向和「子孙」的方向才吉。", "子孙如果在卦中发动，不论克世、生世还是持世，都吉。"],
+          "en": ["To avoid harm, go to the direction that gives life to the Self; to seek luck, go to the place of Output.", "In avoiding soldiers, avoiding thieves, avoiding plague, recuperating from illness and avoiding quarrels alike, it is lucky to avoid to the direction that gives life to the Self and the direction of Output.", "If Output moves in the hexagram, it is lucky whether it controls, gives life to or holds the Self."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.88"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.43",
+      "topic": "避难",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·书中例，占防流兵能为我害否：巳酉丑合金局克世、世临蛇鬼，看似在劫难逃；作者断子孙合成金局克去身边之鬼，反而无忧，酉金得丑辰二土生，不能论克；后来屡遇兵变皆有惊无险",
+      "rule": {
+        "yi": "避祸要避到生世的方向、子孙的方向；子孙如果发动，不拘克世、生世、持世都吉。书中例：巳月戊辰日占防流兵能不能害我，得临卦变睽卦：当时流兵为害，到处遭殃，有个懂易的人占得这一卦，整天焦虑；我问他这一卦为什么发愁，他说巳酉丑合成金局克世爻，世爻又临螣蛇官鬼，命数在劫难中，万万逃不掉。我笑着说：你和兵贼同住，保你没事。他问为什么，我说：子孙合成金局，克去身边的鬼，还担心什么？他说：酉金子孙在巳月旺，又化出巳火，论克，怎么论生？我说：酉金得丑、辰两个土来生它，怎么论克？结果屡次遇到兵变，这个人有时避、有时不避，都是有惊无险。从癸未年占得这一卦，直到庚寅年地方大定，他对我说：子孙是福神，确实灵验；世上看书不到、论理不透，把吉当凶、把凶当吉的，不只我一个人。",
+        "en": "Avoid to the direction that gives life to the Self and the direction of Output; if Output moves, it is lucky whether it controls, gives life to or holds the Self. Worked example: in the Si month, on a Wuchen day, a man divined whether roving soldiers could harm him and got Lin changing to Kui. At that time roving soldiers were doing harm and bringing calamity everywhere, and a man who knew the Changes, having got this hexagram, was anxious all day. I asked what worried him in it. He said: Si, You and Chou combine into a Metal frame that controls the Self, and the Self sits on a Coiling Snake and Pressure; my fate is in the calamity and I can never escape. I laughed and said: you live with the soldiers and thieves, and I guarantee you will be fine. He asked why. I said: Output combines into the Metal frame and controls away the Pressure beside you; what is there to fear? He said: You-metal Output is strong in the Si month and also changes into Si-fire; if it is control, how can it be life? I said: You-metal is given life by the two earths Chou and Chen; how can it be called control? In the end he met mutinies of soldiers again and again; sometimes he avoided and sometimes not, but it was always a fright with no harm. From the Guiwei year when he got this hexagram until the Gengyin year when the region was at peace, he said to me: Output is the spirit of fortune and it is truly borne out; those in the world who do not read deeply or reason thoroughly and take the lucky for ill and the ill for lucky are not only myself."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9083, 9083],
+          "zh": ["子孙若发动于卦中，不拘克世、生世、持世俱吉。"],
+          "yi": ["子孙如果在卦中发动，不论克世、生世还是持世，都吉。"],
+          "en": ["If Output moves in the hexagram, it is lucky whether it controls, gives life to or holds the Self."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9084, 9084],
+          "zh": ["如：巳月戊辰日(旬空：戌亥)，占防流兵能为我害否？", "得“临之睽”"],
+          "yi": ["如：巳月戊辰日（旬空戌、亥），占防流兵能不能害我？", "得临卦变睽卦。"],
+          "en": ["For example: in the Si month, on a Wuchen day (Void: Xu and Hai), divining whether roving soldiers could harm me:", "the hexagram Lin changing to Kui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9088, 9088],
+          "zh": ["彼时流兵为害，到处遭殃，有知易者，占得此卦，终日焦虑。", "余问：此卦何以忧也？", "彼曰：巳酉丑合成金局而克世，世爻又临蛇鬼，数在劫中，万万莫能逃矣。", "余笑曰：尔与兵贼同居，保尔无事。", "彼曰：何也？", "余曰：子孙合成金局，克去身边之鬼，夫复何忧？", "彼曰：酉金子孙，旺于巳月，又化巳火，论克，如何论生？", "余曰：酉金得丑辰二土以相生，如何论克？", "果屡次遇兵变，此人或避，或不避，皆有惊无险。", "自癸未年占得此卦，直至庚寅年地方大定，向余曰：子孙为福神，信乎有验，世之看书不到，论理不彻，以吉为凶，以凶为吉者，不独我一人而已。"],
+          "yi": ["当时流兵为害，到处遭殃，有个懂易的人占得这一卦，整天焦虑。", "我问：这一卦为什么发愁？", "他说：巳酉丑合成金局克世爻，世爻又临螣蛇官鬼，命数在劫难中，万万逃不掉。", "我笑着说：你和兵贼同住，保你没事。", "他问：为什么？", "我说：子孙合成金局，克去身边的鬼，还担心什么？", "他说：酉金子孙在巳月旺，又化出巳火，论克，怎么论生？", "我说：酉金得丑、辰两个土来生它，怎么论克？", "结果屡次遇到兵变，这个人有时避、有时不避，都是有惊无险。", "从癸未年占得这一卦，直到庚寅年地方大定，他对我说：子孙是福神，确实灵验；世上看书不到、论理不透，把吉当凶、把凶当吉的，不只我一个人。"],
+          "en": ["At that time roving soldiers were doing harm and bringing calamity everywhere, and a man who knew the Changes, having got this hexagram, was anxious all day.", "I asked: what worries you in this hexagram?", "He said: Si, You and Chou combine into a Metal frame that controls the Self, and the Self sits on a Coiling Snake and Pressure; my fate is in the calamity and I can never escape.", "I laughed and said: you live with the soldiers and thieves, and I guarantee you will be fine.", "He asked: why?", "I said: Output combines into the Metal frame and controls away the Pressure beside you; what is there to fear?", "He said: You-metal Output is strong in the Si month and also changes into Si-fire; if it is control, how can it be life?", "I said: You-metal is given life by the two earths Chou and Chen; how can it be called control?", "In the end he met mutinies of soldiers again and again; sometimes he avoided and sometimes not, but it was always a fright with no harm.", "From the Guiwei year when he got this hexagram until the Gengyin year when the region was at peace, he said to me: Output is the spirit of fortune and it is truly borne out; those in the world who do not read deeply or reason thoroughly and take the lucky for ill and the ill for lucky are not only myself."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.42"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.44",
+      "topic": "方位",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·书中例，同乡占避乱往哪个方向：众人以子孙属水、金动生之，主往北；作者断兄动化进神是破财之象，午火得令生世，往南避为吉；众人从南避，后来贼从北来放火烧村，所以生方为吉，子孙之方亦吉，要以旺衰分别",
+      "rule": {
+        "yi": "避乱要避到生世的方向和子孙的方向，还要按旺衰来分辨。书中例：巳月丙戌日同乡的人占避乱，得乾卦变大有卦：众人认为子孙属水，有金动来生它，北方为吉。我说：不对。兄爻动化出进神，是破财之象；午火当令，生助世爻，往南避才吉。众人信了我的话，都往南避。后来贼果然从北边来，放火把村子烧光，房屋稻谷都成了灰烬，这是申金兄爻发动破财的缘故。所以生世的方向吉，子孙的方向也吉；又要用旺衰来分别，火虽然是鬼的方向，生我又有什么妨碍。",
+        "en": "In avoiding disorder, go to the direction that gives life to the Self and the direction of Output, and tell them apart by strength and weakness. Worked example: in the Si month, on a Bingxu day, men of the same village divined which way to flee the disorder and got Qian changing to Dayou. The company held that Output belongs to Water, and Metal moves to give it life, so the north is lucky. I said: no. The Peer line moves and changes into an Advancing spirit, which is a sign of losing wealth; Wu-fire is in command and gives life to the Self, so it is lucky to flee south. They believed me and all fled south. Afterwards the bandits did come from the north, set fire to the village and left, and the houses and the rice were all ashes, which was the loss of wealth from the moving Shen-metal Peer. So the direction that gives life to the Self is lucky, and the direction of Output is also lucky; and one must also distinguish by strength and weakness: though Fire is the direction of Pressure, what harm is there in its giving life to me."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9083, 9083],
+          "zh": ["避患于生世之方，趋吉于福神之地。"],
+          "yi": ["避祸要避到生助世爻的那个方向，求吉要去福神所在的地方。"],
+          "en": ["To avoid harm, go to the direction that gives life to the Self; to seek luck, go to the place of Output."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9089, 9089],
+          "zh": ["如通乡于：巳月丙戌日(旬空：午未)，占避乱，得“乾之大有”"],
+          "yi": ["同乡的人在巳月丙戌日（旬空午、未），占避乱，得乾卦变大有卦。"],
+          "en": ["In the Si month, on a Bingxu day (Void: Wu and Wei), men of the same village divined about fleeing disorder, getting Qian changing to Dayou."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9132, 9132],
+          "zh": ["众以子孙属水，金动生之，北方为吉。", "余曰：非也。", "兄动化进神，乃破财之象，午火得令而生世，往南避之为吉。", "众信余之言，皆从南避。", "后果贼从北来，放火烧村而去，房屋稻谷尽成灰烬，乃申金兄动破财之故耳。", "所以生方为吉，子孙之方亦吉。", "又当以旺衰分别，火虽鬼方，生我何碍。"],
+          "yi": ["众人认为子孙属水，有金动来生它，北方为吉。", "我说：不对。", "兄爻动化出进神，是破财之象，午火当令，生助世爻，往南避才吉。", "众人信了我的话，都往南避。", "后来贼果然从北边来，放火把村子烧光，房屋稻谷都成了灰烬，这是申金兄爻发动破财的缘故。", "所以生世的方向吉，子孙的方向也吉。", "又要用旺衰来分别，火虽然是鬼的方向，生我又有什么妨碍。"],
+          "en": ["The company held that Output belongs to Water, and Metal moves to give it life, so the north is lucky.", "I said: no.", "The Peer line moves and changes into an Advancing spirit, which is a sign of losing wealth; Wu-fire is in command and gives life to the Self, so it is lucky to flee south.", "They believed me and all fled south.", "Afterwards the bandits did come from the north, set fire to the village and left, and the houses and the rice were all ashes, which was the loss of wealth from the moving Shen-metal Peer.", "So the direction that gives life to the Self is lucky, and the direction of Output is also lucky.", "And one must also distinguish by strength and weakness: though Fire is the direction of Pressure, what harm is there in its giving life to me."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.42", "LY.TRAVEL.HJC.88"]
+    }
+  ]
+}

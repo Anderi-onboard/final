@@ -1,0 +1,302 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "增删卜易",
+  "chapter": "出行章、舟行章、同舟共行章",
+  "chapter_en": "The chapters on setting out, travelling by boat, and sharing a boat or road",
+  "ranges": {"增删卜易": [11965, 11992]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.ZS.01",
+      "topic": "去留",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·世爻旺相宜行、应若空亡且止：世是出行的人，生旺有气则吉，动而化吉或化子孙更吉，休囚空破、动而化凶则不宜行；应是地头与依傍之人，空破墓绝或变鬼变绝回头克，去也无益",
+      "rule": {
+        "yi": "世爻是出行的人，旺相有气就适宜出行；发动化出吉的爻、化出子孙更吉；休囚空破，或者发动化出凶的，就不宜出行。应爻是目的地，又是依傍的人，应爻空亡就该停下；应爻空破墓绝，或者发动变鬼、变绝、化出回头克，去了也没有益处。",
+        "en": "The Self line is the one who goes: if it is strong and has breath it is fit to set out, it is better still if it moves and changes into something lucky or into Output, and it is unfit to set out if it is resting or trapped, Void or broken, or moves and changes into something ill. The Other line is the destination and also the person one leans on: if the Other is Void one should stop, and if it is Void, broken, in the tomb or extinct, or moves and changes into Pressure, into extinction or into a line that turns back to control it, going is of no use."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11967, 11967],
+          "zh": ["人为名利奔驰，道路风波不测。", "占卜当先。"],
+          "yi": ["人为了名利奔波，道路上的风波难以预料。", "占卜应当在先。"],
+          "en": ["Men rush about for fame and gain, and the storms of the road cannot be foreseen.", "Divination should come first."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11968, 11968],
+          "zh": ["世爻旺相宜行，应若空亡且止。", "世为出行之人，生旺有气则吉，动而化吉，及化子孙者，更吉；", "如休囚空破、动而化凶，则不宜行也。", "应为地头，又为傍倚之人，若空破墓绝，或动而变鬼、变绝、化回头之克，去亦无益。"],
+          "yi": ["世爻旺相适宜出行，应爻如果空亡就该停下。", "世是出行的人：生旺有气就吉，发动化出吉的、以及化出子孙的，更吉；", "如果休囚空破、发动化出凶的，就不宜出行。", "应是目的地，又是依傍的人，如果空破墓绝，或者发动变鬼、变绝、化出回头克，去了也没有益处。"],
+          "en": ["With the Self strong it is fit to set out; if the Other is Void one should stop.", "The Self is the one who goes: strong and with breath it is lucky, and moving and changing into something lucky, or into Output, it is better still;", "if it is resting or trapped, Void or broken, or moves and changes into something ill, it is unfit to set out.", "The Other is the destination and also the person one leans on; if it is Void, broken, in the tomb or extinct, or moves and changes into Pressure, into extinction, or into a line that turns back to control it, going is of no use."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.02", "LY.TRAVEL.HJC.03"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.02",
+      "topic": "去留",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·世伤应位不拘远近皆宜、应克世爻公私皆主不利：我去克他则所向通达，应来刑冲克世则不可行",
+      "rule": {
+        "yi": "世爻克伤应位，不论远近都适宜出行；应爻克世爻，公事私事都主不利。我去克他，所去的方向通达；应来刑冲克世，不可出行。",
+        "en": "The Self injuring the Other position is fit whether the journey is far or near; the Other controlling the Self is unfavourable for public and private business alike. My going to control him means the way I go is open; if the Other comes to punish, clash or control the Self, one must not go."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11969, 11969],
+          "zh": ["世伤应位，不拘远近皆宜；", "应克世爻，公私皆主不利。", "我去克他，所向通达；", "应来刑冲克世，不可行也。"],
+          "yi": ["世爻克伤应位，不论远近都适宜；", "应爻克世爻，公事私事都主不利。", "我去克他，所去的方向通达；", "应来刑冲克世，不可出行。"],
+          "en": ["The Self injuring the Other position is fit whether the journey is far or near;", "the Other controlling the Self is unfavourable for public and private business alike.", "My going to control him means the way I go is open;", "if the Other comes to punish, clash or control the Self, one must not go."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.06"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.03",
+      "topic": "动变",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·八纯乱动在处皆凶、两间齐空独行则吉；六冲卦及动变冲、世爻休囚被克者终不能去，有始无终，去亦诸般不就",
+      "rule": {
+        "yi": "八纯卦乱动，到处都凶；两个间爻同时空，一个人走才吉。六冲卦，以及发动变成冲的、世爻休囚被克的，终究去不成，有始无终，去了也诸事不成。",
+        "en": "A pure-palace hexagram moving in disorder is ill everywhere; if the two between lines are both Void, travelling alone is lucky. A six-clash hexagram, or one that moves and changes into a clash, or one whose Self is resting or trapped and controlled, in the end cannot go; it begins and does not finish, and even if one goes nothing comes to pass."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11970, 11970],
+          "zh": ["八纯乱动，在处皆凶；", "两间齐空，独行则吉。", "六冲卦，及动而变冲、世爻休囚被克者，终不能去，有始无终，去亦诸般不就。"],
+          "yi": ["八纯卦乱动，到处都凶；", "两个间爻同时空，一个人走才吉。", "六冲卦，以及发动变成冲的、世爻休囚被克的，终究去不成，有始无终，去了也诸事不成。"],
+          "en": ["A pure-palace hexagram moving in disorder is ill everywhere;", "if the two between lines are both Void, travelling alone is lucky.", "A six-clash hexagram, or one that moves and changes into a clash, or one whose Self is resting or trapped and controlled, in the end cannot go; it begins and does not finish, and even if one goes nothing comes to pass."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.07", "LY.TRAVEL.HJC.08"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.04",
+      "topic": "同行",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·两间爻是同行附载之人：发动克世必遭其害，动临兄爻必破我财，生合我者吉；两间齐空则不是中途梗阻就是无伴单行",
+      "rule": {
+        "yi": "两个间爻是同行、搭载的人：发动克世，一定遭他们的害；发动临着兄爻，一定破我的财；生合我的就吉；如果两个间爻同时空，不是中途受阻，就一定没有伴、一个人走。",
+        "en": "The two between lines are the people who travel with one or are carried along: moving to control the Self, they surely do one harm; moving with a Peer line, they surely cost me money; those that give me life or combine with me are lucky; and if both between lines are Void, either one is obstructed on the road or one travels alone without company."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11970, 11970],
+          "zh": ["两间爻，乃同行附载之人，动而克世，定遭其害；", "动临兄爻，必破我财；", "生合我者则吉。", "倘两间齐空，若非中途梗阻，定然无伴单行。"],
+          "yi": ["两个间爻，是同行、搭载的人，发动克世，一定遭他们的害；", "发动临着兄爻，一定破我的财；", "生合我的就吉。", "如果两个间爻同时空，不是中途受阻，就一定没有伴、一个人走。"],
+          "en": ["The two between lines are the people who travel with one or are carried along; moving to control the Self, one is surely harmed by them;", "moving with a Peer line, they surely cost me money;", "those that give me life or combine with me are lucky.", "If both between lines are Void, either one is obstructed on the road or one travels alone without company."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.08", "LY.TRAVEL.HJC.21"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.05",
+      "topic": "去留",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·静遇日冲必去、动逢合住而留：世爻暗动必去，世旺静逢冲之日必去，世爻动而化合或被日月动爻合住必有事故阻滞（觉子：也有应在冲开之日才走的）",
+      "rule": {
+        "yi": "世爻安静而遇到日冲，一定去；发动而被合住，就留下。世爻暗中发动的，一定去；世爻旺相而安静的，逢到冲的日子一定去；世爻发动而化出合，或者被日、月、动爻合住的，必有事故，被阻滞不能走。觉子说：我曾试验过，也有应验在冲开的那天才走的。",
+        "en": "If the Self is still and meets the clash of the Day, one surely goes; if it moves and is held by a combination, one stays. If the Self moves in secret, one surely goes; if the Self is strong and still, one surely goes on the day that clashes it; if the Self moves and changes into a combination, or is held by a combination from the Day, the Month or a moving line, there is surely some affair, and one is obstructed and does not go. Juezi says: I have tried it and found that it sometimes answers by going on the day that clashes it open."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11971, 11973],
+          "zh": ["静遇日冲必去，动逢合住而畱。", "世爻暗动者，必去；", "世旺静者，逢冲之日必去；", "世爻动而化合，或被日月动爻合者，必有事故，阻滞不行。"],
+          "yi": ["世爻安静而遇到日冲就一定去，发动而逢到合住就留下。", "世爻暗中发动的，一定去；", "世爻旺相而安静的，逢到冲的日子一定去；", "世爻发动而化出合，或者被日月、动爻合住的，必有事故，被阻滞不能走。"],
+          "en": ["Still and meeting the clash of the Day, one surely goes; moving and meeting a combination that holds it, one stays.", "if the Self moves in secret, one surely goes;", "if the Self is strong and still, one surely goes on the day that clashes it;", "if the Self moves and changes into a combination, or is held by a combination from the Day, the Month or a moving line, there is surely some affair, and one is obstructed and does not go."] },
+        { "by": "觉子", "book": "增删卜易", "range": [11971, 11973],
+          "zh": ["觉子曰：予尝得验，亦有应在冲开之日而行者。"],
+          "yi": ["觉子说：我曾试验过，也有应验在冲开的那天才走的。"],
+          "en": ["Juezi says: I have tried it and found that it sometimes answers by going on the day that clashes it open."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.10"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.06",
+      "topic": "路途",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·官鬼交重灾祸重：武鬼忧盗贼、朱鬼防讼非、虎鬼疾病淹缠、蛇鬼风波惊险、勾鬼事勾连、青鬼戒嫖赌；鬼发震乾车马患，兑坎虑风波，坤艮山岭逢殃，离巽炎厂林窖被难",
+      "rule": {
+        "yi": "官鬼发动重叠，灾祸就重：带玄武动，担忧盗贼；带朱雀发动，提防官司口舌；带白虎，疾病缠身；带螣蛇，风波惊险；带勾陈发动，事情牵连纠缠；带青龙发动，要戒嫖赌。鬼爻发在震、乾，有车马之患；发在兑、坎，要虑风波；坤、艮的鬼爻，在山间岭野遇灾殃；离、巽的官爻，在炉场、树林、窑窖里遭难。",
+        "en": "Pressure moving in force means heavy calamity: with the Dark Tortoise moving, worry about thieves; with the Vermilion Bird, guard against lawsuits and quarrels; with the White Tiger, illness that lingers; with the Coiling Snake, storms and frightening danger; with Hook Earth moving, entanglement in others' affairs; with the Azure Dragon moving, beware of whoring and gambling. Pressure moving in Zhen or Qian brings the danger of carts and horses, moving in Dui or Kan, think of storms; Pressure in Kun or Gen means calamity on mountain and ridge; Pressure in Li or Xun means disaster in forge-yards, woods and kilns."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11974, 11975],
+          "zh": ["官鬼交重灾祸重。", "武鬼动，忧盗贼，朱鬼发，防讼非；", "虎鬼疾病淹缠；", "蛇鬼风波惊险；", "勾鬼动而事勾连；", "青鬼动而戒嫖赌。", "鬼发震乾，车马患，鬼发兑坎，虑风波；", "坤艮之鬼，山间岭野逢殃；", "离巽之官，炎厂林窖被难。", "余详趋避章中。"],
+          "yi": ["官鬼发动重叠，灾祸就重。", "玄武鬼爻动，要担忧盗贼；朱雀鬼爻发动，要提防官司口舌；", "白虎鬼爻，疾病缠身；", "螣蛇鬼爻，风波惊险；", "勾陈鬼爻发动，事情牵连纠缠；", "青龙鬼爻发动，要戒嫖赌。", "鬼爻发在震、乾，有车马的祸患；鬼爻发在兑、坎，要虑风波；", "坤、艮的鬼爻，在山间岭野遇灾殃；", "离、巽的官爻，在炉场、树林、窑窖里遭难。", "其余详见趋避章。"],
+          "en": ["Pressure moving in force means heavy calamity.", "with the Dark Tortoise on the moving Pressure line, worry about thieves; with the Vermilion Bird, guard against lawsuits and quarrels;", "with the White Tiger on Pressure, illness that lingers;", "with the Coiling Snake, storms and frightening danger;", "with Hook Earth on moving Pressure, entanglement in others' affairs;", "with the Azure Dragon on moving Pressure, beware of whoring and gambling.", "Pressure moving in Zhen or Qian brings the danger of carts and horses; moving in Dui or Kan, think of storms;", "Pressure in Kun or Gen means calamity on mountain and ridge;", "Pressure in Li or Xun means disaster in forge-yards, woods and kilns.", "The rest is set out in detail in the chapter on avoiding."] }
+      ],
+      "note": {
+        "yi": "「趋避章」是增删卜易讲怎样趋吉避凶的一章，里面讲避难、避贼、避大罪的几节在本库里分别收进「出行」「失物」「官非」。「炎厂」按文意是炉火作坊一类的场所。",
+        "en": "The \"chapter on avoiding\" is the Zengshan Buyi's chapter on how to seek the lucky and avoid the ill, whose sections on escaping disorder, avoiding thieves and avoiding a heavy sentence are taken into this library under Travel, Lost goods and Lawsuits respectively. The \"flame yard\" is by the sense a place of furnaces and workshops."
+      },
+      "see": ["LY.TRAVEL.HJC.14", "LY.TRAVEL.HJC.15", "LY.TRAVEL.HJC.19"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.07",
+      "topic": "总则",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·福神发动患殃消：子孙发动、子孙持世、世化子孙，万里程途百祸潜消；子孙克世也吉",
+      "rule": {
+        "yi": "福神发动，祸患灾殃就消散。出行时，遇到子孙发动、子孙持世、世爻化出子孙，走万里路程，百种祸患都暗中消散；子孙克世的也吉。",
+        "en": "When Output moves, misfortune and calamity melt away. In travelling, if Output moves, Output holds the Self, or the Self changes into Output, then through a journey of ten thousand li a hundred misfortunes quietly vanish; Output controlling the Self is also lucky."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11976, 11976],
+          "zh": ["福神发动患殃消。", "出行，得遇子孙发动、子孙持世、世化子孙，程途万里，百祸潜消。", "子孙克世者亦吉。"],
+          "yi": ["福神发动，祸患灾殃就消散。", "出行，遇到子孙发动、子孙持世、世爻化出子孙，走万里路程，百种祸患都暗中消散。", "子孙克世的也吉。"],
+          "en": ["Output moving, misfortune and calamity melt away.", "In travelling, if Output moves, Output holds the Self, or the Self changes into Output, then through a journey of ten thousand li a hundred misfortunes quietly vanish.", "Output controlling the Self is also lucky."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.18", "LY.TRAVEL.HJC.24"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.08",
+      "topic": "路途",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·父克世爻风雨舟车行李：父母持世而动、或父动冲克世爻，应舟车行李之累和淋漓风雨之愁，世旺者无妨，最怕休囚而化凶",
+      "rule": {
+        "yi": "父母爻持世而发动，或者发动的父爻冲克世爻，验证过的，有的应在舟车、行李的劳累，有的应在淋漓风雨的忧愁；世爻旺相的无妨，最怕世爻休囚又化出凶。",
+        "en": "If the Resource line holds the Self and moves, or a moving Resource line clashes with or controls the Self, as I have tested it, it answers sometimes in the burden of boats, carts and baggage and sometimes in the misery of being drenched by wind and rain; if the Self is strong there is no harm, and what is feared most is the Self resting or trapped and changing into something ill."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11977, 11977],
+          "zh": ["父克世爻，风雨舟车行李。", "父母持世而动，或被父动冲克世爻，余得验者，有应舟车行李之累，有应淋漓风雨之愁，世旺者无妨，最怕休囚而化凶也。"],
+          "yi": ["父爻克世爻，有风雨、舟车、行李的烦恼。", "父母爻持世而发动，或者被发动的父爻冲克世爻，我验证过的，有的应在舟车行李的劳累，有的应在淋漓风雨的忧愁；世爻旺相的无妨，最怕休囚而化出凶。"],
+          "en": ["The Resource line controlling the Self brings the troubles of wind and rain, boats and carts, and baggage.", "If the Resource line holds the Self and moves, or a moving Resource line clashes with or controls the Self, as I have tested it, it answers sometimes in the burden of boats, carts and baggage and sometimes in the misery of being drenched by wind and rain; if the Self is strong there is no harm, and what is feared most is its being resting or trapped and changing into something ill."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.17"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.09",
+      "topic": "路途",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·兄冲世位花月耗破灾非：财持世而兄爻冲克，有的应在月夕花朝无端浪费，有的应在奸徒小辈暗骗明欺，酿成灾非，破耗百出",
+      "rule": {
+        "yi": "兄弟爻冲克世位，主在花前月下耗费钱财、引来灾非：财爻持世而被兄爻冲克的，有的应在月夜花朝无缘无故地浪费，有的应在奸诈之徒、小人暗骗明欺，以致酿成灾非，破耗百出。",
+        "en": "A Peer line clashing with or controlling the Self position means money wasted amid flowers and moonlight and trouble brought on: when Wealth holds the Self and a Peer line clashes with or controls it, it sometimes answers in pointless waste on moonlit nights and flowery mornings, and sometimes in treacherous rogues and petty men cheating in secret and deceiving openly, so that trouble is brewed and losses of every kind appear."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11978, 11978],
+          "zh": ["兄冲世位，花月耗破灾非。", "财持世，兄爻冲克者，有应月夕花朝，无端浪费；", "有应奸徒小辈，暗骗明欺，以致酿成灾非，破耗百出。"],
+          "yi": ["兄爻冲世位，在花前月下耗费钱财、有灾非。", "财爻持世，而兄爻冲克它的，有的应在月夜花朝无缘无故地浪费；", "有的应在奸诈之徒、小人暗骗明欺，以致酿成灾非，破耗百出。"],
+          "en": ["A Peer line clashing the Self position brings money wasted amid flowers and moonlight, and trouble.", "When Wealth holds the Self and a Peer line clashes with or controls it, it sometimes answers in pointless waste on moonlit nights and flowery mornings;", "sometimes in treacherous rogues and petty men cheating in secret and deceiving openly, so that trouble is brewed and losses of every kind appear."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.22"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.10",
+      "topic": "动变",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·反吟化退中途返、六冲随墓始终凶：伏吟世动冲开之月日必行，反吟去到中途亦返，世逢冲克大凶，六冲卦世静世空断不能行，随鬼入墓世休囚是不返之兆",
+      "rule": {
+        "yi": "反吟、化退神的，中途返回；六冲、随鬼入墓的，始终凶。卦得伏吟，世爻发动的，到冲开的月日一定出行；卦得反吟，走到半路也要返回；世遇冲克，大凶；六冲卦，世爻安静或空，断定不能出行；随鬼入墓，世爻休囚，是不回来的征兆。",
+        "en": "Reversed Chant, or changing into a Retreating spirit, means turning back on the road; six-clash, or entering the tomb with Pressure, is ill from start to finish. If the hexagram is Hidden Chant and the Self moves, one surely sets out in the month or on the day that clashes it open; if it is Reversed Chant, even on getting halfway one turns back; the Self meeting clash and control is greatly ill; in a six-clash hexagram with the Self still or Void it is judged that one cannot go; entering the tomb with Pressure, if the Self is resting or trapped, is the sign of not returning."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11979, 11979],
+          "zh": ["反吟化退中途返，六冲随墓始终凶。", "卦得伏吟，世动者，冲开之月日必行；", "卦得反吟，去到中途亦返；", "世逢冲克，大凶；", "六冲卦，世静世空，断不能行；", "随鬼入墓，世若休囚，不返之兆。"],
+          "yi": ["反吟、化退神的，中途返回；六冲、随鬼入墓的，始终凶。", "卦得伏吟，世爻发动的，到冲开的月日一定出行；", "卦得反吟，走到半路也要返回；", "世遇到冲克，大凶；", "六冲卦，世爻安静或空，断定不能出行；", "随鬼入墓，世爻休囚，是不回来的征兆。"],
+          "en": ["Reversed Chant, or changing into a Retreating spirit, means turning back on the road; six-clash, or entering the tomb with Pressure, is ill from start to finish.", "If the hexagram is Hidden Chant and the Self moves, one surely sets out in the month or on the day that clashes it open;", "if it is Reversed Chant, even on getting halfway one turns back;", "the Self meeting clash and control is greatly ill;", "in a six-clash hexagram with the Self still or Void it is judged that one cannot go;", "entering the tomb with Pressure, if the Self is resting or trapped, is the sign of not returning."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.07"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.11",
+      "topic": "动变",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on setting out",
+      "title": "出行章·六合化冲不吉、六冲化合方亨：六合卦变六冲及卦变克绝，在家也恐凶危",
+      "rule": {
+        "yi": "六合卦变成冲不吉，六冲卦变成合才亨通；六合卦变成六冲卦，以及卦变到克、绝的，就是待在家里也恐怕有凶险。",
+        "en": "A six-combine hexagram changing into a clash is not lucky, and a six-clash hexagram changing into a combination is smooth; a six-combine hexagram changing into a six-clash hexagram, or one changing into control or extinction, is dangerous even at home."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11980, 11980],
+          "zh": ["六合化冲不吉，六冲化合方亨。", "六合卦变六冲，及卦变克绝者，在家亦恐凶危。"],
+          "yi": ["六合卦变成冲不吉，六冲卦变成合才亨通。", "六合卦变成六冲卦，以及卦变到克、绝的，就是待在家里也恐怕有凶险。"],
+          "en": ["A six-combine hexagram changing into a clash is not lucky, and a six-clash hexagram changing into a combination is smooth.", "A six-combine hexagram changing into a six-clash hexagram, or one changing into control or extinction, is dangerous even at home."] }
+      ],
+      "see": ["LY.EXAM.BSZZ.08"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.12",
+      "topic": "应期",
+      "chapter": "舟行章",
+      "chapter_en": "The chapter on travelling by boat",
+      "title": "舟行章·登舟问何日到：世爻发动，合日、值日而到；子孙持世或子孙他爻发动，值日而到；世化退及反吟卦，中途而返",
+      "rule": {
+        "yi": "上船问哪天到：世爻发动，在合的日子或值日那天到；子孙持世，或者子孙在别的爻发动，值日那天到；世爻化退神，以及反吟卦，中途返回。",
+        "en": "Boarding and asking on what day one arrives: if the Self moves, one arrives on the combining day or the ruling day; if Output holds the Self, or Output moves in another line, one arrives on the ruling day; if the Self changes into a Retreating spirit, or the hexagram is Reversed Chant, one turns back on the way."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11984, 11984],
+          "zh": ["登舟问何日到者，世爻发动，合日、值日而到；", "若得子孙持世，及子孙他爻发动者，值日而到；", "世化退，及反吟卦，中途而返。"],
+          "yi": ["上船问哪天到的：世爻发动，在合的日子、值日那天到；", "如果子孙持世，以及子孙在别的爻发动的，值日那天到；", "世爻化退神，以及反吟卦，中途返回。"],
+          "en": ["Boarding and asking on what day one arrives: if the Self moves, one arrives on the combining day or the ruling day;", "if Output holds the Self, or Output moves in another line, one arrives on the ruling day;", "if the Self changes into a Retreating spirit, or the hexagram is Reversed Chant, one turns back on the way."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.13",
+      "topic": "舟行",
+      "chapter": "舟行章",
+      "chapter_en": "The chapter on travelling by boat",
+      "title": "舟行章·舟行问平安：子孙持世、克世、生世、合世则一路无虞，官鬼持世忧郁惊恐，官鬼冲克世爻灾非必见，兄动破财",
+      "rule": {
+        "yi": "乘船问平安与否：子孙持世、克世、生世、合世，一路没有忧患；官鬼持世，忧愁惊恐；官鬼冲克世爻，必定见灾非；兄爻发动，破财。",
+        "en": "On a boat, asking whether it will be safe: if Output holds, controls, gives life to or combines with the Self, the whole road is free of trouble; if Pressure holds the Self, worry and fright; if Pressure clashes with or controls the Self, calamity and trouble will surely be seen; a moving Peer line costs money."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11985, 11985],
+          "zh": ["舟行问平安否，子孙持世、克世、生世、合世，一路无虞；", "官鬼持世，忧郁惊恐；", "官鬼冲克世爻，灾非必见；", "兄动破财。"],
+          "yi": ["乘船问平安与否：子孙持世、克世、生世、合世，一路没有忧患；", "官鬼持世，忧愁惊恐；", "官鬼冲克世爻，必定见灾非；", "兄爻发动，破财。"],
+          "en": ["On a boat, asking whether it will be safe: if Output holds, controls, gives life to or combines with the Self, the whole road is free of trouble;", "if Pressure holds the Self, worry and fright;", "if Pressure clashes with or controls the Self, calamity and trouble will surely be seen;", "a moving Peer line costs money."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.17"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.14",
+      "topic": "舟行",
+      "chapter": "舟行章",
+      "chapter_en": "The chapter on travelling by boat",
+      "title": "舟行章·舟行风阻：不拿兄弟爻当风云，要拿子孙爻当顺风；动的逢合、逢值之日，静的逢冲之日，空的逢冲实之日（顺风），都与天时章阴晴同断",
+      "rule": {
+        "yi": "乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风：发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子（顺风），都和天时章里断阴晴的办法相同。",
+        "en": "For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind: it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11986, 11986],
+          "zh": ["舟行风阻者，勿以兄弟为风云，乃以子孙为顺风，动而逢合逢值之日，静而逢冲之日，空逢冲实之日，皆与天时章阴晴同断。"],
+          "yi": ["乘船遇到风阻的，不要拿兄弟爻当风云，而要拿子孙爻当顺风；发动的遇到合、值的日子，安静的遇到冲的日子，空的遇到冲实的日子，都和天时章里断阴晴的办法相同。"],
+          "en": ["For a boat held up by wind, do not take the Peer line as wind and cloud but take Output as the fair wind; it comes on the day when a moving one meets a combination or the ruling day, on the day when a still one meets a clash, and on the day when a Void one meets the clash that fills it, all judged in the same way as fine and cloudy weather in the chapter on the weather."] }
+      ],
+      "note": {
+        "yi": "天时章（占晴雨风云）不属于「出行」，本库没有收；这里只引它说的办法：动的逢合逢值、静的逢冲、空的逢冲实。",
+        "en": "The chapter on the weather (fine, rain, wind and cloud) is outside Travel and is not taken into this library; only its method is cited here: a moving line by the combining or ruling day, a still line by the clashing day, a Void line by the day that clashes it solid."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.ZS.15",
+      "topic": "同行",
+      "chapter": "同舟共行章",
+      "chapter_en": "The chapter on sharing a boat or a road",
+      "title": "同舟共行章·同行共处应为尊、同路同舟一样论：应伤世位遭他害，只宜生合相扶助；三合同途皆遂意、六冲半路便灰心；占他人以应为用，占亲戚看所用用神，不宜兄鬼动克世",
+      "rule": {
+        "yi": "同行、同住，以应爻为尊，同路、同船一样论：应爻伤了世位，会遭他的害；应爻入墓、空、绝、破，是辜负我的恩情；只适宜生合、互相扶助，永远靠他维持，像至亲一样。三合同路，事事遂意；六冲，走到半路就灰心。日常起居为害，看兄弟、官鬼发动；水路和睦清平，看子孙发动。占别人，以应为用；占亲戚，看所属的用神；不宜兄、鬼发动克世，最宜相合相生。",
+        "en": "For those who travel and stay together, the Other is the honoured one, and those on the same road or in the same boat are judged alike: if the Other injures the Self position, one suffers harm from him; if the Other is in the tomb, Void, extinct or broken, he is ungrateful for my kindness; it is fit only that they give life, combine and support each other, so that one can always rely on his help as on one's own kin. Three-harmony on the same road, everything goes as wished; six-clash, one loses heart halfway. For harm in daily life and lodging, look to a moving Peer or Pressure; for peace and harmony on the water, look to a moving Output. In divining for another person, the Other is the Subject; for a relative, look at that relative's own Subject; it is unfit for Peer or Pressure to move and control the Self, and best when they combine and generate."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11990, 11990],
+          "zh": ["同行共处应为尊，同路同舟一样论。", "应伤世位遭他害，墓空绝破负吾恩。", "只宜生合相扶助，永赖维持如至亲。", "三合同途皆遂意，六冲半路便灰心。", "起居为害摇兄鬼，水睦清平动子孙。"],
+          "yi": ["同行共处，以应爻为尊，同路、同船一样论。", "应爻伤了世位，会遭他的害；应爻入墓、空、绝、破，是辜负我的恩情。", "只适宜生合、互相扶助，永远靠他维持，像至亲一样。", "三合同路，事事遂意；六冲，走到半路就灰心。", "日常起居为害，看兄弟、官鬼发动；水路和睦清平，看子孙发动。"],
+          "en": ["For those travelling and staying together, the Other is the honoured one, and those on the same road and in the same boat are judged alike.", "If the Other injures the Self position, one suffers harm from him; if the Other is in the tomb, Void, extinct or broken, he is ungrateful for my kindness.", "It is fit only that they give life, combine and support each other, so that one can always rely on his help as on one's own kin.", "Three-harmony on the same road, everything goes as wished; six-clash, one loses heart halfway.", "For harm in daily life and lodging, look to a moving Peer or Pressure; for peace and harmony on the water, look to a moving Output."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11991, 11991],
+          "zh": ["占他人，以应为用；", "占亲戚，看所用用神。", "不宜兄鬼动而克世，最宜相合相生。"],
+          "yi": ["占别人，以应爻为用神；", "占亲戚，看所属的用神。", "不宜兄爻、鬼爻发动而克世，最宜相合相生。"],
+          "en": ["In divining for another person, the Other is the Subject;", "for a relative, look at that relative's own Subject.", "It is unfit for Peer or Pressure to move and control the Self, and best when they combine and generate."] }
+      ],
+      "note": {
+        "yi": "这一章前面是一首四言六句的诗（「同行共处应为尊……」），后面两句是散文补充；诗里的「兄鬼」是兄弟爻和官鬼爻的简称。",
+        "en": "The chapter is a short verse (beginning \"for those travelling and staying together the Other is honoured\") followed by a prose supplement; \"Peer and Pressure\" in the verse stands for the Peer and Pressure lines."
+      },
+      "see": ["LY.TRAVEL.HJC.18", "LY.TRAVEL.HJC.21"]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "增删卜易",
+  "chapter": "散见各章",
+  "chapter_en": "Passages on setting out and travellers scattered through the chapters",
+  "ranges": {"增删卜易": [1464, 5501]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.ZS.45",
+      "topic": "归期",
+      "chapter": "千金赋",
+      "chapter_en": "The Qianjin Fu, as edited in this book",
+      "title": "千金赋·速则动而克世、缓则静而生身：只有占行人才用；用神动而克世行人回得快，用神静而生世行人回得慢；父母动而克世的，答应他立刻就回",
+      "rule": {
+        "yi": "用神发动来克世爻，回得快；用神安静而生世爻，回得慢。这一条只有占行人才用，别的占不用。用神动而克世的，行人回得快；用神静而生世的，行人回得慢。比如占父母什么时候回，以父母爻为用神，父母爻动而克世的，许他立刻就回；其余照此推。",
+        "en": "A Subject that moves and controls the Self returns quickly; a Subject that is still and gives life to the Self returns slowly. This is used only in divining for a traveller and not in other divinations. A Subject that moves and controls the Self means a quick return; one that is still and gives life to the Self means a slow return. For example, in divining when a parent will return, the Resource line is the Subject, and if the Resource moves and controls the Self he is promised to return at once; the rest follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [5501, 5501],
+          "zh": ["速则动而克世，缓则静而生身。"],
+          "yi": ["快的是发动而克世爻，慢的是安静而生身。"],
+          "en": ["The quick is that which moves and controls the Self, the slow that which is still and gives life to the Body."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [5501, 5501],
+          "zh": ["此独占行人用之，他占不用。"],
+          "yi": ["这一条只有占行人才用，别的占不用。"],
+          "en": ["This is used only in divining for a traveller and not in other divinations."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [5501, 5501], "literal": ["父母"],
+          "zh": ["野鹤曰：用神动而克世者，行人回速也；", "用神静而生世者，行人归缓也。", "且如占父母何时回？", "以父母为用神，父母动而克世者，许之即归。", "余仿此。"],
+          "yi": ["野鹤说：用神发动而克世的，行人回得快；", "用神安静而生世的，行人回得慢。", "比如占父母什么时候回？", "以父母爻为用神，父母爻动而克世的，许他立刻就回。", "其余照这个类推。"],
+          "en": ["Yehe says: a Subject that moves and controls the Self means a quick return;", "a Subject that is still and gives life to the Self means a slow return.", "For example, in divining when a parent will return:", "the Resource line is the Subject, and if the Resource moves and controls the Self, he is promised to return at once.", "The rest follow this."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.17", "LY.TRAVEL.ZS.46"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.46",
+      "topic": "归期",
+      "chapter": "千金赋",
+      "chapter_en": "The Qianjin Fu, as edited in this book",
+      "title": "千金赋注·觉子论用克世：旧注说用神克世不作凶看、是事来就我，觉子以为不尽然——求财财爻克世必得、行人用神克世即归、医药子孙克世即愈，其余各占都不宜用神克世，占功名官鬼克世更是非祸即灾",
+      "rule": {
+        "yi": "用克世就是用神来克世爻。旧注说不要当凶看，因为主事的爻动来克世，是这件事来就我，事必易成，我虽被克又有什么妨碍，所以说克世的不算凶。觉子认为这个说法不完全对。他验证过的：占求财，财爻克世一定得到；占行人，用神克世马上回来；占医药，子孙克世即愈。除了这几种占，其他都不宜用神克世。如果占功名，官鬼克世，不是祸就是灾，不能一概说不要当凶看。",
+        "en": "\"The Subject controls the Self\" means the Subject comes to control the Self. The old commentary says not to take it as ill: the line that rules the matter moves to control the Self, which means the matter comes to me and will easily be done, so what harm is there in my being controlled? Hence it is said that a controller of the Self is not taken as ill. Juezi thinks this is not entirely right. What he has found borne out is this: in divining for wealth, a Wealth line that controls the Self is surely gained; in divining for a traveller, a Subject that controls the Self returns at once; in divining for medicine, Output controlling the Self means a cure. Apart from these few divinations, the Subject controlling the Self is unfit in all others. If one divines for office, Pressure controlling the Self is not misfortune but calamity, and it cannot be said across the board not to take it as ill."
+      },
+      "quotes": [
+        { "by": "觉子", "book": "增删卜易", "range": [5400, 5400],
+          "zh": ["觉子曰：用克世，乃用神来克世也。", "勿作凶看者，据旧注：主事爻动来克世，乃为是事来就我，事必易成，我虽见克，亦何伤哉？", "故云克世者不以为凶。", "余以此论未为全是。", "余之得验者，如占求财，财为用神，财爻克世者必得；", "占行人，用神克世者即归；", "占医药，子孙为用神，子孙克世者即愈。", "外此数占，俱不宜用神而克世也。", "若占功名，官鬼克世，非祸即灾，不得概曰勿作凶看也。"],
+          "yi": ["觉子说：用克世，就是用神来克世爻。", "不要当凶看，据旧注：主事的爻动来克世，是这件事来就我，事必容易成，我虽然被克，又有什么妨碍？", "所以说克世的不当凶。", "我认为这个说法不完全对。", "我验证过的：占求财，财是用神，财爻克世一定得到；", "占行人，用神克世马上回来；", "占医药，子孙是用神，子孙克世就好。", "除了这几种占，都不宜用神克世。", "如果占功名，官鬼克世，不是祸就是灾，不能一概说不要当凶看。"],
+          "en": ["Juezi says: \"the Subject controls the Self\" means the Subject comes to control the Self.", "Not to be taken as ill, according to the old commentary: the line that rules the matter moves to control the Self, which means the matter comes to me and will surely be done easily, so what harm is there in my being controlled?", "Hence it is said that a controller of the Self is not taken as ill.", "I think this view is not entirely right.", "What I have found borne out: in divining for wealth, Wealth is the Subject, and a Wealth line that controls the Self is surely gained;", "in divining for a traveller, a Subject that controls the Self returns at once;", "in divining for medicine, Output is the Subject, and Output controlling the Self means a cure.", "Apart from these few divinations, the Subject controlling the Self is unfit in all the others.", "If one divines for office, Pressure controlling the Self is not misfortune but calamity, and it cannot be said across the board not to take it as ill."] }
+      ],
+      "dispute": {
+        "yi": "旧注：用神来克世是「事来就我」，不当凶看；觉子：只有求财、行人、医药这几种占才是好的，其余都不宜，功名占官鬼克世非祸即灾。",
+        "en": "The old commentary holds that the Subject coming to control the Self is the matter coming to me and is not ill; Juezi holds that this is good only in divining for wealth, a traveller and medicine, that it is unfit in the rest, and that in divining for office Pressure controlling the Self is calamity."
+      },
+      "see": ["LY.TRAVEL.ZS.45", "LY.TRAVEL.ZS.17"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.47",
+      "topic": "去留",
+      "chapter": "归魂游魂章",
+      "chapter_en": "The chapter on Returning Soul and Wandering Soul hexagrams",
+      "title": "归魂游魂章·游魂卦占出行行止无定、占行人游遍他乡，归魂卦不出疆、诸事拘泥不行：野鹤——要先以用神为主，舍用神而执此断是错的",
+      "rule": {
+        "yi": "游魂卦是各宫的第七卦，归魂卦是各宫的第八卦。古人认为游魂可以走千里，我做这件事想要久的，游魂却不能久，心里没有定向，迁改不常：占身命，一生没有安家乐业的地方；占行人，游遍他乡；占出行，行止没有定准；占家宅，搬迁变动不常；占坟茔，亡灵不能安妥。野鹤说：必须以用神为主，然后拿这个来参考；如果舍掉用神、执着这个来断，就错了。归魂卦不出疆界，诸事拘泥不行，与游魂卦相反来断就可以。",
+        "en": "A Wandering Soul hexagram is the seventh hexagram of each palace and a Returning Soul hexagram the eighth. The ancients held that a Wandering Soul can travel a thousand li, but if I am undertaking something that I want to last, the Wandering Soul cannot last; the heart has no settled direction and changes are frequent. In divining for one's life, there is no place to settle and thrive all one's life; for a traveller, he roams other lands; for setting out, going and stopping are unfixed; for the house, moves and changes are frequent; for a tomb, the spirits of the dead cannot be at rest. Yehe says: take the Subject as the main thing first and then use this as a reference; to set the Subject aside and judge by this alone is a mistake. A Returning Soul hexagram does not leave the border and things are stuck and do not go; judge it as the opposite of a Wandering Soul hexagram."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2812, 2812],
+          "zh": ["游魂卦为各宫之第七卦。", "如乾宫中之火地晋，坤宫中之水天需。", "余仿此。", "归魂卦为各宫之第八卦。", "如乾宫中之火天大有，坤宫中之水地比。", "余仿此。"],
+          "yi": ["游魂卦是各宫的第七卦。", "比如乾宫里的火地晋，坤宫里的水天需。", "其余照这个类推。", "归魂卦是各宫的第八卦。", "比如乾宫里的火天大有，坤宫里的水地比。", "其余照这个类推。"],
+          "en": ["A Wandering Soul hexagram is the seventh hexagram of each palace.", "For example Jin (Fire over Earth) in the palace of Qian, and Xu (Water over Heaven) in the palace of Kun.", "The rest follow this.", "A Returning Soul hexagram is the eighth hexagram of each palace.", "For example Dayou (Fire over Heaven) in the palace of Qian, and Bi (Water over Earth) in the palace of Kun.", "The rest follow this."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2813, 2813],
+          "zh": ["古以游魂行千里，我行此事而欲久者，游魂而不能久，心无定向，迁改不常。", "占身命，一生无安家乐业之所；", "占行人，游遍他乡；", "占出行，行止无定；", "占家宅，迁变不常；", "占坟茔，亡灵不能安妥。"],
+          "yi": ["古人认为游魂可以走千里，我做这件事想要久的，游魂却不能久，心里没有定向，迁改不常。", "占身命，一生没有安家乐业的地方；", "占行人，会游遍他乡；", "占出行，行止没有定准；", "占家宅，搬迁变动不常；", "占坟茔，先人的亡灵不得安稳。"],
+          "en": ["The ancients held that a Wandering Soul can travel a thousand li, but if I am undertaking something that I want to last, the Wandering Soul cannot last; the heart has no settled direction and changes are frequent.", "In divining for one's life, there is no place to settle and thrive all one's life;", "for a traveller, he roams other lands;", "for setting out, going and stopping are unfixed;", "for the house, moves and changes are frequent;", "for a tomb, the spirits of the dead cannot be at rest."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [2813, 2813],
+          "zh": ["野鹤曰：须以用神为主，然后以此参之。", "若舍用神，执此而断者，谬也。", "归魂不出疆，诸事拘泥不行，与游魂卦相反而断之可也。"],
+          "yi": ["野鹤说：必须以用神为主，然后拿这个来参考。", "如果舍掉用神、执着这个来断，就错了。", "归魂卦不出疆界，诸事拘泥不行，与游魂卦相反来断就可以。"],
+          "en": ["Yehe says: take the Subject as the main thing first and then use this as a reference.", "To set the Subject aside and judge by this alone is a mistake.", "A Returning Soul hexagram does not leave the border and things are stuck and do not go; judge it as the opposite of a Wandering Soul hexagram."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.52"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.48",
+      "topic": "动变",
+      "chapter": "三合章",
+      "chapter_en": "The chapter on three-harmony",
+      "title": "三合章·占出行用神在三合之内则被合而留，占行人用神在三合之内则被合不返",
+      "rule": {
+        "yi": "占出行，用神在三合局之内，会被合住而留下来；占行人，用神在三合局之内，被合住不回来。同一章里，占功名三合官局生世利于我、生应利于他，占财财局生世利于我、生应利于他，也是同一个看法。",
+        "en": "In divining for setting out, a Subject inside a three-harmony frame is combined shut and stays; in divining for a traveller, a Subject inside a three-harmony frame is combined shut and does not return. In the same chapter, in divining for office a Pressure frame giving life to the Self is good for me and giving life to the Other is good for him, and a Wealth frame in divining for wealth is read the same way."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [1464, 1464],
+          "zh": ["更有当知者：如占功名，三合官局而生世者，利于我；", "生应者，利于他。", "占财，财局生世，利于我；", "财局生应，利于他。", "占出行，用神在三合之内，被合而留。", "占行人，用神在三合之内，被合不返。"],
+          "yi": ["还有应当知道的：占功名，三合官局生世的，对我有利；", "生应的，对他有利。", "占财，财局生世，对我有利；", "财局生应，对他有利。", "占出行，用神在三合之内，被合住而留下。", "占行人，用神在三合之内，被合住不回。"],
+          "en": ["There is more that should be known: in divining for office, a Pressure frame in three-harmony that gives life to the Self is good for me;", "one that gives life to the Other is good for him.", "In divining for wealth, a Wealth frame that gives life to the Self is good for me;", "one that gives life to the Other is good for him.", "In divining for setting out, a Subject inside the three-harmony is combined shut and stays.", "In divining for a traveller, a Subject inside the three-harmony is combined shut and does not return."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.21"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.49",
+      "topic": "去留",
+      "chapter": "随鬼入墓章",
+      "chapter_en": "The chapter on entering the tomb with Pressure",
+      "title": "随鬼入墓章·占出仕出行世旺得地则冲开墓库之月日遂心，世空破休囚多去而不返；占行人用神化墓或入动墓，用神旺必归，用神空破休囚非病于他乡就是流落异境",
+      "rule": {
+        "yi": "占出仕、出行，世爻旺相得地，冲开墓库的月日遂心；世爻如果空破休囚，多半是去了不回来。占行人，用神化墓，或入动墓的，用神旺相的一定回来；用神空破休囚的，不是病在他乡，就是流落在异地。",
+        "en": "In divining for taking office or setting out, if the Self is strong and well placed, matters go as wished in the month or day that clashes the tomb open; if the Self is Void, broken, resting or trapped, he mostly goes and does not return. In divining for a traveller, a Subject that changes into a tomb or enters a moving tomb returns for certain if it is strong; if it is Void, broken, resting or trapped, he is either ill in a strange land or adrift in a foreign place."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [4170, 4170],
+          "zh": ["占出仕出行，世旺得地，冲开墓库之月日遂心，世若空破休囚，多见去而不返。"],
+          "yi": ["占出仕、出行，世爻旺相得地，冲开墓库的月日遂心，世爻如果空破休囚，多半是去了不回来。"],
+          "en": ["In divining for taking office or setting out, if the Self is strong and well placed, matters go as wished in the month or day that clashes the tomb open; if the Self is Void, broken, resting or trapped, he mostly goes and does not return."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [4175, 4175],
+          "zh": ["占行人，用神化墓，或入动墓者，用神旺必归；", "用神空破休囚，非病于他乡，即流落于异境。"],
+          "yi": ["占行人，用神化墓，或入动墓的，用神旺相的一定回来；", "用神空破休囚的，不是病在他乡，就是流落在异地。"],
+          "en": ["In divining for a traveller, a Subject that changes into a tomb or enters a moving tomb returns for certain if it is strong;", "if the Subject is Void, broken, resting or trapped, he is either ill in a strange land or adrift in a foreign place."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.20"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.50",
+      "topic": "去留",
+      "chapter": "进神退神章",
+      "chapter_en": "The chapter on Advancing and Retreating spirits",
+      "title": "进神退神章·书中例，占出行：世临寅木动化进神，合当就行，因月破目下未必能行，出月才可，后来亥月（破而逢合之月）方行，由燕至粤，次年八月归；子孙化进神知其平安",
+      "rule": {
+        "yi": "动爻化进神是好事：世爻临寅木发动化出进神，按理应当就走，但因为月破，眼下未必能走，要出了这个月才行。书中例：申月乙卯日占出行，得屯卦变节卦：后来到亥月才动身，由燕地到粤地，第二年八月回来。我问：路上平安吗？他说：来去都托庇平安。我是因为子孙化进神，知道他平安，所以才问。应在亥月出行，是月破逢合的月份，这是动爻被月破、又化出日辰，怎么能说它不能进呢？",
+        "en": "A moving line changing into an Advancing spirit is a good thing: the Self sits on Yin-wood and moves and changes into an Advancing spirit, so by rights he should go at once, but because of the Month-break he may not be able to go now and can go only after the month is out. Worked example: in the Shen month, on a Yimao day, a man divined about setting out and got Zhun changing to Jie: he set out only in the Hai month, going from Yan to Yue, and came back in the eighth month of the next year. I asked: was the road safe? He said: coming and going I was sheltered and safe. I asked only because Output changes into an Advancing spirit, and I knew he would be safe. That it answered in the Hai month is the month in which a broken line meets a combination; this is a moving line broken by the Month and changing into the Day, so how can one say it cannot advance?"
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [3321, 3321],
+          "zh": ["进退神者，爻之动而化也，化进化退，吉凶祸福，有喜忌之分。", "所喜者，宜化进神；", "所忌者，宜化退神。"],
+          "yi": ["进神、退神，是爻发动后变化出来的，化进化退，吉凶祸福，有所喜和所忌的分别。", "所喜的，宜于化进神；", "所忌的，宜于化退神。"],
+          "en": ["Advancing and Retreating spirits come from a line moving and changing; changing into an Advancing or a Retreating spirit makes luck and misfortune, with what is welcome and what is feared.", "What is welcome should change into an Advancing spirit;", "what is feared should change into a Retreating spirit."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3818, 3818],
+          "zh": ["又如：申月乙卯日(旬空：子丑)，占出行，得“屯之节”"],
+          "yi": ["又如：申月乙卯日（旬空子、丑），占出行，得屯卦变节卦。"],
+          "en": ["Another example: in the Shen month, on a Yimao day (Void: Zi and Chou), divining about setting out and getting Zhun changing to Jie."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3854, 3854],
+          "zh": ["世临寅木动而化进神，合当就行，因系月破，目下未必能行，出月方可。", "后至亥月方行，由燕至粤，次年八月归来。", "余曰：途中安否？", "彼曰：往来托庇平安。", "余以子孙化进神，知其平安，故问之耳。", "夫应亥月出行者，破而逢合之月也。", "此乃动破化日辰，岂可谓之不能进耶？"],
+          "yi": ["世爻临寅木发动化出进神，按理应当就走，但因为月破，眼下未必能走，要出了这个月才行。", "后来到亥月才动身，由燕地到粤地，第二年八月回来。", "我问：路上平安吗？", "他说：来去都托庇平安。", "我是因为子孙化进神，知道他平安，所以才问。", "应在亥月出行，是月破逢合的月份。", "这是动爻被月破、又化出日辰，怎么能说它不能进呢？"],
+          "en": ["The Self sits on Yin-wood and moves and changes into an Advancing spirit, so by rights he should go at once, but because of the Month-break he may not be able to go now and can go only after the month is out.", "He set out only in the Hai month, going from Yan to Yue, and came back in the eighth month of the next year.", "I asked: was the road safe?", "He said: coming and going I was sheltered and safe.", "I asked only because Output changes into an Advancing spirit, and I knew he would be safe.", "That it answered in the Hai month is the month in which a broken line meets a combination.", "This is a moving line broken by the Month and changing into the Day, so how can one say it cannot advance?"] }
+      ],
+      "see": ["LY.TRAVEL.ZS.19"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.51",
+      "topic": "归期",
+      "chapter": "进神退神章",
+      "chapter_en": "The chapter on Advancing and Retreating spirits",
+      "title": "进神退神章·书中例，占兄归期：兄爻动化退神已有归志，但戌逢月破在外诸事未遂，断六月可望，后来戌月才回——应在实破之月，是动破而变日月，不能说退不及",
+      "rule": {
+        "yi": "动爻化退神已有归意；动爻遇月破的，要等到填实破的月份才应。书中例：辰月己未日占兄长什么时候归，得履卦变兑卦：兄爻动化退神，已经有了回来的心，但是戌土逢月破，在外面诸事没有如意，六月可以盼回；后来到戌月才回来，是应在实破之月——填实月破的月份。这是动爻破而又变到日月，怎么能说是退神不及呢？",
+        "en": "A moving line changing into a Retreating spirit already has the mind to return; a moving line that meets the Month-break answers only when the break is filled. Worked example: in the Chen month, on a Jiwei day, a man divined when his elder brother would return and got Lü (Treading) changing to Dui: the Peer line moves and changes into a Retreating spirit, so he already has a mind to return, but Xu-earth meets the Month-break and nothing abroad has gone as he wished, so he can be hoped for in the sixth month; in the end he came back in the Xu month, answering in the month that fills the break. This is a moving line that is broken and changes into the Month and the Day; how can one say a Retreating spirit falls short?"
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [3321, 3321],
+          "zh": ["进退神者，爻之动而化也，化进化退，吉凶祸福，有喜忌之分。", "所喜者，宜化进神；", "所忌者，宜化退神。"],
+          "yi": ["进神、退神，是爻发动后变化出来的，化进化退，吉凶祸福，有所喜和所忌的分别。", "所喜的，宜于化进神；", "所忌的，宜于化退神。"],
+          "en": ["Advancing and Retreating spirits come from a line moving and changing; changing into an Advancing or a Retreating spirit makes luck and misfortune, with what is welcome and what is feared.", "What is welcome should change into an Advancing spirit;", "what is feared should change into a Retreating spirit."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3855, 3855],
+          "zh": ["又如：辰月己未日(旬空：子丑)，占兄归期，得“履之兑”"],
+          "yi": ["又如：辰月己未日（旬空子、丑），占兄长归期，得履卦变兑卦。"],
+          "en": ["Another example: in the Chen month, on a Jiwei day (Void: Zi and Chou), divining when an elder brother would return and getting Lü (Treading) changing to Dui."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3862, 3862],
+          "zh": ["兄动化退，已有归志，但因戌逢月破，在外诸事未遂，六月可望。", "后至戌月方回，乃应实破之月也。", "此乃动破而变日月，岂可谓之退不及耶？"],
+          "yi": ["兄爻动化退神，已经有了回来的心，但是戌土逢月破，在外面诸事没有如意，六月可以盼回。", "后来到戌月才回来，是应在实破之月。", "这是动爻破而又变到日月，怎么能说是退神不及呢？"],
+          "en": ["The Peer line moves and changes into a Retreating spirit, so he already has a mind to return, but Xu-earth meets the Month-break and nothing abroad has gone as he wished, so he can be hoped for in the sixth month.", "In the end he came back in the Xu month, answering in the month that fills the break.", "This is a moving line that is broken and changes into the Month and the Day; how can one say a Retreating spirit falls short?"] }
+      ],
+      "see": ["LY.TRAVEL.ZS.19", "LY.TRAVEL.ZS.50"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.52",
+      "topic": "归期",
+      "chapter": "动散章",
+      "chapter_en": "The chapter on moving lines scattered",
+      "title": "动散章·书中例，占父出外一载无音：卯木父爻动而生世、又化子水回头生，断在外平安、世空者速至、交春即归；果于二月回——卯动被酉日冲也没有冲散",
+      "rule": {
+        "yi": "古人以日辰冲动爻叫做冲散，又以动爻冲爻也能冲散。作者屡次试验，旺相的、有气的，冲它不散；只有休囚的间或冲散，也是千百中的一二。原因是神灵的兆示机缘在动，动必有因，即使今天受制，后来逢到值日就不散。书中例：丑月丁酉日占父亲出外一年没有音信，得涣卦变坎卦：卯木父爻发动生世，又化出子水回头生，答应他在外平安，世爻空的行人速到，交春就回；果然二月，称心而回——这不是卯木动、被酉日冲吗，哪里散了？",
+        "en": "The ancients called a moving line clashed by the Day \"scattered\", and also said a moving line clashing another line can scatter it. The author has tried this repeatedly: a strong line or one with breath is not scattered by a clash; only a resting or trapped one is now and then scattered, and that is one or two in a thousand. Why? Because the spirits give their sign in the moving, and every movement has a cause: even if the line is checked today, when the ruling day comes it is not scattered. Worked example: in the Chou month, on a Dingyou day, a man divined about his father who had gone abroad and sent no word for a year, and got Huan changing to Kan: the Resource Mao-wood moves and gives life to the Self, and changes into Zi-water that turns back to give life, so he was promised that his father was safe abroad, that a Void Self means a quick arrival, and that he would return at the turn of spring. Indeed in the second month he came back content. Is this not Mao moving and being clashed by the You day? Where was the scattering?"
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2049, 2049],
+          "zh": ["古以日辰冲动爻，谓之冲散，又以爻动冲爻，亦能冲散。", "余屡试之，旺相者，冲之不散；", "有气者，冲之不散；", "休囚者，间有冲散，亦千百中之一二耳。", "其故何也？", "盖神兆机于动，动必有因，虽则今日受制，后逢值日而不散也。"],
+          "yi": ["古人以日辰冲动爻，叫做冲散，又以动爻冲爻，也能冲散。", "我屡次试验，旺相的，冲它不散；", "有气的，冲它不散；", "休囚的间或冲散，也是千百中的一二。", "原因是什么？", "因为神灵的兆示机缘在动，动必有因，即使今天受制，后来逢到值日就不散。"],
+          "en": ["The ancients called a moving line clashed by the Day \"scattered\", and also said a moving line clashing another line can scatter it.", "I have tried this repeatedly: a strong line is not scattered by a clash;", "one with breath is not scattered by a clash;", "a resting or trapped one is now and then scattered, and that is one or two in a thousand.", "Why?", "Because the spirits give their sign in the moving, and every movement has a cause: even if the line is checked today, when the ruling day comes it is not scattered."] },
+        { "by": "书中例", "book": "增删卜易", "range": [2050, 2050],
+          "zh": ["如：丑月丁酉日(旬空：辰巳)，占父出外，一载无音，得“涣之坎”"],
+          "yi": ["如：丑月丁酉日（旬空辰、巳），占父亲出外一年没有音信，得涣卦变坎卦。"],
+          "en": ["For example: in the Chou month, on a Dingyou day (Void: Chen and Si), divining about a father who had gone abroad and sent no word for a year, getting Huan changing to Kan."] },
+        { "by": "书中例", "book": "增删卜易", "range": [2055, 2055],
+          "zh": ["卯木父爻，动而生世，又化子水回头生，许之在外平安，世空者速至，交春即归。", "果于二月，得意而回。", "此非卯动酉日冲之乎？", "何尝散耶？"],
+          "yi": ["卯木父爻发动生世，又化出子水回头生，答应他在外平安，世爻空的行人速到，交春就回。", "果然二月，称心而回。", "这不是卯木动、被酉日冲吗？", "哪里散了？"],
+          "en": ["The Resource Mao-wood moves and gives life to the Self, and changes into Zi-water that turns back to give life, so he was promised that his father was safe abroad, that a Void Self means a quick arrival, and that he would return at the turn of spring.", "Indeed in the second month he came back content.", "Is this not Mao moving and being clashed by the You day?", "Where was the scattering?"] }
+      ],
+      "see": ["LY.TRAVEL.ZS.20"]
+    }
+  ]
+}

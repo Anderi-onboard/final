@@ -51,6 +51,20 @@ views:
       - rule_en
       - work
   - type: table
+    name: "出行"
+    filters:
+      and:
+        - 'domain == "出行"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
     name: "婚姻"
     filters:
       and:
